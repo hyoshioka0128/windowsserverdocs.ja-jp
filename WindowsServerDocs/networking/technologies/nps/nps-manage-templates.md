@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: 989b00c5-4767-4081-ace5-6321f8b2c55e
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 5ac733c11b277f09e64779c33d3392303fc34d98
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 0e6a35640d6a4a7c5665f3638925d9dc99a9df9d
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71396160"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80315937"
 ---
 # <a name="manage-nps-templates"></a>NPS テンプレートを管理する
 
@@ -43,7 +43,7 @@ ms.locfileid: "71396160"
 
 次の手順では、新しいテンプレートを作成する方法について説明します。
 
-メンバーシップ **管理者**, 、または同等の権限は、この手順を実行するために必要な最小値。
+**Administrators**、またはそれと同等のメンバーシップが、この手順を実行するために最低限必要なメンバーシップです。
 
 ### <a name="to-create-an-nps-template"></a>NPS テンプレートを作成するには
 
@@ -58,7 +58,7 @@ ms.locfileid: "71396160"
 
 テンプレートを適用できる NPS コンソール内の場所に移動することで、テンプレート**管理**で作成したテンプレートを使用できます。 たとえば、RADIUS クライアント構成に共有シークレットテンプレートを適用する場合は、次の手順を実行します。
 
-メンバーシップ **管理者**, 、または同等の権限は、この手順を実行するために必要な最小値。
+**Administrators**、またはそれと同等のメンバーシップが、この手順を実行するために最低限必要なメンバーシップです。
 
 ### <a name="to-apply-an-nps-template"></a>NPS テンプレートを適用するには
 
@@ -74,7 +74,7 @@ ms.locfileid: "71396160"
 
 他の NPSs で使用するテンプレートをエクスポートすることも、テンプレート**管理**にテンプレートをインポートしてローカルコンピューターで使用することもできます。 
 
-メンバーシップ **管理者**, 、または同等の権限は、この手順を実行するために必要な最小値。
+**Administrators**、またはそれと同等のメンバーシップが、この手順を実行するために最低限必要なメンバーシップです。
 
 ### <a name="to-export-or-import-nps-templates"></a>NPS テンプレートをエクスポートまたはインポートするには
 

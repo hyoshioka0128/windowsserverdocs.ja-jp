@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: eea0aca9-8d89-48fb-8068-fca40c90d34b
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 3f95d2884a808239c1d171eecbc983e26e799102
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 7a26966fc724aa881e5e20caf6609eaec164ccb0
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355620"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317044"
 ---
 # <a name="post-deployment-steps-for-network-controller"></a>ネットワーク コントローラーの展開後の手順
 

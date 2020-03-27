@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: dcc1037f-1a65-4497-99e6-0df9aef748a8
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 7e93c972dbbe2971796c12cdeea27474723a80ac
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 2cb0566dc2cdc68c4653f85c06869585bc6454ef
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404462"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313834"
 ---
 # <a name="troubleshooting-adding-entry-points"></a>エントリ ポイント追加のトラブルシューティング
 

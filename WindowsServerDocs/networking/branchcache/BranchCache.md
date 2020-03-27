@@ -10,14 +10,14 @@ ms.technology: networking-bc
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a4587cff-c086-49f1-a0bf-cd74b8a44440
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 15d57d12679d7441da080ad671264ca1e5e1f42c
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 1eea3e11231e1be94db1f88d77faa89a67d46444
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822805"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318522"
 ---
 # <a name="branchcache"></a>BranchCache
 
@@ -69,17 +69,17 @@ BranchCache は、次の状況が考えられるシステム管理者、ネッ�
   
 -   [キャッシュのセキュリティ](#bkmk_cache)  
   
-## <a name="bkmk_what"></a>BranchCache とは
+## <a name="what-is-branchcache"></a><a name="bkmk_what"></a>BranchCache とは
 
 BranchCache は、windows Server 2016 および Windows 10 オペレーティングシステムの一部のエディション、および Windows Server 2012 R2、Windows 8.1、Windows Server 2012、Windows 8 の一部のエディションに組み込まれているワイドエリアネットワーク (WAN) 帯域幅最適化テクノロジです。、Windows Server 2008 R2、Windows 7。 ユーザーがリモート サーバー上のコンテンツをアクセスするときは、WAN の帯域幅を最適化、BranchCache は、ホストされたクラウド コンテンツ サーバーまたはと、WAN 経由ではなくローカルでコンテンツにアクセスするブランチ オフィスでコンピューターをクライアントに許可するブランチ オフィスの場所にコンテンツをキャッシュ メイン オフィスからコンテンツを取得します。
   
 ブランチオフィスでは、キャッシュをホストするように構成されているサーバーにコンテンツが格納されます。また、ブランチオフィスでサーバーが使用できない場合は、Windows 10、Windows 8.1、Windows 8、または Windows 7 を実行しているクライアントコンピューターにコンテンツが格納されます。 クライアント コンピューターがコンテンツを要求してメイン オフィスからコンテンツを受信すると、コンテンツがブランチ オフィスにキャッシュされます。すると、同じブランチ オフィスにある他のコンピューターは、WAN リンクを経由してコンテンツ サーバーからコンテンツをダウンロードしなくてもコンテンツをローカルに取得できるようになります。
 
-その後クライアント コンピューターが同じコンテンツを要求するとき、クライアントは、実際のコンテンツではなく、 *コンテンツ情報* をサーバーからダウンロードします。 コンテンツ情報は、元のコンテンツのチャンクを使用して計算されるハッシュから構成されます。コンテンツ情報は、元のデータの内容と比較するとサイズが非常に小さくなります。 次に、クライアント コンピューターは、コンテンツ情報を使用して、ブランチ オフィス内のキャッシュからコンテンツを探します。キャッシュがクライアント コンピューターとサーバーのどちらにあるかは関係ありません。 さらに、クライアント コンピューターとサーバーは、コンテンツ情報を使用して、承認されていないユーザーからアクセスを防ぐために、キャッシュされたコンテンツをセキュリティで保護します。
+その後クライアント コンピューターが同じコンテンツを要求するとき、クライアントは、実際のコンテンツではなく、*コンテンツ情報*をサーバーからダウンロードします。 コンテンツ情報は、元のコンテンツのチャンクを使用して計算されるハッシュから構成されます。コンテンツ情報は、元のデータの内容と比較するとサイズが非常に小さくなります。 次に、クライアント コンピューターは、コンテンツ情報を使用して、ブランチ オフィス内のキャッシュからコンテンツを探します。キャッシュがクライアント コンピューターとサーバーのどちらにあるかは関係ありません。 さらに、クライアント コンピューターとサーバーは、コンテンツ情報を使用して、承認されていないユーザーからアクセスを防ぐために、キャッシュされたコンテンツをセキュリティで保護します。
 
 BranchCache は、ブランチ オフィス内のクライアントとサーバーでコンテンツのクエリ応答時間を向上させることによってエンド ユーザーの生産性を高めます。また、WAN リンク経由のトラフィックが減少するのでネットワーク パフォーマンスの向上にも役立ちます。
 
-## <a name="BKMK_2"></a>BranchCache モード
+## <a name="branchcache-modes"></a><a name="BKMK_2"></a>BranchCache モード
 BranchCache には、分散キャッシュ モードとホスト型キャッシュ モードという 2 つの操作モードがあります。
 
 分散キャッシュ モードで BranchCache を展開すると、ブランチ オフィスのコンテンツ キャッシュはクライアント コンピューター間に分散されます。
@@ -113,7 +113,7 @@ BranchCache を展開する予定のブランチ オフィスに追加のイン�
 > [!CAUTION]
 > ファイルとフォルダーの SMB キャッシュに BranchCache を使用する場合は、オフライン ファイルを無効にしないでください。 オフライン ファイルを無効にすると、BranchCache の SMB キャッシュは正しく機能しません。
 
-## <a name="BKMK_3"></a>BranchCache が有効なコンテンツサーバー
+## <a name="branchcache-enabled-content-servers"></a><a name="BKMK_3"></a>BranchCache が有効なコンテンツサーバー
 
 BranchCache を展開すると、ソースコンテンツは、メインオフィスまたはクラウドデータセンター内の BranchCache が有効なコンテンツサーバーに格納されます。 BranchCache では、次の種類のコンテンツ サーバーがサポートされます。
 
@@ -138,7 +138,7 @@ BranchCache を展開すると、ソースコンテンツは、メインオフ�
 
 加えて、アプリケーション サーバーには、BranchCache 機能がインストールされている必要があります。 アプリケーションサーバーの例として、Microsoft Windows Server Update Services (WSUS) と Microsoft Endpoint Configuration Manager ブランチ配布ポイントサーバーを BranchCache コンテンツサーバーとして展開できます。
 
-## <a name="BKMK_3a"></a>BranchCache とクラウド
+## <a name="branchcache-and-the-cloud"></a><a name="BKMK_3a"></a>BranchCache とクラウド
 
 クラウドには、運用コストを引き下げ、新しいレベルのスケールを実現する大きな潜在力があります。しかし、ワークロードに依存するユーザーからワークロードを遠ざけると、ネットワーキング コストが増加し、生産性が悪化する可能性があります。 ユーザーは高いパフォーマンスを期待し、アプリケーションとデータがホストされている場所を気にする必要はありません。 
 
@@ -151,7 +151,7 @@ BranchCache は、新しいハードウェアの追加やネットワーク ト�
   
 = = = = = = = Windows Server 2016 のクラウドテクノロジの詳細については、「 [Software &#40;Defined&#41;network SDN](../sdn/Software-Defined-Networking--SDN-.md)」を参照してください。
   
-## <a name="bkmk_version"></a>コンテンツ情報のバージョン
+## <a name="content-information-versions"></a><a name="bkmk_version"></a>コンテンツ情報のバージョン
 
 コンテンツ情報には、次の 2 種類のバージョンがあります。
 
@@ -164,7 +164,7 @@ BranchCache は、新しいハードウェアの追加やネットワーク ト�
 > [!NOTE]
 > 次の表では、"OS" という略語はオペレーティングシステムを意味します。
 
-|クライアントの OS|コンテンツ サーバーの OS|ホスト型キャッシュ サーバーの OS|コンテンツ情報のバージョン|
+|クライアント OS|コンテンツ サーバーの OS|ホスト型キャッシュ サーバーの OS|コンテンツ情報のバージョン|
 |-------------|---------------------|--------------------------|-------------------------------|
 |Windows Server 2008 R2 および Windows 7 |Windows Server 2012 以降|Windows Server 2012 以降。分散キャッシュモードではありません|V1|
 |Windows Server 2012 以降。Windows 8 以降|Windows Server 2008 R2 |Windows Server 2012 以降。分散キャッシュモードではありません|V1|
@@ -178,13 +178,13 @@ Windows Server 2012 および Windows 8 以降のオペレーティングシス�
 >[!IMPORTANT]
 >分散キャッシュ モードで BranchCache を展開した場合、使用するコンテンツ情報のバージョンが異なるクライアント間では、コンテンツが共有されません。 たとえば、Windows 7 を実行するクライアントコンピューターと、同じブランチオフィスにインストールされている Windows 10 を実行しているクライアントコンピューターは、互いにコンテンツを共有しません。
   
-## <a name="bkmk_handles"></a>BranchCache がファイル内のコンテンツの更新を処理する方法
+## <a name="how-branchcache-handles-content-updates-in-files"></a><a name="bkmk_handles"></a>BranchCache がファイル内のコンテンツの更新を処理する方法
 
 ブランチオフィスのユーザーがドキュメントの内容を変更または更新すると、その変更は、BranchCache の関与なしでメインオフィスのコンテンツサーバーに直接書き込まれます。 ユーザーがコンテンツ サーバーからドキュメントをダウンロードするときや、ブランチ オフィスのホスト型キャッシュまたは分散型キャッシュからドキュメントを取得するときも同様です。
 
 ブランチ オフィスにある別のクライアントから変更後のファイルが要求された場合、ファイルの新しいセグメントがメイン オフィスのサーバーからダウンロードされ、そのブランチの分散型キャッシュまたはホスト型キャッシュに追加されます。 そのため、ブランチ オフィスのユーザーは、キャッシュされたコンテンツの最新版を常に入手できます。
 
-## <a name="BKMK_4"></a>BranchCache インストールガイド
+## <a name="branchcache-installation-guide"></a><a name="BKMK_4"></a>BranchCache インストールガイド
 
 Windows Server 2016 のサーバーマネージャーを使用すると、BranchCache 機能またはファイルサービスサーバー役割のネットワークファイル用 BranchCache 役割サービスをインストールできます。 役割サービスと機能のどちらをインストールするかについては、次の表を参考にしてください。
 
@@ -204,7 +204,7 @@ Windows Server 2016 のサーバーマネージャーを使用すると、Branch
 
 - ウィザードの **[機能の選択**] ページで、ファイルサーバーではないコンテンツサーバーをインストールする場合、またはホスト型キャッシュサーバーをインストールする場合は、 **[BranchCache]** を選択し、ウィザードの指示に従ってインストールと完了を続行します。 ファイル サーバーではないコンテンツ サーバーまたはホスト型キャッシュ サーバーをインストールしない場合は [BranchCache] 機能をインストールしないでください。
   
-## <a name="bkmk_os"></a>BranchCache のオペレーティングシステムのバージョン
+## <a name="operating-system-versions-for-branchcache"></a><a name="bkmk_os"></a>BranchCache のオペレーティングシステムのバージョン
 
 BranchCache の各種機能をサポートするオペレーティング システムの一覧を次に示します。
 
@@ -216,7 +216,7 @@ BranchCache の各種機能をサポートするオペレーティング シス�
 
 - Windows 10 Education
 
-- Windows 8.1 Enterprise
+- Windows 8.1 Enterprise
 
 - Windows 8 Enterprise
 
@@ -235,7 +235,7 @@ BranchCache の各種機能をサポートするオペレーティング シス�
 -   Windows 7 Pro、BITS サポートのみ
 
 > [!NOTE]
-> BranchCache は、Windows Server 2008 または Windows Vista オペレーティングシステムでは既定では使用できません。 ただし、これらのオペレーティングシステムでは、Windows Management Framework 更新プログラムをダウンロードしてインストールすると、BranchCache 機能はバックグラウンドインテリジェント転送サービス (BITS) プロトコルでのみ使用できます。 詳細については、Windows Management Framework のダウンロードについては、「 [Windows Management framework (Windows PowerShell 2.0、WinRM 2.0、および BITS 4.0)](https://go.microsoft.com/fwlink/?LinkId=188677) https://go.microsoft.com/fwlink/?LinkId=188677 」を参照してください。
+> BranchCache は、Windows Server 2008 または Windows Vista オペレーティングシステムでは既定では使用できません。 ただし、これらのオペレーティングシステムでは、Windows Management Framework 更新プログラムをダウンロードしてインストールすると、BranchCache 機能はバックグラウンドインテリジェント転送サービス (BITS) プロトコルでのみ使用できます。 詳細については、Windows Management Framework のダウンロードについては、「 [Windows Management framework (Windows PowerShell 2.0、WinRM 2.0、および BITS 4.0)](https://go.microsoft.com/fwlink/?LinkId=188677) https://go.microsoft.com/fwlink/?LinkId=188677」を参照してください。
   
 ### <a name="operating-systems-for-branchcache-content-server-functionality"></a>BranchCache コンテンツ サーバー用のオペレーティング システム
 
@@ -269,7 +269,7 @@ Windows Server 2016、Windows Server 2012 R2、および Windows Server 2012 フ
 
 - Hyper-v を使用した Windows Server 2008 R2 Datacenter Server Core のインストール
 
-## <a name="bkmk_security"></a>BranchCache のセキュリティ
+## <a name="branchcache-security"></a><a name="bkmk_security"></a>BranchCache のセキュリティ
 
 BranchCache には、既存のネットワーク セキュリティ アーキテクチャと並行にシームレスに動作する "設計段階でのセキュリティの確保" アプローチが実装されていて、追加の機器やセキュリティ構成は必要ありません。
   
@@ -318,7 +318,7 @@ BranchCache は、Peer Content Caching プロトコルと Retrieval Framework �
 
 加えて、BranchCache は、実際のコンテンツそのものの操作および転送時に使用するのと同じセキュリティ レベルでコンテンツ情報を処理します。
 
-## <a name="bkmk_flow"></a>コンテンツフローとプロセス
+## <a name="content-flow-and-processes"></a><a name="bkmk_flow"></a>コンテンツフローとプロセス
 
 コンテンツ情報および実際のコンテンツを分割する手順は、次の 4 つのフェーズに分けられます。
 
@@ -332,7 +332,7 @@ BranchCache は、Peer Content Caching プロトコルと Retrieval Framework �
 
 以降のセクションでは、これらのフェーズについて説明します。
 
-## <a name="BKMK_8"></a>BranchCache のプロセス: コンテンツの要求
+## <a name="branchcache-processes-request-content"></a><a name="BKMK_8"></a>BranchCache のプロセス: コンテンツの要求
 
 最初のフェーズでは、ブランチ オフィスにあるクライアント コンピューターが、メイン オフィスなどの遠隔地にあるコンテンツ サーバーに対してコンテンツ (ファイル、Web ページなど) を要求します。 コンテンツ サーバーは、要求されたコンテンツを受け取る権限がクライアント コンピューターに与えられていることを確認します。 クライアントコンピューターが承認され、コンテンツサーバーとクライアントの両方が BranchCache\-有効になっている場合、コンテンツサーバーはコンテンツ情報を生成します。
 
@@ -352,7 +352,7 @@ BranchCache は、Peer Content Caching プロトコルと Retrieval Framework �
 
 これにより、サーバー シークレットを所有していないエンティティは、データ ブロック内の実際のコンテンツを検出できません。 セグメント シークレットはプレーンテキスト セグメントそのものと同じセキュリティ レベルで処理されます。なぜなら、特定のセグメントのセグメント シークレットがわかると、ピアからセグメントを取得し、暗号化を解除することが可能になるからです。 サーバー シークレットを知られることがそのまま特定のプレーンテキストが取得されることにはなりません。しかし、暗号テキストから特定の種類のデータが引き出され、部分的に判明している一部のデータに対するブルート フォース攻撃に利用される可能性があります。 したがって、サーバー シークレットは秘密にしておく必要があります。
   
-## <a name="BKMK_9"></a>BranchCache のプロセス: コンテンツの検索
+## <a name="branchcache-processes-locate-content"></a><a name="BKMK_9"></a>BranchCache のプロセス: コンテンツの検索
 
 コンテンツ情報がクライアント コンピューターで受け取られた後、クライアントは、キャッシュがクライアント コンピューター間で分散されているかホスト型キャッシュ サーバーに配置されているかどうかに関係なく、セグメント ID を使用して、ローカル ブランチ オフィスのキャッシュ内で要求されたコンテンツを見つけます。
 
@@ -372,7 +372,7 @@ WS-Discovery プロセスが成功するかどうかは、検出操作を実行�
 
 受け取ったコンテンツは、クライアント コンピューターまたはホスト型キャッシュ サーバーのローカル キャッシュに追加されます。 このとき、コンテンツ情報に基づいて、クライアントまたはホスト型キャッシュ サーバーは、ハッシュと一致しないコンテンツをローカル キャッシュに追加しません。 ハッシュを照合してコンテンツを検証することにより、有効なコンテンツのみがキャッシュに追加され、ローカル キャッシュの整合性が保護されます。
 
-## <a name="BKMK_10"></a>BranchCache のプロセス: コンテンツの取得
+## <a name="branchcache-processes-retrieve-content"></a><a name="BKMK_10"></a>BranchCache のプロセス: コンテンツの取得
 
 クライアント コンピューターは、コンテンツ ホスト (ホスト型キャッシュ サーバーまたは分散キャッシュ モード クライアント コンピューター) 上に目的のコンテンツを検出すると、コンテンツの取得プロセスを開始します。
 
@@ -421,7 +421,7 @@ BranchCache は、暗号化アルゴリズムに適した初期化ベクトル�
 
     *大量のデータ要求によってクライアントをパンク状態にします*。 BranchCache プロトコルには、クライアントに負荷がかかりすぎるのを防止するためのキュー管理カウンターおよびタイマーが用意されています。
 
-## <a name="BKMK_11"></a>BranchCache プロセス: コンテンツのキャッシュ
+## <a name="branchcache-processes-cache-content"></a><a name="BKMK_11"></a>BranchCache プロセス: コンテンツのキャッシュ
 
 分散キャッシュ モードのクライアント コンピューターおよびブランチ オフィスに配置されているホスト型キャッシュ サーバーでは、WAN リンクからコンテンツが取得されるのに応じてコンテンツ キャッシュが構築されます。
 
@@ -454,7 +454,7 @@ BranchCache は、暗号化アルゴリズムに適した初期化ベクトル�
 
 セグメントのデータのハッシュ、ブロック ハッシュのリスト、およびセグメント シークレットは、ダウンロードされているコンテンツが改ざんまたは改変されていないことを保証するために使用されます。 その後、ダウンロードされたブロックは、ホスト型キャッシュ サーバーのブロック キャッシュに追加されます。
 
-## <a name="bkmk_cache"></a>キャッシュのセキュリティ  
+## <a name="cache-security"></a><a name="bkmk_cache"></a>キャッシュのセキュリティ  
 ここでは、クライアント コンピューターおよびホスト型キャッシュ サーバー上でキャッシュされたデータに対する BranchCache によるセキュリティ保護について説明します。
 
 ### <a name="client-computer-cache-security"></a>クライアント コンピューターのキャッシュのセキュリティ

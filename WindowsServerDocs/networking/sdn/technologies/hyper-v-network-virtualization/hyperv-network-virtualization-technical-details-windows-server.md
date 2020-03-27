@@ -11,18 +11,18 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 9efe0231-94c1-4de7-be8e-becc2af84e69
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: e692384e9416e21e00556af6ada9af8df1713a03
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: a8628404de8a1b9caccc7f7f51b063cabb1caf27
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405860"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317202"
 ---
 # <a name="hyper-v-network-virtualization-technical-details-in-windows-server-2016"></a>Windows Server 2016 での hyper-v ネットワーク仮想化の技術的な詳細
 
->適用対象:Windows Server 2016
+>適用対象: Windows Server 2016
 
 サーバー仮想化を導入すると、複数のサーバー インスタンスを 1 つの物理ホストで同時に実行できます。ただし、サーバー インスタンスは互いに独立しています。 各仮想マシンは基本的に、その仮想マシンだけが物理コンピューター上で実行されているサーバーであるかのように動作します。  
 
@@ -35,7 +35,7 @@ ms.locfileid: "71405860"
 ## <a name="hyper-v-network-virtualization-concepts"></a>Hyper-V ネットワーク仮想化の概念  
 Hyper-v ネットワーク仮想化 (HNV) では、顧客またはテナントは、エンタープライズまたはデータセンターに展開される一連の IP サブネットの "所有者" として定義されます。 顧客は、ネットワークの分離を必要とするプライベートデータセンター内の複数の部門または事業単位を持つ企業または企業、またはサービスプロバイダーによってホストされるパブリックデータセンター内のテナントにすることができます。 各顧客はデータセンターに1つ以上の[仮想](#VirtualNetworks)ネットワークを持つことができ、各仮想ネットワークは1つ以上の[仮想サブネット](#VirtualSubnets)で構成されます。  
 
-Windows Server 2016 では、次の2つの HNV 実装を使用できます。HNVv1 と HNVv2。  
+Windows Server 2016 には、HNVv1 と HNVv2 の2つの HNV 実装が用意されています。  
 
 -   **HNVv1**  
 
@@ -55,13 +55,13 @@ Windows Server 2016 では、次の2つの HNV 実装を使用できます。HNV
     > [!IMPORTANT]  
     > このトピックでは、HNVv2 に重点を置いて説明します。  
 
-### <a name="VirtualNetworks"></a>仮想ネットワーク  
+### <a name="virtual-network"></a><a name="VirtualNetworks"></a>仮想ネットワーク  
 
 -   各仮想ネットワークは、1つまたは複数の仮想サブネットで構成されます。 仮想ネットワークは、仮想ネットワーク内の仮想マシンが相互に通信できる分離境界を形成します。 従来、この分離は、分離された IP アドレス範囲と 802.1 q タグまたは VLAN ID を持つ Vlan を使用して実施されました。 ただし、HNV を使用すると、NVGRE または VXLAN カプセル化を使用して分離が適用され、ユーザーまたはテナント間で IP サブネットが重複する可能性があるオーバーレイネットワークが作成されます。  
 
 -   各仮想ネットワークには、ホスト上で一意のルーティングドメイン ID (RDID) があります。 この RDID は、ネットワークコントローラー内の仮想ネットワーク REST リソースを識別するために、おおよそのリソース ID にマップされます。 仮想ネットワーク REST リソースは、追加されたリソース ID を持つ Uniform Resource Identifier (URI) 名前空間を使用して参照されます。  
 
-### <a name="VirtualSubnets"></a>仮想サブネット  
+### <a name="virtual-subnets"></a><a name="VirtualSubnets"></a>仮想サブネット  
 
 -   仮想サブネットでは、同じサブネット内の仮想マシンにレイヤー 3 IP サブネット セマンティクスが実装されます。 仮想サブネットは、(VLAN と同様に) ブロードキャストドメインを形成し、NVGRE テナントネットワーク ID (TNI) フィールドまたは VXLAN Network Identifier (VNI) フィールドのいずれかを使用して分離が適用されます。  
 
@@ -186,13 +186,13 @@ Windows Server 2016 以降では、HNV はそのままの状態で NVGRE と VXL
 
 ホスティングサービスプロバイダーは、物理ネットワークトポロジに対応するために、ネットワークコントローラーを介してプロバイダー (PA) 論理ネットワークを事前に作成していることを前提としています。 ネットワークコントローラーは、ホストが接続されている論理サブネットの IP プレフィックスから2つの PA IP アドレスを割り当てます。 ネットワークコントローラーは、IP アドレスを適用するための適切な VLAN タグも示します。  
 
-ネットワークコントローラー (Contoso Corp と Fabrikam Corp) を使用して、ホスティングサービスプロバイダーによって指定されたプロバイダー (PA) 論理ネットワークによって支えられている仮想ネットワークとサブネットを作成します。 Contoso Corp と Fabrikam Corp は、それぞれの SQL Server と Web サーバーを、同じホスティング プロバイダーの共有 IaaS サービスに移動し、偶然にも **SQL** 仮想マシンを Hyper-V ホスト 1 で、 **Web** (IIS7) 仮想マシンを Hyper-V ホスト 2 で運用します。 すべての仮想マシンには、元のイントラネット IP アドレス (各社の CA) が保たれます。  
+ネットワークコントローラー (Contoso Corp と Fabrikam Corp) を使用して、ホスティングサービスプロバイダーによって指定されたプロバイダー (PA) 論理ネットワークによって支えられている仮想ネットワークとサブネットを作成します。 Contoso Corp と Fabrikam Corp は、それぞれの SQL Server と Web サーバーを、同じホスティング プロバイダーの共有 IaaS サービスに移動し、偶然にも **SQL** 仮想マシンを Hyper-V ホスト 1 で、**Web** (IIS7) 仮想マシンを Hyper-V ホスト 2 で運用します。 すべての仮想マシンには、元のイントラネット IP アドレス (各社の CA) が保たれます。  
 
 両方の企業には、次に示すように、ネットワークコントローラーによって次の仮想サブネット ID (VSID) が割り当てられています。  各 Hyper-v ホスト上のホストエージェントは、割り当てられた PA IP アドレスをネットワークコントローラーから受け取り、既定以外のネットワークコンパートメントに2つの PA ホスト vNICs を作成します。 次に示すように、PA IP アドレスが割り当てられている各ホスト vNICs には、ネットワークインターフェイスが割り当てられます。  
 
--   Contoso Corp の仮想マシンの VSID と PAs:**VSID**は5001、 **SQL pa**は192.168.1.10、 **Web pa**は192.168.2.20  
+-   Contoso Corp の仮想マシン VSID と PAs: **vsid**は5001、 **SQL pa**は192.168.1.10、 **Web PA**は192.168.2.20  
 
--   Fabrikam Corp の仮想マシンの VSID と PAs:**VSID**は6001、 **SQL pa**は192.168.1.10、 **Web pa**は192.168.2.20  
+-   Fabrikam Corp の仮想マシン VSID と PAs: **vsid**は6001、 **SQL pa**は192.168.1.10、 **Web pa**は192.168.2.20  
 
 ネットワークコントローラーは、(行いを含む) すべてのネットワークポリシーを SDN ホストエージェントに対して実行します。これにより、永続的なストア (データベーステーブル) にポリシーが保持されます。  
 
@@ -264,7 +264,7 @@ VSwitch と VFP 転送拡張機能のオブジェクト階層は次のとおり�
 
             -   グループ  
 
-            -   Rule  
+            -   ルール  
 
                 -   ルールはスペースを参照できます  
 
@@ -286,18 +286,18 @@ HNV ポリシーは、ホストエージェントによってプログラミン�
 
 ![HNV のアーキテクチャ](../../../media/hyper-v-network-virtualization-technical-details-in-windows-server/VNetF7.png)  
 
-図 9:HNV のアーキテクチャ  
+図 9: HNV アーキテクチャ  
 
-## <a name="summary"></a>まとめ  
+## <a name="summary"></a>要約  
 クラウド ベースのデータセンターは、スケーラビリティの向上やリソース使用効率の改善など多数のメリットを提供します。 これらの潜在的メリットを実現するには、動的環境におけるマルチテナントのスケーラビリティの問題を根本的に解決するテクノロジが必要です。 HNV は、こうした問題を解決し、また物理ネットワーク トポロジに対して仮想ネットワーク トポロジを分離することによりデータセンターの運用効率を向上させるように設計されました。 既存の標準に基づいて構築された HNV は現在のデータセンターで実行され、既存の VXLAN インフラストラクチャで動作します。 HNV をご利用のお客様は、データセンターをプライベートクラウドに統合したり、ハイブリッドクラウドを使用してデータセンターをホスティングサーバープロバイダーの環境にシームレスに拡張したりできます。  
 
-## <a name="BKMK_LINKS"></a>関連項目  
+## <a name="see-also"></a><a name="BKMK_LINKS"></a>関連項目  
 HNVv2 の詳細については、次のリンクを参照してください。  
 
 
-|       コンテンツの種類       |                                                                                                                                              リファレンス                                                                                                                                              |
+|       コンテンツの種類       |                                                                                                                                              参照                                                                                                                                              |
 |--------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **コミュニティリソース**  |                                                                -   [プライベートクラウドアーキテクチャのブログ](https://blogs.technet.com/b/privatecloud)<br />-Ask 質問: [cloudnetfb@microsoft.com](mailto:%20cloudnetfb@microsoft.com)                                                                |
+| **コミュニティ リソース**  |                                                                -   [プライベートクラウドアーキテクチャのブログ](https://blogs.technet.com/b/privatecloud)<br />-Ask 質問: [cloudnetfb@microsoft.com](mailto:%20cloudnetfb@microsoft.com)                                                                |
 |         **RFC**          |                                                                   -   [Nvgre ドラフト RFC](https://www.ietf.org/id/draft-sridharan-virtualization-nvgre-07.txt)<br />-   [VXLAN-RFC 7348](https://www.rfc-editor.org/info/rfc7348)                                                                    |
-| **関連テクノロジ** | -Windows Server 2012 R2 での Hyper-v ネットワーク仮想化の技術的な詳細については、「 [Hyper-v ネットワーク仮想化の技術的な詳細](https://technet.microsoft.com/library/jj134174.aspx)」を参照してください。<br />-   [ネットワークコントローラー](../../../sdn/technologies/network-controller/Network-Controller.md) |
+| **関連テクノロジ** | -Windows Server 2012 R2 での Hyper-v ネットワーク仮想化の技術的な詳細については、「 [Hyper-v ネットワーク仮想化の技術的な詳細](https://technet.microsoft.com/library/jj134174.aspx)」を参照してください。<br />[ネットワークコントローラー](../../../sdn/technologies/network-controller/Network-Controller.md)の -    |
 

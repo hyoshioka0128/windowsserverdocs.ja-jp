@@ -1,9 +1,9 @@
 ---
-title: 移行モード 1 の場合の Windows Server Essentials をインストールします。
-description: Windows Server Essentials を使用する方法について説明します
+title: Migration mode1 に Windows Server Essentials をインストールする
+description: Windows Server Essentials の使用方法について説明します。
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,22 +12,22 @@ ms.assetid: fd7196ac-cfa6-46a5-ba77-6962b47a825e
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 74c40cc0f06d73a922a3d7fb819f7e71b47ac088
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: dbbd9f7303995e1547e48aa9701467b45e4bad34
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66432964"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318995"
 ---
-# <a name="install-windows-server-essentials-in-migration-mode1"></a>移行モード 1 の場合の Windows Server Essentials をインストールします。
+# <a name="install-windows-server-essentials-in-migration-mode1"></a>Migration mode1 に Windows Server Essentials をインストールする
 
->適用先:Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
+>適用対象: windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-Windows Server Essentials を実行しているネットワークに 1 つだけサーバーがあることができ、そのサーバーは、ネットワークのドメイン コント ローラーである必要があります。  
+ネットワーク上には、Windows Server Essentials を実行しているサーバーを1つだけ指定できます。また、そのサーバーはネットワークのドメインコントローラーである必要があります。  
   
- Windows Server Essentials を移行モードでインストールするときに、インストール ウィザードは、次のタスクを実行します。  
+ Windows Server Essentials を移行モードでインストールすると、インストールウィザードによって次のタスクが実行されます。  
   
-1.  インストールし、移行先サーバーで、Windows Server Essentials サーバー ソフトウェアを構成します。  
+1.  移行先サーバーに Windows Server Essentials サーバーソフトウェアをインストールして構成します。  
   
 2.  ドメイン スキーマを最新バージョンに更新します。  
   
@@ -42,15 +42,15 @@ Windows Server Essentials を実行しているネットワークに 1 つだけ
   
 6.  移行先サーバーをサイト ライセンス サーバーとして構成します。  
   
-##  <a name="BKMK_Install"></a> 移行先サーバーでの Windows Server Essentials をインストールします。  
- をインストールして Windows Server Essentials を移行先サーバーを移行モードで構成するには、次の手順を実行します。  
+##  <a name="install-windows-server-essentials-on-the-destination-server"></a><a name="BKMK_Install"></a>移行先サーバーに Windows Server Essentials をインストールする  
+ 移行モードで移行先サーバーに Windows Server Essentials をインストールして構成するには、次の手順を実行します。  
   
-#### <a name="to-install-windows-server-essentials-on-the-destination-server"></a>移行先サーバーで Windows Server Essentials をインストールするには  
+#### <a name="to-install-windows-server-essentials-on-the-destination-server"></a>移行先サーバーに Windows Server Essentials をインストールするには  
   
-1. 移行先サーバーで有効にして、Windows Server Essentials の DVD1 を DVD ドライブに挿入します。 CD または DVD から起動するかどうかを確認するメッセージが表示されたら、任意のキーを押してそうします。  
+1. 移行先サーバーの電源を入れ、Windows Server Essentials DVD1 を DVD ドライブに挿入します。 CD または DVD から起動するかどうかを確認するメッセージが表示されたら、任意のキーを押してそうします。  
   
    > [!NOTE]
-   >  使用することができます、移行先サーバーでは、USB フラッシュ ドライブからブートをサポートする場合、 **Windows 7 USB/DVD Download Tool** Windows Server Essentials の ISO ファイルから起動可能な USB フラッシュ ドライブを作成します。 USB フラッシュ ドライブの方が DVD-ROM ドライブよりデータ読み取り速度がはるかに速いので、フラッシュ ドライブを使用するとインストール プロセスの時間を大幅に短縮できます。 起動可能な USB フラッシュ ドライブを作成した後、応答ファイルをフラッシュ ドライブに追加できます。 できます[Windows 7 USB/DVD Download Tool をダウンロード](https://go.microsoft.com/fwlink/p/?LinkId=248282)Microsoft Store の web サイトは無料です。  
+   >  移行先サーバーが USB フラッシュドライブからの起動をサポートしている場合は、 **windows 7 usb/DVD ダウンロードツール**を使用して、Windows SERVER Essentials ISO ファイルから起動可能な usb フラッシュドライブを作成できます。 USB フラッシュ ドライブの方が DVD-ROM ドライブよりデータ読み取り速度がはるかに速いので、フラッシュ ドライブを使用するとインストール プロセスの時間を大幅に短縮できます。 起動可能な USB フラッシュ ドライブを作成した後、応答ファイルをフラッシュ ドライブに追加できます。 [Windows 7 USB/DVD ダウンロードツールは、](https://go.microsoft.com/fwlink/p/?LinkId=248282) Microsoft Store web サイトで無料でダウンロードできます。  
   
    > [!NOTE]
    >  移行先サーバーが DVD から起動しない場合は、コンピューターを再起動し、BIOS Setup の起動シーケンスで **DVD-ROM** が一覧の最初に表示されていることを確認します。 BIOS Setup の起動シーケンスを変更する方法の詳細については、ハードウェア メーカーのドキュメントを参照してください。  
@@ -68,20 +68,20 @@ Windows Server Essentials を実行しているネットワークに 1 つだけ
    インストールが終了すると、移行応答ファイルで指定した管理者ユーザー アカウントとパスワードで自動的にログオンします。  
   
 > [!NOTE]
->  デスクトップのロックを解除して、Windows Server Essentials のインストール中に、ビルトイン administrator アカウントを使用して、およびパスワードを空白のままにします。  
+>  Windows Server Essentials のインストール中にデスクトップのロックを解除するには、ビルトイン administrator アカウントを使用して、パスワードを空白のままにします。  
   
-##  <a name="BKMK_VerifyTheHealthOfDC"></a> ドメイン コント ローラーの正常性を確認します。  
- 移行を続行する前に、ドメイン コント ローラーと Windows Server Essentials ネットワークが正常であることを確認してください。  
+##  <a name="verify-the-health-of-the-domain-controller"></a><a name="BKMK_VerifyTheHealthOfDC"></a>ドメインコントローラーの正常性を確認する  
+ 移行を続行する前に、ドメインコントローラーと Windows Server Essentials ネットワークが正常であることを確認する必要があります。  
   
  次の表は、移行先サーバー、ネットワーク、およびドメインの問題を診断するために使用できるツールの一覧を示しています。  
   
 |ツール|説明|  
 |----------|-----------------|  
-|Netdiag|ネットワークと接続の問題を分離するために役立ちます。 詳細とダウンロードについては、「 [Netdiag](https://go.microsoft.com/fwlink/?LinkId=217388)」を参照してください。|  
+|Netdiag (英語の可能性あり)|ネットワークと接続の問題を分離するために役立ちます。 詳細とダウンロードについては、「 [Netdiag](https://go.microsoft.com/fwlink/?LinkId=217388)」を参照してください。|  
 |Dcdiag.exe|フォレストまたはエンタープライズ内のドメイン コントローラーの状態を分析し、問題を報告してトラブルシューティングを支援します。 詳細とダウンロードについては、「 [Dcdiag](https://go.microsoft.com/fwlink/?LinkId=217389)」を参照してください。|  
 |Repadmin.exe|ドメイン コントローラー間のレプリケーションの問題を診断するために役立ちます。 このツールを実行するには、コマンド ライン パラメーターを指定する必要があります。 詳細とダウンロードについては、「 [Repadmin](https://go.microsoft.com/fwlink/?LinkId=217387)」を参照してください。|  
   
  移行を続行する前に、これらのツールによって報告された問題をすべて修正する必要があります。  
   
 > [!NOTE]
->  電子メールを別のオンプレミス Exchange サーバーに移行する場合は「 [、オンプレミスの Exchange Server を Windows Server Essentials と統合](../manage/Integrate-an-On-Premises-Exchange-Server-with-Windows-Server-Essentials.md)オンプレミス Exchange サーバーをセットアップする方法については。
+>  電子メールを別のオンプレミスの Exchange server に移行する場合は、オンプレミスの exchange server[と Windows Server Essentials の統合](../manage/Integrate-an-On-Premises-Exchange-Server-with-Windows-Server-Essentials.md)に関する情報を参照してください。

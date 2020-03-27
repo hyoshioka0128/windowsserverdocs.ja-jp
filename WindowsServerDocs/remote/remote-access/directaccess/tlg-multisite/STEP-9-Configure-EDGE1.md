@@ -10,18 +10,18 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f6e8d85b-de65-43b3-bf3e-ec84471a1fcc
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: ce86a75ac5b8d53874d2fc5c6743979506591680
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 74c4eae329698d33b160ac7180bbabd6d1d8fbad
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388231"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314511"
 ---
 # <a name="step-9-configure-edge1"></a>手順 9 EDGE1 を構成する
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 EDGE1 サーバーでは、次の手順が実行されます。  
   
@@ -29,7 +29,7 @@ EDGE1 サーバーでは、次の手順が実行されます。
   
 2. サブネット間のルーティングを構成します。 EDGE1 でルーティングを構成して、企業ネットワークと2ネットワークのサブネット間の通信を有効にします。  
   
-## <a name="IPv6"></a>EDGE1 で DNS サーバーを構成する  
+## <a name="configure-the-dns-servers-on-edge1"></a><a name="IPv6"></a>EDGE1 で DNS サーバーを構成する  
   
 1.  サーバーマネージャーコンソールで **[ローカルサーバー]** をクリックし、 **[プロパティ]** 領域の [企業**ネットワーク] の横にある**リンクをクリックします。  
   
@@ -47,9 +47,9 @@ EDGE1 サーバーでは、次の手順が実行されます。
   
 8.  **[ネットワーク接続]** ウィンドウを閉じます。  
   
-## <a name="ConfigRouting"></a>サブネット間のルーティングを構成する  
+## <a name="configure-routing-between-subnets"></a><a name="ConfigRouting"></a>サブネット間のルーティングを構成する  
   
-1.  **スタート**画面で、「**cmd.exe**」と入力し、 **[cmd]** を右クリックして、 **[詳細設定]** をクリックし、 **[管理者として実行]** をクリックします。 **[ユーザー アカウント制御]** ダイアログ ボックスが表示されたら、表示された操作が正しいことを確認し、 **[はい]** をクリックします。  
+1.  **スタート**画面で、「**cmd.exe**」と入力し、 **[cmd]** を右クリックして、 **[詳細設定]** をクリックし、 **[管理者として実行]** をクリックします。 **[ユーザー アカウント制御]** ダイアログ ボックスが表示された場合、表示された操作が目的の操作であることを確認して、 **[はい]** をクリックします。  
   
 2.  コマンドプロンプトウィンドウで、次のコマンドを入力します。 各コマンドを入力したら、enter キーを押します。  
   

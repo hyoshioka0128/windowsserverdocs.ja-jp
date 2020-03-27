@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: 31f3fa4e-cd25-4bf3-89e9-a01a6cec7893
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 13f535b9a91f26b30600b637b46817cfa33ccd7b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: ad13e41e756f0185a748fe9e17df64c71a8754bc
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355650"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317071"
 ---
 # <a name="network-controller"></a>ネットワーク コントローラー
 
@@ -32,14 +32,14 @@ ms.locfileid: "71355650"
 > - [ネットワークコントローラーの展開後の手順](post-deploy-steps-nc.md)
 > - [ネットワークコントローラーのコマンドレット](https://technet.microsoft.com/library/mt576401.aspx) 
 
-## <a name="bkmk_overview"></a>ネットワークコントローラーの概要
+## <a name="network-controller-overview"></a><a name="bkmk_overview"></a>ネットワークコントローラーの概要
 
 ネットワークコントローラーは、可用性が高くスケーラブルなサーバーの役割であり、1つのアプリケーションプログラミングインターフェイス \(API\) を提供して、ネットワークコントローラーがネットワークと通信できるようにします。また、ネットワークコントローラーとの通信を可能にする2つ目の API も用意されています。
 
 ドメインと非ドメイン環境の両方のネットワーク コント ローラーを展開することができます。 ドメイン環境でネットワーク コント ローラーのユーザーとネットワーク デバイスを使用して認証 Kerberos です。非ドメイン環境では、認証に証明書を展開する必要があります。
 
 >[!IMPORTANT]
->ネットワークコントローラーのサーバーの役割を物理ホストに展開しないでください。 ネットワーク コント ローラーを展開するには、ホストにインストールされている HYPER-V 仮想マシン\(VM\)でネットワーク コントローラー サーバーの役割をインストールする必要があります。 次の 3 つの異なる HYPER\-V ホスト上の VM にでネットワーク コントローラーをインストールした後、Windows PowerShell コマンド \-New-NetworkControllerServer\( を使用してホストをネットワーク コント ローラーに追加して、ソフトウェア定義ネットワーク\)SDN**のHYPER**Vホストを有効にする必要があります。 これにより、SDN ソフトウェア ロード バランサーが機能するようになります。 詳細については、[New-NetworkControllerServer](https://technet.microsoft.com/itpro/powershell/windows/network-controller/new-networkcontrollerserver) を参照してください。
+>ネットワークコントローラーのサーバーの役割を物理ホストに展開しないでください。 ネットワークコントローラーを展開するには、hyper-v ホストにインストールされている VM\) \(Hyper-v 仮想マシンにネットワークコントローラーサーバーの役割をインストールする必要があります。 3つの異なる\-Hyper-v ホスト上の Vm にネットワークコントローラーをインストールした後、Windows PowerShell コマンド**NetworkControllerServer**を使用してネットワークコントローラーにホストを追加することで、ソフトウェアで定義されたネットワーク \(SDN\) 用のハイパー\-V ホストを有効にする必要があります。 これにより、SDN ソフトウェア ロード バランサーが機能するようになります。 詳細については、「 [NetworkControllerServer](https://technet.microsoft.com/itpro/powershell/windows/network-controller/new-networkcontrollerserver)」を参照してください。
 
 ネットワーク コントローラーは、Southbound API を使用してネットワーク デバイス、サービス、コンポーネントと通信します。 ネットワーク デバイスの検出、サービス構成の検出、ネットワークについて必要なすべての情報の収集に Southbound API を利用できます。 さらに、Southbound API を使用して、構成の変更などの情報をネットワーク インフラストラクチャに送信することもできます。
 
@@ -70,7 +70,7 @@ Windows PowerShell、REST API、または管理アプリケーションを使用
 
 大規模なデータセンターで高可用性を実現するために、3つ以上の Hyper-v ホストにインストールされた3つの Vm を使用してクラスターを展開できます。 詳細については、「[ネットワークコントローラーの高可用性](network-controller-high-availability.md)」を参照してください。
 
-## <a name="bkmk_features"></a>ネットワークコントローラーの機能
+## <a name="network-controller-features"></a><a name="bkmk_features"></a>ネットワークコントローラーの機能
 
 次のネットワーク コントローラーの機能を使用すると、仮想および物理ネットワーク デバイスとサービスの構成と管理を行うことができます。  
   
@@ -85,25 +85,25 @@ Windows PowerShell、REST API、または管理アプリケーションを使用
 >[!IMPORTANT]
 >ネットワーク コント ローラーのバックアップと復元では、Windows Server 2016 で現在使用できません。
   
-### <a name="bkmk_firewall"></a>ファイアウォールの管理
+### <a name="firewall-management"></a><a name="bkmk_firewall"></a>ファイアウォールの管理
 
 このネットワーク コントローラーの機能を使用すると、データセンターの East/West および North/South 両方のネットワーク トラフィックについて、ワークロード VM のファイアウォール アクセス制御の許可または拒否の規則を構成および管理できます。 ファイアウォール規則は、ワークロード VM の vSwitch ポートに組み込まれるので、データセンター内のワークロード全体に配布されます。 Northbound API を使用すると、ワークロード VM の送受信トラフィックのファイアウォール規則を定義できます。 また、規則で許可または拒否されたトラフィックをログに記録するように、各ファイアウォール規則を構成することもできます。  
 
 詳細については、次を参照してください。 [データ センターのファイアウォールの概要](../../../sdn/technologies/network-function-virtualization/Datacenter-Firewall-Overview.md)します。
 
-### <a name="bkmk_slb"></a>ソフトウェアの Load Balancer 管理
+### <a name="software-load-balancer-management"></a><a name="bkmk_slb"></a>ソフトウェアの Load Balancer 管理
 
 このネットワーク コントローラーの機能を使用すると、複数のサーバーで同じワークロードをホストし、高可用性とスケーラビリティを実現することができます。  
   
 詳細については、次を参照してください。 [ソフトウェアによる負荷分散と #40 です。SLB & #41 です。SDN の](../../../sdn/technologies/network-function-virtualization/Software-Load-Balancing--SLB--for-SDN.md)です。  
   
-### <a name="bkmk_virtual"></a>Virtual Network 管理
+### <a name="virtual-network-management"></a><a name="bkmk_virtual"></a>Virtual Network 管理
 
 このネットワーク コントローラーの機能を使用すると、Hyper-V 仮想スイッチ、個々の VM 上の仮想ネットワーク アダプターなど、Hyper-V のネットワーク仮想化の展開と構成を行うことができます。また、仮想ネットワーク ポリシーの格納と配布を行うこともできます。
 
 ネットワーク コントローラーは、Network Virtualization Generic Routing Encapsulation (NVGRE) と Virtual Extensible Local Area Network (VXLAN) の両方をサポートしています。
 
-### <a name="bkmk_gateway"></a>RAS ゲートウェイの管理
+### <a name="ras-gateway-management"></a><a name="bkmk_gateway"></a>RAS ゲートウェイの管理
 
 このネットワークコントローラーの機能を使用すると、ゲートウェイサービスをテナントに提供する、RAS ゲートウェイプールのメンバーである仮想マシン (Vm) を展開、構成、および管理することができます。 ネットワーク コント ローラーでは、次のゲートウェイの機能が RAS ゲートウェイを実行する Vm を自動的に展開することができます。
 

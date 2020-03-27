@@ -10,19 +10,19 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: networking-sdn
 ms.assetid: 3c361575-1050-46f4-ac94-fa42102f83c1
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/30/2018
-ms.openlocfilehash: 158183bab74e6e45c36c579f3259fc2095a939b5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: db634af114610cce0bdbcacd58986ceb5f00dd99
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406044"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317586"
 ---
 # <a name="use-network-virtual-appliances-on-a-virtual-network"></a>仮想ネットワーク上でネットワーク仮想アプライアンスを使用する
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックでは、テナントの仮想ネットワークにネットワーク仮想アプライアンスを展開する方法について説明します。 ネットワーク仮想アプライアンスは、ユーザー定義のルーティング機能とポートミラーリング機能を実行するネットワークに追加できます。
 
@@ -44,7 +44,7 @@ ms.locfileid: "71406044"
 ネットワーク仮想アプライアンスをデプロイしたら、アプライアンスを使用して、定義済みのルーティング、ミラーリングの移植、またはその両方を行うことができます。 
 
 
-## <a name="example-user-defined-routing"></a>例:ユーザー定義ルーティング
+## <a name="example-user-defined-routing"></a>例: ユーザー定義ルーティング
 
 ほとんどの環境では、仮想ネットワークの分散ルーターによって既に定義されているシステムルートのみが必要です。 ただし、次のように、ルーティングテーブルを作成し、特定のケースで1つ以上のルートを追加することが必要になる場合があります。
 
@@ -83,7 +83,7 @@ ms.locfileid: "71406044"
     $routetable = New-NetworkControllerRouteTable -ConnectionUri $uri -ResourceId "Route1" -Properties $routetableproperties
    ```
 
-4. 仮想サブネットにルーティングテーブルを適用します。<p>ルートテーブルを仮想サブネットに適用すると、Tenant1_Vnet1 ネットワークの最初の仮想サブネットでルートテーブルが使用されます。 必要に応じて、仮想ネットワーク内のサブネットの数にルートテーブルを割り当てることができます。
+4. 仮想サブネットにルーティングテーブルを適用します。<p>ルートテーブルを仮想サブネットに適用すると、Tenant1_Vnet1 ネットワークの最初の仮想サブネットがルートテーブルを使用します。 必要に応じて、仮想ネットワーク内のサブネットの数にルートテーブルを割り当てることができます。
 
    ```PowerShell
     $vnet = Get-NetworkControllerVirtualNetwork -ConnectionUri $uri -ResourceId "Tenant1_VNet1"
@@ -93,11 +93,11 @@ ms.locfileid: "71406044"
 
 仮想ネットワークにルーティングテーブルを適用するとすぐに、トラフィックは仮想アプライアンスに転送されます。 環境に適した方法で、トラフィックを転送するように仮想アプライアンス内のルーティングテーブルを構成する必要があります。
 
-## <a name="example-port-mirroring"></a>例:ポートミラーリング
+## <a name="example-port-mirroring"></a>例: ポートミラーリング
 
-この例では、MyVM_Ethernet1 のトラフィックを Appliance_Ethernet1 にミラーリングするように構成します。  2つの Vm をデプロイしているとします。1つはアプライアンス、もう1つはミラーリングで監視する VM です。 
+この例では、Appliance_Ethernet1 をミラー化する MyVM_Ethernet1 のトラフィックを構成します。  2つの Vm をデプロイしているとします。1つはアプライアンス、もう1つはミラーリングで監視する VM です。 
 
-アプライアンスは、管理のための2番目のネットワークインターフェイスを備えている必要があります。 Appliciance_Ethernet1 のターゲットとしてミラーリングを有効にした後は、そこで構成された IP インターフェイス宛てのトラフィックを受信しなくなります。
+アプライアンスは、管理のための2番目のネットワークインターフェイスを備えている必要があります。 Appliciance_Ethernet1 でターゲットとしてミラーリングを有効にした後は、そこで構成された IP インターフェイス宛てのトラフィックを受信しなくなります。
 
 
 **作業**

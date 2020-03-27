@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: article
 ms.assetid: 55686a9c-60dd-47f4-9f1f-fe72c2873a44
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: dc6ade92eb5fe04271033973911ccb98e871d236
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 2ac8dc289cf321266d39016f841c243899fe6cf4
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406380"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80319060"
 ---
 # <a name="branchcache-hosted-cache-mode-deployment-overview"></a>BranchCache ホスト型キャッシュ モードの展開の概要
 
@@ -23,7 +23,7 @@ ms.locfileid: "71406380"
 
 この概要には、必要な BranchCache インフラストラクチャに加えて、展開の簡単なステップバイステップの概要が含まれています。
 
-## <a name="bkmk_components"></a>ホスト型キャッシュサーバーの配置インフラストラクチャ
+## <a name="hosted-cache-server-deployment-infrastructure"></a><a name="bkmk_components"></a>ホスト型キャッシュサーバーの配置インフラストラクチャ
 
 この展開では、ホスト型キャッシュサーバーは Active Directory Domain Services \(AD DS\)のサービス接続ポイントを使用して展開されます。また、Windows Server 2016、Windows Server 2012 R2、および Windows Server 2012 で BranchCache を使用して、Web およびファイルベースのコンテンツサーバー上の共有コンテンツを事前にハッシュし、ホスト型キャッシュサーバーに事前に読み込むことができます。
 
@@ -56,7 +56,7 @@ DC1 はドメインコントローラーであり、既定のドメインポリ�
 
 新しい BranchCache グループポリシー設定を適用し、クライアントがホスト型キャッシュサーバーを検索して使用できるようにするには、クライアントコンピューターのグループポリシーを更新する必要があります。
 
-## <a name="bkmk_overview"></a>ホスト型キャッシュサーバーの展開プロセスの概要
+## <a name="hosted-cache-server-deployment-process-overview"></a><a name="bkmk_overview"></a>ホスト型キャッシュサーバーの展開プロセスの概要
 
 >[!NOTE]
 >これらの手順の実行方法の詳細については、「 [BranchCache ホスト型キャッシュモードの展開](4-Bc-Hcm-Deployment.md)」を参照してください。

@@ -5,15 +5,15 @@ ms.prod: windows-server
 ms.technology: networking-ras
 ms.topic: article
 ms.date: 11/05/2018
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.localizationpriority: medium
-ms.openlocfilehash: 31d0d5c12760fc627ce93972f4a70e85f61dd178
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: a5d65dd9f8fb6328bd00be8a46af37ee69ccd2bf
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322554"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313393"
 ---
 # <a name="always-on-vpn-technology-overview"></a>Always On VPN テクノロジの概要
 

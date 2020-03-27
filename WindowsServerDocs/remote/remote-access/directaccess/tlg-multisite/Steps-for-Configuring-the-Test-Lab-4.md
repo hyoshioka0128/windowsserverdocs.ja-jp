@@ -10,14 +10,14 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: dc7205b4-a822-4038-ab67-ec0a870737f2
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: dd8b8864dff98e51bf55aad9307523df4a0c30bf
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 8a0d77208425774c8ea2b4fc663fc43e2a02ee5b
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404696"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314532"
 ---
 # <a name="steps-for-configuring-the-test-lab"></a>テスト ラボの構成手順
 

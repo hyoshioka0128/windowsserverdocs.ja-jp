@@ -10,19 +10,19 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 84ac2458-3fcf-4c4f-acfe-6105443dd83f
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/26/2018
-ms.openlocfilehash: 854adf0e7bb2a8715e3d447c04e2f09c3470a781
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1faf0112953146959ce2ec587c083c9ae9fed9c5
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355825"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317614"
 ---
 # <a name="understand-the-usage-of-virtual-networks-and-vlans"></a>仮想ネットワークと Vlan の使用状況を理解する
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックでは、Hyper-v ネットワーク仮想化の仮想ネットワークと、それらが仮想ローカルエリアネットワーク (Vlan) とどのように異なるかについて説明します。 Hyper-v ネットワーク仮想化では、仮想ネットワークとも呼ばれるオーバーレイ仮想ネットワークを作成します。
 

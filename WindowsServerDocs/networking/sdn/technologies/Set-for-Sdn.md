@@ -10,18 +10,18 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: aa5b5d11-3921-44f9-8e14-e378c75fca76
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 32f35eccfe55b01a0f3326df2bda9db26a23abe2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: bfa5d570b68943ef5cdaefc82a707ca69dea975e
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355641"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317233"
 ---
 # <a name="switch-embedded-teaming-for-sdn"></a>SDN のスイッチ埋め込みチーミング
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 セットは、Hyper-v ホストと、ソフトウェアによるネットワーク制御 (SDN) スタックを Windows Server 2016 に含まれる環境で使用できる代替 NIC チーミング ソリューションです。 セットは、HYPER-V 仮想スイッチにいくつかの NIC チーミング機能を統合します。 
 

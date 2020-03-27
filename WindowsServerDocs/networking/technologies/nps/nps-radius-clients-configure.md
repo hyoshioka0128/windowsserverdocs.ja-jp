@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: cde37849-ce79-4c26-aa14-cd0ef31cae18
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 6870029e02ae91b1ef5bf4d4302ac2bed2e27d84
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: b7bc75ea81133c91ad7e9883f03c3e32f085b5eb
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405293"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80315699"
 ---
 # <a name="configure-radius-clients"></a>RADIUS クライアントを構成する
 
@@ -52,7 +52,7 @@ NPS で使用するネットワークアクセスサーバーを構成するに�
 
 ネットワークアクセスサーバーを NPS の RADIUS クライアントとして追加するには、次の手順に従います。 NPS コンソールを使用して、RADIUS クライアントとして NAS を構成するには、次の手順を実行します。
 
-この手順を実行する、 **管理者** グループです。
+この手順を完了するには、**Administrators** グループのメンバーである必要があります。
 
 ### <a name="to-add-a-network-access-server-as-a-radius-client-in-nps"></a>NPS でネットワークアクセスサーバーを RADIUS クライアントとして追加するには
 
@@ -65,7 +65,7 @@ NPS で使用するネットワークアクセスサーバーを構成するに�
     - **[手動]** が選択されていることを確認し、 **[共有シークレット]** に、NAS にも入力する強力なパスワードを入力します。 **共有シークレットの確認**入力に共有シークレットを再入力します。
     - **[生成]** を選択し、 **[生成]** をクリックして共有シークレットを自動的に生成します。 構成用に生成された共有シークレットを NAS に保存して、NPS と通信できるようにします。
 7. **新しい RADIUS クライアント**で、EAP と PEAP 以外の認証**方法を使用**していて、使用している NAS がメッセージ認証属性の使用をサポートしている場合は、[**アクセス要求メッセージにメッセージ認証属性が含まれている必要があり**ます] を選択します。
-8. **[OK]** をクリックします。 NPS に構成されている RADIUS クライアントの一覧に、NAS が表示されます。
+8. **[OK]** をクリックすると、 NPS に構成されている RADIUS クライアントの一覧に、NAS が表示されます。
 
 ## <a name="configure-radius-clients-by-ip-address-range-in-windows-server-2016-datacenter"></a>Windows Server 2016 Datacenter で IP アドレスの範囲を指定して RADIUS クライアントを構成する
 
@@ -77,7 +77,7 @@ NPS を Windows Server 2016 Standard で実行している場合は、IP アド�
 
 範囲内のすべての RADIUS クライアントは、同じ構成と共有シークレットを使用する必要があります。
 
-この手順を実行する、 **管理者** グループです。
+この手順を完了するには、**Administrators** グループのメンバーである必要があります。
 
 ### <a name="to-set-up-radius-clients-by-ip-address-range"></a>IP アドレスの範囲を指定して RADIUS クライアントを設定するには
 
@@ -90,7 +90,7 @@ NPS を Windows Server 2016 Standard で実行している場合は、IP アド�
     - **[手動]** が選択されていることを確認し、 **[共有シークレット]** に、NAS にも入力する強力なパスワードを入力します。 **共有シークレットの確認**入力に共有シークレットを再入力します。
     - **[生成]** を選択し、 **[生成]** をクリックして共有シークレットを自動的に生成します。 構成用に生成された共有シークレットを NAS に保存して、NPS と通信できるようにします。
 7. **新しい RADIUS クライアント**で、EAP と PEAP 以外の認証**方法を使用**していて、すべての nas でメッセージ認証属性の使用がサポートされている場合は、[**アクセス要求メッセージにメッセージ認証属性を含める必要があり**ます] を選択します。
-8. **[OK]** をクリックします。 Nas は、NPS に構成されている RADIUS クライアントの一覧に表示されます。
+8. **[OK]** をクリックすると、 Nas は、NPS に構成されている RADIUS クライアントの一覧に表示されます。
 
 詳細については、「 [RADIUS クライアント](nps-radius-clients.md)」を参照してください。
 

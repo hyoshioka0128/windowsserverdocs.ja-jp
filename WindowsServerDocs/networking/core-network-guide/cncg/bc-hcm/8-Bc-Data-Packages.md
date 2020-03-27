@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: article
 ms.assetid: 31e8428f-a482-4734-be1b-213912e34825
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 104e3cfd0525c43857bb37d781f6b2475978238e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: a02741b163aafe12c52bf0afb4c235aa9436347a
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406390"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318444"
 ---
 # <a name="create-content-server-data-packages-for-web-and-file-content-optional"></a>Web およびファイル コンテンツのコンテンツ サーバー データ パッケージを作成する (省略可能)
 

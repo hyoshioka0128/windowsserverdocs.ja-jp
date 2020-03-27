@@ -10,14 +10,14 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 458a3bcf-50b6-47b2-b53c-1b8204c5189e
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 0c900a4665c5cf535f7b98b0c66de1db848a6dc6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 3886e8e5203a5374ee0686340063a38aacb0e931
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388762"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314751"
 ---
 # <a name="plan-to-enable-directaccess"></a>DirectAccess の有効化を計画する
 

@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: 4b66f517-b17d-408c-828f-a3793086bc1f
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: f07520dcdefa04cb43760c5e5c66e28c0d1ce878
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: ddc5ebd5f2e00251bcd1cdd915702902dcdb14ae
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322114"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318091"
 ---
 # <a name="wireless-access-deployment"></a>ワイヤレス アクセスの展開
 
@@ -31,7 +31,7 @@ ms.locfileid: "79322114"
 
 - [新しいワイヤレスコンピューターをドメインに参加させる](#bkmk_domain)
 
-## <a name="bkmk_aps"></a>ワイヤレス Ap の展開と構成
+## <a name="deploy-and-configure-wireless-aps"></a><a name="bkmk_aps"></a>ワイヤレス Ap の展開と構成
 
 ワイヤレス Ap をデプロイして構成するには、次の手順に従います。
 
@@ -42,7 +42,7 @@ ms.locfileid: "79322114"
 >[!NOTE]
 >このガイドの手順は含まれていません場合に、 **ユーザー アカウント制御** 続行の許可を要求するダイアログ ボックスが開きます。 このガイドを実行しているときにこのダイアログ ボックスが開いた場合、または操作の結果としてこのダイアログ ボックスが開いた場合、 **[続行]** をクリックします。
 
-### <a name="bkmk_channel"></a>ワイヤレス AP チャネルの周波数を指定する
+### <a name="specify-wireless-ap-channel-frequencies"></a><a name="bkmk_channel"></a>ワイヤレス AP チャネルの周波数を指定する
 
 1つの地理的サイトに複数のワイヤレス Ap を展開する場合は、ワイヤレス ap 間の干渉を減らすために、一意のチャネル周波数を使用するために、重複する信号を持つワイヤレス Ap を構成する必要があります。
 
@@ -52,7 +52,7 @@ ms.locfileid: "79322114"
 
 - 組織内の隣接するフロアで、重複しているワイヤレス信号を特定します。 組織内および組織内で重複するカバレッジ領域を特定したら、ワイヤレス Ap のチャネル周波数を割り当てて、カバレッジが重複する2つのワイヤレス Ap に異なるチャネル周波数が割り当てられるようにします。
 
-### <a name="bkmk_wirelessaps"></a>ワイヤレス Ap の構成
+### <a name="configure-wireless-aps"></a><a name="bkmk_wirelessaps"></a>ワイヤレス Ap の構成
 
 ワイヤレス ap の製造元から提供されている製品ドキュメントと共に次の情報を使用して、ワイヤレス Ap を構成します。
 
@@ -95,7 +95,7 @@ ms.locfileid: "79322114"
 
 - [ワイヤレスセキュリティグループにユーザーを追加する](#bkmk_addusers)
 
-### <a name="bkmk_groups"></a>ワイヤレスユーザーセキュリティグループを作成する
+### <a name="create-a-wireless-users-security-group"></a><a name="bkmk_groups"></a>ワイヤレスユーザーセキュリティグループを作成する
 
 この手順を使用して、[Active Directory ユーザーとコンピューター] Microsoft 管理コンソール \(MMC\) スナップ\-でワイヤレスセキュリティグループを作成できます。  
 
@@ -123,7 +123,7 @@ ms.locfileid: "79322114"
 
 ワイヤレスユーザーに複数のセキュリティグループが必要な場合は、これらの手順を繰り返して、追加のワイヤレスユーザーグループを作成します。 後で個々のネットワークポリシーを NPS に作成し、各グループに異なる条件と制約を適用して、異なるアクセス許可と接続規則を与えることができます。
 
-### <a name="bkmk_addusers"></a>Wireless Users セキュリティグループにユーザーを追加する
+### <a name="add-users-to-the-wireless-users-security-group"></a><a name="bkmk_addusers"></a>Wireless Users セキュリティグループにユーザーを追加する
 
 この手順を使用して、ユーザー、コンピューター、またはグループをワイヤレスセキュリティグループに追加するには、Active Directory ユーザーとコンピューター Microsoft 管理コンソール \(MMC\) スナップ\- を使用します。
 
@@ -155,7 +155,7 @@ ms.locfileid: "79322114"
 
 4. グループメンバーシップを他のコンピューターに割り当てるには、手順 1\-3 を繰り返します。
 
-## <a name="bkmk_policies"></a>ワイヤレスネットワーク \(IEEE 802.11\) ポリシーの構成
+## <a name="configure-wireless-network-ieee-80211-policies"></a><a name="bkmk_policies"></a>ワイヤレスネットワーク \(IEEE 802.11\) ポリシーの構成
 
 ワイヤレスネットワーク \(IEEE 802.11\) ポリシーグループポリシー拡張機能を構成するには、次の手順に従います。
 
@@ -165,7 +165,7 @@ ms.locfileid: "79322114"
 
 - [新しいワイヤレスネットワークポリシーを構成する](#bkmk_policyconfig)
 
-### <a name="bkmk_opengpme"></a>グループポリシーオブジェクトを開く、または追加して開く
+### <a name="open-or-add-and-open-a-group-policy-object"></a><a name="bkmk_opengpme"></a>グループポリシーオブジェクトを開く、または追加して開く
 
 既定では、Active Directory Domain Services \(AD DS\) サーバーの役割がインストールされ、サーバーがドメインコントローラーとして構成されている場合、Windows Server 2016 を実行しているコンピューターにグループポリシー管理機能がインストールされます。 次の手順では、ドメインコントローラーでグループポリシー管理コンソール \(GPMC\) を開く方法について説明します。 この手順では、既存のドメイン\-レベルグループポリシーオブジェクト \(GPO\) を編集用に開く方法、または新しいドメイン GPO を作成して編集用に開く方法について説明します。
 
@@ -191,7 +191,7 @@ ms.locfileid: "79322114"
 
 次のセクションでは、グループポリシー管理エディターを使用してワイヤレスポリシーを作成します。
 
-### <a name="bkmk_activate"></a>IEEE 802.11\) ポリシー \(既定のワイヤレスネットワークをアクティブ化する
+### <a name="activate-default-wireless-network-ieee-80211-policies"></a><a name="bkmk_activate"></a>IEEE 802.11\) ポリシー \(既定のワイヤレスネットワークをアクティブ化する
 
 この手順では、グループポリシー管理エディター \(GPME\)を使用して、IEEE 802.11\) ポリシー \(既定のワイヤレスネットワークをアクティブ化する方法について説明します。
 
@@ -220,7 +220,7 @@ ms.locfileid: "79322114"
 
 次のセクションでは、ポリシー構成、ポリシー処理の優先順位、およびネットワークのアクセス許可を実行できます。
 
-### <a name="bkmk_policyconfig"></a>新しいワイヤレスネットワークポリシーを構成する
+### <a name="configure-the-new-wireless-network-policy"></a><a name="bkmk_policyconfig"></a>新しいワイヤレスネットワークポリシーを構成する
 
 このセクションの手順を使用して、ワイヤレスネットワーク \(IEEE 802.11\) ポリシーを構成できます。 このポリシーを使用すると、セキュリティと認証の設定の構成、ワイヤレスプロファイルの管理、および優先ネットワークとして構成されていないワイヤレスネットワークのアクセス許可の指定を行うことができます。
 
@@ -230,7 +230,7 @@ ms.locfileid: "79322114"
 
 - [ネットワークのアクセス許可を定義する](#bkmk_permissions)  
 
-#### <a name="bkmk_configureprofile"></a>PEAP\-MS\-CHAP v2 のワイヤレス接続プロファイルを構成する
+#### <a name="configure-a-wireless-connection-profile-for-peap-ms-chap-v2"></a><a name="bkmk_configureprofile"></a>PEAP\-MS\-CHAP v2 のワイヤレス接続プロファイルを構成する
 
 この手順では、PEAP\-MS\-CHAP v2 ワイヤレスプロファイルを構成するために必要な手順について説明します。  
 
@@ -309,7 +309,7 @@ ms.locfileid: "79322114"
 
 次のセクションでは、最適なセキュリティを実現するためにポリシープロファイルを並べ替えることができます。
 
-#### <a name="bkmk_preferenceorder"></a>ワイヤレス接続プロファイルの優先順位を設定する
+#### <a name="set-the-preference-order-for-wireless-connection-profiles"></a><a name="bkmk_preferenceorder"></a>ワイヤレス接続プロファイルの優先順位を設定する
 ワイヤレスネットワークポリシーで複数のワイヤレスプロファイルを作成しており、プロファイルに最適な効果とセキュリティを設定する場合は、この手順を使用できます。
 
 ワイヤレスクライアントがサポートできる最高レベルのセキュリティで接続できるようにするには、最も制限の厳しいポリシーを一覧の一番上に配置します。
@@ -332,7 +332,7 @@ ms.locfileid: "79322114"
 
 次のセクションでは、ワイヤレスポリシーのネットワークアクセス許可を定義します。
 
-#### <a name="bkmk_permissions"></a>ネットワークのアクセス許可を定義する
+#### <a name="define-network-permissions"></a><a name="bkmk_permissions"></a>ネットワークのアクセス許可を定義する
 **[ネットワークのアクセス許可]** タブで、ワイヤレスネットワーク \(IEEE 802.11\) ポリシーが適用されるドメインメンバーの設定を構成できます。
 
 **ワイヤレスネットワークポリシーのプロパティ**ページの **[全般**] タブで構成されていないワイヤレスネットワークに対してのみ、次の設定を適用できます。
@@ -382,7 +382,7 @@ ms.locfileid: "79322114"
 
     -   ユーザーがグループポリシープロファイルを使用して許可されたネットワークにのみ接続できるように指定するには、[**許可されているネットワークに対してのみグループポリシープロファイルを使用**する] を選択します。
 
-## <a name="bkmk_nps"></a>NPSs を構成する
+## <a name="configure-your-npss"></a><a name="bkmk_nps"></a>NPSs を構成する
 ワイヤレスアクセスに対して 802.1 X 認証を実行するように NPSs を構成するには、次の手順に従います。
 
 - [Active Directory Domain Services での NPS の登録](#bkmk_npsreg)
@@ -391,7 +391,7 @@ ms.locfileid: "79322114"
 
 - [ウィザードを使用して 802.1 X ワイヤレス用の NPS ポリシーを作成する](#bkmk_npspolicy)
 
-### <a name="bkmk_npsreg"></a>Active Directory Domain Services での NPS の登録
+### <a name="register-nps-in-active-directory-domain-services"></a><a name="bkmk_npsreg"></a>Active Directory Domain Services での NPS の登録
 次の手順を使用して、nps がメンバーとなっているドメインの AD DS Active Directory Domain Services \(\) に、ネットワークポリシーサーバーを実行するサーバー \(NPS\) を登録できます。 承認プロセス中に、ユーザーアカウントのプロパティでダイヤル\-を読み取るためのアクセス許可を NPSs に付与するには、各 NPS が AD DS に登録されている必要があります。 NPS を登録すると、AD DS の**RAS AND IAS Servers**セキュリティグループにサーバーが追加されます。
 
 >[!NOTE]
@@ -409,7 +409,7 @@ ms.locfileid: "79322114"
 
 3. **[ネットワーク ポリシー サーバー]** の **[OK]** をクリックし、もう一度 **[OK]** をクリックします。
 
-### <a name="bkmk_radiusclient"></a>ワイヤレス AP を NPS RADIUS クライアントとして構成する
+### <a name="configure-a-wireless-ap-as-an-nps-radius-client"></a><a name="bkmk_radiusclient"></a>ワイヤレス AP を NPS RADIUS クライアントとして構成する
 次の手順を使用すると、の NPS スナップ\) を使用して、ユーザーサービス \(RADIUS\-クライアントのリモート認証ダイヤル\-として、*ネットワークアクセスサーバー \(NAS\)* とも呼ばれる AP を構成できます。 
 
 >[!IMPORTANT]
@@ -450,7 +450,7 @@ ms.locfileid: "79322114"
 
 9. **[OK]** をクリックすると、 NPS に構成されている RADIUS クライアントの一覧に、NAS が表示されます。
 
-### <a name="bkmk_npspolicy"></a>ウィザードを使用して 802.1 X ワイヤレス用の NPS ポリシーを作成する
+### <a name="create-nps-policies-for-8021x-wireless-using-a-wizard"></a><a name="bkmk_npspolicy"></a>ウィザードを使用して 802.1 X ワイヤレス用の NPS ポリシーを作成する
 次の手順を使用して、802.1 X\-対応ワイヤレスアクセスポイントをユーザー \(サービスのリモート認証ダイヤル\-として展開するために必要な接続要求ポリシーとネットワークポリシーを作成し、NPS \(を実行している RADIUS サーバーに RADIUS\) クライアントを展開することができます。\)  
 ウィザードを実行すると、次のポリシーが作成されます。
 
@@ -512,7 +512,7 @@ ms.locfileid: "79322114"
 
 これで、NPS ポリシーが作成され、ワイヤレスコンピューターのドメインへの参加に進むことができます。
 
-## <a name="bkmk_domain"></a>新しいワイヤレスコンピューターをドメインに参加させる
+## <a name="join-new-wireless-computers-to-the-domain"></a><a name="bkmk_domain"></a>新しいワイヤレスコンピューターをドメインに参加させる
 新しいワイヤレスコンピューターをドメインに参加させる最も簡単な方法は、コンピューターをドメインに参加させる前に、802.1 X スイッチ\) によって制御されないセグメント \(、ワイヤード (有線) LAN のセグメントに物理的に接続することです。 ワイヤレスグループポリシー設定は自動的に適用され、直ちに適用されます。独自の PKI を展開した場合は、コンピューターは CA 証明書を受信し、それを信頼されたルート証明機関の証明書ストアに配置します。ワイヤレスクライアントが、CA によって発行されたサーバー証明書を使用して NPSs を信頼できるようにします。
 
 同様に、新しいワイヤレスコンピューターがドメインに参加した後で、ユーザーがドメインにログオンする場合は、ネットワークへのワイヤード (有線) 接続を使用してログオンすることをお勧めします。
@@ -528,7 +528,7 @@ ms.locfileid: "79322114"
 
 詳細については、「[ユーザーによるブートストラップワイヤレスプロファイル構成を使用したドメインへの参加とログオン](#bkmk_userbootstrap)」セクションを参照してください。
 
-### <a name="bkmk_itstaff"></a>IT スタッフコンピューターの構成方法を使用して、ドメインに参加し、ログオンします。
+### <a name="join-the-domain-and-log-on-by-using-the-it-staff-computer-configuration-method"></a><a name="bkmk_itstaff"></a>IT スタッフコンピューターの構成方法を使用して、ドメインに参加し、ログオンします。
 ドメイン\-参加しているワイヤレスクライアントコンピューターを持つドメインメンバーユーザーは、最初にワイヤード (有線) LAN に接続することなく、一時的なワイヤレスプロファイルを使用して、802.1 X\-認証されたワイヤレスネットワークに接続できます。 この一時的なワイヤレスプロファイルは、*ブートストラップワイヤレスプロファイル*と呼ばれます。
 
 ブートストラップワイヤレスプロファイルでは、ユーザーはドメインユーザーアカウントの資格情報を手動で指定する必要があります。また、ネットワークポリシーサーバー \(NPS\)を実行している RADIUS\) サーバー \(ユーザーサービスのリモート認証ダイヤル\-の証明書は検証されません。
@@ -560,7 +560,7 @@ ms.locfileid: "79322114"
 
 ユーザーがコンピューターを起動すると、ユーザーはドメインユーザーアカウント名とパスワードを入力するように求められます。 シングルサインオンが有効になっているため、コンピューターはドメインユーザーアカウントの資格情報を使用して、最初にワイヤレスネットワークとの接続を確立してから、ドメインにログオンします。
 
-#### <a name="bkmk_w10"></a>Windows 10 を実行しているコンピューターを使用してドメインにログオンします。
+#### <a name="log-on-to-the-domain-using-computers-running-windows-10"></a><a name="bkmk_w10"></a>Windows 10 を実行しているコンピューターを使用してドメインにログオンします。
 
 1. コンピューターからログオフするか、コンピューターを再起動します。
 
@@ -575,7 +575,7 @@ ms.locfileid: "79322114"
 >[!NOTE]
 >**もう一方のユーザー**画面に **[テキストサインオン**] とドメイン名が含まれていない場合は、[*ドメイン\\ユーザー*] の形式でユーザー名を入力する必要があります。 たとえば、 **user\-01**というアカウントでドメイン example.com にログオンするには、「 **example\\user\-01**」と入力します。
 
-### <a name="bkmk_userbootstrap"></a>ユーザーによるブートストラップワイヤレスプロファイル構成を使用したドメインへの参加とログオン
+### <a name="join-the-domain-and-log-on-by-using-bootstrap-wireless-profile-configuration-by-users"></a><a name="bkmk_userbootstrap"></a>ユーザーによるブートストラップワイヤレスプロファイル構成を使用したドメインへの参加とログオン
 この方法では、「一般的な手順」セクションの手順を完了した後、ドメイン\-メンバーユーザーに、ブートストラップワイヤレスプロファイルを使用してワイヤレスコンピューターを手動で構成する方法についての説明を入力します。 ブートストラップワイヤレスプロファイルを使用すると、ユーザーはワイヤレス接続を確立してドメインに参加させることができます。 コンピューターがドメインに参加して再起動されると、ユーザーはワイヤレス接続を使用してドメインにログオンできます。
 
 #### <a name="general-steps"></a>一般的な手順

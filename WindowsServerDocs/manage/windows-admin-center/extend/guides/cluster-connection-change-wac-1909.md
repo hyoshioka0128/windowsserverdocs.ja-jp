@@ -7,13 +7,13 @@ author: daniellee-msft
 ms.author: jol
 ms.date: 10/01/2019
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
-ms.openlocfilehash: a07b30517f0d45b7e6f4f41f0ef9a6549e6e2117
-ms.sourcegitcommit: de71970be7d81b95610a0977c12d456c3917c331
+ms.prod: windows-server
+ms.openlocfilehash: 5324f782ea3c02ed24968d4b3ef58ab8b6ac9d32
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71952773"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80319352"
 ---
 # <a name="cluster-connection-type-changes-in-windows-admin-center-v1909"></a>Windows 管理センター v1909 でのクラスター接続の種類の変更
 

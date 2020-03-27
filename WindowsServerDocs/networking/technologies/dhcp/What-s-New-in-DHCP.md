@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-dhcp
 ms.topic: get-started-article
 ms.assetid: c6f36998-5b64-45d1-b1f0-0f0d6604dbe3
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 8032b7c8e78170d57b0367775672577d9fd900e2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 58d849fa1003148b034cc426817b97d3a70d4421
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355452"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312695"
 ---
 # <a name="whats-new-in-dhcp"></a>DHCP の新機能
 
@@ -60,7 +60,7 @@ Windows Server 2016 では、DHCP サーバーは NAP ポリシーを強制し�
 
 Windows Server 2016 を実行しているサーバーが、NAP をサポートする NPS\) \(ネットワークポリシーサーバーに認証要求を転送する RADIUS プロキシである場合、これらの NAP クライアントは NPS によって NAP 以外の\-対応として評価され、NAP 処理は失敗します。
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
   
 -   [動的ホスト構成プロトコル (DHCP)](Dynamic-Host-Configuration-Protocol--DHCP-.md)  
   

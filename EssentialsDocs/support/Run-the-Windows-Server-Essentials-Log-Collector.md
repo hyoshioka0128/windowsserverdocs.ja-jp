@@ -1,9 +1,9 @@
 ---
 title: Windows Server Essentials Log Collector の実行
-description: Windows Server Essentials を使用する方法について説明します
+description: Windows Server Essentials の使用方法について説明します。
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,30 +12,30 @@ ms.assetid: 0d340223-fa24-4c75-ba8e-b654feb120ab
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 5654f28aeda3c231376ed888a8aa04bc0cf3d000
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: a39c23ef4119e109372bad3455415f8d3862cf1b
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66432492"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318675"
 ---
 # <a name="run-the-windows-server-essentials-log-collector"></a>Windows Server Essentials Log Collector の実行
-ネットワーク上のサーバーまたはコンピューターから Windows Server Essentials Log Collector を実行できます。 サーバーから Log Collector を実行した場合、ログをサーバーからのみ収集できます。 ネットワーク コンピューターから Log Collector を実行した場合、そのコンピューターのログに加えて、サーバーから収集するログを選択できます。  
+Windows Server Essentials Log Collector は、サーバーまたはネットワーク上のコンピューターから実行できます。 サーバーから Log Collector を実行した場合、ログをサーバーからのみ収集できます。 ネットワーク コンピューターから Log Collector を実行した場合、そのコンピューターのログに加えて、サーバーから収集するログを選択できます。  
   
  Log Collector を実行するには、適切な管理者権限が必要です。 サーバーのログ ファイルを収集している場合は、サーバーの管理者である必要があります。ネットワーク コンピューターのログ ファイルを収集している場合、そのコンピューターのクライアント管理者である必要があります。  
   
 #### <a name="to-run-the-log-collector-on-the-server-by-using-the-wizard"></a>ウィザードを使用してサーバーで Log Collector を実行するには  
   
-1. **開始**ページ サーバーの次のようにクリックします。 **Windows Server Essentials Log Collector**します。  
+1. サーバーの **[スタート]** ページで、 **[Windows Server Essentials Log Collector]** をクリックします。  
   
    > [!NOTE]
-   > - Log Collector プログラムが表示されない場合、**開始**ページを参照してください **%system%\Program Files (x86) \Windows Server Essentials Log Collector**、し、ダブルクリック**LogCollector**.  
+   > - Log Collector プログラムが**スタート**ページに表示されない場合は、 **%system%\program files Files (X86) \Windows Server Essentials Log collector**に移動し、 **[logcollector]** をダブルクリックします。  
    >   -   サーバーに管理者権限でログオンしていない場合は、ログ コントローラーでは資格情報の入力を求めるダイアログが表示されます。  
   
-2. 収集したログ ファイルを保存する場所のダイアログ ボックスが表示されたら、既定の場所を選択できます **\\ \\< ServerName\>\logs**、または別の場所を指定します。 既定の場所を承諾するには、 **[次へ]** をクリックします。 場所を変更するには、 **[参照]** をクリックし、ログ ファイルを保存するフォルダーに移動して、 **[保存]** をクリックします。  
+2. 収集したログファイルを保存する場所の入力を求められたら、既定の場所を選択するか、 **\\< \\ServerName\>\logs**を選択するか、別の場所を指定します。 既定の場所を承諾するには、 **[次へ]** をクリックします。 場所を変更するには、 **[参照]** をクリックし、ログ ファイルを保存するフォルダーに移動して、 **[保存]** をクリックします。  
   
    > [!NOTE]
-   >  ログ ファイルのファイル名を指定する必要はありません。 ログ コレクター コンピューター名とファイルのタイムスタンプを連結して、zip ファイル コレクションを名前します。  
+   >  ログ ファイルのファイル名を指定する必要はありません。 ログコレクターは、ファイルのコンピューター名とタイムスタンプを連結して、zip ファイルコレクションに名前を指定します。  
   
 3. ログの収集中には進行状況バーが表示されます。  
   
@@ -43,7 +43,7 @@ ms.locfileid: "66432492"
   
 #### <a name="to-run-the-log-collector-on-a-network-computer-by-using-the-wizard"></a>ウィザードを使用してネットワーク コンピューターで Log Collector を実行するには  
   
-1.  参照する **%system%\Program Files (x86) \Windows Server Essentials Log Collector**、ファイルをダブルクリック**LogCollector.exe**します。  
+1.  **%System%\program files Files (x86) \Windows Server Essentials Log Collector**を参照し、ファイル**logcollector**をダブルクリックします。  
   
     > [!NOTE]
     >  ネットワーク コンピューターに管理者権限でログオンしていない場合、ダイアログが表示されたら、ユーザー名とパスワードを入力して、 **[次へ]** をクリックします。  
@@ -61,7 +61,7 @@ ms.locfileid: "66432492"
 4.  ログ ファイルを保存する場所を入力または参照して、 **[次へ]** をクリックします。  
   
     > [!NOTE]
-    >  ログ ファイルのファイル名を指定する必要はありません。 ログ コレクター コンピューター名とファイルのタイムスタンプを連結して、zip ファイル コレクションを名前します。  
+    >  ログ ファイルのファイル名を指定する必要はありません。 ログコレクターは、ファイルのコンピューター名とタイムスタンプを連結して、zip ファイルコレクションに名前を指定します。  
   
 5.  ログの収集中には進行状況バーが表示されます。  
   
@@ -78,7 +78,7 @@ ms.locfileid: "66432492"
   
 3.  **[タスク スケジューラ ライブラリ]** のルートで、 **[LogCollector]** という名前のスケジュールされたタスクを参照します。  
   
-4.  **[LogCollector]** を右クリックし、 **[実行]** をクリックします。 Log Collector は、サーバーで、既定のフォルダーにログを配置 **\\ \\< ServerName\>\Logs**します。 フォルダーに対する書き込みアクセス許可がないか、フォルダーが存在しない場合、ログに格納されます、 **< temp\>** サブディレクトリ。  
+4.  **[LogCollector]** を右クリックし、 **[実行]** をクリックします。 ログコレクターは、サーバーの既定のフォルダー **\\\\< ServerName\>\Logs**にログを配置します。 フォルダーに対する書き込みアクセス許可がない場合、またはフォルダーが存在しない場合、ログは **< temp\>** サブディレクトリに配置されます。  
   
 ##### <a name="to-manually-run-the-log-collector-on-a-network-computer"></a>ネットワーク コンピューターで Log Collector を手動で実行するには  
   
@@ -88,4 +88,4 @@ ms.locfileid: "66432492"
   
 3.  **[タスク スケジューラ ライブラリ]** のルートで、 **[LogCollector]** という名前のスケジュールされたタスクを参照します。  
   
-4.  **[LogCollector]** を右クリックし、 **[実行]** をクリックします。 ログ コレクターのログを配置する、 **< temp\>** ネットワーク コンピューター上のフォルダー。
+4.  **[LogCollector]** を右クリックし、 **[実行]** をクリックします。 ログコレクターは、ネットワークコンピューターの **< temp\>** フォルダーにログを配置します。

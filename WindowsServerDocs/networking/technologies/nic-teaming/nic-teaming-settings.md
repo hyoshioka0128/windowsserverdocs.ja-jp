@@ -10,15 +10,15 @@ ms.technology: networking-nict
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a4caaa86-5799-4580-8775-03ee213784a3
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 09/13/2018
-ms.openlocfilehash: ab9a8e309c8031108d58c73d82357e913d5ce398
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: fc9ab0fa3d1da0e7af8a7a1d7a8706ba6d128648
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71396472"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80316475"
 ---
 # <a name="nic-teaming-settings"></a>NIC チーミングの設定
 このトピックでは、チーミングおよび負荷分散モードなど、NIC チームのプロパティの概要について説明します。 また、スタンバイアダプターの設定とプライマリチームインターフェイスのプロパティについても詳しく説明します。 NIC チームに少なくとも2つのネットワークアダプターがある場合は、フォールトトレランスのためにスタンバイアダプターを指定する必要はありません。
@@ -82,7 +82,7 @@ TCP ポートハッシュを使用すると、トラフィックストリーム�
   
 ただし、ホストにいくつかの Vm がある場合は、このモードはありませんな負荷分散を実現するために必要なレベルです。 このモードは、単一のインターフェイスで利用できる帯域幅を 1 つの VM (つまり、1 つのスイッチ ポートからのトラフィック) を常にも制限されます。 NIC チーミングでは、ソース MAC アドレスを使用する代わりに、Hyper-v 仮想スイッチポートが識別子として使用されます。これは、一部のインスタンスでは、1つのスイッチポートで複数の MAC アドレスを使用して VM を構成する可能性があるためです。  
   
-### <a name="dynamic"></a>動的
+### <a name="dynamic"></a>Dynamic
   
 [!INCLUDE [dynamic-shortdesc-include](../../includes/dynamic-shortdesc-include.md)]
   

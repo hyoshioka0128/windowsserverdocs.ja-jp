@@ -6,14 +6,14 @@ ms.technology: networking
 ms.topic: article
 ms.assetid: a6615411-83d9-495f-8a6a-1ebc8b12f164
 manager: brianlic
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 9271cf4e5f50adf93f421e830a226507034ac454
-ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 5e1ed095b3180f3aebd25381ec9086445bb141ec
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77517477"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80316621"
 ---
 # <a name="choosing-a-network-adapter"></a>ネットワーク アダプターを選択する
 
@@ -26,7 +26,7 @@ ms.locfileid: "77517477"
 > [!TIP]
 >  Windows PowerShell を使用して、ネットワークアダプターの設定を構成できます。 詳細については、「 [Windows PowerShell のネットワークアダプターコマンドレット](https://docs.microsoft.com/powershell/module/netadapter)」を参照してください。
 
-##  <a name="bkmk_offload"></a>オフロード機能
+##  <a name="offload-capabilities"></a><a name="bkmk_offload"></a>オフロード機能
 
 中央処理装置 \(CPU\) をネットワークアダプターにオフロードすると、サーバーの CPU 使用率が低下し、システム全体のパフォーマンスが向上します。
 
@@ -42,7 +42,7 @@ Microsoft 製品のネットワークスタックは、適切なオフロード�
 |Receive Side Scaling \(RSS\)|RSS は、マルチプロセッサシステムの複数の Cpu にわたってネットワークの受信処理を効率的に分散できるようにするネットワークドライバーテクノロジです。 RSS の詳細については、このトピックの後半で説明します。|  
 |RSC\) \(の受信セグメントの結合|RSC は、パケットをグループ化して、ホストが実行するために必要なヘッダー処理を最小限に抑えることができます。 受信したペイロードの最大 64 KB を1つの大きなパケットに結合して処理することができます。 RSC の詳細については、このトピックの後半で説明します。|  
   
-###  <a name="bkmk_rss"></a>Receive Side Scaling
+###  <a name="receive-side-scaling"></a><a name="bkmk_rss"></a>Receive Side Scaling
 
 Windows Server 2016、Windows Server 2012、Windows Server 2012 R2、Windows Server 2008 R2、および Windows Server 2008 では、RSS\)\(の Receive Side Scaling がサポートされています。 
 
@@ -158,7 +158,7 @@ Cpu を最大限に活用するには、RSS 受信キューの数が最大プロ
 
 NIC チーミングを使用して、別のネットワークインターフェイスカードとチーミングされているネットワークアダプターで RSS を有効にすることができます。 このシナリオでは、基になる物理ネットワークアダプターのみが RSS を使用するように構成できます。 ユーザーは、チーム化されたネットワークアダプターで RSS コマンドレットを設定することはできません。
   
-###  <a name="bkmk_rsc"></a>受信セグメント合体 (RSC)
+###  <a name="receive-segment-coalescing-rsc"></a><a name="bkmk_rsc"></a>受信セグメント合体 (RSC)
 
 受信したデータ量に対して処理される IP ヘッダーの数を減らすことによって、RSC\) \(受信セグメントを結合することで、パフォーマンスを向上させることができます。 これは、\(をグループ化するか、小さいパケット\) 結合して、より大きな単位に分割することで、受信したデータのパフォーマンスを向上させるために使用する必要があります。
 
@@ -206,7 +206,7 @@ RSC は、ホストネットワークアダプターが Hyper-v 仮想スイッ�
 
 単一のルート入出力仮想化 \(SR-IOV\) が有効になっている場合、仮想マシンに対して RSC を有効にすることができます。 この場合、仮想関数は RSC 機能をサポートしています。そのため、仮想マシンは RSC の利点も得られます。
 
-##  <a name="bkmk_resources"></a>ネットワークアダプターのリソース
+##  <a name="network-adapter-resources"></a><a name="bkmk_resources"></a>ネットワークアダプターのリソース
 
 ネットワークアダプターの中には、最適なパフォーマンスを実現するためにリソースを積極的に管理するものがあります。 複数のネットワークアダプターを使用すると、アダプターの **[ネットワークの詳細設定**] タブを使用してリソースを手動で構成できます。 このようなアダプターでは、受信バッファーの数や送信バッファーなど、多数のパラメーターの値を設定できます。
 

@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 570c81d6-c4f4-464c-bee9-0acbd4993584
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: fc42040d68b8a22dcfc46aa30db3a2a3c3bc060a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 59db462e3772b551f0d80819e7cd79519e95fb14
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367061"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313821"
 ---
 # <a name="troubleshooting-enabling-multisite"></a>マルチサイト有効化のトラブルシューティング
 
@@ -128,7 +128,7 @@ DirectAccess は、Active Directory サイトを特定できませんでした�
   
 リモート アクセス サーバーで `nltest /dsgetsite` コマンドを実行して、この問題が生じているかどうかを確認します。 この問題が生じている場合は、このコマンドから ERROR_NO_SITENAME が返されます。 この問題を解決するには、内部サーバーの IP アドレスを含むサブネットが存在すること、およびそのサブネットが Active Directory サイトで定義されていることを確認します。  
   
-## <a name="SaveGPOSettings"></a>サーバーの GPO 設定を保存しています  
+## <a name="saving-server-gpo-settings"></a><a name="SaveGPOSettings"></a>サーバーの GPO 設定を保存しています  
 **エラーを受信しました**。 リモートアクセス設定を GPO < GPO_name > に保存中にエラーが発生しました。  
   
 **原因**  
@@ -139,7 +139,7 @@ DirectAccess は、Active Directory サイトを特定できませんでした�
   
 リモート アクセス サーバーとドメイン コントローラー間に接続が存在することを確認します。 接続が存在する場合は、ドメイン コントローラーを調べて registry.pol ファイルが別のユーザーに対してロックされているかどうかを確認し、必要な場合はそのユーザー セッションを終了してファイルのロックを解除します。  
   
-## <a name="InternalServerError"></a>内部エラーが発生しました  
+## <a name="internal-error-occurred"></a><a name="InternalServerError"></a>内部エラーが発生しました  
 **エラーを受信しました**。 内部エラーが発生しました。  
   
 **原因**  

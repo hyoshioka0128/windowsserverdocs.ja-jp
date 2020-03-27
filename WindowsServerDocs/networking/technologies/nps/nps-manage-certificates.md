@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: 204a4ef4-9d78-4a62-9940-43cc0e1c39d0
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: b83f68b52a9cceef779e5204e295bbc9e45e7a14
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 9e850f7e01d924c8ceb6a8017b3a8c3a48aa8304
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71396196"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80316011"
 ---
 # <a name="manage-certificates-used-with-nps"></a>NPS で使われる証明書を管理する
 
@@ -52,7 +52,7 @@ Windows 10 および Windows Server 2016 を実行しているコンピュータ
 
 この手順を使用して、クライアントコンピューターが NPS の TLS ハンドルをキャッシュする時間の長さを変更できます。 NPS が正常に認証されると、クライアントコンピューターは、NPS の TLS 接続プロパティを TLS ハンドルとしてキャッシュします。 TLS ハンドルの既定の期間は、10時間 \(3600万ミリ秒\)です。 TLS ハンドルの有効期限を増減するには、次の手順に従ってください。
 
-メンバーシップ **管理者**, 、または同等の権限は、この手順を実行するために必要な最小値。
+**Administrators**、またはそれと同等のメンバーシップが、この手順を実行するために最低限必要なメンバーシップです。
 
 >[!IMPORTANT]
 >この手順は、クライアントコンピューターではなく、NPS で実行する必要があります。
@@ -75,7 +75,7 @@ Windows 10 および Windows Server 2016 を実行しているコンピュータ
 
 次の手順に従い、NPSs がクライアントコンピューターの TLS ハンドルをキャッシュする時間の長さを変更します。 アクセスクライアントが正常に認証された後、NPSs はクライアントコンピューターの TLS 接続プロパティを TLS ハンドルとしてキャッシュします。 TLS ハンドルの既定の期間は、10時間 \(3600万ミリ秒\)です。 TLS ハンドルの有効期限を増減するには、次の手順に従ってください。
 
-メンバーシップ **管理者**, 、または同等の権限は、この手順を実行するために必要な最小値。
+**Administrators**、またはそれと同等のメンバーシップが、この手順を実行するために最低限必要なメンバーシップです。
 
 >[!IMPORTANT]
 >この手順は、クライアントコンピューターではなく、NPS で実行する必要があります。

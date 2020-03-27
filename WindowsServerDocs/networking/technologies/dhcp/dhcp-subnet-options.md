@@ -6,15 +6,15 @@ ms.prod: windows-server
 ms.technology: networking-dhcp
 ms.topic: get-started-article
 ms.assetid: ca19e7d1-e445-48fc-8cf5-e4c45f561607
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/17/2018
-ms.openlocfilehash: 4718204fad49b23c84cc73b67164f34a803ddd86
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4e83448e95f6a6f77deb9ff7997d715cbc7f13c6
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405759"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312546"
 ---
 # <a name="dhcp-subnet-selection-options"></a>DHCP サブネットの選択オプション
 

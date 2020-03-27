@@ -3,18 +3,18 @@ title: Azure Monitor の理解と構成
 description: Azure Monitor とは何か、および Windows Server 2016 および2019で記憶域スペースダイレクトクラスターの電子メールと sms アラートを構成する方法に関する詳細な設定情報。
 keywords: 記憶域スペースダイレクト、azure monitor、通知、電子メール、sms
 ms.assetid: ''
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.author: adagashe
 ms.technology: storage-spaces
 ms.topic: article
 author: adagashe
 ms.date: 01/10/2020
-ms.openlocfilehash: 933a22dad76f80b8ff76f604089bfd7c9bf3e207
-ms.sourcegitcommit: 76469d1b7465800315eaca3e0c7f0438fc3939ed
+ms.openlocfilehash: 878bbce9543439cf78501e496c59e06e077c5ddc
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75919978"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308181"
 ---
 # <a name="use-azure-monitor-to-send-emails-for-health-service-faults"></a>Azure Monitor を使用してヘルスサービスエラーのメールを送信する
 
@@ -37,11 +37,11 @@ System Center を使用している場合は、Windows Server 2019 と Windows S
 
 Azure Monitor によって収集されたすべてのデータは、2 つの基本的な種類であるメトリックとログのどちらかに該当します。
 
-1. [メトリック](https://docs.microsoft.com/azure/azure-monitor/platform/data-collection#metrics)は、特定の時点におけるシステムの何らかの側面を表す数値です。 メトリックは軽量であり、リアルタイムに近いシナリオをサポートできます。 Azure portal の [概要] ページに Azure Monitor によって収集されたデータが表示されます。
+1. [メトリック](https://docs.microsoft.com/azure/azure-monitor/platform/data-collection#metrics)は、特定の時点におけるシステムのいくつかの側面を表す数値です。 メトリックは軽量であり、リアルタイムに近いシナリオをサポートできます。 Azure portal の [概要] ページに Azure Monitor によって収集されたデータが表示されます。
 
 ![メトリックスエクスプローラーのメトリック取り込みの画像](media/configure-azure-monitor/metrics.png)
 
-2. [ログ](https://docs.microsoft.com/azure/azure-monitor/platform/data-collection#logs)には、種類ごとに異なるプロパティ セットを持つレコードに編成されたさまざまな種類のデータが含まれます。 イベントやトレースなどの利用統計情報は、組み合わせて分析できるように、パフォーマンス データとともにログとして格納されます。 Azure Monitor が収集したログ データは、収集されたデータをすばやく検索、統合、分析する[クエリ](https://docs.microsoft.com/azure/azure-monitor/log-query/log-query-overview)を使用して分析できます。 Azure portal で [Log Analytics](https://docs.microsoft.com/azure/azure-monitor/log-query/portals) を使用してクエリを作成およびテストした後、これらのツールを使用してデータを直接分析できるほか、クエリを保存して[視覚化](https://docs.microsoft.com/azure/azure-monitor/visualizations)または[アラート ルール](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-overview)に利用することができます。
+2. [ログ](https://docs.microsoft.com/azure/azure-monitor/platform/data-collection#logs)には、種類ごとに異なるプロパティセットを持つレコードに整理されたさまざまな種類のデータが含まれます。 イベントやトレースなどの利用統計情報は、組み合わせて分析できるように、パフォーマンス データとともにログとして格納されます。 Azure Monitor によって収集されたログデータを[クエリ](https://docs.microsoft.com/azure/azure-monitor/log-query/log-query-overview)で分析し、収集したデータを迅速に取得、統合、および分析することができます。 Azure portal で[Log Analytics](https://docs.microsoft.com/azure/azure-monitor/log-query/portals)を使用してクエリを作成およびテストした後、これらのツールを使用してデータを直接分析するか、[視覚エフェクト](https://docs.microsoft.com/azure/azure-monitor/visualizations)や[アラートルール](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-overview)で使用するクエリを保存することができます。
 
 ![log analytics のログ取り込みの画像](media/configure-azure-monitor/logs.png)
 
@@ -80,64 +80,64 @@ get-storagesubsystem clus* | Set-StorageHealthSetting -Name "Platform.ETW.MasTyp
 
 概要を説明するために、 [Azure Log Analytics](https://docs.microsoft.com/azure/azure-monitor/platform/agent-windows)では、データセンターまたは他のクラウド環境内の物理または仮想 Windows コンピューターからデータを直接収集して、詳細な分析と相関化を行うことができます。
 
-サポートされている構成を確認するには、「[サポートされている Windows オペレーティング システム](https://docs.microsoft.com/azure/azure-monitor/platform/log-analytics-agent#supported-windows-operating-systems)」と「[ネットワーク ファイアウォールの構成](https://docs.microsoft.com/azure/azure-monitor/platform/log-analytics-agent#network-firewall-requirements)」をご覧ください。
+サポートされている構成を理解するには、[サポートされている Windows オペレーティングシステム](https://docs.microsoft.com/azure/azure-monitor/platform/log-analytics-agent#supported-windows-operating-systems)と[ネットワークファイアウォールの構成](https://docs.microsoft.com/azure/azure-monitor/platform/log-analytics-agent#network-firewall-requirements)を確認してください。
 
 Azure サブスクリプションをお持ちでない場合は、開始する前に[無料アカウント](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)を作成してください。
 
 #### <a name="login-in-to-azure-portal"></a>Azure ポータルにログインする
 
-Azure Portal ([https://portal.azure.com](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)) にログインします。
+[https://portal.azure.com](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)で Azure portal にログインします。
 
-#### <a name="create-a-workspace"></a>ワークスペースを作成する
+#### <a name="create-a-workspace"></a>ワークスペースの作成
 
 以下に示す手順の詳細については、 [Azure Monitor のドキュメント](https://docs.microsoft.com/azure/azure-monitor/learn/quick-collect-windows-computer)を参照してください。
 
-1. Azure Portal で、 **[すべてのサービス]** をクリックします。 リソースの一覧で、「**Log Analytics**」と入力します。 入力していくと、入力に基づいて一覧がフィルター処理されます。 **[Log Analytics]** を選択します。<br><br> 
+1. Azure portal で、 **[すべてのサービス]** をクリックします。 リソースの一覧で、「 **Log Analytics**」と入力します。 入力していくと、入力に基づいて一覧がフィルター処理されます。 **[Log Analytics]** を選択します。<br><br> 
 
-   ![Azure portal](media/configure-azure-monitor/azure-portal-01.png)<br><br>
+   ![Azure ポータル](media/configure-azure-monitor/azure-portal-01.png)<br><br>
 
-2. **[作成]** をクリックし、次の項目について選択します。
+2. **[作成]** をクリックし、次の項目の選択肢を選択します。
 
-   * 新しい **Log Analytics ワークスペース**の名前 (*DefaultLAWorkspace* など) を指定します。 
-   * 関連付ける**サブスクリプション**をドロップダウン リストから選択します (既定値が適切でない場合)。
-   * **[リソース グループ]** では、1 つ以上の Azure Virtual Machines を含む既存のリソース グループを選択します。 <br><br>
+   * 新しい**Log Analytics ワークスペース**の名前 ( *defaultlaworkspace*など) を指定します。 
+   * 既定の選択が適切でない場合は、ドロップダウンリストから選択して、リンク先の**サブスクリプション**を選択します。
+   * **[リソースグループ]** で、1つまたは複数の Azure 仮想マシンを含む既存のリソースグループを選択します。 <br><br>
 
       ![Log Analytics リソース ブレードの作成](media/configure-azure-monitor/create-loganalytics-workspace-02.png) <br><br>  
 
-3. **[Log Analytics ワークスペース]** ウィンドウで必要な情報を入力したら、 **[OK]** をクリックします。  
+3. **[Log Analytics ワークスペース]** ウィンドウで必要な情報を指定したら、[ **OK]** をクリックします。  
 
-情報が検証され、ワークスペースが作成されている間、メニューの **[通知]** でその進行状況を追跡することができます。 
+情報が検証され、ワークスペースが作成されている間、メニューの **[通知]** で進行状況を追跡できます。 
 
 #### <a name="obtain-workspace-id-and-key"></a>ワークスペース ID とキーを取得する
 Microsoft Monitoring Agent for Windows をインストールする前に、Log Analytics ワークスペースのワークスペース ID とキーが必要です。  この情報は、設定ウィザードがエージェントを適切に構成し、そのエージェントを Log Analytics と正常に通信できるようにするために必要です。  
 
-1. Azure Portal の左上隅にある **[すべてのサービス]** をクリックします。 リソースの一覧で、「**Log Analytics**」と入力します。 入力していくと、入力に基づいて一覧がフィルター処理されます。 **[Log Analytics]** を選択します。
-2. Log Analytics ワークスペースの一覧で、前の手順で作成した *DefaultLAWorkspace* を選択します。
-3. **[詳細設定]** を選択します。<br><br> ![Log Analytics の詳細設定](media/configure-azure-monitor/log-analytics-advanced-settings-01.png)<br><br>  
-4. **[接続されたソース]** 、 **[Windows サーバー]** の順に選択します。   
-5. **[ワークスペース ID]** と **[主キー]** の右側に値が表示されます。 一時的に両方を保存しておきます。しばらくの間、お気に入りのエディターに両方をコピーして貼り付けます。   
+1. Azure portal で、左上隅にある **[すべてのサービス]** をクリックします。 リソースの一覧で、「 **Log Analytics**」と入力します。 入力していくと、入力に基づいて一覧がフィルター処理されます。 **[Log Analytics]** を選択します。
+2. Log Analytics ワークスペースの一覧で、前の手順で作成した*Defaultlaworkspace*を選択します。
+3. **[詳細設定]** を選択します。<br><br> ![Log Analytics 詳細設定](media/configure-azure-monitor/log-analytics-advanced-settings-01.png)<br><br>  
+4. **[接続されたソース]** を選択し、 **[Windows サーバー]** を選択します。   
+5. **[ワークスペース ID]** と **[主キー]** の右側の値。 一時的に両方を保存しておきます。しばらくの間、お気に入りのエディターに両方をコピーして貼り付けます。   
 
 ### <a name="installing-the-agent-on-windows"></a>Windows へのエージェントのインストール
 次の手順では、Microsoft Monitoring Agent をインストールして構成します。 **クラスター内の各サーバーにこのエージェントをインストールし、エージェントを Windows の起動時に実行するように指定してください。**
 
-1. **[Windows サーバー]** ページの **[Windows エージェントのダウンロード]** で、Windows オペレーティング システムのプロセッサ アーキテクチャに応じた適切なバージョンを選択します。
+1. **[Windows サーバー]** ページで、windows オペレーティングシステムのプロセッサアーキテクチャに応じて、ダウンロードする**windows エージェント**の適切なバージョンを選択します。
 2. セットアップを実行して、コンピューターにエージェントをインストールします。
-2. **[ようこそ]** ページで、 **[次へ]** をクリックします。
-3. **[ライセンス条項]** ページの記述内容を確認し、 **[同意する]** をクリックします。
-4. **[インストール先フォルダー]** ページで、既定のインストール フォルダーを変更するか、変更せずに **[次へ]** をクリックします。
-5. **[エージェントのセットアップ オプション]** ページで、エージェントを接続する Azure Log Analytics をクリックし、 **[次へ]** をクリックします。   
+2. **[ようこそ]** ページで **[次へ]** をクリックします。
+3. **[ライセンス条項]** ページで、ライセンスを読み、 **[同意]** する をクリックします。
+4. インストール **[先のフォルダー]** ページで、既定のインストールフォルダーを変更するか、そのままにして、 **[次へ]** をクリックします。
+5. **[エージェントのセットアップオプション]** ページで、エージェントを Azure Log Analytics に接続することを選択し、 **[次へ]** をクリックします。   
 6. **[Azure Log Analytics]** ページで、次の手順を実行します。
-   1. **[ワークスペース ID]** と **[ワークスペース キー (主キー)]** に、先ほどコピーした値を貼り付けます。    
-    」を参照します。 コンピューターがプロキシ サーバーを介して Log Analytics サービスと通信する必要がある場合は、 **[詳細]** をクリックし、プロキシ サーバーの URL とポート番号を指定します。  プロキシ サーバーで認証が必要な場合には、プロキシ サーバーにアクセスするためのユーザー名とパスワードを入力し、 **[次へ]** をクリックします。  
-7. 必要な構成設定をしたら、 **[次へ]** をクリックします。<br><br> ![ワークスペース ID と主キーの貼り付け](media/configure-azure-monitor/log-analytics-mma-setup-laworkspace.png)<br><br>
-8. **[インストールの準備完了]** ページで、設定内容を確認し、 **[インストール]** をクリックします。
-9. **[構成は正常に終了しました]** ページで **[完了]** をクリックします。
+   1. 前の手順でコピーした**ワークスペース ID**と**ワークスペースキー (主キー)** を貼り付けます。    
+    a. コンピューターがプロキシサーバーを介して Log Analytics サービスに通信する必要がある場合は、 **[詳細設定]** をクリックし、プロキシサーバーの URL とポート番号を指定します。  プロキシサーバーで認証が必要な場合は、プロキシサーバーで認証するためのユーザー名とパスワードを入力し、 **[次へ]** をクリックします。  
+7. 必要な構成設定の指定が完了したら、 **[次へ]** をクリックします。<br><br> ワークスペース ID と主キー](media/configure-azure-monitor/log-analytics-mma-setup-laworkspace.png) を貼り付け ![<br><br>
+8. **[インストールの準備完了]** ページで、選択内容を確認し、 **[インストール]** をクリックします。
+9. **[構成が正常に完了]** しました ページで、 **[完了]** をクリックします。
 
-完了すると、 **Microsoft Monitoring Agent** に **Microsoft 管理エージェント**」に記載されたステップに従ってエージェントをインストールします。 構成を検証して、エージェントが Log Analytics に接続されていることを確認できます。 接続されていれば、 **[Azure Log Analytics]** タブに、エージェントにより、**Microsoft Monitoring Agent が Microsoft Log Analytics サービスに正常に接続している**ことを示すメッセージが表示されます。 
+完了すると、[**コントロールパネル]** に**Microsoft Monitoring Agent**が表示されます。 構成を検証して、エージェントが Log Analytics に接続されていることを確認できます。 接続されている場合、 **[Azure Log Analytics]** タブのエージェントには、 **Microsoft Monitoring Agent が Microsoft Log Analytics サービスに正常に接続さ**れたことを示すメッセージが表示されます。 
 
 ![Log Analytics への MMA 接続の状態](media/configure-azure-monitor/log-analytics-mma-laworkspace-status.png)
 
-サポートされている構成を確認するには、「[サポートされている Windows オペレーティング システム](https://docs.microsoft.com/azure/azure-monitor/platform/log-analytics-agent#supported-windows-operating-systems)」と「[ネットワーク ファイアウォールの構成](https://docs.microsoft.com/azure/azure-monitor/platform/log-analytics-agent#network-firewall-requirements)」をご覧ください。
+サポートされている構成を理解するには、[サポートされている Windows オペレーティングシステム](https://docs.microsoft.com/azure/azure-monitor/platform/log-analytics-agent#supported-windows-operating-systems)と[ネットワークファイアウォールの構成](https://docs.microsoft.com/azure/azure-monitor/platform/log-analytics-agent#network-firewall-requirements)を確認してください。
 
 ## <a name="setting-up-alerts-using-windows-admin-center"></a>Windows 管理センターを使用したアラートの設定
 
@@ -166,17 +166,17 @@ Windows 管理センターでアラートを構成すると、Azure の log anal
 
 Log Analytics は、イベントを Windows イベント ログから収集でき、長期分析およびレポートのために指定されたパフォーマンス カウンターからも収集できます。また、特定の条件が検出された場合はアクションを実行できます。  以下の手順に従って、Windows イベント ログと、手始めとしていくつかの一般的なパフォーマンス カウンターからのイベントの収集を構成します。  
 
-1. Azure ポータルで、左下隅にある **[その他のサービス]** をクリックします。 リソースの一覧で、「**Log Analytics**」と入力します。 入力していくと、入力に基づいて一覧がフィルター処理されます。 **[Log Analytics]** を選択します。
-2. **[詳細設定]** を選択します。<br><br> ![Log Analytics の詳細設定](media/configure-azure-monitor/log-analytics-advanced-settings-01.png)<br><br> 
-3. **[データ]** を選択してから、 **[Windows イベント ログ]** を選択します。  
+1. Azure portal で、左下隅にある **[その他のサービス]** をクリックします。 リソースの一覧で、「 **Log Analytics**」と入力します。 入力していくと、入力に基づいて一覧がフィルター処理されます。 **[Log Analytics]** を選択します。
+2. **[詳細設定]** を選択します。<br><br> ![Log Analytics 詳細設定](media/configure-azure-monitor/log-analytics-advanced-settings-01.png)<br><br> 
+3. **[データ]** を選択し、 **[Windows イベントログ]** を選択します。  
 4. ここで、以下の名前を入力してヘルスサービスイベントチャネルを追加し、プラス記号 **+** をクリックします。  
    ```
    Event Channel: Microsoft-Windows-Health/Operational
    ```
-5. テーブルで、重大度の **[エラー]** と **[警告]** のチェック ボックスをオンにします。   
+5. テーブルで、重大度の**エラー**と**警告**を確認します。   
 6. ページの上部にある **[保存]** をクリックして構成を保存します。
-7. **[Windows パフォーマンス カウンター]** を選択して、Windows コンピューターでのパフォーマンス カウンターの収集を有効にします。 
-8. 新しい Log Analytics ワークスペースの Windows パフォーマンス カウンターを初めて構成する場合は、いくつかの一般的なカウンターをすばやく作成するためのオプションが表示されます。 それぞれのオプションの横には、チェック ボックスが表示されます。<br> ![既定の Windows パフォーマンス カウンターが選択されている状態](media/configure-azure-monitor/windows-perfcounters-default.png)<br> **[選択したパフォーマンス カウンターを追加する]** をクリックします。  カウンターが追加され、10 秒間の収集サンプル間隔でプリセットされます。  
+7. Windows**パフォーマンスカウンター**を選択して、windows コンピューターでのパフォーマンスカウンターの収集を有効にします。 
+8. 新しい Log Analytics ワークスペースの Windows パフォーマンス カウンターを初めて構成する場合は、いくつかの一般的なカウンターをすばやく作成するためのオプションが表示されます。 それぞれのオプションの横には、チェック ボックスが表示されます。<br> 既定の Windows パフォーマンスカウンターが選択された ![](media/configure-azure-monitor/windows-perfcounters-default.png)<br> [**選択したパフォーマンスカウンターを追加する] を**クリックします。  カウンターが追加され、10 秒間の収集サンプル間隔でプリセットされます。  
 9. ページの上部にある **[保存]** をクリックして構成を保存します。
 
 ## <a name="creating-alerts-based-on-log-data"></a>ログデータに基づく警告の作成
@@ -187,8 +187,8 @@ Log Analytics は、イベントを Windows イベント ログから収集で�
 
 最初に、ログ検索ポータルを開きます。   
 
-1. Azure Portal で、 **[すべてのサービス]** をクリックします。 リソースの一覧で「**Monitor**」と入力します。 入力していくと、入力に基づいて一覧がフィルター処理されます。 **[モニター]** を選択します。
-2. モニターのナビゲーション メニューで **[ログの分析]** を選択し、ワークスペースを選択します。
+1. Azure portal で、 **[すべてのサービス]** をクリックします。 リソースの一覧で、「 **Monitor**」と入力します。 入力していくと、入力に基づいて一覧がフィルター処理されます。 **[モニター]** を選択します。
+2. モニター ナビゲーションメニューで、 **Log Analytics** を選択し、ワークスペースを選択します。
 
 テーブルのすべてのレコードを返すシンプルなクエリを使用すると、作業データを最も簡単に取得できます。 検索ボックスに次のクエリを入力し、[検索] ボタンをクリックします。  
 
@@ -215,30 +215,30 @@ Event | where (EventLevelName == "Error")
 ### <a name="create-alerts"></a>アラートの作成
 ここで、アラートを作成する例を見てみましょう。
 
-1. Azure Portal で、 **[すべてのサービス]** をクリックします。 リソースの一覧で、「**Log Analytics**」と入力します。 入力していくと、入力に基づいて一覧がフィルター処理されます。 **[Log Analytics]** を選択します。
-2. 左側のウィンドウで、 **[アラート]** を選択し、ページの上部の **[新しいアラート ルール]** をクリックして新しいアラートを作成します。<br><br> ![新しいアラート ルールの作成](media/configure-azure-monitor/alert-rule-02.png)<br>
-3. 最初の手順では、 **[アラートの作成]** セクションで、リソースとして Log Analytics ワークスペースを選択します。これがログ ベースのアラート シグナルであるためです。  前の手順で作成した Log Analytics ワークスペースが含まれている場合は、ドロップダウンリストから特定の**サブスクリプション**を選択して結果をフィルター処理します。  ドロップダウン リストから **[Log Analytics]** を選択して **[リソースの種類]** をフィルターします。  最後に、[**リソース** **defaultlaworkspace** ] を選択し、 **[完了]** をクリックします。<br><br> ![アラートの作成手順 1 のタスク](media/configure-azure-monitor/alert-rule-03.png)<br>
+1. Azure portal で、 **[すべてのサービス]** をクリックします。 リソースの一覧で、「 **Log Analytics**」と入力します。 入力していくと、入力に基づいて一覧がフィルター処理されます。 **[Log Analytics]** を選択します。
+2. 左側のウィンドウで、 **[アラート]** を選択し、ページの上部にある **[新しいアラートルール]** をクリックして新しいアラートを作成します。<br><br> 新しいアラートルールを作成 ![](media/configure-azure-monitor/alert-rule-02.png)<br>
+3. 最初の手順では、**アラートの作成** セクションで、Log Analytics ワークスペースをリソースとして選択します。これは、ログベースのアラートシグナルであるためです。  前の手順で作成した Log Analytics ワークスペースが含まれている場合は、ドロップダウンリストから特定の**サブスクリプション**を選択して結果をフィルター処理します。  ドロップダウンリストから **[Log Analytics]** を選択して、**リソースの種類**をフィルター処理します。  最後に、[**リソース** **defaultlaworkspace** ] を選択し、 **[完了]** をクリックします。<br><br> 警告ステップ1タスク](media/configure-azure-monitor/alert-rule-03.png) の作成 ![<br>
 4. アラートの **[条件]** セクションで、 **[条件の追加]** をクリックして保存したクエリを選択し、アラートルールが従うロジックを指定します。
 5. 次の情報を指定して、アラートを構成します。  
-   」を参照します。 **[基準]** ドロップダウン リストで **[メトリック測定]** を選択します。  メトリック測定では、クエリの対象となったオブジェクトのうち、値が指定されたしきい値を上回っているオブジェクトについて、それぞれ別個にアラートが生成されます。  
+   a. **[ベース]** ドロップダウンリストから **[メトリック測定]** を選択します。  メトリック測定では、クエリの対象となったオブジェクトのうち、値が指定されたしきい値を上回っているオブジェクトについて、それぞれ別個にアラートが生成されます。  
    b. **条件**として **より大きい** を選択し、値 を指定します。  
    c. 次に、アラートをトリガーするタイミングを定義します。 たとえば、[連続した**侵害**] を選択し、ドロップダウンリストから [値 3**より大きい**] を選択できます。  
    d. [評価基準] セクションで、**期間**の値を**30**分に、 **Frequency**を5に変更します。 ルールは 5 分ごとに実行され、現在の時刻から直近の 30 分以内に作成されたレコードが返されます。  この期間をより広い時間枠に設定すると、潜在的なデータの待機時間の原因となるため、クエリでは、アラートが決して発生しない検知漏れを回避するために確実にデータが返されるようにします。  
-6. **[完了]** をクリックして、アラート ルールを完成させます。<br><br> ![アラート シグナルの構成](media/configure-azure-monitor/alert-signal-logic-02.png)<br> 
-7. 次に、2番目の手順に進み、[アラート**ルール名**] フィールドにアラートの名前を指定します ( **[すべてのエラーイベントにアラートを記録**する] など)。  アラートの詳細を説明する **[説明]** を指定し、表示されたオプションから **[重大度]** 値として **[重大 (重大度 0)]** を選択します。
-8. 作成時にアラート ルールをすぐにアクティブ化するには、 **[ルールの作成時に有効にする]** の既定値を受け入れます。
-9. 3 番目および最後の手順では、 **[アクション グループ]** を指定します。これにより、アラートがトリガーされるたびに同じアクションが実行され、定義する各ルールに同じアクションを使用できます。 次の情報を指定して、新しいアクション グループを構成します。  
-   」を参照します。 **[新しいアクション グループ]** を選択すると、 **[アクション グループの追加]** ウィンドウが表示されます。  
-   b. **[アクション グループ名]** で、「**IT 操作 - 通知**」のような名前と **itops-n** などの **[短い名前]** を指定します。  
-   c. **[サブスクリプション]** と **[リソース グループ]** の既定値が正しいことを確認します。 正しくない場合は、ドロップダウン リストから正しいものを 1 つ選択します。   
-   d. [アクション] セクションで、「**電子メールの送信**」などのアクション名を指定し、 **[アクションの種類]** でドロップダウン リストから **[電子メール/SMS/プッシュ/音声]** を選択します。 追加情報を指定するために **[電子メール/SMS/プッシュ/音声]** プロパティ ウィンドウが右側に開きます。  
+6. **[完了]** をクリックして、アラートルールを完了します。<br><br> アラートシグナル](media/configure-azure-monitor/alert-signal-logic-02.png) を構成 ![には<br> 
+7. 次に、2番目の手順に進み、[アラート**ルール名**] フィールドにアラートの名前を指定します ( **[すべてのエラーイベントにアラートを記録**する] など)。  アラートの詳細情報の**説明**を指定し、提供されているオプションから重要**度**の値として [**重大] (重大度 0)** を選択します。
+8. 作成時にアラートルールをすぐにアクティブにするには、[**作成時にルールを有効**にする] の既定値をそのまま使用します。
+9. 3番目と最後の手順では、**アクショングループ**を指定します。これにより、アラートがトリガーされるたびに同じアクションが実行され、定義した各ルールに使用できるようになります。 次の情報を指定して、新しいアクション グループを構成します。  
+   a. **[新しいアクショングループ]** を選択すると、 **[アクショングループの追加]** ウィンドウが表示されます。  
+   b. **[アクショングループ名]** に、「**操作-通知**」や「 **itops-n**」などの**短い名前**を指定します。  
+   c. **サブスクリプション**と**リソースグループ**の既定値が正しいことを確認します。 正しくない場合は、ドロップダウン リストから正しいものを 1 つ選択します。   
+   d. アクション セクションで、アクションの名前を指定します。たとえば、**電子メールの送信**、**アクションの種類** の順に選択し、ドロップダウンリストから **電子メール/SMS/プッシュ/音声** を選択します。 追加情報を提供するために、[**電子メール/SMS/プッシュ/音声**のプロパティ] ウィンドウが右側に表示されます。  
    e. **[電子メール/SMS/プッシュ/音声]** ウィンドウで、設定を選択して設定します。 たとえば、**電子メール**を有効にし、メッセージの配信先となる有効な電子メール SMTP アドレスを指定します。  
    f. **[OK]** をクリックし、変更を保存します。<br><br> 
 
     ![新しいアクション グループの作成](media/configure-azure-monitor/action-group-properties-01.png)
 
-10. **[OK]** をクリックしてアクション グループを完成させます。 
-11. **[アラート ルールの作成]** をクリックしてアラート ルールを完成させます。 すぐに実行が開始されます。<br><br> ![新しいアラート ルールの作成の完了](media/configure-azure-monitor/alert-rule-01.png)<br> 
+10. **[OK]** をクリックして、アクショングループを完成させます。 
+11. アラートルールを完了するには、 **[アラートルールの作成]** をクリックします。 すぐに実行が開始されます。<br><br> 新しいアラートルールの作成を完了 ![](media/configure-azure-monitor/alert-rule-01.png)<br> 
 
 ### <a name="example-alert"></a>アラートの例
 
@@ -250,7 +250,7 @@ Azure Monitor によって送信される電子メールの例を次に示しま
 
 ![アラートの電子メールの例](media/configure-azure-monitor/warning.png)
 
-## <a name="see-also"></a>「
+## <a name="see-also"></a>参照
 
 - [記憶域スペースダイレクトの概要](storage-spaces-direct-overview.md)
 - 詳細については、 [Azure Monitor のドキュメント](https://docs.microsoft.com/azure/azure-monitor/learn/tutorial-viewdata)を参照してください。

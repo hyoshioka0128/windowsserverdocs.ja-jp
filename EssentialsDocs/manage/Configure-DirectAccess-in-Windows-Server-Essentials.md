@@ -1,9 +1,9 @@
 ---
 title: Windows Server Essentials での DirectAccess の構成
-description: Windows Server Essentials を使用する方法について説明します
+description: Windows Server Essentials の使用方法について説明します。
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,76 +12,76 @@ ms.assetid: c959b6fc-c67e-46cd-a9cb-cee71a42fa4c
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 2081473500a08776a1dc81a4fa443696b6fde0d6
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 618c88e14fa86a06e763206a981bb42a667705eb
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66433465"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80311482"
 ---
 # <a name="configure-directaccess-in-windows-server-essentials"></a>Windows Server Essentials での DirectAccess の構成
 
->適用先:Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
+>適用対象: windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-このトピックでは、モバイル ユーザーがシームレスにネットワークに接続する、組織のインターネットを搭載したリモートの場所から確立せずを有効にする Windows Server Essentials で DirectAccess を構成するためのステップ バイ ステップの手順を仮想プライベート ネットワーク (VPN) 接続します。 DirectAccess は、Windows 8.1、Windows 8 および Windows 7 のコンピューターからモバイル ワーカーとオフィスの外では、同じの接続性を提供できます。  
+このトピックでは、Windows Server Essentials で DirectAccess を構成する手順について説明します。これにより、モバイルユーザーは、インターネットに接続された任意のリモートの場所から組織のネットワークにシームレスに接続できるようになります。仮想プライベートネットワーク (VPN) 接続。 DirectAccess では、Windows 8.1、Windows 8、および Windows 7 コンピューターから、オフィス内外で同じ接続エクスペリエンスをモバイルワーカーに提供できます。  
   
- In Windows Server Essentials では、ドメインには、1 つ以上の Windows Server Essentials サーバーが含まれている場合 DirectAccess は、ドメイン コント ローラーで構成する必要があります。  
+ Windows Server Essentials で、ドメインに複数の Windows Server Essentials サーバーが含まれている場合は、ドメインコントローラーで DirectAccess を構成する必要があります。  
   
 > [!NOTE]
->  ここでは、Windows Server Essentials サーバーがドメイン コント ローラーの場合は、DirectAccess を構成する手順について説明します。 Windows Server Essentials サーバーがドメイン メンバーである場合は、次のドメインのメンバーでの DirectAccess を構成する手順について[既存リモート アクセス (VPN) の展開に DirectAccess を追加](https://technet.microsoft.com/library/jj574220.aspx)代わりにします。  
+>  このトピックでは、Windows Server Essentials サーバーがドメインコントローラーである場合に DirectAccess を構成する手順について説明します。 Windows Server Essentials サーバーがドメインメンバーの場合は、「[既存のリモートアクセス (VPN) 展開に directaccess を追加](https://technet.microsoft.com/library/jj574220.aspx)する」のドメインメンバーで directaccess を構成する手順に従います。  
   
 ## <a name="process-overview"></a>プロセスの概要  
- Windows Server Essentials で DirectAccess を構成するには、次の手順を完了します。  
+ Windows Server Essentials で DirectAccess を構成するには、次の手順を実行します。  
   
 > [!IMPORTANT]
->  このガイドの手順を使用して Windows Server Essentials で DirectAccess を構成する前に、サーバーで VPN を有効にする必要があります。 手順については、次を参照してください。 [VPN 管理](Manage-VPN-in-Windows-Server-Essentials.md)します。  
+>  このガイドの手順を使用して Windows Server Essentials で DirectAccess を構成する前に、サーバー上で VPN を有効にする必要があります。 手順については、「 [VPN の管理](Manage-VPN-in-Windows-Server-Essentials.md)」を参照してください。  
   
--   [ステップ 1: サーバーにリモート アクセス管理ツールを追加します。](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_AddRAM)  
+-   [手順 1: サーバーにリモートアクセス管理ツールを追加する](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_AddRAM)  
   
--   [手順 2:静的 IP アドレスに、サーバーのネットワーク アダプターのアドレスを変更します。](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_AddStaticIP)  
+-   [手順 2: サーバーのネットワークアダプターアドレスを静的 IP アドレスに変更する](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_AddStaticIP)  
   
--   [手順 3:ネットワーク ロケーション サーバーの証明書と DNS レコードを準備します。](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_DNS)  
+-   [手順 3: ネットワークロケーションサーバーの証明書と DNS レコードを準備する](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_DNS)  
   
-    -   [手順 3 a:Web サーバーの証明書テンプレートの Authenticated Users に完全なアクセス許可を付与します。](#BKMK_GrantFullPermissions)  
+    -   [手順 3a: 認証されたユーザーに Web サーバーの証明書テンプレートの完全なアクセス許可を付与する](#BKMK_GrantFullPermissions)  
   
-    -   [手順 3b:外部ネットワークからは解決できない共通名とネットワーク ロケーション サーバー用の証明書を登録します。](#BKMK_EnrollaCertificate)  
+    -   [手順 3b: 外部ネットワークから解決できない共通名を使用して、ネットワークロケーションサーバーの証明書を登録する](#BKMK_EnrollaCertificate)  
   
-    -   [手順 3c:DNS サーバーで新しいホストを追加して、Windows Server Essentials サーバー アドレスにマップします。](#BKMK_MapNewHosttoServerAddress)  
+    -   [手順 3c: DNS サーバーに新しいホストを追加し、それを Windows Server Essentials サーバーアドレスにマップする](#BKMK_MapNewHosttoServerAddress)  
   
--   [手順 4:DirectAccess クライアント コンピューターのセキュリティ グループを作成します。](#BKMK_AddSecurityGroup)  
+-   [手順 4: DirectAccess クライアントコンピューターのセキュリティグループを作成する](#BKMK_AddSecurityGroup)  
   
--   [手順 5:有効にして DirectAccess を構成します。](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_EnableConfigureDA)  
+-   [手順 5: DirectAccess を有効にして構成する](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_EnableConfigureDA)  
   
-    -   [手順 5 a:リモート アクセス管理コンソールを使用して DirectAccess を有効にします。](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_EnableDA)  
+    -   [手順 5a: リモートアクセス管理コンソールを使用して DirectAccess を有効にする](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_EnableDA)  
   
-    -   [手順 5 b:RRAS GPO (Windows Server Essentials のみ) から、無効な IPv6Prefix を削除します。](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_RemoveIPv6)  
+    -   [手順 5b: RRAS GPO の無効な IPv6Prefix を削除する (Windows Server Essentials のみ)](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_RemoveIPv6)  
   
-    -   [手順 5 c:DirectAccess を使用する Windows 7 Enterprise を実行しているクライアント コンピューターを有効にします。](#BKMK_Step4cWindows7Setup)  
+    -   [手順 5c: Windows 7 Enterprise を実行しているクライアントコンピューターで DirectAccess を使用できるようにする](#BKMK_Step4cWindows7Setup)  
   
-    -   [手順 5 d:ネットワーク ロケーション サーバーを構成します。](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_NLS)  
+    -   [手順 5d: ネットワークロケーションサーバーを構成する](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_NLS)  
   
-    -   [手順 5 e:IPsec チャネルを確立するときに CA 証明書をバイパスするレジストリ キーを追加します。](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_CA)  
+    -   [手順 5e: IPsec チャネルを確立するときに CA 証明書をバイパスするレジストリキーを追加する](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_CA)  
   
--   [手順 6:DirectAccess サーバーの名前解決ポリシー テーブル設定を構成します。](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_NRPT)  
+-   [手順 6: DirectAccess サーバーの名前解決ポリシーテーブル設定を構成する](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_NRPT)  
   
--   [手順 7:DirectAccess サーバー Gpo の TCP および UDP のファイアウォール規則を構成します。](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_TCPUDP)  
+-   [手順 7: DirectAccess サーバー Gpo の TCP および UDP ファイアウォール規則を構成する](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_TCPUDP)  
   
--   [手順 8:IP-HTTPS インターフェイスをリッスンするように DNS64 の構成を変更します。](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_DNS64)  
+-   [手順 8: IP-HTTPS インターフェイスをリッスンするように DNS64 の構成を変更する](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_DNS64)  
   
--   [手順 9:WinNat サービス用にポートを予約します。](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_ExemptPort)  
+-   [手順 9: WinNat サービス用にポートを予約する](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_ExemptPort)  
   
--   [手順 10:WinNat サービスを再起動します。](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_WinNAT)  
+-   [手順 10: WinNat サービスを再起動する](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_WinNAT)  
   
 > [!NOTE]
->  [付録:Windows PowerShell を使用して DirectAccess をセットアップ](#BKMK_AppendixBPowerShellScript)DirectAccess セットアップを実行するのに使用できる Windows PowerShell スクリプトを提供します。  
+>  [付録:Windows PowerShell を使用して DirectAccess をセットアップする](#BKMK_AppendixBPowerShellScript) では、DirectAccess セットアップを実行するために使用できる Windows PowerShell スクリプトを提供します。  
   
-##  <a name="BKMK_AddRAM"></a> 手順 1:サーバーにリモート アクセス管理ツールを追加する  
+##  <a name="step-1-add-remote-access-management-tools-to-your-server"></a><a name="BKMK_AddRAM"></a>手順 1: サーバーにリモートアクセス管理ツールを追加する  
   
 #### <a name="to-add-remote-access-management-tools"></a>リモート アクセス管理ツールを追加するには  
   
 1.  サーバーで、スタート ページの左下隅にある **[サーバー マネージャー]** アイコンをクリックします。  
   
-     Windows Server Essentials では、検索のサーバー マネージャーを開くことが必要になります。 スタート ページで、「 **Server Manager**」と入力して、検索結果の **[サーバー マネージャー]** をクリックします。 サーバー マネージャーをスタート ページにピン留めするには、検索結果のサーバー マネージャーを右クリックして、 **[スタートにピン留め]** をクリックします。  
+     Windows Server Essentials では、サーバーマネージャーを検索して開く必要があります。 スタート ページで、「**Server Manager**」と入力して、検索結果の **[サーバー マネージャー]** をクリックします。 サーバー マネージャーをスタート ページにピン留めするには、検索結果のサーバー マネージャーを右クリックして、 **[スタートにピン留め]** をクリックします。  
   
 2.  **ユーザー アカウント制御**の警告メッセージが表示されたら、 **[はい]** をクリックします。  
   
@@ -91,13 +91,13 @@ ms.locfileid: "66433465"
   
     1.  **[インストールの種類]** ページで、 **[役割ベースまたは機能ベースのインストール]** をクリックします。  
   
-    2.  **サーバーの選択 ページ**(または**対象サーバーの選択**Windows Server Essentials でのページ)、をクリックして**サーバー プールからサーバーを選択**します。  
+    2.  [**サーバーの選択] ページ**(または Windows Server Essentials の **[対象サーバーの選択]** ページ) で、サーバー **[プールからサーバーを選択]** をクリックします。  
   
     3.  **[機能]** ページで、 **[リモート サーバー管理ツール]** (インストール済み) を展開し、 **[リモート アクセス管理ツール]** (インストール済み) を展開し、 **[役割管理ツール]** (インストール済み) を展開し、 **[リモート アクセス管理ツール]** を展開して、 **[リモート アクセス GUI ツールとコマンド ライン ツール]** を選択します。  
   
     4.  指示に従ってウィザードを完了します。  
   
-##  <a name="BKMK_AddStaticIP"></a> 手順 2:サーバーのネットワーク アダプター アドレスを静的 IP アドレスに変更する  
+##  <a name="step-2-change-the-network-adapter-address-of-the-server-to-a-static-ip-address"></a><a name="BKMK_AddStaticIP"></a>手順 2: サーバーのネットワークアダプターアドレスを静的 IP アドレスに変更する  
  DirectAccess では、静的 IP アドレスを持つアダプターが必要です。 このため、サーバーのローカル ネットワーク アダプターの IP アドレスを変更する必要があります。  
   
 #### <a name="to-add-a-static-ip-address"></a>静的 IP アドレスを追加するには  
@@ -130,23 +130,23 @@ ms.locfileid: "66433465"
 > [!IMPORTANT]
 >  ルーターの構成で、ポート 80 および 443 をルーターの新しい静的 IP アドレスに転送していることを確認してください。  
   
-##  <a name="BKMK_DNS"></a> 手順 3:ネットワーク ロケーション サーバーの証明書と DNS レコードを準備する  
+##  <a name="step-3-prepare-a-certificate-and-dns-record-for-the-network-location-server"></a><a name="BKMK_DNS"></a>手順 3: ネットワークロケーションサーバーの証明書と DNS レコードを準備する  
  ネットワーク ロケーション サーバーの証明書と DNS レコードを準備をするには、次のタスクを実行します。  
   
--   [手順 3 a:Web サーバーの証明書テンプレートの Authenticated Users に完全なアクセス許可を付与します。](#BKMK_GrantFullPermissions)  
+-   [手順 3a: 認証されたユーザーに Web サーバーの証明書テンプレートの完全なアクセス許可を付与する](#BKMK_GrantFullPermissions)  
   
--   [手順 3b:外部ネットワークからは解決できない共通名とネットワーク ロケーション サーバー用の証明書を登録します。](#BKMK_EnrollaCertificate)  
+-   [手順 3b: 外部ネットワークから解決できない共通名を使用して、ネットワークロケーションサーバーの証明書を登録する](#BKMK_EnrollaCertificate)  
   
--   [手順 3c:DNS サーバーで新しいホストを追加し、Windows Server Essentials サーバー アドレスにマップします。](#BKMK_MapNewHosttoServerAddress)  
+-   [手順 3c: DNS サーバーに新しいホストを追加し、それを Windows Server Essentials サーバーアドレスにマップします。](#BKMK_MapNewHosttoServerAddress)  
   
-###  <a name="BKMK_GrantFullPermissions"></a> 手順 3 a:Web サーバーの証明書テンプレートの Authenticated Users に完全なアクセス許可を付与します。  
- 最初のタスクでは、証明機関で Web サーバーの証明書テンプレートのユーザーを認証する完全なアクセス許可を付与します。  
+###  <a name="step-3a-grant-full-permissions-to-authenticated-users-for-the-web-servers-certificate-template"></a><a name="BKMK_GrantFullPermissions"></a>手順 3a: 認証されたユーザーに Web サーバーの証明書テンプレートの完全なアクセス許可を付与する  
+ 最初のタスクでは、証明機関の Web サーバーの証明書テンプレートに対してユーザーを認証するための完全なアクセス許可を付与します。  
   
-####  <a name="BKMK_ToGrantFullPermissions"></a> Web サーバーの証明書テンプレートの完全なアクセス許可を Authenticated Users に許可するには  
+####  <a name="to-grant-full-permissions-to-authenticated-users-for-the-web-servers-certificate-template"></a><a name="BKMK_ToGrantFullPermissions"></a>認証されたユーザーに Web サーバーの証明書テンプレートの完全なアクセス許可を付与するには  
   
 1.  **[スタート]** ページで、 **[証明機関]** を開きます。  
   
-2.  コンソール ツリーで **証明機関 (ローカル)** 、展開 **< servername\>CA**、右クリック**証明書テンプレート**、順にクリックします**管理**します。  
+2.  コンソールツリーの **[証明機関 (ローカル)]** で、[ **< servername\>** ] を展開し、 **[証明書テンプレート]** を右クリックして、 **[管理]** をクリックします。  
   
 3.  **[証明機関 (ローカル)]** で、 **[Web サーバー]** を右クリックして、 **[プロパティ]** をクリックします。  
   
@@ -154,14 +154,14 @@ ms.locfileid: "66433465"
   
 5.  **[Active Directory 証明書サービス]** を再起動します。 コントロール パネルで、 **[ローカル サービスの表示]** を開きます。 サービスの一覧で、 **[Active Directory 証明書サービス]** を右クリックして、 **[再起動]** をクリックします。  
   
-###  <a name="BKMK_EnrollaCertificate"></a> 手順 3 b:外部ネットワークからは解決できない共通名を使用して、ネットワーク ロケーション サーバーの証明書を登録する  
+###  <a name="step-3b-enroll-a-certificate-for-the-network-location-server-with-a-common-name-that-is-unresolvable-from-the-external-network"></a><a name="BKMK_EnrollaCertificate"></a>手順 3b: 外部ネットワークから解決できない共通名を使用して、ネットワークロケーションサーバーの証明書を登録する  
  次に、外部ネットワークからは解決できない共通名を使用して、ネットワーク ロケーション サーバーの証明書を登録します。  
   
-####  <a name="BKMK_ToEnrollaCertificate"></a> ネットワーク ロケーション サーバー用の証明書を登録するには  
+####  <a name="to-enroll-a-certificate-for-the-network-location-server"></a><a name="BKMK_ToEnrollaCertificate"></a>ネットワークロケーションサーバーの証明書を登録するには  
   
 1.  **[スタート]** ページで、 **[MMC]** (Microsoft 管理コンソール) を開きます。  
   
-2.  **ユーザー アカウント制御** の警告メッセージが表示されたら、 **[はい]** をクリックします。  
+2.  **ユーザー アカウント制御**の警告メッセージが表示されたら、 **[はい]** をクリックします。  
   
      Microsoft 管理コンソール (MMC) が開きます。  
   
@@ -191,20 +191,20 @@ ms.locfileid: "66433465"
   
 12. 証明書の登録が完了したら、 **[完了]** をクリックします。  
   
-###  <a name="BKMK_MapNewHosttoServerAddress"></a> 手順 3 c:DNS サーバーに新しいホストを追加し、Windows Server Essentials サーバー アドレスにマップする  
- DNS 構成を完了するには、DNS サーバーで新しいホストを追加し、Windows Server Essentials サーバー アドレスにマップします。  
+###  <a name="step-3c-add-a-new-host-on-the-dns-server-and-map-it-to-the-windows-server-essentials-server-address"></a><a name="BKMK_MapNewHosttoServerAddress"></a>手順 3c: DNS サーバーに新しいホストを追加し、それを Windows Server Essentials サーバーアドレスにマップする  
+ DNS 構成を完了するには、DNS サーバーに新しいホストを追加し、Windows Server Essentials サーバーアドレスにマップします。  
   
-####  <a name="BKMK_ToMapNewHosttoServerAddress"></a> Windows Server Essentials サーバーのアドレスに新しいホストにマップ  
+####  <a name="to-map-a-new-host-to-the-windows-server-essentials-server-address"></a><a name="BKMK_ToMapNewHosttoServerAddress"></a>新しいホストを Windows Server Essentials サーバーアドレスにマップするには  
   
 1.  スタート ページで DNS マネージャーを開きます。 DNS マネージャーを開くには、「 **dnsmgmt.msc**」を検索して、結果の **[dnsmgmt.msc]** をクリックします。  
   
-2.  DNS マネージャー コンソール ツリーで、ローカル サーバーを展開し、**前方参照ゾーン**サーバーのドメインのサフィックスを持つゾーンを右クリックし、クリックして**新しいホスト (A または AAAA)** します。  
+2.  DNS マネージャーコンソールツリーで、ローカルサーバー、**前方参照ゾーン** の順に展開し、サーバーのドメインサフィックスがあるゾーンを右クリックして、**新しいホスト (A または AAAA)** をクリックします。  
   
 3.  サーバーの名前と IP アドレス (たとえば「DirectAccess-NLS.contoso.local」)、および対応するサーバー アドレス (たとえば「192.168.x.x」) を入力します。  
   
 4.  **[ホストの追加]** をクリックし、 **[OK]** をクリックして、 **[完了]** をクリックします。  
   
-##  <a name="BKMK_AddSecurityGroup"></a> 手順 4:DirectAccess クライアント コンピューターのセキュリティ グループを作成する  
+##  <a name="step-4-create-a-security-group-for-directaccess-client-computers"></a><a name="BKMK_AddSecurityGroup"></a>手順 4: DirectAccess クライアントコンピューターのセキュリティグループを作成する  
  次に、DirectAccess クライアント コンピューターを使用するセキュリティ グループを作成し、コンピューター アカウントをグループに追加します。  
   
 #### <a name="to-add-a-security-group-for-client-computers-that-use-directaccess"></a>DirectAccess を使用するクライアント コンピューターにセキュリティ グループを追加するには  
@@ -237,21 +237,21 @@ ms.locfileid: "66433465"
 > [!NOTE]
 >  コンピューター アカウントのプロパティの **[メンバー]** タブを使用して、セキュリティ グループにアカウントを追加することもできます。  
   
-##  <a name="BKMK_EnableConfigureDA"></a> 手順 5:DirectAccess を有効にして構成する  
- 有効にする、Windows Server Essentials における DirectAccess の構成を次の手順を完了する必要があります。  
+##  <a name="step-5-enable-and-configure-directaccess"></a><a name="BKMK_EnableConfigureDA"></a>手順 5: DirectAccess を有効にして構成する  
+ Windows Server Essentials で DirectAccess を有効にして構成するには、次の手順を完了する必要があります。  
   
--   [手順 5 a:リモート アクセス管理コンソールを使用して DirectAccess を有効にします。](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_EnableDA)  
+-   [手順 5a: リモートアクセス管理コンソールを使用して DirectAccess を有効にする](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_EnableDA)  
   
--   [手順 5 b:RRAS GPO (Windows Server Essentials のみ) から、無効な IPv6Prefix を削除します。](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_RemoveIPv6)  
+-   [手順 5b: RRAS GPO の無効な IPv6Prefix を削除する (Windows Server Essentials のみ)](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_RemoveIPv6)  
   
--   [手順 5 c:DirectAccess を使用する Windows 7 Enterprise を実行しているクライアント コンピューターを有効にします。](#BKMK_Step4cWindows7Setup)  
+-   [手順 5c: Windows 7 Enterprise を実行しているクライアントコンピューターで DirectAccess を使用できるようにする](#BKMK_Step4cWindows7Setup)  
   
--   [手順 5 d:ネットワーク ロケーション サーバーを構成します。](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_NLS)  
+-   [手順 5d: ネットワークロケーションサーバーを構成する](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_NLS)  
   
--   [手順 5 e:IPsec チャネルを確立するときに CA 証明書をバイパスするレジストリ キーを追加します。](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_CA)  
+-   [手順 5e: IPsec チャネルを確立するときに CA 証明書をバイパスするレジストリキーを追加する](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_CA)  
   
-###  <a name="BKMK_EnableDA"></a> 手順 5 a:リモート アクセス管理コンソールを使用して DirectAccess を有効にする  
- このセクションでは、Windows Server Essentials で DirectAccess を有効にする手順が説明します。 まだサーバー上で VPN を構成していない場合は、この手順を開始する前に構成する必要があります。 手順については、次を参照してください。 [VPN 管理](Manage-VPN-in-Windows-Server-Essentials.md)します。  
+###  <a name="step-5a-enable-directaccess-by-using-the-remote-access-management-console"></a><a name="BKMK_EnableDA"></a>手順 5a: リモートアクセス管理コンソールを使用して DirectAccess を有効にする  
+ このセクションでは、Windows Server Essentials で DirectAccess を有効にする手順について説明します。 まだサーバー上で VPN を構成していない場合は、この手順を開始する前に構成する必要があります。 手順については、「 [VPN の管理](Manage-VPN-in-Windows-Server-Essentials.md)」を参照してください。  
   
 ##### <a name="to-enable-directaccess-by-using-the-remote-access-management-console"></a>リモート アクセス管理コンソールを使用して DirectAccess を有効にするには  
   
@@ -261,7 +261,7 @@ ms.locfileid: "66433465"
   
     1.  **[DirectAccess の前提条件]** を確認し、 **[次へ]** をクリックします。  
   
-    2.  **[グループの選択]** タブで、DirectAccess クライアント用に先ほど作成したセキュリティ グループを追加します。 (セキュリティ グループを作成していない場合は、次を参照してください。[手順 4。DirectAccess クライアントのセキュリティ グループを作成するには、コンピューター](#BKMK_AddSecurityGroup)手順についてはします)。  
+    2.  **[グループの選択]** タブで、DirectAccess クライアント用に先ほど作成したセキュリティ グループを追加します。 (セキュリティグループを作成していない場合は、「[手順 4: DirectAccess クライアントコンピューターのセキュリティグループを作成](#BKMK_AddSecurityGroup)する」を参照してください)。  
   
     3.  モバイル コンピューターから DirectAccess を使用してサーバーにリモート アクセスできるようにする場合は、 **[グループの選択]** タブで、 **[モバイル コンピューターに対してのみ DirectAccess を有効にする]** をクリックします。 **[次へ]** をクリックします。  
   
@@ -282,8 +282,8 @@ ms.locfileid: "66433465"
         Restart-Service RaMgmtSvc   
         ```  
   
-###  <a name="BKMK_RemoveIPv6"></a> 手順 5 b:RRAS GPO (Windows Server Essentials のみ) から、無効な IPv6Prefix を削除します。  
-  このセクションでは、Windows Server Essentials を実行しているサーバーに適用されます。  
+###  <a name="step-5b-remove-the-invalid-ipv6prefix-in-rras-gpo-windows-server-essentials-only"></a><a name="BKMK_RemoveIPv6"></a>手順 5b: RRAS GPO の無効な IPv6Prefix を削除する (Windows Server Essentials のみ)  
+  このセクションは、Windows Server Essentials を実行しているサーバーに適用されます。  
   
  管理者として Windows PowerShell を開き、次のコマンドを実行します。  
   
@@ -294,34 +294,34 @@ Remove-GPRegistryValue -Name "DirectAccess Server Settings" -Key $key.Name -Valu
 gpupdate  
 ```  
   
-###  <a name="BKMK_Step4cWindows7Setup"></a> 手順 5 c:DirectAccess を使用する Windows 7 Enterprise を実行しているクライアント コンピューターを有効にします。  
- Windows 7 Enterprise を実行しているクライアント コンピューターがある場合は、これらのコンピューターから DirectAccess を有効にする次の手順を完了します。  
+###  <a name="step-5c-enable-client-computers-running-windows-7-enterprise-to-use-directaccess"></a><a name="BKMK_Step4cWindows7Setup"></a>手順 5c: Windows 7 Enterprise を実行しているクライアントコンピューターで DirectAccess を使用できるようにする  
+ Windows 7 Enterprise を実行しているクライアントコンピューターがある場合は、次の手順を実行して、これらのコンピューターから DirectAccess を有効にします。  
   
-##### <a name="to-enable--windows-7-enterprise-computers-to-use-directaccess"></a>Windows 7 Enterprise コンピューターが DirectAccess を使用できるようにするには  
+##### <a name="to-enable--windows-7-enterprise-computers-to-use-directaccess"></a>Windows 7 Enterprise コンピューターで DirectAccess を使用できるようにするには  
   
-1.  サーバーの開始 ページで、開く**リモート アクセス管理**します。  
+1.  サーバーのスタートページで、 **[リモートアクセス管理]** を開きます。  
   
 2.  リモート アクセス管理コンソールで、 **[構成]** をクリックします。 次に、 **[設定の詳細]** ウィンドウの **[ステップ 2]** で、 **[編集]** をクリックします。  
   
      リモート アクセス サーバーのセットアップ ウィザードが開きます。  
   
-3.  **認証** タブで、(Windows Server Essentials サーバーの CA 証明書を選択することができます)、信頼されたルート証明書となる証明機関 (CA) 証明書を選択します。 **[Windows 7 クライアント コンピューターが DirectAccess を使用して接続できるようにする]** をクリックし、 **[次へ]** をクリックします。  
+3.  **[認証]** タブで、信頼されたルート証明書となる証明機関 (ca) 証明書を選択します (Windows Server Essentials サーバーの ca 証明書を選択できます)。 **[Windows 7 クライアント コンピューターが DirectAccess を使用して接続できるようにする]** をクリックし、 **[次へ]** をクリックします。  
   
 4.  指示に従ってウィザードを完了します。  
   
 > [!IMPORTANT]
->  Windows Server Essentials サーバーに ur1 がプレインストールされたならなかった場合 DirectAccess 経由で接続している Windows 7 Enterprise コンピューターの既知の問題があります。 この環境で DirectAccess 接続を有効にするには、次の追加の手順を実行する必要があります。  
+>  Windows Server Essentials サーバーに UR1 がプレインストールされていない場合、DirectAccess 経由で接続している Windows 7 Enterprise コンピューターでは既知の問題があります。 この環境で DirectAccess 接続を有効にするには、次の追加の手順を実行する必要があります。  
 > 
-> 1. 説明されている修正プログラムをインストール[マイクロソフト サポート技術情報 (KB) の記事 2796394](https://support.microsoft.com/kb/2796394) Windows Server Essentials サーバーにします。 サーバーを再起動します。  
->    2. 説明されている修正プログラムをインストールし、[マイクロソフト サポート技術情報 (KB) の記事 2615847](https://support.microsoft.com/kb/2615847) Windows 7 コンピューターごとです。  
+> 1. [Microsoft サポート技術情報 (KB) の記事 2796394](https://support.microsoft.com/kb/2796394)に記載されている修正プログラムを Windows Server Essentials サーバーにインストールします。 サーバーを再起動します。  
+>    2. 次に、 [Microsoft サポート技術情報 (KB) の記事 2615847](https://support.microsoft.com/kb/2615847)に記載されている修正プログラムを各 Windows 7 コンピューターにインストールします。  
 > 
 >    この問題は、Windows Server Essentials で解決されました。  
   
-###  <a name="BKMK_NLS"></a> 手順 5 d:ネットワーク ロケーション サーバーを構成する  
+###  <a name="step-5d-configure-the-network-location-server"></a><a name="BKMK_NLS"></a>手順 5d: ネットワークロケーションサーバーを構成する  
  ここでは、ネットワーク ロケーション サーバーの設定を構成する手順について詳しく説明します。  
   
 > [!NOTE]
->  内容のコピーを開始する前に、< SystemDrive\>\inetpub\wwwroot フォルダーに、< SystemDrive\>\Program Files\Windows server \bin\webapps\site\insideoutside フォルダー。 Default.aspx ファイルのコピーも、< SystemDrive\>\Program Files\Windows server \bin\webapps\site フォルダー、< SystemDrive\>\Program Files\Windows server \bin\webapps\site\insideoutside フォルダー。  
+>  開始する前に、< SystemDrive\>\inetpub\wwwroot フォルダーの内容を、< SystemDrive\>Files\Windows Server\Bin\WebApps\Site\insideoutside フォルダーにコピーします。 また、default.aspx ファイルを < SystemDrive\>Files\Windows Server\Bin\WebApps\Site フォルダーから、< SystemDrive\>/Files\Windows Server\Bin\WebApps\Site\insideoutside フォルダーにコピーします。  
   
 ##### <a name="to-configure-the-network-location-server"></a>ネットワーク ロケーション サーバーを構成するには  
   
@@ -329,11 +329,11 @@ gpupdate
   
 2.  リモート アクセス管理コンソールで **[構成]** をクリックし、 **[リモート アクセスのセットアップ]** 詳細ウィンドウの **[ステップ 3]** で、 **[編集]** をクリックします。  
   
-3.  リモート アクセス サーバー セットアップ ウィザードで、**ネットワーク ロケーション サーバー** ] タブで [**ネットワーク ロケーション サーバーがリモート アクセス サーバーに展開されている**が証明書を選択し、以前に発行された (で[手順 3。ネットワーク ロケーション サーバーの証明書と DNS レコードを準備する](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_DNS))。  
+3.  リモート アクセス サーバーのセットアップ ウィザードの **[ネットワーク ロケーション サーバー]** タブで、 **[ネットワーク ロケーション サーバーをリモート アクセス サーバー上に展開する]** を選択します。次に、事前に発行した証明書を選択します ( [Step 3: Prepare a certificate and DNS record for the network location server](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_DNS))。  
   
 4.  指示に従ってウィザードを完了し、 **[完了]** をクリックします。  
   
-###  <a name="BKMK_CA"></a> 手順 5 e:IPsec チャネルを確立するときに CA 証明書をバイパスするレジストリ キーを追加する  
+###  <a name="step-5e-add-a-registry-key-to-bypass-ca-certification-when-you-establish-an-ipsec-channel"></a><a name="BKMK_CA"></a>手順 5e: IPsec チャネルを確立するときに CA 証明書をバイパスするレジストリキーを追加する  
  次の手順では、IPsec チャネルが確立されたときに CA 証明書をバイパスするようサーバーを構成します。  
   
 ##### <a name="to-add-a-registry-key-to-bypass-the-ca-certification"></a>CA 証明書をバイパスするレジストリ キーを追加するには  
@@ -344,7 +344,7 @@ gpupdate
   
 3.  **[IKEEXT]** で **[パラメーター]** を右クリックし、 **[新規]** をクリックし、 **[DWORD (32 ビット) 値]** をクリックします。  
   
-4.  新しく追加された値の名前を「 **ikeflags**」に変更します。  
+4.  新しく追加された値の名前を「**ikeflags**」に変更します。  
   
 5.  **[ikeflags]** をダブルクリックして、 **[種類]** に **[Hexadecimal]** を設定し、値に「**8000**」を設定して **[OK]** をクリックします。  
   
@@ -353,7 +353,7 @@ gpupdate
 >   
 >  `Set-ItemProperty -Path HKLM:\SYSTEM\CurrentControlSet\Services\IKEEXT\Parameters -Name ikeflags -Type DWORD -Value 0x8000`  
   
-##  <a name="BKMK_NRPT"></a> 手順 6:DirectAccess サーバーの名前解決ポリシー テーブル設定を構成する  
+##  <a name="step-6-configure-name-resolution-policy-table-settings-for-the-directaccess-server"></a><a name="BKMK_NRPT"></a>手順 6: DirectAccess サーバーの名前解決ポリシーテーブル設定を構成する  
  ここでは、DirectAccess クライアント GPO で内部アドレス (たとえば contoso.local サフィックスを持つエントリ) の名前解決ポリシー テーブル (NPRT) エントリを編集し、IPHTTPS インターフェイス アドレスを設定する手順について説明します。  
   
 #### <a name="to-configure-name-resolution-policy-table-entries"></a>名前解決ポリシー テーブル エントリを構成するには  
@@ -371,7 +371,7 @@ gpupdate
     >   
     >  `(Get-NetIPInterface -InterfaceAlias IPHTTPSInterface | Get-NetIPAddress -PrefixLength 128)[1].IPAddress`  
   
-##  <a name="BKMK_TCPUDP"></a> 手順 7:DirectAccess サーバーの GPO で TCP および UDP のファイアウォール規則を構成する  
+##  <a name="step-7-configure-tcp-and-udp-firewall-rules-for-the-directaccess-server-gpos"></a><a name="BKMK_TCPUDP"></a>手順 7: DirectAccess サーバー Gpo の TCP および UDP ファイアウォール規則を構成する  
  ここでは、DirectAccess サーバーの GPO で TCP および UDP のファイアウォール規則を構成する手順について詳しく説明します。  
   
 #### <a name="to-configure-firewall-rules"></a>ファイアウォール規則を構成するには  
@@ -386,15 +386,15 @@ gpupdate
   
 5.  **[ドメイン ネーム サーバー (UDP 受信)]** についても同じ手順を繰り返します。  
   
-##  <a name="BKMK_DNS64"></a> 手順 8:DNS64 の構成を変更して IP-HTTPS インターフェイスをリッスンする  
+##  <a name="step-8-change-the-dns64-configuration-to-listen-to-the-ip-https-interface"></a><a name="BKMK_DNS64"></a>手順 8: IP-HTTPS インターフェイスをリッスンするように DNS64 の構成を変更する  
  DNS64 の構成を変更して、IP-HTTPS インターフェイスをリッスンするように設定する必要があります。これには、次の Windows PowerShell コマンドを使用します。  
   
 ```powershell  
 Set-NetDnsTransitionConfiguration -AcceptInterface IPHTTPSInterface  
 ```  
   
-##  <a name="BKMK_ExemptPort"></a> 手順 9:WinNat サービス用にポートを予約する  
- 次の Windows PowerShell コマンドを使用して、WinNat サービスのポートを予約します。 「192.168.1.100」を Windows Server Essentials サーバーの実際の IPv4 アドレスに置き換えます。  
+##  <a name="step-9-reserve-ports-for-the-winnat-service"></a><a name="BKMK_ExemptPort"></a>手順 9: WinNat サービス用にポートを予約する  
+ 次の Windows PowerShell コマンドを使用して、WinNat サービスのポートを予約します。 "192.168.1.100" を Windows Server Essentials サーバーの実際の IPv4 アドレスに置き換えます。  
   
 ```powershell  
 Set-NetNatTransitionConfiguration -IPv4AddressPortPool @("192.168.1.100, 10000-47000")  
@@ -403,22 +403,22 @@ Set-NetNatTransitionConfiguration -IPv4AddressPortPool @("192.168.1.100, 10000-4
 > [!IMPORTANT]
 >  アプリケーションとのポートの競合を回避するために、WinNat サービス用に予約するポートの範囲にポート 6602 が含まれていないことを確認します。  
   
-##  <a name="BKMK_WinNAT"></a> 手順 10:WinNat サービスを再起動する  
+##  <a name="step-10-restart-the-winnat-service"></a><a name="BKMK_WinNAT"></a>手順 10: WinNat サービスを再起動する  
  次の Windows PowerShell コマンドを使用して、Windows NAT ドライバー (WinNat) サービスを再起動します。  
   
 ```powershell  
 Restart-Service winnat  
 ```  
   
-##  <a name="BKMK_AppendixBPowerShellScript"></a> 付録:Windows PowerShell を使用して DirectAccess をセットアップする  
+##  <a name="appendix-set-up-directaccess-by-using-windows-powershell"></a><a name="BKMK_AppendixBPowerShellScript"></a>付録: Windows PowerShell を使用して DirectAccess をセットアップする  
  ここでは、Windows PowerShell を使用して DirectAccess のセットアップと構成を行う方法について説明します。  
   
 ### <a name="preparation"></a>準備  
  DirectAccess 用にサーバーの構成を開始する前に、次の操作を完了する必要があります。  
   
-1.  」の手順に従って[手順 3。ネットワーク ロケーション サーバーの証明書と DNS レコードを準備する](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_DNS)という証明書を登録する**Directaccess-nls.contoso.com** (場所**contoso.com**実際に置換されます内部ドメイン名)、およびネットワーク ロケーション サーバー (NLS) の DNS レコードを追加します。  
+1.  [「手順 3: ネットワークロケーションサーバーの証明書と DNS レコードを準備](Configure-DirectAccess-in-Windows-Server-Essentials.md#BKMK_DNS)する」の手順に従って、 **DirectAccess-NLS.contoso.com**という名前の証明書を登録します ( **contoso.com**は実際の内部ドメイン名に置き換えられます)。また、ネットワークロケーションサーバー (NLS) の dns レコードを追加します。  
   
-2.  Active Directory に **DirectAccessClients** という名前のセキュリティ グループを追加し、DirectAccess 機能を使用できるようにするクライアント コンピューターを追加します。 詳細については、次を参照してください。[手順 4。DirectAccess クライアントのセキュリティ グループを作成するには、コンピューター](#BKMK_AddSecurityGroup)します。  
+2.  Active Directory に **DirectAccessClients** という名前のセキュリティ グループを追加し、DirectAccess 機能を使用できるようにするクライアント コンピューターを追加します。 詳細については、「[手順 4: DirectAccess クライアントコンピューターのセキュリティグループを作成する](#BKMK_AddSecurityGroup)」を参照してください。  
   
 ### <a name="commands"></a>コマンド  
   
@@ -507,8 +507,8 @@ Set-NetNatTransitionConfiguration -IPv4AddressPortPool @("192.168.1.100, 10000-4
 Restart-Service winnat  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
   
--   [Anywhere Access を管理します。](Manage-Anywhere-Access-in-Windows-Server-Essentials.md)  
+-   [Anywhere Access の管理](Manage-Anywhere-Access-in-Windows-Server-Essentials.md)  
   
 -   [Windows Server Essentials の管理](Manage-Windows-Server-Essentials.md)

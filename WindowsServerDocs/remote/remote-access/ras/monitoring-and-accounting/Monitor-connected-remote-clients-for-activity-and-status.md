@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: beb94475-b21f-46a9-ac51-bf2bb28ca94e
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 03d87fb086a9f2797af8399be3d833b11bed79a5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 4b2377816255189efbaa6d5c39cd4e91b923a039
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367261"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314226"
 ---
 # <a name="monitor-connected-remote-clients-for-activity-and-status"></a>接続しているリモート クライアントの活動と状態を監視する
 
@@ -42,7 +42,7 @@ ms.locfileid: "71367261"
   
 windows PowerShell の ![](../../../media/Monitor-connected-remote-clients-for-activity-and-status/PowerShellLogoSmall.gif)***<em>windows powershell の同等のコマンド</em>***  
   
-以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
+次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 書式上の制約のため、複数行にわたって折り返される場合でも、各コマンドレットは 1 行に入力してください。  
   
 ```  
 PS> Get-RemoteAccessConnectionStatistics  
@@ -50,10 +50,10 @@ PS> Get-RemoteAccessConnectionStatistics
   
 次の表にフィールドを使用して、条件の選択に基づいて、ユーザーの統計情報をフィルターできます。  
   
-|フィールド名|Value|  
+|フィールド名|値|  
 |-------|-----|  
 |Username|リモート ユーザーのユーザー名またはエイリアス。 Contoso のようなユーザーのグループを選択するワイルドカード文字を使用できる\\* または \*\administrator します。|  
-|ホスト名|リモート ユーザーのコンピューター アカウント名。 IPv4 または IPv6 アドレスも指定できます。|  
+|Hostname|リモート ユーザーのコンピューター アカウント名。 IPv4 または IPv6 アドレスも指定できます。|  
 |種類|DirectAccess または VPN。 DirectAccess を選択すると、DirectAccess を使用して接続されているすべてのリモート ユーザーが一覧表示されます。 VPN を選択すると、VPN を使用して接続されているすべてのリモート ユーザーが一覧表示されます。|  
 |ISP アドレス|リモート ユーザーの IPv4 アドレスまたは IPv6 アドレス。|  
 |IPv4 アドレス|リモート ユーザーを企業ネットワークに接続しているトンネルの内部 IPv4 アドレス。|  

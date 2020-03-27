@@ -11,16 +11,16 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 07/13/2018
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.localizationpriority: medium
 ms.reviewer: deverette
-ms.openlocfilehash: f2c1de01883f2fb52faebb4abf1d0c9e61f0139b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c58386467d632d77fdc96bf3bc18b5a85d1ecdaf
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388073"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80307708"
 ---
 # <a name="step-71-configure-eap-tls-to-ignore-certificate-revocation-list-crl-checking"></a>手順 7.1. 証明書失効リスト (CRL) が無視されるように EAP-TLS を構成する
 
@@ -62,6 +62,6 @@ EAP-TLS クライアントは、NPS サーバーが証明書チェーン (ルー
 |HKLM\SYSTEM\CurrentControlSet\Services\RasMan\PPP\EAP\25     |PEAP         |
 |HKLM\SYSTEM\CurrentControlSet\Services\RasMan\PPP\EAP\26     |EAP-MSCHAP v2         |
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次のステップ:
 
 [手順 7.2.Azure AD を使用した VPN 認証用のルート証明書を作成](vpn-create-root-cert-for-vpn-auth-azure-ad.md)する: この手順では、Azure AD で vpn 認証用の条件付きアクセスルート証明書を構成します。これにより、テナントに Vpn サーバークラウドアプリが自動的に作成されます。

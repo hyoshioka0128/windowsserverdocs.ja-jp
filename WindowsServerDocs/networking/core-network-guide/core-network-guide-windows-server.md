@@ -7,14 +7,14 @@ ms.technology: networking
 ms.topic: article
 ms.date: ''
 ms.assetid: 9b3ef3eb-4246-4e0e-8bf1-53224ca5f2f9
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 52f8b9e1446b5b3f3b1e7060cc737204771d1eae
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 62bac410d92e63f4f5cb759b04f7a51ef17d18b0
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356068"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318046"
 ---
 # <a name="core-network-guidance-for-windows-server"></a>Windows Server のコア ネットワーク ガイド
 
@@ -26,7 +26,7 @@ ms.locfileid: "71356068"
   
 -   [Windows Server 用コアネットワークガイド](#bkmk_core)  
   
-## <a name="bkmk_intro"></a>Windows Server Core ネットワークの概要
+## <a name="introduction-to-the-windows-server-core-network"></a><a name="bkmk_intro"></a>Windows Server Core ネットワークの概要
 
 コア ネットワークは、ネットワーク ハードウェア、デバイス、およびソフトウェアのコレクションであり、組織の情報テクノロジ (IT) ニーズに対応するための基盤サービスを提供します。
 
@@ -46,7 +46,7 @@ Windows Server コア ネットワークには、次のような機能を提供�
 
 また、コア ネットワークにより、組織の成長と IT 要件の変化に合わせてネットワークの規模を拡張できます。 たとえば、コアネットワークでは、ドメイン、IP サブネット、リモートアクセスサービス、ワイヤレスサービス、および Windows Server 2016 によって提供されるその他の機能とサーバーの役割を追加できます。
 
-## <a name="bkmk_core"></a>Windows Server 用コアネットワークガイド
+## <a name="core-network-guide-for-windows-server"></a><a name="bkmk_core"></a>Windows Server 用コアネットワークガイド
 
 Windows Server 2016 コアネットワークガイドでは、新しいフォレストで、完全に機能するネットワークと新しい Active Directory&reg; ドメインに必要なコアコンポーネントを計画および展開する方法について説明します。 このガイドを使用して、次の Windows サーバー コンポーネントで構成されたコンピューターを展開できます。
 

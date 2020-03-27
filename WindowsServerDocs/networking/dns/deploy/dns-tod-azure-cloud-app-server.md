@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-dns
 ms.topic: article
 ms.assetid: 4846b548-8fbc-4a7f-af13-09e834acdec0
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 4307ce1512980277af819e0710e0447d8dbac8c4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: be0604a850e54f4945e7416298fad30ce3dbf083
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406195"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317842"
 ---
 # <a name="dns-responses-based-on-time-of-day-with-an-azure-cloud-app-server"></a>Azure クラウド アプリケーション サーバーを使用した 1 日の時間に基づく DNS 応答
 
@@ -57,7 +57,7 @@ DNS サーバーはゾーンスコープと DNS ポリシーを使用して構�
  
 この記事では、2つの異なるアプリケーションサーバー IP アドレスを使用して dns クエリに応答するように DNS サーバーを構成する方法について説明します。一方の web サーバーはシアトルにあり、もう1つは Azure データセンターにあります。
 
-シアトルの午後6時から午後9時までのピーク時間に基づいて新しい DNS ポリシーを構成した後、DNS サーバーは、シアトルの Web サーバーの IP アドレスが含まれているクライアントに、dns 応答の1秒あたり70を送信します。Azure Web サーバーの IP アドレスを含む nts。これにより、クライアントトラフィックが新しい Azure Web サーバーに転送され、シアトルの Web サーバーが過負荷になるのを防ぐことができます。 
+シアトルの午後6時から午後9時までのピーク時間に基づいて新しい DNS ポリシーを構成した後、DNS サーバーは、シアトルの Web サーバーの IP アドレスを含むクライアントに、dns 応答の1秒あたり70と、クライアントに対する DNS 応答の1秒あたり30を送信します。これにより、Azure Web サーバーの IP アドレスが含まれます。これにより、クライアントトラフィックが新しい Azure Web サーバーに転送され、シアトルの Web サーバーが過負荷になるのを防ぐことができます。 
 
 それ以外の時間は、通常のクエリ処理が実行され、応答が既定のゾーンスコープから送信されます。これには、オンプレミスデータセンター内の web サーバーのレコードが含まれます。 
 
@@ -100,7 +100,7 @@ Add-DnsServerZoneScope -ZoneName "contosogiftservices.com" -Name "AzureZoneScope
 
 AzureZoneScope では、レコード www.contosogiftservices.com は、Azure パブリッククラウド内にある IP アドレス192.68.31.44 を使用して追加されます。 
 
-同様に、既定のゾーンのスコープ \(contosogiftservices.com\)では、シアトルのオンプレミスデータセンターで実行されている Web サーバーの IP アドレス192.68.30.2 を使用して、www.contosogiftservices.com\) \(レコードが追加されます。
+同様に、既定のゾーンのスコープ \(contosogiftservices.com\)では、シアトルのオンプレミスデータセンターで実行されている Web サーバーの IP アドレス192.68.30.2 を使用して、 www.contosogiftservices.com\) \(レコードが追加されます。
 
 次の2番目のコマンドレットでは、–ゾーン範囲ゾーンパラメーターは含まれていません。 このため、レコードは既定のゾーン範囲ゾーンに追加されます。 
 

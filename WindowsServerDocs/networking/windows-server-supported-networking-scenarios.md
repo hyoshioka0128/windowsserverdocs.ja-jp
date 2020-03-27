@@ -7,14 +7,14 @@ ms.technology: networking
 ms.topic: article
 ms.date: ''
 ms.assetid: 6de4232d-b0b3-4e43-8735-ebae35ae4f9f
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: f338ddf0a7d3a4fe41277ddbf49b0c3db34ae11b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: e2e59b70b102e7ca942e2aafb8b216fecd62fc32
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71395701"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80315157"
 ---
 # <a name="windows-server-supported-networking-scenarios"></a>Windows Server でサポートされるネットワーク シナリオ
 
@@ -24,7 +24,7 @@ ms.locfileid: "71395701"
 >[!IMPORTANT]
 >すべての運用シナリオ、デバイスの製造元から最新ハードウェア ドライバーを使用して \(OEM\) または独立系ハードウェア ベンダー \(IHV\)します。
   
-## <a name="bkmk_supp"></a>サポートされているネットワークのシナリオ
+## <a name="supported-networking-scenarios"></a><a name="bkmk_supp"></a>サポートされているネットワークのシナリオ
 
 ここでは、Windows Server 2016 のネットワークでサポートされるシナリオについて説明し、次のシナリオのカテゴリが含まれています。  
   
@@ -40,20 +40,20 @@ ms.locfileid: "71395701"
 
 - [埋め込みチーミング \(SET\) シナリオ](#bkmk_set)
   
-### <a name="bkmk_sdn"></a>ソフトウェアによるネットワーク制御 (SDN) のシナリオ
+### <a name="software-defined-networking-sdn-scenarios"></a><a name="bkmk_sdn"></a>ソフトウェアによるネットワーク制御 (SDN) のシナリオ
  
 次のドキュメントを使用すると、Windows Server 2016 SDN シナリオを展開します。  
   
   
 -   [スクリプトを使用してソフトウェアで定義されたネットワークインフラストラクチャを展開する](sdn/deploy/Deploy-a-Software-Defined-Network-infrastructure-using-scripts.md)  
   
-詳細については、 [ソフトウェア定義ネットワーク&#40;SDN&#41;](sdn/software-defined-networking.md)を参照してください。  
+詳細については、次を参照してください。 [ソフトウェアがネットワーク定義と #40 です。SDN (& a) #41;](sdn/software-defined-networking.md)します。  
   
-#### <a name="bkmk_netc"></a>ネットワークコントローラーのシナリオ
+#### <a name="network-controller-scenarios"></a><a name="bkmk_netc"></a>ネットワークコントローラーのシナリオ
 
 ネットワーク コント ローラーのシナリオを使用します。  
   
--   展開し、ネットワーク コント ローラーの複数ノード インスタンスを管理します。 詳細については、[Windows PowerShell を使用してネットワーク コントローラーを展開する](sdn/deploy/Deploy-Network-Controller-using-Windows-PowerShell.md) を参照してください。  
+-   展開し、ネットワーク コント ローラーの複数ノード インスタンスを管理します。 詳細については、次を参照してください。 [展開ネットワーク コント ローラーが Windows PowerShell を使用して](sdn/deploy/Deploy-Network-Controller-using-Windows-PowerShell.md)します。  
   
 -   ネットワーク コント ローラーを使用して、プログラムを使用して REST Northbound API を使用してネットワーク ポリシーを定義します。  
   
@@ -61,7 +61,7 @@ ms.locfileid: "71395701"
   
 詳細については、次を参照してください。 [ネットワーク コント ローラー](sdn/technologies/network-controller/Network-Controller.md)します。  
   
-#### <a name="bkmk_netf"></a>ネットワーク機能の仮想化 (NFV) のシナリオ  
+#### <a name="network-function-virtualization-nfv-scenarios"></a><a name="bkmk_netf"></a>ネットワーク機能の仮想化 (NFV) のシナリオ  
 NFV シナリオを使用します。  
   
 -   展開し、northbound と southbound の両方のトラフィックを分散するソフトウェア ロード バランサーを使用します。  
@@ -84,7 +84,7 @@ NFV シナリオを使用します。
   
 詳細については、次を参照してください。 [ネットワーク機能の仮想化](sdn/technologies/network-function-virtualization/Network-Function-Virtualization.md)します。  
   
-### <a name="bkmk_netp"></a>ネットワークプラットフォームのシナリオ
+### <a name="network-platform-scenarios"></a><a name="bkmk_netp"></a>ネットワークプラットフォームのシナリオ
 
 このセクションでは Windows Server ネットワークのシナリオでは、チームは、ドライバーの認定、Windows Server 2016 の使用をサポートします。 ネットワーク インターフェイス カードを確認してください \(NIC\) の製造元に、最新のドライバーの更新プログラムがあることを確認します。
   
@@ -98,7 +98,7 @@ NFV シナリオを使用します。
   
 詳細については、次を参照してください。 [リモート ダイレクト メモリ アクセス (&) #40 です。RDMA と #41 です。スイッチには、チーム化 (&) #40; が含まれているとセットと #41;](../virtualization/hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md)します。  
   
-#### <a name="bkmk_switch"></a>Hyper-v 仮想スイッチのシナリオ
+#### <a name="hyper-v-virtual-switch-scenarios"></a><a name="bkmk_switch"></a>Hyper-v 仮想スイッチのシナリオ
 
 HYPER-V 仮想スイッチのシナリオを使用します。  
   
@@ -110,9 +110,9 @@ HYPER-V 仮想スイッチのシナリオを使用します。
   
 -   Windows PowerShell コマンドを使用してセット チームを管理します。  
   
-詳細については、[リモート ダイレクト メモリ アクセス&#40;RDMA&#41;スイッチ埋め込みチーミング&#40;SET&#41;](../virtualization/hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md)を参照してください。  
+詳細については、次を参照してください。 [リモート ダイレクト メモリ アクセス (&) #40 です。RDMA と #41 です。スイッチには、チーム化 (&) #40; が含まれているとセットと #41 です。](../virtualization/hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md)  
   
-### <a name="bkmk_dns"></a>DNS サーバーのシナリオ
+### <a name="dns-server-scenarios"></a><a name="bkmk_dns"></a>DNS サーバーのシナリオ
 
 DNS サーバーのシナリオを使用します。  
   
@@ -138,7 +138,7 @@ DNS サーバーのシナリオを使用します。
   
 詳細については、トピックを参照してください。 [Windows Server 2016 での DNS クライアントの新](dns/What-s-New-in-DNS-Client.md) と [Windows Server 2016 の DNS サーバーの新](dns/What-s-New-in-DNS-Server.md)します。  
   
-### <a name="bkmk_ipam"></a>DHCP と DNS を使用した IPAM のシナリオ
+### <a name="ipam-scenarios-with-dhcp-and-dns"></a><a name="bkmk_ipam"></a>DHCP と DNS を使用した IPAM のシナリオ
 
 IPAM のシナリオを使用します。  
   
@@ -152,7 +152,7 @@ IPAM のシナリオを使用します。
   
     詳細については、次を参照してください。 [IPAM の管理](technologies/ipam/Manage-IPAM.md)します。  
   
-### <a name="bkmk_nicteam"></a>NIC チーミングのシナリオ
+### <a name="nic-teaming-scenarios"></a><a name="bkmk_nicteam"></a>NIC チーミングのシナリオ
 
 NIC チーミングのシナリオを使用します。  
   
@@ -169,7 +169,7 @@ NIC チーミングのシナリオを使用します。
 
 詳細については、次を参照してください。 [NIC チーミング](technologies/nic-teaming/NIC-Teaming.md)します。 
 
-### <a name="bkmk_set"></a>埋め込みチーミング \(SET\) シナリオ
+### <a name="switch-embedded-teaming-set-scenarios"></a><a name="bkmk_set"></a>埋め込みチーミング \(SET\) シナリオ
 
 セットは、Hyper-v ホストと、ソフトウェアによるネットワーク制御 (SDN) スタックを Windows Server 2016 に含まれる環境で使用できる代替 NIC チーミング ソリューションです。 セットは、HYPER-V 仮想スイッチにいくつかの NIC チーミング機能を統合します。 
 
@@ -177,7 +177,7 @@ NIC チーミングのシナリオを使用します。
   
  
   
-## <a name="bkmk_unsupp"></a>サポートされていないネットワークシナリオ  
+## <a name="unsupported-networking-scenarios"></a><a name="bkmk_unsupp"></a>サポートされていないネットワークシナリオ  
 次のネットワークのシナリオは、Windows Server 2016 ではサポートされません。  
   
 -   VLAN ベースのテナントの仮想ネットワークです。  

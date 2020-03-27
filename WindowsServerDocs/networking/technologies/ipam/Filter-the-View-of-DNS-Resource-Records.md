@@ -10,22 +10,22 @@ ms.technology: networking-ipam
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5b80294a-7325-476b-84eb-69f0d051e8b2
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 541645a274481bb8b044c37df572d7746c5da30e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 4e032e2c5b89dc362fceb34e06525d8632f7b19e
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405670"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312406"
 ---
 # <a name="filter-the-view-of-dns-resource-records"></a>DNS リソース レコードの表示をフィルター処理する
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックを使用して、IPAM クライアントコンソールで DNS リソースレコードのビューをフィルター処理できます。  
   
-メンバーシップ **管理者**, 、同等の権限をこの手順を実行するために必要な最低限のですか。  
+この手順を実行するには、**Administrators** のメンバーシップ、またはそれと同等のメンバーシップが最低限必要です。  
   
 ### <a name="to-filter-the-view-of-dns-resource-records"></a>DNS リソースレコードのビューをフィルター処理するには  
   
@@ -59,7 +59,7 @@ ms.locfileid: "71405670"
   
     ![フィルターを実行する](../../media/Filter-the-View-of-DNS-Resource-Records/ipam_FilterRR_05.jpg)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [DNS リソースレコードの管理](DNS-Resource-Record-Management.md)  
 [IPAM の管理](Manage-IPAM.md)  
   

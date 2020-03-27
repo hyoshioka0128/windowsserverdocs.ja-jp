@@ -6,19 +6,19 @@ ms.prod: windows-server
 ms.technology: networking-ras
 ms.topic: article
 ms.assetid: acaa46b7-09b1-4707-9562-116df8db17eb
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 05/23/2018
-ms.openlocfilehash: ebf2cc840be771707f23d7976b670baae96c1343
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 762ba98a57db1411098c6ae6a8394e9a9b063181
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367492"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308521"
 ---
 # <a name="ras-gateway"></a>RAS ゲートウェイ
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 RAS ゲートウェイは、シングルテナントモードまたはマルチテナントモードで使用できるソフトウェアルーターとゲートウェイです。  
   
@@ -47,7 +47,7 @@ RAS ゲートウェイは、シングルテナントモードまたはマルチ�
  
 このトピックは、情報技術 (IT) の専門家を対象としており、ras ゲートウェイの展開モードや機能など、RAS ゲートウェイに関する概要情報を提供します。 
   
-このトピックは次のセクションで構成されます。  
+このトピックの内容は次のとおりです。  
   
   
 -   [RAS ゲートウェイの展開モード](#bkmk_modes)  
@@ -63,7 +63,7 @@ RAS ゲートウェイは、シングルテナントモードまたはマルチ�
 
 
   
-## <a name="bkmk_modes"></a>RAS ゲートウェイの展開モード  
+## <a name="ras-gateway-deployment-modes"></a><a name="bkmk_modes"></a>RAS ゲートウェイの展開モード  
 RAS ゲートウェイには、次の展開モードがあります。  
   
 ### <a name="single-tenant-mode"></a>シングルテナントモード  
@@ -81,7 +81,7 @@ RAS ゲートウェイには、次の展開モードがあります。
 Hyper-v ネットワーク仮想化により、基になる物理ネットワークから独立した仮想マシン (VM) ネットワークを展開することができます。 1つ以上の仮想サブネットで構成される VM ネットワークでは、IP サブネットの物理的な場所は仮想ネットワークトポロジから切り離されます。 その結果、クラウド内の既存の IP アドレスとトポロジを維持しながら、オンプレミスのサブネットをクラウドに簡単に移動できます。 このようにインフラストラクチャを維持できるため、既存のサービスはサブネットの物理的な場所に関係なく動作を続けることができます。 つまり、Hyper-V ネットワーク仮想化はシームレスなハイブリッド クラウドを可能にします。  
   
 > [!NOTE]  
-> Hyper-v ネットワーク仮想化は、ネットワーク仮想化汎用ルーティングカプセル化 ([Nvgre](https://tools.ietf.org/html/draft-sridharan-virtualization-nvgre-00)) を使用するネットワークオーバーレイテクノロジです。これにより、テナントは独自のアドレス空間を利用でき、csp では、を使用した場合よりも高いスケーラビリティを実現できます。テナント分離のための Vlan。  
+> Hyper-v ネットワーク仮想化は、ネットワーク仮想化汎用ルーティングカプセル化 ([Nvgre](https://tools.ietf.org/html/draft-sridharan-virtualization-nvgre-00)) を使用するネットワークオーバーレイテクノロジです。これにより、テナントは独自のアドレス空間を利用でき、csp はテナント分離のために vlan を使用する場合よりも優れたスケーラビリティを実現できます。  
   
 Windows Server 2016 では、RAS ゲートウェイは、リソースが配置されている場所に関係なく、物理ネットワークと VM ネットワークリソース間のネットワークトラフィックをルーティングします。 RAS ゲートウェイを使用して、物理的なネットワークと仮想ネットワークの間のネットワークトラフィックを、同じ物理的な場所またはさまざまな物理的な場所でルーティングできます。  
   
@@ -91,7 +91,7 @@ Windows Server 2016 では、RAS ゲートウェイは、リソースが配置�
   
 詳細については、「 [RAS Gateway の高可用性](../../../networking/sdn/technologies/network-function-virtualization/RAS-Gateway-High-Availability.md)」を参照してください。  
   
-## <a name="bkmk_clustering"></a>高可用性を実現するための RAS ゲートウェイのクラスタリング  
+## <a name="clustering-ras-gateway-for-high-availability"></a><a name="bkmk_clustering"></a>高可用性を実現するための RAS ゲートウェイのクラスタリング  
 RAS ゲートウェイは、Hyper-v を実行し、1つの VM で構成される専用のコンピューターに展開されます。 その後、VM が RAS ゲートウェイとして構成されます。  
   
 ネットワークリソースの高可用性を実現するために、フェールオーバーを使用して RAS ゲートウェイを展開できます。 Hyper-v を実行する2台の物理ホストサーバーで、ゲートウェイとして構成されている仮想マシン (VM) も実行されています。 これらのゲートウェイ VM はクラスターとして構成され、ネットワークの停止やハードウェアの障害に対してフェールオーバーによる保護を提供します。  
@@ -102,7 +102,7 @@ RAS ゲートウェイは、Hyper-v を実行し、1つの VM で構成される
   
 RAS ゲートウェイを展開する場合、Hyper-v を実行するホストサーバーとゲートウェイとして構成する Vm は、Windows Server 2012 R2 または Windows Server 2016 を実行している必要があります。  
   
-## <a name="bkmk_features"></a>RAS ゲートウェイの機能  
+## <a name="ras-gateway-features"></a><a name="bkmk_features"></a>RAS ゲートウェイの機能  
 RAS ゲートウェイには、次の機能があります。  
   
 -   **サイト間 VPN**。 この RAS ゲートウェイ機能を使用すると、サイト間 VPN 接続を使用して、インターネット経由で異なる物理的な場所にある2つのネットワークを接続することができます。 メインオフィスと複数のブランチオフィスがある場合は、各場所にエッジ RAS ゲートウェイを展開し、サイト間接続を作成して、場所の間にネットワークトラフィックフローを提供できます。 データセンター内の多数のテナントをホストする Csp の場合、RAS ゲートウェイはマルチテナントゲートウェイソリューションを提供します。これにより、テナントはリモートサイトからのサイト間 VPN 接続を介してリソースにアクセスして管理できるようになり、ネットワークトラフィックフローが可能になります。データセンターとその物理ネットワーク内の仮想リソース。  
@@ -114,19 +114,19 @@ RAS ゲートウェイには、次の機能があります。
 -   **ネットワークアドレス変換 (NAT)** 。 ネットワークアドレス変換 (NAT) を使用すると、単一のパブリック IP アドレスを持つ単一のインターフェイスを使用して、パブリックインターネットへの接続を共有できます。 プライベートネットワーク上のコンピューターは、プライベートでルーティング不可能なアドレスを使用します。 NAT は、プライベートアドレスをパブリックアドレスにマップします。 この RAS ゲートウェイ機能を使用すると、単一テナントデプロイを持つ組織の従業員は、ゲートウェイの背後からインターネットリソースにアクセスできます。 Csp の場合、この機能により、テナント Vm で実行されているアプリケーションでインターネットにアクセスできるようになります。 たとえば、Web サーバーとして構成されているテナント VM は、クレジットカードトランザクションを処理するために外部の財務リソースに接続できます。  
 
   
-## <a name="bkmk_deploy"></a>RAS ゲートウェイの展開シナリオ  
+## <a name="ras-gateway-deployment-scenarios"></a><a name="bkmk_deploy"></a>RAS ゲートウェイの展開シナリオ  
 RAS ゲートウェイの推奨される展開シナリオを次に示します。  
   
 -   **エンタープライズエッジ-シングルテナントデプロイ**。 シングルテナントエンタープライズ展開では、サイト間 VPN 機能を使用して、インターネット経由で物理的に1つの物理的な場所に接続できます。また、Border Gateway Protocol (BGP) では、動的ルーティングを使用できます。 また、リモートの従業員に対して、ポイント対サイト VPN 接続と DirectAccess 接続の両方を使用して、組織のネットワークへのアクセスを提供することもできます。 (DirectAccess 接続は常にオンになっています。また、directaccess を使用して接続されているコンピューターを簡単に管理できるという利点もあります。これらは、接続されていて、インターネットに接続されている場合は常に接続されているためですまた、イントラネット上のコンピューターがインターネットと簡単に通信できるように、NAT を使用してシングルテナントエンタープライズ RAS ゲートウェイを構成することもできます。  
   
 -   **クラウドサービスプロバイダーのエッジマルチテナント展開**。 Csp 用の RAS ゲートウェイマルチテナント展開では、エンタープライズエッジシングルテナントデプロイで使用できるすべての機能をテナントに提供できます。 データセンター内のテナントの仮想ネットワークとインターネット上のテナントのネットワークの場所との間のサイト間 VPN 接続は、テナントが常にクラウドリソースにシームレスにアクセスできることを意味します。 テナントのポイント対サイト VPN アクセスは、テナント管理者が常にデータセンター内の仮想ネットワークに接続して、リソースを管理できることを意味します。 BGP は動的ルーティングを提供し、インターネットまたは他の場所でネットワークの問題が発生した場合でも、テナントを資産に接続したままにします。 また、NAT を使用すると、テナント Vm がインターネット上のリソース (クレジットカード処理リソースなど) に接続できるようになります。  
   
-## <a name="bkmk_manage"></a>RAS ゲートウェイ管理ツール  
+## <a name="ras-gateway-management-tools"></a><a name="bkmk_manage"></a>RAS ゲートウェイ管理ツール  
 RAS ゲートウェイの管理ツールを次に示します。  
   
 -   Windows Server 2016 では、RAS ゲートウェイルーターを展開するには、Windows PowerShell コマンドを使用する必要があります。 詳細については、「Windows Server 2016 および Windows 10 用の[リモートアクセスコマンドレット](https://docs.microsoft.com/powershell/module/remoteaccess)」を参照してください。  
   
--   System Center 2012 R2 Virtual Machine Manager (VMM) では、RAS ゲートウェイには Windows Server ゲートウェイという名前が付けられます。 VMM ソフトウェアインターフェイスでは、**ローカル BGP Ip アドレス**と**自律システム番号 (ASN)** 、 **bgp ピア ip アドレスのリスト**、および**asn 値を含む、一部の Border Gateway Protocol (bgp) 構成オプションを使用できます。** . ただし、リモート アクセスの Windows PowerShell BGP コマンドを使用して、Windows Server ゲートウェイのその他の機能をすべて構成できます。 詳細については、「 [Virtual Machine Manager (VMM)](https://technet.microsoft.com/system-center-docs/vmm/vmm) 」および「windows Server 2016 および windows 10 用の[リモートアクセスコマンドレット](https://technet.microsoft.com/library/hh918399.aspx)」を参照してください。  
+-   System Center 2012 R2 Virtual Machine Manager (VMM) では、RAS ゲートウェイには Windows Server ゲートウェイという名前が付けられます。 VMM ソフトウェアインターフェイスでは、**ローカル BGP Ip アドレス**と**自律システム番号 (ASN)** 、 **bgp ピア ip アドレスのリスト**、および**asn 値**など、一部の Border Gateway Protocol (bgp) 構成オプションを使用できます。 ただし、リモート アクセスの Windows PowerShell BGP コマンドを使用して、Windows Server ゲートウェイのその他の機能をすべて構成できます。 詳細については、「 [Virtual Machine Manager (VMM)](https://technet.microsoft.com/system-center-docs/vmm/vmm) 」および「windows Server 2016 および windows 10 用の[リモートアクセスコマンドレット](https://technet.microsoft.com/library/hh918399.aspx)」を参照してください。  
   
 ## <a name="related-topics"></a>関連トピック
 - [RAS ゲートウェイの高可用性](../../../networking/sdn/technologies/network-function-virtualization/RAS-Gateway-High-Availability.md)  

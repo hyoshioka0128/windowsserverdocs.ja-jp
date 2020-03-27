@@ -7,18 +7,18 @@ ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: e9a8f2fd-48fe-4a90-9250-f6b32488b7a4
 ms.author: grcusanz
-author: shortpatti
+author: eross-msft
 ms.date: 08/27/2018
-ms.openlocfilehash: 7f385e094ca70027d1b036bf53af23c1fc4a1bd1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: fbb173224797d32bd05fbdadb1bf4cefdc475cb6
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406060"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317601"
 ---
 # <a name="upgrade-backup-and-restore-sdn-infrastructure"></a>SDN インフラストラクチャのアップグレード、バックアップ、復元
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックでは、SDN インフラストラクチャを更新、バックアップ、および復元する方法について説明します。 
 
@@ -43,7 +43,7 @@ SDN インフラストラクチャは、Windows Server 2016 から Windows Serve
 
 2. 最初のネットワークコントローラー VM で、すべての更新プログラムをインストールし、を再起動します。
 
-3. 次のネットワークコントローラー VM に進む前に、 `get-networkcontrollernode`コマンドレットを使用して、更新して再起動したノードの状態を確認します。
+3. 次のネットワークコントローラー VM に進む前に、`get-networkcontrollernode` コマンドレットを使用して、更新して再起動したノードの状態を確認します。
 
 4. 再起動サイクル中に、[ネットワークコントローラー] ノードが停止するのを待ってから、もう一度バックアップします。<p>VM を再起動した後、状態が " **_アップ_** " に戻るまで数分かかることがあります。 出力の例については、「」を参照してください。 
 
@@ -64,9 +64,9 @@ SDN インフラストラクチャは、Windows Server 2016 から Windows Serve
     f. スタンバイゲートウェイを含む追加のホストごとに、この手順を繰り返します。<p>スタンバイゲートウェイが残っていない場合は、残りのすべてのホストに対して同じ手順を実行します。
 
 
-### <a name="example-use-the-get-networkcontrollernode-cmdlet"></a>例:Networkcontrollernode コマンドレットを使用する 
+### <a name="example-use-the-get-networkcontrollernode-cmdlet"></a>例: networkcontrollernode コマンドレットを使用する 
 
-この例では、ネットワークコントローラー vm のいずれ`get-networkcontrollernode`かで実行されるコマンドレットの出力を確認できます。  
+この例では、ネットワークコントローラー Vm のいずれかで実行される `get-networkcontrollernode` コマンドレットの出力を確認できます。  
 
 出力例に表示されるノードの状態は次のとおりです。
 
@@ -80,7 +80,7 @@ SDN インフラストラクチャは、Windows Server 2016 から Windows Serve
 すべてのネットワークコントローラーノードを更新すると、ネットワークコントローラーは1時間以内にネットワークコントローラークラスター内で実行されているマイクロサービスを更新します。 
 
 >[!TIP]
->`update-networkcontroller`コマンドレットを使用して即時更新をトリガーすることができます。
+>`update-networkcontroller` コマンドレットを使用して即時更新をトリガーすることができます。
 
 
 ```Powershell
@@ -107,8 +107,8 @@ NodeCertificate :
 Status          : Up
 ```
 
-### <a name="example-use-the-update-networkcontroller-cmdlet"></a>例:Networkcontroller コマンドレットを使用する
-この例では、ネットワークコントローラーを強制的`update-networkcontroller`に更新するコマンドレットの出力を確認できます。 
+### <a name="example-use-the-update-networkcontroller-cmdlet"></a>例: networkcontroller コマンドレットを使用する
+この例では、`update-networkcontroller` コマンドレットの出力を確認して、ネットワークコントローラーを強制的に更新します。 
 
 >[!IMPORTANT]
 >インストールする更新プログラムがこれ以上ない場合は、このコマンドレットを実行します。
@@ -138,15 +138,15 @@ NetworkControllerClusterVersion NetworkControllerVersion
    >[!IMPORTANT]
    >ネットワークコントローラーのバックアップが完了するまで、SCVMM サービスを再起動しないでください。
 
-3. `new-networkcontrollerbackup`コマンドレットを使用してネットワークコントローラーデータベースをバックアップします。
+3. `new-networkcontrollerbackup` コマンドレットを使用して、ネットワークコントローラーデータベースをバックアップします。
 
-4. `get-networkcontrollerbackup`コマンドレットを使用して、バックアップの完了と成功を確認します。
+4. `get-networkcontrollerbackup` コマンドレットを使用して、バックアップの完了と成功を確認します。
 
 5. SCVMM を使用している場合は、SCVMM サービスを開始します。
 
 
 
-### <a name="example-backing-up-the-network-controller-database"></a>例:ネットワークコントローラーデータベースをバックアップしています
+### <a name="example-backing-up-the-network-controller-database"></a>例: ネットワークコントローラーデータベースをバックアップする
 
 ```Powershell
 $URI = "https://NC.contoso.com"
@@ -177,7 +177,7 @@ $BackupProperties.Credential = $ShareCredential
 $Backup = New-NetworkControllerBackup -ConnectionURI $URI -Credential $Credential -Properties $BackupProperties -ResourceId $BackupTime -Force
 ```
 
-### <a name="example-checking-the-status-of-a-network-controller-backup-operation"></a>例:ネットワークコントローラーのバックアップ操作の状態を確認しています
+### <a name="example-checking-the-status-of-a-network-controller-backup-operation"></a>例: ネットワークコントローラーのバックアップ操作の状態を確認する
 
 ```Powershell
 PS C:\ > Get-NetworkControllerBackup -ConnectionUri $URI -Credential $Credential -ResourceId $Backup.ResourceId
@@ -286,7 +286,7 @@ PS C:\ > Get-NetworkControllerBackup -ConnectionUri $URI -Credential $Credential
 
 5. SLB Mux Vm を停止します。
 
-6. `new-networkcontrollerrestore`コマンドレットを使用してネットワークコントローラーを復元します。
+6. `new-networkcontrollerrestore` コマンドレットを使用して、ネットワークコントローラーを復元します。
 
 7. 復元が正常に完了したことを確認するには、restore **ProvisioningState**を確認してください。
 
@@ -309,7 +309,7 @@ Fetching ResourceType:     loadbalancerMuxes
 Fetching ResourceType:     Gateways
 ```
 
-### <a name="example-restoring-a-network-controller-database"></a>例:ネットワークコントローラーデータベースを復元する
+### <a name="example-restoring-a-network-controller-database"></a>例: ネットワークコントローラーデータベースを復元する
  
 ```Powershell
 $URI = "https://NC.contoso.com"
@@ -326,7 +326,7 @@ $RestoreTime = (Get-Date).ToString("s").Replace(":", "_")
 New-NetworkControllerRestore -ConnectionURI $URI -Credential $Credential -Properties $RestoreProperties -ResourceId $RestoreTime -Force
 ```
 
-### <a name="example-checking-the-status-of-a-network-controller-database-restore"></a>例:ネットワークコントローラーのデータベース復元の状態を確認しています
+### <a name="example-checking-the-status-of-a-network-controller-database-restore"></a>例: ネットワークコントローラーのデータベース復元の状態を確認する
 
 ```PowerShell
 PS C:\ > get-networkcontrollerrestore -connectionuri $uri -credential $cred -ResourceId $restoreTime | convertto-json -depth 10

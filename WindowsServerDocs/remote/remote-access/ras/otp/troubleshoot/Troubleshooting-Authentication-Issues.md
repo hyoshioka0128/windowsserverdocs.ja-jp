@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 71307757-f8f4-4f82-b8b3-ffd4fd8c5d6d
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 73fe8458910cbe7dfaf000a6546bcba9263a9683
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 74e332fff194374c6f3a5eeae5e26e8e4f5cfb42
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404311"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313449"
 ---
 # <a name="troubleshooting-authentication-issues"></a>認証の問題のトラブルシューティング
 

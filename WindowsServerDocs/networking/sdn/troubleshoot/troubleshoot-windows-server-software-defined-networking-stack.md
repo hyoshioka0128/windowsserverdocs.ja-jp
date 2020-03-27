@@ -6,15 +6,15 @@ ms.prod: windows-server
 ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: 9be83ed2-9e62-49e8-88e7-f52d3449aac5
-ms.author: pashort
+ms.author: lizross
 author: JMesser81
 ms.date: 08/14/2018
-ms.openlocfilehash: 2782419f0c3d99e7ec7f4ee3389f174df400bd55
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 5827ad3b23d6f084e0138bf34ad47223eccb4e76
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949925"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312848"
 ---
 # <a name="troubleshoot-the-windows-server-software-defined-networking-stack"></a>Windows Server ソフトウェア定義ネットワーク スタックのトラブルシューティング
 
@@ -62,7 +62,7 @@ Import-Module hnvdiagnostics
 ### <a name="network-controller-diagnostics"></a>ネットワーク コント ローラーの診断  
 Technet の「これらのコマンドレットについては、 [ネットワーク コント ローラー診断コマンドレット トピック](https://docs.microsoft.com/powershell/module/networkcontrollerdiagnostics/)します。 コントロール パスとネットワーク コント ローラーと HYPER-V ホストで実行されている NC ホスト エージェントの間にネットワーク コント ローラーのノード間でネットワーク ポリシーの整合性に問題を特定するのに役立ちます。
 
- _デバッグ ServiceFabricNodeStatus_ と _Get NetworkControllerReplica_ ネットワーク コント ローラーのノードの仮想マシンのいずれかのコマンドレットを実行する必要があります。 その他のすべての NC 診断コマンドレットは、ネットワーク コント ローラーに接続し、ネットワーク コント ローラーの管理セキュリティ グループ (Kerberos) のいずれかが、またはネットワーク コント ローラーを管理するための X.509 証明書にアクセスするすべてのホストから実行できます。 
+ _Debug-ServiceFabricNodeStatus_ と _Get-NetworkControllerReplica_ コマンドレットは、ネットワーク コントローラー ノードの仮想マシンのいずれかから実行する必要があります。 その他のすべての NC 診断コマンドレットは、ネットワーク コント ローラーに接続し、ネットワーク コント ローラーの管理セキュリティ グループ (Kerberos) のいずれかが、またはネットワーク コント ローラーを管理するための X.509 証明書にアクセスするすべてのホストから実行できます。 
 
 ### <a name="hyper-v-host-diagnostics"></a>HYPER-V ホストでの診断  
 Technet の「これらのコマンドレットについては、 [Hyper-v ネットワーク仮想化 (HNV) 診断コマンドレット トピック](https://docs.microsoft.com/powershell/module/hnvdiagnostics/)します。 テナント仮想マシン (東または西) 間のデータ パスの問題を特定できると SLB VIP (北または南) からトラフィックを受信します。 
@@ -70,7 +70,7 @@ Technet の「これらのコマンドレットについては、 [Hyper-v ネ�
 _デバッグ VirtualMachineQueueOperation_, 、_Get CustomerRoute_, 、_Get PACAMapping_, 、_Get ProviderAddress_, 、_Get VMNetworkAdapterPortId_, 、_Get VMSwitchExternalPortId_, 、および _テスト EncapOverheadSettings_ すべての HYPER-V ホストから実行できるすべてのローカル テストします。 その他のコマンドレットでは、ネットワーク コント ローラーを介してデータ パスのテストを呼び出すし、したがって上 descried としてネットワーク コント ローラーへのアクセスを必要です。
 
 ### <a name="github"></a>GitHub
-[Microsoft/SDN GitHub リポジトリ](https://github.com/microsoft/sdn) が数多くサンプル スクリプトとワークフロー内のこれらのコマンドレットの上に構築する必要があります。 具体的には、診断のスクリプトは記載されて、 [診断](https://github.com/Microsoft/sdn/diagnostics) フォルダーです。 Pull Requests を送信することでこれらのスクリプトへの協力にご協力します。
+[Microsoft/SDN GitHub リポジトリ](https://github.com/microsoft/sdn) が数多くサンプル スクリプトとワークフロー内のこれらのコマンドレットの上に構築する必要があります。 具体的には、診断のスクリプトは記載されて、 [診断](https://github.com/Microsoft/sdn/diagnostics) フォルダーです。 プル要求を送信することでこれらのスクリプトへの協力にご協力します。
 
 ## <a name="troubleshooting-workflows-and-guides"></a>ワークフローおよびガイドのトラブルシューティング  
 
@@ -156,7 +156,7 @@ Message:          Host is not Connected.
 - ネットワーク コント ローラー REST ip ポート 6640 で一時的なポートでの HYPER-V ホストの IP から 1 つに確立された接続
 
 >[!NOTE]
->ある可能性がありますのみ HYPER-V ホスト上で確立されている 2 つの接続を特定のホストに展開されているテナントの仮想マシンがない場合。
+>特定のホストにデプロイされているテナント仮想マシンがない場合、Hyper-V ホスト上に接続が 2 つしか確立されない場合があります。
 
 ```none
 netstat -anp tcp |findstr 6640
@@ -267,7 +267,7 @@ Thumbprint                                Subject
 各証明書サブジェクト名は何だかどうかを確認するは、次のパラメーターを確認することもできます (ホスト名または NC REST FQDN または IP) が必要な証明書がまだ失効していない、および信頼されたルート証明機関に証明書チェーン内のすべての証明機関が含まれています。
 
 - サブジェクト名  
-- 失効日  
+- 有効期限  
 - 信頼されるルート証明機関  
 
 *修復* 複数の証明書では、HYPER-V ホストに同じサブジェクト名がある、ネットワーク コント ローラーのホストのエージェントは無作為に選択ネットワーク コント ローラーに表示する 1 つです。 これが、既知のネットワーク コント ローラーにサーバー リソースのサムプリントとは一致しません。 この場合、HYPER-V ホスト上の同じサブジェクト名を持つ証明書のいずれかを削除し、ネットワーク コント ローラーのホストのエージェント サービスを再開します。 まだ、接続は確立されません、HYPER-V ホスト上の同じサブジェクト名を持つその他の証明書を削除し、VMM での対応するサーバー リソースを削除します。 次に、vmm は新しい X.509 証明書を生成し、HYPER-V ホストにインストールされるサーバー リソースを再作成します。
@@ -527,7 +527,7 @@ Cannot send jumbo packets to the destination. Physical switch ports may not be c
 # TODO: Success Results aftering updating MTU on physical switch ports
 ```
 
-*修正*
+*対策*
 * 以上である物理スイッチ ポートで MTU サイズを調整する 1674B (14B イーサネット ヘッダーとトレーラーを含む)
 * NIC カードが EncapOverhead キーワードをサポートしていない場合は、少なくとも、JumboPacket キーワードを調整する 1674B
 
@@ -559,7 +559,7 @@ CA IP Address CA MAC Address    Virtual Subnet ID PA IP Address
 
 ### <a name="no-network-connectivity-between-two-tenant-virtual-machines"></a>2 つのテナント仮想マシン間のネットワーク接続なし
 
-1.  [テナント]テナントの仮想マシンで Windows ファイアウォールがトラフィックをブロックしていないことを確認します。  
+1.  [テナント] テナントの仮想マシンで Windows ファイアウォールがトラフィックをブロックしていないことを確認します。  
 2.  [テナント]IP アドレスがテナントの仮想マシンに実行して、割り当てられたことを確認して _ipconfig_します。 
 3.  ホストHyper-v ホストから**VirtualNetworkConnection**を実行して、問題の2つのテナント仮想マシン間の接続を検証します。 
 
@@ -597,7 +597,7 @@ PA ルーティング情報:
     Local PA IP: 10.10.182.66
     Remote PA IP: 10.10.182.65
 
- <snip> ...
+ <snip>...
 
 4. [テナント]仮想サブネットまたはトラフィックをブロックする VM ネットワーク インターフェイスで指定された分散型のファイアウォール ポリシーがないことを確認します。    
 
@@ -612,8 +612,8 @@ Sa18.nttest.microsoft.com ドメインの sa18n30nc にあるデモ環境で RES
 2.  [ホスト]MTU 設定が HYPER-V ホスト上で正しいことと、レイヤー 2 HYPER-V ホストの間にデバイスを切り替えることを確認します。 実行 ``Test-EncapOverheadValue`` 対象のすべての HYPER-V ホストにします。 また間にあるすべてのレイヤー 2 スイッチが MTU 160 バイトの最大のオーバーヘッドを考慮する最小限の 1674 バイトに設定をあることを確認します。  
 3.  [ホスト]PA IP アドレスが存在しない CA 接続を確立できない場合や場合、は、ネットワーク ポリシーが受信されたことを確認することを確認します。 実行 ``Get-PACAMapping`` をカプセル化のルールと仮想ネットワークのオーバーレイを作成するために必要な CA と PA のマッピングが正しく確立されるかどうかを参照してください。  
 4.  [ホスト]ネットワーク コント ローラーにネットワーク コント ローラーのホストのエージェントが接続されていることを確認してください。 実行 ``netstat -anp tcp |findstr 6640`` かどうかを   
-5.  [ホスト]ホストが HKLM に ID チェック テナントの仮想マシンをホストしているサーバーのリソースのインスタンス ID と一致します。  
-6. [ホスト]ポート プロファイルの ID に、テナントの仮想マシンの VM ネットワーク インターフェイスのインスタンス ID が一致することを確認してください。  
+5.  [ホスト側] HKLM/ のホスト ID がテナント仮想マシンをホストするサーバー リソースのインスタンス ID と一致していることを確認します。  
+6. [ホスト側] ポート プロファイル ID がテナント仮想マシンの VM ネットワーク インターフェイスのインスタンス ID と一致していることを確認します。  
 
 ## <a name="logging-tracing-and-advanced-diagnostics"></a>ログ、トレース、および高度な診断
 
@@ -695,7 +695,7 @@ VMM の展開は、既定では、ネットワーク コント ローラーの�
   * ネットワーク接続の問題を修正する  
 * BGP ピアリング情報が正常に構成されていることを確認します。  
 * レジストリでのホスト ID がサーバー リソース内のサーバー インスタンスの ID と一致することを確認 (については、付録を参照 *HostNotConnected* エラー コード)  
-* ログを収集します。  
+* ログの収集  
 
 #### <a name="slbm-tenant-errors-hosting-service-provider--and-tenant-actions"></a>SLBM テナント エラー (ホスティング サービス プロバイダーおよびテナント アクション)
 

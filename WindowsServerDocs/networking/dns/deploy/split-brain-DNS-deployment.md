@@ -6,18 +6,18 @@ ms.prod: windows-server
 ms.technology: networking-dns
 ms.topic: article
 ms.assetid: a255a4a5-c1a0-4edc-b41a-211bae397e3c
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 9f611f61150508d9170a6fe6757844bc29759886
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 75da22fa4b1e59a7a666ee1a2c8f4e88cf7beeef
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950473"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317732"
 ---
 # <a name="use-dns-policy-for-split-brain-dns-deployment"></a>分割\-ブレイン DNS 展開に DNS ポリシーを使用する
 
->適用先: Windows Server 2016
+>適用対象: Windows Server 2016
 
 このトピックを使用して、Windows server DNS のポリシーを構成する方法について&reg; 2016 スプリット ブレイン DNS 展開では、1 つの 2 つのバージョンが存在するゾーンの組織のイントラネット上の内部ユーザーと外部のユーザーは、通常、インターネット上のユーザーに対して使用します。
 
@@ -28,15 +28,15 @@ ms.locfileid: "75950473"
 
 スプリット ブレイン展開用の別の構成シナリオは、DNS 名前解決のための選択的の再帰コントロールです。 状況によっては、企業の DNS サーバーもする必要があります、外部ユーザーの権限を持つネーム サーバーとして機能し、再帰をブロック中に、内部ユーザー用のインターネット経由で再帰的な解決を行う必要があります。 
 
-このトピックは次のセクションで構成されます。
+このトピックの内容は次のとおりです。
 
 - [DNS スプリットブレイン展開の例](#bkmk_sbexample)
 - [DNS の選択的な再帰制御の例](#bkmk_recursion)
 
-## <a name="bkmk_sbexample"></a>DNS スプリットブレイン展開の例
+## <a name="example-of-dns-split-brain-deployment"></a><a name="bkmk_sbexample"></a>DNS スプリットブレイン展開の例
 DNS のポリシーを使用して、スプリット ブレイン DNS の既に説明したシナリオを実現する方法の例を次に示します。
 
-このセクションには、次のトピックがあります。
+このセクションのトピックは次のとおりです。
 
 - [DNS スプリットブレイン展開のしくみ](#bkmk_sbhow)
 - [DNS スプリットブレイン展開を構成する方法](#bkmk_sbconfigure)
@@ -57,7 +57,7 @@ DNS ポリシーを使用してこれらのゾーンできますでホストさ�
 ![スプリット ブレイン DNS 展開](../../media/DNS-Split-Brain/Dns-Split-Brain-01.jpg)  
 
 
-## <a name="bkmk_sbhow"></a>DNS スプリットブレイン展開のしくみ
+## <a name="how-dns-split-brain-deployment-works"></a><a name="bkmk_sbhow"></a>DNS スプリットブレイン展開のしくみ
 
 必要な DNS ポリシーで、DNS サーバーを構成すると、各名前解決の要求は、DNS サーバー上のポリシーに対して評価されます。
 
@@ -67,7 +67,7 @@ DNS ポリシーを使用してこれらのゾーンできますでホストさ�
 
 そのため、この例ではプライベート ip アドレス (10.0.0.56) で受信した www.career.contoso.com に関する DNS クエリ DNS 応答を受信する内部の IP アドレスを含むパブリック ネットワーク インターフェイスで受信 DNS クエリ応答を受信する DNS ゾーンの既定のスコープ (これは通常のクエリの解決策と同じ) のパブリック IP アドレスを含みます。  
 
-## <a name="bkmk_sbconfigure"></a>DNS スプリットブレイン展開を構成する方法
+## <a name="how-to-configure-dns-split-brain-deployment"></a><a name="bkmk_sbconfigure"></a>DNS スプリットブレイン展開を構成する方法
 DNS のポリシーを使用して DNS Split-Brain 展開を構成するには、次の手順を使用する必要があります。
 
 - [ゾーンのスコープを作成する](#bkmk_zscopes)  
@@ -79,7 +79,7 @@ DNS のポリシーを使用して DNS Split-Brain 展開を構成するには�
 >[!IMPORTANT]
 >以下のセクションには、多くのパラメーターの値の例を含む Windows PowerShell コマンドの例が含まれています。 これらのコマンドで値の例は、これらのコマンドを実行する前に、展開に対応する値を置き換えることを確認します。 
 
-### <a name="bkmk_zscopes"></a>ゾーンのスコープを作成する
+### <a name="create-the-zone-scopes"></a><a name="bkmk_zscopes"></a>ゾーンのスコープを作成する
 
 ゾーンのスコープは、ゾーンの一意のインスタンスです。 DNS ゾーンは複数のゾーンスコープを持つことができ、各ゾーンスコープには独自の DNS レコードセットが含まれます。 同じレコードが複数のスコープに存在し、異なる IP アドレスまたは同じ IP アドレスを持つことができます。 
 
@@ -92,7 +92,7 @@ DNS のポリシーを使用して DNS Split-Brain 展開を構成するには�
 
 詳細については、次を参照してください [追加 DnsServerZoneScope。](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)
 
-### <a name="bkmk_records"></a>ゾーンのスコープにレコードを追加する
+### <a name="add-records-to-the-zone-scopes"></a><a name="bkmk_records"></a>ゾーンのスコープにレコードを追加する
 
 次の手順では、(外部クライアント向け)、2 つのゾーン スコープの内部に Web サーバーのホストと既定値を表すレコードを追加します。 
 
@@ -109,7 +109,7 @@ Add-DnsServerResourceRecord -ZoneName "contoso.com" -A -Name "www.career" -IPv4A
 
 詳細については、次を参照してください。 [追加 DnsServerResourceRecord](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps)します。
 
-### <a name="bkmk_policies"></a>DNS ポリシーを作成する
+### <a name="create-the-dns-policies"></a><a name="bkmk_policies"></a>DNS ポリシーを作成する
 
 外部ネットワークおよび内部ネットワーク用のサーバー インターフェイスを識別する、ゾーンのスコープを作成した後は、内部および外部のゾーンのスコープを接続する DNS ポリシーを作成する必要があります。
 
@@ -128,11 +128,11 @@ DNS サーバーは、プライベート インターフェイスでクエリを
 詳細については、次を参照してください。 [追加 DnsServerQueryResolutionPolicy](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)します。  
 
 
-## <a name="bkmk_recursion"></a>DNS の選択的な再帰制御の例
+## <a name="example-of-dns-selective-recursion-control"></a><a name="bkmk_recursion"></a>DNS の選択的な再帰制御の例
 
 DNS のポリシーを使用して、DNS 再帰のオプションを選択コントロールの既に説明したシナリオを実現する方法の例を次に示します。
 
-このセクションには、次のトピックがあります。
+このセクションのトピックは次のとおりです。
 
 - [DNS の選択的再帰制御のしくみ](#bkmk_recursionhow)
 - [DNS の選択的な再帰制御を構成する方法](#bkmk_recursionconfigure)
@@ -154,9 +154,9 @@ Windows Server の以前のバージョンで再帰を有効にするものす�
 ![選択的な再帰コントロール](../../media/DNS-Split-Brain/Dns-Split-Brain-02.jpg) 
 
 
-### <a name="bkmk_recursionhow"></a>DNS の選択的再帰制御のしくみ
+### <a name="how-dns-selective-recursion-control-works"></a><a name="bkmk_recursionhow"></a>DNS の選択的再帰制御のしくみ
 
-https://www.microsoft.com など、Contoso の DNS サーバーに対して権限のないクエリを受信した場合、名前解決の要求は、DNS サーバーのポリシーに対して評価されます。 
+https://www.microsoft.comなど、Contoso の DNS サーバーに対して権限のないクエリを受信した場合、名前解決の要求は、DNS サーバーのポリシーに対して評価されます。 
 
 ポリシー レベル、ゾーンのため、これらのクエリは、任意のゾーンにも属さない、 \(スプリット ブレインの例で定義されている\) は評価されません。 
 
@@ -168,14 +168,14 @@ DNS サーバーは、再帰ポリシーとプライベート インターフェ
 
 これにより、サーバーが内部クライアントのリゾルバーをキャッシュとして機能しています中に、外部のクライアントのオープンに競合回避モジュールとして機能します。 
 
-### <a name="bkmk_recursionconfigure"></a>DNS の選択的な再帰制御を構成する方法
+### <a name="how-to-configure-dns-selective-recursion-control"></a><a name="bkmk_recursionconfigure"></a>DNS の選択的な再帰制御を構成する方法
 
 コントロールを構成する DNS 選択的な再帰 DNS ポリシーを使用して、次の手順を使用する必要があります。
 
 - [DNS 再帰スコープを作成する](#bkmk_recscopes)
 - [DNS 再帰ポリシーを作成する](#bkmk_recpolicy)
 
-#### <a name="bkmk_recscopes"></a>DNS 再帰スコープを作成する
+#### <a name="create-dns-recursion-scopes"></a><a name="bkmk_recscopes"></a>DNS 再帰スコープを作成する
 
 再帰のスコープは、DNS サーバーで再帰を制御する設定のグループの一意のインスタンスです。 再帰のスコープは、フォワーダの一覧が含まれていて、再帰が有効になっているかどうかを指定します。 DNS サーバーは、多くの再帰スコープを持つことができます。 
 
@@ -190,7 +190,7 @@ DNS サーバーは、再帰ポリシーとプライベート インターフェ
 
 詳細については、次を参照してください [追加 DnsServerRecursionScope。](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverrecursionscope?view=win10-ps)
 
-#### <a name="bkmk_recpolicy"></a>DNS 再帰ポリシーを作成する
+#### <a name="create-dns-recursion-policies"></a><a name="bkmk_recpolicy"></a>DNS 再帰ポリシーを作成する
 
 DNS サーバーに特定の条件に一致するクエリのセットに対して再帰適用範囲を選択するための再帰ポリシーを作成できます。 
 

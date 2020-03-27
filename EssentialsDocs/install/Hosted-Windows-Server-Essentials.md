@@ -3,7 +3,7 @@ title: ホスト型 Windows Server Essentials
 description: Windows Server Essentials の使用方法について説明します。
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: fda5628c-ad23-49de-8d94-430a4f253802
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 84464c69d4b8576906e5fb0d0a7de7e382a59537
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 76319f87a246c6fabbe0befaf7dc4c74d1416ac4
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947508"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80311757"
 ---
 # <a name="hosted-windows-server-essentials"></a>ホスト型 Windows Server Essentials
 
@@ -57,10 +57,10 @@ ms.locfileid: "75947508"
   
    Virtual Machine Manager を使用している場合、実行中のインスタンスを使用してテンプレートを作成できます。 テンプレートを作成すると、インスタンスが sysprep され、サーバーがシャットダウンします。 ライブラリに格納した後、インスタンスをケースバイケースで起動できます。  
   
-##  <a name="BKMK_automatedeployment"></a>デプロイを自動化操作方法には  
+##  <a name="how-do-i-automate-the-deployment"></a><a name="BKMK_automatedeployment"></a>デプロイを自動化操作方法には  
  カスタマイズしたイメージを取得したら、独自のイメージを使ってデプロイメントを実行できます。 半無人インストールを実行するには、WinPE セットアップ用の unattend.xml を提供/展開する必要があります。 完全無人インストールを実行するには、Windows Server Essentials 初期構成用の cfg ファイルも指定する必要があります。  
   
-1. 無人 WinPE セットアップのみを実行します。 これにより、WinPE セットアップのみが自動化されます。初期構成前にインストールを停止し、エンド ユーザーが RDP 後に自分で会社、ドメイン、管理者情報をサーバー セッションに提供できるようにします。 そのためには、次の手順に従います。  
+1. 無人 WinPE セットアップのみを実行します。 これにより、WinPE セットアップのみが自動化されます。初期構成前にインストールを停止し、エンド ユーザーが RDP 後に自分で会社、ドメイン、管理者情報をサーバー セッションに提供できるようにします。 これを行うには :  
   
    1.  Windows unattend.xml ファイルを提供します。 [WINDOWS 8.1 ADK](https://go.microsoft.com/fwlink/?LinkId=248694)に従ってファイルを生成し、サーバー名、プロダクトキー、管理者パスワードなど、すべての必要な情報を指定します。 Unattend.xml ファイルの「Microsoft-Windows-Setup」セクションで、次のように情報を入力します。  
   
@@ -84,7 +84,7 @@ ms.locfileid: "75947508"
   
    Virtual Machine Manager を使用している場合、テンプレートから新しいインストールを作成したときに、コンソールで管理者パスワードを指定できます。  
   
-2. 無人初期構成を含む、完全無人セットアップを実行します。 そのためには、次の手順に従います。  
+2. 無人初期構成を含む、完全無人セットアップを実行します。 これを行うには :  
   
    1.  デプロイメントを WinPE セットアップから開始した場合、上で実行した方法で unattend.xml ファイルを指定します。  
   
@@ -203,7 +203,7 @@ ms.locfileid: "75947508"
 Enable-WssRemoteWebAccess [-SkipRouter] [-DenyAccessByDefault] [-ApplyToExistingUsers]  
 ```  
   
- 次に例を示します。  
+ 例:  
   
 ```  
 $Enable-WssRemoteWebAccess  œDenyAccessByDefault  œApplyToExistingUsers  
@@ -217,7 +217,7 @@ $Enable-WssRemoteWebAccess  œDenyAccessByDefault  œApplyToExistingUsers
 Add-WssUser [-Name] <string> [-Password] <securestring> [-AccessLevel <string> {User | Administrator}] [-FirstName <string>] [-LastName <string>] [-AllowRemoteAccess] [-AllowVpnAccess]   [<CommonParameters>]  
 ```  
   
- 次に例を示します。  
+ 例:  
   
 ```  
 $password = ConvertTo-SecureString "Passw0rd!" -asplaintext  œforce  
@@ -228,7 +228,7 @@ $Add-WssUser -Name User2Test -Password $password -Accesslevel Administrator -Fir
   
  **ユーザーの有効化/無効化**  
   
- 次に例を示します。  
+ 例:  
   
 ```  
 $CurrentUser = get-wssuser  œname user2test  
@@ -244,7 +244,7 @@ $CurrentUser.Commit()
 Add-WssFolder [-Name] <string> [-Path] <string> [[-Description] <string>] [-KeepPermissions] [<CommonParameters>]  
 ```  
   
- 次に例を示します。  
+ 例:  
   
 ```  
 $Add-WssFolder -Name "MyTestFolder" -Path "C:\ServerFolders\MyTestFolder"  
@@ -272,7 +272,7 @@ $Add-WssFolder -Name "MyTestFolder" -Path "C:\ServerFolders\MyTestFolder"
   
 ## <a name="what-are-the-native-tools-for-monitoring-and-management"></a>監視と管理のためのネイティブ ツール  
   
-### <a name="group-policy-management"></a>グループ ポリシー管理  
+### <a name="group-policy-management"></a>グループ ポリシーの管理  
  Windows Server Essentials は、Windows Server 2012 でネイティブグループポリシーサポートを利用し、フォルダーリダイレクトとセキュリティ設定を構成するためのユーザーインターフェイスを提供します。  
   
 > [!NOTE]
@@ -281,7 +281,7 @@ $Add-WssFolder -Name "MyTestFolder" -Path "C:\ServerFolders\MyTestFolder"
 ### <a name="management-pack"></a>管理パック  
  Windows Server Essentials 管理パックは、Windows Server Essentials の正常性アラートシステムに対する監視機能を提供します。これにより、さまざまな小規模企業に専用の多数の Windows Server Essentials サーバーをホストして管理することができます。 このバージョンでの監視には、システムの重要なアラートだけが含まれます。  
   
-#### <a name="management-pack-scope"></a>管理パックの範囲  
+#### <a name="management-pack-scope"></a>管理パックのスコープ  
  この管理パックは、Windows Server Essentials 固有の機能を監視するのに役立ちます。 Windows Server 2012 Standard オペレーティング システムの一般的な機能は監視しません。 Windows Server Essentials を監視するには、windows server Essentials 管理パックと Windows Server 2012 Standard 用管理パックの両方を使用する必要があります。  
   
 #### <a name="mandatory-configuration"></a>必須構成  
@@ -358,7 +358,7 @@ $Add-WssFolder -Name "MyTestFolder" -Path "C:\ServerFolders\MyTestFolder"
   
 - Windows Server Essentials から Windows Server 2012 にアップグレードします。  
   
-  **サーバー構成**  
+  **サーバーの構成**  
   
 - Anywhere Access (VPN、リモート Web アクセス、DirectAccess) を構成します。  
   
@@ -401,7 +401,7 @@ $Add-WssFolder -Name "MyTestFolder" -Path "C:\ServerFolders\MyTestFolder"
 ## <a name="where-can-i-get-more-support"></a>サポートの入手場所  
  下のリンクから SDK ドキュメントと ADK ドキュメントを入手できます。  
   
-- [SDK](https://go.microsoft.com/fwlink/p/?LinkID=248648)  
+- [』](https://go.microsoft.com/fwlink/p/?LinkID=248648)  
   
 - [ADK](https://go.microsoft.com/fwlink/p/?LinkID=249124)  
   

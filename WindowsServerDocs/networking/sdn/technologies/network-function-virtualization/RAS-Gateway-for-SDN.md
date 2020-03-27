@@ -10,18 +10,18 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a32357a5-ab1a-4a4c-848a-7a4ed65b1921
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 20fc19dc31ee612de0a736bfe989f930a9afa202
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 415a5f4728b1b08e59630935e47f22d74b0267e8
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405871"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312930"
 ---
 # <a name="ras-gateway-for-sdn"></a>SDN の RAS ゲートウェイ
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016 # # SDN 用 RAS ゲートウェイ  
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016 # # SDN 用 RAS ゲートウェイ  
 
 
 RAS ゲートウェイは、クラウドサービスプロバイダー (Csp) および Hyper-v ネットワーク仮想化を使用して複数のテナント仮想ネットワークをホストする企業向けに設計された、ソフトウェアベースのマルチテナントの Border Gateway Protocol (BGP) 対応ルーターです。 RAS ゲートウェイは、場所に関係なく、物理ネットワークと VM ネットワークリソース間のネットワークトラフィックをルーティングします。 ネットワークトラフィックは、同じ物理的な場所またはさまざまな場所でルーティングできます。   

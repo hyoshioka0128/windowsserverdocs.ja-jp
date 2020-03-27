@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: f62c6a67-4dda-47f8-8bdf-9b76c37953e6
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: d62beb3106141d4683c957020bc96e4a7dfb306f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 7b42dd9470b44b0f1c7d25627d491cd6f2a2dfae
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405473"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80316279"
 ---
 # <a name="configure-connection-request-policies"></a>接続要求ポリシーを構成する
 
@@ -23,9 +23,9 @@ ms.locfileid: "71405473"
 
 接続要求ポリシーは一連の条件と設定で構成され、ネットワーク管理者は、ネットワークポリシーサーバー \(NPS\) 実行しているサーバーが RADIUS クライアントから受信する接続要求の認証と承認を、ネットワーク管理者がリモート認証ダイヤルインユーザーサービス指定できます。
 
-既定の接続要求ポリシーでは、NPS を RADIUS サーバーとして使用し、すべての認証要求をローカルで処理します。
+既定の接続要求ポリシーは NPS を RADIUS サーバーとして使用し、すべての認証要求をローカルで処理します。
 
-NPS を実行するサーバーが RADIUS プロキシとして機能し、接続要求を他の NPS または RADIUS サーバーに転送するように構成するには、新しい接続要求ポリシーを追加するだけでなく、リモート RADIUS サーバーグループを構成する必要があります。接続要求が一致している必要があります。
+NPS を実行するサーバーを RADIUS プロキシとして機能させ、接続要求を他の NPS または RADIUS サーバーに転送するように構成するには、接続要求が満たすべき条件と設定を指定する新しい接続要求ポリシーを追加するだけでなく、リモート RADIUS サーバー グループを構成する必要もあります。
 
 新しい接続要求ポリシーウィザードを使用して新しい接続要求ポリシーを作成するときに、新しいリモート RADIUS サーバーグループを作成できます。
 
@@ -35,14 +35,14 @@ NPS を RADIUS サーバーとして機能させ、接続要求をローカル�
 
 ## <a name="add-a-connection-request-policy"></a>接続要求ポリシーを追加する
 
-この手順を完了するには、少なくとも **Domain Admins** グループ、またはそれと同等のメンバーシップが必要です。
+この手順を完了するには、少なくとも、**Domain Admins** グループ、またはそれと同等の権限を持つグループのメンバである必要があります。
 
 ### <a name="to-add-a-new-connection-request-policy"></a>新しい接続要求ポリシーを追加するには 
 
 1. サーバーマネージャーで、 **[ツール]** をクリックし、 **[ネットワークポリシーサーバー]** をクリックして NPS コンソールを開きます。 
 2. コンソールツリーで、 **[ポリシー]** をダブルクリックします。
 3. **[接続要求ポリシー]** を右クリックし、 **[新しい接続要求ポリシー]** をクリックします。
-4. 新しい接続要求ポリシーウィザードを使用して、接続要求ポリシーを構成します。これを構成していない場合は、リモート RADIUS サーバーグループを構成します。
+4. 新しい接続要求ポリシー ウィザードを使用して接続要求ポリシーを構成し、リモート RADIUS サーバー グループが構成されていない場合はこれを構成します。
 
 
 NPS の管理の詳細については、「 [Manage Network Policy Server](nps-manage-top.md)」を参照してください。

@@ -6,15 +6,15 @@ ms.technology: networking
 ms.topic: article
 ms.assetid: 0cafb1cc-5798-42f5-89b6-3ffe7ac024ba
 manager: dougkim
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 09/12/2018
-ms.openlocfilehash: f032717b9f4dca65454d8251083b73ff2d57dba7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 93913acbe598c4fd1b8ee5556dbf70013f3d714a
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355316"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80316943"
 ---
 # <a name="software-and-hardware-sh-integrated-features-and-technologies"></a>ソフトウェアとハードウェア (SH) の統合された機能とテクノロジ
 
@@ -70,7 +70,7 @@ IPsec タスクオフロードは、オペレーティングシステムが NIC 
 
 PVLANs では、同じ仮想化サーバー上の仮想マシン間でのみ通信を行うことができます。 プライベート仮想ネットワークは、物理ネットワークアダプターにバインドされていません。 プライベート仮想ネットワークは、仮想化サーバー上のすべての外部ネットワークトラフィックと、管理オペレーティングシステムと外部ネットワーク間のネットワークトラフィックから分離されます。 この種類のネットワークは、隔離されたテスト ドメインなど、隔離されたネットワーク環境を構築する必要がある場合に役立ちます。 Hyper-v および SDN スタックは、PVLAN 分離ポートモードのみをサポートしています。
 
-PVLAN 分離の詳細について[は、「System Center:Virtual Machine Manager エンジニアリングの](https://blogs.technet.microsoft.com/scvmm/2013/06/04/logical-networks-part-iv-pvlan-isolation/)ブログ。
+PVLAN 分離の詳細については、「 [System Center: Virtual Machine Manager Engineering のブログ](https://blogs.technet.microsoft.com/scvmm/2013/06/04/logical-networks-part-iv-pvlan-isolation/)」を参照してください。
 
 ## <a name="remote-direct-memory-access-rdma"></a>リモート ダイレクト メモリ アクセス (RDMA) 
 
@@ -90,7 +90,7 @@ Sr-iov を使用すると、VM トラフィックを Hyper-v ホストを経由�
 
 Sr-iov を使用するトラフィックは、Hyper-v スイッチをバイパスします。これは、Acl や帯域幅管理など、すべてのポリシーが適用されないことを意味します。 SR-IOV トラフィックは、ネットワーク仮想化機能を使用して渡すこともできないため、NV GRE または VxLAN カプセル化は適用できません。 特定の状況では、信頼できるワークロードに対してのみ SR-IOV を使用します。 また、ホストポリシー、帯域幅管理、および仮想化テクノロジを使用することはできません。
 
-将来的には、次の2つのテクノロジによって sr-iov が許可されます。一般フローテーブル (GFT) とハードウェア QoS オフロード (NIC での帯域幅管理) –エコシステムの Nic でサポートされるようになります。 これら2つのテクノロジを組み合わせることにより、すべての Vm に対して sr-iov が有効になり、ポリシー、仮想化、帯域幅管理ルールを適用できるようになるため、sr-iov の一般的なアプリケーションに飛躍を進めることができます。
+将来、2つのテクノロジによって SR-IOV: 汎用フローテーブル (GFT) とハードウェア QoS オフロード (NIC での帯域幅管理) が可能になり、エコシステムの Nic によってサポートされるようになります。 これら2つのテクノロジを組み合わせることにより、すべての Vm に対して sr-iov が有効になり、ポリシー、仮想化、帯域幅管理ルールを適用できるようになるため、sr-iov の一般的なアプリケーションに飛躍を進めることができます。
 
 詳細については、「[シングルルート I/o 仮想化 (sr-iov) の概要](https://docs.microsoft.com/windows-hardware/drivers/network/overview-of-single-root-i-o-virtualization--sr-iov-)」を参照してください。
 

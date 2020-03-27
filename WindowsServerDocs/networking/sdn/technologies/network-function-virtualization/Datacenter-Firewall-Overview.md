@@ -10,18 +10,18 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 67576533-206b-428a-956c-ed8c53218d9b
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 9562972f731a553dbc3e5558fcce1d5c51d539d0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 141057d2ee3e648f589d255ea04fdef179cedf3c
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405884"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317029"
 ---
 # <a name="datacenter-firewall-overview"></a>Datacenter Firewall の概要
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 データセンターのファイアウォールは、Windows Server 2016 に含まれる新しいサービスです。 これは、ネットワーク層、5組 (プロトコル、発信元と宛先のポート番号、送信元と送信先の IP アドレス)、ステートフル、マルチテナントファイアウォールです。 テナント管理者は、サービスプロバイダーによってサービスとして展開され、サービスとして提供されると、インターネットおよびイントラネットネットワークからの不要なトラフィックから仮想ネットワークを保護するために、ファイアウォールポリシーをインストールして構成することができます。  
   

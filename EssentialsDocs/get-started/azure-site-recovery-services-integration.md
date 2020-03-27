@@ -1,9 +1,9 @@
 ---
 title: Azure Site Recovery サービスの統合
-description: Windows Server Essentials を使用する方法について説明します
+description: Windows Server Essentials の使用方法について説明します。
 ms.custom: na
 ms.date: 10/01/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,61 +12,61 @@ ms.assetid: 262701a6-8a97-4c4e-bfbf-9f8007c308d6
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: e9dabc1b986fd86b5ee3efc6022023b331046250
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: c04f27d4bf6ff6e615cf06da73247bf79dea1008
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66433948"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310414"
 ---
 # <a name="azure-site-recovery-services-integration"></a>Azure Site Recovery サービスの統合
 
->適用先:Windows Server 2016 Essentials
+>適用対象: Windows Server 2016 Essentials
 
-[Azure Site Recovery Services](https://docs.microsoft.com/azure/site-recovery/)仮想マシン (VM) のリアルタイムのレプリケーションを有効にする Microsoft Azure によって提供されるサービスを Azure にバックアップ コンテナーには。 サーバーまたはサイトのハードウェアまたはその他の障害によっては、ことすることができますへのフェールオーバー Azure バックアップ コンテナーに格納されている VM イメージを Azure で実行中の VM としてプロビジョニングされます。 Azure へのフェールオーバーが発生した場合、Azure Virtual network と組み合わせて Azure で実行するサーバーに、オンプレミス サーバーに接続した Pc のクライアントは接続透過的にします。
+[Azure Site Recovery サービス](https://docs.microsoft.com/azure/site-recovery/)は、Azure のバックアップコンテナーへの仮想マシン (VM) のリアルタイムレプリケーションを可能にする Microsoft Azure によって提供されるサービスです。 ハードウェアやその他の障害によってサーバーまたはサイトがダウンしている場合は、Azure にフェールオーバーできます。この場合、バックアップコンテナーに格納されている VM イメージは、実行中の VM として Azure にプロビジョニングされます。 Azure へのフェールオーバーが発生した場合は、azure Virtual network と組み合わせることで、以前にオンプレミスサーバーに接続していたクライアント Pc は、Azure で実行されているサーバーに透過的に接続します。
 
-Windows Server Essentials と Azure Site Recovery Services の統合の構成と同じ方法で起動[Azure 仮想ネットワーク](azure-virtual-network-integration.md)します。 **Microsoft クラウド サービスの統合**ダッシュ ボード] ページで [ **Azure Site Recovery Services との統合**ダッシュ ボードの右側に。
+Azure Site Recovery サービスと Windows Server Essentials の統合は、 [Azure Virtual network](azure-virtual-network-integration.md)の構成と同じ方法で開始されます。 ダッシュボードの **[Microsoft Cloud Services 統合]** ページで、ダッシュボードの右側にある **[Azure Site Recovery Services との統合]** をクリックします。
 
-![Windows Server Essentials ダッシュ ボードのホーム ページで、[概要] タブを示すスクリーン ショット。 [概要] タブの [サービス] を選択すると Azure Recovery が現在無効になっている Microsoft クラウド サービスの統合サービスでダッシュ ボードを示します。](media/azure-site-recovery-1.PNG)
+![Windows Server Essentials ダッシュボードのホームページにある [作業の開始] タブを示すスクリーンショット。 [作業の開始] タブの [サービス] セクションが選択されています。ダッシュボードは、Azure Recovery が現在無効になっている Microsoft Cloud Services 統合の下に表示されます。](media/azure-site-recovery-1.PNG)
 
-Azure Virtual network 統合、Azure Backup 統合では、使用する既存の Azure アカウント、Azure にログインか、新しいアカウントを作成する必要があります。
+Azure Virtual network の統合と Azure Backup 統合と同様に、既存の Azure アカウントを使用して Azure にログインするか、新しいアカウントを作成する必要があります。
 
-![Azure にレプリケーションを有効にするウィザードの Microsoft Azure にサインイン ページを示すスクリーン ショット。 ユーザーが Microsoft Azure にまだ署名されていないために、サインイン ボタンが表示されます。](media/azure-site-recovery-2.PNG)
+![[Azure へのレプリケーションを有効にする] ウィザードの [Microsoft Azure へのサインイン] ページを示すスクリーンショット。 ユーザーがまだ Microsoft Azure にサインインしていないため、[サインイン] ボタンが表示されます。](media/azure-site-recovery-2.PNG)
 
-を正常には Azure にログインした後は、VM を保存およびホストされているが、Azure リージョンと同様に、Azure Site Recovery サービスに関連付けるサブスクリプションを要求する画面が表示されます。
+Azure に正常にログインした後、Azure Site Recovery サービスに関連付けるサブスクリプションと、VM が格納およびホストされる Azure リージョンを確認する画面が表示されます。
 
-![Azure にレプリケーションを有効にするウィザードの Microsoft Azure にサインイン ページを示すスクリーン ショット。 Microsoft Azure にサインインしたユーザー、ために、このページは、サブスクリプション、ストレージ アカウント、およびリージョンを選択するためのオプションを提供します。](media/azure-site-recovery-3.PNG)
+![[Azure へのレプリケーションを有効にする] ウィザードの [Microsoft Azure へのサインイン] ページを示すスクリーンショット。 ユーザーが Microsoft Azure にサインインしているため、このページには、サブスクリプション、ストレージアカウント、およびリージョンを選択するためのオプションが表示されます。](media/azure-site-recovery-3.PNG)
 
-サブスクリプションと地域の選択、新しいタブに表示されます、 **Windows Server Essentials ダッシュ ボード**と呼ばれる**Azure Recovery**します。 ネットワークのスキャンを実行を特定し、サポートされているホスト サーバーの列挙 (Windows Server、HYPER-V 2012 R2 を実行している以上) と個々 のホストの仮想マシン (ゲスト)。
+サブスクリプションとリージョンを選択すると、 **Azure Recovery**という名前の**Windows Server Essentials ダッシュボード**に新しいタブが表示されます。 ネットワークスキャンは、(Windows Server Hyper-v 2012 R2 以降を実行している) サポートされているホストサーバーだけでなく、個々のホストの下にある仮想マシン (ゲスト) を識別して列挙するために行われます。
 
-![Windows Server Essentials ダッシュ ボードの [Azure の回復] ページを示すスクリーン ショット。 これらのホストで実行されている仮想マシンとは、2 つの HYPER-V ホストが表示されます。 RAM-H1-7 を選択すると、ホスト上の ramh157v01 という名前の仮想マシンと Azure へのレプリケーションは、この仮想マシンは現在無効です。](media/azure-site-recovery-4.PNG)
+![Windows Server Essentials ダッシュボードの Azure 回復ページを示すスクリーンショット。 これらのホストで実行されている仮想マシンと共に、2つの Hyper-v ホストが表示されます。 ホスト RAM 上の ramh157v01 という名前の仮想マシンが選択されており、この仮想マシンの Azure へのレプリケーションは現在無効になっています。](media/azure-site-recovery-4.PNG)
 
-### <a name="enabling-guest-virtual-machines-for-protection"></a>ゲスト仮想マシンの保護を有効にします。
+### <a name="enabling-guest-virtual-machines-for-protection"></a>ゲスト仮想マシンの保護を有効にする
 
-クリックすることができます、Azure Recovery ウィンドウに存在する仮想マシンの選択、 **Azure へのレプリケーションを有効にする**を準備して仮想マシンをコピーするダッシュ ボードの右側にある™ s イメージを Azure:
+Azure 回復ウィンドウにある仮想マシンを選択したら、ダッシュボードの右側にある [ **azure へのレプリケーションを有効**にする] をクリックして、仮想マシン™ s イメージを準備して azure にコピーできます。
 
-![Azure にレプリケーションを有効にする ダイアログを示すスクリーン ショット。 ホストが追加されると、進行状況バーが表示されます。](media/azure-site-recovery-5.PNG)
+![[Azure へのレプリケーションを有効にする] ダイアログボックスを示すスクリーンショット。 ホストが追加されている間、進行状況バーが表示されます。](media/azure-site-recovery-5.PNG)
 
-このプロセス中には、Azure Site Recovery サービス エージェントは、ホスト サーバーでバックアップ コンテナーで VM は格納されているゲストのイメージを作成して、イメージを Azure のレプリケーションが開始されますインストールされます。 レプリケートされている VM のサイズに応じてレプリケーション プロセスの完了は、数時間から数日かかる場合があります。 Azure には、全体の VM イメージと最新の差分がレプリケートされた、までフェールオーバー タスクが使用できなくと、VM は保護されていません。 Azure の回復 ウィンドウで、保護の状態列が変更されますレプリケーションが完了すると、**レプリケート**に**有効**:。
+このプロセスでは、Azure Site Recovery Service agent がホストサーバーにインストールされ、ゲスト VM のイメージが格納されるバックアップコンテナーが作成され、Azure へのイメージのレプリケーションが開始されます。 レプリケートされる VM のサイズによっては、レプリケーションプロセスの完了に数時間または数日かかることがあります。 VM イメージ全体と最新のデルタが Azure にレプリケートされるまで、フェールオーバータスクは使用できず、VM は保護されません。 レプリケーションが完了すると、[Azure 回復] ウィンドウの [保護の状態] 列の **[レプリケーション]** が **[有効]** に変わります。
 
-![Windows Server Essentials ダッシュ ボードの [Azure の回復] ページを示すスクリーン ショット。 これらのホストで実行されている仮想マシンとは、2 つの HYPER-V ホストが表示されます。 RAM-H1-2 を選択すると、ホスト上の ramh12v02 という名前の仮想マシンと Azure へのレプリケーションは、この仮想マシンが現在有効です。](media/azure-site-recovery-6.PNG)
+![Windows Server Essentials ダッシュボードの Azure 回復ページを示すスクリーンショット。 これらのホストで実行されている仮想マシンと共に、2つの Hyper-v ホストが表示されます。 ホスト RAM-H1-2 で ramh12v02 という名前の仮想マシンが選択され、Azure へのレプリケーションは現在この仮想マシンに対して有効になっています。](media/azure-site-recovery-6.PNG)
 
-### <a name="failover-of-a-guest-vm-to-azure"></a>ゲスト VM を Azure のフェールオーバー
+### <a name="failover-of-a-guest-vm-to-azure"></a>ゲスト VM の Azure へのフェールオーバー
 
-![Azure のページへの VM フェールオーバーを示すスクリーン ショット。](media/azure-site-recovery-7.PNG)
+![Azure へのフェールオーバー VM を示すスクリーンショット。](media/azure-site-recovery-7.PNG)
 
-仮想マシンが保護されている失敗した場合、または失敗した場合、Azure へのフェールオーバーで保護された仮想マシンの実行までのビジネス継続性を維持するために実行できるホスト サーバーにオンプレミス仮想マシンまたはホスト サーバーは修復された利用できます。 表示上の図、としては、Azure Site Recovery Services でサポートされているフェールオーバーの 3 つの種類があります。
+保護されている仮想マシンに障害が発生した場合、または保護された仮想マシンが実行されているホストサーバーで障害が発生した場合、オンプレミスの仮想マシンまたはホストサーバーが修復されて使用可能になるまで、ビジネスの継続性を維持するために Azure へのフェールオーバーを実行できます。 上の図に示すように、Azure Site Recovery サービスでは次の3種類のフェールオーバーがサポートされています。
 
--   **テスト フェールオーバー** ƒA 適切な障害回復計画には、実際に障害が発生した場合、最小限のダウンタイムを確実に障害をシミュレートする機能が組み込まれています。 テスト フェールオーバーは、VM イメージが、recovery コンテナーにレプリケートされる、としては、Azure で実行中の仮想マシンをプロビジョニングし、ビジネスに適用されるシナリオをテストするサーバーに接続することができます。 テスト フェールオーバー中には、ローカルの仮想マシンはディザスター リカバリーのテスト中にビジネスを妨害しないか、ありません中断された実行を続けます。 テスト フェールオーバーが完了すると、仮想マシンのプロビジョニングを解除し、VHD を削除する Azure ポータルでテストを停止します。 テスト全体のフェールオーバー中に、recovery コンテナーで VM イメージをこれまで何かのように、オンサイトの VM からレプリケートが続行されます。
+-   **テストフェールオーバー** ƒA 良好なディザスターリカバリー計画では、災害をシミュレートして、実際の障害発生時のダウンタイムを最小限に抑えることができます。 テストフェールオーバーは、復旧コンテナーにレプリケートされた VM イメージを取得し、それを Azure 内の実行中の仮想マシンとしてプロビジョニングします。また、サーバーに接続して、ビジネスに適用されるシナリオをテストすることができます。 テストフェールオーバー中は、ディザスターリカバリーテスト中にビジネスを中断しないように、ローカル仮想マシンは中断されずに実行を続けます。 テストフェールオーバーが完了したら、Azure Portal でテストを停止します。これにより、仮想マシンがプロビジョニング解除され、VHD が削除されます。 テストフェールオーバー全体で、復旧コンテナー内の VM イメージは、何も発生していないかのように、オンサイトの VM から引き続きレプリケートされます。
 
--   **計画外フェールオーバー** ƒAn 計画外のフェールオーバーは、保護されたホスト サーバーまたはホスト サーバーで実行されている VM で実際のエラーがある場合に発生します。 フェールオーバーは、Windows Server Essentials ダッシュ ボードから手動でトリガーされるまたは場合は、障害が発生したサーバー自体は、Windows Server Essentials を実行するサーバー トリガーできる、Azure Portal から直接。 ここでは、計画外のフェールオーバーは、VM イメージが、recovery コンテナーにレプリケートされる、としては、Azure では、実行中の仮想マシンをプロビジョニングし、ビジネスに適用されるシナリオをテストするサーバーに接続することができます。 オンプレミスで、サーバーが復元されると、ローカル サーバーに送れば、VM イメージをコピーして、Azure Portal から、手動でフェールバックをトリガーできます。
+-   **計画外フェール**オーバーƒAn は、保護されたホストサーバーまたはホストサーバーで実行されている VM で実際の障害が発生した場合に発生します。 フェールオーバーは、Windows Server Essentials ダッシュボードから手動でトリガーされます。障害が発生したサーバー自体が、Windows Server Essentials が実行されているサーバーである場合は、Azure Portal から直接トリガーできます。 この場合、計画されていないフェールオーバーは、復旧コンテナーにレプリケートされた VM イメージを取得し、それを Azure 内の実行中の仮想マシンとしてプロビジョニングします。また、サーバーに接続して、ビジネスに適用されるシナリオをテストすることができます。 サーバーがオンプレミスで復元されると、Azure Portal から手動フェールバックをトリガーし、VM イメージをローカルサーバーにコピーして戻すことができます。
 
--   **計画されたフェールオーバー** ƒA 計画されたフェールオーバーは計画的なアクティビティは、ハードウェアのメンテナンスなど行う必要があります、サーバーがダウン必要があり、実行できるアクションです。 同じプロセスでは、計画的なフェールオーバーが発生した場合、に関して、Azure 内のレプリケートされた VM イメージのプロビジョニングが行われます。 ただし、これを行う前に、ローカル サーバーがシャット ダウンでは、すべての変更は、シャット ダウンする前に Azure にレプリケートされたことを確認する適切な方法です。 計画的メンテナンスが完了すると、Windows Server Essentials ダッシュ ボードで、または Azure ポータルの表示をローカル サーバーとし、Azure、および delete で VM をプロビジョニング解除のいずれかからのフェールバックを手動でトリガーできるのです。VHD ファイル。 後は、オンプレミス VM から Azure へのレプリケーションを継続して再度通常どおりに発生します。
+-   計画された**フェール**オーバーƒA 計画フェールオーバーは、ハードウェアメンテナンスなどの予定されたアクティビティを実行する必要がある場合に、サーバーを停止する必要がある場合に実行できるアクションです。 計画フェールオーバーが発生した場合、Azure でレプリケートされた VM イメージのプロビジョニングに関して同じプロセスが実行されます。 ただし、これを行う前に、ローカルサーバーは、シャットダウン前にすべての変更が Azure にレプリケートされるように、正しい方法でシャットダウンされます。 計画済みメンテナンスが完了したら、Windows Server Essentials ダッシュボードまたは Azure portal から手動でフェールバックをトリガーできます。これにより、ローカルサーバーが起動し、Azure で VM がプロビジョニング解除され、が削除されます。VHD ファイル。 オンプレミスの VM から Azure へのレプリケーションは、正常に実行され続けます。
 
-上記の 3 つのケースのような Azure、Windows Server Essentials ダッシュ ボードに VM をフェールオーバー時に表示されます、新しい VM 下の図のように実行されている Azure。
+上記の3つのケースでは、VM が Azure にフェールオーバーされると、Windows Server Essentials ダッシュボードに、次の図のように、Azure の新しい VM が表示されます。
 
-![Windows Server Essentials ダッシュ ボードの [Azure の回復] ページを示すスクリーン ショット。 Essentials、および仮想マシンが Azure で実行されている名前付きの Essentials-テストでは、ホストが Azure にフェールオーバーしていることを示しますという名前のホストに Azure へのレプリケーションを有効になっています。](media/azure-site-recovery-8.PNG)
+![Windows Server Essentials ダッシュボードの Azure 回復ページを示すスクリーンショット。 Azure へのレプリケーションは、Essentials という名前のホストに対して有効になっています。また、Azure で実行されている Essentials-Test という名前の仮想マシンは、ホストが Azure にフェールオーバーしたことを示します。](media/azure-site-recovery-8.PNG)
 
-<a name="see-also"></a>関連項目
+<a name="see-also"></a>参照
 --------
 [Windows Server Essentials の概要](get-started.md)

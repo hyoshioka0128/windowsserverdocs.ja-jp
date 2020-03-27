@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8acc260f-d6d1-4d32-9e3a-1fd0b2a71586
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 2a0f04a3ff7797d18f7647416dc99319860c7030
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 8e483f5986a5a23123495e3a13440ddc57a6c521
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404519"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314039"
 ---
 # <a name="plan-a-multi-forest-deployment"></a>マルチフォレスト展開の計画
 
@@ -38,7 +38,7 @@ ms.locfileid: "71404519"
   
 さらに、リモート アクセス管理者は、すべてのリモート アクセス サーバーのローカル管理者である必要があります。これには、元のリモート アクセス展開へのエントリ ポイントとして追加される新しいフォレストのリモート アクセス サーバーも含まれます。  
   
-## <a name="ClientSG"></a>クライアントセキュリティグループを計画する  
+## <a name="plan-client-security-groups"></a><a name="ClientSG"></a>クライアントセキュリティグループを計画する  
 新しいフォレストの DirectAccess クライアント コンピューターに対して、少なくとも 1 つのセキュリティ グループを新しいフォレストに構成する必要があります。 これは、1 つのセキュリティ グループに複数のフォレストのアカウントを含めることはできないためです。  
   
 > [!NOTE]  

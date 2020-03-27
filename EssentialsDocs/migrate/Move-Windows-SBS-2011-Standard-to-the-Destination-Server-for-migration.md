@@ -3,7 +3,7 @@ title: Windows SBS 2011 Standard の設定とデータを Windows Server Essenti
 description: Windows Server Essentials の使用方法について説明します。
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,16 +12,16 @@ ms.assetid: 16b24026-2fe3-4bd0-b82f-900e1564be99
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: ef8e717fe235b8d85f4d53442610818b31ad7d1d
-ms.sourcegitcommit: 9f955be34c641b58ae8b3000768caa46ad535d43
+ms.openlocfilehash: d7b1edf2ffd602cd844fa399ac9368a2f4e08643
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2019
-ms.locfileid: "68590414"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318855"
 ---
 # <a name="move-windows-sbs-2011-standard-settings-and-data-to-the-destination-server-for-windows-server-essentials-migration"></a>Windows SBS 2011 Standard の設定とデータを Windows Server Essentials 移行の移行先サーバーに移動する
 
->適用先:Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
+>適用対象: windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
 移行先サーバーへの設定とデータの移動は次のように行います。 
  
@@ -55,10 +55,10 @@ ms.locfileid: "68590414"
     `robocopy \\<SourceServerName> \<SharedSourceFolderName> \\<DestinationServerName> \<SharedDestinationFolderName> /E /B /COPY:DATSOU /LOG:C:\Copyresults.txt`
  
  各項目の意味は次のとおりです。
- - \<SourceServerName\>は、移行元サーバーの名前です。
- - \<共有 dsourcefoldername\>は、移行元サーバー上の共有フォルダーの名前です。
- - \<Destinationservername\>は、移行先サーバーの名前です。
- - \<Shareddestinationfoldername\>は、データがコピーされる移行先サーバー上の共有フォルダーです。 
+ - \<SourceServerName\> は、移行元サーバーの名前です。
+ - \<共有 Dsourcefoldername\> は、移行元サーバー上の共有フォルダーの名前です。
+ - \<DestinationServerName\> は、移行先サーバーの名前です。
+ - \<SharedDestinationFolderName\> は、データがコピーされる移行先サーバー上の共有フォルダーです。 
 
 3. 移行元サーバーから移行する共有フォルダーごとに前記の手順を繰り返します。 
 
@@ -112,9 +112,9 @@ ms.locfileid: "68590414"
  
  ルーターが UPnP フレームワークをサポートしていない場合、または UPnP フレームワークが無効になっている場合は、黄色の警告アイコンがルーター名の隣に表示されることがあります。 以下のポートが開かれていて、移行先サーバーの IP アドレスに向いていることを確認します。 
  
-- ポート 80:HTTP Web トラフィック 
+- ポート 80: HTTP Web トラフィック 
  
-- ポート 443:HTTPS Web トラフィック 
+- ポート 443: HTTPS Web トラフィック 
  
 > [!NOTE]
 > 第 2 のサーバーにオンプレミス Exchange サーバーを設定してある場合は、ポート 25 (SMTP 用) も開かれていること、およびオンプレミス Exchange サーバーの IP アドレスにリダイレクトされることを確認する必要があります。 
@@ -131,9 +131,9 @@ ms.locfileid: "68590414"
  
 2. **[スタート]** ボタンをクリックし、 **[サーバー管理]** をクリックします。 
  
-3. ナビゲーションウィンドウで、 **[詳細管理]** をクリックし、 **[グループポリシー管理]** をクリックして、[**フォレスト:** _\>< ドメイン名_] をクリックします。 
+3. ナビゲーションウィンドウで、 **[詳細管理]** をクリックし、 **[グループポリシー管理]** をクリックします。次に、[**フォレスト:** _< ドメイン名\>_ ] をクリックします。 
  
-4. **[ドメイン]** をクリックし、[ドメイン*名\>の <* ] をクリックして、 **[オブジェクトのグループポリシー]** をクリックします。 
+4. **ドメイン** をクリックし、< のドメイン*名\>* をクリックして、**オブジェクトのグループポリシー** をクリックします。 
  
 5. **[Small Business Server の監査のポリシー]** を右クリックし、 **[削除]** をクリックして、 **[OK]** をクリックします。 
  
@@ -161,9 +161,9 @@ ms.locfileid: "68590414"
  
 2. **[スタート]** ボタンをクリックし、 **[サーバー管理]** をクリックします。 
  
-3. ナビゲーションウィンドウで、 **[機能]** をクリックし、 **[グループポリシー管理]** をクリックして、[**フォレスト:** _<\> networkdomainname_ ] をクリックします。 
+3. ナビゲーションウィンドウで、 **[機能]** をクリックし、 **[グループポリシー管理]** をクリックして、[**フォレスト:** _< networkdomainname_ ] をクリックし\> 
  
-4. **[ドメイン]** をクリックし、[ *< networkdomainname\>* ] をクリックして、 **[WMI フィルター]** をクリックします。 
+4. **ドメイン** をクリックし、 *< networkdomainname\>* をクリックして、**WMI フィルター** をクリックします。 
  
 5. **[Windows SBS クライアント]** を右クリックし、 **[削除]** をクリックして、 **[はい]** をクリックします。 
  

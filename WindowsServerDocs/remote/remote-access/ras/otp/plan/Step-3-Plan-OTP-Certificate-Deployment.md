@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: eca02eeb-d92d-463e-aae0-1f7038ba26fe
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: e8406286599e5b03173ce1b5d6c34c35245a9094
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: d34630b4faa8012eee73967a99bc0541f1305a09
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366950"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313520"
 ---
 # <a name="step-3-plan-otp-certificate-deployment"></a>手順 3 OTP 証明書の展開を計画する
 
@@ -41,10 +41,10 @@ RADIUS サーバーを計画した後、ワンタイムパスワード (OTP) 証
 |[3.2 OTP 証明書テンプレートを計画する](#bkmk_3_2_OTP_Cert)|OTP 証明書テンプレートを計画します。|
 |[3.3 登録機関の証明書を計画する](#bkmk_33RACert)|すべての OTP 認証証明書要求に署名するための登録機関の証明書を計画します。|
 
-## <a name="bkmk_3_1_CA"></a>3.1 OTP CA を計画する  
+## <a name="31-plan-the-otp-ca"></a><a name="bkmk_3_1_CA"></a>3.1 OTP CA を計画する  
 ワンタイムパスワード認証 (OTP) を使用して DirectAccess を展開するには、DirectAccess クライアントコンピューターに OTP 認証証明書を発行するための内部 CA が必要です。 このため、通常の IPsec コンピューター認証に使用される証明書を発行するために使用するのと同じ内部 CA を使用できます。  
   
-## <a name="bkmk_3_2_OTP_Cert"></a>3.2 OTP 証明書テンプレートを計画する  
+## <a name="32-plan-the-otp-certificate-template"></a><a name="bkmk_3_2_OTP_Cert"></a>3.2 OTP 証明書テンプレートを計画する  
 各 DirectAccess クライアントは、内部ネットワークへのアクセスを取得するために OTP 認証証明書を必要とします。 OTP 証明書の内部 CA でテンプレートを構成する必要があります。 OTP 証明書テンプレートを構成するときは、次の点に注意してください。  
   
 -   OTP 認証を実行する必要があるすべてのユーザーは、このテンプレートの読み取りと登録のアクセス許可を持っている必要があります。  
@@ -70,10 +70,10 @@ RADIUS サーバーを計画した後、ワンタイムパスワード (OTP) 証
   
     -   OTP 認証証明書テンプレートには、キー1.3.6.1.4.1.311.20.2.2 キーを使用します。  
   
-## <a name="bkmk_33RACert"></a>3.3 登録機関の証明書を計画する  
+## <a name="33-plan-the-registration-authority-certificate"></a><a name="bkmk_33RACert"></a>3.3 登録機関の証明書を計画する  
 DirectAccess クライアントが OTP 証明書を要求すると、リモートアクセスサーバーはクライアントから要求を受信します。 リモートアクセスサーバーは、登録機関の証明書を使用して、クライアントからのすべての OTP 証明書要求に署名します。 CA は、要求がリモートアクセスサーバーの登録機関の証明書によって署名されている場合にのみ、証明書を発行します。 証明書は、内部 CA によって発行されている必要があります。証明書を自己署名することはできません。 OTP 証明書を発行した CA によって発行される必要はありませんが、OTP 証明書を発行する CA は、登録機関署名証明書を発行する CA を信頼する必要があります。  
   
-## <a name="BKMK_Links"></a>関連項目  
+## <a name="see-also"></a><a name="BKMK_Links"></a>関連項目  
   
 -   [手順 4: リモートアクセスサーバーの OTP を計画する](Step-4-Plan-for-OTP-on-the-Remote-Access-Server.md)  
   

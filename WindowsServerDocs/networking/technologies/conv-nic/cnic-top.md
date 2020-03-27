@@ -6,15 +6,15 @@ ms.technology: networking
 ms.topic: article
 ms.assetid: d7642338-9b33-4dce-8100-8b2c38d7127a
 manager: dougkim
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 09/13/2018
-ms.openlocfilehash: d791e0d51278d1f83f344250d38b1c7005c1a14a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8824a6c6189a447f97f285052af8e5c13a66e766
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355441"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312816"
 ---
 # <a name="converged-network-interface-card-nic-configuration-guidance"></a>収束ネットワークインターフェイスカード \(NIC\) 構成ガイダンス
 

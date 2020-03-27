@@ -10,14 +10,14 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 3c98106c-67cc-406a-810e-f2e09f7e2c5e
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: bb4d69f914331e8fa7a06c6dd77ea342d5eefc6a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 1980923d0ed29caa60efa012342ef52c93970dfe
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388222"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314501"
 ---
 # <a name="test-lab-guide-demonstrate-a-directaccess-multisite-deployment"></a>テスト ラボ ガイド: DirectAccess マルチサイト展開のデモンストレーション
 

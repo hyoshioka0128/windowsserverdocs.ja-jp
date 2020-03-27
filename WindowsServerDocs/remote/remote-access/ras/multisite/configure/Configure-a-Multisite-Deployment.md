@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: cb84920e-7cf5-4266-b071-d09e3d5e1f10
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 25c0ce5d62268f64113ebc39345b2d50867bebf7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 4a0229d5605271876f89e8e0ae75f8612e3f5762
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367125"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314017"
 ---
 # <a name="configure-a-multisite-deployment"></a>マルチサイト展開を構成する
 

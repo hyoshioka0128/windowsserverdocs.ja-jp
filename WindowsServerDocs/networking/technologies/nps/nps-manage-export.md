@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: d268dc57-78f8-47ba-9a7a-a607e8b9225c
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: cbebd0388ccd5dd2540a20f5d325d7f97c7e2bb3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 8c1aef88aec45ee63614b889658daceca3779e91
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405439"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80316001"
 ---
 # <a name="export-an-nps-configuration-for-import-on-another-server"></a>別のサーバーにインポートするために NPS 構成をエクスポートする
 
@@ -46,7 +46,7 @@ NPS 構成をエクスポートするためのコマンド構文は次のとお�
 
 |パラメーター|説明|
 |---------|-----------|
-|パス|NPS 構成をエクスポートする XML ファイルの名前と場所を指定します。|
+|Path|NPS 構成をエクスポートする XML ファイルの名前と場所を指定します。|
 
 **管理者の資格情報**
 
@@ -93,7 +93,7 @@ Netsh\) \(ネットワークシェルを使用して、 **netsh nps export**コ�
 
 2. **Netsh**プロンプトで、「 **nps**」と入力し、enter キーを押します。 
 
-3. **Netsh nps**プロンプトで、「 **export filename =** "*PATH\FILE.XML*" **exportpsk = YES**」と入力します。ここで、 *path*は nps 構成ファイルを保存するフォルダーの場所、 *file*は保存する xml ファイルの名前です。 Enter キーを押します。 
+3. **Netsh nps**プロンプトで、「 **export filename =** "*PATH\FILE.XML*" **exportpsk = YES**」と入力します。ここで、 *path*は nps 構成ファイルを保存するフォルダーの場所、 *file*は保存する xml ファイルの名前です。 [Enter] キーを押します。 
 
 これには、レジストリ\) 設定を含む \(構成設定が XML ファイルに格納されます。 相対パスまたは絶対パスを指定することも、UNC\) パス \(汎用名前付け規則を使用することもできます。 Enter キーを押すと、ファイルへのエクスポートが正常に完了したかどうかを示すメッセージが表示されます。
 

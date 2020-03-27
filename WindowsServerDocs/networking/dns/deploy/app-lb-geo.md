@@ -6,18 +6,18 @@ ms.prod: windows-server
 ms.technology: networking-dns
 ms.topic: article
 ms.assetid: b6e679c6-4398-496c-88bc-115099f3a819
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: ea3f959612de0f2bc56a887ba73aba47f1d3f141
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: d4e005e65a3ff645ed91f488820435aff5173390
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406217"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317890"
 ---
 # <a name="use-dns-policy-for-application-load-balancing-with-geo-location-awareness"></a>地理的な場所を認識するアプリケーションの負荷分散に DNS ポリシーを使用する
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックでは、geo ロケーションを認識するアプリケーションの負荷を分散するように DNS ポリシーを構成する方法について説明します。
 
@@ -45,7 +45,7 @@ Contoso ギフトサービス DNS 管理者は、米国の DNS ポリシー実�
 >[!IMPORTANT]
 >以下のセクションには、多くのパラメーターの値の例を含む Windows PowerShell コマンドの例が含まれています。 これらのコマンドで値の例は、これらのコマンドを実行する前に、展開に対応する値を置き換えることを確認します。
 
-### <a name="bkmk_clientsubnets"></a>DNS クライアントサブネットを作成する
+### <a name="create-the-dns-client-subnets"></a><a name="bkmk_clientsubnets"></a>DNS クライアントサブネットを作成する
 
 まず、北米とヨーロッパのリージョンのサブネットまたは IP アドレス空間を特定する必要があります。
 
@@ -61,7 +61,7 @@ DNS クライアントのサブネットは、クエリが DNS サーバーに�
     
 詳細については、次を参照してください。 [追加 DnsServerClientSubnet](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverclientsubnet?view=win10-ps)します。
 
-### <a name="bkmk_zscopes2"></a>ゾーンのスコープを作成する
+### <a name="create-the-zone-scopes"></a><a name="bkmk_zscopes2"></a>ゾーンのスコープを作成する
 
 クライアントサブネットが配置されたら、ゾーンの contosogiftservices.com をデータセンターごとに異なるゾーンスコープに分割する必要があります。
 
@@ -85,7 +85,7 @@ DNS クライアントのサブネットは、クエリが DNS サーバーに�
 
 詳細については、次を参照してください [追加 DnsServerZoneScope。](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)
 
-### <a name="bkmk_records2"></a>ゾーンのスコープにレコードを追加する
+### <a name="add-records-to-the-zone-scopes"></a><a name="bkmk_records2"></a>ゾーンのスコープにレコードを追加する
 
 次に、web サーバーホストを表すレコードをゾーンのスコープに追加する必要があります。
 
@@ -98,14 +98,14 @@ DNS クライアントのサブネットは、クエリが DNS サーバーに�
 
 詳細については、次を参照してください。 [追加 DnsServerResourceRecord](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps)します。
 
-### <a name="bkmk_policies2"></a>DNS ポリシーを作成する
+### <a name="create-the-dns-policies"></a><a name="bkmk_policies2"></a>DNS ポリシーを作成する
 
 パーティション (ゾーンスコープ) を作成し、レコードを追加したら、これらのスコープに対して受信クエリを分散する DNS ポリシーを作成する必要があります。
 
 この例では、異なるデータセンター内のアプリケーションサーバー間でのクエリの分散は、次の条件を満たしています。
 
-1. 北米クライアントサブネットのソースから DNS クエリを受信すると、DNS 応答の 50% がシアトルデータセンターを指し、応答の 25% がシカゴのデータセンターに送信され、さらにその残りの 25% がダラスデータセンターに送信されます。
-2. 欧州クライアントサブネットのソースから DNS クエリを受信すると、DNS 応答の 50% がダブリンデータセンターをポイントし、DNS 応答の 50% がアムステルダムデータセンターをポイントします。
+1. 北米クライアントサブネットのソースから DNS クエリを受信すると、DNS 応答の50% がシアトルデータセンターを指し、応答の25% がシカゴのデータセンターに送信され、さらにその残りの25% がダラスデータセンターに送信されます。
+2. 欧州クライアントサブネットのソースから DNS クエリを受信すると、DNS 応答の50% がダブリンデータセンターをポイントし、DNS 応答の50% がアムステルダムデータセンターをポイントします。
 3. クエリが世界中の他の場所からのものである場合、DNS 応答は5つのデータセンター全体に分散されます。
 
 これらの DNS ポリシーを実装するには、次の Windows PowerShell コマンドを使用します。

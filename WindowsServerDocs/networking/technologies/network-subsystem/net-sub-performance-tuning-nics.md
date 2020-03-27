@@ -1,5 +1,5 @@
 ---
-title: ネットワーク アダプターのパフォーマンス チューニング
+title: ネットワーク アダプターのパフォーマンスを調整する
 description: このトピックは、Windows Server 2016 のネットワークサブシステムのパフォーマンスチューニングガイドに含まれています。
 audience: Admin
 ms.custom:
@@ -10,17 +10,17 @@ ms.technology: networking
 ms.topic: article
 ms.assetid: 0b9b0f80-415c-4f5e-8377-c09b51d9c5dd
 manager: dcscontentpm
-ms.author: pashort
+ms.author: lizross
 author: Teresa-Motiv
 ms.date: 12/23/2019
-ms.openlocfilehash: 3feec719934fb16ca34cebe1e653768da5fb9eb7
-ms.sourcegitcommit: 33c89b76ac902927490b9727f3cf92b374754699
+ms.openlocfilehash: f802804d64b3047a2612b7f346de03aff61c30cd
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75728433"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80316542"
 ---
-# <a name="performance-tuning-network-adapters"></a>ネットワーク アダプターのパフォーマンス チューニング
+# <a name="performance-tuning-network-adapters"></a>ネットワーク アダプターのパフォーマンスを調整する
 
 > 適用対象: Windows Server 2019、Windows Server 2016、Windows Server (半期チャネル)
 
@@ -35,7 +35,7 @@ ms.locfileid: "75728433"
 
 以下のセクションでは、パフォーマンス チューニング オプションの一部について説明します。  
 
-##  <a name="bkmk_offload"></a>オフロード機能の有効化
+##  <a name="enabling-offload-features"></a><a name="bkmk_offload"></a>オフロード機能の有効化
 
 ネットワーク アダプターのオフロード機能の調整には、一般的にメリットがあります。 ただし、ネットワークアダプターは、高スループットでオフロード機能を処理するのに十分ではない可能性があります。
 
@@ -48,7 +48,7 @@ ms.locfileid: "75728433"
 > [!NOTE]  
 > 一部のネットワークアダプターでは、送信パスと受信パスに対して個別にオフロード機能を有効にする必要があります。
 
-##  <a name="bkmk_rss_web"></a>Web サーバーの receive side scaling (RSS) の有効化
+##  <a name="enabling-receive-side-scaling-rss-for-web-servers"></a><a name="bkmk_rss_web"></a>Web サーバーの receive side scaling (RSS) の有効化
 
 サーバーの論理プロセッサよりもネットワーク アダプター数が少ない場合、RSS で Web のスケーラビリティとパフォーマンスを改善できます。 すべての web トラフィックが RSS 対応のネットワークアダプターを経由する場合、サーバーは異なる Cpu 間で同時に異なる接続からの受信 web 要求を処理できます。
 
@@ -63,7 +63,7 @@ ms.locfileid: "75728433"
 
 たとえば、タスクマネージャーを開き、サーバー上の論理プロセッサを確認し、受信トラフィックに使用率が低いと思われる場合は、RSS キューの数を既定の2からネットワークアダプターでサポートされている最大の数に増やすことができます。 ネットワーク アダプターによっては、ドライバーの一部として RSS キュー数を変更するオプションがあります。
 
-##  <a name="bkmk_resources"></a>ネットワークアダプターのリソースを増やす
+##  <a name="increasing-network-adapter-resources"></a><a name="bkmk_resources"></a>ネットワークアダプターのリソースを増やす
 
 受信バッファーや送信バッファーなどのリソースを手動で構成できるネットワークアダプターの場合は、割り当てられたリソースを増やす必要があります。  
 
@@ -78,7 +78,7 @@ ms.locfileid: "75728433"
 
 CPU にバインドされたワークロードでは、割り込みのモデレーションを考慮する必要があります。 割り込みモデレーションを使用する場合は、割り込みと待機時間の短縮により、ホストの CPU 節約率と待機時間の間のトレードオフについて検討します。 ネットワークアダプターが割り込みのモデレーションを実行しないが、バッファーの合体を公開している場合は、結合されたバッファーの数を増やして、送信または受信ごとにより多くのバッファーを許可することで、パフォーマンスを向上させることができます。
 
-##  <a name="bkmk_low"></a>待機時間の短いパケット処理のパフォーマンスチューニング
+##  <a name="performance-tuning-for-low-latency-packet-processing"></a><a name="bkmk_low"></a>待機時間の短いパケット処理のパフォーマンスチューニング
 
 多くのネットワーク アダプターには、オペレーティング システムが原因の待機時間を最適化するオプションがあります。 待機時間は、ネットワーク ドライバーが着信パケットを処理してから、ネットワーク ドライバーがパケットを返送するまでの経過時間です。 通常、この時間はマイクロ秒単位で測定されます。 比較のために、通常、長距離間のパケット送信の送信時間は、ミリ秒単位 (1 桁大きい単位) で測定されます。 この調整によって、パケットの送信にかかる時間は短縮されません。
 
@@ -98,7 +98,7 @@ CPU にバインドされたワークロードでは、割り込みのモデレ�
 
 - パケットを処理するプログラム (ユーザー スレッド) に使用されているコアと CPU キャッシュを共有しているコア プロセッサで、ネットワーク アダプターの割り込みと DPC を処理します。 CPU アフィニティの調整を使用してプロセスを特定の論理プロセッサに誘導し、RSS の構成と組み合わせて、この処理を実行することができます。 割り込み、DPC、ユーザー モード スレッドに同じコアを使用すると、コアの使用に関する ISR、DPC、およびスレッドが競合することで負荷が増えるため、パフォーマンスが低下します。
 
-##  <a name="bkmk_smi"></a>システム管理の割り込み
+##  <a name="system-management-interrupts"></a><a name="bkmk_smi"></a>システム管理の割り込み
 
 多くのハードウェアシステムでは、エラー修正コード (ECC) メモリエラーの報告、レガシ USB 互換性の維持、ファンの制御、BIOS 制御電源の管理など、さまざまなメンテナンス機能にシステム管理割り込み (SMI-S) を使用しています。設定。
 
@@ -111,11 +111,11 @@ SMI-S はシステムの最高優先度の割り込みで、CPU を管理モー�
 > [!NOTE]  
 > オペレーティングシステムは、論理プロセッサが特別なメンテナンスモードで実行されているため、SMIs を制御できません。これにより、オペレーティングシステムの介入ができなくなります。
 
-##  <a name="bkmk_tcp"></a>TCP のパフォーマンスチューニング
+##  <a name="performance-tuning-tcp"></a><a name="bkmk_tcp"></a>TCP のパフォーマンスチューニング
 
  次の項目を使用して、TCP のパフォーマンスを調整できます。
 
-###  <a name="bkmk_tcp_params"></a>TCP 受信ウィンドウの自動チューニング
+###  <a name="tcp-receive-window-autotuning"></a><a name="bkmk_tcp_params"></a>TCP 受信ウィンドウの自動チューニング
 
 Windows Vista、Windows Server 2008、およびそれ以降のバージョンの Windows では、Windows ネットワークスタックは、tcp 受信ウィンドウの自動*チューニングレベル*という機能を使用して、tcp 受信ウィンドウサイズをネゴシエートします。 この機能は、tcp ハンドシェイク中に TCP 通信ごとに定義された受信ウィンドウサイズをネゴシエートできます。
 
@@ -231,13 +231,13 @@ Set-NetTCPSetting -AutoTuningLevelLocal <Value>
 
 受信ウィンドウの自動チューニングは、5つのレベルのいずれかに設定できます。 既定のレベルは**Normal**です。 次の表では、これらのレベルについて説明します。
 
-|レベル |16 進数値 |備考 |
+|Level |16 進数値 |コメント |
 | --- | --- | --- |
 |[標準] (既定) |0x8 (スケールファクターは 8) |ほとんどすべてのシナリオに対応できるように、TCP 受信ウィンドウを拡張するように設定します。 |
 |無効 |使用できるスケールファクターがありません |TCP 受信ウィンドウを既定値で設定します。 |
-|制限されます |0x4 (スケールファクター 4) |TCP 受信ウィンドウを既定値を超えて拡張するように設定しますが、一部のシナリオではこのような増加を制限します。 |
+|Restricted (制限する) |0x4 (スケールファクター 4) |TCP 受信ウィンドウを既定値を超えて拡張するように設定しますが、一部のシナリオではこのような増加を制限します。 |
 |高制限 |0x2 (スケールファクター 2) |TCP 受信ウィンドウを既定値を超えて拡張するように設定しますが、非常に控えめです。 |
-|試験段階 |0xE (スケールファクター 14) |極端なシナリオに対応できるように、TCP 受信ウィンドウを拡張するように設定します。 |
+|実験用 |0xE (スケールファクター 14) |極端なシナリオに対応できるように、TCP 受信ウィンドウを拡張するように設定します。 |
 
 アプリケーションを使用してネットワークパケットをキャプチャする場合、アプリケーションは、ウィンドウの自動チューニングレベルの設定に応じて、次のようなデータを報告する必要があります。
 
@@ -376,7 +376,7 @@ Windows Server 2003 の次のレジストリ設定はサポートされなくな
 
 > **HKEY_LOCAL_MACHINE \System\CurrentControlSet\Services\Tcpip\Parameters**  
 
-###  <a name="bkmk_wfp"></a>Windows フィルタリングプラットフォーム
+###  <a name="windows-filtering-platform"></a><a name="bkmk_wfp"></a>Windows フィルタリングプラットフォーム
 
 Windows Vista および Windows Server 2008 では、Windows Filtering Platform (WFP) が導入されました。 WFP は、Microsoft 以外の独立系ソフトウェアベンダー (Isv) に Api を提供して、パケット処理フィルターを作成します。 たとえば、ファイアウォールとウイルス対策ソフトウェアが含まれています。
 

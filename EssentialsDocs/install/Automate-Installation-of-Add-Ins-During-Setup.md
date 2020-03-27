@@ -1,9 +1,9 @@
 ---
 title: セットアップ時のアドインのインストールの自動化
-description: Windows Server Essentials を使用する方法について説明します
+description: Windows Server Essentials の使用方法について説明します。
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,18 +12,18 @@ ms.assetid: 2e6ff6e4-8d68-4d49-9e38-8088bc8bf95e
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: c2345726a17a074fc7022c8c4dc9b2443e9ad384
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 579ed4e6e780c261ca582e943cebf2fc18b5ef62
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66433645"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310112"
 ---
 # <a name="automate-installation-of-add-ins-during-setup"></a>セットアップ時のアドインのインストールの自動化
 
->適用先:Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
+>適用対象: windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-##  <a name="BKMK_AddIns"></a> セットアップ時にアドインのインストールを自動化します。  
+##  <a name="automate-installing-add-ins-during-setup"></a><a name="BKMK_AddIns"></a>セットアップ時のアドインのインストールの自動化  
  セットアップ時にアドインをインストールするには、このドキュメントの「[初期構成後のタスクを実行するための PostIC.cmd ファイルの作成](Create-the-PostIC.cmd-File-for-Running-Post-Initial-Configuration-Tasks.md)」で説明されている PostIC.cmd メソッドを使用します。  
   
  次のエントリを PostIC.cmd に追加します。  
@@ -65,7 +65,7 @@ C:\Program Files\Windows Server\bin\Installaddin.exe <full path to wssx file> -q
 <¦>  
 ```  
   
- **exefile** はプレインストール手順を実行するためのアドイン パッケージの実行可能ファイルであり、指定する必要があります。 **NormalArgs** は、対話モードを使用している場合にコマンド ラインで exefile に渡される引数を指定します。 このモードでは、ユーザーの操作中に exefile によって複数のダイアログが表示されることがあります。 **SilentArgs** は、サイレント モードを使用している場合にコマンド ラインで exefile に渡される引数を指定します (installaddin.exe を起動する場合は -q を指定)。 このモードでは、exefile によってウィンドウは表示されません。 **IgnoreExitCode** に true を指定すると、プレインストール手順は常に成功と見なされます。指定しない場合、終了コード 0 は成功を、1 は取り消しを、その他の値は失敗を示します。 タグ **NormalArgs**、 **SilentArgs**、および **IgnoreExitCode** はすべてオプションです。  
+ **exefile** はプレインストール手順を実行するためのアドイン パッケージの実行可能ファイルであり、指定する必要があります。 **NormalArgs** は、対話モードを使用している場合にコマンド ラインで exefile に渡される引数を指定します。 このモードでは、ユーザーの操作中に exefile によって複数のダイアログが表示されることがあります。 **SilentArgs** は、サイレント モードを使用している場合にコマンド ラインで exefile に渡される引数を指定します (installaddin.exe を起動する場合は -q を指定)。 このモードでは、exefile によってウィンドウは表示されません。 **IgnoreExitCode** に true を指定すると、プレインストール手順は常に成功と見なされます。指定しない場合、終了コード 0 は成功を、1 は取り消しを、その他の値は失敗を示します。 タグ **NormalArgs**、**SilentArgs**、および **IgnoreExitCode** はすべてオプションです。  
   
  カスタマイズされたアンインストール手順は次のいずれかの目的で使用できます。  
   
@@ -117,8 +117,8 @@ C:\Program Files\Windows Server\bin\Installaddin.exe <full path to wssx file> -q
   
   exefile の起動に失敗した場合は、exefile が 0 または 1 以外のコードを返した場合と同じ動作になります。  
   
-## <a name="see-also"></a>関連項目  
- [作成して、イメージをカスタマイズします。](Creating-and-Customizing-the-Image.md)   
+## <a name="see-also"></a>参照  
+ [イメージ  の作成とカスタマイズ](Creating-and-Customizing-the-Image.md)  
  [追加のカスタマイズ](Additional-Customizations.md)   
- [イメージの展開の準備](Preparing-the-Image-for-Deployment.md)   
+ [展開  のイメージの準備](Preparing-the-Image-for-Deployment.md)  
  [カスタマー エクスペリエンスのテスト](Testing-the-Customer-Experience.md)

@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: cc9f02b9-8ddd-4cae-b397-a832996144dd
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 131520f567da6529e342229a0f6965d3223f928b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 39b6d0b924d4939361cb66109d049a6924e9be3e
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404576"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314236"
 ---
 # <a name="step-2-plan-the-remote-access-deployment"></a>手順2リモートアクセスの展開を計画する
 
@@ -55,7 +55,7 @@ DirectAccess クライアントのリモート管理用に1台のリモートア
   
     -   **接続検証方法**  
   
-        クライアントが内部ネットワークへの接続の検証に使用する既定の Web プローブが作成されます。 既定の名前は `https://directaccess-WebProbeHost.<domain_name>`です。 この名前は手動で DNS に登録する必要があります。 HTTP または PING 経由で他の web アドレスを使用する他の接続検証方法を作成できます。 接続検証方法ごとに、DNS エントリが存在している必要があります。  
+        クライアントが内部ネットワークへの接続の検証に使用する既定の Web プローブが作成されます。 既定の名前は `https://directaccess-WebProbeHost.<domain_name>` です。 この名前は手動で DNS に登録する必要があります。 HTTP または PING 経由で他の web アドレスを使用する他の接続検証方法を作成できます。 接続検証方法ごとに、DNS エントリが存在している必要があります。  
   
     -   **ヘルプデスクの電子メールアドレス**  
   
@@ -92,7 +92,7 @@ DirectAccess クライアントのリモート管理用に1台のリモートア
   
     リモート アクセス サーバーのセットアップ ウィザードで、ネットワーク アダプターに IPv6 が展開されていることが検出された場合、内部ネットワーク向けの IPv6 プレフィックス、DirectAccess クライアント コンピューターに割り当てられる IPv6 プレフィックス、VPN クライアント コンピューターに割り当てられる IPv6 プレフィックスが自動的に設定されます。 自動的に生成されたプレフィックスがネィティブ IPv6 または ISATAP インフラストラクチャに正しくない場合は、それらを手動で変更する必要があります。  
   
--   **\[認証]**  
+-   **[認証]**  
   
     DirectAccess クライアントをリモートアクセスサーバーに対して認証するには、次のいずれかの方法を選択できます。  
   
@@ -118,7 +118,7 @@ DirectAccess クライアントのリモート管理用に1台のリモートア
   
 -   **管理サーバー** 
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
   
 -   [手順 1: リモートアクセスインフラストラクチャを計画する](Step-1-Plan-the-Remote-Access-Infrastructure.md)  
   

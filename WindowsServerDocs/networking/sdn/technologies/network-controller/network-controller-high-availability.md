@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-sdn
 ms.topic: get-started-article
 ms.assetid: 334b090d-bec4-4e67-8307-13831dbdd1d8
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 11f392e99803f0e0ddd0f8b62c9dbca5827a831c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: ce3a0dd33ff105fa7cc36305048b8a311577aa21
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405940"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317066"
 ---
 # <a name="network-controller-high-availability"></a>ネットワーク コントローラーの高可用性
 
@@ -60,7 +60,7 @@ ms.locfileid: "71405940"
 - **高速フェールオーバー**。 Service Fabric は非常に高速なフェールオーバーを提供します。 複数のホットセカンダリサービスレプリカを常に使用できます。 ハードウェア障害によってオペレーティングシステムのインスタンスが使用できなくなった場合、セカンダリレプリカの1つがプライマリレプリカに直ちに昇格します。 
 - **拡張性の機敏性**。 リソースのニーズに応じて、少数のインスタンスから数千のインスタンスまで、これらの reliable services を簡単かつ迅速に拡張し、いくつかのインスタンスに戻ることができます。 
 
-### <a name="persistent-storage"></a>永続ストレージ
+### <a name="persistent-storage"></a>永続的ストレージ
 
 ネットワークコントローラーアプリケーションの構成と状態には、大規模な記憶域が必要です。 また、計画された停止や計画外の停止でもアプリケーションを使用できる必要があります。 このため、Service Fabric は、レプリケートされたトランザクションおよび永続化ストアである、KVS\) \(キー値ストアを提供します。
 

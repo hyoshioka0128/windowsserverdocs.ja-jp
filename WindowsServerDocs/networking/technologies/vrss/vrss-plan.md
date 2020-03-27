@@ -7,15 +7,15 @@ ms.topic: article
 ms.assetid: 695e6192-5e84-4ab4-b33e-8ebf6b8f5cbb
 ms.localizationpriority: medium
 manager: dougkim
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 09/04/2018
-ms.openlocfilehash: 3addb500a654ff9f23c56388fec3ef2c3855a1da
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: befd2839319571827b88a1c7b2777c55861e31fa
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71395823"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80315259"
 ---
 # <a name="plan-the-use-of-vrss"></a>VRSS の使用を計画する
 

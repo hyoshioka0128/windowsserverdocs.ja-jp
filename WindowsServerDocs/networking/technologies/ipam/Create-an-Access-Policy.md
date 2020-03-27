@@ -10,22 +10,22 @@ ms.technology: networking-ipam
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 854bd064-2f86-4678-a940-a04b3e48ae10
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: da5cc366a08f9a3f5b69952a2dff1f717fb1647b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: b5ce4c6dae668372521e5b8e0d5168a94cbb86e2
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355358"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312641"
 ---
 # <a name="create-an-access-policy"></a>アクセス ポリシーを作成する
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックを使用して、IPAM クライアントコンソールでアクセスポリシーを作成できます。  
   
-メンバーシップ **管理者**, 、同等の権限をこの手順を実行するために必要な最低限のですか。  
+この手順を実行するには、**Administrators** のメンバーシップ、またはそれと同等のメンバーシップが最低限必要です。  
   
 > [!NOTE]  
 > Active Directory では、特定のユーザーまたはユーザーグループのアクセスポリシーを作成できます。 アクセスポリシーを作成するときは、組み込みの IPAM ロールまたは作成したカスタムロールのいずれかを選択する必要があります。 カスタムロールの詳細については、「 [Create a User Role for Access Control](../../technologies/ipam/Create-a-User-Role-for-Access-Control.md)」を参照してください。  
@@ -50,7 +50,7 @@ ms.locfileid: "71355358"
   
     ![場所の選択](../../media/Create-an-Access-Policy/ipam_CreateAP_04.jpg)  
   
-6.  **[ユーザーまたはグループの選択]** ダイアログボックスの **[選択するオブジェクト名を入力してください**] に、アクセスポリシーを作成するユーザーアカウント名を入力します。 **[OK]** をクリックします。  
+6.  **[ユーザーまたはグループの選択]** ダイアログボックスの **[選択するオブジェクト名を入力してください**] に、アクセスポリシーを作成するユーザーアカウント名を入力します。 **[OK]** をクリックすると、  
   
 7.  **[アクセスポリシーの追加]** の **[ユーザー設定]** には、ポリシーが適用されるユーザーアカウントが**ユーザーエイリアス**に含まれるようになりました。 **[アクセス設定]** で、 **[新規]** をクリックします。  
   
@@ -76,7 +76,7 @@ ms.locfileid: "71355358"
   
     ![新しいアクセスポリシーを表示する](../../media/Create-an-Access-Policy/ipam_CreateAP_09a.jpg)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [ロールベースの Access Control](Role-based-Access-Control.md)  
 [IPAM の管理](Manage-IPAM.md)  
   

@@ -6,15 +6,15 @@ ms.technology: networking
 ms.topic: article
 ms.assetid: 0cafb1cc-5798-42f5-89b6-3ffe7ac024ba
 manager: dougkim
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 09/20/2018
-ms.openlocfilehash: e91dc072342272a87f6a0d98c4a5cff46b0b1cdc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f8860dc5a546843287092e5388f3214e810f7c33
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355289"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312612"
 ---
 # <a name="high-performance-networking-hpn"></a>高パフォーマンスネットワーク (HPN)
 

@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7ce84c9f-fd1f-4463-8fc7-d2f33344a2c9
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 831f484db8325bf9a27e9065ac5cf74913d0805c
-ms.sourcegitcommit: 4a03f263952c993dfdf339dd3491c73719854aba
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 1fd3a20cb6429d60f450478f5e817a7506b28346
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74791164"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314247"
 ---
 # <a name="identify-and-resolve-remote-access-server-operations-problems"></a>リモート アクセス サーバーの操作上の問題を特定して解決する
 
@@ -38,7 +38,7 @@ ms.locfileid: "74791164"
   
 - IP ヘルパーサービスを復元する  
   
-### <a name="BKMK_Simulate"></a>操作の問題をシミュレートする  
+### <a name="simulate-an-operations-issue"></a><a name="BKMK_Simulate"></a>操作の問題をシミュレートする  
   
 > [!CAUTION]  
 > リモートアクセスサーバーが正しく構成されていて、問題が発生していない可能性があるため、次の手順を使用して操作の問題をシミュレートできます。 サーバーが現在運用環境でクライアントにサービスを提供している場合は、現時点ではこれらの操作を行わないようにすることをお勧めします。 代わりに、今後、リモートアクセスサーバーで発生する可能性のある問題に対処する方法を理解するための手順を参照できます。  
@@ -51,7 +51,7 @@ IP ヘルパーサービス (IPHlpSvc) は、IPv6 移行テクノロジ (ip-http
   
 2.  **サービス**の一覧で下にスクロールし、 **[IP ヘルパー]** を右クリックして、 **[停止]** をクリックします。  
   
-### <a name="BKMK_Identify"></a>操作の問題を特定して修正措置を行う  
+### <a name="identify-the-operations-issue-and-take-corrective-action"></a><a name="BKMK_Identify"></a>操作の問題を特定して修正措置を行う  
 IP ヘルパーサービスを無効にすると、リモートアクセスサーバーで重大なエラーが発生します。 監視ダッシュボードには、サーバーの操作の状態と問題の詳細が表示されます。  
   
 ##### <a name="to-identify-the-details-and-take-corrective-action"></a>詳細を特定して修正措置を実行するには  
@@ -82,7 +82,7 @@ IP ヘルパーサービスを無効にすると、リモートアクセスサ�
   
     3.  サービスを再起動するには、管理者特権の Windows PowerShell プロンプトで「 **restart-service iphlpsvc** 」と入力します。  
   
-### <a name="BKMK_Restart"></a>IP ヘルパーサービスを復元する  
+### <a name="restore-the-ip-helper-service"></a><a name="BKMK_Restart"></a>IP ヘルパーサービスを復元する  
 リモートアクセスサーバーで IP ヘルパーサービスを復元するには、上の解決手順に従ってサービスを開始または再起動します。または、次の手順を使用して、IP ヘルパーサービスのエラーをシミュレートするために使用した手順を元に戻します。  
   
 ##### <a name="to-restart-the-ip-helper-service-on-the-remote-access-server"></a>リモートアクセスサーバーで IP ヘルパーサービスを再起動するには  
@@ -93,7 +93,7 @@ IP ヘルパーサービスを無効にすると、リモートアクセスサ�
   
 windows PowerShell の ![](../../../media/Identify-and-resolve-Remote-Access-server-operations-problems/PowerShellLogoSmall.gif)***<em>windows powershell の同等のコマンド</em>***  
   
-以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
+次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 書式上の制約のため、複数行にわたって折り返される場合でも、各コマンドレットは 1 行に入力してください。  
   
 ```PowerShell
 PS> Get-RemoteAccessHealth | Where-Object {$_.Component -eq "IP-HTTPS"} | Format-List -Property *  

@@ -1,5 +1,5 @@
 ---
-title: のネットワーク
+title: ネットワーク
 description: このトピックでは、Windows Server 2016 で利用できるソフトウェア定義ネットワークおよびネットワーク プラットフォーム テクノロジの概要について説明します。
 ms.prod: windows-server
 layout: LandingPage
@@ -7,17 +7,17 @@ ms.technology: networking
 ms.topic: landing-page
 ms.assetid: daaf6b61-5953-4c2d-b6b8-7c885b552646
 manager: dougkim
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.localizationpriority: medium
-ms.openlocfilehash: f3b580b108677b391065ad83f61e52504fe9ac91
-ms.sourcegitcommit: 68483ee9284285f5643dd67dce06f5a102cb9469
+ms.openlocfilehash: e625bb537ef514ff68241669c3e75f482a61f068
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74823850"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318575"
 ---
-# <a name="networking"></a>のネットワーク
+# <a name="networking"></a>ネットワーク
 
 >[!TIP]
 > 以前のバージョンの Windows Server に関する情報をお探しの場合は、 docs.microsoft.com の他の [Windows Server ライブラリ](/previous-versions/windows/)を参照してください。 また、[このサイトで検索して](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions)、具体的な情報を確認することもできます。
@@ -193,7 +193,7 @@ ms.locfileid: "74823850"
 
 <hr />
 
-## <a name="bkmk_networking"></a>ネットワークテクノロジ
+## <a name="networking-technologies"></a><a name="bkmk_networking"></a>ネットワークテクノロジ
 
 <ul class="cardsF panelContent">
     <li>
@@ -537,7 +537,7 @@ ms.locfileid: "74823850"
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3><a href="https://docs.microsoft.com/virtualization/windowscontainers/container-networking/architecture">Windows コンテナーネットワーク</a></h3>
+                        <h3><a href="https://docs.microsoft.com/virtualization/windowscontainers/container-networking/architecture">Windows コンテナー ネットワーク</a></h3>
                         <hr />
                         <p>Windows コンテナーのネットワークでは、業界の標準的なツールとワークフローを使用して、Windows 10 と Windows Server ホストの両方のコンテナー エンドポイントを接続するネットワークを作成および管理できます。 Windows コンテナーのネットワークは、プライベート、フラット L2、ルーティング L3 などの、複数のトポロジをサポートします。</p>
                         <p>また、Windows ホストネットワークサービス (HNS) と通信するプラグインを介して Docker、Kubernetes、または Windows PowerShell を使用してホスト上にローカルで作成できるオーバーレイもサポートされています。 ローカルエージェントを介して各ノードの HNS に通信することで、高レベルのオーケストレーションシステムを通じてマルチノードクラスターネットワークを作成および管理できます。</p>
@@ -570,10 +570,10 @@ ms.locfileid: "74823850"
     </li>
 </ul>
 
-## <a name="additional-resources"></a>その他の情報
+## <a name="additional-resources"></a>その他のリソース
 
 Windows Server 2016 以前のオペレーティング システムのネットワーク関連情報については、以下を参照してください。
 
-- Windows Server 2012 および Windows Server 2012 R2: 「[ネットワークの概要](https://technet.microsoft.com/library/hh831357.aspx)」
+- Windows Server 2012 および Windows Server 2012 R2 [ネットワークの概要](https://technet.microsoft.com/library/hh831357.aspx)
 - Windows Server 2008 および Windows Server 2008 R2 [ネットワーク](https://technet.microsoft.com/library/cc753940)
 - Windows Server 2003 [Windows server 2003/2003 R2](https://www.microsoft.com/download/details.aspx?id=53314)の提供終了コンテンツ

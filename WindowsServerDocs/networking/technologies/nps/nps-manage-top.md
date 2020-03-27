@@ -6,18 +6,18 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: a275b02c-62b3-4b8a-8417-a710f24bebfe
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: a676a8b27c3f799a4cab275610016bfb311e044d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: bc96a6c4406988db2d7906d76af2c1abcfdffeac
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405373"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80315902"
 ---
 # <a name="manage-network-policy-server-nps"></a>ネットワークポリシーサーバー (NPS) の管理
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 ネットワークポリシーサーバーを管理するには、このセクションのトピックを参照してください。  
   
@@ -27,7 +27,7 @@ ms.locfileid: "71405373"
 >- [ネットワークポリシーサーバーを計画する](nps-plan-top.md)
 >- [ネットワークポリシーサーバーの展開](nps-deploy.md)  
   
-このセクションでは、次のトピックを扱います。  
+このセクションのトピックは次のとおりです。  
   
 - [管理ツールを使ったネットワーク ポリシー サーバーの管理](nps-admintools.md)
 - [接続要求ポリシーの構成](nps-crp-configure.md)

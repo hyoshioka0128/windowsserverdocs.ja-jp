@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ab518c0d-a496-414e-b9c7-f4378d8b13aa
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 0224d47b85a3988a4adf312dad8f149a76c24778
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 879fbe550482755c683c7eb04de31eeced4a1d1a
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404591"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314313"
 ---
 # <a name="plan-deployment-for-remote-management-of-directaccess-clients"></a>DirectAccess クライアントのリモート管理の展開を計画する
 

@@ -10,15 +10,15 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 25f18927-a63e-44f3-b02a-81ed51933187
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/23/2018
-ms.openlocfilehash: 2e3f365a820de67dec87ea209cbfeb22d9091616
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: fdf9f7dbe8fb9541cc8f77cfbce014c5210296d5
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406106"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317664"
 ---
 # <a name="configure-datacenter-firewall-access-control-lists-acls"></a>データセンターのファイアウォール Access Control リスト (Acl) の構成
 

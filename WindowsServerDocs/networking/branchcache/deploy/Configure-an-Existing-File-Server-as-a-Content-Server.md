@@ -6,18 +6,18 @@ ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: get-started-article
 ms.assetid: bdac7d2a-25b4-4f61-bed1-b290700c18f3
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: f675322c32db0816d5afb155d53fad9f096ad650
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 0568bf051fee3c9ee4fd5d1f403f5110f7669ad3
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356687"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80319341"
 ---
 # <a name="configure-an-existing-file-server-as-a-content-server"></a>既存のファイル サーバーをコンテンツ サーバーとして構成する
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 次の手順を使用して、Windows Server 2016 を実行しているコンピューターにファイルサービスサーバー役割の**ネットワークファイル用 BranchCache**役割サービスをインストールできます。  
   

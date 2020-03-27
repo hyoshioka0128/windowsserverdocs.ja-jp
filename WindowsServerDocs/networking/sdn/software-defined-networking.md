@@ -6,19 +6,19 @@ ms.prod: windows-server
 ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: 9a1ea73c-20cd-42c5-95ad-b003b9cc6d64
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/09/2018
-ms.openlocfilehash: dd2b39f3563a47db18564de282f2646ec269e584
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a1283c6afcebe7b6abc12f9847865d6305bd3f2c
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405922"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317277"
 ---
 # <a name="sdn-in-windows-server-overview"></a>Windows Server の SDN の概要
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 
 ソフトウェア定義ネットワーク (SDN) は、データ センター内のルーター、スイッチ、およびゲートウェイなどの物理および仮想ネットワーク デバイスを一元的に構成・管理する手段を提供します。 既存の SDN と互換性のあるデバイスを使用して、仮想ネットワークと物理ネットワークの間の統合をさらに強化することができます。 Hyper-v 仮想スイッチ、Hyper-v ネットワーク仮想化、RAS ゲートウェイなどの仮想ネットワーク要素は、SDN インフラストラクチャの不可欠な要素として設計されています。 

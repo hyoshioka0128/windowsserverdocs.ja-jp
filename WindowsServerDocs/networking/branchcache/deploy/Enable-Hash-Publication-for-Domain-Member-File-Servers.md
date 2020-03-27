@@ -6,18 +6,18 @@ ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: get-started-article
 ms.assetid: a3f1f7c4-d9b2-43e6-8bfa-fac707bbd4d3
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 1e450b9a2282cb4820b8802aa6d36e822f56ca12
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: dd39a8d7f08e3ac3e6249017a042c343d9179566
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356592"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80319284"
 ---
 # <a name="enable-hash-publication-for-domain-member-file-servers"></a>ドメイン メンバー ファイル サーバーでハッシュの発行を有効にする
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 Active Directory Domain Services (AD DS) を使用している場合は、ドメイングループポリシーを使用して、複数のファイルサーバーに対して BranchCache ハッシュの発行を有効にすることができます。 これを行うには、組織単位 (OU) を作成し、ファイルサーバーを OU に追加して、BranchCache ハッシュ発行グループポリシーオブジェクト (GPO) を作成し、GPO を構成する必要があります。  
   

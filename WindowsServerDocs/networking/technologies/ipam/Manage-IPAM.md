@@ -10,18 +10,18 @@ ms.technology: networking-ipam
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c68905ef-d54f-4fc8-80ac-1006125db64f
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 165ffe41fd79fc9f71f96ef65317375e4120cc5c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: ffe7816c0464f0963f3f65cf21f1f6a4b7c42aa1
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405612"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80316812"
 ---
 # <a name="manage-ipam"></a>IPAM の管理
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 このガイドでは、Windows Server 2016 の IP アドレス管理 (IPAM) 機能の管理とトラブルシューティングについて説明します。  
   
@@ -39,7 +39,7 @@ Windows Server 2016 では、IPAM では、ドメインに参加している Act
   
 -   [ロールベースの Access Control](../../technologies/ipam/Role-based-Access-Control.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [IP アドレス管理&#40;IPAM&#41;](IP-Address-Management--IPAM-.md)  
   
 

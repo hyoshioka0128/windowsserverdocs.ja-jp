@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-dns
 ms.topic: article
 ms.assetid: c9cecb94-3cd5-4da7-9a3e-084148b8226b
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: de502d7be023d12e3350063e467a60356b2472c4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 26d9a532f8c2276a81e8718e76290d41c78f6633
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406237"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317973"
 ---
 # <a name="whats-new-in-dns-server-in-windows-server"></a>Windows Server の DNS サーバーの新機能
 
@@ -77,7 +77,7 @@ Active Directory 統合された DNS ゾーンに DNS ポリシーを使用す�
 
 DANE のサポート \(RFC 6394 および 6698\) を使用して、DNS サーバーでホストされているドメイン名に対して証明書の発行元となる CA を DNS クライアントに指定できます。 これにより、だれかが DNS キャッシュを破壊し、DNS 名を自身の IP アドレスにポイントする man-in-the-middle 攻撃の形態を防ぐことができます。  
   
-たとえば、CA1 という有名な機関の証明書を使用して、www.contoso.com で SSL を使用するセキュリティで保護された web サイトをホストするとします。 他のユーザーは、CA2 という名前の別の www.contoso.com 証明機関から証明書を取得することもできます。 次に、偽の www.contoso.com web サイトをホストするエンティティが、クライアントまたはサーバーの DNS キャッシュを破損して、www.contoto.com が偽のサイトを指すようにすることができます。 エンドユーザーには CA2 からの証明書が表示され、単に確認して、偽のサイトに接続することができます。 DANE では、クライアントは TLSA レコードを要求する contoso.com を DNS サーバーに要求し、www.contoso.com の証明書が CA1 によって発行されたことを確認します。 別の CA からの証明書が表示された場合、接続は中止されます。  
+たとえば、CA1 という有名な機関の証明書を使用して、 www.contoso.com で SSL を使用するセキュリティで保護された web サイトをホストするとします。 他のユーザーは、CA2 という名前の別の www.contoso.com 証明機関から証明書を取得することもできます。 次に、偽の www.contoso.com web サイトをホストするエンティティが、クライアントまたはサーバーの DNS キャッシュを破損して、 www.contoto.com が偽のサイトを指すようにすることができます。 エンドユーザーには CA2 からの証明書が表示され、単に確認して、偽のサイトに接続することができます。 DANE では、クライアントは TLSA レコードを要求する contoso.com を DNS サーバーに要求し、 www.contoso.com の証明書が CA1 によって発行されたことを確認します。 別の CA からの証明書が表示された場合、接続は中止されます。  
   
 ## <a name="unknown-record-support"></a>不明なレコードのサポート
 
@@ -150,7 +150,7 @@ Windows Server 2016 では、次の新しい Windows PowerShell コマンドレ�
 - [DnsServer モジュール](https://docs.microsoft.com/powershell/module/dnsserver/?view=win10-ps)
 - [DnsClient モジュール](https://docs.microsoft.com/powershell/module/dnsclient/?view=win10-ps)
 
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
   
 -   [DNS クライアントの新機能](What-s-New-in-DNS-Client.md)  
   

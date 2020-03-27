@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 6dfffd1e-f4f4-43b6-9e3c-49015ce34338
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 132db4811ee135d2ebff99efed6f53b5db1356ad
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: fd09c8e9c7a6f0ea7192ca20440c18f21ba65c93
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404438"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313749"
 ---
 # <a name="troubleshooting-web-probe-urls"></a>Web プローブ URL のトラブルシューティング
 
@@ -25,10 +25,10 @@ ms.locfileid: "71404438"
 
 このトピックでは、`Set-DAEntryPointDC` コマンドに関連する問題のトラブルシューティング情報を示します。 表示されたエラーがエントリ ポイント ドメイン コントローラーの設定に関連していることを確認するには、Windows イベント ログにイベント ID 10065 があることを確認してください。  
   
-## <a name="SaveGPOSettings"></a>サーバーの GPO 設定を保存しています  
+## <a name="saving-server-gpo-settings"></a><a name="SaveGPOSettings"></a>サーバーの GPO 設定を保存しています  
 **エラーを受信しました**。 リモートアクセス設定を GPO < GPO_name > に保存中にエラーが発生しました。  
   
-このエラーのトラブルシューティングを行うには、「サーバーの GPO 設定を保存する」を参照してください。  
+このエラーのトラブルシューティングについては、「サーバーの GPO 設定の保存」を参照してください。  
   
 ## <a name="remote-access-is-not-configured"></a>リモート アクセスが構成されていない  
 **エラーを受信しました**。 リモートアクセスが < server_name > で構成されていません。 マルチサイト展開に属するサーバーの名前を指定してください。  

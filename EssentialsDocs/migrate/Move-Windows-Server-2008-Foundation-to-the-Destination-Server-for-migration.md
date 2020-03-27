@@ -1,9 +1,9 @@
 ---
 title: Windows Server 2008 Foundation の設定とデータを Windows Server Essentials 移行の移行先サーバーに移動する
-description: Windows Server Essentials を使用する方法について説明します
+description: Windows Server Essentials の使用方法について説明します。
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,28 +12,28 @@ ms.assetid: 3ff7d040-ebd1-421c-80db-765deacedd4c
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 3d9e662a6474823cae42d0a2abec60963273ca18
-ms.sourcegitcommit: 9a4ab3a0d00b06ff16173aed616624c857589459
+ms.openlocfilehash: 61a5caee1aba9de5f60bf0723ee0dadaf4871e5e
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66828546"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318847"
 ---
 # <a name="move-windows-server-2008-foundation-settings-and-data-to-the-destination-server-for-windows-server-essentials-migration"></a>Windows Server 2008 Foundation の設定とデータを Windows Server Essentials 移行の移行先サーバーに移動する
 
->適用先:Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
+>適用対象: windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
 移行先サーバーへの設定とデータの移動は次のように行います。
 
-1. [(省略可能)、移行先サーバーにデータをコピーします。](#copy-data-to-the-destination-server)
+1. [移行先サーバーにデータをコピーする (省略可能)](#copy-data-to-the-destination-server)
 
-2. [Active Directory ユーザー アカウントを Windows Server Essentials ダッシュ ボード (省略可能) にインポートします。](#import-active-directory-user-accounts-to-the-windows-server-essentials-dashboard)
+2. [Windows Server Essentials ダッシュボードに Active Directory ユーザーアカウントをインポートする (省略可能)](#import-active-directory-user-accounts-to-the-windows-server-essentials-dashboard)
 
-3. [移行元サーバーから DHCP サーバーの役割をルーターに移動します。](#move-the-dhcp-server-role-from-the-source-server-to-the-router)
+3. [DHCP サーバーの役割を移行元サーバーからルーターに移動する](#move-the-dhcp-server-role-from-the-source-server-to-the-router)
 
-4. [ネットワークを構成します。](#configure-the-network) 
+4. [ネットワークを構成する](#configure-the-network) 
 
-5. [許可されているコンピューターのユーザー アカウントをマップします。](#map-permitted-computers-to-user-accounts)
+5. [許可されたコンピューターをユーザーアカウントにマップする](#map-permitted-computers-to-user-accounts)
   
 ## <a name="copy-data-to-the-destination-server"></a>データを移行先サーバーにコピーする
  移行元サーバーから移行先サーバーにデータをコピーする前に、以下のタスクを実行します。  
@@ -53,17 +53,17 @@ ms.locfileid: "66828546"
     `robocopy \\<SourceServerName> \<SharedSourceFolderName> \\<DestinationServerName> \<SharedDestinationFolderName> /E /B /COPY:DATSOU /LOG:C:\Copyresults.txt`  
   
      各項目の意味は次のとおりです。
-     - \<SourceServerName\>移行元サーバーの名前を指定します
-     - \<SharedSourceFolderName\>移行元サーバー上の共有フォルダーの名前を指定します
-     - \<DestinationServerName\>移行先サーバーの名前を指定します
-     - \<SharedDestinationFolderName\>はデータをコピーする移行先サーバーで共有フォルダーです。  
+     - \<SourceServerName\> は、移行元サーバーの名前です。
+     - \<共有 Dsourcefoldername\> は、移行元サーバー上の共有フォルダーの名前です。
+     - \<DestinationServerName\> は、移行先サーバーの名前です。
+     - \<SharedDestinationFolderName\> は、データがコピーされる移行先サーバー上の共有フォルダーです。  
   
 3.  移行元サーバーから移行する共有フォルダーごとに前記の手順を繰り返します。  
   
-## <a name="import-active-directory-user-accounts-to-the-windows-server-essentials-dashboard"></a>Active Directory ユーザー アカウントを Windows Server Essentials ダッシュ ボードにインポートします。
- 既定では、移行元サーバーで作成されたすべてのユーザー アカウントは Windows Server essentials ダッシュ ボードに自動的に移行します。 ただし、すべてのプロパティが移行要件を満たしていない場合、Active Directory ユーザー アカウントの自動移行は失敗します。 次の Windows PowerShell コマンドレットを使用して、Active Directory ユーザーをインポートできます。  
+## <a name="import-active-directory-user-accounts-to-the-windows-server-essentials-dashboard"></a>Windows Server Essentials ダッシュボードに Active Directory ユーザーアカウントをインポートする
+ 既定では、移行元サーバーで作成されたすべてのユーザーアカウントは、Windows Server Essentials のダッシュボードに自動的に移行されます。 ただし、すべてのプロパティが移行要件を満たしていない場合、Active Directory ユーザー アカウントの自動移行は失敗します。 次の Windows PowerShell コマンドレットを使用して、Active Directory ユーザーをインポートできます。  
   
-#### <a name="to-import-an-active-directory-user-account-to-the-windows-server-essentials-dashboard"></a>Windows Server Essentials ダッシュ ボードに、Active Directory ユーザー アカウントをインポートするには
+#### <a name="to-import-an-active-directory-user-account-to-the-windows-server-essentials-dashboard"></a>Active Directory ユーザーアカウントを Windows Server Essentials ダッシュボードにインポートするには
   
 1.  移行先サーバーにドメイン管理者としてログオンします。  
   
@@ -110,16 +110,16 @@ ms.locfileid: "66828546"
   
    ルーターが UPnP フレームワークをサポートしていない場合、または UPnP フレームワークが無効になっている場合は、黄色の警告アイコンがルーター名の隣に表示されることがあります。 以下のポートが開かれていて、移行先サーバーの IP アドレスに向いていることを確認します。  
   
--   ポート 80:HTTP Web トラフィック  
+-   ポート 80: HTTP Web トラフィック  
   
--   ポート 443:HTTPS Web トラフィック  
+-   ポート 443: HTTPS Web トラフィック  
   
 ## <a name="map-permitted-computers-to-user-accounts"></a>許可されたコンピューターをユーザー アカウントにマップする  
- Windows Server Essentials でリモート Web アクセスで表示するためのコンピューターへユーザーが明示的に割り当てする必要があります。 Windows Server 2008 Foundation から移行する各ユーザー アカウントを、1 つまたは複数のコンピューターにマップする必要があります。  
+ Windows Server Essentials では、リモート Web アクセスに表示するには、ユーザーをコンピューターに明示的に割り当てる必要があります。 Windows Server 2008 Foundation から移行する各ユーザー アカウントを、1 つまたは複数のコンピューターにマップする必要があります。  
   
 #### <a name="to-map-user-accounts-to-computers"></a>コンピューターにユーザー アカウントをマップするには  
   
-1.  Windows Server Essentials ダッシュ ボードを開きます。  
+1.  Windows Server Essentials ダッシュボードを開きます。  
   
 2.  ナビゲーション バーで、 **[ユーザー]** をクリックします。  
   

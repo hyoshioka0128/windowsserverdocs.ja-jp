@@ -6,18 +6,18 @@ ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: get-started-article
 ms.assetid: 96d03b42-6cd9-4905-b6a2-dc36130dd24f
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 69dc525a093c86d57b665e26ff5acaf2679c81a5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: f66e7e728f8e5ca657d002c3c5afcd2d9d23e9ff
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356435"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80319150"
 ---
 # <a name="deploy-hosted-cache-servers-optional"></a>ホストされたキャッシュ サーバーを展開する (省略可能)
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 BranchCache ホスト型キャッシュモードを展開するブランチオフィスに配置されている BranchCache ホスト型キャッシュサーバーをインストールして構成するには、次の手順に従います。 Windows Server 2016 の BranchCache では、1つのブランチオフィスに複数のホスト型キャッシュサーバーを展開できます。  
   

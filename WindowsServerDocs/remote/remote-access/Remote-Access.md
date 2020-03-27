@@ -6,15 +6,15 @@ ms.prod: windows-server
 ms.technology: networking-ras
 ms.topic: article
 ms.assetid: eeca4cf7-90f0-485d-843c-76c5885c54b0
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 05/18/2018
-ms.openlocfilehash: d2fa9c82c4cab05b2a60916fee3f09c1ea48a472
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: dbcd0380dffca29e782be2179024270da73a2c11
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388913"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309413"
 ---
 # <a name="remote-access"></a>リモート アクセス
 
@@ -36,7 +36,7 @@ ms.locfileid: "71388913"
 >[!IMPORTANT]
 >Microsoft Azure では、仮想マシン \(VM\) にリモートアクセスをデプロイしないでください。 Microsoft Azure でのリモートアクセスの使用はサポートされていません。 Windows Server 2016 以前のバージョンの Windows Server では、Azure VM でリモートアクセスを使用して VPN、DirectAccess、またはその他のリモートアクセス機能を展開することはできません。 詳細については、「 [Microsoft Azure の仮想マシンに対する Microsoft サーバーソフトウェアのサポート](https://support.microsoft.com/help/2721672/microsoft-server-software-support-for-microsoft-azure-virtual-machines)」を参照してください。
 
-## <a name="bkmk_da"></a>RAS\) \(リモートアクセスサービス-RAS ゲートウェイ
+## <a name="remote-access-service-ras---ras-gateway"></a><a name="bkmk_da"></a>RAS\) \(リモートアクセスサービス-RAS ゲートウェイ
 
 **DirectAccess および VPN (ras)** 役割サービスをインストールするときに、 **ras ゲートウェイ**\)\(リモートアクセスサービスゲートウェイを展開します。 RAS ゲートウェイは、単一テナントの RAS ゲートウェイ仮想プライベートネットワーク \(VPN\) サーバー、マルチテナント RAS ゲートウェイ VPN サーバー、および DirectAccess サーバーとして展開できます。
 
@@ -51,7 +51,7 @@ ms.locfileid: "71388913"
 
 詳細については、「 [RAS Gateway](ras-gateway/RAS-Gateway.md) and [Border Gateway Protocol (BGP)](bgp/Border-Gateway-Protocol-BGP.md)」を参照してください。
 
-## <a name="bkmk_rras"></a>配線
+## <a name="routing"></a><a name="bkmk_rras"></a>配線
 
 リモートアクセスを使用して、ローカルエリアネットワーク上のサブネット間でネットワークトラフィックをルーティングすることができます。 ルーティングでは、インターネットグループ管理プロトコル (IGMP) を使用して、ネットワークアドレス変換 (NAT) ルーター、BGP を実行する LAN ルーター、ルーティング情報プロトコル (RIP)、およびマルチキャスト対応のルーターがサポートされます。 全機能を備えたルーターとして、Hyper-v を実行しているコンピューター上のサーバーコンピューターまたは仮想マシン (VM) に RAS を展開できます。
 
@@ -61,7 +61,7 @@ LAN ルーターとしてリモートアクセスをインストールするに�
 Install-RemoteAccess -VpnType RoutingOnly
 ```  
 
-## <a name="bkmk_proxy"></a>Web アプリケーションプロキシ
+## <a name="web-application-proxy"></a><a name="bkmk_proxy"></a>Web アプリケーションプロキシ
 
 Web アプリケーションプロキシは、Windows Server 2016 のリモートアクセスの役割サービスです。 Web アプリケーション プロキシには、企業ネットワーク内部の Web アプリケーション用のリバース プロキシ機能があり、ユーザーは任意のデバイスで企業ネットワーク外部から Web アプリケーションにアクセスできます。 Web アプリケーションプロキシは、Active Directory フェデレーションサービス (AD FS) (AD FS) を使用して web アプリケーションへのアクセスを事前認証し、AD FS プロキシとしても機能します。
 

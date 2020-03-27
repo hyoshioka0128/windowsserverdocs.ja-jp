@@ -10,14 +10,14 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a815bc0d-4b4f-432e-85f0-23b2cc67d827
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 61d5dcc42dea79b67a6cceb5ad1574f02f1d9a1d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: f29e5dcec15426c86defd4fd8faa8ddcad20de52
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367573"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314447"
 ---
 # <a name="step-1-complete-the-directaccess-configuration"></a>手順 1 DirectAccess の構成を完了する
 

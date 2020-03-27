@@ -6,14 +6,14 @@ ms.technology: networking
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: d57af0bd-9301-4f62-9888-f528cd10451d
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: c0895cfd62d462ef6d158dc39ef59a9ee10a7c98
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 5f3ae4f9c22e61a8428a257d9324fe164eeaa04b
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406309"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80319107"
 ---
 # <a name="core-network-companion-guidance"></a>コア ネットワーク必携ガイド
 

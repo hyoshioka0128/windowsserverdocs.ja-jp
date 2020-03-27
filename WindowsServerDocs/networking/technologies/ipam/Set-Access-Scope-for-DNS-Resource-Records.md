@@ -10,22 +10,22 @@ ms.technology: networking-ipam
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a96a8752-5678-49c5-b069-d2cce8042a51
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: b1790f2cbf84fd68f33ca30d2fe7663dde824240
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: fd084c856b4f78810ce732fd64b801d6b0f7b67d
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405646"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80316783"
 ---
 # <a name="set-access-scope-for-dns-resource-records"></a>DNS リソース レコードのアクセス スコープを設定する
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックを使用して、IPAM クライアントコンソールを使用して DNS リソースレコードのアクセススコープを設定できます。  
   
-メンバーシップ **管理者**, 、同等の権限をこの手順を実行するために必要な最低限のですか。  
+この手順を実行するには、**Administrators** のメンバーシップ、またはそれと同等のメンバーシップが最低限必要です。  
   
 ### <a name="to-set-access-scope-for-dns-resource-records"></a>DNS リソースレコードのアクセススコープを設定するには  
   
@@ -45,7 +45,7 @@ ms.locfileid: "71405646"
   
     ![アクセススコープの選択](../../media/Set-Access-Scope-for-DNS-Resource-Records/ipam_RestrictUserToRRControl_04.jpg)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [ロールベースの Access Control](Role-based-Access-Control.md)  
 [IPAM の管理](Manage-IPAM.md)  
   

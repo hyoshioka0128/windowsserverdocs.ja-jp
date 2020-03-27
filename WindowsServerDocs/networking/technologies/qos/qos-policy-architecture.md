@@ -6,14 +6,14 @@ ms.technology: networking
 ms.topic: article
 ms.assetid: 25097cb8-b9b1-41c9-b3c7-3610a032e0d8
 manager: brianlic
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 609d3f28465380b7d15648cfeb73070a39b9362f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: ba64887dd52e614f3b6279042bc4f803bd9a836a
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71395977"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80315582"
 ---
 # <a name="qos-policy-architecture"></a>QoS ポリシーのアーキテクチャ
 

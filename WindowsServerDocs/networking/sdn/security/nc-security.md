@@ -6,15 +6,15 @@ ms.prod: windows-server
 ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: bc625de9-ee31-40a4-9ad2-7448bfbfb6e6
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/30/2018
-ms.openlocfilehash: 54a8b9490fdf83d04c6b69fa88f4e8beca4f703a
-ms.sourcegitcommit: 51e0b575ef43cd16b2dab2db31c1d416e66eebe8
+ms.openlocfilehash: 196a124533b98c6945186ee827494b206028d2c8
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76259067"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317399"
 ---
 # <a name="secure-the-network-controller"></a>ネットワーク コントローラーをセキュリティで保護する
 
@@ -33,7 +33,7 @@ ms.locfileid: "76259067"
 
 ネットワークコントローラーは、Northbound 通信の認証、承認、および暗号化をサポートしています。 以下のセクションでは、これらのセキュリティ設定を構成する方法について説明します。
 
-### <a name="authentication"></a>Authentication
+### <a name="authentication"></a>認証
 
 ネットワークコントローラーの Northbound 通信の認証を構成すると、ネットワークコントローラーのクラスターノードと管理クライアントは、通信しているデバイスの id を確認できます。
 
@@ -94,7 +94,7 @@ SSL 証明書は、ネットワークコントローラーのノードに手動�
 
 詳細については、「 [NetworkControllerCluster](https://docs.microsoft.com/powershell/module/networkcontroller/install-networkcontrollercluster)」を参照してください。
 
-### <a name="authentication"></a>Authentication
+### <a name="authentication"></a>認証
 
 ネットワークコントローラークラスター通信の認証を構成すると、ネットワークコントローラークラスターノードは、通信している他のノードの id を確認できるようになります。
 
@@ -125,7 +125,7 @@ SSL 証明書は、ネットワークコントローラーのノードに手動�
 
 ネットワークコントローラーノード間の通信は、WCF トランスポートレベルの暗号化を使用して暗号化されます。 この形式の暗号化は、認証と承認の方法が Kerberos 証明書または X509 証明書のいずれかである場合に使用されます。 詳しくは、次のトピックをご覧ください。
 
-- [方法: Windows 資格情報でサービスをセキュリティで保護する](https://docs.microsoft.com/dotnet/framework/wcf/how-to-secure-a-service-with-windows-credentials)
+- [方法: Windows 資格情報を使用してサービスをセキュリティで保護する](https://docs.microsoft.com/dotnet/framework/wcf/how-to-secure-a-service-with-windows-credentials)
 - [方法: X.509 証明書を使用してサービスをセキュリティで保護](https://docs.microsoft.com/dotnet/framework/wcf/feature-details/how-to-secure-a-service-with-an-x-509-certificate)する。
 
 ## <a name="southbound-communication"></a>Southbound 通信
@@ -134,7 +134,7 @@ SSL 証明書は、ネットワークコントローラーのノードに手動�
 
 次の表は、さまざまな southbound デバイスとのネットワークコントローラーの相互作用に関する情報を示しています。
 
-| Southbound デバイス/サービス | プロトコル              | 使用される認証    |
+| Southbound デバイス/サービス | [プロトコル]              | 使用される認証    |
 |---------------------------|-----------------------|------------------------|
 | ソフトウェア ロード バランサー    | WCF (MUX)、TCP (ホスト) | 証明書           |
 | ファイアウォール                  | OVSDB                 | 証明書           |
@@ -144,7 +144,7 @@ SSL 証明書は、ネットワークコントローラーのノードに手動�
 
 これらのプロトコルごとに、次のセクションで通信メカニズムについて説明します。
 
-### <a name="authentication"></a>Authentication
+### <a name="authentication"></a>認証
 
 Southbound 通信では、次のプロトコルと認証方法が使用されます。
 

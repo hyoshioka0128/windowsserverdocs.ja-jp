@@ -8,8 +8,8 @@ metadata:
   text: ソフトウェア定義ネットワーク (SDN) では、データセンターのネットワークを動的に管理してワークロードとアプリの要件を満たすことができます。 新しいワークロードを展開したり、仮想または物理ネットワーク間でワークロードを移動したりする場合でも、ネットワーク ポリシーを一貫性のある方法で大規模に実装できます。
   keywords: 'Windows Server, Windows Server 2016, ソフトウェア定義ネットワーク, sdn'
   ms.localizationpriority: medium
-  author: shortpatti
-  ms.author: pashort
+  author: eross-msft
+  ms.author: lizross
   ms.date: 09/04/2018
   ms.topic: article
   ms.devlang: na

@@ -6,15 +6,15 @@ ms.prod: windows-server
 ms.technology: networking-ras
 ms.topic: article
 ms.assetid: eeca4cf7-90f0-485d-843c-76c5885c54b0
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 05/29/2018
-ms.openlocfilehash: d3ea6f0e29803b8a709f31811f77678bf03201a8
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.openlocfilehash: bd4d0d4d3b165a4e89a00cd2975ace20687aed7d
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822582"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314983"
 ---
 # <a name="overview-of-the-directaccess-to-always-on-vpn-migration"></a>DirectAccess から Always On VPN への移行の概要 
 
@@ -61,18 +61,18 @@ DirectAccess – Always On VPN の移行プロセスは、次の4つの主要な
 
 | DirectAccess 機能 | 一般的なシナリオ |
 |-----|----|
-| 展開方法                   | クライアントアクセスとリモート管理のための完全な DirectAccess を展開する                                               |
-| ネットワーク アダプター                      | 2 で保護されたプロセスとして起動されました                                                                                                              |
+| 展開シナリオ                   | クライアントアクセスとリモート管理のための完全な DirectAccess を展開する                                               |
+| ネットワーク アダプター                      | 2                                                                                                              |
 | ユーザー認証                   | Active Directory の資格情報                                                                                   |
-| コンピューター証明書を使用する             | [はい]                                                                                                            |
-| セキュリティ グループ                       | [はい]                                                                                                            |
-| 単一の DirectAccess サーバー            | [はい]                                                                                                            |
+| コンピューター証明書を使用する             | はい                                                                                                            |
+| セキュリティ グループ                       | はい                                                                                                            |
+| 単一の DirectAccess サーバー            | はい                                                                                                            |
 | ネットワーク トポロジ                      | 2つのネットワークアダプターを持つエッジファイアウォールの背後にあるネットワークアドレス変換 (NAT)                            |
 | アクセスモード                           | 端から端まで                                                                                                    |
-| トンネリング:                             | 分割トンネル                                                                                                   |
-| Authentication                        | コンピューター証明書と Kerberos (KerbProxy 以外) を使用した標準の公開キー基盤 (PKI) 認証 |
+| トンネリング                             | 分割トンネル                                                                                                   |
+| 認証                        | コンピューター証明書と Kerberos (KerbProxy 以外) を使用した標準の公開キー基盤 (PKI) 認証 |
 | プロトコル                             | IP-HTTPS (ip-https)                                                                                       |
-| ネットワークロケーションサーバー (NLS) オフボックス | [はい]                                                                                                            |
+| ネットワークロケーションサーバー (NLS) オフボックス | はい                                                                                                            |
 
 ## <a name="always-on-vpn-deployment-scenario"></a>Always On VPN 展開シナリオ
 
@@ -83,13 +83,13 @@ DirectAccess – Always On VPN の移行プロセスは、次の4つの主要な
 | VPN 機能 | 展開シナリオの構成 |
 |-----|-----|
 | 接続の種類 | ネイティブインターネットキー交換バージョン 2 (IKEv2) |
-| ネットワーク アダプター   | 2 で保護されたプロセスとして起動されました        |
+| ネットワーク アダプター   | 2        |
 | ユーザー認証  | Active Directory の資格情報            |
-| コンピューター証明書を使用する        | [はい]                          |
+| コンピューター証明書を使用する        | はい                          |
 | ルーティング | 分割トンネリング |
 | 名前解決 | ドメイン名情報の一覧とドメインネームシステム (DNS) サフィックス |
 | トリガ | Always on と信頼されたネットワーク検出 |
-| Authentication  | 保護された拡張認証プロトコル-トラステッドプラットフォームモジュールで保護されたユーザー証明書を使用したトランスポート層セキュリティ (PEAP-TLS) |
+| 認証  | 保護された拡張認証プロトコル-トラステッドプラットフォームモジュールで保護されたユーザー証明書を使用したトランスポート層セキュリティ (PEAP-TLS) |
 
 ## <a name="next-step"></a>次の手順
 

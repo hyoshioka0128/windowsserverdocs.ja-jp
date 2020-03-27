@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 3c8feff2-cae1-4376-9dfa-21ad3e4d5d99
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 08bd945bf808843286d390a089d9ac070b9a8813
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 68eed3866dc6c6fb02d54bda41c453a9c64c7578
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822685"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314071"
 ---
 # <a name="configure-a-multi-forest-deployment"></a>Configure a Multi-Forest Deployment
 
@@ -25,7 +25,7 @@ ms.locfileid: "76822685"
 
 このトピックでは、いくつかの可能なシナリオでリモート アクセス マルチフォレスト展開を構成する方法について説明します。 これらのすべてのシナリオでは、DirectAccess が現在 Forest1 という名前の単一のフォレスに展開されていること、および Forest2 という名前の新しいフォレストと連携するように DirectAccess を構成していることを前提にしています。  
   
-## <a name="AccessForest2"></a>Forest2 からリソースにアクセスする  
+## <a name="access-resources-from-forest2"></a><a name="AccessForest2"></a>Forest2 からリソースにアクセスする  
 このシナリオでは、DirectAccess が Forest1 に既に展開され、クライアントが Forest1 から企業ネットワークにアクセスできるように構成されています。 既定では、DirectAccess 経由で接続されたクライアントは Forest1 内のリソースにのみアクセスでき、Forest2 のどのサーバーにもアクセスできません。  
   
 #### <a name="to-enable-directaccess-clients-to-access-resources-from-forest2"></a>DirectAccess クライアントが Forest2 からリソースにアクセスできるようにするには  
@@ -34,20 +34,20 @@ ms.locfileid: "76822685"
   
 2.  IPv6 が内部ネットワークに展開されている場合、Forest2 に関連の内部 IPv6 プレフィックスを追加します。  
   
-## <a name="EnableForest2DA"></a>DirectAccess 経由で Forest2 からクライアントへの接続を有効にする  
+## <a name="enable-clients-from-forest2-to-connect-via-directaccess"></a><a name="EnableForest2DA"></a>DirectAccess 経由で Forest2 からクライアントへの接続を有効にする  
 このシナリオでは、クライアントが Forest2 から企業ネットワークにアクセスできるようにリモート アクセスの展開を構成します。 Forest2 のクライアント コンピューターに必要なセキュリティ グループを作成していることが前提になります。   
   
 #### <a name="to-allow-clients-from-forest2-to-access-the-corporate-network"></a>クライアントが Forest2 から企業ネットワークにアクセスできるようにするには  
   
 1.  クライアントのセキュリティ グループを Forest2 から追加します。  
   
-2.  Forest2 の DNS サフィックスが Forest1 の DNS サフィックスの一部でない場合は、Forest2 のクライアントのドメインのサフィックスと共に NRPT 規則を追加して、認証用のドメインコントローラーへのアクセスを有効にし、必要に応じて Forest2 のドメインのサフィックスを DNS suf に追加します。検索リストを修正します。 
+2.  Forest2 の DNS サフィックスが Forest1 の DNS サフィックスの一部でない場合は、Forest2 のクライアントのドメインのサフィックスと共に NRPT 規則を追加して、認証用のドメインコントローラーへのアクセスを有効にし、必要に応じて Forest2 のドメインのサフィックスを DNS に追加します。サフィックス検索一覧。 
   
 3.  Forest2 に内部 IPv6 プレフィックスを追加して、DirectAccess で認証用のドメイン コントローラーへの IPsec トンネルを作成できるようにします。  
   
 4.  管理サーバーの一覧を更新します。  
   
-## <a name="AddEPForest2"></a>Forest2 からエントリポイントを追加する  
+## <a name="add-entry-points-from-forest2"></a><a name="AddEPForest2"></a>Forest2 からエントリポイントを追加する  
 このシナリオでは、DirectAccess が Forest1 上のマルチサイト構成に展開されており、DA2 という名前のリモート アクセス サーバーを、既存の DirectAccess マルチサイト展開へのエントリ ポイントとして Forest2 から追加します。  
   
 #### <a name="to-add-a-remote-access-server-from-forest2-as-an-entry-point"></a>リモート アクセス サーバーを、エントリ ポイントとして Forest2 から追加するには  
@@ -62,7 +62,7 @@ ms.locfileid: "76822685"
   
 5.  管理サーバーの一覧を更新します。  
   
-## <a name="OTPMultiForest"></a>マルチフォレスト展開で OTP を構成する  
+## <a name="configure-otp-in-a-multi-forest-deployment"></a><a name="OTPMultiForest"></a>マルチフォレスト展開で OTP を構成する  
 マルチフォレスト展開で OTP を構成する場合は次の用語に注意してください。  
   
 -   ルート CA-フォレストのメイン PKI ツリー CA。  
@@ -76,9 +76,9 @@ ms.locfileid: "76822685"
 この手順には、PowerShell スクリプトの PKISync.ps1 が必要です。 「 [AD CS:PKISync.ps1 Script for Cross-forest Certificate Enrollment (AD CS: フォレスト間証明書登録のための PKISync.ps1 スクリプト)](https://technet.microsoft.com/library/ff961506.aspx)」を参照してください。  
   
 > [!NOTE]  
-> このトピックでは、説明した手順の一部を自動化するのに使用できる Windows PowerShell コマンドレットのサンプルを示します。 詳細については、次を参照してください。 [コマンドレットを使用した](https://go.microsoft.com/fwlink/p/?linkid=230693)します。  
+> このトピックには、説明する手順の一部を自動化するために使用できるサンプルの Windows PowerShell コマンドレットが含まれます。 詳しくは、 [コマンドレットの使用に関するページ](https://go.microsoft.com/fwlink/p/?linkid=230693)をご覧ください。  
   
-### <a name="BKMK_CertPub"></a>Ca を証明書の発行元として構成する  
+### <a name="configure-cas-as-certificate-publishers"></a><a name="BKMK_CertPub"></a>Ca を証明書の発行元として構成する  
   
 1.  管理者特権でのコマンド プロンプトで次のコマンドを実行して、すべてのフォレストのすべてのエンタープライズ CA で LDAP 紹介サポートを有効にします。  
   
@@ -127,7 +127,7 @@ ms.locfileid: "76822685"
   
     5.  発行された証明書テンプレートの一覧からアカウント フォレストの OTP 証明書テンプレートを削除します。  
   
-### <a name="BKMK_DelImp"></a>OTP 証明書テンプレートの削除とインポート  
+### <a name="delete-and-import-otp-certificate-templates"></a><a name="BKMK_DelImp"></a>OTP 証明書テンプレートの削除とインポート  
   
 1.  OTP 証明書テンプレートをアカウント フォレスト Forest2 から削除します。  
   
@@ -139,11 +139,11 @@ ms.locfileid: "76822685"
     .\PKISync.ps1 -sourceforest <resource forest DNS> -targetforest <account forest DNS> -type Oid -f  
     ```  
   
-### <a name="BKMK_Publish"></a>OTP 証明書テンプレートを発行する  
+### <a name="publish-otp-certificate-templates"></a><a name="BKMK_Publish"></a>OTP 証明書テンプレートを発行する  
   
 -   すべてのアカウント フォレスト CA で新しくインポートされた証明書テンプレートを発行します。  
   
-### <a name="BKMK_Extract"></a>CA の抽出と同期  
+### <a name="extract-and-synchronize-the-ca"></a><a name="BKMK_Extract"></a>CA の抽出と同期  
   
 1.  管理者特権でのコマンド プロンプトで次のコマンドを実行して、アカウント フォレストからすべてのエンタープライズ CA 証明書を抽出します。  
   
@@ -166,7 +166,7 @@ ms.locfileid: "76822685"
 ## <a name="configuration-procedures"></a>構成手順  
 ここでは、上記のシナリオ展開の構成手順を説明します。 手順が完了した後に、シナリオに戻り続行します。  
   
-### <a name="NRPT_DNSSearchSuffix"></a>NRPT 規則と DNS サフィックスを追加する  
+### <a name="add-nrpt-rules-and-dns-suffixes"></a><a name="NRPT_DNSSearchSuffix"></a>NRPT 規則と DNS サフィックスを追加する  
 DirectAccess 経由で企業ネットワークに接続するクライアントは、名前解決ポリシー テーブル (NRPT) を使用して、さまざまなリソースのアドレスの解決に使用する DNS サーバーを決定します。 これにより、クライアントは企業リソースのアドレスを解決し、DirectAccess の稼働を維持するために必要な社内/社外の分類を維持できます。 DirectAccess 構成ツールでは、Forest1 のルート DNS サフィックスを自動的に検出し、NRPT テーブルに追加します。 ただし、Forest2 の FQDN サフィックスは NRPT テーブルに自動的に追加されないため、リモート アクセス管理者はそれらを手動で追加する必要があります。  
   
 DNS サフィックス検索一覧では、クライアントは FQDN ではなく短いラベル名を使用できます。 リモート アクセス構成ツールでは、Forest1 のすべてのドメインを DNS サフィックス検索一覧に自動的に追加します。 クライアントで Forest2 のリソースに短いラベル名を使用できるようにする場合は、それらのラベル名を手動で追加する必要があります。  
@@ -177,9 +177,9 @@ DNS サフィックス検索一覧では、クライアントは FQDN ではな�
   
 2.  **[ネットワーク ロケーション サーバー]** ページで、 **[次へ]** をクリックします。  
   
-3.  **[DNS]** ページのテーブルで、Forest2 の企業ネットワークの一部である追加の名前サフィックスを入力します。 **[DNS サーバー アドレス]** に、DNS サーバー アドレスを手動または **[検出]** をクリックして入力します。 アドレスを入力しない場合、新しいエントリは NRPT 除外として適用されます。 **[次へ]** をクリックします。  
+3.  **[DNS]** ページのテーブルで、Forest2 の企業ネットワークの一部である追加の名前サフィックスを入力します。 **[DNS サーバー アドレス]** に、DNS サーバー アドレスを手動または **[検出]** をクリックして入力します。 アドレスを入力しない場合、新しいエントリは NRPT 除外として適用されます。 続けて、 **[次へ]** をクリックします。  
   
-4.  省略可能: **[DNS サフィックス検索一覧]** ページで、 **[新しいサフィックス]** ボックスにサフィックスを入力し、 **[追加]** をクリックして、DNS サフィックスを追加します。 **[次へ]** をクリックします。  
+4.  省略可能: **[DNS サフィックス検索一覧]** ページで、 **[新しいサフィックス]** ボックスにサフィックスを入力し、 **[追加]** をクリックして、DNS サフィックスを追加します。 続けて、 **[次へ]** をクリックします。  
   
 5.  **[管理]** ページで、 **[完了]** をクリックします。  
   
@@ -189,7 +189,7 @@ DNS サフィックス検索一覧では、クライアントは FQDN ではな�
   
 8.  **[リモートアクセス セットアップ ウィザードの設定を適用しています]** ダイアログ ボックスで、 **[閉じる]** をクリックします。  
   
-### <a name="IPv6Prefix"></a>内部 IPv6 プレフィックスの追加  
+### <a name="add-internal-ipv6-prefix"></a><a name="IPv6Prefix"></a>内部 IPv6 プレフィックスの追加  
   
 > [!NOTE]  
 > 内部 IPv6 プレフィックスの追加は、IPv6 が内部ネットワークに展開されている場合にのみ関連します。  
@@ -202,7 +202,7 @@ DNS サフィックス検索一覧では、クライアントは FQDN ではな�
   
 2.  リモート アクセス サーバーのセットアップ ウィザードで、 **[プレフィックスの構成]** をクリックします。  
   
-3.  **[プレフィックスの構成]** ページの **[内部ネットワークの IPv6 プレフィックス]** で、2001:db8:1::/64;2001:db8:2::/64 のようにセミコロンで区切られた追加の IPv6 プレフィックスを追加します。 **[次へ]** をクリックします。  
+3.  **[プレフィックスの構成]** ページの **[内部ネットワークの IPv6 プレフィックス]** で、2001:db8:1::/64;2001:db8:2::/64 のようにセミコロンで区切られた追加の IPv6 プレフィックスを追加します。 続けて、 **[次へ]** をクリックします。  
   
 4.  **[認証]** ページで、 **[完了]** をクリックします。  
   
@@ -212,7 +212,7 @@ DNS サフィックス検索一覧では、クライアントは FQDN ではな�
   
 7.  **[リモートアクセス セットアップ ウィザードの設定を適用しています]** ダイアログ ボックスで、 **[閉じる]** をクリックします。  
   
-### <a name="SGs"></a>クライアントセキュリティグループの追加  
+### <a name="add-client-security-groups"></a><a name="SGs"></a>クライアントセキュリティグループの追加  
 Forest2 から Windows 8 クライアントコンピューターが DirectAccess を介してリソースにアクセスできるようにするには、Forest2 からリモートアクセス展開にセキュリティグループを追加する必要があります。  
   
 ##### <a name="to-add-windows-8-client-security-groups"></a>Windows 8 クライアント セキュリティ グループを追加するには  
@@ -221,7 +221,7 @@ Forest2 から Windows 8 クライアントコンピューターが DirectAccess
   
 2.  DirectAccess クライアントのセットアップ ウィザードで **[グループの選択]** をクリックし、 **[グループの選択]** ページで **[追加]** をクリックします。  
   
-3.  **[グループの選択]** ダイアログ ボックスで、DirectAccess クライアント コンピューターを含むセキュリティ グループを選択します。 **[次へ]** をクリックします。  
+3.  **[グループの選択]** ダイアログ ボックスで、DirectAccess クライアント コンピューターを含むセキュリティ グループを選択します。 続けて、 **[次へ]** をクリックします。  
   
 4.  **[Network Connectivity Assistant]** ページで、 **[完了]** をクリックします。  
   
@@ -233,7 +233,7 @@ Forest2 から Windows 8 クライアントコンピューターが DirectAccess
   
 マルチサイトが有効になっている場合に、Forest2 から Windows 7 クライアントコンピューターが DirectAccess を介してリソースにアクセスできるようにするには、各エントリポイントのセキュリティグループを Forest2 からリモートアクセス展開に追加する必要があります。 Windows 7 セキュリティグループの追加の詳細については、3.6 の**クライアントサポート**ページの説明を参照してください。 マルチサイト展開を有効にします。  
   
-### <a name="RefreshMgmtServers"></a>管理サーバーの一覧を更新する  
+### <a name="refresh-the-management-servers-list"></a><a name="RefreshMgmtServers"></a>管理サーバーの一覧を更新する  
 リモート アクセスでは、DirectAccess 構成 GPO を含むすべてのフォレストのインフラストラクチャ サーバーを自動的に検出します。 DirectAccess が Forest1 からサーバーに展開された場合、サーバーの GPO は Forest1 のそのドメインに書き込まれます。 Forest2 からクライアントの DirectAccess へのアクセスを有効にした場合、クライアントの GPO が Forest2 のドメインに書き込まれます。  
   
 ドメインコントローラーと Microsoft エンドポイント Configuration Manager に DirectAccess 経由でアクセスできるようにするには、インフラストラクチャサーバーの自動検出プロセスが必要です。 検出プロセスを手動で開始する必要があります。  

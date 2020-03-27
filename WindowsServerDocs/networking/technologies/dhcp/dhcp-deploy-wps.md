@@ -6,14 +6,14 @@ ms.technology: networking-dhcp
 ms.topic: article
 ms.assetid: 7110ad21-a33e-48d5-bb3c-129982913bc8
 manager: brianlic
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 16900809c2c6b877d2b5c45f1c3ca26e55c6bea9
-ms.sourcegitcommit: 7df2bd3a7d07a50ace86477335ed6fbfb2dac373
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: a5b2e750bd7a0103382f6d91c515f4e283a112cb
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77027943"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312664"
 ---
 # <a name="deploy-dhcp-using-windows-powershell"></a>Windows PowerShell を使用した DHCP の展開
 
@@ -39,19 +39,19 @@ DHCP サーバーは、スタンドアロンサーバーとして、または Ac
 - [DHCP 用の Windows PowerShell コマンド](#bkmk_dhcpwps)
 - [このガイドの「Windows PowerShell コマンドの一覧」](#bkmk_list)
 
-## <a name="bkmk_overview"></a>DHCP 展開の概要
+## <a name="dhcp-deployment-overview"></a><a name="bkmk_overview"></a>DHCP 展開の概要
 
 次の図は、このガイドを使用して展開できるシナリオを示しています。 このシナリオでは、Active Directory ドメインに1つの DHCP サーバーが含まれています。 サーバーは、2つの異なるサブネット上の DHCP クライアントに IP アドレスを提供するように構成されています。 サブネットは、DHCP 転送が有効になっているルーターによって分離されます。
 
 ![DHCP ネットワークトポロジの概要](../../media/Core-Network-Guide/cng16_overview.jpg)
 
-## <a name="bkmk_technologies"></a>テクノロジの概要
+## <a name="technology-overviews"></a><a name="bkmk_technologies"></a>テクノロジの概要
 
 次のセクションでは、DHCP と TCP/IP の概要について簡単に説明します。
 
 ### <a name="dhcp-overview"></a>DHCP の概要
 
-DHCP は、ホストの IP 構成の管理を簡略化するための IP 標準です。 DHCP 標準によって、ネットワーク上の DHCP 対応クライアントへの IP アドレスの動的割り当てやその他の関連する構成の詳細を管理するための方法として、DHCP サーバーを使用できるようになります。
+DHCP は、ホストの IP 構成の管理を簡略化するための IP 標準です。 DHCP 規格を使用することで、DHCP サーバーは、IP アドレスや関連するその他の構成データをネットワーク上の DHCP 対応クライアントへ動的に割り当てることができます。
 
 DHCP では、静的 IP アドレスを使用してすべてのデバイスを手動で構成するのではなく、DHCP サーバーを使用して、ローカルネットワーク上のコンピューターまたは他のデバイス (プリンターなど) に IP アドレスを動的に割り当てることができます。
 
@@ -113,7 +113,7 @@ TCP/IP には基本的な TCP/IP ユーティリティが用意されていま�
 
 - 有線イーサネットまたはワイヤレス802.11 テクノロジが有効になっているタブレットと携帯電話
 
-## <a name="bkmk_plan"></a>DHCP の展開を計画する
+## <a name="plan-dhcp-deployment"></a><a name="bkmk_plan"></a>DHCP の展開を計画する
 
 DHCP サーバーの役割をインストールする前の主要な計画手順を次に示します。
 
@@ -131,7 +131,7 @@ DHCP メッセージはブロードキャスト メッセージであるため�
 
 各サブネットには、固有の IP アドレスの範囲を設定する必要があります。 これらの範囲は、DHCP サーバー上にスコープと共に表されます。
 
-スコープとは、DHCP サービスを使用するサブネット上のコンピューターの IP アドレスを管理するためのグループです。 管理者は、まず各物理サブネットのスコープを作成します。次に、そのスコープを使用して、クライアントによって使用されるパラメーターを定義します。
+スコープとは、サブネット上でDHCP サービスを使用するコンピューターを対象にする IP アドレスを管理用にグループ化したものです。 管理者は、まず各物理サブネットのスコープを作成します。次に、そのスコープを使用して、クライアントによって使用されるパラメーターを定義します。
 
 スコープには、次のプロパティがあります。
 
@@ -139,9 +139,9 @@ DHCP メッセージはブロードキャスト メッセージであるため�
 
 - サブネット マスク。任意の IP アドレスのサブネット プレフィックスを決定します。
 
-- スコープ名。スコープの作成時に割り当てられます。
+- スコープ名。これは、スコープが作成されるときに割り当てられます。
 
-- リース期間の値。動的に割り当てられた IP アドレスを受け取る DHCP クライアントに割り当てられます。
+- リース持続期間の値。これは、動的に割り当てられる IP アドレスを受け取る DHCP クライアントに対して、リースが行われる期間の長さです。
 
 - DHCP クライアントに割り当てるために構成された DHCP スコープ オプション。DNS サーバー IP アドレス、ルーター (デフォルト ゲートウェイ) IP アドレスなどがあります。
 
@@ -187,7 +187,7 @@ DHCP サーバー上にスコープを作成する場合、DHCP サーバーが 
 
 除外範囲は、将来のネットワークの拡張に対応できるよう、余分なアドレスを含めて構成することをお勧めします。 次の表は、IP アドレス範囲が 10.0.0.1-10.0.0.254 でサブネットマスクが255.255.255.0 のスコープの除外範囲の例を示しています。
 
-|構成項目|値の例|
+|構成アイテム|値の例|
 |-----------------------|------------------|
 |除外範囲の開始 IP アドレス|10.0.0.1|
 |除外範囲の終了 IP アドレス|「10.0.0.25|
@@ -202,15 +202,15 @@ DHCP サーバー上にスコープを作成する場合、DHCP サーバーが 
 
 次の表は、AD DS と DNS の構成項目の追加例を示しています。
 
-|構成項目|値の例|
+|構成アイテム|値の例|
 |-----------------------|------------------|
-|ネットワーク接続バインディング|Ethernet|
+|ネットワーク接続バインディング|イーサネット|
 |DNS サーバー設定|DC1.corp.contoso.com|
 |優先 DNS サーバーの IP アドレス|10.0.0.2|
 |スコープ値<br /><br />1. スコープ名<br />2. 開始 IP アドレス<br />3. 終了 IP アドレス<br />4. サブネットマスク<br />5. 既定のゲートウェイ (オプション)<br />6. リース期間|1. プライマリサブネット<br />2. 10.0.0.1<br />3. 10.0.0.254<br />4. 255.255.255.0<br />5. 10.0.0.1<br />6. 8 日|
 |IPv6 DHCP サーバーの操作モード|無効|
 
-## <a name="bkmk_lab"></a>テストラボでのこのガイドの使用
+## <a name="using-this-guide-in-a-test-lab"></a><a name="bkmk_lab"></a>テストラボでのこのガイドの使用
 
 このガイドを使用して、実稼働環境に展開する前に、テストラボに DHCP を展開することができます。 
 
@@ -273,7 +273,7 @@ Vm を使用してテストラボに DHCP を展開するには、次のリソ�
 3. DHCP サーバーが DHCP クライアントに IP アドレスと DHCP オプションを動的に割り当てていることを確認するために使用する、Windows クライアントオペレーティングシステムを実行している1台の物理コンピューター。
 
 
-## <a name="bkmk_deploy"></a>DHCP の展開
+## <a name="deploy-dhcp"></a><a name="bkmk_deploy"></a>DHCP の展開
 
 このセクションでは、1台のサーバーに DHCP を展開するために使用できる Windows PowerShell コマンドの例を示します。 これらのコマンド例をサーバーで実行する前に、ネットワークと環境に合わせてコマンドを変更する必要があります。 
 
@@ -490,7 +490,7 @@ Set-DhcpServerv4OptionValue -OptionID 3 -Value 10.0.1.1 -ScopeID 10.0.1.0 -Compu
 > [!IMPORTANT]
 > Dhcp クライアントと DHCP サーバー間のすべてのルーターが、DHCP メッセージ転送用に構成されていることを確認します。 DHCP 転送を構成する方法については、ルーターのマニュアルを参照してください。
 
-## <a name="bkmk_verify"></a>サーバーの機能を確認する
+## <a name="verify-server-functionality"></a><a name="bkmk_verify"></a>サーバーの機能を確認する
 
 Dhcp サーバーが DHCP クライアントに IP アドレスを動的に割り当てていることを確認するために、別のコンピューターをサービスサブネットに接続できます。 イーサネットケーブルをネットワークアダプターに接続し、コンピューターの電源をオンにすると、DHCP サーバーから IP アドレスが要求されます。 **Ipconfig/all**コマンドを使用して結果を確認するか、Windows エクスプローラーまたはその他のアプリケーションを使用してブラウザーまたはファイル共有で Web リソースにアクセスしようとするなどの接続テストを実行して、正常な構成を確認できます。
 
@@ -501,7 +501,7 @@ Dhcp サーバーが DHCP クライアントに IP アドレスを動的に割�
 3. Active Directory から承認された DHCP サーバーの一覧を取得するには、次のコマンドを実行して、DHCP サーバーが Active Directory で承認されていることを確認します。 [取得-DhcpServerInDC](https://docs.microsoft.com/powershell/module/dhcpserver/Get-DhcpServerInDC)。
 4. スコープがアクティブになっていることを確認するために、DHCP コンソール \(サーバーマネージャー、**ツール**、 **dhcp**\)を開き、サーバーツリーを展開してスコープを確認してから、各スコープを\-右クリックします。 選択したメニューに **[アクティブ]** 化 が含まれている場合は、 **[アクティブ化]** をクリックします。 \(スコープが既にアクティブになっている場合、メニュー選択は **[非アクティブ化]** を読み取ります。\)
 
-## <a name="bkmk_dhcpwps"></a>DHCP 用の Windows PowerShell コマンド
+## <a name="windows-powershell-commands-for-dhcp"></a><a name="bkmk_dhcpwps"></a>DHCP 用の Windows PowerShell コマンド
 
 次のリファレンスでは、Windows Server 2016 のすべての DHCP サーバー Windows PowerShell コマンドについて、コマンドの説明と構文を示します。 このトピックでは、コマンドの先頭にある動詞 ( **Get**や**Set**など) に基づいて、アルファベット順にコマンドを示します。
 
@@ -517,7 +517,7 @@ Dhcp サーバーが DHCP クライアントに IP アドレスを動的に割�
 
 - [Windows PowerShell の DHCP サーバーコマンドレット](https://docs.microsoft.com/windows-server/networking/technologies/dhcp/dhcp-deploy-wps)
 
-## <a name="bkmk_list"></a>このガイドの「Windows PowerShell コマンドの一覧」
+## <a name="list-of-windows-powershell-commands-in-this-guide"></a><a name="bkmk_list"></a>このガイドの「Windows PowerShell コマンドの一覧」
 
 このガイドで使用されているコマンドとサンプル値の簡単な一覧を次に示します。
 

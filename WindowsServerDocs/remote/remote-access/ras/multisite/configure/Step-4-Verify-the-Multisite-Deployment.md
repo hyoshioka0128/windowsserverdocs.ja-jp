@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 345b676a-a397-4d51-9973-8b25bc05fa55
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 3574ef57d18e23668f08dee8b768f0114790f0b8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: d74f3fc5f0f61a2621ab0cab09e73be47e2ac971
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367130"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313893"
 ---
 # <a name="step-4-verify-the-multisite-deployment"></a>手順4マルチサイト展開を確認する
 

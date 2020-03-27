@@ -10,18 +10,18 @@ ms.technology: networking-ipam
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 77b6ac92-eaff-46d7-95db-ee6fc96742ed
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 5dfc3c8f31d25f5b72f39e33759d6e26917ae70f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: a3fb0a4e09e348040a2e89f97c73371aca62bef0
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405623"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80316797"
 ---
 # <a name="manage-role-based-access-control-with-server-manager"></a>サーバー マネージャーで役割ベースのアクセス制御を管理する
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 次のトピックを使用して、グラフィカルユーザーインターフェイスを備えたサーバーマネージャーを使用してロールベースのアクセス制御を管理できます。  
   
@@ -37,7 +37,7 @@ ms.locfileid: "71405623"
   
 または、Windows PowerShell を使用して IPAM ロールベースのアクセス制御を管理することもできます。 詳細については、「 [Windows PowerShell を使用して役割ベースの Access Control を管理](../../technologies/ipam/Manage-Role-Based-Access-Control-with-Windows-PowerShell.md)する」を参照してください。
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [IPAM の管理](Manage-IPAM.md)  
   
 

@@ -10,19 +10,19 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 6a7ac5af-85e9-4440-a631-6a3a38e9015d
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/27/2018
-ms.openlocfilehash: 6a1d210d25309be322359add20da4eb8d0eee091
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1f18ad9ddb0ea1a7575f6fcb26189f36f818ada2
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355811"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317484"
 ---
 # <a name="use-access-control-lists-acls-to-manage-datacenter-network-traffic-flow"></a>アクセス制御リスト (Acl) を使用してデータセンターのネットワークトラフィックフローを管理する
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックでは、データセンターのファイアウォールと仮想サブネットの Acl を使用して、データトラフィックフローを管理するためのアクセス制御リスト (Acl) を構成する方法について説明します。 データセンターのファイアウォールを有効にして構成するには、仮想サブネットまたはネットワークインターフェイスに適用される Acl を作成します。   
 
@@ -35,17 +35,17 @@ SDN をデプロイしたら、新しい環境で基本的なネットワーク�
 次の表のエントリを使用して、すべての受信および送信ネットワークトラフィックを許可する規則のセットを作成します。
 
 
-| Source IP | 宛先 IP | プロトコル | Source Port | 宛先ポート | Direction | 操作 | [Priority] |
+| Source IP | 宛先 IP | [プロトコル] | Source Port | 宛先ポート | Direction | 操作 | 優先順位 |
 |:---------:|:--------------:|:--------:|:-----------:|:----------------:|:---------:|:------:|:--------:|
-|    \*     |       \*       |   All    |     \*      |        \*        |  受信  | 許可  |   100    |
-|    \*     |       \*       |   All    |     \*      |        \*        | 送信  | 許可  |   110    |
+|    \*     |       \*       |   [すべて]    |     \*      |        \*        |  受信  | 許可  |   100    |
+|    \*     |       \*       |   [すべて]    |     \*      |        \*        | 送信  | 許可  |   110    |
 
 ---       
 
-### <a name="example-create-an-acl"></a>例:ACL を作成する 
+### <a name="example-create-an-acl"></a>例: ACL の作成 
 この例では、次の2つの規則を持つ ACL を作成します。
 
-1. **AllowAll_Inbound** -すべてのネットワークトラフィックが、この ACL が構成されているネットワークインターフェイスに渡すことを許可します。    
+1. **AllowAll_Inbound** -この ACL が構成されているネットワークインターフェイスにすべてのネットワークトラフィックが渡されることを許可します。    
 2. **Allowalloutbound** -すべてのトラフィックがネットワークインターフェイスから渡されることを許可します。 リソース id "AllowAll-1" によって識別されたこの ACL は、仮想サブネットとネットワークインターフェイスで使用できるようになりました。  
 
 次のスクリプト例では、 **NetworkController**モジュールからエクスポートされた Windows PowerShell コマンドを使用して、この ACL を作成します。  
@@ -90,14 +90,14 @@ New-NetworkControllerAccessControlList -ResourceId "AllowAll" -Properties $aclli
 この例では、192.168.0.0/24 サブネット内の Vm が相互に通信できないようにする ACL を作成します。 この種類の ACL は、攻撃者がサブネット内で奪取を分散する能力を制限するために役立ちます。一方、Vm がサブネットの外部からの要求を受信したり、他のサブネット上の他のサービスと通信したりすることができます。   
 
 
-|   Source IP    | 宛先 IP | プロトコル | Source Port | 宛先ポート | Direction | 操作 | [Priority] |
+|   Source IP    | 宛先 IP | [プロトコル] | Source Port | 宛先ポート | Direction | 操作 | 優先順位 |
 |:--------------:|:--------------:|:--------:|:-----------:|:----------------:|:---------:|:------:|:--------:|
-|  192.168.0.1   |       \*       |   All    |     \*      |        \*        |  受信  | 許可  |   100    |
-|       \*       |  192.168.0.1   |   All    |     \*      |        \*        | 送信  | 許可  |   101    |
-| 192.168.0.0/24 |       \*       |   All    |     \*      |        \*        |  受信  | ブロック  |   102    |
-|       \*       | 192.168.0.0/24 |   All    |     \*      |        \*        | 送信  | ブロック  |   103    |
-|       \*       |       \*       |   All    |     \*      |        \*        |  受信  | 許可  |   104    |
-|       \*       |       \*       |   All    |     \*      |        \*        | 送信  | 許可  |   105    |
+|  192.168.0.1   |       \*       |   [すべて]    |     \*      |        \*        |  受信  | 許可  |   100    |
+|       \*       |  192.168.0.1   |   [すべて]    |     \*      |        \*        | 送信  | 許可  |   101    |
+| 192.168.0.0/24 |       \*       |   [すべて]    |     \*      |        \*        |  受信  | [ブロック]  |   102    |
+|       \*       | 192.168.0.0/24 |   [すべて]    |     \*      |        \*        | 送信  | [ブロック]  |   103    |
+|       \*       |       \*       |   [すべて]    |     \*      |        \*        |  受信  | 許可  |   104    |
+|       \*       |       \*       |   [すべて]    |     \*      |        \*        | 送信  | 許可  |   105    |
 
 --- 
 
