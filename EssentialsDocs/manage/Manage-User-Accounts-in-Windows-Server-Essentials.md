@@ -3,7 +3,7 @@ title: Windows Server Essentials でのユーザー アカウントの管理
 description: Windows Server Essentials の使用方法について説明します。
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: 0d115697-532b-48c2-a659-9f889e235326
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 069cbbdf499ce86586390b1031b6fea71f4f2b2a
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 86feb7168aa53837c4bef514e8a9b6724c0e5682
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322224"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80311042"
 ---
 # <a name="manage-user-accounts-in-windows-server-essentials"></a>Windows Server Essentials でのユーザー アカウントの管理
 
@@ -26,7 +26,7 @@ ms.locfileid: "79322224"
 Windows Server Essentials ダッシュボードの [ユーザー] ページで情報とタスクを一元化して、小規模ビジネス ネットワークでユーザー アカウントを管理しやすくします。 ユーザーダッシュボードの概要については、「[ダッシュボードの概要](Overview-of-the-Dashboard-in-Windows-Server-Essentials.md)」を参照してください。  
   
   
-##  <a name="BKMK_ManageAccounts"></a>ユーザーアカウントの管理  
+##  <a name="managing-user-accounts"></a><a name="BKMK_ManageAccounts"></a>ユーザーアカウントの管理  
  以下のトピックでは、Windows Server Essentials ダッシュボードを使用して、サーバー上のユーザー アカウントを管理する方法について説明します。  
   
 -   [ユーザーアカウントを追加する](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Manage1)  
@@ -45,7 +45,7 @@ Windows Server Essentials ダッシュボードの [ユーザー] ページで�
   
 -   [ダッシュボードを使用してユーザーアカウントを管理する](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Manage8)  
   
-###  <a name="BKMK_Manage1"></a>ユーザーアカウントを追加する  
+###  <a name="add-a-user-account"></a><a name="BKMK_Manage1"></a>ユーザーアカウントを追加する  
  ユーザー アカウントを追加する場合、割り当てられたユーザーは、ネットワークにログオンできます。管理者は、ネットワーク リソース (共有フォルダー、リモート Web アクセス サイトなど) にアクセスするためのユーザーのアクセス許可を与えることができます。 Windows Server Essentials には、以下の場合に役立つ、ユーザー アカウントの追加ウィザードが含まれています。  
   
 -   ユーザー アカウントの名前とパスワードを提供する  
@@ -76,7 +76,7 @@ Windows Server Essentials ダッシュボードの [ユーザー] ページで�
   
 4.  指示に従ってウィザードを完了します。  
   
-###  <a name="BKMK_Remove"></a>ユーザーアカウントを削除する  
+###  <a name="remove-a-user-account"></a><a name="BKMK_Remove"></a>ユーザーアカウントを削除する  
  サーバーからユーザー アカウントの削除を選択すると、ウィザードは選択したアカウントを削除します。 このため、ネットワークにログオンするため、または他のネットワーク リソースにアクセスするために、アカウントを使用することができなくなります。 オプションとして、アカウントの削除と同時に、ユーザー アカウントのファイルを削除することもできます。 ユーザー アカウントを完全に削除しないようにする場合は、代わりにユーザー アカウントを無効化して、ネットワーク リソースへのアクセスを中断することができます。  
   
 > [!IMPORTANT]
@@ -101,7 +101,7 @@ Windows Server Essentials ダッシュボードの [ユーザー] ページで�
 >   
 >  統合された電子メール プロバイダーがある場合は、ユーザー アカウントに割り当てられている電子メール アカウントも削除されます。  
   
-###  <a name="BKMK_Manage3"></a>ユーザーアカウントの表示  
+###  <a name="view-user-accounts"></a><a name="BKMK_Manage3"></a>ユーザーアカウントの表示  
  Windows Server Essentials ダッシュボードの **[ユーザー]** セクションは、ネットワーク ユーザー アカウントの一覧を表示します。 また、各アカウントに関する追加情報も示します。  
   
 ##### <a name="to-view-a-list-of-user-accounts"></a>ユーザー アカウントの一覧を表示するには  
@@ -122,7 +122,7 @@ Windows Server Essentials ダッシュボードの [ユーザー] ページで�
   
 4.  ユーザー アカウントのプロパティに対して行った変更を保存するには、 **[適用]** をクリックします。  
   
-###  <a name="BKMK_Manage4"></a>ユーザーアカウントの表示名を変更する  
+###  <a name="change-the-display-name-for-the-user-account"></a><a name="BKMK_Manage4"></a>ユーザーアカウントの表示名を変更する  
  表示名は、ダッシュボードの **[ユーザー]** ページの **[名前]** 列に表示される名前です。 表示名を変更しても、ユーザー アカウントのログオン名やサインイン名は変更されません。  
   
 ##### <a name="to-change-the-display-name-for-a-user-account"></a>ユーザー アカウントの表示名を変更するには  
@@ -139,7 +139,7 @@ Windows Server Essentials ダッシュボードの [ユーザー] ページで�
   
      ユーザー アカウントの一覧で、新しい表示名が表示されます。  
   
-###  <a name="BKMK_Manage5"></a>ユーザーアカウントのアクティブ化  
+###  <a name="activate-a-user-account"></a><a name="BKMK_Manage5"></a>ユーザーアカウントのアクティブ化  
  ユーザー アカウントを有効にした場合、割り当てられたユーザーはネットワークにログオンし、そのアカウントで許可されたネットワーク リソース (共有フォルダー、リモート Web アクセス サイトなど) にアクセスすることができます。  
   
 > [!NOTE]
@@ -162,7 +162,7 @@ Windows Server Essentials ダッシュボードの [ユーザー] ページで�
 >   
 >  統合された電子メール プロバイダーがある場合は、ユーザー アカウントに割り当てられている電子メール アカウントもアクティブになります。  
   
-###  <a name="BKMK_Manage6"></a>ユーザーアカウントを非アクティブ化する  
+###  <a name="deactivate-a-user-account"></a><a name="BKMK_Manage6"></a>ユーザーアカウントを非アクティブ化する  
  ユーザー アカウントを無効にすると、サーバーへのアカウント アクセスは一時的に中断されます。 このため、割り当てられたユーザー アカウントを有効にするまでは、共有フォルダーやリモート Web アクセス サイトなどのネットワーク リソースにアクセスするために、このアカウントは使用できません。  
   
  ユーザー アカウントに、Microsoft オンライン アカウントが割り当てられている場合、オンライン アカウントも無効になります。 ユーザーは、Office 365 のリソースやサブスクライブしているその他のオンラインサービスを使用することはできませんが、ユーザーのデータ (電子メールなど) は Microsoft Online Services に保持されます。  
@@ -187,7 +187,7 @@ Windows Server Essentials ダッシュボードの [ユーザー] ページで�
 >   
 >  統合された電子メール プロバイダーがある場合は、ユーザー アカウントに割り当てられている電子メール アカウントも非アクティブになります。  
   
-###  <a name="BKMK_Manage7"></a>ユーザーアカウントについて  
+###  <a name="understand-user-accounts"></a><a name="BKMK_Manage7"></a>ユーザーアカウントについて  
  ユーザー アカウントは、Windows Server Essentials に対して重要な情報を提供します。これにより、個別ユーザーがサーバー上に保存されている情報にアクセスすることができるようになり、ファイルと設定の作成と管理ができるようになります。 ユーザーが Windows Server Essentials ユーザー アカウントとコンピューターへのアクセス許可を持っている場合、ネットワーク上の任意のコンピューターにログオンできます。 ユーザーはユーザー名とパスワードを使って、自分のユーザー アカウントにアクセスします。  
   
  ユーザー アカウントには、主な種類が 2 つあります。 種類ごとに、与えられるコンピューターの制御レベルが異なります。  
@@ -196,7 +196,7 @@ Windows Server Essentials ダッシュボードの [ユーザー] ページで�
   
 -   **管理者** アカウントは、コンピューター ネットワーク経由で、ほとんどの制御を提供します。 管理者アカウント タイプは、必要な場合にだけ割り当てる必要があります。  
   
-###  <a name="BKMK_Manage8"></a>ダッシュボードを使用してユーザーアカウントを管理する  
+###  <a name="manage-user-accounts-using-the-dashboard"></a><a name="BKMK_Manage8"></a>ダッシュボードを使用してユーザーアカウントを管理する  
  Windows Server Essentials では、Windows Server Essentials ダッシュボードを使用して、一般的な管理タスクを実行することができます。 既定では、ダッシュボードの **[ユーザー]** ページには、 **[ユーザー]** と **[ユーザーグループ]** の2つのタブがあります。  
   
 > [!NOTE]
@@ -254,7 +254,7 @@ Windows Server Essentials ダッシュボードの [ユーザー] ページで�
 |ファイル履歴の設定の変更|バックアップ頻度、バックアップ期間など、ファイル履歴の設定を変更することができます。<br /><br /> このタスクは、Windows Server Essentials に適用されます。|  
 |リモート接続をすべてエクスポートする|過去 30 日間で発生した、サーバーへのすべてのリモート接続を記述した CSV 形式のファイルを作成します。|  
   
-##  <a name="BKMK_ManageAccess"></a>パスワードとアクセスの管理  
+##  <a name="managing-passwords-and-access"></a><a name="BKMK_ManageAccess"></a>パスワードとアクセスの管理  
  次のトピックでは、Windows Server Essentials ダッシュボードを使用した、ユーザー アカウントのパスワードの管理方法とサーバー上の共有フォルダーへのユーザー アクセスの管理方法に関する情報を提供します。  
   
 -   [ユーザーアカウントのパスワードの変更またはリセット](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Access1)  
@@ -281,7 +281,7 @@ Windows Server Essentials ダッシュボードの [ユーザー] ページで�
   
 -   [ユーザーアカウントによるコンピューターへのリモートデスクトップセッションの確立を許可する](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Access13)  
   
-###  <a name="BKMK_Access1"></a>ユーザーアカウントのパスワードの変更またはリセット  
+###  <a name="change-or-reset-the-password-for-a-user-account"></a><a name="BKMK_Access1"></a>ユーザーアカウントのパスワードの変更またはリセット  
  ユーザー アカウントのパスワードの変更やリセットを行うには、以下の手順を実行します。  
   
 ##### <a name="to-reset-the-password-for-a-user-account"></a>ユーザー アカウントのパスワードをリセットするには  
@@ -305,7 +305,7 @@ Windows Server Essentials ダッシュボードの [ユーザー] ページで�
    >   -   Azure AD では、非 ASCII 文字はサポートされていません。 このため、サーバーが Azure AD と統合されている場合は、パスワードに ASCII 以外の文字を使用しないでください。  
    >   -   Microsoft オンラインアカウント (Windows Server Essentials で Office 365 アカウントと呼ばれる) がユーザーに割り当てられている場合、パスワードはオンラインアカウントのパスワードと同期されます。 ユーザーは新しいパスワードを使って、サーバーにサインインするか、Office 365 にサインインします。 詳細については、「[ユーザーのオンラインアカウントを管理する](Manage-Online-Accounts-for-Users.md)」を参照してください。  
   
-###  <a name="BKMK_Access3"></a>パスワードポリシーについて理解しておくべきこと  
+###  <a name="what-you-should-know-about-password-policies"></a><a name="BKMK_Access3"></a>パスワードポリシーについて理解しておくべきこと  
  パスワード ポリシーは、ユーザーの作成方法と、パスワードの使用方法を定義する一連の規則です。 このポリシーは、ユーザーのデータと、サーバーに格納されているその他の情報への不正アクセス防止に役立ちます。 ネットワークにアクセスするすべてのユーザー アカウントに、パスワード ポリシーが適用されます。  
   
  Windows Server Essentials パスワード ポリシーは、次の 3 つの主要要素によって構成されます。  
@@ -336,7 +336,7 @@ Windows Server Essentials ダッシュボードの [ユーザー] ページで�
   
   既定では、サーバーのインストール時に、既定のパスワード ポリシーが **[強]** オプションに設定されます。  
   
-###  <a name="BKMK_Access4"></a>パスワードポリシーを変更する  
+###  <a name="change-the-password-policy"></a><a name="BKMK_Access4"></a>パスワードポリシーを変更する  
  次の手順を使用して、4 つの事前に定義されたポリシー プロファイルのいずれかに対して、パスワード ポリシーの設定または変更を行います。  
   
 ##### <a name="to-change-the-password-policy"></a>パスワード ポリシーを変更するには  
@@ -354,7 +354,7 @@ Windows Server Essentials ダッシュボードの [ユーザー] ページで�
   
 4.  **[ポリシーの変更]** をクリックします。  
   
-###  <a name="BKMK_Access5"></a>共有フォルダーへのアクセスレベル  
+###  <a name="level-of-access-to-shared-folders"></a><a name="BKMK_Access5"></a>共有フォルダーへのアクセスレベル  
  ベスト プラクティスとして、ユーザーが必要な作業を実行できる、最も厳しいアクセス許可を割り当ててください。  
   
  サーバーの共有フォルダーでは、3 つのアクセス設定が使用できます。  
@@ -365,7 +365,7 @@ Windows Server Essentials ダッシュボードの [ユーザー] ページで�
   
 -   **アクセスなし**。  ユーザー アカウントが共有フォルダー内のファイルにアクセスしてほしくない場合、この設定を選択します。  
   
-###  <a name="BKMK_Access6"></a>削除されたユーザーアカウントのファイルへのアクセスを保持および管理する  
+###  <a name="retain-and-manage-access-to-files-for-removed-user-accounts"></a><a name="BKMK_Access6"></a>削除されたユーザーアカウントのファイルへのアクセスを保持および管理する  
  ネットワーク管理者は、ユーザーアカウントを削除し、将来使用するためにユーザーのファイルを保持することを選択できます。 このシナリオでは削除されたユーザー アカウントはネットワークへのサインインに使用できなくなりますが、このユーザーのファイルは共有フォルダーに保存され、別のユーザーと共有できます。  
   
 > [!IMPORTANT]
@@ -407,7 +407,7 @@ Windows Server Essentials ダッシュボードの [ユーザー] ページで�
   
 8.  ユーザー アカウントに割り当てる **[アクセス許可のレベル]** を選択し、 **[共有]** をクリックします。  
   
-###  <a name="BKMK_Access7"></a>DSRM パスワードをネットワーク管理者のパスワードと同期する  
+###  <a name="synchronize-the-dsrm-password-with-the-network-administrator-password"></a><a name="BKMK_Access7"></a>DSRM パスワードをネットワーク管理者のパスワードと同期する  
  ディレクトリ サービス復元モード (DSRM) は、Active Directory を修復または回復するための特別なブート モードです。 Active Directory が失敗したか、または復元する必要がある場合、オペレーティング システムは DSRM を使って、コンピューターにログオンします。 ネットワーク管理者のパスワードと DSRM パスワードが異なる場合、DSRM は読み込まれません。  
   
  Windows Server Essentials のクリーン インストールの初回実行中、プログラムは、セットアップ時または移行応答ファイルで指定したネットワーク管理者アカウントのパスワードに DSRM パスワードを設定します。 ネットワーク管理者のパスワードを変更する (サーバーのセキュリティを向上させるため、通常は 60 日おきに実行することを推奨) と、パスワードの変更が DSRM に転送されません。 これにより、パスワードが一致しなくなります。 この問題が発生した場合は、次の解決策を使用して、ネットワーク管理者のパスワードと DSRM パスワードを手動または自動で同期することができます。  
@@ -453,7 +453,7 @@ Windows Server Essentials ダッシュボードの [ユーザー] ページで�
   
 6.  **[OK]** を 2 回クリックしてタスクを保存し、 **[タスクの作成]** ダイアログ ボックスを閉じます。 新しいタスクが **[タスクのスケジュール]** の **[アクティブなタスク]** のセクションに表示されます。  
   
-###  <a name="BKMK_Access8"></a>ユーザーアカウントにリモートデスクトップアクセス許可を付与する  
+###  <a name="give-user-accounts-remote-desktop-permission"></a><a name="BKMK_Access8"></a>ユーザーアカウントにリモートデスクトップアクセス許可を付与する  
  Windows Server Essentials の既定のインストールでは、ネットワーク ユーザーは、コンピューターまたはネットワーク上の他のリソースへのリモート接続を確立するアクセス許可がありません。  
   
  ネットワーク ユーザーはネットワーク リソースへのリモート接続を確立する前にまず Anywhere Access を設定する必要があります。 Anywhere Access を設定した後、インターネット接続がある任意の場所のデバイスから、オフィス ネットワーク内のファイル、アプリケーション、コンピューターにアクセスすることができます。  
@@ -470,7 +470,7 @@ Windows Server Essentials ダッシュボードの [ユーザー] ページで�
   
   Anywhere Access の詳細については、「 [Anywhere access の管理](Manage-Anywhere-Access-in-Windows-Server-Essentials.md)」を参照してください。  
   
-###  <a name="BKMK_Access9"></a>ユーザーがサーバー上のリソースにアクセスできるようにする  
+###  <a name="enable-users-to-access-resources-on-the-server"></a><a name="BKMK_Access9"></a>ユーザーがサーバー上のリソースにアクセスできるようにする  
   このセクションは、windows server Essentials または Windows Server Essentials を実行しているサーバー、または windows server Essentials Experience 役割がインストールされている windows Server 2012 R2 Standard または Windows Server 2012 R2 Datacenter を実行しているサーバーに適用されます。  
   
  コンピューターをサーバーに接続した後、ユーザーにリモート アクセスを使用させたり、個々のユーザー アカウントを割り当てる場合、ダッシュボードを使って、サーバー上でネットワーク接続されたコンピューターのユーザーに対して、新しいネットワーク ユーザー アカウントを作成することができます。 ユーザー アカウントの作成に関する詳細については、「[ユーザー アカウントの追加](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Manage1)」を参照してください。 ユーザー アカウントを作成した後、クライアント コンピューターのユーザーにネットワーク ユーザー名とパスワード情報を提供して、スタート パッドを使ってサーバー上のリソースにアクセスできるようにする必要があります。  
@@ -529,7 +529,7 @@ Windows Server Essentials ダッシュボードの [ユーザー] ページで�
   
     4.  **[コンピューター アクセス]** タブでユーザーがアクセスできるネットワーク コンピューターを選択します。  
   
-###  <a name="BKMK_Access10"></a>ユーザーアカウントのリモートアクセス許可を変更する  
+###  <a name="change-remote-access-permissions-for-a-user-account"></a><a name="BKMK_Access10"></a>ユーザーアカウントのリモートアクセス許可を変更する  
  ユーザーは、仮想プライベート ネットワーク (VPN)、リモート Web アクセス、またはその他の Web サービス アプリケーションを使って、リモートの場所から、サーバー上のリソースにアクセスできます。 既定では、ダッシュボードを使用して Windows Server Essentials で Anywhere Access を構成した場合に、リモート アクセス許可はネットワーク ユーザーに対してオンになります。  
   
 ##### <a name="to-change-remote-access-permissions-for-a-user-account"></a>ユーザー アカウントのリモート アクセス許可を変更するには  
@@ -550,7 +550,7 @@ Windows Server Essentials ダッシュボードの [ユーザー] ページで�
   
 6.  **[適用]** をクリックし、 **[OK]** をクリックします。  
   
-###  <a name="BKMK_Access11"></a>ユーザーアカウントの仮想プライベートネットワークのアクセス許可を変更する  
+###  <a name="change-virtual-private-network-permissions-for-a-user-account"></a><a name="BKMK_Access11"></a>ユーザーアカウントの仮想プライベートネットワークのアクセス許可を変更する  
  仮想プライベート ネットワーク (VPN) を使って Windows Server Essentials に接続し、サーバーに格納されているすべてのリソースにアクセスすることができます。 これが特に役立つのは、クライアント コンピューターに設定されているネットワーク アカウントを使用して、ホストされている Windows Server Essentials サーバーに VPN 経由で接続できる場合です。 ホストされている Windows Server Essentials サーバーで新しく作成されたユーザー アカウントはすべて、クライアント コンピューターへの初回ログオン時に VPN を使用する必要があります。  
   
 ##### <a name="to-change-vpn-permissions-for-network-users"></a>ネットワーク ユーザーに対する VPN アクセス許可を変更するには  
@@ -569,7 +569,7 @@ Windows Server Essentials ダッシュボードの [ユーザー] ページで�
   
 7.  **[適用]** をクリックし、 **[OK]** をクリックします。  
   
-###  <a name="BKMK_Access12"></a>ユーザーアカウントの内部共有フォルダーへのアクセスを変更する  
+###  <a name="change-access-to-internal-shared-folders-for-a-user-account"></a><a name="BKMK_Access12"></a>ユーザーアカウントの内部共有フォルダーへのアクセスを変更する  
  ダッシュボードの **[サーバー フォルダー]** タブのタスクを使って、サーバー上の任意の共有フォルダーへのアクセスを管理できます。 既定では、次のサーバー フォルダーが Windows Server Essentials をインストールするときに作成されます。  
   
 -   **クライアント コンピューター バックアップ**。  Windows Server バックアップによって作成されたクライアント コンピューターのバックアップの保存に使用されます。 このサーバー フォルダーは共有されません。  
@@ -605,7 +605,7 @@ Windows Server Essentials ダッシュボードの [ユーザー] ページで�
     > [!NOTE]
     >  **[ファイル履歴バックアップ]** 、 **[フォルダー リダイレクト]** 、および **[ユーザー]** サーバー フォルダーの共有アクセス許可を変更することはできません。 そのため、これらのサーバー フォルダーのフォルダー プロパティには、 **[共有]** タブがありません。  
   
-###  <a name="BKMK_Access13"></a>ユーザーアカウントによるコンピューターへのリモートデスクトップセッションの確立を許可する  
+###  <a name="allow-user-accounts-to-establish-a-remote-desktop-session-to-their-computer"></a><a name="BKMK_Access13"></a>ユーザーアカウントによるコンピューターへのリモートデスクトップセッションの確立を許可する  
   このセクションは、windows server Essentials または Windows Server Essentials を実行しているサーバー、または windows server Essentials Experience 役割がインストールされている windows Server 2012 R2 Standard または Windows Server 2012 R2 Datacenter を実行しているサーバーに適用されます。  
   
  ネットワーク管理者は、リモートの場所からネットワーク コンピューターにアクセスできるようにするアクセス許可を、ネットワーク ユーザーに与えることができます。  

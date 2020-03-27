@@ -6,15 +6,15 @@ ms.prod: windows-server
 ms.technology: networking-ras
 ms.topic: article
 ms.assetid: eeca4cf7-90f0-485d-843c-76c5885c54b0
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 06/07/2018
-ms.openlocfilehash: 2bcbc7030d54e96b4ac120b943cc1adc0513feca
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.openlocfilehash: 9f78edf0e48dc914b09a5e6f2d054e0fafba62e3
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822642"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309303"
 ---
 # <a name="migrate-to-always-on-vpn-and-decommission-directaccess"></a>Always On VPN への移行と DirectAccess の使用停止
 
@@ -122,7 +122,7 @@ VPN クライアントが接続を試行しないように、証明書が発行�
 
 | ...  | 結果 |
 | ---- | ---- |
-| Configuration Manager | そのセキュリティグループのメンバーシップに基づいてユーザーコレクションを作成します。<br><br>![](../../media/DA-to-AlwaysOnVPN/b38723b3ffcfacd697b83dd41a177f66.png)演算子|
+| 構成マネージャー | そのセキュリティグループのメンバーシップに基づいてユーザーコレクションを作成します。<br><br>![](../../media/DA-to-AlwaysOnVPN/b38723b3ffcfacd697b83dd41a177f66.png)!|
 | Intune | 同期するときに、セキュリティグループを直接ターゲットにするだけです。 |
 |
     
