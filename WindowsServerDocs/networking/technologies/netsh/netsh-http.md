@@ -6,14 +6,14 @@ ms.technology: networking
 ms.topic: article
 ms.assetid: ''
 manager: dougkim
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 7b9032eb05128532c8bf90a0db2f685b4435e6eb
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 2c1032812f52eb32d9ae12310c8f2cff03f70aa5
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71401878"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309386"
 ---
 # <a name="netsh-http-commands"></a>Netsh http コマンド
 

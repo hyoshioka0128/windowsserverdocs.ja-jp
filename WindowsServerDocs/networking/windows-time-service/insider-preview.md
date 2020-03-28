@@ -2,18 +2,18 @@
 ms.assetid: ''
 title: Windows Server 2019 の Windows タイム サービス機能に関する Insider Preview
 description: Windows Server 2019 の Windows タイム サービスの新機能
-author: shortpatti
-ms.author: pashort
+author: eross-msft
+ms.author: lizross
 ms.date: 09/05/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: 38682afa37a4c6882ee2e63a4abf4cd9fdbd2b27
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3c61b1ca7a11e01d2d8234cb505998946a774691
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405213"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80315015"
 ---
 # <a name="insider-preview"></a>Insider Preview 
 

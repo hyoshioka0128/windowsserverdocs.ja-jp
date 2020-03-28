@@ -2,19 +2,19 @@
 ms.assetid: d1953097-63ea-4a0e-b860-2f3b7c175c41
 title: Windows タイム サービスのしくみ
 description: ''
-author: shortpatti
-ms.author: pashort
+author: eross-msft
+ms.author: lizross
 manager: dougkim
 ms.date: 05/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: 2bf4a887218cd51e9c10954a75bbc1ba2112647f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d8532dedb6473a34591a1f160a94a785cc4ba367
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405145"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80315171"
 ---
 # <a name="how-the-windows-time-service-works"></a>Windows タイム サービスのしくみ
 
@@ -45,7 +45,7 @@ Windows タイム サービスは、ネットワーク タイム プロトコル
 -   Windows タイム サービスを利用可能な CPU とネットワーク リソースの量  
   
 > [!IMPORTANT]  
-> Windows Server 2016 より前の W32Time サービスは、精密な時間管理を必要とするアプリケーションのニーズを満たすように設計されていませんでした。  しかし、Windows Server 2016 の更新プログラムにより、1 ミリ秒の精度を実現するソリューションをドメインに実装できるようになりました。  詳しくは、[Windows 2016 の正確な時刻](accurate-time.md)および[高精度の環境に向けた Windows タイム サービスの構成を目的とするサポート範囲](support-boundary.md)に関する記事を参照してください。  
+> Windows Server 2016 より前の W32Time サービスは、精密な時間管理を必要とするアプリケーションのニーズを満たすように設計されていませんでした。  しかし、Windows Server 2016 の更新プログラムによって、1 ミリ秒の精度のソリューションをドメインに実装できるようになりました。  詳しくは、[Windows 2016 の正確な時刻](accurate-time.md)および[高精度の環境に向けた Windows タイム サービスの構成を目的とするサポート範囲](support-boundary.md)に関する記事を参照してください。  
   
 時刻が頻繁に同期されない、またはドメインに参加しないコンピューターは、既定で time.windows.com と同期するように構成されます。  このため、ネットワーク接続が断続的であるか存在しないコンピューターでは、時間の精度を保証することはできません。  
   

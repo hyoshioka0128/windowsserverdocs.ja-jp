@@ -3,7 +3,7 @@ ms.assetid: 6086947f-f9ef-4e18-9f07-6c7c81d7002c
 title: Windows タイム サービスのツールと設定
 description: ''
 author: Teresa-Motiv
-ms.author: pashort
+ms.author: lizross
 manager: dougkim
 ms.date: 02/24/2020
 ms.topic: article
@@ -13,16 +13,16 @@ ms.custom:
 - CI ID 113344
 - CSSTroubleshoot
 audience: Admin
-ms.openlocfilehash: e99c07428a1689e3c079ff2570759c849a61e945
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: e9432aa11446cdd4f00efca3af28c24d757d6019
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79323474"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80315136"
 ---
 # <a name="windows-time-service-tools-and-settings"></a>Windows タイム サービスのツールと設定
 
-> 適用対象:Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows 10 以降
+> 適用先:Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows 10 以降
 
 このトピックでは、Windows タイム サービス (W32Time) のツールと設定について説明します。  
 
@@ -256,7 +256,7 @@ Windows タイム サービスでは、次のレジストリ サブキーの下�
 >  
 > たとえば、5分は 5 &times; 60 &times; 1000 &times; 10000 = 3,000,000,000 クロック ティックになります。  
 
-### <a id="config"></a>"HKLM\SYSTEM\CurrentControlSet\Services\W32Time\Config" サブキー エントリ
+### <a name="hklmsystemcurrentcontrolsetservicesw32timeconfig-subkey-entries"></a><a id="config"></a>"HKLM\SYSTEM\CurrentControlSet\Services\W32Time\Config" サブキー エントリ
 
 |レジストリ エントリ |バージョン |説明 |
 | --- | --- | --- |
@@ -289,7 +289,7 @@ Windows タイム サービスでは、次のレジストリ サブキーの下�
 |**UpdateInterval** |すべてのバージョン |フェーズ修正の調整間のクロック ティック数を指定します。 ドメイン コントローラーに対する既定値は **100** です。 ドメイン メンバーに対する既定値は **30,000** です。 スタンドアロン クライアントとサーバーに対する既定値は **360,000** です。<br /><br />**注:**<br />**UpdateInterval** レジストリ エントリでは、ゼロは無効な値です。 Windows Server 2003、Windows Server 2003 R2、Windows Server 2008、および Windows Server 2008 R2 を実行中のコンピューターでは、この値が **0** に設定されている場合、Windows タイム サービスによって自動的に **1** に変更されます。|
 |**UtilizeSslTimeData** |Windows 10 ビルド 1511 より後のバージョンの Windows |値 **1** は、W32Time で複数の SSL タイムスタンプが使用され、極めて不正確なクロックがシードされることを示します。 |
 
-### <a id="parameters"></a>"HKLM\SYSTEM\CurrentControlSet\Services\W32Time\Parameters" サブキー エントリ
+### <a name="hklmsystemcurrentcontrolsetservicesw32timeparameters-subkey-entries"></a><a id="parameters"></a>"HKLM\SYSTEM\CurrentControlSet\Services\W32Time\Parameters" サブキー エントリ
 
 | レジストリ エントリ | バージョン | 説明 |
 | --- | --- | --- |
@@ -299,7 +299,7 @@ Windows タイム サービスでは、次のレジストリ サブキーの下�
 |**ServiceMain** |すべてのバージョン |W32Time によって管理されます。 これには Windows オペレーティング システムで使用される予約済みのデータが含まれています。この設定を変更すると、予期しない結果が発生する可能性があります。 ドメイン メンバーに対する既定値は **SvchostEntry_W32Time** です。 スタンドアロン クライアントとサーバーに対する既定値は **SvchostEntry_W32Time** です。 |
 |**Type** |すべてのバージョン |どのピアからの同期を受け入れるかを示します。  <ul><li>**NoSync**: タイム サービスは他のソースと同期しません。</li><li>**NTP**: タイム サービスは、**NtpServer** レジストリ エントリで指定されたサーバーと同期します。</li><li>**NT5DS**: タイム サービスはドメイン階層から同期します。  </li><li>**AllSync**: タイム サービスは、使用可能なすべての同期メカニズムを使用します。  </li></ul>ドメイン メンバーに対する既定値は **NT5DS** です。 スタンドアロン クライアントとサーバーに対する既定値は **NTP** です。 |
 
-### <a id="ntpclient"></a>"HKLM\SYSTEM\CurrentControlSet\Services\W32Time\TimeProviders\NtpClient" サブキー エントリ
+### <a name="hklmsystemcurrentcontrolsetservicesw32timetimeprovidersntpclient-subkey-entries"></a><a id="ntpclient"></a>"HKLM\SYSTEM\CurrentControlSet\Services\W32Time\TimeProviders\NtpClient" サブキー エントリ
 
 |レジストリ エントリ |バージョン |説明 |
 | --- | --- | --- |
@@ -316,7 +316,7 @@ Windows タイム サービスでは、次のレジストリ サブキーの下�
 |**SpecialPollInterval** |すべてのバージョン |手動ピアのための特別なポーリング間隔を秒単位で指定します。 **SpecialInterval** 0x1 フラグが有効になっている場合、W32Time は、オペレーティング システムによって決定されるポーリング間隔ではなく、このポーリング間隔を使用します。 ドメイン メンバーに対する既定値は **3,600** です。 スタンドアロン クライアントとサーバーに対する既定値は **604,800** です。<br/><br/>ビルド 1702 からは、**SpecialPollInterval** は **MinPollInterval** および **MaxPollInterval** の構成レジストリ値に含まれています。|
 |**SpecialPollTimeRemaining** |すべてのバージョン |W32Time によって管理されます。 これには、Windows オペレーティング システムによって使用される予約されたデータが含まれています。 これはコンピューターが再起動した後に W32Time が再同期されるまでの時間を秒単位で指定します。 この設定を変更すると、予期しない結果が発生する可能性があります。 ドメイン メンバーとスタンドアロン クライアントおよびサーバーの両方の既定値は、空白のままになります。 |
 
-### <a id="ntpserver"></a>"HKLM\SYSTEM\CurrentControlSet\Services\W32Time\TimeProviders\NtpServer" サブキー エントリ
+### <a name="hklmsystemcurrentcontrolsetservicesw32timetimeprovidersntpserver-subkey-entries"></a><a id="ntpserver"></a>"HKLM\SYSTEM\CurrentControlSet\Services\W32Time\TimeProviders\NtpServer" サブキー エントリ
 
 |レジストリ エントリ |バージョン |説明 |
 | --- | --- | --- |

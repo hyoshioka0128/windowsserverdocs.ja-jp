@@ -2,19 +2,19 @@
 ms.assetid: ''
 title: Windows タイムの追跡可能性
 description: さまざまな部門の規制により、システムが UTC に対して追跡可能であることが要求されます。  これは、システムのオフセットを UTC に関して証明できることを意味します。
-author: shortpatti
+author: eross-msft
 ms.author: dacuo
 manager: dougkim
 ms.date: 10/17/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: 307739042426088fa92c50e6ea4dc5d2a744f15a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e7f7a68d61729813583255d64afbf172475969e3
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405208"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314932"
 ---
 # <a name="windows-time-for-traceability"></a>Windows タイムの追跡可能性
 >適用先:Windows Server 2016 バージョン 1709 以降、および Windows 10 バージョン 1703 以上
@@ -41,7 +41,7 @@ ms.locfileid: "71405208"
 
 次のセクションでは、追跡可能性のシナリオで使用するためにログに記録されるイベントの概要を示します。
 
-# <a name="257tab257"></a>[257](#tab/257)
+# <a name="257"></a>[257](#tab/257)
 このイベントは、Windows タイム サービス (W32Time) が開始されたときにログに記録され、現在の時刻、現在のティック数、ランタイム構成、タイム プロバイダー、現在のクロック レートに関する情報をログに記録します。
 
 |||
@@ -71,7 +71,7 @@ w32tm.exe /query /status /verbose
 ```
 
 
-# <a name="258tab258"></a>[258](#tab/258)
+# <a name="258"></a>[258](#tab/258)
 このイベントは、Windows タイム サービス (W32Time) が停止しているときにログに記録され、現在の時刻とティック数に関する情報をログに記録します。
 
 |||
@@ -84,7 +84,7 @@ w32tm.exe /query /status /verbose
 **テキストの例:** 
 `W32time service is stopping at 2018-03-01T05:42:13.944Z (UTC), System Tick Count 6370250.`
 
-# <a name="259tab259"></a>[259](#tab/259)
+# <a name="259"></a>[259](#tab/259)
 このイベントは、現在のタイム ソースと選択されたタイム ソースの一覧を定期的にログに記録します。  さらに、現在のティック数をログに記録します。  このイベントは、タイム ソースが変更されるたびには発生しません。  このドキュメントで後で紹介する他のイベントがこの機能を提供します。
 
 |||
@@ -105,7 +105,7 @@ server1.fabrikam.com,0x8 (ntp.m|0x8|[::]:123->[IPAddress]:123)server2.fabrikam.c
 *Identify Peers*
 `w32tm.exe /query /peers`
 
-# <a name="260tab260"></a>[260](#tab/260)
+# <a name="260"></a>[260](#tab/260)
 
 |||
 |---|---|
@@ -113,7 +113,7 @@ server1.fabrikam.com,0x8 (ntp.m|0x8|[::]:123->[IPAddress]:123)server2.fabrikam.c
 |詳細情報 |W32time は、その構成と状態を定期的にログに記録します。 これは、次を呼び出すことと同じです。<br><br>`w32tm /query /configuration /verbose`<br>または<br>`w32tm /query /status /verbose` |
 |調整のメカニズム  |8 時間ごとに 1 回記録されます。 |
 
-# <a name="261tab261"></a>[261](#tab/261)
+# <a name="261"></a>[261](#tab/261)
 これにより、SetSystemTime API を使用してシステム時刻が変更されると、各インスタンスがログに記録されます。
 
 |||
@@ -121,7 +121,7 @@ server1.fabrikam.com,0x8 (ntp.m|0x8|[::]:123->[IPAddress]:123)server2.fabrikam.c
 |イベントの説明 |システム時刻が設定された |
 |調整のメカニズム  |なし。<br><br>これは、時刻の同期が適正なシステムではめったに発生しませんが、発生するたびにログに記録する必要があります。 このイベントのログを記録している間は、TimeJumpAuditOffset 設定は無視されます。この設定は、Windows システム イベント ログのイベントを調整することを意図したものであるためです。 |
 
-# <a name="262tab262"></a>[262](#tab/262)
+# <a name="262"></a>[262](#tab/262)
 
 |||
 |---|---|
@@ -129,7 +129,7 @@ server1.fabrikam.com,0x8 (ntp.m|0x8|[::]:123->[IPAddress]:123)server2.fabrikam.c
 |詳細情報 |システム クロックの周波数は、クロックが密接に同期されているときに W32time によって絶えず変更されます。 イベント ログを過剰に実行することなく、クロック周波数に対する "適度に有意な" 調整を行う必要があります。 |
 |調整のメカニズム  |TimeAdjustmentAuditThreshold を下回るすべてのクロック調整 (最小値 = 128 ppm、既定値 = 800 ppm) はログに記録されません。<br><br>現在の粒度でのクロック周波数の 2 ppm の変更は、クロック精度の 120 マイクロ秒/秒の変化を引き起こします。<br><br>同期されたシステムでは、調整の大半がこのレベルを下回っています。 より詳細な追跡を行う場合は、この設定を調整する、PerfCounters を使用する、またはその両方を実行することができます。 |
 
-# <a name="263tab263"></a>[263](#tab/263)
+# <a name="263"></a>[263](#tab/263)
 
 |||
 |---|---|
@@ -138,7 +138,7 @@ server1.fabrikam.com,0x8 (ntp.m|0x8|[::]:123->[IPAddress]:123)server2.fabrikam.c
 |調整のメカニズム  |なし。<br><br>このイベントは、管理者または GP の更新によってタイム プロバイダーが変更され、その後 W32time がトリガーされた場合にのみ発生します。 設定の変更の各インスタンスを記録する必要があります。 |
 
 
-# <a name="264tab264"></a>[264](#tab/264)
+# <a name="264"></a>[264](#tab/264)
 
 |||
 |---|---|
@@ -146,7 +146,7 @@ server1.fabrikam.com,0x8 (ntp.m|0x8|[::]:123->[IPAddress]:123)server2.fabrikam.c
 |詳細情報 |NTP クライアントは、タイム サーバー/ピアの状態が変更になるとき (**保留中 > 同期**、**同期 > 到達不能**、またはその他の移行) の、その時点でのタイム サーバー/ピアの状態のイベントを記録します。 |
 |調整のメカニズム  |最大頻度 - ログを一時的な問題やプロバイダーの正しくない実装から保護するため、5 分間に 1 回のみ。 |
 
-# <a name="265tab265"></a>[265](#tab/265)
+# <a name="265"></a>[265](#tab/265)
 
 |||
 |---|---|
@@ -155,7 +155,7 @@ server1.fabrikam.com,0x8 (ntp.m|0x8|[::]:123->[IPAddress]:123)server2.fabrikam.c
 |調整のメカニズム  |なし。 |
 
 
-# <a name="266tab266"></a>[266](#tab/266)
+# <a name="266"></a>[266](#tab/266)
 
 |||
 |---|---|

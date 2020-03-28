@@ -6,15 +6,15 @@ ms.technology: networking
 ms.topic: article
 ms.assetid: ''
 manager: dougkim
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/30/2018
-ms.openlocfilehash: 6244213ea689f07230ce53288e52959972112037
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 645786484881af3a0f6d9503e1f3fcde32a2cdfe
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405507"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80316736"
 ---
 # <a name="netsh-interface-portproxy-commands"></a>Netsh interface portproxy コマンド
 

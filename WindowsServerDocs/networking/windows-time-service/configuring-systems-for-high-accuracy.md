@@ -2,18 +2,18 @@
 ms.assetid: ''
 title: 高精度を確保するためのシステム構成
 description: Windows 10 と Windows Server 2016 での時刻の同期が大幅に改善されました。  適切な運用条件下では、(UTC に関しては) 1 ms (ミリ秒) 以上の精度を維持するようにシステムを構成できます。
-author: shortpatti
+author: eross-msft
 ms.author: dacuo
 ms.date: 05/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: b7cd256fdbbdbe7432e5b5d5b16254314132560f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8cdded0eb0dc663d352011fb1a6765a2ed358764
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405197"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80315033"
 ---
 # <a name="configuring-systems-for-high-accuracy"></a>高精度を確保するためのシステム構成
 >適用先:Windows Server 2016、および Windows 10 バージョン 1607 以降
@@ -106,7 +106,7 @@ Windows タイム サービス (W32Time) は連続的に実行する必要があ
 
 #### <a name="registry-settings"></a>レジストリの設定
 
-# <a name="minpollintervaltabminpollinterval"></a>[MinPollInterval](#tab/MinPollInterval)
+# <a name="minpollinterval"></a>[MinPollInterval](#tab/MinPollInterval)
 システムのポーリングとして許容される最小間隔を log2 秒単位で構成します。
 
 |  |  | 
@@ -120,7 +120,7 @@ Windows タイム サービス (W32Time) は連続的に実行する必要があ
 `w32tm /config /update`
 
 
-# <a name="maxpollintervaltabmaxpollinterval"></a>[MaxPollInterval](#tab/MaxPollInterval)
+# <a name="maxpollinterval"></a>[MaxPollInterval](#tab/MaxPollInterval)
 システムのポーリングとして許容される最大間隔を log2 秒単位で構成します。
 
 |  |  |  
@@ -133,7 +133,7 @@ Windows タイム サービス (W32Time) は連続的に実行する必要があ
 
 `w32tm /config /update`
 
-# <a name="updateintervaltabupdateinterval"></a>[UpdateInterval](#tab/UpdateInterval)
+# <a name="updateinterval"></a>[UpdateInterval](#tab/UpdateInterval)
 フェーズ修正の調整間のクロック ティック数。
 
 |  |  |  
@@ -146,7 +146,7 @@ Windows タイム サービス (W32Time) は連続的に実行する必要があ
 
 `w32tm /config /update`
 
-# <a name="specialpollintervaltabspecialpollinterval"></a>[SpecialPollInterval](#tab/SpecialPollInterval)
+# <a name="specialpollinterval"></a>[SpecialPollInterval](#tab/SpecialPollInterval)
 SpecialInterval 0x1 フラグが有効になっているときのポーリング間隔を秒単位で構成します。
 
 |  |  |  
@@ -159,7 +159,7 @@ SpecialInterval 0x1 フラグが有効になっているときのポーリング
 
 `net stop w32time && net start w32time`
 
-# <a name="frequencycorrectratetabfrequencycorrectrate"></a>[FrequencyCorrectRate](#tab/FrequencyCorrectRate)
+# <a name="frequencycorrectrate"></a>[FrequencyCorrectRate](#tab/FrequencyCorrectRate)
 
 |  |  |  
 |---------|---------|

@@ -6,14 +6,14 @@ ms.technology: networking
 ms.topic: article
 ms.assetid: c94e37a4-3637-4613-9eb5-ed604e831eca
 manager: brianlic
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 86fbe66978f7c09a332bba16a27a13fa029cb5a6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 73798ff4c8af11cc5cfb6461245ba7873f5d6f36
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71401919"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80316722"
 ---
 # <a name="network-shell-netsh-example-batch-file"></a>ネットワーク シェル (\(Netsh\)) のサンプル バッチ ファイル
 

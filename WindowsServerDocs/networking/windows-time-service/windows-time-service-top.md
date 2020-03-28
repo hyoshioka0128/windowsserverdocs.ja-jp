@@ -2,19 +2,19 @@
 ms.assetid: e34622ff-b2d0-4f81-8d00-dacd5d6c215e
 title: Windows タイム サービス
 description: ''
-author: shortpatti
-ms.author: pashort
+author: eross-msft
+ms.author: lizross
 manager: dougkim
 ms.date: 05/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: e3dbaa188426ac81073e706db3adc6ab0a655c01
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4b8b1e91f56ec4d6c070037a0f3cc5ec4d50c63e
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405190"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314924"
 ---
 # <a name="windows-time-service-w32time"></a>Windows タイム サービス (W32Time)
 
