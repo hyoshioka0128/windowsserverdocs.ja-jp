@@ -26,10 +26,10 @@ ms.locfileid: "73956053"
 
 | Windows Server リリース | バージョン | OS ビルド | 対象 | メインストリーム サポートの終了日|延長サポートの終了日 |
 |----------------|---------|----------|----------|---------|----------|
-| Windows Server Version 1909 (半期チャネル) (Datacenter Core、Standard Core) | 1909  | 18363.418.191007-0143 | 2019 年 11 月 12 日 | 2021 年 5 月 11 日 | レビューのメモ |
-| Windows Server バージョン 1903 (半期チャネル)(Datacenter Core、Standard Core) | 1903  | 18362.30.190401-1528 | 2019 年 5 月 21 日 | 2020 年 12 月 8 日 | レビューのメモ |
+| Windows Server Version 1909 (半期チャネル) (Datacenter Core、Standard Core) | 1909  | 18363.418.191007-0143 | 2019 年 11 月 12 日 | 2021 年 5 月 11 日 | 注意欄を参照 |
+| Windows Server バージョン 1903 (半期チャネル)(Datacenter Core、Standard Core) | 1903  | 18362.30.190401-1528 | 2019 年 5 月 21 日 | 2020 年 12 月 8 日 | 注意欄を参照 |
 |Windows Server 2019 (長期サービス チャネル)(Datacenter、Essentials、Standard)|1809|17763.107.1010129-1455|2018 年 11 月 13 日|2024 年 1 月 9 日|2029 年 1 月 9 日|
-|Windows Server バージョン 1809 (半期チャネル)(Datacenter Core、Standard Core)|1809|17763.107.1010129-1455|2018 年 11 月 13 日|2020 年 5 月 12 日|レビューのメモ|
+|Windows Server バージョン 1809 (半期チャネル)(Datacenter Core、Standard Core)|1809|17763.107.1010129-1455|2018 年 11 月 13 日|2020 年 5 月 12 日| 注意欄を参照 |
 | Windows Server 2016 (Long-term Servicing チャネル)| 1607 | 14393.0 | 2016 年 10 月 15 日 |2022 年 1 月 11 日| 2027 年 1 月 11 日|
 
 > [!NOTE]
