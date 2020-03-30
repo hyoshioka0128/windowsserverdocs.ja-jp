@@ -11,14 +11,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 03/10/2020
+ms.date: 03/24/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 981a9071b3f5daf1ca97dcde8a8b32b2a2588d99
-ms.sourcegitcommit: fc900eb19ac26c3d6bc2de179cc4b2c1e971043e
+ms.openlocfilehash: 38b779b12b841e276d8f807af6f6332469c20817
+ms.sourcegitcommit: 9e8fddf683c9a36aad330ebef9b80d57f75ffb43
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "79038065"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80233304"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Windows デスクトップ クライアントの新機能
 
@@ -30,14 +30,14 @@ Windows デスクトップ クライアントの詳細については、「[Wind
 
 |ユーザー グループ |バージョン  |
 |-----------|---------|
-|パブリック     |1.2.675  |
-|Insider    |1.2.787  |
+|パブリック     |1.2.790  |
+|Insider    |1.2.790  |
 
-## <a name="updates-for-version-12787"></a>バージョン 1.2.787 の更新内容
+## <a name="updates-for-version-12790"></a>バージョン 1.2.790 の更新内容
 
-*公開日:2020 年 3 月 10 日*
+*公開日:2020 年 3 月 24 日*
 
-ダウンロード:[Windows 64 ビット](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4qZVh)、[Windows 32 ビット](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4qXhC)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4qRVA)
+ダウンロード:[Windows 64 ビット](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4siSh)、[Windows 32 ビット](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4siSi)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4sllb)
 
 - 他のリモート デスクトップ クライアントとの一貫性を保つために、ワークスペースの "更新" アクションの名前を "最新の情報に更新" に変更しました。
 - コンテキスト メニューからワークスペースを直接更新できるようになりました。
