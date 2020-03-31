@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 436d4bbec0dbb31fd9cdfb4fc29057e32d87888a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0fc273bc84e0bc25a7409941af6dca02b6042640
+ms.sourcegitcommit: 479ad84a0d6c7c7b8308122b8bac8308cb36fe9b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71374108"
+ms.lasthandoff: 03/30/2020
+ms.locfileid: "80391698"
 ---
 # <a name="manage-bde-changekey"></a>manage-bde: 変更キー
 
@@ -36,18 +36,18 @@ manage-bde -changekey [<Drive>] [<PathToExternalKeyDirectory>] [-computername <N
 
 |パラメーター|説明|
 |---------|-----------|
-|\<Drive >|コロンの後にドライブ文字を表します。|
+|\<ドライブ >|コロンの後にドライブ文字を表します。|
 |\<PathToExternalKeyDirectory >|ドライブのロックを解除するために使用する外部のスタートアップ キー ファイルを保存するディレクトリの場所を表します。|
 |-computername|別のコンピューターに BitLocker による保護を変更する、bde.exe を使用することを指定します。 また、このコマンドの省略版として **-cn**を使用することもできます。|
-|\<名前 >|BitLocker による保護を変更するコンピューターの名前を表します。 指定できる値には、コンピューターの NetBIOS 名とコンピューターの IP アドレスが含まれます。|
+|\<名 >|BitLocker による保護を変更するコンピューターの名前を表します。 指定できる値には、コンピューターの NetBIOS 名とコンピューターの IP アドレスが含まれます。|
 |-? または /?|コマンドプロンプトで簡単なヘルプを表示します。|
 |-help または-h|表示は、コマンド プロンプトでヘルプを完了します。|
 
-## <a name="BKMK_Examples"></a>例
+## <a name="examples"></a><a name="BKMK_Examples"></a>例
 
 次の例を使用して、 **- 変更キー** C ドライブに BitLocker 暗号化を使用するドライブ E で、新しい起動キーを作成するコマンド
 ```
-manage-bde –changekey C: E:\
+manage-bde -changekey C: E:\
 ```
 
 #### <a name="additional-references"></a>その他の参照情報
