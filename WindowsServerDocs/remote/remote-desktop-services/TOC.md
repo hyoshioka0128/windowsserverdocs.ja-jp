@@ -93,8 +93,8 @@
 #### [ネットワーク外部から PC へのアクセスを許可する](clients/remote-desktop-allow-outside-access.md)
 #### [PC の RD リスニング ポートを変更する](clients/change-listening-port.md)
 ### 詳細情報
-#### [お客様に最適なクライアント](clients/remote-desktop-app-compare.md)
-#### [リモート デスクトップ (RDP) ファイルの設定](clients/rdp-files.md)
+#### [クライアントの比較](clients/remote-desktop-app-compare.md)
+#### [サポートされるリモート デスクトップ RDP ファイルの設定](clients/rdp-files.md)
 #### [リモート デスクトップの URI のスキーマ](clients/remote-desktop-uri.md)
 #### [リモート デスクトップ クライアントに関する FAQ](clients/remote-desktop-client-faq.md)
 #### [管理対象アプリとデスクトップのプライバシー設定](clients/remote-privacy-settings.md)
