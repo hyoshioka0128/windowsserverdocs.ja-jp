@@ -95,7 +95,7 @@ Windows Server 2008 R2 (SP1) を実行しているコンピューターに Hyper
 
 6.  **[OK]** をクリックして仮想ネットワークを作成して仮想ネットワーク マネージャーを閉じるか、 **[適用]** をクリックして仮想ネットワークを作成して仮想ネットワーク マネージャーの使用を続行します。  
 
-### <a name="BKMK_Build"></a>ドメインコントローラーを構築する  
+### <a name="build-the-domain-controller"></a><a name="BKMK_Build"></a>ドメインコントローラーを構築する  
 ドメイン コントローラー (DC1) として使用する仮想マシンを作成します。 Windows Server 2012 ISO を使用して仮想マシンをインストールし、DC1 という名前を指定します。  
 
 ##### <a name="to-install-active-directory-domain-services"></a>Active Directory ドメイン サービスをインストールするには  
@@ -199,7 +199,7 @@ Active Directory 管理センターを使用して、次のユーザーを作成
     gpupdate /force  
     ```  
 
-### <a name="BKMK_FS1"></a>ファイルサーバーと AD RMS サーバー (FILE1) をビルドする  
+### <a name="build-the-file-server-and-ad-rms-server-file1"></a><a name="BKMK_FS1"></a>ファイルサーバーと AD RMS サーバー (FILE1) をビルドする  
 
 1. Windows Server 2012 ISO から FILE1 という名前の仮想マシンを作成します。  
 
@@ -282,7 +282,7 @@ IFilters をダウンロードしてインストールするには、「 [Micros
 > [!NOTE]  
 > 既定では、システムまたはブート ボリューム C: では、集約型アクセス ポリシーは有効になっていません。  
 
-#### <a name="BKMK_CS1"></a>Active Directory Rights Management サービスのインストール  
+#### <a name="install-active-directory-rights-management-services"></a><a name="BKMK_CS1"></a>Active Directory Rights Management サービスのインストール  
 サーバー マネージャーを使用して、Active Directory Rights Management サービス (AD RMS) およびすべての必要な機能を追加します。 すべての規定値を選択します。  
 
 ###### <a name="to-install-active-directory-rights-management-services"></a>Active Directory Rights Management サービスをインストールするには  
@@ -552,9 +552,9 @@ SRV1 は SMTP/POP3 メール サーバーです。 アクセス拒否アシス�
 
     -   値:DWORD  
 
-## <a name="BKMK_CF"></a>フォレスト間で信頼性情報を展開するためのラボのセットアップ  
+## <a name="lab-setup-for-deploying-claims-across-forests-scenario"></a><a name="BKMK_CF"></a>フォレスト間で信頼性情報を展開するためのラボのセットアップ  
 
-### <a name="BKMK_2.1"></a>DC2 用の仮想マシンの構築  
+### <a name="build-a-virtual-machine-for-dc2"></a><a name="BKMK_2.1"></a>DC2 用の仮想マシンの構築  
 
 -   Windows Server 2012 ISO から仮想マシンを構築します。  
 
@@ -567,7 +567,7 @@ SRV1 は SMTP/POP3 メール サーバーです。 アクセス拒否アシス�
 >   
 > 静的 IP バージョン 4 (IPv4) アドレスおよびドメイン ネーム システム (DNS) クライアント設定を使用するように、すべての仮想マシン イメージ (サーバーとクライアント) を再構成する必要があります。 詳細については、「 [静的 IP アドレスの DNS クライアントを構成する](https://go.microsoft.com/fwlink/?LinkId=150952)」を参照してください。  
 
-### <a name="BKMK_2.2"></a>Adatum.com という名前の新しいフォレストを設定します。  
+### <a name="set-up-a-new-forest-called-adatumcom"></a><a name="BKMK_2.2"></a>Adatum.com という名前の新しいフォレストを設定します。  
 
 ##### <a name="to-install-active-directory-domain-services"></a>Active Directory ドメイン サービスをインストールするには  
 
@@ -620,7 +620,7 @@ SRV1 は SMTP/POP3 メール サーバーです。 アクセス拒否アシス�
 >   
 > これらのコマンドがエラーなしで実行された場合、フォレストは相互に通信できます。 nslookup のエラーについて詳しくは、トピック「 [NSlookup.exe の使用方法](https://support.microsoft.com/kb/200525)」のトラブルシューティングのセクションを参照してください。  
 
-### <a name="BKMK_2.22"></a>Contoso.com を adatum.com に信頼する側のフォレストとして設定します。  
+### <a name="set-contosocom-as-a-trusting-forest-to-adatumcom"></a><a name="BKMK_2.22"></a>Contoso.com を adatum.com に信頼する側のフォレストとして設定します。  
 この手順では、Adatum Corporation サイトと Contoso, Ltd. サイト間に信頼関係を作成します。  
 
 ##### <a name="to-set-contoso-as-a-trusting-forest-to-adatum"></a>Adatum に信頼する側のフォレストとして Contoso を設定するには  
@@ -641,7 +641,7 @@ SRV1 は SMTP/POP3 メール サーバーです。 アクセス拒否アシス�
 
 8.  引き続き、ウィザードの手順に従います。  
 
-### <a name="BKMK_2.4"></a>Adatum フォレストに追加のユーザーを作成する  
+### <a name="create-additional-users-in-the-adatum-forest"></a><a name="BKMK_2.4"></a>Adatum フォレストに追加のユーザーを作成する  
 パスワード<strong>pass@word1</strong>を使用してユーザー Jeff Low を作成し、値**Adatum**で company 属性を割り当てます。  
 
 ##### <a name="to-create-a-user-with-the-company-attribute"></a>Company 属性を指定してユーザーを作成するには  
@@ -662,7 +662,7 @@ SRV1 は SMTP/POP3 メール サーバーです。 アクセス拒否アシス�
 
     ```  
 
-### <a name="BKMK_2.5"></a>Adataum.com で会社の要求の種類を作成する  
+### <a name="create-the-company-claim-type-on-adataumcom"></a><a name="BKMK_2.5"></a>Adataum.com で会社の要求の種類を作成する  
 
 ##### <a name="to-create-a-claim-type-by-using-windows-powershell"></a>Windows PowerShell を使用して信頼性情報の種類を作成するには  
 
@@ -683,7 +683,7 @@ SRV1 は SMTP/POP3 メール サーバーです。 アクセス拒否アシス�
 
     ```  
 
-### <a name="BKMK_2.55"></a>Contoso.com で Company リソースプロパティを有効にする  
+### <a name="enable-the-company-resource-property-on-contosocom"></a><a name="BKMK_2.55"></a>Contoso.com で Company リソースプロパティを有効にする  
 
 ##### <a name="to-enable-the-company-resource-property-on-contosocom"></a>contoso.com で Company リソース プロパティを有効にするには  
 
@@ -697,7 +697,7 @@ SRV1 は SMTP/POP3 メール サーバーです。 アクセス拒否アシス�
 
 5.  **[リソース プロパティ]** リストから **[Company]** を選択し、右クリックして **[有効にする]** を選択します。  
 
-### <a name="BKMK_2.6"></a>Adatum.com での動的 Access Control の有効化  
+### <a name="enable-dynamic-access-control-on-adatumcom"></a><a name="BKMK_2.6"></a>Adatum.com での動的 Access Control の有効化  
 
 ##### <a name="to-enable-dynamic-access-control-for-adatumcom"></a>adatum.com でダイナミック アクセス制御を有効にするには  
 
@@ -717,7 +717,7 @@ SRV1 は SMTP/POP3 メール サーバーです。 アクセス拒否アシス�
     gpupdate /force  
     ```  
 
-### <a name="BKMK_2.8"></a>Contoso.com で会社の要求の種類を作成する  
+### <a name="create-the-company-claim-type-on-contosocom"></a><a name="BKMK_2.8"></a>Contoso.com で会社の要求の種類を作成する  
 
 ##### <a name="to-create-a-claim-type-by-using-windows-powershell"></a>Windows PowerShell を使用して信頼性情報の種類を作成するには  
 
@@ -734,7 +734,7 @@ SRV1 は SMTP/POP3 メール サーバーです。 アクセス拒否アシス�
 
     ```  
 
-### <a name="BKMK_2.9"></a>集約型アクセス規則を作成する  
+### <a name="create-the-central-access-rule"></a><a name="BKMK_2.9"></a>集約型アクセス規則を作成する  
 
 ##### <a name="to-create-a-central-access-rule"></a>集約型アクセス規則を作成するには  
 
@@ -765,7 +765,7 @@ SRV1 は SMTP/POP3 メール サーバーです。 アクセス拒否アシス�
    -Server:"contoso.com" `  
    ```  
 
-### <a name="BKMK_2.10"></a>集約型アクセスポリシーを作成する  
+### <a name="create-the-central-access-policy"></a><a name="BKMK_2.10"></a>集約型アクセスポリシーを作成する  
 
 ##### <a name="to-create-a-central-access-policy"></a>集約型アクセスポリシーを作成するには  
 
@@ -779,7 +779,7 @@ SRV1 は SMTP/POP3 メール サーバーです。 アクセス拒否アシス�
     -Member "AdatumEmployeeAccessRule" `  
     ```  
 
-### <a name="BKMK_2.11"></a>グループポリシーを使用して新しいポリシーを発行する  
+### <a name="publish-the-new-policy-through-group-policy"></a><a name="BKMK_2.11"></a>グループポリシーを使用して新しいポリシーを発行する  
 
 ##### <a name="to-apply-the-central-access-policy-across-file-servers-through-group-policy"></a>グループ ポリシーを使用してファイル サーバー全体で集約型アクセス ポリシーを適用するには  
 
@@ -811,13 +811,13 @@ SRV1 は SMTP/POP3 メール サーバーです。 アクセス拒否アシス�
 
 7.  グループ ポリシー管理エディターを閉じます。 これで、集約型アクセス ポリシーがグループ ポリシーに追加されました。  
 
-### <a name="BKMK_2.12"></a>ファイルサーバーでの [所得] フォルダーの作成  
+### <a name="create-the-earnings-folder-on-the-file-server"></a><a name="BKMK_2.12"></a>ファイルサーバーでの [所得] フォルダーの作成  
 FILE1 で新規 NTFS ボリュームを作成し、次のフォルダーを作成します。D:\Earnings。  
 
 > [!NOTE]  
 > 既定では、システムまたはブート ボリューム C: では、集約型アクセス ポリシーは有効になっていません。  
 
-### <a name="BKMK_2.13"></a>分類を設定し、[所得] フォルダーに集約型アクセスポリシーを適用します。  
+### <a name="set-classification-and-apply-the-central-access-policy-on-the-earnings-folder"></a><a name="BKMK_2.13"></a>分類を設定し、[所得] フォルダーに集約型アクセスポリシーを適用します。  
 
 ##### <a name="to-assign-the-central-access-policy-on-the-file-server"></a>ファイル サーバーで集約型アクセス ポリシーを割り当てるには  
 
