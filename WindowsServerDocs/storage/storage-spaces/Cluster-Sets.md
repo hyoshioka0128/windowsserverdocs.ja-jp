@@ -8,12 +8,12 @@ author: johnmarlin-msft
 ms.date: 01/30/2019
 description: この記事では、クラスターセットのシナリオについて説明します。
 ms.localizationpriority: medium
-ms.openlocfilehash: 52d686fa9797d84f56182b15c36a26440792ec13
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: db427e8fa4e5574c6eb7837cf0ab4a9fcc180410
+ms.sourcegitcommit: 3c3dfee8ada0083f97a58997d22d218a5d73b9c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402918"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80639960"
 ---
 # <a name="cluster-sets"></a>クラスター セット
 
@@ -65,7 +65,7 @@ ms.locfileid: "71402918"
 
 **可用性セット**
 
-可用性セットを使用すると、管理者は、クラスター化されたワークロードを可用性セットに整理し、その可用性セットにワークロードを展開することで、クラスター化されたワークロードの必要な冗長性を構成できます。 たとえば、2層アプリケーションをデプロイする場合は、各レベルの可用性セットに少なくとも2つの仮想マシンを構成することをお勧めします。これにより、可用性セット内の1つの障害ドメインがダウンしたときに、アプリケーションが少なくとも同じ可用性セットの異なる障害ドメインでホストされている各層内の1つの仮想マシン。
+可用性セットを使用すると、管理者は、クラスター化されたワークロードを可用性セットに整理し、その可用性セットにワークロードを展開することで、クラスター化されたワークロードの必要な冗長性を構成できます。 たとえば、2層アプリケーションを配置する場合は、各層の可用性セットに少なくとも2つの仮想マシンを構成することをお勧めします。これにより、その可用性セット内の1つの障害ドメインがダウンしたときに、アプリケーションは、同じ可用性セットの異なる障害ドメインでホストされている各層に少なくとも1つ
 
 ## <a name="why-use-cluster-sets"></a>クラスターセットを使用する理由
 
@@ -100,7 +100,7 @@ Windows Server 2019 には、インフラストラクチャスケールアウト
 
 インフラストラクチャ SOFS の役割には、次の考慮事項が適用されます。
 
-1.  フェールオーバークラスターには、最大で1つの Infrastructure SOFS クラスターロールしか存在できません。 Infrastructure SOFS ロールは、 **ClusterScaleOutFileServerRole**コマンドレットに " **-Infrastructure**" スイッチパラメーターを指定することによって作成されます。  次に、例を示します。
+1.  フェールオーバークラスターには、最大で1つの Infrastructure SOFS クラスターロールしか存在できません。 Infrastructure SOFS ロールは、 **ClusterScaleOutFileServerRole**コマンドレットに " **-Infrastructure**" スイッチパラメーターを指定することによって作成されます。  例 :
 
         Add-ClusterScaleoutFileServerRole -Name "my_infra_sofs_name" -Infrastructure
 
@@ -129,7 +129,7 @@ Windows Server 2019 には、インフラストラクチャスケールアウト
 
 1. 前提条件の定義に従って、3つのクラスターから新しいクラスターセットを作成します。  次の表は、作成するクラスターの例を示しています。  この例では、クラスターセットの名前は**Csmaster**です。
 
-   | クラスタ名               | 後で使用する Infrastructure SOFS の名前 | 
+   | クラスター名               | 後で使用する Infrastructure SOFS の名前 | 
    |----------------------------|-------------------------------------------|
    | クラスターの設定                | SOFS-CLUSTERSET                           |
    | CLUSTER1                   | SOFS-CLUSTER1                             |
@@ -163,7 +163,7 @@ Windows Server 2019 には、インフラストラクチャスケールアウト
 
         Get-ClusterSet -CimSession CSMASTER | Get-Cluster | Get-ClusterGroup 
 
-8. クラスターセットの作成プロセスによって1つの SMB 共有が作成されたことを確認するには (Volume1 として識別されるか、または、各クラスターメンバーのインフラストラクチャ SOFS で、ScopeName がインフラストラクチャファイルサーバーの名前であり、両方とも名前が付けられています)、CSV ボリューム:
+8. クラスターセット作成プロセスによって1つの SMB 共有が作成されたことを確認するには (Volume1 として識別されるか、または、各クラスターメンバーの CSV ボリュームのインフラストラクチャ SOFS で、ScopeName がインフラストラクチャファイルサーバーの名前であり、両方とも)、次のように名前が付けられていることを確認します。
 
         Get-SmbShare -CimSession CSMASTER
 
@@ -171,7 +171,7 @@ Windows Server 2019 には、インフラストラクチャスケールアウト
 
         Get-ClusterSetLog -ClusterSetCimSession CSMASTER -IncludeClusterLog -IncludeManagementClusterLog -DestinationFolderPath <path>
 
-9. すべてのクラスターセットメンバー間で Kerberos の[制約付き委任](https://blogs.technet.microsoft.com/virtualization/2017/02/01/live-migration-via-constrained-delegation-with-kerberos-in-windows-server-2016/)を構成します。
+9. すべてのクラスターセットメンバー間で Kerberos の[制約付き委任](https://techcommunity.microsoft.com/t5/virtualization/live-migration-via-constrained-delegation-with-kerberos-in/ba-p/382334)を構成します。
 
 10. クラスターセット内の各ノードで、クラスター間の仮想マシンのライブマイグレーションの認証の種類を Kerberos に構成します。
 
@@ -260,7 +260,7 @@ Windows Server 2019 には、インフラストラクチャスケールアウト
 
 クラスターセットでは、これらの手順は必要ありません。コマンドは1つだけ必要です。  まず、次のコマンドを使用して、すべてのネットワークを移行に使用できるように設定する必要があります。
 
-    Set-VMHost -UseAnyNetworkMigration $true
+    Set-VMHost -UseAnyNetworkForMigration $true
 
 たとえば、クラスターセットの仮想マシンを CLUSTER1 から CL3 に移動します。  1つのコマンドは次のようになります。
 

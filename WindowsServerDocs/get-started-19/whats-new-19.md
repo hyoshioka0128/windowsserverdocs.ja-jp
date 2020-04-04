@@ -8,12 +8,12 @@ author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: high
 ms.date: 06/04/2019
-ms.openlocfilehash: dd8cd6700323075a380aa062bfa1d208b3e30f83
-ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
+ms.openlocfilehash: 47269fbfac6aea3fe46513ad67d2cfa2f0c9b78e
+ms.sourcegitcommit: 3c3dfee8ada0083f97a58997d22d218a5d73b9c4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77465496"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80639916"
 ---
 # <a name="whats-new-in-windows-server-2019"></a>Windows Server 2019 の新機能
 
@@ -63,7 +63,7 @@ ATP のディープ プラットフォーム センサーおよび対応アク�
 
 -   [Attack Surface Reduction (ASR)](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-exploit-guard/attack-surface-reduction-exploit-guard?ocid=cx-blog-mmpc) は、疑わしいファイルおよび悪意のあるファイル (Office ファイルなど)、スクリプト、ラテラル ムーブメント、ランサムウェア動作、メール ベースの脅威をブロックすることにより、企業でコンピューターへのマルウェアの侵入を防止するための一連のコントロールです。
 
--   [ネットワーク保護](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-exploit-guard/network-protection-exploit-guard?ocid=cx-blog-mmpc)では、Windows Defender SmartScreen によって、信頼されていないホスト/IP アドレスへの送信プロセスをデバイスでブロックすることにより、Web ベースの脅威からエンドポイントを保護します。
+-   [ネットワーク保護](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-atp/network-protection)では、Windows Defender SmartScreen によって、信頼されていないホスト/IP アドレスへの送信プロセスをデバイスでブロックすることにより、Web ベースの脅威からエンドポイントを保護します。
 
 -   [フォルダー アクセスの制御](https://cloudblogs.microsoft.com/microsoftsecure/2017/10/23/stopping-ransomware-where-it-counts-protecting-your-data-with-controlled-folder-access/?ocid=cx-blog-mmpc?source=mmpc)では、信頼されていないプロセスから保護されたフォルダーへのアクセスをブロックすることで、機密データをランサムウェアから保護します。
 

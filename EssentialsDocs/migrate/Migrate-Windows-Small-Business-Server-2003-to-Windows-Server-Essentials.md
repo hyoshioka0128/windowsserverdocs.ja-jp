@@ -12,12 +12,12 @@ ms.assetid: 119a7fbc-2c76-4aa3-8a7f-c7073d461b5b
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: b9c4e60864566d978603276c3119d3cbff1bbf57
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: b99a21d38011b40515fb322429b73f23ad5849cf
+ms.sourcegitcommit: 3c3dfee8ada0083f97a58997d22d218a5d73b9c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80318931"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80639898"
 ---
 # <a name="migrate-windows-small-business-server-2003-to-windows-server-essentials"></a>Windows Small Business Server 2003 から Windows Server Essentials への移行
 
@@ -64,23 +64,7 @@ ms.locfileid: "80318931"
   
 7.  [Windows Server Essentials への移行のために移行後のタスクを実行](Perform-post-migration-tasks-for-Windows-Server-Essentials-migration.md)します。  すべての設定とデータを Windows Server Essentials に移行したら、許可されたコンピューターをユーザーアカウントにマップすることができます。  
   
-8.  [Windows Server Essentials ベストプラクティスアナライザーを実行](Run-the-Windows-Server-Essentials-Best-Practices-Analyzer.md)します。  Windows Server Essentials への設定とデータの移行が完了したら、Windows Server Essentials BPA をダウンロードして実行する必要があります。  
-
-1.  [Windows Server Essentials への移行のために移行元サーバーを準備](../migrate/Prepare-your-Source-Server-for-Windows-Server-Essentials-migration.md)します。  移行元サーバーおよびネットワークが、移行できる状態になっていることを確認する必要があります。 ここでは、移行元サーバーのバックアップ、移行元サーバーのシステム正常性の評価、最新のサービス パックと修正プログラムのインストール、およびネットワーク構成の確認について詳しく説明します。  
-  
-2.  [Windows Server Essentials を移行モードでインストール](../migrate/Install-Windows-Server-Essentials-in-migration-mode.md)します。  ここでは、移行先サーバーに Windows Server Essentials を移行モードでインストールするために実行する手順について説明します。  
-  
-3.  [新しい Windows Server Essentials ネットワークにコンピューターを参加](../migrate/Join-computers-to-the-new-Windows-Server-Essentials-network.md)させます。  このセクションでは、クライアントコンピューターを新しい Windows Server Essentials ネットワークに参加させ、グループポリシーの設定を更新する方法について説明します。  
-  
-4.  [SBS 2003 の設定とデータを移行先サーバーに移動](../migrate/Move-Windows-SBS-2003-settings-and-data-to-the-Destination-Server-for-Windows-Server-Essentials-migration.md)します。  ここでは、移行元サーバーからのデータと設定の移行について説明します。  
-  
-5.  [Windows Server Essentials の移行先サーバーでフォルダーリダイレクトを有効に](../migrate/Enable-folder-redirection-on-the-Windows-Server-Essentials-Destination-Server.md)します。  移行元サーバーでフォルダー リダイレクトが有効になっている場合は、移行先サーバーでフォルダー リダイレクトを有効にしてから、以前のフォルダー リダイレクト グループ ポリシー設定を削除できます。  
-  
-6.  [新しい Windows Server Essentials ネットワークから移行元サーバーを降格し、削除](../migrate/Demote-and-remove-the-Source-Server-from-the-new-Windows-Server-Essentials-network.md)します。  移行元サーバーをネットワークから削除する前に、グループ ポリシーの更新を強制し、移行元サーバーを降格する必要があります。  
-  
-7.  [Windows Server Essentials への移行のために移行後のタスクを実行](../migrate/Perform-post-migration-tasks-for-Windows-Server-Essentials-migration.md)します。  すべての設定とデータを Windows Server Essentials に移行したら、許可されたコンピューターをユーザーアカウントにマップすることができます。  
-  
-8.  [Windows Server Essentials ベストプラクティスアナライザーを実行](../migrate/Run-the-Windows-Server-Essentials-Best-Practices-Analyzer.md)します。  Windows Server Essentials への設定とデータの移行が完了したら、Windows Server Essentials BPA をダウンロードして実行する必要があります。  
+8.  [Windows Server Essentials ベストプラクティスアナライザーを実行](Run-the-Windows-Server-Essentials-Best-Practices-Analyzer.md)します。  Windows Server Essentials への設定とデータの移行が完了したら、Windows Server Essentials BPA をダウンロードして実行する必要があります。   
 
   
  いくつかの移行手順では、管理者としてコマンド プロンプト ウィンドウを開く必要があります。  

@@ -13,16 +13,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4559016388f9b0d765c8e4d76f76fa7ef0a7f0f0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9c7bca5be7a8ec0e857cba65680fbc3b967af4f8
+ms.sourcegitcommit: 3c3dfee8ada0083f97a58997d22d218a5d73b9c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361602"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80639754"
 ---
 # <a name="setting-up-update-synchronizations"></a>更新プログラムの同期を設定する
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2019、Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 同期中には、WSUS サーバーは、更新ソースから更新プログラム (メタデータとファイルの更新) をダウンロードします。 一緒にダウンロード新しい製品の分類、カテゴリ、存在する場合。 WSUS サーバーを初めて同期すると、すべての同期オプションを構成したときに指定した更新プログラムがダウンロードされます。 初回同期後は、WSUS サーバーは、更新プログラムを更新ソースと既存の更新と期限切れのメタデータ内の変更履歴からの更新のみをダウンロードします。
 
@@ -77,7 +77,7 @@ Microsoft Update カタログサイトからの更新プログラムの同期の
 
     -   プロキシサーバーに接続しているユーザーの基本認証を有効にする場合は、 **[基本認証を許可する (クリアテキストでパスワードを送信する)]** チェックボックスをオンにします。
 
-3.  **[OK]** をクリックします。
+3.  **[OK]** をクリックすると、
 
     > [!NOTE]
     > WSUS を開始すると、すべてのネットワーク トラフィックが、ために、Microsoft update に直接接続されている WSUS サーバーで Windows ファイアウォールを構成する必要はありません。
@@ -110,7 +110,7 @@ WSUS サーバーを手動で同期するか、自動的に同期するには、
 
 4.  1**日の同期**については、毎日実行する同期の数を選択します。 たとえば、する場合は 4 つの同期を開始、毎日午前 3 時にの同期が午前 3 時まで、午前 9時 00分午後 3 時と午後 9時 00分 1 日です。 (ランダムな時間のオフセットが、スケジュールされた同期にかかる時間を間隔に、Microsoft Update サーバー接続するために追加されることに注意してください)。
 
-5.  **[OK]** をクリックします。
+5.  **[OK]** をクリックすると、
 
 #### <a name="to-synchronize-your-wsus-server-immediately"></a>WSUS サーバーをすぐに同期するには
 

@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: 90e544bd-e826-4093-8c3b-6a6fc2dfd1d6
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 278d813aa13ea42b7f597bdbe7eb210f68cee955
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 4e6e6d2612af80bdaaa3900414bb08c3f0c18ea3
+ms.sourcegitcommit: 3c3dfee8ada0083f97a58997d22d218a5d73b9c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80316303"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80639910"
 ---
 # <a name="network-policy-server-best-practices"></a>ネットワーク ポリシー サーバーのベスト プラクティス
 
@@ -97,7 +97,7 @@ NPS のパフォーマンスチューニングのベストプラクティスを�
 
 - 可能な場合は常に、ユーザーの参照にはユーザー プリンシパル名を使用します。 ドメインのメンバーであるかどうかにかかわらず、ユーザーには同じユーザー プリンシパル名を付けることができます。 こうすることで、ドメインが多数ある組織に必要となる拡張性が実現します。
 
-- ドメインコントローラー以外のコンピューターにネットワークポリシーサーバー \(NPS\) インストールし、NPS が1秒あたりに多数の認証要求を受信している場合は、nps とドメインコントローラー間で許可される同時認証の数を増やすことで、NPS のパフォーマンスを向上させることができます。 詳細については、 を参照してください。 
+- ドメインコントローラー以外のコンピューターにネットワークポリシーサーバー \(NPS\) インストールし、NPS が1秒あたりに多数の認証要求を受信している場合は、nps とドメインコントローラー間で許可される同時認証の数を増やすことで、NPS のパフォーマンスを向上させることができます。 詳細については、「 [NPS によって処理される同時認証](https://docs.microsoft.com/windows-server/networking/technologies/nps/nps-concurrent-auth)の数を増やす」を参照してください。
 
 ## <a name="security-issues"></a>セキュリティに関する問題
 

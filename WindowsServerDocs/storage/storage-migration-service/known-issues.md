@@ -8,12 +8,12 @@ ms.date: 02/10/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: a9759f0ea8835c8e07bcd298b75024e3ee29c9ed
-ms.sourcegitcommit: b5c12007b4c8fdad56076d4827790a79686596af
+ms.openlocfilehash: f8a1e70bba740875e19660d5a729a952c9fae8f2
+ms.sourcegitcommit: d56c042c58833bdaa9a6fe54dd68f540af12fc6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78856346"
+ms.lasthandoff: 04/04/2020
+ms.locfileid: "80661066"
 ---
 # <a name="storage-migration-service-known-issues"></a>記憶域移行サービスの既知の問題
 
@@ -23,7 +23,7 @@ ms.locfileid: "78856346"
 
 たとえば、Windows Server バージョン1903には、記憶域移行サービスの新機能と修正プログラムが含まれています。これは、 [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)をインストールすることによって、windows server 2019 と windows server、バージョン1809でも利用できます。
 
-## <a name="collecting-logs"></a>Microsoft サポートを操作するときにログファイルを収集する方法
+## <a name="how-to-collect-log-files-when-working-with-microsoft-support"></a><a name="collecting-logs"></a>Microsoft サポートを操作するときにログファイルを収集する方法
 
 Storage Migration Service には、Orchestrator サービスとプロキシサービスのイベントログが含まれています。 Orchestrator サーバーには常に両方のイベントログが含まれ、プロキシサービスがインストールされている宛先サーバーにはプロキシログが含まれます。 これらのログは次の場所にあります。
 
@@ -343,7 +343,7 @@ Windows Server 2008 R2 クラスターソースに対して切り取りを実行
        at Microsoft.FailoverClusters.Framework.ClusterUtils.RenameFSNetName(SafeClusterHandle ClusterHandle, String clusterName, String FsResourceId, String NetNameResourceId, String newDnsName, CancellationToken ct)
        at Microsoft.StorageMigration.Proxy.Cutover.CutoverUtils.RenameFSNetName(NetworkCredential networkCredential, Boolean isLocal, String clusterName, String fsResourceId, String nnResourceId, String newDnsName, CancellationToken ct)    [d:\os\src\base\dms\proxy\cutover\cutoverproxy\CutoverUtils.cs::RenameFSNetName::1510]
 
-この問題は、以前のバージョンの Windows Server で API が不足していることが原因で発生します。 現時点では、Windows Server 2008 および Windows Server 2003 クラスターを移行する方法はありません。 Windows Server 2008 R2 クラスターでは、インベントリと転送を実行できます。その後、クラスターのソースファイルサーバーリソースのネット名と IP アドレスを手動で変更して、移行先クラスターのネット名と IP アドレスを変更することで、手動でカットオーバーを実行できます。元のソースに一致するアドレス。 
+この問題は、以前のバージョンの Windows Server で API が不足していることが原因で発生します。 現時点では、Windows Server 2008 および Windows Server 2003 クラスターを移行する方法はありません。 Windows Server 2008 R2 クラスターでは、インベントリおよび転送を実行できます。その後、クラスターのソースファイルサーバーリソースのネット名と IP アドレスを手動で変更して、移行先クラスターのネット名と IP アドレスを元のソースに一致するように変更することで、手動でカットオーバーを実行できます。 
 
 ## <a name="cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer-when-using-dhcp"></a>"38% のソースコンピューターのネットワークインターフェイスのマッピングが停止しています..."DHCP を使用する場合 
 
@@ -421,7 +421,7 @@ Windows Server 2008 R2 クラスターソースに対して切り取りを実行
     Get-ADObject -Filter 'Description -like "*storage migration service renamed*"' -SearchBase 'DC=<domain>,DC=<TLD>' | ft name,distinguishedname
     ```
    
- 2. 元の名前で返されたユーザーについては、"ユーザーログオン名 (Windows 2000)" を編集して、記憶域移行サービスによって追加されたランダムな文字サフィックスを削除します。これにより、このような敗者がログオンできるようになります。
+ 2. 元の名前で返されたユーザーについては、"ユーザーログオン名 (Windows 2000)" を編集して、記憶域移行サービスによって追加されたランダムな文字サフィックスを削除して、このユーザーがログオンできるようにします。
  3. 元の名前で返されたグループについては、"グループ名 (Windows 2000 より前)" を編集して、記憶域移行サービスによって追加されたランダムな文字サフィックスを削除します。
  4. ストレージ移行サービスによって追加されたサフィックスを含む名前を持つ、無効になっているユーザーまたはグループについては、これらのアカウントを削除できます。 ユーザーアカウントが後で追加されたことを確認するには、ドメインユーザーグループのみが含まれており、作成された日付/時刻がストレージ移行サービス転送の開始時刻と一致するようにします。
  
@@ -484,7 +484,7 @@ Windows Server 2008 R2 クラスターソースに対して切り取りを実行
  - ソースコンピューターでリモートレジストリサービスが実行されていません。
  - ファイアウォールは、Orchestrator から移行元サーバーへのリモートレジストリ接続を許可しません。
  - ソース移行アカウントに、ソースコンピューターに接続するためのリモートレジストリアクセス許可がありません。
- - ソース移行アカウントには、ソースコンピューターのレジストリ内で、"HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows NT\CurrentVersion" または "HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\" の下に読み取りアクセス許可がありません。LanmanServer
+ - 移行元コンピューターのレジストリ内で、"HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows NT\CurrentVersion" または "HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\LanmanServer" の下に読み取りアクセス許可がありません。
  
  ## <a name="cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer"></a>"38% のソースコンピューターのネットワークインターフェイスのマッピングが停止しています..." 
 

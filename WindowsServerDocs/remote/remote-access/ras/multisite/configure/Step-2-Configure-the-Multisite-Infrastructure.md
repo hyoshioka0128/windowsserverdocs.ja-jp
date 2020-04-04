@@ -12,12 +12,12 @@ ms.topic: article
 ms.assetid: faec70ac-88c0-4b0a-85c7-f0fe21e28257
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 6f020dc2bf5c0dc11d18e886346a98a4a40f3855
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 9434f3192da110c8ad61e999d2aecd02bfff3812
+ms.sourcegitcommit: 3c3dfee8ada0083f97a58997d22d218a5d73b9c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80314053"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80639838"
 ---
 # <a name="step-2-configure-the-multisite-infrastructure"></a>手順 2 は、マルチサイトのインフラストラクチャを構成します。
 
@@ -241,7 +241,7 @@ PDC エミュレーターとして実行されているドメインコントロ�
   
 #### <a name="to-change-the-domain-controller-that-manages-server-gpos"></a><a name="ChangeDC"></a>サーバー Gpo を管理するドメインコントローラーを変更するには  
   
--   Windows PowerShell コマンドレットを実行  `HYPERLINK "https://technet.microsoft.com/library/hh918412.aspx" Set-DAEntryPointDC` リモート アクセス サーバーに到達できないドメイン コント ローラー名を指定し、 *ExistingDC* パラメーター。 このコマンドは、ドメインコントローラーによって現在管理されているエントリポイントのサーバー Gpo に対するドメインコントローラーの関連付けを変更します。  
+-   リモートアクセスサーバーで Windows PowerShell コマンドレット[set-daentrypointdc](https://docs.microsoft.com/powershell/module/remoteaccess/set-daentrypointdc)を実行し、 *existingdc*パラメーターに到達できないドメインコントローラー名を指定します。 このコマンドは、ドメインコントローラーによって現在管理されているエントリポイントのサーバー Gpo に対するドメインコントローラーの関連付けを変更します。
   
     -   "Dc1.corp.contoso.com"到達できないドメイン コント ローラーをドメイン コント ローラー"dc2.corp.contoso.com"で置き換えるには、次の操作を行います。  
   
@@ -300,7 +300,7 @@ PDC エミュレーターとして実行されているドメインコントロ�
     ![Windows PowerShell](../../../../media/Step-2-Configure-the-Multisite-Infrastructure/DCAssocFinal.png)  
   
 ### <a name="optimization-of-configuration-distribution"></a><a name="ConfigDistOptimization"></a>構成配布の最適化  
-構成を変更すると、サーバー Gpo がリモートアクセスサーバーに伝達された後にのみ、変更が適用されます。 構成の配布時間を短縮するために、リモートアクセスは、サーバー GPO を作成するときに、リモートアクセスサーバーに最も近いハイパーリンク "<https://technet.microsoft.com/library/cc978016.aspx>" である書き込み可能なドメインコントローラーを自動的に選択します。  
+構成を変更すると、サーバー Gpo がリモートアクセスサーバーに伝達された後にのみ、変更が適用されます。 構成の配布時間を短縮するために、リモートアクセスはサーバー GPO を作成するときに、[リモートアクセスサーバーに最も近い](https://technet.microsoft.com/library/cc978016.aspx)書き込み可能なドメインコントローラーを自動的に選択します。  
   
 場合によっては、構成配布時間を最適化するために、サーバー GPO を管理するドメインコントローラーを手動で変更しなければならないことがあります。  
   
@@ -336,4 +336,3 @@ PDC エミュレーターとして実行されているドメインコントロ�
   
 -   [手順 3: マルチサイト展開を構成する](Step-3-Configure-the-Multisite-Deployment.md)  
 -   [手順 1: 単一サーバーのリモートアクセスの展開を実装する](Step-1-Implement-a-Single-Server-Remote-Access-Deployment.md)  
-
