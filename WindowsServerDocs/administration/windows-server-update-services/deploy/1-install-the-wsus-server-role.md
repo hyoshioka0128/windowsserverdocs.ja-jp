@@ -10,16 +10,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 22554a9669c30cc827c509824f187fbaaedb1272
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5d71a26cbe889f5de11934b2af411ac407fc5e75
+ms.sourcegitcommit: 3c3dfee8ada0083f97a58997d22d218a5d73b9c4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361701"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80639858"
 ---
 # <a name="step-1-install-the-wsus-server-role"></a>手順 1:WSUS サーバー ロールをインストールする
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用先:Windows Server 2019、Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 WSUS サーバーの展開では、次に、WSUS サーバーの役割をインストールします。 次の手順では、サーバー マネージャーを使用して WSUS サーバーの役割をインストールする方法について説明します。
 

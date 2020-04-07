@@ -13,12 +13,12 @@ ms.custom:
 - CI ID 113344
 - CSSTroubleshoot
 audience: Admin
-ms.openlocfilehash: e9432aa11446cdd4f00efca3af28c24d757d6019
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 52c3d1527726241313cf2b741fbc5a5799aca661
+ms.sourcegitcommit: d56c042c58833bdaa9a6fe54dd68f540af12fc6e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80315136"
+ms.lasthandoff: 04/04/2020
+ms.locfileid: "80661082"
 ---
 # <a name="windows-time-service-tools-and-settings"></a>Windows タイム サービスのツールと設定
 
@@ -133,7 +133,7 @@ Windows では、次のサブキーの下にあるレジストリのポリシー
 |タイム プロバイダー\Windows NTP サーバーを有効にする |W32Time\TimeProviders\NtpServer |
 
 > <sup>1</sup> カテゴリ パス:**コンピュータの構成\管理用テンプレート\システム\Windows タイム サービス**  
-> <sup>2</sup> サブキー:**HKLM\SOFTWARE\Policies\Microsoft\Windows**  
+> <sup>2</sup> サブキー:**HKLM\SOFTWARE\Policies\Microsoft**  
 > <sup>3</sup> サブキー:**HKLM\SYSTEM\CurrentControlSet\Services**
 
 ## <a name="enabling-w32time-logging"></a>W32Time ログの有効化
