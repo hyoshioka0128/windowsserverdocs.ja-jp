@@ -1,7 +1,6 @@
 ---
 ms.assetid: bd64a766-5362-4f29-b963-5465c2bb79e7
 title: 操作マスターの役割の配置を計画する
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,16 +8,16 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: eb17ed55ba7d7ba23d21162fd41f4022821948fe
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 990f93d44189a6061653d5e190a176b049a280c4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402525"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822105"
 ---
 # <a name="planning-operations-master-role-placement"></a>操作マスターの役割の配置を計画する
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 Active Directory Domain Services (AD DS) では、ディレクトリデータのマルチマスターレプリケーションがサポートされています。つまり、すべてのドメインコントローラーがディレクトリの変更を受け入れ、その変更を他のすべてのドメインコントローラーにレプリケートすることができます。 ただし、スキーマの変更などの特定の変更は、マルチマスター方式で実行するのは現実的ではありません。 このため、特定の特定の変更に対する要求の受け入れを担当する役割は、操作マスターと呼ばれる特定のドメインコントローラーに保持されます。  
   
@@ -52,11 +51,11 @@ Active Directory Domain Services (AD DS) では、ディレクトリデータの
 
 PDC エミュレーターは、クライアントパスワードの変更を処理します。 フォレスト内の各ドメインで PDC エミュレーターとして機能するのは、1つのドメインコントローラーだけです。  
   
-すべてのドメインコントローラーが windows 2000、Windows Server 2003、および Windows Server 2008 にアップグレードされ、ドメインが Windows 2000 ネイティブ機能レベルで動作している場合でも、PDC エミュレーターは、実行されたパスワード変更の優先的なレプリケーションを受信します。ドメイン内の他のドメインコントローラー。 パスワードが最近変更された場合、その変更は、ドメイン内のすべてのドメインコントローラーにレプリケートされるまでに時間がかかります。 パスワードが正しくないために別のドメインコントローラーでログオン認証が失敗した場合、ドメインコントローラーは、ログオン試行を受け入れるか拒否するかを決定する前に、認証要求を PDC エミュレーターに転送します。  
+すべてのドメインコントローラーが windows 2000、Windows Server 2003、および Windows Server 2008 にアップグレードされ、ドメインが Windows 2000 ネイティブ機能レベルで動作している場合でも、PDC エミュレーターは、ドメイン内の他のドメインコントローラーによって実行されたパスワード変更の優先的なレプリケーションを受け取ります。 パスワードが最近変更された場合、その変更は、ドメイン内のすべてのドメインコントローラーにレプリケートされるまでに時間がかかります。 パスワードが正しくないために別のドメインコントローラーでログオン認証が失敗した場合、ドメインコントローラーは、ログオン試行を受け入れるか拒否するかを決定する前に、認証要求を PDC エミュレーターに転送します。  
   
 必要に応じて、パスワード転送操作のために、そのドメインのユーザー数が多い場所に PDC エミュレーターを配置します。 また、レプリケーションの待機時間を最小限に抑えるために、場所が他の場所に適切に接続されていることを確認します。  
   
-PDC エミュレーターを配置する場所と、各場所で表される各ドメインのユーザー数に関する情報を文書化するためのワークシートについては、「Windows Server 2003 展開キットのジョブ支援」 ([https://go.microsoft.com/fwlink/?LinkID=102558](https://go.microsoft.com/fwlink/?LinkID=102558))、「ジョブのダウンロード」を参照してください。_Aids_Designing_and_Deploying_Directory_and_Security_Services を開き、ドメインコントローラーの配置 (DSSTOPO_4) を開きます。  
+各場所で表される各ドメインについて、PDC エミュレーターを配置する場所に関する情報を文書化するためのワークシートについては、「Windows Server 2003 Deployment Kit のジョブエイド」 ([https://go.microsoft.com/fwlink/?LinkID=102558](https://go.microsoft.com/fwlink/?LinkID=102558))、Job_Aids_Designing_and_Deploying_Directory_and_Security_Services をダウンロードして、ドメインコントローラーの配置を開く (DSSTOPO_4 .doc)」を参照してください。  
   
 地域ドメインを展開するときに、PDC エミュレーターを配置する必要がある場所に関する情報を参照する必要があります。 地域ドメインの展開に関する詳細については、次を参照してください。 [を展開する Windows Server 2008 地域ドメイン](https://technet.microsoft.com/library/cc755118.aspx)します。  
   
@@ -83,10 +82,10 @@ PDC エミュレーターを配置する場所と、各場所で表される各�
 - サイト C と D のドメインコントローラは、ディレクトリ、DNS、またはカスタムのアプリケーションパーティションを追加または削除できません。  
 - サイト C と D のドメインコントローラーでは、スキーマを変更することはできません。  
   
-操作マスターの役割の配置を計画するためのワークシートについては、「 [Windows Server 2003 展開キット用のジョブエイド](https://go.microsoft.com/fwlink/?LinkID=102558)」、「Job_Aids_Designing_and_Deploying_Directory_and_Security_Services をダウンロードする」、および「ドメインコントローラーを開く」を参照してください。Placement (DSSTOPO_4)。  
+操作マスターの役割の配置を計画するためのワークシートについては、「 [Windows Server 2003 展開キット用のジョブエイド](https://go.microsoft.com/fwlink/?LinkID=102558)」、「Job_Aids_Designing_and_Deploying_Directory_and_Security_Services をダウンロードして、ドメインコントローラーの配置を開く」 (DSSTOPO_4 .doc) を参照してください。  
   
 フォレストルートドメインと地域ドメインを作成するときに、この情報を参照する必要があります。 フォレストルートドメインの展開の詳細については、「 [Windows Server 2008 フォレストルートドメイン](https://technet.microsoft.com/library/cc731174.aspx)の展開の展開」を参照してください。 地域ドメインの展開に関する詳細については、次を参照してください。 [を展開する Windows Server 2008 地域ドメイン](https://technet.microsoft.com/library/cc755118.aspx)します。  
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ:
 
 FSMO の役割の配置に関する追加情報については、サポートトピック「 [Active Directory ドメインコントローラーの fsmo の配置と最適化](https://support.microsoft.com/help/223346)」を参照してください。

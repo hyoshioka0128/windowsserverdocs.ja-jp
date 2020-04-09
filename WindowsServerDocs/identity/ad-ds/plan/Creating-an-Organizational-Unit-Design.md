@@ -1,7 +1,6 @@
 ---
 ms.assetid: b8df1828-5ead-4c90-b0fe-95c675116b7c
 title: 組織単位の設計を作成する
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: a699a30cce3b330c434fdb3784214de3a2daa403
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 718cb4ed8efebbd92f13db67cc4b8f86ac9feb56
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408956"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822735"
 ---
 # <a name="creating-an-organizational-unit-design"></a>組織単位の設計を作成する
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 フォレスト所有者は、ドメインの組織単位 (OU) 設計を作成します。 Ou 設計を作成するには、ou 構造の設計、OU 所有者ロールの割り当て、およびアカウントとリソース Ou の作成が必要になります。  
   
@@ -27,7 +26,7 @@ ms.locfileid: "71408956"
 ## <a name="ou-owner-role"></a>OU 所有者ロール  
 フォレストの所有者は、ドメインに対して設計する OU ごとに OU 所有者を指定します。 OU の所有者は、Active Directory Domain Services (AD DS) 内のオブジェクトのサブツリーを制御するデータマネージャーです。 OU の所有者は、管理を委任する方法と、OU 内のオブジェクトにポリシーを適用する方法を制御できます。 また、新しいサブツリーを作成し、そのサブツリー内の Ou の管理を委任することもできます。  
   
-OU 所有者はディレクトリサービスの動作を所有または制御しないので、ディレクトリサービスの所有権と管理をオブジェクトの所有権と管理から分離し、高いレベルを持つサービス管理者の数を減らすことができます。アクセスの。  
+OU 所有者は、ディレクトリサービスの動作を所有または制御しないため、ディレクトリサービスの所有権と管理をオブジェクトの所有権と管理から分離することで、高いレベルのアクセス権を持つサービス管理者の数を減らすことができます。  
   
 Ou は、ディレクトリ内のオブジェクトの表示を制御するための管理自律性と手段を提供します。 Ou は、他のデータ管理者から分離されていますが、サービス管理者の分離を提供するものではありません。 OU 所有者は、オブジェクトのサブツリーを制御できますが、フォレスト所有者はすべてのサブツリーに対して完全な制御を保持します。 これにより、フォレスト所有者は、アクセス制御リスト (ACL) のエラーなどの誤りを修正したり、データ管理者が終了したときに委任されたサブツリーを再利用したりできます。  
   
@@ -41,7 +40,7 @@ Ou は、ディレクトリ内のオブジェクトの表示を制御するた�
   
 OU の設計を文書化することが重要です。 作成する Ou の名前を一覧表示します。 さらに、ou ごとに、ou の種類、OU 所有者、親 OU (該当する場合)、およびその OU の出所を文書化します。  
   
-OU 設計を文書化するのに役立つワークシートについては、Windows Server 2003 Deployment Kit のジョブエイド ([https://go.microsoft.com/fwlink/?LinkID=102558](https://go.microsoft.com/fwlink/?LinkID=102558)) から Job_Aids_Designing_and_Deploying_Directory_and_Security_Services をダウンロードし、「各ドメインの Ou を識別する」を開いてください。(DSSLOGI_9)。  
+OU 設計を文書化するのに役立つワークシートについては、Windows Server 2003 Deployment Kit のジョブエイド ([https://go.microsoft.com/fwlink/?LinkID=102558](https://go.microsoft.com/fwlink/?LinkID=102558)) から Job_Aids_Designing_and_Deploying_Directory_and_Security_Services をダウンロードし、「各ドメインの Ou を識別する」 (DSSLOGI_9 .doc) を開いてください。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
   
