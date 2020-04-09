@@ -1,23 +1,19 @@
 ---
 title: 第 3 レベル ドメイン名の追加
 description: Windows Server Essentials の使用方法について説明します。
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e5b4a362-1881-4024-ae4e-cc3b05e50103
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 5608fb5417b9e958b45d150879daccc3b7767e59
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 659844ce4da6a7ec6311b36b4516875ed468733e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80310235"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80817555"
 ---
 # <a name="add-third-level-domain-names"></a>第 3 レベル ドメイン名の追加
 

@@ -3,21 +3,21 @@ ms.assetid: 56fc7f80-9558-467e-a6e9-a04c9abbee33
 title: フォールト ドメインの認識
 ms.prod: windows-server
 ms.author: cosdar
-ms.manager: eldenc
+manager: eldenc
 ms.technology: storage-failover-clustering
 ms.topic: article
 author: cosmosdarwin
 ms.date: 09/16/2016
-ms.openlocfilehash: 439f898b7c96ecc3d2f380509fe86d528aa737c5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4e42333ecc80ab7401b6e39151377baa86dcf190
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361144"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80827755"
 ---
 # <a name="fault-domain-awareness"></a>フォールト ドメインの認識
 
-> 適用対象:Windows Server 2019 と Windows Server 2016
+> 適用対象: Windows Server 2019 および Windows Server 2016
 
 フェールオーバー クラスタリングでは、複数のサーバーが連携して高可用性 (言い換えれば、ノードのフォールト トレランス) を実現できます。 しかし、今日のビジネスではインフラストラクチャからの可用性が高まっています。 クラウドのようなアップタイムを達成するには、シャーシの障害、ラックの停止、自然災害など、発生する可能性が極めて低い事態であっても対策を講じる必要があります。 そのため、Windows Server 2016 のフェールオーバークラスタリングでは、シャーシ、ラック、およびサイトフォールトトレランスも導入されました。
 
@@ -26,7 +26,7 @@ ms.locfileid: "71361144"
 障害ドメインとフォールト トレランスは、密接に関連する概念です。 障害ドメインとは、単一障害点を共有するハードウェア コンポーネントのセットです。 特定のレベルのフォールト トレランスを実現するには、そのレベルに複数の障害ドメインが必要です。 たとえば、ラックのフォールト トレランスを実現するには、サーバーとデータが複数のラックに分散されている必要があります。
 
 この短いビデオでは、Windows Server 2016 の障害ドメインの概要について説明します。  
-[![Click イメージをクリックして、Windows Server 2016 の障害ドメインの概要を確認します。](media/Fault-Domains-in-Windows-Server-2016/Part-1-Fault-Domains-Overview.jpg)](https://channel9.msdn.com/Blogs/windowsserver/Fault-Domain-Awareness-in-WS2016-Part-1-Overview)
+[![このイメージをクリックして、Windows Server 2016 の障害ドメインの概要を確認します。](media/Fault-Domains-in-Windows-Server-2016/Part-1-Fault-Domains-Overview.jpg)](https://channel9.msdn.com/Blogs/windowsserver/Fault-Domain-Awareness-in-WS2016-Part-1-Overview)
 
 ### <a name="fault-domain-awareness-in-windows-server-2019"></a>Windows Server 2019 での障害ドメインの認識
 
@@ -58,7 +58,7 @@ Windows 2019 で障害ドメインの認識を無効にするには、Windows �
 
 ![さまざまなレベルの障害ドメインの図](media/Fault-Domains-in-Windows-Server-2016/levels-of-fault-domains.png)
 
-## <a name="usage"></a>使用方法  
+## <a name="usage"></a>使用法  
 PowerShell または XML マークアップを使用して、障害ドメインを指定できます。 どちらの方法も同等であり、完全な機能が提供されます。
 
 >[!IMPORTANT]
@@ -72,7 +72,7 @@ Windows Server 2016 では、障害ドメインを操作するために次のコ
 * `Remove-ClusterFaultDomain`
 
 このショート ビデオでは、これらのコマンドレットの使用法を説明します。
-[![Click イメージをクリックすると、クラスター障害ドメインのコマンドレットの使用に関する短いビデオが見ていきます。](media/Fault-Domains-in-Windows-Server-2016/Part-2-Using-PowerShell.jpg)](https://channel9.msdn.com/Blogs/windowsserver/Fault-Domain-Awareness-in-WS2016-Part-2-Using-PowerShell)
+[この画像を ![クリックして、クラスター障害ドメインコマンドレットの使用に関する短いビデオをご覧ください。](media/Fault-Domains-in-Windows-Server-2016/Part-2-Using-PowerShell.jpg)](https://channel9.msdn.com/Blogs/windowsserver/Fault-Domain-Awareness-in-WS2016-Part-2-Using-PowerShell)
 
 現在の障害ドメインのトポロジを表示するには、`Get-ClusterFaultDomain` を使用します。 これにより、クラスター内のすべてのノードと、作成したシャーシ、ラック、またはサイトが一覧表示されます。 **-Type** や **-Name** といったパラメーターを使用して、フィルター処理できます。ただし、これらのパラメーターは必須ではありません。
 
@@ -82,7 +82,7 @@ Get-ClusterFaultDomain -Type Rack
 Get-ClusterFaultDomain -Name "server01.contoso.com"
 ```
 
-@No__t-0 を使用して、新しいシャーシ、ラック、またはサイトを作成します。 @No__t-0 および `-Name` パラメーターが必要です。 @No__t-0 に指定できる値は、`Chassis`、`Rack`、および `Site` です。 @No__t-0 には任意の文字列を指定できます。 (@No__t 0 の種類の障害ドメインの場合、名前は、自動的に設定される実際のノード名である必要があります)。
+`New-ClusterFaultDomain` を使用して、新しいシャーシ、ラック、またはサイトを作成します。 `-Type` パラメーターと `-Name` パラメーターが必要です。 `-Type` に指定できる値は、`Chassis`、`Rack`、および `Site`です。 `-Name` には任意の文字列を指定できます。 (`Node` タイプの障害ドメインの場合、名前は、自動的に設定される実際のノード名である必要があります)。
 
 ```PowerShell
 New-ClusterFaultDomain -Type Chassis -Name "Chassis 007"
@@ -91,9 +91,9 @@ New-ClusterFaultDomain -Type Site -Name "Shanghai"
 ```
 
 > [!IMPORTANT]  
-> Windows Server では、作成した障害ドメインが実際の物理的な世界にあるものと対応しているかどうかを確認することはできません。 (これは明らかにわかるかもしれませんが、理解しておくことが重要です)。現実の世界で 1 つのラックにすべてのノードが含まれる場合に、ソフトウェアで 2 つの `-Type Rack` 障害ドメインを作成しても、ラックのフォールト トレランスが魔法のように実現することはありません。 上記のコマンドレットを使用して、ハードウェアの実際の配置と一致するトポロジを作成する必要があります。
+> Windows Server では、作成した障害ドメインが実際の物理的な世界にあるものと対応しているかどうかを確認することはできません。 (これは明らかにわかるかもしれませんが、理解しておくことが重要です)。物理的な世界では、ノードがすべて1つのラックにある場合、ソフトウェアで2つの `-Type Rack` 障害ドメインを作成しても、魔法のようにラックのフォールトトレランスを実現することはできません。 上記のコマンドレットを使用して、ハードウェアの実際の配置と一致するトポロジを作成する必要があります。
 
-1つの障害ドメインを別の障害ドメインに移動するには、`Set-ClusterFaultDomain` を使用します。 "親" と "子" という用語は、この入れ子の関係を説明するのに一般的に使用されます。 @No__t-0 および `-Parent` パラメーターが必要です。 @No__t-0 で、移動する障害ドメインの名前を指定します。`-Parent` で、変換先の名前を指定します。 複数の障害ドメインを一度に移動するには、それらの名前を列記します。
+障害ドメインを別のドメインに移動するには、`Set-ClusterFaultDomain` を使用します。 "親" と "子" という用語は、この入れ子の関係を説明するのに一般的に使用されます。 `-Name` パラメーターと `-Parent` パラメーターが必要です。 `-Name`で、移動する障害ドメインの名前を指定します。`-Parent`で、変換先の名前を指定します。 複数の障害ドメインを一度に移動するには、それらの名前を列記します。
 
 ```PowerShell
 Set-ClusterFaultDomain -Name "server01.contoso.com" -Parent "Rack A"
@@ -103,9 +103,9 @@ Set-ClusterFaultDomain -Name "Rack A", "Rack B", "Rack C", "Rack D" -Parent "Sha
 > [!IMPORTANT]  
 > 障害ドメインが移動するときは、その子も一緒に移動します。 上記の例で、Rack A が server01.contoso.com の親である場合、server01.contoso.com は、現実の世界と同様に、親 (Rack A) の移動先 (Shanghai サイト) にすでに存在するため、別途 Shanghai サイトに移動する必要はありません。
 
-@No__t-0 の出力では、`ParentName` と `ChildrenNames` の列に親子関係が表示されます。
+`Get-ClusterFaultDomain`の出力では、`ParentName` 列と `ChildrenNames` 列に親子関係が表示されます。
 
-@No__t-0 を使用して、障害ドメインの他の特定のプロパティを変更することもできます。 たとえば、任意の障害ドメインに対して、オプションの `-Location` または `-Description` のメタデータを指定できます。 この情報を指定すると、ヘルス サービスからのハードウェアのアラートにこの情報が含まれるようになります。 @No__t-0 パラメーターを使用して、障害ドメインの名前を変更することもできます。 @No__t-0 の種類の障害ドメインの名前を変更しないでください。
+`Set-ClusterFaultDomain` を使用して、障害ドメインの他の特定のプロパティを変更することもできます。 たとえば、任意の障害ドメインに対してオプションの `-Location` または `-Description` メタデータを提供できます。 この情報を指定すると、ヘルス サービスからのハードウェアのアラートにこの情報が含まれるようになります。 `-NewName` パラメーターを使用して、障害ドメインの名前を変更することもできます。 `Node` タイプの障害ドメインに名前を変更しないでください。
 
 ```PowerShell
 Set-ClusterFaultDomain -Name "Rack A" -Location "Building 34, Room 4010"
@@ -113,7 +113,7 @@ Set-ClusterFaultDomain -Type Node -Description "Contoso XYZ Server"
 Set-ClusterFaultDomain -Name "Shanghai" -NewName "China Region"
 ```
 
-@No__t-0 を使用して、作成したシャーシ、ラック、またはサイトを削除します。 `-Name` パラメーターは必須です。 子を含む障害ドメインを削除することはできません。最初に、子を削除するか、`Set-ClusterFaultDomain` を使用して外部に移動します。 障害ドメインを他の障害ドメインの外部に移動するには、`-Parent` を空の文字列 ("") に設定します。 @No__t 0 の種類の障害ドメインを削除することはできません。 複数の障害ドメインを一度に削除するには、それらの名前を列記します。
+`Remove-ClusterFaultDomain` を使用して、作成したシャーシ、ラック、またはサイトを取り外します。 `-Name` パラメーターは必須です。 子を含む障害ドメインを削除することはできません。最初に、子を削除するか、`Set-ClusterFaultDomain`を使用して外部に移動します。 障害ドメインを他の障害ドメインの外部に移動するには、その `-Parent` を空の文字列 ("") に設定します。 `Node` 種類の障害ドメインを削除することはできません。 複数の障害ドメインを一度に削除するには、それらの名前を列記します。
 
 ```PowerShell
 Set-ClusterFaultDomain -Name "server01.contoso.com" -Parent ""
@@ -125,9 +125,9 @@ XML を基にした構文を使用して、障害ドメインを指定できま�
 
 このショート ビデオでは、障害ドメインを指定するための XML マークアップの使用法を説明します。
 
-[![Click 画像をクリックして、XML を使用して障害ドメインを指定する方法に関する短いビデオをご覧ください](media/Fault-Domains-in-Windows-Server-2016/Part-3-Using-XML-Markup.jpg)](https://channel9.msdn.com/Blogs/windowsserver/Fault-Domain-Awareness-in-WS2016-Part-3-Using-XML)
+[この画像をクリックして、XML を使用してフォールトドメインを指定する方法についての短いビデオを視聴 ![ます。](media/Fault-Domains-in-Windows-Server-2016/Part-3-Using-XML-Markup.jpg)](https://channel9.msdn.com/Blogs/windowsserver/Fault-Domain-Awareness-in-WS2016-Part-3-Using-XML)
 
-PowerShell で、次のコマンドレットを実行します: `Get-ClusterFaultDomainXML`。 これにより、クラスターの現在の障害ドメインの詳細が XML として返されます。 これは、検出されたすべての `<Node>` を反映し `<Topology>` タグを開いて閉じます。  
+PowerShell で、次のコマンドレットを実行します: `Get-ClusterFaultDomainXML`。 これにより、クラスターの現在の障害ドメインの詳細が XML として返されます。 これは、検出されたすべての `<Node>`を反映し、`<Topology>` タグを開いたり閉じたりするためにラップされます。  
 
 次のコマンドレットを実行して、この出力をファイルに保存します。  
 
@@ -139,9 +139,9 @@ Get-ClusterFaultDomainXML | Out-File <Path>
 
 > [!IMPORTANT]  
 > すべての追加タグはオプションですが、推移的な Site &gt; Rack &gt; Chassis &gt; Node の階層に従って、適切に閉じられる必要があります。  
-名前に加えて、自由形式の `Location="..."` および `Description="..."` の記述子を任意のタグに追加できます。  
+名前、自由形式の `Location="..."`、`Description="..."` の記述子を任意のタグに追加できます。  
 
-#### <a name="example-two-sites-one-rack-each"></a>例:2つのサイト (それぞれラックに1つ)  
+#### <a name="example-two-sites-one-rack-each"></a>例: 2 つのサイトのそれぞれに 1 つのラック  
 
 ```XML
 <Topology>  
@@ -185,15 +185,15 @@ $xml = Get-Content <Path> | Out-String
 Set-ClusterFaultDomainXML -XML $xml
 ```
 
-このガイドでは2つの例を紹介していますが、`<Site>`、`<Rack>`、`<Chassis>`、および `<Node>` タグは、デプロイの物理的なトポロジを反映するために、さまざまな方法で混在および照合することができます。 上記の例は、これらのタグの柔軟性と、タグを明確にするための自由形式の Location 記述子の価値を説明しています。  
+このガイドでは2つの例を紹介しますが、`<Site>`、`<Rack>`、`<Chassis>`、および `<Node>` のタグは、デプロイの物理的なトポロジを反映するために、さまざまな方法で混在および照合できます。 上記の例は、これらのタグの柔軟性と、タグを明確にするための自由形式の Location 記述子の価値を説明しています。  
 
 ### <a name="optional-location-and-description-metadata"></a>省略可能: 場所と説明のメタデータ
 
 任意の障害ドメインに対して、任意の**場所**または**説明**のメタデータを指定できます。 この情報を指定すると、ヘルス サービスからのハードウェアのアラートにこの情報が含まれるようになります。 この短いビデオでは、このような記述子を追加するための値を示します。
 
-[![ クリックすると、障害ドメインに位置記述子を追加するための短いビデオが表示されます。](media/Fault-Domains-in-Windows-Server-2016/part-4-location-description.jpg)](https://channel9.msdn.com/Blogs/windowsserver/Fault-Domain-Awareness-in-WS2016-Part-4-Location-Description)
+[![クリックして、障害ドメインに位置記述子を追加することの価値を示す短いビデオを表示します](media/Fault-Domains-in-Windows-Server-2016/part-4-location-description.jpg)](https://channel9.msdn.com/Blogs/windowsserver/Fault-Domain-Awareness-in-WS2016-Part-4-Location-Description)
 
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 - [Windows Server 2019 の概要](https://docs.microsoft.com/windows-server/get-started-19/get-started-19)  
 - [Windows Server 2016 を使ってみる](https://docs.microsoft.com/windows-server/get-started/server-basics)  
 -   [記憶域スペースダイレクトの概要](../storage/storage-spaces/storage-spaces-direct-overview.md) 

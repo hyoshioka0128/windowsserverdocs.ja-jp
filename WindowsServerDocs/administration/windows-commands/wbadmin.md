@@ -1,24 +1,20 @@
 ---
 title: wbadmin
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: コマンドプロンプトからオペレーティングシステム、ボリューム、ファイル、フォルダー、およびアプリケーションをバックアップおよび復元できる wbadmin の Windows コマンドに関するトピック。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4b0b3f32-d21f-4861-84bb-b2eadbf1e7b8
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6a0fe9b999e788af1316ca0dbbf50b84e80cb08e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0ca9bdc54cd77f11239d0a61cf052e7b12b02b22
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71362473"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80829475"
 ---
 # <a name="wbadmin"></a>wbadmin
 
@@ -50,7 +46,7 @@ ms.locfileid: "71362473"
 |[Wbadmin restore catalog](wbadmin-restore-catalog.md)|ローカルコンピューター上のバックアップカタログが破損している場合に、指定した記憶域の場所からバックアップカタログを回復します。|
 |[Wbadmin delete catalog](wbadmin-delete-catalog.md)|ローカル コンピューター上のバックアップ カタログを削除します。 このサブコマンドは、このコンピューター上のバックアップカタログが破損していて、カタログの復元に使用できる別の場所にバックアップが保存されていない場合にのみ使用してください。|
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
 -   [バックアップと回復](https://go.microsoft.com/fwlink/?LinkID=195054)
 -   [Windows PowerShell の Windows Server バックアップコマンドレット](https://technet.microsoft.com/library/jj902428.aspx)

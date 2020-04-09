@@ -1,23 +1,19 @@
 ---
 title: ディスク パーティションのカスタマイズ
 description: Windows Server Essentials の使用方法について説明します。
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5a1ed009-81f0-4884-b6b1-5037fe873b13
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 0be3506f5603b8418d16aef1b67dade9e07728b3
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 7936ad5c1aa904644aa70eb09482a12276c2cace
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80311955"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80818155"
 ---
 # <a name="customize-disk-partitions"></a>ディスク パーティションのカスタマイズ
 

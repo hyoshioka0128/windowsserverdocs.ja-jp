@@ -3,16 +3,15 @@ title: 高度なトラブルシューティングサーバーメッセージブ�
 description: Advanced Server Message Block (SMB) のトラブルシューティング方法について説明します。
 author: Deland-Han
 manager: dcscontentpm
-audience: ITPro
 ms.topic: article
 ms.author: delhan
 ms.date: 12/25/2019
-ms.openlocfilehash: 433221f9846e9e071557b5537974b5739131742b
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 654cb1b0eea65457d521d201739721ed8c3c0203
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949695"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815195"
 ---
 # <a name="advanced-troubleshooting-server-message-block-smb"></a>高度なトラブルシューティングサーバーメッセージブロック (SMB)
 
@@ -29,7 +28,7 @@ SMB のトラブルシューティングは非常に複雑になる可能性が�
 
 たとえば、windows Server 2016 を使用して windows 10 でホストされている SMB 共有に接続する場合、Windows Server 2016 は smb クライアントと Windows 10 SMB サーバーになります。
 
-### <a name="collect-data"></a>データを収集します。
+### <a name="collect-data"></a>データの収集
 
 SMB の問題のトラブルシューティングを行う前に、クライアント側とサーバー側の両方でネットワークトレースを最初に収集することをお勧めします。 次のガイドラインが適用されます。
 
@@ -137,7 +136,7 @@ TCP/IP で次の問題が発生しているかどうかを確認します。
 
 3. 他のすべてのオプションが失敗した場合は、SMB 自体で問題が発生していると思われる場合、または他のどのデータも根本原因を特定するのに十分ではない場合は、t. を収集します。
 
-たとえば次のようになります。
+例 :
 
 - 1つのファイルサーバーへのファイル転送速度が低下しています。
 
@@ -200,6 +199,6 @@ SMB の問題をトラブルシューティングする前に、次のコンポ�
 
 - パフォーマンスと安定性を向上させるには、Windows Core を更新します。
 
-## <a name="reference"></a>辞書/リファレンス
+## <a name="reference"></a>参照
 
 [Microsoft SMB プロトコルパケット交換シナリオ](https://docs.microsoft.com/windows/win32/fileio/microsoft-smb-protocol-packet-exchange-scenario)

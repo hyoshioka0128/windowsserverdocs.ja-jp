@@ -3,18 +3,18 @@ title: 記憶域スペース ダイレクトのキャッシュについて
 ms.assetid: 69b1adc0-ee64-4eed-9732-0fb216777992
 ms.prod: windows-server
 ms.author: cosdar
-ms.manager: dongill
+manager: dongill
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 07/17/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: f2c2e0435d06c18dbacab4e85db770ba86e654b3
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: e1028d294e58bdb37ffbb3f0d75c7a69882b3e0b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322344"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820965"
 ---
 # <a name="understanding-the-cache-in-storage-spaces-direct"></a>記憶域スペース ダイレクトのキャッシュについて
 

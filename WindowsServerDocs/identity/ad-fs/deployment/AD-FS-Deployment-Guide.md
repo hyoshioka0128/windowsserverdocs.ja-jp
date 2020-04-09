@@ -1,7 +1,6 @@
 ---
 ms.assetid: eb047a19-e5cb-43f4-a7bb-c4b7c8fc55a5
 title: AD FS 展開ガイド
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 094ad9e2de21e1f89c35c914a1b327727c2b1439
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 05e8268b73c7fa7689c1131982f0df6817c9aadc
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71360124"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815065"
 ---
 # <a name="ad-fs-2016-deployment-guide"></a>AD FS 2016 展開ガイド
 

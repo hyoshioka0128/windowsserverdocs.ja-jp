@@ -3,16 +3,15 @@ title: ネゴシエート、セッションのセットアップ、およびツ�
 description: ネゴシエート、セッションのセットアップ、およびツリー接続のエラーのトラブルシューティングを行う方法について説明します。
 author: Deland-Han
 manager: dcscontentpm
-audience: ITPro
 ms.topic: article
 ms.author: delhan
 ms.date: 12/25/2019
-ms.openlocfilehash: 0ccd8d882060432dcfc27ee47b82d0c61e3aad4d
-ms.sourcegitcommit: 8cf04db0bc44fd98f4321dca334e38c6573fae6c
+ms.openlocfilehash: 13124176e530aa7b74d18a38c906bf5297be511e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75654373"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815385"
 ---
 # <a name="negotiate-session-setup-and-tree-connect-failures"></a>ネゴシエート、セッションのセットアップ、およびツリー接続の失敗
 
@@ -30,7 +29,7 @@ Windows Server 2008 R2 を使用している場合は、この問題の修正プ
 
 Smb サーバーは smb クライアントからセットアップ要求\_smb セッションを受信しましたが、応答できませんでした。
 
-サーバーの完全修飾ドメイン名 (FQDN) またはネットワーク基本入出力システム (NetBIOS) 名が汎用名前付け規則 (UNC) パスで使用されている場合、Windows は認証に Kerberos を使用します。
+サーバーの完全修飾ドメイン名 (FQDN) またはネットワーク基本入出力システム (NetBIOS) 名が、汎用名前付け規則 (UNC) パスに含まれる場合、Windows は認証に Kerberos を使用します。
 
 ネゴシエート応答の後に、サーバーの Common Internet File System (CIFS) サービスプリンシパル名 (SPN) の Kerberos チケットを取得しようとします。 SMB クライアントがトークンを取得しているときに Kerberos エラーが発生していないことを確認するには、TCP ポート88の Kerberos トラフィックを確認します。
 
@@ -87,7 +86,7 @@ SMBv3 以降を使用している場合は、サーバーと共有に暗号化�
 
 - Samba とサードパーティデバイスは、暗号化をサポートしていない可能性があります。 詳細については、製品ドキュメントを参照してください。
 
-## <a name="references"></a>参照先
+## <a name="references"></a>参照
 
 詳細については、次の記事を参照してください。
 

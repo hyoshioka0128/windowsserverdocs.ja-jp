@@ -1,7 +1,6 @@
 ---
 ms.assetid: e4c31187-f15f-410b-bb79-8d63e2f2b421
 title: ドメイン コントローラーを Windows Server 2012 R2 または Windows Server 2012 にアップグレードする
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,26 +8,26 @@ ms.date: 08/09/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: f8e5164ee1b5729d30536ae61df7cf3579e57fe6
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.openlocfilehash: e5c0887c39e07491a5ad6cd6ac89d4d6a41772e3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822725"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80824935"
 ---
 # <a name="upgrade-domain-controllers-to-windows-server-2012-r2-and-windows-server-2012"></a>ドメイン コントローラーを Windows Server 2012 R2 または Windows Server 2012 にアップグレードする
 
->適用対象: Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 このトピックでは、windows server 2012 R2 および Windows Server 2012 の Active Directory Domain Services に関する背景情報を提供し、Windows Server 2008 または Windows Server 2008 R2 からドメインコントローラーをアップグレードするプロセスについて説明します。  
   
-## <a name="BKMK_UpgradeWorkflow"></a>ドメインコントローラーのアップグレード手順  
+## <a name="domain-controller-upgrade-steps"></a><a name="BKMK_UpgradeWorkflow"></a>ドメインコントローラーのアップグレード手順  
 ドメインをアップグレードするのに推奨される方法は、新しいバージョンの Windows Server を実行するドメイン コントローラーを昇格させる一方で、必要に応じて古いドメイン コントローラーを降格させる方法です。 この方法は、既存のドメイン コントローラーのオペレーティング システムをアップグレードする方法としてお勧めします。 この一覧では、新しいバージョンの Windows Server を実行するドメインコントローラーを昇格する前に実行する一般的な手順について説明します。  
   
-1. ターゲット サーバーが[システム要件](https://technet.microsoft.com/library/dn303418.aspx)を満たしていることを確認します。  
-2. [Application compatibility](../../ad-ds/deploy/Upgrade-Domain-Controllers-to-Windows-Server-2012-R2-and-Windows-Server-2012.md#BKMK_AppCompat)を確認します。  
+1. 対象サーバーが [システム要件](https://technet.microsoft.com/library/dn303418.aspx)を満たしていることを確認します。  
+2. [アプリケーションの互換性](../../ad-ds/deploy/Upgrade-Domain-Controllers-to-Windows-Server-2012-R2-and-Windows-Server-2012.md#BKMK_AppCompat)を確認します。  
 3. セキュリティ設定を確認します。 詳細については、「 [Windows server 2012 の AD DS に関連する非推奨の機能と動作の変更](../../ad-ds/deploy/Upgrade-Domain-Controllers-to-Windows-Server-2012-R2-and-Windows-Server-2012.md#BKMK_DeprecatedFeatures)」および「 [windows Server 2008 と Windows server 2008 R2 でのセキュリティで保護された既定の設定](https://technet.microsoft.com/library/upgrade-domain-controllers-to-windows-server-2008-r2(WS.10).aspx#BKMK_SecureDefault)」を参照してください。  
-4. インストールを実行するコンピューターからターゲット サーバーに接続できることを確認します。  
+4. インストールを実行するコンピューターから対象サーバーに接続できることを確認します。  
 5. 必要な操作マスターの役割を使用できることを確認します。  
 
    - 既存のドメインおよびフォレストで Windows Server 2012 を実行する最初の DC をインストールするには、インストールを実行するコンピューターが、adprep/forestprep を実行するためにスキーママスターに接続し、adprep/domainprep を実行するためにインフラストラクチャマスターに接続する必要があります。  
@@ -41,7 +40,7 @@ ms.locfileid: "76822725"
 
    |インストール操作|資格情報の要件|  
    |-----------------------|---------------------------|  
-   |新しいフォレストをインストールする|ターゲット サーバーのローカル Administrator|  
+   |新しいフォレストをインストールする|対象サーバーのローカル Administrator|  
    |既存のフォレスト内に新しいドメインをインストールする|Enterprise Admins|  
    |既存ドメイン内に追加 DC をインストールする|Domain Admins|  
    |adprep /forestprep を実行する|Schema Admins、Enterprise Admins、Domain Admins|  
@@ -68,7 +67,7 @@ Windows 8 と Windows Server 2012 には、 [自動メンテナンス](https://m
   
 Windows Update は Windows 8 および Windows Server 2012 の自動メンテナンス機能の一部であるので、更新をインストールする日付と時刻を設定するための自身の内部スケジュールは有効ではなくなりました。 企業内において、Windows 8 および Windows Server 2012 搭載コンピューターを含むすべてのデバイスとコンピューターについて、その再起動後の動作に一貫性と予測可能性を持たせることができるようにするには、Microsoft サポート技術情報の記事 [2885694](https://support.microsoft.com/kb/2885694) (または 2013 年 10 月の累積的なロールアップ [2883201](https://support.microsoft.com/kb/2883201)) を参考にしてください。次に、WSUS ブログの [Windows 8 および Windows Server 2012 での、さらに予測可能な Windows Update エクスペリエンスの実現 (KB 2885694)](https://blogs.technet.com/b/wsus/archive/2013/10/08/enabling-a-more-predictable-windows-update-experience-for-windows-8-and-windows-server-2012-kb-2885694.aspx)に関する投稿で説明されているポリシー設定を構成します。  
 
-## <a name="BKMK_NewWS2012R2"></a>Windows Server 2012 R2 での AD DS の新機能
+## <a name="whats-new-in-ad-ds-in-windows-server-2012-r2"></a><a name="BKMK_NewWS2012R2"></a>Windows Server 2012 R2 での AD DS の新機能
 
 次の表は、Windows Server 2012 R2 のAD DS 関連の新機能をまとめたものです。詳細情報がある場合は、リンクも示しています。 一部の機能に関する詳細 (要件など) については、「 [Windows Server の Active Directory の新機能](https://technet.microsoft.com/library/dn268294.aspx)」を参照してください。  
 
@@ -81,13 +80,13 @@ Windows Update は Windows 8 および Windows Server 2012 の自動メンテナ
 |[Winlogon 自動再起動サインオン (ARSO)](https://technet.microsoft.com/library/dn535772.aspx)|Windows 8.1 デバイス上でロック画面アプリケーションを再起動して利用できるようにします。|  
 |[TPM キーの構成証明](https://technet.microsoft.com/library/dn581921.aspx)|証明書要求者の秘密キーがトラステッド プラットフォーム モジュール (TPM) によって実際に保護されることを、発行済みの証明書において CA が暗号によって証明できるようにします。|  
 |[資格情報の保護と管理](https://technet.microsoft.com/library/dn408190.aspx)|資格情報の盗難を減らすための、新しい資格情報保護コントロールとドメイン認証コントロールがあります。|  
-|[ファイルレプリケーションサービス (FRS) の廃止](https://technet.microsoft.com/library/dn535775.aspx)|Windows Server 2003 ドメインの機能レベルも非推奨とされます。機能レベルでは、SYSVOL をレプリケートするのに FRS を使用するからです。 つまり、Windows Server 2012 R2 搭載のサーバー上に新しいドメインを作成するとき、ドメインの機能レベルは Windows Server 2008 以降である必要があります。 Windows server 2012 R2 を実行するドメインコントローラーを、Windows Server 2003 ドメインの機能レベルを持つ既存のドメインに追加することもできます。このレベルで新しいドメインを作成することはできません。|  
+|[ファイルレプリケーションサービス (FRS) の廃止](https://technet.microsoft.com/library/dn535775.aspx)|Windows Server 2003 ドメインの機能レベルも廃止されています。機能レベルでは、SYSVOL をレプリケートするのに FRS を使用するからです。 つまり、Windows Server 2012 R2 搭載のサーバー上に新しいドメインを作成するとき、ドメインの機能レベルは Windows Server 2008 以降である必要があります。 Windows server 2012 R2 を実行するドメインコントローラーを、Windows Server 2003 ドメインの機能レベルを持つ既存のドメインに追加することもできます。このレベルで新しいドメインを作成することはできません。|  
 |[新しいドメインとフォレストの機能レベル](../active-directory-functional-levels.md)|Windows Server 2012 R2 の新しい機能レベルがあります。 Windows Server 2012 R2 DFL では新しい機能を利用できます。|  
 |[LDAP クエリオプティマイザーの変更](https://technet.microsoft.com/library/dn535775.aspx)|複雑なクエリの LDAP 検索効率および LDAP 検索時間においてパフォーマンスが向上しています。|  
 |[1644 イベントの改善](https://technet.microsoft.com/library/dn535775.aspx)|トラブルシューティングを支援する目的で LDAP 検索結果の統計がイベント ID 1644 に追加されました。|  
 |[Active Directory レプリケーションのスループットの向上](https://technet.microsoft.com/library/dn535775.aspx)|AD レプリケーションの最大スループットを 40 Mbps から約 600 Mbps に調整します。|  
 
-## <a name="BKMK_WhatsNewAD"></a>Windows Server 2012 での AD DS の新機能
+## <a name="whats-new-in-ad-ds-in-windows-server-2012"></a><a name="BKMK_WhatsNewAD"></a>Windows Server 2012 での AD DS の新機能
 
 次の表は、Windows Server 2012 のAD DS 関連の新機能をまとめたものです。詳細情報がある場合は、リンクも示しています。 一部の機能 (要件を含む) の詳細については、「 [Active Directory Domain Services の新機能」 (AD DS)](https://technet.microsoft.com/library/hh831477.aspx)を参照してください。  
   
@@ -108,7 +107,7 @@ Windows Update は Windows 8 および Windows Server 2012 の自動メンテナ
 |[仮想化 Dc の USN ロールバック保護](https://technet.microsoft.com/library/hh831734.aspx#safe_virt_dc)|仮想化 DC のスナップショット バックアップを誤って復元しても、USN ロールバックが発生しなくなりました。|  
 |[Windows PowerShell 履歴ビューアー](https://technet.microsoft.com/library/hh831702.aspx#windows_powershell_history_viewer)|ADAC を使用すると、管理者は、実行された Windows PowerShell コマンドを表示できます。|  
   
-### <a name="BKMK_"></a>自動メンテナンスおよび更新後の再起動動作の変更は、Windows Update によって適用されます。
+### <a name="automatic-maintenance-and-changes-to-restart-behavior-after-updates-are-applied-by-windows-update"></a><a name="BKMK_"></a>自動メンテナンスおよび更新後の再起動動作の変更は、Windows Update によって適用されます。
 
 Windows 8 のリリース以前は、Windows Update 自身が、更新のチェック、ダウンロード、およびインストールを行うための内部スケジュールを管理していました。 そのためには、Windows Update エージェントが常にバックグラウンドで動作していなければならず、結果的にメモリなどのシステム リソースが消費されていました。  
   
@@ -125,13 +124,13 @@ Windows Update は Windows 8 および Windows Server 2012 の自動メンテナ
 |||  
 |-|-|  
 |**シナリオ**|**推奨構成**|  
-|**WSUS 管理対象**<br /><br />-1 週間に1回更新プログラムをインストールする<br />-午後11時で金曜日を再起動します|コンピューターを自動インストールに設定し、希望の時間まで自動再起動を禁止する<br /><br />**ポリシー**:自動更新を構成する (有効)<br /><br />自動更新の構成: 4-自動ダウンロードし、インストールをスケジュールする<br /><br />**ポリシー**: ログオンしているユーザーがいる場合は自動再起動しない (無効)<br /><br />**WSUS 期限**: 金曜日の 23:00 に設定する|  
-|**WSUS 管理対象**<br /><br />-異なる時間/日にインストールをずらす|一緒に更新する必要のあるさまざまなコンピューター グループのターゲット グループを設定する<br /><br />前のシナリオに対して上記の手順を使用する<br /><br />さまざまなターゲット グループに対して異なる期限を設定する|  
-|**WSUS で管理されていない-期限のサポートなし**<br /><br />-異なるタイミングでインストールをずらす|**ポリシー**:自動更新を構成する (有効)<br /><br />自動更新の構成: 4-自動ダウンロードし、インストールをスケジュールする<br /><br />**レジストリ キー:** Microsoft サポート技術情報の記事 [2835627](https://support.microsoft.com/kb/2835627)<br /><br />**ポリシー:** 自動メンテナンス ランダム遅延 (有効)<br /><br />次の動作になるように、 **[定期メンテナンス ランダム遅延]** を [PT6H] (6 時間のランダム遅延) に設定する。<br /><br />-更新プログラムは、構成されたメンテナンス時間とランダムな遅延でインストールされます<br /><br />-各マシンの再起動は、3日後に正確に実行されます。<br /><br />または、コンピューターのグループごとに異なるメンテナンス時刻を設定する|  
+|**WSUS 管理対象**<p>-1 週間に1回更新プログラムをインストールする<br />-午後11時で金曜日を再起動します|コンピューターを自動インストールに設定し、希望の時間まで自動再起動を禁止する<p>**ポリシー**:自動更新を構成する (有効)<p>自動更新の構成: 4-自動ダウンロードし、インストールをスケジュールする<p>**ポリシー**: ログオンしているユーザーがいる場合は自動再起動しない (無効)<p>**WSUS 期限**: 金曜日の 23:00 に設定する|  
+|**WSUS 管理対象**<p>-異なる時間/日にインストールをずらす|一緒に更新する必要のあるさまざまなコンピューター グループのターゲット グループを設定する<p>前のシナリオに対して上記の手順を使用する<p>さまざまなターゲット グループに対して異なる期限を設定する|  
+|**WSUS で管理されていない-期限のサポートなし**<p>-異なるタイミングでインストールをずらす|**ポリシー**:自動更新を構成する (有効)<p>自動更新の構成: 4-自動ダウンロードし、インストールをスケジュールする<p>**レジストリ キー:** Microsoft サポート技術情報の記事 [2835627](https://support.microsoft.com/kb/2835627)<p>**ポリシー:** 自動メンテナンス ランダム遅延 (有効)<p>次の動作になるように、**定期メンテナンス ランダム遅延** を PT6H (6 時間のランダム遅延) に設定する。<p>-更新プログラムは、構成されたメンテナンス時間とランダムな遅延でインストールされます<p>-各マシンの再起動は、3日後に正確に実行されます。<p>または、コンピューターのグループごとに異なるメンテナンス時刻を設定する|  
 
 Windows エンジニアリング チームがこれらの変更点を実装した理由の詳細については、 [Windows Update での自動更新後の再起動の最小化](https://blogs.msdn.com/b/b8/archive/2011/11/14/minimizing-restarts-after-automatic-updating-in-windows-update.aspx)に関する投稿を参照してください。  
 
-## <a name="BKMK_InstallationChanges"></a>AD DS サーバーの役割のインストールの変更
+## <a name="ad-ds-server-role-installation-changes"></a><a name="BKMK_InstallationChanges"></a>AD DS サーバーの役割のインストールの変更
 
 Windows Server 2003 から Windows Server 2008 R2 では、Active Directory インストール ウィザード (Dcpromo.exe) を実行する前に、x86 バージョンまたは X64 バージョンの Adprep.exe コマンド ライン ツールを実行していました。また、Dcpromo.exe には、メディアからのインストールや無人インストールのオプションもありました。  
   
@@ -142,7 +141,7 @@ AD DS のインストール ウィザードにおける前提条件チェック�
 これらをまとめると、変更された AD DS インストールでは、DC の役割のインストール プロセスが簡素化され、管理上のエラーが減少するということになります。複数のドメイン コントローラーを、地域やドメインの垣根を越えてグローバルに展開する場合には特にその効果が発揮されます。  
 コマンド ラインの構文やウィザード操作の詳しい手順など、GUI ベースおよび Windows PowerShell ベースのインストールに関する詳細については、「 [Active Directory ドメイン サービスをインストールする](https://technet.microsoft.com/library/hh472162.aspx)」を参照してください。 既存のフォレストにある Windows Server 2012 DC のインストールとは無関係に、Active Directory フォレスト内でスキーマ変更の導入を管理するには、管理者特権のコマンド プロンプトで Adprep.exe コマンドを実行できます。  
 
-## <a name="BKMK_DeprecatedFeatures"></a>Windows Server 2012 の AD DS に関連する非推奨の機能と動作の変更
+## <a name="deprecated-features-and-behavior-changes-related-to-ad-ds-in-windows-server-2012"></a><a name="BKMK_DeprecatedFeatures"></a>Windows Server 2012 の AD DS に関連する非推奨の機能と動作の変更
 
 AD DS に関連する変更がいくつかあります。  
 
@@ -157,25 +156,25 @@ Windows Server 2008 以降のドメインコントローラーでは、Windows S
 
 |||||  
 |-|-|-|-|  
-|暗号化の種類またはポリシー|Windows Server 2008 の既定値|Windows Server 2012 および Windows Server 2008 R2 の既定値|Comment|  
-|AllowNT4Crypto|無効|無効|サード パーティ製のサーバー メッセージ ブロック (SMB) クライアントは、ドメイン コントローラー上の既定のセキュリティ設定と互換性がない場合があります。 どのような場合でも、これらの設定を緩和して相互運用を可能にすることもできますが、その際はセキュリティが低下します。 詳細については、Microsoft サポート技術情報の[記事 942564](https://go.microsoft.com/fwlink/?LinkId=164558) (https://go.microsoft.com/fwlink/?LinkId=164558) を参照してください。|  
-|DES|Enabled|無効|Microsoft サポート技術情報の[記事 977321](https://go.microsoft.com/fwlink/?LinkId=177717) (https://go.microsoft.com/fwlink/?LinkId=177717)|  
-|統合認証のための CBT/拡張保護|なし|Enabled|Microsoft サポート技術情報の[Microsoft セキュリティアドバイザリ (937811)](https://go.microsoft.com/fwlink/?LinkId=164559) (https://go.microsoft.com/fwlink/?LinkId=164559) および[記事 976918](https://go.microsoft.com/fwlink/?LinkId=178251) (https://go.microsoft.com/fwlink/?LinkId=178251) ) を参照してください。<br /><br />必要に応じて、Microsoft サポート技術情報の[記事 977073](https://go.microsoft.com/fwlink/?LinkId=186394) (https://go.microsoft.com/fwlink/?LinkId=186394) にある修正プログラムを確認してインストールします。|  
-|LMv2|Enabled|無効|Microsoft サポート技術情報の[記事 976918](https://go.microsoft.com/fwlink/?LinkId=178251) (https://go.microsoft.com/fwlink/?LinkId=178251)|  
+|暗号化の種類またはポリシー|Windows Server 2008 の既定値|Windows Server 2012 および Windows Server 2008 R2 の既定値|コメント|  
+|AllowNT4Crypto|無効|無効|サード パーティ製のサーバー メッセージ ブロック (SMB) クライアントは、ドメイン コントローラー上の既定のセキュリティ設定と互換性がない場合があります。 どのような場合でも、これらの設定を緩和して相互運用を可能にすることもできますが、その際はセキュリティが低下します。 詳細については、Microsoft サポート技術情報の[記事 942564](https://go.microsoft.com/fwlink/?LinkId=164558) (https://go.microsoft.com/fwlink/?LinkId=164558)を参照してください。|  
+|DES|有効|無効|Microsoft サポート技術情報の[記事 977321](https://go.microsoft.com/fwlink/?LinkId=177717) (https://go.microsoft.com/fwlink/?LinkId=177717)|  
+|統合認証のための CBT/拡張保護|N/A|有効|Microsoft サポート技術情報の[Microsoft セキュリティアドバイザリ (937811)](https://go.microsoft.com/fwlink/?LinkId=164559) (https://go.microsoft.com/fwlink/?LinkId=164559) および[記事 976918](https://go.microsoft.com/fwlink/?LinkId=178251) (https://go.microsoft.com/fwlink/?LinkId=178251)) を参照してください。<p>必要に応じて、Microsoft サポート技術情報の[記事 977073](https://go.microsoft.com/fwlink/?LinkId=186394) (https://go.microsoft.com/fwlink/?LinkId=186394) にある修正プログラムを確認してインストールします。|  
+|LMv2|有効|無効|Microsoft サポート技術情報の[記事 976918](https://go.microsoft.com/fwlink/?LinkId=178251) (https://go.microsoft.com/fwlink/?LinkId=178251)|  
 
-## <a name="BKMK_SysReqs"></a>オペレーティングシステムの要件
+## <a name="operating-system-requirements"></a><a name="BKMK_SysReqs"></a>オペレーティングシステムの要件
 
 次の表に、Windows Server 2012 の最小システム要件を示します。 システム要件とプレインストール情報の詳細については、「 [Windows Server 2012 のインストール](https://technet.microsoft.com/library/jj134246.aspx)」を参照してください。 新しい Active Directory フォレストをインストールするための追加システム要件はありませんが、ドメイン コントローラー、LDAP クライアント要求、および Active Directory 対応アプリケーションのパフォーマンスを向上させるには、Active Directory データベースの内容をキャッシュするための十分なメモリを追加する必要があります。 既存のドメイン コントローラーをアップグレードするか、新しいドメイン コントローラーを既存のフォレストに追加する場合は、次のセクションを参照して、サーバーがディスク領域の要件を満たしていることを確認してください。  
 
 |||  
 |-|-|  
-|処理者|1.4 Ghz 64 ビット プロセッサ|  
+|プロセッサ|1.4 Ghz 64 ビット プロセッサ|  
 |RAM|512 MB|  
 |空きディスク領域の要件|32 GB|  
 |画面解像度|800 x 600 以上|  
 |その他|DVD ドライブ、キーボード、インターネット アクセス|  
 
-### <a name="BKMK_DiskSpaceDCWin8"></a>ドメインコントローラーのアップグレードに必要なディスク領域
+### <a name="disk-space-requirements-for-upgrading-domain-controllers"></a><a name="BKMK_DiskSpaceDCWin8"></a>ドメインコントローラーのアップグレードに必要なディスク領域
 
 このセクションでは、Windows Server 2008 または Windows Server 2008 R2 からドメインコントローラーをアップグレードする場合のみのディスク領域の要件について説明します。 ドメイン コントローラーを以前のバージョンの Windows Server にアップグレードする場合のディスク領域要件の詳細については、「 [Windows Server 2008 にアップグレードするためのディスク領域の要件](https://technet.microsoft.com/library/cc754463(WS.10).aspx#BKMK_2008) 」または「 [Windows Server 2008 R2 にアップグレードするためのディスク領域の要件](https://technet.microsoft.com/library/cc754463(WS.10).aspx#BKMK_2008R2)」を参照してください。  
   
@@ -190,7 +189,7 @@ Active Directory データベースおよびログ ファイルをホストす�
 Windows Server には、Foundation、Essentials、Standard、および Datacenter の 4 つのエディションがあります。
 AD DS 役割をサポートするエディションは、Standard と Datacenter の 2 種類です。  
   
-以前のリリースでは、Windows Server の各エディションは、サポートされるサーバーの役割とプロセッサ数、および大容量メモリのサポートの可否という点で異なっていました。 Windows Server の Standard edition および Datacenter edition では、すべての機能と基になるハードウェアがサポートされますが、仮想化権限は異なります。 Standard edition では2つの仮想インスタンスを使用でき、データセンターでは無制限の仮想インスタンスを使用できます。edition.  
+以前のリリースでは、Windows Server の各エディションは、サポートされるサーバーの役割とプロセッサ数、および大容量メモリのサポートの可否という点で異なっていました。 Windows Server の Standard edition および Datacenter edition では、すべての機能と基になるハードウェアがサポートされますが、仮想化の権限は異なります。 Standard edition では2つの仮想インスタンスを使用でき、データセンターエディションでは無制限の仮想インスタンスを使用できます。  
   
 ### <a name="windows-client-and-windows-server-operating-systems-that-are-supported-to-join-windows-server-domains"></a>Windows Server ドメインへの参加がサポートされている Windows クライアントおよび Windows Server オペレーティング システム
 
@@ -200,24 +199,24 @@ AD DS 役割をサポートするエディションは、Standard と Datacenter
    - Windows 8.1 または Windows 8 を実行するコンピューターは、Windows Server 2003 以降を含む、以前のバージョンの Windows Server を実行するドメイン コントローラーをメンバーとするドメインに参加できます。 ただし、この場合、Windows 8 の一部の機能については利用する前に追加構成が必要になる場合があります。 そのような機能の詳細および Windows 8 クライアントをダウンレベルのドメインで管理するための推奨事項については、 [Windows Server 2003 ドメインでの Windows 8 メンバー コンピューターの実行](https://social.technet.microsoft.com/wiki/contents/articles/17361.running-windows-8-member-computers-in-windows-server-2003-domains.aspx)に関するページを参照してください。  
 - サーバー オペレーティング システム:Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008、Windows Server 2003 R2、Windows Server 2003  
 
-## <a name="BKMK_UpgradePaths"></a>サポートされているインプレースアップグレードパス
+## <a name="supported-in-place-upgrade-paths"></a><a name="BKMK_UpgradePaths"></a>サポートされているインプレースアップグレードパス
 
 Windows Server 2008 または Windows Server 2008 R2 の64ビットバージョンを実行するドメインコントローラーは、Windows Server 2012 にアップグレードできます。 Windows Server 2003 または 32 ビット バージョンの Windows Server 2008 を実行するドメイン コントローラーは、アップグレードできません。 このようなドメイン コントローラーを置き換えるには、以降のバージョンの Windows Server を実行するドメイン コントローラーをドメインにインストールし、Windows Server 2003 を実行するドメイン コントローラーを削除します。  
 
 |使用しているエディション|アップグレード先のエディション|  
 |-------------------------------------|-------------------------------------|  
-|Windows Server 2008 Standard SP2<br /><br />または<br /><br />Windows Server 2008 Enterprise SP2|Windows Server 2012 Standard<br /><br />または<br /><br />Windows Server 2012 Datacenter|  
+|Windows Server 2008 Standard SP2<p>または<p>Windows Server 2008 Enterprise SP2|Windows Server 2012 Standard<p>または<p>Windows Server 2012 Datacenter|  
 |Windows Server 2008 Datacenter SP2|Windows Server 2012 Datacenter|  
 |Windows Web Server 2008|Windows Server 2012 Standard|  
-|Windows Server 2008 R2 Standard SP1<br /><br />または<br /><br />Windows Server 2008 R2 Enterprise SP1|Windows Server 2012 Standard<br /><br />または<br /><br />Windows Server 2012 Datacenter|  
+|Windows Server 2008 R2 Standard SP1<p>または<p>Windows Server 2008 R2 Enterprise SP1|Windows Server 2012 Standard<p>または<p>Windows Server 2012 Datacenter|  
 |Windows Server 2008 R2 Datacenter SP1|Windows Server 2012 Datacenter|  
 |Windows Web Server 2008 R2|Windows Server 2012 Standard|  
   
 サポートされるアップグレード パスの詳細については、「 [Windows Server 2012 の評価バージョンとアップグレード オプション](https://go.microsoft.com/fwlink/?LinkId=260917)」を参照してください。 Windows Server 2012 の評価版を実行するドメイン コントローラーを直接製品版に変換することはできません。 代わりに、まず製品版を実行するサーバーに追加のドメイン コントローラーをインストールし、評価版で実行されているドメイン コントローラーから AD DS を削除します。  
   
-既知の問題のため、Windows Server 2008 R2 の Server Core インストールを実行しているドメインコントローラーを、Windows Server 2012 の Server Core インストールにアップグレードすることはできません。 アップグレードしようとすると、アップグレード プロセスの終盤でブラック スクリーンになります。 このような DC をリブートすると、boot.ini ファイル内のオプションが前のオペレーティング システム バージョンにロールバックされます。 追加のリブートを行うと、前のオペレーティング システムに自動的にロールバックされます。 ソリューションを使用できるようになるまでは、windows server の server core インストールを実行している既存のドメインコントローラーをインプレースアップグレードするのではなく、windows server 2012 の Server Core インストールを実行する新しいドメインコントローラーをインストールすることをお勧めします。2008 R2。 詳細については、サポート技術情報の記事 [2734222](https://support.microsoft.com/kb/2734222)を参照してください。  
+既知の問題のため、Windows Server 2008 R2 の Server Core インストールを実行しているドメインコントローラーを、Windows Server 2012 の Server Core インストールにアップグレードすることはできません。 アップグレードしようとすると、アップグレード プロセスの終盤でブラック スクリーンになります。 このような DC をリブートすると、boot.ini ファイル内のオプションが前のオペレーティング システム バージョンにロールバックされます。 追加のリブートを行うと、前のオペレーティング システムに自動的にロールバックされます。 ソリューションを使用できるようになるまでは、windows server 2008 R2 の Server Core インストールを実行する既存のドメインコントローラーをインプレースアップグレードするのではなく、Windows Server 2012 の Server Core インストールを実行する新しいドメインコントローラーをインストールすることをお勧めします。 詳細については、サポート技術情報の記事 [2734222](https://support.microsoft.com/kb/2734222)を参照してください。  
 
-## <a name="BKMK_FunctionalLevels"></a>機能レベルの機能と要件
+## <a name="functional-level-features-and-requirements"></a><a name="BKMK_FunctionalLevels"></a>機能レベルの機能と要件
 
 Windows Server 2012 には、Windows Server 2003 フォレストの機能レベルが必要です。 つまり、Windows Server 2012 を実行するドメインコントローラーを既存の Active Directory フォレストに追加するには、フォレストの機能レベルが Windows Server 2003 以上である必要があります。 Windows Server 2008 R2、Windows Server 2008、または Windows Server 2003 を実行するドメイン コントローラーは同じフォレストで動作しますが、Windows 2000 Server を実行するドメイン コントローラーはサポートされていないため、Windows Server 2012 を実行するドメイン コントローラーのインストールをブロックします。 Windows Server 2003 以降を実行するドメイン コントローラーがフォレストに含まれており、フォレストの機能レベルが Windows 2000 のレベルである場合も、インストールがブロックされます。  
   
@@ -235,7 +234,7 @@ Windows Server 2012 フォレストの機能レベルでは新しい機能は提
   
 フォレストの機能レベルを特定の値に設定した後で、フォレストの機能レベルをロールバックしたり下げたりすることはできません。ただし、次の例外があります。フォレストの機能レベルを Windows Server 2012 に上げると、Windows Server 2008 R2 に下げることができます。 Active Directory のごみ箱が有効になっていない場合は、フォレストの機能レベルを Windows Server 2012 から Windows server 2008 R2 または windows Server 2008 に下げるか、windows server 2008 R2 から Windows Server 2008 に戻すことができます。 フォレストの機能レベルが Windows Server 2008 R2 に設定されている場合、たとえば Windows Server 2003 にロールバックすることはできません。  
   
-ドメインの機能レベルを特定の値に設定した後で、ドメインの機能レベルをロールバックしたり下げたりすることはできません。ただし、次の例外があります。ドメインの機能レベルを Windows Server 2008 R2 または Windows Server 2012 に上げる場合と、フォレストが関数の場合nal レベルは Windows Server 2008 以下で、ドメインの機能レベルを Windows Server 2008 または Windows Server 2008 R2 にロールバックするオプションがあります。 ドメインの機能レベルを下げることができるのは、Windows Server 2012 から windows server 2008 R2 または windows Server 2008、または Windows server 2008 R2 から Windows Server 2008 に限定されます。 ドメインの機能レベルが Windows Server 2008 R2 に設定されている場合、たとえば Windows Server 2003 にロールバックすることはできません。  
+ドメインの機能レベルを特定の値に設定した後、ドメインの機能レベルをロールバックしたり下げたりすることはできません。ただし、次の例外があります。ドメインの機能レベルを Windows Server 2008 R2 または Windows Server 2012 に上げると、フォレストの機能レベルが Windows Server 2008 以下である場合、ドメインの機能レベルを Windows Server 2008 または Windows Server 2008 R2 にロールバックすることができます ドメインの機能レベルを下げることができるのは、Windows Server 2012 から windows server 2008 R2 または windows Server 2008、または Windows server 2008 R2 から Windows Server 2008 に限定されます。 ドメインの機能レベルが Windows Server 2008 R2 に設定されている場合、たとえば Windows Server 2003 にロールバックすることはできません。  
   
 低い機能レベルで使用できる機能の詳細については、「 [AD DS の機能レベルとは](../active-directory-functional-levels.md)」を参照してください。  
   
@@ -244,7 +243,7 @@ Windows Server 2012 を実行するドメインコントローラーは、機能
 > [!NOTE]  
 > Microsoft Exchange Server 2013 では、フォレストの機能レベルとして Windows server 2003 以上が必要です。  
 
-## <a name="BKMK_ServerRoles"></a>AD DS 他のサーバーの役割と Windows オペレーティングシステムとの相互運用性
+## <a name="ad-ds-interoperability-with-other-server-roles-and-windows-operating-systems"></a><a name="BKMK_ServerRoles"></a>AD DS 他のサーバーの役割と Windows オペレーティングシステムとの相互運用性
 
 AD DS は、次の Windows オペレーティング システムではサポートされません。  
   
@@ -256,50 +255,50 @@ AD DS は、次の Windows オペレーティング システムではサポー�
 - Hyper-V Server  
 - リモート デスクトップ接続ブローカー  
   
-## <a name="BKMK_OpsMasters"></a>操作マスターの役割
+## <a name="operations-master-roles"></a><a name="BKMK_OpsMasters"></a>操作マスターの役割
 
 Windows Server 2012 の一部の新機能は、操作マスターの役割に影響します。  
 
 - PDC エミュレーターは、仮想ドメインコントローラーの複製をサポートするために、Windows Server 2012 を実行している必要があります。 DC の複製については、追加の前提条件があります。 詳細については、「 [Active Directory ドメイン サービス (AD DS) の仮想化](https://technet.microsoft.com/library/hh831734.aspx)」を参照してください。  
 - PDC エミュレーターが Windows Server 2012 を実行すると、新しいセキュリティプリンシパルが作成されます。  
-- RID マスターには、新しい RID 発行および監視機能があります。 機能強化には、イベント ロギングの向上、適切な制限の向上、緊急時における RID プール割り当て全体の 1 ビット増加などがあります。 詳細については、「 [Managing RID Issuance](../../ad-ds/manage/Managing-RID-Issuance.md)」を参照してください。  
+- RID マスターには、新しい RID 発行および監視機能があります。 機能強化には、イベント ロギングの向上、適切な制限の向上、緊急時における RID プール割り当て全体の 1 ビット増加などがあります。 詳細については、「[RID 発行の管理](../../ad-ds/manage/Managing-RID-Issuance.md)」を参照してください。  
 
 > [!NOTE]  
 > これらは操作マスターの役割ではありませんが、AD DS インストールにおけるもう1つの変更として、DNS サーバーの役割とグローバルカタログが、Windows Server 2012 を実行するすべてのドメインコントローラーに既定でインストールされます。  
 
-## <a name="BKMK_Virtual"></a>ドメインコントローラーの仮想化
+## <a name="virtualizing-domain-controllers"></a><a name="BKMK_Virtual"></a>ドメインコントローラーの仮想化
 
 Windows Server 2012 以降の AD DS の機能強化により、ドメインコントローラーの仮想化がより安全になり、ドメインコントローラーを複製できるようになりました。 同様に、ドメイン コントローラーを複製することで、新しいドメインに追加のドメイン コントローラーを迅速に展開できるなどのメリットがあります。 詳細については、「 [Active Directory Domain Services &#40;AD DS&#41;仮想&#40;化レベル&#41;100 の概要](../../ad-ds/Introduction-to-Active-Directory-Domain-Services-AD-DS-Virtualization-Level-100.md)」を参照してください。  
 
-## <a name="BKMK_Admin"></a>Windows Server 2012 サーバーの管理
+## <a name="administration-of-windows-server-2012-servers"></a><a name="BKMK_Admin"></a>Windows Server 2012 サーバーの管理
 
 Windows [8 のリモートサーバー管理ツール](https://www.microsoft.com/download/details.aspx?id=28972)を使用して、windows Server 2012 を実行するドメインコントローラーやその他のサーバーを管理します。 Windows 8 を実行しているコンピューターで Windows Server 2012 リモートサーバー管理ツールを実行することができます。  
 
-## <a name="BKMK_AppCompat"></a>アプリケーションの互換性
+## <a name="application-compatibility"></a><a name="BKMK_AppCompat"></a>アプリケーションの互換性
 
 次の表は、Active Directory が統合されている一般的な Microsoft アプリケーションの一覧です。 アプリケーションをインストールできる Windows Server のバージョンと、Windows Server 2012 DC の導入がアプリケーションの互換性に影響するかどうかが示されています。  
 
-|製品|注意|  
+|製品|説明|  
 |-----------|---------|  
-|[Microsoft SharePoint 2010](https://support.microsoft.com/kb/2724471)|をインストールして操作するには、SharePoint 2010 Service Pack 2 が必要です。 <br />Windows Server 2012 サーバー上の SharePoint 2010<br /><br />SharePoint 2010 Foundation を Windows Server 2012 サーバーにインストールして操作するには、SharePoint 2010 Foundation Service Pack 2 が必要です。<br /><br />SharePoint Server 2010 (Service Pack なし) を Windows Server 2012 にインストールするプロセスは失敗します。<br /><br />SharePoint Server 2010 の前提条件のインストーラー (Prerequisiteinstaller.exe) が失敗し、"このプログラムには互換性の問題があります。" というエラーが発生します。 [ヘルプを表示せずにプログラムを実行する] をクリックすると、"SharePoint &#124;を2010インストールできるかどうかの確認 (service pack なし) を Windows server 2012 にインストールすることはできません。" というエラーが表示されます。|  
-|[Microsoft SharePoint 2013](https://technet.microsoft.com/library/cc262485(v=office.15).aspx)|ファーム内のデータベース サーバーの最小要件:<br /><br />64 ビット エディションの Windows Server 2008 R2 Service Pack 1 (SP1) Standard、Enterprise、または Datacenter、あるいは 64 ビット エディションの Windows Server 2012 Standard または Datacenter<br /><br />組み込みデータベースを持つ単一サーバーの最小要件:<br /><br />64 ビット エディションの Windows Server 2008 R2 Service Pack 1 (SP1) Standard、Enterprise、または Datacenter、あるいは 64 ビット エディションの Windows Server 2012 Standard または Datacenter<br /><br />ファーム内のフロントエンド Web サーバーおよびアプリケーション サーバーの最小要件:<br /><br />64 ビット エディションの Windows Server 2008 R2 Service Pack 1 (SP1) Standard、Enterprise、または Datacenter、あるいは 64 ビット エディションの Windows Server 2012 Standard または Datacenter|  
-|[Configuration Manager 2012](https://blogs.technet.com/b/configmgrteam/archive/2012/09/10/support-questions-about-windows-8-and-windows-server-2012.aspx)|Configuration Manager 2012 Service Pack 1:<br /><br />Service Pack 1 のリリースで、クライアント サポート マトリックスに次のオペレーティング システムが追加されます。<br /><br />-Windows 8 Pro<br />-Windows 8 Enterprise<br />-Windows Server 2012 Standard<br />-Windows Server 2012 Datacenter<br /><br />サイト サーバーの役割はすべて (サイト サーバー、SMS プロバイダー、管理ポイントを含めて)、次のオペレーティング システム エディションのサーバーに展開できます。<br /><br />-Windows Server 2012 Standard<br />-Windows Server 2012 Datacenter|  
+|[Microsoft SharePoint 2010](https://support.microsoft.com/kb/2724471)|をインストールして操作するには、SharePoint 2010 Service Pack 2 が必要です。 <br />Windows Server 2012 サーバー上の SharePoint 2010<p>SharePoint 2010 Foundation を Windows Server 2012 サーバーにインストールして操作するには、SharePoint 2010 Foundation Service Pack 2 が必要です。<p>SharePoint Server 2010 (Service Pack なし) を Windows Server 2012 にインストールするプロセスは失敗します。<p>SharePoint Server 2010 の前提条件のインストーラー (Prerequisiteinstaller.exe) が失敗し、"このプログラムには互換性の問題があります。" というエラーが発生します。 [ヘルプを表示せずにプログラムを実行する] をクリックすると、"SharePoint &#124;を2010インストールできるかどうかの確認 (service pack なし) を Windows server 2012 にインストールすることはできません。" というエラーが表示されます。|  
+|[Microsoft SharePoint 2013](https://technet.microsoft.com/library/cc262485(v=office.15).aspx)|ファーム内のデータベース サーバーの最小要件:<p>64 ビット エディションの Windows Server 2008 R2 Service Pack 1 (SP1) Standard、Enterprise、または Datacenter、あるいは 64 ビット エディションの Windows Server 2012 Standard または Datacenter<p>組み込みデータベースを持つ単一サーバーの最小要件:<p>64 ビット エディションの Windows Server 2008 R2 Service Pack 1 (SP1) Standard、Enterprise、または Datacenter、あるいは 64 ビット エディションの Windows Server 2012 Standard または Datacenter<p>ファーム内のフロントエンド Web サーバーおよびアプリケーション サーバーの最小要件:<p>64 ビット エディションの Windows Server 2008 R2 Service Pack 1 (SP1) Standard、Enterprise、または Datacenter、あるいは 64 ビット エディションの Windows Server 2012 Standard または Datacenter|  
+|[Configuration Manager 2012](https://blogs.technet.com/b/configmgrteam/archive/2012/09/10/support-questions-about-windows-8-and-windows-server-2012.aspx)|Configuration Manager 2012 Service Pack 1:<p>Service Pack 1 のリリースで、クライアント サポート マトリックスに次のオペレーティング システムが追加されます。<p>-Windows 8 Pro<br />-Windows 8 Enterprise<br />-Windows Server 2012 Standard<br />-Windows Server 2012 Datacenter<p>サイト サーバーの役割はすべて (サイト サーバー、SMS プロバイダー、管理ポイントを含めて)、次のオペレーティング システム エディションのサーバーに展開できます。<p>-Windows Server 2012 Standard<br />-Windows Server 2012 Datacenter|  
 |[Microsoft エンドポイント Configuration Manager (現在のブランチ)](https://docs.microsoft.com/configmgr/core/plan-design/configs/supported-configurations)|[Configuration Manager サイトシステムサーバーでサポートされているオペレーティングシステム](https://docs.microsoft.com/configmgr/core/plan-design/configs/supported-operating-systems-for-site-system-servers)。|  
 |[Microsoft Lync Server 2013](https://technet.microsoft.com/library/gg412883.aspx)|Lync Server 2013 には、Windows Server 2008 R2 または Windows Server 2012 が必要です。 Server Core インストールで実行することはできません。 [仮想サーバー](https://technet.microsoft.com/library/gg399035.aspx)で実行できます。|  
 |[Lync Server 2010](https://support.microsoft.com/kb/2777359)|[Lync Server 用の累積的更新プログラム (2012 年 10 月)](https://support.microsoft.com/?kbid=2493736) がインストールされていれば、新しい (アップグレードされていない) Windows Server 2012 のインストールに Lync Server 2010 をインストールすることができます。 Lync Server 2010 の既存インストールのためにオペレーティング システムを Windows Server 2012 にアップグレードすることはできません。 Microsoft Lync Server 2010 グループ チャット サーバーも、Windows Server 2012 ではサポートされていません。|  
-|[System Center 2012 Endpoint Protection](https://blogs.technet.com/b/configmgrteam/archive/2012/09/10/support-questions-about-windows-8-and-windows-server-2012.aspx)|System Center 2012 Endpoint Protection Service Pack 1 では、クライアント サポート マトリックスが更新され、次のオペレーティング システムが追加されます。<br /><br />-Windows 8 Pro<br />-Windows 8 Enterprise<br />-Windows Server 2012 Standard<br />-Windows Server 2012 Datacenter|  
-|[System Center 2012 Forefront Endpoint Protection](https://blogs.technet.com/b/configmgrteam/archive/2012/09/10/support-questions-about-windows-8-and-windows-server-2012.aspx)|FEP 2010 更新プログラム ロールアップ 1 では、クライアント サポート マトリックスが更新され、次のオペレーティング システムが追加されます。<br /><br />-Windows 8 Pro<br />-Windows 8 Enterprise<br />-Windows Server 2012 Standard<br />-Windows Server 2012 Datacenter|  
+|[System Center 2012 Endpoint Protection](https://blogs.technet.com/b/configmgrteam/archive/2012/09/10/support-questions-about-windows-8-and-windows-server-2012.aspx)|System Center 2012 Endpoint Protection Service Pack 1 では、クライアント サポート マトリックスが更新され、次のオペレーティング システムが追加されます。<p>-Windows 8 Pro<br />-Windows 8 Enterprise<br />-Windows Server 2012 Standard<br />-Windows Server 2012 Datacenter|  
+|[System Center 2012 Forefront Endpoint Protection](https://blogs.technet.com/b/configmgrteam/archive/2012/09/10/support-questions-about-windows-8-and-windows-server-2012.aspx)|FEP 2010 更新プログラム ロールアップ 1 では、クライアント サポート マトリックスが更新され、次のオペレーティング システムが追加されます。<p>-Windows 8 Pro<br />-Windows 8 Enterprise<br />-Windows Server 2012 Standard<br />-Windows Server 2012 Datacenter|  
 |Forefront Threat Management Gateway (TMG)|TMG の実行がサポートされているのは、Windows Server 2008 および Windows Server 2008 R2 のみです。 詳細については、「 [Forefront TMG のシステム要件](https://technet.microsoft.com/library/dd896981.aspx)」を参照してください。|  
 |Windows Server Update Services|このリリースの WSUS では既に、Windows 8 ベースのコンピューターまたは Windows Server 2012 コンピューターがクライアントとしてサポートされています。|  
 |Windows Server Update Services 3.0|更新プログラムサポート技術情報の記事[2734608](https://support.microsoft.com/kb/2734608)では、WINDOWS SERVER UPDATE SERVICES (wsus) 3.0 SP2 を実行しているサーバーで、windows 8 または windows server 2012 を実行しているコンピューターの更新プログラムを提供します。**注:** スタンドアロンの wsus 3.0 sp2 環境がある場合、または wsus 2007 sp2 を使用する Configuration Manager 3.0 Service Pack 2 環境の場合[は、windows](https://support.microsoft.com/kb/2734608) 8 ベース|  
-|[Exchange 2013](https://technet.microsoft.com/library/bb691354.aspx)|Windows Server 2012 Standard および Datacenter は、次の役割に対してサポートされています: スキーマ マスター、グローバル カタログ サーバー、ドメイン コントローラー、メールボックス サーバー、クライアント アクセス サーバー<br /><br />フォレストの機能レベル:Windows Server 2003 以降<br /><br />ソース:Exchange 2013 のシステム要件|  
-|Exchange 2010|[ソース: Exchange 2010 Service Pack 3](https://blogs.technet.com/b/exchange/archive/2012/09/25/announcing-exchange-2010-service-pack-3.aspx)<br /><br />Exchange 2010 Service Pack 3 は、Windows Server 2012 メンバー サーバーにインストールできます。<br /><br />[Exchange 2010 のシステム要件](https://technet.microsoft.com/library/aa996719(EXCHG.141).aspx) には、サポートされている最新のスキーマ マスター、グローバル カタログ、およびドメイン コントローラーとして Windows Server 2008 R2 が記載されています。<br /><br />フォレストの機能レベル:Windows Server 2003 以降|  
-|SQL Server 2012|ソース:サポート技術情報 [2681562](https://support.microsoft.com/kb/2681562)<br /><br />Windows Server 2012 では SQL Server 2012 RTM がサポートされています。|  
-|SQL Server 2008 R2|ソース:サポート技術情報 [2681562](https://support.microsoft.com/kb/2681562)<br /><br />Windows Server 2012 にインストールするには、SQL Server 2008 R2 Service Pack 1 以上が必要です。|  
-|SQL Server 2008|ソース:サポート技術情報 [2681562](https://support.microsoft.com/kb/2681562)<br /><br />Windows Server 2012 にインストールするには、SQL Server 2008 Service Pack 3 以上が必要です。|  
-|SQL Server 2005|ソース:サポート技術情報 [2681562](https://support.microsoft.com/kb/2681562)<br /><br />Windows Server 2012 へのインストールがサポートされていません。|  
+|[Exchange 2013](https://technet.microsoft.com/library/bb691354.aspx)|Windows Server 2012 Standard および Datacenter は、次の役割に対してサポートされています: スキーマ マスター、グローバル カタログ サーバー、ドメイン コントローラー、メールボックス サーバー、クライアント アクセス サーバー<p>フォレストの機能レベル:Windows Server 2003 以降<p>ソース:Exchange 2013 のシステム要件|  
+|Exchange 2010|[ソース: Exchange 2010 Service Pack 3](https://blogs.technet.com/b/exchange/archive/2012/09/25/announcing-exchange-2010-service-pack-3.aspx)<p>Exchange 2010 Service Pack 3 は、Windows Server 2012 メンバー サーバーにインストールできます。<p>[Exchange 2010 のシステム要件](https://technet.microsoft.com/library/aa996719(EXCHG.141).aspx) には、サポートされている最新のスキーマ マスター、グローバル カタログ、およびドメイン コントローラーとして Windows Server 2008 R2 が記載されています。<p>フォレストの機能レベル:Windows Server 2003 以降|  
+|SQL Server 2012|ソース:サポート技術情報 [2681562](https://support.microsoft.com/kb/2681562)<p>Windows Server 2012 では SQL Server 2012 RTM がサポートされています。|  
+|SQL Server 2008 R2|ソース:サポート技術情報 [2681562](https://support.microsoft.com/kb/2681562)<p>Windows Server 2012 にインストールするには、SQL Server 2008 R2 Service Pack 1 以上が必要です。|  
+|SQL Server 2008|ソース:サポート技術情報 [2681562](https://support.microsoft.com/kb/2681562)<p>Windows Server 2012 にインストールするには、SQL Server 2008 Service Pack 3 以上が必要です。|  
+|SQL Server 2005|ソース:サポート技術情報 [2681562](https://support.microsoft.com/kb/2681562)<p>Windows Server 2012 へのインストールがサポートされていません。|  
 
-## <a name="BKMK_KnownIssues"></a>既知の問題
+## <a name="known-issues"></a><a name="BKMK_KnownIssues"></a>既知の問題
 
 AD DS のインストールに関する既知の問題を次の表に示します。  
 
@@ -340,7 +339,7 @@ AD DS のインストールに関する既知の問題を次の表に示しま�
 |[2747974](https://support.microsoft.com/kb/2747974):ドメイン コントローラーの複製イベント 2224 で不適切なガイダンスが表示される|仮想 DC の複製|イベント ID 2224 で表示される、管理されたサービス アカウントは複製前に削除する必要があるというメッセージは不適切です。 スタンドアロンの MSA は削除する必要がありますが、グループの MSA は複製をブロックしません。|  
 |[2748266](https://support.microsoft.com/kb/2748266):Windows 8 へのアップグレード後、BitLocker の暗号化されたドライブのロックを解除できない|BitLocker|Windows 7 からアップグレードされたコンピューターでドライブのロックを解除しようとすると、"アプリケーションが見つかりません" というエラーが表示されます。|  
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [Windows Server 2012 評価のためのリソース](https://technet.microsoft.com/evalcenter/hh708766.aspx)  
 [Windows Server 2012 評価ガイド](https://download.microsoft.com/download/5/B/2/5B254183-FA53-4317-B577-7561058CEF42/WS%202012%20Evaluation%20Guide.pdf)  

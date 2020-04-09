@@ -1,7 +1,6 @@
 ---
 ms.assetid: eefcc989-8763-45ee-8a64-3a97b4397160
 title: AD FS の運用
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 2db9cd83ed08673835a38e443e90c5eb092f43ac
-ms.sourcegitcommit: b649047f161cb605df084f18b573f796a584753b
+ms.openlocfilehash: cdedcbd5b9491b57ee31170b781dc821853d058f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76162483"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815136"
 ---
 # <a name="ad-fs-operations"></a>AD FS の運用
 
@@ -22,7 +21,7 @@ ms.locfileid: "76162483"
 
 このドキュメントには、AD FS のすべてのドキュメント操作の一覧が含まれています。 
 
-## <a name="service-configuration"></a>サービス構成
+## <a name="service-configuration"></a>サービスの構成
 - [AD FS と WAP 2016 で SSL 証明書を更新する](../ad-fs/operations/Manage-SSL-Certificates-AD-FS-WAP-2016.md)
 - [AD FS の迅速な復元ツール](../ad-fs/operations/AD-FS-Rapid-Restore-Tool.md)
 - [AD FS で証明書認証の代替ホスト名バインドを構成する](../ad-fs/operations/AD-FS-support-for-alternate-hostname-binding-for-certificate-authentication.md)
@@ -78,7 +77,7 @@ ms.locfileid: "76162483"
 - [パスワードの有効期限クレームを送信するように AD FS を構成する](../ad-fs/operations/Configure-AD-FS-to-Send-Password-Expiry-Claims.md)
 - [WIA をサポートしないデバイス用にイントラネット フォーム ベースの認証を構成する](../ad-fs/operations/Configure-intranet-forms-based-authentication-for-devices-that-do-not-support-WIA.md)
 
-## <a name="other"></a>Other
+## <a name="other"></a>その他
 - [任意のデバイスからの職場への参加による業務用アプリケーション間の SSO とシームレスな 2 要素認証](../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)
 - [追加の多要素認証による個人情報アプリケーションのリスク管理](../ad-fs/operations/Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
 - [条件付きアクセス制御によってリスクを管理する](../ad-fs/operations/Manage-Risk-with-Conditional-Access-Control.md)

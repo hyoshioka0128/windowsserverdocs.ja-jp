@@ -1,24 +1,20 @@
 ---
 title: rem
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Windows コマンドに関するトピック * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1a45b585-a83c-4ff6-badd-ff40f34cec23
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2da0b6e42858582c1485659f3bf8f59e8e2ed97e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 94428e6d5ec6fdb482a5d0d15bd1120e45ffea80
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71384566"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80836115"
 ---
 # <a name="rem"></a>rem
 
@@ -34,12 +30,12 @@ ms.locfileid: "71384566"
 rem [<Comment>]
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
 |パラメーター|説明|
 |---------|-----------|
-|\<Comment >|コメントとして追加する文字の文字列を指定します。|
-|/?|コマンド プロンプトにヘルプを表示します。|
+|\<コメント >|コメントとして追加する文字の文字列を指定します。|
+|/?|コマンド プロンプトでヘルプを表示します。|
 
 ## <a name="remarks"></a>コメント
 
@@ -47,7 +43,7 @@ rem [<Comment>]
 -   リダイレクト文字を使用することはできません ( **<** または **>** ) またはパイプ ( **|** ) バッチ ファイルのコメントにします。
 -   使用できますが **rem** 、コメントの上下の間隔をバッチ ファイルに追加することがなく、空白行を使用することもできます。 バッチ ファイルが処理されるときに、空白行は無視されます。
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a><a name=BKMK_examples></a>例
 
 次の例は、コメント、および上下の間隔は、「解説」を使用するバッチ ファイルを示しています。
 ```
@@ -65,6 +61,6 @@ rem Set prompt to indicate current directory
 prompt $p$g
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
