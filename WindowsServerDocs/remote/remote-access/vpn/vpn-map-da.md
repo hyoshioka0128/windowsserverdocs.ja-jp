@@ -7,14 +7,14 @@ ms.topic: article
 ms.localizationpriority: medium
 ms.date: 11/05/2018
 ms.assetid: 8fe1c810-4599-4493-b4b8-73fa9aa18535
-ms.author: lizross
-author: eross-msft
-ms.openlocfilehash: 576682c7efc726a974feb50e64b8dc86d5764273
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.author: v-tea
+author: Teresa-MOTIV
+ms.openlocfilehash: 807d713a6e903f7fdb54deb114d03ce73f8a291d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80307787"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80818745"
 ---
 # <a name="always-on-vpn-features-and-functionalities"></a>Always On VPN の機能
 

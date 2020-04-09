@@ -1,7 +1,6 @@
 ---
 ms.assetid: 1a443181-7ded-4912-8e40-5aa447faf00c
 title: AD FS 2016 シングル サイン オンの設定
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 08/17/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 76c34dc518f4578b4ae2ead3459f1d79c191b3d7
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: bad6ad9a95618239825366187c8083c1fe77ae94
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949197"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860085"
 ---
 # <a name="ad-fs-single-sign-on-settings"></a>AD FS のシングルサインオンの設定
 
@@ -40,7 +39,7 @@ AD FS は、いくつかの種類のシングルサインオンエクスペリ�
   
      OAuth シナリオでは、更新トークンを使用して、特定のアプリケーションのスコープ内でユーザーの SSO 状態を維持します。  
   
-     デバイスが登録されている場合、AD FS は、登録されているデバイスの永続 SSO cookie の有効期間に基づいて更新トークンの有効期限を設定します。これは、既定では AD FS 2012R2 では7日間、AD FS 2016 では最大90日です。14日の期間内に AD FS リソースにアクセスします。 
+     デバイスが登録されている場合、AD FS は、登録されているデバイスの永続 SSO cookie の有効期間に基づいて更新トークンの有効期限を設定します。これは、AD FS 2012R2 では既定で7日間、AD FS 2016 では最大90日です。ユーザーが14日の期間内に AD FS リソースにアクセスする場合、 
 
 デバイスが登録されておらず、ユーザーが [サインインしたままにする] オプションを選択した場合、更新トークンの有効期限は、"サインインしたままにする" の永続 SSO cookie の有効期間と同じになります。これは、既定では最大7日間になります。 それ以外の場合、更新トークンの有効期間は、既定では8時間のセッション SSO cookie の有効期間と同じになります。  
   
@@ -96,14 +95,14 @@ Set-AdfsProperties –KmsiLifetimeMins <Int32\>
 ```   
 
 ## <a name="multi-factor-authentication-mfa-behavior"></a>Multi-factor authentication (MFA) の動作  
-重要なのは、比較的長いシングルサインオンを提供している間に、AD FS は追加の認証 (多要素認証) を要求します。これは、以前のサインオンが MFA ではなくプライマリ資格情報に基づいており、現在のサインオンMFA が必要です。  これは SSO 構成には関係ありません。 AD FS は、認証要求を受信すると、まず SSO コンテキスト (cookie など) があるかどうかを判断し、MFA が必要な場合 (外部から要求が送信される場合など) は、SSO コンテキストに MFA が含まれているかどうかを評価します。  それ以外の場合は、MFA が要求されます。  
+重要なのは、比較的長いシングルサインオンを提供している間、AD FS では、以前のサインオンが MFA ではなくプライマリ資格情報に基づいており、現在のサインオンでは MFA が必要な場合に、追加の認証 (multi-factor authentication) の入力を求められることに注意してください。  これは SSO 構成には関係ありません。 AD FS は、認証要求を受信すると、まず SSO コンテキスト (cookie など) があるかどうかを判断し、MFA が必要な場合 (外部から要求が送信される場合など) は、SSO コンテキストに MFA が含まれているかどうかを評価します。  それ以外の場合は、MFA が要求されます。  
 
 
   
 ## <a name="psso-revocation"></a>PSSO の失効  
  セキュリティを保護するために、次の条件が満たされたときに以前に発行されたすべての永続的な SSO cookie を拒否する AD FS ます。 これには、AD FS での認証を行うために、ユーザーが資格情報を入力する必要があります。 
   
-- ユーザーがパスワードを変更する  
+- ユーザーによるパスワードの変更  
   
 - 永続 SSO 設定が AD FS で無効になっています  
   
@@ -165,21 +164,21 @@ c:[Type == "https://schemas.microsoft.com/2014/03/psso"]
  <tr align="center">
     <td>SSO =&gt;設定更新トークン =&gt;</td>
     <td>8時間</td>
-    <td>なし</td>
-    <td>なし</td>
+    <td>N/A</td>
+    <td>N/A</td>
     <th></th>
     <td>8時間</td>
-    <td>なし</td>
-    <td>なし</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
 
  <tr align="center">
     <td>PSSO =&gt;更新トークンを設定する =&gt;</td>
-    <td>なし</td>
+    <td>N/A</td>
     <td>24時間</td>
-    <td>7 日</td>
+    <td>7日間</td>
     <th></th>
-    <td>なし</td>
+    <td>N/A</td>
     <td>24時間</td>
     <td>14日の期間の最大90日</td>
   </tr>

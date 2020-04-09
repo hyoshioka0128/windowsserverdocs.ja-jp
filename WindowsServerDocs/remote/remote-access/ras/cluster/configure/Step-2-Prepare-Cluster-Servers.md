@@ -2,22 +2,18 @@
 title: 手順 2 は、クラスター サーバーを準備します。
 description: このトピックは、「Windows Server 2016 のクラスターにリモートアクセスを展開する」の一部です。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 35d68abb-6914-42e0-91e8-803933cf785e
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 74aac416a5aa69a0cd935d58e3ecb931e4b5fd02
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: e53557f1fb2715f1d0318adc12aebb8f84423519
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80308334"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861445"
 ---
 # <a name="step-2-prepare-cluster-servers"></a>手順 2 は、クラスター サーバーを準備します。
 
@@ -27,7 +23,7 @@ ms.locfileid: "80308334"
   
 |タスク|説明|  
 |----|--------|  
-|[2.1 リモートアクセスインフラストラクチャを構成する](#BKMK_config)|クラスターに追加する各サーバーで、サーバーのトポロジ、IP アドレスの指定、ルーティング、および転送を構成します。 仮想マシンの負荷分散されたクラスターを構成する場合は、MAC アドレスのスプーフィングを使用する仮想マシンを構成する必要があります。<br /><br />さらに、各サーバーを同じドメインに参加し、すべてのサーバーを同じサブネットに接続します。|  
+|[2.1 リモートアクセスインフラストラクチャを構成する](#BKMK_config)|クラスターに追加する各サーバーで、サーバーのトポロジ、IP アドレスの指定、ルーティング、および転送を構成します。 仮想マシンの負荷分散されたクラスターを構成する場合は、MAC アドレスのスプーフィングを使用する仮想マシンを構成する必要があります。<p>さらに、各サーバーを同じドメインに参加し、すべてのサーバーを同じサブネットに接続します。|  
 |[2.2 リモートアクセスの役割をインストールする](#BKMK_Install)|クラスターに追加する各追加サーバー リモート アクセスの役割をインストールします。|  
 |[2.3 NLB をインストールする](#BKMK_NLB)|デプロイされているリモート アクセス サーバーおよびクラスターに追加する各追加のサーバーでは、NLB 機能をインストールします。 外部のロード バランサーを使用する場合に、この手順は必要ないことに注意してください。|  
   

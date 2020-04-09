@@ -1,23 +1,19 @@
 ---
 title: Windows Server Essentials のダッシュボードの概要
 description: Windows Server Essentials の使用方法について説明します。
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f70a79de-9c56-4496-89b5-20a1bff2293e
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: e7737e167d5844efbbc692a1feacb1e3e22a8080
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: ad59d4c23efdb0094d0cac780815f3f3238db3da
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80319023"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852675"
 ---
 # <a name="overview-of-the-dashboard-in-windows-server-essentials"></a>Windows Server Essentials のダッシュボードの概要
 

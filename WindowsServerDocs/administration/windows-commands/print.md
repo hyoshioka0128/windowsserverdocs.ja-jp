@@ -1,24 +1,20 @@
 ---
 title: print
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Windows コマンドに関するトピック * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: aa2325d5-a993-4ed3-b996-255165452db8
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ada0657e2f17754e55e97e6488aac99fb0025afb
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 36966d8d3beb032ee0dcee50d9bd5bc0111bf4f5
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71372155"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80837375"
 ---
 # <a name="print"></a>print
 
@@ -34,7 +30,7 @@ ms.locfileid: "71372155"
 Print [/d:<PrinterName>] [<Drive>:][<Path>]<FileName>[ ...]
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
 |パラメーター|説明|
 |---------|-----------|
@@ -42,9 +38,9 @@ Print [/d:<PrinterName>] [<Drive>:][<Path>]<FileName>[ ...]
 |\<ドライブ >:|印刷するファイルの場所の論理的または物理的なドライブを指定します。 現在のドライブに印刷するファイルがある場合、このパラメーターは必要ありません。|
 |\<パス >|印刷するファイルの場所を指定します。 印刷するファイルが現在のディレクトリにある場合、このパラメーターは必要ありません。|
 |\<ファイル名 > [...]|必須。 印刷するファイルを指定します。 1 つのコマンドでは、複数のファイルを含めることができます。|
-|/?|コマンド プロンプトにヘルプを表示します。|
+|/?|コマンド プロンプトでヘルプを表示します。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
 -   ファイルは、ローカル コンピューターのシリアル ポートまたはパラレル ポートに接続されているプリンターに送信する場合、バック グラウンドで印刷できます。
 -   コマンド プロンプトからさまざまな構成タスクを実行するにを使用して、 **モード** コマンドです。
@@ -55,7 +51,7 @@ Print [/d:<PrinterName>] [<Drive>:][<Path>]<FileName>[ ...]
     -   プリンターの状態を表示します。
     -   コード ページ切り替えのプリンターを準備します。
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a><a name=BKMK_examples></a>例
 
 LPT2 に、ローカル コンピューター上のプリンターには、現在のディレクトリに Report.txt に接続されているファイルを送信するには、次のように入力します。
 ```
@@ -66,9 +62,9 @@ C:\ Accounting ディレクトリにある test.txt ファイルを \\\\CopyRoom
 print /d:\\copyroom\printer1 c:\accounting\report.txt 
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
 
 [印刷コマンドのリファレンス](print-command-reference.md)
 

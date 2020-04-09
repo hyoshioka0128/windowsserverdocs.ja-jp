@@ -1,24 +1,20 @@
 ---
 title: reg add
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Windows コマンドに関するトピック * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d9ad143e-dc10-4e2e-a229-408393c40079
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5b478ce0c98ec77f1387d8f894364f53cf8d2142
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: df59477c980169699dac897e36836e5226b6a0fa
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71371767"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80836595"
 ---
 # <a name="reg-add"></a>reg add
 
@@ -32,7 +28,7 @@ reg add <KeyName> [{/v ValueName | /ve}] [/t DataType] [/s Separator] [/d Data] 
 ```
 このコマンドを使用する方法の例については、[例](#BKMK_examples)を参照してください。
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
 |      パラメーター      |                                                                                                                                                                                                                                                                   説明                                                                                                                                                                                                                                                                   |
 |---------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -45,19 +41,19 @@ reg add <KeyName> [{/v ValueName | /ve}] [/t DataType] [/s Separator] [/d Data] 
 |         /f          |                                                                                                                                                                                                                                           確認を求めずに、レジストリ エントリを追加します。                                                                                                                                                                                                                                           |
 |         /?          |                                                                                                                                                                                                                                              ヘルプを表示 **reg 追加** コマンド プロンプト。                                                                                                                                                                                                                                               |
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
 -   サブツリーは、この操作を追加することはできません。 このバージョンの **reg** サブキーを追加するときに確認を要求しません。
 -   次の表に、戻り値の **reg 追加** 操作します。
 
-| Value | 説明 |
+| 値 | 説明 |
 |-------|-------------|
 |   0   |   成功   |
 |   1   |   失敗   |
 
--   REG_EXPAND_SZ キーの種類のキャレット記号を使用して ( **^** ) と **%** "/d パラメーターの中
+-   REG_EXPAND_SZ キーの種類の場合は、/d パラメーター内で **%** を指定したカレット記号 ( **^** ) を使用します。
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a><a name=BKMK_examples></a>例
 
 リモート コンピューター ABC に HKLM\Software\MyCo キーを追加して、次のように入力します。
 ```
@@ -76,6 +72,6 @@ REG ADD HKLM\Software\MyCo /v MRU /t REG_MULTI_SZ /d fax\0mail\0\0
 REG ADD HKLM\Software\MyCo /v Path /t REG_EXPAND_SZ /d ^%systemroot^%
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

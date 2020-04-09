@@ -1,26 +1,22 @@
 ---
-title: import
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+title: 取り込み
+description: Windows コマンドに関するトピック * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7bd78d76-0560-4d47-944c-fe960be2c10b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 50a095c323806dd523994c36c5b427d4ecedf8ef
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 07fdd03c73c454e92218a4c6983eac7f29b50883
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71375496"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80842175"
 ---
-# <a name="import"></a>import
+# <a name="import"></a>取り込み
 
 
 
@@ -39,7 +35,7 @@ import
 -   転送可能なシャドウコピーは、システムにすぐには保存されません。 これらの詳細は、バックアップコンポーネントドキュメント XML ファイルに格納されます。この XML ファイルは、自動的に要求され、.cab メタデータファイルを作業ディレクトリに保存します。 このファイルのパスと名前は、 **[メタデータの設定]** コマンドを使用して変更できます。
 -   **Import**を使用するには、 **[メタデータの読み込み]** コマンドを使用して、DiskShadow メタデータファイルを読み込む必要があります。
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a><a name=BKMK_examples></a>例
 
 **Import**コマンドの使用方法を示す DiskShadow スクリプトの例を次に示します。
 ```
@@ -59,6 +55,6 @@ IMPORT
 #The shadow copy will now be loaded into the system.
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

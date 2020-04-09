@@ -1,28 +1,22 @@
 ---
 title: copy
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Windows コマンドに関するトピックでは、ある場所から別の場所に1つ以上のファイルをコピーします。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 9624d4a1-349a-4693-ad00-1d1d4e59e9ac
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 102fd6b59516b04b8986ee47b52f521be73f04de
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3f1ba088f62dec574a23406683bf5ae3d13c1e86
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71379045"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80847145"
 ---
 # <a name="copy"></a>copy
-
-
 
 ある場所から別の場所に1つ以上のファイルをコピーします。
 
@@ -34,7 +28,7 @@ ms.locfileid: "71379045"
 copy [/d] [/v] [/n] [/y | /-y] [/z] [/a | /b] <Source> [/a | /b] [+<Source> [/a | /b] [+ ...]] [<Destination> [/a | /b]]
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
 |パラメーター|説明|
 |---------|-----------|
@@ -46,9 +40,9 @@ copy [/d] [/v] [/n] [/y | /-y] [/z] [/a | /b] <Source> [/a | /b] [+<Source> [/a 
 |/z|再起動可能モードでネットワークファイルをコピーします。|
 |/a|ASCII テキストファイルを示します。|
 |/b|バイナリファイルを示します。|
-|\<Source >|必須。 ファイルまたはファイルのセットのコピー元となる場所を指定します。 *ソース*は、ドライブ文字とコロン、ディレクトリ名、ファイル名、またはこれらの組み合わせで構成されます。|
+|\<ソース >|必須。 ファイルまたはファイルのセットのコピー元となる場所を指定します。 *ソース*は、ドライブ文字とコロン、ディレクトリ名、ファイル名、またはこれらの組み合わせで構成されます。|
 |\<Destination >|必須。 ファイルまたはファイルのセットをコピーする場所を指定します。 *宛先*には、ドライブ文字とコロン、ディレクトリ名、ファイル名、またはこれらの組み合わせを使用できます。|
-|/?|コマンド プロンプトにヘルプを表示します。|
+|/?|コマンド プロンプトでヘルプを表示します。|
 
 ## <a name="remarks"></a>コメント
 
@@ -77,7 +71,7 @@ copy [/d] [/v] [/n] [/y | /-y] [/z] [/a | /b] <Source> [/a | /b] [+<Source> [/a 
     **/Y**が copycmd 環境変数で事前に設定されている場合は、コマンドラインで **/-y**を使用して、この設定をオーバーライドできます。 既定では、**コピー**コマンドがバッチスクリプトで実行されない限り、この設定を置き換えるときにメッセージが表示されます。
 -   追加 (ファイルを)
 
-    ファイルを追加するには、*変換先*に1つのファイルを指定しますが、*ソース*には複数のファイルを指定します (ワイルドカード文字または*File1*+*File2*+*File3*形式)。
+    ファイルを追加するには、*変換先*に対して1つのファイルを指定しますが、*ソース*には複数のファイルを指定します (ワイルドカード文字または*File1*+*File2*+*File3*形式を使用します)。
 -   **/Z**の使用
 
     コピーフェーズ中に接続が失われた場合 (たとえば、オフラインになっているサーバーが接続を切断した場合など)、**コピー/z**は接続が再確立された後に再開します。 **/z**は、各ファイルで完了したコピー操作の割合も表示します。
@@ -112,7 +106,7 @@ copy [/d] [/v] [/n] [/y | /-y] [/z] [/a | /b] <Source> [/a | /b] [+<Source> [/a 
     ディレクトリのすべてのファイルとサブディレクトリをコピーするには、 **xcopy**コマンドを使用します。
 -   **Copy**コマンドは異なるパラメーターを使用して、回復コンソールから使用できます。
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a><a name=BKMK_examples></a>例
 
 Memo という名前のファイルを現在のドライブの Letter .doc にコピーし、ファイルの終端文字 (CTRL + Z) がコピーされたファイルの末尾にあることを確認するには、次のように入力します。
 ```
@@ -153,6 +147,6 @@ copy *.txt + *.ref *.doc
 copy *.txt + *.ref Combined.doc
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

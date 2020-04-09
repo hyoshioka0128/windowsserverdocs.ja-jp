@@ -1,6 +1,5 @@
 ---
 title: Active Directory フォレストの回復を計画するための前提条件
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: c49b40b2-598d-49aa-85b4-766bce960e0d
 ms.technology: identity-adds
-ms.openlocfilehash: fddd5e236774c7f054ccd6332eb45d4f03afdf3f
-ms.sourcegitcommit: a33404f92867089bb9b0defcd50960ff231eef3f
+ms.openlocfilehash: 6dcd1185ba4d4c847cfe212f78ccc9661fd2aead
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "77013007"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80823785"
 ---
 # <a name="active-directory-forest-recovery-prerequisites"></a>Active Directory フォレスト回復の前提条件
 
@@ -51,7 +50,7 @@ Active Directory フォレストの回復計画を開始する前に、次のこ
 
 さらに、ラボ環境で AD DS と SYSVOL を定期的にバックアップして復元する必要があります。 詳細については、「[システム状態データをバックアップ](AD-Forest-Recovery-Procedures.md)し、 [Active Directory Domain Services の権限のない復元を実行する](AD-Forest-Recovery-Procedures.md)」を参照してください。
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 
 > [!div class="nextstepaction"]
 > [AD フォレストの回復 - 前提条件](AD-Forest-Recovery-Prerequisties.md)

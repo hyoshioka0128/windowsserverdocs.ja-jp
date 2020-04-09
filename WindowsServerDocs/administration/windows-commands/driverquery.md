@@ -1,24 +1,20 @@
 ---
 title: driverquery
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Windows コマンドに関するトピック * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 92ca4b84-e4e2-405b-9f31-bf6db9f66839
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5d44a1be300b7178bc2271187344c2fc4ab8815e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7c3e7cc5dc84794a5cfb5ac21edb00f8dacfaa18
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71377649"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80845285"
 ---
 # <a name="driverquery"></a>driverquery
 
@@ -34,20 +30,20 @@ ms.locfileid: "71377649"
 driverquery [/s <System> [/u [<Domain>\]<Username> [/p <Password>]]] [/fo {table | list | csv}] [/nh] [/v | /si]
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
 |         パラメーター         |                                                                                                                                         説明                                                                                                                                          |
 |---------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |       /s \<システム >        |                                                                                      名前またはリモート コンピューターの IP アドレスを指定します。 円記号を使用しないでください。 既定はローカル コンピュータです。                                                                                       |
 | /u [\<ドメイン >\]<Username> | *ユーザーまたは* *ドメイン*\*ユーザーによって指定されたユーザーアカウントの資格情報でコマンドを実行し<em>ます。既定では、\*\*/s</em>\* は、コマンドを発行しているコンピューターに現在ログオンしているユーザーの資格情報を使用します。 **/s**が指定されている場合を除き、 **/u**は使用できません。 |
 |      /p \<パスワード >       |                                                                           指定されているユーザー アカウントのパスワードを指定します、 **/u** パラメーター。 **/p**は、 **/u**が指定されている場合には使用できません。                                                                            |
-|        /fo {テーブル         |                                                                                                                                             list                                                                                                                                             |
+|        /fo {テーブル         |                                                                                                                                             リスト                                                                                                                                             |
 |            /nh            |                                                                                      表示されているドライバー情報からヘッダー行を除外します。 **/Fo**パラメーターが**list**に設定されている場合は無効です。                                                                                      |
 |            /v             |                                                                                                               詳細出力を表示します。 **/v**は、署名されたドライバーでは無効です。                                                                                                               |
 |            /si            |                                                                                                                          署名されたドライバーに関する情報を提供します。                                                                                                                          |
-|            /?             |                                                                                                                             コマンド プロンプトにヘルプを表示します。                                                                                                                             |
+|            /?             |                                                                                                                             コマンド プロンプトでヘルプを表示します。                                                                                                                             |
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a><a name=BKMK_examples></a>例
 
 ローカルコンピューターにインストールされているデバイスドライバーの一覧を表示するには、次のように入力します。
 ```
@@ -70,6 +66,6 @@ driverquery /s server1
 driverquery /s server1 /u maindom\user1 /p p@ssw3d
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

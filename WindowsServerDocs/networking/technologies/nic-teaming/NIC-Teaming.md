@@ -2,23 +2,19 @@
 title: NIC チーミング
 description: このトピックでは、Windows Server 2016 でのネットワークインターフェイスカード (NIC) チーミングの概要について説明します。 NIC チーミングを使用すると、1つまたは32の物理イーサネットネットワークアダプターを、1つまたは複数のソフトウェアベースの仮想ネットワークアダプターにグループ化することができます。 これらの仮想ネットワーク アダプターは、高速なパフォーマンスに加え、ネットワーク アダプターに障害が発生した場合のフォールト トレランスを提供します。
 manager: dougkim
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-nict
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: abded6f3-5708-4e35-9a9e-890e81924fec
 ms.author: lizross
 author: eross-msft
 ms.date: 09/10/2018
-ms.openlocfilehash: f4d9dd20d626f998bee0a8414c281cd27b2d3dbb
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 13607bedb436b794e03e3b2ef67ca0e90d865ed7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80316441"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854735"
 ---
 # <a name="nic-teaming"></a>NIC チーミング
 
@@ -41,7 +37,10 @@ Windows Server 2016 ではチームあたり最大32のチームインターフ�
 また、チーム化された Nic を同じスイッチまたは異なるスイッチに接続することもできます。 Nic を別々 のスイッチに接続する場合、同じサブネットに両方のスイッチを引き起こすことがあります。  
   
 ## <a name="availability"></a>対象  
-NIC チーミングは、Windows Server 2016 のすべてのバージョンで使用できます。 次のように、クライアントオペレーティングシステムを実行しているコンピューターから、さまざまなツールを使用して NIC チーミングを管理できます。• Windows PowerShell コマンドレット•リモートデスクトップ•リモートサーバー管理ツール  
+NIC チーミングは、Windows Server 2016 のすべてのバージョンで使用できます。 次のようなさまざまなツールを使用して、クライアントオペレーティングシステムを実行しているコンピューターから NIC チーミングを管理できます。
+*    Windows PowerShell コマンドレット
+*    リモート デスクトップ
+*    リモート サーバー管理ツール  
   
 ## <a name="supported-and-unsupported-nics"></a>サポートされている Nic とサポート非対象の Nic   
 Windows Server 2016 の NIC チームで、Windows ハードウェア認定およびロゴテスト (WHQL テスト) に合格したイーサネット NIC を使用できます。  
@@ -116,9 +115,9 @@ NIC チーミングを使用する場合、複数のチームインターフェ�
 
 次のガイドラインを使用して、NIC チームで構成された VM で Vlan を使用することを計画します。
   
--   VM で複数の Vlan をサポートする場合は、Hyper-v 仮想スイッチ上の複数のポートを使用して VM を構成し、各ポートを VLAN に関連付ける方法をお勧めします。 VM でこれらのポートをチームにしないでください。これにより、ネットワーク通信の問題が発生します。  
+-    VM で複数の Vlan をサポートする場合は、Hyper-v 仮想スイッチ上の複数のポートを使用して VM を構成し、各ポートを VLAN に関連付ける方法をお勧めします。 VM でこれらのポートをチームにしないでください。これにより、ネットワーク通信の問題が発生します。  
 
--   VM に複数の SR-IOV 仮想機能 (VFs) がある場合は、VM でそれらをチーミングする前に、それらが同じ VLAN 上にあることを確認してください。 さまざまな VFs を異なる Vlan に構成し、そのためにネットワーク通信の問題が発生するように構成することは簡単です。  
+-    VM に複数の SR-IOV 仮想機能 (VFs) がある場合は、VM でそれらをチーミングする前に、それらが同じ VLAN 上にあることを確認してください。 さまざまな VFs を異なる Vlan に構成し、そのためにネットワーク通信の問題が発生するように構成することは簡単です。  
  
   
 ### <a name="manage-network-interfaces-and-vlans"></a>ネットワークインターフェイスと Vlan の管理 

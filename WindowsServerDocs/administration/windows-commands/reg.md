@@ -1,30 +1,26 @@
 ---
 title: reg
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Windows コマンドに関するトピック * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c97496b2-d1ff-4887-b5d2-6e1524be465a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 196c32775fe17afc29d75969ec2ba98465768cce
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a1f5154401791823ae71d5e0a8f044bdcfb5b5b1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71371712"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80836255"
 ---
 # <a name="reg"></a>reg
 
 
 
-レジストリ エントリをレジストリ サブキー情報と値に対して操作を実行します。 **reg**コマンドには次のものがあります。
+レジストリ エントリをレジストリ サブキー情報と値に対して操作を実行します。 **Reg**コマンドには次のものがあります。
 
 [Reg add](reg-add.md)
 

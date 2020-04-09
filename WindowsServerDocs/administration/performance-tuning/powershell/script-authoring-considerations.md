@@ -4,15 +4,15 @@ description: PowerShell でのパフォーマンスのスクリプト作成
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: JasonSh
+ms.author: jasonsh
 author: lzybkr
 ms.date: 10/16/2017
-ms.openlocfilehash: 2898cf5ee965da77c9f6a3473e55c1cee6b53f2b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f22a4f1ba5c0f048e2aa01c744feb3b2b83007a0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71354978"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851925"
 ---
 # <a name="powershell-scripting-performance-considerations"></a>PowerShell スクリプトのパフォーマンスに関する考慮事項
 

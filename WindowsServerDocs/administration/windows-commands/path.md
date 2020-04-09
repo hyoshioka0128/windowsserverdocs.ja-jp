@@ -1,26 +1,22 @@
 ---
-title: path
+title: パス
 description: PATH 環境変数を設定する方法について説明します。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1bfa1349-e79a-472b-a9e6-d7a91149ae8f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 81e8441e7c67e42bdf929e703c8fe780a6f8aff8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: cb77cac3871dcf4a411638409de68d038a317d24
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71372422"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80837715"
 ---
-# <a name="path"></a>path
+# <a name="path"></a>パス
 
 
 
@@ -35,14 +31,14 @@ path [[<Drive>:]<Path>[;...][;%PATH%]]
 path ;
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
 |     パラメーター     |                                                                                                     説明                                                                                                      |
 |-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [\<Drive >:] <Path> |                                                                            ドライブとコマンドのパスを設定するディレクトリを指定します。                                                                             |
+| [\<Drive >:]<Path> |                                                                            ドライブとコマンドのパスを設定するディレクトリを指定します。                                                                             |
 |         ;         | コマンド パス内のディレクトリを分割します。 その他のパラメーターを指定せずに使用する場合 **;** PATH 環境変数からの既存のコマンド パスをクリアし、Cmd.exe、現在のディレクトリのみで検索するように指示します。 |
 |      %PATH%       |                                                         コマンド パスを PATH 環境変数で指定されているディレクトリの既存のセットに追加します。                                                         |
-|        /?         |                                                                                         コマンド プロンプトにヘルプを表示します。                                                                                         |
+|        /?         |                                                                                         コマンド プロンプトでヘルプを表示します。                                                                                         |
 
 ## <a name="remarks"></a>コメント
 
@@ -50,16 +46,16 @@ path ;
 -   現在のディレクトリはコマンドのパスで指定したディレクトリの前に常に検索します。
 -   ディレクトリ内の同じファイル名を共有するファイルを所有していて別の拡張機能を所有する可能性があります。 たとえば、会計プログラムを起動する起動という名前のファイルと、サーバー ネットワークに接続する、アカウンティング システム accnt.bat 別のファイルがあります。
 
-    Windows オペレーティング システムは、次の優先順位で既定のファイル名拡張子を使用してファイルを検索: .exe、.com、.bat と cmd。 起動が同じディレクトリに存在する場合は、Accnt.bat を実行するには、コマンド プロンプトで .bat 拡張子を含める必要があります。
+    Windows オペレーティング システムは、次の優先順位で既定のファイル名拡張子を使用してファイルを検索: .exe、.com、.bat と cmd.。 起動が同じディレクトリに存在する場合は、Accnt.bat を実行するには、コマンド プロンプトで .bat 拡張子を含める必要があります。
 -   コマンド パス内の 2 つ以上のファイルには、同じファイル名と拡張子が付いている **パス** 現在のディレクトリに名を指定したファイルの最初を検索します。 PATH 環境変数で示されている順序でコマンド パス内のディレクトリを検索します。
 -   配置した場合、 **パス** コマンド、項目ファイルを Windows オペレーティング システムは、お使いのコンピューターにログオンするたびに自動的に指定した MS-DOS サブシステムの検索パスを追加します。 Cmd.exe では、項目のファイルは使用しません。 ショートカットから起動すると、Cmd.exe は、マイ コンピューター/プロパティ/詳細設定/環境を設定する環境変数を継承します。
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a><a name="BKMK_examples"></a>例
 
 外部コマンド、パスの C:\User\Taxes、B:\User\Invest、および B:\Bin を検索するには、次のように入力します。
 
 `path c:\user\taxes;b:\user\invest;b:\bin`
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

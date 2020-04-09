@@ -1,28 +1,24 @@
 ---
 title: netstat
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Windows コマンドに関するトピック * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 60e2718f-93cc-4ceb-bf0e-58a6a6e4fc8b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 54bd21b7e96275d329e45e825971d9236488c793
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: afd34cca2ecd3caa7ac480b380b85ba6d2a19fcb
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71373258"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80839015"
 ---
 # <a name="netstat"></a>netstat
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 アクティブな TCP 接続をコンピューターがリッスンしている、イーサネットの統計情報、IP ルーティング テーブル、IPv4 プロトコルの統計情報 (、IP、ICMP、TCP、および UDP)、および IPv6 の統計情報 (の IPv6、ICMPv6、IPv6 経由で TCP および UDP IPv6 プロトコル経由で) ポートを表示します。 パラメーターを指定せずに使用される **netstat** アクティブな TCP 接続が表示されます。 
 
@@ -31,7 +27,7 @@ ms.locfileid: "71373258"
 netstat [-a] [-e] [-n] [-o] [-p <Protocol>] [-r] [-s] [<Interval>]
 ```
 
-### <a name="parameters"></a>パラメーター
+#### <a name="parameters"></a>パラメーター
 
 |   パラメーター   |                                                                                                                                              説明                                                                                                                                              |
 |---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -43,7 +39,7 @@ netstat [-a] [-e] [-n] [-o] [-p <Protocol>] [-r] [-s] [<Interval>]
 |      -s       | プロトコルによって統計が表示されます。 既定では、TCP、UDP、ICMP、および IP プロトコルに対して統計値が表示されます。 IPv6 プロトコルがインストールされている場合統計値が表示 (TCP)、IPv6、UDP 経由で、IPv6、ICMPv6、IPv6 プロトコルです。 **-P** パラメーターは、一連のプロトコルの指定を使用することができます。 |
 |      -r       |                                                                                                     IP ルーティング テーブルの内容を表示します。 これは、route print コマンドに相当します。                                                                                                     |
 |  <Interval>   |                                                        選択した情報を再表示すべて *間隔* 秒です。 再表示を停止するには、CTRL + C キーを押します。 このパラメーターを省略すると、 **netstat** 選択されている情報を 1 回だけを出力します。                                                         |
-|      /?       |                                                                                                                                 コマンド プロンプトにヘルプを表示します。                                                                                                                                  |
+|      /?       |                                                                                                                                 コマンド プロンプトでヘルプを表示します。                                                                                                                                  |
 
 ## <a name="remarks"></a>コメント
 -   次のコマンドで使用されるパラメーターをハイフンで接頭辞必要があります ( **-** )、スラッシュではなく ( **/** )。
@@ -51,10 +47,10 @@ netstat [-a] [-e] [-n] [-o] [-p <Protocol>] [-r] [-s] [<Interval>]
     -   Proto プロトコル (TCP または UDP) の名前。
     -   [ローカルアドレス] ローカルコンピューターの IP アドレスと使用されているポート番号。 IP アドレスに対応するローカル コンピューターの名前とポートの名前が示すようにしない限り、 **-n** パラメーターを指定します。 ポートがまだ確立されていない場合、ポート番号は、アスタリスク (*) として表示されます。
     -   [外部アドレス] ソケットが接続されているリモートコンピューターの IP アドレスとポート番号。 しない限り、IP アドレスとポートに対応する名前のとおり、 **-n** パラメーターを指定します。 ポートがまだ確立されていない場合、ポート番号は、アスタリスク (*) として表示されます。
-    -   (状態)TCP 接続の状態を示します。 考えられる状態は次のとおりです。CLOSE_WAIT CLOSED 確立済み FIN_WAIT_1 FIN_WAIT_2 LAST_ACK listEN SYN_RECEIVED SYN_SEND timeD_WAIT TCP 接続の状態の詳細については、Rfc 793 を参照してください。
+    -   (状態)TCP 接続の状態を示します。 考えられる状態は次のとおりです。 CLOSE_WAIT 閉じて確立された FIN_WAIT_1 FIN_WAIT_2 LAST_ACK リッスン SYN_RECEIVED SYN_SEND timeD_WAIT TCP 接続の状態の詳細については、Rfc 793 を参照してください。
 -   このコマンドは、インターネット プロトコル (TCP/IP) プロトコルがネットワーク接続のネットワーク アダプターのプロパティでコンポーネントとしてインストールされている場合にのみ使用できます。
 
-## <a name="BKMK_Examples"></a>例
+## <a name="examples"></a><a name=BKMK_Examples></a>例
 イーサネットの統計情報とプロトコルのすべての統計情報の両方を表示するには、次のように入力します。
 ```
 netstat -e -s
@@ -73,4 +69,4 @@ netstat -n -o
 ```
 
 ## <a name="additional-references"></a>その他の参照情報
--   [コマンド ライン構文の記号](command-line-syntax-key.md)
+-   - [コマンド ライン構文の記号](command-line-syntax-key.md)

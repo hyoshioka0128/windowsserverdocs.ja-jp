@@ -1,7 +1,6 @@
 ---
 ms.assetid: 604c771b-efae-4d0c-84a1-693e1f96d705
 title: AD FS 展開目標の特定
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 5fb6d150f91042d31caea2a51acebbb18a3167cf
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5a4b32ea920541c2787f191ed3a250f5712b619b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408071"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853065"
 ---
 # <a name="identifying-your-ad-fs-deployment-goals"></a>AD FS 展開目標の特定
 

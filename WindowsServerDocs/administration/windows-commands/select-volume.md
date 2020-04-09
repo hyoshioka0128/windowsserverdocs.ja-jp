@@ -1,28 +1,24 @@
 ---
 title: select volume
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Windows コマンドに関するトピック * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5d70d776-80ad-4f20-8288-a7997fb1df28
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cc981131c8de2dc4534e390645ef45c39a7b02ab
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b9337d7e4b37adcc22084249e53fb272335bf4f3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71371064"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80834705"
 ---
 # <a name="select-volume"></a>select volume
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 指定されたボリュームを選択し、それにフォーカスを移動します。 このコマンドは、選択したディスクにフォーカスが置かれているボリュームを表示することもできます。  
   
@@ -34,7 +30,7 @@ ms.locfileid: "71371064"
 select volume={<n>|<d>}  
 ```  
   
-## <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>パラメーター  
   
 | パラメーター |                                                                               説明                                                                                |
 |-----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -51,7 +47,7 @@ select volume={<n>|<d>}
   
 -   対応するボリュームを持つパーティションを選択すると、ボリュームが自動的に選択されます。  
   
-## <a name="BKMK_examples"></a>例  
+## <a name="examples"></a><a name=BKMK_examples></a>例  
 フォーカスをボリューム 2 に、次のように入力します。  
   
 ```  
@@ -64,7 +60,7 @@ select volume=2
 select volume=c  
 ```  
   
-フォーカスを"mountpath"という名前のフォルダーにマウントされたボリュームに、次のように入力します。  
+Mountpath という名前のフォルダーにマウントされているボリュームにフォーカスを移動するには、次のように入力します。  
   
 ```  
 select volume=c:\mountpath  
@@ -76,8 +72,8 @@ select volume=c:\mountpath
 select volume  
 ```  
   
-#### <a name="additional-references"></a>その他の参照情報  
-[コマンド ライン構文の記号](command-line-syntax-key.md)  
+## <a name="additional-references"></a>その他の参照情報  
+- [コマンド ライン構文の記号](command-line-syntax-key.md)  
   
 
   

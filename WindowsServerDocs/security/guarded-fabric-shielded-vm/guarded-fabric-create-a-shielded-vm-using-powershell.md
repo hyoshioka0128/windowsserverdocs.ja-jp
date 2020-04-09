@@ -1,18 +1,18 @@
 ---
 title: PowerShell を使用してシールドされた VM を作成する
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 09/25/2019
-ms.openlocfilehash: 6111b3fbff508c3c485f2a998bab8c0b16beaed6
-ms.sourcegitcommit: 471464a674a53c468a2f1e28575c91245ce9badf
+ms.openlocfilehash: 09e09fa30a38ef5f6046f623e24be0bc7b6ce87e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75548171"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856755"
 ---
 # <a name="create-a-shielded-vm-using-powershell"></a>PowerShell を使用してシールドされた VM を作成する
 
@@ -22,7 +22,7 @@ ms.locfileid: "75548171"
 
 簡単に言うと、テンプレートディスク、シールドデータファイル、無人インストール応答ファイル、およびその他のセキュリティアーティファクトを任意のコンピューターに作成し、これらのファイルを保護されたホストにコピーして、シールドされた VM をプロビジョニングします。
 
-## <a name="create-a-signed-template-disk"></a>署名されたテンプレート ディスクの作成
+## <a name="create-a-signed-template-disk"></a>署名済みテンプレートディスクを作成する
 
 新しいシールドされた VM を作成するには、まず、その OS ボリューム (または Linux 上のブートとルートパーティション) に署名されたシールドされた VM テンプレートディスクが必要です。
 テンプレートディスクを作成する方法の詳細については、次のリンク先を参照してください。

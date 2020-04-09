@@ -1,24 +1,20 @@
 ---
 title: nslookup set root
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Windows コマンドに関するトピック * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8ad5393c-d4fd-4594-8187-576b1dcde60a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5a1737275bf6321525bbba56cd4d6a77ef973423
-ms.sourcegitcommit: 9a6a692a7b2a93f52bb9e2de549753e81d758d28
+ms.openlocfilehash: ea2c34bbf7c9323c948d57ac2a838c22aea1008e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72591024"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80838315"
 ---
 # <a name="nslookup-set-root"></a>nslookup set root
 
@@ -29,15 +25,15 @@ ms.locfileid: "72591024"
 ```
 set root=<RootServer>
 ```
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
 |    パラメーター    |                                   説明                                    |
 |-----------------|----------------------------------------------------------------------------------|
 |  <RootServer>   | ルートサーバーの新しい名前を指定します。 既定値は ns.nic.ddn.mil です。 |
 | {ヘルプ&#124; ?} |              **Nslookup**サブコマンドの簡単な概要を表示します。               |
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 - **Set root**サブコマンドは、**ルート**サブコマンドに影響します。
   ## <a name="additional-references"></a>その他の参照情報
-  [コマンドライン構文のキー](command-line-syntax-key.md)
+  - [コマンドライン構文のキー](command-line-syntax-key.md)
   [nslookup root](nslookup-root.md)

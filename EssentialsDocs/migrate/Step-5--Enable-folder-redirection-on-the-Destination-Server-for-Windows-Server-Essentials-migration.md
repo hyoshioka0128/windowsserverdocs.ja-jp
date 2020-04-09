@@ -1,23 +1,19 @@
 ---
 title: '手順 5: Windows Server Essentials への移行のために移行先サーバーのフォルダー リダイレクトを有効にする'
 description: Windows Server Essentials の使用方法について説明します。
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d3925f80-552d-431f-b2a6-2af202e50ca4
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: fcc65db17cee65250296715036f0067659a0058e
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 710522f52791f3ee6c1c453c883f4265d08023be
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80318743"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852345"
 ---
 # <a name="step-5-enable-folder-redirection-on-the-destination-server-for-windows-server-essentials-migration"></a>手順 5: Windows Server Essentials への移行のために移行先サーバーのフォルダー リダイレクトを有効にする
 

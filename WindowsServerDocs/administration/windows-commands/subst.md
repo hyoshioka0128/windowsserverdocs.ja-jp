@@ -1,24 +1,20 @@
 ---
 title: subst
 description: パスをドライブ文字に関連付ける方法について説明します。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 3e69234c-2312-4343-868b-afc1017c622a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f3010d1e58fbd360b8311512e6664873b020c12b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 43cbc57aba29ea0b9150dccdfc566a93017a09a5
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383748"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80833645"
 ---
 # <a name="subst"></a>subst
 
@@ -35,14 +31,14 @@ subst [<Drive1>: [<Drive2>:]<Path>]
 subst <Drive1>: /d
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
 |パラメーター|説明|
 |---------|-----------|
-|\<ドライブ 1 >:|パスに割り当てる仮想ドライブを指定します。|
-|[\<Path 2 >:] \< パス >|物理ドライブと仮想ドライブに指定するパスを指定します。|
+|\<Drive1 >:|パスに割り当てる仮想ドライブを指定します。|
+|[\<Drive2 >:]\<パス >|物理ドライブと仮想ドライブに指定するパスを指定します。|
 |/d|置き換えられた (仮想) ドライブを削除します。|
-|/?|コマンド プロンプトにヘルプを表示します。|
+|/?|コマンド プロンプトでヘルプを表示します。|
 
 ## <a name="remarks"></a>コメント
 
@@ -63,7 +59,7 @@ subst <Drive1>: /d
 
     `Invalid parameter - drive1:`
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a><a name="BKMK_examples"></a>例
 
 仮想ドライブ Z B:\User\Betty\Forms のパスを作成するには、次のように入力します。
 ```
@@ -74,6 +70,6 @@ subst z: b:\user\betty\forms
 z: 
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

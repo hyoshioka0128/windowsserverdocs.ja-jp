@@ -1,24 +1,20 @@
 ---
 title: forfiles
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Windows コマンドに関するトピック * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 43f6b004-446d-4fdd-91c5-5653613524a4
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 08/21/2018
-ms.openlocfilehash: fa2eb5c96dfbf3870705af41a0f27991084f816d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 196da88dfd4ebe2be5a5c673e5afee3224432cb4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71377068"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80844485"
 ---
 # <a name="forfiles"></a>forfiles
 
@@ -31,28 +27,28 @@ ms.locfileid: "71377068"
 ## <a name="syntax"></a>構文
 
 ```
-forfiles [/p <Path>] [/m <SearchMask>] [/s] [/c "<Command>"] [/d [{+|-}][{<Date>|<Days>}]]
+forfiles [/p <Path>] [/m <SearchMask>] [/s] [/c <Command>] [/d [{+|-}][{<Date>|<Days>}]]
 ```
 
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
 |                     パラメーター                      |                                                                                                                                                                                                                                                                                                    説明                                                                                                                                                                                                                                                                                                     |
 |----------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |                     /p \<パス >                     |                                                                                                                                                                                                                                                 検索の開始位置を示すパスを指定します。 既定では、検索は現在の作業ディレクトリから開始されます。                                                                                                                                                                                                                                                  |
 |                  /m \<SearchMask >                  |                                                                                                                                                                                                                                                           指定された検索マスクに従ってファイルを検索します。 既定の検索マスクは **\*。\\** \*。                                                                                                                                                                                                                                                           |
 |                         /s                         |                                                                                                                                                                                                                                                                   **Forfiles**コマンドに対して、サブディレクトリを再帰的に検索するように指示します。                                                                                                                                                                                                                                                                    |
-|                  /c "\<コマンド >"                   |                                                                                                                                                                                                                                  各ファイルに対して指定されたコマンドを実行します。 コマンド文字列は引用符で囲む必要があります。 既定のコマンドは **"cmd/c echo @file"** です。                                                                                                                                                                                                                                   |
+|                  /c \<コマンド >                   |                                                                                                                                                                                                                                  各ファイルに対して指定されたコマンドを実行します。 コマンド文字列は引用符で囲む必要があります。 既定のコマンドは、 **cmd/c echo @file** です。                                                                                                                                                                                                                                   |
 | /d&nbsp;[{+\|-}]&#8288;[{\<日付 >\|&#8288;\<日 >}] | 指定された期間内に最終更新日のファイルを選択します。</br>-*日付*が MM/DD/YYYY の形式で指定した日付以降 ( **+** ) またはそれより前 ( **-** ) であるファイルを選択します。</br>-現在の日付に指定された日数を加算した日付、または現在の日付から指定した日数を引いた日付 ( **-** ) **+** 以降の最終更新日を含むファイルを選択します。</br>- *Days*に有効な値には、0 ~ 32768 の範囲の任意の数を指定します。 符号が指定されていない場合、既定では **+** が使用されます。 |
-|                         /?                         |                                                                                                                                                                                                                                                                                        コマンド プロンプトにヘルプを表示します。                                                                                                                                                                                                                                                                                        |
+|                         /?                         |                                                                                                                                                                                                                                                                                        コマンド プロンプトでヘルプを表示します。                                                                                                                                                                                                                                                                                        |
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
 -   **Forfiles**は、バッチファイルで最もよく使用されます。
 -   **Forfiles/s**は**dir/s.** に似ています。
 -   コマンド文字列では、 **/c**コマンドラインオプションで指定されているように、次の変数を使用できます。  
 
-|変数|説明|
+|[Variable]|説明|
 |--------|-----------|
 |@FILE|ファイル名。|
 |@FNAME|拡張子のないファイル名です。|
@@ -64,7 +60,7 @@ forfiles [/p <Path>] [/m <SearchMask>] [/s] [/c "<Command>"] [/d [{+|-}][{<Date>
 |@FDATE|ファイルで最後に変更された日付スタンプ。|
 |@FTIME|ファイルの最終更新日時スタンプ。|
 
--   **Forfiles**を使用すると、に対してコマンドを実行したり、複数のファイルに引数を渡したりすることができます。 たとえば、.txt というファイル名拡張子を持つツリー内のすべてのファイルに対して**type**コマンドを実行できます。 または、すべてのバッチファイル (* .bat) をドライブ C で実行し、ファイル名に "Myinput. .txt" を1番目の引数として指定することもできます。
+-   **Forfiles**を使用すると、に対してコマンドを実行したり、複数のファイルに引数を渡したりすることができます。 たとえば、.txt というファイル名拡張子を持つツリー内のすべてのファイルに対して**type**コマンドを実行できます。 または、すべてのバッチファイル (* .bat) をドライブ C で実行し、ファイル名 Myinput を最初の引数として指定することもできます。
 -   **Forfiles**を使用すると、次のいずれかの操作を実行できます。  
     -   ファイルの絶対日付または相対日付で **/d**パラメーターを使用して選択します。
     -   @FSIZE や @FDATEなどの変数を使用して、ファイルのアーカイブツリーを構築します。
@@ -72,29 +68,29 @@ forfiles [/p <Path>] [/m <SearchMask>] [/s] [/c "<Command>"] [/d [{+|-}][{<Date>
     -   コマンドラインに特殊文字を含めるには、文字の16進コードを 0x*HH*形式 (たとえば、タブの 0x09) で使用します。
 -   **Forfiles**は、1つのファイルのみを処理するように設計されたツールに対して、**再帰サブディレクトリ**フラグを実装することによって機能します。
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a><a name=BKMK_examples></a>例
 
 C ドライブのすべてのバッチファイルの一覧を表示するには、次のように入力します。
 ```
-forfiles /p c:\ /s /m *.bat /c "cmd /c echo @file is a batch file"
+forfiles /p c:\ /s /m *.bat /c cmd /c echo @file is a batch file
 ```
 C ドライブのすべてのディレクトリの一覧を表示するには、次のように入力します。
 ```
-forfiles /p c:\ /s /m *.* /c "cmd /c if @isdir==TRUE echo @file is a directory"
+forfiles /p c:\ /s /m *.* /c cmd /c if @isdir==TRUE echo @file is a directory
 ```
 現在のディレクトリにある、少なくとも1年前のすべてのファイルを一覧表示するには、次のように入力します。
 ```
-forfiles /s /m *.* /d -365 /c "cmd /c echo @file is at least one year old."
+forfiles /s /m *.* /d -365 /c cmd /c echo @file is at least one year old.
 ```
-2007年1月1日より前の現在のディレクトリ内の各ファイルについて、"*ファイル*は古くなっています" というテキストを表示するには、次のように入力します。
+2007年1月1日よりも前のバージョンでは、現在のディレクトリ内の各ファイルのテキスト*ファイル*が古くなっていることを表示するには、次のように入力します。
 ```
-forfiles /s /m *.* /d -01/01/2007 /c "cmd /c echo @file is outdated." 
+forfiles /s /m *.* /d -01/01/2007 /c cmd /c echo @file is outdated. 
 ```
 現在のディレクトリにあるすべてのファイルのファイル名拡張子を列形式で一覧表示し、拡張子の前にタブを追加するには、次のように入力します。
 ```
-forfiles /s /m *.* /c "cmd /c echo The extension of @file is 0x09@ext" 
+forfiles /s /m *.* /c cmd /c echo The extension of @file is 0x09@ext 
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

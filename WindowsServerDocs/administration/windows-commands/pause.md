@@ -1,24 +1,20 @@
 ---
 title: pause
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Windows コマンドに関するトピック * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: cab3afc3-d046-432f-a0bf-6282f0099032
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6501859eacf30dd6c1e64f34eee29ff81bd78ec9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 135d074a71c7153cc1665ad7b543bdba56ed66e8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71372374"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80837685"
 ---
 # <a name="pause"></a>pause
 
@@ -36,11 +32,11 @@ Press any key to continue . . .
 pause
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
 |パラメーター|説明|
 |---------|-----------|
-|/?|コマンド プロンプトにヘルプを表示します。|
+|/?|コマンド プロンプトでヘルプを表示します。|
 
 ## <a name="remarks"></a>コメント
 
@@ -55,7 +51,7 @@ pause
   Y (yes) キーを押して、このメッセージに応答をバッチ プログラムが終了し、制御がオペレーティング システムに戻ります。
 - 挿入することができます、 **を一時停止** コマンドを処理したくないバッチ ファイルのセクションまでにします。 **を一時停止** を一時停止バッチ ファイルの処理には、ctrl キーを押しながら C キーを押してしてバッチ プログラムを停止するには Y キーを押します。
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a><a name=BKMK_examples></a>例
 
 いずれのドライブでディスクを変更するユーザーの入力を要求するバッチ ファイルを作成するには、次のように入力します。
 ```
@@ -68,6 +64,6 @@ goto begin
 ```
 この例では、ドライブのディスク上のすべてのファイルは、現在のディレクトリにコピーされます。 メッセージでは、A、ドライブに新しいディスクを挿入するように求められます後、 **を一時停止** コマンドは、ディスクに変更され、処理を再開する任意のキーを押してようにの処理を中断します。 このバッチ ファイルは、無限ループで実行される —、 **goto 開始** コマンドは、バッチ ファイルの先頭のラベルに、コマンド インタープリターを送信します。 このバッチ ファイルを停止するには、ctrl キーを押しながら C キーを押して、Y キーを押します。
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

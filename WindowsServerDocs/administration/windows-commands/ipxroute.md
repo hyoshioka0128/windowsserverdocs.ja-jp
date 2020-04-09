@@ -1,28 +1,24 @@
 ---
 title: ipxroute
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Windows コマンドに関するトピック * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 3a30304f-655e-43d2-a4ac-7568abf8975c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bd5f33766ff9b33c9d6020b7284f2fbf9552d44d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f1e011835dbdbcf7be1daca2cdfbd47c39f9355c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71375334"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80842065"
 ---
 # <a name="ipxroute"></a>ipxroute
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 IPX プロトコルによって使用されるルーティングテーブルに関する情報を表示および変更します。 パラメーターを指定せずに使用します。 **ipxroute**には、不明、ブロードキャスト、およびマルチキャストアドレスに送信されるパケットの既定の設定が表示されます。   
 ## <a name="syntax"></a>構文  
@@ -33,7 +29,7 @@ ipxroute resolve {guid | name} {GUID | <AdapterName>}
 ipxroute board= N [def] [gbr] [mbr] [remove=xxxxxxxxxxxx]  
 ipxroute config  
 ```  
-### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a>パラメーター  
 |パラメーター|説明|  
 |-------|--------|  
 |サーバー [/type = X]|指定したサーバーの種類のサービスアクセスポイント (SAP) テーブルを表示します。  **X**は整数でなければなりません。 たとえば、 **/type = 4**の場合、すべてのファイルサーバーが表示されます。 **/Type**を指定しない場合、 **ipxroute servers**はすべての種類のサーバーを表示し、サーバー名で一覧表示します。|  
@@ -44,12 +40,12 @@ ipxroute config
 |gbr|パケットをすべてのルートブロードキャストに送信します。 パケットがブロードキャストアドレス (FFFFFFFFFFFF) に送信された場合、 **ipxroute**は既定で1つのルートにパケットを送信します。|  
 |mbr|パケットをすべてのルートブロードキャストに送信します。 パケットがマルチキャストアドレス (C000xxxxxxxx) に送信された場合、 **ipxroute**は既定で1つのルートにパケットを送信します。|  
 |削除 = *、*|指定されたノードアドレスをソースルーティングテーブルから削除します。|  
-|構成|IPX が構成されているすべてのバインドに関する情報が表示されます。|  
-|/?|コマンド プロンプトにヘルプを表示します。|  
-## <a name="BKMK_Examples"></a>例  
+|config|IPX が構成されているすべてのバインドに関する情報が表示されます。|  
+|/?|コマンド プロンプトでヘルプを表示します。|  
+## <a name="examples"></a><a name=BKMK_Examples></a>例  
 ワークステーションが接続されているネットワークセグメント、ワークステーションノードアドレス、および使用されているフレームの種類を表示するには、次のように入力します。  
 ```  
 ipxroute config  
 ```  
 ## <a name="additional-references"></a>その他の参照情報  
--   [コマンド ライン構文の記号](command-line-syntax-key.md)  
+-   - [コマンド ライン構文の記号](command-line-syntax-key.md)  

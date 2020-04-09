@@ -1,7 +1,6 @@
 ---
 ms.assetid: 299e4fb9-8f1a-4275-ad7d-dad4f1594657
 title: チュートリアル-iOS デバイスでの Workplace Join
-description: ''
 author: billmath
 ms.author: billmath
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 10/18/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 5214165c2843461a2da8b574ad28f92b0e0bc64d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7b1d2a5f5c32d55e482f5f53a04668b34fc9aece
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407496"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815995"
 ---
 # <a name="walkthrough-workplace-join-with-an-ios-device"></a>チュートリアル: iOS デバイスの Workplace Join
 

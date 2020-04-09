@@ -1,24 +1,25 @@
 ---
 title: クラスターアフィニティ
 ms.prod: windows-server
-ms.manager: eldenc
+manager: eldenc
 ms.technology: failover-clustering
 ms.topic: article
 author: johnmarlin-msft
+ms.author: johnmar
 ms.date: 03/07/2019
 description: この記事では、フェールオーバークラスターのアフィニティレベルと反対のアフィニティレベルについて説明します。
-ms.openlocfilehash: 9a269d2b14e953daee849008a473c750dfbfe84b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c9910cac602802b753391fad1009fb7f1fa3d2f2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361456"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828285"
 ---
 # <a name="cluster-affinity"></a>クラスターアフィニティ
 
-> 適用対象:Windows Server 2019、Windows Server 2016
+> 適用対象: Windows Server 2019、Windows Server 2016
 
-フェールオーバークラスターは、ノード間を移動して実行できる多数のロールを保持できます。  特定のロール (仮想マシン、リソースグループなど) が同じノードで実行されない場合もあります。  リソース消費、メモリ使用量などが原因である可能性があります。たとえば、メモリと CPU を集中的に使用する2つの仮想マシンがあり、2つの仮想マシンが同じノードで実行されている場合、一方または両方の仮想マシンがパフォーマンスに影響を与える可能性があります。  この記事では、クラスターのアンチアフィニティレベルとその使用方法について説明します。
+フェールオーバークラスターは、ノード間を移動して実行できる多数のロールを保持できます。  特定のロール (仮想マシン、リソースグループなど) が同じノードで実行されない場合もあります。  リソース消費、メモリ使用量などが原因である可能性があります。 たとえば、メモリと CPU を集中的に使用する2つの仮想マシンがあり、2つの仮想マシンが同じノードで実行されている場合、一方または両方の仮想マシンがパフォーマンスに影響を与える可能性があります。  この記事では、クラスターのアンチアフィニティレベルとその使用方法について説明します。
 
 ## <a name="what-is-affinity-and-antiaffinity"></a>アフィニティとその関係はどのようなものですか?
 

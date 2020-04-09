@@ -1,24 +1,20 @@
 ---
 title: pushd
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Windows コマンドに関するトピック * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 396bc545-0f41-473e-b0ac-76fbbb74d390
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 634dd6dee471751cc62b6899a3963e02e8e783a2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e7866a54e83bd57c8689512a1b75b151f74cb93c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71371979"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80837095"
 ---
 # <a name="pushd"></a>pushd
 
@@ -34,12 +30,12 @@ ms.locfileid: "71371979"
 pushd [<Path>]
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
 |パラメーター|説明|
 |---------|-----------|
-|\<Path >|現在のディレクトリを作成するディレクトリを指定します。 このコマンドは、相対パスをサポートしています。|
-|/?|コマンド プロンプトにヘルプを表示します。|
+|\<パス >|現在のディレクトリを作成するディレクトリを指定します。 このコマンドは、相対パスをサポートしています。|
+|/?|コマンド プロンプトでヘルプを表示します。|
 
 ## <a name="remarks"></a>コメント
 
@@ -51,7 +47,7 @@ pushd [<Path>]
 -   コマンド拡張機能が有効になっている場合、 **pushd**コマンドはネットワークパスまたはローカルドライブ文字とパスのいずれかを受け取ります。
 -   ネットワークパスを指定した場合、 **pushd**コマンドを実行すると、使用されていないドライブ文字 (Z: から始まる) が一時的に割り当てられます。指定されたネットワークリソース。 次に、コマンドは、現在のドライブとディレクトリを、新しく割り当てられたドライブの指定したディレクトリに変更します。 コマンド拡張機能が有効になっている**popd**コマンドを使用すると、 **pushd**によって作成されたドライブ文字の割り当てが削除**されます**。
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a><a name=BKMK_examples></a>例
 
 次の例**では、コマンドと**バッチプログラムで**popd**コマンドを使用して、バッチプログラムが実行されたディレクトリから現在のディレクトリを変更し、それを変更する方法を示しています。
 ```
@@ -64,8 +60,8 @@ cls
 echo All text files deleted in the %1 directory
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
 
 [Popd](popd.md)

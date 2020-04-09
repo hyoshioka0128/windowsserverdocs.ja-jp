@@ -1,24 +1,20 @@
 ---
 title: reg query
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Windows コマンドに関するトピック * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0e6a0d7c-ed9b-4318-833d-33f265a81f39
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d2f616fb33974df4327c7b2536b3143b75d116be
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: bf21933e1ce9928048f0f07ed502dfcab75d1783
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71371720"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80836395"
 ---
 # <a name="reg-query"></a>reg query
 
@@ -34,7 +30,7 @@ ms.locfileid: "71371720"
 reg query <KeyName> [{/v <ValueName> | /ve}] [/s] [/se <Separator>] [/f <Data>] [{/k | /d}] [/c] [/e] [/t <Type>] [/z]
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
 |パラメーター|説明|
 |---------|-----------|
@@ -50,18 +46,18 @@ reg query <KeyName> [{/v <ValueName> | /ve}] [/s] [/se <Separator>] [/f <Data>] 
 |/e|完全一致のみを返すように指定します。 既定では、すべての一致が返されます。|
 |/t \<種類 >|検索するレジストリの種類を指定します。 有効な型します。 REG_SZ、REG_MULTI_SZ、REG_EXPAND_SZ、REG_DWORD、REG_BINARY、REG_NONE します。 指定されていない場合は、すべての型が検索されます。|
 |/z|レジストリの型に対応する数値を検索結果に含めるように指定します。|
-|/?|ヘルプを表示 **reg query** コマンド プロンプト。|
+|/?|ヘルプを表示 **reg クエリ** コマンド プロンプト。|
 
 ## <a name="remarks-optional-section"></a>省略可能なセクション > \<注釈
 
 次の表に、戻り値の **reg クエリ** 操作します。
 
-|Value|説明|
+|値|説明|
 |-----|-----------|
 |0|成功|
 |1|失敗|
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a><a name=BKMK_examples></a>例
 
 名前値のバージョンの値を HKLM\Software\Microsoft\ResKit キーを表示するには、次のように入力します。
 ```
@@ -88,6 +84,6 @@ REG QUERY HKCU /f 0F /d /t REG_BINARY
 REG QUERY HKLM\SOFTWARE /ve
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

@@ -1,32 +1,26 @@
 ---
 title: diskraid
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Windows コマンドに関するトピック。 diskraid は、独立した (または安価な) ディスク (RAID) 記憶域サブシステムの冗長配列を構成および管理するためのコマンドラインツールです。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 20aef1e5-7641-47cf-b4eb-cda117f65b6e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f72e91f856da3b24e7450381b293f4b365d914f3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ea71fc67420700527a3a14494c947aed7a2ec747
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71377800"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80845405"
 ---
 # <a name="diskraid"></a>diskraid
 
-
-
 DiskRAID は、独立した (または安価な) ディスク (RAID) 記憶域サブシステムの冗長配列を構成および管理できるコマンドラインツールです。
 
-RAID は、フォールトトレラントディスクシステムの標準化と分類に使用される方法です。 RAID レベルは、さまざまなパフォーマンス、信頼性、およびコストの組み合わせを提供します。 通常、RAID はサーバーで使用されます。 一部のサーバーは、レベル 0 (ストライピング)、レベル 1 (ミラーリング)、レベル 5 (パリティ付きストライピング) の3つの RAID レベルを提供します。
+RAID は、フォールトトレラントディスクシステムの標準化と分類に使用される方法です。 RAID のレベルには、パフォーマンス、信頼性、およびコストをさまざまに組み合わせたものがあります。 通常、RAID はサーバーで使用されます。 一部のサーバーは、レベル 0 (ストライピング)、レベル 1 (ミラーリング)、レベル 5 (パリティ付きストライピング) の3つの RAID レベルを提供します。
 
 ハードウェア RAID サブシステムでは、論理ユニット番号 (LUN) を使用して、物理的にアドレス指定可能な記憶域ユニットを相互に区別します。 LUN オブジェクトは、少なくとも1つのプレックスを持つ必要があり、追加のプレックスをいくつでも持つことができます。 各プレックスには、LUN オブジェクト上のデータのコピーが含まれます。 LUN オブジェクトに対して、プレックスの追加と削除を行うことができます。
 
@@ -43,7 +37,7 @@ RAID は、フォールトトレラントディスクシステムの標準化と
 -   [automagic](#BKMK_3)
 -   [break](#BKMK_4)
 -   [ms-chap](#BKMK_5)
--   [create](#BKMK_6)
+-   [生成](#BKMK_6)
 -   [delete](#BKMK_7)
 -   [データ](#BKMK_8)
 -   [解除](#BKMK_9)
@@ -55,8 +49,8 @@ RAID は、フォールトトレラントディスクシステムの標準化と
 -   [元](#BKMK_15)
 -   [invalidatecache](#BKMK_16)
 -   [lbpolicy](#BKMK_18)
--   [list](#BKMK_19)
--   [login](#BKMK_20)
+-   [表](#BKMK_19)
+-   [ログイン](#BKMK_20)
 -   [いったん](#BKMK_21)
 -   [維持](#BKMK_22)
 -   [name](#BKMK_23)
@@ -64,18 +58,18 @@ RAID は、フォールトトレラントディスクシステムの標準化と
 -   [オンライン](#BKMK_25)
 -   [recover](#BKMK_26)
 -   [reenumerate](#BKMK_27)
--   [refresh](#BKMK_28)
+-   [更新](#BKMK_28)
 -   [rem](#BKMK_29)
 -   [から](#BKMK_30)
 -   [replace](#BKMK_31)
--   [解除](#BKMK_32)
+-   [reset](#BKMK_32)
 -   [クリック](#BKMK_33)
 -   [setflag](#BKMK_34)
 -   [shrink](#BKMK_shrink)
 -   [standby](#BKMK_35)
 -   [マスク](#BKMK_36)
 
-### <a name="BKMK_1"></a>アドイン
+### <a name="add"></a><a name=BKMK_1></a>アドイン
 
 現在選択されている LUN に既存の LUN を追加します。または、現在選択されている iSCSI ターゲットポータルグループに iSCSI ターゲットポータルを追加します。
 
@@ -86,7 +80,7 @@ add plex lun=n [noerr]
 add tpgroup tportal=n [noerr]
 ```
 
-#### <a name="parameters"></a>パラメーター
+##### <a name="parameters"></a>パラメーター
 
 **プレックス lun**=*n*
 
@@ -103,9 +97,9 @@ add tpgroup tportal=n [noerr]
 
 この操作の実行中に発生したすべてのエラーを無視することを指定します。 これは、スクリプトモードで役に立ちます。
 
-### <a name="BKMK_2"></a>組み合わせる
+### <a name="associate"></a><a name=BKMK_2></a>組み合わせる
 
-現在選択されている LUN に対して、指定されたコントローラーポートの一覧をアクティブとして設定します (他のコントローラーポートは非アクティブになります)。または、指定されたコントローラーポートを現在選択されている LUN の既存のアクティブコントローラーポートの一覧に追加するか、または現在選択されている LUN に対して指定された iSCSI ターゲット。
+現在選択されている LUN に対して指定されたコントローラーポートの一覧をアクティブとして設定します (他のコントローラーポートは非アクティブになります)。または、指定されたコントローラーポートを現在選択されている lun の既存のアクティブコントローラーポートの一覧に追加するか、現在選択されている LUN に指定した
 
 #### <a name="syntax"></a>構文
 
@@ -115,7 +109,7 @@ associate ports [add] <n-m>[,<n-m>[,…]]
 associate targets [add] <n>[,<n> [,…]]
 ```
 
-#### <a name="parameters"></a>パラメーター
+##### <a name="parameters"></a>パラメーター
 
 **コントローラー**
 
@@ -159,7 +153,7 @@ Controller port associations changed.
 (Controller ports active after this command: Ctlr 0 Port 0, Ctlr 0 Port 1, Ctlr 1 Port 1)
 ```
 
-### <a name="BKMK_3"></a>automagic
+### <a name="automagic"></a><a name=BKMK_3></a>automagic
 
 LUN の構成方法について、プロバイダーにヒントを提供するフラグを設定またはクリアします。 パラメーターを使用せずに**automagic**操作を実行すると、フラグの一覧が表示されます。
 
@@ -169,7 +163,7 @@ LUN の構成方法について、プロバイダーにヒントを提供する�
 automagic {set | clear | apply} all <flag=value> [<flag=value> [...]]
 ```
 
-#### <a name="parameters"></a>パラメーター
+##### <a name="parameters"></a>パラメーター
 
 **set**
 
@@ -203,11 +197,11 @@ automagic {set | clear | apply} all <flag=value> [<flag=value> [...]]
 |RBP|再構築の優先順位|
 |RBV|読み取り前の確認が有効|
 |RMP|再マップ有効|
-|MST|ストライプサイズ|
+|STS|ストライプサイズ|
 |WTC|ライトスルーキャッシュが有効|
-|/|取り外せ|
+|/|リムーバブル|
 
-### <a name="BKMK_4"></a>改
+### <a name="break"></a><a name=BKMK_4></a>改
 
 現在選択されている LUN からプレックスを削除します。 プレックスとそれに含まれるデータは保持されず、ドライブのエクステントは再利用される可能性があります。
 
@@ -217,7 +211,7 @@ automagic {set | clear | apply} all <flag=value> [<flag=value> [...]]
 break plex=<plex_number> [noerr]
 ```
 
-#### <a name="parameters"></a>パラメーター
+##### <a name="parameters"></a>パラメーター
 
 **p**
 
@@ -227,7 +221,7 @@ break plex=<plex_number> [noerr]
 
 この操作の実行中に発生したすべてのエラーを無視することを指定します。 これは、スクリプトモードで役に立ちます。
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>コメント
 
 > [!NOTE]
 > **中断**コマンドを使用する前に、ミラー化された LUN を最初に選択する必要があります。
@@ -238,7 +232,7 @@ break plex=<plex_number> [noerr]
 > [!CAUTION]
 > 元の LUN に含まれるすべてのデータの整合性は保証されていません。
 
-### <a name="BKMK_5"></a>ms-chap
+### <a name="chap"></a><a name=BKMK_5></a>ms-chap
 
 チャレンジハンドシェイク認証プロトコル (CHAP) の共有シークレットを設定して、iSCSI イニシエーターと iSCSI ターゲットが相互に通信できるようにします。
 
@@ -251,7 +245,7 @@ chap target set secret=[<secret>] [initiator=<initiatorname>]
 chap target remember secret=[<secret>] initiator=<initiatorname>
 ```
 
-#### <a name="parameters"></a>パラメーター
+##### <a name="parameters"></a>パラメーター
 
 **イニシエーターセット**
 
@@ -281,7 +275,7 @@ ISCSI イニシエーターの CHAP シークレットを現在のフォーカ�
 
 シークレットに関連付けるイニシエーター iSCSI 名を指定します。 これはオプションです。ターゲットでシークレットを設定し、そのままにしておくと、シークレットが関連付けられていないすべてのイニシエーターに対してシークレットが使用されることを示します。
 
-### <a name="BKMK_6"></a>生成
+### <a name="create"></a><a name=BKMK_6></a>生成
 
 現在選択されているサブシステムに新しい LUN または iSCSI ターゲットを作成するか、現在選択されているターゲットに対してターゲットポータルグループを作成します。 実際のバインドは、 **DiskRAID リスト**コマンドを使用して表示できます。
 
@@ -311,7 +305,7 @@ create tpgroup [noerr]
 
 パリティ付きストライプ LUN を作成します。
 
-**mirror**
+**イメージ**
 
 ミラー化された LUN を作成します。
 
@@ -369,12 +363,12 @@ LUN の作成に使用するドライブの*drive_number*を指定します。 *
 
 この操作の実行中に発生したすべてのエラーを無視することを指定します。 これは、スクリプトモードで役に立ちます。
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>コメント
 
 -   **Size**= または**drive = パラメーターのどちら**かを指定する必要があります。 同時に使用することもできます。
 -   LUN のストライプサイズは、作成後に変更することはできません。
 
-### <a name="BKMK_7"></a>デリート
+### <a name="delete"></a><a name=BKMK_7></a>デリート
 
 現在選択されている LUN、iscsi ターゲット (iSCSI ターゲットに関連付けられている Lun がない場合)、または iSCSI ターゲットポータルグループを削除します。
 
@@ -386,7 +380,7 @@ delete target [noerr]
 delete tpgroup [noerr]
 ```
 
-#### <a name="parameters"></a>パラメーター
+##### <a name="parameters"></a>パラメーター
 
 **lun**
 
@@ -408,7 +402,7 @@ Lun が削除される前に、LUN に関連付けられているローカルシ
 
 この操作の実行中に発生したすべてのエラーを無視することを指定します。 これは、スクリプトモードで役に立ちます。
 
-### <a name="BKMK_8"></a>データ
+### <a name="detail"></a><a name=BKMK_8></a>データ
 
 指定された種類の現在選択されているオブジェクトに関する詳細情報を表示します。
 
@@ -418,7 +412,7 @@ Lun が削除される前に、LUN に関連付けられているローカルシ
 Detail {hbaport | iadapter | iportal | provider | subsystem | controller | port | drive | lun | tportal | target | tpgroup} [verbose]
 ```
 
-#### <a name="parameters"></a>パラメーター
+##### <a name="parameters"></a>パラメーター
 
 **hbaport**
 
@@ -436,7 +430,7 @@ Detail {hbaport | iadapter | iportal | provider | subsystem | controller | port 
 
 現在選択されているプロバイダーに関する詳細情報を一覧表示します。
 
-**subsystem**
+**サブ**
 
 現在選択されているサブシステムに関する詳細情報を一覧表示します。
 
@@ -472,7 +466,7 @@ Detail {hbaport | iadapter | iportal | provider | subsystem | controller | port 
 
 LUN パラメーターでのみ使用します。 プレックスを含む追加情報を一覧表示します。
 
-### <a name="BKMK_9"></a>解除
+### <a name="dissociate"></a><a name=BKMK_9></a>解除
 
 現在選択されている LUN に対して、指定されたコントローラーポートの一覧を非アクティブとして設定します (他のコントローラーポートは影響を受けません)。または、現在選択されている LUN の iSCSI ターゲットの指定リストを解除します。
 
@@ -525,7 +519,7 @@ Controller port associations changed.
 (Controller ports active after this command: Ctlr 0 Port 1)
 ```
 
-### <a name="BKMK_10"></a>終了
+### <a name="exit"></a><a name=BKMK_10></a>終了
 
 DiskRAID を終了します。
 
@@ -535,7 +529,7 @@ DiskRAID を終了します。
 exit
 ```
 
-### <a name="BKMK_11"></a>できる
+### <a name="extend"></a><a name=BKMK_11></a>できる
 
 LUN の最後にセクターを追加して、現在選択されている LUN を拡張します。 すべてのプロバイダーが Lun の拡張をサポートするわけではありません。 は、LUN に含まれるボリュームまたはファイルシステムを拡張しません。 LUN を拡張した後、 **DiskPart の拡張**コマンドを使用して、関連付けられているディスク上の構造体を拡張する必要があります。
 
@@ -545,7 +539,7 @@ LUN の最後にセクターを追加して、現在選択されている LUN �
 extend lun [size=<LUN_size>] [drives=<drive_number>, [<drive_number>, ...]] [noerr]
 ```
 
-#### <a name="parameters"></a>パラメーター
+##### <a name="parameters"></a>パラメーター
 
 **サイズ =**
 
@@ -567,11 +561,11 @@ LUN を作成するときに使用するドライブの \<drive_number > を指�
 
 この操作の実行中に発生したエラーをすべて無視するように指定します。 これは、スクリプトモードで役に立ちます。
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>コメント
 
 *Size*または \<drive > パラメーターのどちらかを指定する必要があります。 同時に使用することもできます。
 
-### <a name="BKMK_12"></a>flushcache
+### <a name="flushcache"></a><a name=BKMK_12></a>flushcache
 
 現在選択されているコントローラーのキャッシュを消去します。
 
@@ -581,7 +575,7 @@ LUN を作成するときに使用するドライブの \<drive_number > を指�
 flushcache controller
 ```
 
-### <a name="BKMK_13"></a>ヘルプ
+### <a name="help"></a><a name=BKMK_13></a>ヘルプ
 
 すべての DiskRAID コマンドの一覧を表示します。
 
@@ -591,7 +585,7 @@ flushcache controller
 help
 ```
 
-### <a name="BKMK_14"></a>importtarget
+### <a name="importtarget"></a><a name=BKMK_14></a>importtarget
 
 現在選択されているサブシステムに対して設定されている現在のボリュームシャドウコピーサービス (VSS) インポートターゲットを取得または設定します。
 
@@ -607,7 +601,7 @@ importtarget subsystem [set target]
 
 指定した場合、現在選択されているターゲットを、現在選択されているサブシステムの VSS インポートターゲットに設定します。 指定しない場合、コマンドは現在選択されているサブシステムに対して設定されている現在の VSS インポートターゲットを取得します。
 
-### <a name="BKMK_15"></a>元
+### <a name="initiator"></a><a name=BKMK_15></a>元
 
 ローカル iSCSI イニシエーターに関する情報を取得します。
 
@@ -617,7 +611,7 @@ importtarget subsystem [set target]
 initiator
 ```
 
-### <a name="BKMK_16"></a>invalidatecache
+### <a name="invalidatecache"></a><a name=BKMK_16></a>invalidatecache
 
 現在選択されているコントローラーのキャッシュを無効にします。
 
@@ -627,7 +621,7 @@ initiator
 invalidatecache controller
 ```
 
-### <a name="BKMK_18"></a>lbpolicy
+### <a name="lbpolicy"></a><a name=BKMK_18></a>lbpolicy
 
 現在選択されている LUN の負荷分散ポリシーを設定します。
 
@@ -638,7 +632,7 @@ lbpolicy set lun type=<type> [paths=<path>-{primary | <weight>}[,<path>-{primary
 lbpolicy set lun paths=<path>-{primary | <weight>}[,<path>-{primary | <weight>}[,…]]
 ```
 
-#### <a name="parameters"></a>パラメーター
+##### <a name="parameters"></a>パラメーター
 
 **type**
 
@@ -662,7 +656,7 @@ lbpolicy set lun paths=<path>-{primary | <weight>}[,<path>-{primary | <weight>}[
 
 パスが**プライマリ**か、特定の \<ウエイト > を持つかを指定します。 指定されていないパスは、暗黙的にバックアップとして設定されます。 一覧に表示されているパスは、現在選択されている LUN のパスのいずれかである必要があります。
 
-### <a name="BKMK_19"></a>表
+### <a name="list"></a><a name=BKMK_19></a>表
 
 指定した種類のオブジェクトの一覧を表示します。
 
@@ -672,7 +666,7 @@ lbpolicy set lun paths=<path>-{primary | <weight>}[,<path>-{primary | <weight>}[
 List {hbaports | iadapters | iportals | providers | subsystems | controllers | ports | drives | LUNs | tportals | targets | tpgroups}
 ```
 
-#### <a name="parameters"></a>パラメーター
+##### <a name="parameters"></a>パラメーター
 
 **hbaports**
 
@@ -722,7 +716,7 @@ VDS に認識されている各プロバイダーに関する概要情報を一�
 
 現在選択されているターゲット内のすべての iSCSI ターゲットポータルグループに関する概要情報を一覧表示します。 現在選択されているポータルグループには、アスタリスク (*) が付いています。
 
-### <a name="BKMK_20"></a>ログイン
+### <a name="login"></a><a name=BKMK_20></a>ログイン
 
 指定した iSCSI イニシエーターアダプターを現在選択されている iSCSI ターゲットにログに記録します。
 
@@ -732,7 +726,7 @@ VDS に認識されている各プロバイダーに関する概要情報を一�
 login target iadapter=<iadapter> [type={manual | persistent | boot}] [chap={none | oneway | mutual}] [iportal=<iportal>] [tportal=<tportal>] [<flag> [<flag> […]]]
 ```
 
-#### <a name="parameters"></a>パラメーター
+##### <a name="parameters"></a>パラメーター
 
 **type**
 
@@ -768,7 +762,7 @@ login target iadapter=<iadapter> [type={manual | persistent | boot}] [chap={none
 
 **EDD**: データダイジェストを有効にする
 
-### <a name="BKMK_21"></a>いったん
+### <a name="logout"></a><a name=BKMK_21></a>いったん
 
 現在選択されている iSCSI ターゲットから指定された iSCSI イニシエーターアダプターをログに記録します。
 
@@ -778,13 +772,13 @@ login target iadapter=<iadapter> [type={manual | persistent | boot}] [chap={none
 logout target iadapter= <iadapter>
 ```
 
-#### <a name="parameters"></a>パラメーター
+##### <a name="parameters"></a>パラメーター
 
 **iadapter**
 
 ログアウトするログインセッションがあるイニシエーターアダプターを指定します。
 
-### <a name="BKMK_22"></a>維持
+### <a name="maintenance"></a><a name=BKMK_22></a>維持
 
 指定された型の現在選択されているオブジェクトに対してメンテナンス操作を実行します。
 
@@ -794,7 +788,7 @@ logout target iadapter= <iadapter>
 maintenance <object operation> [count=<iteration>]
 ```
 
-#### <a name="parameters"></a>パラメーター
+##### <a name="parameters"></a>パラメーター
 
 \<オブジェクト >
 
@@ -808,7 +802,7 @@ maintenance <object operation> [count=<iteration>]
 
 *操作*を繰り返す回数を指定します。 これは通常、**点滅**、**ビープ音**、または**ping**と共に使用されます。
 
-### <a name="BKMK_23"></a>指定
+### <a name="name"></a><a name=BKMK_23></a>指定
 
 現在選択されているサブシステム、LUN、または iSCSI ターゲットのフレンドリ名を指定した名前に設定します。
 
@@ -820,11 +814,11 @@ name {subsystem | lun | target} [<name>]
 
 #### <a name="parameter"></a>パラメーター
 
-\<name>
+\<名 >
 
 サブシステム、LUN、またはターゲットの名前を指定します。 名前の長さは64文字未満でなければなりません。 名前が指定されていない場合は、既存の名前 (存在する場合) が削除されます。
 
-### <a name="BKMK_24"></a>なっ
+### <a name="offline"></a><a name=BKMK_24></a>なっ
 
 指定された種類の現在選択されているオブジェクトの状態を**オフライン**に設定します。
 
@@ -842,7 +836,7 @@ offline <object>
 
 種類には、**サブシステム**、**コントローラー**、**ドライブ**、 **LUN**、または**portal 新規**を使用できます。
 
-### <a name="BKMK_25"></a>オンライン
+### <a name="online"></a><a name=BKMK_25></a>オンライン
 
 指定された種類の選択されたオブジェクトの状態を**オンライン**に設定します。 オブジェクトが**hbaport**の場合、は、現在選択されている HBA ポートへのパスの状態を**オンライン**に変更します。
 
@@ -860,7 +854,7 @@ online <object>
 
 種類には、 **hbaport**、 **subsystem**、 **controller**、 **drive**、 **LUN**、または**portal 新規**を使用できます。
 
-### <a name="BKMK_26"></a>回復
+### <a name="recover"></a><a name=BKMK_26></a>回復
 
 現在選択されているフォールトトレラント LUN を修復するために必要な操作 (再同期やホットスペア処理など) を実行します。 たとえば、回復によって、障害が発生したディスクまたはその他のディスクエクステントの再割り当てがある RAID セットにホットスペアがバインドされる場合があります。
 
@@ -870,7 +864,7 @@ online <object>
 recover <lun>
 ```
 
-### <a name="BKMK_27"></a>reenumerate
+### <a name="reenumerate"></a><a name=BKMK_27></a>reenumerate
 
 指定された型のオブジェクトを再列挙します。 [LUN の拡張] コマンドを使用する場合は、reenumerate コマンドを使用する前に、refresh コマンドを使用してディスクサイズを更新する必要があります。
 
@@ -880,7 +874,7 @@ recover <lun>
 reenumerate {subsystems | drives}
 ```
 
-#### <a name="parameters"></a>パラメーター
+##### <a name="parameters"></a>パラメーター
 
 **システム**
 
@@ -890,7 +884,7 @@ reenumerate {subsystems | drives}
 
 は、現在選択されているサブシステムに追加された新しいドライブを検出するために、内部 i/o バスに対してクエリを行います。
 
-### <a name="BKMK_28"></a>更新
+### <a name="refresh"></a><a name=BKMK_28></a>更新
 
 現在選択されているプロバイダーの内部データを更新します。
 
@@ -900,7 +894,7 @@ reenumerate {subsystems | drives}
 refresh provider
 ```
 
-### <a name="BKMK_29"></a>rem
+### <a name="rem"></a><a name=BKMK_29></a>rem
 
 スクリプトのコメント化に使用します。
 
@@ -910,7 +904,7 @@ refresh provider
 Rem <comment>
 ```
 
-### <a name="BKMK_30"></a>から
+### <a name="remove"></a><a name=BKMK_30></a>から
 
 現在選択されているターゲットポータルグループから、指定された iSCSI ターゲットポータルを削除します。
 
@@ -930,7 +924,7 @@ remove tpgroup tportal=<tportal> [noerr]
 
 この操作の実行中に発生したエラーをすべて無視するように指定します。 これは、スクリプトモードで役に立ちます。
 
-### <a name="BKMK_31"></a>ら
+### <a name="replace"></a><a name=BKMK_31></a>ら
 
 指定されたドライブを現在選択されているドライブに置き換えます。
 
@@ -946,11 +940,11 @@ replace drive=<drive_number>
 
 置き換えるドライブの \<drive_number > を指定します。
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>コメント
 
 -   指定されたドライブは、現在選択されているドライブではない可能性があります。
 
-### <a name="BKMK_32"></a>解除
+### <a name="reset"></a><a name=BKMK_32></a>解除
 
 現在選択されているコントローラーまたはポートをリセットします。
 
@@ -960,7 +954,7 @@ replace drive=<drive_number>
 Reset {controller | port}
 ```
 
-#### <a name="parameters"></a>パラメーター
+##### <a name="parameters"></a>パラメーター
 
 **コントロール**
 
@@ -970,7 +964,7 @@ Reset {controller | port}
 
 ポートをリセットします。
 
-### <a name="BKMK_33"></a>クリック
+### <a name="select"></a><a name=BKMK_33></a>クリック
 
 現在選択されているオブジェクトを表示または変更します。
 
@@ -980,7 +974,7 @@ Reset {controller | port}
 Select {hbaport | iadapter | iportal | provider | subsystem | controller | port | drive | lun | tportal | target | tpgroup } [<n>]
 ```
 
-#### <a name="parameters"></a>パラメーター
+##### <a name="parameters"></a>パラメーター
 
 **素材**
 
@@ -1038,7 +1032,7 @@ Select {hbaport | iadapter | iportal | provider | subsystem | controller | port 
 
 選択する > \<オブジェクト番号を指定します。 指定された <object number> が有効でない場合は、指定された種類のオブジェクトに対する既存の選択がクリアされます。 <object number> が指定されていない場合は、現在のオブジェクトが表示されます。
 
-### <a name="BKMK_34"></a>setflag
+### <a name="setflag"></a><a name=BKMK_34></a>setflag
 
 現在選択されているドライブをホットスペアとして設定します。
 
@@ -1048,7 +1042,7 @@ Select {hbaport | iadapter | iportal | provider | subsystem | controller | port 
 setflag drive hotspare={true | false}
 ```
 
-#### <a name="parameters"></a>パラメーター
+##### <a name="parameters"></a>パラメーター
 
 **true**
 
@@ -1058,11 +1052,11 @@ setflag drive hotspare={true | false}
 
 現在選択されているドライブをホットスペアとして選択解除します。
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>コメント
 
 ホットスペアは、通常の LUN バインド操作には使用できません。 これらは、エラー処理のためだけに予約されています。 現在、ドライブを既存の LUN にバインドすることはできません。
 
-### <a name="BKMK_shrink"></a>伸縮
+### <a name="shrink"></a><a name=BKMK_shrink></a>伸縮
 
 選択した LUN のサイズを小さくします。
 
@@ -1072,7 +1066,7 @@ setflag drive hotspare={true | false}
 shrink lun size=<n> [noerr]
 ```
 
-#### <a name="parameters"></a>パラメーター
+##### <a name="parameters"></a>パラメーター
 
 **サイズ =**
 
@@ -1082,7 +1076,7 @@ LUN のサイズを小さくするために必要な領域の容量をメガバ�
 
 この操作の実行中に発生したすべてのエラーを無視することを指定します。 これは、スクリプトモードで役に立ちます。
 
-### <a name="BKMK_35"></a>standby
+### <a name="standby"></a><a name=BKMK_35></a>standby
 
 現在選択されているホストバスアダプター (HBA) ポートへのパスの状態をスタンバイに変更します。
 
@@ -1092,13 +1086,13 @@ LUN のサイズを小さくするために必要な領域の容量をメガバ�
 standby hbaport
 ```
 
-#### <a name="parameters"></a>パラメーター
+##### <a name="parameters"></a>パラメーター
 
 **hbaport**
 
 現在選択されているホストバスアダプター (HBA) ポートへのパスの状態をスタンバイに変更します。
 
-### <a name="BKMK_36"></a>マスク
+### <a name="unmask"></a><a name=BKMK_36></a>マスク
 
 現在選択されている Lun に、指定したホストからアクセスできるようにします。
 
@@ -1108,7 +1102,7 @@ standby hbaport
 unmask LUN {all | none | [add] wwn=<hexadecimal_number> [;<hexadecimal_number> [;…]] | [add] initiator=<initiator>[;<initiator>[;…]]} [uninstall]
 ```
 
-#### <a name="parameters"></a>パラメーター
+##### <a name="parameters"></a>パラメーター
 
 **すべての**
 
@@ -1152,12 +1146,12 @@ diskraid /s <script.txt>
 
 |エラー コード|エラーの説明|
 |----------|-----------------|
-|0|エラーは発生しませんでした。 スクリプト全体が失敗せずに実行されました。|
-|1|致命的な例外が発生しました。|
+|0|エラーは発生していません。 スクリプト全体が失敗せずに実行されました。|
+|1|重大な例外が発生しました。|
 |2|DiskRAID コマンドラインで指定された引数が正しくありません。|
 |3|DiskRAID は、指定されたスクリプトまたは出力ファイルを開くことができませんでした。|
 |4|DiskRAID が使用するサービスの1つでエラーが返されました。|
-|5|コマンド構文エラーが発生しました。 オブジェクトが正しく選択されていないか、このコマンドで使用することができなかったため、スクリプトが失敗しました。|
+|5|コマンド構文エラーが発生しました。 オブジェクトが正しく選択されていないか、または選択したオブジェクトがこのコマンドでは無効であるために、スクリプトが失敗しました。|
 
 ## <a name="example-interactively-view-status-of-subsystem"></a>例: サブシステムの状態を対話的に表示する
 

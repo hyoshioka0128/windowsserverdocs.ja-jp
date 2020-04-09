@@ -1,19 +1,19 @@
 ---
 title: HGS の前提条件を確認する
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: f4b4d1a8-bf6d-4881-9150-ddeca8b48038
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 9024557dd42ede27144bf10aa5873b6bb12d585c
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 0c6256bb5983b3536e633fe0aca45e973b224b54
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322484"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856495"
 ---
 # <a name="review-prerequisites-for-the-host-guardian-service"></a>ホストガーディアンサービスの前提条件を確認する
 

@@ -2,20 +2,19 @@
 title: Windows 7 を実行し、動的メモリに対して有効になっている仮想マシンに対して、少なくとも必要なメモリ容量を構成します。
 description: このベストプラクティスアナライザールールのテキストのオンラインバージョン。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: 119965bf-6154-414d-b3a1-aa5b30eac5f6
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: f0865866c3494a0b3719f49f3dd85e85fb48c4e9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 56b9a1105af1bf3c9b7bef7729a3e47b7299b516
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365088"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80862145"
 ---
 # <a name="configure-at-least-the-required-amount-of-memory-for-a-virtual-machine-running-windows-7-and-enabled-for-dynamic-memory"></a>Windows 7 を実行し、動的メモリに対して有効になっている仮想マシンに対して、少なくとも必要なメモリ容量を構成します。
 
@@ -55,7 +54,7 @@ ms.locfileid: "71365088"
   
 5.  **動的メモリ**で、**最小 RAM**を 256 mb 以上、 **ram の最大値**を 512 mb に変更します。  
   
-6.  **[OK]** をクリックします。  
+6.  **[OK]** をクリックすると、  
   
 ### <a name="increase-memory-using-windows-powershell"></a>Windows PowerShell を使用してメモリを増やす  
   

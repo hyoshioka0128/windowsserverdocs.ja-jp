@@ -2,20 +2,19 @@
 title: 仮想マシンが容量可変の拡張バーチャルハードディスクを使用する場合に、十分な物理ディスク領域が使用可能であることを確認します。
 description: このベストプラクティスアナライザールールのテキストのオンラインバージョン。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: 9e3e3e64-4b3a-4b9d-acf1-e4df61a04f1e
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: c38d7c11a05eef9d29097e625fec2830000cf550
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 53302d9e8fc4f960f0a1744d4ebd274b936eac5f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71393639"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861945"
 ---
 # <a name="ensure-sufficient-physical-disk-space-is-available-when-virtual-machines-use-dynamically-expanding-virtual-hard-disks"></a>仮想マシンが容量可変の拡張バーチャルハードディスクを使用する場合に、十分な物理ディスク領域が使用可能であることを確認します。
 
@@ -27,7 +26,7 @@ ms.locfileid: "71393639"
 |-|-|  
 |**オペレーティング システム**|Windows Server 2016|  
 |**製品/機能**|Hyper-V|  
-|**順**|Warning|  
+|**順**|［警告］|  
 |**カテゴリ**|構成|  
   
 次のセクションでは、斜体は、この問題のためのベスト プラクティス アナライザー ツールで表示される UI テキストを示します。  

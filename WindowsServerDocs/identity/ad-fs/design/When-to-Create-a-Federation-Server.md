@@ -1,7 +1,6 @@
 ---
 ms.assetid: 824005ae-c3c1-459b-9baa-1660158918ab
 title: フェデレーション サーバーを作成するのに適した状況
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 91c260dad1bd260a7dad7320fecd15e6472c50a3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b1e58e8940d024b2fbca9ada5d5fa430aeab70a7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407884"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858475"
 ---
 # <a name="when-to-create-a-federation-server"></a>フェデレーション サーバーを作成するのに適した状況
 
@@ -31,7 +30,7 @@ Active Directory フェデレーションサービス (AD FS) \(AD FS\)でフェ
   
 フェデレーションサーバーがアカウントパートナーの企業ネットワークに配置されている場合、その役割は、ブラウザー、Web サービス、または id セレクタークライアントのユーザー資格情報を認証し、クライアントにセキュリティトークンを送信することになります。 詳細については、次を参照してください。 [アカウント パートナーのフェデレーション サーバーの役割を検討](Review-the-Role-of-the-Federation-Server-in-the-Account-Partner.md)します。  
   
-フェデレーションサーバーがリソースパートナーの企業ネットワークに配置されている場合、その役割は、リソースパートナー組織のフェデレーションサーバーによって発行されたセキュリティトークンに基づいてユーザーを認証するか、またはそのロールがトークン要求をリダイレクトすることになります。クライアントが属しているアカウントパートナー組織に対して構成された Web アプリケーションまたは Web サービス。 詳細については、「 [Review the Role of the Federation Server in the Resource Partner](Review-the-Role-of-the-Federation-Server-in-the-Resource-Partner.md)」を参照してください。  
+フェデレーションサーバーがリソースパートナーの企業ネットワークに配置されている場合、その役割は、リソースパートナー組織内のフェデレーションサーバーによって発行されたセキュリティトークンに基づいてユーザーを認証するか、または構成された Web アプリケーションまたは Web サービスからのトークン要求を、クライアントが属しているアカウントパートナー組織にリダイレクトすることになります。 詳細については、「 [Review the Role of the Federation Server in the Resource Partner](Review-the-Role-of-the-Federation-Server-in-the-Resource-Partner.md)」を参照してください。  
   
 ## <a name="determine-which-ad-fs-design-to-deploy"></a>展開する AD FS 設計を決定する  
 次の AD FS の設計のいずれかを展開する場合は常に、組織内にフェデレーションサーバーを作成します。  

@@ -2,22 +2,18 @@
 title: 手順 2 RADIUS サーバーを構成する
 description: このトピックは、「Windows Server 2016 で OTP 認証を使用してリモートアクセスを展開する」の一部です。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0326818f-9144-496c-b946-f82be4eefbd3
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 83c63e8d11b4f93b87e1f49f487342d3955f6372
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: c2f152d3558e34b6af945937bda61527b0c46dd4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80313644"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858225"
 ---
 # <a name="step-2-configure-the-radius-server"></a>手順 2 RADIUS サーバーを構成する
 

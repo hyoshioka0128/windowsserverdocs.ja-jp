@@ -1,18 +1,18 @@
 ---
 title: ホストガーディアンサービスの管理
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: eecb002e-6ae5-4075-9a83-2bbcee2a891c
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
-ms.openlocfilehash: 41912c90beacbb0c0c285ea4da8305c1afdf2a51
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 2eb9107427ff005c1b3c27e7064d677429d817ee
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322604"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856555"
 ---
 # <a name="managing-the-host-guardian-service"></a>ホストガーディアンサービスの管理
 
@@ -706,7 +706,7 @@ HGS ノードで、次の手順を実行して、新しい暗号化証明書と�
    $updatedKP = Get-Content -Path .\updatedVM001.kp
    Set-VMKeyProtector -VMName VM001 -KeyProtector $updatedKP
    ```
-12. 最後に、VM を起動し、正常に動作することを確認します。
+12.    最後に、VM を起動し、正常に動作することを確認します。
 
 > [!NOTE]
 > Vm の所有者が vm で正しくないキープロテクターを設定し、VM を実行するためにファブリックを承認していない場合、シールドされた VM を起動することはできません。

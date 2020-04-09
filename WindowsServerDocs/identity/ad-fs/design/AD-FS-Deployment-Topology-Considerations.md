@@ -1,7 +1,6 @@
 ---
 ms.assetid: 4ef052f0-61a9-4912-b780-5c96187c850f
 title: AD FS 展開トポロジに関する考慮事項
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 260d86c0feae0179620ece09e06f12729691b5a3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 42db104691bce75c37adf19eb97abba3bf579cf8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71359221"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855875"
 ---
 # <a name="ad-fs-deployment-topology-considerations"></a>AD FS 展開トポロジに関する考慮事項
 
@@ -29,16 +28,16 @@ AD FS 機能
 
 |機能|WID でのサポート|SQL Server でのサポート|この機能についての詳しい情報|  
 |-----------|---------------------|----------------------------|---------------------------------------|  
-|フェデレーション サーバー ファーム展開|はい (ファームごとにフェデレーションサーバーを30個まで制限)|[はい]。 1 つのファーム内に展開できるフェデレーション サーバーの数について制限はありません。|[AD FS 展開トポロジの決定](Determine-Your-AD-FS-Deployment-Topology.md)|  
-|SAML アーティファクトの解決に関する**注意:** この機能は、Microsoft Online Services、Microsoft Office 365、microsoft Exchange、または Microsoft Office SharePoint のシナリオには必要ありません。|X|〇|[AD FS 構成データベースの役割](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md)<br /><br />[AD FS のセキュリティを考慮した設計と展開のベスト プラクティス](Best-Practices-for-Secure-Planning-and-Deployment-of-AD-FS.md)|  
-|SAML\/WS\-フェデレーション トークン リプレイ検出|X|〇|[AD FS 構成データベースの役割](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md)<br /><br />[AD FS のセキュリティを考慮した設計と展開のベスト プラクティス](Best-Practices-for-Secure-Planning-and-Deployment-of-AD-FS.md)|  
+|フェデレーション サーバー ファーム展開|はい (ファームごとにフェデレーションサーバーを30個まで制限)|はい。 1 つのファーム内に展開できるフェデレーション サーバーの数について制限はありません。|[AD FS 展開トポロジの決定](Determine-Your-AD-FS-Deployment-Topology.md)|  
+|SAML アーティファクトの解決に関する**注意:** この機能は、Microsoft Online Services、Microsoft Office 365、microsoft Exchange、または Microsoft Office SharePoint のシナリオには必要ありません。|いいえ|はい|[AD FS 構成データベースの役割](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md)<p>[AD FS のセキュリティを考慮した設計と展開のベスト プラクティス](Best-Practices-for-Secure-Planning-and-Deployment-of-AD-FS.md)|  
+|SAML\/WS\-フェデレーション トークン リプレイ検出|いいえ|はい|[AD FS 構成データベースの役割](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md)<p>[AD FS のセキュリティを考慮した設計と展開のベスト プラクティス](Best-Practices-for-Secure-Planning-and-Deployment-of-AD-FS.md)|  
 
 データベースの機能  
 
 |機能|WID でのサポート|SQL Server でのサポート|この機能についての詳しい情報|  
 |-----------|---------------------|----------------------------|---------------------------------------|  
-|プルレプリケーションを使用した基本的なデータベースの冗長化。読み取りをホストしている1つ以上のサーバーが、データベースの読み取り\/書き込みコピーをホストするソースサーバーに対して行われた変更を\-、データベースのコピーのみをホストします。|〇|X|[AD FS 構成データベースの役割](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md)|  
-|データベース層でのフェールオーバークラスタリングやミラーリング \(など、高\-可用性ソリューションを使用したデータベースの冗長性\)**注:** すべての AD FS 配置トポロジは、AD FS サービス層でのクラスタリングをサポートしています。|X|〇|[AD FS 構成データベースの役割](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md)<br /><br />[高可用性ソリューションの概要](https://go.microsoft.com/fwlink/?LinkId=179853)|  
+|プルレプリケーションを使用した基本的なデータベースの冗長化。読み取りをホストしている1つ以上のサーバーが、データベースの読み取り\/書き込みコピーをホストするソースサーバーに対して行われた変更を\-、データベースのコピーのみをホストします。|はい|いいえ|[AD FS 構成データベースの役割](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md)|  
+|データベース層でのフェールオーバークラスタリングやミラーリング \(など、高\-可用性ソリューションを使用したデータベースの冗長性\)**注:** すべての AD FS 配置トポロジは、AD FS サービス層でのクラスタリングをサポートしています。|いいえ|はい|[AD FS 構成データベースの役割](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md)<p>[高可用性ソリューションの概要](https://go.microsoft.com/fwlink/?LinkId=179853)|  
 
 ### <a name="sql-server-considerations"></a>SQL Server に関する考慮事項  
 AD FS デプロイの構成データベースとして [SQL Server] を選択した場合は、次の展開のファクトを考慮する必要があります。  
@@ -48,7 +47,7 @@ AD FS デプロイの構成データベースとして [SQL Server] を選択し
 -   **実際の展開に必要なサーバーの数**。 AD FS インフラストラクチャ\) を展開するために必要なサーバーの総数に、少なくとも1つの追加のサーバー \(を追加する必要があります。これは、SQL Server インスタンスの専用ホストとして機能します。 フェールオーバークラスタリングまたはミラーリングを使用して SQL Server 構成データベースのフォールトトレランスとスケーラビリティを実現する予定がある場合は、少なくとも2つの SQL server が必要です。  
 
 ### <a name="how-the-configuration-database-type-you-select-may-impact-hardware-resources"></a>選択した構成データベースのタイプがハードウェア リソースに及ぼす影響  
-SQL Server データベースを使用しているファームに展開されているフェデレーションサーバーとは対照的に、WID を使用してファームに展開されているフェデレーションサーバー上のハードウェアリソースへの影響は、重要ではありません。 ただし、WID をファームに使用する場合は、そのファーム内の各フェデレーションサーバーが、AD FS 構成データベースのローカルコピーに対してレプリケーションの変更を保存、管理、および維持しながら、通常の処理を継続して行う必要があることを考慮することが重要です。フェデレーションサービスが必要とする操作。  
+SQL Server データベースを使用しているファームに展開されているフェデレーションサーバーとは対照的に、WID を使用してファームに展開されているフェデレーションサーバー上のハードウェアリソースへの影響は、重要ではありません。 ただし、WID をファームに使用する場合は、そのファーム内の各フェデレーションサーバーが、AD FS 構成データベースのローカルコピーに対してレプリケーションの変更を保存、管理、および維持しながら、フェデレーションサービス必要な通常の操作も引き続き提供する必要があることを考慮することが重要です。  
 
 一方、SQL Server データベースを使用するファームに配置されているフェデレーションサーバーには、AD FS 構成データベースのローカルインスタンスが含まれているとは限りません。 したがって、必要なハードウェア リソースの量はかなり少なくなる可能性があります。  
 

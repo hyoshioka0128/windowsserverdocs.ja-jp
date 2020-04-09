@@ -1,26 +1,22 @@
 ---
-title: 復元 (recover)
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+title: recover
+description: Windows コマンドに関するトピック * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8cc3a73d-9456-41a0-b375-2b4cc37c3992
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a83bb7502145cc09116241ea255e31b5f9981791
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4c9b691b2f0cbad101f7caeb63011724dcf7594d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71384742"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80836575"
 ---
-# <a name="recover"></a>復元 (recover)
+# <a name="recover"></a>recover
 
 
 
@@ -35,11 +31,11 @@ ms.locfileid: "71384742"
 recover [noerr]
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
 |パラメーター|説明|
 |---------|-----------|
-|noerr|スクリプトの場合のみ。 エラーが発生した場合、DiskPart はエラーが発生しなかったかのようにコマンドを処理し続けます。 このパラメーターは、エラー発生すると、DiskPart はエラー コードを生成して終了します。|
+|noerr|スクリプト専用です。 エラーが発生しても、エラーが発生しなかったかのように DiskPart はコマンドの処理を続けます。 このパラメーターは、エラー発生すると、DiskPart はエラー コードを生成して終了します。|
 
 ## <a name="remarks"></a>コメント
 
@@ -48,14 +44,14 @@ recover [noerr]
 -   このコマンドは、失敗したディスクまたは失敗した場合に動作します。 また、または冗長の失敗の状態が失敗すると、失敗しているボリューム上でも機能します。
 -   このコマンドは成功するには、ディスク グループの一部であるディスクを選択してください。 使用して、 **select ディスク** コマンド ディスクを選択し、それにフォーカスをします。
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a><a name=BKMK_examples></a>例
 
 フォーカスのあるディスクが含まれるディスク グループを回復するには、次のように入力します。
 ```
 recover
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
 

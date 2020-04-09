@@ -1,28 +1,22 @@
 ---
 title: typeperf
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Typeperf の Windows コマンドに関するトピックでは、パフォーマンスデータがコマンドウィンドウまたはログファイルに書き込まれます。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0c7ca89a-03b3-4626-afcf-ef8565e90043
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 087b201c51d5aec8e6f61c7469c59307d3ed8b4d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ac5f7def37939a472eb8f47cf65edf184a2fe2fc
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71392296"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80832365"
 ---
 # <a name="typeperf"></a>typeperf
-
-
 
 **Typeperf**コマンドは、パフォーマンスデータをコマンドウィンドウまたはログファイルに書き込みます。 **Typeperf**を停止するには、Ctrl + C キーを押します。
 
@@ -37,7 +31,7 @@ typeperf -q [object] [options]
 typeperf -qx [object] [options]
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
 |パラメーター|説明|
 |---------|-----------|
@@ -48,7 +42,7 @@ typeperf -qx [object] [options]
 
 ## <a name="options"></a>オプション
 
-|                   構成方法                   |                                                         説明                                                          |
+|                   オプション                   |                                                         説明                                                          |
 |--------------------------------------------|------------------------------------------------------------------------------------------------------------------------------|
 |                     -?                     |                                               状況依存のヘルプを表示します。                                               |
 | -f \<CSV&verbar;TSV&verbar;BIN&verbar;SQL > |                                    出力ファイルの形式を指定します。 既定値は CSV です。                                     |
@@ -62,11 +56,11 @@ typeperf -qx [object] [options]
 |            -s \<computer_name >             |                   カウンターパスにコンピューターが指定されていない場合に、監視するリモートコンピューターを指定します。                    |
 |                     -y                     |                                        確認を求めずにすべての質問に対して [はい] を回答します。                                        |
 
-## <a name="BKMK_EXAMPLES"></a>例
+## <a name="examples"></a><a name=BKMK_EXAMPLES></a>例
 
 - 次の例では、ローカルコンピューターのパフォーマンスカウンター **\\\\processor (_Total\%)** の値をコマンドウィンドウに書き込みます。既定のサンプル間隔は1秒で、CTRL + C キーを押します。  
   ```
-  typeperf "\Processor(_Total)\% Processor Time"
+  typeperf \Processor(_Total)\% Processor Time
   ```  
 - 次の例では、50サンプルが収集されるまでの5秒のサンプル間隔で、ファイル**カウンター .txt**内のカウンターの一覧の値をタブ区切りファイル**domain2**に書き込みます。  
   ```

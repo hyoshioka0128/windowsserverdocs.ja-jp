@@ -1,24 +1,20 @@
 ---
 title: 'ksetup: mapuser'
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Windows コマンドに関するトピック * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 84113e6e-89ff-488a-9cd0-f14bbf23b543
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6b80538999c364e9ed10ca0ed43387f603ac9ad3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f61c67fa21eccb77601b78aed51791259d609c5e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71374980"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80841485"
 ---
 # <a name="ksetupmapuser"></a>ksetup: mapuser
 
@@ -32,12 +28,12 @@ Kerberos プリンシパルの名前をアカウントにマップします。 �
 ksetup /mapuser <Principal> <Account>
 ```
 
-### <a name="parameters"></a>パラメーター
+#### <a name="parameters"></a>パラメーター
 
 |  パラメーター   |                                                   説明                                                   |
 |--------------|-----------------------------------------------------------------------------------------------------------------|
-| \<Principal > |              任意のプリンシパルの完全修飾ドメイン名。たとえば、mike@corp.CONTOSO.COM です。              |
-|  \<Account >  | このコンピューター上に存在するアカウントまたはセキュリティグループの名前 (Guest、Domain Users、Administrator など)。 |
+| \<プリンシパル > |              任意のプリンシパルの完全修飾ドメイン名。たとえば、mike@corp.CONTOSO.COMのようにします。              |
+|  \<アカウント >  | このコンピューター上に存在するアカウントまたはセキュリティグループの名前 (Guest、Domain Users、Administrator など)。 |
 
 ## <a name="remarks"></a>コメント
 
@@ -51,7 +47,7 @@ ksetup /mapuser <Principal> <Account>
 
 外部キー配布センター (KDC) と領域の構成に変更が加えられるたびに、設定が変更されたコンピューターの再起動が必要になります。
 
-## <a name="BKMK_Examples"></a>例
+## <a name="examples"></a><a name=BKMK_Examples></a>例
 
 Kerberos 領域 CONTOSO 内の Mike Danseglio のアカウントをこのコンピューターの guest アカウントにマップし、このコンピューターに対する認証を行わずに、組み込みのゲストアカウントのメンバーのすべての特権を付与します。
 ```
@@ -70,7 +66,7 @@ CONTOSO Kerberos 領域内のすべてのアカウントを、このコンピュ
 ksetup /mapuser * *
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
--   [コマンド ライン構文の記号](command-line-syntax-key.md)
+-   - [コマンド ライン構文の記号](command-line-syntax-key.md)
 -   [Ksetup](ksetup.md)

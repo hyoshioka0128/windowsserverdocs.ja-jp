@@ -2,22 +2,18 @@
 title: リモート アクセスの管理
 description: このトピックでは、Windows Server 2016 でリモートアクセスを管理する方法について説明します。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1459819a-b1b6-4800-8770-4a85d02c7a2b
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 6437a7aa5a535352ad4f6c6be8fbac2162b6feea
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 19798c5fb29d3b8aea68b29e5a42775970eeca46
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80308431"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857453"
 ---
 # <a name="manage-remote-access"></a>リモート アクセスの管理
 
@@ -86,8 +82,8 @@ DirectAccess クライアントを管理するために単一のリモート ア
   
 |役割または機能|このシナリオのサポート方法|  
 |----------|-----------------|  
-|*リモートアクセスの役割*|この役割をインストールまたはアンインストールするには、サーバー マネージャー コンソールまたは Windows PowerShell を使用します。 この役割には、以前は Windows Server 2008 R2 の機能であった DirectAccess と、以前はネットワーク ポリシーとアクセス サービス (NPAS) サーバーの役割の役割サービスであったリモート アクセス サービスが含まれています。 リモート アクセスの役割は、次の 2 つのコンポーネントで構成されています。<br /><br />1. DirectAccess およびルーティングとリモートアクセスサービス (RRAS) VPN: DirectAccess と VPN は、リモートアクセス管理コンソールで管理されます。<br />2. RRAS: 機能は、ルーティングとリモートアクセスコンソールで管理されます。<br /><br />リモート アクセス サーバーの役割は、次の機能に依存しています。<br /><br />-Web サーバー (IIS): ネットワークロケーションサーバーと既定の Web プローブを構成するために必要です。<br />-Windows internal database: リモートアクセスサーバーのローカルアカウンティングに使用されます。|  
-|リモート アクセス管理ツールの機能|この機能は、次のようにインストールされます。<br /><br />-リモートアクセスの役割がインストールされていて、リモート管理コンソールのユーザーインターフェイスをサポートしている場合は、リモートアクセスサーバーに既定で設定されます。<br />-リモートアクセスサーバーの役割を実行していないサーバーのオプションとして。 この場合、リモート アクセス サーバーのリモート管理に使用されます。<br /><br />この機能は、<br /><br />-リモートアクセス GUI およびコマンドラインツール<br />-Windows PowerShell 用リモートアクセスモジュール<br /><br />次の要素と依存関係があります。<br /><br />-グループポリシー管理コンソール<br />-RAS 接続マネージャー管理キット (CMAK)<br />-Windows PowerShell 3.0<br />-グラフィカル管理ツールとインフラストラクチャ|  
+|*リモートアクセスの役割*|この役割をインストールまたはアンインストールするには、サーバー マネージャー コンソールまたは Windows PowerShell を使用します。 この役割には、以前は Windows Server 2008 R2 の機能であった DirectAccess と、以前はネットワーク ポリシーとアクセス サービス (NPAS) サーバーの役割の役割サービスであったリモート アクセス サービスが含まれています。 リモート アクセスの役割は、次の 2 つのコンポーネントで構成されています。<p>1. DirectAccess およびルーティングとリモートアクセスサービス (RRAS) VPN: DirectAccess と VPN は、リモートアクセス管理コンソールで管理されます。<br />2. RRAS: 機能は、ルーティングとリモートアクセスコンソールで管理されます。<p>リモート アクセス サーバーの役割は、次の機能に依存しています。<p>-Web サーバー (IIS): ネットワークロケーションサーバーと既定の Web プローブを構成するために必要です。<br />-Windows internal database: リモートアクセスサーバーのローカルアカウンティングに使用されます。|  
+|リモート アクセス管理ツールの機能|この機能は、次のようにインストールされます。<p>-リモートアクセスの役割がインストールされていて、リモート管理コンソールのユーザーインターフェイスをサポートしている場合は、リモートアクセスサーバーに既定で設定されます。<br />-リモートアクセスサーバーの役割を実行していないサーバーのオプションとして。 この場合、リモート アクセス サーバーのリモート管理に使用されます。<p>この機能は、<p>-リモートアクセス GUI およびコマンドラインツール<br />-Windows PowerShell 用リモートアクセスモジュール<p>次の要素と依存関係があります。<p>-グループポリシー管理コンソール<br />-RAS 接続マネージャー管理キット (CMAK)<br />-Windows PowerShell 3.0<br />-グラフィカル管理ツールとインフラストラクチャ|  
   
 ## <a name="hardware-requirements"></a><a name="BKMK_HARD"></a>ハードウェア要件  
 このシナリオのハードウェア要件は次のとおりです。  

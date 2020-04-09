@@ -1,27 +1,23 @@
 ---
 title: ファイルをプライベートな状態で保持する
 description: MultiPoint Services 内のユーザーから特定のファイルを保護する方法について説明します。
-ms.custom: na
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 909049dc-6514-4040-89fb-fcf33fa96a9d
 author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: b9ff84678787e53ef5def822e33139b9839411a6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a2d8f0c869d6cc4c9235c54dec63e77767b6f9bb
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71395342"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853705"
 ---
 # <a name="keep-files-private"></a>ファイルをプライベートな状態で保持する
-このトピックは、*管理\) ユーザー*として \(するドキュメントなどのコンテンツに適用され、*標準ユーザー*は MultiPoint Services システムの他のユーザーと共有しないようにします。  
+このトピックの内容は、\(管理ユーザー*と*標準ユーザー\)が MultiPoint Services システム内の他のユーザーと共有しないコンテンツ (ドキュメントなど) に適用されます。  
 
 MultiPoint Services のプライバシーの詳細については、「[プライバシーとセキュリティに関する考慮事項](Privacy-and-Security-Considerations.md)」を参照してください。
   

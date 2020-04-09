@@ -5,15 +5,15 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: 45217fce-bfb9-47e8-9814-88ffdb3c7b7d
-manager: brianlic
-ms.author: lizross
-author: eross-msft
-ms.openlocfilehash: db5b5803cee2c46f365c5cba55707d198efb1861
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+manager: dcscontentpm
+ms.author: v-tea
+author: Teresa-Motiv
+ms.openlocfilehash: 66f4401235e8eccfe0ab6e10f86cddb15386621c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80316567"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854755"
 ---
 # <a name="network-subsystem-performance-tuning"></a>ネットワーク サブシステムのパフォーマンスの調整
 

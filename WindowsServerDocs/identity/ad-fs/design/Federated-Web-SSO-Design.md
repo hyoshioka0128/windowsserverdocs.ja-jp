@@ -1,7 +1,6 @@
 ---
 ms.assetid: 09f335bb-896a-45dd-adc2-f215b8fba828
 title: フェデレーション Web SSO 設計
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 6a3e7eb6c42c8190da799c88c1e947e6aef1c29f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9915a2942c9336d5aeb7776169d2e51491c22909
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408106"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853145"
 ---
 # <a name="federated-web-sso-design"></a>フェデレーション Web SSO 設計
 
@@ -26,7 +25,7 @@ Active Directory フェデレーションサービス (AD FS) \(AD FS のフェ�
   
 ![フェデレーション web sso](media/adfs2_FederatedWebSSODesign.gif)  
   
-図の1つの\-方向の矢印は、フェデレーションの信頼の方向を示します。これは、Windows の信頼の方向と同様に、常にフォレストのアカウント側を指します。 これは、認証がアカウント パートナー組織からリソース パートナー組織に対して行われることを意味します。  
+図の1つの\-方向の矢印は、フェデレーションの信頼の方向を示します。これは、Windows の信頼の方向と同様に、常にフォレストのアカウント側を指します。 これは、認証はアカウント パートナー組織からリソース パートナー組織の方向に向かうことを示します。  
   
 このフェデレーション Web SSO 設計では、2つのフェデレーションサーバー (Fabrikam 内) と Contoso の別のフェデレーションサーバー \(、Fabrikam のユーザーアカウントから Contoso の Web\-ベースのアプリケーションまたはサービスに対する認証要求をルーティング\) ます。  
   

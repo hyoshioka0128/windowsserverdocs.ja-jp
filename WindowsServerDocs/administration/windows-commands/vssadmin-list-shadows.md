@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 05/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 49bee3deac463b68fda94097bb183bcbf1c89810
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: cadbacb5225e28118ec71e9cbad6b3c57a6086e0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71362594"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80830065"
 ---
 # <a name="vssadmin-list-shadows"></a>Vssadmin リストの影
 
@@ -27,7 +27,7 @@ ms.locfileid: "71362594"
 vssadmin list shadows [/for=<ForVolumeSpec>] [/shadow=<ShadowID>]
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
 |パラメーター|説明|
 |---|---|

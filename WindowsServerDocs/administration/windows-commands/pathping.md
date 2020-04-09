@@ -1,24 +1,20 @@
 ---
 title: pathping
 description: Pathping コマンドを使用してネットワーク待機時間と損失情報を取得する方法について説明します。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ec430125-b1dc-4aad-a7c9-b70f486d9e3c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 3232aaac979aa4e410d31db810abdd940d1c24bf
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3f853ef430207c08e78e0446ce67c6b5bec4c1db
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71372400"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80837696"
 ---
 # <a name="pathping"></a>pathping
 
@@ -32,7 +28,7 @@ ms.locfileid: "71372400"
 ```
 pathping [/n] [/h] [/g <Hostlist>] [/p <Period>] [/q <NumQueries> [/w <timeout>] [/i <IPaddress>] [/4 <IPv4>] [/6 <IPv6>][<TargetName>]
 ```
-### <a name="parameters"></a>パラメーター
+#### <a name="parameters"></a>パラメーター
 |パラメーター|説明|
 |-------|--------|
 |/n|により、 **pathping** から中間ルーターの IP アドレスを解決するには、名前にしようとしています。 表示の時間を短縮これが **pathping** 結果。|
@@ -45,9 +41,9 @@ pathping [/n] [/h] [/g <Hostlist>] [/p <Period>] [/q <NumQueries> [/w <timeout>]
 |/4 \<IPv4 >|その pathping のみに IPv4 を使用するかを指定します。|
 |/6 \<IPv6 >|その pathping のみに IPv6 を使用するかを指定します。|
 |\<TargetName >|エクスポート先を指定する IP アドレスまたはホスト名で識別されます。|
-|/?|コマンド プロンプトにヘルプを表示します。|
+|/?|コマンド プロンプトでヘルプを表示します。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 -   **pathping**パラメーターでは大文字と小文字が区別されます。
 -   ネットワークの混雑を避けるためには、十分に長い間隔で ping を送信する必要があります。
 -   バースト ロスの影響を最小限に抑えるには送信しない ping 頻度が高すぎます。
@@ -55,7 +51,7 @@ pathping [/n] [/h] [/g <Hostlist>] [/p <Period>] [/q <NumQueries> [/w <timeout>]
 -   使用する場合、 **/w** パラメーター、複数の ping を同時に送信されることができます。 このため、 *timeout*パラメーターで指定した時間は、ping を待機する*期間*のパラメーターに指定された時間によって制限されません。
 -   このコマンドは、インターネット プロトコル (TCP/IP) プロトコルがネットワーク接続のネットワーク アダプターのプロパティでコンポーネントとしてインストールされている場合にのみ使用できます。
 
-## <a name="BKMK_Examples"></a>例
+## <a name="examples"></a><a name=BKMK_Examples></a>例
 
 例を次に **pathping** コマンドの出力。
 
@@ -92,4 +88,4 @@ Trace complete.
 **[アドレス]** 列で縦棒 ( **|** ) として識別されたリンクに表示される損失率は、パス上で転送されているパケットの損失の原因となっているリンクの輻輳を示します。 ルーター (IP アドレスで識別される) に対して表示される損失率では、これらのルーターはオーバー ロードことを示しています。
 
 ## <a name="additional-references"></a>その他の参照情報
--   [コマンド ライン構文の記号](command-line-syntax-key.md)
+-   - [コマンド ライン構文の記号](command-line-syntax-key.md)

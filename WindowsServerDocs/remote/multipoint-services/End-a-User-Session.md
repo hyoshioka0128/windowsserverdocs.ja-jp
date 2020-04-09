@@ -1,23 +1,19 @@
 ---
 title: ユーザー セッションを終了する
 description: MultiPoint Services でユーザーのセッションを手動で終了するタイミングと方法について説明します。
-ms.custom: na
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 51b1076b-cce5-45a7-8cf2-ecc6aa390d14
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.openlocfilehash: 73a04399c244adf1f9d8b6ec2c41dc0593e5ddd9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: cb4d76407082a2ac49b72e962c4e9a230b09e25f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71395429"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859245"
 ---
 # <a name="end-a-user-session"></a>ユーザー セッションを終了する
 ユーザーを MultiPoint Services システムからログオフして、デスクトップを既定の設定に戻す必要がある場合は、ユーザーのセッションを終了する必要があります。 ユーザーは、接続の終了を警告するメッセージを受け取ります。 次のような場合は、ユーザーの接続を終了する必要があります。  
@@ -34,12 +30,12 @@ ms.locfileid: "71395429"
   
 1.  ステーション モードで MultiPoint マネージャーを開き、クリックして、 **ステーション**  タブをクリックします。  
   
-2.  次のいずれかの操作を行います。  
+2.  以下のいずれかを実行します。  
   
     -   1 つのユーザー セッションを終了するには、 **[ユーザー]** 列で終了するセッションを選択し、 **[タスク]** の **[ログオフ]** をクリックします。  
   
     -   すべてのユーザー セッションを終了するには、 **[ステーションのタスク]** の **[すべてのステーションをログオフする]** をクリックします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [ユーザーデスクトップの管理](manage-user-desktops-using-multipoint-dashboard.md)  
 [ユーザー セッションをログオフまたは切断する](Log-off-or-Disconnect-User-Sessions.md)

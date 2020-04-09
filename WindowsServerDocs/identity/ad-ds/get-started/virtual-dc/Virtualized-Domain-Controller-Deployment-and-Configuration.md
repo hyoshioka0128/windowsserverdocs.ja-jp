@@ -1,7 +1,6 @@
 ---
 ms.assetid: b146f47e-3081-4c8e-bf68-d0f993564db2
 title: 仮想化ドメイン コントローラーの展開と構成
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: be2c919e4379cf615fe25d68446855229ace87dd
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 97d726f8bfbbe664dfdfd6b7000988f009174631
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390696"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80824695"
 ---
 # <a name="virtualized-domain-controller-deployment-and-configuration"></a>仮想化ドメイン コントローラーの展開と構成
 
@@ -34,7 +33,7 @@ ms.locfileid: "71390696"
   
     仮想化ドメイン コントローラーの安全な復元中に行われる検証について詳しく説明します。  
   
-## <a name="BKMK_InstallConsiderations"></a>インストールに関する考慮事項  
+## <a name="installation-considerations"></a><a name="BKMK_InstallConsiderations"></a>インストールに関する考慮事項  
 仮想化ドメイン コントローラーに関する特別な役割や機能のインストールはありません。すべてのドメイン コントローラーに、複製機能と安全な復元機能が自動的に組み込まれています。 これらの機能を削除したり無効にしたりすることはできません。  
   
 Windows Server 2012 ドメイン コントローラーを使用するには、Windows Server 2012 AD DS スキーマ バージョン 56 以降、および Windows Server 2003 ネイティブ以降と同等のフォレストの機能レベルが必要です。  
@@ -44,7 +43,7 @@ Windows Server 2012 ドメイン コントローラーを使用するには、Wi
 > [!IMPORTANT]  
 > PDC エミュレーター FSMO 役割の保有者は、複製の開始時にオンラインになっている必要があります。  
   
-### <a name="BKMK_PlatformReqs"></a>プラットフォームの要件  
+### <a name="platform-requirements"></a><a name="BKMK_PlatformReqs"></a>プラットフォームの要件  
 仮想化ドメイン コントローラーの複製には次が必要です。  
   
 -   Windows Server 2012 DC でホストされている PDC エミュレーター FSMO 役割  
@@ -62,10 +61,10 @@ Windows Server 2012 ドメイン コントローラーを使用するには、Wi
 |||  
 |-|-|  
 |**仮想化製品**|**仮想化ドメインコントローラーと Vの ID をサポートします。**|  
-|**Hyper-v 機能を備えた Microsoft Windows Server 2012 server**|〇|  
-|**Microsoft Windows Server 2012 Hyper-v Server**|〇|  
-|**Hyper-v クライアント機能を備えた Microsoft Windows 8**|〇|  
-|**Windows Server 2008 R2 および Windows Server 2008**|X|  
+|**Hyper-v 機能を備えた Microsoft Windows Server 2012 server**|はい|  
+|**Microsoft Windows Server 2012 Hyper-v Server**|はい|  
+|**Hyper-v クライアント機能を備えた Microsoft Windows 8**|はい|  
+|**Windows Server 2008 R2 および Windows Server 2008**|いいえ|  
 |**Microsoft 以外の仮想化ソリューション**|ベンダーにお問い合わせください|  
   
 Microsoft では Windows 7 Virtual PC、Virtual PC 2007、Virtual PC 2004、および Virtual Server 2005 がサポートしていますが、64 ビットのゲストを実行することはできません。また、VM-GenerationID もサポートしていません。  
@@ -93,7 +92,7 @@ Microsoft では Windows 7 Virtual PC、Virtual PC 2007、Virtual PC 2004、お�
   
 USN バブルおよび残留オブジェクトの詳細については、「 [エラー 8606: "オブジェクトの作成に必要な属性が足りません" で失敗する Active Directory 操作のトラブルシューティング](https://support.microsoft.com/kb/2028495)」を参照してください。  
   
-## <a name="BKMK_VDCCloning"></a>仮想化ドメインコントローラーの複製  
+## <a name="virtualized-domain-controller-cloning"></a><a name="BKMK_VDCCloning"></a>仮想化ドメインコントローラーの複製  
 グラフィカル ツールまたは Windows PowerShell のいずれを使用しても、仮想化ドメイン コントローラーを複製は、複数の段階および手順に従って行います。 大きく分けると 3 つの段階があります。  
   
 **環境を準備する**  
@@ -120,7 +119,7 @@ USN バブルおよび残留オブジェクトの詳細については、「 [�
   
 -   手順 9: 新しい仮想マシンを起動して、複製を開始します  
   
-Hyper-v 管理コンソールなどのグラフィカルツールや、Windows PowerShell などのコマンドラインツールを使用する場合、操作には手順上の違いはありません。そのため、これらの手順は、両方のインターフェイスに1回だけ表示されます。 ここでは、複製プロセスのエンド ツー エンドの自動化について調査するための Windows PowerShell のサンプルを示します。これらのサンプルは、どの手順にも必要がありません。 Windows Server 2012 には、仮想化ドメイン コントローラー用のグラフィカル管理ツールがありません。  
+Hyper-V 管理コンソールなどのグラフィカル ツールを使用しても、Windows PowerShell などのコマンド ライン ツールを使用しても、操作手順に違いはありません。したがって、手順については 1 度しか説明しませんが、これは両方のインターフェイスに適用されます。 ここでは、複製プロセスのエンド ツー エンドの自動化について調査するための Windows PowerShell のサンプルを示します。これらのサンプルは、どの手順にも必要がありません。 Windows Server 2012 には、仮想化ドメイン コントローラー用のグラフィカル管理ツールがありません。  
   
 複製されたコンピューターを作成する方法、および xml ファイルの追加方法を選択するポイントは手順の中にいくつかあります。これらの手順については、以下で詳しく説明します。 それ以外の場合、プロセスは変更できません。  
   
@@ -268,7 +267,7 @@ New-ADDCCloneConfigFile
   
 ||||  
 |-|-|-|  
-|**ActiveDirectory**<br /><br />**コマンドレット**|**引数**|**詳しい**|  
+|**ActiveDirectory**<p>**コマンドレット**|**数値**|**詳しい**|  
 |**New-addccloneconfigfile**|*<no argument specified>*|ブランクの DcCloneConfig.xml ファイルを DSA 作業ディレクトリ (既定: %systemroot%\ntds)|  
 ||-CloneComputerName|複製 DC コンピューター名を指定します。 文字列データ型|  
 ||-Path|DcCloneConfig.xml を作成するフォルダーを指定します。 指定されていない場合は、DSA 作業ディレクトリ (既定: %systemroot%\ntds)。 文字列データ型|  
@@ -451,7 +450,7 @@ Convert-vm
   
 ![仮想化 DC の展開](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_PSConvertVhd.png)  
   
-#### <a name="BKMK_Offline"></a>オフラインシステムディスクへの XML の追加  
+#### <a name="adding-xml-to-the-offline-system-disk"></a><a name="BKMK_Offline"></a>オフラインシステムディスクへの XML の追加  
 Dccloneconfig.xml を実行中のソース DC にコピーした場合は、すぐに最新の dccloneconfig.xml ファイルを、コピー/エクスポートされたオフライン システム ディスクにコピーする必要があります。 Get-ADDCCloningExcludedApplicationList で前に検出されたインストール済みアプリケーションによっては、CustomDCCloneAllowList.xml ファイルをディスクにコピーしなければならない場合もあります。  
   
 DcCloneConfig.xml ファイルが含まれている可能性がある場所は次のとおりです。  
@@ -546,7 +545,7 @@ copy-item <xml file path><destination path>\dccloneconfig.xml
 dismount-vhd <disk path>  
 ```  
   
-次に、例を示します。  
+例 :  
   
 ![仮想化 DC の展開](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_PSMountVHD.png)  
   
@@ -640,7 +639,7 @@ Get-VMSnapshot
 Remove-VMSnapshot  
 ```  
   
-次に、例を示します。  
+例 :  
   
 ![仮想化 DC の展開](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_PSGetVMSnap.png)  
   
@@ -664,16 +663,16 @@ Windows PowerShell を使用して VM を起動する場合、新しい Hyper-V 
 Start-VM  
 ```  
   
-次に、例を示します。  
+例 :  
   
 ![仮想化 DC の展開](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_PSStartVM.png)  
   
 複製の完了後にコンピューターが再起動されると、そのコンピューターはドメイン コントローラーになり、通常どおりにログオンして、通常の操作を確認できます。 エラーがあると、サーバーは、調査のためにディレクトリ サービス復元モードで起動するように設定されます。  
   
-## <a name="BKMK_VDCSafeRestore"></a>仮想化セーフガード  
+## <a name="virtualization-safeguards"></a><a name="BKMK_VDCSafeRestore"></a>仮想化セーフガード  
 仮想化ドメイン コントローラーの複製とは異なり、Windows Server 2012 仮想化セーフガードには構成手順がありません。 次の簡単な条件を満たしていれば、この機能は調査なしで動作します。  
   
--   ハイパーバイザーは VM 生成 ID をサポートします。  
+-   ハイパーバイザーが VM-Generation ID をサポートしている  
   
 -   復元されたドメイン コントローラーが、変更に対して権限のないレプリケーションを実行できる有効なパートナー ドメイン コントローラーがある。  
   

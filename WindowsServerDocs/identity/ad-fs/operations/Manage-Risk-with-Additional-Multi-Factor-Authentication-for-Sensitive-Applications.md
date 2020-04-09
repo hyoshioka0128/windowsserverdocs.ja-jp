@@ -1,7 +1,6 @@
 ---
 ms.assetid: 934ac796-e2ee-490d-8265-6a818be5ee79
 title: 追加の多要素認証による個人情報アプリケーションのリスク管理
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 79319f54ceb14195dffd56b5a4dfe1b17f048df9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: dc6608713ddd60d20b0b717d4133d93d23fc7b25
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407529"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80816255"
 ---
 # <a name="manage-risk-with-additional-multi-factor-authentication-for-sensitive-applications"></a>追加の多要素認証による個人情報アプリケーションのリスク管理
 
@@ -27,7 +26,7 @@ ms.locfileid: "71407529"
 
 -   [AD FS の追加の認証方法を構成する](../../ad-fs/operations/Configure-Additional-Authentication-Methods-for-AD-FS.md)
 
-## <a name="in-this-guide"></a>このガイドについて
+## <a name="in-this-guide"></a>このガイドの内容
 このガイドでは、次の情報を提供します。
 
 -   [AD FS の認証メカニズム](../../ad-fs/operations/Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md#BKMK_1)-Windows Server 2012 R2 の Active Directory フェデレーションサービス (AD FS) (AD FS) で使用できる認証メカニズムについて説明します。
@@ -39,10 +38,10 @@ ms.locfileid: "71407529"
 
     このシナリオの構成と確認の詳細な手順については、「[チュートリアルガイド: 追加の Multi-Factor Authentication による機密アプリケーションのリスク管理](../../ad-fs/operations/Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)」を参照してください。
 
-## <a name="BKMK_1"></a>主要な概念-AD FS の認証メカニズム
+## <a name="key-concepts---authentication-mechanisms-in-ad-fs"></a><a name="BKMK_1"></a>主要な概念-AD FS の認証メカニズム
 
 ### <a name="benefits-of-authentication-mechanisms-in-ad---fs"></a>AD FS での認証メカニズムの利点
-Windows Server 2012 R2 の Active Directory フェデレーションサービス (AD FS) (AD FS) を使用すると、IT 管理者は、会社のリソースにアクセスするユーザーを認証するための、より豊富で柔軟なツールセットを提供できます。 この機能により、管理者はプライマリと追加の認証方法を柔軟に制御できるようになり、認証ポリシー (ユーザーインターフェイスと Windows PowerShell の両方) を構成するための豊富な管理エクスペリエンスが提供され、AD FS によって保護されているアプリケーションやサービスにアクセスするエンドユーザーのエクスペリエンス。 Windows Server 2012 R2 で AD FS を使用してアプリケーションとサービスをセキュリティで保護する利点の一部を次に示します。
+Windows Server 2012 R2 の Active Directory フェデレーションサービス (AD FS) (AD FS) を使用すると、IT 管理者は、会社のリソースにアクセスするユーザーを認証するための、より豊富で柔軟なツールセットを提供できます。 これにより、管理者はプライマリと追加の認証方法を柔軟に制御できるようになり、認証ポリシー (ユーザーインターフェイスと Windows PowerShell の両方) を構成するための豊富な管理エクスペリエンスが提供され、AD FS によって保護されたアプリケーションやサービスにアクセスするエンドユーザーのエクスペリエンスが向上します。 Windows Server 2012 R2 で AD FS を使用してアプリケーションとサービスをセキュリティで保護する利点の一部を次に示します。
 
 -   グローバル認証ポリシー-一元的な管理機能。 IT 管理者は、保護されたリソースへのアクセス元のネットワークの場所に基づいてユーザーを認証するために使用する認証方法を選択できます。 これにより、管理者は次のことを実行できます。
 
@@ -118,7 +117,7 @@ Windows Server 2012 R2 の AD FS で MFA を構成するには、次の2つの�
 
 -   保護済みリソースに対するアクセス要求をエクストラネットまたはイントラネットのいずれかから行うときは、MFA を必須とすることができます。
 
-## <a name="BKMK_2"></a>シナリオの概要
+## <a name="scenario-overview"></a><a name="BKMK_2"></a>シナリオの概要
 このシナリオでは、特定のアプリケーションのユーザーのグループメンバーシップデータに基づいて MFA を有効にします。 つまり、特定のグループに属するユーザーが、Web サーバーでホストされている特定のアプリケーションへのアクセスを要求するときに、MFA を必須とするように、フェデレーション サーバーで認証ポリシーを設定します。
 
 具体的には、このシナリオでは、**claimapp** という要求ベースのテスト アプリケーションの認証ポリシーを有効にします。それにより、AD ユーザー **Robert Hatley** は、AD グループ **Finance** に属しているため、MFA を受けることが必須となります。

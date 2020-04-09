@@ -1,35 +1,32 @@
 ---
 title: cacls
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Cacls の Windows コマンドトピックでは、指定されたファイルの随意アクセス制御リスト (DACL) を表示または変更します。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b5bdbaaa-4557-48b8-80df-e75ee0d2f27d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 04b60bd852abdb55059efb96aec4c290361d6a74
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8cc6300563880a587b6544ec8cb61e9010ad6c2c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71379948"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80848245"
 ---
 # <a name="cacls"></a>cacls
 
 >適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 指定されたファイルの随意アクセス制御リスト (DACL) を表示または変更します。  
+
 ## <a name="syntax"></a>構文  
 ```  
 cacls <filename> [/t] [/m] [/l] [/s[:sddl]] [/e] [/c] [/g user:<perm>] [/r user [...]] [/p user:<perm> [...]] [/d user [...]]  
 ```  
-### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a>パラメーター  
 
 |        パラメーター        |                                                                                            説明                                                                                             |
 |-------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -40,13 +37,13 @@ cacls <filename> [/t] [/m] [/l] [/s[:sddl]] [/e] [/c] [/g user:<perm>] [/r user 
 |         /s: sddl         |                                       SDDL 文字列で指定されている Acl を置き換えます ( **/e**、 **/g**、 **/r**、 **/p**、 **/d**では無効です)。                                        |
 |           /e            |                                                                                 ACL を置き換えるのではなく、編集します。                                                                                  |
 |           /c            |                                                                                 アクセス拒否エラーを続行します。                                                                                  |
-|    /g user:\<の perm\>     |   指定されたユーザーアクセス権を付与します。<br /><br />アクセス許可の有効な値:<br /><br />-n-なし<br />-r-読み取り<br />-w-書き込み<br />-c-変更 (書き込み)<br />-f-フルコントロール   |
+|    /g user:\<の perm\>     |   指定されたユーザーアクセス権を付与します。<p>アクセス許可の有効な値:<p>-n-なし<br />-r-読み取り<br />-w-書き込み<br />-c-変更 (書き込み)<br />-f-フルコントロール   |
 |      /r ユーザー [...]      |                                                                  指定されたユーザーのアクセス権を取り消します ( **/e**でのみ有効)。                                                                   |
-| [/p ユーザー:\<perm\> [...] | 指定されたユーザーのアクセス権を置き換えます。<br /><br />アクセス許可の有効な値:<br /><br />-n-なし<br />-r-読み取り<br />-w-書き込み<br />-c-変更 (書き込み)<br />-f-フルコントロール |
+| [/p ユーザー:\<perm\> [...] | 指定されたユーザーのアクセス権を置き換えます。<p>アクセス許可の有効な値:<p>-n-なし<br />-r-読み取り<br />-w-書き込み<br />-c-変更 (書き込み)<br />-f-フルコントロール |
 |     [/d ユーザー [...]      |                                                                                    指定されたユーザーアクセスを拒否します。                                                                                     |
-|           /?            |                                                                                コマンド プロンプトにヘルプを表示します。                                                                                |
+|           /?            |                                                                                コマンド プロンプトでヘルプを表示します。                                                                                |
 
-## <a name="remarks"></a>注釈  
+## <a name="remarks"></a>コメント  
 - このコマンドは廃止されました。 代わりに[icacls](icacls.md)を使用してください。  
 - 結果を解釈するには、次の表を使用します。  
 
@@ -66,6 +63,6 @@ cacls <filename> [/t] [/m] [/l] [/s[:sddl]] [/e] [/c] [/g user:<perm>] [/r user 
 - ワイルドカード ( **?** と **\\\*** ) を指定して、複数のファイルを指定します。  
 - 複数のユーザーを指定できます。  
 
-#### <a name="additional-references"></a>その他の参照情報  
--   [コマンド ライン構文の記号](command-line-syntax-key.md)   
+## <a name="additional-references"></a>その他の参照情報  
+-   - [コマンド ライン構文の記号](command-line-syntax-key.md)   
 -   [icacls](icacls.md)  

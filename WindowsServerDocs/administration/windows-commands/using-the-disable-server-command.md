@@ -1,28 +1,22 @@
 ---
-title: 無効にするサーバーのコマンドを使用します。
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+title: サーバーを無効にする
+description: Windows 展開サービスサーバーのすべてのサービスを無効にする、disable Server の Windows コマンドに関するトピック。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b69fcfe0-b744-4794-bc75-2c9218c0ba66
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9376bf1c5a5641aa6763c88b58bfe92d799b44f5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ba8c42f8b951baa4679adc44c69bf28cb2af2629
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71363514"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80831635"
 ---
-# <a name="using-the-disable-server-command"></a>無効にするサーバーのコマンドを使用します。
-
-
+# <a name="disable-server"></a>サーバーを無効にする
 
 Windows 展開サービス サーバーのすべてのサービスを無効にします。
 
@@ -32,13 +26,13 @@ Windows 展開サービス サーバーのすべてのサービスを無効に�
 WDSUTIL [Options] /Disable-Server [/Server:<Server name>]
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
 |パラメーター|説明|
 |---------|-----------|
-|[/Server: \<Server name >]|サーバーの名前を指定します。 NetBIOS 名または完全修飾ドメイン名 (FQDN) のいずれかを指定できます。 サーバー名が指定されていない場合は、ローカルのサーバーが使用されます。|
+|[/Server:\<サーバー名 >]|サーバーの名前を指定します。 NetBIOS 名または完全修飾ドメイン名 (FQDN) のいずれかを指定できます。 サーバー名が指定されていない場合は、ローカルのサーバーが使用されます。|
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a><a name=BKMK_examples></a>例
 
 サーバーを無効にするには、次のいずれかを実行します。
 ```
@@ -46,7 +40,7 @@ WDSUTIL /Disable-Server
 WDSUTIL /Verbose /Disable-Server /Server:MyWDSServer
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
 

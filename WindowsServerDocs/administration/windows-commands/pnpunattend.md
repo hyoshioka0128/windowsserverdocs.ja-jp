@@ -1,24 +1,20 @@
 ---
 title: pnpunattend
 description: コンピューターのデバイスドライバーを監査する方法と、サイレントドライバインストールを実行する方法について説明します。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4fa88932-cff0-4dfc-936c-98c0e3dfbeb8 britw
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 77a6ab1ea45322e3c53e8b095c412cf8838be60d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c4836665946b39acdacf4c204c6e79fc2d8507bd
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71372271"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80837535"
 ---
 # <a name="pnpunattend"></a>pnpunattend
 
@@ -30,16 +26,16 @@ ms.locfileid: "71372271"
 PnPUnattend.exe auditSystem [/help] [/?] [/h] [/s] [/L]
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
 |パラメーター|説明|
 |---------|-----------|
-|auditSystem|オンラインでのドライバーのインストールを指定します。</br>**Pnpunattend**が **/help**または **/?** のいずれかで実行されている場合を除き、必須です。 パラメーター。|
-|/s|(省略可能)。 インストールしなくてもドライバーの検索を指定します。|
-|/L|(省略可能)。 コマンド プロンプトで、このコマンドのログ情報を指定します。|
-|/?|(省略可能)。 コマンド プロンプトで次のコマンドのヘルプを表示します。|
+|auditSystem|オンラインでのドライバーのインストールを指定します。</br>**Pnpunattend**が **/help**または **/?** のいずれかで実行されている場合を除き、必須です。 パラメーターよりも優先されます。|
+|/s|省略可。 インストールしなくてもドライバーの検索を指定します。|
+|/L|省略可。 コマンド プロンプトで、このコマンドのログ情報を指定します。|
+|/?|省略可。 コマンド プロンプトで次のコマンドのヘルプを表示します。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
 準備が必要です。 このコマンドを使用する前に、次のタスクを完了する必要があります。
 
@@ -60,4 +56,4 @@ pnpunattend auditsystem /s /l
 
 ## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

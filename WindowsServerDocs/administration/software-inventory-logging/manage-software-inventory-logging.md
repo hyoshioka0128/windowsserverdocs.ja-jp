@@ -1,24 +1,20 @@
 ---
 title: ソフトウェア インベントリ ログの管理
 description: ソフトウェアインベントリログの管理方法について説明します。
-ms.custom: na
 ms.prod: windows-server
 ms.technology: manage-software-inventory-logging
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 812173d1-2904-42f4-a9e2-de19effec201
 author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a14233e01c19df650d1059e1b60cd5398b05709a
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 2176793bd0b7103f69c57476034342a0617329e8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75946994"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851425"
 ---
 # <a name="manage-software-inventory-logging"></a>ソフトウェア インベントリ ログの管理
 
@@ -90,10 +86,10 @@ SIL ログ記録の開始にはある程度の計画や先見性が含まれま�
 -   [Windows Server 2012 R2 Hyper-v 環境でのソフトウェアインベントリログの使用 (KB 3000850 なし)](manage-software-inventory-logging.md#BKMK_Step12)  
   
 > [!NOTE]  
-> このトピックでは、説明した手順の一部を自動化するのに使用できる Windows PowerShell コマンドレットのサンプルを示します。 詳細については、「コマンドレットの使用」を参照してください。
+> このトピックには、説明する手順の一部を自動化するために使用できるサンプルの Windows PowerShell コマンドレットが含まれます。 詳細については、「コマンドレットの使用」を参照してください。
 
   
-## <a name="BKMK_Step1"></a>ソフトウェアインベントリログの開始と停止  
+## <a name="starting-and-stopping-software-inventory-logging"></a><a name="BKMK_Step1"></a>ソフトウェアインベントリログの開始と停止  
 ソフトウェアインベントリのログを記録するには、Windows Server 2012 R2 を実行しているコンピューターで、毎日のソフトウェアインベントリログの収集とネットワーク経由の転送が有効になっている必要があります。  
   
 > [!NOTE]  
@@ -127,17 +123,17 @@ SIL ログ記録の開始にはある程度の計画や先見性が含まれま�
   
 3.  正しい SSL 証明書 (自分のネットワーク用) を、データの転送元であるローカル サーバーの **Local Machine/Personal Store** (または **/LocalMachine/MY**) にインストールします。  
   
-**Start-SilLogging**を使用する前に、これらの手順を実行することをお勧めします。  **Start-SilLogging**を使用した後にこれらを使用する場合、必要なのは単に SIL を停止してからもう一度起動することだけです。  または、Publish-SilData コマンドレットを使用し、集計サーバーに、このサーバーのデータを完全に補完するデータがあることを確認します。  
+**Start-SilLogging** を使用する前に、これらの手順を実行することをお勧めします。  **Start-SilLogging**を使用した後にこれらを使用する場合、必要なのは単に SIL を停止してからもう一度起動することだけです。  または、Publish-SilData コマンドレットを使用し、集計サーバーに、このサーバーのデータを完全に補完するデータがあることを確認します。  
   
-SIL フレームワークの全体的な設定の包括的なガイドとしては、「 [Software Inventory Logging Aggregator](software-inventory-logging-aggregator.md)」をご覧ください。  特に、 **Publish-SilData** でエラーが発生する場合、または SIL ログが失敗する場合は、トラブルシューティングのセクションをご覧ください。  
+SIL フレームワークの全体的な設定の包括的なガイドとしては、「 [Software Inventory Logging Aggregator](software-inventory-logging-aggregator.md)」をご覧ください。  特に、**Publish-SilData** でエラーが発生する場合、または SIL ログが失敗する場合は、トラブルシューティングのセクションをご覧ください。  
   
-## <a name="BKMK_Step2"></a>時間の経過に伴うソフトウェアインベントリログ  
+## <a name="software-inventory-logging-over-time"></a><a name="BKMK_Step2"></a>時間の経過に伴うソフトウェアインベントリログ  
 管理者によってソフトウェア インベントリ ログが開始されると、1 時間ごとのデータ収集と集計サーバー (ターゲット URI) へのデータ転送が始まります。 最初の転送は、 [Get-SilData](https://technet.microsoft.com/library/dn283388.aspx) が取得し、ある時点でコンソールに表示したものと同じデータの完全なデータ セットです。 その後、各間隔で SIL はデータを確認し、最新の収集からデータに変更がない場合は、識別用の小さな受信確認のみをターゲット集計サーバーに転送します。 値が変更されている場合は、SIL は完全なデータ セットを再度送信します。  
   
 > [!IMPORTANT]  
 > いずれかの間隔でターゲット URI にアクセスできないか、ネットワーク経由のデータ転送が何らかの理由で失敗した場合、収集されたデータは最大 30 日間 (既定値) ローカルに保存されます (その後、削除されます)。 ターゲット集計サーバーへの次のデータ転送が成功すると、ローカルに保存されたすべてのデータは転送され、ローカルにキャッシュされたデータは削除されます。  
   
-## <a name="BKMK_Step3"></a>ソフトウェアインベントリログデータの表示  
+## <a name="displaying-software-inventory-logging-data"></a><a name="BKMK_Step3"></a>ソフトウェアインベントリログデータの表示  
 前のセクションで説明した PowerShell コマンドレットに加えて、さらに 6 つのコマンドレットをソフトウェア インベントリ ログのデータ収集に使用できます。  
   
 -   [ **[コンピューターの取得](https://technet.microsoft.com/library/dn283392.aspx)** ]: 特定のサーバーおよびオペレーティングシステムに関連するデータの特定の時点の値、および物理ホストの FQDN またはホスト名 (使用可能な場合) を表示します。  
@@ -201,7 +197,7 @@ SystemManufacturer        : Microsoft Corporation
 >   
 > ソフトウェア インベントリ ログが **Get-Sil** コマンドレットを使用するようにしておく必要はありません。  
   
-## <a name="BKMK_Step4"></a>ソフトウェアインベントリログに記録されたデータの削除  
+## <a name="deleting-data-logged-by-software-inventory-logging"></a><a name="BKMK_Step4"></a>ソフトウェアインベントリログに記録されたデータの削除  
 ソフトウェア インベントリ ログは、ミッション クリティカルなコンポーネントを意図したものではありません。 そのデザインは、高度なレベルの信頼性を維持しながら、ローカル システムの運用に与える影響をできる限り最小限にすることを目的にしています。 これにより、管理者は運用上のニーズに合わせてソフトウェアインベントリログデータベースとサポートファイル (\Windows\System32\LogFiles\SIL ディレクトリ内のすべてのファイル) を手動で削除することもできます。  
   
 #### <a name="to-delete-data-logged-by-software-inventory-logging"></a>ソフトウェア インベントリ ログで記録されたデータを削除するには  
@@ -214,7 +210,7 @@ SystemManufacturer        : Microsoft Corporation
   
 4. フォルダー内のすべてのファイルを削除します。  
   
-## <a name="BKMK_Step5"></a>ソフトウェアインベントリログに記録されたデータのバックアップと復元  
+## <a name="backing-up-and-restoring-data-logged-by-software-inventory-logging"></a><a name="BKMK_Step5"></a>ソフトウェアインベントリログに記録されたデータのバックアップと復元  
 ネットワーク経由の転送が失敗した場合、1 時間ごとのデータのコレクションが一時的に保存されます。 ログ ファイルの保存場所は \Windows\System32\LogFiles\SIL\ ディレクトリです。 定期的にスケジュールされたサーバー バックアップを使用して、このソフトウェア インベントリ ログのデータのバックアップを作成できます。  
   
 > [!IMPORTANT]  
@@ -223,17 +219,17 @@ SystemManufacturer        : Microsoft Corporation
 > [!NOTE]  
 > SIL によってローカルに記録されたデータのリテンション期間を管理する必要がある場合は、次のようにレジストリ値を変更することで構成できます。 \ HKEY_LOCAL_MACHINE\\SOFTWARE\Microsoft\Windows\SoftwareInventoryLogging. 既定値は30日間です。  
   
-## <a name="BKMK_Step6"></a>ソフトウェアインベントリログで記録および公開されたデータの読み取り  
+## <a name="reading-data-logged-and-published-by-software-inventory-logging"></a><a name="BKMK_Step6"></a>ソフトウェアインベントリログで記録および公開されたデータの読み取り  
 SIL によって記録されたデータ (ターゲット URI への転送が失敗した場合)、またはターゲット集計サーバーに正常に転送されたデータは、バイナリファイル (毎日のデータ) に格納されます。 PowerShell でこのデータを表示するには、 [Import-BinaryMiLog](https://technet.microsoft.com/library/dn262592.aspx) コマンドレットを使用します。  
   
-## <a name="BKMK_Step7"></a>ソフトウェアインベントリログのセキュリティ  
+## <a name="software-inventory-logging-security"></a><a name="BKMK_Step7"></a>ソフトウェアインベントリログのセキュリティ  
 ソフトウェア インベントリ ログの WMI と PowerShell API からデータを正常に取得するには、ローカル サーバーの管理特権が必要です。  
   
 時間の経過と共に (1 時間ごとに) 継続的に集計ポイントにデータを転送するソフトウェア インベントリ ログのすべての機能を正常に活用するには、管理者がクライアント証明書を使用して、HTTPS を介したデータ転送のためのセキュリティで保護された SSL セッションを確立する必要があります。 HTTPS 認証の基本的な概要については、「 [HTTPS 認証](https://technet.microsoft.com/library/cc736680(v=WS.10).aspx)」を参照してください。  
   
 Windows Server 上にローカルに保存されているすべてのデータ (この機能が開始されていて、何らかの理由でターゲットに接続できない場合のみ) には、ローカル サーバーの管理特権でのみアクセスできます。  
   
-## <a name="BKMK_Step8"></a>Windows Server 2012 R2 ソフトウェアインベントリログでの日付と時刻の設定の操作  
+## <a name="working-with-date-and-time-settings-in-windows-server-2012-r2-software-inventory-logging"></a><a name="BKMK_Step8"></a>Windows Server 2012 R2 ソフトウェアインベントリログでの日付と時刻の設定の操作  
   
 -   [Set-SilLogging](https://technet.microsoft.com/library/dn283387.aspx) -TimeOfDay を使用して SIL ログ記録の実行時刻を設定する場合は、日付と時刻を指定する必要があります。 カレンダーの日付が設定され、ローカルシステム時刻でその日付に達するまでログ記録は行われません。  
   
@@ -241,7 +237,7 @@ Windows Server 上にローカルに保存されているすべてのデータ (
   
 -   [Get/Alaccess](https://technet.microsoft.com/library/dn283389.aspx)を使用する場合、"sampledate" は常に 11:59: 00pm (意味のない値) を示します。  Date は、これらのコマンドレットクエリに関連するデータです。  
   
-## <a name="BKMK_Step10"></a>マウントされたバーチャルハードディスクでのソフトウェアインベントリログの有効化と構成  
+## <a name="enabling-and-configuring-software-inventory-logging-in-a-mounted-virtual-hard-disk"></a><a name="BKMK_Step10"></a>マウントされたバーチャルハードディスクでのソフトウェアインベントリログの有効化と構成  
 ソフトウェア インベントリ ログは、オフラインの仮想マシンでの構成と有効化もサポートしています。 このための実用的な用途は、データセンター全体の大規模な展開に対する "ゴールドイメージ" の設定と、オンプレミスからクラウドデプロイへのエンドユーザーイメージの構成の両方に対応することを目的としています。  
   
 これらの用途をサポートするため、ソフトウェア インベントリ ログにはそれぞれの構成オプションに関連したレジストリ エントリがあります。  これらのレジストリ値は、\ HKEY_LOCAL_MACHINE\\SOFTWARE\Microsoft\Windows\SoftwareInventoryLogging. にあります。  
@@ -266,7 +262,7 @@ Windows Server 上にローカルに保存されているすべてのデータ (
   
 ソフトウェア インベントリ ログは OS の起動時にこれらの値を確認し、適切に実行します。  
   
-## <a name="BKMK_Step11"></a>Windows Server 2012 R2 でのソフトウェアインベントリログの使用の概要 (KB 3000850 なし)  
+## <a name="overview-of-using-software-inventory-logging-in-windows-server-2012-r2-without-kb-3000850"></a><a name="BKMK_Step11"></a>Windows Server 2012 R2 でのソフトウェアインベントリログの使用の概要 (KB 3000850 なし)  
 [KB 3000850](https://support.microsoft.com/kb/3000850)では、ソフトウェア インベントリ ログの機能と既定の設定に対する以下の変更が行われています。  
   
 -   SIL ログ記録開始時の収集とネットワーク経由の転送の既定の間隔が、1 日ごとから 1 時間ごと (各時間内でランダム) に変更されました。  
@@ -275,7 +271,7 @@ Windows Server 上にローカルに保存されているすべてのデータ (
   
 -   Hyper-V 環境でのゲストとホスト間のチャネル通信が削除されました。  
   
-## <a name="BKMK_Step12"></a>Windows Server 2012 R2 Hyper-v 環境でのソフトウェアインベントリログの使用 (KB 3000850 なし)  
+## <a name="using-software-inventory-logging-in-a-windows-server-2012-r2-hyper-v-environment-without-kb-3000850"></a><a name="BKMK_Step12"></a>Windows Server 2012 R2 Hyper-v 環境でのソフトウェアインベントリログの使用 (KB 3000850 なし)  
   
 > [!NOTE]  
 > この機能は、更新プログラム [KB 3000850](https://support.microsoft.com/kb/3000850) のインストールにより削除されます。  
@@ -295,7 +291,7 @@ Windows Server 2012 R2 Hyper-v ホストでソフトウェアインベントリ�
   
 ![](../media/software-inventory-logging/SILHyper-VExample2.png)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [ソフトウェアインベントリログを使ってみる](get-started-with-software-inventory-logging.md)  
 [ソフトウェア インベントリ ログ アグリゲーター](software-inventory-logging-aggregator.md)  
 [Windows PowerShell のソフトウェアインベントリログコマンドレット](https://technet.microsoft.com/library/dn283390.aspx)  

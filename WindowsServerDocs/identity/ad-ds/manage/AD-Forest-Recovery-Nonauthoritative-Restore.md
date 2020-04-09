@@ -1,6 +1,5 @@
 ---
 title: AD フォレストの回復-権限のない復元
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,22 +8,22 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: e4ce1d18-d346-492a-8bca-f85513aa3ac1
 ms.technology: identity-adds
-ms.openlocfilehash: d7792cd739931d758125c8946606beb043ce19dd
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4fe4905bba944c86d168eaa46ae699ad25ba0194
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369090"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80823955"
 ---
 # <a name="performing-a-nonauthoritative-restore-of-active-directory-domain-services"></a>Active Directory Domain Services の権限のない復元を実行する 
 
->適用先:Windows Server 2016、Windows Server 2012、および 2012 R2、Windows Server 2008 および 2008 R2
+>適用対象: Windows Server 2016、Windows Server 2012、および 2012 R2、Windows Server 2008 および 2008 R2
 
 権限のない復元を実行するには、次の手順を実行します。  
   
 次の手順では、Wbadmin を使用して Active Directory または Active Directory Domain Services (AD DS) の権限のない復元を実行します。 別のバックアップソリューションを使用している場合、または後でフォレストの回復プロセスで SYSVOL の authoritative restore を実行する場合は、次の代替方法を使用して SYSVOL の authoritative restore を実行できます。  
   
-- ファイルレプリケーションサービス (FRS) を使用して SYSVOL をレプリケートする場合は、Microsoft サポート技術情報の[記事 290762](https://go.microsoft.com/fwlink/?LinkId=148443)の手順に従って、 **BurFlags**レジストリキーを使用して、FRS レプリカセットを再初期化するか、必要に応じて、記事 315457[を参照してください。315457](https://support.microsoft.com/kb/315457)SYSVOL ツリーを再構築します。 SYSVOL が FRS によってレプリケートされているかどうかを判断するには、「[ドメインコントローラーの Sysvol フォルダーが DFSR または frs によってレプリケートされているかどうか](https://msdn.microsoft.com/library/windows/desktop/cc507518.aspx#determining_whether_a_domain_controller_s_sysvol_folder_is_replicated_by_dfsr_or_frs)を判断する  
+- ファイルレプリケーションサービス (FRS) を使用して SYSVOL をレプリケートする場合は、Microsoft サポート技術情報の[記事 290762](https://go.microsoft.com/fwlink/?LinkId=148443)の手順に従って、 **BurFlags**レジストリキーを使用して、FRS レプリカセットを再初期化します。または、必要に応じて、315457 [315457](https://support.microsoft.com/kb/315457)を使用して sysvol ツリーを再構築します。 SYSVOL が FRS によってレプリケートされているかどうかを判断するには、「[ドメインコントローラーの Sysvol フォルダーが DFSR または frs によってレプリケートされているかどうか](https://msdn.microsoft.com/library/windows/desktop/cc507518.aspx#determining_whether_a_domain_controller_s_sysvol_folder_is_replicated_by_dfsr_or_frs)を判断する  
 - 分散ファイルシステム (DFS) レプリケーションを使用して SYSVOL をレプリケートする場合は、「DFSR によってレプリケートされた[sysvol の権限のある同期を実行](AD-Forest-Recovery-Authoritative-Recovery-SYSVOL.md)する」を参照してください。  
 
 ## <a name="performing-a-nonauthoritative-restore"></a>権限のない復元を実行する
@@ -39,13 +38,13 @@ ms.locfileid: "71369090"
    wbadmin start systemstaterecovery <otheroptions> -authsysvol  
    ```  
 
-   以下に例を示します。  
+   例 :  
 
    ```  
    wbadmin start systemstaterecovery -version:11/20/2012-13:00 -authsysvol  
    ```  
   
-![[復元]](media/AD-Forest-Recovery-Nonauthoritative-Restore/nonauth.png)
+![復元](media/AD-Forest-Recovery-Nonauthoritative-Restore/nonauth.png)
 
 ## <a name="next-steps"></a>次の手順
 

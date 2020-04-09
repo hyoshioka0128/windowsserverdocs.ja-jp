@@ -1,34 +1,30 @@
 ---
 title: サーバーマネージャーを使用して複数のリモートサーバーを管理する
 description: サーバー マネージャー
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-server-manager
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 3a17e686-e7f2-47e2-b7af-733777c38b5f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 74632dd26a1bfe7b280c73737557f1e954a7a1db
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4b7a33e15287f24ee5b259618dfcfef3c6245564
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383138"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851505"
 ---
 # <a name="manage-multiple-remote-servers-with-server-manager"></a>サーバーマネージャーを使用して複数のリモートサーバーを管理する
 
->適用先:Windows Server 2016
+>適用対象: Windows Server 2016
 
-サーバーマネージャーは、Windows Server 2012 R2 および Windows Server 2012 の管理コンソールです。これにより、IT プロフェッショナルは、サーバーに物理的にアクセスしなくても、デスクトップからローカルとリモートの両方の Windows ベースのサーバーをプロビジョニングして管理することができます。各サーバーへのリモートデスクトッププロトコル (rdP) 接続を有効にする必要があります。 サーバーマネージャーは Windows Server 2008 R2 および Windows Server 2008 で使用できますが、リモートのマルチサーバー管理をサポートし、管理者が管理できるサーバーの数を増やすために、Windows Server 2012 でサーバーマネージャーが更新されました。
+サーバーマネージャーは、Windows Server 2012 R2 および Windows Server 2012 の管理コンソールです。これにより、IT プロフェッショナルは、サーバーに物理的にアクセスしたり、各サーバーへのリモートデスクトッププロトコル (rdP) 接続を有効にしたりしなくても、デスクトップからローカルとリモートの両方の Windows ベースのサーバーをプロビジョニングして管理することができます。 サーバーマネージャーは Windows Server 2008 R2 および Windows Server 2008 で使用できますが、リモートのマルチサーバー管理をサポートし、管理者が管理できるサーバーの数を増やすために、Windows Server 2012 でサーバーマネージャーが更新されました。
 
 Microsoft のテストでは、Windows Server 2012 R2 および Windows Server 2012 のサーバーマネージャーを使用して、一般的なワークロードで構成されている最大100サーバーを管理できます。 1 つのサーバー マネージャー コンソールを使用して管理できるサーバーの数は、サーバー マネージャーを実行するコンピューターの管理対象サーバーと使用可能なハードウェアとネットワーク リソースを要求するデータの量によって異なることがあります。 表示するデータの量がコンピューターのリソースの上限に近づくと、サーバー マネージャーからの応答が遅くなり、更新が完了するまでに時間がかかることがあります。 サーバー マネージャーで管理できるサーバーの数を増やすには、 **[イベント データの構成]** ダイアログ ボックスの設定を使用して、管理対象サーバーからサーバー マネージャーが受け取るイベント データを制限することをお勧めします。 [イベント データの構成] は、 **[イベント]** タイルの **[タスク]** メニューから開くことができます。 組織内でエンタープライズ レベルのサーバーを管理する必要がある場合は、[Microsoft System Center スイート](https://go.microsoft.com/fwlink/p/?LinkId=239437)製品の検討をお勧めします。
 
-このトピックとサブトピックでは、サーバーマネージャーコンソールで機能を使用する方法について説明します。 このトピックは次のセクションで構成されます。
+このトピックとサブトピックでは、サーバーマネージャーコンソールで機能を使用する方法について説明します。 このトピックの内容は次のとおりです。
 
 -   [最初の考慮事項とシステム要件を確認する](#BKMK_1.1)
 
@@ -40,13 +36,13 @@ Microsoft のテストでは、Windows Server 2012 R2 および Windows Server 2
 
 -   [サーバーマネージャーの設定を他のコンピューターにエクスポートする](#BKMK_export)
 
-## <a name="BKMK_1.1"></a>最初の考慮事項とシステム要件を確認する
+## <a name="review-initial-considerations-and-system-requirements"></a><a name=BKMK_1.1></a>最初の考慮事項とシステム要件を確認する
 以下のセクションでは、サーバーマネージャーのハードウェアとソフトウェアの要件に加えて、確認する必要がある最初の考慮事項について説明します。
 
 ### <a name="hardware-requirements"></a>ハードウェア要件
 サーバーマネージャーは、Windows Server 2012 R2 および Windows Server 2012 のすべてのエディションに既定でインストールされます。 サーバー マネージャーの追加のハードウェア要件が存在します。
 
-### <a name="BKMK_softconfig"></a>ソフトウェアと構成の要件
+### <a name="software-and-configuration-requirements"></a><a name=BKMK_softconfig></a>ソフトウェアと構成の要件
 サーバーマネージャーは、Windows Server 2012 のすべてのエディションに既定でインストールされます。 サーバーマネージャーを使用して、リモートコンピューター上で実行されている Windows Server 2012 および Windows Server 2008 R2 の[Server core インストールオプション](https://go.microsoft.com/fwlink/p/?LinkID=241573)を管理することはできますが、サーバーマネージャーは server core インストールオプションでは直接実行されません。
 
 Windows Server 2008 または Windows Server 2008 R2 を実行しているリモートサーバーを完全に管理するには、管理対象のサーバーに次の更新プログラムを表示されている順序でインストールします。
@@ -74,8 +70,8 @@ Windows Server 2008 R2 または Windows Server 2008 を実行しているサー
 
 |サーバー マネージャーのソースのオペレーティング システム|Windows Server 2012 R2 を対象としました。 |対象 (Windows Server 2012) |対象 (Windows Server 2008 R2 または Windows Server 2008) |対象が Windows Server 2003 の場合|
 |-------------------------------|---------------------------------------|------------------------------------|-----------------------------------------------------------------------|------------------|
-|Windows 8 または Windows Server 2012 |サポートされていません|フル サポート|「 [ソフトウェアと構成の要件](#BKMK_softconfig) 」を満たしていれば、役割や機能のインストールとアンインストールを除く、ほとんどの管理タスクを実行可能|限定的なサポート、オンラインとオフラインの状態のみ|
-|Windows 8.1 または Windows Server 2012 R2 |フル サポート|フル サポート|「 [ソフトウェアと構成の要件](#BKMK_softconfig) 」を満たしていれば、役割や機能のインストールとアンインストールを除く、ほとんどの管理タスクを実行可能|限定的なサポート、オンラインとオフラインの状態のみ|
+|Windows 8 または Windows Server 2012 |サポートされない|フル サポート|[ソフトウェアと構成の要件](#BKMK_softconfig)を満たしていれば、役割や機能のインストールとアンインストールを除く、ほとんどの管理タスクを実行可能|限定的なサポート、オンラインとオフラインの状態のみ|
+|Windows 8.1 または Windows Server 2012 R2 |フル サポート|フル サポート|[ソフトウェアと構成の要件](#BKMK_softconfig)を満たしていれば、役割や機能のインストールとアンインストールを除く、ほとんどの管理タスクを実行可能|限定的なサポート、オンラインとオフラインの状態のみ|
 
 ###### <a name="to-start-server-manager-on-a-client-computer"></a>クライアント コンピューターでサーバー マネージャーを起動するには
 
@@ -83,7 +79,7 @@ Windows Server 2008 R2 または Windows Server 2008 を実行しているサー
 
 2.  **[スタート]** 画面で、 **[サーバーマネージャー]** をクリックします。 リモート サーバー管理ツールをインストールすると、 **[サーバー マネージャー]** タイルが使用できるようになります。
 
-3.  リモートサーバー管理ツールをインストールした後、**管理ツール**も**サーバーマネージャー**タイルも**スタート**画面に表示されない場合、**スタート**画面でのサーバーマネージャーの検索は表示されません。結果として、[**管理ツールを表示]** の設定がオンになっていることを確認します。 この設定を表示するには、**スタート**画面の右上隅にマウスカーソルを置き、 **[設定]** をクリックします。 **[管理ツールを表示]** が無効になっている場合、この設定を有効にすると、リモート サーバー管理ツールの一部としてインストールされたツールが表示されます。
+3.  リモートサーバー管理ツールをインストールした後に、**スタート**画面に **[管理ツール]** と **[サーバーマネージャー]** タイルのどちらも表示されない場合、 **[スタート]** 画面でサーバーマネージャーを検索しても結果が表示されない場合は、[**管理ツールを表示する]** の設定がオンになっていることを確認します。 この設定を表示するには、**スタート**画面の右上隅にマウスカーソルを置き、 **[設定]** をクリックします。 **[管理ツールを表示]** が無効になっている場合、この設定を有効にすると、リモート サーバー管理ツールの一部としてインストールされたツールが表示されます。
 
 Windows 8 のリモートサーバー管理ツールを実行してリモートサーバーを管理する方法の詳細については、TechNet Wiki の「[リモートサーバー管理ツール](https://go.microsoft.com/fwlink/?LinkID=221055)」を参照してください。
 
@@ -94,7 +90,7 @@ Windows 8 のリモートサーバー管理ツールを実行してリモート�
 
 サーバー マネージャーを使用して、リモート サーバーで管理タスクを行うには、サーバー マネージャーと Windows PowerShell を使用してリモート管理を許可するように管理するリモート サーバーを構成する必要があります。 Windows Server 2012 R2 または Windows Server 2012 でリモート管理が無効になっていて、もう一度有効にする場合は、次の手順を実行します。
 
-##### <a name="BKMK_windows"></a>Windows インターフェイスを使用して Windows Server 2012 R2 または Windows Server 2012 でサーバーマネージャーリモート管理を構成するには
+##### <a name="to-configure-server-manager-remote-management-on--windows-server-2012-r2--or--windows-server-2012--by-using-the-windows-interface"></a><a name=BKMK_windows></a>Windows インターフェイスを使用して Windows Server 2012 R2 または Windows Server 2012 でサーバーマネージャーリモート管理を構成するには
 
 1.  > [!NOTE]
     > **[リモート管理の構成]** ダイアログボックスで制御される設定は、リモート通信に DCOM を使用するサーバーマネージャーの一部には影響しません。
@@ -113,9 +109,9 @@ Windows 8 のリモートサーバー管理ツールを実行してリモート�
 
     -   サーバーマネージャーまたは Windows PowerShell を使用してこのコンピューターをリモートで管理できるようにするには、[**他のコンピューターからのこのサーバーのリモート管理を有効**にする] を選択します。
 
-##### <a name="BKMK_ps"></a>Windows PowerShell を使用して Windows Server 2012 R2 または Windows Server 2012 でサーバーマネージャーリモート管理を有効にするには
+##### <a name="to-enable-server-manager-remote-management-on--windows-server-2012-r2--or--windows-server-2012--by-using-windows-powershell"></a><a name=BKMK_ps></a>Windows PowerShell を使用して Windows Server 2012 R2 または Windows Server 2012 でサーバーマネージャーリモート管理を有効にするには
 
-1.  次のいずれかを実行します。
+1.  次のいずれかの操作を行います。
 
     -   Windows PowerShell を**スタート**画面から管理者として実行するには、 **[windows powershell]** タイルを右クリックし、 **[管理者として実行]** をクリックします。
 
@@ -128,11 +124,11 @@ Windows 8 のリモートサーバー管理ツールを実行してリモート�
     > [!NOTE]
     > このコマンドは、管理者特権 (管理者として実行) を使用して開いたコマンド プロンプトでも実行できます。
 
-    リモート管理を有効にできない場合のトラブルシューティングのヒントとベストプラクティスについては、Microsoft TechNet の[about_remote_Troubleshooting](https://go.microsoft.com/fwlink/p/?LinkID=135188)を参照してください。
+    リモート管理を有効にできない場合は、Microsoft TechNet の「 [about_remote_Troubleshooting](https://go.microsoft.com/fwlink/p/?LinkID=135188) 」を参照して、トラブルシューティングのヒントとベストプラクティスを確認してください。
 
 ###### <a name="to-enable-server-manager-and-windows-powershell-remote-management-on-older-operating-systems"></a>以前のオペレーティング システムでサーバー マネージャーおよび Windows PowerShell のリモート管理を有効にするには
 
--   次のいずれかを実行します。
+-   次のいずれかの操作を行います。
 
     -   Windows Server 2008 R2 を実行しているサーバーでリモート管理を有効にするには、Windows Server 2008 R2 ヘルプの「[サーバーマネージャーによるリモート管理](https://go.microsoft.com/fwlink/?LinkID=137378)」を参照してください。
 
@@ -140,10 +136,10 @@ Windows 8 のリモートサーバー管理ツールを実行してリモート�
 
     -   Windows Server 2003 を実行しているサーバーでリモート管理を有効にするには、Windows ファイアウォールで WMI DCOM 例外を有効にします。 Windows Server 2003 を実行しているサーバーでの実行方法の詳細については、MSDN の「 [Connecting Through Windows Firewall (Windows ファイアウォールを通過する接続)](https://msdn.microsoft.com/library/aa389286.aspx) 」を参照してください。
 
-## <a name="BKMK_tasks"></a>サーバーマネージャーで実行できるタスク
-サーバーマネージャーを使用すると、管理者は次の表のタスクを1つのツールで実行できるようになり、サーバーの管理効率が向上します。 Windows Server 2012 R2 および Windows Server 2012 では、サーバーの標準ユーザーと Administrators グループのメンバーの両方がサーバーマネージャーで管理タスクを実行できますが、既定では、標準ユーザーは、次の表に示します。
+## <a name="tasks-that-you-can-perform-in-server-manager"></a><a name=BKMK_tasks></a>サーバーマネージャーで実行できるタスク
+サーバーマネージャーを使用すると、管理者は次の表のタスクを1つのツールで実行できるようになり、サーバーの管理効率が向上します。 Windows Server 2012 R2 および Windows Server 2012 では、サーバーの標準ユーザーと Administrators グループのメンバーの両方がサーバーマネージャーで管理タスクを実行できますが、既定では、次の表に示すように、標準ユーザーは一部のタスクを実行できません。
 
-管理者は、サーバーマネージャーコマンドレットモジュール ( [enable-servermanagerstandarduserremoting と disable-servermanagerstandarduserremoting](https://technet.microsoft.com/library/jj205470.aspx)と[enable-servermanagerstandarduserremoting と disable-servermanagerstandarduserremoting](https://technet.microsoft.com/library/jj205468.aspx)) の2つの Windows PowerShell コマンドレットを使用して、いくつかの標準ユーザーアクセスをさらに制御できます。追加データ。 **Enable-servermanagerstandarduserremoting と disable-servermanagerstandarduserremoting**コマンドレットは、1人以上の管理者以外のユーザーに、イベント、サービス、パフォーマンスカウンター、および役割と機能インベントリデータへのアクセスを提供することができます。
+管理者は、サーバーマネージャーコマンドレットモジュール ( [enable-servermanagerstandarduserremoting と disable-servermanagerstandarduserremoting](https://technet.microsoft.com/library/jj205470.aspx)と[enable-servermanagerstandarduserremoting と disable-servermanagerstandarduserremoting](https://technet.microsoft.com/library/jj205468.aspx)) の2つの Windows PowerShell コマンドレットを使用して、いくつかの追加データへの標準ユーザーアクセスをさらに制御できます。 **Enable-servermanagerstandarduserremoting と disable-servermanagerstandarduserremoting**コマンドレットは、1人以上の管理者以外のユーザーに、イベント、サービス、パフォーマンスカウンター、および役割と機能インベントリデータへのアクセスを提供することができます。
 
 > [!IMPORTANT]
 > Windows Server オペレーティング システムのそれ以降のリリースを管理する、サーバー マネージャーを使用できません。 Windows server 2012 または Windows 8 で実行されているサーバーマネージャーは、Windows Server 2012 R2 を実行しているサーバーの管理には使用できません。
@@ -166,7 +162,7 @@ Windows 8 のリモートサーバー管理ツールを実行してリモート�
 > [!NOTE]
 > Windows Server 2003 が実行されているサーバーからは、サーバー マネージャーはオンラインまたはオフラインの状態のみを受信することができます。 サーバーマネージャーを使用して、Windows Server 2008 R2、Windows Server 2008、または Windows Server 2003 を実行しているサーバーに役割と機能を追加することはできません。
 
-## <a name="BKMK_start"></a>サーバーマネージャーの開始
+## <a name="start-server-manager"></a><a name=BKMK_start></a>サーバーマネージャーの開始
 Administrators グループのメンバーがサーバーにログオンすると、Windows Server 2012 を実行しているサーバーでは、既定でサーバーマネージャーが自動的に開始されます。 サーバー マネージャを終了する場合は、次の方法のいずれかで再起動します。 また、既定の動作を変更し、サーバーマネージャーが自動的に開始されないようにする手順についても説明します。
 
 #### <a name="to-start-server-manager-from-the-start-screen"></a>スタート画面からサーバーマネージャーを開始するには
@@ -181,17 +177,17 @@ Administrators グループのメンバーがサーバーにログオンする�
 
 1.  サーバーマネージャーコンソールの **[管理]** メニューで、 **[サーバーマネージャーのプロパティ]** をクリックします。
 
-2.  **[サーバー マネージャーのプロパティ]** ダイアログ ボックスで、 **[ログオン時にサーバー マネージャーを自動的に起動しない]** チェック ボックスをオンにします。 **[OK]** をクリックします。
+2.  **[サーバー マネージャーのプロパティ]** ダイアログ ボックスで、 **[ログオン時にサーバー マネージャーを自動的に起動しない]** チェック ボックスをオンにします。 **[OK]** をクリックすると、
 
 3.  または、[グループポリシー] 設定を有効にしてサーバーマネージャーが自動的に開始されないようにすることもできます。**ログオン時に自動的にサーバーマネージャーを開始**しないようにします。 ローカルのグループポリシーエディターコンソールで、このポリシー設定へのパスは、コンピューターの構成 \ 管理用テンプレート \ システム \ サーバーマネージャーです。
 
-## <a name="BKMK_restart"></a>リモートサーバーの再起動
+## <a name="restart-remote-servers"></a><a name=BKMK_restart></a>リモートサーバーの再起動
 リモートサーバーを再起動するには、サーバーマネージャーの役割またはグループのページの **[サーバー]** タイルを使用します。
 
 > [!IMPORTANT]
 > リモート サーバーを再起動すると、そのリモート サーバーにユーザーがログオンしている場合や、開いているプログラムのデータが保存されていない場合でも、サーバーが強制的に再起動されます。 ローカル コンピューターをシャットダウンしたり再起動したりする場合と異なり、保存されていないプログラムのデータを保存するかどうかや、ログオンしているユーザーを強制的にログオフするかどうかを確認するメッセージは表示されません。 そのため、他のユーザーをリモート サーバーから強制的にログオフしたり、リモート サーバーで実行中のプログラムの保存されていないデータを破棄しても問題がないことを確認してください。
 > 
-> 管理対象サーバーのシャットダウン中や再起動中にサーバーマネージャーで自動更新が行われた場合、管理対象サーバーで更新と管理の状態エラーが発生する可能性があります。これは、サーバーマネージャーが完了するまでリモートサーバーに接続できないためです。再起動.
+> 管理対象サーバーのシャットダウン中や再起動中にサーバーマネージャーで自動更新が行われた場合、管理対象サーバーで更新と管理の状態エラーが発生する可能性があります。これは、サーバーマネージャーが再起動を完了するまでリモートサーバーに接続できないためです。
 
 #### <a name="to-restart-remote-servers-in-server-manager"></a>サーバー マネージャーでリモート サーバーを再起動するには
 
@@ -201,12 +197,12 @@ Administrators グループのメンバーがサーバーにログオンする�
 
 3.  選択したサーバーを右クリックし、 **[サーバーの再起動]** をクリックします。
 
-## <a name="BKMK_export"></a>サーバーマネージャーの設定を他のコンピューターにエクスポートする
+## <a name="export-server-manager-settings-to-other-computers"></a><a name=BKMK_export></a>サーバーマネージャーの設定を他のコンピューターにエクスポートする
 サーバー マネージャーでは、管理対象サーバーの一覧は、サーバー マネージャー コンソールの設定を変更し、作成したカスタムのグループは次の 2 つのファイルに格納します。 これらの設定は、(Server Core インストールオプションを実行しているコンピューターではなく) サーバーマネージャーの同じリリースを実行している他のコンピューターで再利用できます。また、Windows 8 を使用することもできます。 リモート サーバー管理ツールは、これらのコンピューターにサーバー マネージャーの設定をエクスポートする Windows クライアント ベース コンピューター上で実行されている必要があります。
 
 -   %*appdata*% \ Microsoft\Windows\ServerManager\Serverlist.xml
 
--   %*appdata*% \ Local\Microsoft_Corporation\ServerManager.exe_StrongName_*GUID*\6.2.0.0\user.config
+-   %*appdata*% \ Local \ Microsoft_Corporation \Servermanager. exe_StrongName_*GUID*\6.2.0.0\user.config
 
 > [!NOTE]
 > -   サーバー プールのサーバーに対して [管理に使用する資格情報] で別の資格情報を指定した場合、その資格情報は移動プロファイルに格納されません。 それらの資格情報については、管理元の各コンピューターで サーバー マネージャー ユーザーがそれぞれ追加する必要があります。
@@ -224,15 +220,15 @@ Administrators グループのメンバーがサーバーにログオンする�
 
 2.  **[プロファイル]** タブで、ユーザーのプロファイルを保存するネットワーク共有のパスを追加します。
 
-3.  次のいずれかを実行します。
+3.  次のいずれかの操作を行います。
 
-    -   米国英語 (en-us) のビルドでは、 **Serverlist**ファイルに対する変更が自動的にプロファイルに保存されます。 次の手順に進みます。
+    -   米国英語 (en-us) のビルドでは、 **Serverlist**ファイルへの変更が自動的にプロファイルに保存されます。 次の手順に進みます。
 
     -   他のビルドでは、サーバーマネージャーを実行しているコンピューターから、ユーザーの移動プロファイルに含まれるネットワーク共有に、次の2つのファイルをコピーします。
 
         -   %*appdata*% \ Microsoft\Windows\ServerManager\Serverlist.xml
 
-        -   %*localappdata*% \ Microsoft_Corporation\ServerManager.exe_StrongName_*GUID*\6.2.0.0\user.config
+        -   %*localappdata*% \ Microsoft_Corporation \Servermanager. exe_StrongName_*GUID*\6.2.0.0\user.config
 
 4.  **[OK]** をクリックして変更を保存し、 **[プロパティ]** ダイアログ ボックスを閉じます。
 
@@ -242,6 +238,6 @@ Administrators グループのメンバーがサーバーにログオンする�
 
     -   %*appdata*% \ Microsoft\Windows\ServerManager\Serverlist.xml
 
-    -   %*localappdata*% \ Microsoft_Corporation\ServerManager.exe_StrongName_*GUID*\6.2.0.0\user.config
+    -   %*localappdata*% \ Microsoft_Corporation \Servermanager. exe_StrongName_*GUID*\6.2.0.0\user.config
 
 

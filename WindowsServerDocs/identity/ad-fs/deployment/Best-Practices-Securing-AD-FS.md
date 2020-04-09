@@ -1,7 +1,7 @@
 ---
 ms.assetid: b7bf7579-ca53-49e3-a26a-6f9f8690762f
 title: AD FS と Web アプリケーションプロキシをセキュリティで保護するためのベストプラクティス
-description: このドキュメントでは、Active Directory フェデレーションサービス (AD FS) (AD FS) と Web アプリケーションプロキシのセキュリティで保護された計画と展開のベストプラクティスについて説明します。
+description: Active Directory フェデレーションサービス (AD FS) (AD FS) と Web アプリケーションプロキシのセキュリティで保護された計画と展開のベストプラクティスです。
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 717308a157d7f4a5f54e3aef2e829fbed9f12152
-ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
+ms.openlocfilehash: 8206ddc43eab7a220a9f0f988c294c627bc8c977
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77517547"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853025"
 ---
 # <a name="best-practices-for-securing-active-directory-federation-services"></a>Active Directory フェデレーションサービス (AD FS) をセキュリティで保護するためのベストプラクティス
 
@@ -83,7 +83,7 @@ Azure AD と Office 365 のシナリオにのみ AD FS と WAP を展開する�
 |/adfs/services/trust/13/usernamemixed|Office 2013 より前の Office クライアントで Exchange Online を使用する場合は2015更新プログラムを使用します。  その後のクライアントは、パッシブ \adfs\ls エンドポイントを使用します。
 |/adfs/oauth2|この1つは、(AAD を通じてではなく) AD FS に直接認証するように構成した最新のアプリ (オンプレミスまたはクラウド) に対して使用されます。
 |/adfs/services/trust/mex|Office 2013 より前の Office クライアントで Exchange Online を使用する場合は2015更新プログラムを使用します。  その後のクライアントは、パッシブ \adfs\ls エンドポイントを使用します。
-|/adfs/ls/federationmetadata/2007-06/federationmetadata.xml |パッシブフローの要件および AD FS 証明書を確認するために Office 365/Azure AD によって使用されます。
+|/adfs/ls/federationmetadata/2007-06/federationmetadata.xml    |パッシブフローの要件および AD FS 証明書を確認するために Office 365/Azure AD によって使用されます。
 
 
 プロキシで AD FS エンドポイントを無効にするには、次の PowerShell コマンドレットを使用します。
@@ -109,11 +109,11 @@ Azure AD と Office 365 のシナリオにのみ AD FS と WAP を展開する�
 フェデレーションサービスプロキシ (WAP の一部) は、大量の要求から AD FS サービスを保護するための輻輳制御を提供します。  Web アプリケーションプロキシとフェデレーションサーバーの間の待機時間によって検出されたフェデレーションサーバーが過負荷になっている場合、Web アプリケーションプロキシは外部クライアントの認証要求を拒否します。  この機能は、既定で推奨される待機時間のしきい値レベルで構成されます。
 
 #### <a name="to-verify-the-settings-you-can-do-the-following"></a>設定を確認するには、次の操作を行います。
-1.  Web アプリケーション プロキシ コンピューターで、管理者特権のコマンド ウィンドウを起動します。
-2.  %WINDIR%\adfs\config. で、ADFS ディレクトリに移動します。
-3.  輻輳制御の設定を既定値から '<congestionControl latencyThresholdInMSec="8000" minCongestionWindowSize="64" enabled="true" />' に変更します。
-4.  ファイルを保存し、閉じます。
-5.  ' Net stop adfssrv ' を実行し、' net start adfssrv ' を実行して、AD FS サービスを再開します。
+1.    Web アプリケーション プロキシ コンピューターで、管理者特権のコマンド ウィンドウを起動します。
+2.    %WINDIR%\adfs\config. で、ADFS ディレクトリに移動します。
+3.    輻輳制御の設定を既定値から '<congestionControl latencyThresholdInMSec="8000" minCongestionWindowSize="64" enabled="true" />' に変更します。
+4.    ファイルを保存し、閉じます。
+5.    ' Net stop adfssrv ' を実行し、' net start adfssrv ' を実行して、AD FS サービスを再開します。
 この機能に関するガイダンスについては、[こちら](https://msdn.microsoft.com/library/azure/dn528859.aspx )を参照してください。
 
 ### <a name="standard-http-request-checks-at-the-proxy"></a>プロキシでの標準 HTTP 要求チェック
@@ -124,7 +124,7 @@ Azure AD と Office 365 のシナリオにのみ AD FS と WAP を展開する�
 - FS-P は、AD FS サービスで必要とされない HTTP ヘッダーをフィルターで除外する HTTP 要求の検証を実行します。
 
 ## <a name="recommended-security-configurations"></a>推奨されるセキュリティ構成
-すべての AD FS および WAP サーバーが最新の更新プログラムを確実に受信できるようにする AD FS インフラストラクチャにとって最も重要なセキュリティの推奨事項は、AD FS および WAP サーバーをすべてのセキュリティ更新プログラムで最新の状態に保つための手段と、省略可能なオプションを使用できるようにすることです。このページの AD FS の重要な更新プログラムが指定されています。
+すべての AD FS および WAP サーバーが最新の更新プログラムを確実に受信できるように、AD FS インフラストラクチャにとって最も重要なセキュリティの推奨事項は、AD FS および WAP サーバーをすべてのセキュリティ更新プログラムで最新の状態に保つための手段と、このページの AD FS の重要として指定されたオプションの更新プログラムを確実に保持することです。
 
 Azure AD の顧客がインフラストラクチャを監視して最新の状態に保つには、Azure AD Premium の機能である AD FS の Azure AD Connect Health を使用することをお勧めします。  Azure AD Connect Health には、AD FS または WAP コンピューターに AD FS と WAP 専用の重要な更新プログラムのいずれかがない場合にトリガーされるモニターとアラートが含まれます。
 

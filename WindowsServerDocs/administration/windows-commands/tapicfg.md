@@ -1,24 +1,20 @@
 ---
 title: tapicfg
 description: TAPI アプリケーションディレクトリパーティションを管理する方法について説明します。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c0e642ce-5d98-4edb-9a65-1dff09aef4e1
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 5e9e113f0679034a4cd135cad6e7c546dc59c5c4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e57826b0997f2cde1dc437ea171d93eb6fc8dd15
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383669"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80833455"
 ---
 # <a name="tapicfg"></a>tapicfg
 
@@ -32,91 +28,91 @@ ms.locfileid: "71383669"
 -   [tapicfg show](#BKMK_show)
 -   [tapicfg makedefault](#BKMK_makedefault)
 
-## <a name="BKMK_install"></a>tapicfg のインストール
+## <a name="tapicfg-install"></a><a name="BKMK_install"></a>tapicfg のインストール
 TAPI アプリケーション ディレクトリ パーティションを作成します。
 
 ### <a name="syntax"></a>構文
 ```
 tapicfg install /directory:<PartitionName> [/server:<DCName>] [/forcedefault]
 ```
-### <a name="parameters"></a>パラメーター
+#### <a name="parameters"></a>パラメーター
 |パラメーター|説明|
 |-------|--------|
 |install/directory:\<PartitionName >|必須。 作成するには、TAPI アプリケーション ディレクトリ パーティションの DNS 名を指定します。 この名前は、完全修飾ドメイン名である必要があります。|
 |/server: \<DCName >|TAPI アプリケーション ディレクトリ パーティションを作成するドメイン コント ローラーの DNS 名を指定します。 ドメイン コント ローラー名が指定されていないローカル コンピューターの名前が使用されます。|
-|/forcedefault|このディレクトリが既定の TAPI アプリケーション ディレクトリ パーティションがドメインであることを指定します。 ドメインに複数の TAPI アプリケーション ディレクトリ パーティションがあります。<br /><br />このディレクトリがドメインで作成された最初の TAPI アプリケーションディレクトリパーティションの場合は、 **/forcedefault**オプションを使用するかどうかに関係なく、既定値として自動的に設定されます。|
-|/?|コマンド プロンプトにヘルプを表示します。|
+|/forcedefault|このディレクトリが既定の TAPI アプリケーション ディレクトリ パーティションがドメインであることを指定します。 ドメインに複数の TAPI アプリケーション ディレクトリ パーティションがあります。<p>このディレクトリがドメインで作成された最初の TAPI アプリケーションディレクトリパーティションの場合は、 **/forcedefault**オプションを使用するかどうかに関係なく、既定値として自動的に設定されます。|
+|/?|コマンド プロンプトでヘルプを表示します。|
 
-## <a name="BKMK_remove"></a>tapicfg の削除
+## <a name="tapicfg-remove"></a><a name="BKMK_remove"></a>tapicfg の削除
 TAPI アプリケーション ディレクトリ パーティションを削除します。
 
 ### <a name="syntax"></a>構文
 ```
 tapicfg remove /directory:<PartitionName>
 ```
-### <a name="parameters"></a>パラメーター
+#### <a name="parameters"></a>パラメーター
 |パラメーター|説明|
 |-------|--------|
 |削除/ディレクトリ:\<PartitionName >|必須。 削除するには、TAPI アプリケーション ディレクトリ パーティションの DNS 名を指定します。 この名前は完全修飾ドメイン名である必要がありますに注意してください。|
-|/?|コマンド プロンプトにヘルプを表示します。|
+|/?|コマンド プロンプトでヘルプを表示します。|
 
-## <a name="BKMK_publishscp"></a>tapicfg publishscp
+## <a name="tapicfg-publishscp"></a><a name="BKMK_publishscp"></a>tapicfg publishscp
 TAPI アプリケーション ディレクトリ パーティションを公開するサービス接続ポイントを作成します。
 
 ### <a name="syntax"></a>構文
 ```
 tapicfg publishscp /directory:<PartitionName> [/domain:<DomainName>] [/forcedefault]
 ```
-### <a name="parameters"></a>パラメーター
+#### <a name="parameters"></a>パラメーター
 |パラメーター|説明|
 |-------|--------|
 |publishscp/directory:\<PartitionName >|必須。 サービス接続ポイントの TAPI アプリケーション ディレクトリ パーティションの DNS 名が発行を指定します。|
 |/domain:\<DomainName >|サービスの接続がポイントするドメインの DNS 名の作成を指定します。 ドメイン名が指定されていない場合は、ローカル ドメイン名が使用されます。|
 |/forcedefault|このディレクトリが既定の TAPI アプリケーション ディレクトリ パーティションがドメインであることを指定します。 ドメインに複数の TAPI アプリケーション ディレクトリ パーティションがあります。|
-|/?|コマンド プロンプトにヘルプを表示します。|
+|/?|コマンド プロンプトでヘルプを表示します。|
 
-## <a name="BKMK_removescp"></a>tapicfg removescp
+## <a name="tapicfg-removescp"></a><a name="BKMK_removescp"></a>tapicfg removescp
 TAPI アプリケーション ディレクトリ パーティション用のサービス接続ポイントを削除します。
 
 ### <a name="syntax"></a>構文
 ```
 tapicfg removescp /directory:<PartitionName> [/domain:<DomainName>]
 ```
-### <a name="parameters"></a>パラメーター
+#### <a name="parameters"></a>パラメーター
 |パラメーター|説明|
 |-------|--------|
 |removescp/ディレクトリ:\<PartitionName >|必須。 サービス接続ポイントを削除する TAPI アプリケーション ディレクトリ パーティションの DNS 名を指定します。|
 |/domain: \<DomainName >|サービス接続ポイントを削除するドメインの DNS 名を指定します。 ドメイン名が指定されていない場合は、ローカル ドメイン名が使用されます。|
-|/?|コマンド プロンプトにヘルプを表示します。|
+|/?|コマンド プロンプトでヘルプを表示します。|
 
-## <a name="BKMK_show"></a>tapicfg show
+## <a name="tapicfg-show"></a><a name="BKMK_show"></a>tapicfg show
 ドメインの名前と TAPI アプリケーション ディレクトリ パーティションの場所が表示されます。
 
 ### <a name="syntax"></a>構文
 ```
 tapicfg show [/defaultonly][ /domain:<DomainName>]
 ```
-### <a name="parameters"></a>パラメーター
+#### <a name="parameters"></a>パラメーター
 |パラメーター|説明|
 |-------|--------|
 |/defaultonly|ドメインの名前と場所の既定 TAPI アプリケーション ディレクトリ パーティションのみが表示されます。|
 |/domain: \<DomainName >|TAPI アプリケーション ディレクトリ パーティションが表示されているドメインの DNS 名を指定します。 ドメイン名が指定されていない場合は、ローカル ドメイン名が使用されます。|
-|/?|コマンド プロンプトにヘルプを表示します。|
+|/?|コマンド プロンプトでヘルプを表示します。|
 
-## <a name="BKMK_makedefault"></a>tapicfg makedefault
+## <a name="tapicfg-makedefault"></a><a name="BKMK_makedefault"></a>tapicfg makedefault
 ドメインの既定の TAPI アプリケーション ディレクトリ パーティションを設定します。
 
 ### <a name="syntax"></a>構文
 ```
 tapicfg makedefault /directory:<PartitionName> [/domain:<DomainName>]  
 ```
-### <a name="parameters"></a>パラメーター
+#### <a name="parameters"></a>パラメーター
 |パラメーター|説明|
 |-------|--------|
 |makedefault/directory:\<PartitionName >|必須。 ドメインの既定のパーティションとして設定 TAPI アプリケーション ディレクトリ パーティションの DNS 名を指定します。 この名前は完全修飾ドメイン名である必要がありますに注意してください。 TAPI アプリケーション ディレクトリ パーティションが既定値として設定されているドメインの DNS 名を指定します。 ドメイン名が指定されていない場合は、ローカル ドメイン名が使用されます。|
-|/?|コマンド プロンプトにヘルプを表示します。|
+|/?|コマンド プロンプトでヘルプを表示します。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 **Tapicfg インストール**(tapi アプリケーションディレクトリパーティションを作成) または**TAPICFG remove** (tapi アプリケーションディレクトリパーティションを削除するため) のいずれかを実行するには、Active directory の Enterprise Admins グループのメンバーである必要があります。
 
 このコマンド ライン ツールは、ドメインのメンバーである任意のコンピューターで実行できます。
@@ -137,4 +133,4 @@ tapicfg install /directory:tapifiction.testdom.microsoft.com /server:testdc.test
 tapicfg show /defaultonly
 ```
 ## <a name="additional-references"></a>その他の参照情報
--   [コマンド ライン構文の記号](command-line-syntax-key.md)
+-   - [コマンド ライン構文の記号](command-line-syntax-key.md)

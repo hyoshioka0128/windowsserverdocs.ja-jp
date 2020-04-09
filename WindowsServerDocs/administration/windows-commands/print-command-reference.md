@@ -1,28 +1,24 @@
 ---
 title: 印刷コマンドのリファレンス
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Windows コマンドに関するトピック * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 88d8fa87-6fa8-4774-9294-080b0157ea8d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 73850c35b6f228c49496a2bb4505fe8203cb52ba
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 009400fd2afe1e1e5cea6baa9abec1b89b59df7f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71372175"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80837385"
 ---
 # <a name="print-command-reference"></a>印刷コマンドのリファレンス
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 印刷コマンドラインツールの一覧を次に示します。
 

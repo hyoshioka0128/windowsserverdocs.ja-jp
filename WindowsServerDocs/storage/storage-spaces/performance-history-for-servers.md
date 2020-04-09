@@ -1,19 +1,18 @@
 ---
 title: サーバーのパフォーマンス履歴
 ms.author: cosdar
-ms.manager: eldenc
+manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 02/05/2018
-Keywords: 記憶域スペース ダイレクト
 ms.localizationpriority: medium
-ms.openlocfilehash: bbfc92f7926b93f5f6716514e64672f4aa304c0f
-ms.sourcegitcommit: e817a130c2ed9caaddd1def1b2edac0c798a6aa2
+ms.openlocfilehash: cf4bdabb132c832370e5dffec215c24b54aebdd7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74945247"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856195"
 ---
 # <a name="performance-history-for-servers"></a>サーバーのパフォーマンス履歴
 
@@ -73,7 +72,7 @@ Hyper-v が有効になっていない場合:
 | 系列                           | ソースカウンター |
 |----------------------------------|----------------|
 | `clusternode.cpu.usage`          | `Processor` > `_Total` > `% Processor Time` |
-| `clusternode.cpu.usage.guest`    | *zero* |
+| `clusternode.cpu.usage.guest`    | *回* |
 | `clusternode.cpu.usage.host`     | *合計使用量と同じ* |
 
 不完全同期の場合、`clusternode.cpu.usage` は常にプラス `clusternode.cpu.usage.guest`に `clusternode.cpu.usage.host` ます。
@@ -93,6 +92,6 @@ Hyper-v が有効になっていない場合:
 Get-ClusterNode <Name> | Get-ClusterPerf
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [記憶域スペースダイレクトのパフォーマンス履歴](performance-history.md)

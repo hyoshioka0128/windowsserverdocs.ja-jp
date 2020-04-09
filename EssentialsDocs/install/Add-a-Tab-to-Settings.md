@@ -1,23 +1,19 @@
 ---
 title: '[設定] へのタブの追加'
 description: Windows Server Essentials の使用方法について説明します。
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: aac6b7f3-9020-46c3-a83f-b81542300385
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: a37fd65b143e800a76bac9a77daa4b400426c805
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 68c469487c5fff1e690d6eddda6c28fb64b8f015
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80310164"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80817486"
 ---
 # <a name="add-a-tab-to-settings"></a>[設定] へのタブの追加
 

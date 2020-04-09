@@ -1,12 +1,8 @@
 ---
 title: サーバー マネージャーへのサーバーの追加
 description: サーバー マネージャー
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-server-manager
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: aab895f2-fe4d-4408-b66b-cdeadbd8969e
 author: coreyp-at-msft
@@ -14,12 +10,12 @@ ms.author: coreyp
 manager: dongill
 ms.localizationpriority: medium
 ms.date: 02/01/2018
-ms.openlocfilehash: ad30a8f1c4c1e0aa317512eb68fffbd76413175b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f7b5a5b358fa2df54777e0f1f88b1e86a7dafd80
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383262"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851575"
 ---
 # <a name="add-servers-to-server-manager"></a>サーバー マネージャーへのサーバーの追加
 
@@ -36,13 +32,13 @@ Windows Server では、単一のサーバー マネージャー コンソール
 > 
 > Windows Server オペレーティング システムのそれ以降のリリースを管理する、サーバー マネージャーを使用できません。 Windows Server 2012 R2、Windows Server 2012、Windows 8.1、または Windows 8 で実行されているサーバー マネージャーを使用して、Windows Server 2016 を実行しているサーバーを管理することはできません。
 
-このトピックは次のセクションで構成されます。
+このトピックの内容は次のとおりです。
 
 -   [管理するサーバーの追加](#BKMK_add)
 
 -   [[管理に使用する資格情報] コマンドで資格情報を指定する](#BKMK_creds)
 
-## <a name="BKMK_creds"></a>[管理に使用する資格情報] コマンドで資格情報を指定する
+## <a name="provide-credentials-with-the-manage-as-command"></a><a name=BKMK_creds></a>[管理に使用する資格情報] コマンドで資格情報を指定する
 サーバー マネージャーに追加するリモート サーバーの一部では、アクセスまたは管理するために異なるユーザー アカウントの資格情報が必要になる場合があります。 サーバー マネージャーを実行しているコンピューターへのログオンに使用するものとは異なる資格情報を管理対象サーバーに指定するには、サーバー マネージャーにサーバーを追加した後で、 **[管理に使用する資格情報]** コマンドを使用します。このコマンドには、ロールまたはグループのホーム ページの **[サーバー]** タイルで管理対象サーバーのエントリを右クリックしてアクセスできます。 **[管理に使用する資格情報]** をクリックすると **[Windows セキュリティ]** ダイアログ ボックスが開き、そこでは管理対象サーバーでのアクセス権限を持つユーザー名を次のいずれかの形式で入力できます。
 
 -   *ユーザー名*
@@ -64,7 +60,7 @@ Windows Server では、単一のサーバー マネージャー コンソール
 > [!NOTE]
 > **[管理に使用する資格情報]** コマンドをサポートしないロールおよび機能としては、リモート デスクトップ サービス (RDS) や IP アドレス管理 (IPAM) サーバーなどがあります。 サーバー マネージャーを実行しているコンピューターで使用しているものと同じ資格情報を使用して、リモート RDS または IPAM サーバーを管理できない場合は、これらのリモート サーバーの管理に通常使用するアカウントを、サーバー マネージャーを実行しているコンピューターの Administrators グループに追加してみてください。 次に、RDS または IPAM を実行しているリモート サーバーの管理に使用するアカウントで、サーバー マネージャーを実行しているコンピューターにログオンします。
 
-## <a name="BKMK_add"></a>管理するサーバーの追加
+## <a name="add-servers-to-manage"></a><a name=BKMK_add></a>管理するサーバーの追加
 **[サーバーの追加]** ダイアログ ボックスでは、次の 3 種類の方法で、管理対象サーバーをサーバー マネージャーに追加できます。
 
 -   **Active Directory® Domain Services** ローカル コンピューターと同じドメインにある Active Directory によって検出されたサーバーを管理対象として追加します。
@@ -83,11 +79,11 @@ Windows Server では、単一のサーバー マネージャー コンソール
 
 2.  **[管理]** メニューの **[サーバーの追加]** をクリックします。
 
-3.  次のいずれかを実行します。
+3.  次のいずれかの操作を行います。
 
-    -   **[Active Directory]** タブで、現在のドメインに含まれるサーバーを選択します。 複数のサーバーを選択するには、 **Ctrl** キーを押しながら選択します。 右矢印ボタンをクリックし、選択したサーバーを **[選択]** の一覧に移動します。
+    -   **[Active Directory]** タブで、現在のドメインに含まれるサーバーを選択します。 複数のサーバーを選択するには、**Ctrl** キーを押しながら選択します。 右矢印ボタンをクリックし、選択したサーバーを **[選択]** の一覧に移動します。
 
-    -   **[DNS]** タブで、コンピューター名または IP アドレスの最初の数文字を入力し、 **Enter** キーを押すか、 **[検索]** をクリックします。 追加するサーバーを選択し、右矢印ボタンをクリックします。
+    -   **[DNS]** タブで、コンピューター名または IP アドレスの最初の数文字を入力し、**Enter** キーを押すか、 **[検索]** をクリックします。 追加するサーバーを選択し、右矢印ボタンをクリックします。
 
     -   **[インポート]** タブで、追加するコンピューターの DNS 名または IP アドレスが 1 行に 1 つずつ列挙されたテキスト ファイルを参照します。
 
@@ -129,7 +125,7 @@ Windows Server では、単一のサーバー マネージャー コンソール
 3.  > [!IMPORTANT]
     > この手順のコマンドレットを実行すると、ワークグループ コンピューター上で、ビルトイン Administrator またはシステム アカウントでプロセスを実行する場合を除き、昇格されたプロセスの実行を防ぐユーザー アカウント制御 (UAC) の基準が上書きされます。 コマンドレットを実行すると、Administrators グループのメンバーは、ビルトイン Administrator としてログオンすることなく、ワークグループ サーバーを管理できるようになります。 ワークグループ サーバーを管理できるユーザーを追加するとセキュリティは低下しますが、ワークグループ サーバーを管理する複数のユーザーにビルトイン Administrator アカウントの資格情報を提供する方法より安全です。
 
-    ワークグループ コンピューター上での昇格されたプロセスの実行に関する UAC 制限を上書きするには、次のコマンドレットを実行して、ワークグループ サーバー上に **LocalAccountTokenFilterPolicy** というレジストリ エントリを作成します。
+    ワークグループ コンピューター上での昇格されたプロセスの実行に関する UAC 制限をオーバーライドするには、次のコマンドレットを実行して、ワークグループ サーバー上に **LocalAccountTokenFilterPolicy** というレジストリ エントリを作成します。
 
     ```
     New-ItemProperty -Name LocalAccountTokenFilterPolicy -path HKLM:\SOFTWARE\Microsoft\Windows\Currentversion\Policies\System -propertytype DWord -value 1

@@ -1,24 +1,20 @@
 ---
 title: MultiPoint Services でディスク保護を構成する
 description: MultiPoint Services のディスク保護を設定する方法について説明します。
-ms.custom: na
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: bd9bf5b9-e481-499b-9c15-7ee5a4f470c4
 author: evaseydl
 manager: scottman
 ms.author: evas
 ms.date: 08/04/2016
-ms.openlocfilehash: ae930162de32335ac32e3bda0ac381a26c5ea6dd
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: eee4fc1b80ff57ee1ab5ee683d82c06fbe36b549
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71389817"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854085"
 ---
 # <a name="configure-disk-protection"></a>ディスクの保護を構成します。
 Multipoint Services のディスク保護を使用して、意図しない更新からシステムボリュームを保護したり、ディスク保護がアクティブになっている間は Windows 更新を保持するようにスケジュールしたり、ディスク保護を一時的に無効にしたり、ディスク保護をアンインストールしたりすることができます。  
@@ -62,7 +58,7 @@ Windows の更新プログラムを自動的にインストールするように
   
 6.  **[完了したら]** で、システムを以前の電源状態に戻すか、更新プログラムを適用した後にシャットダウンするかを選択します。  
   
-7.  **[OK]** をクリックします。  
+7.  **[OK]** をクリックすると、  
   
 ## <a name="temporarily-disable-disk-protection"></a>ディスクの保護を一時的に無効にする  
 管理者がソフトウェアのインストール、システム設定の変更、またはシステムの更新を含むその他のメンテナンスタスクを実行する必要がある場合は、一時的にディスクの保護を無効にすることができます。 変更が行われたら、ディスクの保護を再度有効にします。 システムの再起動時に、ディスクの保護が有効になっていると、システムの状態が維持されます。  

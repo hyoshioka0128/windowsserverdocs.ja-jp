@@ -1,27 +1,23 @@
 ---
 title: MultiPoint Services の管理
 description: MultiPoint Services の管理に関する記事の概要
-ms.custom: na
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 81135740-e9ce-4b4c-a770-760d741f20b1
 author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 3000ea7dbbcb32e117db5faceb41145233e1baca
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 267ade36be28a90eecb6beafb49b338ea870c073
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405090"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853455"
 ---
 # <a name="managing-multipoint-services"></a>MultiPoint Services の管理
-MultiPoint™ Services を使用すると、各自が個別に Windows 環境を持つ複数のユーザーが、1 台のコンピューターを同時に共有できます。 モニター、キーボード、マウスで構成されるユーザー ステーションが、USB、ビデオ ケーブル、またはネットワークを介してホスト コンピューターに直接接続されます。  
+MultiPoint&trade; Services を使用すると、それぞれが独立した Windows エクスペリエンスを持つ複数のユーザーが、1台のコンピューターを同時に共有できます。 モニター、キーボード、マウスで構成されるユーザー ステーションが、USB、ビデオ ケーブル、またはネットワークを介してホスト コンピューターに直接接続されます。  
   
 Multipoint マネージャーと MultiPoint ダッシュボードで実行できるタスクについては、次の情報を参照してください。 multipoint マネージャーを使用して MultiPoint Services ステーションを管理する方法や、MultiPoint ダッシュボードを毎日使用する方法などです。  
   
@@ -36,6 +32,6 @@ Multipoint マネージャーと MultiPoint ダッシュボードで実行でき
 -   [MultiPoint ダッシュボードを使用したユーザー デスクトップの管理](Manage-User-Desktops-Using-MultiPoint-Dashboard.md)  
 -   [MultiPoint ダッシュボードを使用した MultiPoint システムの管理](Manage-MultiPoint-Systems-Using-MultiPoint-Dashboard.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
   
 -   [MultiPoint Services フォーラム](https://social.technet.microsoft.com/Forums/windowsserver/home?forum=windowsmultipointserver&filter=alltypes&sort=lastpostdesc)  

@@ -1,24 +1,20 @@
 ---
 title: reg compare
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Windows コマンドに関するトピック * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 177dc6a3-034e-4846-a394-330d03c14e0b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bfccc1f64b0113967a52e3ac0516d800cfea3532
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 21eb459711f8ca72bf2f6d841d958bb25a96f845
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71384716"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80836545"
 ---
 # <a name="reg-compare"></a>reg compare
 
@@ -34,7 +30,7 @@ ms.locfileid: "71384716"
 reg compare <KeyName1> <KeyName2> [{/v ValueName | /ve}] [{/oa | /od | /os | on}] [/s]
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
 |    パラメーター    |                                                                                                                                                                                                                                                                                          説明                                                                                                                                                                                                                                                                                           |
 |-----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -43,18 +39,18 @@ reg compare <KeyName1> <KeyName2> [{/v ValueName | /ve}] [{/oa | /od | /os | on}
 | /v \<ValueName > |                                                                                                                                                                                                                                                                     サブキーの下を比較する値の名前を指定します。                                                                                                                                                                                                                                                                      |
 |       /ve       |                                                                                                                                                                                                                                                         Null 値の名前を持つエントリのみを比較することを指定します。                                                                                                                                                                                                                                                         |
 |      [{/oa      |                                                                                                                                                                                                                                                                                              /od                                                                                                                                                                                                                                                                                               |
-|       /oa       |                                                                                                                                                                                                                                             すべての相違点との一致が表示されることを指定します。 既定では、相違点だけが表示されます。                                                                                                                                                                                                                                             |
+|       /oa       |                                                                                                                                                                                                                                             すべての相違点との一致が表示されることを指定します。 既定では、差分のみが一覧表示します。                                                                                                                                                                                                                                             |
 |       /od       |                                                                                                                                                                                                                                                          相違点だけが表示されることを指定します。 これは既定の動作です。                                                                                                                                                                                                                                                          |
-|       /os       |                                                                                                                                                                                                                                                    一致だけが表示されることを指定します。 既定では、相違点だけが表示されます。                                                                                                                                                                                                                                                     |
-|       /on       |                                                                                                                                                                                                                                                       何も表示されないことを指定します。 既定では、相違点だけが表示されます。                                                                                                                                                                                                                                                        |
+|       /os       |                                                                                                                                                                                                                                                    一致だけが表示されることを指定します。 既定では、差分のみが一覧表示します。                                                                                                                                                                                                                                                     |
+|       /on       |                                                                                                                                                                                                                                                       何も表示されないことを指定します。 既定では、差分のみが一覧表示します。                                                                                                                                                                                                                                                        |
 |       /s        |                                                                                                                                                                                                                                                                         すべてのサブキーとエントリを再帰的を比較します。                                                                                                                                                                                                                                                                          |
 |       /?        |                                                                                                                                                                                                                                                                    ヘルプを表示 **reg 比較** コマンド プロンプト。                                                                                                                                                                                                                                                                    |
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
 次の表に、戻り値の **reg 比較**します。
 
-|Value|説明|
+|値|説明|
 |-----|-----------|
 |0|比較の結果が成功して、結果は変わりません。|
 |1|比較が失敗しました。|
@@ -62,13 +58,13 @@ reg compare <KeyName1> <KeyName2> [{/v ValueName | /ve}] [{/oa | /od | /os | on}
 
 次の表は、結果に表示されるシンボルを一覧表示します。
 
-|記号|説明|
+|シンボル|説明|
 |------|-----------|
 |=|*KeyName1* データに等しい *KeyName2* データ。|
 |<|*KeyName1* データより小さい *KeyName2* データ。|
 |>|*KeyName1* データがより大きい *KeyName2* データ。|
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a><a name=BKMK_examples></a>例
 
 キー **MyApp**の下にあるすべての値を、キー **Savemyapp**の下のすべての値と比較するには、次のように入力します。
 
@@ -82,6 +78,6 @@ HKLM\Software\MyCo の下にあるすべてのサブキーと値を、ローカ�
 
 REG COMPARE \\\\ZODIAC\HKLM\Software\MyCo \\\\。 /s
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

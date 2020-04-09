@@ -1,29 +1,25 @@
 ---
 title: Windows Small Business Server 2003 から Windows Server Essentials への移行
 description: Windows Server Essentials の使用方法について説明します。
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 119a7fbc-2c76-4aa3-8a7f-c7073d461b5b
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: b99a21d38011b40515fb322429b73f23ad5849cf
-ms.sourcegitcommit: 3c3dfee8ada0083f97a58997d22d218a5d73b9c4
+ms.openlocfilehash: f7dfa203f999e23b52c8fcf1f861a59f4f399d95
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80639898"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852525"
 ---
 # <a name="migrate-windows-small-business-server-2003-to-windows-server-essentials"></a>Windows Small Business Server 2003 から Windows Server Essentials への移行
 
 >適用対象: windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-このガイドでは、既存の Windows SBS 2003 ドメインを新しいハードウェア上の Windows Server® 2012 Essentials に移行してから、設定とデータを移行する方法について説明します。 このガイドでは、移行の完了後に Windows Server Essentials ネットワークから既存のサーバーを削除する方法についても説明します。  
+このガイドでは、既存の Windows SBS 2003 ドメインを新しいハードウェア上の Windows Server&reg; 2012 Essentials に移行してから、設定とデータを移行する方法について説明します。 このガイドでは、移行の完了後に Windows Server Essentials ネットワークから既存のサーバーを削除する方法についても説明します。  
   
 > [!IMPORTANT]
 >   Windows Server Essentials には64ビット環境が必要です。  Windows Server Essentials では、32ビット環境はサポートされていません。  

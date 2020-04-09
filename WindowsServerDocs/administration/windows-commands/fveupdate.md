@@ -1,24 +1,20 @@
 ---
 title: fveupdate
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Windows コマンドに関するトピック * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f2603607-9421-4e8d-b9bf-c5519814b39f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3c5cc40dafb0305e1fdca2e1b91de749ac1cc70b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c4f673eb9161f34a80e2359f2368229543c934ec
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71375800"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80842695"
 ---
 # <a name="fveupdate"></a>fveupdate
 

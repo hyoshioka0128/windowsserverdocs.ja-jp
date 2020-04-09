@@ -2,18 +2,18 @@
 title: ファイル サーバー リソース マネージャー (FSRM) の概要
 ms.prod: windows-server
 ms.author: jgerend
-ms.manager: brianlic
+manager: brianlic
 ms.technology: storage
 ms.topic: article
 author: jasongerend
 ms.date: 5/14/2018
 description: ファイルサーバーリソースマネージャー (FSRM) は、Windows Server ファイルサーバー上のデータを管理および分類できるツールです。
-ms.openlocfilehash: 719176307afc320ad676fd1acfc07ad9d15920cf
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0ed7e5abce9389283a9b9d641f813b5df89a586b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394172"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854245"
 ---
 # <a name="file-server-resource-manager-fsrm-overview"></a>ファイル サーバー リソース マネージャー (FSRM) の概要
 
@@ -53,7 +53,7 @@ ms.locfileid: "71394172"
   
 -   毎週日曜日の夜に実行され、過去 2 日間にアクセスされたファイルの一覧を生成するレポートをスケジュールします。 このレポートは、週末の記憶域の活動状況を把握し、それに応じてサーバーのダウンタイムを計画するうえで役立ちます。  
 
-## <a name="whats-new"></a>新機能-FSRM で変更ジャーナルを作成できないようにする
+## <a name="whats-new---prevent-fsrm-from-creating-change-journals"></a><a name="whats-new"></a>新機能-FSRM で変更ジャーナルを作成できないようにする
 
 Windows Server バージョン1803以降では、サービスの開始時にファイルサーバーリソースマネージャーサービスがボリュームに変更ジャーナル (USN ジャーナルとも呼ばれます) を作成するのを防ぐことができるようになりました。 これにより、各ボリュームの領域が少し節約されますが、リアルタイムのファイル分類が無効になります。
 
@@ -90,7 +90,7 @@ Windows Server バージョン1803以降では、サービスの開始時にフ�
        ```
     2. レジストリエディターに戻り、 **HKEY_LOCAL_MACHINE \system\currentcontrolset\services\srmsvc\settings**キーを右クリックし、[**新しい** > **複数文字列値**] を選択します。
     3. `SkipUSNCreationForVolumes`値の名前を指定します。
-    4. 変更ジャーナルの作成をスキップする各ボリュームのパスを入力し、各パスを別の行に配置します。 次に、例を示します。
+    4. 変更ジャーナルの作成をスキップする各ボリュームのパスを入力し、各パスを別の行に配置します。 例 :
 
         ```
         \\?\Volume{8d3c9e8a-0000-0000-0000-100000000000}\
@@ -104,6 +104,6 @@ Windows Server バージョン1803以降では、サービスの開始時にフ�
 
 
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [動的 Access Control](https://technet.microsoft.com/library/dn408191(v=ws.11).aspx) 

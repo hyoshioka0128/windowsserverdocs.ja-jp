@@ -1,24 +1,20 @@
 ---
 title: テナント仮想ネットワークを作成、削除、または更新します。
 description: このトピックでは、ソフトウェア定義ネットワーク (SDN) を展開した後に、Hyper-v ネットワーク仮想化仮想ネットワークを作成、削除、および更新する方法について説明します。 Hyper-v ネットワーク仮想化は、各テナントネットワークが個別のエンティティであるように、テナントネットワークを分離するのに役立ちます。 パブリックアクセスワークロードを構成する場合を除き、各エンティティにはクロス接続の可能性がありません。
-manager: dougkim
-ms.custom: na
+manager: grcusanz
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-sdn
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 6a820826-e829-4ef2-9a20-f74235f8c25b
-ms.author: lizross
-author: eross-msft
+ms.author: anpaul
+author: AnirbanPaul
 ms.date: 08/24/2018
-ms.openlocfilehash: f85f593ec3dca33c5b35fb065c7d84ed12ea9af2
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: acb663cd33d015c1ce96241abffd4ca260cc5559
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80309819"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854525"
 ---
 # <a name="create-delete-or-update-tenant-virtual-networks"></a>テナントの仮想ネットワークを作成、削除、または更新する
 

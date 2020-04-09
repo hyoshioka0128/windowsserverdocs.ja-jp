@@ -2,26 +2,22 @@
 title: Windows Server ハイブリッドクラウド印刷の展開
 description: Microsoft ハイブリッドクラウド印刷をセットアップする方法
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.technology: Windows Server 2016
-ms.tgt_pltfrm: na
-ms.topic: ''
+ms.technology: windows server 2016
 ms.assetid: fc239aec-e719-47ea-92fc-d82a7247c5e9
 author: msjimwu
 ms.author: coreyp
 manager: dongill
 ms.date: 3/15/2018
-ms.openlocfilehash: 77462ab74ee63677362b779615376e831c71de00
-ms.sourcegitcommit: eca5bb75d1db20ac07232cea759b6b542626c02f
+ms.openlocfilehash: c06aafb015b065f307eca02abc7a6adaa8ba763c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2020
-ms.locfileid: "77114531"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852115"
 ---
 # <a name="deploy-windows-server-hybrid-cloud-print"></a>Windows Server ハイブリッドクラウド印刷の展開
 
->適用先: Windows Server 2016
+>適用対象: Windows Server 2016
 
 このトピックでは、IT 管理者向けに、Microsoft ハイブリッドクラウド印刷 (HCP) ソリューションのエンドツーエンドの展開について説明します。 このソリューションレイヤーは、プリントサーバーとして実行されている既存の Windows Server 上にあり、Azure Active Directory (Azure AD) 参加済みのデバイスと、MDM で管理されたデバイスが組織で管理されているプリンタを検出して印刷できるようにします。
 
@@ -186,9 +182,9 @@ HCP サービスとの認証された通信を有効にするには、3つのア
 2. ハイブリッドクラウド印刷の PowerShell モジュールをインストールします。
     - 管理者特権の PowerShell コマンドプロンプトから次のコマンドを実行します。
 
-        コンピューターが PowerShell ギャラリーに接続できることを確認するための `find-module -Name "PublishCloudPrinter"` (PSGallery)
+        コンピューターが PowerShell ギャラリーに接続できることを確認するための `find-module -Name PublishCloudPrinter` (PSGallery)
 
-        `install-module -Name "PublishCloudPrinter"`
+        `install-module -Name PublishCloudPrinter`
 
     > 注: "PSGallery" が信頼されていないリポジトリであることを示すメッセージが表示される場合があります。  インストールを続行するには、「y」と入力します。
 
@@ -197,9 +193,9 @@ HCP サービスとの認証された通信を有効にするには、3つのア
 3. ハイブリッドクラウド印刷ソリューションをインストールします。
     - 同じ管理者特権の PowerShell コマンドプロンプトで、次のいずれかのディレクトリに移動します (引用符が必要です)。
 
-        `"C:\Program Files\WindowsPowerShell\Modules\PublishCloudPrinter\1.0.0.0"`
+        `C:\Program Files\WindowsPowerShell\Modules\PublishCloudPrinter\1.0.0.0`
 
-    - [実行]
+    - Run
 
         `.\CloudPrintDeploy.ps1 -AzureTenant <Azure Active Directory domain name> -AzureTenantGuid <Azure Active Directory ID>`
 
@@ -247,7 +243,7 @@ HCP サービスとの認証された通信を有効にするには、3つのア
 
         `Install-Package system.data.sqlite [-requiredversion x.x.x.x] -providername nuget`
 
-   > 注: "-requiredversion" オプションを残して、最新バージョンをダウンロードしてインストールすることをお勧めします。
+   > 注:-requiredversion オプションを残して、最新バージョンをダウンロードしてインストールすることをお勧めします。
 
     ![プリントサーバーのレジストリキー](../media/hybrid-cloud-print/PrintServer-InstallSQLite.png)
 
@@ -257,18 +253,18 @@ HCP サービスとの認証された通信を有効にするには、3つのア
     - 管理者特権の PowerShell コマンドプロンプトで、ps1 ファイルを実行します。
 
     ```powershell
-    $source = "\Program Files\PackageManagement\NuGet\Packages"
-    $core = "System.Data.SQLite.Core"
-    $linq = "System.Data.SQLite.Linq"
-    $ef6 = "System.Data.SQLite.EF6"
-    $version = "x.x.x.x"
-    $target = "C:\inetpub\wwwroot\MopriaCloudService\bin"
+    $source = \Program Files\PackageManagement\NuGet\Packages
+    $core = System.Data.SQLite.Core
+    $linq = System.Data.SQLite.Linq
+    $ef6 = System.Data.SQLite.EF6
+    $version = x.x.x.x
+    $target = C:\inetpub\wwwroot\MopriaCloudService\bin
 
-    xcopy /y "$source\$core.$version\lib\net46\System.Data.SQLite.dll" "$target\"
-    xcopy /y "$source\$core.$version\build\net46\x86\SQLite.Interop.dll" "$target\x86\"
-    xcopy /y "$source\$core.$version\build\net46\x64\SQLite.Interop.dll" "$target\x64\"
-    xcopy /y "$source\$linq.$version\lib\net46\System.Data.SQLite.Linq.dll" "$target\"
-    xcopy /y "$source\$ef6.$version\lib\net46\System.Data.SQLite.EF6.dll" "$target\"
+    xcopy /y $source\$core.$version\lib\net46\System.Data.SQLite.dll $target\
+    xcopy /y $source\$core.$version\build\net46\x86\SQLite.Interop.dll $target\x86\
+    xcopy /y $source\$core.$version\build\net46\x64\SQLite.Interop.dll $target\x64\
+    xcopy /y $source\$linq.$version\lib\net46\System.Data.SQLite.Linq.dll $target\
+    xcopy /y $source\$ef6.$version\lib\net46\System.Data.SQLite.EF6.dll $target\
     ```
 
 10. 次の `<runtime>/<assemblyBinding>` セクションで、c:\inetpub\wwwroot\MopriaCloudService\web.config ファイルを更新して SQLite バージョン2.x を含むようにします。 これは、前の手順で使用したバージョンと同じです。
@@ -276,20 +272,20 @@ HCP サービスとの認証された通信を有効にするには、3つのア
     ```xml
     ...
     <dependentAssembly>
-    assemblyIdentity name="System.Data.SQLite" culture="neutral" publicKeyToken="db937bc2d44ff139" /
-    <bindingRedirect oldVersion="0.0.0.0-x.x.x.x" newVersion="x.x.x.x" />
+    assemblyIdentity name=System.Data.SQLite culture=neutral publicKeyToken=db937bc2d44ff139 /
+    <bindingRedirect oldVersion=0.0.0.0-x.x.x.x newVersion=x.x.x.x />
     </dependentAssembly>
     <dependentAssembly>
-    <assemblyIdentity name="System.Data.SQLite.Core" culture="neutral" publicKeyToken="db937bc2d44ff139" />
-    <bindingRedirect oldVersion="0.0.0.0-x.x.x.x" newVersion="x.x.x.x" />
+    <assemblyIdentity name=System.Data.SQLite.Core culture=neutral publicKeyToken=db937bc2d44ff139 />
+    <bindingRedirect oldVersion=0.0.0.0-x.x.x.x newVersion=x.x.x.x />
     </dependentAssembly>
     <dependentAssembly>
-    <assemblyIdentity name="System.Data.SQLite.EF6" culture="neutral" publicKeyToken="db937bc2d44ff139" />
-    <bindingRedirect oldVersion="0.0.0.0-x.x.x.x" newVersion="x.x.x.x" />
+    <assemblyIdentity name=System.Data.SQLite.EF6 culture=neutral publicKeyToken=db937bc2d44ff139 />
+    <bindingRedirect oldVersion=0.0.0.0-x.x.x.x newVersion=x.x.x.x />
     </dependentAssembly>
     <dependentAssembly>
-    <assemblyIdentity name="System.Data.SQLite.Linq" culture="neutral" publicKeyToken="db937bc2d44ff139" />
-    <bindingRedirect oldVersion="0.0.0.0-x.x.x.x" newVersion="x.x.x.x" />
+    <assemblyIdentity name=System.Data.SQLite.Linq culture=neutral publicKeyToken=db937bc2d44ff139 />
+    <bindingRedirect oldVersion=0.0.0.0-x.x.x.x newVersion=x.x.x.x />
     </dependentAssembly>
     ...
     ```
@@ -299,7 +295,7 @@ HCP サービスとの認証された通信を有効にするには、3つのア
     - `c:\inetpub\wwwroot\MopriaCloudService\Database` ディレクトリにアクセスします。
     - 次のコマンドを実行して、このディレクトリにデータベースを作成します。
 
-        `sqlite3.exe MopriaDeviceDb.db ".read MopriaSQLiteDb.sql"`
+        `sqlite3.exe MopriaDeviceDb.db .read MopriaSQLiteDb.sql`
 
     - ファイルエクスプローラーで、Mo先読み Adevicedb. db ファイルのプロパティを開き、[セキュリティ] タブで Mo先読みデータベースへの発行が許可されているユーザーまたはグループを追加します。ユーザーまたはグループは、オンプレミスの Active Directory に存在し、Azure AD と同期されている必要があります。
     - ソリューションがルーティング不可能なドメイン (例: *mydomain*) にデプロイされている場合は、Azure AD ドメイン (例: onmicrosoft.com、またはサードパーティベンダーから*購入した*ドメイン) を、オンプレミスの Active Directory に UPN サフィックスとして追加する必要があります。 これは、プリンターを発行するのとまったく同じユーザー (例 admin@: onmicrosoft.com) をデータベースファイルのセキュリティ設定に追加できるようにする*ためです。* 「[ディレクトリ同期のためにルーティング不可能なドメインを準備する」を](https://docs.microsoft.com/office365/enterprise/prepare-a-non-routable-domain-for-directory-synchronization)参照してください。
@@ -332,9 +328,9 @@ HCP サービスとの認証された通信を有効にするには、3つのア
     - Azure portal で、[**すべてのアプリケーション** >  > **エンタープライズアプリケーション**] **Azure Active Directory**にアクセスします。
     - [Mo先読み Adiscoveryservice アプリ] を選択します。
     - **アプリケーションプロキシ**にアクセスします。 事前認証方法を**Azure Active Directory**に変更します。
-    - **[シングルサインオン]** にアクセスします。 シングルサインオンの方法として [統合 Windows 認証] を選択します。
+    - **[シングルサインオン]** にアクセスします。 シングルサインオン方法として [統合 Windows 認証] を選択します。
     - **内部アプリケーション spn**をプリントサーバーコンピューターの spn に設定します。
-    - [委任された**ログイン id** ] を "ユーザープリンシパル名" に設定します。
+    - 委任された**ログイン id**をユーザープリンシパル名に設定します。
     - EntperiseCloudPrint アプリに対して繰り返します。
     AAD シングルサインオンの ![IWA](../media/hybrid-cloud-print/AAD-SingleSignOn-IWA.png)
 
@@ -343,13 +339,13 @@ HCP サービスとの認証された通信を有効にするには、3つのア
 1. MDM プロバイダーにログインします。
 2. 次のガイドラインに従って、エンタープライズクラウドの印刷ポリシーグループを見つけ、ポリシーを構成します。
     - CloudPrintOAuthAuthority = `https://login.microsoftonline.com/<Azure AD Directory ID>`。 ディレクトリ ID は Azure Active Directory > のプロパティ にあります。
-    - CloudPrintOAuthClientId = "Application \(client\) ID" ネイティブアプリの値。 これは Azure Active Directory > > アプリの登録の下で確認できます。 [ネイティブアプリ > 概要] を選択します。
-    - Cloudプリンター Discoveryendpoint = 検索サービスアプリの外部 URL。 これは、[Azure Active Directory > エンタープライズアプリケーション] の下で確認できます。アプリプロキシ > アプリケーションプロキシを選択 > ます。 **正確に一致している必要がありますが、末尾に "/" を**指定することはできません。
-    - Mo先読み Adiscoveryresourceid = アプリのアプリケーション ID の URI です。 これは、[Azure Active Directory > アプリの登録] の下にあり > [探索サービスアプリの概要] > 選択します。 **これは、末尾の "/" とまったく同じである必要があり**ます。
-    - CloudPrintResourceId = エンタープライズクラウド印刷アプリのアプリケーション ID URI。 これは Azure Active Directory > > アプリの登録の下にあります。 [エンタープライズクラウド印刷アプリ > 概要] を選択します。 **これは、末尾の "/" とまったく同じである必要があり**ます。
+    - CloudPrintOAuthClientId = アプリケーション \(クライアント\) ネイティブアプリの ID 値。 これは Azure Active Directory > > アプリの登録の下で確認できます。 [ネイティブアプリ > 概要] を選択します。
+    - Cloudプリンター Discoveryendpoint = 検索サービスアプリの外部 URL。 これは、[Azure Active Directory > エンタープライズアプリケーション] の下で確認できます。アプリプロキシ > アプリケーションプロキシを選択 > ます。 **正確に一致している必要がありますが、末尾に/を使用することはできません**。
+    - Mo先読み Adiscoveryresourceid = アプリのアプリケーション ID の URI です。 これは、[Azure Active Directory > アプリの登録] の下にあり > [探索サービスアプリの概要] > 選択します。 この値は、**末尾が/の場合とまったく同じである必要があり**ます。
+    - CloudPrintResourceId = エンタープライズクラウド印刷アプリのアプリケーション ID URI。 これは Azure Active Directory > > アプリの登録の下にあります。 [エンタープライズクラウド印刷アプリ > 概要] を選択します。 この値は、**末尾が/の場合とまったく同じである必要があり**ます。
     - Discoverymaxプリンター Limit = \<正の整数\>です。
 
-> 注: Microsoft Intune サービスを使用している場合は、[Cloud Printer] (クラウドプリンター) カテゴリの下にこれらの設定が表示されます。
+> 注: Microsoft Intune サービスを使用している場合は、[クラウドプリンター] カテゴリでこれらの設定を見つけることができます。
 
 |Intune の表示名                     |ポリシー                         |
 |----------------------------------------|-------------------------------|
@@ -368,7 +364,7 @@ HCP サービスとの認証された通信を有効にするには、3つのア
         - CloudPrintOAuthClientId =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrintOAuthClientId
             - 値 = < Azure AD ネイティブアプリのアプリケーション ID >
         - Cloudプリンター Discoveryendpoint =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrinterDiscoveryEndPoint
-            - 値 = 検索サービスアプリの外部 URL (完全に一致している必要がありますが、末尾に "/" が含まれていない必要があります)
+            - 値 = 検出サービスアプリの外部 URL (完全に一致している必要がありますが、末尾にはがありません)
         - Mo/Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/MopriaDiscoveryResourceId Adiscoveryresourceid =.
             - 値 = 検出サービスアプリのアプリケーション ID の URI
         - CloudPrintResourceId =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrintResourceId
@@ -385,8 +381,8 @@ HCP サービスとの認証された通信を有効にするには、3つのア
 5. Windows 10 フォール Creator 更新プログラムまたはそれ以降のコンピューターを準備します。 コンピューターを Azure AD に参加させ、オンプレミスの Active Directory と同期しているユーザーとしてログインします。また、Mo先読み Adevicedb. db ファイルに対する適切なアクセス許可が付与されています。
 6. Windows 10 コンピューターから、管理者特権で Windows PowerShell コマンドプロンプトを開きます。
     - 次のコマンドを実行します。
-        - コンピューターが PowerShell ギャラリーに接続できることを確認するための `find-module -Name "PublishCloudPrinter"` (PSGallery)
-        - `install-module -Name "PublishCloudPrinter"`
+        - コンピューターが PowerShell ギャラリーに接続できることを確認するための `find-module -Name PublishCloudPrinter` (PSGallery)
+        - `install-module -Name PublishCloudPrinter`
 
             > 注: "PSGallery" が信頼されていないリポジトリであることを示すメッセージが表示される場合があります。  インストールを続行するには、「y」と入力します。
 
@@ -399,13 +395,13 @@ HCP サービスとの認証された通信を有効にするには、3つのア
         - モデル = プリンターモデル。
         - OrgLocation = プリンターの場所を指定する JSON 文字列 (例:
 
-            `{"attrs": [{"category":"country", "vs":"USA", "depth":0}, {"category":"organization", "vs":"Microsoft", "depth":1}, {"category":"site", "vs":"Redmond, WA", "depth":2}, {"category":"building", "vs":"Building 1", "depth":3}, {"category":"floor_number", "vs":1, "depth":4}, {"category":"room_name", "vs":"1111", "depth":5}]}`
+            `{attrs: [{category:country, vs:USA, depth:0}, {category:organization, vs:Microsoft, depth:1}, {category:site, vs:Redmond, WA, depth:2}, {category:building, vs:Building 1, depth:3}, {category:floor_number, vs:1, depth:4}, {category:room_name, vs:1111, depth:5}]}`
 
         - Sddl = プリンターのアクセス許可を表す SDDL 文字列。
             - プリントサーバーに管理者としてログオンし、発行するプリンタに対して次の PowerShell コマンドを実行します。 `(Get-Printer PrinterName -full).PermissionSDDL`。
-            - 上記のコマンドの結果に、プレフィックスとして**O: BA**を追加します。 例: 前のコマンドによって返された文字列が "G: DUD: (A; OICI; FA;;;WD) "、SDDL =" O: BAG: DUD: (A; O:BAG; FA;;;WD) "。
-        - DiscoveryEndpoint = Azure portal にログインしてから、エンタープライズアプリケーション > 検索サービスアプリ > アプリケーションプロキシ > 外部 URL の文字列を取得します。 末尾の "/" を省略します。
-        - PrintServerEndpoint = Azure portal にログインし、エンタープライズアプリケーション > エンタープライズクラウド印刷アプリ > アプリケーションプロキシ > 外部 URL の文字列を取得します。 末尾の "/" を省略します。
+            - 上記のコマンドの結果に、プレフィックスとして**O: BA**を追加します。 例: 前のコマンドによって返された文字列が G: DUD: (A; OICI; FA;;;WD)、SDDL = O: BAG: DUD: (A; O:BAG; FA;;;WD)。
+        - DiscoveryEndpoint = Azure portal にログインしてから、エンタープライズアプリケーション > 検索サービスアプリ > アプリケーションプロキシ > 外部 URL の文字列を取得します。 末尾の/を省略します。
+        - PrintServerEndpoint = Azure portal にログインし、エンタープライズアプリケーション > エンタープライズクラウド印刷アプリ > アプリケーションプロキシ > 外部 URL の文字列を取得します。 末尾の/を省略します。
         - AzureClientId = 登録されているネイティブアプリケーションのアプリケーション ID。
         - AzureTenantGuid = Azure AD テナントのディレクトリ ID。
         - DiscoveryResourceId = アプリケーション ID URI は、検出サービスアプリケーションの URI です。
@@ -416,7 +412,7 @@ HCP サービスとの認証された通信を有効にするには、3つのア
 
         サンプルコマンド:
 
-        `Publish-CloudPrinter -Printer HcpTestPrinter -Manufacturer Manufacturer1 -Model Model1 -OrgLocation '{"attrs": [{"category":"country", "vs":"USA", "depth":0}, {"category":"organization", "vs":"MyCompany", "depth":1}, {"category":"site", "vs":"MyCity, State", "depth":2}, {"category":"building", "vs":"Building 1", "depth":3}, {"category":"floor_name", "vs":1, "depth":4}, {"category":"room_name", "vs":"1111", "depth":5}]}' -Sddl "O:BAG:DUD:(A;OICI;FA;;;WD)" -DiscoveryEndpoint "https://mopriadiscoveryservice-contoso.msappproxy.net/mcs" -PrintServerEndpoint "https://enterprisecloudprint-contoso.msappproxy.net/ecp" -AzureClientId "dbe4feeb-cb69-40fc-91aa-73272f6d8fe1" -AzureTenantGuid "8de6a14a-5a23-4c1c-9ae4-1481ce356034" -DiscoveryResourceId "https://mopriadiscoveryservice-contoso.msappproxy.net/mcs/"`
+        `Publish-CloudPrinter -Printer HcpTestPrinter -Manufacturer Manufacturer1 -Model Model1 -OrgLocation '{attrs: [{category:country, vs:USA, depth:0}, {category:organization, vs:MyCompany, depth:1}, {category:site, vs:MyCity, State, depth:2}, {category:building, vs:Building 1, depth:3}, {category:floor_name, vs:1, depth:4}, {category:room_name, vs:1111, depth:5}]}' -Sddl O:BAG:DUD:(A;OICI;FA;;;WD) -DiscoveryEndpoint https://mopriadiscoveryservice-contoso.msappproxy.net/mcs -PrintServerEndpoint https://enterprisecloudprint-contoso.msappproxy.net/ecp -AzureClientId dbe4feeb-cb69-40fc-91aa-73272f6d8fe1 -AzureTenantGuid 8de6a14a-5a23-4c1c-9ae4-1481ce356034 -DiscoveryResourceId https://mopriadiscoveryservice-contoso.msappproxy.net/mcs/`
 
     - 次のコマンドを使用して、プリンターが発行されていることを確認します。
 
@@ -424,7 +420,7 @@ HCP サービスとの認証された通信を有効にするには、3つのア
 
         サンプルコマンド:
 
-        `Publish-CloudPrinter -Query -DiscoveryEndpoint "https://mopriadiscoveryservice-contoso.msappproxy.net/mcs" -AzureClientId "dbe4feeb-cb69-40fc-91aa-73272f6d8fe1" -AzureTenantGuid "8de6a14a-5a23-4c1c-9ae4-1481ce356034" -DiscoveryResourceId "https://mopriadiscoveryservice-contoso.msappproxy.net/mcs/"`
+        `Publish-CloudPrinter -Query -DiscoveryEndpoint https://mopriadiscoveryservice-contoso.msappproxy.net/mcs -AzureClientId dbe4feeb-cb69-40fc-91aa-73272f6d8fe1 -AzureTenantGuid 8de6a14a-5a23-4c1c-9ae4-1481ce356034 -DiscoveryResourceId https://mopriadiscoveryservice-contoso.msappproxy.net/mcs/`
 
 ## <a name="verify-the-deployment"></a>展開を確認する
 
@@ -433,7 +429,7 @@ MDM ポリシーが構成されている Azure AD 参加済みデバイスの場
 - このエンドポイントの一連の機能を説明する JSON テキストが表示されます。
 - **[設定]** **[デバイス]**  > [**プリンター] & [スキャナー**] の > にアクセスします。
     - **[プリンターまたはスキャナーの追加]** をクリックします。
-    - "クラウドプリンターの検索" (または、[組織内のプリンターを検索する]) リンクが表示されます。
+    - クラウドプリンターの検索が表示されます (または、[組織内のプリンターを新しい Windows 10 コンピューターで検索する])。
     - リンクをクリックします。
     - [検索場所を選択してください] リンクをクリックします。
         - デバイスの場所の階層が表示されます。
@@ -441,7 +437,7 @@ MDM ポリシーが構成されている Azure AD 参加済みデバイスの場
     - プリンター を選択し、**デバイスの追加** ボタンをクリックします。
     - プリンターが正常にインストールされたら、お気に入りのアプリからプリンターに印刷します。
 
-> 注: "EcpPrintTest" プリンターを使用している場合は、プリントサーバーコンピューターの "C:\\Ecpprinttest\\Ecpprinttest. xps" の場所に出力ファイルがあります。
+> 注: EcpPrintTest プリンターを使用している場合は、印刷サーバーコンピューターで C:\\Ecpprinttest\\Ecpprinttest. xps の場所にある出力ファイルを見つけることができます。
 
 ## <a name="troubleshooting"></a>トラブルシューティング
 
@@ -452,11 +448,11 @@ HCP の展開時に発生する一般的な問題を以下に示します。
 |CloudPrintDeploy PowerShell スクリプトが失敗しました | <ul><li>Windows Server に最新の更新プログラムがあることを確認します。</li><li>Windows Server Update Services (WSUS) を使用する場合は、 [wsus/SCCM を使用しているときに、オンデマンド機能と言語パックを使用できるようにする方法に関する説明](https://docs.microsoft.com/windows/deployment/update/fod-and-lang-packs)を参照してください。</li></ul> |
 |SQLite のインストールが失敗しました。メッセージ: パッケージ ' system.string ' の依存関係ループが検出されました | Install-Package system.string-providername-providername の依存関係<br>EF6-providername の依存関係をインストールします。<br>パッケージのインストール-providername-providername nuget-SkipDependencies<br><br>パッケージが正常にダウンロードされたら、すべてのバージョンが同じであることを確認します。 指定されていない場合は、上記のコマンドに-requiredversion パラメーターを追加し、それらを同じバージョンに設定します。 |
 |プリンタの発行に失敗しました | <ul><li>パススルー事前認証の場合、プリンターを公開するユーザーに、パブリッシングデータベースに対する適切なアクセス許可が付与されていることを確認します。</li><li>事前認証を Azure AD には、IIS で Windows 認証が有効になっていることを確認します。 手順5.3 を参照してください。 また、まずパススルー認証を試してください。 パススルー事前認証が機能する場合、問題はアプリケーションプロキシに関連している可能性があります。 「[アプリケーションプロキシの問題とエラーメッセージのトラブルシューティング」を](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-troubleshoot)参照してください。 パススルーに切り替えると、シングルサインオンの設定がリセットされることに注意してください。手順5を再実行して、事前認証 Azure AD をセットアップします。</li></ul> |
-|印刷ジョブが "プリンターに送信" 状態のままになる | <ul><li>コネクタサーバーで TLS 1.2 が有効になっていることを確認します。 手順2.1 のリンク先の記事を参照してください。</li><li>コネクタサーバーで HTTP2 が無効になっていることを確認します。 手順2.1 のリンク先の記事を参照してください。</li></ul> |
+|印刷ジョブは、プリンターの状態に送信されたままになります。 | <ul><li>コネクタサーバーで TLS 1.2 が有効になっていることを確認します。 手順2.1 のリンク先の記事を参照してください。</li><li>コネクタサーバーで HTTP2 が無効になっていることを確認します。 手順2.1 のリンク先の記事を参照してください。</li></ul> |
 
 トラブルシューティングに役立つログの場所を以下に示します。
 
-|コンポーネント |ログの場所 |
+|Component |ログの場所 |
 |------|------|
 |Windows 10 クライアント | <ul><li>Azure AD 操作のログを表示するには、イベントビューアーを使用します。 **[スタート]** をクリックし、「イベントビューアー」と入力します。 Microsoft > Windows > AAD > 操作 > [アプリケーションとサービスログ] に移動します。</li><li>フィードバックハブを使用してログを収集します。 [フィードバックハブアプリを使用して Microsoft にフィードバックを送信する](https://support.microsoft.com/help/4021566/windows-10-send-feedback-to-microsoft-with-feedback-hub-app)</li></ul> |
 |コネクタサーバー | アプリケーションプロキシのログを表示するには、イベントビューアーを使用します。 **[スタート]** をクリックし、「イベントビューアー」と入力します。 アプリケーションとサービスログ > Microsoft > AadApplicationProxy > Connector > Admin に移動します。 |

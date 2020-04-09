@@ -1,24 +1,20 @@
 ---
 title: tasklist
 description: ローカルコンピューターまたはリモートコンピューターで実行されているプロセスの一覧を表示する方法について説明します。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8dbe30ee-1484-46be-917b-5ca3ff4fdc9c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f7ad61dfe8beb86c8299dd71bec1d862805e50e0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b43f4c9a89fa60f2244253d48d3dca646fe8e02d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383683"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80833435"
 ---
 # <a name="tasklist"></a>tasklist
 
@@ -32,7 +28,7 @@ ms.locfileid: "71383683"
 tasklist [/s <Computer> [/u [<Domain>\]<UserName> [/p <Password>]]] [{/m <Module> | /svc | /v}] [/fo {table | list | csv}] [/nh] [/fi <Filter> [/fi <Filter> [ ... ]]]
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
 |          パラメーター           |                                                                                                                                            説明                                                                                                                                             |
 |------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -45,29 +41,29 @@ tasklist [/s <Computer> [/u [<Domain>\]<UserName> [/p <Password>]]] [{/m <Module
 |  /fo {テーブル \| 一覧 \| csv}  |                                                                             使用して、出力形式を指定します。 有効な値は **テーブル**, 、**リスト**, 、および **csv**します。 出力の既定の形式は**table**です。                                                                             |
 |             /nh              |                                                                                             出力に列ヘッダーを抑制します。 有効な場合に、 **/fo** にパラメーターが設定されている **テーブル** または **csv**します。                                                                                              |
 |        /fi \<フィルター >         |                                                                          含めることも、クエリから除外するプロセスの種類を指定します。 有効なフィルター名、演算子、および値については、次の表を参照してください。                                                                          |
-|              /?              |                                                                                                                                コマンド プロンプトにヘルプを表示します。                                                                                                                                |
+|              /?              |                                                                                                                                コマンド プロンプトでヘルプを表示します。                                                                                                                                |
 
 ### <a name="filter-names-operators-and-values"></a>フィルター名、演算子、および値
 
-| フィルター名 |    有効な演算子     |                                                                 有効な値                                                                 |
+| フィルター名 |    有効な演算子     |                                                                 ［有効な値］                                                                 |
 |-------------|------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
-|   STATUS    |         eq、ne         |                                                                   RUNNING                                                                    |
+|   状態    |         eq、ne         |                                                                   RUNNING                                                                    |
 |  IMAGENAME  |         eq、ne         |                                                                  イメージの名前                                                                  |
 |     PID     | eq、ne、gt、lt、ge、le |                                                                  PID 値                                                                   |
-|   SESSION   | eq、ne、gt、lt、ge、le |                                                                セッション番号                                                                |
+|   セッション   | eq、ne、gt、lt、ge、le |                                                                セッション番号                                                                |
 | セッション名 |         eq、ne         |                                                                 Session name (セッション名)                                                                 |
 |   CPU 時間 値   | eq、ne、gt、lt、ge、le | CPU 時間の形式で <em>HH</em> **:** <em>MM</em> **:** <em>SS</em>, ここで、 *MM* と *SS* 0 ~ 59 の間、および *HH* 符号なしのいずれかの数は、 |
 |  MEMUSAGE   | eq、ne、gt、lt、ge、le |                                                              メモリの使用量 (KB 単位)                                                              |
 |  ユーザー名   |         eq、ne         |                                                             任意の有効なユーザー名                                                              |
-|  サービス   |         eq、ne         |                                                                 サービス名                                                                 |
-| WINDOWTITLE |         eq、ne         |                                                                 ウィンドウのタイトル                                                                 |
+|  サービス   |         eq、ne         |                                                                 [サービス名]                                                                 |
+| WINDOWTITLE |         eq、ne         |                                                                 ウィンドウ タイトル                                                                 |
 |   モジュール   |         eq、ne         |                                                                   DLL 名                                                                   |
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
 リモート システムが指定されているときに、WINDOWTITLE と状態のフィルターはサポートされていません。
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a><a name="BKMK_examples"></a>例
 
 プロセス id が 1000 を超えるすべてのタスクの一覧を CSV 形式で表示するには、次のように入力します。
 ```
@@ -94,6 +90,6 @@ tasklist /s srvmain
 tasklist /s srvmain /u maindom\hiropln /p p@ssW23
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

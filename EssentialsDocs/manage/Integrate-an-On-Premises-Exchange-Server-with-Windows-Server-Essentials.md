@@ -1,23 +1,19 @@
 ---
 title: 社内 Exchange Server と Windows Server Essentials を統合する
 description: Windows Server Essentials の使用方法について説明します。
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b56a21e2-c9e3-4ba9-97d9-719ea6a0854b
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: f6b9ddfc26f6c939349ef7b1dfc456dc5b770621
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: a18da3e8de1337eb3253725a7c50c1ebed1dc6c7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80311474"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852875"
 ---
 # <a name="integrate-an-on-premises-exchange-server-with-windows-server-essentials"></a>社内 Exchange Server と Windows Server Essentials を統合する
 

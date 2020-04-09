@@ -1,7 +1,6 @@
 ---
 ms.assetid: 1a6740e6-5b6d-41f8-9ec4-32cdbee3e1bb
 title: 境界ネットワークとインターネット クライアントの両方を対象とする DNS ゾーンでフェデレーション サーバー プロキシの名前解決を構成する
-description: ''
 author: billmath
 manager: femila
 ms.date: 05/31/2017
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 118c03ada32d3cd5b198ecd238078984a38df0db
-ms.sourcegitcommit: 8fbd2d877612a9feb02d7d91ed0372d7cd441d5c
+ms.openlocfilehash: 487ba9d90043ada0d401d7e5a9d02872e1872b7e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71359835"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854935"
 ---
 # <a name="configure-name-resolution-for-a-federation-server-proxy-in-a-dns-zone-that-serves-both-the-perimeter-network-and-internet-clients"></a>境界ネットワークとインターネット クライアントの両方を対象とする DNS ゾーンでフェデレーション サーバー プロキシの名前解決を構成する
 
@@ -34,7 +33,7 @@ Active Directory フェデレーションサービス (AD FS) \(\) AD FS のフ�
 > [!NOTE]  
 > Windows 2000 Server、Windows Server 2003、または Windows Server 2008 を実行する DNS サーバーを DNS サーバーサービスと共に使用して、インターネット DNS ゾーンを制御することを前提としています。  
   
-メンバーシップ **管理者**, 、または同等の権限は、この手順を実行するために必要な最小値。  適切なアカウントの使用方法の詳細を確認し、グループ メンバーシップ [ローカルおよびドメインの既定のグループ](https://go.microsoft.com/fwlink/?LinkId=83477)します。   
+**Administrators**、またはそれと同等のメンバーシップが、この手順を実行するために最低限必要なメンバーシップです。  適切なアカウントの使用方法の詳細を確認し、グループ メンバーシップ [ローカルおよびドメインの既定のグループ](https://go.microsoft.com/fwlink/?LinkId=83477)します。   
   
 #### <a name="to-add-a-host-a-resource-record-to-the-internet-dns-zone-for-a-federation-server-proxy"></a>\) リソースレコード \(ホストをフェデレーションサーバープロキシのインターネット DNS ゾーンに追加するには  
   
@@ -52,9 +51,9 @@ Active Directory フェデレーションサービス (AD FS) \(\) AD FS のフ�
 インターネットクライアント要求がフェデレーションサーバープロキシによって正常に処理され、インターネット DNS ゾーンによって解決された後にフェデレーションサーバーに接続できるように、境界 DNS ゾーンで\) リソースレコード \(ホストを作成する必要があります。 このリソースレコードは、アカウントフェデレーションサーバー \(のホスト名 (たとえば、fs) を解決します。 fabrikam.com は、企業ネットワーク内の 192.168.1.4\) など、アカウントフェデレーション \(サーバーの IP アドレスに\) します。  
   
 > [!NOTE]  
-> 境界 DNS ゾーンを制御するために、DNS サーバーサービスを使用して windows 2000 Server、Windows Server 2003、Windows Server 2008、または Windows Server®2012を実行している DNS サーバーを使用していることを前提としています。  
+> 境界 DNS ゾーンを制御するために、DNS サーバーサービスを使用して windows 2000 Server、Windows Server 2003、Windows Server 2008、または Windows Server&reg; 2012 を実行している DNS サーバーを使用していることを前提としています。  
   
-メンバーシップ **管理者**, 、または同等の権限は、この手順を実行するために必要な最小値。  適切なアカウントの使用方法の詳細を確認し、グループ メンバーシップ [ローカルおよびドメインの既定のグループ](https://go.microsoft.com/fwlink/?LinkId=83477)します。   
+**Administrators**、またはそれと同等のメンバーシップが、この手順を実行するために最低限必要なメンバーシップです。  適切なアカウントの使用方法の詳細を確認し、グループ メンバーシップ [ローカルおよびドメインの既定のグループ](https://go.microsoft.com/fwlink/?LinkId=83477)します。   
   
 #### <a name="to-add-a-host-a-resource-record-to-the-perimeter-dns-zone-for-a-federation-server-proxy"></a>\) リソースレコード \(ホストをフェデレーションサーバープロキシの境界 DNS ゾーンに追加するには  
   
@@ -62,7 +61,7 @@ Active Directory フェデレーションサービス (AD FS) \(\) AD FS のフ�
   
 2.  コンソールツリーで、該当する前方参照ゾーンを右\-クリックし、[**新しいホスト \(A または AAAA\)** ] をクリックします。  
   
-3.  **[名前]** に、フェデレーションサーバーのコンピューター名のみを入力します。 たとえば、FQDN fs.fabrikam.com の場合は、「 **fs**」と入力します。  
+3.  **[名前]** に、フェデレーションサーバーのコンピューター名のみを入力します。 たとえば、完全修飾ドメイン名 fs.fabrikam.com の場合は、「**fs**」と入力します。  
   
 4.  **[Ip アドレス]** ボックスに、企業ネットワーク内のフェデレーションサーバーの ip アドレス (たとえば、192.168.1.4) を入力します。  
   

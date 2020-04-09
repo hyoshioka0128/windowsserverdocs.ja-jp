@@ -1,28 +1,22 @@
 ---
-title: スタート
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+title: 始点
+description: Windows コマンドの開始に関するトピックでは、特定のプログラムまたはコマンドを実行するための個別のコマンドプロンプトウィンドウを起動します。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0173f9b3-5cd7-4edb-b01e-d02193b4fadc
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 48197b1bc1d1c9f91a6a35b5fb8aad81b229eb6b
-ms.sourcegitcommit: 51e0b575ef43cd16b2dab2db31c1d416e66eebe8
+ms.openlocfilehash: 6ab8fc07923a2396a173803264d54a036983fb71
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76259087"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80834075"
 ---
-# <a name="start"></a>スタート
-
-
+# <a name="start"></a>始点
 
 指定したプログラムまたはコマンドを実行する別のコマンド プロンプト ウィンドウを起動します。
 
@@ -31,14 +25,14 @@ ms.locfileid: "76259087"
 ## <a name="syntax"></a>構文
 
 ```
-start ["<Title>"] [/d <Path>] [/i] [{/min | /max}] [{/separate | /shared}] [{/low | /normal | /high | /realtime | /abovenormal | belownormal}] [/affinity <HexAffinity>] [/wait] [/elevate] [/b] [<Command> [<Parameter>... ] | <Program> [<Parameter>... ]]
+start [<Title>] [/d <Path>] [/i] [{/min | /max}] [{/separate | /shared}] [{/low | /normal | /high | /realtime | /abovenormal | belownormal}] [/affinity <HexAffinity>] [/wait] [/elevate] [/b] [<Command> [<Parameter>... ] | <Program> [<Parameter>... ]]
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
 |パラメーター|説明|
 |---------|-----------|
-|"\<タイトル >"|コマンド プロンプト ウィンドウのタイトル バーに表示するタイトルを指定します。|
+|\<タイトル >|コマンド プロンプト ウィンドウのタイトル バーに表示するタイトルを指定します。|
 |/d \<パス >|スタートアップ ディレクトリを指定します。|
 |/i|Cmd.exe スタートアップ環境を新しいコマンド プロンプト ウィンドウに渡します。 場合 **/i** が指定されていない、現在の環境を使用します。|
 |/最小 \|/最大|最小化することを指定 ( **/min**) または最大化 (**最大**) 新しいコマンド プロンプト ウィンドウです。|
@@ -50,12 +44,12 @@ start ["<Title>"] [/d <Path>] [/i] [{/min | /max}] [{/separate | /shared}] [{/lo
 |/b|新しいコマンド プロンプト ウィンドウを開くことがなく、アプリケーションを起動します。 CTRL キーを押しながら C キーの処理には、アプリケーションは CTRL + C 処理を有効にしない限りは無視されます。 アプリケーションを中断するのにには、CTRL キーを押しながら BREAK キーを使用します。|
 |\<コマンド > \| \<プログラム >|開始するコマンドまたはプログラムを指定します。|
 |パラメーター > を \<しています...|コマンドまたはプログラムに渡すパラメーターを指定します。|
-|/?|コマンド プロンプトにヘルプを表示します。|
+|/?|コマンド プロンプトでヘルプを表示します。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
 - コマンドとして、ファイルの名前を入力して、ファイルの関連付けを通じて非実行可能ファイルを実行できます。
-- 拡張機能またはパスの修飾子を持たない最初のトークンとして文字列"CMD"を含むコマンドを実行すると、"CMD"は COMSPEC 変数の値に置き換えられます。 これを取得できないように **cmd** 、現在のディレクトリからです。
+- 拡張子またはパスの修飾子のない最初のトークンとして文字列 CMD を含むコマンドを実行すると、CMD は COMSPEC 変数の値に置き換えられます。 これを取得できないように **cmd** 、現在のディレクトリからです。
 - 32 ビットのグラフィカル ユーザー インターフェイス (GUI) アプリケーションを実行するときに **cmd** アプリケーションのコマンド プロンプトに戻る前に終了を待ちません。 この動作は、コマンド スクリプトからアプリケーションを実行する場合に発生しません。
 - 拡張機能が含まれていない最初のトークンを使用するコマンドを実行すると Cmd.exe、PATHEXT 環境変数の値を使用して、どのような順序で検索する拡張機能を決定します。 PATHEXT 変数の既定値は、します。  
   ```
@@ -64,7 +58,7 @@ start ["<Title>"] [/d <Path>] [/i] [{/min | /max}] [{/separate | /shared}] [{/lo
   構文は、各拡張機能を分離することをセミコロンで区切って、パス変数と同じことに注意してください。
 - 他の拡張機能との一致がない場合、実行可能ファイルを検索するとき **開始** ディレクトリ名が名前に一致するかどうかかどうかを確認します。 そのような場合は、 **開始** そのパスに Explorer.exe を開きます。
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a><a name=BKMK_examples></a>例
 
 コマンド プロンプトで、Myapp プログラムを起動し、現在のコマンド プロンプト ウィンドウの使用を保持する次のように入力します。
 ```
@@ -75,6 +69,6 @@ start myapp
 start /max start /?
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

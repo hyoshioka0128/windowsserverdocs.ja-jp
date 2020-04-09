@@ -1,24 +1,20 @@
 ---
 title: コンテナー ネットワークの概要
 description: このトピックでは、Windows コンテナーのネットワークスタックの概要について説明し、コンテナーネットワークの作成、構成、および管理に関するその他のガイダンスへのリンクを示します。
-manager: ravirao
-ms.custom: na
+manager: grcusanz
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-sdn
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 318659e5-e4a5-4e46-99d6-211dfc46f6b8
-ms.author: lizross
-author: jmesser81
+ms.author: anpaul
+author: AnirbanPaul
 ms.date: 09/04/2018
-ms.openlocfilehash: e8ec74ff0ebf0f0cb87db4d79ed5d37583f9beb9
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 8e2f10c7577f6f271c3766cff9a4fb1cc9d41140
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80317263"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854315"
 ---
 # <a name="container-networking-overview"></a>コンテナー ネットワークの概要
 

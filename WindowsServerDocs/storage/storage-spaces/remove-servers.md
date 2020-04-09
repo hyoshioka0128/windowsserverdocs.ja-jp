@@ -3,19 +3,19 @@ title: 記憶域スペース ダイレクトでのサーバーの削除
 ms.assetid: 9d8499a7-1307-473d-9f00-8a051164fad2
 ms.prod: windows-server
 ms.author: cosdar
-ms.manager: eldenc
+manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 description: Windows Server で記憶域スペース ダイレクト クラスターからサーバーを削除する方法。
 ms.date: 2/5/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ce8caef2b51279c97cc012045750b7a73d97a4ba
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: cfd12094cb8c5e0fdfb19b1eadb1b303e6b5f6e8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322314"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856125"
 ---
 # <a name="removing-servers-in-storage-spaces-direct"></a>記憶域スペース ダイレクトでのサーバーの削除
 

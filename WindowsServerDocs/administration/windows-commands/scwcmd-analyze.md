@@ -1,24 +1,20 @@
 ---
 title: Scwcmd 分析
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Windows コマンドに関するトピック * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0259271b-be5b-48d7-a51d-8b9b6786efb4
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 14426ae33144ae9bdd8f8154b4be74a3f088606b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1b0657523b49f8db444b6a48a41e3078d6351a34
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71371262"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80835235"
 ---
 # <a name="scwcmd-analyze"></a>Scwcmd: analyze
 
@@ -33,7 +29,7 @@ scwcmd analyze [[[/m:<ComputerName> | /ou:<Ou>] /p:<Policy>] | /i:<ComputerList>
 <ResultDir>] [/u:<UserName>] [/pw:<Password>] [/t:<Threads>] [/l] [/e]
 ```
 
-### <a name="parameters"></a>パラメーター
+#### <a name="parameters"></a>パラメーター
 
 |パラメーター|説明|
 |---------|-----------|
@@ -47,13 +43,13 @@ scwcmd analyze [[[/m:<ComputerName> | /ou:<Ou>] /p:<Policy>] | /i:<ComputerList>
 |/t:\<のスレッド >|分析中に保守する必要が優れた分析を同時操作の数を指定します (既定値 = 40、MinValue = 1、最大値 = 1000)。|
 |/l|ログに記録する分析処理を行われます。 1 つのログ ファイルが、分析するコンピューターごとに生成されます。 ログ ファイルは、結果のファイルと同じディレクトリに保存されます。 使用して、 **/o** 結果ファイルのディレクトリを指定するにはオプションです。|
 |/e|不一致が検出された場合は、アプリケーション イベント ログにイベントを記録します。|
-|/?|コマンド プロンプトにヘルプを表示します。|
+|/?|コマンド プロンプトでヘルプを表示します。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
 Scwcmd.exe は Windows Server 2008 R2、Windows Server 2008 または Windows Server 2003 を実行するコンピューターにできるだけです。
 
-## <a name="BKMK_Examples"></a>例
+## <a name="examples"></a><a name=BKMK_Examples></a>例
 
 ファイル webpolicy.xml に対してセキュリティ ポリシーを分析するには、次のように入力します。
 ```
@@ -75,6 +71,6 @@ scwcmd analyze /i:webpolicy.xml /t:100 /o:\\resultserver\results
 scwcmd analyze /ou:OU=WebServers,DC=Marketing,DC=ABCCompany,DC=com /p:webpolicy.xml /u:DomainAdmin
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
--   [コマンド ライン構文の記号](command-line-syntax-key.md)
+-   - [コマンド ライン構文の記号](command-line-syntax-key.md)

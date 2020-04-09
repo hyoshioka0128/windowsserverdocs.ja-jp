@@ -2,19 +2,19 @@
 title: 仮想マシンでの記憶域スペースダイレクトの使用
 ms.prod: windows-server
 ms.author: eldenc
-ms.manager: eldenc
+manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: eldenchristensen
 ms.date: 10/25/2017
 description: Microsoft Azure など、仮想マシンのゲストクラスターに記憶域スペースダイレクトを展開する方法。
 ms.localizationpriority: medium
-ms.openlocfilehash: 34241183a56cdb9be4690e1edd68b56320cc01de
-ms.sourcegitcommit: a6ec589a39ef104ec2be958cd09d2f679816a5ab
+ms.openlocfilehash: 74b1b90a780a0b238a356e942f8348e2a483d94a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78261921"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856115"
 ---
 # <a name="using-storage-spaces-direct-in-guest-virtual-machine-clusters"></a>ゲスト仮想マシンクラスターでの記憶域スペースダイレクトの使用
 
@@ -33,9 +33,9 @@ Azure[テンプレート](https://github.com/robotechredmond/301-storage-spaces-
 ## <a name="requirements"></a>要件
 
 仮想化環境に記憶域スペースダイレクトを展開する場合は、次の考慮事項が適用されます。
-
-> [!TIP]
-> Azure テンプレートでは、以下の考慮事項が自動的に構成されます。 Azure IaaS Vm にデプロイする場合は、推奨されるソリューションです。
+       
+>        !TIP]
+>        zure templates will automatically configure the below considerations for you and are the recommended solution when deploying in Azure IaaS VMs.
 
 -   最低2ノードと最大3ノード
 
@@ -59,32 +59,33 @@ Azure[テンプレート](https://github.com/robotechredmond/301-storage-spaces-
 
     この数は、物理障害の影響を受けやすいファイルとして仮想ディスクを実装できるため、ベアメタル展開とは異なります。
 
--   次の PowerShell コマンドレットを実行して、ヘルスサービスのドライブ交換の自動機能を無効にします。
+-   次の PowerShell コマンドレットを実行して、ヘルスサービスでドライブの自動置換を無効にします。
 
     ```powershell
-    Get-storagesubsystem clus* | set-storagehealthsetting -name “System.Storage.PhysicalDisk.AutoReplace.Enabled” -value “False”
-    ```
+          Get-storagesubsystem clus* | set-storagehealthsetting -name "System.Storage.PhysicalDisk.AutoReplace.Enabled" -value "False"
+          ```
 
--   ゲストクラスターにおける VHD/VHDX/VMDK ストレージの待機時間の回復性を高めるには、記憶域スペースの i/o タイムアウト値を増やします。
+-   To give greater resiliency to possible VHD / VHDX / VMDK storage latency in guest clusters, increase the Storage Spaces I/O timeout value:
 
     `HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\spaceport\\Parameters\\HwTimeout`
 
     `dword: 00007530`
 
-    16進数の7530に相当する10進数は、3万です。これは30秒です。 既定値は 1770 16 進数、つまり、6秒の 6000 Decimal であることに注意してください。
+    The decimal equivalent of Hexadecimal 7530 is 30000, which is 30 seconds. Note that the default value is 1770 Hexadecimal, or 6000 Decimal, which is 6 seconds.
 
-## <a name="not-supported"></a>サポートされない
+## Not supported
 
--   ホストレベルの仮想ディスクのスナップショット/復元
+-   Host level virtual disk snapshot/restore
 
-    代わりに、従来のゲストレベルのバックアップソリューションを使用して、記憶域スペースダイレクトボリューム上のデータをバックアップおよび復元します。
+    Instead use traditional guest level backup solutions to backup and restore the data on the Storage Spaces Direct volumes.
 
--   ホストレベルの仮想ディスクサイズの変更
+-   Host level virtual disk size change
 
-    仮想マシンを介して公開される仮想ディスクは、同じサイズと特性を保持する必要があります。 記憶域プールに容量を追加するには、各仮想マシンに仮想ディスクを追加し、プールに追加します。 現在の仮想ディスクと同じサイズおよび特性の仮想ディスクを使用することを強くお勧めします。
+    The virtual disks exposed through the virtual machine must retain the same size and characteristics. Adding more capacity to the storage pool can be accomplished by adding more virtual disks to each of the virtual machines and adding them to the pool. It's highly recommended to use virtual disks of the same size and characteristics as the current virtual disks.
 
-## <a name="see-also"></a>参照
+## See also
 
-[記憶域スペースダイレクト、ビデオ、ステップバイステップガイドをデプロイするための追加の Azure IAAS VM テンプレート](https://techcommunity.microsoft.com/t5/Failover-Clustering/Deploying-IaaS-VM-Guest-Clusters-in-Microsoft-Azure/ba-p/372126)。
+[Additional Azure Iaas VM templates for deploying Storage Spaces Direct, videos, and step-by-step guides](https://techcommunity.microsoft.com/t5/Failover-Clustering/Deploying-IaaS-VM-Guest-Clusters-in-Microsoft-Azure/ba-p/372126).
 
-[その他の記憶域スペースダイレクトの概要](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-direct-overview)
+[Additional Storage Spaces Direct Overview](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-direct-overview)
+""""""''''                                                                                                                                                                        """"""''''                                                                                                                                                                        

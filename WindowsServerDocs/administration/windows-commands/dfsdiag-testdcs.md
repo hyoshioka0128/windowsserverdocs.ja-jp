@@ -1,24 +1,20 @@
 ---
 title: dfsdiag TestDCs
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Dfsdiag TestDCs の Windows コマンドに関するトピック。指定されたドメインのドメインコントローラーの構成を確認します。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: abb915ab-23eb-45d7-9a2e-b6b9a5756a70
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a193e68b6f015b1535a98e20b52deb2a4a14034c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 092ce3710eb6d209f596683bd4ad054dadd11aa3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71378439"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80846321"
 ---
 # <a name="dfsdiag-testdcs"></a>dfsdiag TestDCs
 
@@ -26,30 +22,29 @@ ms.locfileid: "71378439"
 
 指定されたドメイン内の各ドメインコントローラーで次のテストを実行して、ドメインコントローラーの構成を確認します。  
   
--   DFS\) 名前空間サービス \(分散ファイルシステムが実行されていて、そのスタートアップの種類が [自動] に設定されていることを確認します。  
+-   分散ファイルシステム (DFS) 名前空間サービスが実行されており、そのスタートアップの種類が [自動] に設定されていることを確認します。  
   
--   では、NETLOGON と SYSvol のサイト\-コストの参照がサポートされているかどうかを確認します。  
+-   では、NETLOGON と SYSvol のサイトの見積もりの参照がサポートされているかどうかを確認します。  
   
--   ホスト名と IP アドレスによるサイトの関連付けの整合性を確認します。  
-  
-  
-  
+-   ホスト名と IP アドレスによるサイトの関連付けの整合性を確認します。
+
 ## <a name="syntax"></a>構文  
   
 ```  
 dfsdiag /TestDCs [/Domain:<Domain name>]  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a>パラメーター  
   
 |パラメーター|説明|  
 |-------|--------|  
-|\/ドメイン:<Domain name>|確認するドメイン。|  
+|/Domain:`<domain_name>`|確認するドメイン。|  
   
-## <a name="remarks"></a>注釈  
-\/ドメインは省略可能なパラメーターです。 既定値は、ローカルホストが参加しているローカルドメインです。  
+## <a name="remarks"></a>コメント  
+
+/Domain は省略可能なパラメーターです。 既定値は、ローカルホストが参加しているローカルドメインです。  
   
-## <a name="BKMK_Examples"></a>例  
+## <a name="examples"></a><a name=BKMK_Examples></a>例  
 Contoso.com ドメイン内のドメインコントローラーの構成を確認するには、次のように入力します。  
   
 ```  
@@ -58,7 +53,7 @@ dfsdiag /TestDCs /Domain:Contoso.com
   
 ## <a name="additional-references"></a>その他の参照情報  
   
--   [コマンド ライン構文の記号](command-line-syntax-key.md)  
+-   - [コマンド ライン構文の記号](command-line-syntax-key.md)  
   
 -   [dfsdiag](dfsdiag.md)  
   

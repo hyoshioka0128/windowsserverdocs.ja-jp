@@ -2,18 +2,17 @@
 title: DNS サーバーのトラブルシューティング
 description: この記事では、サーバー側からの DNS の問題をトラブルシューティングする方法について説明します。
 manager: dcscontentpm
-ms.prod: ''
 ms.technology: networking-dns
 ms.topic: article
 ms.author: delhan
 ms.date: 8/8/2019
 author: Deland-Han
-ms.openlocfilehash: 23e51adafa5ab6da0a9317a1b0fad88bd3901073
-ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
+ms.openlocfilehash: 4413c60072c43b623f386d5037e3da7ed5dc128d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/18/2020
-ms.locfileid: "76265804"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861325"
 ---
 # <a name="troubleshooting-dns-servers"></a>DNS サーバーのトラブルシューティング
 
@@ -25,12 +24,12 @@ ms.locfileid: "76265804"
 
 2. DNS サーバーが参照されている名前に対して権限を持っているかどうかを確認します。 その場合は、「[権限のあるデータに関する問題のチェック](#checking-for-problems-with-authoritative-data)」を参照してください。
 
-3. 次に、
+3. 次のコマンドを実行します。
 
    ```cmd
    nslookup <name> <IP address of the DNS server>
    ```
-   たとえば次のようになります。 
+   例 : 
    ```cmd
    nslookup app1 10.0.0.1
    ```
@@ -56,7 +55,7 @@ ms.locfileid: "76265804"
 
 - アプリケーション
 
-- [システム]
+- System
 
 - DNS サーバー
 

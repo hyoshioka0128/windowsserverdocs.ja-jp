@@ -1,23 +1,19 @@
 ---
 title: Windows Server Essentials ベストプラクティス Analyzer6 を実行します。
 description: Windows Server Essentials の使用方法について説明します。
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 00addf78-8999-4c8e-8ac4-4ebdde00c5a3
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 58d63f7d2b86480ac738f74d96b990528d6b527f
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: d5b89bdd3438eae0a1417efd40bde653cfef0fb1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80318792"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852395"
 ---
 # <a name="run-the-windows-server-essentials-best-practices-analyzer6"></a>Windows Server Essentials ベストプラクティス Analyzer6 を実行します。
 

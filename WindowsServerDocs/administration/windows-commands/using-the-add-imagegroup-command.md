@@ -1,47 +1,44 @@
 ---
-title: 追加 ImageGroup コマンドを使用してください。
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+title: ImageGroup の追加
+description: Windows 展開サービスサーバーにイメージグループを追加する、ImageGroup の Windows コマンドに関するトピック。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 6ca88671-51de-4924-b969-88f3dfd84270
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5e870bd5435e1aa2b155fee880d32c0d784ac398
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f12ed27ca1a809ec34dbefbc4ff7288ff194a83e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71363683"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80831895"
 ---
-# <a name="using-the-add-imagegroup-command"></a>追加 ImageGroup コマンドを使用してください。
+# <a name="add-imagegroup"></a>ImageGroup の追加
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-Windows 展開サービスサーバーにイメージグループを追加します。
+Windows 展開サービス サーバーには、イメージ グループを追加します。
+
 ## <a name="syntax"></a>構文
 ```
 wdsutil [Options] /add-ImageGroumediaGroup:<Image group name> [/Server:<Server name>]
 ```
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 |パラメーター|説明|
 |-------|--------|
-mediaGroup: <Image group name>|追加するイメージ グループの名前を指定します。|
+mediaGroup:<Image group name>|追加するイメージ グループの名前を指定します。|
 |[/Server:<Server name>]|サーバーの名前を指定します。 NetBIOS 名または完全修飾ドメイン名 (FQDN) のいずれかを指定できます。 サーバー名が指定されていない場合は、ローカルのサーバーが使用されます。|
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a><a name=BKMK_examples></a>例
 イメージ グループを追加するには、次のいずれかを入力します。
 ```
 wdsutil /add-ImageGroumediaGroup:ImageGroup2
-wdsutil /verbose /add-ImageGroumediaGroup:"My Image Group" /Server:MyWDSServer
+wdsutil /verbose /add-ImageGroumediaGroup:My Image Group /Server:MyWDSServer
 ```
-#### <a name="additional-references"></a>その他の参照情報
-[コマンドライン構文のポイント](command-line-syntax-key.md)
+## <a name="additional-references"></a>その他の参照情報
+- [コマンドライン構文のポイント](command-line-syntax-key.md)
 [get AllImageGroups コマンドを使用して](using-the-get-allimagegroups-command.md)
 [get ImageGroup コマンドを使用して](using-the-get-imagegroup-command.md)
 [削除 ImageGroup コマンドを使用して](using-the-remove-imagegroup-command.md)

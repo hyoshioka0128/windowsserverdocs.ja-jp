@@ -1,24 +1,20 @@
 ---
 title: Web アクセスを制限する
 description: MultiPoint Services でインターネットへのユーザーアクセスを制限する方法について説明します。
-ms.custom: na
 ms.date: 07/08/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 044f2fd5-5b87-42bb-ba0d-c06516ac48c8
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.openlocfilehash: 8e12eebd55aa066979bbcbe4d2f3e613b5876a01
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 485c82284df4d77eea075d092fa08c820567f6c3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71395332"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853685"
 ---
 # <a name="limit-web-access"></a>Web アクセスを制限する
 個々のデスクトップ上のユーザーアクティビティを監視するだけでなく、管理ユーザーは、ユーザーのアクセスをブロックする web サイトや web サイトを指定することによって、特定の web サイトへのユーザーのアクセスを制限することができます。  
@@ -42,14 +38,14 @@ ms.locfileid: "71395332"
   
 1. MultiPoint ダッシュボードの **[Web 制限]** タブで、開始 ドロップダウンメニューをクリックし、 **[すべてのデスクトップで Web アクセスを制限]** する をクリックし\-ます。  
   
-   **[Web 制限の構成]** ページが開きます。 ユーザーがアクセスできるサイトが一覧表示されます。 次のいずれかの操作を行います。  
+   **[Web 制限の構成]** ページが開きます。 ユーザーがアクセスできるサイトが一覧表示されます。 以下のいずれかを実行します。  
   
 2. 許可するサイトを追加するには、 **[これらのサイトのみを許可する]** をクリックし、許可する Web アドレスを入力し、 **[追加]** をクリックします。  
   
    ユーザーがアクセスできないようにするサイトを追加するには、 **[これらのサイトのみを許可]** する をクリックし、ユーザーにアクセスしない web アドレスを入力して、 **[追加]** をクリックします。  
   
    > [!NOTE]
-   > たとえば、「Contoso.com」と入力すると、www.contoso.com に対して相対的なサイトが許可または ブロックされます (たとえば、www\.newpage.contoso.com)。 「Contoso」と入力すると、すべての Contoso 関連サイト (contoso.com、contoso.uk など) が許可または制限されます。  
+   > たとえば、「Contoso.com」と入力すると、 www.contoso.com に対して相対的なサイトが許可または ブロックされます (たとえば、www\.newpage.contoso.com)。 「Contoso」と入力すると、すべての Contoso 関連サイト (contoso.com、contoso.uk など) が許可または制限されます。  
   
 3. 許可または禁止するサイトの一覧から Web アドレスを削除するには、Web アドレスを選択し、 **[削除]** をクリックします。  
   

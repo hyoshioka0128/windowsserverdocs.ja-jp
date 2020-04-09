@@ -1,23 +1,19 @@
 ---
 title: Windows Server Essentials migration1 の移行元サーバーを準備する
 description: Windows Server Essentials の使用方法について説明します。
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f5861ae9-77cb-4d37-b4c5-8f0757213385
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 503b8edc645b43da1dc5c5fb37547e8e0245d4a2
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: d7a718e9e84866b6a1f626499b7e2bec58de498f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80318813"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852405"
 ---
 # <a name="prepare-your-source-server-for-windows-server-essentials-migration1"></a>Windows Server Essentials migration1 の移行元サーバーを準備する
 
@@ -81,7 +77,7 @@ ms.locfileid: "80318813"
 #### <a name="run-the-windows-server-solutions-best-practices-analyzer"></a>Windows Server Solutions ベスト プラクティス アナライザーを実行する  
  移行プロセスを開始する前に、Windows Server Solutions ベスト プラクティス アナライザー (BPA) を実行して、サーバー、ネットワーク、ドメインに問題がないことを確認できます。 BPA は次のソースから構成情報を収集します。  
   
--   Active Directory® Windows Management Instrumentation (WMI)  
+-   Active Directory&reg; Windows Management Instrumentation (WMI)  
   
 -   レジストリ  
   

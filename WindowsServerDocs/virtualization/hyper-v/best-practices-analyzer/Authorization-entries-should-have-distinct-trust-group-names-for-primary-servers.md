@@ -2,20 +2,19 @@
 title: 承認エントリには、同じ信頼グループに属していない仮想マシンを持つプライマリサーバーに対して、異なる信頼グループ名を付ける必要があります。
 description: このベストプラクティスアナライザールールのテキストのオンラインバージョン。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: 8827a3a7-9f3c-4f51-826a-8e2ec43e01df
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: ab71e0e6562b73d81b871914fd0e9e76570c518e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 22e1a3bdeb40c5440862b4931dda344756cc34a5
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366538"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857815"
 ---
 # <a name="authorization-entries-should-have-distinct-trust-group-names-for-primary-servers-with-virtual-machines-that-are-not-part-of-the-same-trust-group"></a>承認エントリには、同じ信頼グループに属していない仮想マシンを持つプライマリサーバーに対して、異なる信頼グループ名を付ける必要があります。
 
@@ -27,7 +26,7 @@ ms.locfileid: "71366538"
 |-|-|  
 |**オペレーティング システム**|Windows Server 2016|  
 |**製品/機能**|Hyper-V|  
-|**順**|Warning|  
+|**順**|［警告］|  
 |**カテゴリ**|構成|  
   
 次のセクションでは、斜体は、この問題のためのベスト プラクティス アナライザー ツールで表示される UI テキストを示します。  

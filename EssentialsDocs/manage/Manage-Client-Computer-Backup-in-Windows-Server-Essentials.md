@@ -1,23 +1,19 @@
 ---
 title: Windows Server Essentials でクライアント コンピューター バックアップを管理する
 description: Windows Server Essentials の使用方法について説明します。
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1b4776e8-9504-4b98-ae80-11da797d9819
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 30c99c67644cad359d13fe351fe406b837819840
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: ae59fb050b41cef866a8f0e97d8d07d28b54ca52
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80311328"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852825"
 ---
 # <a name="manage-client-computer-backup-in-windows-server-essentials"></a>Windows Server Essentials でクライアント コンピューター バックアップを管理する
 

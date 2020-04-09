@@ -1,24 +1,20 @@
 ---
 title: wbadmin restore カタログ
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Wbadmin restore catalog の Windows コマンドに関するトピックでは、指定した記憶域の場所からローカルコンピューターのバックアップカタログを回復します。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ce1e24a0-821d-4353-b09d-8f82c5c4ad56
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b0d646440ca9b30f9fa30fb1ac3ff08458b8e44d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0ce9182e4e405b1538277db25f06b6a49d7240f9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71362329"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80829705"
 ---
 # <a name="wbadmin-restore-catalog"></a>wbadmin restore カタログ
 
@@ -39,19 +35,19 @@ wbadmin restore catalog
 [-quiet]
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
 |パラメーター|説明|
 |---------|-----------|
 |-backuptarget|バックアップが作成された時点でのシステムのバックアップカタログの場所を指定します。|
 |-コンピューター|バックアップカタログを回復するコンピューターの名前を指定します。 複数のコンピューターのバックアップが同じ場所に格納されている場合は、を使用します。 **-BackupTarget**が指定されている場合は、を使用する必要があります。|
-|-通知の停止|ユーザーにプロンプトを表示せずにサブコマンドを実行します。|
+|-quiet|ユーザーにプロンプトを表示せずにサブコマンドを実行します。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
 バックアップを保存する場所 (ディスク、DVD、またはリモート共有フォルダー) が破損または失われ、バックアップカタログの復元に使用できない場合は、 **wbadmin delete catalog**を使用して破損したカタログを削除します。 この場合は、バックアップカタログを削除した後で、新しいバックアップを作成する必要があります。
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a><a name=BKMK_examples></a>例
 
 ディスク d: に格納されているバックアップからカタログを復元するには、次のように入力します。
 ```
@@ -62,8 +58,8 @@ wbadmin restore catalog -backupTarget:d
 wbadmin restore catalog -backupTarget:\\servername\share -machine:server01
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
--   [コマンド ライン構文の記号](command-line-syntax-key.md)
+-   - [コマンド ライン構文の記号](command-line-syntax-key.md)
 -   [Wbadmin](wbadmin.md)
 -   [WBCatalog](https://technet.microsoft.com/library/jj902437.aspx)コマンドレット

@@ -1,7 +1,6 @@
 ---
 ms.assetid: 7671e0c9-faf0-40de-808a-62f54645f891
 title: Windows Server 2016 での AD FS へのアップグレード
-description: ''
 author: billmath
 manager: femila
 ms.date: 04/09/2018
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 913e45e52c5c6c137d2bf798bb5b86a65f9d1caa
-ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
+ms.openlocfilehash: 4c13a3ecbcc6ade1455c10dde5f6a89e0303e161
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77517577"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857635"
 ---
 # <a name="upgrading-to-ad-fs-in-windows-server-2016-using-a-wid-database"></a>WID データベースを使用した、Windows Server 2016 での AD FS へのアップグレード
 
@@ -152,13 +151,13 @@ Set-WebApplicationProxyConfiguration -UpgradeConfigurationVersion
 
 
 > [!NOTE] 
-> ハイブリッド証明書信頼を使用する Windows Hello for Business が実行されている場合、AD FS 2019 には既知の PRT の問題が存在します。 ADFS 管理イベントログで、無効な Oauth 要求を受信したときにこのエラーが発生することがあります。 クライアント ' NAME ' は、スコープ ' ugs ' のリソースにアクセスすることが許可されていません。 このエラーを修復するには: 
-> 1. AD FS 管理コンソールを起動します。 Brose to "Services > Scope の説明"
-> 2. [スコープの説明] を右クリックし、[スコープの説明の追加] を選択します。
-> 3. 名前 に「ugs」と入力し、適用 をクリックし > OK をクリックします。
-> 4. 管理者として Powershell を起動する
-> 5. コマンド "AdfsApplicationPermission" を実行します。 ClientRoleIdentifier を含む ScopeNames: {openid, aza} を探します。 ObjectIdentifier をメモしておきます。
-> 6. 手順 5 >-AddScope ' ugs ' のコマンド "AdfsApplicationPermission-TargetIdentifier < ObjectIdentifier を実行します。
+> ハイブリッド証明書信頼を使用する Windows Hello for Business が実行されている場合、AD FS 2019 には既知の PRT の問題が存在します。 ADFS 管理イベントログで、無効な Oauth 要求を受信したときにこのエラーが発生することがあります。 クライアント ' NAME ' は、スコープ ' ugs ' のリソースにアクセスすることが許可されていません。 このエラーを修復するには、次のようにします。 
+> 1. AD FS 管理コンソールを起動します。 [Services]\(サービス\) > [Scope Descriptions]\(スコープ記述\) を参照します
+> 2. [Scope Descriptions]\(スコープ記述\) を右クリックし、[Add Scope Description]\(スコープ記述の追加\) を選択します
+> 3. 名前に「ugs」と入力し、[適用] > [OK] をクリックします
+> 4. 管理者として PowerShell を起動します
+> 5. コマンド "Get-AdfsApplicationPermission" を実行します。 ClientRoleIdentifier を含む ScopeNames :{openid, aza} を探します。 ObjectIdentifier をメモしておきます。
+> 6. コマンド "Set-AdfsApplicationPermission -TargetIdentifier <手順 5 の ObjectIdentifier> -AddScope 'ugs' を実行します
 > 7. ADFS サービスを再起動します。
-> 8. クライアントの場合: クライアントを再起動します。 ユーザーは、WHFB をプロビジョニングするように求められます。
-> 9. プロビジョニングウィンドウがポップアップ表示されない場合は、NGC トレースログを収集し、さらにトラブルシューティングを行う必要があります。
+> 8. クライアントの場合: クライアントを再起動します。 ユーザーは WHFB をプロビジョニングするように求められます。
+> 9. プロビジョニング ウィンドウがポップアップ表示されない場合は、NGC トレース ログを収集し、さらにトラブルシューティングを行う必要があります。

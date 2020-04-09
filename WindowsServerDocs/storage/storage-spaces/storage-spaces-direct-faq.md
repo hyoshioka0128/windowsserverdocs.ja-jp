@@ -1,7 +1,6 @@
 ---
 title: 記憶域スペースダイレクトに関してよく寄せられる質問
 description: 記憶域スペースダイレクトの詳細
-keywords: 記憶域
 ms.prod: windows-server
 ms.author: kaushik
 ms.technology: storage-spaces
@@ -9,12 +8,12 @@ ms.topic: article
 author: kaushika-msft
 ms.date: 10/24/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 19dcc1c57fe7c7eea74b003553a0b0a6ab5508aa
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 18384ab3c9e520ace9237b68474a45c8ec349502
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950237"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856105"
 ---
 # <a name="storage-spaces-direct---frequently-asked-questions-faq"></a>記憶域スペースダイレクトに関してよく寄せられる質問 (FAQ)
 
@@ -36,13 +35,13 @@ ms.locfileid: "75950237"
 
 新しい障害ドメインを追加すると、作成した新しい仮想ディスクは3方向ミラーに移動します。 ただし、既存の仮想ディスクは2方向ミラーディスクのままです。 既存のボリュームから新しい仮想ディスクにデータをコピーすることで、新しい回復性の利点を得ることができます。
  
-## <a name="the-storage-spaces-direct-was-created-using-the-autoconfig0-switch-and-the-pool-created-manually-when-i-try-to-query-the-storage-spaces-direct-pool-to-create-a-new-volume-i-get-a-message-that-says-enable-clusters2d-again-what-should-i-do"></a>記憶域スペースダイレクトが autoconfig を使用して作成されました: 0スイッチとプールを手動で作成します。 記憶域スペースダイレクトプールに対してクエリを実行して新しいボリュームを作成しようとすると、"Enable-clusters2d を再度有効にする" というメッセージが表示されます。どうしたらいいでしょう。
+## <a name="the-storage-spaces-direct-was-created-using-the-autoconfig0-switch-and-the-pool-created-manually-when-i-try-to-query-the-storage-spaces-direct-pool-to-create-a-new-volume-i-get-a-message-that-says-enable-clusters2d-again-what-should-i-do"></a>記憶域スペースダイレクトが autoconfig を使用して作成されました: 0スイッチとプールを手動で作成します。 記憶域スペースダイレクトプールに対してクエリを実行して新しいボリュームを作成しようとすると、"Enable-clusters2d を再度有効にする" というメッセージが表示されます。 どうしたらいいのでしょうか?
 
 既定では、S2D コマンドレットを使用して記憶域スペースダイレクトを構成すると、コマンドレットによってすべてのことが行われます。 プールと層が作成されます。 Autoconfig: 0 を使用する場合は、すべてを手動で実行する必要があります。 プールのみを作成した場合、階層は必ずしも作成されません。 接続されているデバイスに対応する方法で階層をまったく作成していないか、作成されていない階層を作成した場合は、"Enable-clusters2d を再度有効にする" というエラーメッセージが表示されます。 運用環境では、autoconfig スイッチを使用しないことをお勧めします。 
  
 ## <a name="is-it-possible-to-add-a-spinning-disk-hdd-to-the-storage-spaces-direct-pool-after-you-have-created-storage-spaces-direct-with-ssd-devices"></a>SSD デバイスで記憶域スペースダイレクトを作成した後、スピンディスク (HDD) を記憶域スペースダイレクトプールに追加することはできますか。
 
-いいえ。 既定では、単一のデバイスの種類を使用してプールを作成すると、キャッシュディスクが構成されず、すべてのディスクが容量に使用されます。 構成に NVME ディスクを追加することができ、NVME ディスクはキャッシュ用に構成されます。
+No: 既定では、単一のデバイスの種類を使用してプールを作成すると、キャッシュディスクが構成されず、すべてのディスクが容量に使用されます。 構成に NVME ディスクを追加することができ、NVME ディスクはキャッシュ用に構成されます。
  
 ## <a name="i-have-configured-a-2-rack-fault-domain-rack-1-has-2-fault-domains-rack-2-has-1-fault-domain-each-server-has-4-capacity-100-gb-devices-can-i-use-all-1200-gb-of-space-from-the-pool"></a>2ラック障害ドメインを構成しました: ラック1に2つの障害ドメインがあります。ラック2に1つの障害ドメインがあります。 各サーバーには、4つの容量 100 GB のデバイスがあります。 プールから 1200 GB の領域をすべて使用できますか。
 
@@ -58,7 +57,7 @@ ms.locfileid: "75950237"
  
 ## <a name="is-there-a-calculator-that-shows-the-exact-size-of-the-disks-that-are-being-set-aside-for-cache-capacity-and-resiliency-that-would-enable-me-to-plan-better"></a>キャッシュ、容量、回復性のために確保されているディスクの正確なサイズを示す電卓があるかどうかを確認できます。
 
-記憶域スペース計算ツールを使用すると、計画に役立てることができます。 これは https://aka.ms/s2dcalc で入手できます。
+記憶域スペース計算ツールを使用すると、計画に役立てることができます。 これは https://aka.ms/s2dcalcで入手できます。
  
 ## <a name="what-is-the-best-configuration-that-you-would-recommend-when-configuring-6-servers-and-3-racks"></a>6台のサーバーと3つのラックを構成するときに推奨される最適な構成は何ですか。
 
@@ -87,5 +86,5 @@ Get-PhysicalDisk -SerialNumber <SerialNumber> | Enable-StorageMaintenanceMode
 これ：
 
 ```powershell
-get-virtualdisk -friendlyname “xyz” | get-physicalextent
+get-virtualdisk -friendlyname "xyz" | get-physicalextent
 ```

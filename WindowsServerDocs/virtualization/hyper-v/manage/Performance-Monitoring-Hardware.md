@@ -8,12 +8,12 @@ ms.author: ifufondu
 manager: chhuybre
 ms.topic: article
 ms.date: 09/20/2019
-ms.openlocfilehash: 515831df6b97271b52c4a715fd979f2afff4a3a1
-ms.sourcegitcommit: f73662069329b1abf6aa950c2a826bc113718857
+ms.openlocfilehash: 1165ce58cf781d6ef5f905cb8b01c00fa4552edb
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73240347"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860265"
 ---
 # <a name="enable-intel-performance-monitoring-hardware-in-a-hyper-v-virtual-machine"></a>Hyper-v 仮想マシンで Intel パフォーマンス監視ハードウェアを有効にする
 

@@ -1,23 +1,19 @@
 ---
 title: '手順 7: Windows Server Essentials への移行のために移行後のタスクを実行する'
 description: Windows Server Essentials の使用方法について説明します。
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d382e3fd-d393-4bd0-883f-db50104a969f
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 105f5ab013729b4323b56c278cd34c19898d2a9d
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 579be2c36ca01a4b8ab2a34157e13e298e34c48c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80318724"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852325"
 ---
 # <a name="step-7-perform-post-migration-tasks-for-the-windows-server-essentials-migration"></a>手順 7: Windows Server Essentials への移行のために移行後のタスクを実行する
 

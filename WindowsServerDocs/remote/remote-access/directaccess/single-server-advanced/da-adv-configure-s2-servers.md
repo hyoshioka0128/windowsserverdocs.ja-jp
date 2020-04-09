@@ -2,22 +2,18 @@
 title: 手順2詳細な DirectAccess サーバーを構成する
 description: このトピックは、「Windows Server 2016 の詳細設定を使用して単一の DirectAccess サーバーを展開する」の一部です。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 35afec8e-39a4-463b-839a-3c300ab01174
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: bf740143c4d9c855df080addd75fdaeee6a1ceac
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: bfcdd58da67f41e84ff0956e3f0a0d9b63fa4f75
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80309115"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854875"
 ---
 # <a name="step-2-configure-advanced-directaccess-servers"></a>手順2詳細な DirectAccess サーバーを構成する
 

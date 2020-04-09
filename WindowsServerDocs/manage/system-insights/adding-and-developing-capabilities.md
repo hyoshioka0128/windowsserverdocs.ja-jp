@@ -1,54 +1,49 @@
 ---
 title: 機能の追加と開発
-description: Insights のシステムでは、任意の OS 更新プログラムを必要とせず、システム Insights に新しい予測機能を追加することができます。 これにより、Microsoft とサード パーティを作成し、関心のあるシナリオに対処する機能の新しい中間リリースを提供するなど、開発者ができます。 既存のシステム Insights 管理プレーンの統合もと新機能は、カスタム データを収集して分析するを指定できます。
-ms.custom: na
+description: System Insights を使用すると、OS の更新を必要とせずに、新しい予測機能を System Insights に追加できます。 これにより、Microsoft やサードパーティを含む開発者は、お客様の関心のあるシナリオに対処するための新機能を作成および提供することができます。 新しい機能では、収集および分析するカスタムデータを指定し、既存の System Insights 管理プレーンと統合することもできます。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: system-insights
-ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: ''
 author: gawatu
 ms.author: gawatu
 manager: mallikarjun.chadalapaka
 ms.date: 7/31/2018
-ms.openlocfilehash: 8caddead774ac69a38906f3c0a0d2eaf005c1d28
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0dd4e24197d5a8c438d70a849e435ce28792dfce
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59817483"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858435"
 ---
-# <a name="adding-and-developing-new-capabilities"></a>追加して、新しい機能の開発
+# <a name="adding-and-developing-new-capabilities"></a>新機能の追加と開発
 
->適用先:Windows Server 2019
+>適用対象: Windows Server 2019
 
-Insights のシステムでは、任意の OS 更新プログラムを必要とせず、システム Insights に新しい予測機能を追加することができます。 これにより、Microsoft とサード パーティを作成し、関心のあるシナリオに対処する機能の新しい中間リリースを提供するなど、開発者ができます。 
+System Insights を使用すると、OS の更新を必要とせずに、新しい予測機能を System Insights に追加できます。 これにより、Microsoft やサードパーティを含む開発者は、お客様の関心のあるシナリオに対処するための新機能を作成および提供することができます。 
 
-すべての新機能と統合、既存のシステム Insights インフラストラクチャを拡張します。
+新しい機能は、既存の System Insights インフラストラクチャと統合し、拡張することができます。
 
-- 新機能のことができます**パフォーマンス カウンターまたはシステム イベントを指定**、これは収集、ローカルに永続化および機能が呼び出されたときに、分析のための機能に返されます。  
-- 新しい機能は**既存の Windows Admin Center を活用して、管理プレーンの PowerShell**します。 だけでなく、新機能は、Insights のシステムで検出されるからカスタムのスケジュールと修復アクションにも活用します。 
+- 新しい機能で**は、任意のパフォーマンスカウンターまたはシステムイベントを指定**できます。このイベントは、ローカルに収集されて保存され、機能が呼び出されたときに分析のために機能に返されます。  
+- 新しい機能**では、既存の Windows 管理センターと PowerShell の管理プレーンを活用**できます。 新しい機能が System Insights で検出可能になるだけでなく、カスタムスケジュールや修復アクションの恩恵を受けることもできます。 
 
-## <a name="manage-new-capabilities"></a>新しい機能を管理します。
-- [学習](add-remove-update-capabilities.md)を追加、削除、および PowerShell を使用して機能を更新する方法。 
+## <a name="manage-new-capabilities"></a>新機能の管理
+- PowerShell を使用して機能を追加、削除、更新する方法に[ついて説明](add-remove-update-capabilities.md)します。 
 
-## <a name="develop-a-capability"></a>機能の 1 つの開発します。
-独自のカスタム機能を記述を開始に役立つ次のリソースを使用します。
-- [学習](data-sources.md)についてデータ ソースを収集することができます。
-- [ダウンロード](https://www.nuget.org/packages/Microsoft.WindowsServer.SystemInsights/)システム Insights NuGet パッケージは、クラスと機能の 1 つを記述する必要があるインターフェイスが含まれています。
-- [参照してください](https://aka.ms/systeminsights-api)API ドキュメントをシステム Insights クラスとインターフェイスについて説明します。 
-- [使用](https://aka.ms/systeminsights-samplecapability)に役立つシステム Insights サンプルの機能は、開始を取得します。 これは、機能の 1 つの登録を収集するデータ ソースを指定、およびシステム データの分析を開始する方法を示します。
+## <a name="develop-a-capability"></a>機能の開発
+独自のカスタム機能の作成を開始する際には、次のリソースを参考にしてください。
+- 収集できるデータソースについて[説明](data-sources.md)します。
+- 機能を記述するために必要なクラスとインターフェイスが含まれている System Insights NuGet パッケージを[ダウンロード](https://www.nuget.org/packages/Microsoft.WindowsServer.SystemInsights/)します。
+- System Insights のクラスとインターフェイスの詳細については、API のドキュメントを[参照](https://aka.ms/systeminsights-api)してください。 
+- [使用](https://aka.ms/systeminsights-samplecapability)を開始するには、System Insights のサンプル機能を使用します。 ここでは、機能を登録する方法、収集するデータソースを指定する方法、およびシステムデータの分析を開始する方法を示します。
 
 >[!NOTE]
->これは、プレリリース機能です。 新しい機能を追加し、フィードバックを組み込むと、変更される可能性が。
+>これはプレリリース機能です。 新しい機能を追加してフィードバックを組み込むため、変更される可能性があります。
 
-## <a name="see-also"></a>関連項目
-システム Insights に関する詳細については、するには、次のリソースを使用します。
+## <a name="see-also"></a>参照
+System Insights の詳細については、次のリソースを参照してください。
 
-- [システム Insights の概要](overview.md)
-- [機能の理解](understanding-capabilities.md)
-- [機能を管理します。](managing-capabilities.md)
-- [追加、削除、および機能の更新](add-remove-update-capabilities.md)
-- [システム Insights に関する FAQ](faq.md)
+- [System Insights の概要](overview.md)
+- [機能について](understanding-capabilities.md)
+- [管理機能](managing-capabilities.md)
+- [機能の追加、削除、更新](add-remove-update-capabilities.md)
+- [System Insights の FAQ](faq.md)

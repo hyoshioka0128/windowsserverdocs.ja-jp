@@ -1,24 +1,20 @@
 ---
 title: reg load
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Windows コマンドに関するトピック * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 3b0b2b1b-f510-4108-9e9d-7057e924aa6e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: db661e311e3fe8c393750716de5dab375e7817f4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 140c6b51b9f88081a8686ebebbc9400f241b5ef6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71384699"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80836385"
 ---
 # <a name="reg-load"></a>reg load
 
@@ -34,7 +30,7 @@ ms.locfileid: "71384699"
 reg load KeyName FileName
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
 |パラメーター|説明|
 |---------|-----------|
@@ -42,22 +38,22 @@ reg load KeyName FileName
 |\<ファイル名 >|読み込むファイルのパスと名前を指定します。 使用してこのファイルを事前に作成する必要があります、 **reg 保存** 操作と .hiv 拡張子です。|
 |/?|ヘルプを表示 **reg ロード** コマンド プロンプト。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
 次の表に、戻り値の **reg ロード** 操作します。
 
-|Value|説明|
+|値|説明|
 |-----|-----------|
 |0|成功|
 |1|失敗|
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a><a name=BKMK_examples></a>例
 
 キー HKLM\TempHive に TempHive.hiv をという名前のファイルを読み込むには、次のように入力します。
 ```
 REG LOAD HKLM\TempHive TempHive.hiv
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

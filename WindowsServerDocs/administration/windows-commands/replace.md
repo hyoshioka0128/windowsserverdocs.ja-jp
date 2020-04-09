@@ -1,24 +1,20 @@
 ---
 title: replace
 description: Replace コマンドを使用してファイルを置換する方法について説明します。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 6143661e-d90f-4812-b265-6669b567dd1f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 0e96be58106847a3ff6451cdb7792a197ec40227
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d44e4f8383a77582177f4d9b161210207ce46e63
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71384510"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80835905"
 ---
 # <a name="replace"></a>replace
 
@@ -35,19 +31,19 @@ replace [<Drive1>:][<Path1>]<FileName> [<Drive2>:][<Path2>] [/a] [/p] [/r] [/w]
 replace [<Drive1>:][<Path1>]<FileName> [<Drive2>:][<Path2>] [/p] [/r] [/s] [/w] [/u] 
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
 |パラメーター|説明|
 |---------|-----------|
-|[\<ドライブ 1 >:][\< Path1 >] \<FileName >|ソースファイルまたはファイルのセットの場所と名前を指定します。 *ファイル名*は必須で、ワイルドカード文字 ( **&#42;** と **?** ) を含めることができます。|
-|[\<ドライブ 2 >:][\< Path2 >]|コピー先ファイルの場所を指定します。 置換するファイルのファイル名を指定することはできません。 ドライブまたはパスを指定しない場合、 **replace**は現在のドライブとディレクトリをコピー先として使用します。|
+|[\<Drive1 >:][\<Path1 >]\<ファイル名 >|ソースファイルまたはファイルのセットの場所と名前を指定します。 *ファイル名*は必須で、ワイルドカード文字 ( **&#42;** と **?** ) を含めることができます。|
+|[\<Drive2 >:][\<Path2 >]|コピー先ファイルの場所を指定します。 置換するファイルのファイル名を指定することはできません。 ドライブまたはパスを指定しない場合、 **replace**は現在のドライブとディレクトリをコピー先として使用します。|
 |/a|既存のファイルを置き換える代わりに、新しいファイルをコピー先のディレクトリに追加します。 このコマンドラインオプションは、 **/s**または **/u**コマンドラインオプションと共に使用することはできません。|
 |/p|コピー先ファイルを置き換える前、またはソースファイルを追加する前に、確認を求めるメッセージが表示されます。|
 |/r|読み取り専用ファイルと保護されていないファイルを置き換えます。 読み取り専用ファイルを置換しようとしても、 **/r**を指定しなかった場合は、エラーが発生して置換操作が停止されます。|
 |/w|は、ソースファイルの検索を開始する前に、ディスクの挿入を待機します。 **/W**を指定しない場合は **、enter**キーを押すとすぐに、ファイルの置換または追加が開始されます。|
 |/s|コピー先ディレクトリ内のすべてのサブディレクトリを検索し、一致するファイルを置き換えます。 **/S**を **/a**コマンドラインオプションと共に使用することはできません。 **Replace**コマンドでは、 *Path1*で指定されているサブディレクトリは検索されません。|
 |/u|コピー先ディレクトリのファイルのうち、ソースディレクトリ内のファイルよりも古いファイルのみを置き換えます。 **/U**を **/a**コマンドラインオプションと共に使用することはできません。|
-|/?|コマンド プロンプトにヘルプを表示します。|
+|/?|コマンド プロンプトでヘルプを表示します。|
 
 ## <a name="remarks"></a>コメント
 
@@ -74,12 +70,12 @@ replace [<Drive1>:][<Path1>]<FileName> [<Drive2>:][<Path2>] [/p] [/r] [/s] [/w] 
 > [!NOTE]
 > バッチプログラムの**if**コマンドラインで ERRORLEVEL パラメーターを使用すると、 **replace**によって返される終了コードを処理できます。
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a><a name="BKMK_examples"></a>例
 
 Phone. cli という名前のファイルのすべてのバージョン (C ドライブの複数のディレクトリに表示されます) を更新するには、次のように入力します。
 
 `replace a:\phones.cli c:\ /s`
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

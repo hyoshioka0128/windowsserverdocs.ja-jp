@@ -1,17 +1,17 @@
 ---
 title: ブランチオフィスに関する考慮事項
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
-ms.openlocfilehash: 5a07553e6662fd79230d566ba2049c5e8997f4d6
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: a9893ecd76e142dd243a1d99e83a48d2edfd5872
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322504"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856565"
 ---
 # <a name="branch-office-considerations"></a>ブランチ オフィスに関する考慮事項
 
@@ -61,4 +61,4 @@ Set-HgsKeyProtectionConfiguration -AllowKeyMaterialCaching:$true
 ```
 
 キャッシュ可能なキープロテクターは各シールドされた VM に対して一意であるため、HGS でこの設定を有効にした後で、再起動せずに、シールドされた Vm を起動してキャッシュ可能なキー保護機能を取得する必要があります。
-シールドされた VM が古いバージョンの Windows Server を実行している Hyper-v ホストに移行する場合、または古いバージョンの HGS から新しいキー保護機能を取得する場合は、オフラインモードで起動することはできませんが、HGS へのアクセスが利用可能になったときにオンラインモードで実行を継続できます。でき.
+シールドされた VM が古いバージョンの Windows Server を実行している Hyper-v ホストに移行する場合、または古いバージョンの HGS から新しいキー保護機能を取得する場合は、オフラインモードで起動することはできませんが、HGS へのアクセスが可能な場合はオンラインモードで実行を継続できます。

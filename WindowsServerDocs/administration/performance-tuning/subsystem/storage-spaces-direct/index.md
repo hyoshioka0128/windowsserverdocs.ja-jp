@@ -6,14 +6,14 @@ ms.technology: performance-tuning-guide
 ms.topic: article
 ms.assetid: 15a519fa-37cc-4d84-a9fe-097d33bb71ea
 author: phstee
-ms.author: Vshankar; DanLo; clausjor; StevenEk
+ms.author: vshankar; danlo; clausjor; stevenek
 ms.date: 4/14/2017
-ms.openlocfilehash: dabfadb30666ec93aa36985e2bc55a3f496e6d34
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a24bbdb83ec1b08f56989368a4831549c594f6c0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383474"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851605"
 ---
 # <a name="performance-tuning-for-storage-spaces-direct"></a>記憶域スペース ダイレクトのパフォーマンス チューニング
 
