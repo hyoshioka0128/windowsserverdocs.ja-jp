@@ -1,7 +1,6 @@
 ---
 ms.assetid: 6b38480e-5b1c-49f0-9d46-8cf22f70f0d2
 title: Windows Server 2012 R2 で AD FS 用のラボ環境をセットアップする
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 52199ab8ca6f82443e78e72c6980746fa561363a
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 44de547b0a9c8636b07886d35c451bca6ec46341
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79323124"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855175"
 ---
 # <a name="set-up-the-lab-environment-for-ad-fs-in-windows-server-2012-r2"></a>Windows Server 2012 R2 で AD FS 用のラボ環境をセットアップする
 
@@ -43,12 +42,12 @@ ms.locfileid: "79323124"
 
 4.  [手順 4: クライアントコンピューター (Client1) を構成する](../../ad-fs/deployment/../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md#BKMK_10)
 
-## <a name="BKMK_1"></a>手順 1: ドメインコントローラー (DC1) を構成する
+## <a name="step-1-configure-the-domain-controller-dc1"></a><a name="BKMK_1"></a>手順 1: ドメインコントローラー (DC1) を構成する
 このテスト環境では、ルート Active Directory ドメイン**contoso.com**を呼び出し、 <strong>pass@word1</strong>を管理者パスワードとして指定できます。
 
 -   AD DS の役割サービスをインストールし Active Directory Domain Services (AD DS) をインストールして、Windows Server 2012 R2 でコンピューターをドメインコントローラーにします。 この操作により、ドメインコントローラーの作成の一環として AD DS スキーマがアップグレードされます。 詳細と詳細な手順については、「[https://technet.microsoft.com/library/hh472162.aspx](https://technet.microsoft.com/library/hh472162.aspx)」を参照してください。
 
-### <a name="BKMK_2"></a>テスト Active Directory アカウントを作成する
+### <a name="create-test-active-directory-accounts"></a><a name="BKMK_2"></a>テスト Active Directory アカウントを作成する
 ドメイン コントローラーが機能するようになったら、このドメインにテスト用のグループとユーザー アカウントを作成して、作成したユーザー アカウントをグループ アカウントに追加できます。 このトピックの最初に示したチュートリアル ガイドのチュートリアルを完了するには、これらのアカウントを使用します。
 
 次のアカウントを作成します。
@@ -74,7 +73,7 @@ Active Directory フェデレーションサービス (AD FS) (AD FS) のイン�
 
     ```
 
-## <a name="BKMK_4"></a>手順 2: デバイス登録サービスを使用してフェデレーションサーバー (ADFS1) を構成する
+## <a name="step-2-configure-the-federation-server-adfs1-by-using-device-registration-service"></a><a name="BKMK_4"></a>手順 2: デバイス登録サービスを使用してフェデレーションサーバー (ADFS1) を構成する
 別の仮想マシンをセットアップするには、Windows Server 2012 R2 をインストールし、ドメイン**contoso.com**に接続します。 ドメインに参加した後、コンピューターをセットアップし、AD FS の役割のインストールと構成に進みます。
 
 これらの手順を説明したビデオを視聴するには、「 [Active Directory フェデレーション サービスの使い方ビデオ シリーズ: AD FS サーバー ファームのインストール](https://technet.microsoft.com/video/dn469436)」を参照してください。
@@ -202,7 +201,7 @@ DC1 では、デバイス登録サービス用に次のドメイン ネーム �
     > [!IMPORTANT]
     > 実際の展開では、会社に複数のユーザー プリンシパル名 (UPN) サフィックスがある場合、DNS の各 UPN サフィックスに 1 つずつ、複数の CNAME レコードを作成する必要があります。
 
-## <a name="BKMK_5"></a>手順 3: web サーバー (WebServ1) とサンプルの要求ベースのアプリケーションを構成する
+## <a name="step-3-configure-the-web-server-webserv1-and-a-sample-claims-based-application"></a><a name="BKMK_5"></a>手順 3: web サーバー (WebServ1) とサンプルの要求ベースのアプリケーションを構成する
 Windows Server 2012 R2 オペレーティングシステムをインストールして仮想マシン (WebServ1) をセットアップし、それをドメイン**contoso.com**に接続します。 ドメインに参加したら、Web サーバーの役割のインストールと構成を開始できます。
 
 このトピックの最初に示したチュートリアルを完了するには、フェデレーション サーバー (ADFS1) で保護されたサンプル アプリケーションが必要です。
@@ -222,7 +221,7 @@ Windows Identity Foundation SDK ([https://www.microsoft.com/download/details.asp
 
 4.  [フェデレーションサーバーで証明書利用者信頼を作成する](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md#BKMK_11)
 
-### <a name="BKMK_15"></a>Web サーバーの役割と Windows Identity Foundation をインストールする
+### <a name="install-the-web-server-role-and-windows-identity-foundation"></a><a name="BKMK_15"></a>Web サーバーの役割と Windows Identity Foundation をインストールする
 
 1. > [!NOTE]
    > Windows Server 2012 R2 のインストールメディアにアクセスできる必要があります。
@@ -247,11 +246,11 @@ Windows Identity Foundation SDK ([https://www.microsoft.com/download/details.asp
 
 10. **[インストール オプションの確認]** ページで、 **[代替ソース パスの指定]** をクリックします。 Windows Server 2012 R2 のインストールメディアにある Sxs ディレクトリへのパスを入力します。 たとえば、D:\Sources\Sxs です。 **[OK]** をクリックし、 **[インストール]** をクリックします。
 
-### <a name="BKMK_13"></a>Windows Identity Foundation SDK をインストールする
+### <a name="install-windows-identity-foundation-sdk"></a><a name="BKMK_13"></a>Windows Identity Foundation SDK をインストールする
 
 1.  Windowsidentityfoundation-sdk-3.5.msi 3.5 .msi を実行して、Windows Identity Foundation SDK 3.5 (https://www.microsoft.com/download/details.aspx?id=4451)をインストールします。 既定のオプションをすべて選択してください。
 
-### <a name="BKMK_9"></a>単純な要求アプリを IIS で構成する
+### <a name="configure-the-simple-claims-app-in-iis"></a><a name="BKMK_9"></a>単純な要求アプリを IIS で構成する
 
 1.  コンピューターの証明書ストアに有効な SSL 証明書をインストールします。 この証明書には、Web サーバーの名前 **webserv1.contoso.com** が含まれている必要があります。
 
@@ -322,7 +321,7 @@ Windows Identity Foundation SDK ([https://www.microsoft.com/download/details.asp
 
 Web サーバーで実行されるサンプルアプリケーションを AD FS でセキュリティで保護する必要があります。 これを行うには、フェデレーション サーバー (ADFS1) に証明書利用者信頼を追加します。 これらの手順を説明したビデオを視聴するには、「 [Active Directory フェデレーション サービスの使い方ビデオ シリーズ: 証明書利用者の信頼を追加する](https://technet.microsoft.com/video/adfs-how-to-add-a-relying-party-trust)」を参照してください。
 
-### <a name="BKMK_11"></a>フェデレーションサーバーで証明書利用者信頼を作成する
+### <a name="create-a-relying-party-trust-on-your-federation-server"></a><a name="BKMK_11"></a>フェデレーションサーバーで証明書利用者信頼を作成する
 
 1.  フェデレーション サーバー (ADFS1) で、**AD FS 管理コンソール**の **[証明書利用者信頼]** に移動し、 **[証明書利用者信頼の追加]** をクリックします。
 
@@ -350,7 +349,7 @@ Web サーバーで実行されるサンプルアプリケーションを AD FS 
 
 10. **[完了]** をクリックし、 **[OK]** をクリックします。
 
-## <a name="BKMK_10"></a>手順 4: クライアントコンピューター (Client1) を構成する
+## <a name="step-4-configure-the-client-computer-client1"></a><a name="BKMK_10"></a>手順 4: クライアントコンピューター (Client1) を構成する
 別の仮想マシンをセットアップし、Windows 8.1 をインストールします。 この仮想マシンは、他の仮想マシンと同じ仮想ネットワークに属している必要があります。 このマシンは Contoso ドメインに参加させないでください。
 
 クライアントは、フェデレーション サーバー (ADFS1) で使用される SSL 証明書を信頼する必要があります。これは、「 [Step 2: Configure the federation server (ADFS1) with Device Registration Service](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md#BKMK_4)」で設定します。 また、証明書の失効情報の検証が可能になっている必要もあります。

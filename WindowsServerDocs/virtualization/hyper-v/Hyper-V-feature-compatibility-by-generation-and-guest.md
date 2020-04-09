@@ -2,25 +2,23 @@
 title: 生成とゲストでの HYPER-V 機能の互換性
 description: キーの Hyper-v 機能と互換性のある生成とオペレーティングシステムの一覧を示します。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 81c1f32d-7814-4992-8a66-dd4b77c939b4
-author: KBDAzure
+author: kbdazure
 ms.author: kathydav
 ms.date: 12/05/2016
-ms.openlocfilehash: cdca6c31ff14fe63e99ec4afa2581885677bb61d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7212cf21858c8031db0a72efa8d79d78974b0309
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365543"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853235"
 ---
 # <a name="hyper-v-feature-compatibility-by-generation-and-guest"></a>生成とゲストでの HYPER-V 機能の互換性
 
->適用先:Windows Server 2016
+>適用対象: Windows Server 2016
   
 この記事の表では、ジェネレーションといくつかのカテゴリごとにグループ化、HYPER-V の機能と互換性があるオペレーティング システムを説明します。 一般に、最も新しいオペレーティング システムを実行している第 2 世代仮想マシンの機能の最高レベルの可用性が得られます。  
   
@@ -49,7 +47,7 @@ ms.locfileid: "71365543"
 ## <a name="development-and-test"></a>開発およびテスト  
 機能  | 生成 | ゲスト オペレーティング システム  
 ------------- | ------------- | -----------  
-COM/シリアル ポート | 1 と 2 <br>**注:** 第2世代の場合は、Windows PowerShell を使用してを構成します。 詳細については、「[カーネルデバッグ用の COM ポートの追加](./plan/should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v.md#add-a-com-port-for-kernel-debugging)」を参照してください。 | 任意のサポートされているゲスト  
+COM/シリアル ポート | 1 と 2 <br>**注:** ジェネレーション 2 の場合は、Windows PowerShell を使用して構成します。 詳細については、「[カーネルデバッグ用の COM ポートの追加](./plan/should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v.md#add-a-com-port-for-kernel-debugging)」を参照してください。 | 任意のサポートされているゲスト  
   
 ## <a name="mobility"></a>モビリティ  
   
@@ -71,16 +69,16 @@ COM/シリアル ポート | 1 と 2 <br>**注:** 第2世代の場合は、Windo
   
 機能  | 生成 | ゲスト オペレーティング システム  
 ------------- | ------------- | -----------  
-個別のデバイスの割り当て (DDA) | 1 と 2 | Windows Server 2016 では、Windows Server 2012 R2 Update 3133690 でのみのインストール、Windows 10 <br> **注:** 更新プログラム3133690の詳細については、こちら[のサポート記事を参照して](https://support.microsoft.com/kb/3133690)ください。  
-拡張セッション モード | 1 と 2 | Windows Server 2016、Windows Server 2012 R2、Windows 10、Windows 8.1、リモートデスクトップサービス有効 <br>**注意**:場合によっては、ホストも構成する必要があります。 詳細については、「[Use local resources on Hyper-V virtual machine with VMConnect (VMConnect を使って Hyper-V 仮想マシン上でローカル リソースを使用する)](./learn-more/Use-local-resources-on-Hyper-V-virtual-machine-with-VMConnect.md)」をご覧ください。  
+個別のデバイスの割り当て (DDA) | 1 と 2 | Windows Server 2016 では、Windows Server 2012 R2 Update 3133690 でのみのインストール、Windows 10 <br> **注:** 3133690 の更新プログラムの詳細については、「 [この](https://support.microsoft.com/kb/3133690) サポートの記事です。  
+拡張セッション モード | 1 と 2 | Windows Server 2016、Windows Server 2012 R2、Windows 10、Windows 8.1、リモートデスクトップサービス有効 <br>**注**: も、ホストを構成する必要があります。 詳細については、「[Use local resources on Hyper-V virtual machine with VMConnect (VMConnect を使って Hyper-V 仮想マシン上でローカル リソースを使用する)](./learn-more/Use-local-resources-on-Hyper-V-virtual-machine-with-VMConnect.md)」をご覧ください。  
 RemoteFx | 1 と 2 | 32 ビットおよび 64 ビット バージョンの Windows で Windows 8 以降では 1 を生成します。 <br> 64 ビットの Windows 10 バージョンに第 2 世代  
   
 ## <a name="security"></a>セキュリティ  
   
 機能  | 生成 | ゲスト オペレーティング システム  
 ------------- | ------------- | -----------  
-セキュアブート | 2 | **Linux**:Ubuntu 14.04 以降、SUSE Linux Enterprise Server 12 以降、Red Hat Enterprise Linux 7.0 以降、および CentOS 7.0 以降<br>**Windows**:第2世代仮想マシンで実行できるすべてのサポートされているバージョン  
-シールドされた仮想マシン | 2 | **Windows**:第2世代仮想マシンで実行できるすべてのサポートされているバージョン  
+セキュア ブート | 2 | **Linux**: Ubuntu 14.04 およびそれ以降、SUSE Linux Enterprise Server 12 と以降では、Red Hat Enterprise Linux 7.0 およびその後、および CentOS 7.0 以降<br>**Windows**: サポートされているすべての第 2 世代仮想マシンで実行できるバージョン  
+シールドされた仮想マシン | 2 | **Windows**: サポートされているすべての第 2 世代仮想マシンで実行できるバージョン  
   
 ## <a name="storage"></a>ストレージ  
   

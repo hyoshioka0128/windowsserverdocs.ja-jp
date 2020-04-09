@@ -2,24 +2,23 @@
 title: Hyper-v のベストプラクティスアナライザー
 description: このベストプラクティスアナライザールールのテキストのオンラインバージョン。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: 3747faa5-6e9f-499e-8a79-3fb9d73b6b92
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 671e1de78b390e1b595bb218ece375e88a47155b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d4a2fb889aa13bc945a38a3d879ee013769fabca
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365148"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857695"
 ---
 # <a name="best-practices-analyzer-for-hyper-v"></a>Hyper-v のベストプラクティスアナライザー
 
->適用先:Windows Server 2016
+>適用対象: Windows Server 2016
   
 Windows の管理の*ベスト プラクティス*とは、標準的な環境の下で、専門家の定義に従ってサーバーを構成するための望ましい方法と考えられるガイドラインです。 ベストプラクティス違反は、重要なものであっても、必ずしも問題を引き起こすとは限りません。 ただし、パフォーマンスの低下、信頼性の低下、予期しない競合、セキュリティリスクの増大、またはその他の潜在的な問題の原因となる可能性のあるサーバー構成を示すことができます。  
   

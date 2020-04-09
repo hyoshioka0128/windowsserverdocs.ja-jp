@@ -4,15 +4,15 @@ description: PowerShell のパフォーマンス チューニング
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: landing-page
-ms.author: JasonSh
+ms.author: jasonsh
 author: lzybkr
 ms.date: 10/16/2017
-ms.openlocfilehash: cdc284f5787234e586af2c1ec87e8dee4305486b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 382305e2bd15ef6fcb038c3fa064bc2841eabae1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355056"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851955"
 ---
 # <a name="performance-tuning-for-powershell"></a>PowerShell のパフォーマンス チューニング
 

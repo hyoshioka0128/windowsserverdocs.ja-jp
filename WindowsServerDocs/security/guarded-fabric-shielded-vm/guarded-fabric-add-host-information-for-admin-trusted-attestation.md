@@ -1,21 +1,21 @@
 ---
 title: 管理者によって信頼された構成証明のホスト情報を追加する
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: 87089ebc-b953-4aa3-96b5-966cf91acb02
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 946f91d05063475ae45fb334c67f8d5081d3984d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8da873fa10564be788261069b00a1afac1732c48
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403721"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856955"
 ---
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 # <a name="authorize-hyper-v-hosts-using-admin-trusted-attestation"></a>管理者によって信頼された構成証明を使用して Hyper-v ホストを承認する
 

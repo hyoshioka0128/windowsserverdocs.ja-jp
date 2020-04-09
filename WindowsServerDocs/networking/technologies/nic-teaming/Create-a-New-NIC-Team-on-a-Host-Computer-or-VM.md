@@ -2,23 +2,19 @@
 title: ホストコンピューターまたは VM に新しい NIC チームを作成する
 description: このトピックでは、Windows Server 2016 を実行しているホストコンピューターまたは Hyper-v 仮想マシン (VM) に新しい NIC チームを作成します。
 manager: dougkim
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-nict
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a4caaa86-5799-4580-8775-03ee213784a3
 ms.author: lizross
 author: eross-msft
 ms.date: 09/13/2018
-ms.openlocfilehash: 1463d3b9a596436b93423806a0acdb40728a15fb
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: d552460a94f4278c32f57130d7973ca5bdedca08
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80316690"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854775"
 ---
 # <a name="create-a-new-nic-team-on-a-host-computer-or-vm"></a>ホストコンピューターまたは VM に新しい NIC チームを作成する
 

@@ -1,30 +1,26 @@
 ---
 title: ユーザー ステーションの管理
 description: MultiPoint Services でユーザーステーションを管理する方法について説明します。
-ms.custom: na
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b418578d-3a4c-49b0-90db-8389b320b2f6
 author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 7f46d2a68fc6247bddc1251c32ac55544b6fbf52
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7b434002b5f542e3a9242290217fa66d418ee2f1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405068"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853495"
 ---
 # <a name="manage-user-stations"></a>ユーザー ステーションの管理
 このセクションでは、MultiPoint Services のシステムを構成する*ステーション*を管理する方法について説明します。 MultiPoint Services システムの管理には、MultiPoint マネージャーのハードウェアコンポーネントとソフトウェアコンポーネントの管理の両方が含まれます。 MultiPoint Services システムでは、デスクトップは、各ユーザーステーションのモニターに表示されるソフトウェアのユーザーインターフェイスです。  
   
 ## <a name="station-status"></a>ステーションの状態  
-**[ステーション]** タブでは、各デスクトップの次の種類の状態を表示できます。状態は次のとおりです。  
+**[ステーション]** タブでは、デスクトップごとに次の種類の状態を表示できます。状態は次のとおりです。  
   
 -   ログオンしているユーザー  
   
@@ -52,7 +48,7 @@ ms.locfileid: "71405068"
 ## <a name="split-a-station"></a>ステーションの分割  
 解像度が 1024 x 768 を超えるステーションのモニターはいずれも、2 つのステーションに分割できます。 ステーションの分割の詳細については、「[ユーザー ステーションの分割](Split-a-User-Station.md)」のトピックを参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [ユーザーの接続状態を表示する](View-User-Connection-Status.md)  
 [ユーザー セッションをログオフまたは切断する](Log-off-or-Disconnect-User-Sessions.md)  
 [ユーザーセッションを中断してアクティブのままにする](Suspend-and-Leave-User-Session-Active.md)  

@@ -6,15 +6,15 @@ ms.technology: networking-ras
 ms.topic: article
 ms.assetid: d8cf3bae-45bf-4ffa-9205-290d555c59da
 ms.localizationpriority: medium
-ms.author: lizross
-author: eross-msft
+ms.author: v-tea
+author: Teresa-MOTIV
 ms.date: 06/11/2018
-ms.openlocfilehash: 394e589028d9d3d22851ea970346b0f150fee393
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 0bdf2917a5f33b1e2ba5e3d216d8610887c79e8c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80309403"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860465"
 ---
 # <a name="step-5-configure-dns-and-firewall-settings"></a>手順 5. DNS とファイアウォールの設定を構成する
 

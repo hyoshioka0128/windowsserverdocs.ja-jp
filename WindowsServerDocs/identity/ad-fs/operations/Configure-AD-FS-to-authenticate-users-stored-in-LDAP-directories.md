@@ -1,7 +1,6 @@
 ---
 ms.assetid: e863ab80-4e4c-48d3-bdaa-31815ef36bae
 title: LDAP ディレクトリに保存されたユーザーを認証するように AD FS を構成する
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 191ec0243c8c34c2084dd07f94f0b3f70b197756
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9c194128cb5d96bf84e19b11b9d8803c61e34490
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71358070"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859905"
 ---
 # <a name="configure-ad-fs-to-authenticate-users-stored-in-ldap-directories"></a>LDAP ディレクトリに保存されたユーザーを認証するように AD FS を構成する
 
@@ -23,13 +22,13 @@ ms.locfileid: "71358070"
 多くの組織では、id 管理ソリューションは、Active Directory、AD LDS、またはサードパーティの LDAP ディレクトリの組み合わせで構成されています。 LDAP v3 準拠のディレクトリに格納されているユーザーを認証するための AD FS サポートを追加すると、ユーザー id が格納されている場所に関係なく、エンタープライズレベルの AD FS 機能セット全体を活用できます。 AD FS は、すべての LDAP v3 準拠のディレクトリをサポートします。
 
 > [!NOTE]
-> AD FS の一部の機能には、シングルサインオン (SSO)、デバイスの認証、柔軟な条件付きアクセスポリシー、Web アプリケーションプロキシとの統合によるどこからでも機能のサポート、および Azure AD とのシームレスなフェデレーションが含まれます。Office 365 などの SaaS アプリケーションを含むクラウドをユーザーとユーザーが利用できるようにします。  詳細については、「 [Active Directory フェデレーションサービス (AD FS) の概要](../../ad-fs/AD-FS-2016-Overview.md)」を参照してください。
+> AD FS の一部の機能には、シングルサインオン (SSO)、デバイスの認証、柔軟な条件付きアクセスポリシー、Web アプリケーションプロキシとの統合による、どこからでも機能をサポートする機能、および Azure AD とのシームレスなフェデレーションがあります。これにより、Office 365 などの SaaS アプリケーションを含むクラウドを利用できます。  詳細については、「 [Active Directory フェデレーションサービス (AD FS) の概要](../../ad-fs/AD-FS-2016-Overview.md)」を参照してください。
 
 AD FS が LDAP ディレクトリからユーザーを認証できるようにするには、**ローカル要求プロバイダー信頼**を作成することによって、この ldap ディレクトリを AD FS ファームに接続する必要があります。  ローカル要求プロバイダー信頼は、AD FS ファーム内の LDAP ディレクトリを表す信頼オブジェクトです。 ローカル要求プロバイダー信頼オブジェクトは、ローカルのフェデレーションサービスに対してこの LDAP ディレクトリを識別するさまざまな識別子、名前、および規則で構成されます。
 
 複数の**ローカル要求プロバイダー信頼**を追加することにより、同じ AD FS ファーム内で、それぞれが独自の構成を持つ複数の LDAP ディレクトリをサポートできます。 また、AD FS 存在するフォレストによって信頼されていない AD DS フォレストは、ローカル要求プロバイダー信頼としてモデル化することもできます。 Windows PowerShell を使用して、ローカルの要求プロバイダー信頼を作成できます。
 
-LDAP ディレクトリ (ローカル要求プロバイダー信頼) は、同じ AD FS サーバー (要求プロバイダー信頼) と同じ AD FS ファーム内に共存できます。したがって、AD FS の1つのインスタンスは、ユーザーに対するアクセスを認証および承認することができます。AD ディレクトリと非 AD ディレクトリの両方に格納されます。
+LDAP ディレクトリ (ローカル要求プロバイダー信頼) は同じ AD FS サーバー上の AD ディレクトリ (要求プロバイダー信頼) と共存できます。そのため、同じ AD FS ファーム内で、AD FS の1つのインスタンスが、AD ディレクトリと非 AD ディレクトリの両方に格納されているユーザーの認証と承認を行うことができるようになります。
 
 LDAP ディレクトリからのユーザーの認証では、フォームベースの認証のみがサポートされています。 LDAP ディレクトリでのユーザーの認証では、証明書ベースの認証と統合 Windows 認証はサポートされていません。
 

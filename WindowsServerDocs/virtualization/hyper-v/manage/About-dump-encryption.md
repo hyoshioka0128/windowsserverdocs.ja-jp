@@ -8,12 +8,12 @@ author: larsiwer
 ms.asset: b78ab493-e7c3-41f5-ab36-29397f086f32
 ms.author: kathydav
 ms.date: 11/03/2016
-ms.openlocfilehash: 2232f62090e171060f25e4c2513a217e2ab98eaa
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: a7df8de5a828b68a341191eaa1a400f80dd9127b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950547"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852905"
 ---
 # <a name="about-dump-encryption"></a>ダンプの暗号化について
 ダンプ暗号化を使用して、システムに対して生成されたクラッシュダンプとライブダンプを暗号化できます。 ダンプは、ダンプごとに生成される対称暗号化キーを使用して暗号化されます。 このキー自体は、ホストの信頼された管理者 (クラッシュダンプ暗号化キープロテクター) によって指定された公開キーを使用して暗号化されます。 これにより、一致する秘密キーを持つユーザーだけが暗号化を解除して、ダンプの内容にアクセスできるようになります。 この機能は、保護されたファブリックで利用されています。
@@ -23,10 +23,10 @@ ms.locfileid: "75950547"
 ### <a name="manual-configuration"></a>手動構成
 レジストリを使用してダンプ暗号化を有効にするには、次のレジストリ値を構成し `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\CrashControl`
 
-| ［値の名前］ | タスクバーの検索ボックスに | Value |
+| ［値の名前］ | 種類 | 値 |
 | ---------- | ---- | ----- |
 | DumpEncryptionEnabled | DWORD | ダンプの暗号化を有効にする場合は1、ダンプの暗号化を無効にする場合は0。 |
-| Encryptionublickey::P | バイナリ | ダンプの暗号化に使用する公開キー (RSA、2048ビット)。 これは[BCRYPT_RSAKEY_BLOB](https://msdn.microsoft.com/library/windows/desktop/aa375531(v=vs.85).aspx)として書式設定する必要があります。 |
+| Encryptionublickey::P | Binary | ダンプの暗号化に使用する公開キー (RSA、2048ビット)。 これは[BCRYPT_RSAKEY_BLOB](https://msdn.microsoft.com/library/windows/desktop/aa375531(v=vs.85).aspx)として書式設定する必要があります。 |
 | Encryption-1:: Thumbprint | String | クラッシュダンプの暗号化を解除するときに、ローカルの証明書ストアで秘密キーを自動的に検索できるようにする証明書の拇印。 |
 
 
@@ -52,7 +52,7 @@ ms.locfileid: "75950547"
 ## <a name="troubleshooting-dump-encryption"></a>ダンプの暗号化のトラブルシューティング
 システムでダンプ暗号化が有効になっていても、ダンプが生成されていない場合は、システムの `System` イベントログで `Kernel-IO` イベント1207を確認してください。 ダンプ暗号化を初期化できない場合、このイベントが作成され、ダンプは無効になります。
 
-| 詳細なエラー メッセージ | 軽減の手順 |
+| 詳細なエラーメッセージ | 軽減の手順 |
 | ---------------------- | ----------------- |
 | 公開キーまたは拇印レジストリが見つかりません | 両方のレジストリ値が想定される場所に存在するかどうかを確認します。 |
 | 無効な公開キー | PublicKey レジストリ値に格納されている公開キーが[BCRYPT_RSAKEY_BLOB](https://msdn.microsoft.com/library/windows/desktop/aa375531(v=vs.85).aspx)として格納されていることを確認します。 |

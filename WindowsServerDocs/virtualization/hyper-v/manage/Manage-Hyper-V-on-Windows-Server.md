@@ -9,16 +9,16 @@ ms.assetid: 5c06b632-dd19-46ca-9f51-130c321963d8
 author: jasongerend
 ms.author: jgerend
 ms.date: 01/08/2018
-ms.openlocfilehash: 1d63eacfd827503c52cb16f94983182c001e88c5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ee2306aa2b207cf2aba164feeb47c496f7f25533
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71364086"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860275"
 ---
 # <a name="manage-hyper-v-on-windows-server"></a>Windows Server で Hyper-v を管理する
 
->適用先:Windows Server 2016、Windows Server 2019
+>適用対象: Windows Server 2016、Windows Server 2019
 
 このセクションのリソースは、Windows Server で Hyper-v を管理する際に役立ちます。
 

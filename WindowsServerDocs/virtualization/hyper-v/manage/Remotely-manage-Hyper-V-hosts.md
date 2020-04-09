@@ -2,21 +2,19 @@
 title: Hyper-v ホストのリモート管理
 description: Hyper-v ホストと Hyper-v マネージャーの間のバージョンの互換性について説明します。また、クロスドメインやスタンドアロンを含むさまざまな環境でリモートホストに接続する方法についても説明します。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2d34e98c-6134-479b-8000-3eb360b8b8a3
-author: KBDAzure
+author: kbdazure
 ms.author: kathydav
 ms.date: 12/06/2016
-ms.openlocfilehash: 677e054fe42978697ef786b73daac75069f0408f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 592bb6352c4ca56770e1a3051ecbc88d9d378467
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71392691"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859415"
 ---
 # <a name="remotely-manage-hyper-v-hosts-with-hyper-v-manager"></a>Hyper-v マネージャーを使用して Hyper-v ホストをリモートで管理する
 
@@ -51,7 +49,7 @@ Hyper-v マネージャーから hyper-v ホストに接続するには、左側
 
 ## <a name="manage-hyper-v-on-a-local-computer"></a>ローカルコンピューターで Hyper-v を管理する
 
-Hyper-v マネージャーには、ローカルコンピューターを含むコンピューターを追加するまで、Hyper-v をホストしているコンピューターは表示されません。 これには、次の手順を実行します。
+Hyper-v マネージャーには、ローカルコンピューターを含むコンピューターを追加するまで、Hyper-v をホストしているコンピューターは表示されません。 これを行うには :
 
 1. 左側のウィンドウで、 **[Hyper-v マネージャー]** を右クリックします。
 2. [**サーバーへの接続] を**クリックします。
@@ -85,7 +83,7 @@ Windows Server 2016 と Windows 10 の hyper-v マネージャーでは、以前
 
 ### <a name="connect-to-a-windows-2016-or-windows-10-remote-host-as-a-different-user"></a>別のユーザーとして Windows 2016 または Windows 10 リモートホストに接続する
 
-これにより、hyper-v ホスト上の Hyper-v Administrators グループまたは Administrators グループのメンバーであるユーザーとしてローカルコンピューター上で実行されていない場合に、Hyper-v ホストに接続できます。 これには、次の手順を実行します。
+これにより、hyper-v ホスト上の Hyper-v Administrators グループまたは Administrators グループのメンバーであるユーザーとしてローカルコンピューター上で実行されていない場合に、Hyper-v ホストに接続できます。 これを行うには :
 
 1. 左側のウィンドウで、 **[Hyper-v マネージャー]** を右クリックします。
 1. [**サーバーへの接続] を**クリックします。
@@ -97,7 +95,7 @@ Windows Server 2016 と Windows 10 の hyper-v マネージャーでは、以前
 
 ### <a name="connect-to-a-windows-2016-or-windows-10-remote-host-using-ip-address"></a>IP アドレスを使用して Windows 2016 または Windows 10 リモートホストに接続する
 
-これには、次の手順を実行します。
+これを行うには :
 
 1. 左側のウィンドウで、 **[Hyper-v マネージャー]** を右クリックします。
 1. [**サーバーへの接続] を**クリックします。
@@ -108,7 +106,7 @@ Windows Server 2016 と Windows 10 の hyper-v マネージャーでは、以前
 
 ### <a name="connect-to-a-windows-2016-or-windows-10-remote-host-outside-your-domain-or-with-no-domain"></a>ドメインの外部またはドメインなしで Windows 2016 または Windows 10 リモートホストに接続する
 
-これには、次の手順を実行します。
+これを行うには :
 
 1. 管理対象の Hyper-v ホストで、管理者として Windows PowerShell セッションを開きます。
 
@@ -169,7 +167,7 @@ Windows PowerShell を使用するには、管理者として次のコマンド�
 add-windowsfeature rsat-hyper-v-tools
 ```
 
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  
 [Hyper-V をインストールする](../get-started/Install-the-Hyper-V-role-on-Windows-Server.md) 
 

@@ -1,29 +1,25 @@
 ---
 title: Windows Small Business Server 2008 から Windows Server Essentials への移行
 description: Windows Server Essentials の使用方法について説明します。
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 71e3243e-2da9-409a-ae1f-813d4c9062e1
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: f72c696f5d3f4f131a2767b021ddfe3dcd73f8f4
-ms.sourcegitcommit: 3c3dfee8ada0083f97a58997d22d218a5d73b9c4
+ms.openlocfilehash: 6a8c8a142cb40b8211450d16753ec9796987d208
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80639846"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852515"
 ---
 # <a name="migrate-windows-small-business-server-2008-to-windows-server-essentials"></a>Windows Small Business Server 2008 から Windows Server Essentials への移行
 
 >適用対象: windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-このガイドでは、既存の Windows SBS 2008 ドメインを新しいハードウェア上の Windows Server® 2012 Essentials に移行してから、設定とデータを移行する方法について説明します。 このガイドでは、移行の完了後に Windows Server Essentials ネットワークから既存のサーバーを削除する方法についても説明します。  
+このガイドでは、既存の Windows SBS 2008 ドメインを新しいハードウェア上の Windows Server&reg; 2012 Essentials に移行してから、設定とデータを移行する方法について説明します。 このガイドでは、移行の完了後に Windows Server Essentials ネットワークから既存のサーバーを削除する方法についても説明します。  
   
 > [!NOTE]
 >  移行中の問題を回避するために、Windows Server Essentials 製品開発チームでは、移行を開始する前にこのドキュメントを読むことを強くお勧めします。  

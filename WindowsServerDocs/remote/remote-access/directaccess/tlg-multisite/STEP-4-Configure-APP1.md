@@ -2,22 +2,18 @@
 title: 手順 4. の構成
 description: このトピックは、「Windows Server 2016 用の DirectAccess マルチサイト展開のテストラボガイド」の一部です。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7000e80f-31b1-43c5-b51e-1469d26909e5
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 22775a3c453cf59a3dfd1d4b7e8a9522057790b4
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 8011d85f742ebde5fc2013bb483546133e1618ec
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80308691"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861585"
 ---
 # <a name="step-4-configure-app1"></a>手順 4. の構成
 

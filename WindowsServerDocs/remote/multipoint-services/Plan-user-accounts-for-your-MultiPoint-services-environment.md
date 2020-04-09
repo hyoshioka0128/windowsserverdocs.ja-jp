@@ -1,24 +1,20 @@
 ---
 title: MultiPoint Services 環境のユーザー アカウントを計画する
 description: MultiPoint Services でのユーザーアカウントの計画に関する情報
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d47be540-e891-47bd-85da-6df4bbf93b2f
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 056c3b9773387cf00b40baf6f14e4e1f3583f6c9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 28ee7a1475ec55352fe344842b8df7633abb9137
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405005"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853395"
 ---
 # <a name="plan-user-accounts-for-your-multipoint-services-environment"></a>MultiPoint Services 環境のユーザー アカウントを計画する
 MultiPoint Services でユーザーアカウントを実装する最適な方法は、デプロイのサイズと複雑さによって異なります。  
@@ -62,7 +58,7 @@ MultiPoint Services でユーザーアカウントを実装する最適な方法
 |UserAccount_04|UserAccount_04|  
 |UserAccount_05|UserAccount_05|  
   
-この方法の利点は、ユーザーが使用可能なすべての MultiPoint サービスにローカルユーザーアカウントを持っていることです。 ただし、欠点は、この利点を上回る可能性があります。 たとえば、特定のユーザーのユーザー名とパスワードが両方のコンピューターで同一であっても、それらのアカウントは互いにリンクされていません。 このため、ユーザーが月曜日にコンピューター A で自分のアカウントにログオンした場合、によってファイルが保存され、火曜日にコンピューター B のアカウントにログオンすると、コンピューター A に以前に保存したファイルにはアクセスできなくなります。では、複数のコンピューターでユーザーアカウントをレプリケートすると、管理オーバーヘッドと記憶域の要件が増加します。  
+この方法の利点は、ユーザーが使用可能なすべての MultiPoint サービスにローカルユーザーアカウントを持っていることです。 ただし、欠点は、この利点を上回る可能性があります。 たとえば、特定のユーザーのユーザー名とパスワードが両方のコンピューターで同一であっても、それらのアカウントは互いにリンクされていません。 このため、ユーザーが月曜日にコンピューター A で自分のアカウントにログオンした場合、によってファイルが保存され、火曜日にコンピューター B のアカウントにログオンすると、コンピューター A に以前に保存したファイルにはアクセスできなくなります。また、複数のコンピューターにユーザーアカウントをレプリケートすると、管理オーバーヘッドと記憶域の要件が大きくなります  
   
 ### <a name="use-generic-local-user-accounts"></a>汎用ローカルユーザーアカウントを使用する  
 MultiPoint Services システムがドメインに接続されておらず、ユーザーごとに個別のアカウントを作成したくない場合は、各ステーションの汎用アカウントを作成できます。 たとえば、MultiPoint Services を実行している2台のコンピューターがあり、各コンピューターに5つのステーションが関連付けられている場合は、次の表に示すようなユーザーアカウントを作成することができます。  
