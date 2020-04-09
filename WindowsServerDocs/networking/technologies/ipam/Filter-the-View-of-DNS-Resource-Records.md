@@ -2,22 +2,18 @@
 title: DNS リソース レコードの表示をフィルター処理する
 description: このトピックは、Windows Server 2016 の IP アドレス管理 (IPAM) 管理ガイドに含まれています。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ipam
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5b80294a-7325-476b-84eb-69f0d051e8b2
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 4e032e2c5b89dc362fceb34e06525d8632f7b19e
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 21e43751981b0b7b945c0c9404f6f93f36c48f16
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80312406"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860665"
 ---
 # <a name="filter-the-view-of-dns-resource-records"></a>DNS リソース レコードの表示をフィルター処理する
 

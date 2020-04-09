@@ -1,23 +1,19 @@
 ---
 title: Windows Server Essentials での SharePoint Online の管理
 description: Windows Server Essentials の使用方法について説明します。
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 282f3634-6de6-4691-803c-df6c3c16660d
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 92552d3beff58edfffe119d1490fefd646479775
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: f6f0a29759fa8bdb098576cdb32a71d8568fb465
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80311082"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852725"
 ---
 # <a name="manage-sharepoint-online-in-windows-server-essentials"></a>Windows Server Essentials での SharePoint Online の管理
 

@@ -1,28 +1,24 @@
 ---
 title: tracert
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Tracert の Windows コマンドに関するトピックでは、転送先へのパスを指定します。これにより、インターネット制御メッセージプロトコル (ICMP) のエコー要求または ICMPv6 メッセージが転送先に送信されます。このとき、time to Live (TTL) フィールド値が段階的に増加します。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 9032a032-2e5e-49d4-9e86-f821600e4ba6
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f08fd3276f3377fed06d7b9a2cc3399fa1071f39
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a4485763aecf46aa91664c6a6a42c437be518f02
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385646"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80832645"
 ---
 # <a name="tracert"></a>tracert
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 インターネット制御メッセージプロトコル (ICMP) エコー要求または ICMPv6 メッセージを宛先に送信することによって、宛先へのパスを指定します。これにより、時間とライブ (TTL) フィールドの値が増分されます。 表示されるパスは、ソースホストと宛先の間のパスにあるルーターの近隣/サイドルーターインターフェイスの一覧です。 Near/side インターフェイスは、パス内の送信ホストに最も近いルーターのインターフェイスです。 パラメーターを指定せずに使用します。 tracert はヘルプを表示します。   
 
@@ -30,26 +26,26 @@ ms.locfileid: "71385646"
 ```  
 tracert [/d] [/h <MaximumHops>] [/j <Hostlist>] [/w <timeout>] [/R] [/S <Srcaddr>] [/4][/6] <TargetName>  
 ```  
-### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a>パラメーター  
 |パラメーター|説明|  
 |-------|--------|  
 |/d|**Tracert**が中間ルーターの IP アドレスを名前に解決できないようにします。 これにより、 **tracert**の結果を表示する速度が向上します。|  
 |/h \<MaximumHops >|ターゲット (宛先) を検索するパスの最大ホップ数を指定します。 既定値は、30 ホップです。|  
 |/j \<Hostlist >|Echo 要求メッセージが、 *Hostlist*で指定された中間送信先のセットと共に IP ヘッダーの緩やかなソースルートオプションを使用することを指定します。 厳密でないソースのルーティングと連続した中間宛先は、1 つまたは複数のルーターで区切ることができます。 アドレスまたはホストの一覧に名の最大数が 9 です。 *Hostlist*は、スペースで区切られた一連の IP アドレス (ドット形式10進表記) です。 このパラメーターは、IPv4 アドレスをトレースする場合にのみ使用します。|  
-|/w \<timeout >|指定されたエコー要求メッセージに対応する ICMP 時間超過またはエコー応答メッセージを待機する時間をミリ秒単位で指定します。 タイムアウト時間内に受信しなかった場合は、アスタリスク (*) が表示されます。 既定のタイムアウトは 4000 (4 秒) です。|  
+|/w \<タイムアウト >|指定されたエコー要求メッセージに対応する ICMP 時間超過またはエコー応答メッセージを待機する時間をミリ秒単位で指定します。 タイムアウト時間内に受信しなかった場合は、アスタリスク (*) が表示されます。 既定のタイムアウトは 4000 (4 秒) です。|  
 |/R|宛先を中間宛先として使用し、逆ルートをテストするために、IPv6 ルーティング拡張ヘッダーを使用してローカルホストにエコー要求メッセージを送信することを指定します。|  
 |/S \<Srcaddr >|エコー要求メッセージで使用する送信元アドレスを指定します。 このパラメーターは、IPv6 アドレスをトレースする場合にのみ使用します。|  
 |/4|このトレースに対して、tracert が IPv4 のみを使用できることを指定します。|  
 |/6|このトレースに対して、tracert が IPv6 のみを使用できることを指定します。|  
 |\<TargetName >|宛先を指定します。 IP アドレスまたはホスト名で識別されます。|  
-|/?|コマンド プロンプトにヘルプを表示します。|  
+|/?|コマンド プロンプトでヘルプを表示します。|  
 
 ## <a name="remarks"></a>コメント  
 -   この診断ツールは、有効期間 (TTL) の値が異なる ICMP エコー要求メッセージを宛先に送信することによって、宛先へのパスを決定します。 パス上の各ルーターは、転送する前に、IP パケットの TTL を少なくとも1に減らす必要があります。 実質的に、TTL は最大リンクカウンターです。 パケットの TTL が0になると、ルーターは ICMP 時間超過メッセージをソースコンピュータに返すことが期待されます。 tracert は、TTL が1の最初のエコー要求メッセージを送信して、ターゲットが応答するまで、または最大ホップ数に到達するまで、後続の各送信で TTL を1増やして、パスを決定します。 既定では、最大ホップ数は30です。これは、 **/h**パラメーターを使用して指定できます。 このパスは、中間ルーターによって返された ICMP 時間超過メッセージと、送信先から返されたエコー応答メッセージを調べることによって決定されます。 ただし、一部のルーターでは、TTL 値が期限切れになったパケットの時間超過メッセージは返されず、tracert コマンドに invisile されます。 この場合、そのホップに対してアスタリスク (*) の行が表示されます。  
 -   パスをトレースし、パス内の各ルーターおよびリンクのネットワーク待機時間とパケット損失を提供するには、 **pathping**コマンドを使用します。  
 -   このコマンドは、インターネット プロトコル (TCP/IP) プロトコルがネットワーク接続のネットワーク アダプターのプロパティでコンポーネントとしてインストールされている場合にのみ使用できます。  
 
-## <a name="BKMK_Examples"></a>例  
+## <a name="examples"></a><a name=BKMK_Examples></a>例  
 Corp7.microsoft.com という名前のホストへのパスをトレースするには、次のように入力します。  
 ```  
 tracert corp7.microsoft.com  
@@ -63,4 +59,4 @@ Corp7.microsoft.com という名前のホストへのパスをトレースし、
 tracert /j 10.12.0.1 10.29.3.1 10.1.44.1 corp7.microsoft.com  
 ```  
 ## <a name="additional-references"></a>その他の参照情報  
--   [コマンド ライン構文の記号](command-line-syntax-key.md)  
+-   - [コマンド ライン構文の記号](command-line-syntax-key.md)  

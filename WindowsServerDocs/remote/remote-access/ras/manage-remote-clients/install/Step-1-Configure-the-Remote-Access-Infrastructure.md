@@ -2,22 +2,18 @@
 title: 手順 1 は、リモート アクセス インフラストラクチャを構成します。
 description: このトピックは、「Windows Server 2016 で DirectAccess クライアントをリモート管理する」ガイドの一部です。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0e7d1f5b-c939-47ca-892f-5bb285027fbc
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 549150b10dede7dca9786fe38da40e9b7dea706f
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: d4588304ee3635c20f6b79817dfb54b0fa315357
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80308154"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859205"
 ---
 # <a name="step-1-configure-the-remote-access-infrastructure"></a>手順 1 は、リモート アクセス インフラストラクチャを構成します。
 

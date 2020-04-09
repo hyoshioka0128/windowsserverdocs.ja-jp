@@ -1,7 +1,6 @@
 ---
 ms.assetid: 9eab8c43-a0f2-4d19-a5a4-e1399f0d5f25
 title: リソース パートナーでのフェデレーション アプリケーション戦略を決定する
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 0cc7a9202813cd3f8d45a72305d13ad197f5b04d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b7b50d93ef09259cd6d1893eda4fd5c651b8e688
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71359163"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853155"
 ---
 # <a name="determine-your-federated-application-strategy-in-the-resource-partner"></a>リソース パートナーでのフェデレーション アプリケーション戦略を決定する
 

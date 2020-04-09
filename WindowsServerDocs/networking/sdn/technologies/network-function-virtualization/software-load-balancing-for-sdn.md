@@ -1,23 +1,19 @@
 ---
 title: SDN のソフトウェア負荷分散 (SLB)
 description: このトピックでは、Windows Server 2016 のソフトウェア定義ネットワークのソフトウェア負荷分散について説明します。
-manager: brianlic
-ms.custom: na
+manager: grcusanz
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-sdn
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 97abf182-4725-4026-801c-122db96964ed
-ms.author: lizross
-author: eross-msft
-ms.openlocfilehash: 1e7870e045f9af79ed46ec1ad998dbc1f1474afd
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.author: anpaul
+author: AnirbanPaul
+ms.openlocfilehash: 245faa00eed6f8ee49f8d178ab2cde5d01b1e23e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80312899"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859575"
 ---
 # <a name="software-load-balancing-slb-for-sdn"></a>SDN のソフトウェア負荷分散 \(SLB\)
 

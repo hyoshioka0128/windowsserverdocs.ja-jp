@@ -1,29 +1,25 @@
 ---
 title: MultiPoint Services のシステム パフォーマンスに影響を与える変数
 description: MultiPoint Services のパフォーマンス情報
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0f3e8875-1b5e-4789-b16c-d06d6e31f38e
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: cba973e3b0a89c26f886a67154c27831adb2c8cc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 44f268c958ed32e527b66cebe1a10d33652eb9b0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394829"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858915"
 ---
 # <a name="variables-affecting-multipoint-services-system-performance"></a>MultiPoint Services のシステム パフォーマンスに影響を与える変数
 MultiPoint サービス システムの全体的なパフォーマンスに影響を与える多くの変数があります。 システムの設計時にこれらを考慮することがあります。  
   
-## <a name="usage"></a>使用方法  
+## <a name="usage"></a>使用法  
   
 -   **アプリケーション** 型と同時に、特にグラフィックを実行しているアプリケーション数\-高負荷またはメモリの負荷の高いアプリケーションは、システムの全体的なパフォーマンスに影響を与えます。 詳細については、次を参照してください。 [アプリケーションやインターネット コンテンツ](hardware-and-performance-recommendations.md#applications-and-internet-content)します。  
   

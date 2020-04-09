@@ -1,23 +1,19 @@
 ---
 title: ブート可能な USB フラッシュ ドライブの作成
 description: Windows Server Essentials の使用方法について説明します。
-ms.custom: na
 ms.date: 05/04/2018
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2fe8e35c-69f9-40b3-a270-22e2402510d8
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 88ae4bc7b560b0571ca339138cb99843c2d078c8
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: ddcdb9576072af6b7014f6dc9b0c38e9f5bdd25d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80312127"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80818365"
 ---
 # <a name="create-a-bootable-usb-flash-drive"></a>ブート可能な USB フラッシュ ドライブの作成
 

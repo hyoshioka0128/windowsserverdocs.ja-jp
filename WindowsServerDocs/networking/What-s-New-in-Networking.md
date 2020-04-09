@@ -5,14 +5,14 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: get-started-article
 ms.assetid: 08fb7563-d319-48a9-b181-ca0ca3032c18
-ms.author: lizross
-author: eross-msft
-ms.openlocfilehash: 35c3c3b2610918e8b0fd69ccf04422e3f6df4d0e
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+author: dcuomo
+ms.author: dacuo
+ms.openlocfilehash: 0a3d7bb4f8521493743024408ae0f1f35a4b251c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80318547"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855795"
 ---
 # <a name="whats-new-in-networking"></a>ネットワークの新機能
 

@@ -1,20 +1,20 @@
 ---
 redirect_url: guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md
 title: テナント用のシールドされた Vm-オンプレミスで新しいシールドされた VM を作成し、保護されたファブリックに移動する
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: 0ca1efa0-01f9-4b6f-87d4-c66db00d7d70
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: a4b5ff2942c8485a4c10770a4374d56734f7f3c9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a5ca3ab29b83d0cb6cb2d55507471790f65800a2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402382"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856725"
 ---
 # <a name="shielded-vms-for-tenants---creating-a-new-shielded-vm-on-premises-and-moving-it-to-a-guarded-fabric"></a>テナント用のシールドされた Vm-オンプレミスで新しいシールドされた VM を作成し、保護されたファブリックに移動する
 
@@ -28,7 +28,7 @@ ms.locfileid: "71402382"
 
 1.  手順を開始する前に、次の役割と機能がインストールされた Windows Server 2016 を実行している Hyper-v ホストを使用していることを確認してください。
 
-    - ロール
+    - 役割
 
         - Hyper-V
 
@@ -130,7 +130,7 @@ ms.locfileid: "71402382"
 
     Hyper-v マネージャーまたは Windows PowerShell を使用して、シールドされた VM をインポートします。 Vm を起動するには、vm の所有者から vm 構成ファイルをインポートする必要があります。 これは、キープロテクターと VM の仮想 TPM が構成ファイルに格納されているためです。 保護されたファブリック上で実行するように VM が構成されている場合は、正常に起動できる必要があります。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [保護されたホストとシールドされた Vm のホスティングサービスプロバイダーの構成手順](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
 - [保護されたファブリックとシールドされた VM](guarded-fabric-and-shielded-vms-top-node.md)

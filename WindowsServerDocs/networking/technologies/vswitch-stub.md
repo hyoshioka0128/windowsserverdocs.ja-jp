@@ -4,17 +4,16 @@ description: このトピックでは、Windows Server 2016 の Hyper-v 仮想�
 ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
-ms.date: ''
 ms.assetid: d9ad2929-0db8-4483-8a74-fd89ea451d8e
 manager: brianlic
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 42138b4c59f7bc1ea434d1db3204086497d4920c
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 967a51eaffd8e97f0b93ca7b91cba0d62fbf7d9e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80315216"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860155"
 ---
 # <a name="hyper-v-virtual-switch"></a>Hyper-V 仮想スイッチ
 
