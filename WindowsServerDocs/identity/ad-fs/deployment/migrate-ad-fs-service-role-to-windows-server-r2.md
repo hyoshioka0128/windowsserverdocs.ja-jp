@@ -8,12 +8,12 @@ ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 2a3cf6cd523f5cfd69785104fed7aa3938d79525
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6c2f9c8079eb2dfaf208c8835940351a925d0a16
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71359388"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857505"
 ---
 # <a name="migrate-active-directory-federation-services-role-services-to-windows-server-2012-r2"></a>Windows Server 2012 R2 への Active Directory フェデレーション サービス (AD FS) 役割サービスの移行
  このドキュメントでは、Windows Server 2012 R2 と共にインストールされる Active Directory フェデレーションサービス (AD FS) (AD FS) に次の役割サービスを移行する手順について説明します。  
@@ -40,14 +40,14 @@ ms.locfileid: "71359388"
   
  移行先サーバーのプロセッサ:  
   
- x64 ベース  
+ x64 ベース●x64べーす○  
   
 |移行元サーバーのプロセッサ|移行元サーバーのオペレーティング システム|  
 |-----------------------------|------------------------------------|  
 |x86 または x64 ベース| Windows Server 2008 (フルインストールオプションと Server Core インストールオプションの両方)|  
-|x64 ベース|Windows Server 2008 R2|  
-|x64 ベース|Windows Server 2008 R2 の server Core インストールオプション|  
-|x64 ベース|Windows Server 2012 の server Core およびフルインストールオプション|  
+|x64 ベース●x64べーす○|Windows Server 2008 R2|  
+|x64 ベース●x64べーす○|Windows Server 2008 R2 の server Core インストールオプション|  
+|x64 ベース●x64べーす○|Windows Server 2012 の server Core およびフルインストールオプション|  
   
 > [!NOTE]
 > - 上の表で示したオペレーティング システムのバージョンは、サポートされている最も古い組み合わせでのオペレーティング システムとサービス パックについてのものです。  
@@ -59,10 +59,10 @@ ms.locfileid: "71359388"
   
 |移行元|Windows Server 2012 R2 と共にインストール AD FS には|  
 |----------|----------------------------------------------------------------------------------------------|  
-|Windows Server 2008 または Windows Server 2008 R2 にインストールされている AD FS 2.0 フェデレーションサーバー|同じサーバーでの移行がサポートされています。 詳しくは、次のトピックをご覧ください。<br /><br /> [AD FS フェデレーションサーバーを移行する準備をしています](prepare-migrate-ad-fs-server-r2.md)<br /><br /> [AD FS フェデレーションサーバーの移行](migrate-ad-fs-fed-server-r2.md)|  
-|Windows Server 2012 にインストールされている AD FS フェデレーションサーバー|同じサーバーでの移行がサポートされています。  詳しくは、次のトピックをご覧ください。<br /><br /> [AD FS フェデレーションサーバーを移行する準備をしています](prepare-migrate-ad-fs-server-r2.md)<br /><br /> [AD FS フェデレーションサーバーの移行](migrate-ad-fs-fed-server-r2.md)|  
+|Windows Server 2008 または Windows Server 2008 R2 にインストールされている AD FS 2.0 フェデレーションサーバー|同じサーバーでの移行がサポートされています。 詳しくは、次のトピックをご覧ください。<p> [AD FS フェデレーションサーバーを移行する準備をしています](prepare-migrate-ad-fs-server-r2.md)<p> [AD FS フェデレーションサーバーの移行](migrate-ad-fs-fed-server-r2.md)|  
+|Windows Server 2012 にインストールされている AD FS フェデレーションサーバー|同じサーバーでの移行がサポートされています。  詳細については、次のトピックを参照してください。<p> [AD FS フェデレーションサーバーを移行する準備をしています](prepare-migrate-ad-fs-server-r2.md)<p> [AD FS フェデレーションサーバーの移行](migrate-ad-fs-fed-server-r2.md)|  
   
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
  [AD FS フェデレーションサーバー  を移行する準備をしています](prepare-migrate-ad-fs-server-r2.md)  
  [AD FS フェデレーションサーバー  の移行](migrate-ad-fs-fed-server-r2.md)  
  [AD FS フェデレーションサーバープロキシ  の移行](migrate-fed-server-proxy-r2.md)  

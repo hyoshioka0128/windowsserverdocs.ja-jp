@@ -1,7 +1,6 @@
 ---
 ms.assetid: 777aab65-c9c7-4dc9-a807-9ab73fac87b8
 title: AD FS エクストラネットロックアウト保護の構成
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 02/01/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: bb5958f8205271fe3ab2258ed9812ae03f2a0be0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: defe77972dd66f4de27b38bfad3fb172c1f7bee0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71358210"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859915"
 ---
 # <a name="configure-ad-fs-extranet-lockout-protection"></a>AD FS エクストラネットロックアウト保護の構成
 
@@ -87,8 +86,8 @@ AD ユーザーアカウントが AD FS で認証できないという既知の�
 - AD FS は、すべての認証試行について、PDC 上のユーザーの LDAP 呼び出しによって**Badpwdcount**属性の参照を実行します。  
 - PDC にアクセスできない場合、2016より前の AD FS は失敗します。 AD FS 2016 では、PDC が使用できない場合に AD FS を他のドメインコントローラーに切り替えられるようにする機能強化が導入されました。 
 - AD FS は、badPwdCount < Exri Etlockoutthreshold の場合、エクストラネットからの認証要求を許可します 
-- **Badpwdcount** >= **ExExtranetObservationWindow Etlockoutthreshold**と**badpasswordtime** +  < 現在の時刻である場合、AD FS はエクストラネットからの認証要求を拒否します。
-- 悪意のあるアカウントのロックアウトを回避するには、アカウントロックアウトの**しきい値**と ExtranetObservationWindow > アカウントロックアウトの**リセットカウンター**を使用**して、** を < 確認する必要があります。
+- **Badpwdcount** >= **ExExtranetObservationWindow Etlockoutthreshold**と**badpasswordtime** + **ExtranetObservationWindow** < 現在の時刻である場合、AD FS はエクストラネットからの認証要求を拒否します。
+- 悪意のあるアカウントのロックアウトを回避するには、アカウントロックアウトの**しきい値**と ExtranetObservationWindow > アカウントロックアウトの**リセットカウンター**を使用**して、** **ExtranetObservationWindow**を < 確認する必要があります。
 
 
 ## <a name="additional-references"></a>その他の参照情報  

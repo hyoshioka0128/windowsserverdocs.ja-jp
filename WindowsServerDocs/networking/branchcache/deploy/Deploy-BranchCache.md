@@ -4,17 +4,16 @@ description: このトピックは、BranchCache 展開ガイドの Windows Serv
 manager: brianlic
 ms.prod: windows-server
 ms.technology: networking-bc
-ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 30b0a6d9-d6d5-4019-b8dc-ed5365d9921f
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 6fe2cf5d593500565b02f60efb0976000095dd9e
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 8a4f7905cddaad6bde953e199d8192b869209fe5
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80319291"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855935"
 ---
 # <a name="deploy-branchcache"></a>BranchCache を展開する
 

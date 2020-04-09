@@ -6,16 +6,16 @@ ms.prod: windows-server
 ms.technology: networking-ras
 ms.topic: article
 ms.date: 07/24/2019
-ms.author: lizross, v-tea
-author: eross-msft
+ms.author: v-tea
+author: Teresa-MOTIV
 ms.localizationpriority: medium
 ms.reviewer: deverette
-ms.openlocfilehash: 30a8e3053f263ffad3be940a52e845fb7159dde1
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 74cda6a899d69a951c34a9a88e2f51ef1590b621
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80313297"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859495"
 ---
 # <a name="advanced-features-of-always-on-vpn"></a>Always On VPN の高度な機能
 
@@ -32,7 +32,7 @@ ms.locfileid: "80313297"
 
 |オプション  |説明  |
 |---------|---------|
-|サーバーの復元と負荷分散     |高可用性を必要とする環境や、大量の要求をサポートする環境では、ネットワークポリシーサーバー (NPS) を実行している複数のサーバー間で負荷分散を使用して、を有効にすることで、リモートアクセスのパフォーマンスと回復性を向上させることができます。リモートアクセスサーバーのクラスタリング。<p>関連ドキュメント:<ul><li>[NPS プロキシサーバーの負荷分散](../../../../../networking/technologies/nps/nps-manage-proxy-lb.md)</li><li>[クラスターでのリモート アクセスの展開](https://docs.microsoft.com/windows-server/remote/remote-access/ras/cluster/deploy-remote-access-in-cluster)</li></ul>        |
+|サーバーの復元と負荷分散     |高可用性を必要とする環境や、大量の要求をサポートする環境では、ネットワークポリシーサーバー (NPS) を実行している複数のサーバー間で負荷分散を使用し、リモートアクセスサーバーのクラスタリングを有効にすることで、リモートアクセスのパフォーマンスと回復性を向上させることができます。<p>関連ドキュメント:<ul><li>[NPS プロキシサーバーの負荷分散](../../../../../networking/technologies/nps/nps-manage-proxy-lb.md)</li><li>[クラスターでのリモート アクセスの展開](https://docs.microsoft.com/windows-server/remote/remote-access/ras/cluster/deploy-remote-access-in-cluster)</li></ul>        |
 |地理的なサイトの復元     |IP ベースの地理位置情報の場合は、Windows Server 2016 の DNS でグローバル Traffic Manager を使用できます。 より堅牢な地理的負荷分散を行うには、Microsoft Azure Traffic Manager などのグローバルサーバー負荷分散ソリューションを使用できます。<p>関連ドキュメント:<ul><li>[Traffic Manager の概要](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-overview)</li><li>[Microsoft Azure Traffic Manager](https://azure.microsoft.com/services/traffic-manager)</li></ul>         |
 
 ## <a name="advanced-authentication"></a>高度な認証
@@ -76,7 +76,7 @@ ms.locfileid: "80313297"
 
 1. Windows 更新プログラムが利用可能になったときにインストールします。
 1. 使用するすべての VPN クライアントおよび RRAS サーバー証明書に CDP エントリがあり、RRAS サーバーがそれぞれの Crl に接続できることを確認します。
-1. RRAS サーバーで、 **RootCertificateNameToAccept**パラメーターを構成するには、 **Set vpnauthprotocol** PowerShell コマンドレットを使用します。<br /><br />
+1. RRAS サーバーで、 **RootCertificateNameToAccept**パラメーターを構成するには、 **Set vpnauthprotocol** PowerShell コマンドレットを使用します。<p>
    次の例では、これを実行するコマンドを一覧表示します。 この例では、 **CN = Contoso Root 証明機関**は、ルート証明機関の識別名を表します。 
    ``` powershell
    $cert1 = ( Get-ChildItem -Path cert:LocalMachine\root | Where-Object -FilterScript { $_.Subject -Like "*CN=Contoso Root Certification Authority*" } )

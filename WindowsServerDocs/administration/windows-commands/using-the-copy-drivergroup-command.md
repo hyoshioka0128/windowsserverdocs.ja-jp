@@ -1,28 +1,22 @@
 ---
-title: コピー DriverGroup コマンドを使用してください。
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+title: コピー DriverGroup
+description: Windows コマンドのトピック。コピー DriverGroup は、フィルター、ドライバーパッケージ、有効/無効の状態など、サーバー上の既存のドライバーグループを複製します。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0aaf6fa5-8b5b-4a1e-ae9b-8b5c6d89f571
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c08ce616c9b0e2bf79c7f13f922e27d7f7f7ca62
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 277903150a25555b03b51c980436250656c597b1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71363594"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80831735"
 ---
-# <a name="using-the-copy-drivergroup-command"></a>コピー DriverGroup コマンドを使用してください。
-
-
+# <a name="copy-drivergroup"></a>コピー DriverGroup
 
 フィルター、ドライバー パッケージ、および有効/無効状態を含む、サーバー上の既存のドライバー グループを複製します。
 
@@ -32,15 +26,15 @@ ms.locfileid: "71363594"
 WDSUTIL /Copy-DriverGroup [/Server:<Server name>] /DriverGroup:<Source Group Name> /GroupName:<New Group Name>
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
 |パラメーター|説明|
 |---------|-----------|
-|[/Server: \<Server name >]|サーバーの名前を指定します。 これには、NetBIOS 名または FQDN を指定できます。 サーバー名が指定されていない場合は、ローカル サーバーが使用されます。|
-|/Drivergroup: \<Source Group Name >|ソースのドライバー グループの名前を指定します。|
-|/GroupName: \<New Group Name >|新しいドライバー グループの名前を指定します。|
+|[/Server:\<サーバー名 >]|サーバーの名前を指定します。 これには、NetBIOS 名または FQDN を指定できます。 サーバー名が指定されていない場合は、ローカル サーバーが使用されます。|
+|/Drivergroup:\<ソースグループ名 >|ソースのドライバー グループの名前を指定します。|
+|/GroupName:\<新しいグループ名 >|新しいドライバー グループの名前を指定します。|
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a><a name=BKMK_examples></a>例
 
 ドライバー グループをコピーするには、次のいずれかを入力します。
 ```
@@ -50,6 +44,6 @@ WDSUTIL /Copy-DriverGroup /Server:MyWdsServer /DriverGroup:PrinterDrivers /Group
 WDSUTIL /Copy-DriverGroup /DriverGroup:PrinterDrivers /GroupName:ColorPrinterDrivers
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

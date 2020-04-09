@@ -2,18 +2,18 @@
 title: ミラーリングによって高速化されたパリティ
 ms.prod: windows-server
 ms.author: gawatu
-ms.manager: masriniv
+manager: masriniv
 ms.technology: storage-file-systems
 ms.topic: article
 author: gawatu
 ms.date: 10/17/2018
 ms.assetid: ''
-ms.openlocfilehash: 2721f1c744c5c03d8e4bce0508fd23fa5237f95f
-ms.sourcegitcommit: 9a6a692a7b2a93f52bb9e2de549753e81d758d28
+ms.openlocfilehash: 752073e4f12db3b994261a70a9306d45b9a00d77
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72591093"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861515"
 ---
 # <a name="mirror-accelerated-parity"></a>ミラーリングによって高速化されたパリティ
 
@@ -53,17 +53,17 @@ ReFS は、ミラー層が指定された容量レベルに達すると、領域
 
     - **sr-1.** 入力書き込みによってミラーの既存のデータが変更される場合、ReFS は所定の位置のデータを変更します。
     - **ドル.** 入力書き込みが新しい書き込みのであり、この書き込みをサービスするのに十分な領域を ReFS がミラーで見つけることができた場合、ReFS はミラーに書き込みます。
-    ![Write ミラー ](media/mirror-accelerated-parity/Write-to-Mirror.png)
+    ミラーへの書き込み](media/mirror-accelerated-parity/Write-to-Mirror.png) の ![
 
 2. **ミラーへの書き込み (パリティから再割り当て):**
 
     受信書き込みによってパリティ内のデータが変更され、ReFS が受信書き込みを処理するのに十分な空き領域をミラーに正しく検出できた場合、ReFS はまずパリティ内の以前のデータを無効にしてから、ミラーに書き込みます。 この無効化は、高速でコストのかからないメタデータ操作であるため、パリティへの書き込みパフォーマンスが大幅に向上します。
-    ![Reallocated-書き込み ](media/mirror-accelerated-parity/Reallocated-Write.png)
+    ![再割り当て-書き込み](media/mirror-accelerated-parity/Reallocated-Write.png)
 
 3. **パリティへの書き込み:**
     
     ReFS がミラーで十分な空き領域を見つけることができない場合、ReFS はパリティに新しいデータを書き込むか、パリティの既存のデータを直接変更します。 以下の「パフォーマンスの最適化」セクションでは、パリティへの書き込みを最小限に抑えるためのガイダンスを示します。
-    ![Write 対パリティ ](media/mirror-accelerated-parity/Write-to-Parity.png)
+    ![パリティへの書き込み](media/mirror-accelerated-parity/Write-to-Parity.png)
 
 **読み取り:** ReFS は関連するデータを含む階層から直接読み取ります。 パリティが HDD で構築されている場合、今後の読み取りを高速化するため、記憶域スペース内のキャッシュにこのデータがキャッシュされます。 
 
@@ -153,7 +153,7 @@ Resize-StorageTier -InputObject (Get-StorageTier -FriendlyName “Performance”
 New-Volume – FriendlyName “TestVolume” -FileSystem CSVFS_ReFS -StoragePoolFriendlyName “StoragePoolName” -StorageTierFriendlyNames Performance, Capacity -StorageTierSizes 200GB, 800GB
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 -   [ReFS の概要](refs-overview.md)
 -   [ReFS ブロックの複製](block-cloning.md)

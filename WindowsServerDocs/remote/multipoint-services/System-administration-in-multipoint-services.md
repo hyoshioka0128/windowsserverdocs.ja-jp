@@ -1,24 +1,20 @@
 ---
 title: MultiPoint Services のシステム管理
 description: MultiPoint Services の管理情報に関するナビゲーショントピック
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8fce1bcf-5459-43a2-957e-c1bc1749bca2
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 79c8240c78ada6bb08e37a28442c1cf392dc71e4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: da27d56b8180949d911f17e334b2e377f004fc8f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394918"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853885"
 ---
 # <a name="system-administration-in-multipoint-services"></a>MultiPoint Services のシステム管理
 MultiPoint Services システムの使用を開始する前に、基本的なシステム管理を行うことをお勧めします。  

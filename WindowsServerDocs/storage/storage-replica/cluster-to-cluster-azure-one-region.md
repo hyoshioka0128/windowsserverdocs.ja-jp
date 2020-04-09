@@ -1,7 +1,6 @@
 ---
 title: Azure の同じリージョン内のクラスター記憶域レプリカへのクラスター化
 description: クラスターからクラスターへのストレージレプリケーション (Azure の同じリージョン内)
-keywords: 記憶域レプリカ、サーバーマネージャー、Windows Server、Azure、クラスター、同じリージョン
 author: arduppal
 ms.author: arduppal
 ms.date: 04/26/2019
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: storage-replica
 manager: mchad
-ms.openlocfilehash: 3e620b5597a2d25a7bb02daf80c5812d25f6a987
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 00dbf709139ef245b94a3f083ab83a12503131c2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950033"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856295"
 ---
 # <a name="cluster-to-cluster-storage-replica-within-the-same-region-in-azure"></a>Azure の同じリージョン内のクラスター記憶域レプリカへのクラスター化
 
@@ -36,7 +35,7 @@ Azure の同じリージョン内でストレージレプリケーションを�
 
 1. リージョン内の Azure portal に[リソースグループ](https://ms.portal.azure.com/#create/Microsoft.ResourceGroup)を作成します (**米国西部 2**の**AZ2AZ** )。 
 2. 上で作成したリソースグループ (**AZ2AZ**) に、クラスターごとに1つずつ、2つの[可用性セット](https://ms.portal.azure.com/#create/Microsoft.AvailabilitySet-ARM)を作成します。 
-    」を参照します。 可用性セット (**az2azAS1**) b。 可用性セット (**az2azAS2**)
+    a. 可用性セット (**az2azAS1**) b。 可用性セット (**az2azAS2**)
 3. 以前に作成したリソースグループ (**az2az**) に[仮想ネットワーク](https://ms.portal.azure.com/#create/Microsoft.VirtualNetwork-ARM)(**az2az**) を作成し、少なくとも1つのサブネットを作成します。 
 4. [ネットワークセキュリティグループ](https://ms.portal.azure.com/#create/Microsoft.NetworkSecurityGroup-ARM)(**az2az-nsg**) を作成し、RDP: 3389 に1つの受信セキュリティ規則を追加します。 セットアップが完了したら、この規則を削除することを選択できます。 
 5. 以前に作成したリソースグループ (**AZ2AZ**) で Windows Server[仮想マシン](https://ms.portal.azure.com/#create/Microsoft.WindowsServer2016Datacenter-ARM)を作成します。 以前に作成した仮想ネットワーク (**az2az**) とネットワークセキュリティグループ (**az2az**) を使用します。 
@@ -103,7 +102,7 @@ Azure の同じリージョン内でストレージレプリケーションを�
      $IPResourceName = "Cluster IP Address" # IP Address cluster resource name.
      $ILBIP = "10.3.0.100" # IP Address in Internal Load Balancer (ILB) - The static IP address for the load balancer configured in the Azure portal.
      [int]$ProbePort = 59999
-     Get-ClusterResource $IPResourceName | Set-ClusterParameter -Multiple @{"Address"="$ILBIP";"ProbePort"=$ProbePort;"SubnetMask"="255.255.255.255";"Network"="$ClusterNetworkName";”ProbeFailureThreshold”=5;"EnableDhcp"=0}
+     Get-ClusterResource $IPResourceName | Set-ClusterParameter -Multiple @{"Address"="$ILBIP";"ProbePort"=$ProbePort;"SubnetMask"="255.255.255.255";"Network"="$ClusterNetworkName";"ProbeFailureThreshold"=5;"EnableDhcp"=0}
     ```
 
 14. 任意の1つのノード**az2az3**/**az2az4**から次のコマンドを実行します。 
@@ -113,7 +112,7 @@ Azure の同じリージョン内でストレージレプリケーションを�
     $IPResourceName = "Cluster IP Address" # IP Address cluster resource name.
     $ILBIP = "10.3.0.101" # IP Address in Internal Load Balancer (ILB) - The static IP address for the load balancer configured in the Azure portal.
     [int]$ProbePort = 59999
-    Get-ClusterResource $IPResourceName | Set-ClusterParameter -Multiple @{"Address"="$ILBIP";"ProbePort"=$ProbePort;"SubnetMask"="255.255.255.255";"Network"="$ClusterNetworkName";”ProbeFailureThreshold”=5;"EnableDhcp"=0}  
+    Get-ClusterResource $IPResourceName | Set-ClusterParameter -Multiple @{"Address"="$ILBIP";"ProbePort"=$ProbePort;"SubnetMask"="255.255.255.255";"Network"="$ClusterNetworkName";"ProbeFailureThreshold"=5;"EnableDhcp"=0}  
     ```   
     両方のクラスターが相互に接続/通信できることを確認します。 
 
@@ -139,7 +138,7 @@ Azure の同じリージョン内でストレージレプリケーションを�
    
     あるクラスターから別のクラスターへのアクセスを双方向に許可します。
 
-    この例では次のようになります。
+    この例では、次のようになります。
 
     ```PowerShell
       Grant-SRAccess -ComputerName az2az1 -Cluster SRAZC2
@@ -159,7 +158,7 @@ Azure の同じリージョン内でストレージレプリケーションを�
     - ボリュームの場所:-c:\ClusterStorage\DataDisk2
     - ログの場所:-g:
 
-次に、
+次のコマンドを実行します。
 
 ```PowerShell
 

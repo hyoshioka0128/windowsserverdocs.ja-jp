@@ -1,19 +1,19 @@
 ---
 title: 保護されたホストが証明できることを確認する
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: 7485796b-b840-4678-9b33-89e9710fbbc7
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 09/25/2019
-ms.openlocfilehash: 2bab2b653127ae13d27dea76225ada91b3ee8ecc
-ms.sourcegitcommit: de71970be7d81b95610a0977c12d456c3917c331
+ms.openlocfilehash: aa2075bda71c6713fa76577b685315118199e63b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71940697"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856785"
 ---
 # <a name="confirm-guarded-hosts-can-attest"></a>保護されたホストが証明できることを確認する
 
@@ -70,7 +70,7 @@ ms.locfileid: "71940697"
 > [!div class="nextstepaction"]
 > [シールドされた VMの展開](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [ホストガーディアンサービス (HGS) を展開する](guarded-fabric-deploying-hgs-overview.md)
 - [シールドされた VMの展開](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)

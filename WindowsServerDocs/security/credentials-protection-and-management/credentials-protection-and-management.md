@@ -1,28 +1,24 @@
 ---
 title: 資格情報の保護と管理
 description: Windows Server のセキュリティ
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-credential-protection
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e457229c-0126-40fe-948c-101c943e1b57
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 31f0f89099a71f8ea6abcf0064113d6af9608c5a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c836da8f83510e6547e0e182ac06fd2151dd9c41
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403799"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857065"
 ---
 # <a name="credentials-protection-and-management"></a>資格情報の保護と管理
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 IT プロフェッショナル向けのこのトピックでは、資格情報の盗難を減らすために、Windows Server 2012 R2 で導入され、資格情報の保護とドメイン認証を制御するための Windows 8.1 について説明します。
 
@@ -60,9 +56,9 @@ Protected Users グループのメンバーは、以下の認証方法によっ�
 
 新しい Active Directory オブジェクトクラスである認証ポリシーを使用すると、Windows Server 2012 R2 ドメインの機能レベルを持つドメイン内のアカウントクラスに認証構成を適用できます。 認証ポリシーは、Kerberos AS または TGS の交換時に適用されます。 次の Active Directory アカウント クラスがあります。
 
--   User
+-   ユーザー
 
--   [Computer]
+-   コンピューター
 
 -   管理されたサービス アカウント
 
@@ -72,7 +68,7 @@ Protected Users グループのメンバーは、以下の認証方法によっ�
 
 保護されたアカウントの構成方法の詳細については、「[保護されるアカウントの構成方法](how-to-configure-protected-accounts.md)」を参照してください。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 LSA と LSASS の詳細については、「 [Windows のログオンと認証の技術概要](https://technet.microsoft.com/library/dn169029(v=ws.10).aspx)」を参照してください。
 
 

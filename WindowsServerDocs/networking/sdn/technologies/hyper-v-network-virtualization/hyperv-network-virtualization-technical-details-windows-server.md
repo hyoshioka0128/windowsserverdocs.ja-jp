@@ -1,24 +1,19 @@
 ---
 title: Windows Server 2016 での hyper-v ネットワーク仮想化の技術的な詳細
 description: このトピックでは、Windows Server 2016 の Hyper-v ネットワーク仮想化に関する技術情報について説明します。
-manager: brianlic
-ms.custom: na
+manager: grcusanz
 ms.prod: windows-server
-ms.reviewer: na
-ms.service: virtual-network
-ms.suite: na
 ms.technology: networking-sdn
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 9efe0231-94c1-4de7-be8e-becc2af84e69
-ms.author: lizross
-author: eross-msft
-ms.openlocfilehash: a8628404de8a1b9caccc7f7f51b063cabb1caf27
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.author: anpaul
+author: AnirbanPaul
+ms.openlocfilehash: 54fb9eba99a4e6dc565111a3f34c8ccceeca2ff4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80317202"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859705"
 ---
 # <a name="hyper-v-network-virtualization-technical-details-in-windows-server-2016"></a>Windows Server 2016 での hyper-v ネットワーク仮想化の技術的な詳細
 
@@ -41,7 +36,7 @@ Windows Server 2016 には、HNVv1 と HNVv2 の2つの HNV 実装が用意さ�
 
     HNVv1 は、Windows Server 2012 R2 および System Center 2012 R2 Virtual Machine Manager (VMM) と互換性があります。 HNVv1 の構成では、WMI 管理および Windows PowerShell コマンドレット (System Center VMM を通じて容易) を使用して、分離設定と顧客アドレス (CA) を定義します。これは、仮想ネットワークから物理アドレス (PA) へのマッピングとルーティングです。 Windows Server 2016 の HNVv1 に追加機能は追加されていません。新機能は計画されていません。  
 
-    • SET チーミングと HNV V1 はプラットフォームと互換性がありません。
+    *   SET チーミングと HNV V1 はプラットフォームと互換性がありません。
 
     o HA NVGRE ゲートウェイを使用するには、ユーザーが LBFO チームを使用するか、チームを使用する必要があります。 または
 

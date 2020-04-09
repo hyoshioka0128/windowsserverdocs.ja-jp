@@ -1,7 +1,6 @@
 ---
 ms.assetid: c60227a8-7b44-40f8-b807-a6532851a4a6
 title: 属性ストアを追加する
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 0f5c9d3b0f856ab72a16930ddb5c50686d747ecc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b197268de3c5335e30c2a24a74c5a7b01224b500
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71358388"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859695"
 ---
 # <a name="add-an-attribute-store"></a>属性ストアを追加する
 
@@ -23,7 +22,7 @@ Active Directory フェデレーションサービス (AD FS) \(AD FS\) によ�
   
 属性ストアをフェデレーションサービスに追加するには、次の手順を実行します。  
   
-この手順を実行するには、ローカル コンピューターの **Administrators**グループのメンバーシップか、それと同等のメンバーシップが最低限必要です。  適切なアカウントの使用方法の詳細を確認し、グループ メンバーシップ [ローカルおよびドメインの既定のグループ](https://go.microsoft.com/fwlink/?LinkId=83477)します。   
+この手順を完了するには、ローカル コンピューター上の **Administrators** または同等のメンバーシップが最低限必要です。  適切なアカウントの使用方法の詳細を確認し、グループ メンバーシップ [ローカルおよびドメインの既定のグループ](https://go.microsoft.com/fwlink/?LinkId=83477)します。   
   
 #### <a name="to-add-an-attribute-store"></a>属性ストアを追加するには  
   
@@ -46,7 +45,7 @@ Active Directory フェデレーションサービス (AD FS) \(AD FS\) によ�
  
 ![属性ストアの追加](media/Add-an-Attribute-Store/addstore2.PNG) 
 
-4. **[OK]** をクリックします。  
+4. **[OK]** をクリックすると、  
   
 ## <a name="additional-references"></a>その他の参照情報  
 

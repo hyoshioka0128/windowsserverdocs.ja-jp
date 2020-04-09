@@ -1,23 +1,19 @@
 ---
 title: SDN のスイッチ埋め込みチーミング
 description: このトピックでは、Windows Server 2016 でのスイッチ埋め込みチーミングの概要について説明します。
-manager: brianlic
-ms.custom: na
+manager: grcusanz
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-sdn
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: aa5b5d11-3921-44f9-8e14-e378c75fca76
-ms.author: lizross
-author: eross-msft
-ms.openlocfilehash: bfa5d570b68943ef5cdaefc82a707ca69dea975e
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.author: anpaul
+author: AnirbanPaul
+ms.openlocfilehash: 37dcbb667ab0a44304043483ba003ce7c6cdbd32
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80317233"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854295"
 ---
 # <a name="switch-embedded-teaming-for-sdn"></a>SDN のスイッチ埋め込みチーミング
 

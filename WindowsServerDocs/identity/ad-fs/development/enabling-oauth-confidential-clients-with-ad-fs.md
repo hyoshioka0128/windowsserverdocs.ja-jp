@@ -1,7 +1,6 @@
 ---
 ms.assetid: 5a64e790-6725-4099-aa08-8067d57c3168
 title: AD FS 2016 以降の OAuth 機密クライアントを使用してサーバー側アプリケーションを構築する
-description: ''
 author: billmath
 ms.author: billmath
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 02/22/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 5b2bf036de1de8300e36c3413c551e51d408a4d2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8a8567a497e10df66f77fb996c937791b4aa9e08
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407867"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857565"
 ---
 # <a name="build-a-server-side-application-using-oauth-confidential-clients-with-ad-fs-2016-or-later"></a>AD FS 2016 以降の OAuth 機密クライアントを使用してサーバー側アプリケーションを構築する
 
@@ -46,13 +45,13 @@ AD FS 2016 以降のリリースでは、web サーバーで実行されてい�
 
     ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_3.PNG)  
 
-4.  **リダイレクト URI** - には、次のよう **https://localhost:44323** に入力します。  **[追加]** をクリックします。 **[次へ]** をクリックします。  
+4.  **リダイレクト URI:**  -  **https://localhost:44323** には、次のように入力します。  **[追加]** をクリックします。 **[次へ]** をクリックします。  
 
 5.  **[アプリケーション資格情報の構成]** 画面で、 **[共有シークレットを生成]** してシークレットをコピーする チェックボックスをオンにします。  この値は、アプリケーションの web.config ファイルの**ida: ClientSecret**の値として後で使用されます。  **[次へ]** をクリックします。  
 
     ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_4.PNG)   
 
-6. **[WEB API の構成]** 画面で、[**識別子** -  **https://contoso.com/WebApp** ] に次のように入力します。  **[追加]** をクリックします。 **[次へ]** をクリックします。  この値は、アプリケーションの web.config ファイルの**ida: GraphResourceId**で後で使用されます。  
+6. **[WEB API の構成]** 画面で、**識別子** -  **https://contoso.com/WebApp** に次のように入力します。  **[追加]** をクリックします。 **[次へ]** をクリックします。  この値は、アプリケーションの web.config ファイルの**ida: GraphResourceId**で後で使用されます。  
 
     ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_9.PNG)  
 
@@ -83,7 +82,7 @@ git clone https://github.com/Azure-Samples/active-directory-dotnet-webapp-webapi
 
 #### <a name="to-upgrade-the-database-file"></a>データベースファイルをアップグレードするには  
 
-1.  Visual Studio でプロジェクトを開くと、アプリに 2012 Express SQL Server が必要であることを通知するポップアップが表示されるか、データベースをアップグレードする必要があります。  [Ok] をクリックします。  
+1.  Visual Studio でプロジェクトを開くと、アプリに 2012 Express SQL Server が必要であることを通知するポップアップが表示されるか、データベースをアップグレードする必要があります。  [OK] をクリックします。  
 
     ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_12.PNG)  
 
@@ -107,7 +106,7 @@ git clone https://github.com/Azure-Samples/active-directory-dotnet-webapp-webapi
 
     ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_16.PNG)  
 
-7.  [Ok] をクリックします。 [Ok] をクリックします。  [はい] をクリックしてデータベースをアップグレードします。  
+7.  [OK] をクリックします。 [OK] をクリックします。  [はい] をクリックしてデータベースをアップグレードします。  
 
     ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_17.PNG)  
 
@@ -122,22 +121,22 @@ git clone https://github.com/Azure-Samples/active-directory-dotnet-webapp-webapi
 
     ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_19.PNG)  
 
-10. Visual Studio の上部で、[**表示** -> **つの他の Windows** -> **パッケージマネージャーコンソール**] を選択します。  
+10. Visual Studio の上部で、[ -> **その他の Windows** -> **パッケージマネージャーコンソール**を**表示**する] を選択します。  
 
     ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_20.PNG)  
 
-11. 下部にあるパッケージマネージャーコンソールで、次のように入力して、enter キーを押します。 `Enable-Migrations` と入力します。  
+11. 下部にあるパッケージマネージャーコンソールで、次のように入力して、enter キーを押し `Enable-Migrations` ます。  
 
     > [!NOTE]  
     > コマンドレットとして "有効/移行" が認識されないというエラーが表示された場合は、「Install-Package EntityFramework」と入力して EntityFramework を更新します。  
 
     ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_21.PNG)  
 
-12. 下部にあるパッケージマネージャーコンソールで、次のように入力して、enter キーを押します。 `Add-Migration <anynamehere>` と入力します。  
+12. 下部にあるパッケージマネージャーコンソールで、次のように入力して、enter キーを押し `Add-Migration <anynamehere>` ます。  
 
     ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_22.PNG)  
 
-13. 下部にあるパッケージマネージャーコンソールで、次のように入力して、enter キーを押します。 `Update-Database` と入力します。  
+13. 下部にあるパッケージマネージャーコンソールで、次のように入力して、enter キーを押し `Update-Database` ます。  
 
     ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_23.PNG)  
 
@@ -157,7 +156,7 @@ git clone https://github.com/Azure-Samples/active-directory-dotnet-webapp-webapi
 
     ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_24.PNG)  
 
-3.  App_Start の下にある Startup.Auth.cs ファイルを開き、次のように変更します。  
+3.  App_Start で Startup.Auth.cs ファイルを開き、次のように変更します。  
 
     -   次の行をコメントアウトします。  
 
@@ -173,7 +172,7 @@ git clone https://github.com/Azure-Samples/active-directory-dotnet-webapp-webapi
         public static readonly string Authority = "https://<your_fsname>/adfs";  
         ```  
 
-        ここで < your_fsname > は、フェデレーションサービスの url の DNS 部分 (たとえば、adfs.contoso.com) に置き換えられます。  
+        < your_fsname > は、フェデレーションサービスの url の DNS 部分 (adfs.contoso.com など) に置き換えられます。  
 
         ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_25.PNG)  
 
@@ -221,7 +220,7 @@ git clone https://github.com/Azure-Samples/active-directory-dotnet-webapp-webapi
 
         ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_34.PNG)  
 
-## <a name="test-the-solution"></a>ソリューションをテストする  
+## <a name="test-the-solution"></a>ソリューションのテスト  
 このセクションでは、confidential クライアントソリューションをテストします。  ソリューションをテストするには、次の手順に従います。  
 
 #### <a name="testing-the-confidential-client-solution"></a>Confidential クライアントソリューションのテスト  
@@ -234,7 +233,7 @@ git clone https://github.com/Azure-Samples/active-directory-dotnet-webapp-webapi
 
    ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_31.PNG)  
 
-3. ここで、ASP.NET サイトに Hello abby@contoso.com! と表示されます。  **[プロファイル]** をクリックします。  
+3. ASP.NET サイトで Hello abby@contoso.com! と表示されるようになりました。  **[プロファイル]** をクリックします。  
 
    ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_32.PNG)  
 

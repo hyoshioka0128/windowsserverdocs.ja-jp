@@ -1,7 +1,6 @@
 ---
 ms.assetid: 696a29b2-d627-4c9a-a384-9c8aaf50bd23
 title: 使用する要求規則テンプレートの種類を決定する
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: eaf0e9fca9b24eb4e67caa4237efe044937d5831
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8cbe858a9bd11710378f533f843aa06099036b21
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407401"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860235"
 ---
 # <a name="determine-the-type-of-claim-rule-template-to-use"></a>使用する要求規則テンプレートの種類を決定する
 
@@ -46,12 +45,12 @@ Active Directory フェデレーションサービス (AD FS) \(AD FS\) イン�
   
 |規則テンプレートの種類|説明|長所|欠点|  
 |----------------------|---------------|--------------|-----------------|  
-|入力方向の要求を通すか、フィルター処理する|選択された要求種類のすべての要求値をそのまま通す規則、または要求値に基づいて要求をフィルター処理し、選択された要求種類の特定の要求値のみをそのまま通す規則を作成するために使用します。<br /><br />詳細については、「 [When to Use a Pass Through or Filter Claim Rule](When-to-Use-a-Pass-Through-or-Filter-Claim-Rule.md)」を参照してください。|-受け入れまたは変更せずに発行する特定の要求を選択するために使用できます。|-要求の種類と値を変更することはできません|  
-|入力方向の要求を変換する|入力方向の要求を選択して、異なる要求種類にマップできる規則、またはその要求値を新しい要求値にマップできる規則を作成するために使用します。<br /><br />詳細については、「 [When to Use a Transform Claim Rule](When-to-Use-a-Transform-Claim-Rule.md)」を参照してください。|-要求の種類または値を正規化するために使用できます。<br />-入力方向の要求の電子\-メールサフィックスを置き換えることができます。|-複雑な文字列の置換にはカスタムルールが必要です|  
-|LDAP 属性を要求として送信する|LDAP 属性ストアから属性を選択し、要求として証明書利用者に送信する規則を作成するために使用します。<br /><br />詳細については、「 [When to Use a Send LDAP Attributes as Claims Rule](When-to-Use-a-Send-LDAP-Attributes-as-Claims-Rule.md)」を参照してください。|-任意の AD DS\/AD LDS 属性ストアから要求を送信できます<br />-1 つのルールを使用して複数の要求を発行できます。|-パフォーマンス-アカウント参照の結果として低速<br />-クエリにカスタム LDAP フィルターを使用することはできません|  
-|グループ メンバーシップを要求として送信する|ユーザーが Active Directory セキュリティ グループのメンバーである場合に指定された要求の種類と値を送信できる規則を作成するために使用します。 この規則を使用すると、選択したグループに基づいて、1 つの要求だけが送信されます。<br /><br />詳細については、「 [When to Use a Send Group Membership as a Claim Rule](When-to-Use-a-Send-Group-Membership-as-a-Claim-Rule.md)」を参照してください。|-グループ要求を発行するための高速なパフォーマンス–アカウント参照なし|-ユーザーはローカル Active Directory グループのメンバーである必要があります|  
-|カスタム規則を使用して要求を送信する|標準的な規則テンプレートより高度なオプションを提供するカスタム規則を作成するために使用します。 AD FS 要求規則言語を使用して、カスタム規則を記述します。<br /><br />詳細については、「 [When to Use a Custom Claim Rule](When-to-Use-a-Custom-Claim-Rule.md)」を参照してください。|-SQL 属性ストアから要求を送信するために使用できます。<br />-カスタム LDAP フィルターを指定するために使用できます<br />-PPID を発行するために使用できます<br />-カスタム属性ストアで使用できます。<br />-入力要求セットにのみ要求を追加するために使用できます<br />-複数の入力方向の要求に基づいて要求を送信するために使用できます。|-最初に要求規則言語に関する情報を取得するために、\- の増加時間がかかることがあります。|  
-|入力方向の要求に基づくユーザーの許可または拒否|入力方向の要求の種類と値に基づいて、証明書利用者へのユーザーによるアクセスを許可または拒否する規則を作成するために使用します。<br /><br />詳細については、「 [When to Use an Authorization Claim Rule](When-to-Use-an-Authorization-Claim-Rule.md)」を参照してください。|-承認プロセスを簡略化します。|-要求の種類と要求の値を1つだけ指定する必要があります<br />-要求値のパターンマッチングはサポートしていません|  
-|すべてのユーザーを許可|すべてのユーザーに証明書利用者へのアクセスを許可する規則を作成するために使用します。<br /><br />詳細については、「 [When to Use an Authorization Claim Rule](When-to-Use-an-Authorization-Claim-Rule.md)」を参照してください。|-構成が簡単|-受信要求テンプレートに基づいてユーザーを許可または拒否するよりも安全性が低くなります。|  
+|入力方向の要求をパス スルーまたはフィルター処理|選択された要求種類のすべての要求値をそのまま通す規則、または要求値に基づいて要求をフィルター処理し、選択された要求種類の特定の要求値のみをそのまま通す規則を作成するために使用します。<p>詳細については、「 [When to Use a Pass Through or Filter Claim Rule](When-to-Use-a-Pass-Through-or-Filter-Claim-Rule.md)」を参照してください。|-受け入れまたは変更せずに発行する特定の要求を選択するために使用できます。|-要求の種類と値を変更することはできません|  
+|入力方向の要求を変換する|入力方向の要求を選択して、異なる要求種類にマップできる規則、またはその要求値を新しい要求値にマップできる規則を作成するために使用します。<p>詳細については、「 [When to Use a Transform Claim Rule](When-to-Use-a-Transform-Claim-Rule.md)」を参照してください。|-要求の種類または値を正規化するために使用できます。<br />-入力方向の要求の電子\-メールサフィックスを置き換えることができます。|-複雑な文字列の置換にはカスタムルールが必要です|  
+|LDAP 属性を要求として送信する|LDAP 属性ストアから属性を選択し、要求として証明書利用者に送信する規則を作成するために使用します。<p>詳細については、「 [When to Use a Send LDAP Attributes as Claims Rule](When-to-Use-a-Send-LDAP-Attributes-as-Claims-Rule.md)」を参照してください。|-任意の AD DS\/AD LDS 属性ストアから要求を送信できます<br />-1 つのルールを使用して複数の要求を発行できます。|-パフォーマンス-アカウント参照の結果として低速<br />-クエリにカスタム LDAP フィルターを使用することはできません|  
+|グループ メンバーシップを要求として送信|ユーザーが Active Directory セキュリティ グループのメンバーである場合に指定された要求の種類と値を送信できる規則を作成するために使用します。 この規則を使用すると、選択したグループに基づいて、1 つの要求だけが送信されます。<p>詳細については、「 [When to Use a Send Group Membership as a Claim Rule](When-to-Use-a-Send-Group-Membership-as-a-Claim-Rule.md)」を参照してください。|-グループ要求を発行するための高速なパフォーマンス–アカウント参照なし|-ユーザーはローカル Active Directory グループのメンバーである必要があります|  
+|カスタム規則を使用して要求を送信|標準的な規則テンプレートより高度なオプションを提供するカスタム規則を作成するために使用します。 AD FS 要求規則言語を使用して、カスタム規則を記述します。<p>詳細については、「 [When to Use a Custom Claim Rule](When-to-Use-a-Custom-Claim-Rule.md)」を参照してください。|-SQL 属性ストアから要求を送信するために使用できます。<br />-カスタム LDAP フィルターを指定するために使用できます<br />-PPID を発行するために使用できます<br />-カスタム属性ストアで使用できます。<br />-入力要求セットにのみ要求を追加するために使用できます<br />-複数の入力方向の要求に基づいて要求を送信するために使用できます。|-最初に要求規則言語に関する情報を取得するために、\- の増加時間がかかることがあります。|  
+|入力方向の要求に基づくユーザーの許可または拒否|入力方向の要求の種類と値に基づいて、証明書利用者へのユーザーによるアクセスを許可または拒否する規則を作成するために使用します。<p>詳細については、「 [When to Use an Authorization Claim Rule](When-to-Use-an-Authorization-Claim-Rule.md)」を参照してください。|-承認プロセスを簡略化します。|-要求の種類と要求の値を1つだけ指定する必要があります<br />-要求値のパターンマッチングはサポートしていません|  
+|すべてのユーザーを許可|すべてのユーザーに証明書利用者へのアクセスを許可する規則を作成するために使用します。<p>詳細については、「 [When to Use an Authorization Claim Rule](When-to-Use-an-Authorization-Claim-Rule.md)」を参照してください。|-構成が簡単|-受信要求テンプレートに基づいてユーザーを許可または拒否するよりも安全性が低くなります。|  
   
 

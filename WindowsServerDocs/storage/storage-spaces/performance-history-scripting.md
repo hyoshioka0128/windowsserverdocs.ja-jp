@@ -1,57 +1,56 @@
 ---
-title: 記憶域スペース ダイレクトのパフォーマンスの履歴を使用したスクリプト
+title: 記憶域スペースダイレクトパフォーマンス履歴を使用したスクリプト作成
 ms.author: cosdar
-ms.manager: eldenc
+manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 05/15/2018
-Keywords: 記憶域スペース ダイレクト
 ms.localizationpriority: medium
-ms.openlocfilehash: cc8ebcaaf7cc39cfadb0ebcec71ed573b436b466
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4c25ed4112035fa729ccf17792a846263ec68dfc
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59816323"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856175"
 ---
-# <a name="scripting-with-powershell-and-storage-spaces-direct-performance-history"></a>PowerShell と記憶域スペース ダイレクトのパフォーマンスの履歴を使用したスクリプト
+# <a name="scripting-with-powershell-and-storage-spaces-direct-performance-history"></a>PowerShell と記憶域スペースダイレクトパフォーマンス履歴を使用したスクリプト
 
-> 適用先:Windows Server Insider Preview ビルド 17692 以降
+> 適用対象: Windows Server 2019
 
-Windows Server の 2019 で[記憶域スペース ダイレクト](storage-spaces-direct-overview.md)レコードとストアの広範な[パフォーマンス履歴](performance-history.md)仮想マシン、サーバー、ドライブ、ボリューム、ネットワーク アダプター、および詳細。 すばやく移動するため、パフォーマンス履歴がクエリおよび PowerShell でのプロセスに簡単*生データ*に*の実際の回答*ような質問をします。
+Windows Server 2019 では、[記憶域スペースダイレクト](storage-spaces-direct-overview.md)は、仮想マシン、サーバー、ドライブ、ボリューム、ネットワークアダプターなどのさまざまな[パフォーマンス履歴](performance-history.md)を記録して格納します。 パフォーマンス履歴は PowerShell でのクエリと処理が簡単であるため、*生データ*から次*のような質問にすばやく*アクセスできます。
 
-1. CPU スパイク過去 1 週間がありますか。
-2. 任意の物理ディスクに異常な待機時間が発生しているでしょうか。
-3. Vm ストレージの IOPS が最もを今すぐ消費しているでしょうか。
-4. マイ ネットワーク帯域幅が飽和状態でしょうか。
-5. このボリュームは空き領域の外で実行されると
-6. 過去 1 か月間は、Vm は、最も多くのメモリを使用しますか。
+1. 先週、CPU のスパイクが発生しましたか?
+2. 物理ディスクに異常な待機時間が発生しているか。
+3. 現時点で最も多くのストレージ IOPS を消費しているのはどの Vm ですか。
+4. ネットワーク帯域幅が飽和状態になっていますか。
+5. このボリュームの空き領域がなくなるのはいつですか?
+6. 過去1か月間、どの Vm で最も多くのメモリが使用されていましたか。
 
-`Get-ClusterPerf`コマンドレットはスクリプトを実行して構築されています。 などのコマンドレットからの入力を受け取って`Get-VM`または`Get-PhysicalDisk`などのユーティリティ コマンドレットに、その出力のパイプ処理でくと、関連付けを処理するために、パイプラインによって`Sort-Object`、 `Where-Object`、および`Measure-Object`強力なクエリをすばやく作成します。
+`Get-ClusterPerf` コマンドレットは、スクリプト用に構築されています。 これは、`Get-VM` のようなコマンドレットからの入力、またはパイプラインによって関連付けを処理する `Get-PhysicalDisk` を受け取り、`Sort-Object`、`Where-Object`、`Measure-Object` などのユーティリティコマンドレットに出力をパイプ処理して、強力なクエリをすばやく作成できます。
 
-**このトピックでは、提供し、上記の 6 つの質問に回答する 6 のサンプル スクリプトについて説明します。** ピーク時の検索、平均値を検索、傾向線のプロット、外れ値を検出、および詳細は、さまざまなデータと期間の間で実行に使用できるパターンはも提供します。 コピー、拡張、および再利用するための無料スターター コードとして提供されます。
+**このトピックでは、上記6つの質問に回答する6つのサンプルスクリプトについて説明します。** さまざまなデータや期間にわたって、ピークの検索、平均の検索、傾向線のプロット、外れ値検出の実行などを行うために適用できるパターンが用意されています。 これらのファイルは、コピー、拡張、再利用のための無料のスタートコードとして提供されています。
 
    > [!NOTE]
-   > 簡潔にするために、サンプル スクリプトは、高品質の PowerShell コードの考えられるエラーの処理などを省略します。 インスピレーションおよび教育機関向けの主なことは想定されて運用環境ではなくを使用します。
+   > 簡潔にするため、サンプルスクリプトでは、高品質の PowerShell コードを想定しているようなエラー処理を省略しています。 これらは、主に運用環境ではなく、インスピレーションと教育を目的としています。
 
-## <a name="sample-1-cpu-i-see-you"></a>サンプル 1:CPU、表示します。
+## <a name="sample-1-cpu-i-see-you"></a>サンプル 1: CPU、ご確認ください。
 
-このサンプルでは、`ClusterNode.Cpu.Usage`シリーズから、`LastWeek`クラスター内の最大値 ("high watermark")、すべてのサーバーの最小値、および平均の CPU 使用率を表示する期間。 数時間の CPU 使用率が 25% を表示する単純な四分位数の分析もは 50%、過去 8 日間で 75% です。
+このサンプルでは、`LastWeek` の期間の `ClusterNode.Cpu.Usage` シリーズを使用して、クラスター内の各サーバーの最大 CPU 使用率を表示します。 また、過去8日間の CPU 使用率が25%、50%、75% を超えた時間を示す単純な四分の分析も行います。
 
 ### <a name="screenshot"></a>Screenshot
 
-表示する次のスクリーン ショット*サーバー-02*予期しない急増を過去 1 週間必要があります。
+次のスクリーンショットでは、*サーバー-02*に先週のスパイクがあることがわかります。
 
-![PowerShell のスクリーン ショット](media/performance-history/Show-CpuMinMaxAvg.png)
+![PowerShell のスクリーンショット](media/performance-history/Show-CpuMinMaxAvg.png)
 
 ### <a name="how-it-works"></a>方法
 
-出力`Get-ClusterPerf`組み込みに適切にパイプ`Measure-Object`コマンドレットだけ指定します、`Value`プロパティ。 その`-Maximum`、 `-Minimum`、および`-Average`フラグ、`Measure-Object`により最初の 3 つの列は、ほとんどの無料。 四分位数の分析にパイプできます`Where-Object`値の数がカウントと`-Gt`(より大きい) 25、50、または 75 です。 美化の最後の手順は`Format-Hours`と`Format-Percent`確かに省略可能: ヘルパー関数。
+パイプを `Get-ClusterPerf` 組み込みの `Measure-Object` コマンドレットに出力すると、`Value` プロパティを指定するだけです。 `-Maximum`、`-Minimum`、および `-Average` フラグを使用して、`Measure-Object` 最初の3列を無料で提供します。 四分の分析を行うには、パイプを使用して `Where-Object` に `-Gt`、25、50、または75よりも大きい値の数をカウントします。 最後の手順では、`Format-Hours` と `Format-Percent` ヘルパー関数を整形します。もちろん、省略可能です。
 
 ### <a name="script"></a>スクリプト
 
-スクリプトを次に示します。
+スクリプトは次のようになります。
 
 ```
 Function Format-Hours {
@@ -91,30 +90,30 @@ $Output = Get-ClusterNode | ForEach-Object {
 $Output | Sort-Object ClusterNode | Format-Table
 ```
 
-## <a name="sample-2-fire-fire-latency-outlier"></a>サンプル 2:火災、火災、外れ値の待機時間
+## <a name="sample-2-fire-fire-latency-outlier"></a>サンプル 2: 火災、火災、待機時間の外れ値
 
-このサンプルでは、`PhysicalDisk.Latency.Average`データ系列を`LastHour`統計の外れ値を検索する期間を 1 時間あたりの平均待機時間を超える + 3σ ドライブとして定義されている (次の 3 つの標準偏差)、母集団の平均値を超える。
+このサンプルでは、`LastHour` 期間の `PhysicalDisk.Latency.Average` シリーズを使用して、人口平均を超える +3 σ (3 つの標準偏差) を超える時間単位の平均待機時間を持つドライブとして定義された統計外れ値を探します。
 
    > [!IMPORTANT]
-   > 簡潔にするため、このスクリプトは低差異の保護機能を実装していません、欠落している部分のデータを処理しない、モデルやファームウェアなどでは識別しません。適切な判断を練習してくださいとハード ディスクを交換するかどうかを判断するには、単独でこのスクリプトに依存しません。 説明を行うためここで表示されます。
+   > 簡潔にするために、このスクリプトは低レベルの分散に対するセーフガードを実装しておらず、部分的な欠損データを処理せず、モデルやファームウェアなどを区別しません。適切な略しを使用してください。ハードディスクを交換するかどうかを判断するために、このスクリプトだけに依存しないでください。 ここでは、教育目的でのみ提供されています。
 
 ### <a name="screenshot"></a>Screenshot
 
-次のスクリーン ショットでは、外れ値はありません参照してください。
+次のスクリーンショットには、外れ値がないことがわかります。
 
-![PowerShell のスクリーン ショット](media/performance-history/Show-LatencyOutlierHDD.png)
+![PowerShell のスクリーンショット](media/performance-history/Show-LatencyOutlierHDD.png)
 
 ### <a name="how-it-works"></a>方法
 
-チェック、アイドル状態またはほぼアイドル状態のドライブを除外する最初に、`PhysicalDisk.Iops.Total`が一貫して`-Gt 1`します。 パイプのアクティブな HDD はすべて、その`LastHour`時間枠、10 秒間隔でに 360 の測定の構成`Measure-Object -Average`を過去 1 時間に、平均待機時間を取得します。 これは、カタログの作成を設定します。
+まず、`PhysicalDisk.Iops.Total` が一貫して `-Gt 1`されていることを確認して、アイドル状態またはほぼアイドル状態のドライブを除外します。 すべてのアクティブな HDD について、360の測定値で構成される `LastHour` の期間を10秒間隔でパイプして、過去1時間の平均待機時間を取得するように `Measure-Object -Average` します。 これにより、作成が設定されます。
 
-実装して、[広く知られていない式](http://www.mathsisfun.com/data/standard-deviation.html)、平均値を検索する`μ`と標準偏差`σ`母集団の。 すべてのアクティブな HDD、母集団の平均の平均待機時間の比較や標準偏差で除算します。 ように、生の値をおきます`Sort-Object`使用が、結果`Format-Latency`と`Format-StandardDeviation`美化についても説明します – 確かに省略可能なヘルパー関数。
+母集団の平均 `μ` と標準偏差 `σ` を検索するために、[広く知ら](http://www.mathsisfun.com/data/standard-deviation.html)れている数式を実装しています。 すべてのアクティブな HDD について、平均待機時間と母集団平均を比較し、標準偏差で除算します。 生の値は保持されるため、結果を `Sort-Object` できますが、`Format-Latency` と `Format-StandardDeviation` ヘルパー関数を使用して、表示される内容を整形ことができます (省略可能)。
 
-任意のドライブがある場合以上 3σ、+ `Write-Host` red; でない場合は、緑色で。
+ドライブが +3 σよりも多い場合は、赤で `Write-Host` ます。それ以外の場合は、緑色になります。
 
 ### <a name="script"></a>スクリプト
 
-スクリプトを次に示します。
+スクリプトは次のようになります。
 
 ```
 Function Format-Latency {
@@ -201,28 +200,28 @@ Else {
 }
 ```
 
-## <a name="sample-3-noisy-neighbor-thats-write"></a>サンプル 3:迷惑な隣人でしょうか。 書き込みで完了です。
+## <a name="sample-3-noisy-neighbor-thats-write"></a>サンプル 3: 雑音の多い近隣 これで書き込みが可能です。
 
-パフォーマンスの履歴に関する質問に回答できる*今*もします。 新しい値はリアルタイムで使用できる、10 秒ごとです。 このサンプルでは、`VHD.Iops.Total`データ系列を`MostRecent`期間が最もビジー (「もっとも」一部たとえば可能性があります) を識別するために、クラスター内のすべてのホスト間でストレージ IOPS を最大限に使用する仮想マシンの読み取り/書き込みの内訳を表示して、アクティビティ。
+パフォーマンス履歴は、*現時点*でも質問に回答できます。 新しい測定値は、10秒ごとにリアルタイムで使用できます。 このサンプルでは、`MostRecent` の期間の `VHD.Iops.Total` シリーズを使用して、クラスター内のすべてのホストで最も多くの記憶域 IOPS を消費している仮想マシン ("noisiest" など) を特定し、それらのアクティビティの読み取り/書き込みの内訳を表示します。
 
 ### <a name="screenshot"></a>Screenshot
 
-次のスクリーン ショットで、上位 10 の仮想マシンを参照して記憶域のアクティビティによって。
+次のスクリーンショットでは、記憶域アクティビティ別の上位10個の仮想マシンが表示されています。
 
-![PowerShell のスクリーン ショット](media/performance-history/Show-TopIopsVMs.png)
+![PowerShell のスクリーンショット](media/performance-history/Show-TopIopsVMs.png)
 
 ### <a name="how-it-works"></a>方法
 
-異なり`Get-PhysicalDisk`、`Get-VM`コマンドレットは、クラスターに対応していません: ローカル サーバーでのみ Vm を返します。 呼び出しのラップを並列ですべてのサーバーから照会`Invoke-Command (Get-ClusterNode).Name { ... }`します。 すべての VM の取得、 `VHD.Iops.Total`、 `VHD.Iops.Read`、および`VHD.Iops.Write`測定値。 指定しないことにより、`-TimeFrame`パラメーターを取得、`MostRecent`ごとに 1 つのデータ ポイント。
+`Get-PhysicalDisk`とは異なり、`Get-VM` コマンドレットはクラスターに対応していません。ローカルサーバー上の Vm のみが返されます。 すべてのサーバーから並列でクエリを実行するには、`Invoke-Command (Get-ClusterNode).Name { ... }`で呼び出しをラップします。 すべての VM に対して、`VHD.Iops.Total`、`VHD.Iops.Read`、および `VHD.Iops.Write` の測定値を取得します。 `-TimeFrame` パラメーターを指定しないと、それぞれに対して1つの `MostRecent` データポイントが取得されます。
 
    > [!TIP]
-   > これらの系列には、すべての VHD または VHDX ファイルをこの VM のアクティビティの合計が反映されます。 これがパフォーマンスの履歴は自動的に集約されての例です。 VHD または VHDX の内訳を取得するには、個人をパイプするでした`Get-VHD`に`Get-ClusterPerf`VM の代わりにします。
+   > これらのシリーズは、すべての VHD/VHDX ファイルに対するこの VM のアクティビティの合計を反映しています。 この例では、パフォーマンス履歴が自動的に集計されています。 VHD/VHDX の内訳を取得するために、個々の `Get-VHD` を VM ではなく `Get-ClusterPerf` にパイプすることができます。
 
-すべてのサーバーからの結果は一体として`$Output`、ことができる`Sort-Object`し`Select-Object -First 10`します。 注意`Invoke-Command`で結果を装飾、`PsComputerName`どこから来るか、VM が実行されているかを把握することを印刷できるかを示すプロパティ。
+すべてのサーバーの結果が `$Output`としてまとめられ、`Sort-Object` して `Select-Object -First 10`できます。 装飾の結果は、その元の場所を示す `PsComputerName` プロパティを使用して `Invoke-Command` します。これは、VM が実行されている場所を知るために印刷できます。
 
 ### <a name="script"></a>スクリプト
 
-スクリプトを次に示します。
+スクリプトは次のようになります。
 
 ```
 $Output = Invoke-Command (Get-ClusterNode).Name {
@@ -253,26 +252,26 @@ $Output = Invoke-Command (Get-ClusterNode).Name {
 $Output | Sort-Object RawIopsTotal -Descending | Select-Object -First 10 | Format-Table PsComputerName, VM, IopsTotal, IopsRead, IopsWrite
 ```
 
-## <a name="sample-4-as-they-say-25-gig-is-the-new-10-gig"></a>サンプル 4:よく言われます「25 ギガは新しい 10 ギガ」
+## <a name="sample-4-as-they-say-25-gig-is-the-new-10-gig"></a>サンプル 4: 「25 gb は新しい 10 gb」と言います。
 
-このサンプルでは、`NetAdapter.Bandwidth.Total`シリーズから、`LastDay`として定義されているネットワークの飽和の兆候を検索する期間 > 理論上最大帯域幅の 90%。 クラスターのすべてのネットワーク アダプターの規定されたリンクの速度をその日の最高の観測された帯域幅使用率を比較します。
+このサンプルでは、`LastDay` の期間の `NetAdapter.Bandwidth.Total` シリーズを使用して、理論的な最大帯域幅の90% の > として定義されているネットワーク飽和状態を探します。 クラスター内のすべてのネットワークアダプターについて、過去1日の監視されている帯域幅の最大使用量が、示されているリンク速度と比較されます。
 
 ### <a name="screenshot"></a>Screenshot
 
-次のスクリーン ショットでは、1 つ表示*Fabrikam NX 4 Pro 2*最後の日のピークになっています。
+次のスクリーンショットでは、1つの*FABRIKAM NX-4 Pro #2*最後の日にピークされていることがわかります。
 
-![PowerShell のスクリーン ショット](media/performance-history/Show-NetworkSaturation.png)
+![PowerShell のスクリーンショット](media/performance-history/Show-NetworkSaturation.png)
 
 ### <a name="how-it-works"></a>方法
 
-繰り返します、`Invoke-Command`に上記のトリック`Get-NetAdapter`すべてサーバーにパイプで`Get-ClusterPerf`します。 過程で、2 つの関連するプロパティを取得します。 その`LinkSpeed`"10 Gbps"し、その生のような文字列`Speed`10000000000 などの整数。 使用して`Measure-Object`最後の日から平均およびピークを取得する (アラーム: 各測定値で、`LastDay`期間が 5 分を表します) 公正に比較を取得するバイトあたり 8 ビットを掛けるとします。
+上記の `Invoke-Command` トリックを繰り返して、すべてのサーバーとパイプを `Get-ClusterPerf`に `Get-NetAdapter` します。 その過程で、2つの関連するプロパティを取得します。たとえば、"10 Gbps" のような `LinkSpeed` 文字列と、100億のような生の `Speed` 整数です。 `Measure-Object` を使用して、過去1日の平均とピークを取得します (リマインダー: `LastDay` 期間内の各測定値は5分)、1バイトあたり8ビットで乗算して、りんごからの比較を取得します。
 
    > [!NOTE]
-   > Chelsio などの一部のベンダーは、リモート ダイレクト メモリ アクセス (RDMA) アクティビティを含める、*ネットワーク アダプター*に含まれているため、パフォーマンス カウンター、`NetAdapter.Bandwidth.Total`シリーズ。 他のユーザー、Mellanox のようなことはできません。 場合は、ベンダーは、追加するだけです、`NetAdapter.Bandwidth.RDMA.Total`シリーズでは、このスクリプトのバージョン。
+   > Chelsio などの一部のベンダーは、*ネットワークアダプター*のパフォーマンスカウンターにリモートダイレクトメモリアクセス (RDMA) アクティビティを含めているため、`NetAdapter.Bandwidth.Total` シリーズに含まれています。 Mellanox のような他の人は、そうでない場合があります。 ベンダでない場合は、このスクリプトのバージョンで `NetAdapter.Bandwidth.RDMA.Total` シリーズを追加するだけです。
 
 ### <a name="script"></a>スクリプト
 
-スクリプトを次に示します。
+スクリプトは次のようになります。
 
 ```
 $Output = Invoke-Command (Get-ClusterNode).Name {
@@ -325,30 +324,30 @@ $Output = Invoke-Command (Get-ClusterNode).Name {
 $Output | Sort-Object PsComputerName, InterfaceDescription | Format-Table PsComputerName, NetAdapter, LinkSpeed, MaxInbound, MaxOutbound, Saturated
 ```
 
-## <a name="sample-5-make-storage-trendy-again"></a>サンプル 5:記憶域をもう一度でも最先端ください。
+## <a name="sample-5-make-storage-trendy-again"></a>サンプル 5: ストレージの trendy を再度作成します。
 
-マクロの傾向を見て、パフォーマンスの履歴は最長 1 年間保持されます。 このサンプルでは、`Volume.Size.Available`シリーズから、`LastYear`なる完全なストレージがいっぱいになるレートと見積もりを確認する期間。
+マクロの傾向を確認するために、パフォーマンス履歴は最大1年間保持されます。 このサンプルでは、`LastYear` の期間の `Volume.Size.Available` シリーズを使用して、ストレージがいっぱいになったときの割合を判断し、それがいっぱいになったときに見積もります。
 
 ### <a name="screenshot"></a>Screenshot
 
-次のスクリーン ショットでは、表示、*バックアップ*ボリュームが 1 日あたり約 15 GB を追加します。
+次のスクリーンショットでは、*バックアップ*ボリュームが1日あたり約 15 GB を追加していることがわかります。
 
-![PowerShell のスクリーン ショット](media/performance-history/Show-StorageTrend.png)
+![PowerShell のスクリーンショット](media/performance-history/Show-StorageTrend.png)
 
-この速度でその容量に達した 42 日の間で。
+この料金が発生すると、別の42日以内に容量に達します。
 
 ### <a name="how-it-works"></a>方法
 
-`LastYear`期間が 1 日あたり 1 つのデータ ポイント。 厳密にのみ必要傾向線に合わせて 2 つのポイントは、実際にはお勧め詳細は 14 日間のように要求するようにします。 使用して`Select-Object -Last 14`の配列を設定する *(x, y)* 、ポイントの*x* [1, 14] の範囲内です。 これらの点を持つ、簡単な実装[最小二乗法の線形アルゴリズム](http://mathworld.wolfram.com/LeastSquaresFitting.html)を検索する`$A`と`$B`最適な行をパラメーター化する*y = ax+b の a*します。 へようこそ高校をもう一度です。
+`LastYear` の期間には1日あたり1つのデータポイントがあります。 傾向線に合わせるために必要なポイントは厳密に2つだけですが、実際には、14日など、さらに多くの点が必要になります。 ここでは、範囲 [1, 14] の*x*の配列 *(x、y)* を設定するために `Select-Object -Last 14` を使用します。 これらのポイントでは、単純な[線形最小二乗アルゴリズム](http://mathworld.wolfram.com/LeastSquaresFitting.html)を実装して、最適な行の*y = ax + b*をパラメーター化する `$A` と `$B` を検索します。 この後も、高校にようこそ。
 
-分割、ボリュームの`SizeRemaining`傾向によりプロパティ (傾き`$A`) により、簡単、ボリュームがいっぱいになるまで記憶域の成長の現在の速度で日の数の見積もり。 `Format-Bytes`、 `Format-Trend`、および`Format-Days`美化する出力のヘルパー関数。
+ボリュームの `SizeRemaining` プロパティを傾向 (傾斜 `$A`) で除算すると、ボリュームがいっぱいになるまで、現在の記憶域の増加率で crudely を見積もることができます。 `Format-Bytes`、`Format-Trend`、および `Format-Days` ヘルパー関数は、出力を整形します。
 
    > [!IMPORTANT]
-   > この見積もりは、線形および最新の 14 日単位の測定値のみに基づいてです。 高度で正確な手法があります。 適切な判断を練習してくださいと、ストレージの拡張に投資するかどうかを判断するには、単独でこのスクリプトに依存しません。 説明を行うためここで表示されます。
+   > この見積もりは線形的で、最新の14日単位の測定値に基づいています。 より洗練された正確な手法があります。 優れた略しを使用して、ストレージの拡張に投資するかどうかを判断するために、このスクリプトだけに依存しないでください。 ここでは、教育目的でのみ提供されています。
 
 ### <a name="script"></a>スクリプト
 
-スクリプトを次に示します。
+スクリプトは次のようになります。
 
 ```
 
@@ -440,23 +439,23 @@ $Output = $CSV | ForEach-Object {
 $Output | Format-Table
 ```
 
-## <a name="sample-6-memory-hog-you-can-run-but-you-cant-hide"></a>例 6:メモリを消費を実行できますが、非表示にすることはできません。
+## <a name="sample-6-memory-hog-you-can-run-but-you-cant-hide"></a>サンプル 6: メモリオートバイは実行できますが、非表示にすることはできません。
 
-パフォーマンス履歴が収集され、何度もまとめて方法に関係なく、別のマシンからデータを合成する必要がありますしないクラスター全体を一元的に格納されている Vm ホスト間を移動します。 このサンプルでは、`VM.Memory.Assigned`シリーズから、`LastMonth`過去 35 日間、最もメモリを消費する仮想マシンを特定する期間。
+パフォーマンス履歴はクラスター全体に対して一元的に収集されて保存されるため、ホスト間で Vm が何回移動するかに関係なく、異なるコンピューターのデータを結合する必要はありません。 このサンプルでは、`LastMonth` 期間の `VM.Memory.Assigned` シリーズを使用して、過去35日間に最も多くのメモリを消費している仮想マシンを特定します。
 
 ### <a name="screenshot"></a>Screenshot
 
-次のスクリーン ショットで、上位 10 の仮想マシンを参照して、過去 1 か月のメモリ使用量。
+次のスクリーンショットでは、過去1か月間のメモリ使用量別の上位10個の仮想マシンが表示されています。
 
-![PowerShell のスクリーン ショット](media/performance-history/Show-TopMemoryVMs.png)
+![PowerShell のスクリーンショット](media/performance-history/Show-TopMemoryVMs.png)
 
 ### <a name="how-it-works"></a>方法
 
-繰り返します、`Invoke-Command`うまくいきますよには、上で導入された`Get-VM`すべてのサーバーにします。 使用して`Measure-Object -Average`し、すべての VM の月単位の平均値を取得する`Sort-Object`続けて`Select-Object -First 10`ランキングを取得します。 (もしかしたら、*要望の多かった*リスト?)
+上記の `Invoke-Command` トリックを繰り返して、すべてのサーバーで `Get-VM` します。 `Measure-Object -Average` を使用して、すべての VM の月単位の平均を取得し、`Sort-Object` 後に `Select-Object -First 10` して、スコアボードを取得します。 (または、これが*最も必要*なリストかもしれません)。
 
 ### <a name="script"></a>スクリプト
 
-スクリプトを次に示します。
+スクリプトは次のようになります。
 
 ```
 $Output = Invoke-Command (Get-ClusterNode).Name {
@@ -486,10 +485,10 @@ $Output = Invoke-Command (Get-ClusterNode).Name {
 $Output | Sort-Object RawAvgMemoryUsage -Descending | Select-Object -First 10 | Format-Table PsComputerName, VM, AvgMemoryUsage
 ```
 
-以上で作業は終了です。 これらのサンプルを啓発し、始めてさいわいです。 記憶域スペース ダイレクトのパフォーマンスの履歴と、強力なスクリプトに適した`Get-ClusterPerf`コマンドレット、– 質問し、回答を! 複雑な質問を管理して、Windows Server 2019 インフラストラクチャを監視します。
+以上で終わりです。 これらのサンプルを使用すると、作業を開始するのに役立ちます。 パフォーマンスの履歴と強力なスクリプトに対応した `Get-ClusterPerf` コマンドレットを使用して、回答を記憶域スペースダイレクトことができます。 – Windows Server 2019 インフラストラクチャを管理および監視する際の複雑な質問。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [Windows PowerShell の概要](https://docs.microsoft.com/powershell/scripting/getting-started/getting-started-with-windows-powershell)
-- [記憶域スペース ダイレクトの概要](storage-spaces-direct-overview.md)
+- [記憶域スペースダイレクトの概要](storage-spaces-direct-overview.md)
 - [パフォーマンス履歴](performance-history.md)

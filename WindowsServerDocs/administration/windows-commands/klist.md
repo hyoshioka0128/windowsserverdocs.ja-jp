@@ -1,24 +1,20 @@
 ---
 title: klist
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Windows コマンドに関するトピック * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4689b4a9-1740-47dd-9240-02105efca428
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4b35069faa835b59f2655262f640ddb18068702f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b693e4496f4fc1275e1f2b364900564ce86e97cb
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71375310"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80841965"
 ---
 # <a name="klist"></a>klist
 
@@ -32,16 +28,16 @@ ms.locfileid: "71375310"
 klist [-lh <LogonId.HighPart>] [-li <LogonId.LowPart>] tickets | tgt | purge | sessions | kcd_cache | get | add_bind | query_bind | purge_bind
 ```
 
-### <a name="parameters"></a>パラメーター
+#### <a name="parameters"></a>パラメーター
 
 |パラメーター|説明|
 |---------|-----------|
 |-lh|ユーザーのローカル一意識別子 (LUID) の大部分を16進数で表したものを示します。 – Lh も– li も存在しない場合、コマンドの既定値は、現在サインインしているユーザーの LUID です。|
 |-li|ユーザーのローカル一意識別子 (LUID) の下位部分 (16 進数で表される) を表します。 – Lh も– li も存在しない場合、コマンドの既定値は、現在サインインしているユーザーの LUID です。|
-|券|現在キャッシュされているチケット付与チケット (Tgt)、および指定したログオンセッションのサービスチケットが一覧表示されます。 既定のオプションです。|
+|チケット|現在キャッシュされているチケット付与チケット (Tgt)、および指定したログオンセッションのサービスチケットが一覧表示されます。 これは既定のオプションです|
 |tgt|最初の Kerberos TGT を表示します。|
 |削除|指定されたログオンセッションのすべてのチケットを削除できます。|
-|Sessions|このコンピューターのログオンセッションの一覧を表示します。|
+|セッション|このコンピューターのログオンセッションの一覧を表示します。|
 |kcd_cache|Kerberos の制約付き委任キャッシュ情報を表示します。|
 |get|サービスプリンシパル名 (SPN) によって指定されたターゲットコンピューターにチケットを要求できます。|
 |add_bind|Kerberos 認証に優先するドメインコントローラーを指定できます。|
@@ -60,48 +56,48 @@ klist [-lh <LogonId.HighPart>] [-li <LogonId.LowPart>] tickets | tgt | purge | s
 -   **券**
 
     ログオン以降に認証されたサービスの現在のキャッシュチケットを一覧表示します。 キャッシュされたすべてのチケットの次の属性を表示します。  
-    -   LogonID:LUID
-    -   クライアント:クライアント名とクライアントのドメイン名を連結したものです。
+    -   LogonID: LUID
+    -   クライアント: クライアント名とクライアントのドメイン名を連結したものです。
     -   サーバー: サービス名とサービスのドメイン名を連結したものです。
-    -   KerbTicket の暗号化の種類:Kerberos チケットの暗号化に使用される暗号化の種類
-    -   チケットのフラグ:Kerberos チケットフラグ
-    -   開始時刻:チケットが有効になる時刻。
-    -   終了時刻:チケットが有効でなくなった時刻。 チケットがこの時間を過ぎている場合、サービスへの認証や更新に使用することはできなくなります。
-    -   更新時刻:新しい初期認証が必要になるまでの時間
-    -   セッションキーの種類:セッションキーに使用される暗号化アルゴリズム
+    -   KerbTicket の暗号化の種類: Kerberos チケットの暗号化に使用される暗号化の種類
+    -   チケットフラグ: Kerberos チケットフラグ
+    -   開始時刻: チケットが有効になる時刻。
+    -   終了時刻: チケットが有効でなくなった時刻。 チケットがこの時間を過ぎている場合、サービスへの認証や更新に使用することはできなくなります。
+    -   更新時間: 新しい初期認証が必要になるまでの時間
+    -   セッションキーの種類: セッションキーに使用される暗号化アルゴリズム
 -   **tgt**
 
     最初の Kerberos TGT と、現在キャッシュされているチケットの次の属性を一覧表示します。  
-    -   LogonID:16進数で識別
+    -   LogonID:16 進数で識別されます。
     -   ServiceName: krbtgt
     -   TargetName \<SPN >: krbtgt
-    -   TapiTGT を発行するドメインの名前
-    -   TargetDomainName:TGT が発行されるドメイン
-    -   AltTargetDomainName:TGT が発行されるドメイン
-    -   チケットのフラグ:アドレスとターゲットのアクションと種類
-    -   セッションキー:キーの長さと暗号化アルゴリズム
-    -   /Stチケットが要求されたローカルコンピューターの時刻
-    -   EndTimeチケットが有効でなくなった時刻。 チケットがこの時間を過ぎている場合は、サービスに対する認証に使用できなくなります。
-    -   RenewUntil:チケット更新の期限
-    -   TimeSkew:キー配布センター (KDC) との時差
-    -   エンコードチケット:エンコードされたチケット
+    -   DomainName: TGT を発行するドメインの名前
+    -   TargetDomainName: TGT の発行先のドメイン
+    -   AltTargetDomainName: TGT の発行先のドメイン
+    -   チケットのフラグ: アドレスおよびターゲットのアクションと種類
+    -   セッションキー: キーの長さと暗号化アルゴリズム
+    -   StartTime: チケットが要求されたローカルコンピューターの時刻
+    -   EndTime: チケットが有効でなくなった時刻。 チケットがこの時間を過ぎている場合は、サービスに対する認証に使用できなくなります。
+    -   RenewUntil: チケット更新の期限
+    -   TimeSkew: キー配布センター (KDC) との時間差
+    -   エンコードされたチケット: エンコードされたチケット
 -   **済み**
 
     特定のチケットを削除できます。 チケットを削除すると、キャッシュされているすべてのチケットが破棄されるため、この属性は注意して使用してください。 リソースに対して認証できなくなる可能性があります。 この問題が発生した場合は、いったんログオフしてから再度ログオンする必要があります。  
-    -   LogonID:16進数で識別
+    -   LogonID:16 進数で識別されます。
 -   **sessions**
 
     このコンピューターのすべてのログオンセッションの情報を一覧表示し、表示することができます。  
-    -   LogonID:指定した場合、指定した値によってのみログオンセッションが表示されます。 指定しない場合、このコンピューターのすべてのログオンセッションが表示されます。
+    -   LogonID: 指定した場合、指定した値によってのみログオンセッションが表示されます。 指定しない場合、このコンピューターのすべてのログオンセッションが表示されます。
 -   **kcd_cache**
 
     Kerberos の制約付き委任キャッシュ情報を表示できます。  
-    -   LogonID:指定した場合は、指定された値までにログオンセッションのキャッシュ情報が表示されます。 指定しない場合、現在のユーザーのログオンセッションのキャッシュ情報が表示されます。
+    -   LogonID: 指定されている場合、指定された値によってログオンセッションのキャッシュ情報が表示されます。 指定しない場合、現在のユーザーのログオンセッションのキャッシュ情報が表示されます。
 -   **取得**
 
     SPN によって指定されたターゲットにチケットを要求できます。  
-    -   LogonID:指定した場合、指定された値でログオンセッションを使用してチケットを要求します。 指定しない場合、現在のユーザーのログオンセッションを使用してチケットを要求します。
-    -   kdcoptions:指定された KDC オプションでチケットを要求します
+    -   LogonID: 指定されている場合、指定された値によってログオンセッションを使用してチケットを要求します。 指定しない場合、現在のユーザーのログオンセッションを使用してチケットを要求します。
+    -   kdcoptions: 指定された KDC オプションでチケットを要求します
 -   **add_bind**
 
     Kerberos 認証に優先するドメインコントローラーを指定できます。
@@ -118,7 +114,7 @@ klist [-lh <LogonId.HighPart>] [-li <LogonId.LowPart>] tickets | tgt | purge | s
 **その他の考慮事項**
 -   Klist は、Windows Server 2012 および Windows 8 で使用でき、特別なインストールは必要ありません。
 
-## <a name="BKMK_Examples"></a>例
+## <a name="examples"></a><a name=BKMK_Examples></a>例
 
 1. 対象サーバーのチケット保証サービス (TGS) 要求の処理中にイベント ID 27 を診断するときに、アカウントに Kerberos チケットを生成するための適切なキーがありませんでした。 Klist を使用して Kerberos チケットキャッシュを照会し、チケットが不足しているかどうか、対象サーバーまたはアカウントにエラーがあるかどうか、または暗号化の種類がサポートされていないかどうかを確認できます。  
    ```
@@ -166,6 +162,6 @@ klist [-lh <LogonId.HighPart>] [-li <LogonId.LowPart>] tickets | tgt | purge | s
    klist purge_bind
    ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
--   [コマンド ライン構文の記号](command-line-syntax-key.md)
+-   - [コマンド ライン構文の記号](command-line-syntax-key.md)

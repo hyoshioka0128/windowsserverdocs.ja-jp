@@ -1,7 +1,6 @@
 ---
 ms.assetid: 20d183f0-ef94-44bb-9dfc-ed93799dd1a6
 title: カスタム要求規則を使用する状況
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: c784c4b6dbfee7034dd9302dc87fc74b896763f5
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 41e7ea7c2bc627f2fce198e5c7227148e8b03d88
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950141"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853825"
 ---
 # <a name="when-to-use-a-custom-claim-rule"></a>カスタム要求規則を使用する状況
 カスタム要求規則を作成するには、要求規則言語を使用します。要求規則言語は、クレーム発行エンジンがプログラムによって生成、変換、パススルー、およびフィルター処理を行うために使用するフレームワークである要求規則言語を使用して Active Directory フェデレーションサービス (AD FS) \(\) AD FS ます。 カスタム規則を使用することで、標準的な規則テンプレートよりもさらに複雑なロジックを持つ規則を作成できます。 次の状況に該当する場合に、カスタム規則の使用を検討してください。  
@@ -70,12 +69,12 @@ ms.locfileid: "75950141"
 ## <a name="using-the-claim-rule-language"></a>要求規則言語の使用  
   
 ### <a name="example-how-to-combine-first-and-last-names-based-on-a-users-name-attribute-values"></a>例: ユーザーの名前属性値に基づいて姓と名を結合する方法  
-次の規則の構文は、特定の属性ストアの属性値からの姓と名を結合します。 ポリシー エンジンは、各条件の一致結果のデカルト積を形成します。 たとえば、名 {“Frank”, “Alan”} と姓 {“Miller”, “Shen”} の出力は、{“Frank Miller”, “Frank Shen”, “Alan Miller”, “Alan Shen”}: となります。  
+次の規則の構文は、特定の属性ストアの属性値からの姓と名を結合します。 ポリシー エンジンは、各条件の一致結果のデカルト積を形成します。 たとえば、名 {"Frank", "Alan"} と姓 {"明美", "Shen"} の出力は、{"Frank 明美"、"Frank Shen"、"Alan 明美"、"Alan Shen"} のようになります。  
   
 ```  
 c1:[type == "http://exampleschema/firstname" ]  
 &&  c2:[type == "http://exampleschema/lastname",]   
-=> issue(type = "http://exampleschema/name", value = c1.value + “  “ + c2.value);  
+=> issue(type = "http://exampleschema/name", value = c1.value + "  " + c2.value);  
 ```  
   
 ### <a name="example-how-to-issue-a-manager-claim-based-on-whether-users-have-direct-reports"></a>例: ユーザーに直属の部下があるかどうかに基づいてマネージャー要求をを発行する方法  
@@ -83,7 +82,7 @@ c1:[type == "http://exampleschema/firstname" ]
   
 ```  
 c:[type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"] => add(store = "SQL Store", types = ("http://schemas.xmlsoap.org/claims/Reports"), query = "SELECT Reports FROM dbo.DirectReports WHERE UserName = {0}", param = c.value );  
-count([type == “http://schemas.xmlsoap.org/claims/Reports“] ) > 0 => issue(= "http://schemas.xmlsoap.org/claims/ismanager", value = "true");  
+count([type == "http://schemas.xmlsoap.org/claims/Reports"] ) > 0 => issue(= "http://schemas.xmlsoap.org/claims/ismanager", value = "true");  
 ```  
   
 ### <a name="example-how-to-issue-a-ppid-claim-based-on-an-ldap-attribute"></a>例: LDAP 属性に基づいて PPID 要求を発行する方法  

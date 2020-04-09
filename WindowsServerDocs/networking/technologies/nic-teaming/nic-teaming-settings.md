@@ -2,23 +2,19 @@
 title: NIC チーミングの設定
 description: このトピックでは、チーミングおよび負荷分散モードなど、NIC チームのプロパティの概要について説明します。 また、スタンバイアダプターの設定とプライマリチームインターフェイスのプロパティについても詳しく説明します。 NIC チームに少なくとも2つのネットワークアダプターがある場合は、フォールトトレランスのためにスタンバイアダプターを指定する必要はありません。
 manager: dougkim
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-nict
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a4caaa86-5799-4580-8775-03ee213784a3
 ms.author: lizross
 author: eross-msft
 ms.date: 09/13/2018
-ms.openlocfilehash: fc9ab0fa3d1da0e7af8a7a1d7a8706ba6d128648
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 8ae461f8e9236451e9a6b442cafecee4981ed8ce
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80316475"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853715"
 ---
 # <a name="nic-teaming-settings"></a>NIC チーミングの設定
 このトピックでは、チーミングおよび負荷分散モードなど、NIC チームのプロパティの概要について説明します。 また、スタンバイアダプターの設定とプライマリチームインターフェイスのプロパティについても詳しく説明します。 NIC チームに少なくとも2つのネットワークアダプターがある場合は、フォールトトレランスのためにスタンバイアダプターを指定する必要はありません。

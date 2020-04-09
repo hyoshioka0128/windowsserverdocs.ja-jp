@@ -1,21 +1,21 @@
 ---
 title: ホストコンピューティングネットワーク (HCN) のシナリオ
-description: ''
 ms.author: jmesser
 author: jmesser81
+ms.prod: windows-server
 ms.date: 11/05/2018
-ms.openlocfilehash: 91cdafa9699cd213156d872090034dd4ea67108e
-ms.sourcegitcommit: 213989f29cc0c30a39a78573bd4396128a59e729
+ms.openlocfilehash: 2fdf0d13a0a362681a27106356fbe295532ed970
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70031533"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859835"
 ---
 # <a name="common-scenarios"></a>一般的なシナリオ
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2019
+>適用対象: Windows Server (半期チャネル)、Windows Server 2019
 
-## <a name="scenario-hcn"></a>シナリオ:HCN 
+## <a name="scenario-hcn"></a>シナリオ: HCN 
 
 
 ### <a name="create-an-hcn"></a>HCN を作成する
@@ -96,9 +96,9 @@ void CreateHcnNetwork()
                     // UnMarshal  the result Json
      // ErrorSchema
         //   {
-        //  "ErrorCode" : <uint32>,
-        //  "Error" : <string>,
-        //  "Success" : <bool>,
+        //    "ErrorCode" : <uint32>,
+        //    "Error" : <string>,
+        //    "Success" : <bool>,
        //   }
 
         // Failed to create network
@@ -189,7 +189,7 @@ void CreateHcnNetwork()
 ```
 
 
-## <a name="scenario-hcn-endpoint"></a>シナリオ:HCN エンドポイント
+## <a name="scenario-hcn-endpoint"></a>シナリオ: HCN エンドポイント
 
 ### <a name="create-an-hcn-endpoint"></a>HCN エンドポイントを作成する
 
@@ -222,7 +222,7 @@ void CreateAndHotAddEndpoint()
             "Suffix" : "net.home",
             "ServerList" : "10.0.0.10",
         }
-    })”;
+    })";
     GUID endpointGuid;  
     HRESULT result = CoCreateGuid(&endpointGuid);
 
@@ -266,7 +266,7 @@ void CreateAndHotAddEndpoint()
 ```
 
 
-### <a name="delete-an-endpoint"></a>エンドポイントを削除する
+### <a name="delete-an-endpoint"></a>エンドポイントの削除
 
 このサンプルでは、ホストコンピューティングネットワークサービス API を使用してホストコンピューティングネットワークエンドポイントを削除する方法を示します。
 
@@ -381,7 +381,7 @@ void CreateAndHotAddEndpoint()
 ```
 
 
-## <a name="scenario-hcn-namespace"></a>シナリオ:HCN 名前空間
+## <a name="scenario-hcn-namespace"></a>シナリオ: HCN 名前空間
 
 ### <a name="create-an-hcn-namespace"></a>HCN 名前空間を作成する
 
@@ -424,9 +424,9 @@ void CreateHcnNamespace()
                     // UnMarshal  the result Json
      // ErrorSchema
         //   {
-        //  "ErrorCode" : <uint32>,
-        //  "Error" : <string>,
-        //  "Success" : <bool>,
+        //    "ErrorCode" : <uint32>,
+        //    "Error" : <string>,
+        //    "Success" : <bool>,
        //   }
 
         // Failed to create network
@@ -564,7 +564,7 @@ void CreateHcnNamespace()
 ```
 
 
-## <a name="scenario-hcn-load-balancer"></a>シナリオ:HCN ロードバランサー
+## <a name="scenario-hcn-load-balancer"></a>シナリオ: HCN ロードバランサー
 
 ### <a name="create-an-hcn-load-balancer"></a>HCN ロードバランサーを作成する
 
@@ -620,9 +620,9 @@ void CreateHcnLoadBalancer()
                     // UnMarshal  the result Json
      // ErrorSchema
         //   {
-        //  "ErrorCode" : <uint32>,
-        //  "Error" : <string>,
-        //  "Success" : <bool>,
+        //    "ErrorCode" : <uint32>,
+        //    "Error" : <string>,
+        //    "Success" : <bool>,
        //   }
 
         // Failed to create network
@@ -761,7 +761,7 @@ void CreateHcnLoadBalancer()
 ```
 
 
-## <a name="scenario-hcn-notifications"></a>シナリオ:HCN 通知
+## <a name="scenario-hcn-notifications"></a>シナリオ: HCN 通知
 
 ### <a name="register-and-unregister-service-wide-notifications"></a>サービス全体の通知の登録と登録解除
 
@@ -832,7 +832,7 @@ void UnregisterForServiceNotifications()
 }
 ```
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ:
 
 - [HCN の RPC コンテキストハンドル](hcn-declaration-handles.md)の詳細については、こちらを参照してください。
 

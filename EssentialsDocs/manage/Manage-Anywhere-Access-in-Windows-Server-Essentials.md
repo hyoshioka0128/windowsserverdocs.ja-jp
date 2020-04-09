@@ -1,23 +1,19 @@
 ---
 title: Windows Server Essentials での Anywhere Access の管理
 description: Windows Server Essentials の使用方法について説明します。
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c369c317-f94d-4179-a735-e74bf6f62692
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 58cb5072ae037a4c0dca0328a17675d50fa5495f
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 63f8cb17adb7e65a42a93bfeedc2ee7ec2ff3657
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80311461"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852865"
 ---
 # <a name="manage-anywhere-access-in-windows-server-essentials"></a>Windows Server Essentials での Anywhere Access の管理
 

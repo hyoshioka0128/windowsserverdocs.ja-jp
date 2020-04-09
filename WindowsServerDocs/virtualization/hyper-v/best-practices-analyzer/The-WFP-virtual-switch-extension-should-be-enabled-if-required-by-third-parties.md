@@ -2,20 +2,19 @@
 title: 'The WFP virtual switch extension should be enabled if it is required by third party extensions (Hyper-V: サード パーティ製の拡張機能で必要とされている場合、WFP 仮想スイッチ拡張機能を有効にする必要がある)'
 description: このベストプラクティスアナライザールールのテキストのオンラインバージョン。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: 8aa8a9a5-e3fa-4c9b-8331-ba5a3de22429
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 41ab2bac7c98608b051c74d2fbfb8359f493385c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d4cc23ce638f7b5ee95f80de067b4ad5b360d118
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71364617"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859305"
 ---
 # <a name="the-wfp-virtual-switch-extension-should-be-enabled-if-it-is-required-by-third-party-extensions"></a>The WFP virtual switch extension should be enabled if it is required by third party extensions (Hyper-V: サード パーティ製の拡張機能で必要とされている場合、WFP 仮想スイッチ拡張機能を有効にする必要がある)
 
@@ -27,7 +26,7 @@ ms.locfileid: "71364617"
 |-|-|  
 |**オペレーティング システム**|Windows Server 2016|  
 |**製品/機能**|Hyper-V|  
-|**順**|Warning|  
+|**順**|［警告］|  
 |**カテゴリ**|構成|  
   
 次のセクションでは、斜体は、この問題のためのベスト プラクティス アナライザー ツールで表示される UI テキストを示します。  
@@ -52,7 +51,7 @@ ms.locfileid: "71364617"
 3.  外部スイッチの名前の外部を交換した後、このコマンドを実行します。  
   
 ```  
-Enable-VMSwitchExtension -VMSwitchName External -Name "Microsoft Windows Filtering Platform"  
+Enable-VMSwitchExtension -VMSwitchName External -Name Microsoft Windows Filtering Platform  
 ```  
   
 ## <a name="see-also"></a>参照  

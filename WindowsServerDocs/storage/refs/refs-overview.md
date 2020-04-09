@@ -2,21 +2,21 @@
 title: Resilient File System (ReFS) の概要
 ms.prod: windows-server
 ms.author: gawatu
-ms.manager: mchad
+manager: mchad
 ms.technology: storage-file-systems
 ms.topic: article
 author: gawatu
 ms.date: 06/17/2019
-ms.openlocfilehash: 91fdd5aa696c170cacc8903a65e996beb71c4b8f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8d32ef6bc4ce169ff73f9ab147783ac0607617f2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403013"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857545"
 ---
 # <a name="resilient-file-system-refs-overview"></a>Resilient File System (ReFS) の概要
 
->適用対象:Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server (半期チャネル)
+>適用対象: Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server (半期チャネル)
 
 Resilient File System (ReFS) は、Microsoft の最新のファイル システムであり、データの最大限の可用性、さまざまなワークロードに対する大規模なデータ セットへの拡張、破損部分の回復によるデータの整合性を実現できるように設計されています。 拡大する一連の記憶域のシナリオに対処し、未来の技術革新の基盤を確立することを目指しています。
 
@@ -31,7 +31,7 @@ ReFS には、正確に破損を検出し、オンライン状態を維持しな
 - **データの部分的な救済** - ボリュームが破損し、破損したデータの代替コピーが存在しない場合、ReFS は名前空間から破損したデータを削除します。 ReFS では、ほとんどの修正できない破損を処理している間、ボリュームをオンライン状態に保つことができます。ただし、まれに、ReFS でボリュームをオフラインにすることが必要になる場合もあります。
 - **事前対応型のエラー修正** - ReFS では、読み取りと書き込みの前にデータを検証するだけでなく、<i></i>"スクラブ機能" と呼ばれる、データの整合性のスキャン機能が導入されています。 このスクラブ機能ではボリュームが定期的にスキャンされ、潜在的な破損部分を識別し、その破損データの修復を事前にトリガーします。 
 
-### <a name="performance"></a>パフォーマンス
+### <a name="performance"></a>パフォーマンス テスト
 
 回復性の向上に加えて、ReFS には、パフォーマンスが重視される仮想化されたワークロードに関する新機能が導入されています。 リアルタイムでの階層の最適化、ブロックの複製、スパース VDL は、動的に多様なワークロードをサポートするように設計されている、ReFS の先進的な機能の一例です。
 
@@ -64,7 +64,7 @@ ReFS は、非常に大きなデータ セット (数百万テラバイト) を�
 
 ## <a name="supported-deployments"></a>サポートされる展開
 
-Microsoft では、さまざまな構成やワークロードを使用した汎用的な用途のために NTFS を開発していますが、ReFS が提供する可用性、回復性、およびスケールを特別に要求しているお客様は、次のような構成とシナリオがあります。 
+Microsoft では、さまざまな構成やワークロードでの汎用的な使用専用に NTFS を開発していますが、ReFS が提供する可用性、回復性、およびスケールを特別に必要とするお客様には、次の構成とシナリオでの ReFS の使用がサポートされています。 
 
 > [!NOTE]
 > 参照がサポートされているすべての構成では、 [Windows Server Catalog](https://www.WindowsServerCatalog.com)認定ハードウェアを使用し、アプリケーションの要件を満たす必要があります。
@@ -120,7 +120,7 @@ ReFS をバックアップターゲットとして展開することは、独自
 | 機能       | ReFS                                        | NTFS |
 |---------------------------|------------------|-----------------------|
 | BitLocker 暗号化 | はい | はい |
-| データ重複除去 | 可<sup>1</sup> | はい |
+| データ重複除去 | はい <sup>1</sup> | はい |
 | クラスター共有ボリューム (CSV) のサポート | 可<sup>2</sup> | はい |
 | ソフト リンク | はい | はい |
 | フェールオーバー クラスターのサポート | はい | はい |
@@ -135,8 +135,8 @@ ReFS をバックアップターゲットとして展開することは、独自
 | oplock | はい | はい |
 | スパース ファイル | はい | はい |
 | 名前付きストリーム | はい | はい |
-| 仮想プロビジョニング | 可 <sup>3</sup> | はい |
-| トリミング/マップ解除 | 可 <sup>3</sup> | はい |
+| 仮想プロビジョニング | はい<sup>3</sup> | はい |
+| トリミング/マップ解除 | はい<sup>3</sup> | はい |
 1. Windows Server バージョン1709以降で使用できます。
 2. Windows Server 2012 R2 以降で使用できます。
 3. 記憶域スペースのみ
@@ -166,9 +166,9 @@ ReFS をバックアップターゲットとして展開することは、独自
 | ページファイルのサポート | いいえ | はい |
 | リムーバブル メディアでのサポート | いいえ | はい |
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
-- [ReFS および NTFS のクラスターサイズに関する推奨事項](https://techcommunity.microsoft.com/t5/Storage-at-Microsoft/Cluster-size-recommendations-for-ReFS-and-NTFS/ba-p/425960)
+- [ReFS および NTFS のクラスター サイズに関する推奨事項](https://techcommunity.microsoft.com/t5/Storage-at-Microsoft/Cluster-size-recommendations-for-ReFS-and-NTFS/ba-p/425960)
 - [記憶域スペースダイレクトの概要](../storage-spaces/storage-spaces-direct-overview.md)
 - [ReFS ブロックの複製](block-cloning.md)
 - [ReFS 整合性ストリーム](integrity-streams.md)

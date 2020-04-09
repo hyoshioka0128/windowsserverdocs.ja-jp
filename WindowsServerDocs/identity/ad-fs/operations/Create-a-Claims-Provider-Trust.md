@@ -1,7 +1,6 @@
 ---
 ms.assetid: a4f7842c-cfca-4d78-916e-023d12a9cdf0
 title: 要求プロバイダー信頼を作成する
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 4539e8abd1af1eca7bacb51971e6d355bb0aab28
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: bd5c13dbdf4258b6a87dcf599299dd7969da5acd
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79323084"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80817065"
 ---
 # <a name="create-a-claims-provider-trust"></a>要求プロバイダー信頼を作成する
 
@@ -54,7 +53,7 @@ ms.locfileid: "79323084"
 ![要求プロバイダー信頼](media/Create-a-Claims-Provider-Trust/addclaim9.PNG)
 
 ## <a name="to-create-a-claims-provider-trust-using-federation-metadata"></a>フェデレーションメタデータを使用して要求プロバイダー信頼を作成するには
-AD FS 管理スナップインを使用して、パートナーがローカルネットワークまたはインターネットに発行したフェデレーションメタデータからパートナーに関する構成データを自動的にインポートすることによって、新しい要求プロバイダー信頼を追加するには、次の手順を実行します。リソースパートナー組織のフェデレーションサーバー。
+AD FS 管理スナップインを使用して、パートナーがローカルネットワークまたはインターネットに発行したフェデレーションメタデータからパートナーに関する構成データを自動的にインポートすることによって、新しい要求プロバイダー信頼を追加するには、リソースパートナー組織のフェデレーションサーバーで次の手順を実行します。
 
 >[!NOTE]
 >一般に、https:\//dns などの修飾されていないホスト名を持つ証明書を使用することは非常に一般的ですが、これらの証明書にはセキュリティ値がないため、攻撃者はフェデレーションメタデータを公開するフェデレーションサービスを偽装できます。 そのため、フェデレーションメタデータに対してクエリを実行する場合は、`https://myserver.contoso.com`のような完全修飾ドメイン名のみを使用する必要があります。

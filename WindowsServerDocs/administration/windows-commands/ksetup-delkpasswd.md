@@ -1,35 +1,31 @@
 ---
 title: 'ksetup: delkpasswd'
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Windows コマンドに関するトピック * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2db0bfcd-bc08-48e3-9f30-65b6411839c6
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: dce7d9666040ff0c234139932ea60e3589dfecb2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b849265e6036f338413b75fe1da2067e4cdb4cd8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71375134"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80841655"
 ---
 # <a name="ksetupdelkpasswd"></a>ksetup: delkpasswd
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 領域の Kerberos パスワードサーバー (Kpasswd) を削除します。 このコマンドの使用方法の例については、次を参照してください。 [例](#BKMK_Examples)します。
 ## <a name="syntax"></a>構文
 ```
 ksetup /delkpasswd <RealmName> <KpasswdName>
 ```
-### <a name="parameters"></a>パラメーター
+#### <a name="parameters"></a>パラメーター
 
 |   パラメーター   |                                                                                                   説明                                                                                                   |
 |---------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -38,7 +34,7 @@ ksetup /delkpasswd <RealmName> <KpasswdName>
 
 ## <a name="remarks"></a>コメント
 コマンド**ksetup**を実行して、KDC 名を確認します。 **Kpasswd =** が出力に表示されない場合、マッピングは構成されていません。 複数のマッピングが表示されます (設定されている場合)。
-## <a name="BKMK_Examples"></a>例
+## <a name="examples"></a><a name=BKMK_Examples></a>例
 領域 CORP を確認します。CONTOSO.COM は、Windows 以外の KDC サーバー mitkdc.contoso.com をパスワードサーバーとして使用します。
 ```
 ksetup /delkpasswd CORP.CONTOSO.COM mitkdc.contoso.com
@@ -47,4 +43,4 @@ ksetup /delkpasswd CORP.CONTOSO.COM mitkdc.contoso.com
 ## <a name="additional-references"></a>その他の参照情報
 -   [ksetup](ksetup.md)
 -   [ksetup: delkpasswd](ksetup-delkpasswd.md)
--   [コマンド ライン構文の記号](command-line-syntax-key.md)
+-   - [コマンド ライン構文の記号](command-line-syntax-key.md)

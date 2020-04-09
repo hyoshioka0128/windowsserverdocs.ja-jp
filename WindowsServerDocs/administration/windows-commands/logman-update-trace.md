@@ -1,28 +1,24 @@
 ---
 title: logman 更新トレース
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Windows コマンドに関するトピック * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b7111f7f-4162-4d1a-8e53-d766db0ede1f britw
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c28256826e341ce1421984025546421258bb1db7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8d619dc0c267351e842286044cc037e63c75740b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71374270"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80840515"
 ---
 # <a name="logman-update-trace"></a>logman 更新トレース
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 既存のイベントトレースデータコレクターのプロパティを更新します。  
 
@@ -30,7 +26,7 @@ ms.locfileid: "71374270"
 ```  
 logman update trace <[-n] <name>> [options]  
 ```  
-## <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>パラメーター  
 
 |                         パラメーター                          |                                                                                                                                                                                                                                                                                                                                説明                                                                                                                                                                                                                                                                                                                                |
 |------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -63,15 +59,15 @@ logman update trace <[-n] <name>> [options]
 |                           -[-] ul                           |                                                                                                                                                                                                                                                                                                                 ユーザーモードでイベントトレースセッションを実行します。                                                                                                                                                                                                                                                                                                                 |
 |                        -bs <value>                         |                                                                                                                                                                                                                                                                                                           イベントトレースセッションのバッファーサイズを kb 単位で指定します。                                                                                                                                                                                                                                                                                                            |
 |                       -nb <min max>                        |                                                                                                                                                                                                                                                                                                           イベントトレースセッションバッファーの数を指定します。                                                                                                                                                                                                                                                                                                            |
-| -モード < globalsequence&#124;localsequence&#124;pagedmemory > | イベントトレースセッションロガーモードを指定します。<br /><br />**Globalsequence**は、イベントトレーサーが、イベントを受信したトレースセッションに関係なく、受信するすべてのイベントにシーケンス番号を追加することを指定します。<br /><br />**Localsequence**は、イベントトレーサーが特定のトレースセッションで受信したイベントのシーケンス番号を追加することを指定します。 **Localsequence**オプションを使用すると、すべてのセッションで重複するシーケンス番号が存在する可能性がありますが、各トレースセッション内で一意になります。<br /><br />**Pagedmemory**は、イベントトレーサーが、既定の非ページメモリプールではなく、ページングされたメモリを内部バッファー割り当てに使用することを指定します。 |
+| -モード < globalsequence&#124;localsequence&#124;pagedmemory > | イベントトレースセッションロガーモードを指定します。<p>**Globalsequence**は、イベントトレーサーが、イベントを受信したトレースセッションに関係なく、受信するすべてのイベントにシーケンス番号を追加することを指定します。<p>**Localsequence**は、イベントトレーサーが特定のトレースセッションで受信したイベントのシーケンス番号を追加することを指定します。 **Localsequence**オプションを使用すると、すべてのセッションで重複するシーケンス番号が存在する可能性がありますが、各トレースセッション内で一意になります。<p>**Pagedmemory**は、イベントトレーサーが、既定の非ページメモリプールではなく、ページングされたメモリを内部バッファー割り当てに使用することを指定します。 |
 
 ## <a name="remarks"></a>コメント  
 [-] が一覧表示されている場合は、オプションを追加して否定します。  
-## <a name="BKMK_examples"></a>例  
-次のコマンドは、既存のデータコレクター perf_log を更新し、ログの最大サイズを 10 MB に変更し、ログファイルの形式を CSV に更新し、ファイルのバージョン管理を mmddhhmm の形式で追加します。  
+## <a name="examples"></a><a name=BKMK_examples></a>例  
+次のコマンドは、既存のデータコレクター perf_log を更新し、ログの最大サイズを 10 MB に変更し、ログファイルの形式を CSV に更新して、ファイルのバージョン管理を mmddhhmm の形式で追加します。  
 ```  
 logman update perf_log -max 10 -f csv -v mmddhhmm  
 ```  
-#### <a name="additional-references"></a>その他の参照情報  
+## <a name="additional-references"></a>その他の参照情報  
 [logman](logman.md)  
 [logman 作成トレース](logman-create-trace.md)  

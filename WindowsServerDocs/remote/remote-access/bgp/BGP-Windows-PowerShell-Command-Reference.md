@@ -2,22 +2,18 @@
 title: BGP Windows PowerShell コマンド リファレンス
 description: Windows Server 2016 で Windows PowerShell スクリプトを作成するときに、このトピックを参照として使用して、RAS ゲートウェイおよびリモートアクセスローカルエリアネットワーク (LAN) ルーターから BGP 機能を追加、構成、および削除することができます。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4b0240a3-b927-4a1e-b241-5f8f29a9552f
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 22f4475df00e975ffc5cd0956a0126673a67f907
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: e206ead9d4af53c0ee404eb5077c88fef2b87ba7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80309275"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815845"
 ---
 # <a name="bgp-windows-powershell-command-reference"></a>BGP Windows PowerShell コマンド リファレンス
 

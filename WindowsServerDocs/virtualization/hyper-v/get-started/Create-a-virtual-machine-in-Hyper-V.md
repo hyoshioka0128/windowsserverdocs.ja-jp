@@ -2,21 +2,19 @@
 title: HYPER-V で仮想マシンを作成します。
 description: Hyper-v マネージャーまたは Windows PowerShell を使用して仮想マシンを作成する手順について説明します。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 59297022-a898-456c-b299-d79cd5860238
-author: KBDAzure
+author: kbdazure
 ms.author: kathydav
 ms.date: 10/04/2016
-ms.openlocfilehash: 739691650ce3cda8066e9f7ac77626f53f22affa
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: fa8d23a184f7be4c55b4a694b38501edb43d661c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71364247"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860855"
 ---
 # <a name="create-a-virtual-machine-in-hyper-v"></a>HYPER-V で仮想マシンを作成します。
 
@@ -70,7 +68,7 @@ Hyper-v マネージャーと Windows PowerShell を使用して仮想マシン�
        New-VM -Name <Name> -MemoryStartupBytes <Memory> -BootDevice <BootDevice> -VHDPath <VHDPath> -Path <Path> -Generation <Generation> -Switch <SwitchName>  
        ```  
 
-       次に、例を示します。  
+       例 :  
 
        ```  
        New-VM -Name Win10VM -MemoryStartupBytes 4GB -BootDevice VHD -VHDPath .\VMs\Win10.vhdx -Path .\VMData -Generation 2 -Switch ExternalSwitch  
@@ -92,7 +90,7 @@ Hyper-v マネージャーと Windows PowerShell を使用して仮想マシン�
    Start-VM -Name <Name>  
    ```  
 
-   次に、例を示します。  
+   例 :  
 
    ```  
    Start-VM -Name Win10VM  
@@ -109,20 +107,20 @@ Hyper-v マネージャーと Windows PowerShell を使用して仮想マシン�
 
 |ページ|Windows Server 2016 および Windows 10 の既定値|その他のオプション|  
 |--------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------|  
-|**名前と場所の指定**|名前: 新しい仮想マシン。<br /><br />Location: **C:\ProgramData\Microsoft\Windows\Hyper-V\\** 。|また、独自の名前を入力し、仮想マシンの別の場所を選択することもできます。<br /><br />ここで、仮想マシンの構成ファイルが格納されます。|  
+|**名前と場所の指定**|名前: 新しい仮想マシン。<p>Location: **C:\ProgramData\Microsoft\Windows\Hyper-V\\** 。|また、独自の名前を入力し、仮想マシンの別の場所を選択することもできます。<p>ここで、仮想マシンの構成ファイルが格納されます。|  
 |**世代の指定**|第 1 世代|第2世代仮想マシンの作成を選択することもできます。 詳細については、「 [hyper-v で第1世代または第2世代の仮想マシンを作成する必要がありますか?](../plan/Should-I-create-a-generation-1-or-2-virtual-machine-in-Hyper-V.md) 」を参照してください。|  
-|**メモリの割り当て**|スタートアップメモリ: 1024 MB<br /><br />動的メモリ:**選択されていません**|起動メモリを32MB から5902MB に設定できます。<br /><br />動的メモリを使用するように選択することもできます。 詳細については、「 [hyper-v 動的メモリの概要](https://technet.microsoft.com/library/hh831766.aspx)」を参照してください。|  
+|**メモリの割り当て**|スタートアップメモリ: 1024 MB<p>動的メモリ:**選択されていません**|起動メモリを32MB から5902MB に設定できます。<p>動的メモリを使用するように選択することもできます。 詳細については、「 [hyper-v 動的メモリの概要](https://technet.microsoft.com/library/hh831766.aspx)」を参照してください。|  
 |**ネットワークの構成**|接続されていません|既存の仮想スイッチの一覧から、使用する仮想マシンのネットワーク接続を選択できます。 「 [Hyper-v 仮想マシンの仮想スイッチを作成する」を](Create-a-virtual-switch-for-Hyper-V-virtual-machines.md)参照してください。|  
-|**仮想ハード ディスクの接続**|仮想ハード_ディスクを作成します。<br /><br />名前: <*vmname*> .vhdx<br /><br />**場所**: **C:\Users\Public\Documents\Hyper-V\Virtual ハードディスク\\**<br /><br />**サイズ**: 127gb|また、既存のバーチャルハードディスクを使用するか、後でバーチャルハードディスクを待機して接続するかを選択することもできます。|  
+|**仮想ハード ディスクの接続**|仮想ハード ディスクを作成する<p>名前: <*vmname*> .vhdx<p>**場所**: **C:\Users\Public\Documents\Hyper-V\Virtual ハードディスク\\**<p>**サイズ**: 127gb|また、既存のバーチャルハードディスクを使用するか、後でバーチャルハードディスクを待機して接続するかを選択することもできます。|  
 |**インストール オプション**|後でオペレーティングシステムをインストールする|これらのオプションを使用すると、バーチャルマシンのブート順序が変更され、.iso ファイル、起動可能なフロッピーディスク、または Windows 展開サービス (WDS) などのネットワークインストールサービスからインストールできるようになります。|  
-|**要約**|選択したオプションが表示され、それらが正しいことを確認できます。<br /><br />-Name<br />-生成<br />-メモリ<br />-ネットワーク<br />-ハードディスク<br />-オペレーティングシステム|**ヒント:** ページから概要をコピーし、電子メールまたはその他の場所に貼り付けて、仮想マシンを追跡しやすくすることができます。|  
+|**要約**|選択したオプションが表示され、それらが正しいことを確認できます。<p>-Name<br />-生成<br />-メモリ<br />-ネットワーク<br />-ハードディスク<br />-オペレーティングシステム|**ヒント:** ページから概要をコピーし、電子メールまたはその他の場所に貼り付けて、仮想マシンを追跡しやすくすることができます。|  
 
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 
 - [新規-VM](https://technet.microsoft.com/library/hh848537.aspx)  
 
 - [サポートされている仮想マシンの構成バージョン](../deploy/Upgrade-virtual-machine-version-in-Hyper-V-on-Windows-or-Windows-Server.md#supported-virtual-machine-configuration-versions)  
 
--   [Hyper-v に第1世代または第2世代の仮想マシンを作成する必要がありますか。](../plan/Should-I-create-a-generation-1-or-2-virtual-machine-in-Hyper-V.md)  
+-   [Hyper-V で第 1 世代または第 2 世代の仮想マシンを作成する必要がありますか](../plan/Should-I-create-a-generation-1-or-2-virtual-machine-in-Hyper-V.md)  
 
 -   [Hyper-V 仮想マシン用の仮想スイッチを作成する](Create-a-virtual-switch-for-Hyper-V-virtual-machines.md)  

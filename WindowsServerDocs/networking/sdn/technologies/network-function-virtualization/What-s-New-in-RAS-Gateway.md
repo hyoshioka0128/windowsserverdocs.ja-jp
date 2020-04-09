@@ -1,23 +1,19 @@
 ---
 title: RAS ゲートウェイの新機能
 description: このトピックでは、Windows Server 2016 のソフトウェアベース、マルチテナント、Border Gateway Protocol (BGP) 対応ルーターである RAS ゲートウェイの新機能について説明します。
-manager: brianlic
-ms.custom: na
+manager: grcusanz
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-sdn
-ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 709cb192-313a-47b5-954e-eb5f6fee51a7
-ms.author: lizross
-author: eross-msft
-ms.openlocfilehash: b65f4aa2d10b1bdf6c0d212a111a169bad23591a
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.author: anpaul
+author: AnirbanPaul
+ms.openlocfilehash: 40d553ad5f41c68e8135c3d2c56ac8571d738e95
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80312885"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859585"
 ---
 # <a name="whats-new-in-ras-gateway"></a>RAS ゲートウェイの新機能
 

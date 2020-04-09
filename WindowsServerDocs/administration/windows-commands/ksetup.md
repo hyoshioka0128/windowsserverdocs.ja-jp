@@ -1,24 +1,20 @@
 ---
 title: ksetup
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Windows コマンドに関するトピック * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4e046f8a-811b-48dc-9a69-18d8e097f353
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 265f67bff65794938485472a41064837551c7699
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b3c61fd81691f9db44330eddbf40d4212d1786ff
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71374796"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80841255"
 ---
 # <a name="ksetup"></a>ksetup
 
@@ -55,7 +51,7 @@ ksetup
 
 ```
 
-### <a name="parameters"></a>パラメーター
+#### <a name="parameters"></a>パラメーター
 
 |パラメーター|説明|
 |---------|-----------|
@@ -87,10 +83,10 @@ ksetup
 
 **Ksetup**は、Kerberos 領域を検索するためにコンピューターの設定を変更するために使用されます。 Microsoft 以外の Kerberos ベースの実装では、通常、この情報は Krb5.conf ファイルに保存されます。 Windows Server オペレーティングシステムでは、レジストリに保持されます。 このツールを使用すると、これらの設定を変更できます。 これらの設定は、ワークステーションが Kerberos 領域を検索するために使用され、ドメインコントローラーによって、複数の領域にわたる信頼関係の Kerberos 領域を特定します。
 
-**Ksetup**コンピューターが windows server 2003、windows server 2008、または windows Server 2008 R2 を実行していて、windows のメンバーではない場合、Kerberos セキュリティサポートプロバイダー (SSP) が kerberos 領域の KDC を見つけるために使用するレジストリキーを初期化します。領域. 構成が完了すると、Windows オペレーティングシステムを実行しているクライアントコンピューターのユーザーが、Kerberos 領域内のアカウントにログオンできるようになります。
+**Ksetup**コンピューターが windows server 2003、windows server 2008、または windows Server 2008 R2 を実行していて、windows ドメインのメンバーではない場合、Kerberos セキュリティサポートプロバイダー (SSP) が kerberos 領域の KDC を見つけるために使用するレジストリキーを初期化します。 構成が完了すると、Windows オペレーティングシステムを実行しているクライアントコンピューターのユーザーが、Kerberos 領域内のアカウントにログオンできるようになります。
 
 Kerberos version 5 プロトコルは、Windows XP Professional、Windows Vista、および Windows 7 を実行しているコンピューターでのネットワーク認証の既定値です。 Kerberos SSP は、レジストリ内でユーザーの領域のドメイン名を検索し、DNS サーバーを照会することによって、名前を IP アドレスに解決します。 Kerberos プロトコルでは、DNS を使用して、領域名のみを使用して Kdc を検索できますが、これを行うように特別に構成する必要があります。
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
--   [コマンド ライン構文の記号](command-line-syntax-key.md)
+-   - [コマンド ライン構文の記号](command-line-syntax-key.md)

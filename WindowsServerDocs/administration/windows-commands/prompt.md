@@ -1,24 +1,20 @@
 ---
 title: prompt
 description: コマンドプロンプトをカスタマイズする方法について説明します。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 3d98e965-02eb-46ad-9d0a-5dc44830373e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 2df80d3af6344644a68b1b2d01ba48fbf41f1581
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6662cb7fb00b7d21311fef2ca127ba89591a00b2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71372019"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80837135"
 ---
 # <a name="prompt"></a>prompt
 
@@ -34,12 +30,12 @@ Cmd.exe コマンド プロンプトを変更します。 パラメーターを�
 prompt [<Text>]
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
 |パラメーター|説明|
 |---------|-----------|
-|\<Text >|テキストと、コマンド プロンプトに追加する情報を指定します。|
-|/?|コマンド プロンプトにヘルプを表示します。|
+|\<テキスト >|テキストと、コマンド プロンプトに追加する情報を指定します。|
+|/?|コマンド プロンプトでヘルプを表示します。|
 
 ## <a name="remarks"></a>コメント
 
@@ -76,7 +72,7 @@ prompt [<Text>]
 
 含める場合、 **$p** 文字 (現在のドライブとパスを決定) するには、各コマンドを入力した後に、ディスクを読み取るテキスト パラメーターにします。 これにより、特にフロッピー ディスク ドライブの場合の余分な時間がかかります。
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a><a name="BKMK_examples"></a>例
 
 を最初の行と、大なり記号、次の行に現在の時刻と日付で 2 行のコマンド プロンプトを設定するには、次のように入力します。
 ```
@@ -96,6 +92,6 @@ prompt --$g
 prompt $p$g
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

@@ -1,23 +1,23 @@
 ---
 title: テナント用のシールドされた Vm-テンプレートディスクの作成-オプション
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: c1992f8b-6f88-4dbc-b4a5-08368bba2787
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 8e5080dd74506e86687dddb7be0fd35af92f5b56
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1f51a0f90f60847929f6fe46732c98f355a6a859
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403436"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856445"
 ---
 # <a name="shielded-vms-for-tenants---creating-a-template-disk-optional"></a>テナント用のシールドされた Vm-テンプレートディスクの作成 (省略可能)
 
->適用対象:Windows Server 2019、Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: windows server 2019、Windows Server (半期チャネル)、Windows Server 2016
 
 新しいシールドされた VM を作成するには、特別に準備された署名済みテンプレートディスクを使用する必要があります。 署名付きテンプレートディスクのメタデータは、作成後にディスクが変更されないようにするのに役立ちます。また、テナントとして、シールドされた Vm の作成に使用できるディスクを制限できます。 このディスクを提供する方法の1つは、このトピックで説明するように、テナントで作成することです。 
 
@@ -28,11 +28,11 @@ ms.locfileid: "71403436"
 
 シールドされたテンプレートディスクを作成するには、まず、テンプレートディスクウィザードを使用して実行される OS ディスクを準備する必要があります。 このディスクは、シールドされた Vm の OS ディスクとして使用されます。 既存のツールを使用して、Microsoft Desktop Image Service Manager (DISM) などのこのディスクを作成するか、空の VHDX で VM を手動で設定して、そのディスクに OS をインストールすることができます。 ディスクを設定するときは、第2世代またはシールドされた Vm に固有の次の要件に従う必要があります。 
 
-| VHDX の要件 | Reason |
+| VHDX の要件 | 原因 |
 |-----------|----|
 |GUID パーティションテーブル (GPT) ディスクである必要があります。 | UEFI をサポートする第2世代仮想マシンのために必要|
-|ディスクの種類は、**動的**ではなく**基本**である必要があります。 <br>メモ:これは、Hyper-v でサポートされている "動的に拡張された" VHDX 機能ではなく、論理ディスクの種類を指します。 | BitLocker はダイナミックディスクをサポートしていません。|
-|ディスクには、少なくとも2つのパーティションがあります。 1つのパーティションに、Windows がインストールされているドライブを含める必要があります。 これは、BitLocker によって暗号化されるドライブです。 もう1つのパーティションはアクティブなパーティションで、ブートローダーを含み、コンピューターを起動できるように暗号化されていません。|BitLocker に必要|
+|ディスクの種類は、**動的**ではなく**基本**である必要があります。 <br>注: これは、Hyper-v でサポートされている "動的に拡張された" VHDX 機能ではなく、論理ディスクの種類を参照します。 | BitLocker はダイナミックディスクをサポートしていません。|
+|ディスクには、少なくとも2つのパーティションがあります。 1つのパーティションに、Windows がインストールされているドライブを含める必要があります。 これは、BitLocker が暗号化するドライブです。 もう1つのパーティションはアクティブなパーティションで、ブートローダーを含み、コンピューターを起動できるように暗号化されていません。|BitLocker に必要|
 |ファイルシステムが NTFS | BitLocker に必要|
 |VHDX にインストールされているオペレーティングシステムは、次のいずれかになります。<br>-Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、または Windows Server 2012 <br>-Windows 10、Windows 8.1、Windows 8| 第2世代仮想マシンと Microsoft セキュアブートテンプレートをサポートするために必要|
 |オペレーティングシステムは一般化されている必要があります (sysprep.exe を実行します)。 | テンプレートのプロビジョニングには、特定のテナントのワークロードに対応する Vm が含まれます。| 
@@ -91,7 +91,7 @@ Windows Server 2016 を実行しているコンピューターで、次の手順
 
 シールドされたディスクテンプレートを、「シールドされた[VM を定義するシールドデータの作成](guarded-fabric-tenant-creates-shielding-data.md)」で説明されているように、作成するシールドデータファイルと共にホスティングサービスプロバイダーに提供します。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [シールドされた VMの展開](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
 - [保護されたファブリックとシールドされた VM](guarded-fabric-and-shielded-vms-top-node.md)

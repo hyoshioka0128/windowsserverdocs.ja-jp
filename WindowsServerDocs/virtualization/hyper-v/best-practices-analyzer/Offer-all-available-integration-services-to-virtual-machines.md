@@ -2,20 +2,19 @@
 title: 仮想マシンへのすべての利用可能な統合サービスを提供します。
 description: このベストプラクティスアナライザー規則によって報告された問題を解決するための手順を示します。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: 2c4b2043-ad81-495e-aa7a-467f813bb3d2
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 5ec2dc73cea8b8356d832bf9fdb960985df2df6c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c7ddf53823a69e1bd66d4e0e43ee452a4614436e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71393603"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861885"
 ---
 # <a name="offer-all-available-integration-services-to-virtual-machines"></a>仮想マシンへのすべての利用可能な統合サービスを提供します。
 
@@ -27,7 +26,7 @@ ms.locfileid: "71393603"
 |-|-|  
 |**オペレーティング システム**|Windows Server 2016|  
 |**製品/機能**|Hyper-V|  
-|**順**|Warning|  
+|**順**|［警告］|  
 |**カテゴリ**|構成|  
   
 次のセクションでは、斜体は、この問題のためのベスト プラクティス アナライザー ツールで表示される UI テキストを示します。  
@@ -54,7 +53,7 @@ ms.locfileid: "71393603"
   
 2.  結果ウィンドウで  **仮想マシン**, 、構成する仮想マシンを選択します。  
   
-3.  **アクション** ウィンドウの 仮想マシン名をクリックして **設定**します。  
+3.  **[操作]** ウィンドウで、仮想マシン名の下の **[設定]** をクリックします。  
   
 4.  **管理**, 、クリックして **Integration Services**します。  
   

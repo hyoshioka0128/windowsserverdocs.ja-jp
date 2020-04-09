@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: b3cd60f7-d380-4712-9a78-0a8f551e1121
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: a0da2265f8f66256ed2ba71d4847bf8a548626f8
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: b58fe9eaa66abd91de27713398759529ae6147ae
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80319140"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861765"
 ---
 # <a name="core-network-components"></a>コア ネットワークのコンポーネント
 
@@ -283,11 +283,11 @@ AD DS のインストール中に、使用するフォレストの機能レベ�
 
 |構成項目:|値の例:|
 |------------------------|-------------------|
-|完全 DNS 名|例:<br /><br />-corp.contoso.com<br />-example.com|
+|完全 DNS 名|例:<p>-corp.contoso.com<br />-example.com|
 |フォレストの機能レベル|-Windows Server 2008 <br />-Windows Server 2008 R2 <br />-Windows Server 2012 <br />-Windows Server 2012 R2 <br />-Windows Server 2016|
-|Active Directory Domain Services データベース フォルダーの場所|E:\Configuration\\<br /><br />または既定の場所を受け入れる。|
-|Active Directory Domain Services ログ ファイル フォルダーの場所|E:\Configuration\\<br /><br />または既定の場所を受け入れる。|
-|Active Directory Domain Services SYSVOL フォルダーの場所|E:\Configuration\\<br /><br />または既定の場所を受け入れる。|
+|Active Directory Domain Services データベース フォルダーの場所|E:\Configuration\\<p>または既定の場所を受け入れる。|
+|Active Directory Domain Services ログ ファイル フォルダーの場所|E:\Configuration\\<p>または既定の場所を受け入れる。|
+|Active Directory Domain Services SYSVOL フォルダーの場所|E:\Configuration\\<p>または既定の場所を受け入れる。|
 |ディレクトリ復元モード Administrator パスワード|**J\*p2leO4 $ F**|
 |応答ファイル名 (オプション)|**AD DS_AnswerFile**|
 
@@ -412,7 +412,7 @@ DHCP サーバー上にスコープを作成する場合、DHCP サーバーが 
 |ネットワーク接続バインディング|イーサネット|
 |DNS サーバー設定|DC1.corp.contoso.com|
 |優先 DNS サーバーの IP アドレス|10.0.0.2|
-|[スコープの追加] ダイアログ ボックスの値<br /><br />1. スコープ名<br />2. 開始 IP アドレス<br />3. 終了 IP アドレス<br />4. サブネットマスク<br />5. 既定のゲートウェイ (オプション)<br />6. リース期間|1. プライマリサブネット<br />2. 10.0.0.1<br />3. 10.0.0.254<br />4. 255.255.255.0<br />5. 10.0.0.1<br />6. 8 日|
+|[スコープの追加] ダイアログ ボックスの値<p>1. スコープ名<br />2. 開始 IP アドレス<br />3. 終了 IP アドレス<br />4. サブネットマスク<br />5. 既定のゲートウェイ (オプション)<br />6. リース期間|1. プライマリサブネット<br />2. 10.0.0.1<br />3. 10.0.0.254<br />4. 255.255.255.0<br />5. 10.0.0.1<br />6. 8 日|
 |IPv6 DHCP サーバーの操作モード|無効|
 
 ## <a name="core-network-deployment"></a><a name="BKMK_deployment"></a>コアネットワークの展開
@@ -1437,9 +1437,9 @@ Windows Server コア ネットワークの展開手順「[新しいフォレス
 |-----------------------|------------------|----------|
 |完全 DNS 名|corp.contoso.com||
 |フォレストの機能レベル|Windows Server 2003||
-|Active Directory Domain Services データベース フォルダーの場所|E:\Configuration\\<br /><br />または既定の場所を受け入れる。||
-|Active Directory Domain Services ログ ファイル フォルダーの場所|E:\Configuration\\<br /><br />または既定の場所を受け入れる。||
-|Active Directory Domain Services SYSVOL フォルダーの場所|E:\Configuration\\<br /><br />または既定の場所を受け入れる。||
+|Active Directory Domain Services データベース フォルダーの場所|E:\Configuration\\<p>または既定の場所を受け入れる。||
+|Active Directory Domain Services ログ ファイル フォルダーの場所|E:\Configuration\\<p>または既定の場所を受け入れる。||
+|Active Directory Domain Services SYSVOL フォルダーの場所|E:\Configuration\\<p>または既定の場所を受け入れる。||
 |ディレクトリ復元モード Administrator パスワード|J*p2leO4$F||
 |応答ファイル名 (オプション)|AD DS_AnswerFile||
 
@@ -1448,10 +1448,10 @@ Windows Server コア ネットワークの展開手順「[新しいフォレス
 |構成アイテム|値の例|値|
 |-----------------------|------------------|----------|
 |ゾーンの種類:|-プライマリゾーン<br />-セカンダリゾーン<br />-スタブゾーン||
-|ゾーンの種類<br /><br />**Active Directory にゾーンを格納する**|-選択済み<br />-選択されていません||
+|ゾーンの種類<p>**Active Directory にゾーンを格納する**|-選択済み<br />-選択されていません||
 |Active Directory ゾーン レプリケーション スコープ|-このフォレスト内のすべての DNS サーバー<br />-このドメイン内のすべての DNS サーバー<br />-このドメイン内のすべてのドメインコントローラーに<br />-このディレクトリパーティションのスコープで指定されているすべてのドメインコントローラーに対する||
-|逆引き参照ゾーン名<br /><br />(IP の種類)|-IPv4 逆引き参照ゾーン<br />-IPv6 逆引き参照ゾーン||
-|逆引き参照ゾーン名<br /><br />(ネットワーク ID)|10.0.0||
+|逆引き参照ゾーン名<p>(IP の種類)|-IPv4 逆引き参照ゾーン<br />-IPv6 逆引き参照ゾーン||
+|逆引き参照ゾーン名<p>(ネットワーク ID)|10.0.0||
 
 ### <a name="installing-dhcp"></a><a name="BKMK_FndtnPrep_InstallDHCP"></a>DHCP のインストール
 このセクションの表は、DHCP の事前インストールとインストールのための構成項目の一覧です。
@@ -1509,16 +1509,16 @@ Windows Server コア ネットワークの展開手順「[新しい DHCP スコ
 |-----------------------|------------------|----------|
 |新しいスコープ名|Corp2||
 |スコープの説明|メインオフィスのサブネット2||
-|(IP アドレスの範囲)<br /><br />開始 IP アドレス|10.0.1.1||
-|(IP アドレスの範囲)<br /><br />終了 IP アドレス|10.0.1.254||
+|(IP アドレスの範囲)<p>開始 IP アドレス|10.0.1.1||
+|(IP アドレスの範囲)<p>終了 IP アドレス|10.0.1.254||
 |長さ|8||
 |サブネット マスク|255.255.255.0||
 |除外範囲の開始 IP アドレス|10.0.1.1||
 |除外範囲の終了 IP アドレス|10.0.1.15||
-|リース期間<br /><br />日<br /><br />時間<br /><br />分|-8<br />-   0<br />-   0||
-|ルーター (デフォルト ゲートウェイ)<br /><br />[IP アドレス]|10.0.1.1||
+|リース期間<p>日<p>時間<p>分|-8<br />-   0<br />-   0||
+|ルーター (デフォルト ゲートウェイ)<p>[IP アドレス]|10.0.1.1||
 |DNS 親ドメイン|corp.contoso.com||
-|DNS サーバー<br /><br />[IP アドレス]|10.0.0.2||
+|DNS サーバー<p>[IP アドレス]|10.0.0.2||
 
 ### <a name="installing-network-policy-server-optional"></a><a name="BKMK_FndtnPrep_InstallNPS"></a>ネットワークポリシーサーバーをインストールする (省略可能)
 このセクションの表は、NPS の事前インストールとインストールのための構成項目の一覧です。

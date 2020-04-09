@@ -8,12 +8,12 @@ ms.assetid: 7110ad21-a33e-48d5-bb3c-129982913bc8
 manager: brianlic
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: a5b2e750bd7a0103382f6d91c515f4e283a112cb
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 1e962948feaf6bb37beeb3c241d3ae3369be77dc
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80312664"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860705"
 ---
 # <a name="deploy-dhcp-using-windows-powershell"></a>Windows PowerShell を使用した DHCP の展開
 
@@ -207,7 +207,7 @@ DHCP サーバー上にスコープを作成する場合、DHCP サーバーが 
 |ネットワーク接続バインディング|イーサネット|
 |DNS サーバー設定|DC1.corp.contoso.com|
 |優先 DNS サーバーの IP アドレス|10.0.0.2|
-|スコープ値<br /><br />1. スコープ名<br />2. 開始 IP アドレス<br />3. 終了 IP アドレス<br />4. サブネットマスク<br />5. 既定のゲートウェイ (オプション)<br />6. リース期間|1. プライマリサブネット<br />2. 10.0.0.1<br />3. 10.0.0.254<br />4. 255.255.255.0<br />5. 10.0.0.1<br />6. 8 日|
+|スコープ値<p>1. スコープ名<br />2. 開始 IP アドレス<br />3. 終了 IP アドレス<br />4. サブネットマスク<br />5. 既定のゲートウェイ (オプション)<br />6. リース期間|1. プライマリサブネット<br />2. 10.0.0.1<br />3. 10.0.0.254<br />4. 255.255.255.0<br />5. 10.0.0.1<br />6. 8 日|
 |IPv6 DHCP サーバーの操作モード|無効|
 
 ## <a name="using-this-guide-in-a-test-lab"></a><a name="bkmk_lab"></a>テストラボでのこのガイドの使用

@@ -6,16 +6,16 @@ metadata:
   description: Windows Server は、ワークグループからデータ センターに至るまで、接続型アプリケーション、ネットワーク、および Web サービスのインフラストラクチャを構築するためのプラットフォームです。
   author: eross-msft
   manager: daveba
-  ms.service: windows-server-threshold
+  ms.service: windows-server
   ms.topic: hub-page
   ms.date: 06/06/2019
   ms.author: lizross
-  ms.openlocfilehash: 77f017388af44a0365113e890b2ae04a9185a2c8
-  ms.sourcegitcommit: bfe9c5f7141f4f2343a4edf432856f07db1410aa
+  ms.openlocfilehash: 7ea64a8b3b6d930c8105c57bb7d2a1537eb6780d
+  ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 12/25/2019
-  ms.locfileid: "75351571"
+  ms.lasthandoff: 04/08/2020
+  ms.locfileid: "80856275"
 highlightedContent:
   items:
   - title: Windows Server 2019 の新着情報

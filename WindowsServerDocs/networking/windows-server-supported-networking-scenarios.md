@@ -5,16 +5,15 @@ manager: brianlic
 ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
-ms.date: ''
 ms.assetid: 6de4232d-b0b3-4e43-8735-ebae35ae4f9f
-ms.author: lizross
-author: eross-msft
-ms.openlocfilehash: e2e59b70b102e7ca942e2aafb8b216fecd62fc32
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+author: dcuomo
+ms.author: dacuo
+ms.openlocfilehash: 2272c4e57fcee730d8badcea18b2a31c28a56565
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80315157"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861675"
 ---
 # <a name="windows-server-supported-networking-scenarios"></a>Windows Server でサポートされるネットワーク シナリオ
 

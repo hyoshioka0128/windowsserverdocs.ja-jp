@@ -2,20 +2,19 @@
 title: 初期レプリケーションが完了後は、テスト フェールオーバーを実行しようとする必要があります。
 description: このベストプラクティスアナライザールールのテキストのオンラインバージョン。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: cea7eeaa-c1a7-4f87-89be-d4e1208c546f
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: ec3ad3994227eb14d1d2e53842c755af76ac538d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 41d96b33c686631f57cd35e76b64ee3dde206655
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71364703"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858945"
 ---
 # <a name="test-failover-should-be-attempted-after-initial-replication-is-complete"></a>初期レプリケーションが完了後は、テスト フェールオーバーを実行しようとする必要があります。
 
@@ -27,12 +26,12 @@ ms.locfileid: "71364703"
 |-|-|  
 |**オペレーティング システム**|Windows Server 2016|  
 |**製品/機能**|Hyper-V|  
-|**順**|Warning|  
+|**順**|［警告］|  
 |**カテゴリ**|運用|  
   
 次のセクションでは、斜体は、この問題のためのベスト プラクティス アナライザー ツールで表示される UI テキストを示します。  
   
-## <a name="problem"></a>問題  
+## <a name="problem"></a>Problem  
 *少なくとも1か月にテストフェールオーバーが発生していません。*  
   
 ## <a name="impact"></a>影響  

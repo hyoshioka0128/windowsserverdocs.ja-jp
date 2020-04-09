@@ -2,17 +2,17 @@
 title: 記憶域スペースの概要
 ms.prod: windows-server
 ms.author: jgerend
-ms.manager: dougkim
+manager: dougkim
 ms.technology: storage-file-systems
 ms.topic: article
 author: jasongerend
 ms.date: 05/22/2018
-ms.openlocfilehash: cab92de2a96f1d44c8ad6a33e84aba08cad38837
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 6785508704ff1eebcfd9b70a529ba9d615e5ce11
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950240"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858805"
 ---
 # <a name="storage-spaces-overview"></a>記憶域スペースの概要
 

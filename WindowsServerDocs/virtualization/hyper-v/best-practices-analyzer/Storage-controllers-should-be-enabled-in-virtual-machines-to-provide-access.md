@@ -2,20 +2,19 @@
 title: 接続された記憶域にアクセスできるようにするには、記憶域コントローラーを仮想マシンで有効にする必要があります
 description: このベストプラクティスアナライザー規則によって報告された問題を解決するための手順を示します。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: 532548a1-8ffe-4b5b-902e-ed2f0819012b
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: f0d10ab4c419a6014a9edb4b7f721714dc92798d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b530a5868633e6007f311f3d15c94b7ec4ded52c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71393489"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858795"
 ---
 # <a name="storage-controllers-should-be-enabled-in-virtual-machines-to-provide-access-to-attached-storage"></a>接続された記憶域にアクセスできるようにするには、記憶域コントローラーを仮想マシンで有効にする必要があります
 
@@ -27,7 +26,7 @@ ms.locfileid: "71393489"
 |-|-|  
 |**オペレーティング システム**|Windows Server 2016|  
 |**製品/機能**|Hyper-V|  
-|**順**|Warning|  
+|**順**|［警告］|  
 |**カテゴリ**|構成|  
 
 次のセクションでは、斜体は、この問題のためのベスト プラクティス アナライザー ツールで表示される UI テキストを示します。
@@ -56,7 +55,7 @@ ms.locfileid: "71393489"
   
 3.  仮想マシンが実行されている場合は、仮想マシンをシャットダウンします。 仮想マシンを右クリックし、 **[シャットダウン]** をクリックします。  
   
-4.  **アクション** ウィンドウの 仮想マシン名をクリックして **設定**します。  
+4.  **[操作]** ウィンドウで、仮想マシン名の下の **[設定]** をクリックします。  
   
 5.  **[設定]** ダイアログボックスの左側のウィンドウで、 **[ハードウェア]** の下の **[SCSI コントローラー]** をクリックします。  
   

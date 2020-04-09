@@ -2,24 +2,23 @@
 title: 実行中の数や、構成された仮想マシンがサポートされている制限内になければなりません
 description: このベストプラクティスアナライザー規則によって報告された問題を解決するための手順を示します。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: 9d3c4aa3-8416-46ec-a253-26dc98088d7b
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 56d7fd528d7fda20dbdbb16a6262bb072f053ef0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 49013d6a4c9dda6e79d6a803bae0f5641d826817
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71364631"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854625"
 ---
 # <a name="the-number-of-running-or-configured-virtual-machines-must-be-within-supported-limits"></a>実行中の数や、構成された仮想マシンがサポートされている制限内になければなりません
 
->適用先:Windows Server 2016
+>適用対象: Windows Server 2016
 
 ベストプラクティスとスキャンの詳細については、「[ベストプラクティスアナライザースキャンの実行」および「スキャン結果の管理](https://go.microsoft.com/fwlink/p/?LinkID=223177)」を参照してください。  
   
@@ -27,7 +26,7 @@ ms.locfileid: "71364631"
 |-|-|  
 |**オペレーティング システム**|Windows Server 2016|  
 |**製品/機能**|Hyper-V|  
-|**順**|Error  
+|**順**|エラー  
 |**カテゴリ**|構成|  
   
 次のセクションでは、斜体は、この問題のためのベスト プラクティス アナライザー ツールで表示されるテキストを示します。  
@@ -82,7 +81,7 @@ ms.locfileid: "71364631"
 1.  Active Directory ドメイン サービス ツール機能がインストールになっているコンピューターで **管理ツール**, 、開かれている **Active Directory ユーザーとコンピューター**, 、し、HYPER-V を実行しているコンピューターのコンピューター アカウントに移動します。  
   
     > [!NOTE]  
-    > 場合 **Active Directory ユーザーとコンピューター** が記載されていない Active Directory ドメイン サービス ツール機能をインストールします。 手順については、「 [AD DS のリモートサーバー管理ツールのインストール](https://go.microsoft.com/fwlink/?LinkId=140463)」 (https://go.microsoft.com/fwlink/?LinkId=140463) を参照してください。  
+    > **[Active Directory ユーザーとコンピューター]** がない場合は、Active Directory ドメイン サービス ツール機能をインストールします。 手順については、「 [AD DS のリモートサーバー管理ツールのインストール](https://go.microsoft.com/fwlink/?LinkId=140463)」 (https://go.microsoft.com/fwlink/?LinkId=140463)を参照してください。  
   
 2.  HYPER-V を実行しているコンピューターのコンピューター アカウントを右クリックし、をクリックし、 **プロパティ**します。  
   

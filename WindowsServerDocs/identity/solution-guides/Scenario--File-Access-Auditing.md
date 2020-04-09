@@ -1,7 +1,6 @@
 ---
 ms.assetid: 7be1f2cb-02d5-4209-ba79-edf496a88f47
 title: シナリオ ファイル アクセスの監査
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 37a3b17360112d958b59a7e9c3f64aed5e6f6a5b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 37ea1cf28e42f74a18cd57b8fa9def5f9d1646be
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406995"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861125"
 ---
-# <a name="scenario-file-access-auditing"></a>シナリオ:ファイル アクセスの監査
+# <a name="scenario-file-access-auditing"></a>Scenario: File Access Auditing
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 セキュリティ監査は、企業のセキュリティ維持の最も強力なサポート手段の 1 つです。 セキュリティ監査の重要な目標の 1 つがコンプライアンス遵守です。 Sarbanes Oxley、医療保険の携行性と責任に関する法律 (HIPAA)、Payment Card Industry (PCI) などの業界標準は、データ セキュリティとプライバシーに関する厳格なルール セットへの準拠を企業に要求します。 セキュリティ監査により、これらのポリシーの存在が明確化され、これらの標準に準拠しているかどうかが証明されます。 さらにセキュリティ監査は、異常な動作の検出、セキュリティ ポリシー内のギャップの特定と解消、さらに、ユーザー アクティビティの記録を作成し、これを使用して法的分析を実施することで、法的責任を問われる可能性のある動作の防止にも役立ちます。  
   
@@ -71,7 +70,7 @@ Windows Server 2012 に信頼性情報およびリソースのプロパティを
   
 -   [中央監査ポリシー &#40;を使用したセキュリティ監査の展開のデモンストレーション手順&#41;](Deploy-Security-Auditing-with-Central-Audit-Policies--Demonstration-Steps-.md)  
   
-## <a name="BKMK_NEW"></a>このシナリオに含まれる役割と機能  
+## <a name="roles-and-features-included-in-this-scenario"></a><a name="BKMK_NEW"></a>このシナリオに含まれる役割と機能  
 次の表で、このシナリオに含まれている役割と機能を紹介すると共に、それをシナリオに活かす方法について説明します。  
   
 |役割/機能|このシナリオのサポート方法|  

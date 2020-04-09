@@ -2,22 +2,18 @@
 title: エントリ ポイント ドメイン コントローラー設定のトラブルシューティング
 description: このトピックは、「Windows Server 2016 のマルチサイト展開に複数のリモートアクセスサーバーを展開する」の一部です。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b12dd0e8-1d80-4d4b-bb45-586f19d17ef0
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: fbbba17567109363a9b9fd0963258744f8853f5f
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 8bec7bd14dba051a1151869f8dc6c4251c941208
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80313782"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858275"
 ---
 # <a name="troubleshooting-setting-the-entry-point-domain-controller"></a>エントリ ポイント ドメイン コントローラー設定のトラブルシューティング
 

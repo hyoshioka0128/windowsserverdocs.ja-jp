@@ -1,19 +1,20 @@
 ---
 title: クラスター セット
 ms.prod: windows-server
-ms.manager: eldenc
+manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: johnmarlin-msft
+ms.author: johnmar
 ms.date: 01/30/2019
 description: この記事では、クラスターセットのシナリオについて説明します。
 ms.localizationpriority: medium
-ms.openlocfilehash: db427e8fa4e5574c6eb7837cf0ab4a9fcc180410
-ms.sourcegitcommit: 3c3dfee8ada0083f97a58997d22d218a5d73b9c4
+ms.openlocfilehash: 3c7ddef1831a82f7fc068ec4241bb1a72bd888bd
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80639960"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861045"
 ---
 # <a name="cluster-sets"></a>クラスター セット
 
@@ -100,13 +101,13 @@ Windows Server 2019 には、インフラストラクチャスケールアウト
 
 インフラストラクチャ SOFS の役割には、次の考慮事項が適用されます。
 
-1.  フェールオーバークラスターには、最大で1つの Infrastructure SOFS クラスターロールしか存在できません。 Infrastructure SOFS ロールは、 **ClusterScaleOutFileServerRole**コマンドレットに " **-Infrastructure**" スイッチパラメーターを指定することによって作成されます。  例 :
+1.    フェールオーバークラスターには、最大で1つの Infrastructure SOFS クラスターロールしか存在できません。 Infrastructure SOFS ロールは、 **ClusterScaleOutFileServerRole**コマンドレットに " **-Infrastructure**" スイッチパラメーターを指定することによって作成されます。  例 :
 
-        Add-ClusterScaleoutFileServerRole -Name "my_infra_sofs_name" -Infrastructure
+        ClusterScaleoutFileServerRole-Name "my_infra_sofs_name"-Infrastructure
 
-2.  フェールオーバーで作成された各 CSV ボリュームは、CSV ボリューム名に基づいて自動生成された名前で SMB 共有の作成を自動的にトリガーします。 管理者は、CSV ボリュームの作成/変更操作を使用する以外に、SOFS ロールの下にある SMB 共有を直接作成または変更することはできません。
+2.    フェールオーバーで作成された各 CSV ボリュームは、CSV ボリューム名に基づいて自動生成された名前で SMB 共有の作成を自動的にトリガーします。 管理者は、CSV ボリュームの作成/変更操作を使用する以外に、SOFS ロールの下にある SMB 共有を直接作成または変更することはできません。
 
-3.  ハイパー収束構成では、インフラストラクチャの SOFS により、SMB クライアント (Hyper-v ホスト) は、保証された継続的可用性 (CA) とインフラストラクチャ SOFS SMB サーバーとの間で通信を行うことができます。 このハイパー収束 SMB ループバック CA は、仮想ディスク (VHDx) ファイルにアクセスする仮想マシンを介して実現され、所有している仮想マシンの id がクライアントとサーバーの間で転送されます。 この id 転送では、以前と同じように、標準のハイパー収束クラスター構成と同様に、ACL を使用した VHDx ファイルが許可されます。
+3.    ハイパー収束構成では、インフラストラクチャの SOFS により、SMB クライアント (Hyper-v ホスト) は、保証された継続的可用性 (CA) とインフラストラクチャ SOFS SMB サーバーとの間で通信を行うことができます。 このハイパー収束 SMB ループバック CA は、仮想ディスク (VHDx) ファイルにアクセスする仮想マシンを介して実現され、所有している仮想マシンの id がクライアントとサーバーの間で転送されます。 この id 転送では、以前と同じように、標準のハイパー収束クラスター構成と同様に、ACL を使用した VHDx ファイルが許可されます。
 
 クラスターセットを作成すると、クラスターセットの名前空間は、各メンバークラスターのインフラストラクチャ SOFS、さらには管理クラスターのインフラストラクチャ SOFS に依存します。
 

@@ -1,24 +1,20 @@
 ---
 title: extend
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Windows コマンドに関するトピック * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2414e21d-fc0b-40e8-9e33-3e072f8ad76b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bb54a661bf60b55fd95bf3a686d758d13831a6ba
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 11991f9fc338dca5201d8f9c9c598b9d7dcf239b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71377309"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80844785"
 ---
 # <a name="extend"></a>extend
 
@@ -35,16 +31,16 @@ extend [size=<n>] [disk=<n>] [noerr]
 extend filesystem [noerr]  
 ```  
   
-## <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>パラメーター  
   
 | パラメーター  |                                                                                             説明                                                                                              |
 |------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | サイズ\=<n>  |      現在のボリュームまたはパーティションに追加する領域のサイズをメガバイト \(MB\) 単位で指定します。 サイズが指定されていない場合は、ディスク上で使用できる連続した空き領域がすべて使用されます。       |
-| disk\=<n>  |                          ボリュームまたはパーティションが拡張されるディスクを指定します。 ディスクが指定されていない場合、ボリュームまたはパーティションは現在のディスク上で拡張されます。                          |
+| ディスク\=<n>  |                          ボリュームまたはパーティションが拡張されるディスクを指定します。 ディスクが指定されていない場合、ボリュームまたはパーティションは現在のディスク上で拡張されます。                          |
 | filesystem |                                   フォーカスのあるボリュームのファイルシステムを拡張します。 ボリュームでファイルシステムが拡張されていないディスクでのみ使用します。                                    |
-|   noerr    | スクリプトの場合のみ。 エラーが発生した場合、DiskPart はエラーが発生しなかったかのようにコマンドを処理し続けます。 このパラメーターは、エラー発生すると、DiskPart はエラー コードを生成して終了します。 |
+|   noerr    | スクリプトの場合のみ。 エラーが発生しても、エラーが発生しなかったかのように DiskPart はコマンドの処理を続けます。 このパラメーターは、エラー発生すると、DiskPart はエラー コードを生成して終了します。 |
   
-## <a name="remarks"></a>注釈  
+## <a name="remarks"></a>コメント  
   
 -   ベーシックディスクの場合、空き領域は、フォーカスのあるボリュームまたはパーティションと同じディスク上にある必要があります。 また、フォーカスがあるボリュームまたはパーティションにすぐに従う必要があります。つまり、次のセクターオフセット\)で開始する必要があり \(。  
   
@@ -58,7 +54,7 @@ extend filesystem [noerr]
   
 -   パーティションを拡張するには、ボリュームが関連付けられている必要があります。  
   
-## <a name="BKMK_examples"></a>例  
+## <a name="examples"></a><a name=BKMK_examples></a>例  
 フォーカスが 500 mb のボリュームまたはパーティションを拡張するには、ディスク3で次のように入力します。  
   
 ```  
@@ -71,8 +67,8 @@ extend size=500 disk=3
 extend filesystem  
 ```  
   
-#### <a name="additional-references"></a>その他の参照情報  
-[コマンド ライン構文の記号](command-line-syntax-key.md)  
+## <a name="additional-references"></a>その他の参照情報  
+- [コマンド ライン構文の記号](command-line-syntax-key.md)  
   
 
   

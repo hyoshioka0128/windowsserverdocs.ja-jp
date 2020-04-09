@@ -2,22 +2,18 @@
 title: Web プローブ URL のトラブルシューティング
 description: このトピックは、「Windows Server 2016 のマルチサイト展開に複数のリモートアクセスサーバーを展開する」の一部です。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 6dfffd1e-f4f4-43b6-9e3c-49015ce34338
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: fd09c8e9c7a6f0ea7192ca20440c18f21ba65c93
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 181a609057d9735701a3185f03be96adb5751e47
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80313749"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858265"
 ---
 # <a name="troubleshooting-web-probe-urls"></a>Web プローブ URL のトラブルシューティング
 

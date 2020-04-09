@@ -1,19 +1,19 @@
 ---
 title: シールドされた VM - ホスティング サービス プロバイダーで Windows Azure Pack をセットアップする
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: d528c689-58b0-425c-9740-25e2553ed689
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 7336637bd3186f885db6d94eeffd0d2311edf3ac
-ms.sourcegitcommit: 3f9bcd188dda12dc5803defb47b2c3a907504255
+ms.openlocfilehash: 1d759af575f98d305a67734d0e23680f701f6b72
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "77001841"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856715"
 ---
 # <a name="shielded-vms---hosting-service-provider-sets-up-windows-azure-pack"></a>シールドされた VM - ホスティング サービス プロバイダーで Windows Azure Pack をセットアップする
 
@@ -113,7 +113,7 @@ Windows Azure Pack を使用する前に、インフラストラクチャ用に�
 
     この時点で、Windows Azure Pack が構成され、テナントは作成したプランにサブスクライブして、シールドされた Vm をデプロイできるようになります。 テナントの完了に必要な追加の手順については、「[テナントのシールドされた vm-Windows Azure Pack を使用](guarded-fabric-shielded-vm-windows-azure-pack.md)したシールドされた Vm のデプロイ」を参照してください。
 
-## <a name="see-also"></a>「
+## <a name="see-also"></a>参照
 
 - [保護されたホストとシールドされた Vm のホスティングサービスプロバイダーの構成手順](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
 - [保護されたファブリックとシールドされた VM](guarded-fabric-and-shielded-vms-top-node.md)

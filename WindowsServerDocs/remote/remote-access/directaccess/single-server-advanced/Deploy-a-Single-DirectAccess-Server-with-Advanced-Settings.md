@@ -2,22 +2,18 @@
 title: 詳細設定を使用した単一の DirectAccess サーバーの展開
 description: このトピックは、「Windows Server 2016 の詳細設定を使用して単一の DirectAccess サーバーを展開する」の一部です。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b211a9ca-1208-4e1f-a0fe-26a610936c30
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 4e6c8379f225dbeefd7c97ac96b9a0047dfd4a0b
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 7f6a6724a2ab7bb6da48a11d31fb04461912e388
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80309218"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859525"
 ---
 # <a name="deploy-a-single-directaccess-server-with-advanced-settings"></a>詳細設定を使用した単一の DirectAccess サーバーの展開
 
@@ -85,8 +81,8 @@ DirectAccess を展開する前に、次のトピックを使用して、前提�
   
 |役割/機能|このシナリオのサポート方法|  
 |---------|-----------------|  
-|リモート アクセスの役割|この役割をインストールまたはアンインストールするには、サーバー マネージャー コンソールまたは Windows PowerShell を使用します。 この役割には、DirectAccess サービス、ルーティングとリモート アクセス サービス (RRAS) が含まれます。 リモート アクセスの役割は、次の 2 つのコンポーネントで構成されています。<br/><br/>1. DirectAccess および RRAS VPN。 DirectAccess と VPN は、リモートアクセス管理コンソールで一緒に管理されます。<br/>2. RRAS ルーティング。 RRAS ルーティング機能は、従来のルーティングとリモートアクセスコンソールで管理されます。<br /><br />リモート アクセス サーバーの役割は、次のサーバーの役割や機能に依存しています。<br/><br/> -インターネットインフォメーションサービス (IIS) Web サーバー-この機能は、DirectAccess サーバーのネットワークロケーションサーバーと既定の Web プローブを構成するために必要です。<br/> -Windows Internal Database。 DirectAccess サーバーでのローカルアカウンティングに使用されます。|  
-|リモート アクセス管理ツールの機能|この機能は、次のようにインストールされます。<br /><br />-リモートアクセスの役割をインストールするときに、DirectAccess サーバーに既定でインストールされ、リモート管理コンソールのユーザーインターフェイスと Windows PowerShell コマンドレットをサポートします。<br />-必要に応じて、DirectAccess サーバーの役割を実行していないサーバーにインストールできます。 この場合は、DirectAccess および VPN が実行されているリモート アクセス コンピューターのリモート管理に使用されます。<br /><br />リモート アクセス管理ツールの機能は、次の要素で構成されています。<br /><br />-リモートアクセスのグラフィカルユーザーインターフェイス (GUI)<br />-Windows PowerShell 用リモートアクセスモジュール<br /><br />次の要素と依存関係があります。<br /><br />-グループポリシー管理コンソール<br />-RAS 接続マネージャー管理キット (CMAK)<br />-Windows PowerShell 3.0<br />-グラフィカル管理ツールとインフラストラクチャ|  
+|リモート アクセスの役割|この役割をインストールまたはアンインストールするには、サーバー マネージャー コンソールまたは Windows PowerShell を使用します。 この役割には、DirectAccess サービス、ルーティングとリモート アクセス サービス (RRAS) が含まれます。 リモート アクセスの役割は、次の 2 つのコンポーネントで構成されています。<br/><br/>1. DirectAccess および RRAS VPN。 DirectAccess と VPN は、リモートアクセス管理コンソールで一緒に管理されます。<br/>2. RRAS ルーティング。 RRAS ルーティング機能は、従来のルーティングとリモートアクセスコンソールで管理されます。<p>リモート アクセス サーバーの役割は、次のサーバーの役割や機能に依存しています。<br/><br/> -インターネットインフォメーションサービス (IIS) Web サーバー-この機能は、DirectAccess サーバーのネットワークロケーションサーバーと既定の Web プローブを構成するために必要です。<br/> -Windows Internal Database。 DirectAccess サーバーでのローカルアカウンティングに使用されます。|  
+|リモート アクセス管理ツールの機能|この機能は、次のようにインストールされます。<p>-リモートアクセスの役割をインストールするときに、DirectAccess サーバーに既定でインストールされ、リモート管理コンソールのユーザーインターフェイスと Windows PowerShell コマンドレットをサポートします。<br />-必要に応じて、DirectAccess サーバーの役割を実行していないサーバーにインストールできます。 この場合は、DirectAccess および VPN が実行されているリモート アクセス コンピューターのリモート管理に使用されます。<p>リモート アクセス管理ツールの機能は、次の要素で構成されています。<p>-リモートアクセスのグラフィカルユーザーインターフェイス (GUI)<br />-Windows PowerShell 用リモートアクセスモジュール<p>次の要素と依存関係があります。<p>-グループポリシー管理コンソール<br />-RAS 接続マネージャー管理キット (CMAK)<br />-Windows PowerShell 3.0<br />-グラフィカル管理ツールとインフラストラクチャ|  
   
 ## <a name="hardware-requirements"></a><a name="BKMK_HARD"></a>ハードウェア要件  
 このシナリオのハードウェア要件は次のとおりです。  
@@ -148,9 +144,9 @@ DirectAccess を展開する前に、次のトピックを使用して、前提�
   
 |コンテンツの種類|参照|  
 |--------|-------|  
-|**展開**|[Windows Server の DirectAccess 展開パス](../../../remote-access/directaccess/DirectAccess-Deployment-Paths-in-Windows-Server.md)<br /><br />[はじめにウィザードを使用して単一の DirectAccess サーバーを展開する](../../../remote-access/directaccess/single-server-wizard/Deploy-a-Single-DirectAccess-Server-Using-the-Getting-Started-Wizard.md)|  
+|**展開**|[Windows Server の DirectAccess 展開パス](../../../remote-access/directaccess/DirectAccess-Deployment-Paths-in-Windows-Server.md)<p>[はじめにウィザードを使用して単一の DirectAccess サーバーを展開する](../../../remote-access/directaccess/single-server-wizard/Deploy-a-Single-DirectAccess-Server-Using-the-Getting-Started-Wizard.md)|  
 |**ツールと設定**|[リモートアクセスの PowerShell コマンドレット](https://technet.microsoft.com/library/hh918399.aspx)|  
-|**コミュニティ リソース**|[DirectAccess のサバイバルガイド](https://social.technet.microsoft.com/wiki/contents/articles/23210.directaccess-survival-guide.aspx)<br /><br />[DirectAccess の Wiki エントリ](https://go.microsoft.com/fwlink/?LinkId=236871)|  
+|**コミュニティ リソース**|[DirectAccess のサバイバルガイド](https://social.technet.microsoft.com/wiki/contents/articles/23210.directaccess-survival-guide.aspx)<p>[DirectAccess の Wiki エントリ](https://go.microsoft.com/fwlink/?LinkId=236871)|  
 |**関連テクノロジ**|[IPv6 のしくみ](https://technet.microsoft.com/library/cc781672(v=WS.10).aspx)|  
   
 

@@ -4,19 +4,19 @@ description: Windows Server 16 上のコンテナーに対するパフォーマ�
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: landing-page
-ms.author: DavSo; Ericam; YaShi
+ms.author: davso; ericam; yashi
 author: akino
 ms.date: 10/16/2017
-ms.openlocfilehash: 890632c9e8adf221e56ffa91331e5371a3fcdf86
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a4508e28e54562748422b198f703e23326d15720
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71384941"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851635"
 ---
 # <a name="performance-tuning-windows-server-containers"></a>Windows Server コンテナーのパフォーマンス チューニング
 
-## <a name="introduction"></a>概要
+## <a name="introduction"></a>はじめに
 Windows Server 2016 は、オペレーティング システムに組み込まれているコンテナー テクノロジのサポートを提供する Windows の最初のバージョンです。 Server 2016 では、次の 2 種類のコンテナーを使用できます。Windows Server コンテナーと Hyper-V コンテナーです。 どちらの種類のコンテナーでも、Windows Server 2016 の Server Core または Nano Server SKU のいずれかがサポートされます。 
 
 これらの構成には、さまざまなパフォーマンス上の影響があります。これについては、お客様のシナリオにどちらが適しているかを知る上で役立つように、以下で詳細に説明します。 さらに、パフォーマンスに影響する構成について詳しく説明し、これらの各オプションのトレードオフについても説明します。
@@ -25,7 +25,7 @@ Windows Server 2016 は、オペレーティング システムに組み込ま�
 
 Windows Server コンテナーと HYPER-V コンテナーは、移植性と一貫性に関しては多くの点で同じですが、分離の保証とパフォーマンス特性の点で異なります。
 
-**Windows Server コンテナー**は、プロセスと名前空間の分離テクノロジによってアプリケーションを分離します。 Windows Server コンテナーでは、コンテナー ホストおよびそのホスト上で実行されているすべてのコンテナーとの間でカーネルを共有します。
+**Windows Server コンテナー**は、プロセスと名前空間の分離テクノロジによってアプリケーションを分離します。 Windows Server コンテナーは、コンテナー ホストとそのホストで実行されているすべてのコンテナーと、カーネルを共有します。
 
 **Hyper-V コンテナー**は、高度に最適化された仮想マシンで各コンテナーを実行することで、Windows Server コンテナーによって提供される分離性を拡張します。 この構成では、コンテナー ホストのカーネルが Hyper-V でコンテナーと共有されません。
 
@@ -52,7 +52,7 @@ Windows Server 2016 の HYPER-V では、入れ子になったハイパーバイ
 
 コンテナーについては、仮想マシン内で HYPER-V コンテナーを実行するときにこれが影響を及ぼします。 HYPER-V コンテナーはそれ自体とコンテナー ホスト間のハイパーバイザー レイヤーを使用して分離を提供するため、コンテナー ホストが HYPER-V ベースの仮想マシンである場合、コンテナーの起動時間、ストレージ IO、ネットワーク IO とスループット、および CPU の点でパフォーマンスのオーバーヘッドが発生します。
 
-## <a name="storage"></a>ストレージ
+## <a name="storage"></a>記憶域
 ### <a name="mounted-data-volumes"></a>マウントされたデータ ボリューム
 
 コンテナーには、コンテナー ホストのシステム ドライブをコンテナーのスクラッチ領域に使用できる機能があります。 ただし、コンテナーのスクラッチ領域の存続期間は、コンテナーの存続期間と同じです。 つまり、コンテナーが停止すると、そのスクラッチ領域および関連付けられているすべてのデータが削除されます。

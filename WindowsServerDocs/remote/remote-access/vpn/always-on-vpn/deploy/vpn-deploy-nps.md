@@ -4,17 +4,16 @@ description: NPS サーバーは、VPN サーバーによって送信される�
 ms.prod: windows-server
 ms.technology: networking-ras
 ms.topic: article
-ms.assetid: ''
 ms.localizationpriority: medium
-ms.author: lizross
-author: eross-msft
+ms.author: v-tea
+author: Teresa-MOTIV
 ms.date: 08/30/2018
-ms.openlocfilehash: 18fa85189b082a4a88a8a0bc0d6df11e21e7c97d
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: d286f44e198aa13204b884da3fdf729f18b7553b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80307696"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860455"
 ---
 # <a name="step-4-install-and-configure-the-network-policy-server-nps"></a>手順 4. ネットワークポリシーサーバー (NPS) をインストールして構成する
 

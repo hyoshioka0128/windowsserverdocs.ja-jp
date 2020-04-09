@@ -7,15 +7,15 @@ ms.topic: article
 ms.date: 05/08/2018
 ms.assetid: daaf6b61-5953-4c2d-b6b8-7c885b552646
 manager: dougkim
-ms.author: lizross
-author: eross-msft
+ms.author: anpaul
+author: AnirbanPaul
 ms.localizationpriority: medium
-ms.openlocfilehash: 833f1681af16b4e79a28383462a3471b3bc08f52
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 052e81125f95bba6e6bdd76279dec6b23b759cbf
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80319367"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861775"
 ---
 # <a name="networking"></a>ネットワーク
 

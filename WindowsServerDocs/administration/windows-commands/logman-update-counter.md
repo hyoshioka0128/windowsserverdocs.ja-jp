@@ -1,28 +1,24 @@
 ---
 title: logman 更新カウンター
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Windows コマンドに関するトピック * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 607df6d5-876c-428d-a0b3-f59cb244e2ce britw
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8c0696b6077a919d93106cb39329c986e91883fa
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d93ea91fb1b5d105923457aeb8d5515e1ac5b9c5
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71374355"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80840575"
 ---
 # <a name="logman-update-counter"></a>logman 更新カウンター
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 既存のカウンターデータコレクターのプロパティを更新します。  
 
@@ -30,7 +26,7 @@ ms.locfileid: "71374355"
 ```  
 logman update counter <[-n] <name>> [options]  
 ```  
-## <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>パラメーター  
 
 |                    パラメーター                     |                                                                               説明                                                                               |
 |--------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -60,11 +56,11 @@ logman update counter <[-n] <name>> [options]
 
 ## <a name="remarks"></a>コメント  
 [-] が一覧表示されている場合は、オプションを追加して否定します。  
-## <a name="BKMK_examples"></a>例  
-次のコマンドでは、データコレクター perf_log を更新します。サンプル間隔を10に変更し、ログ形式を CSV に変更して、mmddhhmm 形式でログファイル名にバージョン管理を追加します。  
+## <a name="examples"></a><a name=BKMK_examples></a>例  
+次のコマンドを実行すると、データコレクター perf_log が更新され、サンプル間隔が10に変更され、ログ形式が CSV に変更され、mmddhhmm 形式のログファイル名にバージョン管理が追加されます。  
 ```  
 logman update perf_log -si 10 -f csv -v mmddhhmm  
 ```  
-#### <a name="additional-references"></a>その他の参照情報  
+## <a name="additional-references"></a>その他の参照情報  
 [logman](logman.md)  
 [logman カウンターの作成](logman-create-counter.md)  

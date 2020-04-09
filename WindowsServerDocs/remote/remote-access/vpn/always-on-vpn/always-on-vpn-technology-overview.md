@@ -5,15 +5,15 @@ ms.prod: windows-server
 ms.technology: networking-ras
 ms.topic: article
 ms.date: 11/05/2018
-ms.author: lizross
-author: eross-msft
+ms.author: v-tea
+author: Teresa-MOTIV
 ms.localizationpriority: medium
-ms.openlocfilehash: a5d65dd9f8fb6328bd00be8a46af37ee69ccd2bf
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 570b96d07f414442a00d5f7ec48de80f270f0a76
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80313393"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861315"
 ---
 # <a name="always-on-vpn-technology-overview"></a>Always On VPN テクノロジの概要
 
@@ -68,7 +68,7 @@ Windows Server 2016 では、リモートアクセスサーバーの役割は、
 
 IKEv2 は、「インターネット技術標準化委員会におけるコメント7296の要求」で説明されている VPN トンネリングプロトコルです。 IKEv2 の主な利点は、基になるネットワーク接続で許容が中断されることです。 たとえば、接続が一時的に失われた場合、またはユーザーがクライアントコンピューターをあるネットワークから別のネットワークに移動した場合、IKEv2 はネットワーク接続が再確立されたときに VPN 接続を自動的に復元します。ユーザーによる操作は必要ありません。
 
-RAS ゲートウェイを使用すると、VPN 接続を展開して、エンドユーザーが組織のネットワークとリソースにリモートアクセスできるようにすることができます。 Always On VPN を展開すると、リモートコンピューターがインターネットに接続されている場合は常に、クライアントと組織のネットワークの間に永続的な接続が維持されます。 RAS ゲートウェイを使用すると、プライマリオフィスとブランチオフィスの間など、異なる場所にある2つのサーバー間にサイト間 VPN 接続を作成し、ネットワーク内のユーザーが外部にアクセスできるようにネットワークアドレス変換 (NAT) を使用することもできます。リソース (インターネットなど)。 また、RAS ゲートウェイでは Border Gateway Protocol (BGP) がサポートされています。これは、リモートオフィスの場所に BGP をサポートするエッジゲートウェイもある場合に動的ルーティングサービスを提供します。
+RAS ゲートウェイを使用すると、VPN 接続を展開して、エンドユーザーが組織のネットワークとリソースにリモートアクセスできるようにすることができます。 Always On VPN を展開すると、リモートコンピューターがインターネットに接続されている場合は常に、クライアントと組織のネットワークの間に永続的な接続が維持されます。 RAS ゲートウェイでは、プライマリオフィスとブランチオフィスの間など、異なる場所にある2つのサーバー間にサイト間 VPN 接続を作成し、ネットワーク内のユーザーがインターネットなどの外部リソースにアクセスできるようにネットワークアドレス変換 (NAT) を使用することもできます。 また、RAS ゲートウェイでは Border Gateway Protocol (BGP) がサポートされています。これは、リモートオフィスの場所に BGP をサポートするエッジゲートウェイもある場合に動的ルーティングサービスを提供します。
 
 Windows PowerShell コマンドとリモートアクセス Microsoft 管理コンソール (MMC) を使用して、リモートアクセスサービス (RAS) ゲートウェイを管理できます。
 
@@ -202,10 +202,10 @@ Windows 10 には多くの Csp が用意されていますが、この展開で�
 
 - [ドメインネームシステム (dns)](../../../../networking/dns/dns-top.md): このトピックでは、ドメインネームシステム (dns) の概要について説明します。 Windows Server 2016 では、DNS はサーバーの役割であり、サーバーマネージャーまたは Windows PowerShell コマンドを使用してインストールできます。 新しい Active Directory フォレストとドメインをインストールする場合は、フォレストとドメインのグローバルカタログサーバーとして Active Directory と共に DNS が自動的にインストールされます。
 
-- [Active Directory 証明書サービスの概要](https://technet.microsoft.com/library/hh831740.aspx): このドキュメントでは、Windows Server®2012の Active Directory 証明書サービス (AD CS) の概要について説明します。 AD CS は、公開キー基盤 (PKI) を構築し、公開キーの暗号化、デジタル証明書、およびデジタル署名機能を組織に提供するサーバーの役割です。
+- [Active Directory 証明書サービスの概要](https://technet.microsoft.com/library/hh831740.aspx): このドキュメントでは、Windows Server&reg; 2012 の Active Directory 証明書サービス (AD CS) の概要について説明します。 AD CS は、公開キー基盤 (PKI) を構築し、公開キーの暗号化、デジタル証明書、およびデジタル署名機能を組織に提供するサーバーの役割です。
 
 - [公開キー基盤の設計ガイダンス](https://social.technet.microsoft.com/wiki/contents/articles/2901.public-key-infrastructure-design-guidance.aspx): この wiki では、公開キー基盤 (pki) の設計に関するガイダンスを提供します。 PKI と証明機関 (CA) 階層を構成する前に、組織のセキュリティポリシーと証明書作成ステートメント (CPS) に注意する必要があります。
 
-- [AD Cs ステップバイステップガイド: 2 層 PKI 階層の展開](https://social.technet.microsoft.com/wiki/contents/articles/15037.ad-cs-step-by-step-guide-two-tier-pki-hierarchy-deployment.aspx): このステップバイステップガイドでは、ラボ環境で Active Directory®証明書サービス (AD CS) の基本的な構成をセットアップするために必要な手順について説明します。 Windows Server® 2008 R2 の AD CS は、公開キーテクノロジを採用しているソフトウェアセキュリティシステムで使用される公開キー証明書を作成および管理するためのカスタマイズ可能なサービスを提供します。
+- [AD Cs ステップバイステップガイド: 2 層 PKI 階層の展開](https://social.technet.microsoft.com/wiki/contents/articles/15037.ad-cs-step-by-step-guide-two-tier-pki-hierarchy-deployment.aspx): このステップバイステップガイドでは、ラボ環境で Active Directory&reg; 証明書サービス (AD CS) の基本的な構成をセットアップするために必要な手順について説明します。 Windows Server&reg; 2008 R2 の AD CS は、公開キーテクノロジを採用しているソフトウェアセキュリティシステムで使用される公開キー証明書を作成および管理するためのカスタマイズ可能なサービスを提供します。
 
 - [ネットワークポリシーサーバー (NPS)](../../../../networking/technologies/nps/nps-top.md): このトピックでは、Windows server 2016 のネットワークポリシーサーバーの概要について説明します。 ネットワーク ポリシー サーバー (NPS) を使用すると、接続要求の認証と承認を行うための組織全体のネットワーク アクセス ポリシーを作成して適用できます。

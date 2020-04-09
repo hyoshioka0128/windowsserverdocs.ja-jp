@@ -1,28 +1,22 @@
 ---
 title: tpmvscmgr
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Tpmvscmgr の Windows コマンドに関するトピック。管理者の資格情報を持つユーザーがコンピューターで TPM 仮想スマートカードを作成および削除できるようにするコマンドラインツールです。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8b2c8ff4-5c5d-446d-99e7-4daa1b36a163
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0051750f557786b0a564ec20a32089e089898cc0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4411e0ec3c75cd768b2fe32ad26b17331328e3ca
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385660"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80832735"
 ---
 # <a name="tpmvscmgr"></a>tpmvscmgr
-
-
 
 Tpmvscmgr コマンドラインツールを使用すると、管理者の資格情報を持つユーザーは、コンピューター上で TPM 仮想スマートカードを作成および削除できます。 このコマンドの使用方法の例については、次を参照してください。 [例](#BKMK_Examples)します。
 
@@ -35,7 +29,7 @@ Tpmvscmgr create [/name] [/AdminKey DEFAULT | PROMPT | RANDOM] [/PIN DEFAULT | P
 Tpmvscmgr destroy [/instance <instance ID>] [/?]
 ```
 
-### <a name="parameters-for-create-command"></a>Create コマンドのパラメーター
+#### <a name="parameters-for-create-command"></a>Create コマンドのパラメーター
 
 Create コマンドは、ユーザーのシステムに新しい仮想スマートカードを設定します。 削除が必要な場合、後で参照するために新しく作成されたカードのインスタンス ID を返します。 インスタンス ID は、 **ROOT\SMARTCARDREADER\000n**の形式になります。 **n**は0から始まり、新しい仮想スマートカードを作成するたびに1ずつ増加します。
 
@@ -49,7 +43,7 @@ Create コマンドは、ユーザーのシステムに新しい仮想スマー�
 |/machine|仮想スマートカードを作成できるリモートコンピューターの名前を指定できます。 これはドメイン環境でのみ使用でき、DCOM に依存します。 別のコンピューターで仮想スマートカードを作成するコマンドを正常に実行するには、このコマンドを実行するユーザーが、リモートコンピューターのローカル管理者グループのメンバーである必要があります。|
 |/?|このコマンドのヘルプを表示します。|
 
-### <a name="parameters-for-destroy-command"></a>Destroy コマンドのパラメーター
+#### <a name="parameters-for-destroy-command"></a>Destroy コマンドのパラメーター
 
 [破棄] コマンドを実行すると、ユーザーのコンピューターから仮想スマートカードが安全に削除されます。
 
@@ -67,26 +61,26 @@ Create コマンドは、ユーザーのシステムに新しい仮想スマー�
 
 英数字入力の場合、127文字の完全な ASCII セットが許可されます。
 
-## <a name="BKMK_Examples"></a>例
+## <a name="examples"></a><a name=BKMK_Examples></a>例
 
 次のコマンドは、別のコンピューターから起動するスマートカード管理ツールによって後で管理できる仮想スマートカードを作成する方法を示しています。
 ```
-tpmvscmgr.exe create /name "VirtualSmartCardForCorpAccess" /AdminKey DEFAULT /PIN PROMPT
+tpmvscmgr.exe create /name VirtualSmartCardForCorpAccess /AdminKey DEFAULT /PIN PROMPT
 ```
 または、既定の管理者キーを使用する代わりに、コマンドラインで管理者キーを作成することもできます。 次のコマンドは、管理者キーを作成する方法を示しています。
 ```
-tpmvscmgr.exe create /name "VirtualSmartCardForCorpAccess" /AdminKey PROMPT /PIN PROMPT
+tpmvscmgr.exe create /name VirtualSmartCardForCorpAccess /AdminKey PROMPT /PIN PROMPT
 ```
 次のコマンドは、証明書の登録に使用できる管理されていない仮想スマートカードを作成します。
 ```
-tpmvscmgr.exe create /name "VirtualSmartCardForCorpAccess" /AdminKey RANDOM /PIN PROMPT /generate
+tpmvscmgr.exe create /name VirtualSmartCardForCorpAccess /AdminKey RANDOM /PIN PROMPT /generate
 ```
 次のコマンドは、ランダム化された管理者キーを使用して仮想スマートカードを作成します。 キーは、cardis 作成された後に自動的に破棄されます。 これは、ユーザーが PIN を忘れた場合、または PIN を変更したい場合、ユーザーはカードを削除して再度作成する必要があることを意味します。 カードを削除するには、ユーザーは次のコマンドを実行します。
 ```
 tpmvscmgr.exe destroy /instance <instance ID> 
 ```
-ここ\<で、インスタンス ID > は、ユーザーがカードを作成したときに画面に出力される値です。 具体的には、最初に作成されたカードのインスタンス ID は ROOT\SMARTCARDREADER\0000. です。
+ここで \<インスタンス ID > は、ユーザーがカードを作成したときに画面に出力される値です。 具体的には、最初に作成されたカードのインスタンス ID は ROOT\SMARTCARDREADER\0000. です。
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
--   [コマンド ライン構文の記号](command-line-syntax-key.md)
+-   - [コマンド ライン構文の記号](command-line-syntax-key.md)

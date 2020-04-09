@@ -1,23 +1,19 @@
 ---
 title: Windows Server Essentials Log Collector の実行
 description: Windows Server Essentials の使用方法について説明します。
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0d340223-fa24-4c75-ba8e-b654feb120ab
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: a39c23ef4119e109372bad3455415f8d3862cf1b
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 6aac2ed382321349d39874c7db7617f6da845919
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80318675"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852275"
 ---
 # <a name="run-the-windows-server-essentials-log-collector"></a>Windows Server Essentials Log Collector の実行
 Windows Server Essentials Log Collector は、サーバーまたはネットワーク上のコンピューターから実行できます。 サーバーから Log Collector を実行した場合、ログをサーバーからのみ収集できます。 ネットワーク コンピューターから Log Collector を実行した場合、そのコンピューターのログに加えて、サーバーから収集するログを選択できます。  

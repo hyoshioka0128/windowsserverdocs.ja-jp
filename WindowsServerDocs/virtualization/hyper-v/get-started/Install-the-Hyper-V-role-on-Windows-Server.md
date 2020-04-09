@@ -2,25 +2,23 @@
 title: Windows Server で HYPER-V の役割をインストールします。
 description: サーバーマネージャーまたは Windows PowerShell を使用して Hyper-v をインストールする手順について説明します。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 8e871317-09d2-4314-a6ec-ced12b7aee89
-author: KBDAzure
+author: kbdazure
 ms.author: kathydav
 ms.date: 12/02/2016
-ms.openlocfilehash: 2687a907852e2a81f03b147df1425cd01b34fb76
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d4d8f2343f0935ea7185890319a3e33564750572
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71392812"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860825"
 ---
 # <a name="install-the-hyper-v-role-on-windows-server"></a>Windows Server で HYPER-V の役割をインストールします。
 
->適用先:Windows Server 2016、Windows Server 2019
+>適用対象: Windows Server 2016、Windows Server 2019
   
 仮想マシンを作成して実行するには、windows PowerShell でサーバーマネージャーまたは**Install add-windowsfeature**コマンドレットを使用して、windows Server に hyper-v の役割をインストールします。 Windows 10 を参照してください。 [インストールにインストールされた Hyper-v Windows 10](https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v)します。
 
@@ -38,13 +36,13 @@ Hyper-v マネージャーなどの管理ツールのみをインストールす
   
 2. **[開始する前に]** ページで、インストールする役割と機能のために、対象サーバーとネットワーク環境の準備が整っていることを確認してください。 **[次へ]** をクリックします。  
   
-3. **インストールの種類を選択**  ページで選択 **役割ベースまたは機能ベースのインストール**  をクリックし、 **次**します。  
+3. **[インストールの種類の選択]** ページで **[役割ベースまたは機能ベースのインストール]** を選択し、 **[次へ]** をクリックします。  
   
-4. **対象サーバーの選択**  ページで、サーバー プールからサーバーを選択してクリックして **次**します。  
+4. **[対象サーバーの選択]** ページで、サーバー プールからサーバーを選択し、 **[次へ]** をクリックします。  
   
 5. **[サーバーの役割の選択]** ページで **[Hyper-V]** を選択します。  
   
-6. 作成し、仮想マシンを管理するために使用するツールを追加するには、クリックして **機能の追加**します。 [機能] ページで、クリックして **次**します。  
+6. 仮想マシンの作成と管理に使うツールを追加するには、 **[機能の追加]** をクリックします。 [機能] ページで、 **[次へ]** をクリックします。  
   
 7. **[仮想スイッチの作成]** ページ、 **[仮想マシンの移行]** ページ、および **[既定の保存場所]** ページで、適切なオプションを選択します。  
   
@@ -75,8 +73,8 @@ Hyper-v マネージャーなどの管理ツールのみをインストールす
     サーバーにローカルに接続している場合は、なしのコマンドを実行 `-ComputerName <computer_name>`します。  
   
 > [!NOTE]  
-> Windows Server 2016 の Server Core インストールオプションを実行しているサーバーにこの役割をインストールし、パラメーター `-IncludeManagementTools` を使用する場合は、Windows PowerShell 用の Hyper-v モジュールのみがインストールされます。 Server Core インストールで実行される HYPER-V ホストをリモートで管理する別のコンピューターで、HYPER-V マネージャーの GUI 管理ツールを使用することができます。 リモート接続の手順については、「 [Hyper-v マネージャーを使用して hyper-v ホストをリモートで管理](../Manage/Remotely-manage-Hyper-V-hosts.md)する」を参照してください。  
+> Windows Server 2016 の Server Core インストールオプションを実行しているサーバーにこの役割をインストールして `-IncludeManagementTools`パラメーターを使用すると、Windows PowerShell 用の Hyper-v モジュールのみがインストールされます。 Server Core インストールで実行される HYPER-V ホストをリモートで管理する別のコンピューターで、HYPER-V マネージャーの GUI 管理ツールを使用することができます。 リモート接続の手順については、「 [Hyper-v マネージャーを使用して hyper-v ホストをリモートで管理](../Manage/Remotely-manage-Hyper-V-hosts.md)する」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
   
 - [Install-Add-windowsfeature](https://docs.microsoft.com/powershell/module/Microsoft.Windows.ServerManager.Migration/Install-WindowsFeature)  

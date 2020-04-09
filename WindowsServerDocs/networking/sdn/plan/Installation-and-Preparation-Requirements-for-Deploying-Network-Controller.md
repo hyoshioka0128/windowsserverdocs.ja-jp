@@ -1,20 +1,20 @@
 ---
 title: ネットワークコントローラーを展開するための要件
 description: ネットワークコントローラーを展開するために、1台以上のコンピューターまたは Vm、1台のコンピューターまたは VM を必要とするデータセンターを準備します。 ネットワークコントローラーを展開する前に、セキュリティグループ、ログファイルの場所 (必要な場合)、および動的 DNS の登録を構成する必要があります。
-manager: dougkim
+manager: grcusanz
 ms.prod: windows-server
 ms.technology: networking-sdn
 ms.topic: get-started-article
 ms.assetid: 7f899e62-6e5b-4fca-9a59-130d4766ee2f
-ms.author: lizross
-author: eross-msft
+ms.author: anpaul
+author: AnirbanPaul
 ms.date: 08/10/2018
-ms.openlocfilehash: a16d82e4db1e92a5dd20f6b4feb88f0619d50cc4
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: da9164eea4ab7e2fb38864fb69c47252448b77b6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80317509"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854425"
 ---
 # <a name="requirements-for-deploying-network-controller"></a>ネットワークコントローラーを展開するための要件
 

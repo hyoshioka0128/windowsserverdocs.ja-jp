@@ -1,6 +1,5 @@
 ---
 title: ReFS 整合性ストリーム
-description: ''
 author: gawatu
 ms.author: jgerend
 manager: dmoss
@@ -9,15 +8,15 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
 ms.assetid: 1f1215cd-404f-42f2-b55f-3888294d8a1f
-ms.openlocfilehash: 0e41d7ae577bf7e9227ff0c02689d916f1008a3d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5e4ce1870d8aea01de0ab621d7efe197026643db
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403037"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861335"
 ---
 # <a name="refs-integrity-streams"></a>ReFS 整合性ストリーム
->適用対象:Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server (半期チャネル)、Windows 10
+>適用対象: Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server (半期チャネル)、Windows 10
 
 整合性ストリームは、チェックサムを使用してデータの整合性を検証および保持する、ReFS のオプション機能です。 ReFS は、常に、メタデータのチェックサムを使用しますが、既定では ReFS はファイル データのチェックサムを生成および検証しません。 整合性ストリームは、ファイル データのチェックサムを利用できるオプションの機能です。 整合性ストリームを有効にすると、データが有効か、破損しているかを ReFS が明確に判別できます。 さらに、ReFS と記憶域スペースの連携によって、破損したメタデータやデータを自動的に修正できます。
 
@@ -40,7 +39,7 @@ ReFS では、すべての破損がシステム イベント ログに記録さ�
 
 ![修正書き込みによるデータの整合性の復元](media/corrective-write.gif)
 
-## <a name="performance"></a>パフォーマンス 
+## <a name="performance"></a>パフォーマンス テスト 
 
 整合性ストリームによって、システムのデータの整合性は向上しますが、パフォーマンスの低下も招きます。 これには、いくつかの原因が考えられます。
 - 整合性ストリームが有効な場合、すべての書き込み操作は Allocate-on-Write 操作になります。 この操作では ReFS が既存のデータの読み取りや変更を行う必要がないため、Read-Modify-Write のボトルネックは回避されますが、ファイル データが頻繁に断片化し、読み取りの遅延が発生します。 
@@ -57,7 +56,7 @@ ReFS では、すべての破損がシステム イベント ログに記録さ�
 
 既定ではスクラブ機能が 4 週間ごとに実行されますが、この間隔は、タスク スケジューラーの [Microsoft]\[Windows]\[データ整合性スキャン ]で構成できます。 
 
-## <a name="examples"></a>使用例
+## <a name="examples"></a>例
 ファイル データの整合性の設定を監視および変更するには、ReFS は **Get-FileIntegrity** および **Set-FileIntegrity** コマンドレットを使用します。
 
 ### <a name="get-fileintegrity"></a>Get-FileIntegrity
@@ -93,7 +92,7 @@ PS C:\> Set-FileIntegrity H:\ -Enable $True
 PS C:\> Set-FileIntegrity H:\Docs -Enable $True
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 -   [ReFS の概要](refs-overview.md)
 -   [ReFS ブロックの複製](block-cloning.md)

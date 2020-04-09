@@ -1,23 +1,19 @@
 ---
 title: リモートで管理されるサーバー用のサーバー回復 DVD の作成
 description: Windows Server Essentials の使用方法について説明します。
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 6141fa69-5952-4e3c-a868-40ef3f4badd2
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: a9b571c2d3e5d531d8c923741500c72675022adc
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: f63a727a28da3b61502c34f1e6194f2c2e9916ec
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80312191"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820145"
 ---
 # <a name="create-a-server-recovery-dvd-for-remotely-administered-servers"></a>リモートで管理されるサーバー用のサーバー回復 DVD の作成
 

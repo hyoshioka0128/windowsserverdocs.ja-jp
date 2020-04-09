@@ -1,25 +1,21 @@
 ---
 title: 標準ユーザー アカウントを作成する
-ms.custom: na
 description: MultiPoint Services の基本ユーザーアカウントを作成する
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1e113666-e45f-48b6-aad8-42c361c9046d
 author: lizap
 manager: dongill
-ms.openlocfilehash: dc1307855b847b3d27f655e953c718e4049f8332
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d92b5b21c5a10e808e52bf5081ebc1ed7a2b9a3d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71395480"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859785"
 ---
 # <a name="create-a-standard-user-account"></a>標準ユーザー アカウントを作成する
-ステーションに定期的にアクセスするけれども MultiPoint Services システムの管理は行わないユーザー用には、*標準ユーザー アカウント*を作成します。 標準ユーザーアカウントを持つユーザーは、ほとんどのアプリケーションを実行してファイルを保存できますが、MultiPoint Manager を実行することはできません。 標準ユーザーアクセスを持つユーザーを表示するには、MultiPoint マネージャーで **[ユーザー]** タブをクリックします。標準ユーザー アカウントの [アカウントの種類] 列には **[標準]** と表示されます。  
+ステーションに定期的にアクセスするけれども MultiPoint Services システムの管理は行わないユーザー用には、*標準ユーザー アカウント*を作成します。 標準ユーザーアカウントを持つユーザーは、ほとんどのアプリケーションを実行してファイルを保存できますが、MultiPoint Manager を実行することはできません。 標準ユーザーアクセスを持つユーザーを表示するには、MultiPoint マネージャーで **[ユーザー]** タブをクリックします。標準ユーザーアカウントは、 **[アカウントの種類]** 列に**標準**として表示されます。  
   
 MultiPoint Services のユーザーが Windows でプライベート ドキュメントを保存する場合、各ユーザーは一意のユーザー名とパスワードを使用して MultiPoint Services システムにログオンする必要があります。  
   

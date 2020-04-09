@@ -2,22 +2,18 @@
 title: DNS ゾーンを編集する
 description: このトピックは、Windows Server 2016 の IP アドレス管理 (IPAM) 管理ガイドに含まれています。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ipam
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a35164e1-11ad-47c8-9843-580d30c70d07
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: b2fa8ff6742dc393a5a2cc962c7f849049b5ef31
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 916e745082db64cf548e4b9650ee1f0ec5ba3c24
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80312419"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860695"
 ---
 # <a name="edit-a-dns-zone"></a>DNS ゾーンを編集する
 

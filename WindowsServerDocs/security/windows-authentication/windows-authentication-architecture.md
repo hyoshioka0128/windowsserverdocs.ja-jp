@@ -1,28 +1,24 @@
 ---
 title: Windows 認証のアーキテクチャ
 description: Windows Server のセキュリティ
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-windows-auth
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 07c9d6bb-9b03-407d-89b6-97c7551b256b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 4a9deef6481c1f7dacb56e8166584de1c59d613c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f2a2b9db60842ba7889116cf35163c579d9131d1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403281"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861725"
 ---
 # <a name="windows-authentication-architecture"></a>Windows 認証のアーキテクチャ
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 IT プロフェッショナル向けのこの概要トピックでは、Windows 認証の基本的なアーキテクチャスキームについて説明します。
 
@@ -44,7 +40,7 @@ Windows Server オペレーティングシステムには、Windows セキュリ
 
 SSPI は、Generic Security Service API (GSSAPI) の実装です。 SSPI は、分散アプリケーションが複数のセキュリティプロバイダーのいずれかを呼び出して、セキュリティプロトコルの詳細情報を知らずに認証済み接続を取得できるメカニズムを提供します。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 -   [セキュリティ サポート プロバイダー インターフェイスのアーキテクチャ](security-support-provider-interface-architecture.md)
 

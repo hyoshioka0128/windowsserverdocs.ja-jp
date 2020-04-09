@@ -1,21 +1,20 @@
 ---
 title: 仮想マシンのリソースコントロール
 description: VM の CPU グループの使用
-keywords: Windows 10, Hyper-V
 author: allenma
 ms.date: 06/18/2018
 ms.topic: article
-ms.prod: windows-10-hyperv
+ms.prod: windows-server
 ms.service: windows-10-hyperv
 ms.assetid: cc7bb88e-ae75-4a54-9fb4-fc7c14964d67
-ms.openlocfilehash: 41390421c9e3126915cdf2e827e251e84495bafd
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: fcf61c22a24abb6b16baf75b4846cc188dcecd49
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70872018"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860795"
 ---
->適用先:Windows Server 2016、Microsoft Hyper-V Server 2016、Windows Server 2019、Microsoft Hyper-V Server 2019
+>適用対象: Windows Server 2016、Microsoft Hyper-V Server 2016、Windows Server 2019、Microsoft Hyper-V Server 2019
 
 # <a name="virtual-machine-resource-controls"></a>仮想マシンのリソースコントロール
 
@@ -46,7 +45,7 @@ CPU グループの上限は、G = *n* x *C*として計算されます。
     *n* is the total number of logical processors (LPs) in the group
     *C* is the maximum CPU allocation — that is, the class of service desired for the group, expressed as a percentage of the system's total compute capacity
 
-たとえば、CPU グループが4つの論理プロセッサ (LPs) で構成され、キャップが 50% であるとします。
+たとえば、CPU グループが4つの論理プロセッサ (LPs) で構成され、キャップが50% であるとします。
 
     G = n * C
     G = 4 * 50%
@@ -60,39 +59,39 @@ CPU グループの上限は、G = *n* x *C*として計算されます。
 
 いくつかの簡単な例を見てみましょう。 まず、Hyper-v ホスト管理者がゲスト Vm 用に2層のサービスをサポートするとします。
 
-1. ローエンドの "C" 層。 このレベルには、ホストのコンピューティングリソース全体の 10% を与えます。
+1. ローエンドの "C" 層。 このレベルには、ホストのコンピューティングリソース全体の10% を与えます。
 
-1. 中間範囲 "B" 層。 この層には、ホストのコンピューティングリソース全体の 50% が割り当てられます。
+1. 中間範囲 "B" 層。 この層には、ホストのコンピューティングリソース全体の50% が割り当てられます。
 
 この例のこの時点では、個々の VM キャップ、重み、予約など、他の CPU リソース制御が使用されていないことをアサートします。
 ただし、後で説明するように、個々の VM の上限は重要です。
 
 わかりやすくするために、各 VM には VP が1つあり、ホストには8個の LPs があると仮定してみましょう。 空のホストから始めます。
 
-"B" 層を作成するために、ホストの管理は、グループの上限を 50% に設定します。
+"B" 層を作成するために、ホストの管理は、グループの上限を50% に設定します。
 
     G = n * C
     G = 8 * 50%
     G = 4 LP's worth of CPU time for the entire group
 
 ホスト管理者は、1つの "B" 層の VM を追加します。
-この時点で、"B" 層の VM は、ホストの CPU のうち最大 50% を使用できます。また、この例のシステムでは、4つの LPs に相当します。
+この時点で、"B" 層の VM は、ホストの CPU のうち最大50% を使用できます。また、この例のシステムでは、4つの LPs に相当します。
 
-これで、管理者は2つ目の "Tier B" VM を追加します。 CPU グループの割り当ては、すべての Vm 間で均等に分割されます。 グループ B には合計2つの Vm があります。そのため、各 VM は、グループ B の合計である 50%、25%、またはそれに相当する2つのコンピューティング時間の半分を獲得します。
+これで、管理者は2つ目の "Tier B" VM を追加します。 CPU グループの割り当ては、すべての Vm 間で均等に分割されます。 グループ B には合計2つの Vm があります。そのため、各 VM は、グループ B の合計である50%、25%、またはそれに相当する2つのコンピューティング時間の半分を獲得します。
 
 ## <a name="setting-cpu-caps-on-individual-vms"></a>個々の Vm での CPU キャップの設定
 
 グループキャップに加えて、各 VM は個別の "VM cap" も持つことができます。 CPU の上限、重量、予約など、VM ごとの CPU リソース制御は、その概要以降、Hyper-v に含まれていました。
 グループの上限と組み合わせると、VM の上限は、グループに使用可能な CPU リソースがある場合でも、各 VP が取得できる CPU の最大量を指定します。
 
-たとえば、ホスト管理者は、"C" Vm に 10% の VM キャップを配置することができます。
-このようにして、ほとんどの "C" VPs がアイドル状態であっても、各 VP が 10% を超えることはありません。
+たとえば、ホスト管理者は、"C" Vm に10% の VM キャップを配置することができます。
+このようにして、ほとんどの "C" VPs がアイドル状態であっても、各 VP が10% を超えることはありません。
 VM cap を使用しない場合、"C" Vm は、その層で許可されているレベルを超えてパフォーマンスをさせる可能性があります。
 
 ## <a name="isolating-vm-groups-to-specific-host-processors"></a>特定のホストプロセッサに VM グループを分離する
 
 Hyper-v ホスト管理者は、コンピューティングリソースを VM に専用にすることもできます。
-たとえば、管理者が、クラスキャップが 100% の premium "A" VM を提供したいとします。
+たとえば、管理者が、クラスキャップが100% の premium "A" VM を提供したいとします。
 これらの premium Vm では、最小のスケジューリング待機時間とジッターも必要です。つまり、他の VM によってスケジュール解除されていない可能性があります。
 この分離を実現するために、特定の LP アフィニティマッピングで CPU グループを構成することもできます。
 
@@ -217,9 +216,9 @@ CpuGroupId                          CpuCap LpIndexes
 36AB08CB-3A76-4B38-992E-000000000004 65536 24,25,26,27,28,29,30,31
 ```
 
-### <a name="example-5--set-the-cpu-group-cap-to-50"></a>例 5-CPU グループの上限を 50% に設定する
+### <a name="example-5--set-the-cpu-group-cap-to-50"></a>例 5-CPU グループの上限を50% に設定する
 
-ここでは、CPU グループの上限を 50% に設定します。
+ここでは、CPU グループの上限を50% に設定します。
 
 ```console
 C:\vm\tools>CpuGroups.exe SetGroupProperty /GroupId:36AB08CB-3A76-4B38-992E-000000000001 /CpuCap:32768

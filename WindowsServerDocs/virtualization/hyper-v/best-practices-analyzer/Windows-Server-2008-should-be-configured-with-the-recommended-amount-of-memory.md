@@ -2,20 +2,19 @@
 title: Windows Server 2008 は、推奨されるメモリ量で構成する必要があります。
 description: このベストプラクティスアナライザー規則によって報告された問題を解決するための手順を示します。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: a98a8594-603b-487a-8739-78887c568e57
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: a563f809d067345ad6a17dbfaed052ab1010b2b3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1df2c7d10f35c7dcabbb210d8bd09233468697c0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71364381"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861025"
 ---
 # <a name="windows-server-2008-should-be-configured-with-the-recommended-amount-of-memory"></a>Windows Server 2008 は、推奨されるメモリ量で構成する必要があります。
 
@@ -27,7 +26,7 @@ ms.locfileid: "71364381"
 |-|-|  
 |**オペレーティング システム**|Windows Server 2016|  
 |**製品/機能**|Hyper-V|  
-|**順**|Warning|  
+|**順**|［警告］|  
 |**カテゴリ**|構成|  
   
 次のセクションでは、斜体は、この問題のためのベスト プラクティス アナライザー ツールで表示される UI テキストを示します。  
@@ -52,7 +51,7 @@ ms.locfileid: "71364381"
   
 2.  結果ウィンドウで  **仮想マシン**, 、構成する仮想マシンを選択します。 バーチャルマシンの状態は **オフ (オフ**)」と表示されます。 そうでない場合は、バーチャルマシンを右クリックし、 **[シャットダウン]** をクリックします。  
   
-3.  **アクション** ウィンドウの 仮想マシン名をクリックして **設定**します。  
+3.  **[操作]** ウィンドウで、仮想マシン名の下の **[設定]** をクリックします。  
   
 4.  ナビゲーションウィンドウで、 **[メモリ]** をクリックします。  
   

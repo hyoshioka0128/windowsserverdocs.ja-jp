@@ -1,23 +1,19 @@
 ---
 title: 既存のクライアント コンピューターのバックアップからシステム全体を復元する
 description: Windows Server Essentials の使用方法について説明します。
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 47e498a6-1b71-47de-88f6-8c13c221d108
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: b9629f41c4e8eb707b19914a297d9d8b88c6aead
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 37e4d45f6bd34d77fbbf3cbabcd66a776b624c19
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80310653"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852645"
 ---
 # <a name="restore-a-full-system-from-an-existing-client-computer-backup"></a>既存のクライアント コンピューターのバックアップからシステム全体を復元する
 
@@ -91,7 +87,7 @@ ms.locfileid: "80310653"
  RAID (Redundant Array of Independent Disks) とダイナミック ディスクのバックアップはサポートされていません。  
   
 ##  <a name="how-does-the-system-restore-environment-work"></a><a name="BKMK_HowDoes"></a>システム復元環境はどのように動作しますか。  
- Windows server® 2012 Essentials で提供されるシステム復元メディアは、Windows プレインストール環境 (Windows PE) をコンピューターにインストールします。 Windows PE は MS-DOS 環境の後継であり、Windows 用のコア プログラム ファイルが含まれています。 Windows Server Essentials では、2つのシステム復元方法がサポートされています。クライアント復元サービスを使用します。このサービスでは、ネットワークを使用し、メディアに依存しないか、USB フラッシュドライブを使用します。  
+ Windows server&reg; 2012 Essentials で提供されるシステム復元メディアは、Windows プレインストール環境 (Windows PE) をコンピューターにインストールします。 Windows PE は MS-DOS 環境の後継であり、Windows 用のコア プログラム ファイルが含まれています。 Windows Server Essentials では、2つのシステム復元方法がサポートされています。クライアント復元サービスを使用します。このサービスでは、ネットワークを使用し、メディアに依存しないか、USB フラッシュドライブを使用します。  
   
 > [!NOTE]
 >  Windows PE はワイヤレス接続をサポートしていません。 このため、復元するコンピューターをスモール ビジネス ネットワークに物理的に接続する必要があります。  

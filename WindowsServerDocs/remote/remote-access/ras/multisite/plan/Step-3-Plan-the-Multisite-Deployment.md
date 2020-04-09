@@ -2,22 +2,18 @@
 title: 手順3マルチサイト展開を計画する
 description: このトピックは、「Windows Server 2016 のマルチサイト展開に複数のリモートアクセスサーバーを展開する」の一部です。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e5ea9d22-a503-4ed4-96b3-0ee2ccf4fd17
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: e85998138f3aa3627b5e212766d491cd3fc8305f
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 97705e3d6f5a4300c32ec98cc59e849862381607
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80313864"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858325"
 ---
 # <a name="step-3-plan-the-multisite-deployment"></a>手順3マルチサイト展開を計画する
 

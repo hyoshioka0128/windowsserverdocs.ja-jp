@@ -1,26 +1,20 @@
 ---
 title: Azure Traffic Manager を使用した Azure への高可用性のクロス地理的 AD FS デプロイ |Microsoft Docs
-description: このドキュメントでは、高可用性のために AD FS を Azure にデプロイする方法について説明します。
-keywords: Azure traffic manager を使用した Ad fs、Azure Traffic Manager、地理的、マルチデータセンター、地理的なデータセンター、複数の地理的データセンター、azure への AD FS のデプロイ、azure adfs のデプロイ、azure adfs、azure AD fs、adfs のデプロイ、AD fs のデプロイ、azure での adfs のデプロイ、azure での adfs のデプロイ、azure での AD FS のデプロイ、adfs azure、AD FS の概要、azure、azure での AD FS、iaas、ADFS、adfs の azure への移行
+description: 高可用性を実現するために AD FS を Azure にデプロイする方法。
 services: active-directory
-documentationcenter: ''
 author: anandyadavmsft
 manager: mtillman
-editor: ''
+ms.prod: windows-server
 ms.assetid: a14bc870-9fad-45ed-acd5-a90ccd432e54
-ms.service: active-directory
-ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: get-started-article
 ms.date: 09/01/2016
 ms.author: anandy;billmath
-ms.openlocfilehash: d98eb126513d707bce7abe3e901c8bf584d2319c
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 9bfb59fadd2cf6b07d3c47ab69f0fe67974706a3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70868018"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855205"
 ---
 # <a name="high-availability-cross-geographic-ad-fs-deployment-in-azure-with-azure-traffic-manager"></a>Azure Traffic Manager を使用した Azure への高可用性の地理的な AD FS デプロイ
 Azure[での AD FS デプロイ](how-to-connect-fed-azure-adfs.md)では、azure で組織の単純な AD FS インフラストラクチャをデプロイする方法について、手順を追ったガイドラインを提供します。 この記事では、azure [Traffic Manager](https://docs.microsoft.com/azure/traffic-manager/)を使用して azure に AD FS の地理的なデプロイを作成する次の手順について説明します。 Azure Traffic Manager は、インフラストラクチャのさまざまなニーズに合わせて使用できるルーティング方法の範囲を利用することで、地理的に分散した高可用性と高パフォーマンスの AD FS インフラストラクチャを組織に作成するのに役立ちます。
@@ -41,7 +35,7 @@ Azure[での AD FS デプロイ](how-to-connect-fed-azure-adfs.md)では、azure
 * **ネットワークセキュリティグループ:** ストレージアカウントと同様に、リージョンで作成されたネットワークセキュリティグループを別の地理的リージョンで使用することはできません。 そのため、新しい地理的リージョンの INT および DMZ サブネットの最初の地理的リージョンに似た新しいネットワークセキュリティグループを作成する必要があります。
 * **パブリック IP アドレスの DNS ラベル:** Azure Traffic Manager は、DNS ラベルを使用してのみエンドポイントを参照できます。 そのため、外部ロードバランサーのパブリック IP アドレスの DNS ラベルを作成する必要があります。
 * **Azure Traffic Manager:** Microsoft Azure Traffic Manager を使用すると、世界各地のさまざまなデータセンターで実行されているサービスエンドポイントへのユーザートラフィックの分散を制御できます。 Azure Traffic Manager は DNS レベルで動作します。 DNS 応答を使用して、エンドユーザーのトラフィックをグローバルに分散されたエンドポイントに送信します。 その後、クライアントはこれらのエンドポイントに直接接続します。 パフォーマンス、重み付け、優先順位のルーティングオプションが異なるため、組織のニーズに最適なルーティングオプションを簡単に選択できます。 
-* **2つのリージョン間の仮想ネットワーク接続 (v):** 仮想ネットワーク自体が接続されている必要はありません。 各仮想ネットワークにはドメインコントローラーへのアクセス権があり、それ自体に AD FS と WAP サーバーがあるため、異なるリージョンの仮想ネットワーク間に接続しなくても動作できます。 
+* **2 つのリージョン間の仮想ネットワーク接続 (v):** 仮想ネットワーク自体が接続されている必要はありません。 各仮想ネットワークにはドメインコントローラーへのアクセス権があり、それ自体に AD FS と WAP サーバーがあるため、異なるリージョンの仮想ネットワーク間に接続しなくても動作できます。 
 
 ## <a name="steps-to-integrate-azure-traffic-manager"></a>Azure Traffic Manager を統合する手順
 ### <a name="deploy-ad-fs-in-the-new-geographical-region"></a>新しい地理的リージョンに AD FS をデプロイする
@@ -60,8 +54,8 @@ Traffic manager プロファイルを作成するには、次の手順に従い�
     ![プロファイル作成の Traffic Manager](./media/active-directory-adfs-in-azure-with-azure-traffic-manager/trafficmanager01.png)
 2. **トラフィックのルーティング方法:** Traffic manager には、次の3つのルーティングオプションを使用できます。
    
-   * [Priority] 
-   * パフォーマンス
+   * 優先順位 
+   * パフォーマンス テスト
    * 強調
      
      応答性の高い AD FS インフラストラクチャを実現するには、**パフォーマンス**が推奨されます。 ただし、デプロイのニーズに最適なルーティング方法を選択できます。 AD FS 機能は、選択したルーティングオプションの影響を受けません。 詳細については、「 [Traffic Manager トラフィックルーティング方法](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-routing-methods)」を参照してください。 上のサンプルのスクリーンショットでは、選択された**パフォーマンス**の方法を確認できます。
@@ -106,7 +100,7 @@ AD FS をテストする最も簡単な方法は、Idpinitiatedstartup.aspx ペ�
 
 1. PowerShell を使用して、AD FS サーバーで次のコマンドレットを実行し、[有効] に設定します。 
    Set-adfsproperties-EnableIdPInitiatedSignonPage $true
-2. 任意の外部コンピューターからの<yourfederationservicedns>アクセス https:///adfs/ls/IdpInitiatedSignon.aspx
+2. 任意の外部コンピューターアクセス https://<yourfederationservicedns>/adfs/ls/IdpInitiatedSignon.aspx
 3. 次のような AD FS ページが表示されます。
    
     ![ADFS テスト-認証チャレンジ](./media/active-directory-adfs-in-azure-with-azure-traffic-manager/adfstest1.png)
@@ -120,7 +114,7 @@ AD FS をテストする最も簡単な方法は、Idpinitiatedstartup.aspx ペ�
 * [Microsoft Azure Traffic Manager](https://docs.microsoft.com/azure/traffic-manager/)
 * [トラフィックルーティング方法の Traffic Manager](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-routing-methods)
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ:
 * [Azure Traffic Manager プロファイルを管理する](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-manage-profiles)
 * [エンドポイントの追加、無効化、有効化、または削除](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-manage-endpoints) 
 

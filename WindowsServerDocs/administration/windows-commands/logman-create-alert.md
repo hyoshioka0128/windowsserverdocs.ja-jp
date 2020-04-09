@@ -1,28 +1,24 @@
 ---
 title: logman 作成アラート
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Windows コマンドに関するトピック * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 93e6fc2b-5bf5-413b-84b4-be8b9dd3a57d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9420c486d4c6161c2c5724384f0d916448164a2a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7568d4a2164cb9c387f59ff581ab739e7bb1f3e9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71374578"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80840945"
 ---
 # <a name="logman-create-alert"></a>logman 作成アラート
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 アラートデータコレクターを作成します。  
 
@@ -30,7 +26,7 @@ ms.locfileid: "71374578"
 ```  
 logman create alert <[-n] <name>> [options]  
 ```  
-## <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>パラメーター  
 
 |                 パラメーター                  |                                                                               説明                                                                               |
 |--------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -62,12 +58,12 @@ logman create alert <[-n] <name>> [options]
 
 ## <a name="remarks"></a>コメント  
 [-] が一覧表示されている場合は、オプションを追加して否定します。  
-## <a name="BKMK_examples"></a>例  
-次のコマンドは、new_alert という名前のアラートを作成します。このアラートは、Processor (_Total) カウンターグループのパフォーマンスカウンターの% Processor time が、カウンター値50を超えた場合に発生します。  
+## <a name="examples"></a><a name=BKMK_examples></a>例  
+次のコマンドは、プロセッサ (_Total) カウンターグループのパフォーマンスカウンターの% Processor time がカウンター値50を超えたときに発生する new_alert という名前のアラートを作成します。  
 ```  
-logman create alert new_alert -th "\Processor(_Total)\% Processor time>50"  
+logman create alert new_alert -th \Processor(_Total)\% Processor time>50  
 ```  
 > [!NOTE]
 > 定義されているしきい値は、カウンターによって収集された値に基づいています。したがって、この例では、50の値は 50% Processor time に相当します。  
-> #### <a name="additional-references"></a>その他の参照情報  
+> ## <a name="additional-references"></a>その他の参照情報  
 > [logman](logman.md)  

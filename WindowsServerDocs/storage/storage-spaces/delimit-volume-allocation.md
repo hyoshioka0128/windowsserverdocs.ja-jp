@@ -1,17 +1,17 @@
 ---
 title: 記憶域スペースダイレクトのボリュームの割り当てを区切ります。
 ms.author: cosmosdarwin
-ms.manager: eldenc
+manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 03/29/2018
-ms.openlocfilehash: 19e5a38ca406878b7dbc5a187b0057e97e4fe2d1
-ms.sourcegitcommit: 74107a32efe1e53b36c938166600739a79dd0f51
+ms.openlocfilehash: 26454881279e1d33392a827f794788370def2cab
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76918301"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858975"
 ---
 # <a name="delimit-the-allocation-of-volumes-in-storage-spaces-direct"></a>記憶域スペースダイレクトのボリュームの割り当てを区切ります。
 > 適用対象: Windows Server 2019
@@ -21,19 +21,19 @@ Windows Server 2019 では、記憶域スペースダイレクトでボリュー
    > [!IMPORTANT]
    > この機能は、Windows Server 2019 で新しく追加された機能です。 Windows Server 2016 では使用できません。 
 
-## <a name="prerequisites"></a>必要条件
+## <a name="prerequisites"></a>前提条件
 
-### <a name="green-checkmark-iconmediadelimit-volume-allocationsupportedpng-consider-using-this-option-if"></a>![緑のチェックマークアイコン。](media/delimit-volume-allocation/supported.png) 次の場合に、このオプションの使用を検討してください。
+### <a name="green-checkmark-icon-consider-using-this-option-if"></a>![緑のチェックマークアイコン。](media/delimit-volume-allocation/supported.png) 次の場合に、このオプションの使用を検討してください。
 
 - クラスターには6台以上のサーバーがあります。そして
 - クラスターが[3 方向ミラー](storage-spaces-fault-tolerance.md#mirroring)回復性のみを使用している
 
-### <a name="red-x-iconmediadelimit-volume-allocationunsupportedpng-do-not-use-this-option-if"></a>![赤色の X アイコン。](media/delimit-volume-allocation/unsupported.png) 次の場合は、このオプションを使用しないでください。
+### <a name="red-x-icon-do-not-use-this-option-if"></a>![赤色の X アイコン。](media/delimit-volume-allocation/unsupported.png) 次の場合は、このオプションを使用しないでください。
 
 - クラスターのサーバー数が6台未満です。もしくは
 - クラスターが[パリティ](storage-spaces-fault-tolerance.md#parity)または[ミラーアクセラレータによるパリティ](storage-spaces-fault-tolerance.md#mirror-accelerated-parity)回復性を使用する
 
-## <a name="understand"></a>説明
+## <a name="understand"></a>概要
 
 ### <a name="review-regular-allocation"></a>レビュー: 通常の割り当て
 
@@ -194,13 +194,13 @@ Server1 には*Myvolume*のスラブがなく、代わりに Server5 が使用�
 
 ### <a name="can-i-delimit-some-volumes-but-not-others"></a>いくつかのボリュームを区切ることはできますか。
 
-対応 割り当てを区切るかどうかによって、ボリュームごとに選択できます。
+はい。 割り当てを区切るかどうかによって、ボリュームごとに選択できます。
 
 ### <a name="does-delimited-allocation-change-how-drive-replacement-works"></a>区切られた割り当てはドライブ置換の動作を変更しますか。
 
 いいえ。通常の割り当てと同じです。
 
-## <a name="see-also"></a>「
+## <a name="see-also"></a>参照
 
 - [記憶域スペースダイレクトの概要](storage-spaces-direct-overview.md)
 - [記憶域スペースダイレクトのフォールトトレランス](storage-spaces-fault-tolerance.md)

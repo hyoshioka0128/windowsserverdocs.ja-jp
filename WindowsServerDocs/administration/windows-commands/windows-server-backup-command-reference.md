@@ -1,24 +1,20 @@
 ---
 title: Windows Server バックアップ コマンドのリファレンス
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Backup コマンドリファレンスの Windows コマンドに関するトピック。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 03de0a65-21f0-4dd7-a3ae-251c98bbf6eb
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c05a44d3390e110fbaf276dfb9b40c1f0adc1dd5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ca6a2e17c68e362d8b3d26f67ab3b7e4c7bf86d4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71362048"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80829206"
 ---
 # <a name="windows-server-backup-command-reference"></a>Windows Server バックアップ コマンドのリファレンス
 

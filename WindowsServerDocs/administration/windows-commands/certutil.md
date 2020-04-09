@@ -1,24 +1,20 @@
 ---
 title: certutil
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Certutil の Windows コマンドトピック。これは、証明機関 (CA) の構成情報のダンプと表示、証明書サービスの構成、CA コンポーネントのバックアップと復元、証明書、キーペア、証明書チェーンの検証を行うコマンドラインプログラムです。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c264ccf0-ba1e-412b-9dd3-d77dd9345ad9
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 71525e4051a079eb9a3d0c8c197c8157b53e5e67
-ms.sourcegitcommit: 1f3ffff0af340868dcf3a2cfef5b8f8aea69d96d
+ms.openlocfilehash: 3ae2d68ee6a23422dda3dee8b261027c36707bd1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78278547"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80848195"
 ---
 # <a name="certutil"></a>certutil
 
@@ -241,8 +237,8 @@ AttributeString--属性名と値のペアを要求する
 
 - 名前と値はコロンで区切られます。
 - 複数の名前、値のペアは改行で区切られています。
-- 例: "CertificateTemplate:User\nEMail:User@Domain.com"
-- 各 "\n" シーケンスは改行区切り記号に変換されます。
+- 例: CertificateTemplate:User\nEMail:User@Domain.com
+- 各 \n シーケンスは、改行区切り記号に変換されます。
 
 [-config Machine\CAName]
 
@@ -337,7 +333,7 @@ CertUtil [オプション]-CAInfo [InfoName [Index |ErrorCode]]
 
 CA 情報を表示する
 
-InfoName--表示する CA プロパティを示します (下記参照)。 すべてのプロパティに対して "\*" を使用します。
+InfoName--表示する CA プロパティを示します (下記参照)。 すべてのプロパティには \* を使用します。
 
 Index--省略可能な0から始まるプロパティインデックス
 
@@ -530,19 +526,19 @@ csv: コンマ区切り値として出力
 
 すべてのエントリの StatusCode 列を表示するには:-out StatusCode
 
-最後のエントリのすべての列を表示する場合:-restrict "RequestId = = $"
+最後のエントリのすべての列を表示する場合:-restrict RequestId = = $
 
-3つの要求に対して RequestId と後処理を表示するには:-restrict "RequestId > = 37, RequestId\<40"-out "RequestId, ディスポジション"
+次の3つの要求に対して RequestId と後処理を表示する:-restrict RequestId > = 37、RequestId\<40-out RequestId、ディスポジション
 
-すべての Base Crl の行 Id と CRL 番号を表示するには:-restrict "CRLMinBase = 0"-out "CRLRowId, CRLNumber" CRL
+すべての Base Crl の行 Id と CRL 番号を表示するには:-restrict CRLMinBase = 0-out CRLRowId、CRLNumber CRL
 
-Base CRL Number 3 を表示するには:-v-制限 "CRLMinBase = 0, CRLNumber = 3"-out "CRLRawCRL" CRL
+Base CRL Number 3 を表示するには:-v-restrict CRLMinBase = 0、CRLNumber = 3-out CRLRawCRL CRL
 
 CRL テーブル全体を表示するには: CRL
 
-日付制限には、"Date [+ |-dd: hh]" を使用します。
+日付の制限には、日付 [+ |-dd: hh] を使用します。
 
-現在の時刻を基準とする日付に "now + dd: hh" を使用します。
+現在の時刻を基準とした日付には now + dd: hh を使用します
 
 [-silent][-split][-config Machine\CAName][-制限 RestrictionList][-out ColumnList]
 
@@ -731,11 +727,11 @@ CertUtil [オプション]-store [証明 [CertId [OutputFile]]]
 
 証明: 証明書ストアの名前。 例:
 
-- "My"、"CA" (既定値)、"Root"、
-- "ldap:///CN=Certification オーソリティ, CN = Public Key Services, CN = Services, CN = Configuration, DC = cpandl, DC = com? Cacertificate を? one? objectClass = Microsoft-windows-certificationauthority" (ルート証明書の表示)
-- "ldap:///CN=CAName,CN=Certification オーソリティ, CN = Public Key Services, CN = Services, CN = Configuration, DC = cpandl, DC = com? Cacertificate を? base? objectClass = Microsoft-windows-certificationauthority" (ルート証明書の変更)
-- "ldap:///CN=CAName,CN=MachineName,CN=CDP,CN=Public Key Services、CN = Services、CN = Configuration、DC = cpandl、DC = com? certificateRevocationList? base? objectClass = cRLDistributionPoint" (Crl の表示)
-- "ldap:///CN=NTAuthCertificates,CN=Public Key Services, CN = Services, CN = Configuration, DC = cpandl, DC = com? Cacertificate を? base? objectClass = Microsoft-windows-certificationauthority" (エンタープライズ CA 証明書)
+- My、CA (既定)、ルート、
+- ldap:///CN=Certification オーソリティ、CN = Public Key Services、CN = Services、CN = Configuration、DC = cpandl、DC = com? Cacertificate を? one? objectClass = Microsoft-windows-certificationauthority (ルート証明書の表示)
+- ldap:///CN=CAName,CN=Certification オーソリティ、CN = Public Key Services、CN = Services、CN = Configuration、DC = cpandl、DC = com? Cacertificate を? base? objectClass = Microsoft-windows-certificationauthority (ルート証明書の変更)
+- ldap:///CN=CAName,CN=MachineName,CN=CDP,CN=Public Key Services、CN = Services、CN = Configuration、DC = cpandl、DC = com? certificateRevocationList? base? cRLDistributionPoint (Crl の表示)
+- ldap:///CN=NTAuthCertificates,CN=Public Key Services、CN = Services、CN = Configuration、DC = cpandl、DC = com? Cacertificate を? base? objectClass = Microsoft-windows-certificationauthority (エンタープライズ CA 証明書)
 - ldap: (AD コンピューターオブジェクトの証明書)
 - -ユーザー ldap: (AD ユーザーオブジェクト証明書)
 
@@ -821,22 +817,22 @@ PropertyInfFile--外部プロパティを含む INF ファイル:
      19 = Empty ; Add archived property, OR:
      19 =       ; Remove archived property
 
-     11 = "{text}Friendly Name" ; Add friendly name property
+     11 = {text}Friendly Name ; Add friendly name property
 
-     127 = "{hex}" ; Add custom hexadecimal property
-         _continue_ = "00 01 02 03 04 05 06 07 08 09 0a 0b 0c 0d 0e 0f"
-         _continue_ = "10 11 12 13 14 15 16 17 18 19 1a 1b 1c 1d 1e 1f"
+     127 = {hex} ; Add custom hexadecimal property
+         _continue_ = 00 01 02 03 04 05 06 07 08 09 0a 0b 0c 0d 0e 0f
+         _continue_ = 10 11 12 13 14 15 16 17 18 19 1a 1b 1c 1d 1e 1f
 
-     2 = "{text}" ; Add Key Provider Information property
-       _continue_ = "Container=Container Name&"
-       _continue_ = "Provider=Microsoft Strong Cryptographic Provider&"
-       _continue_ = "ProviderType=1&"
-       _continue_ = "Flags=0&"
-       _continue_ = "KeySpec=2"
+     2 = {text} ; Add Key Provider Information property
+       _continue_ = Container=Container Name&
+       _continue_ = Provider=Microsoft Strong Cryptographic Provider&
+       _continue_ = ProviderType=1&
+       _continue_ = Flags=0&
+       _continue_ = KeySpec=2
 
-     9 = "{text}" ; Add Enhanced Key Usage property
-       _continue_ = "1.3.6.1.5.5.7.3.2,"
-       _continue_ = "1.3.6.1.5.5.7.3.1,"
+     9 = {text} ; Add Enhanced Key Usage property
+       _continue_ = 1.3.6.1.5.5.7.3.2,
+       _continue_ = 1.3.6.1.5.5.7.3.1,
 ```
 
 [-f][-enterprise][-ユーザー][-GroupPolicy][-silent][-split][-csp プロバイダー]
@@ -851,11 +847,11 @@ CertUtil [オプション]-viewstore [証明 [CertId [OutputFile]]]
 
 証明: 証明書ストアの名前。 例:
 
-- "My"、"CA" (既定値)、"Root"、
-- "ldap:///CN=Certification オーソリティ, CN = Public Key Services, CN = Services, CN = Configuration, DC = cpandl, DC = com? Cacertificate を? one? objectClass = Microsoft-windows-certificationauthority" (ルート証明書の表示)
-- "ldap:///CN=CAName,CN=Certification オーソリティ, CN = Public Key Services, CN = Services, CN = Configuration, DC = cpandl, DC = com? Cacertificate を? base? objectClass = Microsoft-windows-certificationauthority" (ルート証明書の変更)
-- "ldap:///CN=CAName,CN=MachineName,CN=CDP,CN=Public Key Services、CN = Services、CN = Configuration、DC = cpandl、DC = com? certificateRevocationList? base? objectClass = cRLDistributionPoint" (Crl の表示)
-- "ldap:///CN=NTAuthCertificates,CN=Public Key Services, CN = Services, CN = Configuration, DC = cpandl, DC = com? Cacertificate を? base? objectClass = Microsoft-windows-certificationauthority" (エンタープライズ CA 証明書)
+- My、CA (既定)、ルート、
+- ldap:///CN=Certification オーソリティ、CN = Public Key Services、CN = Services、CN = Configuration、DC = cpandl、DC = com? Cacertificate を? one? objectClass = Microsoft-windows-certificationauthority (ルート証明書の表示)
+- ldap:///CN=CAName,CN=Certification オーソリティ、CN = Public Key Services、CN = Services、CN = Configuration、DC = cpandl、DC = com? Cacertificate を? base? objectClass = Microsoft-windows-certificationauthority (ルート証明書の変更)
+- ldap:///CN=CAName,CN=MachineName,CN=CDP,CN=Public Key Services、CN = Services、CN = Configuration、DC = cpandl、DC = com? certificateRevocationList? base? cRLDistributionPoint (Crl の表示)
+- ldap:///CN=NTAuthCertificates,CN=Public Key Services、CN = Services、CN = Configuration、DC = cpandl、DC = com? Cacertificate を? base? objectClass = Microsoft-windows-certificationauthority (エンタープライズ CA 証明書)
 - ldap: (AD コンピューターオブジェクトの証明書)
 - -ユーザー ldap: (AD ユーザーオブジェクト証明書)
 
@@ -890,11 +886,11 @@ CertUtil [オプション]-viewdelstore [証明 [CertId [OutputFile]]]
 
 証明: 証明書ストアの名前。 例:
 
-- "My"、"CA" (既定値)、"Root"、
-- "ldap:///CN=Certification オーソリティ, CN = Public Key Services, CN = Services, CN = Configuration, DC = cpandl, DC = com? Cacertificate を? one? objectClass = Microsoft-windows-certificationauthority" (ルート証明書の表示)
-- "ldap:///CN=CAName,CN=Certification オーソリティ, CN = Public Key Services, CN = Services, CN = Configuration, DC = cpandl, DC = com? Cacertificate を? base? objectClass = Microsoft-windows-certificationauthority" (ルート証明書の変更)
-- "ldap:///CN=CAName,CN=MachineName,CN=CDP,CN=Public Key Services、CN = Services、CN = Configuration、DC = cpandl、DC = com? certificateRevocationList? base? objectClass = cRLDistributionPoint" (Crl の表示)
-- "ldap:///CN=NTAuthCertificates,CN=Public Key Services, CN = Services, CN = Configuration, DC = cpandl, DC = com? Cacertificate を? base? objectClass = Microsoft-windows-certificationauthority" (エンタープライズ CA 証明書)
+- My、CA (既定)、ルート、
+- ldap:///CN=Certification オーソリティ、CN = Public Key Services、CN = Services、CN = Configuration、DC = cpandl、DC = com? Cacertificate を? one? objectClass = Microsoft-windows-certificationauthority (ルート証明書の表示)
+- ldap:///CN=CAName,CN=Certification オーソリティ、CN = Public Key Services、CN = Services、CN = Configuration、DC = cpandl、DC = com? Cacertificate を? base? objectClass = Microsoft-windows-certificationauthority (ルート証明書の変更)
+- ldap:///CN=CAName,CN=MachineName,CN=CDP,CN=Public Key Services、CN = Services、CN = Configuration、DC = cpandl、DC = com? certificateRevocationList? base? cRLDistributionPoint (Crl の表示)
+- ldap:///CN=NTAuthCertificates,CN=Public Key Services、CN = Services、CN = Configuration、DC = cpandl、DC = com? Cacertificate を? base? objectClass = Microsoft-windows-certificationauthority (エンタープライズ CA 証明書)
 - ldap: (AD コンピューターオブジェクトの証明書)
 - -ユーザー ldap: (AD ユーザーオブジェクト証明書)
 
@@ -1322,7 +1318,7 @@ CRL: 空の CRL を作成します。 有効期間とその他のオプション
 
 OutFileList: 変更された証明書または CRL 出力ファイルのコンマ区切りの一覧。 ファイルの数は、InFileList と一致している必要があります。
 
-StartDate + dd: hh: 新しい有効期間: 省略可能な日付 +オプションの日付と時間の有効期間。両方が指定されている場合は、正符号 (+) 区切り記号を使用します。 現在の時刻から開始するには、"now [+ dd: hh]" を使用します。 有効期限を設定しない場合は、"never" を使用します (Crl の場合のみ)。
+StartDate + dd: hh: 新しい有効期間: 省略可能な日付 +オプションの日付と時間の有効期間。両方が指定されている場合は、正符号 (+) 区切り記号を使用します。 現在の時刻から開始するには、now [+ dd: hh] を使用します。 有効期限を設定しない (Crl の場合のみ)。
 
 SerialNumberList: コンマ区切りのシリアル番号リストを追加または削除します。
 
@@ -1333,8 +1329,8 @@ ObjectIdList: コンマ区切りの拡張 ObjectId リストを削除します�
 ```
 [Extensions]
      2.5.29.31 = ; Remove CRL Distribution Points extension
-     2.5.29.15 = "{hex}" ; Update Key Usage extension
-     _continue_="03 02 01 86"
+     2.5.29.15 = {hex} ; Update Key Usage extension
+     _continue_=03 02 01 86
 ```
 
 HashAlgorithm: # 記号を前に付けたハッシュアルゴリズムの名前
@@ -1483,15 +1479,15 @@ PolicyServers: ポリシーサーバーのレジストリキーを使用しま�
 
 ProgId: ポリシーまたは終了モジュールの ProgId (レジストリサブキー名) を使用します。
 
-RegistryValueName: レジストリ値の名前 (プレフィックスと一致するには "Name\*" を使用します)
+RegistryValueName: レジストリ値の名前 (プレフィックスと一致する名前\* を使用します)
 
-値: 新しい数値、文字列、または日付のレジストリ値またはファイル名。 数値が "+" または "-" で始まる場合は、新しい値に指定されたビットが既存のレジストリ値で設定またはクリアされます。
+値: 新しい数値、文字列、または日付のレジストリ値またはファイル名。 数値が + または-で始まる場合は、新しい値に指定されたビットが既存のレジストリ値で設定またはクリアされます。
 
-文字列値が "+" または "-" で始まっていて、既存の値が REG_MULTI_SZ 値の場合は、既存のレジストリ値に対して文字列が追加または削除されます。 REG_MULTI_SZ 値を強制的に作成するには、文字列値の末尾に "\n" を追加します。
+文字列値が + または-で始まっていて、既存の値が REG_MULTI_SZ 値の場合は、既存のレジストリ値に対して文字列が追加または削除されます。 REG_MULTI_SZ 値を強制的に作成するには、文字列値の末尾に \n を追加します。
 
-値が "\@" で始まる場合、値の残りの部分は、バイナリ値の16進数のテキスト表現を含むファイルの名前になります。 有効なファイルを参照していない場合は、代わりに [Date] [+ |-] [dd: hh]--省略可能な日付またはマイナス (省略可能) として解析されます。 両方が指定されている場合は、正符号 (+) または負符号 (-) の区切り記号を使用します。 現在の時刻を基準とした日付には、"now + dd: hh" を使用します。
+値が \@で始まる場合、値の残りの部分は、バイナリ値の16進数のテキスト表現を含むファイルの名前になります。 有効なファイルを参照していない場合は、代わりに [Date] [+ |-] [dd: hh]--省略可能な日付またはマイナス (省略可能) として解析されます。 両方が指定されている場合は、正符号 (+) または負符号 (-) の区切り記号を使用します。 現在の時刻を基準とした日付には、now + dd: hh を使用します。
 
-キャッシュされた Crl を効果的にフラッシュするには、"chain\ChainCacheResyncFiletime \@now" を使用します。
+Chain\ChainCacheResyncFiletime \@使用して、キャッシュされた Crl を効果的にフラッシュします。
 
 [-f][-ユーザー][-GroupPolicy][-config Machine\CAName]
 
@@ -1521,15 +1517,15 @@ PolicyServers: ポリシーサーバーのレジストリキーを使用しま�
 
 ProgId: ポリシーまたは終了モジュールの ProgId (レジストリサブキー名) を使用します。
 
-RegistryValueName: レジストリ値の名前 (プレフィックスと一致するには "Name\*" を使用します)
+RegistryValueName: レジストリ値の名前 (プレフィックスと一致する名前\* を使用します)
 
-値: 新しい数値、文字列、または日付のレジストリ値またはファイル名。 数値が "+" または "-" で始まる場合は、新しい値に指定されたビットが既存のレジストリ値で設定またはクリアされます。
+値: 新しい数値、文字列、または日付のレジストリ値またはファイル名。 数値が + または-で始まる場合は、新しい値に指定されたビットが既存のレジストリ値で設定またはクリアされます。
 
-文字列値が "+" または "-" で始まっていて、既存の値が REG_MULTI_SZ 値の場合は、既存のレジストリ値に対して文字列が追加または削除されます。 REG_MULTI_SZ 値を強制的に作成するには、文字列値の末尾に "\n" を追加します。
+文字列値が + または-で始まっていて、既存の値が REG_MULTI_SZ 値の場合は、既存のレジストリ値に対して文字列が追加または削除されます。 REG_MULTI_SZ 値を強制的に作成するには、文字列値の末尾に \n を追加します。
 
-値が "\@" で始まる場合、値の残りの部分は、バイナリ値の16進数のテキスト表現を含むファイルの名前になります。 有効なファイルを参照していない場合は、代わりに [Date] [+ |-] [dd: hh]--省略可能な日付またはマイナス (省略可能) として解析されます。 両方が指定されている場合は、正符号 (+) または負符号 (-) の区切り記号を使用します。 現在の時刻を基準とした日付には、"now + dd: hh" を使用します。
+値が \@で始まる場合、値の残りの部分は、バイナリ値の16進数のテキスト表現を含むファイルの名前になります。 有効なファイルを参照していない場合は、代わりに [Date] [+ |-] [dd: hh]--省略可能な日付またはマイナス (省略可能) として解析されます。 両方が指定されている場合は、正符号 (+) または負符号 (-) の区切り記号を使用します。 現在の時刻を基準とした日付には、now + dd: hh を使用します。
 
-キャッシュされた Crl を効果的にフラッシュするには、"chain\ChainCacheResyncFiletime \@now" を使用します。
+Chain\ChainCacheResyncFiletime \@使用して、キャッシュされた Crl を効果的にフラッシュします。
 
 [-f][-ユーザー][-GroupPolicy][-config Machine\CAName]
 
@@ -1559,15 +1555,15 @@ PolicyServers: ポリシーサーバーのレジストリキーを使用しま�
 
 ProgId: ポリシーまたは終了モジュールの ProgId (レジストリサブキー名) を使用します。
 
-RegistryValueName: レジストリ値の名前 (プレフィックスと一致するには "Name\*" を使用します)
+RegistryValueName: レジストリ値の名前 (プレフィックスと一致する名前\* を使用します)
 
-値: 新しい数値、文字列、または日付のレジストリ値またはファイル名。 数値が "+" または "-" で始まる場合は、新しい値に指定されたビットが既存のレジストリ値で設定またはクリアされます。
+値: 新しい数値、文字列、または日付のレジストリ値またはファイル名。 数値が + または-で始まる場合は、新しい値に指定されたビットが既存のレジストリ値で設定またはクリアされます。
 
-文字列値が "+" または "-" で始まっていて、既存の値が REG_MULTI_SZ 値の場合は、既存のレジストリ値に対して文字列が追加または削除されます。 REG_MULTI_SZ 値を強制的に作成するには、文字列値の末尾に "\n" を追加します。
+文字列値が + または-で始まっていて、既存の値が REG_MULTI_SZ 値の場合は、既存のレジストリ値に対して文字列が追加または削除されます。 REG_MULTI_SZ 値を強制的に作成するには、文字列値の末尾に \n を追加します。
 
-値が "\@" で始まる場合、値の残りの部分は、バイナリ値の16進数のテキスト表現を含むファイルの名前になります。 有効なファイルを参照していない場合は、代わりに [Date] [+ |-] [dd: hh]--省略可能な日付またはマイナス (省略可能) として解析されます。 両方が指定されている場合は、正符号 (+) または負符号 (-) の区切り記号を使用します。 現在の時刻を基準とした日付には、"now + dd: hh" を使用します。
+値が \@で始まる場合、値の残りの部分は、バイナリ値の16進数のテキスト表現を含むファイルの名前になります。 有効なファイルを参照していない場合は、代わりに [Date] [+ |-] [dd: hh]--省略可能な日付またはマイナス (省略可能) として解析されます。 両方が指定されている場合は、正符号 (+) または負符号 (-) の区切り記号を使用します。 現在の時刻を基準とした日付には、now + dd: hh を使用します。
 
-キャッシュされた Crl を効果的にフラッシュするには、"chain\ChainCacheResyncFiletime \@now" を使用します。
+Chain\ChainCacheResyncFiletime \@使用して、キャッシュされた Crl を効果的にフラッシュします。
 
 [-f][-ユーザー][-GroupPolicy][-config Machine\CAName]
 
@@ -1665,7 +1661,7 @@ PFXOutFile: PFX 出力ファイル
 
 ExtendedProperties: 拡張プロパティを含める
 
-コマンドラインで指定したパスワードは、コンマで区切られたパスワードの一覧です。  複数のパスワードを指定した場合は、最後のパスワードが出力ファイルに使用されます。  パスワードが1つしか指定されていない場合、または最後のパスワードが "\*" の場合、ユーザーは出力ファイルのパスワードの入力を求められます。
+コマンドラインで指定したパスワードは、コンマで区切られたパスワードの一覧です。  複数のパスワードを指定した場合は、最後のパスワードが出力ファイルに使用されます。  パスワードが1つしか指定されていない場合、または最後のパスワードが \*場合は、出力ファイルのパスワードの入力を求めるメッセージが表示されます。
 
 [-f][-ユーザー][-split][-p パスワード][-ProtectTo SAMNameAndSIDList][-csp プロバイダー]
 
@@ -1689,7 +1685,7 @@ V3CACertId: V3 CA 証明書の一致トークン。  「 [-Store](#-store) CertI
 
 Salt: EPF 出力ファイル salt 文字列
 
-コマンドラインで指定したパスワードは、コンマで区切られたパスワードの一覧です。 複数のパスワードを指定した場合は、最後のパスワードが出力ファイルに使用されます。  パスワードが1つしか指定されていない場合、または最後のパスワードが "\*" の場合、ユーザーは出力ファイルのパスワードの入力を求められます。
+コマンドラインで指定したパスワードは、コンマで区切られたパスワードの一覧です。 複数のパスワードを指定した場合は、最後のパスワードが出力ファイルに使用されます。  パスワードが1つしか指定されていない場合、または最後のパスワードが \*場合は、出力ファイルのパスワードの入力を求めるメッセージが表示されます。
 
 [-f][-silent][-split][-dc DCName][-p パスワード][-csp プロバイダー]
 
@@ -1726,7 +1722,7 @@ Salt: EPF 出力ファイル salt 文字列
 |-ユーザー名|SSL 資格情報には名前付きアカウントを使用します。 選択 U/I の場合は、-UserName を使用します。|
 |-Cert CertId|署名証明書|
 |-dc DCName|特定のドメインコントローラーをターゲットにする|
-|-RestrictionList を制限する|コンマ区切りの制限リスト。 各制限は、列名、関係演算子、および定数整数、文字列、または日付で構成されます。 並べ替え順序を示すには、1つの列名の前にプラスまたはマイナス記号を付けることができます。 例:</br>"RequestId = 47"</br>"+ RequesterName > = a, RequesterName < b"</br>"-RequesterName > ドメイン、ディスポジション = 21"|
+|-RestrictionList を制限する|コンマ区切りの制限リスト。 各制限は、列名、関係演算子、および定数整数、文字列、または日付で構成されます。 並べ替え順序を示すには、1つの列名の前にプラスまたはマイナス記号を付けることができます。 例:</br>RequestId = 47</br>\+ RequesterName > = a、RequesterName < b</br>-RequesterName > ドメイン、ディスポジション = 21|
 |-out ColumnList|コンマ区切りの列リスト|
 |-p パスワード|Password|
 |-ProtectTo SAMNameAndSIDList|SAM 名/SID リストをコンマで区切って指定します。|

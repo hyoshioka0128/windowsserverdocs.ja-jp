@@ -1,24 +1,19 @@
 ---
 title: 機能について
 description: このトピックでは、System Insights の機能の概念を定義し、Windows Server 2019 で使用できる既定の機能について説明します。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: system-insights
-ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: ''
 author: gawatu
 ms.author: gawatu
 manager: mallikarjun.chadalapaka
 ms.date: 6/05/2018
-ms.openlocfilehash: 131fbacaab97c1c2c42920a518ce96ba1b8f5d2b
-ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
+ms.openlocfilehash: 9b0f043aab5773773785afc7fb48ba0295a76865
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77465566"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858745"
 ---
 # <a name="understanding-capabilities"></a>機能について
 
@@ -83,7 +78,7 @@ Windows Server 2019 では、容量の予測に重点を置いた4つの既定�
  CPU 容量の予測                | % Processor Time  | 1日あたり最大2時間の平均   
  ネットワーク容量の予測         | 合計バイト数/秒         | 1日あたり最大2時間の平均  
 
-上記のフィルターロジックを評価する際には、将来の使用率が使用可能な容量を超えた場合に管理者に通知することが重要です。これは、CPU 使用率が瞬間的に100% に達した場合でも、CPU 使用率がパフォーマンスの低下またはリソースの競合が発生しました。 CPU とネットワークについては、瞬間的なスパイクではなく、高い使用率を維持する必要があります。 ただし、CPU とネットワークの使用率を1日に平均すると、重要なワークロードのパフォーマンスに大きな影響を与える可能性があるため、重要な使用状況に関する情報が失われる可能性があります。 1日ごとの最大2時間の平均によってこれらの極端な値が回避されるため、分析する機能ごとに意味のあるデータが生成されます。
+上記のフィルターロジックを評価する際には、将来の使用率が使用可能な容量を超えた場合に、各機能が管理者に通知することが重要です。これは、CPU の使用率が瞬間的に100% に達した場合でも、パフォーマンスの低下やリソースの競合が発生していない可能性があります。 CPU とネットワークについては、瞬間的なスパイクではなく、高い使用率を維持する必要があります。 ただし、CPU とネットワークの使用率を1日に平均すると、重要なワークロードのパフォーマンスに大きな影響を与える可能性があるため、重要な使用状況に関する情報が失われる可能性があります。 1日ごとの最大2時間の平均によってこれらの極端な値が回避されるため、分析する機能ごとに意味のあるデータが生成されます。
 
 ただし、ボリュームと記憶域の合計使用量については、ストレージの使用量が一時的に使用可能な容量を超えることはできないため、これらの機能には毎日の最大使用量が使用されます。 
 

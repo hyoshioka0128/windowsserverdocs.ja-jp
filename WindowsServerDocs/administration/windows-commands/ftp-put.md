@@ -1,24 +1,20 @@
 ---
 title: ftp put
 description: FTP put の Windows コマンドに関するトピック
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 95cc1e3f-523d-4374-98b8-16e6c276b2ca vhorne
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/30/2020
-ms.openlocfilehash: 019a81364dbedb443a3a23d5c5a6f8db1496d83d
-ms.sourcegitcommit: 479ad84a0d6c7c7b8308122b8bac8308cb36fe9b
+ms.openlocfilehash: ecd579a313fe1cad1b8a5b4a622aaaec2d6a6d63
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/30/2020
-ms.locfileid: "80391725"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80843135"
 ---
 # <a name="ftp-put"></a>ftp: put
 
@@ -29,7 +25,7 @@ ms.locfileid: "80391725"
 ```
 put <LocalFile> [<remoteFile>]
 ```
-### <a name="parameters"></a>パラメーター
+#### <a name="parameters"></a>パラメーター
 
 |    パラメーター     |                    説明                    |
 |------------------|---------------------------------------------------|
@@ -51,4 +47,4 @@ put <LocalFile> [<remoteFile>]
   ## <a name="additional-references"></a>その他の参照情報
 - [ftp: ascii](ftp-ascii.md)
 - [ftp: バイナリ](ftp-binary.md)
-- [コマンド ライン構文の記号](command-line-syntax-key.md)
+- - [コマンド ライン構文の記号](command-line-syntax-key.md)

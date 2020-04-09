@@ -1,22 +1,20 @@
 ---
 title: Azure AD で VPN 認証のルート証明書を作成する
 description: Azure AD は、vpn 証明書を使用して、VPN 接続用の Azure AD に対して認証するときに、Windows 10 クライアントに対して発行された証明書に署名します。 プライマリとしてマークされている証明書は Azure AD が使用する発行者です。
-services: active-directory
 ms.prod: windows-server
 ms.technology: networking-ras
-ms.workload: identity
 ms.topic: article
 ms.date: 06/28/2019
-ms.author: lizross
-author: eross-msft
+ms.author: v-tea
+author: Teresa-MOTIV
 ms.localizationpriority: medium
 ms.reviewer: deverette
-ms.openlocfilehash: def4c0d7437dd297460d0a863cd2568325825ca9
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: f4501c244726ee9b23a6d517c4b835f0c9418302
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80319033"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80818805"
 ---
 # <a name="step-72-create-conditional-access-root-certificates-for-vpn-authentication-with-azure-ad"></a>手順 7.2. Azure AD を使用した VPN 認証用の条件付きアクセスルート証明書の作成
 

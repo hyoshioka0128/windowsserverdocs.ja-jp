@@ -1,6 +1,5 @@
 ---
 title: What's New in Kerberos Authentication
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: 7bd17803-6e42-4a3b-803f-e47c74725813
@@ -8,16 +7,16 @@ manager: alanth
 author: justinha
 ms.technology: security-authentication
 ms.date: 11/09/2016
-ms.openlocfilehash: a0916abf1076b5f791a856f0c85f54ad17f6d64c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 35eff73e97c8fdbb6df2c1412779b033a9ca3fa5
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403477"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858815"
 ---
 # <a name="whats-new-in-kerberos-authentication"></a>What's New in Kerberos Authentication
 
->適用先:Windows Server 2016 と Windows 10
+>適用対象: Windows Server 2016 および Windows 10
 
 ## <a name="kdc-support-for-public-key-trust-based-client-authentication"></a>KDC による公開キーの信頼ベースのクライアント認証のサポート
 
@@ -31,19 +30,19 @@ Windows 10、バージョン1607、および Windows Server 2016 以降では、
 
 Windows Server 2016 以降では、Kdc は PKInit 鮮度拡張機能をサポートできます。 既定では、Kdc は PKInit 鮮度拡張機能を提供しません。 有効にするには、ドメイン内のすべての Dc に対して、[PKInit 鮮度拡張機能の kdc] 管理用テンプレートポリシー設定の新しい KDC サポートを使用します。 構成した場合、ドメインが Windows Server 2016 ドメインの機能レベル (DFL) の場合、次のオプションがサポートされます。
 
-- **Disabled**:KDC は、PKInit 鮮度拡張機能を提供しません。また、有効な認証要求を受け入れるかどうかをチェックしません。 ユーザーは、新しい公開キー id SID を受け取ることはありません。
-- **サポートされている**:要求では、PKInit 鮮度拡張機能がサポートされています。 PKInit 鮮度拡張機能を使用して正常に認証された Kerberos クライアントは、新しい公開キー id SID を受け取ります。
-- **必須**:認証を成功させるには、PKInit 鮮度拡張機能が必要です。 PKInit 鮮度拡張機能をサポートしていない Kerberos クライアントは、公開キーの資格情報を使用すると、常に失敗します。
+- **無効**: KDC は、PKInit 鮮度拡張機能を提供しません。また、有効な認証要求を受け入れるかどうかを確認する必要はありません。 ユーザーは、新しい公開キー id SID を受け取ることはありません。
+- **サポートされて**います: PKInit 鮮度拡張機能は要求でサポートされています。 PKInit 鮮度拡張機能を使用して正常に認証された Kerberos クライアントは、新しい公開キー id SID を受け取ります。
+- **必須**: 認証を成功させるには、PKInit 鮮度拡張機能が必要です。 PKInit 鮮度拡張機能をサポートしていない Kerberos クライアントは、公開キーの資格情報を使用すると、常に失敗します。
 
 ## <a name="domain-joined-device-support-for-authentication-using-public-key"></a>ドメインに参加しているデバイスで、公開キーを使用した認証がサポートされる
 
-Windows 10 バージョン1507および Windows Server 2016 以降では、ドメインに参加しているデバイスが、バインドされた公開キーを Windows Server 2016 ドメインコントローラー (DC) に登録できる場合、デバイスは Kerberos 認証を使用して公開キーで認証を行うことができます。Windows Server 2016 DC。 詳細については、「ドメインに参加している[デバイスの公開キーの認証](Domain-joined-Device-Public-Key-Authentication.md)」を参照してください。
+Windows 10 バージョン1507および Windows Server 2016 以降では、ドメインに参加しているデバイスが、バインドされた公開キーを Windows Server 2016 ドメインコントローラー (DC) に登録できる場合、デバイスは Kerberos 認証を使用して Windows Server 2016 DC に対して公開キーで認証できます。 詳細については、「ドメインに参加している[デバイスの公開キーの認証](Domain-joined-Device-Public-Key-Authentication.md)」を参照してください。
 
 ## <a name="kerberos-clients-allow-ipv4-and-ipv6-address-hostnames-in-service-principal-names-spns"></a>Kerberos クライアントは、サービスプリンシパル名 (Spn) で IPv4 および IPv6 アドレスのホスト名を許可します。
 
 Windows 10 バージョン1507および Windows Server 2016 以降では、Spn の IPv4 および IPv6 ホスト名をサポートするように Kerberos クライアントを構成できます。 
 
-レジストリパス:
+レジストリ パス:
 
 HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\Kerberos\Parameters
 
@@ -57,14 +56,14 @@ SPN が Active Directory に登録されている場合、認証は Kerberos で
 
 Windows Server 2016 以降では、ドメインコントローラーは、キー信頼アカウントマッピングをサポートしています。また、SAN 動作の既存の AltSecID とユーザープリンシパル名 (UPN) へのフォールバックもサポートされています。 UseSubjectAltName がに設定されている場合:
 
-- 0明示的なマッピングが必要です。 次のいずれかが必要です。
+- 0: 明示的なマッピングが必要です。 次のいずれかが必要です。
     - キー信頼 (Windows Server 2016 での新)
     - ExplicitAltSecID
-- 1:暗黙的なマッピングは許可されています (既定)。
+- 1: 暗黙的なマッピングは許可されています (既定)。
     1. キー信頼がアカウントに対して構成されている場合は、マッピングに使用されます (Windows Server 2016 で新規)。
     2. SAN に UPN がない場合は、マッピングのために AltSecID が試行されます。
     3. SAN に UPN がある場合は、マッピングのために UPN が試行されます。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [Kerberos 認証の概要](kerberos-authentication-overview.md)

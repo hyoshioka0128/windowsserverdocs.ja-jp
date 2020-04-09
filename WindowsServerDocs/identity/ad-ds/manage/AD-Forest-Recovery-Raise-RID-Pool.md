@@ -1,6 +1,5 @@
 ---
 title: AD フォレストの回復-RID プールを生成しています
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: c37bc129-a5e0-4219-9ba7-b4cf3a9fc9a4
 ms.technology: identity-adds
-ms.openlocfilehash: aa1f5e8b40aa43fa2601bc6f11efe2fcd4ccd05e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 308dce9be53194eb7db91944964ae5de03345ab6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369058"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80823855"
 ---
 # <a name="ad-forest-recovery---raising-the-value-of-available-rid-pools"></a>AD フォレストの回復-使用可能な RID プールの値を上げる 
 
@@ -73,7 +72,7 @@ ms.locfileid: "71369058"
 11. 変更を検証するには、 **[表示]** 、 **[ツリー]** の順にクリックし、次の識別名のパスを入力します。 cn = RID Manager $, CN = System, DC =*ドメイン名*です。   **RIDAvailablePool**属性を確認します。 
    ![LDP](media/AD-Forest-Recovery-Raise-RID-Pool/ldp5.png)
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 
 - [AD フォレストの回復ガイド](AD-Forest-Recovery-Guide.md)
 - [AD フォレストの回復 - 手順](AD-Forest-Recovery-Procedures.md)

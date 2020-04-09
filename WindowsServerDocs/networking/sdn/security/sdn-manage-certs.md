@@ -1,20 +1,20 @@
 ---
 title: ソフトウェア定義ネットワークの証明書の管理
 description: このトピックでは、Windows Server 2016 Datacenter でソフトウェアによるネットワーク制御 (SDN) を展開するときに、Network Controller Northbound と Southbound 通信の証明書を管理する方法について説明します。
-manager: dougkim
+manager: grcusanz
 ms.prod: windows-server
 ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: c4e2f6c7-0364-4bf8-bb66-9af59c0bbd74
-ms.author: lizross
-author: eross-msft
+ms.author: anpaul
+author: AnirbanPaul
 ms.date: 08/22/2018
-ms.openlocfilehash: 20448e9bdef41f676bf5422c811be535bcf30ca2
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 3225b3f5065e49521411b35fa3781338086b4e59
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80317362"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854355"
 ---
 # <a name="manage-certificates-for-software-defined-networking"></a>ソフトウェア定義ネットワークの証明書の管理
 

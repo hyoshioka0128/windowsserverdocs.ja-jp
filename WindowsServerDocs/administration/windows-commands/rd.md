@@ -1,24 +1,20 @@
 ---
 title: rd
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Windows コマンドに関するトピック * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 42e672f6-5bc2-4c16-af25-18e7ed2dd555
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 029935bcd8773e41adefcd6ca916d75edcea3065
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 298e6b291a6aa08701b6d54a11470b0cc4bea486
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71371799"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80836715"
 ---
 # <a name="rd"></a>rd
 
@@ -35,14 +31,14 @@ rd [<Drive>:]<Path> [/s [/q]]
 rmdir [<Drive>:]<Path> [/s [/q]]
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
 |     パラメーター     |                                                                 説明                                                                  |
 |-------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
-| [\<Drive >:] <Path> |                      場所を削除するディレクトリの名前を指定します。 *パス* が必要です。                       |
+| [\<Drive >:]<Path> |                      場所を削除するディレクトリの名前を指定します。 *パス* が必要です。                       |
 |        /s         |                     (指定されたディレクトリとすべてのファイルを含むすべてのサブディレクトリ) は、ディレクトリ ツリーを削除します。                      |
 |        /q         | クワイエット モードを指定します。 ディレクトリ ツリーを削除するときに、確認を表示しません。 (ことに注意 **/q** 場合にのみ、works **/s** が指定されている)。 |
-|        /?         |                                                     コマンド プロンプトにヘルプを表示します。                                                     |
+|        /?         |                                                     コマンド プロンプトでヘルプを表示します。                                                     |
 
 ## <a name="remarks"></a>コメント
 
@@ -59,7 +55,7 @@ rmdir [<Drive>:]<Path> [/s [/q]]
     このエラーメッセージが表示された場合は、(現在のディレクトリのサブディレクトリではなく) 別のディレクトリに変更し、 **rd** (必要に応じて*パス*を指定) を使用する必要があります。
 -   **Rd** コマンドで他のパラメーターは、回復コンソールから利用できます。
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a><a name=BKMK_examples></a>例
 
 現在作業中のディレクトリを削除することはできません。 現在のディレクトリ内にないディレクトリに変更する必要があります。 たとえば、親ディレクトリに変更する、次のように入力します。
 ```
@@ -79,6 +75,6 @@ rd /s /q test
 > [!CAUTION]
 > 実行すると **rd/s** quiet モードは、確認なしディレクトリ ツリー全体を削除します。 重要なファイルを移動または使用する前にバックアップすることを確認、 **/q** コマンド ライン オプションです。
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

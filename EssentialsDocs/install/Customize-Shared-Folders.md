@@ -1,23 +1,19 @@
 ---
 title: 共有フォルダーのカスタマイズ
 description: Windows Server Essentials の使用方法について説明します。
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 47bc4986-14eb-4a29-9930-83a25704a3a0
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 387f9570e87bd2bd65266489b0f3eac6c945e3be
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 861107035408fc39d0dc5e4d94a4d82d8dfba74e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80311914"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80818075"
 ---
 # <a name="customize-shared-folders"></a>共有フォルダーのカスタマイズ
 
@@ -57,7 +53,7 @@ ms.locfileid: "80311914"
   
 1.  「[初期構成後のタスクを実行するための PostIC.cmd ファイルの作成](Create-the-PostIC.cmd-File-for-Running-Post-Initial-Configuration-Tasks.md)」セクションで詳細に説明されているように、初期構成後のタスクを実行するための PostIC.cmd ファイルを作成します。  
   
-2.  メモ帳を使用して、**customizefolders.ps1** という名前のファイルを C:\Windows\Setup\Scripts フォルダー内に作成し、次の Windows PowerShell® コマンドをファイルに貼り付けます (目的の動作に応じて該当する行のマークを解除します)。  
+2.  メモ帳を使用して、C:\Windows\Setup\Scripts フォルダーに**customizefolders. ps1**という名前のファイルを作成し、次の Windows PowerShell&reg; コマンドをファイルに貼り付けます (目的の動作に応じて適切な行のマークを解除します)。  
   
     ```  
     # Move the Documents folder to D:\ServerFolders  

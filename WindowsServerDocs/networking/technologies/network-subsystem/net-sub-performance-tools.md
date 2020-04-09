@@ -5,16 +5,16 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: c7789781-87e8-464e-981b-af887d01badd
-manager: dougkim
-ms.author: lizross
-author: eross-msft
+manager: dcscontentpm
+ms.author: v-tea
+author: Teresa-Motiv
 ms.date: 07/16/2018
-ms.openlocfilehash: bcf179484718aa029302281ea91c99588ad2857a
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 2ae321e25ca22e79958207f7e67c6517eb32bfcb
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80316553"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80862205"
 ---
 # <a name="performance-tools-for-network-workloads"></a>ネットワーク ワークロードに関するパフォーマンス ツール
 

@@ -1,19 +1,19 @@
 ---
 title: ネットワーク コントローラー
 description: このトピックでは、Windows Server 2016 のネットワークコントローラーの概要について説明します。
-manager: brianlic
+manager: grcusanz
 ms.prod: windows-server
 ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: 31f3fa4e-cd25-4bf3-89e9-a01a6cec7893
-ms.author: lizross
-author: eross-msft
-ms.openlocfilehash: ad13e41e756f0185a748fe9e17df64c71a8754bc
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.author: anpaul
+author: AnirbanPaul
+ms.openlocfilehash: f8221c92dc91d0c2e04df906ccd839a2c9895f94
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80317071"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859665"
 ---
 # <a name="network-controller"></a>ネットワーク コントローラー
 

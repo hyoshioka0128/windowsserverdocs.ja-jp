@@ -2,20 +2,19 @@
 title: Windows Server 2012 を実行していて動的メモリが有効になっている仮想マシンに、少なくとも必要なメモリ容量を構成します
 description: このベストプラクティスアナライザールールのテキストのオンラインバージョン。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: 46f9a5dc-355b-415b-863d-fb740609d6b6
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 1398252f2f5e842f170ad1f932bb047720d82ab2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6a36c3d1d4b279863b0d40a8a1682de5ebee0d62
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365003"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80862085"
 ---
 # <a name="configure-at-least-the-required-amount-of-memory-for-a-virtual-machine-running-windows-server-2012-and-enabled-for-dynamic-memory"></a>Windows Server 2012 を実行していて動的メモリが有効になっている仮想マシンに、少なくとも必要なメモリ容量を構成します
 
@@ -55,7 +54,7 @@ ms.locfileid: "71365003"
   
 5.  **動的メモリ**で、**最小 RAM**を 256 mb 以上、 **ram の最大値**を 512 mb に変更します。  
   
-6.  **[OK]** をクリックします。  
+6.  **[OK]** をクリックすると、  
   
 ### <a name="increase-memory-using-windows-powershell"></a>Windows PowerShell を使用してメモリを増やす  
   

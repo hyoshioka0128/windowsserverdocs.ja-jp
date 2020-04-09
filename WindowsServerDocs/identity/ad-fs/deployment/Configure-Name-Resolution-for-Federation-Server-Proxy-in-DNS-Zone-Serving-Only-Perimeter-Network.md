@@ -1,7 +1,6 @@
 ---
 ms.assetid: b7109e46-b66e-4c5c-8b87-a6611d68415a
 title: 境界ネットワークのみを対象とする DNS ゾーンでフェデレーション サーバー プロキシの名前解決を構成する
-description: ''
 author: billmath
 manager: femila
 ms.date: 05/31/2017
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: de4627f2e03e6432f4e678cd9ca932819cb483d5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 451ed2bb2b2da9481d33c6e9e339bb582824a4e1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408433"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854925"
 ---
 # <a name="configure-name-resolution-for-a-federation-server-proxy-in-a-dns-zone-that-serves-only-the-perimeter-network"></a>境界ネットワークのみを対象とする DNS ゾーンでフェデレーション サーバー プロキシの名前解決を構成する
 
@@ -31,13 +30,13 @@ ms.locfileid: "71408433"
 ## <a name="add-the-ip-address-of-a-federation-server-to-the-hosts-file"></a>フェデレーションサーバーの IP アドレスをホストファイルに追加する  
 フェデレーションサーバープロキシがアカウントパートナーの境界ネットワーク内で期待どおりに動作するようにするには、フェデレーションサーバーの DNS ホスト \(名を指すフェデレーションサーバープロキシの hosts ファイルにエントリを追加する必要があります。たとえば、fs.fabrikam.com\) や IP アドレス \(、アカウントパートナーの企業ネットワークの 192.168.1.4\) などです。 このエントリを hosts ファイルに追加すると、フェデレーションサーバープロキシは、アカウントパートナー内のフェデレーションサーバーへのクライアント\-開始された呼び出しを解決するために、それ自体に接続できなくなります。  
   
-この手順を実行するには、ローカル コンピューターの **Administrators**グループのメンバーシップか、それと同等のメンバーシップが最低限必要です。  適切なアカウントの使用方法の詳細を確認し、グループ メンバーシップ [ローカルおよびドメインの既定のグループ](https://go.microsoft.com/fwlink/?LinkId=83477)します。   
+この手順を完了するには、ローカル コンピューター上の **Administrators** または同等のメンバーシップが最低限必要です。  適切なアカウントの使用方法の詳細を確認し、グループ メンバーシップ [ローカルおよびドメインの既定のグループ](https://go.microsoft.com/fwlink/?LinkId=83477)します。   
   
 #### <a name="to-add-the-ip-address-of-a-federation-server-to-the-hosts-file"></a>フェデレーションサーバーの IP アドレスを hosts ファイルに追加するには  
   
 1.  % Systemroot%\\Winnt\\System32\\Drivers ディレクトリフォルダに移動し、 **hosts**ファイルを見つけます。  
   
-2.  メモ帳を起動し、 **hosts**ファイルを開きます。  
+2.  メモ帳を起動し、**hosts** ファイルを開きます。  
   
 3.  次の例に示すように、アカウントパートナーのフェデレーションサーバーの IP アドレスとホスト名を**ホスト**ファイルに追加します。  
   
@@ -51,7 +50,7 @@ ms.locfileid: "71408433"
 > [!NOTE]  
 > 境界 DNS ゾーンを制御するには、Windows 2000 Server、Windows Server 2003、または Windows Server 2008 を DNS サーバーサービスと共に実行している DNS サーバーを使用していることを前提としています。  
   
-メンバーシップ **管理者**, 、または同等の権限は、この手順を実行するために必要な最小値。  適切なアカウントの使用方法の詳細を確認し、グループ メンバーシップ [ローカルおよびドメインの既定のグループ](https://go.microsoft.com/fwlink/?LinkId=83477)します。   
+**Administrators**、またはそれと同等のメンバーシップが、この手順を実行するために最低限必要なメンバーシップです。  適切なアカウントの使用方法の詳細を確認し、グループ メンバーシップ [ローカルおよびドメインの既定のグループ](https://go.microsoft.com/fwlink/?LinkId=83477)します。   
   
 #### <a name="to-add-a-host-a-resource-record-to-perimeter-dns-for-a-federation-server-proxy"></a>\) リソースレコード \(ホストをフェデレーションサーバープロキシの境界 DNS に追加するには  
   

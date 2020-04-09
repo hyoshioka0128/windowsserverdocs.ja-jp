@@ -1,7 +1,6 @@
 ---
 ms.assetid: 8be8c48d-790c-4199-b9d3-9f4a07d5ced2
 title: ネットワーク情報の収集
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 5642963caee47ac48f841a13b47852b6b7d9b241
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8f7df5bd57baee2ac8400bf1d9bc331426d65bf8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408989"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822825"
 ---
 # <a name="collecting-network-information"></a>ネットワーク情報の収集
 

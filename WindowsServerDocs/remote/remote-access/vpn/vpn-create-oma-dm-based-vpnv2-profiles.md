@@ -1,26 +1,20 @@
 ---
 title: Windows 10 デバイスに OMA-DM ベースの VPNv2 プロファイルを作成する
 description: '2つの方法のいずれかを使用して、OMA-URI ベースの VPNv2 プロファイルを作成できます。 '
-services: active-directory
 ms.prod: windows-server
 ms.technology: networking-ras
-documentationcenter: ''
-ms.assetid: ''
-ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 07/13/2018
-ms.author: lizross
-author: eross-msft
+ms.author: v-tea
+author: Teresa-MOTIV
 ms.localizationpriority: medium
 ms.reviewer: deverette
-ms.openlocfilehash: 1f004ec59c8d2eac2a944a69bbbfc9af76b39826
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 8829d6515c92751b85320a7c622a82b32ffb82ab
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80307721"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80818875"
 ---
 # <a name="step-75-create-oma-dm-based-vpnv2-profiles-to-windows-10-devices"></a>手順 7.5. Windows 10 デバイスに OMA-URI ベースの VPNv2 プロファイルを作成する
 

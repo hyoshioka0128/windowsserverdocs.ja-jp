@@ -1,85 +1,84 @@
 ---
-title: ネットワーク アダプターのパフォーマンス履歴
+title: ネットワークアダプターのパフォーマンス履歴
 ms.author: cosdar
-ms.manager: eldenc
+manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 02/02/2018
-Keywords: 記憶域スペース ダイレクト
 ms.localizationpriority: medium
-ms.openlocfilehash: 340999a8f440975d3736277b1a30dddbb942785d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e2379ce540cb26c02bc79f591d2a597874ab287c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59849983"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856215"
 ---
-# <a name="performance-history-for-network-adapters"></a>ネットワーク アダプターのパフォーマンス履歴
+# <a name="performance-history-for-network-adapters"></a>ネットワークアダプターのパフォーマンス履歴
 
-> 適用先:Windows Server Insider Preview
+> 適用対象: Windows Server 2019
 
-このサブ トピックの[記憶域スペース ダイレクトのパフォーマンスの履歴](performance-history.md)ネットワーク アダプター用に収集されたパフォーマンスの履歴の詳細について説明します。 ネットワーク アダプターのパフォーマンス履歴は、クラスター内のすべてのサーバーですべての物理ネットワーク アダプター使用できます。 リモート ダイレクト メモリ アクセス (RDMA) のパフォーマンス履歴は、RDMA 対応のすべての物理ネットワーク アダプター使用できます。
+[記憶域スペースダイレクトのパフォーマンス履歴](performance-history.md)のこのサブトピックでは、ネットワークアダプターについて収集されるパフォーマンス履歴の詳細について説明します。 ネットワークアダプターのパフォーマンス履歴は、クラスター内のすべてのサーバーのすべての物理ネットワークアダプターで使用できます。 リモートダイレクトメモリアクセス (RDMA) のパフォーマンス履歴は、RDMA が有効になっているすべての物理ネットワークアダプターで使用できます。
 
    > [!NOTE]
-   > 停止しているサーバーのネットワーク アダプターのパフォーマンスの履歴を収集できません。 コレクションは、ときに、サーバーが復帰自動的に再開されます。
+   > ダウンしているサーバーのネットワークアダプターのパフォーマンス履歴を収集することはできません。 コレクションは、サーバーが復帰すると自動的に再開されます。
 
-## <a name="series-names-and-units"></a>系列名とユニット
+## <a name="series-names-and-units"></a>系列の名前と単位
 
-すべての対象となるネットワーク アダプターではこれらの系列が収集されます。
+これらのシリーズは、対象となるすべてのネットワークアダプターについて収集されます。
 
-| シリーズ                               | Unit            |
+| 系列                               | Unit            |
 |--------------------------------------|-----------------|
-| `netadapter.bandwidth.inbound`       | 1 秒あたりのビット数 |
-| `netadapter.bandwidth.outbound`      | 1 秒あたりのビット数 |
-| `netadapter.bandwidth.total`         | 1 秒あたりのビット数 |
-| `netadapter.bandwidth.rdma.inbound`  | 1 秒あたりのビット数 |
-| `netadapter.bandwidth.rdma.outbound` | 1 秒あたりのビット数 |
-| `netadapter.bandwidth.rdma.total`    | 1 秒あたりのビット数 |
+| `netadapter.bandwidth.inbound`       | 1秒あたりのビット数 |
+| `netadapter.bandwidth.outbound`      | 1秒あたりのビット数 |
+| `netadapter.bandwidth.total`         | 1秒あたりのビット数 |
+| `netadapter.bandwidth.rdma.inbound`  | 1秒あたりのビット数 |
+| `netadapter.bandwidth.rdma.outbound` | 1秒あたりのビット数 |
+| `netadapter.bandwidth.rdma.total`    | 1秒あたりのビット数 |
 
    > [!NOTE]
-   > ネットワーク アダプターのパフォーマンス履歴が記録された**ビット**1 秒間、1 秒あたりのバイトではありません。 1 つの 10 GbE ネットワーク アダプターが約 1,000,000, 000 ビットを送受信できる 125,000,000 バイト = 1.25 GB、理論上最大で 1 秒あたりの = です。
+   > ネットワークアダプターのパフォーマンス履歴は、1秒あたりのバイト数ではなく、**ビット**単位で記録されます。 1 10 GbE ネットワークアダプターは、理論的に最大で約10億ビット = 1億2500万バイト = 1.25 GB/秒を送受信できます。
 
 ## <a name="how-to-interpret"></a>解釈する方法
 
-| シリーズ                               | 解釈する方法                                                      |
+| 系列                               | 解釈する方法                                                      |
 |--------------------------------------|-----------------------------------------------------------------------|
-| `netadapter.bandwidth.inbound`       | ネットワーク アダプターで受信したデータの比率。                         |
-| `netadapter.bandwidth.outbound`      | ネットワーク アダプターから送信されたデータの比率。                             |
-| `netadapter.bandwidth.total`         | 送受信ネットワーク アダプターから送信されたデータの合計の割合。           |
-| `netadapter.bandwidth.rdma.inbound`  | Over RDMA ネットワーク アダプターで受信したデータの比率。               |
-| `netadapter.bandwidth.rdma.outbound` | ネットワーク アダプターで RDMA 経由で送信されるデータの比率。                   |
-| `netadapter.bandwidth.rdma.total`    | データの合計の割合の受信または over RDMA ネットワーク アダプターで送信します。 |
+| `netadapter.bandwidth.inbound`       | ネットワークアダプターによって受信されたデータの比率。                         |
+| `netadapter.bandwidth.outbound`      | ネットワークアダプターによって送信されたデータの比率。                             |
+| `netadapter.bandwidth.total`         | ネットワークアダプターによって受信または送信されたデータの合計速度。           |
+| `netadapter.bandwidth.rdma.inbound`  | ネットワークアダプターが RDMA 経由で受信したデータの比率。               |
+| `netadapter.bandwidth.rdma.outbound` | ネットワークアダプターによって RDMA 経由で送信されたデータの比率。                   |
+| `netadapter.bandwidth.rdma.total`    | ネットワークアダプターによって RDMA 経由で送受信されたデータの合計速度。 |
 
-## <a name="where-they-come-from"></a>来た
+## <a name="where-they-come-from"></a>どこから来ているか
 
-`bytes.*`シリーズがから収集された、`Network Adapter`パフォーマンス カウンターのネットワーク アダプターがインストールされているサーバーの設定、ネットワーク アダプターごとに 1 つのインスタンス。
+`bytes.*` シリーズは、ネットワークアダプターがインストールされているサーバーの `Network Adapter` パフォーマンスカウンターセット (ネットワークアダプターごとに1つのインスタンス) から収集されます。
 
-| シリーズ                           | ソースのカウンター           |
+| 系列                           | ソースカウンター           |
 |----------------------------------|--------------------------|
-| `netadapter.bandwidth.inbound`   | 8 × `Bytes Received/sec` |
-| `netadapter.bandwidth.outbound`  | 8 × `Bytes Sent/sec`     |
-| `netadapter.bandwidth.total`     | 8 × `Bytes Total/sec`    |
+| `netadapter.bandwidth.inbound`   | 8× `Bytes Received/sec` |
+| `netadapter.bandwidth.outbound`  | 8× `Bytes Sent/sec`     |
+| `netadapter.bandwidth.total`     | 8× `Bytes Total/sec`    |
 
-`rdma.*`シリーズがから収集された、`RDMA Activity`パフォーマンス カウンターのネットワーク アダプターがインストールされているサーバーの設定、RDMA 対応ネットワーク アダプターごとに 1 つのインスタンス。
+`rdma.*` シリーズは、ネットワークアダプターがインストールされているサーバーの `RDMA Activity` パフォーマンスカウンターセットから収集されます。これは、RDMA が有効になっているネットワークアダプターごとに1つのインスタンスです。
 
-| シリーズ                               | ソースのカウンター           |
+| 系列                               | ソースカウンター           |
 |--------------------------------------|--------------------------|
-| `netadapter.bandwidth.rdma.inbound`  | 8 × `Inbound bytes/sec`  |
-| `netadapter.bandwidth.rdma.outbound` | 8 × `Outbound bytes/sec` |
-| `netadapter.bandwidth.rdma.total`    | 8 ×*上記の合計*   |
+| `netadapter.bandwidth.rdma.inbound`  | 8× `Inbound bytes/sec`  |
+| `netadapter.bandwidth.rdma.outbound` | 8× `Outbound bytes/sec` |
+| `netadapter.bandwidth.rdma.total`    | *上記の8倍の合計*   |
 
    > [!NOTE]
-   > カウンターは、サンプリングされなかった、全体の間隔で測定されます。 たとえば、ネットワーク アダプターがアイドル状態 9 秒ですが 200 の bits 転送の 10 日の 1 秒間、その`netadapter.bandwidth.total`この 10 秒間に平均で 1 秒あたりのビット数 20 として記録されます。 これにより、そのパフォーマンス履歴がすべてのアクティビティをキャプチャしがノイズに堅牢になりました。
+   > カウンターは、サンプリングされるのではなく、間隔全体にわたって測定されます。 たとえば、ネットワークアダプターが9秒間アイドル状態で200ビットを10秒間転送する場合、その `netadapter.bandwidth.total` は、この10秒間に平均で1秒あたり20ビットとして記録されます。 これにより、パフォーマンス履歴がすべてのアクティビティをキャプチャし、ノイズに対して堅牢になります。
 
 ## <a name="usage-in-powershell"></a>PowerShell での使用法
 
-使用して、 [Get-netadapter](https://docs.microsoft.com/powershell/module/netadapter/get-netadapter)コマンドレット。
+[Get NetAdapter](https://docs.microsoft.com/powershell/module/netadapter/get-netadapter)コマンドレットを使用します。
 
 ```PowerShell
 Get-NetAdapter <Name> | Get-ClusterPerf
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
-- [記憶域スペース ダイレクトのパフォーマンスの履歴](performance-history.md)
+- [記憶域スペースダイレクトのパフォーマンス履歴](performance-history.md)

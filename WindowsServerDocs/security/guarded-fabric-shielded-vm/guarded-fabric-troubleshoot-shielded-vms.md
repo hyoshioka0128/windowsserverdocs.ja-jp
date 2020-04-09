@@ -1,22 +1,22 @@
 ---
 title: シールドされた Vm のトラブルシューティング
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 10/3/2018
-ms.openlocfilehash: b0d4338d20238eb528c19221151f380cc154a2db
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c80663256a2e3404666b739c0a81cd06ec3caced
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386366"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856375"
 ---
 # <a name="troubleshoot-shielded-vms"></a>シールドされた Vm のトラブルシューティング
 
->適用対象:Windows Server 2019、Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: windows server 2019、Windows Server (半期チャネル)、Windows Server 2016
 
 Windows Server バージョン1803以降では、完全にシールドされた Vm に対して、仮想マシン接続 (VMConnect) の拡張セッションモードと PS Direct が再度有効になります。 仮想化管理者は vm にアクセスするために VM ゲストの資格情報を必要としますが、これにより、ネットワーク構成が切断されたときに、ホスト側がシールドされた VM のトラブルシューティングを簡単に行うことができます。
 

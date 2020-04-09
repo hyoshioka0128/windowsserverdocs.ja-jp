@@ -2,22 +2,19 @@
 title: WSUS メッセージとトラブルシューティングのヒント
 description: Windows Server Update Service (WSUS) のトピック-WSUS メッセージを使用したトラブルシューティング
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-wsus
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 9f6317f7-bfe0-42d9-87ce-d8f038c728ca
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0c66e655ea6b6c44ee3ba375f75e6532fab74bfb
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: e4fe14eeaba3fc82e125288f8c47fb445f6e00b0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948483"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828315"
 ---
 # <a name="wsus-messages-and-troubleshooting-tips"></a>WSUS メッセージとトラブルシューティングのヒント
 
@@ -25,13 +22,13 @@ ms.locfileid: "75948483"
 
 このトピックには、次の WSUS メッセージに関する情報が含まれています。
 
--   "コンピューターがステータスを報告していません"
+-   コンピューターがステータスを報告していません
 
--   "メッセージ ID 6703-WSUS の同期に失敗しました"
+-   メッセージ ID 6703-WSUS の同期に失敗しました
 
--   "エラー 0x80070643: インストール中に致命的なエラーが発生しています"
+-   エラー 0x80070643: インストール中に致命的なエラーが発生した
 
--   "一部のサービスが実行されていません。 次のサービスを確認してください [...] "
+-   一部のサービスが実行されていません。 次のサービスを確認してください [...]
 
 ## <a name="computer-has-not-reported-status"></a>コンピューターがステータスを報告していません
 このメッセージは、wsus クライアントコンピューターが現在の更新状態を示す情報を WSUS サーバーに送信しない場合に、wsus コンソールに生成されます。 この問題は、通常、wsus サーバーではなく WSUS クライアントコンピューターによって発生します。
@@ -76,7 +73,7 @@ WSUS セットアップでは、Microsoft SQL Server を使用してインスト
 
 - **Selfupdate:** Selfupdate サービスのトラブルシューティングについては、「[自動更新を更新する必要があり](https://technet.microsoft.com/library/cc708554(v=ws.10).aspx)ます」を参照してください。
 
-- **Wssuservice:** このサービスは同期を容易にします。 同期に問題がある場合は、 **[スタート]** ボタンをクリックし、 **[管理ツール]** 、 **[サービス]** の順にポイントし、サービスの一覧で **[Windows Server Update Service]** を見つけて、WSUSService にアクセスします。 次の手順を実行します。
+- **Wssuservice:** このサービスは同期を容易にします。 同期に問題がある場合は、 **[スタート]** ボタンをクリックし、 **[管理ツール]** 、 **[サービス]** の順にポイントし、サービスの一覧で **[Windows Server Update Service]** を見つけて、WSUSService にアクセスします。 次を実行します。
     
     -   このサービスが実行されていることを確認します。 停止している場合は **[開始]** をクリックし、サービスを更新する場合は **[再起動]** をクリックします。
     
@@ -90,6 +87,6 @@ WSUS セットアップでは、Microsoft SQL Server を使用してインスト
     
   - **MSSQLSERver** (WMSDE または MSDE を使用している場合、または SQL Server を使用していて、インスタンス名に既定のインスタンス名を使用している場合)
     
-  - **MSSQL $ WSUS** (SQL Server データベースを使用していて、データベースインスタンスに "WSUS" という名前が付いている場合)
+  - **MSSQL $ wsus** (SQL Server データベースを使用していて、データベースインスタンス WSUS という名前が付いている場合)
     
     サービスを右クリックし、サービスが実行されていない場合は **[開始]** をクリックします。サービスが実行されている場合は、**再起動**してサービスを更新します。

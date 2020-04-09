@@ -1,24 +1,20 @@
 ---
 title: Protected Users セキュリティ グループ
 description: Windows Server のセキュリティ
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-credential-protection
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1b0b5180-f65a-43ac-8ef3-66014116f296
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 10234611904a4ed5b58939d3fd5ca341221c073c
-ms.sourcegitcommit: 51e0b575ef43cd16b2dab2db31c1d416e66eebe8
+ms.openlocfilehash: c6883513fdc02f4f4d1b874995780639279cc178
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76259147"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857055"
 ---
 # <a name="protected-users-security-group"></a>Protected Users セキュリティ グループ
 
@@ -26,7 +22,7 @@ ms.locfileid: "76259147"
 
 ここでは、IT プロフェッショナル向けに、Active Directory のセキュリティ グループである Protected Users と、そのしくみについて説明します。 このグループは、Windows Server 2012 R2 ドメインコントローラーで導入されました。
 
-## <a name="BKMK_ProtectedUsers"></a>概要
+## <a name="overview"></a><a name="BKMK_ProtectedUsers"></a>概要
 
 このセキュリティグループは、企業内の資格情報の公開を管理する戦略の一環として設計されています。 このグループのメンバーのアカウントには、構成可能ではない保護が自動的に適用されます。 Protected Users グループのメンバーであるということは、既定で制限的であり、予防的にセキュリティで保護されることを示します。 アカウントに関してこのような保護を変更する唯一の方法は、このセキュリティ グループからアカウントを削除することです。
 
@@ -38,7 +34,7 @@ ms.locfileid: "76259147"
 詳細については、このトピックの「 [Protected Users グループのしくみ](#BKMK_HowItWorks)」を参照してください。
 
 
-## <a name="BKMK_Requirements"></a>Protected Users グループの要件
+## <a name="protected-users-group-requirements"></a><a name="BKMK_Requirements"></a>Protected Users グループの要件
 Protected Users グループのメンバーにデバイスの保護を提供するための要件は次のとおりです。
 
 - Protected Users グローバル セキュリティ グループは、アカウント ドメインのすべてのドメイン コントローラーにレプリケートされている。
@@ -58,23 +54,23 @@ Windows Server 2012 R2 より前のオペレーティングシステムを実行
 
 Protected Users グループを作成するには、Windows Server 2012 R2 を実行するドメインコントローラーに[プライマリドメインコントローラー (PDC) エミュレーターの役割を転送](https://technet.microsoft.com/library/cc816944(v=ws.10).aspx)します。 そのグループのオブジェクトが他のドメイン コントローラーにレプリケートされた後に、以前のバージョンの Windows Server が実行されているドメイン コントローラーで PDC エミュレーターの役割をホストできます。
 
-### <a name="BKMK_ADgroup"></a>Protected Users グループの AD プロパティ
+### <a name="protected-users-group-ad-properties"></a><a name="BKMK_ADgroup"></a>Protected Users グループの AD プロパティ
 
 次の表は、Protected Users グループのプロパティの一覧です。
 
-|備わっている|Value|
+|属性|値|
 |-------|-----|
 |既知の SID/RID|S-1-5-21-<domain>-525|
-|タスクバーの検索ボックスに|ドメイン グローバル|
-|既定のコンテナー|CN=Users、DC=<domain>、DC=|
-|既定のメンバー|None|
-|～の既定のメンバー|None|
-|ADMINSDHOLDER で保護されているか|必須ではない|
-|既定のコンテナーから移動することができるか|[はい]|
-|このグループの管理をサービス管理者以外に委任することができるか|必須ではない|
-|既定のユーザー権利|既定のユーザー権利はありません|
+|種類|ドメイン グローバル|
+|既定コンテナー|CN=Users、DC=<domain>、DC=|
+|既定のメンバー|なし|
+|～の既定のメンバー|なし|
+|ADMINSDHOLDER で保護されているか|いいえ|
+|既定のコンテナーから移動することができるか|はい|
+|このグループの管理をサービス管理者以外に委任することができるか|いいえ|
+|既定のユーザー権利|既定のユーザー権利はありません。|
 
-## <a name="BKMK_HowItWorks"></a>Protected Users グループのしくみ
+## <a name="how-protected-users-group-works"></a><a name="BKMK_HowItWorks"></a>Protected Users グループのしくみ
 ここでは、次の場合に Protected Users グループがどのように機能するかについて説明します。
 
 - Windows デバイスで署名済み
@@ -112,21 +108,21 @@ Windows Server 2012 R2 ドメインに対して認証される Protected Users �
 
 Protected Users グループのアカウントごとに、TGT の期限切れに対する構成可能ではない設定が指定されます。 通常、ドメイン コントローラーは、ドメイン ポリシー、 **[チケットの最長有効期間]** 、および **[ユーザー チケットを更新できる最長有効期間]** に基づいて TGT の有効期間と更新を設定します。 Protected Users グループの場合、このようなドメイン ポリシーに 600 分が設定されます。
 
-詳細については、「 [How to Configure Protected Accounts](how-to-configure-protected-accounts.md)」を参照してください。
+詳細については、「[保護されるアカウントの構成方法](how-to-configure-protected-accounts.md)」をご覧ください。
 
-## <a name="troubleshooting"></a>[トラブルシューティング]
+## <a name="troubleshooting"></a>トラブルシューティング
 2 つの運用管理ログを使用して、Protected Users に関連するイベントを解決することができます。 これらの新しいログはイベントビューアーにあり、既定で無効になっており、[**アプリケーションとサービス] Logs\Microsoft\Windows\Authentication**にあります。
 
 |イベント ID とログ|説明|
 |----------|--------|
-|104<br /><br />**ProtectedUser-Client**|理由:クライアントのセキュリティ パッケージに資格情報が含まれていません。<br /><br />アカウントが Protected Users セキュリティ グループのメンバーである場合、エラーはクライアント コンピューターのログに記録されます。 このイベントは、サーバーに対して認証するために必要な資格情報をセキュリティ パッケージがキャッシュしていないことを示します。<br /><br />パッケージ名、ユーザー名、ドメイン名、およびサーバー名を表示します。|
-|304<br /><br />**ProtectedUser-Client**|理由: セキュリティパッケージに、保護されているユーザーの資格情報が格納されていません。<br /><br />情報イベントは、セキュリティパッケージがユーザーのサインイン資格情報をキャッシュしていないことを示すために、クライアントに記録されます。 ダイジェスト (WDigest)、資格情報の委任 (CredSSP)、および NTLM は、Protected Users のサインオン資格情報を取得できないと想定されます。 アプリケーションは、資格情報の入力を求めれば、成功することができます。<br /><br />パッケージ名、ユーザー名、およびドメイン名を表示します。|
-|100<br /><br />**ProtectedUserFailures-DomainController**|理由:NTLM のサインインの失敗は、Protected Users セキュリティ グループに属するアカウントの場合に発生します。<br /><br />アカウントは Protected Users セキュリティ グループのメンバーだったために NTLM の認証が失敗したことを示すエラーが、ドメイン コントローラーのログに記録されます。<br /><br />アカウント名とデバイス名を表示します。|
-|104<br /><br />**ProtectedUserFailures-DomainController**|理由:DES または RC4 の暗号化の種類は Kerberos 認証に使用されており、Protected Users セキュリティ グループに属するユーザーのサインイン エラーが発生します。<br /><br />アカウントが Protected Users セキュリティ グループのメンバーである場合、DES および RC4 の暗号化の種類を使用できないため、Kerberos の事前認証は失敗しました。<br /><br />(AES は使用できます)|
-|303<br /><br />**ProtectedUserSuccesses-DomainController**|理由:Kerberos ticket-granting-ticket (TGT) は、Protected Users グループのメンバーに対して正常に発行されました。|
+|104<p>**ProtectedUser-Client**|理由:クライアントのセキュリティ パッケージに資格情報が含まれていません。<p>アカウントが Protected Users セキュリティ グループのメンバーである場合、エラーはクライアント コンピューターのログに記録されます。 このイベントは、サーバーに対して認証するために必要な資格情報をセキュリティ パッケージがキャッシュしていないことを示します。<p>パッケージ名、ユーザー名、ドメイン名、およびサーバー名を表示します。|
+|304<p>**ProtectedUser-Client**|理由: セキュリティパッケージに、保護されているユーザーの資格情報が格納されていません。<p>情報イベントは、セキュリティパッケージがユーザーのサインイン資格情報をキャッシュしていないことを示すために、クライアントに記録されます。 ダイジェスト (WDigest)、資格情報の委任 (CredSSP)、および NTLM は、Protected Users のサインオン資格情報を取得できないと想定されます。 アプリケーションは、資格情報の入力を求めれば、成功することができます。<p>パッケージ名、ユーザー名、およびドメイン名を表示します。|
+|100<p>**ProtectedUserFailures-DomainController**|理由:NTLM のサインインの失敗は、Protected Users セキュリティ グループに属するアカウントの場合に発生します。<p>アカウントは Protected Users セキュリティ グループのメンバーだったために NTLM の認証が失敗したことを示すエラーが、ドメイン コントローラーのログに記録されます。<p>アカウント名とデバイス名を表示します。|
+|104<p>**ProtectedUserFailures-DomainController**|理由:DES または RC4 の暗号化の種類は Kerberos 認証に使用されており、Protected Users セキュリティ グループに属するユーザーのサインイン エラーが発生します。<p>アカウントが Protected Users セキュリティ グループのメンバーである場合、DES および RC4 の暗号化の種類を使用できないため、Kerberos の事前認証は失敗しました。<p>(AES は使用できます)|
+|303<p>**ProtectedUserSuccesses-DomainController**|理由:Kerberos ticket-granting-ticket (TGT) は、Protected Users グループのメンバーに対して正常に発行されました。|
 
 
-## <a name="additional-resources"></a>その他の資料
+## <a name="additional-resources"></a>その他のリソース
 
 - [資格情報の保護と管理](credentials-protection-and-management.md)
 

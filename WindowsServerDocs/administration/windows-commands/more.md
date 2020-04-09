@@ -1,26 +1,22 @@
 ---
-title: more
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+title: その他
+description: Windows コマンドに関するトピック * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ded14f6a-d82f-4aeb-a2d8-7ec1c94dfb8f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/26/2019
-ms.openlocfilehash: d505f99511d8702f11ac0c70edba3d62c8cf7996
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4c627e003e71cb2265c717669e082d48564dd483
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71373907"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80839425"
 ---
-# <a name="more"></a>more
+# <a name="more"></a>その他
 
 
 
@@ -36,7 +32,7 @@ more [[/c] [/p] [/s] [/t<N>] [+<N>]] < [<Drive>:][<Path>]<FileName>
 more [/c] [/p] [/s] [/t<N>] [+<N>] [<Files>]
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
 |           パラメーター            |                               説明                               |
 |--------------------------------|-------------------------------------------------------------------------|
@@ -48,13 +44,13 @@ more [/c] [/p] [/s] [/t<N>] [+<N>] [<Files>]
 |             +\<N >              |     *N*で指定した行で始まる最初のファイルを表示します。     |
 | [\<ドライブ >:][\<パス >]\<ファイル名 > |          表示するファイルの場所と名前を指定します。          |
 |            \<ファイル >            | 表示するファイルの一覧を指定します。 ファイル名はスペースで区切ります。 |
-|               /?               |                  コマンド プロンプトにヘルプを表示します。                   |
+|               /?               |                  コマンド プロンプトでヘルプを表示します。                   |
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
 -   次のサブコマンドは、**より多く**のプロンプト (`-- More --`) で受け入れられます。 
 
-    | Key | アクション |
+    | Key | 操作 |
     | --- | ------ |
     | + | 次のページが表示されます。 |
     | Enter | 次の行を表示します。 |
@@ -68,7 +64,7 @@ more [/c] [/p] [/s] [/t<N>] [+<N>] [<Files>]
 -   リダイレクト文字 ( **<** ) を使用する場合は、ファイル名をソースとして指定する必要があります。 パイプ ( **\|** ) を使用する場合は、 **dir**、 **sort**、 **type**などのコマンドを使用できます。
 -   回復コンソールでは、さまざまなパラメーターを使用して**more**コマンドを実行できます。
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a><a name=BKMK_examples></a>例
 
 Clients という名前のファイルの情報の最初の画面を表示するには、次のいずれかのコマンドを入力します。
 ```
@@ -114,6 +110,6 @@ type clients.new | more /c /s
   ```  
   スキップする行数を入力し、enter キーを押します。 **さら**に、指定された行数をスキップし、次の情報の画面を表示します。
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

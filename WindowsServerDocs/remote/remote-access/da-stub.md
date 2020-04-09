@@ -4,17 +4,16 @@ description: このトピックでは、Windows Server 2016 の DirectAccess ド
 manager: brianlic
 ms.prod: windows-server
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a3673bb8-43dc-44e2-9e10-caf09bae2aa9
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 1a74117d335a2a4f1750acf806823c064755978d
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 5b03096a1b099f59e95d1a20028922a1817d534f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80314876"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815805"
 ---
 # <a name="directaccess"></a>DirectAccess
 

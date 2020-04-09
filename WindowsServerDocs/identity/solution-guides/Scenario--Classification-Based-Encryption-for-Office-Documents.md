@@ -1,7 +1,6 @@
 ---
 ms.assetid: 73542e1c-53ef-4ddb-89b1-bc563b2bfb49
 title: Office ドキュメントに対する分類ベースの暗号化をシナリオ
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,20 +8,20 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: ab1b277b83369cf2e4ef4be5aa467dea8b2d2f84
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: fa6de270d7d6acf4bf7c99f9a5f9f9457b80b55d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357443"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861135"
 ---
-# <a name="scenario-classification-based-encryption-for-office-documents"></a>シナリオ:Office ドキュメントに対する分類ベースの暗号化
+# <a name="scenario-classification-based-encryption-for-office-documents"></a>Scenario: Classification-Based Encryption for Office Documents
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 機密情報を保護する主な目的は組織のリスクを低減することです。 医療保険の携行性と責任に関する法律 (HIPAA) や Payment Card Industry Data Security Standard (PCI-DSS) などのさまざまなコンプライアンス規定が情報の暗号化を義務付けており、その他にも数多くのビジネス上の理由で機密情報が暗号化されています。 一方、情報の暗号化は高コストであるだけでなく、ビジネスの生産性を低下させる原因にもなります。 このためさまざまな組織がさまざまなアプローチを採用して、暗号化する情報に優先順位を設定しています。  
   
-## <a name="BKMK_OVER"></a>シナリオの説明  
+## <a name="scenario-description"></a><a name="BKMK_OVER"></a>シナリオの説明  
  Windows Server 2012 では、機密性の高い Microsoft Office ファイル、分類に基づいて自動で暗号化する機能を提供します。 これはファイル管理タスクを通じて実行されます。ファイル管理タスクは、ファイル サーバー上のファイルを機密性が高いと認識した数秒後に Active Directory Rights Management サーバー (AD RMS) 保護を起動します。 これは、ファイル サーバー上の連続ファイル管理タスクによって容易になります。  
   
 AD RMS 暗号化により、ファイル保護のための新しい層が追加されます。 機密性の高いファイルへのアクセス権を持つユーザーがファイルを誤って電子メールで送信した場合も、AD RMS 暗号化によりファイルは保護されます。 ファイルへのアクセスを必要とするユーザーは、最初に AD RMS サーバーでユーザー自身を認証し、暗号化キーを受け取る必要があります。 このプロセスを次に示します。  
@@ -40,15 +39,15 @@ AD RMS 暗号化により、ファイル保護のための新しい層が追加�
   
 -   [Office ファイル&#40;の暗号化の展開のデモンストレーションステップ&#41;](Deploy-Encryption-of-Office-Files--Demonstration-Steps-.md)  
   
--   [ダイナミック アクセス制御: シナリオの概要](Dynamic-Access-Control--Scenario-Overview.md)  
+-   [動的 Access Control: シナリオの概要](Dynamic-Access-Control--Scenario-Overview.md)  
   
-## <a name="BKMK_NEW"></a>このシナリオに含まれる役割と機能  
+## <a name="roles-and-features-included-in-this-scenario"></a><a name="BKMK_NEW"></a>このシナリオに含まれる役割と機能  
 次の表で、このシナリオに含まれている役割と機能を紹介すると共に、それをシナリオに活かす方法について説明します。  
   
 |役割/機能|このシナリオのサポート方法|  
 |-----------------|---------------------------------|  
 |Active Directory ドメイン サービスの役割 (AD DS)|AD DS では、分散データベースにより、ネットワーク リソース、およびディレクトリ対応アプリケーションに固有のデータが保存、管理されます。 このシナリオでは、Windows Server 2012 で AD DS には、クレーム ベースの承認プラットフォームをユーザーの信頼性情報とデバイスの信頼性情報、複合 id (ユーザーおよびデバイスの信頼性情報)、新しい集約型アクセス ポリシー モデル、および承認の判断でのファイル分類情報の用途の作成が導入されています。|  
-|ファイル サービスおよび記憶域サービスの役割<br /><br />ファイル サーバー リソース マネージャー|ファイル サービスおよび記憶域サービスには、1 台以上のファイル サーバーの設定および管理を支援するテクノロジが備わっています。ファイル サーバーは、ファイルを保存したり、ユーザーと共有したりできる、ネットワーク上の中心的な場所です。 ネットワーク ユーザーが同じファイルおよびアプリケーションにアクセスする必要がある場合、または一元化されたバックアップとファイル管理が組織にとって重要である場合、ファイル サービスおよび記憶域サービスの役割と適切な役割サービスをコンピューターに追加して、1 台以上のコンピューターをファイル サーバーとして設定する必要があります。 このシナリオでは、ファイル サーバー管理者はファイル管理タスクを構成できます。ファイル管理タスク (ファイル サーバー上で継続的に実行) は、ファイル サーバー上のファイルを機密性が高いと認識した数秒後に AD RMS 保護を起動します。|  
+|ファイル サービスおよび記憶域サービスの役割<p>ファイル サーバー リソース マネージャー|ファイル サービスおよび記憶域サービスには、1 台以上のファイル サーバーの設定および管理を支援するテクノロジが備わっています。ファイル サーバーは、ファイルを保存したり、ユーザーと共有したりできる、ネットワーク上の中心的な場所です。 ネットワーク ユーザーが同じファイルおよびアプリケーションにアクセスする必要がある場合、または一元化されたバックアップとファイル管理が組織にとって重要である場合、ファイル サービスおよび記憶域サービスの役割と適切な役割サービスをコンピューターに追加して、1 台以上のコンピューターをファイル サーバーとして設定する必要があります。 このシナリオでは、ファイル サーバー管理者はファイル管理タスクを構成できます。ファイル管理タスク (ファイル サーバー上で継続的に実行) は、ファイル サーバー上のファイルを機密性が高いと認識した数秒後に AD RMS 保護を起動します。|  
 |Active Directory Rights Management サービス (AD RMS) の役割|AD RMS により、個人ユーザーおよび管理者は、Information Rights Management (IRM) ポリシーを介して、ドキュメント、ブック、およびプレゼンテーションに対するアクセス許可を指定できます。 これにより、不正ユーザーによる機密情報の印刷、転送、コピーを防止できます。 IRM を使用してファイルに対するアクセス許可を制限すると、情報がどこにあるかを問わず、アクセスと使用に関する制限が適用されます。これは、ファイルに対するアクセス許可がドキュメント ファイルそのものに格納されるためです。 このシナリオでは、AD RMS 暗号化により、ファイル保護のための新しい層が追加されます。 機密性の高いファイルへのアクセス権を持つユーザーがファイルを誤って電子メールで送信した場合も、AD RMS 暗号化によりファイルは保護されます。 ファイルへのアクセスを必要とするユーザーは、最初に AD RMS サーバーでユーザー自身を認証し、暗号化キーを受け取る必要があります。|  
   
 

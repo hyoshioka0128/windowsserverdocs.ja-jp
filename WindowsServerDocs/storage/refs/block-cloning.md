@@ -1,7 +1,6 @@
 ---
 ms.assetid: fd427da3-3869-428f-bf2a-56c4b7d99b40
 title: ReFS でのブロックの複製
-description: ''
 author: gawatu
 ms.author: gawatu
 manager: gawatu
@@ -9,16 +8,16 @@ ms.date: 10/17/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage-file-systems
-ms.openlocfilehash: 81186624e19f9235cbdf8c7f0d44bd2927a68099
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b133e518c4226c516974ca89a457cf0aa64cac7e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394020"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861355"
 ---
 # <a name="block-cloning-on-refs"></a>ReFS でのブロックの複製
 
->適用対象:Windows Server 2019、Windows Server 2016、Windows Server (半期チャネル)
+>適用対象: Windows Server 2019、Windows Server 2016、Windows Server (半期チャネル)
 
 ブロックの複製によって、アプリケーションの代わりにファイル システムが一定範囲のファイル サイズに応じたファイルのコピーを実行します。この際、コピー先のファイルをコピー元のファイルと同じにしたり、別のファイルにしたりすることができます。 残念ながら、コピー操作にはコストがかかります。これは、コピー操作によって、コストがかかる読み取りや書き込みが基になる物理データに対してトリガーされるためです。 
 
@@ -62,7 +61,7 @@ ReFS のブロックの複製では、ファイル データの操作ではな�
 - ブロックの複製操作では、共有されている便宜的ロック ([レベル 2 の便宜的ロック](https://msdn.microsoft.com/library/windows/desktop/aa365713(v=vs.85).aspx)とも呼ばれています) が動作しなくなります。
 - ReFS ボリュームは、Windows Server 2016 でフォーマットされている必要があります。フェールオーバー クラスタリングを使用している場合は、フォーマット時にクラスタリングの機能レベルが Windows Server 2016 以降になっている必要があります。 
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 -   [ReFS の概要](refs-overview.md)
 -   [ReFS 整合性ストリーム](integrity-streams.md)

@@ -2,22 +2,18 @@
 title: 手順 10 Install and Configure 2-EDGE1
 description: このトピックは、「Windows Server 2016 用の DirectAccess マルチサイト展開のテストラボガイド」の一部です。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d98d6f7a-a2e6-45b1-9c63-08e2986a5c03
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 7d21d80f4970a501e31a053483c37268bdddb811
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 05648cad52cff1d3a7bae76a6d74b9d352ba73da
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80314611"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860365"
 ---
 # <a name="step-10-install-and-configure-2-edge1"></a>手順 10 Install and Configure 2-EDGE1
 

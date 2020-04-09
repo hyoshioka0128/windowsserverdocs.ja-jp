@@ -2,18 +2,17 @@
 title: ドメインネームシステム (DNS) に関する問題のトラブルシューティング
 description: この記事では、DNS の問題が発生したときにデータを収集する方法について説明します。
 manager: dcscontentpm
-ms.prod: ''
 ms.technology: networking-dns
 ms.topic: article
 ms.author: delhan
 ms.date: 8/8/2019
 author: Deland-Han
-ms.openlocfilehash: 11c52b3beca3afcc0a6bfc8cecee2143dce0f023
-ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
+ms.openlocfilehash: 04bfbfbd2957aec21da966a48feca8d7f160a29c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/18/2020
-ms.locfileid: "76265834"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860045"
 ---
 # <a name="troubleshooting-domain-name-system-dns-issues"></a>ドメインネームシステム (DNS) に関する問題のトラブルシューティング
  
@@ -23,7 +22,7 @@ ms.locfileid: "76265834"
 
 - [DNS サーバーのトラブルシューティング](troubleshoot-dns-server.md)
  
-## <a name="data-collection"></a>データ収集
+## <a name="data-collection"></a>データ コレクション
  
 問題が発生したときに、クライアント側とサーバー側の両方で同時にデータを収集することをお勧めします。 ただし、実際の問題によっては、DNS クライアントまたは DNS サーバーの1つのデータセットでコレクションを開始できます。
  

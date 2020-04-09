@@ -2,22 +2,18 @@
 title: 手順 2. の構成
 description: このトピックは、「テストラボガイド-OTP 認証を使用した DirectAccess のデモンストレーション」と「RSA SecurID for Windows Server 2016」に含まれています。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 19a7a4a6-9a04-42ea-a5d0-ecb28a34dbaa
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: dbeba9f1646cfb13d709cb4f7987802f69708adb
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 6d8720c71efba6f461aa0789fc2a143d1b1dab3f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80314423"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855585"
 ---
 # <a name="step-2-configure-app1"></a>手順 2. の構成
 

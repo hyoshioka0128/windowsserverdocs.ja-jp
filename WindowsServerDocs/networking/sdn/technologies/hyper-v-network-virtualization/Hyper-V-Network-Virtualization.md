@@ -1,23 +1,19 @@
 ---
 title: Hyper-V ネットワーク仮想化
 description: このトピックでは、Windows Server 2016 の Hyper-v ネットワーク仮想化に関するコンテンツへのリンクを示します。
-manager: brianlic
-ms.custom: na
+manager: grcusanz
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-sdn
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 150976f0-ccd5-487a-a458-92261444a846
-ms.author: lizross
-author: eross-msft
-ms.openlocfilehash: a99fed5fb173ed2ef0698ab5c10bcf872e9abea8
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.author: anpaul
+author: AnirbanPaul
+ms.openlocfilehash: 4bd2af103507610e1837f1e4f8e2b36678b14b55
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80317247"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854305"
 ---
 # <a name="hyper-v-network-virtualization"></a>Hyper-V ネットワーク仮想化
 
@@ -33,4 +29,4 @@ Windows Server 2012 で導入された Hyper-v ネットワーク仮想化 (HNV)
   
 |||  
 |-|-|  
-|![クラウド](../../../media/Hyper-V-Network-Virtualization/All_Symbols_Cloud.png)|Microsoft Azure は同様の機能をクラウドで実現します。 [Microsoft Azure 仮想化ソリューション](https://aka.ms/f9bh7g)の詳細をご覧ください。<br /><br />Microsoft Azure でのハイブリッド仮想化ソリューションの作成:<br />[オンプレミスのネットワークをサイト間 VPN 経由で azure に接続し、azure の IAAS VM DC に Active Directory を拡張](https://aka.ms/d1dinb)- |  
+|![クラウド](../../../media/Hyper-V-Network-Virtualization/All_Symbols_Cloud.png)|Microsoft Azure は同様の機能をクラウドで実現します。 [Microsoft Azure 仮想化ソリューション](https://aka.ms/f9bh7g)の詳細をご覧ください。<p>Microsoft Azure でのハイブリッド仮想化ソリューションの作成:<br />[オンプレミスのネットワークをサイト間 VPN 経由で azure に接続し、azure の IAAS VM DC に Active Directory を拡張](https://aka.ms/d1dinb)- |  

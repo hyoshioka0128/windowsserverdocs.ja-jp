@@ -2,24 +2,23 @@
 title: HYPER-V が有効になっている唯一の役割をする必要があります。
 description: このベストプラクティスアナライザー規則によって報告された問題を解決するための手順を示します。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: 5a0ed176-048f-40b1-b56c-8391b805fd37
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 9b16a3be1e2f842c251ff3ab31d467ef7f128c8a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 40dae4baad782d3be4fc6ca8ba2bc4e506131dbf
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71364763"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861915"
 ---
 # <a name="hyper-v-should-be-the-only-enabled-role"></a>HYPER-V が有効になっている唯一の役割をする必要があります。
 
->適用先:Windows Server 2016
+>適用対象: Windows Server 2016
 
 ベスト プラクティスとスキャンの詳細については、「 [ベスト プラクティス アナライザー](https://go.microsoft.com/fwlink/?LinkId=122786)」をご覧ください。  
   
@@ -27,7 +26,7 @@ ms.locfileid: "71364763"
 |-|-|  
 |**オペレーティング システム**|Windows Server 2016|  
 |**製品/機能**|Hyper-V|  
-|**順**|警告|  
+|**順**|［警告］|  
 |**カテゴリ**|構成|  
   
 次のセクションでは、斜体は、この問題のためのベスト プラクティス アナライザー ツールで表示される UI テキストを示します。  

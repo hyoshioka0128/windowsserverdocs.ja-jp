@@ -2,22 +2,18 @@
 title: 認証の問題のトラブルシューティング
 description: このトピックは、「Windows Server 2016 で OTP 認証を使用してリモートアクセスを展開する」の一部です。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 71307757-f8f4-4f82-b8b3-ffd4fd8c5d6d
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 74e332fff194374c6f3a5eeae5e26e8e4f5cfb42
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: e3aa3bf89a73f944b2922fcf06ac60df2874a221
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80313449"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853655"
 ---
 # <a name="troubleshooting-authentication-issues"></a>認証の問題のトラブルシューティング
 

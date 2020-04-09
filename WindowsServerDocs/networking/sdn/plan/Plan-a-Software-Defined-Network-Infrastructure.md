@@ -1,25 +1,20 @@
 ---
 title: ソフトウェア定義ネットワーク インフラストラクチャを計画する
 description: このトピックでは、ソフトウェアで定義されたネットワーク (SDN) インフラストラクチャの展開を計画する方法について説明します。
-manager: dougkim
-ms.custom: na
+manager: grcusanz
 ms.prod: windows-server
-ms.reviewer: na
-ms.service: virtual-network
-ms.suite: na
 ms.technology: networking-sdn
-ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: ea7e53c8-11ec-410b-b287-897c7aaafb13
-ms.author: lizross
-author: eross-msft
+ms.author: anpaul
+author: AnirbanPaul
 ms.date: 08/10/2018
-ms.openlocfilehash: 83f94d3770c475fca7f5d4b8cc2f5a5ade1a20d7
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 1542ff2c81ec0b6b4bc598dd5039578a67d0fc3e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80317462"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854405"
 ---
 # <a name="plan-a-software-defined-network-infrastructure"></a>ソフトウェア定義ネットワーク インフラストラクチャを計画する
 
@@ -238,7 +233,7 @@ Hyper-v、shared、または local と互換性のあるストレージの種類
 
 Host|ハードウェア要件|ソフトウェア要件|  
 --------|-------------------------|-------------------------  
-|物理 Hyper-v ホスト|4コア 2.66 GHz CPU<br /><br />32 GB の RAM<br /><br />300 GB のディスク領域<br /><br />1 Gb/秒 (またはそれよりも高速) の物理ネットワークアダプター|OS: Windows Server 2016<br /><br />Hyper-v の役割のインストール|  
+|物理 Hyper-v ホスト|4コア 2.66 GHz CPU<p>32 GB の RAM<p>300 GB のディスク領域<p>1 Gb/秒 (またはそれよりも高速) の物理ネットワークアダプター|OS: Windows Server 2016<p>Hyper-v の役割のインストール|  
 
 
 **SDN インフラストラクチャ仮想マシンロールの要件**  
@@ -247,8 +242,8 @@ Host|ハードウェア要件|ソフトウェア要件|
 --------|---------------------|-----------------------|---------------------  
 |ネットワークコントローラー (3 ノード)|4 vCPUs|4 GB 分 (8 GB を推奨)|OS ドライブの場合は 75 GB  
 |SLB/MUX (3 ノード)|8 vCPUs|8 GB を推奨|OS ドライブの場合は 75 GB  
-|RAS ゲートウェイ<br /><br />(3 つのノードゲートウェイの単一プール、2つのアクティブ、1つのパッシブ)|8 vCPUs|8 GB を推奨|OS ドライブの場合は 75 GB  
-|SLB/MUX ピアリングの RAS ゲートウェイ BGP ルーター<br /><br />(または、ToR スイッチを BGP ルーターとして使用します)|2 vCPUs|2 GB|OS ドライブの場合は 75 GB|  
+|RAS ゲートウェイ<p>(3 つのノードゲートウェイの単一プール、2つのアクティブ、1つのパッシブ)|8 vCPUs|8 GB を推奨|OS ドライブの場合は 75 GB  
+|SLB/MUX ピアリングの RAS ゲートウェイ BGP ルーター<p>(または、ToR スイッチを BGP ルーターとして使用します)|2 vCPUs|2 GB|OS ドライブの場合は 75 GB|  
 
 
 VMM を使用して展開する場合、VMM およびその他の非 SDN インフラストラクチャには、追加のインフラストラクチャバーチャルマシンリソースが必要です。 詳細については、「 [System Center Technical Preview の最小ハードウェア推奨事項](https://technet.microsoft.com/library/dn997303.aspx)」を参照してください。  

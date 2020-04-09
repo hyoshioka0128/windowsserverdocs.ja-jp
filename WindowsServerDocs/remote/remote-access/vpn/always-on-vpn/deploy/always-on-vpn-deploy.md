@@ -7,14 +7,14 @@ ms.topic: article
 ms.assetid: 5ae1a40b-4f10-4ace-8aaf-13f7ab581f4f
 ms.localizationpriority: medium
 ms.date: 12/20/2018
-ms.author: lizross
-author: eross-msft
-ms.openlocfilehash: ca064f887a524c5f41b29837e8f8fec586a8d928
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.author: v-tea
+author: Teresa-MOTIV
+ms.openlocfilehash: e107ba0d36a1b59d4bc1bb365fb98aa9285677ba
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80313263"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860125"
 ---
 # <a name="always-on-vpn-deployment-for-windows-server-and-windows-10"></a>Windows Server および Windows 10 用の VPN 展開の Always On
 

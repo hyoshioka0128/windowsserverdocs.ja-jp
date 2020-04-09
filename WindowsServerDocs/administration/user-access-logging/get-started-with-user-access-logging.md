@@ -1,24 +1,20 @@
 ---
 title: ユーザーアクセスログを使ってみる
 desctription: Describes the User Access Logging feature and how to start using it.
-ms.custom: na
 ms.prod: windows-server
 ms.technology: manage-user-access-logging
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5c395b8b-3b35-4042-b9cc-07e438f86d50
 author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f69a1fe4f3c17123f91ade3b6aebdb5f7bab9982
-ms.sourcegitcommit: 3f9bcd188dda12dc5803defb47b2c3a907504255
+ms.openlocfilehash: b36253b8dfa10ac8156fdc5526d02aa98ebdc740
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "77001787"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851405"
 ---
 # <a name="get-started-with-user-access-logging"></a>ユーザーアクセスログを使ってみる
 
@@ -31,7 +27,7 @@ UAL は既定でインストールされ、有効になっており、ほぼリ�
 > [!NOTE]  
 > UAL は [Microsoft Assessment and Planning Toolkit](https://go.microsoft.com/fwlink/?LinkID=111000)をサポートします。  
   
-## <a name="BKMK_APP"></a>実用的なアプリケーション  
+## <a name="practical-applications"></a><a name="BKMK_APP"></a>実用的なアプリケーション  
 UAL は、ローカルデータベースに記録される一意のクライアントデバイスイベントとユーザー要求イベントを集計します。 サーバー管理者は、クエリによってこれらの記録を使用し、サーバー ロール別、ユーザー別、デバイス別、ローカル サーバー別、日付別に数量とインスタンスを取得できます。  さらに、UAL は、Microsoft 以外のソフトウェア開発者が Windows Server によって集計される UAL イベントを利用できるように拡張されています。  
   
 UAL では、次のタスクを実行できます。  
@@ -92,7 +88,7 @@ UAL では、次のタスクを実行できます。
 > [!IMPORTANT]  
 > UAL は、インターネットに直接接続されているサーバー (インターネットでアクセスできるアドレス空間にある Web サーバーなど) やサーバーの主な機能が非常に高パフォーマンスであるシナリオ (HPC ワークロード環境など) での使用はお勧めできません。 UAL は主に、大容量が想定されているが、インターネットに接続するトラフィックボリュームを定期的に処理する展開ほど高くない、小規模、中、およびエンタープライズのイントラネットのシナリオを対象としています。  
   
-## <a name="BKMK_NEW"></a>重要な機能  
+## <a name="important-functionality"></a><a name="BKMK_NEW"></a>重要な機能  
 次の表は、UAL の主な機能とその値についてまとめたものです。  
   
 |機能|値|  
@@ -128,7 +124,7 @@ UAL では次のデバイス関連データが記録されます。
 |**役割**|UAL データを提供している役割、コンポーネント、またはサブ製品の名前。 これは ProductName および RoleGUID と関連付けられてもいます。|  
 |**TenantIdentifier**|UAL データを伴う、インストールされている役割または製品のテナント クライアントの一意の GUID (該当する場合)。|  
   
-## <a name="BKMK_SOFT"></a>ソフトウェア要件  
+## <a name="software-requirements"></a><a name="BKMK_SOFT"></a>ソフトウェア要件  
 UAL は、Windows Server 2012 以降のバージョンの Windows Server を実行しているすべてのコンピューターで使用できます。  
   
 ## <a name="see-also"></a>参照  

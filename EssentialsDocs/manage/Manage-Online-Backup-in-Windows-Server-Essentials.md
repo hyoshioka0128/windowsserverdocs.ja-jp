@@ -1,23 +1,19 @@
 ---
 title: Windows Server Essentials でのオンライン バックアップの管理
 description: Windows Server Essentials の使用方法について説明します。
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 95a9f593-fad7-4335-bd4d-c7bb8c033efb
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 0879f0300892e26e1afb9b33e857ce0e255308ee
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 5c7db7f2e39ec0f46f2b4d36537a0db94980c108
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80311202"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852775"
 ---
 # <a name="manage-online-backup-in-windows-server-essentials"></a>Windows Server Essentials でのオンライン バックアップの管理
 

@@ -1,23 +1,19 @@
 ---
 title: RAS ゲートウェイの高可用性
 description: このトピックでは、Windows Server 2016 のソフトウェア定義ネットワーク (SDN) 用の RAS マルチテナントゲートウェイの高可用性構成について説明します。
-manager: brianlic
-ms.custom: na
+manager: grcusanz
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-sdn
-ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 34d826c9-65bc-401f-889d-cf84e12f0144
-ms.author: lizross
-author: eross-msft
-ms.openlocfilehash: 5fca4fc6a636bcde155e60b6da3c827bc9313606
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.author: anpaul
+author: AnirbanPaul
+ms.openlocfilehash: 774f0f4299bb5acbe7314080dd1314f74574d16d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80313043"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859615"
 ---
 # <a name="ras-gateway-high-availability"></a>RAS ゲートウェイの高可用性
 

@@ -2,20 +2,19 @@
 title: Windows Vista をする必要があります最小メモリ量以上で構成
 description: このベストプラクティスアナライザー規則によって報告された問題を解決するための手順を示します。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: 49f6f9b6-c290-4b1b-b6f3-cc9a0acd8fb2
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 6a5197af0577c411337194104a4fe97d06d41a01
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5897b0e363e725b913c8d6492a84df0a957cabb6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71393037"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860975"
 ---
 # <a name="windows-vista-should-be-configured-with-at-least-the-minimum-amount-of-memory"></a>Windows Vista をする必要があります最小メモリ量以上で構成
 
@@ -52,7 +51,7 @@ ms.locfileid: "71393037"
   
 2.  結果ウィンドウで  **仮想マシン**, 、構成する仮想マシンを選択します。 バーチャルマシンの状態は **オフ (オフ**)」と表示されます。 そうでない場合は、バーチャルマシンを右クリックし、 **[シャットダウン]** をクリックします。  
   
-3.  **アクション** ウィンドウの 仮想マシン名をクリックして **設定**します。  
+3.  **[操作]** ウィンドウで、仮想マシン名の下の **[設定]** をクリックします。  
   
 4.  ナビゲーションウィンドウで、 **[メモリ]** をクリックします。  
   

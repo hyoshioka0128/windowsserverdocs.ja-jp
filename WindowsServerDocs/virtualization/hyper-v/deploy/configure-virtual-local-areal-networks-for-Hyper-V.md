@@ -2,21 +2,19 @@
 title: Hyper-v の仮想ローカルエリアネットワークを構成する
 description: Hyper-v ホスト上のバーチャルマシンで使用する仮想ローカルエリアネットワーク (VLAN) を構成する手順について説明します。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8510a709-001c-4eee-b6d6-c451e8a8a836
-author: KBDAzure
+author: kbdazure
 ms.author: kathydav
 ms.date: 10/11/2016
-ms.openlocfilehash: bf40d9ad2612df033db7a7e3b93ca9faf249daf2
-ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
+ms.openlocfilehash: 08c0e5062715ccc11cdedfe228f8cc58f689f555
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77465586"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860865"
 ---
 # <a name="configure-virtual-local-area-networks-for-hyper-v"></a>Hyper-v の仮想ローカルエリアネットワークを構成する
 Vlan\) \(仮想ローカルエリアネットワークでは、ネットワークトラフィックを分離する方法が1つ提供されます。 Vlan は、802.1 q をサポートするスイッチとルーターで構成されます。 複数の Vlan を構成し、それらの間で通信が行われるようにするには、ネットワークデバイスでそのような構成を行う必要があります。

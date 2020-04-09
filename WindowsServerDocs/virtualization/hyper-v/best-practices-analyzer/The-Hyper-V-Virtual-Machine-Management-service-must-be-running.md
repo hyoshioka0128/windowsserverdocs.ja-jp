@@ -2,24 +2,23 @@
 title: HYPER-V 仮想マシン管理サービスを実行する必要があります。
 description: このベストプラクティスアナライザー規則によって報告された問題を解決するための手順を示します。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: f44d6887-6458-4438-9d93-574587e3f7d1
-author: KBDAzure
+author: kbdazure
 ms.date: 10/03/2016
-ms.openlocfilehash: de1e2ed9fc24afe7d1ccc12bc11eb94a846f0664
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 50f101f9dad824e13fa5827175cc1c944a96a91b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71364681"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859325"
 ---
 # <a name="the-hyper-v-virtual-machine-management-service-must-be-running"></a>HYPER-V 仮想マシン管理サービスを実行する必要があります。
 
->適用先:Windows Server 2016
+>適用対象: Windows Server 2016
   
 ベスト プラクティスとスキャンの詳細については、「 [ベスト プラクティス アナライザー](https://go.microsoft.com/fwlink/?LinkId=122786)」をご覧ください。  
   
@@ -27,7 +26,7 @@ ms.locfileid: "71364681"
 |-|-|  
 |**オペレーティング システム**|Windows Server 2016|  
 |**製品/機能**|Hyper-V|  
-|**順**|Error|  
+|**順**|エラー|  
 |**カテゴリ**|前提条件|  
 
 次のセクションでは、斜体は、この問題のためのベスト プラクティス アナライザー ツールで表示される UI テキストを示します。
@@ -51,8 +50,8 @@ ms.locfileid: "71364681"
 
 Hyper-v 管理ツールをインストールするには、次のようにします。  
 >   
-> - Windows Server で、サーバー マネージャーを開き 役割と機能のウィザードを使用します。 詳細については、次を参照してください。 [Windows Server 2016 に Hyper-v の役割をインストール](../get-started/Install-the-Hyper-V-role-on-Windows-Server.md)します。  PowerShell を使用してツールをインストールすることもできます (`Install-WindowsFeature -Name Hyper-V-Tools, Hyper-V-PowerShell`)。 
-> - Windows では、デスクトップで、入力を開始 **プログラム**, 、 をクリックして **プログラムと機能** (コントロール パネル) > **に Windows の機能のオンとオフ** > **HYPER-V** > **HYPER-V 管理ツール**します。 クリックして **OK**します。  
+> - Windows Server で、サーバー マネージャーを開き 役割と機能のウィザードを使用します。 詳細については、次を参照してください。 [Windows Server 2016 に Hyper-v の役割をインストール](../get-started/Install-the-Hyper-V-role-on-Windows-Server.md)します。  PowerShell を使用してツール (`Install-WindowsFeature -Name Hyper-V-Tools, Hyper-V-PowerShell`) をインストールすることもできます。 
+> - Windows では、デスクトップで、入力を開始 **プログラム**, 、 をクリックして **プログラムと機能** (コントロール パネル) > **に Windows の機能のオンとオフ** > **HYPER-V** > **HYPER-V 管理ツール**します。 **[OK]** をクリックします。  
   
 ### <a name="to-reconfigure-the-service-to-start-automatically-using-the-services-desktop-app"></a>サービスのデスクトップ アプリを使用して自動的に開始するサービスを再構成するには  
   
@@ -82,7 +81,7 @@ Hyper-v 管理ツールをインストールするには、次のようにしま
     sc start vmms  
     ```  
   
-自動的に開始するサービスが既に構成されている、のみサービスを再起動する必要がある場合は、それには HYPER-V マネージャーとは"sc は、vmm を start"コマンドの前に示したからです。  
+サービスが自動的に開始するように構成されていて、サービスを再起動する必要がある場合は、Hyper-v マネージャーから、または上に示した sc start vmms コマンドから実行できます。  
   
 #### <a name="to-restart-the-service-from-hyper-v-manager"></a>HYPER-V マネージャーからサービスを再起動するには  
   
