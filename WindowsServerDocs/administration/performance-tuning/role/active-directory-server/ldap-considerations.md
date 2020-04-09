@@ -4,15 +4,15 @@ description: Active Directory ワークロードでの LDAP に関する考慮�
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: TimWi; ChrisRob; HerbertM; KenBrumf;  MLeary; ShawnRab
+ms.author: timwi; chrisrob; herbertm; kenbrumf;  mleary; shawnrab
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 5e407f9f32339e3f9c75e3722ad218228b608b9d
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 86aef48575388ad76ff22fc6027c5ce2d4b6694a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947104"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851895"
 ---
 # <a name="ldap-considerations-in-adds-performance-tuning"></a>での LDAP に関する考慮事項によるパフォーマンスチューニングの追加
 
@@ -98,7 +98,7 @@ Active Directory に対して使用するクエリを適切に記述、構築、
 
 -   [インデックス付き属性](https://msdn.microsoft.com/library/windows/desktop/ms677112.aspx)
 
-## <a name="see-also"></a>「
+## <a name="see-also"></a>参照
 
 - [パフォーマンスチューニング Active Directory サーバー](index.md)
 - [ハードウェアに関する考慮事項](hardware-considerations.md)

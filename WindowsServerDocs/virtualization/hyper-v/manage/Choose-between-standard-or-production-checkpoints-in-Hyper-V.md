@@ -2,25 +2,23 @@
 title: Hyper-v で標準チェックポイントまたは運用チェックポイントを選択する
 description: 標準チェックポイントまたは運用チェックポイントを使用するように仮想マシンを構成する手順について説明します。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 92bb573b-03b7-470e-b72e-e35edf52b349
-author: KBDAzure
+author: kbdazure
 ms.author: kathydav
 ms.date: 10/04/2016
-ms.openlocfilehash: 29c7b8be5b1e9d392cead304ab35c3d5dd5ee86a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 80e26c76e1377c904901f9da10e5fea347e2d333
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71364208"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852895"
 ---
 # <a name="choose-between-standard-or-production-checkpoints-in-hyper-v"></a>Hyper-v で標準チェックポイントまたは運用チェックポイントを選択する
 
->適用先:Windows 10、Windows Server 2016、Microsoft Hyper-V Server 2016、Windows Server 2019、Microsoft Hyper-V Server 2019
+>適用対象: Windows 10、Windows Server 2016、Microsoft Hyper-V Server 2016、Windows Server 2019、Microsoft Hyper-V Server 2019
 
   
 Windows Server 2016 と Windows 10 以降では、各仮想マシンの標準チェックポイントと運用チェックポイントのどちらかを選択できます。 運用チェックポイントは、新しい仮想マシンの既定値です。
@@ -46,7 +44,7 @@ Windows Server 2016 と Windows 10 以降では、各仮想マシンの標準チ
 > [!NOTE]
 > Active Directory Domain Services ロール (ドメインコントローラー) または Active Directory ライトウェイトディレクトリサービスロールを実行しているゲストでは、**運用チェックポイント**のみがサポートされます。
 
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
   
 -   [実稼働のチェックポイント](../What-s-new-in-Hyper-V-on-Windows.md#production-checkpoints-new)  
   

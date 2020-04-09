@@ -1,7 +1,6 @@
 ---
 ms.assetid: 3095e6a7-b562-4c6a-bf29-13b32c133cac
 title: AD FS 用に SSL 証明書を登録する
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: efa7c7aee848a5bbb68d3ce7140e135d37c2161d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6f7af40f23c3fa3bd0a31ecb74b11013133a4b32
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408361"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855435"
 ---
 # <a name="enroll-an-ssl-certificate-for-ad-fs"></a>AD FS 用に SSL 証明書を登録する
 
-Active Directory フェデレーションサービス (AD FS) \(AD FS\) には、フェデレーションサーバーファーム内の各フェデレーションサーバーで SSL \(サーバー認証に Secure Socket Layer の証明書が必要です。\) ファーム内の各フェデレーションサーバーで同じ証明書を使用できます。 証明書と秘密キーが両方とも利用可能であることが必要です。 たとえば、証明書と秘密キーが .pfx ファイルに保存されている場合は、そのファイルを Active Directory フェデレーション サービス構成ウィザードに直接インポートできます。 この SSL 証明書には、以下が含まれている必要があります。  
+Active Directory フェデレーションサービス (AD FS) \(AD FS\) には、フェデレーションサーバーファーム内の各フェデレーションサーバーで SSL \(サーバー認証に Secure Socket Layer の証明書が必要です。\) ファーム内の各フェデレーションサーバーで同じ証明書を使用できます。 証明書とその秘密キーの両方を使用可能にする必要があります。 たとえば、証明書と秘密キーが .pfx ファイルに保存されている場合は、そのファイルを Active Directory フェデレーション サービス構成ウィザードに直接インポートできます。 この SSL 証明書には次の情報が必要です。  
   
 1.  サブジェクト名とサブジェクトの別名には、fs.contoso.com などのフェデレーションサービス名が含まれている必要があります。  
   

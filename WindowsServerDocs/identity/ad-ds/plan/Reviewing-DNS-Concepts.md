@@ -1,7 +1,6 @@
 ---
 ms.assetid: 133474ee-316d-4b1c-acc6-ad5434a064d5
 title: DNS の概念を確認する
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,16 +8,16 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 0a1ffe065991e76c91fa95a6ac080a8e8d54bcce
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 37c33ca181394c66ef149715c3f1477774061660
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408701"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822065"
 ---
 # <a name="reviewing-dns-concepts"></a>DNS の概念を確認する
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 ドメイン ネーム システム (DNS) は、名前空間を表す分散データベースです。 名前空間には、すべてのクライアントでは任意の名前を検索するために必要な情報が含まれています。 任意の DNS サーバーは、その名前空間内で任意の名前に関するクエリに応答できます。 DNS サーバーでは、次の方法のいずれかでクエリがお答えします。  
   
@@ -36,7 +35,7 @@ DNS および Active Directory ドメイン サービス (AD DS) の詳細につ
   
 ![DNS の概念](../../media/Reviewing-DNS-Concepts/0c24b576-d41a-4e5d-ad3d-6be81e095835.gif)  
   
-DNS ルート サーバー ドットで表されるルート ゾーンのホスト (します。 ). ルート ゾーンには、次のレベル、階層では、com のゾーンのゾーンへの委任が含まれています。 ルート ゾーンの委任は、com のゾーンを見つけるに問い合わせる必要があります、Com サーバーを DNS ルート サーバーに指示します。 同様に、com ゾーンで委任 Com をサーバーに通知するには、contoso.com ゾーンを見つけるに問い合わせる必要があります、Contoso サーバーです。  
+DNS ルート サーバー ドットで表されるルート ゾーンのホスト (します。 )。 ルート ゾーンには、次のレベル、階層では、com のゾーンのゾーンへの委任が含まれています。 ルート ゾーンの委任は、com のゾーンを見つけるに問い合わせる必要があります、Com サーバーを DNS ルート サーバーに指示します。 同様に、com ゾーンで委任 Com をサーバーに通知するには、contoso.com ゾーンを見つけるに問い合わせる必要があります、Contoso サーバーです。  
   
 > [!NOTE]  
 > 委任は、2 種類のレコードを使用します。 ネーム サーバー (NS) リソース レコードは、権限のあるサーバーの名前を提供します。 ホスト (A) とホスト (AAAA) リソース レコード IP バージョン 4 (IPv4) と IP version 6 (IPv6) のアドレスを指定権限を持つサーバーです。  

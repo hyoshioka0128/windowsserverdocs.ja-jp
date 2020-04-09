@@ -2,22 +2,18 @@
 title: OTP の有効化のトラブルシューティング
 description: このトピックは、「Windows Server 2016 で OTP 認証を使用してリモートアクセスを展開する」の一部です。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b58252ca-4c1d-4664-a3c4-7301e2121517
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 2f3581451b65e96a277b23bd6808d2dea6ba45c9
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 9be7ef4c4d07b522f683a403e46a11e109dbd226
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80313448"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853645"
 ---
 # <a name="troubleshooting-enabling-otp"></a>OTP の有効化のトラブルシューティング
 

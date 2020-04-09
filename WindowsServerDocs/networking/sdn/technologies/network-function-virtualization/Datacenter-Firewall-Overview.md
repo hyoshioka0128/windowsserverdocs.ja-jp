@@ -1,23 +1,19 @@
 ---
 title: Datacenter Firewall の概要
 description: このトピックでは、Windows Server 2016 のネットワーク層、5タプル (プロトコル、発信元と宛先の IP アドレス、送信元と送信先の IP アドレス)、ステートフル、マルチテナントファイアウォールのデータセンターのファイアウォールについて説明します。
-manager: brianlic
-ms.custom: na
+manager: grcusanz
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-sdn
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 67576533-206b-428a-956c-ed8c53218d9b
-ms.author: lizross
-author: eross-msft
-ms.openlocfilehash: 141057d2ee3e648f589d255ea04fdef179cedf3c
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.author: anpaul
+author: AnirbanPaul
+ms.openlocfilehash: 2f50ee45d64f6888306a5fb5efc8c9b801a1c3d0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80317029"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859645"
 ---
 # <a name="datacenter-firewall-overview"></a>Datacenter Firewall の概要
 

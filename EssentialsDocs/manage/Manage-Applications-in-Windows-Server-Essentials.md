@@ -1,23 +1,19 @@
 ---
 title: Windows Server Essentials でのアプリケーションの管理
 description: Windows Server Essentials の使用方法について説明します。
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ae89c46a-0afd-4858-9150-ec97650f45a4
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 7701cbc11ec691b4d4aadd5668dce6438eb9a076
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 64c740969e65da1798b5647dd01979756af8ebb9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80311417"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852855"
 ---
 # <a name="manage-applications-in-windows-server-essentials"></a>Windows Server Essentials でのアプリケーションの管理
 

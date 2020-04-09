@@ -1,7 +1,6 @@
 ---
 ms.assetid: 6a852428-c1ec-4703-b3b3-a4bfdf8cbb9d
-title: Windows&#39;Server 2016 の Active Directory Domain Services の新機能
-description: ''
+title: Windows Server 2016 での Active Directory Domain Services の新機能
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,18 +8,18 @@ ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 1ef77613919ea6caf39a7cb41ba575652680466d
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: a82f45772e5e35afffc632de2b40c02c75b5e5e4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950116"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856285"
 ---
-# <a name="whats-new-in-active-directory-domain-services-for-windows-server-2016"></a>Windows Server 2016 の Active Directory Domain Services の新サービス
+# <a name="whats-new-in-active-directory-domain-services-for-windows-server-2016"></a>Windows Server 2016 の Active Directory Domain Services の新機能
 
->適用先: Windows Server 2016
+>適用対象: Windows Server 2016
 
-Active Directory Domain Services (AD DS) の次の新機能により、組織は Active Directory 環境をセキュリティで保護し、クラウドのみのデプロイとハイブリッドデプロイに移行できるようになります。一部のアプリケーションとサービスは、クラウドでホストされ、他のユーザーはオンプレミスでホストされます。 WebJobs からの改善点は、以下のとおりです。  
+Active Directory Domain Services (AD DS) の次の新機能により、組織は Active Directory 環境を保護し、クラウドのみのデプロイとハイブリッドデプロイに移行できるようになります。一部のアプリケーションとサービスはクラウドでホストされ、他のアプリケーションとサービスはオンプレミスでホストされます。 強化された機能は次のとおりです。  
   
 - [Privileged access management](https://docs.microsoft.com/microsoft-identity-manager/pam/privileged-identity-management-for-active-directory-domain-services)  
   
@@ -57,7 +56,7 @@ Privileged access management (PAM) は、ハッシュ、スピアーフィッシ
   
 - Active Directory Windows Server 2012 R2 以降のフォレストの機能レベル。  
   
-## <a name="azure-ad-join"></a>Azure AD 参加
+## <a name="azure-ad-join"></a>Azure AD への参加
 
 Azure Active Directory Join を使用すると、企業や個人のデバイスの機能が向上し、enterprise、business、EDU の各顧客の id エクスペリエンスが向上します。  
   
@@ -86,7 +85,7 @@ Windows Hello for Business は、キー ベースの認証方法、組織とコ�
   
 ユーザーは、証明書または非対称キーペアにリンクされている情報を使用して、生体認証または PIN のログを使用してデバイスにログオンします。 Id プロバイダー (IDPs) は、ユーザーの公開キーを Idps にマップし、ワンタイムパスワード (OTP)、電話、または別の通知メカニズムを使用してログオン情報を提供することによって、ユーザーを検証します。  
   
-詳細については、「 [Windows Hello for Business](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-identity-verification)  
+詳細については、「 [Windows Hello For Business](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-identity-verification) 」を参照してください。  
   
 ## <a name="deprecation-of-file-replication-service-frs-and-windows-server-2003-functional-levels"></a>ファイルレプリケーションサービス (FRS) と Windows Server 2003 の機能レベルの廃止
 

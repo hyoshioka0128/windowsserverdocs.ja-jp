@@ -2,17 +2,17 @@
 title: 記憶域スペースダイレクトのための入れ子になった回復性
 ms.prod: windows-server
 ms.author: jgerend
-ms.manager: dansimp
+manager: dansimp
 ms.technology: storagespaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 03/15/2019
-ms.openlocfilehash: ea1c4b2c249759634e00f6a1ac2caa34f8085ae1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ac4edccf0c1f8882dd2544b2544c3d8555bbc716
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402863"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857345"
 ---
 # <a name="nested-resiliency-for-storage-spaces-direct"></a>記憶域スペースダイレクトのための入れ子になった回復性
 
@@ -22,12 +22,12 @@ ms.locfileid: "71402863"
 
 ## <a name="prerequisites"></a>前提条件
 
-### <a name="green-checkmark-iconmedianested-resiliencysupportedpng-consider-nested-resiliency-if"></a>![緑のチェックマークアイコン。](media/nested-resiliency/supported.png) 次の場合は、入れ子になった回復性を考慮します
+### <a name="green-checkmark-icon-consider-nested-resiliency-if"></a>![緑のチェックマークアイコン。](media/nested-resiliency/supported.png) 次の場合は、入れ子になった回復性を考慮します
 
 - クラスターで Windows Server 2019 が実行されているそして
 - クラスターには、2つのサーバーノードがあります。
 
-### <a name="red-x-iconmedianested-resiliencyunsupportedpng-you-cant-use-nested-resiliency-if"></a>![赤色の X アイコン。](media/nested-resiliency/unsupported.png) 次の場合、入れ子になった回復性は使用できません。
+### <a name="red-x-icon-you-cant-use-nested-resiliency-if"></a>![赤色の X アイコン。](media/nested-resiliency/unsupported.png) 次の場合、入れ子になった回復性は使用できません。
 
 - クラスターで Windows Server 2016 が実行されているもしくは
 - クラスターに3つ以上のサーバーノードがある
@@ -111,7 +111,7 @@ New-StorageTier -StoragePoolFriendlyName S2D* -FriendlyName NestedParity -Resili
 
 #### <a name="nested-two-way-mirror"></a>入れ子になった双方向ミラー
 
-入れ子になった双方向ミラーを使用するには、`NestedMirror` 層テンプレートを参照し、サイズを指定します。 次に、例を示します。
+入れ子になった双方向ミラーを使用するには、`NestedMirror` 層テンプレートを参照し、サイズを指定します。 例 :
 
 ```PowerShell
 New-Volume -StoragePoolFriendlyName S2D* -FriendlyName Volume01 -StorageTierFriendlyNames NestedMirror -StorageTierSizes 500GB
@@ -147,7 +147,7 @@ Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name "System.Storage.N
 
 | 状況                       | キャッシュの動作                           | キャッシュドライブの損失を許容できるか。 |
 |---------------------------------|------------------------------------------|--------------------------------|
-| 両方のサーバーが稼働しています                 | キャッシュの読み取りと書き込み、完全なパフォーマンス | 〇                            |
+| 両方のサーバーが稼働しています                 | キャッシュの読み取りと書き込み、完全なパフォーマンス | はい                            |
 | サーバーダウン、最初は30分   | キャッシュの読み取りと書き込み、完全なパフォーマンス | いいえ (一時的)               |
 | 最初の30分後          | キャッシュ読み取りのみ、パフォーマンスに影響する   | はい (キャッシュが容量ドライブに書き込まれた後)                           |
 
@@ -171,11 +171,11 @@ Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name "System.Storage.N
 
 ### <a name="does-nested-resiliency-change-how-drive-replacement-works"></a>[回復性の入れ子になっている場合、ドライブの交換方法を変更しますか?]
 
-いいえ。
+No:
 
 ### <a name="does-nested-resiliency-change-how-server-node-replacement-works"></a>回復性を入れ子にすると、サーバーノードの交換のしくみが変わりますか。
 
-いいえ。 サーバーノードとそのドライブを置き換えるには、次の順序に従います。
+No: サーバーノードとそのドライブを置き換えるには、次の順序に従います。
 
 1. 発信サーバーのドライブをインベントリから削除する
 2. 新しいサーバーとそのドライブをクラスターに追加します。
@@ -184,7 +184,7 @@ Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name "System.Storage.N
 
 詳細については、[サーバーの削除](remove-servers.md)に関するトピックを参照してください。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [記憶域スペースダイレクトの概要](storage-spaces-direct-overview.md)
 - [記憶域スペースダイレクトのフォールトトレランスについて](storage-spaces-fault-tolerance.md)

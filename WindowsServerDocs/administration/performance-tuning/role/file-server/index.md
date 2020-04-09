@@ -5,19 +5,16 @@ ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
 author: phstee
-ms.author: NedPyle; Danlo; DKruse; v-tea
+ms.author: nedpyle; danlo; dkruse; v-tea
 ms.date: 12/12/2019
-ms.custom:
-- CI ID 111495
-- CSSTroubleshoot
 manager: dcscontentpm
 audience: Admin
-ms.openlocfilehash: 2e37282abd246c8f2da387deda5e8bf4b400a3d8
-ms.sourcegitcommit: bfe9c5f7141f4f2343a4edf432856f07db1410aa
+ms.openlocfilehash: 1236b961f77fe46f19b70a2c48d32f05585bd29c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75351636"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851845"
 ---
 # <a name="performance-tuning-for-file-servers"></a>ファイル サーバーのパフォーマンス チューニング
 

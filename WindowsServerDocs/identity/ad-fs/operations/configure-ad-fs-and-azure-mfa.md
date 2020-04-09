@@ -1,7 +1,6 @@
 ---
 ms.assetid: 24c4b9bb-928a-4118-acf1-5eb06c6b08e5
 title: AD FS 2016 と Azure MFA を構成する
-description: ''
 ms.author: billmath
 author: billmath
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 01/28/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b658644d1ba7cec1b02a2a51331cd7b7152efc77
-ms.sourcegitcommit: 75e611fd5de8b8aa03fc26c2a3d5dbf8211b8ce3
+ms.openlocfilehash: d519b47d048068ad53e4f11a6b64621ab5f232b1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77145491"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855315"
 ---
 # <a name="configure-azure-mfa-as-authentication-provider-with-ad-fs"></a>AD FS を使用して Azure MFA を認証プロバイダーとして構成する
 
@@ -56,7 +55,7 @@ Set-AdfsClaimsProviderTrust -AnchorClaimType "http://schemas.xmlsoap.org/ws/2005
 
 ### <a name="azure-mfa-as-additional-authentication-to-office-365"></a>Office 365 に対する追加認証としての Azure MFA
 
-以前は、Office 365 または他の証明書利用者の AD FS で、Azure MFA を追加の認証方法として使用する場合は、複合 MFA を実行するように Azure AD を構成することをお勧めします。これは AD FS でプライマリ認証がオンプレミスで実行され、MFA が tr です。Azure AD によってピアリングされます。 これで、ドメインの SupportsMfa 設定が $True に設定されている場合に AD FS での追加認証として Azure MFA を使用できるようになりました。  
+以前は、Office 365 またはその他の証明書利用者に対して AD FS の追加の認証方法として Azure MFA を使用する場合は、複合 MFA を実行するように Azure AD を構成し、AD FS でプライマリ認証がオンプレミスで実行され、MFA が Azure AD によってトリガーされるようにすることが最善の方法でした。 これで、ドメインの SupportsMfa 設定が $True に設定されている場合に AD FS での追加認証として Azure MFA を使用できるようになりました。  
 
 前述のように、まだ登録していない (MFA 検証情報を構成した) AD FS ユーザーは、カスタマイズされた AD FS のエラーページを通じて、 [https://aka.ms/mfasetup](https://aka.ms/mfasetup)にアクセスして確認情報を構成してから AD FS ログインを再試行するように求めるメッセージを表示する必要があります。  
 

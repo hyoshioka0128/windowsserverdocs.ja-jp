@@ -1,28 +1,24 @@
 ---
 title: logman 作成トレース
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Windows コマンドに関するトピック * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1b4dfecd-6f56-4c51-b622-c2054b4aabd7
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 39e54cc10827a473bc19304c91dd6cd7afbf008c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0b415bba125c9ae85f1bba9d5580c28c5c7af9b5
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71374528"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80840855"
 ---
 # <a name="logman-create-trace"></a>logman 作成トレース
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 イベントトレースデータコレクターを作成します。  
 
@@ -30,7 +26,7 @@ ms.locfileid: "71374528"
 ```  
 logman create trace <[-n] <name>> [options]  
 ```  
-## <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>パラメーター  
 
 |                         パラメーター                          |                                                                                                                                                                                                                                                                                                                                説明                                                                                                                                                                                                                                                                                                                                |
 |------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -63,14 +59,14 @@ logman create trace <[-n] <name>> [options]
 |                           -[-] ul                           |                                                                                                                                                                                                                                                                                                                 ユーザーモードでイベントトレースセッションを実行します。                                                                                                                                                                                                                                                                                                                 |
 |                        -bs <value>                         |                                                                                                                                                                                                                                                                                                           イベントトレースセッションのバッファーサイズを kb 単位で指定します。                                                                                                                                                                                                                                                                                                            |
 |                       -nb <min max>                        |                                                                                                                                                                                                                                                                                                           イベントトレースセッションバッファーの数を指定します。                                                                                                                                                                                                                                                                                                            |
-| -モード < globalsequence&#124;localsequence&#124;pagedmemory > | イベントトレースセッションロガーモードを指定します。<br /><br />**Globalsequence**は、イベントトレーサーが、イベントを受信したトレースセッションに関係なく、受信するすべてのイベントにシーケンス番号を追加することを指定します。<br /><br />**Localsequence**は、イベントトレーサーが特定のトレースセッションで受信したイベントのシーケンス番号を追加することを指定します。 **Localsequence**オプションを使用すると、すべてのセッションで重複するシーケンス番号が存在する可能性がありますが、各トレースセッション内で一意になります。<br /><br />**Pagedmemory**は、イベントトレーサーが、既定の非ページメモリプールではなく、ページングされたメモリを内部バッファー割り当てに使用することを指定します。 |
+| -モード < globalsequence&#124;localsequence&#124;pagedmemory > | イベントトレースセッションロガーモードを指定します。<p>**Globalsequence**は、イベントトレーサーが、イベントを受信したトレースセッションに関係なく、受信するすべてのイベントにシーケンス番号を追加することを指定します。<p>**Localsequence**は、イベントトレーサーが特定のトレースセッションで受信したイベントのシーケンス番号を追加することを指定します。 **Localsequence**オプションを使用すると、すべてのセッションで重複するシーケンス番号が存在する可能性がありますが、各トレースセッション内で一意になります。<p>**Pagedmemory**は、イベントトレーサーが、既定の非ページメモリプールではなく、ページングされたメモリを内部バッファー割り当てに使用することを指定します。 |
 
 ## <a name="remarks"></a>コメント  
 [-] が一覧表示されている場合は、オプションを追加して否定します。  
-## <a name="BKMK_examples"></a>例  
-次の例では、trace_log という名前のイベントトレースデータコレクターを作成します。これには、16個以下のバッファーを使用し、各バッファーのサイズを 64 kb 256 以下にし、結果を c:\ c:\ logfileに出力します。  
+## <a name="examples"></a><a name=BKMK_examples></a>例  
+次の例では、trace_log という名前のイベントトレースデータコレクターを作成します。これには、256 16 個以下のバッファーを使用し、各バッファーのサイズを 64 kb 以下にし、結果を c:\ c:\ logfileに出力します。  
 ```  
 logman create trace trace_log -nb 16 256 -bs 64 -o c:\logfile  
 ```  
-#### <a name="additional-references"></a>その他の参照情報  
+## <a name="additional-references"></a>その他の参照情報  
 [logman](logman.md)  

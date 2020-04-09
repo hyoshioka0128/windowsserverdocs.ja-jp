@@ -2,20 +2,19 @@
 title: 仮想ハード_ディスクのページング ファイルとは、レプリケーションから除外する必要があります。
 description: このベストプラクティスアナライザールールのテキストのオンラインバージョン。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: c0be8a5f-64a1-488a-944e-bb913bb90517
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 215e265d69af1b384d3461c627558ff0a59c8e91
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 94e03cf9de3991d003fad9019b9af33fad2f6bae
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71364554"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855025"
 ---
 # <a name="virtual-hard-disks-with-paging-files-should-be-excluded-from-replication"></a>仮想ハード_ディスクのページング ファイルとは、レプリケーションから除外する必要があります。
 

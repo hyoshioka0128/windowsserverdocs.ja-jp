@@ -1,7 +1,6 @@
 ---
 ms.assetid: d3cf4cb9-9b9e-4dcf-b6c6-8c6c42ec5f3e
 title: フェデレーション サーバー プロキシの配置の計画
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: cbb573b60404b67529de7f4d82afce770a6e4fa4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8cb27155c29f21911d793be913d0d43a63b61f24
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408010"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858655"
 ---
 # <a name="planning-federation-server-proxy-placement"></a>フェデレーション サーバー プロキシの配置の計画
 

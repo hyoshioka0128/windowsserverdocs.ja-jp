@@ -1,23 +1,23 @@
 ---
 title: HGS の証明書を取得する
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: f4b4d1a8-bf6d-4881-9150-ddeca8b48038
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 09/25/2019
-ms.openlocfilehash: e8f4a3696ec5096281ba1ffd130aa97004530cc1
-ms.sourcegitcommit: de71970be7d81b95610a0977c12d456c3917c331
+ms.openlocfilehash: da1ae4bacd5a6b2e38b22930aacf06f65b16bb29
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71940733"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856535"
 ---
 # <a name="obtain-certificates-for-hgs"></a>HGS の証明書を取得する
 
->適用対象:Windows Server 2019、Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: windows server 2019、Windows Server (半期チャネル)、Windows Server 2016
 
 HGS を展開するときに、シールドされた VM を起動するために必要な機密情報を保護するために使用される署名証明書と暗号化証明書を入力するよう求められます。
 これらの証明書は HGS から離脱されることはなく、実行しているホストが正常であることがわかっている場合にのみ、シールドされた VM キーの暗号化解除に使用されます。
@@ -37,10 +37,10 @@ HGS を展開するときに、シールドされた VM を起動するために
 ------------------------------|----------------
 暗号化プロバイダー               | 任意のキー格納プロバイダー (KSP)。 従来の暗号化サービスプロバイダー (Csp) はサポートされて**いません**。
 キーアルゴリズム                 | RSA
-最小キーサイズ              | 2048ビット
-署名アルゴリズム           | 推奨:SHA256
+最小キー サイズ              | 2048 ビット
+署名アルゴリズム           | 推奨: SHA256
 キー使用法                     | デジタル署名*とデータの*暗号化
-拡張キー使用法            | サーバー認証
+拡張キー使用法            | サーバーの認証
 キー更新ポリシー            | 同じキーで更新します。 異なるキーを使用して HGS 証明書を更新すると、シールドされた Vm を起動できなくなります。
 サブジェクト名                  | 推奨: 会社の名前または web アドレス。 この情報は、シールドデータファイルウィザードで VM の所有者に表示されます。
 
@@ -74,14 +74,14 @@ Remove-Item $encCert.PSPath
 
 ## <a name="request-an-ssl-certificate"></a>SSL 証明書を要求する
 
-Hyper-v ホストと HGS の間で送信されるすべてのキーと機密情報はメッセージレベルで暗号化されます。つまり、情報は HGS または Hyper-v に知られているキーを使用して暗号化されるため、だれかがネットワークトラフィックをスニッフィングしてキーを盗むことを防ぐことができます。Vm に対して。
+Hyper-v ホストと HGS の間で送信されるすべてのキーと機密情報はメッセージレベルで暗号化されます。つまり、この情報は、HGS または Hyper-v に知られているキーを使用して暗号化されるので、だれかがネットワークトラフィックをスニッフィングして Vm にキーを盗むことを防ぐことができます。
 ただし、コンプライアンス reqiurements がある場合、または Hyper-v と HGS 間のすべての通信を暗号化する場合は、トランスポートレベルですべてのデータを暗号化する SSL 証明書を使用して HGS を構成することができます。
 
 Hyper-v ホストと HGS ノードはどちらも、指定した SSL 証明書を信頼する必要があるため、エンタープライズ証明機関から SSL 証明書を要求することをお勧めします。 証明書を要求するときは、次のものを指定してください。
 
 SSL 証明書のプロパティ | 必須の値
 -------------------------|---------------
-サブジェクト名             | HGS クラスターの名前 (分散ネットワーク名または仮想コンピューターオブジェクトの FQDN と呼ばれます)。 これは、`Initialize-HgsServer` と HGS ドメイン名に指定された HGS サービス名を連結したものになります。
+サブジェクト名             | HGS クラスターの名前 (分散ネットワーク名または仮想コンピューターオブジェクトの FQDN と呼ばれます)。 これは `Initialize-HgsServer` に提供される HGS サービス名と HGS ドメイン名を連結したものになります。
 サブジェクトの別名 | 別の DNS 名を使用して HGS クラスターに接続する場合は (たとえば、ロードバランサーの背後にある場合)、証明書要求の SAN フィールドにこれらの DNS 名を含めてください。
 
 HGS サーバーを初期化するときにこの証明書を指定するためのオプションについては、「[最初の hgs ノードの構成](guarded-fabric-initialize-hgs.md)」を対象としています。

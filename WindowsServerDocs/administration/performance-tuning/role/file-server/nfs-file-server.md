@@ -5,18 +5,18 @@ ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
 author: phstee
-ms.author: RoopeshB, NedPyle
+ms.author: roopeshb, nedpyle
 ms.date: 10/16/2017
-ms.openlocfilehash: 07e5005c1bc38e791e847c8965cbc9a6c0ac96f4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9bee396532c3319e43d10012e098533495cf0b03
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355181"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851855"
 ---
 # <a name="performance-tuning-nfs-file-servers"></a>NFS ファイルサーバーのパフォーマンスチューニング
 
-## <a href="" id="servicesnfs"></a>NFS 用サービスモデル
+## <a name="services-for-nfs-model"></a><a href="" id="servicesnfs"></a>NFS 用サービスモデル
 
 
 次のセクションでは、クライアントとサーバー間の通信用の Microsoft サービス for Network File System (NFS) モデルについて説明します。 NFS v2 と NFS v3 は、最も広く展開されているバージョンのプロトコルであるため、MaxConcurrentConnectionsPerIp を除くすべてのレジストリキーは NFS v2 と NFS v3 にのみ適用されます。
@@ -53,7 +53,7 @@ Microsoft Services for NFS は、Windows および UNIX 環境が混在してい
     HKLM\System\CurrentControlSet\Services\NfsServer\Parameters\RdWrHandleLifeTime
     ```
 
-    既定は 5 です。 このパラメーターは、ファイルハンドルキャッシュ内の NFS キャッシュエントリの有効期間を制御します。 パラメーターは、関連付けられている NTFS ファイルハンドルを持つキャッシュエントリを参照します。 実際の有効期間は、RdWrHandleLifeTime と RdWrThreadSleepTime を乗算した値とほぼ同じです。 最小値は1、最大値は60です。
+    既定値は 5 です。 このパラメーターは、ファイルハンドルキャッシュ内の NFS キャッシュエントリの有効期間を制御します。 パラメーターは、関連付けられている NTFS ファイルハンドルを持つキャッシュエントリを参照します。 実際の有効期間は、RdWrHandleLifeTime と RdWrThreadSleepTime を乗算した値とほぼ同じです。 最小値は1、最大値は60です。
 
 -   **Rdwrシャード Andlelifetime**
 
@@ -61,7 +61,7 @@ Microsoft Services for NFS は、Windows および UNIX 環境が混在してい
     HKLM\System\CurrentControlSet\Services\NfsServer\Parameters\RdWrNfsHandleLifeTime
     ```
 
-    既定は 5 です。 このパラメーターは、ファイルハンドルキャッシュ内の NFS キャッシュエントリの有効期間を制御します。 パラメーターは、NTFS ファイルハンドルが関連付けられていないキャッシュエントリを参照します。 NFS 用サービスは、ファイルシステムでハンドルを開いたままにして、ファイルのファイル属性を格納するためにこれらのキャッシュエントリを使用します。 実際の有効期間は、RdwrRdWrThreadSleepTime Shandlelifetime とを乗算した値とほぼ同じです。 最小値は1、最大値は60です。
+    既定値は 5 です。 このパラメーターは、ファイルハンドルキャッシュ内の NFS キャッシュエントリの有効期間を制御します。 パラメーターは、NTFS ファイルハンドルが関連付けられていないキャッシュエントリを参照します。 NFS 用サービスは、ファイルシステムでハンドルを開いたままにして、ファイルのファイル属性を格納するためにこれらのキャッシュエントリを使用します。 実際の有効期間は、RdwrRdWrThreadSleepTime Shandlelifetime とを乗算した値とほぼ同じです。 最小値は1、最大値は60です。
 
 -   **RdWrNfsReadHandlesLifeTime**
 
@@ -69,7 +69,7 @@ Microsoft Services for NFS は、Windows および UNIX 環境が混在してい
     HKLM\System\CurrentControlSet\Services\NfsServer\Parameters\RdWrNfsReadHandlesLifeTime
     ```
 
-    既定は 5 です。 このパラメーターは、ファイルハンドルキャッシュ内の NFS 読み取りキャッシュエントリの有効期間を制御します。 実際の有効期間は、RdWrNfsReadHandlesLifeTime と RdWrThreadSleepTime を乗算した値とほぼ同じです。 最小値は1、最大値は60です。
+    既定値は 5 です。 このパラメーターは、ファイルハンドルキャッシュ内の NFS 読み取りキャッシュエントリの有効期間を制御します。 実際の有効期間は、RdWrNfsReadHandlesLifeTime と RdWrThreadSleepTime を乗算した値とほぼ同じです。 最小値は1、最大値は60です。
 
 -   **RdWrThreadSleepTime**
 
@@ -77,7 +77,7 @@ Microsoft Services for NFS は、Windows および UNIX 環境が混在してい
     HKLM\System\CurrentControlSet\Services\NfsServer\Parameters\RdWrThreadSleepTime
     ```
 
-    既定は 5 です。 このパラメーターは、ファイルハンドルキャッシュでクリーンアップスレッドを実行するまでの待機時間を制御します。 値はティック単位であり、非決定的です。 ティックは約100ナノ秒に相当します。 最小値は1、最大値は60です。
+    既定値は 5 です。 このパラメーターは、ファイルハンドルキャッシュでクリーンアップスレッドを実行するまでの待機時間を制御します。 値はティック単位であり、非決定的です。 ティックは約100ナノ秒に相当します。 最小値は1、最大値は60です。
 
 -   **FileHandleCacheSizeinMB**
 

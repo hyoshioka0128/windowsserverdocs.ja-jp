@@ -1,24 +1,20 @@
 ---
 title: mapadmin
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Windows コマンドに関するトピック * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b17332c7-8622-4223-9c43-2fb9cf4d992d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fc4b76c1989298ea83c480b9c838ce0fc18fef5f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5ea60f4d9753ed90c0d13ee48289b011aeafe6b0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71373759"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80839675"
 ---
 # <a name="mapadmin"></a>mapadmin
 
@@ -57,19 +53,19 @@ mapadmin [<computer>] [-u <user> [-p <password>]] listdomainmaps
 -p &lt;パスワード&gt; ユーザーのパスワードを指定します。 \- **U**オプションを指定しても **-p**オプションを省略した場合、ユーザーのパスワードの入力を求められます。
 **Mapadmin**が実行する特定のアクションは、指定するコマンド引数によって異なります。
 
-## <a name="parameters"></a>パラメーター
-### <a name="start"></a>スタート
+### <a name="parameters"></a>パラメーター
+### <a name="start"></a>始点
 ユーザー名マッピングサービスを開始します。
 
 ### <a name="stop"></a>stop
 ユーザー名マッピングサービスを停止します。
 
-### <a name="config"></a>構成
+### <a name="config"></a>config
 ユーザー名マッピングの全般設定を指定します。 このコマンド引数では、次のオプションを使用できます。 **-r &lt;dddd&gt;:&lt;hh&gt;:&lt;mm&gt;** -日、時間、分単位で WINDOWS および NIS データベースから更新する更新間隔を指定します。 最小間隔は5分です。
 **-i {yes | no}** -単純なマッピングをオン (**はい**) またはオフ (**いいえ**) にします。 既定では、単純なマッピングはオンになっています。
 **[追加]** : ユーザーまたはグループの新しいマッピングを作成します。 このコマンド引数では、次のオプションを使用できます。
 
-|構成方法|定義|
+|オプション|Definition|
 |-----|-------|
 |-wu &lt;名&gt;|新しいマッピングを作成する Windows ユーザーの名前を指定します。|
 |-uu &lt;名前&gt;|新しいマッピングを作成する UNIX ユーザーの名前を指定します。|
@@ -79,7 +75,7 @@ mapadmin [<computer>] [-u <user> [-p <password>]] listdomainmaps
 
 **setprimary** -複数のマッピングを持つ UNIX ユーザーまたはグループのプライマリマッピングであるマッピングを指定します。 このコマンド引数では、次のオプションを使用できます。
 
-|構成方法|定義|
+|オプション|Definition|
 |-----|-------|
 |-wu &lt;名&gt;|プライマリマッピングの Windows ユーザーを指定します。 ユーザーに対して複数のマッピングが存在する場合は、 **-uu**オプションを使用してプライマリマッピングを指定します。|
 |-uu &lt;名前&gt;|プライマリマッピングの UNIX ユーザーを指定します。|
@@ -88,7 +84,7 @@ mapadmin [<computer>] [-u <user> [-p <password>]] listdomainmaps
 
 **削除**-ユーザーまたはグループのマッピングを削除します。 このコマンド引数には、次のオプションを使用できます。
 
-|構成方法|定義|
+|オプション|Definition|
 |-----|-------|
 |-wu &lt;ユーザー&gt;|マッピングを削除する Windows ユーザー &lt;*Windowsdomain&gt;\\&lt;ユーザー名&gt;* として指定されます。 **-Wu**または **-uu**オプションのいずれかまたは両方を指定する必要があります。 両方のオプションを指定すると、2つのオプションによって識別される特定のマッピングが削除されます。 **-Wu**オプションのみを指定すると、指定したユーザーのすべてのマッピングが削除されます。|
 |-wg &lt;グループ&gt;|マッピングが削除される Windows グループ &lt;WindowsDomain&gt;\\&lt;groupname&gt;として指定されます。 **-Wg**または **-ug**オプションのいずれかまたは両方を指定する必要があります。 両方のオプションを指定すると、2つのオプションによって識別される特定のマッピングが削除されます。 **-Wg**オプションのみを指定すると、指定したグループのすべてのマッピングが削除されます。|
@@ -97,7 +93,7 @@ mapadmin [<computer>] [-u <user> [-p <password>]] listdomainmaps
 
 **リスト**-ユーザーとグループのマッピングに関する情報を表示します。 このコマンド引数では、次のオプションを使用できます。
 
-|構成方法|定義|
+|オプション|Definition|
 |-----|-------|
 |-すべて|ユーザーとグループの単純なマッピングと高度なマッピングの両方を一覧表示します。|
 |-シンプル|すべての単純なマップされたユーザーとグループを一覧表示します。|
@@ -111,7 +107,7 @@ mapadmin [<computer>] [-u <user> [-p <password>]] listdomainmaps
 **復元**-構成データとマッピングデータを、 **backup** command 引数を使用して作成されたファイル (&lt;filename&gt;) のデータに置き換えます。
 **adddomainmap** -Windows ドメインと NIS ドメイン、またはパスワードとグループファイルの間に単純なマップを追加します。 このコマンド引数には、次のオプションを使用できます。
 
-|構成方法|定義|
+|オプション|Definition|
 |-----|-------|
 |-d &lt;WindowsDomain&gt;|マップする Windows ドメインを指定します。|
 |-y &lt;Nis ドメイン&gt;|マップする NIS ドメインを指定します。&lt;br/&gt;&lt;br/&gt; **-n** &lt;nis サーバー&gt; **-y**オプションで指定された nis ドメインの Nis サーバーを指定します。|
@@ -119,7 +115,7 @@ mapadmin [<computer>] [-u <user> [-p <password>]] listdomainmaps
 
 **removedomainmap** -Windows ドメインと NIS ドメインとの間の単純なマップを削除します。 このコマンド引数には、次のオプションと引数を使用できます。
 
-|構成方法|定義|
+|オプション|Definition|
 |-----|-------|
 |-d &lt;WindowsDomain&gt;|削除するマップの Windows ドメインを指定します。|
 |-y &lt;Nis ドメイン&gt;|削除するマップの NIS ドメインを指定します。|
@@ -136,4 +132,4 @@ mapadmin [<computer>] [-u <user> [-p <password>]] listdomainmaps
 -   UNIX グループの場合は、&lt;Nis ドメイン&gt;\\&lt;groupname&gt;、&lt;groupname&gt;@&lt;Nis ドメイン&gt;、&lt;groupname&gt;@PCNFS、または PCNFS\\&lt;groupname の形式を使用し&gt;
 
 ## <a name="additional-references"></a>その他の参照情報
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

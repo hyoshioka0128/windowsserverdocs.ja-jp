@@ -1,64 +1,63 @@
 ---
-title: 仮想ハード_ディスクのパフォーマンス履歴
+title: バーチャルハードディスクのパフォーマンス履歴
 ms.author: cosdar
-ms.manager: eldenc
+manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 02/09/2018
-Keywords: 記憶域スペース ダイレクト
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a0d8d132b6a5ff42cbe78a22c67dd9fec397184
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d917c2d75c1e4078438b94e8aa4a6f921019af5a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59880403"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856165"
 ---
-# <a name="performance-history-for-virtual-hard-disks"></a>仮想ハード_ディスクのパフォーマンス履歴
+# <a name="performance-history-for-virtual-hard-disks"></a>バーチャルハードディスクのパフォーマンス履歴
 
-> 適用先:Windows Server Insider Preview
+> 適用対象: Windows Server 2019
 
-このサブ トピックの[記憶域スペース ダイレクトのパフォーマンスの履歴](performance-history.md)仮想ハード_ディスク (VHD) ファイルの収集されたパフォーマンスの履歴の詳細について説明します。 パフォーマンスの履歴は、実行中のクラスター化された仮想マシンに接続された VHD をすべて使用できます。 パフォーマンス履歴が、共有 VHDX ファイルの使用可能なことはできません、VHD および VHDX の両方の形式の使用可能です。
+[記憶域スペースダイレクトのパフォーマンス履歴](performance-history.md)のこのサブトピックでは、仮想ハードディスク (VHD) ファイルについて収集されるパフォーマンス履歴の詳細について説明します。 パフォーマンス履歴は、実行中のクラスター化された仮想マシンに接続されているすべての VHD で利用できます。 パフォーマンス履歴は、VHD 形式と VHDX 形式の両方で使用できますが、共有 VHDX ファイルでは使用できません。
 
    > [!NOTE]
-   > コレクションの VHD ファイルを新しく作成または移動を開始するまで数分かかる場合があります。
+   > 新しく作成または移動した VHD ファイルの収集が開始されるまでに数分かかる場合があります。
 
-## <a name="series-names-and-units"></a>系列名とユニット
+## <a name="series-names-and-units"></a>系列の名前と単位
 
-対象となるすべての仮想ハード ディスクではこれらの系列が収集されます。
+これらのシリーズは、対象となるすべての仮想ハードディスクについて収集されます。
 
-| シリーズ                    | Unit             |
+| 系列                    | Unit             |
 |---------------------------|------------------|
-| `vhd.iops.read`           | 1 秒あたり       |
-| `vhd.iops.write`          | 1 秒あたり       |
-| `vhd.iops.total`          | 1 秒あたり       |
-| `vhd.throughput.read`     | 1 秒あたりのバイト数 |
-| `vhd.throughput.write`    | 1 秒あたりのバイト数 |
-| `vhd.throughput.total`    | 1 秒あたりのバイト数 |
-| `vhd.latency.average`     | 秒数          |
-| `vhd.size.current`        | バイト数            |
-| `vhd.size.maximum`        | バイト数            |
+| `vhd.iops.read`           | 1秒あたり       |
+| `vhd.iops.write`          | 1秒あたり       |
+| `vhd.iops.total`          | 1秒あたり       |
+| `vhd.throughput.read`     | 1秒あたりのバイト数 |
+| `vhd.throughput.write`    | 1秒あたりのバイト数 |
+| `vhd.throughput.total`    | 1秒あたりのバイト数 |
+| `vhd.latency.average`     | 秒          |
+| `vhd.size.current`        | バイト            |
+| `vhd.size.maximum`        | バイト            |
 
 ## <a name="how-to-interpret"></a>解釈する方法
 
-| シリーズ                    | 解釈する方法                                                                                                 |
+| 系列                    | 解釈する方法                                                                                                 |
 |---------------------------|------------------------------------------------------------------------------------------------------------------|
-| `vhd.iops.read`           | 仮想ハード_ディスクで完了した 1 秒あたりの読み取り操作の数。                                         |
-| `vhd.iops.write`          | 仮想ハード_ディスクで完了した 1 秒あたりの書き込み操作の数。                                        |
-| `vhd.iops.total`          | 合計数は、読み取りまたは書き込み、バーチャル ハード_ディスクで完了した 1 秒あたりの操作。                          |
-| `vhd.throughput.read`     | 1 秒あたりの仮想ハード ディスクから読み取られたデータの量。                                                     |
-| `vhd.throughput.write`    | 1 秒あたりの仮想ハード ディスクに書き込まれたデータの量。                                                    |
-| `vhd.throughput.total`    | データの読み取りまたは書き込みを 1 秒あたりの仮想ハード_ディスクの合計数量。                                 |
-| `vhd.latency.average`     | 仮想ハード ディスクとの間のすべての操作の平均待機時間。                                              |
-| `vhd.size.current`        | 仮想ハード ディスク、動的に拡張される場合の現在のファイルのサイズ。 固定である場合、系列は収集されません。 |
-| `vhd.size.maximum`        | 仮想ハード ディスク、動的に拡張される場合の最大サイズ。 固定である場合、サイズです。                  |
+| `vhd.iops.read`           | バーチャルハードディスクで1秒間に実行された読み取り操作の数。                                         |
+| `vhd.iops.write`          | バーチャルハードディスクによって1秒あたりに完了した書き込み操作の数。                                        |
+| `vhd.iops.total`          | 仮想ハードディスクによって完了された1秒あたりの読み取りまたは書き込み操作の合計数。                          |
+| `vhd.throughput.read`     | 仮想ハードディスクから読み取られたデータの1秒あたりの数。                                                     |
+| `vhd.throughput.write`    | 1秒あたりに仮想ハードディスクに書き込まれたデータの量。                                                    |
+| `vhd.throughput.total`    | 仮想ハードディスクから読み取った、または1秒あたりに書き込まれたデータの合計量。                                 |
+| `vhd.latency.average`     | バーチャルハードディスクに対するすべての操作の平均待機時間。                                              |
+| `vhd.size.current`        | 動的に拡張する場合は、仮想ハードディスクの現在のファイルサイズ。 固定されている場合、系列は収集されません。 |
+| `vhd.size.maximum`        | 動的に拡張する場合は、仮想ハードディスクの最大サイズ。 固定されている場合、はサイズになります。                  |
 
-## <a name="where-they-come-from"></a>来た
+## <a name="where-they-come-from"></a>どこから来ているか
 
-`iops.*`、 `throughput.*`、および`latency.*`シリーズがから収集された、`Hyper-V Virtual Storage Device`仮想マシンが実行中、VHD または VHDX あたり 1 つのインスタンスをサーバーでパフォーマンス カウンターを設定します。
+`iops.*`、`throughput.*`、および `latency.*` シリーズは、仮想マシンが実行されているサーバー上の `Hyper-V Virtual Storage Device` パフォーマンスカウンターセットから、VHD または VHDX ごとに1つのインスタンスとして収集されます。
 
-| シリーズ                    | ソースのカウンター         |
+| 系列                    | ソースカウンター         |
 |---------------------------|------------------------|
 | `vhd.iops.read`           | `Read Operations/Sec`  |
 | `vhd.iops.write`          | `Write Operations/Sec` |
@@ -69,25 +68,25 @@ ms.locfileid: "59880403"
 | `vhd.latency.average`     | `Latency`              |
 
    > [!NOTE]
-   > カウンターは、サンプリングされなかった、全体の間隔で測定されます。 たとえば、VHD でアクティブでない場合 9 秒が完了すると 30 IOs 10 日の 1 秒間その`vhd.iops.total`この 10 秒間に平均で 1 秒あたりの 3 つの IOs として記録されます。 これにより、そのパフォーマンス履歴がすべてのアクティビティをキャプチャしがノイズに堅牢になりました。
+   > カウンターは、サンプリングされるのではなく、間隔全体にわたって測定されます。 たとえば、VHD が9秒間非アクティブで、30秒以内に 30 Io が完了した場合、その `vhd.iops.total` は、この10秒間に平均で1秒あたり 3 Io として記録されます。 これにより、パフォーマンス履歴がすべてのアクティビティをキャプチャし、ノイズに対して堅牢になります。
 
 ## <a name="usage-in-powershell"></a>PowerShell での使用法
 
-使用して、 [GET-VHD](https://docs.microsoft.com/powershell/module/hyper-v/get-vhd)コマンドレット。
+[GET VHD](https://docs.microsoft.com/powershell/module/hyper-v/get-vhd)コマンドレットを使用します。
 
 ```PowerShell
 Get-VHD <Path> | Get-ClusterPerf
 ```
 
-仮想マシンからすべての VHD のパスを取得します。
+仮想マシンからすべての VHD のパスを取得するには、次のようにします。
 
 ```PowerShell
 (Get-VM <Name>).HardDrives | Select Path
 ```
 
    > [!NOTE]
-   > GET-VHD コマンドレットでは、ファイルのパスを指定する必要があります。 列挙型はサポートしません。
+   > Get VHD コマンドレットを使用するには、ファイルパスを指定する必要があります。 列挙体はサポートされていません。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
-- [記憶域スペース ダイレクトのパフォーマンスの履歴](performance-history.md)
+- [記憶域スペースダイレクトのパフォーマンス履歴](performance-history.md)

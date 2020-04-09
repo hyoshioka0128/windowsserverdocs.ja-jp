@@ -1,7 +1,6 @@
 ---
 ms.assetid: ec26705c-4446-4226-b9b4-b775b642f0f4
 title: フェデレーション サーバー プロキシを配置する場所
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 73e68d03e4f2f76dbaf4a497da551640476d0438
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: beef5fb1cc52b5ed3f4c4eafd1fde6a9523c9260
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407828"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858455"
 ---
 # <a name="where-to-place-a-federation-server-proxy"></a>フェデレーション サーバー プロキシを配置する場所
 

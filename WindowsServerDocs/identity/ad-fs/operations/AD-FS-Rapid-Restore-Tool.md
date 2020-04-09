@@ -1,7 +1,6 @@
 ---
 ms.assetid: 4deff06a-d0ef-4e5a-9701-5911ba667201
 title: AD FS の迅速な復元ツール
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 07/02/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 2570aae52da2925a62dd6c9262af325fb5461fff
-ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
+ms.openlocfilehash: 506734812689a42ec17768652ac715f5c7e24401
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77465266"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858105"
 ---
 # <a name="ad-fs-rapid-restore-tool"></a>AD FS の迅速な復元ツール
 
@@ -79,7 +78,7 @@ import-module 'C:\Program Files (x86)\ADFS Rapid Recreation Tool\ADFSRapidRecrea
 
 - **Backupdkm** -既定の構成で AD FS キーを含む Active Directory DKM コンテナーをバックアップします (自動的に生成されたトークンの署名と暗号化解除の証明書)。 Ad ツールの "ldifde" を使用して、AD コンテナーとそのすべてのサブツリーをエクスポートします。
 
-- -**Storagetype &lt;string&gt;** -ユーザーが使用しようとしているストレージの種類。 "FileSystem" は、ユーザーがバックアップを実行したときに、ユーザーがバックアップの場所 (ファイルシステムまたは) を選択したときに、ユーザーがローカルまたはネットワーク "Azure Azure Storage" 内のフォルダーに保存することを示していることを示します。クラウド. Azure を使用するには、Azure Storage 資格情報をコマンドレットに渡す必要があります。 ストレージ資格情報には、アカウント名とキーが含まれています。 さらに、コンテナー名も渡す必要があります。 コンテナーが存在しない場合は、バックアップ中に作成されます。 ファイルシステムを使用するには、ストレージパスを指定する必要があります。 そのディレクトリでは、バックアップごとに新しいディレクトリが作成されます。 作成される各ディレクトリには、バックアップされたファイルが含まれます。 
+- -**Storagetype &lt;string&gt;** -ユーザーが使用しようとしているストレージの種類。 "FileSystem" は、ユーザーがバックアップを実行したときに、ユーザーがバックアップの場所 (ファイルシステムまたはクラウド) を選択したときに、ローカルまたはネットワーク "Azure Azure Storage" 内のフォルダーに保存することを示します。 Azure を使用するには、Azure Storage 資格情報をコマンドレットに渡す必要があります。 ストレージ資格情報には、アカウント名とキーが含まれています。 さらに、コンテナー名も渡す必要があります。 コンテナーが存在しない場合は、バックアップ中に作成されます。 ファイルシステムを使用するには、ストレージパスを指定する必要があります。 そのディレクトリでは、バックアップごとに新しいディレクトリが作成されます。 作成される各ディレクトリには、バックアップされたファイルが含まれます。 
 
 - **Encryptionpassword &lt;string&gt;** -保存する前にすべてのバックアップファイルを暗号化するために使用されるパスワード
 
@@ -117,7 +116,7 @@ Backup-ADFS -StorageType "Azure" -AzureConnectionCredentials $cred -AzureStorage
 
 ### <a name="backup-the-ad-fs-configuration-without-the-dkm-to-the-file-system"></a>ファイルシステムに DKM を指定せずに AD FS 構成をバックアップする
 
-```powershell   
+```powershell     
 Backup-ADFS -StorageType "FileSystem" -StoragePath "C:\Users\administrator\testExport\" -EncryptionPassword "password" -BackupComment "Clean Install of ADFS (FS)"
 ```
 

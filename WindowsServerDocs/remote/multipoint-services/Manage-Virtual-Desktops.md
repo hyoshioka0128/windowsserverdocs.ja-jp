@@ -1,24 +1,20 @@
 ---
 title: 仮想デスクトップの管理
 description: MultiPoint Services で仮想デスクトップ (VDI) を管理する方法について説明します。
-ms.custom: na
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: fa9ac0ed-47cb-4811-91ff-4fcb62d7858b
 author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 45bb3e98779bc27913c7e675a9c9db7e575d9d72
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 114fde42ca36f9451680066056251bafbe944e56
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71389590"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853465"
 ---
 # <a name="manage-virtual-desktops"></a>仮想デスクトップの管理
 単一コンピューター VDI を使用すると、各*ローカル*multipoint サービスステーションを、ステーションと同じ MultiPoint services コンピューター上の hyper-v 仮想マシン (VM) で実行されている Windows 10 Enterprise ゲストオペレーティングシステムに接続するように構成できます。 これらの仮想デスクトップ ステーションは、Windows サーバー バージョンにインストールできないアプリケーションでカスタマイズすることができます。  
@@ -56,11 +52,11 @@ ms.locfileid: "71389590"
 ## <a name="import-a-virtual-desktop-template"></a>仮想デスクトップ テンプレートをインポートする  
 別の MultiPoint サーバー上に仮想デスクトップ テンプレートを作成した場合は、そのテンプレートを次の手順に従ってインポートすることができます。  
 
-1.  MultiPoint マネージャーを開き、 **[仮想デスクトップ]** タブをクリックします。  
+1.    MultiPoint マネージャーを開き、 **[仮想デスクトップ]** タブをクリックします。  
   
-2.  VDI タスク で、**仮想デスクトップテンプレートのインポート** をクリックします。  
+2.    VDI タスクで、 **[仮想デスクトップ テンプレートのインポート]** をクリックします。  
   
-3.  テンプレートの場所を特定し、インポート対象テンプレートのパスとプレフィックスを定義します。  
+3.    テンプレートの場所を特定し、インポート対象テンプレートのパスとプレフィックスを定義します。  
   
 ## <a name="customize-the-virtual-desktop-template"></a>仮想デスクトップ テンプレートをカスタマイズするには  
 仮想デスクトップ テンプレートを作成したら、それをアプリケーション (ソフトウェア更新プログラム) を使ってカスタマイズし、システム設定を構成できます。   
@@ -76,18 +72,18 @@ ms.locfileid: "71389590"
     > [!NOTE]  
     > MultiPoint Services システムがステーション モードで実行されていない場合、この手順を完了する前にシステムを再起動します。  
   
-2.  左側の\-ウィンドウで、仮想デスクトップテンプレートを選択します。 <プレフィックス –t> という名前になります。  
+2.  左側のウィンドウで仮想デスクトップ テンプレートを選択します。 <プレフィックス –t> という名前になります。  
   
 3.  [タスク] テンプレートで、 **[仮想デスクトップ ステーションを作成する]** をクリックし、 **[OK]** をクリックします。  
   
     仮想デスクトップ ステーションの作成には数分かかります。  
   
     > [!NOTE]  
-    > 現在、ローカルステーションがセッション\-ベースの仮想デスクトップに接続されている場合は、新しく作成された仮想デスクトップステーションのいずれかに接続するために、それらのステーションからログオフする必要があります。  
+    > いずれかのローカル ステーションが現在、セッション ベースの仮想デスクトップに接続されている場合、新しく作成した仮想デスクトップ ステーションに接続するには、ステーションからログオフする必要があります。  
   
 ### <a name="validate-the-newly-created-customized-virtual-station-desktops"></a>新しくカスタマイズ作成した仮想ステーション デスクトップを検証する  
   
-カスタマイズした仮想ステーションデスクトップを検証するには、ローカル管理者アカウントまたはドメインアカウントを使用して1つまたは複数の仮想デスクトップステーションにログオンし、新しい VM\-ベースの仮想デスクトップが正常に機能していることを確認します。  
+カスタマイズした仮想ステーション デスクトップは、検証することができます。そのためには、ローカル管理者アカウントまたはドメイン アカウントのいずれかを利用して 1 つまたは複数の仮想デスクトップ ステーションにログオンし、新しい VM ベースの仮想デスクトップが正常に動作していることを確認します。  
   
 ## <a name="disable-virtual-desktops"></a>仮想デスクトップを無効にする  
   

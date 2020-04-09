@@ -1,19 +1,19 @@
 ---
 title: ホストキーを作成して HGS に追加する
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: a12c8494-388c-4523-8d70-df9400bbc2c0
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 2aea6c8416a0f3af04ad6056c5d09a4d07708eaa
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 664b3cfc1e529fe3591f6477ae0eb0b64e32441a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322014"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856735"
 ---
 # <a name="create-a-host-key-and-add-it-to-hgs"></a>ホストキーを作成して HGS に追加する
 
@@ -24,14 +24,14 @@ ms.locfileid: "79322014"
 
 ## <a name="create-a-host-key"></a>ホストキーを作成する
 
-1.  Hyper-v ホストコンピューターに Windows Server 2019 をインストールします。
-2.  Hyper-v および Host Guardian Hyper-v サポート機能をインストールします。
+1.    Hyper-v ホストコンピューターに Windows Server 2019 をインストールします。
+2.    Hyper-v および Host Guardian Hyper-v サポート機能をインストールします。
 
     ```powershell
     Install-WindowsFeature Hyper-V, HostGuardian -IncludeManagementTools -Restart
     ``` 
 
-3.  ホストキーを自動的に生成するか、既存の証明書を選択します。 カスタム証明書を使用している場合は、少なくとも2048ビットの RSA キー、クライアント認証 EKU、およびデジタル署名キーの使用が必要です。
+3.    ホストキーを自動的に生成するか、既存の証明書を選択します。 カスタム証明書を使用している場合は、少なくとも2048ビットの RSA キー、クライアント認証 EKU、およびデジタル署名キーの使用が必要です。
 
     ```powershell
     Set-HgsClientHostKey
@@ -41,17 +41,17 @@ ms.locfileid: "79322014"
     これは、複数のコンピューターで証明書を共有する場合や、TPM または HSM にバインドされた証明書を使用する場合に便利です。 次に、TPM バインド証明書を作成する例を示します。これにより、秘密キーが盗まれて別のコンピューターで使用され、TPM 1.2 のみが必要になります。
 
     ```powershell
-    $tpmBoundCert = New-SelfSignedCertificate -Subject “Host Key Attestation ($env:computername)” -Provider “Microsoft Platform Crypto Provider”
+    $tpmBoundCert = New-SelfSignedCertificate -Subject "Host Key Attestation ($env:computername)" -Provider "Microsoft Platform Crypto Provider"
     Set-HgsClientHostKey -Thumbprint $tpmBoundCert.Thumbprint
     ```
 
-4.  HGS サーバーに提供するキーの公開半分を取得します。 次のコマンドレットを使用するか、証明書が別の場所に格納されている場合は、キーの公開半分を含む .cer を指定します。 HGS では公開キーの保存と検証のみを行っていることに注意してください。証明書の情報は保持されず、証明書チェーンや有効期限も検証されません。
+4.    HGS サーバーに提供するキーの公開半分を取得します。 次のコマンドレットを使用するか、証明書が別の場所に格納されている場合は、キーの公開半分を含む .cer を指定します。 HGS では公開キーの保存と検証のみを行っていることに注意してください。証明書の情報は保持されず、証明書チェーンや有効期限も検証されません。
 
     ```powershell
     Get-HgsClientHostKey -Path "C:\temp\$env:hostname-HostKey.cer"
     ```
 
-5.  .Cer ファイルを HGS サーバーにコピーします。
+5.    .Cer ファイルを HGS サーバーにコピーします。
 
 ## <a name="add-the-host-key-to-the-attestation-service"></a>構成証明サービスにホストキーを追加する
 

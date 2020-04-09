@@ -1,24 +1,20 @@
 ---
 title: mklink
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Windows コマンドに関するトピック * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0ce4df22-2dbc-48fc-9c16-b721ae85f857
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b7a5f9b819f16d058feb1dee74a8408ed174e04c
-ms.sourcegitcommit: b7f55949f166554614f581c9ddcef5a82fa00625
+ms.openlocfilehash: 3d6328d972b07b1bebd272788b896fd491e47380
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72588049"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80839555"
 ---
 # <a name="mklink"></a>mklink
 シンボリック リンクを作成します。
@@ -31,18 +27,18 @@ ms.locfileid: "72588049"
 mklink [[/d] | [/h] | [/j]] <Link> <Target>
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
 |パラメーター|説明|
 |---------|-----------|
 |/d|ディレクトリのシンボリック リンクを作成します。 既定では、 **mklink** ファイルのシンボリック リンクを作成します。|
 |/h|シンボリック リンクの代わりにハード リンクを作成します。|
 |/j|ディレクトリの分岐点を作成します。|
-|\<Link >|作成されるシンボリック リンクの名前を指定します。|
-|\<Target >|新しいシンボリック リンクを指すパス (相対パスまたは絶対パス) を指定します。|
-|/?|コマンド プロンプトにヘルプを表示します。|
+|\<リンク >|作成されるシンボリック リンクの名前を指定します。|
+|\<ターゲット >|新しいシンボリック リンクを指すパス (相対パスまたは絶対パス) を指定します。|
+|/?|コマンド プロンプトでヘルプを表示します。|
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a><a name=BKMK_examples></a>例
 
 次の例では、MyFolder という名前のシンボリックリンクと、ルートディレクトリから \Users\User1\Documents ディレクトリへのファイルの作成と削除、およびディレクトリ内のファイルの例を示します。
 ```

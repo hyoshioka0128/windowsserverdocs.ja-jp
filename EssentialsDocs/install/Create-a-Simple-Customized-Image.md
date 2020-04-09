@@ -1,23 +1,19 @@
 ---
 title: 単純なカスタマイズ イメージの作成
 description: Windows Server Essentials の使用方法について説明します。
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 29f9a09f-e4e8-476d-ada1-ab9202a670d7
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 74a1729f9445710b6b9d279f1603295eff2a5d25
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 1c3c47a9cab8e08768cef265ff823d383eda4a74
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80312136"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80818355"
 ---
 # <a name="create-a-simple-customized-image"></a>単純なカスタマイズ イメージの作成
 

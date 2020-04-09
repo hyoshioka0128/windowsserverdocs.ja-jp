@@ -1,24 +1,20 @@
 ---
 title: showmount
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: マウントされたディレクトリを表示する showmount の Windows コマンドに関するトピック。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a6dd562e-e3bd-4ee6-be3b-6d29e29fd20e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e1d197072db93130de880b5ec52d1875720b1d26
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6fa61d47bb14cf21d93beec0a6e9257b9f66737b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383914"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80834225"
 ---
 # <a name="showmount"></a>showmount
 

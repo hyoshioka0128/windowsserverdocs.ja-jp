@@ -1,23 +1,23 @@
 ---
 title: Linux のシールドされた VM テンプレートディスクを作成する
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: d0e1d4fb-97fc-4389-9421-c869ba532944
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 66d5f70f747a6209f2856afde58b6f486ea597f8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1a6325a5d8e931f1e62c83ba4013d94760e39f86
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386708"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856795"
 ---
 # <a name="create-a-linux-shielded-vm-template-disk"></a>Linux のシールドされた VM テンプレートディスクを作成する
 
-> 適用先:Windows Server 2019、Windows Server (半期チャネル)、 
+> 適用対象: Windows Server 2019、Windows Server (半期チャネル)、 
 
 このトピックでは、1つまたは複数のテナント Vm のインスタンス化に使用できる Linux のシールドされた Vm のテンプレートディスクを準備する方法について説明します。
 
@@ -72,7 +72,7 @@ Linux のシールドされた VM を準備してテストするには、次の�
 5.  Hyper-v マネージャーを使用して、仮想化サーバーで[外部スイッチを構成](https://docs.microsoft.com/windows-server/virtualization/hyper-v/get-started/create-a-virtual-switch-for-hyper-v-virtual-machines)し、Linux VM がインターネットにアクセスして更新プログラムを取得できるようにします。
 
 6.  次に、Linux OS をインストールするための新しい仮想マシンを作成します。
-    [操作] ウィンドウで、[**新規** > **バーチャルマシン**] をクリックしてウィザードを起動します。
+    [操作] ウィンドウで、[ > **新規**] をクリックして **[仮想マシン]** をクリックし、ウィザードを起動します。
     "テンプレート化 Linux" などの VM のフレンドリ名を入力し、 **[次へ]** をクリックします。
 
 7.  ウィザードの2ページ目で、 **[第2世代]** を選択して、VM が UEFI ベースのファームウェアプロファイルでプロビジョニングされていることを確認します。
@@ -169,9 +169,9 @@ Linux のシールドされた VM を準備してテストするには、次の�
 Certificate プロパティ | 必須の値
 ---------------------|---------------
 キーアルゴリズム | RSA
-最小キーサイズ | 2048ビット
+最小キー サイズ | 2048 ビット
 署名アルゴリズム | SHA256 (推奨)
-キー使用法 | デジタル署名
+[キーの使用法] | デジタル署名
 
 この証明書の詳細は、テナントがシールドデータファイルを作成し、信頼するディスクを承認しているときに、テナントに表示されます。
 そのため、この証明書は、自分とテナントが相互に信頼している証明機関から取得することが重要です。
@@ -187,7 +187,7 @@ New-SelfSignedCertificate -Subject "CN=Linux Shielded VM Template Disk Signing C
 ### <a name="process-the-disk-with-the-template-disk-wizard-cmdlet"></a>テンプレートディスクウィザードのコマンドレットを使用してディスクを処理する
 
 Windows Server バージョン1709を実行しているコンピューターにテンプレートディスクと証明書をコピーし、次のコマンドを実行して署名プロセスを開始します。
-@No__t-0 パラメーターに指定した VHDX は、更新されたテンプレートディスクで上書きされます。そのため、コマンドを実行する前にコピーを作成してください。
+`-Path` パラメーターに指定した VHDX は、更新されたテンプレートディスクで上書きされます。そのため、コマンドを実行する前にコピーを作成してください。
 
 > [!IMPORTANT]
 > Windows Server 2016 または Windows 10 で利用可能なリモートサーバー管理ツールは、Linux のシールドされた VM テンプレートディスクの準備には使用できません。

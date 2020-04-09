@@ -1,9 +1,7 @@
 ---
 title: Microsoft 製品用 Linux ソフトウェアリポジトリ
 description: このドキュメントでは、Microsoft 製品用の Linux ソフトウェアパッケージを使用してインストールする方法について説明します。
-ms.custom: na
 ms.prod: windows-server
-ms.service: na
 manager: szark
 ms.technology: compute
 ms.topic: article
@@ -11,12 +9,12 @@ ms.assetid: b5387444-595f-4f38-abb7-163a70ea1895
 author: szarkos
 ms.author: szark
 ms.date: 10/16/2017
-ms.openlocfilehash: e32c11dac1d887ba0ae0192bb658f71ece77a42c
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: b57a1e7243f989a4529a666880572a9ceaa57644
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947243"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852065"
 ---
 # <a name="linux-software-repository-for-microsoft-products"></a>Microsoft 製品用 Linux ソフトウェアリポジトリ
 
@@ -30,7 +28,7 @@ Microsoft の Linux ソフトウェアリポジトリは、次の複数のサブ
  - mssql-サーバー-これらのリポジトリには Microsoft SQL Server on Linux のパッケージが含まれています。 [SQL Server on Linux](https://www.microsoft.com/sql-server/sql-server-vnext-including-Linux)も参照してください。
 
 > [!Note]
-> Linux ソフトウェアリポジトリ内のパッケージには、パッケージにあるライセンス条項が適用されます。 パッケージを使用する前に、ライセンス条項をお読みください。 インストールし、パッケージを使用すると、これらの条項に同意したものと見なされます。 ライセンス条項に同意しない場合は、パッケージを使用しないでください。
+> Linux ソフトウェアリポジトリ内のパッケージには、パッケージにあるライセンス条項が適用されます。 パッケージを使用する前に、ライセンス条項をお読みください。 パッケージをインストールして使用すると、これらの条項に同意したものとなります。 ライセンス条項に同意しない場合は、パッケージを使用しないでください。
 
 
 ## <a name="configuring-the-repositories"></a>リポジトリの構成
@@ -63,19 +61,19 @@ Microsoft の Linux ソフトウェアリポジトリは、次の複数のサブ
 
  - Ubuntu 18.04 (Bionic)
 
-        curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+         curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
         sudo apt-add-repository https://packages.microsoft.com/ubuntu/18.04/prod
         sudo apt-get update
 
  - Ubuntu 18.10 (宇宙)
 
-        curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+         curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
         sudo apt-add-repository https://packages.microsoft.com/ubuntu/18.10/prod
         sudo apt-get update
 
  - Ubuntu 19.04 (Disco)
 
-        curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+         curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
         sudo apt-add-repository https://packages.microsoft.com/ubuntu/19.04/prod
         sudo apt-get update
 

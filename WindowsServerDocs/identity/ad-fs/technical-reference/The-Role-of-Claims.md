@@ -1,7 +1,6 @@
 ---
 ms.assetid: 22f53391-8c6a-4873-a1f4-08b4760ea621
 title: 要求の役割
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 851a70bbed606530ca8292f65bc4f776eae77fae
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2477152231489e309fc48fd57d38e09a9bf658eb
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407340"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860175"
 ---
 # <a name="the-role-of-claims"></a>要求の役割
 要求\-ベースの id モデルでは、要求はフェデレーションプロセスで非常に重要な役割を果たします。これは、すべての Web\-ベースの認証および承認要求の結果が決定される主要なコンポーネントです。 このモデルを使用することで、組織はデジタル ID とアクセス権、つまり*要求*をセキュリティや企業の境界を越えて、標準化された方法で安全に提示できるようになります。  
@@ -45,26 +44,26 @@ Active Directory フェデレーションサービス (AD FS) \(AD FS\) のフ�
 詳細については、「[要求パイプラインの役割](The-Role-of-the-Claims-Pipeline.md)」を参照してください。  
   
 ### <a name="how-claims-are-issued"></a>要求の発行  
-要求規則を記述する場合、要求規則の入力方向の要求のソースは、要求プロバイダー信頼または証明書利用者信頼のどちらの規則を記述するかによって異なります。 要求プロバイダー信頼の要求規則を記述する場合、入力方向の要求は、信頼される要求プロバイダーからフェデレーション サービスに送信される要求です。 証明書利用者信頼の規則を記述する場合、入力方向の要求は、該当する要求プロバイダー信頼の要求規則によって出力される要求です。 入力方向と出力方向の要求に関する詳細については、「[要求パイプラインの役割](The-Role-of-the-Claims-Pipeline.md)」および「[要求エンジンの役割](The-Role-of-the-Claims-Engine.md)」を参照してください。  
+要求規則を記述する場合、要求規則の入力方向の要求のソースは、要求プロバイダー信頼または証明書利用者信頼のどちらの規則を記述するかによって異なります。 要求プロバイダー信頼の要求規則を記述する場合、入力方向の要求は、信頼される要求プロバイダーからフェデレーション サービスに送信される要求です。 証明書利用者信頼の要求規則を記述する場合、入力方向の要求は、該当する要求プロバイダー信頼の要求規則によって出力される要求です。 入力方向と出力方向の要求に関する詳細については、「[要求パイプラインの役割](The-Role-of-the-Claims-Pipeline.md)」および「[要求エンジンの役割](The-Role-of-the-Claims-Engine.md)」を参照してください。  
   
 ## <a name="what-are-claim-types"></a>要求の種類とは  
 要求の種類は、要求の値のコンテキストを提供します。 通常、Uniform Resource Identifier \(URI\)として表現されます。 AD FS は任意の要求の種類をサポートでき、既定では次の表の要求の種類で構成されます。  
   
-|名前|説明|URI|  
+|Name|説明|URI|  
 |--------|---------------|-------|  
 |電子メールアドレス\-|ユーザーの電子メールアドレス\-|http:\/\/schemas.xmlsoap.org\/ws\/2005\/05\/id\/要求\/emailaddress|  
 |名|ユーザーの姓名の名|http:\/\/schemas.xmlsoap.org\/ws\/2005\/05\/id\/要求\/givenname|  
-|名前|ユーザーの一意の名前|http:\/\/schemas.xmlsoap.org\/ws\/2005\/05\/id\/要求\/名|  
+|Name|ユーザーの一意の名前|http:\/\/schemas.xmlsoap.org\/ws\/2005\/05\/id\/要求\/名|  
 |UPN|ユーザーのユーザープリンシパル名 \(UPN\)|http:\/\/schemas.xmlsoap.org\/ws\/2005\/05\/id\/要求\/upn|  
 |共通名|ユーザーの共通名|http:\/\/schemas.xmlsoap.org\/要求\/CommonName|  
 |AD FS 1.x E\-メールアドレス|AD FS 1.1 または ADFS 1.0 と相互運用するときのユーザーの電子\-メールアドレス|http:\/\/schemas.xmlsoap.org\/要求\/EmailAddress|  
 |グループ|ユーザーが属するグループ|http:\/\/schemas.xmlsoap.org\/要求\/グループ|  
 |AD FS 1.x UPN|AD FS 1.1 または AD FS 1.0 と相互運用するときのユーザーの UPN|http:\/\/schemas.xmlsoap.org\/要求\/UPN|  
-|ロール|ユーザーの役割|http:\/\/schemas.microsoft.com\/ws\/2008\/06\/id\/要求\/ロール|  
+|役割|ユーザーの役割|http:\/\/schemas.microsoft.com\/ws\/2008\/06\/id\/要求\/ロール|  
 |姓|ユーザーの姓名の姓|http:\/\/schemas.xmlsoap.org\/ws\/2005\/05\/id\/要求\/姓|  
 |PPID|ユーザーの個人識別子|http:\/\/schemas.xmlsoap.org\/ws\/2005\/05\/id\/要求\/privatepersonalidentifier|  
 |名前識別子|ユーザーの SAML 名前識別子|http:\/\/schemas.xmlsoap.org\/ws\/2005\/05\/id\/要求\/nameidentifier|  
-|認証方法|ユーザー認証に使用される方法|http:\/\/schemas.microsoft.com\/ws\/2008\/06\/id\/要求\/authenticationmethod|  
+|認証メソッド|ユーザー認証に使用される方法|http:\/\/schemas.microsoft.com\/ws\/2008\/06\/id\/要求\/authenticationmethod|  
 |拒否専用グループ SID|拒否\-ユーザーのグループ SID|http:\/\/schemas.xmlsoap.org\/ws\/2005\/05\/identity\/claim\/denyonlysid|  
 |拒否専用プライマリ SID|拒否\-ユーザーのプライマリ SID|http:\/\/schemas.microsoft.com\/ws\/2008\/06\/id\/要求\/denyonlyprimarysid|  
 |拒否専用プライマリ グループ SID|ユーザーのプライマリグループ SID のみを拒否\-|http:\/\/schemas.microsoft.com\/ws\/2008\/06\/id\/要求\/denyonlyprimarygroupsid|  

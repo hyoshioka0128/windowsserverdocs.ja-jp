@@ -1,7 +1,6 @@
 ---
 ms.assetid: 8ce6e7c4-cf8e-4b55-980c-048fea28d50f
 title: SQL Server を使用するフェデレーション サーバー ファーム
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b299ddc823b3fbbd5818f96202e3c01faf0762d7
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 9f8375ffb73ff6be290b534d59e6ce5c8a7be27b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79323104"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858065"
 ---
 # <a name="ad-fs-requirements"></a>AD FS の要件
 
@@ -48,7 +47,7 @@ AD FS を展開するときに従う必要があるさまざまな要件を次�
   
 -   [アクセス許可の要件](AD-FS-Requirements.md#BKMK_13)  
   
-## <a name="BKMK_1"></a>証明書の要件  
+## <a name="certificate-requirements"></a><a name="BKMK_1"></a>証明書の要件  
 証明書は、フェデレーションサーバー、Web アプリケーションプロキシ、要求\-対応アプリケーション、および Web クライアント間の通信をセキュリティで保護するうえで最も重要な役割を果たします。 証明書の要件は、このセクションで説明するように、フェデレーションサーバーまたはプロキシコンピューターを設定するかどうかによって異なります。  
   
 **フェデレーションサーバーの証明書**  
@@ -70,7 +69,7 @@ AD FS を展開するときに従う必要があるさまざまな要件を次�
 > [!NOTE]  
 > CA から証明書を受け取ったら、すべての証明書がローカル コンピューターの個人証明書ストアにインポートされていることを確認してください。 証明書 MMC スナップ\-で個人用ストアに証明書をインポートできます。  
   
-## <a name="BKMK_2"></a>ハードウェア要件  
+## <a name="hardware-requirements"></a><a name="BKMK_2"></a>ハードウェア要件  
 Windows Server 2012 R2 の AD FS フェデレーションサーバーには、次の最小および推奨ハードウェア要件が適用されます。  
   
 ||||  
@@ -80,14 +79,14 @@ Windows Server 2012 R2 の AD FS フェデレーションサーバーには、�
 |RAM|512 MB|4 GB|  
 |ディスク領域|32 GB|100 GB|  
   
-## <a name="BKMK_3"></a>ソフトウェア要件  
-次の AD FS 要件は、Windows Server® 2012 R2 オペレーティングシステムに組み込まれているサーバーの機能を対象としています。  
+## <a name="software-requirements"></a><a name="BKMK_3"></a>ソフトウェア要件  
+次の AD FS 要件は、Windows Server&reg; 2012 R2 オペレーティングシステムに組み込まれているサーバーの機能を対象としています。  
   
--   エクストラネットアクセスの場合は、Windows Server® 2012 R2 リモートアクセスサーバーの役割の一部 \- Web アプリケーションプロキシ役割サービスを展開する必要があります。 以前のバージョンのフェデレーションサーバープロキシは、Windows Server® 2012 R2 の AD FS ではサポートされていません。  
+-   エクストラネットアクセスの場合は、Windows Server&reg; 2012 R2 リモートアクセスサーバーの役割の一部 \- Web アプリケーションプロキシ役割サービスを展開する必要があります。 以前のバージョンのフェデレーションサーバープロキシは、Windows Server&reg; 2012 R2 の AD FS ではサポートされていません。  
   
 -   フェデレーション サーバーと Web アプリケーション プロキシのロール サービスを同じコンピューターにインストールすることはできません。  
   
-## <a name="BKMK_4"></a>AD DS の要件  
+## <a name="ad-ds-requirements"></a><a name="BKMK_4"></a>AD DS の要件  
 **ドメイン コントローラーの要件**  
   
 すべてのユーザードメインおよび AD FS サーバーが参加しているドメインのドメインコントローラーは、Windows Server 2008 以降を実行している必要があります。  
@@ -134,7 +133,7 @@ AD FS 機能のほとんどは、正常に動作するために機能\-レベル
   
 -   AD FS サービスアカウントは、AD FS サービスに対して認証を行うユーザーを含むすべてのユーザードメインで信頼されている必要があります。  
   
-## <a name="BKMK_5"></a>構成データベースの要件  
+## <a name="configuration-database-requirements"></a><a name="BKMK_5"></a>構成データベースの要件  
 次に、構成ストアの種類に基づいて適用される要件と制限を示します。  
   
 **WID**  
@@ -157,7 +156,7 @@ WID ファームを使用する場合の概要を次の表に示します。  �
   
 Windows Server 2012 R2 の AD FS については SQL Server 2008 以降を使用できます。  
   
-## <a name="BKMK_6"></a>ブラウザーの要件  
+## <a name="browser-requirements"></a><a name="BKMK_6"></a>ブラウザーの要件  
 ブラウザーまたはブラウザー コントロールを介して AD FS 認証を実行する場合、ブラウザーは次の要件を満たしている必要があります。  
   
 -   JavaScript を有効にする必要があります  
@@ -187,12 +186,12 @@ Windows Server 2012 R2 の AD FS については SQL Server 2008 以降を使用
   
 AD FS では、クライアントコンピューターに保存する必要があるセッション\-ベースおよび永続的な cookie が作成されます。これは、\-サインイン\-、サインアウト、\-SSO \(でのシングルサイン\)、およびその他の機能を提供するために、クライアントコンピューターに保存する必要があります。 したがって、クライアント ブラウザーは Cookie を受け入れるように設定されている必要があります。 認証に使用される cookie は、常に、セキュリティで保護されたハイパーテキスト転送プロトコル \(HTTPS\) セッション cookie によって作成され、元のサーバー用に書き込まれます。 クライアント ブラウザーがこの Cookie を受け入れるように設定されていない場合は、AD FS が正しく動作することができません。 永続的 Cookie は、ユーザーが選択したクレーム プロバイダーを記憶するために使用されます。 これらを無効にするには、構成ファイルの構成設定を使用して、ページ内の AD FS に署名\-します。 セキュリティ上の理由により、TLS\/SSL のサポートが必要です。  
   
-## <a name="BKMK_extranet"></a>エクストラネットの要件  
+## <a name="extranet-requirements"></a><a name="BKMK_extranet"></a>エクストラネットの要件  
 AD FS サービスへのエクストラネットアクセスを提供するには、Web アプリケーションプロキシ役割サービスを、セキュリティで保護された方法で AD FS サービスに対してプロキシするエクストラネット接続ロールとしてデプロイする必要があります。 これにより、AD FS サービスエンドポイントを分離できるだけでなく、インターネットから送信される要求から\) トークン署名証明書などのすべてのセキュリティ \(キーを分離することができます。 さらに、ソフトエクストラネットのアカウントロックアウトなどの機能では、Web アプリケーションプロキシを使用する必要があります。 Web アプリケーションプロキシの詳細については、「 [Web アプリケーションプロキシ](https://technet.microsoft.com/library/dn584107.aspx)」を参照してください。  
   
 エクストラネットアクセスに\-サードパーティプロキシを使用する場合、この\-サードパーティプロキシでは、 [http:\/\/download.microsoft.com\/download\/9\/5\/E\/95EF66AF\-9026\-4BB0\-A41D\-A4F81802D92C\/% 5bMS\-ADFSPIP %5 d. .pdf](https://download.microsoft.com/download/9/5/E/95EF66AF-9026-4BB0-A41D-A4F81802D92C/%5bMS-ADFSPIP%5d.pdf)に定義されているプロトコルをサポートする必要があります。  
   
-## <a name="BKMK_7"></a>ネットワークの要件  
+## <a name="network-requirements"></a><a name="BKMK_7"></a>ネットワークの要件  
 組織に AD FS を正常に展開するには、次のネットワークサービスを適切に構成することが重要です。  
   
 **企業ファイアウォールの構成**  
@@ -220,7 +219,7 @@ Web アプリケーションプロキシ用に企業 DNS を構成する方法�
   
 NLB を使用してクラスターの IP アドレスまたはクラスターの FQDN を構成する方法の詳細については、「 [http:\/\/go.microsoft.com\/fwlink\/?」の「クラスターパラメーターの指定」を参照してください。LinkId\=75282](https://go.microsoft.com/fwlink/?LinkId=75282)。  
   
-## <a name="BKMK_8"></a>属性ストアの要件  
+## <a name="attribute-store-requirements"></a><a name="BKMK_8"></a>属性ストアの要件  
 AD FS では、ユーザーを認証し、それらのユーザーのセキュリティ要求を抽出するために、少なくとも1つの属性ストアを使用する必要があります。 AD FS がサポートする属性ストアの一覧については、「[属性ストアの役割](../../ad-fs/technical-reference/The-Role-of-Attribute-Stores.md)」を参照してください。  
   
 > [!NOTE]  
@@ -256,7 +255,7 @@ Windows Server 2012 R2 の AD FS を正常に動作させるには、SQL Server 
   
 カスタム属性ストアを使用する場合は、接続文字列も構成する必要があります。 その場合は、カスタム属性ストアへの接続を有効にする任意のカスタムコードを入力できます。 この場合の接続文字列は、名前\/値のペアのセットであり、カスタム属性ストアの開発者によって実装されていると解釈されます。カスタム属性ストアの開発と使用の詳細については、「[属性ストアの概要](https://go.microsoft.com/fwlink/?LinkId=190782)」を参照してください。  
   
-## <a name="BKMK_9"></a>アプリケーションの要件  
+## <a name="application-requirements"></a><a name="BKMK_9"></a>アプリケーションの要件  
 AD FS は、次のプロトコルを使用する信頼性情報\-対応アプリケーションをサポートしています。  
   
 -   WS\-フェデレーション  
@@ -269,7 +268,7 @@ AD FS は、次のプロトコルを使用する信頼性情報\-対応アプリ
   
 AD FS は、Web アプリケーションプロキシでサポートされている、\-以外の要求\-対応アプリケーションの認証と承認もサポートします。  
   
-## <a name="BKMK_10"></a>認証の要件  
+## <a name="authentication-requirements"></a><a name="BKMK_10"></a>認証の要件  
 **AD DS 認証 \(プライマリ認証\)**  
   
 イントラネットアクセスの場合、AD DS の次の標準的な認証メカニズムがサポートされています。  
@@ -322,7 +321,7 @@ MFA の詳細については、「[機密性の高いアプリケーションの
   
 AD FS は、エンドユーザーがデバイスに参加するときに、デバイス登録サービスによってプロビジョニングされた証明書を使用したデバイス認証をサポートします。  
   
-## <a name="BKMK_11"></a>Workplace join の要件  
+## <a name="workplace-join-requirements"></a><a name="BKMK_11"></a>Workplace join の要件  
 エンドユーザーは、AD FS を使用して自分のデバイスを組織に参加させることができます。 これは AD FS のデバイス登録サービスでサポートされています。 その結果、エンドユーザーは AD FS でサポートされているアプリケーション全体で SSO の利点を享受できます。 また、管理者は、組織に社内参加しているデバイスに対してのみアプリケーションへのアクセスを制限することで、リスクを管理できます。 次に、このシナリオを有効にするための要件を示します。  
   
 -   AD FS は Windows 8.1 および iOS 5\+ デバイスの workplace join をサポートしています  
@@ -331,7 +330,7 @@ AD FS は、エンドユーザーがデバイスに参加するときに、デ�
   
 -   AD FS サービスの SSL 証明書のサブジェクト代替名には、enterpriseregistration.corp.contoso.com のように、組織の UPN\) サフィックスと共に、ユーザープリンシパル名 \(UPN を含む値 enterpriseregistration が含まれている必要があります。  
   
-## <a name="BKMK_12"></a>暗号化の要件  
+## <a name="cryptography-requirements"></a><a name="BKMK_12"></a>暗号化の要件  
 次の表に、AD FS トークン署名、トークン暗号化\/復号化機能に関する追加の暗号化サポート情報を示します。  
   
 ||||  
@@ -347,10 +346,10 @@ AD FS は、エンドユーザーがデバイスに参加するときに、デ�
 |Aes256keywrap) \- [http:\/\/www.w3.org\/2001\/04\/xmlenc\#kw\-aes256](http://www.w3.org/2001/04/xmlenc#kw-aes256)|256|セキュリティトークンを暗号化する対称キーを暗号化するためにサポートされているアルゴリズム。|  
 |RsaV15KeyWrap \- [http:\/\/www.w3.org\/2001\/04\/xmlenc\#rsa\-1\_5](http://www.w3.org/2001/04/xmlenc#rsa-1_5)|1024|セキュリティトークンを暗号化する対称キーを暗号化するためにサポートされているアルゴリズム。|  
 |Rsaoaepkeywrap) \- [http:\/\/www.w3.org\/2001\/04\/xmlenc\#rsa\-oaep\-rsa-oaep-mgf1p](http://www.w3.org/2001/04/xmlenc#rsa-oaep-mgf1p)|1024|既定値です。 セキュリティトークンを暗号化する対称キーを暗号化するためにサポートされているアルゴリズム。|  
-|SHA1\-[http:\/\/www.w3.org\/PICS\/DSig\/SHA1\_1\_0 .html](http://www.w3.org/PICS/DSig/SHA1_1_0.html)|N\/A|アーティファクト SourceId の生成時に AD FS サーバーによって使用されます。このシナリオでは、STS は SAML 2.0 標準\) の推奨事項に従って \(SHA1 を使用して、アーティファクト sourceiD の短い160ビット値を作成します。<br /><br />また、ADFS web エージェント \(従来のコンポーネントは、"最終更新" 時の値の変更を識別して、STS から情報を更新するタイミングを認識するように、WS2003 のタイムフレーム\) からのレガシコンポーネントを使用します。|  
-|SHA1withRSA\-<br /><br />[http:\/\/www.w3.org\/PICS\/DSig\/RSA\-SHA1\_1\_0 .html](http://www.w3.org/PICS/DSig/RSA-SHA1_1_0.html)|N\/A|AD FS サーバーが SAML AuthenticationRequest の署名を検証する場合、アーティファクト解決要求または応答に署名する場合、トークン\-署名証明書を作成する場合に使用します。<br /><br />このような場合、SHA256 は既定値であり、証明書利用者\) パートナー \(が SHA256 をサポートできず、SHA1 を使用する必要がある場合にのみ、SHA1 が使用されます。|  
+|SHA1\-[http:\/\/www.w3.org\/PICS\/DSig\/SHA1\_1\_0 .html](http://www.w3.org/PICS/DSig/SHA1_1_0.html)|N\/A|アーティファクト SourceId の生成時に AD FS サーバーによって使用されます。このシナリオでは、STS は SAML 2.0 標準\) の推奨事項に従って \(SHA1 を使用して、アーティファクト sourceiD の短い160ビット値を作成します。<p>また、ADFS web エージェント \(従来のコンポーネントは、"最終更新" 時の値の変更を識別して、STS から情報を更新するタイミングを認識するように、WS2003 のタイムフレーム\) からのレガシコンポーネントを使用します。|  
+|SHA1withRSA\-<p>[http:\/\/www.w3.org\/PICS\/DSig\/RSA\-SHA1\_1\_0 .html](http://www.w3.org/PICS/DSig/RSA-SHA1_1_0.html)|N\/A|AD FS サーバーが SAML AuthenticationRequest の署名を検証する場合、アーティファクト解決要求または応答に署名する場合、トークン\-署名証明書を作成する場合に使用します。<p>このような場合、SHA256 は既定値であり、証明書利用者\) パートナー \(が SHA256 をサポートできず、SHA1 を使用する必要がある場合にのみ、SHA1 が使用されます。|  
   
-## <a name="BKMK_13"></a>アクセス許可の要件  
+## <a name="permissions-requirements"></a><a name="BKMK_13"></a>アクセス許可の要件  
 AD FS のインストールと初期構成を実行する管理者は、ローカルドメインのドメイン管理者のアクセス許可を持っている必要があります。つまり、フェデレーションサーバーが参加しているドメイン \(ます。\)  
   
 ## <a name="see-also"></a>参照  

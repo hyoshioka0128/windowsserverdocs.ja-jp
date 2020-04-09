@@ -1,26 +1,22 @@
 ---
-title: mode
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+title: モード
+description: Windows コマンドに関するトピック * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b59b04f2-b41d-42df-b5be-19c3721445b1
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 00dabdbeb7f0665c99714d0a97c7d3c78b22e04e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 528277075f7448c86ca2d660c5e65c59098afbc0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71373610"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80839435"
 ---
-# <a name="mode"></a>mode
+# <a name="mode"></a>モード
 
 
 
@@ -34,7 +30,7 @@ ms.locfileid: "71373610"
 -   [コマンドプロンプトの画面バッファーのサイズを変更するには](#BKMK_5)
 -   [キーボードの速度レートを設定するには](#BKMK_6)
 
-## <a name="BKMK_1"></a>シリアル通信ポートを構成するには
+## <a name="to-configure-a-serial-communications-port"></a><a name=BKMK_1></a>シリアル通信ポートを構成するには
 
 ### <a name="syntax"></a>構文
 
@@ -42,7 +38,7 @@ ms.locfileid: "71373610"
 mode com<M>[:] [baud=<B>] [parity=<P>] [data=<D>] [stop=<S>] [to={on|off}] [xon={on|off}] [odsr={on|off}] [octs={on|off}] [dtr={on|off|hs}] [rts={on|off|hs|tg}] [idsr={on|off}]
 ```
 
-### <a name="parameters"></a>パラメーター
+#### <a name="parameters"></a>パラメーター
 
 |  パラメーター  |                                                                                                                                                                                     説明                                                                                                                                                                                     |
 |-------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -51,16 +47,16 @@ mode com<M>[:] [baud=<B>] [parity=<P>] [data=<D>] [stop=<S>] [to={on|off}] [xon=
 | パリティ =\<P > |                              システムがパリティ ビットを使用して、送信エラーを確認する方法を指定します。 次の表に、 *P*の有効な値を示します。既定値は**e**です。 すべてのコンピューターの値がサポート **m** と **s**します。</br>-   **n** = なし</br>-   **e** = 偶数</br>-   **o** = 奇数</br>-   **m** = マーク</br>-   **s** = 領域                              |
 |  データ =\<D >  |                                                                                                    文字のデータ ビット数を指定します。 有効な値 **d** の範囲は 5 ~ 8 です。 既定値は 7 です。 すべてのコンピューターでは、値 5 および 6 をサポートします。                                                                                                     |
 |  停止 =\<S >  |                                                                                  文字の終わりを定義するストップ ビットの数を指定します。 1、1.5 以降、または 2 です。 ボー レートが 110 の場合は、既定値は 2 です。 それ以外の場合、既定値は 1 です。 すべてのコンピューターには、値 1.5 がサポートされます。                                                                                   |
-|   = {on    |                                                                                                                                                                                        オート                                                                                                                                                                                         |
-|   xon = {on   |                                                                                                                                                                                        オート                                                                                                                                                                                         |
-|  odsr = {on   |                                                                                                                                                                                        オート                                                                                                                                                                                         |
-|  octs = {on   |                                                                                                                                                                                        オート                                                                                                                                                                                         |
+|   = {on    |                                                                                                                                                                                        off}                                                                                                                                                                                         |
+|   xon = {on   |                                                                                                                                                                                        off}                                                                                                                                                                                         |
+|  odsr = {on   |                                                                                                                                                                                        off}                                                                                                                                                                                         |
+|  octs = {on   |                                                                                                                                                                                        off}                                                                                                                                                                                         |
 |   dtr = {on   |                                                                                                                                                                                         オフ                                                                                                                                                                                         |
 |   rts = {on   |                                                                                                                                                                                         オフ                                                                                                                                                                                         |
-|  idsr = {on   |                                                                                                                                                                                        オート                                                                                                                                                                                         |
-|     /?      |                                                                                                                                                                        コマンド プロンプトにヘルプを表示します。                                                                                                                                                                         |
+|  idsr = {on   |                                                                                                                                                                                        off}                                                                                                                                                                                         |
+|     /?      |                                                                                                                                                                        コマンド プロンプトでヘルプを表示します。                                                                                                                                                                         |
 
-## <a name="BKMK_2"></a>すべてのデバイスまたは1つのデバイスの状態を表示するには
+## <a name="to-display-the-status-of-all-devices-or-of-a-single-device"></a><a name=BKMK_2></a>すべてのデバイスまたは1つのデバイスの状態を表示するには
 
 ### <a name="syntax"></a>構文
 
@@ -68,19 +64,19 @@ mode com<M>[:] [baud=<B>] [parity=<P>] [data=<D>] [stop=<S>] [to={on|off}] [xon=
 mode [<Device>] [/status]
 ```
 
-### <a name="parameters"></a>パラメーター
+#### <a name="parameters"></a>パラメーター
 
 |パラメーター|説明|
 |---------|-----------|
 |\<デバイスの >|状態を表示するデバイスの名前を指定します。|
 |/status|リダイレクトされたパラレル プリンターの状態を要求します。 省略することができます、 **/status** コマンド ライン オプションとして **/sta**します。|
-|/?|コマンド プロンプトにヘルプを表示します。|
+|/?|コマンド プロンプトでヘルプを表示します。|
 
-### <a name="remarks"></a>注釈
+### <a name="remarks"></a>コメント
 
 パラメーターを指定せずに使用する場合 **モード** 、システムにインストールされているすべてのデバイスの状態を表示します。
 
-## <a name="BKMK_3"></a>パラレルポートからシリアル通信ポートに出力をリダイレクトするには
+## <a name="to-redirect-output-from-a-parallel-port-to-a-serial-communications-port"></a><a name=BKMK_3></a>パラレルポートからシリアル通信ポートに出力をリダイレクトするには
 
 ### <a name="syntax"></a>構文
 
@@ -88,15 +84,15 @@ mode [<Device>] [/status]
 mode lpt<N>[:]=com<M>[:]
 ```
 
-### <a name="parameters"></a>パラメーター
+#### <a name="parameters"></a>パラメーター
 
 |パラメーター|説明|
 |---------|-----------|
 |lpt\<N > [:]|必須。 パラレル ポートを指定します。 有効な値 *N* の範囲は 1 ~ 3 です。|
 |com\<M > [:]|必須。 シリアル ポートを指定します。 有効な値 *M* の範囲は 1 ~ 4 です。|
-|/?|コマンド プロンプトにヘルプを表示します。|
+|/?|コマンド プロンプトでヘルプを表示します。|
 
-### <a name="remarks"></a>注釈
+### <a name="remarks"></a>コメント
 
 印刷をリダイレクトするには、Administrators グループのメンバーがあります。
 
@@ -115,7 +111,7 @@ mode lpt1
 ```
 このコマンドは、COM1 LPT1 から、ファイルのリダイレクトを防止します。
 
-## <a name="BKMK_4"></a>コンソールのコードページの数を選択、更新、または表示するには
+## <a name="to-select-refresh-or-display-the-numbers-of-the-code-pages-for-the-console"></a><a name=BKMK_4></a>コンソールのコードページの数を選択、更新、または表示するには
 
 ### <a name="syntax"></a>構文
 
@@ -124,7 +120,7 @@ mode <Device> codepage select=<YYY>
 mode <Device> codepage [/status]
 ```
 
-### <a name="parameters"></a>パラメーター
+#### <a name="parameters"></a>パラメーター
 
 |パラメーター|説明|
 |---------|-----------|
@@ -133,9 +129,9 @@ mode <Device> codepage [/status]
 |\<YYY >|必須。 選択するコード ページの数を指定します。 以下の一覧を使用可能なページおよび国/地域や言語各コードです。</br>437: 米国</br>850: 多言語 (ラテン I)</br>852: スラブ語 (ラテン II)</br>855: キリル語 (ロシア)</br>857: トルコ語</br>860: ポルトガル語</br>861: アイスランド語</br>863: カナダ-フランス語</br>865: 北欧</br>866: ロシア語</br>869: モダン ギリシャ語|
 |コード ページ|必須。 表示、コードの数ページ (存在する場合)、指定されたデバイスで選択したです。|
 |/status|指定されたデバイス用に選択された現在のコード ページの数を表示します。 簡略化できます **/status** に **/sta**します。 指定するかどうか **/status**, 、**モード コードページ** 、指定されたデバイスの選択されているコード ページの数が表示されます。|
-|/?|コマンド プロンプトにヘルプを表示します。|
+|/?|コマンド プロンプトでヘルプを表示します。|
 
-## <a name="BKMK_5"></a>コマンドプロンプトの画面バッファーのサイズを変更するには
+## <a name="to-change-the-size-of-the-command-prompt-screen-buffer"></a><a name=BKMK_5></a>コマンドプロンプトの画面バッファーのサイズを変更するには
 
 ### <a name="syntax"></a>構文
 
@@ -143,16 +139,16 @@ mode <Device> codepage [/status]
 mode con[:] [cols=<C>] [lines=<N>]
 ```
 
-### <a name="parameters"></a>パラメーター
+#### <a name="parameters"></a>パラメーター
 
 |パラメーター|説明|
 |---------|-----------|
 |con [:]|必須。 コマンド プロンプト ウィンドウに、変更が適用されることを示します。|
 |cols =\<C >|コマンド プロンプト画面バッファーで列の数を指定します。|
 |行 =\<N >|コマンド プロンプトの画面バッファー行の数を指定します。|
-|/?|コマンド プロンプトにヘルプを表示します。|
+|/?|コマンド プロンプトでヘルプを表示します。|
 
-## <a name="BKMK_6"></a>キーボードの速度レートを設定するには
+## <a name="to-set-the-keyboard-typematic-rate"></a><a name=BKMK_6></a>キーボードの速度レートを設定するには
 
 ### <a name="syntax"></a>構文
 
@@ -160,16 +156,16 @@ mode con[:] [cols=<C>] [lines=<N>]
 mode con[:] [rate=<R> delay=<D>]
 ```
 
-### <a name="parameters"></a>パラメーター
+#### <a name="parameters"></a>パラメーター
 
 |パラメーター|説明|
 |---------|-----------|
 |con [:]|必須。 キーボードを指します。|
 |rate =\<R >|キーを押し続けたときに、画面に文字が繰り返されますレートを指定します。|
 |delay =\<D >|キーを押した、前に文字の出力に、キーを押しながら後までの経過時間を指定します。|
-|/?|コマンド プロンプトにヘルプを表示します。|
+|/?|コマンド プロンプトでヘルプを表示します。|
 
-### <a name="remarks"></a>注釈
+### <a name="remarks"></a>コメント
 
 - キーボードの速度とは、その文字のキーを押し続けたときに、文字が繰り返しレートです。 キーボードの速度には、2 つのコンポーネント、速度と遅延があります。 一部のキーボードでは、このコマンドは認識されません。
 - 使用して **率 =** <em>R</em>
@@ -179,6 +175,6 @@ mode con[:] [rate=<R> delay=<D>]
 
   有効な値 *D* は 1、2、3、および 4 (2 つ目表す 0.25、0.50、0.75、および 1)。 既定値は 2 です。 遅延時間を設定する場合は、速度も設定する必要があります。
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

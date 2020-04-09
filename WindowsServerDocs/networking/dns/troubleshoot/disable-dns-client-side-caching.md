@@ -2,18 +2,17 @@
 title: DNS クライアントでの DNS クライアント側のキャッシュを無効にする
 description: この記事では、dns クライアントで DNS クライアント側のキャッシュを無効にする方法について説明します。
 manager: dcscontentpm
-ms.prod: ''
 ms.technology: networking-dns
 ms.topic: article
 ms.author: delhan
 ms.date: 8/8/2019
 author: Deland-Han
-ms.openlocfilehash: 51a9dbfd05402a9d018aec3bfea8a5c89e9e5d5e
-ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
+ms.openlocfilehash: 09af41a544cacb0fd0977847b7bc2e6b0d8a59f7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/18/2020
-ms.locfileid: "76265844"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860075"
 ---
 # <a name="disable-dns-client-side-caching-on-dns-clients"></a>DNS クライアントでの DNS クライアント側のキャッシュを無効にする
 
@@ -52,7 +51,7 @@ ipconfig /displaydns
 ## <a name="using-the-registry-to-control-the-caching-time"></a>レジストリを使用したキャッシュ時間の制御
 
 > [!IMPORTANT]  
-> 慎重にこのセクションの手順に従います。 誤ってレジストリを変更すると、重大な問題が発生する可能性があります。 変更する前に、問題が発生した場合に[復元するためにレジストリをバックアップ](https://support.microsoft.com/help/322756)します。
+> 慎重にこのセクションの手順に従います。 レジストリの変更の方法を誤った場合、深刻な問題が発生することがあります。 変更する前に、問題が発生した場合に[復元するためにレジストリをバックアップ](https://support.microsoft.com/help/322756)します。
 
 正または負の応答がキャッシュされる時間の長さは、次のレジストリキーのエントリの値によって異なります。
 

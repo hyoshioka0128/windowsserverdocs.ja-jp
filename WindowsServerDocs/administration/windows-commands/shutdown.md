@@ -1,28 +1,22 @@
 ---
 title: shutdown
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Windows コマンドのシャットダウンに関するトピックでは、ローカルコンピューターまたはリモートコンピューターを1つずつシャットダウンまたは再起動することができます。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c432f5cf-c5aa-4665-83af-0ec52c87112e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e8a5170fa214d4ed639ff3b817cf949a9f44ebd6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 649695fb8ec936375057cf730eb215047c97e19e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383888"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80834185"
 ---
 # <a name="shutdown"></a>shutdown
-
-
 
 一度に 1 つのローカル コンピューターまたはリモート コンピューターをシャットダウンまたは再起動できます。
 
@@ -31,10 +25,10 @@ ms.locfileid: "71383888"
 ## <a name="syntax"></a>構文
 
 ```
-shutdown [/i | /l | /s | /r | /a | /p | /h | /e] [/f] [/m \\<ComputerName>] [/t <XXX>] [/d [p|u:]<XX>:<YY> [/c "comment"]] 
+shutdown [/i | /l | /s | /r | /a | /p | /h | /e] [/f] [/m \\<ComputerName>] [/t <XXX>] [/d [p|u:]<XX>:<YY> [/c comment]] 
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
 |パラメーター|説明|
 |---------|-----------|
@@ -50,10 +44,10 @@ shutdown [/i | /l | /s | /r | /a | /p | /h | /e] [/f] [/m \\<ComputerName>] [/t 
 |/m \\\\\<ComputerName >|対象のコンピュータを指定します。 は使用できません、 **/l** オプション。|
 |/t \<XXX >|タイムアウト期間または遅延設定 *XXX* 再起動またはシャット ダウンするまでの秒。 これにより、ローカル コンソールに表示する警告です。 0 ~ 600 を指定することができます (秒)。 使用しない場合 **/t**, 、タイムアウト期間は、既定では 30 秒です。|
 |/d [p\|u:]\<XX >:\<YY >|システムの再起動またはシャット ダウンの理由を一覧表示します。 パラメーターの値を次に示します。</br>**p** 再起動またはシャット ダウンが計画されたことを示します。</br>**u** 理由が定義されているユーザーであることを示します。</br>注: **p**または**u**が指定されていない場合、再起動またはシャットダウンは計画されていません。</br>*XX* 主な理由番号 (256 未満の正の整数) を指定します。</br>*YY* マイナー理由番号 (65536 未満の正の整数) を指定します。|
-|/c "\<コメント >"|シャットダウンの理由について詳しいコメントを付けることができます。 使用して最初の理由を提供する必要があります、 **/d** オプション。 コメントは引用符で囲む必要があります。 文字数の上限は 511 文字です。|
+|/c \<コメント >|シャットダウンの理由に関する詳しいコメントを付けることができます。 使用して最初の理由を提供する必要があります、 **/d** オプション。 コメントは引用符で囲む必要があります。 使用できる文字数の上限は 511 文字です。|
 |/?|ローカル コンピューターで定義されているメジャーおよびマイナーな理由の一覧を含むコマンド プロンプトでヘルプを表示します。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
 -   ユーザーを割り当てる必要がある、 **システムをシャット ダウン** シャット ダウン、ローカルまたはリモートにユーザー権限を使用しているコンピューターの管理、 **シャット ダウン** コマンドです。
 -   ユーザーは、Administrators グループのメンバーは、ローカルまたはリモートで管理されるコンピューターの予期しないシャット ダウンに注釈を付けるである必要があります。 対象のコンピューターがドメインに参加している場合、Domain Admins グループのメンバーはこの手順を実行できる可能性があります。 詳しくは、次のトピックをご覧ください。  
@@ -63,17 +57,17 @@ shutdown [/i | /l | /s | /r | /a | /p | /h | /e] [/f] [/m \\<ComputerName>] [/t 
 -   メジャーおよびマイナーの理由コードを指定する場合は、理由を使用する場合、各コンピューターでこれらの理由コードを定義する必要があります。 理由コードがターゲット コンピューターで定義されていない場合、シャット ダウン イベントの追跡ツールは、適切な理由のテキストをログオンできません。
 -   使用して、シャット ダウンが予定されていることを示すために注意してください、 **p:** パラメーター。 省略すると **p:** 、シャット ダウンが計画的なであることを示します。 入力した場合 **p:** 計画外のシャット ダウンの理由コードを続けて、コマンドに含まれる、シャット ダウンします。 逆に、省略すると **p:** し、コマンドを予定されたシャット ダウンの理由コードの種類は、シャット ダウンを実行しません。
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a><a name=BKMK_examples></a>例
 
-強制的に終了し、ローカル コンピューターを再起動の理由で 1 分間の遅延の後にアプリケーションを"アプリケーション: メンテナンス (計画済)"と"という myapp.exe"の種類のコメント。
+アプリケーションを強制的に終了してローカルコンピューターを再起動する理由を次に示します。アプリケーション: メンテナンス (計画済み) とコメントの再構成 myapp.exe の種類:
 ```
-shutdown /r /t 60 /c "Reconfiguring myapp.exe" /f /d p:4:1
+shutdown /r /t 60 /c Reconfiguring myapp.exe /f /d p:4:1
 ```
 同じパラメーターを使用してリモートコンピューター \\\\ServerName を再起動するには、次のように入力します。
 ```
-shutdown /r /m \\servername /t 60 /c "Reconfiguring myapp.exe" /f /d p:4:1
+shutdown /r /m \\servername /t 60 /c Reconfiguring myapp.exe /f /d p:4:1
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

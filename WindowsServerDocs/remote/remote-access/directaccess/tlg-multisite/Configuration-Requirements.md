@@ -2,22 +2,18 @@
 title: 構成要件
 description: このトピックは、「Windows Server 2016 用の DirectAccess マルチサイト展開のテストラボガイド」の一部です。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: aaabdf3b-d926-48d9-9d01-358668da88ba
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 140b6c8b78c696e0e30b8549f4dda8a49ccd0789
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: ba968653f4dfffb6914e688fed21aaab6e015bde
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80310698"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860395"
 ---
 # <a name="configuration-requirements"></a>構成要件
 

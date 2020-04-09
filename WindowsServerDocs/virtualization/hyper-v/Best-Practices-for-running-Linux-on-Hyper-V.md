@@ -2,25 +2,23 @@
 title: HYPER-V で Linux を実行するためのベスト プラクティス
 description: 仮想マシンで Linux を実行するための推奨事項を提供します。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a08648eb-eea0-4e2b-87fb-52bfe8953491
 author: shirgall
 ms.author: kathydav
 ms.date: 3/1/2019
-ms.openlocfilehash: 3488bbc1e295a68befc7044b83379bd65a5f28df
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7baf71af401b8318ccd136fe12d6eb810cf9434e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365572"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853305"
 ---
 # <a name="best-practices-for-running-linux-on-hyper-v"></a>HYPER-V で Linux を実行するためのベスト プラクティス
 
->適用先:Windows Server 2019、Windows Server 2016、Hyper-v Server 2016、Windows Server 2012 R2、Hyper-v Server 2012 R2、Windows Server の2012、Hyper-v Server 2012、Windows Server 2008 R2、Windows 10、Windows 8.1、Windows 8、Windows 7.1、Windows 7
+>適用対象: Windows Server 2019、Windows Server 2016、Hyper-v Server 2016、Windows Server 2012 R2、Hyper-v Server 2012 R2、Windows Server 2012、Hyper-v Server 2012、Windows Server 2008 R2、Windows 10、Windows 8.1、Windows 8、Windows 7.1、Windows 7。
 
 このトピックには、Hyper-v で Linux 仮想マシンを実行するための推奨事項の一覧が含まれています。
 
@@ -51,7 +49,7 @@ PS > New-VHD -Path C:\MyVHDs\test.vhdx -SizeBytes 127GB -Dynamic -BlockSizeBytes
 
 PIT タイマーは第2世代 Virtual Machines には存在しないため、PxE TFTP サーバーへのネットワーク接続が途中で終了し、ブートローダーが Grub 構成を読み取らず、サーバーからカーネルが読み込まれないようにすることができます。
 
-RHEL 6.x では、ここで説明するように、従来の grub v 0.97 EFI ブートローダーを grub2 の代わりに使用できます。 [https://access.redhat.com/documentation/Red_Hat_Enterprise_Linux/6/html/Installation_Guide/s1-netboot-pxe-config-efi.html](https://access.redhat.com/documentation/Red_Hat_Enterprise_Linux/6/html/Installation_Guide/s1-netboot-pxe-config-efi.html)
+RHEL 6.x では、次に示すように、レガシ grub v 0.97 EFI ブートローダーを grub2 の代わりに使用でき[https://access.redhat.com/documentation/Red_Hat_Enterprise_Linux/6/html/Installation_Guide/s1-netboot-pxe-config-efi.html](https://access.redhat.com/documentation/Red_Hat_Enterprise_Linux/6/html/Installation_Guide/s1-netboot-pxe-config-efi.html)ます。
 
 RHEL 6.x 以外の Linux ディストリビューションでは、同様の手順に従って、PxE サーバーから Linux カーネルを読み込むように grub v 0.97 を構成できます。
 
@@ -82,7 +80,7 @@ Linux カーネルには、異なるアルゴリズムで要求を並べ替え�
 
 ## <a name="numa"></a>NUMA
 
-2\.6.37 より前の Linux カーネルバージョンでは、VM サイズが大きい Hyper-v で NUMA をサポートしていません。 この問題は、主に上流の Red Hat 2.6.32 カーネルを使用した古いディストリビューションに影響し、Red Hat Enterprise Linux (RHEL) 6.6 (2.6.32-504) で修正されました。 2\.6.37 より古いカスタムカーネルを実行しているシステム、または2.6.32 より前の RHEL ベースのカーネルを実行しているシステムでは、grub のカーネルコマンドラインでブートパラメーター `numa=off` に設定する必要があります。 詳細については、「 [Red HAT KB 436883](https://access.redhat.com/solutions/436883)」を参照してください。
+2\.6.37 より前の Linux カーネルバージョンでは、VM サイズが大きい Hyper-v で NUMA をサポートしていません。 この問題は、主に上流の Red Hat 2.6.32 カーネルを使用した古いディストリビューションに影響し、Red Hat Enterprise Linux (RHEL) 6.6 (2.6.32-504) で修正されました。 2\.6.37 より古いカスタムカーネルを実行しているシステム、または2.6.32 より前の RHEL ベースのカーネルを実行しているシステムでは、grub のカーネルコマンドラインでブートパラメーター `numa=off` を設定する必要があります。 詳細については、「 [Red HAT KB 436883](https://access.redhat.com/solutions/436883)」を参照してください。
 
 ## <a name="reserve-more-memory-for-kdump"></a>Kdump 用に追加のメモリを予約する
 
@@ -94,7 +92,7 @@ Hyper-v では、ディスク上に存在する可能性のあるパーティシ
 
 VHD または VHDX のサイズを変更した後、管理者は、fdisk や parted などのユーティリティを使用して、パーティション、ボリューム、ファイルシステムの構造を更新し、ディスクのサイズの変化を反映する必要があります。 GUID パーティションテーブル (GPT) を持つ VHD または VHDX のサイズを縮小または拡大すると、パーティション管理ツールを使用してパーティションのレイアウトを確認したときに警告が表示され、管理者は1つ目と2番目の GPT ヘッダーを修正するように警告されます。 この手動の手順は、データ損失なしでも安全に実行できます。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 * [Windows 上の Hyper-v でサポートされている Linux および FreeBSD の仮想マシン](Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)
 

@@ -2,7 +2,7 @@
 title: 記憶域スペース ダイレクトの概要
 ms.prod: windows-server
 ms.author: cosdar
-ms.manager: dongill
+manager: dongill
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
@@ -10,18 +10,18 @@ ms.date: 06/26/2019
 ms.assetid: 8bd0d09a-0421-40a4-b752-40ecb5350ffd
 description: 記憶域スペースダイレクトの概要。内部記憶域を持つサーバーをソフトウェアで定義された記憶域ソリューションにクラスター化できるようにする Windows Server の機能です。
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e47adcebf7da87e9d3c96812f5d7d90ca00601b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b032d286398b3c1719d290ca83da8bbc9c6b9f85
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402841"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859135"
 ---
 # <a name="storage-spaces-direct-overview"></a>記憶域スペース ダイレクトの概要
 
->適用対象:Windows Server 2019、Windows Server 2016
+>適用対象: Windows Server 2019、Windows Server 2016
 
-記憶域スペース ダイレクトは、業界標準のサーバーとローカルで接続されているドライブを使用して、従来の SAN や NAS 配列の何分の 1 かのコストで、可用性と拡張性が高いソフトウェア定義の記憶域を作ります。 収束またはハイパースレッディングアーキテクチャは、調達とデプロイを大幅に簡素化しますが、キャッシュ、ストレージ層、および消去コーディングなどの機能は、RDMA ネットワークや NVMe ドライブなどの最新のハードウェアイノベーションと共に提供されます。優れたの効率とパフォーマンス。
+記憶域スペース ダイレクトは、業界標準のサーバーとローカルで接続されているドライブを使用して、従来の SAN や NAS 配列の何分の 1 かのコストで、可用性と拡張性が高いソフトウェア定義の記憶域を作ります。 収束または集約型アーキテクチャは、調達とデプロイを大幅に簡素化します。一方、キャッシュ、記憶域階層、消去コーディングなどの機能は、RDMA ネットワークや NVMe ドライブなどの最新のハードウェアイノベーションと共に、優れたの効率とパフォーマンスを実現します。
 
 記憶域スペースダイレクトは、Windows Server 2019 Datacenter、Windows Server 2016 Datacenter、および[Windows Server Insider Preview ビルド](https://insider.windows.com/for-business-getting-started-server/)に含まれています。 
 
@@ -33,7 +33,7 @@ ms.locfileid: "71402841"
 | **展開**<br><ul><li>[記憶域スペース ダイレクトの展開](deploy-storage-spaces-direct.md)</li><li>[ボリュームの作成](create-volumes.md)</li><li>[入れ子の回復性](nested-resiliency.md)</li><li>[クォーラムの構成](../../failover-clustering/manage-cluster-quorum.md)</li><li>[記憶域スペース ダイレクト クラスターを Windows Server 2019 にアップグレードする](upgrade-storage-spaces-direct-to-windows-server-2019.md)</li><li>[永続的なメモリの理解とデプロイ](deploy-pmem.md)</li> | **管理**<br><ul><li>[Windows Admin Center による管理](../../manage/windows-admin-center/use/manage-hyper-converged.md)</li><li>[サーバーまたはドライブの追加](add-nodes.md)</li><li>[メンテナンスのためサーバーをオフラインにする](maintain-servers.md)</li><li>[サーバーの削除](remove-servers.md)</li><li>[ボリュームの拡張](resize-volumes.md)</li><li>[ボリュームの削除](delete-volumes.md)</li><li>[ドライブ ファームウェアの更新](../update-firmware.md)</li><li>[パフォーマンス履歴](performance-history.md)</li><li>[ボリュームの割り当てを区切る](delimit-volume-allocation.md)</li><li>[ハイパー収束クラスターでの Azure Monitor の使用](configure-azure-monitor.md)</li> |
 | **トラブルシューティング**<br><ul><li>[トラブルシューティング シナリオ](troubleshooting-storage-spaces.md)</li><li>[正常性状態と動作状況のトラブルシューティング](storage-spaces-states.md)</li><li>[記憶域スペースダイレクトを使用した診断データの収集](data-collection.md)</li><li>[記憶域クラスのメモリの状態の管理](Storage-class-memory-health.md)</li> | **最近のブログ投稿**<br><ul><li>[1370万記憶域スペースダイレクトの IOPS: ハイパー集約型インフラストラクチャの新しい業界レコード](https://blogs.technet.microsoft.com/filecab/2018/10/30/windows-server-2019-and-intel-optane-dc-persistent-memory/)</li><li>[Windows Server 2019 のハイパー集約インフラストラクチャ-カウントダウンクロックが開始されました。](https://blogs.technet.microsoft.com/filecab/2018/10/02/hci-the-countdown-clock-starts-now/)</li><li>[Windows Server サミットによる5つの大きなお知らせ](https://blogs.technet.microsoft.com/filecab/2018/06/27/windows-server-summit-recap)</li><li>[1万記憶域スペースダイレクトクラスターおよびカウントしています...](https://blogs.technet.microsoft.com/filecab/2018/03/27/storage-spaces-direct-momentum/)</li> |
 
-## <a name="videos"></a>ビデオ
+## <a name="videos"></a>Videos
 
 **クイックビデオの概要 (5 分)**
 
@@ -57,7 +57,7 @@ ms.locfileid: "71402841"
 |   -   |   -   |
 | ![シンプルさ](media/storage-spaces-direct-in-windows-server-2016/simplicity-icon.png)   | **簡便性.** Windows Server 2016 を実行する業界標準のサーバーから、最初の記憶域スペース ダイレクト クラスターに移行するまでにかかる時間は 15 分未満です。 System Center ユーザーの場合、1 個のチェックボックスのみで展開が完了します。       |
 | ![優れたのパフォーマンス](media/storage-spaces-direct-in-windows-server-2016/performance-icon.png)   | **優れたパフォーマンス。** 記憶域スペース ダイレクトは、すべてフラッシュでもハイブリッドでも、一貫性があり、低遅延で、[サーバーあたりの混合 4K ランダム IOPS が 150,000 回](https://blogs.technet.microsoft.com/filecab/2016/07/26/storage-iops-update-with-storage-spaces-direct/)を軽々と超えます。これは、ハイパーバイザーが組み込まれているアーキテクチャ、その組み込みの読み取り/書き込みキャッシュ、PCIe バスに直接マウントされた最新の NVMe ドライブのサポートの利点です。      |
-| ![フォールトトレランス](media/storage-spaces-direct-in-windows-server-2016/fault-tolerance-icon.png)   | **フォールトトレランス。** 組み込みの回復機能によって、可用性を維持したまま、ドライブ、サーバー、またはコンポーネントのエラーが処理されます。 [シャーシおよびラックのフォールト トレランス](../../failover-clustering/fault-domains.md)向けに大規模な展開も構成できます。 ハードウェアで障害が発生した場合は、交換するだけで済みます。ソフトウェアは自己修復されるので、複雑な管理手順は必要ありません。       |
+| ![フォールト トレランス](media/storage-spaces-direct-in-windows-server-2016/fault-tolerance-icon.png)   | **フォールトトレランス。** 組み込みの回復機能によって、可用性を維持したまま、ドライブ、サーバー、またはコンポーネントのエラーが処理されます。 [シャーシおよびラックのフォールト トレランス](../../failover-clustering/fault-domains.md)向けに大規模な展開も構成できます。 ハードウェアで障害が発生した場合は、交換するだけで済みます。ソフトウェアは自己修復されるので、複雑な管理手順は必要ありません。       |
 | ![リソースの効率](media/storage-spaces-direct-in-windows-server-2016/efficiency-icon.png)   | **リソースの効率。** イレイジャー コーディングは、ローカル再構築コードや ReFS リアルタイム階層などの独自の新技術で記憶域の効率を最大 2.4x に向上し、そのメリットをハード ディスク ドライブや混合ホット/コールド ワークロードにまで広げています。さらに、CPU 使用量が最小限に抑えられるので、最もリソースが必要な場所、つまり VM にリソースを戻すことができます。       |
 | ![管理状態](media/storage-spaces-direct-in-windows-server-2016/manageability-icon.png)   | **管理の容易性**。 [記憶域 QoS 制御](../storage-qos/storage-qos-overview.md)で、VM ごとの IOPS の下限値と上限値を使用して、負荷が高い VM を監視します。 [ヘルス サービス](../../failover-clustering/health-service-overview.md)は継続的な組み込みの監視機能とアラート機能を提供します。また、新しい API を使用して、高機能でクラスター全体のパフォーマンスおよび容量メトリックを簡単に収集できます。      |
 | ![スケーラビリティ](media/storage-spaces-direct-in-windows-server-2016/scalability-icon.png)   | **スケーラビリティ**。 最大 16 台のサーバー、400 台を超えるドライブで、クラスターあたり最大 1 ペタバイト (1,000 テラバイト) の記憶域を実現できます。 スケール アウトするには、単にドライブを追加するか、サーバーを追加します。記憶域スペース ダイレクトによって新しいドライブが自動的に追加され、使用されるようになります。 記憶域の効率とパフォーマンスは、規模に応じた予測どおりに改善されます。       |
@@ -66,7 +66,7 @@ ms.locfileid: "71402841"
 
 記憶域スペース ダイレクトは、2 つの異なる展開オプション向けに設定されました。
 
-### <a name="converged"></a>コンバージド
+### <a name="converged"></a>収束済み
 
 **異なるクラスターでのストレージとコンピューティング。** コンバージド展開オプションは、"非集約型" とも呼ばれ、記憶域スペース ダイレクト上にスケールアウト ファイル サーバー (SoFS) を重ねることで、SMB 3 ファイル共有上のネットワーク接続記憶域を提供します。 これにより、記憶域クラスターとは独立して計算/ワークロードをスケーリングできるので、サービス プロバイダーや大企業向けの Hyper-V IaaS (サービスとしてのインフラストラクチャ) など、大規模な展開には不可欠です。
 
@@ -104,7 +104,7 @@ ms.locfileid: "71402841"
 
 **クラスターの共有ボリューム。** CSV ファイル システムは、すべての ReFS ボリュームを任意のサーバーからアクセスできる 1 つの名前空間に統合します。そのため、各サーバーに対して、すべてのボリュームはローカルにマウントされているかのように見え、動作します。
 
-**スケールアウトファイルサーバー。** この最後の層は、コンバージド展開の場合にのみ必要です。 Hyper-V を実行する別のクラスターなど、クライアントに対して、ネットワーク上で SMB3 アクセス プロトコルを使用したリモート ファイル アクセスを提供します。実質的に、記憶域スペース ダイレクトをネットワーク接続記憶域 (NAS) に変える機能があります。
+**スケールアウト ファイル サーバー。** この最後の層は、コンバージド展開の場合にのみ必要です。 Hyper-V を実行する別のクラスターなど、クライアントに対して、ネットワーク上で SMB3 アクセス プロトコルを使用したリモート ファイル アクセスを提供します。実質的に、記憶域スペース ダイレクトをネットワーク接続記憶域 (NAS) に変える機能があります。
 
 ## <a name="customer-stories"></a>顧客事例
 
@@ -112,24 +112,24 @@ ms.locfileid: "71402841"
 
 [Microsoft.com/HCI](https://www.microsoft.com/hci)にアクセスして、ストーリーを読み取ります。
 
-[![Grid ロゴのグリッド](media/storage-spaces-direct-in-windows-server-2016/customer-stories.png)](https://www.microsoft.com/hci)
+[顧客のロゴの ![グリッド](media/storage-spaces-direct-in-windows-server-2016/customer-stories.png)](https://www.microsoft.com/hci)
 
 ## <a name="management-tools"></a>管理ツール
 
 記憶域スペースダイレクトの管理や監視には、次のツールを使用できます。
 
-| 名前 | グラフィックまたはコマンドライン | 有料または同梱されていますか? |
+| Name | グラフィックまたはコマンドライン | 有料または同梱されていますか? |
 |-----------------|----------------------------|-------------------|
 | [Windows Admin Center](../../manage/windows-admin-center/overview.md)     | グラフィックス    | 含まれる |
 | サーバーマネージャー & フェールオーバークラスターマネージャー                                 | グラフィックス    | 含まれる |
 | Windows PowerShell                                                        | コマンド ライン | 含まれる |
-| [System Center Virtual Machine Manager (SCVMM)](https://technet.microsoft.com/system-center-docs/vmm/manage/manage-storage-spaces-direct-vmm) <br>& [Operations Manager (SCOM)](https://www.microsoft.com/download/details.aspx?id=54700) | グラフィックス    | 有料     |
+| [System Center Virtual Machine Manager (SCVMM)](https://technet.microsoft.com/system-center-docs/vmm/manage/manage-storage-spaces-direct-vmm) <br>& [Operations Manager (SCOM)](https://www.microsoft.com/download/details.aspx?id=54700) | グラフィックス    | Paid     |
 
 ## <a name="get-started"></a>作業開始
 
 [Microsoft Azure で](https://blogs.technet.microsoft.com/filecab/2016/05/05/s2dazuretp5/)記憶域スペース ダイレクトを試すか、「[Windows Server 評価版ソフトウェア](https://go.microsoft.com/fwlink/?linkid=842602)」から 180 日間ライセンスが有効な Windows Server の評価版をダウンロードします。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [フォールト トレランスと記憶域の効率](storage-spaces-fault-tolerance.md)
 - [記憶域レプリカ](../storage-replica/storage-replica-overview.md)

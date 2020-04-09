@@ -5,16 +5,15 @@ manager: brianlic
 ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
-ms.date: ''
 ms.assetid: 9b3ef3eb-4246-4e0e-8bf1-53224ca5f2f9
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 62bac410d92e63f4f5cb759b04f7a51ef17d18b0
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: aad5fee62e564c91c6ecbf09bc241bf90a8d04e0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80318046"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860415"
 ---
 # <a name="core-network-guidance-for-windows-server"></a>Windows Server のコア ネットワーク ガイド
 

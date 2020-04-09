@@ -1,7 +1,6 @@
 ---
 ms.assetid: 3ea48a72-20a2-4da4-84e4-26b5728513ce
 title: ファイル アクセスの監査の計画
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 25d6e1c3dd3ab0d10f04cef3e88a7671957b51db
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ffe8843f9ace604bc0904ba2d1eaef78d2872b99
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407088"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861165"
 ---
 # <a name="plan-for-file-access-auditing"></a>ファイル アクセスの監査の計画
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 このトピックでは、Windows Server 2012 で導入されたセキュリティ監査の拡張機能と、エンタープライズに動的 Access Control を展開する際に考慮する必要がある新しい監査設定について説明します。 展開する実際の監査ポリシー設定は、コンプライアンス遵守、監視、法的分析、トラブルシューティングなどの目標によって異なります。  
   

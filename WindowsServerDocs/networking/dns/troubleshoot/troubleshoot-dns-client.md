@@ -2,18 +2,17 @@
 title: DNS クライアントのトラブルシューティング
 description: この記事では、クライアント側からの DNS の問題をトラブルシューティングする方法について説明します。
 manager: dcscontentpm
-ms.prod: ''
 ms.technology: networking-dns
 ms.topic: article
 ms.author: delhan
 ms.date: 8/8/2019
 author: Deland-Han
-ms.openlocfilehash: dd34fae73cdcb20a896750e20d4a28f8777a378a
-ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
+ms.openlocfilehash: ffc772bafa0027d516194b2741e7680065c0db4b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/18/2020
-ms.locfileid: "76265774"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860065"
 ---
 # <a name="troubleshooting-dns-clients"></a>DNS クライアントのトラブルシューティング
 
@@ -23,7 +22,7 @@ ms.locfileid: "76265774"
 
 1. クライアントコンピューターで管理者としてコマンドプロンプトウィンドウを開きます。
 
-2. 次に、
+2. 次のコマンドを実行します。
 
    ```cmd
    ipconfig /all
@@ -119,7 +118,7 @@ nslookup app1.corp.contoso.com
 nslookup <external name>
 ```
 
-たとえば次のようになります。 
+例 : 
 ```cmd
 nslookup bing.com
 ```

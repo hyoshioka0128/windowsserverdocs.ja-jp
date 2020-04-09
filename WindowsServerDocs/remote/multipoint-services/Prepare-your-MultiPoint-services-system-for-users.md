@@ -1,24 +1,20 @@
 ---
 title: ユーザー用に Windows MultiPoint Services システムを準備する
 description: MultiPoint Services でのユーザー管理の計画に関するナビゲーショントピック
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e392f423-a64b-4825-91ab-334058721c4d
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.openlocfilehash: 2323e23c91e4e4bdfa98654ccf3ab32b2eb36e53
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4b9bfb245277439ce28c2993534abd817d45eee8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405031"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853365"
 ---
 # <a name="prepare-your-multipoint-services-system-for-users"></a>ユーザー用に MultiPoint Services システムを準備する
 MultiPoint Services をインストールして構成し、追加の構成とハードウェアのセットアップを実行した後、ユーザーにシステムへのアクセスを許可する準備ができました。 ユーザーアカウントを計画して作成する必要があります。 環境によっては、自動ログオン用のステーションを構成し、共有ユーザーアカウントに対して複数のセッションを許可する必要もあります。 また、ユーザーのファイル共有を設定する方法を決める必要があります。 このセクションでは、これらのトピックについて説明します。  

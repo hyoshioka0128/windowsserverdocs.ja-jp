@@ -1,28 +1,22 @@
 ---
 title: sort
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Windows コマンドの並べ替えに関するトピックでは、入力を読み取り、データを並べ替え、結果を画面、ファイル、または別のデバイスに書き込みます。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 77116469-4790-4442-8a21-9fa73b65ef9f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 65b091a6de4f20ce94389ed39f4fe645c72b3560
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 853a9d5dc0928eec78199c8e0d0fe1715ea64808
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383953"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80834085"
 ---
 # <a name="sort"></a>sort
-
-
 
 入力を読み取り、データを並べ替え、結果を画面、ファイル、または別のデバイスに書き込みます。
 
@@ -34,7 +28,7 @@ ms.locfileid: "71383953"
 sort [/r] [/+<N>] [/m <Kilobytes>] [/l <Locale>] [/rec <Characters>] [[<Drive1>:][<Path1>]<FileName1>] [/t [<Drive2>:][<Path2>]] [/o [<Drive3>:][<Path3>]<FileName3>]
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
 |パラメーター|説明|
 |---------|-----------|
@@ -46,9 +40,9 @@ sort [/r] [/+<N>] [/m <Kilobytes>] [/l <Locale>] [/rec <Characters>] [[<Drive1>:
 |[\<Drive1 >:][\<Path1 >]\<FileName1 >|並べ替えるファイルを指定します。 ファイル名が指定されていない場合は、標準入力が並べ替えられます。 入力ファイルを指定する方が、標準入力と同じファイルをリダイレクトするよりも高速です。|
 |/t [\<Drive2 >:] [\<Path2 >]|データがメインメモリに収まりきらない場合に、 **sort**コマンドの作業ストレージを格納するディレクトリのパスを指定します。 既定では、システムの一時ディレクトリが使用されます。|
 |/o [\<Drive3 >:] [\<Path3 >]\<FileName3 >|並べ替えられた入力を格納するファイルを指定します。 指定しない場合、データは標準出力に書き込まれます。 出力ファイルの指定は、標準出力を同じファイルにリダイレクトするよりも高速です。|
-|/?|コマンド プロンプトにヘルプを表示します。|
+|/?|コマンド プロンプトでヘルプを表示します。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
 -   **/+** コマンドラインオプションの使用
 
@@ -60,11 +54,11 @@ sort [/r] [/+<N>] [/m <Kilobytes>] [/l <Locale>] [/rec <Characters>] [[<Drive1>:
     サイズが指定されていない場合の既定の最大メモリサイズは、入力と出力の両方がファイルである場合は使用可能なメインメモリの90%、それ以外の場合はメインメモリの45% です。 既定の設定では、通常、最適なパフォーマンスが得られます。
 -   **/L**コマンドラインオプションの使用
 
-    現在、既定のロケールに代わる唯一の方法は "C" ロケールです。これは自然言語の並べ替えよりも高速です (バイナリエンコーディングに従って文字を並べ替えます)。
+    現時点では、既定のロケールに代わる唯一の方法は C ロケールです。これは自然言語の並べ替えよりも高速です (文字は、バイナリエンコーディングに従って並べ替えられます)。
 -   **Sort**コマンドでのリダイレクトシンボルの使用
 
     パイプ記号 ( **|** ) を使用して、別のコマンドから**並べ替え**コマンドに入力データを送信したり、並べ替えられた出力を別のコマンドに送信したりすることができます。 リダイレクトシンボル ( **<** または **>** ) を使用して、入力ファイルと出力ファイルを指定できます。 (コマンド構文で*FileName1*によって定義されているように) 入力ファイルを直接指定し、 **/o**パラメーターを使用して出力ファイルを指定することにより、(特に大きなファイルを使用した) より高速で効率的な場合があります。
--   大文字と小文字の区別
+-   [大文字と小文字の区別]
 
     **Sort**コマンドでは、大文字と小文字が区別されません。
 -   ファイルサイズの制限
@@ -77,7 +71,7 @@ sort [/r] [/+<N>] [/m <Kilobytes>] [/l <Locale>] [/rec <Characters>] [[<Drive1>:
 
     並べ替えが最大メモリサイズ (既定で設定されるか、または **/m**パラメーターで指定される) 内に収まる場合、並べ替えは1回のパスで実行されます。 それ以外の場合、並べ替えは2つの異なる並べ替えとマージのパスで実行され、両方のパスに使用されるメモリの量は等しいことになります。 2つのパスを実行すると、部分的に並べ替えられたデータがディスク上の一時ファイルに格納されます。 2つのパスで並べ替えを実行するのに十分なメモリがない場合は、実行時エラーが発生します。 実際に使用可能なメモリよりも多くのメモリを指定するために **/m**コマンドラインオプションを使用すると、パフォーマンスが低下したり、実行時エラーが発生したりする可能性があります。
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a><a name=BKMK_examples></a>例
 
 **ファイルの並べ替え**
 
@@ -87,9 +81,9 @@ sort [/r] [/+<N>] [/m <Kilobytes>] [/l <Locale>] [/rec <Characters>] [[<Drive1>:
 
 **コマンドからの出力の並べ替え**
 
-"Jones" というテキストに対して Maillist .txt という名前の大きなファイルを検索し、検索結果を並べ替えるには、パイプ (|) を使用して、次のように**find**コマンドの出力を**sort**コマンドに送信します。
+テキスト Jones の Maillist .txt という名前の大きなファイルを検索し、検索結果を並べ替えるには、パイプ (|) を使用して、次のように**find**コマンドの出力を**sort**コマンドに送信します。
 
-`find "Jones" maillist.txt | sort`
+`find Jones maillist.txt | sort`
 
 コマンドを実行すると、指定したテキストを含む行の並べ替えられたリストが生成されます。
 
@@ -101,6 +95,6 @@ sort [/r] [/+<N>] [/m <Kilobytes>] [/l <Locale>] [/rec <Characters>] [[<Drive1>:
 
 次に、並べ替えに使用するテキストを入力し、各行の最後に enter キーを押します。 テキストの入力が完了したら、CTRL キーを押しながら Z キーを押して、enter キーを押します。 **Sort**コマンドを実行すると、入力したテキストがアルファベット順に並べ替えられて表示されます。
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

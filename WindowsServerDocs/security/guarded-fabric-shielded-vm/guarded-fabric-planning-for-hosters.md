@@ -1,23 +1,23 @@
 ---
 title: ホスト用の保護されたファブリックとシールドされた VM 計画ガイド
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: 854defc8-99f8-4573-82c0-f484e0785859
 manager: dongill
 author: nirb-ms
+ms.author: nirb
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 7e0ffb24f888760df58711a867b7ac0ba2650647
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2e64f8a43318f10db3bfcb604adcef4b0bdc9837
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386527"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856515"
 ---
 # <a name="guarded-fabric-and-shielded-vm-planning-guide-for-hosters"></a>ホスト用の保護されたファブリックとシールドされた VM 計画ガイド
 
->適用対象:Windows Server 2019、Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: windows server 2019、Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックでは、シールドされた仮想マシンをファブリックで実行できるようにするために必要な計画の決定について説明します。 既存の Hyper-v ファブリックをアップグレードするか、新しいファブリックを作成するかにかかわらず、シールドされた Vm は次の2つの主要コンポーネントで構成されます。
 
@@ -26,7 +26,7 @@ ms.locfileid: "71386527"
 
 ![HGS と保護されたホスト](../media/Guarded-Fabric-Shielded-VM/guarded-host-hgs-plus-host-diagram-basic.png)
 
-## <a name="decision-1-trust-level-in-the-fabric"></a>意思決定 #1:ファブリックの信頼レベル
+## <a name="decision-1-trust-level-in-the-fabric"></a>Decision #1: ファブリックの信頼レベル
 
 ホストガーディアンサービスと保護された Hyper-v ホストの実装方法は、主にファブリックで実現することを検討している信頼の強さに依存します。 信頼の強度は、構成証明モードによって管理されます。 相互に排他的な2つのオプションがあります。
 
@@ -50,29 +50,29 @@ ms.locfileid: "71386527"
 
 選択する信頼レベルにより、Hyper-v ホストのハードウェア要件と、ファブリックに適用するポリシーが決まります。 必要に応じて、既存のハードウェアと管理者によって信頼された構成証明を使用して保護されたファブリックをデプロイし、ハードウェアがアップグレードされ、ファブリックのセキュリティを強化する必要がある場合に、TPM によって信頼された構成証明書に変換することができます。
 
-## <a name="decision-2-existing-hyper-v-fabric-versus-a-new-separate-hyper-v-fabric"></a>意思決定 #2:既存の Hyper-v ファブリックと新しい別の Hyper-v ファブリック
+## <a name="decision-2-existing-hyper-v-fabric-versus-a-new-separate-hyper-v-fabric"></a>Decision #2: 既存の Hyper-v ファブリックと新しい個別の Hyper-v ファブリックの比較
 
 既存のファブリック (Hyper-v またはそれ以外) がある場合は、通常の Vm と共にシールドされた Vm を実行するために使用できる可能性が非常に高くなります。 一部のお客様は、シールドされた Vm を既存のツールやファブリックに統合し、他のユーザーはビジネス上の理由でファブリックを分離することを選択しています。
 
 ## <a name="hgs-admin-planning-for-the-host-guardian-service"></a>HGS 管理者によるホストガーディアンサービスの計画
 
-ホストガーディアンサービス (HGS) を、専用の物理サーバー、シールドされた VM、分離された Hyper-v ホスト上の VM (保護されているファブリックから分離)、または別の Azure を使用して論理的に分離された環境に展開します。web.   
+ホストガーディアンサービス (HGS) を、専用の物理サーバー、シールドされた VM、分離された Hyper-v ホスト上の VM (保護対象のファブリックから分離)、または別の Azure サブスクリプションを使用して論理的に分離された環境に展開します。   
 
-| 領域 | 詳細 |
+| エリア | 詳細 |
 |------|---------|
 | インストール要件 | <ul><li>1台のサーバー (高可用性のために推奨される3ノードクラスター)</li><li>フォールバックでは、少なくとも2つの HGS サーバーが必要です</li><li>サーバーは、仮想または物理 (TPM 2.0 を使用する物理サーバーを推奨) のいずれかにすることができます。TPM 1.2 もサポートされています)</li><li>Windows Server 2016 以降の server Core インストール</li><li>ネットワーク回線がファブリックに認識され、HTTP または[フォールバックの構成](guarded-fabric-manage-branch-office.md#fallback-configuration)が可能</li><li>アクセス検証に推奨される HTTPS 証明書</li></ul> |
-| サイズ変更 | 各中間サイズ (8 コア/4 GB) の HGS サーバーノードは、1000の Hyper-v ホストを処理できます。 |
+| サイズの調整 | 各中間サイズ (8 コア/4 GB) の HGS サーバーノードは、1000の Hyper-v ホストを処理できます。 |
 | 管理 | HGS を管理する特定のユーザーを指定します。 ファブリック管理者とは別のものにする必要があります。 比較のために、HGS クラスターは、管理の分離、物理的な展開、および全体的なセキュリティのレベルに関して、証明機関 (CA) と同じ方法で考えることができます。 |
 | ホストガーディアンサービス Active Directory | 既定では、HGS は管理のために独自の内部 Active Directory をインストールします。 これは自己完結型の自己管理型フォレストであり、ファブリックから HGS を分離するために推奨される構成です。<br><br>分離に使用する高い特権を持つ Active Directory フォレストが既にある場合は、HGS の既定のフォレストではなく、そのフォレストを使用することができます。 HGS は、Hyper-v ホストまたはファブリック管理ツールと同じフォレスト内のドメインに参加していないことが重要です。 これにより、ファブリック管理者は HGS を制御できるようになります。 |
-| ディザスター リカバリー | 次の 3 つのオプションがあります。<br><ol><li>各データセンターに個別の HGS クラスターをインストールし、シールドされた Vm をプライマリデータセンターとバックアップデータセンターの両方で実行することを承認します。 これにより、WAN を介してクラスターを拡張する必要がなくなり、指定されたサイトでのみ実行されるようにバーチャルマシンを分離することができます。</li><li>2つ (以上) のデータセンター間の拡張クラスターに HGS をインストールします。 これは、WAN がダウンした場合に回復性を提供しますが、フェールオーバークラスタリングの制限をプッシュします。 ワークロードを1つのサイトに分離することはできません。1つのサイトで実行することが承認されている VM は、他のサイトでも実行できます。</li><li>Hyper-v ホストを別の HGS にフェールオーバーとして登録します。</li></ol>また、常にローカルで回復できるように、すべての HGS の構成をエクスポートしてバックアップする必要があります。 詳細については、「 [HgsServerState](https://docs.microsoft.com/powershell/module/hgsserver/export-hgsserverstate)と[HgsServerState](https://docs.microsoft.com/powershell/module/hgsserver/import-hgsserverstate)」を参照してください。 |
+| ディザスター リカバリー | 3 つのオプションがあります。<br><ol><li>各データセンターに個別の HGS クラスターをインストールし、シールドされた Vm をプライマリデータセンターとバックアップデータセンターの両方で実行することを承認します。 これにより、WAN を介してクラスターを拡張する必要がなくなり、指定されたサイトでのみ実行されるようにバーチャルマシンを分離することができます。</li><li>2つ (以上) のデータセンター間の拡張クラスターに HGS をインストールします。 これは、WAN がダウンした場合に回復性を提供しますが、フェールオーバークラスタリングの制限をプッシュします。 ワークロードを1つのサイトに分離することはできません。1つのサイトで実行することが承認されている VM は、他のサイトでも実行できます。</li><li>Hyper-v ホストを別の HGS にフェールオーバーとして登録します。</li></ol>また、常にローカルで回復できるように、すべての HGS の構成をエクスポートしてバックアップする必要があります。 詳細については、「 [HgsServerState](https://docs.microsoft.com/powershell/module/hgsserver/export-hgsserverstate)と[HgsServerState](https://docs.microsoft.com/powershell/module/hgsserver/import-hgsserverstate)」を参照してください。 |
 | ホストガーディアンサービスキー | ホストガーディアンサービスでは、暗号化キーと署名キーの2つの非対称キーペアが使用されます。これらはそれぞれ SSL 証明書によって表されます。 これらのキーを生成するには、次の2つのオプションがあります。<br><ol><li>内部証明機関–内部 PKI インフラストラクチャを使用してこれらのキーを生成できます。 これは、データセンター環境に適しています。</li><li>公的に信頼された証明機関–公的に信頼された証明機関から取得した一連のキーを使用します。 これは、ホスト側で使用するオプションです。</li></ol>自己署名証明書を使用することはできますが、概念実証ラボ以外の展開シナリオでは推奨されません。<br><br>HGS キーを使用するだけでなく、ホストは "独自のキーを持ち込む" こともできます。テナントは独自のキーを提供できるため、一部のテナント (またはすべてのテナント) は独自の HGS キーを持つことができます。 このオプションは、テナントがキーをアップロードするためのアウトオブバンドプロセスを提供できるホストに適しています。 |
 | ホストガーディアンサービスのキーの保存 | 可能な限り強力なセキュリティを実現するために、HGS キーを作成してハードウェアセキュリティモジュール (HSM) に排他的に保存することをお勧めします。 Hsm を使用していない場合は、HGS サーバーに BitLocker を適用することを強くお勧めします。 |
 
 ## <a name="fabric-admin-planning-for-guarded-hosts"></a>ファブリック管理者による保護されたホストの計画
 
-| 領域 | 詳細 |
+| エリア | 詳細 |
 |------|---------|
-| ハードウェア | <ul><li>ホストキーの構成証明:保護されたホストとして、既存のハードウェアを使用できます。 いくつかの例外があります (ホストが Windows Server 2016 以降の新しいセキュリティ機構を使用できるようにするには、「[互換性のあるハードウェアと Windows server 2016 の仮想化ベースの保護のコードの整合性](guarded-fabric-compatible-hardware-with-virtualization-based-protection-of-code-integrity.md)」を参照してください)。</li><li>TPM-信頼された構成証明:[ハードウェアアシュアランス](https://msdn.microsoft.com/windows/hardware/commercialize/design/compatibility/systems#system-server-assurance)が適用されている任意のハードウェアを、適切に構成されている限り使用できます (「[シールドされた vm に準拠しているサーバー構成」および「コード整合性の仮想化ベースの保護」を参照してください)。](guarded-fabric-compatible-hardware-with-virtualization-based-protection-of-code-integrity.md)特定の構成の場合)。 これには、TPM 2.0、UEFI バージョン 2.3.1 c 以上が含まれます。</li></ul> |
+| ハードウェア | <ul><li>ホストキーの構成証明: 保護されたホストとして、既存のハードウェアを使用できます。 いくつかの例外があります (ホストが Windows Server 2016 以降の新しいセキュリティ機構を使用できるようにするには、「[互換性のあるハードウェアと Windows server 2016 の仮想化ベースの保護のコードの整合性](guarded-fabric-compatible-hardware-with-virtualization-based-protection-of-code-integrity.md)」を参照してください)。</li><li>TPM で信頼された構成証明:[ハードウェアアシュアランス](https://msdn.microsoft.com/windows/hardware/commercialize/design/compatibility/systems#system-server-assurance)が適切に構成されている任意のハードウェアを使用できます (「シールドされた vm に準拠しているサーバー構成」および「特定の構成の[コード整合性の仮想化ベースの保護](guarded-fabric-compatible-hardware-with-virtualization-based-protection-of-code-integrity.md)」を参照してください)。 これには、TPM 2.0、UEFI バージョン 2.3.1 c 以上が含まれます。</li></ul> |
 | OS | Hyper-v ホスト OS には、Server Core オプションを使用することをお勧めします。 |
-| パフォーマンスへの影響 | パフォーマンステストに基づいて、シールドされた Vm とシールドされていない Vm の間で、ほぼ 5% の密度に差があることを想定しています。 これは、特定の Hyper-v ホストで20個のシールドされていない Vm を実行できる場合、19個のシールドされた Vm を実行できることを想定しています。<br><br>一般的なワークロードでサイズ設定を確認してください。 たとえば、密度の差にさらに影響を与える書き込み指向 IO ワークロードを使用した外れ値がある可能性があります。 |
+| パフォーマンスへの影響 | パフォーマンステストに基づいて、シールドされた Vm とシールドされていない Vm の間で、ほぼ5% の密度に差があることを想定しています。 これは、特定の Hyper-v ホストで20個のシールドされていない Vm を実行できる場合、19個のシールドされた Vm を実行できることを想定しています。<br><br>一般的なワークロードでサイズ設定を確認してください。 たとえば、密度の差にさらに影響を与える書き込み指向 IO ワークロードを使用した外れ値がある可能性があります。 |
 | ブランチ オフィスに関する考慮事項 | Windows Server バージョン1709以降では、ブランチオフィスでシールドされた VM としてローカルで実行されている仮想化 HGS サーバーのフォールバック URL を指定できます。 フォールバック URL は、ブランチオフィスがデータセンター内の HGS サーバーへの接続を失ったときに使用できます。 以前のバージョンの Windows Server では、ブランチオフィスで実行されている Hyper-v ホストは、ホストガーディアンサービスに接続して、電源オンまたはシールドされた Vm のライブマイグレーションを行う必要があります。 詳細については、「[ブランチオフィスの考慮事項](guarded-fabric-manage-branch-office.md)」を参照してください。 |

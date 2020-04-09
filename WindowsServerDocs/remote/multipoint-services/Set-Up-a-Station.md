@@ -1,36 +1,32 @@
 ---
 title: ステーションをセットアップする
 description: MultiPoint Services でステーションを設定する方法について説明します。
-ms.custom: na
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: dce05b6c-795e-43b2-9920-026550b873c5
 author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 95a332a3d15e82047b46cc19f168f945cdb334d2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c3d40346402131e64c437da12f1ff89b4eb3f8f3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71389448"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853945"
 ---
 # <a name="set-up-a-station"></a>ステーションをセットアップする
 通常、MultiPoint Services の*ステーション*は、*ステーション ハブ*、マウス、キーボード、およびビデオ モニターで構成されています。 このトピックでは、MultiPoint Services ステーションを作成するためにステーション ハブにハードウェア デバイスを接続する方法について説明します。  
   
 ステーション ハブとは、MultiPoint Services システムのコンピューターに周辺機器を接続するハードウェア デバイスです。 MultiPoint Services では、次の 2 種類のステーション ハブがサポートされています。  
   
--   **USB ハブ:** ユニバーサルシリアルバス2.0 以降の仕様に準拠する汎用のマルチポート USB 拡張ハブ。 通常このようなハブには、コンピューター上の単一の USB ポートに複数の USB デバイスを接続できる、USB ポートが 2つ、4つ、またはそれ以上あります。 USB ハブは、外部電源またはバス供給できる一般的な別々 のデバイスです。 MultiPoint Services のステーション ハブとして使用する場合は、ポートが 4 つ以上あるハブを使用することをお勧めします。  
+-   **USB ハブ:** ユニバーサル シリアル バス 2.0 以上の規格に準拠する汎用のマルチポートの USB 拡張ハブです。 通常このようなハブには、コンピューター上の単一の USB ポートに複数の USB デバイスを接続できる、USB ポートが 2つ、4つ、またはそれ以上あります。 USB ハブは、外部電源またはバス供給できる一般的な別々 のデバイスです。 MultiPoint Servicesのステーション ハブとして使用する場合は、ポートが 4 つ以上あるハブを使用することをお勧めします。  
   
     > [!IMPORTANT]  
     > キーボードとマウス以外の USB デバイスをハブに接続する場合に最適なパフォーマンスを得るには、外部電源のハブを使用することをお勧めします。  
   
--   **多機能ハブ:** USB ポートを介してコンピューターに接続し、ビデオモニターなどのさまざまな USB 以外のデバイスをハブに接続できる拡張ハブ。 多機能ハブでは、特定のハードウェアの製造元によって生成され、デバイス固有ドライバーをインストールする必要があります。  
+-   **多機能ハブ:** を拡張ハブは、USB ポート経由でコンピューターに接続し、さまざまなビデオ モニターを含む、ハブにデバイスを USB 以外の接続が可能です。 多機能ハブでは、特定のハードウェアの製造元によって生成され、デバイス固有ドライバーをインストールする必要があります。  
   
 ステーションを MultiPoint Services システムに追加する場合は、使用するステーション ハードウェアで利用できる十分な数の接続ポートがあることを最初に確認する必要があります。 さらに、適切な数を保護する必要があります *クライアント アクセス ライセンス (Cal)* MultiPoint サービス システムにします。  
   
@@ -81,7 +77,7 @@ ms.locfileid: "71389448"
   
 7.  MultiPoint Services が開始されます。 メッセージが表示されたら、新しいステーションのビデオモニターに表示される指示に従って、デバイスを新しいステーションに*関連付け*ます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [ユーザー セッションを終了する](End-a-User-Session.md)  
 [再起動またはシャットダウンする](Restart-or-Shut-Down.md)  
 [ステーション ハードウェアの管理](Manage-Station-Hardware.md)  

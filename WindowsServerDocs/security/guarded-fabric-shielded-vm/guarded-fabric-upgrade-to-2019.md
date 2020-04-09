@@ -4,18 +4,19 @@ ms.prod: windows-server
 ms.topic: article
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 11/21/2018
-ms.openlocfilehash: 621d4175894bb235475155507a896a251dec0f7e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 50e35939031a74173fb031cf963af97bf8bb6dba
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386336"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856355"
 ---
 # <a name="upgrade-a-guarded-fabric-to-windows-server-2019"></a>Windows Server 2019 への保護されたファブリックのアップグレード
 
-> 適用対象:Windows Server 2019、Windows Server (半期チャネル)、Windows Server 2016
+> 適用対象: windows server 2019、Windows Server (半期チャネル)、Windows Server 2016
 
 この記事では、既存の保護されたファブリックを Windows Server 2016、Windows Server バージョン1709、または Windows Server バージョン1803から Windows Server 2019 にアップグレードするために必要な手順について説明します。
 
@@ -39,8 +40,8 @@ Windows Server 2019 で保護されたファブリックを実行すると、い
 
 |  | WS2016 HGS | WS2019 HGS|
 |---|---|---|
-|**Hyper-v ホストの WS2016** | Supported | サポート<sup>1</sup>|
-|**Hyper-v ホストの WS2019** | サポートされない<sup>2</sup> | Supported|
+|**Hyper-v ホストの WS2016** | サポート対象 | サポート<sup>1</sup>|
+|**Hyper-v ホストの WS2019** | サポートされない<sup>2</sup> | サポート対象|
 
 <sup>1</sup> windows server 2016 ホストは、v1 構成証明プロトコルを使用して、windows SERVER 2019 HGS サーバーに対してのみ証明できます。 V2 構成証明プロトコル (ホストキーの構成証明を含む) でのみ使用できる新機能は、Windows Server 2016 ホストではサポートされていません。
 
@@ -54,8 +55,8 @@ HGS クラスターをアップグレードするには、アップグレード�
 
 HGS クラスターをアップグレードするには、クラスターの各ノードで、一度に1ノードずつ、次の手順を実行します。
 
-1.  管理者特権の PowerShell プロンプトでを実行`Clear-HgsServer`して、クラスターから HGS サーバーを削除します。 このコマンドレットは、HGS のレプリケートされたストア、HGS web サイト、およびノードをフェールオーバークラスターから削除します。
-2.  HGS サーバーがドメインコントローラー (既定の構成) である場合は、を実行し`adprep /forestprep`て`adprep /domainprep` 、OS のアップグレード用にドメインを準備するために、アップグレードする最初のノードでを実行する必要があります。 詳細については、 [Active Directory Domain Services アップグレード](https://docs.microsoft.com/windows-server/identity/ad-ds/deploy/upgrade-domain-controllers#supported-in-place-upgrade-paths)に関するドキュメントを参照してください。
+1.  管理者特権の PowerShell プロンプトで `Clear-HgsServer` を実行して、クラスターから HGS サーバーを削除します。 このコマンドレットは、HGS のレプリケートされたストア、HGS web サイト、およびノードをフェールオーバークラスターから削除します。
+2.  HGS サーバーがドメインコントローラー (既定の構成) である場合は、`adprep /forestprep` を実行し、OS のアップグレード用にドメインを準備するためにアップグレードする最初のノードで `adprep /domainprep` する必要があります。 詳細については、 [Active Directory Domain Services アップグレード](https://docs.microsoft.com/windows-server/identity/ad-ds/deploy/upgrade-domain-controllers#supported-in-place-upgrade-paths)に関するドキュメントを参照してください。
 3.  Windows Server 2019 へ[のインプレースアップグレード](../../get-started-19/install-upgrade-migrate-19.md)を実行します。
 4.  ノードをクラスターに再び参加させるには、 [HgsServer](guarded-fabric-configure-additional-hgs-nodes.md)を実行します。
 
@@ -72,7 +73,7 @@ Hyper-v ホストを Windows Server 2019 にアップグレードする前に、
 1.  サーバーで Windows Defender アプリケーション制御コード整合性ポリシーを使用している場合 (常に TPM 構成証明を使用している場合)、サーバーのアップグレードを試行する前に、ポリシーが監査モードであるか無効になっていることを確認してください。 [WDAC ポリシーを無効にする方法について説明します。](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/disable-windows-defender-application-control-policies)
 2.  [Windows server のアップグレードのコンテンツ](../../upgrade/upgrade-overview.md)に記載されているガイダンスに従って、ホストを windows server 2019 にアップグレードします。 Hyper-v ホストがフェールオーバークラスターの一部である場合は、[クラスターのオペレーティングシステムのローリングアップグレード](../../failover-clustering/Cluster-Operating-System-Rolling-Upgrade.md)を使用することを検討してください。
 3.  Windows Defender Application Control ポリシーを[テストして再度有効](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/audit-windows-defender-application-control-policies)にします (アップグレード前に有効にした場合)。
-4.  を`Get-HgsClientConfiguration`実行して、 **ishostguarded = True**であるかどうかを確認します。これは、ホストが hgs サーバーで構成証明を正常に渡すことを意味します。
+4.  `Get-HgsClientConfiguration` を実行して、 **Ishostguarded = True**であるかどうかを確認します。これは、ホストが hgs サーバーで構成証明を正常に渡すことを意味します。
 5.  TPM 構成証明を使用している場合は、構成証明を成功させるために、アップグレード後に[tpm ベースラインまたはコード整合性ポリシーを再キャプチャ](guarded-fabric-add-host-information-for-tpm-trusted-attestation.md)することが必要になる場合があります。
 6.  ホストでシールドされた Vm の実行をもう一度開始します。
 

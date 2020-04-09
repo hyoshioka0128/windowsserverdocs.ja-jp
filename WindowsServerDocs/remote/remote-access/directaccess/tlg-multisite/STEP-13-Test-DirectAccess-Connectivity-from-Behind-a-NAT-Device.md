@@ -2,22 +2,18 @@
 title: 手順 13 NAT デバイスの背後からの DirectAccess 接続をテストする
 description: このトピックは、「Windows Server 2016 用の DirectAccess マルチサイト展開のテストラボガイド」の一部です。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 796825c3-5e3e-4745-a921-25ab90b95ede
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: a4c944a61c44b9b67831bfd4e2852941e577e6b5
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 9422f3840899edc7dad6b51dd42a95eafb3856a5
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80308781"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860345"
 ---
 # <a name="step-13-test-directaccess-connectivity-from-behind-a-nat-device"></a>手順 13 NAT デバイスの背後からの DirectAccess 接続をテストする
 

@@ -1,28 +1,22 @@
 ---
 title: cipher
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Windows コマンドに関するトピックでは、NTFS ボリューム上のディレクトリとファイルの暗号化を表示または変更します。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 78ef795e-0f87-4acd-8d15-192c972c0f41
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7ba6a54c275e1765bfdc31fe30d78fc6e3da6c05
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 40e969735e6280fb10084440f34cae7753962f66
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71379357"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80847765"
 ---
 # <a name="cipher"></a>cipher
-
-
 
 NTFS ボリュームのディレクトリとファイルの暗号化を表示または変更します。 パラメーターを指定せずに使用した場合、現在のディレクトリとそれに含まれるすべてのファイルの暗号化の状態**が表示されます**。
 
@@ -43,7 +37,7 @@ cipher /removeuser /certhash:<Hash> [/s:<Directory>] [/b] [/h] [<PathName> [...]
 cipher /rekey [PathName [...]]
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
 |          パラメーター           |                                                                                                                                                   説明                                                                                                                                                    |
 |-------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -62,16 +56,16 @@ cipher /rekey [PathName [...]]
 |  /adduser [/certhash:\<ハッシュ >  |                                                                                                                                              /certfile:<FileName>]                                                                                                                                               |
 |            /キー更新             |                                                                                                                 指定された暗号化ファイルを更新して、現在構成されている EFS キーを使用します。                                                                                                                 |
 | /removeuser/certhash:\<ハッシュ > |                                                                                       指定されたファイルからユーザーを削除します。 **/Certhash**に指定する*ハッシュ*は、削除する証明書の SHA1 ハッシュである必要があります。                                                                                       |
-|              /?               |                                                                                                                                       コマンド プロンプトにヘルプを表示します。                                                                                                                                       |
+|              /?               |                                                                                                                                       コマンド プロンプトでヘルプを表示します。                                                                                                                                       |
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
 -   親ディレクトリが暗号化されていない場合、暗号化されたファイルは、変更されると復号化される可能性があります。 したがって、ファイルを暗号化する場合は、親ディレクトリも暗号化する必要があります。
 -   管理者は .cer ファイルの内容を EFS 回復ポリシーに追加して、ユーザーの回復エージェントを作成し、.pfx ファイルをインポートして個々のファイルを回復することができます。
 -   複数のディレクトリ名とワイルドカードを使用できます。
 -   複数のパラメーターの間にスペースを入れる必要があります。
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a><a name=BKMK_examples></a>例
 
 現在のディレクトリにある各ファイルおよびサブディレクトリの暗号化状態を表示するには、次のように入力します。
 ```
@@ -107,4 +101,4 @@ U hello.txt
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

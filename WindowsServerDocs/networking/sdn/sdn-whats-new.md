@@ -1,20 +1,20 @@
 ---
 title: Windows Server 用 SDN の新機能
 description: このトピックでは、Windows Server 1709 のソフトウェア定義ネットワークの新機能について説明します。
-manager: dougkim
+manager: grcusanz
 ms.prod: windows-server
 ms.technology: networking-hv-switch
 ms.topic: get-started-article
 ms.assetid: efad919b-e9e7-4a0c-b373-e68a092f93b5
-ms.author: lizross
-author: eross-msft
+ms.author: anpaul
+author: AnirbanPaul
 ms.date: 10/02/2018
-ms.openlocfilehash: 32828cc6c46903e0841dcdae55f69df6a0cac252
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 5c6e90b590af9292b1749acdbdbc143752a1e30a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80317447"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854395"
 ---
 # <a name="whats-new-in-sdn-for-windows-server-2019"></a>Windows Server 2019 の SDN の新機能
 

@@ -1,26 +1,22 @@
 ---
-title: 削除
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+title: remove
+description: Windows コマンドに関するトピック * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b0886140-da8b-4231-8cb2-f280874d99c0
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9f8f5d33d7cff4dbba77ec5875b80d6e63be66da
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 666d7c1ecacda612b3ccb164e0b573ec257334b7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71371592"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80836055"
 ---
-# <a name="remove"></a>削除
+# <a name="remove"></a>remove
 
 
 

@@ -1,20 +1,18 @@
 ---
 title: ゲートウェイ帯域幅の割り当て
-description: ''
-manager: dougkim
+manager: grcusanz
 ms.prod: windows-server
 ms.technology: networking-hv-switch
 ms.topic: get-started-article
-ms.assetid: ''
-ms.author: lizross
-author: eross-msft
+ms.author: anpaul
+author: AnirbanPaul
 ms.date: 08/22/2018
-ms.openlocfilehash: 8e0709360449e1175988b14a963047ee72f26ade
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: a5e4e6b280c30eedc230da99cbf798e5560a0ca5
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80313034"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855715"
 ---
 # <a name="gateway-bandwidth-allocation"></a>ゲートウェイ帯域幅の割り当て
 

@@ -2,22 +2,18 @@
 title: 手順4リモートアクセスサーバーで OTP を計画する
 description: このトピックは、「Windows Server 2016 で OTP 認証を使用してリモートアクセスを展開する」の一部です。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4b97b2fd-767a-45c1-a64e-5b3edd0c8a47
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 1fafb5ee461bb44fc57e667f8af88f22a9649dae
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 789fd72e2f3fc1693bf4803f33dcc1e7f1b3acc3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80313481"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855775"
 ---
 # <a name="step-4-plan-for-otp-on-the-remote-access-server"></a>手順4リモートアクセスサーバーで OTP を計画する
 

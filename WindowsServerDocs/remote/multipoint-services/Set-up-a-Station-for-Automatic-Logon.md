@@ -1,24 +1,20 @@
 ---
 title: ステーションの自動ログオンをセットアップする
 description: MultiPoint Services ステーションの自動ログオンを構成する方法について説明します。
-ms.custom: na
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7a326085-7438-41de-9874-59aca393fa4a
 author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: d1b082cb9115951676685ec71e0b0ba54f698ec7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: cd6de249e8bca7bebb03ec3c0947f8cdf7b395ee
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71389378"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855635"
 ---
 # <a name="set-up-a-station-for-automatic-logon"></a>ステーションの自動ログオンをセットアップする
 自動ログオンの利用は、MultiPoint サービスを実行しているコンピューターの起動時に自動的にログオンする各ワークステーションし、デスクトップを表示できます。 管理者は、各ステーションまたはすべてのステーションに対してこの機能を設定できます。  
@@ -33,7 +29,7 @@ ms.locfileid: "71389378"
   
 5.  ユーザー アカウントのパスワードを入力し、確認のためにパスワードを再入力します。  
   
-6.  **[OK]** をクリックします。 ページが閉じます。 アカウント名に表示されます、 **自動ログオン** 列です。  
+6.  **[OK]** をクリックすると、 ページが閉じます。 アカウント名に表示されます、 **自動ログオン** 列です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [ユーザー ステーションの管理](Manage-User-Stations.md)

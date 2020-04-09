@@ -1,6 +1,5 @@
 ---
 title: SQL Server を使用した Windows Server 2016 での AD FS へのアップグレード
-description: ''
 author: billmath
 manager: mtillman
 ms.date: 04/11/2018
@@ -9,12 +8,12 @@ ms.prod: windows-server
 ms.assetid: 70f279bf-aea1-4f4f-9ab3-e9157233e267
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: dd843724faf1c7a8101def84091484a5e7f7900f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e9488357eecb4a2093d6989e4ebfcc195ce68567
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408231"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854005"
 ---
 # <a name="upgrading-to-ad-fs-in-windows-server-2016-with-sql-server"></a>SQL Server を使用した Windows Server 2016 での AD FS へのアップグレード
 
@@ -33,7 +32,7 @@ Windows server 2016 AD FS サーバーは、windows server 2012 R2 ファーム�
 
 -   管理者は、windows server 2016 の新しいフェデレーションサーバーを既存の Windows Server 2012 R2 ファームに追加できます。  その結果、ファームは "混在モード" になり、Windows Server 2012 R2 ファームの動作レベルを操作します。  ファーム全体で動作が一貫しているように、新しい Windows Server 2016 の機能を構成したり、このモードで使用したりすることはできません。  
 
--   すべての Windows Server 2012 R2 フェデレーションサーバーが混在モードファームから削除され、WID ファームの場合は、新しい Windows サービスサーバー2016フェデレーションサーバーの1つがプライマリノードの役割に昇格された後、管理者は Win から FBL を上げることができます。dows Server 2012 R2 から Windows Server 2016。  その結果、新しい AD FS Windows Server 2016 の機能を構成して使用できるようになります。  
+-   すべての Windows Server 2012 R2 フェデレーションサーバーが混在モードファームから削除され、WID ファームの場合は、新しい Windows サービス2016フェデレーションサーバーの1つがプライマリノードの役割に昇格された後、管理者は Windows Server 2012 R2 から Windows Server 2016 に FBL を上げることができます。  その結果、新しい AD FS Windows Server 2016 の機能を構成して使用できるようになります。  
 
 -   ファーム機能が混在しているため、windows server 2016 へのアップグレードを検討している Windows Server 2012 R2 組織では、まったく新しいファームを展開し、構成データをエクスポートしてインポートする必要はありません AD FS。  その代わりに、Windows Server 2016 ノードをオンラインにしている既存のファームに追加することができ、FBL の発生に伴うダウンタイムは比較的短くなります。  
 
@@ -46,7 +45,7 @@ Windows server 2016 AD FS サーバーは、windows server 2012 R2 ファーム�
 
 次のアーキテクチャ図は、次の手順を検証して記録するために使用されたセットアップを示しています。
 
-![Architecture](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/arch.png)
+![アーキテクチャ](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/arch.png)
 
 
 #### <a name="join-the-windows-2016-ad-fs-server-to-the-ad-fs-farm"></a>Windows 2016 AD FS サーバーを AD FS ファームに参加させる
@@ -71,7 +70,7 @@ Windows server 2016 AD FS サーバーは、windows server 2012 R2 ファーム�
 >[!NOTE]
 >SQL をデータベースとして使用する場合は、AdfsSyncProperties-Role を使用してプライマリ AD FS サーバーを設定する必要はありません。  この構成では、すべてのノードがプライマリと見なされるためです。
 
-1.  サーバー マネージャーの使用中の Windows Server 2012 R2 AD FS サーバーで**役割の削除と機能**  **管理**します。
+1.  Windows Server 2012 R2 AD FS サーバーのサーバーマネージャーで、 **[管理]** の **[役割と機能の削除]** を使用します。
 サーバー](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/remove1.png) を削除 ![には
 2.  **[開始する前に]** 画面で、 **[次へ]** をクリックします。
 3.  **[サーバーの選択]** 画面で、 **[次へ]** をクリックします。

@@ -1,24 +1,20 @@
 ---
 title: openfiles
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Windows コマンドに関するトピック * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c3be561d-a11f-4bf1-9835-8e4e96fe98ec
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 38b1d27b86551c6d4cd9e6b1ad87bfc0e8dd221d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f684acc48fbb279ced8ce1dfb3a930ff15f3bf13
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71372505"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80837825"
 ---
 # <a name="openfiles"></a>openfiles
 
@@ -31,7 +27,7 @@ ms.locfileid: "71372505"
 -   [openfiles/query](#BKMK_query)
 -   [openfiles/ローカル](#BKMK_local)
 
-## <a name="BKMK_disconnect"></a>openfiles/disconnect
+## <a name="openfiles-disconnect"></a><a name=BKMK_disconnect></a>openfiles/disconnect
 
 管理者は、ファイルとフォルダーの共有フォルダーをリモートで開かれた接続を切断できます。
 
@@ -41,7 +37,7 @@ ms.locfileid: "71372505"
 openfiles /disconnect [/s <System> [/u [<Domain>\]<UserName> [/p [<Password>]]]] {[/id <OpenFileID>] | [/a <AccessedBy>] | [/o {read | write | read/write}]} [/op <OpenFile>]
 ```
 
-### <a name="parameters"></a>パラメーター
+#### <a name="parameters"></a>パラメーター
 
 |            パラメーター             |                                                                                                                                 説明                                                                                                                                  |
 |----------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -52,7 +48,7 @@ openfiles /disconnect [/s <System> [/u [<Domain>\]<UserName> [/p [<Password>]]]]
 |         /a \<イテレータ >         |                                                指定されているユーザー名に関連付けられた開いているすべてのファイルの接続が切断、 *イテレータ* パラメーター。 ワイルドカード文字 ( **&#42;** ) は、このパラメーターと共に使用できます。                                                 |
 | /o {読み取り \| 書き込み \| 読み取り/書き込み} |                                               指定されたオープンモード値を使用して、開いているすべてのファイルを切断します。 有効な値は、読み取り、書き込み、または読み取り/書き込みです。 ワイルドカード文字 ( **&#42;** ) は、このパラメーターと共に使用できます。                                                |
 |         /op \<OpenFile >          |                                                           特定の開いているファイル名で作成されたすべての開いているファイル接続を切断します。 ワイルドカード文字 ( **&#42;** ) は、このパラメーターと共に使用できます。                                                           |
-|                /?                |                                                                                                                     コマンド プロンプトにヘルプを表示します。                                                                                                                     |
+|                /?                |                                                                                                                     コマンド プロンプトでヘルプを表示します。                                                                                                                     |
 
 ### <a name="examples"></a>例
 
@@ -60,7 +56,7 @@ openfiles /disconnect [/s <System> [/u [<Domain>\]<UserName> [/p [<Password>]]]]
 ```
 openfiles /disconnect /id 26843578
 ```
-すべての開いているファイルとディレクトリを"hiropln"のユーザーがアクセスを切断するには次のように入力します。
+ユーザー hiropln がアクセスするすべての開いているファイルとディレクトリを切断するには、次のように入力します。
 ```
 openfiles /disconnect /a hiropln
 ```
@@ -68,16 +64,16 @@ openfiles /disconnect /a hiropln
 ```
 openfiles /disconnect /o read/write
 ```
-アクセスしているユーザーに関係なく、開いているファイル名 "C:\TestShare\"を持つディレクトリを切断するには、次のように入力します。
+アクセスしているユーザーに関係なく、開いているファイル名 C:\TestShare\, のディレクトリを切断するには、次のように入力します。
 ```
-openfiles /disconnect /a * /op "c:\testshare\"
+openfiles /disconnect /a * /op c:\testshare\
 ```
-その ID に関係なく"hiropln、"ユーザーがアクセスされている"srvmain"のリモート コンピューター上のすべての開いているファイルを切断するには次のように入力します。
+ユーザー hiropln によってアクセスされているリモートコンピューター srvmain 上の開いているすべてのファイルを切断するには、次のように入力します。
 ```
 openfiles /disconnect /s srvmain /u maindom\hiropln /id *
 ```
 
-## <a name="BKMK_query"></a>openfiles/query
+## <a name="openfiles-query"></a><a name=BKMK_query></a>openfiles/query
 
 クエリを実行し、すべての開いているファイルを表示します。
 
@@ -87,7 +83,7 @@ openfiles /disconnect /s srvmain /u maindom\hiropln /id *
 openfiles /query [/s <System> [/u [<Domain>\]<UserName> [/p [<Password>]]]] [/fo {TABLE | LIST | CSV}] [/nh] [/v]
 ```
 
-### <a name="parameters"></a>パラメーター
+#### <a name="parameters"></a>パラメーター
 
 |          パラメーター           |                                                                                                                                 説明                                                                                                                                  |
 |------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -97,7 +93,7 @@ openfiles /query [/s <System> [/u [<Domain>\]<UserName> [/p [<Password>]]]] [/fo
 | [/fo {テーブル \| 一覧 \| CSV}] |                             指定した形式で出力が表示されます。 有効な値 *形式* は。</br>テーブル: テーブルの出力を表示します。</br>: ボックスの一覧は、リスト内の出力を表示します。</br>CSV: は、コンマ区切り値形式で出力を表示します。                              |
 |             /nh              |                                                                                出力に列ヘッダーを抑制します。 有効な場合にのみ、 **/fo** にパラメーターが設定されている **テーブル** または **CSV**します。                                                                                 |
 |              /v              |                                                                                                       詳細な情報が出力に表示されることを指定します。                                                                                                        |
-|              /?              |                                                                                                                     コマンド プロンプトにヘルプを表示します。                                                                                                                     |
+|              /?              |                                                                                                                     コマンド プロンプトでヘルプを表示します。                                                                                                                     |
 
 ### <a name="examples"></a>例
 
@@ -113,7 +109,7 @@ openfiles /query /fo table /nh
 ```
 openfiles /query /fo list /v
 ```
-"Hiropln"、"maindom"ドメイン上のユーザーの資格情報を使用して、"srvmain"のリモート システム上のすべての開いているファイルを表示し、次のように入力します。
+Maindom ドメインのユーザー hiropln の資格情報を使用して、リモートシステム srvmain で開いているすべてのファイルを照会して表示するには、次のように入力します。
 ```
 openfiles /query /s srvmain /u maindom\hiropln /p p@ssW23
 ```
@@ -121,7 +117,7 @@ openfiles /query /s srvmain /u maindom\hiropln /p p@ssW23
 > [!NOTE]
 > この例では、コマンドラインでパスワードを指定します。 パスワードを表示するには、除外、 **/p** オプション。 画面にエコーされませんが、パスワードの入力するように求められます。
 
-## <a name="BKMK_local"></a>openfiles/ローカル
+## <a name="openfiles-local"></a><a name=BKMK_local></a>openfiles/ローカル
 
 有効またはシステムの管理オブジェクト リストのグローバル フラグを無効にします。 パラメーターを指定せずに使用する場合 **openfiles/local** 管理オブジェクトのリスト、グローバル フラグの現在の状態を表示します。
 
@@ -131,14 +127,14 @@ openfiles /query /s srvmain /u maindom\hiropln /p p@ssW23
 openfiles /local [on | off]
 ```
 
-### <a name="parameters"></a>パラメーター
+#### <a name="parameters"></a>パラメーター
 
 |パラメーター|説明|
 |---------|-----------|
 |[on \| off]|有効またはシステムのローカルのファイル ハンドルを追跡管理オブジェクト リスト グローバル フラグを無効にします。|
-|/?|コマンド プロンプトにヘルプを表示します。|
+|/?|コマンド プロンプトでヘルプを表示します。|
 
-### <a name="remarks"></a>注釈
+### <a name="remarks"></a>コメント
 
 -   管理オブジェクト リストのグローバル フラグを有効にするシステムを速度の遅い可能性があります。
 -   使用して行われた変更、 **に** または **オフ** システムを再起動するまでオプションは有効になりません。
@@ -167,6 +163,6 @@ SUCCESS: The system global flag 'maintain objects list' is enabled.
 openfiles /local off
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

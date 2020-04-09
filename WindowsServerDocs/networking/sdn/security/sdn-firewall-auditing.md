@@ -1,20 +1,20 @@
 ---
 title: SDN ファイアウォール監査
 description: ファイアウォール監査は、Windows Server 2019 の SDN ファイアウォールの新機能です。 SDN ファイアウォールを有効にすると、ログが有効になっている SDN ファイアウォール規則 (Acl) によって処理されるすべてのフローが記録されます。
-manager: dougkim
+manager: grcusanz
 ms.prod: windows-server
 ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: c4e2f6c7-0364-4bf8-bb66-9af59c0bbd74
-ms.author: lizross
-author: eross-msft
+ms.author: anpaul
+author: AnirbanPaul
 ms.date: 08/22/2018
-ms.openlocfilehash: 1452720d8ba71e7306dce0271ea7a9e6011b2952
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: d834c78d393fdbaeaa65900f16f4d1e32f2e5131
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80317369"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854385"
 ---
 # <a name="sdn-firewall-auditing"></a>SDN ファイアウォール監査
 

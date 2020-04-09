@@ -1,24 +1,20 @@
 ---
 title: prnport
 description: プリンターポートを作成、削除、および一覧表示する方法について説明します。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 6a0ec638-a21e-4a34-be5c-bd0f7ca89ffe
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c9c162cef2a3ae2f3de1e891691572130ae68f93
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 17f81b127927a41e60c290535032876def109989
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71372555"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80837225"
 ---
 # <a name="prnport"></a>prnport
 
@@ -34,7 +30,7 @@ cscript prnport {-a | -d | -l | -g | -t | -?} [-r <PortName>]
 [-i <SNMPIndex>] [-y <CommunityName>] -2{e | -d}
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
 |          パラメーター           |                                                                                                                                                                                                                                                                                                     説明                                                                                                                                                                                                                                                                                                      |
 |------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -46,25 +42,25 @@ cscript prnport {-a | -d | -l | -g | -t | -?} [-r <PortName>]
 |        -r \<PortName >        |                                                                                                                                                                                                                                                                                プリンターが接続されているポートを指定します。                                                                                                                                                                                                                                                                                 |
 |       -s \<ServerName >       |                                                                                                                                                                                                                               管理するプリンターをホストするリモート コンピューターの名前を指定します。 コンピューターを指定しないと、ローカル コンピューターが使用されます。                                                                                                                                                                                                                                |
 | -u \<UserName >-w <Password> |                                                                                                              管理するプリンターをホストするコンピューターに接続するアクセス許可を持つアカウントを指定します。 ターゲット コンピューターのローカル Administrators グループのすべてのメンバーにこれらのアクセス許可があるが、アクセス許可は、他のユーザーに与えることもできます。 アカウントを指定しない場合は、コマンドを実行するこれらのアクセス許可を持つアカウントでログオンする必要があります。                                                                                                               |
-|     -o {raw &#124; lpr}      |                                                                                                                                                                                                              ポートが使用するプロトコル (TCP raw または TCP lpr) を指定します。 使用してポート番号を必要に応じて指定生 TCP を使用する場合、 **-n** パラメーター。 既定のポート番号は 9100 です。                                                                                                                                                                                                              |
+|     -o {raw & #124; lpr}      |                                                                                                                                                                                                              ポートが使用するプロトコル (TCP raw または TCP lpr) を指定します。 使用してポート番号を必要に応じて指定生 TCP を使用する場合、 **-n** パラメーター。 既定のポート番号は 9100 です。                                                                                                                                                                                                              |
 |      -h \<Hostaddress >       |                                                                                                                                                                                                                                                                   ポートを構成するプリンターを (IP アドレス) を指定します。                                                                                                                                                                                                                                                                    |
 |       -q \<QueueName >        |                                                                                                                                                                                                                                                                                     生の TCP ポートのキュー名を指定します。                                                                                                                                                                                                                                                                                     |
 |       -n \<ポート番号 >       |                                                                                                                                                                                                                                                                    生の TCP ポートのポート番号を指定します。 既定のポート番号は 9100 です。                                                                                                                                                                                                                                                                    |
-|        -m {&#124; d}        |                                                                                                                                                                                                                                                       SNMP が有効になっているかどうかを指定します。 パラメーター **e** SNMP を使用します。 パラメーター **d** SNMP を無効にします。                                                                                                                                                                                                                                                        |
+|        -m {& #124; d}        |                                                                                                                                                                                                                                                       SNMP が有効になっているかどうかを指定します。 パラメーター **e** SNMP を使用します。 パラメーター **d** SNMP を無効にします。                                                                                                                                                                                                                                                        |
 |        -i \<SNMPIndex        |                                                                                                                                                                                                                             SNMP が有効になっている場合は、SNMP インデックスを指定します。 詳細については、 [rfc editor の Web サイト](https://go.microsoft.com/fwlink/?LinkId=569)の rfc 1759 を参照してください。                                                                                                                                                                                                                              |
 |     -y \<CommunityName >      |                                                                                                                                                                                                                                                                                SNMP が有効になっている場合は、SNMP コミュニティ名を指定します。                                                                                                                                                                                                                                                                                |
 |       -2 {& #124; d}        | TCP lpr ポートに対して、二重スプール (respooling とも呼ばれます) を有効にするかどうかを指定します。 TCP lpr は、プリンターに送信されるコントロールファイルに正確なバイト数を含める必要がありますが、プロトコルはローカルの印刷プロバイダーからカウントを取得できないため、二重スプールが必要です。 このため、ファイルが TCP lpr 印刷キューにスプールされると、ファイルは system32 ディレクトリ内の一時ファイルとしてもスプールされます。 TCP lpr は、一時ファイルのサイズを決定し、そのサイズを LPD を実行しているサーバーに送信します。 パラメーター **e** 二重スプールを使用します。 パラメーター **d** 二重スプールを無効にします。 |
-|              /?              |                                                                                                                                                                                                                                                                                         コマンド プロンプトにヘルプを表示します。                                                                                                                                                                                                                                                                                         |
+|              /?              |                                                                                                                                                                                                                                                                                         コマンド プロンプトでヘルプを表示します。                                                                                                                                                                                                                                                                                         |
 
-## <a name="remarks"></a>注釈
--   **Prnport.vbs**コマンドは、%windir%\system32\ printing_Admin_Scripts\\<language> ディレクトリにある Visual Basic スクリプトです。 このコマンドを使用するには、コマンドプロンプトで「 **cscript** 」と入力し、prnport.vbs ファイルへの完全なパスを入力するか、ディレクトリを適切なフォルダーに変更します。 次に、例を示します。
+## <a name="remarks"></a>コメント
+-   **Prnport.vbs**コマンドは、%windir%\system32\ printing_Admin_Scripts\\<language> ディレクトリにある Visual Basic スクリプトです。 このコマンドを使用するには、コマンドプロンプトで「 **cscript** 」と入力し、prnport.vbs ファイルへの完全なパスを入力するか、ディレクトリを適切なフォルダーに変更します。 例 :
     ```
     cscript %WINdir%\System32\printing_Admin_Scripts\en-US\prnport
     ```
 -   入力した情報にスペースが含まれている場合は、テキストを引用符で囲みます (`"computer Name"`など)。
 -   TCP raw プロトコルは、lpr プロトコルよりも Windows での高パフォーマンスプロトコルです。
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a><a name="BKMK_examples"></a>例
 サーバー上のすべての標準の TCP/IP 印刷ポートを表示する \\\Server1 を入力します。
 ```
 cscript prnport -l -s Server1
@@ -86,6 +82,6 @@ cscript prnport -t -s Server1 -r IP_10.2.3.4 -me -y public -i 1 -n 9100
 cscript prnport -a -r IP_10.2.3.4 -h 10.2.3.4
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
-[コマンドライン構文のキー](command-line-syntax-key.md)
+## <a name="additional-references"></a>その他の参照情報
+- [コマンドライン構文のキー](command-line-syntax-key.md)
 [印刷コマンドリファレンス](print-command-reference.md)

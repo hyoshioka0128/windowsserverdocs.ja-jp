@@ -1,23 +1,19 @@
 ---
 title: Windows Server Essentials Log Collector エラーのトラブルシューティング
 description: Windows Server Essentials の使用方法について説明します。
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: fa2e1685-31c0-4d4f-a10a-6c8885dfc493
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: a08826a979defa2b7c78b8257726eb35ed07d054
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: e67071645e4ad00dc05c01836e25f223089d00c7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80318621"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852225"
 ---
 # <a name="troubleshoot-windows-server-essentials-log-collector-errors"></a>Windows Server Essentials Log Collector エラーのトラブルシューティング
 

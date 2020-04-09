@@ -1,20 +1,18 @@
 ---
 title: 仮想ネットワーク ピアリング
-description: ''
-manager: dougkim
+manager: grcusanz
 ms.prod: windows-server
 ms.technology: networking-hv-switch
 ms.topic: get-started-article
-ms.assetid: ''
-ms.author: lizross
-author: eross-msft
+ms.author: anpaul
+author: AnirbanPaul
 ms.date: 08/08/2018
-ms.openlocfilehash: 01c768aefa685b688c2ed3f777c44a4665b5e4a7
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: c5955ad8be987ebfd605bb59cfdc43b9011714c4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80309679"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853585"
 ---
 # <a name="virtual-network-peering"></a>仮想ネットワーク ピアリング
 

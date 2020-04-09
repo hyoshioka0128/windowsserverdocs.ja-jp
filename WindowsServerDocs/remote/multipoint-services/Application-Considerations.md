@@ -1,24 +1,20 @@
 ---
 title: アプリケーションの考慮事項
 description: MultiPoint Services でのアプリの互換性に関する情報
-ms.custom: na
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 445e6184-4e1e-4f10-ad3c-042f2a6c2f5f
 author: evaseydl
 manager: scottman
 ms.author: evas
 ms.date: 08/04/2016
-ms.openlocfilehash: 21531273b1dd6d643df3f816a880a0efb3117c70
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 04449db18febdb2e37ac5ef7f5eee4dfc02ba94d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405125"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859365"
 ---
 # <a name="application-considerations"></a>アプリケーションの考慮事項
   

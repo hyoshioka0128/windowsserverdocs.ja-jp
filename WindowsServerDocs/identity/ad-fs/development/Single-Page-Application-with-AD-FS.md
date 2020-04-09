@@ -8,12 +8,12 @@ ms.date: 06/13/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: active-directory-federation-services
-ms.openlocfilehash: f4973da0d9e0c347cff8fc910f96277055b66dec
-ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
+ms.openlocfilehash: f7e68558945fcd26d5e8ab405f39e86266beeea8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77465546"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853865"
 ---
 # <a name="build-a-single-page-web-application-using-oauth-and-adaljs-with-ad-fs-2016-or-later"></a>OAuth と ADAL を使用して単一ページの web アプリケーションを構築します。AD FS 2016 以降を使用した JS
 
@@ -43,9 +43,9 @@ ADAL が認証用のトリガーを確認すると、アプリケーションに
 ## <a name="setting-up-the-environment"></a>環境の設定
 このチュートリアルでは、次の基本的なセットアップを使用します。
 
-1.  DC: AD FS がホストされるドメインのドメインコントローラー
-2.  AD FS Server: ドメインの AD FS サーバー
-3.  開発用コンピューター: Visual Studio がインストールされていて、サンプルを開発しているコンピューター
+1.    DC: AD FS がホストされるドメインのドメインコントローラー
+2.    AD FS Server: ドメインの AD FS サーバー
+3.    開発用コンピューター: Visual Studio がインストールされていて、サンプルを開発しているコンピューター
 
 必要に応じて、2台のコンピューターのみを使用できます。 DC/AD FS 用、もう1つはサンプルを開発しています。
 

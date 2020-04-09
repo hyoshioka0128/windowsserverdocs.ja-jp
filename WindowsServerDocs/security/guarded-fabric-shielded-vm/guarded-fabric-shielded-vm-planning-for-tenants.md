@@ -1,18 +1,18 @@
 ---
 title: ホスト用の保護されたファブリックとシールドされた VM 計画ガイド
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: 392af37f-a02d-4d40-a25d-384211cbbfdd
 manager: dongill
 author: nirb-ms
+ms.author: nirb
 ms.technology: security-guarded-fabric
-ms.openlocfilehash: 255429960735d70ff3a4d260bd9090b95882b6bd
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 829d6a3efef082e35c6a4f98e0ba9e4b70c27a93
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949772"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856475"
 ---
 # <a name="guarded-fabric-and-shielded-vm-planning-guide-for-tenants"></a>保護されたファブリックとテナント向けのシールドされた VM 計画ガイド
 
@@ -63,7 +63,7 @@ VM がシールドされているか、暗号化がサポートされている�
 
 シールドデータは、シールドデータファイルウィザードを使用して作成され、VM 所有者が保護されたファブリックにアップロードする PDK ファイルに格納されます。
 
-シールドされた Vm は、侵害された仮想化ファブリックからの攻撃から保護するのに役立ちます。そのため、管理者のパスワード、ドメイン参加資格情報、RDP 証明書など、機密性の高い初期化データを渡すことなく安全なメカニズムが必要です。仮想化ファブリック自体またはその管理者。 さらに、シールドデータには次のものが含まれます。
+シールドされた Vm は、侵害された仮想化ファブリックからの攻撃を防ぐのに役立ちます。そのため、管理者のパスワード、ドメイン参加資格情報、RDP 証明書など、機密性の高い初期化データを、仮想化ファブリック自体または管理者に開示することなく、安全な機構で渡す必要があります。 さらに、シールドデータには次のものが含まれます。
 
 1. セキュリティレベル–シールドまたは暗号化がサポートされています
 2. 所有者と、VM を実行できる信頼されたホストガーディアンの一覧

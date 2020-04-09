@@ -1,7 +1,6 @@
 ---
 ms.assetid: ef4ef4a9-8969-4ad0-bd17-b2bb24f36ef6
 title: フォレスト ルート ドメインを選択する
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,16 +8,16 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 80d39a5910d06559b98211eaf55a4cd0c82442a1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3fddf5179e2944800d57568f0b8e52262c04cd43
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402503"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80821905"
 ---
 # <a name="selecting-the-forest-root-domain"></a>フォレスト ルート ドメインを選択する
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 Active Directory フォレストに展開する最初のドメインは、フォレストルートドメインと呼ばれます。 このドメインは、AD DS 展開のライフサイクルのフォレストルートドメインのままです。  
   
@@ -79,7 +78,7 @@ Active Directory 名前空間のインターネット証明機関に登録され
   
 次の表に、登録済み DNS 名のプレフィックスを選択するための規則を示します。  
   
-|Rule|説明|  
+|ルール|説明|  
 |--------|---------------|  
 |古くなる可能性のないプレフィックスを選択してください。|将来変更される可能性のある製品ラインやオペレーティングシステムなどの名前は避けてください。 Corp や ds などの汎用名を使用することをお勧めします。|  
 |インターネット標準文字のみが含まれているプレフィックスを選択します。|A-z、a-z、0-9、および (-) ですが、完全な数値ではありません。|  
@@ -89,4 +88,4 @@ Active Directory DNS 所有者は、組織の DNS 所有者と連携して、Act
   
 ## <a name="documenting-the-forest-root-domain-name"></a>フォレストルートドメイン名を文書化する
 
-フォレストルートドメインに選択した DNS プレフィックスとサフィックスを文書化します。 この時点で、どのドメインがフォレストのルートになるかを特定します。 フォレストルートドメイン名の情報を、作成した "ドメイン計画" ワークシートに追加して、新規およびアップグレードされたドメインとドメイン名の計画を文書化することができます。 これを開くには、 [Windows Server 2003 Deployment Kit のジョブエイド](https://go.microsoft.com/fwlink/?LinkID=102558)から Job_Aids_Designing_and_Deploying_Directory_and_Security_Services をダウンロードし、"ドメイン計画" (DSSLOGI_5) を開きます。
+フォレストルートドメインに選択した DNS プレフィックスとサフィックスを文書化します。 この時点で、どのドメインがフォレストのルートになるかを特定します。 フォレストルートドメイン名の情報を、作成した "ドメイン計画" ワークシートに追加して、新規およびアップグレードされたドメインとドメイン名の計画を文書化することができます。 このファイルを開くには、 [Windows Server 2003 Deployment Kit のジョブエイド](https://go.microsoft.com/fwlink/?LinkID=102558)から Job_Aids_Designing_and_Deploying_Directory_and_Security_Services をダウンロードして、"ドメインの計画" (DSSLOGI_5) を開きます。

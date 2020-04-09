@@ -4,15 +4,15 @@ description: Linux および BSD の仮想マシン
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: Asmahi; SandySp; JoPoulso
+ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 5668629e7eded214525561d30fec496a4e91b8dc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7abc1ef5473365dd26dce1167bb685f116822a7d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385069"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851745"
 ---
 # <a name="linux-virtual-machine-considerations"></a>Linux 仮想マシンに関する考慮事項
 
@@ -57,7 +57,7 @@ net.ipv4.tcp_abort_on_overflow = 1
 
 ネットワークの場合と同様に、Linux ゲストのパフォーマンスは、記憶域を使用すると、ホストのビジー状態を維持するのに十分な深さのキューから最大限に活用できます。 Microbaio エンジンを使用した fio ベンチマークツールでは、マイクロベンチマークストレージのパフォーマンスが最も高くなります。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 -   [Hyper-V の用語](terminology.md)
 

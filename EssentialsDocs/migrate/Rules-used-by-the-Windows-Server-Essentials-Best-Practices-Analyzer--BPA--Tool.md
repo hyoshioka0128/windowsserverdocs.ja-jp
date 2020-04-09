@@ -1,23 +1,19 @@
 ---
 title: Windows Server Essentials ベスト プラクティス アナライザー (BPA) ツールで使用される規則
 description: Windows Server Essentials の使用方法について説明します。
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 37e1dae7-586c-4dd7-bf83-7e14a9567c8f
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 5a737c777e1af25a59dc878fd0b3e99a6ee3ce24
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 1bf68a4948967a61b773cb8210f015ded75d683c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80318799"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852415"
 ---
 # <a name="rules-used-by-the-windows-server-essentials-best-practices-analyzer-bpa-tool"></a>Windows Server Essentials ベスト プラクティス アナライザー (BPA) ツールで使用される規則
 

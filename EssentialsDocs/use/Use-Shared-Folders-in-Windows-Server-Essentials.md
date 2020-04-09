@@ -1,23 +1,19 @@
 ---
 title: Windows Server Essentials での共有フォルダーの使用
 description: Windows Server Essentials の使用方法について説明します。
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: cb7f3d7d-4225-409a-9f6b-34a106e8dd24
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: e5e76f3eb136078635d7db2fb7859c307a77d468
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 6f81041a2a1938add2fd8bfc03aa492d1da266cd
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80313120"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852105"
 ---
 # <a name="use-shared-folders-in-windows-server-essentials"></a>Windows Server Essentials での共有フォルダーの使用
 

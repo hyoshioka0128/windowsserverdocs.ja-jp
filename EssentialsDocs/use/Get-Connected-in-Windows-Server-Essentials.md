@@ -1,23 +1,19 @@
 ---
 title: Windows Server Essentials の接続
 description: Windows Server Essentials の使用方法について説明します。
-ms.custom: na
 ms.date: 05/07/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 149a5d34-43b7-4b9e-99e7-9f2294ab9ddb
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 14acbff8b538224546884e5bb51c40a22b8849b4
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 7591efcc896dd382afd50cf0e360e28e0cb08f3e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80318554"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852155"
 ---
 # <a name="get-connected-in-windows-server-essentials"></a>Windows Server Essentials の接続
 
@@ -448,7 +444,7 @@ ms.locfileid: "80318554"
     > [!NOTE]
     >  Windows 8 を実行しているコンピューターをサーバーに接続した後、ネットワーク アカウントを使用して初めてこのコンピューターにログオンすると、古いユーザー アカウントからファイルとアプリケーションを移行するように促す指示が表示されます。 **[古いユーザー アカウントからファイルとアプリケーションを移行する方法]** ページの指示に従って、すべてのファイルとアプリケーションをネットワーク ユーザー アカウントに移行します。  
 
-9. コンピューターがサーバーに正常に接続されると、コネクタ TrayApp とサーバーダッシュボードへのショートカットが [スタート] メニューに表示されます。これは次のように使用できます (コンピューターで Windows 8、Windows 8.1 または Windows 10 が実行されている場合は、ダッシュボードとコネクタを使用します)。TrayApp は、コンピューターのスタート画面から使用できるようになります):  
+9. コンピューターがサーバーに正常に接続されると、コネクタ TrayApp とサーバーダッシュボードへのショートカットが [スタート] メニューに表示されます。これは次のように使用できます (コンピューターで Windows 8、Windows 8.1 または Windows 10 が実行されている場合は、コンピューターのスタート画面からダッシュボードとコネクタ TrayApp を使用できます)。  
 
     -   コンピューターで Windows 8、Windows 8.1、または Windows 10 が実行されている場合、ダッシュボードとコネクタ TrayApp はアプリとして検索できます。  
 

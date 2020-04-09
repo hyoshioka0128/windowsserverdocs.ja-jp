@@ -1,7 +1,6 @@
 ---
 ms.assetid: fde99b44-cb9f-49bf-b888-edaeabe6b88d
 title: アプリケーション ベンダー向けの仮想化ドメイン コントローラー複製のテスト ガイダンス
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,18 +8,18 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 4926fabe255f964b6d39e6c39c5e794a37423111
-ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
+ms.openlocfilehash: 7273c59022edf4b03276a9e26c8291849ef93b40
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77517467"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853995"
 ---
 # <a name="virtualized-domain-controller-cloning-test-guidance-for-application-vendors"></a>アプリケーション ベンダー向けの仮想化ドメイン コントローラー複製のテスト ガイダンス
 
 >適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-このトピックでは、仮想化ドメインコントローラー (DC) の複製プロセスが完了した後もアプリケーションが期待どおりに動作することを確認するために考慮する必要があるアプリケーションベンダーについて説明します。 この記事では、アプリケーションベンダーや、追加のテストが必要なシナリオに関連する複製プロセスの側面について説明します。 複製された仮想化ドメインコントローラーでアプリケーションが動作することを検証したアプリケーションベンダーは、このトピックの下部にあるコミュニティコンテンツにアプリケーションの名前を一覧表示し、検証の詳細については、組織の web サイトを参照してください。
+このトピックでは、仮想化ドメインコントローラー (DC) の複製プロセスが完了した後もアプリケーションが期待どおりに動作することを確認するために考慮する必要があるアプリケーションベンダーについて説明します。 この記事では、アプリケーションベンダーや、追加のテストが必要なシナリオに関連する複製プロセスの側面について説明します。 複製された仮想化ドメインコントローラー上でアプリケーションが動作することを検証したアプリケーションベンダーは、このトピックの下部にあるコミュニティコンテンツにアプリケーションの名前を一覧表示し、ユーザーが検証について詳しく知ることができる組織の web サイトへのリンクと共に使用することをお勧めします。
 
 ## <a name="overview-of-virtualized-dc-cloning"></a>仮想化 DC の複製の概要
 仮想化ドメインコントローラーの複製プロセスについて詳しくは、 [Active Directory Domain Services (AD DS) の仮想化 (レベル 100)](https://docs.microsoft.com/windows-server/identity/ad-ds/introduction-to-active-directory-domain-services-ad-ds-virtualization-level-100)と[仮想化ドメインコントローラーのテクニカルリファレンス (レベル 300) に関する](https://docs.microsoft.com/windows-server/identity/ad-ds/deploy/virtual-dc/virtualized-domain-controller-technical-reference--level-300-)ページをご覧ください。 アプリケーションベンダーの観点から見ると、アプリケーションへの複製の影響を評価する際に考慮する必要がある考慮事項がいくつかあります。

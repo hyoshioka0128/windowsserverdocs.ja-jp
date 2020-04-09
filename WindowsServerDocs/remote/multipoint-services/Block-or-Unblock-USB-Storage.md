@@ -1,24 +1,20 @@
 ---
 title: USB 記憶域をブロックまたはブロック解除する
-ms.custom: na
 description: ユーザーが MultiPoint ステーションで USB 記憶域を使用できないようにする方法について説明します。
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 63f99c10-0289-4e79-b596-7c19160b3ad0
 author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 2740d68841f1250d9ba50ad6b4728098c72678a5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3102dc81caef0de9735ec064ea16b81485f52a15
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405119"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859105"
 ---
 # <a name="block-or-unblock-usb-storage"></a>USB 記憶域をブロックまたはブロック解除する
 ユーザーが自分のユーザー ステーションで USB 記憶域を使用するのを阻止することができます。  

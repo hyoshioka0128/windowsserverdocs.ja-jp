@@ -5,15 +5,15 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: 3266328c-ca82-40d2-90ca-854b7088ccaa
-manager: brianlic
-ms.author: lizross
-author: eross-msft
-ms.openlocfilehash: d82009a4b6e9bcf20ae9cccb4259956358b53148
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+manager: dcscontentpm
+ms.author: v-tea
+author: Teresa-Motiv
+ms.openlocfilehash: 9e288908df5f5de70f1e369cff08821b8d178de7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80316611"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80862215"
 ---
 # <a name="configure-the-order-of-network-interfaces"></a>ネットワーク インターフェイスの順序を構成する
 

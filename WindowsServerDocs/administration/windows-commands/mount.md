@@ -1,24 +1,20 @@
 ---
 title: mount
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Windows コマンドに関するトピック * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: dd9d7ecb-ef00-4aaa-bcd0-423fa636e34a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9a225c847055198a9a48962a3b40969556f10ec1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 72239a3dc55bf88638004c5885da6e1da70bcd02
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71373587"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80839395"
 ---
 # <a name="mount"></a>mount
 
@@ -41,7 +37,7 @@ mount [-o <Option>[...]] [-u:<UserName>] [-p:{<Password> | *}] {\\<ComputerName>
 **Mount**ユーティリティでは、次のオプションと引数を使用できます。
 
 
-|          用語          |                                                                                                                                                                                                                                                定義                                                                                                                                                                                                                                                |
+|          用語          |                                                                                                                                                                                                                                                Definition                                                                                                                                                                                                                                                |
 |------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | -o の場合は\<buffersize > |                                                                                                                                                                                            読み取りバッファーのサイズを kb 単位で設定します。 使用できる値は1、2、4、8、16、および32です。既定値は 32 KB です。                                                                                                                                                                                            |
 | -o wsize =\<buffersize > |                                                                                                                                                                                           書き込みバッファーのサイズを kb 単位で設定します。 使用できる値は1、2、4、8、16、および32です。既定値は 32 KB です。                                                                                                                                                                                            |

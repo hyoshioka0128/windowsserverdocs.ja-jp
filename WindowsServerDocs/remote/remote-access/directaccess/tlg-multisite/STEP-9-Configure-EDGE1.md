@@ -2,22 +2,18 @@
 title: 手順 9 EDGE1 を構成する
 description: このトピックは、「Windows Server 2016 用の DirectAccess マルチサイト展開のテストラボガイド」の一部です。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f6e8d85b-de65-43b3-bf3e-ec84471a1fcc
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 74c4eae329698d33b160ac7180bbabd6d1d8fbad
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: a3f0b291890e294389b611527bd34d2ec8afa832
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80314511"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861535"
 ---
 # <a name="step-9-configure-edge1"></a>手順 9 EDGE1 を構成する
 

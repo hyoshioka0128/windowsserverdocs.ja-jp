@@ -1,24 +1,20 @@
 ---
 title: ソフトウェアの制限のポリシーの管理
 description: Windows Server のセキュリティ
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-software-restriction-policies
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8cc22093-67d1-47b6-9ddd-4569b6761ce9
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: c75c7813041870f79ed95250857a5c7d1576c7dc
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 88e745b6951ab27f22cc412ee63f792d30775d14
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322984"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855115"
 ---
 # <a name="administer-software-restriction-policies"></a>ソフトウェアの制限のポリシーの管理
 
@@ -53,7 +49,7 @@ SRP を使用して特定のタスクを実行する方法については、以�
 
 -   [ソフトウェアの制限のポリシーを使用して、電子メールのウイルスからコンピューターを保護する](use-software-restriction-policies-to-help-protect-your-computer-against-an-email-virus.md)
 
-## <a name="BKMK_Open_SRP"></a>ソフトウェアの制限のポリシーを開くには
+## <a name="to-open-software-restriction-policies"></a><a name="BKMK_Open_SRP"></a>ソフトウェアの制限のポリシーを開くには
 
 -   [ローカルコンピューターの場合](#BKMK_1)
 
@@ -63,7 +59,7 @@ SRP を使用して特定のタスクを実行する方法については、以�
 
 -   [サイトの場合、リモートサーバー管理ツールがインストールされているドメインコントローラーまたはワークステーションを使用している](#BKMK_4)
 
-### <a name="BKMK_1"></a>ローカルコンピューターの場合
+### <a name="for-your-local-computer"></a><a name="BKMK_1"></a>ローカルコンピューターの場合
 
 1.  [ローカル セキュリティ設定] を開きます。
 
@@ -76,7 +72,7 @@ SRP を使用して特定のタスクを実行する方法については、以�
 > [!NOTE]
 > この手順を実行するには、ローカル コンピューターの Administrators グループのメンバーであるか、適切な権限が委任されている必要があります。
 
-### <a name="BKMK_2"></a>ドメイン、サイト、または組織単位の場合、メンバーサーバーまたはドメインに参加しているワークステーション上にある
+### <a name="for-a-domain-site-or-organizational-unit-and-you-are-on-a-member-server-or-on-a-workstation-that-is-joined-to-a-domain"></a><a name="BKMK_2"></a>ドメイン、サイト、または組織単位の場合、メンバーサーバーまたはドメインに参加しているワークステーション上にある
 
 1.  Microsoft 管理コンソール (MMC) を開きます。
 
@@ -101,7 +97,7 @@ SRP を使用して特定のタスクを実行する方法については、以�
 > [!NOTE]
 > この手順を実行するには、Domain Admins グループのメンバーである必要があります。
 
-### <a name="BKMK_3"></a>ドメインまたは組織単位の場合、リモートサーバー管理ツールがインストールされているドメインコントローラーまたはワークステーションを使用している
+### <a name="for-a-domain-or-organizational-unit-and-you-are-on-a-domain-controller-or-on-a-workstation-that-has-the-remote-server-administration-tools-installed"></a><a name="BKMK_3"></a>ドメインまたは組織単位の場合、リモートサーバー管理ツールがインストールされているドメインコントローラーまたはワークステーションを使用している
 
 1.  グループポリシー管理コンソールを開きます。
 
@@ -120,7 +116,7 @@ SRP を使用して特定のタスクを実行する方法については、以�
 > [!NOTE]
 > この手順を実行するには、Domain Admins グループのメンバーである必要があります。
 
-### <a name="BKMK_4"></a>サイトの場合、リモートサーバー管理ツールがインストールされているドメインコントローラーまたはワークステーションを使用している
+### <a name="for-a-site-and-you-are-on-a-domain-controller-or-on-a-workstation-that-has-the-remote-server-administration-tools-installed"></a><a name="BKMK_4"></a>サイトの場合、リモートサーバー管理ツールがインストールされているドメインコントローラーまたはワークステーションを使用している
 
 1.  グループポリシー管理コンソールを開きます。
 
@@ -145,7 +141,7 @@ SRP を使用して特定のタスクを実行する方法については、以�
 > -   コンピューターにログオンするユーザーに関係なく、コンピューターに適用されるポリシー設定を設定するには、 **[コンピューターの構成]** をクリックします。
 > -   ログオンするコンピューターに関係なく、ユーザーに適用されるポリシー設定を設定するには、 **[ユーザーの構成]** をクリックします。
 
-## <a name="BKMK_Create_SRP"></a>ソフトウェアの制限のポリシーを新規作成するには
+## <a name="to-create-new-software-restriction-policies"></a><a name="BKMK_Create_SRP"></a>ソフトウェアの制限のポリシーを新規作成するには
 
 1.  [ソフトウェアの制限のポリシー] を開きます。
 
@@ -158,7 +154,7 @@ SRP を使用して特定のタスクを実行する方法については、以�
 >     -   ドメインに参加しているコンピューターについてソフトウェアの制限のポリシーを新規作成する場合には、Domain Admins グループのメンバーのみこの手順を実行できます。
 > -   グループ ポリシー オブジェクト (GPO) についてソフトウェアの制限のポリシーが作成済みである場合には、 **[操作]** メニューに **[新しいソフトウェアの制限のポリシー]** コマンドが表示されません。 GPO に適用されているソフトウェアの制限のポリシーを削除するには、 **[ソフトウェアの制限のポリシー]** を右クリックし、 **[ソフトウェアの制限のポリシーを削除する]** をクリックします。 GPO のソフトウェアの制限のポリシーを削除すると、その GPO のソフトウェアの制限のポリシー規則もすべて削除されます。 ソフトウェアの制限のポリシーを削除した後には、その GPO についてソフトウェアの制限のポリシーを新規作成できます。
 
-## <a name="BKMK_Add_Del"></a>指定されたファイルの種類を追加または削除するには
+## <a name="to-add-or-delete-a-designated-file-type"></a><a name="BKMK_Add_Del"></a>指定されたファイルの種類を追加または削除するには
 
 1.  [ソフトウェアの制限のポリシー] を開きます。
 
@@ -178,7 +174,7 @@ SRP を使用して特定のタスクを実行する方法については、以�
 > -   グループ ポリシー オブジェクト (GPO) についてソフトウェアの制限のポリシーの設定を作成していない場合には、この設定の新規作成が必要になることがあります。
 > -   指定したファイルの種類の一覧は、GPO のコンピューターの構成とユーザーの構成の両方の規則によって共有されます。
 
-## <a name="BKMK_Prevent_Admin"></a>ソフトウェアの制限のポリシーがローカルの管理者に適用されないようにするには
+## <a name="to-prevent-software-restriction-policies-from-applying-to-local-administrators"></a><a name="BKMK_Prevent_Admin"></a>ソフトウェアの制限のポリシーがローカルの管理者に適用されないようにするには
 
 1.  [ソフトウェアの制限のポリシー] を開きます。
 
@@ -192,7 +188,7 @@ SRP を使用して特定のタスクを実行する方法については、以�
 > -   ユーザーが組織内にあるコンピューターのローカル Administrators グループのメンバーになることが普通である場合には、このオプションを有効にしないこともあります。
 > -   ローカル コンピューターに対してソフトウェアの制限のポリシーの設定を定義するときには、この手順を実行するとローカル管理者にソフトウェアの制限のポリシーが適用されなくなります。 ネットワークのソフトウェアの制限のポリシー設定を定義する場合は、グループポリシーを使用して、セキュリティグループのメンバーシップに基づいてユーザーポリシー設定をフィルター処理します。
 
-## <a name="BKMK_Sec_Lvl"></a>ソフトウェアの制限のポリシーの既定のセキュリティレベルを変更するには
+## <a name="to-change-the-default-security-level-of-software-restriction-policies"></a><a name="BKMK_Sec_Lvl"></a>ソフトウェアの制限のポリシーの既定のセキュリティレベルを変更するには
 
 1.  [ソフトウェアの制限のポリシー] を開きます。
 
@@ -210,7 +206,7 @@ SRP を使用して特定のタスクを実行する方法については、以�
 > -   ソフトウェアの制限のポリシーの規則は、既定のセキュリティレベルに対する例外を指定するために作成されます。 既定のセキュリティ レベルが **[制限なし]** に設定されている場合には、規則では実行を許可しないソフトウェアを指定できます。 既定のセキュリティ レベルが **[許可しない]** に設定されている場合には、規則では実行を許可するソフトウェアを指定できます。
 > -   インストール時には、システム上の全ファイルについてソフトウェアの制限のポリシーの既定のセキュリティ レベルが **[制限なし]** に設定されています。
 
-## <a name="BKMK_Apply_SRP_DLLs"></a>ソフトウェアの制限のポリシーを Dll に適用するには
+## <a name="to-apply-software-restriction-policies-to-dlls"></a><a name="BKMK_Apply_SRP_DLLs"></a>ソフトウェアの制限のポリシーを Dll に適用するには
 
 1.  [ソフトウェアの制限のポリシー] を開きます。
 

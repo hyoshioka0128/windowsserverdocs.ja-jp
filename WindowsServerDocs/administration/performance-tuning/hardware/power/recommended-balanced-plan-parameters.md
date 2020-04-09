@@ -4,15 +4,15 @@ description: 応答時間を短縮するための推奨されるバランス電�
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: Qizha;TristanB
+ms.author: qizha;tristanb
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 96037a577c9f2a835e9c49bf9339ed8dc6da1a6b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 288746b5361c550e167f64886a929c96c81ff8d0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383512"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851965"
 ---
 # <a name="recommended-balanced-power-plan-parameters-for-workloads-requiring-quick-response-times"></a>迅速な応答時間を必要とするワークロードの推奨されるバランスのある電源プランパラメーター
 
@@ -26,7 +26,7 @@ ms.locfileid: "71383512"
 | プロセッサパフォーマンスの増加しきい値 | 使用率のしきい値。この値を超えると頻度が高くなります。 | 90 | 60 |
 | プロセッサパフォーマンスの低下しきい値 | 頻度が減少する使用率のしきい値 | 80 | 40 |
 | プロセッサのパフォーマンスの向上時間 | 頻度が増加するまでの PPM チェックウィンドウの数 | 3 | 1 |
-| プロセッサパフォーマンスの向上ポリシー | 頻度が増加する速度 | 単一 | 理想時間 |
+| プロセッサパフォーマンスの向上ポリシー | 頻度が増加する速度 | Single | 理想時間 |
 
 提示された値を設定するために、ユーザーは管理者と共に次のコマンドをウィンドウで実行できます。
 

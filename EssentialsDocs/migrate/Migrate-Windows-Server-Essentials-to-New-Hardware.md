@@ -1,29 +1,25 @@
 ---
 title: Windows Server Essentials の新しいハードウェアへの移行
 description: Windows Server Essentials の使用方法について説明します。
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f695ae90-3160-407b-bebf-9e460f22c86d
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 53064a2e9de9c78f41117f73619cf74496f0a285
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: ac55c523f05128715ac76cf538375987ab764b5b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80318947"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852535"
 ---
 # <a name="migrate-windows-server-essentials-to-new-hardware"></a>Windows Server Essentials の新しいハードウェアへの移行
 
 >適用対象: windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-このガイドでは、既存の Windows Server® 2012 Essentials ドメインを新しいハードウェア上の Windows Server Essentials に移行してから、設定とデータを移行する方法について説明します。 このガイドでは、移行の完了後に Windows Server Essentials ネットワークから既存のサーバーを削除する方法についても説明します。  
+このガイドでは、既存の Windows Server&reg; 2012 Essentials ドメインを新しいハードウェア上の Windows Server Essentials に移行してから、設定とデータを移行する方法について説明します。 このガイドでは、移行の完了後に Windows Server Essentials ネットワークから既存のサーバーを削除する方法についても説明します。  
   
 > [!NOTE]
 >  移行中の問題を回避するために、Windows Server Essentials 製品開発チームでは、移行を開始する前にこのドキュメントを読むことを強くお勧めします。  

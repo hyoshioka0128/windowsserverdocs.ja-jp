@@ -1,26 +1,22 @@
 ---
-title: label
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+title: ラベル
+description: Windows コマンドに関するトピック * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: bbae8bdd-97d4-4566-9118-7c95aa07645f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e66a2d9a7d28462b287084e3f8b129ffc03800bd
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7ccb86e2167682e1048161f2d5f5386a8b5cf6ed
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71374792"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80841175"
 ---
-# <a name="label"></a>label
+# <a name="label"></a>ラベル
 
 
 
@@ -34,16 +30,16 @@ ms.locfileid: "71374792"
 label [/mp] [<Volume>] [<Label>]
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
 |パラメーター|説明|
 |---------|-----------|
 |/mp|ボリュームをマウントポイントまたはボリューム名として扱うことを指定します。|
 |\<ボリューム >|ドライブ文字 (後ろにコロンを付ける)、マウントポイント、またはボリューム名を指定します。 ボリューム名が指定されている場合、 **/mp**パラメーターは必要ありません。|
 |\<ラベル >|ボリュームのラベルを指定します。|
-|/?|コマンド プロンプトにヘルプを表示します。|
+|/?|コマンド プロンプトでヘルプを表示します。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
 - Windows では、ディレクトリの一覧の一部としてボリュームラベルとシリアル番号 (ある場合) が表示されます。
 - NTFS ボリュームラベルには、スペースを含め、最大32文字の長さを指定できます。 NTFS ボリュームラベルは、ラベルが作成されたときに使用されたケースを保持し、表示します。
@@ -59,7 +55,7 @@ label [/mp] [<Volume>] [<Label>]
   ```  
   Y キーを押してラベルを削除するか、N キーを押してラベルを保持します。
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a><a name=BKMK_examples></a>例
 
 7月の売上情報が含まれているドライブ A のディスクにラベルを付けるには、次のように入力します。
 ```
@@ -82,6 +78,6 @@ C ドライブの現在のラベルを削除するには、次の手順を実行
    ```  
 3. Y キーを押して現在のラベルを削除します。
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

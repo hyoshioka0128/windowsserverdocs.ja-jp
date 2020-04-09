@@ -1,7 +1,6 @@
 ---
 ms.assetid: ceb9ce18-5a94-4166-9edd-2685b81fc15f
 title: フォレスト間にわたる要求の展開
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 21ddcbd3b71a8d623950f1600b654e04ecc41f1e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 99af1022870c891c75bb2008f57e8d8e171961ff
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357572"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861235"
 ---
 # <a name="deploy-claims-across-forests"></a>フォレスト間にわたる要求の展開
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 Windows Server 2012 では、クレームの種類は、関連付けられているオブジェクトに関するアサーションです。 信頼性情報の種類は、Active directory のフォレストごとに定義されます。 セキュリティ プリンシパルが信頼の境界を横断して信頼されているフォレストのリソースにアクセスする必要があるさまざまなシナリオがあります。 Windows Server 2012 でのフォレスト間の要求変換を使用すると、フォレストを通過する送信要求と受信要求を変換して、信頼する側と信頼される側のフォレストで信頼性情報が認識され受け入れられるようにすることができます。 実際にある信頼性情報変換のシナリオをいくつか示します。  
   
@@ -49,7 +48,7 @@ Windows Server 2012 では、クレームの種類は、関連付けられてい
   
 -   [要求変換規則言語](Claims-Transformation-Rules-Language.md)  
   
-## <a name="BKMK_NEW"></a>このシナリオに含まれる役割と機能  
+## <a name="roles-and-features-included-in-this-scenario"></a><a name="BKMK_NEW"></a>このシナリオに含まれる役割と機能  
 次の表で、このシナリオに含まれている役割と機能を紹介すると共に、それをシナリオに活かす方法について説明します。  
   
 |役割/機能|このシナリオのサポート方法|  

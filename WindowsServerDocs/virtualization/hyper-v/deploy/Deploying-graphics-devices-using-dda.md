@@ -2,20 +2,18 @@
 title: 個別のデバイスの割り当てを使用してグラフィックスデバイスをデプロイする
 description: DDA を使用して Windows Server でグラフィックスデバイスを展開する方法について説明します。
 ms.prod: windows-server
-ms.service: na
 ms.technology: hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 author: chrishuybregts
 ms.author: chrihu
 ms.assetid: 67a01889-fa36-4bc6-841d-363d76df6a66
 ms.date: 08/21/2019
-ms.openlocfilehash: 5466cecf9f11a53dc6e205f36d50d7b27b310ea1
-ms.sourcegitcommit: 81198fbf9e46830b7f77dcd345b02abb71ae0ac2
+ms.openlocfilehash: 07f0ba19aaf998bb7b2fe8cf4ef1ba6cf8cae322
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72923878"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860915"
 ---
 # <a name="deploy-graphics-devices-using-discrete-device-assignment"></a>個別のデバイスの割り当てを使用してグラフィックスデバイスをデプロイする
 
@@ -87,7 +85,7 @@ VM が特定の方法で構成されていると、一部のハードウェア�
 Add-VMAssignableDevice -LocationPath $locationPath -VMName VMName
 ```
 
-## <a name="whats-next"></a>次の内容
+## <a name="whats-next"></a>次の課題
 デバイスが VM に正常にマウントされると、その VM を起動して、ベアメタルシステムで実行されていた場合と同じように、通常どおりにデバイスと対話できるようになります。  これにより、ハードウェアベンダーのドライバーを VM にインストールできるようになり、アプリケーションはそのハードウェアが存在することを確認できるようになります。  これを確認するには、ゲスト VM でデバイスマネージャーを開き、ハードウェアが表示されていることを確認します。
 
 ## <a name="removing-a-device-and-returning-it-to-the-host"></a>デバイスを削除してホストに戻す
@@ -133,7 +131,7 @@ Dismount-VMHostAssignableDevice -force -LocationPath $locationPath
 Add-VMAssignableDevice -LocationPath $locationPath -VMName $vm
 ```
 
-## <a name="troubleshooting"></a>[トラブルシューティング]
+## <a name="troubleshooting"></a>トラブルシューティング
 
 GPU を VM に渡したが、リモートデスクトップまたはアプリケーションが GPU を認識していない場合は、次の一般的な問題を確認してください。
 
@@ -141,4 +139,4 @@ GPU を VM に渡したが、リモートデスクトップまたはアプリケ
 - デバイスに、VM 内に割り当てられている MMIO 領域が十分にあることを確認します。 詳細については、「 [MMIO Space](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md#mmio-space)」を参照してください。
 - この構成で使用されているベンダーがサポートしている GPU を使用していることを確認します。 たとえば、一部のベンダーでは、VM に渡されたときにコンシューマーカードが動作しなくなります。
 - 実行中のアプリケーションが VM 内での実行をサポートしていること、および GPU とそれに関連付けられているドライバーの両方がアプリケーションでサポートされていることを確認します。 一部のアプリケーションでは、Gpu と環境のリストが許可されています。
-- ゲストでリモートデスクトップセッションホストの役割または Windows Multipoint Services を使用している場合は、特定のグループポリシーエントリが既定の GPU の使用を許可するように設定されていることを確認する必要があります。 ゲスト (またはゲストのローカルグループポリシーエディター) に適用されているグループポリシーオブジェクトを使用して、次のグループポリシー項目に移動します:**コンピューターの構成** > **管理者テンプレート** > **Windows コンポーネント** > **リモートデスクトップサービス** > **リモートデスクトップセッションホスト** **リモートセッション環境** > **すべての > セッションでハードウェアの既定のグラフィックスアダプターを使用**リモートデスクトップサービスます。 ポリシーが適用されたら、この値を [有効] に設定し、VM を再起動します。
+- ゲストでリモートデスクトップセッションホストの役割または Windows Multipoint Services を使用している場合は、特定のグループポリシーエントリが既定の GPU の使用を許可するように設定されていることを確認する必要があります。 ゲスト (またはゲストのローカルグループポリシーエディター) に適用されているグループポリシーオブジェクトを使用して、次のグループポリシー項目に移動します。**コンピューターの構成** > **管理者テンプレート** > **Windows コンポーネント** ** > リモートデスクトップサービス > リモートデスクトップセッションホスト** **リモートセッション環境** > **すべての > セッションでハードウェアの既定のグラフィックスアダプターを使用** **リモートデスクトップサービス。** ポリシーが適用されたら、この値を [有効] に設定し、VM を再起動します。

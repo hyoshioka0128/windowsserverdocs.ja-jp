@@ -1,24 +1,20 @@
 ---
 title: ステーションでアプリケーションを起動または終了する
 description: MultiPoint Services でアプリケーションを操作する方法について説明します。
-ms.custom: na
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: efede045-c20b-4541-9db0-dc96848b987a
 author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: dbf926cd934a14334785a400763d58fcea581973
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d1725a4bed34541b6b6737bbe45b0898a32202a3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71389659"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853695"
 ---
 # <a name="launch-or-close-applications-on-a-station"></a>ステーションでアプリケーションを起動または終了する
 MultiPoint ダッシュボードユーザーは、ユーザーのデスクトップ、選択したデスクトップ、またはすべてのデスクトップでアプリケーションを開いたり、閉じたりできます。  
@@ -47,6 +43,6 @@ MultiPoint ダッシュボードユーザーは、ユーザーのデスクトッ
   
 3.  終了するアプリケーション、フォルダー、ドキュメント、インターネット リソースの名前を選択し、 **[アプリケーションの終了]** をクリックします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [ユーザーデスクトップの管理](manage-user-desktops-using-multipoint-dashboard.md)  
   

@@ -4,18 +4,17 @@ description: この手順では、VPN をサポートするために必要なサ
 ms.prod: windows-server
 ms.technology: networking-ras
 ms.topic: article
-ms.assetid: ''
 ms.localizationpriority: medium
-ms.author: lizross
-author: eross-msft
+ms.author: v-tea
+author: Teresa-MOTIV
 ms.date: 08/30/2018
 ms.reviewer: deverette
-ms.openlocfilehash: a7d1c451989d69f45f02571de4854b0f0f4e12f5
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 7c09ae7a792030152780ce4eb0029cea3ca234d2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80307824"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80818925"
 ---
 # <a name="step-2-configure-the-server-infrastructure"></a>手順 2. サーバーインフラストラクチャの構成
 
@@ -95,7 +94,7 @@ RRAS サーバーはドメインに参加していないため、自動登録を
 6. 管理者特権でのコマンドプロンプトで、前の手順で作成した VPNGateway. req ファイルが含まれているフォルダーに移動し、次のように入力します。
 
    ```
-   certreq -attrib “CertificateTemplate:[Customer]VPNGateway” -submit VPNgateway.req VPNgateway.cer
+   certreq -attrib "CertificateTemplate:[Customer]VPNGateway" -submit VPNgateway.req VPNgateway.cer
    ```
 
 7. [証明機関の一覧] ウィンドウが表示されたら、証明書の要求を処理する適切なエンタープライズ CA を選択します。

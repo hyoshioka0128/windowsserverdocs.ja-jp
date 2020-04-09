@@ -1,28 +1,22 @@
 ---
 title: set
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Windows コマンドに関するトピックでは、CMD を表示、設定、または削除します。EXE 環境変数。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5fdd60d6-addf-4574-8c92-8aa53fa73d76
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 12dce38bf8ad050c65a7a8c0fca4a71267cca93f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7477caa47ef8f728b2ebe99fe0bbf961888b846e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71384102"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80834395"
 ---
 # <a name="set"></a>set
-
-
 
 表示、セット、または削除します。EXE の環境変数。 パラメーターを指定せずに使用する場合 **設定** 現在の環境変数の設定が表示されます。
 
@@ -36,26 +30,26 @@ set [/p] <Variable>=[<PromptString>]
 set /a <Variable>=<Expression>
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
 |パラメーター|説明|
 |---------|-----------|
 |\<変数 >|設定または変更するには、環境変数を指定します。|
 |\<文字列 >|指定された環境変数に関連付ける文字列を指定します。|
 |/p|値を設定 *変数* の入力をユーザーが入力行にします。|
-|\<PromptString >|(省略可能)。 入力をユーザーに入力を求めるメッセージを指定します。 このパラメーターを併用、 **/p** コマンド ライン オプションです。|
+|\<PromptString >|省略可。 入力をユーザーに入力を求めるメッセージを指定します。 このパラメーターを併用、 **/p** コマンド ライン オプションです。|
 |/a|セット *文字列* に評価される数値式です。|
 |\<式 >|数値式を指定します。 使用できる有効な演算子の「解説」を参照してください *式*します。|
-|/?|コマンド プロンプトにヘルプを表示します。|
+|/?|コマンド プロンプトでヘルプを表示します。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
 - 使用して **設定** コマンド拡張機能を有効になっています。
 
   コマンド拡張機能が有効にすると (既定値) を実行して **設定** 表示すべてがその値で始まる変数の値を持つ。
 - 特殊文字を使用します。
 
-  文字 **<** , 、 **>** , 、 **|** , 、 **&** , 、 **^** 特別なコマンド シェルの文字し、する前にエスケープ文字が必要 ( **^** ) で使用する場合に、引用符で囲まれた、または *文字列* (たとえば、 **"折り返し & シンボル"** )。 特殊文字のいずれかを表す文字列を囲む引用符を使用する場合、引用符は、環境変数の値の一部として設定されます。
+  **<** 、 **>** 、 **|** 、 **&** 、 **^** 文字は特殊なコマンドシェル文字であり、*文字列*で使用する場合は、前にエスケープ文字 ( **^** ) を付けるか、引用符で囲む必要があります (たとえば、 **& 記号を含む stringcontaining**。 特殊文字のいずれかを表す文字列を囲む引用符を使用する場合、引用符は、環境変数の値の一部として設定されます。
 - 環境変数の使用
 
   環境変数を使用して、バッチ ファイルやプログラムの動作を制御し、Windows と、MS-DOS を制御するサブシステムの外観し機能します。 **設定** コマンドでよく使用されて、項目ファイル環境変数を設定します。
@@ -77,7 +71,7 @@ set /a <Variable>=<Expression>
   |          ! ~ -          |        単項         |
   |         \*/%          |      算術演算子      |
   |           + -           |      算術演算子      |
-  |          < < > >          |    論理シフト     |
+  |          << >>          |    論理シフト     |
   |            &            |     ビットごとの AND      |
   |            ^            | ビットごとの排他的 OR |
   |                         |                      |
@@ -105,7 +99,7 @@ set /a <Variable>=<Expression>
 
   **設定** コマンドで他のパラメーターは、回復コンソールから利用できます。
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a><a name=BKMK_examples></a>例
 
 TEST という名前の環境変数を設定する ^1 の場合、型。
 ```
@@ -115,11 +109,11 @@ set testVar=test^^1
 > [!NOTE]
 > **設定** コマンドは、変数の値を等号 (=) に依存しているすべてのデータを割り当てます。 入力した場合。
 > ```
-> set testVar="test^1"
+> set testVar=test^1
 > ```
 > 次の結果が得られます。
 > ```
-> testVar="test^1"
+> testVar=test^1
 > ```
 > 環境変数を設定するには、という名前のテストと 1 の種類。
 > ```
@@ -135,7 +129,7 @@ set testVar=test^^1
 > ```
 > このコマンドが処理されるときに、文字列 C:\Inc を置き換えます **% 含める %** します。
 
-使用することも **設定** 新しいディレクトリを PATH 環境変数に追加するバッチ ファイルでします。 次に、例を示します。
+使用することも **設定** 新しいディレクトリを PATH 環境変数に追加するバッチ ファイルでします。 例 :
 ```
 @echo off
 rem ADDPATH.BAT adds a new directory
@@ -151,6 +145,6 @@ set p
 > [!NOTE]
 > このコマンドでは、既定で有効になっているコマンド拡張機能が必要です。
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

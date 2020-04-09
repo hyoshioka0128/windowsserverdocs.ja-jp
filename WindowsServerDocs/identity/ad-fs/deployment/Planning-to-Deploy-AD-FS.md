@@ -1,7 +1,6 @@
 ---
 ms.assetid: c87dc32d-ab33-44d2-a46f-f9f878b4e5b4
 title: AD FS の展開計画
-description: ''
 author: billmath
 manager: femila
 ms.date: 05/31/2017
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: ed2082706975d58a1535aaeb61e6c5283d23306a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3cc26807d43f8a041647045af0074fd538c395a4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71359503"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855325"
 ---
 # <a name="planning-to-deploy-ad-fs"></a>AD FS の展開計画
 

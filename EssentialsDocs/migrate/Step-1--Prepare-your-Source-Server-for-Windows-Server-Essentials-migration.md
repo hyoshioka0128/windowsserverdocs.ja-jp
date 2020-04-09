@@ -1,27 +1,23 @@
 ---
 title: '手順 1: Windows Server Essentials への移行に向けて移行元サーバーを準備する'
 description: Windows Server Essentials の使用方法について説明します。
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 244c8a06-04c6-4863-8b52-974786455373
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: cb0cffdda0e0f1528887d3c94a1905a99c5c55c3
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: b673f9987aa3617b6f3f5298223372dc9edfe646
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80318784"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852385"
 ---
-# <a name="step-1-prepare-your-source-server-for-windows-server-essentials-migration"></a>手順 1: Windows Server Essentials への移行に向けて移行元サーバーを準備する
-
 >適用対象: windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
+
+# <a name="step-1-prepare-your-source-server-for-windows-server-essentials-migration"></a>手順 1: Windows Server Essentials への移行に向けて移行元サーバーを準備する
 
 このトピックでは、移行元サーバーのバックアップ、移行元サーバーのシステム正常性の評価、最新のサービス パックと修正プログラムのインストール、およびネットワーク構成の検証の方法について説明します。  
 
@@ -68,7 +64,7 @@ ms.locfileid: "80318784"
 
 2.  **[既定のドメイン コントローラー ポリシー]** を右クリックし、 **[編集]** をクリックします。  
 
-3.  **[コンピューターの構成] &amp;gt; [Windows の設定] &amp;gt; [セキュリティの設定] &amp;gt; [ローカル ポリシー] &amp;gt; [ユーザー権利の割り当て]** の順に移動します。  
+3.  **[コンピューターの構成] &gt; [Windows の設定] &gt; [セキュリティの設定] &gt; [ローカル ポリシー] &gt; [ユーザー権利の割り当て]** の順に移動します。  
 
 4.  詳細ウィンドウで、 **[サービスとしてログオン]** をダブルクリックします。  
 

@@ -2,19 +2,19 @@
 title: 仮想マシンをエクスポートおよびインポートする
 description: Hyper-v マネージャーまたは Windows PowerShell を使用して仮想マシンをエクスポートおよびインポートする方法について説明します。
 ms.prod: windows-server
-author: KBDAzure
+author: kbdazure
 ms.author: kathydav
 manager: dongill
 ms.technology: compute-hyper-v
 ms.date: 12/13/2016
 ms.topic: article
 ms.assetid: 7fd996f5-1ea9-4b16-9776-85fb39a3aa34
-ms.openlocfilehash: 6e130ee8a040cd5b56908d77d91bf196a60de6f7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1e9cd8710a53c1e5d9d97e464c32dbf7f17d29a7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71392977"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860895"
 ---
 >適用対象: Windows 10、Windows Server 2016、Microsoft Hyper-V Server 2016、Windows Server 2019、Microsoft Hyper-V Server 2019
 
@@ -36,7 +36,7 @@ ms.locfileid: "71392977"
 
 エクスポートが完了すると、エクスポート場所にエクスポートされたすべてのファイルが表示されます。
 
-### <a name="using-powershell"></a>PowerShell を使用する
+### <a name="using-powershell"></a>PowerShell の使用
 
 管理者としてセッションを開き、次のようなコマンドを実行します。 \<vm 名\> と \<パス\>を置き換えます。
 
@@ -66,7 +66,7 @@ Export-VM -Name \<vm name\> -Path \<path\>
 
 5. インポートの種類を選択し、 **[次へ]** をクリックします。 (詳細については、以下の「[型のインポート](#import-types)」を参照してください)。
 
-6. **[Finish]** (完了) をクリックします。
+6. **[完了]** をクリックします。
 
 ### <a name="import-using-powershell"></a>PowerShell を使用したインポート
 

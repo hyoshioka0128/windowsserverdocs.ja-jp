@@ -1,7 +1,6 @@
 ---
 ms.assetid: c17d143b-86b4-47c0-b76e-1862dda8f0bd
 title: チュートリアル-Windows デバイスでの Workplace Join
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 9867e11aa659be9aff9912780e1186a796a7232e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 68249c4afcd3fc23f040020a221e53df6d2f6865
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357771"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80816015"
 ---
 # <a name="walkthrough-workplace-join-with-a-windows-device"></a>チュートリアル:職場への Windows デバイスの参加
 
@@ -56,7 +55,7 @@ ms.locfileid: "71357771"
 
 4. **[ユーザー id を入力して職場へのアクセスを取得するか、デバイス管理を有効にする]** ボックスに「 <strong>roberth@contoso.com</strong>」と入力し、 **[参加]** をクリックします。
 
-5. 資格情報の入力を求められたら、「 <strong>roberth@contoso.com</strong>」と入力し、[パスワード: <strong>P@ssword</strong>] を入力します。 **[OK]** をクリックします。
+5. 資格情報の入力を求められたら、「 <strong>roberth@contoso.com</strong>」と入力し、[パスワード: <strong>P@ssword</strong>] を入力します。 **[OK]** をクリックすると、
 
 6. 次のメッセージが表示されます:"このデバイスは社内のネットワークに参加しています"
 
@@ -77,7 +76,7 @@ ms.locfileid: "71357771"
 
 6. Internet Explorer を開き、同じ要求アプリに移動して、 **https://webserv1.contoso.com/claimapp** します。
 
-7. 今回は資格情報の入力を **求められません** 。 ワークプレース ジョインを使用したデバイスから接続しているため、シングル サインオンが機能しています。
+7. 今回は資格情報の入力を**求められません**。 ワークプレース ジョインを使用したデバイスから接続しているため、シングル サインオンが機能しています。
 
 ## <a name="see-also"></a>参照
 [任意のデバイスからの職場への参加による会社のアプリケーション間の SSO とシームレスな2要素認証](Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)

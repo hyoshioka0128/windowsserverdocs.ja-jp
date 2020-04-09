@@ -1,24 +1,20 @@
 ---
 title: PowerShell_ise
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Windows コマンドに関するトピック * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 32c41b5b-a210-47d9-bd8c-91eb9830b4f0
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 65d8b9e7b7952ec64cd24e8106802cf66de693c6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b6ae96dcd40c894e0a528c06b461173f626fb2d2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71372191"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80837395"
 ---
 # <a name="powershell_ise"></a>PowerShell_ise
 
@@ -66,6 +62,6 @@ Windows PowerShell は、Windows Server オペレーティング システムの
 ## <a name="additional-references"></a>その他の参照情報
 
 [about_PowerShell_Ise](https://go.microsoft.com/fwlink/?LinkId=256512)
-[about_PowerShell](https://go.microsoft.com/fwlink/?LinkID=113439)
-[Windows PowerShell](https://go.microsoft.com/fwlink/?LinkID=107116)
-[windows powershell を使用したスクリプト](https://technet.microsoft.com/scriptcenter/dd742419)の参照
+[About_PowerShell](https://go.microsoft.com/fwlink/?LinkID=113439)
+
+[Windows](https://go.microsoft.com/fwlink/?LinkID=107116) PowerShell[でのスクリプト作成 windows powershell を使用したスクリプトに関する](https://technet.microsoft.com/scriptcenter/dd742419)説明も参照してください。

@@ -1,7 +1,6 @@
 ---
 ms.assetid: 2e751308-1c86-4d4f-88e4-6a78d3ca4696
 title: フェデレーション サーバーの配置の計画
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 77cf91126cc628fb7fefef3eca8e7189f3e9eb10
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 963d60ff3cc99b644b8cb4418d9558faa18cc263
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408022"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858665"
 ---
 # <a name="planning-federation-server-placement"></a>フェデレーション サーバーの配置の計画
 

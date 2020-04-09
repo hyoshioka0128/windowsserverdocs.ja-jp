@@ -1,19 +1,19 @@
 ---
 title: テナント用のシールドされた Vm-シールドされた VM を定義するシールドデータの作成
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: 49f4e84d-c1f7-45e5-9143-e7ebbb2ef052
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 09/25/2019
-ms.openlocfilehash: 26ff5e27494e2f42a0c8e4d28e2b9820f8d19e6a
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 6ff502e7246c899a7b4f29125266bf05d07e40ef
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322464"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856455"
 ---
 # <a name="shielded-vms-for-tenants---creating-shielding-data-to-define-a-shielded-vm"></a>テナント用のシールドされた Vm-シールドされた VM を定義するシールドデータの作成
 
@@ -39,7 +39,7 @@ ms.locfileid: "79322464"
 
 ## <a name="optional-obtain-a-certificate-for-remote-desktop-connection"></a>Optionalリモートデスクトップ接続用の証明書を取得する
 
-テナントはリモートデスクトップ接続またはその他のリモート管理ツールを使用してシールドされた Vm にしか接続できないため、テナントが適切なエンドポイントに接続していることを確認できること (つまり、"man-in-the-middle" がないこと) を確認することが重要です。接続を遮断しています。
+テナントはリモートデスクトップ接続またはその他のリモート管理ツールを使用してシールドされた Vm にしか接続できないため、テナントが適切なエンドポイントに接続していることを確認できることを確認することが重要です (つまり、接続を遮断する "man-in-the-middle" はありません)。
 
 目的のサーバーに接続していることを確認する方法の1つとして、接続の開始時に提示するリモートデスクトップサービス用の証明書をインストールして構成する方法があります。 サーバーに接続しているクライアントコンピューターは、証明書が信頼されているかどうかを確認し、存在しない場合は警告を表示します。 一般に、接続しているクライアントが証明書を信頼していることを確認するために、RDP 証明書はテナントの PKI から発行されます。 [リモートデスクトップサービスでの証明書の使用](https://technet.microsoft.com/library/dn781533.aspx)の詳細については、TechNet を参照してください。
 
@@ -96,7 +96,7 @@ VMM の署名済みテンプレートディスクは一般化されているた�
     | @Prefix-1-1@        | 24                   |
     | @NextHop-1-1@       | 192.168.1.254        |
     | @IP4Addr-2@         | 10.0.20.30/24        |
-    | @MACAddr-2@         | イーサネット2           |
+    | @MACAddr-2@         | イーサネット 2           |
     | @Prefix-2-1@        | 24                   |
     | @NextHop-2-1@       | 10.0.20.1            |
 

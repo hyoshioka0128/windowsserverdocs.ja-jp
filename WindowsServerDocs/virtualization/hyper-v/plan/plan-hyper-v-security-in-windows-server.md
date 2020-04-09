@@ -2,26 +2,23 @@
 title: Windows Server での Hyper-v セキュリティの計画
 description: Hyper-v ホストと仮想マシンのセキュリティに関する考慮事項の一覧を示します。
 ms.prod: windows-server
-ms.service: na
-ms.suite: na
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 115db481-b57e-41c3-8354-504f4bc6113a
 manager: dongill
 author: larsiwer
-ms.author: kathyDav
+ms.author: kathydav
 ms.date: 08/03/2018
-ms.openlocfilehash: 8fd86ae500fff1e6b8c27b0d34d1dcbeeade9f81
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 794f36b688c4c65da8b3925a98c91aea8cf74bde
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71392959"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852885"
 ---
 # <a name="plan-for-hyper-v-security-in-windows-server"></a>Windows Server での Hyper-v セキュリティの計画
 
->適用先:Windows Server 2016、Microsoft Hyper-V Server 2016、Windows Server 2019、Microsoft Hyper-V Server 2019
+>適用対象: Windows Server 2016、Microsoft Hyper-V Server 2016、Windows Server 2019、Microsoft Hyper-V Server 2019
 
 HYPER-V ホストのオペレーティング システム、仮想マシン、構成ファイル、および仮想マシンのデータをセキュリティで保護します。 HYPER-V 環境を保護するためにチェックリストとして次の推奨されるベスト プラクティスの一覧を使用します。
 
