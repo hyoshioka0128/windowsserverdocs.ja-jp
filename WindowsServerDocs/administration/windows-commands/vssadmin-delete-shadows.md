@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 05/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 9779da98ecb43245fe206390d9b70471f15d706e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9807efa2c570b8ed63c2d776327b8e3311846488
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71362608"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80830115"
 ---
 # <a name="vssadmin-delete-shadows"></a>Vssadmin delete の影
 
@@ -27,7 +27,7 @@ ms.locfileid: "71362608"
 vssadmin delete shadows /for=<ForVolumeSpec> [/oldest | /all | /shadow=<ShadowID>] [/quiet]
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
 |パラメーター|説明|
 |---|---|
@@ -37,7 +37,7 @@ vssadmin delete shadows /for=<ForVolumeSpec> [/oldest | /all | /shadow=<ShadowID
 |/shadow =\<ShadowID >|ShadowID によって指定されたシャドウコピーを削除します。 シャドウコピー ID を取得するには、 **vssadmin list shadows**コマンドを使用します。 シャドウコピー ID を入力するときは、次の形式を使用します。各*X*は16進文字を表します。<br><br>XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX-XXXX-XXXX-XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX|
 |/quiet|コマンドの実行中にメッセージを表示しないように指定します。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
 シャドウコピーを削除できるのは、クライアントからアクセス可能な型の場合のみです。
 

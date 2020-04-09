@@ -1,51 +1,46 @@
 ---
 title: bitsadmin getvalidationstate
-description: '**Bitsadmin getvalidationstate**の Windows コマンドのトピック-ジョブ内の指定されたファイルのコンテンツ検証の状態を報告します。 '
-ms.custom: na
+description: '**Bitsadmin getvalidationstate**の Windows コマンドに関するトピックでは、ジョブ内の指定されたファイルのコンテンツ検証の状態を報告します。'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 6ada3f1f-9967-4262-9d22-ed641e23f516
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ca4269a596010258edd0479f5a7e9844bc9c98df
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 52d7d983cc7858607c350483ed81223d107cee25
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71381262"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80850435"
 ---
 # <a name="bitsadmin-getvalidationstate"></a>bitsadmin getvalidationstate
-
-
 
 ジョブ内の指定されたファイルのコンテンツ検証の状態を報告します。
 
 ## <a name="syntax"></a>構文
 
 ```
-bitsadmin /GetValidationState <Job> <file index> 
+bitsadmin /getvalidationstate <job> <file_index>
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
-|---------|-----------|
-|Job|ジョブの表示名または GUID|
-|ファイルインデックス|0から開始|
+| パラメーター | 説明 |
+| -------------- | -------------- |
+| 送信 | ジョブの表示名または GUID。 |
+| file_index | 0から開始します。 |
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a><a name=BKMK_examples></a>例
 
-次の例では、 *myjob*という名前のジョブ内にあるファイル2のコンテンツ検証の状態を取得します。
+次の例では、 *Mydownloadjob*という名前のジョブ内にあるファイル2のコンテンツ検証の状態を取得します。
+
 ```
-C:\>bitsadmin /GetValidationState myJob 1
+C:\>bitsadmin /getvalidationstate myDownloadJob 1
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

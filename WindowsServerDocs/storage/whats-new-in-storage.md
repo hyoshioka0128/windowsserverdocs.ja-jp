@@ -3,17 +3,17 @@ ms.assetid: 0f2a7f7b-aca8-4e5d-ad67-4258e88bc52f
 title: Windows Server での記憶域の新機能
 ms.prod: windows-server
 ms.author: jgerend
-ms.manager: dongill
+manager: dongill
 ms.technology: storage
 ms.topic: article
 author: jasongerend
 ms.date: 05/29/2019
-ms.openlocfilehash: ffcff036a7e30018e523def055ce3aeb8d30c225
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 0de83c8642629b3a7ff21c9accadec5f9331178e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322334"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820855"
 ---
 # <a name="whats-new-in-storage-in-windows-server"></a>Windows Server での記憶域の新機能
 
@@ -65,7 +65,7 @@ Windows 管理センターは、windows Server 2019 およびその他のバー�
 
 ストレージ移行サービスは、Windows Server の新しいバージョンにサーバーを移行しやすくする新しいテクノロジです。 このサービスには、データをサーバーにインベントリし、データと構成を新しいサーバーに転送して、必要に応じて古いサーバーの ID を新しいサーバーに移行するツールが用意されているため、アプリとユーザーは何も変更する必要がありません。 詳細については、「[ストレージ移行サービス](storage-migration-service/overview.md)」を参照してください。
 
-### <a id="storage-spaces-direct"></a>記憶域スペースダイレクト (Windows Server 2019 のみ)
+### <a name="storage-spaces-direct-windows-server-2019-only"></a><a id="storage-spaces-direct"></a>記憶域スペースダイレクト (Windows Server 2019 のみ)
 
 Windows Server 2019 で記憶域スペースダイレクトには、次のような機能強化が行われています (記憶域スペースダイレクト Windows Server、半期チャネルには含まれていません)。
 
@@ -109,7 +109,7 @@ Windows Server 2019 で記憶域スペースダイレクトには、次のよう
 
     これにより、管理者は記憶域スペースダイレクトでボリュームの割り当てを手動で区切ることができます。 これにより、特定の条件下でフォールトトレランスを大幅に向上させることができますが、管理上の考慮事項と複雑さが増加します。 詳細については、「[ボリュームの割り当てを区切る](storage-spaces/delimit-volume-allocation.md)」を参照してください。
 
-### <a name="storage-replica2019"></a>記憶域レプリカ
+### <a name="storage-replica"></a><a name="storage-replica2019"></a>記憶域レプリカ
 
 このリリースでは、[記憶域レプリカ](storage-replica/storage-replica-overview.md)にいくつかの機能強化が行われています。
 
@@ -193,7 +193,7 @@ Windows Server バージョン1709は、半期チャネルの最初の Windows S
 
 ## <a name="whats-new-in-storage-in-windows-server-2016"></a>Windows Server 2016 での記憶域の新機能
 
-### <a name="s2d"></a>記憶域スペース ダイレクト  
+### <a name="storage-spaces-direct"></a><a name="s2d"></a>記憶域スペース ダイレクト  
 記憶域スペース ダイレクトでは、ローカル記憶域を持つサーバーを使用して高可用性を備えた拡張性の高い記憶域を作成できます。 ソフトウェア定義ストレージ システムの展開と管理を簡素化し、SATA SSD や NVMe ディスク デバイスなどの新しいクラスのディスク デバイスを使用できるようにします。これは、共有ディスクを使用したクラスター記憶域スペースによるこれまでの環境では実現できませんでした。  
 
 **この変更の利点**  
@@ -205,7 +205,7 @@ Windows Server バージョン1709は、半期チャネルの最初の Windows S
 **動作の相違点**  
 この機能は Windows Server 2016 での新規です。  
 
-### <a name="storage-replica"></a>記憶域レプリカ
+### <a name="storage-replica"></a><a name="storage-replica"></a>記憶域レプリカ
 
 記憶域レプリカでは、サイト間でフェールオーバー クラスターを拡大できるだけでなく、障害復旧用に、サーバー間またはクラスター間で記憶域にとらわれずにブロックレベルで同期レプリケーションを行うことができます。 同期レプリケーションは、クラッシュ前後の整合性が維持されるボリュームを使用した物理サイト内のデータのミラーリングを実現して、ファイル システム レベルでデータがまったく失われないようにします。 非同期レプリケーションでは、データが失われる可能性はありますが、大都市圏の範囲を超えてサイトを拡張できます。  
 
@@ -229,7 +229,7 @@ Windows Server バージョン1709は、半期チャネルの最初の Windows S
 **動作の相違点**  
 この機能は Windows Server 2016 での新規です。  
 
-### <a name="storage-qos"></a>記憶域のサービスの品質  
+### <a name="storage-quality-of-service"></a><a name="storage-qos"></a>記憶域のサービスの品質  
 記憶域のサービスの品質 (QoS) を使用して、Windows Server 2016 でエンド ツー エンドの記憶域のパフォーマンスを一元的に監視すると共に、Hyper-V クラスターと CSV クラスターを使用してポリシーを作成できるようになりました。  
 
 **この変更の利点**  
@@ -248,7 +248,7 @@ CSV クラスターで記憶域の QoS ポリシーを作成し、Hyper-V 仮想
 
 詳細については、「[記憶域のサービスの品質 (QoS)](storage-qos/storage-qos-overview.md)」を参照してください。
 
-### <a name="dedup"></a>データ重複除去  
+### <a name="data-deduplication"></a><a name="dedup"></a>データ重複除去  
 | 機能 | 新機能か更新された機能か | 説明 |
 |---------------|----------------|-------------|
 | [大容量ボリュームのサポート](data-deduplication/whats-new.md#large-volume-support) | 更新 | Windows Server 2016 の前までは、予期される変更量に合わせてボリュームのサイズを具体的に設定する必要がありました。そして、10 TB 以上のサイズのボリュームは重複除去に適した候補ではありませんでした。 Windows Server 2016 のデータ重複除去では **64 TB まで**のボリューム サイズがサポートされます。 |
@@ -257,7 +257,7 @@ CSV クラスターで記憶域の QoS ポリシーを作成し、Hyper-V 仮想
 | [簡略化されたバックアップのサポート](data-deduplication/whats-new.md#simple-backup-support) | 新規 | Windows Server 2012 R2 では、Microsoft の [Data Protection Manager](https://technet.microsoft.com/library/hh758173.aspx) などの仮想化されたバックアップ アプリケーションは、一連の手動による構成手順を実行することでサポートされていました。 Windows Server 2016 では、仮想化されたバックアップ アプリケーション用にデータ重複除去をシームレスに展開するために、使用法の種類の新しい既定値として "バックアップ" が追加されました。 |
 | [クラスター OS のローリングアップグレードのサポート](data-deduplication/whats-new.md#cluster-upgrade-support) | 新規 | データ重複除去では、Windows Server 2016 の新しい[クラスター OS のローリング アップグレード](..//failover-clustering/cluster-operating-system-rolling-upgrade.md)機能を完全にサポートしています。 |
 
-### <a name="smb-hardening-improvements"></a>SYSVOL と NETLOGON 接続の SMB セキュリティ強化の強化  
+### <a name="smb-hardening-improvements-for-sysvol-and-netlogon-connections"></a><a name="smb-hardening-improvements"></a>SYSVOL と NETLOGON 接続の SMB セキュリティ強化の強化  
 Active Directory ドメイン サービスへの Windows 10 および Windows Server 2016 のクライアント接続で、ドメイン コント ローラー上の既定の SYSVOL と NETLOGON 共有では、SMB 署名と相互認証 (Kerberos など) を必要とするようになりました。   
 
 **この変更の利点**  

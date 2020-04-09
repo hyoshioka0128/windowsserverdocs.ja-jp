@@ -1,7 +1,6 @@
 ---
 ms.assetid: 309d6358-777d-496a-856d-728246c7d9a1
 title: 認証方法の表示名と説明をカスタマイズする
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: cc0da10858ca6924a516fbf825206e376294209d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 218643bbd5ada63b6bee2b91a7bace3f9959c0bd
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407566"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80816445"
 ---
 # <a name="customize-the-display-names-and-descriptions-for-authentication-methods"></a>認証方法の表示名と説明をカスタマイズする 
 

@@ -1,30 +1,27 @@
 ---
-title: Set コマンド
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+title: set
+description: Windows コマンドのトピック「set」では、Windows 展開サービスサーバー、事前設定されたコンピューター、イメージ、イメージグループ、およびトランスポートサーバーのプロパティと属性を設定します。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5def6be0-83b9-4133-bc1b-bbe6d407eca7
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8131685b227444a0114e9c0eb70d6191a78f3da0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2e47a90137a94d4ada149135ee0b593e0ade0ae3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385076"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80833055"
 ---
-# <a name="the-set-command"></a>Set コマンド
+# <a name="set"></a>set
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 Windows 展開サービス サーバー、プレステージしたコンピューター、イメージ、イメージ グループ、およびトランスポート サーバーのプロパティと属性を設定します。
+
 ## <a name="subcommands"></a>サブコマンド
 |サブコマンド|説明|
 |-------|--------|

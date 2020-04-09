@@ -1,28 +1,24 @@
 ---
 title: logman 更新 api
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Windows コマンドに関するトピック * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 6f322e52-0f9f-42b1-bd64-8b8f8fe086fc britw
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c8e5a45270ec0ed70928688728abceb5bcb8bb29
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7739098343f7b98b0812a9b7199dea2da044786e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71374371"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80840595"
 ---
 # <a name="logman-update-api"></a>logman 更新 api
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 既存の API トレースデータコレクターのプロパティを更新します。  
 
@@ -30,7 +26,7 @@ ms.locfileid: "71374371"
 ```  
 logman update api <[-n] <name>> [options]  
 ```  
-## <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>パラメーター  
 
 |                    パラメーター                     |                                                                               説明                                                                               |
 |--------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -63,11 +59,11 @@ logman update api <[-n] <name>> [options]
 
 ## <a name="remarks"></a>コメント  
 [-] が一覧表示されている場合は、オプションを追加して否定します。  
-## <a name="BKMK_examples"></a>例  
+## <a name="examples"></a><a name=BKMK_examples></a>例  
 次のコマンドは、モジュール kernel32.dll によって生成された API 呼び出し TlsGetValue を除外することによって、実行可能ファイル c:\windows\notepad.exe の trace_notepad という名前の既存の API トレースカウンターを更新します。  
 ```  
 logman create api trace_notepad -exe c:\windows\notepad.exe -exapis kernel32.dll!TlsGetValue  
 ```  
-#### <a name="additional-references"></a>その他の参照情報  
+## <a name="additional-references"></a>その他の参照情報  
 [logman](logman.md)  
 [logman api の作成](logman-create-api.md)  

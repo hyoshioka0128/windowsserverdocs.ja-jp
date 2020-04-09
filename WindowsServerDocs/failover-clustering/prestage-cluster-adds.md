@@ -5,16 +5,16 @@ ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
-ms.manager: daveba
+manager: lizross
 ms.technology: storage-failover-clustering
 ms.date: 05/09/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 56bf122923525de6e0005dd6d866220221dc9ce1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b14561a05778ed30e71363a2cd3b3b6fdf24f78e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71392064"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80827475"
 ---
 # <a name="prestage-cluster-computer-objects-in-active-directory-domain-services"></a>Active Directory Domain Services でクラスターコンピューターオブジェクトを事前設定する
 
@@ -25,7 +25,7 @@ ms.locfileid: "71392064"
 クラスターの作成ウィザードまたは Windows PowerShell を使用してフェールオーバー クラスターを作成する場合は、クラスターの名前を指定する必要があります。 クラスターを作成する場合に十分な権限を持っている場合は、クラスターの作成プロセスによって、クラスターの名前と一致するコンピューター オブジェクトが AD DS 内に自動的に作成されます。 このオブジェクトは、"クラスター名オブジェクト" (CNO) とも呼ばれます。 クライアント アクセス ポイントを使用するクラスター化された役割を構成するときに、CNO を通じて、仮想コンピューター オブジェクト (VCO) が自動的に作成されます。 たとえば、 *FileServer1*という名前のクライアント アクセス ポイントを持つ高可用性ファイル サーバーを作成すると、CNO は対応する VCO を AD DS 内に作成します。
 
 >[!NOTE]
->AD DS で CNO または Vco が作成されていない Active Directory デタッチされたクラスターを作成するオプションがあります。 これは、特定の種類のクラスター展開を目的としたオプションです。 詳細については、「 [Deploy an Active Directory-Detached Cluster](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265970(v%3dws.11)>)」を参照してください。
+>AD DS で CNO または Vco が作成されていない Active Directory デタッチされたクラスターを作成するオプションがあります。 これは、特定の種類のクラスター展開を目的としたオプションです。 詳細については、「[Active Directory からデタッチされたクラスターを展開する](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265970(v%3dws.11)>)」を参照してください。
 
 CNO が自動的に作成されるようにするには、フェールオーバー クラスターを作成するユーザーが、組織単位 (OU) に対して、またはクラスターを形成するサーバーが存在しているコンテナーに対して、**コンピューター オブジェクトを作成する**権限を持っている必要があります。 この権限を持っていないユーザーまたはグループがクラスターを作成できるようにするには、AD DS で適切な権限を持つユーザー (通常はドメイン管理者) が AD DS 内に CNO をプレステージします。 このようにすると、ドメイン管理者はクラスターで使用される命名規則をより細かく制御し、クラスター オブジェクトがどの OU 内に作成されるかを制御できるようになります。
 
@@ -36,7 +36,7 @@ CNO が自動的に作成されるようにするには、フェールオーバ�
 - クラスターの割り当て先の名前
 - クラスターを作成する権限を付与するユーザーアカウントまたはグループの名前
 
-ベスト プラクティスとして、クラスター オブジェクト用の OU を作成することをお勧めします。 使用する OU が既に存在する場合、この手順を完了するには、 **Account Operators** グループのメンバーシップが最低限必要です。 クラスター オブジェクト用の OU を作成する必要がある場合、この手順を完了するには、 **Domain Admins** グループのメンバーシップ、またはそれと同等のメンバーシップが最低限必要です。
+ベスト プラクティスとして、クラスター オブジェクト用の OU を作成することをお勧めします。 使用する OU が既に存在する場合、この手順を完了するには、**Account Operators** グループのメンバーシップが最低限必要です。 クラスター オブジェクト用の OU を作成する必要がある場合、この手順を完了するには、**Domain Admins** グループのメンバーシップ、またはそれと同等のメンバーシップが最低限必要です。
 
 >[!NOTE]
 >OU でなく、既定の Computers コンテナーに CNO を作成する場合は、このトピックの手順 3. を完了する必要はありません。 このシナリオでは、クラスター管理者は追加の構成をしなくても、最大で 10 個の VCO を作成できます。
@@ -91,7 +91,7 @@ CNO が自動的に作成されるようにするには、フェールオーバ�
 
 AD DS で CNO をプレステージした場合、VCO を作成するには、次のいずれかの操作を行います。
 
-- オプション 1: 「 [Grant the CNO permissions to the OU](#grant-the-cno-permissions-to-the-ou)」。 このオプションを使用すると、クラスターは自動的に AD DS 内に VCO を作成できます。 そのため、フェールオーバー クラスターの管理者は、AD DS 内で VCO がプレステージされていなくても、クラスター化された役割を作成できます。
+- オプション 1: [CNO に OU へのアクセス許可を与えます](#grant-the-cno-permissions-to-the-ou)。 このオプションを使用すると、クラスターは自動的に AD DS 内に VCO を作成できます。 そのため、フェールオーバー クラスターの管理者は、AD DS 内で VCO がプレステージされていなくても、クラスター化された役割を作成できます。
 
 >[!NOTE]
 >このオプションの手順を実行するには、**Domain Admins** グループのメンバーシップ、またはそれと同等のメンバーシップが最低限必要です。
@@ -99,7 +99,7 @@ AD DS で CNO をプレステージした場合、VCO を作成するには、�
 - オプション 2:[クラスター化された役割のために VCO を事前](#prestage-a-vco-for-a-clustered-role)設定します。 組織の要件によって、クラスター化された役割のためのアカウントをプレステージする必要がある場合は、このオプションを使用します。 たとえば、命名規則を制御したり、どのクラスター化された役割が作成されるかを制御したい場合があります。
 
 >[!NOTE]
->このオプションの手順を実行するには、 **Account Operators** グループのメンバーシップが最低限必要です。
+>このオプションの手順を実行するには、**Account Operators** グループのメンバーシップが最低限必要です。
 
 ### <a name="grant-the-cno-permissions-to-the-ou"></a>CNO のアクセス許可を OU に付与します。
 
@@ -136,7 +136,7 @@ AD DS で CNO をプレステージした場合、VCO を作成するには、�
 
 フェールオーバー クラスターの管理者は、プレステージされた VCO 名と一致するクライアント アクセス ポイントを持つクラスター化された役割を作成し、リソースをオンラインにできるようになりました。
 
-## <a name="more-information"></a>詳細情報
+## <a name="more-information"></a>詳細
 
 - [フェールオーバー クラスタリング](failover-clustering.md)
 - [Active Directory でクラスターのアカウントを構成する](configure-ad-accounts.md)

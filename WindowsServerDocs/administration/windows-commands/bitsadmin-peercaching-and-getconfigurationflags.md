@@ -1,50 +1,45 @@
 ---
 title: bitsadmin ピアキャッシュと getconfigurationflags
-description: '**Bitsadmin ピアキャッシュと getconfigurationflags**に関する Windows コマンドトピックでは、コンピューターがピアにコンテンツを提供し、ピアからコンテンツをダウンロードできるかどうかを決定する構成フラグを取得します。'
-ms.custom: na
+description: '**Bitsadmin ピアキャッシュ**と**Getconfigurationflags**の Windows コマンドに関するトピックでは、コンピューターがピアにコンテンツを提供するかどうか、およびピアからコンテンツをダウンロードできるかどうかを決定する構成フラグを取得します。'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 124ddc15-3444-4bd5-96e5-c6bfabe4f9c2
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 94c7eb1a115fe9152b149b8cf65765b179080cc3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: be8d6a719d63c8e9c6250320560b6ce21274c680
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71381092"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80850175"
 ---
 # <a name="bitsadmin-peercaching-and-getconfigurationflags"></a>bitsadmin ピアキャッシュと getconfigurationflags
 
-
-
-コンピューターがピアにコンテンツを提供し、ピアからコンテンツをダウンロードできるかどうかを決定する構成フラグを取得します。
+コンピューターがピアにコンテンツを提供するかどうか、およびピアからコンテンツをダウンロードできるかどうかを決定する構成フラグを取得します。
 
 ## <a name="syntax"></a>構文
 
 ```
-bitsadmin /PeerCaching /GetConfigurationFlags <Job> 
+bitsadmin /peercaching /getconfigurationflags <job>
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
-|---------|-----------|
-|Job|ジョブの表示名または GUID|
+| パラメーター | 説明 |
+| -------------- | -------------- |
+| 送信 | ジョブの表示名または GUID。 |
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a><a name=BKMK_examples></a>例
 
-次の例では、 *Myjob*という名前のジョブの構成フラグを取得します。
+次の例では、 *Mydownloadjob*という名前のジョブの構成フラグを取得します。
+
 ```
-C:\> Bitsadmin /PeerCaching /GetConfigurationFlags myJob
+C:\> bitsadmin /peercaching /getconfigurationflags myDownloadJob
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

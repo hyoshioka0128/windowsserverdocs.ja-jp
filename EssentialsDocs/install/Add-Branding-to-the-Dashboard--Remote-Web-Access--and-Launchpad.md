@@ -1,23 +1,19 @@
 ---
 title: ダッシュボード、リモート Web アクセス、スタート パッドへのブランドの追加
 description: Windows Server Essentials の使用方法について説明します。
-ms.custom: na
 ms.date: 04/10/2014
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 166262f8-b2a5-4b1c-a4a7-a141e1c54f10
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 25a97f310347c9ecc1868bdeebc52b290808f1e8
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 50f132d7f6422c32b2a72948ca96b5bd82e701df
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80310266"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80817745"
 ---
 # <a name="add-branding-to-the-dashboard-remote-web-access-and-launchpad"></a>ダッシュボード、リモート Web アクセス、スタート パッドへのブランドの追加
 

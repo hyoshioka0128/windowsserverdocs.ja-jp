@@ -1,35 +1,35 @@
 ---
 title: bootcfg
-description: '**Bootcfg**の Windows コマンドのトピック-boot.ini ファイルの設定の構成、クエリ、または変更を行います。'
-ms.custom: na
+description: Windows コマンドに関するトピック。 bootcfg は、boot.ini ファイルの設定を構成、照会、または変更します。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 3deb354c-5717-4066-bc79-b9323d559e44
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2d66296327a2221093e5434f69e15e7c55df1f6b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a977b857242c030515a09a67eb0d284ade7a0beb
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71379846"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80848385"
 ---
 # <a name="bootcfg"></a>bootcfg
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-Boot.ini ファイルの設定の構成、クエリ、または変更を行います。  
-## <a name="syntax"></a>構文  
+Boot.ini ファイルの設定の構成、クエリ、または変更を行います。
+
+## <a name="syntax"></a>構文
+
 ```  
 bootcfg <parameter> [arguments...]  
-```  
-## <a name="parameters"></a>パラメーター  
+```
+
+### <a name="parameters"></a>パラメーター
+
 |パラメーター|説明|  
 |-------|--------|  
 |[bootcfg addsw](bootcfg-addsw.md)|指定したオペレーティングシステムエントリのオペレーティングシステムの読み込みオプションを追加します。|  

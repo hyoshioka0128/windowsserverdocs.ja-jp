@@ -1,24 +1,20 @@
 ---
 title: waitfor
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: システムでシグナルを送信または待機する waitfor の Windows コマンドに関するトピック。 **Waitfor** をネットワーク経由でコンピューターを同期するために使用します。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a48ef70d-4d28-4035-b6b0-7d7b46ac2157
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: aecea0ad19ee42e61396eb8b8ccd579b9ce2057b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4542fc9d231b8150ab89e07e173d9671d6b7a3f3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71362604"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80829935"
 ---
 # <a name="waitfor"></a>waitfor
 
@@ -35,7 +31,7 @@ waitfor [/s <Computer> [/u [<Domain>\]<User> [/p [<Password>]]]] /si <SignalName
 waitfor [/t <Timeout>] <SignalName>
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
 |       パラメーター       |                                                                                         説明                                                                                          |
 |-----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -45,9 +41,9 @@ waitfor [/t <Timeout>] <SignalName>
 |          /si          |                                                                        ネットワーク経由で指定されたシグナルを送信します。                                                                        |
 |     /t \<タイムアウト >     |                                              シグナルを待機する秒数を指定します。 既定では、 **waitfor** が無制限に待機します。                                               |
 |     \<SignalName >     |                                                信号を指定する **waitfor** まで待機するか、または送信します。 *信号名* 小文字は区別されません。                                                 |
-|          /?           |                                                                             コマンド プロンプトにヘルプを表示します。                                                                             |
+|          /?           |                                                                             コマンド プロンプトでヘルプを表示します。                                                                             |
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
 -   シグナル名には、225 文字を超えることはできません。 有効な文字には、a ~ z、A ~ Z、0 ~ 9、および拡張文字セット (128 ~ 255) ASCII が含まれます。
 -   使用しない場合 **/s**, 、信号は、ドメイン内のすべてのシステムにブロードキャストされます。 使用する場合 **/s**, 、信号が、指定したシステムにのみ送信します。
@@ -57,23 +53,23 @@ waitfor [/t <Timeout>] <SignalName>
 -   のみ、コンピューターは、信号を送信するコンピューターと同じドメイン内にある場合、シグナルを受信します。
 -   使用する **waitfor** ソフトウェア ビルドをテストする場合。 コンパイルを行うコンピューターが実行されている複数のコンピューターに信号を送信するなど **waitfor** コンパイルが正常に完了後します。 信号の要求を受信したバッチ ファイルを含む **waitfor** コンピューターがすぐにソフトウェアのインストールやコンパイル済みのビルドでテストを実行するように指定できます。
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a><a name=BKMK_examples></a>例
 
-"\Build007"信号を受信するまで待機するには、次のように入力します。
+Espressobuild007 シグナルが受信されるまで待機するには、次のように入力します。
 ```
 waitfor espresso\build007
 ```
 既定では、 **waitfor** シグナルを無期限に待機します。
 
-タイムアウトするまでに受信"espresso\compile007"信号を 10 秒間待機するには、次のように入力します。
+Espresso\compile007 シグナルが受信されるまで10秒間待機するには、次のように入力します。
 ```
 waitfor /t 10 espresso\build007
 ```
-"\Build007"信号を手動でアクティブ化には、次のように入力します。
+Espresso\ build007 信号を手動でアクティブ化するには、次のように入力します。
 ```
 waitfor /si espresso\build007
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

@@ -1,7 +1,6 @@
 ---
 ms.assetid: 6785de86-4f7d-4ed1-9055-8de0871d59b5
 title: 付録 M-ドキュメントリンクと推奨資料
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: c48b5330ee1b9a186885645aaa4c1ac79f1782e7
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.openlocfilehash: f1c13f0a7054f236f1ba35201ad9ad62c978d08f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822745"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80823295"
 ---
 # <a name="appendix-m-document-links-and-recommended-reading"></a>付録 M: ドキュメントのリンクと推奨資料
 
->適用対象: Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
   
 ## <a name="appendix-m-document-links-and-recommended-reading"></a>付録 M: ドキュメントのリンクと推奨資料  
@@ -28,7 +27,7 @@ ms.locfileid: "76822745"
   
 |||  
 |-|-|  
-|**Links**|**ハイパーリンク**|  
+|**リンク**|**ハイパーリンク**|  
 |[セキュリティ管理に関する10の不変法](https://technet.microsoft.com/library/cc722488.aspx)|[https://technet.microsoft.com/library/cc722488.aspx](https://technet.microsoft.com/library/cc722488.aspx)|  
 |[Microsoft セキュリティコンプライアンスマネージャー](https://technet.microsoft.com/library/cc677002.aspx)|[https://technet.microsoft.com/library/cc677002.aspx](https://technet.microsoft.com/library/cc677002.aspx)|  
 |[Gartner Symposium ITXPO](http://www.gartner.com/technology/symposium/orlando/)|[http://www.gartner.com/technology/symposium/orlando/](http://www.gartner.com/technology/symposium/orlando/)|  
@@ -198,15 +197,15 @@ ms.locfileid: "76822745"
 #### <a name="copyright-information"></a>著作権情報  
 このドキュメントに記載された情報は、各項目に関する発行日現在の Microsoft Corporation の見解を表明するものです。 Microsoft は絶えず変化する市場に対応しなければならないため、ここに記載した情報に対していかなる責務を負うものではなく、発行日以降に提示された情報の正確性を保障するものではありません。  
   
-このホワイトペーパーは、情報提供のみを目的としています。 このドキュメントでは、Microsoft が明示または黙示を保証するものではありません。  
+このホワイト ペーパーは、情報提供のみを目的としています。 このドキュメントでは、Microsoft が明示または黙示を保証するものではありません。  
   
-お客様ご自身の責任において、適用されるすべての著作権関連法規に従ったご使用を願います。 著作権に関する権利を制限することなく、このドキュメントのいかなる部分も、お客様のシステムに対して再現、保存、または導入されることはありません。また、任意の形式で、または任意の方法 (電子、機械的、複写、記録、またはその他) で送信することもできません。Microsoft Corporation の書面による許可はありません。  
+お客様ご自身の責任において、適用されるすべての著作権関連法規に従ったご使用を願います。 このドキュメントのいかなる部分も、米国 Microsoft Corporation の書面による許諾を受けることなく、その目的を問わず、どのような形態であっても、複製または譲渡することは禁じられています。ここでいう形態とは、複写や記録など、電子的な、または物理的なすべての手段を含みます。ただしこれは、著作権法上のお客様の権利を制限するものではありません。  
   
-マイクロソフトは、このドキュメントに記載されている内容に関し、特許権、特許出願、商標権、著作権、またはその他の知的財産権を有する場合があります。 別途マイクロソフトのライセンス契約上に明示の規定のない限り、このドキュメントはこれらの特許、商標、著作権、またはその他の無体財産権に関する権利をお客様に許諾するものではありません。  
+マイクロソフトは、このドキュメントに記載されている内容に関し、特許、特許申請、商標、著作権、またはその他の無体財産権を有する場合があります。 別途マイクロソフトのライセンス契約上に明示の規定のない限り、このドキュメントはこれらの特許、商標、著作権、またはその他の無体財産権に関する権利をお客様に許諾するものではありません。  
   
-Microsoft、Active Directory、BitLocker、Hyper-v、Internet Explorer、Windows Vista、Windows、および Windows Server は、Microsoft Corporation の米国やその他の国における登録商標または商標です。 他のすべての商標は、それぞれの所有者の財産です。  
+Microsoft、Active Directory、BitLocker、Hyper-v、Internet Explorer、Windows Vista、Windows、および Windows Server は、Microsoft Corporation の米国やその他の国における登録商標または商標です。 その他の商標類はすべてその権利者に帰属します。  
   
-例として記載されている会社、組織、製品、ドメイン名、電子メールアドレス、ロゴ、人名、場所、およびイベントは、架空のものです。 実在する企業、団体、製品、ドメイン名、電子メール アドレス、ロゴ、人物、場所、出来事などとは一切関係ありません。  
+例として登場する企業、組織、製品、ドメイン名、電子メール アドレス、ロゴ、人物、場所、およびイベントはすべて架空のものです。 実在する名称とは一切関係ありません。  
   
 ? 2013 Microsoft Corporation. All rights reserved.  
   

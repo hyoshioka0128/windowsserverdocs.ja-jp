@@ -1,7 +1,6 @@
 ---
 ms.assetid: ba7f2b9f-7351-4680-b7d8-a5f270614f1c
 title: Active Directory Domain Services のインストールと削除の新機能
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 08/09/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 1f24615491391d932609d7f80549985818ced8c1
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: b290b11487ce84b0c7cd962b272f52fea538769a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79323204"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80824945"
 ---
 # <a name="whats-new-in-active-directory-domain-services-installation-and-removal"></a>Active Directory Domain Services のインストールと削除の新機能
 
@@ -36,7 +35,7 @@ AD DS のインストールには、次の特長があります。
 - **GUI でのインストール時に指定されたすべてのオプションを含む Windows PowerShell スクリプトをエクスポート可能。** インストールまたは削除の終わりに、設定を Windows PowerShell スクリプトにエクスポートし、同じ操作を自動化するために使用することができます。  
 - **再起動の前に重要なレプリケーションのみが行われる。** 新しいスイッチによって、再起動の前に重要でないデータのレプリケーションを許可できます。 詳細については、「[ADDSDeployment コマンドレットの引数](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md#BKMK_Params)」を参照してください。  
 
-## <a name="BKMK_ADConfigurationWizard"></a>Active Directory Domain Services 構成ウィザード
+## <a name="the-active-directory-domain-services-configuration-wizard"></a><a name="BKMK_ADConfigurationWizard"></a>Active Directory Domain Services 構成ウィザード
 
 Windows Server 2012 以降では、ドメインコントローラーをインストールするときに設定を指定するために、Active Directory Domain Services 構成ウィザードによってレガシ Active Directory ドメインサービスインストールウィザードがユーザーインターフェイス (UI) オプションとして置き換えられます。 Active Directory ドメイン サービス構成ウィザードは、役割の追加ウィザードの完了後に開始されます。  
 
@@ -45,7 +44,7 @@ Windows Server 2012 以降では、ドメインコントローラーをインス
 
 「 [Active Directory Domain Services &#40;レベル 100&#41;のインストール](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md)」では、役割の追加ウィザードを起動して AD DS サーバーの役割バイナリをインストールし、Active Directory Domain Services 構成ウィザードを実行してドメインコントローラーのインストールを完了する方法について説明します。 Windows PowerShell の例では、AD DS 展開コマンドレットを使用して両方の手順を完了する方法を示しています。  
   
-## <a name="BKMK_NewAdprep"></a>Adprep.exe の統合
+## <a name="adprepexe-integration"></a><a name="BKMK_NewAdprep"></a>Adprep.exe の統合
 
 Windows Server 2012 以降では、Adprep.exe のバージョンは1つだけです (32 ビットバージョンの adprep32.exe はありません)。 Adprep コマンドは、Windows Server 2012 を実行するドメインコントローラーを既存の Active Directory ドメインまたはフォレストにインストールするときに、必要に応じて自動的に実行されます。  
   
@@ -104,7 +103,7 @@ adprep /domainprep /gpprep コマンドは、AD DS インストールの一部�
 
 Adprep/domainprep/gpprep を実行しなくても、Windows Server 2012 を実行するドメインコントローラーを既存のドメインに安全に追加できますが、RSOP 計画モードは正しく機能しません。  
 
-## <a name="BKMK_PrereqCheck"></a>AD DS インストールの前提条件の検証
+## <a name="ad-ds-installation-prerequisite-validation"></a><a name="BKMK_PrereqCheck"></a>AD DS インストールの前提条件の検証
 
 AD DS インストール ウィザードでは、インストールが開始される前に次の前提条件が満たされているか確認が行われます。 これにより、インストールをブロックする可能性のある問題を修正することができます。  
   
@@ -122,13 +121,13 @@ AD DS インストール ウィザードでは、インストールが開始さ�
 - 子ドメイン名の確認: 親ドメイン名および新しい子ドメイン名が有効で、既存のドメインと競合しないことを確認します。  
 - ツリー ドメイン名の確認: 指定されたツリー名が有効で、現在その名前が存在していないことを確認します。  
 
-## <a name="BKMK_SystemReqs"></a>システム要件
+## <a name="system-requirements"></a><a name="BKMK_SystemReqs"></a>システム要件
 
 Windows server 2012 のシステム要件は、Windows Server 2008 R2 から変更されていません。 詳細については、「 [Windows Server 2008 R2 SP1 のシステム要件](https://www.microsoft.com/windowsserver2008/en/us/system-requirements.aspx)」 (https://www.microsoft.com/windowsserver2008/en/us/system-requirements.aspx)を参照してください。  
 
 機能によっては、追加の要件がある場合があります。 たとえば、仮想ドメインコントローラーの複製機能を使用するには、PDC エミュレーターが Windows Server 2012 を実行し、Hyper-v の役割がインストールされた Windows Server 2012 を実行しているコンピューターが必要です。  
 
-## <a name="BKMK_KnownIssues"></a>既知の問題
+## <a name="known-issues"></a><a name="BKMK_KnownIssues"></a>既知の問題
 
 このセクションでは、Windows Server 2012 での AD DS のインストールに影響する既知の問題の一部を示します。 その他の既知の問題については、「[ドメイン コントローラーの展開のトラブルシューティング](../../ad-ds/deploy/Troubleshooting-Domain-Controller-Deployment.md)」を参照してください。  
 
@@ -230,7 +229,7 @@ Windows server 2012 のシステム要件は、Windows Server 2008 R2 から変�
 
    エラーの原因がローカルの Administrator アカウントおよびパスワードの指定である場合、エラーから回復するには、オペレーティング システムを再インストールし、インストールを完了できなかったドメイン コントローラーのアカウントの [メタデータ クリーンアップを実行](https://technet.microsoft.com/library/cc816907(WS.10).aspx) してから、Domain Admin 資格情報を使用して AD DS のインストールを再試行する必要があります。 インストールが正常に完了しなかった場合でも、サーバーでは AD DS がインストールされていると示されるので、サーバーを再起動してもこのエラー状態は解決されません。  
 
-### <a name="BKMK_nonnormalDNSNameWarning"></a>正規化されていない DNS 名が指定されると Active Directory Domain Services 構成ウィザードによって警告が表示される
+### <a name="active-directory-domain-services-configuration-wizard-warns-when-a-non-normalized-dns-name-is-specified"></a><a name="BKMK_nonnormalDNSNameWarning"></a>正規化されていない DNS 名が指定されると Active Directory Domain Services 構成ウィザードによって警告が表示される
 
 新しいドメインまたはフォレストを作成するときに、正規化されていない国際化文字を含む DNS ドメイン名を指定すると、Active Directory Domain Services 構成ウィザードに、名前の DNS クエリが失敗する可能性があることを示す警告が表示されます。 [配置構成] ページで DNS ドメイン名が指定されている場合でも、ウィザードの [前提条件のチェック] ページに後で警告が表示されます。  
 

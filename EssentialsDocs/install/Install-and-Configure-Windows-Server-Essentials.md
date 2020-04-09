@@ -1,23 +1,19 @@
 ---
 title: Windows Server Essentials のインストールと構成
 description: Windows Server Essentials の使用方法について説明します。
-ms.custom: na
 ms.date: 06/17/2013
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e95cf219-46a4-4041-bd81-0c4c2a0622cf
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 600aea223ebf48e1370f06070a4c3db7329c6f2f
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 65d3f3f30a69e9879e722cbdab260fb9715af545
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80311653"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820035"
 ---
 # <a name="install-and-configure-windows-server-essentials"></a>Windows Server Essentials のインストールと構成
 

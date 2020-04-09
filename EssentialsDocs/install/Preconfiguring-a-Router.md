@@ -1,23 +1,19 @@
 ---
 title: ルーターの事前構成
 description: Windows Server Essentials の使用方法について説明します。
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 9153ac90-bb0c-4b8d-93b2-e2121ed13636
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: bdfa3215b7a2426bcde807119971d99ccc229716
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: c39bf3ac260a23b7fc9cc9feec7f34786b1e8aae
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80311573"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80819945"
 ---
 # <a name="preconfiguring-a-router"></a>ルーターの事前構成
 
@@ -43,7 +39,7 @@ ms.locfileid: "80311573"
   
 -   ルーターが複数のサブネットをサポートする場合、サーバーの IP アドレスを DHCP 経由で 1 つの DNS サーバーとして配る必要があります。  
   
--   ルーターに Active Directory®ドメインサービスのアクセス制御機能が統合されている場合は、サーバーの初期構成中に Active Directory 統合を自動化できます。 この機能を、ダッシュボードのルーター管理アドインを介して公開することも必要です。  
+-   ルーターに Active Directory&reg; ドメインサービスのアクセス制御機能が統合されている場合は、サーバーの初期構成中に Active Directory 統合を自動化できます。 この機能を、ダッシュボードのルーター管理アドインを介して公開することも必要です。  
   
 > [!NOTE]
 >  ワイヤレス接続の構成の詳細については、「[ワイヤレス ネットワークのサポートの構成](Configure-Support-for-a-Wireless-Network.md)」を参照してください。  

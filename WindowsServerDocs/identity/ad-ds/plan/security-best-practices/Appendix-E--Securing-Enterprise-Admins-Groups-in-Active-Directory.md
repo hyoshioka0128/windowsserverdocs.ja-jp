@@ -1,7 +1,6 @@
 ---
 ms.assetid: f643099e-f9c6-476f-9378-5a9228c39b33
 title: 付録 E-Active Directory で Enterprise Admins グループをセキュリティで保護する
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 51337e5d4940a490045e146d32408d4f709bb6ed
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5294be945ce4a93ffeb1c27cffa8a82470920e7b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408716"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80821635"
 ---
 # <a name="appendix-e-securing-enterprise-admins-groups-in-active-directory"></a>付録 E: Active Directory の Enterprise Admins グループをセキュリティで保護する
 
@@ -30,13 +29,13 @@ Enterprise Admins は、既定ではフォレスト内の各ドメインの Admi
 
 1.  各ドメインのメンバーサーバーとワークステーションが含まれている Ou にリンクされた Gpo では、Enterprise Admins グループを、 **Computer Configuration\Policies\Windows 権利 \** ユーザー権利の割り当ての次のユーザー権利に追加する必要があります。  
 
-    -   ネットワークからのこのコンピューターへのアクセスを拒否する  
+    -   ネットワークからのこのコンピュータへのアクセスを拒否する  
 
-    -   バッチ ジョブとしてのログオンを拒否  
+    -   バッチ ジョブとしてのログオン権限を拒否する  
 
-    -   サービスとしてのログオンを拒否  
+    -   サービスとしてのログオン権限を拒否する  
 
-    -   ローカル ログオンを拒否  
+    -   ローカルでのログオンを拒否する  
 
     -   リモート デスクトップ サービスを使ったログオンを拒否  
 
@@ -238,7 +237,7 @@ GPO の変更の影響を受けたメンバーサーバーまたはワークス�
 
 7.  **[プログラム/スクリプト]** の **[参照]** をクリックし、 **[バッチファイルの作成]** セクションで作成したバッチファイルを探して選択し、 **[開く]** をクリックします。  
 
-8.  **[OK]** をクリックします。  
+8.  **[OK]** をクリックすると、  
 
 9. **[全般]** タブをクリックします。  
 
@@ -248,7 +247,7 @@ GPO の変更の影響を受けたメンバーサーバーまたはワークス�
 
 12. **[ユーザーがログオンしているかどうかにかかわらず実行する]** を選択し、 **[パスワードを保存]** しない を選択します。 タスクは、ローカルコンピューターのリソースにのみアクセスできます。  
 
-13. **[OK]** をクリックします。  
+13. **[OK]** をクリックすると、  
 
 14. タスクを実行するためのユーザーアカウントの資格情報を要求するダイアログボックスが表示されます。  
 

@@ -1,23 +1,19 @@
 ---
 title: 言語パックのインストールまたは削除
 description: Windows Server Essentials の使用方法について説明します。
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 98f13f63-4480-40ba-a7ef-d1d9b7582e5f
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 4f7657f3ecb3450b5253d1cfe2813c12ecc2718e
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: c1fd1d21277d32672398d1dd201e2dda24682c2d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80311719"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820025"
 ---
 # <a name="install-or-remove-language-packs"></a>言語パックのインストールまたは削除
 

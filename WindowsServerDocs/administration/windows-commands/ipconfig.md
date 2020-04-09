@@ -1,24 +1,20 @@
 ---
 title: ipconfig
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Windows コマンドに関するトピック * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 15071c2c-4815-4893-93b2-ab30232e312e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4bfe3476dd90016291881ca8cee2b66283772bce
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1c93b75d6518746df7ef936c7059bd03fcf96ab6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71375378"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80842075"
 ---
 # <a name="ipconfig"></a>ipconfig
 
@@ -32,11 +28,11 @@ ms.locfileid: "71375378"
 ipconfig [/allcompartments] [/all] [/renew [<Adapter>]] [/release [<Adapter>]] [/renew6[<Adapter>]] [/release6 [<Adapter>]] [/flushdns] [/displaydns] [/registerdns] [/showclassid <Adapter>] [/setclassid <Adapter> [<ClassID>]]
 ```
 
-### <a name="parameters"></a>パラメーター
+#### <a name="parameters"></a>パラメーター
 
 |パラメーター|説明|
 |---------|-----------|
-|/all|すべてのアダプターの TCP/IP の完全構成を表示します。 アダプターは、設置されているネットワーク アダプターなどの物理インターフェイス、またはダイヤルアップ接続などの論理インターフェイスを表すことがあります。|
+|/all|すべてのアダプターの TCP/IP の完全構成を表示します。 アダプターは、設置されているネットワーク アダプターなどの物理インターフェイス、またはダイヤルアップ接続などの論理インターフェイスを表わすことがあります。|
 |/allコンパートメント|すべてのコンパートメントの完全な TCP/IP 構成を表示します。|
 |/displaydns|DNS クライアントリゾルバーキャッシュの内容を表示します。これには、ローカルホストファイルからプリロードされたエントリと、コンピューターによって解決された名前クエリの最近取得されたリソースレコードの両方が含まれます。 DNS クライアントサービスは、この情報を使用して、構成された DNS サーバーに対してクエリを実行する前に、頻繁に照会される名前を迅速に解決します。|
 |/flushdns|DNS クライアントリゾルバーのキャッシュの内容をフラッシュし、リセットします。 DNS のトラブルシューティングでは、この手順を使用してキャッシュからネガティブキャッシュエントリを破棄したり、動的に追加されたその他のエントリを破棄したりできます。|
@@ -49,10 +45,10 @@ ipconfig [/allcompartments] [/all] [/renew [<Adapter>]] [/release [<Adapter>]] [
 |/showclassid \<アダプター >|指定したアダプターの DHCP クラス ID を表示します。 すべてのアダプターの DHCP クラス ID を表示するには、 **&#42;** *アダプター*の代わりにアスタリスク () ワイルドカード文字を使用します。 このパラメーターは、IP アドレスを自動的に取得するように構成されているアダプターがあるコンピューターでのみ使用できます。|
 |/?|コマンド プロンプトでヘルプを表示します。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
 - このコマンドは、IP アドレスを自動的に取得するように構成されているコンピューターで最も役立ちます。 これにより、DHCP、自動プライベート IP アドレス指定 (APIPA)、または代替の構成によって構成された TCP/IP 構成値をユーザーが判断できるようになります。
-- *アダプター*に指定する名前にスペースが含まれている場合は、アダプター名を引用符で囲みます (例: **"** <em>アダプター名</em> **"** )。
+- *アダプター*に入力する名前にスペースが含まれている場合は、アダプター名を引用符で囲みます (例: * * * *<em>アダプター名</em>* * * *)。
 - アダプター名の場合、 **ipconfig**は、アスタリスク (\*) ワイルドカード文字を使用して、指定した文字列で始まる名前を持つアダプター、または指定した文字列を含む名前を持つアダプターのいずれかを指定します。 たとえば、 **local\*** は、ローカル文字列で始まるすべてのアダプターに一致し、 **\*con\*** は文字列 con を含むすべてのアダプターと一致します。
 
 ## <a name="examples"></a>例
@@ -67,7 +63,7 @@ ipconfig /all
 ```
 ローカルエリア接続アダプターの DHCP によって割り当てられた IP アドレス構成のみを更新するには、次のように入力します。
 ```
-ipconfig /renew "Local Area Connection"
+ipconfig /renew Local Area Connection
 ```
 Dns 名前解決の問題のトラブルシューティングを行うときに DNS リゾルバーキャッシュをフラッシュするには、次のように入力します。
 ```
@@ -79,9 +75,9 @@ ipconfig /showclassid Local*
 ```
 テストするローカルエリア接続アダプターの DHCP クラス ID を設定するには、次のように入力します。
 ```
-ipconfig /setclassid "Local Area Connection" TEST
+ipconfig /setclassid Local Area Connection TEST
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
--   [コマンド ライン構文の記号](command-line-syntax-key.md)
+-   - [コマンド ライン構文の記号](command-line-syntax-key.md)

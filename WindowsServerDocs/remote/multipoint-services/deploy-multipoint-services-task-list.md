@@ -1,29 +1,25 @@
 ---
 title: MultiPoint Services を展開するためのタスク
 description: MultiPoint Services の展開に関連するすべてのタスクと、手順へのリンクを示します。
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e08c5784-5b3e-4028-86c1-96deaee41f09
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 9d50cfc3ed48f77281af400e9e80fb8b4895bac5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 70488d3c7d6c60071d52f9f60dcde4f825928824
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394757"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820355"
 ---
-# <a name="task-lists-multipoint-services"></a>タスク一覧:MultiPoint Services
+# <a name="task-lists-multipoint-services"></a>MultiPoint サービスのタスクは、次の一覧です。
 MultiPoint Services システムを展開し、完了したタスクを追跡するには、このトピックのタスク一覧を使用します。 すべてのタスクは、すべての環境に適用されます。 たとえば、いくつかのタスクは、Active Directory ドメインに multipoint 対応のサーバーを展開する場合にのみ実行されます。 分割画面ステーションの作成や、基地局の場合、仮想デスクトップを展開するなど、他はオプションです。 これらのタスクを実行する方法を説明する手順については、次を参照してください。 [MultiPoint サービスを配置する](deploying-multipoint-services.md)です。  
   
-## <a name="task-list-deploy-the-server"></a>タスク一覧:サーバーを展開する  
+## <a name="task-list-deploy-the-server"></a>タスク一覧: サーバーの展開  
 
 |タスク|説明|  
 |--------|---------------|  
@@ -35,11 +31,11 @@ MultiPoint Services システムを展開し、完了したタスクを追跡す
 |**6**|[日付、時刻、タイム ゾーンを設定する](Set-the-date--time--and-time-zone.md)|  
 |**7**|[MultiPoint Services コンピューターをドメインに参加させる-省略可能](Join-the-MultiPoint-services-computer-to-a-domain--optional-.md)|  
 |**8**|[更新プログラムをインストールする](Install-updates.md)|  
-|**9**|[MultiPoint Services コンピューターに追加のステーションを接続する](Attach-additional-stations-to-your-MultiPoint-services-computer.md)|  
+|**ませ**|[MultiPoint Services コンピューターに追加のステーションを接続する](Attach-additional-stations-to-your-MultiPoint-services-computer.md)|  
 |**10**|[MultiPoint Services をアクティブ化して Cal を追加する](manage-client-access-licenses-with-multipoint-services.md)|  
-|**11**|[MultiPoint Services システムにソフトウェアをインストールする](Install-software-on-your-MultiPoint-services-system.md)|  
+|**個**|[MultiPoint Services システムにソフトウェアをインストールする](Install-software-on-your-MultiPoint-services-system.md)|  
   
-## <a name="task-list-optional-configurations"></a>タスク一覧:オプションの構成  
+## <a name="task-list-optional-configurations"></a>タスク一覧: オプションの構成  
   
 |タスク|  
 |--------|  
@@ -47,7 +43,7 @@ MultiPoint Services システムを展開し、完了したタスクを追跡す
 |[プリンターを追加する](Add-printers.md)|  
 |[ステーションの仮想デスクトップを作成する](Create-Windows-10-Enterprise-virtual-desktops-for-stations.md)|  
   
-## <a name="task-list-prepare-your-system-for-users"></a>タスク一覧:ユーザー用にシステムを準備する  
+## <a name="task-list-prepare-your-system-for-users"></a>タスク一覧: ユーザーのコンピューターを準備します。  
   
 |タスク|  
 |--------|  
@@ -58,7 +54,7 @@ MultiPoint Services システムを展開し、完了したタスクを追跡す
 |[1 つのアカウントで複数のセッションを許可する](Allow-one-account-to-have-multiple-sessions.md)|  
 |[ファイルの共有を有効にする](Enable-file-sharing-in-MultiPoint-services.md)|  
   
-## <a name="task-list-server-administration"></a>タスク一覧:サーバー管理  
+## <a name="task-list-server-administration"></a>タスク一覧: サーバーの管理  
   
 |タスク|  
 |--------|  

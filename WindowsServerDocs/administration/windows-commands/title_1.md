@@ -1,28 +1,22 @@
 ---
 title: title
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: '[タイトル] の Windows コマンドトピック。コマンドプロンプトウィンドウのタイトルを作成します。'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c0bbe8bd-201a-4b6c-b617-5d9809881dc8
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 42094e0f1231fee5ac9ef0ec9184ba685c8846b1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: aae18e97daaef226443c5f18c6c401a4e2b82b59
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385786"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80832805"
 ---
 # <a name="title"></a>title
-
-
 
 コマンド プロンプト ウィンドウのタイトルを作成します。
 
@@ -34,21 +28,21 @@ ms.locfileid: "71385786"
 title [<String>]
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
 |パラメーター|説明|
 |---------|-----------|
-|\<String >|コマンド プロンプト ウィンドウのタイトルを指定します。|
-|/?|コマンド プロンプトにヘルプを表示します。|
+|\<文字列 >|コマンド プロンプト ウィンドウのタイトルを指定します。|
+|/?|コマンド プロンプトでヘルプを表示します。|
 
 ## <a name="remarks"></a>コメント
 
 -   バッチ プログラムのウィンドウのタイトルを作成するには、 **タイトル** バッチ ファイルの先頭にあるコマンドです。
 -   ウィンドウのタイトルを設定した後のみを使用してリセットできます、 **タイトル** コマンドです。
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a><a name=BKMK_examples></a>例
 
-次のサンプル スクリプトでコマンド プロンプト ウィンドウのタイトルが「更新ファイル」に変更バッチ ファイルを実行しながら、 **コピー** コマンドです。 コマンドを実行した後、テキスト `Files Updated` が表示されたら、コマンド プロンプト ウィンドウのタイトルが「コマンド プロンプト」に変更しました
+次のサンプルスクリプトでは、バッチファイルによって**copy**コマンドが実行されている間、コマンドプロンプトウィンドウのタイトルがファイルの更新に変更されます。 コマンドが実行されると、テキスト `Files Updated` が表示され、コマンドプロンプトウィンドウのタイトルがコマンドプロンプトに戻されます。
 ```
 @echo off
 title Updating Files
@@ -57,6 +51,6 @@ echo Files Updated.
 title Command Prompt
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

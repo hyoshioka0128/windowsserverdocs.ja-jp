@@ -1,7 +1,6 @@
 ---
 ms.assetid: d92731f1-e4d8-4223-9b07-ca1f40bb0e1f
 title: 名前空間の不整合
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 5abe67c89ce4c2f4b5056f6197242b5db8db340e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b21e849bb69068f66b1b80c6b1a3afbdef91459f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408856"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822535"
 ---
 # <a name="disjoint-namespace"></a>名前空間の不整合
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 不整合な名前空間は、1つまたは複数のドメインメンバーコンピューターのプライマリドメインネームサービス (DNS) サフィックスが、そのコンピューターが属する Active Directory ドメインの DNS 名と一致しない場合に発生します。 たとえば、na.corp.fabrikam.com という名前の Active Directory ドメインで corp.fabrikam.com のプライマリ DNS サフィックスを使用しているメンバーコンピューターは、不整合のある名前空間を使用しています。  
   
@@ -27,7 +26,7 @@ ms.locfileid: "71408856"
 ## <a name="support-for-disjoint-namespaces"></a>不整合な名前空間のサポート  
 ドメインコントローラーを含むドメインメンバーコンピューターは、不整合な名前空間で機能することができます。 ドメインメンバーコンピューターは、そのホスト (A) リソースレコードと IP version 6 (IPv6) ホスト (AAAA) リソースレコードを、不整合のある DNS 名前空間に登録できます。 ドメインメンバーコンピューターがこのようにリソースレコードを登録すると、ドメインコントローラーは、Active Directory ドメイン名と同じ DNS ゾーンに、グローバルリソースレコードとサイト固有のサービス (SRV) リソースレコードを引き続き登録します。  
   
-たとえば、corp.fabrikam.com のプライマリ DNS サフィックスを使用する na.corp.fabrikam.com という名前の Active Directory ドメインのドメインコントローラーが、corp.fabrikam.com DNS ゾーンのホスト (A) リソースレコードと IPv6 ホスト (AAAA) リソースレコードを登録しているとします。 ドメインコントローラは、グローバルリソースレコードとサイト固有サービス (SRV) リソースレコードを、引き続き na.corp.fabrikam.com DNS ゾーンに登録します。これにより、サービスの場所が可能になります。  
+たとえば、corp.fabrikam.com のプライマリ DNS サフィックスを使用する na.corp.fabrikam.com という名前の Active Directory ドメインのドメインコントローラーが、corp.fabrikam.com DNS ゾーンのホスト (A) リソースレコードと IPv6 ホスト (AAAA) リソースレコードを登録しているとします。 ドメインコントローラは、グローバルリソースレコードとサイト固有サービス (SRV) リソースレコードを _msdcs. na.corp.fabrikam.com DNS ゾーンに登録し続けます。これにより、サービスの場所が可能になります。  
   
 > [!IMPORTANT]  
 > Windows オペレーティングシステムは不整合な名前空間をサポートする場合がありますが、プライマリ DNS サフィックスが Active Directory ドメインサフィックスと同じであると想定するように記述されたアプリケーションは、このような環境では機能しない可能性があります。 このため、不整合な名前空間を展開する前に、すべてのアプリケーションとそのオペレーティングシステムを慎重にテストする必要があります。  
@@ -73,7 +72,7 @@ ms.locfileid: "71408856"
 -   名前解決を最適化するには、グループポリシーを変更して維持するための手動の手順を実行して、代替プライマリ DNS サフィックスを持つメンバーコンピューターを構成する必要があります。  
   
     > [!NOTE]  
-    > Windows インターネットネームサービス (WINS) を使用して、単一ラベル名を解決することでこの欠点を相殺できます。 WINS の詳細については、「WINS テクニカルリファレンス ([https://go.microsoft.com/fwlink/?LinkId=102303](https://go.microsoft.com/fwlink/?LinkId=102303))」を参照してください。  
+    > Windows インターネットネームサービス (WINS) を使用して、単一ラベル名を解決することでこの欠点を相殺できます。 WINS の詳細については、「WINS テクニカルリファレンス」 ([https://go.microsoft.com/fwlink/?LinkId=102303](https://go.microsoft.com/fwlink/?LinkId=102303)) を参照してください。  
   
 -   環境に複数のプライマリ DNS サフィックスが必要な場合は、フォレスト内のすべての Active Directory ドメインの DNS サフィックス検索順序を適切に構成する必要があります。  
   
@@ -88,13 +87,13 @@ ms.locfileid: "71408856"
   
 -   名前空間を変更した後、手動で構成されたサービスプリンシパル名 (Spn) が DNS 名と一致しなくなる場合があります。 これにより、認証エラーが発生する可能性があります。  
   
-    詳細については、「Spn が正しく設定されていないため、サービスのログオンが失敗する ([https://go.microsoft.com/fwlink/?LinkId=102304](https://go.microsoft.com/fwlink/?LinkId=102304))」を参照してください。  
+    詳細については、「Spn ([https://go.microsoft.com/fwlink/?LinkId=102304](https://go.microsoft.com/fwlink/?LinkId=102304)) が正しく設定されていないためにサービスログオンが失敗する」を参照してください。  
   
     -   制約付き委任を使用する Windows Server 2003 ベースのコンピューターを使用する場合、これらのコンピューターで Spn を変更するには追加の構成が必要になることがあります。 詳細については、Microsoft サポート技術情報の記事 936628 ([https://go.microsoft.com/fwlink/?LinkId=102306](https://go.microsoft.com/fwlink/?LinkId=102306)) を参照してください。  
   
     -   Spn を変更するアクセス許可を下位の管理者に委任する場合は、「Spn を変更するための権限を委任する ([https://go.microsoft.com/fwlink/?LinkId=106639](https://go.microsoft.com/fwlink/?LinkId=106639))」を参照してください。  
   
--   不整合な名前空間に構成されているドメインコントローラーを持つ展開内の CA と Secure Sockets Layer (LDAPS と呼ばれます) を介してライトウェイトディレクトリアクセスプロトコル (LDAP) を使用する場合は、適切な Active Directory ドメイン名を使用する必要があります。LDAPS 証明書を構成するときのプライマリ DNS サフィックス。  
+-   不整合な名前空間に構成されているドメインコントローラーがある、展開内の CA と Secure Sockets Layer (LDAPS と呼ばれます) を介してライトウェイトディレクトリアクセスプロトコル (LDAP) を使用する場合は、LDAPS 証明書を構成するときに、適切な Active Directory ドメイン名とプライマリ DNS サフィックスを使用する必要があります。  
   
     ドメインコントローラー証明書の要件の詳細については、Microsoft サポート技術情報の記事 321051 ([https://go.microsoft.com/fwlink/?LinkId=102307](https://go.microsoft.com/fwlink/?LinkId=102307)) を参照してください。  
   

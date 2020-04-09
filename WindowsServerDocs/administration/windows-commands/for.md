@@ -1,26 +1,22 @@
 ---
-title: for
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+title: を [実行アカウント] に選択します。
+description: Windows コマンドに関するトピック * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e275726c-035f-4a74-8062-013c37f5ded1
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: db0bf54e35e4226cb020b040d5fc36ddd88dc02b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e7040e4cb8e0f38e58ce5e868535dcfb2d897fbd
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71377122"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80844535"
 ---
-# <a name="for"></a>for
+# <a name="for"></a>を [実行アカウント] に選択します。
 
 
 
@@ -34,7 +30,7 @@ ms.locfileid: "71377122"
 for {%%|%}<Variable> in (<Set>) do <Command> [<CommandLineOptions>]
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
 |パラメーター|説明|
 |---------|-----------|
@@ -42,9 +38,9 @@ for {%%|%}<Variable> in (<Set>) do <Command> [<CommandLineOptions>]
 |(\<Set >)|必須。 1つ以上のファイル、ディレクトリ、またはテキスト文字列、またはコマンドを実行する値の範囲を指定します。 かっこが必要です。|
 |\<コマンド >|必須。 各ファイル、ディレクトリ、またはテキスト文字列、または*Set*に含まれる値の範囲に対して実行するコマンドを指定します。|
 |\<CommandLineOptions >|指定したコマンドで使用するコマンドラインオプションを指定します。|
-|/?|コマンド プロンプトにヘルプを表示します。|
+|/?|コマンド プロンプトでヘルプを表示します。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
 - 使用 **(for** )
 
@@ -68,7 +64,7 @@ for {%%|%}<Variable> in (<Set>) do <Command> [<CommandLineOptions>]
   **For**コマンドを使用すると、 *Set*の最初の値が **%** <em>変数</em>または **%%** <em>変数</em>に置き換えられ、指定したコマンドによってこの値が処理されます。 この処理は、*設定*値に対応するすべてのファイル (またはファイルのグループ) が処理されるまで続行されます。
 - **In**および**do**キーワードの使用
 
-  **で** と **は** パラメーターではありませんでそれらを使用する必要があります **の** します。 これらのいずれかのキーワードを省略すると、エラーメッセージが表示されます。
+  **とはパラメーターでは**ありませ**んが、** **の**ではを使用する必要があります。 これらのいずれかのキーワードを省略すると、エラーメッセージが表示されます。
 - の**追加の形式の使用**
 
   コマンド拡張機能が有効になっている場合 (既定)、の次の**追加の形式**のがサポートされています。  
@@ -80,7 +76,7 @@ for {%%|%}<Variable> in (<Set>) do <Command> [<CommandLineOptions>]
     ```
     for /d {%%|%}<Variable> in (<Set>) do <Command> [<CommandLineOptions>] 
     ```  
-  - ［再帰］
+  - Recursive
 
     *ドライブ*:*パス*をルートとするディレクトリツリーをウォークし、ツリーの各ディレクトリで**for**ステートメントを実行します。 **/R**の後にディレクトリが指定されていない場合は、現在のディレクトリがルートディレクトリとして使用されます。 *Set*が単なるピリオド (.) の場合は、ディレクトリツリーを列挙するだけです。
 
@@ -104,17 +100,17 @@ for {%%|%}<Variable> in (<Set>) do <Command> [<CommandLineOptions>]
 
     構文は次のとおりです。  
     ```
-    for /f ["<ParsingKeywords>"] {%%|%}<Variable> in (<Set>) do <Command> [<CommandLineOptions>]
-    for /f ["<ParsingKeywords>"] {%%|%}<Variable> in ("<LiteralString>") do <Command> [<CommandLineOptions>]
-    for /f ["<ParsingKeywords>"] {%%|%}<Variable> in ('<Command>') do <Command> [<CommandLineOptions>]
+    for /f [<ParsingKeywords>] {%%|%}<Variable> in (<Set>) do <Command> [<CommandLineOptions>]
+    for /f [<ParsingKeywords>] {%%|%}<Variable> in (<LiteralString>) do <Command> [<CommandLineOptions>]
+    for /f [<ParsingKeywords>] {%%|%}<Variable> in ('<Command>') do <Command> [<CommandLineOptions>]
     ```  
     *Set*引数は、1つ以上のファイル名を指定します。 各ファイルは、*セット*内の次のファイルに移動する前に、開かれ、読み取られ、処理されます。 既定の解析動作をオーバーライドするには、 *Parsingkeywords*を指定します。 これは、別の解析オプションを指定するための1つ以上のキーワードを含む、引用符で囲まれた文字列です。
 
     **Usebackq**オプションを使用する場合は、次のいずれかの構文を使用します。  
     ```
-    for /f ["usebackq <ParsingKeywords>"] {%%|%}<Variable> in ("<Set>") do <Command> [<CommandLineOptions>]
-    for /f ["usebackq <ParsingKeywords>"] {%%|%}<Variable> in ('<LiteralString>') do <Command> [<CommandLineOptions>]
-    for /f ["usebackq <ParsingKeywords>"] {%%|%}<Variable> in (`<Command>`) do <Command> [<CommandLineOptions>]
+    for /f [usebackq <ParsingKeywords>] {%%|%}<Variable> in (<Set>) do <Command> [<CommandLineOptions>]
+    for /f [usebackq <ParsingKeywords>] {%%|%}<Variable> in ('<LiteralString>') do <Command> [<CommandLineOptions>]
+    for /f [usebackq <ParsingKeywords>] {%%|%}<Variable> in (`<Command>`) do <Command> [<CommandLineOptions>]
     ```  
     次の表は、 *Parsingkeywords*に使用できる解析キーワードの一覧です。  
 
@@ -133,7 +129,7 @@ for {%%|%}<Variable> in (<Set>) do <Command> [<CommandLineOptions>]
 
     |修飾子を持つ変数|説明|
     |----------------------|-----------|
-    |% ~ I|**% I**を展開して、囲まれた引用符 ("") を削除します。|
+    |% ~ I|**% I**を展開して、周囲の引用符 () を削除します。|
     |% ~ fI|**% I**を完全修飾パス名に展開します。|
     |% ~ dI|**% I**をドライブ文字のみに拡張します。|
     |% ~ pI|**% I**をパスのみに展開します。|
@@ -160,12 +156,12 @@ for {%%|%}<Variable> in (<Set>) do <Command> [<CommandLineOptions>]
     **% I**などの大文字の変数名を使用すると、コードを読みやすくし、大文字と小文字が区別されない修飾子との混同を避けることができます。
 - 文字列の解析
 
-  *LiteralString\>* を二重引用符 ("usebackq *" を使用*し*ない*) または単一引用符 ("usebackq") (たとえば、("MyString") または (' MyString ')) で\<ラップすることによって、イミディエイト文字列に**対して for/f**解析ロジックを使用できます。 *\<LiteralString\>* は、ファイルからの1行の入力として扱われます。 二重引用符で *\<LiteralString\>* を解析する場合、 **\\ \& \|** \> \<) などのコマンドシンボルは通常の文字として扱われます。\^
+  *\<LiteralString\>* を二重引用符 (usebackq*を*使用し*ない*) または単一引用符 (Usebackq) (たとえば、(MyString) または (' MyString ')) でラップすることにより、イミディエイト文字列に**対して for/f**解析ロジックを使用できます。 *\<LiteralString\>* は、ファイルからの1行の入力として扱われます。 二重引用符で *\<LiteralString\>* を解析する場合、 **\\ \& \|** \> \<) などのコマンドシンボルは通常の文字として扱われます。\^
 - 出力の解析
 
   **For/f**コマンドを使用してコマンドの出力を解析するには、かっこの間に\>バッククォートされた *\<コマンド*を配置します。 これはコマンドラインとして扱われ、Cmd.exe に渡されます。 出力はメモリにキャプチャされ、ファイルであるかのように解析されます。
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a><a name=BKMK_examples></a>例
 
 **を**バッチファイルで使用するには、次の構文を使用します。
 ```
@@ -179,17 +175,17 @@ for %f in (*.doc *.txt) do type %f
 
 ファイルを解析するために、コメント行を無視するには、次のように入力します。
 ```
-for /f "eol=; tokens=2,3* delims=," %i in (myfile.txt) do @echo %i %j %k
+for /f eol=; tokens=2,3* delims=, %i in (myfile.txt) do @echo %i %j %k
 ```
-このコマンドは、Myfile.txt の各行を解析します。 セミコロンで始まる行を無視し、各行の2番目と3番目のトークンを**for** body に渡します (トークンはコンマまたはスペースで区切られます)。 For ステートメントの本文では、 **% i**を参照して2番目のトークンを取得し、 **% j**を**使用**して3番目のトークンを取得し、 **% k**を参照して残りのすべてのトークンを取得します。 指定したファイル名にスペースが含まれている場合は、テキストを引用符で囲みます (例、"ファイル名")。 引用符を使用するには、 **usebackq**を使用する必要があります。 それ以外の場合、引用符は、解析するリテラル文字列の定義として解釈されます。
+このコマンドは、Myfile.txt の各行を解析します。 セミコロンで始まる行を無視し、各行の2番目と3番目のトークンを**for** body に渡します (トークンはコンマまたはスペースで区切られます)。 For ステートメントの本文では、 **% i**を参照して2番目のトークンを取得し、 **% j**を**使用**して3番目のトークンを取得し、 **% k**を参照して残りのすべてのトークンを取得します。 指定したファイル名にスペースが含まれている場合は、テキストを引用符で囲みます (ファイル名など)。 引用符を使用するには、 **usebackq**を使用する必要があります。 それ以外の場合、引用符は、解析するリテラル文字列の定義として解釈されます。
 
-**% i**は**for**ステートメントで明示的に宣言されています。 **% j**と **% k**は、**トークン =** を使用して暗黙的に宣言されています。 **トークン =** を使用すると、文字 "z" または "z" より大きい変数を宣言しようとしていない場合に、最大26個のトークンを指定できます。
+**% i**は**for**ステートメントで明示的に宣言されています。 **% j**と **% k**は、**トークン =** を使用して暗黙的に宣言されています。 **トークン =** を使用すると、文字 z または z を超える変数を宣言しようとしていない場合に、最大26個のトークンを指定できます。
 
 次の例では、現在の環境の環境変数名を列挙します。 かっこの間に*Set*を配置することで、コマンドの出力を解析するには、次のように入力します。
 ```
-for /f "usebackq delims==" %i in ('set') do @echo %i 
+for /f usebackq delims== %i in ('set') do @echo %i 
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

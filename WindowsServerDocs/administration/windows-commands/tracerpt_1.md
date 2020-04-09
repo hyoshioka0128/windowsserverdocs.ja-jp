@@ -1,28 +1,22 @@
 ---
 title: tracerpt
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Windows コマンドに関するトピックでは、イベントトレースログ、パフォーマンスモニターによって生成されるログファイル、およびリアルタイムのイベントトレースプロバイダーを解析します。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: cb9eaf86-0ef6-4197-b6c8-9cca8a1d723c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1c8e85acc59383d0a027c8d5ec51e68942a76b85
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 17bed5b1cb084392ed3169ca963ce03c1ee2b0d2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385677"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80832685"
 ---
 # <a name="tracerpt"></a>tracerpt
-
-
 
 **Tracerpt**コマンドを使用すると、イベントトレースログ、パフォーマンスモニターによって生成されるログファイル、およびリアルタイムのイベントトレースプロバイダーを解析できます。 ダンプファイル、レポートファイル、およびレポートスキーマが生成されます。
 
@@ -34,7 +28,7 @@ ms.locfileid: "71385677"
 tracerpt <[-l] <value [value [...]]>|-rt <session_name [session_name [...]]>> [options]
 ```
 
-## <a name="options"></a>および
+## <a name="options"></a>オプション
 
 |              オプションフラグ               |                                                                    説明                                                                    |
 |----------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -42,7 +36,7 @@ tracerpt <[-l] <value [value [...]]>|-rt <session_name [session_name [...]]>> [o
 |          -config \<ファイル名 >           |                                                 コマンドオプションを含む設定ファイルを読み込みます。                                                  |
 |                   -y                   |                                                  確認を求めずにすべての質問に対して [はい] を回答します。                                                   |
 |            -f \<XML\|HTML >             |                                                                  レポート形式。                                                                   |
-|         \<-CSV\|.evtxXML>\|          |                                                         ダンプ形式、既定値は XML です。                                                          |
+|         -\<CSV\|.EVTX\|XML >          |                                                         ダンプ形式、既定値は XML です。                                                          |
 |            -df \<ファイル名 >             |                                            Microsoft 固有のカウント/レポートスキーマファイルを作成します。                                            |
 |            -int \<ファイル名 >            |                                            解釈されたイベント構造体を、指定したファイルにダンプします。                                            |
 |                  -rts                  |                        イベントトレースヘッダーに生のタイムスタンプを報告します。 使用できるのは-o、not report、-summary だけです。                         |
@@ -55,18 +49,18 @@ tracerpt <[-l] <value [value [...]]>|-rt <session_name [session_name [...]]>> [o
 |          -summary [ファイル名]           |                                  概要レポートのテキストファイルを生成します。 ファイル名が指定されていない場合は、summary.txt です。                                   |
 |             -o [ファイル名]              |                                      テキスト出力ファイルを生成します。 指定されていない場合のファイル名はダンプファイルです。                                      |
 |           -レポート [ファイル名]           |                                  テキスト出力レポートファイルを生成します。 ファイル名が指定されていない場合、ワークロード .xml です。                                   |
-|                  -lr                   |                        "制限の緩い" を指定します。 これは、events スキーマに一致しないイベントに対して最適な作業を行います。                         |
+|                  -lr                   |                        制限の緩い値を指定します。 これは、events スキーマに一致しないイベントに対して最適な作業を行います。                         |
 |           -export [ファイル名]           |                                  イベントスキーマエクスポートファイルを生成します。 指定されていない場合、ファイル名は schema. man です。                                   |
-|       [-l] \<value [値 [...]]>        |                                                   処理するイベントトレースログファイルを指定します。                                                    |
+|       [-l] \<値 [...]]>        |                                                   処理するイベントトレースログファイルを指定します。                                                    |
 | -rt \<session_name [session_name [...]]> |                                                リアルタイムイベントトレースセッションのデータソースを指定します。                                                |
 
-## <a name="BKMK_EXAMPLES"></a>例
+## <a name="examples"></a><a name=BKMK_EXAMPLES></a>例
 
 - この例では、 **logfile1**と**logfile2**という2つのイベントログに基づいてレポートを作成し、ダンプファイル**logdump** .xml を xml 形式で作成します。  
   ```
   tracerpt logfile1.etl logfile2.etl -o logdump.xml -of XML
   ```  
-- この例では、イベントログの**ログ**ファイルに基づいてレポートを作成し、ダンプファイル**LOGDMP .xml**を xml 形式で作成します。次に、スキーマに含まれていないイベントを特定するのに最適な方法を使用し、概要レポートファイル**logdmp .txt**を生成し、レポートファイル**logrpt .xml**。  
+- この例では、イベントログの**ログ**ファイルに基づいてレポートを作成し、ダンプファイル**LOGDMP .xml**を xml 形式で作成します。また、スキーマに含まれていないイベントを特定するのに最適な方法を使用して、概要レポートファイル**logdmp .txt**を生成し、レポートファイル**logrpt .xml**を生成します。  
   ```
   tracerpt logfile.etl -o logdmp.xml -of XML -lr -summary logdmp.txt -report logrpt.xml
   ```  
@@ -78,7 +72,7 @@ tracerpt <[-l] <value [value [...]]>|-rt <session_name [session_name [...]]>> [o
   ```
   tracerpt logfile.etl counterfile.blg -report logrpt.xml -df schema.xml
   ```  
-- この例では、リアルタイムイベントトレースセッション "NT カーネルロガー" を読み取り、CSV 形式でダンプファイル**logfile**を生成します。  
+- この例では、リアルタイムイベントトレースセッション NT カーネルロガーを読み取り、CSV 形式でダンプファイル**logfile**を生成します。  
   ```
-  tracerpt -rt "NT Kernel Logger" -o logfile.csv -of CSV
+  tracerpt -rt NT Kernel Logger -o logfile.csv -of CSV
   ```

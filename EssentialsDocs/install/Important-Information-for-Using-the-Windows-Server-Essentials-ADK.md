@@ -1,23 +1,19 @@
 ---
 title: Windows Server Essentials ADK の使用に関する重要な情報
 description: Windows Server Essentials の使用方法について説明します。
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 26cb2992-1250-4672-98ee-8b870baa45d5
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 9a06f3b6431ae6079869e1d7fe9bc3f0ef5e597b
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 2dd0692237f268452d748dc26bd9134f250b4609
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80311742"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80817835"
 ---
 # <a name="important-information-for-using-the-windows-server-essentials-adk"></a>Windows Server Essentials ADK の使用に関する重要な情報
 

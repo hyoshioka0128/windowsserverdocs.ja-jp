@@ -1,7 +1,6 @@
 ---
 ms.assetid: 074e63e9-976c-49da-8cba-9ae0b3325e34
 title: Introduction to Active Directory Administrative Center Enhancements (Level 100)
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: a3bd82feb3a0caf827091bd0cb10edf991921b3c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f3f33673d254b66688aa6623837d990e17d7181a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390617"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80824665"
 ---
 # <a name="introduction-to-active-directory-administrative-center-enhancements-level-100"></a>Introduction to Active Directory Administrative Center Enhancements (Level 100)
 
@@ -26,7 +25,7 @@ Windows Server の Active Directory 管理センターには、次の管理機�
 - [細かいパスワードポリシー](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#fine_grained_pswd_policy_mgmt)
 - [Windows PowerShell 履歴ビューアー](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#windows_powershell_history_viewer)
 
-## <a name="ad_recycle_bin_mgmt"></a>Active Directory のごみ箱
+## <a name="active-directory-recycle-bin"></a><a name="ad_recycle_bin_mgmt"></a>Active Directory のごみ箱
 
 Active Directory ドメイン サービス (AD DS) や Active Directory ライトウェイト ディレクトリ サービス (AD LDS) のユーザーが、Active Directory オブジェクトを誤って削除してしまうことはよくあります。 Windows Server 2008 R2 では、前に、Windows Server の以前のバージョン 1 つでした Active Directory で、誤って削除されたオブジェクトは回復のソリューションは欠点がありました。
 
@@ -63,7 +62,7 @@ Windows Server で Active Directory のごみ箱を有効にする予定があ�
 > [!NOTE]
 > 以下の手順を実行するには、Enterprise Admins グループのメンバーシップ、またはそれと同等のアクセス許可が必要です。
 
-### <a name="bkmk_raise_ffl"></a>手順 1: フォレストの機能レベルを上げる
+### <a name="step-1-raise-the-forest-functional-level"></a><a name="bkmk_raise_ffl"></a>手順 1: フォレストの機能レベルを上げる
 
 この手順では、フォレストの機能レベルを上げます。 Active Directory のごみ箱を有効にする前に、少なくとも Windows Server 2008 R2 であるターゲット フォレストの機能レベルを上げる必要があります。
 
@@ -77,7 +76,7 @@ Windows Server で Active Directory のごみ箱を有効にする予定があ�
 
 ![AD 管理センターの](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>の概要***
 
-以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。
+次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 書式上の制約のため、複数行にわたって折り返される場合でも、各コマンドレットは 1 行に入力してください。
 
 ```powershell
 Set-ADForestMode -Identity contoso.com -ForestMode Windows2008R2Forest -Confirm:$false
@@ -85,7 +84,7 @@ Set-ADForestMode -Identity contoso.com -ForestMode Windows2008R2Forest -Confirm:
 
 **-Identity**引数には、完全修飾 DNS ドメイン名を指定します。
 
-### <a name="bkmk_enable_recycle_bin"></a>手順 2: ごみ箱を有効にする
+### <a name="step-2-enable-recycle-bin"></a><a name="bkmk_enable_recycle_bin"></a>手順 2: ごみ箱を有効にする
 
 この手順では、削除された AD DS のオブジェクトを復元するためにごみ箱を有効にします。
 
@@ -101,13 +100,13 @@ Set-ADForestMode -Identity contoso.com -ForestMode Windows2008R2Forest -Confirm:
 
 ![AD 管理センターの](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>の概要***
 
-以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。
+次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 書式上の制約のため、複数行にわたって折り返される場合でも、各コマンドレットは 1 行に入力してください。
 
 ```powershell
 Enable-ADOptionalFeature -Identity 'CN=Recycle Bin Feature,CN=Optional Features,CN=Directory Service,CN=Windows NT,CN=Services,CN=Configuration,DC=contoso,DC=com' -Scope ForestOrConfigurationSet -Target 'contoso.com'
 ```
 
-### <a name="bkmk_create_test_env"></a>手順 3: テストユーザー、グループ、組織単位を作成する
+### <a name="step-3-create-test-users-group-and-organizational-unit"></a><a name="bkmk_create_test_env"></a>手順 3: テストユーザー、グループ、組織単位を作成する
 
 この手順では、テスト ユーザーを 2 つ作成します。 その後テスト グループを作成し、テスト ユーザーをこのグループに追加します。 さらに OU を作成します。
 
@@ -144,7 +143,7 @@ Enable-ADOptionalFeature -Identity 'CN=Recycle Bin Feature,CN=Optional Features,
 
 ![AD 管理センターの](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>の概要***
 
-以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。
+次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 書式上の制約のため、複数行にわたって折り返される場合でも、各コマンドレットは 1 行に入力してください。
 
 ```powershell
 Add-ADGroupMember -Identity group1 -Member test1
@@ -161,7 +160,7 @@ Add-ADGroupMember -Identity group1 -Member test1
 
 ![AD 管理センターの](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>の概要***
 
-以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。
+次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 書式上の制約のため、複数行にわたって折り返される場合でも、各コマンドレットは 1 行に入力してください。
 
 ```powershell
 1..2 | ForEach-Object {New-ADUser -SamAccountName test$_ -Name "test$_" -Path "DC=fabrikam,DC=com" -AccountPassword (ConvertTo-SecureString -AsPlainText "p@ssword1" -Force) -Enabled $true}
@@ -169,7 +168,7 @@ New-ADGroup -Name "group1" -SamAccountName group1 -GroupCategory Security -Group
 New-ADOrganizationalUnit -Name OU1 -Path "DC=fabrikam,DC=com"
 ```
 
-### <a name="bkmk_restore_del_obj"></a>手順 4: 削除されたオブジェクトを復元する
+### <a name="step-4-restore-deleted-objects"></a><a name="bkmk_restore_del_obj"></a>手順 4: 削除されたオブジェクトを復元する
 
 この手順では、削除されたオブジェクトを **[Deleted Objects]** コンテナーから元の場所および別の場所に復元します。
 
@@ -183,7 +182,7 @@ New-ADOrganizationalUnit -Name OU1 -Path "DC=fabrikam,DC=com"
 
     ![AD 管理センターの](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>の概要***
 
-    以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。
+    次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 書式上の制約のため、複数行にわたって折り返される場合でも、各コマンドレットは 1 行に入力してください。
 
     ```powershell
     Get-ADUser -Filter 'Name -Like "*test*"'|Remove-ADUser -Confirm:$false
@@ -196,7 +195,7 @@ New-ADOrganizationalUnit -Name OU1 -Path "DC=fabrikam,DC=com"
     > [!NOTE]
     > ユーザー アカウント **[test1]** および **[test2]** の **[プロパティ]** に移動して **[所属するグループ]** をクリックすると、グループ メンバーシップも復元されていることを確認できます。
 
-以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。
+次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 書式上の制約のため、複数行にわたって折り返される場合でも、各コマンドレットは 1 行に入力してください。
 
 ![AD 管理センターの](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>の概要***
 
@@ -220,13 +219,13 @@ Get-ADObject -Filter 'Name -Like "*test*"' -IncludeDeletedObjects | Restore-ADOb
 
 ![AD 管理センターの](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>の概要***
 
-以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。
+次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 書式上の制約のため、複数行にわたって折り返される場合でも、各コマンドレットは 1 行に入力してください。
 
 ```powershell
 Get-ADObject -Filter 'Name -Like "*test*"' -IncludeDeletedObjects | Restore-ADObject -TargetPath "OU=OU1,DC=contoso,DC=com"
 ```
 
-## <a name="fine_grained_pswd_policy_mgmt"></a>細かいパスワードポリシー
+## <a name="fine-grained-password-policy"></a><a name="fine_grained_pswd_policy_mgmt"></a>細かいパスワードポリシー
 
 Windows Server 2008 オペレーティング システムでは、ドメイン内の異なるユーザー グループに対して個別にパスワード ポリシーやアカウント ロックアウト ポリシーを定義する手段を提供しています。 Windows Server 2008 より前の Active Directory ドメインでは、ドメイン内のすべてのユーザーに対して 1 つのパスワード ポリシーおよびアカウント ロックアウト ポリシーしか適用できませんでした。 これらのポリシーは、Default Domain Policy の中でドメインに対して指定していました。 この結果、異なるユーザー グループに対して個別にパスワードやアカウント ロックアウトを設定したい組織では、パスワード フィルターを作成するか複数ドメインを採用する必要がありました。 どちらもコストがかかる選択肢です。
 
@@ -261,7 +260,7 @@ Windows Server 2012 で細かいパスワードポリシーを使用する場合
 > [!NOTE]
 > 以下の手順を実行するには、Domain Admins グループのメンバーシップ、またはそれと同等のアクセス許可が必要です。
 
-#### <a name="bkmk_raise_dfl"></a>手順 1: ドメインの機能レベルを上げる
+#### <a name="step-1-raise-the-domain-functional-level"></a><a name="bkmk_raise_dfl"></a>手順 1: ドメインの機能レベルを上げる
 
 次の手順では Windows Server 2008 またはそれ以降は、移行先ドメインのドメインの機能レベルが発生します。 詳細なパスワード ポリシーを有効にするには、Windows Server 2008 以降のドメイン機能レベルが必要です。
 
@@ -275,17 +274,17 @@ Windows Server 2012 で細かいパスワードポリシーを使用する場合
 
 ![AD 管理センターの](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>の概要***
 
-以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。
+次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 書式上の制約のため、複数行にわたって折り返される場合でも、各コマンドレットは 1 行に入力してください。
 
 ```powershell
 Set-ADDomainMode -Identity contoso.com -DomainMode 3
 ```
 
-#### <a name="bkmk2_test_fgpp"></a>手順 2: テストユーザー、グループ、および組織単位を作成する
+#### <a name="step-2-create-test-users-group-and-organizational-unit"></a><a name="bkmk2_test_fgpp"></a>手順 2: テストユーザー、グループ、および組織単位を作成する
 
 この手順に必要なテストユーザーとグループを作成するには、次の手順に従います。[手順 3: テストユーザー、グループ、組織単位を作成](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#bkmk_create_test_env)する (詳細なパスワードポリシーを示すために OU を作成する必要はありません)。
 
-#### <a name="bkmk_create_fgpp"></a>手順 3: 新しい細かい細かいパスワードポリシーを作成する
+#### <a name="step-3-create-a-new-fine-grained-password-policy"></a><a name="bkmk_create_fgpp"></a>手順 3: 新しい細かい細かいパスワードポリシーを作成する
 
 この手順では、ADAC の UI を使用して新しい細かい設定が可能なパスワード ポリシーを作成します。
 
@@ -311,14 +310,14 @@ Set-ADDomainMode -Identity contoso.com -DomainMode 3
 
 ![AD 管理センターの](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>の概要***
 
-以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。
+次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 書式上の制約のため、複数行にわたって折り返される場合でも、各コマンドレットは 1 行に入力してください。
 
 ```powershell
 New-ADFineGrainedPasswordPolicy TestPswd -ComplexityEnabled:$true -LockoutDuration:"00:30:00" -LockoutObservationWindow:"00:30:00" -LockoutThreshold:"0" -MaxPasswordAge:"42.00:00:00" -MinPasswordAge:"1.00:00:00" -MinPasswordLength:"7" -PasswordHistoryCount:"24" -Precedence:"1" -ReversibleEncryptionEnabled:$false -ProtectedFromAccidentalDeletion:$true
 Add-ADFineGrainedPasswordPolicySubject TestPswd -Subjects group1
 ```
 
-#### <a name="bkmk_view_resultant_fgpp"></a>手順 4: ユーザーのポリシーの結果セットを表示する
+#### <a name="step-4-view-a-resultant-set-of-policies-for-a-user"></a><a name="bkmk_view_resultant_fgpp"></a>手順 4: ユーザーのポリシーの結果セットを表示する
 
 この手順では、「[手順 3: 新しい細かい設定が可能なパスワード ポリシーを作成する](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#bkmk_create_fgpp)」でポリシーを割り当てたグループのメンバーであるユーザーの、結果のパスワード設定を表示します。
 
@@ -328,7 +327,7 @@ Add-ADFineGrainedPasswordPolicySubject TestPswd -Subjects group1
 
 2. **[管理]** 、 **[ナビゲーション ノードの追加]** の順にクリックし、 **[ナビゲーション ノードの追加]** ダイアログ ボックスで適切なターゲット ドメインを選択して **[OK]** をクリックします。
 
-3. ユーザーを選択 **test1** 、グループに属する **group1** で詳細なパスワード ポリシーを関連付けた [手順 3: 新しいきめ細かなパスワード ポリシーを作成](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#bkmk_create_fgpp)します。
+3. 「**手順 3: 新しい細かい設定が可能なパスワード ポリシーを作成する**」でポリシーを関連付けたグループ **[group1]** に所属するユーザー [[test1]](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#bkmk_create_fgpp) を選択します。
 
 4. **[タスク]** ウィンドウの **[結果のパスワード設定の表示]** をクリックします。
 
@@ -336,13 +335,13 @@ Add-ADFineGrainedPasswordPolicySubject TestPswd -Subjects group1
 
 ![AD 管理センターの](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>の概要***
 
-以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。
+次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 書式上の制約のため、複数行にわたって折り返される場合でも、各コマンドレットは 1 行に入力してください。
 
 ```powershell
 Get-ADUserResultantPasswordPolicy test1
 ```
 
-#### <a name="bkmk_edit_fgpp"></a>手順 5: 細かい変更が可能なパスワードポリシーを編集する
+#### <a name="step-5-edit-a-fine-grained-password-policy"></a><a name="bkmk_edit_fgpp"></a>手順 5: 細かい変更が可能なパスワードポリシーを編集する
 
 この手順では、「[手順 3: 新しい細かい設定が可能なパスワード ポリシーを作成する](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#bkmk_create_fgpp)」で作成した細かい設定が可能なパスワード ポリシーを編集します。
 
@@ -356,19 +355,19 @@ Get-ADUserResultantPasswordPolicy test1
 
 4. 「[手順 3: 新しい細かい設定が可能なパスワード ポリシーを作成する](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#bkmk_create_fgpp)」で作成した細かい設定が可能なパスワード ポリシーを選択し、 **[タスク]** ウィンドウの **[プロパティ]** をクリックします。
 
-5. **[パスワードの履歴を記録する]** の **[記録するパスワードの数]** の値を「 **30**」に変更します。
+5. **[パスワードの履歴を記録する]** の **[記録するパスワードの数]** の値を「**30**」に変更します。
 
-6. **[OK]** をクリックします。
+6. **[OK]** をクリックすると、
 
 ![AD 管理センターの](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>の概要***
 
-以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。
+次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 書式上の制約のため、複数行にわたって折り返される場合でも、各コマンドレットは 1 行に入力してください。
 
 ```powershell
 Set-ADFineGrainedPasswordPolicy TestPswd -PasswordHistoryCount:"30"
 ```
 
-#### <a name="bkmk_delete_fgpp"></a>手順 6: 細かい細かいパスワードポリシーを削除する
+#### <a name="step-6-delete-a-fine-grained-password-policy"></a><a name="bkmk_delete_fgpp"></a>手順 6: 細かい細かいパスワードポリシーを削除する
 
 ##### <a name="to-delete-a-fine-grained-password-policy"></a>細かい設定が可能なパスワード ポリシーを削除するには
 
@@ -388,14 +387,14 @@ Set-ADFineGrainedPasswordPolicy TestPswd -PasswordHistoryCount:"30"
 
 ![AD 管理センターの](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>の概要***
 
-以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。
+次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 書式上の制約のため、複数行にわたって折り返される場合でも、各コマンドレットは 1 行に入力してください。
 
 ```powershell
 Set-ADFineGrainedPasswordPolicy -Identity TestPswd -ProtectedFromAccidentalDeletion $False
 Remove-ADFineGrainedPasswordPolicy TestPswd -Confirm
 ```
 
-## <a name="windows_powershell_history_viewer"></a>Windows PowerShell 履歴ビューアー
+## <a name="windows-powershell-history-viewer"></a><a name="windows_powershell_history_viewer"></a>Windows PowerShell 履歴ビューアー
 
 ADAC は Windows PowerShell の上に構築されたユーザー インターフェイス ツールです。 Windows Server 2012 以降では、IT 管理者は ADAC を利用して、windows PowerShell 履歴ビューアーを使用して Active Directory コマンドレット用の Windows PowerShell について学習することができます。 ユーザー インターフェイスでアクションが実行されると、対応する Windows PowerShell コマンドが Windows PowerShell 履歴ビューアーに表示されます。 これにより、管理者は自動化されたスクリプトを作成でき、繰り返しのタスクを減らして IT 生産性を向上できます。 また、この機能は、Active Directory 用 Windows PowerShell の学習に時間が短縮され、自動化スクリプトが正しいかどうか、ユーザーの信頼性が向上します。
 

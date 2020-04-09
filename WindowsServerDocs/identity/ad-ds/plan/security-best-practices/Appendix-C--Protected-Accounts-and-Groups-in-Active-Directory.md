@@ -1,7 +1,6 @@
 ---
 ms.assetid: 5b2876ac-fe7d-4054-bfba-b692e57bc0d2
 title: 付録 C-Active Directory の保護されたアカウントとグループ
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 606b3a42d70ee5c2a3479f9c9df2f95a495d6afd
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3036176127cbb5401c582d81ddb2704d790a209a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408720"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80821685"
 ---
 # <a name="appendix-c-protected-accounts-and-groups-in-active-directory"></a>付録 C: Active Directory の保護されたアカウントとグループ
 
@@ -22,7 +21,7 @@ ms.locfileid: "71408720"
 
 ## <a name="appendix-c-protected-accounts-and-groups-in-active-directory"></a>付録 C: Active Directory の保護されたアカウントとグループ
 
-Active Directory 内では、高い特権を持つアカウントとグループの既定のセットは、保護されたアカウントとグループと見なされます。 Active Directory のほとんどのオブジェクトでは、代理管理者 (Active Directory オブジェクトを管理するためのアクセス許可を委任されたユーザー) は、オブジェクトのメンバーシップを変更するためのアクセス許可を変更するなど、オブジェクトのアクセス許可を変更できます。グループ。たとえば、のようになります。  
+Active Directory 内では、高い特権を持つアカウントとグループの既定のセットは、保護されたアカウントとグループと見なされます。 Active Directory のほとんどのオブジェクトでは、代理管理者 (Active Directory オブジェクトを管理するためのアクセス許可を委任されたユーザー) は、グループのメンバーシップを変更するためのアクセス許可を変更するなど、オブジェクトのアクセス許可を変更できます。  
 
 ただし、保護されたアカウントとグループを使用すると、オブジェクトの権限は、オブジェクトがディレクトリに移動された場合でも、オブジェクトに対するアクセス許可が一貫していることを保証する自動プロセスによって設定および適用されます。 他のユーザーが保護されたオブジェクトのアクセス許可を手動で変更した場合でも、このプロセスによって、アクセス許可が既定値に迅速に返されます。  
 
@@ -40,7 +39,7 @@ Active Directory 内では、高い特権を持つアカウントとグループ
 |Backup Operators|Backup Operators|Backup Operators|Backup Operators|
 |Cert Publishers|||
 |Domain Admins|Domain Admins|Domain Admins|Domain Admins|
-|ドメイン コントローラー|ドメイン コントローラー|ドメイン コントローラー|ドメイン コントローラー|
+|ドメイン コントローラ|ドメイン コントローラ|ドメイン コントローラ|ドメイン コントローラ|
 |Enterprise Admins|Enterprise Admins|Enterprise Admins|Enterprise Admins|
 ||||エンタープライズキー管理者|
 ||||キー管理者|

@@ -1,24 +1,20 @@
 ---
 title: 'secedit: エクスポート'
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Windows コマンドに関するトピック * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 49a8b241-aa8c-45b7-844d-67a29fab708e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2aed2774bcba1ac3d5ba828901586acbbe24d255
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ea0181bcdcae8d3869327985a0db0601ded6505d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71384253"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80834975"
 ---
 # <a name="seceditexport"></a>secedit: エクスポート
 
@@ -32,26 +28,26 @@ ms.locfileid: "71384253"
 Secedit /export /db <database file name> [/mergedpolicy] /cfg <configuration file name> [/areas [securitypolicy | group_mgmt | user_rights | regkeys | filestore | services]] [/log <log file name>] [/quiet]
 ```
 
-### <a name="parameters"></a>パラメーター
+#### <a name="parameters"></a>パラメーター
 
 |パラメーター|説明|
 |---------|-----------|
 |db|必須。</br>分析を実行する、格納されている構成を含んでいるデータベースのパスとファイル名を指定します。</br>ファイル名をそれに関連付けられているセキュリティ テンプレート (ように、構成ファイルによって表される) されていないデータベースを指定する場合、 `/cfg \<configuration file name>` でもコマンド ライン オプションに指定する必要があります。|
-|mergedpolicy|(省略可能)。</br>マージし、ドメインとローカル ポリシーのセキュリティ設定をエクスポートします。|
+|mergedpolicy|省略可。</br>マージし、ドメインとローカル ポリシーのセキュリティ設定をエクスポートします。|
 |cfg|必須。</br>分析用のデータベースにインポートするセキュリティ テンプレートのパスとファイル名を指定します。</br>この/cfg オプションを使用すると、 `/db \<database file name>` パラメーター。 これが指定されていない場合、データベースに既に格納されている構成に対して分析を実行します。|
-|領域|(省略可能)。</br>システムに適用するセキュリティ領域を指定します。 このパラメーターが指定されていない場合は、データベースで定義されているすべてのセキュリティ設定が、システムに適用されます。 複数の領域を構成するには、各領域をスペースで区切ります。 次のセキュリティの領域がサポートされています。</br>-SecurityPolicy</br>    ローカル ポリシーおよびアカウント ポリシーを含む、システムのドメイン ポリシーは、ポリシーやセキュリティ オプションを監査します。</br>-Group_Mgmt</br>    セキュリティ テンプレートで指定されたすべてのグループのグループの設定が制限されています。</br>-User_Rights</br>    ユーザーのログオン権限と特権の付与します。</br>-レジストリ</br>    ローカル レジストリ キーのセキュリティ。</br>-FileStore</br>    ローカル ファイル ストレージでのセキュリティ。</br>-サービス</br>    定義されているすべてのサービスのセキュリティ。|
-|ログ|(省略可能)。</br>プロセスのログ ファイルのパスとファイル名を指定します。|
-|通知の停止|任意。</br>画面とログの出力を抑制します。 できます分析結果を表示する、セキュリティの構成と分析スナップインを Microsoft 管理コンソール (MMC) を使用しています。|
+|部分|省略可。</br>システムに適用するセキュリティ領域を指定します。 このパラメーターが指定されていない場合は、データベースで定義されているすべてのセキュリティ設定が、システムに適用されます。 複数の領域を構成するには、各領域をスペースで区切ります。 次のセキュリティの領域がサポートされています。</br>-SecurityPolicy</br>    ローカル ポリシーおよびアカウント ポリシーを含む、システムのドメイン ポリシーは、ポリシーやセキュリティ オプションを監査します。</br>-Group_Mgmt</br>    セキュリティ テンプレートで指定されたすべてのグループのグループの設定が制限されています。</br>-User_Rights</br>    ユーザーのログオン権限と特権の付与します。</br>-レジストリ</br>    ローカル レジストリ キーのセキュリティ。</br>-FileStore</br>    ローカル ファイル ストレージでのセキュリティ。</br>-サービス</br>    定義されているすべてのサービスのセキュリティ。|
+|log|省略可。</br>プロセスのログ ファイルのパスとファイル名を指定します。|
+|通知の停止|省略可。</br>画面とログの出力を抑制します。 できます分析結果を表示する、セキュリティの構成と分析スナップインを Microsoft 管理コンソール (MMC) を使用しています。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
 このコマンドを使用して、別のコンピューターに、設定をインポートするだけでなく、ローカル コンピューターで、セキュリティ ポリシーをバックアップできます。
 
-ログ ファイルのパスを指定しない場合、既定のログ ファイル (*systemroot*\Documents and 設定\*<em>UserAccount\*\My Documents\Security\Logs</em>DatabaseName.log) を使用します。
+ログファイルのパスが指定されていない場合は、既定のログファイル (*systemroot*\Documents および Settings\*UserAccount<em>\My Documents\Security\Logs\*DatabaseName</em>.log) が使用されます。
 
 Windows Server 2008 で `Secedit /refreshpolicy` に置き換えられました `gpupdate`します。 セキュリティ設定を更新する方法については、次を参照してください。 [Gpupdate](gpupdate.md)します。
 
-## <a name="BKMK_Examples"></a>例
+## <a name="examples"></a><a name=BKMK_Examples></a>例
 
 セキュリティのデータベースと、ドメイン セキュリティ ポリシーを inf ファイルにエクスポートし、別のデータベースに別のコンピューターでセキュリティ ポリシー設定をレプリケートするためにそのファイルをインポートします。
 ```
@@ -62,8 +58,8 @@ Secedit /export /db C:\Security\FY11\SecDbContoso.sdb /mergedpolicy /cfg SecCont
 Secedit /import /db C:\Security\FY12\SecDbContoso.sdb /cfg SecContoso.inf /log C:\Security\FY11\SecAnalysisContosoFY12.log /quiet
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
 -   [Secedit:import](secedit-import.md)
 -   [Secedit](secedit.md)
--   [コマンド ライン構文の記号](command-line-syntax-key.md)
+-   - [コマンド ライン構文の記号](command-line-syntax-key.md)

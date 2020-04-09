@@ -9,12 +9,12 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 6863940d69e30f4984897a7e03369a834da21d1d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8227fafc6b29471e2f09db171645012967553429
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71376783"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80844055"
 ---
 # <a name="fsutil-tiering"></a>Fsutil 階層化
 >適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows 10
@@ -31,7 +31,7 @@ fsutil tiering [setflags] <volume> <flags>
 fsutil tiering [tierlist] <volume>
 ```
 
-### <a name="parameters"></a>パラメーター
+#### <a name="parameters"></a>パラメーター
 
 |パラメーター|説明|
 |-------------|---------------|
@@ -79,7 +79,7 @@ fsutil tiering tierlist C:
 
 
 ### <a name="additional-references"></a>その他の参照情報
-[コマンド ライン構文の記号](Command-Line-Syntax-Key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
 
 [Fsutil](Fsutil.md)
 

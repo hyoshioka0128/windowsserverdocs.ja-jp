@@ -1,26 +1,23 @@
 ---
 title: Windows エラー報告を使用したフェールオーバークラスターのトラブルシューティング
 description: WER レポートを使用したフェールオーバークラスターのトラブルシューティング。レポートを収集して一般的な問題を診断する方法の詳細については、「」を確認してください。
-keywords: フェールオーバークラスター、WER レポート、診断、クラスター、Windows エラー報告
 ms.prod: windows-server
 ms.technology: storage-failover-clustering
 ms.author: vpetter
-ms.topic: article
-author: vpetter
+author: dcuomo
 ms.date: 03/27/2018
-ms.localizationpriority: ''
-ms.openlocfilehash: 46c633af8cf82ac43d2a787a7193685d88ad0ecc
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: e8db88dc4fe3ad9176299c5b423a7aac6093f254
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322154"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80827355"
 ---
 # <a name="troubleshooting-a-failover-cluster-using-windows-error-reporting"></a>Windows エラー報告を使用したフェールオーバークラスターのトラブルシューティング 
 
 > 適用対象: Windows Server 2019、Windows Server 2016、Windows Server
 
-Windows エラー報告 (WER) は、高度な管理者または階層3のサポートが Windows によって検出された情報を収集し、マイクロソフトに報告するために役立つ、柔軟なイベントベースのフィードバックインフラストラクチャです。とは、使用可能な任意のソリューションをユーザーに提供します。 この[リファレンス](https://docs.microsoft.com/powershell/module/windowserrorreporting/)では、すべての WindowsErrorReporting コマンドレットの説明と構文について説明します。
+Windows エラー報告 (WER) は、高度な管理者または階層3のサポートが、Windows によって検出されたハードウェアとソフトウェアの問題に関する情報を収集し、Microsoft に報告し、利用可能なソリューションをユーザーに提供するために設計された、柔軟なイベントベースのフィードバックインフラストラクチャです。 この[リファレンス](https://docs.microsoft.com/powershell/module/windowserrorreporting/)では、すべての WindowsErrorReporting コマンドレットの説明と構文について説明します。
 
 以下に示すトラブルシューティングの情報は、エスカレートされた高度な問題のトラブルシューティングに役立ちます。また、トリアージのためにデータをマイクロソフトに送信することが必要になる場合もあります。
 

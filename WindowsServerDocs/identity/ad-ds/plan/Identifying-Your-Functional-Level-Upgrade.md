@@ -1,7 +1,6 @@
 ---
 ms.assetid: 231158d8-5e81-4630-b8d5-93fee16e0cd3
 title: 機能レベルのアップグレードを識別する
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,18 +8,18 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: e43bec8a8d61cd0f6fd82982d5e3a0f01984fc65
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 920f051ef188670f81233098ba38370900e015ae
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408780"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822355"
 ---
 # <a name="identifying-your-functional-level-upgrade"></a>機能レベルのアップグレードを識別する
 
 >適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-ドメインとフォレストの機能レベルを上げるには、現在の環境を評価し、組織のニーズに最も合った機能レベルの要件を特定する必要があります。 フォレスト内のドメイン、各ドメインに配置されているドメインコントローラー、各ドメインコントローラーで実行されているオペレーティングシステムとサービスパック、およびドメインをアップグレードする予定日を特定して、現在の環境を評価します。コントローラー. ドメインコントローラーのインベントリからの削除を計画している場合は、環境に与える影響について十分に理解しておいてください。  
+ドメインとフォレストの機能レベルを上げるには、現在の環境を評価し、組織のニーズに最も合った機能レベルの要件を特定する必要があります。 フォレスト内のドメイン、各ドメインに配置されているドメインコントローラー、各ドメインコントローラーで実行されているオペレーティングシステムとサービスパック、およびドメインコントローラーをアップグレードする予定日を識別して、現在の環境を評価します。 ドメインコントローラーのインベントリからの削除を計画している場合は、環境に与える影響について十分に理解しておいてください。  
   
 次の状況では、以前のバージョンの Windows Server オペレーティングシステムを Windows Server 2008 または Windows Server 2008 R2 の機能レベルにアップグレードできない場合があります。  
   
@@ -60,7 +59,7 @@ Windows Server 2008 または Windows Server 2008 R2 のフォレストレベル
     > [!IMPORTANT]  
     >  Windows Server 2008 R2 は、x64 ベースのオペレーティングシステムです。 サーバーで x64 ベースバージョンの Windows Server 2003 が実行されている場合は、このコンピューターのオペレーティングシステムを Windows Server 2008 R2 にインプレースアップグレードできます。 サーバーで x86 ベースのバージョンの Windows Server 2003 が実行されている場合は、このコンピューターを Windows Server 2008 R2 にアップグレードすることはできません。  
   
-Windows 2000 フォレスト全体を windows Server 2008 または Windows Server 2008 R2 にアップグレードせずに Windows Server 2008 または Windows Server 2008 R2 のドメインレベル機能を使用するには、Windows Server 2008 または windows server 2008 に対してドメインの機能レベルのみを上げるもたらし.  
+Windows server 2008 または windows Server 2008 R2 のドメインレベル機能を windows server 2008 または windows server 2008 R2 に2000アップグレードせずに使用するには、Windows Server 2008 または windows server 2008 R2 に対してドメインの機能レベルのみを上げます。  
   
 > [!NOTE]  
 > ドメインの機能レベルを上げる前に、そのドメイン内のすべての Windows 2000 ベースのドメインコントローラーを Windows Server 2008 または Windows Server 2008 R2 にアップグレードする必要があります。  
@@ -85,7 +84,7 @@ Windows Server 2008 または Windows Server 2008 R2 のフォレストレベル
 > [!IMPORTANT]  
 >  Windows Server 2008 R2 は、x64 ベースのオペレーティングシステムです。 サーバーで x64 ベースバージョンの Windows Server 2003 が実行されている場合は、このコンピューターのオペレーティングシステムを Windows Server 2008 R2 にインプレースアップグレードできます。 サーバーで x86 ベースのバージョンの Windows Server 2003 が実行されている場合は、Windows Server 2008 R2 を実行するようにこのコンピューターをアップグレードすることはできません。  
   
-Windows server 2003 フォレスト全体を Windows server 2008 または Windows Server 2008 R2 にアップグレードせずに、すべての Windows Server 2008 または Windows Server 2008 R2 ドメインレベルの機能を使用するには、ドメインの機能レベルのみを Windows Server 2008 または windows server に上げます。2008 R2。  
+Windows server 2003 フォレスト全体を Windows server 2008 または windows Server 2008 R2 にアップグレードせずに、すべての Windows Server 2008 または Windows Server 2008 R2 のドメインレベル機能を使用するには、ドメインの機能レベルを Windows Server 2008 または Windows server 2008 R2 に上げます。  
   
 > [!NOTE]  
 > ドメインの機能レベルを上げる前に、そのドメイン内のすべての Windows Server 2003 ベースのドメインコントローラーを Windows Server 2008 または Windows Server 2008 R2 にアップグレードする必要があります。  
@@ -101,7 +100,7 @@ Windows server 2003 フォレスト全体を Windows server 2008 または Windo
   
 -   Windows 2000 フォレストの機能レベル  
   
-機能レベルは、これらの既定のレベルで設定され、Windows 2000 または Windows Server 2003 ベースのドメインコントローラーを新しい Windows Server 2008 フォレストに追加するオプションを提供します。 フォレストルートドメインを作成した後、Windows Server 2008 フォレストに追加する各ドメインのドメイン機能レベルは、Windows 2000 native に設定されます。 ただし、新しい Windows Server 2008 環境内のすべてのドメインコントローラーで Windows Server 2008 を実行する場合は、fores で最初のドメインコントローラーをインストールするときに、フォレストの機能レベルとドメインの機能レベルを Windows Server 2008 に設定します。\t. これにより、時間が節約され、Windows Server 2008 のフォレストレベルおよびドメインレベルのすべての機能が有効になります。  
+機能レベルは、これらの既定のレベルで設定され、Windows 2000 または Windows Server 2003 ベースのドメインコントローラーを新しい Windows Server 2008 フォレストに追加するオプションを提供します。 フォレストルートドメインを作成した後、Windows Server 2008 フォレストに追加する各ドメインのドメイン機能レベルは、Windows 2000 native に設定されます。 ただし、新しい Windows Server 2008 環境内のすべてのドメインコントローラーで Windows Server 2008 を実行する場合は、フォレストに最初のドメインコントローラーをインストールするときに、フォレストの機能レベルとドメインの機能レベルを Windows Server 2008 に設定します。 これにより、時間が節約され、Windows Server 2008 のフォレストレベルおよびドメインレベルのすべての機能が有効になります。  
   
 > [!IMPORTANT]  
 > フォレストが Windows Server 2008 の機能レベルで動作し、Windows Server 2003 ベースのメンバーサーバーまたは Windows 2000 ベースのメンバーサーバーに Active Directory をインストールしようとすると、インストールは失敗します。  
@@ -115,7 +114,7 @@ Windows server 2003 フォレスト全体を Windows server 2008 または Windo
   
 -   Windows Server 2003 フォレストの機能レベル  
   
-機能レベルは、これらの既定のレベルで設定され、Windows Server 2003 ベースのドメインコントローラーを新しい Windows Server 2008 R2 フォレストに追加するオプションを提供します。 フォレストルートドメインを作成すると、Windows Server 2008 R2 フォレストに追加する各ドメインのドメイン機能レベルが Windows Server 2003 に設定されます。 ただし、新しい Windows Server 2008 R2 環境内のすべてのドメインコントローラーで Windows Server 2008 R2 を実行する必要がある場合は、yo で最初のドメインコントローラーをインストールするときに、フォレストの機能レベルとドメインの機能レベルを Windows Server 2008 R2 に設定します。自分のフォレスト。 これにより、時間が節約され、Windows Server 2008 R2 のフォレストレベルおよびドメインレベルのすべての機能が有効になります。  
+機能レベルは、これらの既定のレベルで設定され、Windows Server 2003 ベースのドメインコントローラーを新しい Windows Server 2008 R2 フォレストに追加するオプションを提供します。 フォレストルートドメインを作成すると、Windows Server 2008 R2 フォレストに追加する各ドメインのドメイン機能レベルが Windows Server 2003 に設定されます。 ただし、新しい Windows Server 2008 R2 環境内のすべてのドメインコントローラーで Windows Server 2008 R2 を実行する必要がある場合は、フォレストの最初のドメインコントローラーをインストールするときに、フォレストの機能レベルとドメインの機能レベルを Windows Server 2008 R2 に設定します。 これにより、時間が節約され、Windows Server 2008 R2 のフォレストレベルおよびドメインレベルのすべての機能が有効になります。  
   
 > [!IMPORTANT]  
 > フォレストが Windows Server 2008 R2 の機能レベルで動作し、windows Server 2008 ベースまたは Windows Server 2003 ベースのメンバーサーバーまたは Windows 2000 ベースのメンバーサーバーに Active Directory をインストールしようとすると、インストールは失敗します。  

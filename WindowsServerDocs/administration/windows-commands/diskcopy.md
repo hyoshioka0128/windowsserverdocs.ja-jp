@@ -1,28 +1,22 @@
 ---
 title: diskcopy
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Windows コマンドに関するトピックでは、コピー元のドライブのフロッピーディスクの内容を、ドライブのフォーマット済みまたは未フォーマットのフロッピーディスクにコピーします。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5fd21efa-52cc-4e70-a7fe-35125a435106
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/07/2018
-ms.openlocfilehash: 553a85ac4fd9b7708d7adc668be4e000b36a9346
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 675694503cab207f05fd6b48e0d17c23196f85d0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71377820"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80845545"
 ---
 # <a name="diskcopy"></a>diskcopy
-
-
 
 コピー元ドライブのフロッピーディスクの内容を、ドライブのフォーマット済みまたは未フォーマットのフロッピーディスクにコピーします。 パラメーターを指定せずに使用した場合、 **diskcopy**では、ソースディスクとターゲットディスクの現在のドライブが使用されます。
 
@@ -37,14 +31,14 @@ ms.locfileid: "71377820"
 diskcopy [<Drive1>: [<Drive2>:]] [/v]
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
 |パラメーター|説明|
 |---------|-----------|
-|\<ドライブ 1 >|ソースディスクを含むドライブを指定します。|
-|\<ドライブ 2 >|宛先ディスクを含むドライブを指定します。|
+|\<Drive1 >|ソースディスクを含むドライブを指定します。|
+|\<Drive2 >|宛先ディスクを含むドライブを指定します。|
 |/v|情報が正しくコピーされていることを確認します。 このオプションを選択すると、コピー処理が遅くなります。|
-|/?|コマンド プロンプトにヘルプを表示します。|
+|/?|コマンド プロンプトでヘルプを表示します。|
 
 ## <a name="remarks"></a>コメント
 
@@ -84,9 +78,11 @@ diskcopy [<Drive1>: [<Drive2>:]] [/v]
 
 > [!NOTE]
 > **Xcopy**を使用して起動ディスクをコピーすることはできません。
-> -   **Diskcopy**終了コードについて
 
-    The following table explains each exit code.  
+### <a name="understanding-diskcopy-exit-codes"></a>**Diskcopy**終了コードについて
+
+    The following table explains each exit code.
+    
     |終了コード|説明|
     |---------|-----------|
     |0|コピー操作に成功しました|
@@ -96,7 +92,7 @@ diskcopy [<Drive1>: [<Drive2>:]] [/v]
 
     To process the exit codes that are returned by **diskcomp**, you can use the *ERRORLEVEL* environment variable on the **if** command line in a batch program.
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a><a name=BKMK_examples></a>例
 
 ドライブ B のディスクをドライブ A のディスクにコピーするには、次のように入力します。
 ```
@@ -106,6 +102,6 @@ diskcopy b: a:
 
 diskcopy a:
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

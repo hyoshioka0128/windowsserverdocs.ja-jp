@@ -1,24 +1,20 @@
 ---
 title: pnputil
 description: Pnputil ユーティリティを使用してドライバーストアを管理する方法について説明します。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: fab686b8-09d3-4f6c-afa2-630e6036f44c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: f20c60bfd9ae33497dd356c7797b9fb1d2b51d18
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 134e6ce4b1fc44450047de3287b7daac67da4b6a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71372288"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80837515"
 ---
 # <a name="pnputil"></a>pnputil
 
@@ -30,7 +26,7 @@ Pnputil は、ドライバーストアの管理に使用できるコマンドラ
 pnputil.exe [-f | -i] [ -? | -a | -d | -e ] <INF name>
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
 |パラメーター|説明|
 |---------|-----------|
@@ -39,13 +35,13 @@ pnputil.exe [-f | -i] [ -? | -a | -d | -e ] <INF name>
 |-e|すべてのサードパーティ製 INF ファイルを列挙するように指定します。|
 |-f|特定された INF ファイルを強制的に削除するように指定します。 **– I**パラメーターと組み合わせて使用することはできません。|
 |-i|識別された INF ファイルをインストールするように指定します。 は、 **-f**パラメーターと組み合わせて使用することはできません。|
-|/?|コマンド プロンプトにヘルプを表示します。|
+|/?|コマンド プロンプトでヘルプを表示します。|
 
 
-## <a name="examples"></a>使用例
+## <a name="examples"></a>例
 
 -   pnputil-a a:\usbcam\USBCAM.INF は、USBCAM によって指定された INF ファイルを追加します。INF
--   svcutil.exe-a c:\ drivers\*.inf にすべての INF ファイルが追加されます。
+-   svcutil.exe-c:\ ドライバー\*により、すべての INF ファイルが c:\ に追加されます。
 -   pnputil-i-a a:\usbcam\USBCAM.INF は、指定されたドライバーを追加してインストールします。
 -   pnputil – e は、すべてのサードパーティ製ドライバーを列挙します。
 -   svcutil.exe-d oem0 は、指定されたを削除します。
@@ -53,6 +49,6 @@ pnputil.exe [-f | -i] [ -? | -a | -d | -e ] <INF name>
 
 ## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
 
 [Popd](popd.md)

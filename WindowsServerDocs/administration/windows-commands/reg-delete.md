@@ -1,24 +1,20 @@
 ---
 title: reg delete
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Windows コマンドに関するトピック * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: cee05071-1607-4ab1-b8ab-65caebeb85c3
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7156bf58b27da1602931f0dc1903de71d86764e7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 726a3c700a9278dbc7abb1873aae7ea3c957bbb5
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71384764"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80836505"
 ---
 # <a name="reg-delete"></a>reg delete
 
@@ -34,7 +30,7 @@ ms.locfileid: "71384764"
 Reg delete <KeyName> [{/v ValueName | /ve | /va}] [/f]
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
 |パラメーター|説明|
 |---------|-----------|
@@ -45,16 +41,16 @@ Reg delete <KeyName> [{/v ValueName | /ve | /va}] [/f]
 |/f|確認を求めずに、既存のレジストリ サブキーまたはエントリを削除します。|
 |/?|ヘルプを表示 **reg 削除** コマンド プロンプト。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
 次の表に、戻り値の **reg 削除** 操作します。
 
-|Value|説明|
+|値|説明|
 |-----|-----------|
 |0|成功|
 |1|失敗|
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a><a name=BKMK_examples></a>例
 
 タイムアウトのレジストリ キーとそのすべてのサブキーと値を削除するには、次のように入力します。
 ```
@@ -65,6 +61,6 @@ REG DELETE HKLM\Software\MyCo\MyApp\Timeout
 REG DELETE \\ZODIAC\HKLM\Software\MyCo /v MTU
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

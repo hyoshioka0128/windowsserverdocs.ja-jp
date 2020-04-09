@@ -1,24 +1,20 @@
 ---
 title: wbadmin の状態の取得
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Wbadmin get status の Windows コマンドに関するトピック。現在実行中のバックアップまたは回復操作の状態を報告します。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2911b944-7b95-46aa-8c1e-1d55a2fcc94c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0270a29e557ec135301753dd66c1f5f2404a8acc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f8ebf1a078632f78dc8d58c232550345f0de78f2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71362388"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80829745"
 ---
 # <a name="wbadmin-get-status"></a>wbadmin の状態の取得
 
@@ -34,7 +30,7 @@ ms.locfileid: "71362388"
 wbadmin get status
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
 このサブコマンドにはパラメーターがありません。
 
@@ -43,8 +39,8 @@ wbadmin get status
 -   このサブコマンドは、現在のバックアップまたは回復操作が完了するまで停止しません。コマンドウィンドウを閉じた場合でも、サブコマンドは引き続き実行されます。
 -   現在のバックアップまたは回復操作を停止する場合は、 **wbadmin stop job**サブコマンドを使用します。
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
--   [コマンド ライン構文の記号](command-line-syntax-key.md)
+-   - [コマンド ライン構文の記号](command-line-syntax-key.md)
 -   [Wbadmin](wbadmin.md)
 -   [WBJob](https://technet.microsoft.com/library/jj902426.aspx)コマンドレット

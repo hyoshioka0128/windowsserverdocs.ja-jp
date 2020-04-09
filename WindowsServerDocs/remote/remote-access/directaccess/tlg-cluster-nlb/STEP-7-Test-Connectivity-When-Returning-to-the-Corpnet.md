@@ -2,22 +2,18 @@
 title: 手順7企業ネットワークに戻るときに接続をテストする
 description: このトピックは、「windows Server 2016 用 Windows NLB を使用するクラスターでの DirectAccess のデモンストレーション」のテストラボガイドに含まれています。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5a7252d0-6db8-4a9d-98ee-75082ecd2929
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 491533ae5d141de4ab4f15126d8977cf15c8f7f4
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 479ac48bbb04186f97d25e6744e8630b4dc6a51e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80314687"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80819125"
 ---
 # <a name="step-7-test-connectivity-when-returning-to-the-corpnet"></a>手順7企業ネットワークに戻るときに接続をテストする
 

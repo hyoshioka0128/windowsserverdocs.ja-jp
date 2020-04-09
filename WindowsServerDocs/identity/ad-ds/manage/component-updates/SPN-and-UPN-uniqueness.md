@@ -1,7 +1,6 @@
 ---
 ms.assetid: 40bc24b1-2e7d-4e77-bd0f-794743250888
 title: SPN と UPN の一意性
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: ded707276471fccd28f0ec17afef0a24015ff32f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f182f79b5bb97e45f1cfd34ad59cf52322f09063
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390030"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80823065"
 ---
 # <a name="spn-and-upn-uniqueness"></a>SPN と UPN の一意性
 
@@ -37,7 +36,7 @@ Windows Server 2012 R2 のブロックの作成を実行しているドメイン
   
 **テーブル SEQ テーブル \\\* アラビア 1: UPN と SPN の一意性**  
   
-|機能|Comment|  
+|機能|コメント|  
 |-----------|-----------|  
 |UPN の一意性|重複する Upn 中断同期の内部設置型 Windows Azure AD ベースのサービスと Office 365 などの AD アカウントです。|  
 |SPN の一意性|Kerberos では、相互認証用の Spn が必要です。  Spn が重複すると、認証エラーが発生します。|  
@@ -190,7 +189,7 @@ DN: CN=Dianne Hunt2\0ADEL:dd3ab8a4-3005-4f2f-814f-d6fc54a1a1c0,CN=Deleted Object
   
 ![SPN と UPN の一意性](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig13_GlobalSearch.gif)  
   
-### <a name="using-windows-powershell"></a>Windows PowerShell を使用する  
+### <a name="using-windows-powershell"></a>Windows PowerShell の使用  
   
 ```  
 Get-ADObject -LdapFilter "(userPrincipalName=dhunt@blue.contoso.com)" -IncludeDeletedObjects -SearchBase "DC=blue,DC=Contoso,DC=com" -SearchScope Subtree -Server winbluedc1.blue.contoso.com  

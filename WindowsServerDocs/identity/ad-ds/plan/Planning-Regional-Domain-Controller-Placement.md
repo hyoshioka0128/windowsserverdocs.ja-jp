@@ -1,7 +1,6 @@
 ---
 ms.assetid: eb600904-24b8-4488-a278-c1c971dc2f2d
 title: 地域ドメイン コント ローラーの配置の計画
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,16 +8,16 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 2508476f35462516f32877365cb15be919b5b6df
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: cb1d83d5afca92de85c4de8b3e9125e119250f66
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408732"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822115"
 ---
 # <a name="planning-regional-domain-controller-placement"></a>地域ドメイン コント ローラーの配置の計画
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 コスト効率のためには、できるだけ少ないの地域別のドメイン コント ローラーを配置する予定です。 最初に、確認で使用される「地理的な場所との通信リンク」(DSSTOPO_1.doc) ワークシート [ネットワーク情報の収集](../../ad-ds/plan/Collecting-Network-Information.md) 場所がハブであるかどうかを確認します。  
   
@@ -80,6 +79,6 @@ WAN リンクの可用性が信頼性の高い場合はドメイン コント �
   
 ドメイン コント ローラーを維持するためのコストの削減がネットワーク トラフィックより重要な場合は、そのドメインのドメイン コント ローラーを集中管理ししない位置に、地域別のドメイン コント ローラーを配置するか場所に Rodc を配置することを検討してください。  
   
-地域別のドメインコントローラーの配置と各場所で表される各ドメインのユーザー数を文書化するのに役立つワークシートについては、「 [Windows Server 2003 Deployment Kit 用のジョブエイド](https://go.microsoft.com/fwlink/?LinkID=102558)」、Job_Aids_Designing_and_ をダウンロードしてください。Deploying_Directory_and_Security_Services を開き、"ドメインコントローラーの配置" (DSSTOPO_4) を開きます。  
+地域別のドメインコントローラーの配置と各場所で表される各ドメインのユーザー数を文書化するのに役立つワークシートについては、「 [Windows Server 2003 展開キット用のジョブエイド](https://go.microsoft.com/fwlink/?LinkID=102558)」、Job_Aids_Designing_and_Deploying_Directory_and_Security_Services をダウンロードして、「ドメインコントローラーの配置」 (DSSTOPO_4) を参照してください。  
   
 地域ドメインを展開するときに、地域別のドメイン コント ローラーを配置する必要がある場所に関する情報を参照する必要があります。 地域ドメインの展開に関する詳細については、次を参照してください。 [を展開する Windows Server 2008 地域ドメイン](https://technet.microsoft.com/library/cc755118.aspx)します。  

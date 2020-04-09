@@ -1,7 +1,6 @@
 ---
 ms.assetid: 4d21d27d-5523-4993-ad4f-fbaa43df7576
 title: Advanced AD DS Management Using Active Directory Administrative Center (Level 200)
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,16 +8,16 @@ ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 6ec8ac4936889356ef92e82c0c89491e5c853a95
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 197f994bdd5dedced24aa390dc562530c41e951d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949336"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80824915"
 ---
 # <a name="advanced-ad-ds-management-using-active-directory-administrative-center-level-200"></a>Advanced AD DS Management Using Active Directory Administrative Center (Level 200)
 
->適用対象: Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 このトピックでは、更新された Active Directory 管理センターと、そこで使用できる新しい Active Directory のごみ箱、細かい設定が可能なパスワード ポリシー、および Windows PowerShell 履歴ビューアーについて詳しく説明します。これには、アーキテクチャ、一般的なタスクの例、トラブルシューティング情報などが含まれます。 概要については、「 [Active Directory 管理センターの&#40;拡張レベル&#41;100 の概要](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md)」を参照してください。  
   
@@ -28,7 +27,7 @@ ms.locfileid: "75949336"
 - [Active Directory 管理センター Windows PowerShell 履歴ビューアーの使用](../../../ad-ds/get-started/adac/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-.md#BKMK_HistoryViewer)  
 - [AD DS 管理のトラブルシューティング](../../../ad-ds/get-started/adac/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-.md#BKMK_Tshoot)  
   
-## <a name="BKMK_Arch"></a>Active Directory 管理センターアーキテクチャ  
+## <a name="active-directory-administrative-center-architecture"></a><a name="BKMK_Arch"></a>Active Directory 管理センターアーキテクチャ  
   
 ### <a name="active-directory-administrative-center-executables-dlls"></a>Active Directory 管理センター実行可能ファイル、Dll  
 
@@ -44,7 +43,7 @@ Active Directory 管理センターのモジュールと基盤となるアーキ
   
 ![高度な AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/adds_adrestore.png)  
   
-## <a name="BKMK_EnableRecycleBin"></a>Active Directory 管理センターを使用した Active Directory のごみ箱の有効化と管理  
+## <a name="enabling-and-managing-the-active-directory-recycle-bin-using-active-directory-administrative-center"></a><a name="BKMK_EnableRecycleBin"></a>Active Directory 管理センターを使用した Active Directory のごみ箱の有効化と管理  
   
 ### <a name="capabilities"></a>機能  
   
@@ -64,7 +63,7 @@ Active Directory のごみ箱には、Windows Server 2008 R2 フォレストの�
   
 ### <a name="enabling-active-directory-recycle-bin-using-active-directory-administrative-center"></a>Active Directory 管理センターを使用して Active Directory のごみ箱を有効化する
 
-Active Directory のごみ箱を有効化するには、 **Active Directory 管理センター** を開いて、ナビゲーション ウィンドウでフォレストの名前をクリックします。 **[タスク]** ウィンドウで、 **[ごみ箱の有効化]** をクリックします。  
+Active Directory のごみ箱を有効化するには、**Active Directory 管理センター**を開いて、ナビゲーション ウィンドウでフォレストの名前をクリックします。 **[タスク]** ウィンドウで、 **[ごみ箱の有効化]** をクリックします。  
   
 ![高度な AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_EnableRecycleBin.png)  
   
@@ -86,13 +85,13 @@ Windows PowerShell を使用して Active Directory のごみ箱を有効化す�
   
 ### <a name="managing-active-directory-recycle-bin-using-active-directory-administrative-center"></a>Active Directory 管理センターを使用して Active Directory のごみ箱を管理する
 
-このセクションでは、 **corp.contoso.com**という名前の既存のドメインを例として使用します。 このドメインでは、ユーザーを **UserAccounts**という名前の親 OU にまとめています。 **UserAccounts** OU には部門の名前が付いた 3 つの子 OU が含まれており、それぞれの子 OU にはさらに OU、ユーザー、およびグループが含まれています。  
+このセクションでは、**corp.contoso.com** という名前の既存のドメインを例として使用します。 このドメインでは、ユーザーを **UserAccounts** という名前の親 OU にまとめています。 **UserAccounts** OU には部門の名前が付いた 3 つの子 OU が含まれており、それぞれの子 OU にはさらに OU、ユーザー、およびグループが含まれています。  
   
 ![高度な AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_EnableRecycleBinExampleOU.png)  
   
 #### <a name="storage-and-filtering"></a>ストレージとフィルター
 
-Active Directory のごみ箱には、フォレストで削除されたすべてのオブジェクトが保存されます。 これらのオブジェクトは **msDS-deletedObjectLifetime** 属性に基づいて保存されます。既定では、この属性はフォレストの **tombstoneLifetime** 属性と同じ値に設定されています。 Windows Server 2003 SP1 以降を使用して作成されたフォレストでは、 **tombstoneLifetime** の値は、既定では 180 日に設定されています。 Windows 2000 からアップグレードしたフォレスト、または Windows Server 2003 (Service Pack なし) がインストールされたフォレストでは、既定の tombstoneLifetime 属性は設定されていないため、Windows 内部の既定値である 60 日が使用されます。 これらの設定はすべて構成可能です。Active Directory 管理センターを使用して、フォレストのドメイン パーティションから削除された任意のオブジェクトを復元できます。 構成パーティションなど、他のパーティションで削除されたオブジェクトを復元するには、引き続き **Restore-ADObject** コマンドレットを使用する必要があります。Active Directory のごみ箱を有効化すると、Active Directory 管理センターのすべてのドメイン パーティションに、 **[削除済みオブジェクト]** コンテナーが表示されます。  
+Active Directory のごみ箱には、フォレストで削除されたすべてのオブジェクトが保存されます。 これらのオブジェクトは **msDS-deletedObjectLifetime** 属性に基づいて保存されます。既定では、この属性はフォレストの **tombstoneLifetime** 属性と同じ値に設定されています。 Windows Server 2003 SP1 以降を使用して作成されたフォレストでは、**tombstoneLifetime** の値は、既定では 180 日に設定されています。 Windows 2000 からアップグレードしたフォレスト、または Windows Server 2003 (Service Pack なし) がインストールされたフォレストでは、既定の tombstoneLifetime 属性は設定されていないため、Windows 内部の既定値である 60 日が使用されます。 これらの設定はすべて構成可能です。Active Directory 管理センターを使用して、フォレストのドメイン パーティションから削除された任意のオブジェクトを復元できます。 構成パーティションなど、他のパーティションで削除されたオブジェクトを復元するには、引き続き **Restore-ADObject** コマンドレットを使用する必要があります。Active Directory のごみ箱を有効化すると、Active Directory 管理センターのすべてのドメイン パーティションに、 **[削除済みオブジェクト]** コンテナーが表示されます。  
   
 ![高度な AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_DeletedObjectsContainer.png)  
   
@@ -119,21 +118,21 @@ Active Directory 管理センターは、強力な条件およびフィルター
 - *ANR (あいまいな名前解決-メニューには表示されませんが、* * * * [フィルター] * * * * ボックスに入力すると使用されます)*  
 - 最後の変更が指定の期間内  
 - オブジェクトの種類が、ユーザー/inetOrgPerson/コンピューター/グループ/組織単位  
-- 名前  
+- Name  
 - 削除するとき  
 - 最後に確認された親  
-- タスクバーの検索ボックスに  
+- 種類  
 - 説明  
-- 市区町村  
+- 市  
 - 国/地域  
 - 部署  
-- 社員 ID  
-- 名  
-- 役職  
+- 従業員 ID  
+- ファースト ネーム  
+- [役職]  
 - 姓  
 - SAM アカウント名  
-- 都道府県  
-- 電話番号  
+- [都道府県]  
+- [電話番号]  
 - UPN  
 - 郵便番号  
 
@@ -217,14 +216,14 @@ Restore-adobject
 中規模および大規模なエンタープライズ環境では、時間が経つと、[削除済みオブジェクト] コンテナーに 20,000 (場合によっては 100,000) を超えるオブジェクトが蓄積され、すべてのオブジェクトを表示することが困難になる可能性があります。 Active Directory 管理センターのフィルター メカニズムでは、クライアント側のフィルターを使用しているため、上限を超えたオブジェクトを表示することはできません。 この制限を回避するには、次の手順に従ってサーバー側の検索を実行します。  
   
 1. **[削除済みオブジェクト]** コンテナーを右クリックし、 **[このノード配下の検索]** をクリックします。  
-2. シェブロンをクリックして **[+条件の追加]** メニューを表示し、 **[最後の変更が指定の期間内]** を選択して追加します。 最終更新時刻 ( **whenChanged** 属性) は、削除時間に非常に近い値であり、ほとんどの環境では同一になります。 このクエリでは、サーバー側の検索が実行されます。  
+2. シェブロンをクリックして **[+条件の追加]** メニューを表示し、 **[最後の変更が指定の期間内]** を選択して追加します。 最終更新時刻 (**whenChanged** 属性) は、削除時間に非常に近い値であり、ほとんどの環境では同一になります。 このクエリでは、サーバー側の検索が実行されます。  
 3. 結果に対し、さらに表示フィルターや並べ替えなどを使用して、復元する削除済みオブジェクトを特定し、通常の手順で復元を実行します。  
   
-## <a name="BKMK_FGPP"></a>Active Directory 管理センターを使用した細かい設定が可能なパスワードポリシーの構成と管理  
+## <a name="configuring-and-managing-fine-grained-password-policies-using-active-directory-administrative-center"></a><a name="BKMK_FGPP"></a>Active Directory 管理センターを使用した細かい設定が可能なパスワードポリシーの構成と管理  
   
 ### <a name="configuring-fine-grained-password-policies"></a>細かい設定が可能なパスワード ポリシーを構成する
 
-Active Directory 管理センターを使用すると、細かい設定が可能なパスワード ポリシー (FGPP) オブジェクトを作成して管理できます。 FGPP 機能は Windows Server 2008 で導入されましたが、Windows Server 2012 で初めて FGPP のグラフィカル管理インターフェイスが使用できるようになりました。 細かい設定が可能なパスワード ポリシーをドメイン レベルで適用すると、Windows Server 2003 で必要な単一ドメイン パスワードをオーバーライドできます。 複数の FGPP を異なる設定で作成すると、ドメイン内の個々のユーザーまたはグループに対して異なるパスワード ポリシーを適用できます。  
+Active Directory 管理センターを使用すると、細かい設定が可能なパスワード ポリシー (FGPP) オブジェクトを作成して管理できます。 FGPP 機能は Windows Server 2008 で導入されましたが、Windows Server 2012 で初めて FGPP のグラフィカル管理インターフェイスが使用できるようになりました。 細かい設定が可能なパスワード ポリシーをドメイン レベルで適用すると、Windows Server 2003 で必要な単一ドメイン パスワードを上書きできます。 複数の FGPP を異なる設定で作成すると、ドメイン内の個々のユーザーまたはグループに対して異なるパスワード ポリシーを適用できます。  
   
 細かい設定が可能なパスワード ポリシーの詳細については、「 [ステップ バイ ステップ ガイド - 細かい設定が可能なパスワードおよびアカウント ロックアウトのポリシー設定 (Windows Server 2008 R2)](https://technet.microsoft.com/library/cc770842(WS.10).aspx)」を参照してください。  
   
@@ -238,7 +237,7 @@ Active Directory 管理センターを使用すると、細かい設定が可能
   
 ![高度な AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_CreatePasswordSettings.png)  
   
-すべての必須フィールド (赤いアスタリスク付き) と、必要に応じて省略可能なフィールドに入力します。次に、 **[追加]** をクリックし、このポリシーを適用するユーザーまたはグループを設定します。 FGPP は、指定されたセキュリティ プリンシパルの既定のドメイン ポリシー設定をオーバーライドします。 上の画面では、セキュリティを保護するために、制限が非常に厳しいポリシーを組み込みの Administrator アカウントのみに適用しています。 このポリシーは、通常のユーザーに適用するには複雑すぎる内容ですが、IT プロフェッショナルのみが使用する危険度の高いアカウントには最適です。  
+すべての必須フィールド (赤いアスタリスク付き) と、必要に応じて省略可能なフィールドに入力します。次に、 **[追加]** をクリックし、このポリシーを適用するユーザーまたはグループを設定します。 FGPP は、指定されたセキュリティ プリンシパルの既定のドメイン ポリシー設定を上書きします。 上の画面では、セキュリティを保護するために、制限が非常に厳しいポリシーを組み込みの Administrator アカウントのみに適用しています。 このポリシーは、通常のユーザーに適用するには複雑すぎる内容ですが、IT プロフェッショナルのみが使用する危険度の高いアカウントには最適です。  
   
 また、優先順位を設定し、指定したドメイン内でポリシーを適用するユーザーおよびグループも設定します。  
   
@@ -270,7 +269,7 @@ Active Directory 管理センターを使用して、特定のユーザーに適
   
 暗黙的な FGPP 割り当てはここには表示されません。そのためには、[**結果のパスワード設定の表示**...] オプションを使用する必要があります。  
   
-## <a name="BKMK_HistoryViewer"></a>Active Directory 管理センター Windows PowerShell 履歴ビューアーの使用
+## <a name="using-the-active-directory-administrative-center-windows-powershell-history-viewer"></a><a name="BKMK_HistoryViewer"></a>Active Directory 管理センター Windows PowerShell 履歴ビューアーの使用
 
 今後の Windows 管理で基盤となるのは、Windows PowerShell です。 タスク自動化フレームワークの上にグラフィカル ツールを重ねて配置することで、複雑な分散システムの管理作業を一貫して効率的に実行できるようになります。 管理能力を最大限に発揮し、コンピューティング環境への投資を最大限に活用するには、Windows PowerShell の動作について理解する必要があります。  
   
@@ -316,7 +315,7 @@ set-aduser
 
 Active Directory 管理センターの設計では、最小限のコードを使用してモジュール方式にすることが求められました。 そのため、Active Directory 管理センターでは、新しいユーザーを作成する機能セットや既存のユーザーを変更する別の機能セットを実行する代わりに、最小限の各機能を実行し、コマンドレットを使用してそれらをつなぎ合わせています。 Active Directory Windows PowerShell について学習する際は、この点に注意してください。 1 つのタスクを完了するためにどれだけ単純な Windows PowerShell を使用できるかを確認することで、学習に役立てることもできます。  
   
-## <a name="BKMK_Tshoot"></a>AD DS 管理のトラブルシューティング  
+## <a name="troubleshooting-ad-ds-management"></a><a name="BKMK_Tshoot"></a>AD DS 管理のトラブルシューティング  
   
 ### <a name="introduction-to-troubleshooting"></a>トラブルシューティングの概要
 
@@ -348,7 +347,7 @@ Active Directory 管理センターには、トレース構成ファイルの一
 </system.diagnostics>
 ```
 
-**DsacLogLevel** の詳細レベルは、 **None**、 **Error**、 **Warning**、 **Info**、および **Verbose**です。 出力ファイル名は構成可能で、dsac.exe と同じフォルダーに書き込まれます。 出力には、ADAC の状態、接続しているドメイン コントローラー、実行された Windows PowerShell コマンドとその応答内容などの詳細情報が記録されます。  
+**DsacLogLevel** の詳細レベルは、**None**、**Error**、**Warning**、**Info**、および **Verbose** です。 出力ファイル名は構成可能で、dsac.exe と同じフォルダーに書き込まれます。 出力には、ADAC の状態、接続しているドメイン コントローラー、実行された Windows PowerShell コマンドとその応答内容などの詳細情報が記録されます。  
 
 たとえば、INFO レベルを使用している場合、トレース レベルの詳細を除く、次のすべての結果が返されます。  
   
@@ -447,7 +446,7 @@ Verbose レベルに設定すると、各関数の .NET スタックも表示さ
 
 Active Directory Web Services インスタンスが使用できない場合は、次のエラーが表示されます。  
   
-|Error|操作|
+|エラー|操作|
 | --- | --- |  
 |"どのドメインにも接続できません。 接続できるようになったら、更新するか、再試行してください"|Active Directory 管理センター アプリケーションの開始時に表示されます|
 |"Active Directory Web サービス (ADWS) を実行している *<NetBIOS domain name>* ドメインで利用可能なサーバーが見つかりません"|Active Directory 管理センター アプリケーションでドメイン ノードの選択を試行したときに表示されます|
@@ -470,7 +469,7 @@ Active Directory Web Services インスタンスが使用できない場合は�
    Netstat -anob > ports.txt  
    ```
 
-   ports.txt ファイルを調査して、ADWS サービスがポート 9389 でリッスン中であることを確認します。 次に例を示します。  
+   ports.txt ファイルを調査して、ADWS サービスがポート 9389 でリッスン中であることを確認します。 例:  
 
    ```
    TCP    0.0.0.0:9389    0.0.0.0:0    LISTENING    1828  
@@ -484,6 +483,6 @@ Active Directory Web Services インスタンスが使用できない場合は�
   
 4. Active Directory 管理センターが実行されているコンピューターと、NLTEST で返されたドメイン コントローラーに、NetMon または他のネットワーク キャプチャ ユーティリティをインストールします。 両方のコンピューターからネットワーク キャプチャを同時に収集し、その状態で Active Directory 管理センターを起動して、エラーを確認したらキャプチャを停止します。 クライアントが TCP ポート 9389 でドメイン コントローラーと送受信できることを確認します。 パケットが送信されているが到着していない場合、またはパケットが到着しているがドメイン コントローラーの応答がクライアントに到着していない場合は、ネットワーク上のコンピューター間に存在するファイアウォールがそのポートのパケットを破棄している可能性があります。 このファイアウォールは、ソフトウェア、ハードウェア、またはサードパーティ エンドポイント保護 (ウイルス対策) ソフトウェアの一部である可能性があります。  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [AD のごみ箱、細かい設定が可能なパスワード ポリシー、PowerShell 履歴](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md)  

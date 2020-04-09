@@ -1,23 +1,19 @@
 ---
 title: アドインのインストール
 description: Windows Server Essentials の使用方法について説明します。
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e62e4f07-c2ba-4c5e-b30c-bdc287cd654e
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 9f3c952df01f44f29d1e7b39e1ffb8e04c931945
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: f8428a0198459e1dc036647a3d47fa1a49c00c01
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80311680"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820135"
 ---
 # <a name="install-add-ins"></a>アドインのインストール
 

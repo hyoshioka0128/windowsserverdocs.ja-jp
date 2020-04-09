@@ -1,24 +1,20 @@
 ---
 title: nfsshare
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Windows コマンドに関するトピック * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 437a2615-335a-442f-9713-d50d5f3983a3
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d205bcfad11d22fea7fc9d0651aca61f234347cf
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 032baaf3013d2658b1040345da3a35cb6a1631f2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948501"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80838905"
 ---
 # <a name="nfsshare"></a>nfsshare
 
@@ -42,7 +38,7 @@ nfsshare {<ShareName> | <Drive>:<Path> | * } /delete
 **Nfsshare** コマンドは次のオプションと引数。
 
 
-|             用語              |                                                                                                                                                                                                                      定義                                                                                                                                                                                                                       |
+|             用語              |                                                                                                                                                                                                                      Definition                                                                                                                                                                                                                       |
 |-------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |         -o anon = {はい          |                                                                                                                                                                                                                          番号                                                                                                                                                                                                                          |
 |  -o rw [=\<Host > [:<Host>]...]  |                       指定されたグループのホストまたはクライアントによって、共有ディレクトリに読み取り/書き込みアクセスを提供 *ホスト*します。 ホストとグループ名、コロンで区切ります ( **:** )。 場合 *ホスト* が指定されていないすべてのホストとクライアント グループ (で指定された文字を除く、 **ro** オプション) 読み取り/書き込みアクセス権を持ちます。 どちらの場合、 **ro** も **rw** オプションが設定されている、すべてのクライアントが共有ディレクトリへの読み取り/書き込みアクセス権を持ちます。                       |
@@ -56,6 +52,6 @@ nfsshare {<ShareName> | <Drive>:<Path> | * } /delete
 > [!NOTE]
 > このコマンドの完全な構文を表示するには、コマンド プロンプトで次のように入力します。</br>> **nfsshare/?**
 
-## <a name="see-also"></a>「
+## <a name="see-also"></a>参照
 
 [サービスがネットワーク ファイル システム コマンドのリファレンス](services-for-network-file-system-command-reference.md)

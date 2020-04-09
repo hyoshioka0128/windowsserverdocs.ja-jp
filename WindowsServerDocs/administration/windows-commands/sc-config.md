@@ -1,24 +1,20 @@
 ---
 title: Sc config
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Windows コマンドに関するトピック * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ad4d68a6-efe5-452b-8501-7f1f1c552a4a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 06/05/2018
-ms.openlocfilehash: 26157df1db358dd1a0e0fb48d334dc0e131c5089
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: fc864afe98823fa609cbe82398a486bf6e29defd
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71371317"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80835315"
 ---
 # <a name="sc-config"></a>Sc config
 
@@ -34,7 +30,7 @@ ms.locfileid: "71371317"
 sc [<ServerName>] config [<ServiceName>] [type= {own | share | kernel | filesys | rec | adapt | interact type= {own | share}}] [start= {boot | system | auto | demand | disabled | delayed-auto}] [error= {normal | severe | critical | ignore}] [binpath= <BinaryPathName>] [group= <LoadOrderGroup>] [tag= {yes | no}] [depend= <dependencies>] [obj= {<AccountName> | <ObjectName>}] [displayname= <DisplayName>] [password= <Password>]
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
 |パラメーター|説明|
 |---------|-----------|
@@ -50,20 +46,20 @@ sc [<ServerName>] config [<ServiceName>] [type= {own | share | kernel | filesys 
 |obj = {\<AccountName > \| \<ObjectName >}|サービスが実行されますが、またはドライバーを実行する Windows ドライバー オブジェクトの名前を指定するアカウントの名を指定します。 既定の設定は **LocalSystem**します。|
 |displayname = \<DisplayName >|ユーザー インターフェイスのプログラムでサービスを識別するためのわかりやすい名前を指定します。 たとえば、1 つの特定のサービスのサブキーの名前は **wuauserv**, 、自動更新のわかりやすい表示名を持ちます。|
 |パスワード = \<パスワード >|パスワードを指定します。 ローカル システム アカウント以外のアカウントを使用する場合に必要です。|
-|/?|コマンド プロンプトにヘルプを表示します。|
+|/?|コマンド プロンプトでヘルプを表示します。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
 -   各コマンド ライン オプション (パラメーター) には、等号 (=) は、オプション名の一部です。
 -   スペースは、オプションとその値の間で必要な (たとえば、 **型 = 独自**します。 スペースを省略すると、操作は失敗します。
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a><a name=BKMK_examples></a>例
 
 NEWSERVICE サービスのバイナリ パスを指定するには、次のように入力します。
 ```
-sc config NewService binpath= "ntsd -d c:\windows\system32\NewServ.exe"
+sc config NewService binpath= ntsd -d c:\windows\system32\NewServ.exe
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

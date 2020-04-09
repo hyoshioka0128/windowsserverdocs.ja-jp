@@ -1,24 +1,20 @@
 ---
 title: echo
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Windows コマンドに関するトピック * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: fb9fcd0f-5e73-4504-aa95-78204e1a79d3
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 343d6327d262401b4be14e472a135062456890f1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5e6e9c3c79cc8006efba0c97a574e3d6d94a6f7e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71377634"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80845245"
 ---
 # <a name="echo"></a>echo
 
@@ -35,23 +31,23 @@ echo [<Message>]
 echo [on | off]
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
 |パラメーター|説明|
 |---------|-----------|
-|[\| off]|コマンドエコー機能をオンまたはオフにします。 コマンドのエコーは既定でオンになっています。|
-|\<Message >|画面に表示するテキストを指定します。|
-|/?|コマンド プロンプトにヘルプを表示します。|
+|[on \| off]|コマンドエコー機能をオンまたはオフにします。 コマンドのエコーは既定でオンになっています。|
+|\<メッセージ >|画面に表示するテキストを指定します。|
+|/?|コマンド プロンプトでヘルプを表示します。|
 
 ## <a name="remarks"></a>コメント
 
--   Echo *Message*コマンドは、 **echo**がオフになっている場合に特に役立ちます。 コマンドを何も表示せずに数行のメッセージを表示するには、batch プログラムの**echo off**コマンドの後に複数の**echo** *message*コマンドを含めることができます。
+-   Echo **echo** *Message*コマンドは、 **echo**がオフになっている場合に特に役立ちます。 コマンドを何も表示せずに数行のメッセージを表示するには、batch プログラムの**echo off**コマンドの後に複数の**echo** *message*コマンドを含めることができます。
 -   **Echo**がオフになっている場合、コマンドプロンプトはコマンドプロンプトウィンドウに表示されません。 コマンドプロンプトを表示するには、「echo on」と入力し**ます。**
 -   バッチファイルで使用する場合、 **echo on**と**echo off**は、コマンドプロンプトでの設定には影響しません。
 -   バッチファイル内の特定のコマンドがエコーされないようにするには、コマンドの前にアットマーク (@) を挿入します。 バッチファイル内のすべてのコマンドがエコーされないようにするには、ファイルの先頭に**echo off**コマンドを追加します。
--   **Echo**を使用しているときにパイプ ( **|** ) またはリダイレクト文字 ( **<** または **>** ) を表示するには、パイプまたはリダイレクト文字の直前にカレット (^) を使用します (たとえば、 **^|** 、 **0)。** 、または**2**)。 キャレットを表示するには、2つのキャレットを連続して入力します ( **^^** )。
+-   **Echo**を使用しているときにパイプ ( **|** ) またはリダイレクト文字 ( **<** または **>** ) を表示するには、パイプまたはリダイレクト文字の直前 (たとえば、 **^|** 、 **^>** 、 **^<** ) にカレット (^) を使用します。 キャレットを表示するには、2つのキャレットを連続して入力します ( **^^** )。
 
-## <a name="examples"></a>使用例
+## <a name="examples"></a>例
 
 現在の**エコー**設定を表示するには、次のように入力します。
 
@@ -117,6 +113,6 @@ File2.txt
 File3.txt
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

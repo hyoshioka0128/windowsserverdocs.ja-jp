@@ -1,7 +1,6 @@
 ---
 ms.assetid: cd70b0aa-0a67-4966-a041-4dd3f302c98b
 title: DNS インフラストラクチャの設計を作成する
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: b4b7cea18a6bb6b435b3c3fb6b4e94cfdddb2c04
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 90c670d5f59702ce932c004a016adb855b040f77
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408974"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822805"
 ---
 # <a name="creating-a-dns-infrastructure-design"></a>DNS インフラストラクチャの設計を作成する
 

@@ -1,23 +1,19 @@
 ---
 title: 大規模展開のサポート
 description: Windows Server Essentials の使用方法について説明します。
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 07d0c4c6-3e92-4969-82b8-105e46ab8d97
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 056e41413d8e11f1f65ab17c1ba365eba2ee2d1a
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: c54defee45e8950d878ba70f627c1e645a2c8586
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80310352"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80817825"
 ---
 # <a name="support-for-larger-deployments"></a>大規模展開のサポート
 

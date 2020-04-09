@@ -1,29 +1,25 @@
 ---
 title: Windows Server Essentials 用のアセスメント & デプロイメント キット
 description: Windows Server Essentials の使用方法について説明します。
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ef3a7934-e36f-40d8-9e0b-7ed59089f85e
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 88e268f1bdb01488667e4b88878552561fe7c762
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: daa8f75671c4dc663cca12dd0618a593c2010103
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80310124"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80817445"
 ---
 # <a name="assessment-and-deployment-kit-for-windows-server-essentials"></a>Windows Server Essentials 用のアセスメント & デプロイメント キット
 
 >適用対象: windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-Windows Server® 2012 Essentials アセスメント & amp; デプロイメントキット (ADK) は、新しいコンピューターで Windows Server Essentials をカスタマイズ、評価、および展開するために使用できる、ツール、バイナリ、およびオペレーティングシステムの言語パックのコレクションです。 このドキュメントには、オペレーティング システムを顧客向けにプレインストールするパートナーに固有の情報が含まれており、以下のトピックがあります。  
+Windows Server&reg; 2012 Essentials アセスメント & amp; デプロイメントキット (ADK) は、新しいコンピューターで Windows Server Essentials をカスタマイズ、評価、および展開するために使用できる、ツール、バイナリ、およびオペレーティングシステムの言語パックのコレクションです。 このドキュメントには、オペレーティング システムを顧客向けにプレインストールするパートナーに固有の情報が含まれており、以下のトピックがあります。  
   
 
 -   [Windows Server Essentials ADK の概要](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)  
@@ -152,4 +148,4 @@ Windows Server® 2012 Essentials アセスメント & amp; デプロイメント
   
  Active Directory、Microsoft、Windows Live、Windows PowerShell、Windows、および Windows Server は、米国 Microsoft Corporation および/またはその関連会社の商標です。 その他の商標類はすべてその権利者に帰属します。  
   
- © 2012 Microsoft. All rights reserved.
+ &copy; 2012 Microsoft。 All rights reserved.

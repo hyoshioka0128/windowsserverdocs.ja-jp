@@ -4,15 +4,15 @@ description: Hyper-v のパフォーマンスチューニングにおけるプ�
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: Asmahi; SandySp; JoPoulso
+ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 5d61d0e37bd80033bfcfb0cf5c601d8bcedda104
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: fc1d6bdb848ea9662ba9b3d3119f286af3476688
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71370039"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851755"
 ---
 # <a name="hyper-v-processor-performance"></a>Hyper-v プロセッサのパフォーマンス
 
@@ -27,7 +27,7 @@ Windows Server 2016 の hyper-v は、仮想マシンあたり最大240の仮想
 
 仮想マシンがピーク時の負荷下で複数の CPU の処理を必要とする場合は、仮想プロセッサの数を増やします。
 
-## <a name="background-activity"></a>バックグラウンドアクティビティ
+## <a name="background-activity"></a>バックグラウンド アクティビティ
 
 アイドル状態の仮想マシンのバックグラウンドアクティビティを最小化すると、他の仮想マシンの他の場所で使用できる CPU サイクルが解放されます。 Windows ゲストは、通常、CPU がアイドル状態のときに1パーセント未満の CPU を使用します。 次に、仮想マシンのバックグラウンド CPU 使用率を最小限に抑えるためのベストプラクティスをいくつか示します。
 
@@ -69,7 +69,7 @@ Microsoft SQL Server は、NUMA 対応アプリケーションの例です。 �
 
 仮想 NUMA の詳細については、「 [Hyper-v 仮想 numa の概要](https://technet.microsoft.com/library/dn282282.aspx)」を参照してください。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 -   [Hyper-V の用語](terminology.md)
 

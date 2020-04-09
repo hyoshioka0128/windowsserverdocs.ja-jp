@@ -1,6 +1,6 @@
 ---
 title: cleanmgr
-description: コマンドラインオプションを使用して、特定のファイルを自動的にクリーンアップするようにディスククリーンアップツール (Cleanmgr.exe) を構成する方法について説明します。
+description: コマンドライン オプションを使用して、特定のファイルを自動的にクリーンアップするようにディスク クリーンアップ ツール (Cleanmgr.exe) を構成する方法について説明します。
 ms.prod: windows-server
 ms.reviewer: cosmosdarwin
 author: iangpgh
@@ -8,12 +8,12 @@ ms.author: jgerend
 manager: daveba
 ms.technology: storage-spaces
 ms.date: 06/20/2019
-ms.openlocfilehash: 0646922f409d4ea8abb85c927a329013e32016de
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 9abde0cb0db910cd500df94f98c76e6c370cba2a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947585"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80847715"
 ---
 # <a name="cleanmgr"></a>cleanmgr
 
@@ -29,7 +29,7 @@ ms.locfileid: "75947585"
 cleanmgr [/d <driveletter>] [/sageset:n]  [/sagerun:n] [/TUNEUP:n] [/LOWDISK] [/VERYLOWDISK]
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
 |      パラメーター      |    説明     |
 | ------------------- | ------------------ |
@@ -89,4 +89,4 @@ cleanmgr /tuneup:1
 
 ## <a name="additional-references"></a>その他の参照情報
 
-[Windows 10 でドライブの空き容量を増やす](https://support.microsoft.com/help/12425/windows-10-free-up-drive-space)
+[Windows 10 のドライブの空き領域を増やす](https://support.microsoft.com/help/12425/windows-10-free-up-drive-space)」も参照してください

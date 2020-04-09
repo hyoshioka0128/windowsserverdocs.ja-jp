@@ -5,14 +5,15 @@ ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
+manager: lizross
 ms.technology: storage-failover-clustering
 ms.date: 01/14/2020
-ms.openlocfilehash: 0346b56ad2fe8a60ab84b7e6ab43e0558ed1c85b
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 5d382807adcfd771215d1f87332a47842d25eda3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80310052"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80827385"
 ---
 # <a name="failover-clustering-system-log-events"></a>フェールオーバークラスタリングのシステムログイベント
 

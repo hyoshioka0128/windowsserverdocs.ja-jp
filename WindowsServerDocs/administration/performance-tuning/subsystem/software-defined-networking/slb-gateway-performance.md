@@ -4,15 +4,15 @@ description: SDN ネットワークに関する SLB ゲートウェイのパフ�
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: grcusanz; AnPaul
+ms.author: grcusanz; anpaul
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 9a0d239da2ca321333ec757db22bbaf9a9b8ba30
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d1a497f24eba26b3b9b866772ae5171ea0fcbb24
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383461"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851585"
 ---
 # <a name="slb-gateway-performance-tuning-in-software-defined-networks"></a>ソフトウェア定義ネットワークでの SLB ゲートウェイのパフォーマンスチューニング
 
@@ -26,7 +26,7 @@ SLB Mux 仮想マシンは、アクティブ/アクティブ構成で展開さ�
 
 仮想 IP (VIP) への個々の接続は、常に同じ Mux に送信されます。これは、muxes の数が一定のままであることを前提としています。その結果、スループットは単一の Mux VM のスループットに制限されます。  Muxes は、VIP 宛ての受信トラフィックのみを処理します。  応答パケットは、応答をクライアントに転送する物理スイッチに送信している VM から直接送られます。
 
-場合によっては、要求の送信元が、VIP を管理する同じネットワークコントローラーに追加された SDN ホストから送信された場合、要求の受信パスをさらに最適化することができます。これにより、ほとんどのパケットがクライアントをサーバーに対して行い、Mux VM 全体をバイパスします。  この最適化を行うには、追加の構成は必要ありません。
+場合によっては、要求のソースが、VIP を管理する同じネットワークコントローラーに追加された SDN ホストから送信された場合、要求の受信パスをさらに最適化することで、ほとんどのパケットをクライアントからサーバーに直接移動して、Mux VM 全体をバイパスすることができます。  この最適化を行うには、追加の構成は必要ありません。
 
 各 SLB Mux VM のサイズは、「[ソフトウェア定義ネットワークインフラストラクチャの計画](../../../../networking/sdn/plan/Plan-a-Software-Defined-Network-Infrastructure.md)」トピックの「SDN インフラストラクチャ仮想マシンロールの要件」セクションに記載されているガイドラインに従って設定する必要があります。
 

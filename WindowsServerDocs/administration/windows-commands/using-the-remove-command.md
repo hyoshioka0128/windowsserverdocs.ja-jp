@@ -1,28 +1,24 @@
 ---
-title: '[削除] コマンドの使用'
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+title: remove
+description: Windows コマンドの削除に関するトピックでは、ドライバー関連のさまざまな情報が削除されています。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e3f1644d-6028-4c47-a9fd-227bcdcc6123
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a6c8ccb88500363d91c7985a0c9f790a6cd8bd1f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 420fe02656bfa3a23026e02b20ccb03176d2748a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71362937"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80830545"
 ---
-# <a name="using-the-remove-command"></a>[削除] コマンドの使用
+# <a name="remove"></a>remove
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 ## <a name="subcommands"></a>サブコマンド
 |Subommand|説明|

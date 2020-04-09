@@ -5,15 +5,14 @@ manager: eldenc
 ms.author: cosdar
 ms.technology: storage-health-service
 ms.topic: article
-ms.assetid: ''
 author: cosmosdarwin
 ms.date: 10/05/2017
-ms.openlocfilehash: 11af69d1c6f32205b87ad4605edebacb59b0b710
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 913a596a46720718a165295345cb02e3e2baa1de
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369710"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80827565"
 ---
 # <a name="health-service-faults"></a>ヘルスサービスエラー
 > 適用対象: Windows Server 2019、Windows Server 2016
@@ -24,7 +23,7 @@ ms.locfileid: "71369710"
 
 各エラーには、次の5つの重要なフィールドが含まれます。  
 
--   重大度
+-   Severity
 -   問題の説明
 -   問題への対処に推奨される次のステップ
 -   障害が発生したエンティティの識別情報
@@ -102,7 +101,7 @@ public CimSession Connect(string Domain = "...", string Computer = "...", string
 
 パスワード**SecureString**をユーザー入力から直接作成することをお勧めします。そのため、パスワードはクリアテキストでメモリに格納されることはありません。 これは、さまざまなセキュリティの問題を軽減するのに役立ちます。 しかし実際には、プロトタイプ作成は、プロトタイプ作成の目的では一般的です。
 
-### <a name="discover-objects"></a>オブジェクトの検出
+### <a name="discover-objects"></a>オブジェクトを検出します
 
 **CimSession**を確立したら、クラスターで WINDOWS MANAGEMENT INSTRUMENTATION (WMI) を照会できます。
 
@@ -287,7 +286,7 @@ class FaultsObserver : IObserver
 
 次の表は、fault オブジェクトのいくつかの重要なプロパティを示しています。 完全なスキーマについては、 *storagewmi .mof*の**MSFT\_StorageDiagnoseResult**クラスを調べます。
 
-| **プロパティ**              | **例**                                                     |
+| **"**              | **例**                                                     |
 |---------------------------|-----------------------------------------------------------------|
 | FaultId                   | {12345-12345-12345-12345-12345}                                 |
 | FaultType                 | Microsoft. 正常性の種類. Volume. 容量                      |
@@ -313,7 +312,7 @@ class FaultsObserver : IObserver
 
 **ChangeType**は、エラーが作成、削除、または更新されているかどうか、および**FaultId**を示すことに注意してください。 イベントには、影響を受けたエラーのすべてのプロパティも含まれます。
 
-| **プロパティ**              | **例**                                                     |
+| **"**              | **例**                                                     |
 |---------------------------|-----------------------------------------------------------------|
 | ChangeType                | 0                                                               |
 | FaultId                   | {12345-12345-12345-12345-12345}                                 |
@@ -326,7 +325,7 @@ class FaultsObserver : IObserver
 
 **ChangeType**ChangeType = {0, 1, 2} = {"作成"、"削除"、"更新"}。
 
-## <a name="coverage"></a>対象範囲
+## <a name="coverage"></a>カバレッジ
 
 Windows Server 2016 では、ヘルスサービスによって次のエラーカバレッジが提供されます。  
 
@@ -521,6 +520,6 @@ Windows Server 2016 では、ヘルスサービスによって次のエラーカ
 >[!NOTE]
 > ファン、電源、センサーなどのストレージ格納装置コンポーネントの正常性は、SCSI エンクロージャ サービス (SES) から取得されます。 この情報は、ベンダーから提供されていない場合はヘルス サービスで表示されません。  
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [Windows Server 2016 のヘルスサービス](health-service-overview.md)

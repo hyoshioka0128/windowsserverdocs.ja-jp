@@ -1,28 +1,22 @@
 ---
 title: comp
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Comp の Windows コマンドトピックでは、2つのファイルまたはファイルのセットの内容をバイト単位で比較します。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 40319d23-704d-4da1-be93-8259547275d0
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 84604cea36b0b4c9543a7169002551c0da4f0493
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2f61743b55f38cfdebb17506368609895f48b4f6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71379259"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80847455"
 ---
 # <a name="comp"></a>comp
-
-
 
 2つのファイルまたはファイルのセットの内容をバイト単位で比較します。 パラメーターを指定せずに使用した場合、 **comp**で比較するファイルを入力するように求められます。
 
@@ -34,7 +28,7 @@ ms.locfileid: "71379259"
 comp [<Data1>] [<Data2>] [/d] [/a] [/l] [/n=<Number>] [/c]
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
 |パラメーター|説明|
 |---------|-----------|
@@ -48,7 +42,7 @@ comp [<Data1>] [<Data2>] [/d] [/a] [/l] [/n=<Number>] [/c]
 |/off [行]|オフライン属性が設定されたファイルを処理します。|
 |/?|コマンド プロンプトでヘルプを表示します。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
 -   **Comp**コマンドが一致しない情報を識別する方法
 
@@ -91,7 +85,7 @@ comp [<Data1>] [<Data2>] [/d] [/a] [/l] [/n=<Number>] [/c]
 
     他のファイルを比較するには、Y キーを押します。**Comp**コマンドを実行すると、新しいファイルの場所と名前を入力するように求められます。 比較を停止するには、N キーを押します。Y キーを押すと、使用するコマンドラインオプション**を入力する**ように求められます。 コマンドラインオプションを指定しない場合、 **comp**では、前に指定したものが使用されます。
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a><a name=BKMK_examples></a>例
 
 ディレクトリ C:\ レポートの内容をバックアップディレクトリ \\\\Sales\Backup\April と比較するには、次のように入力します。
 ```
@@ -102,6 +96,6 @@ comp c:\reports \\sales\backup\april
 comp \invoice\*.txt \invoice\backup\*.txt /n=10 /d
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

@@ -2,22 +2,18 @@
 title: DirectAccess のテスト ラボ ガイド
 description: このトピックでは、Windows Server 2016 の DirectAccess のテストラボガイドへのリンクを示します。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 931a75ac-80f8-434c-8789-1dffb308ee13
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: ce0782d9e2445cd908bb31ea46181c2e8070752d
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 14dacc16e49b4347621792cc625dbcdd773c0aba
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80310816"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815635"
 ---
 # <a name="directaccess-test-lab-guides"></a>DirectAccess のテスト ラボ ガイド
 

@@ -2,20 +2,19 @@
 title: Hyper-v Integration Services を管理する
 description: 統合サービスをオンまたはオフにし、必要に応じてインストールする方法について説明します。
 ms.technology: compute-hyper-v
-author: KBDAzure
+author: kbdazure
 ms.author: kathydav
 manager: dongill
 ms.date: 12/20/2016
 ms.topic: article
 ms.prod: windows-server
-ms.service: na
 ms.assetid: 9cafd6cb-dbbe-4b91-b26c-dee1c18fd8c2
-ms.openlocfilehash: bcf8109530043f5e0a6d141c484233c4364fb307
-ms.sourcegitcommit: 9687d3eb221b89061a48bf1e73fb3b25bee69f9a
+ms.openlocfilehash: 2c5e2d67b391cd53a6995957da5dab108a34e1a9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78169572"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820715"
 ---
 >適用対象: Windows 10、Windows Server 2012、Windows Server 2012R2、Windows Server 2016、Windows Server 2019
 
@@ -194,7 +193,7 @@ REG QUERY "HKLM\Software\Microsoft\Virtual Machine\Auto" /v IntegrationServicesV
    - **hv_kvp_daemon**: このデーモンでは、組み込みキーと外部キーの値のペアを設定および照会できます。
    - **hv_fcopy_daemon**: このデーモンは、ホストとゲスト間にファイルコピーサービスを実装します。  
 
-### <a name="examples"></a>使用例
+### <a name="examples"></a>例
 
 これらの例では、`hv_kvp_daemon`という名前の KVP デーモンを停止して開始する方法を示します。
 

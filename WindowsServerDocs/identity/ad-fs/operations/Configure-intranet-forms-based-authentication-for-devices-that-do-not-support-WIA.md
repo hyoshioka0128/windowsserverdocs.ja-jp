@@ -1,7 +1,6 @@
 ---
 ms.assetid: d562ef46-f240-48be-bbd4-fd88fc6bbbdc
 title: WIA をサポートしていないデバイスのイントラネットフォームベース認証の構成
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,17 +8,17 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 09172b3fcfcedf0888205d099409647a6e077577
-ms.sourcegitcommit: b5c12007b4c8fdad56076d4827790a79686596af
+ms.openlocfilehash: 7db040d98317cee67e78493b2210f33279221aa9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78856356"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80817045"
 ---
 # <a name="configuring-intranet-forms-based-authentication-for-devices-that-do-not-support-wia"></a>WIA をサポートしていないデバイスのイントラネットフォームベース認証の構成
 
 
-既定では、windows Server 2012 R2 の Active Directory フェデレーションサービス (AD FS) (AD FS) で Windows 統合認証 (WIA) が有効になっています。これは、組織の内部ネットワーク (イントラネット) 内で実行される認証要求が、認証用のブラウザー。 たとえば、WS-FEDERATION または SAML プロトコルを使用するブラウザーベースのアプリケーションや、OAuth プロトコルを使用する豊富なアプリケーションにすることができます。 WIA を使用すると、エンドユーザーは、資格情報を手動で入力しなくても、アプリケーションにシームレスにログオンできます。 ただし、一部のデバイスとブラウザーでは、WIA をサポートできないため、これらのデバイスからの認証要求は失敗します。 また、NTLM にネゴシエートする特定のブラウザーの操作は望ましくありません。 推奨される方法は、このようなデバイスやブラウザーのフォームベースの認証にフォールバックすることです。
+既定では、windows 統合認証 (WIA) は、認証にブラウザーを使用する任意のアプリケーションの組織の内部ネットワーク (イントラネット) 内で発生する認証要求に対して、Windows Server 2012 R2 の Active Directory フェデレーションサービス (AD FS) (AD FS) で有効になっています。 たとえば、WS-FEDERATION または SAML プロトコルを使用するブラウザーベースのアプリケーションや、OAuth プロトコルを使用する豊富なアプリケーションにすることができます。 WIA を使用すると、エンドユーザーは、資格情報を手動で入力しなくても、アプリケーションにシームレスにログオンできます。 ただし、一部のデバイスとブラウザーでは、WIA をサポートできないため、これらのデバイスからの認証要求は失敗します。 また、NTLM にネゴシエートする特定のブラウザーの操作は望ましくありません。 推奨される方法は、このようなデバイスやブラウザーのフォームベースの認証にフォールバックすることです。
 
 Windows Server 2016 および Windows Server 2012 R2 の AD FS を使用すると、管理者は、フォームベースの認証へのフォールバックをサポートするユーザーエージェントの一覧を構成できます。 フォールバックは、次の2つの構成によって可能になります。
 

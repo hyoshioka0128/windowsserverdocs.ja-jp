@@ -1,6 +1,6 @@
 ---
 ms.assetid: 2e748187-6a10-4bb0-aed5-34f886a250d2
-title: Fsutil
+title: Fsutil (英語の可能性あり)
 ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
@@ -9,16 +9,16 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 08/21/2018
-ms.openlocfilehash: 0f338c80dca0ed88ca206aea5aeb415bc191e03a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 717c287995be2ab56bd49f2f24d46001f77e0e68
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71376670"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80843905"
 ---
-# <a name="fsutil"></a>Fsutil
+# <a name="fsutil"></a>Fsutil (英語の可能性あり)
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows 10、Windows Server 2012 R2、Windows 8.1、Windows Server 2012、Windows 8、Windows Server 2008 R2、Windows 7
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows 10、Windows Server 2012 R2、Windows 8.1、Windows Server 2012、Windows 8、Windows Server 2008 R2、Windows 7
 
 再解析ポイントの管理、スパースファイルの管理、ボリュームのマウント解除など、ファイルアロケーションテーブル (FAT) および NTFS ファイルシステムに関連するタスクを実行します。 パラメーターを指定せずに使用した場合、サポートされているサブコマンドの一覧**が表示さ**れます。 
 
@@ -32,14 +32,14 @@ ms.locfileid: "71376670"
 >```
 > インストールが完了すると、コンピューターの再起動を求めるメッセージが表示されます。 コンピューターの再起動後、 **Fsutil**を管理者として実行できるようになります。
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
 |サブコマンド |説明|
 |---|---|
 |[Fsutil 8dot3name](fsutil-8dot3name.md) | たとえば、システムの短い名前の動作の設定を照会または変更すると、8.3 文字の長さのファイル名が生成されます。 ディレクトリ内のすべてのファイルの短い名前を削除します。 ディレクトリをスキャンし、ディレクトリ内のファイルから短い名前が削除された場合に影響を受ける可能性のあるレジストリキーを識別します。|
 |[Fsutil の動作](fsutil-behavior.md) |ボリュームの動作を照会または設定します。|
 |[Fsutil ダーティ](fsutil-dirty.md)| ボリュームのダーティビットが設定されているか、ボリュームのダーティビットが設定されているかどうかを照会します。 ボリュームのダーティビットが設定されている場合、 **autochk**は、次回コンピューターを再起動したときに、ボリュームにエラーがないかどうかを自動的にチェックします。|
-|[Fsutil ファイル](fsutil-file.md)|ユーザー名を使用してファイルを検索します (ディスククォータが有効になっている場合)。クエリでは、ファイルの短い名前を設定し、ファイルの有効なデータ長を設定し、ファイルに対してデータを設定します。指定したサイズの新しいファイルを作成し、指定したサイズのファイル ID を検索します。、または指定されたファイル ID のファイルリンク名を検索します。|
+|[Fsutil ファイル](fsutil-file.md)|ユーザー名でファイルを検索します (ディスククォータが有効になっている場合)、ファイルの割り当てられた範囲のクエリ、ファイルの短い名前の設定、ファイルの有効なデータ長の設定、ファイルの新しいファイルの設定、名前が指定されている場合はファイル ID の検索、指定されたファイル ID のファイルのリンク名の検索|
 |[Fsutil fsinfo](fsutil-fsinfo.md)|すべてのドライブを一覧表示し、ドライブの種類、ボリューム情報、NTFS 固有のボリューム情報、またはファイルシステムの統計情報を照会します。|
 |[Fsutil ハードリンク](fsutil-hardlink.md)|ファイルのハードリンクを一覧表示したり、ハードリンク (ファイルのディレクトリエントリ) を作成したりします。 すべてのファイルは、少なくとも1つのハードリンクを持つことができます。 NTFS ボリュームでは、各ファイルが複数のハードリンクを持つことができるため、1つのファイルが多くのディレクトリ (または同じディレクトリにあり、名前が異なる) で表示される場合があります。 すべてのリンクが同じファイルを参照するため、プログラムは任意のリンクを開いてファイルを変更できます。 ファイルへのすべてのリンクが削除された後にのみ、ファイルがファイルシステムから削除されます。 ハードリンクを作成すると、プログラムで他のファイル名と同じように使用できるようになります。|
 |[Fsutil objectid](fsutil-objectid.md)|ファイルやディレクトリなどのオブジェクトを追跡するために Windows オペレーティングシステムによって使用されるオブジェクト識別子を管理します。|
@@ -54,5 +54,5 @@ ms.locfileid: "71376670"
 |[Fsutil ボリューム](fsutil-volume.md)|ボリュームを管理します。 ボリュームのマウントを解除し、ディスク上で使用可能な空き領域を確認したり、指定したクラスターを使用しているファイルを検索したりします。|
 |[Fsutil wim](fsutil-wim.md)|WIM でサポートされているファイルを検出および管理するための機能を提供します。|
 
-## <a name="see-also"></a>関連項目
-[コマンド ライン構文の記号](Command-Line-Syntax-Key.md)
+## <a name="see-also"></a>参照
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

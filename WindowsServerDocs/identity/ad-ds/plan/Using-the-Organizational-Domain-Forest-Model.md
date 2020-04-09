@@ -1,7 +1,6 @@
 ---
 ms.assetid: 093ef1ae-ebc1-490f-9fb1-2c000ce89eb6
 title: 組織のドメイン フォレスト モデルを使用します。
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: af5fd2da396ecc27db68d3be8d1c0eda82314d6f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0a56bf51edc9b4f99d3622a8f0e80e5637af696d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402442"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80821625"
 ---
 # <a name="using-the-organizational-domain-forest-model"></a>組織のドメイン フォレスト モデルを使用します。
 

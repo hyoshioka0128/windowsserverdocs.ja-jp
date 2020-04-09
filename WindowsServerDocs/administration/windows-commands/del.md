@@ -1,28 +1,22 @@
 ---
 title: del
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Del の Windows コマンドトピック。1つ以上のファイルを削除します。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 346eede2-2085-44f5-9936-6877b5d5a833
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6e569443a56646862c7a2c9fbd2c599cede941a1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7069ee50a810296d31e1a034b24955299918020a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71378703"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80846665"
 ---
 # <a name="del"></a>del
-
-
 
 1つ以上のファイルを削除します。 このコマンドは、 **erase**コマンドと同じです。
 
@@ -35,27 +29,28 @@ del [/p] [/f] [/s] [/q] [/a[:]<Attributes>] <Names>
 erase [/p] [/f] [/s] [/q] [/a[:]<Attributes>] <Names>
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
 |パラメーター|説明|
 |---------|-----------|
-|\<Names >|1つ以上のファイルまたはディレクトリのリストを指定します。 複数のファイルを削除するには、ワイルドカードを使用できます。 ディレクトリを指定すると、ディレクトリ内のすべてのファイルが削除されます。|
+|\<名 >|1つ以上のファイルまたはディレクトリのリストを指定します。 複数のファイルを削除するには、ワイルドカードを使用できます。 ディレクトリを指定すると、ディレクトリ内のすべてのファイルが削除されます。|
 |/p|指定されたファイルを削除する前に確認メッセージを表示します。|
 |/f|読み取り専用ファイルを強制的に削除します。|
 |/s|現在のディレクトリとすべてのサブディレクトリから、指定されたファイルを削除します。 削除中のファイルの名前が表示されます。|
 |/q|クワイエット モードを指定します。 削除の確認を求めるメッセージは表示されません。|
-|/a [:] \<Attributes >|次のファイル属性に基づいてファイルを削除します。</br>**r** 読み取り専用ファイル</br>**h** ファイルを非表示</br>**i** コンテンツ インデックス付きのファイルがありません</br>**s** システム ファイル</br>**a** アーカイブ ファイル</br>**l** 再解析ポイント</br>-Prefix は ' not ' を意味します|
-|/?|コマンド プロンプトにヘルプを表示します。|
+|/a [:]\<属性 >|次のファイル属性に基づいてファイルを削除します。</br>**r**読み取り専用ファイル</br>**h**隠しファイル</br>コンテンツにインデックスが**設定され**ていないファイル</br>**s**システムファイル</br>アーカイブの準備**が**できているファイル</br>**左**再解析ポイント</br>-Prefix は ' not ' を意味します|
+|/?|コマンド プロンプトでヘルプを表示します。|
 
 ## <a name="remarks"></a>コメント
 
 > [!CAUTION]
 > **Del**を使用してディスクからファイルを削除した場合、そのファイルを取得することはできません。
-> -   **/P**を使用する場合、 **del**はファイルの名前を表示し、次のメッセージを送信します。
+
+-   **/P**を使用する場合、 **del**はファイルの名前を表示し、次のメッセージを送信します。
 
     `FileName, Delete (Y/N)?`
 
-    To confirm the deletion, press Y. To cancel the deletion and display the next file name (that is, if you specified a group of files), press N. To stop the **del** command, press CTRL+C.
+    削除を確定するには、Y キーを押します。削除をキャンセルして次のファイル名を表示するには (つまり、ファイルのグループを指定した場合)、N キーを押します。**Del**コマンドを停止するには、Ctrl + C キーを押します。
 - コマンド拡張機能を無効にすると、削除されているファイルの名前を表示する代わりに、見つからなかったファイルの名前が **/s**によって表示されます (つまり、動作が逆になります)。
 - *名前*にフォルダーを指定すると、そのフォルダー内のすべてのファイルが削除されます。 たとえば、次のコマンドは、\ Work フォルダー内のすべてのファイルを削除します。  
   ```
@@ -73,9 +68,10 @@ erase [/p] [/f] [/s] [/q] [/a[:]<Attributes>] <Names>
 
 > [!NOTE]
 > **Del**コマンドでワイルドカード文字を使用する前に、同じワイルドカード文字を**dir**コマンドと共に使用して、削除されるすべてのファイルを一覧表示します。
-> -   異なるパラメーターを持つ**del**コマンドは、回復コンソールから使用できます。
 
-## <a name="BKMK_examples"></a>例
+-   異なるパラメーターを持つ**del**コマンドは、回復コンソールから使用できます。
+
+## <a name="examples"></a><a name=BKMK_examples></a>例
 
 C ドライブの Test という名前のフォルダー内のすべてのファイルを削除するには、次のいずれかを入力します。
 ```
@@ -91,6 +87,6 @@ del *.bat
 del /a:r *.*
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

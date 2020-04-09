@@ -1,7 +1,6 @@
 ---
 ms.assetid: 83f746e5-81db-4610-9977-1d5c57699f50
 title: サイト設計の作成
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 5b017582dad68938377fde4055d9a37b0c0af29b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0464510b498296570bdef5edb122c6c26e1fe18f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402741"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822775"
 ---
 # <a name="creating-a-site-design"></a>サイト設計の作成
 

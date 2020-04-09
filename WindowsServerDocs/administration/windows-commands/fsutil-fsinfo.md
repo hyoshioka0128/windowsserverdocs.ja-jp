@@ -9,12 +9,12 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 472c3b91285810ac1ff528da24de50533bae526d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 56e27c386451c561de8f62e523e2d1e59a8ce84c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71376941"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80844305"
 ---
 # <a name="fsutil-fsinfo"></a>Fsutil fsinfo
 >適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows 10、Windows Server 2012 R2、Windows 8.1、Windows Server 2012、Windows 8、Windows Server 2008 R2、Windows 7
@@ -33,20 +33,20 @@ fsutil fsinfo [statistics] <VolumePath>
 fsutil fsinfo [volumeinfo] <RootPath>
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
 |パラメーター|説明|
 |-------------|---------------|
-|促進|コンピューター内のすべてのドライブを一覧表示します。|
+|ドライブ|コンピューター内のすべてのドライブを一覧表示します。|
 |drivetype が|ドライブに対してクエリを行い、その種類を一覧表示します (例: CD-ROM ドライブ)。|
 |ntfsinfo|指定されたボリュームの NTFS 固有のボリューム情報を一覧表示、セクターの数、クラスターの総数、空きクラスター、および MFT ゾーンの開始と終了。|
 |sectorinfo|ハードウェアのセクターサイズとアラインメントに関する情報を一覧表示します。|
-|値|メタデータ、ログファイル、MFT の読み取りと書き込みなど、指定されたボリュームのファイルシステム統計情報を一覧表示します。|
+|統計情報|メタデータ、ログファイル、MFT の読み取りと書き込みなど、指定されたボリュームのファイルシステム統計情報を一覧表示します。|
 |volumeinfo|ファイルシステムなど、指定されたボリュームの情報を一覧表示します。ボリュームが大文字と小文字を区別するファイル名、ファイル名の unicode、ディスククォータ、または DirectAccess (DAX) ボリュームをサポートするかどうかを指定します。|
 |< "VolumePath" >|ドライブ文字を指定します (その後にコロンが続きます)。|
 |"RootPathname" を < >|ルートドライブのドライブ文字 (後ろにコロンを付ける) を指定します。|
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a><a name="BKMK_examples"></a>例
 コンピューターのすべてのドライブを一覧表示するには、次のように入力します。
 
 ```
@@ -153,8 +153,8 @@ UserFileReadBytes :    1305244512
 LogFileWriteBytes :    180936704       
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
-[コマンドライン構文のキー](Command-Line-Syntax-Key.md)
+## <a name="additional-references"></a>その他の参照情報
+- [コマンドライン構文のキー](command-line-syntax-key.md)
 [Fsutil](Fsutil.md)
 
 

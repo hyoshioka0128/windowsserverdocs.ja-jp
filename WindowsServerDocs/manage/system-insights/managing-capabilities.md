@@ -1,7 +1,6 @@
 ---
 title: 管理機能
-description: システム Insights は、さまざまな機能ごとに構成できる設定を公開し、アドレスは、特定のデプロイのニーズがこれらの設定を調整できます。 このトピックでは、Windows Admin Center や PowerShell、PowerShell の基本的な例とこれらの設定を調整する方法を示す Windows Admin Center スクリーン ショットを提供することで各機能のさまざまな設定を管理する方法について説明します。
-ms.custom: na
+description: System Insights では、機能ごとに構成できるさまざまな設定が公開されており、これらの設定を調整して、展開の特定のニーズに対応することができます。 このトピックでは、Windows 管理センターまたは PowerShell を使用して、各機能のさまざまな設定を管理する方法について説明します。これらの設定を調整する方法については、PowerShell の基本的な例と Windows 管理センターのスクリーンショットを示します。
 ms.prod: windows-server
 ms.technology: system-insights
 ms.topic: article
@@ -9,60 +8,60 @@ author: gawatu
 ms.author: gawatu
 manager: mallikarjun.chadalapaka
 ms.date: 6/05/2018
-ms.openlocfilehash: 9081a0b576ab9871b47df38255047b6cbe889419
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b93365474e591ce6fde59867c42b851ec45de50c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59868023"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80819735"
 ---
 # <a name="managing-capabilities"></a>管理機能
 
->適用先:Windows Server 2019
+>適用対象: Windows Server 2019
 
-Windows Server の 2019 でシステム Insights は、さまざまな機能ごとに構成できる設定を公開およびアドレスは、特定のデプロイのニーズがこれらの設定を調整できます。 このトピックでは、Windows Admin Center や PowerShell、PowerShell の基本的な例とこれらの設定を調整する方法を示す Windows Admin Center スクリーン ショットを提供することで各機能のさまざまな設定を管理する方法について説明します。 
+Windows Server 2019 では、System Insights は、機能ごとに構成できるさまざまな設定を公開しています。これらの設定は、展開の特定のニーズに対応するように調整できます。 このトピックでは、Windows 管理センターまたは PowerShell を使用して、各機能のさまざまな設定を管理する方法について説明します。これらの設定を調整する方法については、PowerShell の基本的な例と Windows 管理センターのスクリーンショットを示します。 
 
 >[!TIP]
->開始して、自信を持ってシステム Insights の管理に役立つ以下のショート ビデオを使用することもできます。[10 分後にシステム Insights の概要](https://blogs.technet.microsoft.com/filecab/2018/07/24/getting-started-with-system-insights-in-10-minutes/)
+>また、これらの短いビデオを使用して、System Insights の使用を開始し、自信を持って管理することもできます。[システムインサイトの概要10分](https://blogs.technet.microsoft.com/filecab/2018/07/24/getting-started-with-system-insights-in-10-minutes/)
 
-このセクションでは、PowerShell の例では、使用すること、[システム Insights の PowerShell ドキュメント](https://aka.ms/systeminsightspowershell)システム Insights 内のコマンドレット、パラメーター、およびパラメーターのセットのすべてを表示します。 
+このセクションでは PowerShell の例を紹介しますが、system [Insights powershell のドキュメント](https://aka.ms/systeminsightspowershell)を使用して、system insights 内のすべてのコマンドレット、パラメーター、パラメーターセットを確認できます。 
 
-## <a name="viewing-capabilities"></a>表示の機能
+## <a name="viewing-capabilities"></a>表示機能
 
-最初に、すべての利用可能な機能を使用して一覧できます、 **Get InsightsCapability**コマンドレット。 
+開始するには、 **InsightsCapability**コマンドレットを使用して、使用可能なすべての機能を一覧表示します。 
 
 ```PowerShell
 Get-InsightsCapability
 ``` 
-これらの機能でもシステム Insights 拡張機能表示されます。
+これらの機能は、System Insights 拡張機能にも表示されます。
 
-![利用可能な機能を一覧表示するシステム Insights の [概要] ページ](media/overview-page-contoso.png)
+![使用可能な機能を一覧表示する System Insights の概要ページ](media/overview-page-contoso.png)
 
-## <a name="enabling-and-disabling-a-capability"></a>有効にして、機能を無効化
-各機能を有効または無効にすることができます。 機能が呼び出される防止機能を無効にして、既定以外の機能の機能を無効にするとその機能のすべてのデータ収集を停止します。 既定では、すべての機能が有効になって、しを使用して、機能の状態を確認することができます、 **Get InsightsCapability**コマンドレット。 
+## <a name="enabling-and-disabling-a-capability"></a>機能の有効化と無効化
+各機能は、有効または無効にすることができます。 機能を無効にすると、その機能を呼び出すことができなくなり、既定以外の機能については、機能を無効にすると、その機能のすべてのデータコレクションが停止します。 既定では、すべての機能が有効になっているため、 **InsightsCapability**コマンドレットを使用して機能の状態を確認できます。 
 
-有効または機能を無効にする、使用、**有効にする InsightsCapability**と**無効 InsightsCapability**コマンドレット。
+機能を有効または無効にするには、 **InsightsCapability**コマンドレットと**InsightsCapability**コマンドレットを使用します。
 
 ```PowerShell
 Enable-InsightsCapability -Name "CPU capacity forecasting"
 Disable-InsightsCapability -Name "Networking capacity forecasting"
 ``` 
-これらの設定を切り替えることもできますが、Windows Admin Center をクリックしてで機能の 1 つを選択します、**を有効にする**または**を無効にする**ボタン。
+これらの設定は、Windows 管理センターで **[有効]** または **[無効]** ボタンをクリックして選択した機能によって切り替えることもできます。
 
-### <a name="invoking-a-capability"></a>機能の 1 つを呼び出す
-機能をすぐに呼び出し、予測を取得する機能を実行し、管理者呼び出すことができます、機能をいつでもクリックして、 **Invoke** Windows Admin Center を使用してボタン、 **呼び出す InsightsCapability**コマンドレット。
+### <a name="invoking-a-capability"></a>機能の呼び出し
+機能を呼び出すと、直ちに予測を取得する機能が実行され、管理者は Windows 管理センターの **[起動]** ボタンをクリックするか、 **InsightsCapability**コマンドレットを使用して、いつでも機能を呼び出すことができます。
 
 ```PowerShell
 Invoke-InsightsCapability -Name "CPU capacity forecasting"
 ```
 
 >[!TIP]
->コンピューターに重要な操作と競合しない機能の 1 つを呼び出すことを確認するには、予測のオフ業務時間中にスケジュール設定を検討してください。
+>機能の呼び出しがコンピューター上の重要な操作と競合しないようにするには、営業時間外に予測をスケジュールすることを検討してください。
 
-## <a name="retrieving-capability-results"></a>機能の結果を取得します。
-最新の結果では、表示を使用している機能の 1 つが呼び出された後**Get InsightsCapability**または**Get InsightsCapabilityResult**します。 これらのコマンドレットの最新出力**状態**と**状態の説明**の各機能は、各予測の結果について説明します。 **状態**と**状態の説明**フィールドの詳細に説明、[について機能ドキュメント](understanding-capabilities.md)します。 
+## <a name="retrieving-capability-results"></a>機能の結果の取得
+機能が呼び出されると、 **InsightsCapability**または**InsightsCapabilityResult**を使用して最新の結果が表示されます。 これらのコマンドレットは、各機能の最新の**状態**と**状態の説明**を出力します。各機能は、各予測の結果を表します。 **状態**と**状態の説明**のフィールドについては、機能についての[ドキュメント](understanding-capabilities.md)を参照してください。 
 
-また、使用することができます、 **Get InsightsCapabilityResult**最後の 30 の予測結果を表示して、予測に関連付けられているデータを取得するコマンドレット。 
+さらに、 **InsightsCapabilityResult**コマンドレットを使用して、最後の30個の予測結果を表示し、予測に関連付けられたデータを取得することもできます。 
 
 ```PowerShell
 # Specify the History parameter to see the last 30 prediction results.
@@ -73,43 +72,43 @@ Get-InsightsCapabilityResult -Name "CPU capacity forecasting" -History
 $Output = Get-Content (Get-InsightsCapabilityResult -Name "CPU capacity forecasting").Output -Encoding UTF8 | ConvertFrom-Json
 $Output.ForecastingResults
 ```
-システム Insights 拡張機能では、予測の履歴を表示し、JSON の結果、各予測のグラフを直感的で信頼性の高いを与えるの結果を解析します。
+System Insights 拡張機能は、予測履歴を自動的に表示し、JSON 結果の結果を解析して、各予測の直感的で忠実性の高いグラフを提供します。
 
-![予測グラフと予測の履歴を示す 1 つの機能 ページ](media/cpu-forecast-2.png)
+![予測グラフと予測履歴を示す単一の機能ページ](media/cpu-forecast-2.png)
 
-### <a name="using-the-event-log-to-retrieve-capability-results"></a>イベント ログを使用して、機能の結果を取得するには
-Insights のシステムでは、機能の 1 つは、予測を終了するたびにイベントを記録します。 これらのイベントは、 **Microsoft-Windows-システム-Insights/管理者**チャネル、およびシステム Insights は、各状態の別のイベント ID を発行します。   
+### <a name="using-the-event-log-to-retrieve-capability-results"></a>イベントログを使用して機能の結果を取得する
+System Insights では、機能が予測を終了するたびにイベントがログに記録されます。 これらのイベントは、 **Microsoft-Windows-System insights/Admin**チャネルで表示されます。 system insights は、状態ごとに異なるイベント ID を発行します。   
 
 | 予測の状態 | イベント ID |
 | --------------- | --------------- |
 | OK | 151 |
-| 警告 | 148 |
-| 重大 | 150 |
+| ［警告］ | 148 |
+| 重要 | 150 |
 | エラー | 149 |
 | なし | 132 |
 
 >[!TIP]
->使用[Azure Monitor](https://azure.microsoft.com/services/monitor/)または[System Center Operations Manager](https://docs.microsoft.com/system-center/scom/welcome?view=sc-om-1807)をこれらのイベントを集計し、マシンのグループ間で予測結果を参照してください。
+>[Azure Monitor](https://azure.microsoft.com/services/monitor/)または[System Center Operations Manager](https://docs.microsoft.com/system-center/scom/welcome?view=sc-om-1807)を使用してこれらのイベントを集計し、マシングループ全体で予測結果を表示します。
 
 
-## <a name="setting-a-capability-schedule"></a>機能のスケジュールの設定
-オンデマンドでの予測だけでなく、指定された機能は、定義済みのスケジュールに従って自動的に呼び出されるように、各機能の定期的な予測を構成できます。 使用して、 **Get InsightsCapabilitySchedule**機能のスケジュールを表示するコマンドレット。 
+## <a name="setting-a-capability-schedule"></a>機能スケジュールの設定
+要求時の予測に加えて、指定した機能が定義済みのスケジュールに基づいて自動的に呼び出されるように、各機能の定期的な予測を構成できます。 機能スケジュールを表示するには、 **InsightsCapabilitySchedule**コマンドレットを使用します。 
 
 >[!TIP]
->PowerShell でパイプライン演算子を使用して、によって返されるすべての機能の情報を参照してください、 **Get InsightsCapability**コマンドレット。
+>PowerShell のパイプライン演算子を使用すると、 **InsightsCapability**コマンドレットによって返されるすべての機能に関する情報を確認できます。
 
 ```PowerShell
 Get-InsightsCapability | Get-InsightsCapabilitySchedule
 ```
 
-使用して、時間で無効にすることができますが、定期的な予測は既定で有効に、**有効にする InsightsCapabilitySchedule**と**無効 InsightsCapabilitySchedule**コマンドレット。
+定期的な予測は既定で有効になっていますが、 **InsightsCapabilitySchedule**および**InsightsCapabilitySchedule**コマンドレットを使用していつでも無効にすることができます。
 
 ```PowerShell
 Enable-InsightsCapabilitySchedule -Name "Total storage consumption forecasting"
 Disable-InsightsCapabilitySchedule -Name "Volume consumption forecasting"
 ```
 
-既定の各機能は、午前 3 時に毎日を実行する予定です。 ただし、機能ごとに、カスタム スケジュールを作成することができます、およびシステム Insights には、さまざまなスケジュールの種類を使用して構成できますがサポートしています、**セット InsightsCapabilitySchedule**コマンドレット。 
+各既定の機能は、毎日午前3時に実行されるようにスケジュールされています。 ただし、機能ごとにカスタムスケジュールを作成できます。 System Insights では、 **InsightsCapabilitySchedule**コマンドレットを使用して構成できるさまざまなスケジュールの種類がサポートされています。 
 
 ```PowerShell
 Set-InsightsCapabilitySchedule -Name "CPU capacity forecasting" -Daily -DaysInterval 2 -At 4:00PM
@@ -118,27 +117,27 @@ Set-InsightsCapabilitySchedule -Name "Total storage consumption forecasting" -Ho
 Set-InsightsCapabilitySchedule -Name "Volume consumption forecasting" -Minute -MinutesInterval 30 
 ```
 >[!NOTE]
->既定の機能は、1 日のデータを分析、ため、日単位のスケジュールを使用して、これらの機能にはお勧めします。 詳細については、既定の機能は[ここ](understanding-capabilities.md)します。
+>既定の機能では毎日のデータが分析されるので、これらの機能には毎日のスケジュールを使用することをお勧めします。 既定の機能の詳細について[は、こちら](understanding-capabilities.md)を参照してください。
 
-表示し、クリックして、機能ごとのスケジュールを設定する、Windows Admin Center を使用することもできます。**設定**します。 現在のスケジュールが表示されます、**スケジュール** タブは、新しいスケジュールを作成する GUI ツールを使用できます。
+Windows 管理センターを使用して、 **[設定]** をクリックして各機能のスケジュールを表示および設定することもできます。 現在のスケジュールは、 **[スケジュール]** タブに表示されます。また、GUI ツールを使用して、新しいスケジュールを作成することもできます。
 
-![設定ページが表示された現在のスケジュール](media/schedule-page-contoso.png)
+![現在のスケジュールを表示している設定ページ](media/schedule-page-contoso.png)
 
-## <a name="creating-remediation-actions"></a>修復アクションを作成します。
-Insights のシステムでは、機能の 1 つの結果に基づくカスタム修復スクリプトを開始することができます。 機能ごとには管理者が手動の介入を必要とするのではなく、自動的に措置を実行できるため各予測状態のカスタムの PowerShell スクリプトを構成できます。 
+## <a name="creating-remediation-actions"></a>修復アクションの作成
+System Insights では、機能の結果に基づいてカスタム修復スクリプトを開始することができます。 各機能について、予測状態ごとにカスタム PowerShell スクリプトを構成できます。これにより、管理者は手動での介入を必要とする代わりに、自動的に修正措置を講じることができます。 
 
-サンプルの修復アクションには、実行中のディスク クリーンアップには、重複除去を Vm を移行して、Azure ファイル同期を設定するにはライブ実行されているボリュームの拡張が含まれます。
+修復アクションの例としては、ディスククリーンアップの実行、ボリュームの拡張、重複除去の実行、Vm のライブマイグレーション、Azure File Sync の設定などがあります。
 
-各機能を使用するためのアクションを確認できます、 **Get InsightsCapabilityAction**コマンドレット。
+各機能のアクションは、 **InsightsCapabilityAction**コマンドレットを使用して確認できます。
 
 ```PowerShell
 Get-InsightsCapability | Get-InsightsCapabilityAction
 ```
 
-新しいアクションを作成またはを使用して既存のアクションを削除することができます、**セット InsightsCapabilityAction**と**削除 InsightsCapabilityAction**コマンドレット。 アクションの実行で指定された資格情報を使用して、 **ActionCredential**パラメーター。
+**InsightsCapabilityAction**および**InsightsCapabilityAction**コマンドレットを使用して、新しいアクションを作成したり、既存のアクションを削除したりできます。 各アクションは、 **Actioncredential**パラメーターで指定された資格情報を使用して実行されます。
 
 >[!NOTE]
->初期システム Insights リリースでは、ユーザーのディレクトリの外部で修復スクリプトを指定する必要があります。 これは、今後のリリースで修正されます。
+>最初の System Insights リリースでは、ユーザーディレクトリ以外で修復スクリプトを指定する必要があります。 これは、今後のリリースで修正される予定です。
 
 ```PowerShell
 $Cred = Get-Credential
@@ -148,15 +147,15 @@ Set-InsightsCapabilityAction -Name "CPU capacity forecasting" -Type Critical -Ac
 Remove-InsightsCapabilityAction -Name "CPU capacity forecasting" -Type Warning
 ```
 
-使用して修復アクションを設定する、Windows Admin Center を使用することもできます。、**アクション**タブ内で、**設定**ページ。
+Windows 管理センターを使用して、 **[設定]** ページの **[操作]** タブで修復アクションを設定することもできます。
 
-![ユーザーが修復アクションを指定するための設定ページ](media/actions-page-contoso.png)
+![ユーザーが修復アクションを指定できる設定ページ](media/actions-page-contoso.png)
 
 
-## <a name="see-also"></a>関連項目
-システム Insights に関する詳細については、するには、次のリソースを使用します。
+## <a name="see-also"></a>参照
+System Insights の詳細については、次のリソースを参照してください。
 
-- [システム Insights の概要](overview.md)
-- [機能の理解](understanding-capabilities.md)
-- [追加して、機能の開発](adding-and-developing-capabilities.md)
-- [システム Insights に関する FAQ](faq.md)
+- [System Insights の概要](overview.md)
+- [機能について](understanding-capabilities.md)
+- [機能の追加と開発](adding-and-developing-capabilities.md)
+- [System Insights の FAQ](faq.md)

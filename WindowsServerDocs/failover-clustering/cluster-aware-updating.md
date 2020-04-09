@@ -1,20 +1,20 @@
 ---
 title: クラスター対応更新の概要
+description: クラスター対応更新 (CAU) は、Windows Server を実行しているクラスターへのソフトウェア更新プログラムのインストールを自動化します。
 ms.topic: article
 ms.prod: windows-server
-ms.manager: dongill
+manager: lizross
 author: JasonGerend
 ms.author: jgerend
 ms.technology: storage-failover-clustering
 ms.date: 08/06/2018
-description: クラスター対応更新 (CAU) は、Windows Server を実行しているクラスターへのソフトウェア更新プログラムのインストールを自動化します。
 ms.assetid: 3c2993b4-aa81-452b-a5c3-3724ad95d892
-ms.openlocfilehash: e96223e0b4b44e87ade9dc8eb875f9aa7104f451
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6a2b6ad06b8a003f9cbf020956994b08cb8cf194
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361250"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80827995"
 ---
 # <a name="cluster-aware-updating-overview"></a>クラスター対応更新の概要
 
@@ -25,7 +25,7 @@ ms.locfileid: "71361250"
 > [!NOTE]
 > [記憶域スペースダイレクト](../storage/storage-spaces/storage-spaces-direct-overview.md)クラスターを更新する場合は、クラスター対応更新を使用することをお勧めします。
   
-## <a name="BKMK_OVER"></a>機能の説明  
+## <a name="feature-description"></a><a name="BKMK_OVER"></a>機能の説明  
 クラスター対応更新は自動化された機能で、[フェールオーバークラスター](failover-clustering-overview.md)内のサーバーを更新するときに、更新プロセス中に可用性をほとんどまたはまったく失わないようにすることができます。 更新実行中、クラスター対応更新は、次のタスクを透過的に実行します。  
 
 1. クラスターの各ノードをノードメンテナンスモードにします。
@@ -99,7 +99,7 @@ CAU を使用するには、Windows Server のフェールオーバークラス�
 > -   自己\-更新モードでのみ CAU を使用している場合を除き、CAU ツールがインストールされていて、更新を調整するコンピューターをフェールオーバークラスターのメンバーにすることはできません。  
   
 ### <a name="enabling-self-updating-mode"></a>自己更新モードを有効にする
-自己更新モードを有効にするには、クラスター対応更新のクラスター化された役割をフェールオーバークラスターに追加する必要があります。 これを行うには、次のいずれかの方法を使用します。
+自己更新モードを有効にするには、クラスター対応更新のクラスター化された役割をフェールオーバークラスターに追加する必要があります。 そのためには、次の手順のいずれかを実行します。
 - サーバーマネージャーで、**ツール** > **クラスター対応更新** を選択し、クラスター対応更新 ウィンドウで **クラスターの自己更新オプションの構成** を選択します。 
 - PowerShell セッションで、 [add-cauclusterrole](https://docs.microsoft.com/powershell/module/clusterawareupdating/Add-CauClusterRole?view=win10-ps)コマンドレットを実行します。  
   
@@ -117,16 +117,16 @@ CAU の使用に関する詳細な要件とベストプラクティス、およ�
   
 1.  サーバー マネージャーを起動します。  
   
-2.  次のいずれかの操作を行います。  
+2.  以下のいずれかを実行します。  
   
     -   **[ツール]** メニューの [**クラスター\-対応更新**] をクリックします。  
   
     -   サーバーマネージャーに1つ以上のクラスターノードまたはクラスターが追加された場合は、 **[すべてのサーバー]** ページで、\(ノードの名前または\)クラスターの名前を右\-クリックし、 **[クラスターの更新]** をクリックします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 クラスター対応更新の使用方法の詳細については、次のリンクを参照してください。  
   
--   [クラスター\-対応更新の要件とベストプラクティス](cluster-aware-updating.md)  
+-   [クラスター対応更新の要件とベスト プラクティス\-](cluster-aware-updating.md)  
   
 -   [クラスター\-対応更新: よく寄せられる質問](cluster-aware-updating-faq.md)  
   

@@ -1,7 +1,6 @@
 ---
 ms.assetid: eeb919de-e21e-48d8-8186-e42adec6933f
 title: サイト トポロジの設計
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: d3ebc3bd764a8ed44e201d0fca5f85b06df8be9d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e7b6267946217d5c5fb57496eb6bf54911b61e8a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408892"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822601"
 ---
 # <a name="designing-the-site-topology"></a>サイト トポロジの設計
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 ディレクトリサービスサイトのトポロジは、物理ネットワークを論理的に表したものです。 Active Directory Domain Services (AD DS) 用のサイトトポロジの設計には、ドメインコントローラーの配置の計画、サイト、サブネット、サイトリンク、およびサイトリンクブリッジの設計が含まれます。これにより、クエリとレプリケーションのトラフィックを効率的にルーティングすることができます。  
   
@@ -36,7 +35,7 @@ ms.locfileid: "71408892"
   
 サイトトポロジの設計が完了したら、ドメインコントローラーが Windows Server 2008 Standard、Windows Server 2008 Enterprise、および Windows Server 2008 Datacenter のハードウェア要件を満たしていることを確認する必要があります。  
   
-## <a name="in-this-guide"></a>このガイドについて  
+## <a name="in-this-guide"></a>このガイドの内容  
   
 -   [Active Directory サイト トポロジとは](../../ad-ds/plan/Understanding-Active-Directory-Site-Topology.md)  
   

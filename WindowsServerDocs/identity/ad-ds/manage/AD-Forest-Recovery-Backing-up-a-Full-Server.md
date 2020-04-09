@@ -1,6 +1,5 @@
 ---
 title: AD フォレストの回復-完全なサーバーのバックアップ
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: 398918dc-c8ab-41a6-a377-95681ec0b543
 ms.technology: identity-adds
-ms.openlocfilehash: 4377c1d993b4f6d30cf8ca8a7d149b741d7f8d2f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1579f8e88ea852ddf3f973b51b1b6ceed7c50a00
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369363"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80824277"
 ---
 # <a name="ad-forest-recovery---backing-up-a-full-server"></a>AD フォレストの回復-完全なサーバーのバックアップ  
 
@@ -22,7 +21,7 @@ ms.locfileid: "71369363"
 
 フォレストの回復を準備するには、サーバーの完全バックアップを使用することをお勧めします。これは、別のハードウェアや別のオペレーティングシステムのインスタンスに復元できるためです。  Windows Server バックアップを使用すると、サーバーの完全バックアップを実行できます。 
 
-## <a name="windows-server-backup"></a>Windows Server バックアップ
+## <a name="windows-server-backup"></a>Windows Server のバックアップ
 
 Windows Server バックアップは、既定ではインストールされません。 Windows Server 2016 および Windows Server 2012 R2 で、次の手順に従ってインストールします。
 
@@ -85,7 +84,7 @@ Wbadmin は、コマンドプロンプトからオペレーティングシステ
 
    ![バックアップのインストール](media/AD-Forest-Recovery-Backing-up-a-Full-Server/fullbackup5.png)
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 
 - [AD フォレストの回復ガイド](AD-Forest-Recovery-Guide.md)
 - [AD フォレストの回復 - 手順](AD-Forest-Recovery-Procedures.md)

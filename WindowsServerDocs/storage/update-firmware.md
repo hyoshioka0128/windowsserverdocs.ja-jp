@@ -3,20 +3,20 @@ ms.assetid: e5945bae-4a33-487c-a019-92a69db8cf6c
 title: ドライブのファームウェアの更新
 ms.prod: windows-server
 ms.author: toklima
-ms.manager: dmoss
+manager: dmoss
 ms.technology: storage-spaces
 ms.topic: article
 author: toklima
 ms.date: 10/04/2016
-ms.openlocfilehash: 2f0530101bb7d597d2d95c26648aad65d62b69ca
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 55a4fc94440b763c48735ffe44099da702857489
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365875"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820875"
 ---
 # <a name="updating-drive-firmware"></a>ドライブのファームウェアの更新
->適用対象:Windows Server 2019、Windows Server 2016、Windows 10
+>適用対象: Windows Server 2019、Windows Server 2016、Windows 10
 
 従来、ドライブのファームウェア更新は、ダウンタイムが発生する可能性があり、面倒な作業でした。記憶域スペースと Windows Server、Windows 10 バージョン 1703 以降を改善しているのはそのためです。 新しいファームウェアの更新メカニズムをサポートするハード ドライブが Windows に含まれている場合、運用環境のドライブでもダウンタイムなしでドライブのファームウェアを更新できます。 ただし、運用環境のドライブのファームウェアを更新する場合、この強力な新機能を使用しながらリスクを最小限に抑える方法について、ここで説明するヒントを必ずご覧ください。
 
@@ -30,11 +30,11 @@ Windows Server を使用してドライブのファームウェアを更新す�
 お使いのハードウェアが、Windows によるドライブのファームウェア更新をサポートしているかどうかについては、ソリューション ベンダーに問い合わせてください。
 次に、多様な要件のリンクを示します。
 
--   IINo__t-[実装[されて](https://msdn.microsoft.com/windows/hardware/commercialize/design/compatibility/device-storage#devicestoragehdsata)**いる場合 @-2 ファームウェアのダウンロード & アクティブ化**] セクション
+-   SATA: [Device.Storage.Hd.Sata](https://msdn.microsoft.com/windows/hardware/commercialize/design/compatibility/device-storage#devicestoragehdsata) - **[実装している場合\] 「Firmware Download & Activate**」(ファームウェアのダウンロードとアクティブ化) セクション
     
--   SASNo__t-[実装[されて](https://msdn.microsoft.com/windows/hardware/commercialize/design/compatibility/device-storage#devicestoragehdsas)**いる場合 @-2 ファームウェアのダウンロード & アクティブ化**] セクション
+-   SAS: [Device.Storage.Hd.Sas](https://msdn.microsoft.com/windows/hardware/commercialize/design/compatibility/device-storage#devicestoragehdsas) - **[実装している場合\] 「Firmware Download & Activate**」(ファームウェアのダウンロードとアクティブ化) セクション
 
--   NVMe**5.7**および**5.8**のセクションで、[デバイスを格納し](https://msdn.microsoft.com/windows/hardware/commercialize/design/compatibility/device-storage#devicestoragecontrollerdrivenvme)ます。
+-   NVMe: [Device.Storage.ControllerDrive.NVMe](https://msdn.microsoft.com/windows/hardware/commercialize/design/compatibility/device-storage#devicestoragecontrollerdrivenvme) - セクション **5.7** と **5.8**。
 
 ## <a name="powershell-cmdlets"></a>PowerShell コマンドレット
 
@@ -120,7 +120,7 @@ Windows Server 2016 には、記憶域スペース ダイレクト展開 (Micros
 
 この時点で、ヘルス サービスは XML を検査して解析し、目的のファームウェア バージョンが展開されていないドライブを特定します。 次に、影響を受けるドライブから (ノードごとに) I/O をリダイレクトし、ドライブ上のファームウェアを更新します。 記憶域スペース ダイレクト クラスターは、複数のサーバー ノードにデータを分散させることで、回復性を実現します。ヘルス サービスによって、ドライブを更新する価値があるノード全体を分離できます。 ノードが更新されると、記憶域スペースの修復が開始され、すべてのデータのコピーが相互に同期を保った状態でクラスターに戻されてから、次のノードに進みます。 ファームウェアのロール アウト中に、記憶域スペースの処理が "デグレード" モードに移行することが予想されます。そしてそれは通常のことです。
 
-新しいファームウェア イメージの安定したロールアウトと十分な検証時間を確保するために、複数のサーバーを更新する間隔は長く設定されています。 既定では、ヘルスサービスは 2<sup>nd</sup>サーバーを更新する前に7日間待機します。 後続のサーバー (3<sup>rd</sup>、4<sup>番目</sup>、...) は、1日の遅延で更新されます。 管理者がファームウェアを不安定、または望ましくないと判断した場合、いつでもヘルス サービスで以降のロールアウトを停止できます。 ファームウェアが検証済みで、迅速なロールアウトが望ましい場合、これらの既定値を日単位から時間単位や分単位に変更できます。
+新しいファームウェア イメージの安定したロールアウトと十分な検証時間を確保するために、複数のサーバーを更新する間隔は長く設定されています。 ヘルス サービスの既定では、7 日間待ってから 2 つ目のサーバーが更新されます。 以降のサーバー (3 つ目、4 つ目、...) は 1 日の遅延で更新されます。 管理者がファームウェアを不安定、または望ましくないと判断した場合、いつでもヘルス サービスで以降のロールアウトを停止できます。 ファームウェアが検証済みで、迅速なロールアウトが望ましい場合、これらの既定値を日単位から時間単位や分単位に変更できます。
 
 次に、一般的な記憶域スペース ダイレクト クラスター向けのサポートされるコンポーネントの XML 例を示します。
 
@@ -164,7 +164,7 @@ $NewDoc = Get-Content <Path> | Out-String
 $SpacesDirect | Set-StorageHealthSetting -Name "System.Storage.SupportedComponents.Document" -Value $NewDoc
 ```
 
-ヘルスサービスの動作を確認し、そのロールアウト機構の詳細については、次のビデオを参照してください。 https://channel9.msdn.com/Blogs/windowsserver/Update-Drive-Firmware-Without-Downtime-in-Storage-Spaces-Direct
+ヘルスサービスの動作を確認し、そのロールアウト機構の詳細については、次のビデオを参照してください: https://channel9.msdn.com/Blogs/windowsserver/Update-Drive-Firmware-Without-Downtime-in-Storage-Spaces-Direct
 
 ## <a name="frequently-asked-questions"></a>よく寄せられる質問
 
@@ -195,7 +195,7 @@ $SpacesDirect | Set-StorageHealthSetting -Name "System.Storage.SupportedComponen
 
 ### <a name="what-happens-if-the-update-fails"></a>更新が失敗すると、どうなりますか
 
-この更新は、さまざまな理由で失敗する可能性があります。その一部を次に示します。1) ドライブは、Windows がファームウェアを更新するための適切なコマンドをサポートしていません。 この場合、新しいファームウェア イメージはアクティブ化されず、ドライブの動作には引き続き古いイメージが使用されます。 2) イメージをそのドライブにダウンロードできないか、ドライブに適用できません (バージョンの不一致、破損したイメージなど)。 この場合、ドライブはアクティブ化コマンドに失敗します。 この場合も、ドライブの動作には引き続き古いイメージが使用されます。
+更新は多様な理由で失敗する可能性があります。たとえば、1) Windows がファームウェアを更新するための正しいコマンドをドライブがサポートしていません。 この場合、新しいファームウェア イメージはアクティブ化されず、ドライブの動作には引き続き古いイメージが使用されます。 2) イメージをそのドライブにダウンロードできないか、ドライブに適用できません (バージョンの不一致、破損したイメージなど)。 この場合、ドライブはアクティブ化コマンドに失敗します。 この場合も、ドライブの動作には引き続き古いイメージが使用されます。
 
 ファームウェアの更新後にドライブがまったく応答しない場合、ドライブ ファームウェア自体のバグが発生している可能性があります。 ラボ環境ですべてのファームウェア更新プログラムをテストしてから、運用環境に展開してください。 唯一の解決策はドライブの交換のみの可能性があります。
 

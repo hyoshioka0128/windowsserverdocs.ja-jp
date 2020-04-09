@@ -1,7 +1,6 @@
 ---
 ms.assetid: a589dda6-e05b-4b44-ae3e-b15dd3877617
 title: 新しい組織の AD DS の展開
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 8ffcb9d403b8d83285099e4cb9449771f95c16a8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ba7fdf5bd2e14e7340e9ef7de93747c1c6c666da
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408923"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822645"
 ---
 # <a name="deploying-ad-ds-in-a-new-organization"></a>新しい組織の AD DS の展開
 

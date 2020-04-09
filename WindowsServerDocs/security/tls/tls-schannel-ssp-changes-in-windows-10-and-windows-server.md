@@ -1,6 +1,5 @@
 ---
 title: TLS (Schannel SSP)
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: ebd3c40c-b4c0-4f6d-a00c-f90eda4691df
@@ -8,16 +7,16 @@ manager: alanth
 author: justinha
 ms.technology: security-authentication
 ms.date: 05/16/2018
-ms.openlocfilehash: e103e985592e6aed150ccd3e1a87e56f19621dbe
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3547c77e8c58bcbb219a7b017c3186f198007805
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403384"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820165"
 ---
 # <a name="tls-schannel-ssp-changes-in-windows-10-and-windows-server-2016"></a>Windows 10 および Windows Server 2016 での TLS (Schannel SSP) の変更点
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows 10
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows 10
 
 ## <a name="cipher-suite-changes"></a>暗号スイートの変更
 
@@ -37,8 +36,8 @@ Windows 10、バージョン1511、および Windows Server 2016 では、モバ
 - TLS_DHE_DSS_WITH_AES_256_CBC_SHA (RFC 5246) (Windows 10、バージョン 1703)
 - TLS_DHE_DSS_WITH_AES_128_CBC_SHA (RFC 5246) (Windows 10、バージョン 1703)
 - TLS_DHE_DSS_WITH_3DES_EDE_CBC_SHA (RFC 5246) (Windows 10、バージョン 1703)
-- TLS_RSA_WITH_RC4_128_SHA (Windows 10 バージョン 1709)
-- TLS_RSA_WITH_RC4_128_MD5 (Windows 10 バージョン 1709)
+- Windows 10 バージョン1709の TLS_RSA_WITH_RC4_128_SHA
+- Windows 10 バージョン1709の TLS_RSA_WITH_RC4_128_MD5
 
 Windows 10、バージョン1507、および Windows Server 2016 以降では、既定で SHA 512 証明書がサポートされています。
 
@@ -81,7 +80,7 @@ Windows 10、バージョン1607、および Windows Server 2016 では、DTLS 1
 
 Windows 10、バージョン1607、および Windows Server 2016 HTTP の TLS ハンドシェイクを処理するために使用されるスレッドプールのサイズのレジストリ構成を追加します。SYS.DATABASES.
 
-レジストリパス: 
+レジストリ パス: 
 
 HKLM\SYSTEM\CurrentControlSet\Control\LSA
 
@@ -106,13 +105,13 @@ Windows 10、バージョン1607、および Windows Server 2016 では、PSK �
 
 ## <a name="session-resumption-without-server-side-state-server-side-performance-improvements"></a>サーバー側の状態サーバー側のパフォーマンス向上を伴わないセッションの再開
 
-Windows 10、バージョン1507、および Windows Server 2016 では、セッションチケットが Windows Server 2012 と比較して、1秒あたり 30% 以上のセッション再開が提供されます。
+Windows 10、バージョン1507、および Windows Server 2016 では、セッションチケットが Windows Server 2012 と比較して、1秒あたり30% 以上のセッション再開が提供されます。
 
 ## <a name="session-hash-and-extended-master-secret-extension"></a>セッションハッシュと拡張マスタシークレット拡張機能
 
-Windows 10、バージョン1507、および Windows Server 2016 では、RFC 7627 のサポートが追加されています。トランスポート層セキュリティ (TLS) セッションハッシュおよび拡張マスタシークレット拡張機能。
+Windows 10、バージョン1507、および Windows Server 2016 では、RFC 7627: Transport Layer Security (TLS) セッションハッシュと拡張マスタシークレット拡張機能のサポートが追加されています。
 
-この変更のため、Windows 10 および Windows Server 2016 では、NCRYPT_SSL_INTERFACE_VERSION_3 をサポートし、この新しいインターフェイスを記述するために、サードパーティの[CNG SSL プロバイダー](https://msdn.microsoft.com/library/windows/desktop/ff468652.aspx)の更新が必要です。
+この変更のため、Windows 10 および Windows Server 2016 では、NCRYPT_SSL_INTERFACE_VERSION_3 をサポートし、この新しいインターフェイスについて説明するために、サードパーティの[CNG SSL プロバイダー](https://msdn.microsoft.com/library/windows/desktop/ff468652.aspx)の更新が必要です。
 
 
 ## <a name="ssl-support"></a>SSL のサポート
@@ -123,11 +122,11 @@ Windows 10 バージョン1607および Windows Server 2016 以降では、SSL 2
 
 ## <a name="changes-to-windows-tls-adherence-to-tls-12-requirements-for-connections-with-non-compliant-tls-clients"></a>準拠していない TLS クライアントとの接続に関する Windows TLS 1.2 の要件に対する変更
 
-TLS 1.2 では、クライアントは["signature_algorithms" 拡張機能](https://tools.ietf.org/html/rfc5246#section-7.4.1.4.1)を使用して、署名/ハッシュアルゴリズムペアをデジタル署名 (つまり、サーバー証明書とサーバーキー交換) で使用できることをサーバーに示します。 TLS 1.2 RFC では、サーバー証明書メッセージが "signature_algorithms" 拡張を優先する必要もあります。
+TLS 1.2 では、クライアントは["signature_algorithms" 拡張機能](https://tools.ietf.org/html/rfc5246#section-7.4.1.4.1)を使用して、署名/ハッシュアルゴリズムペアがデジタル署名 (つまり、サーバー証明書とサーバーキー交換) で使用できることをサーバーに示します。 TLS 1.2 RFC では、サーバー証明書メッセージが "signature_algorithms" 拡張機能を優先する必要もあります。
 
 "クライアントが" signature_algorithms "拡張機能を提供した場合、サーバーによって提供されるすべての証明書は、その拡張機能に表示されるハッシュ/署名アルゴリズムペアによって署名されている必要があります。"
 
-実際には、一部のサードパーティの TLS クライアントが TLS 1.2 RFC に準拠しておらず、"signature_algorithms" 拡張で受け入れようとしているすべての署名およびハッシュアルゴリズムペアを含めることができません。また、拡張を完全に省略することもできます (後者はクライアントがサポートしているのは、RSA、DSA、または ECDSA を使用した SHA1 のみです。
+実際には、一部のサードパーティの TLS クライアントが TLS 1.2 RFC に準拠しておらず、"signature_algorithms" 拡張で受け入れようとしているすべての署名とハッシュアルゴリズムのペアを含めることができません。また、拡張機能を完全に省略することもできます (後者の場合、クライアントは、RSA、DSA、ECDSA を使用した SHA1
 
 TLS サーバーでは、多くの場合、エンドポイントごとに1つの証明書が構成されます。つまり、サーバーがクライアントの要件を満たす証明書を常に提供することはできません。
 

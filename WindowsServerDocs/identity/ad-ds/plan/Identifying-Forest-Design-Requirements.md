@@ -1,7 +1,6 @@
 ---
 ms.assetid: 7d957ebb-3476-49d8-b00b-6e93b4a94778
 title: フォレストの設計要件を特定する
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,20 +8,20 @@ ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 41caeca82819eaea3d86d5f1eb4883ab8bbf53cc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 33025dc2e08185744ffd0dee7eac4d0c020a0691
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408796"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822405"
 ---
 # <a name="identifying-forest-design-requirements"></a>フォレストの設計要件を特定する
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 組織のフォレスト設計を作成するには、ディレクトリ構造で対応する必要があるビジネス要件を特定する必要があります。 そのためには、組織内のグループがネットワークリソースを管理する必要があるかどうか、および各グループが他のグループからネットワーク上のリソースを分離する必要があるかどうかを判断します。  
   
-Active Directory Domain Services (AD DS) を使用すると、管理要件が固有の組織内の複数のグループに対応し、グループ間で構造的および操作上の独立を実現するディレクトリインフラストラクチャを設計できます。必要に応じて。  
+Active Directory Domain Services (AD DS) を使用すると、特定の管理要件を持つ組織内の複数のグループに対応し、必要に応じてグループ間で構造的および操作の独立性を実現する、ディレクトリインフラストラクチャを設計できます。  
   
 組織内のグループには、次の種類の要件があります。  
   
@@ -38,11 +37,11 @@ Active Directory Domain Services (AD DS) を使用すると、管理要件が固
   
 -   **法的要件**。 組織によっては、特定の方法で運用する法的要件がある場合があります。たとえば、ビジネスコントラクトで指定されている特定の情報へのアクセスを制限することができます。 一部の組織では、分離された内部ネットワークを操作するためのセキュリティ要件があります。 これらの要件を満たしていないと、コントラクトが失われ、場合によっては法的措置が必要になる可能性があります。  
   
-フォレストの設計要件を特定する一環として、潜在的なフォレスト所有者とそのサービス管理者を信頼できる組織内のグループと、それぞれの自律性と分離の要件を特定する必要があります。組織内でグループ化します。  
+フォレストの設計要件を特定する際には、潜在的なフォレスト所有者とそのサービス管理者を信頼できる組織内のグループと、組織内の各グループの自律性と分離の要件を特定する必要があります。  
   
 設計チームは、AD DS を使用する組織内の各グループについて、サービスとデータ管理の分離と自律性の要件を文書化する必要があります。 また、AD DS の展開に影響する可能性がある、接続が制限されている領域についても注意する必要があります。  
   
-設計チームは、AD DS を使用する組織内の各グループについて、サービスとデータ管理の分離と自律性の要件を文書化する必要があります。 また、AD DS の展開に影響する可能性がある、接続が制限されている領域についても注意する必要があります。 特定したリージョンを文書化するのに役立つワークシートについては、「 [Windows Server 2003 Deployment Kit のジョブエイド](https://go.microsoft.com/fwlink/?LinkID=102558)」から Job_Aids_Designing_and_Deploying_Directory_and_Security_Services をダウンロードし、「フォレストの設計要件」 (DSSLOGI_2)。  
+設計チームは、AD DS を使用する組織内の各グループについて、サービスとデータ管理の分離と自律性の要件を文書化する必要があります。 また、AD DS の展開に影響する可能性がある、接続が制限されている領域についても注意する必要があります。 特定したリージョンを文書化するのに役立つワークシートについては、「 [Windows Server 2003 Deployment Kit のジョブエイド](https://go.microsoft.com/fwlink/?LinkID=102558)」から Job_Aids_Designing_and_Deploying_Directory_and_Security_Services をダウンロードし、「フォレストの設計要件」 (DSSLOGI_2) を開きます。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
   

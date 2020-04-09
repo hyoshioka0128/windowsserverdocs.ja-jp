@@ -2,22 +2,18 @@
 title: Windows Server の DirectAccess 展開パス
 description: このトピックでは、Windows Server 2016 asic と Advanced の2つの主要な DirectAccess 展開パスに関するドキュメントの一覧を示します。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 22ccd5c3-0a26-484c-88c8-54119d1228cc
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: f2874f5ab75723f6a0fec137dd1f1cd7d6a2efbb
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: b2fd6245af9c73183e51b7f1cf4914595f98e999
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80310965"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815695"
 ---
 # <a name="directaccess-deployment-paths-in-windows-server"></a>Windows Server の DirectAccess 展開パス
 

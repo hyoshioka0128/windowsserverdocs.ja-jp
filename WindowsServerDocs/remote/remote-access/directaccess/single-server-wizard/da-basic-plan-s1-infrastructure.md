@@ -2,22 +2,17 @@
 title: 手順1基本的な DirectAccess インフラストラクチャを計画する
 description: このトピックは、「Windows Server 2016 用はじめにウィザードを使用して単一の DirectAccess サーバーを展開する」の一部です。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: ''
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 9c71ef26f9e4ba5d20705827109d9ad22fe5c7ab
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 6bab4adbcf006556c73c96f403afe7538079e967
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80308891"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80819345"
 ---
 # <a name="step-1-plan-the-basic-directaccess-infrastructure"></a>手順1基本的な DirectAccess インフラストラクチャを計画する
 1台のサーバーでの基本的な DirectAccess 展開の最初の手順は、展開に必要なインフラストラクチャを計画することです。 このトピックでは、インフラストラクチャの計画手順を説明します。  
@@ -55,8 +50,8 @@ ms.locfileid: "80308891"
   
     ||外部ネットワーク アダプター|内部ネットワーク アダプター<sup>1</sup>|ルーティングの要件|  
     |-|--------------|--------------------|------------|  
-    |IPv4 イントラネットおよび IPv4 インターネット|次の内容を構成します。<br /><br />-適切なサブネットマスクを持つ1つの静的パブリック IPv4 アドレス。<br />-インターネットファイアウォールまたはローカルインターネットサービスプロバイダーの既定のゲートウェイ IPv4 アドレス \(ISP\) ルーター。|次の内容を構成します。<br /><br />適切なサブネット マスクを持つ IPv4 イントラネット アドレスが。<br />-イントラネット名前空間の特定の DNS サフィックスを\-接続。 DNS サーバーは内部インターフェイスにも構成する必要があります。<br />-イントラネットインターフェイスに既定のゲートウェイを構成しないでください。|内部 IPv4 ネットワーク上のすべてのサブネットに到達できるように DirectAccess サーバーを構成するには、次のようにします。<br /><br />1. イントラネット上のすべての場所の IPv4 アドレス空間を一覧表示します。<br />2. **route add \-p**または**netsh interface ipv4 add route**コマンドを使用して、ipv4 アドレス空間を静的ルートとして DirectAccess サーバーの ipv4 ルーティングテーブルに追加します。|  
-    |IPv6 インターネットおよび IPv6 イントラネット|次の内容を構成します。<br /><br />-ISP によって提供される自動構成されたアドレス構成を使用します。<br />- **Route print**コマンドを使用して、ISP ルーターを指す既定の ipv6 ルートが ipv6 ルーティングテーブルに存在することを確認します。<br />-ISP ルーターとイントラネットルーターが RFC 4191 で説明されている既定のルーター基本設定を使用し、ローカルイントラネットルーターよりも高い既定の基本設定を使用しているかどうかを確認します。 どちらについても使用している場合は、既定のルートに他の構成は必要ありません。 ISP ルーターの高度な基本設定によって、DirectAccess サーバーの既定の IPv6 アクティブ ルートが IPv6 インターネットを示すことが保証されます。<br /><br />DirectAccess サーバーは IPv6 ルーターであるため、ネイティブ IPv6 インフラストラクチャがある場合は、インターネット インターフェイスからイントラネット上のドメイン コントローラーに到達することもできます。 この場合は、境界ネットワーク内のドメインコントローラーにパケットフィルターを追加して、DirectAccess サーバーのインターネット\-接続インターフェイスの IPv6 アドレスに接続できないようにします。|次の内容を構成します。<br /><br />-既定の基本設定レベルを使用していない場合は、 **netsh interface ipv6 Set InterfaceIndex ignoredefaultroutes\=enabled**コマンドを使用して、イントラネットインターフェイスを構成します。 このコマンドを実行すると、イントラネット ルーターを示す既定のルートがそれ以上 IPv6 ルーティング テーブルに追加されないことが保証されます。 イントラネット インターフェイスの InterfaceIndex は、netsh interface show interface コマンドの表示で確認できます。|IPv6 イントラネットがある場合、IPv6 のすべての場所に到達できるように DirectAccess サーバーを構成するには、次のようにします。<br /><br />1. イントラネット上のすべての場所の IPv6 アドレス空間を一覧表示します。<br />2. **netsh interface ipv6 add route**コマンドを使用して、ipv6 アドレス空間を静的ルートとして DirectAccess サーバーの ipv6 ルーティングテーブルに追加します。|  
+    |IPv4 イントラネットおよび IPv4 インターネット|次の内容を構成します。<p>-適切なサブネットマスクを持つ1つの静的パブリック IPv4 アドレス。<br />-インターネットファイアウォールまたはローカルインターネットサービスプロバイダーの既定のゲートウェイ IPv4 アドレス \(ISP\) ルーター。|次の内容を構成します。<p>適切なサブネット マスクを持つ IPv4 イントラネット アドレスが。<br />-イントラネット名前空間の特定の DNS サフィックスを\-接続。 DNS サーバーは内部インターフェイスにも構成する必要があります。<br />-イントラネットインターフェイスに既定のゲートウェイを構成しないでください。|内部 IPv4 ネットワーク上のすべてのサブネットに到達できるように DirectAccess サーバーを構成するには、次のようにします。<p>1. イントラネット上のすべての場所の IPv4 アドレス空間を一覧表示します。<br />2. **route add \-p**または**netsh interface ipv4 add route**コマンドを使用して、ipv4 アドレス空間を静的ルートとして DirectAccess サーバーの ipv4 ルーティングテーブルに追加します。|  
+    |IPv6 インターネットおよび IPv6 イントラネット|次の内容を構成します。<p>-ISP によって提供される自動構成されたアドレス構成を使用します。<br />- **Route print**コマンドを使用して、ISP ルーターを指す既定の ipv6 ルートが ipv6 ルーティングテーブルに存在することを確認します。<br />-ISP ルーターとイントラネットルーターが RFC 4191 で説明されている既定のルーター基本設定を使用し、ローカルイントラネットルーターよりも高い既定の基本設定を使用しているかどうかを確認します。 どちらについても使用している場合は、既定のルートに他の構成は必要ありません。 ISP ルーターの高度な基本設定によって、DirectAccess サーバーの既定の IPv6 アクティブ ルートが IPv6 インターネットを示すことが保証されます。<p>DirectAccess サーバーは IPv6 ルーターであるため、ネイティブ IPv6 インフラストラクチャがある場合は、インターネット インターフェイスからイントラネット上のドメイン コントローラーに到達することもできます。 この場合は、境界ネットワーク内のドメインコントローラーにパケットフィルターを追加して、DirectAccess サーバーのインターネット\-接続インターフェイスの IPv6 アドレスに接続できないようにします。|次の内容を構成します。<p>-既定の基本設定レベルを使用していない場合は、 **netsh interface ipv6 Set InterfaceIndex ignoredefaultroutes\=enabled**コマンドを使用して、イントラネットインターフェイスを構成します。 このコマンドを実行すると、イントラネット ルーターを示す既定のルートがそれ以上 IPv6 ルーティング テーブルに追加されないことが保証されます。 イントラネット インターフェイスの InterfaceIndex は、netsh interface show interface コマンドの表示で確認できます。|IPv6 イントラネットがある場合、IPv6 のすべての場所に到達できるように DirectAccess サーバーを構成するには、次のようにします。<p>1. イントラネット上のすべての場所の IPv6 アドレス空間を一覧表示します。<br />2. **netsh interface ipv6 add route**コマンドを使用して、ipv6 アドレス空間を静的ルートとして DirectAccess サーバーの ipv6 ルーティングテーブルに追加します。|  
     |IPv4 インターネットおよび IPv6 イントラネット|DirectAccess サーバーは、IPv4 インターネット上の 6to4 リレーへの Microsoft 6to4 Adapter インターフェイスを使って、既定の IPv6 ルート トラフィックを転送します。 次のコマンドを使用して、ネイティブ IPv6 が企業\) ネットワークに展開されていない場合に使用される IPv4 インターネット \(で、Microsoft 6to4 リレーの IPv4 アドレス用に DirectAccess サーバーを構成できます。 netsh interface IPv6 6to4 set relay name\=192.88.99.1 state\=enabled コマンド。|||  
   
     > [!NOTE]  

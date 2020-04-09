@@ -1,23 +1,19 @@
 ---
 title: Windows Server 2016 Essentials の新機能
 description: Windows Server Essentials の使用方法について説明します。
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: affff774-5fa6-4944-887a-9bfde05f6a3f
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 1d5176a69136e9bad36e22472b8fadbd6d0e9e79
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 420d3b043959b8b1201aad7a5b3210fd9bd6a0da
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80310305"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80817755"
 ---
 # <a name="whats-new-in-windows-server-2016-essentials"></a>Windows Server 2016 Essentials の新機能
 
@@ -27,7 +23,7 @@ Windows Server 2016 Essentials の新機能と強化された機能は次のと�
 
 ## <a name="integration-with-azure-site-recovery-services"></a>[Azure Site Recovery Services との統合](azure-site-recovery-services-integration.md)
 
-**処理内容**-保護されているバーチャルマシンが失敗した場合、または保護されたバーチャルマシンが実行されているホストサーバーで障害が発生した場合、オンプレミスのバーチャルマシンまたはホストサーバーが修復されて使用可能になるまで、Azure Site Recovery Services とのフェールオーバーによってビジネスの継続性が維持されます。 
+保護されているバーチャルマシンに障害が発生した場合、または保護されたバーチャルマシンが実行されているホストサーバーで障害が発生した場合に、オンプレミスのバーチャルマシンまたはホストサーバーが修復されて使用可能になるまで、Azure Site Recovery サービスとのフェールオーバーによっ**て**ビジネスの継続性が維持 --&reg; 
 
 **しくみ**: Microsoft Azure で提供されている Azure Site Recovery サービスを使用すると、仮想マシン (VM) を Azure のバックアップコンテナーにリアルタイムでレプリケートできます。 ハードウェアやその他の障害が原因でサーバーまたはサイトがダウンした場合は、Azure Site Recovery サービスとのフェールオーバーを実行して、バックアップコンテナーに格納されている VM イメージが Azure で実行中の VM としてプロビジョニングされるようにすることができます。 Azure 仮想ネットワークと組み合わせると、オンプレミスサーバーに接続されているクライアント Pc は、Azure で実行されているサーバーに透過的に接続します。     
                                                                                                                                                                                                                                                                                                                
@@ -52,4 +48,4 @@ Windows Server 2016 Essentials の新機能と強化された機能は次のと�
 <a name="see-also"></a>参照
 --------
 
-[Windows Server Essentials の概要](get-started.md)
+[Windows Server Essentials &copy;&reg; の概要](get-started.md)

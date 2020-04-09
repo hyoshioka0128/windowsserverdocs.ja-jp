@@ -1,24 +1,22 @@
 ---
 ms.assetid: eca5bbf0-088e-4753-bf49-4d6c1125f689
 title: Windows Server 2008 の Active Directory サイト トポロジ設計に関するその他のリソースの検索
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 1b94197e850b0bf0865c9281281ad063102c29eb
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 49709ca40c515c8fdb7df62598e9a9dc766029c8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408821"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822455"
 ---
-# <a name="finding-additional-resources-for-windows-server-2008-active-directory-site-topology-design"></a>Windows Server 2008 の Active Directory サイト トポロジ設計に関するその他のリソースの検索
-
 >適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+
+# <a name="finding-additional-resources-for-windows-server-2008-active-directory-site-topology-design"></a>Windows Server 2008 用の追加の Resou # rces の検索 Active Directory サイトトポロジの設計
 
 Active Directory Domain Services に関する次のドキュメント (AD DS) については、Windows Server 2003 および Windows Server 2008 TechCenter Web サイトを参照してください。  
   

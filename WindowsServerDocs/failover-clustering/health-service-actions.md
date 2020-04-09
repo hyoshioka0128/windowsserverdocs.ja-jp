@@ -5,27 +5,26 @@ manager: eldenc
 ms.author: cosdar
 ms.technology: storage-health-service
 ms.topic: article
-ms.assetid: ''
 author: cosmosdarwin
 ms.date: 08/14/2017
-ms.openlocfilehash: 519f0321f36fb7afc86962950aeab729d7a38adb
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a4ef08a4ca552211b64d11677153775d6b18b4fa
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361100"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80827625"
 ---
 # <a name="health-service-actions"></a>ヘルスサービスアクション
 
-> 適用対象:Windows Server 2019、Windows Server 2016
+> 適用対象: Windows Server 2019、Windows Server 2016
 
 ヘルスサービスは、Windows Server 2016 の新機能であり、記憶域スペースダイレクトを実行しているクラスターの日常的な監視と操作エクスペリエンスを向上させます。
 
-## <a name="actions"></a>Actions  
+## <a name="actions"></a>操作  
 
 以下のセクションでは、ヘルス サービスにより自動化されるワークフローについて説明します。 ある操作が自立的に行われていることを検証するため、またはこの操作の進行状況や成果を追跡するために、ヘルス サービスは "アクション" を生成します。 ログとは異なり、アクションは完了後すぐに表示されなくなります。アクションは主に、パフォーマンスや容量に影響を与える可能性がある進行中のアクティビティ (回復性やデータの再調整など) についての情報を提供するためのものです。  
 
-### <a name="usage"></a>使用方法  
+### <a name="usage"></a>使用法  
 
 1 つの新しい PowerShell コマンドレットで、すべてのアクションを表示できます。  
 
@@ -33,7 +32,7 @@ ms.locfileid: "71361100"
 Get-StorageHealthAction  
 ```
 
-### <a name="coverage"></a>対象範囲  
+### <a name="coverage"></a>カバレッジ  
 
 Windows Server 2016 では、 **StorageHealthAction**コマンドレットは次のいずれかの情報を返すことができます。  
 
@@ -45,7 +44,7 @@ Windows Server 2016 では、 **StorageHealthAction**コマンドレットは次
 
 -   記憶域プールの再調整  
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [Windows Server 2016 のヘルスサービス](health-service-overview.md)
 - [MSDN の開発者向けドキュメント、サンプルコード、API リファレンス](https://msdn.microsoft.com/windowshealthservice)

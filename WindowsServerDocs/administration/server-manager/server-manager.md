@@ -1,34 +1,30 @@
 ---
 title: サーバー マネージャー
 description: サーバー マネージャー
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-server-manager
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d996ef40-8bcc-42b0-b6ae-806b828223f6
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 373e2063622317905686b1c5fc74425943abd9ec
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 41d9227dd5472fc55858d75fa25e728dc69c2c7c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383057"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851475"
 ---
 # <a name="server-manager"></a>サーバー マネージャー
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-サーバーマネージャーは、Windows Server の管理コンソールです。これにより、IT 担当者は、サーバーに物理的にアクセスしたり、リモートデスクトップを有効にしなくても、デスクトップからローカルとリモートの両方の Windows ベースのサーバーをプロビジョニングして管理することができます。各サーバーへのプロトコル (rdP) 接続。 サーバー マネージャーは、Windows Server 2008 R2 および Windows Server 2008 で使用できますが、サーバー マネージャーがリモートのマルチ サーバー管理をサポートし、管理者が管理できるサーバーの数を高めるために Windows Server 2012 で更新されました。
+サーバーマネージャーは、Windows Server の管理コンソールです。これにより、IT 担当者は、サーバーに物理的にアクセスしたり、各サーバーへのリモートデスクトッププロトコル (rdP) 接続を有効にしなくても、デスクトップからローカルとリモートの両方の Windows ベースのサーバーをプロビジョニングして管理することができます。 サーバー マネージャーは、Windows Server 2008 R2 および Windows Server 2008 で使用できますが、サーバー マネージャーがリモートのマルチ サーバー管理をサポートし、管理者が管理できるサーバーの数を高めるために Windows Server 2012 で更新されました。
 
 テストの結果では、サーバーが実行されているワークロードに応じて、最大 100 台のサーバーを管理する Windows Server 2016、Windows Server 2012 R2、および Windows Server 2012 のサーバー マネージャーを使用できます。 1 つのサーバー マネージャー コンソールを使用して管理できるサーバーの数は、サーバー マネージャーを実行するコンピューターの管理対象サーバーと使用可能なハードウェアとネットワーク リソースを要求するデータの量によって異なることがあります。 表示するデータの量がコンピューターのリソースの上限に近づくと、サーバー マネージャーからの応答が遅くなり、更新が完了するまでに時間がかかることがあります。 サーバー マネージャーで管理できるサーバーの数を増やすには、 **[イベント データの構成]** ダイアログ ボックスの設定を使用して、管理対象サーバーからサーバー マネージャーが受け取るイベント データを制限することをお勧めします。 [イベント データの構成] は、 **[イベント]** タイルの **[タスク]** メニューから開くことができます。 組織内でエンタープライズ レベルのサーバーを管理する必要がある場合は、[Microsoft System Center スイート](https://go.microsoft.com/fwlink/p/?LinkId=239437)製品の検討をお勧めします。
 
-このトピックとサブトピックでは、サーバーマネージャーコンソールで機能を使用する方法について説明します。 このトピックは次のセクションで構成されます。
+このトピックとサブトピックでは、サーバーマネージャーコンソールで機能を使用する方法について説明します。 このトピックの内容は次のとおりです。
 
 -   [最初の考慮事項とシステム要件を確認する](#review-initial-considerations-and-system-requirements)
 
@@ -55,18 +51,18 @@ Windows Server 2016 より古い Windows Server リリースを実行してい�
 
 |オペレーティング システム|必要なソフトウェア|
 |----------|-----------|
-| Windows Server 2012 R2 または Windows Server 2012 |-   [.NET Framework 4.6](https://www.microsoft.com/download/details.aspx?id=45497)<br />-   [Windows Management Framework 5.0](https://go.microsoft.com/fwlink/?LinkID=395058)。 Windows Management Framework 5.0 ダウンロード パッケージは、Windows Server 2012 R2 および Windows Server 2012 上の Windows Management Instrumentation (WMI) プロバイダーを更新します。 更新された WMI プロバイダーは、管理対象のサーバーにインストールされている役割と機能に関する情報を収集するサーバー マネージャーを使用できます。 Windows Server 2012 R2 を実行しているサーバーまたは Windows Server 2012 の管理の容易性の状態である更新プログラムが適用されるまで **アクセス不可**します。<br />-パフォーマンスの更新プログラムに関連付けられている [サポート技術情報の記事 2682011](https://go.microsoft.com/fwlink/p/?LinkID=245487) は Windows Server 2012 R2 を実行しているサーバーまたは Windows Server 2012 では必要なくなりました。|
-| Windows Server 2008 R2 |-   [.NET Framework 4.5](https://www.microsoft.com/download/details.aspx?id=30653)<br />-   [Windows Management Framework 4.0](https://go.microsoft.com/fwlink/?LinkId=293881)。 Windows Management Framework 4.0 ダウンロードパッケージは、Windows Server 2008 R2 の Windows Management Instrumentation (WMI) プロバイダーを更新します。 更新された WMI プロバイダーは、管理対象のサーバーにインストールされている役割と機能に関する情報を収集するサーバー マネージャーを使用できます。 更新が適用されるまで、Windows Server 2008 R2 を実行しているサーバーの管理状態は、 **[アクセス不可]** になります。<br />-[サポート技術情報の記事 2682011](https://go.microsoft.com/fwlink/p/?LinkID=245487)に関連付けられているパフォーマンスの更新プログラムを使用すると、Windows Server 2008 R2 からパフォーマンスデータを収集サーバーマネージャーことができます。|
-| Windows Server 2008 |-   [.NET Framework 4](https://www.microsoft.com/download/en/details.aspx?id=17718)<br />-   [Windows Management framework 3.0](https://go.microsoft.com/fwlink/p/?LinkID=229019) Windows management framework 3.0 ダウンロードパッケージは、windows Server 2008 で WINDOWS MANAGEMENT INSTRUMENTATION (WMI) プロバイダーを更新します。 更新された WMI プロバイダーは、管理対象のサーバーにインストールされている役割と機能に関する情報を収集するサーバー マネージャーを使用できます。 更新が適用されるまで、Windows Server 2008 を実行しているサーバーの管理状態は、[アクセス不可] になります。以前のバージョンでは、 **Windows Management Framework 3.0 が実行**されます。<br />-パフォーマンスの更新プログラムに関連付けられている [サポート技術情報の記事 2682011](https://go.microsoft.com/fwlink/p/?LinkID=245487) Server manager で Windows Server 2008 からパフォーマンス データを収集します。|
+| Windows Server 2012 R2 または Windows Server 2012 |-   [.NET Framework 4.6](https://www.microsoft.com/download/details.aspx?id=45497)<br />[Windows Management Framework 5.0](https://go.microsoft.com/fwlink/?LinkID=395058)を -   します。 Windows Management Framework 5.0 ダウンロード パッケージは、Windows Server 2012 R2 および Windows Server 2012 上の Windows Management Instrumentation (WMI) プロバイダーを更新します。 更新された WMI プロバイダーは、管理対象のサーバーにインストールされている役割と機能に関する情報を収集するサーバー マネージャーを使用できます。 Windows Server 2012 R2 を実行しているサーバーまたは Windows Server 2012 の管理の容易性の状態である更新プログラムが適用されるまで **アクセス不可**します。<br />-パフォーマンスの更新プログラムに関連付けられている [サポート技術情報の記事 2682011](https://go.microsoft.com/fwlink/p/?LinkID=245487) は Windows Server 2012 R2 を実行しているサーバーまたは Windows Server 2012 では必要なくなりました。|
+| Windows Server 2008 R2 |-   [.NET Framework 4.5](https://www.microsoft.com/download/details.aspx?id=30653)<br />[Windows Management Framework 4.0](https://go.microsoft.com/fwlink/?LinkId=293881)を -   します。 Windows Management Framework 4.0 ダウンロードパッケージは、Windows Server 2008 R2 の Windows Management Instrumentation (WMI) プロバイダーを更新します。 更新された WMI プロバイダーは、管理対象のサーバーにインストールされている役割と機能に関する情報を収集するサーバー マネージャーを使用できます。 更新が適用されるまで、Windows Server 2008 R2 を実行しているサーバーの管理状態は、 **[アクセス不可]** になります。<br />-[サポート技術情報の記事 2682011](https://go.microsoft.com/fwlink/p/?LinkID=245487)に関連付けられているパフォーマンスの更新プログラムを使用すると、Windows Server 2008 R2 からパフォーマンスデータを収集サーバーマネージャーことができます。|
+| Windows Server 2008 |-   [.NET Framework 4](https://www.microsoft.com/download/en/details.aspx?id=17718)<br />windows [Management framework 3.0](https://go.microsoft.com/fwlink/p/?LinkID=229019) -   Windows management framework 3.0 ダウンロードパッケージは、windows Server 2008 で WINDOWS MANAGEMENT INSTRUMENTATION (WMI) プロバイダーを更新します。 更新された WMI プロバイダーは、管理対象のサーバーにインストールされている役割と機能に関する情報を収集するサーバー マネージャーを使用できます。 更新が適用されるまで、Windows Server 2008 を実行しているサーバーの管理状態は、[アクセス不可] になります。以前のバージョンでは、 **Windows Management Framework 3.0 が実行**されます。<br />-パフォーマンスの更新プログラムに関連付けられている [サポート技術情報の記事 2682011](https://go.microsoft.com/fwlink/p/?LinkID=245487) Server manager で Windows Server 2008 からパフォーマンス データを収集します。|
 
 #### <a name="manage-remote-computers-from-a-client-computer"></a>リモート コンピューターをクライアント コンピューターから管理する
 サーバー マネージャー コンソールは付属 [リモート サーバー管理ツール](https://go.microsoft.com/fwlink/?LinkID=404281) Windows 10 用です。 リモート サーバー管理ツールがクライアント コンピューターにインストールされている場合は管理できないという、ローカル コンピューター サーバー マネージャーを使用して、注意してください。コンピューターまたは Windows クライアント オペレーティング システムを実行しているデバイスを管理する、サーバー マネージャーを使用できません。 サーバー マネージャーは、Windows ベースのサーバーの管理にのみ使用できます。
 
 |サーバー マネージャーのソースのオペレーティング システム|対象が Windows Server 2016|Windows Server 2012 R2 を対象としました。 |対象 (Windows Server 2012) |対象 (Windows Server 2008 R2 または Windows Server 2008) |対象が Windows Server 2003 の場合|
 |-------------------------------|--------------------------------------------|---------------------------------------|------------------------------------|-----------------------------------------------------------------------|------------------|
-|Windows 10 または Windows Server 2016|フル サポート|フル サポート|フル サポート|「 [ソフトウェアと構成の要件](#software-and-configuration-requirements) 」を満たしていれば、役割や機能のインストールとアンインストールを除く、ほとんどの管理タスクを実行可能|サポートされていません|
-|Windows 8.1 または Windows Server 2012 R2 |サポートされていません|フル サポート|フル サポート|「 [ソフトウェアと構成の要件](#software-and-configuration-requirements) 」を満たしていれば、役割や機能のインストールとアンインストールを除く、ほとんどの管理タスクを実行可能|限定的なサポート、オンラインとオフラインの状態のみ|
-|Windows 8 または Windows Server 2012 |サポートされていません|サポートされていません|フル サポート|「 [ソフトウェアと構成の要件](#software-and-configuration-requirements) 」を満たしていれば、役割や機能のインストールとアンインストールを除く、ほとんどの管理タスクを実行可能|限定的なサポート、オンラインとオフラインの状態のみ|
+|Windows 10 または Windows Server 2016|フル サポート|フル サポート|フル サポート|[ソフトウェアと構成の要件](#software-and-configuration-requirements)を満たしていれば、役割や機能のインストールとアンインストールを除く、ほとんどの管理タスクを実行可能|サポートされない|
+|Windows 8.1 または Windows Server 2012 R2 |サポートされない|フル サポート|フル サポート|[ソフトウェアと構成の要件](#software-and-configuration-requirements)を満たしていれば、役割や機能のインストールとアンインストールを除く、ほとんどの管理タスクを実行可能|限定的なサポート、オンラインとオフラインの状態のみ|
+|Windows 8 または Windows Server 2012 |サポートされない|サポートされない|フル サポート|[ソフトウェアと構成の要件](#software-and-configuration-requirements)を満たしていれば、役割や機能のインストールとアンインストールを除く、ほとんどの管理タスクを実行可能|限定的なサポート、オンラインとオフラインの状態のみ|
 
 ###### <a name="to-start-server-manager-on-a-client-computer"></a>クライアント コンピューターでサーバー マネージャーを起動するには
 
@@ -74,7 +70,7 @@ Windows Server 2016 より古い Windows Server リリースを実行してい�
 
 2.  **[スタート]** 画面で、 **[サーバーマネージャー]** をクリックします。 リモート サーバー管理ツールをインストールすると、 **[サーバー マネージャー]** タイルが使用できるようになります。
 
-3.  リモートサーバー管理ツールをインストールした後、**管理ツール**も**サーバーマネージャー**タイルも**スタート**画面に表示されない場合、**スタート**画面でのサーバーマネージャーの検索は表示されません。結果として、[**管理ツールを表示]** の設定がオンになっていることを確認します。 この設定を表示するには、**スタート**画面の右上隅にマウスカーソルを置き、 **[設定]** をクリックします。 **[管理ツールを表示]** が無効になっている場合、この設定を有効にすると、リモート サーバー管理ツールの一部としてインストールされたツールが表示されます。
+3.  リモートサーバー管理ツールをインストールした後に、**スタート**画面に **[管理ツール]** と **[サーバーマネージャー]** タイルのどちらも表示されない場合、 **[スタート]** 画面でサーバーマネージャーを検索しても結果が表示されない場合は、[**管理ツールを表示する]** の設定がオンになっていることを確認します。 この設定を表示するには、**スタート**画面の右上隅にマウスカーソルを置き、 **[設定]** をクリックします。 **[管理ツールを表示]** が無効になっている場合、この設定を有効にすると、リモート サーバー管理ツールの一部としてインストールされたツールが表示されます。
 
 Windows 10 のリモートサーバー管理ツールを実行してリモートサーバーを管理する方法の詳細については、TechNet Wiki の「[リモートサーバー管理ツール](https://go.microsoft.com/fwlink/?LinkID=221055)」を参照してください。
 
@@ -106,7 +102,7 @@ Windows 10 のリモートサーバー管理ツールを実行してリモート
 
 ##### <a name="to-enable-server-manager-remote-management-on--windows-server-2012-r2--or--windows-server-2012--by-using-windows-powershell"></a>Windows PowerShell を使用して Windows Server 2012 R2 または Windows Server 2012 でサーバーマネージャーリモート管理を有効にするには
 
-1.  次のいずれかを実行します。
+1.  次のいずれかの操作を行います。
 
     -   Windows PowerShell を**スタート**画面から管理者として実行するには、 **[windows powershell]** タイルを右クリックし、 **[管理者として実行]** をクリックします。
 
@@ -119,20 +115,20 @@ Windows 10 のリモートサーバー管理ツールを実行してリモート
     > [!NOTE]
     > このコマンドは、管理者特権 (管理者として実行) を使用して開いたコマンド プロンプトでも実行できます。
 
-    リモート管理を有効にできない場合のトラブルシューティングのヒントとベストプラクティスについては、Microsoft TechNet の[about_remote_Troubleshooting](https://go.microsoft.com/fwlink/p/?LinkID=135188)を参照してください。
+    リモート管理を有効にできない場合は、Microsoft TechNet の「 [about_remote_Troubleshooting](https://go.microsoft.com/fwlink/p/?LinkID=135188) 」を参照して、トラブルシューティングのヒントとベストプラクティスを確認してください。
 
 ###### <a name="to-enable-server-manager-and-windows-powershell-remote-management-on-older-operating-systems"></a>以前のオペレーティング システムでサーバー マネージャーおよび Windows PowerShell のリモート管理を有効にするには
 
--   次のいずれかを実行します。
+-   次のいずれかの操作を行います。
 
     -   Windows Server 2008 R2 を実行しているサーバーでリモート管理を有効にするには、Windows Server 2008 R2 ヘルプの「[サーバーマネージャーによるリモート管理](https://go.microsoft.com/fwlink/?LinkID=137378)」を参照してください。
 
     -   Windows Server 2008 を実行しているサーバーでリモート管理を有効にするには、「 [Windows PowerShell でのリモートコマンドの有効化と使用](https://go.microsoft.com/fwlink/p/?LinkId=242565)」を参照してください。
 
 ## <a name="tasks-that-you-can-perform-in-server-manager"></a>サーバー マネージャーで実行できるタスク
-サーバーマネージャーを使用すると、管理者は次の表のタスクを1つのツールで実行できるようになり、サーバーの管理効率が向上します。 Windows Server 2012 R2 および Windows Server 2012 では、サーバーの標準ユーザーと Administrators グループのメンバーの両方がサーバーマネージャーで管理タスクを実行できますが、既定では、標準ユーザーは、次の表に示します。
+サーバーマネージャーを使用すると、管理者は次の表のタスクを1つのツールで実行できるようになり、サーバーの管理効率が向上します。 Windows Server 2012 R2 および Windows Server 2012 では、サーバーの標準ユーザーと Administrators グループのメンバーの両方がサーバーマネージャーで管理タスクを実行できますが、既定では、次の表に示すように、標準ユーザーは一部のタスクを実行できません。
 
-管理者は、サーバーマネージャーコマンドレットモジュール ( [enable-servermanagerstandarduserremoting と disable-servermanagerstandarduserremoting](https://technet.microsoft.com/library/jj205470.aspx)と[enable-servermanagerstandarduserremoting と disable-servermanagerstandarduserremoting](https://technet.microsoft.com/library/jj205468.aspx)) の2つの Windows PowerShell コマンドレットを使用して、いくつかの標準ユーザーアクセスをさらに制御できます。追加データ。 **Enable-servermanagerstandarduserremoting と disable-servermanagerstandarduserremoting**コマンドレットは、1人以上の管理者以外のユーザーに、イベント、サービス、パフォーマンスカウンター、および役割と機能インベントリデータへのアクセスを提供することができます。
+管理者は、サーバーマネージャーコマンドレットモジュール ( [enable-servermanagerstandarduserremoting と disable-servermanagerstandarduserremoting](https://technet.microsoft.com/library/jj205470.aspx)と[enable-servermanagerstandarduserremoting と disable-servermanagerstandarduserremoting](https://technet.microsoft.com/library/jj205468.aspx)) の2つの Windows PowerShell コマンドレットを使用して、いくつかの追加データへの標準ユーザーアクセスをさらに制御できます。 **Enable-servermanagerstandarduserremoting と disable-servermanagerstandarduserremoting**コマンドレットは、1人以上の管理者以外のユーザーに、イベント、サービス、パフォーマンスカウンター、および役割と機能インベントリデータへのアクセスを提供することができます。
 
 > [!IMPORTANT]
 > Windows Server オペレーティング システムのそれ以降のリリースを管理する、サーバー マネージャーを使用できません。 Windows server 2012 または Windows 8 で実行されているサーバーマネージャーは、Windows Server 2012 R2 を実行しているサーバーの管理には使用できません。
@@ -170,7 +166,7 @@ Windows 10 のリモートサーバー管理ツールを実行してリモート
 
 1.  サーバーマネージャーコンソールの **[管理]** メニューで、 **[サーバーマネージャーのプロパティ]** をクリックします。
 
-2.  **[サーバー マネージャーのプロパティ]** ダイアログ ボックスで、 **[ログオン時にサーバー マネージャーを自動的に起動しない]** チェック ボックスをオンにします。 **[OK]** をクリックします。
+2.  **[サーバー マネージャーのプロパティ]** ダイアログ ボックスで、 **[ログオン時にサーバー マネージャーを自動的に起動しない]** チェック ボックスをオンにします。 **[OK]** をクリックすると、
 
 3.  または、[グループポリシー] 設定を有効にしてサーバーマネージャーが自動的に開始されないようにすることもできます。**ログオン時に自動的にサーバーマネージャーを開始**しないようにします。 ローカルのグループポリシーエディターコンソールで、このポリシー設定へのパスは、コンピューターの構成 \ 管理用テンプレート \ システム \ サーバーマネージャーです。
 
@@ -180,7 +176,7 @@ Windows 10 のリモートサーバー管理ツールを実行してリモート
 > [!IMPORTANT]
 > リモート サーバーを再起動すると、そのリモート サーバーにユーザーがログオンしている場合や、開いているプログラムのデータが保存されていない場合でも、サーバーが強制的に再起動されます。 ローカル コンピューターをシャットダウンしたり再起動したりする場合と異なり、保存されていないプログラムのデータを保存するかどうかや、ログオンしているユーザーを強制的にログオフするかどうかを確認するメッセージは表示されません。 そのため、他のユーザーをリモート サーバーから強制的にログオフしたり、リモート サーバーで実行中のプログラムの保存されていないデータを破棄しても問題がないことを確認してください。
 > 
-> 管理対象サーバーのシャットダウン中や再起動中にサーバーマネージャーで自動更新が行われた場合、管理対象サーバーで更新と管理の状態エラーが発生する可能性があります。これは、サーバーマネージャーが完了するまでリモートサーバーに接続できないためです。再起動.
+> 管理対象サーバーのシャットダウン中や再起動中にサーバーマネージャーで自動更新が行われた場合、管理対象サーバーで更新と管理の状態エラーが発生する可能性があります。これは、サーバーマネージャーが再起動を完了するまでリモートサーバーに接続できないためです。
 
 #### <a name="to-restart-remote-servers-in-server-manager"></a>サーバー マネージャーでリモート サーバーを再起動するには
 
@@ -195,7 +191,7 @@ Windows 10 のリモートサーバー管理ツールを実行してリモート
 
 -   %*appdata*% \ Microsoft\Windows\ServerManager\Serverlist.xml
 
--   %*appdata*% \ Local\Microsoft_Corporation\ServerManager.exe_StrongName_*GUID*\6.2.0.0\user.config
+-   %*appdata*% \ Local \ Microsoft_Corporation \Servermanager. exe_StrongName_*GUID*\6.2.0.0\user.config
 
 > [!NOTE]
 > -   サーバー プールのサーバーに対して [管理に使用する資格情報] で別の資格情報を指定した場合、その資格情報は移動プロファイルに格納されません。 それらの資格情報については、管理元の各コンピューターで サーバー マネージャー ユーザーがそれぞれ追加する必要があります。
@@ -213,15 +209,15 @@ Windows 10 のリモートサーバー管理ツールを実行してリモート
 
 2.  **[プロファイル]** タブで、ユーザーのプロファイルを保存するネットワーク共有のパスを追加します。
 
-3.  次のいずれかを実行します。
+3.  次のいずれかの操作を行います。
 
-    -   米国英語 (en-us) のビルドでは、 **Serverlist**ファイルに対する変更が自動的にプロファイルに保存されます。 次の手順に進みます。
+    -   米国英語 (en-us) のビルドでは、 **Serverlist**ファイルへの変更が自動的にプロファイルに保存されます。 次の手順に進みます。
 
     -   他のビルドでは、サーバーマネージャーを実行しているコンピューターから、ユーザーの移動プロファイルに含まれるネットワーク共有に、次の2つのファイルをコピーします。
 
         -   %*appdata*% \ Microsoft\Windows\ServerManager\Serverlist.xml
 
-        -   %*localappdata*% \ Microsoft_Corporation\ServerManager.exe_StrongName_*GUID*\6.2.0.0\user.config
+        -   %*localappdata*% \ Microsoft_Corporation \Servermanager. exe_StrongName_*GUID*\6.2.0.0\user.config
 
 4.  **[OK]** をクリックして変更を保存し、 **[プロパティ]** ダイアログ ボックスを閉じます。
 
@@ -231,7 +227,7 @@ Windows 10 のリモートサーバー管理ツールを実行してリモート
 
     -   %*appdata*% \ Microsoft\Windows\ServerManager\Serverlist.xml
 
-    -   %*localappdata*% \ Microsoft_Corporation\ServerManager.exe_StrongName_*GUID*\6.2.0.0\user.config
+    -   %*localappdata*% \ Microsoft_Corporation \Servermanager. exe_StrongName_*GUID*\6.2.0.0\user.config
 
 
 

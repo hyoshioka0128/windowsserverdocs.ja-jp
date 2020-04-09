@@ -2,19 +2,19 @@
 ms.assetid: 0cd1ac70-532c-416d-9de6-6f920a300a45
 title: フェールオーバークラスターのクラウド監視をデプロイする
 ms.prod: windows-server
-manager: eldenc
+manager: lizross
 ms.author: jgerend
 ms.technology: storage-failover-clustering
 ms.topic: article
 author: JasonGerend
 ms.date: 01/18/2019
 description: クラウド内の Windows Server フェールオーバークラスターのミラーリング監視サーバーをホストするために Microsoft Azure を使用する方法 (クラウド監視を展開する方法)
-ms.openlocfilehash: ad5ff47a72319fee7650d1d9c0d0616cfaaa22d3
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 0b4ba643dca81d2d19b94b1d27485149f938e1c4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948173"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80827915"
 ---
 # <a name="deploy-a-cloud-witness-for-a-failover-cluster"></a>フェールオーバー クラスターのクラウド監視を展開する
 
@@ -22,7 +22,7 @@ ms.locfileid: "75948173"
 
 クラウド監視は、クラスタークォーラムに投票を提供するために Microsoft Azure を使用するフェールオーバークラスタークォーラム監視の一種です。 このトピックでは、クラウド監視機能の概要、サポートされるシナリオ、およびフェールオーバークラスターのクラウド監視を構成する手順について説明します。
 
-## <a name="CloudWitnessOverview"></a>クラウド監視の概要
+## <a name="cloud-witness-overview"></a><a name="CloudWitnessOverview"></a>クラウド監視の概要
 
 図1は、Windows Server 2016 を使用したマルチサイトの拡張フェールオーバークラスタークォーラム構成を示しています。 この例の構成 (図 1) では、2つのノード (サイトと呼ばれます) が2つのデータセンターにあります。 クラスターが2つ以上のデータセンターにまたがる可能性があることに注意してください。 また、各データセンターには2つ以上のノードを含めることができます。 このセットアップでの一般的なクラスタークォーラム構成 (自動フェールオーバー SLA) は、各ノードに投票を提供します。 いずれかのデータセンターで停電が発生した場合でも、クラスターを実行し続けることができるように、クォーラム監視に1つの追加の投票が与えられます。 数値演算は単純であり、投票の合計は5件です。クラスターで実行を維持するには、3票が必要です。  
 
@@ -47,7 +47,7 @@ ms.locfileid: "75948173"
 
 図2に示すように、3つの独立したサイトは必要ありません。 他のクォーラム監視と同様に、クラウド監視は投票を取得し、クォーラム計算に参加できます。  
 
-## <a name="CloudWitnessSupportedScenarios"></a>クラウド監視: 単一の監視の種類でサポートされるシナリオ
+## <a name="cloud-witness-supported-scenarios-for-single-witness-type"></a><a name="CloudWitnessSupportedScenarios"></a>クラウド監視: 単一の監視の種類でサポートされるシナリオ
 フェールオーバークラスターデプロイで、すべてのノードが (Azure の拡張によって) インターネットに接続できる場合は、クラウド監視をクォーラム監視リソースとして構成することをお勧めします。  
 
 次のように、クラウド監視をクォーラム監視として使用するシナリオがサポートされています。  
@@ -60,7 +60,7 @@ ms.locfileid: "75948173"
 
 Windows Server 2012 R2 以降では、クラスターが監視の投票を自動的に管理し、ノードが動的クォーラムに投票するため、常にミラーリング監視サーバーを構成することをお勧めします。  
 
-## <a name="CloudWitnessSetUp"></a>クラスターのクラウド監視を設定する
+## <a name="set-up-a-cloud-witness-for-a-cluster"></a><a name="CloudWitnessSetUp"></a>クラスターのクラウド監視を設定する
 クラスターのクォーラム監視としてクラウド監視を設定するには、次の手順を実行します。
 1. クラウド監視として使用する Azure Storage アカウントを作成する
 2. クラスターのクォーラム監視としてクラウド監視を構成します。
@@ -78,12 +78,12 @@ Windows Server 2012 R2 以降では、クラスターが監視の投票を自動
 1. [Azure portal](https://portal.azure.com) にサインインします。
 2. [ハブ] メニューで、[新規]、[データ + ストレージ]、[ストレージ アカウント] の順に選択します。
 3. [ストレージアカウントの作成] ページで、次の操作を行います。
-    1. ストレージ アカウントの名前を入力します。
-    <br>ストレージ アカウント名の長さは 3 から 24 文字である必要があり、数字と小文字のみを使用できます。 ストレージアカウント名は、Azure 内で一意である必要もあります。
+    1. ストレージアカウントの名前を入力します。
+    <br>ストレージアカウント名の長さは 3 ~ 24 文字にする必要があり、数字と小文字のみを含めることができます。 ストレージアカウント名は、Azure 内で一意である必要もあります。
         
     2. **[アカウントの種類]** で **、[汎用] を選択し**ます。
     <br>クラウドミラーリング監視サーバーには、Blob ストレージアカウントを使用できません。
-    3. **[パフォーマンス]** では、 **[Standard]** を選択します。
+    3. **[パフォーマンス]** で **[標準]** を選択します。
     <br>クラウド監視に Azure Premium Storage を使用することはできません。
     2. **レプリケーション**の場合は、 **[ローカル冗長ストレージ (LRS)]** を選択します。
     <br>フェールオーバークラスタリングでは、データの読み取り時に一定の整合性を保証する必要がある、アービトレーションポイントとして blob ファイルを使用します。 そのため、**レプリケーション**の種類には **、ローカル冗長ストレージ**を選択する必要があります。
@@ -172,5 +172,5 @@ Set-ClusterQuorum -CloudWitness -AccountName <StorageAccountName> -AccessKey <St
 ### <a name="proxy-considerations-with-cloud-witness"></a>クラウド監視でのプロキシに関する考慮事項  
 クラウド監視では、HTTPS (既定のポート 443) を使用して Azure blob service との通信を確立します。 ネットワークプロキシ経由で HTTPS ポートにアクセスできることを確認します。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 - [Windows Server でのフェールオーバークラスタリングの新機能](whats-new-in-failover-clustering.md)

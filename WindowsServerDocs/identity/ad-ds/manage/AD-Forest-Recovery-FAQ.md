@@ -1,6 +1,5 @@
 ---
 title: AD フォレストの回復 - FAQ
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,22 +8,22 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: ac9e5a3d-8b1e-41b7-8e02-f64b7acf1359
 ms.technology: identity-adds
-ms.openlocfilehash: 49cd12621c6ddf89393f0463e4856555ca241491
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f32111cf7cc81f8f49b7b1058cc1a0ccc780da7f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369109"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80824005"
 ---
 # <a name="ad-forest-recovery---faq"></a>AD フォレストの回復 - FAQ
 
->適用先:Windows Server 2016、Windows Server 2012、および 2012 R2、Windows Server 2008 および 2008 R2、Windows Server 2003
+>適用対象: Windows Server 2016、Windows Server 2012、および 2012 R2、Windows Server 2008 および 2008 R2、Windows Server 2003
 
 このドキュメントには、フォレストの回復に関してよく寄せられる質問 (Faq) が記載されています。  
 
 ## <a name="general-recovery"></a>一般的な回復
 
-**Q.回復を高速化するにはどうすればよいですか?**
+**Q: 回復を高速化するにはどうすればよいですか。**
 
 このガイドの主な目的は回復速度ではありませんが、次の方法で回復時間を短縮することができます。  
   
@@ -46,18 +45,18 @@ ms.locfileid: "71369109"
 - Dc を再構築すると、ネットワークベースの昇格のためにデータをレプリケートするのに時間がかかります。  
    - 次の手順を実行して、Dc の復元に必要な時間を短縮できます。  
 - 次の方法でバックアップメディアを取得する時間を短縮します。  
-   - Active Directory データベースマウントツール (Dsamain) を使用して、復元操作に使用する最適なバックアップを特定します。 Active Directory データベースマウントツールの使用方法の詳細については、 [Active Directory データベースマウントツールのステップバイステップガイド](https://go.microsoft.com/fwlink/?LinkId=132577)(https://go.microsoft.com/fwlink/?LinkId=132577) 」を参照してください。  
+   - Active Directory データベースマウントツール (Dsamain) を使用して、復元操作に使用する最適なバックアップを特定します。 Active Directory データベースマウントツールの使用方法の詳細については、「 [Active Directory データベースマウントツールのステップバイステップガイド](https://go.microsoft.com/fwlink/?LinkId=132577)(https://go.microsoft.com/fwlink/?LinkId=132577)」を参照してください。  
    - バックアップメディアに明確にラベルを付け、簡単で安全な場所にメディアを保存して、すばやく検索できるようにします。  
-   - 記憶域ネットワーク (SAN) でボリュームシャドウコピーサービスを使用して、さまざまな時点からのバックアップを維持する。 詳細については、「 [Windows Server 2003 Active Directory Fast Recovery with ボリュームシャドウコピーサービス And Virtual Disk Service](https://go.microsoft.com/fwlink/?LinkId=70781) (https://go.microsoft.com/fwlink/?LinkId=70781) 」を参照してください。  
+   - 記憶域ネットワーク (SAN) でボリュームシャドウコピーサービスを使用して、さまざまな時点からのバックアップを維持する。 詳細については、「 [Windows Server 2003 Active Directory Fast Recovery with ボリュームシャドウコピーサービス And Virtual Disk Service](https://go.microsoft.com/fwlink/?LinkId=70781) (https://go.microsoft.com/fwlink/?LinkId=70781)」を参照してください。  
 - オペレーティングシステムを再インストールするのではなく、Dc から AD DS を強制的に削除します。 フォレスト全体の障害の原因が AD DS の範囲内であると特定されている場合は、Dc にオペレーティングシステムを再インストールする必要はありません。  
-   - Windows Server 2008 以降を実行している DC から AD DS を強制的に削除する方法の詳細については、「 [Windows server 2008 ドメインコントローラーを強制的に削除](https://go.microsoft.com/fwlink/?LinkId=132627)する (https://go.microsoft.com/fwlink/?LinkId=132627) 」を参照してください。 Windows Server 2003 を実行している DC から AD DS を強制的に削除する方法の詳細については、Microsoft サポート技術情報の[記事 332199](https://go.microsoft.com/fwlink/?LinkId=70780) (https://go.microsoft.com/fwlink/?LinkId=70780) を参照してください。  
+   - Windows Server 2008 以降を実行している DC から AD DS を強制的に削除する方法の詳細については、「 [Windows server 2008 ドメインコントローラーを強制的に削除](https://go.microsoft.com/fwlink/?LinkId=132627)する」 (https://go.microsoft.com/fwlink/?LinkId=132627)を参照してください。 Windows Server 2003 を実行している DC から AD DS を強制的に削除する方法の詳細については、Microsoft サポート技術情報の[記事 332199](https://go.microsoft.com/fwlink/?LinkId=70780) (https://go.microsoft.com/fwlink/?LinkId=70780)を参照してください。  
 - 高速なテープデバイスまたはディスクバックアップを使用して、復元操作に必要な時間を短縮します。  
   
 また、メディアからのインストール (IFM) 機能を使用して各ドメインで Dc を再構築することにより、AD DS のインストールを高速化することもできます。 IFM を使用すると、各ドメインで Dc を再構築するときに発生するレプリケーション待機時間を短縮できます。  
   
 より積極的なサービスレベルアグリーメント (SLA) を使用している企業は、回復を高速化するためにフォレストの回復手順を変更することを検討している可能性があります。  
   
-**Q.フォレストの回復プロセスを自動化できますか?**
+**Q: フォレストの回復プロセスを自動化できますか。**
 
 フォレストの回復プロセスには複雑で重大な性質があるため、現時点ではエンドツーエンドの自動化はありません。 フォレストの回復プロセスは、プロセス自動化の技術的な問題よりもビジネス継続性を復元するためのロジスティックおよび組織的な課題です。 そのため、環境を管理するユーザーは、その環境に固有のフォレスト復旧計画を作成し、正常に自動化できるセクションを自動化する必要があります。  
   

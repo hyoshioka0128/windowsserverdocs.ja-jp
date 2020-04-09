@@ -1,6 +1,5 @@
 ---
 title: AD フォレストの回復の仮想化
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,16 +8,16 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: c49b40b2-598d-49aa-85b4-766bce960e0d
 ms.technology: identity-adds
-ms.openlocfilehash: c055445c2d3aecd8c6d92e94799f556962c977bf
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9e99b6ab5deadf0f3499e4764cdb87b2ed3d65f9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390128"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80823375"
 ---
 # <a name="active-directory-forest-recovery-virtualization"></a>Active Directory フォレスト回復の仮想化
 
->適用先:Windows Server 2016、Windows Server 2012、および 2012 R2、Windows Server 2008 および 2008 R2
+>適用対象: Windows Server 2016、Windows Server 2012、および 2012 R2、Windows Server 2008 および 2008 R2
 
 このトピックでは、Windows Server 2016、2012 R2、および2012の仮想化ドメインコントローラーの複製機能について説明します。  
 
@@ -34,7 +33,7 @@ ms.locfileid: "71390128"
   
 仮想化 DC の複製を実行する詳細な手順については、「 [Active Directory Domain Services (AD DS) の仮想化 (レベル 100) の概要」を](../Introduction-to-Active-Directory-Domain-Services-AD-DS-Virtualization-Level-100.md)参照してください。 仮想化 DC の複製のしくみの詳細については、「[仮想化ドメインコントローラーのテクニカルリファレンス (レベル 300)](../deploy/virtual-dc/virtualized-domain-controller-technical-reference--level-300-.md)」を参照してください。 
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ:
 
 - [AD フォレストの回復 - 前提条件](AD-Forest-Recovery-Prerequisties.md)  
 - [AD フォレストの回復-カスタムフォレストの復旧計画の作成](AD-Forest-Recovery-Devising-a-Plan.md)  

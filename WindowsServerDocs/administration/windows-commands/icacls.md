@@ -1,24 +1,20 @@
 ---
 title: icacls
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Windows コマンドに関するトピック * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 403edfcc-328a-479d-b641-80c290ccf73e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 08/21/2018
-ms.openlocfilehash: 494c87073cfd78c7f5e17c72d4c65bec33a49b98
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 59d10b9ed681b7e0af120798dde9f200182d67d3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71375489"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80842265"
 ---
 # <a name="icacls"></a>icacls
 
@@ -33,7 +29,7 @@ icacls <FileName> [/grant[:r] <Sid>:<Perm>[...]] [/deny <Sid>:<Perm>[...]] [/rem
 icacls <Directory> [/substitute <SidOld> <SidNew> [...]] [/restore <ACLfile> [/c] [/l] [/q]]
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
 |パラメーター|説明|
 |---------|-----------|
@@ -56,7 +52,7 @@ icacls <Directory> [/substitute <SidOld> <SidNew> [...]] [/restore <ACLfile> [/c
 |/restore \<ACLfile > [/c] [/l] [/q]|保存された Dacl を*Aclfile*から指定されたディレクトリ内のファイルに適用します。 *Directory*パラメーターが必要です。|
 |/inheritancelevel: [e\|d\|r]|継承レベルを設定します。 <br>  **e** -enheritance を有効にする <br>**d** -継承を無効にして ace をコピーする <br>**r** -継承されたすべての ace を削除します。
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
 -   Sid は、数字またはフレンドリ名の形式で指定できます。 数値形式を使用する場合、接辞は、ワイルド **&#42;** カード文字を SID の先頭にします。
 -   **icacls**は、ACE エントリの正規の順序を次のように保持します。  
@@ -141,18 +137,18 @@ C:\Windows ディレクトリとそのサブディレクトリに存在する AC
 icacls c:\windows\ /restore aclfile
 ```
 
-ユーザー User1 に "Test1" という名前のファイルに対する DAC のアクセス許可を削除する権限を付与するには、次のように入力します。
+ユーザー User1 に対して、Test1 という名前のファイルに対する DAC アクセス許可の削除と書き込みを許可するには、次のように入力します。
 
 ```
 icacls test1 /grant User1:(d,wdac)
 ```
 
-SID S-1-1-0 で定義されたユーザーに対して、"Test2" という名前のファイルに対する DAC アクセス許可の削除と書き込みを許可するには、次のように入力します。
+SID S-1-1-0 で定義されたユーザーを許可するには、"Test2" という名前のファイルに DAC アクセス許可を削除して、次のように入力します。
 
 ```
 icacls test2 /grant *S-1-1-0:(d,wdac)
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

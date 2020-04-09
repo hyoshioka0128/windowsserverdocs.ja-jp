@@ -1,28 +1,22 @@
 ---
 title: chcp
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Windows コマンドの chcp に関するトピックでは、アクティブなコンソールのコードページを変更します。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: dc7b1c71-7b80-443d-9cf1-9bcf305aa1fd
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d5784b052ff1d7084d68cca0589caf518b8e44a8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e644cf8544d135c5d21c344b0fd0a3364c7f89c1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71379526"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80847945"
 ---
 # <a name="chcp"></a>chcp
-
-
 
 アクティブなコンソールのコードページを変更します。 パラメーターを指定せずに使用した場合、 **chcp**には、アクティブなコンソールコードページの数が表示されます。
 
@@ -34,12 +28,12 @@ ms.locfileid: "71379526"
 chcp [<NNN>]
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
 |パラメーター|説明|
 |---------|-----------|
 |\<NNN >|コードページを指定します。|
-|/?|コマンド プロンプトにヘルプを表示します。|
+|/?|コマンド プロンプトでヘルプを表示します。|
 
 次の表に、サポートされているコードページとその国/地域または言語を示します。
 
@@ -64,7 +58,7 @@ chcp [<NNN>]
 -   (MS-DOS の場合と同様に) コードページを準備する必要はありません。
 -   新しいコードページを割り当てた後に起動するプログラムでは、新しいコードページが使用されます。 ただし、新しいコードページを割り当てる前に開始したプログラム (Cmd.exe を除く) は、元のコードページを使用します。
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a><a name=BKMK_examples></a>例
 
 アクティブなコードページの設定を表示するには、次のように入力します。
 ```
@@ -82,6 +76,6 @@ chcp 850
 
 `Invalid code page`
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

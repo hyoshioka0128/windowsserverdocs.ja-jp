@@ -1,30 +1,26 @@
 ---
 title: diskcomp
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Windows コマンドに関するトピックでは、2つのフロッピーディスクの内容を比較しています。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4f56f534-a356-4daa-8b4f-38e089341e42
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ca5ea0f4587b21b2a274c772aab239668b7868b4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e36e644616e25659c1a2a5ca684e975fd06fc19f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71377870"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80845555"
 ---
 # <a name="diskcomp"></a>diskcomp
 
+2つのフロッピーディスクの内容を比較します。 パラメーターを指定せず**に使用**する場合は、現在のドライブを使用して両方のディスクを比較します。
 
-
-2つのフロッピーディスクの内容を比較します。 パラメーターを指定せず**に使用**する場合は、現在のドライブを使用して両方のディスクを比較します。このコマンドの使用方法の例については、「[例](#BKMK_examples)」を参照してください。
+このコマンドを使用する方法の例については、[例](#BKMK_examples)を参照してください。
 
 ## <a name="syntax"></a>構文
 
@@ -32,13 +28,13 @@ ms.locfileid: "71377870"
 diskcomp [<Drive1>: [<Drive2>:]]
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
 |パラメーター|説明|
 |---------|-----------|
-|\<ドライブ 1 >|フロッピーディスクの1つを含むドライブを指定します。|
-|\<ドライブ 2 >|他のフロッピーディスクを含むドライブを指定します。|
-|/?|コマンド プロンプトにヘルプを表示します。|
+|\<Drive1 >|フロッピーディスクの1つを含むドライブを指定します。|
+|\<Drive2 >|他のフロッピーディスクを含むドライブを指定します。|
+|/?|コマンド プロンプトでヘルプを表示します。|
 
 ## <a name="remarks"></a>コメント
 
@@ -107,7 +103,7 @@ diskcomp [<Drive1>: [<Drive2>:]]
 
   **によって**返される終了コードを処理するには、バッチプログラムの**if**コマンドラインで ERRORLEVEL 環境変数を使用します。
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a><a name=BKMK_examples></a>例
 
 コンピューターにフロッピーディスクドライブが1つしかない場合 (ドライブ A など)、2つのディスクを比較するには、次のように入力します。
 ```
@@ -131,7 +127,7 @@ goto exit
 echo ERROR: An irrecoverable error occurred 
 goto exit 
 :break 
-echo "You just pressed CTRL+C" to stop the comparison 
+echo You just pressed CTRL+C to stop the comparison 
 goto exit 
 :no_compare 
 echo Disks are not the same 
@@ -142,6 +138,6 @@ goto exit
 :exit
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

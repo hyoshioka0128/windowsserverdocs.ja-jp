@@ -1,35 +1,29 @@
 ---
 title: call
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Windows コマンドに関するトピックでは、親バッチプログラムを停止せずに、別のバッチプログラムから1つのバッチプログラムを呼び出します。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d34a41dc-e6c7-4467-bf6a-15cec704833e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 06/05/2018
-ms.openlocfilehash: 89097ec5d3711b3d8831f8c33b3778ed0752246f
-ms.sourcegitcommit: ee8fa8e1293f29229b5ce1b0f3d4a07ba99568f5
+ms.openlocfilehash: 58b2d03c76f53fa7bbf5c483c1a423cd4a011f94
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78280193"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80848235"
 ---
 # <a name="call"></a>call
 
-
-
-親バッチプログラムを停止せずに、別のバッチプログラムから1つのバッチプログラムを呼び出します。 **Call**コマンドは、呼び出しの対象としてラベルを受け取ります。
-
-> [!NOTE]
-> スクリプトまたはバッチファイルの外部で使用される場合、**呼び出し**はコマンドプロンプトには影響しません。
+親バッチプログラムを停止せずに、別のバッチプログラムから1つのバッチプログラムを呼び出します。 **Call**コマンドは、ラベルを呼び出しのターゲットとして受け入れます。
 
 このコマンドを使用する方法の例については、[例](#BKMK_examples)を参照してください。
+
+> [!NOTE]
+> スクリプトまたはバッチファイルの外部で使用される場合、呼び出しはコマンドプロンプトには影響しません。
 
 ## <a name="syntax"></a>構文
 
@@ -37,7 +31,7 @@ ms.locfileid: "78280193"
 call [Drive:][Path]<FileName> [<BatchParameters>] [:<Label> [<Arguments>]]
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
 |           パラメーター           |                                                                         説明                                                                          |
 |-------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -57,7 +51,7 @@ call [Drive:][Path]<FileName> [<BatchParameters>] [:<Label> [<Arguments>]]
 
 |バッチパラメーター|説明|
 |---------------|-----------|
-|% ~ 1|**%1**を展開し、囲まれた引用符 ("") を削除します。|
+|% ~ 1|**%1**を展開し、囲まれた引用符 () を削除します。|
 |% ~ f1|**%1**を完全修飾パスに展開します。|
 |% ~ d1|**%1**をドライブ文字のみに拡張します。|
 |% ~ p1|**%1**をパスのみに展開します。|
@@ -100,7 +94,7 @@ call [Drive:][Path]<FileName> [<BatchParameters>] [:<Label> [<Arguments>]]
 
     `call :<Label> <Arguments>`
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a><a name=BKMK_examples></a>例
 
 別の batch プログラムから Checknew .bat プログラムを実行するには、親 batch プログラムに次のコマンドを入力します。
 ```
@@ -111,6 +105,6 @@ call checknew
 call checknew %1 %2
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

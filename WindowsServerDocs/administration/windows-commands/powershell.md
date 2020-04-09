@@ -1,28 +1,24 @@
 ---
 title: PowerShell
 description: コマンドプロンプトから PowerShell コンソールを開く方法について説明します。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 694fc970-0b6c-4046-b1b5-7eb1a0d26609
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 2c43c71fce9bb25efcf3f03284160d5534475a8a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 327ac844bec0e4c89ee1443c193aa628de038dea
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71372197"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80837405"
 ---
 # <a name="powershell"></a>PowerShell
 
-Windows PowerShell は、特にシステム管理用に設計された、タスクベースのコマンドラインシェルおよびスクリプト言語です。 .NET Framework 上に構築された Windows PowerShell は、IT 技術者およびパワー ユーザーが Windows オペレーティング システムと Windows 上で実行するアプリケーションの管理の自動化を制御する際に役立ちます。
+Windows PowerShell は、特にシステム管理用に設計された、タスクベースのコマンドラインシェルおよびスクリプト言語です。 Windows PowerShell は、.NET Framework 上に構築されており、IT 担当者やパワー ユーザーは、Windows オペレーティング システムと Windows 上で動作するアプリケーションの管理を制御および自動化することができます。
 
 **PowerShell.exe** コマンド ライン ツールは、コマンド プロンプト ウィンドウで、Windows PowerShell セッションを開始します。 使用すると **PowerShell.exe**, 、セッションをカスタマイズする、省略可能パラメーターを使用することができます。 たとえば、特定の実行ポリシーまたは Windows PowerShell プロファイルを除外する 1 つを使用するセッションを開始することができます。 それ以外の場合、セッションは、Windows PowerShell コンソールで起動している任意のセッションと同じです。
 
@@ -71,6 +67,6 @@ Windows PowerShell は、Windows Server オペレーティング システムの
 ## <a name="additional-references"></a>その他の参照情報
 
 [about_PowerShell](https://go.microsoft.com/fwlink/?LinkID=113439)
-[about_PowerShell_Ise](https://go.microsoft.com/fwlink/?LinkId=256512)
-[Windows PowerShell](https://go.microsoft.com/fwlink/?LinkID=107116)
-[windows powershell を使用したスクリプト](https://technet.microsoft.com/scriptcenter/dd742419)の参照
+[About_PowerShell_Ise](https://go.microsoft.com/fwlink/?LinkId=256512)
+
+[Windows](https://go.microsoft.com/fwlink/?LinkID=107116) PowerShell[でのスクリプト作成 windows powershell を使用したスクリプトに関する](https://technet.microsoft.com/scriptcenter/dd742419)説明も参照してください。

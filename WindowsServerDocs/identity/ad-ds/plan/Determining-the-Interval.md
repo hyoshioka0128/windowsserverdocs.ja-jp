@@ -1,7 +1,6 @@
 ---
 ms.assetid: 96a6749c-6c9f-4f2f-ad0a-51272d282ace
 title: 間隔を決定する
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 065b4ff707bdd8b82e33e06ad2b52c57a746045f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f39ad2ce2ce84e36d2faff2a07b8310d3600b6c9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402631"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822575"
 ---
 # <a name="determining-the-interval"></a>間隔を決定する
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 レプリケーションが許可されている時間帯にレプリケーションを実行する頻度を示すには、"サイトリンクのレプリケーション間隔" プロパティを設定する必要があります。 たとえば、スケジュールで02:00 時間と04:00 時間の間のレプリケーションを許可し、レプリケーション間隔を30分に設定した場合、レプリケーションは、スケジュールされた時間内に最大4回実行できます。 既定のレプリケーション間隔は180分 (3 時間) です。 最小間隔は15分です。  
   
@@ -32,13 +31,13 @@ ms.locfileid: "71402631"
   
 -   次の例に示すように、ネットワーク上のすべてのサイトのテーブルを作成します。  
   
-    |Sites|Seattle|ボストン|Los Angeles|New York|ワシントン、D.C.|  
+    |サイト|Seattle|ボストン|Los Angeles|New York|ワシントン D.C.|  
     |---------|-----------|----------|---------------|------------|--------------------|  
     |Seattle|0.25|||||  
     |ボストン||0.25||||  
     |Los Angeles|||0.25|||  
     |New York||||0.25||  
-    |ワシントン、D.C.|||||0.25|  
+    |ワシントン D.C.|||||0.25|  
   
     サイト内の最悪の待機時間は、15分と推定されます。  
   
@@ -52,15 +51,15 @@ ms.locfileid: "71402631"
   
 -   これらの最大待機時間を組み合わせて、ネットワーク全体の最大待機時間を決定します。  
   
-    たとえば、シアトルとロサンゼルスのサテライトサイト間の最大待機時間が1日の場合、このリンクセットの最大レプリケーション待機時間 (ワシントン、ニューヨーク-ニューヨーク、シアトル-ロサンゼルス) は、31時間、つまり、4 (ワシントン州、ニューヨーク) + 3 (新規) です。ニューヨーク-シアトル) + 24 (シアトルロサンゼルス)。次の表を参照してください。  
+    たとえば、シアトルとロサンゼルスのサテライトサイト間の最大待機時間が1日の場合は、次の表に示すように、この一連のリンクのレプリケーションの最大待機時間 (ワシントン、ニューヨーク-ニューヨーク、シアトル-ロサンゼルス) は、31時間、つまり、4 (ワシントン州、ニューヨーク) + 3 (ニューヨーク-シアトル) + 24 (シアトルロサンゼルス) です。  
   
-    |Sites|Seattle|ボストン|Los Angeles|New York|ワシントン、D.C.|  
+    |サイト|Seattle|ボストン|Los Angeles|New York|ワシントン D.C.|  
     |---------|-----------|----------|---------------|------------|--------------------|  
     |Seattle|0.25|4 + 3|24.00|3.00|4 + 3|  
     |ボストン||0.25|4 + 3 + 24|4.00|4.00|  
     |Los Angeles|||0.25|24 + 3|24 + 3 + 4|  
     |New York||||0.25|4.00|  
-    |ワシントン、D.C.|||||0.25|  
+    |ワシントン D.C.|||||0.25|  
   
 
 

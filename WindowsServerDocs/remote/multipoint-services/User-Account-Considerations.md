@@ -1,27 +1,23 @@
 ---
 title: ユーザー アカウントに関する考慮事項
 description: MultiPoint Services のユーザーアカウント、ユーザー名、およびパスワードに関する考慮事項を提供します。
-ms.custom: na
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e225900b-cee9-48c9-b21c-394dc5e72b78
 author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: c81d14d46e96d39676e1fb6fa31892e0d5e1b683
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 732100a79adbdd7d9fbe4ade742c43084d6b54f6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71389256"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820575"
 ---
 # <a name="user-account-considerations"></a>ユーザー アカウントに関する考慮事項
-このトピックでは、管理ユーザーとして考慮すべき作成し、ユーザー アカウントを管理する際の問題について説明します。 MultiPoint マネージャーの [Users] タブ内のユーザー アカウントを管理します。 詳細については、「[ユーザー アカウントの管理](Manage-User-Accounts.md)」トピックを参照してください。  
+このトピックでは、管理ユーザーがユーザー アカウントを作成し、管理するときに考慮するべき問題について説明します。 MultiPoint マネージャーの [Users] タブ内のユーザー アカウントを管理します。 詳細については、「[ユーザー アカウントの管理](Manage-User-Accounts.md)」トピックを参照してください。  
   
 ## <a name="user-account-types"></a>ユーザー アカウントの種類  
 ユーザーアカウントは、ユーザーがアクセスできるファイルとフォルダー、MultiPoint Services システムに対してどのような変更を加えることができるか、およびデスクトップの背景などの各ユーザーの設定を MultiPoint Services に伝えるための情報のコレクションです。 各ユーザーが一意のユーザー名とパスワードを使用して自分のユーザー アカウントにアクセスします。 MultiPoint サービスには、次の 3 つの種類のユーザー アカウントがサポートされています。  

@@ -5,15 +5,16 @@ ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
+manager: lizross
 ms.technology: storage-failover-clustering
 ms.date: 06/06/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: d85866284272d80727d3fdb21c6e6447bd3ded2f
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 03e5f875b19a9d903f7cefa9d2174b6e60b44c13
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322814"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80827815"
 ---
 # <a name="create-a-failover-cluster"></a>フェールオーバー クラスターを作成する
 

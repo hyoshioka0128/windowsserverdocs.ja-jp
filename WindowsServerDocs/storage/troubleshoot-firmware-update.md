@@ -3,21 +3,21 @@ ms.assetid: 13210461-1e92-48a1-91a2-c251957ba256
 title: ドライブのファームウェア更新のトラブルシューティング
 ms.prod: windows-server
 ms.author: toklima
-ms.manager: masriniv
+manager: masriniv
 ms.technology: storage
 ms.topic: article
 author: toklima
 ms.date: 04/18/2017
-ms.openlocfilehash: 9c9c1083def53e09b063a0ca9879e4d4527e98c0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b62fdfe64ea579f61239dc582c639fb10ec1371c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365886"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820885"
 ---
 # <a name="troubleshooting-drive-firmware-updates"></a>ドライブのファームウェア更新のトラブルシューティング
 
->適用対象:Windows 10、Windows Server (半期チャネル)、
+>適用対象: Windows 10、Windows Server (半期チャネル)
 
 Windows 10 バージョン 1703 以降と Windows Server (半期チャネル) には、ファームウェア更新可能 AQ (追加修飾子) によって認定済みの HDD と SSD のファームウエアを PowerShell を介して更新する機能が含まれています。
 
@@ -142,7 +142,7 @@ ClassPnP 運用チャネルを超えると、StorAHCI と Storahci によって�
 
 このような詳細なログ エントリを収集するには、ログを有効にしたうえでファームウェア更新時の障害を再現し、診断ログを保存します。
 
-次に、SATA デバイスでのファームウェア更新の失敗の例を示します。ダウンロードするイメージが無効であるためです (イベント ID:258):
+以下では、ダウンロードしたイメージが無効であったために、SATA デバイスのファームウェア更新が失敗した例を示します (イベント ID: 258)。
 
 ``` 
 EventData
@@ -174,11 +174,11 @@ Parameter8Value 0
 ```
 
 上記のイベントでは、パラメーター値 2 ～ 6 にデバイスの詳細情報が含まれています。 ここで、これらの ATA レジスタ値を検討してみましょう。 Download Microcode コマンドの失敗に関する以下の値は、ATA ACS 仕様を参照して解釈できます。
-- リターンコード:0 (0000 0000) (ペイロードが転送されなかったため、N/A-意味なし)
+- リターン コード: 0 (0000 0000) (該当せず - ペイロードが転送されていないため何も意味しません)
 - 機能:15 (0000 1111) (ビット1は ' 1 ' に設定され、"abort" を示します)
-- SectorCount:0 (0000 0000) (N/A)
-- ドライブの先頭:160 (1010 0000) (N/A –古いビットのみが設定されています)
-- メニュー146 (1001 0010) (sense データの可用性を示すビット1は ' 1 ' に設定されています)
+- SectorCount: 0 (0000 0000) (該当せず)
+- DriveHead: 160 (1010 0000) (該当せず - 設定されているのは廃止されたビットのみです)
+- コマンド: 146 (1001 0010) (sense データの可用性を示す ' 1 ' に設定されているビット 1)
 
 この情報から、ファームウェア更新操作はデバイスによって中止されたことがわかります。
 

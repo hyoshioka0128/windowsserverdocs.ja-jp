@@ -1,28 +1,24 @@
 ---
 title: nslookup
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Windows コマンドに関するトピック * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 41516932-7833-434a-aa92-b4cf0f9a7ef7
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6b47592be57d5999ac26465097490da266bd0aea
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 15062d81992ee1b6e55d47cb9e49822350e4f2bc
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71372698"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80838095"
 ---
 # <a name="nslookup"></a>nslookup
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 ドメインネームシステム (DNS) インフラストラクチャの診断に使用できる情報を表示します。 このツールを使用する前に、DNS のしくみについて理解しておく必要があります。 Nslookup コマンドラインツールは、TCP/IP プロトコルがインストールされている場合にのみ使用できます。
 ## <a name="syntax"></a>構文
@@ -57,7 +53,7 @@ nslookup /set [no]vc
 nslookup /view <FileName>
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
 |                       パラメーター                       |                                                                                                         説明                                                                                                         |
 |-------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -100,21 +96,21 @@ nslookup /view <FileName>
   -   組み込みコマンドをコンピューター名として扱うには、その前にエスケープ文字 (\\) を付けます。
   -   認識されないコマンドは、コンピューター名として解釈されます。
 - 参照要求が失敗した場合は、 **nslookup**によってエラーメッセージが出力されます。 次の表に、考えられるエラーメッセージを示します。
-  |**エラーメッセージ**|**[説明]**|
+  |**エラーメッセージ**|**説明**|
   |-----------|----------|
   |`timed out`|サーバーは、一定の時間が経過してから特定の回数の再試行を行った後に、要求に応答しませんでした。 タイムアウト期間は、 **set timeout**サブコマンドを使用して設定できます。 再試行の回数は、 **set retry**サブコマンドを使用して設定できます。|
   |`No response from server`|サーバーコンピューターで DNS ネームサーバーが実行されていません。|
   |`No records`|DNS ネームサーバーには、コンピューターの現在のクエリの種類のリソースレコードがありません。ただし、コンピューター名は有効です。 クエリの種類は、 **set querytype**コマンドを使用して指定します。|
   |`Nonexistent domain`|コンピューター名または DNS ドメイン名が存在しません。|
-  |`Connection refused`<br /><br />\- または -<br /><br />`Network is unreachable`|DNS ネームサーバーまたはフィンガーサーバーへの接続を確立できませんでした。 このエラーは、通常、 **ls**および**finger**要求で発生します。|
+  |`Connection refused`<p>または<p>`Network is unreachable`|DNS ネームサーバーまたはフィンガーサーバーへの接続を確立できませんでした。 このエラーは、通常、 **ls**および**finger**要求で発生します。|
   |`Server failure`|DNS ネームサーバーがデータベース内で内部の不整合を検出したため、有効な回答を返すことができませんでした。|
   |`Refused`|DNS ネームサーバーが要求の処理を拒否しました。|
   |`format error`|DNS ネームサーバーで、要求パケットの形式が正しくないことが検出されました。 **Nslookup**でエラーが発生している可能性があります。|
 - **Nslookup**コマンドと DNS の詳細については、次のリソースを参照してください。
-  - Lee、T.、Davies、J。2000。 *Microsoft Windows 2000 Tcp/ip プロトコルおよびサービスに関するテクニカルリファレンス*。 ワシントン州レドモンド:Microsoft Press。
-  - Albitz、P.、Loukides、m.、および c. Liu。 2001。 *DNS と BIND、第4版*。 カリフォルニア州 Sebastopol:O'Reilly と関連, Inc.
-  - Larson、m.、および c. Liu。 2001。 *Windows 2000 の DNS*。 カリフォルニア州 Sebastopol:O'Reilly と関連, Inc.
-    #### <a name="examples"></a>使用例
+  - Lee、T.、Davies、j. 2000。 *Microsoft Windows 2000 Tcp/ip プロトコルおよびサービスに関するテクニカルリファレンス*。 ワシントン州レドモンド: Microsoft Press。
+  - Albitz、P.、Loukides、m.、および c. Liu。 2001。 *DNS と BIND、第4版*。 Sebastopol, カリフォルニア: O'Reilly and アソシエイト, Inc.
+  - Larson、m.、および c. Liu。 2001。 *Windows 2000 の DNS*。 Sebastopol, カリフォルニア: O'Reilly and アソシエイト, Inc.
+    #### <a name="examples"></a>例
     各コマンドラインオプションは、ハイフン (-) の直後にコマンド名を入力し、場合によっては等号 (=) と値を指定します。 たとえば、既定のクエリの種類をホスト (コンピューター) 情報に変更し、初期タイムアウトを10秒に変更するには、「 **nslookup-querytype = hinfo-timeout = 10** 」と入力します。
-    ## <a name="see-also"></a>関連項目
-    [コマンド ライン構文の記号](command-line-syntax-key.md)
+    ## <a name="see-also"></a>参照
+    - [コマンド ライン構文の記号](command-line-syntax-key.md)

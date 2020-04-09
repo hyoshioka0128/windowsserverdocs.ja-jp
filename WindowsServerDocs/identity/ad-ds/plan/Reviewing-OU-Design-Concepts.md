@@ -1,7 +1,6 @@
 ---
 ms.assetid: 41b56704-c6f9-4d29-af97-62123e300565
 title: OU の設計概念を確認する
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 6dc2cbb7ddff8725876f8dd4ec2760e828fd4e4c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 67f8ef3ec37146002f3e099caa459fc209fcf5b7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402515"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80821976"
 ---
 # <a name="reviewing-ou-design-concepts"></a>OU の設計概念を確認する
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 ドメインの組織単位 (OU) 構造には、次のものが含まれます。  
   
@@ -42,7 +41,7 @@ OU 構造を設計して、組織内の個人またはグループに管理を�
   
 特定の目的のために Ou のサブツリーを作成することによって、OU の構造をさらに絞り込むことができます。たとえば、グループポリシーのアプリケーションや、特定のユーザーのみが表示できるように保護されたオブジェクトの可視性を制限することができます。 たとえば、グループポリシーをユーザーまたはリソースのグループに適用する必要がある場合は、それらのユーザーまたはリソースを OU に追加し、その OU にグループポリシーを適用することができます。 また、OU 階層を使用して、管理制御の委任を有効にすることもできます。  
   
-OU 構造内のレベル数に技術的な制限はありませんが、管理しやすいように、OU 構造を10レベル以下の深さに制限することをお勧めします。 各レベルの Ou 数に技術的な制限はありません。 Active Directory Domain Services (AD DS) が有効になっているアプリケーションでは、識別名に使用される文字数 (ディレクトリ内のオブジェクトへの完全ライトウェイトディレクトリアクセスプロトコル (LDAP) パス)、または階層内の OU の深さ。  
+OU 構造内のレベル数に技術的な制限はありませんが、管理しやすいように、OU 構造を10レベル以下の深さに制限することをお勧めします。 各レベルの Ou 数に技術的な制限はありません。 Active Directory Domain Services (AD DS) が有効になっているアプリケーションでは、識別名に使用される文字の数 (ディレクトリ内のオブジェクトへの完全ライトウェイトディレクトリアクセスプロトコル (LDAP) パス)、または階層内の OU の深さに制限があることに注意してください。  
   
 AD DS の OU 構造は、エンドユーザーに表示するためのものではありません。 OU 構造は、サービス管理者およびデータ管理者向けの管理ツールであり、簡単に変更できます。 管理構造の変更を反映し、ポリシーベースの管理をサポートするために、引き続き OU 構造の設計の確認と更新を行います。  
   

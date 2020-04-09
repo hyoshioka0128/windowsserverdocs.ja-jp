@@ -2,22 +2,18 @@
 title: DirectAccess の容量計画
 description: Windows server 2012 の DirectAccess サーバーのパフォーマンスに関するレポートについては、このトピックを使用して、Windows Server 2016 での DirectAccess の容量計画に役立てることができます。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 456e5971-3aa7-4a24-bc5d-0c21fec7687e
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: e63b4c4f266d286b766c89b61676493328aa8652
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 413dc88ce9ec551a318b63f3df44ed256f289219
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80310985"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815795"
 ---
 # <a name="directaccess-capacity-planning"></a>DirectAccess の容量計画
 
@@ -37,7 +33,7 @@ ms.locfileid: "80310985"
 ||||  
 |-|-|-|  
 |構成-ハードウェア|ローエンド ハードウェア (4 GB RAM、4 コア)|ハイエンド ハードウェア (8 GB、8 コア)|  
-|ダブル トンネル<br /><br />-PKI<br /><br />-DNS64/NAT64 を含む|750 の同時接続、50% CPU、50% メモリ、Corpnet NIC スループット 75 Mbps。 拡大のターゲットは 1,000 ユーザー @ 50% CPU です。|1500 の同時接続、50% CPU、50 % メモリ、Corpnet NIC スループット 150 Mbps。|  
+|ダブル トンネル<p>-PKI<p>-DNS64/NAT64 を含む|750 の同時接続、50% CPU、50% メモリ、Corpnet NIC スループット 75 Mbps。 拡大のターゲットは 1,000 ユーザー @ 50% CPU です。|1500 の同時接続、50% CPU、50 % メモリ、Corpnet NIC スループット 150 Mbps。|  
 ## <a name="test-environment"></a>テスト環境
 
 **パフォーマンスベンチトポロジ**  

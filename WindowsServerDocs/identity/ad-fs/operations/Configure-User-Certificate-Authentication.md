@@ -1,7 +1,6 @@
 ---
 ms.assetid: 1ea2e1be-874f-4df3-bc9a-eb215002da91
 title: ユーザー証明書認証の AD FS サポートを構成する
-description: ''
 author: jenfieldmsft
 ms.author: billmath
 manager: samueld
@@ -9,12 +8,12 @@ ms.date: 01/18/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 6c8a3b30a337c164227bf344b5704cc7e782461a
-ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
+ms.openlocfilehash: 5f2416e45fad8ca47cd756526dc6a554b3a952b1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77517517"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80817075"
 ---
 # <a name="configuring-ad-fs-for-user-certificate-authentication"></a>ユーザー証明書認証の AD FS の構成
 
@@ -27,7 +26,7 @@ ms.locfileid: "77517517"
 1) [この記事](ad-fs-support-for-alternate-hostname-binding-for-certificate-authentication.md)で説明されているいずれかのモードを使用して、有効にする AD FS ユーザー証明書認証のモードを決定します。
 2) ユーザー証明書信頼チェーンが、すべての AD FS および WAP サーバー (中間証明機関を含む) によって信頼されている & インストールされていることを確認します。 通常、これは AD FS/WAP サーバー上の GPO を使用して行われます。
 3)  ユーザー証明書の信頼チェーンのルート証明書が、の NTAuth ストアにあることを確認し Active Directory
-4) 代替証明書認証モードで AD FS を使用する場合は、AD FS および WAP サーバーに "certauth" (たとえば "certauth.fs.contoso.com") というプレフィックスの付いた AD FS hostname を含む SSL 証明書があり、このホスト名へのトラフィックが許可されていることを確認します。ファイアウォール経由
+4) 代替証明書認証モードで AD FS を使用する場合は、AD FS および WAP サーバーに "certauth" (たとえば "certauth.fs.contoso.com") というプレフィックスの付いた AD FS hostname を含む SSL 証明書があり、このホスト名へのトラフィックがファイアウォール経由で許可されていることを確認します。
 5) エクストラネットから証明書認証を使用する場合は、証明書に指定されている一覧から、少なくとも1つの AIA と1つ以上の CDP または OCSP の場所にインターネットからアクセスできることを確認してください。
 6) また Azure AD 証明書認証の場合、Exchange ActiveSync クライアントの場合、クライアント証明書には、[サブジェクトの別名] フィールドのプリンシパル名または RFC822 名の値のいずれかで、Exchange online のユーザーのルーティング可能な電子メールアドレスが設定されている必要があります。 (Azure Active Directory は、RFC822 値をディレクトリ内のプロキシアドレス属性にマップします)。
 

@@ -2,19 +2,18 @@
 title: Windows Server 向けの上位のサポート ソリューション
 description: Windows Server の問題のソリューションへのリンクを示します。
 ms.prod: windows-server
-ms.service: na
 manager: alant
 ms.technology: server-general
 ms.date: 03/16/2018
 ms.topic: article
 author: kaushika-msft
 ms.author: elizapo
-ms.openlocfilehash: 61c10f25ac97934f73c4f393e2c91c9b36fc59fd
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 6bd0d22c7df7344e6c4bfbf8360532ab0f36d117
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950176"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820755"
 ---
 # <a name="top-support-solutions-for-windows-server-2016"></a>Windows Server 2016 向けの上位のサポート ソリューション
 
@@ -31,7 +30,7 @@ Microsoft では Windows Server 用の更新プログラムとソリューショ
 - [Windows 10 バージョン1607および Windows Server 2016 のサービススタック更新プログラム: 2017 年8月8日](https://support.microsoft.com/help/4035631)
 - [Windows 10 バージョン1607および Windows Server 2016 にアップグレードするための互換性更新プログラム: 2017 年8月3日](https://support.microsoft.com/help/4033524)
 - [Windows ベースの Azure Vm では、インプレースシステムアップグレードはサポートされていません](https://support.microsoft.com/help/4014997)
-- [Windows Server 2016 のアップグレードと変換オプション](../get-started/supported-upgrade-paths.md)
+- [Windows Server 2016 のアップグレードオプションと変換オプション](../get-started/supported-upgrade-paths.md)
 - [Windows Server 2016 のサーバーの役割のアップグレードと移行に関するマトリックス](../get-started/server-role-upgradeability-table.md)
 - [Windows Server のインストールとアップグレード](../get-started/installation-and-upgrade.md)
 - [リリースノート: Windows Server 2016 に関する重要な問題](../get-started/windows-server-2016-ga-release-notes.md)
@@ -39,7 +38,7 @@ Microsoft では Windows Server 用の更新プログラムとソリューショ
 
 ## <a name="solutions-for-volume-activation"></a>ボリューム ライセンス認証のソリューション
 - [Windows Server 2016 のアクティブ化](../get-started/server-2016-activation.md)
-- [ライセンス認証の方法の確認と選択](https://technet.microsoft.com/library/jj134256(ws.11).aspx)
+- [ライセンス認証方法の確認と選択](https://technet.microsoft.com/library/jj134256(ws.11).aspx)
 - [ボリュームライセンス認証のライセンス認証エラーコード](https://technet.microsoft.com/library/dn502528.aspx)
 - [キー管理サービス (KMS) のトラブルシューティング方法](https://technet.microsoft.com/library/ee939272.aspx)
 - [ボリュームライセンス認証のトラブルシューティング](https://technet.microsoft.com/library/ff793439.aspx)
@@ -52,11 +51,11 @@ Microsoft では Windows Server 用の更新プログラムとソリューショ
 - [Windows Server 2016 用 Exchange Server のサポート](https://technet.microsoft.com/library/ff728623(v=exchg.150).aspx)
 - [Ntdsutil.exe を使用してドメインコントローラーに FSMO の役割を転送または強制する](https://support.microsoft.com/kb/255504)
 - [ドメイン コントローラーの展開のトラブルシューティング](../identity/ad-ds/deploy/troubleshooting-domain-controller-deployment.md)
-- [Active Directory インストール ウィザードの問題のトラブルシューティング](https://msdn.microsoft.com/library/bb727058.aspx)
+- [Active Directory インストールウィザードに関する問題のトラブルシューティング](https://msdn.microsoft.com/library/bb727058.aspx)
 - [AD DS のインストールと削除に関する既知の問題](https://technet.microsoft.com/library/cc754463(v=ws.10).aspx)
 
 ## <a name="solutions-for-active-directory-federation-services-ad-fs"></a>Active Directory フェデレーション サービス (AD FS) のソリューション
-- [Azure Active Directory への Windows ドメイン参加済みデバイスの自動登録の構成方法](/azure/active-directory/active-directory-conditional-access-automatic-device-registration-setup)
+- [Azure Active Directory に Windows ドメイン参加済みデバイスの自動登録を構成する方法](/azure/active-directory/active-directory-conditional-access-automatic-device-registration-setup)
 - [要求の発行の設定](/azure/active-directory/device-management-hybrid-azuread-joined-devices-setup#step-2-setup-issuance-of-claims)
 - [LDAP ディレクトリに保存されたユーザーを認証するように AD FS を構成する](../identity/ad-fs/operations/configure-ad-fs-to-authenticate-users-stored-in-ldap-directories.md)
 - [AD FS での証明書認証のための代替ホスト名バインドのサポート](../identity/ad-fs/operations/ad-fs-support-for-alternate-hostname-binding-for-certificate-authentication.md)

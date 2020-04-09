@@ -9,12 +9,12 @@ ms.date: 12/02/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 90389d726939baa7618c13e63e7485dd8fa09e6b
-ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
+ms.openlocfilehash: e2b2983d6de2c9d4274131354ed916f3216229f9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77465166"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80824995"
 ---
 # <a name="windows-server-active-directory-schema-updates"></a>Windows Server Active Directory スキーマの更新
 

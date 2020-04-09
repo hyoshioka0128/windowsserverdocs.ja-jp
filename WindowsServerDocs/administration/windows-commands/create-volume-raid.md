@@ -1,64 +1,58 @@
 ---
-title: ボリューム raid の作成
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+title: create volume raid
+description: ボリューム raid の作成に関する Windows コマンドのトピック。3つ以上の指定されたダイナミックディスクを使用して RAID-5 ボリュームを作成します。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 9f257950-9240-4d5f-9537-8ad653d48ebf
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5a3c13cb5b78ae3e771b461a35a7130a48e7ec01
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 656656aa8f1783920097a270bee24aabeb3d005a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71378863"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80846925"
 ---
-# <a name="create-volume-raid"></a>ボリューム raid の作成
+# <a name="create-volume-raid"></a>create volume raid
 
 >適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-3つ以上の指定されたダイナミックディスクを使用して、RAID\-5 ボリュームを作成します。  
-  
+指定された3つ以上のダイナミックディスクを使用して RAID-5 ボリュームを作成します。  
+
 > [!IMPORTANT]  
-> この DiskPart コマンドは、Windows Vista のどのエディションでも使用できません。  
-  
-  
-  
+> この DiskPart コマンドは、Windows Vista のどのエディションでも使用できません。
+
 ## <a name="syntax"></a>構文  
   
 ```  
 create volume raid [size=<n>] disk=<n>,<n>,<n>[,<n>,...] [align=<n>] [noerr]  
 ```  
   
-## <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>パラメーター  
   
 |           パラメーター           |                                                                                                                                                                                                                                              説明                                                                                                                                                                                                                                              |
 |-------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |           サイズ\=<n>           | ボリュームが各ディスク上で占有するディスク領域の容量 (mb \(MB\))。 サイズが指定されていない場合は、可能な限り最大の RAID\-5 ボリュームが作成されます。 使用可能な連続する空き領域が最も小さいディスクによって、RAID\-5 ボリュームのサイズが決まり、各ディスクから同じ容量の領域が割り当てられます。 RAID\-5 ボリュームの実際の使用可能なディスク領域は、ディスク領域の合計よりも小さくなります。これは、ディスク領域の一部がパリティに必要なためです。 |
 | ディスク\=<n>、<n>、<n>\[、<n>,...\] |                                                                                                                                               RAID\-5 ボリュームを作成するダイナミックディスク。 RAID\-5 ボリュームを作成するには、少なくとも3つのダイナミックディスクが必要です。 **\=<n>サイズ**と同じ大きさの領域が各ディスクに割り当てられます。                                                                                                                                                |
-|          align\=<n>           |                                                                                                                   すべてのボリュームエクステントを最も近い配置境界に配置します。 通常、パフォーマンスを向上させるために、LUN\) 配列 \(ハードウェア RAID 論理ユニット番号と共に使用します。 *n*は、ディスクの先頭から最も近いアラインメント境界までの \(KB\) kb 数です。                                                                                                                   |
-|             noerr             |                                                                                                                                                 スクリプトの場合のみ。 エラーが発生した場合、DiskPart はエラーが発生しなかったかのようにコマンドを処理し続けます。 このパラメーターは、エラー発生すると、DiskPart はエラー コードを生成して終了します。                                                                                                                                                  |
+|          \=<n> に揃える           |                                                                                                                   すべてのボリュームエクステントを最も近い配置境界に配置します。 通常、パフォーマンスを向上させるために、LUN\) 配列 \(ハードウェア RAID 論理ユニット番号と共に使用します。 *n*は、ディスクの先頭から最も近いアラインメント境界までの \(KB\) kb 数です。                                                                                                                   |
+|             noerr             |                                                                                                                                                 スクリプトの場合のみ。 エラーが発生しても、エラーが発生しなかったかのように DiskPart はコマンドの処理を続けます。 このパラメーターは、エラー発生すると、DiskPart はエラー コードを生成して終了します。                                                                                                                                                  |
   
-## <a name="remarks"></a>注釈  
+## <a name="remarks"></a>コメント  
   
--   ボリュームを作成すると、フォーカスは自動的に新しいボリュームに移ります。  
+-   ボリュームを作成すると、フォーカスは自動的に新しいボリュームに移動します。  
   
-## <a name="BKMK_examples"></a>例  
+## <a name="examples"></a><a name=BKMK_examples></a>例  
 ディスク1、2、3を使用して、サイズが 1000 mb の RAID\-5 ボリュームを作成するには、次のように入力します。  
   
 ```  
 create volume raid size=1000 disk=1,2,3  
 ```  
   
-#### <a name="additional-references"></a>その他の参照情報  
-[コマンド ライン構文の記号](command-line-syntax-key.md)  
+## <a name="additional-references"></a>その他の参照情報  
+- [コマンド ライン構文の記号](command-line-syntax-key.md)  
   
 
   

@@ -1,7 +1,6 @@
 ---
 ms.assetid: 155abe09-6360-4913-8dd9-7392d71ea4e6
 title: トラブルシューティング用コンピューターを構成する
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 53af8acd7da8f9008c88ad7c6c14b00e63801847
-ms.sourcegitcommit: 1f3ffff0af340868dcf3a2cfef5b8f8aea69d96d
+ms.openlocfilehash: d9d279615dc1f70ffdcff9e49a4aa619f0106a93
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78278557"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822975"
 ---
 # <a name="configuring-a-computer-for-troubleshooting"></a>トラブルシューティング用コンピューターを構成する
 
@@ -36,7 +35,7 @@ RSAT のインストールの詳細については、「[リモートサーバ�
 
 ### <a name="configure-reliability-and-performance-monitor"></a>信頼性とパフォーマンスモニターの構成
 
-Windows Server には、Windows 信頼性とパフォーマンスモニターが含まれています。これは、Microsoft 管理コンソール (MMC) スナップインであり、パフォーマンスログと警告、Server Performance Advisor など、以前のスタンドアロンツールの機能を組み合わせたものです。およびシステムモニター。 このスナップインには、データコレクターセットおよびイベントトレースセッションをカスタマイズするためのグラフィカルユーザーインターフェイス (GUI) が用意されています。
+Windows Server には、Windows 信頼性とパフォーマンスモニターが含まれています。これは、パフォーマンスログと警告、サーバーパフォーマンスアドバイザー、システムモニターなど、以前のスタンドアロンツールの機能を組み合わせた Microsoft 管理コンソール (MMC) スナップインです。 このスナップインには、データコレクターセットおよびイベントトレースセッションをカスタマイズするためのグラフィカルユーザーインターフェイス (GUI) が用意されています。
 
 信頼性とパフォーマンスモニターには、システムへの変更を追跡し、システムの安定性の変化と比較してそれらの関係をグラフィカルに表示する、信頼性モニターも含まれています。
 

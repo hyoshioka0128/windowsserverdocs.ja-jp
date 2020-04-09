@@ -1,24 +1,20 @@
 ---
 title: getmac
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Windows コマンドに関するトピック * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a749a348-7cd1-4336-9f33-bb42dd0e31e1
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c770f5da5159e0037af479f90fadb4cd83464c77
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6b593bf61bb08d2c1c7868b1bbb175ed64a8bcf7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71375809"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80842615"
 ---
 # <a name="getmac"></a>getmac
 
@@ -29,7 +25,7 @@ ms.locfileid: "71375809"
 ```
 getmac[.exe][/s <computer> [/u <Domain\<User> [/p <Password>]]][/fo {TABLE | list | CSV}][/nh][/v]
 ```
-### <a name="parameters"></a>パラメーター
+#### <a name="parameters"></a>パラメーター
 
 |             パラメーター              |                                                                                          説明                                                                                          |
 |------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -41,9 +37,9 @@ getmac[.exe][/s <computer> [/u <Domain\<User> [/p <Password>]]][/fo {TABLE | lis
 |                 /v                 |                                                                    出力に詳細情報を表示するように指定します。                                                                     |
 |                 /?                 |                                                                                                                                                                                               |
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 **getmac**は、MAC アドレスをネットワークアナライザーに入力する場合や、コンピューターの各ネットワークアダプターで現在使用されているプロトコルを知る必要がある場合に役立ちます。
-## <a name="BKMK_Examples"></a>例
+## <a name="examples"></a><a name=BKMK_Examples></a>例
 次の例は、 **getmac**コマンドを使用する方法を示しています。
 ```
 getmac /fo table /nh /v
@@ -64,4 +60,4 @@ getmac /s srvmain /u maindom\hiropln /p p@ssW23 /fo list /v
 getmac /s srvmain /u maindom\hiropln /p p@ssW23 /fo table /nh
 ```
 ## <a name="additional-references"></a>その他の参照情報
--   [コマンド ライン構文の記号](command-line-syntax-key.md)
+-   - [コマンド ライン構文の記号](command-line-syntax-key.md)

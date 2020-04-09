@@ -9,12 +9,12 @@ ms.author: jgerend
 manager: dongill
 ms.date: 06/26/2019
 ms.prod: windows-server
-ms.openlocfilehash: 5cb26bcff99d9cf3a1ee8b3a937ad6098a913c3d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9d68e2becbf9c6522be7e1ff6e6742d44f3a8247
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71362060"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80829235"
 ---
 # <a name="windows-commands"></a>Windows のコマンド
 
@@ -29,7 +29,25 @@ ms.locfileid: "71362060"
 [C](#c) | 
 [D](#d) | 
 [E](#e) | 
-[F](#f)1[G](#g)3[H](#h)5[I](#i)7[J](#j)9[K](#k)1[L](#l)3[M](#m)5[N](#n)7[O](#o)9[P](#p)1[Q](#q)3[R](#r)5[S](#s)7[T](#t)9[U](#u)1[V](#v)3[W](#w)5[X](#x) |Y |方向
+[F](#f) | 
+[G](#g) | 
+[H](#h) | 
+[I](#i) |
+[J](#j) | 
+[K](#k) m | 
+[L](#l) | 
+[M](#m) | 
+[N](#n) | 
+[O](#o) | 
+[P](#p) | 
+[Q](#q) | 
+[R](#r) | 
+[S](#s) | 
+[t](#t) | 
+[U](#u) | 
+[V](#v) | 
+[W](#w) | 
+[X](#x) |Y |方向
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -49,7 +67,7 @@ ms.locfileid: "71362060"
 
 コマンドシェルは、ユーザーアカウント管理や夜間バックアップなどの日常的なタスクをバッチ (.bat) ファイルで自動化するために Windows に組み込まれた最初のシェルでした。 Windows スクリプトホストを使用すると、コマンドシェルでより高度なスクリプトを実行できます。 詳細については、「 [cscript](cscript.md)または[wscript](wscript.md)」を参照してください。 ユーザーインターフェイスを使用する場合よりも、スクリプトを使用すると操作をより効率的に実行できます。 スクリプトは、コマンドラインで使用可能なすべてのコマンドを受け入れます。
 
-Windows には、次の2つのコマンドシェルがあります。コマンドシェルと[PowerShell](https://docs.microsoft.com/powershell/scripting/powershell-scripting?view=powershell-6)。 各シェルは、ユーザーとオペレーティングシステムまたはアプリケーションとの直接通信を提供するソフトウェアプログラムであり、IT 運用を自動化するための環境を提供します。
+Windows には、コマンドシェルと[PowerShell](https://docs.microsoft.com/powershell/scripting/powershell-scripting?view=powershell-6)という2つのコマンドシェルがあります。 各シェルは、ユーザーとオペレーティングシステムまたはアプリケーションとの直接通信を提供するソフトウェアプログラムであり、IT 運用を自動化するための環境を提供します。
 
 PowerShell は、コマンドシェルの機能を拡張して、コマンドレットと呼ばれる PowerShell コマンドを実行するように設計されています。 コマンドレットは Windows コマンドに似ていますが、より拡張可能なスクリプト言語を提供します。 Powershell では Windows コマンドと PowerShell コマンドレットを実行できますが、コマンドシェルで実行できるのは PowerShell コマンドレットではなく Windows コマンドだけです。
 
@@ -58,14 +76,14 @@ PowerShell は、コマンドシェルの機能を拡張して、コマンドレ
 >Powershell のオープンソースバージョンである[Powershell Core](https://docs.microsoft.com/powershell/scripting/whats-new/what-s-new-in-powershell-core-60?view=powershell-6)をダウンロードしてインストールすることもできます。 
 
 > [!CAUTION]
-> レジストリを正しく編集しないと、システムが正常に動作しなくなる場合があります。 レジストリに次の変更を加える前に、コンピューター上の重要なデータをバックアップする必要があります。
+> レジストリの編集を誤ると、システムに重大な損害を与える可能性があります。 レジストリに次の変更を加える前に、コンピューター上の重要なデータをバックアップする必要があります。
 
 > [!NOTE]
 > コンピューターまたはユーザーのログオンセッションでコマンドシェルのファイル名とディレクトリ名の入力候補を有効または無効にするには、 **regedit.exe**を実行し、次の**reg_DWOrd 値**を設定します。
 > 
-> HKEY_LOCAL_MACHINE\Software\Microsoft\Command のプロセッサ名 (_e)
+> HKEY_LOCAL_MACHINE \Software\Microsoft\Command Processor\ reg_DWOrd
 > 
-> **Reg_DWOrd**値を設定するには、特定の関数に対して制御文字の16進値を使用します (たとえば、 **0 9**は Tab、 **0 08**は Backspace です)。 ユーザー指定の設定はコンピューターの設定よりも優先され、コマンドラインオプションはレジストリ設定よりも優先されます。
+> **Reg_DWOrd**値を設定するには、特定の関数に対して制御文字の16進数の値を使用します (たとえば、 **0 9**は Tab、 **0 08**は Backspace です)。 ユーザー指定の設定はコンピューターの設定よりも優先され、コマンドラインオプションはレジストリ設定よりも優先されます。
 
 ## <a name="command-line-reference-a-z"></a>コマンドラインリファレンス A-z
 
@@ -76,7 +94,25 @@ PowerShell は、コマンドシェルの機能を拡張して、コマンドレ
 [C](#c) | 
 [D](#d) | 
 [E](#e) | 
-[F](#f)1[G](#g)3[H](#h)5[I](#i)7[J](#j)9[K](#k)1[L](#l)3[M](#m)5[N](#n)7[O](#o)9[P](#p)1[Q](#q)3[R](#r)5[S](#s)7[T](#t)9[U](#u)1[V](#v)3[W](#w)5[X](#x) |Y |方向
+[F](#f) | 
+[G](#g) | 
+[H](#h) | 
+[I](#i) |
+[J](#j) | 
+[K](#k) m | 
+[L](#l) | 
+[M](#m) | 
+[N](#n) | 
+[O](#o) | 
+[P](#p) | 
+[Q](#q) | 
+[R](#r) | 
+[S](#s) | 
+[t](#t) | 
+[U](#u) | 
+[V](#v) | 
+[W](#w) | 
+[X](#x) |Y |方向
 
 ### <a name="a"></a>A
 -   [append](append.md)
@@ -169,7 +205,7 @@ PowerShell は、コマンドシェルの機能を拡張して、コマンドレ
   -   [bootcfg timeout](bootcfg-timeout.md)
 - [break](break_1.md)
 
-### <a name="c"></a>c
+### <a name="c"></a>C
 - [cacls](cacls_1.md)
 - [call](call.md)
 - [cd](cd.md)
@@ -280,7 +316,7 @@ PowerShell は、コマンドシェルの機能を拡張して、コマンドレ
 -   [helpctr](helpctr.md)
 -   [hostname](hostname.md)
 
-### <a name="i"></a>I
+### <a name="i"></a>i
 -   [icacls](icacls.md)
 -   [if](if.md)
 -   [inuse](inuse.md)
@@ -348,13 +384,13 @@ PowerShell は、コマンドシェルの機能を拡張して、コマンドレ
   -   [manage-bde: プロテクター](manage-bde-protectors.md)
   -   [manage-bde: tpm](manage-bde-tpm.md)
   -   [manage-bde: setidentifier](manage-bde-setidentifier.md)
-  -   [manage:ForceRecovery](manage-bde-forcerecovery.md)
+  -   [manage-bde: ForceRecovery](manage-bde-forcerecovery.md)
   -   [manage-bde: changepassword](manage-bde-changepassword.md)
   -   [manage-bde: changepin](manage-bde-changepin.md)
   -   [manage-bde: 変更キー](manage-bde-changekey.md)
-  -   [manage:KeyPackage](manage-bde-keypackage.md)
+  -   [manage-bde: KeyPackage](manage-bde-keypackage.md)
   -   [manage-bde: upgrade](manage-bde-upgrade.md)
-  -   [manage:WipeFreeSpace](manage-bde-wipefreespace.md)
+  -   [manage-bde: WipeFreeSpace 領域](manage-bde-wipefreespace.md)
 - [mapadmin](mapadmin.md)
 - [Md](Md.md)
 - [mkdir](mkdir.md)
@@ -418,7 +454,7 @@ PowerShell は、コマンドシェルの機能を拡張して、コマンドレ
 
 ### <a name="p"></a>P
 -   [pagefileconfig](pagefileconfig.md)
--   [path](path.md)
+-   [パス](path.md)
 -   [pathping](pathping.md)
 -   [pause](pause.md)
 -   [pbadmin](pbadmin.md)
@@ -445,7 +481,7 @@ PowerShell は、コマンドシェルの機能を拡張して、コマンドレ
 ### <a name="q"></a>Q
 -   [qappsrv](qappsrv.md)
 -   [qprocess](qprocess.md)
--   [query](query.md)
+-   [クエリ](query.md)
 -   [quser](quser.md)
 -   [qwinsta](qwinsta.md)
 
@@ -582,9 +618,8 @@ PowerShell は、コマンドシェルの機能を拡張して、コマンドレ
 - [winnt32](winnt32.md)
 - [winpop](winpop.md)
 - [winrs](winrs.md)
-- [wlbs.exe](wlbs_1.md)
 - [wmic](wmic.md)
 - [wscript](wscript.md)
 
-### <a name="x"></a>x
+### <a name="x"></a>X
 -   [xcopy](xcopy.md)

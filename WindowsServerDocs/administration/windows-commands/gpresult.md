@@ -1,24 +1,20 @@
 ---
 title: gpresult
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Windows コマンドに関するトピック * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: dfaa3adf-2c83-486c-86d6-23f93c5c883c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bb61911450ea8c0c68af0cf1a35c2f571810504b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 480599a4040ab1fdcc3842cdb0eaa8c35afa873c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71375656"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80842465"
 ---
 # <a name="gpresult"></a>gpresult
 
@@ -33,7 +29,7 @@ ms.locfileid: "71375656"
 gpresult [/s <system> [/u <USERNAME> [/p [<PASSWOrd>]]]] [/user [<TARGETDOMAIN>\]<TARGETUSER>] [/scope {user | computer}] {/r | /v | /z | [/x | /h] <FILENAME> [/f] | /?}
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
 > [!NOTE]
 > **/?** を使用する場合を除き、出力オプションには、 **/r**、 **/v**、 **/z**、 **/x**、または **/h**を含める必要があります。
@@ -50,9 +46,9 @@ gpresult [/s <system> [/u <USERNAME> [/p [<PASSWOrd>]]]] [/user [<TARGETDOMAIN>\
 |                    /r                    |                                                                                             RSoP の概要データを表示します。                                                                                              |
 |                    /v                    |                                                    詳細なポリシー情報を表示します。 これには、優先順位1で適用された詳細設定が含まれます。                                                    |
 |                    /z                    |                                     グループポリシーに関する利用可能なすべての情報を表示します。 これには、1以上の優先順位で適用された詳細設定が含まれます。                                      |
-|                    /?                    |                                                                                         コマンド プロンプトにヘルプを表示します。                                                                                         |
+|                    /?                    |                                                                                         コマンド プロンプトでヘルプを表示します。                                                                                         |
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 - グループポリシーは、組織内のユーザーとコンピューターに対してプログラム、ネットワークリソース、およびオペレーティングシステムがどのように動作するかを定義および制御するための主要な管理ツールです。 Active directory 環境では、グループポリシーは、サイト、ドメイン、または組織単位のメンバーシップに基づいてユーザーまたはコンピューターに適用されます。
 - 重複したポリシー設定を任意のコンピューターまたはユーザーに適用できるため、グループポリシー機能によって、ユーザーがログオンしたときに生成されるポリシー設定のセットが生成されます。 **[gpresult]** を使用すると、ユーザーがログオンしたときに、指定したユーザーのコンピューターに適用されたポリシー設定の結果セットが表示されます。
 - **/V**および **/z**では多くの情報が生成されるため、出力をテキストファイルにリダイレクトすると便利です (たとえば、 **gpresult/z > test.txt**)。
@@ -79,4 +75,4 @@ gpresult [/s <system> [/u <USERNAME> [/p [<PASSWOrd>]]]] [/user [<TARGETDOMAIN>\
 ## <a name="additional-references"></a>その他の参照情報
 - [グループポリシー TechCenter](https://go.microsoft.com/fwlink/?LinkID=145531)
 
-- [コマンド ライン構文の記号](command-line-syntax-key.md)
+- - [コマンド ライン構文の記号](command-line-syntax-key.md)

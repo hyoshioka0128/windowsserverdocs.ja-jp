@@ -1,7 +1,6 @@
 ---
 ms.assetid: e727a33d-133b-43c9-b6a4-7c00f9cb6000
 title: ドメインモデルの確認
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,16 +8,16 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 00683b09aff5b3a3b097f7f8b423c51080b86d02
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b77f634d8548994d2f9e130faad9ca34aa226327
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408680"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80821955"
 ---
 # <a name="reviewing-the-domain-models"></a>ドメインモデルの確認
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 次の要因は、選択したドメイン設計モデルに影響します。  
   
@@ -30,7 +29,7 @@ ms.locfileid: "71408680"
 
 フォレストに展開するドメインの数を最小限に抑えることをお勧めします。 これにより、展開の全体的な複雑さが軽減され、その結果、総保有コストが削減されます。 次の表に、地域ドメインの追加に関連する管理コストを示します。  
 
-|コスト|影響|  
+|Cost|影響|  
 |--------|----------------|  
 |複数のサービス管理者グループの管理|各ドメインには、個別に管理する必要がある独自のサービス管理者グループがあります。 これらのサービス管理者グループのメンバーシップは、慎重に制御する必要があります。|  
 |複数のドメインに共通するグループポリシー設定間の一貫性の維持|フォレスト全体に適用する必要があるグループポリシー設定は、フォレスト内の個々のドメインに個別に適用する必要があります。|  

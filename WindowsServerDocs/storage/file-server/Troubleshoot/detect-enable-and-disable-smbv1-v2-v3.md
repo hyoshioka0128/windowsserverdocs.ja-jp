@@ -3,20 +3,19 @@ title: Windows で SMBv1、SMBv2、および SMBv3 を検出、有効化、お�
 description: Windows のクライアント環境とサーバー環境で、サーバーメッセージブロックプロトコル (SMBv1、SMBv2、および SMBv3) を有効または無効にする方法について説明します。
 author: Deland-Han
 manager: dcscontentpm
-audience: ITPro
 ms.topic: article
 ms.author: delhan
 ms.date: 12/25/2019
-ms.openlocfilehash: 9da4d6f2b5616dc6f8aec3fefb1ae7141ed88b0b
-ms.sourcegitcommit: 8cf04db0bc44fd98f4321dca334e38c6573fae6c
+ms.openlocfilehash: d6c47843dedaf45842f70d1bb408b59d63c03eb4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75654393"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815505"
 ---
 # <a name="how-to-detect-enable-and-disable-smbv1-smbv2-and-smbv3-in-windows"></a>Windows で SMBv1、SMBv2、および SMBv3 を検出、有効化、および無効化する方法
 
-## <a name="summary"></a>概要
+## <a name="summary"></a>要約
 
 この記事では、SMB クライアントおよびサーバーコンポーネントで、サーバーメッセージブロック (SMB) バージョン 1 (SMBv1)、SMB バージョン 2 (SMBv2)、および SMB バージョン 3 (SMBv3) を有効または無効にする方法について説明します。 
 
@@ -31,7 +30,7 @@ Windows 7 と Windows Server 2008 R2 で SMBv2 を無効にすると、次の機
 - 持続性のあるハンドル-一時的な切断が発生した場合に、接続がサーバーに透過的に再接続することを許可します。    
 - 強化されたメッセージ署名-HMAC SHA-256 MD5 をハッシュアルゴリズムと置き換える    
 - ファイル共有のスケーラビリティの向上-サーバーごとにユーザー、共有、開いているファイルの数が大幅に増加しました。    
-- シンボリック リンクのサポート    
+- シンボリックリンクのサポート    
 - クライアント oplock リースモデル-クライアントとサーバーの間で転送されるデータを制限し、待機時間の長いネットワークでのパフォーマンスを向上させ、SMB サーバーのスケーラビリティを向上させます。    
 - 大きな MTU のサポート-10 gigabye (GB) イーサネットの完全な使用    
 - エネルギー効率の向上-サーバーに対してファイルを開いているクライアントをスリープ状態にすることができます。    
@@ -46,7 +45,7 @@ Windows 8、Windows 8.1、Windows 10、Windows Server 2012、および Windows S
 - ディレクトリリース-ブランチオフィスのキャッシュによってアプリケーションの応答時間が向上します。    
 - パフォーマンスの最適化-小規模なランダム読み取り/書き込み i/o の最適化
 
-##  <a name="more-information"></a>説明
+##  <a name="more-information"></a>詳細
 
 SMBv2 プロトコルは、Windows Vista および Windows Server 2008 で導入されました。
 
@@ -54,7 +53,7 @@ SMBv3 プロトコルは、Windows 8 および Windows Server 2012 で導入さ�
 
 SMBv2 および SMBv3 機能の機能の詳細については、次の記事を参照してください。
 
-[サーバーメッセージブロックの概要](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831795(v=ws.11))
+[サーバー メッセージ ブロックの概要](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831795(v=ws.11))
 
 [SMB の新機能](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff625695(v=ws.10))  
 
@@ -76,7 +75,7 @@ SMBv2 および SMBv3 機能の機能の詳細については、次の記事を�
   Disable-WindowsOptionalFeature -Online -FeatureName smb1protocol
   ```
 
-- 有効にする: 
+- を 
 
   ```PowerShell
   Enable-WindowsOptionalFeature -Online -FeatureName smb1protocol
@@ -96,7 +95,7 @@ SMBv2 および SMBv3 機能の機能の詳細については、次の記事を�
   Set-SmbServerConfiguration -EnableSMB2Protocol $false
   ```
 
-- 有効にする:
+- を
 
   ```PowerShell
   Set-SmbServerConfiguration -EnableSMB2Protocol $true 
@@ -124,7 +123,7 @@ SMBv2 および SMBv3 機能の機能の詳細については、次の記事を�
   Disable-WindowsOptionalFeature -Online -FeatureName SMB1Protocol
   ```
 
-- 有効にする: 
+- を 
 
   ```PowerShell
   Enable-WindowsOptionalFeature -Online -FeatureName SMB1Protocol
@@ -144,7 +143,7 @@ SMBv2 および SMBv3 機能の機能の詳細については、次の記事を�
   Set-SmbServerConfiguration –EnableSMB2Protocol $false
   ```
 
-- 有効にする:
+- を
 
   ```PowerShell
   Set-SmbServerConfiguration –EnableSMB2Protocol $true
@@ -179,7 +178,7 @@ Windows 8 と Windows Server 2012 には、新しい**SMBServerConfiguration** w
   Set-SmbServerConfiguration -EnableSMB1Protocol $false
   ```
 
-- 有効にする: 
+- を 
   ```PowerShell
   Set-SmbServerConfiguration -EnableSMB1Protocol $true
   ```
@@ -199,7 +198,7 @@ Windows 8 と Windows Server 2012 には、新しい**SMBServerConfiguration** w
   Set-SmbServerConfiguration -EnableSMB2Protocol $false
   ```
 
-- 有効にする:
+- を
   
   ```PowerShell
   Set-SmbServerConfiguration -EnableSMB2Protocol $true
@@ -230,7 +229,7 @@ Get-Item HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters | ForEa
 Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" SMB1 -Type DWORD -Value 0 –Force
 ```
 
-有効にする:  
+を  
 
 ```PowerShell
 Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" SMB1 -Type DWORD -Value 1 –Force
@@ -251,7 +250,7 @@ Get-ItemProperty HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters
 Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" SMB2 -Type DWORD -Value 0 –Force  
 ```
 
-有効にする:
+を
 
 ```PowerShell
 Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" SMB2 -Type DWORD -Value 1 –Force 
@@ -263,7 +262,7 @@ Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Par
 #### <a name="registry-editor"></a>レジストリ エディター
 
 > [!IMPORTANT]
-> 慎重にこのセクションの手順に従います。 誤ってレジストリを変更すると、重大な問題が発生する可能性があります。 変更する前に、問題が発生した場合に[復元するためにレジストリをバックアップ](https://support.microsoft.com/help/322756)します。
+> 慎重にこのセクションの手順に従います。 レジストリの変更の方法を誤った場合、深刻な問題が発生することがあります。 変更する前に、問題が発生した場合に[復元するためにレジストリをバックアップ](https://support.microsoft.com/help/322756)します。
  
 SMB サーバーで SMBv1 を有効または無効にするには、次のレジストリキーを構成します。
 
@@ -299,7 +298,7 @@ Default: 1 = Enabled (No registry key is created)
 
 ##### <a name="smb-v1-on-smb-client"></a>Smb クライアント上の SMB v1
 
-- 検出
+- [検出]
   
   ```cmd
   sc.exe qc lanmanworkstation
@@ -312,7 +311,7 @@ Default: 1 = Enabled (No registry key is created)
   sc.exe config mrxsmb10 start= disabled
   ```
 
-- 有効にする:
+- を
 
   ```cmd
   sc.exe config lanmanworkstation depend= bowser/mrxsmb10/mrxsmb20/nsi
@@ -335,7 +334,7 @@ Default: 1 = Enabled (No registry key is created)
   sc.exe config mrxsmb20 start= disabled 
   ```
 
-- 有効にする:
+- を
 
   ```cmd
   sc.exe config lanmanworkstation depend= bowser/mrxsmb10/mrxsmb20/nsi
@@ -358,7 +357,7 @@ Default: 1 = Enabled (No registry key is created)
 
 グループポリシーを使用してこれを構成するには、次の手順を実行します。
  
-1. 開いている、 **グループ ポリシー管理コンソール**します。 新しい基本設定項目を含むグループ ポリシー オブジェクト (GPO) を右クリックして、 **[編集]** をクリックします。
+1. **[グループ ポリシー管理コンソール]** を開きます。 新しい基本設定項目を含むグループ ポリシー オブジェクト (GPO) を右クリックして、 **[編集]** をクリックします。
 
 2. コンソールツリーの **[コンピューターの構成]** の下にある **[基本設定]** フォルダーを展開し、 **[Windows の設定]** フォルダーを展開します。
 
@@ -404,7 +403,7 @@ SMBv1 クライアントを無効にするには、 **MRxSMB10**の開始を無�
 
 グループポリシーを使用してこれを構成するには、次の手順を実行します。
  
-1. 開いている、 **グループ ポリシー管理コンソール**します。 新しい基本設定項目を含むグループ ポリシー オブジェクト (GPO) を右クリックして、 **[編集]** をクリックします。
+1. **[グループ ポリシー管理コンソール]** を開きます。 新しい基本設定項目を含むグループ ポリシー オブジェクト (GPO) を右クリックして、 **[編集]** をクリックします。
 
 2. コンソールツリーの **[コンピューターの構成]** の下にある **[基本設定]** フォルダーを展開し、 **[Windows の設定]** フォルダーを展開します。
 
@@ -447,7 +446,7 @@ SMBv1 クライアントを無効にするには、 **MRxSMB10**の開始を無�
 
 6. SMB v1 の無効化を完了するには、対象のシステムを再起動してください。
 
-### <a name="summary"></a>概要
+### <a name="summary"></a>要約
 
 すべての設定が同じグループポリシーオブジェクト (GPO) に含まれている場合、グループポリシーの管理には次の設定が表示されます。
 

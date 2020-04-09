@@ -1,26 +1,22 @@
 ---
-title: ping
+title: ping●ping○
 description: Ping を使用してネットワーク接続を確認します。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 49272671-2eec-4fa5-881f-65c24cfbef52
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 7d9841c12d403d91e14021ff9df65246d322debd
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c9e03b45d889bcac87bd3e533ab69c7a07be74ee
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71372310"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80837555"
 ---
-# <a name="ping"></a>ping
+# <a name="ping"></a>ping●ping○
 
 >適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -32,7 +28,7 @@ ms.locfileid: "71372310"
 ping [/t] [/a] [/n <Count>] [/l <Size>] [/f] [/I <TTL>] [/v <TOS>] [/r <Count>] [/s <Count>] [{/j <Hostlist> | /k <Hostlist>}] [/w <timeout>] [/R] [/S <Srcaddr>] [/4] [/6] <TargetName>
 ```
 
-### <a name="parameters"></a>パラメーター
+#### <a name="parameters"></a>パラメーター
 
 |パラメーター|説明|
 |-------|--------|
@@ -53,14 +49,14 @@ ping [/t] [/a] [/n <Count>] [/l <Size>] [/f] [/I <TTL>] [/v <TOS>] [/r <Count>] 
 |/4|IPv4 を使用して ping を実行することを指定します。 このパラメーターは、IPv4 アドレスを持つターゲット ホストを識別する必要はありません。 名前で、ターゲット ホストを識別するためにのみ必要です。|
 |/6|IPv6 を使用して ping を実行することを指定します。 このパラメーターは、IPv6 アドレスを持つターゲット ホストを識別する必要はありません。 名前で、ターゲット ホストを識別するためにのみ必要です。|
 |\<TargetName\>|ホスト名または変換先の IP アドレスを指定します。|
-|/?|コマンド プロンプトにヘルプを表示します。|
+|/?|コマンド プロンプトでヘルプを表示します。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
 -   使用する **ping** コンピューター名とコンピューターの IP アドレスの両方をテストします。 IP アドレスへの ping が成功すると、コンピューター名を ping する場合は、名前解決の問題があります。 この場合、ことに、コンピューター名、ドメイン ネーム システム (DNS) クエリを使用してローカルの Hosts ファイルを使って解決することも、NetBIOS によって名前解決の手法を指定することを確認します。
 -   このコマンドは、インターネット プロトコル (TCP/IP) プロトコルがネットワーク接続のネットワーク アダプターのプロパティでコンポーネントとしてインストールされている場合にのみ使用できます。
 
-## <a name="BKMK_Examples"></a>例
+## <a name="examples"></a><a name="BKMK_Examples"></a>例
 
 例を次に **ping** コマンドの出力。
 
@@ -98,4 +94,4 @@ ping /j 10.12.0.1 10.29.3.1 10.1.44.1 10.0.99.221
 ```
 
 ## <a name="additional-references"></a>その他の参照情報
--   [コマンド ライン構文の記号](command-line-syntax-key.md)
+-   - [コマンド ライン構文の記号](command-line-syntax-key.md)

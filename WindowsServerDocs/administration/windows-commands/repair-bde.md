@@ -1,24 +1,20 @@
 ---
 title: repair-bde
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Windows コマンドに関するトピック * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 534dca1a-05f7-4ea8-ac24-4fe5f14f988a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 817e5fb5cf032376ddfddb3a54f73411ac175def
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2107e5b7ef0339fc4f682632f3ef5a593578680a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71384554"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80835965"
 ---
 # <a name="repair-bde"></a>repair-bde
 
@@ -41,11 +37,11 @@ BitLocker を使用してドライブが暗号化されている場合は、重�
 repair-bde <InputVolume> <OutputVolumeorImage> [-rk] [–rp] [-pw] [–kp] [–lf] [-f] [{-?|/?}]
 ```
 
-### <a name="parameters"></a>パラメーター
+#### <a name="parameters"></a>パラメーター
 
 |パラメーター|説明|
 |---------|-----------|
-|\<InputVolume >|修復する BitLocker で暗号化されたドライブのドライブ文字を指定します。 ドライブ文字にはコロンを含める必要があります。例えば：**C:** 。|
+|InputVolume > の \<|修復する BitLocker で暗号化されたドライブのドライブ文字を指定します。 ドライブ文字にはコロンを含める必要があります。例: **C:** 。|
 |\<OutputVolumeorImage >|修復されたドライブの内容を保存するドライブを指定します。 出力ドライブのすべての情報が上書きされます。|
 |-rk|ボリュームのロックを解除するために使用する回復キーの場所を指定します。 このコマンドは **、-recoverykey**として指定することもできます。|
 |-rp|ボリュームのロックを解除するために使用する必要がある数値回復パスワードを指定します。 このコマンドは **、-recoverypassword**として指定することもできます。|
@@ -59,7 +55,7 @@ repair-bde <InputVolume> <OutputVolumeorImage> [-rk] [–rp] [-pw] [–kp] [–l
 
 キーパッケージへのパスが指定されていない場合、**修復-bde**はドライブでキーパッケージを検索します。 ただし、ハードドライブが破損している場合は、**修復-bde**でパッケージを見つけることができず、パスを入力するように求められます。
 
-## <a name="BKMK_Examples"></a>例
+## <a name="examples"></a><a name=BKMK_Examples></a>例
 
 次の例では、ドライブ C の修復を試み、ドライブ C からドライブ D にコンテンツを書き込みます。ドライブ F に格納されている回復キーファイル (RecoveryKey) を使用して、この試行の結果をドライブ Z のログファイル (output.txt) に書き込みます。
 ```
@@ -78,6 +74,6 @@ repair-bde C: D: -kp F:\RecoveryKeyPackage -rk F:\RecoveryKey.bek -f
 repair-bde C: D: -pw
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
--   [コマンド ライン構文の記号](command-line-syntax-key.md)
+-   - [コマンド ライン構文の記号](command-line-syntax-key.md)

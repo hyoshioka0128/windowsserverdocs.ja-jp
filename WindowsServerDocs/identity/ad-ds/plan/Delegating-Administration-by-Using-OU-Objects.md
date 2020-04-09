@@ -1,7 +1,6 @@
 ---
 ms.assetid: d8e61aa4-8e4b-4097-83ca-70cf61366b75
 title: OU オブジェクトを使用して管理を委任する
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 31b8ef30cb12903936d00a8ab8fe56de77f8025a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: af13896c07c10710be6e087be5d31dbd4aec698f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408941"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822715"
 ---
 # <a name="delegating-administration-by-using-ou-objects"></a>OU オブジェクトを使用して管理を委任する
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 組織単位 (Ou) を使用して、OU 内のユーザーやコンピューターなどのオブジェクトの管理を、指定された個人またはグループに委任することができます。 OU を使用して管理を委任するには、管理権限を委任する個人またはグループをグループに配置し、管理対象のオブジェクトのセットを OU に配置して、OU の管理タスクをそのグループに委任します。  
   

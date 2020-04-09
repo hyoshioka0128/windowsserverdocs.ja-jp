@@ -2,22 +2,18 @@
 title: 手順 2. 基本的な DirectAccess サーバーを構成する
 description: このトピックは、「Windows Server 2016 用はじめにウィザードを使用して単一の DirectAccess サーバーを展開する」の一部です。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 82bf5fed-93b3-4fa6-8e71-522146eccdb1
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 6faa40428df424f60637fb206641d8bae2774c79
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: adadac26a914ebf0d218d1945ab375c87ac8ebb9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80308935"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80819435"
 ---
 # <a name="step-2-configure-the-basic-directaccess-server"></a>手順 2. 基本的な DirectAccess サーバーを構成する
 

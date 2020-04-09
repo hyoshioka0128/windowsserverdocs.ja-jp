@@ -1,24 +1,20 @@
 ---
 title: 必要に応じてデバイス ドライバーを更新およびインストールする
 description: MultiPoint Services でデバイスドライバーを確認および更新する方法について説明します。
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 16be3ef9-a05b-4621-a431-5806b567e997
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 766e2175a16cd20a68730870c8980ed9c9204a3c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6d20aa80edeafa4311262a380cfd7aad65ae0315
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394876"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820605"
 ---
 # <a name="update-and-install-device-drivers-if-needed"></a>必要に応じてデバイス ドライバーを更新およびインストールする
 USB ゼロクライアントまたはドライバーを必要とする周辺機器を使用している場合は、現時点でドライバーをインストールする必要があります。 また、ドライバーアラートの**デバイスマネージャー**を確認し、それらのデバイスのドライバーをインストールすることもお勧めします。  

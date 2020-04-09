@@ -1,25 +1,26 @@
 ---
 title: 同じハードウェアを使用したフェールオーバークラスターのアップグレード
+description: この記事では、同じハードウェアを使用した2ノードフェールオーバークラスターのアップグレードについて説明します。
 ms.prod: windows-server
-ms.manager: eldenc
+manager: eldenc
 ms.technology: failover-clustering
 ms.topic: article
 author: johnmarlin-msft
+ms.author: johnmar
 ms.date: 02/28/2019
-description: この記事では、同じハードウェアを使用した2ノードフェールオーバークラスターのアップグレードについて説明します。
 ms.localizationpriority: medium
-ms.openlocfilehash: 5fe93f1d43e0c3a1bc4269b585cb9d021d3461aa
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b2d9866417908b3979a4ee17b25dd0d3a404bb1c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361398"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828185"
 ---
 # <a name="upgrading-failover-clusters-on-the-same-hardware"></a>同じハードウェアでのフェールオーバークラスターのアップグレード
 
-> 適用対象:Windows Server 2019、Windows Server 2016
+> 適用対象: Windows Server 2019、Windows Server 2016
 
-フェールオーバー クラスターとは、アプリケーションやサービスの可用性を向上するために、互いに連携する独立したコンピューターで構成されるグループを指します。 クラスター サーバー (ノード) は、物理ケーブルとソフトウェアにより接続されます。 クラスター ノードの 1 つに障害が発生すると、他のノードがサービスの提供を開始します (フェールオーバーと呼ばれる処理)。 ユーザーはサービスの中断を最小限に抑えます。
+フェールオーバー クラスターとは、アプリケーションやサービスの可用性を向上するために、互いに連携する独立したコンピューターで構成されるグループを指します。 クラスター化されたサーバー (ノード) は、物理ケーブルとソフトウェアによって接続されます。 クラスター ノードの 1 つに障害が発生すると、他のノードがサービスの提供を開始します (フェールオーバーと呼ばれる処理)。 ユーザーはサービスの中断を最小限に抑えます。
 
 このガイドでは、同じハードウェアを使用して、以前のバージョンから Windows Server 2019 または Windows Server 2016 にクラスターノードをアップグレードする手順について説明します。
 
@@ -37,7 +38,7 @@ ms.locfileid: "71361398"
 
 次の例では、フェールオーバークラスターの名前は CLUSTER、ノード名は NODE1 と NODE2 です。
 
-## <a name="step-1-evict-first-node-and-upgrade-to-windows-server-2016"></a>手順 1:最初のノードを削除して Windows Server 2016 にアップグレードする
+## <a name="step-1-evict-first-node-and-upgrade-to-windows-server-2016"></a>手順 1: 最初のノードを削除して Windows Server 2016 にアップグレードする
 
 1. フェールオーバークラスターマネージャーで、ノードを右クリックし、[ロールの**一時停止**と**ドレイン**] を選択して、NODE1 から NODE2 にすべてのリソースをドレインします。  または、PowerShell コマンド[start-clusternode](https://docs.microsoft.com/powershell/module/failoverclusters/suspend-clusternode)を使用することもできます。
 
@@ -61,7 +62,7 @@ ms.locfileid: "71361398"
 
 7.  すべてのリソースが移行されたら、NODE2 (元のクラスター) の電源を切り、記憶域を切断して、干渉が発生しないようにします。  記憶域を NODE1 に接続します。  すべてのリソースをオンラインにして、必要に応じて機能していることを確認します。
 
-## <a name="step-2-rebuild-second-node-to-windows-server-2019"></a>手順 2:2番目のノードを Windows Server 2019 に再構築する
+## <a name="step-2-rebuild-second-node-to-windows-server-2019"></a>手順 2: 2 番目のノードを Windows Server 2019 に再構築する
 
 すべてが正常に動作していることを確認したら、NODE2 を Windows Server 2019 に再構築し、クラスターに参加させることができます。
 
@@ -85,7 +86,7 @@ ms.locfileid: "71361398"
 
 5. ノードを右クリックし、[ロールの**一時停止**と**ドレイン**] を選択して、NODE1 から NODE2 にすべてのリソースをドレインします。  または、PowerShell コマンド[start-clusternode](https://docs.microsoft.com/powershell/module/failoverclusters/suspend-clusternode)を使用することもできます。  すべてのリソースがオンラインであり、必要に応じて機能していることを確認します。
 
-## <a name="step-3-rebuild-first-node-to-windows-server-2019"></a>手順 3:最初のノードを Windows Server 2019 に再構築する
+## <a name="step-3-rebuild-first-node-to-windows-server-2019"></a>手順 3: 最初のノードを Windows Server 2019 に再構築する
 
 1. クラスターから NODE1 を削除し、以前の方法でノードから記憶域を切断します。
 
@@ -99,7 +100,7 @@ ms.locfileid: "71361398"
 
 これで、完全に機能する Windows Server 2019 フェールオーバークラスターを使用して実行されます。
 
-## <a name="additional-notes"></a>補足メモ
+## <a name="additional-notes"></a>追加説明
 
 - 既に説明したように、記憶域を切断する必要があるか、または必要でない場合があります。  このドキュメントでは、注意を払う必要があります。  ストレージベンダーに問い合わせてください。
 - 開始位置が Windows Server 2008 または 2008 R2 のクラスターの場合は、手順を追加で実行する必要があります。

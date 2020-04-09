@@ -1,7 +1,6 @@
 ---
 ms.assetid: c54b544f-cc32-4837-bb2d-a8656b22f3de
 title: Windows PowerShell を使用した Active Directory レプリケーションおよびトポロジの管理の概要 (レベル 100)
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: c8a5863865d465d55f1d5865fdcbdeeb942ce194
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 63ecad01ec6d4b4d72b7aaff315b74541cb0fadc
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71409084"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822985"
 ---
 # <a name="introduction-to-active-directory-replication-and-topology-management-using-windows-powershell-level-100"></a>Windows PowerShell を使用した Active Directory レプリケーションおよびトポロジの管理の概要 (レベル 100)
 

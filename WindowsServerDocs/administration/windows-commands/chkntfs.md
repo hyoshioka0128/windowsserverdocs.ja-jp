@@ -1,28 +1,22 @@
 ---
 title: chkntfs
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Chkntfs の Windows コマンドに関するトピックでは、コンピューターの起動時に自動ディスクチェックを表示または変更します。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 93eca810-8699-4716-8e9d-aecd54f704be
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f940fe81f0e7e01495e071931059b2375b78bb22
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: bb04022964b3c315c1003a9746f6551fc281dba3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71379344"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80847775"
 ---
 # <a name="chkntfs"></a>chkntfs
-
-
 
 コンピューターの起動時に自動ディスクチェックを表示または変更します。 オプションを指定せずに使用する場合は、指定されたボリュームのファイルシステム**を表示し**ます。 自動ファイルチェックの実行がスケジュールされている場合、指定されたボリュームがダーティであるか、次回コンピューターを起動したときにチェックされるようにスケジュールされているかどうかが**chkntfs**によって表示されます。
 
@@ -41,7 +35,7 @@ chkntfs [/x <Volume> [...]]
 chkntfs [/c <Volume> [...]]
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
 |パラメーター|説明|
 |---------|-----------|
@@ -50,9 +44,9 @@ chkntfs [/c <Volume> [...]]
 |/t [:\<Time >]|Autochk.exe 開始カウントダウン時間を、秒単位で指定された時間に変更します。 時刻を入力しない場合、 **/t**には現在のカウントダウン時間が表示されます。|
 |/x \<ボリューム > [...]|ボリュームが**chkdsk**を必要としているとマークされている場合でも、コンピューターの起動時のチェック対象から除外する1つ以上のボリュームを指定します。|
 |/c \<ボリューム > [...]|コンピューターが起動したときに1つ以上のボリュームがチェックされるようにスケジュールを設定し、ダーティであるボリュームで**chkdsk**を実行します。|
-|/?|コマンド プロンプトにヘルプを表示します。|
+|/?|コマンド プロンプトでヘルプを表示します。|
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a><a name=BKMK_examples></a>例
 
 ドライブ C のファイルシステムの種類を表示するには、次のように入力します。
 ```
@@ -95,6 +89,6 @@ chkntfs /x c: d: e:
 chkntfs /c d:
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

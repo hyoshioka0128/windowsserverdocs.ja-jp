@@ -1,7 +1,6 @@
 ---
 ms.assetid: 2f536fb8-16e5-471d-bafc-21b96197efb8
 title: Active Directory Domain Services の仮想化
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 35b6d7277a1498f5b3bda5a3e45eb5337b1b81ca
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 65a97207220bf169b5ca7080301c04b42c69778a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390504"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80824556"
 ---
 # <a name="active-directory-domain-services-virtualization"></a>Active Directory Domain Services の仮想化
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 このトピックでは、仮想化ドメイン コントローラーで使用できるリソースの一覧を示します。  
   

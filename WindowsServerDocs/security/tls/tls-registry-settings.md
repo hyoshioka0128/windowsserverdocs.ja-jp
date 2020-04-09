@@ -1,23 +1,19 @@
 ---
 title: トランスポート層セキュリティ (TLS) のレジストリ設定
 description: Windows Server のセキュリティ
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-tls-ssl
-ms.tgt_pltfrm: na
 ms.topic: article
 author: justinha
 ms.author: justinha
-manager: brianlic-msft
+manager: brianlic
 ms.date: 02/28/2019
-ms.openlocfilehash: 60202e537093bd21515043ba56f70f3895c91d42
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: d65b314d6896c886ce606d2b649fcfd7309c583b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322404"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820285"
 ---
 # <a name="transport-layer-security-tls-registry-settings"></a>トランスポート層セキュリティ (TLS) のレジストリ設定
 

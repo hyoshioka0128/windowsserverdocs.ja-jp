@@ -1,24 +1,20 @@
 ---
 title: vdisk の選択
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Windows コマンドに関するトピック * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8808872a-3523-4205-a6c6-83fa738ee37a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1bfa6450d1704cde1e5ff2a50a8e3b61a30d0766
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 65e186413bebbf467cd4c2033d274badd1fbea80
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71384191"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80834745"
 ---
 # <a name="select-vdisk"></a>vdisk の選択
 
@@ -35,23 +31,23 @@ ms.locfileid: "71384191"
 select vdisk file=<full path> [noerr]  
 ```  
   
-## <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>パラメーター  
   
 |パラメーター|説明|  
 |-------|--------|  
 |ファイル\=<full path>|既存の VHD ファイルの完全パスとファイル名を指定します。|  
-|noerr|スクリプト作成にのみ使用されます。 エラーが発生した場合、DiskPart はエラーが発生しなかったかのようにコマンドを処理し続けます。 このパラメーターは、エラー発生すると、DiskPart はエラー コードを生成して終了します。|  
+|noerr|スクリプト作成にのみ使用されます。 エラーが発生しても、エラーが発生しなかったかのように DiskPart はコマンドの処理を続けます。 このパラメーターは、エラー発生すると、DiskPart はエラー コードを生成して終了します。|  
   
-## <a name="BKMK_examples"></a>例  
+## <a name="examples"></a><a name=BKMK_examples></a>例  
 フォーカスを Test.vhd という名前の VHD に、次のように入力します。  
   
 ```  
-select vdisk file="c:\test\test.vhd"  
+select vdisk file=c:\test\test.vhd  
 ```  
   
-#### <a name="additional-references"></a>その他の参照情報  
+## <a name="additional-references"></a>その他の参照情報  
   
--   [コマンド ライン構文の記号](command-line-syntax-key.md)  
+-   - [コマンド ライン構文の記号](command-line-syntax-key.md)  
   
 -   [vdisk のアタッチ](attach-vdisk.md)  
   

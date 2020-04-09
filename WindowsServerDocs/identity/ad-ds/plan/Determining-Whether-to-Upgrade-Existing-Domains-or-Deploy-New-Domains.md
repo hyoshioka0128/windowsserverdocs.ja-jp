@@ -1,7 +1,6 @@
 ---
 ms.assetid: c20231dd-2b83-4494-9385-1172272e00d6
 title: 既存のドメインをアップグレードするか新しいドメインを展開するかを決定する
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 0effdb3ae3ba6294e8a28f4f6b780f4d0c6a8582
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1e058240bc971d949de279407701e57cd021712c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402613"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822602"
 ---
 # <a name="determining-whether-to-upgrade-existing-domains-or-deploy-new-domains"></a>既存のドメインをアップグレードするか新しいドメインを展開するかを決定する
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 設計内の各ドメインは、新しいドメインか、または既存のアップグレードされたドメインになります。 アップグレードしていない既存のドメインのユーザーは、新しいドメインに移動する必要があります。  
   
@@ -28,7 +27,7 @@ Active Directory ドメインを Windows Server 2008 にアップグレードす
   
 フォレスト内およびフォレスト間の AD DS ドメインの再構築の詳細については、「Active Directory 移行ツールバージョン3.1 移行ガイド ([https://go.microsoft.com/fwlink/?LinkId=93678](https://go.microsoft.com/fwlink/?LinkId=93678))」を参照してください。  
   
-新規およびアップグレードされたドメインの計画を文書化するためのワークシートについては、Windows Server 2003 Deployment Kit ([https://go.microsoft.com/fwlink/?LinkID=102558](https://go.microsoft.com/fwlink/?LinkID=102558)) のジョブエイドから Job_Aids_Designing_and_Deploying_Directory_and_Security_Services をダウンロードして、"ドメイン" を開きます。"(DSSLOGI_5)" を計画します。  
+新規およびアップグレードされたドメインの計画を作成する際に役立つワークシートについては、Windows Server 2003 Deployment Kit のジョブエイド ([https://go.microsoft.com/fwlink/?LinkID=102558](https://go.microsoft.com/fwlink/?LinkID=102558)) から Job_Aids_Designing_and_Deploying_Directory_and_Security_Services をダウンロードし、「ドメインの計画」 (DSSLOGI_5 .doc) を開いてください。  
   
 
 

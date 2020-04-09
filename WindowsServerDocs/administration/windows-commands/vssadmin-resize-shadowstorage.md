@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 03/05/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: e0d2adbb11320bd6a28ae9d83e357d5ec4b89de9
-ms.sourcegitcommit: fc900eb19ac26c3d6bc2de179cc4b2c1e971043e
+ms.openlocfilehash: 8cd3b5e5629e41702126fb42b815931ff0aea6fa
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "79039652"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80830025"
 ---
 # <a name="vssadmin-resize-shadowstorage"></a>Vssadmin resize shadowstorage
 
@@ -32,7 +32,7 @@ ms.locfileid: "79039652"
 vssadmin resize shadowstorage /for=<ForVolumeSpec> /on=<OnVolumeSpec> [/maxsize=<MaxSizeSpec>]
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
 |パラメーター|説明|
 |---|---|

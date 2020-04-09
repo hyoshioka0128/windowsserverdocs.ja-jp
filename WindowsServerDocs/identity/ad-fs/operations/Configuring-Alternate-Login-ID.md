@@ -1,7 +1,6 @@
 ---
 ms.assetid: f0cbdd78-f5ae-47ff-b5d3-96faf4940f4a
 title: 代替ログイン ID を構成する
-description: ''
 author: billmath
 ms.author: billmath
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 11/14/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 026873e231628e93738cba096cfae44c8b053217
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 7e7a881a2e6bae499ed7d4713bd70a804c3412e6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948550"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80816965"
 ---
 # <a name="configuring-alternate-login-id"></a>代替ログイン ID を構成する
 
@@ -36,7 +35,7 @@ Active Directory フェデレーションサービス (AD FS) (AD FS) を使用�
    前述のシナリオでは、AD FS による代替 ID を使用すると、ユーザーはオンプレミスの Upn を変更することなく Azure AD にサインインできます。 
 
 ## <a name="end-user-experience-with-alternate-login-id"></a>代替ログイン ID を使用したエンドユーザーエクスペリエンス
-エンドユーザーエクスペリエンスは、代替ログイン id で使用される認証方法によって異なります。 現在、代替ログイン id を使用する方法は3種類あります。  以下の説明を参照してください。
+エンドユーザーエクスペリエンスは、代替ログイン id で使用される認証方法によって異なります。 現在、代替ログイン id を使用する方法は3種類あります。  サポートしているシステムは次のとおりです。
 
 - **標準認証 (レガシ)** -基本認証プロトコルを使用します。
 - **先進認証**-ACTIVE DIRECTORY 認証ライブラリ (ADAL) ベースのサインインをアプリケーションに提供します。 これにより、Multi-Factor Authentication (MFA)、SAML ベースのサードパーティ Id プロバイダー (Office クライアントアプリケーションを含む)、スマートカード、証明書ベースの認証などのサインイン機能が有効になります。
@@ -137,9 +136,9 @@ Office アプリケーションは、代替 id 環境を識別するために、
 
 |追加するレジストリキー|レジストリキーのデータ名、型、および値|Windows 7/8|Windows 10|説明|
 |-----|-----|-----|-----|-----|
-|HKEY_CURRENT_USER \Software\Microsoft\AuthN|DomainHint</br>REG_SZ</br>contoso.com|必須かどうか|必須かどうか|このレジストリキーの値は、組織のテナントで検証されたカスタムドメイン名です。 たとえば、Contoso corp では、Contoso.com がテナント Contoso.onmicrosoft.com の検証済みのカスタムドメイン名の1つである場合、このレジストリキーに Contoso.com の値を指定できます。|
-HKEY_CURRENT_USER \Software\Microsoft\Office\16.0\Common\Identity|EnableAlternateIdSupport</br>REG_DWORD</br>1 で保護されたプロセスとして起動されました|Outlook 2016 ProPlus に必要|Outlook 2016 ProPlus に必要|このレジストリキーの値は、強化された代替 id 認証ロジックを使用する必要があるかどうかを Outlook アプリケーションに示す 1/0 にすることができます。|
-HKEY_CURRENT_USER \Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\contoso.com\sts|&#42;</br>REG_DWORD</br>1 で保護されたプロセスとして起動されました|必須かどうか|必須かどうか|このレジストリキーを使用して、インターネットの設定で STS を信頼済みゾーンとして設定できます。 標準の ADFS 展開では、ADFS 名前空間を Internet Explorer のローカルイントラネットゾーンに追加することをお勧めします。|
+|HKEY_CURRENT_USER \Software\Microsoft\AuthN|DomainHint</br>REG_SZ</br>contoso.com|必須|必須|このレジストリキーの値は、組織のテナントで検証されたカスタムドメイン名です。 たとえば、Contoso corp では、Contoso.com がテナント Contoso.onmicrosoft.com の検証済みのカスタムドメイン名の1つである場合、このレジストリキーに Contoso.com の値を指定できます。|
+HKEY_CURRENT_USER \Software\Microsoft\Office\16.0\Common\Identity|EnableAlternateIdSupport</br>REG_DWORD</br>1|Outlook 2016 ProPlus に必要|Outlook 2016 ProPlus に必要|このレジストリキーの値は、強化された代替 id 認証ロジックを使用する必要があるかどうかを Outlook アプリケーションに示す 1/0 にすることができます。|
+HKEY_CURRENT_USER \Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\contoso.com\sts|&#42;</br>REG_DWORD</br>1|必須|必須|このレジストリキーを使用して、インターネットの設定で STS を信頼済みゾーンとして設定できます。 標準の ADFS 展開では、ADFS 名前空間を Internet Explorer のローカルイントラネットゾーンに追加することをお勧めします。|
 
 ## <a name="new-authentication-flow-after-additional-configuration"></a>追加の構成後の新しい認証フロー
 
@@ -156,23 +155,23 @@ HKEY_CURRENT_USER \Software\Microsoft\Windows\CurrentVersion\Internet Settings\Z
 
 ### <a name="non-exchange-and-skype-for-business-clients"></a>Exchange 以外のクライアントと Skype for Business クライアント
 
-|クライアント|サポートに関する声明|注釈|
+|クライアント|サポートステートメント|コメント|
 | ----- | -----|-----|
-|Microsoft Teams|サポートされる|<li>Microsoft Teams は、AD FS (SAML P、WS-ATOMICTRANSACTION、WS-TRUST、および OAuth) と先進認証をサポートしています。</li><li> チャンネル、チャット、ファイルなどの主要な Microsoft チームは、代替ログイン ID を使用します。</li><li>1番目とサードパーティのアプリは、顧客が個別に調査する必要があります。 これは、各アプリケーションが独自のサポート認証プロトコルを持っているためです。</li>|     
+|Microsoft Teams|サポート対象|<li>Microsoft Teams は、AD FS (SAML P、WS-ATOMICTRANSACTION、WS-TRUST、および OAuth) と先進認証をサポートしています。</li><li> チャンネル、チャット、ファイルなどの主要な Microsoft チームは、代替ログイン ID を使用します。</li><li>1番目とサードパーティのアプリは、顧客が個別に調査する必要があります。 これは、各アプリケーションが独自のサポート認証プロトコルを持っているためです。</li>|     
 |OneDrive for Business|サポートされている-クライアント側のレジストリキーを推奨します |代替 ID が構成されている場合は、オンプレミスの UPN が検証フィールドに事前設定されていることがわかります。 これは、使用されている代替 Id に変更する必要があります。 この記事に記載されているクライアント側のレジストリキーを使用することをお勧めします。 Office 2013 および Lync 2013 では、SharePoint Online、OneDrive、および Lync Online への資格情報を定期的に確認するように求められます。|
-|OneDrive for Business モバイルクライアント|サポートされる|| 
+|OneDrive for Business モバイルクライアント|サポート対象|| 
 |Office 365 Pro Plus ライセンス認証ページ|サポートされている-クライアント側のレジストリキーを推奨します|代替 ID が構成されている場合は、オンプレミスの UPN が検証フィールドに事前設定されていることがわかります。 これは、使用されている代替 Id に変更する必要があります。 この記事で説明されているクライアント側のレジストリキーを使用することをお勧めします。 Office 2013 および Lync 2013 は、SharePoint Online、OneDrive、および Lync Online への資格情報を定期的に確認します。|
 
 ### <a name="exchange-and-skype-for-business-clients"></a>Exchange と Skype for Business クライアント
 
 |クライアント|サポートステートメント-HMA がある|サポートステートメント-HMA なし|
 | ----- |----- | ----- |
-|Outlook|サポートされています。追加のプロンプトはありません|サポートされる</br></br>Exchange Online の**先進認証**を使用する: サポートされています。</br></br>Exchange Online の**通常の認証**では、次の点に注意してください。</br><li>ドメインに参加しているコンピューターで、企業ネットワークに接続している必要があります。 </li><li>代替 ID は、メールボックスユーザーの外部アクセスを許可しない環境でのみ使用できます。 これは、ユーザーが会社のネットワーク、VPN、または直接アクセスコンピューターを使用して接続されている場合に、メールボックスに対してのみ認証を行うことができることを意味します。ただし、Outlook プロファイルを構成するときに、いくつかの追加のプロンプトが表示されます。| 
+|Outlook|サポートされています。追加のプロンプトはありません|サポート対象</br></br>Exchange Online の**先進認証**を使用する: サポートされています。</br></br>Exchange Online の**通常の認証**では、次の点に注意してください。</br><li>ドメインに参加しているコンピューターで、企業ネットワークに接続している必要があります。 </li><li>代替 ID は、メールボックスユーザーの外部アクセスを許可しない環境でのみ使用できます。 これは、ユーザーが会社のネットワーク、VPN、または直接アクセスコンピューターを使用して接続されている場合に、メールボックスに対してのみ認証を行うことができることを意味します。ただし、Outlook プロファイルを構成するときに、いくつかの追加のプロンプトが表示されます。| 
 |ハイブリッドパブリックフォルダー|サポートされています。特別なプロンプトはありません。|Exchange Online の**先進認証**を使用する: サポートされています。</br></br>Exchange Online の**通常の認証**を使用する: サポートされていません。</br></br><li>ハイブリッドパブリックフォルダーは、代替 ID が使用されている場合は拡張できないため、現在は通常の認証方法では使用できません。|
 |クロスプレミスの委任|[ハイブリッド展開での委任されたメールボックスのアクセス許可をサポートするように Exchange を構成する](https://technet.microsoft.com/library/mt784505.aspx)|[ハイブリッド展開での委任されたメールボックスのアクセス許可をサポートするように Exchange を構成する](https://technet.microsoft.com/library/mt784505.aspx)|
 |メールボックスへのアクセス (オンプレミスのメールボックス-クラウド内のアーカイブ)|サポートされています。追加のプロンプトはありません|サポートされている-ユーザーは、アーカイブにアクセスするときに資格情報の追加のプロンプトを受け取り、プロンプトが表示されたら代替 ID を入力する必要があります。| 
-|Outlook Web Access|サポートされる|サポートされる|
-|Android、IOS、および Windows Phone 用 Outlook Mobile Apps|サポートされる|サポートされる|
+|Outlook Web Access|サポート対象|サポート対象|
+|Android、IOS、および Windows Phone 用 Outlook Mobile Apps|サポート対象|サポート対象|
 |Skype for Business/Lync|サポートされています。追加のプロンプトはありません|サポートされています (ただし、前述の場合を除く) が、ユーザーの混乱を招く可能性があります。</br></br>モバイルクライアントでは、代替 Id がサポートされるのは、SIP アドレス = 電子メールアドレス = 代替 ID の場合のみです。</br></br> ユーザーは、最初にオンプレミスの UPN を使用し、次に代替 ID を使用して、Skype for Business デスクトップクライアントに2回サインインする必要がある場合があります。 ("サインインアドレス" は、実際には "ユーザー名" と同じではない可能性がある SIP アドレスです。ただし、多くの場合は)。 ユーザー名の入力を求められた場合、代替 ID または SIP アドレスが誤って事前設定されていても、ユーザーは UPN を入力する必要があります。 ユーザーが UPN でサインインすると、ユーザー名のプロンプトが再び表示されます。今回は UPN で事前に登録されています。 今回は、ユーザーがこれを代替 ID で置き換える必要があります。サインインプロセスを完了するには、[サインイン] をクリックします。 モバイルクライアントでは、ユーザーは [詳細設定] ページで、UPN 形式ではなく SAM 形式 (domain\username) を使用して、オンプレミスのユーザー ID を入力する必要があります。</br></br>サインインに成功した後に、Skype for Business または Lync に "Exchange で資格情報が必要です" と表示されている場合は、メールボックスが存在する場所に対して有効な資格情報を入力する必要があります。 メールボックスがクラウド内にある場合は、代替 ID を指定する必要があります。 メールボックスがオンプレミスの場合は、オンプレミスの UPN を指定する必要があります。| 
 
 ## <a name="additional-details--considerations"></a>追加の詳細 & 考慮事項
@@ -185,7 +184,7 @@ HKEY_CURRENT_USER \Software\Microsoft\Windows\CurrentVersion\Internet Settings\Z
 -   有効にした場合、代替ログイン ID 機能は、AD FS でサポートされているすべてのユーザー名/パスワード認証プロトコル (SAML P、WS-ATOMICTRANSACTION、WS-TRUST、および OAuth) のユーザー名/パスワード認証でのみ使用できます。
 
 
--   Windows 統合認証 (WIA) が実行された場合 (たとえば、ユーザーがドメインに参加しているコンピューターのイントラネットから企業アプリケーションにアクセスしようとし、AD FS 管理者が、WIA for intranet を使用するように認証ポリシーを構成した場合)、UPN isused ます。認証用。 代替ログイン ID 機能のために証明書利用者の要求規則を構成した場合は、これらの規則が引き続き WIA ケースで有効であることを確認してください。
+-   Windows 統合認証 (WIA) を実行する場合 (たとえば、ユーザーがイントラネットからドメインに参加しているコンピューターの企業アプリケーションにアクセスしようとしたときに、AD FS 管理者によって認証ポリシーがイントラネットに対して WIA を使用するように構成されている場合)、UPN isused が認証に使用されます。 代替ログイン ID 機能のために証明書利用者の要求規則を構成した場合は、これらの規則が引き続き WIA ケースで有効であることを確認してください。
 
 -   代替ログイン ID 機能を有効にすると、AD FS がサポートする各ユーザーアカウントフォレストに対して、AD FS サーバーから少なくとも1つのグローバルカタログサーバーにアクセスできる必要があります。 ユーザーアカウントフォレストのグローバルカタログサーバーに接続できない場合は、UPN を使用するようにフォールバック AD FS ます。 既定では、すべてのドメインコントローラーはグローバルカタログサーバーです。
 
@@ -212,14 +211,14 @@ HKEY_CURRENT_USER \Software\Microsoft\Windows\CurrentVersion\Internet Settings\Z
 
 
 
-|                       **エラーケース**                        | **サインインエクスペリエンスへの影響** |                                                              **Event**                                                              |
+|                       **エラーケース**                        | **サインインエクスペリエンスへの影響** |                                                              **場合**                                                              |
 |--------------------------------------------------------------|----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
 | ユーザーオブジェクトの SAMAccountName の値を取得できません |          ログインエラー           |                  イベント ID 364、例外メッセージ MSIS8012: ユーザーの samAccountName が見つかりません: '{0}'。                   |
 |        CanonicalName 属性にアクセスできません         |          ログインエラー           |               イベント ID 364、例外メッセージ MSIS8013: CanonicalName: '{0}'、ユーザー: '{1}' の形式が正しくありません。                |
 |        1つのフォレストに複数のユーザーオブジェクトが見つかりました        |          ログインエラー           | イベント ID 364、例外メッセージ MSIS8015: フォレスト '{1}' に id '{0}' を持つ複数のユーザーアカウントが id で見つかりました: {2} |
 |   複数のユーザーオブジェクトが複数のフォレストにわたって検出される    |          ログインエラー           |           イベント ID 364、例外メッセージ MSIS8014: フォレストに id '{0}' を持つ複数のユーザーアカウントが見つかりました: {1}            |
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 [AD FS の運用](../../ad-fs/AD-FS-2016-Operations.md)
 
 

@@ -1,24 +1,20 @@
 ---
 title: サーバーマネージャーでのリモート管理の構成
 description: サーバー マネージャー
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-server-manager
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 509182ed-c37d-4b81-84bc-aee43d006873
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8e1058a5679f73fcd2ceb8586da687158762d10f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 01bc2d2d262882c08d1213bae6149896a8b284ab
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383210"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851565"
 ---
 # <a name="configure-remote-management-in-server-manager"></a>サーバーマネージャーでのリモート管理の構成
 
@@ -101,7 +97,7 @@ Windows Server 2016 では、サーバーマネージャーはリモート通信
 
     **%windir%\system32\Configure-SMremoting.exe**
 
-3.  次のいずれかの操作を行います。
+3.  以下のいずれかを実行します。
 
     -   リモート管理を無効にするには、「 **configure-smremoting.exe-disable**」と**入力し、enter キーを**押します。
 
@@ -111,7 +107,7 @@ Windows Server 2016 では、サーバーマネージャーはリモート通信
 
 ### <a name="to-enable-server-manager-and-windows-powershell-remote-management-on-earlier-releases-of-windows-server"></a>Windows Server の以前のリリースでサーバー マネージャーおよび Windows PowerShell のリモート管理を有効にするには
 
--   次のいずれかの操作を行います。
+-   以下のいずれかを実行します。
 
     -   Windows Server 2012 を実行しているサーバーでリモート管理を有効にするには、このトピックの「 [windows のインターフェイスを使用してサーバーマネージャーのリモート管理を有効にするに](#to-enable-server-manager-remote-management-by-using-the-windows-interface)は」を参照してください。
 
@@ -168,7 +164,7 @@ Windows Server 2016 では、サーバーマネージャーはリモート通信
     > [!NOTE]
     > この設定は、オペレーティング システムのセットアップ プロセスの一環としてリモート管理を無効にします。 この設定を構成しても、オペレーティングシステムのセットアップが完了した後で、管理者がサーバーでサーバーマネージャーリモート管理を有効にすることはできません。 管理者は、「」の手順に従って[、windows インターフェイスを使用](#to-enable-server-manager-remote-management-by-using-the-windows-interface)してリモート管理をサーバーマネージャー構成するか、このトピックの「 [windows PowerShell を使用](#to-enable-server-manager-remote-management-by-using-windows-powershell)してリモート管理をサーバーマネージャー有効にする」の手順に従って、サーバーマネージャーリモート管理を再び有効にすることができます。
     > 
-    > 無人インストールの一部としてリモート管理を既定で無効にし、インストール後にサーバーでリモート管理を再び有効にしない場合、この応答ファイルが適用されるサーバーはサーバーマネージャーを使用して完全に管理することはできません。 Windows Server 2016、Windows Server 2012 R2、または Windows Server 2012 (およびリモート管理が既定で無効になっている) を実行しているサーバーは、サーバーマネージャーサーバーに追加された後、サーバーマネージャーコンソールで管理状態エラーを生成します。管理.
+    > 無人インストールの一部としてリモート管理を既定で無効にし、インストール後にサーバーでリモート管理を再び有効にしない場合、この応答ファイルが適用されるサーバーはサーバーマネージャーを使用して完全に管理することはできません。 Windows Server 2016、Windows Server 2012 R2、または Windows Server 2012 (およびリモート管理が既定で無効になっている) を実行しているサーバーは、サーバーマネージャーサーバープールに追加された後、サーバーマネージャーコンソールで管理状態エラーを生成します。
 
 ## <a name="windows-remote-management-winrm-listener-settings"></a>Windows リモート管理 (WinRM) リスナーの設定
 サーバーマネージャーは、管理するリモートサーバー上の既定の WinRM リスナー設定に依存します。 リモートサーバーの既定の認証メカニズムまたは WinRM リスナーのポート番号が既定の設定から変更されている場合、サーバーマネージャーはリモートサーバーと通信できません。

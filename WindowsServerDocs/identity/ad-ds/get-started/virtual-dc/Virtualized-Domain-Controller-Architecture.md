@@ -1,7 +1,6 @@
 ---
 ms.assetid: 341614c6-72c2-444f-8b92-d2663aab7070
 title: 仮想化ドメイン コントローラーのアーキテクチャ
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: e8673b9e66a0aa3b6bea89b91ae5022efb26c65c
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: fa8645198374d91911f8ec7dc15f04bea4865e38
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79323154"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80824445"
 ---
 # <a name="virtualized-domain-controller-architecture"></a>仮想化ドメイン コントローラーのアーキテクチャ
 
@@ -26,7 +25,7 @@ ms.locfileid: "79323154"
   
 -   [仮想化ドメインコントローラーの安全な復元のアーキテクチャ](../../../ad-ds/get-started/virtual-dc/Virtualized-Domain-Controller-Architecture.md#BKMK_SafeRestoreArch)  
   
-## <a name="BKMK_CloneArch"></a>仮想化ドメインコントローラーの複製のアーキテクチャ  
+## <a name="virtualized-domain-controller-cloning-architecture"></a><a name="BKMK_CloneArch"></a>仮想化ドメインコントローラーの複製のアーキテクチャ  
   
 ### <a name="overview"></a>概要  
 仮想化ドメイン コントローラーの複製は、ハイパーバイザー プラットフォームを使用して **VM-Generation ID** と呼ばれる識別子を公開し、仮想マシンの作成を検出します。 この識別子の値は、ドメイン コントローラーの昇格中に、AD DS によってデータベース (NTDS.DIT) に格納されます。 仮想マシンを起動すると、その仮想マシン内の VM-Generation ID の現在値は、データベース内の値と比較されます。 2 つの値が異なる場合は、ドメイン コントローラーにより起動 ID がリセットされ、RID プールが破棄されます。これにより、USN の再利用、またはセキュリティ プリンシパルが重複して作成されるのを防ぐことができます。 次に、「[複製プロセスの詳細](../../../ad-ds/get-started/virtual-dc/../../../ad-ds/get-started/virtual-dc/../../../ad-ds/get-started/virtual-dc/../../../ad-ds/get-started/virtual-dc/Virtualized-Domain-Controller-Architecture.md#BKMK_CloneProcessDetails)」の手順 3. で示されている場所で、DCCloneConfig.xml ファイルが検索されます。 DCCloneConfig.xml ファイルが見つかった場合は、複製としてデプロイされているものと判断します。したがって、ソース メディアからコピーされた既存の NTDS.DIT および SYSVOL の内容を使用して再昇格することで複製を開始して、自身を追加のドメイン コントローラーとしてプロビジョニングします。  
@@ -35,7 +34,7 @@ VM-GenerationID をサポートするハイパーバイザーと、サポート�
   
 VM-GenerationID をサポートするハイパーバイザーに複製メディアがデプロイされているにもかかわらず、DCCloneConfig.xml ファイルが提供されていない場合、その DIT と新しい VM の VM-GenerationID が異なることが DC によって検出され、USN の再利用と SID の重複を防ぐためにセーフガードがトリガーされます。 ただし、複製が開始されないため、セカンダリ DC は、ソース DC と同じ ID で引き続き実行されます。 このセカンダリ DC は、環境内での不整合を避けるためにできるだけ早くネットワークから削除する必要があります。 更新が出力方向にレプリケートされるようにしながら、このセカンダリ DC を再利用する方法の詳細については、Microsoft サポート技術情報の記事 [2742970](https://support.microsoft.com/kb/2742970)を参照してください。  
   
-### <a name="BKMK_CloneProcessDetails"></a>詳細な処理の複製  
+### <a name="cloning-detailed-processing"></a><a name="BKMK_CloneProcessDetails"></a>詳細な処理の複製  
 次の図は、初期の複製操作および複製再試行操作のアーキテクチャを示しています。 これらのプロセスについては、このトピックでさらに詳しく後述します。  
   
 **初期複製操作**  
@@ -142,7 +141,7 @@ VM-GenerationID をサポートするハイパーバイザーに複製メディ�
   
 26. ゲストが再起動されます。 これで、通常のアドバタイズ ドメイン コントローラーになりました。  
   
-## <a name="BKMK_SafeRestoreArch"></a>仮想化ドメインコントローラーの安全な復元のアーキテクチャ  
+## <a name="virtualized-domain-controller-safe-restore-architecture"></a><a name="BKMK_SafeRestoreArch"></a>仮想化ドメインコントローラーの安全な復元のアーキテクチャ  
   
 ### <a name="overview"></a>概要  
 AD DSは、ハイパーバイザー プラットフォームを使用して **VM-Generation ID** と呼ばれる識別子を公開し、仮想マシンのスナップショット復元を検出します。 この識別子の値は、ドメイン コントローラーの昇格中に、AD DS によってデータベース (NTDS.DIT) に格納されます。 管理者が以前のスナップショットから仮想マシンを復元するとき、仮想マシン内の VM-Generation ID の現在値がデータベース内の値と比較されます。 2 つの値が異なる場合は、ドメイン コントローラーにより起動 ID がリセットされ、RID プールが破棄されます。これにより、USN の再利用、またはセキュリティ プリンシパルが重複して作成されるのを防ぐことができます。 安全な復元が行われるシナリオは 2 つあります。  

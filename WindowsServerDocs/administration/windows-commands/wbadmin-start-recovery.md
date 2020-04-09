@@ -1,24 +1,20 @@
 ---
 title: wbadmin の回復の開始
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Wbadmin start recovery の Windows コマンドに関するトピックでは、指定したパラメーターに基づいて回復操作を実行します。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 52381316-a0fa-459f-b6a6-01e31fb21612
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: edb287573dc76619502faf58018f48c464140629
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6b5a65e67e7a34ca5263c85c1038820e0a4fc1ed
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71362353"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80829615"
 ---
 # <a name="wbadmin-start-recovery"></a>wbadmin の回復の開始
 
@@ -48,11 +44,11 @@ wbadmin start recovery
 [-quiet]
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
 |パラメーター|説明|
 |---------|-----------|
-|バージョン|復元するバックアップのバージョン識別子を MM/DD/YYYY-HH: MM 形式で指定します。 バージョン識別子を把握していない場合は、入力 **wbadmin のバージョンを取得する**です。|
+|-version|復元するバックアップのバージョン識別子を MM/DD/YYYY-HH: MM 形式で指定します。 バージョン識別子を把握していない場合は、入力 **wbadmin のバージョンを取得する**です。|
 |-項目|回復するボリューム、アプリケーション、ファイル、またはフォルダーのコンマ区切りの一覧を指定します。</br>- **Itemtype**が**volume**の場合、ボリュームドライブ文字、ボリュームマウントポイント、または GUID ベースのボリューム名を指定することによって、ボリュームを1つだけ指定できます。</br>- **Itemtype**が**App**の場合、1つのアプリケーションのみを指定できます。 回復するには、アプリケーションが Windows Server バックアップに登録されている必要があります。 また **、値の**表示方法を使用して、Active Directory のインストールを回復することもできます。 詳細については、「」の「解説」を参照してください。</br>- **Itemtype**が**File**の場合は、ファイルまたはフォルダーを指定できますが、同じボリュームの一部である必要があり、同じ親フォルダーの下にある必要があります。|
 |-itemtype|回復する項目の種類を指定します。 **ボリューム**、**アプリ**、または**ファイル**である必要があります。|
 |-backuptarget|回復するバックアップが格納されている記憶域の場所を指定します。 このパラメーターは、このコンピューターのバックアップが通常格納されている場所とは異なる場所にある場合に便利です。|
@@ -63,9 +59,9 @@ wbadmin start recovery
 |-notRestoreAcl|ファイルを回復する場合にのみ有効です。 バックアップから回復するファイルのセキュリティアクセス制御リスト (Acl) を復元しないように指定します。 既定では、セキュリティ Acl が復元されます (既定値は**true です)** 。 このパラメーターを使用すると、復元されたファイルの Acl は、ファイルの復元先の場所から継承されます。|
 |-skipBadClusterCheck|ボリュームを回復する場合にのみ有効です。 無効なクラスター情報について、回復しているディスクのチェックをスキップします。 別のサーバーまたはハードウェアに回復する場合は、このパラメーターを使用しないことをお勧めします。 これらのディスクに対して**chkdsk/b**コマンドをいつでも手動で実行して、不良クラスターがないかどうかを確認し、それに応じてファイルシステム情報を更新することができます。</br>重要: 説明に従って**chkdsk**を実行するまでは、回復したシステムで報告された不良クラスターが正確でない可能性があります。|
 |-noRollForward|アプリケーションを回復する場合にのみ有効です。 バックアップからの最新バージョンが選択されている場合に、アプリケーションの以前の特定の時点への復旧を許可します。 最新ではないその他のバージョンのアプリケーションでは、以前の特定の時点への復旧が既定値として行われます。|
-|-通知の停止|ユーザーにプロンプトを表示せずにサブコマンドを実行します。|
+|-quiet|ユーザーにプロンプトを表示せずにサブコマンドを実行します。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
 -   特定のバックアップバージョンから回復可能な項目の一覧を表示するには、 **wbadmin get items**を使用します。 バックアップ時にボリュームにマウントポイントまたはドライブ文字がない場合、このサブコマンドは、ボリュームの回復に使用する GUID ベースのボリューム名を返します。
 -   **-Itemtype**が**App**の場合は、値を使用して、[メディア**からのインストール**]**操作を実行し、** Active Directory Domain Services に必要なすべての関連データを回復することができます。 次に、Active Directory データベース、レジストリ、および SYSVOL の状態のコピー**を作成し**、この情報を **-recoverytarget**で指定した場所に保存します。 このパラメーターは **、-recoverytarget**が指定されている場合にのみ使用してください。
@@ -73,7 +69,7 @@ wbadmin start recovery
 >     [!NOTE]
 >     Before using **wbadmin** to perform an install from media operation, you should consider using the **ntdsutil** command because **ntdsutil** only copies the minimum amount of data needed, and it uses a more secure data transport method.
 
-## <a name="BKMK_Examples"></a>例
+## <a name="examples"></a><a name=BKMK_Examples></a>例
 
 2013年3月31日の午前9:00 に撮影されたバックアップの回復を実行するには、次のように入力します。
 ```
@@ -97,9 +93,9 @@ wbadmin start recovery -version:03/31/2013-09:00 -itemType:Volume
 wbadmin start recovery -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
--   [コマンド ライン構文の記号](command-line-syntax-key.md)
+-   - [コマンド ライン構文の記号](command-line-syntax-key.md)
 -   [Wbadmin](wbadmin.md)
 -   [WBFileRecovery](https://technet.microsoft.com/library/jj902457.aspx)コマンドレット
 -   [WBHyperVRecovery](https://technet.microsoft.com/library/jj902463.aspx)コマンドレット

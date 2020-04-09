@@ -1,24 +1,20 @@
 ---
 title: if
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Windows コマンドに関するトピック * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 698b3fb9-532b-4c2b-af7f-179f8dc57131
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e8518fffc4f271369b13899e149ebd30145726b8
-ms.sourcegitcommit: 51e0b575ef43cd16b2dab2db31c1d416e66eebe8
+ms.openlocfilehash: 706ac1569ac3ca7ae504410935f334be360eda3a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76259026"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80842235"
 ---
 # <a name="if"></a>if
 
@@ -42,7 +38,7 @@ if cmdextversion <Number> <Command> [else <Expression>]
 if defined <Variable> <Command> [else <Expression>]
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
 |        パラメーター        |                                                                                                                                                                                                                説明                                                                                                                                                                                                                 |
 |-------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -56,9 +52,9 @@ if defined <Variable> <Command> [else <Expression>]
 | cmdextversion \<番号 > | Cmd.exe のコマンド拡張機能に関連付けられている内部バージョン番号が、指定された数以上である場合にのみ、true 条件を指定します。 最初のバージョンは1です。 コマンド拡張機能に大幅な拡張が追加されると、1つずつ増加します。 コマンド拡張機能が無効になっている場合 (既定では、コマンド拡張機能が有効になっている場合)、 **cmdextversion**条件は満たされません。 |
 |   定義された \<変数 >   |                                                                                                                                                                                            *変数*が定義されている場合に true 条件を指定します。                                                                                                                                                                                            |
 |      \<式 >      |                                                                                                                                                                   コマンドラインコマンドと、 **else**句でコマンドに渡すパラメーターを指定します。                                                                                                                                                                   |
-|           /?            |                                                                                                                                                                                                    コマンド プロンプトにヘルプを表示します。                                                                                                                                                                                                    |
+|           /?            |                                                                                                                                                                                                    コマンド プロンプトでヘルプを表示します。                                                                                                                                                                                                    |
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
 -   **If**句に指定された条件が true の場合、条件に従ったコマンドが実行されます。条件が false の場合、 **if**句のコマンドは無視され、コマンドは**else**句で指定されているすべてのコマンドを実行します。
 -   プログラムが停止すると、終了コードが返されます。 終了コードを条件として使用するには、 **errorlevel**を使用します。
@@ -68,9 +64,9 @@ if defined <Variable> <Command> [else <Expression>]
     -   **% cmdextversion%** は、 **cmdextversion**の現在の値の文字列形式に展開されます。 これは、CMDEXTVERSION という名前の既存の環境変数が存在しないことを前提としています。存在する場合は、代わりに CMDEXTVERSION の値が取得されます。
 -   **If**の後のコマンドと同じ行で**else**句を使用する必要があります。
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a><a name=BKMK_examples></a>例
 
-ファイルの製品が見つからない場合に "データファイルが見つかりません" というメッセージを表示するには、次のように入力します。
+ファイルの製品が見つからない場合、"データファイルが見つかりません" というメッセージが表示されるようにするには、次のように入力します。
 ```
 if not exist product.dat echo Cannot find data file 
 ```
@@ -110,15 +106,15 @@ echo The Product.dat file is missing.
 > :end
 > echo Done! 
 > ```
-> ERRORLEVEL 環境変数の値が1以下の場合、"ok" というラベルにジャンプするには、次のように入力します。
+> ERRORLEVEL 環境変数の値が1以下の場合は、[ok] を指定すると、次のように入力します。
 > ```
 > if %errorlevel% LEQ 1 goto okay
 > ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
 
-[If](if.md)
+[もし](if.md)
 
 [へ](goto.md)

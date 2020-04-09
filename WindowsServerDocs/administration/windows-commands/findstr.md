@@ -1,24 +1,20 @@
 ---
 title: findstr
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Windows コマンドに関するトピック * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c2d803fb-4cd2-46a1-a1b7-6f5e0249c418
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 547a0abf658ef826cca8c87d451144181f8dac7d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: dbdc1b741b5934f53340bda773909fb5035e449b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71377190"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80844635"
 ---
 # <a name="findstr"></a>findstr
 
@@ -32,7 +28,7 @@ ms.locfileid: "71377190"
 findstr [/b] [/e] [/l | /r] [/s] [/i] [/x] [/v] [/n] [/m] [/o] [/p] [/f:<File>] [/c:<String>] [/g:<File>] [/d:<DirList>] [/a:<ColorAttribute>] [/off[line]] <Strings> [<Drive>:][<Path>]<FileName>[ ...]
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
 |パラメーター|説明|
 |---------|-----------|
@@ -58,16 +54,16 @@ findstr [/b] [/e] [/l | /r] [/s] [/i] [/x] [/v] [/n] [/m] [/o] [/p] [/f:<File>] 
 |[\<ドライブ >:][<Path>]<FileName>[...]|検索する場所とファイルを指定します。 少なくとも1つのファイル名が必要です。|
 |/?|コマンド プロンプトでヘルプを表示します。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
 - すべての**findstr**コマンドラインオプションは、コマンド文字列の*文字列*と*ファイル名*の前に記述する必要があります。
 - 正規表現では、文字の正確な文字列ではなく、リテラル文字とメタ文字の両方を使用してテキストのパターンを検索します。 リテラル文字は、正規表現の構文で特別な意味を持たない文字であり、その文字の出現に一致します。 たとえば、文字と数字はリテラル文字です。 メタ文字は、正規表現の構文で特別な意味 (演算子または区切り記号) を持つ記号です。
 
   次の表に、 **findstr**が受け入れるメタ文字の一覧を示します。  
 
-  |メタ文字|Value|
+  |メタ文字|値|
   |-------------|-----|
-  |.|ワイルドカード: 任意の文字|
+  |。|ワイルドカード: 任意の文字|
   |*|Repeat: 前の文字またはクラスの0回以上の出現|
   |^|行の位置: 行の先頭|
   |$|行の位置: 行の終わり|
@@ -84,7 +80,7 @@ findstr [/b] [/e] [/l | /r] [/s] [/i] [/x] [/v] [/n] [/m] [/o] [/p] [/f:<File>] 
   .*
   ``` 
 
-  "B" で始まり、"ing" で終わる任意の文字列と一致させるには、次の式を大きな式の一部として使用します。 
+  次の式は、b で始まり、ing で終わる任意の文字列と一致させるために、より大きな式の一部として使用します。 
 
   ```
   b.*ing
@@ -94,19 +90,19 @@ findstr [/b] [/e] [/l | /r] [/s] [/i] [/x] [/v] [/n] [/m] [/o] [/p] [/f:<File>] 
 
 引数の先頭に **/c**が指定されていない場合は、スペースを使用して複数の検索文字列を区切ります。
 
-ファイル x.y で "hello" または "it" を検索するには、次のように入力します。
+ファイル x.y で hello またはファイルを検索するには、次のように入力します。
 
 ```
-findstr "hello there" x.y 
+findstr hello there x.y 
 ```
 
-ファイル x.y で "hello it" を検索するには、次のように入力します。
+ファイル x.y で hello を検索するには、次のように入力します。
 
 ```
-findstr /c:"hello there" x.y 
+findstr /c:hello there x.y 
 ```
 
-ファイルの提案に "Windows" という単語 (最初の大文字の W) が出現する箇所をすべて検索するには、次のように入力します。
+ファイルの提案に、(最初の大文字の W を含む) word ウィンドウのすべての出現箇所を検索するには、次のように入力します。
 
 ```
 findstr Windows proposal.txt 
@@ -118,10 +114,10 @@ findstr Windows proposal.txt
 findstr /s /i Windows *.* 
 ```
 
-"FOR" で始まる行のすべての出現箇所を検索するには (コンピュータープログラムループのように) 0 個以上の空白が先頭にあり、それぞれが見つかった行番号を表示するには、次のように入力します。
+で始まる行のすべての出現箇所を検索するには、の後に0個以上の空白 (コンピュータープログラムのループなど) が付いていることを確認し、次のように入力します。
 
 ```
-findstr /b /n /r /c:"^ *FOR" *.bas 
+findstr /b /n /r /c:^ *FOR *.bas 
 ```
 
 一連のファイルで複数の文字列を検索するには、各検索条件を含むテキストファイルを別の行に作成します。 また、テキストファイルで検索する正確なファイルを一覧表示することもできます。 たとえば、ファイル文字列の検索条件を使用するには、Filelist に一覧表示されているファイルを検索し、結果をファイルの結果に格納します。次に、「」と入力します。
@@ -130,18 +126,18 @@ findstr /b /n /r /c:"^ *FOR" *.bas
 findstr /g:stringlist.txt /f:filelist.txt > results.out 
 ```
 
-現在のディレクトリとすべてのサブディレクトリ内の "computer" という語を含むすべてのファイルを一覧表示するには、次のように入力します。
+すべてのファイルの一覧を表示するには、次のように入力します。
 
 ```
-findstr /s /i /m "\<computer\>" *.*
+findstr /s /i /m \<computer\> *.*
 ```
 
-"Computer" という単語が含まれているすべてのファイルと、"comp" で始まる他のすべての語 ("補数" や "競合" など) を一覧表示するには、次のように入力します。
+Word コンピューターを含むすべてのファイルを一覧表示し、カンプで始まる他のすべての単語を一覧表示するには、次のように入力します。
 
 ```
-findstr /s /i /m "\<comp.*" *.*
+findstr /s /i /m \<comp.* *.*
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

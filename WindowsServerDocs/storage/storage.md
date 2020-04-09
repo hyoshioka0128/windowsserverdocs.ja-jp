@@ -1,6 +1,5 @@
 ---
-title: 記憶域
-description: ''
+title: ストレージ
 author: JasonGerend
 manager: elizapo
 layout: LandingPage
@@ -11,14 +10,14 @@ ms.topic: landing-page
 ms.author: jgerend
 ms.localizationpriority: medium
 ms.date: 03/08/2019
-ms.openlocfilehash: 7e7fbd6ce3fcef6b0f8da88927d83f28d3fff0a8
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 5c8e6831e7e424896722c65d2ca6f34b3cc15e8d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950224"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820916"
 ---
-# <a name="storage"></a>記憶域
+# <a name="storage"></a>ストレージ
 
 >適用対象: Windows Server 2019、Windows Server 2016、Windows Server (半期チャネル)
 
@@ -41,7 +40,7 @@ Windows Server の記憶域では、仮想化されたワークロードに重�
                                             </div>
                                         </div>
                                         <div class="cardText">
-                                            <h2>異なる部分</h2>
+                                            <h2>最新情報</h2>
                                             <p>Windows Server ストレージの新機能を確認する</p>
                                         </div>
                                     </div>
@@ -88,7 +87,7 @@ Windows Server の記憶域では、仮想化されたワークロードに重�
                     <div class="cardText">
                         <h3>汎用ファイル サーバー</h3>
 <HR />
-                        <p><h3><a href="storage-migration-service/overview.md">記憶域移行サービス</a></h3>サーバー上のデータをインベントリするグラフィカルツールを使用してサーバーを新しいバージョンの Windows Server に移行し、データと構成を新しいサーバーに転送します。また、必要に応じて、古いサーバーの id を新しいサーバーに移動して、アプリとユーザーを対象とします。何も変更する必要はありません。</p>
+                        <p><h3><a href="storage-migration-service/overview.md">記憶域移行サービス</a></h3>サーバー上のデータをインベントリするグラフィカルツールを使用してサーバーを新しいバージョンの Windows Server に移行し、データと構成を新しいサーバーに転送してから、必要に応じて古いサーバーの id を新しいサーバーに移動します。これにより、アプリとユーザーは何も変更する必要がなくなります。</p>
 <HR />
                         <p><h3><a href="work-folders/work-folders-overview.md">ワーク フォルダー</a></h3> 会社の Pc に加えて、個人のコンピューターやデバイス (BYOD) とも呼ばれる、仕事用ファイルを保存してアクセスします。 ユーザーは、アクセスしやすい場所に作業ファイルを保存し、そのファイルにはどこからでもアクセスできます。 組織は、一元管理されたファイル サーバーにファイルを格納し、必要に応じてユーザーのデバイス ポリシー (暗号化とロック画面のパスワードなど) を指定することで、企業のデータを管理します。</p>
 <HR />
@@ -124,13 +123,13 @@ Windows Server の記憶域では、仮想化されたワークロードに重�
 <HR />
                         <p><h3><a href="refs/refs-overview.md">ReFS</a></h3> データの可用性を最大化し、多様なワークロードの非常に大きなデータセットに効率よく拡張し、ソフトウェアまたはハードウェアの障害に関係なく、破損に対する回復性によってデータの整合性を確保する、回復力のあるファイルシステム。<p>
 <HR />
-                        <p><h3><a href="file-server/file-server-smb-overview.md">サーバー メッセージ ブロック (SMB) プロトコル</a></h3> コンピューター上のアプリケーションがファイルの読み取りと書き込みを実行し、コンピューターネットワークのサーバープログラムからサービスを要求できるようにするネットワークファイル共有プロトコル。 SMB プロトコルは、TCP/IP プロトコルをはじめとするネットワーク プロトコルの上位で使用できます。 SMB プロトコルを使えば、アプリケーション (またはアプリケーションのユーザー) がリモート サーバーにあるファイルなどのリソースにアクセスできます。 これにより、リモート サーバー上でアプリケーションがファイルを読み込み、作成、および更新できるようになります。 また、SMB クライアント リクエストを受け取ることができるように設定された任意のサーバー プログラムと通信できます。<p>
+                        <p><h3><a href="file-server/file-server-smb-overview.md">サーバーメッセージブロック (SMB) プロトコル</a></h3> コンピューター上のアプリケーションがファイルの読み取りと書き込みを実行し、コンピューターネットワークのサーバープログラムからサービスを要求できるようにするネットワークファイル共有プロトコル。 SMB プロトコルは、TCP/IP プロトコルをはじめとするネットワーク プロトコルの上位で使用できます。 SMB プロトコルを使えば、アプリケーション (またはアプリケーションのユーザー) がリモート サーバーにあるファイルなどのリソースにアクセスできます。 これにより、リモート サーバー上でアプリケーションがファイルを読み込み、作成、および更新できるようになります。 また、SMB クライアント リクエストを受け取ることができるように設定された任意のサーバー プログラムと通信できます。<p>
 <HR />
                         <p><h3><a href="storage-spaces/Storage-class-memory-health.md">ストレージクラスのメモリ</a></h3> は、コンピューターメモリ (非常に高速) と同様にパフォーマンスを提供しますが、通常の記憶域ドライブのデータは永続化されます。 Windows では、記憶域クラス メモリは、処理速度が高速である点を除けば通常のドライブと同様に処理されますが、デバイスの正常性管理の仕組みにいくつかの違いがあります。<p>
 <HR />
                         <p><h3><a href="https://technet.microsoft.com/library/cc766295(v=ws.10).aspx">BitLocker ドライブ暗号化</a></h3> は、コンピューターが改ざんされた場合や、オペレーティングシステムが実行されていない場合でも、暗号化された形式でデータを保存します。 この機能により、オフライン攻撃や、インストール済みのオペレーティング システムを無効化または迂回した攻撃、ハード ドライブを物理的に取り外してデータを個別に狙う攻撃を防ぐことができます。<p>
 <HR />
-                        <p><h3><a href="https://technet.microsoft.com/library/dn466522(v=ws.11).aspx">NTFS</a></h3> Windows および Windows Server の最新バージョンのプライマリファイルシステム-セキュリティ記述子、暗号化、ディスククォータ、豊富なメタデータを含むすべての機能を提供し、クラスターの共有ボリューム (CSV) と共に使用して継続的に提供することができます。フェールオーバークラスターの複数のノードから同時にアクセスできる使用可能なボリューム。<p>
+                        <p><h3><a href="https://technet.microsoft.com/library/dn466522(v=ws.11).aspx">NTFS</a></h3> Windows および Windows Server の最新バージョンのプライマリファイルシステムでは、セキュリティ記述子、暗号化、ディスククォータ、豊富なメタデータを含むすべての機能が提供されており、クラスター共有ボリューム (CSV) と共に使用して、フェールオーバークラスターの複数のノードから同時にアクセスできる継続的に使用可能なボリュームを提供できます。<p>
 <HR />
                         <p><h3><a href="https://technet.microsoft.com/library/jj592688(v=ws.11).aspx">ネットワークファイルシステム (NFS)</a></h3> は、Windows コンピューターと Windows 以外のコンピューターの両方で構成される異種環境を持つ企業向けのファイル共有ソリューションを提供します。<p>
                     </div>

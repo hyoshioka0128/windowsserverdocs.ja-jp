@@ -1,23 +1,19 @@
 ---
 title: メディア ストリーミング設定の変更
 description: Windows Server Essentials の使用方法について説明します。
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: dec690d2-f80c-4b09-99d6-3bba41331972
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 217bcbeda8f50ee1f17bcc1da6bd5b982dcf5106
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: bbe3a934f402be91ea9bfaca7bbbbdae1922186a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80310073"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80817325"
 ---
 # <a name="change-media-streaming-settings"></a>メディア ストリーミング設定の変更
 

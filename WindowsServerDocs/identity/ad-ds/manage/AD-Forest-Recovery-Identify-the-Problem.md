@@ -1,6 +1,5 @@
 ---
 title: AD フォレストの回復 - 問題の特定
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,16 +8,16 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: 5a291f65-794e-4fc3-996e-094c5845a383
 ms.technology: identity-adds
-ms.openlocfilehash: dddbd187fb100b94b505a74595e040cec580a797
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 73b7ef8dc6093ae28c4b5076e7b332b704090b4f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369120"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80823995"
 ---
 # <a name="identify-the-problem"></a>問題を特定する
 
->適用先:Windows Server 2016、Windows Server 2012、および 2012 R2、Windows Server 2008 および 2008 R2
+>適用対象: Windows Server 2016、Windows Server 2012、および 2012 R2、Windows Server 2008 および 2008 R2
   
 イベントログやその他の監視ソリューションなど、フォレスト全体の障害の兆候が表示された場合は、Microsoft サポートを操作してエラーの原因を特定し、考えられる解決策を評価します。  
 

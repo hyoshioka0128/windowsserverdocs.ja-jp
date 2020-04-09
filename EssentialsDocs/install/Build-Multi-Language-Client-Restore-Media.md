@@ -1,23 +1,19 @@
 ---
 title: 複数言語のクライアント復元メディアの作成
 description: Windows Server Essentials の使用方法について説明します。
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2fdbc016-d464-43cb-bd75-8a63e61588a2
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 2b9d98c8c370e41ef87f96befdcd7746b0bb59f2
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: c47b77e30aafdf6d882bb0d6af4777c7417acba9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80310082"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80817345"
 ---
 # <a name="build-multi-language-client-restore-media"></a>複数言語のクライアント復元メディアの作成
 

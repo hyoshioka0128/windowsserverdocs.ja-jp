@@ -1,24 +1,20 @@
 ---
 title: rcp
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Windows コマンドに関するトピック * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 83ad713c-63c9-458c-8ad8-39a6ddeb1690 vhorne
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9e62243c2ca41b66dea69f82d36ad082bbaeee42
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b6d3ccf0ebb06e8d950a83909968f34470cd3ba1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71384816"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80836695"
 ---
 # <a name="rcp"></a>rcp
 

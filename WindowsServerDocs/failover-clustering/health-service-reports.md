@@ -5,15 +5,14 @@ manager: eldenc
 ms.author: cosdar
 ms.technology: storage-health-service
 ms.topic: article
-ms.assetid: ''
 author: cosmosdarwin
 ms.date: 10/05/2017
-ms.openlocfilehash: e65db8834bd0b059dc7bbebbcaf9288fb46da225
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3b47e1abf3805b7e6e3dc180d5d937ddb2723fa4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369679"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80827545"
 ---
 # <a name="health-service-reports"></a>レポートのヘルスサービス
 > 適用対象: Windows Server 2019、Windows Server 2016
@@ -76,7 +75,7 @@ public CimSession Connect(string Domain = "...", string Computer = "...", string
 
 パスワード**SecureString**をユーザー入力から直接作成することをお勧めします。そのため、パスワードはクリアテキストでメモリに格納されることはありません。 これは、さまざまなセキュリティの問題を軽減するのに役立ちます。 しかし実際には、プロトタイプ作成は、プロトタイプ作成の目的では一般的です。
 
-### <a name="discover-objects"></a>オブジェクトの検出
+### <a name="discover-objects"></a>オブジェクトを検出します
 
 **CimSession**を確立したら、クラスターで WINDOWS MANAGEMENT INSTRUMENTATION (WMI) を照会できます。
 
@@ -213,15 +212,15 @@ public void BeginStreamingMetrics(CimSession Session, CimInstance HealthService,
 
 各メトリックには、このテーブルにつき3つのプロパティしかありません。
 
-| **プロパティ** | **例**       |
+| **"** | **例**       |
 | -------------|-------------------|
-| 名前         | IOLatencyAverage  |
-| Value        | 0.00021           |
+| Name         | IOLatencyAverage  |
+| 値        | 0.00021           |
 | 単位        | 3                 |
 
 Units = {0, 1, 2, 3, 4}、0 = "Bytes"、1 = "BytesPerSecond"、2 = "CountPerSecond"、3 = "Seconds"、または 4 = "パーセント"。
 
-## <a name="coverage"></a>対象範囲
+## <a name="coverage"></a>カバレッジ
 
 Windows Server 2016 の各スコープで使用可能なメトリックを以下に示します。
 
@@ -282,6 +281,6 @@ Windows Server 2016 の各スコープで使用可能なメトリックを以下
 | Ioby Puttotal   | 1         |
 | IOThroughputWrite   | 1         |
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [Windows Server 2016 のヘルスサービス](health-service-overview.md)

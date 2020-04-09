@@ -1,7 +1,6 @@
 ---
 ms.assetid: 4981b32f-741e-4afc-8734-26a8533ac530
 title: AD DS を既存の DNS インフラストラクチャに統合する
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: f4bb480be4696f15f0a63c20ab47042264584d2c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: cf069102f409247832204546f3e1c15de7238bd3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402553"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822275"
 ---
 # <a name="integrating-ad-ds-into-an-existing-dns-infrastructure"></a>AD DS を既存の DNS インフラストラクチャに統合する
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 組織に既存の DNS (ドメインネームシステム) サーバーサービスが既に存在する場合、AD DS を既存のインフラストラクチャに統合するには、Active Directory Domain Services (AD DS) 所有者が組織の DNS 所有者と連携している必要があります。 これには、DNS サーバーと DNS クライアント構成の作成が含まれます。  
   
@@ -31,13 +30,13 @@ ms.locfileid: "71402553"
   
 -   各地域ドメインのドメインコントローラーが、Active Directory ドメインに対応する DNS ゾーンをホストするように構成します。  
   
--   Active Directory フォレスト全体のロケーターレコード (つまり、_msdcs) を含むゾーンを構成します。*forestname*ゾーン)。フォレスト全体の dns アプリケーションディレクトリパーティションを使用して、フォレスト内のすべての dns サーバーにレプリケートします。  
+-   Active Directory フォレスト全体のロケーターレコードを含むゾーン (つまり、_msdcs を構成します。*forestname*ゾーン)。フォレスト全体の dns アプリケーションディレクトリパーティションを使用して、フォレスト内のすべての dns サーバーにレプリケートします。  
   
     > [!NOTE]  
     > DNS サーバーサービスが Active Directory ドメインサービスインストールウィザードと共にインストールされると (このオプションをお勧めします)、前のすべてのタスクが自動的に実行されます。 詳細については、「 [Windows Server 2008 のフォレストルートドメインの展開](https://technet.microsoft.com/library/cc731174.aspx)」を参照してください。  
   
     > [!NOTE]  
-    > AD DS は、フォレスト全体のロケーターレコードを使用して、レプリケーションパートナーが互いを検索し、クライアントがグローバルカタログサーバーを検索できるようにします。 AD DS は、フォレスト全体のロケーターレコードを _msdcs に格納します。*forestname*ゾーン。 ゾーン内の情報は広く使用可能である必要があるため、フォレスト全体の DNS アプリケーションディレクトリパーティションによって、このゾーンはフォレスト内のすべての DNS サーバーにレプリケートされます。  
+    > AD DS は、フォレスト全体のロケーターレコードを使用して、レプリケーションパートナーが互いを検索し、クライアントがグローバルカタログサーバーを検索できるようにします。 AD DS では、フォレスト全体のロケーターレコードが _msdcs に格納されます。*forestname*ゾーン。 ゾーン内の情報は広く使用可能である必要があるため、フォレスト全体の DNS アプリケーションディレクトリパーティションによって、このゾーンはフォレスト内のすべての DNS サーバーにレプリケートされます。  
   
 既存の DNS 構造はそのまま残ります。 サーバーやゾーンを移動する必要はありません。 Active Directory 統合された DNS ゾーンの委任を既存の DNS 階層から作成するだけで済みます。  
   
@@ -46,7 +45,7 @@ ms.locfileid: "71402553"
   
 |デザイン要素|構成|  
 |------------------|-----------------|  
-|コンピューターの名前付け|既定の名前付けを使用します。 Windows 2000、Windows XP、Windows Server 2003、Windows Server 2008、または Windows Vista ベースのコンピューターがドメインに参加している場合、コンピューターは、コンピューターのホスト名とアクティブなの名前で構成される完全修飾ドメイン名 (FQDN) を割り当てます。ディレクトリドメイン。|  
+|コンピューターの名前付け|既定の名前付けを使用します。 Windows 2000、Windows XP、Windows Server 2003、Windows Server 2008、または Windows Vista ベースのコンピューターがドメインに参加している場合、コンピューターは、コンピューターのホスト名と Active Directory ドメインの名前で構成される完全修飾ドメイン名 (FQDN) を割り当てます。|  
 |クライアントリゾルバーの構成|ネットワーク上の任意の DNS サーバーをポイントするようにクライアントコンピューターを構成します。|  
   
 > [!NOTE]  

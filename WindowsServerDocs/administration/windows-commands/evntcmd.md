@@ -1,24 +1,20 @@
 ---
 title: Evntcmd
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Windows コマンドに関するトピック * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c1aabb74-76e7-4304-95a6-50ad87e92fd9
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b4496df6df1a40b383505627d58389c098493f59
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 86e4290543ffcc0da1c768a661fd88a7638b1146
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71377440"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80845015"
 ---
 # <a name="evntcmd"></a>Evntcmd
 
@@ -29,7 +25,7 @@ ms.locfileid: "71377440"
 ```  
 evntcmd [/s <computerName>] [/v <verbosityLevel>] [/n] <FileName>  
 ```  
-### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a>パラメーター  
 
 |      パラメーター      |                                                                                                                                                            説明                                                                                                                                                             |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -37,9 +33,9 @@ evntcmd [/s <computerName>] [/v <verbosityLevel>] [/n] <FileName>
 | /v <verbosityLevel> | トラップおよびトラップ送信先が構成されているステータスメッセージの種類を指定します。 このパラメーターは、0から10までの整数である必要があります。 10を指定すると、すべての種類のメッセージが表示されます。これには、トラップの構成が成功したかどうかに関するトレースメッセージや警告が含まれます。 0を指定した場合、メッセージは表示されません。 |
 |         /n          |                                                                                                           このコンピューターがトラップ構成の変更を受信した場合に、SNMP サービスを再起動しないように指定します。                                                                                                            |
 |     <FileName>      |                                                                                     トラップするイベントと構成するトラップの送信先に関する情報を含む構成ファイルを名前で指定します。                                                                                     |
-|         /?          |                                                                                                                                                コマンド プロンプトにヘルプを表示します。                                                                                                                                                |
+|         /?          |                                                                                                                                                コマンド プロンプトでヘルプを表示します。                                                                                                                                                |
 
-## <a name="remarks"></a>注釈  
+## <a name="remarks"></a>コメント  
 - トラップの送信先を構成せずにトラップを構成する場合は、イベントを使用して有効な構成ファイルを作成できます。このトランスレーターは、グラフィカルユーティリティです。 SNMP サービスがインストールされている場合は、コマンドプロンプトで「 **evntwin** 」と入力することによって、イベントのトラップトランスレーターを開始できます。 必要なトラップを定義したら、[エクスポート] をクリックして、 **evntcmd**での使用に適したファイルを作成します。 イベントを使用して、簡単に構成ファイルを作成し、コマンドプロンプトで**evntcmd**と共に構成ファイルを使用して、複数のコンピューターでトラップをすばやく構成することができます。  
 - トラップを構成するための構文は次のとおりです。  
   <em><EventLogFile> <EventSource> の**追加 #pragma** <EventID> [<Count> [<Period>]]</em>  
@@ -65,19 +61,19 @@ evntcmd [/s <computerName>] [/v <verbosityLevel>] [/n] <FileName>
   - パラメーター *delete_TRAP_DEST*は、コミュニティ内の指定されたホストにトラップメッセージを送信しないように指定します。  
   - パラメーター *CommunityName*は、トラップメッセージが送信されるコミュニティを名前で指定します。  
   - パラメーター *HostID*は、トラップメッセージを送信する必要のないホストの名前または IP アドレスを指定します。  
-    ## <a name="BKMK_Examples"></a>例  
+    ## <a name="examples"></a><a name=BKMK_Examples></a>例  
     次の例は、 **evntcmd**コマンドの構成ファイル内のエントリを示しています。 コマンドプロンプトで入力するように設計されていません。  
     イベントログサービスが再開されたときにトラップメッセージを送信するには、次のように入力します。  
     ```  
-    #pragma add System "Eventlog" 2147489653  
+    #pragma add System Eventlog 2147489653  
     ```  
     イベントログサービスが3分間に2回再起動された場合にトラップメッセージを送信するには、次のように入力します。  
     ```  
-    #pragma add System "Eventlog" 2147489653 2 180  
+    #pragma add System Eventlog 2147489653 2 180  
     ```  
     イベントログサービスが再開されるたびにトラップメッセージの送信を停止するには、次のように入力します。  
     ```  
-    #pragma delete System "Eventlog" 2147489653  
+    #pragma delete System Eventlog 2147489653  
     ```  
     パブリックというコミュニティ内のトラップメッセージを、IP アドレス192.168.100.100 を使用してホストに送信するには、次のように入力します。  
     ```  
@@ -92,4 +88,4 @@ evntcmd [/s <computerName>] [/v <verbosityLevel>] [/n] <FileName>
     #pragma delete_TRAP_DEST private localhost  
     ```  
     ## <a name="additional-references"></a>その他の参照情報  
-- [コマンド ライン構文の記号](command-line-syntax-key.md)  
+- - [コマンド ライン構文の記号](command-line-syntax-key.md)  

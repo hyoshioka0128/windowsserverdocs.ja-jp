@@ -1,7 +1,6 @@
 ---
 ms.assetid: 64142026-07b5-4601-840a-c8dcf6ab9814
 title: サイト リンク ブリッジ設計の作成
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,16 +8,16 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 79e91481c357d05617ee0ddc716e2bf6e90b8b27
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f75feb34b64e2ab41859dd708147a2e8d05a768a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408965"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822765"
 ---
 # <a name="creating-a-site-link-bridge-design"></a>サイト リンク ブリッジ設計の作成
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 サイトリンクブリッジは、2つ以上のサイトリンクを接続し、サイトリンク間の推移性を有効にします。 ブリッジ内の各サイトリンクは、ブリッジ内の別のサイトリンクと共通のサイトを持つ必要があります。 知識整合性チェッカー (KCC) は、各サイトリンクの情報を使用して、あるサイトリンク内のサイトと、ブリッジの他のサイトリンクにあるサイト間のレプリケーションのコストを計算します。 サイトリンク間に共通のサイトが存在しない場合、KCC は、同じサイトリンクブリッジによって接続されているサイト内のドメインコントローラ間の直接接続を確立することもできません。  
   
@@ -39,4 +38,4 @@ Active Directory サイトとサービススナップインを使用して、[**
   
 ### <a name="controlling-replication-through-a-firewall"></a>ファイアウォール経由のレプリケーションの制御
 
-2つの異なるサイトで同じドメインを表す2つのドメインコントローラーが、ファイアウォールを介してのみ相互に通信を許可されている場合は、[**すべてのサイトリンクをブリッジ**する] を無効にし、サイトのサイトリンクブリッジを作成することができます。firewall. このため、ファイアウォールによってネットワークが分離されている場合は、サイトリンクの推移性を無効にして、ファイアウォールの片側にネットワーク用のサイトリンクブリッジを作成することをお勧めします。 ファイアウォールを介したレプリケーションの管理の詳細については、「[ファイアウォールでセグメント](https://go.microsoft.com/fwlink/?LinkId=107074)化されたネットワーク」の Active Directory を参照してください。
+2つの異なるサイトで同じドメインを表す2つのドメインコントローラーが、ファイアウォールを介してのみ相互に通信を許可されている場合は、[**すべてのサイトリンクをブリッジ**する] を無効にして、ファイアウォールの同じ側のサイトに対してサイトリンクブリッジを作成することができます。 このため、ファイアウォールによってネットワークが分離されている場合は、サイトリンクの推移性を無効にして、ファイアウォールの片側にネットワーク用のサイトリンクブリッジを作成することをお勧めします。 ファイアウォールを介したレプリケーションの管理の詳細については、「[ファイアウォールでセグメント](https://go.microsoft.com/fwlink/?LinkId=107074)化されたネットワーク」の Active Directory を参照してください。

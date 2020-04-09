@@ -1,24 +1,20 @@
 ---
 title: fc
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Windows コマンドに関するトピック * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 485fc3d8-b7c5-496d-87be-0011112f27d5
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f6c004fcebcf5eb743354d9e0a121ff8598217a4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4b358b8c1bf44b5b7942cef05bd09fa8cac850a3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71377250"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80844745"
 ---
 # <a name="fc"></a>fc
 
@@ -35,7 +31,7 @@ fc /a [/c] [/l] [/lb<N>] [/n] [/off[line]] [/t] [/u] [/w] [/<NNNN>] [<Drive1>:][
 fc /b [<Drive1:>][<Path1>]<FileName1> [<Drive2:>][<Path2>]<FileName2>
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
 |            パラメーター             |                                                                                                                                     説明                                                                                                                                      |
 |----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -52,9 +48,9 @@ fc /b [<Drive1:>][<Path1>]<FileName1> [<Drive2:>][<Path2>]<FileName2>
 |             /\<NNNN >             | 不一致の後に一致する必要がある連続する行の数を指定します。 **fc**は、ファイルの再同期を検討します。 ファイル内の一致する行の数が*NNNN*よりも少ない場合、 **fc**は一致する行を相違として表示します。 既定値は 2 です。 |
 | [\<Drive1 >:][<Path1>]<FileName1> |                                                                                        比較する1つ目のファイルまたはファイルのセットの場所と名前を指定します。 *FileName1*が必要です。                                                                                        |
 | [\<Drive2 >:][<Path2>]<FileName2> |                                                                                       比較する2番目のファイルまたは一連のファイルの場所と名前を指定します。 *FileName2*が必要です。                                                                                        |
-|                /?                |                                                                                                                         コマンド プロンプトにヘルプを表示します。                                                                                                                         |
+|                /?                |                                                                                                                         コマンド プロンプトでヘルプを表示します。                                                                                                                         |
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
 -   このコマンドは、c:\WINDOWS\fc.exe. によって implemeted されます。 PowerShell 内でこのコマンドを使用することはできますが、完全な実行可能ファイル (fc-sw) を必ず確認してください。 ' fc ' は、形式がカスタムのエイリアスであるためです。
 
@@ -85,7 +81,7 @@ fc /b [<Drive1:>][<Path1>]<FileName1> [<Drive2:>][<Path2>]<FileName2>
 
     使用可能なメモリを超えるバイナリファイルを比較する場合、 **fc**は両方のファイルを完全に比較し、メモリ内の部分をディスクの次の部分にオーバーレイします。 出力は、メモリ内に完全に一致するファイルの場合と同じです。
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a><a name=BKMK_examples></a>例
 
 2つのテキストファイル (月単位) を ASCII で比較し、結果を省略形式で表示するには、次のように入力します。
 ```
@@ -124,6 +120,6 @@ C ドライブのルートディレクトリにある各バッチファイルを
 fc c:*.bat d:*.bat
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

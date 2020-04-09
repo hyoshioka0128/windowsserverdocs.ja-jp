@@ -9,12 +9,12 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: b62d031c547f140ac5008af20a9e0ee4bcecc919
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 326390a5b40de46ca932043e9982f84c7758d901
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71376790"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80844005"
 ---
 # <a name="fsutil-usn"></a>Fsutil usn
 >適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows 10、Windows Server 2012 R2、Windows 8.1、Windows Server 2012、Windows 8、Windows Server 2008 R2、Windows 7
@@ -33,7 +33,7 @@ fsutil usn [readdata] <FileName>
 fsutil usn [readjournal] [c= <chunk-size> s=<file-size-threshold>] <volumepath>
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
 |パラメーター|説明|
 |-------------|---------------|
@@ -57,10 +57,10 @@ fsutil usn [readjournal] [c= <chunk-size> s=<file-size-threshold>] <volumepath>
 |readjournal|USN ジャーナル内の USN レコードを読み取ります。|
 |minver =\<number >|返される USN_RECORD の最小メジャーバージョン。 既定値は2です。|
 |maxver =\<number >|返す USN_RECORD の最大メジャーバージョン。 既定値は4です。|
-|startusn =\<USN 番号 >|USN ジャーナルの読み取りを開始する USN。 既定値は0です。|
+|startusn =\<USN 番号 >|USN ジャーナルの読み取りを開始する USN。 既定値は 0 です。|
 
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
 -   USN 変更ジャーナルについて
 
@@ -76,7 +76,7 @@ fsutil usn [readjournal] [c= <chunk-size> s=<file-size-threshold>] <volumepath>
 
     変更ジャーナルはこのターゲット値よりも大きくなる可能性がありますが、変更ジャーナルは次の NTFS チェックポイントで切り捨てられ、この値より小さくなります。 NTFS は、変更ジャーナルを調べて、サイズが*MaxSize*の値と割り当て*デルタ*の値を超えたときにトリミングします。 Ntfs チェックポイントでは、オペレーティングシステムは ntfs ログファイルにレコードを書き込みます。これにより、NTFS は、障害からの復旧に必要な処理を特定できます。
 
--   使用して
+-   を**使用する**
 
     変更ジャーナルは、切り捨てられる前に、 *MaxSize*と割り当て*デルタ*の値の合計より大きくなることがあります。
 
@@ -84,7 +84,7 @@ fsutil usn [readjournal] [c= <chunk-size> s=<file-size-threshold>] <volumepath>
 
     アクティブな変更ジャーナルを削除または無効化するには、非常に時間がかかります。これは、システムがマスターファイルテーブル (MFT) 内のすべてのレコードにアクセスし、last USN 属性を 0 (ゼロ) に設定する必要があるためです。 この処理には数分かかることがあり、再起動が必要な場合は、システムの再起動後に続行できます。 このプロセスでは、変更ジャーナルはアクティブと見なされず、無効になります。 システムがジャーナルを無効にしている間はアクセスできず、すべてのジャーナル操作でエラーが返されます。 アクティブなジャーナルを無効にする場合は、ジャーナルを使用している他のアプリケーションに悪影響を及ぼすため、細心の注意を払ってください。
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a><a name="BKMK_examples"></a>例
 ドライブ C に USN 変更ジャーナルを作成するには、次のように入力します。
 
 ```
@@ -127,8 +127,8 @@ fsutil usn readdata c:\temp\sample.txt
 fsutil usn readjournal startusn=0xF00
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
-[コマンド ライン構文の記号](Command-Line-Syntax-Key.md)
+## <a name="additional-references"></a>その他の参照情報
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
 
 [Fsutil](Fsutil.md)
 

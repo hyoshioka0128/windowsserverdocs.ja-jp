@@ -1,7 +1,6 @@
 ---
 ms.assetid: 0f21951c-b1bf-43bb-a329-bbb40c58c876
 title: レプリケーション エラー 1753。エンドポイント マッパーから使用できるエンドポイントはこれ以上ありません
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 64b479663dfc930ec9a6d2055b4c9ad5755b30fc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2e63d177abd0a6880c1825b821d265c8fa233a22
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71389970"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80823165"
 ---
 # <a name="replication-error-1753-there-are-no-more-endpoints-available-from-the-endpoint-mapper"></a>レプリケーション エラー 1753。エンドポイント マッパーから使用できるエンドポイントはこれ以上ありません
 
@@ -196,7 +195,7 @@ NSLOOKUP -type=hostname <fully qualified computer name of source DC> <secondary 
 * サーバーアプリケーション (Active Directory et al) が RPC サーバー (ソース DC) のエンドポイントマッパーに登録されていることを確認します。
 * Active Directory は、既知と動的に登録されたポートを組み合わせて使用します。 次の表に、Active Directory ドメインコントローラーで使用される既知のポートとプロトコルを示します。
 
-| RPC サーバーアプリケーション | ポート | TCP | UDP |
+| RPC サーバーアプリケーション | Port | TCP | UDP |
 | --- | --- | --- | --- |
 | DNS サーバー | 53 | X | X |
 | Kerberos | 88 | X | X |
@@ -240,7 +239,7 @@ ncacn_http:CONTOSO-DC01[6004]
 * Rpc サービスおよび rpc ロケーターのスタートアップ値とサービスの状態が、rpc クライアント (接続先 DC) と RPC サーバー (ソース DC) の OS バージョンに対して正しいことを確認します。 サービスが現在停止されているか、既定のスタートアップ値を使用して構成されていない場合は、既定のスタートアップ値をリセットし、変更された DC を再起動してから、操作を再試行してください。
    * さらに、サービスコンテキストが次の表に示す既定の設定と一致していることを確認します。
 
-      | サービス | Windows Server 2003 以降の既定の状態 (スタートアップの種類) | Windows Server 2000 の既定の状態 (スタートアップの種類) |
+      | Service | Windows Server 2003 以降の既定の状態 (スタートアップの種類) | Windows Server 2000 の既定の状態 (スタートアップの種類) |
       | --- | --- | --- |
       | リモート プロシージャ コール | 開始 (自動) | 開始 (自動) |
       | リモートプロシージャコールロケーター | Null または停止 (手動) | 開始 (自動) |
@@ -266,7 +265,7 @@ ncacn_http:CONTOSO-DC01[6004]
    ncacn_ip_udp REG_SZ rpcrt4.dll
    ```
 
-## <a name="more-information"></a>詳細情報
+## <a name="more-information"></a>詳細
 
 RPC エラー1753と-2146893022: ターゲットプリンシパル名が正しくないことが原因で、IP マッピングへの不適切な名前が指定されている例
 
@@ -295,7 +294,7 @@ F# SRC    DEST    Operation
 
 このような無効なホスト間マッピングは、ホスト/lmhost ファイルの古いエントリ、DNS 内のホスト A/AAAA 登録、または WINS によって発生する可能性があります。
 
-概要: この例では、ホスト間の無効なマッピング (この場合はホストファイル内) が原因で、ターゲット DC が、Active Directory Domain Services サービスが実行されていない "ソース" DC (またはその問題のためにインストールされている) に解決されたために失敗しました。レプリケーション SPN がまだ登録されていないため、ソース DC からエラー1753が返されました。 2番目のケースでは、ホストから IP への無効なマッピング (ホストファイルでも) が原因で、宛先 DC が、E351...レプリケーション SPN ですが、そのソースには意図したソース DC とは異なるホスト名とセキュリティ id があるため、試行は失敗しました。エラー-2146893022: ターゲットプリンシパル名が正しくありません。
+概要: この例では、ホスト間の無効なマッピング (このケースではホストファイル内) が原因で、レプリケーション SPN がまだ登録されておらず、ソース DC からエラー1753が返されたため、宛先 DC が "ソース" Active Directory Domain Services DC に解決されました (またはその問題に対してインストールされている)。 2番目のケースでは、ホストから IP への無効なマッピング (ホストファイルでも) が原因で、宛先 DC が、E351...レプリケーション SPN ですが、そのソースには意図したソース DC とは異なるホスト名とセキュリティ id があるため、試行は失敗しました。エラー-2146893022: ターゲットプリンシパル名が正しくありません。
 
 ## <a name="related-topics"></a>関連トピック
 

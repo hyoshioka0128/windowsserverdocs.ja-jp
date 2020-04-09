@@ -1,7 +1,6 @@
 ---
 ms.assetid: e02bb152-d0db-40b0-9942-846dce75f6c7
 title: AD DS の展開の要件
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: a23ba4ac8bbdb076381c8419e3a0821bee364acf
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: dff95633b71d42e25aad33793abd609ac61adbdf
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71409039"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822925"
 ---
 # <a name="ad-ds-deployment-requirements"></a>AD DS の展開の要件
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 既存の環境の構造によって、Windows Server 2008 Active Directory Domain Services (AD DS) を展開するための戦略が決まります。 AD DS 環境を作成していて、既存のドメイン構造がない場合は、AD DS 環境の作成を開始する前に AD DS の設計を完了してください。 次に、新しいフォレストルートドメインを展開し、設計に応じて残りのドメイン構造をデプロイできます。  
   

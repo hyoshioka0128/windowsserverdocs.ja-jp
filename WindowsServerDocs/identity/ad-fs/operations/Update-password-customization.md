@@ -1,7 +1,6 @@
 ---
 ms.assetid: 7e804590-6d6c-4cca-ac14-02d4dff06cec
 title: パスワードのカスタマイズの更新
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: e007d4449cb62e7888c30f5b5929e393d7b571ef
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: cb5fd0ff432e441900e379d3fe798dbe6aef855f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407454"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80816105"
 ---
 # <a name="update-password-customization"></a>パスワードのカスタマイズの更新 
 

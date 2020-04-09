@@ -1,24 +1,20 @@
 ---
 title: 'ksetup: delenctypeattr'
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Windows コマンドに関するトピック * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4fc25ef3-e271-4229-a712-72c507df55aa
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e3810d83c06b9ea08766451e13390b02b1867c83
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c650b973ac34e28394d5b6ec38142a058ad76338
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71375159"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80841765"
 ---
 # <a name="ksetupdelenctypeattr"></a>ksetup: delenctypeattr
 
@@ -32,7 +28,7 @@ ms.locfileid: "71375159"
 ksetup /delenctypeattr <DomainName> 
 ```
 
-### <a name="parameters"></a>パラメーター
+#### <a name="parameters"></a>パラメーター
 
 |パラメーター|説明|
 |---------|-----------|
@@ -44,9 +40,9 @@ Kerberos チケット保証チケット (TGT) とセッションキーの暗号�
 
 正常に完了したか、完了しなかったときに、ステータスメッセージが表示されます。
 
-接続先として使用するドメインを設定するには、 **ksetup/domain \< domainname >** コマンドを実行します。
+接続先として使用するドメインを設定するには、 **ksetup/domain \<DomainName >** コマンドを実行します。
 
-## <a name="BKMK_Examples"></a>例
+## <a name="examples"></a><a name=BKMK_Examples></a>例
 
 このコンピューターに設定されている現在の暗号化の種類を確認します。
 ```
@@ -65,11 +61,11 @@ ksetup /getenctypeattr mit.contoso.com
 ksetup /delenctypeattr mit.contoso.com
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
 -   [Klist](klist.md)
 -   [Ksetup:domain](ksetup-domain.md)
 -   [Ksetup:addenctypeattr](ksetup-addenctypeattr.md)
 -   [Ksetup:setenctypeattr](ksetup-setenctypeattr.md)
 -   [Ksetup:delenctypeattr](ksetup-delenctypeattr.md)
--   [コマンド ライン構文の記号](command-line-syntax-key.md)
+-   - [コマンド ライン構文の記号](command-line-syntax-key.md)

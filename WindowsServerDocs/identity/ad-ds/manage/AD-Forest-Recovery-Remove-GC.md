@@ -1,6 +1,5 @@
 ---
 title: AD フォレストの回復-グローバルカタログを削除します。
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: 60087a62-11e6-4750-a70e-510f35315688
 ms.technology: identity-adds
-ms.openlocfilehash: 3ba1336828ad6031ce7fb47a659d084494466e4a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9c16d25c3e749062bdcb2531960c17be434cf615
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71409096"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80823725"
 ---
 # <a name="ad-forest-recovery---removing-the-global-catalog"></a>AD フォレストの回復-グローバルカタログの削除  
 
@@ -42,7 +41,7 @@ ms.locfileid: "71409096"
    repadmin.exe /options DC_NAME –IS_GC  
    ```  
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 
 - [AD フォレストの回復ガイド](AD-Forest-Recovery-Guide.md)
 - [AD フォレストの回復 - 手順](AD-Forest-Recovery-Procedures.md)

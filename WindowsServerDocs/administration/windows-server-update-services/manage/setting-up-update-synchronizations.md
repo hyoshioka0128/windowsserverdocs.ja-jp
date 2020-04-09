@@ -1,24 +1,20 @@
 ---
 title: 更新プログラムの同期を設定する
 description: Windows Server Update Service (WSUS) のトピック-更新プログラムの同期をセットアップして構成する方法
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-wsus
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ddd5c395-451b-44a0-8e08-a05db26d2282
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9c7bca5be7a8ec0e857cba65680fbc3b967af4f8
-ms.sourcegitcommit: 3c3dfee8ada0083f97a58997d22d218a5d73b9c4
+ms.openlocfilehash: f4da028b2100d824b55c00c185f8b90df7d787bf
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80639754"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828544"
 ---
 # <a name="setting-up-update-synchronizations"></a>更新プログラムの同期を設定する
 
@@ -89,7 +85,7 @@ WSUS サーバーが更新ソースと同期する方法をカスタマイズす
 
 -   同期のためのカスタム ポートを指定できます。 ポートを構成する方法の詳細については、次を参照してください。 [手順 3: WSUS を構成する](../deploy/2-configure-wsus.md) WSUS deployment guide の「します。
 
--   WSUS サーバー間での更新情報のセキュリティで保護された同期には、セキュリティで保護されたソケット レイヤー (SSL) を使用できます。 SSL の使用に関する詳細については、"3.5 のセクションを参照してください。 セキュリティで保護された WSUS に Secure Sockets Layer プロトコル"の [手順 3: WSUS を構成する](../deploy/2-configure-wsus.md) WSUS deployment guide の「します。
+-   WSUS サーバー間での更新情報のセキュリティで保護された同期には、セキュリティで保護されたソケット レイヤー (SSL) を使用できます。 SSL の使用方法の詳細については、セクション3.5 を参照してください。 Wsus の展開ガイドの[「手順 3: wsus を構成する](../deploy/2-configure-wsus.md)」の Secure Sockets Layer プロトコルを使用して wsus をセキュリティで保護します。
 
 ## <a name="synchronizing-manually-or-automatically"></a>手動または自動で同期します。
 WSUS サーバーを手動で同期するか、自動的に同期するには、その時刻を指定します。

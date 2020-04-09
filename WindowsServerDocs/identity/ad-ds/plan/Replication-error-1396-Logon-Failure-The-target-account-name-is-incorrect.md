@@ -1,7 +1,6 @@
 ---
 ms.assetid: 399a8bbe-3375-4bb0-b55b-5f46e7050028
 title: 'レプリケーション エラー 1396。ログオン エラー: 対象のアカウント名は間違っています'
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: a8af10fd54f557e4f4a2127dbd1cc178d53d93a4
-ms.sourcegitcommit: 214847318401cebdcb7f1924a731b4439c9d8a24
+ms.openlocfilehash: b608066f3fd9d2f6c2bd86194e816f4c9665d6c1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "71402484"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822075"
 ---
 # <a name="replication-error-1396-logon-failure-the-target-account-name-is-incorrect"></a>レプリケーション エラー 1396。ログオン エラー: 対象のアカウント名は間違っています
 

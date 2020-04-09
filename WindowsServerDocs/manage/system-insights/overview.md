@@ -1,79 +1,74 @@
 ---
-title: システム Insights の概要
-description: システム Insights は、Windows Server 2019 で新しい予測分析機能です。 システム Insights 予測機能 - - 機械学習モデルによって各バックアップがローカルでのパフォーマンス カウンターと、サーバーに機能しており、減少するための洞察を提供する、イベントなどの Windows Server システム データを分析します運用の費用は事後対応的に展開の問題の管理に関連します。
-ms.custom: na
+title: システム インサイトの概要
+description: System Insights は、Windows Server 2019 の新しい予測分析機能です。 機械学習モデルによって支えられている System Insights の予測機能は、パフォーマンスカウンターやイベントなどの Windows Server システムデータをローカルで分析して、サーバーの機能に関する洞察を提供し、デプロイの問題をリアクティブに管理するための運用コストの削減に役立ちます。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: system-insights
-ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: ''
 author: gawatu
 ms.author: gawatu
 manager: mallikarjun.chadalapaka
 ms.date: 5/23/2018
-ms.openlocfilehash: ca471e5e747c7aaa369f5725290e16deab7a6660
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e2530ff9ecb4bcf69f2f9a3a452f51696b4466d2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59887243"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815945"
 ---
-# <a name="system-insights-overview"></a>システム Insights の概要
+# <a name="system-insights-overview"></a>システム インサイトの概要
 
->適用先:Windows Server 2019
+>適用対象: Windows Server 2019
 
-システム Insights は、Windows Server 2019 で新しい予測分析機能です。 システム Insights 予測機能 - - 機械学習モデルによって各バックアップがローカルでのパフォーマンス カウンターと、サーバーに機能しており、減少するための洞察を提供する、イベントなどの Windows Server システム データを分析します運用の費用は事後対応的に展開の問題の管理に関連します。 
+System Insights は、Windows Server 2019 の新しい予測分析機能です。 機械学習モデルによって支えられている System Insights の予測機能は、パフォーマンスカウンターやイベントなどの Windows Server システムデータをローカルで分析して、サーバーの機能に関する洞察を提供し、デプロイの問題をリアクティブに管理するための運用コストの削減に役立ちます。 
 
-Windows Server の 2019 システム Insights は、容量の予測、コンピューティング、ネットワーク、および、前の使用パターンに基づく記憶域のリソースが将来の予測に重点を置いた 4 つの既定の機能に同梱されています。 Insights のシステムにも付属、[拡張性のあるインフラストラクチャ](adding-and-developing-capabilities.md)マイクロソフトとサード パーティを追加できるように新しい予測機能をシステム Insights にオペレーティング システムを更新することがなく、します。 
+Windows Server 2019 では、容量予測に焦点を合わせた4つの既定の機能が搭載されており、以前の使用パターンに基づいて、コンピューティング、ネットワーク、ストレージの将来のリソースが予測されます。 また、system Insights には[拡張可能なインフラストラクチャ](adding-and-developing-capabilities.md)が付属しているため、Microsoft とサードパーティはオペレーティングシステムを更新しなくても、新しい予測機能を System Insights に追加できます。 
 
-Insights のシステムを管理するには直観的で[Windows Admin Center](https://docs.microsoft.com/windows-server/manage/windows-admin-center/overview)拡張機能または[PowerShell から直接](https://aka.ms/SystemInsightsPowerShell)Insights のシステムでは、各予測機能を構成することができます配置のニーズに従って個別にします。 すべての予測結果を使用することができるイベント ログに発行されます[Azure Monitor](https://azure.microsoft.com/services/monitor/)または[System Center Operations Manager](https://docs.microsoft.com/system-center/scom/welcome?view=sc-om-1807)簡単に集計され、マシンのグループ間で予測を参照してください。
+System Insights は、直感的な[Windows 管理センター](https://docs.microsoft.com/windows-server/manage/windows-admin-center/overview)の拡張機能または[PowerShell を使用](https://aka.ms/SystemInsightsPowerShell)して直接管理できます。また、system insights では、デプロイのニーズに応じて各予測機能を個別に構成できます。 すべての予測結果がイベントログに発行されます。これにより、 [Azure Monitor](https://azure.microsoft.com/services/monitor/)または[System Center Operations Manager](https://docs.microsoft.com/system-center/scom/welcome?view=sc-om-1807)を使用して、コンピューターグループ全体の予測を簡単に集計および表示できます。
 
-![機能の予測、予測をプロットするグラフを CPU 容量を示す、Windows Admin Center でシステム Insights 拡張機能](media/cpu-forecast-2.png)
+![Windows 管理センターの System Insights 拡張機能。予測をプロットしたグラフで CPU 容量予測機能を表示](media/cpu-forecast-2.png)
 
-## <a name="local-functionality"></a>ローカルの機能
-システム Insights は、Windows Server で完全にローカルで実行されます。 Windows Server 2019 で導入された新しい機能を使用して、すべてのデータを収集、永続化、および分析直接コンピューターに、クラウドの接続なしの予測分析機能を実現することができます。
+## <a name="local-functionality"></a>ローカル機能
+System Insights は、Windows Server 上で完全にローカルに実行されます。 Windows Server 2019 で導入された新しい機能を使用すると、すべてのデータがコンピューター上で直接収集、保存、および分析されるため、クラウド接続なしで予測分析機能を実現できます。
 
-コンピューターに、システムのデータが格納されているし、クラウドでの再トレーニングを必要としない予測機能によってこのデータを分析します。 Insights のシステム、コンピューターにデータを保持し、予測分析機能からメリットを得ることができます。 
+システムデータはコンピューターに保存され、このデータはクラウドでの再トレーニングを必要としない予測機能によって分析されます。 System Insights を使用すると、コンピューター上のデータを保持しながら、予測分析機能を活用できます。 
 
 ## <a name="get-started"></a>作業開始
 
-<iframe src="https://www.youtube-nocookie.com/embed/AJxQkx5WSaA" width="560" height="315" allowfullscreen></iframe>
+<iframe src=https://www.youtube-nocookie.com/embed/AJxQkx5WSaA width=560 height=315 allowfullscreen></iframe>
 
 >[!TIP]
->開始して、自信を持ってシステム Insights の管理に必要な情報については、以下のショート ビデオをご覧ください。[10 分後にシステム Insights の概要](https://blogs.technet.microsoft.com/filecab/2018/07/24/getting-started-with-system-insights-in-10-minutes/)
+>これらの短いビデオをご覧になり、System Insights の使用を開始し、自信を持って管理するために必要な情報をご確認ください。 [10 分で System insights を使ってみる](https://blogs.technet.microsoft.com/filecab/2018/07/24/getting-started-with-system-insights-in-10-minutes/)
 
-### <a name="requirements"></a>必要条件
-システム Insights は、Windows Server 2019 インスタンスで使用できます。 これは、任意のハイパーバイザー上で、任意のクラウド、ホストとゲストの両方のマシンで実行されます。
+### <a name="requirements"></a>要件
+System Insights は、任意の Windows Server 2019 インスタンスで使用できます。 ホストとゲストの両方のコンピューター、すべてのハイパーバイザー、および任意のクラウドで実行されます。
 
-### <a name="install-system-insights"></a>Insights のシステムをインストールします。
+### <a name="install-system-insights"></a>System Insights のインストール
 >[!IMPORTANT]
->最大で、1 年分のデータをローカル ストアとシステム Insights の収集。 オペレーティング システムをアップグレードするときに、データを保持したい場合**インプレース アップグレードを使用するかどうかを確認**します。
+>System Insights は、最大で1年分のデータをローカルに収集して保存します。 オペレーティングシステムをアップグレードするときにデータを保持する場合は、**インプレースアップグレードを使用する**ようにしてください。
 
-#### <a name="install-the-feature"></a>機能をインストールします。
-Windows Admin Center 内で、拡張機能を使用してインサイトをシステムをインストールすることができます。
+#### <a name="install-the-feature"></a>機能のインストール
+Windows 管理センター内の拡張機能を使用して、System Insights をインストールできます。
 
-![システム Insights 拡張機能の 1 日 0 エクスペリエンス。](media/day-0-2.png)
+![System Insights 拡張機能の日0エクスペリエンス。](media/day-0-2.png)
 
-追加することで、システム Insights サーバー マネージャーから直接をインストールすることも、**システム Insights**機能、または PowerShell を使用しています。
+System insights は、**システムインサイト**機能を追加するか、PowerShell を使用して、サーバーマネージャーから直接インストールすることもできます。
 
 ```PowerShell
 Add-WindowsFeature System-Insights -IncludeManagementTools
 ```
 
 ## <a name="provide-feedback"></a>フィードバックの提供
-この機能の向上にご協力にお客様からのフィードバックを歓迎します。 次のチャネルを使用して、フィードバックを送信できます。
-- **フィードバック Hub**:Windows 10 フィードバック Hub ツールを使用して、バグやフィードバックを提出します。 これを行うときに次の項目を指定してください。
-    - **カテゴリ**:Server 
-    - **Subcategory**:システム インサイト
-- **UserVoice**:機能要求を送信、 [UserVoice ページ](https://windowsserver.uservoice.com/forums/295071-management-tools)します。 重要な投稿項目に、同僚と共有します。
-- **電子メール**:プライベート機能チームにフィードバックを送信する場合は、電子メールをお送りsystem-insights-feed@microsoft.comします。 私たちも可能性がありますを要求するフィードバック ハブまたは UserVoice を使用することに注意してください。
+この機能を改善するために、皆様からのフィードバックをお寄せください。 次のチャネルを使用して、フィードバックを送信できます。
+- **フィードバックハブ**: Windows 10 のフィードバックハブツールを使用して、バグやフィードバックをファイルに登録します。 その場合は、次のように指定します。
+    - **カテゴリ**: サーバー 
+    - **サブカテゴリ**: System Insights
+- **Uservoice**: [uservoice ページ](https://windowsserver.uservoice.com/forums/295071-management-tools)から機能要求を送信します。 自分にとって重要なアップ投票項目に同僚と共有します。
+- **電子メール**: 機能チームにプライベートでフィードバックを送信する場合は、system-insights-feed@microsoft.comに電子メールを送信します。 まだフィードバックハブまたは UserVoice の使用を要求される場合があることに注意してください。
 
-## <a name="see-also"></a>関連項目
-システム Insights に関する詳細については、するには、次のリソースを使用します。
+## <a name="see-also"></a>参照
+System Insights の詳細については、次のリソースを参照してください。
 
-- [機能の理解](understanding-capabilities.md)
-- [機能を管理します。](managing-capabilities.md)
-- [追加して、機能の開発](adding-and-developing-capabilities.md)
-- [システム Insights に関する FAQ](faq.md)
+- [機能について](understanding-capabilities.md)
+- [管理機能](managing-capabilities.md)
+- [機能の追加と開発](adding-and-developing-capabilities.md)
+- [System Insights の FAQ](faq.md)

@@ -9,12 +9,12 @@ author: jasongerend
 ms.author: jgerend
 manager: lizapo
 ms.date: 10/09/2019
-ms.openlocfilehash: 130b51e472ebf3d900186d6d63e318c88a340579
-ms.sourcegitcommit: e2964a803cba1b8037e10d065a076819d61e8dbe
+ms.openlocfilehash: 21f6ac91faefa17f153df43fbd2530a2c8c0f713
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72252352"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80847785"
 ---
 # <a name="chkdsk"></a>chkdsk
 
@@ -37,7 +37,7 @@ ms.locfileid: "72252352"
 chkdsk [<Volume>[[<Path>]<FileName>]] [/f] [/v] [/r] [/x] [/i] [/c] [/l[:<Size>]] [/b]  
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
 |      パラメーター       |                  説明                                    |
 | -------------------- | ------------------------------------------------------------------------ |
@@ -52,16 +52,16 @@ chkdsk [<Volume>[[<Path>]<FileName>]] [/f] [/v] [/r] [/x] [/i] [/c] [/l[:<Size>]
 |    /l [:\<サイズ >]     | NTFS でのみ使用します。 ログファイルのサイズを入力したサイズに変更します。 Size パラメーターを省略すると、 **/l**によって現在のサイズが表示されます。 |
 |         /b          | NTFS のみ: ボリューム上の不良クラスターの一覧を消去し、割り当てられているすべてのクラスターと空きクラスターを再スキャンしてエラーを発生させることができます。 **/b**には、 **/r**の機能が含まれています。 ボリュームを新しいハードディスクドライブにイメージ化した後に、このパラメーターを使用します。            |
 | /scan               | NTFS のみ: ボリュームに対してオンラインスキャンを実行します。 |
-| /forceofflinefix    | NTFS のみ: ("/scan" と共に使用する必要があります)。 オンライン修復をすべてバイパスする。検出されたすべての障害は、オフライン修復のためにキューに入れられます (つまり、"chkdsk/spotfix")。 |
-| /パフォーマンス               | NTFS のみ: ("/scan" と共に使用する必要があります)。 は、高速 aspossible としてスキャンを完了するために、より多くのシステムリソースを使用します。 これにより、システムで実行されている他のタスクのパフォーマンスが低下する可能性があります。|
+| /forceofflinefix    | NTFS のみ: (/scan と一緒に使用する必要があります)。 オンライン修復をすべてバイパスする。検出されたすべての障害は、オフライン修復のためにキューに入れられます (つまり、chkdsk/spotfix)。 |
+| /パフォーマンス               | NTFS のみ: (/scan と一緒に使用する必要があります)。 は、高速 aspossible としてスキャンを完了するために、より多くのシステムリソースを使用します。 これにより、システムで実行されている他のタスクのパフォーマンスが低下する可能性があります。|
 | /spotfix            | NTFS のみ: ボリューム上でスポット修正を実行します。 |
 | /sdcleanup          | NTFS のみ: 不要なセキュリティ記述子データをガベージコレクトします (/F を意味します)。 |
 | /offlinescanandfix  | オフラインスキャンを実行し、ボリュームを修正します。 |
 | /freeorphanedchains | FAT/FAT32/exFAT のみ: 孤立したクラスターチェーンは、その内容を回復するのではなく、解放します。 |
 | /markclean          | FAT/FAT32/exFAT only:/F が指定されていない場合でも、破損が検出されなかった場合にボリュームをクリーンにマークします。 |
-|         /?          | コマンド プロンプトにヘルプを表示します。                       |
+|         /?          | コマンド プロンプトでヘルプを表示します。                       |
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
 - ボリュームチェックのスキップ
 
@@ -144,4 +144,4 @@ chkdsk *.*
 
 ## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
