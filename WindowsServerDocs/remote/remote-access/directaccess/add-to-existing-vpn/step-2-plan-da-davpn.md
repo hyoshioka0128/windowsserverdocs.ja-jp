@@ -2,22 +2,18 @@
 title: 手順 2 DirectAccess 展開を計画する
 description: このトピックは、「Windows Server 2016 の既存のリモートアクセス (VPN) 展開に DirectAccess を追加する」の一部です。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 72b5b2af-6925-41e0-a3f9-b8809ed711d1
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 865f9ffd3eed3ce145364c227845af097194416e
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 98fb738f3535845a2117f2f6547856b9081bd7d4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80309247"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859545"
 ---
 # <a name="step-2-plan-the-directaccess-deployment"></a>手順 2 DirectAccess 展開を計画する
 

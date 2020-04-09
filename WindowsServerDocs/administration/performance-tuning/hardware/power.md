@@ -4,15 +4,15 @@ description: サーバーハードウェアの電源に関する考慮事項
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: Qizha;TristanB
+ms.author: qizha;tristanb
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: a9d4653824d497ea0c42337260aa788bab354ba3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 865899e5f33bde97dff97efaff6010b95aafd3e6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355017"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851985"
 ---
 # <a name="server-hardware-power-considerations"></a>サーバーハードウェアの電源に関する考慮事項
 
@@ -67,7 +67,7 @@ Windows Server 2016 では、USB デバイスのセレクティブサスペン�
 
 ![プロセッサの用語](../media/perftune-guide-figure-1.png)
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 - [サーバーハードウェアのパフォーマンスに関する考慮事項](index.md)
 - [電源とパフォーマンスのチューニング](power/power-performance-tuning.md)
 - [プロセッサの電源管理チューニング](power/processor-power-management-tuning.md)

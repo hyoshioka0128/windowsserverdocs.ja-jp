@@ -2,24 +2,23 @@
 title: 記憶域スペース ダイレクト サーバーをメンテナンスのためオフラインにする
 ms.prod: windows-server
 ms.author: eldenc
-ms.manager: eldenc
+manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: eldenchristensen
 ms.date: 10/08/2018
-Keywords: 記憶域スペース ダイレクト、S2D、メンテナンス
 ms.assetid: 73dd8f9c-dcdb-4b25-8540-1d8707e9a148
 ms.localizationpriority: medium
-ms.openlocfilehash: 20439a06c255a73f20a297f765e6ed11abfde6f2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2ccf8d809354f96277701cd365966ba5e914f64b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402826"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857535"
 ---
 # <a name="taking-a-storage-spaces-direct-server-offline-for-maintenance"></a>記憶域スペース ダイレクト サーバーをメンテナンスのためオフラインにする
 
-> 適用対象:Windows Server 2019、Windows Server 2016
+> 適用対象: Windows Server 2019、Windows Server 2016
 
 このトピックは、[記憶域スペース ダイレクト](storage-spaces-direct-overview.md)を持つサーバーを適切に再起動したりシャットダウンしたりする方法のガイダンスを提供します。
 
@@ -72,7 +71,7 @@ Suspend-ClusterNode -Drain
 
 ![一時停止とドレイン](media/maintain-servers/pause-drain.png)
 
-すべての仮想マシンでは、クラスター内の他のサーバーへのライブ マイグレーションが開始されます。 これには数分かかる場合があります。
+すべての仮想マシンでは、クラスター内の他のサーバーへのライブ マイグレーションが開始されます。 この処理には数分かかる場合があります。
 
    > [!NOTE]
    > クラスター ノードの一時停止とドレインが適切に行われると、Windows は自動的に安全性チェックを実行して、安全に続行できることを確認します。 正常でないボリュームがある場合は、停止して、安全に続行できないことを警告します。
@@ -155,7 +154,7 @@ MyVolume2    Mirror                InService         Warning      True          
 MyVolume3    Mirror                InService         Warning      True           1 TB
 ```
 
-ジョブが完了したら、再度 `Get-VirtualDisk` コマンドレットを使用して、ボリュームが **Healthy** と表示されることを確認します。 次に出力の例を示します。
+ジョブが完了したら、再度 **コマンドレットを使用して、ボリュームが**Healthy`Get-VirtualDisk` と表示されることを確認します。 次に出力の例を示します。
 
 ```
 FriendlyName ResiliencySettingName OperationalStatus HealthStatus IsManualAttach Size
@@ -184,7 +183,7 @@ MyVolume3    Mirror                OK                Healthy      True          
 10. **Get Volume**および**VirtualDisk**コマンドレットを実行して、仮想ディスクの状態を監視します。
 
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [記憶域スペースダイレクトの概要](storage-spaces-direct-overview.md)
 - [クラスター対応更新 (CAU)](https://technet.microsoft.com/library/hh831694.aspx)

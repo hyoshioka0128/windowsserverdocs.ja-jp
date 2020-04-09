@@ -1,7 +1,6 @@
 ---
 ms.assetid: bbb5b68f-00ad-4715-8176-0c2769b706c4
 title: Windows Server 2012 R2 AD FS の展開ガイド
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: e5507cd567114d17c6500655ee210b70bd9ea1ec
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: bb4d13d13771d76a306a32988c0faa03dd01db49
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408413"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855465"
 ---
 # <a name="deploying-a-federation-server-farm"></a>フェデレーション サーバー ファームの展開
 
@@ -23,9 +22,9 @@ ms.locfileid: "71408413"
   
 フェデレーションサーバーファームの展開](media/2b05dce3-938f-4168-9b8f-1f4398cbdb9b.gif)**の ![チェックリスト: フェデレーションサーバーファームの展開**  
   
-||タスク|リファレンス|  
+||タスク|参照|  
 |-|--------|-------------|  
-|![フェデレーションサーバーファームの展開](media/icon_checkboxo.gif)|Active Directory フェデレーションサービス (AD FS) \(AD FS\)のデプロイを準備する際の重要な概念と考慮事項を確認します。 **注:**|](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[Windows server 2012 R2 の AD FS 設計ガイド](../../ad-fs/design/AD-FS-Design-Guide-in-Windows-Server-2012-R2.md)![フェデレーションサーバーファームの展開<br /><br />フェデレーションサーバーファームの展開 ![](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[キー AD FS の概念につい](../../ad-fs/technical-reference/Understanding-Key-AD-FS-Concepts.md)て|  
+|![フェデレーションサーバーファームの展開](media/icon_checkboxo.gif)|Active Directory フェデレーションサービス (AD FS) \(AD FS\)のデプロイを準備する際の重要な概念と考慮事項を確認します。 **注:**|](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[Windows server 2012 R2 の AD FS 設計ガイド](../../ad-fs/design/AD-FS-Design-Guide-in-Windows-Server-2012-R2.md)![フェデレーションサーバーファームの展開<p>フェデレーションサーバーファームの展開 ![](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[キー AD FS の概念につい](../../ad-fs/technical-reference/Understanding-Key-AD-FS-Concepts.md)て|  
 ||AD FS の構成ストアに Microsoft SQL Server を使用する場合は、SQL Server の機能するインスタンスを展開する。|[SQL Server](https://technet.microsoft.com/sqlserver) **警告:** Windows Server 2012 R2 で AD FS ファームを作成し SQL Server を使用して構成データを格納する場合は、SQL Server 2012 を含む SQL Server 2008 以降のバージョンを使用できます。|  
 |![フェデレーションサーバーファームの展開](media/icon_checkboxo.gif)|コンピューターを Active Directory ドメインに参加させる。|フェデレーションサーバーファームの展開 ![](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[ドメインへのコンピューターの参加](Join-a-Computer-to-a-Domain.md)|  
 |![フェデレーションサーバーファームの展開](media/icon_checkboxo.gif)|セキュリティで保護されたソケットレイヤー \(AD FS 用の SSL\) 証明書を登録します。|フェデレーションサーバーファームの展開 ![](media/bc6cea1a-1c6c-4124-8c8f-1df5adfe8c88.gif)[AD FS の SSL 証明書を登録する](Enroll-an-SSL-Certificate-for-AD-FS.md)|  

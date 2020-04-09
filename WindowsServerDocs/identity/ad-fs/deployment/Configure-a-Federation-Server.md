@@ -1,7 +1,6 @@
 ---
 ms.assetid: 434fd617-373a-405e-bae4-da324ea83efc
 title: Windows Server 2012 R2 AD FS の展開ガイド
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 7a3cada555fbf22a853e3aaf002c6413b6555fb8
-ms.sourcegitcommit: 5197a87e659589bcc8d2a32069803ae736b02892
+ms.openlocfilehash: b4cf161d9dfcbeeb467ccb0a83cc260c5299057e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79376279"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855525"
 ---
 # <a name="configure-a-federation-server"></a>フェデレーション サーバーを構成する
 
@@ -151,7 +150,7 @@ ms.locfileid: "79376279"
 4.  **[ファームの指定]** ページで、WID を使用するファーム内のプライマリフェデレーションサーバーの名前を指定するか、SQL Server を使用する既存のフェデレーションサーバーファームのデータベースホスト名とデータベースインスタンス名を指定します。  
   
     > [!WARNING]  
-    > Windows Server® 2012 R2 では、SQL Server の既定のインスタンスを指定するための回避策があります。 この回避策ではユーザー インターフェイスは使用しません。 代わりに、「」の手順に従って、Windows PowerShell を使用して[新しいフェデレーションサーバーファームの最初のフェデレーションサーバーを構成](Configure-a-Federation-Server.md#BKMK_3)します。  
+    > Windows Server&reg; 2012 R2 では、SQL Server の既定のインスタンスを指定するための回避策があります。 この回避策ではユーザー インターフェイスは使用しません。 代わりに、「」の手順に従って、Windows PowerShell を使用して[新しいフェデレーションサーバーファームの最初のフェデレーションサーバーを構成](Configure-a-Federation-Server.md#BKMK_3)します。  
   
     > [!IMPORTANT]  
     > AD FS ファームを作成し、SQL Server を使用して構成データを保存する場合は、SQL Server 2012 など、SQL Server 2008 以降のバージョンを使用できます。  
@@ -225,7 +224,7 @@ ms.locfileid: "79376279"
 
 -   [フェデレーションサーバーを既存のフェデレーションサーバーファームに追加する](Configure-a-Federation-Server.md#BKMK_2)
 
-## <a name="BKMK_1"></a>新しいフェデレーションサーバーファームで最初のフェデレーションサーバーを構成する
+## <a name="configure-the-first-federation-server-in-a-new-federation-server-farm"></a><a name="BKMK_1"></a>新しいフェデレーションサーバーファームで最初のフェデレーションサーバーを構成する
 
 ### <a name="to-configure-the-first-federation-server-in-a-new-federation-server-farm-by-using-the-active-directory-federation-service-configuration-wizard"></a>Active Directory フェデレーションサービス構成ウィザードを使用して、新しいフェデレーションサーバーファームの最初のフェデレーションサーバーを構成するには
 
@@ -271,7 +270,7 @@ ms.locfileid: "79376279"
 
 9. **[結果]** ページで結果を確認し、構成が正常に完了したかどうかを確認して、 **[フェデレーションサービスの展開を完了するために必要な次の手順]** をクリックします。 詳細については、「 [AD FS のインストールを完了するための次の手順](https://go.microsoft.com/fwlink/p/?LinkId=286704)」を参照してください。 **[閉じる]** をクリックしてウィザードを終了します。
 
-### <a name="BKMK_3"></a>Windows PowerShell を使用して新しいフェデレーションサーバーファームの最初のフェデレーションサーバーを構成するには
+### <a name="to-configure-the-first-federation-server-in-a-new-federation-server-farm-via-windows-powershell"></a><a name="BKMK_3"></a>Windows PowerShell を使用して新しいフェデレーションサーバーファームの最初のフェデレーションサーバーを構成するには
 新規または既存の gMSA アカウントまたは既存のドメインユーザーアカウントのいずれかを使用して、新しいフェデレーションサーバーファームを作成できます。
 
 -   **新しい gMSA アカウントを使用して新しいフェデレーションサーバーを作成する場合は、次の手順を実行します。**
@@ -330,7 +329,7 @@ ms.locfileid: "79376279"
         > [!IMPORTANT]
         > AD FS ファームを作成し、SQL Server を使用して構成データを保存する場合は、SQL Server 2008 以降のバージョン (SQL Server 2012 や SQL Server 2014 を含む) を使用できます。
 
-## <a name="BKMK_2"></a>フェデレーションサーバーを既存のフェデレーションサーバーファームに追加する
+## <a name="add-a-federation-server-to-an-existing-federation-server-farm"></a><a name="BKMK_2"></a>フェデレーションサーバーを既存のフェデレーションサーバーファームに追加する
 
 > [!IMPORTANT]
 > このセクションの手順を開始する前に、「[手順 3: AD FS の役割サービスをインストール](../../ad-fs/deployment/Install-the-AD-FS-Role-Service.md)する」を完了していることを確認します。
@@ -351,7 +350,7 @@ ms.locfileid: "79376279"
 4.  **[ファームの指定]** ページで、WID を使用するファーム内のプライマリフェデレーションサーバーの名前を指定するか、SQL Server を使用する既存のフェデレーションサーバーファームのデータベースホスト名とデータベースインスタンス名を指定します。
 
     > [!WARNING]
-    > Windows Server® 2012 R2 では、SQL Server の既定のインスタンスを指定するための回避策があります。 この回避策ではユーザー インターフェイスは使用しません。 代わりに、「」の手順に従って、Windows PowerShell を使用して[新しいフェデレーションサーバーファームの最初のフェデレーションサーバーを構成](Configure-a-Federation-Server.md#BKMK_3)します。
+    > Windows Server&reg; 2012 R2 では、SQL Server の既定のインスタンスを指定するための回避策があります。 この回避策ではユーザー インターフェイスは使用しません。 代わりに、「」の手順に従って、Windows PowerShell を使用して[新しいフェデレーションサーバーファームの最初のフェデレーションサーバーを構成](Configure-a-Federation-Server.md#BKMK_3)します。
 
     > [!IMPORTANT]
     > AD FS ファームを作成し、SQL Server を使用して構成データを保存する場合は、SQL Server 2012 など、SQL Server 2008 以降のバージョンを使用できます。

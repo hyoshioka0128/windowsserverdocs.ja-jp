@@ -2,20 +2,19 @@
 title: Windows Server 2016 にする必要があります最小メモリ量以上で構成
 description: このベストプラクティスアナライザー規則によって報告された問題を解決するための手順を示します。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: d324af73-af73-40b0-bd5b-8003ba3e921b
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: b3e4b29c11e2c501b9e9df6b1089a297dcced125
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: dc5d95e7f974d41792221f1970049fb56011cada
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71364369"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860945"
 ---
 # <a name="windows-server-2016-should-be-configured-with-at-least-the-minimum-amount-of-memory"></a>Windows Server 2016 にする必要があります最小メモリ量以上で構成
 
@@ -49,7 +48,7 @@ ms.locfileid: "71364369"
   
 2.  結果ウィンドウで  **仮想マシン**, 、構成する仮想マシンを選択します。 バーチャルマシンの状態は **オフ (オフ**)」と表示されます。 そうでない場合は、バーチャルマシンを右クリックし、 **[シャットダウン]** をクリックします。  
   
-3.  **アクション** ウィンドウの 仮想マシン名をクリックして **設定**します。  
+3.  **[操作]** ウィンドウで、仮想マシン名の下の **[設定]** をクリックします。  
   
 4.  ナビゲーションウィンドウで、 **[メモリ]** をクリックします。  
   

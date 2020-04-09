@@ -1,7 +1,6 @@
 ---
 ms.assetid: 46dce9d4-7293-4b1c-9710-78b04f2e347a
 title: 要求規則の構成
-description: ''
 author: billmath
 manager: femila
 ms.date: 05/31/2017
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 9634f4004fbb3354020ce025cd403b15f77b6cbc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2ae0c64cd108cd80418451120766eebc9dd282ab
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71359697"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855505"
 ---
 # <a name="configuring-claim-rules"></a>要求規則の構成
 

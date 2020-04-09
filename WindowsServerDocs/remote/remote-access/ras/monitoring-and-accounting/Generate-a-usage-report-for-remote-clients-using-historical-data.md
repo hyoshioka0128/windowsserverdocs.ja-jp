@@ -2,22 +2,18 @@
 title: 履歴データを使ってリモート クライアントの使用状況レポートを生成する
 description: このトピックは、Windows Server 2016 のリモートアクセスの監視とアカウンティングに関するガイドの一部です。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0305467b-ce39-4532-a05a-2cc5ff946f55
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: ce5219feca1d55191352d95f2aac017709a5a449
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: ae862b596ff8c3d222c8f448f9b81b3c6bea05be
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80314289"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860565"
 ---
 # <a name="generate-a-usage-report-for-remote-clients-using-historical-data"></a>履歴データを使ってリモート クライアントの使用状況レポートを生成する
 
