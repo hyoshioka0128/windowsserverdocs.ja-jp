@@ -1,23 +1,19 @@
 ---
 title: Azure Virtual network の統合
 description: Windows Server Essentials の使用方法について説明します。
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d7d38505-cff5-4f15-9fd5-ae6dba15ce88
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 92c8241d861e72d5f9f409a334e6edbeed5eae4c
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: d79530b2c4bfb71b23fa984731d624f30e9a3ef6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80310573"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815215"
 ---
 # <a name="azure-virtual-network-integration"></a>Azure Virtual network の統合
 

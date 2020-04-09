@@ -1,23 +1,19 @@
 ---
 title: Windows Server Essentials をメンバー サーバーとして追加
 description: Windows Server Essentials の使用方法について説明します。
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d09dd82f-f7d2-47ce-862d-fd9869f2021c
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 4b87c066885ed2bf0ac6dfa29496317310b062d9
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 933606c70ff92620b9c04e12d37db7147ef82e3d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80310178"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80817525"
 ---
 # <a name="add-windows-server-essentials-as-a-member-server"></a>Windows Server Essentials をメンバー サーバーとして追加
 

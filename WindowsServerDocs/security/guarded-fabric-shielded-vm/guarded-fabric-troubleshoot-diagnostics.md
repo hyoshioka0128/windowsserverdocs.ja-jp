@@ -1,19 +1,19 @@
 ---
 title: 保護されたファブリック診断ツールを使用したトラブルシューティング
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: 07691d5b-046c-45ea-8570-a0a85c3f2d22
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 01/14/2020
-ms.openlocfilehash: c69fc70282ff61ecce25f6413244d7ba3a5ba3bc
-ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
+ms.openlocfilehash: 3cf2b71113e812774cfb39b2ed21df8b41f83f12
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/18/2020
-ms.locfileid: "76265824"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856415"
 ---
 # <a name="troubleshooting-using-the-guarded-fabric-diagnostic-tool"></a>保護されたファブリック診断ツールを使用したトラブルシューティング
 
@@ -62,7 +62,7 @@ Get-HgsTrace -RunDiagnostics -Detailed
 
 `-Diagnostic` パラメーターを使用すると、指定した診断を操作するために必要なトレースのみをトレースコレクションに限定できます。  これにより、収集されるデータの量だけでなく、診断を呼び出すために必要なアクセス許可も減少します。
 
-### <a name="diagnosis"></a>Diagnosis
+### <a name="diagnosis"></a>診断
 
 収集されたトレースは、`-Path` パラメーターを使用し、`-RunDiagnostics` スイッチを指定することによって、トレースの場所 `Get-HgsTrace` 指定して診断できます。  さらに、`Get-HgsTrace` は、`-RunDiagnostics` スイッチとトレースターゲットの一覧を提供することで、単一のパスで収集と診断を実行できます。  トレースターゲットが指定されていない場合は、現在のコンピューターが暗黙的なターゲットとして使用され、インストールされている Windows PowerShell モジュールを調べることによってその役割が推論されます。
 
@@ -164,7 +164,7 @@ Get-HgsTrace -Target $hgs01,$hgs02,$gh01,$gh02 -RunDiagnostics
 
 手動診断を実行する手順は次のとおりです。
 
-1. 各ホスト管理者に対して、既知の `-Path` と、結果のトレースに対して実行する診断の一覧を指定 `Get-HgsTrace` を実行するよう要求します。  たとえば次のようになります。
+1. 各ホスト管理者に対して、既知の `-Path` と、結果のトレースに対して実行する診断の一覧を指定 `Get-HgsTrace` を実行するよう要求します。  例 :
 
    ```PowerShell
    Get-HgsTrace -Path C:\Traces -Diagnostic Networking,BestPractices
@@ -190,7 +190,7 @@ Get-HgsTrace -Target $hgs01,$hgs02,$gh01,$gh02 -RunDiagnostics
          |- [..]
       ```
 
-4. 診断を実行し、`-Path` パラメーターでアセンブルされたトレースフォルダーへのパスを指定し、`-RunDiagnostics` スイッチと、トレースの収集を管理者に依頼した診断を指定します。  診断では、パス内に存在するホストにアクセスできないと見なし、事前に収集されたトレースのみを使用しようとします。  トレースが見つからないか破損している場合、診断は影響を受けるテストのみを失敗として正常に続行します。  たとえば次のようになります。
+4. 診断を実行し、`-Path` パラメーターでアセンブルされたトレースフォルダーへのパスを指定し、`-RunDiagnostics` スイッチと、トレースの収集を管理者に依頼した診断を指定します。  診断では、パス内に存在するホストにアクセスできないと見なし、事前に収集されたトレースのみを使用しようとします。  トレースが見つからないか破損している場合、診断は影響を受けるテストのみを失敗として正常に続行します。  例 :
 
    ```PowerShell
    Get-HgsTrace -RunDiagnostics -Diagnostic Networking,BestPractices -Path ".\FabricTraces"

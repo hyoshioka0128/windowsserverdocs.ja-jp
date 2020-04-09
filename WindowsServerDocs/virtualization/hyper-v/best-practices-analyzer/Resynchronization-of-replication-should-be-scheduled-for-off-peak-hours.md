@@ -2,20 +2,19 @@
 title: オフピーク時間にレプリケーションの再同期をスケジュールする必要があります。
 description: このベストプラクティスアナライザールールのテキストのオンラインバージョン。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: 093a7bb7-8e0a-486b-b42b-04edd8809710
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 379f8c8cd6744fe5db176efb55a84f231ce45857
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ae630f93ef50ebc977de2bffcefa3b27b03622ee
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71393511"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861795"
 ---
 # <a name="resynchronization-of-replication-should-be-scheduled-for-off-peak-hours"></a>オフピーク時間にレプリケーションの再同期をスケジュールする必要があります。
 
@@ -27,7 +26,7 @@ ms.locfileid: "71393511"
 |-|-|  
 |**オペレーティング システム**|Windows Server 2016|  
 |**製品/機能**|Hyper-V|  
-|**順**|Warning|  
+|**順**|［警告］|  
 |**カテゴリ**|運用|  
   
 次のセクションでは、斜体は、この問題のためのベスト プラクティス アナライザー ツールで表示される UI テキストを示します。  

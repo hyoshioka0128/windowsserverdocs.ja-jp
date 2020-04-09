@@ -1,27 +1,23 @@
 ---
 title: MultiPoint Services を展開する
 description: MultiPoint Services の展開プロセスの概要
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 594bc09e-5d2d-4984-a9de-79d40b1308d6
 author: evaseydl
 ms.author: evas
 manager: scottman
-ms.openlocfilehash: 842b7b743624aa1e4b168b1be8e94f6d405d07e3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b6dff10519a951e002facc200beeb987546f5ee2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71395689"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859745"
 ---
 # <a name="deploying-multipoint-services"></a>MultiPoint Services を展開する
-このガイドでは、MultiPoint Services を実行するサーバーを展開する方法、MultiPoint ステーションをセットアップする方法、システムをインストールして構成する方法、ユーザーアカウントを設定する方法、およびディスクの保護の有効化やバックアップのセットアップなど、基本的な管理タスクを実行する方法について説明します。システムの使用を開始する前に  
+このガイドでは、MultiPoint Services を実行するサーバーを展開する方法、MultiPoint ステーションをセットアップする方法、システムをインストールして構成する方法、ユーザーアカウントを設定する方法、およびディスク保護の有効化やバックアップのセットアップなど、基本的な管理タスクを実行してからシステムの使用を開始する方法について説明します。  
   
 > [!NOTE]  
 > 追加のサポートが必要な場合は、MultiPoint Services のヘルプを参照してください。これは、MultiPoint マネージャーまたは MultiPoint ダッシュボード画面のヘルプアイコンまたは F1 キーをクリックして開くことができます。  
@@ -43,7 +39,7 @@ ms.locfileid: "71395689"
   
     サーバーの使用を開始する前に、いくつかの基本的なサーバー管理タスクを実行します。 ディスクの保護を有効にします。サーバーバックアップをインストールします。電力を節約するには、スリープ設定を構成します。ドメイン展開のグループポリシーとレジストリを構成します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
   
 - [MultiPoint Services](MultiPoint-Services.md)
 -   [MultiPoint Services フォーラム](https://social.technet.microsoft.com/Forums/windowsserver/home?forum=windowsmultipointserver&filter=alltypes&sort=lastpostdesc)  

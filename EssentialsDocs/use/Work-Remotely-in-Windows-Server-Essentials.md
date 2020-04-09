@@ -1,23 +1,19 @@
 ---
 title: Windows Server Essentials でのリモート操作
 description: Windows Server Essentials の使用方法について説明します。
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8b183f8f-1279-4fdf-a495-c7c801563cb0
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 2918a0f198d9c591803fa7bf945e01dd48c9e318
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: ec6b97dd153802ea2ff8b55f6ba58f3208e4abb1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80313091"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852085"
 ---
 # <a name="work-remotely-in-windows-server-essentials"></a>Windows Server Essentials でのリモート操作
 
@@ -28,8 +24,8 @@ ms.locfileid: "80313091"
  次のトピックでは、離れた場所からサーバー リソースにアクセスする方法について説明しています。  
   
 
--   [Windows Server Essentials でのリモート Web アクセスの使用](Work-Remotely-in-Windows-Server-Essentials.md#BKMA_RWA)  
-  
+-      [Windows Server Essentials でのリモート Web アクセスの使用](Work-Remotely-in-Windows-Server-Essentials.md#BKMA_RWA)  
+     
 -   [VPN を使用して Windows Server Essentials に接続する](Work-Remotely-in-Windows-Server-Essentials.md#BKMK_3)  
   
 -   [My Server アプリを使用して Windows Server Essentials に接続する](Work-Remotely-in-Windows-Server-Essentials.md#BKMK_App)  

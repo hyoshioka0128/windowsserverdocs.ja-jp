@@ -1,28 +1,22 @@
 ---
 title: convert
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: ファイルアロケーションテーブル (FAT) および FAT32 ボリュームを NTFS ファイルシステムに変換し、既存のファイルとディレクトリをそのままにする convert の Windows コマンドに関するトピック。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 96e437c0-1aa3-46ab-9078-a7b8cdaf3792
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c1e22f67768bbe2f37f3627ca69b162cae96f2d4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0fb2981d6cd5a54737700b64b28f7a8a52de72b1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71379081"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80847175"
 ---
 # <a name="convert"></a>convert
-
-
 
 ファイルアロケーションテーブル (FAT) および FAT32 ボリュームを NTFS ファイルシステムに変換し、既存のファイルとディレクトリをそのまま残します。 NTFS ファイルシステムに変換されたボリュームは、FAT または FAT32 に変換することはできません。
 
@@ -34,7 +28,7 @@ ms.locfileid: "71379081"
 convert [<Volume>] /fs:ntfs [/v] [/cvtarea:<FileName>] [/nosecurity] [/x]
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
 |パラメーター|説明|
 |---------|-----------|
@@ -44,9 +38,9 @@ convert [<Volume>] /fs:ntfs [/v] [/cvtarea:<FileName>] [/nosecurity] [/x]
 |/cvtarea:\<ファイル名 >|マスターファイルテーブル (MFT) とその他の NTFS メタデータファイルが、既存の連続するプレースホルダーファイルに書き込まれるように指定します。 このファイルは、変換するファイルシステムのルートディレクトリに存在する必要があります。 **/Cvtarea**パラメーターを使用すると、変換後のファイルシステムの断片化が少なくなる可能性があります。 最良の結果を得るために、このファイルのサイズは、ファイルシステム内のファイルとディレクトリの数を 1 KB 乗算する必要があります。ただし、**変換**ユーティリティでは任意のサイズのファイルを使用できます。</br>重要:**変換**を実行する前に、 **fsutil file createnew**コマンドを使用してプレースホルダーファイルを作成する必要があります。 **変換**では、このファイルは作成されません。 **Convert**は、このファイルを NTFS メタデータで上書きします。 変換後、このファイル内の未使用の領域は解放されます。|
 |/nosecurity|変換されたファイルおよびディレクトリのセキュリティ設定で、すべてのユーザーがアクセスできるように指定します。|
 |/x|必要に応じて、変換前にボリュームをマウント解除します。 ボリュームに対して開いているハンドルは、無効になります。|
-|/?|コマンド プロンプトにヘルプを表示します。|
+|/?|コマンド プロンプトでヘルプを表示します。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
 -   **Convert**がドライブをロックできない場合 (ドライブがシステムボリュームまたは現在のドライブの場合など)、次にコンピューターを再起動するときにドライブを変換するオプションが表示されます。 変換を完了するためにコンピューターをすぐに再起動できない場合は、コンピューターを再起動する時間を計画し、変換処理が完了するまでの時間を考慮してください。
 -   FAT または FAT32 から NTFS に変換されたボリュームの場合:
@@ -55,13 +49,13 @@ convert [<Volume>] /fs:ntfs [/v] [/cvtarea:<FileName>] [/nosecurity] [/x]
 
     FAT または FAT32 から NTFS へのボリューム変換では、ファイルはそのまま残りますが、NTFS でフォーマットされたボリュームと比較して、パフォーマンス上の利点がない可能性があります。 たとえば、変換されたボリュームでは、MFT が断片化される可能性があります。 また、変換されたブートボリュームでは、 **convert**は Windows セットアップ時に適用されるのと同じ既定のセキュリティを適用します。
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a><a name=BKMK_examples></a>例
 
 ドライブ E のボリュームを NTFS に変換し、変換処理中にすべてのメッセージを表示するには、次のように入力します。
 ```
 convert e: /fs:ntfs /v
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

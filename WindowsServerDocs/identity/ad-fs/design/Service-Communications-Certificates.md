@@ -1,7 +1,6 @@
 ---
 ms.assetid: 95e82190-68c5-4e40-87b1-f1bd816ef4e9
 title: サービス通信証明書
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 624d2e26bc0277129e44eee3fdce7c7396b735a0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 91ef716f518676fe9cf42b2136afcbcd42c50946
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407904"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858525"
 ---
 # <a name="service-communications-certificates"></a>サービス通信証明書
 

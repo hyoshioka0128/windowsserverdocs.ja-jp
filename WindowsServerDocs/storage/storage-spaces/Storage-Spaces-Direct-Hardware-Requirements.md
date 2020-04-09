@@ -3,18 +3,18 @@ title: 記憶域スペース ダイレクトのハードウェア要件
 ms.prod: windows-server
 description: 記憶域スペース ダイレクトをテストするための最小ハードウェア要件です。
 ms.author: eldenc
-ms.manager: eldenc
+manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: eldenchristensen
 ms.date: 08/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 63a7152ec6abb318a096ac321ae7ccfaaef4d199
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 42022b6e2e3564d1440e2ba1d45f9f98430242c0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402940"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861055"
 ---
 # <a name="storage-spaces-direct-hardware-requirements"></a>記憶域スペース ダイレクトのハードウェア要件
 
@@ -37,7 +37,7 @@ ms.locfileid: "71402940"
 
 また、次の要件が適用されます。
 
-## <a name="servers"></a>サーバー
+## <a name="servers"></a>[サーバー]
 
 - 2 台～ 16 台
 - すべてのサーバーを同じ製造元およびモデルにすることをお勧めします。

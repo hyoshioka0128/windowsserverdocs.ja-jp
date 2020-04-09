@@ -1,23 +1,19 @@
 ---
 title: サーバー記憶域の構成
 description: Windows Server Essentials の使用方法について説明します。
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ef7ddcdd-3a74-40ca-9487-c3a6fc5155a5
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 3d7c2b49afc9d740e6a4b3fa7ed659e8358c8dc6
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: b543e473c545f9446ab33b8f81d5b2e5fa4ed877
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80312143"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80817225"
 ---
 # <a name="configure-server-storage"></a>サーバー記憶域の構成
 

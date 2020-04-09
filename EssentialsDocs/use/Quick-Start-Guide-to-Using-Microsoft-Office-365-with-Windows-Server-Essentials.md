@@ -1,23 +1,19 @@
 ---
 title: 'クイック スタート ガイド: Microsoft Office 365 を Windows Server Essentials と共に使用する'
 description: Windows Server Essentials の使用方法について説明します。
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 51a7f1f1-088b-4487-b2c6-4f97aad3004d
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 82fa7a206e0f5100f6fb043d9e569b1e114f1537
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 49ffab44c1d385bd149ec048ff0bd4b627529fef
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80313168"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852135"
 ---
 # <a name="quick-start-guide-to-using-microsoft-office-365-with-windows-server-essentials"></a>クイック スタート ガイド: Microsoft Office 365 を Windows Server Essentials と共に使用する
 

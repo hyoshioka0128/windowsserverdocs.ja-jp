@@ -1,7 +1,6 @@
 ---
 ms.assetid: 61ed00fd-51c7-4728-91fa-8501de9d8f28
 title: SharePoint、Exchange、および RDG によるアプリケーションの発行
-description: ''
 author: billmath
 manager: mtillman
 ms.author: billmath
@@ -9,12 +8,12 @@ ms.date: 04/30/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: web-app-proxy
-ms.openlocfilehash: 3852baf866dae20d1d1d08219841295aa976c626
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 18851463b82afc1dc34615e6faaa14622c80224a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79319936"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80818685"
 ---
 # <a name="publishing-applications-with-sharepoint-exchange-and-rdg"></a>SharePoint、Exchange、および RDG によるアプリケーションの発行
 
@@ -27,7 +26,7 @@ ms.locfileid: "79319936"
 > [!NOTE]
 > この情報はそのとおりに提供されます。  リモートデスクトップサービスでは、Azure アプリプロキシを使用して、[オンプレミスアプリケーションへの安全なリモートアクセスを提供する](https://docs.microsoft.com/azure/active-directory/active-directory-application-proxy-get-started)ことをサポートしています。
 
-## <a name="BKMK_6.1"></a>SharePoint サーバーの公開
+## <a name="publish-sharepoint-server"></a><a name="BKMK_6.1"></a>SharePoint サーバーの公開
 Sharepoint サイトが要求ベースの認証または統合 Windows 認証用に構成されている場合は、Web アプリケーションプロキシを介して SharePoint サイトを発行できます。 事前認証に Active Directory フェデレーションサービス (AD FS) (AD FS) を使用する場合は、いずれかのウィザードを使用して証明書利用者を構成する必要があります。
 
 -   SharePoint サイトで要求ベース認証を使用する場合、証明書利用者信頼の追加ウィザードを利用し、アプリケーションに証明書利用者信頼を構成する必要があります。
@@ -40,7 +39,7 @@ Sharepoint サイトが要求ベースの認証または統合 Windows 認証用
 
 SharePoint サイトを代替アクセス マッピング (AAM) とホスト名の付いたサイト コレクションのいずれかを利用して構成する場合、異なる外部 URL とバックエンド サーバー URL を使用してアプリケーションを公開できます。 ただし、AAM またはホスト名の付いたサイト コレクションを使用して SharePoint サイトを構成しない場合、同じ外部 URL とバックエンド サーバー URL を使用する必要があります。
 
-## <a name="BKMK_6.2"></a>Exchange Server の公開
+## <a name="publish-exchange-server"></a><a name="BKMK_6.2"></a>Exchange Server の公開
 次の表は、Web アプリケーションプロキシ経由で公開できる Exchange サービスと、これらのサービスに対してサポートされている事前認証を示しています。
 
 
@@ -48,7 +47,7 @@ SharePoint サイトを代替アクセス マッピング (AAM) とホスト名�
 |------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |    Outlook Web アプリ     | -要求ベースでない認証を使用して AD FS<br />-パススルー<br />-オンプレミス Exchange 2013 サービスパック 1 (SP1) の要求ベースの認証を使用して AD FS |                                                                  詳細については、次のトピックを参照してください。 [AD FS のクレームベース認証を Outlook Web App および EAC で使用する](https://go.microsoft.com/fwlink/?LinkId=393723)                                                                  |
 | Exchange コントロール パネル |                                                                               パススルー                                                                               |                                                                                                                                                                                                                                                                                    |
-|    Outlook Anywhere    |                                                                               パススルー                                                                               | Outlook Anywhere を正しく機能させるには 3 つの URL を公開する必要があります。<br /><br />-自動検出 URL。<br />-Exchange サーバーの外部ホスト名。これは、クライアントが接続するために構成されている URL です。<br />-Exchange サーバーの内部 FQDN。 |
+|    Outlook Anywhere    |                                                                               パススルー                                                                               | Outlook Anywhere を正しく機能させるには 3 つの URL を公開する必要があります。<p>-自動検出 URL。<br />-Exchange サーバーの外部ホスト名。これは、クライアントが接続するために構成されている URL です。<br />-Exchange サーバーの内部 FQDN。 |
 |  Exchange ActiveSync   |                                                     パススルー<br/> HTTP 基本認証プロトコルを使用した AD FS                                                      |                                                                                                                                                                                                                                                                                    |
 
 統合 Windows 認証を使用して Outlook Web アプリを公開するには、非要求ベースの証明書利用者信頼の追加ウィザードを利用し、アプリケーションに証明書利用者信頼を構成する必要があります。
@@ -162,7 +161,7 @@ Windows Server 2012 R2 または Windows Server 2012 で実行されている場
 
             RDP の詳細については、「 [TS ゲートウェイ OTP シナリオの構成](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731249(v=ws.10))」を参照してください。
 
-## <a name="BKMK_Links"></a>関連項目
+## <a name="see-also"></a><a name="BKMK_Links"></a>関連項目
 
 - [Web アプリケーションプロキシを使用してアプリケーションを公開することを計画する](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn383650(v=ws.11))
 

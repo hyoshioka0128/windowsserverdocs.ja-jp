@@ -1,7 +1,6 @@
 ---
 ms.assetid: 02580b2f-a339-4470-947c-d700b2d55f3f
 title: フェデレーション サーバー ファームを作成するのに適した状況
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: fcfc7d640d3688bf0e23557af9bd56082418ef37
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 61e5c2c31ef4f6771c379c93e61b78640f4a180a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71358945"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858505"
 ---
 # <a name="when-to-create-a-federation-server-farm"></a>フェデレーション サーバー ファームを作成するのに適した状況
 
@@ -32,7 +31,7 @@ Microsoft NLB テクノロジを使用してクラスターの FQDN を構成す
 ## <a name="best-practices-for-deploying-a-federation-server-farm"></a>フェデレーション サーバー ファームのデプロイのベスト プラクティス  
 運用環境にフェデレーションサーバーを展開する場合は、次のベストプラクティスに従うことをお勧めします。  
   
--   同時に複数のフェデレーションサーバーを展開する場合、またはファームにサーバーをさらに追加することがわかっている場合は、ファーム内の既存のフェデレーションサーバーのサーバーイメージを作成してから、cr が必要になったときにそのイメージからインストールすることを検討してください。追加のフェデレーションサーバーを迅速にします。  
+-   複数のフェデレーションサーバーを同時に展開する場合、またはファームにサーバーをさらに追加することがわかっている場合は、ファーム内の既存のフェデレーションサーバーのサーバーイメージを作成してから、追加のフェデレーションサーバーをすばやく作成する必要がある場合はそのイメージからインストールすることを検討してください。  
   
     > [!NOTE]  
     > サーバーイメージ方法を使用して追加のフェデレーションサーバーを展開する場合は、「チェックリスト: 新しいサーバーをファームに追加するたびに[フェデレーションサーバーをセットアップ](../../ad-fs/deployment/Checklist--Setting-Up-a-Federation-Server.md)する」のタスクを実行する必要はありません。  
@@ -49,7 +48,7 @@ Microsoft NLB テクノロジを使用してクラスターの FQDN を構成す
 |タスク|説明|  
 |--------|---------------|  
 |AD FS 構成データベースを SQL Server に置く場合|フェデレーションサーバーファームは、同じ AD FS 構成データベースとトークン\-署名証明書を共有する2つ以上のフェデレーションサーバーで構成されます。 構成データベースは、Windows Internal Database または SQL Server データベースに置くことができます。 構成データベースを SQL データベースに格納する場合は、ファームに参加しているすべての新しいフェデレーションサーバーからアクセスできるように、構成データベースにアクセスできることを確認してください。 **注:** ファームのシナリオでは、構成データベースが、そのファームにフェデレーションサーバーとして参加していないコンピューターに配置されていることが重要です。 Microsoft NLB では、ファームに参加しているコンピューターが相互に通信することはできません。 **注:** ファームに参加しているすべてのフェデレーションサーバー上のインターネットインフォメーションサービス \(IIS\)\) の AD FS AppPool の id に、構成データベースへの読み取りアクセス権があることを確認します。|  
-|証明書を取得して共有する|公共の証明機関 \(CA\)(VeriSign など) から、単一のサーバー認証証明書を取得できます。 その後、すべてのフェデレーションサーバーが証明書の同じ秘密キー部分を共有するように、証明書を構成できます。 同じ証明書を共有する方法の詳細については、「 [Checklist: Setting Up a Federation Server](../../ad-fs/deployment/Checklist--Setting-Up-a-Federation-Server.md)」を参照してください。 **注:** の AD FS 管理スナップ\-は、サービス通信証明書としてのフェデレーションサーバーのサーバー認証証明書を参照します。<br /><br />詳細については、「 [Certificate Requirements for Federation Servers](Certificate-Requirements-for-Federation-Servers.md)」を参照してください。|  
+|証明書を取得して共有する|公共の証明機関 \(CA\)(VeriSign など) から、単一のサーバー認証証明書を取得できます。 その後、すべてのフェデレーションサーバーが証明書の同じ秘密キー部分を共有するように、証明書を構成できます。 同じ証明書を共有する方法の詳細については、「 [Checklist: Setting Up a Federation Server](../../ad-fs/deployment/Checklist--Setting-Up-a-Federation-Server.md)」を参照してください。 **注:** の AD FS 管理スナップ\-は、サービス通信証明書としてのフェデレーションサーバーのサーバー認証証明書を参照します。<p>詳細については、「 [Certificate Requirements for Federation Servers](Certificate-Requirements-for-Federation-Servers.md)」を参照してください。|  
 |同じ SQL Server インスタンスを参照する|AD FS 構成データベースを SQL database に格納する場合、新しいフェデレーションサーバーは、ファーム内の他のフェデレーションサーバーで使用されているのと同じ SQL Server インスタンスを参照する必要があります。これにより、新しいサーバーがファームに参加できるようになります。|  
   
 ## <a name="see-also"></a>参照

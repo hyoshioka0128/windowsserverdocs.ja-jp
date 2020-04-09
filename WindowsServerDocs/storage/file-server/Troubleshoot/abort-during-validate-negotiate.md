@@ -3,16 +3,15 @@ title: ネゴシエーションの検証中に TCP 接続が中止されまし�
 description: Validate Negotiate 中に TCP 接続が中止されたときに、SMB の問題のトラブルシューティングを行う方法について説明します。
 author: Deland-Han
 manager: dcscontentpm
-audience: ITPro
 ms.topic: article
 ms.author: delhan
 ms.date: 12/25/2019
-ms.openlocfilehash: 3455b4ac0a2706f80702378dda02c1877af219ca
-ms.sourcegitcommit: 8cf04db0bc44fd98f4321dca334e38c6573fae6c
+ms.openlocfilehash: 36bd49777899870246a19531c6681a5b45bb622d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75654623"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815515"
 ---
 # <a name="tcp-connection-is-aborted-during-validate-negotiate"></a>ネゴシエーションの検証中に TCP 接続が中止されました
 
@@ -51,7 +50,7 @@ Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanWorkstatio
 
 クライアントまたはサーバーが Negotiate Negotiate コマンドをサポートできない場合は、SMB 署名が必要になるように設定することで、この問題を回避できます。 SMB 署名は、Validate Negotiate よりも安全性が高いと見なされます。 ただし、署名が必要な場合は、パフォーマンスが低下する可能性もあります。
 
-## <a name="reference"></a>辞書/リファレンス
+## <a name="reference"></a>参照
 
 詳しくは、次の記事をご覧ください。
 

@@ -1,23 +1,19 @@
 ---
 title: RAS ゲートウェイの展開アーキテクチャ
 description: このトピックでは、Windows Server 2016 の RAS ゲートウェイのクラウドサービスプロバイダー (CSP) の展開について説明します。これには、RAS ゲートウェイプール、リフレクターのルーティング、個々のテナントに対する複数のゲートウェイのデプロイが含まれます。
-manager: brianlic
-ms.custom: na
+manager: grcusanz
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-sdn
-ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: d46e4e91-ece0-41da-a812-af8ab153edc4
-ms.author: lizross
-author: eross-msft
-ms.openlocfilehash: 91d8081261d3cbc5e2da61cc2b5a9737e76a0dc7
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.author: anpaul
+author: AnirbanPaul
+ms.openlocfilehash: 1704cd6d933af1e796a9ac1237ff2de3a49fb3d3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80309804"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859605"
 ---
 # <a name="ras-gateway-deployment-architecture"></a>RAS ゲートウェイの展開アーキテクチャ
 

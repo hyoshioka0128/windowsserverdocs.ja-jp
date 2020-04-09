@@ -1,23 +1,19 @@
 ---
 title: 最上位のカテゴリをスタートパッドに追加する (Macintosh オペレーティング システム)
 description: Windows Server Essentials の使用方法について説明します。
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ee2173c3-e464-4001-9f43-6d926a575092
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 3b16cadc14999e041dc6b1661689787e434460eb
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: c8a15a831a89afc55d20db4e1c1195173d466b3c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80310221"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80817515"
 ---
 # <a name="add-top-level-categories-to-the-launchpad-macintosh-operating-system"></a>最上位のカテゴリをスタートパッドに追加する (Macintosh オペレーティング システム)
 

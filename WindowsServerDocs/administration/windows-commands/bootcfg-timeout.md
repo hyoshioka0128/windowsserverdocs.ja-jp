@@ -1,24 +1,20 @@
 ---
 title: bootcfg timeout
-description: '**Bootcfg timeout**の Windows コマンドに関するトピック-オペレーティングシステムのタイムアウト値を変更します。'
-ms.custom: na
+description: Windows コマンドに関するトピック。 bootcfg timeout では、オペレーティングシステムのタイムアウト値が変更されます。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: aa858eac-2bb7-4a27-a9bc-3e4a6eb8b2c6
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 94bc2de43dd179117c7a44747961213d12741a09
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b56e609d5e3b7c92a887a98ae5d02bfbfb7a78e6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71379871"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80848495"
 ---
 # <a name="bootcfg-timeout"></a>bootcfg timeout
 
@@ -27,10 +23,13 @@ ms.locfileid: "71379871"
 オペレーティングシステムのタイムアウト値を変更します。
 
 ## <a name="syntax"></a>構文
+
 ```
 bootcfg /timeout <timeOutValue> [/s <computer> [/u <Domain\User>/p <Password>]]
 ```
-## <a name="parameters"></a>パラメーター
+
+### <a name="parameters"></a>パラメーター
+
 
 |        パラメーター        |                                                                                                                                                                                  説明                                                                                                                                                                                   |
 |-------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -38,13 +37,13 @@ bootcfg /timeout <timeOutValue> [/s <computer> [/u <Domain\User>/p <Password>]]
 |      /s <computer>      |                                                                                                                               名前またはリモート コンピューターの IP アドレスを指定します (円記号を使用しない)。 既定はローカル コンピュータです。                                                                                                                               |
 |    /u < Domain\User >     |                                                                                       <User> または < Domain\User > で指定したユーザーのアカウントアクセス許可を使用してコマンドを実行します。 既定値は、コマンドを実行しているコンピューターの現在のログオンユーザーのアクセス許可です。                                                                                        |
 |      /p <Password>      |                                                                                                                                            **/U**パラメーターで指定したユーザーアカウントの <Password> を指定します。                                                                                                                                             |
-|           /?            |                                                                                                                                                                      コマンド プロンプトにヘルプを表示します。                                                                                                                                                                      |
+|           /?            |                                                                                                                                                                      コマンド プロンプトでヘルプを表示します。                                                                                                                                                                      |
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a><a name=BKMK_examples></a>例
 次の例は、 **bootcfg/timeout**コマンドを使用する方法を示しています。
 ```
 bootcfg /timeout 30
 bootcfg /s srvmain /u maindom\hiropln /p p@ssW23 /timeout 50
 ```
-#### <a name="additional-references"></a>その他の参照情報
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+## <a name="additional-references"></a>その他の参照情報
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

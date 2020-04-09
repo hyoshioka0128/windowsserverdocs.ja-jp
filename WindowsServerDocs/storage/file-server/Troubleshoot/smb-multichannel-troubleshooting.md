@@ -3,16 +3,15 @@ title: SMB マルチチャネルのトラブルシューティング
 description: SMB マルチチャネルのトラブルシューティング方法について説明します。
 author: Deland-Han
 manager: dcscontentpm
-audience: ITPro
 ms.topic: article
 ms.author: delhan
 ms.date: 12/25/2019
-ms.openlocfilehash: 91f034a0062f509b1185f04554af4383022a68e1
-ms.sourcegitcommit: 8cf04db0bc44fd98f4321dca334e38c6573fae6c
+ms.openlocfilehash: 210bc2057f25dc196fe9d76495c42f76c8b36311
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75654543"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815345"
 ---
 # <a name="smb-multichannel-troubleshooting"></a>SMB マルチチャネルのトラブルシューティング
 

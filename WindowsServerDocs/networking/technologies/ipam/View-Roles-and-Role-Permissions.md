@@ -2,22 +2,18 @@
 title: 役割および役割のアクセス許可を表示する
 description: このトピックは、Windows Server 2016 の IP アドレス管理 (IPAM) 管理ガイドに含まれています。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ipam
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: da8dce90-b54c-4ded-a48a-0cda5ccf1d8a
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 748b4a2547285edf6b04fc124d75facd245c38c9
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 7baa5370177485c11bf64c11fe93ece81e1ffa69
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80309463"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854815"
 ---
 # <a name="view-roles-and-role-permissions"></a>役割および役割のアクセス許可を表示する
 

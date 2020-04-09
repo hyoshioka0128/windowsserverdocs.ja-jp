@@ -2,22 +2,18 @@
 title: 手順 3 OTP 証明書の展開を計画する
 description: このトピックは、「Windows Server 2016 で OTP 認証を使用してリモートアクセスを展開する」の一部です。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: eca02eeb-d92d-463e-aae0-1f7038ba26fe
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: d34630b4faa8012eee73967a99bc0541f1305a09
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 03ae91c0360153789658e0c31cb17980fad32bab
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80313520"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855765"
 ---
 # <a name="step-3-plan-otp-certificate-deployment"></a>手順 3 OTP 証明書の展開を計画する
 

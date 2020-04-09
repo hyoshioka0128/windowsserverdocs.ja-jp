@@ -2,22 +2,18 @@
 title: Hyper-V 仮想スイッチを管理する
 description: このトピックでは、Windows Server 2016 用の Hyper-v 仮想スイッチ管理コンテンツへのリンクを示します。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-hv-switch
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a7a06a7d-b8f3-4c9d-a69e-762bbb0dec72
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: a2a7707fcb268ad5e011f5b59c3c0c9a36d5b517
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 21b97bc509fb723c9e6dad83022dce824bb8e962
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80307978"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853295"
 ---
 # <a name="manage-hyper-v-virtual-switch"></a>Hyper-V 仮想スイッチを管理する
 

@@ -1,7 +1,6 @@
 ---
 ms.assetid: bbb84ea6-7e31-4442-85ab-a9447e7c19e8
 title: トークン署名証明書を追加する
-description: ''
 author: billmath
 manager: femila
 ms.date: 05/31/2017
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: c8b2246842dd70c06442faed995f6b883dbaf70a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9b737cf8c9efb89ef9b3befaa1875b273bfcadf9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71360086"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80814935"
 ---
 # <a name="add-a-token-signing-certificate"></a>トークン署名証明書を追加する
 
@@ -26,7 +25,7 @@ Active Directory フェデレーションサービス (AD FS) \(\) AD FS のフ�
   
 署名証明書\-トークンは、フェデレーションサービス内の信頼されたルートにチェーンされている必要があります。 次の手順を使用して、エクスポートしたファイルからの AD FS 管理スナップ\-に\-署名証明書のトークンを追加できます。  
   
-この手順を実行するには、ローカル コンピューターの **Administrators**グループのメンバーシップか、それと同等のメンバーシップが最低限必要です。  適切なアカウントとグループメンバーシップの使用に関する詳細については、\(http:\/\/go.microsoft.com\/fwlink\/? [」を参照](https://go.microsoft.com/fwlink/?LinkId=83477)してください。LinkId\=83477\)。   
+この手順を完了するには、ローカル コンピューター上の **Administrators** または同等のメンバーシップが最低限必要です。  適切なアカウントとグループメンバーシップの使用に関する詳細については、\(http:\/\/go.microsoft.com\/fwlink\/? [」を参照](https://go.microsoft.com/fwlink/?LinkId=83477)してください。LinkId\=83477\)。   
   
 ### <a name="to-add-a-token-signing-certificate"></a>署名証明書\-トークンを追加するには  
   

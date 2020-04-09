@@ -1,23 +1,19 @@
 ---
 title: Windows Server Essentials におけるリモート Web アクセス接続のトラブルシューティング
 description: Windows Server Essentials の使用方法について説明します。
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d3642575-b3ee-4488-b654-5bf9d3b8c935
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 6db623308184c5be2968fa1d8991de2b48eef5b7
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 62f3bf875b03328b0016261bf6aff7a39c4b65bc
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80318629"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852245"
 ---
 # <a name="troubleshoot-remote-web-access-connectivity-in-windows-server-essentials"></a>Windows Server Essentials におけるリモート Web アクセス接続のトラブルシューティング
  

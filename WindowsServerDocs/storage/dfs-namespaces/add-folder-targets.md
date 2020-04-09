@@ -1,25 +1,25 @@
 ---
-title: フォルダー ターゲットの追加
+title: Add Folder Targets
 description: このトピックでは、フォルダー ターゲット (UNC パス) を追加する方法について説明します。
 ms.prod: windows-server
 ms.author: jgerend
-ms.manager: brianlic
+manager: brianlic
 ms.technology: storage
 ms.topic: article
 author: jasongerend
 ms-date: 06/05/2017
-ms.openlocfilehash: b0685ea795d53b36fad92d54f817f67de57e3a82
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d2f3845a612556a51692aaf51d256bbedd518e7a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403184"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854105"
 ---
-# <a name="add-folder-targets"></a>フォルダー ターゲットの追加
+# <a name="add-folder-targets"></a>Add folder targets
 
-> 適用対象:Windows Server 2019、Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
+> 適用対象: Windows Server 2019、Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
 
-フォルダー ターゲットは、共有フォルダー、または名前空間内のフォルダーに関連付けられた別の名前空間の汎用名前付け規則 (UNC) パスです。 複数のフォルダー ターゲットを追加すると、名前空間の可用性が向上します。
+フォルダー ターゲットとは、ある名前空間内のフォルダーと関連付けられた別の名前空間または共有フォルダーへの汎用名前付け規則 (UNC) パスです。 複数のフォルダー ターゲットを追加すると、名前空間内のフォルダーの可用性が向上します。
 
 ## <a name="to-add-a-folder-target"></a>フォルダー ターゲットを追加するには
 
@@ -37,9 +37,9 @@ DFS の管理を使ってフォルダー ターゲットを追加するには、
 > Windows PowerShell を使ってフォルダー ターゲットを追加するには、[New-DfsnFolderTarget](https://docs.microsoft.com/powershell/module/dfsn/new-dfsnfoldertarget) コマンドレットを使います。 DFSN Windows PowerShell モジュールは、Windows Server 2012 で導入されました。
 
 > [!NOTE]
-> フォルダーには、フォルダー ターゲットまたは他の DFS フォルダーを含めることができますが、フォルダー階層の同じレベルに両方を含めることはできません。
+> フォルダーにはフォルダー ターゲットまたは他の DFS フォルダーを含めることができます。ただし、フォルダーの同じ階層に、それら両方を含めることはできません。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 -   [DFS 名前空間を展開する](deploying-dfs-namespaces.md)
 -   [DFS 名前空間の管理アクセス許可を委任する](delegate-management-permissions-for-dfs-namespaces.md)

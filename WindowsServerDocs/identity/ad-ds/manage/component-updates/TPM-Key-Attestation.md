@@ -1,7 +1,6 @@
 ---
 ms.assetid: 16a344a9-f9a6-4ae2-9bea-c79a0075fd04
 title: TPM キーの構成証明
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: d7104daaa10cf7093370cb309e0366e1ab2b9b51
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: de5a38ff6f811046d06c52a1ca4598f9650b3cfe
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71389858"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80823015"
 ---
 # <a name="tpm-key-attestation"></a>TPM キーの構成証明
 
@@ -33,7 +32,7 @@ TPM で保護されたキーのサポートは Windows 8 以降に存在して�
   
 ### <a name="terminology"></a>用語  
   
-|用語|定義|  
+|用語|Definition|  
 |--------|--------------|  
 |EK|保証キー。 これは、(製造時に挿入された) TPM 内に含まれる非対称キーです。 EK は、TPM ごとに一意であり、特定できます。 EK を変更または削除することはできません。|  
 |EKpub|EK の公開キーを参照します。|  
@@ -67,7 +66,7 @@ TPM キーの構成証明を使用すると、新しい管理パラダイムが�
   
 4.  CA は、キーが TPM によって保護されるように証明されたことを示すために、特別な発行ポリシー OID を持つ証明書を発行します。  
   
-## <a name="BKMK_DeploymentOverview"></a>展開の概要  
+## <a name="deployment-overview"></a><a name="BKMK_DeploymentOverview"></a>展開の概要  
 この展開では、Windows Server 2012 R2 enterprise CA がセットアップされていることを前提としています。 また、クライアント (Windows 8.1) は、証明書テンプレートを使用して、そのエンタープライズ CA に対して登録するように構成されています。 
 
 TPM キーの構成証明を展開するには、次の3つの手順を実行します。  
@@ -101,9 +100,9 @@ TPM キーの構成証明を展開するには、次の3つの手順を実行し
     > -   スタンドアロン CA では、TPM キーの構成証明はサポートされていません。  
     > -   TPM キーの構成証明は[、非永続的な証明書の処理](https://technet.microsoft.com/library/ff934598)をサポートしていません。  
   
-## <a name="BKMK_DeploymentDetails"></a>デプロイの詳細  
+## <a name="deployment-details"></a><a name="BKMK_DeploymentDetails"></a>デプロイの詳細  
   
-### <a name="BKMK_ConfigCertTemplate"></a>証明書テンプレートを構成する  
+### <a name="configure-a-certificate-template"></a><a name="BKMK_ConfigCertTemplate"></a>証明書テンプレートを構成する  
 TPM キーの構成証明用の証明書テンプレートを構成するには、次の構成手順を実行します。  
   
 1.  **[互換性]** タブ  
@@ -156,7 +155,7 @@ TPM キーの構成証明用の証明書テンプレートを構成するには�
     |-------|------------------------|---------------|-------------------|  
     |1.3.6.1.4.1.311.21.30|EK|"EK 検証済み": 管理者によって管理される EK のリスト|高|  
     |1.3.6.1.4.1.311.21.31|保証証明書|"EK 証明書の検証済み": 証明書チェーンが検証されたとき|中|  
-    |1.3.6.1.4.1.311.21.32|ユーザー資格情報|"使用中に信頼されている EK": ユーザー証明 EK の場合|低|  
+    |1.3.6.1.4.1.311.21.32|ユーザーの資格情報|"使用中に信頼されている EK": ユーザー証明 EK の場合|低|  
   
     [発行**ポリシーを含める**] が選択されている場合 (既定の構成)、oid は発行された証明書に挿入されます。  
   
@@ -165,7 +164,7 @@ TPM キーの構成証明用の証明書テンプレートを構成するには�
     > [!TIP]  
     > 証明書に OID が存在する可能性の1つは、VPN またはワイヤレスネットワークへのアクセスを特定のデバイスに制限することです。 たとえば、アクセスポリシーによって、OID 1.3.6.1.4.1.311.21.30 が証明書に存在する場合、接続 (または別の VLAN へのアクセス) が許可される場合があります。 これにより、TPM EK が EKPUB リストに存在するデバイスへのアクセスを制限することができます。  
   
-### <a name="BKMK_CAConfig"></a>CA の構成  
+### <a name="ca-configuration"></a><a name="BKMK_CAConfig"></a>CA の構成  
   
 1.  **発行元 CA での EKCA と EKROOT の証明書ストアのセットアップ**  
   
@@ -199,9 +198,9 @@ TPM キーの構成証明用の証明書テンプレートを構成するには�
   
         Certutil コマンドの EndorsementKeyListDirectories は、次の表に示すレジストリ設定です。  
   
-        |値の名前|種類|データ|  
+        |値の名前|種類|Data|  
         |--------------|--------|--------|  
-        |EndorsementKeyListDirectories|REG_MULTI_SZ|EKPUB 許可リストへのローカルパスまたは UNC パスを < ><br /><br />以下に例を示します。<br /><br />*\\\blueCA.contoso.com\ekpub*<br /><br />*\\\bluecluster1.contoso.com\ekpub*<br /><br />D:\ekpub|  
+        |EndorsementKeyListDirectories|REG_MULTI_SZ|EKPUB 許可リストへのローカルパスまたは UNC パスを < ><p>例:<p>*\\\blueCA.contoso.com\ekpub*<p>*\\\bluecluster1.contoso.com\ekpub*<p>D:\ekpub|  
   
         HKLM\SYSTEM\CurrentControlSet\Services\CertSvc\Configuration\\<CA Sanitized Name>  
   

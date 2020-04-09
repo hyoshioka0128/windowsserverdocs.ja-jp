@@ -1,7 +1,6 @@
 ---
 ms.assetid: 39acccd9-0402-49ca-8ce1-b239e1e7e455
 title: リソース パートナー組織での AD FS の展開
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: f4741fcc683a8a22318caa47d5cbd66352862a86
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 780247d72fb35d44a16f1e3da72c3ad59c72ea0c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408135"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853175"
 ---
 # <a name="deploying-ad-fs-in-the-resource-partner-organization"></a>リソース パートナー組織での AD FS の展開
 

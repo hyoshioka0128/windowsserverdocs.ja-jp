@@ -1,23 +1,19 @@
 ---
 title: Cfg.ini ファイルの作成
 description: Windows Server Essentials の使用方法について説明します。
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 93a73556-22ef-402d-b8d4-582b74c22bcf
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 0702fb8616ced4e7e00de344da47995d540f074d
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 241e7adf280e908ced8804969947d2a03400b06f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80312074"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80818285"
 ---
 # <a name="create-the-cfgini-file"></a>Cfg.ini ファイルの作成
 

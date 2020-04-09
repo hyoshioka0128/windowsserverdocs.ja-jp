@@ -1,23 +1,19 @@
 ---
 title: Windows Server Essentials でのリモート Web アクセスの使用
 description: Windows Server Essentials の使用方法について説明します。
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 47ea21a0-5e05-4b4b-8fa4-338c82601276
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 8ea6e5c1936cb87fb90cd24fd8e0f6186f42b129
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 5a26f331c8bfe6d30dc74d555ba5f4a4cdbd6232
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80313132"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852125"
 ---
 # <a name="use-remote-web-access-in-windows-server-essentials"></a>Windows Server Essentials でのリモート Web アクセスの使用
 
@@ -60,7 +56,7 @@ ms.locfileid: "80313132"
   
 ##### <a name="to-log-on-to-remote-web-access-from-a-network-computer"></a>ネットワーク コンピューターからリモート Web アクセスにログオンするには  
   
-1.  Web ブラウザーを開き、アドレス**バーに「** https://」と入力して [_servername\><_ ] と入力し、enter キーを押します。  
+1.  Web ブラウザーを開き、アドレス**バーに「** https://」と入力して [_servername\><_  **https://** ] と入力し、enter キーを押します。  
   
     > [!NOTE]
     >  を https に含めるようにしてください。  

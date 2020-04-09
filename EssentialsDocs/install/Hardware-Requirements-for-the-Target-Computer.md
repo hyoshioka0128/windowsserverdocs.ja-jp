@@ -1,23 +1,19 @@
 ---
 title: ターゲット コンピューターのハードウェア要件
 description: Windows Server Essentials の使用方法について説明します。
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c20b06b9-ce0d-4c20-bf49-257c3f5dc01b
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 2ab2608095ffe6c0f2006f9f52cce106ff68cffc
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: a566a8f342ba076ee402d1f19e35f99c58b931e4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80313256"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80817875"
 ---
 # <a name="hardware-requirements-for-the-target-computer"></a>ターゲット コンピューターのハードウェア要件
 
@@ -44,7 +40,7 @@ ms.locfileid: "80313256"
 |Component|説明|  
 |---------------|-----------------|  
 |ネットワーク アダプタ|Gigabit Ethernet アダプター (10/100/1000BaseT PHY/MAC)|  
-|インターネット|機能によっては、インターネット アクセス (有料の可能性があります) または Windows Live® ID アカウントが必要となる場合があります|  
+|インターネット|一部の機能では、インターネットアクセス (料金が適用される場合があります) または Windows Live&reg; ID アカウントが必要になる場合があります。|  
 |サポートされているクライアント オペレーティング システム|-Windows 7<br />-Windows 8<br />-Macintosh OS X 10.5 から10.8。<br /><br /> **注:** 一部の機能には、professional またはそれ以降のエディションが必要です。<br /><br /> 1 GB の利用可能なハード ドライブの容量 (このディスクの一部はインストール後に解放されます)|  
 |ルーター|IPv4 ネットワーク アドレス変換 (NAT) をサポートするルーターまたはファイアウォール|  
 |追加の要件|DVD-ROM ドライブ|  

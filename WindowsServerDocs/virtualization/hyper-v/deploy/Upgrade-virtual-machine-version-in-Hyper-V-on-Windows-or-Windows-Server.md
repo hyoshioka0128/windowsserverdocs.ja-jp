@@ -2,21 +2,19 @@
 title: Windows 10 または Windows Server の Hyper-v で仮想マシンのバージョンをアップグレードする
 description: バーチャルマシンのバージョンをアップグレードするための手順と考慮事項を示します。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 897f2454-5aee-445c-a63e-f386f514a0f6
 author: jasongerend
 ms.author: jgerend
 ms.date: 05/22/2019
-ms.openlocfilehash: 96678dfab2a3d5b6f503d8ce9d00850a3c437b35
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: e08d13e4d9b493b80cad59561c8088c7d3a12b57
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322724"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860875"
 ---
 # <a name="upgrade-virtual-machine-version-in-hyper-v-on-windows-10-or-windows-server"></a>Windows 10 または Windows Server の Hyper-v で仮想マシンのバージョンをアップグレードする
 
