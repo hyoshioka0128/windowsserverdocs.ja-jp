@@ -1,6 +1,5 @@
 ---
 title: 高パフォーマンスネットワーク (HPN)
-description: ''
 ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
@@ -9,12 +8,12 @@ manager: dougkim
 ms.author: lizross
 author: eross-msft
 ms.date: 09/20/2018
-ms.openlocfilehash: f8860dc5a546843287092e5388f3214e810f7c33
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 6be95455dcbd38feca0e7e166e712f4d38e21645
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80312612"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80814785"
 ---
 # <a name="high-performance-networking-hpn"></a>高パフォーマンスネットワーク (HPN)
 
