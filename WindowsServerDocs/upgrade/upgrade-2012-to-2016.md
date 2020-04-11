@@ -1,18 +1,18 @@
 ---
 title: Windows Server 2012 から Windows Server 2016 へのアップグレード | Microsoft Docs
 description: Windows Server 2012 から Windows Server 2016 に移行するインプレース アップグレードを実行する方法について説明します。
-ms.prod: windows server
+ms.prod: windows-server
 ms.technology: server-general
 ms.topic: upgrade
 author: RobHindman
 ms.author: robhind
 ms.date: 09/16/2019
-ms.openlocfilehash: 09c5a95e2ccd065f3ebbe551404064c39f803f2a
-ms.sourcegitcommit: 27f0caf74e88781054250455c3c1adf06deb6234
+ms.openlocfilehash: c6cc52e24b7ba66b349b3715bacf3a0f671ff0d0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71124722"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854275"
 ---
 # <a name="upgrade-windows-server-2012-to-windows-server-2016"></a>Windows Server 2012 から Windows Server 2016 へのアップグレード
 
@@ -22,11 +22,11 @@ Windows Server 2019 にアップグレードするには、まずこのトピッ
 
 ## <a name="before-you-begin-your-in-place-upgrade"></a>インプレース アップグレードを開始する前に
 
-Windows Server のアップグレードを開始する前に、診断とトラブルシューティングのためにデバイスから情報を収集することをお勧めします。 この情報は、アップグレードが失敗した場合にのみ使用することを目的としているため、デバイスから到達できる場所に情報を保存しておく必要があります。
+Windows Server のアップグレードを開始する前に、診断とトラブルシューティングのためにデバイスから情報を収集することをお勧めします。 この情報は、アップグレードが失敗した場合にのみ使用することを目的としているため、デバイスからアクセスできる場所に保存しておく必要があります。
 
 ### <a name="to-collect-your-info"></a>情報を収集するには
 
-1. コマンド プロンプトを開き、`c:\Windows\system32` にアクセスして、「**systeminfo.exe**」と入力します。
+1. コマンド プロンプトを開き、`c:\Windows\system32` に移動して、「**systeminfo.exe**」と入力します。
 
 2. 結果として得られたシステム情報をデバイスから任意の場所にコピーして貼り付け、保存します。
 
@@ -34,7 +34,7 @@ Windows Server のアップグレードを開始する前に、診断とトラ�
 
 4. レジストリ エディターを開き、HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsNT\CurrentVersion ハイブに移動して、Windows Server **BuildLabEx** (バージョン) と **EditionID** (エディション) をコピーし、上記と同じ場所に貼り付けます。
 
-Windows Server 関連のすべての情報を収集したら、オペレーティング システム、アプリ、および仮想マシンをバックアップすることを強くお勧めします。 また、サーバー上で現在実行されているすべての仮想マシンの**シャットダウン**、**クイック マイグレーション**、または**ライブ マイグレーション**を行う必要があります。 インプレース アップグレード中に仮想マシンを実行することはできません。
+Windows Server 関連のすべての情報を収集後、オペレーティング システム、アプリ、および仮想マシンをバックアップすることを強くお勧めします。 また、サーバー上で現在実行されているすべての仮想マシンの**シャットダウン**、**クイック マイグレーション**、または**ライブ マイグレーション**を行う必要があります。 インプレース アップグレード中に仮想マシンを実行することはできません。
 
 ## <a name="to-perform-the-upgrade"></a>アップグレードを実行するには
 
@@ -84,7 +84,7 @@ Windows Server 関連のすべての情報を収集したら、オペレーテ�
 
     ![アップグレードを開始する準備ができていることを示す画面](media/upgrade-2012-2016/ready-to-install.png)
 
-    インプレース アップグレードが開始され、進行状況を示す **[Windows のアップグレード]** 画面が表示されます。 アップグレードが完了すると、サーバーが再起動します。
+    インプレース アップグレードが開始され、進行状況を示す **[Windows をアップグレードしています]** 画面が表示されます。 アップグレードが完了すると、サーバーが再起動します。
 
     ![アップグレードの進行状況を表示している画面](media/upgrade-2012-2016/upgrading-windows-with-progress.png)
 

@@ -2,7 +2,6 @@
 title: '手順 3: WSUS で更新プログラムを承認および展開する'
 description: Windows Server Update Service (WSUS) のトピック - WSUS での更新プログラムの承認と展開は、WSUS を展開するための 4 つの手順のうちの手順 3 です
 ms.prod: windows-server
-ms.reviewer: na
 ms.technology: manage-wsus
 ms.topic: article
 ms.assetid: 8d728ff9-170f-47e6-aefe-52be93315a75
@@ -10,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7731cc84f946bfab7f53a3446ed90d1be92cae75
-ms.sourcegitcommit: 3c3dfee8ada0083f97a58997d22d218a5d73b9c4
+ms.openlocfilehash: d8758c4f957d2d9abb156652a568b23634cb1bf0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80639800"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828855"
 ---
 # <a name="step-3-approve-and-deploy-updates-in-wsus"></a>手順 3:WSUS で更新プログラムを承認および展開する
 
@@ -29,7 +28,7 @@ ms.locfileid: "80639800"
 |[3.2. 自動承認規則を構成する](3-approve-and-deploy-updates-in-wsus.md#BKM_3.2.a.)|選択したグループに対する更新プログラムのインストールを自動的に承認するように WSUS を構成し、既存の更新プログラムに対する改訂の承認方法を構成します。|
 |[3.3. インストールされた更新プログラムを WSUS レポートで確認する](3-approve-and-deploy-updates-in-wsus.md#BKM_3.3.)|WSUS のレポート機能を使用して、インストールされた更新プログラム、これらの更新プログラムを受け取ったコンピューターなどの詳細を確認します。|
 
-## <a name="31-approve-and-deploy-wsus-updates"></a><a name="BKM_3.1."></a>3.1. WSUS 更新プログラムを承認および展開する
+## <a name="31-approve-and-deploy-wsus-updates"></a><a name=BKM_3.1.></a>3.1. WSUS 更新プログラムを承認および展開する
 更新プログラムを承認および展開するには、次の手順を実行します。
 
 #### <a name="to-approve-and-deploy-wsus-updates"></a>WSUS 更新プログラムを承認および展開するには
@@ -48,7 +47,7 @@ ms.locfileid: "80639800"
 
 7.  **[承認の進行状況]** ウィンドウが表示され、更新プログラムの承認に関するタスクの進行状況が示されます。 承認プロセスが完了したら、 **[閉じる]** をクリックします。
 
-## <a name="32-configure-auto-approval-rules"></a><a name="BKM_3.2.a."></a>3.2. 自動承認規則を構成する
+## <a name="32-configure-auto-approval-rules"></a><a name=BKM_3.2.a.></a>3.2. 自動承認規則を構成する
 自動承認では、選択したグループに対して更新プログラムのインストールを自動的に承認する方法や、既存の更新プログラムに対する改訂の承認方法を指定できます。
 
 #### <a name="to-configure-automatic-approvals"></a>自動更新を構成するには
@@ -73,7 +72,7 @@ ms.locfileid: "80639800"
 
 7.  **[OK]** をクリックして [自動承認] ダイアログを閉じます。
 
-## <a name="33-review-installed-updates-with-wsus-reports"></a><a name="BKM_3.3."></a>3.3. インストールされた更新プログラムを WSUS レポートで確認する
+## <a name="33-review-installed-updates-with-wsus-reports"></a><a name=BKM_3.3.></a>3.3. インストールされた更新プログラムを WSUS レポートで確認する
 更新プログラムを承認後 24 時間以内は、WSUS のレポート機能を使用して、更新プログラムがテスト グループ コンピューターに展開されたかどうかを判断することができます。 更新プログラムの状態を確認するには、次のように WSUS のレポート機能を使用できます。
 
 #### <a name="to-review-updates"></a>更新プログラムを確認するには

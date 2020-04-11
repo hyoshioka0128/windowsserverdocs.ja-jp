@@ -2,21 +2,19 @@
 title: Hyper-V の第 2 世代仮想マシンのセキュリティ設定
 description: 第 2 世代仮想マシン向けに Hyper-V マネージャーで使用できるセキュリティ設定について説明します
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 06ab4f5f-6b8e-4058-8108-76785aa93d4c
 author: larsiwer
 ms.author: kathydav
 ms.date: 10/04/2016
-ms.openlocfilehash: 82544a58a8d46b3063605557be3c63cfa799e4fb
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7eb867529d38ab21ee21c19f92c89ed4128b0ea4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71364243"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860805"
 ---
 # <a name="generation-2-virtual-machine-security-settings-for-hyper-v"></a>Hyper-V の第 2 世代仮想マシンのセキュリティ設定
 

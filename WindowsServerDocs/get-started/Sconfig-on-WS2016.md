@@ -1,29 +1,25 @@
 ---
 title: Sconfig.cmd を使用して Windows Server の Server Core インストールを構成する
 description: Sconfig.cmd の使用方法を説明します
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.date: 10/17/2017
 ms.technology: server-general
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e6cac074-c6fc-46dd-9664-fa0342c0a5e8
 author: jaimeo
 ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f07c3546fd43dd3ce9cfa32094bc691fa0bcb2e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e6c218b08cc39edd9b3d93ae78b0b5c7aa293858
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71360249"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80826675"
 ---
 # <a name="configure-a-server-core-installation-of-windows-server-2016-or-windows-server-version-1709-with-sconfigcmd"></a>Sconfig.cmd を使用して Windows Server 2016 または Windows Server バージョン 1709 の Server Core インストールを構成する
 
-> 適用対象:Windows Server (半期チャネル)、Windows Server 2016
+> 適用先:Windows Server (半期チャネル)、Windows Server 2016
 
 Windows Server 2016 および Windows Server バージョン 1709 では、サーバー構成ツール (Sconfig.cmd) を使用して、Server Core インストールの一般的な設定のいくつかを構成および管理することができます。 このツールを使用するには、Administrators グループのメンバーである必要があります。
 
@@ -31,15 +27,15 @@ Server Core のインストールやデスクトップ エクスペリエンス�
 
 ## <a name="start-the-server-configuration-tool"></a>サーバー構成ツールを起動する
 
-1. システム ドライブに移動します。
+1. システム ドライブに変更します。
 
-2. 「`Sconfig.cmd`」と入力し、Enter キーを押します。 サーバー構成ツールのインターフェイスが開きます。
+2. 「`Sconfig.cmd`」と入力し、Enter キーを押します。 サーバー構成ツール インターフェイスが開きます。
 
     ![Sconfig.cmd ユーザー インターフェイスのスクリーンショット](media/mainsconfigpage.png)
 
 ## <a name="domainworkgroup-settings"></a>ドメイン/ワークグループの設定
 
-サーバー構成ツールの既定の画面には、現在のドメイン/ワークグループの設定が表示されます。 メイン メニューから **[ドメイン/ワークグループ]** 設定ページにアクセスし、指示に従って必要な情報を入力することで、ドメインやワークグループに参加できます。
+既定のサーバー構成ツール画面には、現在のドメイン/ワークグループの設定が表示されます。 メイン メニューから **[ドメイン/ワークグループ]** 設定ページにアクセスし、指示に従って必要な情報を入力することで、ドメインやワークグループに参加できます。
 
 ドメイン ユーザーがローカルの Administrator グループに追加されていない場合、ドメイン ユーザーを使用してコンピューター名の変更などのシステム変更を行うことはできません。 ドメイン ユーザーをローカルの Administrator グループに追加するには、コンピューターを再起動します。 次に、ローカルの Administrator としてコンピューターにログオンし、この記事の後方にある「[ローカル管理者の設定](#local-administrator-settings)」セクションの手順に従います。
 
@@ -51,7 +47,7 @@ Server Core のインストールやデスクトップ エクスペリエンス�
 既定のサーバー構成ツール画面には、現在のコンピューター名が表示されます。 メイン メニューから **[コンピューター名]** 設定ページにアクセスして指示に従うと、コンピューター名を変更できます。
 
 > [!NOTE]
-> ドメインやワークグループのメンバーシップに変更を適用するには、サーバーを再起動する必要があります。 ただし、すべての変更を済ませた後に追加の変更を行ってからサーバーを再起動することができます。これにより、サーバーを何度も再起動する必要がなくなります。 既定では、実行中の仮想マシンは、Hyper-V Server を再起動する前に自動的に保存されます。
+> ドメインやワークグループのメンバーシップに変更を適用するには、サーバーを再起動する必要があります。 ただし、すべての変更を済ませた後に追加の変更を行ってからサーバーを再起動することができます。これにより、サーバーを何度も再起動する必要がなくなります。 既定では、実行中の仮想マシンは、Hyper-V Server の再起動の前に自動的に保存されます。
 
 ## <a name="local-administrator-settings"></a>ローカル管理者の設定
 
@@ -62,7 +58,7 @@ Server Core のインストールやデスクトップ エクスペリエンス�
 IP アドレスが DHCP サーバーによって自動的に割り当てられるように構成することも、静的 IP アドレスを手動で割り当てることもできます。 このオプションでは、サーバーの DNS サーバー設定も構成できます。
 
 > [!NOTE]
-> これらのオプションおよび他の多数のオプションは現在、ネットワーキング Windows PowerShell コマンドレットで使用できます。 詳細については、Windows Server ライブラリの [ネットワーク アダプター コマンドレットに関するページ](https://docs.microsoft.com/powershell/module/netadapter/?view=win10-ps) をご覧ください。
+> これらのオプションとその他の多数のオプションは現在、ネットワーキング Windows PowerShell コマンドレットで使用できます。 詳細については、Windows Server ライブラリの [ネットワーク アダプター コマンドレットに関するページ](https://docs.microsoft.com/powershell/module/netadapter/?view=win10-ps) をご覧ください。
 
 ## <a name="windows-update-settings"></a>Windows Update の設定
 
@@ -108,8 +104,8 @@ IP アドレスが DHCP サーバーによって自動的に割り当てられ�
 
 ## <a name="to-log-off-restart-or-shut-down-the-server"></a>サーバーからログオフするか、サーバーを再起動またはシャットダウンするには
 
-サーバーからのログオフ、およびサーバーの再起動やシャットダウンを行うには、メイン メニューから対応するメニュー項目にアクセスします。 これらのオプションは、**Windows セキュリティ**のメニューからも使用できます。このメニューには、Ctrl + Alt + Del キーを押すことで、どのアプリケーションからもいつでもアクセスできます。  
+サーバーからログオフするか、サーバーを再起動またはシャットダウンするには、メイン メニューから対応するメニュー項目にアクセスします。 これらのオプションは、**Windows セキュリティ**のメニューからも使用できます。このメニューには、Ctrl + Alt + Del キーを押すことで、どのアプリケーションからもいつでもアクセスできます。  
 
 ## <a name="to-exit-to-the-command-line"></a>終了してコマンド ラインに戻るには
   
-終了してコマンド ラインに戻るには、 **[終了してコマンド ラインに戻る]** オプションを選んで Enter キーを押します。 サーバー構成ツールに戻るには、「**Sconfig.cmd**」と入力して Enter キーを押します。
+終了してコマンド ラインに戻るには、 **[終了してコマンド ラインに戻る]** オプションを選択して Enter キーを押します。 サーバー構成ツールに戻るには、「**Sconfig.cmd**」と入力して Enter キーを押します。

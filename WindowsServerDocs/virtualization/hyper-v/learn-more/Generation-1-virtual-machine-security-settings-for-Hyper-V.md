@@ -2,21 +2,19 @@
 title: Hyper-V の第 1 世代仮想マシンのセキュリティ設定
 description: 第 1 世代仮想マシン向けに Hyper-V マネージャーで使用できるセキュリティ設定について説明します
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f8f8c569-8b74-4c19-876e-1c7d00cce308
 author: larsiwer
 ms.author: kathydav
 ms.date: 10/04/2016
-ms.openlocfilehash: ceb3c2628546815f9b0af35946e173f4276130d2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f86c4fe9222f08b3ef3719080deeb4fbda6edd33
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71392790"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860815"
 ---
 # <a name="generation-1-virtual-machine-security-settings"></a>第 1 世代仮想マシンのセキュリティ設定
 
@@ -45,7 +43,7 @@ Hyper-V マネージャーで第 1 世代仮想マシンのセキュリティ設
 
 仮想マシンの IDE コントローラーの 1 つにある空のスロットにキー記憶域ドライブを追加できます。 これを行うには、 **[キー記憶域ドライブの追加]** をクリックして、この仮想マシンの最初の空き IDE コントローラー スロットにキー記憶域ドライブを追加します。
 
-## <a name="see-also"></a>「
+## <a name="see-also"></a>関連項目
 
 - [Hyper-V マネージャーの第 2 世代仮想マシンのセキュリティ設定](Generation-2-virtual-machine-security-settings-for-hyper-v.md)
 - [セキュリティおよび保証](../../../security/Security-and-Assurance.md)

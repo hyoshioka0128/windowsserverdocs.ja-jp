@@ -1,28 +1,24 @@
 ---
 title: リモート デスクトップの仮想マシンを作成する
 description: クラウドでリモート デスクトップ コンポーネントをホストする VM を作成します。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 08/01/2016
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b0f62d6f-0915-44ca-afef-be44a922e20e
 author: lizap
 manager: dongill
-ms.openlocfilehash: 6db9973402578736b2e1283dcfa405642591eccc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: fa17c472e3311e4e34ac7b2176d0045886463274
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387983"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80818465"
 ---
 # <a name="create-virtual-machines-for-remote-desktop"></a>リモート デスクトップの仮想マシンを作成する
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016
+>適用先:Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016
 
 デスクトップ ホスティングの展開に必要な Windows Server 2016 の役割、サービス、および機能を実行するために使用するテナントの環境に仮想マシンを作成するには、次の手順を使用します。   
   

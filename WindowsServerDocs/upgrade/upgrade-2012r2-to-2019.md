@@ -1,18 +1,18 @@
 ---
 title: Windows Server 2012 R2 から Windows Server 2019 へのアップグレード | Microsoft Docs
 description: Windows Server 2012 R2 から Windows Server 2019 に移行するためのインプレース アップグレードを実行する方法について説明します。
-ms.prod: windows server
+ms.prod: windows-server
 ms.technology: server-general
 ms.topic: upgrade
 author: RobHindman
 ms.author: robhind
 ms.date: 09/16/2019
-ms.openlocfilehash: 173e066e6e68322d279561aca07b29ed0b9cbd9d
-ms.sourcegitcommit: 27f0caf74e88781054250455c3c1adf06deb6234
+ms.openlocfilehash: 02d6dd21b798346245f209174902b6f4fdf24ff8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71125062"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853345"
 ---
 # <a name="upgrade-windows-server-2012-r2-to-windows-server-2019"></a>Windows Server 2012 R2 から Windows Server 2019 へのアップグレード
 
@@ -26,9 +26,9 @@ Windows Server のアップグレードを開始する前に、診断とトラ�
 
 1. コマンド プロンプトを開き、`c:\Windows\system32` に移動して、「**systeminfo.exe**」と入力します。
 
-2. 結果として得られたシステム情報をデバイスからどこかにコピーして貼り付け、保存します。
+2. 結果として得られたシステム情報をデバイスから任意の場所にコピーして貼り付け、保存します。
 
-3. コマンド プロンプトに「**ipconfig/all**」と入力し、結果として得られた構成情報をコピーして、上記と同じ場所に貼り付けます。
+3. コマンド プロンプトに「**ipconfig /all**」と入力し、結果として得られた構成情報をコピーして、上記と同じ場所に貼り付けます。
 
 4. レジストリ エディターを開き、HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsNT\CurrentVersion ハイブに移動して、Windows Server **BuildLabEx** (バージョン) と **EditionID** (エディション) をコピーし、上記と同じ場所に貼り付けます。
 

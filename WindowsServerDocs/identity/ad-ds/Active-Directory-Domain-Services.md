@@ -1,7 +1,6 @@
 ---
 ms.assetid: e6fa9069-ec9c-4615-b266-957194b49e11
-title: Active Directory Domain Services
-description: ''
+title: '[Active Directory Domain Services]'
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,14 +8,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 52f77e2cb60be66d8be2e3927fe0f97c2c945994
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6151c5a2582d15ac57c5bc824206a6f9c51a58ab
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391023"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80825555"
 ---
-# <a name="active-directory-domain-services"></a>Active Directory Domain Services
+# <a name="active-directory-domain-services"></a>[Active Directory Domain Services]
 
 >適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 

@@ -4,17 +4,14 @@ description: netsh mbn を使用して、モバイル ブロードバンドの�
 ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
-ms.assetid: ''
-manager: ''
-ms.author: ''
 author: apdutta
 ms.date: 02/20/2020
-ms.openlocfilehash: 7cfbe623c82951c42fc9a532e1810fb3b9eb94d9
-ms.sourcegitcommit: aae1ff743df3e1f3f0a5fd10fefb9fc71c0e39d8
+ms.openlocfilehash: 478f87db4d520a133b3d70c0ed2dbb4e91db60d9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78236233"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853735"
 ---
 # <a name="netsh-mbn-commands"></a>netsh mbn コマンド
 

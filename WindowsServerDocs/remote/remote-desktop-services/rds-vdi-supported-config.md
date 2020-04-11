@@ -1,24 +1,20 @@
 ---
 title: リモート デスクトップ サービス VDI でサポートされる Windows 10 のセキュリティ構成
 description: Windows Server 2016 の RDS によって Windows 10 VDI でサポートされる構成に関する情報を提供します。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 10/27/2016
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8f164f5d-a498-4f91-a12f-3e01d554f810
 author: lizap
 manager: dongill
-ms.openlocfilehash: 08941c49469dcf9b9e3e42c7ab799186380bab35
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 914e6f4507e0fd997a31866b10e3c48e0cd4cbd7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387031"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857265"
 ---
 # <a name="supported-windows-10-security-configurations-for-remote-desktop-services-vdi"></a>リモート デスクトップ サービス VDI でサポートされる Windows 10 のセキュリティ構成
 
@@ -33,10 +29,10 @@ Windows 10 と Windows Server 2016 には、オペレーティング システ�
 
 |  VDI のコレクションの種類               |  管理対象のプール型 |  管理対象の個人用 |  非管理対象のプール型                                     |  非管理対象の個人用                                    |
 |-------------------------------------|------------------|--------------------|--------------------------------------------------------|--------------------------------------------------------|
-| [Credential Guard](https://technet.microsoft.com/itpro/windows/keep-secure/credential-guard)                    | 〇              | 〇                | 〇                                                    | 〇                                                    |
-| [Device Guard](https://technet.microsoft.com/itpro/windows/keep-secure/device-guard-deployment-guide)                        | 〇              | 〇                | 〇                                                    | 〇                                                    |
-| [Remote Credential Guard](https://technet.microsoft.com/itpro/windows/keep-secure/remote-credential-guard)             | X               | X                 | X                                                     | X                                                     |
-| [シールド型で暗号化がサポートされる VM](../../security/guarded-fabric-shielded-vm/guarded-fabric-and-shielded-vms.md) | X               | X                 | 追加の構成によって暗号化がサポートされる VM | 追加の構成によって暗号化がサポートされる VM |
+| [Credential Guard](https://technet.microsoft.com/itpro/windows/keep-secure/credential-guard)                    | はい              | はい                | はい                                                    | はい                                                    |
+| [Device Guard](https://technet.microsoft.com/itpro/windows/keep-secure/device-guard-deployment-guide)                        | はい              | はい                | はい                                                    | はい                                                    |
+| [Remote Credential Guard](https://technet.microsoft.com/itpro/windows/keep-secure/remote-credential-guard)             | いいえ               | いいえ                 | いいえ                                                     | いいえ                                                     |
+| [シールド型で暗号化がサポートされる VM](../../security/guarded-fabric-shielded-vm/guarded-fabric-and-shielded-vms.md) | いいえ               | いいえ                 | 追加の構成によって暗号化がサポートされる VM | 追加の構成によって暗号化がサポートされる VM |
 
 ## <a name="remote-credential-guard"></a>Remote Credential Guard:
 

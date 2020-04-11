@@ -1,24 +1,20 @@
 ---
 title: デスクトップ ホスティングの Azure サービスと考慮事項
 description: リモート デスクトップ ホスティング ソリューションに関する Azure に固有の考慮事項について説明します。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
 ms.author: helohr
 ms.date: 07/06/2018
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0f402ae3-5391-4c7d-afea-2c5c9044de46
 author: heidilohr
 manager: lizross
-ms.openlocfilehash: 111f96e2ed0ffb20dcd3103d1c939bc678aecd27
-ms.sourcegitcommit: 76469d1b7465800315eaca3e0c7f0438fc3939ed
+ms.openlocfilehash: f73f28500c136ec8bdd32084cc5949f5e9804699
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75919965"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80818525"
 ---
 # <a name="azure-services-and-considerations-for-desktop-hosting"></a>デスクトップ ホスティングの Azure サービスと考慮事項
 

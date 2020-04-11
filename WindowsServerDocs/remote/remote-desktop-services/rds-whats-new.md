@@ -1,24 +1,20 @@
 ---
 title: リモート デスクトップ サービスの新機能
 description: Windows Server 2016 の RDS の新機能について説明します。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
 ms.author: chrimo
 ms.date: 10/11/2016
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 04d52dff-e61b-4633-9908-be8600abc2ba
 author: ChristianMontoya
 manager: scottman
-ms.openlocfilehash: e976f4d4ffa33efb98a744909f8c46ba498ea43b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 85d5b1e1c4367cc961ae8ea628f46f224d8dae5c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403832"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857255"
 ---
 # <a name="whats-new-in-remote-desktop-services"></a>リモート デスクトップ サービスの新機能
 

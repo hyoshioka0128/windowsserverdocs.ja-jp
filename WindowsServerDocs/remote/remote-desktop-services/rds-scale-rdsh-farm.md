@@ -1,27 +1,23 @@
 ---
 title: RD セッション ホスト ファームの追加による RDS 展開のスケール アウト
 description: RDS 環境に 2 つ目の RD セッション ホストを追加します。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 04/10/2017
-ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: da0dbd4332cd05d580c2b1f4dc5eb0734b36b13e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 61d5569c44d7c7ea300b85bf635fccf86275423d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403890"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859055"
 ---
 # <a name="scale-out-your-remote-desktop-services-deployment-by-adding-an-rd-session-host-farm"></a>RD セッション ホスト ファームの追加によるリモート デスクトップ サービス展開のスケール アウト
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016
+>適用先:Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016
 
 リモート デスクトップ セッション ホスト (RDSH) ファームを追加することで、RDS の配置の可用性と規模を向上できます。   
   

@@ -9,12 +9,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: mas
-ms.openlocfilehash: 16d711a288843163b134b0226ed4b8513d7070eb
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 00335fb2ca7a54031430c6c606fb6ffa23a8f7a2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950052"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855135"
 ---
 # <a name="active-directory-administrative-tier-model"></a>Active Directory 管理階層モデル
 
@@ -592,7 +592,7 @@ Web 認証の場合、次の表のリファレンスを使用します。
 
 |接続方法|ログオンの種類|接続先で再利用可能な資格情報|備考|
 |-----------|-------|--------------------|------|
-|IIS の "基本認証"|NetworkClearText<br />(IIS 6.0+)<br /><br />Interactive (対話型)<br />(IIS 6.0 よりも前)|v||
+|IIS の "基本認証"|NetworkClearText<br />(IIS 6.0+)<p>Interactive (対話型)<br />(IIS 6.0 よりも前)|v||
 |IIS の "統合 Windows 認証"|ネットワーク|-|NTLM および Kerberos プロバイダー。|
 
 列の定義:

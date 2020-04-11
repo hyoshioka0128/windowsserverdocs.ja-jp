@@ -8,12 +8,12 @@ author: jasongerend
 ms.author: jgerend
 ms.date: 05/21/2019
 ms.localizationpriority: high
-ms.openlocfilehash: edac405073421f96236854d888a0c08ddc5b8830
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ba1d6156ad3ba20e5f166a3c0eb9a36aa1ffe516
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391297"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80825955"
 ---
 # <a name="whats-new-in-windows-server-version-1809"></a>Windows Server Version 1809 の新機能
 

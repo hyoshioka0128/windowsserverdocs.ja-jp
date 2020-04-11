@@ -1,18 +1,18 @@
 ---
 title: Windows Server 2008 R2 から Windows Server 2012 R2 へのアップグレード | Microsoft Docs
 description: Windows Server 2008 R2 から Windows Server 2012 R2 に移行するためのインプレース アップグレードを実行する方法について説明します。
-ms.prod: windows server
+ms.prod: windows-server
 ms.technology: server-general
 ms.topic: upgrade
 author: RobHindman
 ms.author: robhind
 ms.date: 09/16/2019
-ms.openlocfilehash: d5051239f7269eb4b6361187121ac960e06f6d9e
-ms.sourcegitcommit: 27f0caf74e88781054250455c3c1adf06deb6234
+ms.openlocfilehash: 5e4436bb6e4db19e015056b67730619a93396f9e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71125082"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854265"
 ---
 # <a name="upgrade-windows-server-2008-r2-to-windows-server-2012-r2"></a>Windows Server 2008 R2 から Windows Server 2012 R2 へのアップグレード
 

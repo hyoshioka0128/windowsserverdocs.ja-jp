@@ -2,22 +2,19 @@
 title: Windows Server Update Services (WSUS) を使ってみる
 description: Windows Server Update Service (WSUS) のトピック - サーバー ロールとその実際の適用例の概要
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-wsus
-ms.tgt_pltfrm: na
 ms.topic: get-started article
 ms.assetid: 90e3464c-49d8-4861-96db-ee6f8a09ec5b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 5/22/2017
-ms.openlocfilehash: 89247f91f616233fc6e4967a0457ff34fac221da
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3bb365c627840d4152b0dc450e24dd83d82103ca
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361647"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828634"
 ---
 # <a name="windows-server-update-services-wsus"></a>Windows Server Update Services (WSUS)
 

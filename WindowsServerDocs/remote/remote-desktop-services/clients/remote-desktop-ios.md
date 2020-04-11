@@ -1,12 +1,8 @@
 ---
 title: iOS クライアントの概要
 description: iOS 用のリモート デスクトップ クライアントをセットアップする方法について説明する
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 03ec5a3d-d3f2-4afd-9405-ae58b6ecc91c
 author: Heidilohr
@@ -14,16 +10,16 @@ manager: lizross
 ms.author: helohr
 date: 02/11/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: ef13227a9f7b83f01786bbb11498da912c86581b
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 686971ac3c56402bb42064e9f5babff6128c7df9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79323464"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856035"
 ---
 # <a name="get-started-with-the-ios-client"></a>iOS クライアントの概要
 
->適用対象:Windows 10、Windows 8.1、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2
+>適用先:Windows 10、Windows 8.1、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2
 
 iOS 用のリモート デスクトップ クライアントを使用して、iOS デバイス (iPhone と iPad) から Windows のアプリ、リソース、およびデスクトップを使用することができます。
 
@@ -163,7 +159,7 @@ IOS デバイスでのリモート デスクトップの概要を次の手順に
 | 直接タッチ  | 右クリックします。          | 1 本指でタップし、保留中                                      |
 | マウス ポインター | 左クリックします。           | 1 本指でタップ                                               |
 | マウス ポインター | 左クリックしておよびドラッグ  | 1 本の指ダブルタップを押したままをドラッグし、                    |
-| マウス ポインター | 右クリック          | 2 本指でタップ                                               |
+| マウス ポインター | 右クリックします。          | 2 本指でタップ                                               |
 | マウス ポインター | 右クリックし、ドラッグ | 2 本の指ダブルタップを押したままをドラッグし、                    |
 | マウス ポインター | マウス ホイール          | 2 本の指をタップして、保持を上下にドラッグ                |
 | マウス ポインター | ズーム                 | ズーム インまたはズーム アウトする 2 本の指を分散する 2 本の指によるピンチします。 |

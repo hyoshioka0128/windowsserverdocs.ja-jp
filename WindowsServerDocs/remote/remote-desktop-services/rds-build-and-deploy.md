@@ -1,24 +1,20 @@
 ---
 title: RDS での構築し、デプロイ
 description: リモート デスクトップ展開の構築手順
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 04/18/2017
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 176ae424-96e9-4c78-88f5-da418e76c3d7
 author: lizap
 manager: dongill
-ms.openlocfilehash: 9c3962a830d9544e915a96f061e32bb9e037949b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ce8c6e2089c3130d078513287b661a42e5754690
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404032"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857605"
 ---
 # <a name="build-and-deploy-your-remote-desktop-services-deployment"></a>構築し、デプロイのリモート デスクトップ サービス展開
 

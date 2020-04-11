@@ -2,7 +2,6 @@
 title: 手順 1 - WSUS サーバー ロールをインストールする
 description: Windows Server Update Service (WSUS) のトピック - サーバー マネージャーを使用してサーバー ロールをインストールする方法について説明します
 ms.prod: windows-server
-ms.reviewer: na
 ms.technology: manage-wsus
 ms.topic: article
 ms.assetid: fabc8619-350e-403b-96f8-116424931300
@@ -10,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5d71a26cbe889f5de11934b2af411ac407fc5e75
-ms.sourcegitcommit: 3c3dfee8ada0083f97a58997d22d218a5d73b9c4
+ms.openlocfilehash: 664e0233d10cbbc526635f1868ea1977c59fea63
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80639858"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828905"
 ---
 # <a name="step-1-install-the-wsus-server-role"></a>手順 1:WSUS サーバー ロールをインストールする
 

@@ -1,12 +1,8 @@
 ---
 title: リモート デスクトップ クライアント
 description: すべてのデバイスで使うことができるさまざまなリモート デスクトップ クライアントについて説明します
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b7d8158c-aee1-4c60-8a46-40ce5595b8e8
 author: HeidiLohr
@@ -14,12 +10,12 @@ manager: lizross
 ms.author: helohr
 ms.date: 01/07/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: ccf6fa376bfb54498851407bfae175736e75ebc9
-ms.sourcegitcommit: 76469d1b7465800315eaca3e0c7f0438fc3939ed
+ms.openlocfilehash: 711fa87fe697ae616d9bd8c696d29fabf1586055
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75919849"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856045"
 ---
 # <a name="remote-desktop-clients"></a>リモート デスクトップ クライアント
 

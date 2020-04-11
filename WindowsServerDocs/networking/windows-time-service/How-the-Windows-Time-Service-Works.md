@@ -1,20 +1,19 @@
 ---
 ms.assetid: d1953097-63ea-4a0e-b860-2f3b7c175c41
 title: Windows タイム サービスのしくみ
-description: ''
-author: eross-msft
-ms.author: lizross
+author: dcuomo
+ms.author: dacuo
 manager: dougkim
 ms.date: 05/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: d8532dedb6473a34591a1f160a94a785cc4ba367
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: b8b30893abe4cdfe8d7e8c5a95ede651f85643a9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80315171"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861665"
 ---
 # <a name="how-the-windows-time-service-works"></a>Windows タイム サービスのしくみ
 
@@ -207,10 +206,10 @@ Windows Server 2003 ネットワークを確立した後は、次のオプショ
 |----------------|---------------------|------------|------------------------------|  
 |1|親ドメイン コント ローラー|サイト内|信頼性が高く推奨が利用可能なすべての場合、非信頼できるタイム ソースと同期できるタイム ソースができます。|  
 |2 で保護されたプロセスとして起動されました|ローカル ドメイン コント ローラー|サイト内|信頼性の高いタイム ソースとのみ同期します。|  
-|3|ローカルの PDC エミュレーター|サイト内|適用されません。<br /><br />ドメイン コント ローラーは、それ自体と同期しません。|  
+|3|ローカルの PDC エミュレーター|サイト内|適用されません。<p>ドメイン コント ローラーは、それ自体と同期しません。|  
 |4|親ドメイン コント ローラー|サイト外|信頼性が高く推奨が利用可能なすべての場合、非信頼できるタイム ソースと同期できるタイム ソースができます。|  
 |5|ローカル ドメイン コント ローラー|サイト外|信頼性の高いタイム ソースとのみ同期します。|  
-|6|ローカルの PDC エミュレーター|サイト外|適用されません。<br /><br />ドメイン コント ローラーは、それ自体と同期しません。| 
+|6|ローカルの PDC エミュレーター|サイト外|適用されません。<p>ドメイン コント ローラーは、それ自体と同期しません。| 
   
 **注:**  
   

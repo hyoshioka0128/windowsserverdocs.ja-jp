@@ -1,6 +1,6 @@
 ---
 title: Windows Server バージョン 1803 の新機能
-description: コンピューティング、ID、管理、自動化、ネットワーク、セキュリティ、記憶域の新機能について。
+description: コンピューティング、ID、管理、自動化、ネットワーク、セキュリティ、記憶域の新機能は何ですか。
 ms.prod: windows-server
 ms.technology: server-general
 ms.topic: article
@@ -8,18 +8,18 @@ author: greg-lindsay
 ms.author: greg-lindsay
 ms.localizationpriority: high
 ms.date: 05/07/2018
-ms.openlocfilehash: 211a0e2b49e9f15682a251f96dc338d124e2f998
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8b359ac883c24d559e2c3d47db5b68e4f5341338
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391381"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80826005"
 ---
 # <a name="whats-new-in-windows-server-version-1803"></a>Windows Server バージョン 1803 の新機能
 
 >適用先:Windows Server (半期チャネル)
 
-<img src="../media/landing-icons/new.png" style='float:left; padding:.5em;' alt="Icon showing a newspaper">&nbsp;Windows の最新の機能については、「[Windows Server の新機能](whats-new-in-windows-server.md)」を参照してください。 このセクション内のコンテンツでは、Windows Server バージョン 1803 の新機能および変更された機能について説明します。 ここに記載されている新機能と変更された機能は、このリリースを使う際に影響が最も大きいと思われるものです。 [Windows Server 半期チャネルの更新プログラム](https://cloudblogs.microsoft.com/windowsserver/2018/03/29/windows-server-semi-annual-channel-update/)に関するページも参照してください。
+<img src=../media/landing-icons/new.png style='float:left; padding:.5em;' alt=Icon showing a newspaper>&nbsp;Windows の最新の機能については、「[Windows Server の新機能](whats-new-in-windows-server.md)」を参照してください。 このセクション内のコンテンツでは、Windows Server バージョン 1803 の新機能および変更された機能について説明します。 ここに記載されている新機能と変更された機能は、このリリースを使う際に影響が最も大きいと思われるものです。 [Windows Server 半期チャネルの更新プログラム](https://cloudblogs.microsoft.com/windowsserver/2018/03/29/windows-server-semi-annual-channel-update/)に関するページも参照してください。
 
 ## <a name="windows-admin-center"></a>Windows Admin Center
 
@@ -42,7 +42,7 @@ Windows Server バージョン 1709 は、半期チャネルの最初のリリ�
 |   | Long Term Servicing チャネル |  半期チャネル |
 | ------------- | ------------- | ------------ |
 | 推奨されるシナリオ     | 汎用ファイル サーバー、ファースト パーティおよびサード パーティのワークロード、従来のアプリ、インフラストラクチャの役割、ソフトウェア定義データセンター、およびハイパーコンバージド インフラストラクチャ  | コンテナー化されたアプリケーション、コンテナー ホスト、および迅速なイノベーションを活用するアプリケーション シナリオ |
-| 新しいリリース  | 2 ～ 3 年ごと  | 6 か月ごと |
+| 新しいリリース  | 2 から 3 年ごと  | 6 か月ごと |
 | サポート  | 5 年間のメインストリーム サポート + 5 年間の延長サポート  | 18 か月 |
 | エディション  | 利用可能なすべての Windows Server エディション  | Standard エディションと Datacenter エディション |
 | 利用できるユーザー  | すべてのチャネルのすべてのユーザー | ソフトウェア アシュアランスとクラウドのユーザーのみ |
@@ -92,7 +92,7 @@ Windows Server バージョン 1803 のリリースに伴い、次の Kubernetes
     - 具体的には、通知は、Server Core と Nano Server の両方のコンテナー ベースのイメージ用の CTRL_SHUTDOWN_EVENT に変更されました。 また、通知が Server Core のコンテナー ベースのイメージに拡張され、コンテナーで実行されているすべてのプロセスに影響するようになりました。これには、コンテナーで実行されているサービスへのサービス シャットダウン通知の送信が含まれます。
 - 固定データ ドライブが書き込み可能である (FDVDenyWriteAccess) ために BitLocker 保護が必要かどうかを決定するポリシー設定が適用された docker pull および docker load の非互換性が修正されました。 
 
-## <a name="storage"></a>ストレージ
+## <a name="storage"></a>記憶域
 
 このリリースでは、File Server Resource Manager サービスが、起動時にすべてのボリュームで変更ジャーナル (USN ジャーナルとも呼ばれます) を作成しないようにすることが可能です これにより、各ボリューム上の領域を節約できますが、リアルタイムのファイル分類は無効になります。 詳細については、「[ファイル サーバー リソース マネージャーの概要](https://docs.microsoft.com/windows-server/storage/fsrm/fsrm-overview)」を参照してください。
 

@@ -1,12 +1,8 @@
 ---
 title: macOS クライアントの概要
 description: Mac 用のリモート デスクトップ クライアントをセットアップする方法について説明する
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7afc65f8-3158-49c9-9d48-4dab1c69afba
 author: lizap
@@ -14,12 +10,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 08/27/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b2ea23e95796f6cce90a1dc90de896c2242084a
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 6c87c95390b4a157b7d12e303520e519a3d157ac
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79319996"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856025"
 ---
 # <a name="get-started-with-the-macos-client"></a>macOS クライアントの概要
 
@@ -68,7 +64,7 @@ AppCenter 上のプレビュー チャネルで新機能をテストしていま
    - リモート セッションにローカル フォルダーをリダイレクトする
    - ローカル プリンターを転送する
    - スマート カードを転送する
-4. **[保存]** をクリックします。
+4. **[Save]** (保存) をクリックします。
 
 接続を開始するには、ダブルクリックするだけです。 同じことがリモート リソースにも当てはまります。
 
@@ -76,7 +72,7 @@ AppCenter 上のプレビュー チャネルで新機能をテストしていま
 リモート デスクトップ接続の定義をエクスポートし、それを別のデバイスで使用できます。 リモート デスクトップは、個別に保存されます。RDP ファイル。
 
 1. 接続センターでは、リモート デスクトップを右クリックします。
-2. **[Export]** (エクスポート) をクリックします。
+2. クリックして **エクスポート**します。
 3. リモート デスクトップを保存する場所を参照します。RDP ファイルです。
 4. **[OK]** をクリックします。
 
@@ -99,7 +95,7 @@ AppCenter 上のプレビュー チャネルで新機能をテストしていま
    - **フィード URL** の RD Web アクセス サーバーの URL。 電子メール アドレスに関連付けられている RD Web アクセス サーバーを検索するクライアントに通知この: このフィールドに、会社の電子メール アカウントを入力することもできます。
    - **ユーザー名** -に接続している RD Web アクセス サーバーを使用するユーザー名。
    - **パスワード** -に接続している RD Web アクセス サーバーを使用するパスワード。
-3. **[保存]** をクリックします。
+3. **[Save]** (保存) をクリックします。
 
 
 リモート リソースが、接続センターで表示されます。

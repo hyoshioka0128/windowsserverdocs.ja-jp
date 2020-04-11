@@ -1,16 +1,15 @@
 ---
 ms.date: 01/07/2019
 contributor: damaerteMSFT
-author: maertendMSFT
-keywords: OpenSSH、SSH、Win32-OpenSSH
+author: maertendmsft
 title: Windows での OpenSSH
-ms.product: w10
-ms.openlocfilehash: c6563fbe4fe69acad4d295a3f7fe166e92d38444
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.product: windows-server
+ms.openlocfilehash: 57126f38245f4547a04ea3a51f58aee865b5eb97
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67280057"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852035"
 ---
 # <a name="openssh-in-windows"></a>Windows での OpenSSH
 

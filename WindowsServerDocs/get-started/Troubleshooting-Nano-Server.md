@@ -2,29 +2,27 @@
 title: Nano Server のトラブルシューティング
 description: 回復コンソール、緊急管理サービス、カーネルのデバッグ
 ms.prod: windows-server
-ms.service: na
 manager: DonGill
 ms.technology: server-nano
 ms.date: 09/06/2017
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e427c66f-9571-4b8c-b65d-e7370d91544d
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 48b63e74ab406d2e66996097d33d71f2eeaeaf20
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f134680792eda33343bb6743708b37cf4f9e5faa
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391552"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80826455"
 ---
 # <a name="troubleshooting-nano-server"></a>Nano Server のトラブルシューティング
 
 >適用先:Windows Server 2016
 
 > [!IMPORTANT]
-> Windows Server バージョン 1709 以降、Nano Server は[コンテナー基本 OS イメージ](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image)としてのみ提供されます。 その意味については、「[Nano Server に加えられる変更](nano-in-semi-annual-channel.md)」をご覧ください。 
+> Windows Server バージョン 1709 以降では、Nano Server は[コンテナーの基本 OS イメージ](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image)としてのみ提供されます。 その意味については、[Nano Server に加えられる変更](nano-in-semi-annual-channel.md)に関する記事をご覧ください。 
 
 このトピックには、Nano Server のインストール環境に対する接続、診断、修復に使用できるツールについての情報が記載されています。  
   

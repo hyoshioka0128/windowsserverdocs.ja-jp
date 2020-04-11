@@ -1,22 +1,19 @@
 ---
 title: 仮想デスクトップ インフラストラクチャ (VDI) ロール用の Windows 10 バージョン 1803 の最適化
 description: VDI イメージとして使用される Windows 10 1803 デスクトップのオーバーヘッドを最小限に抑える推奨の設定および構成
-ms.custom: na
 ms.prod: windows-server
 ms.reviewer: robsmi
-ms.suite: na
 ms.technology: remote-desktop-services
 ms.author: jaimeo, robsmi
-ms.tgt_pltfrm: na
 ms.topic: article
 author: jaimeo
 manager: dougkim
-ms.openlocfilehash: e7708ffe5639c80067ed0dbc2794c4d6694e6247
-ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
+ms.openlocfilehash: b96064f1c05e61223b84a2285535f02733160abe
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77517507"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857295"
 ---
 # <a name="optimizing-windows-10-version-1803-for-a-virtual-desktop-infrastructure-vdi-role"></a>仮想デスクトップ インフラストラクチャ (VDI) ロール用の Windows 10 バージョン 1803 の最適化
 

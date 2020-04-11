@@ -5,17 +5,16 @@ ms.prod: windows-server
 ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 07/11/2019
-ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b222104abd5b0b964bac748c3be15049075191d
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: c33e5c6309c41e39aeda3a2bdff1a0caf72b2675
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950426"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860335"
 ---
 # <a name="use-performance-counters-to-diagnose-app-performance-problems-on-remote-desktop-session-hosts"></a>パフォーマンス カウンターを使用して、リモート デスクトップ セッション ホストでのアプリのパフォーマンス問題を診断する
 
@@ -84,13 +83,13 @@ reg add "HKLM\System\CurrentControlSet\Control\Terminal Server" /v "EnableLagCou
 
 |カウンターの種類|［インスタンス名］|報告される遅延 (ミリ秒)|
 |---------------|-------------|-------------------|
-|プロセスあたりのユーザー入力遅延|1:4232 <Calculator.exe>|  200|
-|プロセスあたりのユーザー入力遅延|2:1000 <Calculator.exe>|  16|
-|プロセスあたりのユーザー入力遅延|1:2000 <Calculator.exe>|  32|
+|プロセスあたりのユーザー入力遅延|1:4232 <Calculator.exe>|    200|
+|プロセスあたりのユーザー入力遅延|2:1000 <Calculator.exe>|    16|
+|プロセスあたりのユーザー入力遅延|1:2000 <Calculator.exe>|    32|
 |セッションあたりのユーザー入力遅延|1|    200|
 |セッションあたりのユーザー入力遅延|2 で保護されたプロセスとして起動されました|    16|
-|セッションあたりのユーザー入力遅延|平均|  108|
-|セッションあたりのユーザー入力遅延|最大|  200|
+|セッションあたりのユーザー入力遅延|平均|     108|
+|セッションあたりのユーザー入力遅延|最大|     200|
 
 ## <a name="counters-used-in-an-overloaded-system"></a>過負荷状態のシステムで使用されるカウンター
 
