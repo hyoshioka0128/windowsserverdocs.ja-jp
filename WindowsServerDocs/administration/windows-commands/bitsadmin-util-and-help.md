@@ -1,6 +1,6 @@
 ---
 title: bitsadmin util とヘルプ
-description: Bitsadmin util および help の Windows コマンドに関するトピックでは、Util スイッチのコマンドラインの使用方法を示します。
+description: '**Bitsadmin util および help**の Windows コマンドに関するトピックでは、util スイッチのコマンドラインの使用方法を示します。'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fac449fea329cf8f03985ab8bc036c4046a5dd24
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3cbfcb5a630d6670202551a433ca3acc4b9b7fa0
+ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80848905"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81122480"
 ---
 # <a name="bitsadmin-util-and-help"></a>bitsadmin util とヘルプ
 
@@ -23,14 +23,15 @@ ms.locfileid: "80848905"
 ## <a name="syntax"></a>構文
 
 ```
-Bitsadmin /Util /Help 
+bitsadmin /util /help
 ```
 
-## <a name="examples"></a><a name=BKMK_examples></a>例
+## <a name="examples"></a>例
 
 次のコマンドは、 **Util**スイッチのコマンドラインヘルプを表示します。
+
 ```
-Bitsadmin /Util /Help
+C:\>bitsadmin /util /help
 ```
 
 ## <a name="additional-references"></a>その他の参照情報

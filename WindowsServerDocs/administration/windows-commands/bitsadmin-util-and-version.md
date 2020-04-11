@@ -1,6 +1,6 @@
 ---
 title: bitsadmin util とバージョン
-description: Bitsadmin util と version の Windows コマンドに関するトピックでは、BITS サービスのバージョンが表示されます。
+description: '**Bitsadmin util と version**の Windows コマンドに関するトピックでは、BITS サービスのバージョンが表示されます。'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,37 +9,38 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 087cc1033166ab93e7496caaa7335433cafd6249
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 2c2518eb7a8f15d9a592ed9a77dd67a6f8d8afac
+ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80848835"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81122473"
 ---
 # <a name="bitsadmin-util-and-version"></a>bitsadmin util とバージョン
 
 BITS サービスのバージョン (2.0 など) を表示します。
 
-**BITSAdmin 1.5 以前**: サポートされていません。
+> [!NOTE]
+> このコマンドは、BITS 1.5 以前ではサポートされていません。
 
 ## <a name="syntax"></a>構文
 
 ```
-bitsadmin /Util /Version [/Verbose]
+bitsadmin /util /version [/verbose]
 ```
 
-## <a name="remarks"></a>コメント
+### <a name="parameters"></a>パラメーター
 
-**Verbose**スイッチは次の処理を実行します。
--   各 BITS 関連の DLL のファイルバージョンを表示します。
--   BITS サービスを開始できることを確認します。
--   ビットグループポリシー値を表示します (Windows Vista のみ)
+| パラメーター | 説明 |
+| --------- | ----------- |
+| /verbose | このスイッチを使用して、BITS 関連の各 DLL のファイルバージョンを表示し、BITS サービスを開始できるかどうかを確認します。|
 
-## <a name="examples"></a><a name=BKMK_examples></a>例
+## <a name="examples"></a>例
 
 次の例では、BITS サービスのバージョンを示しています。
+
 ```
-C:\>bitsadmin /Util /Version
+C:\>bitsadmin /util /version
 ```
 
 ## <a name="additional-references"></a>その他の参照情報

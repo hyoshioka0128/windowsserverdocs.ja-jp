@@ -8,12 +8,12 @@ ms.date: 04/30/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: web-app-proxy
-ms.openlocfilehash: 18851463b82afc1dc34615e6faaa14622c80224a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f859d40ed04cc25285212968e6cd186cffe760ae
+ms.sourcegitcommit: 5c93c685dca3cafeea916cedcc0f915c528484ca
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80818685"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "81119247"
 ---
 # <a name="publishing-applications-with-sharepoint-exchange-and-rdg"></a>SharePoint、Exchange、および RDG によるアプリケーションの発行
 
@@ -112,7 +112,7 @@ Windows Server 2012 R2 または Windows Server 2012 で実行されている場
 5.  外部と内部の FQDN が異なる場合は、RDWeb 発行ルールで要求ヘッダーの変換を無効にしないでください。 これは、Web アプリケーションプロキシサーバーで次の PowerShell スクリプトを実行することで行うことができますが、既定で有効になっている必要があります。
 
     ```PowerShell
-    Get-WebApplicationProxyApplication applicationname | Set-WebApplicationProxyApplication -DisableTranslateUrlInRequestHeaders:$false
+    Get-WebApplicationProxyApplication applicationname | Set-WebApplicationProxyApplication -DisableTranslateUrlInRequestHeaders:$true
     ```
 
 6.  RDG で公開されているアプリケーションで、Web アプリケーションプロキシの HttpOnly クッキープロパティを無効にします。 RDG ActiveX コントロールが Web アプリケーションプロキシの認証 cookie にアクセスできるようにするには、Web アプリケーションプロキシ cookie の HttpOnly プロパティを無効にする必要があります。

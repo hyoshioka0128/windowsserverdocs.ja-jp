@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 55ff7e2a813c7cc6b60e04d55ef63804a2aed796
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 1dbb25f0b0a19358b83a610c4684a3eb647c8232
+ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80849845"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81123096"
 ---
 # <a name="bitsadmin-removecredentials"></a>bitsadmin removecredentials
 
@@ -35,14 +35,14 @@ bitsadmin /removecredentials <job> <target> <scheme>
 | -------------- | -------------- |
 | 送信 | ジョブの表示名または GUID。 |
 | target | **サーバー**または**プロキシ**のいずれかを使用します。 |
-| スキーム | 次のいずれかを使用します。<ul><li>**基本的な。** ユーザー名とパスワードがクリアテキストでサーバーまたはプロキシに送信される認証方式。</li><li>**ダイジェスト.** チャレンジ応答認証方式。サーバーが指定したデータ文字列をチャレンジに使用します。</li><li>**Ml.** Windows ネットワーク環境での認証にユーザーの資格情報を使用するチャレンジ応答認証スキーム。</li><li>**negotiate (Simple および Protected ネゴシエーションプロトコルとも呼ばれます)。** 認証に使用するスキームを決定するために、サーバーまたはプロキシとネゴシエートするチャレンジ/レスポンス認証スキーム。 たとえば、Kerberos プロトコルや NTLM です。</li><li>**network.** Microsoft が提供する一元化された認証サービスで、メンバーサイトにシングルログオンを提供します。</li></ul> |
+| スキーム | 次のいずれかを使用します。<ul><li>**BASIC.。** ユーザー名とパスワードがクリアテキストでサーバーまたはプロキシに送信される認証方式。</li><li>**ダイジェスト.** チャレンジ応答認証方式。サーバーが指定したデータ文字列をチャレンジに使用します。</li><li>**Ml.** Windows ネットワーク環境での認証にユーザーの資格情報を使用するチャレンジ応答認証スキーム。</li><li>**NEGOTIATE (Simple および Protected ネゴシエーションプロトコルとも呼ばれます)。** 認証に使用するスキームを決定するために、サーバーまたはプロキシとネゴシエートするチャレンジ/レスポンス認証スキーム。 たとえば、Kerberos プロトコルや NTLM です。</li><li>**Network.** Microsoft が提供する一元化された認証サービスで、メンバーサイトにシングルログオンを提供します。</li></ul> |
 
-## <a name="examples"></a><a name=BKMK_examples></a>例
+## <a name="examples"></a>例
 
 次の例では、 *Mydownloadjob*という名前のジョブから資格情報を削除します。
 
 ```
-C:\>bitsadmin /removecredentials myDownloadJob server basic
+C:\>bitsadmin /removecredentials myDownloadJob SERVER BASIC
 ```
 
 ## <a name="additional-references"></a>その他の参照情報

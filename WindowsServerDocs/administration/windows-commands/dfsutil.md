@@ -9,18 +9,21 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 30415bc85fd8a4a4804946a3d4a168d6a7d1433a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 47d468ee122dc78cc880f4a9bc0705354e0b5214
+ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80845585"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81122554"
 ---
 # <a name="dfsutil"></a>dfsutil
 
 >適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-Dfsutil コマンドは、DFS 名前空間、サーバー、およびクライアントを管理します。 多くの場合、代わりに新しい DFS 名前空間の PowerShell コマンドレットを使用できますが、dfsutil を必要とするコマンドがいくつかあります。
+Dfsutil コマンドは、DFS 名前空間、サーバー、およびクライアントを管理します。
+
+>[!NOTE]
+>**DFS 名前空間の PowerShell モジュール**では、一部の dfsutil パラメーターの置換が提供されますが、他のパラメーターでは dfsutil を使用する必要があります。 更新された PowerShell に関する詳細については、「 [DFSN](https://docs.microsoft.com/powershell/module/dfsn/?view=win10-ps)」を参照してください。
 
 ## <a name="parameters-available-in-powershell"></a>PowerShell で使用可能なパラメーター
 

@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b9d8b840e39620db01c44001d9cb7d593be2be5d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 20b8358caba3e0c07b0c985cb24e8f7bde43b06c
+ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850345"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81123113"
 ---
 # <a name="bitsadmin-info"></a>bitsadmin info
 
@@ -44,3 +44,5 @@ C:\>bitsadmin /info myDownloadJob
 ## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [bitsadmin info](bitsadmin-info.md)

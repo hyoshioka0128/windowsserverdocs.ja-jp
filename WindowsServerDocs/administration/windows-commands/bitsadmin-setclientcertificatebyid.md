@@ -1,6 +1,6 @@
 ---
 title: bitsadmin setclientcertificatebyid
-description: Bitsadmin setclientcertificatebyid の Windows コマンドに関するトピック。 HTTPS (SSL) 要求でクライアント認証に使用するクライアント証明書の識別子を指定します。
+description: '**Bitsadmin setclientcertificatebyid**の Windows コマンドに関するトピック。 HTTPS (SSL) 要求でクライアント認証に使用するクライアント証明書の識別子を指定します。'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 80c97b21194c773d1b21aab2ee31794624da671c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 376bb850664a5ed569488634029cb7384856f158
+ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80849665"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81123042"
 ---
 # <a name="bitsadmin-setclientcertificatebyid"></a>bitsadmin setclientcertificatebyid
 
@@ -23,23 +23,24 @@ HTTPS (SSL) 要求でクライアント認証に使用するクライアント�
 ## <a name="syntax"></a>構文
 
 ```
-bitsadmin /SetClientCertificateByID <Job> <store_location> <store_name> hexa-decimal_cert_id>
+bitsadmin /setclientcertificatebyid <job> <store_location> <store_name> <hexadecimal_cert_id>
 ```
 
 ### <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
-|---------|-----------|
-|Job|ジョブの表示名または GUID|
-|Store_location|証明書の検索に使用するシステムストアの場所を指定します。 表示される値は次のとおりです。</br>1 (CURRENT_USER)</br>2 (LOCAL_MACHINE)</br>3 (CURRENT_SERVICE)</br>4 (サービス)</br>5 (ユーザー)</br>6 (CURRENT_USER_GROUP_POLICY)</br>7 (LOCAL_MACHINE_GROUP_POLICY)</br>8 (LOCAL_MACHINE_ENTERPRISE)|
-|Store_name|証明書ストアの名前。 表示される値は次のとおりです。</br>CA (証明機関の証明書)</br>MY (個人用証明書)</br>ルート (ルート証明書)</br>SPC (ソフトウェア発行元証明書)|
-|Hexadecimal_cert_id|証明書のハッシュを表す16進数。|
+| パラメーター | 説明 |
+| -------------- | -------------- |
+| 送信 | ジョブの表示名または GUID。 |
+| store_location | 次のような、証明書の検索に使用するシステムストアの場所を指定します。<ul><li>CURRENT_USER</li><li>LOCAL_MACHINE</li><li>CURRENT_SERVICE</li><li>サービス</li><li>ユーザー</li><li>CURRENT_USER_GROUP_POLICY</li><li>LOCAL_MACHINE_GROUP_POLICY</li><li>LOCAL_MACHINE_ENTERPRISE。</li></ul> |
+| store_name | 証明書ストアの名前 (以下を含む)。<ul><li>CA (証明機関の証明書)</li><li>MY (個人用証明書)</li><li>ルート (ルート証明書)</li><li>SPC (ソフトウェア発行元証明書)。</li></ul> |
+| hexadecimal_cert_id | 証明書のハッシュを表す16進数。 |
 
-## <a name="examples"></a><a name=BKMK_examples></a>例
+## <a name="examples"></a>例
 
-次の例では、 *myjob*という名前のジョブに対する HTTPS (SSL) 要求でクライアント認証に使用するクライアント証明書の識別子を指定します。
+次の例では、 *Mydownloadjob*という名前のジョブに対する HTTPS (SSL) 要求でクライアント認証に使用するクライアント証明書の識別子を指定します。
+
 ```
-C:\>bitsadmin Bitsadmin /SetClientCertificateByID myJob BG_CERT_STORE_LOCATION_CURRENT_USER MY A106B52356D3FBCD1853A41B619358BD 
+C:\>bitsadmin /setclientcertificatebyid myDownloadJob BG_CERT_STORE_LOCATION_CURRENT_USER MY A106B52356D3FBCD1853A41B619358BD
 ```
 
 ## <a name="additional-references"></a>その他の参照情報

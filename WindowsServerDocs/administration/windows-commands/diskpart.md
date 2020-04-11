@@ -1,27 +1,27 @@
 ---
 title: DiskPart
-description: DiskPart の Windows コマンドに関するトピック。コンピューターのドライブを管理するのに役立ちます。
+description: '**DiskPart**の Windows コマンドに関するトピック。コンピューターのドライブを管理するのに役立ちます。'
 ms.prod: windows-server
 ms.technology: storage
 author: jasongerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 45fe66e4843b96db8e4593c0e963e4a80dbd22c2
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: eb2921d8da4a4a29c4f700107ef5b6d7bfb41481
+ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80845475"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81122530"
 ---
 # <a name="diskpart"></a>DiskPart
 
 >適用対象: Windows 10、Windows 8.1、Windows 8、Windows 7、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、windows server 2008 R2、Windows Server 2008
 
-DiskPart コマンドを使用すると、コンピューターのドライブ (ディスク、パーティション、ボリューム、または仮想ハードディスク) を管理できます。 
+DiskPart コマンドを使用すると、コンピューターのドライブ (ディスク、パーティション、ボリューム、または仮想ハードディスク) を管理できます。
 
 DiskPart コマンドを使用するには、まず、オブジェクトを一覧表示してから、フォーカスを与えるオブジェクトを選択する必要があります。 オブジェクトにフォーカスがある場合、入力した DiskPart コマンドはそのオブジェクトに対して動作します。
 
-## <a name="list-the-available-objects"></a>使用可能なオブジェクトを一覧表示する
+## <a name="list-available-objects"></a>使用可能なオブジェクトの一覧表示
 
 次のように使用して、使用可能なオブジェクトの一覧を表示し、オブジェクトの番号またはドライブ文字を特定することができます。
 
@@ -33,7 +33,7 @@ DiskPart コマンドを使用するには、まず、オブジェクトを一�
 
 - `list vdisk`-コンピューター上のすべての仮想ディスクを表示します。
 
-**List**コマンドを使用すると、フォーカスがあるオブジェクトの横にアスタリスク (\*) が表示されます。
+**List**コマンドを使用すると、フォーカスがあるオブジェクトの横にアスタリスク (*) が表示されます。
 
 ## <a name="determine-focus"></a>フォーカスの決定
 
@@ -52,9 +52,9 @@ diskpart
 ```
 
 > [!IMPORTANT]
-> DiskPart を実行するには、ローカルの**Administrators**グループ、または同様のアクセス許可を持つグループに存在する必要があります。 
+> DiskPart を実行するには、ローカルの**Administrators**グループ、または同様のアクセス許可を持つグループに存在する必要があります。
 
-Diskpart コマンドインタープリターでは、次のコマンドを実行できます。
+Diskpart コマンドインタープリターから次のコマンドを実行できます。
 
 | コマンド | 説明 |
 | ------- | ----------- |
@@ -73,33 +73,33 @@ Diskpart コマンドインタープリターでは、次のコマンドを実�
 | [Vdisk のデタッチ](detach-vdisk.md) | 選択した仮想ハードディスク (VHD) がホストコンピューター上のローカルハードディスクドライブとして表示されなくなります。 |
 | [データ](detail.md) | 選択したディスク、パーティション、ボリューム、または仮想ハードディスク (VHD) に関する情報を表示します。 |
 | [終了](exit.md) | DiskPart コマンド インタープリターを終了します。 |
-| [Vdisk を展開する](expand-vdisk.md) | 
-| [Extend](extend.md) | 
-| [ファイルシステム](filesystems.md) | 
-| [Format](format.md) | 
-| [GPT](gpt.md) | 
-| [ヘルプ](help.md) | 
-| [[インポート](import.md)] | 
-| [稼動](inactive.md) | 
-| [表](list.md) | 
-| [マージ vdisk](merge-vdisk.md) | 
-| [なっ](offline.md) | 
-| [オンライン](online.md) | 
-| [回復](recover.md) | 
-| [Rem](rem.md) | 
-| [[削除]](remove.md) | 
-| [回復](repair.md) | 
-| [再スキャン](rescan.md) | 
-| [日数](retain.md) | 
-| [San](san.md) | 
-| [選択](select.md) | 
-| [Id の設定](set-id.md) | 
-| [伸縮](shrink.md) | 
-| [Uniqueid](uniqueid.md) | 
+| [Vdisk を展開する](expand-vdisk.md) | 仮想ハードディスク (VHD) を指定されたサイズに拡張します。 |
+| [Extend](extend.md) | フォーカスがあるボリュームまたはパーティションを、そのファイルシステムと共に、ディスク上の空き領域 (未割り当て) に拡張します。 |
+| [ファイルシステム](filesystems.md) | フォーカスがあるボリュームの現在のファイルシステムに関する情報を表示し、ボリュームのフォーマットがサポートされているファイルシステムの一覧を表示します。 |
+| [Format](format.md) | Windows ファイルを受け入れるようにディスクをフォーマットします。 |
+| [GPT](gpt.md) | ベーシック GUID パーティションテーブル (gpt) ディスクにフォーカスがあるパーティションに gpt 属性を割り当てます。 |
+| [ヘルプ](help.md) | 使用可能なコマンドの一覧、または指定したコマンドの詳細なヘルプ情報を表示します。 |
+| [[インポート](import.md)] | 外部ディスクグループをローカルコンピューターのディスクグループにインポートします。 |
+| [稼動](inactive.md) | 基本マスターブートレコード (MBR) ディスクで、フォーカスがあるシステムパーティションまたはブートパーティションを非アクティブとしてマークします。 |
+| [表](list.md) | ディスクのパーティション、ディスク内のボリューム、またはバーチャルハードディスク (Vhd) のディスクの一覧を表示します。 |
+| [マージ vdisk](merge-vdisk.md) | 差分仮想ハード_ディスク (VHD)、対応する親 VHD をマージします。 |
+| [なっ](offline.md) | オンラインのディスクまたはボリュームをオフライン状態にかかります。 |
+| [オンライン](online.md) | オフラインのディスクまたはボリュームをオンライン状態にかかります。 |
+| [回復](recover.md) | ディスクグループ内のすべてのディスクの状態を更新し、無効なディスクグループのディスクを回復します。また、古いデータを保持しているミラーボリュームと RAID-5 ボリュームを再同期します。 |
+| [Rem](rem.md) | スクリプトにコメントを追加できます。 |
+| [[削除]](remove.md) | ボリュームからドライブ文字またはマウントポイントを削除します。 |
+| [回復](repair.md) | 障害が発生したディスク領域を指定されたダイナミックディスクに交換することで、フォーカスのある RAID-5 ボリュームを修復します。 |
+| [再スキャン](rescan.md) | コンピューターに追加された新しいディスクを検索します。 |
+| [日数](retain.md) | ブートとして使用する既存のダイナミック シンプル ボリュームまたはシステム ボリュームを準備します。 |
+| [San](san.md) | オペレーティングシステムの記憶域ネットワーク (san) ポリシーを表示または設定します。 |
+| [選択](select.md) | フォーカスを移動すると、ディスク、パーティション、ボリューム、またはバーチャル ハード_ディスク (VHD) します。 |
+| [Id の設定](set-id.md) | フォーカスのあるパーティションの [パーティションの種類] フィールドを変更します。 |
+| [伸縮](shrink.md) | 指定した量だけ、選択したボリュームのサイズが小さくなります。 |
+| [Uniqueid](uniqueid.md) | フォーカスがあるディスクの GUID パーティションテーブル (GPT) 識別子またはマスターブートレコード (MBR) 署名を表示または設定します。 |
 
 ## <a name="additional-references"></a>その他の参照情報
 
-- [コマンドライン構文のキー](command-line-syntax-key.md
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
 
 - [ディスクの管理の概要](https://docs.microsoft.com/windows-server/storage/disk-management/overview-of-disk-management)
 

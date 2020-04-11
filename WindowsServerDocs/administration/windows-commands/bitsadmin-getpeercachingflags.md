@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cdf9683d1a65400286b4604bd9420a5ab863d4af
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 59ff3e3a5802c6023d85129c82f19cd7ee625d2f
+ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850555"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81123120"
 ---
 # <a name="bitsadmin-getpeercachingflags"></a>bitsadmin getpeercachingflags
 
@@ -25,7 +25,7 @@ ms.locfileid: "80850555"
 ## <a name="syntax"></a>構文
 
 ```
-bitsadmin /getpeercachingflags <job> 
+bitsadmin /getpeercachingflags <job>
 ```
 
 ### <a name="parameters"></a>パラメーター

@@ -1,6 +1,6 @@
 ---
 title: bitsadmin setnotifyflags
-description: Bitsadmin setnotifyflags の Windows コマンドに関するトピックでは、指定したジョブのイベント通知フラグを設定します。
+description: '**Bitsadmin setnotifyflags**の Windows コマンドに関するトピックでは、指定したジョブのイベント通知フラグを設定します。'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fd3001fa4ae7f51cab92556f4f2f498511cca5ae
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 73c088ce2bae8d2ad99b313417c14449ddd822b5
+ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80849285"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81122797"
 ---
 # <a name="bitsadmin-setnotifyflags"></a>bitsadmin setnotifyflags
 
@@ -23,27 +23,22 @@ ms.locfileid: "80849285"
 ## <a name="syntax"></a>構文
 
 ```
-bitsadmin /SetNotifyFlags <Job> <NotifyFlags>
+bitsadmin /setnotifyflags <job> <notifyflags>
 ```
 
 ### <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
-|---------|-----------|
-|Job|ジョブの表示名または GUID|
-|NotifyFlags|「解説」を参照|
+| パラメーター | 説明 |
+| --------- | ----------- |
+| 送信 | ジョブの表示名または GUID。 |
+| notifyflags | には、次のような通知フラグを1つ以上含めることができます。<ul><li>1\. ジョブ内のすべてのファイルが転送されたときにイベントを生成**します。**</li><li>2\. エラーが発生したときにイベントを生成**します。**</li><li>3\. すべてのファイルの転送が完了したとき、またはエラーが発生したときに、イベントを生成**します。**</li><li>**4.** 通知を無効にします。</li></ul> |
 
-## <a name="remarks"></a>コメント
+## <a name="examples"></a>例
 
-**Notifyflags**パラメーターには、次の通知フラグを1つ以上含めることができます。
+次の例では、 *Mydownloadjob*という名前のジョブについて、エラーが発生したときにイベントを生成するように通知フラグを設定します。
 
-|-----|-----| | 1 |ジョブ内のすべてのファイルが転送されたときにイベントを生成します |。| 2 |エラーが発生したときにイベントを生成します |。| 4 |通知を無効にします |。
-
-## <a name="examples"></a><a name=BKMK_examples></a>例
-
-次の例では、 *Mydownloadjob*という名前のジョブについて、転送された通知フラグとエラーイベントジョブを設定します。
 ```
-C:\>bitsadmin /SetNotifyFlags myDownloadJob 3
+C:\>bitsadmin /setnotifyflags myDownloadJob 2
 ```
 
 ## <a name="additional-references"></a>その他の参照情報
