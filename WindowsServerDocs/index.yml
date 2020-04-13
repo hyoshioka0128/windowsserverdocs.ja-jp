@@ -10,12 +10,12 @@ metadata:
   ms.topic: hub-page
   ms.date: 06/06/2019
   ms.author: lizross
-  ms.openlocfilehash: 7ea64a8b3b6d930c8105c57bb7d2a1537eb6780d
-  ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+  ms.openlocfilehash: 91a9a648c5b51f098a94300ffb1dd3f7ce76bdd8
+  ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 04/08/2020
-  ms.locfileid: "80856275"
+  ms.lasthandoff: 04/11/2020
+  ms.locfileid: "81123164"
 highlightedContent:
   items:
   - title: Windows Server 2019 の新着情報
@@ -190,12 +190,9 @@ conceptualContent:
 additionalContent:
   sections:
   - items:
-    - title: Windows Server 2012 R2 および Windows Server 2012
-      summary: Windows Server 2012 R2 および Windows Server 2012 を管理する IT 担当者向けの技術コンテンツです。
+    - title: Windows Server 2012 R2 および Windows Server 2012 (アーカイブ)
+      summary: Windows Server 2012 R2 および Windows Server 2012 を管理する IT 担当者向けの技術コンテンツのアーカイブです。
       url: https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh801901(v=ws.11)
-    - title: Windows Server 2008 R2 および Windows Server 2008
-      summary: Windows Server 2008 R2 および Windows Server 2008 を管理する IT 担当者向けの技術コンテンツです。
-      url: https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349801(v=ws.10)
-    - title: Windows Server 2008 開発者向けストーリー
-      summary: Windows Server 2008 の新機能や拡張機能のいくつかを検討している開発者やその他のテクノロジの専門家および管理者向けのコンテンツです。
-      url: https://docs.microsoft.com/previous-versions/windows/server-2008/bb852234(v=msdn.10)
+    - title: Windows Server Essentials
+      summary: 最大 25 人のユーザーと 50 台のデバイスを備えた小規模企業向けに設計された、クラウドに接続された最初のサーバーである Windows Server Essentials を管理する IT プロフェッショナル向けの技術コンテンツです。
+      url: https://docs.microsoft.com/en-us/windows-server-essentials/get-started/get-started
