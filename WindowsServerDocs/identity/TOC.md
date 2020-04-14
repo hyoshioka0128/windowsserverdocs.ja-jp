@@ -268,6 +268,7 @@
 #### [AD FS について推奨するセキュリティ運用方法](ad-fs/deployment/Best-Practices-Securing-AD-FS.md)
 #### [オンプレミスのデバイス ベースの条件付きアクセスを計画する](ad-fs/deployment/Plan-Device-based-Conditional-Access-on-Premises.md)
 #### [AD FS と WAP に必要な更新プログラム](ad-fs/deployment/Updates-for-Active-Directory-Federation-Services-AD-FS.md)
+#### [ドメイン管理特権なしで AD FS ファームを作成する](ad-fs/deployment/Install-AD-FS-Delegated-Admin.md)
 #### [SQL Server レプリケーションを使用した地理的な冗長性の設定](ad-fs/deployment/Set-up-Geographic-Redundancy-with-SQL-Server-Replication.md)
 #### [Windows Server 2012 R2 で AD FS 用のラボ環境をセットアップする](ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)
 #### [WID データベースを使用した、Windows Server 2016 での AD FS へのアップグレード](ad-fs/deployment/Upgrading-to-AD-FS-in-Windows-Server.md)
