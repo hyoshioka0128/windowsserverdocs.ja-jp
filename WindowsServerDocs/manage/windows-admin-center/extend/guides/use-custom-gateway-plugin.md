@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 829cbf6df8cc2738bf4066b36210b860595774ed
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5bcaaa452a2b42a54cbc3b1d8f9a296504054e34
+ms.sourcegitcommit: 20d07170c7f3094c2fb4455f54b13ec4b102f2d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385232"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81269229"
 ---
 # <a name="use-a-custom-gateway-plugin-in-your-tool-extension"></a>ツール拡張機能でカスタムのゲートウェイ プラグインを使用する
 
@@ -63,7 +63,7 @@ export class PluginService {
 
 ```Sample Uno``` への参照を変更し、必要に応じて機能名に ```Sample%20Uno``` します。
 
-[!WARNING]
+> [!WARNING]
 > 組み込みの ```this.appContextService.node``` は、カスタムゲートウェイプラグインで定義されている API を呼び出すために使用することをお勧めします。 これにより、ゲートウェイプラグイン内で資格情報が要求された場合に、適切に処理されるようになります。
 
 ### <a name="modify-modulets"></a>モジュールを変更します。

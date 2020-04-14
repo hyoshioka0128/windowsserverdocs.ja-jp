@@ -8,18 +8,18 @@ ms.author: jol
 ms.date: 06/06/2019
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: d761ba61ae5680373c334889799e82e5d092a0d4
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: f51070abfeed3a790055b12f733fc61be383472c
+ms.sourcegitcommit: 20d07170c7f3094c2fb4455f54b13ec4b102f2d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950107"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81269259"
 ---
 # <a name="enabling-the-extension-discovery-banner"></a>拡張機能の検出バナーを有効にする
 
 >適用対象: Windows Admin Center、Windows Admin Center Preview
 
-Windows 管理センタープレビュー1903で利用可能な新機能は、拡張機能の検出バナーです。 この機能を使用すると、拡張機能でサポートされているサーバーハードウェアの製造元とモデルを宣言できます。また、拡張機能が使用可能なサーバーまたはクラスターにユーザーが接続すると、拡張機能を簡単にインストールするための通知バナーが表示されます。 拡張機能の開発者は拡張機能の可視性を向上させることができ、ユーザーはサーバーの管理機能をさらに簡単に検出できます。
+拡張機能の検出バナー機能は、Windows 管理センタープレビュー1903リリースで導入されました。 この機能を使用すると、拡張機能でサポートされているサーバーハードウェアの製造元とモデルを宣言できます。また、拡張機能が使用可能なサーバーまたはクラスターにユーザーが接続すると、拡張機能を簡単にインストールするための通知バナーが表示されます。 拡張機能の開発者は拡張機能の可視性を向上させることができ、ユーザーはサーバーの管理機能をさらに簡単に検出できます。
 
 ![拡張機能の検出バナー](../../media/extend-guides-extension-discovery-banner/extension-discovery-banner.png)
 
@@ -36,7 +36,7 @@ Nuspec ファイルの "tags" メタデータは、拡張機能でサポート�
 たとえば、Contoso Inc. という名前の会社のサーバーをサポートする拡張機能を、モデル名 R3xx と R4xx を使用して開発したとします。
 
 1. 製造元のタグが ``"Manufacturer_/Contoso Inc./"``されます。 モデルのタグは ``"Model_/^R[34][0-9]{2}$/"``可能性があります。 一致条件をどの程度厳密に定義するかによって、正規表現を定義するためのさまざまな方法があります。 また、製造元またはモデルタグを複数のタグに分割することもできます。たとえば、モデルタグを ``"Model_/R3../ Model_/R4../"``することもできます。
-2. 正規表現をテストするには、web ブラウザーの DevTools コンソールを使用します。 Microsoft Edge または Chrome で、F12 キーを押して [DevTools] ウィンドウを開き、[コンソール] タブで次のように入力して、Enter キーを押します。
+2. 正規表現をテストするには、web ブラウザーの DevTools コンソールを使用します。 Edge または Chrome で、F12 キーを押して [DevTools] ウィンドウを開き、[コンソール] タブで次のように入力して、Enter キーを押します。
 
    ```javascript
    var regex = /^R[34][0-9]{2}$/

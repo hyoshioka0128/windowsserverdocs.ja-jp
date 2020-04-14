@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.date: 11/21/2019
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: ddc8eea67cde9d6677836af1201e169c911e77e0
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: cbcb5c2357a60d6d12551a7d08055cacecd515b7
+ms.sourcegitcommit: 20d07170c7f3094c2fb4455f54b13ec4b102f2d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950482"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81269239"
 ---
 # <a name="manage-servers-with-windows-admin-center"></a>Windows 管理センターを使用してサーバーを管理する
 
@@ -23,7 +23,7 @@ ms.locfileid: "75950482"
 > Windows Admin Center を初めて使用する場合
 > [Windows 管理センターの詳細については、](../overview.md)こちらを参照してください。
 
-## <a name="managing-windows-server-machines"></a>Windows Server マシンの管理
+## <a name="managing-windows-server-machines"></a>Windows Server コンピューターの管理
 
 Windows Server 2012 以降を実行している個々のサーバーを Windows 管理センターに追加して、証明書、デバイス、イベント、プロセス、役割と機能、更新プログラム、Virtual Machines などの包括的なツールセットを使用してサーバーを管理できます。
 
@@ -55,20 +55,20 @@ Windows 管理センターにサーバーを追加するには:
 | [証明書](#certificates) | 証明書の表示と変更 |
 | [コンテナー](#containers) | コンテナー表示 |
 | [デバイス](#devices) | デバイスの表示と変更 |
-| [[DHCP]](#dhcp) | DHCP サーバー構成の表示と管理 |
+| [列挙](#dhcp) | DHCP サーバー構成の表示と管理 |
 | [DNS](#dns) | DNS サーバー構成の表示と管理 |
-| [イベント](#events) | イベントの表示 |
-| [ファイル](#files) | ファイルとフォルダーを参照する |
-| [ファイアウォール](#firewall) | ファイアウォール規則の表示と変更 |
+| [記録](#events) | イベントの表示 |
+| [ファイル](#files) | ファイルとフォルダーの参照 |
+| [Firewall](#firewall) | ファイアウォール規則の表示と変更 |
 | [インストール済みアプリ](#installed-apps) | インストールされているアプリを表示および削除する |
 | [ローカルユーザーとグループ](#local-users-and-groups) | ローカルユーザーとグループを表示および変更する |
-| [Network](#network) | ネットワークデバイスの表示と変更 |
+| [ネットワーク](#network) | ネットワークデバイスの表示と変更 |
 | [パケットの監視](https://aka.ms/wac1908) | ネットワークパケットを監視する |
 | [パフォーマンスモニター](https://aka.ms/perfmon-blog) | パフォーマンスカウンターとレポートの表示 |
 | [PowerShell](#powershell) | PowerShell を使用したサーバーとの対話 |
 | [プロセス](#processes) | 実行中のプロセスの表示と変更 |
-| [Registry](#registry) | レジストリエントリの表示と変更 |
-| [リモート デスクトップ](#remote-desktop) | リモートデスクトップを使用したサーバーとの対話 |
+| [登録](#registry) | レジストリエントリの表示と変更 |
+| [リモートデスクトップ](#remote-desktop) | リモートデスクトップを使用したサーバーとの対話 |
 | [役割と機能](#roles-and-features) | 役割と機能を表示および変更する |
 | [スケジュールされたタスク](#scheduled-tasks) | スケジュールされたタスクの表示と変更 |
 | [サービス](#services) | サービスの表示と変更 |
@@ -121,7 +121,7 @@ Windows 管理センターにサーバーを追加するには:
 
 [**Active Directory のフィードバックと提案された機能を表示**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BActive%20Directory%5D)します。
 
-## <a name="backup"></a>[バックアップ]
+## <a name="backup"></a>バックアップ
 
 **バックアップ**を使用すると、サーバーを Microsoft Azure に直接バックアップして、Windows server を破損、攻撃、災害から保護することができます。
 [詳細については、Azure Backup を参照してください。](https://aka.ms/windows-admin-center-backup)
@@ -137,7 +137,7 @@ Windows 管理センターにサーバーを追加するには:
 - バックアップジョブの開始または停止
 - バックアップジョブの履歴と状態の表示
 - 回復ポイントの表示とデータの回復
-- バックアップ データの削除
+- バックアップデータの削除
 
 ## <a name="certificates"></a>証明書
 
@@ -162,7 +162,7 @@ Windows 管理センターにサーバーを追加するには:
 
 [**コンテナーのフィードバックと提案された機能を表示**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BContainers%5D)します。
 
-## <a name="devices"></a>[デバイス]
+## <a name="devices"></a>デバイス
 
 **デバイス**では、コンピューターまたはサーバー上の接続されているデバイスを管理できます。
 
@@ -189,7 +189,7 @@ Windows 管理センターにサーバーを追加するには:
 
 [**DHCP のフィードバックと提案**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BDHCP%5D)された機能を表示します。
 
-## <a name="dns"></a>[DNS]
+## <a name="dns"></a>DNS
 
 **DNS**を使用すると、コンピューターまたはサーバー上の接続されているデバイスを管理できます。
 
@@ -204,7 +204,7 @@ Windows 管理センターにサーバーを追加するには:
 
 [**DHCP のフィードバックと提案**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BDNS%5D)された機能を表示します。
 
-## <a name="events"></a>[イベント]
+## <a name="events"></a>イベント
 
 **イベント**を使用すると、コンピューターまたはサーバー上のイベントログを管理できます。
 
@@ -227,14 +227,15 @@ Windows 管理センターにサーバーを追加するには:
 
 ファイルでは、次の機能がサポートされています。
 
-- ファイルとフォルダーを参照する
+- ファイルとフォルダーの参照
 - ファイルやフォルダーを検索する
 - 新しいフォルダーを作成する
 - ファイルまたはフォルダーを削除する
 - ファイルまたはフォルダーをダウンロードする
-- ファイルまたはフォルダーをアップロード
+- ファイルまたはフォルダーをアップロードする
 - ファイルまたはフォルダーの名前を変更する
 - Zip ファイルを抽出する
+- ファイルとフォルダーのコピーと移動
 - ファイルまたはフォルダーのプロパティの表示
 - ファイル共有の追加、編集、または削除
 - ファイル共有のユーザーとグループのアクセス許可を変更する
@@ -267,7 +268,7 @@ Windows 管理センターにサーバーを追加するには:
 
 [**インストールされているアプリのフィードバックと提案された機能を表示**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BInstalled%20Apps%5D)します。
 
-## <a name="local-users-and-groups"></a>ローカル ユーザーとグループ
+## <a name="local-users-and-groups"></a>[ローカル ユーザーとグループ]
 
 **ローカルユーザーとグループ**を使用すると、コンピューターまたはサーバーのローカルに存在するセキュリティグループとユーザーを管理できます。
 
@@ -284,7 +285,7 @@ Windows 管理センターにサーバーを追加するには:
 
 [**ローカルユーザーとグループのフィードバックと提案された機能を表示する**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BLocal%20users%20and%20Groups%5D)
 
-## <a name="network"></a>[ネットワーク]
+## <a name="network"></a>ネットワーク
 
 **ネットワーク**では、コンピューターまたはサーバー上のネットワークデバイスと設定を管理できます。
 
@@ -312,7 +313,7 @@ PowerShell では、次の機能がサポートされています。
 
 [**PowerShell のフィードバックと提案された機能を表示する**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BPowerShell%5D)
 
-## <a name="processes"></a>Processes (プロセス)
+## <a name="processes"></a>プロセス
 
 **プロセス**を使用すると、コンピューターまたはサーバー上で実行中のプロセスを管理できます。
 
@@ -329,7 +330,7 @@ PowerShell では、次の機能がサポートされています。
 
 [**フィードバックとプロセスの提案された機能を表示**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BProcesses%5D)します。
 
-## <a name="registry"></a>Registry
+## <a name="registry"></a>［レジストリ］
 
 **レジストリ**を使用して、コンピューターまたはサーバー上のレジストリキーと値を管理できます。
 
@@ -372,7 +373,7 @@ PowerShell では、次の機能がサポートされています。
 
 [**役割と機能に関するフィードバックと提案された機能を表示**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BRoles%20and%20Features%5D)します。
 
-## <a name="scheduled-tasks"></a>[スケジュールされたタスク]
+## <a name="scheduled-tasks"></a>スケジュールされたタスク
 
 **スケジュール**されたタスクを使用して、コンピューターまたはサーバー上のスケジュールされたタスクを管理できます。
 
@@ -388,7 +389,7 @@ PowerShell では、次の機能がサポートされています。
 
 スケジュールされた[**タスクのフィードバックと提案された機能を表示**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BScheduled%20Tasks%5D)します。
 
-## <a name="services"></a>[サービス]
+## <a name="services"></a>サービス
 
 **サービス**を使用すると、コンピューターまたはサーバー上のサービスを管理できます。
 
@@ -398,8 +399,9 @@ PowerShell では、次の機能がサポートされています。
 
 - サーバー上のサービスを参照および検索する
 - サービスの詳細を表示する
-- サービスを開始する
+- サービスの開始
 - サービスを一時停止する
+- サービスの再起動
 - サービスのプロパティを編集する
 
 [**サービスのフィードバックと提案された機能を表示**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BServices%5D)します。
@@ -417,7 +419,7 @@ PowerShell では、次の機能がサポートされています。
 - ロールベースのアクセス制御設定を表示および変更する
 - Hyper-v ホストの設定を表示および変更する (該当する場合)
 
-## <a name="storage"></a>記憶域
+## <a name="storage"></a>ストレージ
 
 **記憶域**を使用すると、コンピューターまたはサーバー上の記憶装置を管理できます。
 
@@ -427,14 +429,14 @@ PowerShell では、次の機能がサポートされています。
 
 - サーバー上の既存のディスクを参照して検索する
 - ディスクの詳細の表示
-- ボリュームを作成する
+- ボリュームの作成
 - ディスクの初期化
 - バーチャルハードディスク (VHD) の作成、アタッチ、および切断
 - ディスクをオフラインにする
 - ボリュームのフォーマット
-- ボリュームをサイズ変更する
+- ボリュームのサイズを変更する
 - ボリュームのプロパティの編集
-- ボリュームを削除する
+- ボリュームの削除
 - クォータ管理のインストール
 - ファイルサーバーリソースマネージャーのクォータ[の記憶域の管理-> のクォータの作成と更新](https://docs.microsoft.com/windows-server/storage/fsrm/quota-management)
 
@@ -461,7 +463,7 @@ PowerShell では、次の機能がサポートされています。
 >[!NOTE]
 >System Insights には Windows Server 2019 が必要です。
 
-## <a name="updates"></a>更新
+## <a name="updates"></a>更新プログラム
 
 **更新プログラム**を使用すると、コンピューターまたはサーバーで Microsoft や Windows の更新プログラムを管理できます。
 
