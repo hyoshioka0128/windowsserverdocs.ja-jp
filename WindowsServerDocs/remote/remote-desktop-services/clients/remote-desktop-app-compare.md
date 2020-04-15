@@ -1,25 +1,21 @@
 ---
-title: リモート デスクトップ - クライアントの比較
-description: さまざまな RD クライアントを、サポートされている機能に関して比較します。
-ms.custom: na
+title: リモート デスクトップ - クライアント アプリの比較
+description: さまざまな RD アプリを、サポートされている機能に関して比較します。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 12efe858-6b76-4e08-9f72-b9603aceb0fc
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 03/28/2020
+ms.date: 04/06/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 11c91ac951db27915d9313f7f98e5e2cfc56b726
-ms.sourcegitcommit: 78c00944b6990702d28bdcc4a9215927ca901bfb
+ms.openlocfilehash: 8c41d2691f22e7feb89518a02736f3607940a2f6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "80440369"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856225"
 ---
 # <a name="compare-the-clients"></a>クライアントの比較
 
@@ -57,11 +53,11 @@ USB ポートのリダイレクトを有効にすると、USB ポートに接続
 
 | リダイレクト         | Windows 受信トレイ</br>(MSTSC) | Windows デスクトップ</br>(MSRDC) | Windows ストア | Android | iOS         | macOS                           | Web クライアント    |
 |---------------------|---------------------------|-----------------------------|---------------|---------|-------------|---------------------------------|---------------|
-| カメラ             | X                         | X                           |               |         |             | X                               |               |
-| クリップボード           | X                         | X                           | X             | テキスト    | テキスト、イメージ | X                               | テキスト          |
-| ローカル ドライブ/ストレージ | X                         | X                           |               | X       |             | X                               |               |
+| カメラ             | X                         | X                           |               |         |   X         | X                               |               |
+| クリップボード           | X                         | X                           | X             | テキスト    | テキスト、画像 | X                               | テキスト          |
+| ローカル ドライブ/ストレージ | X                         | X                           |               | X       |   X        | X                               |               |
 | インストール先            | X                         | X                           |               |         |             |                                 |               |
-| マイク         | X                         | X                           | X             |         |             | X                               |               |
+| マイク         | X                         | X                           | X             |         |  X          | X                               |               |
 | プリンター            | X                         | X                           |               |         |             | X (CUPS のみ)                   | PDF 印刷     |
 | スキャナー            | X                         | X                           |               |         |             |                                 |               |
 | Smart Cards         | X                         | X                           |               |         |             | X (Windows ログオンはサポートされていません) |               |

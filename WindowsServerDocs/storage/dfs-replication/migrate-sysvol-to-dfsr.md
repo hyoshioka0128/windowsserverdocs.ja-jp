@@ -6,12 +6,12 @@ ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: d8d9d47ff8f14ce316d2352729247ab2dcf4acbc
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: eb7997b4ed16812ac6b1d6c7d3ccc220f8f63ce7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949700"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815585"
 ---
 # <a name="migrate-sysvol-replication-to-dfs-replication"></a>SYSVOL のレプリケーションを DFS レプリケーションに移行する
 
@@ -20,11 +20,11 @@ ms.locfileid: "75949700"
 
 適用先:Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、および Windows Server 2008
 
-ドメイン コントローラーでは、SYSVOL という特殊な共有フォルダーを使用して、ログオン スクリプトとグループ ポリシー オブジェクト ファイルを他のドメイン コントローラーにレプリケートします。 Windows 2000 Server および Windows Server 2003 では、ファイル レプリケーション サービス (FRS) を使用して SYSVOL をレプリケートします。一方、Windows Server 2008 では、Windows Server 2008 ドメインの機能レベルを使用するドメインの場合は新しい DFS レプリケーション サービスを、古いドメインの機能レベルを実行するドメインの場合は FRS が使用されます。
+ドメイン コントローラーでは、SYSVOL という特殊な共有フォルダーを使用して、ログオン スクリプトとグループ ポリシー オブジェクト ファイルを他のドメイン コントローラーにレプリケートします。 Windows 2000 Server および Windows Server 2003 では、ファイル レプリケーション サービス (FRS) を使用して SYSVOL をレプリケートします。一方、Windows Server 2008 では、Windows Server 2008 ドメインの機能レベルを使用するドメインの場合は新しい DFS レプリケーション サービスを、古いドメインの機能レベルを実行するドメインの場合は FRS が使用されます。
 
-SYSVOL フォルダーをレプリケートするために DFS レプリケーションを使用するには、Windows Server 2008 ドメインの機能レベルを使用する新しいドメインを作成するか、このドキュメントで説明されている手順を使用して既存のドメインをアップグレードし、レプリケーションを DFS レプリケーションに移行できます。
+SYSVOL フォルダーをレプリケートするために DFS レプリケーションを使用するには、Windows Server 2008 ドメインの機能レベルを使用する新しいドメインを作成するか、このドキュメントで説明されている手順を使用して既存のドメインをアップグレードし、レプリケーションを DFS レプリケーションに移行できます。
 
-このドキュメントでは、Active Directory Domain Services (AD DS)、FRS、および分散ファイル システム レプリケーション (DFS レプリケーション) に関する基本的な知識があることを前提としています。 詳しくは、「[Active Directory Domain Services の概要](https://go.microsoft.com/fwlink/?linkid=147787)」、「[FRS の概要](https://go.microsoft.com/fwlink/?linkid=121763)」、または「[DFS レプリケーションの概要](https://go.microsoft.com/fwlink/?linkid=121762)」をご覧ください。
+このドキュメントでは、Active Directory Domain Services (AD DS)、FRS、および分散ファイル システム レプリケーション (DFS レプリケーション) に関する基本的な知識があることを前提としています。 詳しくは、「[Active Directory Domain Services の概要](https://go.microsoft.com/fwlink/?linkid=147787)」、「[FRS の概要](https://go.microsoft.com/fwlink/?linkid=121763)」、または「[DFS レプリケーションの概要](https://go.microsoft.com/fwlink/?linkid=121762)」をご覧ください。
 
 
 > [!NOTE]

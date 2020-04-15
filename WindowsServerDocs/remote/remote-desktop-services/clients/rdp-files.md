@@ -1,24 +1,20 @@
 ---
 title: サポートされるリモート デスクトップ RDP ファイルの設定
 description: リモート デスクトップの RDP ファイルの設定について説明します
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
-ms.tgt_pltfrm: na
 ms.topic: article
-author: btaintor
-manager: dongill
+author: heidilohr
+manager: lizross
 ms.author: helohr
 ms.date: 05/20/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a596bcd29fdb80f8b2b0fa86ee808755dd09f43
-ms.sourcegitcommit: f0fcfee992b76f1ad5dad460d4557f06ee425083
+ms.openlocfilehash: 6af7559f1d74f2af38579ee357507bd1207f63b2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77125094"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855915"
 ---
 # <a name="supported-remote-desktop-rdp-file-settings"></a>サポートされるリモート デスクトップ RDP ファイルの設定
 

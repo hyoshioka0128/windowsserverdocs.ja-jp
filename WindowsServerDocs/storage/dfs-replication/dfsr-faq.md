@@ -1,17 +1,17 @@
 ---
-title: 'DFS レプリケーション: よく寄せられる質問 (FAQ)'
+title: DFS レプリケーション - よく寄せられる質問 (FAQ)
 ms.date: 06/18/2014
 ms.prod: windows-server
 ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: e92ada07140b88ef4178a5aecdb263b825380c2d
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 1e11f6c596d7e5eb0bdf379adcf47d21e74e9f6b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950283"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815625"
 ---
 # <a name="dfs-replication-frequently-asked-questions-faq"></a>DFS レプリケーション: よく寄せられる質問 (FAQ)
 
@@ -45,7 +45,7 @@ DFS レプリケーションの新機能については、次のトピックを�
 
 ### <a name="can-dfs-replication-replace-frs-for-sysvol-replication"></a>SYSVOL 用の FRS レプリケーションの代わりに DFS レプリケーションを使用できますか?
 
-はい。Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、または Windows Server 2008 が実行されているサーバーでは、SYSVOL 用の FRS レプリケーションの代わりに DFS レプリケーションを使用できます。 Windows Server 2003 R2 が実行されているサーバーでは、SYSVOL フォルダーをレプリケートするために DFS レプリケーションを使用することはできません。
+はい。Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、または Windows Server 2008 が実行されているサーバーでは、SYSVOL 用の FRS レプリケーションの代わりに DFS レプリケーションを使用できます。 Windows Server 2003 R2 が実行されているサーバーでは、SYSVOL フォルダーをレプリケートするために DFS レプリケーションを使用することはできません。
 
 DFS レプリケーションを使用した SYSVOL のレプリケートについて詳しくは、「[SYSVOL レプリケーション移行ガイド: FRS から DFS レプリケーション](https://technet.microsoft.com/library/dd640019)」をご覧ください。
 
@@ -72,9 +72,9 @@ DFS レプリケーションは、Windows Server オペレーティングシス�
 
 ### <a name="can-i-use-windowsbackup-ntbackupexe-to-remotely-back-up-a-replicated-folder"></a>Windows バックアップ (Ntbackup.exe) を使用して、レプリケート フォルダーをリモート環境からバックアップできますか?
 
-いいえ。Windows Server 2003 以前が実行されているコンピューター上の Windows バックアップ (Ntbackup.exe) を使用して、Windows Server 2012、Windows Server 2008 R2、または Windows Server 2008 が実行されているコンピューター上のレプリケート フォルダーの内容を、バックアップすることはできません。
+いいえ。Windows Server 2003 以前が実行されているコンピューター上の Windows バックアップ (Ntbackup.exe) を使用して、Windows Server 2012、Windows Server 2008 R2、または Windows Server 2008 が実行されているコンピューター上のレプリケート フォルダーの内容を、バックアップすることはできません。
 
-レプリケート フォルダーに格納されているファイルをバックアップするには、Windows Server バックアップまたは Microsoft® System Center Data Protection Manager を使用します。 Windows Server 2008 R2 および Windows Server 2008 のバックアップと回復の機能の詳細については、「[バックアップと回復](https://technet.microsoft.com/library/Cc754097)」を参照してください。 詳細については、「[System Center Data Protection Manager](https://go.microsoft.com/fwlink/?linkid=182261)」 (https://go.microsoft.com/fwlink/?LinkId=182261) を参照してください。
+レプリケート フォルダーに格納されているファイルをバックアップするには、Windows Server バックアップまたは Microsoft&reg; System Center Data Protection Manager を使用します。 Windows Server 2008 R2 および Windows Server 2008 のバックアップと回復の機能の詳細については、「[バックアップと回復](https://technet.microsoft.com/library/Cc754097)」を参照してください。 詳細については、「[System Center Data Protection Manager](https://go.microsoft.com/fwlink/?linkid=182261)」 (https://go.microsoft.com/fwlink/?LinkId=182261) を参照してください。
 
 ### <a name="do-file-system-policies-impact-dfs-replication"></a>ファイル システム ポリシーは DFS レプリケーションに影響しますか?
 
@@ -101,7 +101,7 @@ DFS レプリケーションは、Windows Server オペレーティングシス�
 
 ### <a name="is-dfs-replication-cluster-aware"></a>DFS レプリケーションはクラスターに対応していますか?
 
-はい。Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2 の DFS レプリケーションには、レプリケーション グループのメンバーとしてフェールオーバー クラスターを追加する機能が含まれています。 詳細については、「[レプリケーション グループにフェールオーバー クラスターを追加する](https://go.microsoft.com/fwlink/?linkid=155085)」 (https://go.microsoft.com/fwlink/?LinkId=155085) ) を参照してください。 Windows Server 2008 R2 より前のバージョンの Windows の DFS レプリケーション サービスは、フェールオーバー クラスターと連携するように設計されていないため、サービスは別のノードにフェールオーバーされません。
+はい。Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2 の DFS レプリケーションには、レプリケーション グループのメンバーとしてフェールオーバー クラスターを追加する機能が含まれています。 詳細については、「[レプリケーション グループにフェールオーバー クラスターを追加する](https://go.microsoft.com/fwlink/?linkid=155085)」 (https://go.microsoft.com/fwlink/?LinkId=155085) ) を参照してください。 Windows Server 2008 R2 より前のバージョンの Windows の DFS レプリケーション サービスは、フェールオーバー クラスターと連携するように設計されていないため、サービスは別のノードにフェールオーバーされません。
 
 
 > [!NOTE]
@@ -129,7 +129,7 @@ DFS レプリケーションには分散ロック メカニズムまたはファ
 
 ### <a name="what-are-the-benefits-of-using-dfs-replication-instead-of-windows-sharepoint-services"></a>Windows SharePoint Services ではなく DFS レプリケーションを使用する利点は何ですか?
 
-Windows® SharePoint® Services では、ファイル チェックアウト機能の形式で厳密な一貫性が提供されますが、DFS レプリケーションにはこの機能はありません。 複数のユーザーが同じファイルを編集することが考えられる場合は、Windows SharePoint Services を使用することをお勧めします。 Windows SharePoint Services 2.0 Service Pack 2 は、Windows Server 2003 R2 の一部として利用できます。 Windows SharePoint Services は、Microsoft Web サイトからダウンロードできます。新しいバージョンの Windows Server には含まれていません。 一方、複数のサイト間でデータをレプリケートしていて、ユーザーが同時に同じファイルを編集しない場合、DFS レプリケーションでは帯域幅が大きく、管理が簡単になります。
+Windows&reg; SharePoint&reg; Services では、ファイル チェックアウト機能の形式で厳密な一貫性が提供されますが、DFS レプリケーションにはこの機能はありません。 複数のユーザーが同じファイルを編集することが考えられる場合は、Windows SharePoint Services を使用することをお勧めします。 Windows SharePoint Services 2.0 Service Pack 2 は、Windows Server 2003 R2 の一部として利用できます。 Windows SharePoint Services は、Microsoft Web サイトからダウンロードできます。新しいバージョンの Windows Server には含まれていません。 一方、複数のサイト間でデータをレプリケートしていて、ユーザーが同時に同じファイルを編集しない場合、DFS レプリケーションでは帯域幅が大きく、管理が簡単になります。
 
 ## <a name="limitations-and-requirements"></a>制限事項と要件
 
@@ -152,7 +152,7 @@ DFS レプリケーションで Microsoft Outlook の個人用フォルダー �
 
 ### <a name="can-i-use-dfs-replication-in-a-workgroup"></a>ワークグループで DFS レプリケーションを使用できますか?
 
-いいえ。 DFS レプリケーションの構成は Active Directory® Domain Services に依存しています。 それはドメイン内でのみ機能します。
+いいえ。 DFS レプリケーションの構成は Active Directory&reg; Domain Services に依存しています。 それはドメイン内でのみ機能します。
 
 ### <a name="can-more-than-one-folder-be-replicated-on-a-single-server"></a>1 台のサーバー上の複数のフォルダーをレプリケートできますか?
 
@@ -168,7 +168,7 @@ DFS レプリケーションで Microsoft Outlook の個人用フォルダー �
 
 ### <a name="does-dfs-replication-support-replicating-an-entire-volume"></a>DFS レプリケーションではボリューム全体のレプリケーションがサポートされますか?
 
-はい。 ただし、最初に Windows Server 2003 Service Pack 2 または修正プログラムをインストールする必要があります。 詳しくは、Microsoft サポート技術情報の[記事 920335](https://go.microsoft.com/fwlink/?linkid=76776) (https://go.microsoft.com/fwlink/?LinkId=76776) を参照してください。 また、ボリューム全体をレプリケートすると、次の問題が発生する可能性があります。
+はい。 ただし、最初に Windows Server 2003 Service Pack 2 または修正プログラムをインストールする必要があります。 詳しくは、Microsoft サポート技術情報の[記事 920335](https://go.microsoft.com/fwlink/?linkid=76776) (https://go.microsoft.com/fwlink/?LinkId=76776) を参照してください。 また、ボリューム全体をレプリケートすると、次の問題が発生する可能性があります。
 
   - ボリュームに Windows のページング ファイルが含まれている場合、レプリケーションは失敗し、システム イベント ログに DFSR イベント 4312 が記録されます。  
       
@@ -232,7 +232,7 @@ Windows と DFS レプリケーションでは、最大 32,000 文字のフォ�
 <br>
 
 
-次の一覧では、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008 で Microsoft によってテストされた一連のスケーラビリティ ガイドラインを示します。
+次の一覧では、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008 で Microsoft によってテストされた一連のスケーラビリティ ガイドラインを示します。
 
   - サーバーでレプリケートされるすべてのファイルのサイズ: 10 テラバイト。  
       
@@ -247,13 +247,13 @@ Windows と DFS レプリケーションでは、最大 32,000 文字のフォ�
 <br>
 
 
-Windows Server 2003 R2 に関して Microsoft によってテストされたスケーラビリティ ガイドラインの一覧については、「[DFS レプリケーションのスケーラビリティ ガイドライン](https://go.microsoft.com/fwlink/?linkid=75043)」 (https://go.microsoft.com/fwlink/?LinkId=75043) をご覧ください。
+Windows Server 2003 R2 に関して Microsoft によってテストされたスケーラビリティ ガイドラインの一覧については、「[DFS レプリケーションのスケーラビリティ ガイドライン](https://go.microsoft.com/fwlink/?linkid=75043)」 (https://go.microsoft.com/fwlink/?LinkId=75043) をご覧ください。
 
 ### <a name="when-should-i-not-use-dfs-replication"></a>DFS レプリケーションを使用してはならないのはどのような場合ですか?
 
 複数のユーザーが異なるサーバー上の同じファイルを同時に更新または変更する場合は、DFS レプリケーションを使用しないでください。 それを行うと、DFS レプリケーションにより、ファイルの競合するコピーが隠し属性の DfsrPrivate\\ConflictandDeleted フォルダーに移動される可能性があります。
 
-複数のユーザーが異なるサーバー上の同じファイルを同時に変更する必要がある場合は、Windows SharePoint Services のファイル チェックアウト機能を使用して、1 人のユーザーだけがファイルを作業できるようにしてください。 Windows SharePoint Services 2.0 Service Pack 2 は、Windows Server 2003 R2 の一部として利用できます。 Windows SharePoint Services は、Microsoft Web サイトからダウンロードできます。新しいバージョンの Windows Server には含まれていません。
+複数のユーザーが異なるサーバー上の同じファイルを同時に変更する必要がある場合は、Windows SharePoint Services のファイル チェックアウト機能を使用して、1 人のユーザーだけがファイルを作業できるようにしてください。 Windows SharePoint Services 2.0 Service Pack 2 は、Windows Server 2003 R2 の一部として利用できます。 Windows SharePoint Services は、Microsoft Web サイトからダウンロードできます。新しいバージョンの Windows Server には含まれていません。
 
 ### <a name="why-is-a-schema-update-required-for-dfs-replication"></a>DFS レプリケーションにスキーマの更新が必要なのはなぜですか?
 
@@ -265,7 +265,7 @@ DFS レプリケーションでは、構成情報を格納するために、Acti
 
 はい。 正常性レポートを自動化するには、次の 3 つの方法があります。
 
-  - Windows Server 2012 R2 または DfsrAdmin.exe に含まれる DFSR Windows PowerShell モジュールをスケジュールされたタスクと共に使用して、正常性レポートを定期的に生成します。 詳しくは、[DFS レプリケーションの正常性レポートの自動化](https://go.microsoft.com/fwlink/?linkid=74010) (https://go.microsoft.com/fwlink/?LinkId=74010) に関するページをご覧ください。  
+  - Windows Server 2012 R2 または DfsrAdmin.exe に含まれる DFSR Windows PowerShell モジュールをスケジュールされたタスクと共に使用して、正常性レポートを定期的に生成します。 詳しくは、[DFS レプリケーションの正常性レポートの自動化](https://go.microsoft.com/fwlink/?linkid=74010) (https://go.microsoft.com/fwlink/?LinkId=74010) に関するページをご覧ください。  
       
   - System Center Operations Manager 用の DFS レプリケーション管理パックを使用し、指定した条件に基づいてアラートを作成します。  
       
@@ -280,7 +280,7 @@ DFS レプリケーションでは、構成情報を格納するために、Acti
 
 はい。 DFS レプリケーションでは、DFS 管理コンソールと **[レプリケーション グループの追加]** コマンドを使用してリモート管理がサポートされています。 たとえば、フォレストでサーバー A と B をメンバーとして定義されているレプリケーション グループに、サーバー A で接続できます。
 
-DFS 管理は、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008、Windows Server 2003 R2 に含まれます。 他のバージョンの Windows から DFS レプリケーションを管理するには、リモート デスクトップまたは [Windows 7 用のリモート サーバー管理ツール](https://technet.microsoft.com/library/Ee449475)を使用します。
+DFS 管理は、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008、Windows Server 2003 R2 に含まれます。 他のバージョンの Windows から DFS レプリケーションを管理するには、リモート デスクトップまたは [Windows 7 用のリモート サーバー管理ツール](https://technet.microsoft.com/library/Ee449475)を使用します。
 
 
 > [!IMPORTANT]
@@ -294,7 +294,7 @@ DFS 管理は、Windows Server 2012 R2、Windows Server 2012、Windows Server�
 
 ### <a name="how-can-files-be-recovered-from-the-conflictanddeleted-or-preexisting-folders"></a>ConflictAndDeleted または PreExisting フォルダーからファイルを回復するにはどうすればよいですか?
 
-失われたファイルを回復するには、ファイル履歴、エクスプローラーの **[以前のバージョンの復元]** コマンド、またはバックアップからのファイルの復元を使用して、ファイル システム フォルダーまたは共有フォルダーからファイルを復元します。 ConflictAndDeleted フォルダーまたは PreExisting フォルダーからファイルを直接回復するには、Windows PowerShell の `Get-DfsrPreservedFiles` および `Restore-DfsrPreservedFiles` コマンドレット (Windows Server 2012 R2 の DFSR モジュールに含まれます)、または MSDN コード ギャラリーの [RestoreDFSR](https://code.msdn.microsoft.com/restoredfsr) サンプル スクリプトを使用します。 このスクリプトはディザスター リカバリーのみを目的としたもので、現状のまま保証なしで提供されます。
+失われたファイルを回復するには、ファイル履歴、エクスプローラーの **[以前のバージョンの復元]** コマンド、またはバックアップからのファイルの復元を使用して、ファイル システム フォルダーまたは共有フォルダーからファイルを復元します。 ConflictAndDeleted フォルダーまたは PreExisting フォルダーからファイルを直接回復するには、Windows PowerShell の `Get-DfsrPreservedFiles` および `Restore-DfsrPreservedFiles` コマンドレット (Windows Server 2012 R2 の DFSR モジュールに含まれます)、または MSDN コード ギャラリーの [RestoreDFSR](https://code.msdn.microsoft.com/restoredfsr) サンプル スクリプトを使用します。 このスクリプトはディザスター リカバリーのみを目的としたもので、現状のまま保証なしで提供されます。
 
 ### <a name="is-there-a-way-to-know-the-state-of-replication"></a>レプリケーションの状態を知る方法はありますか?
 
@@ -304,9 +304,9 @@ DFS 管理は、Windows Server 2012 R2、Windows Server 2012、Windows Server�
       
   - DFS の管理には、レプリケーション バックログ、レプリケーションの効率、および特定のレプリケーション グループ内のファイルとフォルダーの数に関する、インボックスの診断レポートが用意されています。  
       
-  - Windows Server 2012 R2 の DFSR Windows PowerShell モジュールには、伝達テストを開始し、伝達レポートと正常性レポートを作成するためのコマンドレットが含まれています。 詳しくは、[Windows PowerShell の分散ファイル システム レプリケーション コマンドレット](https://technet.microsoft.com/library/dn296601.aspx)に関するページをご覧ください。  
+  - Windows Server 2012 R2 の DFSR Windows PowerShell モジュールには、伝達テストを開始し、伝達レポートと正常性レポートを作成するためのコマンドレットが含まれています。 詳しくは、[Windows PowerShell の分散ファイル システム レプリケーション コマンドレット](https://technet.microsoft.com/library/dn296601.aspx)に関するページをご覧ください。  
       
-  - Dfsrdiag.exe は、バックログ カウントを生成したり、伝達テストをトリガーしたりできるコマンドライン ツールです。 どちらでもレプリケーションの状態が表示されます。 伝達では、すべてのノードにファイルがレプリケートされているかどうかが示されます。 バックログでは、2 台のコンピューターが同期されるまでにレプリケートする必要があるファイルの数が表示されます。バックログ カウントは、レプリケーション グループ メンバーで処理されていない更新の数です。 Windows Server 2012 R2、Windows Server 2012、または Windows Server 2008 R2 が実行されているコンピューターでは、Dfsrdiag.exe を使って、DFS レプリケーションで現在レプリケートされている更新を表示することもできます。  
+  - Dfsrdiag.exe は、バックログ カウントを生成したり、伝達テストをトリガーしたりできるコマンドライン ツールです。 どちらでもレプリケーションの状態が表示されます。 伝達では、すべてのノードにファイルがレプリケートされているかどうかが示されます。 バックログでは、2 台のコンピューターが同期されるまでにレプリケートする必要があるファイルの数が表示されます。バックログ カウントは、レプリケーション グループ メンバーで処理されていない更新の数です。 Windows Server 2012 R2、Windows Server 2012、または Windows Server 2008 R2 が実行されているコンピューターでは、Dfsrdiag.exe を使って、DFS レプリケーションで現在レプリケートされている更新を表示することもできます。  
       
   - スクリプトでは、WMI を使って、手動または MOM を介して、バックログ情報を収集できます。  
       
@@ -339,11 +339,11 @@ DFS レプリケーションでは、ユーザーが接続で使用する最大�
 
 ただし、帯域幅の調整は 100% 正確ではなく、短時間 DFS レプリケーションによってにリンクが飽和する可能性があります。 これは、DFS レプリケーションによる帯域幅の調整が RPC 呼び出しを制限することで行われるためです。 このプロセスは、RPC など、ネットワーク スタックの下位レベルのさまざまなバッファーに依存しているため、レプリケーション トラフィックが急増し、ネットワーク リンクが飽和状態になることがあります。
 
-Windows Server 2008 の DFS レプリケーションには、いくつかのパフォーマンス強化が含まれます。「[Windows Server 2003 SP1 から Windows Server 2008 への機能の変更](https://technet.microsoft.com/library/cc753208)」で[分散ファイル システム](https://technet.microsoft.com/library/Cc753479)に関するトピックを参照してください。
+Windows Server 2008 の DFS レプリケーションには、いくつかのパフォーマンス強化が含まれます。「[Windows Server 2003 SP1 から Windows Server 2008 への機能の変更](https://technet.microsoft.com/library/cc753208)」で[分散ファイル システム](https://technet.microsoft.com/library/Cc753479)に関するトピックを参照してください。
 
 ### <a name="how-does-dfs-replication-performance-compare-with-frs"></a>FRS と比較して DFS レプリケーションのパフォーマンスはどうですか?
 
-DFS レプリケーションは、FRS よりはるかに高速です。大きなファイルに対して小さな変更が行われ、RDC が有効になっている場合は特にそうです。 たとえば、RDC を使用すると、2 MB の PowerPoint® プレゼンテーションに対する小さな変更でのネットワーク経由の送信量が、60 キロバイト (KB) だけになる可能性があり、転送バイト数が 97% 削減されます。
+DFS レプリケーションは、FRS よりはるかに高速です。大きなファイルに対して小さな変更が行われ、RDC が有効になっている場合は特にそうです。 たとえば、RDC を使用すると、2 MB の PowerPoint&reg; プレゼンテーションに対する小さな変更でのネットワーク経由の送信量が、60 キロバイト (KB) だけになる可能性があり、転送バイト数が 97% 削減されます。
 
 RDC は、64 KB 未満のファイルでは使用されず、ネットワーク帯域幅が競合しない高速 LAN ではメリットがない可能性があります。 RDC は、DFS 管理を使用して、接続ごとに無効にすることができます。
 
@@ -448,7 +448,7 @@ RDC は、ファイルが最小サイズのしきい値を超えた場合に使�
 <td><p>はい</p></td>
 </tr>
 <tr class="odd">
-<td><p>Windows Server 2008</p></td>
+<td><p>Windows Server 2008</p></td>
 <td><p>いいえ</p></td>
 <td><p>はい</p></td>
 <td><p>いいえ</p></td>
@@ -462,7 +462,7 @@ RDC は、ファイルが最小サイズのしきい値を超えた場合に使�
 </tbody>
 </table>
 
-\* Windows Server 2012 R2 では、必要に応じて、ファイル間 RDC を無効にすることができます。
+\* Windows Server 2012 R2 では、必要に応じて、ファイル間 RDC を無効にすることができます。
 
 ## <a name="replication-details"></a>レプリケーションの詳細
 
@@ -610,7 +610,7 @@ DFS レプリケーションでは、競合があってもファイルはマー�
 
 ### <a name="how-do-i-force-replication-or-polling"></a>レプリケーションまたはポーリングを強制的に行うにはどうすればよいですか?
 
-DFS 管理を使用することで、直ちにレプリケーションを強制的に実行できます。[レプリケーション スケジュールの編集](https://technet.microsoft.com/library/Cc732278)に関するページをご覧ください。 また、Windows Server 2012 R2 で導入された DFSR PowerShell モジュールに含まれる `Sync-DfsReplicationGroup` コマンドレット、または **Dfsrdiag SyncNow** コマンドを使用して、レプリケーションを強制的に行うこともできます。 強制的なポーリングは、`Update-DfsrConfigurationFromAD` コマンドレットまたは **Dfsrdiag PollAD** コマンドを使用して実行できます。
+DFS 管理を使用することで、直ちにレプリケーションを強制的に実行できます。[レプリケーション スケジュールの編集](https://technet.microsoft.com/library/Cc732278)に関するページをご覧ください。 また、Windows Server 2012 R2 で導入された DFSR PowerShell モジュールに含まれる `Sync-DfsReplicationGroup` コマンドレット、または **Dfsrdiag SyncNow** コマンドを使用して、レプリケーションを強制的に行うこともできます。 強制的なポーリングは、`Update-DfsrConfigurationFromAD` コマンドレットまたは **Dfsrdiag PollAD** コマンドを使用して実行できます。
 
 ### <a name="is-it-possible-to-configure-a-quiet-time-between-replications-for-files-that-change-frequently"></a>頻繁に変更されるファイルのレプリケーション間の待ち時間を構成できますか?
 
@@ -741,7 +741,7 @@ DFS レプリケーションによって競合が検出されると、最後に�
 </tr>
 <tr class="even">
 <td><p>2013 年 10 月 9 日</p></td>
-<td><p>Windows Server 2012 R2でのテスト結果で、「DFS レプリケーションにはどのような制限がありますか?」セクションを更新しました。</p></td>
+<td><p>Windows Server 2012 R2でのテスト結果で、「DFS レプリケーションにはどのような制限がありますか?」セクションを更新しました。</p></td>
 <td><p>最新バージョンの Windows Server に関する更新</p></td>
 </tr>
 <tr class="odd">

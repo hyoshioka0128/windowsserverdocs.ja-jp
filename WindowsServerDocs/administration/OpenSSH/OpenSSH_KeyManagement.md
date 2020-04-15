@@ -1,17 +1,16 @@
 ---
 ms.date: 09/27/2018
 ms.topic: conceptual
-keywords: OpenSSH, SSH, SSHD, インストール, 設定
 contributor: maertendMSFT
-author: maertendMSFT
-title: Windows 用 OpenSSH Server 構成
-ms.product: w10
-ms.openlocfilehash: 5b2fbc974223a6e4e611f92ce2a0c32bc77eca5d
-ms.sourcegitcommit: d46f3a1b238ab773900089b0de7279326789a327
+author: maertendmsft
+title: Windows 用 OpenSSH サーバー構成
+ms.product: windows-server
+ms.openlocfilehash: defb8875ca73c0d08fb0fa0764ed3ddf9003e09c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/02/2020
-ms.locfileid: "78214923"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852045"
 ---
 # <a name="openssh-key-management"></a>OpenSSH キーの管理
 

@@ -1,23 +1,19 @@
 ---
 title: リリース ノート - Windows Server 2016 に関する重要な問題
 description: クラッシュ、ハング、インストールの失敗、データの損失を回避するための回避策を必要とする重大な問題についてまとめます。クラッシュ、ハング、インストールの失敗、データの損失を回避するための回避策を必要とする重大な問題についてまとめます。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.date: 11/13/2018
 ms.technology: server-general
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 134aab85-664f-4d44-87ef-9e5fd389071f
 author: jaimeo
 ms.author: jaimeo
-ms.openlocfilehash: f4568e1781dbe385d8abe8a96f07841391506738
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.openlocfilehash: 8ceff837c2b85466f5583eed03f39e73f32fd4a4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822165"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80826385"
 ---
 # <a name="release-notes-important-issues-in-windows-server-2016"></a>リリース ノート:Windows Server 2016 に関する重要な問題
 
@@ -29,7 +25,7 @@ ms.locfileid: "76822165"
 
 ## <a name="express-updates-available-starting-in-november-2018-new"></a>2018 年 11 月 から利用できる高速更新プログラム (新規)
 
-2018 年 11 月の "火曜日の更新" の更新から、Windows では Windows Server 2016 用の[高速更新プログラム](express-updates.md)が再発行されます。 WSUS と Configuration Manager を使用している場合、Windows Server 2016 更新用の 2 つのパッケージ (完全更新プログラムと高速更新プログラム) が再表示されます。 お使いのサーバー環境で高速更新プログラムを使用する場合、高速更新プログラムを正しくインストールするには、2017 年 11 月以降の完全更新プログラム (KB# 4048953) を使用してサーバーが更新されていることを確認する必要があります。 2017 11B 更新プログラム (KB 4048953) 以降更新されていないサーバーで高速更新プログラムを試行した場合、無限ループに入って帯域幅や CPU リソースを消費する繰り返しエラーが発生します。 このシナリオが発生した場合は、高速更新プログラムのプッシュを停止し、最新の完全更新プログラムをプッシュして、エラー ループを停止します。
+2018 年 11 月の Update Tuesday 更新プログラムから、Windows では Windows Server 2016 用の[高速更新プログラム](express-updates.md)が再発行されます。 WSUS と Configuration Manager を使用している場合、Windows Server 2016 更新用の 2 つのパッケージ (完全更新プログラムと高速更新プログラム) が再表示されます。 お使いのサーバー環境で高速更新プログラムを使用する場合、高速更新プログラムを正しくインストールするには、2017 年 11 月以降の完全更新プログラム (KB# 4048953) を使用してサーバーが更新されていることを確認する必要があります。 2017 11B 更新プログラム (KB 4048953) 以降更新されていないサーバーで高速更新プログラムを試行した場合、無限ループに入って帯域幅や CPU リソースを消費する繰り返しエラーが発生します。 このシナリオが発生した場合は、高速更新プログラムのプッシュを停止し、最新の完全更新プログラムをプッシュして、エラー ループを停止します。
 
 ## <a name="server-core-installation-option"></a>Server Core インストール オプション
 
@@ -42,7 +38,7 @@ Server Core インストール オプションを使用して Windows Server 201
 ## <a name="containers"></a>コンテナー
 
 [comment]: # (ID:371; 提出者: taylorb; 状態:サインオフ)
-- コンテナーを使用する前に、[Windows 10 Version 1607 用のサービス スタック更新プログラム: 2016 年 8 月 23 日](https://support.microsoft.com/kb/3176936) またはそれ以降に利用可能になった更新プログラムをインストールしてください。 インストールしないと、コンテナーの作成、開始、または実行に失敗するほか、"Win32 で CreateProcess が失敗しました。RPC サーバーが利用できません" のようなエラーなど、多くの問題が発生します。
+- コンテナーを使用する前に、[Windows 10 Version 1607 用のサービス スタック更新プログラム: 2016 年 8 月 23 日](https://support.microsoft.com/kb/3176936) またはそれ以降に利用可能になった更新プログラムをインストールしてください。 インストールしないと、コンテナーの作成、開始、または実行に失敗するほか、"Win32 で CreateProcess が失敗しました: RPC サーバーが利用できません。
 
 [comment]: # (ID:373; 提出者: plang; 状態: サインオフ)
 - NanoServerPackage OneGet プロバイダーは、Windows コンテナーでは動作しません。 これを回避するには、(コンテナー以外の) 別のコンピューターで Find-NanoServerPackage および Save-NanoServerPackage を使用して、必要なパッケージをダウンロードします。 その後、ダウンロードしたパッケージをコンテナーにコピーしてインストールします。
@@ -86,7 +82,7 @@ Windows Server 2016 を新たにインストールして実行した場合、Win
 
 ## <a name="copyright"></a>著作権
 
-このドキュメントは「現状有姿のまま」提供されます。 このドキュメントに記載されている情報および見解 (URL 等のインターネット Web サイトに関する情報を含む) は、将来予告なしに変更されることがあります。  
+このドキュメントは、現状のままで提供されています。 このドキュメントに記載されている情報および見解 (URL 等のインターネット Web サイトに関する情報を含む) は、将来予告なしに変更されることがあります。  
 
 このドキュメントは、マイクロソフト製品に含まれる知的財産に対していかなる法的権利も付与しません。 お客様は、内部的な参照目的に限り、このドキュメントを複製して使用することができます。  
 

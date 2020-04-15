@@ -1,12 +1,8 @@
 ---
 title: Android クライアントの概要
 description: Android クライアントに関する一般的な情報。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 64f038e1-40ec-4c67-938b-72edea49e5d8
 author: heidilohr
@@ -14,12 +10,12 @@ manager: lizross
 ms.author: helohr
 ms.date: 03/12/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: d4ef08107c816aebf6563e57e5e76b12b793d472
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: a9cb49f2570b297c81f41412ad041215090538d0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79323424"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856235"
 ---
 # <a name="get-started-with-the-android-client"></a>Android クライアントの概要
 

@@ -1,5 +1,5 @@
 ---
-title: Robocopy を使用して DFS レプリケーション用にファイルの事前シード処理を行う
+title: robocopy を使用して DFS レプリケーション用にファイルのプレシードを行う
 description: Robocopy.exe を使用して DFS レプリケーション用にファイルの事前シード処理を行う方法。
 ms.prod: windows-server
 ms.topic: article
@@ -8,14 +8,14 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 05/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ea5cd954dde6d4fa8fcaa7874f75cb9588115ab1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8ff800fc2a0885cec39ca104607d7207f0bd8ce0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402127"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815605"
 ---
-# <a name="use-robocopy-to-preseed-files-for-dfs-replication"></a>Robocopy を使用して DFS レプリケーション用にファイルの事前シード処理を行う
+# <a name="use-robocopy-to-pre-seed-files-for-dfs-replication"></a>robocopy を使用して DFS レプリケーション用にファイルのプレシードを行う
 
 >適用先:Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
 
@@ -85,7 +85,7 @@ Robocopy を使用してファイルを事前シード処理する前に、最�
 >[!NOTE]
 >ソース コンピューターとターゲット コンピューターのどちらでも Robocopy を実行できます。 次の手順では、ターゲット サーバーで Robocopy を実行する方法について説明します。このサーバーでは、通常はより新しいオペレーティング システムが実行されているため、より新しいオペレーティング システムによって提供される追加の Robocopy 機能を利用できます。
 
-### <a name="preseed-the-replicated-files-onto-the-destination-server-with-robocopy"></a>レプリケートされたファイルを Robocopy を使用してターゲット サーバーに事前シード処理する
+### <a name="pre-seed-the-replicated-files-onto-the-destination-server-with-robocopy"></a>レプリケートされたファイルを Robocopy を使用してターゲット サーバーに事前シード処理する
 
 1. ソース サーバーとターゲット サーバーの両方でローカルの管理者グループのメンバーであるアカウントを使用してターゲット サーバーにサインインします。
 
@@ -117,7 +117,7 @@ Robocopy を使用してファイルを事前シード処理する前に、最�
     たとえば、次のコマンドでは、レプリケートされたソース フォルダー E:\\RF01 からターゲット サーバー上のデータ ドライブ D にファイルがレプリケートされます。
     
     ```PowerShell
-    robocopy.exe "\\srv01\e$\rf01" "d:\rf01" /e /b /copyall /r:6 /w:5 /MT:64 /xd DfsrPrivate /tee /log:c:\temp\preseedsrv02.log
+    robocopy.exe "\\srv01\e$\rf01" "d:\rf01" /e /b /copyall /r:6 /w:5 /MT:64 /xd DfsrPrivate /tee /log:c:\temp\pre-seedsrv02.log
     ```
     
     >[!NOTE]

@@ -2,24 +2,21 @@
 title: WSUS データベースを (Windows Internal Database) WID から SQL に移行する
 description: Windows Server Update Service (WSUS) トピック-Windows Internal Database インスタンスから SQL Server のローカルまたはリモートインスタンスに WSUS データベース (SUSDB) を移行する方法について説明します。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-wsus
-ms.tgt_pltfrm: na
 ms.topic: get-started article
 ms.assetid: 90e3464c-49d8-4861-96db-ee6f8a09g7dr
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dougkim
 ms.date: 07/25/2018
-ms.openlocfilehash: 594c20cbfea521006de6d1ec69763669298376e6
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 8d38833170aae5e13f9d42b726d7cb0b3c12de56
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948520"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828455"
 ---
->適用対象: Windows Server 2012、Windows Server 2012 R2、Windows Server 2016
+>適用対象:Windows Server 2012、Windows Server 2012 R2、Windows Server 2016
 
 # <a name="migrating-the-wsus-database-from-wid-to-sql"></a>WID から SQL への WSUS データベースの移行
 
@@ -123,7 +120,7 @@ SUSDB をアタッチした後、次の手順を実行して、 **NT AUTHORITY\N
     ![image8](images/image8.png)
 4. **[ユーザーマッピング]** ページで、次のようにします。
     - **[このログインにマップ]** されたユーザー で、 **[SUSDB]** を選択します。
-    - **[データベースロールのメンバーシップ: SUSDB]** で、次のチェックボックスがオンになっていることを確認します。
+    - [**データベースロールのメンバーシップ] で次のことを行います。SUSDB**、次のチェックボックスがオンになっていることを確認します。
         - **public**
         - **webService** ![image9](images/image9.png)
 5. **[OK]** をクリックします。
@@ -150,7 +147,7 @@ SUSDB をアタッチした後、次の手順を実行して、 **NT AUTHORITY\N
     > ![image11](images/image11.png)
 
 4. **[ユーザーマッピング]** ページで、 **[このログインにマップ]** されたユーザー の下にある**SUSDB**データベースを選択します。
-5. **"データベースロールのメンバーシップ: SUSDB"** : ![image12](images/image12.png) で**webservice**を確認します。
+5. **データベースロールのメンバーシップで**webservice**を確認します。SUSDB**: ![image12](images/image12.png)
 6. **[OK]** をクリックして設定を保存します。
     > [!NOTE]
     > 変更を有効にするには、SQL サービスの再起動が必要になる場合があります。
@@ -161,9 +158,9 @@ SUSDB をアタッチした後、次の手順を実行して、 **NT AUTHORITY\N
 > 慎重にこのセクションの手順に従います。 誤ってレジストリを変更すると、重大な問題が発生する可能性があります。 変更する前に、問題が発生した場合に[復元するためにレジストリをバックアップ](https://support.microsoft.com/help/322756)します。
 
 1. **[スタート]** ボタンをクリックし、 **[ファイル名を指定して実行]** をクリックして、「**regedit**」と入力し、 **[OK]** をクリックします。
-2. 次のキーを見つけます。 **HKEY_LOCAL_MACHINE \software\microsoft\updateservices\server\setup\sqlservername**
+2. 次のキーを探します。**HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\UpdateServices\Server\Setup\SqlServerName**
 3. **[値]** テキストボックスに「 **[ServerName]\\[InstanceName]** 」と入力し、 **[OK]** をクリックします。 インスタンス名が既定のインスタンスの場合は、「 **[ServerName]** 」と入力します。
-4. 次のキーを見つけます。 **HKEY_LOCAL_MACHINE \Software\microsoft\update Services\Server\Setup\Installed Role Services\UpdateServices-WidDatabase** ![image13](images/image13.png)
+4. 次のキーを探します。**HKEY_LOCAL_MACHINE \Software\microsoft\update Services\Server\Setup\Installed Role Services\UpdateServices-WidDatabase** ![image13](images/image13.png)
 5. キーの名前を**Updateservices-Database** ![image41](images/image14.png) に変更します。
 
     > [!NOTE]
@@ -192,4 +189,4 @@ PowerShell の使用:
 Uninstall-WindowsFeature -Name 'Windows-Internal-Database'
 ```
 
-WID ロールが削除された後、次のレジストリキーが存在することを確認します: **HKEY_LOCAL_MACHINE \Software\microsoft\update Services\Server\Setup\Installed role Services\UpdateServices-Database**
+WID ロールが削除されたら、次のレジストリキーが存在することを確認します。**HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Update Services\Server\Setup\Installed Role Services\UpdateServices-Database**

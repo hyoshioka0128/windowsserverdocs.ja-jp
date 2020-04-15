@@ -1,28 +1,24 @@
 ---
 title: Azure の地理冗長型 RDS データ センター
 description: 地理的に離れた複数の場所にわたって高可用性を実現するために、複数のデータ センターを使用した RDS 展開を作成する方法について説明します。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 61c36528-cf47-4af0-83c1-a883f79a73a5
 author: haley-rowland
 ms.author: elizapo
 ms.date: 06/14/2017
 manager: dongill
-ms.openlocfilehash: 55b96c112dd7f7294ff674ee4675501af4287da4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5c0f5d6937a79f36df264597400fe71af3f3779b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403960"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855595"
 ---
 # <a name="create-a-geo-redundant-multi-data-center-rds-deployment-for-disaster-recovery"></a>ディザスター リカバリー用の地理冗長型複数データ センター RDS 展開の作成
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016
+>適用先:Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016
 
 Azure で複数のデータ センターを活用することにより、リモート デスクトップ サービス展開のディザスター リカバリーを行えるようになります。 1 つの Azure リージョン (西ヨーロッパなど) のデータ センターを使用する標準の高可用性 RDS 展開 (「[リモート デスクトップ サービスのアーキテクチャ](desktop-hosting-logical-architecture.md)」で概説) とは異なり、複数データ センター展開は、地理的に離れた複数の場所にあるデータ センターを使用して、展開の可用性を高めます。1 つの Azure データ センターが使用できなくても、複数のリージョンが同時にダウンする可能性はほとんどありません。 地理冗長型 RDS アーキテクチャを展開することで、リージョン全体に壊滅的な障害が発生した場合に、フェールオーバーを有効にすることができます。
 
@@ -86,13 +82,13 @@ RDS 展開全体は、地理冗長型の展開を作成するために、2 つ�
 両方の展開で UPD を有効にするには、次の手順を実行します。
 
 1. [Set-RDSessionCollectionConfiguration コマンドレット](https://docs.microsoft.com/powershell/module/remotedesktop/set-rdsessioncollectionconfiguration)を実行して、プライマリ (アクティブ) 展開のユーザー プロファイル ディスクを有効にします。(「展開の手順」の手順 7 で作成した) ソース ボリューム上のファイル共有のパスを指定します。
-2. 宛先ボリュームがソース ボリュームになるように、記憶域レプリカの方向を反転します (これにより、そのボリュームがマウントされ、セカンダリ展開がアクセスできるようになります) 。 これを行うには、**Set-SRPartnership** コマンドレットを実行します。 次に、例を示します。
+2. 宛先ボリュームがソース ボリュームになるように、記憶域レプリカの方向を反転します (これにより、そのボリュームがマウントされ、セカンダリ展開がアクセスできるようになります) 。 これを行うには、**Set-SRPartnership** コマンドレットを実行します。 たとえば、次のように入力します。
 
    ```powershell
    Set-SRPartnership -NewSourceComputerName "cluster-b-s2d-c" -SourceRGName "cluster-b-s2d-c" -DestinationComputerName "cluster-a-s2d-c" -DestinationRGName "cluster-a-s2d-c"
    ```
 3. セカンダリ (パッシブ) 展開のユーザー プロファイル ディスクを有効にします。 手順 1 でプライマリ展開に行った手順と同じ手順を使用します。
-4. 記憶域レプリカの方向をもう一度反転します。それにより、元のソース ボリュームが再び SR パートナーシップのソース ボリュームになり、プライマリ展開がファイル共有にアクセスできるようになります。 次に、例を示します。
+4. 記憶域レプリカの方向をもう一度反転します。それにより、元のソース ボリュームが再び SR パートナーシップのソース ボリュームになり、プライマリ展開がファイル共有にアクセスできるようになります。 たとえば、次のように入力します。
 
    ```powershell
    Set-SRPartnership -NewSourceComputerName "cluster-a-s2d-c" -SourceRGName "cluster-a-s2d-c" -DestinationComputerName "cluster-b-s2d-c" -DestinationRGName "cluster-b-s2d-c"
@@ -123,7 +119,7 @@ Traffic Manager では、"正常" としてマークされるためにエンド�
 
 ## <a name="failover"></a>フェールオーバー
 
-アクティブ/パッシブ展開の場合は、フェールオーバーでセカンダリ展開の VM を起動する必要があります。 これは、手動で行うことも、自動化スクリプトを使用して行うこともできます。 記憶域スペース ダイレクト SOFS の壊滅的なフェールオーバーの場合は、記憶域レプリカのパートナーシップの方向を変更して、宛先ボリュームがソース ボリュームになるようにします。 次に、例を示します。
+アクティブ/パッシブ展開の場合は、フェールオーバーでセカンダリ展開の VM を起動する必要があります。 これは、手動で行うことも、自動化スクリプトを使用して行うこともできます。 記憶域スペース ダイレクト SOFS の壊滅的なフェールオーバーの場合は、記憶域レプリカのパートナーシップの方向を変更して、宛先ボリュームがソース ボリュームになるようにします。 たとえば、次のように入力します。
 
    ```powershell
    Set-SRPartnership -NewSourceComputerName "cluster-b-s2d-c" -SourceRGName "cluster-b-s2d-c" -DestinationComputerName "cluster-a-s2d-c" -DestinationRGName "cluster-a-s2d-c"

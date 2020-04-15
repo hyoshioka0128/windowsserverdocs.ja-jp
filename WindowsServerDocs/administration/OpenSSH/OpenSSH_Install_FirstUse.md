@@ -1,16 +1,15 @@
 ---
 ms.date: 09/27/2019
 ms.topic: conceptual
-keywords: OpenSSH, SSH, SSHD, インストール, 設定
 contributor: maertendMSFT
-author: maertendMSFT
+author: maertendmsft
 title: Windows 用 OpenSSH のインストール
-ms.openlocfilehash: 9cf87229f5ebde6f0ff52a4e9b1b11b6e3ed4f0a
-ms.sourcegitcommit: 8771a9f5b37b685e49e2dd03c107a975bf174683
+ms.openlocfilehash: b9889a9057a1ddd5181f4ea4aab35680d524eabf
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76145918"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852055"
 ---
 # <a name="installation-of-openssh-for-windows-server-2019-and-windows-10"></a>Windows Server 2019 および Windows 10 用 OpenSSH のインストール #
 

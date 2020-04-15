@@ -1,23 +1,21 @@
 ---
 title: Nano Server 用の PowerShell コマンドレットを開発する
-description: 'CIM の移植, .NET コマンドレット, C++ '
+description: CIM の移植, .NET コマンドレット, C++
 ms.prod: windows-server
-ms.service: na
 manager: DonGill
 ms.technology: server-nano
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7b4267f0-1c91-4a40-9262-5daf4659f686
 author: jaimeo
 ms.author: jaimeo
 ms.date: 09/06/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 434b79508dbf88a90348840573255c3084d6e989
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 3965e453483b3515e4957ecfaba39cf9a0b8104f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948454"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80827075"
 ---
 # <a name="developing-powershell-cmdlets-for-nano-server"></a>Nano Server 用の PowerShell コマンドレットを開発する
 
@@ -74,7 +72,7 @@ CompatiblePSEditions Property   System.Collections.Generic.IEnumerable[string] C
 ```  
 利用可能なモジュールの一覧を取得するとき、PowerShell のエディションで一覧にフィルターを適用できます。  
 ```powershell  
-Get-Module -ListAvailable | ? CompatiblePSEditions -Contains "Desktop"  
+Get-Module -ListAvailable | ? CompatiblePSEditions -Contains Desktop  
   
     Directory: C:\Program Files\WindowsPowerShell\Modules  
   
@@ -83,21 +81,21 @@ ModuleType Version    Name                                ExportedCommands
 ---------- -------    ----                                ----------------  
 Manifest   1.0        ModuleWithPSEditions  
   
-Get-Module -ListAvailable | ? CompatiblePSEditions -Contains "Core" | % CompatiblePSEditions  
+Get-Module -ListAvailable | ? CompatiblePSEditions -Contains Core | % CompatiblePSEditions  
 Desktop  
 Core  
   
 ```  
 スクリプトの作成者は、#requires ステートメントに PSEdition パラメーターを使用することで、PowerShell の互換性のあるエディション以外でスクリプトが実行されるのを防止できます。  
 ```powershell  
-Set-Content C:\script.ps1 -Value "#requires -PSEdition Core  
-Get-Process -Name PowerShell"  
+Set-Content C:\script.ps1 -Value #requires -PSEdition Core  
+Get-Process -Name PowerShell  
 Get-Content C:\script.ps1  
 #requires -PSEdition Core  
 Get-Process -Name PowerShell  
   
 C:\script.ps1  
-C:\script.ps1 : The script 'script.ps1' cannot be run because it contained a "#requires" statement for PowerShell editions 'Core'. The edition of PowerShell that is required by the script does not match the currently running PowerShell Desktop edition.  
+C:\script.ps1 : The script 'script.ps1' cannot be run because it contained a #requires statement for PowerShell editions 'Core'. The edition of PowerShell that is required by the script does not match the currently running PowerShell Desktop edition.  
 At line:1 char:1  
 + C:\script.ps1  
 + ~~~~~~~~~~~~~  
@@ -145,7 +143,7 @@ Nano Server 上の C++ の開発に関する前提条件とチュートリアル
 ほとんどの C# コードは Nano Server でサポートされます。 [ApiPort](https://github.com/Microsoft/dotnet-apiport) を使用すると、互換性のない API を検出できます。  
   
 ### <a name="powershell-core-sdk"></a>PowerShell Core SDK  
-[PowerShell ギャラリー](https://www.powershellgallery.com/packages/Microsoft.PowerShell.NanoServer.SDK/)から入手できる "Microsoft.PowerShell.NanoServer.SDK" モジュールを使用すると、Nano Server で使用可能な CoreCLR および PowerShell Core のバージョンをターゲットとする .NET コマンドレットを Visual Studio 2015 Update 2 で簡単に開発できるようになります。 このモジュールは、PowerShellGet と次のコマンドを使用してインストールすることができます。  
+[PowerShell ギャラリー](https://www.powershellgallery.com/packages/Microsoft.PowerShell.NanoServer.SDK/)から入手できる Microsoft.PowerShell.NanoServer.SDK モジュールを使用すると、Nano Server で使用可能な CoreCLR および PowerShell Core のバージョンをターゲットとする .NET コマンドレットを Visual Studio 2015 Update 2 で簡単に開発できるようになります。 このモジュールは、PowerShellGet と次のコマンドを使用してインストールすることができます。  
   
 `Find-Module Microsoft.PowerShell.NanoServer.SDK -Repository PSGallery | Install-Module -Scope <scope>`  
   
@@ -214,7 +212,7 @@ public class TestNetConnectionResult
 '@  
 # Create object and set properties  
 $result = New-Object TestNetConnectionResult  
-$result.ComputerName = "Foo"  
+$result.ComputerName = Foo  
 $result.RemoteAddress = 1.1.1.1  
   
 ```  
@@ -231,7 +229,7 @@ class TestNetConnectionResult
 }  
 # Create object and set properties  
 $result = [TestNetConnectionResult]::new()  
-$result.ComputerName = "Foo"  
+$result.ComputerName = Foo  
 $result.RemoteAddress = 1.1.1.1  
   
 ```  

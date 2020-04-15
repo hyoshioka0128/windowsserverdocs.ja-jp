@@ -1,18 +1,18 @@
 ---
 title: Windows Server のアップグレードに関する概要 | Microsoft Docs
 description: Windows Server の一般的なアップグレード情報と、実際のアップグレードの実行前に考慮すべきことについて説明します。
-ms.prod: windows server
+ms.prod: windows-server
 ms.technology: server-general
 ms.topic: upgrade
 author: RobHindman
 ms.author: robhind
 ms.date: 09/10/2019
-ms.openlocfilehash: 6f57e52657ca3c80c92d56c54ea87e43aabd1e99
-ms.sourcegitcommit: 27f0caf74e88781054250455c3c1adf06deb6234
+ms.openlocfilehash: 1ac4cbe8b9bda4ac2de2c7ad7ec27b1534c0de72
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71124792"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854235"
 ---
 # <a name="overview-about-windows-server-upgrades"></a>Windows Server のアップグレードに関する概要
 
@@ -42,3 +42,4 @@ ms.locfileid: "71124792"
 Windows Server は、通常、少なくとも 1 つ (場合によっては 2 つ) のバージョンを経てアップグレードできます。 たとえば、Windows Server 2012 R2 と Windows Server 2016 はいずれも Windows Server 2019 にインプレース アップグレードできます。
 
 オペレーティング システムの評価版から製品版、古い製品版から新しい製品版、または場合によってはオペレーティング システムのボリューム ライセンス版から通常の製品版にアップグレードすることもできます。 インプレース アップグレード以外のアップグレード オプションの詳細については、[Windows Server のアップグレード オプションと変換オプション](../get-started/supported-upgrade-paths.md)に関する記事を参照してください。
+""'

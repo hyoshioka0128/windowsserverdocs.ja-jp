@@ -2,22 +2,20 @@
 title: Nano Server のインストール
 description: Nano Server のクリーン インストール、アップグレード、移行、および評価
 ms.prod: windows-server
-ms.service: na
 manager: dougkim
 ms.technology: server-nano
 ms.date: 09/06/2017
-ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 2c2fa45b-6f3b-4663-b421-2da6ecc463bf
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 09f031c19c8f6d1105d47b9f22d52db30e9c57ef
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.openlocfilehash: 68de1697c8655075041cd9e598ccd2bbc2e6237b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822155"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80826985"
 ---
 # <a name="install-nano-server"></a>Nano Server のインストール
 
@@ -30,7 +28,7 @@ Windows Server 2016 では、新しいインストール オプションであ�
 
 Nano Server は、次のようなさまざまなシナリオに適しています。  
   
--   Hyper-V 仮想マシンの "コンピューティング" ホストとして (クラスター化されているかどうかに関係なく)  
+-   Hyper-V 仮想マシンのコンピューティング ホストとして (クラスター化されているかどうかに関係なく)  
   
 -   スケールアウト ファイル サーバーの記憶域ホストとして  
   
@@ -42,9 +40,9 @@ Nano Server は、次のようなさまざまなシナリオに適していま�
   
 ## <a name="important-differences-in-nano-server"></a>Nano Server における重要な相違点
 
-Nano Server は、コンテナーおよびマイクロサービスに基づく "クラウド ネイティブ" アプリケーションを実行するための軽量なオペレーティング システムとして、またはフットプリントが大幅に削減された機敏性とコスト効果の高いデータ センター ホストとして最適化されています。このため、Nano Server と、デスクトップ エクスペリエンスのインストールを使用した Server Core または Server との間には重要な違いがあります。
+Nano Server は、コンテナーおよびマイクロサービスに基づくクラウド ネイティブ アプリケーションを実行するための軽量なオペレーティング システムとして、またはフットプリントが大幅に削減された機敏性とコスト効果の高いデータ センター ホストとして最適化されています。このため、Nano Server と、デスクトップ エクスペリエンスのインストールを使用した Server Core または Server との間には重要な違いがあります。
 
-- Nano Server は "ヘッドレス" 型であり、ローカル ログオン機能やグラフィカル ユーザー インターフェイスはありません。
+- Nano Server はヘッドレス型であり、ローカル ログオン機能やグラフィカル ユーザー インターフェイスはありません。
 - 64 ビットのアプリケーション、ツール、およびエージェントのみがサポートされています。
 - Nano Server は、Active Directory ドメイン コントローラーとして使用することはできません。
 - グループ ポリシーはサポートされていません。 ただし、[必要な状態の構成 (DSC)](https://msdn.microsoft.com/powershell/dsc/nanoDsc) を使用することで、設定を大規模に適用できます。
@@ -58,7 +56,7 @@ Nano Server は、コンテナーおよびマイクロサービスに基づく "
 - Nano Server は、Current Branch for Business (CBB) モデルでのみサポートされています。現時点で、Nano Server 用の Long-Term Servicing Branch (LTSB) リリースはありません。 詳細については、次のサブセクションを参照してください。
 
 ### <a name="current-branch-for-business"></a>Current Branch for Business
-Nano Server は、開発サイクルが短い "クラウド歩調" で事業を進めているお客様をサポートするために、Current Branch for Business (CBB) と呼ばれる、よりアクティブなモデルで処理されます。 このモデルでは、Nano Server の機能更新のリリースが年に 2 回～ 3 回発生すると予想されます。 このモデルでは、Nano Server を運用環境に展開し運用する場合、[ソフトウェア アシュアランス](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default.aspx)が必要です。 サポートを維持するために、管理者は、2 つ後の CBB リリース以内に留まる必要があります。 ただし、これらのリリースで既存の展開の自動更新は行われません。管理者は、必要に応じて、新しい CBB リリースを手動でインストールします。 詳細については、「[Windows Server 2016 new Current Branch for Business servicing option](https://blogs.technet.microsoft.com/windowsserver/2016/07/12/windows-server-2016-new-current-branch-for-business-servicing-option/)」 (Windows Server 2016 の新しい Current Branch for Business サービス オプション) を参照してください。
+Nano Server は、開発サイクルが短いクラウド歩調で事業を進めているお客様をサポートするために、Current Branch for Business (CBB) と呼ばれる、よりアクティブなモデルで処理されます。 このモデルでは、Nano Server の機能更新のリリースが年に 2 回～ 3 回発生すると予想されます。 このモデルでは、Nano Server を運用環境に展開し運用する場合、[ソフトウェア アシュアランス](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default.aspx)が必要です。 サポートを維持するために、管理者は、2 つ後の CBB リリース以内に留まる必要があります。 ただし、これらのリリースで既存の展開の自動更新は行われません。管理者は、必要に応じて、新しい CBB リリースを手動でインストールします。 詳細については、「[Windows Server 2016 new Current Branch for Business servicing option](https://blogs.technet.microsoft.com/windowsserver/2016/07/12/windows-server-2016-new-current-branch-for-business-servicing-option/)」 (Windows Server 2016 の新しい Current Branch for Business サービス オプション) を参照してください。
 
 デスクトップ エクスペリエンスを使用する Server Core および Server インストール オプションは、5 年間のメインストリーム サポートと 5 年間の延長サポートで構成される [Long-Term Servicing Branch (LTSB) モデル](https://support.microsoft.com/lifecycle#gp%2Fgp_msl_policy)で処理されます。
 

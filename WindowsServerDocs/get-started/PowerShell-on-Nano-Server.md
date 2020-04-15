@@ -2,21 +2,19 @@
 title: Nano Server の PowerShell
 description: Nano Server 上の縮小された PowerShell 機能セットにおける相違点
 ms.prod: windows-server
-ms.service: na
 manager: DonGill
 ms.technology: server-nano
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 9b25b939-1e2c-4bed-a8d3-2a8e8e46b53d
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 1105ba9f4415061b25d0655d3f2d56929dbbdfec
-ms.sourcegitcommit: 5b055fc1d73375f68149c214152f1d63396dd6ca
+ms.openlocfilehash: 4879ae58c24596d64d24b6bece54d4c35837f00f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76248390"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80826765"
 ---
 # <a name="powershell-on-nano-server"></a>Nano Server の PowerShell
 
@@ -67,7 +65,7 @@ CompatiblePSEditions Property   System.Collections.Generic.IEnumerable[string] C
 ```
 利用可能なモジュールの一覧を取得するとき、PowerShell のエディションで一覧にフィルターを適用できます。
 ```powershell
-Get-Module -ListAvailable | ? CompatiblePSEditions -Contains "Desktop"
+Get-Module -ListAvailable | ? CompatiblePSEditions -Contains Desktop
 
     Directory: C:\Program Files\WindowsPowerShell\Modules
 
@@ -76,21 +74,21 @@ ModuleType Version    Name                                ExportedCommands
 ---------- -------    ----                                ----------------
 Manifest   1.0        ModuleWithPSEditions
 
-Get-Module -ListAvailable | ? CompatiblePSEditions -Contains "Core" | % CompatiblePSEditions
+Get-Module -ListAvailable | ? CompatiblePSEditions -Contains Core | % CompatiblePSEditions
 Desktop
 Core
 
 ```
 スクリプトの作成者は、#requires ステートメントに PSEdition パラメーターを使用することで、PowerShell の互換性のあるエディション以外でスクリプトが実行されるのを防止できます。
 ```powershell
-Set-Content C:\script.ps1 -Value "#requires -PSEdition Core
-Get-Process -Name PowerShell"
+Set-Content C:\script.ps1 -Value #requires -PSEdition Core
+Get-Process -Name PowerShell
 Get-Content C:\script.ps1
 #requires -PSEdition Core
 Get-Process -Name PowerShell
 
 C:\script.ps1
-C:\script.ps1 : The script 'script.ps1' cannot be run because it contained a "#requires" statement for PowerShell editions 'Core'. The edition of PowerShell that is required by the script does not match the currently running PowerShell Desktop edition.
+C:\script.ps1 : The script 'script.ps1' cannot be run because it contained a #requires statement for PowerShell editions 'Core'. The edition of PowerShell that is required by the script does not match the currently running PowerShell Desktop edition.
 At line:1 char:1
 + C:\script.ps1
 + ~~~~~~~~~~~~~
@@ -104,9 +102,9 @@ At line:1 char:1
 
 **Nano Server で使用できない Windows PowerShell の機能**
 * ADSI、ADO、および WMI の型アダプター
-* Enable-PSRemoting、Disable-PSRemoting (PowerShell リモート処理は既定で有効になります。「[Install Nano Server](Getting-Started-with-Nano-Server.md)」 (Nano Server のインストール) の「Windows PowerShell リモート処理を使用する」を参照してください)。
+* Enable-PSRemoting、Disable-PSRemoting (PowerShell リモート処理は既定で有効になります。「[Nano Server のインストール](Getting-Started-with-Nano-Server.md)」の「Windows PowerShell リモート処理を使用する」を参照してください)。
 * スケジュールされたジョブと PSScheduledJob モジュール
-* ドメインに参加するための Computer コマンドレット { Add | Remove } (Nano Server をドメインに参加させるさまざまな方法については、「[Install Nano Server](Getting-Started-with-Nano-Server.md)」 (Nano Server のインストール) の「Nano Server のドメインへの参加」を参照してください)。
+* ドメインに参加するための Computer コマンドレット { Add | Remove } (Nano Server をドメインに参加させるさまざまな方法については、「[Nano Server のインストール](Getting-Started-with-Nano-Server.md)」の「Nano Server のドメインへの参加」を参照してください)。
 * Reset-ComputerMachinePassword、Test-ComputerSecureChannel
 * プロファイル (受信リモート接続のスタートアップ スクリプトは `Set-PSSessionConfiguration` を使用して追加できます)
 * クリップボードのコマンドレット

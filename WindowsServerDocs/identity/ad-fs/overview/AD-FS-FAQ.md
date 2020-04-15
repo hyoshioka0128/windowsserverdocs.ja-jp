@@ -7,15 +7,14 @@ ms.author: billmath
 manager: mtillman
 ms.date: 04/17/2019
 ms.topic: article
-ms.custom: it-pro
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 48d93f515a5f3e5f8ce2c3ff9a1b40f300ca57ed
-ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
+ms.openlocfilehash: a1041bdc189238c7da32896e6f867f730e392d24
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/18/2020
-ms.locfileid: "76265744"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80814432"
 ---
 # <a name="ad-fs-frequently-asked-questions-faq"></a>AD FS についてよく寄せられる質問 (FAQ)
 
@@ -105,7 +104,7 @@ ATP をサポートする TLS 暗号スイートのみが AD FS と WAP サー�
 
 ## <a name="developer"></a>Developer
 
-### <a name="when-generating-an-id_token-with-adfs-for-a-user-authenticated-against-ad-how-is-the-sub-claim-generated-in-the-id_token"></a>AD に対して認証されたユーザー用の id_token を AD FS で生成するとき、"sub" 要求は id_token でどのように生成されますか?
+### <a name="when-generating-an-id_token-with-adfs-for-a-user-authenticated-against-ad-how-is-the-sub-claim-generated-in-the-id_token"></a>AD に対して認証されたユーザー用の id_token を ADFS で生成するとき、"sub" 要求は id_token でどのように生成されますか?
 "sub" 要求の値は、クライアント ID とアンカー要求の値のハッシュです。
 
 ### <a name="what-is-the-lifetime-of-the-refresh-tokenaccess-token-when-the-user-logs-in-via-a-remote-claims-provider-trust-over-ws-fedsaml-p"></a>ユーザーが WS-Fed/SAML-P を使用してリモート要求プロバイダー信頼経由でログインした場合、更新トークンとアクセス トークンの有効期間はどのくらいですか?
@@ -232,14 +231,14 @@ AD FS の userinfo エンドポイントでは、常に、OpenID 標準で指定
 
 ### <a name="why-am-i-seeing-a-warning-for-failure-to-add-the-ad-fs-service-account-to-the-enterprise-key-admins-group"></a>Enterprise Key Admins グループに AD FS サービス アカウントを追加できないという警告が表示されるのはなぜですか?
 このグループは、FSMO PDC の役割を持つ Windows 2016 ドメイン コントローラーがドメイン内に存在する場合にのみ作成されます。 このエラーを解決するには、グループを手動で作成し、以下の手順に従って、サービス アカウントをグループのメンバーとして追加した後、必要なアクセス許可を付与します。
-1.  **[Active Directory ユーザーとコンピューター]** を開きます。
-2.  ナビゲーション ペインでドメイン名を**右クリック**し、[プロパティ] を**クリック**します。
-3.  [セキュリティ] を**クリック**します ([セキュリティ] タブが表示されない場合は、[表示] メニューから [高度な機能] をオンにします)。
-4.  [詳細設定] を**クリック**します。 [追加] を**クリック**します。 [プリンシパルの選択] を**クリック**します。
-5.  [ユーザー、コンピューター、サービス アカウントまたはグループの選択] ダイアログ ボックスが表示されます。  [選択するオブジェクト名を入力してください] ボックスに「Key Admin Group」と入力します。  ［OK］をクリックします。
-6.  [適用先] ボックスで、 **[Descendant User objects]\(子ユーザー オブジェクト\)** を選択します。
-7.  スクロール バーを使用してページの下部までスクロールし、[すべてクリア] を**クリック**します。
-8.  **[プロパティ]** セクションで、 **[Read msDS-KeyCredentialLink]\(msDS-KeyCredentialLink の読み取り\)** および **[Write msDS-KeyCredentialLink]\(msDS-KeyCredentialLink の書き込み\)** を選択します。
+1.    **[Active Directory ユーザーとコンピューター]** を開きます。
+2.    ナビゲーション ペインでドメイン名を**右クリック**し、[プロパティ] を**クリック**します。
+3.    [セキュリティ] を**クリック**します ([セキュリティ] タブが表示されない場合は、[表示] メニューから [高度な機能] をオンにします)。
+4.    [詳細設定] を**クリック**します。 [追加] を**クリック**します。 [プリンシパルの選択] を**クリック**します。
+5.    [ユーザー、コンピューター、サービス アカウントまたはグループの選択] ダイアログ ボックスが表示されます。  [選択するオブジェクト名を入力してください] ボックスに「Key Admin Group」と入力します。  ［OK］をクリックします。
+6.    [適用先] ボックスで、 **[Descendant User objects]\(子ユーザー オブジェクト\)** を選択します。
+7.    スクロール バーを使用してページの下部までスクロールし、[すべてクリア] を**クリック**します。
+8.    **[プロパティ]** セクションで、 **[Read msDS-KeyCredentialLink]\(msDS-KeyCredentialLink の読み取り\)** および **[Write msDS-KeyCredentialLink]\(msDS-KeyCredentialLink の書き込み\)** を選択します。
 
 ### <a name="why-does-modern-authentication-from-android-devices-fail-if-the-server-does-not-send-all-the-intermediate-certificates-in-the-chain-with-the-ssl-cert"></a>サーバーが SSL 証明書と共にチェーン内のすべての中間証明書を送信しない場合、Android デバイスからの先進認証が失敗するのはなぜですか?
 

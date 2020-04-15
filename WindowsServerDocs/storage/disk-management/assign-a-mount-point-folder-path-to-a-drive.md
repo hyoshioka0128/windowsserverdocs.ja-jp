@@ -1,7 +1,6 @@
 ---
 title: ドライブにマウント ポイント フォルダー パスを割り当てます。
 description: この記事では、ドライブに (ドライブ文字ではなく) マウント ポイント フォルダー パスを割り当てる方法について説明します。
-keywords: 仮想化, セキュリティ, マルウェア
 ms.date: 06/07/2019
 ms.prod: windows-server
 ms.technology: storage
@@ -9,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 1255eadd50adb0eaaf44774e150d69f6dad8adae
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b2fda216b57fbf036ce20c40b4c8b38d44404f3c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386052"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815535"
 ---
 # <a name="assign-a-mount-point-folder-path-to-a-drive"></a>ドライブにマウント ポイント フォルダー パスを割り当てる
 
@@ -50,10 +49,10 @@ ms.locfileid: "71386052"
 
 -   マウント ポイント フォルダー パスを削除するには、パスをクリックし、 **[削除]** をクリックします。
 
-| Value | 説明 |
+| 値 | 説明 |
 | --- | --- |
 | **list volume** | すべてのディスク上のベーシック ボリュームとダイナミック ボリュームの一覧を表示します。 |
-| **select volume**        | <em>volumenumber</em> がボリューム番号である指定されたボリュームを選択し、そのボリュームにフォーカスを移動します。 ボリュームが指定されていない場合、**select** コマンドは、フォーカスがある現在のボリュームを一覧表示します。 番号、ドライブ文字、マウント ポイント フォルダー パスでボリュームを指定できます。 ベーシック ディスクでボリュームを選択すると、対応するパーティションにフォーカスが移動します。|
+| **select volume**        | <em>volumenumber</em> がボリューム番号である指定されたボリュームを選択し、そのボリュームにフォーカスを移動します。 ボリュームが指定されていない場合、**select** コマンドは、フォーカスがある現在のボリュームを一覧表示します。 番号、ドライブ文字、マウント ポイント フォルダー パスでボリュームを指定できます。 ベーシック ディスク上でボリュームを選択すると、対応するパーティションもフォーカスされます。|
 | **assign** | <ul><li> フォーカスがあるボリュームにドライブ文字またはマウント ポイント フォルダー パスを割り当てます。 ドライブ文字またはマウント ポイント フォルダー パスが指定されていない場合は、次に利用可能なドライブ文字が割り当てられます。 ドライブ文字またはマウント ポイント フォルダー パスが既に使用中の場合、エラーが生成されます。</li>  <li>**assign** コマンドを使用して、リムーバブル ドライブに関連付けられているドライブ名を変更できます。</li> <li> ブート ボリュームまたはページング ファイルが含まれているボリュームにドライブ文字を割り当てることはできません。 さらに、Original Equipment Manufacturer (OEM) パーティション、EFI システム パーティション、またはベーシック データ パーティション以外の任意の GPT パーティションにドライブ文字を割り当てることはできません。</li></ul> |
 | **mount=** <em>path</em> | マウントされたドライブが存在する、空の既存の NTFS フォルダーを指定します。  |
 

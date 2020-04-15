@@ -2,29 +2,27 @@
 title: Nano Server の管理
 description: 更新プログラム、サービス パッケージ、ネットワーク トレース、パフォーマンスの監視
 ms.prod: windows-server
-ms.service: na
 manager: DonGill
 ms.technology: server-nano
 ms.date: 09/06/2017
-ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 599d6438-a506-4d57-a0ea-1eb7ec19f46e
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 132f4e1966b332cd6bb6e21402984db7ceed4497
-ms.sourcegitcommit: d599eea5203f95609fb21801196252d5dd9f2669
+ms.openlocfilehash: 0b41113f302dad1c9917001bf137da28ef431d38
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72005214"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80826785"
 ---
 # <a name="manage-nano-server"></a>Nano Server の管理
 
 >適用先:Windows Server 2016
 
 > [!IMPORTANT]
-> Windows Server バージョン 1709 以降、Nano Server は[コンテナー基本 OS イメージ](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image)としてのみ提供されます。 その意味については、「[Nano Server に加えられる変更](nano-in-semi-annual-channel.md)」をご覧ください。   
+> Windows Server バージョン 1709 以降では、Nano Server は[コンテナーの基本 OS イメージ](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image)としてのみ提供されます。 その意味については、[Nano Server に加えられる変更](nano-in-semi-annual-channel.md)に関する記事をご覧ください。   
 
 Nano Server はリモートで管理します。 Nano Server にローカル ログオン機能はありません。ターミナル サービスもサポートされません。 ただし、Windows PowerShell、Windows Management Instrumentation (WMI)、Windows リモート管理、緊急管理サービス (EMS) など、さまざまなオプションを利用して Nano Server をリモートで管理できます。  
 
@@ -45,14 +43,14 @@ Windows PowerShell リモート処理を使用して Nano Server を管理する
   
 Nano Server を信頼されたホストの一覧に追加するには、管理者特権での Windows PowerShell プロンプトで次のコマンドを実行します。  
   
-`Set-Item WSMan:\localhost\Client\TrustedHosts "<IP address of Nano Server>"`  
+`Set-Item WSMan:\localhost\Client\TrustedHosts <IP address of Nano Server>`  
   
 リモートの Windows PowerShell セッションを開始するには、管理者特権のローカル Windows PowerShell セッションを開始し、次のコマンドを実行します。  
   
   
 ```  
-$ip = "<IP address of Nano Server>"  
-$user = "$ip\Administrator"  
+$ip = <IP address of Nano Server>  
+$user = $ip\Administrator  
 Enter-PSSession -ComputerName $ip -Credential $user  
 ```  
   
@@ -71,7 +69,7 @@ CIM セッションを開始するには、Windows PowerShell プロンプトで
   
   
 ```  
-$ip = "<IP address of the Nano Server\>"  
+$ip = <IP address of the Nano Server\>  
 $user = $ip\Administrator  
 $cim = New-CimSession -Credential $user -ComputerName $ip  
 ```  
@@ -82,7 +80,7 @@ $cim = New-CimSession -Credential $user -ComputerName $ip
   
 ```  
 Get-CimInstance -CimSession $cim -ClassName Win32_ComputerSystem | Format-List *  
-Get-CimInstance -CimSession $Cim -Query "SELECT * from Win32_Process WHERE name LIKE 'p%'"  
+Get-CimInstance -CimSession $Cim -Query SELECT * from Win32_Process WHERE name LIKE 'p%'  
 ```  
   
   
@@ -91,11 +89,11 @@ Windows リモート管理 (WinRM) を使用して、リモートから Nano Ser
   
 ```
 winrm quickconfig
-winrm set winrm/config/client @{TrustedHosts="<ip address of Nano Server>"}
+winrm set winrm/config/client @{TrustedHosts=<ip address of Nano Server>}
 chcp 65001
 ```
   
-これで、リモートから Nano Server でコマンドを実行できます。 次に、例を示します。  
+これで、リモートから Nano Server でコマンドを実行できます。 たとえば、次のように入力します。  
 
 ```
 winrs -r:<IP address of Nano Server> -u:Administrator -p:<Nano Server administrator password> ipconfig
@@ -126,7 +124,7 @@ Stop-NetEventSession [-Name]
   
 1.  (関連するサポート技術情報の記事または [Microsoft Update カタログ](https://catalog.update.microsoft.com/v7/site/home.aspx)から) サービス パッケージをダウンロードします。 ローカル ディレクトリまたはネットワーク共有に保存します。次に例を示します。C:\ServicingPackages  
 2.  抽出されたサービス パッケージを保存するフォルダーを作成します。  例: c:\KB3157663_expanded  
-3.  Windows PowerShell コンソールを開き、`Expand` コマンドを使用し、サービス パッケージの .msu ファイルへのパスを指定します。さらに、`-f:*` パラメーターと、サービス パッケージを抽出する場所のパスを含めます。  次に例を示します。`Expand "C:\ServicingPackages\Windows10.0-KB3157663-x64.msu" -f:* "C:\KB3157663_expanded"`  
+3.  Windows PowerShell コンソールを開き、`Expand` コマンドを使用し、サービス パッケージの .msu ファイルへのパスを指定します。さらに、`-f:*` パラメーターと、サービス パッケージを抽出する場所のパスを含めます。  次に例を示します。`Expand C:\ServicingPackages\Windows10.0-KB3157663-x64.msu -f:* C:\KB3157663_expanded`  
   
     抽出されたファイルは次のようになります。  
 C:>dir C:\KB3157663_expanded   
@@ -158,7 +156,7 @@ Volume Serial Number is B05B-CC3D
 ```  
 $sess = New-CimInstance -Namespace root/Microsoft/Windows/WindowsUpdate -ClassName MSFT_WUOperationsSession  
 
-$scanResults = Invoke-CimMethod -InputObject $sess -MethodName ScanForUpdates -Arguments @{SearchCriteria="IsInstalled=0";OnlineScan=$true}  
+$scanResults = Invoke-CimMethod -InputObject $sess -MethodName ScanForUpdates -Arguments @{SearchCriteria=IsInstalled=0;OnlineScan=$true}  
 ```  
 **注:**  
 利用可能な更新プログラムがない場合、このコマンドでは次のエラーが返されます。  
@@ -171,7 +169,7 @@ At line:1 char:16
 
 +                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  
 
-    + CategoryInfo          : NotSpecified: (MSFT_WUOperatio...-5b842a3dd45d")  
+    + CategoryInfo          : NotSpecified: (MSFT_WUOperatio...-5b842a3dd45d)  
 
    :CimInstance) [Invoke-CimMethod], CimException  
 
@@ -201,11 +199,11 @@ Windows Defender により、更新プログラムがインストールされま
 ```  
 $sess = New-CimInstance -Namespace root/Microsoft/Windows/WindowsUpdate -ClassName MSFT_WUOperationsSession  
 
-$scanResults = Invoke-CimMethod -InputObject $sess -MethodName ScanForUpdates -Arguments @{SearchCriteria="IsInstalled=1";OnlineScan=$true}  
+$scanResults = Invoke-CimMethod -InputObject $sess -MethodName ScanForUpdates -Arguments @{SearchCriteria=IsInstalled=1;OnlineScan=$true}  
 ```  
 
 **注:**  
-これらのコマンドでは、インストールされている更新プログラムの一覧が返されますが、出力に "インストール済み" とは明記されません。 レポートなどのために、明記された出力が必要な場合は、次を実行できます。  
+これらのコマンドを実行すると、インストールされている内容の一覧が返されますが、出力ではインストール済みと明記されません。 レポートなどのために、明記された出力が必要な場合は、次を実行できます。  
 ```PowerShell
 Get-WindowsPackage -Online
 ```
@@ -214,7 +212,7 @@ Get-WindowsPackage -Online
 ---  
 上記のコマンドでは、インターネット上の Windows Update と Microsoft Update サービスを照会して、更新プログラムを検索およびダウンロードします。 WSUS を使用する場合は、代わりに WSUS サーバーを使用するように Nano Server のレジストリ キーを設定できます。  
   
-「[Active Directory 以外の環境で自動更新を構成する](https://technet.microsoft.com/library/cc708449(v=ws.10).aspx)」の「Windows Update エージェント環境のオプションのレジストリ キー」の表をご覧ください。  
+「[Active Directory 以外の環境で自動更新を構成する](https://technet.microsoft.com/library/cc708449(v=ws.10).aspx)」の「Windows Update エージェント環境のオプションのレジストリ キー」の表を参照してください。  
   
 少なくとも **WUServer** レジストリ キーと **WUStatusServer** レジストリ キーを設定する必要があります。WSUS を実装する方法によっては、その他の値も設定が必要になることがあります。 これらの設定は、同じ環境内の他の Windows Server を確認することで、いつでも確認できます。  
 
@@ -242,9 +240,9 @@ Nano Server では、[Windows イベント トレーシング](https://aka.ms/u2
 wpr.exe -providers
 ```
 
-関心のあるイベントの種類で出力にフィルターを適用できます。 次に、例を示します。
+関心のあるイベントの種類で出力にフィルターを適用できます。 たとえば、次のように入力します。
 ```
-PS C:\> wpr.exe -providers | select-string "Storage"
+PS C:\> wpr.exe -providers | select-string Storage
 
        595f33ea-d4af-4f4d-b4dd-9dacdd17fc6e                              : Microsoft-Windows-StorageManagement-WSP-Host
        595f7f52-c90a-4026-a125-8eb5e083f15e                              : Microsoft-Windows-StorageSpaces-Driver
@@ -258,21 +256,21 @@ PS C:\> wpr.exe -providers | select-string "Storage"
 
 イベントを格納するファイルの名前を指定して、トレースを作成し、開始します。
 ```
-PS C:\> New-EtwTraceSession -Name "ExampleTrace" -LocalFilePath c:\etrace.etl
+PS C:\> New-EtwTraceSession -Name ExampleTrace -LocalFilePath c:\etrace.etl
 ```
 
 プロバイダーの GUID をトレースに追加します。 ```wpr.exe -providers``` を使用して、プロバイダー名を GUID に変換します。 
 ```
-PS C:\> wpr.exe -providers | select-string "Kernel-Memory"
+PS C:\> wpr.exe -providers | select-string Kernel-Memory
 
        d1d93ef7-e1f2-4f45-9943-03d245fe6c00                              : Microsoft-Windows-Kernel-Memory
 
-PS C:\> Add-EtwTraceProvider -Guid "{d1d93ef7-e1f2-4f45-9943-03d245fe6c00}" -SessionName "ExampleTrace"
+PS C:\> Add-EtwTraceProvider -Guid {d1d93ef7-e1f2-4f45-9943-03d245fe6c00} -SessionName ExampleTrace
 ```
 
 トレースを削除します。これにより、トレース セッションが停止し、イベントが関連するログ ファイルにフラッシュされます。
 ```
-PS C:\> Remove-EtwTraceSession -Name "ExampleTrace"
+PS C:\> Remove-EtwTraceSession -Name ExampleTrace
 
 PS C:\> dir .\etrace.etl
 
@@ -330,12 +328,12 @@ Copyright (c) 2015 Microsoft Corporation. All rights reserved.
 
 最初に、新しい自動ロガー構成を作成します。
 ```
-PS C:\> New-AutologgerConfig -Name "BootPnpLog" -LocalFilePath c:\bootpnp.etl 
+PS C:\> New-AutologgerConfig -Name BootPnpLog -LocalFilePath c:\bootpnp.etl 
 ```
 
 ETW プロバイダーを構成に追加します。 この例では、Kernel PnP プロバイダーを使用します。 同じ自動ロガー名 (ただし、GUID が異なる) を指定して ```Add-EtwTraceProvider``` を再度呼び出して、複数のソースからのブート トレース コレクションを有効にします。
 ```
-Add-EtwTraceProvider -Guid "{9c205a39-1250-487d-abd7-e831c6290539}" -AutologgerName BootPnpLog
+Add-EtwTraceProvider -Guid {9c205a39-1250-487d-abd7-e831c6290539} -AutologgerName BootPnpLog
 ```
 
 ETW セッションはすぐには開始されず、次回の起動時に開始するように構成されます。 再起動すると、追加したトレース プロバイダーが有効になった状態で、自動ロガー構成名を持つ新しい ETW セッションが自動的に開始されます。 Nano Server が起動したら、次のコマンドでトレース セッションを停止します。停止する前に、記録されたイベントが関連するトレース ファイルにフラッシュされます。
@@ -351,11 +349,11 @@ PS C:\> Remove-AutologgerConfig -Name BootPnpLog
 複数のシステムやディスクなしのシステムでブート トレースとセットアップ トレースを収集するには、[セットアップおよびブート イベント収集](../administration/get-started-with-setup-and-boot-event-collection.md)の使用を検討してください。
 
 ### <a name="capture-performance-counter-data"></a>パフォーマンス カウンター データのキャプチャ
-通常、パフォーマンス カウンター データは Perfmon.exe の GUI で監視します。 Nano Server では、同等の ```Typeperf.exe``` コマンド ラインを使用します。 次に、例を示します。
+通常、パフォーマンス カウンター データは Perfmon.exe の GUI で監視します。 Nano Server では、同等の ```Typeperf.exe``` コマンド ラインを使用します。 たとえば、次のように入力します。
 
 使用可能なカウンターを照会します。出力にフィルターを適用して、関心のあるカウンターを簡単に見つけることができます。
 ```
-PS C:\> typeperf.exe -q | Select-String "UDPv6"
+PS C:\> typeperf.exe -q | Select-String UDPv6
 
 \UDPv6\Datagrams/sec
 \UDPv6\Datagrams Received/sec
@@ -366,14 +364,14 @@ PS C:\> typeperf.exe -q | Select-String "UDPv6"
 
 オプションを使用して、カウンターの値を収集する回数と間隔を指定できます。 次の例では、プロセッサ アイドル時間を 3 秒おきに 5 回収集します。
 ```
-PS C:\> typeperf.exe "\Processor Information(0,0)\% Idle Time" -si 3 -sc 5
+PS C:\> typeperf.exe \Processor Information(0,0)\% Idle Time -si 3 -sc 5
 
-"(PDH-CSV 4.0)","\\ns-g2\Processor Information(0,0)\% Idle Time"
-"09/15/2016 09:20:56.002","99.982990"
-"09/15/2016 09:20:59.002","99.469634"
-"09/15/2016 09:21:02.003","99.990081"
-"09/15/2016 09:21:05.003","99.990454"
-"09/15/2016 09:21:08.003","99.998577"
+(PDH-CSV 4.0),\\ns-g2\Processor Information(0,0)\% Idle Time
+09/15/2016 09:20:56.002,99.982990
+09/15/2016 09:20:59.002,99.469634
+09/15/2016 09:21:02.003,99.990081
+09/15/2016 09:21:05.003,99.990454
+09/15/2016 09:21:08.003,99.998577
 Exiting, please wait...
 The command completed successfully.
 ```

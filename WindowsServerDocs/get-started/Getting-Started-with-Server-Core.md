@@ -4,38 +4,37 @@ description: コア インストールを取得して、Windows Server 2019、Wi
 ms.prod: windows-server
 ms.date: 05/21/2019
 ms.technology: server-general
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2d22818c-fbb7-487a-bb82-81ef0a3f7ede
 author: jasongerend
 ms.author: jgerend
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: e6264a59a837003e49e82529750cfb153cc37b92
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 13d36c233094511216483f0fb37dc6a004212a50
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71360340"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80826975"
 ---
 # <a name="install-server-core"></a>Server Core のインストール
 
-> 適用対象:Windows Server 2019、Windows Server 2016、Windows Server (半期チャネル)
+> 適用先:Windows Server 2019、Windows Server 2016、Windows Server (半期チャネル)
   
 初めて Windows Server をインストールする場合は、次のインストール オプションがあります。
 
 >[!NOTE]
 > 次の一覧で、「デスクトップ エクスペリエンス」と記載されていないエディションが、Server Core インストール オプションです。
 
--   Windows Server Standard
--   Windows Server Standard (デスクトップ エクスペリエンスあり)
--   Windows Server Datacenter
--   Windows Server Datacenter (デスクトップ エクスペリエンスあり)
+-    Windows Server Standard
+-    Windows Server Standard (デスクトップ エクスペリエンスあり)
+-    Windows Server Datacenter
+-    Windows Server Datacenter (デスクトップ エクスペリエンスあり)
 
 初めて Windows Server (半期チャネル) をインストールする場合は、次のインストール オプションがあります。
 
--   Windows Server Standard 
--   Windows Server Datacenter
+-    Windows Server Standard 
+-    Windows Server Datacenter
 
 Server Core オプションでは、必要なディスク領域が減少し、攻撃を受ける可能性が低下しています。したがって、デスクトップ エクスペリエンス搭載サーバー オプションに含まれている追加的なユーザー インターフェイス要素やグラフィカル管理ツールを特に必要としなければ、Server Core インストールを選択することをお勧めします。 追加的なユーザー インターフェイス要素が必要な場合は、「[デスクトップ エクスペリエンスを使用したサーバーのインストール](Getting-Started-with-Server-with-Desktop-Experience.md)」をご覧ください。 
 
@@ -72,7 +71,7 @@ Server Core オプションでは、標準のユーザー インターフェイ�
 - Active Directory Rights Management サーバー
 - ルーティングとリモート アクセス サーバーおよび次のサブ役割:
    - リモート デスクトップ サービス接続ブローカー
-   - Licensing
+   - ライセンス
    - 仮想化
    - ボリューム ライセンス認証サービス
 

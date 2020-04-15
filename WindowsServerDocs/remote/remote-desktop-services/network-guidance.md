@@ -1,23 +1,19 @@
 ---
 title: ネットワークのガイダンス
 description: リモート デスクトップのデプロイのための帯域幅に関する推奨事項。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
 ms.author: helohr
 ms.date: 12/12/2019
-ms.tgt_pltfrm: na
 ms.topic: article
 author: Heidilohr
 manager: lizross
-ms.openlocfilehash: 4e3a9bb66389c00bbac04db34d5d2a5b1d1933e1
-ms.sourcegitcommit: 76469d1b7465800315eaca3e0c7f0438fc3939ed
+ms.openlocfilehash: 79db56d467ae0913446faebffc5a9598aae0b767
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75919919"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852995"
 ---
 # <a name="network-guidance"></a>ネットワークのガイダンス
 

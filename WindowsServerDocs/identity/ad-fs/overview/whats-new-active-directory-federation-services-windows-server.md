@@ -1,7 +1,6 @@
 ---
 ms.assetid: aa892a85-f95a-4bf1-acbb-e3c36ef02b0d
 title: Windows Server 2016 の Active Directory フェデレーション サービス (AD FS) の新機能
-description: ''
 author: billmath
 ms.author: billmath
 manager: daveba
@@ -9,12 +8,12 @@ ms.date: 01/22/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 8061f41dab0f02bccd59a659e0bcd209bd73a249
-ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
+ms.openlocfilehash: e88297bdbd55d2f834f1bff72b6d05bdf356bb85
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77517557"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860255"
 ---
 # <a name="whats-new-in-active-directory-federation-services"></a>Active Directory フェデレーション サービス (AD FS) の新機能
 
@@ -72,7 +71,7 @@ AD FS 2019 では、次のサインイン SSO の機能強化が行われてい�
 AD FS 2019 には、次のデプロイの更新が追加されました。
 - **ファーム動作レベル 2019** - AD FS 2016 と同様に、前述の新しい機能を有効にするために必要な新しいファーム動作レベル バージョンがあります。 これにより、以下が可能になります。
     - 2012 R2-> 2019
-    - 2016 -> 2019   
+    - 2016 -> 2019     
 
 ### <a name="saml-updates"></a>SAML の更新
 次の SAML の更新は AD FS 2019 に含まれています。
@@ -109,7 +108,7 @@ D. AD FS によって "code_verifier" が変換され、(B) の "t(code_verifier
 
 #### <a name="faq"></a>FAQ 
 > [!NOTE] 
-> ADFS 管理者イベント ログで、次のエラーが発生することがあります。Received invalid Oauth request. The client 'NAME' is forbidden to access the resource with scope 'ugs'. (無効な Oauth 要求を受け取りました。クライアント 'NAME' はスコープ 'ugs' のリソースへのアクセスを禁止されています。) このエラーを修復するには、次のようにします。 
+> ADFS 管理者イベント ログで、次のエラーが発生することがあります。Received invalid Oauth request. \(無効な Oauth 要求を受信しました。\) The client 'NAME' is forbidden to access the resource with scope 'ugs'. \(クライアント 'NAME' はスコープ 'ugs' のリソースにアクセスすることが許可されていません。\) このエラーを修復するには、次のようにします。 
 > 1. AD FS 管理コンソールを起動します。 [Services]\(サービス\) > [Scope Descriptions]\(スコープ記述\) を参照します
 > 2. [Scope Descriptions]\(スコープ記述\) を右クリックし、[Add Scope Description]\(スコープ記述の追加\) を選択します
 > 3. 名前に「ugs」と入力し、[適用] > [OK] をクリックします

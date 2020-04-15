@@ -1,43 +1,39 @@
 ---
 title: Windows Server 2016 のアップグレード オプションと変換オプション
 description: サポートされているすべての Windows Server 2016 へのアップグレード パスについて説明します。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.date: 01/18/2017
 ms.technology: server-general
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 74aa1da3-7076-4a1f-ad5b-9e17bd46dba2
 author: jaimeo
 ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 2484363db661620844993d52914700cb8b6cdf56
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 05e891d4170458018577b39bc83e952bf18d420e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391590"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80826505"
 ---
 # <a name="upgrade-and-conversion-options-for-windows-server-2016"></a>Windows Server 2016 のアップグレード オプションと変換オプション
 
 >適用先:Windows Server 2019、Windows Server 2016
 
-このトピックでは、以前の各種オペレーティング システムから Windows Server® 2016 にアップグレードする場合のさまざまな方法について説明します。
+このトピックでは、以前の各種オペレーティング システムから Windows Server&reg; 2016 にアップグレードする場合のさまざまな方法について説明します。
 
 Windows Server 2016 に移るためのプロセスは、開始地点のオペレーティング システムや選択するパスに応じて大きく異なる場合があります。 新しい Windows Server 2016 の展開にかかわる可能性のあるさまざまな操作は次の用語を使用して区別します。
 
-- **インストール**は、基本的な概念としては、ハードウェア上に新しいオペレーティング システムを取得することです。 具体的には、 **クリーン インストール** では以前のオペレーティング システムの削除が必要です。 Windows Server 2016 のインストールについては、[Windows Server 2016 のシステム要件とインストール情報](https://technet.microsoft.com/windows-server-docs/get-started/system-requirements--and-installation)に関するページを参照してください。 他のバージョンの Windows Server のインストールについては、「[Windows Server Installation and Upgrade (Windows Server のインストールとアップグレード)](https://technet.microsoft.com//windowsserver/dn527667)」を参照してください。
+- **インストール** は、基本的な概念としては、ハードウェア上に新しいオペレーティング システムを取得することです。 具体的には、 **クリーン インストール** では以前のオペレーティング システムの削除が必要です。 Windows Server 2016 のインストールについては、[Windows Server 2016 のシステム要件とインストール情報](https://technet.microsoft.com/windows-server-docs/get-started/system-requirements--and-installation)に関するページを参照してください。 他のバージョンの Windows Server のインストールについては、「[Windows Server Installation and Upgrade (Windows Server のインストールとアップグレード)](https://technet.microsoft.com//windowsserver/dn527667)」を参照してください。
 
 - **移行**とは、既存のオペレーティング システムを別のハードウェアや仮想マシンのセットに転送して、そのオペレーティング システムから Windows Server 2016 に移ることを意味します。 移行はインストールしているサーバーの役割に応じて大きく異なる場合があります。移行の詳細については、「[Windows Server Installation, Upgrade, and Migration (Windows Server のインストール、アップグレード、移行)](https://technet.microsoft.com/windowsserver/dn458795)」を参照してください。
 
 - **クラスター OS のローリング アップグレード**は Windows Server 2016 の新機能であり、管理者がこの機能を利用することで、Hyper-V やスケールアウト ファイル サーバーのワークロードを停止することなく、クラスター ノードのオペレーティング システムを Windows Server 2012 R2 から Windows Server 2016 にアップグレードできます。 この機能により、サービス レベル アグリーメントに影響する可能性のあるダウンタイムが回避できます。 この新機能の詳細は、「[Cluster operating system rolling upgrade (クラスター オペレーティング システムのローリング アップグレード)](https://technet.microsoft.com/windows-server-docs/failover-clustering/cluster-operating-system-rolling-upgrade)」で説明されています。
 
-- 一部のオペレーティング システム リリースの**ライセンス変換**では、簡単なコマンドと適切なライセンス キーにより、1 回の手順でリリースの特定のエディションを同じリリースの別のエディションに変換できます。 これを "ライセンス変換" と呼びます。 たとえば、Windows Server 2016 Standard を実行している場合、Windows Server 2016 Datacenter に変換できます。
+- 一部のオペレーティング システム リリースの**ライセンス変換**では、簡単なコマンドと適切なライセンス キーにより、1 回の手順でリリースの特定のエディションを同じリリースの別のエディションに変換できます。 これをライセンス変換と呼びます。 たとえば、Windows Server 2016 Standard を実行している場合、Windows Server 2016 Datacenter に変換できます。
 
-- **アップグレード**とは、既存のオペレーティング システム リリースを同じハードウェア上に保持したまま、そのオペレーティング システム リリースからより新しいリリースに移ることです。 (これは、"インプレース" アップグレードと呼ばれることもあります)。たとえば、サーバーで Windows Server 2012 または Windows Server 2012 R2 を実行している場合、Windows Server 2016 にアップグレードできます。 オペレーティング システムの評価版から製品版、古い製品版から新しい製品版、または場合によってはオペレーティング システムのボリューム ライセンス版から通常の製品版にアップグレードできます。
+- **アップグレード**とは、既存のオペレーティング システム リリースを同じハードウェア上に保持したまま、そのオペレーティング システム リリースからより新しいリリースに移ることです。 (これは、インプレース アップグレードと呼ばれることもあります)。たとえば、サーバーで Windows Server 2012 または Windows Server 2012 R2 を実行している場合、Windows Server 2016 にアップグレードできます。 オペレーティング システムの評価版から製品版、古い製品版から新しい製品版、または場合によってはオペレーティング システムのボリューム ライセンス版から通常の製品版にアップグレードできます。
 
 > [!IMPORTANT]  
 > 仮想マシンでは、アップグレードを正常に実行するために特定の OEM ハードウェア ドライバーが必要とされないため、アップグレードが最も有効です。  
@@ -91,7 +87,7 @@ Windows Server 2016 Standard の評価版を Windows Server 2016 Standard (製�
 
 評価版から製品版に乗り換える前に、実際に評価版が実行されていることをご確認ください。 これを行うには、次のいずれかの操作を行います。
 
-- 管理者特権のコマンド プロンプトで **slmgr.vbs /dlv**を実行します。評価版の場合は、出力に "EVAL" と表示されます。
+- 管理者特権でのコマンド プロンプトで **slmgr.vbs /dlv** を実行します。評価版の場合は、出力に EVAL と表示されます。
 
 - スタート画面で、 **[コントロール パネル]** を開きます。 **[システムとセキュリティ]** を開き、 **[システム]** を開きます。 **[システム]** ページの Windows のライセンス認証の領域に Windows のライセンス認証の状態が表示されます。 **[Windows ライセンス認証の詳細を表示]** をクリックすると、Windows のライセンス認証の状態に関する詳しい情報が表示されます。
 
@@ -103,9 +99,9 @@ Windows Server 2016 Standard の評価版を Windows Server 2016 Standard (製�
 
 サーバーで Windows Server 2016 Standard または Windows Server 2016 Datacenter の評価版を実行している場合は、次の手順に従って製品版に変換できます。
 
-1.  サーバーが**ドメイン コントローラー**の場合は、製品版には変換できません。 この場合は、まず製品版を実行するサーバーに追加のドメイン コントローラーをインストールし、評価版で実行されているドメイン コントローラーから AD DS を削除します。 詳細については、「[ドメイン コントローラーを Windows Server 2012 R2 または Windows Server 2012 にアップグレードする](https://technet.microsoft.com/library/hh994618.aspx)」を参照してください。
-2.  ライセンス条項を読みます。
-3.  管理者特権でのコマンド プロンプトで、 **DISM /online /Get-CurrentEdition**コマンドを実行して現在のエディション名を確認します。 エディション名の簡略形式であるエディション ID をメモしておきます。 次に、エディション ID と販売プロダクト キーを指定して、**DISM /online /Set-Edition:\<エディション ID\> /ProductKey:XXXXX-XXXXX-XXXXX-XXXXX-XXXXX /AcceptEula** を実行します。 サーバーが 2 回再起動します。
+1.    サーバーが**ドメイン コントローラー**の場合は、製品版には変換できません。 この場合は、まず製品版を実行するサーバーに追加のドメイン コントローラーをインストールし、評価版で実行されているドメイン コントローラーから AD DS を削除します。 詳細については、「[ドメイン コントローラーを Windows Server 2012 R2 または Windows Server 2012 にアップグレードする](https://technet.microsoft.com/library/hh994618.aspx)」を参照してください。
+2.    ライセンス条項を読みます。
+3.    管理者特権でのコマンド プロンプトで、 **DISM /online /Get-CurrentEdition**コマンドを実行して現在のエディション名を確認します。 エディション名の簡略形式であるエディション ID をメモしておきます。 次に、エディション ID と販売プロダクト キーを指定して、**DISM /online /Set-Edition:\<エディション ID\> /ProductKey:XXXXX-XXXXX-XXXXX-XXXXX-XXXXX /AcceptEula** を実行します。 サーバーが 2 回再起動します。
 
 Windows Server 2016 Standard の評価版の場合は、同じコマンドと該当するプロダクト キーを使用して、1 回の操作で Windows Server 2016 Datacenter の製品版に変換することもできます。
 
@@ -114,8 +110,8 @@ Windows Server 2016 Standard の評価版の場合は、同じコマンドと該
 
 ## <a name="converting-a-current-retail-edition-to-a-different-current-retail-edition"></a>現在の製品版から異なる現在の製品版への変換
 
-Windows Server 2016 をインストールした後であればいつでも、セットアップを実行してインストールを修復 ("修復セットアップ" とも呼ばれます) したり、場合によっては別のエディションに変換できます。
-セットアップを実行して、任意のエディションの Windows Server 2016 で "修復セットアップ" を実行することができます。これにより、開始時と同じエディションになります。
+Windows Server 2016 をインストールした後であればいつでも、セットアップを実行してインストールを修復 (修復セットアップとも呼ばれます) したり、場合によっては別のエディションに変換できます。
+セットアップを実行して、任意のエディションの Windows Server 2016 で修復セットアップを実行することができます。これにより、開始時と同じエディションになります。
 
 Windows Server 2016 Standard では、以下に従って、Windows Server 2016 Datacenter に変換できます。管理者特権でのコマンド プロンプトで、 **DISM /online /Get-CurrentEdition**コマンドを実行して現在のエディション名を確認します。 Windows Server 2016 Standard の場合、これは `ServerStandard` になります。 **DISM/online/Get-TargetEditions** コマンドを実行して、アップグレードできるエディションの ID を取得します。 このエディション ID (エディション名の簡略形式) をメモしておきます。 次に、ターゲットのエディション ID と販売プロダクト キーを指定して、**DISM /online /Set-Edition:\<エディション ID\> /ProductKey:XXXXX-XXXXX-XXXXX-XXXXX-XXXXX /AcceptEula** を実行します。 サーバーが 2 回再起動します。
 

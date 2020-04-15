@@ -1,7 +1,6 @@
 ---
 ms.assetid: f964d056-11bf-4d9b-b5ab-dceaad8bfbc3
 title: Windows Server 2016 の機能レベル
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -11,12 +10,12 @@ ms.prod: windows-server
 ms.custom: it-pro
 ms.reviewer: maheshu
 ms.technology: identity-adds
-ms.openlocfilehash: 53793fc62b1bc1444c567f92c9f18642245fded9
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 5f7a8f08ff10102fbc04b6f8272320bd3b77785d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948185"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80825495"
 ---
 # <a name="forest-and-domain-functional-levels"></a>フォレストとドメインの機能レベル
 
@@ -45,7 +44,7 @@ Windows Server 2019 ドメイン コントローラーを追加する最小要�
 
 ### <a name="windows-server-2016-forest-functional-level-features"></a>Windows Server 2016 フォレストの機能レベルの機能
 
-* Windows Server 2012R2 フォレストの機能レベルで使用できるすべての機能と以下の機能を使用できます。
+* Windows Server 2012R2 フォレストの機能レベルで使用できるすべての機能と以下の機能を使用できます。
    * [Microsoft Identity Manager (MIM) を使用する Privileged access management (PAM)](https://docs.microsoft.com/windows-server/identity/whats-new-active-directory-domain-services#a-namebkmkpamaprivileged-access-management)
 
 ### <a name="windows-server-2016-domain-functional-level-features"></a>Windows Server 2016 ドメインの機能レベルの機能
@@ -67,7 +66,7 @@ Windows Server 2019 ドメイン コントローラーを追加する最小要�
 
 ### <a name="windows-server-2012r2-forest-functional-level-features"></a>Windows Server 2012R2 フォレストの機能レベルの機能
 
-* Windows Server 2012 フォレストの機能レベルで使用可能な機能がすべて提供されますが、他に追加される機能はありません。
+* Windows Server 2012 フォレストの機能レベルで使用可能な機能がすべて提供されますが、他に追加される機能はありません。
 
 ### <a name="windows-server-2012r2-domain-functional-level-features"></a>Windows Server 2012R2 ドメインの機能レベルの機能
 
@@ -93,7 +92,7 @@ Windows Server 2019 ドメイン コントローラーを追加する最小要�
 
 ### <a name="windows-server-2012-forest-functional-level-features"></a>Windows Server 2012 フォレストの機能レベルの機能
 
-* Windows Server 2008 R2 フォレストの機能レベルで使用可能な機能がすべて提供されますが、他に追加される機能はありません。
+* Windows Server 2008 R2 フォレストの機能レベルで使用可能な機能がすべて提供されますが、他に追加される機能はありません。
 
 ### <a name="windows-server-2012-domain-functional-level-features"></a>Windows Server 2012 ドメインの機能レベルの機能
 
@@ -112,8 +111,8 @@ Windows Server 2019 ドメイン コントローラーを追加する最小要�
 
 ### <a name="windows-server-2008r2-forest-functional-level-features"></a>Windows Server 2008R2 フォレストの機能レベルの機能
 
-* Windows Server 2003 フォレストの機能レベルで使用できる機能がすべて提供されます。加えて、以下の機能も提供されます。
-   * Active Directory のごみ箱。AD DS の実行中に、削除されたオブジェクト全体を復元する機能を提供します。
+* Windows Server 2003 フォレストの機能レベルで使用できる機能がすべて提供されます。加えて、以下の機能も提供されます。
+   * Active Directory のごみ箱。AD DS の実行中に、削除されたオブジェクト全体を復元する機能を提供します。
 
 ### <a name="windows-server-2008r2-domain-functional-level-features"></a>Windows Server 2008R2 ドメインの機能レベルの機能
 
@@ -130,11 +129,11 @@ Windows Server 2019 ドメイン コントローラーを追加する最小要�
 * Windows Server 2012 R2
 * Windows Server 2012
 * Windows Server 2008 R2
-* Windows Server 2008
+* Windows Server 2008
 
 ### <a name="windows-server-2008-forest-functional-level-features"></a>Windows Server 2008 フォレストの機能レベルの機能
 
-* Windows Server 2003 フォレストの機能レベルで使用可能な機能がすべて提供されますが、追加機能は使用できません。 
+* Windows Server 2003 フォレストの機能レベルで使用可能な機能がすべて提供されますが、追加機能は使用できません。 
 
 ### <a name="windows-server-2008-domain-functional-level-features"></a>Windows Server 2008 ドメインの機能レベルの機能
 
@@ -168,7 +167,7 @@ Windows Server 2019 ドメイン コントローラーを追加する最小要�
 * Windows Server 2012 R2
 * Windows Server 2012
 * Windows Server 2008 R2
-* Windows Server 2008
+* Windows Server 2008
 * Windows Server 2003
 
 ### <a name="windows-server-2003-forest-functional-level-features"></a>Windows Server 2003 フォレストの機能レベルの機能
@@ -180,7 +179,7 @@ Windows Server 2019 ドメイン コントローラーを追加する最小要�
       - リンクされた値のレプリケーションを使うと、メンバーシップ全体を 1 つの単位としてレプリケートするのではなく、個々のメンバーの値が保存およびレプリケートされるように、グループ メンバーシップを変更できるようになります。 個々のメンバーの値を格納およびレプリケートすると、レプリケーション中に使用されるネットワーク帯域幅とプロセッサ サイクルが少なくなるため、複数のメンバーを異なるドメイン コントローラーで同時に追加または削除したときに、更新が失われるのを防ぐことができます。
    * 読み取り専用ドメイン コントローラー (RODC) を展開する機能
    * 知識整合性チェッカー (KCC) の強化されたアルゴリズムとスケーラビリティ
-      - サイト間トポロジ ジェネレーター (ISTG) では、強化されたアルゴリズムが使用されます。スケーラビリティの向上により、Windows 2000 フォレストの機能レベルで AD DS がサポートできるサイト数より多くのサイトを含むフォレストがサポート可能になります。 向上した ISTG 選択アルゴリズムは、Windows 2000 フォレストの機能レベルで ISTG を選択するための、より影響の少ないメカニズムです。
+      - サイト間トポロジ ジェネレーター (ISTG) では、強化されたアルゴリズムが使用されます。スケーラビリティの向上により、Windows 2000 フォレストの機能レベルで AD DS がサポートできるサイト数より多くのサイトを含むフォレストがサポート可能になります。 向上した ISTG 選択アルゴリズムは、Windows 2000 フォレストの機能レベルで ISTG を選択するための、より影響の少ないメカニズムです。
    * **dynamicObject** と呼ばれる動的な補助型クラスのインスタンスをドメイン ディレクトリ パーティションに作成する機能
    * **inetOrgPerson** オブジェクト インスタンスから **User** オブジェクト インスタンスへの変換、および逆方向の変換を行う機能
    * ロールベースの承認をサポートするために新しいグループの種類のインスタンスを作成する機能。 
@@ -209,13 +208,13 @@ Windows Server 2019 ドメイン コントローラーを追加する最小要�
 サポートされるドメイン コントローラーのオペレーティング システム:
 
 * Windows Server 2008 R2
-* Windows Server 2008
+* Windows Server 2008
 * Windows Server 2003
 * Windows 2000
 
 ### <a name="windows-2000-native-forest-functional-level-features"></a>Windows 2000 ネイティブ フォレストの機能レベルの機能
 
-* AD DS の既定の機能をすべて使用できます。
+* AD DS の既定の機能をすべて使用できます。
 
 ### <a name="windows-2000-native-domain-functional-level-features"></a>Windows 2000 ネイティブ ドメインの機能レベルの機能
 

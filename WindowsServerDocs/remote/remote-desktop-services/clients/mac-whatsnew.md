@@ -1,30 +1,56 @@
 ---
 title: macOS クライアントの新機能
 description: Mac のリモート デスクトップ クライアントに対する最近の変更について説明します
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
-ms.tgt_pltfrm: na
 ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 01/06/2020
+ms.date: 04/08/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: ef2a9966da7046a14fb1d9d4562f0ef9b1a09a45
-ms.sourcegitcommit: 76469d1b7465800315eaca3e0c7f0438fc3939ed
+ms.openlocfilehash: c378d8c4a87b6aa0cf4f6b4f30f3bd5524dbb7a9
+ms.sourcegitcommit: f95d0e6904b103fc30dcae13e9199e138c287e2b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75919853"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80980854"
 ---
 # <a name="whats-new-in-the-macos-client"></a>macOS クライアントの新機能
 
 [macOS のリモート デスクトップ クライアント](remote-desktop-mac.md)は定期的に更新され、新機能の追加や問題の修正が行われています。 ここでは、最新の更新プログラムを紹介します。
 
 問題が生じた場合は、 **[ヘルプ]**  >  **[問題の報告]** に移動してマイクロソフトに問い合わせることができます。
+
+## <a name="updates-for-version-1039"></a>バージョン 10.3.9 の更新内容
+
+*公開日:2020 年 4 月 6 日*
+
+このリリースでは、[Windows Virtual Desktop サービス](https://azure.microsoft.com/services/virtual-desktop/)との相互運用性を向上させるためにいくつかの変更が加えられました。 さらに、次の更新内容があります。
+
+- Control + Option + Delete キーを押すと、Ctrl + Alt + Del シーケンスがトリガーされます (以前は Fn キーを押す必要がありました)。
+- ライト モードのキーボード モード通知の配色を修正しました。
+- GatewayAccessToken RDP ファイルのプロパティを使用して開始された接続が動作しなかったシナリオに対処しました。
+
+>[!NOTE]
+>これは、macOS 10.12 と互換性がある最後のリリースです。
+
+## <a name="updates-for-version-1038"></a>バージョン 10.3.8 の更新内容
+
+*公開日:2020 年 2 月 12 日*
+
+2020 年最初のリリースです。
+
+この更新プログラムを適用すると、キーボード入力を入力するときに、スキャンコード (Ctrl + Command + K キー) モードと Unicode (Ctrl + Command + U キー) モードを切り替えることができるようになります。 Unicode モードでは、Mac キーボードの Option キーを使用して拡張文字を入力できます。 たとえば、米国の Mac キーボードで Option + 2 キーを押すと商標 (&trade;) 記号が入力されます。 Unicode モードでアクセント記号付き文字を入力することもできます。 たとえば、米国の Mac キーボードで、Option + E キーと A キーを同時に入力すると、リモート セッションで「á」という文字が入力されます。
+
+このリリースのその他の更新内容は次のとおりです。
+
+- ワークスペースの更新エクスペリエンスと UI を整理しました。
+- "状態を確認しています" メッセージが表示されたときにリモート セッションがサインイン画面で応答しなくなる原因となったスマート カード リダイレクトの問題に対処しました。
+- クリップボードベースのファイルのコピーと貼り付けに使用される一時ファイルの作成時間を短縮しました。
+- クリップボードのファイルのコピーと貼り付けに使用される一時ファイルは、macOS を利用して削除するのではなく、アプリを終了すると自動的に削除されるようになりました。
+- PC のブックマーク アクションがサムネイルの右上隅に表示されるようになりました。
+- クラッシュ テレメトリで報告された問題に対処するための修正を行いました。
 
 ## <a name="updates-for-version-1037"></a>バージョン 10.3.7 の更新内容
 
@@ -310,7 +336,7 @@ ms.locfileid: "75919853"
 - デスクトップのタイルで ENTER キーを押して接続を開始できるようになりました。
 - 全画面表示の場合、CMD+M が WIN + M に正しくマップされるようになりました。
 - 接続センター、環境設定、および概要情報のウィンドウが CMD+M に応答するようになりました。
-- **[Adding Remote Resources]\(リモート リソースの追加\)** ページで ENTER キーを押すことによってフィードの検出が開始できるようになりました。
+- * *[Adding Remote Resources]\(リモート リソースの追加\)* ページで ENTER キーを押すことによってフィードの検出が開始できるようになりました。
 - 接続センターの新しいリモート リソース フィードが、更新するまで空として表示される問題を修正しました。
 
 ## <a name="updates-for-version-1016"></a>バージョン 10.1.6 の更新内容

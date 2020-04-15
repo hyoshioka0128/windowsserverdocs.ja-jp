@@ -1,25 +1,21 @@
 ---
 title: リリース ノート - Windows Server バージョン 1709 に関する重要な問題
 description: クラッシュ、ハング、インストールの失敗、データの損失を回避するための回避策を必要とする重大な問題についてまとめます。クラッシュ、ハング、インストールの失敗、データの損失を回避するための回避策を必要とする重大な問題についてまとめます。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.date: 04/23/2018
 ms.technology: server-general
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 134aab85-664f-4d44-87ef-9e5fd389071f
 author: jaimeo
 ms.author: jaimeo
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: dcd50b287ad0f3dd49a0df3c1fe531379bd4078e
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: fea4b259986d1ca6e2f992168f7b0c2e1a177916
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948238"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80826105"
 ---
 # <a name="release-notes-important-issues-in-windows-server-version-1709"></a>リリース ノート:Windows Server バージョン 1709 に関する重要な問題
 
@@ -31,7 +27,7 @@ ms.locfileid: "75948238"
   
 ## <a name="storage-spaces-direct"></a>記憶域スペース ダイレクト
 [comment]: # (ID: 不明、送信者: stevenek、状態: サインオフ)  
-記憶域スペース ダイレクトは Windows Server バージョン 1709 には含まれません。 Windows Server バージョン 1709 を実行しているサーバー上で *Enable-ClusterStorageSpacesDirect* またはそのエイリアス *Enable-ClusterS2D* を呼び出した場合、「要求された操作がサポートされていません」というメッセージと共にエラーが返されます。
+記憶域スペース ダイレクトは Windows Server バージョン 1709 には含まれません。 Windows Server バージョン 1709 を実行しているサーバー上で *Enable-ClusterStorageSpacesDirect* またはそのエイリアス *Enable-ClusterS2D* を呼び出した場合、"要求された操作がサポートされていません" というメッセージと共にエラーが返されます。
 
 Windows Server バージョン 1709 を実行しているサーバーを、Windows Server 2016 記憶域スペース ダイレクトの展開に導入することもサポートされていません。
 

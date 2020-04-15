@@ -2,7 +2,6 @@
 title: WSUS 展開を計画します。
 description: Windows Server Update Service (WSUS) のトピック - 展開計画のプロセスの概要と関連トピックへのリンク
 ms.prod: windows-server
-ms.reviewer: na
 ms.technology: manage-wsus
 ms.topic: article
 ms.assetid: 35865398-b011-447a-b781-1c52bc0c9e3a
@@ -10,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/24/2018
-ms.openlocfilehash: 8d284c51bfa1e04a38c32adf5dce2b6f5d948b0a
-ms.sourcegitcommit: 3c3dfee8ada0083f97a58997d22d218a5d73b9c4
+ms.openlocfilehash: 68825c6bc4d24bca41c04a238fbf4d6291a6625b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80639930"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828195"
 ---
 # <a name="plan-your-wsus-deployment"></a>WSUS 展開を計画する
 
@@ -436,7 +435,7 @@ WSUS では、言語、製品、および分類別に更新プログラムの同
 ### <a name="installation"></a>インストール
 通常、更新プログラムは、更新中のコンピューターに既に存在するファイルの新しいバージョンで構成されています。 バイナリ レベルでは、これらの既存のファイルは更新後のバージョンとそれほど違わない場合があります。 高速インストール ファイル機能は、バージョン間の正確なバイト数を特定し、それらの差異のみの更新プログラムを作成して配布した後、既存のファイルと更新後のバイト数を統合します。
 
-この機能は呼ば「デルタ配布」ファイルの 2 つのバージョン間デルタ (差異) のみをダウンロードするためです。 高速インストール ファイルのサイズは、クライアント コンピューターに配布される更新プログラムよりも大きくなります。更新対象の各ファイルの考えられるすべてのバージョンが含まれているためです。
+この機能はデルタ配信と呼ばれる場合があります。これは、ファイルの 2 つのバージョン間のデルタ (差異) のみをダウンロードするためです。 高速インストール ファイルのサイズは、クライアント コンピューターに配布される更新プログラムよりも大きくなります。更新対象の各ファイルの考えられるすべてのバージョンが含まれているためです。
 
 WSUS は特定のバージョンの更新されたコンポーネントに適用できるデルタのみを送信するので、高速インストール ファイルを使用して、ローカル ネットワークで使用される帯域幅を制限できます。 ただし、WSUS サーバー、すべてのアップストリーム WSUS サーバー、Microsoft Update の間の帯域幅や、ローカル ディスク領域が追加で必要になります。 既定では、WSUS は高速インストール ファイルを使用しません。
 
