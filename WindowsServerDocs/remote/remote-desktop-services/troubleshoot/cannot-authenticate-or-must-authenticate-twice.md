@@ -1,24 +1,19 @@
 ---
 title: ユーザーが認証できない、または 2 回認証する必要がある
 description: リモート デスクトップ接続の開始時にユーザーが認証できない、または 2 回認証する必要がある問題のトラブルシューティング。
-audience: itpro
-ms.custom: na
 ms.reviewer: rklemen
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: troubleshooting
-ms.assetid: ''
 author: kaushika-msft
 manager: dcscontentpm
 ms.author: delhan
 ms.date: 07/24/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 7dbb037e335af52dacbc56c920b1776be995e753
-ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
+ms.openlocfilehash: 8fd7cfda8814347f8bab9dc7b3f7632e3b992ecb
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/18/2020
-ms.locfileid: "76265934"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857235"
 ---
 # <a name="user-cant-authenticate-or-must-authenticate-twice"></a>ユーザーが認証できない、または 2 回認証する必要がある
 
