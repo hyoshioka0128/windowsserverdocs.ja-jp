@@ -1,23 +1,19 @@
 ---
 title: Windows Server Essentials でのユーザー アカウントの管理
 description: Windows Server Essentials の使用方法について説明します。
-ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0d115697-532b-48c2-a659-9f889e235326
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 86feb7168aa53837c4bef514e8a9b6724c0e5682
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 3aa78edb19891c368408fbf1e4045fea049fc827
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80311042"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852705"
 ---
 # <a name="manage-user-accounts-in-windows-server-essentials"></a>Windows Server Essentials でのユーザー アカウントの管理
 
