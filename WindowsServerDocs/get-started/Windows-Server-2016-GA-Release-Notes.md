@@ -38,7 +38,7 @@ Server Core インストール オプションを使用して Windows Server 201
 ## <a name="containers"></a>コンテナー
 
 [comment]: # (ID:371; 提出者: taylorb; 状態:サインオフ)
-- コンテナーを使用する前に、[Windows 10 Version 1607 用のサービス スタック更新プログラム: 2016 年 8 月 23 日](https://support.microsoft.com/kb/3176936) またはそれ以降に利用可能になった更新プログラムをインストールしてください。 インストールしないと、コンテナーの作成、開始、または実行に失敗するほか、"Win32 で CreateProcess が失敗しました: RPC サーバーが利用できません。
+- コンテナーを使用する前に、[Windows 10 Version 1607 用のサービス スタック更新プログラム: 2016 年 8 月 23 日](https://support.microsoft.com/kb/3176936) またはそれ以降に利用可能になった更新プログラムをインストールしてください。 インストールしないと、コンテナーの作成、開始、または実行に失敗するほか、"Win32 で CreateProcess が失敗しました: RPC サーバーが利用できません" のようなエラーなど、多くの問題が発生します。
 
 [comment]: # (ID:373; 提出者: plang; 状態: サインオフ)
 - NanoServerPackage OneGet プロバイダーは、Windows コンテナーでは動作しません。 これを回避するには、(コンテナー以外の) 別のコンピューターで Find-NanoServerPackage および Save-NanoServerPackage を使用して、必要なパッケージをダウンロードします。 その後、ダウンロードしたパッケージをコンテナーにコピーしてインストールします。

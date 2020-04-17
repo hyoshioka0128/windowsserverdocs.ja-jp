@@ -342,7 +342,7 @@ Find-NanoServerPackage
 
    **dism /online /get-packages**  
 
-   Package Identity : Microsoft-NanoServer-IIS-Package~31bf3856ad364e35~amd64~en-US~10.0.10586.0 が 2 か所に表示されます。1 つは Release Type : "Package Identity : Microsoft-NanoServer-IIS-Package~31bf3856ad364e35~amd64~~10.0.14393.1000"が表示されます。  
+   Package Identity : Microsoft-NanoServer-IIS-Package~31bf3856ad364e35~amd64~en-US~10.0.10586.0 が 2 か所に表示されます。1 つは Release Type : Language Pack、1 つは Release Type : Feature Pack です。  
 
 ## <a name="customizing-an-existing-nano-server-vhd"></a>既存の Nano Server VHD のカスタマイズ  
 次の例に示すように、Edit-NanoServerImage コマンドレットを使用して既存の VHD の詳細を変更できます。  

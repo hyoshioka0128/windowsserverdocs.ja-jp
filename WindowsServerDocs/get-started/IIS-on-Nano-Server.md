@@ -127,7 +127,7 @@ IIS の他の構成 (ASP.NET、PHP、Java の使用など) に関する一連の
 
    **dism /online /get-packages**  
 
-   Package Identity : Microsoft-NanoServer-IIS-Package~31bf3856ad364e35~amd64~~10.0.14393.1000 が 2 か所に表示されます。1 つは Release Type : "Package Identity : Microsoft-NanoServer-IIS-Package~31bf3856ad364e35~amd64~~10.0.14393.1000"が表示されます。  
+   Package Identity : Microsoft-NanoServer-IIS-Package~31bf3856ad364e35~amd64~~10.0.14393.1000 が 2 か所に表示されます。1 つは Release Type : Language Pack、1 つは Release Type : Feature Pack です。  
 
 6. **net start w3svc** を実行するか、Nano Server を再起動して、W3SVC サービスを開始します。  
 
@@ -240,7 +240,7 @@ PS C:\> $sm.ApplicationPools.Add(DemoAppPool)
     $sm.CommitChanges()  
     ```  
 
-    さらに、次の構文を使用して特定のホスト名に Server Name Indication (SNI) を使用することもできます: `$sm.Sites[Default Web Site].Bindings.Add(*:443: www.foo.bar.com, $hash, My, Sni.`  
+    さらに、次の構文を使用して特定のホスト名に Server Name Indication (SNI) を使用することもできます: `$sm.Sites[Default Web Site].Bindings.Add(*:443:www.foo.bar.com, $hash, My, Sni.`  
 
 ## <a name="appendix-1-list-of-iis-sub-features"></a>付録 1:IIS サブ機能の一覧
 

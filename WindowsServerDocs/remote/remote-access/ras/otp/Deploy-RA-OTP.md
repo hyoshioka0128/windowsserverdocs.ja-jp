@@ -2,33 +2,29 @@
 title: OTP 認証を使用するリモート アクセスの展開
 description: このトピックは、「Windows Server 2016 で OTP 認証を使用してリモートアクセスを展開する」の一部です。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b1b2fe70-7956-46e8-a3e3-43848868df09
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 5b86cbe970c60f0684f3f6e5198fa91bbb9745b1
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 47a92db6c451b2e1e9bb44393ab987f242cc0ef5
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80313682"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858255"
 ---
 # <a name="deploy-remote-access-with-otp-authentication"></a>OTP 認証を使用するリモート アクセスの展開
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016
+>適用先:Windows Server (半期チャネル)、Windows Server 2016
 
  Windows Server 2016 および Windows Server 2012 は、DirectAccess とルーティングとリモートアクセスサービス \(RRAS\) VPN を1つのリモートアクセスの役割に結合します。   
 
 ## <a name="scenario-description"></a><a name="BKMK_OVER"></a>シナリオの説明  
 このシナリオでは、DirectAccess が有効になっているリモートアクセスサーバーが、標準 Active Directory 資格情報に加えて、OTP\) 認証 \(2 つの\-factor のワンタイムパスワードを使用して DirectAccess クライアントユーザーを認証するように構成されています。  
   
-## <a name="prerequisites"></a>前提条件  
+## <a name="prerequisites"></a>必須コンポーネント  
 このシナリオの展開を開始する前に、重要な要件の一覧を確認してください。  
   
 -   OTP を展開する前に[、詳細設定を使用して単一の DirectAccess サーバーを](../../directaccess/single-server-advanced/Deploy-a-Single-DirectAccess-Server-with-Advanced-Settings.md)展開する必要があります。  
@@ -39,7 +35,7 @@ ms.locfileid: "80313682"
   
 -   公開キー基盤を展開する必要があります。  
   
-    詳細については、次のトピックを参照してください。 [Test Lab Guide Mini-Module:Basic PKI for Windows Server 2012 (テスト ラボ ガイド ミニ モジュール: Windows Server 2012 の基本 PKI)](https://social.technet.microsoft.com/wiki/contents/articles/7862.test-lab-guide-mini-module-basic-pki-for-windows-server-2012.aspx)  
+    詳しくは、次のトピックをご覧ください。[テストラボガイドミニモジュール:Windows Server 2012 の基本 PKI。](https://social.technet.microsoft.com/wiki/contents/articles/7862.test-lab-guide-mini-module-basic-pki-for-windows-server-2012.aspx)  
   
 -   DirectAccess 管理コンソールまたは Windows PowerShell コマンドレットの外部でのポリシーの変更はサポートされていません。  
   
@@ -52,7 +48,7 @@ OTP 認証シナリオには、いくつかの手順があります。
   
 3.  [OTP 認証を使用して DirectAccess を構成](/configure/Configure-RA-with-OTP-Authentication.md)します。 OTP の展開は、OTP 認証用のインフラストラクチャの準備、OTP サーバーの構成、リモートアクセスサーバーでの OTP 設定の構成、DirectAccess クライアントの設定の更新など、さまざまな構成手順で構成されています。  
   
-4.  [OTP 展開のトラブルシューティング]((/troubleshoot/Troubleshoot-an-OTP-Deployment.md). このトラブルシューティングのセクションでは、OTP 認証を使用してリモートアクセスを展開するときに発生する可能性のある最も一般的なエラーについて説明します。  
+4.  [OTP 展開のトラブルシューティング]\((/troubleshoot/Troubleshoot-an-OTP-Deployment.md). このトラブルシューティングのセクションでは、OTP 認証を使用してリモートアクセスを展開するときに発生する可能性のある最も一般的なエラーについて説明します。  
   
 ## <a name="practical-applications"></a><a name="BKMK_APP"></a>実用的なアプリケーション  
 セキュリティを強化する-OTP を使用すると、DirectAccess 展開のセキュリティが向上します。 ユーザーが内部ネットワークにアクセスするには、OTP 資格情報が必要です。 ユーザーは、Windows 10 または Windows 8 クライアントコンピューターのネットワーク接続で使用できる職場接続を介して、または Windows 7 を実行しているクライアントコンピューターで、DirectAccess 接続アシスタント \(DCA\) を使用して、OTP 資格情報を提供します。 OTP 認証のプロセスは次のとおりです。  
@@ -74,8 +70,8 @@ OTP 認証シナリオには、いくつかの手順があります。
   
 |役割\/機能|このシナリオのサポート方法|  
 |---------|-----------------|  
-|*リモートアクセス管理の役割*|この役割をインストールまたはアンインストールするには、サーバー マネージャー コンソールを使用します。 この役割には、以前は Windows Server 2008 R2 の機能であった DirectAccess と、以前はネットワークポリシーとアクセスサービス \(NPAS\) サーバーの役割の役割サービスであったルーティングとリモートアクセスサービスの両方が含まれています。 リモート アクセスの役割は、次の 2 つのコンポーネントで構成されています。<br /><br />1. DirectAccess およびルーティングとリモートアクセスサービス \(RRAS\) VPN-DirectAccess と VPN は、リモートアクセス管理コンソールで一緒に管理されます。<br />2. RRAS ルーティング-RRAS ルーティング機能は、従来のルーティングとリモートアクセスコンソールで管理されます。<br /><br />リモート アクセスの役割は、次のサーバーの機能に依存しています。<br /><br />-インターネットインフォメーションサービス \(IIS\) Web サーバー-この機能は、ネットワークロケーションサーバーを構成し、OTP 認証を利用し、既定の Web プローブを構成するために必要です。<br />-Windows Internal Database-リモートアクセスサーバーのローカルアカウンティングに使用されます。|  
-|リモート アクセス管理ツールの機能|この機能は、次のようにインストールされます。<br /><br />-リモートアクセスの役割をインストールするときに、リモートアクセスサーバーに既定でインストールされ、リモート管理コンソールのユーザーインターフェイスをサポートします。<br />-必要に応じて、リモートアクセスサーバーの役割を実行していないサーバーにインストールできます。 この場合は、DirectAccess および VPN が実行されているリモート アクセス コンピューターのリモート管理に使用されます。<br /><br />リモート アクセス管理ツールの機能は、次の要素で構成されています。<br /><br />-リモートアクセス GUI およびコマンドラインツール<br />-Windows PowerShell 用リモートアクセスモジュール<br /><br />次の要素と依存関係があります。<br /><br />-グループポリシー管理コンソール<br />-RAS 接続マネージャー管理キット \(CMAK\)<br />-Windows PowerShell 3.0<br />-グラフィカル管理ツールとインフラストラクチャ|  
+|*リモートアクセス管理の役割*|この役割をインストールまたはアンインストールするには、サーバー マネージャー コンソールを使用します。 この役割には、以前は Windows Server 2008 R2 の機能であった DirectAccess と、以前はネットワークポリシーとアクセスサービス \(NPAS\) サーバーの役割の役割サービスであったルーティングとリモートアクセスサービスの両方が含まれています。 リモート アクセスの役割は、次の 2 つのコンポーネントで構成されています。<p>1.DirectAccess およびルーティングとリモートアクセスサービス \(RRAS\) VPN-DirectAccess と VPN は、リモートアクセス管理コンソールで一緒に管理されます。<br />2.RRAS ルーティング-RRAS ルーティング機能は、従来のルーティングとリモートアクセスコンソールで管理されます。<p>リモート アクセスの役割は、次のサーバーの機能に依存しています。<p>-インターネットインフォメーションサービス \(IIS\) Web サーバー-この機能は、ネットワークロケーションサーバーを構成し、OTP 認証を利用し、既定の Web プローブを構成するために必要です。<br />-Windows Internal Database-リモートアクセスサーバーのローカルアカウンティングに使用されます。|  
+|リモート アクセス管理ツールの機能|この機能は、次のようにインストールされます。<p>-リモートアクセスの役割をインストールするときに、リモートアクセスサーバーに既定でインストールされ、リモート管理コンソールのユーザーインターフェイスをサポートします。<br />-必要に応じて、リモートアクセスサーバーの役割を実行していないサーバーにインストールできます。 この場合は、DirectAccess および VPN が実行されているリモート アクセス コンピューターのリモート管理に使用されます。<p>リモート アクセス管理ツールの機能は、次の要素で構成されています。<p>-リモートアクセス GUI およびコマンドラインツール<br />-Windows PowerShell 用リモートアクセスモジュール<p>次の要素と依存関係があります。<p>-グループポリシー管理コンソール<br />-RAS 接続マネージャー管理キット \(CMAK\)<br />-Windows PowerShell 3.0<br />-グラフィカル管理ツールとインフラストラクチャ|  
   
 ## <a name="hardware-requirements"></a><a name="BKMK_HARD"></a>ハードウェア要件  
 このシナリオのハードウェア要件は次のとおりです。  
@@ -103,7 +99,7 @@ OTP 認証シナリオには、いくつかの手順があります。
   
     4.  クライアント\-側の要件-Windows 10 および Windows 8 クライアントコンピューターの場合は、OTP 資格情報が必要かどうかを検出するために、ネットワーク接続アシスタント \(NCA\) サービスが使用されます。 そのような場合は、DirectAccess メディアマネージャーによって資格情報の入力が求められます。  NCA はオペレーティングシステムに含まれており、インストールや展開は必要ありません。 Windows 7 クライアントコンピューターの場合、DirectAccess 接続アシスタント \(DCA\) 2.0 が必要です。 これは、 [Microsoft ダウンロード センター](https://www.microsoft.com/download/details.aspx?id=29039)からダウンロードして入手できます。  
   
-    5.  次の点に注意してください。  
+    5.  次のことを考慮してください。  
   
         1.  OTP 認証は、スマートカードおよびトラステッドプラットフォームモジュール \(TPM\)\-ベースの認証と並行して使用できます。 リモート アクセス管理コンソールで OTP 認証を有効にすると、スマートカード認証の使用も有効になります。  
   
@@ -113,7 +109,7 @@ OTP 認証シナリオには、いくつかの手順があります。
   
         4.  リモート アクセスのマルチサイト展開では、OTP 設定はグローバルで、すべてのエントリ ポイントに対して同一です。 OTP 用に複数の RADIUS サーバーまたは CA サーバーを構成している場合、各リモート アクセス サーバーでは、それらのサーバーを可用性と近さに基づいて並べ替えます。  
   
-        5.  リモートアクセスのマルチ\-フォレスト環境で OTP を構成する場合は、OTP Ca をリソースフォレストのみから指定し、証明書の登録をフォレストの信頼間で構成する必要があります。 詳細については、[AD CS の Windows Server 2008 R2 を使用したフォレスト間証明書の登録に関するページ](https://technet.microsoft.com/library/ff955842.aspx)を参照してください。  
+        5.  リモートアクセスのマルチ\-フォレスト環境で OTP を構成する場合は、OTP Ca をリソースフォレストのみから指定し、証明書の登録をフォレストの信頼間で構成する必要があります。 詳細については、「[AD CS:Windows Server 2008 R2](https://technet.microsoft.com/library/ff955842.aspx)でのフォレスト間証明書の登録。  
   
         6.  キーの FOB OTP トークンを使用するユーザーは、DirectAccess OTP ダイアログに\) 区切り文字を付けずに、PIN の後にトークンコード \(を挿入する必要があります。 PIN PAD OTP トークンを使用するユーザーは、ダイアログで、トークンコードのみを入力する必要があります。  
   

@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.date: 06/07/2019
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 72e71ce2d1427f392aa02d32597f92d031f9a5c9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7a4dacd611741942e874e831fd9598aeda5e97b3
+ms.sourcegitcommit: 20d07170c7f3094c2fb4455f54b13ec4b102f2d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407009"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81269279"
 ---
 # <a name="prepare-your-environment-for-windows-admin-center"></a>Windows Admin Center のための環境の準備
 
@@ -22,7 +22,6 @@ ms.locfileid: "71407009"
 Windows Admin Center で管理する準備が完了する前に、追加の準備が必要ないくつかの Server バージョンがあります。
 
 - [Windows Server 2012 および 2012 R2](#prepare-windows-server-2012-and-2012-r2)
-- [Windows Server 2008 R2](#prepare-windows-server-2008-r2)
 - [Microsoft Hyper-V Server 2016](#prepare-microsoft-hyper-v-server-2016)
 - [Microsoft Hyper-V Server 2012 R2](#prepare-microsoft-hyper-v-server-2012-r2)
 
@@ -37,26 +36,6 @@ Windows Admin Center には、既定で Windows Server 2012 および 2012 R2 �
 PowerShell で `$PSVersiontable` を入力して、WMF がインストールされていること、またバージョンが 5.1 以上であることを確認します。
 
 インストールされていない場合は、[WMF 5.1 をダウンロードしてインストール](https://docs.microsoft.com/powershell/wmf/setup/install-configure)できます。
-
-## <a name="prepare-windows-server-2008-r2"></a>Windows Server 2008 R2 の準備
-
-### <a name="install-wmf-version-51-or-higher"></a>WMF バージョン 5.1 以上のインストール
-
-Windows Admin Center では、既定で Windows Server 2008 R2 に含まれていない PowerShell 機能が必要です。 Windows Admin Center で Windows Server 2008 R22 を管理するには、それらのサーバーに WMF バージョン 5.1 以上をインストールする必要があります。 
-
-お使いのコンピューターに [.NET Framework 4.5.2 以降](https://docs.microsoft.com/dotnet/framework/install/on-windows-7)が既にインストールされていることを確認します。
-
-PowerShell で `$PSVersiontable` を入力して、WMF がインストールされていること、またバージョンが 5.1 以上であることを確認します。
-
-インストールされていない場合は、[WMF 5.1 をダウンロードしてインストール](https://docs.microsoft.com/powershell/wmf/setup/install-configure)できます。
-
-PowerShell コンソールで `Enable-PSRemoting –force` を実行して Powershell リモート接続を有効にします。 
-
-### <a name="enable-remote-desktop"></a>リモート デスクトップの有効化
-
-Windows Admin Center 内でリモート デスクトップを使用するには、Windows Server 2008 R2 サーバーでリモート デスクトップを有効にする必要があります。
-
-**サーバー マネージャー**で、 **[リモート デスクトップの構成]** に移動します。 リモート デスクトップを有効にし、リモート デスクトップを実行しているコンピューターからの接続を許可します。
 
 ## <a name="prepare-microsoft-hyper-v-server-2016"></a>Microsoft Hyper-V Server 2016 の準備
 

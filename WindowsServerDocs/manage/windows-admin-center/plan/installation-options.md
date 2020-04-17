@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 12/02/2019
-ms.openlocfilehash: 503cd64cac0673829fe21bc15e8ad9d6a83bbb15
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: bd7ec8a5a072cbda99b036718d24ec1908fb8b53
+ms.sourcegitcommit: 20d07170c7f3094c2fb4455f54b13ec4b102f2d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950513"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81269249"
 ---
 # <a name="what-type-of-installation-is-right-for-you"></a>適切なインストールの種類
 
@@ -64,10 +64,9 @@ Windows Admin Center を使って、次の Windows オペレーティング シ�
 | Windows Server 2012 R2 | はい | はい |
 | Microsoft Hyper-V Server 2012 R2 | はい | はい |
 | Windows Server 2012 | はい | はい |
-| Windows Server 2008 R2 | はい (制限された機能) | なし |
 
 > [!NOTE]
-> Windows Admin Center では、Windows Server 2008 R2、2012、および 2012 R2 に含まれていない PowerShell 機能が必要です。 これらを Windows Admin Center で管理する場合は、Windows Management Framework (WMF) バージョン 5.1 以上をそれらのサーバーにインストールする必要があります。
+> Windows Admin Center では、Windows Server 2012 および 2012 R2 に含まれていない PowerShell 機能が必要です。 これらを Windows Admin Center で管理する場合は、Windows Management Framework (WMF) バージョン 5.1 以上をそれらのサーバーにインストールする必要があります。
 > 
 > PowerShell で `$PSVersiontable` を入力して、WMF がインストールされていること、またバージョンが 5.1 以上であることを確認します。 
 > 
