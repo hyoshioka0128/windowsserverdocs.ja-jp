@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 7609ebb0fdcb6d429cd40d99399eaaedb732df08
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: c0fdb5c1d7c4b03610a173c6cd0575d39646a7d0
+ms.sourcegitcommit: af1cf89632d62a94943d3ad9f6b5234b88499278
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80855095"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81524907"
 ---
 # <a name="determine-allow-deny-list-and-application-inventory-for-software-restriction-policies"></a>ソフトウェアの制限のポリシーの許可/拒否リストおよびアプリケーション インベントリの決定
 
@@ -48,9 +48,9 @@ SRP を使用して特定のタスクを実行する方法については、以�
 
 2.  詳細ログ機能を有効にし、ログファイルを書き込む場所のパスを設定するために、次のレジストリ値を作成します。
 
-    **"HKEY_LOCAL_MACHINE \SOFTWARE\Policies\Microsoft\Windows\Safer\ CodeIdentifiers"**
+    **"HKEY_LOCAL_MACHINE \SOFTWARE\Policies\Microsoft\Windows\Safer\CodeIdentifiers"**
 
-    文字列値: namelogfile*への namelogfile パス*
+    文字列値: *LogFileName への LogFileName パス*
 
     SRP では実行時にすべてのアプリケーションが評価されるため、アプリケーションが実行されるたびに、エントリがログファイルの*Namelogfile*に書き込まれます。
 
@@ -69,5 +69,4 @@ SRP を使用して特定のタスクを実行する方法については、以�
     ログファイルに書き込まれる出力の例を次に示します。
 
 explorer.exe **(PID = 4728) identifiedC:\ Windows\system32\onenote.exe As 無制限の実行パスの規則、Guid = {320bd852-aa7c-4674-82c5-9a80321670a3}**   SRP によってチェックされブロックに設定されるすべてのアプリケーションと関連するコードは、ログファイルに記録されます。その後、許可リストについて考慮する必要がある実行可能ファイルを決定するために使用できます。
-
 
