@@ -1,24 +1,20 @@
 ---
 title: wevtutil
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Wevtutil の Windows コマンドに関するトピック。イベントログとパブリッシャーに関する情報を取得できます。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d4c791e0-7e59-45c5-aa55-0223b77a4822 vhorne
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 21f3b721a2a08a7fa101ec09f1f11b5e984f0113
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 62be2b14373457a3b114e8d067e1c7aa32b2182d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71362167"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80829355"
 ---
 # <a name="wevtutil"></a>wevtutil
 
@@ -40,13 +36,13 @@ wevtutil [{el | enum-logs}] [{gl | get-log} <Logname> [/f:<Format>]]
 [{cl | clear-log} <Logname> [/bu:<Backup>]] [/r:<Remote>] [/u:<Username>] [/p:<Password>] [/a:<Auth>] [/uni:<Unicode>]
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
 |パラメーター|説明|
 |---------|-----------|
 |{el \| 列挙ログ}|すべてのログの名前を表示します。|
 |{gl \| 取得ログ} \<Logname > [/f:\<形式 >]|指定したログの構成情報を表示します。ログが有効になっているかどうか、ログの現在の最大サイズ制限、およびログが保存されているファイルへのパスが含まれます。|
-|{sl \| 設定ログ} \<Logname > [/e:\<有効になっている >] [/i:\<分離 >] [/lfn:\<Logpath >] [/rt:\<リテンション期間] [/ab: > [自動\<] [] [/ミリ秒] [の、[/l: >] [/ca:\<Channel >] [/c:\<構成 >]\<\<\<|指定されたログの構成を変更します。|
+|{sl \| 設定ログ} \<Logname > [/e:\<有効になっている >] [/i:\<分離 >] [/lfn:\<Logpath >] [/rt:\<リテンション期間] [/ab: > [自動\<] [/ミリ秒] の、[/l: >] [/ca:\<Channel >] [/c:\<構成 >]|指定されたログの構成を変更します。|
 |{ep \| enum-publishers}|ローカルコンピューター上のイベント発行元を表示します。|
 |{gp \|/ge} \<Publishername > [:\<Metadata >] [/gm:\<Message >] [/f:\<Format >]]|指定したイベント発行元の構成情報を表示します。|
 |{im \| インストールマニフェスト} \<マニフェスト >|マニフェストからイベントパブリッシャーとログをインストールします。 イベントマニフェストとこのパラメーターの使用の詳細については、Microsoft 開発者ネットワーク (MSDN) Web サイト ([https://msdn.microsoft.com](https://msdn.microsoft.com)) の Windows イベントログ SDK を参照してください。|
@@ -59,7 +55,7 @@ wevtutil [{el | enum-logs}] [{gl | get-log} <Logname> [/f:<Format>]]
 
 ## <a name="options"></a>オプション
 
-|       構成方法       |                                                                                                                                                                                                                                                                 説明                                                                                                                                                                                                                                                                  |
+|       OPTION       |                                                                                                                                                                                                                                                                 説明                                                                                                                                                                                                                                                                  |
 |--------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |    /f:\<形式 >    |                                                                                                                                                               出力を XML 形式またはテキスト形式のいずれかに指定します。 \<形式 > が XML の場合、出力は XML 形式で表示されます。 \<形式 > がテキストの場合、出力は XML タグなしで表示されます。 既定値は Text です。                                                                                                                                                                |
 |   /e:\<有効 >    |                                                                                                                                                                                                                                         ログを有効または無効にします。 \<有効にする > は true または false です。                                                                                                                                                                                                                                          |
@@ -87,19 +83,19 @@ wevtutil [{el | enum-logs}] [{gl | get-log} <Logname> [/f:<Format>]]
 |   /bu:\<バックアップ >    |                                                                                                                                                                                                      消去されたイベントが格納されるファイルへのパスを指定します。 バックアップファイルの名前には、.evtx 拡張子を含めます。                                                                                                                                                                                                       |
 |    /r:\<リモート >    |                                                                                                                                                                                            リモートコンピューターでコマンドを実行します。 \<リモート > は、リモートコンピューターの名前です。 **Im**および**um**パラメーターでは、リモート操作はサポートされていません。                                                                                                                                                                                            |
 |   /u:\<ユーザー名 >   |                                                                                                                                                                          リモートコンピューターにログオンするための別のユーザーを指定します。 \<Username > は、domain\user または user という形式のユーザー名です。 このオプションは、 **/r**オプションが指定されている場合にのみ適用されます。                                                                                                                                                                          |
-|   /p:\<パスワード >   |                                                                                                                                               ユーザーのパスワードを指定します。 **/U**オプションを使用していて、このオプションが指定されていない場合、または \<パスワード > が "" の場合 *、ユーザーはパスワードの入力を求められます。このオプションは、\*\*/u\* オプションが指定されている場合にのみ適用され*ます。                                                                                                                                                |
+|   /p:\<パスワード >   |                                                                                                                                               ユーザーのパスワードを指定します。 **/U**オプションを使用していて、このオプションが指定されていない場合、または \<パスワード > が *場合、ユーザーはパスワードの入力を求められます。このオプションは、\*\*/u*\* オプションが指定されている場合にのみ適用されます。                                                                                                                                                |
 |     /a:\<Auth >     |                                                                                                                                                                                             リモートコンピューターに接続するための認証の種類を定義します。 \<Auth > には、Default、Negotiate、Kerberos、NTLM を使用できます。 既定値は Negotiate です。                                                                                                                                                                                              |
 |  /uni:\<Unicode >   |                                                                                                                                                                                                             Unicode で出力を表示します。 \<Unicode > は true または false にすることができます。 <Unicode> が true の場合、出力は Unicode になります。                                                                                                                                                                                                             |
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
 -   構成ファイルを sl パラメーターと共に使用する
 
     構成ファイルは、wevtutil gl \<Logname >/f: xml の出力と同じ形式の XML ファイルです。 次の例は、保存を有効にし、自動バックアップを有効にし、アプリケーションログの最大ログサイズを設定する構成ファイルの形式を示しています。  
     ```
-    <?xml version="1.0" encoding="UTF-8"?>
-    <channel name="Application" isolation="Application"
-    xmlns="https://schemas.microsoft.com/win/2004/08/events">
+    <?xml version=1.0 encoding=UTF-8?>
+    <channel name=Application isolation=Application
+    xmlns=https://schemas.microsoft.com/win/2004/08/events>
     <logging>
     <retention>true</retention>
     <autoBackup>true</autoBackup>
@@ -110,7 +106,7 @@ wevtutil [{el | enum-logs}] [{gl | get-log} <Logname> [/f:<Format>]]
     </channel>
     ```
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a><a name=BKMK_examples></a>例
 
 すべてのログの名前を一覧表示します。
 ```
@@ -155,4 +151,4 @@ wevtutil cl Application /bu:C:\admin\backups\a10306.evtx
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
