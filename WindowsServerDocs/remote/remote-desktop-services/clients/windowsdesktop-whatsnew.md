@@ -7,14 +7,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 03/24/2020
+ms.date: 04/14/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 34f5fdb5a2826173edf471fd65248008761863dd
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 016a88999b93d686faff73134a660014fd602765
+ms.sourcegitcommit: 20d07170c7f3094c2fb4455f54b13ec4b102f2d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80861415"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81279698"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Windows デスクトップ クライアントの新機能
 
@@ -27,7 +27,26 @@ Windows デスクトップ クライアントの詳細については、「[Wind
 |ユーザー グループ |バージョン  |
 |-----------|---------|
 |パブリック     |1.2.790  |
-|Insider    |1.2.790  |
+|Insider    |1.2.940  |
+
+## <a name="updates-for-version-12940"></a>バージョン 1.2.940 の更新内容
+
+*公開日:2020 年 4 月 14 日*
+
+ダウンロード:[Windows 64 ビット](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4txZU)、[Windows 32 ビット](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4txZV)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4tM6I)
+
+- 接続センターのデスクトップ アイコンを右クリックしたときに利用できる、デスクトップ接続のための新しいディスプレイ設定オプションが追加されました。
+  - 現在、3 つのディスプレイ構成オプションがあります。 **[All displays]\(すべてのディスプレイ\)** 、 **[Single display]\(単一ディスプレイ\)** 、 **[Select displays]\(ディスプレイの選択\)** です。
+  - ディスプレイ構成を選択すると、利用できる設定だけが表示されるようになりました。
+  - [Select displays]\(ディスプレイの選択\) モードでは、新しい **[Maximize to current displays]\(現在のディスプレイに最大化\)** オプションにより、再接続することなく、セッションで使用するディスプレイを動的に変更できるようになります。 有効な場合にセッションを最大化すると、セッション ウィンドウが表示されているすべてのディスプレイが全画面表示になります。
+  - [All displays]\(すべてのディスプレイ\) と [Select displays]\(ディスプレイの選択\) モードのための、新しい **[Single display when windowed]\(ウィンドウ表示の場合は単一ディスプレイ\)** オプションが追加されました。 このオプションでは、全画面モードを終了するとセッションは単一ディスプレイに自動的切り替わり、ウィンドウを最大化すると複数ディスプレイに自動的に戻ります。
+- ウィンドウ表示されたデスクトップ セッションのタイトル バーを右クリックすると表示されるシステム メニューに、新しい **[Display settings]\(ディスプレイ設定\)** グループが追加されました。 これにより、セッション中にいくつかの設定を動的に変更できるようになります。 たとえば、新しい **[Single display mode when windowed]\(ウィンドウ表示の場合は単一ディスプレイ モード\)** および **[Maximize to current displays]\(現在のディスプレイに最大化\)** 設定を変更することができます。
+- 全画面表示を終了すると、セッション ウィンドウは全画面表示を開始した時の元の場所に戻ります。
+- [About]\(バージョン情報\) ページのユーザー データをリセットすると、完了したときにクライアントが閉じられるのではなく、接続センターにリダイレクトされるようになりました。
+- タブ ナビゲーションやスクリーン リーダーなどのいくつかのアクセシビリティの問題が解決されました。
+- スケール ファクターが異なるディスプレイ間でデスクトップのセッション ウィンドウをドラッグする際の、ちらつきや縮小の問題が修正されました。
+- カメラの向きを変える際に生じるエラーが修正されました。
+- 複数のクラッシュが修正され、信頼性が向上しました。
 
 ## <a name="updates-for-version-12790"></a>バージョン 1.2.790 の更新内容
 

@@ -6,12 +6,12 @@ ms.technology: server-general
 author: Teresa-Motiv
 ms.author: v-tea
 ms.localizationpriority: medium
-ms.openlocfilehash: 6cd94e997deaaf358c72793e6ff35d51a9ab3df6
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 76665d91cc1e2997a837721ffbc51b0513dd7c1a
+ms.sourcegitcommit: af1cf89632d62a94943d3ad9f6b5234b88499278
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80826186"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81524937"
 ---
 # <a name="guidelines-for-troubleshooting-dns-related-activation-issues"></a>DNS に関連するライセンス認証の問題のトラブルシューティングに関するガイドライン
 
@@ -241,7 +241,7 @@ allow-update { any; };
 - ドメインに参加しているコンピューターの場合、DNS システム (Active Directory Domain Services (AD DS) DNS など) によって割り当てられたコンピューターのドメイン。
 - ワークグループ コンピューターの場合、コンピューターのドメインは動的ホスト構成プロトコル (DHCP) によって割り当てられます。 このドメイン名は、Request for Comments (RFC) 2132 で定義されているように、コード値が 15 のオプションによって定義されています。
 
-既定で、KMS ホストでは、KMS ホスト コンピューターのドメインに対応する DNS ゾーンに SRV レコードが登録されます。 たとえば、KMS ホストが contoso.com ドメインに参加しているとします。 このシナリオでは、KMS ホストでは、contoso.com DNS ゾーン以下に _vmlcs SRV レコードが登録されます。 そのため、レコードでは、サービスが VLMCS._TCP.CONTOSO.COM と識別します。
+既定で、KMS ホストでは、KMS ホスト コンピューターのドメインに対応する DNS ゾーンに SRV レコードが登録されます。 たとえば、KMS ホストが contoso.com ドメインに参加しているとします。 このシナリオでは、KMS ホストでは、contoso.com DNS ゾーン以下に _vmlcs SRV レコードが登録されます。 そのため、レコードでは、サービスが _VLMCS._TCP.CONTOSO.COM として識別されます。
 
 KMS ホストと KMS クライアントが異なる DNS ゾーンを使用している場合、複数の DNS ドメインで SRV レコードを自動的に公開するように KMS ホストを構成する必要があります。 これを行うには、次の手順に従います。
 

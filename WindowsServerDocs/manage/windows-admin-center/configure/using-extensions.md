@@ -7,12 +7,12 @@ author: daniellee-msft
 ms.author: jol
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 7c1a70e36dfac9b23ded8f920ffcc8cccbfff023
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 2b8a9f5ebab22891b8b97c9c56bba3837cbb9371
+ms.sourcegitcommit: 20d07170c7f3094c2fb4455f54b13ec4b102f2d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79323584"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81269299"
 ---
 # <a name="install-and-manage-extensions"></a>拡張機能のインストールと管理
 
@@ -36,7 +36,7 @@ Windows Admin Center は複数のフィードをサポートしており、一�
 1. 右上の **[設定]** ボタンをクリックし、左ペインの **[拡張機能]** をクリックします。
 2. 右側のペインで **[フィード]** タブをクリックします。
 3. 別のフィードを追加するには **[追加]** ボタンをクリックします。 NuGet フィードの場合は、NuGet V2 フィードの URL を入力します。 NuGet フィード プロバイダーまたは管理者は、URL 情報を指定できる必要があります。 ファイル共有の場合は、拡張機能パッケージ ファイル (.nupkg) が格納されているファイル共有の完全パスを入力します。
-4. **[追加]** をクリックします。 この変更を行うために、ゲートウェイを特権モードで実行する必要がある場合は、UAC の昇格プロンプトが表示されます。
+4. **[追加]** をクリックします。 この変更を行うために、ゲートウェイを特権モードで実行する必要がある場合は、UAC の昇格プロンプトが表示されます。 このプロンプトは、デスクトップ モードで Windows Admin Center を実行している場合にのみ表示されます。
 
 **[使用可能な拡張機能]** 一覧には、すべての登録済みフィードの拡張機能が表示されます。 **[Package Feed]\(パッケージ フィード\)** 列を使用して、各拡張機能のフィード元を確認できます。
 

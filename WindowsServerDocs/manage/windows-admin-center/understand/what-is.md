@@ -8,16 +8,16 @@ ms.author: niwashbu
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 06/07/2019
-ms.openlocfilehash: 110e1442b6660c24dc1e3fd9649138390117ffd6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: cb4e3ab2bf98a0c2d51483642fe5388e468dbbb4
+ms.sourcegitcommit: 20d07170c7f3094c2fb4455f54b13ec4b102f2d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406817"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81269269"
 ---
-# <a name="what-is-windows-admin-center"></a>Windows Admin Center とは
+# <a name="what-is-windows-admin-center"></a>Windows Admin Center とは?
 
-> 適用対象:Windows Admin Center、Windows Admin Center Preview
+> 適用先:Windows Admin Center、Windows Admin Center Preview
 
 Windows Admin Center は、Azure またはクラウドに依存せずに、Windows サーバーの管理を実現する、ローカルに展開されたブラウザー ベースの新しい管理ツール セットです。 Windows Admin Center では、サーバー インフラストラクチャのあらゆる側面を完全に管理できます。特に、インターネットに接続されていないプライベート ネットワークでのサーバーの管理に便利です。
 
@@ -27,7 +27,7 @@ Windows Admin Center は、サーバー マネージャーや MMC などの "イ
 
 ## <a name="how-does-windows-admin-center-work"></a>Windows Admin Center のしくみ
 
-Windows Admin Center は Web ブラウザーで実行され、Windows Server または Windows 10 にインストールされた **Windows Admin Center ゲートウェイ**を介して Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows 10 などを管理します。 ゲートウェイは、リモート PowerShell と WMI over WinRM を介してサーバーを管理します。 ゲートウェイは、[ダウンロード](https://aka.ms/windowsadmincenter)可能な単一の軽量な .msi パッケージとして Windows Admin Center に含まれています。
+Windows Admin Center は Web ブラウザーで実行され、Windows Server またはドメインに参加している Windows 10 にインストールされた **Windows Admin Center ゲートウェイ**を介して Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows 10 などを管理します。 ゲートウェイは、リモート PowerShell と WMI over WinRM を介してサーバーを管理します。 ゲートウェイは、[ダウンロード](https://aka.ms/windowsadmincenter)可能な単一の軽量な .msi パッケージとして Windows Admin Center に含まれています。
 
 Windows Admin Center ゲートウェイは、DNS に発行され、対応する企業ファイアウォールによってアクセス権が与えられると、Microsoft Edge または Google Chrome によってユーザーがどこからでもサーバーに安全に接続し、管理できるようにします。
 
