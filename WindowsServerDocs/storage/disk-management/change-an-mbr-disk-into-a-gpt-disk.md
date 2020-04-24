@@ -9,10 +9,10 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: 6bd97802fbef342520e92a857a1a53acf3e8d7a3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "71385936"
 ---
 # <a name="convert-an-mbr-disk-into-a-gpt-disk"></a>MBR ディスクを GPT ディスクに変換する
@@ -45,7 +45,7 @@ ms.locfileid: "71385936"
 
 2.  **[コマンド プロンプト]** を右クリックし、 **[管理者として実行]** を選択して、管理者特権でコマンド プロンプトを開きます。
 
-3. 「`diskpart`」と入力します。 ディスクにパーティションやボリュームが含まれていない場合は、手順 6. に進みます。
+3. 「 `diskpart`」と入力し、 ディスクにパーティションやボリュームが含まれていない場合は、手順 6. に進みます。
 
 4.  **DISKPART** プロンプトで、「`list disk`」と入力します。 変換するディスクのディスク番号を書き留めておきます。
 
@@ -58,7 +58,7 @@ ms.locfileid: "71385936"
 
 7.  **DISKPART** プロンプトで、「`convert gpt`」と入力します。
 
-| Value  | 説明  |
+| 値  | 説明  |
 | ----- | ---- |
 | **list disk** | ディスクとディスクに関する情報を一覧表示します。ディスクのサイズ、利用可能な空き領域の容量、ディスクがベーシック ディスクとダイナミック ディスクのどちらであるか、ディスクでマスター ブート レコード (MBR) と GUID パーティション テーブル (GPT) のどちらのパーティション スタイルが使用されているかなどの情報が表示されます。 アスタリスク (*) でマークされているディスクにフォーカスがあります。 |
 | **select disk** *disknumber* | *disknumber* がディスク番号である指定されたディスクを選択し、そのディスクにフォーカスを移動します。 |

@@ -9,10 +9,10 @@ ms.localizationpriority: medium
 ms.topic: article
 author: christianmontoya
 ms.openlocfilehash: c56a233adf28270aac809dc960e32b5363e4b8ab
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "71387509"
 ---
 # <a name="set-up-email-discovery-to-subscribe-to-your-rds-feed"></a>RDS フィードに登録するために電子メールの検出を設定する

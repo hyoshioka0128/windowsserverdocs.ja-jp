@@ -1,5 +1,5 @@
 # [Windows コマンド](windows-commands.md)
-## - [コマンド ライン構文の記号](command-line-syntax-key.md)
+## [コマンド ライン構文の記号](command-line-syntax-key.md)
 ## [サーバーの役割別のコマンド](commands-by-server-role.md)
 ### [印刷コマンドのリファレンス](print-command-reference.md)
 ### [サービスがネットワーク ファイル システム コマンドのリファレンス](services-for-network-file-system-command-reference.md)

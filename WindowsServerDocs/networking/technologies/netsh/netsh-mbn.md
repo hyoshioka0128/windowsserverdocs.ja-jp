@@ -7,10 +7,10 @@ ms.topic: article
 author: apdutta
 ms.date: 02/20/2020
 ms.openlocfilehash: 478f87db4d520a133b3d70c0ed2dbb4e91db60d9
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "80853735"
 ---
 # <a name="netsh-mbn-commands"></a>netsh mbn コマンド

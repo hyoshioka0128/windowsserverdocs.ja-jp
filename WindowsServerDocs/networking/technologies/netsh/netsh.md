@@ -10,10 +10,10 @@ ms.author: lizross
 author: eross-msft
 ms.date: 09/13/2018
 ms.openlocfilehash: d9103585d1868f586f169f01096c4d37961e7033
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "80316687"
 ---
 # <a name="network-shell-netsh"></a>Network Shell \(netsh\)

@@ -9,10 +9,10 @@ ms.date: 03/28/2019
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.openlocfilehash: 943830a2743f7cfd3192a474eb36d57f734d3d34
-ms.sourcegitcommit: 20d07170c7f3094c2fb4455f54b13ec4b102f2d7
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "81269309"
 ---
 # <a name="configure-shared-connections-for-all-users-of-the-windows-admin-center-gateway"></a>Windows Admin Center ゲートウェイのすべてのユーザーに対して共有接続を構成する

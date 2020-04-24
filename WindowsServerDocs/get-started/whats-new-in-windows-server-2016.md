@@ -11,10 +11,10 @@ ms.author: jgerend
 manager: dongill
 ms.localizationpriority: medium
 ms.openlocfilehash: 0c140c61a5887cc63b2a9d0b468f8d1daf02cd76
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/29/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "76822715"
 ---
 # <a name="whats-new-in-windows-server-2016"></a>Windows Server 2016 の新機能
@@ -23,7 +23,7 @@ ms.locfileid: "76822715"
 
 ![新聞を示すアイコン](media/whats-new.png) Windows の最新の機能については、「[Windows Server の新機能](whats-new-in-windows-server.md)」を参照してください。 ここでは、Windows Server&reg; 2016 の新機能および変更された機能について説明します。 ここに記載されている新機能と変更された機能は、このリリースを使う際に影響が最も大きいと思われるものです。
 
-## <a name="computevirtualizationvirtualizationmd"></a>[Compute](../virtualization/virtualization.md)
+## <a name="compute"></a>[Compute](../virtualization/virtualization.md)
 
 仮想領域には、Windows Server を設計、展開、および保守する IT プロフェッショナル向けの仮想化製品と機能が含まれます。  
 
@@ -59,7 +59,7 @@ Windows Server 2016 には、不正に使用されているファブリックか
 
 シールドされた仮想マシンを使用するための詳細および手順については、[シールドされた VM と保護されたファブリックの検証ガイド: Windows Server 2016 (TPM)](https://aka.ms/shieldedvms) に関する記事を参照してください。  
 
-## <a name="identity-and-accessidentityidentity-and-accessmd"></a>[ID およびアクセス](../identity/Identity-and-Access.md)  
+## <a name="identity-and-access"></a>[ID およびアクセス](../identity/Identity-and-Access.md)  
 ID での新機能では、組織が Active Directory 環境をセキュリティで保護する機能が強化され、クラウドのみの展開およびハイブリッドの展開に移行するために役立ちます。ハイブリッドの展開では、一部のアプリケーションとサービスはクラウドでホストされ、残りはオンプレミスでホストされます。  
 
 ### <a name="active-directory-certificate-services"></a>Active Directory 証明書サービス  
@@ -74,7 +74,7 @@ Active Directory フェデレーション サービスの新機能。 Windows Se
 ### <a name="web-application-proxy"></a>Web アプリケーション プロキシ  
 Web アプリケーション プロキシの最新バージョンでは、より多くのアプリケーションの発行と事前認証を可能にする新機能に力を入れており、ユーザー エクスペリエンスの向上が図られています。 新機能の一覧をご覧ください。新機能には、Exchange ActiveSync などのリッチ クライアント アプリの事前認証や、SharePoint アプリの発行を容易にするワイルドカード ドメインなどがあります。 詳細については、「[Web Application Proxy in Windows Server 2016 (Windows Server 2016 の Web アプリケーション プロキシ)](../remote/remote-access/web-application-proxy/web-application-proxy-windows-server.md)」を参照してください。  
 
-##  <a name="administrationadministrationmanage-windows-servermd"></a>[管理](../administration/manage-windows-server.md)  
+##  <a name="administration"></a>[管理](../administration/manage-windows-server.md)  
 管理と自動化の領域では、Windows PowerShell など Windows Server 2016 を実行および管理する IT プロフェッショナル向けのツールとリファレンス情報に力を入れています。
 
 Windows PowerShell 5.1 に追加された重要な新機能には、クラスを使った開発のサポートや新しいセキュリティ機能があります。それらの機能により、用途が広がり、使いやすさが向上し、Windows ベースの環境をより簡単かつ包括的に制御して管理できます。 詳細については、「[WMF 5.1 の新しいシナリオと機能](https://docs.microsoft.com/powershell/wmf/5.1/scenarios-features)」を参照してください。
@@ -98,7 +98,7 @@ Windows Server 2016 および Windows 10 には、新しい PackageManagement �
 
 詳しくは、「[PowerShell とブルー チーム](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/)」を参照してください。
 
-## <a name="networkingnetworkingnetworkingmd"></a>[ネットワーク](../networking/Networking.md)  
+## <a name="networking"></a>[ネットワーク](../networking/Networking.md)  
 この領域には、IT プロフェッショナルが Windows Server 2016 を設計、展開、保守するためのネットワーク製品と機能が含まれています。  
 
 ### <a name="software-defined-networking"></a>ソフトウェアによるネットワーク制御
@@ -109,7 +109,7 @@ Windows Server 2016 および Windows 10 には、新しい PackageManagement �
 
 パケット損失から回復する際の TCP 動作を改善するために、TCP Tail Loss Probe (TLP) と Recent Acknowledgement (RACK) が実装されました。 TLP は、再転送タイムアウト (RTO) を高速回復に変換する際に役立ちます。また、RACK は高速回復の所要時間を短縮し、損失パケットを再転送します。 
 
-## <a name="security-and-assurancesecuritysecurity-and-assurancemd"></a>[セキュリティおよび保証](../security/Security-and-Assurance.md)  
+## <a name="security-and-assurance"></a>[セキュリティおよび保証](../security/Security-and-Assurance.md)  
 IT プロフェッショナルがデータ センターとクラウド環境に展開するためのセキュリティ ソリューションと機能が含まれます。 Windows Server 2016 でのセキュリティについては、「[セキュリティおよび保証](../security/Security-and-Assurance.md)」を参照してください。  
 
 ### <a name="just-enough-administration"></a>Just Enough Administration  
@@ -132,7 +132,7 @@ Device Guard は、サーバーで実行できるコードを指定するポリ�
 制御フロー ガード (CFG) は、メモリ破損の脆弱性に対処するために作成されたプラットフォームのセキュリティ機能です。 詳細については、「[Control Flow Guard (制御フロー ガード)](https://msdn.microsoft.com/library/windows/desktop/mt637065(v=vs.85).aspx)」を参照してください。
 
 
-## <a name="storagestoragestoragemd"></a>[ストレージ](../storage/storage.md)
+## <a name="storage"></a>[ストレージ](../storage/storage.md)
 
 Windows Server 2016 の記憶域には、ソフトウェアによる記憶域と従来のファイル サーバーに対する新機能と強化機能が含まれています。 新機能のいくつかを以下に示します。強化機能および詳細情報については、「[What's New in Storage in Windows Server 2016 (Windows Server 2016 の記憶域の新機能)](../storage/whats-new-in-storage.md)」を参照してください。
 
@@ -154,7 +154,7 @@ Windows Server 2016 の記憶域には、ソフトウェアによる記憶域と
 
 詳細については、「[記憶域のサービスの品質](../storage/storage-qos/storage-qos-overview.md)」を参照してください。
 
-## <a name="failover-clusteringfailover-clusteringwhats-new-in-failover-clusteringmd"></a>[フェールオーバー クラスタリング](../failover-clustering/whats-new-in-failover-clustering.md)
+## <a name="failover-clustering"></a>[フェールオーバー クラスタリング](../failover-clustering/whats-new-in-failover-clustering.md)
 
 Windows Server 2016 には、フェールオーバー クラスタリング機能を使用して 1 つのフォールト トレラント クラスターにグループ化される、複数のサーバーに対する新機能と強化機能が多数用意されています。 追加機能のいくつかを以下に紹介します。詳細については、「[What's New in Failover Clustering in Windows Server 2016 (Windows Server 2016 のフェールオーバー クラスタリングの新機能)](../failover-clustering/whats-new-in-failover-clustering.md)」を参照してください。
 

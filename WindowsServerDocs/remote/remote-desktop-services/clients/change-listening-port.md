@@ -9,10 +9,10 @@ ms.author: elizapo
 ms.date: 07/19/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 818ae5217d0144b2a4ec6e45f3a7757455cfabf1
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "80854665"
 ---
 # <a name="change-the-listening-port-for-remote-desktop-on-your-computer"></a>お使いのコンピューターでリモート デスクトップ用のリッスン ポートを変更する

@@ -9,10 +9,10 @@ ms.assetid: 134aab85-664f-4d44-87ef-9e5fd389071f
 author: jaimeo
 ms.author: jaimeo
 ms.openlocfilehash: 8ceff837c2b85466f5583eed03f39e73f32fd4a4
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "80826385"
 ---
 # <a name="release-notes-important-issues-in-windows-server-2016"></a>リリース ノート:Windows Server 2016 に関する重要な問題
@@ -38,7 +38,7 @@ Server Core インストール オプションを使用して Windows Server 201
 ## <a name="containers"></a>コンテナー
 
 [comment]: # (ID:371; 提出者: taylorb; 状態:サインオフ)
-- コンテナーを使用する前に、[Windows 10 Version 1607 用のサービス スタック更新プログラム: 2016 年 8 月 23 日](https://support.microsoft.com/kb/3176936) またはそれ以降に利用可能になった更新プログラムをインストールしてください。 インストールしないと、コンテナーの作成、開始、または実行に失敗するほか、"Win32 で CreateProcess が失敗しました: RPC サーバーが利用できません" のようなエラーなど、多くの問題が発生します。
+- コンテナーを使用する前に、[Windows 10 Version 1607 用のサービス スタック更新プログラム: 2016 年 8 月 23 日](https://support.microsoft.com/kb/3176936) またはそれ以降に利用可能になった更新プログラムをインストールしてください。 インストールしないと、コンテナーの作成、開始、または実行に失敗するほか、"Win32 で CreateProcess が失敗しました: RPC サーバーが利用できません。
 
 [comment]: # (ID:373; 提出者: plang; 状態: サインオフ)
 - NanoServerPackage OneGet プロバイダーは、Windows コンテナーでは動作しません。 これを回避するには、(コンテナー以外の) 別のコンピューターで Find-NanoServerPackage および Save-NanoServerPackage を使用して、必要なパッケージをダウンロードします。 その後、ダウンロードしたパッケージをコンテナーにコピーしてインストールします。

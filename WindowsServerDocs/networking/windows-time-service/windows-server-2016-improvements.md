@@ -9,10 +9,10 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: networking
 ms.openlocfilehash: 2723868251f90429fb0ad5e966c9222a6a22ab0c
-ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/20/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "77520731"
 ---
 # <a name="windows-server-2016-improvements"></a>Windows Server 2016 の機能強化
@@ -321,7 +321,7 @@ Windows Server 2012 および Windows Server 2008 の場合は、まず修正プ
 ### <a name="event-logging"></a>イベント ログ
 完全なストーリーを得るには、イベント ログの情報も必要です。 システム イベント ログを収集し、Time-Server、Microsoft-Windows-Kernel-Boot、Microsoft-Windows-Kernel-General でフィルター処理することにより、時刻を変更したその他の変更があるかどうかを検出できる場合があります (サード パーティなど)。 外部からの干渉を除外するために、これらのログが必要になる場合があります。 グループ ポリシーは、どのイベント ログがログに書き込まれるかに影響を与える可能性があります。 詳細については、上記の「グループ ポリシーの使用」セクションを参照してください。
 
-### <a name="W32Logging"></a>W32time デバッグ ログ
+### <a name="w32time-debug-logging"></a><a name="W32Logging"></a>W32time デバッグ ログ
 監査目的の w32tm を有効にするには、次のコマンドを使用して、クロックの定期的な更新とソース クロックを示すログ記録を有効にすることができます。 新しいログ記録を有効にするには、サービスを再起動してください。 
 
 詳細については、「[Windows タイム サービスのデバッグ ログを有効にする方法](https://support.microsoft.com/kb/816043)」を参照してください。

@@ -10,10 +10,10 @@ ms.assetid: 9a3cb426-fb39-40c5-ae07-26dbe9e3aed9
 author: lizap
 manager: dongill
 ms.openlocfilehash: 503a9917e271c69a78e5f26db6556d788254c823
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "80861365"
 ---
 # <a name="remote-desktop-services-hosting-partners-and-assessment"></a>リモート デスクトップ サービスのホスティング パートナーと評価

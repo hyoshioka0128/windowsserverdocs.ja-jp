@@ -10,10 +10,10 @@ ms.topic: get-started-article
 ms.localizationpriority: high
 ms.date: 02/21/2020
 ms.openlocfilehash: 6c9d732b6ec3d8ceb65c691ab143f09dd8f10f23
-ms.sourcegitcommit: 47d2e744a28a3f19347ec4773b7df5f1961ea192
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/21/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "77552525"
 ---
 # <a name="how-to-use-windows-server-2008-and-2008-r2-extended-security-updates-esu"></a>Windows Server 2008 および 2008 R2 の拡張セキュリティ更新プログラム (ESU) を使用する方法

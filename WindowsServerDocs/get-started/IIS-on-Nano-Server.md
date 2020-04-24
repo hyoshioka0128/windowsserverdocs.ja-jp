@@ -11,10 +11,10 @@ author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
 ms.openlocfilehash: d2522dc94c0d3b68c75e14fec19466529256aad0
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "80826865"
 ---
 # <a name="iis-on-nano-server"></a>Nano Server の IIS
@@ -127,7 +127,7 @@ IIS の他の構成 (ASP.NET、PHP、Java の使用など) に関する一連の
 
    **dism /online /get-packages**  
 
-   Package Identity : Microsoft-NanoServer-IIS-Package~31bf3856ad364e35~amd64~~10.0.14393.1000 が 2 か所に表示されます。1 つは Release Type : Language Pack、1 つは Release Type : Feature Pack です。  
+   Package Identity : Microsoft-NanoServer-IIS-Package~31bf3856ad364e35~amd64~~10.0.14393.1000 が 2 か所に表示されます。1 つは Release Type : "Package Identity : Microsoft-NanoServer-IIS-Package~31bf3856ad364e35~amd64~~10.0.14393.1000"が表示されます。  
 
 6. **net start w3svc** を実行するか、Nano Server を再起動して、W3SVC サービスを開始します。  
 

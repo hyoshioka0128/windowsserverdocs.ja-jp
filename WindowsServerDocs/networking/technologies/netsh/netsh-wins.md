@@ -9,10 +9,10 @@ manager: brianlic
 ms.author: lizross
 author: eross-msft
 ms.openlocfilehash: 73798ff4c8af11cc5cfb6461245ba7873f5d6f36
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "80316722"
 ---
 # <a name="network-shell-netsh-example-batch-file"></a>ネットワーク シェル (\(Netsh\)) のサンプル バッチ ファイル

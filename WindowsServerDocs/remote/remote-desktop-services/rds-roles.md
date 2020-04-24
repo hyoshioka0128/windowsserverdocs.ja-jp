@@ -9,10 +9,10 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.openlocfilehash: 44b98b485b69720a1459f052b68d15617954bffe
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "75949824"
 ---
 # <a name="remote-desktop-services-roles"></a>リモート デスクトップ サービス ロール

@@ -9,10 +9,10 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: 8ad14225592d627b6ff88b9e2286b686aa549392
-ms.sourcegitcommit: bfe9c5f7141f4f2343a4edf432856f07db1410aa
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "75351940"
 ---
 # <a name="change-a-dynamic-disk-back-to-a-basic-disk"></a>ダイナミック ディスクからベーシック ディスクへの再変換
@@ -68,6 +68,6 @@ ms.locfileid: "75351940"
 -   ディスクをベーシック ディスクに再変換する前に、ディスク上のボリュームやデータをすべて削除しておく必要があります。 データを保持するには、ディスクをベーシック ディスクに変換する前に、データをバックアップするか、別のボリュームに移動します。
 -   ダイナミック ディスクをベーシック ディスクに戻すと、そのディスク上にはパーティションおよび論理ドライブしか作成できなくなります。
 
-## <a name="see-also"></a>「
+## <a name="see-also"></a>関連項目
 
 -   [コマンド ライン構文の表記規則](https://technet.microsoft.com/library/cc742449(v=ws.11).aspx)

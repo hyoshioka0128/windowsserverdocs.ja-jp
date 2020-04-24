@@ -10,10 +10,10 @@ ms.author: helohr
 ms.date: 04/08/2020
 ms.localizationpriority: medium
 ms.openlocfilehash: c378d8c4a87b6aa0cf4f6b4f30f3bd5524dbb7a9
-ms.sourcegitcommit: f95d0e6904b103fc30dcae13e9199e138c287e2b
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "80980854"
 ---
 # <a name="whats-new-in-the-macos-client"></a>macOS クライアントの新機能

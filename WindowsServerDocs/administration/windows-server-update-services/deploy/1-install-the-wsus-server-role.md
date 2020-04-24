@@ -10,10 +10,10 @@ ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
 ms.openlocfilehash: 664e0233d10cbbc526635f1868ea1977c59fea63
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "80828905"
 ---
 # <a name="step-1-install-the-wsus-server-role"></a>手順 1:WSUS サーバー ロールをインストールする

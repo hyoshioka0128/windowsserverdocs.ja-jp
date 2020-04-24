@@ -10,10 +10,10 @@ ms.assetid: d6ff5b22-7695-4fee-b1bd-6c9dce5bd0e8
 author: lizap
 manager: scottman
 ms.openlocfilehash: 5403be897df48972edd4c5b37744a83d8ad25972
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "80861385"
 ---
 # <a name="remote-desktop-services---gpu-acceleration"></a>リモート デスクトップ サービス - GPU アクセラレーション

@@ -18,7 +18,7 @@
 #### [Linux を実行するためのベスト プラクティス](hyper-v/Best-Practices-for-running-Linux-on-Hyper-V.md)
 #### [FreeBSD を実行するためのベスト プラクティス](hyper-v/Best-practices-for-running-FreeBSD-on-Hyper-V.md)
 ### [生成およびゲスト別の機能の互換性](hyper-v/Hyper-V-feature-compatibility-by-generation-and-guest.md)
-### [作業の開始](hyper-v/get-started/Get-started-with-Hyper-V-on-Windows.md)
+### [作業開始](hyper-v/get-started/Get-started-with-Hyper-V-on-Windows.md)
 #### [Hyper-V をインストールする](hyper-v/get-started/Install-the-Hyper-V-role-on-Windows-Server.md)
 #### [仮想スイッチを作成する](hyper-v/get-started/create-a-virtual-switch-for-Hyper-V-virtual-machines.md)
 #### [仮想マシンを作成する](hyper-v/get-started/create-a-virtual-machine-in-Hyper-V.md)

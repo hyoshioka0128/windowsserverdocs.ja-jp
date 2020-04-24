@@ -13,10 +13,10 @@ appliesto:
 - Windows 10
 - Windows 8.1
 ms.openlocfilehash: e3e4b4d236672ce310c8a0eb038d0e19f936a5d2
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "80826345"
 ---
 # <a name="slmgrvbs-options-for-obtaining-volume-activation-information"></a>ボリューム ライセンス認証情報を取得するための Slmgr.vbs オプション
@@ -35,10 +35,10 @@ slmgr.vbs [<ComputerName> [<User> <Password>]] [<Options>]
 
 ## <a name="using-slmgr-on-remote-computers"></a>リモート コンピューターでの Slmgr の使用
 
-リモート クライアントを管理するには、ボリューム ライセンス認証管理ツール (VAMT) バージョン 1.2 以降を使用するか、プラットフォームの違いに合わせた WMI スクリプトを独自に作成してください。 ボリューム ライセンス認証のための WMI のプロパティとメソッドの詳細については、「[ボリューム ライセンス認証のための WMI のプロパティとメソッド](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn502536(v=ws.11))」を参照してください。
+リモート クライアントを管理するには、ボリューム ライセンス認証管理ツール (VAMT) バージョン 1.2 以降を使用するか、プラットフォームの違いに合わせた WMI スクリプトを独自に作成してください。 ボリューム ライセンス認証のための WMI のプロパティとメソッドの詳細については、「[ボリューム ライセンス認証のための WMI のプロパティとメソッド](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn502536(v=ws.11))」を参照してください。
 
 > [!IMPORTANT]
-> Windows 7 と Windows Server 2008 R2 での WMI の変更が理由で、Slmgr.vbs スクリプトはどのプラットフォームでも動作するようには作られていません。 Slmgr.vbs を使用した Windows Vista&reg; オペレーティング システムからの Windows 7 または Windows Server 2008 R2 システムの管理はサポートされていません。 古いバージョンのシステムの管理を Windows 7 や Windows Server 2008 R2 から実行しようとすると、バージョン不一致エラーが発生します。 たとえば、**cscript slmgr.vbs \<vista\_machine\_name\> /dlv** を実行すると、出力は次のようになります。
+> Windows 7 と Windows Server 2008 R2 での WMI の変更が理由で、Slmgr.vbs スクリプトはどのプラットフォームでも動作するようには作られていません。 Slmgr.vbs を使用した Windows Vista&reg; オペレーティング システムからの Windows 7 または Windows Server 2008 R2 システムの管理はサポートされていません。 古いバージョンのシステムの管理を Windows 7 や Windows Server 2008 R2 から実行しようとすると、バージョン不一致エラーが発生します。 たとえば、**cscript slmgr.vbs \<vista\_machine\_name\> /dlv** を実行すると、出力は次のようになります。
 >  
 >> Microsoft (R) Windows Script Host Version 5.8 Copyright (C) Microsoft Corporation. All rights reserved.
 >>  
@@ -80,7 +80,7 @@ slmgr.vbs [<ComputerName> [<User> <Password>]] [<Options>]
 
 |オプション |説明 |
 | - | - |
-|\/skms \<Name\[:Port]&nbsp;\|&nbsp;\:&nbsp;port\> \[\<Activation&nbsp;ID\>] |問い合わせ先となる KMS ホスト コンピューターの名前を指定します。ポートを指定することもできます。 この値を設定すると、KMS ホストの自動検出は行われなくなります。<br />KMS ホストで IPv6 (Internet Protocol version 6) のみが使用されている場合は、アドレスを \<hostname\>:\<port\> の形式で指定する必要があります。 IPv6 アドレスにはコロン (:) が含まれていますが、このコロンは Slmgr.vbs スクリプトで正しく解析されません。<br />この操作は、管理者特権でのコマンド プロンプト ウィンドウで実行する必要があります。 |
+|\/skms \<Name\[:Port]&nbsp;\|&nbsp;\:&nbsp;port\> \[\<Activation&nbsp;ID\>] |問い合わせ先となる KMS ホスト コンピューターの名前を指定します。ポートを指定することもできます。 この値を設定すると、KMS ホストの自動検出は行われなくなります。<br />KMS ホストで IPv6 (Internet Protocol version 6) のみが使用されている場合は、アドレスを \<hostname\>:\<port\> の形式で指定する必要があります。 IPv6 アドレスにはコロン (:) が含まれていますが、このコロンは Slmgr.vbs スクリプトで正しく解析されません。<br />この操作は、管理者特権でのコマンド プロンプト ウィンドウで実行する必要があります。 |
 |\/skms-domain&nbsp;&lt;FQDN&gt; \[\<Activation&nbsp;ID\>] |すべての KMS SRV レコードが存在する、特定の DNS ドメインを設定します。 この設定は、 **/skms** オプションで特定の KMS ホストが 1 つだけ設定されている場合は効果を持たなくなります。 このオプションを使用すると、特に不整合名前空間環境において、DNS サフィックス検索リストが無視されて、代わりに指定の DNS ドメインの中で KMS ホスト レコードが検索されます。 |
 |\/ckms&nbsp;\[\<Activation&nbsp;ID\>] |指定された KMS ホスト名、アドレス、ポート情報をレジストリから削除します。再び KMS 自動検出が行われるようになります。<br />この操作は、管理者特権でのコマンド プロンプト ウィンドウで実行する必要があります。 |
 |\/skhc |このオプションにより、KMS ホスト キャッシュが有効になります (既定)。 クライアントが動作している KMS ホストを検出すると、この設定によって、ドメイン ネーム システム (DNS) の優先順位と重みがホストとのそれ以降の通信に影響を与えなくなります。 動作している KMS ホストにシステムからアクセスできなくなった場合は、クライアントが新しいホストを検出しようとします。<br />この操作は、管理者特権でのコマンド プロンプト ウィンドウで実行する必要があります。 |
@@ -90,8 +90,8 @@ slmgr.vbs [<ComputerName> [<User> <Password>]] [<Options>]
 
 |オプション |説明 |
 | - | - |
-|\/sai&nbsp;&lt;Interval&gt; |まだライセンス認証を受けていないクライアントが KMS への接続を試行する間隔を分単位で設定します。 ライセンス認証間隔は 15 分以上 30 日以下で指定する必要がありますが、既定値 (2 時間) をお勧めします。<br />KMS クライアントは、この間隔の値を最初はレジストリから取得しますが、最初の KMS 応答を受け取った後は KMS での設定値に切り替えます。<br />この操作は、管理者特権でのコマンド プロンプト ウィンドウで実行する必要があります。 |
-|\/sri &lt;Interval&gt; |ライセンス認証済みのクライアントが更新のために KMS への接続を試行する間隔を分単位で設定します。 更新の間隔は 15 分以上 30 日以下で指定する必要があります。 このオプションは、最初に KMS サーバー側とクライアント側の両方で設定されます。 既定値は 10,080 分 (7 日) です。<br />KMS クライアントは、最初にレジストリからこの間隔を取得しますが、最初の KMS 応答を受け入れた後、KMS 設定に切り替えます。<br />この操作は、管理者特権でのコマンド プロンプト ウィンドウで実行する必要があります。 |
+|\/sai&nbsp;&lt;Interval&gt; |まだライセンス認証を受けていないクライアントが KMS への接続を試行する間隔を分単位で設定します。 ライセンス認証間隔は 15 分以上 30 日以下で指定する必要がありますが、既定値 (2 時間) をお勧めします。<br />KMS クライアントは、この間隔の値を最初はレジストリから取得しますが、最初の KMS 応答を受け取った後は KMS での設定値に切り替えます。<br />この操作は、管理者特権でのコマンド プロンプト ウィンドウで実行する必要があります。 |
+|\/sri &lt;Interval&gt; |ライセンス認証済みのクライアントが更新のために KMS への接続を試行する間隔を分単位で設定します。 更新の間隔は 15 分以上 30 日以下で指定する必要があります。 このオプションは、最初に KMS サーバー側とクライアント側の両方で設定されます。 既定値は 10,080 分 (7 日) です。<br />KMS クライアントは、最初にレジストリからこの間隔を取得しますが、最初の KMS 応答を受け入れた後、KMS 設定に切り替えます。<br />この操作は、管理者特権でのコマンド プロンプト ウィンドウで実行する必要があります。 |
 |\/sprt&nbsp;&lt;Port&gt; |KMS ホストのどのポートでクライアント ライセンス認証要求をリッスンするかを設定します。 既定の TCP ポートは 1688 です。<br />この操作は、管理者特権でのコマンド プロンプト ウィンドウから実行する必要があります。 |
 |\/sdns |KMS ホストによる DNS 発行を行うように設定します (既定の動作)。<br />この操作は、管理者特権でのコマンド プロンプト ウィンドウで実行する必要があります。 |
 |\/cdns |KMS ホストによる DNS 発行を行わないように設定します。<br />この操作は、管理者特権でのコマンド プロンプト ウィンドウで実行する必要があります。 |

@@ -11,10 +11,10 @@ ms.author: elizapo
 ms.date: 07/16/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: a91980477b34bb529e3e6f3c6ff66da9ea7f3c84
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "80856055"
 ---
 # <a name="frequently-asked-questions-about-the-remote-desktop-clients"></a>リモート デスクトップ クライアントについてよく寄せられる質問

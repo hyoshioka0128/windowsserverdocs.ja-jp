@@ -10,10 +10,10 @@ ms.localizationpriority: medium
 ms.date: 11/12/2019
 ms.topic: get-started-article
 ms.openlocfilehash: 1bbb8f06ab66ced50024f4ff17b73229d50ec5c6
-ms.sourcegitcommit: 479ad84a0d6c7c7b8308122b8bac8308cb36fe9b
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/30/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "80391710"
 ---
 # <a name="kms-client-setup-keys"></a>KMS クライアント セットアップ キー

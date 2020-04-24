@@ -9,10 +9,10 @@ ms.author: delhan
 ms.date: 07/24/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 72bf482512ff3bb0a678ae59cd6ac20b947a54d9
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "80857155"
 ---
 # <a name="remote-laptop-disconnects-from-wireless-network"></a>リモート ラップトップがワイヤレス ネットワークから切断される

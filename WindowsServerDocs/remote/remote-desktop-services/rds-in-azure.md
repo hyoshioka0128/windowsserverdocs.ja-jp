@@ -10,10 +10,10 @@ manager: dongill
 ms.author: elizapo
 ms.date: 02/10/2017
 ms.openlocfilehash: 55f43e90aabd4c8ace3a333e3e6d86a49fb69210
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "80855085"
 ---
 # <a name="seamlessly-deploy-rds-with-arm-and-azure-marketplace"></a>ARM と Azure Marketplace を使った RDS のシームレスな展開

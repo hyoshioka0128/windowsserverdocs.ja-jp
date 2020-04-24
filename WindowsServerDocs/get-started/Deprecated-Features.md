@@ -1,5 +1,5 @@
 ---
-title: Windows Server 2016 で削除された機能または推奨されなくなった機能
+title: Windows Server 2016 で削除された機能または非推奨とされた機能
 description: Windows Server 2016 の機能のうち、現在のリリースで製品から削除された機能および今後のリリースで削除が検討されている機能 (非推奨の機能) の一覧。 商用環境でオペレーティング システムを更新する IT 担当者を対象としています。
 ms.prod: windows-server
 ms.technology: server-general
@@ -11,17 +11,17 @@ ms.author: jgerend
 manager: dougkim
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e13886395040619a7509c3cf896112288c48115
-ms.sourcegitcommit: e817a130c2ed9caaddd1def1b2edac0c798a6aa2
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/09/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "74945207"
 ---
-# <a name="features-removed-or-deprecated-in--windows-server-2016"></a>Windows Server 2016 で削除された機能または推奨されなくなった機能
+# <a name="features-removed-or-deprecated-in--windows-server-2016"></a>Windows Server 2016 で削除された機能または非推奨とされた機能
 
->適用対象:Windows Server 2016
+>適用先:Windows Server 2016
 
-次の一覧に、Windows Server 2016 の機能のうち、現在のリリースで製品から削除された機能および今後のリリースで削除が検討されている機能 (推奨されなくなった機能) を示します。 商用環境でオペレーティング システムを更新する IT 担当者を対象としています。 この一覧は、今後のリリースで変更される可能性があります。また、使用が推奨されなくなった機能でこの一覧に含まれていないものもあります。 特定の機能とそれに置き換わる機能の詳細については、該当する機能のドキュメントを参照してください。
+次の一覧に、Windows Server 2016 の機能のうち、現在のリリースで製品から削除された機能および今後のリリースで削除が検討されている機能 (非推奨) を示します。 商用環境でオペレーティング システムを更新する IT 担当者を対象としています。 この一覧は、今後のリリースで変更される可能性があります。また、非推奨の機能でこの一覧に含まれていないものもあります。 特定の機能とそれに置き換わる機能の詳細については、該当する機能のドキュメントを参照してください。
 
 > [!TIP]
 > 新しいバージョンで削除された機能や非推奨となった機能については、「[Windows Server で削除された機能と置換が計画されている機能](../get-started-19/removed-features.md)」を参照してください。
@@ -31,7 +31,7 @@ ms.locfileid: "74945207"
 以下の機能は、このリリースの Windows Server 2016 で削除されました。 このリリースでは、別の方法を使用しない限り、これらの機能に依存するアプリケーション、コード、使用法は機能しません。  
 
 > [!NOTE]  
-> Windows Server 2016 を Windows Server 2012 R2 または Windows Server 2012 より前のサーバー リリースから移行する場合は、「[Windows Server 2012 R2 で削除された機能または推奨されなくなった機能](https://technet.microsoft.com/library/dn303411.aspx)」および「[Windows Server 2012 で削除された機能または推奨されなくなった機能](https://technet.microsoft.com/library/hh831568.aspx)」も確認してください。  
+> Windows Server 2016 を Windows Server 2012 R2 または Windows Server 2012 より前のサーバー リリースから移行する場合は、「[Windows Server 2012 R2 で削除された機能または非推奨となった機能](https://technet.microsoft.com/library/dn303411.aspx)」および「[Windows Server 2012 で削除された機能または推奨されなくなった機能](https://technet.microsoft.com/library/hh831568.aspx)」も確認してください。  
 
 ### <a name="share-and-storage-management"></a>共有と記憶域の管理
 
@@ -71,7 +71,7 @@ Journal.dll は Windows Server 2016 から削除されました。 これに置�
     automaticUpdates.DetectNow()
     ````
 
-## <a name="features-deprecated-starting-with-windows-server-2016"></a>Windows Server 2016 から推奨されなくなった機能
+## <a name="features-deprecated-starting-with-windows-server-2016"></a>Windows Server 2016 から非推奨の機能
 
 以下の機能は、このリリースから非推奨とされます。 これらの機能は、最終的に製品から完全に削除される予定ですが、このリリースでは使用できます (一部の機能が削除されている場合もあります)。 これらの機能に依存するアプリケーション、コード、使用法については、別の方法の使用を今から計画する必要があります。  
 

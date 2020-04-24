@@ -1,10 +1,10 @@
 ---
 redirect_url: /windows-server/windows-server
 ms.openlocfilehash: 9ef5565af748b4dd592e71ec4bd34a2be58003d9
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "75947293"
 ---
 # <a name="windows-server-2016"></a>Windows Server 2016
@@ -68,7 +68,7 @@ ms.locfileid: "75947293"
 
 Windows Server 2016 のエディションには、Standard、Datacenter、Essentials があります。 Windows Server 2016 Datacenter では、仮想化権限が無制限であることに加えて、ソフトウェアによるデータセンターを構築できる新機能も含まれています。 Windows Server 2016 Standard には、制限付きの仮想化権限とエンタープライズ クラスの機能が備わっています。 Windows Server Essentials は、初めてクラウド接続サーバーを使用する方に最適です。 このエディション向けに[幅広いドキュメント](https://go.microsoft.com/fwlink/?LinkID=827171)が用意されています。ここでは、Standard エディションと Datacenter エディションのみについて説明します。 次の表に、Standard エディションと Datacenter エディションの主要な違いの概要を簡単に示します。
 
-|機能|Datacenter|標準|  
+|機能|Datacenter|Standard|  
 |-------------------|----------|-----------------------|  
 |Windows Server のコア機能| 必須| 必須|
 |OSE/Hyper-V コンテナー|無制限|   2 で保護されたプロセスとして起動されました|

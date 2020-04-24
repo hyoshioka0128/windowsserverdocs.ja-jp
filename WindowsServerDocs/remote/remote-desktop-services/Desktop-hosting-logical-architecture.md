@@ -10,10 +10,10 @@ ms.assetid: 7f73bb0a-ce98-48a4-9d9f-cf7438936ca1
 author: lizap
 manager: dongill
 ms.openlocfilehash: 441b0b24fd4b4dc18d3afd65283bbf7ff2417048
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "80818440"
 ---
 # <a name="remote-desktop-services-architecture"></a>リモート デスクトップ サービスのアーキテクチャ

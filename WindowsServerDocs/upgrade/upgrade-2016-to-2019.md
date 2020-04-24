@@ -8,10 +8,10 @@ author: RobHindman
 ms.author: robhind
 ms.date: 09/16/2019
 ms.openlocfilehash: 91b10602a0cd5a3250fe01991fca42d01727784c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "80861345"
 ---
 # <a name="upgrade-windows-server-2016-to-windows-server-2019"></a>Windows Server 2016 から Windows Server 2019 へのアップグレード

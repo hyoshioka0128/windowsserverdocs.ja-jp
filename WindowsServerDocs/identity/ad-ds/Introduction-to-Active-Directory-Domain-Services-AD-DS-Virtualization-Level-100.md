@@ -10,10 +10,10 @@ ms.date: 03/22/2019
 ms.technology: identity-adds
 ms.assetid: 7a3114c8-bda8-49bb-83a8-4e04340ab221
 ms.openlocfilehash: 25a5c2222f50b37bff2bcfe41184d6d9fa35995c
-ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/19/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "77465506"
 ---
 # <a name="safely-virtualizing-active-directory-domain-services-ad-ds"></a>Active Directory Domain Services (AD DS) の安全な仮想化

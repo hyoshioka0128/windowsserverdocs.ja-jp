@@ -11,10 +11,10 @@ author: eross-msft
 ms.author: lizross
 ms.localizationpriority: high
 ms.openlocfilehash: 1d9f7da0bc2a2f6113242ab4af90f5d8da49b2c3
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "80307903"
 ---
 # <a name="virtualization"></a>仮想化

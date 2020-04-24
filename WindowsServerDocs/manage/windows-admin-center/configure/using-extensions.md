@@ -8,10 +8,10 @@ ms.author: jol
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.openlocfilehash: 2b8a9f5ebab22891b8b97c9c56bba3837cbb9371
-ms.sourcegitcommit: 20d07170c7f3094c2fb4455f54b13ec4b102f2d7
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "81269299"
 ---
 # <a name="install-and-manage-extensions"></a>拡張機能のインストールと管理

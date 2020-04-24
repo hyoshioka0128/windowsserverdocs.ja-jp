@@ -9,10 +9,10 @@ author: eross-msft
 ms.author: chrisrin
 ms.localizationpriority: high
 ms.openlocfilehash: 90d3a9c2d5355d1059e944485414a2b6d0e5d0bc
-ms.sourcegitcommit: 3cb84bc0bd4be0f9333b7c85cda858c38730cb3a
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/17/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "79432441"
 ---
 # <a name="azure-hybrid-benefit-for-windows-server"></a>Windows Server 向け Azure ハイブリッド特典

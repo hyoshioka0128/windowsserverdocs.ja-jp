@@ -10,10 +10,10 @@ ms.assetid: b0f62d6f-0915-44ca-afef-be44a922e20e
 author: lizap
 manager: dongill
 ms.openlocfilehash: fa17c472e3311e4e34ac7b2176d0045886463274
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "80818465"
 ---
 # <a name="create-virtual-machines-for-remote-desktop"></a>リモート デスクトップの仮想マシンを作成する

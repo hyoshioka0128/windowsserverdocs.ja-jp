@@ -11,10 +11,10 @@ ms.topic: article
 ms.assetid: a8c6d5fa-399b-4823-8f10-affec1bbfe65
 ms.localizationpriority: medium
 ms.openlocfilehash: 068599b63a000566db86f29a93bfa91a4b4cd72e
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "80858165"
 ---
 # <a name="remote-desktop-services---planning-poster"></a>リモート デスクトップ サービスの計画ポスター

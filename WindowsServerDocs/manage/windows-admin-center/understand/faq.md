@@ -8,16 +8,16 @@ ms.author: niwashbu
 ms.localizationpriority: medium
 ms.date: 12/02/2019
 ms.prod: windows-server
-ms.openlocfilehash: 4ce42420430e9a12dd6123ec18c9ded25abc97bb
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 185902d332e2036eace5b0b332eabd2803b5eb00
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79323544"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "81650113"
 ---
 # <a name="windows-admin-center-frequently-asked-questions"></a>Windows Admin Center についてよく寄せられる質問
 
-> 適用対象:Windows Admin Center、Windows Admin Center Preview
+> 適用先:Windows Admin Center、Windows Admin Center Preview
 
 ここでは、Windows Admin Center についてよく寄せられる質問に対する回答を示します。
 
@@ -27,7 +27,7 @@ Windows Admin Center は、IT 管理者が Windows Server および Windows 10 �
 
 ## <a name="can-i-use-windows-admin-center-in-production-environments"></a>運用環境で Windows Admin Center を使用できますか。
 
-[はい]。 Windows Admin Center は一般提供されており、広範な使用方法や運用環境での展開に対応しています。 現在のプラットフォーム機能と主要なツールは Microsoft の標準リリースの基準と、ユーザビリティ、信頼性、パフォーマンス、アクセシビリティ、セキュリティ、導入の品質基準を満たしています。
+はい。 Windows Admin Center は一般提供されており、広範な使用方法や運用環境での展開に対応しています。 現在のプラットフォーム機能と主要なツールは Microsoft の標準リリースの基準と、ユーザビリティ、信頼性、パフォーマンス、アクセシビリティ、セキュリティ、導入の品質基準を満たしています。
 
 [!INCLUDE [support-policy](../includes/support-policy.md)]
 
@@ -74,7 +74,7 @@ Active Directory、DHCP、DNS、IIS などの役割には、Windows Admin Center
 
 ## <a name="can-windows-admin-center-be-used-to-manage-the-free-microsoft-hyper-v-server"></a>無料の Microsoft Hyper-V サーバーを管理するために Windows Admin Center を使用することはできますか。
 
-[はい]。 Windows Admin Center を使用して、Microsoft Hyper-V Server 2016 および Microsoft Hyper-V Server 2012 R2 を管理できます。
+はい。 Windows Admin Center を使用して、Microsoft Hyper-V Server 2016 および Microsoft Hyper-V Server 2012 R2 を管理できます。
 
 ## <a name="can-i-deploy-windows-admin-center-on-a-windows-10-computer"></a>Windows 10 のコンピューター上に Windows Admin Center を展開できますか。
 
@@ -127,7 +127,7 @@ Windows Admin Center には使用可能な SDK が含まれているため、す
 
 ## <a name="can-i-manage-hyper-converged-infrastructure-with-windows-admin-center"></a>Windows Admin Center を使用して、ハイパーコンバージド インフラストラクチャを管理することはできますか。
 
-[はい]。 Windows Admin Center は、Windows Server 2016 または Windows Server 2019 を実行しているハイパーコンバージド クラスターの管理をサポートしています。 Windows Admin Center のハイパーコンバージド クラスター マネージャー ソリューションは以前はプレビューでしたが現在は**一般公開**され、いくつかの新機能がプレビューになっています。 詳細については、[ハイパーコンバージド インフラストラクチャの管理について確認してください](../use/manage-hyper-converged.md)。
+はい。 Windows Admin Center は、Windows Server 2016 または Windows Server 2019 を実行しているハイパーコンバージド クラスターの管理をサポートしています。 Windows Admin Center のハイパーコンバージド クラスター マネージャー ソリューションは以前はプレビューでしたが現在は**一般公開**され、いくつかの新機能がプレビューになっています。 詳細については、[ハイパーコンバージド インフラストラクチャの管理について確認してください](../use/manage-hyper-converged.md)。
 
 ## <a name="does-windows-admin-center-require-system-center"></a>Windows Admin Center に System Center は必要ですか。
 
@@ -150,7 +150,7 @@ Windows Admin Center と SCVMM は補完し合う関係にあります。Windows
 ### <a name="windows-admin-center-preview"></a>Windows Admin Center Preview
 
 * 定期的に最新かつ最善の機能を入手したい IT 管理者には、このバージョンが最適です。 Microsoft は毎月後続の更新プログラムのリリースを提供する予定です。 コア プラットフォームは引き続き運用環境に対応しており、ライセンスによって運用環境での使用権が提供されます。 ただし、明確に PREVIEW としてマークされ、評価やテストに適している新しいツールおよび機能の導入もあることに、注意してください。
-* 最新の Insider Preview リリースを入手する場合、登録済みの Insider は [Windows Server Insider Preview ダウンロード ページ](https://www.microsoft.com/software-download/windowsinsiderpreviewserver)の [Additional Downloads] (追加のダウンロード) ドロップダウンから直接 Windows Admin Center Preview をダウンロードできます。 まだ Insider として登録していない場合は、Windows Insiders for Business ポータル上の [Windows Server の概要](https://insider.windows.com/en-us/for-business-getting-started-server/)に関するページを参照してください。
+* 最新の Insider Preview リリースを入手する場合、登録済みの Insider は [Windows Server Insider Preview ダウンロード ページ](https://microsoft.com/en-us/software-download/windowsinsiderpreviewserver)の [Additional Downloads] (追加のダウンロード) ドロップダウンから直接 Windows Admin Center Preview をダウンロードできます。 まだ Insider として登録していない場合は、Windows Insiders for Business ポータル上の [Windows Server の概要](https://insider.windows.com/en-us/for-business-getting-started-server/)に関するページを参照してください。
 
 ## <a name="why-was-windows-admin-center-chosen-as-the-final-name-for-project-honolulu"></a>"Project Honolulu" の最終的な名前として "Windows Admin Center" が選択されたのはなぜですか。
 

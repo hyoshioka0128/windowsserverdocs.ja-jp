@@ -10,10 +10,10 @@ ms.assetid: 1bac5dd3-8430-46ee-8bef-10cc4b7cc437
 author: lizap
 manager: dongill
 ms.openlocfilehash: c2bc0c2ba3d12ea1caf8737369ba882f69b111e4
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "80818455"
 ---
 # <a name="desktop-hosting-reference-architecture"></a>デスクトップ ホスティングの参照アーキテクチャ

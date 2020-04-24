@@ -9,10 +9,10 @@ ms.technology: storage
 ms.date: 09/10/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: c2614c0180b32a0215454f2d725d6a962986ef1f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "71394396"
 ---
 # <a name="disable-offline-files-on-individual-redirected-folders"></a>リダイレクトされた個々のフォルダーのオフライン ファイルを無効にする

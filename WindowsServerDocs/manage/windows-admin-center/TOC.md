@@ -66,13 +66,11 @@
 #### [ツール拡張機能でカスタムのゲートウェイ プラグインを使用する](extend/guides/use-custom-gateway-plugin.md)
 #### [接続プロバイダーの作成](extend/guides/create-connection-provider.md)
 #### [ルート ナビゲーション動作の変更](extend/guides/modify-root-navigation.md)
-#### [Windows Admin Center v1909 でのクラスター接続の種類の変更](extend/guides/cluster-connection-change-wac-1909.md)
 #### [ツールの可視性の制御](extend/guides/dynamic-tool-display.md)
 #### [文字列とローカライズ](extend/guides/strings-localization.md)
 #### [UI テキストおよびデザイン スタイル ガイド](extend/guides/ui-text-style-guide.md)
 #### [拡張機能で PowerShell を使用する](extend/guides/powershell.md)
 #### [CSS アイコン ガイド](extend/guides/cssicons.md)
-#### [最新の SDK への移行](extend/guides/migration-guide-0_1-1_0.md)
 #### [拡張検出バナーを有効にする](extend/guides/extension-discovery-banner.md)
 ### [拡張機能の公開](extend/publish-extensions.md)
 ### 導入事例

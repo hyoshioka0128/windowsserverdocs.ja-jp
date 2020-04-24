@@ -10,10 +10,10 @@ ms.assetid: 047b08be-7f91-4194-a641-5b6941b92515
 author: spatnaik
 manager: scottman
 ms.openlocfilehash: 88e081a5ac6a40efb1df50bfd904d9454f013733
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "80857385"
 ---
 # <a name="plan-and-design-your-remote-desktop-services-environment"></a>リモート デスクトップ サービス環境の計画と設計

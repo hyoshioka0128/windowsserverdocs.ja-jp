@@ -10,10 +10,10 @@ ms.assetid: 04d52dff-e61b-4633-9908-be8600abc2ba
 author: ChristianMontoya
 manager: scottman
 ms.openlocfilehash: 85d5b1e1c4367cc961ae8ea628f46f224d8dae5c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "80857255"
 ---
 # <a name="whats-new-in-remote-desktop-services"></a>リモート デスクトップ サービスの新機能

@@ -10,10 +10,10 @@ ms.author: elizapo
 ms.date: 09/07/2016
 manager: dongill
 ms.openlocfilehash: c46ad24c62510b4a100a89b5c10a8f52c1a66151
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "80857355"
 ---
 # <a name="remote-desktop-services---multi-factor-authentication"></a>リモート デスクトップ サービス - Multi-factor Authentication

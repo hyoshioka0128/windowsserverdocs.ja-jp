@@ -9,10 +9,10 @@ author: lizap
 ms.author: elizapo
 ms.localizationpriority: high
 ms.openlocfilehash: 4166d4e8d2819946cdc859ef643cf53315e7290a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "71370422"
 ---
 # <a name="management"></a>管理
@@ -80,9 +80,9 @@ Windows Server インスタンスの管理に使用するツールは、展開�
 <HR />
                         <p><h3><a href="get-started-with-setup-and-boot-event-collection.md">セットアップおよびブート イベント収集</a></h3>セットアップおよびブート イベント収集では、"コレクター" コンピューターを指定して、起動時またはセットアップ プロセスの実行時に、他のコンピューターで発生するさまざまな重要イベントを収集できます。 その後、収集されたイベントは、イベント ビューアー、メッセージ アナライザー、Wevtutil、または Windows PowerShell コマンドレットを使用して分析できます。 </p>
 <HR />
-                        <p><h3><a href="software-inventory-logging/get-started-with-software-inventory-logging.md">ソフトウェア インベントリ ログ (SIL)</a></h3>Windows Server のソフトウェア インベントリ ログは、サーバー管理者が簡単な PowerShell コマンドレットのセットを使用して、サーバーにインストールされた Microsoft ソフトウェアの一覧を取得できる機能です。 また、HTTPS プロトコルを使用して、このデータをネットワーク経由で定期的に収集し、集計のためにターゲット Web サーバーへと転送することもできます。 この機能の管理には、PowerShell コマンドも使用できます (主に毎時の収集と転送のため)。</p>
+                        <p><h3><a href="software-inventory-logging/get-started-with-software-inventory-logging.md">ソフトウェア インベントリ ログ (SIL)</a></h3>Windows Server のソフトウェア インベントリ ログは、簡単な PowerShell コマンドレットのセットを使用して、サーバー管理者がサーバーにインストールされた Microsoft ソフトウェアの一覧を取得できる機能です。 また、HTTPS プロトコルを使用して、このデータをネットワーク経由で定期的に収集し、集計のためにターゲット Web サーバーへと転送することもできます。 この機能の管理には、PowerShell コマンドも使用できます (主に毎時の収集と転送のため)。</p>
 <HR />
-                        <p><h3><a href="user-access-logging/get-started-with-user-access-logging.md">ユーザー アクセス ログ (UAL)</a></h3>ユーザー アクセス ログは、Windows Server 2016、Windows Server 2012 R2、または Windows Server 2012 でログ記録された固有のクライアント デバイスとユーザー要求イベントをローカル データベースに集約します。 サーバー管理者は、クエリによってこれらの記録を使用し、サーバー ロール別、ユーザー別、デバイス別、ローカル サーバー別、日付別に数量とインスタンスを取得できます。 さらにマイクロソフト以外のソフトウェア開発者も、UAL を使用して、UAL イベントを集計することができます。 </a>
+                        <p><h3><a href="user-access-logging/get-started-with-user-access-logging.md">ユーザー アクセス ログ (UAL)</a></h3>ユーザー アクセス ログは、Windows Server 2016、Windows Server 2012 R2、または Windows Server 2012 でログ記録された固有のクライアント デバイスとユーザー要求イベントをローカル データベースに集約します。 サーバー管理者は、クエリによってこれらの記録を使用し、サーバーの役割別、ユーザー別、デバイス別、ローカル サーバー別、日付別に数量とインスタンスを取得できます。 さらにマイクロソフト以外のソフトウェア開発者も、UAL を使用して、UAL イベントを集計することができます。 </a>
                     </div>
                 </div>
             </div>

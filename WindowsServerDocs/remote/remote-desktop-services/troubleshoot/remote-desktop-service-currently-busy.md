@@ -9,10 +9,10 @@ ms.author: delhan
 ms.date: 07/24/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: c345833ee63a1286a5615998649e8aa9d25896a6
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "80857165"
 ---
 # <a name="on-connecting-user-receives-remote-desktop-service-is-currently-busy-message"></a>接続時に、ユーザーが "Remote Desktop Service is currently busy" (リモート デスクトップ サービスは現在ビジー状態です) というメッセージを受け取る

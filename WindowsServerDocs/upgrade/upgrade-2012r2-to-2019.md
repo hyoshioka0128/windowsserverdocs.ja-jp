@@ -8,10 +8,10 @@ author: RobHindman
 ms.author: robhind
 ms.date: 09/16/2019
 ms.openlocfilehash: 02d6dd21b798346245f209174902b6f4fdf24ff8
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "80853345"
 ---
 # <a name="upgrade-windows-server-2012-r2-to-windows-server-2019"></a>Windows Server 2012 R2 から Windows Server 2019 へのアップグレード

@@ -9,10 +9,10 @@ manager: brianlic
 ms.date: 06/07/2019
 ms.author: jgerend
 ms.openlocfilehash: 8feed2adb606edfb6068d7fe10c18baf142077ac
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/29/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "76822345"
 ---
 # <a name="deploying-roaming-user-profiles"></a>移動ユーザー プロファイルの展開
@@ -160,7 +160,7 @@ Windows Server 上でファイル共有を作成する方法を次に示しま�
 3. 移動ユーザー プロファイルを設定するドメインまたは OU を右クリックし、 **[このドメインに GPO を作成し、このコンテナーにリンクする]** を選択します。
 4. **[新しい GPO]** ダイアログ ボックスで、GPO の名前 (**Roaming User Profile Settings** など) を入力し、 **[OK]** を選択します。
 5. 新しく作成した GPO を右クリックし、 **[リンクの有効化]** チェックボックスをオフにします。 これにより、GPO の構成が完了するまで、それが適用されるのを防ぎます。
-6. GPO を選択します。 **[スコープ]** タブの **[セキュリティ フィルター]** セクションで、 **[認証されたユーザー]** を選択した後に **[削除]** を選択して、GPO がすべてのユーザーに適用されないようにします。
+6. GPO を選択します。 **[スコープ]** タブの **[セキュリティ フィルター]** セクションで、 **[Authenticated Users]** を選択した後に **[削除]** を選択して、GPO がすべてのユーザーに適用されないようにします。
 7. **[セキュリティ フィルター処理]** セクションで **[追加]** を選択します。
 8. **[ユーザー、コンピューター、またはグループの選択]** ダイアログ ボックスで、手順 1 で作成したセキュリティ グループの名前 (**Roaming User Profiles Users and Computers** など) を入力して、 **[OK]** を選択します。
 9. **[委任]** タブを選択して **[追加]** を選択し、「**Authenticated Users**」と入力して **[OK]** を選択します。もう一度 **[OK]** を選択して、既定の読み取りアクセス許可を受け入れます。

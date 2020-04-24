@@ -11,10 +11,10 @@ author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
 ms.openlocfilehash: 9eceb92c239ce222f9f1498dfdeb8a21220af86f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "80827115"
 ---
 # <a name="deploy-nano-server"></a>Nano Server を展開します。
@@ -342,7 +342,7 @@ Find-NanoServerPackage
 
    **dism /online /get-packages**  
 
-   Package Identity : Microsoft-NanoServer-IIS-Package~31bf3856ad364e35~amd64~en-US~10.0.10586.0 が 2 か所に表示されます。1 つは Release Type : Language Pack、1 つは Release Type : Feature Pack です。  
+   Package Identity : Microsoft-NanoServer-IIS-Package~31bf3856ad364e35~amd64~en-US~10.0.10586.0 が 2 か所に表示されます。1 つは Release Type : "Package Identity : Microsoft-NanoServer-IIS-Package~31bf3856ad364e35~amd64~~10.0.14393.1000"が表示されます。  
 
 ## <a name="customizing-an-existing-nano-server-vhd"></a>既存の Nano Server VHD のカスタマイズ  
 次の例に示すように、Edit-NanoServerImage コマンドレットを使用して既存の VHD の詳細を変更できます。  

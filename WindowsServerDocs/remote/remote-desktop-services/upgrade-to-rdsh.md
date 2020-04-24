@@ -10,10 +10,10 @@ ms.assetid: 5c9b98b8-4eca-4a39-b10b-2bac729f7f44
 author: spatnaik
 manager: scottman
 ms.openlocfilehash: e685c51a003a7121dab19c74d82796311ef0889a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "80857125"
 ---
 # <a name="upgrading-your-remote-desktop-session-host-to-windows-server-2016"></a>リモート デスクトップ セッション ホストの Windows Server 2016 へのアップグレード

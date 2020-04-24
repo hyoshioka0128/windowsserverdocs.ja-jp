@@ -9,10 +9,10 @@ author: jasongerend
 ms.author: jgerend
 ms.date: 10/22/2019
 ms.openlocfilehash: c3c948e447d060d1ce733778c3362d83ad116708
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "75948201"
 ---
 # <a name="features-removed-or-planned-for-replacement-starting-with-windows-server-version-1803"></a>Windows Server バージョン 1803 以降で削除された機能と置換が計画されている機能

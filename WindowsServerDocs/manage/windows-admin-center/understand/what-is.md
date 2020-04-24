@@ -9,10 +9,10 @@ ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 06/07/2019
 ms.openlocfilehash: cb4e3ab2bf98a0c2d51483642fe5388e468dbbb4
-ms.sourcegitcommit: 20d07170c7f3094c2fb4455f54b13ec4b102f2d7
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "81269269"
 ---
 # <a name="what-is-windows-admin-center"></a>Windows Admin Center とは?

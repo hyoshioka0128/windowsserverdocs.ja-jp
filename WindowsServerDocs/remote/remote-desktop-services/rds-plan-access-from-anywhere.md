@@ -10,10 +10,10 @@ ms.author: elizapo
 ms.date: 11/03/2016
 manager: dongill
 ms.openlocfilehash: fb0fddbe86c4c06280fdbe55f2f6a7f490a1340b
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "80857395"
 ---
 # <a name="remote-desktop-services---access-from-anywhere"></a>リモート デスクトップ サービスのどこからでもアクセス

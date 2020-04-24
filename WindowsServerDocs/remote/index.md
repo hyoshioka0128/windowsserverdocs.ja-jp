@@ -10,10 +10,10 @@ ms.author: coreyp
 manager: dougkim
 ms.localizationpriority: high
 ms.openlocfilehash: 659f40f2e6e33378ef9828a746f72c43edaf0859
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "71395870"
 ---
 # <a name="remote"></a>リモート
@@ -93,7 +93,7 @@ ms.locfileid: "71395870"
                                         </div>
                                         <div class="cardText">
                                             <h3>MultiPoint Services</h3><hr />
-                                            <p>このブログ記事では、Microsoft のテクノロジを使用して、データ センターとクラウドへの投資を新たな脅威からどのように保護できるかについて説明しています。  </p>
+                                            <p>このブログ投稿では、Microsoft のテクノロジを使用して、データ センターとクラウドへの投資を新たな脅威からどのように保護できるかについて説明されています。  </p>
                                         </div>
                                     </div>
                                 </div>

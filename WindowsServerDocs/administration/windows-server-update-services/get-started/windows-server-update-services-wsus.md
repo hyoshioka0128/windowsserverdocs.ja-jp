@@ -10,10 +10,10 @@ ms.author: coreyp
 manager: dongill
 ms.date: 5/22/2017
 ms.openlocfilehash: 3bb365c627840d4152b0dc450e24dd83d82103ca
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "80828634"
 ---
 # <a name="windows-server-update-services-wsus"></a>Windows Server Update Services (WSUS)

@@ -11,10 +11,10 @@ ms.author: elizapo
 ms.date: 06/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 1480a2a14a1c3fc23c4e5122e366741d37d9091f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "80856015"
 ---
 # <a name="remote-desktop-client---supported-configuration"></a>リモート デスクトップ クライアントでサポートされる構成

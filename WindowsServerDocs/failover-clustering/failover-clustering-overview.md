@@ -10,10 +10,10 @@ ms.technology: storage-failover-clustering
 ms.date: 06/06/2019
 ms.localizationpriority: high
 ms.openlocfilehash: b646890ebc8b8e64d84e6d448ce4acb393422009
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "80827715"
 ---
 # <a name="failover-clustering-in-windows-server"></a>Windows Server のフェールオーバー クラスタリング

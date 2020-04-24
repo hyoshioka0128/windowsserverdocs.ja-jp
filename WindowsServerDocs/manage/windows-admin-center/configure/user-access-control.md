@@ -9,15 +9,15 @@ ms.date: 06/07/2019
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.openlocfilehash: 39af45506ff7023cebe437992e90f6d4ec051333
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "79323594"
 ---
 # <a name="configure-user-access-control-and-permissions"></a>ユーザー アクセス制御とアクセス許可を構成する
 
-> 適用対象:Windows Admin Center、Windows Admin Center Preview
+> 適用先:Windows Admin Center、Windows Admin Center Preview
 
 Windows Admin Center のユーザー アクセス制御オプションについてよく理解していない場合は、[こちら](../plan/user-access-options.md)で確認してください。
 
@@ -123,7 +123,7 @@ Set-ADComputer -Identity (Get-ADComputer node01) -PrincipalsAllowedToDelegateToA
 Set-ADComputer -Identity (Get-ADComputer node01) -PrincipalsAllowedToDelegateToAccount $null
 ```
 
-## <a name="role-based-access-control"></a>役割ベースのアクセス制御
+## <a name="role-based-access-control"></a>ロール基準のアクセス制御
 
 ロールベースのアクセス制御を使用すると、ローカルの完全な管理者にするのではなく、マシンへの制限付きアクセス権をユーザーに付与できるようになります。
 [ロールベースのアクセス制御と使用できるロールについては、こちらを参照してください。](../plan/user-access-options.md#role-based-access-control)

@@ -9,10 +9,10 @@ ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 12/02/2019
 ms.openlocfilehash: bd7ec8a5a072cbda99b036718d24ec1908fb8b53
-ms.sourcegitcommit: 20d07170c7f3094c2fb4455f54b13ec4b102f2d7
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "81269249"
 ---
 # <a name="what-type-of-installation-is-right-for-you"></a>適切なインストールの種類

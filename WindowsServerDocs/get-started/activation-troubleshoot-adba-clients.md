@@ -9,13 +9,13 @@ ms.author: v-tea
 manager: dcscontentpm
 ms.localizationpriority: medium
 ms.openlocfilehash: b4e31cfa892019e4f3bbcd3b67dbb42751cc58dd
-ms.sourcegitcommit: 9855d6b59b1f8722f39ae74ad373ce1530da0ccf
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "71963038"
 ---
-# <a name="example-troubleshooting-active-directory-based-activation-adba-clients-that-do-not-activate"></a>以下に例を示します。ライセンス認証が行われない Active Directory によるライセンス認証 (ADBA) クライアントのトラブルシューティング
+# <a name="example-troubleshooting-active-directory-based-activation-adba-clients-that-do-not-activate"></a>例:ライセンス認証が行われない Active Directory によるライセンス認証 (ADBA) クライアントのトラブルシューティング
 
 > [!NOTE]
 > この記事は、2018 年 3 月 26 日に TechNet ブログとして最初に公開されたのもです。

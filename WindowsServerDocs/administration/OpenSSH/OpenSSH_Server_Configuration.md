@@ -6,10 +6,10 @@ ms.product: windows-server
 author: maertendmsft
 title: Windows 用 OpenSSH サーバー構成
 ms.openlocfilehash: 61f176f7f73495a6b9dbbcb1a25f2337a44ab99b
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "80852025"
 ---
 # <a name="openssh-server-configuration-for-windows-10-1809-and-server-2019"></a>Windows 10 1809 および Server 2019 用 OpenSSH Server 構成

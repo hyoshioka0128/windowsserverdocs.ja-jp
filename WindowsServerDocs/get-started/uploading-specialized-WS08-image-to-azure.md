@@ -10,10 +10,10 @@ ms.date: 07/11/2018
 ms.topic: get-started-article
 ms.localizationpriority: high
 ms.openlocfilehash: de9233e31c5530abd207a1bbba0e1e16a07d1561
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "80826125"
 ---
 # <a name="upload-a-windows-server-20082008-r2-specialized-image-to-azure"></a>Windows Server 2008/2008 R2 に特化されたイメージの Azure へのアップロード 

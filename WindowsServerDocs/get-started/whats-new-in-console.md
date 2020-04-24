@@ -11,10 +11,10 @@ ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
 ms.openlocfilehash: b055c379e1d5ee632e420ffd1362389878d3dfd1
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "80825965"
 ---
 # <a name="whats-new-in-the-windows-console-in-windows-server-2016"></a>Windows Server 2016 での Windows コンソールの新機能
