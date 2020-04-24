@@ -9,15 +9,15 @@ ms.date: 01/07/2020
 ms.localizationpriority: high
 ms.prod: windows-server
 ms.openlocfilehash: bb2f6d7fcbf18ef9bc67534982d1a98fdc5172a1
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "79320036"
 ---
 # <a name="windows-admin-center"></a>Windows Admin Center
 
-> 適用対象:Windows Admin Center、Windows Admin Center Preview
+> 適用先:Windows Admin Center、Windows Admin Center Preview
 
 Windows Admin Center は、Windows サーバー、クラスター、ハイパーコンバージド インフラストラクチャ、Windows 10 PC を管理するための、ローカルに展開されるブラウザー ベースのアプリです。 Windows 以外の追加費用は必要なく、運用環境で使用できます。
 
@@ -64,7 +64,7 @@ Windows 管理センターを使用して、次のことを行うことができ
             </ul>
         </td>
         <td style="vertical-align: top;">
-            <h3>プラン</h3>
+            <h3>計画</h3>
             <ul>
             <li><a href="plan/installation-options.md">お客様に適したインストールの種類はどれか?</a>
             <li><a href="plan/user-access-options.md">ユーザー アクセス オプション</a>
@@ -94,7 +94,7 @@ Windows 管理センターを使用して、次のことを行うことができ
     </tr>
     <tr>
         <td style="vertical-align: top;">
-            <h3>使用</h3>
+            <h3>vmmblue_2</h3>
             <ul>
             <li><a href="use/get-started.md">起動と接続の追加</a>
             <li><a href="use/manage-servers.md">サーバーの管理</a>

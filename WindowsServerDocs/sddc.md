@@ -10,10 +10,10 @@ manager: dongill
 ms.date: 06/04/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 5a90ad13a51a540c6c76adacb7df0225d642573a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "80857195"
 ---
 # <a name="windows-server-software-defined-datacenter"></a>Windows Server のソフトウェアによるデータセンター

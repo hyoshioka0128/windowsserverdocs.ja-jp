@@ -10,10 +10,10 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.openlocfilehash: a2f4c9ac05e72083fab3e3a926dbdd2876214a7b
-ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/20/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "77517537"
 ---
 # <a name="ad-fs-requirements"></a>AD FS の要件
@@ -38,7 +38,7 @@ AD FS をデプロイするための要件を次に示します。
   
 -   [アクセス許可の要件](ad-fs-requirements.md#BKMK_13)  
   
-## <a name="BKMK_1"></a>証明書の要件  
+## <a name="certificate-requirements"></a><a name="BKMK_1"></a>証明書の要件  
   
 ### <a name="ssl-certificates"></a>SSL 証明書
 
@@ -90,7 +90,7 @@ Web アプリケーション プロキシの SSL 証明書は、次の要件を�
 ### <a name="user-certificates"></a>ユーザー証明書
 - AD FS で x509 ユーザー証明書認証を使用する場合、すべてのユーザー証明書は、AD FS および Web アプリケーション プロキシ サーバーから信頼されているルート証明機関までチェーンする必要があります。
 
-## <a name="BKMK_2"></a>ハードウェア要件  
+## <a name="hardware-requirements"></a><a name="BKMK_2"></a>ハードウェア要件  
 AD FS および Web アプリケーション プロキシのハードウェア要件 (物理または仮想) は CPU に左右されいるため、処理能力に合わせてファームのサイズを調整する必要があります。  
 - [AD FS 2016 容量計画スプレッドシート](http://adfsdocs.blob.core.windows.net/adfs/ADFSCapacity2016.xlsx)を使用して、必要な AD FS および Web アプリケーション プロキシ サーバーの数を決定します。
 
@@ -106,7 +106,7 @@ AD FS のメモリとディスクの要件はほとんど静的です。次の�
 
 AD FS 構成データベースに SQL Server を使用している場合は、SQL Server の最も基本的な推奨事項に従って SQL Server のサイズを変更します。  AD FS データベースのサイズは非常に小さく、AD FS によってデータベース インスタンスに大きな処理負荷がかかることはありません。  ただし、AD FS は認証時にデータベースに複数回接続するので、ネットワーク接続を堅牢にする必要があります。  残念ながら、AD FS 構成データベースの SQL Azure はサポートされていません。
   
-## <a name="BKMK_3"></a>プロキシの要件  
+## <a name="proxy-requirements"></a><a name="BKMK_3"></a>プロキシの要件  
   
 -   エクストラネット アクセスの場合は、リモート アクセス サーバー ロールの一部である Web アプリケーション プロキシ ロール サービスをデプロイする必要があります。 
 
@@ -116,7 +116,7 @@ AD FS 構成データベースに SQL Server を使用している場合は、SQ
   
 -   フェデレーション サーバーと Web アプリケーション プロキシのロール サービスを同じコンピューターにインストールすることはできません。  
   
-## <a name="BKMK_4"></a>AD DS の要件  
+## <a name="ad-ds-requirements"></a><a name="BKMK_4"></a>AD DS の要件  
 **ドメイン コントローラーの要件**  
   
 - AD FS には、Windows Server 2008 以降を実行しているドメイン コントローラーが必要です。
@@ -165,7 +165,7 @@ AD FS 構成データベースに SQL Server を使用している場合は、SQ
   
 -   AD FS サービス アカウントには、AD FS サービスに対して認証を行うユーザーを含むすべてのドメインのユーザー属性を読み取るアクセス許可が必要です。  
   
-## <a name="BKMK_5"></a>構成データベースの要件  
+## <a name="configuration-database-requirements"></a><a name="BKMK_5"></a>構成データベースの要件  
 このセクションでは、Windows Internal Database (WID) または SQL Server をデータベースとしてそれぞれ使用する AD FS ファームの要件と制限について説明します。  
   
 **WID**  
@@ -188,7 +188,7 @@ WID と SQL Server ファームでサポートされている AD FS サーバー
 
 - SQL Server ファームでは、SAML アーティファクト解決とトークン リプレイ検出の両方がサポートされています。  
   
-## <a name="BKMK_6"></a>ブラウザーの要件  
+## <a name="browser-requirements"></a><a name="BKMK_6"></a>ブラウザーの要件  
 ブラウザーまたはブラウザー コントロールを介して AD FS 認証を実行する場合、ブラウザーは次の要件を満たしている必要があります。  
   
 - JavaScript を有効にする必要があります  
@@ -200,7 +200,7 @@ WID と SQL Server ファームでサポートされている AD FS サーバー
 - ユーザー証明書とデバイス証明書の認証の場合、ブラウザーは SSL クライアント証明書認証をサポートする必要があります  
 
 - Windows 統合認証を使用してシームレスにサインインするには、ローカル イントラネット ゾーンまたは信頼済みサイト ゾーンにフェデレーション サービス名 (https:\/\/fs.contoso.com など) を構成する必要があります。
-  ## <a name="BKMK_7"></a>ネットワークの要件  
+  ## <a name="network-requirements"></a><a name="BKMK_7"></a>ネットワークの要件  
  
 **ファイアウォールの要件**  
   
@@ -237,7 +237,7 @@ Web アプリケーション プロキシとフェデレーション サーバ�
 - 負荷分散の方法として DNS ラウンド ロビンを使用することはお勧めしません。 この種類の負荷分散を使用しても、正常性プローブを使用してロード バランサーからノードを自動的に削除することはできません。 
 - ロード バランサー内の AD FS への認証トラフィックに IP ベースのセッション アフィニティまたは固定セッションを使用することはお勧めしません。 これにより、メール クライアントから Office 365 メール サービス (Exchange Online) に接続するためにレガシ認証プロトコルを使用している場合、特定のノードが過負荷になる可能性があります。 
 
-## <a name="BKMK_13"></a>アクセス許可の要件  
+## <a name="permissions-requirements"></a><a name="BKMK_13"></a>アクセス許可の要件  
 AD FS のインストールと初期構成を実行する管理者には、AD FS サーバーに対するローカル管理者のアクセス許可が必要です。  ローカル管理者が Active Directory にオブジェクトを作成するアクセス許可を持っていない場合、まずドメイン管理者が必要な AD オブジェクトを作成し、次に AdminConfiguration パラメーターを使用して AD FS ファームを構成する必要があります。  
   
   
