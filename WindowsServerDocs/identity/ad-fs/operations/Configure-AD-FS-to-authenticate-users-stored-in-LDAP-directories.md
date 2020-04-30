@@ -8,14 +8,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 9c194128cb5d96bf84e19b11b9d8803c61e34490
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a3e429d43fd644cd2b8ba3a5b123deecc2696f24
+ms.sourcegitcommit: 912a5a402ecc6b39c1584338ea635a2ac11a4eb9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80859905"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82219286"
 ---
-# <a name="configure-ad-fs-to-authenticate-users-stored-in-ldap-directories"></a>LDAP ディレクトリに保存されたユーザーを認証するように AD FS を構成する
+# <a name="configure-ad-fs-to-authenticate-users-stored-in-ldap-directories-in-windows-server-2016-or-later"></a>Windows Server 2016 以降の LDAP ディレクトリに格納されているユーザーを認証するように AD FS を構成する
 
 次のトピックでは、ライトウェイトディレクトリアクセスプロトコル (LDAP) v3 に準拠したディレクトリに id が格納されているユーザーを AD FS インフラストラクチャで認証できるようにするために必要な構成について説明します。
 
@@ -49,7 +49,7 @@ LDAP ディレクトリからユーザーを認証するように AD FS ファ�
    > [!NOTE]
    > 接続先の LDAP サーバーごとに新しい接続オブジェクトを作成することをお勧めします。 AD FS は、複数のレプリカ LDAP サーバーに接続し、特定の LDAP サーバーがダウンした場合に自動的にフェールオーバーすることができます。 このような場合は、これらのレプリカ LDAP サーバーごとに1つの AdfsLdapServerConnection を作成してから、 **AdfsLocalClaimsProviderTrust**コマンドレットの-**ldapserverconnection**パラメーターを使用して接続オブジェクトの配列を追加します。
 
-   **注:** LDAP インスタンスにバインドするために使用する DN とパスワードを取得するために、資格情報を使用し、パスワードを入力しようとすると、特定の入力形式 (たとえば、domain\username や user@domain.tldなど) のユーザーインターフェイスが必要になるため、エラーが発生する可能性があります。 代わりに、次のように Convertto-html コマンドレットを使用することができます (次の例では、LDAP インスタンスにバインドするために使用する資格情報の DN として uid = admin, ou = system を想定しています)。
+   **注:** LDAP インスタンスにバインドするために使用する DN とパスワードを取得して使用すると、たとえば、domain\username やuser@domain.tldのような特定の入力形式に対するユーザーインターフェイスの要件によって、エラーが発生する可能性があります。 代わりに、次のように Convertto-html コマンドレットを使用することができます (次の例では、LDAP インスタンスにバインドするために使用する資格情報の DN として uid = admin, ou = system を想定しています)。
 
    ```
    $ldapuser = ConvertTo-SecureString -string "uid=admin,ou=system" -asplaintext -force
@@ -92,9 +92,8 @@ LDAP ディレクトリからユーザーを認証するように AD FS ファ�
    -OrganizationalAccountSuffix "vendors.contoso.com"
    ```
 
-   上記の例では、"ベンダ" という名前のローカル要求プロバイダー信頼を作成しています。 `-LdapServerConnection` パラメーターに `$vendorDirectory` を割り当てることによって、このローカル要求プロバイダー信頼が表す LDAP ディレクトリに接続するための AD FS の接続情報を指定します。 手順 1. では、特定の LDAP ディレクトリに接続するときに使用する接続文字列を `$vendorDirectory` 割り当てました。 最後に、`$GivenName`、`$Surname`、および `$CommonName` の LDAP 属性 (AD FS の要求にマップしたもの) を条件付きアクセスの制御に使用するように指定します。これには、多要素認証ポリシーと発行承認規則が含まれます。また、AD FS 発行されたセキュリティトークンの要求を使用して発行することもできます。 Ws-trust などのアクティブなプロトコルを AD FS と共に使用するには、OrganizationalAccountSuffix パラメーターを指定する必要があります。これにより、アクティブな承認要求を処理するときに、AD FS がローカル要求プロバイダー信頼を明確に区別できるようになります。
+   上記の例では、"ベンダ" という名前のローカル要求プロバイダー信頼を作成しています。 このローカル要求プロバイダー信頼が表す LDAP ディレクトリに接続するために、 `$vendorDirectory` `-LdapServerConnection`パラメーターにを割り当てることによって、AD FS の接続情報を指定します。 手順 1. では、特定の LDAP `$vendorDirectory`ディレクトリに接続するときに使用する接続文字列を割り当てました。 最後に、 `$GivenName`、 `$Surname`、および`$CommonName` LDAP 属性 (AD FS 要求にマップしたもの) を、条件付きアクセス制御 (多要素認証ポリシーと発行承認規則を含む) と、AD FS 発行されたセキュリティトークンの要求による発行に使用するように指定します。 Ws-trust などのアクティブなプロトコルを AD FS と共に使用するには、OrganizationalAccountSuffix パラメーターを指定する必要があります。これにより、アクティブな承認要求を処理するときに、AD FS がローカル要求プロバイダー信頼を明確に区別できるようになります。
 
 ## <a name="see-also"></a>参照
 [AD FS の運用](../../ad-fs/AD-FS-2016-Operations.md)
-
 

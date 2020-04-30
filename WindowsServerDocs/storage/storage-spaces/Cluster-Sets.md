@@ -9,16 +9,16 @@ ms.author: johnmar
 ms.date: 01/30/2019
 description: この記事では、クラスターセットのシナリオについて説明します。
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c7ddef1831a82f7fc068ec4241bb1a72bd888bd
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 484b6a1e658cd5c0583747194fa42494e54c3301
+ms.sourcegitcommit: 4824f3b307e5b8b9bf5be7bc948f7aba9cf7063f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80861045"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82579934"
 ---
 # <a name="cluster-sets"></a>クラスター セット
 
-> 適用対象: Windows Server 2019
+> 適用先:Windows Server 2019
 
 クラスターセットは、Windows Server 2019 リリースの新しいクラウドスケールアウトテクノロジです。これにより、単一のソフトウェア定義データセンター (SDDC) クラウド内のクラスターノード数が桁違いに増加します。 クラスターセットは、複数のフェールオーバークラスター (コンピューティング、ストレージ、またはハイパー収束) の疎結合グループです。 クラスターセットテクノロジを使用すると、クラスターセット内のメンバークラスター間での仮想マシンの円滑な、および仮想マシンの円滑なのサポートで設定されている統合ストレージの名前空間を利用できます。
 
@@ -101,13 +101,15 @@ Windows Server 2019 には、インフラストラクチャスケールアウト
 
 インフラストラクチャ SOFS の役割には、次の考慮事項が適用されます。
 
-1.    フェールオーバークラスターには、最大で1つの Infrastructure SOFS クラスターロールしか存在できません。 Infrastructure SOFS ロールは、 **ClusterScaleOutFileServerRole**コマンドレットに " **-Infrastructure**" スイッチパラメーターを指定することによって作成されます。  例 :
+1. フェールオーバークラスターには、最大で1つの Infrastructure SOFS クラスターロールしか存在できません。 Infrastructure SOFS ロールは、 **ClusterScaleOutFileServerRole**コマンドレットに "**-Infrastructure**" スイッチパラメーターを指定することによって作成されます。  次に例を示します。
 
-        ClusterScaleoutFileServerRole-Name "my_infra_sofs_name"-Infrastructure
+    ```PowerShell
+    Add-ClusterScaleoutFileServerRole -Name "my_infra_sofs_name" -Infrastructure
+    ```
 
-2.    フェールオーバーで作成された各 CSV ボリュームは、CSV ボリューム名に基づいて自動生成された名前で SMB 共有の作成を自動的にトリガーします。 管理者は、CSV ボリュームの作成/変更操作を使用する以外に、SOFS ロールの下にある SMB 共有を直接作成または変更することはできません。
+2. フェールオーバーで作成された各 CSV ボリュームは、CSV ボリューム名に基づいて自動生成された名前で SMB 共有の作成を自動的にトリガーします。 管理者は、CSV ボリュームの作成/変更操作を使用する以外に、SOFS ロールの下にある SMB 共有を直接作成または変更することはできません。
 
-3.    ハイパー収束構成では、インフラストラクチャの SOFS により、SMB クライアント (Hyper-v ホスト) は、保証された継続的可用性 (CA) とインフラストラクチャ SOFS SMB サーバーとの間で通信を行うことができます。 このハイパー収束 SMB ループバック CA は、仮想ディスク (VHDx) ファイルにアクセスする仮想マシンを介して実現され、所有している仮想マシンの id がクライアントとサーバーの間で転送されます。 この id 転送では、以前と同じように、標準のハイパー収束クラスター構成と同様に、ACL を使用した VHDx ファイルが許可されます。
+3. ハイパー収束構成では、インフラストラクチャの SOFS により、SMB クライアント (Hyper-v ホスト) は、保証された継続的可用性 (CA) とインフラストラクチャ SOFS SMB サーバーとの間で通信を行うことができます。 このハイパー収束 SMB ループバック CA は、仮想ディスク (VHDx) ファイルにアクセスする仮想マシンを介して実現され、所有している仮想マシンの id がクライアントとサーバーの間で転送されます。 この id 転送では、以前と同じように、標準のハイパー収束クラスター構成と同様に、ACL を使用した VHDx ファイルが許可されます。
 
 クラスターセットを作成すると、クラスターセットの名前空間は、各メンバークラスターのインフラストラクチャ SOFS、さらには管理クラスターのインフラストラクチャ SOFS に依存します。
 
@@ -138,49 +140,69 @@ Windows Server 2019 には、インフラストラクチャスケールアウト
 
 2. すべてのクラスターが作成されたら、次のコマンドを使用してクラスターセットマスタを作成します。
 
-        New-ClusterSet -Name CSMASTER -NamespaceRoot SOFS-CLUSTERSET -CimSession SET-CLUSTER
+    ```PowerShell
+    New-ClusterSet -Name CSMASTER -NamespaceRoot SOFS-CLUSTERSET -CimSession SET-CLUSTER
+    ```
 
 3. クラスターサーバーをクラスターセットに追加するには、次のものを使用します。
 
-        Add-ClusterSetMember -ClusterName CLUSTER1 -CimSession CSMASTER -InfraSOFSName SOFS-CLUSTER1
-        Add-ClusterSetMember -ClusterName CLUSTER2 -CimSession CSMASTER -InfraSOFSName SOFS-CLUSTER2
+    ```PowerShell
+    Add-ClusterSetMember -ClusterName CLUSTER1 -CimSession CSMASTER -InfraSOFSName SOFS-CLUSTER1
+    Add-ClusterSetMember -ClusterName CLUSTER2 -CimSession CSMASTER -InfraSOFSName SOFS-CLUSTER2
+    ```
 
    > [!NOTE]
    > 静的 IP アドレススキームを使用している場合は、**新しい-ClusterSet**コマンドに *-staticaddress x* .x を含める必要があります。
 
 4. クラスターメンバーから設定されたクラスターを作成したら、ノードセットとそのプロパティを一覧表示できます。  クラスターセット内のすべてのメンバークラスターを列挙するには、次のようにします。
 
-        Get-ClusterSetMember -CimSession CSMASTER
+    ```PowerShell
+    Get-ClusterSetMember -CimSession CSMASTER
+    ```
 
 5. 管理クラスターノードを含む、クラスターセット内のすべてのメンバークラスターを列挙するには、次のようにします。
 
-        Get-ClusterSet -CimSession CSMASTER | Get-Cluster | Get-ClusterNode
+    ```PowerShell
+    Get-ClusterSet -CimSession CSMASTER | Get-Cluster | Get-ClusterNode
+    ```
 
 6. メンバークラスターからすべてのノードを一覧表示するには、次のようにします。
 
-        Get-ClusterSetNode -CimSession CSMASTER
+    ```PowerShell
+    Get-ClusterSetNode -CimSession CSMASTER
+    ```
 
 7. クラスターセット全体のすべてのリソースグループを一覧表示するには、次のようにします。
 
-        Get-ClusterSet -CimSession CSMASTER | Get-Cluster | Get-ClusterGroup 
+    ```PowerShell
+    Get-ClusterSet -CimSession CSMASTER | Get-Cluster | Get-ClusterGroup 
+    ```
 
 8. クラスターセット作成プロセスによって1つの SMB 共有が作成されたことを確認するには (Volume1 として識別されるか、または、各クラスターメンバーの CSV ボリュームのインフラストラクチャ SOFS で、ScopeName がインフラストラクチャファイルサーバーの名前であり、両方とも)、次のように名前が付けられていることを確認します。
 
-        Get-SmbShare -CimSession CSMASTER
+    ```PowerShell
+    Get-SmbShare -CimSession CSMASTER
+    ```
 
 8. クラスターセットには、確認のために収集できるデバッグログがあります。  クラスターセットとクラスターデバッグログの両方を、すべてのメンバーと管理クラスターに対して収集できます。
 
-        Get-ClusterSetLog -ClusterSetCimSession CSMASTER -IncludeClusterLog -IncludeManagementClusterLog -DestinationFolderPath <path>
+    ```PowerShell
+    Get-ClusterSetLog -ClusterSetCimSession CSMASTER -IncludeClusterLog -IncludeManagementClusterLog -DestinationFolderPath <path>
+    ```
 
 9. すべてのクラスターセットメンバー間で Kerberos の[制約付き委任](https://techcommunity.microsoft.com/t5/virtualization/live-migration-via-constrained-delegation-with-kerberos-in/ba-p/382334)を構成します。
 
 10. クラスターセット内の各ノードで、クラスター間の仮想マシンのライブマイグレーションの認証の種類を Kerberos に構成します。
 
-        foreach($h in $hosts){ Set-VMHost -VirtualMachineMigrationAuthenticationType Kerberos -ComputerName $h }
+    ```PowerShell
+    foreach($h in $hosts){ Set-VMHost -VirtualMachineMigrationAuthenticationType Kerberos -ComputerName $h }
+    ```
 
 11. クラスターセット内の各ノードのローカルの administrators グループに管理クラスターを追加します。
 
-        foreach($h in $hosts){ Invoke-Command -ComputerName $h -ScriptBlock {Net localgroup administrators /add <management_cluster_name>$} }
+    ```PowerShell
+    foreach($h in $hosts){ Invoke-Command -ComputerName $h -ScriptBlock {Net localgroup administrators /add <management_cluster_name>$} }
+    ```
 
 ## <a name="creating-new-virtual-machines-and-adding-to-cluster-sets"></a>新しいバーチャルマシンの作成とクラスターセットへの追加
 
@@ -198,43 +220,53 @@ Windows Server 2019 には、インフラストラクチャスケールアウト
 - 1で使用する仮想プロセッサを設定します
 - バーチャルマシンに使用可能な CPU が少なくとも10% あることを確認してください
 
-   ```PowerShell
-   # Identify the optimal node to create a new virtual machine
-   $memoryinMB=4096
-   $vpcount = 1
-   $targetnode = Get-ClusterSetOptimalNodeForVM -CimSession CSMASTER -VMMemory $memoryinMB -VMVirtualCoreCount $vpcount -VMCpuReservation 10
-   $secure_string_pwd = convertto-securestring "<password>" -asplaintext -force
-   $cred = new-object -typename System.Management.Automation.PSCredential ("<domain\account>",$secure_string_pwd)
+```PowerShell
+# Identify the optimal node to create a new virtual machine
+$memoryinMB=4096
+$vpcount = 1
+$targetnode = Get-ClusterSetOptimalNodeForVM -CimSession CSMASTER -VMMemory $memoryinMB -VMVirtualCoreCount $vpcount -VMCpuReservation 10
+$secure_string_pwd = convertto-securestring "<password>" -asplaintext -force
+$cred = new-object -typename System.Management.Automation.PSCredential ("<domain\account>",$secure_string_pwd)
 
-   # Deploy the virtual machine on the optimal node
-   Invoke-Command -ComputerName $targetnode.name -scriptblock { param([String]$storagepath); New-VM CSVM1 -MemoryStartupBytes 3072MB -path $storagepath -NewVHDPath CSVM.vhdx -NewVHDSizeBytes 4194304 } -ArgumentList @("\\SOFS-CLUSTER1\VOLUME1") -Credential $cred | Out-Null
-   
-   Start-VM CSVM1 -ComputerName $targetnode.name | Out-Null
-   Get-VM CSVM1 -ComputerName $targetnode.name | fl State, ComputerName
-   ```
+# Deploy the virtual machine on the optimal node
+Invoke-Command -ComputerName $targetnode.name -scriptblock { param([String]$storagepath); New-VM CSVM1 -MemoryStartupBytes 3072MB -path $storagepath -NewVHDPath CSVM.vhdx -NewVHDSizeBytes 4194304 } -ArgumentList @("\\SOFS-CLUSTER1\VOLUME1") -Credential $cred | Out-Null
+
+Start-VM CSVM1 -ComputerName $targetnode.name | Out-Null
+Get-VM CSVM1 -ComputerName $targetnode.name | fl State, ComputerName
+```
 
 完了すると、仮想マシンとその配置場所に関する情報が表示されます。  上の例では、次のように表示されます。
 
-        State         : Running
-        ComputerName  : 1-S2D2
+```
+State         : Running
+ComputerName  : 1-S2D2
+```
 
 仮想マシンを追加するのに十分なメモリ、cpu、またはディスク領域がない場合は、次のエラーが表示されます。
 
-      Get-ClusterSetOptimalNodeForVM : A cluster node is not available for this operation.  
+```
+Get-ClusterSetOptimalNodeForVM : A cluster node is not available for this operation.  
+```
 
 作成された仮想マシンは、指定された特定のノードの Hyper-v マネージャーに表示されます。  クラスターセットの仮想マシンとしてクラスターに追加するには、次のコマンドを実行します。  
 
-        Register-ClusterSetVM -CimSession CSMASTER -MemberName $targetnode.Member -VMName CSVM1
+```PowerShell
+Register-ClusterSetVM -CimSession CSMASTER -MemberName $targetnode.Member -VMName CSVM1
+```
 
 完了すると、出力は次のようになります。
 
-         Id  VMName  State  MemberName  PSComputerName
-         --  ------  -----  ----------  --------------
-          1  CSVM1      On  CLUSTER1    CSMASTER
+```
+Id  VMName  State  MemberName  PSComputerName
+--  ------  -----  ----------  --------------
+1  CSVM1      On  CLUSTER1    CSMASTER
+```
 
 既存の仮想マシンでクラスターを追加した場合は、仮想マシンをクラスターセットに登録して、すべての仮想マシンを一度に登録する必要があります。次のコマンドを使用します。
 
-        Get-ClusterSetMember -name CLUSTER3 -CimSession CSMASTER | Register-ClusterSetVM -RegisterAll -CimSession CSMASTER
+```PowerShell
+Get-ClusterSetMember -Name CLUSTER3 -CimSession CSMASTER | Register-ClusterSetVM -RegisterAll -CimSession CSMASTER
+```
 
 ただし、仮想マシンへのパスをクラスターセットの名前空間に追加する必要があるため、このプロセスは完了しません。
 
@@ -242,12 +274,16 @@ Windows Server 2019 には、インフラストラクチャスケールアウト
 
 この例では、CLUSTER3 というスケールアウトファイルサーバーインフラストラクチャを使用してを SOFS としてクラスターセットに追加し、CLUSTER3 として追加しました。  仮想マシンの構成と記憶域を移動するには、次のコマンドを実行します。
 
-        Move-VMStorage -DestinationStoragePath \\SOFS-CLUSTER3\Volume1 -Name MYVM
+```PowerShell
+Move-VMStorage -DestinationStoragePath \\SOFS-CLUSTER3\Volume1 -Name MYVM
+```
 
 完了すると、次の警告が表示されます。
 
-        WARNING: There were issues updating the virtual machine configuration that may prevent the virtual machine from running.  For more information view the report file below.
-        WARNING: Report file location: C:\Windows\Cluster\Reports\Update-ClusterVirtualMachineConfiguration '' on date at time.htm.
+```
+WARNING: There were issues updating the virtual machine configuration that may prevent the virtual machine from running.  For more information view the report file below.
+WARNING: Report file location: C:\Windows\Cluster\Reports\Update-ClusterVirtualMachineConfiguration '' on date at time.htm.
+```
 
 この警告は、"仮想マシンロールの記憶域構成に変更が検出されませんでした。" という警告が無視される場合があります。  実際の物理的な場所としての警告の理由は変わりません。構成パスのみ。 
 
@@ -261,13 +297,17 @@ Windows Server 2019 には、インフラストラクチャスケールアウト
 
 クラスターセットでは、これらの手順は必要ありません。コマンドは1つだけ必要です。  まず、次のコマンドを使用して、すべてのネットワークを移行に使用できるように設定する必要があります。
 
-    Set-VMHost -UseAnyNetworkForMigration $true
+```PowerShell
+Set-VMHost -UseAnyNetworkForMigration $true
+```
 
 たとえば、クラスターセットの仮想マシンを CLUSTER1 から CL3 に移動します。  1つのコマンドは次のようになります。
 
-        Move-ClusterSetVM -CimSession CSMASTER -VMName CSVM1 -Node NODE2-CL3
+```PowerShell
+Move-ClusterSetVM -CimSession CSMASTER -VMName CSVM1 -Node NODE2-CL3
+```
 
-ただし、仮想マシンの記憶域または構成ファイルは移動されないことに注意してください。  バーチャルマシンへのパスは \\SOFS-CLUSTER1\VOLUME1. のままであるため、この手順は必要ありません。  仮想マシンを登録した後、クラスターセットにインフラストラクチャファイルサーバー共有パスがある場合、ドライブと仮想マシンは仮想マシンと同じコンピューター上に存在する必要はありません。
+ただし、仮想マシンの記憶域または構成ファイルは移動されないことに注意してください。  仮想マシンへのパスは\\ \\SOFS-CLUSTER1\VOLUME1. のままであるため、これは必要ありません。  仮想マシンを登録した後、クラスターセットにインフラストラクチャファイルサーバー共有パスがある場合、ドライブと仮想マシンは仮想マシンと同じコンピューター上に存在する必要はありません。
 
 ## <a name="creating-availability-sets-fault-domains"></a>可用性セットの障害ドメインの作成
 
@@ -279,39 +319,49 @@ Windows Server 2019 には、インフラストラクチャスケールアウト
 
 障害ドメインを作成するには、次のコマンドを実行します。
 
-        New-ClusterSetFaultDomain -Name FD1 -FdType Logical -CimSession CSMASTER -MemberCluster CLUSTER1,CLUSTER2 -Description "This is my first fault domain"
+```PowerShell
+New-ClusterSetFaultDomain -Name FD1 -FdType Logical -CimSession CSMASTER -MemberCluster CLUSTER1,CLUSTER2 -Description "This is my first fault domain"
 
-        New-ClusterSetFaultDomain -Name FD2 -FdType Logical -CimSession CSMASTER -MemberCluster CLUSTER3,CLUSTER4 -Description "This is my second fault domain"
+New-ClusterSetFaultDomain -Name FD2 -FdType Logical -CimSession CSMASTER -MemberCluster CLUSTER3,CLUSTER4 -Description "This is my second fault domain"
+```
 
 これらが正常に作成されたことを確認するために、出力を表示した状態で ClusterSetFaultDomain を実行できます。
 
-        PS C:\> Get-ClusterSetFaultDomain -CimSession CSMASTER -FdName FD1 | fl *
+```PowerShell
+PS C:\> Get-ClusterSetFaultDomain -CimSession CSMASTER -FdName FD1 | fl *
 
-        PSShowComputerName    : True
-        FaultDomainType       : Logical
-        ClusterName           : {CLUSTER1, CLUSTER2}
-        Description           : This is my first fault domain
-        FDName                : FD1
-        Id                    : 1
-        PSComputerName        : CSMASTER
+PSShowComputerName    : True
+FaultDomainType       : Logical
+ClusterName           : {CLUSTER1, CLUSTER2}
+Description           : This is my first fault domain
+FDName                : FD1
+Id                    : 1
+PSComputerName        : CSMASTER
+```
 
 障害ドメインが作成されたので、可用性セットを作成する必要があります。
 
-        New-ClusterSetAvailabilitySet -Name CSMASTER-AS -FdType Logical -CimSession CSMASTER -ParticipantName FD1,FD2
+```PowerShell
+New-ClusterSetAvailabilitySet -Name CSMASTER-AS -FdType Logical -CimSession CSMASTER -ParticipantName FD1,FD2
+```
 
 作成されたことを検証するには、次を使用します。
 
-        Get-ClusterSetAvailabilitySet -AvailabilitySetName CSMASTER-AS -CimSession CSMASTER
+```PowerShell
+Get-ClusterSetAvailabilitySet -AvailabilitySetName CSMASTER-AS -CimSession CSMASTER
+```
 
 新しい仮想マシンを作成する場合は、最適なノードを決定する際に、-AvailabilitySet パラメーターを使用する必要があります。  次のようになります。
 
-        # Identify the optimal node to create a new virtual machine
-        $memoryinMB=4096
-        $vpcount = 1
-        $av = Get-ClusterSetAvailabilitySet -Name CSMASTER-AS -CimSession CSMASTER
-        $targetnode = Get-ClusterSetOptimalNodeForVM -CimSession CSMASTER -VMMemory $memoryinMB -VMVirtualCoreCount $vpcount -VMCpuReservation 10 -AvailabilitySet $av
-        $secure_string_pwd = convertto-securestring "<password>" -asplaintext -force
-        $cred = new-object -typename System.Management.Automation.PSCredential ("<domain\account>",$secure_string_pwd)
+```PowerShell
+# Identify the optimal node to create a new virtual machine
+$memoryinMB=4096
+$vpcount = 1
+$av = Get-ClusterSetAvailabilitySet -Name CSMASTER-AS -CimSession CSMASTER
+$targetnode = Get-ClusterSetOptimalNodeForVM -CimSession CSMASTER -VMMemory $memoryinMB -VMVirtualCoreCount $vpcount -VMCpuReservation 10 -AvailabilitySet $av
+$secure_string_pwd = convertto-securestring "<password>" -asplaintext -force
+$cred = new-object -typename System.Management.Automation.PSCredential ("<domain\account>",$secure_string_pwd)
+```
 
 さまざまなライフサイクルが原因でクラスターセットからクラスターを削除する。 クラスターセットからクラスターを削除する必要がある場合もあります。 ベストプラクティスとして、クラスターセットのすべての仮想マシンをクラスターから移動することをお勧めします。 これは、**移動 ClusterSetVM**と**移動 vmstorage**コマンドを使用して実現できます。
 
@@ -322,7 +372,9 @@ Windows Server 2019 には、インフラストラクチャスケールアウト
 
 たとえば、クラスターセットから CLUSTER1 クラスターを削除するコマンドは次のようになります。
 
-        Remove-ClusterSetMember -ClusterName CLUSTER1 -CimSession CSMASTER
+```PowerShell
+Remove-ClusterSetMember -ClusterName CLUSTER1 -CimSession CSMASTER
+```
 
 ## <a name="frequently-asked-questions-faq"></a>よく寄せられる質問 (FAQ)
 
@@ -356,7 +408,7 @@ Windows Server 2019 には、インフラストラクチャスケールアウト
 **回答:** いいえ。論理障害ドメイン内でのクラスター間フェールオーバーは、まだサポートされていません。 
 
 **質問:** クラスターは複数のサイト (または DNS ドメイン) のクラスターにまたがることができますか。 <br> 
-**回答:** このシナリオはテストされていないため、運用環境でのサポートはすぐには計画されていません。 このシナリオが重要であるかどうか、およびその使用方法についてマイクロソフトにお知らせください。
+**回答:** これはテストされていないシナリオで、運用環境のサポートについてすぐには計画されません。 このシナリオが重要であるかどうか、およびその使用方法についてマイクロソフトにお知らせください。
 
 **質問:** クラスターセットは IPv6 で動作しますか。 <br>
 **回答:** IPv4 と IPv6 は両方とも、フェールオーバークラスターと同様にクラスターセットでサポートされます。
