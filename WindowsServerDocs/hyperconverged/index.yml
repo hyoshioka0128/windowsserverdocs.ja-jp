@@ -43,8 +43,23 @@ sections:
             image:
               src: ../media/i-network.svg
             title: ソフトウェア定義ネットワーク
+          - href: ../manage/windows-admin-center/overview.md
+            html: <p>クラスターおよびその他の Windows サーバーを管理します。</p>
+            image:
+              src: ../media/i-admin-center.svg
+            title: Windows Admin Center
+          - href: ../azure-hybrid-services.md
+            html: <p>サイトのリカバリーや監視などのためにクラスターを Azure ハイブリッド サービスに接続します。</p>
+            image:
+              src: ../media/i-microsoft-azure.svg
+            title: Azure ハイブリッド サービスへの接続
+          - href: ../azure-stack-hci
+            html: <p>Windows Server 2019 の仮想化およびクラスタリング テクノロジを任意のパートナーによる検証済みハードウェア ソリューションとペアリングして、ソフトウェア定義データセンターのチューニング作業から当て推量を排除します。</p>
+            image:
+              src: ../media/i-azure-stack.svg
+            title: Azure Stack HCI
           - href: 'https://www.microsoft.com/cloud-platform/software-defined-datacenter'
-            html: <p>Windows Server 仮想化およびクラスタリング テクノロジを任意のパートナーによる検証済みハードウェア ソリューションとペアリングして、ソフトウェア定義データセンターのチューニング作業から当て推量を排除します。</p>
+            html: <p>Windows Server 2016 の仮想化およびクラスタリング テクノロジを任意のパートナーによる検証済みハードウェア ソリューションとペアリングして、ソフトウェア定義データセンターのチューニング作業から当て推量を排除します。</p>
             image:
               src: 'https://docs.microsoft.com/media/common/i_data-collection.svg'
             title: Windows Server ソフトウェア定義 (WSSD)

@@ -7,10 +7,10 @@ author: JasonGerend
 manager: elizapo
 ms.author: jgerend
 ms.openlocfilehash: c17fd78a2cf726ab156d3eda09b9c0e2d4ed6a75
-ms.sourcegitcommit: aaae95cb05c44232099ec46b04a127c77a3f486e
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/20/2020
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "77520358"
 ---
 # <a name="dfs-replication-overview"></a>DFS レプリケーションの概要

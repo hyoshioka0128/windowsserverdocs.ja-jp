@@ -9,12 +9,12 @@ ms.topic: article
 author: lizap
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: c33e5c6309c41e39aeda3a2bdff1a0caf72b2675
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a424a28be835fa2a941187b110907fff76e6f220
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80860335"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "81650066"
 ---
 # <a name="use-performance-counters-to-diagnose-app-performance-problems-on-remote-desktop-session-hosts"></a>パフォーマンス カウンターを使用して、リモート デスクトップ セッション ホストでのアプリのパフォーマンス問題を診断する
 
@@ -22,8 +22,8 @@ ms.locfileid: "80860335"
 
 アプリケーションの実行速度が遅いのか、応答していないのか、診断が最も難しい問題の 1 つがアプリケーション パフォーマンスの低下です。 従来、診断は、CPU、メモリ、ディスク入出力、その他のメトリックの収集から開始し、続いて Windows Performance Analyzer などのツールを使用して問題の原因を見つけようとします。 残念ながら、ほとんどの状況で、リソース消費量カウンターには頻繁かつ大幅な変動があるため、このデータは根本原因の特定には役立ちません。 このため、データを読み取って、報告された問題に関連付けることが困難になっています。 アプリのパフォーマンス問題を迅速に解決できるように、ユーザー入力フローを測定する新しいパフォーマンス カウンターをいくつか追加しました ([Windows Insider Program](https://insider.windows.com) から[ダウンロード](#download-windows-server-insider-software)で入手可)。
 
->[!NOTE]
->ユーザー入力遅延カウンターが対応しているのは、以下のみです。
+> [!NOTE]
+> ユーザー入力遅延カウンターが対応しているのは、以下のみです。
 > - Windows Server 2019 以降
 > - Windows 10 バージョン 1809 以降
 
@@ -33,7 +33,7 @@ ms.locfileid: "80860335"
 
 ![リモート デスクトップ - ユーザーのリモート デスクトップ クライアントからアプリケーションへのユーザー入力フロー](./media/rds-user-input.png)
 
-ユーザー入力遅延カウンターは、次のフロー図に示すように、入力がキューに入れられたときから、[従来のメッセージ ループ](https://msdn.microsoft.com/library/windows/desktop/ms644927.aspx#loop)内でアプリによって取得されたときとの最大デルタ (時間間隔内) を測定します。
+ユーザー入力遅延カウンターは、次のフロー図に示すように、入力がキューに入れられたときから、[従来のメッセージ ループ](https://docs.microsoft.com/windows/win32/winmsg/about-messages-and-message-queues#message-loop)内でアプリによって取得されたときとの最大デルタ (時間間隔内) を測定します。
 
 ![リモート デスクトップ - ユーザー入力遅延のパフォーマンス カウンター フロー](./media/rds-user-input-delay.png)
 
@@ -41,9 +41,9 @@ ms.locfileid: "80860335"
 
 たとえば、次の表では、ユーザー入力遅延はこの間隔内で 1,000 ミリ秒として報告されます。 ユーザーの "低い" という感覚は、すべての入力合計の平均速度ではなく、ユーザーが経験する最も遅い入力時間 (最長) によって決まるため、このカウンターでは最も遅いユーザー入力遅延が報告されます。
 
-|番号| 0 | 1 | 2 で保護されたプロセスとして起動されました |
-|------|---|---|---|
-|遅延 |16 ミリ秒| 20 ミリ秒| 1,000 ミリ秒|
+| 番号 |   0   |   1   |    2 で保護されたプロセスとして起動されました     |
+| ------ | ----- | ----- | -------- |
+| 遅延  | 16 ミリ秒 | 20 ミリ秒 | 1,000 ミリ秒 |
 
 ## <a name="enable-and-use-the-new-performance-counters"></a>新しいパフォーマンス カウンターを有効にして使用する
 
@@ -53,7 +53,7 @@ ms.locfileid: "80860335"
 reg add "HKLM\System\CurrentControlSet\Control\Terminal Server" /v "EnableLagCounter" /t REG_DWORD /d 0x1 /f
 ```
 
->[!NOTE]
+> [!NOTE]
 > Windows 10 バージョン 1809 以降または Windows Server 2019 以降を使用している場合は、レジストリ キーを有効にする必要はありません。
 
 次にサーバーを再起動します。 続いて、パフォーマンス モニターを開き、次のスクリーン ショットに示すように、プラス記号 (+) を選択します。
@@ -68,12 +68,12 @@ reg add "HKLM\System\CurrentControlSet\Control\Terminal Server" /v "EnableLagCou
 
 **[User Input Delay per Process]** (プロセスあたりのユーザー入力遅延) を選択した場合、**選択したオブジェクトのインスタンス** (つまりプロセス) が ```SessionID:ProcessID <Process Image>``` の形式で表示されます。
 
-たとえば、電卓アプリが[セッション ID 1](https://msdn.microsoft.com/library/ms524326.aspx) で実行している場合、```1:4232 <Calculator.exe>``` と表示されます。
+たとえば、電卓アプリが[セッション ID 1](https://docs.microsoft.com/previous-versions/iis/6.0-sdk/ms524326(v=vs.90)) で実行している場合、```1:4232 <Calculator.exe>``` と表示されます。
 
 > [!NOTE]
 > すべてのプロセスが含まれるわけではありません。 SYSTEM として実行しているプロセスは表示されません。
 
-カウンターは、ユーザー入力遅延を追加するとすぐに報告し始めます。 既定では、最大の目盛りが 100 (ミリ秒) に設定されていることに注意してください。 
+カウンターは、ユーザー入力遅延を追加するとすぐに報告し始めます。 既定では、最大の目盛りが 100 (ミリ秒) に設定されていることに注意してください。
 
 ![リモート デスクトップ - パフォーマンス モニターにおけるプロセスあたりのユーザー入力遅延のアクティビティの例](./media/rds-sample-user-input-delay-perfmon.png)
 
@@ -81,15 +81,15 @@ reg add "HKLM\System\CurrentControlSet\Control\Terminal Server" /v "EnableLagCou
 
 次の表に、これらのインスタンスの表示例を示します。 (レポート グラフの種類に切り替えることにより、同じ情報を取得できます)。
 
-|カウンターの種類|［インスタンス名］|報告される遅延 (ミリ秒)|
-|---------------|-------------|-------------------|
-|プロセスあたりのユーザー入力遅延|1:4232 <Calculator.exe>|    200|
-|プロセスあたりのユーザー入力遅延|2:1000 <Calculator.exe>|    16|
-|プロセスあたりのユーザー入力遅延|1:2000 <Calculator.exe>|    32|
-|セッションあたりのユーザー入力遅延|1|    200|
-|セッションあたりのユーザー入力遅延|2 で保護されたプロセスとして起動されました|    16|
-|セッションあたりのユーザー入力遅延|平均|     108|
-|セッションあたりのユーザー入力遅延|最大|     200|
+| カウンターの種類 | ［インスタンス名］ | 報告される遅延 (ミリ秒) |
+| --------------- | ------------- | ------------------- |
+| プロセスあたりのユーザー入力遅延 | 1:4232 <Calculator.exe> |    200 |
+| プロセスあたりのユーザー入力遅延 | 2:1000 <Calculator.exe> |     16 |
+| プロセスあたりのユーザー入力遅延 | 1:2000 <Calculator.exe> |     32 |
+| セッションあたりのユーザー入力遅延 | 1 |    200 |
+| セッションあたりのユーザー入力遅延 | 2 で保護されたプロセスとして起動されました |     16 |
+| セッションあたりのユーザー入力遅延 | 平均 |     108 |
+| セッションあたりのユーザー入力遅延 | 最大 |     200 |
 
 ## <a name="counters-used-in-an-overloaded-system"></a>過負荷状態のシステムで使用されるカウンター
 
@@ -120,8 +120,8 @@ CPU 使用量の急増とユーザー入力遅延の間に相関関係がある�
 "LagCounterInterval"=dword:00005000
 ```
 
->[!NOTE]
->Windows 10 バージョン 1809 以降または Windows Server 2019 以降を使用している場合は、パフォーマンス カウンターを修正するために LagCounterInterval を設定する必要はありません。
+> [!NOTE]
+> Windows 10 バージョン 1809 以降または Windows Server 2019 以降を使用している場合は、パフォーマンス カウンターを修正するために LagCounterInterval を設定する必要はありません。
 
 同じレジストリ キーの下に、役立つと思われるキーもいくつか追加しました。
 
@@ -135,11 +135,11 @@ CPU 使用量の急増とユーザー入力遅延の間に相関関係がある�
 
 ## <a name="using-the-new-counters-with-non-microsoft-tools"></a>Microsoft 以外のツールでの新しいカウンターの使用
 
-監視ツールは、[Perfmon API](https://msdn.microsoft.com/library/windows/desktop/aa371903.aspx) を使用することで、このカウンターを使用できます。
+監視ツールは、[パフォーマンス カウンターを使用](https://docs.microsoft.com/windows/win32/perfctrs/using-performance-counters)することで、このカウンターを使用できます。
 
 ## <a name="download-windows-server-insider-software"></a>Windows Server Insider ソフトウェアをダウンロードする
 
-登録されている Insider は、[Windows Server Insider プレビュー ダウンロード ページ](https://www.microsoft.com/software-download/windowsinsiderpreviewserver)に直接移動して、最新版の Insider ソフトウェアをダウンロードできます。  Insider として登録する方法については、[サーバーの概要](https://insider.windows.com/en-us/for-business-getting-started-server/)に関するページを参照してください。
+登録されている Insider は、[Windows Server Insider プレビュー ダウンロード ページ](https://microsoft.com/en-us/software-download/windowsinsiderpreviewserver)に直接移動して、最新版の Insider ソフトウェアをダウンロードできます。  Insider として登録する方法については、[サーバーの概要](https://insider.windows.com/en-us/for-business-getting-started-server/)に関するページを参照してください。
 
 ## <a name="share-your-feedback"></a>フィードバックをお待ちしております
 

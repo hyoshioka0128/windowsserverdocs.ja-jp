@@ -7,18 +7,33 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 01/02/2020
+ms.date: 04/20/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 540630ce4baa8246d654b0d50f203623705286c5
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 5fd9e353c18293d22b18c6ffb6a57ad97a819a4a
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80859735"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "81650038"
 ---
 # <a name="whats-new-in-the-windows-store-client"></a>Microsoft Store クライアントの新機能
 
 [Windows ストア クライアント](windows.md)は定期的に更新され、新機能の追加と問題の修正が行われています。 ここでは、最新の更新プログラムを紹介します。
+
+## <a name="updates-for-version-1011215"></a>バージョン 10.1.1215 の更新内容
+
+*公開日:2020 年 4 月 20 日*
+
+- Windows Virtual Desktop のユーザー エージェント文字列が更新されました。
+
+## <a name="updates-for-version-1011195"></a>バージョン 10.1.1195 の更新内容
+
+*公開日:2020 年 3 月 6 日*
+
+- アプリが最小化されている場合やバックグラウンドで実行されている場合でも、セッションからのオーディオは引き続き再生されます。
+- トグル キー (Caps Lock、Num Lock など) がローカルとリモートの PC 間で同期されない問題を修正しました。
+- 64 ビット デバイスでのパフォーマンスの向上。
+- アプリが中断されるたびに発生するクラッシュを修正しました。
 
 ## <a name="updates-for-version-1011107"></a>バージョン 10.1.1107 の更新内容
 
