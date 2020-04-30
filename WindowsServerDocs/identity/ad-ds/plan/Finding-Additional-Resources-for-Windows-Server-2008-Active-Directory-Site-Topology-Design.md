@@ -7,52 +7,49 @@ manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
-ms.openlocfilehash: 49709ca40c515c8fdb7df62598e9a9dc766029c8
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b328bfcb5977e5c7117590b173dbb967214bf10d
+ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80822455"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81624220"
 ---
->適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
 # <a name="finding-additional-resources-for-windows-server-2008-active-directory-site-topology-design"></a>Windows Server 2008 用の追加の Resou # rces の検索 Active Directory サイトトポロジの設計
 
-Active Directory Domain Services に関する次のドキュメント (AD DS) については、Windows Server 2003 および Windows Server 2008 TechCenter Web サイトを参照してください。  
-  
--   ドメインコントローラーを検索するプロセスの詳細については、「Active Directory コレクション ([https://go.microsoft.com/fwlink/?LinkID=88626](https://go.microsoft.com/fwlink/?LinkID=88626))」を参照してください。  
-  
--   プリントサーバーの設計と展開の詳細については、「プリントサーバーの設計と展開」 ([https://go.microsoft.com/fwlink/?LinkId=107041](https://go.microsoft.com/fwlink/?LinkId=107041)) を参照してください。  
-  
--   ツリーと Active Directory レプリケーショントポロジの詳細については、「Active Directory レプリケーショントポロジのテクニカルリファレンス ([https://go.microsoft.com/fwlink/?LinkId=44137](https://go.microsoft.com/fwlink/?LinkId=44137))」を参照してください。  
-  
--   Adlb .exe の使用および100以上のブランチサイトを持つ環境の管理の詳細については、「ブランチオフィスの Active Directory Domain Services の計画と展開」 ([https://go.microsoft.com/fwlink/?LinkId=107114](https://go.microsoft.com/fwlink/?LinkId=107114)) を参照してください。  
-  
--   ネットワークモニターのインストールの詳細については、「ネットワークトラフィックの監視 ([https://go.microsoft.com/fwlink/?LinkId=107058](https://go.microsoft.com/fwlink/?LinkId=107058))」を参照してください。  
-  
--   Windows Server 2008 AD DS サイトトポロジの設計を文書化するのに役立つワークシートについては、「Windows Server 2003 Deployment Kit 用のジョブエイド ([https://go.microsoft.com/fwlink/?LinkID=102558](https://go.microsoft.com/fwlink/?LinkID=102558))」を参照してください。  
-  
--   ドメイン間のショートカットの信頼の詳細については、「ショートカットの信頼を作成する場合について ([https://go.microsoft.com/fwlink/?LinkId=107061](https://go.microsoft.com/fwlink/?LinkId=107061))」を参照してください。  
-  
--   フォレストルートドメインの展開の詳細については、「 [Windows Server 2008 のフォレストルートドメインの展開](https://technet.microsoft.com/library/cc731174.aspx)」を参照してください。  
-  
--   ドメインコントローラーのセキュリティ保護の詳細については、「Windows Server Active Directory のインストールをセキュリティで保護するためのベストプラクティスガイド」 ([https://go.microsoft.com/fwlink/?LinkId=28521](https://go.microsoft.com/fwlink/?LinkId=28521)) を参照してください。  
-  
--   地域ドメインの展開に関する詳細については、次を参照してください。 [を展開する Windows Server 2008 地域ドメイン](https://technet.microsoft.com/library/cc755118.aspx)します。  
-  
--   ユニバーサルグループキャッシュのしくみの詳細については、「グローバルカタログの動作 ([https://go.microsoft.com/fwlink/?LinkId=107063](https://go.microsoft.com/fwlink/?LinkId=107063))」を参照してください。  
-  
--   サイトオブジェクトの作成方法の詳細については、「サイトを作成する」 ([https://go.microsoft.com/fwlink/?LinkId=107067](https://go.microsoft.com/fwlink/?LinkId=107067)) を参照してください。  
-  
--   サブネットオブジェクトを作成する方法の詳細については、「サブネットの作成」 ([https://go.microsoft.com/fwlink/?LinkId=107068](https://go.microsoft.com/fwlink/?LinkId=107068)) を参照してください。  
-  
--   Active Directory サイトとサービススナップインを使用して、[**すべてのサイトリンクをブリッジ**する] 設定を無効にする方法の詳細については、「サイトリンクブリッジの有効化または無効化 ([https://go.microsoft.com/fwlink/?LinkId=107073](https://go.microsoft.com/fwlink/?LinkId=107073))」を参照してください。  
-  
--   ファイアウォールを介したレプリケーションの管理の詳細については、「ファイアウォールでセグメント化されたネットワークの Active Directory」 ([https://go.microsoft.com/fwlink/?LinkId=37928](https://go.microsoft.com/fwlink/?LinkId=37928)) を参照してください。  
-  
--   読み取り専用ドメインコントローラー (RODC) の機能の詳細については、「AD DS: 読み取り専用ドメインコントローラー ([https://go.microsoft.com/fwlink/?LinkID=106616](https://go.microsoft.com/fwlink/?LinkID=106616))」を参照してください。  
-  
--   RODC を展開する方法の詳細については、「読み取り専用ドメインコントローラーのステップバイステップガイド」 ([https://go.microsoft.com/fwlink/?LinkID=92728](https://go.microsoft.com/fwlink/?LinkID=92728)) を参照してください。  
-  
+Active Directory Domain Services に関する次のドキュメント (AD DS) については、Windows Server 2003 および Windows Server 2008 TechCenter web サイトを参照してください。
 
+- ドメインコントローラーを検索するプロセスの詳細については、「 [Active Directory Collection](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc780036(v=ws.10))」を参照してください。
 
+- プリントサーバーの設計と展開の詳細については、「[プリントサーバーの設計と展開](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc785842(v=ws.10))」を参照してください。
+
+- ツリーと Active Directory レプリケーショントポロジの詳細については、「 [Active Directory レプリケーショントポロジのテクニカルリファレンス](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc755326(v=ws.10))」を参照してください。
+
+- Adlb .exe の使用と、100以上のブランチサイトを持つ環境の管理の詳細については、「 [Windows server 2008 rodc によるブリッジヘッドサーバーの負荷分散の強化](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd735927(v%3dws.10))」を参照してください。
+
+- ネットワークモニターのインストールの詳細については、「[ネットワークトラフィックの監視](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc783075(v=ws.10))」を参照してください。
+
+- Windows Server 2008 AD DS サイトトポロジの設計を文書化するのに役立つワークシートについては、「 [Windows server 2003 用のジョブエイドの展開キット](https://microsoft.com/download/details.aspx?id=9608)」を参照してください。
+
+- ドメイン間のショートカットの信頼の詳細については、「[ショートカットの信頼を作成する場合](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754538(v=ws.11))について」を参照してください。
+
+- フォレストルートドメインの展開の詳細については、「 [Windows Server 2008 のフォレストルートドメインの展開](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731174(v=ws.10))」を参照してください。
+
+- ドメインコントローラーのセキュリティ保護の詳細については、「 [Active Directory: 設計上の考慮事項とベストプラクティス](https://social.technet.microsoft.com/wiki/contents/articles/52587.active-directory-design-considerations-and-best-practices.aspx)」を参照してください。
+
+- 地域ドメインの展開に関する詳細については、次を参照してください。 [を展開する Windows Server 2008 地域ドメイン](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc755118(v=ws.10))します。
+
+- ユニバーサルグループキャッシュのしくみの詳細については、「[グローバルカタログのしくみ](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc737410(v=ws.10))」を参照してください。
+
+- サイトオブジェクトの作成方法の詳細については、「[サイトを作成](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc772304(v=ws.11))する」を参照してください。
+
+- サブネットオブジェクトを作成する方法の詳細については、「[サブネットの作成](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770372(v=ws.11))」を参照してください。
+
+- Active Directory サイトとサービススナップインを使用して、[**すべてのサイトリンクをブリッジ**する] 設定を無効にする方法の詳細については、「[サイトリンクブリッジの有効化または無効化](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc738789(v=ws.10))」を参照してください。
+
+- ファイアウォールを介したレプリケーションの管理については、「[ファイアウォールでセグメント](https://microsoft.com/download/details.aspx?familyid=c2ef3846-43f0-4caf-9767-a9166368434e)化されたネットワークでの Active Directory」を参照してください。
+
+- 読み取り専用ドメインコントローラー (RODC) の機能の詳細については、「 [AD DS: 読み取り専用ドメインコントローラー](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732801(v=ws.10))」を参照してください。
+
+- RODC を展開する方法の詳細については、「[読み取り専用ドメインコントローラーのステップバイステップガイド](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc772234(v=ws.10))」を参照してください。

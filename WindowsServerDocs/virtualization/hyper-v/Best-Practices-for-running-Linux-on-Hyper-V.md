@@ -8,13 +8,13 @@ ms.topic: article
 ms.assetid: a08648eb-eea0-4e2b-87fb-52bfe8953491
 author: shirgall
 ms.author: kathydav
-ms.date: 3/1/2019
-ms.openlocfilehash: 7baf71af401b8318ccd136fe12d6eb810cf9434e
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.date: 04/15/2020
+ms.openlocfilehash: d8861369abe24ea0d34dce209a5d98e854c4c95d
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80853305"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82072238"
 ---
 # <a name="best-practices-for-running-linux-on-hyper-v"></a>HYPER-V で Linux を実行するためのベスト プラクティス
 
@@ -49,7 +49,7 @@ PS > New-VHD -Path C:\MyVHDs\test.vhdx -SizeBytes 127GB -Dynamic -BlockSizeBytes
 
 PIT タイマーは第2世代 Virtual Machines には存在しないため、PxE TFTP サーバーへのネットワーク接続が途中で終了し、ブートローダーが Grub 構成を読み取らず、サーバーからカーネルが読み込まれないようにすることができます。
 
-RHEL 6.x では、次に示すように、レガシ grub v 0.97 EFI ブートローダーを grub2 の代わりに使用でき[https://access.redhat.com/documentation/Red_Hat_Enterprise_Linux/6/html/Installation_Guide/s1-netboot-pxe-config-efi.html](https://access.redhat.com/documentation/Red_Hat_Enterprise_Linux/6/html/Installation_Guide/s1-netboot-pxe-config-efi.html)ます。
+RHEL 6.x では、次に示すように、従来の grub v 0.97 EFI ブートローダーを grub2 の代わりに使用できます。[https://access.redhat.com/documentation/Red_Hat_Enterprise_Linux/6/html/Installation_Guide/s1-netboot-pxe-config-efi.html](https://access.redhat.com/documentation/Red_Hat_Enterprise_Linux/6/html/Installation_Guide/s1-netboot-pxe-config-efi.html)
 
 RHEL 6.x 以外の Linux ディストリビューションでは、同様の手順に従って、PxE サーバーから Linux カーネルを読み込むように grub v 0.97 を構成できます。
 
@@ -74,13 +74,15 @@ Kickstart ファイルをプレインストールカーネルに指定すると�
 
 仮想イーサネットアダプターを構成して使用します。これは、パフォーマンスが向上した Hyper-v 固有のネットワークカードです。 レガシおよび Hyper-v 固有のネットワークアダプターの両方が仮想マシンに接続されている場合、 **ifconfig**の出力に含まれるネットワーク名に、 **_tmp12000801310**などのランダムな値が表示されることがあります。 この問題を回避するには、Linux 仮想マシンで Hyper-v 固有のネットワークアダプターを使用するときに、すべてのレガシネットワークアダプターを削除します。
 
-## <a name="use-io-scheduler-noop-for-better-disk-io-performance"></a>ディスク i/o パフォーマンスを向上させるために i/o scheduler NOOP を使用する
+## <a name="use-io-scheduler-noopnone-for-better-disk-io-performance"></a>ディスク i/o パフォーマンスを向上させるには、i/o scheduler noop/none を使用します。
 
-Linux カーネルには、異なるアルゴリズムで要求を並べ替えるための4つの異なる i/o スケジューラがあります。 NOOP は、ハイパーバイザーによって実行されるスケジュールの決定を渡す先入れ先出しキューです。 Hyper-v で Linux 仮想マシンを実行する場合は、スケジューラとして NOOP を使用することをお勧めします。 特定のデバイスの scheduler を変更するには、ブートローダーの構成 (/etc/grub.conf など) で、 **[エレベーター = noop]** をカーネルパラメーターに追加し、再起動します。
+Linux カーネルには、要求の順序を変更するための2セットのディスク i/o スケジューラが用意されています。  1つは古い ' blk ' サブシステム用で、もう1つは新しい "blk" サブシステム用です。 どちらの場合も、現在のソリッドステートディスクでは、スケジュールの決定を基になる Hyper-v ハイパーバイザーに渡すスケジューラを使用することをお勧めします。 "Blk" サブシステムを使用する Linux カーネルの場合、これは "noop" スケジューラです。 "Blk" サブシステムを使用する Linux カーネルの場合、これは "none" スケジューラです。
+
+特定のディスクの場合、使用可能なスケジューラは、現在選択されているスケジューラが角かっこで囲ま`<diskname>`れた、次のファイルシステムの場所で確認できます。 このファイルシステムの場所に書き込むことで、スケジューラを変更できます。 再起動の間に保持するために、変更を初期化スクリプトに追加する必要があります。 詳細については、Linux ディストリビューションのドキュメントを参照してください。
 
 ## <a name="numa"></a>NUMA
 
-2\.6.37 より前の Linux カーネルバージョンでは、VM サイズが大きい Hyper-v で NUMA をサポートしていません。 この問題は、主に上流の Red Hat 2.6.32 カーネルを使用した古いディストリビューションに影響し、Red Hat Enterprise Linux (RHEL) 6.6 (2.6.32-504) で修正されました。 2\.6.37 より古いカスタムカーネルを実行しているシステム、または2.6.32 より前の RHEL ベースのカーネルを実行しているシステムでは、grub のカーネルコマンドラインでブートパラメーター `numa=off` を設定する必要があります。 詳細については、「 [Red HAT KB 436883](https://access.redhat.com/solutions/436883)」を参照してください。
+2.6.37 未満の Linux カーネル バージョンは、HYPER-V で大きい VM サイズの NUMA をサポートできません。 この問題は、主に、アップストリームの Red Hat 2.6.32 カーネルを使用した古いディストリビューションに影響し、Red Hat Enterprise Linux (RHEL) 6.6 (kernel-2.6.32-504) で修正されました。 2.6.37 より古いカスタム カーネルまたは2.6.32-504 より古い RHEL ベースのカーネルを実行しているシステムでは、grub.conf のカーネル コマンドラインで、ブート パラメーター `numa=off` を設定する必要があります。 詳細については、[Red Hat KB 436883](https://access.redhat.com/solutions/436883) を参照してください。
 
 ## <a name="reserve-more-memory-for-kdump"></a>Kdump 用に追加のメモリを予約する
 
@@ -92,13 +94,13 @@ Hyper-v では、ディスク上に存在する可能性のあるパーティシ
 
 VHD または VHDX のサイズを変更した後、管理者は、fdisk や parted などのユーティリティを使用して、パーティション、ボリューム、ファイルシステムの構造を更新し、ディスクのサイズの変化を反映する必要があります。 GUID パーティションテーブル (GPT) を持つ VHD または VHDX のサイズを縮小または拡大すると、パーティション管理ツールを使用してパーティションのレイアウトを確認したときに警告が表示され、管理者は1つ目と2番目の GPT ヘッダーを修正するように警告されます。 この手動の手順は、データ損失なしでも安全に実行できます。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-* [Windows 上の Hyper-v でサポートされている Linux および FreeBSD の仮想マシン](Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)
+* [Windows にインストールされた Hyper-v の Linux および FreeBSD 仮想マシンがサポートされています。](Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)
 
-* [Hyper-v で FreeBSD を実行するためのベストプラクティス](Best-practices-for-running-FreeBSD-on-Hyper-V.md)
+* [HYPER-V での FreeBSD の実行に関するベスト プラクティス](Best-practices-for-running-FreeBSD-on-Hyper-V.md)
 
-* [Hyper-v クラスターを展開する](https://technet.microsoft.com/library/jj863389.aspx)
+* [Hyper-V クラスターを展開する](https://technet.microsoft.com/library/jj863389.aspx)
 
 * [Azure の Linux イメージを作成する](https://docs.microsoft.com/azure/virtual-machines/linux/create-upload-generic)
 

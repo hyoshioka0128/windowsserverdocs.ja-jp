@@ -8,16 +8,16 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: abc02bec101b39a66a78da871f838d2585d89377
-ms.sourcegitcommit: af1cf89632d62a94943d3ad9f6b5234b88499278
+ms.openlocfilehash: 1abf845ce69b395bf46a0f155db2c683c359207c
+ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81524927"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81623880"
 ---
 # <a name="selecting-the-forest-root-domain"></a>フォレスト ルート ドメインを選択する
 
-> 適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
 Active Directory フォレストに展開する最初のドメインは、フォレストルートドメインと呼ばれます。 このドメインは、AD DS 展開のライフサイクルのフォレストルートドメインのままです。
 
@@ -68,7 +68,7 @@ Active Directory フォレストに展開する最初のドメインは、フォ
 Active Directory 名前空間のインターネット証明機関に登録されている DNS 名を使用することをお勧めします。 グローバルに一意であることが保証されるのは、登録されている名前だけです。 別の組織が後で同じ DNS ドメイン名を登録する場合 (または、組織が同じ DNS 名を使用する別の会社によってマージ、取得、または取得された場合)、2つのインフラストラクチャが相互に通信することはできません。
 
 > [!CAUTION]
-> 単一ラベルの DNS 名は使用しないでください。 詳細については、「([単一ラベル DNS 名を使用して構成された Active Directory ドメインの展開と操作](https://go.microsoft.com/fwlink/?LinkId=106631))」を参照してください。 また、. local のような未登録のサフィックスは使用しないことをお勧めします。
+> 単一ラベルの DNS 名は使用しないでください。 詳細については、「[単一ラベルの DNS 名を使用して構成された Active Directory ドメインの展開と操作](https://support.microsoft.com/help/300684/)」を参照してください。 また、. local のような未登録のサフィックスは使用しないことをお勧めします。
 
 ### <a name="selecting-a-prefix"></a>プレフィックスの選択
 
@@ -78,14 +78,14 @@ Active Directory 名前空間のインターネット証明機関に登録され
 
 次の表に、登録済み DNS 名のプレフィックスを選択するための規則を示します。
 
-|ルール|説明|
-|--------|---------------|
-|古くなる可能性のないプレフィックスを選択してください。|将来変更される可能性のある製品ラインやオペレーティングシステムなどの名前は避けてください。 Corp や ds などの汎用名を使用することをお勧めします。|
-|インターネット標準文字のみが含まれているプレフィックスを選択します。|A-z、a-z、0-9、および (-) ですが、完全な数値ではありません。|
-|プレフィックスに15文字以下を含めます。|プレフィックス長として15文字以下を選択した場合、NetBIOS 名はプレフィックスと同じになります。|
+| ルール     | 説明 |
+| -------- | --------------- |
+| 古くなる可能性のないプレフィックスを選択してください。 | 将来変更される可能性のある製品ラインやオペレーティングシステムなどの名前は避けてください。 Corp や ds などの汎用名を使用することをお勧めします。|
+| インターネット標準文字のみが含まれているプレフィックスを選択します。 | A-z、a-z、0-9、および (-) ですが、完全な数値ではありません。 |
+| プレフィックスに15文字以下を含めます。 | プレフィックス長として15文字以下を選択した場合、NetBIOS 名はプレフィックスと同じになります。 |
 
 Active Directory DNS 所有者は、組織の DNS 所有者と連携して、Active Directory 名前空間に使用される名前の所有権を取得することが重要です。 AD DS をサポートするための DNS インフラストラクチャの設計の詳細については、「 [Dns インフラストラクチャ設計の作成](../../ad-ds/plan/Creating-a-DNS-Infrastructure-Design.md)」を参照してください。
 
 ## <a name="documenting-the-forest-root-domain-name"></a>フォレストルートドメイン名を文書化する
 
-フォレストルートドメインに選択した DNS プレフィックスとサフィックスを文書化します。 この時点で、どのドメインがフォレストのルートになるかを特定します。 フォレストルートドメイン名の情報を、作成した "ドメイン計画" ワークシートに追加して、新規およびアップグレードされたドメインとドメイン名の計画を文書化することができます。 このファイルを開くには、 [Windows Server 2003 Deployment Kit のジョブエイド](https://www.microsoft.com/download/details.aspx?id=9608)から Job_Aids_Designing_and_Deploying_Directory_and_Security_Services をダウンロードして、"ドメインの計画" (DSSLOGI_5) を開きます。
+フォレストルートドメインに選択した DNS プレフィックスとサフィックスを文書化します。 この時点で、どのドメインがフォレストのルートになるかを特定します。 フォレストルートドメイン名の情報を、作成した "ドメイン計画" ワークシートに追加して、新規およびアップグレードされたドメインとドメイン名の計画を文書化することができます。 このファイルを開くには、 [Windows Server 2003 Deployment Kit のジョブエイド](https://microsoft.com/download/details.aspx?id=9608)から Job_Aids_Designing_and_Deploying_Directory_and_Security_Services をダウンロードして、"ドメインの計画" (DSSLOGI_5) を開きます。

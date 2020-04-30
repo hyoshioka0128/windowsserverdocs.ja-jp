@@ -8,18 +8,18 @@ ms.date: 06/13/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: active-directory-federation-services
-ms.openlocfilehash: f7e68558945fcd26d5e8ab405f39e86266beeea8
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f62b6ad288e2733083d535260f0b3f5ffb5b50bf
+ms.sourcegitcommit: f829a48b9b0c7b9ed6e181b37be828230c80fb8a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80853865"
+ms.lasthandoff: 04/27/2020
+ms.locfileid: "82173627"
 ---
 # <a name="build-a-single-page-web-application-using-oauth-and-adaljs-with-ad-fs-2016-or-later"></a>OAuth と ADAL を使用して単一ページの web アプリケーションを構築します。AD FS 2016 以降を使用した JS
 
 このチュートリアルでは、ASP.NET Web API バックエンドで実装された AngularJS ベースのシングルページアプリケーションをセキュリティで保護する JavaScript 用の ADAL を使用して AD FS に対して認証するための手順を示します。
 
-このシナリオでは、ユーザーがサインインすると、javascript フロントエンドで[javascript (ADAL の Active Directory 認証ライブラリが使用されます。JS)](https://github.com/AzureAD/azure-activedirectory-library-for-js)と、Azure AD から ID トークン (id_token) を取得するための暗黙的な承認権限が付与されます。 トークンはキャッシュされ、クライアントは、OWIN ミドルウェアを使用してセキュリティ保護された Web API バックエンドを呼び出すときに、ベアラートークンとして要求に接続します。
+このシナリオでは、ユーザーがサインインすると、JavaScript フロントエンドが [Active Directory Authentication Library for JavaScript (ADAL.JS)](https://github.com/AzureAD/azure-activedirectory-library-for-js) と暗黙的な認証付与を使用して、Azure AD から ID トークン (id_token) を取得します。 トークンがキャッシュされ、クライアントは、OWIN ミドルウェアを使用して保護された Web API バックエンドを呼び出すときに、トークンをベアラー トークンとして要求に添付します。
 
 >[!IMPORTANT]
 >ここで作成できる例は、学習のみを目的としています。 これらの手順は、モデルの必須要素を公開するために使用できる、最も単純で最小の実装用です。 この例には、エラー処理やその他の関連機能のすべての側面を含めることはできません。
@@ -40,7 +40,7 @@ ADAL が認証用のトリガーを確認すると、アプリケーションに
 ## <a name="setting-up-the-development-box"></a>開発ボックスの設定
 このチュートリアルでは、Visual Studio 2015 を使用します。 プロジェクトは ADAL JS ライブラリを使用します。 ADAL の詳細については[Active Directory 認証ライブラリ .net](https://msdn.microsoft.com/library/azure/mt417579.aspx)をご覧ください。
 
-## <a name="setting-up-the-environment"></a>環境の設定
+## <a name="setting-up-the-environment"></a>環境のセットアップ
 このチュートリアルでは、次の基本的なセットアップを使用します。
 
 1.    DC: AD FS がホストされるドメインのドメインコントローラー
@@ -56,10 +56,10 @@ ADAL が認証用のトリガーを確認すると、アプリケーションに
 
 
 
-## <a name="clone-or-download-this-repository"></a>このリポジトリを複製またはダウンロードする
+## <a name="clone-or-download-this-repository"></a>このリポジトリをクローンまたはダウンロードする
 ここでは、Azure AD を AngularJS シングルページアプリに統合するために作成されたサンプルアプリケーションを使用し、AD FS を使用してバックエンドリソースをセキュリティで保護するように変更します。
 
-シェルまたはコマンドラインから:
+シェルまたはコマンド ラインから:
 
     git clone https://github.com/Azure-Samples/active-directory-angularjs-singlepageapp.git
 
@@ -77,9 +77,9 @@ ADAL が認証用のトリガーを確認すると、アプリケーションに
 **Startup.Auth.cs** -ベアラー認証に Active Directory フェデレーションサービスを使用するための構成が含まれています。
 
 ## <a name="registering-the-public-client-in-ad-fs"></a>AD FS にパブリッククライアントを登録しています
-このサンプルでは、WebAPI は https://localhost:44326/でリッスンするように構成されています。 **Web アプリケーションにアクセス**するアプリケーショングループ web ブラウザーは、暗黙的な許可フローアプリケーションを構成するために使用できます。
+このサンプルでは、WebAPI はでhttps://localhost:44326/リッスンするように構成されています。 **Web アプリケーションにアクセス**するアプリケーショングループ web ブラウザーは、暗黙的な許可フローアプリケーションを構成するために使用できます。
 
-1. AD FS 管理コンソールを開き、 **[アプリケーショングループの追加]** をクリックします。 **アプリケーショングループの追加ウィザード**で、アプリケーションの名前と説明を入力し、次に示すように、 **[クライアント-サーバーアプリケーション]** セクションから**web アプリケーションテンプレートにアクセスする web ブラウザー**を選択します。
+1. AD FS 管理コンソールを開き、[**アプリケーショングループの追加**] をクリックします。 **アプリケーショングループの追加ウィザード**で、アプリケーションの名前と説明を入力し、次に示すように、[**クライアント-サーバーアプリケーション**] セクションから**web アプリケーションテンプレートにアクセスする web ブラウザー**を選択します。
 
     ![新しいアプリケーショングループの作成](media/Single-Page-Application-with-AD-FS/appgroup_step1.png)
 
@@ -108,12 +108,12 @@ ADAL JS の構成
             //cacheLocation: 'localStorage', // enable this for IE, as sessionStorage does not work for localhost.
         },
         $httpProvider
-        );
+    );
 
 |構成|説明|
 |--------|--------|
-|インスタンス (instance)|STS URL (例: https://fs.contoso.com/|
-|テナント|' Adfs ' として保持する|
+|instance|STS の URL (例:https://fs.contoso.com/|
+|tenant|' Adfs ' として保持する|
 |clientID|これは、シングルページアプリケーションのパブリッククライアントを構成するときに指定したクライアント ID です。|
 
 ## <a name="configure-webapi-to-use-ad-fs"></a>AD FS を使用するように WebAPI を構成する
@@ -123,28 +123,29 @@ ADAL JS の構成
 
 から
 
-                app.UseWindowsAzureActiveDirectoryBearerAuthentication(
-    new WindowsAzureActiveDirectoryBearerAuthenticationOptions
-    {
-    Audience = ConfigurationManager.AppSettings["ida:Audience"],
-    Tenant = ConfigurationManager.AppSettings["ida:Tenant"]
-    });
+    app.UseWindowsAzureActiveDirectoryBearerAuthentication(
+        new WindowsAzureActiveDirectoryBearerAuthenticationOptions
+        {
+            Audience = ConfigurationManager.AppSettings["ida:Audience"],
+            Tenant = ConfigurationManager.AppSettings["ida:Tenant"]
+        }
+    );
 
 およびを追加します。
 
     app.UseActiveDirectoryFederationServicesBearerAuthentication(
-    new ActiveDirectoryFederationServicesBearerAuthenticationOptions
-    {
-    MetadataEndpoint = ConfigurationManager.AppSettings["ida:AdfsMetadataEndpoint"],
-    TokenValidationParameters = new TokenValidationParameters()
-    {
-    ValidAudience = ConfigurationManager.AppSettings["ida:Audience"],
-    ValidIssuer = ConfigurationManager.AppSettings["ida:Issuer"]
-    }
-    }
+        new ActiveDirectoryFederationServicesBearerAuthenticationOptions
+        {
+            MetadataEndpoint = ConfigurationManager.AppSettings["ida:AdfsMetadataEndpoint"],
+            TokenValidationParameters = new TokenValidationParameters()
+            {
+                ValidAudience = ConfigurationManager.AppSettings["ida:Audience"],
+                ValidIssuer = ConfigurationManager.AppSettings["ida:Issuer"]
+            }
+        }
     );
 
-|パラメーター|説明|
+|パラメーター|[説明]|
 |--------|--------|
 |ValidAudience|これにより、トークン内で照合される "audience" の値が構成されます。|
 |ValidIssuer|これにより、トークン内でチェックされる "issuer" の値が構成されます。|
@@ -152,31 +153,32 @@ ADAL JS の構成
 
 ## <a name="add-application-configuration-for-ad-fs"></a>AD FS のアプリケーション構成の追加
 Appsettings を次のように変更します。
-
+```xml
     <appSettings>
-    <add key="ida:Audience" value="https://localhost:44326/" />
-    <add key="ida:AdfsMetadataEndpoint" value="https://fs.contoso.com/federationmetadata/2007-06/federationmetadata.xml" />
-    <add key="ida:Issuer" value="https://fs.contoso.com/adfs" />
-      </appSettings>
+        <add key="ida:Audience" value="https://localhost:44326/" />
+        <add key="ida:AdfsMetadataEndpoint" value="https://fs.contoso.com/federationmetadata/2007-06/federationmetadata.xml" />
+        <add key="ida:Issuer" value="https://fs.contoso.com/adfs" />
+    </appSettings>
+    ```
 
-## <a name="running-the-solution"></a>ソリューションの実行
-ソリューションをクリーンアップし、ソリューションをリビルドして実行します。 詳細なトレースを表示する場合は、Fiddler を起動し、HTTPS の暗号化解除を有効にします。
+## Running the solution
+Clean the solution, rebuild the solution and run it. If you want to see detailed traces, launch Fiddler and enable HTTPS decryption.
 
-ブラウザー (Chrome ブラウザーを使用) によって SPA が読み込まれ、次の画面が表示されます。
+The browser (use Chrome browser) will load the SPA and you will be presented with the following screen:
 
-![クライアントを登録する](media/Single-Page-Application-with-AD-FS/singleapp3.PNG)
+![Register the client](media/Single-Page-Application-with-AD-FS/singleapp3.PNG)
 
-[ログイン] をクリックします。  ToDo リストは認証フローをトリガーし、ADAL JS は認証をに送信し AD FS
+Click on Login.  The ToDo List will trigger the authentication flow and ADAL JS will direct the authentication to AD FS
 
-![ログイン](media/Single-Page-Application-with-AD-FS/singleapp4a.PNG)
+![Login](media/Single-Page-Application-with-AD-FS/singleapp4a.PNG)
 
-Fiddler では、# fragment の URL の一部として返されるトークンを確認できます。
+In Fiddler you can see the token being returned as part of the URL in the # fragment.
 
 ![Fiddler](media/Single-Page-Application-with-AD-FS/singleapp5a.PNG)
 
-バックエンド API を呼び出して、ログインしているユーザーの ToDo リスト項目を追加できるようになりました。
+You will be able to now call the backend API to add ToDo List items for the logged-in user:
 
 ![Fiddler](media/Single-Page-Application-with-AD-FS/singleapp6.PNG)
 
-## <a name="next-steps"></a>次の手順
-[AD FS の開発](../../ad-fs/AD-FS-Development.md)  
+## Next Steps
+[AD FS Development](../../ad-fs/AD-FS-Development.md)  
