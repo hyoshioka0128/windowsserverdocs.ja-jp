@@ -8,20 +8,20 @@ ms.author: jeffrew
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 06/07/2019
-ms.openlocfilehash: 4a91d09d6824795a21a9a7cdc7695c407aa70756
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 5c9e8b7e1e11deaa82fbec6f451b4f194609c299
+ms.sourcegitcommit: 1d83ca198c50eef83d105151551c6be6f308ab94
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322924"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82605552"
 ---
 # <a name="windows-admin-center-known-issues"></a>Windows Admin Center の既知の問題
 
-> 適用対象: Windows 管理センター、Windows 管理センタープレビュー
+> 適用先:Windows Admin Center、Windows Admin Center Preview
 
 このページで説明されている問題が発生した場合は、[お知らせください](https://aka.ms/WACfeedback)。
 
-## <a name="installer"></a>インストーラー
+## <a name="installer"></a>Installer
 
 - 独自の証明書を使用して Windows Admin Center をインストールする場合は、証明書マネージャー MMC ツールから拇印をコピーすると、[先頭に無効な文字が含まれる](https://support.microsoft.com/help/2023835/certificate-thumbprint-displayed-in-mmc-certificate-snap-in-has-extra)ことに留意してください。 この問題を回避するには、拇印の最初の文字を入力し、残りをコピー/貼り付けします。
 
@@ -29,7 +29,7 @@ ms.locfileid: "79322924"
 
 ## <a name="general"></a>全般
 
-- Windows **Server 2016**にゲートウェイとしてインストールされている Windows 管理センターを使用している場合は、```Faulting application name: sme.exe``` と ```Faulting module name: WsmSvc.dll```を含むイベントログでエラーが発生すると、サービスがクラッシュする可能性があります。 これは、Windows Server 2019 で修正されたバグが原因です。 Windows Server 2016 の修正プログラムには、2019の累積的な更新プログラム[KB4480977](https://www.catalog.update.microsoft.com/Search.aspx?q=4480977)が含まれています。
+- Windows **Server 2016**にゲートウェイとしてインストールされている Windows 管理センターを使用している場合、サービスがとを```Faulting application name: sme.exe``` ```Faulting module name: WsmSvc.dll```含むイベントログのエラーでクラッシュすることがあります。 これは、Windows Server 2019 で修正されたバグが原因です。 Windows Server 2016 の修正プログラムには、2019の累積的な更新プログラム[KB4480977](https://www.catalog.update.microsoft.com/Search.aspx?q=4480977)が含まれています。
 
 - Windows 管理センターがゲートウェイとしてインストールされていて、接続リストが破損していると思われる場合は、次の手順を実行します。
 
@@ -53,7 +53,7 @@ ms.locfileid: "79322924"
 
 ### <a name="microsoft-edge"></a>Microsoft Edge
 
-- Windows 管理センターがサービスとして展開されていて、ブラウザーとして Microsoft Edge を使用している場合は、新しいブラウザーウィンドウを起動した後にゲートウェイを Azure に接続できないことがあります。 この問題を回避するには、ゲートウェイの https://login.microsoftonline.com、 https://login.live.com、および URL を信頼済みサイトとして追加し、クライアント側ブラウザーでポップアップブロックの設定に許可されたサイトを追加します。 この問題を解決する方法については、[トラブルシューティングガイド](troubleshooting.md#azure-features-dont-work-properly-in-edge)を参照してください。 [17990376]
+- Windows 管理センターがサービスとして展開されていて、ブラウザーとして Microsoft Edge を使用している場合は、新しいブラウザーウィンドウを起動した後にゲートウェイを Azure に接続できないことがあります。 この問題を回避するには、 https://login.microsoftonline.com https://login.live.comゲートウェイの URL を信頼済みサイトとして追加し、クライアント側ブラウザーでポップアップブロックの設定に許可されたサイトを追加します。 この問題を解決する方法については、[トラブルシューティングガイド](troubleshooting.md#azure-features-dont-work-properly-in-edge)を参照してください。 [17990376]
 
 ### <a name="google-chrome"></a>Google Chrome
 
@@ -67,11 +67,11 @@ ms.locfileid: "79322924"
 
 Windows Admin Center は、Mozilla Firefox でテストされていませんが、ほとんどの機能は機能します。
 
-- Windows 10 のインストール: Mozilla Firefox には独自の証明書ストアがあるため、Windows 10 で Windows 管理センターを使用するには、```Windows Admin Center Client``` 証明書を Firefox にインポートする必要があります。
+- Windows 10 のインストール: Mozilla Firefox には独自の証明書ストアがあるため、 ```Windows Admin Center Client``` windows 10 で Windows 管理センターを使用するには、Firefox に証明書をインポートする必要があります。
 
-## <a name="websocket-compatibility-when-using-a-proxy-service"></a>プロキシサービスを使用する場合の WebSocket の互換性
+## <a name="websocket-compatibility-when-using-a-proxy-service"></a>プロキシ サービスを使用する場合の WebSocket の互換性
 
-Windows Admin Center のリモート デスクトップ、PowerShell、およびイベント モジュールでは、WebSocket プロトコルを利用します。多くの場合、このプロトコルはプロキシ サービスを使用するときにサポートされていません。 Azure AD アプリケーション プロキシの互換性における WebSocket サポートは[プレビュー](https://blogs.technet.microsoft.com/applicationproxyblog/2018/03/28/limited-websocket-support-now-in-public-preview/)の段階であり、互換性に関するフィードバックを必要としています。
+Windows Admin Center のリモート デスクトップ、PowerShell、およびイベント モジュールでは、WebSocket プロトコルを利用します。多くの場合、このプロトコルはプロキシ サービスを使用するときにサポートされていません。 
 
 ## <a name="support-for-windows-server-versions-before-2016-2012-r2-2012-2008-r2"></a>2016より前の Windows Server バージョンのサポート (2012 R2、2012、2008 R2)
 
@@ -96,13 +96,13 @@ PowerShell で `$PSVersiontable` を入力して、WMF がインストールさ�
 
 - .PFX の暗号化された証明書を現在のユーザー ストアにインポートすることはできません。 [11818622]
 
-### <a name="events"></a>イベント
+### <a name="events"></a>events
 
 - イベントは、[プロキシ サービスを使用する場合に WebSocket の互換性](#websocket-compatibility-when-using-a-proxy-service)に影響を受けます。
 
 - 大きいログ ファイルをエクスポートするときに、“パケット サイズ” を参照するエラーが表示される場合があります。
 
-  - これを解決するには、ゲートウェイコンピューターで管理者特権のコマンドプロンプトで次のコマンドを使用します。 ```winrm set winrm/config @{MaxEnvelopeSizekb="8192"}```
+  - これを解決するには、ゲートウェイコンピューターで管理者特権のコマンドプロンプトで次のコマンドを使用します。```winrm set winrm/config @{MaxEnvelopeSizekb="8192"}```
 
 ### <a name="files"></a>ファイル
 
@@ -128,9 +128,9 @@ PowerShell で `$PSVersiontable` を入力して、WMF がインストールさ�
 
 - Windows Server 2012 を管理している場合、リモートデスクトップツールが接続に失敗することがあります。 [20258278]
 
-- リモートデスクトップを使用して、ドメインに参加していないコンピューターに接続する場合は、```MACHINENAME\USERNAME``` の形式でアカウントを入力する必要があります。
+- リモートデスクトップを使用して、ドメインに参加していないコンピューターに接続する場合は、の```MACHINENAME\USERNAME```形式でアカウントを入力する必要があります。
 
-- 一部の構成では、Windows 管理センターのリモートデスクトップクライアントがグループポリシーでブロックされることがあります。 この問題が発生した場合は、[```Computer Configuration/Policies/Administrative Templates/Windows Components/Remote Desktop Services/Remote Desktop Session Host/Connections```] の下の ```Allow users to connect remotely by using Remote Desktop Services``` を有効にします
+- 一部の構成では、Windows 管理センターのリモートデスクトップクライアントがグループポリシーでブロックされることがあります。 この問題が発生した```Allow users to connect remotely by using Remote Desktop Services```場合は、```Computer Configuration/Policies/Administrative Templates/Windows Components/Remote Desktop Services/Remote Desktop Session Host/Connections```
 
 - リモートデスクトップは websocket 互換性によって影響を受け[ます。](#websocket-compatibility-when-using-a-proxy-service)
 
@@ -171,7 +171,7 @@ PowerShell で `$PSVersiontable` を入力して、WMF がインストールさ�
     4. ' Cryptographic Services ' サービスを再起動してください。
     5. Windows 管理センターで Update Management のセットアップを繰り返す
 
-### <a name="virtual-machines"></a>仮想マシン
+### <a name="virtual-machines"></a>Virtual Machines
 
 - Windows Server 2012 ホスト上の仮想マシンを管理する場合、ブラウザー内 VM 接続ツールは VM に接続できません。 VM に接続するための .rdp ファイルのダウンロードは引き続き機能します。 [20258278]
 
@@ -189,7 +189,7 @@ PowerShell で `$PSVersiontable` を入力して、WMF がインストールさ�
 
 - Microsoft アカウント ([MSA](https://account.microsoft.com/account/)) を使用する場合、または AZURE ACTIVE DIRECTORY (AAD) を使用して Windows 10 コンピューターにログオンする場合は、"manage-as" を使用してローカル管理者アカウントの資格情報を指定する必要があります [16568455]
 
-- ローカル ホストを管理しようとすると、ゲートウェイ プロセスを昇格するように求められます。 次のユーザーアカウント制御ポップアップで **[いいえ]** をクリックすると、接続試行を取り消してからやり直す必要があります。
+- ローカル ホストを管理しようとすると、ゲートウェイ プロセスを昇格するように求められます。 次のユーザーアカウント制御ポップアップで [**いいえ**] をクリックすると、接続試行を取り消してからやり直す必要があります。
 
 - 既定では、Windows 10 では WinRM と PowerShell のリモート処理が行われません。
   
@@ -215,15 +215,15 @@ PowerShell で `$PSVersiontable` を入力して、WMF がインストールさ�
 
 ### <a name="azure-file-sync-permissions"></a>Azure File Sync のアクセス許可
 
-Azure File Sync には、Windows 管理センターがバージョン1910より前に提供していない Azure のアクセス許可が必要です。 Windows 管理センターのバージョン1910より前のバージョンを使用して Windows 管理センターゲートウェイを Azure に登録した場合は、Azure Active Directory アプリケーションを更新して、最新バージョンので Azure File Sync を使用するための正しいアクセス許可を取得する必要があります。Windows 管理センター。 追加のアクセス許可により、この記事の説明に従って、ストレージアカウントへのアクセスの自動構成を実行 Azure File Sync ことができます。 [Azure File Sync にストレージアカウントへのアクセス権があることを確認](https://docs.microsoft.com/azure/storage/files/storage-sync-files-troubleshoot?tabs=portal1%2Cazure-portal#tabpanel_CeZOj-G++Q-5_azure-portal)してください。
+Azure File Sync には、Windows 管理センターがバージョン1910より前に提供していない Azure のアクセス許可が必要です。 Windows 管理センターのバージョン1910より前のバージョンを使用して Windows 管理センターゲートウェイを Azure に登録した場合は、Azure Active Directory アプリケーションを更新して、最新バージョンの Windows 管理センターで Azure File Sync を使用するための正しいアクセス許可を取得する必要があります。 追加のアクセス許可により、この記事の説明に従って、ストレージアカウントへのアクセスの自動構成を実行 Azure File Sync ことができます。 [Azure File Sync にストレージアカウントへのアクセス権があることを確認](https://docs.microsoft.com/azure/storage/files/storage-sync-files-troubleshoot?tabs=portal1%2Cazure-portal#tabpanel_CeZOj-G++Q-5_azure-portal)してください。
 
 Azure Active Directory アプリを更新するには、次の2つのいずれかを実行します。
-1. **[設定]** にアクセスして、 **Azure** > の**登録を解除**し、もう一度 Windows 管理センターを azure に登録して、新しい Azure Active Directory アプリケーションを作成することを確認します。 > ます。 
-2. Azure Active Directory アプリケーションにアクセスし、Windows 管理センターに登録されている既存の Azure Active Directory アプリに必要なアクセス許可を手動で追加します。 これを行うには、 **azure の [** **設定**] > **azure** > ビューにアクセスします。 Azure の **[アプリの登録]** ブレードで、API の **[アクセス許可]** にアクセスし、 **[アクセス許可の追加]** を選択します。 下にスクロールして**Azure Active Directory グラフ**を選択し、委任された **[アクセス許可]** 、 **[ディレクトリ]** の順に展開して、 **[AccessAsUser]** を選択します。 **[アクセス許可の追加]** をクリックして、アプリに更新プログラムを保存します。
+1. [**設定** > ] [**azure** > の**登録解除**] の順に選択し、もう一度 Windows 管理センターを Azure に登録して、新しい Azure Active Directory アプリケーションを作成することを確認します。 
+2. Azure Active Directory アプリケーションにアクセスし、Windows 管理センターに登録されている既存の Azure Active Directory アプリに必要なアクセス許可を手動で追加します。 これを行うには、**azure での****azure** > ビューの**設定** > に関するページを参照してください。 Azure の [**アプリの登録**] ブレードで、[API の**アクセス許可**] にアクセスし、[**アクセス許可の追加**] を選択します。 下にスクロールして**Azure Active Directory グラフ**を選択し、[委任された**アクセス許可**]、[**ディレクトリ**] の順に展開して、[ **AccessAsUser**] を選択します。 [**アクセス許可の追加**] をクリックして、アプリに更新プログラムを保存します。
 
 ### <a name="options-for-setting-up-azure-management-services"></a>Azure 管理サービスを設定するためのオプション
 
-Azure Monitor、Azure Update Management、Azure Security Center を含む azure の管理サービスは、オンプレミスのサーバーと同じエージェントを使用します (Microsoft Monitoring Agent)。 Azure Update Management には、サポートされているリージョンのセットが制限されており、Log Analytics ワークスペースが Azure Automation アカウントにリンクされている必要があります。 この制限により、Windows 管理センターで複数のサービスをセットアップする場合は、まず Azure Update Management を設定してから、Azure Security Center または Azure Monitor する必要があります。 Microsoft Monitoring Agent を使用する Azure 管理サービスを構成した後、Windows 管理センターを使用して Azure Update Management を設定しようとすると、Windows 管理センターでは、既存のものがある場合にのみ Azure Update Management を構成することができます。Microsoft Monitoring Agent にリンクされているリソースは、Azure Update Management をサポートします。 そうでない場合は、次の2つのオプションがあります。
+Azure Monitor、Azure Update Management、Azure Security Center を含む azure の管理サービスは、オンプレミスのサーバーと同じエージェントを使用します (Microsoft Monitoring Agent)。 Azure Update Management には、サポートされているリージョンのセットが制限されており、Log Analytics ワークスペースが Azure Automation アカウントにリンクされている必要があります。 この制限により、Windows 管理センターで複数のサービスをセットアップする場合は、まず Azure Update Management を設定してから、Azure Security Center または Azure Monitor する必要があります。 Microsoft Monitoring Agent を使用する Azure 管理サービスを構成した後、Windows 管理センターを使用して Azure Update Management を設定しようとすると、Windows 管理センターでは、Microsoft Monitoring Agent にリンクされている既存のリソースが Azure Update Management をサポートしている場合にのみ Azure Update Management を構成できます。 そうでない場合は、次の2つのオプションがあります。
 
 1. [コントロールパネル] > Microsoft Monitoring Agent を選択し[て、既存の Azure 管理ソリューション](https://docs.microsoft.com/azure/azure-monitor/platform/log-faq#q-how-do-i-stop-an-agent-from-communicating-with-log-analytics)(Azure Monitor や Azure Security Center など) からサーバーを切断します。 次に、Windows 管理センターで Azure Update Management を設定します。 その後、Windows 管理センターを使用して、問題なく他の Azure 管理ソリューションを設定することができます。
 2. [Azure Update Management に必要な azure リソースを手動で設定](https://docs.microsoft.com/azure/automation/automation-update-management)し、Microsoft Monitoring Agent (Windows 管理センターの外部) を[手動で更新](https://docs.microsoft.com/azure/azure-monitor/platform/agent-manage#adding-or-removing-a-workspace)して、使用する Update Management ソリューションに対応する新しいワークスペースを追加することができます。
