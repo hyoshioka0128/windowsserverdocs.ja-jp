@@ -8,12 +8,12 @@ ms.author: jeffrew
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 06/07/2019
-ms.openlocfilehash: 5c9e8b7e1e11deaa82fbec6f451b4f194609c299
-ms.sourcegitcommit: 1d83ca198c50eef83d105151551c6be6f308ab94
+ms.openlocfilehash: d7dc3455c5d7c6b00940008ceea646436b40bed0
+ms.sourcegitcommit: e51dd9dabec82c59e805e7a04c27e56c83773857
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/30/2020
-ms.locfileid: "82605552"
+ms.locfileid: "82613734"
 ---
 # <a name="windows-admin-center-known-issues"></a>Windows Admin Center の既知の問題
 
@@ -28,6 +28,8 @@ ms.locfileid: "82605552"
 - 1024未満のポートの使用はサポートされていません。 サービスモードでは、必要に応じて、指定したポートにリダイレクトするようにポート80を構成できます。
 
 ## <a name="general"></a>全般
+
+- Windows 管理センターの1910.2 リリースでは、特定のハードウェア上の Hyper-v サーバーに接続できない場合があります。 この問題でブロックされている場合は、[以前のビルドをダウンロードしてください](https://aka.ms/wacprevious)。 
 
 - Windows **Server 2016**にゲートウェイとしてインストールされている Windows 管理センターを使用している場合、サービスがとを```Faulting application name: sme.exe``` ```Faulting module name: WsmSvc.dll```含むイベントログのエラーでクラッシュすることがあります。 これは、Windows Server 2019 で修正されたバグが原因です。 Windows Server 2016 の修正プログラムには、2019の累積的な更新プログラム[KB4480977](https://www.catalog.update.microsoft.com/Search.aspx?q=4480977)が含まれています。
 
