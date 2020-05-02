@@ -7,15 +7,16 @@ ms.technology: storage-health-service
 ms.topic: article
 author: cosmosdarwin
 ms.date: 10/05/2017
-ms.openlocfilehash: 3b47e1abf3805b7e6e3dc180d5d937ddb2723fa4
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0a03dc5d646d24c9f24f979df36fb3fe1eafe631
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80827545"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720554"
 ---
 # <a name="health-service-reports"></a>レポートのヘルスサービス
-> 適用対象: Windows Server 2019、Windows Server 2016
+
+> 適用先:Windows Server 2019、Windows Server 2016
 
 ## <a name="what-are-reports"></a>レポートとは  
 
@@ -43,14 +44,13 @@ Get-Volume -FileSystemLabel <Label> | Get-StorageHealthReport -Count <Count>
 Get-StorageNode -Name <Name> | Get-StorageHealthReport -Count <Count>
 ```
 
-## <a name="usage-in-net-and-c"></a>.NET およびでの使用C#
+## <a name="usage-in-net-and-c"></a>.NET および C での使用#
 
-### <a name="connect"></a>接続
+### <a name="connect"></a>接続する
 
-ヘルスサービスを照会するには、クラスターで**CimSession**を確立する必要があります。 これを行うには、完全な .NET でしか使用できないものが必要になります。つまり、web アプリまたはモバイルアプリから直接この操作を行うことはできません。 これらのコードサンプルでは、このデータアクセス層で最も単純な選択である C\#を使用します。
+ヘルスサービスを照会するには、クラスターで**CimSession**を確立する必要があります。 これを行うには、完全な .NET でしか使用できないものが必要になります。つまり、web アプリまたはモバイルアプリから直接この操作を行うことはできません。 これらのコードサンプルでは\#、このデータアクセス層で最も単純な選択肢である C を使用します。
 
-``` 
-...
+```
 using System.Security;
 using Microsoft.Management.Infrastructure;
 
@@ -79,7 +79,7 @@ public CimSession Connect(string Domain = "...", string Computer = "...", string
 
 **CimSession**を確立したら、クラスターで WINDOWS MANAGEMENT INSTRUMENTATION (WMI) を照会できます。
 
-エラーまたはメトリックを取得するには、いくつかの関連オブジェクトのインスタンスを取得する必要があります。 まず、 **MSFT\_StorageSubSystem**がクラスター上の記憶域スペースダイレクトを表します。 これを使用すると、クラスター内のすべての**msft\_storagenode**およびすべての**msft\_ボリューム**(データボリューム) を取得できます。 最後に、 **MSFT\_StorageHealth**、ヘルスサービス自体も必要になります。
+エラーまたはメトリックを取得するには、いくつかの関連オブジェクトのインスタンスを取得する必要があります。 最初に、クラスター上の記憶域スペースダイレクトを表す**MSFT\_StorageSubSystem** 。 これを使用すると、クラスター内のすべての**msft\_storagenode**情報と、すべての**msft\_ボリューム**(データボリューム) を取得できます。 最後に、 **\_MSFT storagehealth**、ヘルスサービス自体も必要になります。
 
 ```
 CimInstance Cluster;
@@ -112,7 +112,6 @@ public void DiscoverObjects(CimSession Session)
 「[ストレージ管理 API クラス](https://msdn.microsoft.com/library/windows/desktop/hh830612(v=vs.85).aspx)」で説明されているすべての同じプロパティにアクセスできます。
 
 ```
-...
 using System.Diagnostics;
 
 foreach (CimInstance Node in Nodes)
@@ -208,25 +207,25 @@ public void BeginStreamingMetrics(CimSession Session, CimInstance HealthService,
 
 メトリックのすべてのサンプルは、個々のメトリックに対応する多くの "レコード" を含む "レポート" です。
 
-完全なスキーマの場合は、 **msft\_StorageHealthReport**と**msft\_HealthRecord** *クラスを調べます。*
+完全なスキーマについては、 *storagewmi .mof*の**\_msft StorageHealthReport**クラスと**msft\_HealthRecord**クラスを調べます。
 
 各メトリックには、このテーブルにつき3つのプロパティしかありません。
 
-| **"** | **例**       |
+| **プロパティ** | **例**       |
 | -------------|-------------------|
-| Name         | IOLatencyAverage  |
+| 名前         | IOLatencyAverage  |
 | 値        | 0.00021           |
-| 単位        | 3                 |
+| Units        | 3                 |
 
 Units = {0, 1, 2, 3, 4}、0 = "Bytes"、1 = "BytesPerSecond"、2 = "CountPerSecond"、3 = "Seconds"、または 4 = "パーセント"。
 
-## <a name="coverage"></a>カバレッジ
+## <a name="coverage"></a>対象範囲
 
 Windows Server 2016 の各スコープで使用可能なメトリックを以下に示します。
 
 ### <a name="msft_storagesubsystem"></a>MSFT_StorageSubSystem
 
-| **名前**                        | **部署** |
+| **名前**                        | **Units** |
 |---------------------------------|-----------|
 | CPUUsage                        | 4         |
 | CapacityPhysicalPooledAvailable | 0         |
@@ -250,7 +249,7 @@ Windows Server 2016 の各スコープで使用可能なメトリックを以下
 
 ### <a name="msft_storagenode"></a>MSFT_StorageNode
 
-| **名前**            | **部署** |
+| **名前**            | **Units** |
 |---------------------|-----------|
 | CPUUsage            | 4         |
 | IOLatencyAverage    | 3         |
@@ -267,7 +266,7 @@ Windows Server 2016 の各スコープで使用可能なメトリックを以下
 
 ### <a name="msft_volume"></a>MSFT_Volume
 
-| **名前**            | **部署** |
+| **名前**            | **Units** |
 |---------------------|-----------|
 | CapacityAvailable   | 0         |
 | CapacityTotal       | 0         |
@@ -281,6 +280,6 @@ Windows Server 2016 の各スコープで使用可能なメトリックを以下
 | Ioby Puttotal   | 1         |
 | IOThroughputWrite   | 1         |
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [Windows Server 2016 のヘルスサービス](health-service-overview.md)
+- [Windows Server 2016 のヘルス サービス](health-service-overview.md)

@@ -9,19 +9,19 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: aa6692dbb8af1ec832650971c6723c060fc2cd56
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 18088bcedd077d5c8052bca91c648e2719304a78
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80844015"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720094"
 ---
 # <a name="fsutil-transaction"></a>Fsutil トランザクション
->適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows 10、Windows Server 2012 R2、Windows 8.1、Windows Server 2012、Windows 8、Windows Server 2008 R2、Windows 7、Windows 2008、Windows Vista
+> 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows 10、Windows Server 2012 R2、Windows 8.1、Windows Server 2012、Windows 8、Windows Server 2008 R2、Windows 7、windows 2008、Windows Vista
 
 NTFS トランザクションを管理します。
 
-このコマンドの使用方法の例については、「[例](#BKMK_examples)」を参照してください。
+
 
 ## <a name="syntax"></a>構文
 
@@ -35,17 +35,17 @@ fsutil transaction [rollback] <GUID>
 
 #### <a name="parameters"></a>パラメーター
 
-| パラメーター  |                                                                                                                                                     説明                                                                                                                                                     |
+| パラメーター  |                                                                                                                                                     [説明]                                                                                                                                                     |
 |------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |   コミット (commit)   |                                                                                                                      暗黙的または明示的に指定されたトランザクションが正常に終了したことを示します。                                                                                                                      |
 |   <GUID>   |                                                                                                                               トランザクションを表す GUID 値を指定します。                                                                                                                               |
 |  fileinfo  |                                                                                                                              指定されたファイルのトランザクション情報を表示します。                                                                                                                               |
 | <Filename> |                                                                                                                                         完全なパスとファイル名を指定します。                                                                                                                                          |
-|    リスト    |                                                                                                                                 現在実行されているトランザクションの一覧を表示します。                                                                                                                                  |
-|   query    | 指定されたトランザクションの情報を表示します。<p>- **Fsutil transaction Query Files**が指定されている場合、ファイル情報は指定したトランザクションに対してのみ表示されます。<br />- **[Fsutil transaction Query All]** が指定されている場合、トランザクションのすべての情報が表示されます。 |
+|    list    |                                                                                                                                 現在実行されているトランザクションの一覧を表示します。                                                                                                                                  |
+|   query    | 指定されたトランザクションの情報を表示します。<p>- **Fsutil transaction Query Files**が指定されている場合、ファイル情報は指定したトランザクションに対してのみ表示されます。<br />-[ **Fsutil transaction Query All** ] が指定されている場合、トランザクションのすべての情報が表示されます。 |
 |  ロールバック  |                                                                                                                                指定されたトランザクションを先頭にロールバックします。                                                                                                                                 |
 
-### <a name="remarks"></a>コメント
+### <a name="remarks"></a>Remarks
 
 -   トランザクション NTFS は、Windows Server 2008 で導入されました。
 

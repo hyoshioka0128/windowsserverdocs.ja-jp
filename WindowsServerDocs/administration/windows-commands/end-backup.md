@@ -1,6 +1,6 @@
 ---
 title: バックアップの終了
-description: Windows コマンドに関するトピック * * * *-
+description: '* * * * のリファレンストピック'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a4d3ef3298fa690d425c6f0660f3be6ea2701c6f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 941ab648c4811facd284d49a4797e50ba5241ee6
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80845205"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720848"
 ---
 # <a name="end-backup"></a>バックアップの終了
 
@@ -29,10 +29,10 @@ ms.locfileid: "80845205"
 end backup
 ```
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>Remarks
 
 -   このコマンドは、すべての完全バックアップに使用する必要があります。
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

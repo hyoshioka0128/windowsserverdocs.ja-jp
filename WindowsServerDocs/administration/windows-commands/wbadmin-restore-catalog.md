@@ -1,6 +1,6 @@
 ---
 title: wbadmin restore カタログ
-description: Wbadmin restore catalog の Windows コマンドに関するトピックでは、指定した記憶域の場所からローカルコンピューターのバックアップカタログを回復します。
+description: 指定したストレージの場所からローカルコンピューターのバックアップカタログを回復する wbadmin restore catalog のリファレンストピックです。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,22 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0ce9182e4e405b1538277db25f06b6a49d7240f9
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: de9ce6b64f996e50fb85a8c612104bc6851ebdfd
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80829705"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720141"
 ---
 # <a name="wbadmin-restore-catalog"></a>wbadmin restore カタログ
 
-
-
 指定した記憶域の場所からローカルコンピューターのバックアップカタログを回復します。
 
-このサブコマンドを使用してバックアップカタログを回復するには、 **Backup Operators**グループまたは**Administrators**グループのメンバーであるか、適切なアクセス許可が委任されている必要があります。 さらに、実行する必要があります **wbadmin** 管理者特権でコマンド プロンプトからです。 (管理者特権でのコマンドプロンプトを開くには、 **[コマンドプロンプト]** を右クリックし、 **[管理者として実行]** をクリックします)。
-
-このサブコマンドの使用方法の例については、「[例](#BKMK_examples)」を参照してください。
+このサブコマンドを使用してバックアップカタログを回復するには、 **Backup Operators**グループまたは**Administrators**グループのメンバーであるか、適切なアクセス許可が委任されている必要があります。 さらに、実行する必要があります **wbadmin** 管理者特権でコマンド プロンプトからです。 (管理者特権でのコマンドプロンプトを開くには、[**コマンドプロンプト**] を右クリックし、[**管理者として実行**] をクリックします)。
 
 ## <a name="syntax"></a>構文
 
@@ -37,28 +33,28 @@ wbadmin restore catalog
 
 ### <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
+|パラメーター|[説明]|
 |---------|-----------|
 |-backuptarget|バックアップが作成された時点でのシステムのバックアップカタログの場所を指定します。|
 |-コンピューター|バックアップカタログを回復するコンピューターの名前を指定します。 複数のコンピューターのバックアップが同じ場所に格納されている場合は、を使用します。 **-BackupTarget**が指定されている場合は、を使用する必要があります。|
 |-quiet|ユーザーにプロンプトを表示せずにサブコマンドを実行します。|
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>Remarks
 
 バックアップを保存する場所 (ディスク、DVD、またはリモート共有フォルダー) が破損または失われ、バックアップカタログの復元に使用できない場合は、 **wbadmin delete catalog**を使用して破損したカタログを削除します。 この場合は、バックアップカタログを削除した後で、新しいバックアップを作成する必要があります。
 
-## <a name="examples"></a><a name=BKMK_examples></a>例
+## <a name="examples"></a>例
 
 ディスク d: に格納されているバックアップからカタログを復元するには、次のように入力します。
 ```
 wbadmin restore catalog -backupTarget:d
 ```
-共有 \\フォルダーに格納されているバックアップからカタログを復元するには、server01 の servername\share \\で、次のように入力します。
+Server01 の共有フォルダー \\ \\servername\share に格納されているバックアップからカタログを復元するには、次のように入力します。
 ```
 wbadmin restore catalog -backupTarget:\\servername\share -machine:server01
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 -   - [コマンド ライン構文の記号](command-line-syntax-key.md)
 -   [Wbadmin](wbadmin.md)

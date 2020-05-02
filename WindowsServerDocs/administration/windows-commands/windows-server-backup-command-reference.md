@@ -1,6 +1,6 @@
 ---
 title: Windows Server バックアップ コマンドのリファレンス
-description: Backup コマンドリファレンスの Windows コマンドに関するトピック。
+description: Backup コマンドリファレンスのリファレンストピックです。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ca6a2e17c68e362d8b3d26f67ab3b7e4c7bf86d4
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 69121e445e5c7a967c30b0a911c639431c7dd74a
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80829206"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720717"
 ---
 # <a name="windows-server-backup-command-reference"></a>Windows Server バックアップ コマンドのリファレンス
 
@@ -24,9 +24,9 @@ ms.locfileid: "80829206"
 
 バックアップのスケジュールを構成する、 **管理者** グループです。 このコマンドを使用して他のすべてのタスクを実行する、 **Backup Operators** または **管理者** グループ、またはをされている必要が適切なアクセス許可を委任します。
 
-実行する必要があります **wbadmin** 管理者特権でコマンド プロンプトからです。 (コマンド プロンプトを開くにはクリックして **開始**, を右クリックして **コマンド プロンプト**, 、クリックして **管理者として実行**.)
+実行する必要があります **wbadmin** 管理者特権でコマンド プロンプトからです。 (管理者特権のコマンドプロンプトを開くには、[**スタート**] ボタンをクリックし、[**コマンドプロンプト**] を右クリックして、[**管理者として実行**] をクリックします)。
 
-|サブコマンド|説明|
+|サブコマンド|[説明]|
 |----------|-----------|
 |[Wbadmin enable backup](wbadmin-enable-backup.md)|構成し、毎日のバックアップ スケジュールを有効にします。|
 |[Wbadmin disable backup](wbadmin-disable-backup.md)|毎日のバックアップを無効にします。|

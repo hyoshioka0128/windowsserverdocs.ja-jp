@@ -8,16 +8,16 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 03/05/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 8cd3b5e5629e41702126fb42b815931ff0aea6fa
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 05e58498a59a9e87fc773428d7e5956ce3285b67
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80830025"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720240"
 ---
 # <a name="vssadmin-resize-shadowstorage"></a>Vssadmin resize shadowstorage
 
->適用対象: Windows 10、Windows 8.1、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
+> 適用対象: Windows 10、Windows 8.1、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
 
 シャドウコピーの記憶域に使用できる記憶域の最大容量のサイズを変更します。
 
@@ -34,7 +34,7 @@ vssadmin resize shadowstorage /for=<ForVolumeSpec> /on=<OnVolumeSpec> [/maxsize=
 
 ### <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
+|パラメーター|[説明]|
 |---|---|
 `/for=<ForVolumeSpec>`  | ストレージ領域の最大サイズを変更するボリュームを指定します。
 `/on=<OnVolumeSpec>` | 記憶域ボリュームを指定します。

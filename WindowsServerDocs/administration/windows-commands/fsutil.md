@@ -9,20 +9,20 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 08/21/2018
-ms.openlocfilehash: 717c287995be2ab56bd49f2f24d46001f77e0e68
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a12647908811066293772ab1e9354a0d67874d88
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80843905"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720048"
 ---
 # <a name="fsutil"></a>Fsutil (英語の可能性あり)
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows 10、Windows Server 2012 R2、Windows 8.1、Windows Server 2012、Windows 8、Windows Server 2008 R2、Windows 7
+> 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows 10、Windows Server 2012 R2、Windows 8.1、Windows Server 2012、Windows 8、Windows Server 2008 R2、Windows 7
 
 再解析ポイントの管理、スパースファイルの管理、ボリュームのマウント解除など、ファイルアロケーションテーブル (FAT) および NTFS ファイルシステムに関連するタスクを実行します。 パラメーターを指定せずに使用した場合、サポートされているサブコマンドの一覧**が表示さ**れます。 
 
-> [!Note] 
+> [!NOTE] 
 > Fsutil を使用するには、管理者または Administrators グループのメンバーとしてログオンする必要があります。 Fsutil コマンドは非常に強力であり、Windows オペレーティングシステムに関する詳しい知識を持つ上級ユーザーのみが使用する必要があります。
 >
 >**Fsutil**を実行する前に、Windows Subsystem for Linux を有効にする必要があります。 PowerShell で次のコマンドを管理者として実行し、このオプション機能を有効にします。
@@ -34,7 +34,7 @@ ms.locfileid: "80843905"
 
 ### <a name="parameters"></a>パラメーター
 
-|サブコマンド |説明|
+|サブコマンド |[説明]|
 |---|---|
 |[Fsutil 8dot3name](fsutil-8dot3name.md) | たとえば、システムの短い名前の動作の設定を照会または変更すると、8.3 文字の長さのファイル名が生成されます。 ディレクトリ内のすべてのファイルの短い名前を削除します。 ディレクトリをスキャンし、ディレクトリ内のファイルから短い名前が削除された場合に影響を受ける可能性のあるレジストリキーを識別します。|
 |[Fsutil の動作](fsutil-behavior.md) |ボリュームの動作を照会または設定します。|
@@ -54,5 +54,5 @@ ms.locfileid: "80843905"
 |[Fsutil ボリューム](fsutil-volume.md)|ボリュームを管理します。 ボリュームのマウントを解除し、ディスク上で使用可能な空き領域を確認したり、指定したクラスターを使用しているファイルを検索したりします。|
 |[Fsutil wim](fsutil-wim.md)|WIM でサポートされているファイルを検出および管理するための機能を提供します。|
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

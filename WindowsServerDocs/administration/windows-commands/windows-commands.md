@@ -1,6 +1,6 @@
 ---
-title: Windows コマンド
-description: Windows コマンド
+title: Windows のコマンド
+description: 関連項目
 ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: c703d07c-8227-4e86-94a6-8ef390f94cdc
@@ -9,12 +9,12 @@ ms.author: jgerend
 manager: dongill
 ms.date: 06/26/2019
 ms.prod: windows-server
-ms.openlocfilehash: 9d68e2becbf9c6522be7e1ff6e6742d44f3a8247
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 7baec3bbe532bbcedb8c17628fd88d2c8eac34c6
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80829235"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720731"
 ---
 # <a name="windows-commands"></a>Windows のコマンド
 
@@ -26,30 +26,30 @@ ms.locfileid: "80829235"
 
 [A](#a) |
 [B](#b) | 
-[C](#c) | 
-[D](#d) | 
-[E](#e) | 
-[F](#f) | 
-[G](#g) | 
-[H](#h) | 
-[I](#i) |
+[M](#m)[D](#d) | 
+[V](#v)[C](#c) |
 [J](#j) | 
-[K](#k) m | 
-[L](#l) | 
-[M](#m) | 
-[N](#n) | 
-[O](#o) | 
-[P](#p) | 
-[Q](#q) | 
-[R](#r) | 
-[S](#s) | 
-[t](#t) | 
-[U](#u) | 
-[V](#v) | 
-[W](#w) | 
-[X](#x) |Y |方向
+[W](#w)[F](#f) | 
+[S](#s)[E](#e) | 
+[R](#r)[G](#g) | 
+[U](#u)[H](#h) | 
+[X](#x) [I](#i) | 
+[T](#t)[L](#l)[N](#n)[Q](#q)[O](#o)[P](#p)[K](#k)C D E F G H I J | 
+K L M | 
+N | 
+O | 
+P | 
+Q R S T U V W X | | 
+ | 
+ | 
+ | 
+ | 
+ | 
+ | 
+ | 
+Y |方向
 
-## <a name="prerequisites"></a>前提条件
+## <a name="prerequisites"></a>[前提条件]
 
 このトピックに記載されている情報は、以下に適用されます。
 
@@ -76,7 +76,7 @@ PowerShell は、コマンドシェルの機能を拡張して、コマンドレ
 >Powershell のオープンソースバージョンである[Powershell Core](https://docs.microsoft.com/powershell/scripting/whats-new/what-s-new-in-powershell-core-60?view=powershell-6)をダウンロードしてインストールすることもできます。 
 
 > [!CAUTION]
-> レジストリの編集を誤ると、システムに重大な損害を与える可能性があります。 レジストリに次の変更を加える前に、コンピューター上の重要なデータをバックアップする必要があります。
+> レジストリを正しく編集しないと、システムが正常に動作しなくなる場合があります。 レジストリに次の変更を加える前に、コンピューター上の重要なデータをバックアップする必要があります。
 
 > [!NOTE]
 > コンピューターまたはユーザーのログオンセッションでコマンドシェルのファイル名とディレクトリ名の入力候補を有効または無効にするには、 **regedit.exe**を実行し、次の**reg_DWOrd 値**を設定します。
@@ -91,28 +91,28 @@ PowerShell は、コマンドシェルの機能を拡張して、コマンドレ
 
 [A](#a) |
 [B](#b) | 
-[C](#c) | 
-[D](#d) | 
-[E](#e) | 
-[F](#f) | 
-[G](#g) | 
-[H](#h) | 
-[I](#i) |
+[M](#m)[D](#d) | 
+[V](#v)[C](#c) |
 [J](#j) | 
-[K](#k) m | 
-[L](#l) | 
-[M](#m) | 
-[N](#n) | 
-[O](#o) | 
-[P](#p) | 
-[Q](#q) | 
-[R](#r) | 
-[S](#s) | 
-[t](#t) | 
-[U](#u) | 
-[V](#v) | 
-[W](#w) | 
-[X](#x) |Y |方向
+[W](#w)[F](#f) | 
+[S](#s)[E](#e) | 
+[R](#r)[G](#g) | 
+[U](#u)[H](#h) | 
+[X](#x) [I](#i) | 
+[T](#t)[L](#l)[N](#n)[Q](#q)[O](#o)[P](#p)[K](#k)C D E F G H I J | 
+K L M | 
+N | 
+O | 
+P | 
+Q R S T U V W X | | 
+ | 
+ | 
+ | 
+ | 
+ | 
+ | 
+ | 
+Y |方向
 
 ### <a name="a"></a>A
 -   [append](append.md)
@@ -155,7 +155,7 @@ PowerShell は、コマンドシェルの機能を拡張して、コマンドレ
   -   [bitsadmin getnotifyflags](bitsadmin-getnotifyflags.md)
   -   [bitsadmin getnotifyinterface](bitsadmin-getnotifyinterface.md)
   -   [bitsadmin getowner](bitsadmin-getowner.md)
-  -   [bitsadmin の優先順位を取得する](bitsadmin-getpriority.md)
+  -   [bitsadmin get priority](bitsadmin-getpriority.md)
   -   [bitsadmin getproxybypasslist](bitsadmin-getproxybypasslist.md)
   -   [bitsadmin getproxylist](bitsadmin-getproxylist.md)
   -   [bitsadmin getproxyusage](bitsadmin-getproxyusage.md)
@@ -316,7 +316,7 @@ PowerShell は、コマンドシェルの機能を拡張して、コマンドレ
 -   [helpctr](helpctr.md)
 -   [hostname](hostname.md)
 
-### <a name="i"></a>i
+### <a name="i"></a>I
 -   [icacls](icacls.md)
 -   [if](if.md)
 -   [inuse](inuse.md)
@@ -361,10 +361,10 @@ PowerShell は、コマンドシェルの機能を拡張して、コマンドレ
 - [logman](logman.md)
   -   [logman create](logman-create.md)
   -   [logman query](logman-query.md)
-  -   [logman 開始 & 124;停止](logman-start-stop.md)
+  -   [logman &124;停止](logman-start-stop.md)
   -   [logman delete](logman-delete.md)
   -   [logman update](logman-update.md)
-  -   [logman インポート & 124;輸出](logman-import-export.md)
+  -   [logman インポート &124;輸出](logman-import-export.md)
 - [logoff](logoff.md)
 - [lpq](lpq.md)
 - [lpr](lpr.md)
@@ -454,7 +454,7 @@ PowerShell は、コマンドシェルの機能を拡張して、コマンドレ
 
 ### <a name="p"></a>P
 -   [pagefileconfig](pagefileconfig.md)
--   [パス](path.md)
+-   [path](path.md)
 -   [pathping](pathping.md)
 -   [pause](pause.md)
 -   [pbadmin](pbadmin.md)
@@ -481,7 +481,7 @@ PowerShell は、コマンドシェルの機能を拡張して、コマンドレ
 ### <a name="q"></a>Q
 -   [qappsrv](qappsrv.md)
 -   [qprocess](qprocess.md)
--   [クエリ](query.md)
+-   [query](query.md)
 -   [quser](quser.md)
 -   [qwinsta](qwinsta.md)
 

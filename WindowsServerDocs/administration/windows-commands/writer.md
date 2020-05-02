@@ -1,6 +1,6 @@
 ---
-title: writer
-description: Writer の Windows コマンドに関するトピック。ライターまたはコンポーネントが含まれていること、またはバックアップまたは復元の手順からライターまたはコンポーネントが除外されていることを確認します。
+title: ライター
+description: ライターのリファレンストピック。ライターまたはコンポーネントが含まれていること、またはバックアップまたは復元の手順でライターまたはコンポーネントが含まれていることを確認します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fb13de162b8e5eb8150d145a4afacccf47bb25f0
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: aed202ac774b17041f48df24333565727b110c53
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80828985"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720643"
 ---
-# <a name="writer"></a>writer
+# <a name="writer"></a>ライター
 
 
 
@@ -31,13 +31,13 @@ writer exclude [<Writer> | <Component>]
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター  |                                                                                      説明                                                                                      |
+| パラメーター  |                                                                                      [説明]                                                                                      |
 |------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |   確認   | 指定されたライターまたはコンポーネントが、バックアップまたは復元の手順に含まれていることを確認します。 ライターまたはコンポーネントが含まれていない場合、バックアップまたは復元の手順は失敗します。 |
 |  exclude   |                                                   指定されたライターまたはコンポーネントをバックアップまたは復元の手順から除外します。                                                    |
-| [\<ライター > |                                                                                     <Component>]                                                                                      |
+| [\<ライター> |                                                                                     <Component>]                                                                                      |
 
-## <a name="examples"></a><a name=BKMK_examples></a>例
+## <a name="examples"></a>例
 
 GUID (この例では 4dc3bdd4-ab48-4d07-adb0-3bee2926fd7f) を指定してライターを確認するには、次のように入力します。
 ```
@@ -48,6 +48,6 @@ writer verify {4dc3bdd4-ab48-4d07-adb0-3bee2926fd7f}
 writer exclude System Writer
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

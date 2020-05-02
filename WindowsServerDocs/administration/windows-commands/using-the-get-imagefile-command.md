@@ -1,6 +1,6 @@
 ---
 title: get-help-イメージ
-description: Windows イメージ (.wim) ファイルに格納されているイメージに関する情報を取得する、windows のコマンドのトピック。
+description: Windows イメージ (.wim) ファイルに格納されているイメージに関する情報を取得する、ファイルイメージの参照トピック。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ef1cf2b9eec6739690d286c32d26dd84b07e348c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 4f60be17f13e1436a0e895991c72d5ccb7130782
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80830995"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719915"
 ---
 # <a name="get-imagefile"></a>get-help-イメージ
 
@@ -28,12 +28,12 @@ WDSUTIL [Options] /Get-ImageFile /ImageFile:<wim file path> [/Detailed]
 
 ### <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
+|パラメーター|[説明]|
 |---------|-----------|
-|/ImageFile:\<WIM ファイルパス >|.Wim ファイルの完全パスとファイル名を指定します。|
+|/ImageFile:\<WIM ファイルパス>|.Wim ファイルの完全パスとファイル名を指定します。|
 |[/詳細]|各イメージからすべてのイメージのメタデータを返します。 このオプションを使用しない場合、既定の動作は、イメージの名前、説明、およびファイル名のみを返すには。|
 
-## <a name="examples"></a><a name=BKMK_examples></a>例
+## <a name="examples"></a>例
 
 イメージに関する情報を表示するには、次のように入力します。
 ```
@@ -44,6 +44,6 @@ WDSUTIL /Get-ImageFile /ImageFile:C:\temp\install.wim
 WDSUTIL /Verbose /Get-ImageFile /ImageFile:\\Server\Share\My Folder \install.wim /Detailed
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

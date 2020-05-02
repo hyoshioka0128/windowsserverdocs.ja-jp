@@ -8,16 +8,16 @@ ms.author: jgerend
 manager: lizross
 ms.technology: storage-failover-clustering
 ms.date: 01/14/2020
-ms.openlocfilehash: 5d382807adcfd771215d1f87332a47842d25eda3
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: eea98579a66f1db7f7ec873bda6a2c934841736f
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80827385"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720509"
 ---
 # <a name="failover-clustering-system-log-events"></a>フェールオーバークラスタリングのシステムログイベント
 
->適用対象: Windows Server 2019、Windows Server 2016
+> 適用先:Windows Server 2019、Windows Server 2016
 
 このトピックでは、Windows Server システムログのフェールオーバークラスタリングイベントの一覧を示します (イベントビューアーで見ることができます)。 これらのイベントはすべて**FailoverClustering**のイベントソースを共有し、クラスターのトラブルシューティングを行うときに役立ちます。
 
@@ -348,7 +348,7 @@ IP インターフェイス ' %1 ' (アドレス ' %2 ') の正常性チェッ�
 
 - クラスター id ' %4 ' はコンピューターオブジェクトを作成できます。 既定では、すべてのコンピューターオブジェクトは "コンピューター" コンテナーに作成されます。この場所が変更されている場合は、ドメイン管理者に問い合わせてください。
 - コンピューターオブジェクトのクォータに達していません。
-- 既存のコンピューターオブジェクトがある場合は、Active Directory ユーザーとコンピューター ツールを使用して、そのコンピューターオブジェクトに対する "フルコントロール" アクセス許可がクラスター Id ' %4 ' に付与されていることを確認します。
+- 既存のコンピューターオブジェクトがある場合は、Active Directory ユーザーとコンピューター] ツールを使用して、そのコンピューターオブジェクトに対する "フルコントロール" アクセス許可がクラスター Id ' %4 ' に付与されていることを確認します。
 
 ### <a name="event-1194-res_netname_add_computer_account_failed"></a>イベント 1194: RES_NETNAME_ADD_COMPUTER_ACCOUNT_FAILED
 
@@ -358,7 +358,7 @@ IP インターフェイス ' %1 ' (アドレス ' %2 ') の正常性チェッ�
 
 - クラスター id ' %5 ' には、コンピューターオブジェクトの作成アクセス許可があります。 既定では、すべてのコンピューターオブジェクトは、クラスター id ' %5 ' と同じコンテナーに作成されます。
 - コンピューターオブジェクトのクォータに達していません。
-- 既存のコンピューターオブジェクトがある場合は、Active Directory ユーザーとコンピューター ツールを使用して、そのコンピューターオブジェクトに対する "フルコントロール" アクセス許可がクラスター Id ' %5 ' に付与されていることを確認します。
+- 既存のコンピューターオブジェクトがある場合は、Active Directory ユーザーとコンピューター] ツールを使用して、そのコンピューターオブジェクトに対する "フルコントロール" アクセス許可がクラスター Id ' %5 ' に付与されていることを確認します。
 
 ### <a name="event-1195-res_netname_dns_registration_failed_status"></a>イベント 1195: RES_NETNAME_DNS_REGISTRATION_FAILED_STATUS
 
@@ -600,7 +600,7 @@ IPv6 トンネルアドレスリソース ' %1 ' をオンラインにできま�
 
 ### <a name="event-1567-service_failed_to_change_log_size"></a>イベント 1567: SERVICE_FAILED_TO_CHANGE_LOG_SIZE
 
-トレースログのサイズを変更できませんでしたクラスターサービス。 ClusterLogSize の設定を確認してください。 \| の形式 \*' PowerShell コマンドレットを使用してください。 また、パフォーマンスモニタースナップインを使用して、FailoverClustering のイベントトレースセッション設定を確認します。
+トレースログのサイズを変更できませんでしたクラスターサービス。 ' \| ClusterLogSize \*' という PowerShell コマンドレットを使用して、設定を確認してください。 また、パフォーマンスモニタースナップインを使用して、FailoverClustering のイベントトレースセッション設定を確認します。
 
 ### <a name="event-1567-res_vipaddr_address_interface_failed"></a>イベント 1567: RES_VIPADDR_ADDRESS_INTERFACE_FAILED
 
@@ -664,11 +664,11 @@ IP インターフェイス ' %1 ' (アドレス ' %2 ') の正常性チェッ�
 
 ### <a name="event-1606-res_disk_cno_check_failed"></a>イベント 1606: RES_DISK_CNO_CHECK_FAILED
 
-クラスターディスクリソース ' %1 ' には、BitLocker で保護されているボリューム ' %2 ' が含まれていますが、このボリュームの Active Directory クラスター名アカウント (クラスター名オブジェクトまたは CNO とも呼ばれます) は、ボリュームの BitLocker 保護機能ではありません。 これは、BitLocker で保護されたボリュームに必要です。 この問題を解決するには、最初にクラスターからディスクを削除します。 次に、Manage-bde.exe コマンドラインツールを使用してクラスター名を ADAccountOrGroup プロテクターとして追加します。これには、クラスター名としてドメイン\\ClusterName\$ の形式を使用します。 次に、ディスクをクラスターに追加し直します。 詳細については、Manage-bde.exe のドキュメントを参照してください。
+クラスターディスクリソース ' %1 ' には、BitLocker で保護されているボリューム ' %2 ' が含まれていますが、このボリュームの Active Directory クラスター名アカウント (クラスター名オブジェクトまたは CNO とも呼ばれます) は、ボリュームの BitLocker 保護機能ではありません。 これは、BitLocker で保護されたボリュームに必要です。 この問題を解決するには、最初にクラスターからディスクを削除します。 次に、Manage-bde.exe コマンドラインツールを使用してクラスター名を ADAccountOrGroup プロテクターとして追加します。これに\\は\$ 、クラスター名として「domain ClusterName」という形式を使用します。 次に、ディスクをクラスターに追加し直します。 詳細については、Manage-bde.exe のドキュメントを参照してください。
 
 ### <a name="event-1607-res_disk_cno_unlock_failed"></a>イベント 1607: RES_DISK_CNO_UNLOCK_FAILED
 
-クラスターディスクリソース ' %1 ' は、BitLocker で保護されているボリューム ' %2 ' のロックを解除できませんでした。 クラスター名オブジェクト (CNO) は、このボリュームの有効な BitLocker プロテクターとして設定されていません。 この問題を解決するには、クラスターからディスクを削除します。 次に、Manage-bde.exe コマンドラインツールを使用して、ドメイン\\ClusterName\$の形式でクラスター名を ADAccountOrGroup プロテクターとして追加し、クラスターにディスクを追加し直します。 詳細については、Manage-bde.exe のドキュメントを参照してください。
+クラスターディスクリソース ' %1 ' は、BitLocker で保護されているボリューム ' %2 ' のロックを解除できませんでした。 クラスター名オブジェクト (CNO) は、このボリュームの有効な BitLocker プロテクターとして設定されていません。 この問題を解決するには、クラスターからディスクを削除します。 次に、Manage-bde.exe コマンドラインツールを使用して、ドメイン\\ClusterName\$形式でクラスター名を ADAccountOrGroup プロテクターとして追加し、クラスターにディスクを追加し直します。 詳細については、Manage-bde.exe のドキュメントを参照してください。
 
 ### <a name="event-1608-res_fileserver_leader_failed"></a>イベント 1608: RES_FILESERVER_LEADER_FAILED
 
@@ -780,7 +780,7 @@ Active Directory で、ネットワーク名のコンピューターオブジェ
 
 ### <a name="event-4613-nodecleanup_clear_clusdisk_database_failed"></a>イベント 4613: NODECLEANUP_CLEAR_CLUSDISK_DATABASE_FAILED
 
-クラスターサービスは、クラスターを破棄しているときに、ID ' %2 ' のクラスター化されたディスクを正しくクリーンアップできませんでした。 エラーコードは ' %1 ' でした。 クリーンアップが正常に完了するまで、このディスクにアクセスできない可能性があります。 手動クリーンアップの場合は、Windows レジストリの ' HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\ClusDisk\\Parameters ' キーの ' AttachedDisks ' 値を削除します。
+クラスターサービスは、クラスターを破棄しているときに、ID ' %2 ' のクラスター化されたディスクを正しくクリーンアップできませんでした。 エラーコードは ' %1 ' でした。 クリーンアップが正常に完了するまで、このディスクにアクセスできない可能性があります。 手動クリーンアップの場合は、Windows レジストリの\\' HKEY_LOCAL_MACHINE SYSTEM\\CurrentControlSet\\Services\\の ClusDisk\\パラメーター ' キーの ' AttachedDisks ' 値を削除します。
 
 ### <a name="event-4615-nodecleanup_disable_cluster_service_failed"></a>イベント 4615: NODECLEANUP_DISABLE_CLUSTER_SERVICE_FAILED
 
@@ -925,7 +925,7 @@ Active Directory で、ネットワーク名のコンピューターオブジェ
 
 ### <a name="event-5398-nm_event_cluster_failed_to_form"></a>イベント 5398: NM_EVENT_CLUSTER_FAILED_TO_FORM
 
-クラスターを開始できませんでした。 クラスター構成データの最新コピーは、クラスターを開始しようとしているノードのセット内では使用できませんでした。 ノードのセットがメンバーシップに含まれておらず、その結果、構成データの更新を受信できなかったため、クラスターへの変更が発生しました。 。<br><br>クラスターを開始するために必要な投票: %1<br>利用可能な投票: %2<br>投票があるノード: %3
+クラスターを開始できませんでした。 クラスター構成データの最新コピーは、クラスターを開始しようとしているノードのセット内では使用できませんでした。 ノードのセットがメンバーシップに含まれておらず、その結果、構成データの更新を受信できなかったため、クラスターへの変更が発生しました。 .<br><br>クラスターを開始するために必要な投票: %1<br>利用可能な投票: %2<br>投票があるノード: %3
 
 #### <a name="guidance"></a>ガイダンス
 
@@ -1251,6 +1251,6 @@ ChkDsk からの追加情報については、アプリケーションイベン�
 クラスターの物理ディスクリソース ' %1 ' がソフトウェアスナップショットを削除しました。 クラスターの共有ボリューム ' %2 ' のソフトウェアスナップショットは ' %3 ' 日より古いため、削除されました。 スナップショット ID は ' %4 ' でしたが、' %6 ' のノード ' %5 ' から作成されました。
 バックアップジョブの完了後に、バックアップアプリケーションによってスナップショットが削除されることが想定されています。 スナップショットが存在することが予想される時間を超過しました。 バックアップアプリケーションで、バックアップジョブが正常に完了していることを確認します。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 -   [Windows Server 2008 でのフェールオーバークラスタリングコンポーネントの詳細なイベント情報](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753362(v%3dws.10))

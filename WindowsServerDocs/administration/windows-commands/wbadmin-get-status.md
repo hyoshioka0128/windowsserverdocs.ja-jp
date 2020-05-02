@@ -1,6 +1,6 @@
 ---
 title: wbadmin の状態の取得
-description: Wbadmin get status の Windows コマンドに関するトピック。現在実行中のバックアップまたは回復操作の状態を報告します。
+description: 現在実行中のバックアップまたは回復操作の状態を報告する wbadmin get status のリファレンストピックです。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f8ebf1a078632f78dc8d58c232550345f0de78f2
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 1e8e5194cd49770f72ce810f4652d9bc98af75e2
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80829745"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720157"
 ---
 # <a name="wbadmin-get-status"></a>wbadmin の状態の取得
 
@@ -22,7 +22,7 @@ ms.locfileid: "80829745"
 
 現在実行中のバックアップまたは回復操作の状態を報告します。
 
-このサブコマンドを使用するには、 **Backup Operators**グループまたは**Administrators**グループのメンバであるか、適切な権限が委任されている必要があります。 さらに、実行する必要があります **wbadmin** 管理者特権でコマンド プロンプトからです。 (管理者特権でのコマンドプロンプトを開くには、 **[コマンドプロンプト]** を右クリックし、 **[管理者として実行]** をクリックします)。
+このサブコマンドを使用するには、 **Backup Operators**グループまたは**Administrators**グループのメンバであるか、適切な権限が委任されている必要があります。 さらに、実行する必要があります **wbadmin** 管理者特権でコマンド プロンプトからです。 (管理者特権でのコマンドプロンプトを開くには、[**コマンドプロンプト**] を右クリックし、[**管理者として実行**] をクリックします)。
 
 ## <a name="syntax"></a>構文
 
@@ -34,12 +34,12 @@ wbadmin get status
 
 このサブコマンドにはパラメーターがありません。
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>Remarks
 
 -   このサブコマンドは、現在のバックアップまたは回復操作が完了するまで停止しません。コマンドウィンドウを閉じた場合でも、サブコマンドは引き続き実行されます。
 -   現在のバックアップまたは回復操作を停止する場合は、 **wbadmin stop job**サブコマンドを使用します。
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 -   - [コマンド ライン構文の記号](command-line-syntax-key.md)
 -   [Wbadmin](wbadmin.md)

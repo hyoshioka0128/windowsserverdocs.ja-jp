@@ -1,6 +1,6 @@
 ---
 title: bitsadmin takeownership
-description: 管理者特権を持つユーザーが、指定されたジョブの所有権を取得できるようにする**bitsadmin を取得**するための Windows コマンドに関するトピック。
+description: 管理者特権を持つユーザーが、指定されたジョブの所有権を取得できるようにする bitsadmin の所有権の取得コマンドのリファレンストピックです。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a04f54747e3e06aa61166c2c9f9cedfdfbc8d42a
-ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
+ms.openlocfilehash: 5369cb3fa143ebde77ae8cabf04b9a38eed5b9c5
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81122698"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720439"
 ---
 # <a name="bitsadmin-takeownership"></a>bitsadmin takeownership
 
@@ -28,18 +28,20 @@ bitsadmin /takeownership <job>
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | 説明 |
+| パラメーター | [説明] |
 | --------- | ---------- |
-| Job | ジョブの表示名または GUID。 |
+| ジョブ (job) | ジョブの表示名または GUID。 |
 
 ## <a name="examples"></a>例
 
-次の例では、 *Mydownloadjob*という名前のジョブの所有権を取得します。
+*Mydownloadjob*という名前のジョブの所有権を取得するには、次のようにします。
 
 ```
-C:\>bitsadmin /takeownership myDownloadJob
+bitsadmin /takeownership myDownloadJob
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [bitsadmin コマンド](bitsadmin.md)

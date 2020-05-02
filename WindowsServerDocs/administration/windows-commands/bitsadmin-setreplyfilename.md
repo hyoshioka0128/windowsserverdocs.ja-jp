@@ -1,6 +1,6 @@
 ---
 title: bitsadmin setreplyfilename
-description: '**Bitsadmin setreplyfilename**の Windows コマンドに関するトピックでは、サーバーのアップロードと応答を含むファイルのパスを指定しています。'
+description: Bitsadmin setreplyfilename コマンドのリファレンストピック。サーバーのアップロード-応答を含むファイルのパスを指定します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6c476073cb22ff66bcefc75a45fcd0526cdf3d25
-ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
+ms.openlocfilehash: 2f0bd184db274dc915817ff3e26ae2c686190c27
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81122734"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720479"
 ---
 # <a name="bitsadmin-setreplyfilename"></a>bitsadmin setreplyfilename
 
@@ -31,19 +31,21 @@ bitsadmin /setreplyfilename <job> <file_path>
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | 説明 |
+| パラメーター | [説明] |
 | -------------- | -------------- |
-| 送信 | ジョブの表示名または GUID。 |
+| ジョブ (job) | ジョブの表示名または GUID。 |
 | file_path | サーバーのアップロード-応答を配置する場所。 |
 
 ## <a name="examples"></a>例
 
-次の例では、 *Mydownloadjob*という名前のジョブのアップロード応答ファイル名ファイルパスを設定します。
+*Mydownloadjob*という名前のジョブのアップロード応答ファイル名ファイルパスを設定するには、次のようにします。
 
 ```
-C:\>bitsadmin /setreplyfilename myDownloadJob c:\upload-reply
+bitsadmin /setreplyfilename myDownloadJob c:\upload-reply
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [bitsadmin コマンド](bitsadmin.md)

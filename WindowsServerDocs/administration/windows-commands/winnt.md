@@ -1,6 +1,6 @@
 ---
 title: winnt
-description: Windows の今後のリリースでサポートされるとは限りません。 winnt の Windows コマンドに関するトピックは非推奨とされています。
+description: Windows の今後のリリースでサポートされるとは限らない、winnt のリファレンストピックです。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,17 +9,17 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ee7fdccef796ececf5464fb5cefe64c93c6509d7
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: df6a933d54e4600b2ae220841d86c82b768074fd
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80829185"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720709"
 ---
 # <a name="winnt"></a>winnt
 
 
 
-Winnt は推奨されず、および Windows の将来のリリースでサポートされるとは限りません。
+Winnt は非推奨とされており、および Windows の将来のリリースでサポートされるとは限りません。
 
 このツールは、Windows Server 2003 に含まれます。 詳細については、次を参照してください。 [Winnt](https://technet.microsoft.com/library/cc755763(v=ws.10).aspx)します。

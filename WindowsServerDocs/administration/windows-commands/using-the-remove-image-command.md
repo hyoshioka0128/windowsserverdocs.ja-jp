@@ -1,6 +1,6 @@
 ---
 title: イメージの削除
-description: イメージを削除するための Windows コマンドに関するトピックでは、サーバーからイメージを削除します。
+description: サーバーからイメージを削除する削除イメージのリファレンストピックです。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 760c61c3109255000fe1177a456243a5c91c883f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 770c8487bcfe0cba28bffcd32a05285d904ba21c
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80830365"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720360"
 ---
 # <a name="remove-image"></a>イメージの削除
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 サーバーからイメージを削除します。
 
@@ -32,15 +32,15 @@ wdsutil [Options] /remove-Imagmedia:<Image name> [/Server:<Server name>mediatype
 wdsutil [Options] /remove-Imagmedia:<Image name> [/Server:<Server name>mediatype:InstallmediaGroup:<Image group name>] [/Filename:<Filename>]
 ```
 ### <a name="parameters"></a>パラメーター
-|パラメーター|説明|
+|パラメーター|[説明]|
 |-------|--------|
-メディア:<Image name>|イメージの名前を指定します。|
+用紙<Image name>|イメージの名前を指定します。|
 |[/Server:<Server name>]|サーバーの名前を指定します。 NetBIOS 名または完全修飾ドメイン名 (FQDN) のいずれかを指定できます。 サーバー名が指定されていない場合は、ローカルのサーバーが使用されます。|
-メディアの種類: {ブート&#124;インストール}|画像の種類を指定します。|
+mediatype: {Boot &#124; Install}|画像の種類を指定します。|
 |/アーキテクチャ: {x86 & #124; ia64 & #124; x64}|イメージのアーキテクチャを指定します。 さまざまなアーキテクチャのさまざまなブート イメージで同じイメージの名前を指定することも可能である、アーキテクチャの値を指定する適切なイメージを削除することにより、します。|
 |\mediaGroup:<Image group name>]|イメージを含むイメージ グループを指定します。 イメージ グループ名が指定されていないサーバーに 1 つだけのイメージ グループが存在する場合は、そのイメージ グループが使用されます。 1 つ以上のイメージ グループが存在する場合は、イメージ グループを指定するこのオプションを使用する必要があります。|
 |[/ファイル名:<File name>]|名前によってイメージを一意に識別できない場合は、このオプションを使用してファイル名を指定する必要があります。|
-## <a name="examples"></a><a name=BKMK_examples></a>例
+## <a name="examples"></a>例
 ブート イメージを削除するには、次のように入力します。
 ```
 wdsutil /remove-Imagmedia:WinPE Boot Imagemediatype:Boot /Architecture:x86
@@ -55,11 +55,11 @@ wdsutil /remove-Imagmedia:Windows Vista with Officemediatype:Install
 ```
 wdsutil /verbose /remove-Imagmedia:Windows Vista with Office /Server:MyWDSServemediatype:InstalmediaGroup:ImageGroup1 /Filename:install.wim
 ```
-## <a name="additional-references"></a>その他の参照情報
-- [コマンドライン構文のポイント](command-line-syntax-key.md)
-[追加イメージのコマンドを使用して](using-the-add-image-command.md)
-[コピー イメージのコマンドを使用して](using-the-copy-image-command.md)
-[/export-image コマンドを使用して](using-the-export-image-command.md)
-[get イメージのコマンドを使用して](using-the-get-image-command.md)
-[置換イメージのコマンドを使用して](using-the-replace-image-command.md)
-[サブコマンド: 画像の設定](subcommand-set-image.md)
+## <a name="additional-references"></a>その他のリファレンス
+- [コマンドライン構文](command-line-syntax-key.md)
+[のキー追加イメージ](using-the-add-image-command.md)
+のコマンドを使用して[コピーイメージ](using-the-copy-image-command.md)
+のコマンドを使用して、イメージの[エクスポート](using-the-export-image-command.md)
+コマンドを使用して[get](using-the-get-image-command.md)
+イメージのコマンドを使用して[置換イメージ](using-the-replace-image-command.md)
+のコマンドを使用して[サブコマンド:](subcommand-set-image.md)イメージの設定

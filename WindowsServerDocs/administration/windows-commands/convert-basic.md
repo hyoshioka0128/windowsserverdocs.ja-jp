@@ -1,6 +1,6 @@
 ---
 title: convert basic
-description: Windows コマンドに関するトピック「ベーシックディスクに変換する」を参照してください。
+description: '[基本の変換] コマンドのリファレンストピックでは、空のダイナミックディスクをベーシックディスクに変換します。'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,22 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8e0f6f5f04373042956d83bc9136c884c268e591
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: e44ecc9f5d18bbe426c63f8854e7c3347f418bb2
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80847315"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720790"
 ---
 # <a name="convert-basic"></a>convert basic
 
-空のダイナミックディスクをベーシックディスクに変換します。
+空のダイナミックディスクをベーシックディスクに変換します。 この操作を成功させるには、ダイナミックディスクを選択する必要があります。 [[ディスクの選択] コマンド](select-disk.md)を使用してダイナミックディスクを選択し、それにフォーカスを移動します。
 
-このコマンドの使用方法については、「[ダイナミックディスクをベーシックディスクに変更](https://go.microsoft.com/fwlink/?LinkId=207048)する方法」 (https://go.microsoft.com/fwlink/?LinkId=207048)を参照してください。
+> [!IMPORTANT]
+> ディスクをベーシック ディスクに変換するためには、そのディスクが空である必要があります。 ディスクを変換する前に、データのバックアップをとり、パーティションまたはボリュームをすべて削除してください。
+
+> [!NOTE]
+> このコマンドの使用方法については、「[ダイナミックディスクをベーシックディスクに戻す](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc755238(v=ws.11))」を参照してください。
 
 ## <a name="syntax"></a>構文
 
@@ -30,25 +34,20 @@ convert basic [noerr]
 
 ### <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
-|---------|-----------|
-|noerr|スクリプト専用です。 エラーが発生しても、エラーが発生しなかったかのように DiskPart はコマンドの処理を続けます。 このパラメーターは、エラー発生すると、DiskPart はエラー コードを生成して終了します。|
+| パラメーター | [説明] |
+| --------- | ----------- |
+| noerr | スクリプト専用です。 エラーが発生しても、エラーが発生しなかったかのように DiskPart はコマンドの処理を続けます。 このパラメーターは、エラー発生すると、DiskPart はエラー コードを生成して終了します。 |
 
-## <a name="remarks"></a>コメント
-
-> [!IMPORTANT]
-> ディスクをベーシック ディスクに変換するためには、そのディスクが空である必要があります。 ディスクを変換する前に、データのバックアップをとり、パーティションまたはボリュームをすべて削除してください。
-
--   この操作を成功させるには、ダイナミックディスクを選択する必要があります。 **[ディスクの選択**] コマンドを使用してダイナミックディスクを選択し、それにフォーカスを移動します。
-
-## <a name="examples"></a><a name=BKMK_examples></a>例
+## <a name="examples"></a>例
 
 選択したダイナミックディスクをベーシックに変換するには、次のように入力します。
+
 ```
 convert basic
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 
+- [convert コマンド](convert.md)

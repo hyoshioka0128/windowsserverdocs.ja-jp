@@ -1,6 +1,6 @@
 ---
 title: bitsadmin setnotifycmdline
-description: '**Bitsadmin setnotifycmdline**の Windows コマンドトピックでは、ジョブがデータの転送を終了したとき、またはジョブが状態に入ったときに実行されるコマンドラインコマンドを設定します。'
+description: Bitsadmin setnotifycmdline コマンドのリファレンストピックでは、ジョブがデータの転送を終了したとき、またはジョブが状態に入ったときに実行されるコマンドラインコマンドを設定します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b268b68cbd355a7fe7f993d678a98f6fcb99f0ab
-ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
+ms.openlocfilehash: b21d7151a5b646a4fe07d073220614f5e3c99539
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81122892"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720129"
 ---
 # <a name="bitsadmin-setnotifycmdline"></a>bitsadmin setnotifycmdline
 
-ジョブがデータの転送を終了したとき、またはジョブが指定された状態に入ったときに実行されるコマンドラインコマンドを設定します。
+ジョブがデータの転送を終了した後、またはジョブが指定された状態になった後に実行されるコマンドラインコマンドを設定します。
 
 > [!NOTE]
 > このコマンドは、BITS 1.2 以前ではサポートされていません。
@@ -31,24 +31,28 @@ bitsadmin /setnotifycmdline <job> <program_name> [program_parameters]
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | 説明 |
+| パラメーター | [説明] |
 | --------- | ----------- |
-| 送信 | ジョブの表示名または GUID。 |
+| ジョブ (job) | ジョブの表示名または GUID。 |
 | program_name | ジョブの完了時に実行するコマンドの名前。 この値は NULL として設定できますが、その場合は*program_parameters*も null に設定する必要があります。 |
 | program_parameters | *Program_name*に渡すパラメーター。 この値は NULL として設定できます。 *Program_parameters*が NULL に設定されていない場合は、 *program_parameters*の最初のパラメーターが*program_name*と一致している必要があります。 |
 
 ## <a name="examples"></a>例
 
-次の例では、 *Mydownloadjob*という名前のジョブが完了した後で notepad.exe を実行するためにサービスによって使用されるコマンドラインコマンドを設定します。
+*Mydownloadjob*という名前のジョブの完了時に notepad.exe を実行するには、次のようにします。
 
 ```
-C:\>bitsadmin /setnotifycmdline myDownloadJob c:\winnt\system32\notepad.exe NULL
+bitsadmin /setnotifycmdline myDownloadJob c:\winnt\system32\notepad.exe NULL
 ```
 
+ソフトウェアライセンス条項のテキストを Notepad.exe に表示するには、myDownloadJob という名前のジョブが完了します。
+
 ```
-C:\>bitsadmin /setnotifycmdline myDownloadJob c:\winnt\system32\notepad.exe notepad c:\eula.txt
+bitsadmin /setnotifycmdline myDownloadJob c:\winnt\system32\notepad.exe notepad c:\eula.txt
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [bitsadmin コマンド](bitsadmin.md)

@@ -7,15 +7,16 @@ ms.technology: storage-health-service
 ms.topic: article
 author: cosmosdarwin
 ms.date: 10/05/2017
-ms.openlocfilehash: 913a596a46720718a165295345cb02e3e2baa1de
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 5fe2f98c89d97325c1f59dc6ba292831e0ffa5ff
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80827565"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720562"
 ---
 # <a name="health-service-faults"></a>ヘルスサービスエラー
-> 適用対象: Windows Server 2019、Windows Server 2016
+
+> 適用先:Windows Server 2019、Windows Server 2016
 
 ## <a name="what-are-faults"></a>障害とは
 
@@ -23,7 +24,7 @@ ms.locfileid: "80827565"
 
 各エラーには、次の5つの重要なフィールドが含まれます。  
 
--   Severity
+-   重大度
 -   問題の説明
 -   問題への対処に推奨される次のステップ
 -   障害が発生したエンティティの識別情報
@@ -42,7 +43,7 @@ Location: Seattle DC, Rack B07, Node 4, Slot 11
  >[!NOTE]
  > 物理的な場所は、障害ドメインの構成から取得されます。 障害ドメインの詳細については、「 [Windows Server 2016 の障害ドメイン](fault-domains.md)」を参照してください。 こうした情報を指定していない場合、スロット番号しか表示されないなどのように、場所フィールドがあまり役に立ちません。  
 
-## <a name="root-cause-analysis"></a>根本原因の分析
+## <a name="root-cause-analysis"></a>根本原因分析
 
 ヘルスサービスは、障害が発生しているエンティティ間で潜在的な因果関係を評価して、根本的に同じ問題が発生した場合に発生する障害を特定し、組み合わせることができます。 影響の連鎖を認識することにより、レポートに記載される分量が絞られます。 たとえば、サーバーがダウンしている場合は、サーバー内のどのドライブも接続できなくなることが予想されます。 そのため、根本原因 (この場合はサーバー) に対して1つの障害のみが発生します。  
 
@@ -69,14 +70,13 @@ Get-FileShare -Name <Name> | Debug-FileShare
 
 これにより、特定のボリュームまたはファイル共有のみに影響するすべてのエラーが返されます。 多くの場合、これらの障害は容量計画、データの回復性、または記憶域のサービス品質や記憶域レプリカなどの機能に関連しています。 
 
-## <a name="usage-in-net-and-c"></a>.NET およびでの使用C#
+## <a name="usage-in-net-and-c"></a>.NET および C での使用#
 
-### <a name="connect"></a>接続
+### <a name="connect"></a>接続する
 
-ヘルスサービスを照会するには、クラスターで**CimSession**を確立する必要があります。 これを行うには、完全な .NET でしか使用できないものが必要になります。つまり、web アプリまたはモバイルアプリから直接この操作を行うことはできません。 これらのコードサンプルでは、このデータアクセス層で最も単純な選択である C\#を使用します。
+ヘルスサービスを照会するには、クラスターで**CimSession**を確立する必要があります。 これを行うには、完全な .NET でしか使用できないものが必要になります。つまり、web アプリまたはモバイルアプリから直接この操作を行うことはできません。 これらのコードサンプルでは\#、このデータアクセス層で最も単純な選択肢である C を使用します。
 
-``` 
-...
+```
 using System.Security;
 using Microsoft.Management.Infrastructure;
 
@@ -105,7 +105,7 @@ public CimSession Connect(string Domain = "...", string Computer = "...", string
 
 **CimSession**を確立したら、クラスターで WINDOWS MANAGEMENT INSTRUMENTATION (WMI) を照会できます。
 
-エラーまたはメトリックを取得するには、いくつかの関連オブジェクトのインスタンスを取得する必要があります。 まず、 **MSFT\_StorageSubSystem**がクラスター上の記憶域スペースダイレクトを表します。 これを使用すると、クラスター内のすべての**msft\_storagenode**およびすべての**msft\_ボリューム**(データボリューム) を取得できます。 最後に、 **MSFT\_StorageHealth**、ヘルスサービス自体も必要になります。
+エラーまたはメトリックを取得するには、いくつかの関連オブジェクトのインスタンスを取得する必要があります。 最初に、クラスター上の記憶域スペースダイレクトを表す**MSFT\_StorageSubSystem** 。 これを使用すると、クラスター内のすべての**msft\_storagenode**情報と、すべての**msft\_ボリューム**(データボリューム) を取得できます。 最後に、 **\_MSFT storagehealth**、ヘルスサービス自体も必要になります。
 
 ```
 CimInstance Cluster;
@@ -138,7 +138,6 @@ public void DiscoverObjects(CimSession Session)
 「[ストレージ管理 API クラス](https://msdn.microsoft.com/library/windows/desktop/hh830612(v=vs.85).aspx)」で説明されているすべての同じプロパティにアクセスできます。
 
 ```
-...
 using System.Diagnostics;
 
 foreach (CimInstance Node in Nodes)
@@ -213,7 +212,7 @@ foreach (CimInstance DiagnoseResult in DiagnoseResults)
 
 エラーを作成、削除、または更新すると、ヘルスサービスによって WMI イベントが生成されます。 これらは、頻繁にポーリングせずにアプリケーションの状態を同期させるために不可欠です。たとえば、電子メール通知を送信するタイミングを決定する場合などに役立ちます。 このサンプルコードでは、これらのイベントをサブスクライブするために、オブザーバーデザインパターンを再度使用します。
 
-まず、 **MSFT\_StorageFaultEvent**イベントにサブスクライブします。
+まず、 **MSFT\_StorageFaultEvent**イベントをサブスクライブします。
 
 ```      
 public void ListenForFaultEvents()
@@ -284,13 +283,13 @@ class FaultsObserver : IObserver
 
 ### <a name="properties-of-faults"></a>エラーのプロパティ
 
-次の表は、fault オブジェクトのいくつかの重要なプロパティを示しています。 完全なスキーマについては、 *storagewmi .mof*の**MSFT\_StorageDiagnoseResult**クラスを調べます。
+次の表は、fault オブジェクトのいくつかの重要なプロパティを示しています。 完全なスキーマでは、 *storagewmi .mof*の**\_MSFT StorageDiagnoseResult**クラスを調べます。
 
-| **"**              | **例**                                                     |
+| **プロパティ**              | **例**                                                     |
 |---------------------------|-----------------------------------------------------------------|
 | FaultId                   | {12345-12345-12345-12345-12345}                                 |
 | FaultType                 | Microsoft. 正常性の種類. Volume. 容量                      |
-| 原因                    | "ボリュームの空き領域が不足しています。"                 |
+| 理由                    | "ボリュームの空き領域が不足しています。"                 |
 | PerceivedSeverity         | 5                                                               |
 | FaultingObjectDescription | Contoso XYZ9000 S.N. 123456789                                  |
 | FaultingObjectLocation    | ラック A06、RU 25、スロット11                                        |
@@ -308,16 +307,16 @@ class FaultsObserver : IObserver
 
 ## <a name="properties-of-fault-events"></a>Fault イベントのプロパティ
 
-次の表は、fault イベントのいくつかの重要なプロパティを示しています。 完全なスキーマについては、 *storagewmi .mof*の**MSFT\_StorageFaultEvent**クラスを調べます。
+次の表は、fault イベントのいくつかの重要なプロパティを示しています。 完全なスキーマでは、 *storagewmi .mof*の**\_MSFT StorageFaultEvent**クラスを調べます。
 
 **ChangeType**は、エラーが作成、削除、または更新されているかどうか、および**FaultId**を示すことに注意してください。 イベントには、影響を受けたエラーのすべてのプロパティも含まれます。
 
-| **"**              | **例**                                                     |
+| **プロパティ**              | **例**                                                     |
 |---------------------------|-----------------------------------------------------------------|
 | ChangeType                | 0                                                               |
 | FaultId                   | {12345-12345-12345-12345-12345}                                 |
 | FaultType                 | Microsoft. 正常性の種類. Volume. 容量                      |
-| 原因                    | "ボリュームの空き領域が不足しています。"                 |
+| 理由                    | "ボリュームの空き領域が不足しています。"                 |
 | PerceivedSeverity         | 5                                                               |
 | FaultingObjectDescription | Contoso XYZ9000 S.N. 123456789                                  |
 | FaultingObjectLocation    | ラック A06、RU 25、スロット11                                        |
@@ -325,7 +324,7 @@ class FaultsObserver : IObserver
 
 **ChangeType**ChangeType = {0, 1, 2} = {"作成"、"削除"、"更新"}。
 
-## <a name="coverage"></a>カバレッジ
+## <a name="coverage"></a>対象範囲
 
 Windows Server 2016 では、ヘルスサービスによって次のエラーカバレッジが提供されます。  
 
@@ -374,7 +373,7 @@ Windows Server 2016 では、ヘルスサービスによって次のエラーカ
 ### <a name="virtual-disk-2"></a>**仮想ディスク (2)**
 
 #### <a name="faulttype-microsofthealthfaulttypevirtualdisksneedsrepair"></a>FaultType: Microsoft. 正常性の種類。仮想ディスクの修復
-* 重大度: 情報
+* 重大度 : 情報
 * 理由: *"このボリュームの一部のデータは完全に回復できません。アクセス可能な状態のままです。 "*
 * RecommendedAction: *"データの回復性を復元しています。"*
 
@@ -390,7 +389,7 @@ Windows Server 2016 では、ヘルスサービスによって次のエラーカ
 * 理由: *"記憶域プールには、推奨される最小予約容量がありません。これにより、ドライブで障害が発生した場合にデータの回復性を復元する機能が制限される可能性があります。 "*
 * RecommendedAction: *"記憶域プールに容量を追加するか、容量を解放します。推奨される最小予約は、デプロイによって異なりますが、約2ドライブの容量に相当します。 "*
 
-### <a name="volume-capacity-2sup1sup"></a>**ボリューム容量 (2)** <sup>1</sup>
+### <a name="volume-capacity-2sup1sup"></a>**ボリューム容量 (2)**<sup>1</sup>
 
 #### <a name="faulttype-microsofthealthfaulttypevolumecapacity"></a>FaultType: Microsoft. 正常性の種類。容量
 * 重要度: 警告
@@ -497,7 +496,7 @@ Windows Server 2016 では、ヘルスサービスによって次のエラーカ
 * 理由: *"ファームウェアの更新の試行に失敗した物理ディスクの数が多すぎるため、ファームウェアのロールアウトが取り消されました。"*
 * RecommendedAction: *"ファームウェアの問題が解決されたら、ファームウェアのロールアウトを再開します。"*
 
-### <a name="storage-qos-3sup2sup"></a>**記憶域 QoS (3)** <sup>2</sup>
+### <a name="storage-qos-3sup2sup"></a>**記憶域 QoS (3)**<sup>2</sup>
 
 #### <a name="faulttype-microsofthealthfaulttypestorqosinsufficientthroughput"></a>FaultType: InsufficientThroughput を実行します。
 * 重要度: 警告
@@ -520,6 +519,6 @@ Windows Server 2016 では、ヘルスサービスによって次のエラーカ
 >[!NOTE]
 > ファン、電源、センサーなどのストレージ格納装置コンポーネントの正常性は、SCSI エンクロージャ サービス (SES) から取得されます。 この情報は、ベンダーから提供されていない場合はヘルス サービスで表示されません。  
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-- [Windows Server 2016 のヘルスサービス](health-service-overview.md)
+- [Windows Server 2016 のヘルス サービス](health-service-overview.md)

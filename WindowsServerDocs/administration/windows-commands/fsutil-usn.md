@@ -9,15 +9,15 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 326390a5b40de46ca932043e9982f84c7758d901
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: d17246b03de20d0bc327af801621a28f406edf63
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80844005"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720081"
 ---
 # <a name="fsutil-usn"></a>Fsutil usn
->適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows 10、Windows Server 2012 R2、Windows 8.1、Windows Server 2012、Windows 8、Windows Server 2008 R2、Windows 7
+> 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows 10、Windows Server 2012 R2、Windows 8.1、Windows Server 2012、Windows 8、Windows Server 2008 R2、Windows 7
 
 Update Sequence Number (USN) 変更ジャーナルを管理します。
 
@@ -35,32 +35,32 @@ fsutil usn [readjournal] [c= <chunk-size> s=<file-size-threshold>] <volumepath>
 
 ### <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
+|パラメーター|[説明]|
 |-------------|---------------|
 |createjournal|USN 変更ジャーナルを作成します。|
-|m =\<MaxSize >|NTFS によって変更ジャーナルに割り当てられる最大サイズをバイト単位で指定します。|
-|a =\<割り当てデルタ >|最後に追加され、変更ジャーナルの先頭から削除されるメモリ割り当てのサイズ (バイト単位) を指定します。|
-|\<VolumePath >|ドライブ文字を指定します (その後にコロンが続きます)。|
+|m =\<MaxSize>|NTFS によって変更ジャーナルに割り当てられる最大サイズをバイト単位で指定します。|
+|a =\<割り当てデルタ>|最後に追加され、変更ジャーナルの先頭から削除されるメモリ割り当てのサイズ (バイト単位) を指定します。|
+|\<VolumePath>|ドライブ文字を指定します (その後にコロンが続きます)。|
 |deletejournal|アクティブな USN 変更ジャーナルを削除または無効にします。 **注意:** 変更ジャーナルを削除すると、ファイルレプリケーションサービス (FRS) とインデックスサービスに影響します。これは、これらのサービスがボリュームの完全な (および時間のかかる) スキャンを実行する必要があるためです。 これは、FRS SYSVOL レプリケーションに悪影響を及ぼし、ボリュームの再スキャン中に、DFS リンク間のレプリケーションを交互に切り替えます。|
 |/d|アクティブな USN 変更ジャーナルを無効にし、変更ジャーナルを無効にしている間に入出力 (i/o) コントロールを返します。|
 |/n|アクティブな USN 変更ジャーナルを無効にし、変更ジャーナルが無効になった後にのみ i/o 制御を返します。|
 |enablerangetracking|ボリュームの USN 書き込み範囲の追跡を有効にします。|
-|c =\<のチャンクサイズ >|ボリューム上で追跡するチャンクサイズを指定します。|
-|s =\<ファイルサイズ-しきい値 >|範囲追跡のファイルサイズのしきい値を指定します。|
+|c =\<チャンクサイズ>|ボリューム上で追跡するチャンクサイズを指定します。|
+|s =\<ファイルサイズ-しきい値>|範囲追跡のファイルサイズのしきい値を指定します。|
 |enumdata|指定した2つの境界間の変更ジャーナルエントリを列挙して一覧表示します。|
-|\<FileRef >|列挙を開始するボリューム上のファイル内の位置を示す序数を指定します。|
-|\<LowUSN >|返されるレコードをフィルター処理するために使用される USN 値の範囲の下限を指定します。 最後の変更ジャーナル USN が*lowusn*および*highusn*メンバーの値以下であるレコードのみが返されます。|
-|\<HighUSN >|返されるファイルをフィルター処理するために使用する USN 値の範囲の上限を指定します。|
+|\<FileRef>|列挙を開始するボリューム上のファイル内の位置を示す序数を指定します。|
+|\<LowUSN>|返されるレコードをフィルター処理するために使用される USN 値の範囲の下限を指定します。 最後の変更ジャーナル USN が*lowusn*および*highusn*メンバーの値以下であるレコードのみが返されます。|
+|\<HighUSN>|返されるファイルをフィルター処理するために使用する USN 値の範囲の上限を指定します。|
 |queryjournal|ボリュームの USN データを照会して、現在の変更ジャーナル、そのレコード、およびその容量に関する情報を収集します。|
 |readdata|ファイルの USN データを読み取ります。|
-|\<ファイル名 >|ファイル名と拡張子を含むファイルへの完全パスを指定します。例: C:\documents\filename.txt|
+|\<ファイル名>|ファイル名と拡張子を含むファイルへの完全パスを指定します。例: C:\documents\filename.txt|
 |readjournal|USN ジャーナル内の USN レコードを読み取ります。|
-|minver =\<number >|返される USN_RECORD の最小メジャーバージョン。 既定値は2です。|
-|maxver =\<number >|返す USN_RECORD の最大メジャーバージョン。 既定値は4です。|
-|startusn =\<USN 番号 >|USN ジャーナルの読み取りを開始する USN。 既定値は 0 です。|
+|minver =\<number>|返される USN_RECORD の最小メジャーバージョン。 既定値は2です。|
+|maxver =\<数値>|返す USN_RECORD の最大メジャーバージョン。 既定値は4です。|
+|startusn =\<USN 番号>|USN ジャーナルの読み取りを開始する USN。 既定値は 0 です。|
 
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>Remarks
 
 -   USN 変更ジャーナルについて
 
@@ -127,7 +127,7 @@ fsutil usn readdata c:\temp\sample.txt
 fsutil usn readjournal startusn=0xF00
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 
 [Fsutil](Fsutil.md)
