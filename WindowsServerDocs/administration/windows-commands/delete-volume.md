@@ -1,6 +1,6 @@
 ---
 title: delete volume
-description: ボリュームの削除に関する Windows コマンドのトピックでは、選択したボリュームを削除します。
+description: ボリュームの削除に関するリファレンストピックでは、選択したボリュームを削除します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f2e958785c278306563999b09c1fecc0fdfa7ecb
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b9a8ae0fc863cec5c1a3f6debccf8201e96badd0
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80846555"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82716688"
 ---
 # <a name="delete-volume"></a>delete volume
 
@@ -28,23 +28,23 @@ delete volume [noerr]
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | 説明 |
+| パラメーター | [説明] |
 | --------- | ----------- |
 | noerr | スクリプト専用です。 エラーが発生しても、エラーが発生しなかったかのように DiskPart はコマンドの処理を続けます。 このパラメーターは、エラー発生すると、DiskPart はエラー コードを生成して終了します。 |
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>Remarks
 
 -   システム ボリューム、ブート ボリューム、またはアクティブなページング ファイルやクラッシュ ダンプ (メモリ ダンプ) を含んでいるボリュームは削除できません。
--   この操作を正常に実行するには、ボリュームを選択する必要があります。 使用して、 **ボリュームを選択して** コマンドのボリュームを選択し、それにフォーカスをします。
+-   この操作を成功させるのには、ボリュームを選択してください。 使用して、 **ボリュームを選択して** コマンドのボリュームを選択し、それにフォーカスをします。
 
-## <a name="examples"></a><a name=BKMK_examples></a>例
+## <a name="examples"></a>例
 
 フォーカスがあるボリュームを削除するには、次のように入力します。
 ```
 delete volume
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

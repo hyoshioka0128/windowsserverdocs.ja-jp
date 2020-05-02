@@ -1,6 +1,6 @@
 ---
 title: break
-description: Windows コマンドに関するトピックでは、シャドウコピーボリュームを VSS から切り離し、通常のボリュームとしてアクセスできるようにする break_2 について説明します。
+description: 中断コマンドのリファレンストピック。 VSS からシャドウコピーボリュームの関連付けを解除し、通常のボリュームとしてアクセスできるようにします。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6683c44c84f4baae5f016f7df62d5bd6591cff70
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 7e8789ab68ecb98d190a79c3f1088aad05b83562
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80848255"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82707782"
 ---
 # <a name="break"></a>break
 
@@ -22,37 +22,30 @@ ms.locfileid: "80848255"
 
 > [!NOTE]
 > このコマンドは、インポート後のハードウェアシャドウコピーにのみ関連します。
-
-このコマンドを使用する方法の例については、[例](#BKMK_examples)を参照してください。
+>
+> 公開されているボリュームは、既定では読み取り専用です。 ボリュームへのアクセスは、シャドウコピーされたボリュームを記録せずに、ハードウェアプロバイダーに直接行われます。
 
 ## <a name="syntax"></a>構文
 
 ```
-break [writable] <SetID>
+break [writable] <setid>
 ```
 
 ### <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
-|---------|-----------|
-|書き込み可能|ボリュームの読み取り/書き込みアクセスを有効にします。|
-|\<SetID >|シャドウコピーセットの ID を指定します。|
+| パラメーター | [説明] |
+| --------- | ----------- |
+| 書き込み可能 | ボリュームの読み取り/書き込みアクセスを有効にします。 |
+| \<setid> | シャドウコピーセットの ID を指定します。 **Load metadata**コマンドによって環境変数として格納されているシャドウコピー ID のエイリアスは、 *SetID*パラメーターで使用できます。 |
 
-## <a name="remarks"></a>コメント
+## <a name="examples"></a>例
 
--   公開されているボリュームは、既定では読み取り専用です。
--   **Load metadata**コマンドによって環境変数として格納されているシャドウコピー ID のエイリアスは、 *SetID*パラメーターで使用できます。
+エイリアス名 Alias1 を使用してシャドウコピーを作成するには、オペレーティングシステムで書き込み可能なボリュームとしてアクセス可能である必要があります。
 
-## <a name="examples"></a><a name=BKMK_examples></a>例
-
-エイリアス名 Alias1 を使用してシャドウコピーを作成し、オペレーティングシステムで書き込み可能なボリュームとしてアクセスできるようにするには、次のように入力します。
 ```
 break writable %Alias1%
 ```
 
-> [!NOTE]
-> ボリュームへのアクセスは、シャドウコピーされたボリュームを記録せずに、ハードウェアプロバイダーに直接行われます。
-
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

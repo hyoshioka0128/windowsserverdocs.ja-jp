@@ -1,6 +1,6 @@
 ---
-title: 削除
-description: パーティションまたはボリュームを削除する Windows コマンドのトピック「削除」を参照してください。
+title: delete
+description: パーティションまたはボリュームを削除する delete のリファレンストピックです。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1c9844a223390e3e825b7255f83a8867dc65297f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: c53d73cea0c9c248f1f7c253f37f91084d92dc40
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80846545"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82716678"
 ---
-# <a name="delete"></a>削除
+# <a name="delete"></a>delete
 
 パーティションまたはボリュームを削除します。 また、ディスクの一覧からダイナミックディスクも削除されます。
 
@@ -30,13 +30,13 @@ delete volume
 
 ### <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
+|パラメーター|[説明]|
 |---------|-----------|
 |[ディスクの削除](delete-disk.md)|ディスクの一覧から不足しているダイナミックディスクを削除します。|
 |[パーティションの削除](delete-partition.md)|パーティションを削除します。|
 |[ボリュームの削除](delete-volume.md)|ボリュームを削除します。|
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

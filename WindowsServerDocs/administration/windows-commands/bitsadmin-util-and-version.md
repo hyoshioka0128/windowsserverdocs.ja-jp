@@ -1,6 +1,6 @@
 ---
-title: bitsadmin util とバージョン
-description: '**Bitsadmin util と version**の Windows コマンドに関するトピックでは、BITS サービスのバージョンが表示されます。'
+title: bitsadmin util および version
+description: Bitsadmin util と version コマンドのリファレンストピックでは、BITS サービスのバージョンが表示されます。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2c2518eb7a8f15d9a592ed9a77dd67a6f8d8afac
-ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
+ms.openlocfilehash: 20c3db6e6fcd5ef3d00287f36c9f9624ab5224dd
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81122473"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82707592"
 ---
-# <a name="bitsadmin-util-and-version"></a>bitsadmin util とバージョン
+# <a name="bitsadmin-util-and-version"></a>bitsadmin util および version
 
 BITS サービスのバージョン (2.0 など) を表示します。
 
@@ -31,18 +31,22 @@ bitsadmin /util /version [/verbose]
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | 説明 |
+| パラメーター | [説明] |
 | --------- | ----------- |
 | /verbose | このスイッチを使用して、BITS 関連の各 DLL のファイルバージョンを表示し、BITS サービスを開始できるかどうかを確認します。|
 
 ## <a name="examples"></a>例
 
-次の例では、BITS サービスのバージョンを示しています。
+BITS サービスのバージョンを表示します。
 
 ```
-C:\>bitsadmin /util /version
+bitsadmin /util /version
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [bitsadmin util コマンド](bitsadmin-util.md)
+
+- [bitsadmin コマンド](bitsadmin.md)

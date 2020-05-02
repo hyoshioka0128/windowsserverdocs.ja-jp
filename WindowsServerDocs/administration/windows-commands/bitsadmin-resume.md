@@ -1,6 +1,6 @@
 ---
 title: bitsadmin resume
-description: '**Bitsadmin resume**の Windows コマンドに関するトピックでは、転送キューで新規または中断されたジョブをアクティブ化します。'
+description: Bitsadmin resume コマンドのリファレンストピック。転送キューで新規または中断されたジョブをアクティブ化します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e81bd80232cd4ec8fbba70c86cd97bb9695680f8
-ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
+ms.openlocfilehash: ba4cd57ddeeb3c35ca0871c2953fd409ddb57e73
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81123079"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82716994"
 ---
 # <a name="bitsadmin-resume"></a>bitsadmin resume
 
-転送キューで新規または中断されたジョブをアクティブにします。
+転送キューで新規または中断されたジョブをアクティブにします。 ジョブを誤って再開した場合、または単にジョブを中断する必要がある場合は、 [bitsadmin suspend](bitsadmin-suspend.md)スイッチを使用してジョブを中断できます。
 
 ## <a name="syntax"></a>構文
 
@@ -28,18 +28,22 @@ bitsadmin /resume <job>
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | 説明 |
+| パラメーター | [説明] |
 | -------------- | -------------- |
-| 送信 | ジョブの表示名または GUID。 |
+| ジョブ (job) | ジョブの表示名または GUID。 |
 
 ## <a name="examples"></a>例
 
-次の例では、 *Mydownloadjob*という名前のジョブを再開します。
+*Mydownloadjob*という名前のジョブを再開するには、次のようにします。
 
 ```
-C:\>bitsadmin /resume myDownloadJob
+bitsadmin /resume myDownloadJob
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [bitsadmin suspend コマンド](bitsadmin-suspend.md)
+
+- [bitsadmin コマンド](bitsadmin.md)

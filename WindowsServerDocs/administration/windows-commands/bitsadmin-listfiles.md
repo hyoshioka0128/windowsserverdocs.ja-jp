@@ -1,6 +1,6 @@
 ---
 title: bitsadmin listfiles
-description: '**Bitsadmin listfiles**の Windows コマンドに関するトピックでは、指定したジョブ内のファイルが一覧表示されます。'
+description: 指定されたジョブ内のファイルを一覧表示する bitsadmin listfiles コマンドのリファレンストピックです。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1af11f7876a3d1cd36aa38c7ac26563c01e81ab5
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 6826c1ec2f624a06d11fedcb8ca9f14d86b7ec27
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850315"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717417"
 ---
 # <a name="bitsadmin-listfiles"></a>bitsadmin listfiles
 
@@ -28,18 +28,20 @@ bitsadmin /listfiles <job>
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | 説明 |
+| パラメーター | [説明] |
 | -------------- | -------------- |
-| 送信 | ジョブの表示名または GUID。 |
+| ジョブ (job) | ジョブの表示名または GUID。 |
 
-## <a name="examples"></a><a name=BKMK_examples></a>例
+## <a name="examples"></a>例
 
-次の例では、 *Mydownloadjob*という名前のジョブのファイルの一覧を取得します。
+*Mydownloadjob*という名前のジョブのファイルの一覧を取得するには、次のようにします。
 
 ```
-C:\>bitsadmin /listfiles myDownloadJob
+bitsadmin /listfiles myDownloadJob
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [bitsadmin コマンド](bitsadmin.md)

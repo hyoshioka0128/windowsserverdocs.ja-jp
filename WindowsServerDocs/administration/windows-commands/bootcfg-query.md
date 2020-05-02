@@ -1,6 +1,6 @@
 ---
 title: bootcfg query
-description: Windows コマンドに関するトピックでは、boot.ini のブートローダーとオペレーティングシステムのセクションエントリを照会して表示します。
+description: Bootcfg クエリコマンドのリファレンストピックでは、boot.ini からブートローダーとオペレーティングシステムのセクションエントリを照会して表示します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,54 +9,67 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1ac80c802b1d30dcf7221f94f761233c6b6fc6b6
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 44c5ce60f55618d16e80d1f1efde3af1cbf6c609
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80848525"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82709333"
 ---
 # <a name="bootcfg-query"></a>bootcfg query
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 Boot.ini の [ブートローダー] セクションと [オペレーティングシステム] セクションのエントリを照会して表示します。
 
 ## <a name="syntax"></a>構文
+
 ```
-bootcfg /query [/s <computer> [/u <Domain>\<User> /p <Password>]]
+bootcfg /query [/s <computer> [/u <domain>\<user> /p <password>]]
 ```
+
 ### <a name="parameters"></a>パラメーター
 
-|        用語         |                                                                                             Definition                                                                                              |
-|---------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|    /s <computer>    |                                         名前またはリモート コンピューターの IP アドレスを指定します (円記号を使用しない)。 既定はローカル コンピュータです。                                          |
-| /u <Domain>\\<User> | <User>または <Domain>\\<User>によって指定されたユーザーのアカウントアクセス許可を使用してコマンドを実行します。 既定値は、コマンドを実行しているコンピューターの現在のログオンユーザーのアクセス許可です。 |
-|    /p <Password>    |                                                        指定されているユーザー アカウントのパスワードを指定します、 **/u** パラメーター。                                                        |
-|         /?          |                                                                                コマンド プロンプトでヘルプを表示します。                                                                                 |
+| パラメーター | [説明] |
+| --------- | ----------- |
+| `/s <computer>` | リモートコンピューターの名前または IP アドレスを指定します (円記号は使用しないでください)。 既定はローカル コンピュータです。 |
+| `/u <domain>\<user>`  | または`<user>` `<domain>\<user>`によって指定されたユーザーのアカウントアクセス許可を使用してコマンドを実行します。 既定値は、コマンドを実行しているコンピューターの現在のログオンユーザーのアクセス許可です。 |
+| `/p <password>` | 指定されているユーザー アカウントのパスワードを指定します、 **/u** パラメーター。 |
+| /? | コマンド プロンプトにヘルプを表示します。 |
 
-##### <a name="remarks"></a>コメント
-- 次に、 **bootcfg/query**の出力の例を示します。
-  ```
-  Boot Loader Settings
-  ----------
-  timeout: 30
-  default: multi(0)disk(0)rdisk(0)partition(1)\WINDOWS
-  Boot Entries
-  ------
-  Boot entry ID:   1
-  Friendly Name:   
-  path:            multi(0)disk(0)rdisk(0)partition(1)\WINDOWS
-  OS Load Options: /fastdetect /debug /debugport=com1:
-  ```
-- **Bootcfg クエリ**出力のブートローダー設定部分では、boot.ini の [ブートローダー] セクションに各エントリが表示されます。
-- **Bootcfg クエリ**出力のブートエントリの部分には、boot.ini の [オペレーティングシステム] セクションで、ブートエントリ ID、フレンドリ名、パス、OS 読み込みオプションの各オペレーティングシステムエントリについて、次の詳細が表示されます。
-  ## <a name="examples"></a><a name=BKMK_examples></a>例
-  次の例は、 **bootcfg/query**コマンドを使用する方法を示しています。
-  ```
-  bootcfg /query
-  bootcfg /query /s srvmain /u maindom\hiropln /p p@ssW23
-  bootcfg /query /u hiropln /p p@ssW23
-  ```
-  ## <a name="additional-references"></a>その他の参照情報
-  - [コマンド ライン構文の記号](command-line-syntax-key.md)
+#### <a name="sample-output"></a>サンプル出力
+
+**Bootcfg/query**コマンドのサンプル出力を次に示します。
+  
+```
+Boot Loader Settings
+----------
+timeout: 30
+default: multi(0)disk(0)rdisk(0)partition(1)\WINDOWS
+Boot Entries
+------
+Boot entry ID:   1
+Friendly Name:
+path: multi(0)disk(0)rdisk(0)partition(1)\WINDOWS
+OS Load Options: /fastdetect /debug /debugport=com1:
+```
+
+- ブート**ローダーの設定**領域には、boot.ini の [ブートローダー] セクションの各エントリが表示されます。
+
+- ブート**エントリ**領域には、boot.ini の [オペレーティングシステム] セクションの各オペレーティングシステムエントリの詳細が表示されます。
+
+## <a name="examples"></a>例
+
+**Bootcfg/query**コマンドを使用するには、次のようにします。
+
+```
+bootcfg /query
+bootcfg /query /s srvmain /u maindom\hiropln /p p@ssW23
+bootcfg /query /u hiropln /p p@ssW23
+```
+
+## <a name="additional-references"></a>その他のリファレンス
+
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [bootcfg コマンド](bootcfg.md)

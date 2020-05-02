@@ -1,6 +1,6 @@
 ---
-title: bitsadmin util と enableanalytics のチャネル
-description: BITS クライアント分析チャネルを有効または無効にする**bitsadmin util および enableanalytics のチャネル**に関する Windows コマンドのトピック。
+title: bitsadmin util および enableanalyticchannel
+description: BITS クライアント分析チャネルを有効または無効にする bitsadmin util と enableanalytics のチャネルコマンドのリファレンストピックです。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f8ff1f835415979036fdc0f8aa637fe693e57d46
-ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
+ms.openlocfilehash: c1f5c8c924d1011928aca6ec1bcebd4d71abb015
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81122685"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82707759"
 ---
-# <a name="bitsadmin-util-and-enableanalyticchannel"></a>bitsadmin util と enableanalytics のチャネル
+# <a name="bitsadmin-util-and-enableanalyticchannel"></a>bitsadmin util および enableanalyticchannel
 
 BITS クライアント分析チャネルを有効または無効にします。
 
@@ -26,18 +26,22 @@ BITS クライアント分析チャネルを有効または無効にします。
 bitsadmin /util /enableanalyticchannel TRUE|FALSE
 ```
 
-| パラメーター | 説明 |
+| パラメーター | [説明] |
 | --------- | ---------- |
 | TRUE または FALSE | **TRUE**を指定すると、指定したファイルのコンテンツの検証が有効になり、 **FALSE**の場合は無効になります。 |
 
 ## <a name="examples"></a>例
 
-次の例では、BITS クライアント分析チャネルを有効にします。
+BITS クライアントの分析チャネルをオンまたはオフにします。
 
 ```
-C:\>bitsadmin /util / enableanalyticchannel TRUE
+bitsadmin /util / enableanalyticchannel TRUE
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [bitsadmin util コマンド](bitsadmin-util.md)
+
+- [bitsadmin コマンド](bitsadmin.md)

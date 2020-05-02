@@ -1,6 +1,6 @@
 ---
 title: bitsadmin list
-description: '**Bitsadmin list**の Windows コマンドに関するトピックでは、現在のユーザーが所有している転送ジョブの一覧を示します。'
+description: Bitsadmin list コマンドのリファレンストピック。現在のユーザーが所有している転送ジョブの一覧を表示します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1883da7bfa71a41952f6f67e25eca4dbbdd3353c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 262589293a147cc1bae98da8fdca047c5f914094
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850325"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717430"
 ---
 # <a name="bitsadmin-list"></a>bitsadmin list
 
@@ -28,19 +28,21 @@ bitsadmin /list [/allusers][/verbose]
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | 説明 |
+| パラメーター | [説明] |
 | -------------- | -------------- |
-| /allusers | 省略可。 すべてのユーザーのジョブを一覧表示します。 このパラメーターを使用するには、管理者特権が必要です。 |
-| /verbose | 省略可。 各ジョブの詳細情報を提供します。 |
+| /allusers | 任意。 すべてのユーザーのジョブを一覧表示します。 このパラメーターを使用するには、管理者特権が必要です。 |
+| /verbose | 任意。 各ジョブの詳細情報を提供します。 |
 
-## <a name="examples"></a><a name=BKMK_examples></a>例
+## <a name="examples"></a>例
 
-次の例では、現在のユーザーが所有しているジョブに関する情報を取得します。
+現在のユーザーが所有しているジョブに関する情報を取得します。
 
 ```
-C:\>bitsadmin /list
+bitsadmin /list
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [bitsadmin コマンド](bitsadmin.md)

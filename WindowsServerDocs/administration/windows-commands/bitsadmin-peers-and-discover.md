@@ -1,6 +1,6 @@
 ---
-title: bitsadmin ピアと検出
-description: '**Bitsadmin ピア**と**Discover**の Windows コマンドに関するトピックでは、ピアを再び検出します。'
+title: bitsadmin peers および discover
+description: ピアを再び検出する bitsadmin ピアと discover コマンドのリファレンストピックです。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1f6f25ed65f58c12374c43953a0f6276c20b1a06
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 094580bcf27b0968ebfab2d064a4a74dc8358a74
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850015"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717166"
 ---
-# <a name="bitsadmin-peers-and-discover"></a>bitsadmin ピアと検出
+# <a name="bitsadmin-peers-and-discover"></a>bitsadmin peers および discover
 
 ピアを再び検出します。
 
@@ -26,14 +26,18 @@ ms.locfileid: "80850015"
 bitsadmin /peers /discover
 ```
 
-## <a name="examples"></a><a name=BKMK_examples></a>例
+## <a name="examples"></a>例
 
-次の例では、ピアを検出します。
+ピアを再び検出するには:
 
 ```
-C:\>bitsadmin /peers /discover
+bitsadmin /peers /discover
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [bitsadmin コマンド](bitsadmin.md)
+
+- [bitsadmin ピアコマンド](bitsadmin-peers.md)

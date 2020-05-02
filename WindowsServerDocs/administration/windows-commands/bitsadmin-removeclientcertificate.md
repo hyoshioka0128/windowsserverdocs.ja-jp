@@ -1,6 +1,6 @@
 ---
 title: bitsadmin removeclientcertificate
-description: '**Bitsadmin removeclientcertificate**の Windows コマンドに関するトピック。このトピックでは、クライアント証明書をジョブから削除します。'
+description: Bitsadmin removeclientcertificate コマンドのリファレンストピックで、ジョブからクライアント証明書を削除します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 312226b73b91385436e15c4afbb49df161258768
-ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
+ms.openlocfilehash: 513830f6048f78aa528fa22cb590571e718452c2
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81123109"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717071"
 ---
 # <a name="bitsadmin-removeclientcertificate"></a>bitsadmin removeclientcertificate
 
@@ -28,18 +28,20 @@ bitsadmin /removeclientcertificate <job>
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | 説明 |
+| パラメーター | [説明] |
 | -------------- | -------------- |
-| 送信 | ジョブの表示名または GUID。 |
+| ジョブ (job) | ジョブの表示名または GUID。 |
 
 ## <a name="examples"></a>例
 
-次の例では、 *Mydownloadjob*という名前のジョブからクライアント証明書を削除します。
+*Mydownloadjob*という名前のジョブからクライアント証明書を削除するには、次のようにします。
 
 ```
-C:\>bitsadmin /removeclientcertificate myDownloadJob 
+bitsadmin /removeclientcertificate myDownloadJob
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [bitsadmin コマンド](bitsadmin.md)
