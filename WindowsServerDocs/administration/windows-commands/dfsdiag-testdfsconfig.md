@@ -1,6 +1,6 @@
 ---
 title: dfsdiag TestDFSConfig
-description: DFS (分散ファイルシステム) 名前空間の構成をチェックする、dfsdiag TestDFSConfig の Windows コマンドのトピック。
+description: 分散ファイルシステム (DFS) 名前空間の構成をチェックする、dfsdiag TestDFSConfig のリファレンストピック。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ffb75ba26b4ed90dbf5c8bfda80f4a81f986e46a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 057b0662fddb7148837be16380d190cdb37382c5
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80846335"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719587"
 ---
 # <a name="dfsdiag-testdfsconfig"></a>dfsdiag TestDFSConfig
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 次のアクションを実行して、分散ファイルシステム (DFS) 名前空間の構成を確認します。  
   
@@ -42,17 +42,17 @@ dfsdiag /TestDFSConfig /DFSRoot:<namespace>
   
 #### <a name="parameters"></a>パラメーター  
   
-|       パラメーター       |               説明               |
+|       パラメーター       |               [説明]               |
 |-----------------------|-----------------------------------------|
 | /Dfs ルート:`<namespace>` | 診断する名前空間 (DFS ルート)。 |
   
-## <a name="examples"></a><a name=BKMK_Examples></a>例  
+## <a name="examples"></a>例  
   
 ```  
 dfsdiag /TestDFSConfig /DFSRoot:\\Contoso.com\MyNamespace  
 ```  
   
-## <a name="additional-references"></a>その他の参照情報  
+## <a name="additional-references"></a>その他のリファレンス  
   
 -   - [コマンド ライン構文の記号](command-line-syntax-key.md)  
   

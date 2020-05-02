@@ -1,6 +1,6 @@
 ---
 title: diskperf
-description: Windows 2000 を実行しているコンピューターで物理ディスクまたは論理ディスクのパフォーマンスカウンターをリモートで有効または無効にするために使用できる、diskperf の Windows コマンドに関するトピック。
+description: Windows 2000 を実行しているコンピューターで物理ディスクまたは論理ディスクのパフォーマンスカウンターをリモートで有効または無効にするために使用できる、diskperf のリファレンストピックです。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1b07471c051d57d0279e4fd8b38afdc4acdc4069
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: c8f505d924ee1de311f2f2736ff65be844c3f2ea
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80845465"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719446"
 ---
 # <a name="diskperf"></a>diskperf
 
@@ -30,13 +30,13 @@ diskperf [-Y[D|V] | -N[D|V]] [\\computername]
 
 ## <a name="options"></a>オプション
 
-|オプション|説明|
+|オプション|[説明]|
 |------|-----------|
 |-?|状況依存のヘルプを表示します。|
-|-Y|コンピューターの再起動時に、すべてのディスクパフォーマンスカウンターを開始します。|
+|-y|コンピューターの再起動時に、すべてのディスクパフォーマンスカウンターを開始します。|
 |-YD|コンピューターの再起動時に、物理ドライブのディスクパフォーマンスカウンターを有効にします。|
 |-YV|コンピューターの再起動時に、論理ドライブまたは記憶域ボリュームのディスクパフォーマンスカウンターを有効にします。|
 |-N|コンピューターの再起動時に、すべてのディスクパフォーマンスカウンターを無効にします。|
 |-ND|コンピューターの再起動時に、物理ドライブのディスクパフォーマンスカウンターを無効にします。|
 |-NV|コンピューターの再起動時に、論理ドライブまたは記憶域ボリュームのディスクパフォーマンスカウンターを無効にします。|
-|\\\\ *\<computername >*|ディスクパフォーマンスカウンターを有効または無効にするコンピューターの名前を指定します。|
+|\\\\*\<computername>*|ディスクパフォーマンスカウンターを有効または無効にするコンピューターの名前を指定します。|

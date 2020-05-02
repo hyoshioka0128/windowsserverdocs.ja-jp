@@ -1,6 +1,6 @@
 ---
 title: bitsadmin sethttpmethod
-description: '**Bitsadmin sethttpmethod**の Windows コマンドに関するトピックでは、使用する HTTP 動詞を設定しています。'
+description: 使用する HTTP 動詞を設定する bitsadmin sethttpmethod コマンドのリファレンストピックです。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -8,12 +8,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/01/2019
-ms.openlocfilehash: d349dcad7bdf6a6fc566ed961c3160836d7f49da
-ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
+ms.openlocfilehash: daf1c23565bc4f398fd29e51aaaeef23b3b0d018
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81122964"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719354"
 ---
 # <a name="bitsadmin-sethttpmethod"></a>bitsadmin sethttpmethod
 
@@ -27,11 +27,13 @@ bitsadmin /sethttpmethod <job> <httpmethod>
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | 説明 |
+| パラメーター | [説明] |
 | --------- | ----------- |
-| 送信 | ジョブの表示名または GUID。 |
+| ジョブ (job) | ジョブの表示名または GUID。 |
 | httpmethod | 使用する HTTP 動詞。 使用可能な動詞の詳細については、「[メソッドの定義](https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html)」を参照してください。 |
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [bitsadmin コマンド](bitsadmin.md)

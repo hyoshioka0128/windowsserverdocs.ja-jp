@@ -1,6 +1,6 @@
 ---
 title: bdehdcfg restart
-description: '**Bdehdcfg restart**の Windows コマンドに関するトピックでは、ドライブの準備が完了した後にコンピューターを再起動する必要があることを bdehdcfg に指示しています。'
+description: Bdehdcfg restart コマンドのリファレンストピック。ドライブの準備が完了した後にコンピューターを再起動する必要があることを bdehdcfg に伝えます。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,41 +9,37 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9ae6f8d31c09feddf8f994c28d34e4e1b08cc322
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 684a6a24fe78c0a23ba954981121c7bd99ac56fb
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851035"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82718624"
 ---
 # <a name="bdehdcfg-restart"></a>bdehdcfg: 再起動
 
-ドライブの準備が完了した後にコンピューターを再起動する必要があることを Bdehdcfg コマンドラインツールに通知します。 このコマンドを使用する方法の例については、「[例](#BKMK_Examples)」を参照してください。
+ドライブの準備が完了した後にコンピューターを再起動する必要があることを bdehdcfg コマンドラインツールに通知します。 他のユーザーがコンピューターにログオンしていて、 **quiet**コマンドが指定されていない場合は、コンピューターを再起動するかどうかを確認するメッセージが表示されます。
 
 ## <a name="syntax"></a>構文
 
 ```
-bdehdcfg -target {default|unallocated|<DriveLetter> shrink|<DriveLetter> merge} -restart
+bdehdcfg -target {default|unallocated|<drive_letter> shrink|<drive_letter> merge} -restart
 ```
 
 #### <a name="parameters"></a>パラメーター
 
-このコマンドは、追加のパラメーターを受け取りません。
+このコマンドには追加のパラメーターはありません。
 
-## <a name="remarks"></a>コメント
+## <a name="examples"></a>例
 
-他のユーザーがコンピューターにログオンしていて、 **quiet**コマンドが指定されていない場合は、コンピューターを再起動するかどうかを確認するプロンプトが表示されます。
-
-## <a name="examples"></a><a name="BKMK_Examples"></a>例
-
-次の例は、 **restart**コマンドの使用方法を示しています。
+**Restart**コマンドを使用するには:
 
 ```
 bdehdcfg -target default -restart
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 
-- [Bdehdcfg](bdehdcfg.md)
+- [bdehdcfg](bdehdcfg.md)

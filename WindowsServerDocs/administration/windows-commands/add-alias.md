@@ -1,6 +1,6 @@
 ---
 title: エイリアスの追加
-description: エイリアスの**追加**に関する Windows コマンドに関するトピック。別名環境に別名を追加します。
+description: エイリアスの追加コマンドのリファレンストピック。別名環境に別名を追加します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ebffc1504f502711dab30f6f9b120ad20e64ae9d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 807981c3581eea328291f2389e08065edbd280d3
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851365"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719029"
 ---
 # <a name="add-alias"></a>エイリアスの追加
 
-エイリアスをエイリアス環境に追加します。 パラメーターを指定せずに使用する場合、**エイリアスの追加**コマンドプロンプトでヘルプを表示します。
-
-このコマンドを使用する方法の例については、[例](#BKMK_examples)を参照してください。
+エイリアスをエイリアス環境に追加します。 パラメーターを指定せずに使用する場合、**エイリアスの追加**コマンドプロンプトでヘルプを表示します。 エイリアスはメタデータファイルに保存され、**メタデータの読み込み**コマンドを使用して読み込まれます。
 
 ## <a name="syntax"></a>構文
 
@@ -30,17 +28,13 @@ add alias <AliasName> <AliasValue>
 
 ### <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
-|---------|-----------|
-|`<AliasName>`|エイリアスの名前を指定します。|
-|`<AliasValue>`|エイリアスの値を指定します。|
-|`/?`|コマンド プロンプトでヘルプを表示します。|
+| パラメーター | [説明] |
+| --------- | ----------- |
+| `<AliasName>` | エイリアスの名前を指定します。 |
+| `<AliasValue>` | エイリアスの値を指定します。 |
+| `/?` | コマンド プロンプトにヘルプを表示します。 |
 
-## <a name="remarks"></a>コメント
-
--   エイリアスはメタデータファイルに保存され、**メタデータの読み込み**コマンドを使用して読み込まれます。
-
-## <a name="examples"></a><a name=BKMK_examples></a>例
+## <a name="examples"></a>例
 
 エイリアスを含むすべての影を一覧表示するには、次のように入力します。
 
@@ -67,6 +61,8 @@ add alias System1 %VSS_SHADOW_1%
 add alias System1 {ff47165a-1946-4a0c-b7f4-80f46a309278}
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [メタデータの読み込みコマンド](load-metadata.md)

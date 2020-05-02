@@ -1,6 +1,6 @@
 ---
 title: bdehdcfg newdriveletter
-description: '**Bdehdcfg newdriveletter**の Windows コマンドに関するトピックでは、システムドライブとして使用されるドライブの部分に新しいドライブ文字を割り当てます。'
+description: Bdehdcfg newdriveletter コマンドのリファレンストピック。これにより、システムドライブとして使用されるドライブの部分に新しいドライブ文字が割り当てられます。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,43 +9,39 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4a8757e7d0684912525817708fbe34953b049582
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: da09ae1469c6fc8370e6bd0f2f7a8f3efd8dc4f0
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851055"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82718663"
 ---
 # <a name="bdehdcfg-newdriveletter"></a>bdehdcfg: newdriveletter
 
-システムドライブとして使用されるドライブの部分に新しいドライブ文字を割り当てます。 このコマンドを使用する方法の例については、「[例](#BKMK_Examples)」を参照してください。
+システムドライブとして使用されるドライブの部分に新しいドライブ文字を割り当てます。 ベストプラクティスとして、システムドライブにドライブ文字を割り当てないことをお勧めします。
 
 ## <a name="syntax"></a>構文
 
 ```
-bdehdcfg -target {default|unallocated|<DriveLetter> shrink|<DriveLetter> merge} -newdriveletter <DriveLetter>
+bdehdcfg -target {default|unallocated|<drive_letter> shrink|<drive_letter> merge} -newdriveletter <drive_letter>
 ```
 
 #### <a name="parameters"></a>パラメーター
 
-| パラメーター | 説明 |
+| パラメーター | [説明] |
 | ---------| ----------- |
-|`<DriveLetter>`|指定されたターゲットドライブに割り当てられるドライブ文字を定義します。|
+| `<drive_letter>` | 指定されたターゲットドライブに割り当てられるドライブ文字を定義します。 |
 
-## <a name="remarks"></a>コメント
+## <a name="examples"></a>例
 
-ベストプラクティスとして、システムドライブにドライブ文字を割り当てないことをお勧めします。
-
-## <a name="examples"></a><a name="BKMK_Examples"></a>例
-
-次の例は、ドライブ文字 P が割り当てられている既定のドライブを示しています。
+ドライブ文字`P`を既定のドライブに割り当てるには、次のようにします。
 
 ```
 bdehdcfg -target default -newdriveletter P:
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 
-- [Bdehdcfg](bdehdcfg.md)
+- [bdehdcfg](bdehdcfg.md)

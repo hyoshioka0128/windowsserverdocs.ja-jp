@@ -1,6 +1,6 @@
 ---
 title: diskcomp
-description: Windows コマンドに関するトピックでは、2つのフロッピーディスクの内容を比較しています。
+description: 2つのフロッピーディスクの内容を比較する、「いいね!」を参照してください。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,17 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e36e644616e25659c1a2a5ca684e975fd06fc19f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: e1b15e9b6669a22ac95693e635bae1642c307e09
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80845555"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719483"
 ---
 # <a name="diskcomp"></a>diskcomp
 
 2つのフロッピーディスクの内容を比較します。 パラメーターを指定せず**に使用**する場合は、現在のドライブを使用して両方のディスクを比較します。
 
-このコマンドを使用する方法の例については、[例](#BKMK_examples)を参照してください。
 
 ## <a name="syntax"></a>構文
 
@@ -30,13 +29,13 @@ diskcomp [<Drive1>: [<Drive2>:]]
 
 ### <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
+|パラメーター|[説明]|
 |---------|-----------|
-|\<Drive1 >|フロッピーディスクの1つを含むドライブを指定します。|
-|\<Drive2 >|他のフロッピーディスクを含むドライブを指定します。|
-|/?|コマンド プロンプトでヘルプを表示します。|
+|\<Drive1>|フロッピーディスクの1つを含むドライブを指定します。|
+|\<Drive2>|他のフロッピーディスクを含むドライブを指定します。|
+|/?|コマンド プロンプトにヘルプを表示します。|
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>Remarks
 
 - ディスクの使用
 
@@ -94,7 +93,7 @@ diskcomp [<Drive1>: [<Drive2>:]]
 
   次の表では、各終了コードについて説明します。  
 
-  |終了コード|説明|
+  |終了コード|[説明]|
   |---------|-----------|
   |0|ディスクが同じです|
   |1|相違点が見つかりました|
@@ -103,7 +102,7 @@ diskcomp [<Drive1>: [<Drive2>:]]
 
   **によって**返される終了コードを処理するには、バッチプログラムの**if**コマンドラインで ERRORLEVEL 環境変数を使用します。
 
-## <a name="examples"></a><a name=BKMK_examples></a>例
+## <a name="examples"></a>例
 
 コンピューターにフロッピーディスクドライブが1つしかない場合 (ドライブ A など)、2つのディスクを比較するには、次のように入力します。
 ```
@@ -111,7 +110,7 @@ diskcomp a: a:
 ```
 必要に応じて、各ディスクを挿入するように**求められ**ます。
 
-次の例では、 **if**コマンドラインで ERRORLEVEL 環境変数を使用するバッチプログラム**で、使用する終了コード**を処理する方法を示します。
+**If**コマンドラインで ERRORLEVEL 環境変数を使用するバッチプログラムで、次のよう**な終了コードを処理**する方法を説明します。
 ```
 rem Checkout.bat compares the disks in drive A and B 
 echo off 
@@ -138,6 +137,6 @@ goto exit
 :exit
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

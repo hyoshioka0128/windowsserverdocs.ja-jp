@@ -1,6 +1,6 @@
 ---
 title: add
-description: '**[追加]** の Windows コマンドトピックでは、シャドウコピーするボリュームのセットにボリュームを追加したり、エイリアス環境に別名を追加したりします。'
+description: シャドウコピーするボリュームのセットにボリュームを追加するか、エイリアス環境にエイリアスを追加する [追加] コマンドの参照トピック。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9895082cc10223fd08cff6916c20c3af5613e947
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 9b621a3061c4e3366085c5cc44f91f26dd33d4e3
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851345"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719007"
 ---
 # <a name="add"></a>add
 
@@ -23,25 +23,23 @@ ms.locfileid: "80851345"
 > [!NOTE]
 > エイリアスは、シャドウコピーが作成されるまでエイリアス環境に追加されません。 すぐに必要なエイリアスを追加するには、 **add alias**を使用します。
 
-このコマンドを使用する方法の例については、[例](#BKMK_examples)を参照してください。
-
 ## <a name="syntax"></a>構文
 
 ```
-add 
-add volume <Volume> [provider <ProviderID>] 
-add alias <AliasName> <AliasValue>
+add
+add volume <volume> [provider <providerid>]
+add alias <aliasname> <aliasvalue>
 ```
 
-## <a name="add-subcommands"></a>サブコマンドの追加
+### <a name="parameters"></a>パラメーター
 
-| サブコマンド | 説明 |
+| パラメーター | [説明] |
 | ---------- | ----------- |
-| ボリューム●ぼりゅーむ○ | シャドウコピーするボリュームのセットであるボリュームをシャドウコピーセットに追加します。 「構文とパラメーターの[ボリュームの追加](add-volume.md)」を参照してください。 |
-| 別名 | 指定された名前と値をエイリアス環境に追加します。 「構文とパラメーターの[別名の追加](add-alias.md)」を参照してください。 |
-| `/?` | コマンドラインでヘルプを表示します。 |
+| ボリューム | シャドウコピーするボリュームのセットであるボリュームをシャドウコピーセットに追加します。 「構文とパラメーターの[ボリュームの追加](add-volume.md)」を参照してください。 |
+| alias | 指定された名前と値をエイリアス環境に追加します。 「構文とパラメーターの[別名の追加](add-alias.md)」を参照してください。 |
+| /? | コマンドラインでヘルプを表示します。 |
 
-## <a name="examples"></a><a name=BKMK_examples></a>例
+## <a name="examples"></a>例
 
 追加されたボリュームと現在の環境内にある別名を表示するには、次のように入力します。
 
@@ -57,6 +55,6 @@ Volume c: alias System1    GUID \\?\Volume{XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX}
 No Diskshadow aliases in the environment.
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

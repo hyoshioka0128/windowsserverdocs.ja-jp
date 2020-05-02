@@ -1,6 +1,6 @@
 ---
 title: dfsdiag TestDCs
-description: Dfsdiag TestDCs の Windows コマンドに関するトピック。指定されたドメインのドメインコントローラーの構成を確認します。
+description: 指定されたドメイン内のドメインコントローラーの構成を確認する、dfsdiag TestDCs のリファレンストピックです。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 092ce3710eb6d209f596683bd4ad054dadd11aa3
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 6ac7fe1a7bae6a7b3dab9004b6212b7d93774ade
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80846321"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719593"
 ---
 # <a name="dfsdiag-testdcs"></a>dfsdiag TestDCs
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 指定されたドメイン内の各ドメインコントローラーで次のテストを実行して、ドメインコントローラーの構成を確認します。  
   
@@ -36,22 +36,22 @@ dfsdiag /TestDCs [/Domain:<Domain name>]
   
 #### <a name="parameters"></a>パラメーター  
   
-|パラメーター|説明|  
+|パラメーター|[説明]|  
 |-------|--------|  
-|/Domain:`<domain_name>`|確認するドメイン。|  
+|領域`<domain_name>`|確認するドメイン。|  
   
-## <a name="remarks"></a>コメント  
+## <a name="remarks"></a>Remarks  
 
 /Domain は省略可能なパラメーターです。 既定値は、ローカルホストが参加しているローカルドメインです。  
   
-## <a name="examples"></a><a name=BKMK_Examples></a>例  
+## <a name="examples"></a>例  
 Contoso.com ドメイン内のドメインコントローラーの構成を確認するには、次のように入力します。  
   
 ```  
 dfsdiag /TestDCs /Domain:Contoso.com  
 ```  
   
-## <a name="additional-references"></a>その他の参照情報  
+## <a name="additional-references"></a>その他のリファレンス  
   
 -   - [コマンド ライン構文の記号](command-line-syntax-key.md)  
   

@@ -1,6 +1,6 @@
 ---
 title: bitsadmin setdisplayname
-description: '**Bitsadmin setdisplayname**の Windows コマンドに関するトピックでは、指定されたジョブの表示名を設定します。'
+description: Bitsadmin setdisplayname コマンドのリファレンストピックでは、指定されたジョブの表示名を設定します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0b1086903dd130392800f325c451bb4750fbf8fa
-ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
+ms.openlocfilehash: 382cb2f20f0374c2d2787c4c3d88670b4f7260cd
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81123000"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719387"
 ---
 # <a name="bitsadmin-setdisplayname"></a>bitsadmin setdisplayname
 
@@ -28,19 +28,21 @@ bitsadmin /setdisplayname <job> <display_name>
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | 説明 |
+| パラメーター | [説明] |
 | --------- | ----------- |
-| 送信 | ジョブの表示名または GUID。 |
+| ジョブ (job) | ジョブの表示名または GUID。 |
 | display_name | 特定のジョブの表示名として使用されるテキスト。 |
 
 ## <a name="examples"></a>例
 
-次の例では、ジョブの表示名を*Mydownloadjob*に設定します。
+ジョブの表示名を*Mydownloadjob*に設定するには、次のようにします。
 
 ```
-C:\>bitsadmin /setdisplayname myDownloadJob
+bitsadmin /setdisplayname myDownloadJob
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [bitsadmin コマンド](bitsadmin.md)

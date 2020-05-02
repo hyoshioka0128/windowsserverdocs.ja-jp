@@ -1,6 +1,6 @@
 ---
 title: dfsdiag TestDFSIntegrity
-description: DFS (分散ファイルシステム) 名前空間の整合性をチェックする、 **dfsdiag TestDFSIntegrity**の Windows コマンドに関するトピック。
+description: 分散ファイルシステム (DFS) 名前空間の整合性をチェックする**dfsdiag TestDFSIntegrity**のリファレンストピックです。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 714b79369898338a4e4a6e4fad8487709ab4fc60
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 21aa6ef3d7d4a7b4a9c64fc51aec77f49f1e0a0c
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80846275"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719576"
 ---
 # <a name="dfsdiag-testdfsintegrity"></a>dfsdiag TestDFSIntegrity
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 次のテストを実行して、分散ファイルシステム (DFS) 名前空間の整合性をチェックします。
 
@@ -36,19 +36,19 @@ dfsdiag /TestDFSIntegrity /DFSRoot: <DFS root path> [/Recurse] [/Full]
 
 #### <a name="parameters"></a>パラメーター
 
-| パラメーター | 説明 |
+| パラメーター | [説明] |
 |-------|--------|
-| /Dfs ルート: `<DFS root path>`| 診断する DFS 名前空間。 |
+| /Dfs ルート:`<DFS root path>`| 診断する DFS 名前空間。 |
 | /Recurse | 名前空間の interlinks を含むテストを実行します。 |
 | /Full | すべてのフォルダーターゲットで、共有と NTFS Acl およびクライアント側の構成の整合性を確認します。 また、online プロパティが設定されていることを確認します。 |
 
-## <a name="examples"></a><a name=BKMK_Examples></a>例
+## <a name="examples"></a>例
 
 ```
 dfsdiag /TestDFSIntegrity /DFSRoot:\\Contoso.com\MyNamespace /Recurse /Full
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 -   - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

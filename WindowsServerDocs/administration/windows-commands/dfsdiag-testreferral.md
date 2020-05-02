@@ -1,6 +1,6 @@
 ---
 title: dfsdiag TestReferral
-description: DFS (分散ファイルシステム) の参照を確認する、dfsdiag TestReferral の Windows コマンドに関するトピック。
+description: 分散ファイルシステム (DFS) の参照を確認する、dfsdiag TestReferral のリファレンストピックです。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d5c0a75d557d816ac9e19a1e22b3273195b93f53
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 6b4c616181d367a8a95efe6484f74af0ff88cc5f
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80846250"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719567"
 ---
 # <a name="dfsdiag-testreferral"></a>dfsdiag TestReferral
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 次のテストを実行して、分散ファイルシステム (DFS) の参照を確認します。
 
@@ -40,12 +40,12 @@ dfsdiag /TestReferral /DFSpath:<DFS path for getting referrals> [/Full]
 
 #### <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
+|パラメーター|[説明]|
 |-------|--------|
-| /DFSpath:<path for getting referrals>|この DFS パスは、次のいずれかになります。<p>-   \(blank\): 信頼されたドメインをテストします。<br />-   \\\\ドメイン: ドメインコントローラーの紹介。<br />-   \\\\ドメイン\\SYSvol: SYSvol 参照。<br />-   \\\\NETLOGON: NETLOGON の紹介に \\Doma です。<br />-   \\\\<Domain or server>\\<Namespace Root>: 名前空間のルート参照。<br />-   \\\\<Domain or server>\\<Namespace root>\\<DFS folder>: DFS フォルダー \(リンク\) 参照します。|
-|/Full|ドメインおよびルートの参照にのみ適用されます。 レジストリと active directory ドメインサービス \(AD DS\)間のサイトの関連付け情報の整合性を確認します。|
+| /DFSpath:<path for getting referrals>|この DFS パスは、次のいずれかになります。<p>-   \(blank\): 信頼されたドメインをテストします。<br />-   \\\\ドメイン: ドメインコントローラーの紹介。<br />-   \\\\ドメイン\\SYSvol: sysvol 参照。<br />-   \\\\Netlogon の doma: NETLOGON の\\紹介。<br />-   \\\\<Domain or server>\\<Namespace Root>: 名前空間のルート参照。<br />-   \\\\<Domain or server>\\<Namespace root>\\<DFS folder>: DFS フォルダー \(リンク\)の紹介。|
+|/Full|ドメインおよびルートの参照にのみ適用されます。 レジストリと active directory ドメインサービス\(AD DS\)間のサイトの関連付け情報の整合性を確認します。|
 
-## <a name="examples"></a><a name=BKMK_Examples></a>例
+## <a name="examples"></a>例
 
 ```
 dfsdiag /TestReferral /DFSpath:\\Contoso.com\MyNamespace
@@ -55,7 +55,7 @@ dfsdiag /TestReferral /DFSpath:\\Contoso.com\MyNamespace
 dfsdiag /TestReferral /DFSpath:
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 -   - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

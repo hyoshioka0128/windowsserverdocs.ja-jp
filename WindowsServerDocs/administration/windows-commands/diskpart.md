@@ -1,21 +1,21 @@
 ---
 title: DiskPart
-description: '**DiskPart**の Windows コマンドに関するトピック。コンピューターのドライブを管理するのに役立ちます。'
+description: コンピューターのドライブの管理に役立つ**DiskPart**のリファレンストピックです。
 ms.prod: windows-server
 ms.technology: storage
 author: jasongerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: eb2921d8da4a4a29c4f700107ef5b6d7bfb41481
-ms.sourcegitcommit: 141f2d83f70cb467eee59191197cdb9446d8ef31
+ms.openlocfilehash: f127ff4ef1c2d143c956069d1ab3788382e70cc3
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81122530"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719456"
 ---
 # <a name="diskpart"></a>DiskPart
 
->適用対象: Windows 10、Windows 8.1、Windows 8、Windows 7、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、windows server 2008 R2、Windows Server 2008
+> 適用対象: Windows 10、Windows 8.1、Windows 8、Windows 7、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、windows server 2008 R2、Windows Server 2008
 
 DiskPart コマンドを使用すると、コンピューターのドライブ (ディスク、パーティション、ボリューム、または仮想ハードディスク) を管理できます。
 
@@ -56,51 +56,51 @@ diskpart
 
 Diskpart コマンドインタープリターから次のコマンドを実行できます。
 
-| コマンド | 説明 |
+| command | 説明 |
 | ------- | ----------- |
-| [Active](active.md) | フォーカスがあるディスクのパーティションをアクティブとしてマークします。 |
-| [[追加]](add.md) | フォーカスのあるシンプル ボリュームを、指定されたディスクにミラー化します。 |
-| [割り当てる](assign.md) | フォーカスがあるボリュームに、ドライブ文字またはマウント ポイントを割り当てます。 |
+| [アクティブ](active.md) | フォーカスがあるディスクのパーティションをアクティブとしてマークします。 |
+| [追加](add.md) | フォーカスのあるシンプル ボリュームを、指定されたディスクにミラー化します。 |
+| [割り当て](assign.md) | フォーカスがあるボリュームに、ドライブ文字またはマウント ポイントを割り当てます。 |
 | [Vdisk のアタッチ](attach-vdisk.md) | 仮想ハードディスク (VHD) を接続します。これにより、ホストコンピューターにローカルハードディスクドライブとして表示されます。 |
-| [アトリビュート](attributes.md) | ディスクまたはボリュームの属性を表示、設定、またはクリアします。 |
-| [オートマ](automount.md) | 自動マウント機能を有効または無効にします。 | 
+| [属性](attributes.md) | ディスクまたはボリュームの属性を表示、設定、またはクリアします。 |
+| [自動マウント](automount.md) | 自動マウント機能を有効または無効にします。 | 
 | [改](break.md) | フォーカスのあるミラー ボリュームを 2 つのシンプル ボリュームに分割します。 |
-| [中身](clean.md) | フォーカスがあるディスクから、パーティション フォーマットまたはボリューム フォーマットをすべて削除します。 |
+| [消去](clean.md) | フォーカスがあるディスクから、パーティション フォーマットまたはボリューム フォーマットをすべて削除します。 |
 | [Compact vdisk](compact-vdisk.md) | 容量可変の拡張バーチャルハードディスク (VHD) ファイルの物理サイズを小さくします。 |
 | [Convert.exe](convert.md) | ファイルアロケーションテーブル (FAT) および FAT32 ボリュームを NTFS ファイルシステムに変換し、既存のファイルとディレクトリをそのまま残します。 |
-| [生成](create.md) | ディスク上のパーティション、1つまたは複数のディスク上のボリューム、または仮想ハードディスク (VHD) を作成します。 |
+| [作成](create.md) | ディスク上のパーティション、1つまたは複数のディスク上のボリューム、または仮想ハードディスク (VHD) を作成します。 |
 | [削除](delete.md) | パーティションまたはボリュームを削除します。 |
 | [Vdisk のデタッチ](detach-vdisk.md) | 選択した仮想ハードディスク (VHD) がホストコンピューター上のローカルハードディスクドライブとして表示されなくなります。 |
-| [データ](detail.md) | 選択したディスク、パーティション、ボリューム、または仮想ハードディスク (VHD) に関する情報を表示します。 |
+| [Detail](detail.md) | 選択したディスク、パーティション、ボリューム、または仮想ハードディスク (VHD) に関する情報を表示します。 |
 | [終了](exit.md) | DiskPart コマンド インタープリターを終了します。 |
-| [Vdisk を展開する](expand-vdisk.md) | 仮想ハードディスク (VHD) を指定されたサイズに拡張します。 |
-| [Extend](extend.md) | フォーカスがあるボリュームまたはパーティションを、そのファイルシステムと共に、ディスク上の空き領域 (未割り当て) に拡張します。 |
+| [Vdisk を展開します。](expand-vdisk.md) | 仮想ハードディスク (VHD) を指定されたサイズに拡張します。 |
+| [できる](extend.md) | フォーカスがあるボリュームまたはパーティションを、そのファイルシステムと共に、ディスク上の空き領域 (未割り当て) に拡張します。 |
 | [ファイルシステム](filesystems.md) | フォーカスがあるボリュームの現在のファイルシステムに関する情報を表示し、ボリュームのフォーマットがサポートされているファイルシステムの一覧を表示します。 |
 | [Format](format.md) | Windows ファイルを受け入れるようにディスクをフォーマットします。 |
 | [GPT](gpt.md) | ベーシック GUID パーティションテーブル (gpt) ディスクにフォーカスがあるパーティションに gpt 属性を割り当てます。 |
 | [ヘルプ](help.md) | 使用可能なコマンドの一覧、または指定したコマンドの詳細なヘルプ情報を表示します。 |
 | [[インポート](import.md)] | 外部ディスクグループをローカルコンピューターのディスクグループにインポートします。 |
-| [稼動](inactive.md) | 基本マスターブートレコード (MBR) ディスクで、フォーカスがあるシステムパーティションまたはブートパーティションを非アクティブとしてマークします。 |
-| [表](list.md) | ディスクのパーティション、ディスク内のボリューム、またはバーチャルハードディスク (Vhd) のディスクの一覧を表示します。 |
-| [マージ vdisk](merge-vdisk.md) | 差分仮想ハード_ディスク (VHD)、対応する親 VHD をマージします。 |
-| [なっ](offline.md) | オンラインのディスクまたはボリュームをオフライン状態にかかります。 |
+| [非アクティブ](inactive.md) | 基本マスターブートレコード (MBR) ディスクで、フォーカスがあるシステムパーティションまたはブートパーティションを非アクティブとしてマークします。 |
+| [一覧](list.md) | ディスクのパーティション、ディスク内のボリューム、またはバーチャルハードディスク (Vhd) のディスクの一覧を表示します。 |
+| [Vdisk をマージします。](merge-vdisk.md) | 差分仮想ハード_ディスク (VHD)、対応する親 VHD をマージします。 |
+| [オフライン](offline.md) | オンラインのディスクまたはボリュームをオフライン状態にかかります。 |
 | [オンライン](online.md) | オフラインのディスクまたはボリュームをオンライン状態にかかります。 |
-| [回復](recover.md) | ディスクグループ内のすべてのディスクの状態を更新し、無効なディスクグループのディスクを回復します。また、古いデータを保持しているミラーボリュームと RAID-5 ボリュームを再同期します。 |
+| [復旧](recover.md) | ディスクグループ内のすべてのディスクの状態を更新し、無効なディスクグループのディスクを回復します。また、古いデータを保持しているミラーボリュームと RAID-5 ボリュームを再同期します。 |
 | [Rem](rem.md) | スクリプトにコメントを追加できます。 |
-| [[削除]](remove.md) | ボリュームからドライブ文字またはマウントポイントを削除します。 |
-| [回復](repair.md) | 障害が発生したディスク領域を指定されたダイナミックディスクに交換することで、フォーカスのある RAID-5 ボリュームを修復します。 |
+| [削除](remove.md) | ボリュームからドライブ文字またはマウントポイントを削除します。 |
+| [修復](repair.md) | 障害が発生したディスク領域を指定されたダイナミックディスクに交換することで、フォーカスのある RAID-5 ボリュームを修復します。 |
 | [再スキャン](rescan.md) | コンピューターに追加された新しいディスクを検索します。 |
-| [日数](retain.md) | ブートとして使用する既存のダイナミック シンプル ボリュームまたはシステム ボリュームを準備します。 |
+| [保持](retain.md) | ブートとして使用する既存のダイナミック シンプル ボリュームまたはシステム ボリュームを準備します。 |
 | [San](san.md) | オペレーティングシステムの記憶域ネットワーク (san) ポリシーを表示または設定します。 |
-| [選択](select.md) | フォーカスを移動すると、ディスク、パーティション、ボリューム、またはバーチャル ハード_ディスク (VHD) します。 |
-| [Id の設定](set-id.md) | フォーカスのあるパーティションの [パーティションの種類] フィールドを変更します。 |
+| [Select](select.md) | フォーカスを移動すると、ディスク、パーティション、ボリューム、またはバーチャル ハード_ディスク (VHD) します。 |
+| [セット id](set-id.md) | フォーカスのあるパーティションの [パーティションの種類] フィールドを変更します。 |
 | [伸縮](shrink.md) | 指定した量だけ、選択したボリュームのサイズが小さくなります。 |
 | [Uniqueid](uniqueid.md) | フォーカスがあるディスクの GUID パーティションテーブル (GPT) 識別子またはマスターブートレコード (MBR) 署名を表示または設定します。 |
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 
-- [ディスクの管理の概要](https://docs.microsoft.com/windows-server/storage/disk-management/overview-of-disk-management)
+- [ディスク管理の概要](https://docs.microsoft.com/windows-server/storage/disk-management/overview-of-disk-management)
 
-- [Windows PowerShell の記憶域コマンドレット](https://docs.microsoft.com/powershell/module/storage/)
+- [Storage Cmdlets in Windows PowerShell (Windows PowerShell の記憶域コマンドレット)](https://docs.microsoft.com/powershell/module/storage/)

@@ -1,6 +1,6 @@
 ---
 title: detail volume
-description: '[詳細] ボリュームの Windows コマンドトピック。現在のボリュームが存在するディスクが表示されます。'
+description: 詳細ボリュームの参照トピック。現在のボリュームが存在するディスクが表示されます。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1f0441beba769066c593e77b55b9266918e5f778
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 2958c82b1dfc3b99d0e15690ef9857e7d83b244f
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80846323"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719617"
 ---
 # <a name="detail-volume"></a>detail volume
 
@@ -26,19 +26,19 @@ ms.locfileid: "80846323"
 detail volume
 ```
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>Remarks
 
--   この操作を正常に実行するには、ボリュームを選択する必要があります。 使用して、 **ボリュームを選択して** コマンドのボリュームを選択し、それにフォーカスをします。
+-   この操作を成功させるのには、ボリュームを選択してください。 使用して、 **ボリュームを選択して** コマンドのボリュームを選択し、それにフォーカスをします。
 -   ボリュームの詳細は、DVD-ROM ドライブや CD-ROM ドライブなどの読み取り専用ボリュームには適用されません。
 
-## <a name="examples"></a><a name=BKMK_examples></a>例
+## <a name="examples"></a>例
 
 現在のボリュームが置かれているすべてのディスクを表示するには、次のように入力します。
 ```
 detail volume
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

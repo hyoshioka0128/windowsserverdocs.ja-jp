@@ -1,6 +1,6 @@
 ---
-title: bitsadmin cache と setlimit
-description: '**Bitsadmin cache と setlimit**に関する Windows コマンドのトピックでは、キャッシュサイズの制限を設定します。'
+title: bitsadmin cache および setlimit
+description: キャッシュサイズの制限を設定する bitsadmin cache と setlimit コマンドのリファレンストピックです。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 746ee0b69da8f5bd22fec2ccbd432126cc25d94d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a4c41102bfb87ff6d48113c4e85a821b821b5b01
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850875"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82718288"
 ---
-# <a name="bitsadmin-cache-and-setlimit"></a>bitsadmin cache と setlimit
+# <a name="bitsadmin-cache-and-setlimit"></a>bitsadmin cache および setlimit
 
 キャッシュサイズの制限を設定します。
 
@@ -28,18 +28,20 @@ bitsadmin /cache /setlimit percent
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | 説明 |
+| パラメーター | [説明] |
 | -------------- | -------------- |
-| percent | ハードディスクの合計領域に対する割合として定義されているキャッシュの制限。 |
+| パーセント | ハードディスクの合計領域に対する割合として定義されているキャッシュの制限。 |
 
-## <a name="examples"></a><a name=BKMK_examples></a>例
+## <a name="examples"></a>例
 
-次の例では、キャッシュサイズを50% に制限しています。
+キャッシュサイズの制限を50% に設定するには、次のようにします。
 
 ```
-C:\>bitsadmin /cache /setlimit 50
+bitsadmin /cache /setlimit 50
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [bitsadmin cache コマンド](bitsadmin-cache.md)

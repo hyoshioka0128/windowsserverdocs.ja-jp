@@ -1,6 +1,6 @@
 ---
 title: auditpol セット
-description: '**Auditpol セット**の Windows コマンドに関するトピックでは、ユーザーごとの監査ポリシー、システム監査ポリシー、または監査オプションを設定します。'
+description: Auditpol set コマンドのリファレンストピックでは、ユーザーごとの監査ポリシー、システム監査ポリシー、または監査オプションを設定します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0773a0a9ae9237b39293bae80001616d00630436
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 73868d6044d8742d4d9e0ce76e0668402f230f86
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851145"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82718888"
 ---
 # <a name="auditpol-set"></a>auditpol セット
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 ユーザーごとの監査ポリシー、システム監査ポリシー、または監査オプションを設定します。
+
+*ユーザーごと*のポリシーおよび*システム*ポリシーに対して*設定*操作を実行するには、セキュリティ記述子でそのオブジェクトセットの**書き込み**または**フルコントロール**のアクセス許可を持っている必要があります。 **監査とセキュリティログの管理**(SeSecurityPrivilege) ユーザー権限を持っている場合は、*設定*操作を実行することもできます。 ただし、この権限では、全体的な*セット*操作を実行する必要がない追加のアクセスが許可されます。
 
 ## <a name="syntax"></a>構文
 
@@ -36,7 +38,7 @@ auditpol /set
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | 説明 |
+| パラメーター | [説明] |
 | --------- | ----------- |
 | /user | カテゴリまたはサブカテゴリによって指定されたユーザーごとの監査ポリシーが設定されているセキュリティプリンシパル。 カテゴリまたはサブカテゴリオプションは、セキュリティ識別子 (SID) または名前として指定する必要があります。 |
 | /include | /User で指定します。システム監査ポリシーによって指定されていない場合でも、ユーザーごとのポリシーによって監査が生成されることを示します。 この設定は既定値であり、/include と/exclude の両方のパラメーターが明示的に指定されていない場合に自動的に適用されます。 |
@@ -47,13 +49,9 @@ auditpol /set
 | /failure | 失敗の監査を指定します。 この設定は、設定を有効にするか無効にするかを示すパラメーターと共に使用する必要があります。 |
 | /option | CrashOnAuditFail、FullprivilegeAuditing、AuditBaseObjects、または Auditbaseobjects オプションの監査ポリシーを設定します。 |
 | /sd | 監査ポリシーへのアクセスを委任するために使用されるセキュリティ記述子を設定します。 セキュリティ記述子は、セキュリティ記述子定義言語 (SDDL) を使用して指定する必要があります。 セキュリティ記述子には随意アクセス制御リスト (DACL) が必要です。 |
-| /? | コマンド プロンプトでヘルプを表示します。 |
+| /? | コマンド プロンプトにヘルプを表示します。 |
 
-## <a name="remarks"></a>コメント
-
-ユーザーごとのポリシーとシステムポリシーのすべての設定操作について、セキュリティ記述子で設定されたオブジェクトに対する書き込みまたはフルコントロールのアクセス許可を持っている必要があります。 **監査とセキュリティログの管理**(SeSecurityPrivilege) ユーザー権利を使用して、設定操作を実行することもできます。 ただし、この権限では、設定操作を実行するために必要な追加のアクセス権が許可されます。
-
-## <a name="examples"></a><a name=BKMK_examples></a>例
+## <a name="examples"></a>例
 
 すべてのユーザーの成功した試行が監査されるように、ユーザーの詳細な追跡カテゴリの下にあるすべてのサブカテゴリについて、ユーザーごとの監査ポリシーを設定するには、次のように入力します。
 
@@ -94,6 +92,8 @@ auditpol /set /subcategory:{0ccee9210-69ae-11d9-bed3-505054503030},{0ccee9211-69
 auditpol /set /option:CrashOnAuditFail /value:enable
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [auditpol コマンド](auditpol.md)

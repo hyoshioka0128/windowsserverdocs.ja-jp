@@ -1,6 +1,6 @@
 ---
 title: append
-description: Windows コマンド**に関するトピックでは、現在**のディレクトリにあるかのように、指定したディレクトリ内のデータファイルをプログラムで開くことができます。
+description: '[追加] コマンドのリファレンストピック。これにより、プログラムは、現在のディレクトリにあるかのように、指定されたディレクトリ内のデータファイルを開くことができます。'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 95bbc607ef297e7cf67da2e388884882356ef744
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 562a13c6b1a47e43bb66548902f0b8e57e789a34
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851325"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82718995"
 ---
 # <a name="append"></a>append
 
@@ -23,29 +23,27 @@ ms.locfileid: "80851325"
 > [!NOTE]
 > このコマンドは、Windows 10 ではサポートされていません。
 
-このコマンドを使用する方法の例については、[例](#BKMK_examples)を参照してください。
-
 ## <a name="syntax"></a>構文
 
 ```
-append [[<Drive>:]<Path>[;...]] [/x[:on|:off]] [/path:[:on|:off] [/e] 
+append [[<drive>:]<path>[;...]] [/x[:on|:off]] [/path:[:on|:off] [/e]
 append ;
 ```
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | 説明 |
+| パラメーター | [説明] |
 | --------- | ----------- |
-| `[\<Drive>:]<Path>` | 追加するドライブとディレクトリを指定します。 |
-| `/x:on` | 追加されたディレクトリをファイル検索に適用し、アプリケーションを起動します。 |
-| `/x:off` | ファイルを開く要求のみに追加されたディレクトリを適用します。 **/X: off**オプションは既定の設定です。 |
-| `/path:on` | 既にパスを指定しているファイル要求に追加されたディレクトリを適用します。 **/path: on**は既定の設定です。 |
-| `/path:off` | **/Path: on**の効果をオフにします。 |
-| `/e` | 追加されたディレクトリリストのコピーを APPEND という名前の環境変数に格納します。 **/e**は、システムを起動した後に**append**を初めて使用するときにのみ使用できます。 |
-| `;` | 追加されたディレクトリの一覧をクリアします。 |
-| `/?` | コマンド プロンプトでヘルプを表示します。 |
+| `[\<drive>:]<path>` | 追加するドライブとディレクトリを指定します。 |
+| /x: オン | 追加されたディレクトリをファイル検索に適用し、アプリケーションを起動します。 |
+| /x: off | ファイルを開く要求のみに追加されたディレクトリを適用します。 **/X: off**オプションは既定の設定です。 |
+| /path: on | 既にパスを指定しているファイル要求に追加されたディレクトリを適用します。 **/path: on**は既定の設定です。 |
+| /path: オフ | **/Path: on**の効果をオフにします。 |
+| /e | 追加されたディレクトリリストのコピーを APPEND という名前の環境変数に格納します。 **/e**は、システムを起動した後に**append**を初めて使用するときにのみ使用できます。 |
+| ; | 追加されたディレクトリの一覧をクリアします。 |
+| /? | コマンド プロンプトにヘルプを表示します。 |
 
-## <a name="examples"></a><a name=BKMK_examples></a>例
+## <a name="examples"></a>例
 
 追加されたディレクトリの一覧を消去するには、次のように入力します。
 
@@ -53,12 +51,12 @@ append ;
 append ;
 ```
 
-追加されたディレクトリのコピーを APPEND という名前の環境変数に格納するには、次のように入力します。
+追加されたディレクトリのコピーを*append*という名前の環境変数に格納するには、次のように入力します。
 
 ```
 append /e
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

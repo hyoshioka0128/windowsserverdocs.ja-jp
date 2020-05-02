@@ -1,6 +1,6 @@
 ---
 title: bdehdcfg quiet
-description: Bdehdcfg **quiet**の Windows コマンドトピックでは、すべてのアクションとエラーを表示しないように bdehdcfg に指示しています。
+description: Bdehdcfg quiet コマンドのリファレンストピック。すべてのアクションとエラーを表示しないように bdehdcfg に指示します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,41 +9,37 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e9c24d8861476e6c1578af8245236d699b6ef6db
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: afb7a73899259b0f3823941ece014ea85568a4ce
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851045"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82718638"
 ---
 # <a name="bdehdcfg-quiet"></a>bdehdcfg: quiet
 
-Bdehdcfg コマンドラインツールに、すべてのアクションとエラーがコマンドラインインターフェイスに表示されないことを通知します。 このコマンドを使用する方法の例については、「[例](#BKMK_Examples)」を参照してください。
+Bdehdcfg コマンドラインツールに、すべてのアクションとエラーがコマンドラインインターフェイスに表示されないことを通知します。 ドライブの準備中に表示される [はい/いいえ] (Y/N) プロンプトでは、"Yes" という答えが想定されます。 ドライブの準備中に発生したエラーを表示するには、 **DrivePreparationTool**イベントプロバイダーの下にあるシステムイベントログを確認します。
 
 ## <a name="syntax"></a>構文
 
 ```
-bdehdcfg -target {default|unallocated|<DriveLetter> shrink|<DriveLetter> merge} -quiet
+bdehdcfg -target {default|unallocated|<drive_letter> shrink|<drive_letter> merge} -quiet
 ```
 
 #### <a name="parameters"></a>パラメーター
 
-このコマンドは、追加のパラメーターを受け取りません。
+このコマンドには追加のパラメーターはありません。
 
-## <a name="remarks"></a>コメント
+## <a name="examples"></a>例
 
-ドライブの準備中に "yes/No (Y/N)" プロンプトが表示された場合は、"Yes" という答えが想定されます。 ドライブの準備中に発生したエラーを表示するには、 **DrivePreparationTool**イベントプロバイダーの下にあるシステムイベントログを確認します。
-
-## <a name="examples"></a><a name="BKMK_Examples"></a>例
-
-次の例は、 **quiet**コマンドの使用方法を示しています。
+**Quiet**コマンドを使用するには、次のようにします。
 
 ```
 bdehdcfg -target default -quiet
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 
-- [Bdehdcfg](bdehdcfg.md)
+- [bdehdcfg](bdehdcfg.md)

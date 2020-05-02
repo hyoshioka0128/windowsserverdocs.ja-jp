@@ -1,6 +1,6 @@
 ---
 title: diskcopy
-description: Windows コマンドに関するトピックでは、コピー元のドライブのフロッピーディスクの内容を、ドライブのフォーマット済みまたは未フォーマットのフロッピーディスクにコピーします。
+description: Diskcopy のリファレンストピックでは、コピー元のドライブのフロッピーディスクの内容を、ドライブのフォーマット済みまたは未フォーマットのフロッピーディスクにコピーします。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/07/2018
-ms.openlocfilehash: 675694503cab207f05fd6b48e0d17c23196f85d0
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b5c9186a539a58ed0d3362ba83d7a3bcedcaabad
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80845545"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82719465"
 ---
 # <a name="diskcopy"></a>diskcopy
 
 コピー元ドライブのフロッピーディスクの内容を、ドライブのフォーマット済みまたは未フォーマットのフロッピーディスクにコピーします。 パラメーターを指定せずに使用した場合、 **diskcopy**では、ソースディスクとターゲットディスクの現在のドライブが使用されます。
 
-このコマンドを使用する方法の例については、[例](#BKMK_examples)を参照してください。
+
 
 > [!NOTE]
 > このコマンドは、Windows 10 には含まれていません。
@@ -33,14 +33,14 @@ diskcopy [<Drive1>: [<Drive2>:]] [/v]
 
 ### <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
+|パラメーター|[説明]|
 |---------|-----------|
-|\<Drive1 >|ソースディスクを含むドライブを指定します。|
-|\<Drive2 >|宛先ディスクを含むドライブを指定します。|
+|\<Drive1>|ソースディスクを含むドライブを指定します。|
+|\<Drive2>|宛先ディスクを含むドライブを指定します。|
 |/v|情報が正しくコピーされていることを確認します。 このオプションを選択すると、コピー処理が遅くなります。|
-|/?|コマンド プロンプトでヘルプを表示します。|
+|/?|コマンド プロンプトにヘルプを表示します。|
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>Remarks
 
 -   ディスクの使用
 
@@ -83,7 +83,7 @@ diskcopy [<Drive1>: [<Drive2>:]] [/v]
 
     The following table explains each exit code.
     
-    |終了コード|説明|
+    |終了コード|[説明]|
     |---------|-----------|
     |0|コピー操作に成功しました|
     |1|致命的でない読み取り/書き込みエラーが発生しました|
@@ -92,7 +92,7 @@ diskcopy [<Drive1>: [<Drive2>:]] [/v]
 
     To process the exit codes that are returned by **diskcomp**, you can use the *ERRORLEVEL* environment variable on the **if** command line in a batch program.
 
-## <a name="examples"></a><a name=BKMK_examples></a>例
+## <a name="examples"></a>例
 
 ドライブ B のディスクをドライブ A のディスクにコピーするには、次のように入力します。
 ```
@@ -102,6 +102,6 @@ diskcopy b: a:
 
 diskcopy a:
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
