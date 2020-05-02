@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getbytestotal
-description: '**Bitsadmin getbytestotal**の Windows コマンドに関するトピックでは、指定されたジョブのサイズを取得します。'
+description: 指定されたジョブのサイズを取得する bitsadmin getbytestotal コマンドのリファレンストピックです。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 84e3e0311ead0eb79f9247d4f06844ece5f20fa2
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f844e1d3689c42a2c533921797d15dbb946b551e
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850785"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82718160"
 ---
 # <a name="bitsadmin-getbytestotal"></a>bitsadmin getbytestotal
 
@@ -28,18 +28,20 @@ bitsadmin /getbytestotal <job>
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | 説明 |
+| パラメーター | [説明] |
 | -------------- | -------------- |
-| 送信 | ジョブの表示名または GUID。 |
+| ジョブ (job) | ジョブの表示名または GUID。 |
 
-## <a name="examples"></a><a name=BKMK_examples></a>例
+## <a name="examples"></a>例
 
-次の例では、 *Mydownloadjob*という名前のジョブのサイズを取得します。
+*Mydownloadjob*という名前のジョブのサイズを取得するには、次のようにします。
 
 ```
-C:\>bitsadmin /getbytestotal myDownloadJob
+bitsadmin /getbytestotal myDownloadJob
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [bitsadmin コマンド](bitsadmin.md)

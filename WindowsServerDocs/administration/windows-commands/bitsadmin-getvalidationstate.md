@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getvalidationstate
-description: '**Bitsadmin getvalidationstate**の Windows コマンドに関するトピックでは、ジョブ内の指定されたファイルのコンテンツ検証の状態を報告します。'
+description: Bitsadmin getvalidationstate コマンドのリファレンストピックでは、ジョブ内の指定されたファイルのコンテンツ検証の状態を報告します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 52d7d983cc7858607c350483ed81223d107cee25
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ca753b20a1b7834d2e05d4ff8729a08332256f8c
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850435"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717459"
 ---
 # <a name="bitsadmin-getvalidationstate"></a>bitsadmin getvalidationstate
 
@@ -28,19 +28,21 @@ bitsadmin /getvalidationstate <job> <file_index>
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | 説明 |
+| パラメーター | [説明] |
 | -------------- | -------------- |
-| 送信 | ジョブの表示名または GUID。 |
+| ジョブ (job) | ジョブの表示名または GUID。 |
 | file_index | 0から開始します。 |
 
-## <a name="examples"></a><a name=BKMK_examples></a>例
+## <a name="examples"></a>例
 
-次の例では、 *Mydownloadjob*という名前のジョブ内にあるファイル2のコンテンツ検証の状態を取得します。
+*Mydownloadjob*という名前のジョブ内のファイル2のコンテンツの検証状態を取得するには、次のようにします。
 
 ```
-C:\>bitsadmin /getvalidationstate myDownloadJob 1
+bitsadmin /getvalidationstate myDownloadJob 1
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [bitsadmin コマンド](bitsadmin.md)

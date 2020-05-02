@@ -1,6 +1,6 @@
 ---
-title: bitsadmin gei pertokensid
-description: BITS 転送ジョブのヘルパートークンが設定されている場合、その SID を返す**bitsadmin ge pertokensid**の Windows コマンドトピック。
+title: bitsadmin gethelpertokensid
+description: BITS 転送ジョブのヘルパートークンが設定されている場合に、その SID を返す bitsadmin geの pertokensid コマンドのリファレンストピックです。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -8,14 +8,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/01/2019
-ms.openlocfilehash: a2e26ff459b068595529fbd24e6165c130660570
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: c45bf86d8a7364289db41fa390f319270a2a8386
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850645"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717895"
 ---
-# <a name="bitsadmin-gethelpertokensid"></a>bitsadmin gei pertokensid
+# <a name="bitsadmin-gethelpertokensid"></a>bitsadmin gethelpertokensid
 
 BITS 転送ジョブの [ヘルパートークン](https://docs.microsoft.com/windows/win32/bits/helper-tokens-for-bits-transfer-jobs)が設定されている場合、その SID を返します。
 
@@ -30,10 +30,20 @@ bitsadmin /gethelpertokensid <job>
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | 説明 |
+| パラメーター | [説明] |
 | -------------- | -------------- |
-| 送信 | ジョブの表示名または GUID。 |
+| ジョブ (job) | ジョブの表示名または GUID。 |
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="examples"></a>例
+
+*Mydownloadjob*という名前の BITS 転送ジョブの SID を取得するには、次のようにします。
+
+```
+bitsadmin /gethelpertokensid myDownloadJob
+```
+
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [bitsadmin コマンド](bitsadmin.md)

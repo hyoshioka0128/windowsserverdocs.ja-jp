@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getproxyusage
-description: '**Bitsadmin getproxyusage**に関する Windows コマンドトピックでは、指定されたジョブのプロキシ使用法の設定を取得します。'
+description: 指定されたジョブのプロキシ使用法の設定を取得する bitsadmin getproxyusage コマンドのリファレンストピックです。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 01c9bb9a1d413fa847482f652e18eed30ad76109
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 13a3f216b1ed3c77dbbefee37d73a657525daa36
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850515"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717646"
 ---
 # <a name="bitsadmin-getproxyusage"></a>bitsadmin getproxyusage
 
@@ -28,13 +28,13 @@ bitsadmin /getproxyusage <job>
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | 説明 |
+| パラメーター | [説明] |
 | -------------- | -------------- |
-| 送信 | ジョブの表示名または GUID。 |
+| ジョブ (job) | ジョブの表示名または GUID。 |
 
-## <a name="remarks"></a>コメント
+#### <a name="output"></a>出力
 
-プロキシの使用には次の値が含まれます。
+返されるプロキシの使用値は、次のようになります。
 
 - **Preconfig** -所有者の Internet Explorer の既定値を使用します。
 
@@ -44,14 +44,16 @@ bitsadmin /getproxyusage <job>
 
 - **自動**検出-プロキシ設定を自動的に検出します。
 
-## <a name="examples"></a><a name=BKMK_examples></a>例
+## <a name="examples"></a>例
 
-次の例では、 *Mydownloadjob*という名前のジョブのプロキシの使用状況を取得します。
+*Mydownloadjob*という名前のジョブのプロキシ使用法を取得するには、次のようにします。
 
 ```
-C:\>bitsadmin /getproxyusage myDownloadJob
+bitsadmin /getproxyusage myDownloadJob
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [bitsadmin コマンド](bitsadmin.md)

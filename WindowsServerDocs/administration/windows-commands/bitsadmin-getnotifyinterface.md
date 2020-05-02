@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getnotifyinterface
-description: '**Bitsadmin getnotifyinterface**の Windows コマンドに関するトピックでは、別のプログラムが、指定されたジョブの COM コールバックインターフェイスを登録したかどうかを判断します。'
+description: Bitsadmin getnotifyinterface コマンドのリファレンストピックでは、指定されたジョブの COM コールバックインターフェイスを別のプログラムが登録したかどうかを判断します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5eb5aee42446c70f16fd6785a3645f42c1987e4d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 2158759067010292ca213f97014857354247b9c7
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850575"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717736"
 ---
 # <a name="bitsadmin-getnotifyinterface"></a>bitsadmin getnotifyinterface
 
@@ -28,9 +28,9 @@ bitsadmin /getnotifyinterface <job>
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | 説明 |
+| パラメーター | [説明] |
 | -------------- | -------------- |
-| 送信 | ジョブの表示名または GUID。 |
+| ジョブ (job) | ジョブの表示名または GUID。 |
 
 #### <a name="output"></a>出力
 
@@ -39,14 +39,16 @@ bitsadmin /getnotifyinterface <job>
 > [!NOTE]
 > コールバックインターフェイスを登録したプログラムを特定することはできません。
 
-## <a name="examples"></a><a name=BKMK_examples></a>例
+## <a name="examples"></a>例
 
-次の例では、 *Mydownloadjob*という名前のジョブの notify インターフェイスを取得します。
+*Mydownloadjob*という名前のジョブの通知インターフェイスを取得するには、次のようにします。
 
 ```
-C:\>bitsadmin /getnotifyinterface myDownloadJob
+bitsadmin /getnotifyinterface myDownloadJob
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [bitsadmin コマンド](bitsadmin.md)

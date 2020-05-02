@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getnotifycmdline
-description: '**Bitsadmin getnotifycmdline**の Windows コマンドトピックでは、ジョブがデータの転送を終了したときに実行されるコマンドラインコマンドを取得します。'
+description: Bitsadmin getnotifycmdline コマンドのリファレンストピックでは、ジョブがデータの転送を終了したときに実行されるコマンドラインコマンドを取得します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 24b49b3fa0c2dafb999d8cb9c6e0c13ae68bf6f4
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 4d4c47c4a1b9ea06fd804c8f2c48e9ac0ce1b319
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850595"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82717799"
 ---
 # <a name="bitsadmin-getnotifycmdline"></a>bitsadmin getnotifycmdline
 
-ジョブがデータの転送を終了したときに実行するコマンドラインコマンドを取得します。
+指定されたジョブがデータの転送を終了した後に実行するコマンドラインコマンドを取得します。
 
 > [!NOTE]
 > このコマンドは、BITS 1.2 以前ではサポートされていません。
@@ -31,18 +31,20 @@ bitsadmin /getnotifycmdline <job>
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | 説明 |
+| パラメーター | [説明] |
 | -------------- | -------------- |
-| 送信 | ジョブの表示名または GUID。 |
+| ジョブ (job) | ジョブの表示名または GUID。 |
 
-## <a name="examples"></a><a name=BKMK_examples></a>例
+## <a name="examples"></a>例
 
-次の例では、 *Mydownloadjob*という名前のジョブが完了すると、サービスによって使用されるコマンドラインコマンドを取得します。
+*Mydownloadjob*という名前のジョブが完了したときにサービスによって使用されるコマンドラインコマンドを取得すること。
 
 ```
-C:\>bitsadmin /getnotifycmdline myDownloadJob
+bitsadmin /getnotifycmdline myDownloadJob
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [bitsadmin コマンド](bitsadmin.md)

@@ -1,6 +1,6 @@
 ---
 title: bitsadmin geterror
-description: '**Bitsadmin geterror**の Windows コマンドに関するトピックでは、指定されたジョブの詳細なエラー情報を取得します。'
+description: 指定されたジョブの詳細なエラー情報を取得する bitsadmin geterror コマンドのリファレンストピックです。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7c65b072bb190e3e516b917c310942146bb3f3d2
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: e7275bb813ef65f304cf8111c5a1ee387b7528e5
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80850705"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82718016"
 ---
 # <a name="bitsadmin-geterror"></a>bitsadmin geterror
 
@@ -28,18 +28,20 @@ bitsadmin /geterror <job>
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | 説明 |
+| パラメーター | [説明] |
 | -------------- | -------------- |
-| 送信 | ジョブの表示名または GUID。 |
+| ジョブ (job) | ジョブの表示名または GUID。 |
 
-## <a name="examples"></a><a name=BKMK_examples></a>例
+## <a name="examples"></a>例
 
-次の例では、 *Mydownloadjob*という名前のジョブのエラー情報を取得します。
+*Mydownloadjob*という名前のジョブのエラー情報を取得するには、次のようにします。
 
 ```
-C:\>bitsadmin /geterror myDownloadJob
+bitsadmin /geterror myDownloadJob
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [bitsadmin コマンド](bitsadmin.md)
