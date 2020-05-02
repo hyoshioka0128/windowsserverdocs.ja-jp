@@ -1,6 +1,6 @@
 ---
 title: goto
-description: Windows コマンドに関するトピック * * * *-
+description: '* * * * のリファレンストピック'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 928a9031a7f86261789676257afe95ffc3be8a99
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: dd61575b8b31ed47463db464f4aad0a048e755b2
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80842565"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725004"
 ---
 # <a name="goto"></a>goto
 
@@ -22,7 +22,7 @@ ms.locfileid: "80842565"
 
 Cmd.exe をバッチプログラムのラベル付きの行に指示します。 バッチプログラム内で、 **goto**はラベルで識別される行にコマンド処理を指示します。 ラベルが見つかると、処理が続行され、次の行で始まるコマンドが開始されます。
 
-このコマンドを使用する方法の例については、[例](#BKMK_examples)を参照してください。
+
 
 ## <a name="syntax"></a>構文
 
@@ -32,16 +32,16 @@ goto <Label>
 
 ### <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
+|パラメーター|[説明]|
 |---------|-----------|
-|\<ラベル >|バッチプログラムでラベルとして使用されるテキスト文字列を指定します。|
-|/?|コマンド プロンプトでヘルプを表示します。|
+|\<ラベルの>|バッチプログラムでラベルとして使用されるテキスト文字列を指定します。|
+|/?|コマンド プロンプトにヘルプを表示します。|
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>Remarks
 
 -   コマンド拡張機能の使用
 
-    コマンド拡張機能が有効になっている場合 (既定)、target ラベルが**EOF**の**goto**コマンドを使用する場合は、現在のバッチスクリプトファイルの末尾に制御を移し、ラベルを定義せずにバッチスクリプトファイルを終了します。 **: EOF**ラベルと共に**goto**を使用する場合は、ラベルの前にコロンを挿入する必要があります。 例 :  
+    コマンド拡張機能が有効になっている場合 (既定)、target ラベルが**EOF**の**goto**コマンドを使用する場合は、現在のバッチスクリプトファイルの末尾に制御を移し、ラベルを定義せずにバッチスクリプトファイルを終了します。 **: EOF**ラベルと共に**goto**を使用する場合は、ラベルの前にコロンを挿入する必要があります。 次に例を示します。  
     ```
     goto:EOF
     ```  
@@ -58,7 +58,7 @@ goto <Label>
 
     他のコマンドと共に**goto**を使用して、条件付き操作を実行できます。 条件付き操作に**goto**を使用する方法の詳細については、「 [If](if.md)コマンドリファレンス」を参照してください。
 
-## <a name="examples"></a><a name=BKMK_examples></a>例
+## <a name="examples"></a>例
 
 次のバッチプログラムは、ドライブ A のディスクをシステムディスクとしてフォーマットします。 操作が成功した場合、 **goto**コマンドは処理を**終了**ラベルに渡します。
 ```
@@ -70,10 +70,10 @@ echo An error occurred during formatting.
 echo End of batch program. 
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 
 [Cmd](cmd.md)
 
-[もし](if.md)
+[If](if.md)

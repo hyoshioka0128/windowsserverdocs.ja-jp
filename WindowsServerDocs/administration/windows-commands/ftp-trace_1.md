@@ -1,6 +1,6 @@
 ---
 title: ftp trace_1
-description: Windows コマンドに関するトピック * * * *-
+description: '* * * * のリファレンストピック'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a96bb33b457e073b8e4625f5269cd00facf39073
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 50eb401540549387c78718b930b31f1f465d3e1e
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80842898"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725071"
 ---
 # <a name="ftp-trace_1"></a>ftp: trace_1
 
@@ -32,17 +32,17 @@ trace
 
 なし
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>Remarks
 
 **トレース** を実行しているときに FTP の内部の関数呼び出しの系列が表示されます、 **ftp** コマンドです。
 
-## <a name="examples"></a><a name=BKMK_Examples></a>例
+## <a name="examples"></a>例
 
 トレースをオンまたはオフを切り替えます。
 ```
 trace
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 -   - [コマンド ライン構文の記号](command-line-syntax-key.md)

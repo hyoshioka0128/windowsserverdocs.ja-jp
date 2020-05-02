@@ -1,6 +1,6 @@
 ---
 title: ftp 受信
-description: Windows コマンドに関するトピック * * * *-
+description: '* * * * のリファレンストピック'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7fec409741e00bb3e6f61808630e5141ce4ec78f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 5ece259f2d48e18f6a789d51b1df7089490f2fa1
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80842965"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725127"
 ---
 # <a name="ftp-recv"></a>ftp: 受信
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 現在のファイル転送の種類を使用して、リモートファイルをローカルコンピューターにコピーします。   
 ## <a name="syntax"></a>構文  
@@ -27,15 +27,15 @@ recv <remoteFile> [<LocalFile>]
 ```  
 #### <a name="parameters"></a>パラメーター  
 
-|   パラメーター   |                   説明                    |
+|   パラメーター   |                   [説明]                    |
 |---------------|--------------------------------------------------|
 | <remoteFile>  |        コピーするリモートファイルを指定します。        |
 | [<LocalFile>] | ローカル コンピューターで使用する名前を指定します。 |
 
-## <a name="remarks"></a>コメント  
+## <a name="remarks"></a>Remarks  
 - **Recv** コマンドと同じ、 **取得** コマンドです。  
 - *LocalFile*が指定されていない場合、ファイルには*remotefile*という名前が付けられます。  
-  ## <a name="examples"></a><a name=BKMK_Examples></a>例  
+  ## <a name="examples"></a>例  
   現在のファイル転送の種類を使用して、ローカルコンピューターに**test.txt**をコピーします。  
   ```  
   recv test.txt  
@@ -44,7 +44,7 @@ recv <remoteFile> [<LocalFile>]
   ```  
   recv test.txt test1.txt  
   ```  
-  ## <a name="additional-references"></a>その他の参照情報  
+  ## <a name="additional-references"></a>その他のリファレンス  
 - [ftp: ascii](ftp-ascii.md)  
 - [ftp: バイナリ](ftp-binary.md)  
 - [ftp: get](ftp-get.md)  

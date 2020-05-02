@@ -1,6 +1,6 @@
 ---
 title: klist
-description: Windows コマンドに関するトピック * * * *-
+description: '* * * * のリファレンストピック'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b693e4496f4fc1275e1f2b364900564ce86e97cb
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f83a46f158cd83aa8393630aa0138271e8868575
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80841965"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724753"
 ---
 # <a name="klist"></a>klist
 
 
 
-現在キャッシュされている Kerberos チケットの一覧を表示します。 この情報は、Windows Server 2012 に適用されます。 このコマンドの使用方法の例については、次を参照してください。 [例](#BKMK_Examples)します。
+現在キャッシュされている Kerberos チケットの一覧を表示します。 この情報は、Windows Server 2012 に適用されます。
 
 ## <a name="syntax"></a>構文
 
@@ -30,7 +30,7 @@ klist [-lh <LogonId.HighPart>] [-li <LogonId.LowPart>] tickets | tgt | purge | s
 
 #### <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
+|パラメーター|[説明]|
 |---------|-----------|
 |-lh|ユーザーのローカル一意識別子 (LUID) の大部分を16進数で表したものを示します。 – Lh も– li も存在しない場合、コマンドの既定値は、現在サインインしているユーザーの LUID です。|
 |-li|ユーザーのローカル一意識別子 (LUID) の下位部分 (16 進数で表される) を表します。 – Lh も– li も存在しない場合、コマンドの既定値は、現在サインインしているユーザーの LUID です。|
@@ -46,7 +46,7 @@ klist [-lh <LogonId.HighPart>] [-li <LogonId.LowPart>] tickets | tgt | purge | s
 |kdcoptions|RFC 4120 で指定されているキー配布センター (KDC) オプションを表示します。|
 |/?|このコマンドのヘルプを表示します。|
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>Remarks
 
 このコマンドのすべてのパラメーターを実行するには、 **Domain Admins**のメンバーシップ、またはそれと同等のメンバーシップが最低限必要です。
 
@@ -70,7 +70,7 @@ klist [-lh <LogonId.HighPart>] [-li <LogonId.LowPart>] tickets | tgt | purge | s
     最初の Kerberos TGT と、現在キャッシュされているチケットの次の属性を一覧表示します。  
     -   LogonID:16 進数で識別されます。
     -   ServiceName: krbtgt
-    -   TargetName \<SPN >: krbtgt
+    -   TargetName \<SPN>: krbtgt
     -   DomainName: TGT を発行するドメインの名前
     -   TargetDomainName: TGT の発行先のドメイン
     -   AltTargetDomainName: TGT の発行先のドメイン
@@ -93,7 +93,7 @@ klist [-lh <LogonId.HighPart>] [-li <LogonId.LowPart>] tickets | tgt | purge | s
 
     Kerberos の制約付き委任キャッシュ情報を表示できます。  
     -   LogonID: 指定されている場合、指定された値によってログオンセッションのキャッシュ情報が表示されます。 指定しない場合、現在のユーザーのログオンセッションのキャッシュ情報が表示されます。
--   **取得**
+-   **get**
 
     SPN によって指定されたターゲットにチケットを要求できます。  
     -   LogonID: 指定されている場合、指定された値によってログオンセッションを使用してチケットを要求します。 指定しない場合、現在のユーザーのログオンセッションを使用してチケットを要求します。
@@ -114,7 +114,7 @@ klist [-lh <LogonId.HighPart>] [-li <LogonId.LowPart>] tickets | tgt | purge | s
 **その他の考慮事項**
 -   Klist は、Windows Server 2012 および Windows 8 で使用でき、特別なインストールは必要ありません。
 
-## <a name="examples"></a><a name=BKMK_Examples></a>例
+## <a name="examples"></a>例
 
 1. 対象サーバーのチケット保証サービス (TGS) 要求の処理中にイベント ID 27 を診断するときに、アカウントに Kerberos チケットを生成するための適切なキーがありませんでした。 Klist を使用して Kerberos チケットキャッシュを照会し、チケットが不足しているかどうか、対象サーバーまたはアカウントにエラーがあるかどうか、または暗号化の種類がサポートされていないかどうかを確認できます。  
    ```
@@ -162,6 +162,6 @@ klist [-lh <LogonId.HighPart>] [-li <LogonId.LowPart>] tickets | tgt | purge | s
    klist purge_bind
    ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 -   - [コマンド ライン構文の記号](command-line-syntax-key.md)

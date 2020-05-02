@@ -1,6 +1,6 @@
 ---
 title: logman start |停止
-description: Windows コマンドに関するトピック * * * *-
+description: '* * * * のリファレンストピック'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2bd81a33779aa58e7528d0173a7a4b49489de8f9
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 68f570d99d4b3eaa818c9fbdcce76c42d1cb12d4
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80840625"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724342"
 ---
 # <a name="logman-start--stop"></a>logman start |停止
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 データコレクターを起動し、開始時刻を手動に設定するか、データコレクターセットを停止して、終了時刻を手動に設定します。  
 
@@ -29,19 +29,19 @@ logman stop <[-n] <name>> [options]
 ```  
 ### <a name="parameters"></a>パラメーター  
 
-|     パラメーター      |                                 説明                                  |
+|     パラメーター      |                                 [説明]                                  |
 |--------------------|------------------------------------------------------------------------------|
 |         -?         |                       状況依存のヘルプを表示します。                       |
-| -s <computer name> |            指定したリモートコンピューターでコマンドを実行します。             |
+| -s<computer name> |            指定したリモートコンピューターでコマンドを実行します。             |
 |  -config <value>   |           コマンドオプションを含む設定ファイルを指定します。            |
-|    [-n] <name>     |                          ターゲットオブジェクトの名前。                          |
+|    [-n]<name>     |                          対象オブジェクトの名前。                          |
 |        -/        | イベントを保存またはスケジュールせずに直接イベントトレースセッションに送信します。 |
 |        -as         |               要求された操作を非同期に実行します。                |
 
-## <a name="examples"></a><a name=BKMK_examples></a>例  
+## <a name="examples"></a>例  
 次のコマンドを実行すると、リモートコンピューター server_1 のデータコレクター perf_log が開始されます。  
 ```  
 logman start perf_log -s server_1  
 ```  
-## <a name="additional-references"></a>その他の参照情報  
+## <a name="additional-references"></a>その他のリファレンス  
 [logman](logman.md)  

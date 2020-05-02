@@ -1,6 +1,6 @@
 ---
 title: 'ksetup: setcomputerpassword'
-description: Windows コマンドに関するトピック * * * *-
+description: '* * * * のリファレンストピック'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3e65ea6e935d9fde9c23842755c36e418928dec7
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 9cb0c2ee36ed85ddfb015a80e86198fe788f8474
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80841375"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724580"
 ---
 # <a name="ksetupsetcomputerpassword"></a>ksetup: setcomputerpassword
 
 
 
-ローカルコンピューターのパスワードを設定します。 このコマンドの使用方法の例については、次を参照してください。 [例](#BKMK_Examples)します。
+ローカルコンピューターのパスワードを設定します。
 
 ## <a name="syntax"></a>構文
 
@@ -30,11 +30,11 @@ ksetup /setcomputerpassword <Password>
 
 #### <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
+|パラメーター|[説明]|
 |---------|-----------|
-|\<パスワード >|指定されたパスワードを使用して、ローカルコンピューターのコンピューターアカウントを設定します。</br>パスワードは、管理者特権を持つアカウントを使用してのみ設定できます。 パスワードには、1 ~ 156 の英数字または特殊文字を使用できます。|
+|\<パスワード>|指定されたパスワードを使用して、ローカルコンピューターのコンピューターアカウントを設定します。</br>パスワードは、管理者特権を持つアカウントを使用してのみ設定できます。 パスワードには、1 ~ 156 の英数字または特殊文字を使用できます。|
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>Remarks
 
 このコマンドは、コンピューターアカウントのみに影響します。
 
@@ -42,14 +42,14 @@ ksetup /setcomputerpassword <Password>
 
 コンピューターアカウントのパスワードは、レジストリまたは**ksetup**コマンドからの出力としては表示されません。
 
-## <a name="examples"></a><a name=BKMK_Examples></a>例
+## <a name="examples"></a>例
 
 ローカルコンピューターのコンピューターアカウントのパスワードを IPops897 から IPop $ 897! に変更します。
 ```
 ksetup /setcomputerpassword IPop$897!
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 -   [Ksetup](ksetup.md)
 -   - [コマンド ライン構文の記号](command-line-syntax-key.md)

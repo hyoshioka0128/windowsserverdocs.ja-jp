@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/30/2020
-ms.openlocfilehash: ecd579a313fe1cad1b8a5b4a622aaaec2d6a6d63
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: d86ba8418f4c43c26f3745a9f70e676ca790c640
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80843135"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725176"
 ---
 # <a name="ftp-put"></a>ftp: put
 
-> 適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 現在のファイル転送の種類を使用して、ローカルファイルをリモートコンピューターにコピーします。
 ## <a name="syntax"></a>構文
@@ -27,15 +27,15 @@ put <LocalFile> [<remoteFile>]
 ```
 #### <a name="parameters"></a>パラメーター
 
-|    パラメーター     |                    説明                    |
+|    パラメーター     |                    [説明]                    |
 |------------------|---------------------------------------------------|
 |   `<LocalFile>`  |         コピーするローカル ファイルを指定します。         |
 | `[<remoteFile>]` | リモート コンピューターで使用する名前を指定します。 |
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>Remarks
 - **配置** コマンドと同じ、 **送信** コマンドです。
 - *Remotefile*が指定されていない場合、ファイルには*LocalFile*という名前が付けられます。
-  ## <a name="examples"></a><a name="BKMK_Examples"></a>例
+  ## <a name="examples"></a>例
   ローカルファイル**test.txt**をコピーし、リモートコンピューター上に「 **test1** 」という名前を指定します。
   ```
   put test.txt test1.txt
@@ -44,7 +44,7 @@ put <LocalFile> [<remoteFile>]
   ```
   put program.exe
   ```
-  ## <a name="additional-references"></a>その他の参照情報
+  ## <a name="additional-references"></a>その他のリファレンス
 - [ftp: ascii](ftp-ascii.md)
 - [ftp: バイナリ](ftp-binary.md)
 - - [コマンド ライン構文の記号](command-line-syntax-key.md)

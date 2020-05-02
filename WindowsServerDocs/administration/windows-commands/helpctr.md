@@ -1,6 +1,6 @@
 ---
 title: helpctr
-description: Windows コマンドに関するトピック * * * *-
+description: '* * * * のリファレンストピック'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0d241399eb02ef6c321c0de664372cee6ef0a4af
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3902b0f035e99924db669581c4b31e2e9b2f6922
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80842275"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724892"
 ---
 # <a name="helpctr"></a>helpctr
 

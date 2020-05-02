@@ -1,6 +1,6 @@
 ---
 title: 'ksetup: changepassword'
-description: Windows コマンドに関するトピック * * * *-
+description: '* * * * のリファレンストピック'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 68b14388ff3c33458873b494c8d5a770b44f7545
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 32c48e896b77043820eea42159e20c089bd69fb8
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80841785"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724725"
 ---
 # <a name="ksetupchangepassword"></a>ksetup: changepassword
 
 
 
-では、キー配布センター (KDC) のパスワード (kpasswd) 値を使用して、ログオンしているユーザーのパスワードを変更します。 このコマンドの使用方法の例については、次を参照してください。 [例](#BKMK_Examples)します。
+では、キー配布センター (KDC) のパスワード (kpasswd) 値を使用して、ログオンしているユーザーのパスワードを変更します。
 
 ## <a name="syntax"></a>構文
 
@@ -30,12 +30,12 @@ ksetup /changepassword <OldPasswd> <NewPasswd>
 
 #### <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
+|パラメーター|[説明]|
 |---------|-----------|
-|\<OldPasswd >|ログオンしているユーザーの既存のパスワードを示します。|
-|\<NewPasswd >|ログオンしているユーザーの新しいパスワードを示します。|
+|\<OldPasswd>|ログオンしているユーザーの既存のパスワードを示します。|
+|\<NewPasswd>|ログオンしているユーザーの新しいパスワードを示します。|
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>Remarks
 
 このコマンドは、KDC パスワード (kpasswd) の値を使用して、ログオンしているユーザーのパスワードを変更します。 Kpasswd が設定されている場合は、 **ksetup/dumpstate**コマンドを実行して出力に表示されます。
 
@@ -47,7 +47,7 @@ ksetup /changepassword <OldPasswd> <NewPasswd>
 
 コマンドの出力によって、成功または失敗の状態が通知されます。
 
-## <a name="examples"></a><a name=BKMK_Examples></a>例
+## <a name="examples"></a>例
 
 このドメインのこのコンピューターに現在ログオンしているユーザーのパスワードを変更します:
 ```
@@ -62,6 +62,6 @@ ksetup /domain CONTOSO /changepassword Pas$w0rd Pa$$w0rd
 ksetup /changepassword Pas$w0rd *
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 -   - [コマンド ライン構文の記号](command-line-syntax-key.md)

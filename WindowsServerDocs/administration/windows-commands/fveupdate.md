@@ -1,6 +1,6 @@
 ---
 title: fveupdate
-description: Windows コマンドに関するトピック * * * *-
+description: '* * * * のリファレンストピック'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c4f673eb9161f34a80e2359f2368229543c934ec
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: e2105b7549b58a2a29ea761834c00cea32f54f71
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80842695"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724969"
 ---
 # <a name="fveupdate"></a>fveupdate
 

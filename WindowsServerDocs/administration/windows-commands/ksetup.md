@@ -1,6 +1,6 @@
 ---
 title: ksetup
-description: Windows コマンドに関するトピック * * * *-
+description: '* * * * のリファレンストピック'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b3c61fd81691f9db44330eddbf40d4212d1786ff
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 2f3fde0ada4ab8bcbe52eccf22b959f99f91319f
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80841255"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724547"
 ---
 # <a name="ksetup"></a>ksetup
 
@@ -53,7 +53,7 @@ ksetup
 
 #### <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
+|パラメーター|[説明]|
 |---------|-----------|
 |[Ksetup:setrealm](ksetup-setrealm.md)|このコンピューターを Kerberos 領域のメンバーにします。|
 |[Ksetup:mapuser](ksetup-mapuser.md)|Kerberos プリンシパルをアカウントにマップします。|
@@ -64,7 +64,7 @@ ksetup
 |[Ksetup:server](ksetup-server.md)|変更を適用する Windows コンピューターの名前を指定できます。|
 |[Ksetup:setcomputerpassword](ksetup-setcomputerpassword.md)|コンピューターのドメインアカウント (またはホストプリンシパル) のパスワードを設定します。|
 |[Ksetup:removerealm](ksetup-removerealm.md)|指定された領域のすべての情報をレジストリから削除します。|
-|[Ksetup:domain](ksetup-domain.md)|ドメインを指定できます (\<DomainName > が **/domain**を使用して設定されていない場合)。|
+|[Ksetup:domain](ksetup-domain.md)|ドメインを指定できます (ドメイン名\<> が **/domain**を使用して設定されていない場合)。|
 |[Ksetup:changepassword](ksetup-changepassword.md)|Kpasswd を使用して、ログオンしているユーザーのパスワードを変更できます。|
 |[Ksetup:listrealmflags](ksetup-listrealmflags.md)|**Ksetup**が検出できる領域フラグを一覧表示します。|
 |[Ksetup:setrealmflags](ksetup-setrealmflags.md)|特定の領域の領域フラグを設定します。|
@@ -79,7 +79,7 @@ ksetup
 |[Ksetup:delenctypeattr](ksetup-delenctypeattr.md)|ドメインの暗号化の種類の信頼属性を削除します。|
 |/?|コマンド プロンプトでヘルプを表示します。|
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>Remarks
 
 **Ksetup**は、Kerberos 領域を検索するためにコンピューターの設定を変更するために使用されます。 Microsoft 以外の Kerberos ベースの実装では、通常、この情報は Krb5.conf ファイルに保存されます。 Windows Server オペレーティングシステムでは、レジストリに保持されます。 このツールを使用すると、これらの設定を変更できます。 これらの設定は、ワークステーションが Kerberos 領域を検索するために使用され、ドメインコントローラーによって、複数の領域にわたる信頼関係の Kerberos 領域を特定します。
 
@@ -87,6 +87,6 @@ ksetup
 
 Kerberos version 5 プロトコルは、Windows XP Professional、Windows Vista、および Windows 7 を実行しているコンピューターでのネットワーク認証の既定値です。 Kerberos SSP は、レジストリ内でユーザーの領域のドメイン名を検索し、DNS サーバーを照会することによって、名前を IP アドレスに解決します。 Kerberos プロトコルでは、DNS を使用して、領域名のみを使用して Kdc を検索できますが、これを行うように特別に構成する必要があります。
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 -   - [コマンド ライン構文の記号](command-line-syntax-key.md)

@@ -1,6 +1,6 @@
 ---
 title: 'ksetup: addenctypeattr'
-description: Windows コマンドに関するトピック * * * *-
+description: '* * * * のリファレンストピック'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 217e8a707c0af23901da3f433f630b253360f093
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 26441f739979cde31715e5fb06b5f3ab59845d97
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80841945"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724751"
 ---
 # <a name="ksetupaddenctypeattr"></a>ksetup: addenctypeattr
 
 
 
-ドメインの使用可能な種類の一覧に暗号化の種類の属性を追加します。 このコマンドの使用方法の例については、次を参照してください。 [例](#BKMK_Examples)します。
+ドメインの使用可能な種類の一覧に暗号化の種類の属性を追加します。
 
 ## <a name="syntax"></a>構文
 
@@ -30,12 +30,12 @@ ksetup /addenctypeattr <DomainName> {DES-CBC-CRC | DES-CBC-MD5 | RC4-HMAC-MD5 | 
 
 #### <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
+|パラメーター|[説明]|
 |---------|-----------|
-|\<DomainName >|接続を確立するドメインの名前。 完全修飾ドメイン名、または名前の単純な形式 (corp.contoso.com や contoso など) を使用します。|
-|［暗号化の種類］|は、次のサポートされている暗号化の種類のいずれかである必要があります。</br>-DES-CBC-CRC</br>-DES-CBC-MD5</br>-RC4-HMAC-MD5</br>-AES128-96-96</br>-AES256-96-96|
+|\<DomainName>|接続を確立するドメインの名前。 完全修飾ドメイン名、または名前の単純な形式 (corp.contoso.com や contoso など) を使用します。|
+|暗号化の種類|は、次のサポートされている暗号化の種類のいずれかである必要があります。</br>-DES-CBC-CRC</br>-DES-CBC-MD5</br>-RC4-HMAC-MD5</br>-AES128-96-96</br>-AES256-96-96|
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>Remarks
 
 Kerberos チケット保証チケット (TGT) とセッションキーの暗号化の種類を表示するには、 **klist**コマンドを実行し、出力を表示します。
 
@@ -43,9 +43,9 @@ Kerberos チケット保証チケット (TGT) とセッションキーの暗号�
 
 コマンドが成功するか失敗すると、ステータスメッセージが表示されます。
 
-接続先として使用するドメインを設定するには、 **ksetup/domain \<DomainName >** コマンドを実行します。
+接続先として使用するドメインを設定するには、 **ksetup/Domain \<DomainName>** コマンドを実行します。
 
-## <a name="examples"></a><a name=BKMK_Examples></a>例
+## <a name="examples"></a>例
 
 このコンピューターに設定されている現在の暗号化の種類を確認します。
 ```
@@ -68,7 +68,7 @@ ksetup /setenctypeattr corp.contoso.com AES-256-CTS-HMAC-SHA1-96
 ksetup /getenctypeattr corp.contoso.com
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 -   [Klist](klist.md)
 -   [Ksetup:domain](ksetup-domain.md)

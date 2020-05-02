@@ -1,6 +1,6 @@
 ---
 title: 'ksetup: removerealm'
-description: Windows コマンドに関するトピック * * * *-
+description: '* * * * のリファレンストピック'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1465ce08c0cf45de828683324b29fb2df8d0e893
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: bb7bf4663594a6c164d6495a9ba4cd81942afb79
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80841455"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724602"
 ---
 # <a name="ksetupremoverealm"></a>ksetup: removerealm
 
 
 
-指定された領域のすべての情報をレジストリから削除します。 このコマンドの使用方法の例については、次を参照してください。 [例](#BKMK_Examples)します。
+指定された領域のすべての情報をレジストリから削除します。
 
 ## <a name="syntax"></a>構文
 
@@ -30,17 +30,17 @@ ksetup /removerealm <RealmName>
 
 #### <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
+|パラメーター|[説明]|
 |---------|-----------|
-|\<RealmName >|領域名は、CORP などの大文字の DNS 名で表されます。CONTOSO.COM。 **ksetup**を実行すると、既定の領域として表示されます。|
+|\<RealmName>|領域名は、CORP などの大文字の DNS 名で表されます。CONTOSO.COM。 **ksetup**を実行すると、既定の領域として表示されます。|
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>Remarks
 
-領域名は、レジストリの2つの場所 ( **HKEY_LOCAL_MACHINE \system\controlset001**と **\CurrentControlSet\Control\Lsa\Kerberos**) に格納されます。
+領域名は、レジストリの2つの場所 ( **HKEY_LOCAL_MACHINE \system\controlset001**と**\CurrentControlSet\Control\Lsa\Kerberos**) に格納されます。
 
 ドメインコントローラーから既定の領域名を削除することはできません。これにより、DNS 情報がリセットされ、削除すると、ドメインコントローラーが使用できなくなる可能性があります。
 
-## <a name="examples"></a><a name=BKMK_Examples></a>例
+## <a name="examples"></a>例
 
 ローカルコンピューター上の .COM のスペルを誤った領域名を CORP に設定します。製薬.短所
 ```
@@ -52,7 +52,7 @@ ksetup /removerealm CORP.CONTOSO.CON
 ```
 **Ksetup**を実行して削除を確認し、出力を確認します。
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 -   [Ksetup](ksetup.md)
 -   [Ksetup:setrealm](ksetup-setrealm.md)

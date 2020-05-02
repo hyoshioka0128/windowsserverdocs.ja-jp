@@ -1,6 +1,6 @@
 ---
 title: logman query
-description: Windows コマンドに関するトピック * * * *-
+description: '* * * * のリファレンストピック'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e7b7cc202266a568108c7cbf0eac89260721014a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 05448a4f129a59145813dd0da7199d4adf845c5c
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80840665"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724356"
 ---
 # <a name="logman-query"></a>logman query
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 データコレクターまたはデータコレクターセットのプロパティを照会します。  
 
@@ -31,12 +31,12 @@ logman query [providers|Data Collector Set name] [options]
 |     パラメーター      |                                 説明                                  |
 |--------------------|------------------------------------------------------------------------------|
 |         /?         |                       状況依存のヘルプを表示します。                       |
-| -s <computer name> |            指定したリモートコンピューターでコマンドを実行します。             |
+| -s<computer name> |            指定したリモートコンピューターでコマンドを実行します。             |
 |  -config <value>   |           コマンドオプションを含む設定ファイルを指定します。            |
-|    [-n] <name>     |                          ターゲットオブジェクトの名前。                          |
+|    [-n]<name>     |                          対象オブジェクトの名前。                          |
 |        -/        | イベントを保存またはスケジュールせずに直接イベントトレースセッションに送信します。 |
 
-## <a name="examples"></a><a name=BKMK_examples></a>例  
+## <a name="examples"></a>例  
 次のコマンドは、ターゲットシステムで構成されているすべてのデータコレクターセットを一覧表示します。  
 ```  
 logman query  
@@ -49,5 +49,5 @@ logman query perf_log
 ```  
 logman query providers  
 ```  
-## <a name="additional-references"></a>その他の参照情報  
+## <a name="additional-references"></a>その他のリファレンス  
 [logman](logman.md)  

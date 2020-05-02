@@ -1,6 +1,6 @@
 ---
 title: 影の一覧表示
-description: Windows コマンドに関するトピック * * * *-
+description: '* * * * のリファレンストピック'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e22b0006709e1cf6636ad6c2bcc18432f59b4d1a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: d22fc3bbe644983eaf072a430e565a0d34d1c4dd
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80841165"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724471"
 ---
 # <a name="list-shadows"></a>影の一覧表示
 
@@ -30,12 +30,12 @@ list shadows {all | set <SetID> | id <ShadowID>}
 
 ### <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
+|パラメーター|[説明]|
 |---------|-----------|
-|all|すべてのシャドウコピーを一覧表示します。|
-|\<SetID > を設定します|指定されたシャドウコピーセット ID に属するシャドウコピーを一覧表示します。|
-|id \<ShadowID >|指定されたシャドウコピー ID を持つシャドウコピーを一覧表示します。|
+|すべて|すべてのシャドウコピーを一覧表示します。|
+|set \<SetID>|指定されたシャドウコピーセット ID に属するシャドウコピーを一覧表示します。|
+|id \<ShadowID>|指定されたシャドウコピー ID を持つシャドウコピーを一覧表示します。|
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

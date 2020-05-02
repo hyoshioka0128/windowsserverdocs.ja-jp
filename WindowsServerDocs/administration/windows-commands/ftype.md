@@ -1,6 +1,6 @@
 ---
 title: ftype
-description: Windows コマンドに関するトピック * * * *-
+description: '* * * * のリファレンストピック'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,20 +9,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f982f68f25a4decbc9c572b533fa1ecc5e893a8c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 43108fad0e1981bffd110264809acf30c1c12ba1
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80842705"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725015"
 ---
 # <a name="ftype"></a>ftype
 
 
 
-表示またはファイル名拡張子の関連付けで使用されているファイルの種類を変更します。 代入演算子を使用せずに使用する場合 ( **=** )、 **ftype** 指定したファイルの種類に対して現在開いているコマンド文字列を表示します。 パラメーターを指定せずに使用する場合 **ftype** 開いているコマンド文字列が定義されているファイルの種類が表示されます。
+表示またはファイル名拡張子の関連付けで使用されているファイルの種類を変更します。 代入演算子 (**=**) が指定されていない場合は、指定されたファイルの種類の現在開いているコマンド文字列が**ftype**によって表示されます。 パラメーターを指定せずに使用する場合 **ftype** 開いているコマンド文字列が定義されているファイルの種類が表示されます。
 
-このコマンドを使用する方法の例については、[例](#BKMK_examples)を参照してください。
+
 
 ## <a name="syntax"></a>構文
 
@@ -32,24 +32,24 @@ ftype [<FileType>[=[<OpenCommandString>]]]
 
 ### <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
+|パラメーター|[説明]|
 |---------|-----------|
-|\<の FileType >|表示または変更するファイルの種類を指定します。|
-|\<OpenCommandString >|指定したファイルの種類のファイルを開くときに使用する開いているコマンド文字列を指定します。|
-|/?|コマンド プロンプトでヘルプを表示します。|
+|\<FileType>|表示または変更するファイルの種類を指定します。|
+|\<OpenCommandString>|指定したファイルの種類のファイルを開くときに使用する開いているコマンド文字列を指定します。|
+|/?|コマンド プロンプトにヘルプを表示します。|
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>Remarks
 
 次の表方法 **ftype** [開く] コマンド文字列内の変数に置換します。
 
-|[Variable]|置換値|
+|変数|置換値|
 |--------|-----------------|
 |%0 または %1|アソシエーションを起動して、ファイル名と置き換えを取得します。|
 |%*|すべてのパラメーターを取得します。|
 |%2、%3、...|最初のパラメーター (%2)、2 番目のパラメーター (%3) およびなどを取得します。|
-|%~\<N >|以降で、残りのパラメーターのすべてを取得、 *N*番目のパラメーター位置 *N* 2 ~ 9 の任意の数値を指定できます。|
+|%~\<N>|以降で、残りのパラメーターのすべてを取得、 *N*番目のパラメーター位置 *N* 2 ~ 9 の任意の数値を指定できます。|
 
-## <a name="examples"></a><a name=BKMK_examples></a>例
+## <a name="examples"></a>例
 
 開いているコマンド文字列が定義されている現在のファイルの種類を表示するには、次のように入力します。
 ```
@@ -59,7 +59,7 @@ ftype
 ```
 ftype txtfile
 ```
-このコマンドには、次のような出力が生成されます。
+次のような出力が表示されます。
 ```
 txtfile=%SystemRoot%\system32\NOTEPAD.EXE %1
 ```
@@ -77,6 +77,6 @@ Perl スクリプトを呼び出すときに、.pl のファイル名拡張子�
 set PATHEXT=.pl;%PATHEXT%
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

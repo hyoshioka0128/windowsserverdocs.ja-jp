@@ -1,6 +1,6 @@
 ---
 title: ktmutil
-description: Windows コマンドに関するトピック * * * *-
+description: '* * * * のリファレンストピック'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2e65312ea4bb3169b90c2550b8b945919b86587f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 47b447165ee54e6839bb6338801c6703d818caa8
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80841195"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724522"
 ---
 # <a name="ktmutil"></a>ktmutil
 
@@ -22,7 +22,7 @@ ms.locfileid: "80841195"
 
 カーネルトランザクションマネージャーユーティリティを開始します。 パラメーターを指定せずに使用した場合、 **ktmutil**は使用可能なサブコマンドを表示します。
 
-このコマンドを使用する方法の例については、[例](#BKMK_examples)を参照してください。
+
 
 ## <a name="syntax"></a>構文
 
@@ -39,15 +39,15 @@ ktmutil forget
 
 ### <a name="parameters"></a>パラメーター
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>Remarks
 
-## <a name="examples"></a><a name=BKMK_examples></a>例
+## <a name="examples"></a>例
 
 GUID 311a9209-03f4-11dc-918f-00188b8f707b を持つ Indoubt トランザクションを強制的にコミットするには、次のように入力します。
 ```
 ktmutil force commit {311a9209-03f4-11dc-918f-00188b8f707b}
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

@@ -1,6 +1,6 @@
 ---
 title: ftp mput_1
-description: Windows コマンドに関するトピック * * * *-
+description: '* * * * のリファレンストピック'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 489e18da937e12a1fc69e0ee84d9dda00309ccd6
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b3fb654d5a2f44b9b63238abdbaee8d6a0294861
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80843235"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725227"
 ---
 # <a name="ftp-mput_1"></a>ftp: mput_1
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 転送の種類を現在のファイルを使用してリモート コンピューターにローカル ファイルをコピーします。   
 ## <a name="syntax"></a>構文  
@@ -27,16 +27,16 @@ mput <LocalFile>[ ]
 ```  
 #### <a name="parameters"></a>パラメーター  
 
-|  パラメーター  |                       説明                        |
+|  パラメーター  |                       [説明]                        |
 |-------------|----------------------------------------------------------|
 | <LocalFile> | リモート コンピューターにコピーするローカル ファイルを指定します。 |
 
-## <a name="examples"></a><a name=BKMK_Examples></a>例  
+## <a name="examples"></a>例  
 現在のファイル転送の種類を使用して、 **Program1**と**program2.c**をリモートコンピューターにコピーします。  
 ```  
 mput Program1.exe Program2.exe  
 ```  
-## <a name="additional-references"></a>その他の参照情報  
+## <a name="additional-references"></a>その他のリファレンス  
 -   [ftp: ascii](ftp-ascii.md)  
 -   [ftp: バイナリ](ftp-binary.md)  
 -   - [コマンド ライン構文の記号](command-line-syntax-key.md)  

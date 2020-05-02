@@ -1,6 +1,6 @@
 ---
 title: ftp remotehelp_1
-description: Windows コマンドに関するトピック * * * *-
+description: '* * * * のリファレンストピック'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3c4a4ffec01fce5cde8b2aa9dd1fa0704f3a85ff
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: dc4affb3f04eadaa4e0005e5edce0f564156f64a
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80843055"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725130"
 ---
 # <a name="ftp-remotehelp_1"></a>ftp: remotehelp_1
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 リモートコマンドのヘルプを表示します。   
 ## <a name="syntax"></a>構文  
@@ -26,12 +26,12 @@ ms.locfileid: "80843055"
 remotehelp [<Command>]  
 ```  
 #### <a name="parameters"></a>パラメーター  
-|パラメーター|説明|  
+|パラメーター|[説明]|  
 |-------|--------|  
 |[<Command>]|ヘルプを表示するコマンドの名前を指定します。 *コマンド*が指定されていない場合、 **ftp**では、すべてのリモートコマンドの一覧が表示されます。|  
-## <a name="remarks"></a>コメント  
+## <a name="remarks"></a>Remarks  
 **引用符**または**リテラル**を使用してリモートコマンドを実行できます。  
-## <a name="examples"></a><a name=BKMK_Examples></a>例  
+## <a name="examples"></a>例  
 リモートコマンドの一覧を表示します。  
 ```  
 remotehelp  
@@ -40,6 +40,6 @@ remotehelp
 ```  
 remotehelp feat  
 ```  
-## <a name="additional-references"></a>その他の参照情報  
+## <a name="additional-references"></a>その他のリファレンス  
 -   [ftp: 引用](ftp-quote.md)  
 -   - [コマンド ライン構文の記号](command-line-syntax-key.md)  
