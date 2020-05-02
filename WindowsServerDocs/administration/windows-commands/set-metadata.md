@@ -1,6 +1,6 @@
 ---
 title: セットのメタデータ
-description: Windows コマンドに関するトピックでは、シャドウコピーを別のコンピューターに転送するために使用するシャドウ作成メタデータファイルの名前と場所を設定するメタデータを設定します。
+description: 設定メタデータのリファレンストピックでは、シャドウコピーをあるコンピューターから別のコンピューターに転送するために使用するシャドウ作成メタデータファイルの名前と場所を設定します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b5bd728650cf163f98a82ff1e6f88755c4cc1aea
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 683e54a7efc072d8709d6257771ba6bc5bde206e
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80834525"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721913"
 ---
 # <a name="set-metadata"></a>セットのメタデータ
 
@@ -28,11 +28,11 @@ set metadata [<Drive>:][<Path>]<MetaData.cab>
 
 ### <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
+|パラメーター|[説明]|
 |---------|-----------|
-|[\<ドライブ >:][<Path>]|メタデータ ファイルを作成する場所を指定します。|
-|\<MetaData .cab >|シャドウの作成のメタデータを格納する cab ファイルの名前を指定します。|
+|[\<ドライブ>:][<Path>]|メタデータ ファイルを作成する場所を指定します。|
+|\<メタデータ .cab>|シャドウの作成のメタデータを格納する cab ファイルの名前を指定します。|
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

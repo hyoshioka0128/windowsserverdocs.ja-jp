@@ -1,6 +1,6 @@
 ---
 title: Scwcmd 変換
-description: Windows コマンドに関するトピック * * * *-
+description: '* * * * のリファレンストピック'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1fed9ff6369e6c966d9d1f5295db7db6648a1ab1
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 1f1116b42d356cc36f478089cdf487a38e792e87
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80835125"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82722121"
 ---
-# <a name="scwcmd-transform"></a>Scwcmd: transform
+# <a name="scwcmd-transform"></a>Scwcmd: 変換
 
 > 適用対象: Windows Server 2012 R2、Windows Server 2012
 
@@ -27,7 +27,7 @@ ms.locfileid: "80835125"
 > [!IMPORTANT]
 > インターネット インフォメーション サービス (IIS) セキュリティ ポリシー設定は、グループ ポリシーを使用して展開できません。</br>> 承認されたアプリケーションを一覧表示するファイアウォールポリシーは、サーバーが最後に起動されたときに Windows ファイアウォールサービスが自動的に開始しない限り、サーバーに展開しないでください。
 
-このコマンドの使用方法の例については、次を参照してください。 [例](#BKMK_Examples)します。
+
 
 ## <a name="syntax"></a>構文
 
@@ -37,23 +37,23 @@ scwcmd transform /p:<Policyfile.xml> /g:<GPODisplayName>
 
 #### <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
+|パラメーター|[説明]|
 |---------|-----------|
-|/p:\<Policyfile .xml >|適用される .xml ポリシー ファイルのパスとファイル名を指定します。 このパラメーターを指定する必要があります。|
-|/g:\<GPODisplayName >|GPO の表示名を指定します。 このパラメーターを指定する必要があります。|
-|/?|コマンド プロンプトでヘルプを表示します。|
+|/p:\<policyfile .xml>|適用される .xml ポリシー ファイルのパスとファイル名を指定します。 このパラメーターを指定する必要があります。|
+|/g:\<GPODisplayName>|GPO の表示名を指定します。 このパラメーターを指定する必要があります。|
+|/?|コマンド プロンプトにヘルプを表示します。|
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>Remarks
 
 Scwcmd.exe は Windows Server 2008 R2、Windows Server 2008 または Windows Server 2003 を実行するコンピューターにできるだけです。
 
-## <a name="examples"></a><a name=BKMK_Examples></a>例
+## <a name="examples"></a>例
 
 FileServerPolicy.xml という名前のファイルから FileServerSecurity という名前の GPO を作成するには、次のように入力します。
 ```
 scwcmd transform /p:FileServerPolicy.xml /g:FileServerSecurity
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 -   - [コマンド ライン構文の記号](command-line-syntax-key.md)

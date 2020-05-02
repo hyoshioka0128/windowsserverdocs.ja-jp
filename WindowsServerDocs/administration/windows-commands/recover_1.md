@@ -1,6 +1,6 @@
 ---
 title: recover
-description: Windows コマンドに関するトピック * * * *-
+description: '* * * * のリファレンストピック'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4c9b691b2f0cbad101f7caeb63011724dcf7594d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3a77e83f1a7143a82fd626390c7373dc87afdb17
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80836575"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82722610"
 ---
 # <a name="recover"></a>recover
 
@@ -33,25 +33,25 @@ recover [noerr]
 
 ### <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
+|パラメーター|[説明]|
 |---------|-----------|
 |noerr|スクリプト専用です。 エラーが発生しても、エラーが発生しなかったかのように DiskPart はコマンドの処理を続けます。 このパラメーターは、エラー発生すると、DiskPart はエラー コードを生成して終了します。|
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>Remarks
 
 -   このコマンドは、ディスク グループ上で動作します。
 -   このコマンドは、ダイナミック ディスクのグループにのみ適用されます。 ベーシック ディスクを使用してグループでは、このコマンドを使用する場合は、エラーは返されませんが、アクションは実行されません。
 -   このコマンドは、失敗したディスクまたは失敗した場合に動作します。 また、または冗長の失敗の状態が失敗すると、失敗しているボリューム上でも機能します。
 -   このコマンドは成功するには、ディスク グループの一部であるディスクを選択してください。 使用して、 **select ディスク** コマンド ディスクを選択し、それにフォーカスをします。
 
-## <a name="examples"></a><a name=BKMK_examples></a>例
+## <a name="examples"></a>例
 
 フォーカスのあるディスクが含まれるディスク グループを回復するには、次のように入力します。
 ```
 recover
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

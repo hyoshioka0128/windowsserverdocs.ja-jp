@@ -1,6 +1,6 @@
 ---
 title: pushd
-description: Windows コマンドに関するトピック * * * *-
+description: '* * * * のリファレンストピック'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e7866a54e83bd57c8689512a1b75b151f74cb93c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: e64c4f5090183b7d7b29dc7e040ffd94dc9d57ce
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80837095"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82722773"
 ---
 # <a name="pushd"></a>pushd
 
@@ -22,7 +22,7 @@ ms.locfileid: "80837095"
 
 **Popd**コマンドで使用する現在のディレクトリを格納し、指定されたディレクトリに変更します。
 
-このコマンドを使用する方法の例については、[例](#BKMK_examples)を参照してください。
+
 
 ## <a name="syntax"></a>構文
 
@@ -32,12 +32,12 @@ pushd [<Path>]
 
 ### <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
+|パラメーター|[説明]|
 |---------|-----------|
-|\<パス >|現在のディレクトリを作成するディレクトリを指定します。 このコマンドは、相対パスをサポートしています。|
-|/?|コマンド プロンプトでヘルプを表示します。|
+|\<パス>|現在のディレクトリを作成するディレクトリを指定します。 このコマンドは、相対パスをサポートしています。|
+|/?|コマンド プロンプトにヘルプを表示します。|
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>Remarks
 
 -   **Pushd**コマンドを使用するたびに、使用するために1つのディレクトリが格納されます。 ただし、 **pushd**コマンドを複数回使用して、複数のディレクトリを格納することができます。
 
@@ -47,9 +47,9 @@ pushd [<Path>]
 -   コマンド拡張機能が有効になっている場合、 **pushd**コマンドはネットワークパスまたはローカルドライブ文字とパスのいずれかを受け取ります。
 -   ネットワークパスを指定した場合、 **pushd**コマンドを実行すると、使用されていないドライブ文字 (Z: から始まる) が一時的に割り当てられます。指定されたネットワークリソース。 次に、コマンドは、現在のドライブとディレクトリを、新しく割り当てられたドライブの指定したディレクトリに変更します。 コマンド拡張機能が有効になっている**popd**コマンドを使用すると、 **pushd**によって作成されたドライブ文字の割り当てが削除**されます**。
 
-## <a name="examples"></a><a name=BKMK_examples></a>例
+## <a name="examples"></a>例
 
-次の例**では、コマンドと**バッチプログラムで**popd**コマンドを使用して、バッチプログラムが実行されたディレクトリから現在のディレクトリを変更し、それを変更する方法を示しています。
+コマンドを使用してバッチプログラム内の**popd**コマンドを実行し、バッチプログラムを実行したディレクトリから現在のディレクトリを変更してから、**次のよう**に変更する方法を説明します。
 ```
 @echo off
 rem This batch file deletes all .txt files in a specified directory
@@ -60,7 +60,7 @@ cls
 echo All text files deleted in the %1 directory
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

@@ -1,6 +1,6 @@
 ---
 title: select partition
-description: Windows コマンドに関するトピック * * * *-
+description: '* * * * のリファレンストピック'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 97145d73cbbe1bdc9b27e545b047b78fe89e4984
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 55b06f247c8e9f183a2971278a8f16ac237e9cfe
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80834805"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82722012"
 ---
 # <a name="select-partition"></a>select partition
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 指定されたパーティションを選択し、そのパーティションにフォーカスを移動します。 このコマンドは、現在フォーカスが、選択したディスクのパーティションを表示することもできます。  
   
@@ -32,11 +32,11 @@ select partition=<n>
   
 ### <a name="parameters"></a>パラメーター  
   
-|   パラメーター    |                                                                                    説明                                                                                    |
+|   パラメーター    |                                                                                    [説明]                                                                                    |
 |----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| パーティション\=<n> | フォーカスを受け取るパーティションの数。 使用して現在選択されているディスク上のすべてのパーティションの番号を表示する、 **パーティションを一覧表示** diskpart コマンドです。 |
+| partition\=<n> | フォーカスを受け取るパーティションの数。 使用して現在選択されているディスク上のすべてのパーティションの番号を表示する、 **パーティションを一覧表示** diskpart コマンドです。 |
   
-## <a name="remarks"></a>コメント  
+## <a name="remarks"></a>Remarks  
   
 -   使用して、ディスクを選択するパーティションを選択する前にまず必要があります、 **select ディスク** コマンドです。  
   
@@ -46,7 +46,7 @@ select partition=<n>
   
 -   対応するボリュームを持つパーティションを選択すると、ボリュームが自動的に選択されます。  
   
-## <a name="examples"></a><a name=BKMK_examples></a>例  
+## <a name="examples"></a>例  
 フォーカスをパーティション 3 に、次のように入力します。  
   
 ```  
@@ -59,7 +59,7 @@ select partitition=3
 select partition  
 ```  
   
-## <a name="additional-references"></a>その他の参照情報  
+## <a name="additional-references"></a>その他のリファレンス  
 - [コマンド ライン構文の記号](command-line-syntax-key.md)  
   
 

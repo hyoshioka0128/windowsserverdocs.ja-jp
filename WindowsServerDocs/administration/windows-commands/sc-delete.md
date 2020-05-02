@@ -1,6 +1,6 @@
 ---
 title: Sc delete
-description: Windows コマンドに関するトピック * * * *-
+description: '* * * * のリファレンストピック'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 05b276de04d4250cc03e4b2976bf8c1330ef82ce
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: dd40b5eb82def3b3c437cbdb5b60d279529d25a0
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80835385"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82722192"
 ---
 # <a name="sc-delete"></a>Sc delete
 
@@ -32,15 +32,15 @@ sc [<ServerName>] delete [<ServiceName>]
 
 ### <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
+|パラメーター|[説明]|
 |---------|-----------|
-|\<ServerName >|サービスが配置されているリモート サーバーの名前を指定します。 名前には UNC (汎用名前付け規則) 形式 (たとえば、\\\\myserver) を使用する必要があります。 SC.exe をローカルで実行するには、このパラメーターを省略します。|
-|\<ServiceName >|によって返されるサービスの名前を指定、 **られて** 操作します。|
-|?|コマンド プロンプトでヘルプを表示します。|
+|\<ServerName>|サービスが配置されているリモート サーバーの名前を指定します。 名前には、汎用名前付け規則 (UNC) 形式 (myserver など\\ \\) を使用する必要があります。 SC.exe をローカルで実行するには、このパラメーターを省略します。|
+|\<ServiceName>|によって返されるサービスの名前を指定、 **られて** 操作します。|
+|?|コマンド プロンプトにヘルプを表示します。|
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>Remarks
 
-使用 **プログラム追加と削除** に **コントロール パネルの**  DHCP、DNS、またはその他の組み込みのオペレーティング システム サービスを削除します。 なお **プログラム追加と削除** のみ、サービスのレジストリ サブキーは削除されませんが、サービスをアンインストール、ショートカットを削除ができます。
+使用 **プログラム追加と削除** に **コントロール パネルの [** DHCP、DNS、またはその他の組み込みのオペレーティング システム サービスを削除します。 なお **プログラム追加と削除** のみ、サービスのレジストリ サブキーは削除されませんが、サービスをアンインストール、ショートカットを削除ができます。
 
 ## <a name="examples"></a>例
 
@@ -49,6 +49,6 @@ sc [<ServerName>] delete [<ServiceName>]
 sc delete newserv
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

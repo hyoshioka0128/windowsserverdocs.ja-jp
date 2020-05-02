@@ -1,6 +1,6 @@
 ---
-title: reg compare
-description: Windows コマンドに関するトピック * * * *-
+title: reg 比較
+description: '* * * * のリファレンストピック'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,20 +9,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 21eb459711f8ca72bf2f6d841d958bb25a96f845
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 49e9b993f512fdbc4728ee08ec42a8bc7ce0ab8f
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80836545"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82722588"
 ---
-# <a name="reg-compare"></a>reg compare
+# <a name="reg-compare"></a>reg 比較
 
 
 
 比較では、レジストリ サブキーまたはエントリを指定します。
 
-このコマンドを使用する方法の例については、[例](#BKMK_examples)を参照してください。
+
 
 ## <a name="syntax"></a>構文
 
@@ -32,11 +32,11 @@ reg compare <KeyName1> <KeyName2> [{/v ValueName | /ve}] [{/oa | /od | /os | on}
 
 ### <a name="parameters"></a>パラメーター
 
-|    パラメーター    |                                                                                                                                                                                                                                                                                          説明                                                                                                                                                                                                                                                                                           |
+|    パラメーター    |                                                                                                                                                                                                                                                                                          [説明]                                                                                                                                                                                                                                                                                           |
 |-----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|   \<KeyName1 >   |                                                               比較する最初のサブキーの完全なパスを指定します。 リモートコンピューターを指定するには、コンピューター名を、 *KeyName*の一部として \\\\ComputerName\) の形式で含めます。 \\\\ComputerName \ を省略すると、操作は既定でローカルコンピューターに設定されます。 *KeyName* 有効なルート キーを含める必要があります。 ローカル コンピューターの有効なルート キー: HKLM、HKCU、HKCR、HKU、および HKCC します。 有効なルート キーは、リモート コンピューターが指定されている場合: HKLM および HKU します。                                                                |
-|   \<KeyName2 >   | 比較する 2 つ目のサブキーの完全なパスを指定します。 リモートコンピューターを指定するには、コンピューター名を、 *KeyName*の一部として \\\\ComputerName\) の形式で含めます。 \\\\ComputerName \ を省略すると、操作は既定でローカルコンピューターに設定されます。 内のコンピューター名のみを指定する *KeyName2* で指定したサブキーへのパスを使用する操作と、 *KeyName1*します。 *KeyName* 有効なルート キーを含める必要があります。 ローカル コンピューターの有効なルート キー: HKLM、HKCU、HKCR、HKU、および HKCC します。 有効なルート キーは、リモート コンピューターが指定されている場合: HKLM および HKU します。 |
-| /v \<ValueName > |                                                                                                                                                                                                                                                                     サブキーの下を比較する値の名前を指定します。                                                                                                                                                                                                                                                                      |
+|   \<KeyName1>   |                                                               比較する最初のサブキーの完全なパスを指定します。 リモートコンピューターを指定するには、コンピューター名 ( *KeyName*の一部\\ \\と\)して ComputerName という形式) を含めます。 ComputerName \\ \\\ を省略すると、操作は既定でローカルコンピューターに設定されます。 *KeyName* 有効なルート キーを含める必要があります。 ローカル コンピューターの有効なルート キー: HKLM、HKCU、HKCR、HKU、および HKCC します。 有効なルート キーは、リモート コンピューターが指定されている場合: HKLM および HKU します。                                                                |
+|   \<KeyName2>   | 比較する 2 つ目のサブキーの完全なパスを指定します。 リモートコンピューターを指定するには、コンピューター名 ( *KeyName*の一部\\ \\と\)して ComputerName という形式) を含めます。 ComputerName \\ \\\ を省略すると、操作は既定でローカルコンピューターに設定されます。 内のコンピューター名のみを指定する *KeyName2* で指定したサブキーへのパスを使用する操作と、 *KeyName1*します。 *KeyName* 有効なルート キーを含める必要があります。 ローカル コンピューターの有効なルート キー: HKLM、HKCU、HKCR、HKU、および HKCC します。 有効なルート キーは、リモート コンピューターが指定されている場合: HKLM および HKU します。 |
+| /v \<ValueName> |                                                                                                                                                                                                                                                                     サブキーの下を比較する値の名前を指定します。                                                                                                                                                                                                                                                                      |
 |       /ve       |                                                                                                                                                                                                                                                         Null 値の名前を持つエントリのみを比較することを指定します。                                                                                                                                                                                                                                                         |
 |      [{/oa      |                                                                                                                                                                                                                                                                                              /od                                                                                                                                                                                                                                                                                               |
 |       /oa       |                                                                                                                                                                                                                                             すべての相違点との一致が表示されることを指定します。 既定では、差分のみが一覧表示します。                                                                                                                                                                                                                                             |
@@ -46,11 +46,11 @@ reg compare <KeyName1> <KeyName2> [{/v ValueName | /ve}] [{/oa | /od | /os | on}
 |       /s        |                                                                                                                                                                                                                                                                         すべてのサブキーとエントリを再帰的を比較します。                                                                                                                                                                                                                                                                          |
 |       /?        |                                                                                                                                                                                                                                                                    ヘルプを表示 **reg 比較** コマンド プロンプト。                                                                                                                                                                                                                                                                    |
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>Remarks
 
 次の表に、戻り値の **reg 比較**します。
 
-|値|説明|
+|値|[説明]|
 |-----|-----------|
 |0|比較の結果が成功して、結果は変わりません。|
 |1|比較が失敗しました。|
@@ -58,13 +58,13 @@ reg compare <KeyName1> <KeyName2> [{/v ValueName | /ve}] [{/oa | /od | /os | on}
 
 次の表は、結果に表示されるシンボルを一覧表示します。
 
-|シンボル|説明|
+|Symbol|説明|
 |------|-----------|
 |=|*KeyName1* データに等しい *KeyName2* データ。|
 |<|*KeyName1* データより小さい *KeyName2* データ。|
 |>|*KeyName1* データがより大きい *KeyName2* データ。|
 
-## <a name="examples"></a><a name=BKMK_examples></a>例
+## <a name="examples"></a>例
 
 キー **MyApp**の下にあるすべての値を、キー **Savemyapp**の下のすべての値と比較するには、次のように入力します。
 
@@ -76,8 +76,8 @@ REG COMPARE HKLM\Software\MyCo HKLM\Software\MyCo1/v バージョン
 
 HKLM\Software\MyCo の下にあるすべてのサブキーと値を、ローカルコンピューター上の HKLM\Software\MyCo の下のすべてのサブキーと値を使用して比較するには、次のように入力します。
 
-REG COMPARE \\\\ZODIAC\HKLM\Software\MyCo \\\\。 /s
+REG COMPARE \\ \\ZODIAC\HKLM\Software\MyCo \\ \\。 /s
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

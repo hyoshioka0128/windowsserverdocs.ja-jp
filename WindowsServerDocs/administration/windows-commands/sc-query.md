@@ -1,6 +1,6 @@
 ---
 title: Sc クエリ
-description: Windows コマンドに関するトピック * * * *-
+description: '* * * * のリファレンストピック'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 38d83fa07e9f85f3a5a4b86388bbed41fcf326d1
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 6a6b4555790a8f9bb1149531251e724189177975
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80835285"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82722183"
 ---
 # <a name="sc-query"></a>Sc クエリ
 
@@ -22,7 +22,7 @@ ms.locfileid: "80835285"
 
 取得し、指定されたサービス、ドライバー、サービスの種類またはドライバーの種類に関する情報を表示します。
 
-このコマンドを使用する方法の例については、[例](#BKMK_examples)を参照してください。
+
 
 ## <a name="syntax"></a>構文
 
@@ -32,19 +32,19 @@ sc [<ServerName>] query [<ServiceName>] [type= {driver | service | all}] [type= 
 
 ### <a name="parameters"></a>パラメーター
 
-|       パラメーター        |                                                                                                                          説明                                                                                                                          |
+|       パラメーター        |                                                                                                                          [説明]                                                                                                                          |
 |------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|     \<ServerName >      |                       サービスが配置されているリモート サーバーの名前を指定します。 名前には UNC (汎用名前付け規則) 形式 (たとえば、\\\\myserver) を使用する必要があります。 SC.exe をローカルで実行するには、このパラメーターを省略します。                        |
-|     \<ServiceName >     |                                      によって返されるサービスの名前を指定、 **られて** 操作します。 これは、 **クエリ** と共にその他のパラメーターは使用されません **クエリ** パラメーター (以外の *ServerName*)。                                      |
-|     種類 = {ドライバー      |                                                                                                                            service                                                                                                                            |
+|     \<ServerName>      |                       サービスが配置されているリモート サーバーの名前を指定します。 名前には、汎用名前付け規則 (UNC) 形式 (myserver など\\ \\) を使用する必要があります。 SC.exe をローカルで実行するには、このパラメーターを省略します。                        |
+|     \<ServiceName>     |                                      によって返されるサービスの名前を指定、 **られて** 操作します。 これは、 **クエリ** と共にその他のパラメーターは使用されません **クエリ** パラメーター (以外の *ServerName*)。                                      |
+|     種類 = {ドライバー      |                                                                                                                            サービス (service)                                                                                                                            |
 |       種類 = {独自       |                                                                                                                             共有                                                                                                                             |
-|     状態 = {アクティブ     |                                                                                                                           稼動                                                                                                                            |
-| bufsize = \<BufferSize > |                     列挙バッファーのサイズをバイト単位で指定します。 既定のバッファー サイズは、1,024 バイトです。 クエリの結果の表示が 1,024 バイトを超えると、列挙型のバッファーのサイズを増やす必要があります。                      |
-|   ri = \<ResumeIndex >   | 列挙を開始または再開するにはインデックス番号を指定します。 既定値は **0** (ゼロ)。 組み合わせてこのパラメーターを使用して、 **bufsize =** パラメーターの詳細については、バッファーの既定で表示できるよりも、クエリによって返されたとき。 |
-|  グループ = \<GroupName >   |                                                                             列挙するサービス グループを指定します。 既定では、すべてのグループが列挙されます (* * グループ = * *)。                                                                              |
-|           /?           |                                                                                                             コマンド プロンプトでヘルプを表示します。                                                                                                              |
+|     状態 = {アクティブ     |                                                                                                                           非アクティブ                                                                                                                            |
+| bufsize = \<BufferSize> |                     列挙バッファーのサイズをバイト単位で指定します。 既定のバッファー サイズは、1,024 バイトです。 クエリの結果の表示が 1,024 バイトを超えると、列挙型のバッファーのサイズを増やす必要があります。                      |
+|   ri = \<ResumeIndex>   | 列挙を開始または再開するにはインデックス番号を指定します。 既定値は**0** (ゼロ) です。 組み合わせてこのパラメーターを使用して、 **bufsize =** パラメーターの詳細については、バッファーの既定で表示できるよりも、クエリによって返されたとき。 |
+|  グループ = \<GroupName>   |                                                                             列挙するサービス グループを指定します。 既定では、すべてのグループが列挙されます (* * グループ = * *)。                                                                              |
+|           /?           |                                                                                                             コマンド プロンプトにヘルプを表示します。                                                                                                              |
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>Remarks
 
 - パラメーターと値の間のスペースのない (つまり、 **型 = 独自**, ではなく、 **型 = 独自**)、操作は失敗します。
 - **クエリ** 操作には、サービスに関する次の情報が表示されます: WIN32_EXIT_B、SERVICE_EXIT_B、チェックポイント、および WAIT_HINT (状態は使用できない) と同様に状態 (サービスのレジストリ サブキーの名前)、サービス名を入力します。
@@ -58,7 +58,7 @@ sc [<ServerName>] query [<ServiceName>] [type= {driver | service | all}] [type= 
   sc query bufsize= 1822 ri= 79
   ```
 
-## <a name="examples"></a><a name=BKMK_examples></a>例
+## <a name="examples"></a>例
 
 アクティブなサービスのみの情報を表示するには、次のコマンドのいずれかを入力します。
 ```
@@ -94,6 +94,6 @@ sc query type= driver
 sc query type= driver group= ndis
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

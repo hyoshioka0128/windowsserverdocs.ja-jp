@@ -1,6 +1,6 @@
 ---
 title: reg
-description: Windows コマンドに関するトピック * * * *-
+description: '* * * * のリファレンストピック'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a1f5154401791823ae71d5e0a8f044bdcfb5b5b1
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 42f40c2bc51d786f66743ab3e7d2cfc378aa4da1
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80836255"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82722493"
 ---
 # <a name="reg"></a>reg
 

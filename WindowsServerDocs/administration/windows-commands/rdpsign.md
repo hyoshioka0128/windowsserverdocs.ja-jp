@@ -9,22 +9,22 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: c9df46ab09b758cbd86334d5b418c876c41f0eff
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 4245ea533238d31457563f4d3521fdb09ff1f255
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80836675"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82722626"
 ---
 # <a name="rdpsign"></a>rdpsign
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 リモート デスクトップ プロトコル (.rdp) ファイルにデジタル署名することできます。
-このコマンドの使用方法の例については、「[例](#BKMK_examples)」を参照してください。
+
 
 > [!NOTE]
-> Windows Server 2008 R2 では、ターミナル サービスはリモート デスクトップ サービスという名前に変更されました。 最新バージョンの新機能については、Windows Server TechNet ライブラリの「 [Windows server 2012 のリモートデスクトップサービスの新機能](https://technet.microsoft.com/library/hh831527)」を参照してください。
+> Windows Server 2008 R2 で、「ターミナル サービス」は「リモート デスクトップ サービス」に名前変更されました。 最新バージョンの新機能については、Windows Server TechNet ライブラリの「 [Windows server 2012 のリモートデスクトップサービスの新機能](https://technet.microsoft.com/library/hh831527)」を参照してください。
 
 ## <a name="syntax"></a>構文
 ```
@@ -33,17 +33,17 @@ rdpsign /sha1 <hash> [/q | /v |] [/l] <file_name.rdp>
 
 ### <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
+|パラメーター|[説明]|
 |-------|--------|
-|/sha1 \<hash >|これは、セキュア ハッシュ アルゴリズム 1 (SHA1) ハッシュ、証明書ストアに含まれている署名証明書の拇印を指定します。 Windows Server 2012 R2 以前で使用されています。|
-|/sha256 \<hash >|証明書ストアに含まれる署名証明書のセキュアハッシュアルゴリズム 256 (SHA256) ハッシュであるサムプリントを指定します。 Windows Server 2016 以降の/sha1 を置き換えます。|
-|/q|Quiet モードです。 コマンドが成功すると、出力なしは、コマンドが失敗した場合は、最小限の出力。|
+|/sha1 \<hash>|これは、セキュア ハッシュ アルゴリズム 1 (SHA1) ハッシュ、証明書ストアに含まれている署名証明書の拇印を指定します。 Windows Server 2012 R2 以前で使用されています。|
+|/sha256 \<hash>|証明書ストアに含まれる署名証明書のセキュアハッシュアルゴリズム 256 (SHA256) ハッシュであるサムプリントを指定します。 Windows Server 2016 以降の/sha1 を置き換えます。|
+|/q|非表示モードです。 コマンドが成功すると、出力なしは、コマンドが失敗した場合は、最小限の出力。|
 |/v|詳細モード。 すべての警告、メッセージ、および状態を表示します。|
 |/l|実際には、入力ファイルのいずれかを置き換えることがなく、署名と出力の結果をテストします。|
-|/?|コマンド プロンプトでヘルプを表示します。|
+|/?|コマンド プロンプトにヘルプを表示します。|
 
-## <a name="remarks"></a>コメント
--   SHA1 または SHA256 証明書の拇印は、信頼された .rdp ファイルの発行元を表す必要があります。 証明書の拇印を取得するには、証明書スナップインを開き、使用する証明書をダブルクリックします (ローカルコンピューターの証明書ストアまたは個人証明書ストアのいずれか)。次に、 **[詳細]** タブをクリックし、**フィールド**の一覧で **[拇印]** をクリックします。
+## <a name="remarks"></a>Remarks
+-   SHA1 または SHA256 証明書の拇印は、信頼された .rdp ファイルの発行元を表す必要があります。 証明書の拇印を取得するには、証明書スナップインを開き、使用する証明書をダブルクリックします (ローカルコンピューターの証明書ストアまたは個人証明書ストアのいずれか)。次に、[**詳細**] タブをクリックし、**フィールド**の一覧で [**拇印**] をクリックします。
 
     > [!NOTE]
     > Rdpsign ツールで使用するために拇印をコピーする場合は、スペースを削除する必要があります。

@@ -1,6 +1,6 @@
 ---
 title: repair-bde
-description: Windows コマンドに関するトピック * * * *-
+description: '* * * * のリファレンストピック'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2107e5b7ef0339fc4f682632f3ef5a593578680a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 501ab801e76980f7e94e88213dd3aa42ee04d4d7
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80835965"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82722397"
 ---
 # <a name="repair-bde"></a>repair-bde
 
@@ -29,7 +29,7 @@ BitLocker を使用してドライブが暗号化されている場合は、重�
 -   修復-bde は、暗号化または暗号化解除のプロセス中に失敗したドライブを修復できません。
 -   ドライブに暗号化がある場合は、ドライブが完全に暗号化されていることを前提としています。
 
-このコマンドの使用方法の例については、次を参照してください。 [例](#BKMK_Examples)します。
+
 
 ## <a name="syntax"></a>構文
 
@@ -39,10 +39,10 @@ repair-bde <InputVolume> <OutputVolumeorImage> [-rk] [–rp] [-pw] [–kp] [–l
 
 #### <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
+|パラメーター|[説明]|
 |---------|-----------|
-|InputVolume > の \<|修復する BitLocker で暗号化されたドライブのドライブ文字を指定します。 ドライブ文字にはコロンを含める必要があります。例: **C:** 。|
-|\<OutputVolumeorImage >|修復されたドライブの内容を保存するドライブを指定します。 出力ドライブのすべての情報が上書きされます。|
+|\<InputVolume>|修復する BitLocker で暗号化されたドライブのドライブ文字を指定します。 ドライブ文字にはコロンを含める必要があります。例: **C:**。|
+|\<OutputVolumeorImage>|修復されたドライブの内容を保存するドライブを指定します。 出力ドライブのすべての情報が上書きされます。|
 |-rk|ボリュームのロックを解除するために使用する回復キーの場所を指定します。 このコマンドは **、-recoverykey**として指定することもできます。|
 |-rp|ボリュームのロックを解除するために使用する必要がある数値回復パスワードを指定します。 このコマンドは **、-recoverypassword**として指定することもできます。|
 |-pw|ボリュームのロックを解除するために使用するパスワードを指定します。 このコマンドは **、パスワード**として指定することもできます。|
@@ -51,29 +51,29 @@ repair-bde <InputVolume> <OutputVolumeorImage> [-rk] [–rp] [-pw] [–kp] [–l
 |-f|ボリュームをロックできない場合でも、強制的にマウントを解除します。 このコマンドは **、-force**として指定することもできます。|
 |-? または /?|コマンド プロンプトでヘルプを表示します。|
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>Remarks
 
 キーパッケージへのパスが指定されていない場合、**修復-bde**はドライブでキーパッケージを検索します。 ただし、ハードドライブが破損している場合は、**修復-bde**でパッケージを見つけることができず、パスを入力するように求められます。
 
-## <a name="examples"></a><a name=BKMK_Examples></a>例
+## <a name="examples"></a>例
 
-次の例では、ドライブ C の修復を試み、ドライブ C からドライブ D にコンテンツを書き込みます。ドライブ F に格納されている回復キーファイル (RecoveryKey) を使用して、この試行の結果をドライブ Z のログファイル (output.txt) に書き込みます。
+ドライブ C の修復を試行し、ドライブ C からドライブ D にコンテンツを書き込むには、ドライブ F に格納された回復キーファイル (RecoveryKey. bek) を使用して、ドライブ Z のログファイル (output.txt) にこの試行の結果を書き込みます。
 ```
 repair-bde C: D: -rk F:\RecoveryKey.bek –lf Z:\log.txt
 ```
-次の例では、ドライブ C の修復を試行し、指定された48桁の回復パスワードを使用してドライブ C にコンテンツを書き込みます。 回復パスワードは、各ブロックをハイフンで区切った6桁の8つのブロックで入力する必要があります。
+はドライブ C の修復を試行し、指定された48桁の回復パスワードを使用してドライブ C にコンテンツを書き込みます。 回復パスワードは、各ブロックをハイフンで区切った6桁の8つのブロックで入力する必要があります。
 ```
 repair-bde C: D: -rp 111111-222222-333333-444444-555555-666666-777777-888888
 ```
-次の例では、ドライブ c をマウント解除してからドライブ c の修復を試行し、ドライブ F に格納されている回復キーパッケージと回復キーファイル (RecoveryKey) を使用してドライブ c にコンテンツを書き込みます。
+ドライブ C を強制的にマウント解除し、ドライブ c の内容をドライブ c に書き込むには、ドライブ F に格納されている回復キーパッケージと回復キーファイル (RecoveryKey. bek) を使用します。
 ```
 repair-bde C: D: -kp F:\RecoveryKeyPackage -rk F:\RecoveryKey.bek -f
 ```
-次の例では、ドライブ c の修復を試行し、ドライブ C からドライブ D にコンテンツを書き込みます。ドライブ C: のロックを解除するためのパスワードを入力する必要があります。
+ドライブ c の修復を試行し、ドライブ c からドライブ D にコンテンツを書き込むには、次のようにメッセージが表示されたら、C: ドライブのロックを解除するためのパスワードを入力する必要があります。
 ```
 repair-bde C: D: -pw
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 -   - [コマンド ライン構文の記号](command-line-syntax-key.md)

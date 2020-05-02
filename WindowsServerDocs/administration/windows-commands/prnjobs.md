@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 231b8a7a9f4f8623b3d84cc789064d256883a733
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a40a8cbc3c8b13c99cc440b8de797898a5a6249b
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80837295"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82722838"
 ---
 # <a name="prnjobs"></a>prnjobs
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 一時停止、再開、キャンセルすると、および印刷ジョブを一覧表示します。
 
@@ -30,20 +30,20 @@ cscript Prnjobs {-z | -m | -x | -l | -?} [-s <ServerName>]
 
 ### <a name="parameters"></a>パラメーター
 
-|          パラメーター           |                                                                                                                                                                                        説明                                                                                                                                                                                        |
+|          パラメーター           |                                                                                                                                                                                        [説明]                                                                                                                                                                                        |
 |------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|              ~ z              |                                                                                                                                                                 **-j**パラメーターで指定された印刷ジョブを一時停止します。                                                                                                                                                                 |
-|              -m              |                                                                                                                                                                指定した印刷ジョブを再開、 **-j** パラメーター。                                                                                                                                                                 |
-|              -x              |                                                                                                                                                                指定した印刷ジョブを取り消し、 **-j** パラメーター。                                                                                                                                                                 |
+|              -Z              |                                                                                                                                                                 **-j**パラメーターで指定された印刷ジョブを一時停止します。                                                                                                                                                                 |
+|              -M              |                                                                                                                                                                指定した印刷ジョブを再開、 **-j** パラメーター。                                                                                                                                                                 |
+|              -X              |                                                                                                                                                                指定した印刷ジョブを取り消し、 **-j** パラメーター。                                                                                                                                                                 |
 |              -l              |                                                                                                                                                                        印刷キュー内のすべての印刷ジョブを一覧表示します。                                                                                                                                                                         |
-|       -s \<ServerName >       |                                                                                                                  管理するプリンターをホストするリモート コンピューターの名前を指定します。 コンピューターを指定しないと、ローカル コンピューターが使用されます。                                                                                                                  |
-|      -p \<printerName >       |                                                                                                                                                           管理するプリンターの名前を指定します。 必須。                                                                                                                                                            |
-|         -j \<JobID >          |                                                                                                                                                                印刷ジョブをキャンセルする (ID 番号) を指定します。                                                                                                                                                                 |
-| -u \<UserName >-w <Password> | 管理するプリンターをホストするコンピューターに接続するアクセス許可を持つアカウントを指定します。 ターゲット コンピューターのローカル Administrators グループのすべてのメンバーにこれらのアクセス許可があるが、アクセス許可は、他のユーザーに与えることもできます。 アカウントを指定しない場合は、コマンドを実行するこれらのアクセス許可を持つアカウントでログオンする必要があります。 |
-|              /?              |                                                                                                                                                                           コマンド プロンプトでヘルプを表示します。                                                                                                                                                                            |
+|       -s \<ServerName>       |                                                                                                                  管理するプリンターをホストするリモート コンピューターの名前を指定します。 コンピューターを指定しないと、ローカル コンピューターが使用されます。                                                                                                                  |
+|      -p \<printerName>       |                                                                                                                                                           管理するプリンターの名前を指定します。 必須。                                                                                                                                                            |
+|         -j \<JobID>          |                                                                                                                                                                印刷ジョブをキャンセルする (ID 番号) を指定します。                                                                                                                                                                 |
+| -u \<ユーザー名>-w<Password> | 管理するプリンターをホストするコンピューターに接続するアクセス許可を持つアカウントを指定します。 ターゲット コンピューターのローカル Administrators グループのすべてのメンバーはこれらのアクセス許可を持っていますが、アクセス許可を他のユーザーに与えることもできます。 アカウントを指定しない場合は、コマンドを実行するこれらのアクセス許可を持つアカウントでログオンする必要があります。 |
+|              /?              |                                                                                                                                                                           コマンド プロンプトにヘルプを表示します。                                                                                                                                                                            |
 
-## <a name="remarks"></a>コメント
--   **Prnjobs.vbs**コマンドは、%windir%\system32\ printing_Admin_Scripts\\<language> ディレクトリにある Visual Basic スクリプトです。 このコマンドを使用するには、コマンドプロンプトで「 **cscript** 」と入力し、prnjobs.vbs ファイルへの完全なパスを入力するか、ディレクトリを適切なフォルダーに変更します。 例 :
+## <a name="remarks"></a>Remarks
+-   **Prnjobs.vbs**コマンドは、%windir%\system32\ printing_Admin_Scripts\\ <language>ディレクトリにある Visual Basic スクリプトです。 このコマンドを使用するには、コマンドプロンプトで「 **cscript** 」と入力し、prnjobs.vbs ファイルへの完全なパスを入力するか、ディレクトリを適切なフォルダーに変更します。 次に例を示します。
     ```
     cscript %WINdir%\System32\printing_Admin_Scripts\en-US\prnjobs.vbs
     ```
@@ -59,7 +59,7 @@ Colorprinter_2 という名前のローカルプリンターのキューにあ�
 cscript prnjobs.vbs -l -p colorprinter_2
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 -   - [コマンド ライン構文の記号](command-line-syntax-key.md)
 -   [印刷コマンドのリファレンス](print-command-reference.md)

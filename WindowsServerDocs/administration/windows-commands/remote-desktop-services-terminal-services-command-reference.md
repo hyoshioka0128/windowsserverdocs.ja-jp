@@ -1,6 +1,6 @@
 ---
 title: リモート デスクトップ サービス (ターミナル サービス) のコマンド リファレンス
-description: Windows コマンドに関するトピック * * * *-
+description: '* * * * のリファレンストピック'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,22 +9,22 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b2e188be84c657688a971a75788942d4acf598d7
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 630b2274e96e446af07f7630d95056b40858209f
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80836065"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82722441"
 ---
 # <a name="remote-desktop-services-terminal-services-command-reference"></a>リモート デスクトップ サービス (ターミナル サービス) のコマンド リファレンス
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 リモート デスクトップ サービスのコマンド ライン ツールの一覧を次に示します。
 > [!NOTE]
-> Windows Server 2008 R2 では、ターミナル サービスはリモート デスクトップ サービスという名前に変更されました。 最新バージョンの新機能については、Windows Server TechNet ライブラリの「 [Windows server 2012 のリモートデスクトップサービスの新機能](https://technet.microsoft.com/library/hh831527)」を参照してください。
+> Windows Server 2008 R2 で、「ターミナル サービス」は「リモート デスクトップ サービス」に名前変更されました。 最新バージョンの新機能については、Windows Server TechNet ライブラリの「 [Windows server 2012 のリモートデスクトップサービスの新機能](https://technet.microsoft.com/library/hh831527)」を参照してください。
 > 
-> |                 コマンド                 |                                                      説明                                                       |
+> |                 command                 |                                                      説明                                                       |
 > |-----------------------------------------|------------------------------------------------------------------------------------------------------------------------|
 > |           [change](change.md)           | ログオン、COM ポートのマッピング、およびインストールモードのリモートデスクトップセッションホスト (rd セッションホスト) サーバーの設定を変更します。 |
 > |     [change logon](change-logon.md)     |    Rd セッションホストサーバー上のクライアントセッションからのログオンを有効または無効にします。または、現在のログオン状態を表示します。     |
@@ -39,9 +39,9 @@ ms.locfileid: "80836065"
 > |            [mstsc](mstsc.md)            |                       rd セッションホストサーバーまたはその他のリモートコンピューターへの接続を作成します。                        |
 > |          [qappsrv](qappsrv.md)          |                             ネットワーク上のすべての rd セッションホストサーバーの一覧を表示します。                             |
 > |         [qprocess](qprocess.md)         |                  Rd セッションホストサーバーで実行されているプロセスに関する情報を表示します。                   |
-> |            [クエリ](query.md)            |                      プロセス、セッション、および rd セッションホストサーバーに関する情報を表示します。                      |
-> |    [クエリプロセス](query-process.md)    |                  Rd セッションホストサーバーで実行されているプロセスに関する情報を表示します。                   |
-> |    [クエリセッション](query-session.md)    |                           Rd セッションホストサーバー上のセッションに関する情報を表示します。                            |
+> |            [query](query.md)            |                      プロセス、セッション、および rd セッションホストサーバーに関する情報を表示します。                      |
+> |    [query process](query-process.md)    |                  Rd セッションホストサーバーで実行されているプロセスに関する情報を表示します。                   |
+> |    [query session](query-session.md)    |                           Rd セッションホストサーバー上のセッションに関する情報を表示します。                            |
 > | [クエリ termserver](query-termserver.md) |                             ネットワーク上のすべての rd セッションホストサーバーの一覧を表示します。                             |
 > |       [ユーザーのクエリ](query-user.md)       |                         Rd セッションホストサーバー上のユーザーセッションに関する情報を表示します。                         |
 > |            [quser](quser.md)            |                         Rd セッションホストサーバー上のユーザーセッションに関する情報を表示します。                         |
