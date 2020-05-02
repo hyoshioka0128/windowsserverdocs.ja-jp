@@ -1,6 +1,6 @@
 ---
 title: wbadmin
-description: コマンドプロンプトからオペレーティングシステム、ボリューム、ファイル、フォルダー、およびアプリケーションをバックアップおよび復元できる wbadmin の Windows コマンドに関するトピック。
+description: コマンドプロンプトからオペレーティングシステム、ボリューム、ファイル、フォルダー、およびアプリケーションをバックアップして復元できる wbadmin のリファレンストピックです。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0ca9bdc54cd77f11239d0a61cf052e7b12b02b22
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 94f07d17d46dad4e5301ba3ea6be94b10f26a3af
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80829475"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725834"
 ---
 # <a name="wbadmin"></a>wbadmin
 
@@ -24,11 +24,11 @@ ms.locfileid: "80829475"
 
 定期的にスケジュールされたバックアップを構成するには、 **Administrators**グループのメンバーである必要があります。 このコマンドを使用して他のすべてのタスクを実行する、 **Backup Operators** または **管理者** グループ、またはをされている必要が適切なアクセス許可を委任します。
 
-実行する必要があります **wbadmin** 管理者特権でコマンド プロンプトからです。 (管理者特権のコマンドプロンプトを開くには、 **[コマンドプロンプト]** を右クリックし、 **[管理者として実行]** をクリックします)。
+実行する必要があります **wbadmin** 管理者特権でコマンド プロンプトからです。 (管理者特権のコマンドプロンプトを開くには、[**コマンドプロンプト**] を右クリックし、[**管理者として実行**] をクリックします)。
 
 ## <a name="subcommands"></a>サブコマンド
 
-|サブコマンド|説明|
+|サブコマンド|[説明]|
 |----------|-----------|
 |[Wbadmin enable backup](wbadmin-enable-backup.md)|定期的にスケジュールされたバックアップを構成して有効にします。|
 |[Wbadmin disable backup](wbadmin-disable-backup.md)|毎日のバックアップを無効にします。|
@@ -46,7 +46,7 @@ ms.locfileid: "80829475"
 |[Wbadmin restore catalog](wbadmin-restore-catalog.md)|ローカルコンピューター上のバックアップカタログが破損している場合に、指定した記憶域の場所からバックアップカタログを回復します。|
 |[Wbadmin delete catalog](wbadmin-delete-catalog.md)|ローカル コンピューター上のバックアップ カタログを削除します。 このサブコマンドは、このコンピューター上のバックアップカタログが破損していて、カタログの復元に使用できる別の場所にバックアップが保存されていない場合にのみ使用してください。|
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 -   [バックアップと回復](https://go.microsoft.com/fwlink/?LinkID=195054)
 -   [Windows PowerShell の Windows Server バックアップコマンドレット](https://technet.microsoft.com/library/jj902428.aspx)

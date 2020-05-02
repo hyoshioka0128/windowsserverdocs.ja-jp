@@ -9,19 +9,19 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 4bb320d9192848cd7a6719c58bde4111798a799e
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 8079bacaa54282a1dd1091ffacd427ddaf74cc59
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80844215"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725472"
 ---
 # <a name="fsutil-quota"></a>Fsutil クォータ
->適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows 10、Windows Server 2012 R2、Windows 8.1、Windows Server 2012、Windows 8、Windows Server 2008 R2、Windows 7
+> 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows 10、Windows Server 2012 R2、Windows 8.1、Windows Server 2012、Windows 8、Windows Server 2008 R2、Windows 7
 
 NTFS ボリュームのディスククォータを管理して、ネットワークベースの記憶域をより細かく制御できるようにします。
 
-このコマンドを使用する方法の例については、[例](#BKMK_examples)を参照してください。
+
 
 ## <a name="syntax"></a>構文
 
@@ -36,20 +36,20 @@ fsutil quota [violations]
 
 ### <a name="parameters"></a>パラメーター
 
-|   パラメーター   |                                                                                    説明                                                                                    |
+|   パラメーター   |                                                                                    [説明]                                                                                    |
 |---------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|    無効にする    |                                                         指定されたボリュームでのクォータの追跡と適用を無効にします。                                                          |
+|    無効化 (disable)    |                                                         指定されたボリュームでのクォータの追跡と適用を無効にします。                                                          |
 |    徹底    |                                                                   指定されたボリュームにクォータの使用を強制します。                                                                   |
-|    modify     |                                                              既存のディスククォータを変更するか、新しいクォータを作成します。                                                              |
+|    変更     |                                                              既存のディスククォータを変更するか、新しいクォータを作成します。                                                              |
 |     query     |                                                                            既存のディスククォータの一覧を表示します。                                                                            |
-|     軌道     |                                                                    指定されたボリュームのディスク使用量を追跡します。                                                                     |
+|     track     |                                                                    指定されたボリュームのディスク使用量を追跡します。                                                                     |
 |  事項   | システムログとアプリケーションログを検索し、クォータ違反が検出されたか、ユーザーがクォータしきい値またはクォータ制限に達したことを示すメッセージを表示します。 |
-| \<VolumePath > |                                  必須。 ドライブ名の後にコロン、または**ボリューム {** <em>guid</em> **}** の形式の GUID を指定します。                                  |
-| \<しきい値 >  |                            警告が発行される制限 (バイト単位) を設定します。 このパラメーターは、 **fsutil quota modify**コマンドに必要です。                            |
-|   \<の制限 >    |                                最大許容ディスク使用量 (バイト単位) を設定します。 このパラメーターは、 **fsutil quota modify**コマンドに必要です。                                |
-|  \<ユーザー名 >  |                                      ドメインまたはユーザー名を指定します。 このパラメーターは、 **fsutil quota modify**コマンドに必要です。                                       |
+| \<VolumePath> |                                  必須。 ドライブ名の後にコロン、または**ボリューム {**<em>guid</em>**}** の形式の GUID を指定します。                                  |
+| \<しきい値>  |                            警告が発行される制限 (バイト単位) を設定します。 このパラメーターは、 **fsutil quota modify**コマンドに必要です。                            |
+|   \<制限>    |                                最大許容ディスク使用量 (バイト単位) を設定します。 このパラメーターは、 **fsutil quota modify**コマンドに必要です。                                |
+|  \<ユーザー名>  |                                      ドメインまたはユーザー名を指定します。 このパラメーターは、 **fsutil quota modify**コマンドに必要です。                                       |
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>Remarks
 
 -   ディスククォータはボリューム単位で実装され、ハードおよびソフトの両方の記憶域の制限をユーザーごとに実装することができます。
 
@@ -68,7 +68,7 @@ fsutil quota query Volume{928842df-5a01-11de-a85c-806e6f6e6963}
 Fsutil quota query C:
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 
 [Fsutil](Fsutil.md)

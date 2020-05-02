@@ -9,19 +9,19 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: cf3685bae9ed76ede4da6df244139437d92250c0
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3b35938c21180199aabb74431d20a31167aea706
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80844335"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725536"
 ---
 # <a name="fsutil-dirty"></a>Fsutil ダーティ
->適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows 10、Windows Server 2012 R2、Windows 8.1、Windows Server 2012、Windows 8、Windows Server 2008 R2、Windows 7
+> 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows 10、Windows Server 2012 R2、Windows 8.1、Windows Server 2012、Windows 8、Windows Server 2008 R2、Windows 7
 
 ボリュームのダーティビットを照会または設定します。 ボリュームのダーティビットが設定されている場合、 **autochk**は、次回コンピューターを再起動したときに、ボリュームにエラーがないかどうかを自動的にチェックします。
 
-このコマンドを使用する方法の例については、[例](#BKMK_examples)を参照してください。
+
 
 ## <a name="syntax"></a>構文
 
@@ -31,13 +31,13 @@ fsutil dirty {query | set} <VolumePath>
 
 ### <a name="parameters"></a>パラメーター
 
-|   パラメーター   |                                                 説明                                                  |
+|   パラメーター   |                                                 [説明]                                                  |
 |---------------|--------------------------------------------------------------------------------------------------------------|
 |     query     |                                  指定されたボリュームのダーティビットを照会します。                                   |
 |      set      |                                    指定されたボリュームのダーティビットを設定します。                                    |
-| \<VolumePath > | ドライブ名の後にコロンまたは GUID を指定します。次の形式で指定します:**ボリューム {** <em>guid</em> **}** 。 |
+| \<VolumePath> | ドライブ名の後にコロンまたは GUID を指定します。次の形式で指定します:**ボリューム {**<em>guid</em>**}**。 |
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>Remarks
 
 -   ボリュームのダーティビットは、ファイルシステムが不整合な状態にある可能性があることを示します。 次の理由により、ダーティビットを設定できます。
 
@@ -70,7 +70,7 @@ fsutil dirty query c:
 fsutil dirty set C:
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 
 [Fsutil](Fsutil.md)

@@ -1,6 +1,6 @@
 ---
 title: wbadmin start systemstaterecovery
-description: Wbadmin start systemstaterecovery の Windows コマンドに関するトピックでは、指定した場所へのシステム状態の回復を実行します。
+description: Wbadmin start systemstaterecovery のリファレンストピック。ここでは、指定した場所へのシステム状態の回復を実行します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 581ad6fe3591e549c3f89e4c95d2f8ab0cde059c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: fa111934f93bf7fea5aade1f39b4fc6a014d6c9e
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80829495"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725872"
 ---
 # <a name="wbadmin-start-systemstaterecovery"></a>wbadmin start systemstaterecovery
 
@@ -25,9 +25,9 @@ ms.locfileid: "80829495"
 > [!NOTE]
 > Windows Server バックアップはバックアップまたはシステム状態のバックアップまたはシステム状態の回復の一部としてユーザーのレジストリ ハイブ (HKEY_CURRENT_USER) を回復します。
 
-このサブコマンドを使用してシステム状態の回復を実行するには、 **Backup Operators**グループまたは**Administrators**グループのメンバーであるか、適切なアクセス許可が委任されている必要があります。 さらに、実行する必要があります **wbadmin** 管理者特権でコマンド プロンプトからです。 (管理者特権でのコマンドプロンプトを開くには、 **[コマンドプロンプト]** を右クリックし、 **[管理者として実行]** をクリックします)。
+このサブコマンドを使用してシステム状態の回復を実行するには、 **Backup Operators**グループまたは**Administrators**グループのメンバーであるか、適切なアクセス許可が委任されている必要があります。 さらに、実行する必要があります **wbadmin** 管理者特権でコマンド プロンプトからです。 (管理者特権でのコマンドプロンプトを開くには、[**コマンドプロンプト**] を右クリックし、[**管理者として実行**] をクリックします)。
 
-このコマンドを使用する方法の例については、[例](#BKMK_examples)を参照してください。
+
 
 ## <a name="syntax"></a>構文
 
@@ -57,7 +57,7 @@ wbadmin start systemstaterecovery
 
 ### <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
+|パラメーター|[説明]|
 |---------|-----------|
 |-version|復元するバックアップのバージョン識別子を MM/DD/YYYY-HH: MM 形式で指定します。 バージョン識別子を把握していない場合は、入力 **wbadmin のバージョンを取得する**です。|
 |-showsummary|最後のシステム状態の回復の概要を報告します (操作を完了するために再起動が必要になった後)。 このパラメーターは他のどのパラメーターとも一緒に指定することはできません。|
@@ -68,18 +68,18 @@ wbadmin start systemstaterecovery
 |-autoReboot|システム状態の回復操作の最後にシステムを再起動することを指定します。 このパラメーターは、元の場所への回復に対してのみ有効です。 回復操作の後で手順を実行する必要がある場合は、このパラメーターを使用しないことをお勧めします。|
 |-quiet|ユーザーにプロンプトを表示せずにサブコマンドを実行します。|
 
-## <a name="examples"></a><a name=BKMK_examples></a>例
+## <a name="examples"></a>例
 
 - 03/31/2013 の午前9:00 にバックアップのシステム状態の回復を実行するには、次のように入力します。  
   ```
   wbadmin start systemstaterecovery -version:03/31/2013-09:00
   ```  
-- 04/30/2013 の午前9:00 にバックアップのシステム状態の回復を実行するには 共有リソース \\\\servername\share for server01 に格納されているのは、次のように入力します。  
+- 04/30/2013 の午前9:00 にバックアップのシステム状態の回復を実行するには server01 の共有リソース\\ \\servername\share に格納されている場合は、次のように入力します。  
   ```
   wbadmin start systemstaterecovery -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
   ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 -   - [コマンド ライン構文の記号](command-line-syntax-key.md)
 -   [Wbadmin](wbadmin.md)

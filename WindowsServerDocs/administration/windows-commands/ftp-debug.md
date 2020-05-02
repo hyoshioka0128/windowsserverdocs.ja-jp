@@ -1,6 +1,6 @@
 ---
 title: 'ftp: デバッグ'
-description: Windows コマンドに関するトピック * * * *-
+description: '* * * * のリファレンストピック'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 16a7a19b61099b036947cf133d8ad3ce6a54faea
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 32b079f54969a6a4286af1a98e779b997f48eae3
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80843675"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82725356"
 ---
 # <a name="ftpdebug"></a>ftp: デバッグ
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 デバッグモードを切り替えます。   
 ## <a name="syntax"></a>構文  
@@ -27,13 +27,13 @@ debug
 ```  
 #### <a name="parameters"></a>パラメーター  
 なし  
-## <a name="remarks"></a>コメント  
+## <a name="remarks"></a>Remarks  
 - 既定では、デバッグは、オフです。  
 - デバッグがオンのときより大きい (>) 文字の前に、リモート コンピューターに送信される各コマンドが表示されます。  
-  ## <a name="examples"></a><a name=BKMK_Examples></a>例  
+  ## <a name="examples"></a>例  
   オンとオフをデバッグ モードの切り替え。  
   ```  
   debug  
   ```  
-  ## <a name="additional-references"></a>その他の参照情報  
+  ## <a name="additional-references"></a>その他のリファレンス  
 - - [コマンド ライン構文の記号](command-line-syntax-key.md)  
