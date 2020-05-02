@@ -1,6 +1,6 @@
 ---
 title: tsecimp
-description: Tsecimp の Windows コマンドトピックでは、拡張マークアップ言語 (XML) ファイルからの割り当て情報を TAPI サーバーセキュリティファイル (Tsec.ini) にインポートします。
+description: Tsecimp のリファレンストピックでは、拡張マークアップ言語 (XML) ファイルからの割り当て情報を TAPI サーバーセキュリティファイル (Tsec.ini) にインポートします。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 30a097bcd25e981f72a421b81b80b595343404ba
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: afd38f7081a9b4674eb6cac26f52849794b8d5e6
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80832505"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721253"
 ---
 # <a name="tsecimp"></a>tsecimp
 
@@ -29,15 +29,15 @@ tsecimp /d
 
 #### <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
+|パラメーター|[説明]|
 |---------|-----------|
-|/f \<ファイル名 >|必須。 インポートする割り当て情報を含んだ XML ファイルの名前を指定します。|
+|/f \<ファイル名>|必須。 インポートする割り当て情報を含んだ XML ファイルの名前を指定します。|
 |/v|Tsec.ini ファイルに情報をインポートせず、XML ファイルの構造を検証します。|
-|/u|各ユーザーについて、XML ファイルで指定されたドメインのメンバーかどうかをチェックします。 このパラメーターは、ネットワークに接続されているコンピューター上で使用する必要があります。 大量のユーザー割り当て情報を処理する場合、このパラメーターを指定するとパフォーマンスが大幅に低下することがあります。|
+|/U|各ユーザーについて、XML ファイルで指定されたドメインのメンバーかどうかをチェックします。 このパラメーターは、ネットワークに接続されているコンピューター上で使用する必要があります。 大量のユーザー割り当て情報を処理する場合、このパラメーターを指定するとパフォーマンスが大幅に低下することがあります。|
 |/d|インストールされているテレフォニー プロバイダーの一覧を表示します。 テレフォニー プロバイダーごとに、関連付けられた回線デバイスと、各回線デバイスに関連付けられたアドレスおよびユーザーが表示されます。|
-|/?|コマンド プロンプトでヘルプを表示します。|
+|/?|コマンド プロンプトにヘルプを表示します。|
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>Remarks
 
 -   割り当て情報のインポート元となる XML ファイルは、次に説明する構造に従っている必要があります。  
     -   **UserList**要素
@@ -152,8 +152,8 @@ tsecimp /d
 
     ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 
-[コマンドシェルの概要](https://technet.microsoft.com/library/cc737438(v=ws.10).aspx)
+[コマンド シェルの概要](https://technet.microsoft.com/library/cc737438(v=ws.10).aspx)

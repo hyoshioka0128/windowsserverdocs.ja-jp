@@ -1,6 +1,6 @@
 ---
 title: を非公開
-description: '[公開] コマンドを使用して公開されたシャドウコピーを非公開にするための Windows コマンドに関するトピック。'
+description: '[公開] コマンドを使用して公開されたシャドウコピーを公開しない、非公開の参照トピック。'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f2f8bbdb3b810ffbf9332608a016fc3b3e188e9f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: e0caa412e5ff7de149f0a2bd8806f7141c368306
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80832355"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721187"
 ---
 # <a name="unexpose"></a>を非公開
 
-**[公開]** コマンドを使用して公開されたシャドウコピーを公開しません。 公開されたシャドウコピーは、シャドウ ID、ドライブ文字、共有、またはマウントポイントによって指定できます。
+[**公開**] コマンドを使用して公開されたシャドウコピーを公開しません。 公開されたシャドウコピーは、シャドウ ID、ドライブ文字、共有、またはマウントポイントによって指定できます。
 
-このコマンドを使用する方法の例については、[例](#BKMK_examples)を参照してください。
+
 
 ## <a name="syntax"></a>構文
 
@@ -30,24 +30,24 @@ unexpose {<ShadowID> | <Drive:> | <Share> | <MountPoint>}
 
 ### <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
+|パラメーター|[説明]|
 |---------|-----------|
-|\<ShadowID >|指定したシャドウ ID によって指定されたシャドウコピーを非公開にします。|
+|\<ShadowID>|指定したシャドウ ID によって指定されたシャドウコピーを非公開にします。|
 |\<ドライブ: >|指定したドライブ文字 (ドライブ P など) に関連付けられているシャドウコピーを非公開にします。|
-|\<共有 >|指定した共有に関連付けられているシャドウコピーを公開しないようにします (たとえば、\\\\*MachineName*\)。|
-|マウントポイントの \<>|指定されたマウントポイントに関連付けられているシャドウコピーを公開しないようにします (たとえば、C:\ シャドウ\)します。|
+|\<共有>|指定した共有に関連付けられているシャドウコピーを\\ \\非表示にします ( *MachineName*\)など)。|
+|\<マウントポイント>|指定されたマウントポイントに関連付けられているシャドウコピーを非\)公開にします (例、c:\ シャドウコピー。|
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>Remarks
 
 -   *ShadowID*の代わりに、既存のエイリアスまたは環境変数を使用できます。 既存のエイリアスを表示するには、パラメーターを指定せずに**add**を使用します。
 
-## <a name="examples"></a><a name=BKMK_examples></a>例
+## <a name="examples"></a>例
 
 ドライブ P に関連付けられたシャドウコピーを公開しないようにするには、次のように入力します。
 ```
 unexpose P:
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

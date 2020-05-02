@@ -1,6 +1,6 @@
 ---
 title: unlodctr
-description: Unlodctr の Windows コマンドのトピックでは、システムレジストリからサービスまたはデバイスドライバーのパフォーマンスカウンターの名前と説明テキストを削除します。
+description: Unlodctr のリファレンストピックでは、サービスまたはデバイスドライバーのパフォーマンスカウンターの名前と説明テキストをシステムレジストリから削除します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fe7fc3c9eafefd59a5daab625e3af06b6addd292
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 56b6310dd48537c1f68780666efef750e12daf7d
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80832259"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721169"
 ---
 # <a name="unlodctr"></a>unlodctr
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 サービスまたはデバイスドライバーの**パフォーマンスカウンター**名と**説明**テキストをシステムレジストリから削除します。   
 
@@ -27,18 +27,18 @@ ms.locfileid: "80832259"
 Unlodctr <DriverName>   
 ```  
 #### <a name="parameters"></a>パラメーター  
-|パラメーター|説明|  
+|パラメーター|[説明]|  
 |-------|--------|  
-|\<ドライバーの >|Windows Server 2003 レジストリから、ドライバーまたはサービス <DriverName> のパフォーマンスカウンターの名前の設定と説明のテキストを削除します。|  
-|/?|コマンド プロンプトでヘルプを表示します。|  
+|\<ドライバーの>|Windows Server 2003 レジストリから、ドライバーまたはサービス<DriverName>のパフォーマンスカウンターの名前の設定と説明のテキストを削除します。|  
+|/?|コマンド プロンプトにヘルプを表示します。|  
 
-## <a name="remarks"></a>コメント  
+## <a name="remarks"></a>Remarks  
 > [!WARNING]  
-> レジストリの編集を誤ると、システムに重大な損害を与える可能性があります。 レジストリを変更する前に、コンピューター上の重要なデータのバックアップを作成する必要があります。  
+> レジストリを正しく編集しないと、システムが正常に動作しなくなる場合があります。 レジストリを変更する前に、コンピューター上の重要なデータのバックアップを作成する必要があります。  
 
 入力する情報にスペースが含まれる場合は、テキストを囲む引用符を使用して (たとえば、 <DriverName>)。  
 
-## <a name="examples"></a><a name=BKMK_Examples></a>例  
+## <a name="examples"></a>例  
 Simple Mail Transfer Protocol (SMTP) サービスの現在のパフォーマンスレジストリ設定とカウンターの説明テキストを削除するには、次の手順を実行します。  
 ```  
 unlodctr SMTPSVC  

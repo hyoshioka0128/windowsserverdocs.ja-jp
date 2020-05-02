@@ -1,6 +1,6 @@
 ---
 title: 復元のシミュレーション
-description: 復元前または PostRestore イベントをライターに発行せずに、コンピューター上の復元セッションでライターが関与することをテストするシミュレートのシミュレートに関する Windows コマンドのトピックです。
+description: 復元前または PostRestore イベントをライターに発行せずに、コンピューター上の復元セッションでライターが関与することをテストするシミュレーションの参照トピック。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 024d654864c000e44bccb9ddb167c6147444cc00
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 1bab6c56cddc1d2ac95dc70205b0990b82fbfd12
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80834105"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721779"
 ---
 # <a name="simulate-restore"></a>復元をシミュレートします。
 
@@ -26,11 +26,11 @@ ms.locfileid: "80834105"
 simulate restore
 ```
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>Remarks
 
 -   **復元をシミュレート** ライタ搭載の復元を成功させるために動作しているかどうかをテストするために使用します。
 -   使用する前に **リストアをシミュレート**, を使用して、DiskShadow メタデータ ファイルを読み込む必要があります、 **メタデータの読み込み** コマンドです。 これには、選択されているライターと復元のコンポーネントが読み込まれます。
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

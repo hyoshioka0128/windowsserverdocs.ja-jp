@@ -1,6 +1,6 @@
 ---
 title: telnet の状態
-description: Telnet ステータスの Windows コマンドに関するトピック。ステータス情報が表示されます。
+description: ステータス情報を表示する telnet ステータスのリファレンストピックです。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7f2a790f2e17871275c4fa96c9b1b7e85cdbc150
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 54c75af3705c6f1b0ae4410265e8d869a3c8419b
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80832975"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721474"
 ---
 # <a name="telnet-status"></a>telnet: 状態
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 ステータス情報を表示します。   
 
@@ -28,10 +28,10 @@ st[atus]
 ```  
 #### <a name="parameters"></a>パラメーター  
 なし  
-## <a name="examples"></a><a name=BKMK_Examples></a>例  
+## <a name="examples"></a>例  
 状態情報が表示されます。  
 ```  
 st  
 ```  
-## <a name="additional-references"></a>その他の参照情報  
+## <a name="additional-references"></a>その他のリファレンス  
 -   - [コマンド ライン構文の記号](command-line-syntax-key.md)  

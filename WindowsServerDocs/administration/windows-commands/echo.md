@@ -1,6 +1,6 @@
 ---
 title: echo
-description: Windows コマンドに関するトピック * * * *-
+description: '* * * * のリファレンストピック'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5e6e9c3c79cc8006efba0c97a574e3d6d94a6f7e
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 05b42e4df38c3eafd3dcf3a92ced7b7b2c088e2b
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80845245"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82720873"
 ---
 # <a name="echo"></a>echo
 
@@ -33,19 +33,19 @@ echo [on | off]
 
 ### <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
+|パラメーター|[説明]|
 |---------|-----------|
-|[on \| off]|コマンドエコー機能をオンまたはオフにします。 コマンドのエコーは既定でオンになっています。|
-|\<メッセージ >|画面に表示するテキストを指定します。|
-|/?|コマンド プロンプトでヘルプを表示します。|
+|[オン\|オフ]|コマンドエコー機能をオンまたはオフにします。 コマンドのエコーは既定でオンになっています。|
+|\<メッセージ>|画面に表示するテキストを指定します。|
+|/?|コマンド プロンプトにヘルプを表示します。|
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>Remarks
 
 -   Echo **echo** *Message*コマンドは、 **echo**がオフになっている場合に特に役立ちます。 コマンドを何も表示せずに数行のメッセージを表示するには、batch プログラムの**echo off**コマンドの後に複数の**echo** *message*コマンドを含めることができます。
 -   **Echo**がオフになっている場合、コマンドプロンプトはコマンドプロンプトウィンドウに表示されません。 コマンドプロンプトを表示するには、「echo on」と入力し**ます。**
 -   バッチファイルで使用する場合、 **echo on**と**echo off**は、コマンドプロンプトでの設定には影響しません。
 -   バッチファイル内の特定のコマンドがエコーされないようにするには、コマンドの前にアットマーク (@) を挿入します。 バッチファイル内のすべてのコマンドがエコーされないようにするには、ファイルの先頭に**echo off**コマンドを追加します。
--   **Echo**を使用しているときにパイプ ( **|** ) またはリダイレクト文字 ( **<** または **>** ) を表示するには、パイプまたはリダイレクト文字の直前 (たとえば、 **^|** 、 **^>** 、 **^<** ) にカレット (^) を使用します。 キャレットを表示するには、2つのキャレットを連続して入力します ( **^^** )。
+-   Echo を使用して**|** いるときにパイプ (**<** ) **>** またはリダイレクト文字 ( **echo**または) を表示するには、パイプまたはリダイレクト文字の直前にカレット ( **^|**^ **^>**) を**^<** 使用します (たとえば、、、または)。 キャレットを表示するには、2つのキャレット**^^** を連続して入力します ()。
 
 ## <a name="examples"></a>例
 
@@ -113,6 +113,6 @@ File2.txt
 File3.txt
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

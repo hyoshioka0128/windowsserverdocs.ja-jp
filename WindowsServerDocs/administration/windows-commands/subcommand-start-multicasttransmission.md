@@ -1,6 +1,6 @@
 ---
 title: サブコマンド/Get-multicasttransmission
-description: Windows コマンドに関するトピックでは、/Get-multicasttransmission コマンドを実行します。これにより、イメージのスケジュールされたキャスト転送が開始されます。
+description: サブコマンド/Get-multicasttransmission のリファレンストピックです。これにより、イメージのスケジュールされたキャスト転送が開始されます。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,21 +9,21 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e882c54d2fbe744ca9fe25b2631f4d875886c756
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 5f3ea615da5aa48e805b3b5e3d0df0a02198a304
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80833785"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721670"
 ---
 # <a name="subcommand-start-multicasttransmission"></a>サブコマンド:/start-multicasttransmission
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 イメージのスケジュールされたキャスト転送を開始します。
 
 ## <a name="syntax"></a>構文
-**Windows Server 2008**
+**Windows Server 2008**
 ```
 wdsutil /start-MulticastTransmissiomedia:<Image name> [/Server:<Server namemediatype:InstallmediaGroup:<Image group name>] [/Filename:<File name>]
 ```
@@ -44,15 +44,15 @@ wdsutil [Options] /start-MulticastTransmissiomedia:<Image name>
         [/Filename:<File name>]
 ```
 ### <a name="parameters"></a>パラメーター
-|パラメーター|説明|
+|パラメーター|[説明]|
 |-------|--------|
-メディア:<Image name>|イメージの名前を指定します。|
+用紙<Image name>|イメージの名前を指定します。|
 |[/Server:<Server name>]|サーバーの名前を指定します。 NetBIOS 名または完全修飾ドメイン名 (FQDN) のいずれかを指定できます。 サーバー名が指定されていない場合は、ローカルのサーバーが使用されます。|
-メディアの種類: {インストール&#124;ブート}|イメージの種類を指定します。 このオプションに設定する必要があります **インストール** Windows Server 2008 用です。|
+mediatype: {Install&#124;Boot}|イメージの種類を指定します。 このオプションに設定する必要があります **インストール** Windows Server 2008 用です。|
 |/アーキテクチャ: {x86 & #124; ia64 & #124; x64}|転送の開始に関連付けられているブート イメージのアーキテクチャです。 ブート イメージのイメージの同じ名前のさまざまなアーキテクチャに行うことがあるために、正しい転送が使用されるようにするアーキテクチャを指定してください。|
 |\mediaGroup:<Image group name>]|イメージのイメージ グループを指定します。 イメージ グループ名が指定されていないサーバーに 1 つだけのイメージ グループが存在する場合は、そのイメージ グループが使用されます。 サーバーの 1 つ以上のイメージ グループが存在する場合は、イメージ グループ名を指定するこのオプションを使用する必要があります。|
 |[/ファイル名:<File name>]|イメージを含むファイルの名前を指定します。 イメージは、名前によって一意に識別できない場合、は、ファイル名を指定するこのオプションを使用する必要があります。|
-## <a name="examples"></a><a name=BKMK_examples></a>例
+## <a name="examples"></a>例
 マルチキャスト転送を開始するには、次のいずれかを入力します。
 ```
 wdsutil /start-MulticastTransmissiomedia:Vista with Office
@@ -64,9 +64,9 @@ wdsutil /start-MulticastTransmission /Server:MyWDSServemedia:Vista with Officeme
 wdsutil /start-MulticastTransmission /Server:MyWDSServemedia:X64 Boot Imagemediatype:Boot /Architecture:x64
 /Filename:boot.wim\n\
 ```
-## <a name="additional-references"></a>その他の参照情報
-- [コマンドライン構文のポイント](command-line-syntax-key.md)
-[get AllMulticastTransmissions コマンドを使用して](using-the-get-allmulticasttransmissions-command.md)
-[/get-multicasttransmission コマンドを使用して](using-the-get-multicasttransmission-command.md)
-[MulticastTransmission 新しいコマンドを使用して](using-the-new-multicasttransmission-command.md)
-[/remove-multicasttransmission コマンドを使用して](using-the-remove-multicasttransmission-command.md)
+## <a name="additional-references"></a>その他のリファレンス
+- [コマンドライン構文のキー](command-line-syntax-key.md)
+[AllMulticastTransmissions コマンド](using-the-get-allmulticasttransmissions-command.md)
+を使用して[/get-multicasttransmission コマンド](using-the-get-multicasttransmission-command.md)
+を使用して[/get-multicasttransmission コマンド](using-the-new-multicasttransmission-command.md)
+を使用して[削除/get-multicasttransmission コマンド](using-the-remove-multicasttransmission-command.md)を使用して

@@ -1,6 +1,6 @@
 ---
 title: telnet 終了
-description: Telnet を終了する telnet の Windows コマンドに関するトピックです。
+description: Telnet を終了する telnet のトピックを参照してください。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7c6c5ef0d563096be2384454f0480bb250a6485c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 795629887b27cad0c125e7f580799a41d41666f9
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80833305"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721497"
 ---
 # <a name="telnet-quit"></a>telnet: 終了
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 Telnet を終了します。   
 
@@ -28,10 +28,10 @@ q[uit]
 ```  
 #### <a name="parameters"></a>パラメーター  
 なし  
-## <a name="examples"></a><a name=BKMK_Examples></a>例  
+## <a name="examples"></a>例  
 telnet を終了します。  
 ```  
 q  
 ```  
-## <a name="additional-references"></a>その他の参照情報  
+## <a name="additional-references"></a>その他のリファレンス  
 -   - [コマンド ライン構文の記号](command-line-syntax-key.md)  

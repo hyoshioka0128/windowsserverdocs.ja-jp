@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ece727b68eb620e839cbfb8efe02dbe775666498
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 212e2d45b77f09b9460555733de15488a4420842
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80833615"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721598"
 ---
 # <a name="sxstrace"></a>sxstrace
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 サイド バイ サイドの問題を診断します。    
 
@@ -28,21 +28,21 @@ sxstrace [{[trace -logfile:<FileName> [-nostop]|[parse -logfile:<FileName> -outf
 ```  
 
 #### <a name="parameters"></a>パラメーター  
-|パラメーター|説明|  
+|パラメーター|[説明]|  
 |-------|--------|  
-|トレース|Sxs (サイド バイ サイド) のトレースを有効に|  
+|trace|Sxs (サイド バイ サイド) のトレースを有効に|  
 |-logfile|未処理のログ ファイルを指定します。|  
-|\<ファイル名 >|トレース ログが保存 *FileName*します。|  
+|\<ファイル名>|トレース ログが保存 *FileName*します。|  
 |-nostop|トレースを停止するように求めるメッセージは指定されません。|  
-|解析|生のトレース ファイルに変換します。|  
+|parse|生のトレース ファイルに変換します。|  
 |-出力|出力ファイル名を指定します。|  
-|ParsedFile の \<>|解析されたファイルのファイル名を指定します。|  
-|-フィルター|フィルター選択される出力を使用します。|  
-|\<AppName >|アプリケーションの名前を指定します。|  
+|\<ParsedFile>|解析されたファイルのファイル名を指定します。|  
+|-filter|フィルター選択される出力を使用します。|  
+|\<AppName>|アプリケーションの名前を指定します。|  
 |stoptrace|前に停止していない場合は、トレースを停止します。|  
-|-?|コマンド プロンプトでヘルプを表示します。|  
+|-?|コマンド プロンプトにヘルプを表示します。|  
 
-## <a name="examples"></a><a name="BKMK_Examples"></a>例  
+## <a name="examples"></a>例  
 トレースを有効にして、トレース ファイルを保存して **sxstrace.etl**:  
 ```  
 sxstrace trace -logfile:sxstrace.etl  

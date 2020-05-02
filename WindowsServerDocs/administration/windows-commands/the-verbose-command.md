@@ -1,6 +1,6 @@
 ---
-title: 詳細
-description: Windows コマンドの詳細については、指定されたコマンドの詳細な出力が表示されます。
+title: verbose
+description: 詳細については、指定されたコマンドの詳細な出力を表示するトピックを参照してください。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f67a4fe99a5051e8844e6386d87911946a808c1e
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3563673d1f80167e469d98a664a6f96ca49815a1
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80832845"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721371"
 ---
-# <a name="verbose"></a>詳細
+# <a name="verbose"></a>verbose
 
 指定したコマンドの詳細な出力が表示されます。 使用することができます **/verbose** を実行するその他の WDSUTIL コマンドを使用します。 指定する必要があります **/verbose** と **]、[進行状況の** 直後後 **WDSUTIL**します。
 

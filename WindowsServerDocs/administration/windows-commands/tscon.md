@@ -1,6 +1,6 @@
 ---
 title: tscon
-description: Tscon の Windows コマンドに関するトピックでは、リモートデスクトップセッションホスト (rd セッションホスト) サーバー上の別のセッションに接続します。
+description: リモートデスクトップセッションホスト (rd セッションホスト) サーバー上の別のセッションに接続する tscon のリファレンストピックです。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,23 +9,23 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1666e3fd47fab89b63efccef43489d15930cd6de
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a95b7b63f91e7450d949ded294a48c2596e385db
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80832535"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721271"
 ---
 # <a name="tscon"></a>tscon
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 リモートデスクトップセッションホストサーバー上の別のセッションに接続します。  
 
-このコマンドを使用する方法の例については、[例](#BKMK_examples)を参照してください。  
+  
 
 > [!NOTE]  
-> Windows Server 2008 R2 では、ターミナル サービスはリモート デスクトップ サービスという名前に変更されました。 最新バージョンの新機能については、Windows Server TechNet ライブラリの「 [Windows server 2012 のリモートデスクトップサービスの新機能](https://technet.microsoft.com/library/hh831527)」を参照してください。  
+> Windows Server 2008 R2 で、「ターミナル サービス」は「リモート デスクトップ サービス」に名前変更されました。 最新バージョンの新機能については、Windows Server TechNet ライブラリの「 [Windows server 2012 のリモートデスクトップサービスの新機能](https://technet.microsoft.com/library/hh831527)」を参照してください。  
 
 ## <a name="syntax"></a>構文  
 ```  
@@ -33,23 +33,23 @@ tscon {<SessionID> | <SessionName>} [/dest:<SessionName>] [/password:<pw> | /pas
 ```  
 ### <a name="parameters"></a>パラメーター  
 
-|パラメーター|説明|  
+|パラメーター|[説明]|  
 |-------|--------|  
-|\<SessionID >|接続先のセッションの ID を指定します。 省略可能な **/dest:** <のセッション*名*> パラメーターを使用した場合、これは接続先のセッションの ID になります。|  
-|\<のセッション >|接続先のセッションの名前を指定します。|  
-|/dest:\<のセッション名 >|現在のセッションの名前を指定します。 新しいセッションに接続すると、このセッションは切断されます。|  
-|/password:\<pw >|接続先のセッションを所有するユーザーのパスワードを指定します。 このパスワードは、接続しているユーザーがセッションを所有していない場合に必要です。|  
+|\<SessionID>|接続先のセッションの ID を指定します。 省略可能な **/dest:**<*> パラメーター*を使用すると、これは接続先のセッションの ID になります。|  
+|\<セッション名>|接続先のセッションの名前を指定します。|  
+|/dest:\<セッション名>|現在のセッションの名前を指定します。 新しいセッションに接続すると、このセッションは切断されます。|  
+|/password:\<pw>|接続先のセッションを所有するユーザーのパスワードを指定します。 このパスワードは、接続しているユーザーがセッションを所有していない場合に必要です。|  
 |/password: *|接続先のセッションを所有するユーザーのパスワードの入力を求めます。|  
 |/v|実行されているアクションに関する情報を表示します。|  
-|/?|コマンド プロンプトでヘルプを表示します。|  
+|/?|コマンド プロンプトにヘルプを表示します。|  
 
-## <a name="remarks"></a>コメント  
+## <a name="remarks"></a>Remarks  
 -   別のセッションに接続するには、フルコントロールアクセス許可を持っているか、特殊なアクセス許可を接続している必要があります。  
--   **/Dest:** <のセッション*名*> パラメーターを使用すると、別のユーザーのセッションを別のセッションに接続できます。  
+-   **/Dest:**<*の> パラメーター*を使用すると、別のユーザーのセッションを別のセッションに接続できます。  
 -   <*password*> パラメーターにパスワードを指定せず、ターゲットセッションが現在のセッション以外のユーザーに属している場合、 **tscon**は失敗します。  
 -   コンソールセッションに接続することはできません。  
 
-## <a name="examples"></a><a name=BKMK_examples></a>例  
+## <a name="examples"></a>例  
 - 現在の rd セッションホストサーバーのセッション12に接続し、現在のセッションを切断するには、次のように入力します。  
   ```  
   tscon 12  
@@ -62,6 +62,6 @@ tscon {<SessionID> | <SessionName>} [/dest:<SessionName>] [/password:<pw> | /pas
   ```  
   tscon TERM03 /v /dest:TERM05  
   ```  
-  ## <a name="additional-references"></a>その他の参照情報  
+  ## <a name="additional-references"></a>その他のリファレンス  
   - [コマンド ライン構文の記号](command-line-syntax-key.md)  
   [リモート デスクトップ サービス (ターミナル サービス) のコマンド リファレンス](remote-desktop-services-terminal-services-command-reference.md)  

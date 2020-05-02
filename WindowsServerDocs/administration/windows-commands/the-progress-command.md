@@ -1,6 +1,6 @@
 ---
-title: 進行状況
-description: Windows コマンドの進行状況に関するトピック。コマンドの実行中に進行状況が表示されます。
+title: progress
+description: コマンドの実行中に進行状況を表示する、進行状況に関するリファレンストピックです。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9957174203df8f2f5c02bf3ab8a4f3406701a8da
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3fcb06304df22208cef013d73a4ebf0af1991f88
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80833125"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721431"
 ---
-# <a name="progress"></a>進行状況
+# <a name="progress"></a>progress
 
 コマンドの実行中に進行状況を表示します。 使用することができます **]、[進行状況の** を実行するその他の WDSUTIL コマンドを使用します。 指定する必要があります **/verbose** と **]、[進行状況の** 直後後 **WDSUTIL**します。
 

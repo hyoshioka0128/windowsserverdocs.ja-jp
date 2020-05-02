@@ -1,6 +1,6 @@
 ---
 title: tpmvscmgr
-description: Tpmvscmgr の Windows コマンドに関するトピック。管理者の資格情報を持つユーザーがコンピューターで TPM 仮想スマートカードを作成および削除できるようにするコマンドラインツールです。
+description: Tpmvscmgr のリファレンストピック。管理者の資格情報を持つユーザーがコンピューターで TPM 仮想スマートカードを作成および削除できるようにするコマンドラインツールです。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4411e0ec3c75cd768b2fe32ad26b17331328e3ca
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ab0419060121033571eeba643cc0e2d42b45c743
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80832735"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82721305"
 ---
 # <a name="tpmvscmgr"></a>tpmvscmgr
 
-Tpmvscmgr コマンドラインツールを使用すると、管理者の資格情報を持つユーザーは、コンピューター上で TPM 仮想スマートカードを作成および削除できます。 このコマンドの使用方法の例については、次を参照してください。 [例](#BKMK_Examples)します。
+Tpmvscmgr コマンドラインツールを使用すると、管理者の資格情報を持つユーザーは、コンピューター上で TPM 仮想スマートカードを作成および削除できます。
 
 ## <a name="syntax"></a>構文
 
@@ -33,7 +33,7 @@ Tpmvscmgr destroy [/instance <instance ID>] [/?]
 
 Create コマンドは、ユーザーのシステムに新しい仮想スマートカードを設定します。 削除が必要な場合、後で参照するために新しく作成されたカードのインスタンス ID を返します。 インスタンス ID は、 **ROOT\SMARTCARDREADER\000n**の形式になります。 **n**は0から始まり、新しい仮想スマートカードを作成するたびに1ずつ増加します。
 
-|パラメーター|説明|
+|パラメーター|[説明]|
 |---------|-----------|
 |/name|必須。 新しい仮想スマートカードの名前を示します。|
 |/Adminkey|ユーザーが PIN を忘れた場合にカードの PIN をリセットするために使用できる、必要な管理者キーを示します。</br>**既定**010203040506070801020304050607080102030405060708の既定値を指定します。</br>**プロンプト**管理者キーの値を入力するようにユーザーに求めます。</br>**ランダム**結果として、ユーザーに返されないカードの管理者キーがランダムに設定されます。 これにより、スマートカード管理ツールを使用して管理できないカードが作成されます。 ランダムに生成された場合、管理者キーは48の16進数文字で入力する必要があります。|
@@ -50,18 +50,18 @@ Create コマンドは、ユーザーのシステムに新しい仮想スマー�
 > [!WARNING]
 > 削除された仮想スマートカードは回復できません。
 
-|パラメーター|説明|
+|パラメーター|[説明]|
 |---------|-----------|
-|/インスタンス|削除する仮想スマートカードのインスタンス ID を指定します。 InstanceID は、カードが作成されたときに Tpmvscmgr によって出力として生成されました。 /インスタンスパラメーターは、Destroy コマンドの必須フィールドです。|
+|/instance|削除する仮想スマートカードのインスタンス ID を指定します。 InstanceID は、カードが作成されたときに Tpmvscmgr によって出力として生成されました。 /インスタンスパラメーターは、Destroy コマンドの必須フィールドです。|
 |/?|このコマンドのヘルプを表示します。|
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>Remarks
 
 このコマンドのすべてのパラメーターを実行するには、ターゲットコンピューター上の**Administrators**グループ (またはそれと同等) のメンバーシップが最低限必要です。
 
 英数字入力の場合、127文字の完全な ASCII セットが許可されます。
 
-## <a name="examples"></a><a name=BKMK_Examples></a>例
+## <a name="examples"></a>例
 
 次のコマンドは、別のコンピューターから起動するスマートカード管理ツールによって後で管理できる仮想スマートカードを作成する方法を示しています。
 ```
@@ -79,8 +79,8 @@ tpmvscmgr.exe create /name VirtualSmartCardForCorpAccess /AdminKey RANDOM /PIN P
 ```
 tpmvscmgr.exe destroy /instance <instance ID> 
 ```
-ここで \<インスタンス ID > は、ユーザーがカードを作成したときに画面に出力される値です。 具体的には、最初に作成されたカードのインスタンス ID は ROOT\SMARTCARDREADER\0000. です。
+ここ\<で、インスタンス ID> は、ユーザーがカードを作成したときに画面に出力される値です。 具体的には、最初に作成されたカードのインスタンス ID は ROOT\SMARTCARDREADER\0000. です。
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 -   - [コマンド ライン構文の記号](command-line-syntax-key.md)
