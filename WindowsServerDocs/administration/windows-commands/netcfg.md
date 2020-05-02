@@ -1,6 +1,6 @@
 ---
 title: netcfg
-description: Windows コマンドに関するトピック * * * *-
+description: '* * * * のリファレンストピック'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4895928ffdd5d923d370f82e699d69f42c0f81a5
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a5945da45ee01fd5bf5f89a7835c4bae0b5534c4
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80838935"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723804"
 ---
 # <a name="netcfg"></a>netcfg
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 Windows プレインストール環境 (WinPE) で、ワークステーションを展開するために使用する Windows の軽量バージョンをインストールします。
 ## <a name="syntax"></a>構文
@@ -26,7 +26,7 @@ Windows プレインストール環境 (WinPE) で、ワークステーション
 netcfg [/v] [/e] [/winpe] [/l ] /c /i
 ```
 #### <a name="parameters"></a>パラメーター
-|パラメーター|説明|
+|パラメーター|[説明]|
 |-------|--------|
 |/v|**詳細**(詳細) モードで実行する|
 |/e|インストールおよびアンインストール中にサービス**環境**変数を使用する|
@@ -38,7 +38,7 @@ netcfg [/v] [/e] [/winpe] [/l ] /c /i
 |/b|**バインドパス**を表示します。その後にパスの名前を含む文字列を指定します。|
 |/?|コマンドプロンプトで**ヘルプ**を表示します。|
 
-## <a name="examples"></a><a name=BKMK_Examples></a>例
+## <a name="examples"></a>例
 
 プロトコルをインストールする *例* c:\oemdir\example.inf を使用します。
 ```
@@ -68,5 +68,5 @@ netcfg /s n
 ```
 netcfg /b ms_tcpip
 ```
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 -   - [コマンド ライン構文の記号](command-line-syntax-key.md)

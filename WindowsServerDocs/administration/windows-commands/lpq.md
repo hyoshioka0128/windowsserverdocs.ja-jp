@@ -1,6 +1,6 @@
 ---
 title: lpq
-description: Windows コマンドに関するトピック * * * *-
+description: '* * * * のリファレンストピック'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 051b1983fcc0fddd7b69e561c0a27a120f78d998
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f2d7a013ad9481780873cd57be4fa15732fc6196
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80840395"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724254"
 ---
 # <a name="lpq"></a>lpq
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 ラインプリンターデーモン (LPD) を実行しているコンピューター上の印刷キューの状態を表示します。  
 
@@ -28,20 +28,20 @@ lpq -S <ServerName> -P <printerName> [-l]
 ```  
 ### <a name="parameters"></a>パラメーター  
 
-|    パラメーター     |                                                                        説明                                                                        |
+|    パラメーター     |                                                                        [説明]                                                                        |
 |------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
-| -S <ServerName>  | (名前または IP アドレスを使用して) LPD 印刷キューをホストするコンピューターまたはプリンターの共有デバイスが、表示する状態であることを指定します。 必須。 |
-| -P <printerName> |                           表示するステータスを持つ印刷キューのプリンタを (名前で) 指定します。 必須。                           |
+| -S<ServerName>  | (名前または IP アドレスを使用して) LPD 印刷キューをホストするコンピューターまたはプリンターの共有デバイスが、表示する状態であることを指定します。 必須。 |
+| -P<printerName> |                           表示するステータスを持つ印刷キューのプリンタを (名前で) 指定します。 必須。                           |
 |        -l        |                                      印刷キューの状態に関する詳細を表示するように指定します。                                      |
-|        /?        |                                                           コマンド プロンプトでヘルプを表示します。                                                            |
+|        /?        |                                                           コマンド プロンプトにヘルプを表示します。                                                            |
 
-## <a name="remarks"></a>コメント  
+## <a name="remarks"></a>Remarks  
 **-S**パラメーターと **-P**パラメーターは大文字と小文字が区別され、大文字で入力する必要があります。  
-## <a name="examples"></a><a name=BKMK_examples></a>例  
+## <a name="examples"></a>例  
 この例では、10.0.0.45 にある LPD ホストの Laserprinter1 プリンターキューの状態を表示する方法を示します。  
 ```  
 lpq -S 10.0.0.45 -P Laserprinter1  
 ```  
-## <a name="additional-references"></a>その他の参照情報  
+## <a name="additional-references"></a>その他のリファレンス  
 - [コマンド ライン構文の記号](command-line-syntax-key.md)  
 [印刷コマンドのリファレンス](print-command-reference.md)  

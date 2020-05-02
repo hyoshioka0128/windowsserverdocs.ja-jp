@@ -1,6 +1,6 @@
 ---
 title: pentnt
-description: Windows コマンドに関するトピック * * * *-
+description: '* * * * のリファレンストピック'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,17 +9,17 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7220ded30a3a2cda0fa9f367cbbf5ebb002e1dba
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 066ba6b847085cb84c1868758187b808ef0e2538
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80837645"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723332"
 ---
 # <a name="pentnt"></a>pentnt
 
 
 
-Pentnt は推奨されていませんし、Windows の将来のリリースでサポートされるとは限りません。
+Pentnt は非推奨とされ、Windows の将来のリリースでサポートされるとは限りません。
 
 このツールは、Windows Server 2003 に含まれます。 詳細については、次を参照してください。 [Pentnt](https://technet.microsoft.com/library/cc755868(v=ws.10).aspx)します。

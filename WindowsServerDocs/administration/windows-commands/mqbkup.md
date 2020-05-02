@@ -1,6 +1,6 @@
 ---
 title: mqbkup
-description: Windows コマンドに関するトピック * * * *-
+description: '* * * * のリファレンストピック'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5ff6fc2f483bceb99b970cd0c48f56985ecd485b
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 25bc5a0b5da0c78ccc68cf7b8fc70a5b4ec11a1f
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80839355"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723908"
 ---
 # <a name="mqbkup"></a>mqbkup
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 MSMQ メッセージファイルとレジストリ設定をストレージデバイスにバックアップし、以前に保存されたメッセージと設定を復元します。   
 バックアップと復元の両方の操作で、ローカル MSMQ サービスが停止されます。 MSMQ サービスが事前に開始されている場合、ユーティリティは、バックアップまたは復元操作の最後に MSMQ サービスの再起動を試みます。 ユーティリティを実行する前にサービスが既に停止していた場合、サービスの再起動は行われません。  
@@ -28,13 +28,13 @@ MSMQ メッセージのバックアップ/復元ユーティリティを使用�
 mqbkup {/b | /r} <folder path_to_storage_device>  
 ```  
 #### <a name="parameters"></a>パラメーター  
-|パラメーター|説明|  
+|パラメーター|[説明]|  
 |-------|--------|  
 |/b|バックアップ操作を指定します|  
 |/r|復元操作を指定します|  
-|< フォルダー path_to_storage\_デバイス >|MSMQ メッセージファイルとレジストリ設定が格納されるパスを指定します。|  
-|/?|コマンド プロンプトでヘルプを表示します。|  
-## <a name="examples"></a><a name=BKMK_Examples></a>例  
+|<フォルダー path_to_storage\_デバイス>|MSMQ メッセージファイルとレジストリ設定が格納されるパスを指定します。|  
+|/?|コマンド プロンプトにヘルプを表示します。|  
+## <a name="examples"></a>例  
 すべての MSMQ メッセージファイルとレジストリ設定をバックアップし、C: ドライブの*Msmqbkup*フォルダーに保存します。  
 ```  
 mqbkup /b c:\msmqbkup  
@@ -49,5 +49,5 @@ MSMQ メッセージとレジストリ設定を復元するには:
 mqbkup /r c:\msmqbkup  
 ```  
 MSMQ メッセージファイルの格納に使用されるフォルダーの場所は、レジストリに格納されます。 このため、ユーティリティは、復元操作の前に使用されていたストレージフォルダーではなく、レジストリで指定されているフォルダーに MSMQ メッセージファイルを復元します。 レジストリに指定されているフォルダーが存在しない場合は、復元操作によって自動的に作成されます。 フォルダーディレクトリが存在し、空でない場合は、これらのフォルダーの現在の内容を削除するためのアクセス許可を求めるメッセージが表示されます。  
-## <a name="additional-references"></a>その他の参照情報  
+## <a name="additional-references"></a>その他のリファレンス  
 -   - [コマンド ライン構文の記号](command-line-syntax-key.md)  

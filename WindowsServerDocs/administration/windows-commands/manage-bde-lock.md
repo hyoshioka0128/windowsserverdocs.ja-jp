@@ -1,6 +1,6 @@
 ---
 title: manage-bde ロック
-description: Windows コマンドに関するトピック * * * *-
+description: '* * * * のリファレンストピック'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cc95b2e4a1ad242ffb748782ffb319fd2017c510
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a4d3c61a1e6f7481e1ceabed4473e34912b22b33
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80840055"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724155"
 ---
 # <a name="manage-bde-lock"></a>manage-bde: lock
 
 
 
-BitLocker で保護されているドライブをロックして、ロック解除キーが指定されていない限り、アクセスできないようにします。 このコマンドの使用方法の例については、次を参照してください。 [例](#BKMK_Examples)します。
+BitLocker で保護されているドライブをロックして、ロック解除キーが指定されていない限り、アクセスできないようにします。
 
 ## <a name="syntax"></a>構文
 
@@ -30,22 +30,22 @@ manage-bde -lock [<Drive>] [-computername <Name>] [{-?|/?}] [{-help|-h}]
 
 #### <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
+|パラメーター|[説明]|
 |---------|-----------|
-|\<ドライブ >|コロンの後にドライブ文字を表します。|
+|\<ドライブ>|コロンの後にドライブ文字を表します。|
 |-computername|別のコンピューターに BitLocker による保護を変更する、bde.exe を使用することを指定します。 また、このコマンドの省略版として **-cn**を使用することもできます。|
-|\<名 >|BitLocker による保護を変更するコンピューターの名前を表します。 指定できる値には、コンピューターの NetBIOS 名とコンピューターの IP アドレスが含まれます。|
+|\<Name>|BitLocker による保護を変更するコンピューターの名前を表します。 指定できる値には、コンピューターの NetBIOS 名とコンピューターの IP アドレスが含まれます。|
 |-? または /?|コマンドプロンプトで簡単なヘルプを表示します。|
 |-help または-h|表示は、コマンド プロンプトでヘルプを完了します。|
 
-## <a name="examples"></a><a name=BKMK_Examples></a>例
+## <a name="examples"></a>例
 
-次の例は、 **-lock**コマンドを使用してデータドライブ D をロックする方法を示しています。
+**-Lock**コマンドを使用してデータドライブ D をロックする方法を説明します。
 ```
 manage-bde –lock D:
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 -   - [コマンド ライン構文の記号](command-line-syntax-key.md)
 -   [Manage-bde](manage-bde.md)

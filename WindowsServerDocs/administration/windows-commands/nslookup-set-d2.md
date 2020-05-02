@@ -1,6 +1,6 @@
 ---
 title: nslookup set d2
-description: Windows コマンドに関するトピック * * * *-
+description: '* * * * のリファレンストピック'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 27b4b7c59f44dc61e6458293b7b3bb5b821eaf13
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 462c96e2144f4139ee9267358b8d8c8d5370c070
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80838565"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723643"
 ---
 # <a name="nslookup-set-d2"></a>nslookup set d2
 
@@ -30,12 +30,12 @@ set [no]d2
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター |                             説明                              |
+| パラメーター |                             [説明]                              |
 |-----------|----------------------------------------------------------------------|
 | **nod2**  | 完全デバッグモードをオフにします。 既定の構文は**nod2**です。 |
 |  **d2**   |                 完全デバッグモードをオンにします。                  |
 |   {ヘルプ   |                                  ?}                                  |
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

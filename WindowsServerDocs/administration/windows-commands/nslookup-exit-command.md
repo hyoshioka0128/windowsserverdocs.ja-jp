@@ -1,6 +1,6 @@
 ---
 title: nslookup exit コマンド
-description: Windows コマンドに関するトピック * * * *-
+description: '* * * * のリファレンストピック'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 84133cdd238d06287f42e28f006a3578bac4c122
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 25696b5889d4b430586285de1f4d6471f9e28b27
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80838795"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723736"
 ---
 # <a name="nslookup-exit-command"></a>nslookup exit コマンド
 
@@ -30,10 +30,10 @@ Nslookup /exit
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | 説明 |
+| パラメーター | [説明] |
 |-----------|-------------|
 |   {ヘルプ   |     ?}      |
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

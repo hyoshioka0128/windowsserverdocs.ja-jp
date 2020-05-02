@@ -1,6 +1,6 @@
 ---
 title: 印刷コマンドのリファレンス
-description: Windows コマンドに関するトピック * * * *-
+description: '* * * * のリファレンストピック'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,20 +9,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 009400fd2afe1e1e5cea6baa9abec1b89b59df7f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 236c394119fe12b713f179807f951007b81ead13
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80837385"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82722872"
 ---
 # <a name="print-command-reference"></a>印刷コマンドのリファレンス
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 印刷コマンドラインツールの一覧を次に示します。
 
-|                         コマンド                          |                                                                説明                                                                 |
+|                         command                          |                                                                説明                                                                 |
 |----------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
 |                       [lpq](lpq.md)                       |                           ラインプリンターデーモン (LPD) を実行しているコンピューター上の印刷キューの状態を表示します。                            |
 |                      [lpr](lpr.md)                       |      印刷の準備として、ラインプリンタデーモン (LPD) サービスを実行しているコンピューターまたはプリンターの共有デバイスにファイルを送信します。       |

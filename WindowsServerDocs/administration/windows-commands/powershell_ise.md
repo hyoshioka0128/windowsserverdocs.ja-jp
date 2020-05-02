@@ -1,6 +1,6 @@
 ---
 title: PowerShell_ise
-description: Windows コマンドに関するトピック * * * *-
+description: '* * * * のリファレンストピック'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b6ae96dcd40c894e0a528c06b461173f626fb2d2
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 5fb143c3d365b47f66aee5c64bfdc7dc26e5794f
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80837395"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723281"
 ---
 # <a name="powershell_ise"></a>PowerShell_ise
 
@@ -55,13 +55,12 @@ Windows PowerShell Integrated Scripting Environment (ISE) は、読み取り、�
 
 Windows PowerShell ISE を開始するには、その他の方法については、次を参照してください。 [Windows PowerShell の開始](https://go.microsoft.com/fwlink/?LinkID=135259)します。
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>Remarks
 
 Windows PowerShell は、Windows Server オペレーティング システムの Server Core インストール オプションで実行されます。 ただし、Windows PowerShell ISE には、グラフィック ユーザー インターフェイスが必要であるために、Server Core インストールで実行にしないとはされません。
 
 ## <a name="additional-references"></a>その他の参照情報
 
-[about_PowerShell_Ise](https://go.microsoft.com/fwlink/?LinkId=256512)
-[About_PowerShell](https://go.microsoft.com/fwlink/?LinkID=113439)
-
-[Windows](https://go.microsoft.com/fwlink/?LinkID=107116) PowerShell[でのスクリプト作成 windows powershell を使用したスクリプトに関する](https://technet.microsoft.com/scriptcenter/dd742419)説明も参照してください。
+[about_PowerShell_Ise about_PowerShell](https://go.microsoft.com/fwlink/?LinkId=256512)
+windows powershell[を使用した](https://technet.microsoft.com/scriptcenter/dd742419)[windows](https://go.microsoft.com/fwlink/?LinkID=107116)
+powershell スクリプト[about_PowerShell.exe](https://go.microsoft.com/fwlink/?LinkID=113439)

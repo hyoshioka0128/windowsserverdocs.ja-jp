@@ -1,6 +1,6 @@
 ---
 title: manage-bde
-description: Windows コマンドに関するトピック * * * *-
+description: '* * * * のリファレンストピック'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 816e20152ec40ce54c1192f3075c6f4556aed3db
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 567e0ed45f6bef42e82c3a68b3c0cbbb352b12d9
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80839695"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82724033"
 ---
 # <a name="manage-bde"></a>manage-bde
 
 
 
-使用を有効にするか、BitLocker をオフにすると、指定のメカニズムのロックを解除し、回復方法を更新し、BitLocker で保護されたデータ ドライブのロックを解除します。 このコマンド ライン ツールは、の代わりに使用できる、 **BitLocker ドライブ暗号化** コントロール パネルの項目。 このコマンドの使用方法の例については、次を参照してください。 [例](#BKMK_Examples)します。
+使用を有効にするか、BitLocker をオフにすると、指定のメカニズムのロックを解除し、回復方法を更新し、BitLocker で保護されたデータ ドライブのロックを解除します。 このコマンド ライン ツールは、の代わりに使用できる、 **BitLocker ドライブ暗号化** コントロール パネルの項目。
 
 ## <a name="syntax"></a>構文
 
@@ -31,7 +31,7 @@ manage-bde [-status] [–on] [–off] [–pause] [–resume] [–lock] [–unloc
 
 #### <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
+|パラメーター|[説明]|
 |---------|-----------|
 |[Manage-bde: status](manage-bde-status.md)|BitLocker で保護されているかどうかは、コンピューターで、すべてのドライブについての情報を提供します。|
 |[Manage-bde: on](manage-bde-on.md)|ドライブを暗号化し、BitLocker をオンにします。|
@@ -42,34 +42,34 @@ manage-bde [-status] [–on] [–off] [–pause] [–resume] [–lock] [–unloc
 |[Manage-bde: unlock](manage-bde-unlock.md)|回復パスワードまたは回復キーを BitLocker で保護されたデータにアクセスできます。|
 |[Manage-bde: autounlock](manage-bde-autounlock.md)|データ ドライブの自動ロック解除を管理します。|
 |[Manage-bde: protectors](manage-bde-protectors.md)|暗号化キーの保護方法を管理します。|
-|[Manage-bde: tpm](manage-bde-tpm.md)|コンピューターのトラステッド プラットフォーム モジュール (TPM) を構成します。 このコマンドは Windows 8 を実行するコンピューターではサポートされていないか、 **win8_server_2**します。 これらのコンピューター上の TPM を管理するには、Windows PowerShell の TPM の管理 MMC スナップインまたは TPM 管理コマンドレットを使用します。|
+|[Manage-bde: tpm](manage-bde-tpm.md)|コンピューターのトラステッド プラットフォーム モジュール (TPM) を構成します。 このコマンドは Windows 8 を実行するコンピューターではサポートされていないか、 **win8_server_2**します。 これらのコンピューター上の TPM を管理するには、Windows PowerShell の TPM の管理] MMC スナップインまたは TPM 管理コマンドレットを使用します。|
 |[Manage-bde: setidentifier](manage-bde-setidentifier.md)|指定された値にドライブのドライブ識別子のフィールドを設定、 **、組織の一意の識別子を提供する** グループ ポリシー設定です。|
-|[Manage-bde: ForceRecovery](manage-bde-forcerecovery.md)|再起動時に復旧モードに BitLocker で保護されたドライブを強制します。 このコマンドは、TPM に関連するすべてのキー プロテクターをドライブから削除します。 コンピューターが再起動したら、回復パスワードまたは回復キーは、ドライブのロック解除に使用できます。|
+|[Manage-bde:ForceRecovery](manage-bde-forcerecovery.md)|再起動時に復旧モードに BitLocker で保護されたドライブを強制します。 このコマンドは、TPM に関連するすべてのキー プロテクターをドライブから削除します。 コンピューターが再起動したら、回復パスワードまたは回復キーは、ドライブのロック解除に使用できます。|
 |[Manage-bde: changepassword](manage-bde-changepassword.md)|データ ドライブでパスワードを変更します。|
 |[Manage-bde: changepin](manage-bde-changepin.md)|オペレーティング システム ドライブの暗証番号 (pin) を変更します。|
 |[Manage-bde: changekey](manage-bde-changekey.md)|オペレーティング システム ドライブのスタートアップ キーを変更します。|
-|[Manage-bde: KeyPackage](manage-bde-keypackage.md)|ドライブのキー パッケージを生成します。|
+|[Manage-bde:KeyPackage](manage-bde-keypackage.md)|ドライブのキー パッケージを生成します。|
 |[Manage-bde: upgrade](manage-bde-upgrade.md)|BitLocker のバージョンにアップグレードします。|
-|[Manage-bde: WipeFreeSpace 領域](manage-bde-wipefreespace.md)|ドライブの空き領域を消去します。|
+|[Manage-bde:WipeFreeSpace](manage-bde-wipefreespace.md)|ドライブの空き領域を消去します。|
 |-? または /?|コマンドプロンプトで簡単なヘルプを表示します。|
 |-help または-h|表示は、コマンド プロンプトでヘルプを完了します。|
 
-## <a name="examples"></a><a name=BKMK_Examples></a>例
+## <a name="examples"></a>例
 
-次の例は、コンピューター上のドライブを表示し、識別 BitLocker で保護されているかどうか、現在の暗号化の状態。
+は、コンピューター上のドライブを表示し、BitLocker で保護されているかどうか、および現在の暗号化の状態であるかどうかを識別します。
 ```
 manage-bde -status
 ```
-次の例では、回復パスワードのオプションを使用して C ドライブに BitLocker を有効にすると示しています。 回復パスワードは BitLocker によって生成され、画面に表示することを記録できるようにします。
+回復パスワードのオプションを使用してドライブ C で BitLocker を有効にする方法を説明します。 回復パスワードは BitLocker によって生成され、画面に表示することを記録できるようにします。
 ```
 manage-bde –on C: -recoverypassword
 ```
-次の例では、回復パスワードを使用して、BitLocker で保護されたドライブのロックを解除を示しています。
+回復パスワードを使用して BitLocker で保護されたドライブのロックを解除する方法を示します。
 ```
 manage-bde –unlock E: -recoverypassword 111111-222222-333333-444444-555555-666666-777777-888888
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 -   - [コマンド ライン構文の記号](command-line-syntax-key.md)
--   [コマンドラインを使用して BitLocker を有効にする](https://technet.microsoft.com/library/dd894351(v=ws.10).aspx)
+-   [コマンドラインを使用して BitLocker を有効にします。](https://technet.microsoft.com/library/dd894351(v=ws.10).aspx)

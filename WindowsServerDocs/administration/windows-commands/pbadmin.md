@@ -1,6 +1,6 @@
 ---
 title: pbadmin
-description: Windows コマンドに関するトピック * * * *-
+description: '* * * * のリファレンストピック'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,17 +9,17 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f1ecaa3d2ac42ad0c899d52aafa2dce35390ce05
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a47a46a7b679c95f59e37bcc78326092110c988c
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80837665"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723340"
 ---
 # <a name="pbadmin"></a>pbadmin
 
 
 
-Pbadmin は推奨されていませんし、Windows の将来のリリースでサポートされるとは限りません。
+Pbadmin は非推奨とされ、Windows の将来のリリースでサポートされるとは限りません。
 
 このツールは、Windows Server 2003 に含まれます。 詳細については、次を参照してください。 [Pbadmin](https://technet.microsoft.com/library/cc755767(v=ws.10).aspx)します。

@@ -1,6 +1,6 @@
 ---
 title: nslookup
-description: Windows コマンドに関するトピック * * * *-
+description: '* * * * のリファレンストピック'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 15062d81992ee1b6e55d47cb9e49822350e4f2bc
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 35f790a3a537959501afe7c3173317f22b934ec6
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80838095"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723497"
 ---
 # <a name="nslookup"></a>nslookup
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 ドメインネームシステム (DNS) インフラストラクチャの診断に使用できる情報を表示します。 このツールを使用する前に、DNS のしくみについて理解しておく必要があります。 Nslookup コマンドラインツールは、TCP/IP プロトコルがインストールされている場合にのみ使用できます。
 ## <a name="syntax"></a>構文
@@ -55,7 +55,7 @@ nslookup /view <FileName>
 
 ### <a name="parameters"></a>パラメーター
 
-|                       パラメーター                       |                                                                                                         説明                                                                                                         |
+|                       パラメーター                       |                                                                                                         [説明]                                                                                                         |
 |-------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |   [nslookup exit コマンド](nslookup-exit-command.md)   |                                                                                                     **Nslookup**を終了します。                                                                                                     |
 | [nslookup finger コマンド](nslookup-finger-command.md) |                                                                                  現在のコンピューター上の finger サーバーに接続します。                                                                                   |
@@ -84,7 +84,7 @@ nslookup /view <FileName>
 |         [nslookup set vc](nslookup-set-vc.md)         |                                                                     サーバーに要求を送信するときに、仮想回線を使用するかどうかを指定します。                                                                      |
 |           [nslookup view](nslookup-view.md)           |                                                                          前の**ls**サブコマンドの出力を並べ替えて一覧表示します。                                                                          |
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>Remarks
 - *ComputerTofind*が IP アドレスであり、クエリが A または PTR リソースレコードの種類の場合は、コンピューターの名前が返されます。 *ComputerTofind*が名前で、末尾のピリオドがない場合は、既定の DNS ドメイン名が名前に追加されます。 この動作は、 **set**サブコマンド ( **domain**、 **srchlist**、 **defname**、および**search**) の状態によって異なります。
 - *ComputerTofind*の代わりにハイフン (-) を入力すると、コマンドプロンプトが**nslookup**対話モードに変更されます。
 - コマンドラインの長さは256文字未満でなければなりません。
@@ -96,7 +96,7 @@ nslookup /view <FileName>
   -   組み込みコマンドをコンピューター名として扱うには、その前にエスケープ文字 (\\) を付けます。
   -   認識されないコマンドは、コンピューター名として解釈されます。
 - 参照要求が失敗した場合は、 **nslookup**によってエラーメッセージが出力されます。 次の表に、考えられるエラーメッセージを示します。
-  |**エラーメッセージ**|**説明**|
+  |**エラー メッセージ**|**説明**|
   |-----------|----------|
   |`timed out`|サーバーは、一定の時間が経過してから特定の回数の再試行を行った後に、要求に応答しませんでした。 タイムアウト期間は、 **set timeout**サブコマンドを使用して設定できます。 再試行の回数は、 **set retry**サブコマンドを使用して設定できます。|
   |`No response from server`|サーバーコンピューターで DNS ネームサーバーが実行されていません。|

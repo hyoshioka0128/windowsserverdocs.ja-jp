@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: c4836665946b39acdacf4c204c6e79fc2d8507bd
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 569b879caf29aac6d1592d822072f35021cec9d3
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80837535"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723303"
 ---
 # <a name="pnpunattend"></a>pnpunattend
 
-デバイス ドライバー用にコンピューターを監査およびドライバーの無人インストールを実行またはドライバーをインストールしなくても検索され、必要に応じて、コマンドラインに結果を報告します。 このコマンドを使用して、特定のハードウェア デバイスの特定のドライバーのインストールを指定します。 注釈をご覧ください。
+デバイス ドライバー用にコンピューターを監査およびドライバーの無人インストールを実行またはドライバーをインストールしなくても検索され、必要に応じて、コマンドラインに結果を報告します。 このコマンドを使用して、特定のハードウェア デバイスの特定のドライバーのインストールを指定します。 「解説」を参照してください。
 
 ## <a name="syntax"></a>構文
 
@@ -28,14 +28,14 @@ PnPUnattend.exe auditSystem [/help] [/?] [/h] [/s] [/L]
 
 ### <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
+|パラメーター|[説明]|
 |---------|-----------|
-|auditSystem|オンラインでのドライバーのインストールを指定します。</br>**Pnpunattend**が **/help**または **/?** のいずれかで実行されている場合を除き、必須です。 パラメーターよりも優先されます。|
-|/s|省略可。 インストールしなくてもドライバーの検索を指定します。|
-|/L|省略可。 コマンド プロンプトで、このコマンドのログ情報を指定します。|
-|/?|省略可。 コマンド プロンプトで次のコマンドのヘルプを表示します。|
+|auditSystem|オンラインでのドライバーのインストールを指定します。</br>**Pnpunattend**が **/help**または **/?** のいずれかで実行されている場合を除き、必須です。 %2!d! です。|
+|/s|任意。 インストールしなくてもドライバーの検索を指定します。|
+|/L|任意。 コマンド プロンプトで、このコマンドのログ情報を指定します。|
+|/?|任意。 コマンド プロンプトで次のコマンドのヘルプを表示します。|
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>Remarks
 
 準備が必要です。 このコマンドを使用する前に、次のタスクを完了する必要があります。
 
@@ -43,12 +43,12 @@ PnPUnattend.exe auditSystem [/help] [/?] [/h] [/s] [/L]
 2. ダウンロードして、デバイスのドライバー パッケージを抽出します。 オペレーティング システムのバージョンの INF ファイルを含むサブフォルダーおよびサブフォルダーの内容を作成したビデオ フォルダーにコピーします。 たとえば、ビデオ ドライバー ファイルを C:\Drivers\Video にコピーします。
 3. たとえば、手順 1. で作成したフォルダーにシステム環境のパス変数を追加 **C:\Drivers\Video**します。
 4. 次のレジストリ キーを作成し、 **DriverPaths** キーセットを作成する、 **値のデータ** に **1**します。
-5. Windows®7の場合は、レジストリパス**HKEY_LOCAL_Machine \Software\microsoft\windows NT\CurrentVersion\\** に移動し、キー **\\UnattendSettings\PnPUnattend\DriverPaths**を作成します。
-6. Windows Vista では、レジストリ パスに移動: **HK_LM\Software\Microsoft\Windows \currentversion\\** , 、キーを作成し、= **\UnattendSettings\PnPUnattend\DriverPaths**します。
+5. Windows®7の場合は、レジストリパス**HKEY_LOCAL_Machine \software\microsoft\windows NT\CurrentVersion\\**に移動し、キー **UnattendSettings\PnPUnattend\DriverPaths\\ **を作成します。
+6. Windows Vista では、レジストリ パスに移動: **HK_LM\Software\Microsoft\Windows \currentversion\\**, 、キーを作成し、= **\UnattendSettings\PnPUnattend\DriverPaths**します。
 
 ## <a name="examples"></a>例
 
-次のコマンド例では、 **PNPUnattend**を使用して、可能なドライバーの更新についてコンピューターを監査し、結果をコマンドプロンプトに報告する方法を示します。
+**PNPUnattend**を使用して、可能なドライバーの更新についてコンピューターを監査し、結果をコマンドプロンプトに報告する方法を示します。
 
 ```
 pnpunattend auditsystem /s /l 

@@ -1,6 +1,6 @@
 ---
 title: perfmon
-description: Perfmon の Windows コマンドに関するトピック
+description: Perfmon のリファレンストピック
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/25/2018
-ms.openlocfilehash: 7a832416b5b00292a6249f3824644db1b727cfb2
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 5742b51ffd4fca16c1054e373636afbe39968c96
+ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80837605"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82723325"
 ---
 # <a name="perfmon"></a>perfmon
 
@@ -28,13 +28,13 @@ perfmon </res|report|rel|sys>
 
 ### <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
+|パラメーター|[説明]|
 |---------|-----------|
 |/res|リソースビューを開始します。|
 |/report」|システム診断データコレクターセットを起動し、結果のレポートを表示します。|
 |/rel|信頼性モニターを起動します。|
 |/sys|パフォーマンス モニターを起動します。|
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
-[Windows パフォーマンスモニター](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc749154(v%3dws.11))
+[Windows パフォーマンス モニタ](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc749154(v%3dws.11))
