@@ -3,16 +3,16 @@ title: AD FS 2019 リスク評価モデルでプラグインを構築する
 author: billmath
 ms.author: billmath
 manager: mtillman
-ms.date: 04/16/2019
+ms.date: 05/05/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 6433513f525572254e4aaef65e2bfc992a7c5280
-ms.sourcegitcommit: 41dc7f487d282895a242e788049285363dd19eeb
+ms.openlocfilehash: c9795ea1b945d5da773b8d257434f216d842799d
+ms.sourcegitcommit: f0f447193a0bd14d9a623aaead80329b95bf1f47
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "82169177"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82842841"
 ---
 # <a name="build-plug-ins-with-ad-fs-2019-risk-assessment-model"></a>AD FS 2019 リスク評価モデルでプラグインを構築する
 
@@ -24,7 +24,7 @@ ms.locfileid: "82169177"
 
 このモデルでは、次に示すように、AD FS 認証パイプラインの3つの段階のいずれかでプラグインコードを使用できます。
 
-![対象となるのは、モデル](media/ad-fs-risk-assessment-model/risk1.png)
+![model](media/ad-fs-risk-assessment-model/risk1.png)
 
 1.    **要求の受信ステージ**-ユーザーが資格情報を入力する前に、AD FS が認証要求を受信するときに、要求を許可またはブロックするプラグインを作成できるようにします。 この段階で利用可能な要求コンテキスト (クライアント IP、Http メソッド、プロキシサーバー DNS など) を使用して、リスク評価を実行できます。 たとえば、要求コンテキストから IP を読み取るためのプラグインを作成し、その IP が危険な ip の事前定義リストにある場合は認証要求をブロックすることができます。 
 
@@ -76,7 +76,7 @@ ms.locfileid: "82169177"
    >[!NOTE]
    >ここでは、AD FS サーバー自体にプラグインを構築しています。 開発環境が別のサーバーにある場合は、AD FS `Microsoft.IdentityServer.dll`サーバーの AD FS インストールフォルダーから開発用のボックスにをコピーします。</br> 
    
-   ![対象となるのは、モデル](media/ad-fs-risk-assessment-model/risk4.png)
+   ![model](media/ad-fs-risk-assessment-model/risk4.png)
    
    c.    チェックボックスをオンにした後、[**参照マネージャー** ] ウィンドウで [ **OK]** をクリックします。 `Microsoft.IdentityServer.dll`</br>
    ![model](media/ad-fs-risk-assessment-model/risk5.png)
@@ -213,8 +213,8 @@ public abstract class ThreatDetectionModule
 |[OnAuthenticationPipelineUnload](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onauthenticationpipelineunload?view=adfs-2019) |Void|プラグインがそのパイプラインからアンロードされるときに AD FS によって呼び出されます| 
 |[OnConfigurationUpdate](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onconfigurationupdate?view=adfs-2019)| Void|構成の更新時に AD FS によって呼び出されます |
 |**プロパティ** |**Type** |**定義**|
-|[VendorName](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.vendorname?view=adfs-2019)|String |プラグインを所有しているベンダーの名前を取得します。|
-|[ModuleIdentifier](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.moduleidentifier?view=adfs-2019)|String |プラグインの識別子を取得します。|
+|[VendorName](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.vendorname?view=adfs-2019)|文字列型 |プラグインを所有しているベンダーの名前を取得します。|
+|[ModuleIdentifier](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.moduleidentifier?view=adfs-2019)|文字列型 |プラグインの識別子を取得します。|
 
 このサンプルプラグインでは、 [Onauthenticationpipelineload](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onauthenticationpipelineload?view=adfs-2019)メソッドと[onconfigurationupdate](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onconfigurationupdate?view=adfs-2019)メソッドを使用して、AD FS DB から事前に定義された ip を読み取ります。 [Onauthenticationpipelineload](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onauthenticationpipelineload?view=adfs-2019)は、プラグインが AD FS に登録されているときに呼び出されます。また、 `Import-AdfsThreatDetectionModuleConfiguration`コマンドレットを使用して .csv をインポートするときに[onconfigurationupdate](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule.onconfigurationupdate?view=adfs-2019)が呼び出されます。 
 
@@ -297,7 +297,7 @@ IList<Claim> additionalClams
 >[!NOTE]
 >プラグインを機能させるには、メインクラス (この場合は UserRiskAnalyzer) が[ThreatDetectionModule](https://docs.microsoft.com/dotnet/api/microsoft.identityserver.public.threatdetectionframework.threatdetectionmodule?view=adfs-2019)抽象クラスを派生する必要があり、上記の3つのインターフェイスのうち少なくとも1つを実装する必要があります。 Dll が登録されると、AD FS 実装されているインターフェイスを確認し、パイプラインの適切なステージでそれらを呼び出します。
 
-### <a name="faqs"></a>FAQ
+### <a name="faqs"></a>よく寄せられる質問
 
 **これらのプラグインを作成する必要があるのはなぜですか。**</br>
 **A:** これらのプラグインは、パスワードスプレー攻撃などの攻撃から環境を保護するための追加機能を提供するだけでなく、お客様の要件に基づいて独自のリスク評価ロジックを構築するための柔軟性も提供します。 
@@ -313,6 +313,7 @@ IList<Claim> additionalClams
 
 **その他のサンプルプラグインを利用できますか。**</br>
 **A:** 次のサンプルプラグインを利用できます。
+
 |名前|説明| 
 |-----|-----|
 |[危険なユーザープラグイン](https://github.com/microsoft/adfs-sample-block-user-on-adfs-marked-risky-by-AzureAD-IdentityProtection)|Azure AD Identity Protection によって決定されたユーザーリスクレベルに基づいて、認証をブロックするか、MFA を強制するサンプルプラグイン。| 

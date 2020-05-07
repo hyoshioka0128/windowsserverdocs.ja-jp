@@ -8,20 +8,20 @@ ms.assetid: 262701a6-8a97-4c4e-bfbf-9f8007c308d6
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 29db78fdf38a6fab23d9a5ec5539c0606e2fbbaa
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b947ca49a82c18fd7a6c1da71b1e4b43ea741b41
+ms.sourcegitcommit: f247065941508b913c31828944978d3e721e2110
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80814485"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82876417"
 ---
-# <a name="azure-site-recovery-services-integration"></a>Azure Site Recovery サービスの統合
+# <a name="azure-site-recovery-services-integration"></a>Azure Site Recovery サービスの統合 
 
 >適用対象: Windows Server 2016 Essentials
 
 [Azure Site Recovery サービス](https://docs.microsoft.com/azure/site-recovery/)は、Azure のバックアップコンテナーへの仮想マシン (VM) のリアルタイムレプリケーションを可能にする Microsoft Azure によって提供されるサービスです。 ハードウェアやその他の障害によってサーバーまたはサイトがダウンしている場合は、Azure にフェールオーバーできます。この場合、バックアップコンテナーに格納されている VM イメージは、実行中の VM として Azure にプロビジョニングされます。 Azure へのフェールオーバーが発生した場合は、azure Virtual network と組み合わせることで、以前にオンプレミスサーバーに接続していたクライアント Pc は、Azure で実行されているサーバーに透過的に接続します。
 
-Azure Site Recovery サービスと Windows Server Essentials の統合は、 [Azure Virtual network](azure-virtual-network-integration.md)の構成と同じ方法で開始されます。 ダッシュボードの **[Microsoft Cloud Services 統合]** ページで、ダッシュボードの右側にある **[Azure Site Recovery Services との統合]** をクリックします。
+Azure Site Recovery サービスと Windows Server Essentials の統合は、 [Azure Virtual network](azure-virtual-network-integration.md)の構成と同じ方法で開始されます。 ダッシュボードの [ **Microsoft Cloud Services 統合**] ページで、ダッシュボードの右側にある [ **Azure Site Recovery Services との統合**] をクリックします。
 
 ![Windows Server Essentials ダッシュボードのホームページにある [作業の開始] タブを示すスクリーンショット。 [作業の開始] タブの [サービス] セクションが選択されています。ダッシュボードは、Azure Recovery が現在無効になっている Microsoft Cloud Services 統合の下に表示されます。](media/azure-site-recovery-1.PNG)
 
@@ -39,11 +39,11 @@ Azure に正常にログインした後、Azure Site Recovery サービスに関
 
 ### <a name="enabling-guest-virtual-machines-for-protection"></a>ゲスト仮想マシンの保護を有効にする
 
-Azure 回復ウィンドウにある仮想マシンを選択したら、ダッシュボードの右側にある [ **azure へのレプリケーションを有効**にする] をクリックして、仮想マシン &trade;s イメージを準備して azure にコピーできます。
+Azure 回復ウィンドウにある仮想マシンを選択したら、ダッシュボードの右側にある [ **azure へのレプリケーションを有効**にする] をクリックして、仮想マシン&trade;のイメージを準備して azure にコピーできます。
 
 ![[Azure へのレプリケーションを有効にする] ダイアログボックスを示すスクリーンショット。 ホストが追加されている間、進行状況バーが表示されます。](media/azure-site-recovery-5.PNG)
 
-このプロセスでは、Azure Site Recovery Service agent がホストサーバーにインストールされ、ゲスト VM のイメージが格納されるバックアップコンテナーが作成され、Azure へのイメージのレプリケーションが開始されます。 レプリケートされる VM のサイズによっては、レプリケーションプロセスの完了に数時間または数日かかることがあります。 VM イメージ全体と最新のデルタが Azure にレプリケートされるまで、フェールオーバータスクは使用できず、VM は保護されません。 レプリケーションが完了すると、[Azure 回復] ウィンドウの [保護の状態] 列の **[レプリケーション]** が **[有効]** に変わります。
+このプロセスでは、Azure Site Recovery Service agent がホストサーバーにインストールされ、ゲスト VM のイメージが格納されるバックアップコンテナーが作成され、Azure へのイメージのレプリケーションが開始されます。 レプリケートされる VM のサイズによっては、レプリケーションプロセスの完了に数時間または数日かかることがあります。 VM イメージ全体と最新のデルタが Azure にレプリケートされるまで、フェールオーバータスクは使用できず、VM は保護されません。 レプリケーションが完了すると、[Azure 回復] ウィンドウの [保護の状態] 列の **[レプリケーション]** が [**有効**] に変わります。
 
 ![Windows Server Essentials ダッシュボードの Azure 回復ページを示すスクリーンショット。 これらのホストで実行されている仮想マシンと共に、2つの Hyper-v ホストが表示されます。 ホスト RAM-H1-2 で ramh12v02 という名前の仮想マシンが選択され、Azure へのレプリケーションは現在この仮想マシンに対して有効になっています。](media/azure-site-recovery-6.PNG)
 
@@ -63,6 +63,6 @@ Azure 回復ウィンドウにある仮想マシンを選択したら、ダッ�
 
 ![Windows Server Essentials ダッシュボードの Azure 回復ページを示すスクリーンショット。 Azure へのレプリケーションは、Essentials という名前のホストに対して有効になっています。また、Azure で実行されている Essentials-Test という名前の仮想マシンは、ホストが Azure にフェールオーバーしたことを示します。](media/azure-site-recovery-8.PNG)
 
-<a name="see-also"></a>参照
+<a name="see-also"></a>関連項目
 --------
 [Windows Server Essentials の概要](get-started.md)

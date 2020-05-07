@@ -1,6 +1,6 @@
 ---
-title: Sc delete
-description: '* * * * のリファレンストピック'
+title: Sc.exe の削除
+description: Sc.exe ユーティリティを使用してサービスの登録を解除する方法について説明します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: dd40b5eb82def3b3c437cbdb5b60d279529d25a0
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 284012cf6799df52832e62c3eea1b2f0fcd84805
+ms.sourcegitcommit: 95b60384b0b070263465eaffb27b8e3bb052a4de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722192"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82850113"
 ---
-# <a name="sc-delete"></a>Sc delete
-
-
+# <a name="scexe-delete"></a>Sc.exe の削除
 
 レジストリからサービス サブキーを削除します。 サービスが実行されている場合、または別のプロセスにサービスへの開いているハンドルがある場合は、サービスが削除対象としてマークします。
 
@@ -27,26 +25,26 @@ ms.locfileid: "82722192"
 ## <a name="syntax"></a>構文
 
 ```
-sc [<ServerName>] delete [<ServiceName>]
+sc.exe [<ServerName>] delete [<ServiceName>]
 ```
 
 ### <a name="parameters"></a>パラメーター
 
-|パラメーター|[説明]|
+|パラメーター|説明|
 |---------|-----------|
 |\<ServerName>|サービスが配置されているリモート サーバーの名前を指定します。 名前には、汎用名前付け規則 (UNC) 形式 (myserver など\\ \\) を使用する必要があります。 SC.exe をローカルで実行するには、このパラメーターを省略します。|
 |\<ServiceName>|によって返されるサービスの名前を指定、 **られて** 操作します。|
 |?|コマンド プロンプトにヘルプを表示します。|
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>解説
 
-使用 **プログラム追加と削除** に **コントロール パネルの [** DHCP、DNS、またはその他の組み込みのオペレーティング システム サービスを削除します。 なお **プログラム追加と削除** のみ、サービスのレジストリ サブキーは削除されませんが、サービスをアンインストール、ショートカットを削除ができます。
+Sc.exe を使用して、DHCP、DNS、インターネットインフォメーションサービスなどの組み込みのオペレーティングシステムサービスを削除することはお勧めしません。 オペレーティングシステムの役割、サービス、およびコンポーネントをインストール、削除、または再構成するには、「[役割、役割サービス、または機能のインストールまたはアンインストール](/WindowsServerDocs/administration/server-manager/install-or-uninstall-roles-role-services-or-features.md)」を参照してください。
 
 ## <a name="examples"></a>例
 
 サービス サブキーを削除する **NewServ** 、ローカル コンピューター上のレジストリから入力します。
 ```
-sc delete newserv
+sc.exe delete newserv
 ```
 
 ## <a name="additional-references"></a>その他のリファレンス

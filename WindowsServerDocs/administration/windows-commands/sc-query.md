@@ -1,6 +1,6 @@
 ---
-title: Sc クエリ
-description: '* * * * のリファレンストピック'
+title: Sc.exe クエリ
+description: Sc.exe ユーティリティを使用して、サービス、ドライバー、サービスの種類、またはドライバーの種類に関する情報を取得する方法について説明します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,30 +9,26 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6a6b4555790a8f9bb1149531251e724189177975
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 86aabbbc42c965b72f317a3bfaa99acc99c46f3b
+ms.sourcegitcommit: 95b60384b0b070263465eaffb27b8e3bb052a4de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722183"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82850043"
 ---
-# <a name="sc-query"></a>Sc クエリ
-
-
+# <a name="scexe-query"></a>Sc.exe クエリ
 
 取得し、指定されたサービス、ドライバー、サービスの種類またはドライバーの種類に関する情報を表示します。
-
-
 
 ## <a name="syntax"></a>構文
 
 ```
-sc [<ServerName>] query [<ServiceName>] [type= {driver | service | all}] [type= {own | share | interact | kernel | filesys | rec | adapt}] [state= {active | inactive | all}] [bufsize= <BufferSize>] [ri= <ResumeIndex>] [group= <GroupName>]
+sc.exe [<ServerName>] query [<ServiceName>] [type= {driver | service | all}] [type= {own | share | interact | kernel | filesys | rec | adapt}] [state= {active | inactive | all}] [bufsize= <BufferSize>] [ri= <ResumeIndex>] [group= <GroupName>]
 ```
 
 ### <a name="parameters"></a>パラメーター
 
-|       パラメーター        |                                                                                                                          [説明]                                                                                                                          |
+|       パラメーター        |                                                                                                                          説明                                                                                                                          |
 |------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |     \<ServerName>      |                       サービスが配置されているリモート サーバーの名前を指定します。 名前には、汎用名前付け規則 (UNC) 形式 (myserver など\\ \\) を使用する必要があります。 SC.exe をローカルで実行するには、このパラメーターを省略します。                        |
 |     \<ServiceName>     |                                      によって返されるサービスの名前を指定、 **られて** 操作します。 これは、 **クエリ** と共にその他のパラメーターは使用されません **クエリ** パラメーター (以外の *ServerName*)。                                      |
@@ -44,7 +40,7 @@ sc [<ServerName>] query [<ServiceName>] [type= {driver | service | all}] [type= 
 |  グループ = \<GroupName>   |                                                                             列挙するサービス グループを指定します。 既定では、すべてのグループが列挙されます (* * グループ = * *)。                                                                              |
 |           /?           |                                                                                                             コマンド プロンプトにヘルプを表示します。                                                                                                              |
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>解説
 
 - パラメーターと値の間のスペースのない (つまり、 **型 = 独自**, ではなく、 **型 = 独自**)、操作は失敗します。
 - **クエリ** 操作には、サービスに関する次の情報が表示されます: WIN32_EXIT_B、SERVICE_EXIT_B、チェックポイント、および WAIT_HINT (状態は使用できない) と同様に状態 (サービスのレジストリ サブキーの名前)、サービス名を入力します。
@@ -55,43 +51,43 @@ sc [<ServerName>] query [<ServiceName>] [type= {driver | service | all}] [type= 
   ```  
   残りを表示する **クエリ** については、再実行 **クエリ**, 設定 **bufsize =** バイトと設定の数値を指定する **ri =** 指定したインデックス。 たとえば、残りの出力は、コマンド プロンプトで次を入力して表示されるは。  
   ```
-  sc query bufsize= 1822 ri= 79
+  sc.exe query bufsize= 1822 ri= 79
   ```
 
 ## <a name="examples"></a>例
 
 アクティブなサービスのみの情報を表示するには、次のコマンドのいずれかを入力します。
 ```
-sc query
-sc query type= service
+sc.exe query
+sc.exe query type= service
 ```
 アクティブなサービスの情報を表示し、2,000 バイトのバッファー サイズを指定するには、次のように入力します。
 ```
-sc query type= all bufsize= 2000
+sc.exe query type= all bufsize= 2000
 ```
 WUAUSERV サービスの情報を表示するには、次のように入力します。
 ```
-sc query wuauserv
+sc.exe query wuauserv
 ```
 すべてのサービス (アクティブおよび非アクティブ) の情報を表示するには、次のように入力します。
 ```
-sc query state= all
+sc.exe query state= all
 ```
 すべてのサービス (アクティブおよび非アクティブ)、56 行目から始まる情報を表示するには、次のように入力します。
 ```
-sc query state= all ri= 56
+sc.exe query state= all ri= 56
 ```
 対話型サービスの情報を表示するには、次のように入力します。
 ```
-sc query type= service type= interact
+sc.exe query type= service type= interact
 ```
 ドライバーのみの情報を表示するには、次のように入力します。
 ```
-sc query type= driver
+sc.exe query type= driver
 ```
 ドライバーの情報を表示するには、Network Driver Interface Specification (NDIS) グループで、次のように入力します。
 ```
-sc query type= driver group= ndis
+sc.exe query type= driver group= ndis
 ```
 
 ## <a name="additional-references"></a>その他のリファレンス
