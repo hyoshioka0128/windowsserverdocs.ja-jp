@@ -8,12 +8,12 @@ ms.date: 08/17/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: bad6ad9a95618239825366187c8083c1fe77ae94
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: cdd35ccc7800616f7803937738c942e68bf04c00
+ms.sourcegitcommit: 67116322915066b85decb4261d47cedec2cfe12f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80860085"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82903439"
 ---
 # <a name="ad-fs-single-sign-on-settings"></a>AD FS のシングルサインオンの設定
 
@@ -102,7 +102,7 @@ Set-AdfsProperties –KmsiLifetimeMins <Int32\>
 ## <a name="psso-revocation"></a>PSSO の失効  
  セキュリティを保護するために、次の条件が満たされたときに以前に発行されたすべての永続的な SSO cookie を拒否する AD FS ます。 これには、AD FS での認証を行うために、ユーザーが資格情報を入力する必要があります。 
   
-- ユーザーによるパスワードの変更  
+- ユーザーがパスワードを変更する  
   
 - 永続 SSO 設定が AD FS で無効になっています  
   
@@ -153,32 +153,32 @@ c:[Type == "https://schemas.microsoft.com/2014/03/psso"]
 
   <tr align="center">
     <th></th>
-    <th>使用不可</th>
+    <th>NO</th>
     <th>いいえ、KMSI</th>
-    <th>使用可能</th>
+    <th>YES</th>
     <th></th>
-    <th>使用不可</th>
+    <th>NO</th>
     <th>いいえ、KMSI</th>
-    <th>使用可能</th>
+    <th>YES</th>
   </tr>
  <tr align="center">
     <td>SSO =&gt;設定更新トークン =&gt;</td>
     <td>8時間</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>該当なし</td>
+    <td>該当なし</td>
     <th></th>
     <td>8時間</td>
-    <td>N/A</td>
-    <td>N/A</td>
+    <td>該当なし</td>
+    <td>該当なし</td>
   </tr>
 
  <tr align="center">
-    <td>PSSO =&gt;更新トークンを設定する =&gt;</td>
-    <td>N/A</td>
+    <td>PSSO =&gt;設定更新トークン =&gt;</td>
+    <td>該当なし</td>
     <td>24時間</td>
     <td>7日間</td>
     <th></th>
-    <td>N/A</td>
+    <td>該当なし</td>
     <td>24時間</td>
     <td>14日の期間の最大90日</td>
   </tr>
@@ -201,6 +201,10 @@ c:[Type == "https://schemas.microsoft.com/2014/03/psso"]
 もし：
  - [x] 管理者が KMSI 機能を有効にしました [および]
  - [x] ユーザーがフォームログインページで KMSI チェックボックスをクリックします。
+ 
+  
+新しい更新トークンの有効性が前のトークンより長い場合にのみ、ADFS は新しい更新トークンを発行します。 トークンの最長有効期間は84日ですが、AD FS 14 日間のスライディングウィンドウでトークンが有効なままになります。 更新トークンが、通常の SSO 時間である8時間有効な場合、新しい更新トークンは発行されません。 
+ 
  
 **次のことをお勧めします。** <br>
 **Lastpasswordchangetimestamp**属性が同期されていないフェデレーションユーザーは、**最大有効期間の値が12時間の**セッション cookie と更新トークンを発行します。<br>
