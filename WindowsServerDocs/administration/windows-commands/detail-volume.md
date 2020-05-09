@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2958c82b1dfc3b99d0e15690ef9857e7d83b244f
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: eac3749304a06ea4cc11bf90a3220f5e24f9b5ae
+ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719617"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82993014"
 ---
 # <a name="detail-volume"></a>detail volume
 
-現在のボリュームが存在するディスクを表示します。
+現在のボリュームが存在するディスクを表示します。 開始する前に、この操作を成功させるボリュームを選択する必要があります。 使用して、 [ボリュームを選択して](select-volume.md) コマンドのボリュームを選択し、それにフォーカスをします。 ボリュームの詳細は、DVD-ROM や CD-ROM ドライブなどの読み取り専用ボリュームには適用されません。
 
 ## <a name="syntax"></a>構文
 
@@ -26,14 +26,10 @@ ms.locfileid: "82719617"
 detail volume
 ```
 
-## <a name="remarks"></a>Remarks
-
--   この操作を成功させるのには、ボリュームを選択してください。 使用して、 **ボリュームを選択して** コマンドのボリュームを選択し、それにフォーカスをします。
--   ボリュームの詳細は、DVD-ROM ドライブや CD-ROM ドライブなどの読み取り専用ボリュームには適用されません。
-
 ## <a name="examples"></a>例
 
 現在のボリュームが置かれているすべてのディスクを表示するには、次のように入力します。
+
 ```
 detail volume
 ```
@@ -42,3 +38,6 @@ detail volume
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 
+- [select volume](select-volume.md)
+
+- [詳細コマンド](detail.md)

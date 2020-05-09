@@ -9,15 +9,15 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 513bcab45b16f82e7f3dac0d77587a8db9d1c327
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 66479158bfd8e175ffe96b458ff0356ee8191e94
+ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721594"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82993417"
 ---
 # <a name="sysocmgr"></a>sysocmgr
 
 Sysocmgr は非推奨とされ、Windows の将来のリリースでサポートされるとは限りません。
 
-このツールは、Windows Server 2003 に含まれます。 詳細については、次を参照してください。 [Sysocmgr](https://technet.microsoft.com/library/cc773290(v=ws.10).aspx)します。
+このツールは、Windows Server 2003 に含まれます。 詳細については、「 [Sysocmgr](https://technet.microsoft.com/library/cc773290(v=ws.10).aspx)」を参照してください。

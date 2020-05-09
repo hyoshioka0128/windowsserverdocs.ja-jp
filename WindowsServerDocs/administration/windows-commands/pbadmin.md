@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a47a46a7b679c95f59e37bcc78326092110c988c
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 95308b6098c44cdab7aaae3d8550717e8269fcfc
+ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723340"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82993372"
 ---
 # <a name="pbadmin"></a>pbadmin
 
@@ -22,4 +22,4 @@ ms.locfileid: "82723340"
 
 Pbadmin は非推奨とされ、Windows の将来のリリースでサポートされるとは限りません。
 
-このツールは、Windows Server 2003 に含まれます。 詳細については、次を参照してください。 [Pbadmin](https://technet.microsoft.com/library/cc755767(v=ws.10).aspx)します。
+このツールは、Windows Server 2003 に含まれます。 詳細については、「 [Pbadmin](https://technet.microsoft.com/library/cc755767(v=ws.10).aspx)」を参照してください。

@@ -1,6 +1,6 @@
 ---
-title: dfsdiag TestDFSIntegrity
-description: 分散ファイルシステム (DFS) 名前空間の整合性をチェックする**dfsdiag TestDFSIntegrity**のリファレンストピックです。
+title: dfsdiag testdfsintegrity
+description: 分散ファイルシステム (DFS) 名前空間の整合性をチェックする、DFS diag testdfsintegrity コマンドのリファレンストピックです。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 21aa6ef3d7d4a7b4a9c64fc51aec77f49f1e0a0c
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: b54c7f597926abc91bb9201dfec1a04f44e04ecb
+ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719576"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82992958"
 ---
-# <a name="dfsdiag-testdfsintegrity"></a>dfsdiag TestDFSIntegrity
+# <a name="dfsdiag-testdfsintegrity"></a>dfsdiag testdfsintegrity
 
 > 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -31,27 +31,27 @@ ms.locfileid: "82719576"
 ## <a name="syntax"></a>構文
 
 ```
-dfsdiag /TestDFSIntegrity /DFSRoot: <DFS root path> [/Recurse] [/Full]
+dfsdiag /testdfsintegrity /DFSroot: <DFS root path> [/recurse] [/full]
 ```
 
-#### <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
-| パラメーター | [説明] |
-|-------|--------|
-| /Dfs ルート:`<DFS root path>`| 診断する DFS 名前空間。 |
-| /Recurse | 名前空間の interlinks を含むテストを実行します。 |
-| /Full | すべてのフォルダーターゲットで、共有と NTFS Acl およびクライアント側の構成の整合性を確認します。 また、online プロパティが設定されていることを確認します。 |
+| パラメーター | 説明 |
+| --------- | ----------- |
+| /Dfs ルート:`<DFS root path>` | 診断する DFS 名前空間。 |
+| /recurse | 名前空間の interlinks を含め、テストを実行します。 |
+| /full | 共有および NTFS Acl の一貫性と、すべてのフォルダーターゲットのクライアント側の構成を確認します。 また、online プロパティが設定されていることを確認します。 |
 
-## <a name="examples"></a>例
+## <a name="examples"></a>使用例
+
+相互リンクを含め、 *com\MyNamespace*の分散ファイルシステム (DFS) 名前空間の整合性と整合性を確認するには、次のように入力します。
 
 ```
-dfsdiag /TestDFSIntegrity /DFSRoot:\\Contoso.com\MyNamespace /Recurse /Full
+dfsdiag /testdfsintegrity /DFSRoot:\contoso.com\MyNamespace /recurse /full
 ```
 
 ## <a name="additional-references"></a>その他のリファレンス
 
--   - [コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
 
--   [dfsdiag](dfsdiag.md)
-
-
+- [dfsdiag コマンド](dfsdiag.md)

@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b7b9077e0d0194e86200ab3710babb23bc308d83
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: a11dec60c0f2d68cd4619e423f137ce3577dbcb7
+ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720686"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82993407"
 ---
 # <a name="winpop"></a>winpop
 
@@ -22,4 +22,4 @@ ms.locfileid: "82720686"
 
 Winpop は非推奨とされており、Windows の将来のリリースでサポートされるとは限りません。
 
-このツールは、Windows Server 2003 に含まれます。 詳細については、次を参照してください。 [winpop](https://technet.microsoft.com/library/cc772824(v=ws.10).aspx)します。
+このツールは、Windows Server 2003 に含まれます。 詳細については、「 [winpop](https://technet.microsoft.com/library/cc772824(v=ws.10).aspx)」を参照してください。

@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5de4081257f90bfebf6e3b525a56d4d01b15d8ef
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 3f0e4294354470dcfb3a33191cc36edfa556bb02
+ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82725776"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82992387"
 ---
 # <a name="eventquery"></a>eventquery
 

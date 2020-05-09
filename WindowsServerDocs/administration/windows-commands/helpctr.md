@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3902b0f035e99924db669581c4b31e2e9b2f6922
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 2fa3c1210aaa903ffecda28604353cede2311060
+ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724892"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82993315"
 ---
 # <a name="helpctr"></a>helpctr
 
