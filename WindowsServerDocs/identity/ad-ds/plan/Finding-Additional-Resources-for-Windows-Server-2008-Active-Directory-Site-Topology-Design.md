@@ -7,16 +7,16 @@ manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
-ms.openlocfilehash: b328bfcb5977e5c7117590b173dbb967214bf10d
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: c9f1256849d561c1cb3e454b2826628095c45c07
+ms.sourcegitcommit: aed942d11f1a361fc1d17553a4cf190a864d1268
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81624220"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83235248"
 ---
-> 適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+# <a name="finding-additional-resources-for-windows-server-2008-active-directory-site-topology-design"></a>Windows Server 2008 の Active Directory サイト トポロジ設計に関するその他のリソースの検索
 
-# <a name="finding-additional-resources-for-windows-server-2008-active-directory-site-topology-design"></a>Windows Server 2008 用の追加の Resou # rces の検索 Active Directory サイトトポロジの設計
+> 適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
 Active Directory Domain Services に関する次のドキュメント (AD DS) については、Windows Server 2003 および Windows Server 2008 TechCenter web サイトを参照してください。
 

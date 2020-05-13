@@ -1,6 +1,6 @@
 ---
 title: exit
-description: DiskPart のリファレンストピック。 DiskPart は DiskPart コマンドインタープリターを終了します。
+description: コマンドインタープリターを終了する exit のリファレンストピックです。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,36 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c36d0f7f6770ead39a6b31919fc1ae34a8af205b
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 97068232a7ffa82e59ba486b449af96638e3d8f0
+ms.sourcegitcommit: aed942d11f1a361fc1d17553a4cf190a864d1268
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82725710"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83235069"
 ---
 # <a name="exit"></a>exit
 
-DiskPart コマンド インタープリターを終了します。
+> 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+
+コマンドインタープリターまたは現在のバッチスクリプトを終了します。
 
 ## <a name="syntax"></a>構文
+
+```
+exit [/b] [<exitcode>]
+```
+
+### <a name="parameters"></a>パラメーター
+
+| パラメーター | 説明 |
+| --------- | ----------- |
+| /b | Cmd.exe を終了する代わりに、現在のバッチスクリプトを終了します。 バッチスクリプトの外部から実行された場合は、Cmd.exe を終了します。 |
+| `<exitcode>` | 数値を指定します。 **/B**が指定されている場合、ERRORLEVEL 環境変数はその数値に設定されます。 コマンドインタープリターを終了すると、プロセス終了コードはその番号に設定されます。 |
+| /? | コマンド プロンプトにヘルプを表示します。 |
+
+## <a name="examples"></a>例
+
+コマンドインタープリターを閉じるには、次のように入力します。
 
 ```
 exit
@@ -29,4 +47,3 @@ exit
 ## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
-

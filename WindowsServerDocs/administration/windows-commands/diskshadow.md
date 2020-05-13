@@ -1,6 +1,6 @@
 ---
-title: diskshadow
-description: Diskshadow のリファレンストピックです。これは、ボリュームシャドウコピーサービス (VSS) によって提供される機能を公開するツールです。
+title: Diskshadow (英語の可能性あり)
+description: ボリュームシャドウコピーサービス (VSS) によって提供される機能を公開するツールである、Diskshadow コマンドのリファレンストピックです。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,101 +9,97 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: db1b1602bcbde41c2d92af925ff819ef390220e1
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: ae3a4ba57d9c29375c560c300a4e4ead807184fc
+ms.sourcegitcommit: aed942d11f1a361fc1d17553a4cf190a864d1268
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719423"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83235190"
 ---
-# <a name="diskshadow"></a>diskshadow
+# <a name="diskshadow"></a>Diskshadow (英語の可能性あり)
 
 > 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-diskshadow は、ボリュームシャドウコピーサービス (VSS) によって提供される機能を公開するツールです。 既定では、diskshadow は、diskraid や DiskPart と同様の対話型のコマンドインタープリターを使用します。 diskshadow には、スクリプト可能なモードも含まれています。  
-  
-> [!NOTE]  
-> Diskshadow を実行するには、ローカルの Administrators グループのメンバーシップ、またはそれと同等のメンバーシップが最低限必要です。  
-  
+Diskshadow は、ボリュームシャドウコピーサービス (VSS) によって提供される機能を公開するツールです。 既定では、Diskshadow は、Diskraid や Diskpart と同様の対話型のコマンドインタープリターを使用します。 Diskshadow には、スクリプト可能なモードも含まれています。
 
-## <a name="syntax"></a>構文  
-対話モードの場合は、コマンドプロンプトで次のように入力して、diskshadow コマンドインタープリターを開始します。  
-  
-```  
-diskshadow  
-```  
-  
-スクリプトモードで、次のように入力し*ます。* ここで、test.txt は、diskshadow コマンドを含むスクリプトファイルです。  
-  
-```  
-diskshadow -s script.txt  
-```  
-  
-### <a name="parameters"></a>パラメーター  
-Diskshadow コマンドインタープリターで、またはスクリプトファイルを使用して、次のコマンドを実行できます。  
-  
-|パラメーター|[説明]|  
-|-------|--------|  
-|[set_2](set_2.md)|シャドウコピーを作成するためのコンテキスト、オプション、詳細モード、およびメタデータファイルを設定します。|  
-|[復元をシミュレートします。](simulate-restore.md)|発行することがなく、コンピューター上の復元のセッション内のライターをテスト **復元前** または **PostRestore** ライターへのイベントです。|  
-|[メタデータの読み込み](load-metadata.md)|転送可能なシャドウコピーをインポートする前に、または復元の場合にライターメタデータを読み込む前に、メタデータ .cab ファイルを読み込みます。|  
-|[writer](writer.md)|ライターまたはコンポーネントが含まれていること、または backup または restore プロシージャからライターまたはコンポーネントが除外されていることを確認します。|  
-|[add](add.md)|シャドウコピーするボリュームのセットにボリュームを追加するか、エイリアス環境に別名を追加します。|  
-|[create_1](create_1.md)|現在のコンテキストとオプションの設定を使用して、シャドウコピーの作成プロセスを開始します。|  
-|[exec](exec.md)|ローカルコンピューター上のファイルを実行します。|  
-|[バックアップの開始](begin-backup.md)|完全バックアップセッションを開始します。|  
-|[バックアップの終了](end-backup.md)|完全バックアップセッションを終了し、必要に応じて、適切なライター状態の**Backupcomplete**イベントを発行します。|  
-|[復元の開始](begin-restore.md)|復元セッションを開始し、関連するライターに**復元前**イベントを発行します。|  
-|[復元の終了](end-restore.md)|復元セッションを終了し、関連するライターに**postrestore**イベントを発行します。|  
-|[reset](reset.md)|diskshadow を既定の状態にリセットします。|  
-|[list](list.md)|システム上にあるライター、シャドウコピー、または現在登録されているシャドウコピープロバイダーの一覧を表示します。|  
-|[影の削除](delete-shadows.md)|シャドウコピーを削除します。|  
-|[import](import.md)|読み込まれたメタデータファイルからシステムに転送可能なシャドウコピーをインポートします。|  
-|[mask](mask.md)|**インポート**コマンドを使用してインポートされたハードウェアシャドウコピーを削除します。|  
-|[さらす](expose.md)|は、ドライブ文字、共有、またはマウントポイントとして、永続的なシャドウコピーを公開します。|  
-|[を非公開](unexpose.md)|[**公開**] コマンドを使用して公開されたシャドウコピーを公開しません。|  
-|[break_2](break_2.md)|VSS からシャドウコピーボリュームの関連付けを解除します。|  
-|[反転](revert.md)|指定したシャドウコピーにボリュームを戻します。|  
-|[exit_1](exit_1.md)|diskshadow を終了します。|  
-  
-## <a name="remarks"></a>Remarks  
-  
--   シャドウコピーを作成するには、少なくとも**追加**と**作成**のみが必要です。 ただし、これによってコンテキストとオプションの設定がプランされ、コピーバックアップが作成されます。バックアップ実行スクリプトを使用しない場合にのみ、シャドウコピーが作成されます。  
-  
-## <a name="examples"></a>例  
-これは、バックアップ用にシャドウコピーを作成するコマンドのシーケンスの例です。 これは、スクリプトとしてファイルに保存し、diskshadow \/s スクリプトを使用して実行できます。  
-  
-次のように想定します。  
-  
--   C:\\diskshadowdata という名前の既存のディレクトリがあります。  
-  
--   システムボリュームは C: で、データボリュームは "d" です。  
-  
--   C:\\diskshadowdata に backupscript .cmd ファイルがあります。  
-  
--   Backupscript. .cmd ファイルは、バックアップドライブに shadow data p: および q: のコピーを実行します。  
-  
-これらのコマンドは手動で入力するか、スクリプト化することができます。  
-  
-```  
-#diskshadow script file  
-set context persistent nowriters  
-set metadata c:\diskshadowdata\example.cab  
-set verbose on  
-begin backup  
-add volume c: alias Systemvolumeshadow  
-add volume d: alias Datavolumeshadow  
-  
-create  
-  
-expose %Systemvolumeshadow% p:  
-expose %Datavolumeshadow% q:  
-exec c:\diskshadowdata\backupscript.cmd  
-end backup  
-#End of script  
-```  
-  
-## <a name="additional-references"></a>その他のリファレンス  
-- [コマンド ライン構文の記号](command-line-syntax-key.md)  
-  
+> [!NOTE]
+> Diskshadow を実行するには、ローカルの Administrators グループのメンバーシップ、またはそれと同等のメンバーシップが最低限必要です。
 
+## <a name="syntax"></a>構文
+
+対話モードの場合は、コマンドプロンプトで次のように入力して、Diskshadow コマンドインタープリターを開始します。
+
+```
+diskshadow
+```
+
+スクリプトモードで、次のように入力し*ます。* ここで、test.txt は、Diskshadow コマンドを含むスクリプトファイルです。
+
+```
+diskshadow -s script.txt
+```
+
+### <a name="parameters"></a>パラメーター
+
+Diskshadow コマンドインタープリターで、またはスクリプトファイルを使用して、次のコマンドを実行できます。 シャドウコピーを作成するには、少なくとも**追加**と**作成**のみが必要です。 ただし、これによってコンテキストとオプションの設定がなくなりされ、コピーバックアップが作成され、バックアップ実行スクリプトを使用せずにシャドウコピーが作成されます。
+
+| command | 説明 |
+| --------- | ----------- |
+| [set コマンド](set_2.md) | シャドウコピーを作成するためのコンテキスト、オプション、詳細モード、およびメタデータファイルを設定します。 |
+| [メタデータの読み込みコマンド](load-metadata.md) | 転送可能なシャドウコピーをインポートする前に、または復元の場合にライターメタデータを読み込む前に、メタデータ .cab ファイルを読み込みます。 |
+| [writer コマンド](writer.md) | ライターまたはコンポーネントが含まれていること、または backup または restore プロシージャからライターまたはコンポーネントが除外されていることを確認します。 |
+| [コマンドの追加](add.md) | シャドウコピーするボリュームのセットにボリュームを追加するか、エイリアス環境に別名を追加します。 |
+| [create コマンド](create.md) | 現在のコンテキストとオプションの設定を使用して、シャドウコピーの作成プロセスを開始します。 |
+| [exec コマンド](exec.md) | ローカルコンピューター上のファイルを実行します。 |
+| [バックアップの開始コマンド](begin-backup.md) | 完全バックアップセッションを開始します。 |
+| [バックアップの終了コマンド](end-backup.md) | 完全バックアップセッションを終了し、必要に応じて、適切なライター状態の**backupcomplete**イベントを発行します。 |
+| [restore コマンドの開始](begin-restore.md) | 復元セッションを開始し、関連するライターに**復元前**イベントを発行します。 |
+| [復元コマンドの終了](end-restore.md) | 復元セッションを終了し、関連するライターに**postrestore**イベントを発行します。 |
+| [reset コマンド](reset.md) | Diskshadow を既定の状態にリセットします。 |
+| [list コマンド](list.md) | システム上にあるライター、シャドウコピー、または現在登録されているシャドウコピープロバイダーの一覧を表示します。 |
+| [shadows コマンドの削除](delete-shadows.md) | シャドウコピーを削除します。 |
+| [import コマンド](import.md) | 読み込まれたメタデータファイルからシステムに転送可能なシャドウコピーをインポートします。 |
+| [mask コマンド](mask.md) | **インポート**コマンドを使用してインポートされたハードウェアシャドウコピーを削除します。 |
+| [コマンドの公開](expose.md) | は、ドライブ文字、共有、またはマウントポイントとして、永続的なシャドウコピーを公開します。 |
+| [コマンドを公開しません](unexpose.md) | [**公開**] コマンドを使用して公開されたシャドウコピーを公開しません。 |
+| [break コマンド](break_2.md) | VSS からシャドウコピーボリュームの関連付けを解除します。 |
+| [revert コマンド](revert.md) | 指定したシャドウ コピーにボリュームを元に戻します。 |
+| [exit コマンド](exit.md) | コマンドインタープリターまたはスクリプトを終了します。 |
+
+## <a name="examples"></a>例
+
+これは、バックアップ用にシャドウコピーを作成するコマンドのシーケンスの例です。 このファイルは、スクリプトである dsh として保存し、を使用して実行でき `diskshadow /s script.dsh` ます。
+
+次のように想定します。
+
+- C: diskshadowdata という名前の既存のディレクトリがあり \\ ます。
+
+- システムボリュームは C: で、データボリュームは "d" です。
+
+- C: diskshadowdata に backupscript .cmd ファイルがあり \\ ます。
+
+- Backupscript. .cmd ファイルは、バックアップドライブに shadow data p: および q: のコピーを実行します。
+
+これらのコマンドは手動で入力するか、スクリプト化することができます。
+
+```
+#Diskshadow script file
+set context persistent nowriters
+set metadata c:\diskshadowdata\example.cab
+set verbose on
+begin backup
+add volume c: alias systemvolumeshadow
+add volume d: alias datavolumeshadow
+
+create
+
+expose %systemvolumeshadow% p:
+expose %datavolumeshadow% q:
+exec c:\diskshadowdata\backupscript.cmd
+end backup
+#End of script
+```
+
+## <a name="additional-references"></a>その他のリファレンス
+
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

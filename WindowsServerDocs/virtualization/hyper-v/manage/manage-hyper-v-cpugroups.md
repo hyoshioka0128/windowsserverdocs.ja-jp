@@ -7,16 +7,16 @@ ms.topic: article
 ms.prod: windows-server
 ms.service: windows-10-hyperv
 ms.assetid: cc7bb88e-ae75-4a54-9fb4-fc7c14964d67
-ms.openlocfilehash: fcf61c22a24abb6b16baf75b4846cc188dcecd49
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ebb5f9a0ca9c50a5e5357e3dd2c755095da98d11
+ms.sourcegitcommit: 32f810c5429804c384d788c680afac427976e351
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80860795"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83203537"
 ---
->適用対象: Windows Server 2016、Microsoft Hyper-V Server 2016、Windows Server 2019、Microsoft Hyper-V Server 2019
-
 # <a name="virtual-machine-resource-controls"></a>仮想マシンのリソースコントロール
+
+> 適用先:Windows Server 2016、Microsoft Hyper-V Server 2016、Windows Server 2019、Microsoft Hyper-V Server 2019
 
 この記事では、仮想マシンの Hyper-v リソースと分離の制御について説明します。  これらの機能は、仮想マシンの CPU グループとして、または "CPU グループ" と呼ばれますが、Windows Server 2016 で導入されました。  CPU グループを使用すると、Hyper-v 管理者は、ゲスト仮想マシン間でホストの CPU リソースの管理と割り当てをより適切に行うことができます。  Hyper-v 管理者は、CPU グループを使用して次のことができます。
 
@@ -30,7 +30,7 @@ ms.locfileid: "80860795"
 
 CPU グループは、Hyper-v ホストコンピューティングサービス (HCS) を介して管理されます。 HCS、その genesis、HCS Api へのリンクの詳細については、Microsoft 仮想化チームのブログで[ホストコンピューティングサービス (hcs) の導入](https://blogs.technet.microsoft.com/virtualization/2017/01/27/introducing-the-host-compute-service-hcs/)に関する投稿を参照してください。
 
->[!NOTE] 
+>[!NOTE]
 >CPU グループを作成および管理するために使用できるのは HCS だけです。Hyper-v マネージャーアプレット、WMI および PowerShell 管理インターフェイスは、CPU グループをサポートしていません。
 
 Microsoft では、HCS インターフェイスを使用して CPU グループを管理する、 [Microsoft ダウンロードセンター](https://go.microsoft.com/fwlink/?linkid=865968)にコマンドラインユーティリティ (cpu) を提供しています。  このユーティリティでは、ホストの CPU トポロジを表示することもできます。
@@ -51,7 +51,7 @@ CPU グループの上限は、G = *n* x *C*として計算されます。
     G = 4 * 50%
     G = 2 LP's worth of CPU time for the entire group
 
-この例では、CPU グループ G に2世代の CPU 時間が割り当てられています。  
+この例では、CPU グループ G に2世代の CPU 時間が割り当てられています。
 
 グループキャップは、グループにバインドされている仮想マシンまたは仮想プロセッサの数に関係なく、CPU グループに割り当てられている仮想マシンの状態 (シャットダウンや開始など) に関係なく適用されることに注意してください。 そのため、同じ CPU グループにバインドされている各 VM は、グループの合計 CPU 割り当ての割合を受け取り、CPU グループにバインドされている Vm の数によって変化します。 そのため、vm が CPU グループからバインドまたはバインド解除されている場合、CPU グループ全体の上限を readjusted に設定し、結果として得られる VM あたりの上限を維持するように設定する必要があります。 VM ホスト管理者または仮想化管理ソフトウェアレイヤーは、必要に応じてグループキャップを管理し、必要に応じて VM ごとの CPU リソース割り当てを実現します。
 
@@ -120,7 +120,7 @@ Hyper-v ホスト管理者は、コンピューティングリソースを VM �
 
 Cpu 使用率ツールの使用方法の例をいくつか見てみましょう。
 
->[!NOTE] 
+>[!NOTE]
 >Cpu グループツールのコマンドラインパラメーターは、区切り記号としてスペースのみを使用して渡されます。 '/' または '-' 文字は、必要なコマンドラインスイッチを続行できません。
 
 ### <a name="discovering-the-cpu-topology"></a>CPU トポロジの検出
@@ -128,7 +128,7 @@ Cpu 使用率ツールの使用方法の例をいくつか見てみましょう�
 次に示すように、Getcpu トポロジで Cpu グループを実行すると、現在のシステムに関する情報が返されます。これには、LP インデックス、LP が属する NUMA ノード、パッケージとコア Id、およびルート VP インデックスが含まれます。
 
 次の例は、2つの CPU ソケットと NUMA ノード、合計 32 LPs、およびマルチスレッド化が有効になっているシステムを示しています。また、各 NUMA ノードの8つのルート VPs である Minroot を有効にするように構成されています。
-ルート VPs を持つ LPs は RootVpIndex > = 0 です。RootVpIndex が-1 の LPs は、ルートパーティションでは使用できませんが、ハイパーバイザーによって引き続き管理されており、他の構成設定で許可されているようにゲスト VPs を実行します。
+ルート VPs を持つ LPs は RootVpIndex >= 0 です。RootVpIndex が-1 の LPs は、ルートパーティションでは使用できませんが、ハイパーバイザーによって引き続き管理されており、他の構成設定で許可されているようにゲスト VPs を実行します。
 
 ```console
 C:\vm\tools>CpuGroups.exe GetCpuTopology

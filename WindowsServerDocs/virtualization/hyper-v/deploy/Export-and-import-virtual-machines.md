@@ -9,16 +9,16 @@ ms.technology: compute-hyper-v
 ms.date: 12/13/2016
 ms.topic: article
 ms.assetid: 7fd996f5-1ea9-4b16-9776-85fb39a3aa34
-ms.openlocfilehash: 1e9cd8710a53c1e5d9d97e464c32dbf7f17d29a7
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f1b321c04ad0b7541f21b444499b13fd2b4e4a6d
+ms.sourcegitcommit: 32f810c5429804c384d788c680afac427976e351
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80860895"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83203556"
 ---
->適用対象: Windows 10、Windows Server 2016、Microsoft Hyper-V Server 2016、Windows Server 2019、Microsoft Hyper-V Server 2019
-
 # <a name="export-and-import-virtual-machines"></a>仮想マシンのエクスポートとインポート
+
+> 適用対象: Windows 10、Windows Server 2016、Microsoft Hyper-V Server 2016、Windows Server 2019、Microsoft Hyper-V Server 2019
 
 この記事では、仮想マシンをエクスポートおよびインポートする方法について説明します。仮想マシンは、簡単に移動またはコピーすることができます。 この記事では、エクスポートまたはインポートを行うときの選択方法についても説明します。
 
@@ -32,13 +32,13 @@ ms.locfileid: "80860895"
 
 1. HYPER-V マネージャーでは、仮想マシンを右クリックし、選択 **エクスポート**です。
 
-2. エクスポートされたファイルを保存する場所を選択し、 **[エクスポート]** をクリックします。
+2. エクスポートされたファイルを保存する場所を選択し、[**エクスポート**] をクリックします。
 
 エクスポートが完了すると、エクスポート場所にエクスポートされたすべてのファイルが表示されます。
 
 ### <a name="using-powershell"></a>PowerShell の使用
 
-管理者としてセッションを開き、次のようなコマンドを実行します。 \<vm 名\> と \<パス\>を置き換えます。
+管理者としてセッションを開き、vm の名前とパスを置き換えた後、次のようなコマンドを実行し \< \> \< \> ます。
 
 ```powershell
 Export-VM -Name \<vm name\> -Path \<path\>
@@ -46,7 +46,7 @@ Export-VM -Name \<vm name\> -Path \<path\>
 
 詳細については、「 [Export-VM](https://docs.microsoft.com/powershell/module/hyper-v/export-vm)」を参照してください。
 
-## <a name="import-a-virtual-machine"></a>仮想マシンのインポート 
+## <a name="import-a-virtual-machine"></a>仮想マシンのインポート
 
 仮想マシンをインポートすると、仮想マシンが Hyper-V ホストに登録されます。 ホストまたは新しいホストにインポートし直すことができます。 同じホストにインポートしている場合は、Hyper-v が使用可能なファイルから仮想マシンを再作成しようとするため、最初に仮想マシンをエクスポートする必要はありません。 仮想マシンをインポートすると、Hyper-v ホストで使用できるように登録されます。
 
@@ -56,28 +56,28 @@ Export-VM -Name \<vm name\> -Path \<path\>
 
 仮想マシンをインポートするには:
 
-1. Hyper-v マネージャーの **[アクション]** メニューで、 **[仮想マシンのインポート]** をクリックします。
+1. Hyper-v マネージャーの [**アクション**] メニューで、[**仮想マシンのインポート**] をクリックします。
 
 2. **[次へ]** をクリックします。
 
-3. エクスポートしたファイルが含まれているフォルダーを選択し、 **[次へ]** をクリックします。
+3. エクスポートしたファイルが含まれているフォルダーを選択し、[**次へ**] をクリックします。
 
 4. インポートする仮想マシンを選択します。
 
-5. インポートの種類を選択し、 **[次へ]** をクリックします。 (詳細については、以下の「[型のインポート](#import-types)」を参照してください)。
+5. インポートの種類を選択し、[**次へ**] をクリックします。 (詳細については、以下の「[型のインポート](#import-types)」を参照してください)。
 
 6. **[完了]** をクリックします。
 
 ### <a name="import-using-powershell"></a>PowerShell を使用したインポート
 
-使用するインポートの種類の例に従って、 **VM のインポート**コマンドレットを使用します。 型の詳細については、以下の「[型のインポート](#import-types)」を参照してください。 
+使用するインポートの種類の例に従って、 **VM のインポート**コマンドレットを使用します。 型の詳細については、以下の「[型のインポート](#import-types)」を参照してください。
 
 #### <a name="register-in-place"></a>インプレース登録
 
 この種類のインポートでは、インポート時に保存されるファイルが使用され、仮想マシンの ID が保持されます。 次のコマンドは、インポートファイルの例を示しています。 独自の値を使用して同様のコマンドを実行します。
 
 ```powershell
-Import-VM -Path 'C:\<vm export path>\2B91FEB3-F1E0-4FFF-B8BE-29CED892A95A.vmcx' 
+Import-VM -Path 'C:\<vm export path>\2B91FEB3-F1E0-4FFF-B8BE-29CED892A95A.vmcx'
 ```
 
 #### <a name="restore"></a>復元
