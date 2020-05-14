@@ -1,5 +1,5 @@
 ---
-title:Windows Admin Center を使用してサーバーを管理する
+title: Windows Admin Center を使用してサーバーを管理する
 description: Windows Admin Center を使用したサーバーの管理 (Project ホノルル)
 ms.technology: manage
 ms.topic: article
