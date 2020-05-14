@@ -1,6 +1,6 @@
 ---
-title: Windows 管理センターを使用してサーバーを管理する
-description: Windows 管理センターを使用したサーバーの管理 (Project ホノルル)
+title:Windows Admin Center を使用してサーバーを管理する
+description: Windows Admin Center を使用したサーバーの管理 (Project ホノルル)
 ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
@@ -15,23 +15,23 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 04/13/2020
 ms.locfileid: "81269239"
 ---
-# <a name="manage-servers-with-windows-admin-center"></a>Windows 管理センターを使用してサーバーを管理する
+# <a name="manage-servers-with-windows-admin-center"></a>Windows Admin Center を使用してサーバーを管理する
 
 >適用対象: Windows Admin Center、Windows Admin Center Preview
 
 > [!Tip]
 > Windows Admin Center を初めて使用する場合
-> [Windows 管理センターの詳細については、](../overview.md)こちらを参照してください。
+> [Windows Admin Center の詳細については、](../overview.md)こちらを参照してください。
 
 ## <a name="managing-windows-server-machines"></a>Windows Server コンピューターの管理
 
-Windows Server 2012 以降を実行している個々のサーバーを Windows 管理センターに追加して、証明書、デバイス、イベント、プロセス、役割と機能、更新プログラム、Virtual Machines などの包括的なツールセットを使用してサーバーを管理できます。
+Windows Server 2012 以降を実行している個々のサーバーを Windows Admin Center に追加して、証明書、デバイス、イベント、プロセス、役割と機能、更新プログラム、Virtual Machines などの包括的なツールセットを使用してサーバーを管理できます。
 
 ![サーバー接続の概要画面](../media/manage-servers/server-overview.png)
 
-## <a name="adding-a-server-to-windows-admin-center"></a>Windows 管理センターへのサーバーの追加
+## <a name="adding-a-server-to-windows-admin-center"></a>Windows Admin Center へのサーバーの追加
 
-Windows 管理センターにサーバーを追加するには:
+Windows Admin Center にサーバーを追加するには:
 
 1. すべての接続 の下にある  **+ 追加** をクリックします。
 2. **サーバー接続**を追加することを選択します。
@@ -41,7 +41,7 @@ Windows 管理センターにサーバーを追加するには:
 サーバーが [概要] ページの接続リストに追加されます。 サーバーに接続するには、これをクリックします。
 
 > [!NOTE]
-> Windows 管理センターでは、[フェールオーバークラスター](manage-failover-clusters.md)または[ハイパー集約クラスター](manage-hyper-converged.md)を個別の接続として追加することもできます。
+> Windows Admin Center では、[フェールオーバークラスター](manage-failover-clusters.md)または[ハイパー集約クラスター](manage-hyper-converged.md)を個別の接続として追加することもできます。
 
 ## <a name="tools"></a>ツール
 
@@ -126,7 +126,7 @@ Windows 管理センターにサーバーを追加するには:
 **バックアップ**を使用すると、サーバーを Microsoft Azure に直接バックアップして、Windows server を破損、攻撃、災害から保護することができます。
 [詳細については、Azure Backup を参照してください。](https://aka.ms/windows-admin-center-backup)
 
-[Windows 管理センターでバックアップに関するフィードバックを提供する](https://aka.ms/backup-wac-feedback)
+[Windows Admin Center でバックアップに関するフィードバックを提供する](https://aka.ms/backup-wac-feedback)
 
 ### <a name="features"></a>機能
 
@@ -481,7 +481,7 @@ PowerShell では、次の機能がサポートされています。
 
 ## <a name="virtual-machines"></a>仮想マシン
 
-「 [Windows 管理センターでの Virtual Machines の管理」を](manage-virtual-machines.md)参照してください。
+「 [Windows Admin Center での Virtual Machines の管理」を](manage-virtual-machines.md)参照してください。
 
 ## <a name="virtual-switches"></a>仮想スイッチ
 
