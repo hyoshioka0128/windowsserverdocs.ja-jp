@@ -33,7 +33,7 @@ Windows Admin Center の非プレビュー バージョンの更新は、Microso
 
 ## <a name="windows-admin-center-scenarios"></a>Windows Admin Center のシナリオ
 
-Windows 管理センターを使用して、次のことを行うことができます。
+Windows Admin Center を使用して、次のことを行うことができます。
 
 |     |     |
 | --- | --- |
