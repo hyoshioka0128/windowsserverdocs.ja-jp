@@ -9,12 +9,12 @@ ms.author: jgerend
 ms.technology: storage-failover-clustering
 ms.date: 06/06/2019
 ms.localizationpriority: high
-ms.openlocfilehash: b646890ebc8b8e64d84e6d448ce4acb393422009
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 5b0193f18fe94f391f1bbbc41280c16e4a1bcd0c
+ms.sourcegitcommit: 32f810c5429804c384d788c680afac427976e351
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80827715"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83203510"
 ---
 # <a name="failover-clustering-in-windows-server"></a>Windows Server のフェールオーバー クラスタリング
 
@@ -32,7 +32,7 @@ ms.locfileid: "80827715"
 | **概要**                                                               |  **計画**                          |  **展開**       |
 | -------------                                                                |  --------------                        | --------------------- |
 | [フェールオーバー クラスタリングの新機能](whats-new-in-failover-clustering.md)    | [フェールオーバー クラスタリングのハードウェア要件と記憶域オプションの計画](clustering-requirements.md)  | [フェールオーバー クラスターの作成](create-failover-cluster.md) |
-| [アプリケーション データ用のスケールアウト ファイル サーバー](sofs-overview.md)               | [クラスター共有ボリューム (CSV) の使用](failover-cluster-csvs.md) | [2 ノードのファイル サーバーを展開する](../storage/storage-spaces/storage-spaces-direct-in-vm.md) |
+| [アプリケーション データ用のスケールアウト ファイル サーバー](sofs-overview.md)               | [クラスター共有ボリューム (CSV) の使用](failover-cluster-csvs.md) | [2 ノードのファイル サーバーを展開する](deploy-two-node-clustered-file-server.md) |
 |  [クラスターとプール クォーラム](../storage/storage-spaces/understand-quorum.md)   |  [ゲスト仮想マシン クラスターで記憶域スペース ダイレクトを使用する](../storage/storage-spaces/storage-spaces-direct-in-vm.md)       | [Active Directory Domain Services でクラスター コンピューター アカウントを事前設定する](prestage-cluster-adds.md) |
 | [障害ドメインの認識](fault-domains.md)                                 |                                 | [Active Directory でクラスターのアカウントを構成する](configure-ad-accounts.md) |
 | [簡略化された SMB マルチチャネルと複数 NIC のクラスター ネットワーク](smb-multichannel.md) |                       | [クォーラムと監視を管理する](manage-cluster-quorum.md) |
