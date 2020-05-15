@@ -8,18 +8,18 @@ ms.assetid: 2974fb3a-5150-43fd-a73f-3e5074eb5d03
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 55b31785de6e17232a717d534fcb21a24d9052bd
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 5c73714dff2d89201ac93704105038c604f12e06
+ms.sourcegitcommit: 2f072c0c02e3e0deae331ca64b375d63b89d0522
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80318891"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83404568"
 ---
 # <a name="migrate-from-previous-versions-to-windows-server-essentials-or-windows-server-essentials-experience"></a>以前のバージョンから Windows Server Essentials または Windows Server Essentials エクスペリエンスに移行する
 
->適用対象: windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
+>適用対象: Windows Server 2012 R2 Essentials
 
-このガイドでは、以前のバージョンの Windows Small Business Server と Windows Server Essentials (Windows Server Essentials、Windows Small Business Server 2011 Standard、Windows Small Business Server 2011 Essentials、Windows を含む) から移行する方法について説明します。Small Business Server 2008、windows Small Business Server 2003) を windows Server Essentials、または windows server Essentials Experience 役割がインストールされた Windows Server 2012 R2 にインストールします。  
+このガイドで2012は、以前のバージョンの Windows Small Business Server と Windows Server Essentials (Windows Server essentials、Windows Small Business Server 2011 Standard、Windows Small Business Server 2011 Essentials、windows small business Server 2008、および Windows Small business server 2003 を含む) から、windows server essentials エクスペリエンスの役割がインストールされた windows server Essentials に移行する方法について説明します。  
   
  **25 人のユーザーと50デバイスまでの環境**では、このガイドの手順に従って、以前のバージョンの windows SBS から Windows Server Essentials に移行することができます。  
   
@@ -56,19 +56,19 @@ ms.locfileid: "80318891"
   
 ###  <a name="to-open-a-command-prompt-window-on-the-source-server-as-an-administrator"></a><a name="BKMK_OpenACommandPromptAsAdmin"></a>移行元サーバーで管理者としてコマンドプロンプトウィンドウを開くには  
   
-1.  **[スタート]** をクリックします。  
+1.  **[開始]** をクリックします。  
   
 2.  検索ボックスに「**cmd**」と入力します。  
   
-3.  結果一覧で **[cmd]** を右クリックし、 **[管理者として実行]** をクリックします。  
+3.  結果一覧で **[cmd]** を右クリックし、**[管理者として実行]** をクリックします。  
   
 #### <a name="to-open-a-command-prompt-window-on-the-destination-server-as-an-administrator"></a>移行先サーバーで管理者としてコマンド プロンプト ウィンドウを開くには  
   
-1.  **[スタート]** 画面で、検索ボックスに「**cmd**」と入力します。  
+1.  [**スタート**] 画面で、検索ボックスに「**cmd**」と入力します。  
   
-2.  結果一覧で **[cmd]** を右クリックし、 **[管理者として実行]** をクリックします。  
+2.  結果一覧で **[cmd]** を右クリックし、**[管理者として実行]** をクリックします。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
   
 -   [サーバー データの Windows Server Essentials への移行](Migrate-Server-Data-to-Windows-Server-Essentials.md)
 

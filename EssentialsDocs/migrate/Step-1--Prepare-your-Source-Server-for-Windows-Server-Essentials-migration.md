@@ -8,16 +8,16 @@ ms.assetid: 244c8a06-04c6-4863-8b52-974786455373
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 214f25d1743cca3693907b7a7a8380fd564d4114
-ms.sourcegitcommit: 32f810c5429804c384d788c680afac427976e351
+ms.openlocfilehash: f5696c473a8fcb04a60b9a4b6c51ac206a6ef0de
+ms.sourcegitcommit: 2f072c0c02e3e0deae331ca64b375d63b89d0522
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83203477"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83404582"
 ---
 # <a name="step-1-prepare-your-source-server-for-windows-server-essentials-migration"></a>手順 1: Windows Server Essentials への移行に向けて移行元サーバーを準備する
 
-> 適用対象: windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
+> 適用対象: Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials
 
 このトピックでは、移行元サーバーのバックアップ、移行元サーバーのシステム正常性の評価、最新のサービス パックと修正プログラムのインストール、およびネットワーク構成の検証の方法について説明します。
 

@@ -8,16 +8,16 @@ ms.assetid: a0e07d1a-8409-429b-87d7-0f4a7e14d668
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 3d004d89f6606c8b38360c9139f882f087b7c554
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 8efb8251bd85638b8ad4b760a5292a2b6d6681fd
+ms.sourcegitcommit: 2f072c0c02e3e0deae331ca64b375d63b89d0522
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852365"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83404540"
 ---
 # <a name="step-3-join-computers-to-the-new-windows-server-essentials-server"></a>手順 3: 新しい Windows Server Essentials サーバーにコンピューターを参加させる
 
->適用対象: windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
+>適用対象: Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials
 
 移行プロセスの次の手順では、Windows Server Essentials を実行している新しいサーバーにクライアントコンピューターを接続します。  
   
@@ -28,14 +28,14 @@ ms.locfileid: "80852365"
   
 ### <a name="to-uninstall-windows-server-connector-on-a-client-computer"></a>クライアント コンピューターで Windows Server コネクタをアンインストールするには  
   
-1.  クライアント コンピューターでコントロール パネルを開き、 **[プログラムと機能]** を開きます。  
+1.  クライアント コンピューターでコントロール パネルを開き、[**プログラムと機能**] を開きます。  
   
 2.  プログラムのリストで、コンピューターで実行しているコネクタ アプリケーションを右クリックします。  
   
     > [!NOTE]
     >  コネクタアプリケーションは、クライアントコンピューターが接続されていた Windows Server Essentials のバージョンに応じて、 **Windows Small Business Server 2011 Essentials connector**または**Windows server essentials connector**にすることができます。  
   
-3.  **[アンインストール]** をクリックします。  
+3.  [**アンインストール**] をクリックします。  
   
 ### <a name="to-reconnect-a-client-computer-to-the-server"></a>クライアント コンピューターをサーバーに再接続するには  
   
@@ -46,11 +46,11 @@ ms.locfileid: "80852365"
   
 2.  Internet Explorer などのインターネット ブラウザーを開きます。  
   
-3.  アドレスバーに「http: **//< servername\>/dns**」と入力し、enter キーを押します。  
+3.  アドレスバーに「 **http://<servername \> /Connect**」と入力し、enter キーを押します。  
   
 4.  画面の指示に従って、新しい Windows Server Essentials サーバーにクライアントコンピューターを参加させます。  
   
-## <a name="next-steps"></a>次のステップ:  
+## <a name="next-steps"></a>次のステップ  
  Windows Server Essentials を実行している新しいサーバーにクライアントコンピューターを参加させました。 [次に、「手順 4: Windows Server Essentials への移行のために設定とデータを移行先サーバーに移動](Step-4--Move-settings-and-data-to-the-Destination-Server-for-Windows-Server-Essentials-migration.md)する」に進みます。  
   
 

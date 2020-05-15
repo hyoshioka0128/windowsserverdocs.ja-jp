@@ -8,16 +8,16 @@ ms.assetid: fd7196ac-cfa6-46a5-ba77-6962b47a825e
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: d253a550763f34409f25223e6319607b9abcd8e6
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 977922d8f2af23afc058162e7455ac5099e4325b
+ms.sourcegitcommit: 2f072c0c02e3e0deae331ca64b375d63b89d0522
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852585"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83404567"
 ---
 # <a name="install-windows-server-essentials-in-migration-mode1"></a>Migration mode1 に Windows Server Essentials をインストールする
 
->適用対象: windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
+>適用対象: Windows Server 2012 Essentials
 
 ネットワーク上には、Windows Server Essentials を実行しているサーバーを1つだけ指定できます。また、そのサーバーはネットワークのドメインコントローラーである必要があります。  
   
@@ -51,15 +51,15 @@ ms.locfileid: "80852585"
    > [!NOTE]
    >  移行先サーバーが DVD から起動しない場合は、コンピューターを再起動し、BIOS Setup の起動シーケンスで **DVD-ROM** が一覧の最初に表示されていることを確認します。 BIOS Setup の起動シーケンスを変更する方法の詳細については、ハードウェア メーカーのドキュメントを参照してください。  
   
-2. **[新規インストール]** をクリックします。  
+2. [**新規インストール**] をクリックします。  
   
-3. 一覧に表示されない内蔵ハード ドライブがある場合は、 **[ドライバーの読み込み]** をクリックし、必要なドライバーをインストールしてから続行します。  
+3. 一覧に表示されない内蔵ハード ドライブがある場合は、[**ドライバーの読み込み**] をクリックし、必要なドライバーをインストールしてから続行します。  
   
-4. プライマリ ハード ドライブのすべてのファイルとフォルダーが削除されることを確認するチェック ボックスをオンにして、 **[インストール]** をクリックします。  
+4. プライマリ ハード ドライブのすべてのファイルとフォルダーが削除されることを確認するチェック ボックスをオンにして、[**インストール**] をクリックします。  
   
-5. **[サーバー インストール モードの選択]** ページで、 **[サーバーの移行]** をクリックし、必要な移行情報を指定します。  
+5. [**サーバー インストール モードの選択**] ページで、[**サーバーの移行**] をクリックし、必要な移行情報を指定します。  
   
-6. **[サーバーは正常に移行されます]** というメッセージが表示されたら、 **[閉じる]** をクリックします。  
+6. [**サーバーは正常に移行されます**] というメッセージが表示されたら、[**閉じる**] をクリックします。  
   
    インストールが終了すると、移行応答ファイルで指定した管理者ユーザー アカウントとパスワードで自動的にログオンします。  
   
@@ -73,7 +73,7 @@ ms.locfileid: "80852585"
   
 |ツール|説明|  
 |----------|-----------------|  
-|Netdiag (英語の可能性あり)|ネットワークと接続の問題を分離するために役立ちます。 詳細とダウンロードについては、「 [Netdiag](https://go.microsoft.com/fwlink/?LinkId=217388)」を参照してください。|  
+|Netdiag|ネットワークと接続の問題を分離するために役立ちます。 詳細とダウンロードについては、「 [Netdiag](https://go.microsoft.com/fwlink/?LinkId=217388)」を参照してください。|  
 |Dcdiag.exe|フォレストまたはエンタープライズ内のドメイン コントローラーの状態を分析し、問題を報告してトラブルシューティングを支援します。 詳細とダウンロードについては、「 [Dcdiag](https://go.microsoft.com/fwlink/?LinkId=217389)」を参照してください。|  
 |Repadmin.exe|ドメイン コントローラー間のレプリケーションの問題を診断するために役立ちます。 このツールを実行するには、コマンド ライン パラメーターを指定する必要があります。 詳細とダウンロードについては、「 [Repadmin](https://go.microsoft.com/fwlink/?LinkId=217387)」を参照してください。|  
   
