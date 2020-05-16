@@ -8,16 +8,16 @@ author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: high
 ms.date: 05/21/2019
-ms.openlocfilehash: a10cb3b27e3434ab818b41e051edb38ab77626db
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 0190fc05a7bf82e35339d93accae3a998babe166
+ms.sourcegitcommit: 7116460855701eed4e09d615693efa4fffc40006
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80827135"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83433136"
 ---
 # <a name="windows-server-servicing-channels-ltsc-and-sac"></a>Windows Server サービス チャネル: LTSC と SAC
 
->適用先:Windows Server 2019、Windows Server 2016、Windows Server (半期チャネル)
+> 適用先:Windows Server 2019、Windows Server 2016、Windows Server (半期チャネル)
 
 Windows Server のユーザーは、長期サービス チャネルと半期チャネルの 2 つのリリース チャネルを利用できます。
 
@@ -27,7 +27,7 @@ Windows Server のユーザーは、長期サービス チャネルと半期チ�
 
 以前から使用されているリリース モデルです (旧称、“Long-Term Servicing *Branch*”)。このモデルでは、Windows Server の新しいメジャー バージョンが、2 ～ 3 年ごとにリリースされます。 ユーザーは、5 年間のメインストリーム サポートとそれに続く 5 年間の延長サポートを受けることができます。 このチャネルは、さらに長期のサービス オプションと機能安定性を必要とするシステムに適しています。 Windows Server 2016 およびそれ以前のバージョンの Windows Server の展開環境に対する、新しい半期チャネルのリリースによる影響はありません。 長期的なサービス チャネルでは、引き続きセキュリティ更新プログラムとセキュリティ以外の更新プログラムが提供されますが、新機能は提供されません。
 
-> [!Note]  
+> [!Note]
 > **現在の LTSC 製品は Windows Server 2019 です**。 このチャネルを維持する場合は、Windows Server 2019 をインストールする (または使用を継続する) 必要があります。この場合、Server Core インストール オプションまたはデスクトップ エクスペリエンス搭載サーバーのインストール オプションでインストールすることができます。
 
 ## <a name="semi-annual-channel"></a>半期チャネル
@@ -38,7 +38,7 @@ Windows Server のユーザーは、長期サービス チャネルと半期チ�
 
 半期チャネルは、[ソフトウェア アシュアランス](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default.aspx) をご利用のボリューム ライセンスのお客様以外にも、Azure Marketplace やその他のクラウド/ホスティング サービス プロバイダー、Visual Studio サブスクリプションなどのロイヤルティ プログラム経由で入手できます。
 
-> [!Note]  
+> [!Note]
 > **半期チャネルの現在のリリースは、Windows Server バージョン 1903 です**。 サーバーをこのチャネルで利用する場合は、Windows Server バージョン 1903 をインストールする必要があります。この場合、Server Core モードで、またはコンテナー内で実行される Nano Server としてインストールすることができます。 長期サービス チャネル リリースからの一括アップグレードは、**異なるリリース チャネル**にあるためサポートされていません。 半期チャネルのリリースは更新プログラムではありません。これは、半期チャネルにおける Windows Server の次のリリースです。
 
 このモデルでは、Windows Server のリリースが、リリースの年と月によって識別されます。たとえば、2017 年の 9 番目の月 (9 月) のリリースは、**バージョン 1709** となります。 半期チャネルでは、Windows Server の新しいリリースが毎年 2 回提供されます。 各リリースのサポート ライフサイクルは、18 か月です。
@@ -48,7 +48,7 @@ Windows Server のユーザーは、長期サービス チャネルと半期チ�
 決定にあたっては、次の重要な相違点を考慮する必要があります。
 
 - 革新的な機能を迅速に取り入れる必要がありますか。 Windows Server の最新機能への早期アクセスが必要ですか。 頻繁に更新されるハイブリッド アプリケーション、DevOps、および Hyper-V ファブリックをサポートする必要がありますか。 そうであれば、**Windows Server バージョン 1903** をインストールして、**半期チャネルに参加**することを検討してください。 その場合、このトピックで説明したように、年に 2 回新しいバージョンを受け取り、各リリースのメインストリームの運用サポートは 18 か月になります。 これは、ボリューム ライセンス、Azure、または Visual Studio サブスクリプション サービスを通じて提供されます。 現時点では、製品を運用環境で実行する場合に、半期チャネルのリリースを利用するには、ボリューム ライセンスとソフトウェア アシュアランスが必要です。
-- 安定性と予測可能性を確保する必要がありますか。 物理サーバー上の仮想マシンと従来のワークロードを実行する必要がありますか。 そうであれば、**それらのサーバーを長期サービス チャネルのまま**利用します。 現在の LTSC リリースは、**Windows Server 2019** です。 その場合、このトピックで説明したように、2 から 3 年ごとに新しいバージョンが提供されます。各リリースのメインストリームの運用サポートは 5 年間で、その後 5 年間サポートを延長することができます。 LTSC リリースは、すべてのリリース メカニズムで利用できます。 LTSC のリリースは、使用しているライセンス モデルに関係なく、すべてのユーザーが利用できます。 
+- 安定性と予測可能性を確保する必要がありますか。 物理サーバー上の仮想マシンと従来のワークロードを実行する必要がありますか。 そうであれば、**それらのサーバーを長期サービス チャネルのまま**利用します。 現在の LTSC リリースは、**Windows Server 2019** です。 その場合、このトピックで説明したように、2 から 3 年ごとに新しいバージョンが提供されます。各リリースのメインストリームの運用サポートは 5 年間で、その後 5 年間サポートを延長することができます。 LTSC リリースは、すべてのリリース メカニズムで利用できます。 LTSC のリリースは、使用しているライセンス モデルに関係なく、すべてのユーザーが利用できます。
 
 次の表は、チャネル間の主な違いをまとめたものです。
 
@@ -84,13 +84,13 @@ IT 担当者が Windows Server を操作するためのツールは数多く存�
 
 半期チャネルのリリースは、クリーン インストールでインストールする必要があります。
 
-- ボリューム ライセンス サービス センター (VLSC): [ソフトウェア アシュアランス](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default.aspx)をご利用になっているボリューム ライセンスのお客様は、[ボリューム ライセンス サービス センター](https://www.microsoft.com/Licensing/servicecenter/default.aspx)に移動して、 **[サインイン]** をクリックすることによって、このリリースを入手できます。 次に、 **[Downloads and Keys]** (ダウンロードとキー) をクリックし、このリリースを検索します。 
+- ボリューム ライセンス サービス センター (VLSC): [ソフトウェア アシュアランス](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default.aspx)をご利用になっているボリューム ライセンスのお客様は、[ボリューム ライセンス サービス センター](https://www.microsoft.com/Licensing/servicecenter/default.aspx)に移動して、 **[サインイン]** をクリックすることによって、このリリースを入手できます。 次に、 **[Downloads and Keys]** (ダウンロードとキー) をクリックし、このリリースを検索します。
 
 - 半期チャネルのリリースは [Microsoft Azure](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.WindowsServer?tab=Overview) でも入手できます。
 
 - Visual Studio サブスクリプション: Visual Studio サブスクライバーが半期チャネルのリリースを入手するには、[Visual Studio サブスクライバー ダウンロード ページ](https://my.visualstudio.com/downloads?pid=2347)からダウンロードします。 まだサブスクライバーではない場合は、[Visual Studio サブスクリプション](https://www.visualstudio.com/subscriptions/)にサインアップしてから、上記のように [Visual Studio サブスクライバーのダウンロード ページ](https://my.visualstudio.com/downloads?pid=2347)にアクセスします。 Visual Studio サブスクリプション経由で入手したリリースは、開発とテストにのみ利用できます。
 
-- Windows Insider Program を通じてプレビュー リリースを入手します。Windows Server の初期ビルドのテストは、問題点をリリース前に発見できる可能性があるため、マイクロソフトとお客様の両方に役立ちます。 またお客様にとっては、製品の機能に直接影響を与える貴重な機会となります。   
+- Windows Insider Program を通じてプレビュー リリースを入手します。Windows Server の初期ビルドのテストは、問題点をリリース前に発見できる可能性があるため、マイクロソフトとお客様の両方に役立ちます。 またお客様にとっては、製品の機能に直接影響を与える貴重な機会となります。
 ユーザーからのフィードバックは、全開発プロセスを通じて重要な役割を果たしており、マイクロソフトはこれによってできる限り迅速に製品を調整することができます。 事前テストとフィードバックは、迅速なリリース モデルに不可欠です。 Windows Insider Program に参加する場合は、「[Windows Insider Program for Server docs](https://docs.microsoft.com/windows-insider/at-work/)」 (Windows Insider Program for Server のドキュメント) をご覧ください。
 
 ## <a name="activating-semi-annual-channel-releases"></a>半期チャネルのリリースのライセンス認証
@@ -114,15 +114,15 @@ Nano Server は、半期チャネルでのコンテナー オペレーティン�
 
 一般的に言って、長期サービス チャネルのリリース (Windows Server 2019 など) は、半期チャネルの新しいバージョン (Windows Server バージョン 1809 など) と同時にリリースされます。 このため、半期チャネルのリリースがサーバーで実行されているかどうかを判断するのが少し面倒になる場合があります。 ビルド番号を調べるのでなく、製品名を調べる必要があります。半期チャネルのリリースでは Windows Server Standard または Windows Server Datacenter といった製品名がバージョン番号なしで使用されます。一方、長期サービス チャネルのリリースには Windows Server 2019 Datacenter のようにバージョン番号が含まれます。
 
->[!Note]  
+> [!Note]
 > 以下のガイダンスは、ライフサイクルと一般的なインベントリのみを目的として LTSC と SAC を見分け、区別するためのものです。  アプリケーションの互換性や、特定の API サーフェスを表現することは意図していません。  システムの使用期間中コンポーネント、API、機能が追加されることもあれば追加されないこともあるため、アプリ開発者は別のガイダンスを使って互換性を適切に確保してください。 アプリ開発者は[オペレーティング システムのバージョン](https://docs.microsoft.com/windows/desktop/SysInfo/operating-system-version)から開始することをお勧めします。
 
-PowerShell を開き、Get-ItemProperty コマンドレットまたは Get-ComputerInfo コマンドレットを使って、レジストリでこれらのプロパティを確認します。  ビルド番号と共にブランド年 (つまり 2019) があるかどうかによって、LTSC か SAC かがわかります。  LTSC にはこれがあり、SAC にはありません。  これは、ReleaseId または WindowsVersion (つまり 1809) によってリリースのタイミングと、インストールが Server Core であるかデスクトップ エクスペリエンス搭載サーバーであるかも返します。 
+PowerShell を開き、Get-ItemProperty コマンドレットまたは Get-ComputerInfo コマンドレットを使って、レジストリでこれらのプロパティを確認します。  ビルド番号と共にブランド年 (つまり 2019) があるかどうかによって、LTSC か SAC かがわかります。  LTSC にはこれがあり、SAC にはありません。  これは、ReleaseId または WindowsVersion (つまり 1809) によってリリースのタイミングと、インストールが Server Core であるかデスクトップ エクスペリエンス搭載サーバーであるかも返します。
 
 **Windows Server 2019 Datacenter Edition (LTSC) (デスクトップ エクスペリエンスあり) の例:**
 
 ````PowerShell
-Get-ItemProperty -Path HKLM:\Software\Microsoft\Windows NT\CurrentVersion | Select ProductName, ReleaseId, InstallationType, CurrentMajorVersionNumber,CurrentMinorVersionNumber,CurrentBuild
+Get-ItemProperty -Path "HKLM:\Software\Microsoft\Windows NT\CurrentVersion" | Select ProductName, ReleaseId, InstallationType, CurrentMajorVersionNumber,CurrentMinorVersionNumber,CurrentBuild
 ````
 
 ````
@@ -137,7 +137,7 @@ CurrentBuild              : 17763
 **Windows Server Version 1809 (SAC) Standard Edition Server Core の例:**
 
 ````PowerShell
-Get-ItemProperty -Path HKLM:\Software\Microsoft\Windows NT\CurrentVersion | Select ProductName, ReleaseId, InstallationType, CurrentMajorVersionNumber,CurrentMinorVersionNumber,CurrentBuild
+Get-ItemProperty -Path "HKLM:\Software\Microsoft\Windows NT\CurrentVersion" | Select ProductName, ReleaseId, InstallationType, CurrentMajorVersionNumber,CurrentMinorVersionNumber,CurrentBuild
 ````
 
 ````
