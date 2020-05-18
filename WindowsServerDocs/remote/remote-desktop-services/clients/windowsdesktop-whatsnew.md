@@ -7,14 +7,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 04/14/2020
+ms.date: 05/12/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 016a88999b93d686faff73134a660014fd602765
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: de7c685e544fd0bb193f995aeff3a20a29bd6db5
+ms.sourcegitcommit: aed942d11f1a361fc1d17553a4cf190a864d1268
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "81279698"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83235053"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Windows デスクトップ クライアントの新機能
 
@@ -26,14 +26,32 @@ Windows デスクトップ クライアントの詳細については、「[Wind
 
 |ユーザー グループ |バージョン  |
 |-----------|---------|
-|パブリック     |1.2.790  |
-|Insider    |1.2.940  |
+|パブリック     |1.2.945  |
+|Insider    |1.2.1009 |
 
-## <a name="updates-for-version-12940"></a>バージョン 1.2.940 の更新内容
+## <a name="updates-for-version-121009"></a>バージョン 1.2.1009 の更新内容
 
-*公開日:2020 年 4 月 14 日*
+*公開日:2020 年 5 月 12 日*
 
-ダウンロード:[Windows 64 ビット](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4txZU)、[Windows 32 ビット](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4txZV)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4tM6I)
+ダウンロード:[Windows 64 ビット](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4wseE)、[Windows 32 ビット](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4wnf3)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4wCIB)
+
+- デスクトップとアプリ セッションのクライアント、ネットワーク、およびサーバーの詳細を提供する新しい**接続情報**ダイアログが追加されました。 このダイアログには、全画面表示モードの場合は接続バーから、ウィンドウの場合は [システム] メニューからアクセスできます。
+- ウィンドウ モードで起動したデスクトップ セッションは、ウィンドウを最大化するときに、全画面表示ではなく常に最大化されるようになりました。 全画面表示にするには、システム メニューの **[全画面表示]** オプションを使用します。
+- [サブスクリプションの解除] プロンプトに警告アイコンが表示され、ワークスペース名が箇条書きとして表示されるようになりました。
+- 問題の診断に役立つ詳細セクションを追加のエラー ダイアログに追加しました。
+- エラー ダイアログの詳細セクションにタイムスタンプが追加されました。
+- RDP ファイルの設定 **desktop size id** が正常に動作しなかった問題を修正しました。
+- セッションを起動した後に、 **[Update the resolution on resize]\(サイズ変更時に解像度を更新する\)** ディスプレイ設定が適用されなかった問題を修正しました。
+- デスクトップ設定パネルでローカライズの問題を修正しました。
+- デスクトップ設定パネルでコントロールをタブ移動するときのフォーカス ボックスのサイズを修正しました。
+- ハイコントラスト モードでリソース名の読み取りが困難になる問題を修正しました。
+- アクション センターで更新通知が 1 日に複数回表示される問題を修正しました。
+
+## <a name="updates-for-version-12945"></a>バージョン 1.2.945 の更新内容
+
+*公開日:2020 年 4 月 28 日*
+
+ダウンロード:[Windows 64 ビット](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4vhNM)、[Windows 32 ビット](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4vhNO)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4vuSV)
 
 - 接続センターのデスクトップ アイコンを右クリックしたときに利用できる、デスクトップ接続のための新しいディスプレイ設定オプションが追加されました。
   - 現在、3 つのディスプレイ構成オプションがあります。 **[All displays]\(すべてのディスプレイ\)** 、 **[Single display]\(単一ディスプレイ\)** 、 **[Select displays]\(ディスプレイの選択\)** です。
@@ -42,8 +60,11 @@ Windows デスクトップ クライアントの詳細については、「[Wind
   - [All displays]\(すべてのディスプレイ\) と [Select displays]\(ディスプレイの選択\) モードのための、新しい **[Single display when windowed]\(ウィンドウ表示の場合は単一ディスプレイ\)** オプションが追加されました。 このオプションでは、全画面モードを終了するとセッションは単一ディスプレイに自動的切り替わり、ウィンドウを最大化すると複数ディスプレイに自動的に戻ります。
 - ウィンドウ表示されたデスクトップ セッションのタイトル バーを右クリックすると表示されるシステム メニューに、新しい **[Display settings]\(ディスプレイ設定\)** グループが追加されました。 これにより、セッション中にいくつかの設定を動的に変更できるようになります。 たとえば、新しい **[Single display mode when windowed]\(ウィンドウ表示の場合は単一ディスプレイ モード\)** および **[Maximize to current displays]\(現在のディスプレイに最大化\)** 設定を変更することができます。
 - 全画面表示を終了すると、セッション ウィンドウは全画面表示を開始した時の元の場所に戻ります。
+- ワークスペースのバックグラウンド更新は、1 時間ごとではなく、4 時間ごとに変更されています。 クライアントを起動すると、更新が自動的に行われるようになりました。
 - [About]\(バージョン情報\) ページのユーザー データをリセットすると、完了したときにクライアントが閉じられるのではなく、接続センターにリダイレクトされるようになりました。
+- デスクトップ接続のシステム メニューの項目が並べ替えられ、ヘルプ トピックがクライアントのドキュメントを指すようになりました。
 - タブ ナビゲーションやスクリーン リーダーなどのいくつかのアクセシビリティの問題が解決されました。
+- [Azure Active Directory 認証] ダイアログがセッション ウィンドウの背後に表示される問題を修正しました。
 - スケール ファクターが異なるディスプレイ間でデスクトップのセッション ウィンドウをドラッグする際の、ちらつきや縮小の問題が修正されました。
 - カメラの向きを変える際に生じるエラーが修正されました。
 - 複数のクラッシュが修正され、信頼性が向上しました。

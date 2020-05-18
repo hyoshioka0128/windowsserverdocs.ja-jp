@@ -1,5 +1,5 @@
 ---
-title: ネットワークのガイダンス
+title: ネットワークのガイドライン
 description: リモート デスクトップのデプロイのための帯域幅に関する推奨事項。
 ms.prod: windows-server
 ms.technology: remote-desktop-services
@@ -8,14 +8,14 @@ ms.date: 12/12/2019
 ms.topic: article
 author: Heidilohr
 manager: lizross
-ms.openlocfilehash: 79db56d467ae0913446faebffc5a9598aae0b767
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: ba084c58e725627e838c07b5b5b9849d131b2038
+ms.sourcegitcommit: 32f810c5429804c384d788c680afac427976e351
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80852995"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83203546"
 ---
-# <a name="network-guidance"></a>ネットワークのガイダンス
+# <a name="network-guidelines"></a>ネットワークのガイドライン
 
 リモートの Windows セッションを使用する場合は、ネットワークの使用可能な帯域幅がエクスペリエンスの質に大きく影響します。 アプリケーションや画面の解像度が異なる場合は異なるネットワーク構成が必要なため、ネットワークがニーズに合わせて構成されていることを確認することが重要です。
 

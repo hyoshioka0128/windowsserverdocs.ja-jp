@@ -8,12 +8,12 @@ ms.assetid: d54a1f5e-af68-497e-99be-97775769a7a7
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dansimp
-ms.openlocfilehash: 510ad2cb1449f161658684eeceec4dbbb7ce6699
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 307da083db2e5cc76c4eda825f0e080d7f026821
+ms.sourcegitcommit: 7288aca86fc76b9ff6177a17027118d1f21707a9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80857095"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83380695"
 ---
 # <a name="remote-server-administration-tools"></a>リモート サーバー管理ツール
 
@@ -52,7 +52,7 @@ Windows PowerShell およびサーバー マネージャーのリモート管理
         
 ## <a name="install-uninstall-and-turn-offon-rsat-tools"></a>RSAT ツールをインストール、アンインストール、オン/オフする        
 
-### <a name="use-features-on-demand-fod-to-install-specific-rsat-tools-on-windows-10-october-2018-update-----r-l----ter"></a>オンデマンド機能 (FoD) を使用して Windows 10 October 2018 Update 以降に特定の RSAT ツールをインストールする
+### <a name="use-features-on-demand-fod-to-install-specific-rsat-tools-on-windows-10-october-2018-update-or-later"></a>オンデマンド機能 (FoD) を使用して、Windows 10 October 2018 Update 以降に特定の RSAT ツールをインストールします。
 
 Windows 10 October 2018 Update 以降では、RSAT は Windows 10 の**オンデマンド機能**のセットとして含まれています。 RSAT パッケージをダウンロードするのではなく、 **[設定]** の **[オプション機能の管理]** に移動し、 **[機能の追加]** をクリックして、使用可能な RSAT ツールの一覧を表示します。 必要な特定の RSAT ツールを選択してインストールします。 インストールの進行状況を見るには、 **[戻る]** ボタンをクリックして、 **[オプション機能の管理]** ページで状態を表示します。
         
@@ -91,7 +91,7 @@ October 2018 Update (1809) より前のバージョンの Windows 10 を使用�
 
 5.  インストールの完了には数分かかります。    
         
-##### <a name="to-uninstall-remote-server-administration-tools-for-windows-10-----aft----r-rsat-package-install"></a>Windows 10 用のリモート サーバー管理ツールをアンインストールするには (RSAT パッケージのインストール後)
+##### <a name="to-uninstall-remote-server-administration-tools-for-windows-10-after-rsat-package-install"></a>Windows 10 用のリモート サーバー管理ツールをアンインストールするには (RSAT パッケージのインストール後)
         
 1. デスクトップで、 **[スタート]** 、 **[すべてのアプリ]** 、 **[Windows システム]** 、 **[コントロール パネル]** の順にクリックします。
 
@@ -103,7 +103,7 @@ October 2018 Update (1809) より前のバージョンの Windows 10 を使用�
 
 5. 更新プログラムをアンインストールするかどうかを確認するメッセージが表示されたら、 **[はい]** をクリックします。
    S
-   ##### <a name="to-turn----off-specific-tools-after-rsat-package-in----tall"></a>特定のツールを無効にするには (RSAT パッケージのインストール後)
+   ##### <a name="to-turn-off-specific-tools-after-rsat-package-install"></a>特定のツールを無効にするには (RSAT パッケージのインストール後)
         
 6. デスクトップで、 **[スタート]** 、 **[すべてのアプリ]** 、 **[Windows システム]** 、 **[コントロール パネル]** の順にクリックします。
 
@@ -131,7 +131,7 @@ Windows 10 用のリモート サーバー管理ツールの一部としてイ�
 
 Windows 10 用のリモート サーバー管理ツールでは、MMC のスナップインやダイアログ ボックスなど、すべての GUI ベースのサーバー管理ツールに、サーバー マネージャー コンソールの **[ツール]** メニューからアクセスします。 リモート サーバー管理ツールの Windows 10 を実行しているコンピューターでは、クライアント ベースのオペレーティング システムを実行ツールをインストールした後、既定では、クライアント コンピューターでリモート サーバー管理ツールの Windows 10 に含まれている、サーバー マネージャーが自動的に開きます。 いるのでない **ローカル サーバー** クライアント コンピューターで実行されるサーバー マネージャー コンソール ページでします。
 
-##### <a name="to-start-server-manager-on-a-clien-----co----puter"></a>クライアント コンピューターでサーバー マネージャーを起動するには
+##### <a name="to-start-server-manager-on-a-client-computer"></a>クライアント コンピューターでサーバー マネージャーを起動するには
 
 1.  **[スタート]** メニューで **[すべてのアプリ]** 、 **[管理ツール]** の順にクリックします。
 

@@ -7,21 +7,44 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 04/03/2020
+ms.date: 05/06/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 69e33ef5f187672d948b6734a9ae7f68b54b7608
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 0943379b8f251d1548a0aa920a95931dc39a0624
+ms.sourcegitcommit: 67116322915066b85decb4261d47cedec2cfe12f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80854655"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82903449"
 ---
 # <a name="whats-new-in-the-ios-client"></a>iOS クライアントの新機能
 
 [iOS 用のリモート デスクトップ クライアント](remote-desktop-ios.md)は定期的に更新され、新機能の追加や問題の修正が行われています。 このページでは、最新の更新プログラムを紹介します。
 
->[!IMPORTANT]
->Microsoft はこのアプリを最適な iOS 用リモート デスクトップ クライアントにするために取り組んでいます。また、お客様のフィードバックを大切にしています。 問題がある場合は、 **[ヘルプ]**  >  **[問題の報告]** でご報告いただけます。
+## <a name="how-to-report-issues"></a>問題を報告する方法
+
+Microsoft は最適な iOS 用リモート デスクトップ クライアントをご提供できるように取り組んでおり、お客様のフィードバックを大切にしています。 問題がある場合は、 **[ヘルプ]**  >  **[問題の報告]** でご報告いただけます。
+
+## <a name="updates-for-version-1007"></a>バージョン 10.0.7 の更新内容
+
+*公開日:2020 年 4 月 29 日*
+
+この更新プログラムでは、PC リスト ビュー (iPhone で利用可能) を名前または最後に接続した時刻で並べ替える機能が追加されました。
+
+## <a name="updates-for-version-1006"></a>バージョン 10.0.6 の更新内容
+
+*公開日:2020 年 3 月 31 日*
+
+ここでは、いくつかのバグ修正のあるクイック更新について紹介します。 このリリースの最新情報は次のとおりです。
+
+- VoiceOver のアクセシビリティに関する多くの問題を修正しました。
+- ユーザーがトルコ語の資格情報で接続できないという問題を修正しました。
+- スイッチャー UI に表示されるセッションは、起動された順に並べ替えられるようになりました。
+- 接続センターで [戻る] ボタンを選択すると、最後にアクティブだったセッションに戻ります。
+- クライアントから別のアプリに切り替えたときに、Swiftpoint マウスがリリースされるようになりました。
+- Windows Virtual Desktop サービスとの相互運用性が向上しました。
+- エラー報告に表示されていたクラッシュを修正しました。
+
+Microsoft は、App Store、アプリ内のフィードバック、メールを通じてお客様から送信されたすべてのコメントを大切にしています。 さらに、問題を診断するために協力してくださったすべての人に感謝いたします。
 
 ## <a name="updates-for-version-1005"></a>バージョン 10.0.5 の更新内容
 
