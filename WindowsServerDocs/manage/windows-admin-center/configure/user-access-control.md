@@ -60,7 +60,7 @@ Windows Admin Center ゲートウェイ サービスへのアクセスには、�
 > [!NOTE]
 > Windows アカウントにゲートウェイ マシン上で**管理者アクセス権**があるユーザーには、Azure AD 認証のプロンプトは表示されません。
 
-### <a name="configuring-azure-active-directory-authentication-for-windows-admin-center-preview"></a>Windows Admin Center プレビューの Azure Active Directory 認証の構成
+### <a name="configuring-azure-active-directory-authentication-for-windows-admin-center-preview"></a>Windows Admin Center Preview の Azure Active Directory 認証の構成
 
 Windows Admin Center の **[設定]**  >  **[アクセス]** に移動し、トグル スイッチを使用して [Use Azure Active Directory to add a layer of security to the gateway]\(Azure Active Directory を使用してセキュリティの層をゲートウェイに追加する\) をオンにします。 Azure にゲートウェイを登録していない場合は、この時点で行うように指示されます。
 
