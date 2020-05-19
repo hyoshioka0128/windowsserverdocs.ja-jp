@@ -7,12 +7,12 @@ ms.date: 02/24/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: 7e7a233d17d8f2e32286a0869b283e450a34bbbc
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 2f6ba34381e813247d0838853f688abf13fbd2fa
+ms.sourcegitcommit: 1d83ca198c50eef83d105151551c6be6f308ab94
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80860145"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82605542"
 ---
 # <a name="windows-time-service-tools-and-settings"></a>Windows タイム サービスのツールと設定
 
@@ -307,7 +307,7 @@ Windows タイム サービスでは、次のレジストリ サブキーの下�
 |**LargeSampleSkew** |すべてのバージョン |ログ記録の大きいサンプル スキューを秒単位で指定します。 証券取引委員会 (SEC) の仕様に準拠するには、これは 3 秒に設定する必要があります。 この設定では、**EventLogFlags** が 0x2 の大きいサンプル スキューについて明示的に構成されている場合のみ、イベントがログに記録されます。 ドメイン メンバーに対する既定値は 3 です。 スタンドアロン クライアントとサーバーに対する既定値は 3 です。 |
 |**ResolvePeerBackOffMaxTimes** |すべてのバージョン |同期するピアの検索に繰り返し失敗した場合に待機間隔を 2 倍にするための最大回数を指定します。 値が 0 の場合、待機間隔が常に最小値であることを意味します。 ドメイン メンバーに対する既定値は **7** です。 スタンドアロン クライアントとサーバーに対する既定値は **7** です。 |
 |**ResolvePeerBackoffMinutes** |すべてのバージョン |同期するピアの検索を試行する前に待機する初期間隔を分単位で指定します。 ドメイン メンバーに対する既定値は **15** です。 スタンドアロン クライアントとサーバーに対する既定値は **15** です。  |
-|**SpecialPollInterval** |すべてのバージョン |手動ピアのための特別なポーリング間隔を秒単位で指定します。 **SpecialInterval** 0x1 フラグが有効になっている場合、W32Time は、オペレーティング システムによって決定されるポーリング間隔ではなく、このポーリング間隔を使用します。 ドメイン メンバーに対する既定値は **3,600** です。 スタンドアロン クライアントとサーバーに対する既定値は **604,800** です。<br/><br/>ビルド 1702 からは、**SpecialPollInterval** は **MinPollInterval** および **MaxPollInterval** の構成レジストリ値に含まれています。|
+|**SpecialPollInterval** |すべてのバージョン |手動ピアのための特別なポーリング間隔を秒単位で指定します。 **SpecialInterval** 0x1 フラグが有効になっている場合、W32Time は、オペレーティング システムによって決定されるポーリング間隔ではなく、このポーリング間隔を使用します。 ドメイン メンバーに対する既定値は **3,600** です。 スタンドアロン クライアントとサーバーに対する既定値は **604,800** です。<br/><br/>ビルド 1703 からは、**SpecialPollInterval** は **MinPollInterval** および **MaxPollInterval** の構成レジストリ値に含まれています。|
 |**SpecialPollTimeRemaining** |すべてのバージョン |W32Time によって管理されます。 これには、Windows オペレーティング システムによって使用される予約されたデータが含まれています。 これはコンピューターが再起動した後に W32Time が再同期されるまでの時間を秒単位で指定します。 この設定を変更すると、予期しない結果が発生する可能性があります。 ドメイン メンバーとスタンドアロン クライアントおよびサーバーの両方の既定値は、空白のままになります。 |
 
 ### <a name="hklmsystemcurrentcontrolsetservicesw32timetimeprovidersntpserver-subkey-entries"></a><a id="ntpserver"></a>"HKLM\SYSTEM\CurrentControlSet\Services\W32Time\TimeProviders\NtpServer" サブキー エントリ

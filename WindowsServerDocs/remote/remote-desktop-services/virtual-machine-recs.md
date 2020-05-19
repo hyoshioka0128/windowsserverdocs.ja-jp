@@ -8,14 +8,14 @@ ms.date: 12/02/2019
 ms.topic: article
 author: Heidilohr
 manager: lizross
-ms.openlocfilehash: 1d6a7daa3966488c951117b083411587d13be56b
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: beacd246639b5586c071a24bdd7b09c6aceeadab
+ms.sourcegitcommit: 32f810c5429804c384d788c680afac427976e351
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80857105"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83203384"
 ---
-# <a name="virtual-machine-sizing-guidance"></a>仮想マシンのサイズ設定のガイダンス
+# <a name="virtual-machine-sizing-guidelines"></a>仮想マシンのサイズ設定のガイドライン
 
 リモート デスクトップ サービスまたは Windows 仮想デスクトップのどちらで仮想マシンを実行している場合でも、ワークロードの種類ごとに異なるセッション ホスト仮想マシン (VM) 構成が必要です。 最適なエクスペリエンスを実現するには、ユーザーのニーズに応じてデプロイをスケールします。
 

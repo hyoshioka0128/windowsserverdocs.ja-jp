@@ -5,16 +5,16 @@ description: AD FS に関してよく寄せられる質問
 author: billmath
 ms.author: billmath
 manager: mtillman
-ms.date: 04/17/2019
+ms.date: 04/29/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: a1041bdc189238c7da32896e6f867f730e392d24
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: b1b6f7d38c4474ba3f69c4eac0c4569375185eb8
+ms.sourcegitcommit: 6d3f8780b67aa7865a9372cf2c1e10c79ebea8b1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80814432"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82587669"
 ---
 # <a name="ad-fs-frequently-asked-questions-faq"></a>AD FS についてよく寄せられる質問 (FAQ)
 
@@ -72,6 +72,9 @@ AD FS では、複数のマルチフォレスト構成がサポートされて�
 
 >[!NOTE]  
 >双方向の信頼構成で選択的認証を使用する場合は、ターゲット サービス アカウントでの "認証許可" アクセス許可が呼び出し元ユーザーに付与されていることを確認します。 
+
+### <a name="does-ad-fs-extranet-smart-lockout-support-ipv6"></a>AD FS エクストラネット スマート ロックアウトでは IPv6 をサポートしていますか?
+はい。IPv6 アドレスは、使い慣れた場所または不明な場所で考慮されます。
 
 
 ## <a name="design"></a>設計
@@ -310,3 +313,11 @@ Windows Server 2019 にアップグレードした後も、Web アプリケー�
 
 ### <a name="can-i-estimate-the-size-of-the-adfsartifactstore-before-enabling-esl"></a>ESL を有効にする前に、ADFSArtifactStore のサイズを見積もることはできますか?
 ESL を有効にすると、AD FS では、ADFSArtifactStore データベースでユーザーのアカウント アクティビティと既知の場所が追跡されます。 このデータベースのサイズは、追跡されるユーザーと既知の場所の数に比例してスケーリングされます。 ESL の有効化を計画するとき、ADFSArtifactStore データベースのサイズは、10 万ユーザーあたり最大 1 GB の割合で増加すると見積もることができます。 AD FS ファームで Windows Internal Database (WID) が使用されている場合、データベース ファイルの既定の場所は C:\Windows\WID\Data です。 このドライブがいっぱいにならないよう、ESL を有効にする前に、少なくとも 5 GB の空き記憶域があることを確認してください。 ESL を有効にした後は、ディスク記憶域に加えて、プロセス メモリの総量も、50 万人以下のユーザーに対して、最大 1 GB の RAM が追加されるものとして計画します。
+
+### <a name="i-am-seeing-event-570-active-directory-trust-enumeration-was-unable-to-enumerate-one-of-more-domains-due-to-the-following-error-enumeration-will-continue-but-the-active-directory-identifier-list-may-not-be-correct-validate-that-all-expected-active-directory-identifiers-are-present-by-running-get-adfsdirectoryproperties-on-ad-fs-2019-what-is-the-mitigation-for-this-event"></a>AD FS 2019 でイベント 570 が表示されます (Active Directory trust enumeration was unable to enumerate one of more domains due to the following error. Enumeration will continue but the Active Directory identifier list may not be correct. Validate that all expected Active Directory identifiers are present by running Get-ADFSDirectoryProperties/(Active Directory 信頼列挙で、次のエラーのため、ドメインの 1 つを列挙できませんでした。列挙は続行されますが Active Directory 識別子の一覧が正しくない可能性があります。Get-ADFSDirectoryProperties を実行して、予期されるすべての Active Directory 識別子が存在することを確認してください/))。 このイベントの軽減策は何ですか?
+このイベントは、AD FS が信頼されているフォレストのチェーン内のすべてのフォレストを列挙し、すべてのフォレスト全体で接続しようとして、フォレストが信頼されていない場合に発生します。 たとえば、AD FS フォレスト A とフォレスト B が信頼されていて、フォレスト B とフォレスト C が信頼されている場合、AD FS は 3 つのすべてのフォレストを列挙し、フォレスト A と C の間の信頼を検出しようとします。失敗したフォレストのユーザーを AD FS によって認証する必要がある場合は、AD FS フォレストと、失敗しているフォレストとの間に信頼関係を設定します。 失敗したフォレストのユーザーを AD FS によって認証すべきでない場合は、このエラーは無視してください。
+
+### <a name="i-am-seeing-an-event-id-364-microsoftidentityserverauthenticationfailedexception-msis5015-authentication-of-the-presented-token-failed-token-binding-claim-in-token-must-match-the-binding-provided-by-the-channel-what-should-i-do-to-resolve-this"></a>"Event ID 364:Microsoft.IdentityServer.AuthenticationFailedException:MSIS5015:Authentication of the presented token failed. Token Binding claim in token must match the binding provided by the channel."\(イベント ID 364: Microsoft.IdentityServer.AuthenticationFailedException: MSIS5015: 提示されたトークンの認証に失敗しました。トークンのトークン バインド要求は、チャネルによって提供されたバインドと一致している必要があります。\)" と表示されます。 これを解決するにはどうすればよいですか?
+AD FS 2016 では、トークンのバインドが自動的に有効になり、プロキシとフェデレーションのシナリオでの複数の既知の問題のため、このエラーが発生します。 これを解決するには、次の PowerShell コマンドを実行して、トークンのバインドのサポートを削除します。
+
+`Set-AdfsProperties -IgnoreTokenBinding $true`

@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b0b7fef9c74ba5da1b94772cb5f6ff3d717a5359
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 3804cfdf49d97f9b889129802e0d2c51730e3c86
+ms.sourcegitcommit: 67116322915066b85decb4261d47cedec2cfe12f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80855975"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82903470"
 ---
 # <a name="ad-fs-openid-connectoauth-flows-and-application-scenarios"></a>AD FS OpenID 接続/OAuth フローとアプリケーション シナリオ
 AD FS 2016 以降に適用されます
@@ -224,13 +224,13 @@ Host: https://webapi.com
 Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik5HVEZ2ZEstZnl0aEV1Q... 
  ```
 
-### <a name="refresh-the-access-token"></a>アクセス トークンを更新する 
- 
+### <a name="refresh-token-grant-flow"></a>更新トークン付与フロー
+ 
 access_token は有効期間が短く、有効期限が切れた後もリソースにアクセスし続けるにはそのトークンを更新する必要があります。 これを行うには、もう一度 POST 要求を  `/token`  エンドポイントに送信します。このとき、コードの代わりに refresh_token を指定します。 更新トークンは、クライアントが既にアクセス トークンを受け取っているすべてのアクセス許可に対して有効です。 
  
 更新トークンには、指定された有効期間はありません。 通常、更新トークンの有効期間は比較的長くなります。 ただし、更新トークンが期限切れになったり失効したりする場合や、必要な操作を行うための十分な特権がない場合があります。 アプリケーションでは、トークン発行エンドポイントから返されるエラーを正しく予想して処理する必要があります。  
  
-新しいアクセス トークンを取得するために使用されたときに、更新トークンが失効していないにもかかわらず、古い更新トークンを破棄することを求められます。 OAuth 2.0 仕様に、次のように記載されています。"承認サーバーで新しい更新トークンが発行される場合があります。この場合、クライアントは古い更新トークンを破棄し、新しい更新トークンに置き換える必要があります。 承認サーバーは新しい更新トークンをクライアントに発行した後に、古い更新トークンを取り消す場合があります。" 
+新しいアクセス トークンを取得するために使用されたときに、更新トークンが失効していないにもかかわらず、古い更新トークンを破棄することを求められます。 OAuth 2.0 仕様によると、次のとおりです。"承認サーバーで新しい更新トークンが発行される場合があります。この場合、クライアントは古い更新トークンを破棄し、新しい更新トークンに置き換える必要があります。 承認サーバーは新しい更新トークンをクライアントに発行した後に、古い更新トークンを取り消す場合があります。" 新しい更新トークンの有効期間が、以前の更新トークンの有効期間より長い場合に、AD FS によって更新トークンが発行されます。  AD FS 更新トークンの有効期間に関する追加情報を表示するには、「[AD FS シングル サインオンの設定](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/ad-fs-single-sign-on-settings)」を参照してください。
  
 ```
 // Line breaks for legibility only 
