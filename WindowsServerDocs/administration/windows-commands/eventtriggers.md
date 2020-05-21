@@ -1,6 +1,6 @@
 ---
 title: eventtriggers
-description: '* * * * のリファレンストピック'
+description: Eventtrigger コマンドのリファレンストピックです。このコマンドは非推奨とされており、今後の Windows のリリースでサポートされるとは限りません。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,17 +9,13 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1f0e504974c1e8db5477f9c198e875ec4dc8db6f
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 64120df16d92484bfee8cfc1645c102fc325e400
+ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82992373"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83436857"
 ---
 # <a name="eventtriggers"></a>eventtriggers
 
-
-
-Eventtriggers は非推奨とされており、Windows の将来のリリースでサポートされるとは限りません。
-
-このツールは、Windows Server 2003 に含まれます。 詳細については、「 [Eventtriggers](https://technet.microsoft.com/library/cc773308(v=ws.10).aspx)」を参照してください。
+Eventtrigger コマンドは非推奨とされており、Windows の将来のリリースでサポートされるとは限りません。

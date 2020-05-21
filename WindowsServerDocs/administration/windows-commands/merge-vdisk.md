@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1bfcdde34d2c7dd6146222d04e982aa1ec8009c2
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: cec8eeaa80436dbb34eb055950169b6895efa544
+ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723990"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83437147"
 ---
 # <a name="merge-vdisk"></a>Vdisk をマージします。
 
@@ -28,12 +28,12 @@ ms.locfileid: "82723990"
 > merge vdisk depth=<n>
 > ```
 > #### <a name="parameters"></a>パラメーター
-> 
-> | パラメーター |                                                                                    [説明]                                                                                    |
+>
+> | パラメーター |                                                                                    説明                                                                                    |
 > |-----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 > | 深さ =<n> | マージする親 VHD ファイルの数を示します。 たとえば、 **深さ = 1** 差分チェーンの 1 つのレベルで差分 VHD をマージすることを示します。 |
-> 
-> ## <a name="remarks"></a>Remarks
+>
+>#### <a name="remarks"></a>解説
 > - この操作を成功させるには、VHD を選択してデタッチする必要があります。 使用して、 **vdisk を選択して** コマンド、VHD を選択し、それにフォーカスをします。
 > - このパラメーターは、親 VHD を変更します。 その結果、親に依存するその他の差分 Vhd は無効になります。
 >   ## <a name="examples"></a>例

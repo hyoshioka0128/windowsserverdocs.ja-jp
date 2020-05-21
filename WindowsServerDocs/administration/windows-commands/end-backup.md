@@ -1,6 +1,6 @@
 ---
 title: バックアップの終了
-description: '* * * * のリファレンストピック'
+description: '[バックアップの終了] コマンドのリファレンストピック。完全バックアップセッションを終了し、必要に応じて適切なライター状態の**BackupComplete**イベントを発行します。'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,17 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 941ab648c4811facd284d49a4797e50ba5241ee6
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 6d9cb3cbf474b5306a1cac7df4516f0492740591
+ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720848"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83436907"
 ---
 # <a name="end-backup"></a>バックアップの終了
-
-
-
 
 完全バックアップセッションを終了し、必要に応じて、適切なライター状態の**BackupComplete**イベントを発行します。
 
@@ -28,10 +25,6 @@ ms.locfileid: "82720848"
 ```
 end backup
 ```
-
-## <a name="remarks"></a>Remarks
-
--   このコマンドは、すべての完全バックアップに使用する必要があります。
 
 ## <a name="additional-references"></a>その他のリファレンス
 

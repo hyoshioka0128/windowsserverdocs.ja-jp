@@ -1,6 +1,6 @@
 ---
 title: extract
-description: '* * * * のリファレンストピック'
+description: 抽出コマンドのリファレンストピック。ソースの場所からファイルを抽出します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,39 +9,39 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1cca89a356530e49fbf2b0610ff3ced1c5733847
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: dbadcc555fc9bb0b02e568b1126a317a9d59d336
+ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82725657"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83437187"
 ---
 # <a name="extract"></a>extract
 
-
+キャビネットまたはソースからファイルを抽出します。
 
 ## <a name="syntax"></a>構文
 
 ```
-EXTRACT [/Y] [/A] [/D | /E] [/L dir] cabinet [filename ...]
-EXTRACT [/Y] source [newname]
-EXTRACT [/Y] /C source destination
+extract [/y] [/a] [/d | /e] [/l dir] cabinet [filename ...]
+extract [/y] source [newname]
+extract [/y] /c source destination
 ```
 
 ### <a name="parameters"></a>パラメーター
 
-|パラメーター|[説明]|
-|---------|-----------|
-|キャビネット|ファイルに2つ以上のファイルが含まれています。|
-|filename|キャビネットから抽出するファイルの名前。 ワイルドカードと複数のファイル名 (空白で区切られた) を使用できます。|
-|source|圧縮ファイル (1 つのファイルのみを含むキャビネット)。|
-|新しい名前|抽出されたファイルを指定する新しいファイル名。 指定されていない場合は、元の名前が使用されます。|
-|/A|すべてのキャビネットを処理します。 前述の最初のキャビネットで開始されるキャビネットチェーンに従います。|
-|/C|ソースファイルをコピー先にコピーします (DMF ディスクからコピーする場合)。|
-|/D|キャビネットディレクトリを表示します (抽出を避けるために、ファイル名を付けて使用します)。|
-|/E|Extract (の代わりにを使用*します。* すべてのファイルを抽出する場合)。|
-|/L ディレクトリ|抽出されたファイルを配置する場所 (既定は現在のディレクトリ)。|
-|/Y|既存のファイルを上書きする前に、メッセージを表示しません。|
+| パラメーター | 説明 |
+| --------- | ----------- |
+| キャビネット | 2つ以上のファイルを抽出する場合は、を使用します。 |
+| ファイル名 | キャビネットから抽出するファイルの名前。 ワイルドカードと複数のファイル名 (空白で区切られた) を使用できます。 |
+| ソース | 圧縮ファイル (1 つのファイルのみを含むキャビネット)。 |
+| 新しい名前 | 抽出されたファイルを指定する新しいファイル名。 指定されていない場合は、元の名前が使用されます。 |
+| /a | すべてのキャビネットを処理します。 前述の最初のキャビネットで開始されるキャビネットチェーンに従います。 |
+| /c | ソースファイルをコピー先にコピーします (DMF ディスクからコピーする場合)。 |
+| /d | キャビネットディレクトリを表示します (抽出を避けるために、ファイル名を付けて使用します)。 |
+| /e | Extract (の代わりにを使用*します。* すべてのファイルを抽出する場合)。 |
+| /l ディレクトリ | 抽出されたファイルを配置する場所 (既定は現在のディレクトリ)。 |
+| /y | 既存のファイルを上書きする前にメッセージを表示しません。 |
 
 ## <a name="additional-references"></a>その他のリファレンス
 

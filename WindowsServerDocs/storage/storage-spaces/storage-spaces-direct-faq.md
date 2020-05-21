@@ -57,7 +57,7 @@ ms.locfileid: "82977250"
 
 ## <a name="is-there-a-calculator-that-shows-the-exact-size-of-the-disks-that-are-being-set-aside-for-cache-capacity-and-resiliency-that-would-enable-me-to-plan-better"></a>キャッシュ、容量、回復性のために確保されているディスクの正確なサイズを示す電卓があるかどうかを確認できます。
 
-記憶域スペース計算ツールを使用すると、計画に役立てることができます。 これは、でhttps://aka.ms/s2dcalc入手できます。
+記憶域スペース計算ツールを使用すると、計画に役立てることができます。 これは、で入手でき https://aka.ms/s2dcalc ます。
 
 ## <a name="what-is-the-best-configuration-that-you-would-recommend-when-configuring-6-servers-and-3-racks"></a>6台のサーバーと3つのラックを構成するときに推奨される最適な構成は何ですか。
 

@@ -9,19 +9,22 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 43108fad0e1981bffd110264809acf30c1c12ba1
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: eb4a9fa3105247695f1a50e5fc483ce608cd4816
+ms.sourcegitcommit: 7116460855701eed4e09d615693efa4fffc40006
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82725015"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83433126"
 ---
 # <a name="ftype"></a>ftype
 
 
 
-表示またはファイル名拡張子の関連付けで使用されているファイルの種類を変更します。 代入演算子 (**=**) が指定されていない場合は、指定されたファイルの種類の現在開いているコマンド文字列が**ftype**によって表示されます。 パラメーターを指定せずに使用する場合 **ftype** 開いているコマンド文字列が定義されているファイルの種類が表示されます。
+表示またはファイル名拡張子の関連付けで使用されているファイルの種類を変更します。 代入演算子 () が指定されていない場合は **=** 、指定されたファイルの種類の現在開いているコマンド文字列が**ftype**によって表示されます。 パラメーターを指定せずに使用する場合 **ftype** 開いているコマンド文字列が定義されているファイルの種類が表示されます。
 
+> [!NOTE]
+> このコマンドは、CMD 内でのみサポートされています。EXE とは、PowerShell からは使用できません。  
+> ただし、を `cmd /c ftype` 回避策として使用することもできます。
 
 
 ## <a name="syntax"></a>構文
@@ -32,13 +35,13 @@ ftype [<FileType>[=[<OpenCommandString>]]]
 
 ### <a name="parameters"></a>パラメーター
 
-|パラメーター|[説明]|
+|パラメーター|説明|
 |---------|-----------|
 |\<FileType>|表示または変更するファイルの種類を指定します。|
 |\<OpenCommandString>|指定したファイルの種類のファイルを開くときに使用する開いているコマンド文字列を指定します。|
 |/?|コマンド プロンプトにヘルプを表示します。|
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>解説
 
 次の表方法 **ftype** [開く] コマンド文字列内の変数に置換します。
 

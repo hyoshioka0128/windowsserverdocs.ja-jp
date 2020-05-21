@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a7a119cda5fad594638211bfcdbdc269fff13d20
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 6b0d122beac43abfd826cb406adac4aa277fc72e
+ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722724"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83436277"
 ---
 # <a name="query-session"></a>query session
 
@@ -30,8 +30,8 @@ ms.locfileid: "82722724"
 > query session [<SessionName> | <UserName> | <SessionID>] [/server:<ServerName>] [/mode] [/flow] [/connect] [/counter]
 > ```
 > ### <a name="parameters"></a>パラメーター
-> 
-> |      パラメーター       |                                                      [説明]                                                      |
+>
+> |      パラメーター       |                                                      説明                                                      |
 > |----------------------|-----------------------------------------------------------------------------------------------------------------------|
 > |    <SessionName>     |                               クエリを実行するセッションの名前を指定します。                               |
 > |      <UserName>      |                           クエリを実行するセッションを持つユーザーの名前を指定します。                            |
@@ -42,8 +42,8 @@ ms.locfileid: "82722724"
 > |       /connect       |                                          現在の接続設定を表示します。                                           |
 > |       /counter       | 作成、切断、再接続されたセッションの合計数など、現在のカウンター情報が表示されます。 |
 > |          /?          |                                         コマンド プロンプトにヘルプを表示します。                                          |
-> 
-> ## <a name="remarks"></a>Remarks
+>
+>#### <a name="remarks"></a>解説
 > - ユーザーは、ユーザーが現在ログオンしているセッションに対していつでもクエリを実行できます。 他のセッションに対してクエリを実行するには、ユーザーがクエリ情報に特別なアクセス許可を持っている必要があります。
 > - *<のセッション名>* 、<*ユーザー名*>、または <*SessionID*> を使用してセッションを指定しなかった場合、**クエリセッション**には、システム内のすべてのアクティブなセッションに関する情報が表示されます。
 > - **クエリセッション**で情報が返されると、現在のセッションの前に、より大きい (>) 記号が表示されます。 **クエリセッション**のサンプル出力を次に示します。
@@ -67,6 +67,6 @@ ms.locfileid: "82722724"
 >   query session modeM02
 >   ```
 >   ## <a name="additional-references"></a>その他のリファレンス
->   - [コマンドライン構文キー](command-line-syntax-key.md)
->   [クエリ](query.md)
->   [リモートデスクトップサービス (ターミナルサービス) コマンドリファレンス](remote-desktop-services-terminal-services-command-reference.md)
+>   - [コマンドライン構文のキー](command-line-syntax-key.md) 
+>   [クエリ](query.md) 
+>   [リモートデスクトップサービス (ターミナルサービス) のコマンドリファレンス](remote-desktop-services-terminal-services-command-reference.md)

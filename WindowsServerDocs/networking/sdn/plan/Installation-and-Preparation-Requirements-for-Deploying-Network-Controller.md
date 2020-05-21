@@ -9,16 +9,16 @@ ms.assetid: 7f899e62-6e5b-4fca-9a59-130d4766ee2f
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/10/2018
-ms.openlocfilehash: da9164eea4ab7e2fb38864fb69c47252448b77b6
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f5a7ec331c9d70214cbd0a772de6e2b2c7f4f58e
+ms.sourcegitcommit: 7116460855701eed4e09d615693efa4fffc40006
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80854425"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83433176"
 ---
 # <a name="requirements-for-deploying-network-controller"></a>ネットワークコントローラーを展開するための要件
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016
+>適用先:Windows Server (半期チャネル)、Windows Server 2016
 
 ネットワークコントローラーを展開するために、1台以上のコンピューターまたは Vm、1台のコンピューターまたは VM を必要とするデータセンターを準備します。 ネットワークコントローラーを展開する前に、セキュリティグループ、ログファイルの場所 (必要な場合)、および動的 DNS の登録を構成する必要があります。
 
@@ -73,32 +73,32 @@ ms.locfileid: "80854425"
 
 1. ゾーンの DNS 動的更新を許可します。
 
-   a. DNS マネージャーを開き、コンソールツリーで該当するゾーンを右クリックし、 **[プロパティ]** をクリックします。 
+   a. DNS マネージャーを開き、コンソールツリーで該当するゾーンを右クリックし、[**プロパティ**] をクリックします。 
 
-   b. **[全般]** タブで、ゾーンの種類が **[プライマリ]** または **[Active Directory 統合]** であることを確認します。
+   b. [**全般**] タブで、ゾーンの種類が [**プライマリ**] または [ **Active Directory 統合**] であることを確認します。
 
-   c. **[動的更新]** で、 **[セキュリティのみ]** が選択されていることを確認し、[ **OK]** をクリックします。
+   c. [**動的更新**] で、[**セキュリティのみ**] が選択されていることを確認し、[ **OK]** をクリックします。
 
 2. ネットワークコントローラーノードの DNS ゾーンセキュリティアクセス許可を構成する
 
-   a.  **[セキュリティ]** タブをクリックし、 **[詳細設定]** をクリックします。 
+   a.  [**セキュリティ**] タブをクリックし、[**詳細設定**] をクリックします。 
 
-   b. **[セキュリティの詳細設定]** で、 **[追加]** をクリックします。 
+   b. [**セキュリティの詳細設定**] で、[**追加**] をクリックします。 
 
    c. **[プリンシパルの選択]** をクリックします。 
 
-   d. **[ユーザー、コンピューター、サービスアカウントまたはグループの選択]** ダイアログボックスで、 **[オブジェクトの種類]** をクリックします。 
+   d. [**ユーザー、コンピューター、サービスアカウントまたはグループの選択**] ダイアログボックスで、[**オブジェクトの種類**] をクリックします。 
 
-   e. **[オブジェクトの種類]** で、 **[コンピューター]** を選択し、 **[OK]** をクリックします。
+   e. [**オブジェクトの種類**] で、[**コンピューター**] を選択し、[ **OK**] をクリックします。
 
    f. **[ユーザー、コンピューター、サービスアカウント、またはグループの選択**] ダイアログボックスで、展開内のいずれかのネットワークコントローラーノードの NetBIOS 名を入力し、[ **OK]** をクリックします。
 
-   g. **[アクセス許可エントリ]** で、次の値を確認します。
+   g. [**アクセス許可エントリ**] で、次の値を確認します。
 
       - **種類**= 許可
       - **適用対象**= This オブジェクトとすべての子オブジェクト
 
-   h. **[アクセス許可]** で **[すべてのプロパティの書き込み]** を選択し、 **[削除]** をクリックして、[ **OK]** をクリックします。
+   h. [**アクセス許可**] で [**すべてのプロパティの書き込み**] を選択し、[**削除**] をクリックして、[ **OK]** をクリックします。
 
 3. ネットワークコントローラークラスター内のすべてのコンピューターと Vm に対して、この手順を繰り返します。
 
@@ -106,7 +106,7 @@ ms.locfileid: "80854425"
 
 ネットワークコントローラーが管理クライアントとの通信に Kerberos ベースの認証を使用している場合は、Active Directory でネットワークコントローラーのサービスプリンシパル名 (SPN) を構成する必要があります。 SPN は、ネットワークコントローラーによって自動的に構成されます。 必要なのは、SPN を登録および変更するためのアクセス許可をネットワークコントローラーコンピューターに付与することだけです。 詳細については、「[サービスプリンシパル名 (SPN) の構成](https://docs.microsoft.com/windows-server/networking/sdn/security/kerberos-with-spn#configure-service-principal-names-spn)」を参照してください。
 
-## <a name="deployment-options"></a>展開オプション
+## <a name="deployment-options"></a>配置オプション
 
 ### <a name="network-controller-deployment"></a>ネットワークコントローラーの展開
 
@@ -126,15 +126,11 @@ ms.locfileid: "80854425"
 
 ![SDN NC 計画](../../media/Plan-a-Software-Defined-Network-Infrastructure/SDN-GW-Deployment.png)  
 
-
-
-TP5 ベースの展開の自動化では、Active Directory が使用可能であり、これらのサブネットから到達可能である必要があります。 Active Directory の詳細については、「 [Active Directory Domain Services の概要](https://docs.microsoft.com/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview)」を参照してください。  
-
 >[!IMPORTANT] 
 >VMM を使用して展開する場合は、インフラストラクチャの仮想マシン (VMM サーバー、AD/DNS、SQL Server など) が、図に示されている4つのホストのいずれかでホストされていないことを確認してください。  
 
 
-## <a name="next-steps"></a>次のステップ:
+## <a name="next-steps"></a>次の手順
 [ソフトウェアで定義されたネットワークインフラストラクチャを計画](https://technet.microsoft.com/windows-server-docs/networking/sdn/plan/plan-a-software-defined-network-infrastructure)します。
 
 ## <a name="related-topics"></a>関連トピック

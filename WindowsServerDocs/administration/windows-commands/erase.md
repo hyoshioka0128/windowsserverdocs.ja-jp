@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0ec812e9a455cc0060a3f0a6be4d0e7227821a0b
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 96e0f97e27de8933de44c437508ef59803765771
+ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82992375"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83437127"
 ---
 # <a name="erase"></a>erase
 
@@ -42,9 +42,9 @@ del [/p] [/f] [/s] [/q] [/a[:]<attributes>] <names>
 | /a [:]`<attributes>` | 次のファイル属性に基づいてファイルを削除します。<ul><li>**r**読み取り専用ファイル</li><li>**h**隠しファイル</li><li>コンテンツにインデックスが**設定され**ていないファイル</li><li>**s**システムファイル</li><li>アーカイブの準備**が**できているファイル</li><li>**左**再解析ポイント</li><li>**-**' Not ' を意味するプレフィックスとして使用されます。</li></ul>. |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-#### <a name="remarks"></a>Remarks
+#### <a name="remarks"></a>解説
 
-- `erase /p`コマンドを使用すると、次のメッセージが表示されます。
+- コマンドを使用すると、 `erase /p` 次のメッセージが表示されます。
 
     `FileName, Delete (Y/N)?`
 
@@ -52,7 +52,7 @@ del [/p] [/f] [/s] [/q] [/a[:]<attributes>] <names>
 
 - コマンド拡張機能を無効にすると、削除されているファイルの名前を表示する代わりに、 **/s**パラメーターに、見つからなかったファイルの名前が表示されます。
 
-- `<names>`パラメーターに特定のフォルダーを指定すると、含まれているすべてのファイルも削除されます。 たとえば、 *\ work*フォルダー内のすべてのファイルを削除する場合は、次のように入力します。
+- パラメーターに特定のフォルダーを指定すると `<names>` 、含まれているすべてのファイルも削除されます。 たとえば、 *\ work*フォルダー内のすべてのファイルを削除する場合は、次のように入力します。
 
   ```
   erase \work
@@ -73,7 +73,7 @@ del [/p] [/f] [/s] [/q] [/a[:]<attributes>] <names>
   > [!NOTE]
   > **Erase**コマンドでワイルドカード文字を使用する前に、同じワイルドカード文字を**dir**コマンドと共に使用して、削除されるすべてのファイルを一覧表示します。
 
-## <a name="examples"></a>使用例
+### <a name="examples"></a>例
 
 C ドライブの Test という名前のフォルダー内のすべてのファイルを削除するには、次のいずれかを入力します。
 

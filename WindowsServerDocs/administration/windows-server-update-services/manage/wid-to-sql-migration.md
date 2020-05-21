@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dougkim
 ms.date: 07/25/2018
-ms.openlocfilehash: 7238d71ed35b5c9645e6b4061717011cc2a02820
-ms.sourcegitcommit: 32f810c5429804c384d788c680afac427976e351
+ms.openlocfilehash: facd846dd0c20ee2e5001b0592651ce310e19097
+ms.sourcegitcommit: 29f7a4811b4d36d60b8b7c55ce57d4ee7d52e263
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83203564"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83716887"
 ---
 # <a name="migrating-the-wsus-database-from-wid-to-sql"></a>WID から SQL への WSUS データベースの移行
 
@@ -22,7 +22,7 @@ ms.locfileid: "83203564"
 
 WSUS データベース (SUSDB) を Windows Internal Database インスタンスから SQL Server のローカルまたはリモートインスタンスに移行するには、次の手順を実行します。
 
-## <a name="prerequisites"></a>必須コンポーネント
+## <a name="prerequisites"></a>前提条件
 
 - SQL インスタンス。 既定の**MSSQLServer**またはカスタムインスタンスを指定できます。
 - SQL Server Management Studio
@@ -67,7 +67,7 @@ PowerShell (管理者特権) から、次のように実行します。
 
 ### <a name="copy-the-susdb-files-to-the-sql-server"></a>SUSDB ファイルを SQL Server にコピーします。
 
-1. WID データフォルダー (**% SystemDrive%*** Windows\WID\Data * *) から**SUSDB**と SUSDB を SQL ** \_ ** \* インスタンスのデータフォルダーにコピーします。
+1. WID **SUSDB.mdf**データフォルダー (**% SystemDrive%** Windows WID データ) から SUSDB と**SUSDB を \_ ** \\ SQL インスタンスのデータフォルダーに** \\ \\ **コピーします。
 
 > [!TIP]
 > たとえば、SQL インスタンスフォルダーが**C:\Program SERVER\MSSQL12. sql の場合、MSSQLSERVER\MSSQL**、WID Data フォルダーは**C:\Windows\WID\Data で**、SUSDB ファイルを**C:\WINDOWS\WID\DATA**から**C:\Program Server\MSSQL12. SQL にコピーします。MSSQLSERVER\MSSQL\Data**

@@ -1,53 +1,57 @@
 ---
-ms.assetid: fb95c8ee-a418-4520-a12a-7754ae947c3c
-title: Fsutil reparsepoint
+title: fsutil reparsepoint
+description: 再解析ポイントを照会または削除する fsutil reparsepoint コマンドのリファレンストピックです。
 ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
 author: toklima
 ms.technology: storage
-audience: IT Pro
+ms.assetid: fb95c8ee-a418-4520-a12a-7754ae947c3c
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 05c203ef610dda0443ddc845245a4072e617f7a6
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 56ca18cc4f3b4cdfd9021eb8361d980bb855bdc3
+ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82725437"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83435727"
 ---
-# <a name="fsutil-reparsepoint"></a>Fsutil reparsepoint
-> 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows 10、Windows Server 2012 R2、Windows 8.1、Windows Server 2012、Windows 8、Windows Server 2008 R2、Windows 7、windows 2008、Windows Vista
+# <a name="fsutil-reparsepoint"></a>fsutil reparsepoint
+
+> 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows 10、Windows Server 2012 R2、Windows 8.1、Windows Server 2012、Windows 8
 
 再解析ポイントを照会または削除します。  **Fsutil reparsepoint**コマンドは、通常、サポート担当者によって使用されます。
 
+再解析ポイントは、ユーザー定義のデータを含む、定義可能な属性を持つ NTFS ファイルシステムオブジェクトです。 これらの使用方法は次のとおりです。
 
+- 入出力 (i/o) サブシステムの機能を拡張します。
+
+- ディレクトリ接合ポイントおよびボリュームマウントポイントとして機能します。
+
+- 特定のファイルをファイルシステムフィルタードライバーに特別なマークを付けます。
 
 ## <a name="syntax"></a>構文
 
 ```
-fsutil reparsepoint [query] <FileName>
-fsutil reparsepoint [delete] <FileName>
+fsutil reparsepoint [query] <filename>
+fsutil reparsepoint [delete] <filename>
 ```
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター  |                                                                [説明]                                                                |
-|------------|-------------------------------------------------------------------------------------------------------------------------------------------|
-|   query    |            指定したハンドルによって識別されるファイルまたはディレクトリに関連付けられている再解析ポイントデータを取得します。             |
-|   delete   | 指定したハンドルによって識別されるファイルまたはディレクトリから再解析ポイントを削除します。ただし、ファイルまたはディレクトリは削除しません。 |
-| <FileName> |             ファイル名と拡張子を含むファイルへの完全パスを指定します (例 C:\documents\filename.txt.)。             |
+| パラメーター | 説明 |
+| --------- | ----------- |
+| query | 指定したハンドルによって識別されるファイルまたはディレクトリに関連付けられている再解析ポイントデータを取得します。 |
+| delete | 指定したハンドルによって識別されるファイルまたはディレクトリから再解析ポイントを削除します。ただし、ファイルまたはディレクトリは削除しません。 |
+| `<filename>` | ファイル名と拡張子を含むファイルへの完全パスを指定します (例*C:\documents\filename.txt*)。 |
 
-## <a name="remarks"></a>Remarks
+#### <a name="remarks"></a>解説
 
--   再解析ポイントは、ユーザー定義データを含む定義可能な属性を持つ NTFS ファイルシステムオブジェクトです。このオブジェクトは、入力/出力 (i/o) サブシステムの機能を拡張するために使用されます。
+- プログラムは、再解析ポイントを設定すると、このデータと再解析タグを格納します。このタグは、格納されているデータを一意に識別します。 ファイルシステムは、再解析ポイントを使用してファイルを開くと、関連付けられているファイルシステムフィルターの検索を試みます。 ファイルシステムフィルターが見つかった場合、フィルターは再解析データによって指示されたファイルを処理します。 ファイルシステムフィルターが見つからない場合、**ファイルオープン**操作は失敗します。
 
--   再解析ポイントは、ディレクトリの接合ポイントとボリュームマウントポイントに使用されます。 また、ファイルシステムフィルタードライバーによって、特定のファイルをそのドライバーに特別なマークを付けるためにも使用されます。
+### <a name="examples"></a>例
 
--   プログラムは、再解析ポイントを設定すると、このデータと再解析タグを格納します。このタグは、格納されているデータを一意に識別します。 ファイルシステムは、再解析ポイントを使用してファイルを開くと、関連付けられているファイルシステムフィルターの検索を試みます。 ファイルシステムフィルターが見つかった場合、フィルターは再解析データによって指示されたファイルを処理します。 ファイルシステムフィルターが見つからない場合、ファイルオープン操作は失敗します。
-
-## <a name="examples"></a><a name="BKMK_examples"></a>例
-C:\ サーバーに関連付けられている再解析ポイントデータを取得するには、次のように入力します。
+*C:\ サーバー*に関連付けられている再解析ポイントデータを取得するには、次のように入力します。
 
 ```
 fsutil reparsepoint query c:\server
@@ -60,8 +64,7 @@ fsutil reparsepoint delete c:\server
 ```
 
 ## <a name="additional-references"></a>その他のリファレンス
+
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 
-[Fsutil](Fsutil.md)
-
-
+- [fsutil](fsutil.md)

@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 134e6ce4b1fc44450047de3287b7daac67da4b6a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 4c6bcb138e8bd7308c01c2c53fba83b69362298a
+ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80837515"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83436367"
 ---
 # <a name="pnputil"></a>pnputil
 
@@ -32,22 +32,22 @@ pnputil.exe [-f | -i] [ -? | -a | -d | -e ] <INF name>
 |---------|-----------|
 |-a|識別された INF ファイルを追加することを指定します。|
 |-d|特定された INF ファイルを削除することを指定します。|
-|-e|すべてのサードパーティ製 INF ファイルを列挙するように指定します。|
+|-E|すべてのサードパーティ製 INF ファイルを列挙するように指定します。|
 |-f|特定された INF ファイルを強制的に削除するように指定します。 **– I**パラメーターと組み合わせて使用することはできません。|
 |-i|識別された INF ファイルをインストールするように指定します。 は、 **-f**パラメーターと組み合わせて使用することはできません。|
-|/?|コマンド プロンプトでヘルプを表示します。|
+|/?|コマンド プロンプトにヘルプを表示します。|
 
 
 ## <a name="examples"></a>例
 
 -   pnputil-a a:\usbcam\USBCAM.INF は、USBCAM によって指定された INF ファイルを追加します。INF
--   svcutil.exe-c:\ ドライバー\*により、すべての INF ファイルが c:\ に追加されます。
+-   svcutil.exe-c:\ ドライバー \* 。 inf によってすべての inf ファイルが追加されます。
 -   pnputil-i-a a:\usbcam\USBCAM.INF は、指定されたドライバーを追加してインストールします。
 -   pnputil – e は、すべてのサードパーティ製ドライバーを列挙します。
 -   svcutil.exe-d oem0 は、指定されたを削除します。
 -   svcutil.exe-f-d oem0 を指定すると、指定した INF ファイルが強制的に削除されます。
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

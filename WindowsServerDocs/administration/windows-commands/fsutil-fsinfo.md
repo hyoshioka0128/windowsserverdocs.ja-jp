@@ -1,52 +1,52 @@
 ---
-ms.assetid: 7787a72e-a26b-415f-b700-a32806803478
 title: Fsutil fsinfo
+description: すべてのドライブを一覧表示する、ドライブの種類を照会する、ボリューム情報を照会する、NTFS 固有のボリューム情報を照会する、ファイルシステムの統計情報を照会する、fsutil fsinfo コマンドのリファレンストピックです。
 ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
 author: toklima
 ms.technology: storage
-audience: IT Pro
+ms.assetid: 7787a72e-a26b-415f-b700-a32806803478
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: b7af3859cd16b89587a86e3436d5c832620c4e22
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 04d64bf0d7d29290cfc5e1ca88a013432322dbc1
+ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82725493"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83435827"
 ---
-# <a name="fsutil-fsinfo"></a>Fsutil fsinfo
-> 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows 10、Windows Server 2012 R2、Windows 8.1、Windows Server 2012、Windows 8、Windows Server 2008 R2、Windows 7
+# <a name="fsutil-fsinfo"></a>fsutil fsinfo
+
+> 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows 10、Windows Server 2012 R2、Windows 8.1、Windows Server 2012、Windows 8
 
 すべてのドライブの一覧表示、ドライブの種類の照会、ボリューム情報の照会、NTFS 固有のボリューム情報の照会、またはファイルシステムの統計情報の照会を行います。
-
-
 
 ## <a name="syntax"></a>構文
 
 ```
 fsutil fsinfo [drives]
-fsutil fsinfo [drivetype] <VolumePath>
-fsutil fsinfo [ntfsinfo] <RootPath>
-fsutil fsinfo [statistics] <VolumePath>
-fsutil fsinfo [volumeinfo] <RootPath>
+fsutil fsinfo [drivetype] <volumepath>
+fsutil fsinfo [ntfsinfo] <rootpath>
+fsutil fsinfo [statistics] <volumepath>
+fsutil fsinfo [volumeinfo] <rootpath>
 ```
 
 ### <a name="parameters"></a>パラメーター
 
-|パラメーター|[説明]|
-|-------------|---------------|
-|ドライブ|コンピューター内のすべてのドライブを一覧表示します。|
-|drivetype が|ドライブに対してクエリを行い、その種類を一覧表示します (例: CD-ROM ドライブ)。|
-|ntfsinfo|指定されたボリュームの NTFS 固有のボリューム情報を一覧表示、セクターの数、クラスターの総数、空きクラスター、および MFT ゾーンの開始と終了。|
-|sectorinfo|ハードウェアのセクターサイズとアラインメントに関する情報を一覧表示します。|
-|statistics|メタデータ、ログファイル、MFT の読み取りと書き込みなど、指定されたボリュームのファイルシステム統計情報を一覧表示します。|
-|volumeinfo|ファイルシステムなど、指定されたボリュームの情報を一覧表示します。ボリュームが大文字と小文字を区別するファイル名、ファイル名の unicode、ディスククォータ、または DirectAccess (DAX) ボリュームをサポートするかどうかを指定します。|
-|< "VolumePath" >|ドライブ文字を指定します (その後にコロンが続きます)。|
-|"RootPathname" を < >|ルートドライブのドライブ文字 (後ろにコロンを付ける) を指定します。|
+| パラメーター | 説明 |
+| --------- |------------ |
+| ドライブ | コンピューター内のすべてのドライブを一覧表示します。 |
+| drivetype が | ドライブに対してクエリを行い、その種類を一覧表示します (例: CD-ROM ドライブ)。 |
+| ntfsinfo | 指定されたボリュームの NTFS 固有のボリューム情報を一覧表示、セクターの数、クラスターの総数、空きクラスター、および MFT ゾーンの開始と終了。 |
+| sectorinfo | ハードウェアのセクターサイズとアラインメントに関する情報を一覧表示します。 |
+| statistics | メタデータ、ログファイル、MFT の読み取りと書き込みなど、指定されたボリュームのファイルシステム統計情報を一覧表示します。 |
+| volumeinfo | ファイルシステムなど、指定されたボリュームの情報を一覧表示します。ボリュームが大文字と小文字を区別するファイル名、ファイル名の unicode、ディスククォータ、または DirectAccess (DAX) ボリュームをサポートするかどうかを指定します。 |
+| `<volumepath>:` | ドライブ文字を指定します (その後にコロンが続きます)。 |
+| `<rootpath>:` | ルートドライブのドライブ文字 (後ろにコロンを付ける) を指定します。 |
 
-## <a name="examples"></a><a name="BKMK_examples"></a>例
+### <a name="examples"></a>例
+
 コンピューターのすべてのドライブを一覧表示するには、次のように入力します。
 
 ```
@@ -56,7 +56,7 @@ fsutil fsinfo drives
 次のような出力が表示されます。
 
 ```
-Drives: A:\ C:\ D:\ E:\       
+Drives: A:\ C:\ D:\ E:\
 ```
 
 ドライブ C のドライブの種類に対してクエリを実行するには、次のように入力します。
@@ -86,13 +86,10 @@ fsinfo volumeinfo e:\
 次のような出力が表示されます。
 
 ```
-Volume Name :Volume
+Volume Name : Volume
 Serial Number : 0xd0b634d9
 Max Component Length : 255
 File System Name : NTFS
-.
-.
-.
 Supports Named Streams
 Is DAX Volume
 ```
@@ -107,12 +104,9 @@ fsutil fsinfo ntfsinfo f:
 
 ```
 NTFS Volume Serial Number : 0xe660d46a60d442cb
-Number Sectors :            0x00000000010ea04f
-Total Clusters :            0x000000000021d409
-.
-.
-.
-Mft Zone End   :            0x0000000000004700       
+Number Sectors : 0x00000000010ea04f
+Total Clusters : 0x000000000021d409
+Mft Zone End : 0x0000000000004700
 ```
 
 ファイルシステムの基になるハードウェアでセクター情報を照会するには、次のように入力します。
@@ -125,11 +119,8 @@ fsinfo sectorinfo d:
 
 ```
 D:\>fsutil fsinfo sectorinfo d:
-LogicalBytesPerSector :                                 4096
-PhysicalBytesPerSectorForAtomicity :                    4096
-.
-.
-.
+LogicalBytesPerSector : 4096
+PhysicalBytesPerSectorForAtomicity : 4096
 Trim Not Supported
 DAX capable
 ```
@@ -143,18 +134,15 @@ fsinfo statistics e:
 次のような出力が表示されます。
 
 ```
-File System Type :     NTFS
-Version :              1
-UserFileReads :        75021
-UserFileReadBytes :    1305244512
-.
-.
-.
-LogFileWriteBytes :    180936704       
+File System Type : NTFS
+Version : 1
+UserFileReads : 75021
+UserFileReadBytes : 1305244512
+LogFileWriteBytes : 180936704
 ```
 
 ## <a name="additional-references"></a>その他のリファレンス
-- [コマンドライン構文キー](command-line-syntax-key.md)
-[Fsutil](Fsutil.md)
 
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
 
+- [fsutil](fsutil.md)

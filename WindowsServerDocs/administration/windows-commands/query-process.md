@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 81132ebf6b75115086ed7cc2ab9f73d9d06e65e4
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 9ac3e5a458d88d945e857cd1922783e5b0ff5cf0
+ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722718"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83436287"
 ---
 # <a name="query-process"></a>query process
 
@@ -30,8 +30,8 @@ ms.locfileid: "82722718"
 > query process [* | <ProcessID> | <UserName> | <SessionName> | /id:<nn> | <ProgramName>] [/server:<ServerName>]
 > ```
 > ### <a name="parameters"></a>パラメーター
-> 
-> |      パラメーター       |                                                                 [説明]                                                                  |
+>
+> |      パラメーター       |                                                                 説明                                                                  |
 > |----------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
 > |          \*          |                                                    すべてのセッションのプロセスを一覧表示します。                                                     |
 > |     <ProcessID>      |                                   クエリするプロセスを識別する数値 ID を指定します。                                   |
@@ -41,10 +41,10 @@ ms.locfileid: "82722718"
 > |    <ProgramName>     |                     クエリするプロセスのプログラムの名前を指定します。 .Exe 拡張子が必要です。                     |
 > | /server:<ServerName> | 一覧表示するプロセスを含む rd セッションホストサーバーを指定します。 指定しない場合は、現在ログオンしているサーバーが使用されます。 |
 > |          /?          |                                                     コマンド プロンプトにヘルプを表示します。                                                     |
-> 
-> ## <a name="remarks"></a>Remarks
+>
+>#### <a name="remarks"></a>解説
 > - 管理者は、すべての**クエリ処理**機能にフルアクセスできます。
-> - <UserName>、<の*セッション**名*>、 **/id:**<*nn*>、<*ProgramName*>、または**\\*** パラメーターを指定しない場合、**クエリプロセス**では、現在のユーザーに属するプロセスのみが表示されます。
+> - <*UserName*>、<の*セッション*名>、 **/id:** < *nn*>、<*ProgramName*>、または * パラメーターを指定しない場合 **\\** 、**クエリプロセス**では、現在のユーザーに属するプロセスのみが表示されます。
 > - セッションが指定されている場合は、アクティブなセッションを識別する必要があります。
 > - **クエリプロセス**では、次の情報が返されます。
 >   -   プロセスを所有しているユーザー
@@ -63,6 +63,6 @@ ms.locfileid: "82722718"
 >   query process /ID:2
 >   ```
 >   ## <a name="additional-references"></a>その他のリファレンス
->   - [コマンドライン構文キー](command-line-syntax-key.md)
->   [クエリ](query.md)
->   [リモートデスクトップサービス (ターミナルサービス) コマンドリファレンス](remote-desktop-services-terminal-services-command-reference.md)
+>   - [コマンドライン構文のキー](command-line-syntax-key.md) 
+>   [クエリ](query.md) 
+>   [リモートデスクトップサービス (ターミナルサービス) のコマンドリファレンス](remote-desktop-services-terminal-services-command-reference.md)

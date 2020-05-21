@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1319a688ea0e145857b5c36652b5fb007fcf53c8
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 8e0b6fc2563566485a15ba7168b864a8abc888f3
+ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721843"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83436727"
 ---
 # <a name="sfc"></a>sfc
 
@@ -29,7 +29,7 @@ sfc [/scannow] [/verifyonly] [/scanfile=<file>] [/verifyfile=<file>] [/offwindir
 ```
 
 #### <a name="parameters"></a>パラメーター
-|パラメーター|[説明]|
+|パラメーター|説明|
 |-------|--------|
 |/scannow|すべての保護されたシステム ファイルの整合性をスキャンし、可能であれば、問題のあるファイルを修復します。|
 |/verifyonly|すべての保護されたシステム ファイルの整合性をスキャンします。 修復操作は実行されません。|
@@ -40,7 +40,7 @@ sfc [/scannow] [/verifyonly] [/scanfile=<file>] [/verifyfile=<file>] [/offwindir
 |/offbootdir|オフラインのオフライン ブート ディレクトリの場所を指定します|
 |/?|コマンド プロンプトにヘルプを表示します。|
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>解説
 -   実行する管理者グループのメンバーとしてログオンする必要があります **sfc.exe**します。
 -   **sfc**によって保護されたファイルが上書きされたことが検出されると、 **systemroot\system32\dllcache**フォルダーから正しいバージョンのファイルが取得され、正しくないファイルが置き換えられます。
 -   Windows Server 2003、windows server 2008、および Windows Server 2008 R2 の**sfc**には、機能上の違いがあります。
@@ -57,6 +57,6 @@ sfc /verifyfile=c:\windows\system32\kernel32.dll
 sfc /scanfile=d:\windows\system32\kernel32.dll /offbootdir=d:\ /offwindir=d:\windows
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 -   - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

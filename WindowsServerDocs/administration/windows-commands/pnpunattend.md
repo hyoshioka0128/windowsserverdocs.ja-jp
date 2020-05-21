@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 569b879caf29aac6d1592d822072f35021cec9d3
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: d62edde425a00db23f150246df65166234604cef
+ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723303"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83436467"
 ---
 # <a name="pnpunattend"></a>pnpunattend
 
@@ -28,14 +28,14 @@ PnPUnattend.exe auditSystem [/help] [/?] [/h] [/s] [/L]
 
 ### <a name="parameters"></a>パラメーター
 
-|パラメーター|[説明]|
+|パラメーター|説明|
 |---------|-----------|
 |auditSystem|オンラインでのドライバーのインストールを指定します。</br>**Pnpunattend**が **/help**または **/?** のいずれかで実行されている場合を除き、必須です。 %2!d! です。|
-|/s|任意。 インストールしなくてもドライバーの検索を指定します。|
-|/L|任意。 コマンド プロンプトで、このコマンドのログ情報を指定します。|
-|/?|任意。 コマンド プロンプトで次のコマンドのヘルプを表示します。|
+|/s|省略可能。 インストールしなくてもドライバーの検索を指定します。|
+|/L|省略可能。 コマンド プロンプトで、このコマンドのログ情報を指定します。|
+|/?|省略可能。 コマンド プロンプトで次のコマンドのヘルプを表示します。|
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>解説
 
 準備が必要です。 このコマンドを使用する前に、次のタスクを完了する必要があります。
 
@@ -43,7 +43,7 @@ PnPUnattend.exe auditSystem [/help] [/?] [/h] [/s] [/L]
 2. ダウンロードして、デバイスのドライバー パッケージを抽出します。 オペレーティング システムのバージョンの INF ファイルを含むサブフォルダーおよびサブフォルダーの内容を作成したビデオ フォルダーにコピーします。 たとえば、ビデオ ドライバー ファイルを C:\Drivers\Video にコピーします。
 3. たとえば、手順 1. で作成したフォルダーにシステム環境のパス変数を追加 **C:\Drivers\Video**します。
 4. 次のレジストリ キーを作成し、 **DriverPaths** キーセットを作成する、 **値のデータ** に **1**します。
-5. Windows®7の場合は、レジストリパス**HKEY_LOCAL_Machine \software\microsoft\windows NT\CurrentVersion\\**に移動し、キー **UnattendSettings\PnPUnattend\DriverPaths\\ **を作成します。
+5. Windows®7の場合は、レジストリパス**HKEY_LOCAL_Machine \Software\microsoft\windows NT\CurrentVersion \\ **に移動し、キー **UnattendSettings\PnPUnattend\DriverPaths \\ **を作成します。
 6. Windows Vista では、レジストリ パスに移動: **HK_LM\Software\Microsoft\Windows \currentversion\\**, 、キーを作成し、= **\UnattendSettings\PnPUnattend\DriverPaths**します。
 
 ## <a name="examples"></a>例
@@ -51,9 +51,9 @@ PnPUnattend.exe auditSystem [/help] [/?] [/h] [/s] [/L]
 **PNPUnattend**を使用して、可能なドライバーの更新についてコンピューターを監査し、結果をコマンドプロンプトに報告する方法を示します。
 
 ```
-pnpunattend auditsystem /s /l 
+pnpunattend auditsystem /s /l
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

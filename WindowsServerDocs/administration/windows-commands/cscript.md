@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bfba4b6a1c75183d58664e74da22bb7f8b866739
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 24d5d46a0a994ca44230076786fbd59c00cbdc57
+ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993157"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83437057"
 ---
 # <a name="cscript"></a>cscript
 
@@ -41,18 +41,18 @@ cscript <scriptname.extension> [/b] [/d] [/e:<engine>] [{/h:cscript | /h:wscript
 | /e:`<engine>` | スクリプトの実行に使用するエンジンを指定します。 |
 | /h: cscript | スクリプトを実行するための既定のスクリプトホストとして cscript.exe を登録します。 |
 | /h: wscript | スクリプトを実行するための既定のスクリプトホストとして wscript.exe を登録します。 既定値です。 |
-| /i | アラート、スクリプトエラー、および入力プロンプトを表示する対話モードを指定します。 これは既定値であり、の`/b`逆です。 |
+| /i | アラート、スクリプトエラー、および入力プロンプトを表示する対話モードを指定します。 これは既定値であり、の逆 `/b` です。 |
 | /ジョブ (<identifier> | Wsf スクリプトファイル内の*識別子*によって識別されるジョブを実行します。 |
-| /ロゴ | スクリプトを実行する前に、Windows スクリプトホストバナーをコンソールに表示することを指定します。 これは既定値であり、の`/nologo`逆です。 |
+| /ロゴ | スクリプトを実行する前に、Windows スクリプトホストバナーをコンソールに表示することを指定します。 これは既定値であり、の逆 `/nologo` です。 |
 | /nologo | スクリプトを実行する前に、Windows スクリプトホストバナーを表示しないように指定します。 |
 | /s | 現在のユーザーの現在のコマンドプロンプトオプションを保存します。 |
 | /t: <seconds> | スクリプトを実行できる最長時間を秒単位で指定します。 最大32767秒を指定できます。 既定では、時間制限はありません。 |
 | /U | コンソールからリダイレクトされる入力と出力の Unicode を指定します。 |
 | /x | デバッガーでスクリプトを開始します。 |
 | /? | 使用可能なコマンドパラメーターを表示し、それらを使用するためのヘルプを提供します。 これは、パラメーターを指定せずに**cscript.exe**を入力し、スクリプトを使用しない場合と同じです。 |
-| scriptarguments | スクリプトに渡される引数を指定します。 各スクリプト引数の前にはスラッシュ (**/**) を付ける必要があります。 |
+| scriptarguments | スクリプトに渡される引数を指定します。 各スクリプト引数の前にはスラッシュ () を付ける必要があり **/** ます。 |
 
-#### <a name="remarks"></a>Remarks
+#### <a name="remarks"></a>解説
 
 - 各パラメーターは省略可能です。ただし、スクリプトを指定せずにスクリプトの引数を指定することはできません。 スクリプトまたはスクリプトの引数を指定しない場合、cscript.exe 構文と有効なホストオプションが cscript.exe によって表示されます。
 
@@ -62,6 +62,6 @@ cscript <scriptname.extension> [/b] [/d] [/e:<engine>] [{/h:cscript | /h:wscript
 
 - 拡張子が関連付けられていないスクリプトファイルをダブルクリックすると、[**ファイルを開くアプリケーション**の選択] ダイアログボックスが表示されます。 [Wscript] または [cscript] を選択し、[この**ファイルの種類を開くには常にこのプログラムを使用する**] を選択します。 これにより、このファイルの種類のファイルの既定のスクリプトホストとして wscript.exe または cscript が登録されます。
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

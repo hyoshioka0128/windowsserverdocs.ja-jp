@@ -9,16 +9,16 @@ author: justinha
 ms.author: justinha
 manager: brianlic
 ms.date: 05/16/2018
-ms.openlocfilehash: 5478a97a6b333cfc92de100440d53a769a8c0fd9
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 105225736d6b883e8451aa599af1937068ebe43d
+ms.sourcegitcommit: f22e4d67dd2a153816acf8355e50319dbffc5acf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80855192"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "83546566"
 ---
 # <a name="overview-of-tls---ssl-schannel-ssp"></a>TLS SSL (Schannel SSP) の概要
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows 10
+>適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows 10
 
 IT 担当者向けのこのトピックでは、Schannel セキュリティサポートプロバイダー (SSP) の機能の変更点について説明します。これには、Windows Server 2012 R2、Windows Server 2012、Windows 8.1、および Windows 8 のトランスポート層セキュリティ (TLS)、Secure Sockets Layer (SSL)、データグラムトランスポート層セキュリティ (DTLS) の各認証プロトコルが含まれます。
 
@@ -33,7 +33,7 @@ Microsoft による Schannel SSP での TLS と SSL の実装の詳細につい�
 ### <a name="tls-session-resumption"></a>TLS セッションの再開
 Schannel セキュリティ サポート プロバイダーのコンポーネントであるトランスポート層セキュリティ (TLS) プロトコルは、信頼されていないネットワーク上のアプリケーション間で送信されるデータを保護するために使用します。 TLS/SSL を使うと、サーバーとクライアント コンピューターを認証できるほか、認証された当事者間のメッセージを暗号化できます。
 
-TLS をサーバーに接続するデバイスは、セッションの有効期限のために頻繁に再接続する必要があります。 Windows 8.1 と Windows Server 2012 R2 では、RFC 5077 (サーバー側の状態を使用しない TLS セッションの再開) がサポートされるようになりました。 この変更により、Windows Phone と Windows RT デバイスが次のように提供されます。
+TLS をサーバーに接続するデバイスは、セッションの有効期限のために頻繁に再接続する必要があります。 Windows 8.1 と Windows Server 2012 R2 では、RFC 5077 (サーバー側の状態を使用しない TLS セッションの再開) がサポートされるようになりました。 この変更に伴い、Windows Phone および Windows RT デバイスに次のような効果がもたらされました。
 
 -   サーバー上のリソース使用量の削減
 
@@ -42,20 +42,20 @@ TLS をサーバーに接続するデバイスは、セッションの有効期�
 -   接続の再開のための TLS ハンドシェイクに費やされる時間の短縮
 
 > [!NOTE]
-> Windows 8 では、RFC 5077 のクライアント側の実装が追加されました。
+> RFC 5077 のクライアント側の実装は、Windows 8 で追加されました。
 
-ステートレスな TLS セッションの再開の詳細については、IETF のドキュメント「 [RFC 5077](http://www.ietf.org/rfc/rfc5077) 」を参照してください。
+ステートレスな TLS セッションの再開の詳細については、IETF のドキュメントの [RFC 5077](http://www.ietf.org/rfc/rfc5077) を参照してください。
 
 ### <a name="application-protocol-negotiation"></a>アプリケーション プロトコルのネゴシエーション
  Windows Server 2012 R2 および Windows 8.1 では、クライアント側の TLS アプリケーションプロトコルネゴシエーションがサポートされるため、アプリケーションは HTTP 2.0 標準開発の一部としてプロトコルを利用でき、ユーザーは、SPDY プロトコルを実行するアプリを使用して Google や Twitter などのオンラインサービスにアクセスできます。
 
-**しくみ**
+**動作のしくみ**
 
 クライアント アプリケーションおよびサーバー アプリケーションは、優先順位の降順に指定されたサポートされているアプリケーション プロトコル ID の一覧を送信することで、アプリケーション プロトコルのネゴシエーション拡張を有効にします。 TLS クライアントは、ClientHello メッセージにアプリケーション レイヤー プロトコル ネゴシエーション (ALPN) 拡張と共にクライアントでサポートされるプロトコルの一覧を含めることによって、アプリケーション プロトコルのネゴシエーションをサポートしていることを示します。
 
 TLS クライアントが要求をサーバーに送信すると、TLS サーバーは、サポートされているプロトコルの一覧を読み取り、クライアント側でもサポートされるアプリケーション プロトコルのうち最も優先されるアプリケーション プロトコルを判定します。 該当するプロトコルが見つかると、サーバーは、選択したプロトコルの ID を含む応答を返し、通常どおりにハンドシェイクを続行します。 共通のアプリケーション プロトコルがない場合、サーバーは、致命的なハンドシェイク エラー警告を送信します。
 
-### <a name="management-of-trusted-issuers-for-client-authentication"></a><a name="BKMK_TrustedIssuers"></a>クライアント認証用の信頼された発行者の管理
+### <a name="management-of-trusted-issuers-for-client-authentication"></a><a name="BKMK_TrustedIssuers"></a>クライアント認証のための信頼された発行者の管理
 SSL または TLS を使用したクライアント コンピューターの認証が必要な場合は、信頼された証明書の発行者の一覧を送信するようにサーバーを構成できます。 この一覧には、サーバーが信頼する証明書の発行者のセットが含まれます。これが、複数の証明書が存在する場合にクライアント コンピューターがどのクライアント証明書を選択するかについてのヒントとなります。 さらに、構成されている信頼された発行者の一覧に対して、クライアント コンピューターがサーバーに送信する証明書チェーンを検証する必要があります。
 
 Windows Server 2012 および Windows 8 より前の場合、Schannel SSP (http.sys および IIS を含む) を使用するアプリケーションまたはプロセスは、証明書信頼リスト (CTL) を使用してクライアント認証をサポートしている信頼された発行者の一覧を提供できます。
@@ -67,6 +67,10 @@ Windows Server 2012 および Windows 8 では、次のように、基になる�
 -   既定では、信頼された発行者の一覧を送信する動作はオフになっています。 SendTrustedIssuerList レジストリキーの既定値は、1ではなく 0 (既定ではオフ) になっています。
 
 -   以前のバージョンの Windows オペレーティング システムとの互換性は維持されます。
+
+> [!NOTE]
+> クライアントアプリケーションによってシステムマッパーが有効になっていて、構成が完了している場合 `SendTrustedIssuers` 、そのシステムマッパーは `CN=NT Authority` 発行者の一覧に追加されます。
+
 
 **これによってどのような値が追加されるのでしょうか。**
 
@@ -90,11 +94,11 @@ Windows Server 2012 では、信頼された発行者の一覧は証明書スト
 
 既定では、Windows Server 2012 の Schannel SSP アーキテクチャは、上記のようにストアを使用して、信頼された発行者の一覧を管理します。 従来と同様、Certutil などのコマンド ライン ツールだけでなく、PowerShell プロバイダーの既存の証明書管理コマンドレットを使用して、証明書を管理することができます。
 
-PowerShell プロバイダーを使用した証明書の管理の詳細については、「 [Windows の AD CS 管理コマンドレット](https://technet.microsoft.com/library/hh848365(v=wps.620).aspx)」を参照してください。
+PowerShell プロバイダーを使用して証明書を管理する方法の詳細については、[Windows での AD CS 管理コマンドレット](https://technet.microsoft.com/library/hh848365(v=wps.620).aspx)に関するページを参照してください。
 
-証明書ユーティリティを使用した証明書の管理の詳細については、「 [certutil](https://technet.microsoft.com/library/cc732443.aspx)」を参照してください。
+証明書ユーティリティを使用して証明書を管理する方法の詳細については、[certutil.exe](https://technet.microsoft.com/library/cc732443.aspx) に関するページを参照してください。
 
-Schannel の資格情報に対して定義されているアプリケーション定義ストアなどのデータの詳細については、「 [SCHANNEL_CRED 構造 (Windows)](https://msdn.microsoft.com/library/windows/desktop/aa379810(v=vs.85).aspx)」を参照してください。
+Schannel の資格情報について定義されるデータ (アプリケーションによって定義されるストアを含む) の詳細については、[SCHANNEL_CRED 構造 (Windows)](https://msdn.microsoft.com/library/windows/desktop/aa379810(v=vs.85).aspx) に関するページを参照してください。
 
 **信頼モードの既定値**
 
@@ -106,7 +110,7 @@ Schannel プロバイダーでは、3 種類のクライアント認証信頼モ
 |1|排他的ルート信頼|呼び出し元によって指定された信頼された発行者ストアに含まれているルート証明書にクライアント証明書をチェーンする必要があります。 さらに、信頼された発行者の一覧内の発行者から証明書を発行する必要があります。|
 |2|排他的 CA 信頼|中間 CA 発行者または呼び出し元によって指定された信頼された発行者ストアに含まれているルート証明書にクライアント証明書をチェーンする必要があります。|
 
-信頼された発行者の構成の問題による認証エラーの詳細については、サポート技術情報の記事[280256](https://support.microsoft.com/kb/2802568)を参照してください。
+信頼された発行者の構成の問題によって発生する認証エラーの詳細については、サポート技術情報の記事 [280256](https://support.microsoft.com/kb/2802568) を参照してください。
 
 ### <a name="tls-support-for-server-name-indicator-sni-extensions"></a><a name="BKMK_SNI"></a>サーバー名インジケーター (SNI) 拡張の TLS サポート
 Server Name Indication は SSL プロトコルと TLS プロトコルを拡張する機能で、1 台のサーバーでいくつもの仮想イメージを実行している場合にサーバーを適切に認識できるようにします。 クライアント コンピューターとサーバーの間で通信のセキュリティを確保するために、クライアント コンピューターはサーバーにデジタル証明書を要求します。 その要求に応答してサーバーから証明書が送付されると、クライアント コンピューターはその証明書を確認し、通信の暗号化に使用します。その後は通常の要求と応答のやり取りとなります。 ところが、仮想ホスティングでは、証明書がそれぞれ異なる何種類ものドメインが 1 台のサーバーでホストされていることがあります。 このような場合、クライアント コンピューターに送信する証明書をサーバーで事前に認識することができません。 SNI を利用することで、クライアント コンピューターが対象となるドメインをプロトコル内で事前に通知できるため、サーバーが証明書を正しく選択できるようになります。
@@ -123,28 +127,27 @@ Server Name Indication は SSL プロトコルと TLS プロトコルを拡張�
 
 -   クライアント認証プロセスで正しい証明書を選択する際にコンピューター インターフェイス上でエンド ユーザーにヒントを出すことができます。
 
-**しくみ**
+**動作のしくみ**
 
 Schannel SSP は、クライアントに許可した接続状態に関するメモリ内キャッシュを保持します。 これによって、クライアント コンピューターは次にサイトを訪問したときに SSL ハンドシェイク処理を開始することなく、SSL サーバーにすばやく再接続できます。  このように証明書管理を効率的に使用することで、以前のバージョンのオペレーティングシステムと比較して、1つの Windows Server 2012 でより多くのサイトをホストできるようになります。
 
 証明書の発行者名の候補一覧を作成し、エンド ユーザーに証明書を選択する際のヒントを提供できるため、エンド ユーザーが証明書を選択するうえで利便性が向上しています。 この一覧は、グループ ポリシーを使って構成できます。
 
-### <a name="datagram-transport-layer-security-dtls"></a><a name="BKMK_DTLS"></a>データグラムトランスポート層セキュリティ (DTLS)
+### <a name="datagram-transport-layer-security-dtls"></a><a name="BKMK_DTLS"></a>データグラム トランスポート層セキュリティ (DTLS)
 Schannel セキュリティ サポート プロバイダーに DTLS バージョン 1.0 プロトコルが追加されています。 DTLS プロトコルは、データグラム プロトコルの通信プライバシーを保護するものです。 クライアントとサーバーのアプリケーションはこのプロトコルにより、盗聴、改ざん、メッセージ偽造などを防ぐように設計された方法で通信できます。 DTLS プロトコルは、トランスポート層セキュリティ (TLS) プロトコルを基にしたものであり、TLS と同等のセキュリティ保証を提供します。これにより、IPsec を使う必要性が低下すると共に、アプリケーション層のセキュリティ プロトコルのカスタム設計が可能になります。
 
 **これによってどのような値が追加されるのでしょうか。**
 
 データグラムは、ゲームやセキュリティで保護されたビデオ会議などのストリーミングメディアに共通です。 Schannel プロバイダーに DTLS プロトコルを追加したことにより、クライアント コンピューターとサーバー間の通信セキュリティの確保に従来の Windows SSPI モデルを使うことができます。 DTLS は、セキュリティ技術を新たに開発する必要を最小限に抑えると共に、コードとインフラストラクチャをできるだけ再利用する目的から、可能な限り TLS に似せて設計してあります。
 
-**しくみ**
+**動作のしくみ**
 
 DTLS over UDP を使用するアプリケーションでは、Windows Server 2012 および Windows 8 で SSPI モデルを使用できます。 一部の暗号については、TLS の構成とほぼ同じやり方で構成に利用できます。 Schannel では引き続き、FIPS 140 認定を用いた CNG 暗号化プロバイダーを使います。この暗号化プロバイダーは、Windows Vista ではじめて導入されたものです。
 
 ### <a name="deprecated-functionality"></a><a name="BKMK_Deprecated"></a>非推奨の機能
 Windows Server 2012 および Windows 8 の Schannel SSP では、非推奨の機能はありません。
 
-## <a name="see-also"></a>参照
--   [プライベートクラウドのセキュリティモデル-ラッパー機能](https://social.technet.microsoft.com/wiki/contents/articles/6756.private-cloud-security-model-wrapper-functionality.aspx)
-
+## <a name="see-also"></a>関連項目
+-   [プライベート クラウド セキュリティ モデル: ラッパー機能](https://social.technet.microsoft.com/wiki/contents/articles/6756.private-cloud-security-model-wrapper-functionality.aspx)
 
 

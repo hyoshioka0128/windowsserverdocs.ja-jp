@@ -1,6 +1,6 @@
 ---
 title: eventquery
-description: '* * * * のリファレンストピック'
+description: Eventquery コマンドのリファレンストピックです。このコマンドは非推奨とされており、Windows の将来のリリースでサポートされるとは限りません。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,13 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3f0e4294354470dcfb3a33191cc36edfa556bb02
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 5031d18311c177c7f745bc771c212727ce700ee3
+ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82992387"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83436867"
 ---
 # <a name="eventquery"></a>eventquery
 
-> 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
-
-eventquery は非推奨とされており、Windows の将来のリリースでサポートされるとは限りません。
-このツールは Windows Server 2003 に含まれています。 詳細については、「 [eventquery](https://technet.microsoft.com/library/cc772995(v=ws.10).aspx)」を参照してください。
+Eventquery コマンドは非推奨とされており、Windows の将来のリリースでサポートされるとは限りません。
