@@ -74,7 +74,7 @@ WebAPIOBO | ユーザーが ToDoItem を追加したときに必要な操作を�
 
 このサンプルは、Vittorio によって作成された Azure に対する既存の OBO サンプルに基づいており、[ここ](https://github.com/Azure-Samples/active-directory-dotnet-webapi-onbehalfof)で入手できます。 指示に従って、開発用コンピューター上のプロジェクトを複製し、サンプルのコピーを作成して作業を開始します。
 
-## <a name="clone-or-download-this-repository"></a>このリポジトリを複製またはダウンロードする
+## <a name="clone-or-download-this-repository"></a>このリポジトリをクローンまたはダウンロードする
 
 シェルまたはコマンドラインから:
 
