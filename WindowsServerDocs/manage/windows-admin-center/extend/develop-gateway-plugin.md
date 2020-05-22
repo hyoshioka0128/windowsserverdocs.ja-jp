@@ -44,11 +44,11 @@ REST など、PowerShell または WMI 以外のプロトコルと通信する�
 
 ### <a name="download-sample-from-github"></a>GitHub からサンプルをダウンロードする
 
-カスタムゲートウェイプラグインを使用してすぐに開始するには、Windows 管理センター SDK [GitHub サイト](https://aka.ms/wacsdk)から[ C#サンプルプラグインプロジェクト](https://github.com/Microsoft/windows-admin-center-sdk/tree/master/GatewayPluginExample/Plugin)の複製またはダウンロードを行うことができます。
+カスタムゲートウェイプラグインを使用してすぐに開始するには、Windows 管理センター SDK [GitHub サイト](https://aka.ms/wacsdk)から[ C#サンプルプラグインプロジェクト](https://github.com/Microsoft/windows-admin-center-sdk/tree/master/GatewayPluginExample/Plugin)のクローンまたはダウンロードを行うことができます。
 
 ### <a name="add-content"></a>コンテンツを追加する
 
-[ C#サンプルプラグインプロジェクト](https://github.com/Microsoft/windows-admin-center-sdk/tree/master/GatewayPluginExample/Plugin)プロジェクト (または独自のプロジェクト) の複製したコピーに新しいコンテンツを追加してカスタム api を含め、次の手順で使用するカスタムゲートウェイプラグイン DLL ファイルを作成します。
+[ C#サンプルプラグインプロジェクト](https://github.com/Microsoft/windows-admin-center-sdk/tree/master/GatewayPluginExample/Plugin)プロジェクト (または独自のプロジェクト) のクローンしたコピーに新しいコンテンツを追加してカスタム api を含め、次の手順で使用するカスタムゲートウェイプラグイン DLL ファイルを作成します。
 
 ### <a name="deploy-plugin-for-testing"></a>テスト用のプラグインの配置
 
