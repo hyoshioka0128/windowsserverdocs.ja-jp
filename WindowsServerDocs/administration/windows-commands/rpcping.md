@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cd23d15560c7ae1e4e199aa79c3abbe8772ea61b
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 1edd4628f8f5b4b88c44e689ac9c1f7277cafad9
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436757"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820082"
 ---
 # <a name="rpcping"></a>rpcping
 
@@ -79,4 +79,4 @@ rpcping /t ncacn_http /s exchange_server /o RpcProxy=front_end_proxy /P username
 ```
 
 ## <a name="additional-references"></a>その他のリファレンス
--   - [コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

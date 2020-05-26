@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3133688ac0d60d97d80192611c9b561c53a74c35
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 6e6d2be62468102060aad502d47efbb6eae4fca8
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82725846"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83821362"
 ---
 # <a name="wbadmin-stop-job"></a>wbadmin 停止ジョブ
 
@@ -33,11 +33,11 @@ wbadmin stop job
 
 ### <a name="parameters"></a>パラメーター
 
-|パラメーター|[説明]|
+|パラメーター|説明|
 |---------|-----------|
 |-quiet|ユーザーにプロンプトを表示せずにサブコマンドを実行します。|
 
 ## <a name="additional-references"></a>その他のリファレンス
 
--   - [コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
 -   [Wbadmin](wbadmin.md)

@@ -1,6 +1,6 @@
 ---
-title: Net の印刷
-description: '* * * * のリファレンストピック'
+title: net print
+description: Net print コマンドのリファレンストピック。指定されたプリンターキューまたは印刷ジョブに関する情報を表示します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,21 +9,23 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1f2febdb79f4d0429cfb1cd423188ed9fafc198c
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 44b781cb0c3b9fb7def5ee72bcc1242ac83ba4b2
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437257"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820882"
 ---
-# <a name="net-print"></a>Net の印刷
+# <a name="net-print"></a>net print
 
 > 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 指定された印刷キュー、または指定した印刷ジョブに関する情報を表示または指定した印刷ジョブを制御します。
+
 > [!NOTE]
 > このコマンドは、Windows 7 および Windows Server 2008 R2 で非推奨とされました。 ただし、prnjobs.vbs、Windows Management Instrumentation (WMI)、または Windows PowerShell コマンドレットを使用して、同じタスクの多くを実行することができます。 詳細については、「 [prnjobs.vbs](prnjobs.md)、 [Windows Management Instrumentation](https://go.microsoft.com/fwlink/?LinkID=29991) (、 https://go.microsoft.com/fwlink/?LinkID=29991) [Windows PowerShell](https://go.microsoft.com/fwlink/?LinkID=128426) ()」、 https://go.microsoft.com/fwlink/?LinkID=128426) および[TechNet スクリプトセンターギャラリー](https://go.microsoft.com/fwlink/?LinkId=164635) (を参照してください https://go.microsoft.com/fwlink/?LinkId=164635) 。
-> ## <a name="syntax"></a>構文
+
+## <a name="syntax"></a>構文
 > ```
 > Net print {\\<computerName>\<Sharename> |
 > \\<computerName> <JobNumber> [/hold | /release | /delete]} [help]
@@ -38,7 +40,7 @@ ms.locfileid: "83437257"
 > | [/保留と #124;/release & #124;/delete] | 印刷ジョブで実行するアクションを指定します。<p>- **保持/** パラメーターが他の印刷ジョブが解放されるまでにバイパスを許可するジョブを遅延します。<br />- **リリース/** パラメーターは、実行が遅れている印刷ジョブを解放します。<br />- **/Delete** パラメーターは、印刷キューから印刷ジョブを削除します。<p>ジョブ番号を指定しても、何も指定しない場合は、印刷ジョブに関する情報が表示されます。 |
 > |                  help                  |                                                                                                                                                                                                     ヘルプを表示、 **Net print** コマンドです。                                                                                                                                                                                                     |
 >
->#### <a name="remarks"></a>解説
+>#### <a name="remarks"></a>注釈
 > - **Net** \\ \\ print <computerName>共有プリンターキューにある印刷ジョブに関する情報を表示します。 共有プリンターがレーザーをという名前のキュー内のすべての印刷ジョブのレポートの例を次に示します。
 >   ```
 >   printers at \\PRODUCTION

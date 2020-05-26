@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7d4214b9105e04f355bd6e09aeb7bc671ae6007d
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 45511ee5028779358c77e18c4e1c193dcd86fdfe
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721973"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83821062"
 ---
 # <a name="serverceipoptin"></a>serverceipoptin
 
@@ -26,7 +26,7 @@ ms.locfileid: "82721973"
 serverceipoptin [/query] [/enable] [/disable]
 ```
 #### <a name="parameters"></a>パラメーター
-|パラメーター|[説明]|
+|パラメーター|説明|
 |-------|--------|
 |/query|現在の設定を検証します。|
 |/enable|参加を有効にします。|
@@ -46,5 +46,5 @@ serverceipoptin /enable
 serverceipoptin /disable
 ```
 ## <a name="additional-references"></a>その他のリファレンス
--   - [コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
 

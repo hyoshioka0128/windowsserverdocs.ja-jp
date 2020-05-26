@@ -1,6 +1,6 @@
 ---
-title: 'ksetup: addenctypeattr'
-description: '* * * * のリファレンストピック'
+title: ksetup addenctypeattr
+description: Ksetup addenctypeattr コマンドのリファレンストピックでは、暗号化の種類の属性をドメインの使用可能な種類の一覧に追加します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,70 +9,78 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 26441f739979cde31715e5fb06b5f3ab59845d97
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: b7162e35c88cea0cfa2828e12cc4af59eaed66c9
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724751"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83818152"
 ---
-# <a name="ksetupaddenctypeattr"></a>ksetup: addenctypeattr
+# <a name="ksetup-addenctypeattr"></a>ksetup addenctypeattr
 
-
-
-ドメインの使用可能な種類の一覧に暗号化の種類の属性を追加します。
+ドメインの使用可能な種類の一覧に暗号化の種類の属性を追加します。 正常に完了したか、完了しなかったときに、ステータスメッセージが表示されます。
 
 ## <a name="syntax"></a>構文
 
 ```
-ksetup /addenctypeattr <DomainName> {DES-CBC-CRC | DES-CBC-MD5 | RC4-HMAC-MD5 | AES128-CTS-HMAC-SHA1-96 | AES256-CTS-HMAC-SHA1-96}
+ksetup /addenctypeattr <domainname> {DES-CBC-CRC | DES-CBC-MD5 | RC4-HMAC-MD5 | AES128-CTS-HMAC-SHA1-96 | AES256-CTS-HMAC-SHA1-96}
 ```
 
-#### <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
-|パラメーター|[説明]|
-|---------|-----------|
-|\<DomainName>|接続を確立するドメインの名前。 完全修飾ドメイン名、または名前の単純な形式 (corp.contoso.com や contoso など) を使用します。|
-|暗号化の種類|は、次のサポートされている暗号化の種類のいずれかである必要があります。</br>-DES-CBC-CRC</br>-DES-CBC-MD5</br>-RC4-HMAC-MD5</br>-AES128-96-96</br>-AES256-96-96|
+| パラメーター | 説明 |
+| --------- | ----------- |
+| `<domainname>` | 接続を確立するドメインの名前。 完全修飾ドメイン名、または名前の単純な形式 (corp.contoso.com や contoso など) を使用します。 |
+| 暗号化の種類 | は、次のサポートされている暗号化の種類のいずれかである必要があります。<ul><li>DES-CBC-CRC</li><li>DES-CBC-MD5</li><li>RC4-HMAC-MD5</li><li>AES128---SHA1-96</li><li>AES256---SHA1-96</li></ul> |
 
-## <a name="remarks"></a>Remarks
+#### <a name="remarks"></a>注釈
 
-Kerberos チケット保証チケット (TGT) とセッションキーの暗号化の種類を表示するには、 **klist**コマンドを実行し、出力を表示します。
+- コマンド内の暗号化の種類をスペースで区切って、複数の暗号化の種類を設定または追加できます。 ただし、一度に1つのドメインに対してのみ実行できます。
 
-コマンド内の暗号化の種類をスペースで区切って、複数の暗号化の種類を設定または追加できます。 ただし、一度に1つのドメインに対してのみ実行できます。
+### <a name="examples"></a>例
 
-コマンドが成功するか失敗すると、ステータスメッセージが表示されます。
+Kerberos チケット保証チケット (TGT) とセッションキーの暗号化の種類を表示するには、次のように入力します。
 
-接続先として使用するドメインを設定するには、 **ksetup/Domain \<DomainName>** コマンドを実行します。
-
-## <a name="examples"></a>例
-
-このコンピューターに設定されている現在の暗号化の種類を確認します。
 ```
 klist
 ```
-ドメインを corp.contoso.com に設定します。
+
+ドメインを corp.contoso.com に設定するには、次のように入力します。
+
 ```
 ksetup /domain corp.contoso.com
 ```
-次のように、暗号化の種類として AES-256-CTS-corp.contoso.com-96 を追加します。
+
+暗号化の種類として*AES-256-* *corp.contoso.com*-96-96 を追加するには、次のように入力します。
+
 ```
 ksetup /addenctypeattr corp.contoso.com AES-256-CTS-HMAC-SHA1-96
 ```
-次のように、暗号化の種類の属性を、ドメイン corp.contoso.com の AES-256 に設定します。
+
+暗号化の種類の属性を*AES-256-corp.contoso.com-96-96*に設定するには、 *corp.contoso.com*次のように入力します。
+
 ```
 ksetup /setenctypeattr corp.contoso.com AES-256-CTS-HMAC-SHA1-96
 ```
-暗号化の種類の属性がドメイン用に設定されていることを確認します。
+
+暗号化の種類の属性がドメインに適したものとして設定されていることを確認するには、次のように入力します。
+
 ```
 ksetup /getenctypeattr corp.contoso.com
 ```
 
 ## <a name="additional-references"></a>その他のリファレンス
 
--   [Klist](klist.md)
--   [Ksetup:domain](ksetup-domain.md)
--   [Ksetup:setenctypeattr](ksetup-setenctypeattr.md)
--   [Ksetup:getenctypeattr](ksetup-getenctypeattr.md)
--   [Ksetup:delenctypeattr](ksetup-delenctypeattr.md)
--   - [コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [klist コマンド](klist.md)
+
+- [ksetup コマンド](ksetup.md)
+
+- [ksetup domain コマンド](ksetup-domain.md)
+
+- [ksetup setenctypeattr コマンド](ksetup-setenctypeattr.md)
+
+- [ksetup getenctypeattr コマンド](ksetup-getenctypeattr.md)
+
+- [ksetup delenctypeattr コマンド](ksetup-delenctypeattr.md)

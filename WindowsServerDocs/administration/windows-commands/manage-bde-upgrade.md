@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ce7d1805a98a3029ce9b83a1b475ecd8bdb0a4ab
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 34fc591e4b6903e67873cbce39e1f1080955d6c1
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724057"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820758"
 ---
 # <a name="manage-bde-upgrade"></a>manage-bde: upgrade
 
@@ -30,7 +30,7 @@ manage-bde -upgrade [<Drive>] [-computername <Name>] [{-?|/?}] [{-help|-h}]
 
 #### <a name="parameters"></a>パラメーター
 
-|パラメーター|[説明]|
+|パラメーター|説明|
 |---------|-----------|
 |\<ドライブ>|コロンの後にドライブ文字を表します。|
 |-computername|別のコンピューターに BitLocker による保護を変更する、bde.exe を使用することを指定します。 また、このコマンドの省略版として **-cn**を使用することもできます。|
@@ -47,6 +47,6 @@ manage-bde –upgrade C:
 
 ## <a name="additional-references"></a>その他のリファレンス
 
--   - [コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
 -   [Manage-bde](manage-bde.md)
 -   [Windows Vista から Windows 7 への BitLocker で保護されたコンピューターのアップグレード](https://technet.microsoft.com/library/ee424325(v=ws.10).aspx)

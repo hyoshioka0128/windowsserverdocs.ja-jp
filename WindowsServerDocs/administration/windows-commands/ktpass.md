@@ -1,6 +1,6 @@
 ---
 title: ktpass
-description: '* * * * のリファレンストピック'
+description: Ktpass コマンドのリファレンストピックでは、AD DS でホストまたはサービスのサーバープリンシパル名を構成し、サービスの共有シークレットキーを含む... キーを生成します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,81 +9,91 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 09f0a715c8addf8694eb75d17f9b8089cad72e56
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 432918343ccee70f0c30d294a349fb721f18f705
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724532"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83817232"
 ---
 # <a name="ktpass"></a>ktpass
 
 > 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-Active directory ドメインサービス (AD DS) のホストまたはサービスのサーバープリンシパル名を構成し、サービスの共有シークレットキーを含む、キーの付いたファイルを生成します。 .keytab ファイルは、Kerberos 認証プロトコルのマサチューセッツ工科大学 (MIT) による実装に基づいています。 Ktpass コマンドラインツールを使用すると、kerberos 認証をサポートする非 Windows サービスで、Kerberos キー配布センター (KDC) サービスによって提供される相互運用性機能を使用できます。 このトピックは、トピックの冒頭にある「**適用対象**」の一覧に指定されているオペレーティングシステムのバージョンに適用されます。  
+Active Directory Domain Services (AD DS) でホストまたはサービスのサーバープリンシパル名を構成し、サービスの共有シークレットキーを含む、キーファイルを生成します。 .keytab ファイルは、Kerberos 認証プロトコルのマサチューセッツ工科大学 (MIT) による実装に基づいています。 Ktpass コマンドラインツールを使用すると、kerberos 認証をサポートする非 Windows サービスで、Kerberos キー配布センター (KDC) サービスによって提供される相互運用性機能を使用できます。
 
-## <a name="syntax"></a>構文  
-```  
-ktpass  
-[/out <FileName>]   
-[/princ <PrincipalName>]   
-[/mapuser <UserAccount>]   
-[/mapop {add|set}] [{-|+}desonly] [/in <FileName>]  
-[/pass {Password|*|{-|+}rndpass}]  
-[/minpass]  
-[/maxpass]  
-[/crypto {DES-CBC-CRC|DES-CBC-MD5|RC4-HMAC-NT|AES256-SHA1|AES128-SHA1|All}]  
-[/itercount]  
-[/ptype {KRB5_NT_PRINCIPAL|KRB5_NT_SRV_INST|KRB5_NT_SRV_HST}]  
-[/kvno <KeyversionNum>]  
-[/answer {-|+}]  
-[/target]  
-[/rawsalt] [{-|+}dumpsalt] [{-|+}setupn] [{-|+}setpass <Password>]  [/?|/h|/help]  
-```  
-### <a name="parameters"></a>パラメーター  
+## <a name="syntax"></a>構文
 
-|                                             パラメーター                                              |                                                                                                                                                                                                                                                                                                      [説明]                                                                                                                                                                                                                                                                                                       |
-|----------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|                                          /out<FileName>                                           |                                                                                                                                                                        生成する Kerberos version 5. キータブファイルの名前を指定します。 **注:** これは、Windows オペレーティングシステムを実行していないコンピューターに転送し、既存の.......... を使用して、/Etc/Krb5.keytab.                                                                                                                                                                        |
-|                                       /princ<PrincipalName>                                       |                                                                                                                                                                                                                   の形式host/computer.contoso.com@CONTOSO.COMでプリンシパル名を指定します。 **警告:** このパラメーターは大文字と小文字が区別されます。 詳細については、「[解説](#BKMK_remarks)」を参照してください。                                                                                                                                                                                                                    |
-|                                       /mapuser<UserAccount>                                       |                                                                                                                                                                                                                                                **Princ**パラメーターによって指定された Kerberos プリンシパルの名前を、指定されたドメインアカウントにマップします。                                                                                                                                                                                                                                                |
-|                                       /mapop {add&#124;set}                                        |                                                                                                                                                                             マッピング属性を設定する方法を指定します。<p>-   [**追加**する指定されたローカルユーザー名の値を追加します。 既定値です。<br />-   **Set**は、指定されたローカルユーザー名に対して、Data Encryption STANDARD (DES) のみの暗号化の値を設定します。                                                                                                                                                                             |
-|                                         {-&#124;+} desonly                                          |                                                                                                                                                            既定では、DES のみの暗号化が設定されます。<p>-   **+** DES のみの暗号化のアカウントを設定します。<br />-   **-** アカウントの制限を、DES のみの暗号化に対して解放します。 **重要:** Windows 7 と windows Server 2008 R2 以降では、Windows では既定で DES がサポートされていません。                                                                                                                                                            |
-|                                           /in<FileName>                                           |                                                                                                                                                                                                                                                       Windows オペレーティングシステムを実行していないホストコンピューターから読み取るための、キーのキーファイルを指定します。                                                                                                                                                                                                                                                        |
-|                          /pass {パスワード&#124;\*&#124; {-&#124;+} rndpass}                           |                                                                                                                                                                                                                                           **Princ**パラメーターで指定したプリンシパルユーザー名のパスワードを指定します。 パスワード\*の入力を求めるには、を使用します。                                                                                                                                                                                                                                            |
-|                                              /minpass                                              |                                                                                                                                                                                                                                                                            ランダムパスワードの長さの最小値を15文字に設定します。                                                                                                                                                                                                                                                                            |
-|                                              /maxpass                                              |                                                                                                                                                                                                                                                                           ランダムなパスワードの最大長を256文字に設定します。                                                                                                                                                                                                                                                                            |
-| /crypto {DES-CBC-CRC&#124;DES-CBC-MD5&#124;RC4-HMAC-NT&#124;AES256-SHA1&#124;AES128-SHA1&#124;All} | キータブファイルに生成されるキーを指定します。<p>-   **DES-CBC-CRC**は互換性のために使用されます。<br />-   **DES-CBC-MD5**は、MIT 実装により厳密に準拠し、互換性のために使用されます。<br />-   **RC4-HMAC-NT**は、128ビットの暗号化を採用しています。<br />-   **AES256-sha1**は AES256 暗号化を採用しています。<br />-   **AES128-sha1**は AES128 暗号化を採用しています。<br />-   **すべて**のサポートされている暗号化の種類を使用できます。 **注:** 既定の設定は、旧バージョンの MIT に基づいています。 したがって`/crypto` 、は常に指定する必要があります。 |
-|                                             /自動カウント                                             |                                                                                                                                                                                                                        AES 暗号化に使用されるイテレーションの数を指定します。 既定では、非 AES 暗号化の場合は、4096に**設定され**ています。                                                                                                                                                                                                                         |
-|               /ptype {KRB5_NT_PRINCIPAL&#124;KRB5_NT_SRV_INST&#124;KRB5_NT_SRV_HST}                |                                                                                                                                                                                         プリンシパルの種類を指定します。<p>-   **KRB5_NT_PRINCIPAL**は、一般的なプリンシパルの種類です (推奨)。<br />-   **KRB5_NT_SRV_INST**は、ユーザーサービスインスタンスです。<br />-   **KRB5_NT_SRV_HST**はホストサービスインスタンスです。                                                                                                                                                                                         |
-|                                       /kvno<KeyversionNum>                                        |                                                                                                                                                                                                                                                                               キーのバージョン番号を指定します。 既定値は 1 です。                                                                                                                                                                                                                                                                                |
-|                                         /answer {-&#124;+}                                         |                                                                                                                                                                                                                    バックグラウンド応答モードを設定します。<p>**-** 回答を入力せずにパスワードのプロンプトを自動的にリセットします。<p>**+**[OK] をオンにすると、パスワードの入力を自動的にリセットします。                                                                                                                                                                                                                     |
-|                                              /target                                               |                                                                                                                                                                                           使用するドメインコントローラーを設定します。 既定では、プリンシパル名に基づいて、ドメインコントローラーが検出されます。 ドメインコントローラ名が解決されない場合は、有効なドメインコントローラの入力を求めるダイアログボックスが表示されます。                                                                                                                                                                                           |
-|                                              /rawsalt                                              |                                                                                                                                                                                                                                                           キーの生成時に ktpass が rawsalt アルゴリズムを使用するように強制します。 このパラメーターは必要ありません。                                                                                                                                                                                                                                                            |
-|                                         {-&#124;+} dumpsalt                                         |                                                                                                                                                                                                                                                           このパラメーターの出力は、キーの生成に使用されている MIT salt アルゴリズムを示しています。                                                                                                                                                                                                                                                            |
-|                                          {-&#124;+} setupn                                          |                                                                                                                                                                                                                                          サービスプリンシパル名 (SPN) に加えて、ユーザープリンシパル名 (UPN) を設定します。 既定では、キーセットファイルに両方を設定します。                                                                                                                                                                                                                                           |
-|                                    {-&#124;+} setpass<Password>                                    |                                                                                                                                                                                                                                                          指定されたときにユーザーのパスワードを設定します。 Rndpass が使用されている場合は、ランダムなパスワードが代わりに生成されます。                                                                                                                                                                                                                                                           |
-|                                       /? &#124;/h&#124;/help                                        |                                                                                                                                                                                                                                                                                         Ktpass のコマンドラインヘルプを表示します。                                                                                                                                                                                                                                                                                         |
+```
+ktpass
+[/out <filename>]
+[/princ <principalname>]
+[/mapuser <useraccount>]
+[/mapop {add|set}] [{-|+}desonly] [/in <filename>]
+[/pass {password|*|{-|+}rndpass}]
+[/minpass]
+[/maxpass]
+[/crypto {DES-CBC-CRC|DES-CBC-MD5|RC4-HMAC-NT|AES256-SHA1|AES128-SHA1|All}]
+[/itercount]
+[/ptype {KRB5_NT_PRINCIPAL|KRB5_NT_SRV_INST|KRB5_NT_SRV_HST}]
+[/kvno <keyversionnum>]
+[/answer {-|+}]
+[/target]
+[/rawsalt] [{-|+}dumpsalt] [{-|+}setupn] [{-|+}setpass <password>]  [/?|/h|/help]
+```
 
-## <a name="remarks"></a><a name=BKMK_remarks></a>」  
-Windows オペレーティングシステムを実行していないシステムで実行されているサービスは、active directory ドメインサービスのサービスインスタンスアカウントを使用して構成できます。 これにより、任意の Kerberos クライアントが windows Kdc を使用して、Windows オペレーティングシステムを実行していないサービスに対して認証を行うことができます。  
-/Princ パラメーターは ktpass によって評価されず、提供されたとおりに使用されます。 キーボックスファイルを生成するときに、パラメーターが**userPrincipalName**属性値の大文字小文字と一致するかどうかのチェックはありません。 このキータブファイルを使用した大文字と小文字が区別される Kerberos ディストリビューションでは、大文字と小文字の一致がない場合に問題が発生し、事前認証時に失敗することがあります。 LDifDE エクスポートファイルから正しい**userPrincipalName**属性値を確認して取得します。 次に例を示します。  
-```  
-ldifde /f keytab_user.ldf /d CN=Keytab User,OU=UserAccounts,DC=contoso,DC=corp,DC=microsoft,DC=com /p base /l samaccountname,userprincipalname  
-```  
-## <a name="examples"></a>例  
-ユーザーサンプル1の現在のディレクトリに、Kerberos のキーの付いたキーの付いたファイルを作成する方法を説明します。 (このファイルは、Windows オペレーティングシステムを実行していないホストコンピューター上の Krb5.conf ファイルとマージされます)。Kerberos のキーの種類が、サポートされているすべての暗号化の種類に対して作成されます。  
-Windows オペレーティングシステムを実行していないホストコンピューターに対して、キーセットファイルを生成するには、次の手順を使用してプリンシパルをアカウントにマップし、ホストプリンシパルパスワードを設定します。  
-1.  Active directory ユーザーとコンピュータースナップインを使用して、Windows オペレーティングシステムを実行していないコンピューター上のサービスのユーザーアカウントを作成します。 たとえば、サンプル1という名前のアカウントを作成します。  
-2.  Ktpass を使用して、コマンドプロンプトで次のように入力し、ユーザーアカウントの id マッピングを設定します。  
-    ```  
-    ktpass /princ host/Sample1.contoso.com@CONTOSO.COM /mapuser Sample1 /pass MyPas$w0rd /out Sample1.keytab /crypto all /ptype KRB5_NT_PRINCIPAL /mapop set   
-    ```  
+### <a name="parameters"></a>パラメーター
 
-    > [!NOTE]  
-    > 複数のサービスインスタンスを同じユーザーアカウントにマップすることはできません。  
+| パラメーター | 説明 |
+| --------- | ------------|
+| /out`<filename>` | 生成する Kerberos version 5. キータブファイルの名前を指定します。 **注:** これは、Windows オペレーティングシステムを実行していないコンピューターに転送する、キーが付けられたファイルです。その後、既存の.............. */Etc/Krb5.keytab*ファイルを置き換えます。 |
+| /princ`<principalname>` | の形式でプリンシパル名を指定し host/computer.contoso.com@CONTOSO.COM ます。 **警告:** このパラメーターでは、大文字と小文字が区別されます。 |
+| /mapuser`<useraccount>` | **Princ**パラメーターによって指定された Kerberos プリンシパルの名前を、指定されたドメインアカウントにマップします。 |
+| /mapop`{add|set}` | マッピング属性を設定する方法を指定します。<ul><li>**追加**-指定したローカルユーザー名の値を追加します。 既定値です。</li><li>**設定**-指定したローカルユーザー名のデータ暗号化標準 (DES) のみの暗号化の値を設定します。</li></ul> |
+| `{-|+}`desonly | 既定では、DES のみの暗号化が設定されます。<ul><li>**+** DES のみの暗号化のアカウントを設定します。</li><li>**-** アカウントの制限を、DES のみの暗号化に対して解放します。 **重要:** Windows では既定で DES がサポートされていません。</li></ul> |
+| /in`<filename>` | Windows オペレーティングシステムを実行していないホストコンピューターから読み取るための、キーのキーファイルを指定します。 |
+| /pass`{password|*|{-|+}rndpass}` | **Princ**パラメーターで指定したプリンシパルユーザー名のパスワードを指定します。 `*`パスワードの入力を求めるには、を使用します。 |
+| /minpass | ランダムパスワードの長さの最小値を15文字に設定します。 |
+| /maxpass | ランダムなパスワードの最大長を256文字に設定します。 |
+| /暗号化`{DES-CBC-CRC|DES-CBC-MD5|RC4-HMAC-NT|AES256-SHA1|AES128-SHA1|All}` | キータブファイルに生成されるキーを指定します。<ul><li>**DES-CBC** -互換性のために使用されます。</li><li>**DES (CBC** )-MIT 実装により厳密に準拠し、互換性のために使用されます。</li><li>**RC4-HMAC-NT** -128 ビットの暗号化を採用しています。</li><li>**AES256-sha1** -AES256 暗号化を採用しています。</li><li>   **AES128-sha1** -AES128 暗号化を採用しています。</li><li>**All** -サポートされているすべての暗号化の種類を使用できます。</li></ul><p>**注:** 既定の設定は、旧バージョンの MIT に基づいているため、常にパラメーターを使用する必要があり `/crypto` ます。 |
+| /自動カウント | AES 暗号化に使用されるイテレーションの数を指定します。 既定では、AES 以外の**暗号化の場合は、** 値が無視され、aes 暗号化は4096に設定されます。 |
+| /ptype`{KRB5_NT_PRINCIPAL|KRB5_NT_SRV_INST|KRB5_NT_SRV_HST}` | プリンシパルの種類を指定します。<ul><li>**KRB5_NT_PRINCIPAL** -一般プリンシパルの種類 (推奨)。</li><li>**KRB5_NT_SRV_INST** -ユーザーサービスインスタンス</li><li>  **KRB5_NT_SRV_HST** -ホストサービスインスタンス</li></ul> |
+| /kvno`<keyversionnum>` | キーのバージョン番号を指定します。 既定値は 1 です。 |
+| /answer`{-|+}` | バックグラウンド応答モードを設定します。<ul><li>**-** 回答を入力**せず**にパスワードのプロンプトを自動的にリセットします。</li><li>**+****[Ok] をオン**にすると、パスワードの入力を自動的にリセットします。</li></ul> |
+| /target | 使用するドメインコントローラーを設定します。 既定では、プリンシパル名に基づいて、ドメインコントローラーが検出されます。 ドメインコントローラ名が解決されない場合は、有効なドメインコントローラの入力を求めるダイアログボックスが表示されます。 |
+| /rawsalt | キーの生成時に ktpass が rawsalt アルゴリズムを使用するように強制します。 このパラメーターは省略可能です。 |
+| `{-|+}dumpsalt` | このパラメーターの出力は、キーの生成に使用されている MIT salt アルゴリズムを示しています。 |
+| `{-|+}setupn` | サービスプリンシパル名 (SPN) に加えて、ユーザープリンシパル名 (UPN) を設定します。 既定では、キーセットファイルに両方を設定します。 |
+| `{-|+}setpass <password>` | 指定されたときにユーザーのパスワードを設定します。 Rndpass が使用されている場合は、ランダムなパスワードが代わりに生成されます。 |
+| /? | このコマンドのヘルプを表示します。 |
 
-3.  Windows オペレーティングシステムを実行していないホストコンピューター上の/Etc/Krb5.keytab ファイルに、このキーファイルをマージします。 
+#### <a name="remarks"></a>注釈
 
-## <a name="additional-references"></a>その他のリファレンス  
-- [コマンド ライン構文の記号](command-line-syntax-key.md)  
+- Windows オペレーティングシステムを実行していないシステムで実行されているサービスは、AD DS のサービスインスタンスアカウントを使用して構成できます。 これにより、任意の Kerberos クライアントが windows Kdc を使用して、Windows オペレーティングシステムを実行していないサービスに対して認証を行うことができます。
+
+- **/Princ**パラメーターは ktpass によって評価されず、提供されたとおりに使用されます。 キーボックスファイルを生成するときに、パラメーターが**userPrincipalName**属性値の大文字と小文字の区別に一致しているかどうかは確認されません。 このキータブファイルを使用する、大文字と小文字が区別される Kerberos ディストリビューションでは、大文字と小文字の一致がない場合に問題が発生する可能性があり、事前認証時に失敗することもあります。 LDifDE エクスポートファイルから正しい**userPrincipalName**属性値を確認して取得すること。 次に例を示します。
+
+    ```
+    ldifde /f keytab_user.ldf /d CN=Keytab User,OU=UserAccounts,DC=contoso,DC=corp,DC=microsoft,DC=com /p base /l samaccountname,userprincipalname
+    ````
+
+### <a name="examples"></a>例
+
+Windows オペレーティングシステムを実行していないホストコンピューターの Kerberos のキーセットファイルを作成するには、プリンシパルをアカウントにマップし、ホストプリンシパルのパスワードを設定する必要があります。
+
+1. Active directory**ユーザーとコンピューター**スナップインを使用して、Windows オペレーティングシステムを実行していないコンピューター上のサービスのユーザーアカウントを作成します。 たとえば、 *User1*という名前のアカウントを作成します。
+
+2. 次のように入力して、 **ktpass**コマンドを使用して、ユーザーアカウントの id マッピングを設定します。
+
+    ```
+    ktpass /princ host/User1.contoso.com@CONTOSO.COM /mapuser User1 /pass MyPas$w0rd /out machine.keytab /crypto all /ptype KRB5_NT_PRINCIPAL /mapop set
+    ```
+
+    > [!NOTE]
+    > 複数のサービスインスタンスを同じユーザーアカウントにマップすることはできません。
+
+3. Windows オペレーティングシステムを実行していないホストコンピューター上の */Etc/Krb5.keytab*ファイルに、このキーファイルをマージします。
+
+## <a name="additional-references"></a>その他のリファレンス
+
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

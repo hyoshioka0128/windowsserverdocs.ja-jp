@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 30655cae3ef737b10d266a894b0bfb6d76ffe87e
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: fb9977d0bc4f45b610d8bf3409c6beeadfaf7ee5
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436676"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83821022"
 ---
 # <a name="tftp"></a>tftp
 
@@ -37,7 +37,7 @@ tftp [-i] [<Host>] [{get | put}] <Source> [<Destination>]
 |\<ソース\>|転送するファイルを指定します。|
 |\<宛先\>|ファイルを転送する場所を指定します。|
 
-## <a name="remarks"></a>解説
+## <a name="remarks"></a>注釈
 -   Tftp クライアントは、機能の追加ウィザードを使用してインストールできます。
 -   Tftp プロトコルでは、認証または暗号化のメカニズムはサポートされていないため、セキュリティ上のリスクが生じる可能性があります。 インターネットに接続されているシステムには、tftp クライアントをインストールすることはお勧めしません。
 -   Tftp クライアントはオプションのソフトウェアで、Windows Vista 以降のバージョンの Windows オペレーティングシステムでは非推奨としてマークされています。 Tftp サーバーサービスは、セキュリティ上の理由からマイクロソフトによって提供されなくなりました。
@@ -49,4 +49,4 @@ tftp  -i Host1 get boot.img
 ```
 
 ## <a name="additional-references"></a>その他のリファレンス
--   - [コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

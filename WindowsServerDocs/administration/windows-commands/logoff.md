@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 86acf174bfdebdeab6db7476713dd2d91f21b1a0
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 3daecbc2f4034070a5b805c75a6b647ba168e2c5
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724264"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820542"
 ---
 # <a name="logoff"></a>ログオフ
 
@@ -32,7 +32,7 @@ logoff [<SessionName> | <SessionID>] [/server:<ServerName>] [/v]
 ```
 ### <a name="parameters"></a>パラメーター
 
-|      パラメーター       |                                                                             [説明]                                                                              |
+|      パラメーター       |                                                                             説明                                                                              |
 |----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |    <SessionName>     |                                                                  セッションの名前を指定します。                                                                  |
 |     <SessionID>      |                                                 サーバーに対するセッションを識別する数値 ID を指定します。                                                 |
@@ -40,7 +40,7 @@ logoff [<SessionName> | <SessionID>] [/server:<ServerName>] [/v]
 |          /v          |                                                       実行されているアクションに関する情報を表示します。                                                        |
 |          /?          |                                                                 コマンド プロンプトにヘルプを表示します。                                                                 |
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>注釈
 - 現在ログオンしているセッションから、いつでもログオフできます。 ただし、他のセッションからユーザーをログオフするには、フルコントロールアクセス許可を持っている必要があります。
 - 警告なしでセッションからユーザーをログオフすると、ユーザーのセッションでデータが失われる可能性があります。 この操作を実行する前に、 **msg**コマンドを使用してユーザーに警告するメッセージをユーザーに送信する必要があります。
 - <SessionID> また*は <の* *SessionID*> が指定されていない場合、**ログオフ**すると、現在のセッションからユーザーからログオフされます。 <の*セッション名*> を指定する場合は、アクティブなものである必要があります。
@@ -61,5 +61,5 @@ logoff [<SessionName> | <SessionID>] [/server:<ServerName>] [/v]
   ```
 
 ## <a name="additional-references"></a>その他のリファレンス
--   - [コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
 -   [リモート デスクトップ サービス (ターミナル サービス) のコマンド リファレンス](remote-desktop-services-terminal-services-command-reference.md)

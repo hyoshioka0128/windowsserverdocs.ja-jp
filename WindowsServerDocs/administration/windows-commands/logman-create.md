@@ -1,6 +1,6 @@
 ---
 title: logman create
-description: '* * * * のリファレンストピック'
+description: Logman create コマンドのリファレンストピックでは、カウンター、トレース、構成データコレクター、または API を作成します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e584e6f4a5632967a6e62408afe971b1681d8493
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 1d4bffd68d5b74d1d6f36750967911dfec3f299a
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724403"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820592"
 ---
 # <a name="logman-create"></a>logman create
 
+> 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
+カウンター、トレース、構成データコレクター、または API を作成します。
 
 ## <a name="syntax"></a>構文
 
@@ -28,12 +30,14 @@ logman create <counter | trace | alert | cfg | api> <[-n] <name>> [options]
 
 ### <a name="parameters"></a>パラメーター
 
-|パラメーター|[説明]|
-|---------|-----------|
-|[logman カウンターの作成](logman-create-counter.md)|カウンターデータコレクターを作成します。|
-|[logman 作成トレース](logman-create-trace.md)|トレースデータコレクターを作成します。|
-|[logman 作成アラート](logman-create-alert.md)|アラートデータコレクターを作成します。|
-|[logman 作成 cfg](logman-create-cfg.md)|構成データコレクターを作成します。|
-|[logman api の作成](logman-create-api.md)|API トレースデータコレクターを作成します。|
+| パラメーター | 説明 |
+| --------- | ----------- |
+| [logman カウンターの作成](logman-create-counter.md) | カウンターデータコレクターを作成します。 |
+| [logman 作成トレース](logman-create-trace.md) | トレースデータコレクターを作成します。 |
+| [logman 作成アラート](logman-create-alert.md) | アラートデータコレクターを作成します。 |
+| [logman 作成 cfg](logman-create-cfg.md) | 構成データコレクターを作成します。 |
+| [logman api の作成](logman-create-api.md) | API トレースデータコレクターを作成します。 |
 
 ## <a name="additional-references"></a>その他のリファレンス
+
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

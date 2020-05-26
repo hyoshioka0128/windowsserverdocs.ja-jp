@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 96f70e0f4130b0bc2c2d85462ee0d2eabb7a7888
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 8cc81d813f1e7d0474337adc1afa22a0cf1040c5
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722415"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820122"
 ---
 # <a name="rename"></a>rename
 
@@ -23,5 +23,5 @@ ms.locfileid: "82722415"
 これは、 **ren**コマンドと同じです。
 構文とパラメーターについては、「 [ren](ren.md) 」を参照してください。
 ## <a name="additional-references"></a>その他のリファレンス
--   - [コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
 

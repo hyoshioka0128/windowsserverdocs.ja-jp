@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e3355aa310bb9919b5218052878d94416f577381
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: bee9dabe0e9344c7870e53ed34e4c9dd057cfc42
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723831"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820842"
 ---
 # <a name="mstsc"></a>mstsc
 
@@ -34,10 +34,10 @@ mstsc.exe /migrate
 
 ### <a name="parameters"></a>パラメーター
 
-|        パラメーター        |                                                         [説明]                                                         |
+|        パラメーター        |                                                         説明                                                         |
 |-------------------------|-----------------------------------------------------------------------------------------------------------------------------|
 |    <Connection File>    |                                   接続の .rdp ファイルの名前を指定します。                                    |
-|  /v: <Server\>[: <ポート\>] |                リモートコンピューターと、必要に応じて接続するポート番号を指定します。                 |
+|  /v: <Server \> [: <ポート \> ] |                リモートコンピューターと、必要に応じて接続するポート番号を指定します。                 |
 |         /admin          |                                   サーバーを管理するためのセッションに接続します。                                   |
 |           /f            |                                    全画面表示モードでリモートデスクトップ接続を開始します。                                    |
 |       /w<Width>        |                                      リモートデスクトップウィンドウの幅を指定します。                                      |
@@ -48,7 +48,7 @@ mstsc.exe /migrate
 |        /migrate         |       クライアント接続マネージャーで作成された従来の接続ファイルを新しい .rdp 接続ファイルに移行します。       |
 |           /?            |                                            コマンド プロンプトにヘルプを表示します。                                             |
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>注釈
 -   既定の .rdp は、ユーザーごとに隠しファイルとしてユーザーの Documents フォルダーに格納されます。 ユーザーが作成した .rdp ファイルは、既定ではユーザーの Documents フォルダーに保存されますが、どこにでも保存できます。
 -   複数のモニターにまたがる場合、モニターは同じ解像度を使用する必要があり、水平方向 (つまりサイドバイサイド) に調整する必要があります。 現在、クライアントシステム上で複数のモニターを垂直方向にまたがることはサポートされていません。
 
@@ -63,5 +63,5 @@ mstsc.exe /migrate
     ```
 
 ## <a name="additional-references"></a>その他のリファレンス
--   - [コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
 -   [リモート デスクトップ サービス (ターミナル サービス) のコマンド リファレンス](remote-desktop-services-terminal-services-command-reference.md)

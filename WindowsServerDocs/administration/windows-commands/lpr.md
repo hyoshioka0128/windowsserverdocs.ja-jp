@@ -9,26 +9,26 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f523c55f5974599c152f4fbae7d8143d5362af62
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 0a63c74e3d25e11ccc8129a6ce28fd505e9227eb
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724242"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820532"
 ---
 # <a name="lpr"></a>lpr
 
 > 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-印刷の準備として、ラインプリンタデーモン (LPD) サービスを実行しているコンピューターまたはプリンターの共有デバイスにファイルを送信します。  
+印刷の準備として、ラインプリンタデーモン (LPD) サービスを実行しているコンピューターまたはプリンターの共有デバイスにファイルを送信します。
 
-## <a name="syntax"></a>構文  
-```  
-lpr [-S <ServerName>] -P <printerName> [-C <BannerContent>] [-J <JobName>] [-o | -o l] [-x] [-d] <filename>  
-```  
-### <a name="parameters"></a>パラメーター  
+## <a name="syntax"></a>構文
+```
+lpr [-S <ServerName>] -P <printerName> [-C <BannerContent>] [-J <JobName>] [-o | -o l] [-x] [-d] <filename>
+```
+### <a name="parameters"></a>パラメーター
 
-|     パラメーター      |                                                                                                           [説明]                                                                                                           |
+|     パラメーター      |                                                                                                           説明                                                                                                           |
 |--------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |  -S<ServerName>   |                                    (名前または IP アドレスを使用して) LPD 印刷キューをホストするコンピューターまたはプリンターの共有デバイスが、表示する状態であることを指定します。 必須。                                    |
 |  -P<printerName>  |                                                              表示するステータスを持つ印刷キューのプリンタを (名前で) 指定します。 必須。                                                              |
@@ -40,19 +40,19 @@ lpr [-S <ServerName>] -P <printerName> [-C <BannerContent>] [-J <JobName>] [-o |
 |     <FileName>     |                                                                                      印刷するファイルを (名前で) 指定します。 必須。                                                                                      |
 |         /?         |                                                                                              コマンド プロンプトにヘルプを表示します。                                                                                               |
 
-## <a name="remarks"></a>Remarks  
-- プリンターの名前を検索するには、[プリンター] フォルダーを開きます。  
-- **-S**、 **-P**、 **-C**、および **-J**パラメーターは大文字と小文字が区別され、大文字で入力する必要があります。  
-  ## <a name="examples"></a>例  
-  この例では、10.0.0.45 にある LPD ホストの Laserprinter1 プリンターキューにドキュメントの .txt テキストファイルを印刷する方法を示します。  
-  ```  
-  lpr -S 10.0.0.45 -P Laserprinter1 -o Document.txt  
-  ```  
-  この例では PostScript_file、Laserprinter1 Adobe PostScript ファイルを10.0.0.45 の LPD ホスト上のプリンターキューに出力する方法を示します。  
-  ```  
-  lpr -S 10.0.0.45 -P Laserprinter1 -o l PostScript_file.ps  
-  ```  
+## <a name="remarks"></a>注釈
+- プリンターの名前を検索するには、[プリンター] フォルダーを開きます。
+- **-S**、 **-P**、 **-C**、および **-J**パラメーターは大文字と小文字が区別され、大文字で入力する必要があります。
+  ## <a name="examples"></a>例
+  この例では、10.0.0.45 にある LPD ホストの Laserprinter1 プリンターキューにドキュメントの .txt テキストファイルを印刷する方法を示します。
+  ```
+  lpr -S 10.0.0.45 -P Laserprinter1 -o Document.txt
+  ```
+  この例では PostScript_file、Laserprinter1 Adobe PostScript ファイルを10.0.0.45 の LPD ホスト上のプリンターキューに出力する方法を示します。
+  ```
+  lpr -S 10.0.0.45 -P Laserprinter1 -o l PostScript_file.ps
+  ```
 
-## <a name="additional-references"></a>その他のリファレンス  
--   - [コマンド ライン構文の記号](command-line-syntax-key.md)  
--   [印刷コマンドのリファレンス](print-command-reference.md)  
+## <a name="additional-references"></a>その他のリファレンス
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
+-   [印刷コマンドのリファレンス](print-command-reference.md)

@@ -9,25 +9,25 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0db8a4549ac26ef61d4aa8f435a01d3224501a77
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 09767502585754bec690b40dd71fabd78540ab50
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723841"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820822"
 ---
 # <a name="msinfo32"></a>msinfo32
 
 > 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-システム情報ツールを開き、ローカルコンピューター上のハードウェア、システムコンポーネント、およびソフトウェア環境の包括的なビューを表示します。 
+システム情報ツールを開き、ローカルコンピューター上のハードウェア、システムコンポーネント、およびソフトウェア環境の包括的なビューを表示します。
 ## <a name="syntax"></a>構文
 ```
 msinfo32 [/pch] [/nfo <path>] [/report <path>] [/computer <computerName>] [/showcategories] [/category <CategoryID>] [/categories {+<CategoryID>(+<CategoryID>)|+all(-<CategoryID>)}]
 ```
 #### <a name="parameters"></a>パラメーター
 
-|    パラメーター    |                                                                                                                                 [説明]                                                                                                                                  |
+|    パラメーター    |                                                                                                                                 説明                                                                                                                                  |
 |-----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |     <path>      | *C:\Folder1\File1.XXX*の形式で開くファイルを指定します。 *C*はドライブ文字、 *Folder1*はフォルダー、 *File1*はファイル名、 *XXX*はファイル名拡張子です。<p>このファイルには、 **.nfo**、 **.xml**、 **.txt**、または **.cab**ファイルを指定できます。 |
 | <computerName>  |                                                                             ターゲットコンピューターまたはローカルコンピューターの名前を指定します。 UNC 名、IP アドレス、または完全なコンピューター名を指定できます。                                                                              |
@@ -41,7 +41,7 @@ msinfo32 [/pch] [/nfo <path>] [/report <path>] [/computer <computerName>] [/show
 |   /カテゴリ   |                          指定されたカテゴリまたはカテゴリのみを含むシステム情報を開始します。 また、選択したカテゴリに出力を制限します。 使用可能なカテゴリ Id の一覧を表示するには、 **/showcategories**を使用します。                          |
 |       /?        |                                                                                                                     コマンド プロンプトにヘルプを表示します。                                                                                                                     |
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>注釈
 システム情報のカテゴリによっては、大量のデータが含まれている場合があります。 **Start/wait**コマンドを使用すると、これらのカテゴリのレポートパフォーマンスを最適化できます。 詳細については、「[システム情報](https://technet.microsoft.com/library/cc783305(v=ws.10).aspx)」を参照してください。
 ## <a name="examples"></a>例
 使用可能なカテゴリ Id の一覧を表示するには、次のように入力します。
@@ -61,5 +61,5 @@ msinfo32 /nfo syssum.nfo /categories +systemsummary
 msinfo32 /nfo conflicts.nfo /categories    +componentsproblemdevices+resourcesconflicts+resourcesforcedhardware
 ```
 ## <a name="additional-references"></a>その他のリファレンス
--   - [コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
 

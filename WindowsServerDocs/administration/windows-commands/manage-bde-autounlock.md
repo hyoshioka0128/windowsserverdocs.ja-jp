@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1cc467c4afcfa2df344e9190a341a9aad086c1ea
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 929469ad3d4bd8b3a76c3681a5f24424ba6d99df
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724214"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820722"
 ---
 # <a name="manage-bde-autounlock"></a>manage-bde: 自動ロック解除
 
@@ -31,7 +31,7 @@ manage-bde -autounlock [{-enable|-disable|-clearallkeys}] <Drive> [-computername
 
 #### <a name="parameters"></a>パラメーター
 
-|パラメーター|[説明]|
+|パラメーター|説明|
 |---------|-----------|
 |-を有効にします。|データ ドライブの自動ロック解除を使用できます。|
 |-を無効にします。|データ ドライブの自動ロック解除を無効にします。|
@@ -51,5 +51,5 @@ manage-bde –autounlock -enable E:
 
 ## <a name="additional-references"></a>その他のリファレンス
 
--   - [コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
 -   [Manage-bde](manage-bde.md)

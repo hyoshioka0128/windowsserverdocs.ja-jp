@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 08/06/2018
-ms.openlocfilehash: e01049a5fb3dc419e219fe4ec8b11dcdc790f919
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: c248a5d7c6a25ccb6fa2917358223fd255a3c600
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724117"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820632"
 ---
 # <a name="manage-bde-protectors"></a>manage-bde: プロテクター
 
@@ -27,7 +27,7 @@ manage-bde -protectors [{-get|-add|-delete|-disable|-enable|-adbackup|-aadbackup
 ```
 #### <a name="parameters"></a>パラメーター
 
-|   パラメーター   |                                                                                                                                                                                           [説明]                                                                                                                                                                                            |
+|   パラメーター   |                                                                                                                                                                                           説明                                                                                                                                                                                            |
 |---------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |     取得      |                                                                                                                                            ドライブで有効になっているすべてのキーの保護方法を表示し、それらの型と識別子 (ID) を提供します。                                                                                                                                             |
 |     追加      |                                                                                                                                   追加の[パラメーター](manage-bde-protectors.md#BKMK_addprotectors)を使用して、指定されたキー保護方法を追加します。                                                                                                                                    |
@@ -45,12 +45,12 @@ manage-bde -protectors [{-get|-add|-delete|-disable|-enable|-adbackup|-aadbackup
 ### <a name="-add-syntax-and-parameters"></a><a name=BKMK_addprotectors></a>構文とパラメーターの追加
 ```
 manage-bde  -protectors  -add [<Drive>] [-forceupgrade] [-recoverypassword <NumericalPassword>] [-recoverykey <pathToExternalKeydirectory>]
-[-startupkey <pathToExternalKeydirectory>] [-certificate {-cf <pathToCertificateFile>|-ct <CertificateThumbprint>}] [-tpm] [-tpmandpin] 
-[-tpmandstartupkey <pathToExternalKeydirectory>] [-tpmandpinandstartupkey <pathToExternalKeydirectory>] [-password][-adaccountorgroup <securityidentifier> [-computername <Name>] 
+[-startupkey <pathToExternalKeydirectory>] [-certificate {-cf <pathToCertificateFile>|-ct <CertificateThumbprint>}] [-tpm] [-tpmandpin]
+[-tpmandstartupkey <pathToExternalKeydirectory>] [-tpmandpinandstartupkey <pathToExternalKeydirectory>] [-password][-adaccountorgroup <securityidentifier> [-computername <Name>]
 [{-?|/?}] [{-help|-h}]
 ```
 
-|          パラメーター           |                                                                                                                                                                                   [説明]                                                                                                                                                                                   |
+|          パラメーター           |                                                                                                                                                                                   説明                                                                                                                                                                                   |
 |------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |           <Drive>            |                                                                                                                                                                 コロンの後にドライブ文字を表します。                                                                                                                                                                  |
 |      -recoverypassword       |                                                                                                                                    数字のパスワード保護機能を追加します。 また、 **-rp**をこのコマンドの省略版として使用することもできます。                                                                                                                                     |
@@ -74,11 +74,11 @@ manage-bde  -protectors  -add [<Drive>] [-forceupgrade] [-recoverypassword <Nume
 
 ### <a name="-delete-syntax-and-parameters"></a><a name=BKMK_deleteprotectors></a>構文とパラメーターを削除
 ```
-manage-bde  -protectors  -delete <Drive> [-type {recoverypassword|externalkey|certificate|tpm|tpmandstartupkey|tpmandpin|tpmandpinandstartupkey|Password|Identity}] 
+manage-bde  -protectors  -delete <Drive> [-type {recoverypassword|externalkey|certificate|tpm|tpmandstartupkey|tpmandpin|tpmandpinandstartupkey|Password|Identity}]
 [-id <KeyProtectorID>] [-computername <Name>] [{-?|/?}] [{-help|-h}]
 ```
 
-|       パラメーター        |                                                                              [説明]                                                                               |
+|       パラメーター        |                                                                              説明                                                                               |
 |------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |        <Drive>         |                                                             コロンの後にドライブ文字を表します。                                                             |
 |         型          |                               削除するキー保護機能を識別します。 使用することも **-t** としてこのコマンドの簡易版です。                               |
@@ -90,7 +90,7 @@ manage-bde  -protectors  -delete <Drive> [-type {recoverypassword|externalkey|ce
 |       tpmandpin        |                                    ドライブに関連付けられている TPM および PIN ベースのキー保護機能を削除する必要があることを指定します。                                    |
 | tpmandpinandstartupkey |                             ドライブに関連付けられている TPM、PIN、およびスタートアップキーに基づくキープロテクターを削除する必要があることを指定します。                             |
 |        password        |                                        ドライブに関連付けられているパスワード キーの保護を削除するかを指定します。                                         |
-|        identity        |                                        ドライブに関連付けられているすべての id キー プロテクターを削除するかを指定します。                                         |
+|        ID        |                                        ドライブに関連付けられているすべての id キー プロテクターを削除するかを指定します。                                         |
 |          -id           |                キー識別子を使用して削除するキー保護機能を識別します。 このパラメーターは、代わりのオプションを **-型** パラメーター。                 |
 |    <KeyProtectorID>    |        個々 のキー保護機能、ドライブを削除するを識別します。 使用して、キー保護機能の Id を表示できる、 **から manage-bde-プロテクター-取得** コマンドです。         |
 |     -computername      | Manage-bde.exe を使用して、別のコンピューター上の BitLocker 保護を変更することを指定します。 また、このコマンドの省略版として **-cn**を使用することもできます。 |
@@ -103,7 +103,7 @@ manage-bde  -protectors  -delete <Drive> [-type {recoverypassword|externalkey|ce
 manage-bde  -protectors  -disable <Drive> [-RebootCount <integer 0 - 15>] [-computername <Name>] [{-?|/?}] [{-help|-h}]
 ```
 
-|   パラメーター   |                                                                                                                                                                                                                   [説明]                                                                                                                                                                                                                    |
+|   パラメーター   |                                                                                                                                                                                                                   説明                                                                                                                                                                                                                    |
 |---------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |    <Drive>    |                                                                                                                                                                                                  コロンの後にドライブ文字を表します。                                                                                                                                                                                                  |
 |  RebootCount  | Windows 8 以降では、オペレーティングシステムボリュームの保護が中断され、Windows が再起動された後に、RebootCount パラメーターで指定した回数だけ再開されることを指定します。 保護が無期限に停止する場合は 0 を指定します。 このパラメーターが BitLocker 保護が自動的に指定されていない場合は、Windows が再起動されたときを再開します。 使用することも **-rc** としてこのコマンドの簡易版です。 |
@@ -134,5 +134,5 @@ manage-bde  -protectors -delete C: -type tpmandstartupkey
 manage-bde  -protectors  -adbackup C:
 ```
 ## <a name="additional-references"></a>その他のリファレンス
--   - [コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
 -   [manage-bde](manage-bde.md)

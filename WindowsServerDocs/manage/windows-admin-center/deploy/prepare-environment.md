@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.date: 06/07/2019
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 7a4dacd611741942e874e831fd9598aeda5e97b3
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 7b42db8c0be5e1a447ad0a3b794b07672c164514
+ms.sourcegitcommit: 7116460855701eed4e09d615693efa4fffc40006
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "81269279"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83433146"
 ---
 # <a name="prepare-your-environment-for-windows-admin-center"></a>Windows Admin Center のための環境の準備
 
@@ -35,7 +35,7 @@ Windows Admin Center には、既定で Windows Server 2012 および 2012 R2 �
 
 PowerShell で `$PSVersiontable` を入力して、WMF がインストールされていること、またバージョンが 5.1 以上であることを確認します。
 
-インストールされていない場合は、[WMF 5.1 をダウンロードしてインストール](https://docs.microsoft.com/powershell/wmf/setup/install-configure)できます。
+インストールされていない場合は、[WMF 5.1 をダウンロードしてインストール](https://docs.microsoft.com/powershell/scripting/wmf/setup/install-configure)できます。
 
 ## <a name="prepare-microsoft-hyper-v-server-2016"></a>Microsoft Hyper-V Server 2016 の準備
 
@@ -91,9 +91,9 @@ Windows Admin Center で Microsoft Hyper-V Server 2012 R2 を管理するには�
 
 Windows Admin Center では、既定で Microsoft Hyper-V Server 2012 R2 に含まれていない PowerShell 機能が必要です。 Windows Admin Center で Microsoft Hyper-V Server 2012 R2 を管理するには、WMF バージョン 5.1 以上をインストールする必要があります。
 
-PowerShell で `$PSVersiontable` を入力して、WMF がインストールされていること、またバージョンが 5.1 以上であることを確認します。 
+PowerShell で `$PSVersiontable` を入力して、WMF がインストールされていること、またバージョンが 5.1 以上であることを確認します。
 
-インストールされていない場合は、[WMF 5.1 をダウンロード](https://docs.microsoft.com/powershell/wmf/setup/install-configure)することができます。
+インストールされていない場合は、[WMF 5.1 をダウンロード](https://docs.microsoft.com/powershell/scripting/wmf/setup/install-configure)することができます。
 
 ### <a name="step-2-enable-remote-management"></a>手順 2:リモート管理の有効化
 

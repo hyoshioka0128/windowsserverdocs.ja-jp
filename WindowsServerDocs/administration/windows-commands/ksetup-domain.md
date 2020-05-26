@@ -1,6 +1,6 @@
 ---
-title: 'ksetup: ドメイン'
-description: '* * * * のリファレンストピック'
+title: ksetup ドメイン
+description: Ksetup domain コマンドのリファレンストピックでは、すべての Kerberos 操作のドメイン名を設定します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,44 +9,43 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f127eaf33e9ef6d597851c31a4167ceaa3516abb
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 1d497f2bc76bae8a95b077658c661e0fdc1e93f3
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724684"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83817802"
 ---
-# <a name="ksetupdomain"></a>ksetup: ドメイン
-
-
+# <a name="ksetup-domain"></a>ksetup ドメイン
 
 すべての Kerberos 操作のドメイン名を設定します。
 
 ## <a name="syntax"></a>構文
 
 ```
-ksetup /domain <DomainName>
+ksetup /domain <domainname>
 ```
 
-#### <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
-|パラメーター|[説明]|
-|---------|-----------|
-|\<DomainName>|接続を確立するドメインの名前。 完全修飾ドメイン名、または名前の単純な形式 (contoso.com や contoso など) を使用します。|
+| パラメーター | 説明 |
+| --------- | ----------- |
+| `<domainname>` | 接続を確立するドメインの名前。 完全修飾ドメイン名、または名前の単純な形式 (contoso.com や contoso など) を使用します。|
 
-## <a name="remarks"></a>Remarks
+### <a name="examples"></a>例
 
-なし。
+サブコマンドを使用して、Microsoft などの有効なドメインへの接続を確立するには、次のように `ksetup /mapuser` 入力します。
 
-## <a name="examples"></a>例
-
-次のように、/mapuser サブコマンドを使用して、Microsoft などの有効なドメインへの接続を確立します。
 ```
 ksetup /mapuser principal@realm domain-user /domain domain-name
 ```
+
 接続に成功すると、新しい TGT が送信されるか、既存の TGT が更新されます。
 
 ## <a name="additional-references"></a>その他のリファレンス
 
--   [Ksetup](ksetup.md)
--   - [コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [ksetup コマンド](ksetup.md)
+
+- [ksetup mapuser コマンド](ksetup-mapuser.md)

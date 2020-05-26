@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 00a45890f9b579c0261a074dace707a9e5c769bb
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 81068055a23147ad6fafa1c9fa27a63174d52574
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436807"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820929"
 ---
 # <a name="winnt32"></a>winnt32
 
@@ -61,7 +61,7 @@ winnt32 [/checkupgradeonly] [/cmd: <CommandLine>] [/cmdcons] [/copydir:{i386|ia6
 |   \<応答ファイル>   |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         セットアップに、独自の仕様は、します。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 |        /?         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              コマンド プロンプトにヘルプを表示します。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 
-## <a name="remarks"></a>解説
+## <a name="remarks"></a>注釈
 クライアントコンピューターに Windows XP を展開する場合は、Windows XP に付属している ccmsetup.exe のバージョンを使用できます。 Windows XP を展開するもう1つの方法は、IntelliMirror を使用することです。これは、IntelliMirror の一連のテクノロジに含まれる Windows インストーラーで機能します。 クライアントの展開の詳細については、「Windows Server 2003 導入ガイドを参照してください。 [Windows 導入ガイドとリソース キットを使用して](https://technet.microsoft.com/library/cc779317(v=ws.10).aspx)します。
 
 Itanium ベースのコンピューターの場合は、 **winnt32** から拡張ファームウェア インターフェイス (EFI) または Windows Server 2003 Enterprise、Windows Server 2003 R2 Enterprise、Windows Server 2003 R2 Datacenter、または Windows Server 2003 Datacenter から実行できます。 Itanium アーキテクチャ ベースのコンピューターにも、 **/cmdcons** と **/syspart** が表示されていないとアップグレードに関連するオプションは使用できません。
@@ -71,5 +71,5 @@ Itanium ベースのコンピューターの場合は、 **winnt32** から拡�
 使用して、 **/unattend** コマンド ライン オプションの設定を自動化するものが読み取りを Microsoft ライセンス契約の Windows Server 2003 とみなされます。 このコマンド ライン オプションを使用して、組織の Windows Server 2003 をインストールする、前に、ことを確認する必要がありますエンド ユーザー (個人、または 1 つのエンティティ) かどうかが受信した、読み取り、およびその製品の Microsoft ライセンス契約の条件に同意します。  Oem は、エンドユーザーが使用しているコンピューター上のこのキーを指定できない場合があります。
 
 ## <a name="additional-references"></a>その他のリファレンス
--   - [コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
 

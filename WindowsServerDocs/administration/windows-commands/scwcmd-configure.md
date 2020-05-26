@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6ffaff594a8927b3fcdfc871ec380fd5f134ce90
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 54f488eea2478c0b38f7ed9bea5ec15c0db3538f
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722148"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820982"
 ---
 # <a name="scwcmd-configure"></a>Scwcmd: 構成
 
@@ -30,18 +30,18 @@ scwcmd configure [[[/m:<ComputerName> | /ou:<OuName>] /p:<Policy>] | /i:<Compute
 
 #### <a name="parameters"></a>パラメーター
 
-|パラメーター|[説明]|
+|パラメーター|説明|
 |---------|-----------|
-|/m:\<ComputerName>|NetBIOS 名、DNS 名、または構成するコンピューターの IP アドレスを指定します。 場合、 **/m** パラメーターが指定されている、 **/p** パラメーターも指定する必要があります。|
-|/ou:\<ouname>|Active Directory ドメイン サービスでは、組織単位 (OU) の完全修飾ドメイン名 (FQDN) を指定します。 場合、 **/ou** パラメーターが指定されている、 **/p** パラメーターも指定する必要があります。 指定したポリシーに従って、OU 内のすべてのコンピューターが分析されます。|
-|/p:\<ポリシー>|構成の実行に使用する .xml ポリシー ファイルのパスとファイル名を指定します。|
-|/i:\<computerlist>|予想されるポリシー ファイルと共にコンピューターの一覧を含む .xml ファイルのパスとファイル名を指定します。 .Xml ファイル内のすべてのコンピューターは、対応するポリシー ファイルに基づいて構成されます。 サンプルの .xml ファイルは、%windir%\security\samplemachinelist.xml です。|
-|/u:\<ユーザー名>|リモート コンピューターを構成するときに使用する、代替のユーザー資格情報を指定します。 既定値は、ユーザーには、ログオンしています。|
-|/pw:\<パスワード>|リモート コンピューターを構成するときに使用する、代替のユーザー資格情報を指定します。 既定値は、ログオン ユーザーのパスワードです。|
-|/t:\<スレッド>|構成処理中に保守する必要が未処理の構成の同時操作の数を指定します (既定値 = 40、MinValue = 1、最大値 = 1000)。|
+|/m: \< ComputerName>|NetBIOS 名、DNS 名、または構成するコンピューターの IP アドレスを指定します。 場合、 **/m** パラメーターが指定されている、 **/p** パラメーターも指定する必要があります。|
+|/ou: \< ouname>|Active Directory ドメイン サービスでは、組織単位 (OU) の完全修飾ドメイン名 (FQDN) を指定します。 場合、 **/ou** パラメーターが指定されている、 **/p** パラメーターも指定する必要があります。 指定したポリシーに従って、OU 内のすべてのコンピューターが分析されます。|
+|/p: \< ポリシー>|構成の実行に使用する .xml ポリシー ファイルのパスとファイル名を指定します。|
+|/i: \< computerlist>|予想されるポリシー ファイルと共にコンピューターの一覧を含む .xml ファイルのパスとファイル名を指定します。 .Xml ファイル内のすべてのコンピューターは、対応するポリシー ファイルに基づいて構成されます。 サンプルの .xml ファイルは、%windir%\security\samplemachinelist.xml です。|
+|/u: \< ユーザー名>|リモート コンピューターを構成するときに使用する、代替のユーザー資格情報を指定します。 既定値は、ユーザーには、ログオンしています。|
+|/pw: \< パスワード>|リモート コンピューターを構成するときに使用する、代替のユーザー資格情報を指定します。 既定値は、ログオン ユーザーのパスワードです。|
+|/t: \< スレッド>|構成処理中に保守する必要が未処理の構成の同時操作の数を指定します (既定値 = 40、MinValue = 1、最大値 = 1000)。|
 |/?|コマンド プロンプトにヘルプを表示します。|
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>注釈
 
 Scwcmd.exe は Windows Server 2008 R2、Windows Server 2008 または Windows Server 2003 を実行するコンピューターにできるだけです。
 
@@ -66,4 +66,4 @@ scwcmd configure /ou:OU=WebServers,DC=Marketing,DC=ABCCompany,DC=com /p:webpolic
 
 ## <a name="additional-references"></a>その他のリファレンス
 
--   - [コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

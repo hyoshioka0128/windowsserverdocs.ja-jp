@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a25507b83c17100c579f00d10c94e20c6be2aa4e
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 1204f3db338f835b47db03eab3d178544a6acc85
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437217"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83819122"
 ---
 # <a name="expand"></a>expand
 
@@ -49,4 +49,3 @@ expand <source>.cab /f:<files> <destination>
 ## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
-

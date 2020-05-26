@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 8be1897b241871bcb65126b39f201769f82f50bf
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 6943a9762aed0a6c2ac71c73565ab49811a8e307
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436817"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83821172"
 ---
 # <a name="pathping"></a>pathping
 
@@ -43,7 +43,7 @@ pathping [/n] [/h] [/g <Hostlist>] [/p <Period>] [/q <NumQueries> [/w <timeout>]
 |\<TargetName>|エクスポート先を指定する IP アドレスまたはホスト名で識別されます。|
 |/?|コマンド プロンプトにヘルプを表示します。|
 
-## <a name="remarks"></a>解説
+## <a name="remarks"></a>注釈
 -   **pathping**パラメーターでは大文字と小文字が区別されます。
 -   ネットワークの混雑を避けるためには、十分に長い間隔で ping を送信する必要があります。
 -   バースト ロスの影響を最小限に抑えるには送信しない ping 頻度が高すぎます。
@@ -88,4 +88,4 @@ Trace complete.
 [アドレス] 列で縦棒 () として示されているリンクに表示される損失率は、 **|** パスで転送されているパケットの損失の原因となっているリンクの輻輳を示します。 **address** ルーター (IP アドレスで識別される) に対して表示される損失率では、これらのルーターはオーバー ロードことを示しています。
 
 ## <a name="additional-references"></a>その他のリファレンス
--   - [コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 4f9effa0955247ac87301f3a3933d080f7a34863
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: d25a806c63f959ec659a6dd692d9efd5b394a64c
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436227"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820092"
 ---
 # <a name="rpcinfo"></a>rpcinfo
 
@@ -55,4 +55,4 @@ rpcinfo /u <Node Program> [<version>]
 ```
 
 ## <a name="additional-references"></a>その他のリファレンス
--   - [コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

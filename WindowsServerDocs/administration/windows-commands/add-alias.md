@@ -1,5 +1,5 @@
 ---
-title: エイリアスの追加
+title: add alias
 description: エイリアスの追加コマンドのリファレンストピック。別名環境に別名を追加します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
@@ -9,30 +9,30 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 807981c3581eea328291f2389e08065edbd280d3
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 66301a39a1e969e270b42b5ce92a73392a134357
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719029"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83819662"
 ---
-# <a name="add-alias"></a>エイリアスの追加
+# <a name="add-alias"></a>add alias
 
 エイリアスをエイリアス環境に追加します。 パラメーターを指定せずに使用する場合、**エイリアスの追加**コマンドプロンプトでヘルプを表示します。 エイリアスはメタデータファイルに保存され、**メタデータの読み込み**コマンドを使用して読み込まれます。
 
 ## <a name="syntax"></a>構文
 
 ```
-add alias <AliasName> <AliasValue>
+add alias <aliasname> <aliasvalue>
 ```
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | [説明] |
+| パラメーター | 説明 |
 | --------- | ----------- |
-| `<AliasName>` | エイリアスの名前を指定します。 |
-| `<AliasValue>` | エイリアスの値を指定します。 |
-| `/?` | コマンド プロンプトにヘルプを表示します。 |
+| `<aliasname>` | エイリアスの名前を指定します。 |
+| `<aliasvalue>` | エイリアスの値を指定します。 |
+| `? | コマンド プロンプトにヘルプを表示します。 |
 
 ## <a name="examples"></a>例
 
@@ -42,14 +42,14 @@ add alias <AliasName> <AliasValue>
 list shadows all
 ```
 
-次の抜粋は、既定のエイリアスである VSS_SHADOW_x が割り当てられているシャドウコピーを示しています。
+次の抜粋は、既定のエイリアスである*VSS_SHADOW_x*が割り当てられているシャドウコピーを示しています。
 
 ```
 * Shadow Copy ID = {ff47165a-1946-4a0c-b7f4-80f46a309278}
 %VSS_SHADOW_1%
 ```
 
-System1 という名前の新しいエイリアスをこのシャドウコピーに割り当てるには、次のように入力します。
+*System1*という名前の新しいエイリアスをこのシャドウコピーに割り当てるには、次のように入力します。
 
 ```
 add alias System1 %VSS_SHADOW_1%

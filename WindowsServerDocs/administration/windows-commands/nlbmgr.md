@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 59ec2ad6b4614f89f9c1c3cbda97d5283a2374bd
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: a055eb30984bd1832d84bce40607eb0722b175b2
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723741"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820852"
 ---
 # <a name="nlbmgr"></a>nlbmgr
 
@@ -27,14 +27,14 @@ nlbmgr [/help] [/noping] [/hostlist <filename>] [/autorefresh <interval>]
 ```
 #### <a name="parameters"></a>パラメーター
 
-|        パラメーター        |                                                                                                                                                                                                [説明]                                                                                                                                                                                                |
+|        パラメーター        |                                                                                                                                                                                                説明                                                                                                                                                                                                |
 |-------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |          /help          |                                                                                                                                                                                   コマンド プロンプトにヘルプを表示します。                                                                                                                                                                                    |
 |         /noping         | ネットワーク負荷分散マネージャが Windows Management Instrumentation (WMI) を使用してホストに接続する前に、ホストに ping を実行しないようにします。 使用可能なすべてのネットワークアダプターでインターネット制御メッセージプロトコル (ICMP) を無効にしている場合は、このオプションを使用します。 ネットワーク負荷分散マネージャーが、利用できないホストに接続しようとすると、このオプションを使用すると遅延が発生します。 |
 |  /hostlist<filename>   |                                                                                                                                                                Filename で指定されたホストをネットワーク負荷分散マネージャーに読み込みます。                                                                                                                                                                 |
-| /autorefresh<interval> |                                                                                                          ネットワーク負荷分散マネージャーによって、ホストとクラスターの情報<interval>が毎秒更新されます。 間隔が指定されていない場合、情報は60秒ごとに更新されます。                                                                                                          |
+| /autorefresh<interval> |                                                                                                          ネットワーク負荷分散マネージャーによって、ホストとクラスターの情報が毎秒更新さ <interval> れます。 間隔が指定されていない場合、情報は60秒ごとに更新されます。                                                                                                          |
 |           /?            |                                                                                                                                                                                   コマンド プロンプトにヘルプを表示します。                                                                                                                                                                                    |
 
 ## <a name="additional-references"></a>その他のリファレンス
--   - [コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
 

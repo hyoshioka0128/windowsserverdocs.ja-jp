@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: a40a8cbc3c8b13c99cc440b8de797898a5a6249b
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 002098ba64e97c243d1cb53813b9fa858d32c752
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722838"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83821242"
 ---
 # <a name="prnjobs"></a>prnjobs
 
@@ -24,26 +24,26 @@ ms.locfileid: "82722838"
 
 ## <a name="syntax"></a>構文
 ```
-cscript Prnjobs {-z | -m | -x | -l | -?} [-s <ServerName>] 
+cscript Prnjobs {-z | -m | -x | -l | -?} [-s <ServerName>]
 [-p <printerName>] [-j <JobID>] [-u <UserName>] [-w <Password>]
 ```
 
 ### <a name="parameters"></a>パラメーター
 
-|          パラメーター           |                                                                                                                                                                                        [説明]                                                                                                                                                                                        |
+|          パラメーター           |                                                                                                                                                                                        説明                                                                                                                                                                                        |
 |------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |              -Z              |                                                                                                                                                                 **-j**パラメーターで指定された印刷ジョブを一時停止します。                                                                                                                                                                 |
 |              -M              |                                                                                                                                                                指定した印刷ジョブを再開、 **-j** パラメーター。                                                                                                                                                                 |
 |              -X              |                                                                                                                                                                指定した印刷ジョブを取り消し、 **-j** パラメーター。                                                                                                                                                                 |
 |              -l              |                                                                                                                                                                        印刷キュー内のすべての印刷ジョブを一覧表示します。                                                                                                                                                                         |
-|       -s \<ServerName>       |                                                                                                                  管理するプリンターをホストするリモート コンピューターの名前を指定します。 コンピューターを指定しないと、ローカル コンピューターが使用されます。                                                                                                                  |
-|      -p \<printerName>       |                                                                                                                                                           管理するプリンターの名前を指定します。 必須。                                                                                                                                                            |
-|         -j \<JobID>          |                                                                                                                                                                印刷ジョブをキャンセルする (ID 番号) を指定します。                                                                                                                                                                 |
-| -u \<ユーザー名>-w<Password> | 管理するプリンターをホストするコンピューターに接続するアクセス許可を持つアカウントを指定します。 ターゲット コンピューターのローカル Administrators グループのすべてのメンバーはこれらのアクセス許可を持っていますが、アクセス許可を他のユーザーに与えることもできます。 アカウントを指定しない場合は、コマンドを実行するこれらのアクセス許可を持つアカウントでログオンする必要があります。 |
+|       -s \< ServerName>       |                                                                                                                  管理するプリンターをホストするリモート コンピューターの名前を指定します。 コンピューターを指定しないと、ローカル コンピューターが使用されます。                                                                                                                  |
+|      -p \< printerName>       |                                                                                                                                                           管理するプリンターの名前を指定します。 必須。                                                                                                                                                            |
+|         -j \< JobID>          |                                                                                                                                                                印刷ジョブをキャンセルする (ID 番号) を指定します。                                                                                                                                                                 |
+| -u \< ユーザー名>-w<Password> | 管理するプリンターをホストするコンピューターに接続するアクセス許可を持つアカウントを指定します。 ターゲット コンピューターのローカル Administrators グループのすべてのメンバーはこれらのアクセス許可を持っていますが、アクセス許可を他のユーザーに与えることもできます。 アカウントを指定しない場合は、コマンドを実行するこれらのアクセス許可を持つアカウントでログオンする必要があります。 |
 |              /?              |                                                                                                                                                                           コマンド プロンプトにヘルプを表示します。                                                                                                                                                                            |
 
-## <a name="remarks"></a>Remarks
--   **Prnjobs.vbs**コマンドは、%windir%\system32\ printing_Admin_Scripts\\ <language>ディレクトリにある Visual Basic スクリプトです。 このコマンドを使用するには、コマンドプロンプトで「 **cscript** 」と入力し、prnjobs.vbs ファイルへの完全なパスを入力するか、ディレクトリを適切なフォルダーに変更します。 次に例を示します。
+## <a name="remarks"></a>注釈
+-   **Prnjobs.vbs**コマンドは、%windir%\system32\ printing_Admin_Scripts ディレクトリにある Visual Basic スクリプトです \\ <language> 。 このコマンドを使用するには、コマンドプロンプトで「 **cscript** 」と入力し、prnjobs.vbs ファイルへの完全なパスを入力するか、ディレクトリを適切なフォルダーに変更します。 次に例を示します。
     ```
     cscript %WINdir%\System32\printing_Admin_Scripts\en-US\prnjobs.vbs
     ```
@@ -61,5 +61,5 @@ cscript prnjobs.vbs -l -p colorprinter_2
 
 ## <a name="additional-references"></a>その他のリファレンス
 
--   - [コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
 -   [印刷コマンドのリファレンス](print-command-reference.md)

@@ -1,6 +1,6 @@
 ---
 title: help
-description: '* * * * のリファレンストピック'
+description: 使用可能なコマンドの一覧または指定されたコマンドの詳細なヘルプ情報を表示するヘルプコマンドのリファレンストピックです。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,40 +9,49 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9d3a16c2534934a7bc8126b0a775ec7aa08462b3
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 9b73ef32b49b834a91f24e943749eb21398c8588
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724912"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83818662"
 ---
 # <a name="help"></a>help
 
+> 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-
-システムコマンド (つまり、ネットワークに接続されていないコマンド) に関するオンライン情報を提供します。 パラメーターを指定せずに使用する場合は、すべてのシステムコマンドについての説明と**ヘルプ**が表示されます。
-
-
+使用可能なコマンドの一覧、または指定したコマンドの詳細なヘルプ情報を表示します。 パラメーターを指定せずに使用する場合は、すべてのシステムコマンドについての説明と**ヘルプ**が表示されます。
 
 ## <a name="syntax"></a>構文
 
 ```
-help [<Command>] 
-[<Command>] /?
+help [<command>]
 ```
 
 ### <a name="parameters"></a>パラメーター
 
-|パラメーター|[説明]|
-|---------|-----------|
-|\<コマンド>|情報を表示するコマンドの名前を指定します。|
+| パラメーター | 説明 |
+| --------- | ----------- |
+| `<command>` | 詳細なヘルプ情報を表示するコマンドを指定します。 |
 
-## <a name="examples"></a>例
+### <a name="examples"></a>例
 
-**Robocopy**コマンドに関する情報を表示するには、次のいずれかを入力します。
+**Robocopy**コマンドに関する情報を表示するには、次のように入力します。
+
 ```
 help robocopy
-robocopy /? 
+```
+
+DiskPart で使用可能なすべてのコマンドの一覧を表示するには、次のように入力します。
+
+```
+help
+```
+
+DiskPart で**create partition primary**コマンドを使用する方法に関する詳細なヘルプ情報を表示するには、次のように入力します。
+
+```
+help create partition primary
 ```
 
 ## <a name="additional-references"></a>その他のリファレンス

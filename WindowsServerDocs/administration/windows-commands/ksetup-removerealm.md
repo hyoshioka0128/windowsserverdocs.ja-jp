@@ -1,6 +1,6 @@
 ---
-title: 'ksetup: removerealm'
-description: '* * * * のリファレンストピック'
+title: ksetup removerealm
+description: Ksetup removerealm コマンドのリファレンストピックでは、指定された領域のすべての情報をレジストリから削除します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,51 +9,46 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bb7bf4663594a6c164d6495a9ba4cd81942afb79
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 5da1be77a3b585e566bfd3b051b2fb391b326f32
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724602"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83817612"
 ---
-# <a name="ksetupremoverealm"></a>ksetup: removerealm
-
-
+# <a name="ksetup-removerealm"></a>ksetup removerealm
 
 指定された領域のすべての情報をレジストリから削除します。
+
+領域名は、およびの下のレジストリに格納され `HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001` `\CurrentControlSet\Control\Lsa\Kerberos` ます。 既定では、このエントリはレジストリに存在しません。 [Ksetup addrealmflags](ksetup-addrealmflags.md)コマンドを使用して、レジストリにデータを設定できます。
+
+> [!IMPORTANT]
+> ドメインコントローラーから既定の領域名を削除することはできません。これは、DNS 情報がリセットされ、削除されるとドメインコントローラーが使用できなくなる可能性があるためです。
 
 ## <a name="syntax"></a>構文
 
 ```
-ksetup /removerealm <RealmName>
+ksetup /removerealm <realmname>
 ```
+### <a name="parameters"></a>パラメーター
 
-#### <a name="parameters"></a>パラメーター
+| パラメーター | 説明 |
+| --------- | ----------- |
+| `<realmname>` | CORP など、大文字の DNS 名を指定します。CONTOSO.COM は、 **ksetup**の実行時に既定の領域または**領域 =** として表示されます。 |
 
-|パラメーター|[説明]|
-|---------|-----------|
-|\<RealmName>|領域名は、CORP などの大文字の DNS 名で表されます。CONTOSO.COM。 **ksetup**を実行すると、既定の領域として表示されます。|
+### <a name="examples"></a>例
 
-## <a name="remarks"></a>Remarks
-
-領域名は、レジストリの2つの場所 ( **HKEY_LOCAL_MACHINE \system\controlset001**と**\CurrentControlSet\Control\Lsa\Kerberos**) に格納されます。
-
-ドメインコントローラーから既定の領域名を削除することはできません。これにより、DNS 情報がリセットされ、削除すると、ドメインコントローラーが使用できなくなる可能性があります。
-
-## <a name="examples"></a>例
-
-ローカルコンピューター上の .COM のスペルを誤った領域名を CORP に設定します。製薬.短所
-```
-ksetup /setrealm CORP.CONTOSO.CON
-```
-この誤った領域名をローカルコンピューターから削除します。
+間違った領域名 () を削除するには.COM ではなく CON) ローカルコンピューターから次のように入力します。
 ```
 ksetup /removerealm CORP.CONTOSO.CON
 ```
-**Ksetup**を実行して削除を確認し、出力を確認します。
+
+削除を確認するには、 **ksetup**コマンドを実行し、出力を確認します。
 
 ## <a name="additional-references"></a>その他のリファレンス
 
--   [Ksetup](ksetup.md)
--   [Ksetup:setrealm](ksetup-setrealm.md)
--   - [コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [ksetup コマンド](ksetup.md)
+
+- [ksetup setrealm コマンド](ksetup-setrealm.md)

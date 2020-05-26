@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 06/06/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: e8e6e5a29c75c117f6faa3c1d1b3f288582d81a2
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 4a53f28867904c163346fb7943790ff0659ab006
+ms.sourcegitcommit: 29f7a4811b4d36d60b8b7c55ce57d4ee7d52e263
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80855885"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83716877"
 ---
 # <a name="deploy-folder-redirection-with-offline-files"></a>フォルダー リダイレクトとオフライン ファイルを展開する
 
@@ -199,6 +199,6 @@ Windows Server 2019、Windows Server 2016、および Windows Server 2012 でフ
 * [フォルダー リダイレクト、オフライン ファイル、移動ユーザー プロファイル](folder-redirection-rup-overview.md)
 * [フォルダー リダイレクトと移動ユーザー プロファイル用のプライマリ コンピューターを展開する](deploy-primary-computers.md)
 * [オフライン ファイルの高度な機能を有効にする](enable-always-offline.md)
-* [レプリケートされたユーザー プロファイル データに関する Microsoft のサポート表明](https://blogs.technet.microsoft.com/askds/2010/09/01/microsofts-support-statement-around-replicated-user-profile-data/)
+* [レプリケートされたユーザー プロファイル データに関する Microsoft のサポート表明](https://docs.microsoft.com/archive/blogs/askds/microsofts-support-statement-around-replicated-user-profile-data)
 * [DISM を使用したアプリのサイドローディング](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh852635(v=win.10)>)
 * [Windows ランタイムベース アプリのパッケージ化、展開、クエリのトラブルシューティング](https://msdn.microsoft.com/library/windows/desktop/hh973484.aspx)

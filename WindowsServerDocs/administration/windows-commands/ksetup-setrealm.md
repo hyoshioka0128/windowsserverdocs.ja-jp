@@ -1,6 +1,6 @@
 ---
-title: 'ksetup: setrealm'
-description: '* * * * のリファレンストピック'
+title: ksetup setrealm
+description: Kerberos 領域の名前を設定する ksetup setrealm コマンドのリファレンストピックです。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,46 +9,44 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 453977ac39dd3a52b4f5a3104995f944e4a48392
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 03b33977f57e187a8bea69be78c1e9c094b9a73e
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724557"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83817282"
 ---
-# <a name="ksetupsetrealm"></a>ksetup: setrealm
-
-
+# <a name="ksetup-setrealm"></a>ksetup setrealm
 
 Kerberos 領域の名前を設定します。
+
+> [!IMPORTANT]
+> ドメインコントローラーでの Kerberos 領域の設定はサポートされていません。 これを行おうとすると、警告とコマンドエラーが発生します。
 
 ## <a name="syntax"></a>構文
 
 ```
-ksetup /setrealm <DNSDomainName>
+ksetup /setrealm <DNSdomainname>
 ```
 
-#### <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
-|パラメーター|[説明]|
-|---------|-----------|
-|\<DNSDomainName>|DNS ドメイン名は、完全修飾ドメイン名または単純なドメイン名の形式で指定できます。|
+| パラメーター | 説明 |
+| --------- | ----------- |
+| `<DNSdomainname>` | CORP など、大文字の DNS 名を指定します。CONTOSO.COM。 完全修飾ドメイン名を使用することも、名前の単純な形式を使用することもできます。 DNS 名に大文字を使用しない場合は、続行するかどうかを確認するメッセージが表示されます。 |
 
-## <a name="remarks"></a>Remarks
+### <a name="examples"></a>例
 
-DNS ドメイン名パラメーターは大文字で入力する必要があります。 それ以外の場合、 **ksetup**コマンドは検証を続行するように要求します。
+このコンピューターの領域を特定のドメイン名に設定し、ドメインコントローラー以外のアクセスを CONTOSO Kerberos 領域のみに制限するには、次のように入力します。
 
-ドメインコントローラーでの Kerberos 領域の設定はサポートされていません。 これを行おうとすると、警告とコマンドのエラーが発生します。
-
-## <a name="examples"></a>例
-
-このコンピューターの領域を特定のドメイン名に設定して、ドメインコントローラー以外のアクセスを CONTOSO Kerberos 領域のみに制限します。
 ```
 ksetup /setrealm CONTOSO
 ```
 
 ## <a name="additional-references"></a>その他のリファレンス
 
--   - [コマンド ライン構文の記号](command-line-syntax-key.md)
--   [Ksetup](ksetup.md)
--   [Ksetup:removerealm](ksetup-removerealm.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [ksetup コマンド](ksetup.md)
+
+- [ksetup removerealm](ksetup-removerealm.md)

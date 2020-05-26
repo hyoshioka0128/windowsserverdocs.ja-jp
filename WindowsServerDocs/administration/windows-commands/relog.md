@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 8cff76e1897c5e5791107bbaf5b7a254a6cd4bb4
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 0b958cbceff8657a35f080c704bb13b29ef55d78
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437107"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820142"
 ---
 # <a name="relog"></a>relog
 
@@ -45,7 +45,7 @@ relog [<FileName> [<FileName> ...]] [/a] [/c <path> [<path> ...]] [/cf <FileName
 |                                             -y                                             |                                                                                                                                            すべての質問に対する "yes" に応答することで、プロンプトをバイパスします。                                                                                                                                             |
 |                                             /?                                             |                                                                                                                                                      コマンド プロンプトにヘルプを表示します。                                                                                                                                                      |
 
-## <a name="remarks"></a>解説
+## <a name="remarks"></a>注釈
 カウンター パスの形式:
 - カウンターパスの一般的な形式は次のとおりです。 [ \\ \< computer>] \\ \< オブジェクト> [ \< 親>\\<インスタンス # インデックス>] \\ \< カウンター>]。形式の親、インスタンス、インデックス、およびカウンターの各コンポーネントに有効な名前またはワイルドカード文字を含めることができます。 コンピューター、親、インスタンス、およびインデックスのコンポーネントでは、すべてのカウンタは必要ありません。
 - 使用するカウンター パスを決定すると、自体カウンターに基づいています。 LogicalDisk オブジェクトのインスタンスがなど <Index>, ので、< #index > または、ワイルドカードを指定する必要があります。 したがって、 **\LogicalDisk ( \* / \* # \* \\ ) \\ **の形式を使用できます。*
@@ -85,4 +85,4 @@ relog "c:\perflogs\daily_trace_log.blg" -f sql -o "SQL:sql2016x64odbc!counter_lo
 ```
 
 ## <a name="additional-references"></a>その他のリファレンス
--   - [コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

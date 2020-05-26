@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 70b40b6fe16ce37f6fe7cb64c09463db8db4b47c
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: fdbb9fe636bb30be90164d9a2163c495a9c2e704
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718980"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83819652"
 ---
 # <a name="arp"></a>arp
 
@@ -30,7 +30,7 @@ arp [/a [<inetaddr>] [/n <ifaceaddr>]] [/g [<inetaddr>] [-n <ifaceaddr>]] [/d <i
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | [説明] |
+| パラメーター | 説明 |
 | --------- | ----------- |
 | `[/a [<inetaddr>] [/n <ifaceaddr>]` | すべてのインターフェイスの現在の arp キャッシュテーブルを表示します。 **/N**パラメーターでは、大文字と小文字が区別されます。 特定の IP アドレスの arp キャッシュエントリを表示するには、 **inetaddr**パラメーターで**arp/a**を使用します。ここで、 **inetaddr**は IP アドレスです。 場合**inetaddr**が指定されていない、最初の該当するインターフェイスが使用されます。 特定のインターフェイスの arp キャッシュテーブルを表示するには、 **/n ifaceaddr**パラメーターを **/a**パラメーターと組み合わせて使用します。 **inetaddr**は、インターフェイスに割り当てられた IP アドレスです。 |
 | `[/g [<inetaddr>] [/n <ifaceaddr>]` | **/A**と同じです。 |
@@ -38,7 +38,7 @@ arp [/a [<inetaddr>] [/n <ifaceaddr>]] [/g [<inetaddr>] [-n <ifaceaddr>]] [/d <i
 | `[/s <inetaddr> <etheraddr> [<ifaceaddr>]` | IP アドレス**inetaddr**を物理アドレス**etheraddr**に解決する静的エントリを arp キャッシュに追加します。 特定のインターフェイスの静的 arp キャッシュエントリをテーブルに追加するには、 **ifaceaddr**パラメーターを使用します。 **ifaceaddr**は、インターフェイスに割り当てられた IP アドレスです。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-### <a name="remarks"></a>Remarks
+### <a name="remarks"></a>注釈
 
 - **Inetaddr**と**ifaceaddr**の IP アドレスは、ドット形式の10進表記で表されます。
 
@@ -54,13 +54,13 @@ arp [/a [<inetaddr>] [/n <ifaceaddr>]] [/g [<inetaddr>] [-n <ifaceaddr>]] [/d <i
 arp /a
 ```
 
-IP アドレス10.0.0.99 が割り当てられているインターフェイスの arp キャッシュテーブルを表示するには、次のように入力します。
+IP アドレス*10.0.0.99*が割り当てられているインターフェイスの arp キャッシュテーブルを表示するには、次のように入力します。
 
 ```
 arp /a /n 10.0.0.99
 ```
 
-IP アドレス10.0.0.80 を解決する静的 arp キャッシュエントリを物理アドレス 00-AA-00-4F-9C に追加するには、次のように入力します。
+IP アドレス*10.0.0.80*を解決する静的 arp キャッシュエントリを物理アドレス*00-AA-00-4F-9C*に追加するには、次のように入力します。
 
 ```
 arp /s 10.0.0.80 00-AA-00-4F-2A-9C

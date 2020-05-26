@@ -1,6 +1,6 @@
 ---
-title: 'ksetup: getenctypeattr'
-description: '* * * * のリファレンストピック'
+title: ksetup getenctypeattr
+description: Ksetup getenctypeattr コマンドのリファレンストピックで、ドメインの暗号化の種類の属性を取得します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,51 +9,51 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f8363113d4fbb310d98b40d852b36a00f20320e6
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 2acead4ff1179002303c18d4feff262080203a28
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724632"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83817702"
 ---
-# <a name="ksetupgetenctypeattr"></a>ksetup: getenctypeattr
+# <a name="ksetup-getenctypeattr"></a>ksetup getenctypeattr
 
+ドメインの暗号化の種類の属性を取得します。 正常に完了したか、完了しなかったときに、ステータスメッセージが表示されます。
 
-
-ドメインの暗号化の種類の属性を取得します。
+Kerberos チケット保証チケット (TGT) とセッションキーの暗号化の種類を表示するには、 **klist**コマンドを実行し、出力を表示します。 コマンドを実行して、に接続してを使用するようにドメインを設定でき `ksetup /domain <domainname>` ます。
 
 ## <a name="syntax"></a>構文
 
 ```
-ksetup /getenctypeattr <DomainName> 
+ksetup /getenctypeattr <domainname>
 ```
 
-#### <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
-|パラメーター|[説明]|
-|---------|-----------|
-|\<DomainName>|接続を確立するドメインの名前。 完全修飾ドメイン名、または名前の単純な形式 (corp.contoso.com や contoso など) を使用します。|
+| パラメーター | 説明 |
+| --------- | ----------- |
+| `<domainname>` | 接続を確立するドメインの名前。 完全修飾ドメイン名、または名前の単純な形式 (corp.contoso.com や contoso など) を使用します。 |
 
-## <a name="remarks"></a>Remarks
+### <a name="examples"></a>例
 
-Kerberos チケット保証チケット (TGT) とセッションキーの暗号化の種類を表示するには、 **klist**コマンドを実行し、出力を表示します。
+ドメインの暗号化の種類の属性を確認するには、次のように入力します。
 
-コマンドが成功または失敗した場合は、正常に完了したか失敗したときにステータスメッセージが表示されます。
-
-接続先として使用するドメインを設定するには、 **ksetup/Domain \<DomainName>** コマンドを実行します。
-
-## <a name="examples"></a>例
-
-ドメインの暗号化の種類の属性を確認します。
 ```
 ksetup /getenctypeattr mit.contoso.com
 ```
 
 ## <a name="additional-references"></a>その他のリファレンス
 
--   [Klist](klist.md)
--   [Ksetup:domain](ksetup-domain.md)
--   [Ksetup:addenctypeattr](ksetup-addenctypeattr.md)
--   [Ksetup:setenctypeattr](ksetup-setenctypeattr.md)
--   [Ksetup:delenctypeattr](ksetup-delenctypeattr.md)
--   - [コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [klist コマンド](klist.md)
+
+- [ksetup コマンド](ksetup.md)
+
+- [ksetup domain コマンド](ksetup-domain.md)
+
+- [ksetup addenctypeattr コマンド](ksetup-addenctypeattr.md)
+
+- [ksetup setenctypeattr コマンド](ksetup-setenctypeattr.md)
+
+- [ksetup delenctypeattr コマンド](ksetup-delenctypeattr.md)

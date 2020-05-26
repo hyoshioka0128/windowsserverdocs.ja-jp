@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ba3d826b0312091f00ef01d2efe9ee63572fade1
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: a7c32818461c46a7d582029ec127c574d6a8f3e3
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82725892"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83819112"
 ---
 # <a name="wbadmin-start-sysrecovery"></a>wbadmin start sysrecovery
 
@@ -43,7 +43,7 @@ wbadmin start sysrecovery
 
 ### <a name="parameters"></a>パラメーター
 
-|パラメーター|[説明]|
+|パラメーター|説明|
 |---------|-----------|
 |-version|復元するバックアップのバージョン識別子を MM/DD/YYYY-HH: MM 形式で指定します。 バージョン識別子を把握していない場合は、入力 **wbadmin のバージョンを取得する**です。|
 |-backuptarget|回復する 1 つ以上のバックアップが格納されている記憶域の場所を指定します。 このパラメーターは、このコンピューターのバックアップが通常格納されている場所とは異なる場所に保存されている場合に便利です。|
@@ -60,13 +60,13 @@ wbadmin start sysrecovery
 ```
 wbadmin start sysrecovery -version:03/31/2013-09:00 -backupTarget:d:
 ```
-9:00 2013 年4月30日に実行されたバックアップからの情報の回復を開始するには、共有\\ \\フォルダー servername\shared: server01 に、次のように入力します。
+9:00 2013 年4月30日に実行されたバックアップからの情報の回復を開始するには、共有フォルダー \\ \\ servername\shared: server01 に、次のように入力します。
 ```
 wbadmin start sysrecovery -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
 ```
 
 ## <a name="additional-references"></a>その他のリファレンス
 
--   - [コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
 -   [Wbadmin](wbadmin.md)
 -   [WBBareMetalRecovery](https://technet.microsoft.com/library/jj902461.aspx)コマンドレット

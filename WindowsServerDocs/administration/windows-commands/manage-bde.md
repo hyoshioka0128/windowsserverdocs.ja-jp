@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 567e0ed45f6bef42e82c3a68b3c0cbbb352b12d9
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 4f103a8277f84487e2434034a149e056a8deee57
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724033"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820782"
 ---
 # <a name="manage-bde"></a>manage-bde
 
@@ -25,13 +25,13 @@ ms.locfileid: "82724033"
 ## <a name="syntax"></a>構文
 
 ```
-manage-bde [-status] [–on] [–off] [–pause] [–resume] [–lock] [–unlock] [–autounlock] [–protectors] [–tpm] 
+manage-bde [-status] [–on] [–off] [–pause] [–resume] [–lock] [–unlock] [–autounlock] [–protectors] [–tpm]
 [–SetIdentifier] [-ForceRecovery] [–changepassword] [–changepin] [–changekey] [-KeyPackage] [–upgrade] [-WipeFreeSpace] [{-?|/?}] [{-help|-h}]
 ```
 
 #### <a name="parameters"></a>パラメーター
 
-|パラメーター|[説明]|
+|パラメーター|説明|
 |---------|-----------|
 |[Manage-bde: status](manage-bde-status.md)|BitLocker で保護されているかどうかは、コンピューターで、すべてのドライブについての情報を提供します。|
 |[Manage-bde: on](manage-bde-on.md)|ドライブを暗号化し、BitLocker をオンにします。|
@@ -71,5 +71,5 @@ manage-bde –unlock E: -recoverypassword 111111-222222-333333-444444-555555-666
 
 ## <a name="additional-references"></a>その他のリファレンス
 
--   - [コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
 -   [コマンドラインを使用して BitLocker を有効にします。](https://technet.microsoft.com/library/dd894351(v=ws.10).aspx)

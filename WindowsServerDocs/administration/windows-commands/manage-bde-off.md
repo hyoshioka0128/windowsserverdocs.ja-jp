@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 588ce453cfca72a029d907be894b142567a43ab5
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 2ebbe8e0985c08ba4f156de9b87bce143184f80a
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724140"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820662"
 ---
 # <a name="manage-bde-off"></a>manage-bde: off
 
@@ -30,7 +30,7 @@ manage-bde -off [<Volume>] [-computername <Name>] [{-?|/?}] [{-help|-h}]
 
 #### <a name="parameters"></a>パラメーター
 
-|パラメーター|[説明]|
+|パラメーター|説明|
 |---------|-----------|
 |\<ボリューム>|ドライブ文字の後にコロン、ボリューム GUID パス、またはマウントされたボリュームが続きます。|
 |-computername|別のコンピューターに BitLocker による保護を変更する、bde.exe を使用することを指定します。 また、このコマンドの省略版として **-cn**を使用することもできます。|
@@ -47,5 +47,5 @@ manage-bde –off C:
 
 ## <a name="additional-references"></a>その他のリファレンス
 
--   - [コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
 -   [Manage-bde](manage-bde.md)
