@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ee6caac0002cecb9eaecd00f6d3d4a2d23456d72
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 273381fa62f42e9cf084c2b7dbf30ed7211295fb
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436967"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83821012"
 ---
 # <a name="tlntadmn"></a>tlntadmn
 
@@ -50,7 +50,7 @@ tlntadmn [<computerName>] [-u <UserName>] [-p <Password>] [{start | stop | pause
 |     config モード = {console &#124; stream}      |                                                                                                                                             操作のモードを指定します。                                                                                                                                             |
 |                       -?                       |                                                                                                                                           コマンド プロンプトにヘルプを表示します。                                                                                                                                           |
 
-## <a name="remarks"></a>解説
+## <a name="remarks"></a>注釈
 -   サーバーの設定を表示するには、パラメーターを指定せずに「 **tlntを**使用します。
 -   **Tlntて n**コマンドを使用するには、管理者の資格情報を使用してローカルコンピューターにログオンする必要があります。 リモートコンピューターを管理するには、リモートコンピューターの管理者資格情報も指定する必要があります。 これを行うには、ローカルコンピューターとリモートコンピューターの両方の管理者資格情報を持つアカウントを使用してローカルコンピューターにログオンします。 この方法を使用できない場合は、 **-u**パラメーターと **-p**パラメーターを使用して、リモートコンピューターの管理者資格情報を指定できます。
 
@@ -66,4 +66,4 @@ tlntadmn -s
 
 ## <a name="additional-references"></a>その他のリファレンス
 -   [telnet 操作ガイド](https://technet.microsoft.com/library/cc753164(v=ws.10).aspx)
--   - [コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

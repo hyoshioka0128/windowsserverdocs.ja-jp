@@ -1,6 +1,6 @@
 ---
 title: helpctr
-description: '* * * * のリファレンストピック'
+description: Helpctr.exe コマンドのリファレンストピックです。 このコマンドは非推奨とされており、Windows の将来のリリースでサポートされるとは限りません。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,17 +9,15 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2fa3c1210aaa903ffecda28604353cede2311060
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: b2dc9d0f5dfbd9ae61e0e4279596f68ccfae0055
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993315"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83818582"
 ---
 # <a name="helpctr"></a>helpctr
 
+Helpctr.exe コマンドは非推奨とされており、Windows の将来のリリースでサポートされるとは限りません。
 
-
-Helpctr.exe は非推奨とされており、Windows の将来のリリースでサポートされるとは限りません。
-
-このツールは Windows Server 2003 に含まれています。 詳細については、「 [helpctr.exe](https://technet.microsoft.com/library/cc755821(v=ws.10).aspx)」を参照してください。
+このツールは、Windows Server 2003 に含まれます。 詳細については、「 [helpctr.exe](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc755821(v=ws.10))」を参照してください。

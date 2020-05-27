@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a4384ce8d4f23966aea278e90b9ddddc42da6e77
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: bf914e4e7da4f00c547353da4fc8d04ad6828646
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724233"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820522"
 ---
 # <a name="macfile"></a>macfile
 
 > 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-Macintosh サーバー、ボリューム、ディレクトリ、およびファイルのファイル サーバーを管理します。 バッチ ファイルで、一連のコマンドをなどによって手動で開始する管理タスクを自動化できるか、事前に定義した時刻。 
+Macintosh サーバー、ボリューム、ディレクトリ、およびファイルのファイル サーバーを管理します。 バッチ ファイルで、一連のコマンドをなどによって手動で開始する管理タスクを自動化できるか、事前に定義した時刻。
 -   [Macintosh からアクセス可能なボリューム内のディレクトリを変更するには](#BKMK_Moddirs)
 -   [Macintosh ファイルのデータおよびリソース フォークに参加するには](#BKMK_Joinforks)
 -   [ログオン メッセージを変更し、セッションの制限](#BKMK_LogonLimit)
@@ -34,17 +34,17 @@ macfile directory[/server:\\<computerName>] /path:<directory> [/owner:<OwnerName
 ```
 
 #### <a name="parameters"></a>パラメーター
--   /server:\\ \\ <computerName>ディレクトリを変更するサーバーを指定します。 省略した場合は、操作は、ローカル コンピューターで実行されます。
+-   /server: \\ \\ <computerName> ディレクトリを変更するサーバーを指定します。 省略した場合は、操作は、ローカル コンピューターで実行されます。
 -   /path:<directory> が必要です。 変更するディレクトリへのパスを指定します。 ディレクトリは存在している必要があります。 **macfile ディレクトリ**では、ディレクトリは作成されません。
--   /owner:<OwnerName>ディレクトリの所有者を変更します。 省略した場合、所有者は変更されません。
+-   /owner: <OwnerName> ディレクトリの所有者を変更します。 省略した場合、所有者は変更されません。
 -   グループ化/:<GroupName> ディレクトリに関連付けられているプライマリ Macintosh であるグループの変更または指定します。 省略した場合は、プライマリ グループは変更されません。
 -   /permissions:<Permissions> 所有者、プライマリ グループは、および世界 (everyone) 用のディレクトリに対する権限を設定します。 11 桁の数字を使用して、アクセス許可を設定します。 番号 1 は権限を付与し、0 (たとえば、11111011000) のアクセスを許可した権限を取り消します。 省略すると、アクセス許可は変更されません。
     添字の位置は、次の表に示すようにするアクセス許可を設定するが決まります。
 
-    |[位置]|アクセス許可を設定します。|
+    |位置|アクセス許可を設定します。|
     |------|------------|
-    |First (先頭へ)|OwnerSeeFiles|
-    |秒|OwnerSeeFolders|
+    |First|OwnerSeeFiles|
+    |Second|OwnerSeeFolders|
     |第 3 週|OwnerMakechanges|
     |4 番目|GroupSeeFiles|
     |第 5|GroupSeeFolders|
@@ -58,7 +58,7 @@ macfile directory[/server:\\<computerName>] /path:<directory> [/owner:<OwnerName
 -   /?
     コマンド プロンプトにヘルプを表示します。
 
-### <a name="remarks"></a>Remarks
+### <a name="remarks"></a>注釈
 - 入力した情報にスペースや特殊文字が含まれている場合は、テキストを引用符で囲みます (たとえば、* * * *<em>コンピューター名</em>* * * *)。
 - 使用 **macfiledirectory** Macintosh からアクセス可能なボリューム内の既存のディレクトリを Macintosh ユーザーが使用できるようにします。 **Macfiledirectory** コマンドでは、ディレクトリは作成されません。 ファイル マネージャーでは、コマンド プロンプトを使用して、または **macintosh の新しいフォルダー** を使用する前に、Macintosh からアクセス可能なボリュームにディレクトリを作成するコマンド、 **macfile ディレクトリ** コマンドです。
   ### <a name="examples"></a>例
@@ -76,7 +76,7 @@ macfile forkize[/server:\\<computerName>] [/creator:<CreatorName>] [/type:<typeN
 
 #### <a name="parameters"></a>パラメーター
 
-|         パラメーター          |                                                                                                           [説明]                                                                                                            |
+|         パラメーター          |                                                                                                           説明                                                                                                            |
 |----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | /server\\\\<computerName> |                                                            ファイルを結合するサーバーを指定します。 省略した場合は、操作は、ローカル コンピューターで実行されます。                                                            |
 |   ファ<CreatorName>   |                                      ファイルの作成者を指定します。 Macintosh finder は、 **/creator**コマンドラインオプションを使用して、ファイルを作成したアプリケーションを特定します。                                       |
@@ -86,7 +86,7 @@ macfile forkize[/server:\\<computerName>] [/creator:<CreatorName>] [/type:<typeN
 |   targetfile<Filepath>   | 必須。 データ フォークし、リソースのフォークを結合して作成されるファイルの場所を指定または、種類またはクリエーターを変更する場合は、ファイルの場所を指定します。 ファイルは、指定されたサーバー上に存在する必要があります。 |
 |             /?             |                                                                                               コマンド プロンプトにヘルプを表示します。                                                                                               |
 
-### <a name="remarks"></a>Remarks
+### <a name="remarks"></a>注釈
 - 入力した情報にスペースや特殊文字が含まれている場合は、テキストを引用符で囲みます (たとえば、* * * *<em>コンピューター名</em>* * * *)。
 
 ### <a name="examples"></a>例
@@ -94,7 +94,7 @@ macfile forkize[/server:\\<computerName>] [/creator:<CreatorName>] [/type:<typeN
 ```
 macfile forkize /resourcefork:c:\cross\mac\appcode /type:APPL /creator:MAGNOLIA /targetfile:D:\Release\treeapp
 ```
-ファイルの作成者を Microsoft Word 5.1 に変更するには、D:\Word documents\Group files \\ディレクトリの file.txt ファイルで、次のように入力します。
+ファイルの作成者を Microsoft Word 5.1 に変更するには、D:\Word documents\Group files ディレクトリの file.txt ファイルで、 \\ 次のように入力します。
 ```
 macfile forkize /server:\\servera /creator:MSWD /type:TEXT /targetfile:d:\Word documents\Group files\Word.txt
 ```
@@ -107,14 +107,14 @@ macfile server [/server:\\<computerName>] [/maxsessions:{Number | unlimited}] [/
 
 #### <a name="parameters"></a>パラメーター
 
-|               パラメーター                |                                                                                                                                                                           [説明]                                                                                                                                                                            |
+|               パラメーター                |                                                                                                                                                                           説明                                                                                                                                                                            |
 |----------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |       /server\\\\<computerName>       |                                                                                                                        パラメーターを変更するサーバーを指定します。 省略した場合は、操作は、ローカル コンピューターで実行されます。                                                                                                                         |
 | /maxsessions: {数 & #124; 無制限} |                                                                                         Macintosh 用のファイルおよびプリントサーバーを同時に使用できるユーザーの最大数を指定します。 省略した場合は、 **maxsessions** 設定、サーバーは変更されません。                                                                                         |
 |        /loginmessage:<Message>         | macintosh サーバーのファイルサーバーにログオンするときに、Macintosh ユーザーに表示されるメッセージを変更します。 ログオン メッセージの文字の最大数は、199 です。 省略した場合は、 **loginmessage** メッセージは、サーバーは変更されません。 既存のログオン メッセージを削除するには、 **/loginmessage** 残しておくに、パラメーター、 *メッセージ* 変数が空です。 |
 |                   /?                   |                                                                                                                                                               コマンド プロンプトにヘルプを表示します。                                                                                                                                                               |
 
-### <a name="remarks"></a>Remarks
+### <a name="remarks"></a>注釈
 - 入力した情報にスペースや特殊文字が含まれている場合は、テキストを引用符で囲みます (たとえば、* * * *<em>コンピューター名</em>* * * *)。
 
 ### <a name="examples"></a>例
@@ -132,7 +132,7 @@ macfile volume /remove[/server:\\<computerName>] /name:<volumeName>
 
 #### <a name="parameters"></a>パラメーター
 
-|              パラメーター               |                                                                                                                                                                       [説明]                                                                                                                                                                        |
+|              パラメーター               |                                                                                                                                                                       説明                                                                                                                                                                        |
 |--------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |          {//追加 (& a) #124;/set}          |                                                                                                                      追加する、または Macintosh からアクセス可能なボリュームを変更するときに必要です。 指定されたボリュームを追加または変更します。                                                                                                                       |
 |      /server\\\\<computerName>      |                                                                                                             追加、変更、またはボリュームを削除するサーバーを指定します。 省略した場合は、操作は、ローカル コンピューターで実行されます。                                                                                                              |
@@ -145,7 +145,7 @@ macfile volume /remove[/server:\\<computerName>] /name:<volumeName>
 |               /remove                |                                                                                                                                Macintosh アクセス可能なボリュームを削除するときに必要です。 指定されたボリュームを削除します。                                                                                                                                |
 |                  /?                  |                                                                                                                                                           コマンド プロンプトにヘルプを表示します。                                                                                                                                                           |
 
-### <a name="remarks"></a>Remarks
+### <a name="remarks"></a>注釈
 - 入力した情報にスペースや特殊文字が含まれている場合は、テキストを引用符で囲みます (たとえば、* * * *<em>コンピューター名</em>* * * *)。
 
 ### <a name="examples"></a>例
@@ -157,7 +157,7 @@ macfile volume /add /name:US Marketing Statistics /guestsallowed:false /path:e:\
 ```
 macfile volume /set /name:US Marketing Statistics /readonly:true /password:saturn /maxusers:5
 ```
-ランドスケープ設計と呼ばれるボリュームをサーバー \\\Magnolia に追加し、E ドライブの tree ディレクトリを使用して、ゲストがボリュームにアクセスできるように指定するには、次のように入力します。
+ランドスケープ設計と呼ばれるボリュームをサーバー \Magnolia に追加し、 \\ E ドライブの tree ディレクトリを使用して、ゲストがボリュームにアクセスできるように指定するには、次のように入力します。
 ```
 macfile volume /add /server:\\Magnolia /name:Landscape Design /path:e:\trees
 ```
@@ -167,4 +167,4 @@ macfile volume /remove /name:Sales Reports
 ```
 
 ## <a name="additional-references"></a>その他のリファレンス
--   - [コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fa111934f93bf7fea5aade1f39b4fc6a014d6c9e
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: edbd6acefe2ef921b9325de4808753d5929efd1e
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82725872"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83821382"
 ---
 # <a name="wbadmin-start-systemstaterecovery"></a>wbadmin start systemstaterecovery
 
@@ -57,7 +57,7 @@ wbadmin start systemstaterecovery
 
 ### <a name="parameters"></a>パラメーター
 
-|パラメーター|[説明]|
+|パラメーター|説明|
 |---------|-----------|
 |-version|復元するバックアップのバージョン識別子を MM/DD/YYYY-HH: MM 形式で指定します。 バージョン識別子を把握していない場合は、入力 **wbadmin のバージョンを取得する**です。|
 |-showsummary|最後のシステム状態の回復の概要を報告します (操作を完了するために再起動が必要になった後)。 このパラメーターは他のどのパラメーターとも一緒に指定することはできません。|
@@ -70,17 +70,17 @@ wbadmin start systemstaterecovery
 
 ## <a name="examples"></a>例
 
-- 03/31/2013 の午前9:00 にバックアップのシステム状態の回復を実行するには、次のように入力します。  
+- 03/31/2013 の午前9:00 にバックアップのシステム状態の回復を実行するには、次のように入力します。
   ```
   wbadmin start systemstaterecovery -version:03/31/2013-09:00
-  ```  
-- 04/30/2013 の午前9:00 にバックアップのシステム状態の回復を実行するには server01 の共有リソース\\ \\servername\share に格納されている場合は、次のように入力します。  
+  ```
+- 04/30/2013 の午前9:00 にバックアップのシステム状態の回復を実行するには server01 の共有リソース servername\share に格納されている \\ \\ 場合は、次のように入力します。
   ```
   wbadmin start systemstaterecovery -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
   ```
 
 ## <a name="additional-references"></a>その他のリファレンス
 
--   - [コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
 -   [Wbadmin](wbadmin.md)
 -   [WBSystemStateRecovery](https://technet.microsoft.com/library/jj902449.aspx)コマンドレット

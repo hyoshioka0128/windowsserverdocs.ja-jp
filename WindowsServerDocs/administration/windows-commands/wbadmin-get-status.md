@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1e8e5194cd49770f72ce810f4652d9bc98af75e2
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 0e41c54b9f916f0032a4976cdfa6d3ca101fb744
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720157"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83821192"
 ---
 # <a name="wbadmin-get-status"></a>wbadmin の状態の取得
 
@@ -34,13 +34,13 @@ wbadmin get status
 
 このサブコマンドにはパラメーターがありません。
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>注釈
 
 -   このサブコマンドは、現在のバックアップまたは回復操作が完了するまで停止しません。コマンドウィンドウを閉じた場合でも、サブコマンドは引き続き実行されます。
 -   現在のバックアップまたは回復操作を停止する場合は、 **wbadmin stop job**サブコマンドを使用します。
 
 ## <a name="additional-references"></a>その他のリファレンス
 
--   - [コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
 -   [Wbadmin](wbadmin.md)
 -   [WBJob](https://technet.microsoft.com/library/jj902426.aspx)コマンドレット

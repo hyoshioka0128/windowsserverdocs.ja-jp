@@ -9,29 +9,29 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 54c75af3705c6f1b0ae4410265e8d869a3c8419b
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 4e27e3c2654833c3eb7cc4b346b1e54a59913115
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721474"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83821052"
 ---
 # <a name="telnet-status"></a>telnet: 状態
 
 > 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-ステータス情報を表示します。   
+ステータス情報を表示します。
 
-## <a name="syntax"></a>構文  
-```  
-st[atus]  
-```  
-#### <a name="parameters"></a>パラメーター  
-なし  
-## <a name="examples"></a>例  
-状態情報が表示されます。  
-```  
-st  
-```  
-## <a name="additional-references"></a>その他のリファレンス  
--   - [コマンド ライン構文の記号](command-line-syntax-key.md)  
+## <a name="syntax"></a>構文
+```
+st[atus]
+```
+#### <a name="parameters"></a>パラメーター
+なし
+## <a name="examples"></a>例
+状態情報が表示されます。
+```
+st
+```
+## <a name="additional-references"></a>その他のリファレンス
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

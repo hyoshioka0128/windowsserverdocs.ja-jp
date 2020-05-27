@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 89405e767e3fa06dbe0caf742fc898974b217552
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 56c9cdecfe2a5553230f1c8120c827e7f05d0ba9
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722029"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83821096"
 ---
 # <a name="secedit"></a>secedit
 
@@ -25,7 +25,7 @@ ms.locfileid: "82722029"
 ## <a name="syntax"></a>構文
 
 ```
-secedit 
+secedit
 [/analyze /db <database file name> /cfg <configuration file name> [/overwrite] /log <log file name> [/quiet]]
 [/configure /db <database file name> [/cfg <configuration filename>] [/overwrite] [/areas [securitypolicy | group_mgmt | user_rights | regkeys | filestore | services]] [/log <log file name>] [/quiet]]
 [/export /db <database file name> [/mergedpolicy] /cfg <configuration file name> [/areas [securitypolicy | group_mgmt | user_rights | regkeys | filestore | services]] [/log <log file name>]]
@@ -45,7 +45,7 @@ secedit
 |[Secedit:import](secedit-import.md)|テンプレートで指定された設定をシステムに適用またはシステムに照らして分析できるように、データベースにセキュリティ テンプレートをインポートできます。|
 |[Secedit:validate](secedit-validate.md)|セキュリティ テンプレートの構文を検証できます。|
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>注釈
 
 すべてのファイル名のパスが指定されていない場合、現在のディレクトリが使用されます。
 
@@ -55,9 +55,9 @@ secedit
 |           ファイル           |                                                                                                                                                                                                                                                               説明                                                                                                                                                                                                                                                                |
 |--------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |        Scesrv.log        |                                                                                                                             **場所**: %windir%\security\logs</br>**によって作成された**: オペレーティング システム</br>**ファイルの種類**: テキスト</br>**リフレッシュ レート**: ときに上書き secedit、分析を構成する、エクスポートまたは/import を実行します。</br>**コンテンツ**: ポリシーの種類でグループ化された分析の結果が含まれています。                                                                                                                             |
-| *ユーザーが選択した名前*.sdb |                                                                                    **場所**: %windir%\*ユーザー アカウント<em>\Documents\Security\Database</br></em>*作成者*<em>: セキュリティの構成と分析スナップインを実行する</br></em>*ファイルの種類*<em>: 専有</br></em>*更新頻度*<em>: 新しいセキュリティテンプレートが作成されるたびに更新されます。</br></em>*コンテンツ*\*: ローカルセキュリティポリシーとユーザーが作成したセキュリティテンプレート。                                                                                    |
-| *ユーザーが選択した名前*.log | **場所**: ユーザー定義しますが、既定値は %windir%\*ユーザー アカウント<em>\Documents\Security\Logs</br></em>*作成者*<em>:/analyze および/configure サブコマンドを実行する (またはセキュリティの構成と分析スナップインを使用する)</br></em>*ファイルの種類*<em>: テキスト</br></em>*リフレッシュレート*<em>:/analyze および/configure サブコマンドを実行します (または、セキュリティの構成と分析スナップインを使用します)。上書き.</br></em>*コンテンツ*\*:</br>1. ログファイル名</br>2. 日付と時刻</br>3. 分析または調査の結果。 |
-| *ユーザーが選択した名前*.inf |                                                                                     **場所**: %windir%\*ユーザー アカウント<em>\Documents\Security\Templates</br></em>*作成者*<em>: セキュリティテンプレートスナップインの実行</br></em>*ファイルの種類*<em>: テキスト</br></em>*更新頻度*<em>: セキュリティテンプレートが更新されるたびに、</br></em>*コンテンツ*\*: スナップインを使用して選択した各ポリシーのテンプレートに関する設定情報が含まれます。                                                                                     |
+| *ユーザーが選択した名前*.sdb |                                                                                    **場所**: %windir%\*ユーザー アカウント<em>\Documents\Security\Database</br></em>*作成者* <em> : セキュリティの構成と分析スナップインを実行する</br></em>*ファイルの種類* <em> : 専有</br></em>*更新頻度* <em> : 新しいセキュリティテンプレートが作成されるたびに更新されます。</br></em>*コンテンツ* \* : ローカルセキュリティポリシーとユーザーが作成したセキュリティテンプレート。                                                                                    |
+| *ユーザーが選択した名前*.log | **場所**: ユーザー定義しますが、既定値は %windir%\*ユーザー アカウント<em>\Documents\Security\Logs</br></em>*作成者* <em> :/analyze および/configure サブコマンドを実行する (またはセキュリティの構成と分析スナップインを使用する)</br></em>*ファイルの種類* <em> : テキスト</br></em>*リフレッシュレート* <em> :/analyze および/configure サブコマンドを実行する (またはセキュリティの構成と分析スナップインを使用する)。上書きします。</br></em>*コンテンツ* \* :</br>1. ログファイル名</br>2. 日付と時刻</br>3. 分析または調査の結果。 |
+| *ユーザーが選択した名前*.inf |                                                                                     **場所**: %windir%\*ユーザー アカウント<em>\Documents\Security\Templates</br></em>*作成者* <em> : セキュリティテンプレートスナップインの実行</br></em>*ファイルの種類* <em> : テキスト</br></em>*更新頻度* <em> : セキュリティテンプレートが更新されるたびに、</br></em>*コンテンツ* \* : スナップインを使用して選択した各ポリシーのテンプレートに関する設定情報が含まれます。                                                                                     |
 
 > [!NOTE]
 > Microsoft 管理コンソール (MMC) とセキュリティの構成と分析スナップインでは、Server Core では使用できません。
@@ -65,4 +65,4 @@ secedit
 ## <a name="additional-references"></a>その他のリファレンス
 
 このコマンドの使用方法の例については、サブコマンドのファイルのいずれかの例を参照してください。
--   - [コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 542f65b7d87eacb102f64fb4103e6c684df4faa5
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 1eabc053e5cb1bdd517cfb02a13e955707ffacf6
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720152"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820512"
 ---
 # <a name="wbadmin-get-versions"></a>wbadmin get のバージョン
 
@@ -34,12 +34,12 @@ wbadmin get versions
 
 ### <a name="parameters"></a>パラメーター
 
-|パラメーター|[説明]|
+|パラメーター|説明|
 |---------|-----------|
 |-backuptarget|詳細を表示するバックアップが格納されている場所を指定します。 対象の場所に格納されているバックアップを一覧表示するには、を使用します。 バックアップターゲットの場所は、ローカルに接続されたディスクドライブ、ボリューム、リモート共有フォルダー、リムーバブルメディア (DVD ドライブなど)、またはその他の光学メディアにすることができます。 **Wbadmin get バージョン**が、バックアップが作成された同じコンピューターで実行されている場合、このパラメーターは必要ありません。 ただし、別のコンピューターから作成されたバックアップに関する情報を取得するには、このパラメーターが必要です。|
 |-コンピューター|バックアップの詳細を表示するコンピューターを指定します。 複数のコンピューターのバックアップが同じ場所に格納されている場合に使用します。 **-BackupTarget**が指定されている場合は、を使用する必要があります。|
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>注釈
 
 特定のバックアップからの回復に使用できる項目を一覧表示するには、 **wbadmin get items**を使用します。
 
@@ -49,13 +49,13 @@ wbadmin get versions
 ```
 wbadmin get versions -backupTarget:h:
 ```
-リモート共有フォルダー \\ \\servername\share に格納されている利用可能なバックアップの一覧を表示するには、次のように入力します。
+リモート共有フォルダー servername\share に格納されている利用可能なバックアップの一覧を表示するには、次のように \\ \\ 入力します。
 ```
 wbadmin get versions -backupTarget:\\servername\share -machine:server01
 ```
 
 ## <a name="additional-references"></a>その他のリファレンス
 
--   - [コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
 -   [Wbadmin](wbadmin.md)
 -   [WBBackupTarget](https://technet.microsoft.com/library/jj902447.aspx)コマンドレット

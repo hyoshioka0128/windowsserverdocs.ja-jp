@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/31/2018
-ms.openlocfilehash: 2fcf7d3716ae45c24510b433ab125551a6d04c85
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 1db9dd387d7b9cc39c582ce79e5163c83579b613
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718211"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83819632"
 ---
 # <a name="bitsadmin-examples"></a>bitsadmin の例
 
-次の例は、 `bitsadmin`ツールを使用して最も一般的なタスクを実行する方法を示しています。
+次の例は、ツールを使用して最も一般的なタスクを実行する方法を示して `bitsadmin` います。
 
 ## <a name="transfer-a-file"></a>ファイルの転送
 
@@ -64,7 +64,7 @@ bitsadmin /resume myDownloadJob
 
 ## <a name="determine-the-progress-of-the-download-job"></a>ダウンロードジョブの進行状況を確認する
 
-**/Info**スイッチは、ジョブの状態と転送されたファイルの数とバイト数を返します。 状態がと表示され`TRANSFERRED`ている場合は、BITS によってジョブ内のすべてのファイルが正常に転送されたことを意味します。 また、 **/verbose**引数を追加してジョブの完全な詳細情報を取得し、 **/list**または **/monitor**を追加して、転送キュー内のすべてのジョブを取得することもできます。
+**/Info**スイッチは、ジョブの状態と転送されたファイルの数とバイト数を返します。 状態がと表示されている場合は、BITS によって `TRANSFERRED` ジョブ内のすべてのファイルが正常に転送されたことを意味します。 また、 **/verbose**引数を追加してジョブの完全な詳細情報を取得し、 **/list**または **/monitor**を追加して、転送キュー内のすべてのジョブを取得することもできます。
 
 ジョブの状態を取得するには、次のようにします。
 
@@ -76,13 +76,13 @@ bitsadmin /info myDownloadJob /verbose
 
 ## <a name="complete-the-download-job"></a>ダウンロードジョブの完了
 
-状態がに変更された後にジョブ`TRANSFERRED`を完了するには、次の手順を実行します。
+状態の変更後にジョブを完了するには、次の手順を実行し `TRANSFERRED` ます。
 
 ```
 bitsadmin /complete myDownloadJob
 ```
 
-このスイッチは`/complete` 、ジョブ内のファイルが使用可能になる前に実行する必要があります。 複数のジョブが*Mydownloadjob*を名前として使用している場合は、ジョブの GUID を使用して、ジョブの完了を一意に識別する必要があります。
+このスイッチは、 `/complete` ジョブ内のファイルが使用可能になる前に実行する必要があります。 複数のジョブが*Mydownloadjob*を名前として使用している場合は、ジョブの GUID を使用して、ジョブの完了を一意に識別する必要があります。
 
 ## <a name="monitor-jobs-in-the-transfer-queue-using-the-list-switch"></a>/List スイッチを使用して転送キュー内のジョブを監視する
 
@@ -142,7 +142,7 @@ RETRY DELAY: 600 NO PROGRESS TIMEOUT: 1209600 ERROR COUNT: 0
 PROXY USAGE: PRECONFIG PROXY LIST: NULL PROXY BYPASS LIST: NULL
 ERROR FILE:    https://downloadsrv/10mb.zip -> c:\10mb.zip
 ERROR CODE:    0x80072ee7 - The server name or address could not be resolved
-ERROR CONTEXT: 0x00000005 - The error occurred while the remote file was being 
+ERROR CONTEXT: 0x00000005 - The error occurred while the remote file was being
 processed.
 DESCRIPTION:
 JOB FILES:

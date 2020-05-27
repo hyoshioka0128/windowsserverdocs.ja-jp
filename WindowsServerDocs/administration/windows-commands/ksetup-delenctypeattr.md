@@ -1,6 +1,6 @@
 ---
-title: 'ksetup: delenctypeattr'
-description: '* * * * のリファレンストピック'
+title: ksetup delenctypeattr
+description: Ksetup delenctypeattr のリファレンストピックでは、ドメインの暗号化の種類の属性を削除します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,63 +9,67 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2908cc0a095a6985c11f7885766926b7f0354ab0
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: b3076a25b619615402a599bd8aaa6ce9d10d4fe0
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724699"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83817942"
 ---
-# <a name="ksetupdelenctypeattr"></a>ksetup: delenctypeattr
+# <a name="ksetup-delenctypeattr"></a>ksetup delenctypeattr
 
+ドメインの暗号化の種類の属性を削除します。 正常に完了したか、完了しなかったときに、ステータスメッセージが表示されます。
 
-
-ドメインの暗号化の種類の属性を削除します。
+Kerberos チケット保証チケット (TGT) とセッションキーの暗号化の種類を表示するには、 **klist**コマンドを実行し、出力を表示します。 コマンドを実行して、に接続してを使用するようにドメインを設定でき `ksetup /domain <domainname>` ます。
 
 ## <a name="syntax"></a>構文
 
 ```
-ksetup /delenctypeattr <DomainName> 
+ksetup /delenctypeattr <domainname>
 ```
 
-#### <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
-|パラメーター|[説明]|
-|---------|-----------|
-|\<DomainName>|接続を確立するドメインの名前。 完全修飾ドメイン名、または名前の単純な形式 (corp.contoso.com や contoso など) を使用します。|
+| パラメーター | 説明 |
+| ----------| ----------- |
+| `<domainname>` | 接続を確立するドメインの名前。 完全修飾ドメイン名または名前の単純な形式 (corp.contoso.com や contoso など) のいずれかを使用できます。 |
 
-## <a name="remarks"></a>Remarks
+### <a name="examples"></a>例
 
-Kerberos チケット保証チケット (TGT) とセッションキーの暗号化の種類を表示するには、 **klist**コマンドを実行し、出力を表示します。
+このコンピューターに設定されている現在の暗号化の種類を確認するには、次のように入力します。
 
-正常に完了したか、完了しなかったときに、ステータスメッセージが表示されます。
-
-接続先として使用するドメインを設定するには、 **ksetup/Domain \<DomainName>** コマンドを実行します。
-
-## <a name="examples"></a>例
-
-このコンピューターに設定されている現在の暗号化の種類を確認します。
 ```
 klist
 ```
-ドメインを mit.contoso.com に設定します。
+
+ドメインを mit.contoso.com に設定するには、次のように入力します。
+
 ```
 ksetup /domain mit.contoso.com
 ```
-ドメインの暗号化の種類の属性を確認します。
+
+ドメインの暗号化の種類の属性を確認するには、次のように入力します。
+
 ```
 ksetup /getenctypeattr mit.contoso.com
 ```
-ドメイン mit.contoso.com の [暗号化の種類の設定属性を削除します。
+
+ドメイン mit.contoso.com の [暗号化の種類の設定] 属性を削除するには、次のように入力します。
+
 ```
 ksetup /delenctypeattr mit.contoso.com
 ```
 
 ## <a name="additional-references"></a>その他のリファレンス
 
--   [Klist](klist.md)
--   [Ksetup:domain](ksetup-domain.md)
--   [Ksetup:addenctypeattr](ksetup-addenctypeattr.md)
--   [Ksetup:setenctypeattr](ksetup-setenctypeattr.md)
--   [Ksetup:delenctypeattr](ksetup-delenctypeattr.md)
--   - [コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [klist コマンド](klist.md)
+
+- [ksetup コマンド](ksetup.md)
+
+- [ksetup domain コマンド](ksetup-domain.md)
+
+- [ksetup addenctypeattr コマンド](ksetup-addenctypeattr.md)
+
+- [ksetup setenctypeattr コマンド](ksetup-setenctypeattr.md)

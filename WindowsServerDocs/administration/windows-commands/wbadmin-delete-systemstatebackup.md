@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 12d8ba6ff24e338c6afa5556d7a60e2157156acc
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: a84112191ad1b5873ad09c467fb3668107f2b24e
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720199"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83821432"
 ---
 # <a name="wbadmin-delete-systemstatebackup"></a>wbadmin delete systemstatebackup
 
@@ -44,7 +44,7 @@ wbadmin delete systemstatebackup
 
 ### <a name="parameters"></a>パラメーター
 
-|パラメーター|[説明]|
+|パラメーター|説明|
 |---------|-----------|
 |-keepVersions|最新のシステム状態バックアップを保持する数を指定します。 この値は、正の整数にする必要があります。 パラメーター値 **- keepVersions: 0** すべてのシステム状態のバックアップを削除します。|
 |-version|年/月/日で、バックアップのバージョン識別子を指定します-HH:MM の形式です。 バージョン識別子を把握していない場合は、入力 **wbadmin のバージョンを取得する**です。</br>システム状態のバックアップのみのバージョンを削除するには、このコマンドを使用します。 使用 **wbadmin 項目を取得する** のバージョンの種類を表示します。|
@@ -70,5 +70,5 @@ wbadmin delete systemstatebackup -backupTarget:f -deleteOldest
 
 ## <a name="additional-references"></a>その他のリファレンス
 
--   - [コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
 -   [Wbadmin](wbadmin.md)

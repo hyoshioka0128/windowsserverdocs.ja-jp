@@ -1,6 +1,6 @@
 ---
 title: inuse
-description: '* * * * のリファレンストピック'
+description: Inuse コマンドのリファレンストピックです。 このコマンドは非推奨とされており、Windows の将来のリリースでサポートされるとは限りません。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,17 +9,19 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6413fe21f4b7da464347e49910fbf6cd649b319d
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: b25750c8ad57c3b1a795830b743f679e7fce88b5
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993312"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83818432"
 ---
 # <a name="inuse"></a>inuse
 
+Inuse コマンドは非推奨とされており、Windows の将来のリリースでサポートされるとは限りません。
 
+このツールは、Windows Server 2003 に含まれます。 詳細については、「 [Inuse](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/dd996699(v=ws.10))」を参照してください。
 
-Inuse は非推奨とされており、Windows の将来のリリースでサポートされるとは限りません。
+## <a name="additional-references"></a>その他のリファレンス
 
-このツールは Windows Server 2003 に含まれています。 詳細については、「 [Inuse](https://technet.microsoft.com/library/dd996699(v=ws.10).aspx)」を参照してください。
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

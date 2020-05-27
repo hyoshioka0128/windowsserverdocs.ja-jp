@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9edc7d594e1fe38b99ba37f01e1c6d79c431859d
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 80313a9317e458ddc6bfb50b0405b2e46472d504
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723893"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820812"
 ---
 # <a name="mqsvc"></a>mqsvc
 
@@ -34,4 +34,4 @@ Mqsvc.exe
 
 ## <a name="additional-references"></a>その他のリファレンス
 
--   - [コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

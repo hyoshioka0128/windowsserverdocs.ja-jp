@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0c3405818d3ed11d14dee6c2fc8796c024ef253e
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: f0589fcd094d60fd5c3d9bc8798d273c49fb042b
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723823"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83820902"
 ---
 # <a name="nbtstat"></a>nbtstat
 
 > 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-TCP/IP (NetBT) プロトコルの統計情報、ローカル コンピューターおよびリモート コンピューターの両方の NetBIOS 名のテーブルに対する表示 NetBIOS および NetBIOS 名前をキャッシュします。 **nbtstat**を使用すると、NetBIOS 名キャッシュと、Windows インターネットネームサービス (WINS) に登録されている名前を更新できます。 パラメーターを指定せずに使用される **nbtstat** ヘルプを表示します。 
+TCP/IP (NetBT) プロトコルの統計情報、ローカル コンピューターおよびリモート コンピューターの両方の NetBIOS 名のテーブルに対する表示 NetBIOS および NetBIOS 名前をキャッシュします。 **nbtstat**を使用すると、NetBIOS 名キャッシュと、Windows インターネットネームサービス (WINS) に登録されている名前を更新できます。 パラメーターを指定せずに使用される **nbtstat** ヘルプを表示します。
 
 ## <a name="syntax"></a>構文
 
@@ -44,7 +44,7 @@ nbtstat [/a <remoteName>] [/A <IPaddress>] [/c] [/n] [/r] [/R] [/RR] [/s] [/S] [
 |   <Interval>    | 指定された秒数を一時停止すると、指定した統計を再表示 *間隔* 各ディスプレイ間です。 統計を再表示を停止するには、CTRL + C キーを押します。 このパラメーターを省略すると、 **nbtstat** 、現在の構成情報を 1 回だけ印刷します。 |
 |       /?        |                                                                                                            コマンド プロンプトにヘルプを表示します。                                                                                                             |
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>注釈
 
 -   **nbtstat**コマンドラインパラメーターでは、大文字と小文字が区別されます。
 
@@ -59,13 +59,13 @@ nbtstat [/a <remoteName>] [/A <IPaddress>] [/c] [/n] [/r] [/R] [/RR] [/s] [/S] [
     |ローカル名|接続に関連付けられているローカルの NetBIOS 名。|
     |リモートホスト|名前または IP アドレスが、リモート コンピューターに関連付けられています。|
     |<03>|NetBIOS 名の最後のバイトは、16 進数に変換されます。 すべての NetBIOS 名には、16 文字です。 この最後のバイトは、同じ名前が何回かコンピューターでは、最後のバイトのみが異なって表示されているために多くの場合、特別な意味を持ちます。 たとえば、< 20 > ASCII テキストで、スペースです。|
-    |type|名前の型です。 名前は一意の名前またはグループ名にするかできます。|
-    |Status|リモートコンピューター上の NetBIOS サービスが実行中 (登録済み) であるか、または重複するコンピューター名によって同じサービス (競合) が登録されているかどうか。|
-    |State|NetBIOS の接続の状態。|
+    |型|名前の型です。 名前は一意の名前またはグループ名にするかできます。|
+    |状態|リモートコンピューター上の NetBIOS サービスが実行中 (登録済み) であるか、または重複するコンピューター名によって同じサービス (競合) が登録されているかどうか。|
+    |州|NetBIOS の接続の状態。|
 
 -   次の表では、NetBIOS の可能な接続の状態について説明します。
 
-    |State|説明|
+    |州|Description|
     |-----|--------|
     |接続中|セッションが確立されました。|
     |割り当て|接続エンドポイントを作成して IP アドレスに関連付けられています。|
@@ -75,7 +75,7 @@ nbtstat [/a <remoteName>] [/A <IPaddress>] [/c] [/n] [/r] [/R] [/RR] [/s] [/S] [
     |受け入れ|受信セッションは受け入れられている現在し、後で接続されています。|
     |再接続します。|セッションが再接続 (最初の試行で接続に失敗しました) しようとしています。|
     |送信|セッションが接続の段階であると、TCP 接続は現在作成中です。|
-    |受信|受信セッションは接続の段階です。|
+    |着信|受信セッションは接続の段階です。|
     |切断します。|セッションでは、接続を切断中です。|
     |[Disconnected]\(切断済み\)|ローカル コンピューターが接続が切断を実行し、リモート システムから送信される確認を待っています。|
 
@@ -126,6 +126,6 @@ nbtstat /S 5
 
 ## <a name="additional-references"></a>その他のリファレンス
 
--   - [コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
 
 

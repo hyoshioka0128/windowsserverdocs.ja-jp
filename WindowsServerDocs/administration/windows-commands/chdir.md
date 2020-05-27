@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c81b16fbf1018a8570b42b63568e80277683b600
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 6b2bbd188f28bd1ebd9e869a1eff25e97190ca96
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82726004"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83819152"
 ---
 # <a name="chdir"></a>chdir
 
 > 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-現在のディレクトリの名前を表示するか、現在のディレクトリを変更します。 ドライブ文字 (など`chdir C:`) でのみ使用する場合、指定されたドライブの現在のディレクトリの名前が表示されます。 **chdir** パラメーターを指定せずに使用した場合、現在のドライブとディレクトリ**が表示さ**れます。
+現在のディレクトリの名前を表示するか、現在のディレクトリを変更します。 ドライブ文字 (など) でのみ使用する場合 `chdir C:` 、指定さ**chdir**れたドライブの現在のディレクトリの名前が表示されます。 パラメーターを指定せずに使用した場合、現在のドライブとディレクトリ**が表示さ**れます。
 
 > > [!NOTE]
 > このコマンドは**cd コマンド**に置き換えられました。 構文とパラメーターの詳細を含む詳細については、「 [cd コマンド](cd.md)」を参照してください。

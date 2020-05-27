@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6b62558b1a2959fd441c246159c14daf0a1e9ca5
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 25dafb691513eae38dd99aef6288ee1bfb2d80be
+ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437247"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83821402"
 ---
 # <a name="tracert"></a>tracert
 
@@ -40,7 +40,7 @@ tracert [/d] [/h <MaximumHops>] [/j <Hostlist>] [/w <timeout>] [/R] [/S <Srcaddr
 |\<TargetName>|宛先を指定します。 IP アドレスまたはホスト名で識別されます。|
 |/?|コマンド プロンプトにヘルプを表示します。|
 
-## <a name="remarks"></a>解説
+## <a name="remarks"></a>注釈
 -   この診断ツールは、有効期間 (TTL) の値が異なる ICMP エコー要求メッセージを宛先に送信することによって、宛先へのパスを決定します。 パス上の各ルーターは、転送する前に、IP パケットの TTL を少なくとも1に減らす必要があります。 実質的に、TTL は最大リンクカウンターです。 パケットの TTL が0になると、ルーターは ICMP 時間超過メッセージをソースコンピュータに返すことが期待されます。 tracert は、TTL が1の最初のエコー要求メッセージを送信して、ターゲットが応答するまで、または最大ホップ数に到達するまで、後続の各送信で TTL を1増やして、パスを決定します。 既定では、最大ホップ数は30です。これは、 **/h**パラメーターを使用して指定できます。 このパスは、中間ルーターによって返された ICMP 時間超過メッセージと、送信先から返されたエコー応答メッセージを調べることによって決定されます。 ただし、一部のルーターでは、TTL 値が期限切れになったパケットの時間超過メッセージは返されず、tracert コマンドに invisile されます。 この場合、そのホップに対してアスタリスク (*) の行が表示されます。
 -   パスをトレースし、パス内の各ルーターおよびリンクのネットワーク待機時間とパケット損失を提供するには、 **pathping**コマンドを使用します。
 -   このコマンドは、インターネット プロトコル (TCP/IP) プロトコルがネットワーク接続のネットワーク アダプターのプロパティでコンポーネントとしてインストールされている場合にのみ使用できます。
@@ -59,4 +59,4 @@ Corp7.microsoft.com という名前のホストへのパスをトレースし、
 tracert /j 10.12.0.1 10.29.3.1 10.1.44.1 corp7.microsoft.com
 ```
 ## <a name="additional-references"></a>その他のリファレンス
--   - [コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
