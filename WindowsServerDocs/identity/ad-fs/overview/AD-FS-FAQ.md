@@ -9,12 +9,12 @@ ms.date: 04/29/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b1b6f7d38c4474ba3f69c4eac0c4569375185eb8
-ms.sourcegitcommit: 6d3f8780b67aa7865a9372cf2c1e10c79ebea8b1
+ms.openlocfilehash: 947c34e6c3a3b9a26a225221bbf29e46343b25df
+ms.sourcegitcommit: f22e4d67dd2a153816acf8355e50319dbffc5acf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82587669"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "83546565"
 ---
 # <a name="ad-fs-frequently-asked-questions-faq"></a>AD FS についてよく寄せられる質問 (FAQ)
 
@@ -85,7 +85,7 @@ AD FS では、サードパーティの MFA プロバイダーを統合するた
 Microsoft に通知したベンダーの一覧は、[AD FS 対応 MFA プロバイダー](../operations/Configure-Additional-Authentication-Methods-for-AD-FS.md)で公開されています。  Microsoft が把握していない利用可能なプロバイダーは常に存在する可能性があり、わかったら一覧を更新します。
 
 ### <a name="are-third-party-proxies-supported-with-ad-fs"></a>AD FS ではサードパーティのプロキシはサポートされていますか?
-はい。サードパーティのプロキシを Web アプリケーション プロキシの前面に配置できますが、サードパーティのプロキシでは、Web アプリケーション プロキシの代わりに使用する [MS-ADFSPIP プロトコル](https://msdn.microsoft.com/library/dn392811.aspx)がサポートされている必要があります。
+はい。サードパーティのプロキシを AD FS の前面に配置できますが、サードパーティのプロキシでは、Web アプリケーション プロキシの代わりに使用する [MS-ADFSPIP プロトコル](https://msdn.microsoft.com/library/dn392811.aspx)がサポートされている必要があります。
 
 Microsoft が把握しているサードパーティ プロバイダーの一覧を次に示します。  Microsoft が把握していない利用可能なプロバイダーは常に存在する可能性があり、わかったら一覧を更新します。
 

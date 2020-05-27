@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c87a6cb5e3fb52af9a13a7be35218e35b24d7ddc
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: ca2a10a5d52c9d175d453a164f3ab4f47ca0841d
+ms.sourcegitcommit: 430c6564c18f89eecb5bbc39cfee1a6f1d8ff85b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436927"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83855666"
 ---
 # <a name="echo"></a>echo
 
@@ -31,11 +31,11 @@ echo [on | off]
 
 | パラメーター | 説明 |
 | --------- | ----------- |
-| 代わっ | オート | コマンドエコー機能をオンまたはオフにします。 コマンドのエコーは既定でオンになっています。 |
+| [オン \| オフ] | コマンドエコー機能をオンまたはオフにします。 コマンドのエコーは既定でオンになっています。 |
 | `<message>` | 画面に表示するテキストを指定します。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-#### <a name="remarks"></a>解説
+#### <a name="remarks"></a>コメント
 
 - コマンドは、 `echo <message>` **echo**がオフになっている場合に特に便利です。 コマンドを何も表示せずに、数行のメッセージを表示するには、 `echo <message>` batch プログラムの**echo off**コマンドの後にいくつかのコマンドを含めることができます。
 

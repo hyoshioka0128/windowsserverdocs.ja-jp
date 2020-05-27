@@ -7,12 +7,12 @@ ms.date: 02/24/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: 2f6ba34381e813247d0838853f688abf13fbd2fa
-ms.sourcegitcommit: 1d83ca198c50eef83d105151551c6be6f308ab94
+ms.openlocfilehash: 76ec8a817f0c500380c9bef6fc1ee7eb8dddc105
+ms.sourcegitcommit: 319796ec327530c9656ac103b89bd48cc8d373f6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82605542"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83790568"
 ---
 # <a name="windows-time-service-tools-and-settings"></a>Windows タイム サービスのツールと設定
 
@@ -87,6 +87,15 @@ W32tm /query /computer:contosoW1 /configuration
 ```
 
 このコマンドの出力は、Windows タイム クライアント用に設定された構成パラメーターの一覧です。
+
+> [!IMPORTANT]  
+> [Windows Server 2016 では、RFC 仕様に合わせて時間同期アルゴリズムが改善](https://aka.ms/WS2016Time)されました。 そのため、ローカル Windows タイム クライアントが複数のピアを指すように設定する場合は、3 つ以上の異なるタイム サーバーを準備することを強くお勧めします。
+>  
+> タイム サーバーが 2 つのみの場合は、**UseAsFallbackOnly** フラグ (0x2) を指定して、いずれかの優先順位を下げます。 たとえば、clock.adatum.com よりも ntpserver.contoso.com を優先させる場合は、次のコマンドを実行します。
+> ```cmd
+> w32tm /config /manualpeerlist:"ntpserver.contoso.com,0x8 clock.adatum.com,0xa" /syncfromflags:manual /update
+> ```
+> 指定したフラグの意味については、["HKLM\SYSTEM\CurrentControlSet\Services\W32Time\Parameters" サブキー エントリ](#parameters)を参照してください。
 
 ## <a name="using-group-policy-to-configure-the-windows-time-service"></a>Windows タイム サービスを構成するためのグループ ポリシーの使用
 
