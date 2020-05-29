@@ -9,12 +9,12 @@ ms.technology: storage
 ms.assetid: e5f55f3e-8d2a-4526-8d67-36a539126c22
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 6fa8646dcdf7e836ccb45f253e0c4f8691b1ea3c
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 4fad2f5a7d868a38e187f49598235c40590e8eeb
+ms.sourcegitcommit: ef089864980a1d4793a35cbf4cbdd02ce1962054
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436847"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84149765"
 ---
 # <a name="fsutil-tiering"></a>fsutil tiering
 
@@ -49,7 +49,7 @@ fsutil tiering [tierlist] <volume>
 ボリューム C のフラグを照会するには、次のように入力します。
 
 ```
-fsutil tiering clearflags C:
+fsutil tiering queryflags C:
 ```
 
 ボリューム C でフラグを設定するには、次のように入力します。
