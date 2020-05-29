@@ -93,6 +93,12 @@
 #### [DHCP サブネットの選択オプション](technologies/dhcp/dhcp-subnet-options.md)
 #### [DNS レコード登録の DHCP ログ記録イベント](technologies/dhcp/dhcp-dns-events.md)
 ### [Windows PowerShell を使用した DHCP の展開](technologies/dhcp/dhcp-deploy-wps.md)
+### [DHCP に関する問題のトラブルシューティング](../troubleshoot/troubleshoot-dhcp-issue.md)
+#### [動的ホスト構成プロトコル (DHCP) の基礎](../troubleshoot/dynamic-host-configuration-protocol-basics.md)
+#### [DHCP のトラブルシューティングに関する一般的なガイダンス](../troubleshoot/general-guidance-to-troubleshoot-dhcp.md)
+##### [DHCP サーバーなしで TCP/IP 自動アドレス指定を使用する方法](../troubleshoot/how-to-use-automatic-tcpip-addressing-without-a-dh.md)
+#### [DHCP クライアントでの問題のトラブルシューティング](../troubleshoot/troubleshoot-problems-on-dhcp-client.md)
+#### [DHCP サーバーでの問題のトラブルシューティング](../troubleshoot/troubleshoot-problems-on-dhcp-server.md)
 
 ## [ハイパフォーマンス ネットワーク (HPN)](technologies/hpn/hpn-top.md)
 ### [ネットワーク オフロードおよび最適化テクノロジ](technologies/hpn/network-offload-and-optimization.md)
