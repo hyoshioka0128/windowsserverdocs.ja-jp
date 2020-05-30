@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: af13e802a1b11636a3cbfe7c908f6d26497cf506
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 18739f3d7ab5af38dbe369e45aca8393ba3a3152
+ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820582"
+ms.lasthandoff: 05/30/2020
+ms.locfileid: "84222944"
 ---
 # <a name="logman-delete"></a>logman delete
 
@@ -51,4 +51,4 @@ logman delete perf_log
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 
-- [logman](logman.md)
+- [logman コマンド](logman.md)

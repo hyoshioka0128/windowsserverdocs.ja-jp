@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 08a9b0a74c6da894eeadef8aef86f25761d6616e
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 015fb7842146e372b36c71fe95a3598bdfa48676
+ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820452"
+ms.lasthandoff: 05/30/2020
+ms.locfileid: "84222981"
 ---
 # <a name="logman-create-trace"></a>logman 作成トレース
 
@@ -63,13 +63,13 @@ logman create trace <[-n] <name>> [options]
 | -モード`<globalsequence|localsequence|pagedmemory>` | イベントトレースセッションロガーモードを次のように指定します。<ul><li>**Globalsequence** -イベントトレーサーは、イベントを受信したトレースセッションに関係なく、受信したすべてのイベントにシーケンス番号を追加します。</li><li>**Localsequence** -イベントトレーサーが特定のトレースセッションで受信したイベントのシーケンス番号を追加することを指定します。 このオプションを使用すると、すべてのセッションで重複するシーケンス番号が存在する可能性がありますが、各トレースセッション内で一意になります。</li><li>**Pagedmemory** -イベントトレーサーが、既定の非ページメモリプールではなく、ページングされたメモリを内部バッファー割り当てに使用することを指定します。</li></ul> |
 | /? | 状況依存のヘルプを表示します。 |
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>解説
 
 - [-] が一覧表示されている場合は、余分なハイフン (-) を追加すると、オプションが無効になります。
 
 ### <a name="examples"></a>例
 
-Trace_log という名前のイベントトレースデータコレクターを作成するには、256 16 以下のバッファーを使用します。各バッファーのサイズは 64 kb であり、結果は次のようになります。
+*Trace_log*という名前のイベントトレースデータコレクターを作成するには、256 16 以下のバッファーを使用します。各バッファーのサイズは 64 kb であり、結果は次のようになります。
 
 ```
 logman create trace trace_log -nb 16 256 -bs 64 -o c:\logfile
@@ -79,4 +79,6 @@ logman create trace trace_log -nb 16 256 -bs 64 -o c:\logfile
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 
-- [logman](logman.md)
+- [logman update トレースコマンド](logman-update-trace.md)
+
+- [logman コマンド](logman.md)

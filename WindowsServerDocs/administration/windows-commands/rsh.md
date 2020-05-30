@@ -4,17 +4,17 @@ description: '* * * * のリファレンストピック'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
-ms.assetid: 9e3b2b29-208d-4257-8379-0b4738274146 vhorne
+ms.assetid: 9e3b2b29-208d-4257-8379-0b4738274146
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 61239f64a7470ede96a4d3b26ca465c97ed2b697
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 2c0c61ae26e6cec9beb6f7e54e84b81577cbd992
+ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722256"
+ms.lasthandoff: 05/30/2020
+ms.locfileid: "84222082"
 ---
 # <a name="rsh"></a>rsh
 

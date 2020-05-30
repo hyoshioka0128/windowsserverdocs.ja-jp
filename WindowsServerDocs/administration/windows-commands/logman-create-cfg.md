@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 38d6b02351e515230a0041369217ba248ada4793
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 518b0c7bddf1d74522a376aafb7da85abb849ac4
+ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820462"
+ms.lasthandoff: 05/30/2020
+ms.locfileid: "84222974"
 ---
 # <a name="logman-create-cfg"></a>logman 作成 cfg
 
@@ -56,7 +56,7 @@ logman create cfg <[-n] <name>> [options]
 | -ftc`<path [path [...]]>` | 収集するファイルの完全パスを指定します。 |
 | /? | 状況依存のヘルプを表示します。 |
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>解説
 
 - [-] が一覧表示されている場合は、余分なハイフン (-) を追加すると、オプションが無効になります。
 
@@ -78,4 +78,6 @@ logman create cfg cfg_log -mgt root\wmi:select * FROM MSNdis_Vendordriverversion
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 
-- [logman](logman.md)
+- [logman update cfg コマンド](logman-update-cfg.md)
+
+- [logman コマンド](logman.md)

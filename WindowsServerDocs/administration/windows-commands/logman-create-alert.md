@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7d84dd52dd9d2d8ca45dc42df88a59cd4c16b54c
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 10d19f6c86d09c698a6871ae0f0e530c5189c0ca
+ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820482"
+ms.lasthandoff: 05/30/2020
+ms.locfileid: "84222826"
 ---
 # <a name="logman-create-alert"></a>logman 作成アラート
 
@@ -58,7 +58,7 @@ logman create alert <[-n] <name>> [options]
 | -[-] targ`<argument>` | -Tn を使用して指定されたタスクで使用されるタスク引数を指定します。 |
 | /? | 状況依存のヘルプを表示します。 |
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>解説
 
 - [-] が一覧表示されている場合は、余分なハイフン (-) を追加すると、オプションが無効になります。
 
@@ -77,4 +77,6 @@ logman create alert new_alert -th \Processor(_Total)\% Processor time>50
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 
-- [logman](logman.md)
+- [logman 更新アラートコマンド](logman-update-alert.md)
+
+- [logman コマンド](logman.md)

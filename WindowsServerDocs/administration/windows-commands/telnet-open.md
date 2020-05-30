@@ -4,17 +4,17 @@ description: Telnet サーバーに接続する telnet open のリファレン�
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 s.topic: article
-ms.assetid: e30ad68c-2366-4754-ac36-311a2392902a vhorne
+ms.assetid: e30ad68c-2366-4754-ac36-311a2392902a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ed2c00b44143942ba1ccb77eec17ca975f23b498
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 0be8aca4cb061df55674a405eb1cf2a5e643cb4f
+ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83821322"
+ms.lasthandoff: 05/30/2020
+ms.locfileid: "84222717"
 ---
 # <a name="telnet-open"></a>telnet: 開く
 

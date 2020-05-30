@@ -4,17 +4,17 @@ description: リモートコンピューターとの間でファイルを転送�
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
-ms.assetid: 772f19a8-dafe-45cd-878a-f5691f6568ef vhorne
+ms.assetid: 772f19a8-dafe-45cd-878a-f5691f6568ef
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fb9977d0bc4f45b610d8bf3409c6beeadfaf7ee5
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 8b3674cbfdbc01811ece57e2f9cbbea3aa31251d
+ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83821022"
+ms.lasthandoff: 05/30/2020
+ms.locfileid: "84223044"
 ---
 # <a name="tftp"></a>tftp
 
@@ -34,10 +34,10 @@ tftp [-i] [<Host>] [{get | put}] <Source> [<Destination>]
 |\<Host\>|ローカルまたはリモート コンピューターを指定します。|
 |put|ファイル転送 *ソース* ファイルをローカル コンピューターで *宛先* 、リモート コンピューター上です。 Tftp プロトコルではユーザー認証がサポートされていないため、ユーザーはリモートコンピューターにログオンする必要があり、ファイルはリモートコンピューター上で書き込み可能である必要があります。|
 |get|ファイル転送 *宛先* ファイルへのリモート コンピューターで *ソース* 、ローカル コンピューター上です。|
-|\<ソース\>|転送するファイルを指定します。|
-|\<宛先\>|ファイルを転送する場所を指定します。|
+|\<Source\>|転送するファイルを指定します。|
+|\<Destination\>|ファイルを転送する場所を指定します。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>解説
 -   Tftp クライアントは、機能の追加ウィザードを使用してインストールできます。
 -   Tftp プロトコルでは、認証または暗号化のメカニズムはサポートされていないため、セキュリティ上のリスクが生じる可能性があります。 インターネットに接続されているシステムには、tftp クライアントをインストールすることはお勧めしません。
 -   Tftp クライアントはオプションのソフトウェアで、Windows Vista 以降のバージョンの Windows オペレーティングシステムでは非推奨としてマークされています。 Tftp サーバーサービスは、セキュリティ上の理由からマイクロソフトによって提供されなくなりました。

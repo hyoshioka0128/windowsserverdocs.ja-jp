@@ -1,6 +1,6 @@
 ---
 title: Windows のコマンド
-description: 関連項目
+description: リファレンス
 ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: c703d07c-8227-4e86-94a6-8ef390f94cdc
@@ -9,12 +9,12 @@ ms.author: jgerend
 manager: dongill
 ms.date: 06/26/2019
 ms.prod: windows-server
-ms.openlocfilehash: 7baec3bbe532bbcedb8c17628fd88d2c8eac34c6
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: cfb391c68cfb551ef2179e7210dff3a26d540fde
+ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720731"
+ms.lasthandoff: 05/30/2020
+ms.locfileid: "84222632"
 ---
 # <a name="windows-commands"></a>Windows のコマンド
 
@@ -24,32 +24,32 @@ ms.locfileid: "82720731"
 
 特定のコマンドに関する情報を検索するには、次の A-Z メニューで、コマンドの開始文字をクリックし、コマンド名をクリックします。
 
-[A](#a) |
-[B](#b) | 
-[M](#m)[D](#d) | 
-[V](#v)[C](#c) |
-[J](#j) | 
-[W](#w)[F](#f) | 
-[S](#s)[E](#e) | 
-[R](#r)[G](#g) | 
-[U](#u)[H](#h) | 
-[X](#x) [I](#i) | 
-[T](#t)[L](#l)[N](#n)[Q](#q)[O](#o)[P](#p)[K](#k)C D E F G H I J | 
-K L M | 
-N | 
-O | 
-P | 
-Q R S T U V W X | | 
- | 
- | 
- | 
- | 
- | 
- | 
- | 
-Y |方向
+[A](#a)  |
+[B](#b)  |
+[C](#c)  |
+[D](#d)  |
+[E](#e)  |
+[F](#f)  |
+[G](#g)  |
+[H](#h)  |
+[I](#i)  |
+[J](#j)  |
+[K](#k)  |
+[L](#l)  |
+[M](#m)  |
+[N](#n)  |
+[O](#o)  |
+[P](#p)  |
+[Q](#q)  |
+[R](#r)  |
+[S](#s)  |
+[T](#t)  |
+[U](#u)  |
+[V](#v)  |
+[W](#w)  |
+[X](#x) |Y |方向
 
-## <a name="prerequisites"></a>[前提条件]
+## <a name="prerequisites"></a>前提条件
 
 このトピックに記載されている情報は、以下に適用されます。
 
@@ -57,7 +57,7 @@ Y |方向
 -   Windows Server (半期チャネル)
 -   Windows Server 2016
 -   Windows Server 2012 R2
--   Windows Server 2012 
+-   Windows Server 2012
 -   Windows Server 2008 R2
 -   Windows Server 2008
 -   Windows 10
@@ -71,48 +71,48 @@ Windows には、コマンドシェルと[PowerShell](https://docs.microsoft.com
 
 PowerShell は、コマンドシェルの機能を拡張して、コマンドレットと呼ばれる PowerShell コマンドを実行するように設計されています。 コマンドレットは Windows コマンドに似ていますが、より拡張可能なスクリプト言語を提供します。 Powershell では Windows コマンドと PowerShell コマンドレットを実行できますが、コマンドシェルで実行できるのは PowerShell コマンドレットではなく Windows コマンドだけです。
 
-最も堅牢で最新の Windows オートメーションの場合は、windows コマンドや windows スクリプトホストの代わりに PowerShell を使用することをお勧めします。 
+最も堅牢で最新の Windows オートメーションの場合は、windows コマンドや windows スクリプトホストの代わりに PowerShell を使用することをお勧めします。
 > [!NOTE]
->Powershell のオープンソースバージョンである[Powershell Core](https://docs.microsoft.com/powershell/scripting/whats-new/what-s-new-in-powershell-core-60?view=powershell-6)をダウンロードしてインストールすることもできます。 
+>Powershell のオープンソースバージョンである[Powershell Core](https://docs.microsoft.com/powershell/scripting/whats-new/what-s-new-in-powershell-core-60?view=powershell-6)をダウンロードしてインストールすることもできます。
 
 > [!CAUTION]
 > レジストリを正しく編集しないと、システムが正常に動作しなくなる場合があります。 レジストリに次の変更を加える前に、コンピューター上の重要なデータをバックアップする必要があります。
 
 > [!NOTE]
 > コンピューターまたはユーザーのログオンセッションでコマンドシェルのファイル名とディレクトリ名の入力候補を有効または無効にするには、 **regedit.exe**を実行し、次の**reg_DWOrd 値**を設定します。
-> 
+>
 > HKEY_LOCAL_MACHINE \Software\Microsoft\Command Processor\ reg_DWOrd
-> 
+>
 > **Reg_DWOrd**値を設定するには、特定の関数に対して制御文字の16進数の値を使用します (たとえば、 **0 9**は Tab、 **0 08**は Backspace です)。 ユーザー指定の設定はコンピューターの設定よりも優先され、コマンドラインオプションはレジストリ設定よりも優先されます。
 
 ## <a name="command-line-reference-a-z"></a>コマンドラインリファレンス A-z
 
 特定の Windows コマンドに関する情報を検索するには、次の A-Z メニューで、コマンドの開始文字をクリックし、コマンド名をクリックします。
 
-[A](#a) |
-[B](#b) | 
-[M](#m)[D](#d) | 
-[V](#v)[C](#c) |
-[J](#j) | 
-[W](#w)[F](#f) | 
-[S](#s)[E](#e) | 
-[R](#r)[G](#g) | 
-[U](#u)[H](#h) | 
-[X](#x) [I](#i) | 
-[T](#t)[L](#l)[N](#n)[Q](#q)[O](#o)[P](#p)[K](#k)C D E F G H I J | 
-K L M | 
-N | 
-O | 
-P | 
-Q R S T U V W X | | 
- | 
- | 
- | 
- | 
- | 
- | 
- | 
-Y |方向
+[A](#a)  |
+[B](#b)  |
+[C](#c)  |
+[D](#d)  |
+[E](#e)  |
+[F](#f)  |
+[G](#g)  |
+[H](#h)  |
+[I](#i)  |
+[J](#j)  |
+[K](#k)  |
+[L](#l)  |
+[M](#m)  |
+[N](#n)  |
+[O](#o)  |
+[P](#p)  |
+[Q](#q)  |
+[R](#r)  |
+[S](#s)  |
+[T](#t)  |
+[U](#u)  |
+[V](#v)  |
+[W](#w)  |
+[X](#x) |Y |方向
 
 ### <a name="a"></a>A
 -   [append](append.md)
@@ -298,7 +298,7 @@ Y |方向
   -   [fsutil usn](fsutil-usn.md)
   -   [fsutil volume](fsutil-volume.md)
   -   [fsutil wim](fsutil-wim.md)
-- [パッシブ](ftp.md)
+- [ftp](ftp.md)
 - [ftype](ftype.md)
 - [fveupdate](fveupdate.md)
 
@@ -351,14 +351,14 @@ Y |方向
   -   [ksetup: setenctypeattr](ksetup-setenctypeattr.md)
   -   [ksetup: getenctypeattr](ksetup-getenctypeattr.md)
   -   [ksetup: addenctypeattr](ksetup-addenctypeattr.md)
-  -   [ksetup: delenctypeattr](ksetup-delenctypeattr.md) 
+  -   [ksetup: delenctypeattr](ksetup-delenctypeattr.md)
 - [ktmutil](ktmutil.md)
 - [ktpass](ktpass.md)
 
 ### <a name="l"></a>L
 - [label](label.md)
 - [lodctr](lodctr.md)
-- [logman](logman.md)
+- [logman コマンド](logman.md)
   -   [logman create](logman-create.md)
   -   [logman query](logman-query.md)
   -   [logman &124;停止](logman-start-stop.md)
@@ -527,7 +527,7 @@ Y |方向
 - [scwcmd](Scwcmd.md)
   -   [scwcmd: 分析](scwcmd-analyze.md)
   -   [scwcmd: 構成](scwcmd-configure.md)
-  -   [scwcmd: 登録](scwcmd-register.md) 
+  -   [scwcmd: 登録](scwcmd-register.md)
   -   [scwcmd: ロールバック](scwcmd-rollback.md) 
   -   [scwcmd: transform](scwcmd-transform.md) 
   -   [scwcmd: 表示](scwcmd-view.md) 
@@ -589,7 +589,7 @@ Y |方向
 -   [verifier](verifier.md)
 -   [verify](verify_1.md)
 -   [vol](vol.md)
--   [vssadmin](vssadmin.md)- 
+-   [vssadmin](vssadmin.md)-
 
 ### <a name="w"></a>W
 - [waitfor](waitfor.md)

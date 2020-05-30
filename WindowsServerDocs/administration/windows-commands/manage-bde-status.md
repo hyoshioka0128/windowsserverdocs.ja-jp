@@ -1,6 +1,6 @@
 ---
 title: manage-bde ステータス
-description: '* * * * のリファレンストピック'
+description: BitLocker で保護されているかどうかに関係なく、コンピューター上のすべてのドライブに関する情報を提供する manage-bde status コマンドのリファレンストピックです。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,50 +9,56 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 494fb294e7eb0da1b8a0165182d33e799fe56371
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 32af92ad8f1f12ce006e41f70c6ca4afcff3eb00
+ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820602"
+ms.lasthandoff: 05/30/2020
+ms.locfileid: "84222591"
 ---
-# <a name="manage-bde-status"></a>manage-bde: 状態
+# <a name="manage-bde-status"></a>manage-bde ステータス
 
+コンピューター上のすべてのドライブに関する情報を提供します。BitLocker で保護されているかどうかを示します。次のようなものがあります。
 
+- サイズ
 
-コンピューター上のすべてのドライブに関する次の情報を提供します。BitLocker で保護されたをされているかどうか。
--   サイズ
--   BitLocker のバージョン
--   変換の状態
--   暗号化された割合
--   暗号化方法
--   保護の状態
--   ロックの状態
--   識別フィールド
--   キープロテクター
+- BitLocker のバージョン
 
+- 変換の状態
 
+- 暗号化された割合
+
+- 暗号化方法
+
+- 保護の状態
+
+- ロックの状態
+
+- 識別フィールド
+
+- キープロテクター
 
 ## <a name="syntax"></a>構文
 
 ```
-manage-bde -status [<Drive>] [-protectionaserrorlevel] [-computername <Name>] [{-?|/?}] [{-help|-h}]
+manage-bde -status [<drive>] [-protectionaserrorlevel] [-computername <name>] [{-?|/?}] [{-help|-h}]
 ```
 
-#### <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
-|---------|-----------|
-|\<ドライブ>|コロンの後にドライブ文字を表します。|
-|-protectionaserrorlevel|ボリュームは保護されている; がない場合に、ボリュームが保護されている場合に 0 のリターン コードと 1 を送信する、manage-bde コマンド ライン ツールと、します。ドライブが BitLocker で保護されているかを判断バッチ スクリプトでよく使用されます。 使用することも **-p** としてこのコマンドの簡易版です。|
-|-computername|別のコンピューターに BitLocker による保護を変更する、bde.exe を使用することを指定します。 また、このコマンドの省略版として **-cn**を使用することもできます。|
-|\<Name>|BitLocker による保護を変更するコンピューターの名前を表します。 指定できる値には、コンピューターの NetBIOS 名とコンピューターの IP アドレスが含まれます。|
-|-? または /?|コマンドプロンプトで簡単なヘルプを表示します。|
-|-help または-h|表示は、コマンド プロンプトでヘルプを完了します。|
+| パラメーター | 説明 |
+| --------- | ----------- |
+| `<drive>` | コロンの後にドライブ文字を表します。 |
+| -protectionaserrorlevel | ボリュームが保護されている場合は、manage-bde コマンドラインツールによってリターンコード**0**が送信され、ボリュームが保護されていない場合は**1**になります。ドライブが BitLocker で保護されているかどうかを判断するためにバッチスクリプトで最もよく使用されます。 使用することも **-p** としてこのコマンドの簡易版です。 |
+| -computername | Manage-bde.exe を使用して、別のコンピューター上の BitLocker 保護を変更することを指定します。 また、このコマンドの省略版として **-cn**を使用することもできます。 |
+| `<name>` | BitLocker による保護を変更するコンピューターの名前を表します。 指定できる値には、コンピューターの NetBIOS 名とコンピューターの IP アドレスが含まれます。 |
+| -? または /? | コマンドプロンプトで簡単なヘルプを表示します。 |
+| -help または-h | 表示は、コマンド プロンプトでヘルプを完了します。 |
 
-## <a name="examples"></a>例
+### <a name="examples"></a>例
 
-**-Status**コマンドを使用して C ドライブの状態を表示する方法を示します。
+C ドライブの状態を表示するには、次のように入力します。
+
 ```
 manage-bde –status C:
 ```
@@ -60,4 +66,5 @@ manage-bde –status C:
 ## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
--   [Manage-bde](manage-bde.md)
+
+- [manage-bde コマンド](manage-bde.md)

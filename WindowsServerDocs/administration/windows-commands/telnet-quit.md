@@ -4,17 +4,17 @@ description: Telnet を終了する telnet のトピックを参照してくだ�
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
-ms.assetid: a6e033f2-f0c2-404c-9cb4-abd1d7af0eea vhorne
+ms.assetid: a6e033f2-f0c2-404c-9cb4-abd1d7af0eea
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ee8755e754328bff814f41f44a604509d08a44f8
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 19299c41692a71abc5dcda2d61b29d3d44e40fe9
+ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83821352"
+ms.lasthandoff: 05/30/2020
+ms.locfileid: "84222696"
 ---
 # <a name="telnet-quit"></a>telnet: 終了
 

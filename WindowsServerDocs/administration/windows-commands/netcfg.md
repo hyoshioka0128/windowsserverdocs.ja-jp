@@ -4,17 +4,17 @@ description: '* * * * のリファレンストピック'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
-ms.assetid: e2daaab7-12db-4e36-b70c-db8906d084f7 vhorne
+ms.assetid: e2daaab7-12db-4e36-b70c-db8906d084f7
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2c636b9a14d9dcee6f37409557ed2bcb87b1087d
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: dee1a5efd0459f68f31d739741062dc964b88d41
+ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820872"
+ms.lasthandoff: 05/30/2020
+ms.locfileid: "84223036"
 ---
 # <a name="netcfg"></a>netcfg
 
