@@ -8,16 +8,16 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 06/06/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a53f28867904c163346fb7943790ff0659ab006
-ms.sourcegitcommit: 29f7a4811b4d36d60b8b7c55ce57d4ee7d52e263
+ms.openlocfilehash: fbdef69f62a76fcc8d01aa0319b2b0859fc4f7cd
+ms.sourcegitcommit: 6973690a8705b24d09eb98f1713743d5e6079161
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83716877"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84211911"
 ---
 # <a name="deploy-folder-redirection-with-offline-files"></a>フォルダー リダイレクトとオフライン ファイルを展開する
 
->適用先:Windows 10、Windows 7、Windows 8、Windows 8.1、Windows Vista、Windows Server 2019、Windows Server 2016、Windows Server 2012、Windows Server 2012 R2、Windows Server 2008 R2、Windows Server (半期チャネル)
+> 適用先:Windows 10、Windows 7、Windows 8、Windows 8.1、Windows Vista、Windows Server 2019、Windows Server 2016、Windows Server 2012、Windows Server 2012 R2、Windows Server 2008 R2、Windows Server (半期チャネル)
 
 このトピックでは、Windows Server を使用して、Windows クライアント コンピューターにフォルダー リダイレクトとオフライン ファイルを展開する方法について説明します。
 
@@ -83,9 +83,9 @@ Windows Server 2019、Windows Server 2016、および Windows Server 2012 でフ
 7. **[アクセス許可]** ページで、 **[アクセス許可をカスタマイズする]** を選択します。 [セキュリティの詳細設定] ダイアログ ボックスが表示されます。
 8. **[継承の無効化]** を選択し、 **[継承されたアクセス許可をこのオブジェクトの明示的なアクセス許可に変換します]** を選択します。
 9. 表 1 で説明し、図 1 に示すように、アクセス許可を設定し、一覧にないグループとアカウントのアクセス許可を削除し、手順 1 で作成した Folder Redirection Users グループに特殊なアクセス許可を追加します。
-    
+
     ![リダイレクトされたフォルダーの共有のアクセス許可の設定](media/deploy-folder-redirection/setting-the-permissions-for-the-redirected-folders-share.png)
-    
+
     **図 1** リダイレクトされたフォルダーの共有のアクセス許可の設定
 10. **[SMB 共有 - 高度]** プロファイルを選択した場合、 **[管理プロパティ]** ページで、 **[ユーザー ファイル]** フォルダーの使用法値を選択します。
 11. **[SMB 共有 - 高度]** プロファイルを選択した場合、 **[クォータ]** ページで、オプションで共有のユーザーに適用するクォータを選択します。
@@ -95,7 +95,6 @@ Windows Server 2019、Windows Server 2016、および Windows Server 2012 でフ
 
 | ユーザー アカウント  | アクセス権  | 適用対象  |
 | --------- | --------- | --------- |
-| ユーザー アカウント | アクセス権 | 適用対象 |
 | System     | フル コントロール        |    このフォルダー、サブフォルダー、およびファイル     |
 | Administrators     | フル コントロール       | このフォルダーのみ        |
 | 作成者/所有者     |   フル コントロール      |   サブフォルダーとファイルのみ      |
@@ -117,11 +116,11 @@ Windows Server 2019、Windows Server 2016、および Windows Server 2012 でフ
 7. **[セキュリティ フィルター処理]** セクションで **[追加]** を選択します。
 8. **[ユーザー、コンピューター、またはグループの選択]** ダイアログ ボックスで、手順 1 で作成したセキュリティ グループの名前 (例: **Folder Redirection Users**) を入力して、 **[OK]** を選択します。
 9. **[委任]** タブを選択して **[追加]** を選択し、「**Authenticated Users**」と入力して **[OK]** を選択します。もう一度 **[OK]** を選択して、既定の読み取りアクセス許可を受け入れます。
-    
+
     この手順が必要なのは、[MS16-072](https://support.microsoft.com/help/3163622/ms16-072-security-update-for-group-policy-june-14-2016) でセキュリティが変更されたためです。
 
 > [!IMPORTANT]
-> [MS16-072](https://support.microsoft.com/help/3163622/ms16-072-security-update-for-group-policy-june-14-2016) で行われたセキュリティの変更により、フォルダー リダイレクト GPO への委任された読み取りアクセス許可を Authenticated Users グループに付与することが必要になりました。これを行わないと、GPO がユーザーに適用されません。または、GPO が既に適用されている場合はそれが削除され、フォルダーがローカル PC にリダイレクトされます。 詳細については、「[グループ ポリシーのセキュリティの更新 MS16-072 の展開](https://blogs.technet.microsoft.com/askds/2016/06/22/deploying-group-policy-security-update-ms16-072-kb3163622/)」を参照してください。
+> [MS16-072](https://support.microsoft.com/help/3163622/ms16-072-security-update-for-group-policy-june-14-2016) で行われたセキュリティの変更により、フォルダー リダイレクト GPO への委任された読み取りアクセス許可を Authenticated Users グループに付与することが必要になりました。これを行わないと、GPO がユーザーに適用されません。または、GPO が既に適用されている場合はそれが削除され、フォルダーがローカル PC にリダイレクトされます。 詳細については、「[グループ ポリシーのセキュリティの更新 MS16-072 の展開](https://techcommunity.microsoft.com/t5/ask-the-directory-services-team/deploying-group-policy-security-update-ms16-072-kb3163622/ba-p/400434)」を参照してください。
 
 ## <a name="step-4-configure-folder-redirection-with-offline-files"></a>手順 4:フォルダー リダイレクトとオフライン ファイルを構成する
 
@@ -165,7 +164,7 @@ Windows Server 2019、Windows Server 2016、および Windows Server 2012 でフ
 
 1. フォルダー リダイレクトを有効にしているユーザー アカウントでプライマリ コンピューターにサインインします (プライマリ コンピューターのサポートを有効にしている場合)。
 2. ユーザーが以前にコンピューターにサインインしている場合、管理者特権でコマンド プロンプトを開き、次のコマンドを入力して、クライアント コンピューターに最新のグループ ポリシー設定が適用されるようにします。
-    
+
     ```PowerShell
     gpupdate /force
     ```
@@ -201,4 +200,4 @@ Windows Server 2019、Windows Server 2016、および Windows Server 2012 でフ
 * [オフライン ファイルの高度な機能を有効にする](enable-always-offline.md)
 * [レプリケートされたユーザー プロファイル データに関する Microsoft のサポート表明](https://docs.microsoft.com/archive/blogs/askds/microsofts-support-statement-around-replicated-user-profile-data)
 * [DISM を使用したアプリのサイドローディング](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh852635(v=win.10)>)
-* [Windows ランタイムベース アプリのパッケージ化、展開、クエリのトラブルシューティング](https://msdn.microsoft.com/library/windows/desktop/hh973484.aspx)
+* [Windows ランタイムベース アプリのパッケージ化、展開、クエリのトラブルシューティング](https://docs.microsoft.com/windows/win32/appxpkg/troubleshooting)
