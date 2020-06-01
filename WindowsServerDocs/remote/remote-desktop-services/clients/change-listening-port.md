@@ -17,7 +17,7 @@ ms.locfileid: "80854665"
 ---
 # <a name="change-the-listening-port-for-remote-desktop-on-your-computer"></a>お使いのコンピューターでリモート デスクトップ用のリッスン ポートを変更する
 
->適用先:Windows 10、Windows 8.1、Windows 8、Windows Server 2019、Windows Server 2016、Wndows Server 2012 R2、Windows Server 2008 R2
+>適用先:Windows 10、Windows 8.1、Windows 8、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2008 R2
 
 リモート デスクトップ クライアント経由でコンピューター (Windows クライアントまたは Windows Server) に接続すると、お使いのコンピューターのリモート デスクトップ機能が、定義されたリッスン ポート (既定では 3389) を介して接続要求を "聞きます"。 Windows コンピューター上のそのリッスン ポートは、レジストリを変更することで変更できます。
 
