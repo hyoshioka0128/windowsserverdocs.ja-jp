@@ -1,7 +1,7 @@
 # 開始
 ## [Windows Server 2016 の概要](Server-Basics.md)
 ## [Windows Server の新機能](whats-new-in-windows-server.md)
-### [Windows Server 2004 の新着情報](whats-new-in-windows-server-2004.md)
+### [Windows Server バージョン 2004 の新機能](whats-new-in-windows-server-2004.md)
 ### [Windows Server 2019 の新機能](../get-started-19/whats-new-19.md)
 ### [Windows Server 2016 の新機能](whats-new-in-windows-server-2016.md)
 ### [Windows Server 2016 で利用可能な高速更新プログラム](express-updates.md)
