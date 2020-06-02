@@ -7,14 +7,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 04/28/2020
+ms.date: 05/26/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 368dc3889c5275512e345c26fcef504c6ceaa8c2
-ms.sourcegitcommit: d06650cfab2972551c3a269b3271596f55c1bd3b
+ms.openlocfilehash: c229eefbc0cc00ed1af940cd986c89e979873d29
+ms.sourcegitcommit: 4fec7d82f0772d03a9e8cac20092a4309b0f796e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82726706"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84025503"
 ---
 # <a name="get-started-with-the-windows-desktop-client"></a>Windows デスクトップ クライアントの概要
 
@@ -56,14 +56,28 @@ Windows のお使いのバージョンに対応したクライアントを選択
 
 ### <a name="subscribe-to-a-workspace"></a>ワークスペースをサブスクライブする
 
-1. クライアントのメイン ページ (接続センターとも呼ばれます) から、 **[購読]** をタップします。
-2. プロンプトが表示されたら、自分のユーザー アカウントを使用してサインインします。
-3. リソースは、ワークスペース別にグループ化されて接続センターに表示されます。
-
-リソースは、次のいずれかの方法で起動できます。
+ワークスペースをサブスクライブするには、2 つの方法があります。 クライアントは、職場または学校のアカウントから利用可能なリソースを探索したり、クライアントがリソースを見つけられない場合にリソースの場所の URL を直接指定したりすることができます。 ワークスペースをサブスクライブした後は、次のいずれかの方法でリソースを起動できます。
 
 - 接続センターにアクセスし、リソースをダブルクリックして起動します。
 - また、スタート メニューにアクセスし、ワークスペース名を含むフォルダーを探すか、検索バーにリソース名を入力することもできます。
+
+#### <a name="subscribe-with-a-user-account"></a>ユーザー アカウントを使用してサブスクライブする
+
+1. クライアントのメイン ページで、 **[サブスクライブ]** をタップします。
+2. プロンプトが表示されたら、自分のユーザー アカウントを使用してサインインします。
+3. リソースは、ワークスペース別にグループ化されて接続センターに表示されます。
+
+#### <a name="subscribe-with-url"></a>URL でサブスクライブする
+
+1. クライアントのメインページから、 **[Subscribe with URL]\(URLでサブスクライブする\)** をタップします。
+2. ワークスペースの URL またはメール アドレスを入力します。
+   - **ワークスペースの URL** を使用する場合は、管理者から提供されたものを使用します。 Windows Virtual Desktop からリソースにアクセスする場合は、次の URL のいずれかを使用できます。
+     - Windows Virtual Desktop Fall 2019: `https://rdweb.wvd.microsoft.com/api/feeddiscovery/webfeeddiscovery.aspx`
+     - Windows Virtual Desktop Spring 2020: `https://rdweb.wvd.microsoft.com/api/arm/feeddiscovery`
+   - **メール**を使用するには、メール アドレスを入力します。 これにより、管理者が[メール検出](../rds-email-discovery.md)を設定している場合、メール アドレスに関連付けられている URL を検索するようにクライアントに指示します。
+3. **[Next]** \(次へ\) をタップします。
+4. プロンプトが表示されたら、自分のユーザー アカウントを使用してサインインします。
+5. リソースは、ワークスペース別にグループ化されて接続センターに表示されます。
 
 ### <a name="workspace-details"></a>ワークスペースの詳細
 

@@ -7,14 +7,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 05/12/2020
+ms.date: 05/27/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: de7c685e544fd0bb193f995aeff3a20a29bd6db5
-ms.sourcegitcommit: aed942d11f1a361fc1d17553a4cf190a864d1268
+ms.openlocfilehash: 0d49c49def8b110f42a6d56354c73e5a75b04b7e
+ms.sourcegitcommit: 4fec7d82f0772d03a9e8cac20092a4309b0f796e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83235053"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84025513"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Windows デスクトップ クライアントの新機能
 
@@ -26,15 +26,18 @@ Windows デスクトップ クライアントの詳細については、「[Wind
 
 |ユーザー グループ |バージョン  |
 |-----------|---------|
-|パブリック     |1.2.945  |
-|Insider    |1.2.1009 |
+|パブリック     |1.2.1026 |
+|Insider    |1.2.1026 |
 
-## <a name="updates-for-version-121009"></a>バージョン 1.2.1009 の更新内容
+## <a name="updates-for-version-121026"></a>バージョン 1.2.1026 の更新内容
 
-*公開日:2020 年 5 月 12 日*
+*公開日:2020 年 5 月 27 日*
 
-ダウンロード:[Windows 64 ビット](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4wseE)、[Windows 32 ビット](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4wnf3)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4wCIB)
+ダウンロード:[Windows 64 ビット](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4xsGB)、[Windows 32 ビット](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4xd8P)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4xq7m)
 
+- サブスクライブするときに、メール アドレスを入力する代わりに、アカウントを選択できるようになりました。
+- 新しい **[Subscribe with URL]\(URL でサブスクライブ\)** オプションが追加されました。これを使用すると、リソースを自動的に検出できない場合に、サブスクライブするワークスペースの URL を指定したり、[メール検出](../rds-email-discovery.md) (使用可能な場合) を利用したりすることができます。 これは、他のリモート デスクトップ クライアントでのサブスクリプション プロセスに似ています。 これを使用して、WVD Spring 2020 Update ワークスペースに直接サブスクライブできます。
+- 新しい [URI スキーム](remote-desktop-uri.md) を使用してワークスペースをサブスクライブするためのサポートが追加されました。これは、電子メールでユーザーに送信したり、サポート Web サイトに追加したりすることができます。
 - デスクトップとアプリ セッションのクライアント、ネットワーク、およびサーバーの詳細を提供する新しい**接続情報**ダイアログが追加されました。 このダイアログには、全画面表示モードの場合は接続バーから、ウィンドウの場合は [システム] メニューからアクセスできます。
 - ウィンドウ モードで起動したデスクトップ セッションは、ウィンドウを最大化するときに、全画面表示ではなく常に最大化されるようになりました。 全画面表示にするには、システム メニューの **[全画面表示]** オプションを使用します。
 - [サブスクリプションの解除] プロンプトに警告アイコンが表示され、ワークスペース名が箇条書きとして表示されるようになりました。
