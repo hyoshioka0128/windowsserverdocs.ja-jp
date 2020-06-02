@@ -26,7 +26,7 @@ ms.locfileid: "71401953"
 常時オフライン モードを有効にするには、お使いの環境が次の前提条件を満たしている必要があります。
 
 - Active Directory Domain Services (AD DS) ドメインが存在し、クライアント コンピューターがこのドメインに参加していること。 フォレストまたはドメインの機能レベルの要件やスキーマの要件はありません。
-- Windows 10、Windows 8.1、Windows 8、Windows Server 2016、Wndows Server 2012 R2、または Windows Server 2012 を実行しているクライアント コンピューター。 (以前のバージョンの Windows を実行しているクライアント コンピューターは、非常に高速のネットワーク接続では引き続きオンライン モードに移行する可能性があります。)
+- Windows 10、Windows 8.1、Windows 8、Windows Server 2016、Windows Server 2012 R2、または Windows Server 2012 を実行しているクライアント コンピューター。 (以前のバージョンの Windows を実行しているクライアント コンピューターは、非常に高速のネットワーク接続では引き続きオンライン モードに移行する可能性があります。)
 - グループ ポリシー管理がインストールされたコンピューター。
 
 ## <a name="enable-always-offline-mode"></a>常時オフライン モードを有効にする
