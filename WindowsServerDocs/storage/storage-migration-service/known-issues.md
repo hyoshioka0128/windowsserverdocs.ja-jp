@@ -4,16 +4,16 @@ description: 記憶域移行サービスの既知の問題とトラブルシュ�
 author: nedpyle
 ms.author: nedpyle
 manager: tiaascs
-ms.date: 02/10/2020
+ms.date: 06/02/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: f8a1e70bba740875e19660d5a729a952c9fae8f2
-ms.sourcegitcommit: d56c042c58833bdaa9a6fe54dd68f540af12fc6e
+ms.openlocfilehash: 5a4a99434d67c08551d97589f8f2638e1024754d
+ms.sourcegitcommit: 5fac756c2c9920757e33ef0a68528cda0c85dd04
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2020
-ms.locfileid: "80661066"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84306501"
 ---
 # <a name="storage-migration-service-known-issues"></a>記憶域移行サービスの既知の問題
 
@@ -30,7 +30,7 @@ Storage Migration Service には、Orchestrator サービスとプロキシサ�
 - アプリケーションとサービスログ \ Microsoft \ Windows \ StorageMigrationService
 - アプリケーションとサービスログ \ Microsoft \ Windows \ StorageMigrationService
 
-オフラインで表示したり Microsoft サポートに送信したりするためにこれらのログを収集する必要がある場合は、GitHub で入手可能なオープンソースの PowerShell スクリプトがあります。
+オフラインで表示したり Microsoft サポートに送信したりするためにこれらのログを収集する必要がある場合は、GitHub で入手できるオープンソースの PowerShell スクリプトがあります。
 
  [記憶域移行サービスヘルパー](https://aka.ms/smslogs) 
 
@@ -64,11 +64,11 @@ Windows 管理センターを使用して[Windows server 2019 評価](https://ww
 
 Windows 管理センターまたは PowerShell を使用して転送操作の詳細なエラーのみをダウンロードすると、次のエラーが表示されます。
 
- >   ログの転送-ファイアウォールでファイル共有が許可されていることを確認してください。 : Net.tcp:/localhost: 28940/sms/service/1/transfer に送信されるこの要求操作は、構成されたタイムアウト時間 (00:01:00) 内に応答を受信しませんでした。 この操作に割り当てられている時間はより長いタイムアウトの一部である可能性があります。 サービスが処理中であるか、応答メッセージを送信できない可能性があります。 操作のタイムアウトを増やすことを検討してください (チャネル/プロキシをありにキャストし、OperationTimeout プロパティを設定します)。また、サービスがクライアントに接続できることを確認してください。
+ >   ログの転送-ファイアウォールでファイル共有が許可されていることを確認してください。 : Net.tcp:/localhost: 28940/sms/service/1/transfer に送信されるこの要求操作は、構成されたタイムアウト時間 (00:01:00) 内に応答を受信しませんでした。 この操作に割り当てられた時間は、より長いタイムアウト時間の一部であった可能性があります。 この原因としては、サービスがまだこの操作を処理していること、またはサービスが応答メッセージを送信できなかったことが考えられます。 操作のタイムアウトを増やすことを検討してください (チャネル/プロキシをありにキャストし、OperationTimeout プロパティを設定します)。また、サービスがクライアントに接続できることを確認してください。
 
 この問題は、記憶域移行サービスで許可されている既定の1分のタイムアウトではフィルター処理できない、非常に多くの転送ファイルが原因で発生します。 
 
-この問題の回避方法:
+この問題を回避するには、次のようにします。
 
 1. Orchestrator コンピューターで Notepad.exe を使用して *%SYSTEMROOT%\SMS\Microsoft.StorageMigration.Service.exe.config*ファイルを編集し、"sendtimeout" を1分の既定値から10分に変更します。
 
@@ -81,16 +81,16 @@ Windows 管理センターまたは PowerShell を使用して転送操作の詳
 
 2. Orchestrator コンピューターで "Storage Migration Service" サービスを再起動します。 
 3. Orchestrator コンピューターで、Regedit.exe を起動します。
-4. 次のレジストリ サブキーを見つけてクリックします。 
+4. 次のレジストリ サブキーを探してクリックします。 
 
    `HKEY_LOCAL_MACHINE\Software\Microsoft\SMSPowershell`
 
-5. [編集] メニューの [新規] をポイントし、[DWORD 値] をクリックします。 
+5. [編集] メニューの [新規] をポイントして [DWORD 値] をクリックします。 
 6. DWORD の名前として「WcfOperationTimeoutInMinutes」と入力し、enter キーを押します。
 7. "WcfOperationTimeoutInMinutes" を右クリックし、[変更] をクリックします。 
 8. [基本データ] ボックスで、[10 進] をクリックします。
 9. [値のデータ] ボックスに「10」と入力し、[OK] をクリックします。
-10. レジストリエディターを終了します。
+10. レジストリ エディターを終了します。
 11. エラーのみの CSV ファイルをもう一度ダウンロードします。 
 
 この動作は、Windows Server 2019 の今後のリリースで変更される予定です。  
@@ -136,9 +136,9 @@ Windows Server 2019 の展開先コンピューターに Storage Migration Servi
 
 ## <a name="dfsr-hashes-mismatch-when-using-storage-migration-service-to-preseed-data"></a>Storage Migration Service を使用してデータをプリシードするときに、DFSR ハッシュが一致しません
 
-記憶域移行サービスを使用してファイルを新しい宛先に転送する場合は、DFS レプリケーション (DFSR) を構成して、事前シードされたレプリケーションまたは DFSR データベースの複製を使用して、既存の DFSR サーバーでそのデータをレプリケートするようにします。すべてのファイルでハッシュが発生します。不一致とが再レプリケートされます。 データストリーム、セキュリティストリーム、サイズ、および属性はすべて、SMS を使用して転送した後、完全に一致しているように見えます。 ICACLS または DFSR データベース複製デバッグログを使用してファイルを調べると、次のようになります。
+記憶域移行サービスを使用してファイルを新しい宛先に転送するときに、事前シードされたレプリケーションまたは DFS レプリケーションデータベースの複製を使用して既存のサーバーにそのデータをレプリケートするように DFS レプリケーションを構成すると、すべてのファイルでハッシュの不一致が発生し、再レプリケートされます。 データストリーム、セキュリティストリーム、サイズ、および属性はすべて、ストレージ移行サービスを使用して転送した後、完全に一致しているように見えます。 ICACLS または DFS レプリケーションデータベース複製デバッグログを使用してファイルを調べると、次のようになります。
 
-ソースファイル:
+ソース ファイル: 
 
   icacls d:\test\Source:
 
@@ -260,7 +260,7 @@ StorageMigrationService/Debug ログを調べると、次のように表示さ�
     Description:
     02/14/2020-13:18:21.097 [Erro] Failed device discovery stage SystemInfo with error: (0x80005000) Unknown error (0x80005000)   
   
-このエラーは、'meghan@contoso.com' などのユーザープリンシパル名 (UPN) の形式で移行資格情報を指定した場合に、ストレージ移行サービスのコードの不具合が原因で発生します。 Storage Migration Service orchestrator サービスは、この形式を正しく解析できません。そのため、KB4512534 と19H1 でのクラスター移行サポートに追加されたドメイン参照でエラーが発生します。
+このエラーは、"' などのユーザープリンシパル名 (UPN) の形式で移行資格情報を指定した場合に、ストレージ移行サービスのコードの不具合が原因で発生し meghan@contoso.com ます。 Storage Migration Service orchestrator サービスは、この形式を正しく解析できません。そのため、KB4512534 と19H1 でのクラスター移行サポートに追加されたドメイン参照でエラーが発生します。
 
 この問題を回避するには、"Contoso\Meghan" のように、domain\user の形式で資格情報を指定します。
 
@@ -301,7 +301,7 @@ Windows Server 2003 ソースコンピューターに対して Storage Migration
 
 この問題は、 [KB4537818](https://support.microsoft.com/help/4537818/windows-10-update-kb4537818) update によって解決されます。
 
-## <a name="uninstalling-a-cumulutative-update-prevents-storage-migration-service-from-starting"></a>Cumulutative update をアンインストールすると、記憶域移行サービスが開始されない
+## <a name="uninstalling-a-cumulative-update-prevents-storage-migration-service-from-starting"></a>累積的な更新プログラムをアンインストールすると、記憶域移行サービスが開始されない
 
 Windows Server の累積更新プログラムをアンインストールすると、記憶域移行サービスの開始が妨げられる可能性があります。 この問題を解決するには、Storage Migration Service データベースをバックアップして削除します。
 
@@ -343,11 +343,11 @@ Windows Server 2008 R2 クラスターソースに対して切り取りを実行
        at Microsoft.FailoverClusters.Framework.ClusterUtils.RenameFSNetName(SafeClusterHandle ClusterHandle, String clusterName, String FsResourceId, String NetNameResourceId, String newDnsName, CancellationToken ct)
        at Microsoft.StorageMigration.Proxy.Cutover.CutoverUtils.RenameFSNetName(NetworkCredential networkCredential, Boolean isLocal, String clusterName, String fsResourceId, String nnResourceId, String newDnsName, CancellationToken ct)    [d:\os\src\base\dms\proxy\cutover\cutoverproxy\CutoverUtils.cs::RenameFSNetName::1510]
 
-この問題は、以前のバージョンの Windows Server で API が不足していることが原因で発生します。 現時点では、Windows Server 2008 および Windows Server 2003 クラスターを移行する方法はありません。 Windows Server 2008 R2 クラスターでは、インベントリおよび転送を実行できます。その後、クラスターのソースファイルサーバーリソースのネット名と IP アドレスを手動で変更して、移行先クラスターのネット名と IP アドレスを元のソースに一致するように変更することで、手動でカットオーバーを実行できます。 
+この問題は、以前のバージョンの Windows Server で API が不足していることが原因で発生します。 現時点では、Windows Server 2008 および Windows Server 2003 クラスターを移行する方法はありません。 Windows Server 2008 R2 クラスターでは、インベントリおよび転送を実行できます。その後、クラスターのソースファイルサーバーリソースのネット名と IP アドレスを手動で変更して、移行先クラスターのネット名と IP アドレスを元のソースと一致するように変更することで、手動でカットオーバーを実行できます。 
 
-## <a name="cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer-when-using-dhcp"></a>"38% のソースコンピューターのネットワークインターフェイスのマッピングが停止しています..."DHCP を使用する場合 
+## <a name="cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer-when-using-static-ips"></a>"38% のソースコンピューターのネットワークインターフェイスのマッピングが停止しています..."静的 Ip を使用する場合 
 
-ソースコンピュータに対して切り取りを実行しようとしたときに、1つまたは複数のネットワークインターフェイスで新しい静的 (DHCP ではない) IP アドレスを使用するようにソースコンピュータを設定した場合、カットオーバーはフェーズで "38%" ソースコンピューターのネットワークインターフェイスのマッピング中にスタックします。 "SMS イベントログに次のエラーが表示されます。
+ソースコンピュータに対して切り取りを実行しようとしたときに、1つまたは複数のネットワークインターフェイスで新しい静的 (DHCP なし) IP アドレスを使用するようにソースコンピュータを設定した場合、カットオーバーは、"38% のソースコンピュータのネットワークインターフェイスのマッピング中..." というフェーズで停止します。記憶域移行サービスのイベントログに次のエラーが表示されます。
 
     Log Name:      Microsoft-Windows-StorageMigrationService-Proxy/Admin
     Source:        Microsoft-Windows-StorageMigrationService-Proxy
@@ -372,9 +372,13 @@ Windows Server 2008 R2 クラスターソースに対して切り取りを実行
 
 ソースコンピュータを調べると、元の IP アドレスを変更できないことがわかります。 
 
-この問題は、新しい静的 IP アドレス、サブネット、およびゲートウェイを指定した場合にのみ、Windows 管理センターの [切り替えの構成] 画面で [DHCP を使用する] を選択した場合には発生しません。 
+この問題は、新しい静的 IP アドレスを指定した場合にのみ、Windows 管理センターの [切り替えの構成] 画面で [DHCP を使用する] を選択した場合には発生しません。 
 
-この問題は、 [KB4537818](https://support.microsoft.com/help/4537818/windows-10-update-kb4537818) update によって解決されます。
+この問題には、次の2つの解決策があります。 
+
+1. この問題は、 [KB4537818](https://support.microsoft.com/help/4537818/windows-10-update-kb4537818) update によって最初に解決されました。 以前のコードの欠陥により、静的 IP アドレスがすべて使用されませんでした。
+
+2. ソースコンピューターのネットワークインターフェイスでデフォルトゲートウェイの IP アドレスを指定していない場合、KB4537818 の更新プログラムでもこの問題が発生します。 この問題を回避するには、ネットワーク接続アプレット (NCPA.CPL」) を使用して、ネットワークインターフェイスで有効な既定の IP アドレスを設定します。CPL) または New-netroute Powershell コマンドレットを設定します。   
 
 ## <a name="slower-than-expected-re-transfer-performance"></a>予想される再転送パフォーマンスを低下させる
 
@@ -389,7 +393,7 @@ Windows Server 2008 R2 クラスターソースに対して切り取りを実行
  1. データは移行されず、コピー先に共有は作成されません。
  2. エラーメッセージが表示されない Windows 管理センターに赤いエラー記号が表示される
  3. 1つ以上の AD ユーザーおよびドメインローカルグループの名前または Windows 2000 ログオン属性が変更されました
- 4. SMS orchestrator にイベント3509が表示されます。
+ 4. Storage Migration Service orchestrator にイベント3509が表示されます。
  
         Log Name:      Microsoft-Windows-StorageMigrationService/Admin
         Source:        Microsoft-Windows-StorageMigrationService
@@ -415,7 +419,7 @@ Windows Server 2008 R2 クラスターソースに対して切り取りを実行
 
 既に転送を1回以上実行している場合は、次のようにします。
 
- 1. DC に対して次の AD PowerShell コマンドを使用して、変更されたユーザーまたはグループを見つけます (SearchBase をドメインの dinstringuished 名と一致するように変更します)。 
+ 1. DC に対して次の AD PowerShell コマンドを使用して、変更されたユーザーまたはグループを見つけます (ドメインの識別名と一致するように SearchBase を変更します)。 
 
     ```PowerShell
     Get-ADObject -Filter 'Description -like "*storage migration service renamed*"' -SearchBase 'DC=<domain>,DC=<TLD>' | ft name,distinguishedname
@@ -479,7 +483,7 @@ Windows Server 2008 R2 クラスターソースに対して切り取りを実行
        at Microsoft.Win32.RegistryKey.Win32ErrorStatic(Int32 errorCode, String str)
        at Microsoft.Win32.RegistryKey.OpenRemoteBaseKey(RegistryHive hKey, String machineName, RegistryView view)
 
-この段階で、Storage Migration Service orchestrator は、リモートレジストリの読み取りを試行してソースマシンの構成を確認しようとしていますが、移行元サーバーがレジストリパスが存在しないということを拒否しています。 これは次のような事項が原因で発生します。
+この段階で、Storage Migration Service orchestrator は、リモートレジストリの読み取りを試行してソースマシンの構成を確認しようとしていますが、移行元サーバーがレジストリパスが存在しないということを拒否しています。 考えられる原因を以下に示します。
 
  - ソースコンピューターでリモートレジストリサービスが実行されていません。
  - ファイアウォールは、Orchestrator から移行元サーバーへのリモートレジストリ接続を許可しません。
@@ -488,7 +492,7 @@ Windows Server 2008 R2 クラスターソースに対して切り取りを実行
  
  ## <a name="cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer"></a>"38% のソースコンピューターのネットワークインターフェイスのマッピングが停止しています..." 
 
-ソースコンピュータに対して切り取りを実行しようとすると、"38% ソース上のネットワークインターフェイスのマッピングが終了しました" というフェーズでカットオーバーが停止します。SMS イベントログに次のエラーが表示されます。
+ソースコンピュータの切り取りを実行しようとすると、"38% のソースコンピュータ上のネットワークインターフェイスのマッピング中に、カットオーバー" が停止します。記憶域移行サービスのイベントログに次のエラーが表示されます。
 
     Log Name:      Microsoft-Windows-StorageMigrationService-Proxy/Admin
     Source:        Microsoft-Windows-StorageMigrationService-Proxy
@@ -528,6 +532,6 @@ Storage Migration Service は、削除プロセスの一環として、一時的
 2. この競合するポリシーを適用する GPO を一時的に無効にします。
 3. この設定を [無効] に設定し、他の Gpo より優先順位の高い、移行元サーバーの特定の OU に適用する新しい GPO を一時的に作成します。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 - [記憶域移行サービスの概要](overview.md)

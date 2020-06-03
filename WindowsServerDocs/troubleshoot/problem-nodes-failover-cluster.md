@@ -6,16 +6,16 @@ ms.technology: server-general
 ms.date: 05/28/2020
 author: Deland-Han
 ms.author: delhan
-ms.openlocfilehash: 30714e8a9c5ca4ad13ed6757c6ce1da211b279ac
-ms.sourcegitcommit: ef089864980a1d4793a35cbf4cbdd02ce1962054
+ms.openlocfilehash: 08f5e7ef2ddd0f11abee7d0f21b56c3d5a601d3d
+ms.sourcegitcommit: 5fac756c2c9920757e33ef0a68528cda0c85dd04
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84150230"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84306521"
 ---
 # <a name="having-a-problem-with-nodes-being-removed-from-active-failover-cluster-membership"></a>アクティブなフェールオーバークラスターのメンバーシップからノードが削除されるという問題が発生する
 
-この記事では、ノードがアクティブフェールオーバークラスターメンバーシップからランダムに削除される問題を解決する方法を紹介します。
+この記事では、アクティブフェールオーバークラスターメンバーシップからノードがランダムに削除される問題を解決する方法について説明します。
 
 ## <a name="symptoms"></a>現象
 
@@ -66,7 +66,7 @@ Windows 2008 または 2008 R2 フェールオーバークラスター内のす�
 
 これらのイベントがログに記録される最も一般的な理由を次に示しますが、その他の理由も考えられます。 このブログでは、プロセスについていくつかの洞察を得て、何を探しているかについてのアイデアを提供することにしました。 この問題を回避するために、次の値が最大値になる場合があります。
 
-|パラメーター|Default|範囲|
+|パラメーター|Default|Range|
 |---|---|---|
 |**SameSubnetDelay**|1000ミリ秒|250-2000 ミリ秒|
 |**CrossSubnetDelay**|1000ミリ秒|250-4000 ミリ秒|

@@ -2,18 +2,16 @@
 title: イベント ID 1135 のクラスターの問題のトラブルシューティング
 description: イベント ID 1135 のクラスターサービスの起動に関する問題をトラブルシューティングする方法について説明します。
 ms.date: 05/28/2020
-ms.openlocfilehash: 73357cc5b696a969de82123d3ca2a6fbb36fdc40
-ms.sourcegitcommit: ef089864980a1d4793a35cbf4cbdd02ce1962054
+ms.openlocfilehash: d59f8b89e89ea7ff42aecd79670465aee8d63524
+ms.sourcegitcommit: 5fac756c2c9920757e33ef0a68528cda0c85dd04
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84150460"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84306531"
 ---
 # <a name="troubleshooting-cluster-issue-with-event-id-1135"></a>イベント ID 1135 のクラスターの問題のトラブルシューティング
 
 この記事は、フェールオーバークラスタリング環境でクラスターサービスの開始時にログに記録される可能性があるイベント ID 1135 を診断および解決するのに役立ちます。
-
-この記事では、
 
 ## <a name="start-page"></a>スタート ページ
 
@@ -154,7 +152,7 @@ Cluster node ' **NODE A** ' was removed from the active failover cluster members
 
 システムサービス名: **ClusSvc**  
 
-|アプリケーション|Protocol|Port|
+|Application|Protocol|Port|
 |---|---|---|
 |クラスターサービス|UDP|3343|
 |クラスターサービス|TCP|3343 (ノードの結合操作中にこのポートが必要です。)|

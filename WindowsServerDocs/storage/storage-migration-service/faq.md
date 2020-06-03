@@ -4,16 +4,16 @@ description: 記憶域の移行サービスに関してよく寄せられる質�
 author: nedpyle
 ms.author: nedpyle
 manager: siroy
-ms.date: 08/19/2019
+ms.date: 06/02/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: a28b25c55b9ad66cd16f3d9e370fec22ec0f2a5d
-ms.sourcegitcommit: f0fcfee992b76f1ad5dad460d4557f06ee425083
+ms.openlocfilehash: 19f114dc663351f1b5d071340acf9c8a3de41617
+ms.sourcegitcommit: 5fac756c2c9920757e33ef0a68528cda0c85dd04
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77125143"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84306511"
 ---
 # <a name="storage-migration-service-frequently-asked-questions-faq"></a>記憶域移行サービスに関してよく寄せられる質問 (FAQ)
 
@@ -24,7 +24,7 @@ ms.locfileid: "77125143"
 Storage Migration Service は、Windows の操作に干渉する可能性があるファイルまたはフォルダーを転送しません。 具体的には、転送されたり、宛先の PreExistingData フォルダーに移動したりすることはありません。
 
 - Windows、program Files、Program Files (x86)、Program Data、Users
-- $Recycle.bin、recycler、Recycled、システム ボリューム情報、$UpgDrv$、$SysReset、$Windows ~ $Windows。 bt によって ~ %.ls、Windows.old、ブート、回復、Documents and Settings。
+- $Recycle .bin、リサイクラー、リサイクル、システムボリューム情報、$UpgDrv $、$SysReset、$Windows. ~ BT、$Windows. ~ LS、Windows .old、boot、Recovery、Documents、Settings
 - pagefile.sys、hiberfil.sys、bootsect.exe、winpepge.sys、config、config.sys、bootmgr、bootnxt のうちのすべてのファイルを
 - 移行先の除外されたフォルダーと競合する、移行元サーバー上のすべてのファイルまたはフォルダー。 <br>たとえば、ソースに N:\Windows フォルダーがあり、それが C:\ にマップされているとします。コピー先のボリュームは、格納されている内容に関係なく転送されません。これは、変換先の C:\Windows システムフォルダーが影響を受ける可能性があるためです。
 
@@ -38,7 +38,7 @@ Storage Migration Service は、Windows の操作に干渉する可能性があ�
 
 ## <a name="are-clusters-supported-as-sources-or-destinations"></a>クラスターは変換元または変換先としてサポートされていますか。
 
-記憶域移行サービスは、累積的な更新プログラム[KB4513534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)またはそれ以降の更新プログラムのインストール後のクラスターからクラスターへの移行をサポートしています。 これには、ソースクラスターから移行先クラスターへの移行だけでなく、デバイス統合のためにスタンドアロンの移行元サーバーから移行先クラスターに移行することも含まれます。 
+記憶域移行サービスは、累積的な更新プログラム[KB4513534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)またはそれ以降の更新プログラムのインストール後のクラスターからクラスターへの移行をサポートしています。 これには、ソースクラスターから移行先クラスターへの移行だけでなく、デバイス統合のためにスタンドアロンの移行元サーバーから移行先クラスターに移行することも含まれます。 ただし、スタンドアロンサーバーにクラスターを移行することはできません。 
 
 ## <a name="do-local-groups-and-local-users-migrate"></a>ローカルグループとローカルユーザーを移行しますか?
 
@@ -63,21 +63,21 @@ Storage Migration Service は、Windows の操作に干渉する可能性があ�
     - 同時ユーザー数の制限
     - 継続的に利用可能
     - 説明           
-    - データの暗号化
+    - [データの暗号化]
     - Id リモート処理
     - インフラストラクチャ
     - 名前
     - パス
-    - 役割
+    - スコープ
     - スコープ名
     - セキュリティ記述子
     - シャドウコピー
     - 特殊
-    - Temporary
+    - 一時
 
 ## <a name="can-i-consolidate-multiple-servers-into-one-server"></a>複数のサーバーを1台のサーバーに統合することはできますか。
 
-Windows Server 2019 に出荷された Storage Migration Service のバージョンでは、複数のサーバーを1台のサーバーに統合することはできません。 統合の例としては、3つの異なるソースサーバーを移行する場合があります。これには、同じ共有名とローカルファイルパスが存在することがあります。これにより、これらのパスと共有を仮想化して重複や衝突を防ぐことができます。以前のサーバー名と IP アドレス。 ただし、スタンドアロンサーバーを1つのクラスター上の複数のファイルサーバーリソースに移行することはできます。 
+Windows Server 2019 に出荷された Storage Migration Service のバージョンでは、複数のサーバーを1台のサーバーに統合することはできません。 統合の例としては、3つの異なるソースサーバーを移行する場合があります。これには、同じ共有名とローカルファイルパスが存在する可能性があります。これらのパスと共有を仮想化して、重複や衝突を防止し、3つの以前のサーバー名と IP アドレスすべてに応答します。 ただし、スタンドアロンサーバーを1つのクラスター上の複数のファイルサーバーリソースに移行することはできます。 
 
 ## <a name="can-i-migrate-from-sources-other-than-windows-server"></a>Windows Server 以外のソースから移行できますか?
 
@@ -99,11 +99,21 @@ Storage Migration Service には、Storage Migration Service プロキシサー�
     
     FileTransferThreadCount
 
-   Windows Server 2019 では、有効な範囲は 1 ~ 128 です。 変更後は、移行に参加しているすべてのコンピューターで、Storage Migration Service プロキシサービスを再起動する必要があります。 この設定には注意してください。この値を高く設定すると、追加のコア、記憶域のパフォーマンス、およびネットワーク帯域幅が必要になる場合があります。 設定値が高すぎると、既定の設定と比較してパフォーマンスが低下する可能性があります。
+   Windows Server 2019 では、有効な範囲は 1 ~ 512 です。 新しいジョブを作成する限り、この設定の使用を開始するために、サービスを再起動する必要はありません。 この設定には注意してください。この値を高く設定すると、追加のコア、記憶域のパフォーマンス、およびネットワーク帯域幅が必要になる場合があります。 設定値が高すぎると、既定の設定と比較してパフォーマンスが低下する可能性があります。
+
+- **既定の並列共有スレッドを変更します。** 記憶域移行サービスプロキシサービスは、指定されたジョブ内で同時に8個の共有からコピーします。 Storage Migration Service orchestrator サーバーで次のレジストリ REG_DWORD 値の名前を10進数で調整することにより、同時共有スレッド数を増やすことができます。
+
+    HKEY_Local_Machine \Software\Microsoft\SMS
+    
+    EndpointFileTransferTaskCount 
+
+   Windows Server 2019 では、有効な範囲は 1 ~ 512 です。 新しいジョブを作成する限り、この設定の使用を開始するために、サービスを再起動する必要はありません。 この設定には注意してください。この値を高く設定すると、追加のコア、記憶域のパフォーマンス、およびネットワーク帯域幅が必要になる場合があります。 設定値が高すぎると、既定の設定と比較してパフォーマンスが低下する可能性があります。 
+   
+    FileTransferThreadCount と EndpointFileTransferTaskCount の合計は、Storage Migration Service がジョブ内の1つのソースノードから同時にコピーできるファイルの数です。 並列ソースノードをさらに追加するには、より多くの同時ジョブを作成して実行します。
 
 - **コアとメモリを追加します。**  ソース、orchestrator、および対象のコンピューターには少なくとも2つのプロセッサコアまたは2つの vCPUs があることを強くお勧めします。これにより、特に FileTransferThreadCount (上記の) と組み合わせた場合に、インベントリと転送のパフォーマンスを大幅に向上させることができます。 通常の Office 形式 (ギガバイト以上) を超えるファイルを転送する場合は、既定の2GB よりも多くのメモリを利用した方がパフォーマンスが向上します。
 
-- **複数のジョブを作成します。** 複数のサーバーソースを持つジョブを作成する場合、各サーバーは、インベントリ、転送、およびカットオーバーのために、直列に接続されます。 つまり、各サーバーは、別のサーバーが起動する前にフェーズを完了する必要があります。 複数のサーバーを並行して実行するには、各ジョブに1つのサーバーのみを含む複数のジョブを作成するだけです。 SMS では、同時に最大で100のジョブを実行できます。つまり、1つの orchestrator が多数の Windows Server 2019 対象コンピューターを並列化できます。 対象のコンピューターが Windows Server 2016 または Windows Server 2012 R2 の場合、移行先で SMS プロキシサービスが実行されていない場合は、複数の並列ジョブを実行しないことをお勧めします。 orchestrator は、すべての転送を実行する必要があり、次のようになります。なる. サーバーを1つのジョブ内で並列に実行する機能は、新しいバージョンの SMS で追加する予定です。
+- **複数のジョブを作成します。** 複数のサーバーソースを持つジョブを作成する場合、各サーバーは、インベントリ、転送、およびカットオーバーのために、直列に接続されます。 つまり、各サーバーは、別のサーバーが起動する前にフェーズを完了する必要があります。 複数のサーバーを並行して実行するには、各ジョブに1つのサーバーのみを含む複数のジョブを作成するだけです。 SMS では、同時に最大で100のジョブを実行できます。つまり、1つの orchestrator が多数の Windows Server 2019 対象コンピューターを並列化できます。 対象のコンピューターが Windows Server 2016 または Windows Server 2012 R2 の場合、移行先で SMS プロキシサービスが実行されていない場合は、複数の並列ジョブを実行しないことをお勧めします。 orchestrator は、すべての転送を実行する必要があり、ボトルネックになる可能性があります。 サーバーを1つのジョブ内で並列に実行する機能は、新しいバージョンの SMS で追加する予定です。
 
 - **RDMA ネットワークで SMB 3 を使用します。** Windows Server 2012 以降のソースコンピューターから転送する場合、smb 3.x は SMB Direct モードと RDMA ネットワークをサポートします。 RDMA は、マザーボードの Cpu からの転送にかかる CPU コストを最も多く移動し、待機時間とサーバーの CPU 使用率を削減します。 さらに、ROCE や iWARP のような RDMA ネットワークは、通常の TCP/イーサネットよりもはるかに高い帯域幅を備えています。これには、インターフェイスあたり25、50、100 Gb の速度が含まれます。 通常、SMB ダイレクトを使用すると、ネットワークから記憶域自体に転送速度の制限が移動します。   
 
@@ -133,12 +143,13 @@ Windows Server 2019 に出荷された記憶域移行サービスのバージョ
 Storage Migration Service では、hidden c:\programdata\microsoft\storagemigrationservice フォルダーに既定でインストールされる拡張ストレージエンジン (ESE) データベースを使用します。 ジョブが追加され、転送が完了すると、このデータベースは拡張されます。ジョブを削除しない場合は、何百万ものファイルを移行した後で、大きなドライブ領域を消費する可能性があります。 データベースを移動する必要がある場合は、次の手順を実行します。
 
 1. Orchestrator コンピューターの "Storage Migration Service" サービスを停止します。
-2. `%programdata%/Microsoft/StorageMigrationService` フォルダーの所有権を取得する
+2. フォルダーの所有権を取得する `%programdata%/Microsoft/StorageMigrationService`
 3. ユーザーアカウントを追加して、その共有とそのすべてのファイルとサブフォルダーを完全に制御できるようにします。
 4. フォルダーを orchestrator コンピューターの別のドライブに移動します。
 5. 次のレジストリ REG_SZ 値を設定します。
 
-    HKEY_Local_Machine \Software\Microsoft\SMS DatabasePath =*別のボリューム上の新しいデータベースフォルダーへのパス*。 
+    HKEY_Local_Machine \Software\Microsoft\SMS DatabasePath =*別のボリューム上の新しいデータベースフォルダーへのパス*
+    
 6. システムがそのフォルダーのすべてのファイルとサブフォルダーに対してフルコントロールを持っていることを確認する
 7. 自分のアカウントのアクセス許可を削除します。
 8. "Storage Migration Service" サービスを開始します。
@@ -155,13 +166,13 @@ Storage Migration Service では、hidden c:\programdata\microsoft\storagemigrat
 
 転送 CSV ファイルで検出されたほとんどのエラーは、Windows システムエラーコードです。 各エラーの意味を確認するには、 [Win32 エラーコードのドキュメント](https://docs.microsoft.com/windows/win32/debug/system-error-codes)を参照してください。 
 
-## <a name="give-feedback"></a>フィードバックの提供、バグの報告、サポートを受けるためのオプションは何ですか?
+## <a name="what-are-my-options-to-give-feedback-file-bugs-or-get-support"></a><a name="give-feedback"></a>フィードバックの提供、バグの報告、サポートを受けるためのオプションは何ですか?
 
 ストレージ移行サービスに関するフィードバックを提供するには:
 
 - Windows 10 に含まれているフィードバックハブツールを使用して、[機能の提案] をクリックし、[Windows Server] と [記憶域の移行] のカテゴリを指定します。
 - [Windows Server UserVoice](https://windowsserver.uservoice.com)サイトを使用する
-- 電子メール smsfeed@microsoft.com
+- smsfeed@microsoft.com へのメール
 
 バグを報告するには:
 
