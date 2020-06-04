@@ -9,19 +9,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 96e0f97e27de8933de44c437508ef59803765771
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 1525f20549b6571975cb622534f8504eb4fa1f79
+ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437127"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84354682"
 ---
 # <a name="erase"></a>erase
 
-1つ以上のファイルを削除します。 このコマンドは、 **del**コマンドと同じ操作を実行します。
+1つ以上のファイルを削除します。 **Erase**を使用してディスクからファイルを削除した場合、ファイルを取得することはできません。
 
-> [!WARNING]
-> **Erase**を使用してディスクからファイルを削除した場合、ファイルを取得することはできません。
+> [!NOTE]
+> このコマンドは[del コマンド](del.md)と同じです。
+
 
 ## <a name="syntax"></a>構文
 
@@ -97,3 +98,5 @@ erase /a:r *.*
 ## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [del コマンド](del.md)
