@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: cb5fd0ff432e441900e379d3fe798dbe6aef855f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f43b3052d64c7a5766e014aa47063c7e17a7d2ab
+ms.sourcegitcommit: 2cc251eb5bc3069bf09bc08e06c3478fcbe1f321
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80816105"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84333943"
 ---
 # <a name="update-password-customization"></a>パスワードのカスタマイズの更新 
 
@@ -22,7 +22,7 @@ ms.locfileid: "80816105"
   
 パスワード更新ページは、独自の説明を追加してカスタマイズできます。  
   
-> パスワード更新ページを有効化するには、[エンドポイント] の下にある [AD FS 管理] に移動します。 パスワード更新用のエンドポイントは、[その他] の下部にある /adfs/portal/updatepassword/ です。 このエンドポイントを有効化したら、AD FS サービスを再起動する必要があります。 この操作は手動で行う必要があります。 その後、ワークプレース ジョインが設定されたデバイスで https://<fqdn>/adfs/portal/updatepassword/ を開くと、パスワード更新ページが表示されます。  
+> パスワード更新ページを有効化するには、[エンドポイント] の下にある [AD FS 管理] に移動します。 パスワード更新用のエンドポイントは、[その他] の下部にある /adfs/portal/updatepassword/ です。 このエンドポイントを有効化したら、AD FS サービスを再起動する必要があります。 この操作は手動で行う必要があります。 [パスワードの更新] web ページを外部で使用する場合、および Web アプリケーションプロキシを使用する場合は、同じオプションでプロキシで有効にする必要があります ([プロキシで有効にする])。 その後、ワークプレース ジョインが設定されたデバイスで https://<fqdn>/adfs/portal/updatepassword/ を開くと、パスワード更新ページが表示されます。  
   
 ![update](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom5.png)  
   

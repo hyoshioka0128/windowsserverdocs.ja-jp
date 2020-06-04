@@ -8,12 +8,12 @@ ms.prod: windows-server
 ms.assetid: 70f279bf-aea1-4f4f-9ab3-e9157233e267
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: e9488357eecb4a2093d6989e4ebfcc195ce68567
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 090e5c9ffbbaaa6720eb8e938019c08baff681cf
+ms.sourcegitcommit: 2cc251eb5bc3069bf09bc08e06c3478fcbe1f321
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80854005"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84333933"
 ---
 # <a name="upgrading-to-ad-fs-in-windows-server-2016-with-sql-server"></a>SQL Server を使用した Windows Server 2016 での AD FS へのアップグレード
 
@@ -45,24 +45,24 @@ Windows server 2016 AD FS サーバーは、windows server 2012 R2 ファーム�
 
 次のアーキテクチャ図は、次の手順を検証して記録するために使用されたセットアップを示しています。
 
-![アーキテクチャ](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/arch.png)
+![Architecture](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/arch.png)
 
 
 #### <a name="join-the-windows-2016-ad-fs-server-to-the-ad-fs-farm"></a>Windows 2016 AD FS サーバーを AD FS ファームに参加させる
 
 1.  サーバーマネージャー使用して Active Directory フェデレーションサービス (AD FS) の役割を Windows Server 2016 にインストールする  
 
-2.  AD FS 構成ウィザードを使用して、新しい Windows Server 2016 サーバーを既存の AD FS ファームに参加させます。  **[ようこそ]** 画面で **[次へ]** をクリックします。
- ファーム](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/configure1.png) に参加 ![  
-3.  **[Active Directory Domain Services への接続]** 画面で、p) フェデレーションサービスの構成を実行するアクセス許可を持つ**管理者アカウント**を設定し、 **[次へ]** をクリックします。
-4.  **[ファームの指定]** 画面で、SQL server およびインスタンスの名前を入力し、 **[次へ]** をクリックします。
-ファーム](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/configure3.png) に参加 ![
-5.  **[SSL 証明書の指定]** 画面で、証明書を指定し、 **[次へ]** をクリックします。
-ファーム](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/configure4.png) に参加 ![
-6.  **[サービスアカウントの指定]** 画面で、サービスアカウントを指定し、 **[次へ]** をクリックします。
-7.  **[オプションの確認]** 画面で、オプションを確認し、 **[次へ]** をクリックします。
-8.  **前提条件の確認**画面で、前提条件のチェックがすべて合格したことを確認し、 **[構成]** をクリックします。
-9.  **[結果]** 画面で、サーバー が正常に構成されていることを確認し、 **[閉じる]** をクリックします。
+2.  AD FS 構成ウィザードを使用して、新しい Windows Server 2016 サーバーを既存の AD FS ファームに参加させます。  [**ようこそ**] 画面で [**次へ**] をクリックします。
+ ![ファームに参加](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/configure1.png)  
+3.  [ **Active Directory Domain Services への接続**] 画面で、p) フェデレーションサービスの構成を実行するアクセス許可を持つ**管理者アカウント**を設定し、[**次へ**] をクリックします。
+4.  [**ファームの指定**] 画面で、SQL server およびインスタンスの名前を入力し、[**次へ**] をクリックします。
+![ファームに参加](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/configure3.png)
+5.  [ **SSL 証明書の指定**] 画面で、証明書を指定し、[**次へ**] をクリックします。
+![ファームに参加](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/configure4.png)
+6.  [**サービスアカウントの指定**] 画面で、サービスアカウントを指定し、[**次へ**] をクリックします。
+7.  [**オプションの確認**] 画面で、オプションを確認し、[**次へ**] をクリックします。
+8.  **前提条件の確認**画面で、前提条件のチェックがすべて合格したことを確認し、[**構成**] をクリックします。
+9.  [**結果**] 画面で、[サーバー] が正常に構成されていることを確認し、[**閉じる**] をクリックします。
 
 
 #### <a name="remove-the-windows-server-2012-r2-ad-fs-server"></a>Windows Server 2012 R2 AD FS サーバーの削除
@@ -70,27 +70,27 @@ Windows server 2016 AD FS サーバーは、windows server 2012 R2 ファーム�
 >[!NOTE]
 >SQL をデータベースとして使用する場合は、AdfsSyncProperties-Role を使用してプライマリ AD FS サーバーを設定する必要はありません。  この構成では、すべてのノードがプライマリと見なされるためです。
 
-1.  Windows Server 2012 R2 AD FS サーバーのサーバーマネージャーで、 **[管理]** の **[役割と機能の削除]** を使用します。
-サーバー](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/remove1.png) を削除 ![には
-2.  **[開始する前に]** 画面で、 **[次へ]** をクリックします。
-3.  **[サーバーの選択]** 画面で、 **[次へ]** をクリックします。
-4.  **サーバーの役割** 画面で、 **Active Directory フェデレーションサービス (AD FS)** の横にあるチェックボックスをオフにし、**次へ** をクリックします。
-サーバー](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/remove2.png) を削除 ![には
-5.  **[機能]** 画面で、 **[次へ]** をクリックします。
-6.  **[確認]** 画面で、 **[削除]** をクリックします。
+1.  Windows Server 2012 R2 AD FS サーバーのサーバーマネージャーで、[**管理**] の [**役割と機能の削除**] を使用します。
+![サーバーの削除](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/remove1.png)
+2.  [**開始する前に**] 画面で、[**次へ**] をクリックします。
+3.  [**サーバーの選択**] 画面で、[**次へ**] をクリックします。
+4.  [**サーバーの役割**] 画面で、[ **Active Directory フェデレーションサービス (AD FS)** の横にあるチェックボックスをオフにし、[**次へ**] をクリックします。
+![サーバーの削除](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/remove2.png)
+5.  [**機能**] 画面で、[**次へ**] をクリックします。
+6.  [**確認**] 画面で、[**削除**] をクリックします。
 7.  この処理が完了したら、サーバーを再起動します。
 
 #### <a name="raise-the-farm-behavior-level-fbl"></a>ファームの動作レベルを上げる (FBL)
 この手順の前に、Active Directory 環境で forestprep と domainprep が実行されていること、および Active Directory に Windows Server 2016 スキーマがあることを確認する必要があります。  このドキュメントは、Windows 2016 ドメインコントローラーから開始され、AD のインストール時に実行されたため、これらのドメインコントローラーを実行する必要はありませんでした。
 
 >[!NOTE]
->以下のプロセスを開始する前に、[設定] から Windows Update を実行して、Windows Server 2016 が最新であることを確認してください。  更新の必要がなくなるまで、このプロセスを続けます。
+>以下のプロセスを開始する前に、[設定] から Windows Update を実行して、Windows Server 2016 が最新であることを確認してください。  更新の必要がなくなるまで、このプロセスを続けます。 さらに、ADFS サービスアカウントアカウントが、SQL server と ADFS ファーム内の各サーバーに対する管理アクセス許可を持っていることを確認します。
 
 1. Windows Server 2016 サーバーで PowerShell を開き、次のように実行します。 **$cred = 取得**して、enter キーを押します。
 2. SQL Server に対して管理者特権を持つ資格情報を入力します。
 3. PowerShell で、次のように入力します。 **AdfsFarmBehaviorLevelRaise-Credential $cred**
 2. プロンプトが表示されたら、「 **Y**」と入力します。 これにより、レベルの引き上げが開始されます。  これが完了すると、FBL が正常に発生しました。  
-更新の完了 ![](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/finish1.png)
+![更新の完了](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/finish1.png)
 3. ここで、[AD FS 管理] にアクセスすると、Windows Server 2016 で AD FS に追加された新しいノードが表示されます。  
 4. 同様に、PowerShell の cmdlt: AdfsFarmInformation を使用して、現在の FBL を表示できます。  
 ![更新の完了](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/finish2.png)
