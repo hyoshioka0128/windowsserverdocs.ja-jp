@@ -123,7 +123,7 @@ Windows 8 と Windows Server 2012 の導入以前は、ユーザーが従量制�
 プライマリ コンピューターを指定するには、環境が次の要件を満たす必要があります。
 
 - Windows Server 2012 のスキーマと条件を含むように、Active Directory Domain Services (AD DS) スキーマを更新する必要があります (このスキーマは、Windows Server 2012 以降のドメイン コントローラーをインストールすると自動的に更新されます)。 AD DS スキーマのアップグレードについて詳しくは、「[Windows Server 2016 へのドメイン コントローラーのアップグレード](../../identity/ad-ds/deploy/upgrade-domain-controllers.md)」をご覧ください。
-- クライアント コンピューターは、Windows 10、Windows 8.1、Windows 8、Windows Server 2019、Windows Server 2016、Wndows Server 2012 R2、または Windows Server 2012 を実行していて、管理対象の Active Directory ドメインに参加している必要があります。
+- クライアント コンピューターは、Windows 10、Windows 8.1、Windows 8、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、または Windows Server 2012 を実行していて、管理対象の Active Directory ドメインに参加している必要があります。
 
 ## <a name="more-information"></a>説明を見る
 
