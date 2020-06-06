@@ -31,7 +31,7 @@ ms.locfileid: "71394440"
 プライマリ コンピューターのサポートには、次の要件があります。
 
 - Windows Server 2012 スキーマを追加できるように、Active Directory Domain Services (AD DS) スキーマを更新する必要があります (このスキーマは、Windows Server 2012 ドメイン コントローラーをインストールすると自動的に更新されます)。 AD DS スキーマの更新については、「[Adprep.exe の統合](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh472161(v=ws.11)#adprepexe-integration>)」と「[Adprep.exe の実行](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd464018(v=ws.10)>)」を参照してください。
-- クライアント コンピューターでは、Windows 10、Windows 8.1、Windows 8、Windows Server 2019、Windows Server 2016、Wndows Server 2012 R2、または Windows Server 2012 を実行している必要があります。
+- クライアント コンピューターでは、Windows 10、Windows 8.1、Windows 8、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、または Windows Server 2012 を実行している必要があります。
 
 > [!TIP]
 > プライマリ コンピューターのサポートにはフォルダー リダイレクトまたは移動ユーザー プロファイル (あるいはその両方) が必要ですが、これらのテクノロジを初めて採用する場合は、フォルダー リダイレクトと移動ユーザー プロファイルを構成する GPO を有効にする前に、プライマリ コンピューターのサポートを設定するのが最良の方法です。 これにより、プライマリ コンピューターのサポートが有効にされる前に、ユーザー データがプライマリでないコンピューターにコピーされることを防ぎます。 構成情報については、[フォルダー リダイレクトの展開](deploy-folder-redirection.md)に関する記事と「[移動ユーザー プロファイルを展開する](deploy-roaming-user-profiles.md)」を参照してください。
