@@ -9,20 +9,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f3e781e49aa978288de45da90224a3f1c2b247b1
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 546f867b2cde199f54975a127b0faf11130996d2
+ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82992487"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84354672"
 ---
 # <a name="diskpart-scripts-and-examples"></a>diskpart のスクリプトと例
 
 > 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-ボリューム`diskpart /s`の作成やダイナミックディスクへのディスクの変換など、ディスク関連のタスクを自動化するスクリプトを実行するには、を使用します。 ブート ボリューム以外のボリュームの作成をサポートしていない無人セットアップや Sysprep を使用して Windows を展開する場合は、これらのタスクをスクリプト化しておくと便利です。
+`diskpart /s`ボリュームの作成やダイナミックディスクへのディスクの変換など、ディスク関連のタスクを自動化するスクリプトを実行するには、を使用します。 ブート ボリューム以外のボリュームの作成をサポートしていない無人セットアップや Sysprep を使用して Windows を展開する場合は、これらのタスクをスクリプト化しておくと便利です。
 
-Diskpart スクリプトを作成するには、実行する Diskpart コマンドを含むテキストファイルを作成します。1行につき1つのコマンドを使用し、空の行を含めません。 を使用して`rem`行を開始し、行にコメントを作成することができます。 たとえば、ディスクをワイプした後、Windows 回復環境用に 300 MB のパーティションを作成するスクリプトを次に示します。
+Diskpart スクリプトを作成するには、実行する Diskpart コマンドを含むテキストファイルを作成します。1行につき1つのコマンドを使用し、空の行を含めません。 を使用して行を開始し `rem` 、行にコメントを作成することができます。 たとえば、ディスクをワイプした後、Windows 回復環境用に 300 MB のパーティションを作成するスクリプトを次に示します。
 
     ```
     select disk 0
@@ -33,7 +33,7 @@ Diskpart スクリプトを作成するには、実行する Diskpart コマン�
     assign letter=T
     ```
 
-## <a name="examples"></a>使用例
+## <a name="examples"></a>例
 
 - Diskpart スクリプトを実行するには、コマンドプロンプトで次のコマンドを入力します。ここで、 *scriptname*は、スクリプトが含まれているテキストファイルの名前です。
 
@@ -47,9 +47,9 @@ Diskpart スクリプトを作成するには、実行する Diskpart コマン�
     diskpart /s scriptname.txt > logfile.txt
     ```
 
-### <a name="remarks"></a>Remarks
+### <a name="remarks"></a>解説
 
-- **Diskpart**コマンドをスクリプトの一部として使用する場合は、すべての diskpart 操作を1つの diskpart スクリプトの一部として実行することをお勧めします。 連続した diskpart スクリプトを実行できますが、その後のスクリプトで**diskpart**コマンドを実行する前に、前回の実行を完全にシャットダウンするには、各スクリプトの間に少なくとも15秒かかることが必要です。 このようにしないと、以降のスクリプトが失敗することがあります。 Diskpart スクリプトと共に`timeout /t 15`コマンドをバッチファイルに追加することで、連続する diskpart スクリプトの間に一時停止を追加できます。
+- **Diskpart**コマンドをスクリプトの一部として使用する場合は、すべての diskpart 操作を1つの diskpart スクリプトの一部として実行することをお勧めします。 連続した diskpart スクリプトを実行できますが、その後のスクリプトで**diskpart**コマンドを実行する前に、前回の実行を完全にシャットダウンするには、各スクリプトの間に少なくとも15秒かかることが必要です。 このようにしないと、以降のスクリプトが失敗することがあります。 `timeout /t 15`Diskpart スクリプトと共にコマンドをバッチファイルに追加することで、連続する diskpart スクリプトの間に一時停止を追加できます。
 
 - Diskpart の起動時に、diskpart のバージョンとコンピューター名がコマンドプロンプトに表示されます。 既定では、スクリプト化されたタスクの実行中に diskpart によってエラーが検出された場合、diskpart はスクリプトの処理を停止し、エラーコードを表示します ( **noerr**パラメーターを指定していない場合)。 ただし、 **noerr**パラメーターを使用したかどうかにかかわらず、構文エラーが発生した場合、diskpart は常にエラーを返します。 **Noerr**パラメーターを使用すると、ディスクの合計数に関係なく、1つのスクリプトを使用してすべてのディスクのすべてのパーティションを削除するなど、便利なタスクを実行できます。
 
@@ -57,8 +57,8 @@ Diskpart スクリプトを作成するには、実行する Diskpart コマン�
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 
-- [サンプル: Windows PE\/と\-diskpart を使用して UEFI Gpt ベースのハードドライブパーティションを構成する](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh825686(v=win.10))
+- [サンプル: Windows PE と DiskPart を使用して UEFI/GPT ベースのハードドライブパーティションを構成する](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh825686(v=win.10))
 
-- [サンプル: Windows PE\/と\-diskpart を使用して BIOS MBR ベースのハードディスクパーティションを構成する](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh825677(v=win.10))
+- [サンプル: Windows PE と DiskPart を使用して BIOS/MBR ベースのハードディスクパーティションを構成する](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh825677(v=win.10))
 
 - [Storage Cmdlets in Windows PowerShell (Windows PowerShell の記憶域コマンドレット)](https://docs.microsoft.com/powershell/module/storage/?view=win10-ps)

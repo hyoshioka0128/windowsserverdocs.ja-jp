@@ -9,18 +9,22 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f3d5e778ee78d812a3ec8c3683b01e0b304a127e
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 192471e6045a530e9deedec70cc957b9362b3ae7
+ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82992339"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84354662"
 ---
 # <a name="makecab"></a>makecab
 
 > 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-キャビネット (.cab) ファイルに既存のファイルをパッケージ化します。 このコマンド**は、コマンド**と同じ操作を実行します。
+キャビネット (.cab) ファイルに既存のファイルをパッケージ化します。
+
+
+> [!NOTE]
+> このコマンドは、コマンドと同じ[です。](diantz.md)
 
 ## <a name="syntax"></a>構文
 
@@ -44,5 +48,7 @@ makecab [/v[<n>]] [/d var=<value> ...] /f <directives_file> [...]
 ## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [コマンドの実行 (z)](diantz.md)
 
 - [Microsoft キャビネット形式](https://docs.microsoft.com/previous-versions/bb417343(v=msdn.10))

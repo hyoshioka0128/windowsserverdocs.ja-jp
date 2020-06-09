@@ -8,12 +8,12 @@ ms.date: 09/19/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 8a53a4cfca4f34459102b8edc8e6af82f36be70d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ff129f2b049d3e17e6b39d653cc3962eba75090b
+ms.sourcegitcommit: 2cc251eb5bc3069bf09bc08e06c3478fcbe1f321
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71358369"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84333903"
 ---
 # <a name="configure-3rd-party-authentication-providers-as-primary-authentication-in-ad-fs-2019"></a>AD FS 2019 でサードパーティの認証プロバイダーをプライマリ認証として構成する
 
@@ -31,7 +31,7 @@ AD FS 2019 を使用して構築すると、外部認証プロバイダーをプ
 追加の外部因子を要求することによって、ブルートフォース攻撃やロックアウトからパスワードベースのログインを保護します。  外部認証が正常に完了した場合にのみ、ユーザーにパスワードの入力を求めるメッセージが表示されます。  これにより、攻撃者がアカウントを侵害または無効にしようとする便利な方法を排除できます。
 
 このシナリオは、次の2つのコンポーネントで構成されています。
-- プライマリ認証として Azure MFA または外部認証要素を要求する
+- Azure MFA (AD FS 2016 以降で利用可能)、またはプライマリ認証としての外部認証要因を要求する
 - AD FS での追加認証としてのユーザー名とパスワード
 
 ## <a name="scenario-2-password-free"></a>シナリオ 2: パスワードを無料でご利用いただけます。
@@ -39,14 +39,14 @@ AD FS 2019 を使用して構築すると、外部認証プロバイダーをプ
 - Azure MFA と Authenticator アプリ
 - Windows 10 Hello for Business
 - 証明書の認証
-- 外部認証プロバイダー
+- 外部の認証プロバイダー
 
 ## <a name="concepts"></a>概念
 **プライマリ認証**とは、特に、追加の要因の前にユーザーが最初に要求する方法であるということです。  以前は、AD FS で使用できる唯一の主要な方法は、Active Directory または Azure MFA のメソッド、またはその他の LDAP 認証ストアに組み込まれています。  外部メソッドは、プライマリ認証が正常に完了した後に行われる "追加" 認証として構成できます。
 
-AD FS 2019 では、外部認証は主な機能として、AD FS ファームに登録されている外部認証プロバイダー (Register-adfsauthenticationprovider を使用) がプライマリ認証に使用できるようになります。また、"追加" することもできます。認証. これらは、フォーム認証や証明書認証などの組み込みプロバイダーと同じ方法で、イントラネットまたはエクストラネットで使用できます。
+AD FS 2019 では、プライマリ機能としての外部認証は、AD FS ファームに登録されている外部認証プロバイダー (Register-adfsauthenticationprovider を使用) が、プライマリ認証と "追加" 認証に使用できるようになることを意味します。 これらは、フォーム認証や証明書認証などの組み込みプロバイダーと同じ方法で、イントラネットまたはエクストラネットで使用できます。
 
-![認証 (authentication)](media/Additional-Authentication-Methods-AD-FS/auth1.png)
+![認証](media/Additional-Authentication-Methods-AD-FS/auth1.png)
 
 外部プロバイダーがエクストラネット、イントラネット、またはその両方に対して有効になると、ユーザーが使用できるようになります。  複数の方法が有効になっている場合、ユーザーは選択肢ページを表示し、追加の認証の場合と同様に、主要な方法を選択できます。
 
@@ -63,7 +63,7 @@ AD FS 2019 では、外部認証は主な機能として、AD FS ファームに
 ## <a name="enable-external-authentication-methods-as-primary"></a>外部認証方法をプライマリとして有効にする
 前提条件を確認したら、次の2つの方法で AD FS 追加の認証プロバイダーをプライマリとして構成できます。
 
-### <a name="using-powershell"></a>PowerShell を使用する
+### <a name="using-powershell"></a>PowerShell の使用
 
 
 ```powershell
@@ -74,15 +74,15 @@ PS C:\> Set-AdfsGlobalAuthenticationPolicy -AllowAdditionalAuthenticationAsPrima
 追加の認証をプライマリとして有効または無効にした後、AD FS サービスを再起動する必要があります。
 
 ### <a name="using-the-ad-fs-management-console"></a>AD FS 管理コンソールの使用
-AD FS 管理コンソールで [**サービス** -> **認証方法** **プライマリ認証方法**編集] をクリックして
+AD FS 管理コンソールの [**サービス**の認証方法] で、[  ->  **Authentication Methods****プライマリ認証方法**] の下にある [編集] をクリックします。
 
-**[追加の認証プロバイダーをプライマリとして許可する]** チェックボックスをオンにします。
+[**追加の認証プロバイダーをプライマリとして許可する**] チェックボックスをオンにします。
 
 追加の認証をプライマリとして有効または無効にした後、AD FS サービスを再起動する必要があります。
 
 ## <a name="enable-username-and-password-as-additional-authentication"></a>追加の認証としてユーザー名とパスワードを有効にする
 "パスワードを保護する" シナリオを完了するには、PowerShell または AD FS 管理コンソールを使用して、追加の認証としてユーザー名とパスワードを有効にします。
-### <a name="using-powershell"></a>PowerShell を使用する
+### <a name="using-powershell"></a>PowerShell の使用
 
 
 
@@ -95,6 +95,6 @@ PS C:\>Set-AdfsGlobalAuthenticationPolicy -AdditionalAuthenticationProvider $pro
 ``` 
 
 ### <a name="using-the-ad-fs-management-console"></a>AD FS 管理コンソールの使用
-AD FS 管理コンソールの [**サービス** -> の**認証方法**] で、 **[追加の認証方法]** の **[編集]** をクリックします。
+AD FS 管理コンソールの [**サービス**  ->  の**認証方法**] で、[**追加の認証方法**] の [**編集**] をクリックします。
 
-**[フォーム認証]** のチェックボックスをオンにして、追加の認証としてユーザー名とパスワードを有効にします。
+[**フォーム認証**] のチェックボックスをオンにして、追加の認証としてユーザー名とパスワードを有効にします。

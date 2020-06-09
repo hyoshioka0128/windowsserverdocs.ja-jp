@@ -8,12 +8,12 @@ ms.date: 05/20/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 843ed0b3ebf25d662d0b90c17f8fe23548829a7e
-ms.sourcegitcommit: 371e59315db0cca5bdb713264a62b215ab43fd0f
+ms.openlocfilehash: 13f25252d60cb0bde67cca1e1aa5106435c3f361
+ms.sourcegitcommit: 2cc251eb5bc3069bf09bc08e06c3478fcbe1f321
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82192605"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84333917"
 ---
 # <a name="ad-fs-extranet-lockout-and-extranet-smart-lockout"></a>AD FS エクストラネットのロックアウトおよびエクストラネットのスマート ロックアウト
 
@@ -57,7 +57,7 @@ ESL が有効になっている場合、アーティファクトデータベー�
 IPv4 および IPv6 アドレスがサポートされています。
 
 ### <a name="anatomy-of-a-transaction"></a>トランザクションの構造
-- **事前認証チェック**: 認証要求中に、表示されているすべての IP が esl によって確認されます。 これらの ip アドレスは、ネットワーク IP、転送された IP、および省略可能な x 転送 IP の組み合わせになります。 監査ログでは、これらの ip は、[ <IpAddress> x--転送-クライアント-ip] の順にフィールドに一覧表示されます。また、[x----------------------]
+- **事前認証チェック**: 認証要求中に、表示されているすべての IP が esl によって確認されます。 これらの ip アドレスは、ネットワーク IP、転送された IP、および省略可能な x 転送 IP の組み合わせになります。 監査ログでは、これらの ip は、 <IpAddress> [x--転送-クライアント-ip] の順にフィールドに一覧表示されます。また、[x----------------------]
 
   これらの Ip に基づいて、ADFS は、要求がよく知られている場所からのものであるかどうかを判断し、それぞれの badPwdCount が設定さ**れたしきい**値より小さいかどうかを確認します。 これらの条件のいずれかが true の場合、ADFS はこのトランザクションでさらに処理と資格情報の検証を行うことができます。 両方の条件が false の場合は、監視ウィンドウが成功するまで、アカウントは既にロックアウト状態になっています。 監視ウィンドウが成功すると、ユーザーは1回認証を試みることができます。 2019では、ADFS は、IP アドレスがなじみのある場所と一致するかどうかに基づいて、適切なしきい値の上限をチェックします。
 - **ログインが成功**した場合: ログインに成功すると、要求の ip アドレスがユーザーの使い慣れた場所の IP 一覧に追加されます。  
@@ -144,14 +144,14 @@ AccountActivity テーブルは、"ログのみ" モードと "強制" モード
 この機能では、セキュリティ監査ログを使用するため、AD FS で監査を有効にし、すべての AD FS サーバーのローカルポリシーを有効にする必要があります。
 
 ### <a name="configuration-instructions"></a>構成の手順
-エクストラネットのスマートロックアウトでは、ADFS プロパティの**Ex/Etlockoutenabled**が使用されます。 このプロパティは、サーバー2012R2 の "エクストラネットのソフトロックアウト" を制御するために以前使用されていました。 エクストラネットのソフトロックアウトが有効になっている場合、現在の` Get-AdfsProperties`プロパティの構成を表示するには、を実行します。
+エクストラネットのスマートロックアウトでは、ADFS プロパティの**Ex/Etlockoutenabled**が使用されます。 このプロパティは、サーバー2012R2 の "エクストラネットのソフトロックアウト" を制御するために以前使用されていました。 エクストラネットのソフトロックアウトが有効になっている場合、現在のプロパティの構成を表示するには、を実行 ` Get-AdfsProperties` します。
 
 ### <a name="configuration-recommendations"></a>構成に関する推奨事項
 エクストラネットのスマートロックアウトを構成する場合は、次のベストプラクティスに従ってしきい値を設定します。  
 
 `ExtranetObservationWindow (new-timespan -Minutes 30)`
 
-`ExtranetLockoutThreshold: – 2x AD Threshold Value`
+`ExtranetLockoutThreshold: Half of AD Threshold Value`
 
 AD 値:20、Ex% Etlockoutthreshold:10
 

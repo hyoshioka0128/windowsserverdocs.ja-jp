@@ -1,6 +1,6 @@
 ---
-title: Vdisk をマージします。
-description: '* * * * のリファレンストピック'
+title: マージ vdisk
+description: Merge vdisk コマンドのリファレンストピック。差分仮想ハードディスク (VHD) とそれに対応する親 VHD をマージします。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,45 +9,56 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cec8eeaa80436dbb34eb055950169b6895efa544
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: ccd288baff691576c15c3e9c686b6708d1c45ee8
+ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437147"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84354622"
 ---
-# <a name="merge-vdisk"></a>Vdisk をマージします。
+# <a name="merge-vdisk"></a>マージ vdisk
 
 > 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-差分仮想ハード_ディスク (VHD)、対応する親 VHD をマージします。 親 VHD は、差分 VHD からの変更を含めるように変更されます。
-> [!NOTE]
-> このコマンドは、Windows 7 と Windows Server 2008 R2 に該当するだけです。
-> ## <a name="syntax"></a>構文
-> ```
-> merge vdisk depth=<n>
-> ```
-> #### <a name="parameters"></a>パラメーター
->
-> | パラメーター |                                                                                    説明                                                                                    |
-> |-----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-> | 深さ =<n> | マージする親 VHD ファイルの数を示します。 たとえば、 **深さ = 1** 差分チェーンの 1 つのレベルで差分 VHD をマージすることを示します。 |
->
->#### <a name="remarks"></a>解説
-> - この操作を成功させるには、VHD を選択してデタッチする必要があります。 使用して、 **vdisk を選択して** コマンド、VHD を選択し、それにフォーカスをします。
-> - このパラメーターは、親 VHD を変更します。 その結果、親に依存するその他の差分 Vhd は無効になります。
->   ## <a name="examples"></a>例
->   その親 VHD と差分 VHD をマージするには、次のように入力します。
->   ```
->   merge vdisk depth=1
->   ```
->   ## <a name="additional-references"></a>その他のリファレンス
-> - - [コマンド ライン構文の記号](command-line-syntax-key.md)
-> - [vdisk のアタッチ](attach-vdisk.md)
-> - [compact vdisk](compact-vdisk.md)
+差分仮想ハード_ディスク (VHD)、対応する親 VHD をマージします。 親 VHD は、差分 VHD からの変更を含めるように変更されます。 このコマンドは、親 VHD を変更します。 その結果、親に依存するその他の差分 Vhd は無効になります。
 
--   [詳細 vdisk](detail-vdisk.md)
--   [Vdisk のデタッチ](detach-vdisk.md)
--   [vdisk を展開する](expand-vdisk.md)
--   [vdisk の選択](select-vdisk.md)
--   [list_1](list_1.md)
+> [!IMPORTANT]
+> この操作を成功させるには、VHD を選択してデタッチする必要があります。 使用して、 **vdisk を選択して** コマンド、VHD を選択し、それにフォーカスをします。
+
+## <a name="syntax"></a>構文
+
+```
+merge vdisk depth=<n>
+```
+
+### <a name="parameters"></a>パラメーター
+
+| パラメーター | 説明 |
+| --------- | ----------- |
+| 深さ =`<n>` | マージする親 VHD ファイルの数を示します。 たとえば、は差分 `depth=1` VHD が差分チェーンの1つのレベルにマージされることを示します。 |
+
+### <a name="examples"></a>例
+
+その親 VHD と差分 VHD をマージするには、次のように入力します。
+
+```
+merge vdisk depth=1
+```
+
+## <a name="additional-references"></a>その他のリファレンス
+
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [vdisk コマンドのアタッチ](attach-vdisk.md)
+
+- [compact vdisk コマンド](compact-vdisk.md)
+
+- [detail vdisk コマンド](detail-vdisk.md)
+
+- [detach vdisk コマンド](detach-vdisk.md)
+
+- [vdisk コマンドを展開する](expand-vdisk.md)
+
+- [vdisk コマンドを選択する](select-vdisk.md)
+
+- [list コマンド](list.md)
