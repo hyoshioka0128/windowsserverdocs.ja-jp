@@ -7,17 +7,21 @@ ms.technology: server-general
 author: kaushika-msft
 ms.author: kaushika-msft; v-tea
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a550ddd72dcdf8c1967fe4740dc0fe5f2ad93e7
-ms.sourcegitcommit: df94dac422d13566c32e1cdb8c6e7a4e82747947
+ms.custom:
+- CI ID 116803
+- CSSTroubleshoot
+manager: dcscontentpm
+ms.openlocfilehash: fe07636908dffc6bb59c544d512b132e7640bf51
+ms.sourcegitcommit: 75b4cf49dd918ff98258dcae6e6e8d7825c9adec
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84205633"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84269224"
 ---
 # <a name="resolve-windows-activation-error-codes"></a>Windows ライセンス認証のエラー コードの解決
 
-> **ホーム ユーザー**  
-> この記事は、サポート エージェントおよび IT 担当者によって使用されることを目的としています。 Windows ライセンス認証のエラーメッセージの詳細については、[Windows のライセンス認証エラーに関するヘルプ](https://support.microsoft.com/help/10738/windows-10-get-help-with-activation-errors)を参照してください。  
+> [!NOTE]  
+> この記事は、テクニカル サポート担当者および IT プロフェッショナルを対象としています。 Windows ライセンス認証のエラーメッセージの詳細については、[Windows のライセンス認証エラーに関するヘルプ](https://support.microsoft.com/help/10738/windows-10-get-help-with-activation-errors)を参照してください。  
 
 この記事では、マルチ ライセンス認証キー (MAK) またはキー管理サービス (KMS) を使用して、1 台以上の Windows ベースのコンピューターでボリューム ライセンス認証を実行しようとしたときに発生する可能性があるエラー メッセージに対処するためのトラブルシューティング情報を提供します。 次の表に示すエラー コードを探し、リンクを選択すると、そのエラー コードと解決方法に関する詳細情報が表示されます。
 
@@ -28,6 +32,10 @@ Windows の現在のバージョンと最新バージョンのボリューム �
 以前のバージョンの Windows でのボリューム ライセンス認証の詳細については、KB 929712 の「 [Windows Vista、Windows Server 2008、Windows Server 2008 R2、および Windows 7 のボリューム アクティベーション情報](https://support.microsoft.com/help/929712/volume-activation-information-for-windows-vista-windows-server-2008-wi)」を参照してください。
 
 ## <a name="diagnostic-tool"></a>診断ツール
+
+> [!NOTE]  
+> このツールは、Windows の Enterprise、Professional、または Server エディションを実行しているコンピューターで Windows のライセンス認証に関する問題を解決するのに役立ちます。
+
 
 Microsoft サポート/回復アシスタント (SaRA) を使うと、Windows KMS ライセンス認証のトラブルシューティングが簡単になります。 診断ツールは[こちら](https://aka.ms/SaRA-WindowsActivation)からダウンロードしてください。
 
