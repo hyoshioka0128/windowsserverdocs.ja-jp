@@ -31,6 +31,8 @@
 ### [SYSVOL のレプリケーションを DFS レプリケーションに移行する](dfs-replication/migrate-sysvol-to-dfsr.md)
 ### [robocopy を使用して DFS レプリケーション用にファイルのプレシードを行う](dfs-replication/preseed-dfsr-with-robocopy.md)
 ### [DFS レプリケーション:よく寄せられる質問 (FAQ)](dfs-replication/dfsr-faq.md)
+### [DFSR で複製フォルダーに必要な最小ステージング領域を確認する方法](../troubleshoot/how-to-determine-the-minimum-staging-area-dfsr-needs-for-a-replicated-folder.md)
+### [DFSR での分散ファイル ロック (の欠如) について理解する](../troubleshoot/understanding-the-lack-of-distributed-file-locking-in-dfsr.md)
 ## [ディスクの管理](disk-management/overview-of-disk-management.md)
 ## [ファイル サーバーと SMB](file-server/file-server-smb-overview.md)
 ### [SMB ダイレクト](file-server/smb-direct.md)

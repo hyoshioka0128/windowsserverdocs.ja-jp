@@ -6,12 +6,12 @@ ms.technology: server-general
 ms.date: 1/24/2020
 author: kaushika-msft
 ms.author: kaushika
-ms.openlocfilehash: e5fdae6e005adf6ea221fb3c2bf3ea09bfbfb03a
-ms.sourcegitcommit: 5c93c685dca3cafeea916cedcc0f915c528484ca
+ms.openlocfilehash: f3012f499e67f73ec9e8ab20b24df122492ea0ea
+ms.sourcegitcommit: fa9a8badf4eb366aeeca7d2905e2cad711ee8dae
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/10/2020
-ms.locfileid: "81119255"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84714904"
 ---
 # <a name="troubleshooting-windows-server-components"></a>Windows Server コンポーネントのトラブルシューティング
 
@@ -38,15 +38,15 @@ Microsoft は、Windows Server の両方の更新プログラムを定期的に�
 
 ## <a name="troubleshoot-startup-and-restart"></a>スタートアップと再起動のトラブルシューティング
 
-- [Windows スタートアップの高度なトラブルシューティング](https://docs.microsoft.com/windows/client-management/troubleshoot-windows-startup)
-- [64ビットバージョンの Windows で適切なページファイルのサイズを確認する方法](https://docs.microsoft.com/windows/client-management/determine-appropriate-page-file-size)
+- [Windows のスタートアップの高度なトラブルシューティング](https://docs.microsoft.com/windows/client-management/troubleshoot-windows-startup)
+- [64 ビット版 Windows 用の適切なページ ファイルのサイズを確認する方法](https://docs.microsoft.com/windows/client-management/determine-appropriate-page-file-size)
 - [カーネルまたは完全なクラッシュダンプを生成する](https://docs.microsoft.com/windows/client-management/generate-kernel-or-complete-crash-dump)
 - [ページファイルの概要](https://docs.microsoft.com/windows/client-management/introduction-page-file)
 - [Windows でのシステムエラーと回復オプションの構成](https://docs.microsoft.com/windows/client-management/system-failure-recovery-options)
-- [Windows ブートに関する問題の詳細なトラブルシューティング](https://docs.microsoft.com/windows/client-management/advanced-troubleshooting-boot-problems)
-- [Windows ベースのコンピューターフリーズの高度なトラブルシューティング](https://docs.microsoft.com/windows/client-management/troubleshoot-windows-freeze)
-- [停止エラーまたはブルースクリーンエラーの高度なトラブルシューティング](https://docs.microsoft.com/windows/client-management/troubleshoot-stop-errors)
-- [Stop エラー7B または Inaccessible_Boot_Device の高度なトラブルシューティング](https://docs.microsoft.com/windows/client-management/troubleshoot-inaccessible-boot-device)
+- [Windows の起動の問題の高度なトラブルシューティング](https://docs.microsoft.com/windows/client-management/advanced-troubleshooting-boot-problems)
+- [Windows ベースのコンピューターのフリーズの高度なトラブルシューティング](https://docs.microsoft.com/windows/client-management/troubleshoot-windows-freeze)
+- [Stop エラーまたはブルー スクリーン エラーの高度なトラブルシューティング](https://docs.microsoft.com/windows/client-management/troubleshoot-stop-errors)
+- [Stop エラー 7B または Inaccessible_Boot_Device の高度なトラブルシューティング](https://docs.microsoft.com/windows/client-management/troubleshoot-inaccessible-boot-device)
 - [イベント ID 41 の高度なトラブルシューティング "システムは最初に正常にシャットダウンされずに再起動されました"](https://docs.microsoft.com/windows/client-management/troubleshoot-event-id-41-restart)
 - [Box の Broadcom ネットワークアダプタードライバーを更新すると停止エラーが発生する](https://docs.microsoft.com/windows/client-management/troubleshoot-stop-error-on-broadcom-driver-update)
 
@@ -74,7 +74,7 @@ Microsoft は、Windows Server の両方の更新プログラムを定期的に�
 - [AD FS のトラブルシューティング-要求規則](https://docs.microsoft.com/windows-server/identity/ad-fs/troubleshooting/ad-fs-tshoot-claims-rules)
 - [AD FS トラブルシューティング-統合 Windows 認証](https://docs.microsoft.com/windows-server/identity/ad-fs/troubleshooting/ad-fs-tshoot-iwa)
 - [AD FS のトラブルシューティング-Azure AD](https://docs.microsoft.com/windows-server/identity/ad-fs/troubleshooting/ad-fs-tshoot-azure)
-- [AD FS FAQ](https://docs.microsoft.com/windows-server/identity/ad-fs/overview/ad-fs-faq)
+- [AD FS の FAQ](https://docs.microsoft.com/windows-server/identity/ad-fs/overview/ad-fs-faq)
 - [AD FS ヘルプ診断アナライザー](https://docs.microsoft.com/windows-server/identity/ad-fs/troubleshooting/ad-fs-diagnostics-analyzer)
 
 ## <a name="troubleshoot-aovpn"></a>Vpn のトラブルシューティング
@@ -87,7 +87,7 @@ Microsoft は、Windows Server の両方の更新プログラムを定期的に�
 
 ## <a name="troubleshoot-dfsr"></a>DFSR のトラブルシューティング
 
-- [DFS レプリケーション: よく寄せられる質問 (FAQ)](https://docs.microsoft.com/windows-server/storage/dfs-replication/dfsr-faq)
+- [DFS レプリケーション:よく寄せられる質問 (FAQ)](https://docs.microsoft.com/windows-server/storage/dfs-replication/dfsr-faq)
 
 ## <a name="troubleshoot-directaccess"></a>DirectAccess のトラブルシューティング
 
@@ -108,6 +108,19 @@ Microsoft は、Windows Server の両方の更新プログラムを定期的に�
 
 - [Windows エラー報告を使用したフェールオーバー クラスターのトラブルシューティング](https://docs.microsoft.com/windows-server/failover-clustering/troubleshooting-using-wer-reports)
 - [クラスター対応更新についてよく寄せられる質問](https://docs.microsoft.com/windows-server/failover-clustering/cluster-aware-updating-faq)
+- [イベント ID 1135 のクラスターの問題のトラブルシューティング](https://docs.microsoft.com/windows-server/troubleshoot/troubleshooting-cluster-event-id-1135)
+- [アクティブなフェールオーバークラスターのメンバーシップからノードが削除されるという問題が発生する](https://docs.microsoft.com/windows-server/troubleshoot/problem-nodes-failover-cluster)
+- [VMWare ESX のフェールオーバークラスターメンバーシップから削除されているノード](https://docs.microsoft.com/windows-server/troubleshoot/nodes-failover-cluster-vmware)
+- [IaaS と SQL AlwaysOn - フェールオーバー クラスター ネットワークのしきい値の調整](https://docs.microsoft.com/windows-server/troubleshoot/iaas-sql-failover-cluster)
+
+## <a name="troubleshoot-dhcp"></a>DHCP のトラブルシューティング
+
+- [動的ホスト構成プロトコル (DHCP) のトラブルシューティングガイド](https://docs.microsoft.com/windows-server/troubleshoot/troubleshoot-dhcp-issue)
+- [DHCP (動的ホスト構成プロトコル) の基本](https://docs.microsoft.com/windows-server/troubleshoot/dynamic-host-configuration-protocol-basics)
+- [DHCP のトラブルシューティングに関する一般的なガイダンス](https://docs.microsoft.com/windows-server/troubleshoot/general-guidance-to-troubleshoot-dhcp)
+- [DHCP サーバーなしで TCP/IP 自動アドレス指定を使用する方法](https://docs.microsoft.com/windows-server/troubleshoot/how-to-use-automatic-tcpip-addressing-without-a-dh)
+- [DHCP クライアントでの問題のトラブルシューティング](https://docs.microsoft.com/windows-server/troubleshoot/troubleshoot-problems-on-dhcp-client)
+- [DHCP サーバーでの問題のトラブルシューティング](https://docs.microsoft.com/windows-server/troubleshoot/troubleshoot-problems-on-dhcp-server)
 
 ## <a name="troubleshoot-fsrm"></a>FSRM のトラブルシューティング
 
@@ -149,7 +162,7 @@ Microsoft は、Windows Server の両方の更新プログラムを定期的に�
 - [記憶域スペースダイレクトに関してよく寄せられる質問](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-direct-faq)
 - [正常性と動作状態の記憶域スペースダイレクト](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-states)
 - [記憶域スペースダイレクトを使用した診断データの収集](https://docs.microsoft.com/windows-server/storage/storage-spaces/data-collection)
-- [Windows での記憶域クラスメモリ (NVDIMM) の正常性管理](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-class-memory-health)
+- [Windows での記憶域クラス メモリ (NVDIMM-N) の正常性管理](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-class-memory-health)
 
 ## <a name="troubleshoot-sdn"></a>SDN のトラブルシューティング
 
@@ -183,11 +196,11 @@ Microsoft は、Windows Server の両方の更新プログラムを定期的に�
 ## <a name="troubleshoot-storage-replica"></a>記憶域レプリカのトラブルシューティング
 
 - [記憶域レプリカに関する既知の問題](https://docs.microsoft.com/windows-server/storage/storage-replica/storage-replica-known-issues)
-- [記憶域レプリカに関してよく寄せられる質問](https://docs.microsoft.com/windows-server/storage/storage-replica/storage-replica-frequently-asked-questions)
+- [記憶域レプリカについてよく寄せられる質問](https://docs.microsoft.com/windows-server/storage/storage-replica/storage-replica-frequently-asked-questions)
 
 ## <a name="troubleshoot-user-profiles"></a>ユーザー プロファイルのトラブルシューティング
 
-- [イベントを使用したユーザープロファイルのトラブルシューティング](https://docs.microsoft.com/windows-server/storage/folder-redirection/troubleshoot-user-profiles-events)
+- [イベントを使用したユーザー プロファイルのトラブルシューティング](https://docs.microsoft.com/windows-server/storage/folder-redirection/troubleshoot-user-profiles-events)
 
 ## <a name="troubleshoot-vrss"></a>VRSS のトラブルシューティング
 
@@ -199,6 +212,6 @@ Microsoft は、Windows Server の両方の更新プログラムを定期的に�
 
 ## <a name="troubleshoot-windows-admin-center"></a>Windows Admin Center のトラブルシューティング
 
-- [Windows 管理センターの一般的なトラブルシューティング手順](https://docs.microsoft.com/windows-server/manage/windows-admin-center/support/troubleshooting)
-- [Windows 管理センターの既知の問題](https://docs.microsoft.com/windows-server/manage/windows-admin-center/support/known-issues)
-- [Windows 管理センターに関してよく寄せられる質問](https://docs.microsoft.com/windows-server/manage/windows-admin-center/understand/faq)
+- [Windows Admin Center の一般的なトラブルシューティングの手順](https://docs.microsoft.com/windows-server/manage/windows-admin-center/support/troubleshooting)
+- [Windows Admin Center の既知の問題](https://docs.microsoft.com/windows-server/manage/windows-admin-center/support/known-issues)
+- [Windows Admin Center についてよく寄せられる質問](https://docs.microsoft.com/windows-server/manage/windows-admin-center/understand/faq)
