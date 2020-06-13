@@ -1,6 +1,6 @@
 ---
-title: nslookup exit コマンド
-description: '* * * * のリファレンストピック'
+title: nslookup 終了
+description: Nslookup コマンドラインツールを終了する nslookup exit コマンドのリファレンストピックです。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,30 +9,29 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 25696b5889d4b430586285de1f4d6471f9e28b27
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: c233e39d711c37540c30bc64296c6b24b57689c8
+ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723736"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84721485"
 ---
-# <a name="nslookup-exit-command"></a>nslookup exit コマンド
+# <a name="nslookup-exit"></a>nslookup/exit
 
-
-
-**Nslookup**を終了します。
+Nslookup コマンドラインツールを終了します。
 
 ## <a name="syntax"></a>構文
 
 ```
-Nslookup /exit
+nslookup /exit
 ```
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | [説明] |
-|-----------|-------------|
-|   {ヘルプ   |     ?}      |
+| パラメーター | 説明 |
+| --------- | ----------- |
+| /? | コマンド プロンプトにヘルプを表示します。 |
+| /help | コマンド プロンプトにヘルプを表示します。 |
 
 ## <a name="additional-references"></a>その他のリファレンス
 

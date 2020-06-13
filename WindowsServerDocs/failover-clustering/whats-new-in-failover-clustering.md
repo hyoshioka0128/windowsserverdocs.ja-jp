@@ -8,12 +8,12 @@ manager: lizross
 author: JasonGerend
 ms.author: jgerend
 ms.date: 10/18/2018
-ms.openlocfilehash: 926c9c862d77c9fe082274a44af57e3b8339a655
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: cdc9280c4c7129d2e76341bd97b0ae3b8209888f
+ms.sourcegitcommit: 7200143aa787c7ac05ae0e012263b1c9a95b87ed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720503"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84721740"
 ---
 # <a name="whats-new-in-failover-clustering"></a>フェールオーバー クラスタリングの新機能
 
@@ -76,12 +76,12 @@ ms.locfileid: "82720503"
 
 **この変更の利点**  
 
-Hyper-v またはスケールアウトファイルサーバークラスターを Windows Server 2012 R2 から Windows Server 2016 にアップグレードすると、ダウンタイムは不要になります。 クラスターは、クラスター内のすべてのノードが Windows Server 2016 を実行している間、引き続き Windows Server 2012 R2 レベルで機能します。 クラスターの機能レベルは、windows PowerShell のコマンドレット`Update-ClusterFunctionalLevel`を使用して windows Server 2016 にアップグレードされます。
+Hyper-v またはスケールアウトファイルサーバークラスターを Windows Server 2012 R2 から Windows Server 2016 にアップグレードすると、ダウンタイムは不要になります。 クラスターは、クラスター内のすべてのノードが Windows Server 2016 を実行している間、引き続き Windows Server 2012 R2 レベルで機能します。 クラスターの機能レベルは、windows PowerShell のコマンドレットを使用して windows Server 2016 にアップグレードされ `Update-ClusterFunctionalLevel` ます。
 
 > [!WARNING]  
 > - クラスターの機能レベルを更新した後は、Windows Server 2012 R2 クラスターの機能レベルに戻ることはできません。
 >
-> - `Update-ClusterFunctionalLevel`コマンドレットが実行されるまで、プロセスは元に戻せません。また、windows Server 2012 R2 ノードを追加したり、windows server 2016 ノードを削除したりすることができます。
+> - `Update-ClusterFunctionalLevel`コマンドレットが実行されるまで、プロセスは元に戻せません。また、Windows server 2012 R2 ノードを追加したり、Windows server 2016 ノードを削除したりすることができます。
 
 **動作の相違点**  
 
@@ -95,7 +95,7 @@ Hyper-v またはスケールアウトファイルサーバーフェールオー
 -   この時点では、クラスターノードが Windows Server 2012 R2 または Windows Server 2016 を実行しているため、クラスターは混在モードで実行されていると言います。 
 -   クラスターの機能レベルは、Windows Server 2012 R2 で維持されます。 この機能レベルでは、以前のバージョンのオペレーティングシステムとの互換性に影響する Windows Server 2016 の新機能は使用できなくなります。 
 -   最終的には、すべてのノードが Windows Server 2016 にアップグレードされます。 
--   その後、Windows PowerShell コマンドレット`Update-ClusterFunctionalLevel`を使用して、クラスターの機能レベルが windows Server 2016 に変更されます。 この時点で、Windows Server 2016 の機能を利用できます。 
+-   その後、Windows PowerShell コマンドレットを使用して、クラスターの機能レベルが Windows Server 2016 に変更され `Update-ClusterFunctionalLevel` ます。 この時点で、Windows Server 2016 の機能を利用できます。 
 
 詳細については、「[クラスターオペレーティングシステムのローリングアップグレード](cluster-operating-system-rolling-upgrade.md)」を参照してください。 
 
@@ -176,13 +176,13 @@ Windows Server 2016 では、仮想マシンの記憶域の回復性が認識さ
 
 フェールオーバークラスターに関する問題を診断するために、Windows Server 2016 には次のものが含まれています。  
 
-- フェールオーバークラスタリングの問題のトラブルシューティングが容易になる、クラスターログファイル (タイムゾーン情報、DiagnosticVerbose ログなど) に対するいくつかの機能強化が行われています。 詳細については、「 [Windows Server 2016 フェールオーバークラスターのトラブルシューティングの機能強化-クラスターログ](https://blogs.msdn.com/b/clustering/archive/2015/05/15/10614930.aspx)」を参照してください。 
+- フェールオーバークラスタリングの問題のトラブルシューティングを容易にする、クラスターログファイル (タイムゾーン情報、DiagnosticVerbose ログなど) に対するいくつかの機能強化。 詳細については、「 [Windows Server 2016 フェールオーバークラスターのトラブルシューティングの機能強化-クラスターログ](https://techcommunity.microsoft.com/t5/failover-clustering/windows-server-2016-failover-cluster-troubleshooting/ba-p/372005)」を参照してください。
 
-- 新しいダンプの種類で、仮想マシンに割り当てられているほとんどのメモリページを**フィルターで除外**します。これにより、memory.dmp がはるかに小さく、保存やコピーが容易になります。 詳細については、「 [Windows Server 2016 フェールオーバークラスターのトラブルシューティングの機能強化-アクティブダンプ](https://blogs.msdn.com/b/clustering/archive/2015/05/18/10615526.aspx)」を参照してください。 
+- 新しいダンプの種類で、仮想マシンに割り当てられているほとんどのメモリページを**フィルターで除外**します。これにより、memory.dmp がはるかに小さく、保存やコピーが容易になります。 詳細については、「 [Windows Server 2016 フェールオーバークラスターのトラブルシューティングの機能強化-アクティブダンプ](https://techcommunity.microsoft.com/t5/failover-clustering/windows-server-2016-failover-cluster-troubleshooting/ba-p/372008)」を参照してください。
 
 ### <a name="site-aware-failover-clusters"></a><a name="BKMK_SiteAware"></a>サイト認識フェールオーバー クラスター
 
-Windows Server 2016 には、物理的な場所 (サイト) に基づいて拡張されたクラスター内のグループノードを有効にする、サイト対応のフェールオーバークラスターが含まれています。 クラスターサイト認識機能は、フェールオーバーの動作、配置ポリシー、ノード間のハートビート、クォーラムの動作など、クラスターのライフサイクル中の重要な操作を強化します。 詳細については、「 [Windows Server 2016 のサイト対応フェールオーバークラスター](https://blogs.msdn.com/b/clustering/archive/2015/08/19/10636304.aspx)」を参照してください。 
+Windows Server 2016 には、物理的な場所 (サイト) に基づいて拡張されたクラスター内のグループノードを有効にする、サイト対応のフェールオーバークラスターが含まれています。 クラスターサイト認識は、フェールオーバーの動作、配置ポリシー、ノード間のハートビート、クォーラムの動作など、クラスターのライフサイクル中の重要な操作を強化します。 詳細については、「 [Windows Server 2016 のサイト対応フェールオーバークラスター](https://techcommunity.microsoft.com/t5/failover-clustering/site-aware-failover-clusters-in-windows-server-2016/ba-p/372060)」を参照してください。
 
 ### <a name="workgroup-and-multi-domain-clusters"></a><a name="BKMK_multidomainclusters"></a>ワークグループ クラスターとマルチドメイン クラスター
 
@@ -194,7 +194,7 @@ Windows Server 2012 R2 以前のバージョンでは、同じドメインに参
 
 -   **ワークグループクラスター。** メンバーサーバーまたはワークグループ (ドメインに参加していない) のノードを持つクラスター。 
 
-詳細については、「 [Windows Server 2016 のワークグループおよびマルチドメインクラスター](https://blogs.msdn.com/b/clustering/archive/2015/08/17/10635825.aspx) 」を参照してください。
+詳細については、「 [Windows Server 2016 のワークグループおよびマルチドメインクラスター](https://techcommunity.microsoft.com/t5/failover-clustering/workgroup-and-multi-domain-clusters-in-windows-server-2016/ba-p/372059) 」を参照してください。
 
 ### <a name="virtual-machine-load-balancing"></a><a name="BKMK_VMLoadBalancing"></a>仮想マシンの負荷分散  
 

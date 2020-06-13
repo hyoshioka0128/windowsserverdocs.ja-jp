@@ -1,6 +1,6 @@
 ---
 title: nslookup help
-description: '* * * * のリファレンストピック'
+description: Nslookup ヘルプコマンドのリファレンストピック。サブコマンドのヘルプコンテンツが表示されます。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,30 +9,33 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5a967d29486d01ddcd44a9316aa3dbecdd7c95d2
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 1d9cab0becb33993cd6c517e2aa0f1e26b3839e8
+ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723715"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84721475"
 ---
 # <a name="nslookup-help"></a>nslookup help
 
-
-
-**Nslookup**サブコマンドの簡単な概要を表示します。
+サブコマンドのヘルプテキストを表示します。
 
 ## <a name="syntax"></a>構文
 
 ```
-{help | ?}
+help
+```
+
+```
+?
 ```
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | [説明] |
-|-----------|-------------|
-|   {ヘルプ   |     ?}      |
+| パラメーター | 説明 |
+| --------- | ----------- |
+| /? | コマンド プロンプトにヘルプを表示します。 |
+| /help | コマンド プロンプトにヘルプを表示します。 |
 
 ## <a name="additional-references"></a>その他のリファレンス
 

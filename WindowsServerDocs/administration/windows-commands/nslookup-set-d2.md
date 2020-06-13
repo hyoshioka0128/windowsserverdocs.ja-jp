@@ -1,6 +1,6 @@
 ---
 title: nslookup set d2
-description: '* * * * のリファレンストピック'
+description: Nslookup set d2 コマンドのリファレンストピック。これにより、詳細デバッグモードがオンまたはオフになります。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 462c96e2144f4139ee9267358b8d8c8d5370c070
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 8179d91dfbc50ecd60740ad13db66c80a45af6c1
+ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723643"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84721575"
 ---
 # <a name="nslookup-set-d2"></a>nslookup set d2
 
-
-
-完全デバッグモードをオンまたはオフにします。 すべてのパケットのすべてのフィールドが出力されます。
+詳細デバッグモードをオンまたはオフにします。 すべてのパケットのすべてのフィールドが出力されます。
 
 ## <a name="syntax"></a>構文
 
@@ -30,11 +28,12 @@ set [no]d2
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター |                             [説明]                              |
-|-----------|----------------------------------------------------------------------|
-| **nod2**  | 完全デバッグモードをオフにします。 既定の構文は**nod2**です。 |
-|  **d2**   |                 完全デバッグモードをオンにします。                  |
-|   {ヘルプ   |                                  ?}                                  |
+| パラメーター | Description |
+| ---------- | ---------- |
+| nod2 | 詳細デバッグモードをオフにします。 これが既定値です。 |
+| d2 | 詳細デバッグモードをオンにします。 |
+| /? | コマンド プロンプトにヘルプを表示します。 |
+| /help | コマンド プロンプトにヘルプを表示します。 |
 
 ## <a name="additional-references"></a>その他のリファレンス
 

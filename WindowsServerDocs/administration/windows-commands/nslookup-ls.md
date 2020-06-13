@@ -1,6 +1,6 @@
 ---
 title: nslookup ls
-description: '* * * * のリファレンストピック'
+description: Nslookup ls コマンドのリファレンストピック。 DNS ドメイン情報が一覧表示されます。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,33 +9,43 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8357208406c0fca5d68da419baa2092d94fa9ec9
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 87e30ed5d5b44b805c3b3b004feb5ed252b5a760
+ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723702"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84721125"
 ---
 # <a name="nslookup-ls"></a>nslookup ls
 
 > 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-ドメインネームシステム (DNS) ドメインの情報を一覧表示します。
+DNS ドメイン情報を一覧表示します。
+
 ## <a name="syntax"></a>構文
+
 ```
-ls [<Option>] <DNSDomain> [{[>] <FileName>|[>>] <FileName>}]
+ls [<option>] <DNSdomain> [{[>] <filename>|[>>] <filename>}]
 ```
+
 ### <a name="parameters"></a>パラメーター
 
-|    パラメーター    |                                                                                                                                                                                                                                                                                                               [説明]                                                                                                                                                                                                                                                                                                                |
-|-----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|    <Option>     | 有効なオプションの一覧を次の表に示します。<p>--t: 指定した種類のすべてのレコードを一覧表示します。 の<querytype>詳細については、「 **setquerytype** in 追加の参照」を参照してください。<br />--a: DNS ドメイン内のコンピューターのエイリアスを一覧表示します。 このパラメーターは **、-t CNAME**のシノニムです。<br />--d: DNS ドメインのすべてのレコードを一覧表示します。 このパラメーターは、 **-t**のシノニムです。<br />--h: DNS ドメインの CPU とオペレーティングシステムの情報を一覧表示します。 このパラメーターは **、-t HINFO**のシノニムです<br />--s: DNS ドメイン内のコンピューターの既知のサービスを一覧表示します。 このパラメーターは **、-t WKS**のシノニムです。 |
-|   <DNSDomain>   |                                                                                                                                                                                                                                                                                         情報を必要とする DNS ドメインを指定します。                                                                                                                                                                                                                                                                                         |
-|   <FileName>    |                                                                                                                                                                                                                                 出力を保存するファイル名を指定します。 大なり (>) と2文字以上 (>>) の文字を使用すると、通常の方法で出力をリダイレクトできます。                                                                                                                                                                                                                                  |
-| {help &#124;?} |                                                                                                                                                                                                                                                                                          **Nslookup**サブコマンドの簡単な概要を表示します。                                                                                                                                                                                                                                                                                           |
+| パラメーター | Description |
+| --------- | ----------- |
+| `<option>` | 有効なオプションは次のとおりです。<ul><li>**-t:** 指定された種類のすべてのレコードを一覧表示します。 詳細については、「 [nslookup set querytype](nslookup-set-querytype.md)」を参照してください。</li><li>**-a:** DNS ドメイン内のコンピューターのエイリアスを一覧表示します。 このパラメーターは、 **-t CNAME**と同じです。</li><li>**-d:** DNS ドメインのすべてのレコードを一覧表示します。 このパラメーターは、 **-t ANY**と同じです。</li><li>**-h:** DNS ドメインの CPU とオペレーティングシステムの情報を一覧表示します。 このパラメーターは、 **-t HINFO**と同じです。</li><li>**-s:** DNS ドメイン内のコンピューターのよく知られているサービスを一覧表示します。 このパラメーターは、 **-t WKS**と同じです。 |
+| `<DNSdomain>` | 情報を必要とする DNS ドメインを指定します。 |
+| `<filename>` | 保存された出力に使用するファイル名を指定します。 より大きい ( `>` ) 文字と2つ以上の文字 () を使用して、 `>>` 通常の方法で出力をリダイレクトできます。 |
+| /? | コマンド プロンプトにヘルプを表示します。 |
+| /help | コマンド プロンプトにヘルプを表示します。 |
 
-## <a name="remarks"></a>Remarks
-- 既定の出力には、コンピューター名とその IP アドレスが含まれています。 出力がファイルに送られると、サーバーから受信した50レコードごとにハッシュマークが出力されます。
-  ## <a name="additional-references"></a>その他のリファレンス
-  - [コマンドライン構文のキー](command-line-syntax-key.md)
-  [nslookup set querytype](nslookup-set-querytype.md)
+#### <a name="remarks"></a>注釈
+
+- このコマンドの既定の出力には、コンピューター名とそれに関連付けられた IP アドレスが含まれます。
+
+- 出力がファイルに送られた場合、サーバーから受信した50レコードごとにハッシュマークが追加されます。
+
+## <a name="additional-references"></a>その他のリファレンス
+
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [nslookup set querytype](nslookup-set-querytype.md)

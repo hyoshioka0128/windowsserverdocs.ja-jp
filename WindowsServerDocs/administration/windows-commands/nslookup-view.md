@@ -1,6 +1,6 @@
 ---
 title: nslookup view
-description: '* * * * のリファレンストピック'
+description: Nslookup view コマンドのリファレンストピック。これにより、前の**ls**コマンドまたはサブコマンドの出力が並べ替えられ、一覧表示されます。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,29 +9,35 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 72f34afa059fc9b3778ab89612d7dc7a467da97c
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 74ee505a2a84eab23c218c145606d9e58fcd4b5f
+ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723501"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84721165"
 ---
 # <a name="nslookup-view"></a>nslookup view
 
 > 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-前の**ls**サブコマンドの出力を並べ替えて一覧表示します。  
-## <a name="syntax"></a>構文  
-```  
-view <FileName>  
-```  
-### <a name="parameters"></a>パラメーター  
+前の**ls**コマンドまたはサブコマンドの出力を並べ替えて一覧表示します。
 
-|    パラメーター    |                                            [説明]                                            |
-|-----------------|---------------------------------------------------------------------------------------------------|
-|   <FileName>    | 前の**ls**サブコマンドからの出力を含むファイルの名前を指定します。 |
-| {help &#124;?} |                       **Nslookup**サブコマンドの簡単な概要を表示します。                       |
+## <a name="syntax"></a>構文
 
-## <a name="additional-references"></a>その他のリファレンス  
-- [コマンド ライン構文の記号](command-line-syntax-key.md)  
-[nslookup ls](nslookup-ls.md)  
+```
+view <filename>
+```
+
+### <a name="parameters"></a>パラメーター
+
+| パラメーター | Description |
+| --------- | ----------- |
+| `<filename>` | 前の**ls**コマンドまたはサブコマンドからの出力を含むファイルの名前を指定します。 |
+| /? | コマンド プロンプトにヘルプを表示します。 |
+| /help | コマンド プロンプトにヘルプを表示します。 |
+
+## <a name="additional-references"></a>その他のリファレンス
+
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [nslookup ls](nslookup-ls.md)

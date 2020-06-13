@@ -1,6 +1,6 @@
 ---
 title: nslookup set querytype
-description: '* * * * のリファレンストピック'
+description: Nslookup set querytype コマンドのリファレンストピックでは、クエリのリソースレコードの種類を変更します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,49 +9,38 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: dc992d83de8537c285b6d2d97e5f44545e2f930f
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: c54671d23fb7fd9500ba7aac1d59cf50fef78ead
+ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723601"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84721611"
 ---
 # <a name="nslookup-set-querytype"></a>nslookup set querytype
 
 > 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-クエリのリソースレコードの種類を変更します。
+クエリのリソースレコードの種類を変更します。 リソースレコードの種類の詳細については、「 [Request For Comment (Rfc) 1035](https://tools.ietf.org/html/rfc1035)」を参照してください。
+
+> [!NOTE]
+> このコマンドは、 [nslookup set type](nslookup-set-type.md)コマンドと同じです。
+
 ## <a name="syntax"></a>構文
+
 ```
-set querytype=<ResourceRecordtype>
+set querytype=<resourcerecordtype>
 ```
+
 ### <a name="parameters"></a>パラメーター
-<ResourceRecordtype>DNS リソースレコードの種類を指定します。 既定のリソースレコードの種類はです。次の表に、このコマンドの有効な値を示します。
 
-| 値 |                                                   説明                                                   |
-|-------|-----------------------------------------------------------------------------------------------------------------|
-|   A   |                                      コンピューター&#39;s IP アドレスを指定します                                      |
-|  ANY  |                                     コンピューター&#39;s IP アドレスを指定します。                                      |
-| CNAME |                                    エイリアスの正規名を指定します。                                     |
-|  ―  |                                  グループ名のグループ識別子を指定します。                                  |
-| HINFO |                          コンピューター&#39;s CPU とオペレーティングシステムの種類を指定します。                           |
-|  MB   |                                        メールボックスドメイン名を指定します。                                         |
-|  MG   |                                         メールグループメンバーを指定します。                                          |
-| MINFO |                                   メールボックスまたはメールの一覧の情報を指定します。                                   |
-|  MR   |                                     メールの名前変更ドメイン名を指定します。                                      |
-|  MX   |                                          メールエクスチェンジャーを指定します。                                          |
-|  NS   |                                 名前付きゾーンの DNS ネームサーバーを指定します。                                 |
-|  PTR  | クエリが IP アドレスの場合は、コンピューター名を指定します。それ以外の場合は、他の情報へのポインターを指定します。 |
-|  SOA  |                                DNS ゾーンの権限の開始を指定します。                                 |
-|  TXT  |                                         テキスト情報を指定します。                                         |
-|  UID  |                                         ユーザー識別子を指定します。                                          |
-| UINFO |                                         ユーザー情報を指定します。                                         |
-|  WKS  |                                         よく知られているサービスについて説明します。                                         |
-| {ヘルプ |                                                       ?}                                                        |
+| パラメーター | Description |
+| --------- | ----------- |
+| `<resourcerecordtype>` | DNS リソースレコードの種類を指定します。 既定のリソースレコードの種類**はですが、次**のいずれかの値を使用できます。<ul><li>**A:** コンピューターの IP アドレスを指定します。</li><li>**任意:** コンピューターの IP アドレスを指定します。</li><li>**CNAME:** エイリアスの正規名を指定します。</li><li>**GID**グループ名のグループ識別子を指定します。</li><li>**HINFO:** コンピューターの CPU とオペレーティングシステムの種類を指定します。</li><li>**MB:** メールボックスドメイン名を指定します。</li><li>**MG:** メールグループメンバーを指定します。</li><li>**MINFO:** メールボックスまたはメールの一覧の情報を指定します。</li><li>**MR:** メールの名前変更ドメイン名を指定します。</li><li>**MX:** メールエクスチェンジャーを指定します。</li><li>**NS:** 名前付きゾーンの DNS ネームサーバーを指定します。</li><li>**PTR:** クエリが IP アドレスの場合は、コンピューター名を指定します。それ以外の場合は、他の情報へのポインターを指定します。</li><li>**SOA:** DNS ゾーンの権限の開始を指定します。</li><li>**TXT:** テキスト情報を指定します。</li><li>**UID:** ユーザー識別子を指定します。</li><li>**Uinfo:** ユーザー情報を指定します。</li><li>**WKS:** よく知られているサービスについて説明します。</li></ul> |
+| /? | コマンド プロンプトにヘルプを表示します。 |
+| /help | コマンド プロンプトにヘルプを表示します。 |
 
-<strong>Nslookup</strong>サブコマンドの簡単な概要を表示します。
-## <a name="remarks"></a>Remarks
-- <strong>Set type</strong>コマンドは、 <strong>set querytype</strong>コマンドと同じ機能を実行します。
-- リソースレコードの種類の詳細については、「Request for Comment (Rfc) 1035」を参照してください。
-  ## <a name="additional-references"></a>その他のリファレンス
-  <href = key.md =-コマンドライン構文の[キー](command-line-syntax-key.md)>コマンドライン構文のキーを</a> <href = nslookup-設定-type.md data-raw-source =[nslookup set type](nslookup-set-type.md)>nslookup set type nslookup set type を入力します。</a>
+## <a name="additional-references"></a>その他のリファレンス
+
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [nslookup set type](nslookup-set-type.md)

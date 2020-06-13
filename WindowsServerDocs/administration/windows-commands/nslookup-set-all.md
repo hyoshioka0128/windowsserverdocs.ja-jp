@@ -1,6 +1,6 @@
 ---
 title: nslookup set all
-description: '* * * * のリファレンストピック'
+description: Nslookup set all コマンドのリファレンストピック。現在の構成設定値を出力します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,34 +9,29 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 04ffa560f45a0569c063ac35a7aa0e056e8d1a73
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: b541f1f68fd3f43a8e4ab05f8e3e4351b7d8bc71
+ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723668"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84721645"
 ---
 # <a name="nslookup-set-all"></a>nslookup set all
 
-
-
-構成設定の現在の値を出力します。
+既定のサーバーとコンピューター (ホスト) を含む、現在の構成設定値を出力します。
 
 ## <a name="syntax"></a>構文
 
 ```
-set all 
+set all
 ```
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | [説明] |
-|-----------|-------------|
-|   {ヘルプ   |     ?}      |
-
-## <a name="remarks"></a>Remarks
-
--   [**すべて設定**] では、既定のサーバーとコンピューター (つまり、ホスト) に関する情報も印刷されます。
+| パラメーター | 説明 |
+| --------- | ----------- |
+| /? | コマンド プロンプトにヘルプを表示します。 |
+| /help | コマンド プロンプトにヘルプを表示します。 |
 
 ## <a name="additional-references"></a>その他のリファレンス
 

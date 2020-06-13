@@ -1,6 +1,6 @@
 ---
 title: nslookup root
-description: '* * * * のリファレンストピック'
+description: Nslookup root コマンドのリファレンストピックでは、ドメインネームシステム (DNS) のドメイン名空間のルートに対して、既定のサーバーをサーバーに変更します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,30 +9,37 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bdfbe40443cf8f2fec2f81608bb93603cd74937f
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 0f1f2bbe3b71660d079a0b7c87f5be487e0ff437
+ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723691"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84721655"
 ---
 # <a name="nslookup-root"></a>nslookup root
 
 > 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-ドメインネームシステム (DNS) のドメイン名空間のルートに対して、既定のサーバーをサーバーに変更します。
+ドメインネームシステム (DNS) のドメイン名空間のルートに対して、既定のサーバーをサーバーに変更します。 現時点では、ns.nic.ddn.mil ネームサーバーが使用されています。 [Nslookup set root](nslookup-set-root.md)コマンドを使用して、ルートサーバーの名前を変更できます。
+
+> [!NOTE]
+> このコマンドはと同じ `lserver ns.nic.ddn.mil` です。
+
 ## <a name="syntax"></a>構文
+
 ```
-root 
+root
 ```
+
 ### <a name="parameters"></a>パラメーター
 
-|    パラメーター    |                      [説明]                      |
-|-----------------|-------------------------------------------------------|
-| {help &#124;?} | **Nslookup**サブコマンドの簡単な概要を表示します。 |
+| パラメーター | 説明 |
+| --------- | ----------- |
+| /? | コマンド プロンプトにヘルプを表示します。 |
+| /help | コマンド プロンプトにヘルプを表示します。 |
 
-## <a name="remarks"></a>Remarks
-- 現時点では、ns.nic.ddn.mil ネームサーバーが使用されています。 このコマンドは、lserver ns.nic.ddn.mil のシノニムです。 ルートサーバーの名前を変更するには、**ルートの設定**コマンドを使用します。
-  ## <a name="additional-references"></a>その他のリファレンス
-  - [コマンドライン構文キー](command-line-syntax-key.md)
-  [nslookup set root](nslookup-set-root.md)
+## <a name="additional-references"></a>その他のリファレンス
+
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [nslookup set root](nslookup-set-root.md)

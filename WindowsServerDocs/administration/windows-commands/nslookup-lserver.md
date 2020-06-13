@@ -1,6 +1,6 @@
 ---
 title: nslookup lserver
-description: '* * * * のリファレンストピック'
+description: Nslookup lserver コマンドのリファレンストピックでは、最初のサーバーを指定したドメインネームシステム (DNS) ドメインに変更します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,31 +9,37 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b2054c0fd427b41e7d6076258b29ab78d0fb7892
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 868142f251d62ebc3efd7913aded8e22aa077bd3
+ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723673"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84721596"
 ---
 # <a name="nslookup-lserver"></a>nslookup lserver
 
 > 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-指定したドメインネームシステム (DNS) ドメインに既定のサーバーを変更します。
+指定したドメインネームシステム (DNS) ドメインに初期サーバーを変更します。
+
+このコマンドは、初期サーバーを使用して、指定された DSN ドメインに関する情報を検索します。 現在の既定のサーバーを使用して情報を参照する場合は、 [nslookup server](nslookup-server.md)コマンドを使用します。
+
 ## <a name="syntax"></a>構文
+
 ```
-lserver <DNSDomain> 
+lserver <DNSdomain>
 ```
+
 ### <a name="parameters"></a>パラメーター
 
-|    パラメーター    |                      [説明]                      |
-|-----------------|-------------------------------------------------------|
-|   <DNSDomain>   | 既定のサーバーの新しい DNS ドメインを指定します。  |
-| {help &#124;?} | **Nslookup**サブコマンドの簡単な概要を表示します。 |
+| パラメーター | Description |
+| --------- | ----------- |
+| `<DNSdomain>` | 初期サーバーの DNS ドメインを指定します。 |
+| /? | コマンド プロンプトにヘルプを表示します。 |
+| /help | コマンド プロンプトにヘルプを表示します。 |
 
-## <a name="remarks"></a>Remarks
-- **Lserver**コマンドは、初期サーバーを使用して、指定された DNS ドメインに関する情報を検索します。 これは、現在の既定のサーバーを使用する**サーバー**コマンドとは対照的です。
-  ## <a name="additional-references"></a>その他のリファレンス
-  - [コマンドライン構文のキー](command-line-syntax-key.md)
-  [nslookup サーバー](nslookup-server.md)
+## <a name="additional-references"></a>その他のリファレンス
+
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [nslookup server](nslookup-server.md)

@@ -1,6 +1,6 @@
 ---
 title: nslookup set recurse
-description: '* * * * のリファレンストピック'
+description: Nslookup set 再帰コマンドのリファレンストピックでは、指定されたサーバー上の情報が見つからない場合に、他のサーバーを照会するようにドメインネームシステム (DNS) ネームサーバーに指示します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c4386bd5738806016b9ec15802faebf3efdcedf0
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 082ba3bd926d1f47be5510c2340804b1b92991f1
+ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723591"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84721618"
 ---
 # <a name="nslookup-set-recurse"></a>nslookup set recurse
 
-
-
-他のサーバーが情報を持っていない場合にクエリを実行するように、ドメインネームシステム (DNS) ネームサーバーに指示します。
+指定されたサーバー上の情報が見つからない場合に、他のサーバーを照会するようにドメインネームシステム (DNS) ネームサーバーに指示します。
 
 ## <a name="syntax"></a>構文
 
@@ -30,11 +28,12 @@ set [no]recurse
 
 ### <a name="parameters"></a>パラメーター
 
-|   パラメーター   |                                                                  [説明]                                                                  |
-|---------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
-| **norecurse** |                ドメインネームシステム (DNS) ネームサーバーに情報がない場合は、他のサーバーに対してクエリを実行しないようにします。                |
-|  **recurse**  | 他のサーバーが情報を持っていない場合にクエリを実行するように、ドメインネームシステム (DNS) ネームサーバーに指示します。 既定の構文は、**再帰**です。 |
-|     {ヘルプ     |                                                                      ?}                                                                       |
+| パラメーター | Description |
+| ---------- | ---------- |
+| norecurse | 指定されたサーバーで情報が見つからない場合に、ドメインネームシステム (DNS) ネームサーバーで他のサーバーのクエリを実行しないようにします。 |
+| recurse | 指定されたサーバー上の情報が見つからない場合に、他のサーバーを照会するようにドメインネームシステム (DNS) ネームサーバーに指示します。 これが既定値です。 |
+| /? | コマンド プロンプトにヘルプを表示します。 |
+| /help | コマンド プロンプトにヘルプを表示します。 |
 
 ## <a name="additional-references"></a>その他のリファレンス
 

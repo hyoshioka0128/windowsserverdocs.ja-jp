@@ -1,6 +1,6 @@
 ---
 title: nslookup set debug
-description: '* * * * のリファレンストピック'
+description: Nslookup set debug コマンドのリファレンストピック。デバッグモードのオンとオフを切り替えます。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 92a6f53105c682500d68fa7bf07fdcbacea75f34
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 910dd197fe756e733b61318243130e85b4410eb1
+ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723634"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84721175"
 ---
 # <a name="nslookup-set-debug"></a>nslookup set debug
-
-
 
 デバッグモードをオンまたはオフにします。
 
@@ -30,15 +28,12 @@ set [no]debug
 
 ### <a name="parameters"></a>パラメーター
 
-|  パラメーター  |                         [説明]                          |
-|-------------|--------------------------------------------------------------|
-| **nodebug** | デバッグモードをオフにします。 既定の構文は**nodebug**です。 |
-|  **デバック**  |                   デバッグモードをオンにします。                   |
-|  \*\*{ヘルプ  |                            ?}\*\*                            |
-
-## <a name="remarks"></a>Remarks
-
--   デバッグモードを有効にすると、サーバーに送信されたパケットと結果の解答に関する詳細情報が出力されます。
+| パラメーター | Description |
+| ---------- | ---------- |
+| nodebug | デバッグモードをオフにします。 これが既定値です。 |
+| debug | デバッグモードをオンにします。 デバッグモードをオンにすると、サーバーに送信されたパケットと結果の解答に関する詳細情報を表示できます。 |
+| /? | コマンド プロンプトにヘルプを表示します。 |
+| /help | コマンド プロンプトにヘルプを表示します。 |
 
 ## <a name="additional-references"></a>その他のリファレンス
 
