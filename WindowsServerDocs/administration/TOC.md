@@ -1,4 +1,4 @@
-# [管理](manage-windows-server.md)
+# [管理](manage-windows-server.yml)
 ## [Windows Admin Center を使用して環境を管理する (新機能)](../manage/windows-admin-center/overview.md)
 ## Windows Server システムと環境の管理
 ### [Windows Server のハイブリッド クラウド印刷を管理する](hybrid-cloud-print/hybrid-cloud-print-overview.md)

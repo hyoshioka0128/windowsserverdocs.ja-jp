@@ -8,12 +8,12 @@ ms.author: jol
 ms.date: 1/7/2019
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 812091715ed6541294650ba7e6ddde9ab1f2fecb
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a51b4bb5f6dc7dcd002b8e7a8998ce731fa374ed
+ms.sourcegitcommit: fe89b8001ad664b3618708b013490de93501db05
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407027"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84942333"
 ---
 # <a name="lenovo-xclarity-integrator-extension"></a>Lenovo XClarity インテグレーター拡張機能
 
@@ -33,9 +33,19 @@ Windows 管理センター内でサーバーを管理する場合も、ツール
 
 ![Lenovo 拡張機能](../../media/extend-case-study-lenovo/lenovo-3.png)
 
-フェールオーバークラスターとハイパー収束クラスター用のツール拡張機能には、全体的なクラスターハードウェアの正常性状態、状態アラート、ファームウェアの整合性の状態とレポート、電力消費と温度、およびファンと電源装置を示すダッシュボードが用意されています。正常性状態。
+フェールオーバークラスターと hyper-v クラスター用のツール拡張機能には、全体的なクラスターハードウェアの正常性状態、状態アラート、ファームウェアの整合性のステータスとレポート、電力消費と温度、およびファンと電源装置の正常性状態が表示されたダッシュボードがあります。
 
-![Lenovo Extension](../../media/extend-case-study-lenovo/lenovo-4.png)
-![Lenovo Extension](../../media/extend-case-study-lenovo/lenovo-5.png)
+![Lenovo Extension ](../../media/extend-case-study-lenovo/lenovo-4.png)
+ ![ Lenovo 拡張機能](../../media/extend-case-study-lenovo/lenovo-5.png)
+
+Windows サーバーおよびクラスターのソリューション拡張機能とツール拡張機能は、ローリング (クラスター対応) サーバー更新機能を提供します。 これにより、サーバーの更新中にワークロードが中断されるのを防ぐことができます。 現時点では、拡張機能は、すべての Lenovo サーバーに対して個別のファームウェア更新とコンプライアンスポリシーファームウェアの更新をサポートしています。 また、Lenovo ThinkAgile MX HCI クラスターサーバーの最適なレシピファームウェア/ドライバー更新プログラムもサポートしています。
+
+![Lenovo 拡張機能](../../media/extend-case-study-lenovo/lenovo-6-fwupdate.png)
+
+ハイパー収束クラスターのツール拡張機能には、Lenovo ThinkAgile MX HCI クラスターサーバー用のディスク/記憶域プールの管理機能が用意されています。 これらの関数には、サーバーとディスクの状態を表示するためのサーバーの背面/前面のグラフィックビューが含まれます。 ウィザードとグラフィックビューの両方の機能を使用して、記憶域プールへのディスクの追加、記憶域プールからのディスクの削除、ディスクの交換、サーバー/ディスクの場所の照明によるサーバー/ディスクの検索などの操作をより簡単に行うことができます。
+
+![Lenovo 拡張機能](../../media/extend-case-study-lenovo/lenovo-7-diskmgr.png)
+
+バージョン2.1 では、Lenovo 拡張機能によってロールベースのアクセス制御機能が導入されました。 これらの機能は、ハードウェア管理に Lenovo XClarity 性管理者が適用されている場合に有効になります。
 
 詳細については、 [Lenovo web サイト](https://support.lenovo.com/us/en/solutions/ht507549)の「Windows 管理センターの Lenovo Xclarity インテグレーター製品」を参照してください。

@@ -1,4 +1,4 @@
-# [ID およびアクセス](Identity-and-Access.md)
+# [ID およびアクセス](Identity-and-Access.yml)
 
 ## [ソリューションとシナリオ ガイド](solution-guides/Solutions-and-Scenario-Guides.md)
 ### [ダイナミック アクセス制御: シナリオの概要](solution-guides/Dynamic-Access-Control--Scenario-Overview.md)

@@ -1,4 +1,4 @@
-# [ネットワーク](Networking.md)
+# [ネットワークのドキュメント](index.yml)
 ## [Windows Server でサポートされるネットワークのシナリオ](windows-server-supported-networking-scenarios.md)
 
 ## [ネットワークの新機能](What-s-New-in-Networking.md)

@@ -1,4 +1,4 @@
-# [ストレージ](storage.md)
+# [ストレージ](storage.yml)
 ## [記憶域の新機能](whats-new-in-storage.md)
 ## [データ重複除去](data-deduplication/overview.md)
 ### [データ重複除去の新機能](data-deduplication/whats-new.md)

@@ -1,65 +1,60 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Hub
 title: ハイパーコンバージド インフラストラクチャのドキュメント
+summary: ソフトウェア定義コンピューティング、ストレージ、およびネットワークを 1 つのクラスターに統合して、パフォーマンスが高くコスト効率に優れ、簡単に拡張できる仮想化を実現します。
+brand: windows
 metadata:
-  document_id: null
   title: ハイパーコンバージド インフラストラクチャのドキュメント
-  description: ハイパーコンバージド インフラストラクチャのドキュメント
-  text: ソフトウェア定義コンピューティング、ストレージ、およびネットワークを 1 つのクラスターに統合して、パフォーマンスが高くコスト効率に優れ、簡単に拡張できる仮想化を実現する
-  keywords: 'Windows Server, Windows Server 2016, hyper-v, sdn, 記憶域スペース ダイレクト, wssd'
-  ms.localizationpriority: high
+  description: ソフトウェア定義コンピューティング、ストレージ、およびネットワークを 1 つのクラスターに統合して、パフォーマンスが高くコスト効率に優れ、簡単に拡張できる仮想化を実現します。
+  ms.service: help
+  ms.topic: hub-page
   author: coreyp-at-msft
   ms.author: coreyp
-  ms.topic: article
-  ms.devlang: na
-sections:
-  - title: null
-  - items:
-      - type: markdown
-        text: ソフトウェア定義コンピューティング、ストレージ、およびネットワークを 1 つのクラスターに統合して、パフォーマンスが高くコスト効率に優れ、簡単に拡張できる仮想化を実現します。
-  - items:
-      - type: list
-        style: cards
-        className: cardsI
-        columns: 2
-        items:
-          - href: ../virtualization/hyper-v/index.md
-            html: <p>サーバー ハードウェアを仮想化して、ハイパーコンバージド クラスター内の複数のサーバー上で仮想マシンを実行できるようにします</p>
-            image:
-              src: ../media/i-virtualize.svg
-            title: Hyper-V
-          - href: ../storage/storage-spaces/storage-spaces-direct-overview.md
-            html: <p>記憶域ハードウェアを仮想化して、ハイパーコンバージド クラスター内の複数のサーバーに分散する仮想化されたドライブ プール上にボリュームを作成できるようにします。</p>
-            image:
-              src: ../media/i-store.svg
-            title: 記憶域スペース ダイレクト
-          - href: ../failover-clustering/failover-clustering-overview.md
-            html: <p>仮想マシンなどのワークロードをクラスター内の任意のサーバー上で実行できるように複数のサーバーをグループ化して、サーバー間での負荷分散とフェールオーバーを適切に行います。</p>
-            image:
-              src: ../media/i-cluster.svg
-            title: フェールオーバー クラスタリング
-          - href: 'https://docs.microsoft.com/windows-server/networking/sdn/'
-            html: <p>ネットワーク ハードウェアを仮想化して、基になる物理ネットワークからのワークロードを抽象化するネットワークとポリシーを動的に作成し、管理できるようにします。</p>
-            image:
-              src: ../media/i-network.svg
-            title: ソフトウェア定義ネットワーク
-          - href: ../manage/windows-admin-center/overview.md
-            html: <p>クラスターおよびその他の Windows サーバーを管理します。</p>
-            image:
-              src: ../media/i-admin-center.svg
-            title: Windows Admin Center
-          - href: ../azure-hybrid-services.md
-            html: <p>サイトのリカバリーや監視などのためにクラスターを Azure ハイブリッド サービスに接続します。</p>
-            image:
-              src: ../media/i-microsoft-azure.svg
-            title: Azure ハイブリッド サービスへの接続
-          - href: ../azure-stack-hci
-            html: <p>Windows Server 2019 の仮想化およびクラスタリング テクノロジを任意のパートナーによる検証済みハードウェア ソリューションとペアリングして、ソフトウェア定義データセンターのチューニング作業から当て推量を排除します。</p>
-            image:
-              src: ../media/i-azure-stack.svg
-            title: Azure Stack HCI
-          - href: 'https://www.microsoft.com/cloud-platform/software-defined-datacenter'
-            html: <p>Windows Server 2016 の仮想化およびクラスタリング テクノロジを任意のパートナーによる検証済みハードウェア ソリューションとペアリングして、ソフトウェア定義データセンターのチューニング作業から当て推量を排除します。</p>
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_data-collection.svg'
-            title: Windows Server ソフトウェア定義 (WSSD)
+  ms.date: 06/10/2020
+  ms.openlocfilehash: 1d2ec270e90423f2405b664f22de7ca85c540498
+  ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 06/18/2020
+  ms.locfileid: "85070166"
+productDirectory:
+  items:
+  - title: Hyper-V
+    imageSrc: https://docs.microsoft.com/en-us/windows-server/media/i-virtualize.svg
+    links:
+    - url: https://docs.microsoft.com/en-us/windows-server/virtualization/hyper-v/
+      text: サーバー ハードウェアを仮想化して、ハイパーコンバージド クラスター内の複数のサーバー上で仮想マシンを実行できるようにします。
+  - title: 記憶域スペース ダイレクト
+    imageSrc: https://docs.microsoft.com/en-us/windows-server/media/i-store.svg
+    links:
+    - url: https://docs.microsoft.com/en-us/windows-server/storage/storage-spaces/storage-spaces-direct-overview
+      text: 記憶域ハードウェアを仮想化して、ハイパーコンバージド クラスター内の複数のサーバーに分散する仮想化されたドライブ プール上にボリュームを作成できるようにします。
+  - title: フェールオーバー クラスタリング
+    imageSrc: https://docs.microsoft.com/en-us/windows-server/media/i-cluster.svg
+    links:
+    - url: https://docs.microsoft.com/en-us/windows-server/failover-clustering/failover-clustering-overview
+      text: 仮想マシンなどのワークロードをクラスター内の任意のサーバー上で実行できるように複数のサーバーをグループ化して、サーバー間での負荷分散とフェールオーバーを適切に行います。
+  - title: ソフトウェア定義ネットワーク
+    imageSrc: https://docs.microsoft.com/en-us/windows-server/media/i-network.svg
+    links:
+    - url: https://docs.microsoft.com/windows-server/networking/sdn/
+      text: ネットワーク ハードウェアを仮想化して、基になる物理ネットワークからのワークロードを抽象化するネットワークとポリシーを動的に作成し、管理できるようにします。
+  - title: Windows Admin Center
+    imageSrc: https://docs.microsoft.com/en-us/windows-server/media/i-admin-center.svg
+    links:
+    - url: https://docs.microsoft.com/en-us/windows-server/manage/windows-admin-center/overview
+      text: サーバー ハードウェアを仮想化して、ハイパーコンバージド クラスター内の複数のサーバー上で仮想マシンを実行できるようにします。
+  - title: Azure ハイブリッド サービスへの接続
+    imageSrc: https://docs.microsoft.com/en-us/windows-server/media/i-microsoft-azure.svg
+    links:
+    - url: https://docs.microsoft.com/en-us/windows-server/azure-hybrid-services
+      text: サイトのリカバリーや監視などのためにクラスターを Azure ハイブリッド サービスに接続します。
+  - title: Azure Stack HCI
+    imageSrc: https://docs.microsoft.com/en-us/windows-server/media/i-azure-stack.svg
+    links:
+    - url: https://docs.microsoft.com/en-us/windows-server/azure-stack-hci
+      text: Windows Server 2019 の仮想化およびクラスタリング テクノロジを任意のパートナーによる検証済みハードウェア ソリューションとペアリングして、ソフトウェア定義データセンターのチューニング作業から当て推量を排除します。
+  - title: Windows Server ソフトウェア定義 (WSSD)
+    imageSrc: https://docs.microsoft.com/media/common/i_data-collection.svg
+    links:
+    - url: https://www.microsoft.com/cloud-platform/software-defined-datacenter
+      text: Windows Server 2016 の仮想化およびクラスタリング テクノロジを任意のパートナーによる検証済みハードウェア ソリューションとペアリングして、ソフトウェア定義データセンターのチューニング作業から当て推量を排除します。
