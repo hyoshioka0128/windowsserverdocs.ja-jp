@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5ae082ebd2b5cf98be891d8f557f9e42d7724d22
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: de96280f42f1e3002c4379390367856dcdcb885a
+ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82716093"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "85070187"
 ---
 # <a name="change-user"></a>change user
 
@@ -33,7 +33,7 @@ change user {/execute | /install | /query}
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | [説明] |
+| パラメーター | 説明 |
 | --------- | ----------- |
 | /execute | .Ini ファイルをホームディレクトリにマッピングできるようにします。 これが既定の設定です。 |
 | /install | .Ini ファイルのホームディレクトリへのマッピングを無効にします。 すべての .ini ファイルが読み取られ、システムディレクトリに書き込まれます。 リモートデスクトップセッションホストサーバーにアプリケーションをインストールする場合は、.ini ファイルマッピングを無効にする必要があります。 |
@@ -50,11 +50,11 @@ change user {/execute | /install | /query}
 
 - システムで**change user/install**が実行されている場合、いくつかの処理が行われます。 作成されたすべてのレジストリエントリは、 **\Software\microsoft\windows NT\Currentversion\Terminal のインストール**で、 **\ software**サブキーまたは**\ MACHINE**サブキーの HKEY_LOCAL_MACHINE 下にシャドウされます。 **HKEY_CURRENT_USER**に追加されたサブキーは、 **\ software**サブキーの下にコピーされ、 **HKEY_LOCAL_MACHINE**に追加されたサブキーは**\ マシン**サブキーの下にコピーされます。 アプリケーションが GetWindowsdirectory などのシステムコールを使用して Windows ディレクトリに対してクエリを行う場合、rd セッションホストサーバーは systemroot ディレクトリを返します。 WritePrivateProfileString などのシステムコールを使用して .ini ファイルのエントリが追加された場合、そのエントリは、systemroot ディレクトリの .ini ファイルに追加されます。
 
-- システムがを返して**ユーザー/execute を変更**しようとしたときに、アプリケーションが存在しない**HKEY_CURRENT_USER**の下にあるレジストリエントリを読み取ろうとすると、リモートデスクトップサービスによって、 **\ Terminal \ インストール**サブキーの下にキーのコピーが存在するかどうかが確認されます。 その場合、サブキーは**HKEY_CURRRENT_USER**の下の適切な場所にコピーされます。 アプリケーションが存在しない .ini ファイルから読み取ろうとした場合は、リモートデスクトップサービスシステムルートの下でその .ini ファイルを検索します。 .Ini ファイルがシステムルート内にある場合は、ユーザーのホームディレクトリの \Windows サブディレクトリにコピーされます。 アプリケーションが Windows ディレクトリに対してクエリを行う場合、rd セッションホストサーバーは、ユーザーのホームディレクトリの \Windows サブディレクトリを返します。
+- システムがを返して**ユーザー/execute を変更**しようとしたときに、アプリケーションが存在しない**HKEY_CURRENT_USER**の下にあるレジストリエントリを読み取ろうとすると、リモートデスクトップサービスによって、 **\ Terminal \ インストール**サブキーの下にキーのコピーが存在するかどうかが確認されます。 その場合、サブキーは**HKEY_CURRENT_USER**の下の適切な場所にコピーされます。 アプリケーションが存在しない .ini ファイルから読み取ろうとした場合は、リモートデスクトップサービスシステムルートの下でその .ini ファイルを検索します。 .Ini ファイルがシステムルート内にある場合は、ユーザーのホームディレクトリの \Windows サブディレクトリにコピーされます。 アプリケーションが Windows ディレクトリに対してクエリを行う場合、rd セッションホストサーバーは、ユーザーのホームディレクトリの \Windows サブディレクトリを返します。
 
 - ログオンすると、リモートデスクトップサービスによって、コンピューター上の .ini ファイルよりもシステムの .ini ファイルが新しいかどうかがチェックされます。 システムのバージョンが新しい場合は、.ini ファイルが置き換えられるか、新しいバージョンにマージされます。 これは、この .ini ファイルに INISYNC ビット0x40 が設定されているかどうかによって異なります。 以前のバージョンの .ini ファイルは、Inifile という名前に変更されています。 **\ Terminal \ インストール**サブキーの下にあるシステムレジストリ値が**HKEY_CURRENT_USER**の下のバージョンより新しい場合は、サブキーのバージョンが削除され、 **\ terminal \ インストール**の新しいサブキーに置き換えられます。
 
-## <a name="examples"></a>例
+## <a name="examples"></a>使用例
 
 - .Ini ファイルマッピングをホームディレクトリで無効にするには、次のように入力します。
 

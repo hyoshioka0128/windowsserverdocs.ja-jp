@@ -8,12 +8,12 @@ manager: lizross
 author: JasonGerend
 ms.author: jgerend
 ms.date: 10/18/2018
-ms.openlocfilehash: cdc9280c4c7129d2e76341bd97b0ae3b8209888f
-ms.sourcegitcommit: 7200143aa787c7ac05ae0e012263b1c9a95b87ed
+ms.openlocfilehash: 431854f2e063454124092151c6788263db57b5f2
+ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84721740"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "85070153"
 ---
 # <a name="whats-new-in-failover-clustering"></a>フェールオーバー クラスタリングの新機能
 
@@ -212,5 +212,5 @@ Windows Server 2012 R2 以前のバージョンでは、同じドメインに参
 
 ## <a name="see-also"></a>参照
 
-* [Storage](../storage/storage.md)  
+* [ストレージ](../storage/storage.yml)  
 * [Windows Server 2016 の記憶域の新機能](../storage/whats-new-in-storage.md)  

@@ -9,12 +9,12 @@ manager: dougkim
 ms.author: jgerend
 ms.date: 06/15/2020
 description: ワーク フォルダーの概要 - PC やデバイスから作業ファイルにアクセスするための一貫した方法をユーザーに提供する、Windows Server のサーバーの役割です。
-ms.openlocfilehash: 8bd60cc0ab57935a7ce2da0ca33bd0d4c840fa2b
-ms.sourcegitcommit: cb266c8ea42b9800babbbe96b17885e82b55787d
+ms.openlocfilehash: 4e670d61729d35ee9569b09e91ef5a953961241e
+ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84795729"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "85070088"
 ---
 # <a name="work-folders-overview"></a>ワーク フォルダーの概要
 
@@ -175,4 +175,4 @@ Windows Azure 仮想マシンを使い始める方法については、[Windows 
 | **操作** | -   [ワークフォルダー iPad アプリ: FAQ](https://windows.microsoft.com/windows/work-folders-ipad-faq) (ユーザー向け)<br />-   [ワークフォルダーの証明書の管理](https://blogs.technet.com/b/filecab/archive/2013/08/09/work-folders-certificate-management.aspx)(ブログの投稿)<br />-   [Windows Server 2012 R2 ワークフォルダーの展開の監視](https://blogs.technet.com/b/filecab/archive/2013/10/15/monitoring-windows-server-2012-r2-work-folders-deployments.aspx)(ブログの投稿)<br />-   [Windows PowerShell の SyncShare コマンドレット (ワーク フォルダー)](https://docs.microsoft.com/powershell/module/syncshare/?view=win10-ps)<br />-   [Windows Server 2012 R2 Preview Edition のストレージとファイルサービスの PowerShell コマンドレットのクイックリファレンスカード](https://blogs.technet.com/b/filecab/archive/2013/07/30/storage-and-file-services-powershell-cmdlets-quick-reference-card-for-windows-server-2012-r2-preview-edition.aspx) |
 | **トラブルシューティング** | -   [Windows Server 2012 R2 – IIS Web サイトとワーク フォルダーのポート競合の解決](https://blogs.technet.com/b/filecab/archive/2013/10/15/windows-server-2012-r2-resolving-port-conflict-with-iis-websites-and-work-folders.aspx) (ブログ記事)<br />-   [ワークフォルダー内の一般的なエラー](https://social.technet.microsoft.com/wiki/contents/articles/30578.common-errors-in-work-folders.aspx) |
 | **コミュニティ リソース** | -   [ファイルサービスとストレージフォーラム](https://social.technet.microsoft.com/Forums/windowsserver/home?forum=winserverfiles)<br />-   [マイクロソフトのストレージ チーム - ファイル キャビネット ブログ](https://blogs.technet.com/b/filecab/)<br />-   [ディレクトリサービスチームのブログを確認する](https://blogs.technet.com/b/askds/) |  
-| **関連テクノロジ** | -   [Windows Server 2016 の記憶域](../storage.md)<br>-   [ファイルサービスおよび記憶域サービス](https://technet.microsoft.com/library/hh831487(v=ws.11).aspx)<br />-   [ファイルサーバーリソースマネージャー](https://technet.microsoft.com/library/hh831701(v=ws.11).aspx)<br />-   [フォルダーリダイレクト、オフラインファイル、移動ユーザープロファイル](https://technet.microsoft.com/library/hh848267(v=ws.11).aspx)<br />-   [BranchCache](https://technet.microsoft.com/library/hh831696(v=ws.11).aspx)<br />-   [DFS 名前空間と DFS レプリケーション](https://technet.microsoft.com/library/jj127250(v=ws.11).aspx) |
+| **関連テクノロジ** | -   [Windows Server 2016 の記憶域](../storage.yml)<br>-   [ファイルサービスおよび記憶域サービス](https://technet.microsoft.com/library/hh831487(v=ws.11).aspx)<br />-   [ファイルサーバーリソースマネージャー](https://technet.microsoft.com/library/hh831701(v=ws.11).aspx)<br />-   [フォルダーリダイレクト、オフラインファイル、移動ユーザープロファイル](https://technet.microsoft.com/library/hh848267(v=ws.11).aspx)<br />-   [BranchCache](https://technet.microsoft.com/library/hh831696(v=ws.11).aspx)<br />-   [DFS 名前空間と DFS レプリケーション](https://technet.microsoft.com/library/jj127250(v=ws.11).aspx) |
