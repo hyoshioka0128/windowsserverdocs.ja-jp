@@ -8,12 +8,12 @@ ms.assetid: 51d94b67-8b9b-4159-80dd-f652d73a43cb
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 1ff27915f3d6c92416ed22b7e143bdc1cf3b385f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 6764645182a6f31c0aec4b5d9b9963d64500ea9a
+ms.sourcegitcommit: 56ac7cf3f4bbcc5175f140d2df5f37cc42ba76d1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80853185"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85217442"
 ---
 # <a name="troubleshoot-your-firewall-in-windows-server-essentials"></a>Windows Server Essentials でのファイアウォールのトラブルシューティング
  
@@ -23,9 +23,9 @@ ms.locfileid: "80853185"
   
 ### <a name="to-run-the-repair-anywhere-access-wizard"></a>Anywhere Access の修復ウィザードを実行するには  
   
-1. [ダッシュボード] を開きます。  
+1. ダッシュボードを開きます。  
   
-2. **[設定]** をクリックし、 **[Anywhere Access]** タブをクリックし、 **[修復]** をクリックします。  
+2. **[設定]** をクリックし、**[Anywhere Access]** タブをクリックし、**[修復]** をクリックします。  
   
 3. Anywhere Access の修復ウィザードの指示に従います。  
   
@@ -39,18 +39,15 @@ ms.locfileid: "80853185"
 |65532|サーバー ループバック通信のプロバイダー フレームワーク|  
 |6602|サーバー コンピューターとクライアント コンピューター間の通信のプロバイダー フレームワーク|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
   
--   [リモート Web アクセスを使用する](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md)  
+-   [リモート Web アクセスの使用](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md)  
   
 -   [リモート Web アクセスの管理](../manage/Manage-Remote-Web-Access-in-Windows-Server-Essentials.md)  
   
 -   [Anywhere Access の管理](../manage/Manage-Anywhere-Access-in-Windows-Server-Essentials.md)  
   
 -   [Windows Server Essentials の管理](../manage/Manage-Windows-Server-Essentials.md)  
-  
-
--   [Windows Server Essentials のサポート](Support-Windows-Server-Essentials.md)
 
 -   [Windows Server Essentials のサポート](../support/Support-Windows-Server-Essentials.md)
 

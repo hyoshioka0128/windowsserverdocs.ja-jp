@@ -8,12 +8,12 @@ ms.assetid: cb7f3d7d-4225-409a-9f6b-34a106e8dd24
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 6f81041a2a1938add2fd8bfc03aa492d1da266cd
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0c0e72f37057d50f7d7164ea84c9c7771fca0de8
+ms.sourcegitcommit: 56ac7cf3f4bbcc5175f140d2df5f37cc42ba76d1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852105"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85217572"
 ---
 # <a name="use-shared-folders-in-windows-server-essentials"></a>Windows Server Essentials での共有フォルダーの使用
 
@@ -24,24 +24,24 @@ ms.locfileid: "80852105"
  サーバーに接続されているデバイスから Windows Server Essentials 上の共有フォルダーにアクセスするには、次のようないくつかの方法があります。  
   
 
--   [Windows Server Essentials スタートパッドの使用](Use-Shared-Folders-in-Windows-Server-Essentials.md#BKMK_UsingLaunchpad)  
+-   [Windows Server Essentials スタート パッドの使用](Use-Shared-Folders-in-Windows-Server-Essentials.md#BKMK_UsingLaunchpad)  
   
 -   [リモート Web アクセスの使用](Use-Shared-Folders-in-Windows-Server-Essentials.md#BKMK_UsingRWA)  
   
--   [Windows Phone 用の My Server アプリの使用](Use-Shared-Folders-in-Windows-Server-Essentials.md#BKMK_Phone)  
+-   [Windows Phone の My Server アプリの使用](Use-Shared-Folders-in-Windows-Server-Essentials.md#BKMK_Phone)  
   
--   [Windows 8 用の My Server アプリの使用](Use-Shared-Folders-in-Windows-Server-Essentials.md#BKMK_App)  
+-   [Windows 8 の My Server アプリの使用](Use-Shared-Folders-in-Windows-Server-Essentials.md#BKMK_App)  
   
 ##  <a name="using-the-windows-server-essentials-launchpad"></a><a name="BKMK_UsingLaunchpad"></a>Windows Server Essentials スタートパッドの使用  
  スタート パッドは、コンピューターをサーバーに接続ウィザードを使用してサーバーに接続されている任意のコンピューターから使用できます。 コンピューターをサーバーに接続するための詳細については、「[コンピューターをサーバーに接続](Get-Connected-in-Windows-Server-Essentials.md#BKMK_9)」を参照してください。  
 
--   [Windows Server Essentials スタートパッドの使用](../use/Use-Shared-Folders-in-Windows-Server-Essentials.md#BKMK_UsingLaunchpad)  
+-   [Windows Server Essentials スタート パッドの使用](../use/Use-Shared-Folders-in-Windows-Server-Essentials.md#BKMK_UsingLaunchpad)  
   
 -   [リモート Web アクセスの使用](../use/Use-Shared-Folders-in-Windows-Server-Essentials.md#BKMK_UsingRWA)  
   
--   [Windows Phone 用の My Server アプリの使用](../use/Use-Shared-Folders-in-Windows-Server-Essentials.md#BKMK_Phone)  
+-   [Windows Phone の My Server アプリの使用](../use/Use-Shared-Folders-in-Windows-Server-Essentials.md#BKMK_Phone)  
   
--   [Windows 8 用の My Server アプリの使用](../use/Use-Shared-Folders-in-Windows-Server-Essentials.md#BKMK_App)  
+-   [Windows 8 の My Server アプリの使用](../use/Use-Shared-Folders-in-Windows-Server-Essentials.md#BKMK_App)  
   
 ##  <a name="using-the-windows-server-essentials-launchpad"></a><a name="BKMK_UsingLaunchpad"></a>Windows Server Essentials スタートパッドの使用  
  スタート パッドは、コンピューターをサーバーに接続ウィザードを使用してサーバーに接続されている任意のコンピューターから使用できます。 コンピューターをサーバーに接続するための詳細については、「[コンピューターをサーバーに接続](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_9)」を参照してください。  
@@ -59,13 +59,13 @@ ms.locfileid: "80852105"
 > [!NOTE]
 >  ドラッグ アンド ドロップを使用する際は、ファイルやフォルダーが**コピーされる**場合と**移動される**場合があります。 同じハード ディスク上に保存されている 2 つのフォルダー間で項目をドラッグすると、その項目は移動されます。同じ場所では、元のファイルまたはフォルダーのコピーが作成されることはありません。 異なる場所 (別のコンピューターなど) にあるフォルダーや USB フラッシュ ドライブなどのリムーバブル メディアに項目をドラッグすると、その項目はコピーされます。  
   
- **[共有フォルダー]** 内で、ある場所から別の場所にファイルやフォルダーをコピーする場合は、コンピューター上でファイルをコピーするのと同じようにコピーして貼り付ける方法を使用できます。 コピーするファイルが含まれているフォルダーを開きます。 コピーするファイルを右クリックし、 **[コピー]** をクリックします。 コピーしたファイルを貼り付けるフォルダーを右クリックし、 **[貼り付け]** をクリックします。  
+ **[共有フォルダー]** 内で、ある場所から別の場所にファイルやフォルダーをコピーする場合は、コンピューター上でファイルをコピーするのと同じようにコピーして貼り付ける方法を使用できます。 コピーするファイルが含まれているフォルダーを開きます。 コピーするファイルを右クリックし、**[コピー]** をクリックします。 コピーしたファイルを貼り付けるフォルダーを右クリックし、**[貼り付け]** をクリックします。  
   
 ##  <a name="using-remote-web-access"></a><a name="BKMK_UsingRWA"></a>リモート Web アクセスの使用  
 
- リモート Web アクセスの Web サイトを使用して、任意のリモート コンピューターから共有ファイルと共有フォルダーにアクセスできます。 サーバーネットワーク内のコンピューターから、リモート Web アクセス web サイトにアクセスするには、インターネットブラウザーを開き、「 https://< servername\>/remote」と入力します。 リモート Web アクセスを使用して、共有フォルダーのファイルを表示および管理できます。 詳細な手順については、「 [Use Remote Web アクセス](Use-Remote-Web-Access-in-Windows-Server-Essentials.md)」を参照してください。  
+ リモート Web アクセスの Web サイトを使用して、任意のリモート コンピューターから共有ファイルと共有フォルダーにアクセスできます。 サーバーネットワーク内のコンピューターから、リモート Web アクセス web サイトにアクセスするには、インターネットブラウザーを開き、「https://<servername \> /remote」と入力します。 リモート Web アクセスを使用して、共有フォルダーのファイルを表示および管理できます。 詳細な手順については、「 [Use Remote Web アクセス](Use-Remote-Web-Access-in-Windows-Server-Essentials.md)」を参照してください。  
 
- リモート Web アクセスの Web サイトを使用して、任意のリモート コンピューターから共有ファイルと共有フォルダーにアクセスできます。 サーバーネットワーク内のコンピューターから、リモート Web アクセス web サイトにアクセスするには、インターネットブラウザーを開き、「 https://< servername\>/remote」と入力します。 リモート Web アクセスを使用して、共有フォルダーのファイルを表示および管理できます。 詳細な手順については、「 [Use Remote Web アクセス](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md)」を参照してください。  
+ リモート Web アクセスの Web サイトを使用して、任意のリモート コンピューターから共有ファイルと共有フォルダーにアクセスできます。 サーバーネットワーク内のコンピューターから、リモート Web アクセス web サイトにアクセスするには、インターネットブラウザーを開き、「https://<servername \> /remote」と入力します。 リモート Web アクセスを使用して、共有フォルダーのファイルを表示および管理できます。 詳細な手順については、「 [Use Remote Web アクセス](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md)」を参照してください。  
 
   
 > [!NOTE]
@@ -90,22 +90,15 @@ ms.locfileid: "80852105"
 ##  <a name="using-my-server-app-for-windows-8"></a><a name="BKMK_App"></a>Windows 8 用の My Server アプリの使用  
  Windows 8 の My Server アプリを使用して、Windows 8 から共有フォルダーにアクセスできます。 このアプリは、 [Windows 8 アプリ ストア](https://windows.microsoft.com/windows-8/apps)からダウンロードできます。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
   
--   [サーバーフォルダーの管理](../manage/Manage-Server-Folders-in-Windows-Server-Essentials.md)  
+-   [サーバー フォルダーの管理](../manage/Manage-Server-Folders-in-Windows-Server-Essentials.md)  
   
 -   [サーバー記憶域の管理](../manage/Manage-Server-Storage-in-Windows-Server-Essentials.md)  
-  
 
 -   [接続の取得](Get-Connected-in-Windows-Server-Essentials.md)  
   
 -   [リモートで作業する](Work-Remotely-in-Windows-Server-Essentials.md)  
   
--   [デジタルメディアを再生する](Play-Digital-Media-in-Windows-Server-Essentials.md)
-
--   [接続の取得](../use/Get-Connected-in-Windows-Server-Essentials.md)  
-  
--   [リモートで作業する](../use/Work-Remotely-in-Windows-Server-Essentials.md)  
-  
--   [デジタルメディアを再生する](../use/Play-Digital-Media-in-Windows-Server-Essentials.md)
+-   [デジタル メディアの再生](Play-Digital-Media-in-Windows-Server-Essentials.md)
 

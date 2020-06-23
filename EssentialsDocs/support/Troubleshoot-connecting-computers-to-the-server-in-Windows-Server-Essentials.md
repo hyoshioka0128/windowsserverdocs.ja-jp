@@ -8,12 +8,12 @@ ms.assetid: e45b3d89-c057-4c70-a627-86fb06dd22aa
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 2d98d4cc561a3c29ce73455f38f787709149d056
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 6e3c6d58744f24e3027dedc41ad94ee133786a54
+ms.sourcegitcommit: 56ac7cf3f4bbcc5175f140d2df5f37cc42ba76d1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852195"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85217502"
 ---
 # <a name="troubleshoot-connecting-computers-to-the-server-in-windows-server-essentials"></a>Windows Server Essentials 内のサーバーにコンピューターを接続する場合のトラブルシューティング
 
@@ -49,31 +49,9 @@ ms.locfileid: "80852195"
   
 -   問題 11:[問題 11](Troubleshoot-connecting-computers-to-the-server-in-Windows-Server-Essentials.md#BKMK_UpgradeClientOS)  
 
--   問題 1:[問題 1](../support/Troubleshoot-connecting-computers-to-the-server-in-Windows-Server-Essentials.md#BMRK_Package)  
-  
--   問題 2:[問題 2](../support/Troubleshoot-connecting-computers-to-the-server-in-Windows-Server-Essentials.md#BKMK_ConnectorIssue2)  
-  
--   問題 3:[問題 3](../support/Troubleshoot-connecting-computers-to-the-server-in-Windows-Server-Essentials.md#BKMK_ConnectorIssue2a)  
-  
--   問題 4:[問題 4](../support/Troubleshoot-connecting-computers-to-the-server-in-Windows-Server-Essentials.md#BKMK_ConnectorIssueNetFramework)  
-  
--   問題 5:[問題 5](../support/Troubleshoot-connecting-computers-to-the-server-in-Windows-Server-Essentials.md#BKMK_Time)  
-  
--   問題 6:[問題 6](../support/Troubleshoot-connecting-computers-to-the-server-in-Windows-Server-Essentials.md#BKMK_ServiceStopped)  
-  
--   問題 7:[問題 7](../support/Troubleshoot-connecting-computers-to-the-server-in-Windows-Server-Essentials.md#BKMK_ConnectorIssueReconnect)  
-  
--   問題 8:[問題 8](../support/Troubleshoot-connecting-computers-to-the-server-in-Windows-Server-Essentials.md#BKMK_JoinWin7)  
-  
--   問題 9:[問題 9](../support/Troubleshoot-connecting-computers-to-the-server-in-Windows-Server-Essentials.md#BKMK_ConnectorIssueAutologon)  
-  
--   問題 10:[問題 10](../support/Troubleshoot-connecting-computers-to-the-server-in-Windows-Server-Essentials.md#BKMK_ConnectorIssueOldLogs)  
-  
--   問題 11:[問題 11](../support/Troubleshoot-connecting-computers-to-the-server-in-Windows-Server-Essentials.md#BKMK_UpgradeClientOS)  
-
   
 ##  <a name="issue-1"></a><a name="BMRK_Package"></a>問題1  
- **問題**  
+ **問題点**  
   
  パッケージのインストールが成功しませんでした。 Windows Server Essentials コネクターをもう一度インストールしてみてください。 問題が解決しない場合は、コンピューターをサーバーに接続するときに、ネットワーク管理者のエラーに問い合わせてください  
   
@@ -81,12 +59,12 @@ ms.locfileid: "80852195"
   
  この問題は、Windows Server Essentials を実行しているサーバーにコンピューターを接続しているときに、他の Windows 更新プログラムまたはアプリケーションのインストールが保留中で、コネクタのインストールがキャンセルされた場合に発生する可能性があります。  
   
- **ソリューション**  
+ **解決方法**  
   
  他のすべての更新プログラムまたはアプリケーション インストールを完了します。 ダイアログが表示されたら、コンピューターを再起動します。  
   
 ##  <a name="issue-2"></a><a name="BKMK_ConnectorIssue2"></a>問題2  
- **問題**  
+ **問題点**  
   
  コンピューターを Windows Server Essentials に参加させることはできません  
   
@@ -94,12 +72,12 @@ ms.locfileid: "80852195"
   
  コンピューター名に ASCII 以外の文字が含まれているコンピューターを Windows Server Essentials に参加させることはできません。 コンピューター名に ASCII 以外の文字が含まれている場合、「予期しないエラーが発生しました」というエラー メッセージが表示されます。  
   
- **ソリューション**  
+ **解決方法**  
   
  クライアントコンピューターの名前を ASCII 文字のみが含まれる名前に変更してから、コンピューターを Windows Server Essentials にもう一度追加してみてください。  
   
 ##  <a name="issue-3"></a><a name="BKMK_ConnectorIssue2a"></a>問題3  
- **問題**  
+ **問題点**  
   
  コンピューターをサーバーに接続すると、コネクタソフトウェアのインストールがキャンセルされてエラーが発生する  
   
@@ -107,7 +85,7 @@ ms.locfileid: "80852195"
   
  コンピューターをサーバーに接続できるようにするには、SYSTEM アカウントに、Windows Server Essentials ダッシュボードに表示されるサーバーフォルダーに対するフルコントロールのアクセス許可が必要です。 必要なアクセス許可が付与されていない場合、「コネクター ソフトウェアのインストールが取り消されます」というエラー メッセージが表示されます。  
   
- **ソリューション**  
+ **解決方法**  
   
  SYSTEM アカウントに、各サーバー フォルダーに対する **[フル コントロール]** アクセス許可を付与します。  
   
@@ -115,45 +93,45 @@ ms.locfileid: "80852195"
   
 1.  Windows Server Essentials ダッシュボードを開きます。  
   
-2.  **[記憶域]** をクリックし、 **[サーバー フォルダー]** をクリックします。  
+2.  **[記憶域]** をクリックし、**[サーバー フォルダー]** をクリックします。  
   
-3.  サーバー フォルダを右クリックし、 **[フォルダーを開く]** をクリックします。 ( **[フォルダーを開く]** オプションが表示されない場合、対象フォルダーでアクセス許可を設定する必要はありません。)  
+3.  サーバー フォルダを右クリックし、**[フォルダーを開く]** をクリックします。 (**[フォルダーを開く]** オプションが表示されない場合、対象フォルダーでアクセス許可を設定する必要はありません。)  
   
 4.  Windows エクスプローラー上部にあるネットワーク パスで、[サーバー共有] をクリックし、対象サーバー上の共有フォルダーを表示します。 たとえば、パスが **[ネットワーク] > Server01 > [ファイル履歴のバックアップ]** の場合、**Server01** をクリックします。  
   
-5.  サーバー フォルダーを右クリックし、 **[プロパティ]** をクリックします。  
+5.  サーバー フォルダーを右クリックし、**[プロパティ]** をクリックします。  
   
 6.  **[セキュリティ]** タブをクリックします。  
   
-7.  SYSTEM アカウントに対して **[フル コントロール]** を選択できない場合、 **[編集]** 、 **[SYSTEM]** とクリックします。 **[システムのアクセス許可]** で、 **[フル コントロール]** の隣にある **[許可]** チェック ボックスをオンにします。  
+7.  SYSTEM アカウントに対して **[フル コントロール]** を選択できない場合、**[編集]**、**[SYSTEM]** とクリックします。 **[システムのアクセス許可]** で、**[フル コントロール]** の隣にある **[許可]** チェック ボックスをオンにします。  
   
 8.  **[OK]** を 2 回クリックし、アクセス許可を更新して **[プロパティ]** を閉じます。  
   
 ##  <a name="issue-4"></a><a name="BKMK_ConnectorIssueNetFramework"></a>問題4  
- **問題**  
+ **問題点**  
   
  このアプリケーションを実行するには、コンピューターをサーバーに接続するときに、次のいずれかのバージョンの .NET Framework: V 4.5.50709 "エラーをインストールする必要があります。  
   
  **説明**  
   
- Windows Server Essentials または Windows Server Essentials を実行しているサーバーにコンピューターを接続すると、ウィザードは .NET Framework バージョン4.5.50709 をコンピューターにインストールしようとします。 ただし、以前のリリースの .NET Framework バージョン4.5 が存在する場合、更新されたリリースをインストールすることはできません。また、このアプリケーションを実行するには、次のいずれかのバージョンの .NET Framework をインストールする必要があります。V 4.5.50709。 適切なバージョンの .NET Framework を取得する方法については、割り当て発行者に問い合わせてください。  
+ Windows Server Essentials または Windows Server Essentials を実行しているサーバーにコンピューターを接続すると、ウィザードは .NET Framework バージョン4.5.50709 をコンピューターにインストールしようとします。 ただし、以前のリリースの .NET Framework バージョン4.5 が存在する場合、更新されたリリースをインストールすることはできません。また、このアプリケーションを実行するには、次のいずれかのバージョンの .NET Framework: V 4.5.50709 をインストールする必要があります。 適切なバージョンの .NET Framework を取得する方法については、割り当て発行者に問い合わせてください。  
   
- **ソリューション**  
+ **解決方法**  
   
  .NET Framework 4.5 をコンピューターからアンインストールしてから、コンピューターをサーバーに接続します。  
   
 #### <a name="to-uninstall-net-framework-45"></a>.NET Framework 4.5 をアンインストールするには  
   
-1.  クライアント コンピューターの **[スタート]** ページで、 **[コントロール パネル]** を開きます。  
+1.  クライアント コンピューターの **[スタート]** ページで、**[コントロール パネル]** を開きます。  
   
-2.  [コントロール パネル] の **[プログラム]** で、 **[プログラムのアンインストール]** をクリックします。  
+2.  [コントロール パネル] の **[プログラム]** で、**[プログラムのアンインストール]** をクリックします。  
   
-3.  **[Microsoft .NET Framework 4.5]** を右クリックし、 **[アンインストール]** をクリックします。  
+3.  **[Microsoft .NET Framework 4.5]** を右クリックし、**[アンインストール]** をクリックします。  
   
 4.  .NET Framework 4.5 のアンインストールが正常に実行された後、サーバーにコンピューターを接続します。 適切なリリースの .NET Framework 4.5 がコネクター ソフトウェアと一緒にインストールされます。  
   
 ##  <a name="issue-5"></a><a name="BKMK_Time"></a>問題5  
- **問題**  
+ **問題点**  
   
  サーバーを取得できません。 この問題を解決するには、ネットワークの担当者にお問い合わせください。 というエラー メッセージが表示される  
   
@@ -165,7 +143,7 @@ ms.locfileid: "80852195"
   
  Windows Essentials Server に対する VPN 接続が既に確立されていて、ドメイン アドレスを使用して内部設置型のコネクター ソフトウェアを設定しようとすると発生する可能性があります。  
   
- **ソリューション**  
+ **解決方法**  
   
 1.  クライアント コンピューターの日時をサーバー上の日時と同期します。 次に、サーバーとコンピューターを接続します。  
   
@@ -175,11 +153,11 @@ ms.locfileid: "80852195"
   
 #### <a name="to-change-the-date-and-time-on-the-client-computer"></a>クライアント コンピューターの日時を変更するには  
   
-1. クライアント コンピューターの スタート ページで、**コントロール パネル** を開きます。  
+1. クライアント コンピューターの [スタート] ページで、[**コントロール パネル**] を開きます。  
   
-2. [コントロール パネル] で、 **[時計、言語、および地域]** をクリックし、 **[日付と時刻]** をクリックします。  
+2. [コントロール パネル] で、**[時計、言語、および地域]** をクリックし、**[日付と時刻]** をクリックします。  
   
-3. **[日付と時刻の変更]** をクリックして日付と時刻を正しく設定し、 **[OK]** をクリックします。  
+3. **[日付と時刻の変更]** をクリックして日付と時刻を正しく設定し、**[OK]** をクリックします。  
   
 4. **[OK]** をクリックし、[コントロール パネル] を閉じます。  
   
@@ -194,18 +172,18 @@ ms.locfileid: "80852195"
     > [!NOTE]
     >  サーバーをリモートで管理している場合、リモート デスクトップ接続を使用してサーバーにログオンする必要があります。  
   
-2.  **[スタート]** ページで、 **[コントロール パネル]** を開きます。  
+2.  **[スタート]** ページで、**[コントロール パネル]** を開きます。  
   
-3.  [コントロール パネル] で、 **[時計、言語、および地域]** をクリックし、 **[日付と時刻]** をクリックします。  
+3.  [コントロール パネル] で、**[時計、言語、および地域]** をクリックし、**[日付と時刻]** をクリックします。  
   
-4.  **[日付と時刻の変更]** をクリックして日付と時刻を正しく設定し、 **[OK]** をクリックします。  
+4.  **[日付と時刻の変更]** をクリックして日付と時刻を正しく設定し、**[OK]** をクリックします。  
   
 5.  **[OK]** をクリックし、[コントロール パネル] を閉じます。  
   
 6.  クライアント コンピューターで、サーバーへの接続を再試行します。 手順については、「コンピューターをサーバーに接続する方法」を参照してください。  
   
 ##  <a name="issue-6"></a><a name="BKMK_ServiceStopped"></a>問題6  
- **問題**  
+ **問題点**  
   
  予期しないエラーが発生しました。 この問題を解決するには、ネットワークの担当者にお問い合わせください。 というエラー メッセージが表示される  
   
@@ -213,22 +191,22 @@ ms.locfileid: "80852195"
   
  このエラー メッセージが表示された場合は、WSS Certificate Web Service が実行されていない可能性があります。  
   
- **ソリューション**  
+ **解決方法**  
   
  WSS Certificate Web Service を開始します。  
   
 #### <a name="to-start-the-wss-certificate-web-service"></a>WSS Certificate Web Service を開始するには  
   
-1.  サーバーの **[スタート]** ページで、 **[管理ツール]** を開きます。  
+1.  サーバーの **[スタート]** ページで、**[管理ツール]** を開きます。  
   
-     **[管理ツール]** で **[インターネット インフォメーション サービス (IIS) マネージャー]** を右クリックし、 **[開く]** をクリックします。  
+     **[管理ツール]** で **[インターネット インフォメーション サービス (IIS) マネージャー]** を右クリックし、**[開く]** をクリックします。  
   
-2.  ナビゲーション ウィンドウで、 **[WSS Certificate Web Service]** をクリックします。  
+2.  ナビゲーション ウィンドウで、**[WSS Certificate Web Service]** をクリックします。  
   
-3.  **[操作]** ウィンドウで、 **[開始]** をクリックします。  
+3.  **[操作]** ウィンドウで、**[開始]** をクリックします。  
   
 ##  <a name="issue-7"></a><a name="BKMK_ConnectorIssueReconnect"></a>問題7  
- **問題**  
+ **問題点**  
   
  接続の試行が失敗した後にコンピューターをサーバーに接続しようとすると、"この名前のコンピューターは既にサーバーに接続されています" という警告が表示されます。  
   
@@ -236,10 +214,10 @@ ms.locfileid: "80852195"
   
  以前にコンピューターをサーバーに接続しようとしたときに、キャンセルまたは中断された場合は、もう一度接続しようとすると、次の警告が表示されることがあります。この名前のコンピューターは既にサーバーに接続されています。 これは、初めてサーバーに接続を試みたときに証明書が発行されているために生じます。  
   
- **解決策**: 同じ名前の他のコンピューターが対象のサーバーに接続されていないことが分かっている場合には、 **[次へ]** をクリックして次の手順を実行して、 **[コンピューターをサーバーに接続]** ウィザードを完了します。  
+ **解決策**: 同じ名前の他のコンピューターが対象のサーバーに接続されていないことが分かっている場合には、**[次へ]** をクリックして次の手順を実行して、**[コンピューターをサーバーに接続]** ウィザードを完了します。  
   
 ##  <a name="issue-8"></a><a name="BKMK_JoinWin7"></a>問題8  
- **問題**  
+ **問題点**  
   
  Windows 7 Home が実行されているクライアント コンピューターをサーバーに接続しようとすると、コネクター ソフトウェアを実行するための Web ページが開くものの、クライアント コンピューターがサーバーに接続できない  
   
@@ -247,12 +225,12 @@ ms.locfileid: "80852195"
   
  ネットワーク上のルーターでマルチキャストが有効になっている場合、Windows 7 Home Basic または Windows 7 Home Premium が実行されているクライアント コンピューターとサーバー間の通信が正しく行えません。  
   
- **ソリューション**  
+ **解決方法**  
   
  ルーターでマルチキャストを無効にします。 一部のルーターでは、RIP-2M ルーティング プロトコルの無効化もそれに含まれる場合があります。 詳細については、ルーターの製造元によって提供されているドキュメントを参照してください。  
   
 ##  <a name="issue-9"></a><a name="BKMK_ConnectorIssueAutologon"></a>問題9  
- **問題**  
+ **問題点**  
   
  サーバーにコンピューターを接続した後、自動ログオンが機能しなくなった  
   
@@ -266,13 +244,13 @@ ms.locfileid: "80852195"
 >  Windows Server Essentials ドメインアカウントには、既定のパスワードポリシー要件を満たすパスワードが必要です。  
   
 ##  <a name="issue-10"></a><a name="BKMK_ConnectorIssueOldLogs"></a>問題10  
- **問題**  
+ **問題点**  
   
  プレリリース版のコネクター ソフトウェアをアンインストールしても既存のログが削除されない  
   
  **説明**  
   
- プレリリース (ベータ版または RC) 版の Windows Server Essentials からリリース版に更新した後、サーバーに接続されている各コンピューターからコネクタソフトウェアを削除してから、コンピューターを再接続して、リリースされたをインストールする必要があります。コネクタソフトウェアのバージョン。  
+ プレリリース (ベータ版または RC) 版の Windows Server Essentials からリリース版に更新した後、サーバーに接続されている各コンピューターからコネクタソフトウェアを削除してから、コンピューターを再接続して、コネクタソフトウェアのリリース版をインストールする必要があります。  
   
  ただし、ネットワーク コンピューターからコネクター ソフトウェアを削除しても、そのコンピューター上の %ProgramData%\Microsoft\Windows Server\Logs\ フォルダー内の既存のログ ファイルは削除されません。 Logs フォルダーを削除しないと、Windows Server Essentials のリリース版にコンピューターを接続したときに、ログファイルが破損する可能性があります。  
   
@@ -287,7 +265,7 @@ ms.locfileid: "80852195"
 3.  コンピューターを再度サーバーに接続します。 それにより、リリース版のコネクター ソフトウェアがインストールされ、新しい Logs フォルダーとログ ファイルが作成されます。  
   
 ##  <a name="issue-11"></a><a name="BKMK_UpgradeClientOS"></a>問題11  
- **問題**  
+ **問題点**  
   
  クライアント コンピューター上でオペレーティング システムをアップグレードしたい  
   
@@ -295,14 +273,14 @@ ms.locfileid: "80852195"
   
  コネクター ソフトウェアのインストール中に、クライアントのオペレーティング システムに対して、クライアントがコネクターの前提条件すべてを満たしていることを確認するための各種チェックが実行されます。 コネクター ソフトウェアのインストール後にクライアントのオペレーティング システムをアップグレードすると、一部の前提条件が満たされず、クライアント コネクターで障害が発生する可能性があります。  
   
- **ソリューション**  
+ **解決方法**  
   
- クライアントのオペレーティング システムを別のバージョンにアップグレードするには (たとえば、Windows XP を Windows Vista へ、または Windows Vista を Windows 7 へアップグレードする場合)、コネクター ソフトウェアをアンインストールする必要があります。 [コントロール パネル] の **[プログラムの追加と削除]** を使用します。 クライアントのオペレーティングシステムのアップグレードが完了したら、 http://<*server*> を開き、Web ブラウザーで [接続] を開いて、クライアントコネクタを再インストールできます。ここで <*server*> は、Windows server Essentials サーバーの名前です。  
+ クライアントのオペレーティング システムを別のバージョンにアップグレードするには (たとえば、Windows XP を Windows Vista へ、または Windows Vista を Windows 7 へアップグレードする場合)、コネクター ソフトウェアをアンインストールする必要があります。 [コントロール パネル] の **[プログラムの追加と削除]** を使用します。 クライアントのオペレーティングシステムのアップグレードが完了したら、クライアントコネクタを再インストールできます。そのためには、Web ブラウザーで http://<*server*> を開き、<*Server*> を Windows server Essentials サーバーの名前にします。  
   
- コネクター ソフトウェアがインストールされているクライアントをアップグレードした場合には、 **[プログラムの追加と削除]** または **[プログラムと機能]** を使用してコネクター ソフトウェアをアンインストールします。 その後、コネクター ソフトウェアを再びインストールします。  
+ コネクター ソフトウェアがインストールされているクライアントをアップグレードした場合には、**[プログラムの追加と削除]** または **[プログラムと機能]** を使用してコネクター ソフトウェアをアンインストールします。 その後、コネクター ソフトウェアを再びインストールします。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
   
 -   [Windows Server Essentials の管理](../manage/Manage-Windows-Server-Essentials.md)  
   
--   [Windows 2012 Server Essentials ConnectComputer のトラブルシューティング (TechNet Wiki)](https://social.technet.microsoft.com/wiki/contents/articles/14370.windows-2012-server-essentials-connectcomputer-troubleshooting.aspx)
+-   [Windows 2012 Server Essentials ConnectComputer トラブルシューティング (TechNet Wiki)](https://social.technet.microsoft.com/wiki/contents/articles/14370.windows-2012-server-essentials-connectcomputer-troubleshooting.aspx)

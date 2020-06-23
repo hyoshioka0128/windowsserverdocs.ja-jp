@@ -8,12 +8,12 @@ ms.assetid: 51a7f1f1-088b-4487-b2c6-4f97aad3004d
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 49ffab44c1d385bd149ec048ff0bd4b627529fef
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ff8d3c1b467039bf16a7d598a22b84a284807e89
+ms.sourcegitcommit: 56ac7cf3f4bbcc5175f140d2df5f37cc42ba76d1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852135"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85217592"
 ---
 # <a name="quick-start-guide-to-using-microsoft-office-365-with-windows-server-essentials"></a>クイック スタート ガイド: Microsoft Office 365 を Windows Server Essentials と共に使用する
 
@@ -23,12 +23,12 @@ ms.locfileid: "80852135"
 
  Office 365 の概要については、office 365 web サイトの office [365: ユーザー向けツアーに関する](https://onlinehelp.microsoft.com/office365-smallbusinesses/hh534379.aspx)ビデオを参照してください。  
 
- 組織で Office 365 web apps を使用している場合は、Windows Server Essentials スタートパッドや My Server 2012 R2 などの使い慣れたツールを使用して Office 365 のアプリを開くことができます。 (当然ながら、組織のオンライン ID およびネットワーク パスワードを使用して、 [Office 365 に直接サインインすることもできます](https://login.microsoftonline.com/login.srf?wa=wsignin1.0&rpsnv=2&ct=1384059583&rver=6.1.6206.0&wp=MBI_KEY&wreply=https:%2F%2F www.outlook.com%2Fowa%2F&id=260563&whr=students.tamuk.edu&CBCXT=out) )。  
+ 組織で Office 365 web apps を使用している場合は、Windows Server Essentials スタートパッドや My Server 2012 R2 などの使い慣れたツールを使用して Office 365 のアプリを開くことができます。 (当然ながら、組織のオンライン ID およびネットワーク パスワードを使用して、 [Office 365 に直接サインインすることもできます](https://login.microsoftonline.com/login.srf?wa=wsignin1.0&rpsnv=2&ct=1384059583&rver=6.1.6206.0&wp=MBI_KEY&wreply=https:%2F%2Fwww.outlook.com%2Fowa%2F&id=260563&whr=students.tamuk.edu&CBCXT=out) )。  
 
 > [!IMPORTANT]
 >  Exchange Online への接続に使用するモバイルデバイスを紛失した場合は、次に電源を入れたときにデバイスから機密データを削除できるように、管理者に連絡してください。  
 
-### <a name="before-you-begin"></a>始める前に  
+### <a name="before-you-begin"></a>開始する前に  
 
 1.  ユーザーアカウントに割り当てられている Microsoft Online Services アカウント (Windows Server Essentials の場合は*Office 365 アカウント*と呼ばれます) が必要です。 Office 365 のオンラインアカウントをまだお持ちでない場合は、コンピューターネットワークの管理者に依頼して作成してください。  
 
@@ -42,15 +42,15 @@ ms.locfileid: "80852135"
 
 #### <a name="to-open-office-365-from-the-launchpad"></a>スタート パッドから Office 365 を開くには  
 
-1.  スタート パッドを開き、 **[Microsoft Office 365]** をクリックし、 **[Office 365 ホーム]** をクリックします。  
+1.  スタート パッドを開き、[ **Microsoft Office 365**] をクリックし、[ **Office 365 ホーム**] をクリックします。  
 
 2.  指定された Microsoft オンライン ID と Windows パスワードを使用して、Office 365 にサインインします。  
 
 > [!NOTE]
->  Office 365 を使用するようにコンピューターをセットアップしていない場合は、Office 365 ポータルの **[ここから開始]** セクションの手順に従います。  
+>  Office 365 を使用するようにコンピューターをセットアップしていない場合は、Office 365 ポータルの [**ここから開始**] セクションの手順に従います。  
 
 ## <a name="work-with-documents-in-your-sharepoint-online-libraries-from-my-server-2012-r2"></a>My Server 2012 R2 から SharePoint Online ライブラリ内のドキュメントを操作する  
- サーバーに Windows Server Essentials オペレーティングシステムが搭載されており、管理者がサーバーから Office 365 を管理している場合は、My Server 2012 を使用して、ノート pc、モバイルデバイス、または電話から SharePoint Online ライブラリ内のドキュメントを操作できます。R2 アプリ。 アプリは無償です。 まず、このアプリをインストールする必要があります。  
+ サーバーに Windows Server Essentials オペレーティングシステムが搭載されており、管理者がサーバーから Office 365 を管理している場合は、My Server 2012 R2 アプリを使用して、ノート pc、モバイルデバイス、または電話から SharePoint Online ライブラリ内のドキュメントを操作できます。 このアプリは無料です。 まず、このアプリをインストールする必要があります。  
 
 #### <a name="to-install-my-server-2012-r2"></a>My Server 2012 R2 をインストールするには  
 
@@ -58,14 +58,14 @@ ms.locfileid: "80852135"
 
     |デバイスの種類|ダウンロード元|  
     |-----------------|-------------------|  
-    |Windows ベースのラップトップ、PC、またはサーフェス デバイス|[My Server 2012 R2 (Windows 用アプリ)](https://apps.microsoft.com/windows/app/my-server-2012-r2/67e86695-bda3-4f32-96c4-2e20e56f1cf3)|  
+    |Windows ベースのラップトップ、PC、またはサーフェス デバイス|[My Server 2012 R2 (Windows のアプリ)](https://apps.microsoft.com/windows/app/my-server-2012-r2/67e86695-bda3-4f32-96c4-2e20e56f1cf3)|  
     | Windows 8 phone または Windows 8.1 phone|[My Server 2012 R2 (Windows Phone ストア)](http://www.windowsphone.com/store/app/my-server-2012-r2/44f596b5-0477-4096-b96e-ddd6ef64ad6b)|  
 
 #### <a name="to-work-with-documents-in-sharepoint-online-libraries-from-my-server-2012-r2"></a>My Server 2012 R2 から SharePoint Online ライブラリ内のドキュメントを操作するには  
 
 1.  My Server 2012 R2 アプリを開きます。  
 
-2.  **[SharePoint Online]** をクリックします。  
+2.  [**SharePoint Online**] をクリックします。  
 
     > [!NOTE]
     >  **SharePoint Online**が表示されない場合は、Office 365 がサーバーと統合されているかどうかを管理者に問い合わせてください。  
@@ -80,18 +80,13 @@ ms.locfileid: "80852135"
 ~~~
 
 
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
 
--   [スタートパッドの概要](../manage/Overview-of-the-Launchpad-in-Windows-Server-Essentials.md)  
+-   [スタート パッドの概要](../manage/Overview-of-the-Launchpad-in-Windows-Server-Essentials.md)  
 
--   [Office 365 を管理する](../manage/Manage-Office-365-in-Windows-Server-Essentials.md)  
-
+-   [Office 365 の管理](../manage/Manage-Office-365-in-Windows-Server-Essentials.md)  
 
 -   [リモートで作業する](Work-Remotely-in-Windows-Server-Essentials.md)  
 
 -   [Windows Server Essentials の使用](Use-Windows-Server-Essentials.md)
-
--   [リモートで作業する](../use/Work-Remotely-in-Windows-Server-Essentials.md)  
-
--   [Windows Server Essentials の使用](../use/Use-Windows-Server-Essentials.md)
 

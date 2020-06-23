@@ -8,12 +8,12 @@ ms.assetid: c6985518-b42d-4cfb-9761-eaa75306b6d7
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: fa7ad24eec7c2732ee1c840aae678e3b0bff768c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 16fc2c8b6029a4793eafd5ca7c51e66d6bc36d80
+ms.sourcegitcommit: 56ac7cf3f4bbcc5175f140d2df5f37cc42ba76d1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852165"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85217432"
 ---
 # <a name="use-the-windows-server-essentials-log-collector"></a>Windows Server Essentials Log Collector の使用
 
@@ -30,15 +30,10 @@ ms.locfileid: "80852165"
 >[Windows Server Essentials Log Collector インストールパッケージをダウンロード](https://www.microsoft.com/download/details.aspx?id=34821)します。  
   
  Log Collector をインストールし実行するには、次のトピックの手順を実行します。  
-  
 
-1. [Log Collector をインストールする](Install-the-Windows-Server-Essentials-Log-Collector.md)  
+1. [Log Collector のインストール](../support/Install-the-Windows-Server-Essentials-Log-Collector.md)  
   
-2. [Log Collector の実行](Run-the-Windows-Server-Essentials-Log-Collector.md)  
-
-3. [Log Collector をインストールする](../support/Install-the-Windows-Server-Essentials-Log-Collector.md)  
-  
-4. [Log Collector の実行](../support/Run-the-Windows-Server-Essentials-Log-Collector.md)  
+2. [Log Collector の実行](../support/Run-the-Windows-Server-Essentials-Log-Collector.md)  
 
 
 ## <a name="environment-information-collected"></a>収集される環境情報  
@@ -52,11 +47,11 @@ ms.locfileid: "80852165"
   
 -   TCP/IP にバインドされているネットワーク アダプター  
   
--   [ロケール]  
+-   Locale  
   
 -   プロセス  
   
--   記憶域の構成  
+-   ストレージの構成  
   
 -   ホスト ファイルの情報  
   
@@ -109,9 +104,9 @@ ms.locfileid: "80852165"
   
 ### <a name="server-logs-and-registry-information"></a>サーバー ログとレジストリ情報  
   
--   < ProgramData\>\Microsoft\Windows サーバーログのサーバー製品ログ  
+-   <ProgramData \Microsoft\Windows サーバーログのサーバー製品ログ \>  
   
--   Scheduled tasks (スケジュールされたタスク)  
+-   スケジュールされたタスク  
   
 -   API のセットアップ ログ  
   
@@ -137,9 +132,9 @@ ms.locfileid: "80852165"
   
 ### <a name="network-computer-logs-and-registry-information"></a>ネットワーク コンピューターのログおよびレジストリ情報  
   
--   < ProgramData\>\Microsoft\Windows のネットワークコンピューターの製品ログ  
+-   <ProgramData \Microsoft\Windows のネットワークコンピューターの製品ログ \>  
   
--   < ProgramData\>\Microsoft\Windows の正常性アラートファイル  
+-   <ProgramData \Microsoft\Windows のデータファイルにある正常性アラートファイル \>  
   
 -   Windows Update のログ  
   
@@ -147,7 +142,7 @@ ms.locfileid: "80852165"
   
 -   スケジュールされたタスクの情報  
   
--   \\\ HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows サーバー \ のレジストリキー  
+-   \\HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows サーバー \ からのレジストリキー  
   
 ## <a name="logs-for-computers-that-do-not-run-a-version-of-the-windows-operating-system"></a>Windows 版のオペレーティング システムを実行していないコンピューターのログ  
  Log Collector は Windows 版のオペレーティング システムを実行していないコンピューターからログ ファイルを収集しません。 Windows 以外のコンピューターの場合、次のログ ファイルを Log Collector ファイルを保存しているのと同じ場所に手動でコピーします。  
@@ -156,14 +151,11 @@ ms.locfileid: "80852165"
   
 -   Library/Logs/Windows Server.log  
   
--   Library/Logs/CrashReporter/スタートパッド-< nnn\> (スタートパッドのすべてのファイルをコピーします-< nnn\>)  
+-   Library/Logs/CrashReporter/スタートパッド-<nnn \> (スタートパッドのすべての <nnn \> . crash ファイルをコピーする)  
   
--   Library/Logs/DiagnosticReports/スタートパッド-< nnn\> (スタートパッドのすべてのファイルをコピーします-< nnn\>)  
+-   Library/Logs/DiagnosticReports/スタートパッド-<nnn \> (スタートパッドのすべての <nnn \> . crash ファイルをコピーする)  
   
-## <a name="see-also"></a>参照  
-  
-
--   [Log Collector エラーのトラブルシューティング](Troubleshoot-Windows-Server-Essentials-Log-Collector-Errors.md)
+## <a name="see-also"></a>関連項目  
 
 -   [Log Collector エラーのトラブルシューティング](../support/Troubleshoot-Windows-Server-Essentials-Log-Collector-Errors.md)
 

@@ -8,12 +8,12 @@ ms.assetid: d3642575-b3ee-4488-b654-5bf9d3b8c935
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 62f3bf875b03328b0016261bf6aff7a39c4b65bc
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 9fb3628ed519d5faae04787dbb84da37f27d96fb
+ms.sourcegitcommit: 56ac7cf3f4bbcc5175f140d2df5f37cc42ba76d1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852245"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85217492"
 ---
 # <a name="troubleshoot-remote-web-access-connectivity-in-windows-server-essentials"></a>Windows Server Essentials におけるリモート Web アクセス接続のトラブルシューティング
  
@@ -65,10 +65,10 @@ ms.locfileid: "80852245"
   > [!NOTE]
   >  この表の場合、Windows Server Essentials を実行しているコンピューターの IP アドレスは 192.168.0.100 です。 ご使用のコンピューターの IP アドレスを判別し、その IP アドレスを、表で示されている IP アドレスの代わりに使用してください。  
   
-  |[IP アドレス]|プロトコル (TCP/UDP)|［スケジュール］|受信フィルター|  
+  |IP アドレス|プロトコル (TCP/UDP)|スケジュール|受信フィルター|  
   |----------------|---------------------------|--------------|--------------------|  
-  |192.168.0.100|TCP 80|常に行う|すべて許可|  
-  |192.168.0.100|TCP 443|常に行う|すべて許可|  
+  |192.168.0.100|TCP 80|Always|すべて許可する|  
+  |192.168.0.100|TCP 443|Always|すべて許可する|  
   
    ルーターを手動で構成した後、[リモート Web アクセスを有効にする] ウィザードを実行して、 **[はじめに] ページで**[**ルーターのセットアップをスキップ**する] オプションが選択されていることを確認します。  
   
@@ -77,18 +77,15 @@ ms.locfileid: "80852245"
 > [!TIP]
 >  ルーターに最新の BIOS ファームウェアがインストールされていることを確認します。 多くの場合、ルーターの構成 Web ページから、ルーターの BIOS ファームウェアを更新できます。 詳細については、ルーターのドキュメントをご覧ください。 ルーターの更新後、[Anywhere Access のセットアップ] ウィザードを実行します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
   
--   [リモート Web アクセスを使用する](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md)  
+-   [リモート Web アクセスの使用](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md)  
   
 -   [リモート Web アクセスの管理](../manage/Manage-Remote-Web-Access-in-Windows-Server-Essentials.md)  
   
 -   [Anywhere Access の管理](../manage/Manage-Anywhere-Access-in-Windows-Server-Essentials.md)  
   
 -   [Windows Server Essentials の管理](../manage/Manage-Windows-Server-Essentials.md)  
-  
-
--   [Windows Server Essentials のサポート](Support-Windows-Server-Essentials.md)
 
 -   [Windows Server Essentials のサポート](../support/Support-Windows-Server-Essentials.md)
 

@@ -8,12 +8,12 @@ ms.assetid: 8b183f8f-1279-4fdf-a495-c7c801563cb0
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: ec6b97dd153802ea2ff8b55f6ba58f3208e4abb1
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 8ba2cca1e346a99cc62d84ede885663fe81dfbd2
+ms.sourcegitcommit: 56ac7cf3f4bbcc5175f140d2df5f37cc42ba76d1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852085"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85217532"
 ---
 # <a name="work-remotely-in-windows-server-essentials"></a>Windows Server Essentials でのリモート操作
 
@@ -24,26 +24,15 @@ ms.locfileid: "80852085"
  次のトピックでは、離れた場所からサーバー リソースにアクセスする方法について説明しています。  
   
 
--      [Windows Server Essentials でのリモート Web アクセスの使用](Work-Remotely-in-Windows-Server-Essentials.md#BKMA_RWA)  
+-   [Windows Server Essentials でのリモート Web アクセスの使用](Work-Remotely-in-Windows-Server-Essentials.md#BKMA_RWA)  
      
--   [VPN を使用して Windows Server Essentials に接続する](Work-Remotely-in-Windows-Server-Essentials.md#BKMK_3)  
+-   [VPN を利用した Windows Server Essentials への接続](Work-Remotely-in-Windows-Server-Essentials.md#BKMK_3)  
   
 -   [My Server アプリを使用して Windows Server Essentials に接続する](Work-Remotely-in-Windows-Server-Essentials.md#BKMK_App)  
   
--   [Windows Phone 用の My Server アプリの使用](Work-Remotely-in-Windows-Server-Essentials.md#BKMK_2)  
+-   [Windows Phone 用に My Server を使用する](Work-Remotely-in-Windows-Server-Essentials.md#BKMK_2)  
   
--   [Windows Server Essentials での Microsoft Office 365 の使用](Work-Remotely-in-Windows-Server-Essentials.md#BKMK_O365)  
-
--   [Windows Server Essentials でのリモート Web アクセスの使用](../use/Work-Remotely-in-Windows-Server-Essentials.md#BKMA_RWA)  
-  
--   [VPN を使用して Windows Server Essentials に接続する](../use/Work-Remotely-in-Windows-Server-Essentials.md#BKMK_3)  
-  
--   [My Server アプリを使用して Windows Server Essentials に接続する](../use/Work-Remotely-in-Windows-Server-Essentials.md#BKMK_App)  
-  
--   [Windows Phone 用の My Server アプリの使用](../use/Work-Remotely-in-Windows-Server-Essentials.md#BKMK_2)  
-  
--   [Windows Server Essentials での Microsoft Office 365 の使用](../use/Work-Remotely-in-Windows-Server-Essentials.md#BKMK_O365)  
-
+-   [Windows Server Essentials と共に Microsoft Office 365 を利用する](Work-Remotely-in-Windows-Server-Essentials.md#BKMK_O365)  
   
 > [!NOTE]
 >  サーバーで Anywhere Access を構成する方法の詳細については、「 [Anywhere access の管理](../manage/Manage-Anywhere-Access-in-Windows-Server-Essentials.md)」を参照してください。  
@@ -51,8 +40,6 @@ ms.locfileid: "80852085"
 ##  <a name="use-remote-web-access-in-windows-server-essentials"></a><a name="BKMA_RWA"></a>Windows Server Essentials でのリモート Web アクセスの使用  
 
  リモート Web アクセスを利用すると、外出中も Windows Server Essentials ネットワークに接続された状態を維持できます。 詳細については、「[リモート Web アクセスを使用する](Use-Remote-Web-Access-in-Windows-Server-Essentials.md)」を参照してください。  
-
- リモート Web アクセスを利用すると、外出中も Windows Server Essentials ネットワークに接続された状態を維持できます。 詳細については、「[リモート Web アクセスを使用する](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md)」を参照してください。  
 
   
 ##  <a name="use-vpn-to-connect-to-windows-server-essentials"></a><a name="BKMK_3"></a>VPN を使用して Windows Server Essentials に接続する  
@@ -80,13 +67,13 @@ ms.locfileid: "80852085"
 
   
 ##  <a name="use-the-my-server-app-for-windows-phone"></a><a name="BKMK_2"></a>Windows Phone 用の My Server アプリの使用  
- Windows Phone 用の My Server Windows アプリ (Windows Server 2012 の場合) および Windows Phone 用の My Server 2012 R2 アプリ (Windows Server Essentials の場合) は、リモートでの作業中にスマートフォンを使用してサーバーにシームレスに接続できるように設計されています。祝日. これは、リモートアクセス用にサーバーを構成した後に Windows Server Essentials にアクセスするさまざまな方法の1つです。  
+ Windows Phone 用の My Server Windows アプリ (Windows Server 2012 の場合) および Windows Phone 用の My Server 2012 R2 アプリ (Windows Server Essentials の場合) は、リモートの場所で作業しているときにスマートフォンを使用してサーバーにシームレスに接続できるように設計されています。 これは、リモートアクセス用にサーバーを構成した後に Windows Server Essentials にアクセスするさまざまな方法の1つです。  
   
  Windows Phone ストアからいずれかのアプリをダウンロードできます。  
   
-- [Windows Phone 用の My Server のインストール](http://www.windowsphone.com/store/app/my-server/6c2f98d5-6fcf-4e1d-b8b1-cde62ea1a94a)  
+- [Windows Phone 用 My Server のインストール](http://www.windowsphone.com/store/app/my-server/6c2f98d5-6fcf-4e1d-b8b1-cde62ea1a94a)  
   
-- [Windows Phone 用の My Server 2012 R2 をインストールする](http://www.windowsphone.com/store/app/my-server-2012-r2/44f596b5-0477-4096-b96e-ddd6ef64ad6b)  
+- [Windows Phone 用 My Server 2012 R2 のインストール](http://www.windowsphone.com/store/app/my-server-2012-r2/44f596b5-0477-4096-b96e-ddd6ef64ad6b)  
   
   My Server phone アプリの詳細については、ブログ記事「 [Windows Server Essentials 用の My server phone アプリ](https://blogs.technet.com/b/sbs/archive/2012/09/18/my-server-phone-app-for-windows-server-2012-essentials.aspx)」を参照してください。 My Server 2012 R2 Phone アプリの詳細については、ブログ エントリの「 [My Server 2012 R2 Windows および Windows Phone アプリ](https://blogs.technet.com/b/sbs/archive/2013/11/19/my-server-2012-r2-windows-and-windows-phone-apps.aspx)」を参照してください。  
   
@@ -94,23 +81,14 @@ ms.locfileid: "80852085"
 
  Office 365 は使い勝手の良い Web 対応ツールのセットです。これを利用すると、どこにいても、あらゆるデバイスから電子メール、重要なドキュメント、連絡先、カレンダーにアクセスできます。 詳細については、「[クイックスタートガイド Microsoft Office 365 を使用するに](Quick-Start-Guide-to-Using-Microsoft-Office-365-with-Windows-Server-Essentials.md)は」を参照してください。  
 
- Office 365 は使い勝手の良い Web 対応ツールのセットです。これを利用すると、どこにいても、あらゆるデバイスから電子メール、重要なドキュメント、連絡先、カレンダーにアクセスできます。 詳細については、「[クイックスタートガイド Microsoft Office 365 を使用するに](../use/Quick-Start-Guide-to-Using-Microsoft-Office-365-with-Windows-Server-Essentials.md)は」を参照してください。  
-
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
   
 -   [Anywhere Access の管理](../manage/Manage-Anywhere-Access-in-Windows-Server-Essentials.md)  
-  
 
 -   [接続の取得](Get-Connected-in-Windows-Server-Essentials.md)  
   
 -   [共有フォルダーの使用](Use-Shared-Folders-in-Windows-Server-Essentials.md)  
   
--   [デジタルメディアを再生する](Play-Digital-Media-in-Windows-Server-Essentials.md)
-
--   [接続の取得](../use/Get-Connected-in-Windows-Server-Essentials.md)  
-  
--   [共有フォルダーの使用](../use/Use-Shared-Folders-in-Windows-Server-Essentials.md)  
-  
--   [デジタルメディアを再生する](../use/Play-Digital-Media-in-Windows-Server-Essentials.md)
+-   [デジタル メディアの再生](Play-Digital-Media-in-Windows-Server-Essentials.md)
 
