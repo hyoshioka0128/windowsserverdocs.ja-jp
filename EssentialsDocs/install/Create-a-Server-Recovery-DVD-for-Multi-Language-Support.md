@@ -7,12 +7,12 @@ ms.topic: article
 ms.assetid: c7da0f6c-9732-4784-9c28-7dad72c4071d
 author: daveba
 ms.author: daveba
-ms.openlocfilehash: b71fc748f7cc8d82420b7a62fe502135036db727
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 9cafaf25a18ffe17894e11ff0676e492656e5831
+ms.sourcegitcommit: fdc3ce1992f4dd6ea1771479d525126abbbcfa72
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80312112"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85256671"
 ---
 # <a name="create-a-server-recovery-dvd-for-multi-language-support"></a>複数言語サポート用のサーバー回復 DVD の作成
 
@@ -66,7 +66,7 @@ ms.locfileid: "80312112"
 > [!NOTE]
 >  Windows Server 2012 の言語パックがインストールされていることを確認します。 これで適切なブランド化を取得できます。 Windows Server 2012 多言語ユーザーインターフェイス言語パックは、 [Microsoft.com](https://www.microsoft.com/OEM/en/installation/downloads/Pages/technical-downloads.aspx)で入手できます。 「[チュートリアル:](https://technet.microsoft.com/library/jj126995.aspx)多言語の windows イメージの作成」で説明されている手順に従って、Windows Server Essentials 言語パックをインストール .wim に追加します。  
 >   
->  Windows Server Essentials 言語パックは、/言語パックの言語パックメディアに含まれています。 < の\\は、\>です。  
+>  Windows Server Essentials 言語パックは、言語パックメディア () の言語パックメディアで利用できます。この言語パックは、 \\<の選別 \> します。  
   
 > [!NOTE]
 >  Windows Server 2012 のリリース以前は、すべての言語パックを利用できない場合があります。  
@@ -102,15 +102,10 @@ ms.locfileid: "80312112"
     Dism /Unmount-Wim /MountDir:C:\InstallMount /Commit  
     ```  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
 
- [イメージ  の作成とカスタマイズ](Creating-and-Customizing-the-Image.md)  
+ [イメージの作成とカスタマイズ](Creating-and-Customizing-the-Image.md)   
  [追加のカスタマイズ](Additional-Customizations.md)   
- [展開  のイメージの準備](Preparing-the-Image-for-Deployment.md)  
+ [展開のためのイメージの準備](Preparing-the-Image-for-Deployment.md)   
  [カスタマー エクスペリエンスのテスト](Testing-the-Customer-Experience.md)
-
- [イメージ  の作成とカスタマイズ](../install/Creating-and-Customizing-the-Image.md)  
- [追加のカスタマイズ](../install/Additional-Customizations.md)   
- [展開  のイメージの準備](../install/Preparing-the-Image-for-Deployment.md)  
- [カスタマー エクスペリエンスのテスト](../install/Testing-the-Customer-Experience.md)
 

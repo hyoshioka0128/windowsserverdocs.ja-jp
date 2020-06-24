@@ -8,27 +8,27 @@ ms.assetid: a455c6b4-b29f-4f76-8c6b-1578b6537717
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 9ddeaedb09346216585b2eb1237ed9340da59756
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 4066e003e2b32ddf746b9a37a10ebecfa3c50851
+ms.sourcegitcommit: 6d6a0225b1f83b71fcb494b94d666cd5e54c7566
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80817975"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85267623"
 ---
 # <a name="deploy-windows-server-essentials-experience-as-a-hosted-server"></a>Windows Server Essentials Experience をホストされたサーバーとして配置
 
 >適用対象: windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-このドキュメントには、Windows server Essentials エクスペリエンス役割 (ドキュメントの残りの部分では Windows Server Essentials と呼ばれます) を使用して Microsoft Windows Server 16 を展開するホストに固有の情報が含まれています。Windows Server Essentials エクスペリエンスをサービスとして顧客に提供することを意図しています。 このドキュメントには、次のセクションがあります。  
+このドキュメントには、windows server Essentials エクスペリエンス役割 (ドキュメントの残りの部分では Windows Server Essentials と呼ばれます) を使用して Microsoft Windows Server 16 を展開し、Windows Server Essentials エクスペリエンスをサービスとして顧客に提供する予定のホストに固有の情報が含まれています。 このドキュメントには、次のセクションが含まれます。  
   
 
 -   [Windows Server Essentials エクスペリエンスの概要](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_WSEEOverview)  
   
 -   [Windows Server Essentials エクスペリエンスをホストする利点](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_Benefits)  
   
--   [サポートされている配置オプション](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_SupportedDeployment)  
+-   [サポートされているデプロイ オプション](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_SupportedDeployment)  
   
--   [サポートされているネットワークトポロジ](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_SupportedToplogy)  
+-   [サポートされているネットワーク トポロジ](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_SupportedToplogy)  
   
 -   [Windows Server Essentials エクスペリエンス役割のイメージのカスタマイズ](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_CustomizeImage)  
   
@@ -36,37 +36,13 @@ ms.locfileid: "80817975"
   
 -   [Windows Small Business Server から Windows Server Essentials エクスペリエンスへのデータの移行](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_Migrate)  
   
--   [Windows PowerShell を使用して一般的なタスクを実行する](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_PowerShell)  
+-   [Windows PowerShell を使用した一般的なタスクの実行](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_PowerShell)  
   
--   [Windows Server Essentials との電子メールの統合](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_EmailIntegration)  
+-   [Windows Server Essentials と電子メールの統合](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_EmailIntegration)  
   
--   [ネイティブツールを使用した監視と管理](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_Monitoring)  
+-   [ネイティブ ツールを使用した監視と管理](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_Monitoring)  
   
--   [テストシナリオ](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_Scenarios)  
-  
--   [サポート情報](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_Support)  
-
--   [Windows Server Essentials エクスペリエンスの概要](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_WSEEOverview)  
-  
--   [Windows Server Essentials エクスペリエンスをホストする利点](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_Benefits)  
-  
--   [サポートされている配置オプション](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_SupportedDeployment)  
-  
--   [サポートされているネットワークトポロジ](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_SupportedToplogy)  
-  
--   [Windows Server Essentials エクスペリエンス役割のイメージのカスタマイズ](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_CustomizeImage)  
-  
--   [Windows Server Essentials エクスペリエンスの展開の自動化](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_AutomateDeployment)  
-  
--   [Windows Small Business Server から Windows Server Essentials エクスペリエンスへのデータの移行](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_Migrate)  
-  
--   [Windows PowerShell を使用して一般的なタスクを実行する](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_PowerShell)  
-  
--   [Windows Server Essentials との電子メールの統合](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_EmailIntegration)  
-  
--   [ネイティブツールを使用した監視と管理](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_Monitoring)  
-  
--   [テストシナリオ](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_Scenarios)  
+-   [テスト シナリオ](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_Scenarios)  
   
 -   [サポート情報](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_Support)  
 
@@ -76,7 +52,7 @@ ms.locfileid: "80817975"
   
 -   **データの保存と保護**ネットワーク内のサーバーとクライアントコンピューター (75 未満) をバックアップすることで、顧客の "され s データを一元化された場所に保存し、サーバーとクライアントのデータを保護することができます。  
   
--   **ユーザー管理** : 簡素化されたサーバー ダッシュボードを使用して、ユーザーとグループを管理することができます。 さらに、Microsoft Azure Active Directory (Azure AD) との統合により、ユーザーのドメイン資格情報を使用して、Microsoft オンラインサービス (Office 365、Exchange Online、SharePoint Online など) へのデータアクセスを容易に行うことができます。  
+-   **ユーザー管理**: 簡素化されたサーバー ダッシュボードを使用して、ユーザーとグループを管理することができます。 さらに、Microsoft Azure Active Directory (Azure AD) との統合により、ユーザーのドメイン資格情報を使用して、Microsoft オンラインサービス (Office 365、Exchange Online、SharePoint Online など) へのデータアクセスを容易に行うことができます。  
   
 -   **サービスの統合**サーバーは、Microsoft オンラインサービス (Office 365、SharePoint Online、Microsoft Azure Backup など) と統合できます。 サーバーは、サード パーティ プロバイダーによって提供されるサービスと統合することもできます。  
   
@@ -93,7 +69,7 @@ ms.locfileid: "80817975"
   
 -   **簡素化されたダッシュボード**: Windows Server Essentials ダッシュボードにより、サーバー フォルダー、サーバー記憶域、バックアップと復元、ユーザーまたはグループ アカウント、デバイス、リモート アクセス、および電子メールの管理などの一般的なタスクが簡単になります。 小規模および中規模企業のお客様は、技術サポートのためにヘルプ デスクを呼び出すことなく、日常の管理タスクを実行できます。  
   
--   **拡張性** : Windows Server Essentials ダッシュボードおよび Windows Server Essentials コネクタ ソフトウェアは拡張可能です。 独自のブランドおよびサービス統合を追加できるため、お客様は、サーバーとサービスに関するすべてのものを 1 つのエントリ ポイントで利用できます。  
+-   **拡張性**: Windows Server Essentials ダッシュボードおよび Windows Server Essentials コネクタ ソフトウェアは拡張可能です。 独自のブランドおよびサービス統合を追加できるため、お客様は、サーバーとサービスに関するすべてのものを 1 つのエントリ ポイントで利用できます。  
   
 -   **監視**: Windows Server Essentials を実行している複数のサーバーの監視および管理に、System Center Monitoring Pack の新しいバージョンを使用できます。 管理パックをダウンロードするには、「 [Windows Server Essentials 用 System Center 管理パック](https://www.microsoft.com/download/details.aspx?id=40809)」を参照してください。  
   
@@ -183,7 +159,7 @@ Install-WssVpnServer -IPv4AddressRange ('192.168.0.160','192.168.0.240') -ApplyT
   
 - **記憶域スペース**: 記憶域スペースの作成または管理のための UI はダッシュボードに表示されません。  
   
-- **Anywhere Access** : Anywhere Access のセットアップ ウィザードを実行すると、既定でルーターと VPN の構成がスキップされます。  
+- **Anywhere Access**: Anywhere Access のセットアップ ウィザードを実行すると、既定でルーターと VPN の構成がスキップされます。  
   
   示されている各機能の動作を制御したい場合は、それぞれの対応するレジストリ キーを設定できます。 レジストリ キーを設定する方法については、「 [Windows Server 2012 R2 での Windows Server Essentials のカスタマイズと展開](https://technet.microsoft.com/library/dn293241.aspx)」を参照してください。  
   
@@ -195,7 +171,7 @@ Install-WssVpnServer -IPv4AddressRange ('192.168.0.160','192.168.0.240') -ApplyT
 -   Windows PowerShell を使用して Windows Server Essentials エクスペリエンス役割をインストールする方法については、「 [Windows Server essentials のインストールと構成](https://technet.microsoft.com/library/dn281793.aspx)」を参照してください。  
   
 > [!NOTE]
->  ホスト仮想マシンと Windows Server Essentials エクスペリエンスのタイムゾーン設定が同じであることを確認してください。 同じでない場合、いくつかのエラーが発生する可能性があります。 たとえば、証明書関連のタスクで、サーバーの初期構成が正常に完了していない場合、Windows Server Essentials エクスペリエンスの役割がインストールされてから数時間、証明書が機能しない可能性があり、デバイス情報が更新されないことがあります。なく.  
+>  ホスト仮想マシンと Windows Server Essentials エクスペリエンスのタイムゾーン設定が同じであることを確認してください。 同じでない場合、いくつかのエラーが発生する可能性があります。 たとえば、証明書関連のタスクで、サーバーの初期構成が正常に完了しない場合、Windows Server Essentials エクスペリエンスの役割がインストールされてから数時間後に証明書が機能しない可能性があり、デバイス情報が正しく更新されないことがあります。  
   
  展開後、Windows PowerShell コマンドレット **Get-WssConfigurationStatus** を使用して、初期構成が成功したかどうかを確認します。 返されるステータスは、次のいずれかになるはずです。 **Notstarted**、 **FinishedWithWarning**、 **Running**、 **Finished**、 **Failed**、または **PendingReboot**。  
   
@@ -223,7 +199,7 @@ New-ItemProperty "HKLM:\Software\Microsoft\Windows Server\Setup"Ã‚Â  -Name 
  ここでは、Windows PowerShell を使用して実行できる一般的ないくつかのタスクについて説明します。  
   
 ### <a name="enable-remote-web-access"></a>リモート Web アクセスを有効にする  
- **構文**:  
+ **構文**：  
   
  Enable-WssRemoteWebAccess [-SkipRouter] [-DenyAccessByDefault] [-ApplyToExistingUsers]  
   
@@ -233,10 +209,10 @@ New-ItemProperty "HKLM:\Software\Microsoft\Windows Server\Setup"Ã‚Â  -Name 
   
  このコマンドは、ルーターを自動的に構成する設定でリモート Web アクセスを有効にし、すべての既存ユーザーの既定のアクセス許可を変更します。  
   
-### <a name="add-user"></a>ユーザーを追加する  
- **構文**:  
+### <a name="add-user"></a>ユーザーの追加  
+ **構文**：  
   
- 追加 WssUser [-Name] < 文字列\> [-Password] < securestring\> [-AccessLevel < string\> {User &#124; Administrator}] [-FirstName < string\>] [-LastName < string\>] [-allowremoteaccess] [-AllowVpnAccess] [< commonparameters\>]  
+ Add WssUser [-Name] <string \> [-Password] <securestring \> [-accesslevel <string \> {User &#124; Administrator}] [-FirstName <string \> ] [-LastName <string \> ] [-Allowremoteaccess] [-allowvpnaccess] [<commonparameters \> ]  
   
  **例**:  
   
@@ -245,9 +221,9 @@ New-ItemProperty "HKLM:\Software\Microsoft\Windows Server\Setup"Ã‚Â  -Name 
  このコマンドは、User2Test という名前の管理者をパスワード Passw0rd! で追加します。  
   
 ### <a name="add-server-folder"></a>サーバー フォルダーの追加  
- **構文**:  
+ **構文**：  
   
- 追加-WssFolder [-Name] < 文字列\> [-Path] < 文字列\> [[-Description] < 文字列\>] [-KeepPermissions] [< CommonParameters\>]  
+ 追加-WssFolder [-Name] <string \> [-Path] <string \> [[-Description] <string \> ] [-keeppermissions] [<commonparameters \> ]  
   
  **例**:  
   
@@ -313,7 +289,7 @@ New-ItemProperty "HKLM:\Software\Microsoft\Windows Server\Setup"Ã‚Â  -Name 
 -   **クライアント ベア メタル回復** : Windows プレインストール環境では VPN 接続をサポートしないため、クライアント ベア メタル回復はサポートされません。 「 [Windows Server 2012 R2 での Windows Server Essentials のカスタマイズと展開](https://technet.microsoft.com/library/dn293241.aspx)」の手順に従って、クライアント復元サービス タスクを非表示にする必要があります。  
   
 ##### <a name="file-history"></a>ファイル履歴  
- ファイル履歴は、プロファイル データ (ライブラリ、デスクトップ、連絡先、お気に入り) をネットワーク共有にバックアップするための Windows 8.1 および Windows 8 の機能です。 Windows Server Essentials ネットワークに参加している Windows 8.1 または Windows 8 を実行しているすべてのコンピューターのファイル履歴設定を一元的に管理できます。 バックアップ データは、Windows Server Essentials を実行しているサーバーに保存されます。 「 [Windows Server 2012 R2 での Windows Server Essentials のカスタマイズと展開](https://technet.microsoft.com/library/dn293241.aspx)」の手順に従って、クライアント復元サービス タスクを非表示にする必要があります  
+ ファイル履歴は、プロファイル データ (ライブラリ、デスクトップ、連絡先、お気に入り) をネットワーク共有にバックアップするための Windows 8.1 および Windows 8 の機能です。 Windows Server Essentials ネットワークに参加している Windows 8.1 または Windows 8 を実行しているすべてのコンピューターのファイル履歴設定を一元的に管理できます。 バックアップ データは、Windows Server Essentials を実行しているサーバーに保存されます。 「 [Windows server 2012 R2 での Windows Server Essentials のカスタマイズと展開](https://technet.microsoft.com/library/dn293241.aspx)」の手順に従って、クライアント復元サービスタスクを非表示にする必要があります。  
   
 ### <a name="storage-management"></a>記憶域の管理  
  記憶域により、異種ハード ドライブの物理記憶域容量の集計、ハード ドライブの動的な追加、復元レベルを指定したデータ ボリュームの作成が可能になります。 これは、ホストまたは仮想マシンで実行できます。 Windows Server Essentials を実行している仮想マシンでこの機能を非表示にする場合は「 [Windows Server 2012 R2 での Windows Server Essentials のカスタマイズと展開](https://technet.microsoft.com/library/dn293241.aspx)」の手順に従います。  
@@ -328,7 +304,7 @@ New-ItemProperty "HKLM:\Software\Microsoft\Windows Server\Setup"Ã‚Â  -Name 
   
 -   [サーバー管理](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_ServerManage)  
   
--   [クライアントエクスペリエンス](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_ClientXP)  
+-   [クライアント エクスペリエンス](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_ClientXP)  
 
   
 ###  <a name="server-deployment"></a><a name="BKMK_ServerDeploy"></a>サーバーの展開  
@@ -396,9 +372,9 @@ New-ItemProperty "HKLM:\Software\Microsoft\Windows Server\Setup"Ã‚Â  -Name 
   
 -   [Windows Server Essentials ソフトウェア開発キット](https://msdn.microsoft.com/library/gg513877.aspx)』  
   
--   [Windows server 2012 R2 での Windows Server Essentials のカスタマイズと展開](https://technet.microsoft.com/library/dn293241.aspx)  
+-   [Windows Server 2012 R2 での Windows Server Essentials のカスタマイズと展開](https://technet.microsoft.com/library/dn293241.aspx)  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>こちらもご覧ください  
   
 -   [Windows Server Essentials の新機能](../get-started/what-s-new.md)  
 

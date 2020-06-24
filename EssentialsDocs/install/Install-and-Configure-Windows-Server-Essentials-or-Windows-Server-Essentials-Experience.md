@@ -8,12 +8,12 @@ ms.assetid: 48ea6cd4-3955-4aaf-9236-2515a6c3e730
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 2605483de447e78fc1bd091d911867656c8ab8b6
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 46fd1ec7f76c6381ed9d725f5628a9a8fc760e9d
+ms.sourcegitcommit: 6d6a0225b1f83b71fcb494b94d666cd5e54c7566
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80820053"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85267583"
 ---
 # <a name="install-and-configure-windows-server-essentials-or-windows-server-essentials-experience"></a>Windows Server Essentials または Windows Server Essentials エクスペリエンスのインストールと構成
 
@@ -21,7 +21,7 @@ ms.locfileid: "80820053"
 
 Windows Server Essentials は、最大25人のユーザーと50のデバイスを備えた小規模企業向けの理想的な最初のサーバーです。 最大100のユーザーと200のデバイスがある組織では、windows server Essentials Experience 役割がインストールされた Windows Server 2012 R2 を使用できるようになりました。 このトピックでは両方のシナリオについて説明します。  
   
-Windows server Essentials エクスペリエンスは、windows server 2016 の役割であり、windows server Essentials で使用可能なすべての機能 (リモート Web アクセス、PC バックアップなど) を利用できます。ロックと制限はありません。 Windows Server Essentials。 このサーバーの役割は、Windows Server Essentials でも使用でき、既定で有効になっています。
+Windows server Essentials エクスペリエンスは Windows server 2016 の役割であり、windows server essentials で適用されるロックや制限なしに、Windows server Essentials で利用可能なすべての機能 (リモート Web アクセス、PC バックアップなど) を利用できます。 このサーバーの役割は、Windows Server Essentials でも使用でき、既定で有効になっています。
   
 Windows Server Essentials または Essentials エクスペリエンスロールをインストールする前に、次の制限事項に注意してください。  
   
@@ -45,14 +45,14 @@ Windows Server Essentials または Essentials エクスペリエンスロール
   
 -    Windows server Essentials の役割がインストールされた windows Server 2016  
  
-|展開環境|説明|関連項目|  
+|デプロイ環境|Description|関連項目|  
 |----------------------------|-----------------|---------------------|  
-|新しい Active Directory 環境|Windows Server Essentials をインストールして、新しい Active Directory 環境を作成することができます。|[Windows Server Essentials を展開して新しい Active Directory 環境をセットアップする](Install-and-Configure-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md#BKMK_NewAD)|  
-|既存の Active Directory 環境|既存の Active Directory 環境に Windows Server Essentials をインストールすることができます。|[Windows Server Essentials を既存の Active Directory 環境に展開する](Install-and-Configure-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md#BKMK_ExistingAD)|  
-|仮想環境|Windows Server Essentials を仮想マシンとして展開できます。|[環境を仮想化する](Install-and-Configure-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md#BKMK_VirtualWSE)|  
-|自動展開|Windows PowerShell を使用して Windows Server Essentials の展開を自動化することができます。|[Windows PowerShell を使用した Windows Server Essentials のインストールと構成](Install-and-Configure-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md#BKMK_PowerShell)|  
+|新しい Active Directory 環境|Windows Server Essentials をインストールして、新しい Active Directory 環境を作成することができます。|[Windows Server Essentials を展開して、新しい Active Directory 環境をセットアップする](Install-and-Configure-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md#BKMK_NewAD)|  
+|既存の Active Directory 環境|既存の Active Directory 環境に Windows Server Essentials をインストールすることができます。|[既存の Active Directory 環境に Windows Server Essentials を展開する](Install-and-Configure-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md#BKMK_ExistingAD)|  
+|仮想環境|Windows Server Essentials を仮想マシンとして展開できます。|[環境の仮想化](Install-and-Configure-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md#BKMK_VirtualWSE)|  
+|自動化されたデプロイ|Windows PowerShell を使用して Windows Server Essentials の展開を自動化することができます。|[Windows PowerShell を使用して、Windows Server Essentials をインストールおよび構成する](Install-and-Configure-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md#BKMK_PowerShell)|  
   
-## <a name="before-you-begin"></a>始める前に  
+## <a name="before-you-begin"></a>開始する前に  
  インストールを開始する前に、次のドキュメントを確認してください。  
   
 -   [Windows Server Essentials 製品の概要](https://www.microsoft.com/server-cloud/windows-server-essentials/windows-server-2012-r2-essentials.aspx)  
@@ -69,17 +69,17 @@ Windows Server Essentials または Essentials エクスペリエンスロール
   
 ##### <a name="to-configure-windows-server-essentials-on-a-physical-server"></a>物理サーバーで Windows Server Essentials を構成するには  
   
-1. Windows **[ようこそ]** ページの後、**Windows Server Essentials の構成ウィザード**がデスクトップに表示されます。  
+1. Windows [**ようこそ**] ページの後、**Windows Server Essentials の構成ウィザード**がデスクトップに表示されます。  
   
 2. 次のように、指示に従ってウィザードを完了します。  
   
-   1.  **[Windows Server Essentials の構成]** ページで、 **[次へ]** をクリックします。  
+   1.  [**Windows Server Essentials の構成**] ページで、[**次へ**] をクリックします。  
   
-   2.  **[時刻の設定]** で、日付、時刻、タイム ゾーンが正しいことを確認し、 **[次へ]** をクリックします。  
+   2.  [**時刻の設定**] で、日付、時刻、タイム ゾーンが正しいことを確認し、[**次へ**] をクリックします。  
   
-   3.  **[会社についての情報]** に、「**Contoso,Ltd.** 」などの会社名を入力し、 **[次へ]** をクリックします。 オプションで、内部ドメイン名とサーバー名を変更することができます。  
+   3.  [**会社についての情報**] に、「**Contoso,Ltd.**」などの会社名を入力し、[**次へ**] をクリックします。 オプションで、内部ドメイン名とサーバー名を変更することができます。  
   
-   4.  **[ネットワーク管理者の作成]** で、新しい管理者アカウント名とパスワードを入力します。  
+   4.  [**ネットワーク管理者の作成**] で、新しい管理者アカウント名とパスワードを入力します。  
   
        > [!NOTE]
        >  既定の **Administrator** アカウント名とパスワードは使用しないでください。  
@@ -88,7 +88,7 @@ Windows Server Essentials または Essentials エクスペリエンスロール
   
 3. 構成プロセス中にサーバーが複数回再起動し、構成が完了するまで、ログオンが自動的に行われます。 このプロセスには約 20 分かかります。  
   
-4. デスクトップで、ダッシュボード アイコンをクリックし、サーバーを起動します。 **[ホーム]** ページで、 **[セットアップ]** タブに表示されている **[作業の開始]** タスクを実行します。  
+4. デスクトップで、ダッシュボード アイコンをクリックし、サーバーを起動します。 [**ホーム**] ページで、[**セットアップ**] タブに表示されている [**作業の開始**] タスクを実行します。  
   
    サーバーの構成を完了すると、Windows Server Essentials を実行しているサーバーがドメイン コントローラーとして設定されます。  
   
@@ -99,19 +99,19 @@ Windows Server Essentials または Essentials エクスペリエンスロール
   
 1.  ローカル管理者としてサーバーにログオンします。  
   
-2.  **サーバー マネージャー**を開いて、 **[役割と機能の追加]** をクリックします。  
+2.  **サーバー マネージャー**を開いて、[**役割と機能の追加**] をクリックします。  
   
-3.  **[サーバーの役割の選択]** で、 **[Windows Server Essentials エクスペリエンス]** 役割を選択します。 ダイアログ ボックスで、 **[機能の追加]** をクリックし、 **[次へ]** をクリックします。  
+3.  [**サーバーの役割の選択**] で、[**Windows Server Essentials エクスペリエンス**] 役割を選択します。 ダイアログ ボックスで、[**機能の追加**] をクリックし、[**次へ**] をクリックします。  
   
-4.  **[機能]** で、 **[次へ]** をクリックします。  
+4.  [**機能**] で、[**次へ**] をクリックします。  
   
-5.  **[Windows Server Essentials エクスペリエンス]** 役割の説明を確認して、 **[次へ]** をクリックします。  
+5.  [**Windows Server Essentials エクスペリエンス**] 役割の説明を確認して、[**次へ**] をクリックします。  
   
-6.  次のページで **[次へ]** をクリックし、確認ページで、 **[インストール]** をクリックします。  
+6.  次のページで [**次へ**] をクリックし、確認ページで、[**インストール**] をクリックします。  
   
 7.  インストールが完了したら、Windows Server Essentials エクスペリエンスをサーバーの役割としてサーバーマネージャーに表示する必要があります。  
   
-8.  サーバー マネージャーのフラグ通知領域で、フラグをクリックし、 **[Windows Server Essentials の構成]** をクリックします。  
+8.  サーバー マネージャーのフラグ通知領域で、フラグをクリックし、[**Windows Server Essentials の構成**] をクリックします。  
   
 9. (省略可能) 必要に応じて、サーバー名を変更します。  
   
@@ -147,33 +147,30 @@ Windows Server Essentials または Essentials エクスペリエンスロール
   
 4.  サーバー マネージャーを開いて、[**役割と機能の追加]** をクリックします。  
   
-5.  次のページで、 **[次へ]** をクリックします。  
+5.  次のページで、[**次へ**] をクリックします。  
   
-6.  **[サーバーの役割の選択]** で、 **[Windows Server Essentials エクスペリエンス]** を選択します。 ダイアログ ボックスで、 **[機能の追加]** をクリックし、 **[次へ]** をクリックします。  
+6.  [**サーバーの役割の選択**] で、[**Windows Server Essentials エクスペリエンス**] を選択します。 ダイアログ ボックスで、[**機能の追加**] をクリックし、[**次へ**] をクリックします。  
   
-7.  **[機能]** で、 **[次へ]** をクリックします。  
+7.  [**機能**] で、[**次へ**] をクリックします。  
   
-8.  **[Windows Server Essentials エクスペリエンス]** の説明を確認して、 **[次へ]** をクリックします。  
+8.  [**Windows Server Essentials エクスペリエンス**] の説明を確認して、[**次へ**] をクリックします。  
   
-9. 次のページで **[次へ]** をクリックし、確認ページで、 **[インストール]** をクリックします。  
+9. 次のページで [**次へ**] をクリックし、確認ページで、[**インストール**] をクリックします。  
   
 10. インストールが完了すると、Windows Server Essentials エクスペリエンスがサーバーマネージャーにサーバーの役割として表示されます。  
   
-11. **サーバー マネージャー**のフラグ通知領域で、フラグをクリックし、 **[Windows Server Essentials の構成]** をクリックします。  
+11. **サーバー マネージャー**のフラグ通知領域で、フラグをクリックし、[**Windows Server Essentials の構成**] をクリックします。  
   
-12. ウィザードに従って、Windows Server Essentials を構成します。 Active Directory 構成に応じて、Windows Server Essentials をドメイン コントローラー上に構成しているか、またはドメイン メンバーとして構成しているかどうかが通知されます。 **[構成]** をクリックして、構成を開始します。 構成プロセスが完了するまで、約 10 分かかります。  
+12. ウィザードに従って、Windows Server Essentials を構成します。 Active Directory 構成に応じて、Windows Server Essentials をドメイン コントローラー上に構成しているか、またはドメイン メンバーとして構成しているかどうかが通知されます。 [**構成**] をクリックして、構成を開始します。 構成プロセスが完了するまで、約 10 分かかります。  
   
 ##  <a name="virtualize-your-environment"></a><a name="BKMK_VirtualWSE"></a>環境を仮想化する  
   Windows Server Essentials、Windows Server 2012 R2 Standard、および Windows Server 2012 R2 Datacenter は、仮想マシンとして実行できます。 Hyper-V を実行するサーバーで、Hyper-V 管理ツールを使用して仮想マシンを実行します。 Windows Server Essentials では、ライセンスの観点から、Hyper-v の役割を設定し、環境を仮想化することができます。 このライセンスでは、Windows Server Essentials を実行している別のゲストオペレーティングシステムをセットアップすることができます。 Windows Server Essentials では、システムプロバイダー "され s の構成に応じて、仮想化環境をシームレスに設定できます。  
   
 #### <a name="to-deploy-windows-server-essentials-as-a-virtual-machine"></a>Windows Server Essentials を仮想マシンとして展開するには  
   
-1.  Windows の [ようこそ] ページの後 (システムプロバイダーの "され s 構成" によって異なります) で、[**開始する前**に] ページに、仮想インスタンスとして、または物理ハードウェア上に Windows Server Essentials を設定するオプションが表示されます。 これらのオプションが使用できるかどうかは、システム プロバイダーによって事前定義されており、両方のオプションが常に使用できるとは限りません。 Windows Server Essentials を仮想マシンとしてインストールするには、 **[Windows Server essentials のインストール]** で、 **[仮想インスタンスとしてインストール]** を選択し、 **[構成]** をクリックします。  
+1.  Windows の [ようこそ] ページの後 (システムプロバイダーの "され s 構成" によって異なります) で、[**開始する前**に] ページに、仮想インスタンスとして、または物理ハードウェア上に Windows Server Essentials を設定するオプションが表示されます。 これらのオプションが使用できるかどうかは、システム プロバイダーによって事前定義されており、両方のオプションが常に使用できるとは限りません。 Windows Server Essentials を仮想マシンとしてインストールするには、[ **Windows Server essentials のインストール**] で、[**仮想インスタンスとしてインストール**] を選択し、[**構成**] をクリックします。  
   
-2.  ウィザードによって仮想マシンがプロビジョニングされますが、これには約 5 分かかります。  
-  
-
-3.  次に、windows [Server essentials の展開](Install-and-Configure-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md#BKMK_WSEDeploy)に関するセクションで前述したように、Windows server essentials を構成します。  
+2.  ウィザードによって仮想マシンがプロビジョニングされますが、これには約 5 分かかります。
 
 3.  次に、windows [Server essentials の展開](Install-and-Configure-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md#BKMK_WSEDeploy)に関するセクションで前述したように、Windows server essentials を構成します。  
 
@@ -210,9 +207,9 @@ Windows Server Essentials または Essentials エクスペリエンスロール
   
     -   インストール状態が進行状況バーに表示されるようにするには、 `Get-WssConfigurationStatus  œShowProgress`を実行します。  
   
-    -   進行状況バーなしで、即時の進行状況を得るには、`Get-WssConfigurationStatus` を実行します。  
+    -   進行状況バーなしで、即時の進行状況を得るには、 `Get-WssConfigurationStatus`を実行します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>こちらもご覧ください  
   
 -   [Windows Server Essentials の新機能](../get-started/what-s-new.md)  
   

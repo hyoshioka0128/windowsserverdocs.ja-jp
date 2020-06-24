@@ -8,31 +8,29 @@ ms.assetid: 71e3243e-2da9-409a-ae1f-813d4c9062e1
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 6a8c8a142cb40b8211450d16753ec9796987d208
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3a64bbb83f416d6791abbb51f3fc000b418bc0e4
+ms.sourcegitcommit: fdc3ce1992f4dd6ea1771479d525126abbbcfa72
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852515"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85256548"
 ---
 # <a name="migrate-windows-small-business-server-2008-to-windows-server-essentials"></a>Windows Small Business Server 2008 から Windows Server Essentials への移行
 
 >適用対象: windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-このガイドでは、既存の Windows SBS 2008 ドメインを新しいハードウェア上の Windows Server&reg; 2012 Essentials に移行してから、設定とデータを移行する方法について説明します。 このガイドでは、移行の完了後に Windows Server Essentials ネットワークから既存のサーバーを削除する方法についても説明します。  
+このガイドでは、既存の Windows SBS 2008 ドメインを &reg; 新しいハードウェア上の Windows Server 2012 Essentials に移行してから、設定とデータを移行する方法について説明します。 このガイドでは、移行の完了後に Windows Server Essentials ネットワークから既存のサーバーを削除する方法についても説明します。  
   
 > [!NOTE]
 >  移行中の問題を回避するために、Windows Server Essentials 製品開発チームでは、移行を開始する前にこのドキュメントを読むことを強くお勧めします。  
 > 
 > [!NOTE]
 > 
->  サーバーデータを最新バージョンの Windows Server Essentials に移行する方法については、「 [Windows Server essentials への移行](Migrate-from-Previous-Versions-to-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md)」を参照してください。  
-> 
->  サーバーデータを最新バージョンの Windows Server Essentials に移行する方法については、「 [Windows Server essentials への移行](../migrate/Migrate-from-Previous-Versions-to-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md)」を参照してください。  
+>  サーバーデータを最新バージョンの Windows Server Essentials に移行する方法については、「 [Windows Server essentials への移行](Migrate-from-Previous-Versions-to-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md)」を参照してください。
 
   
 ## <a name="additional-resources"></a>その他のリソース  
- 移行プロセスを実行するために役立つその他の情報、ツール、およびコミュニティリソースへのリンクについては、「 [Windows Small Business Server の移行](https://go.microsoft.com/fwlink/?LinkId=217520)」 web サイトを参照してください。  
+ 移行プロセスを案内する追加情報、ツール、およびコミュニティ リソースへのリンクについては、[Windows Small Business Server の移行に関する](https://go.microsoft.com/fwlink/?LinkId=217520) Web サイトを参照してください。  
   
 ## <a name="terms-and-definitions"></a>用語と定義  
  **移行元サーバー:** 設定とデータの移行元の既存のサーバー。  
@@ -72,6 +70,6 @@ ms.locfileid: "80852515"
   
 #### <a name="to-open-a-command-prompt-window-on-the-destination-server-as-an-administrator"></a>移行先サーバーで管理者としてコマンド プロンプト ウィンドウを開くには  
   
-1.  **[スタート]** 画面で、検索ボックスに「**cmd**」と入力します。  
+1.  [**スタート**] 画面で、検索ボックスに「**cmd**」と入力します。  
   
-2.  結果一覧で **[cmd]** を右クリックし、 **[管理者として実行]** をクリックします。
+2.  結果一覧で **[cmd]** を右クリックし、**[管理者として実行]** をクリックします。

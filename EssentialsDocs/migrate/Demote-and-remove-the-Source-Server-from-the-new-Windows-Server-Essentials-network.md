@@ -8,12 +8,12 @@ ms.assetid: d9f18b29-8e03-439e-bdf0-1dac5e4f70c5
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 50d5265b4059629082b4c7ef74b0186b5d4277e7
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: fd54bb227a5abd333cfbe5e9eac7741a826857eb
+ms.sourcegitcommit: fdc3ce1992f4dd6ea1771479d525126abbbcfa72
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852605"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85256662"
 ---
 # <a name="demote-and-remove-the-source-server-from-the-new-windows-server-essentials-network1"></a>移行元サーバーを降格して新しい Windows Server Essentials ネットワークから削除する
 
@@ -22,7 +22,7 @@ ms.locfileid: "80852605"
 Windows Server Essentials のインストールを完了し、移行ウィザードのタスクを完了したら、次のタスクを実行する必要があります。  
   
 
-1.  [Exchange Server 2003 をアンインストール](Demote-and-remove-the-Source-Server-from-the-new-Windows-Server-Essentials-network.md#BKMK_UninstallExchangeServer2003)します。  
+1.  [Exchange Server 2003 をアンインストールする](Demote-and-remove-the-Source-Server-from-the-new-Windows-Server-Essentials-network.md#BKMK_UninstallExchangeServer2003)。  
   
 2.  [移行元サーバーに直接接続されているプリンターを切断する](Demote-and-remove-the-Source-Server-from-the-new-Windows-Server-Essentials-network.md#BKMK_PhysicallyDisconnect)。  
   
@@ -32,46 +32,34 @@ Windows Server Essentials のインストールを完了し、移行ウィザー
   
 5.  [移行元サーバーを削除して用途変更する](Demote-and-remove-the-Source-Server-from-the-new-Windows-Server-Essentials-network.md#BKMK_RemoveTheSourceServer)。  
 
-1.  [Exchange Server 2003 をアンインストール](../migrate/Demote-and-remove-the-Source-Server-from-the-new-Windows-Server-Essentials-network.md#BKMK_UninstallExchangeServer2003)します。  
-  
-2.  [移行元サーバーに直接接続されているプリンターを切断する](../migrate/Demote-and-remove-the-Source-Server-from-the-new-Windows-Server-Essentials-network.md#BKMK_PhysicallyDisconnect)。  
-  
-3.  [移行元サーバーを降格する](../migrate/Demote-and-remove-the-Source-Server-from-the-new-Windows-Server-Essentials-network.md#BKMK_DemoteTheSourceServer).  
-  
-4.  [DHCP サーバーの役割を移行元サーバーからルーターに移動](../migrate/Demote-and-remove-the-Source-Server-from-the-new-Windows-Server-Essentials-network.md#BKMK_MoveTheDHCPRole)します。  
-  
-5.  [移行元サーバーを削除して用途変更する](../migrate/Demote-and-remove-the-Source-Server-from-the-new-Windows-Server-Essentials-network.md#BKMK_RemoveTheSourceServer)。  
-
   
 ###  <a name="uninstall-exchange-server-2003"></a><a name="BKMK_UninstallExchangeServer2003"></a>Exchange Server 2003 のアンインストール  
   
 > [!IMPORTANT]
->  メールボックスを移行先サーバーに移動した後にユーザーアカウントを追加し、Exchange Server 2003 を移行元サーバーからアンインストールする前に、メールボックスが移行元サーバーに追加されます。 これは仕様です。 この間に追加されたすべてのユーザー アカウントについて、メールボックスを移行先サーバーに移動する必要があります。 Exchange Server 2003 をアンインストールする前に、「Windows Server Essentials への移行のために Exchange Server のメールボックスと設定を移動する」の手順を繰り返します。  
+>  メールボックスを移行先サーバーに移動した後、Exchange Server 2003 を移行元サーバーからアンインストールする前に、ユーザー アカウントを追加すると、メールボックスは移行元サーバーに追加されます。 これは仕様に基づく制限事項です。 この間に追加されたすべてのユーザー アカウントについて、メールボックスを移行先サーバーに移動する必要があります。 Exchange Server 2003 をアンインストールする前に、「Windows Server Essentials への移行のために Exchange Server のメールボックスと設定を移動する」の手順を繰り返します。  
   
- 降格する前に、移行元サーバーから Exchange Server 2003 をアンインストールする必要があります。 これにより、移行元サーバーの Exchange Server への Active Directory Domain Services (AD DS) のすべての参照が削除されます。 Exchange Server 2003 を削除するには、Windows Small Business Server 2003 メディアが必要です。  
+ 降格する前に、Exchange Server 2003 を移行元サーバーからアンインストールする必要があります。 移行元サーバーの Exchange Server に対する Active Directory Domain Services (AD DS) でのすべての参照が削除されます。 Windows Small Business Server 2003 メディアで Exchange Server 2003 を削除する必要があります。  
   
-##### <a name="to-uninstall-exchange-server-2003-from-the-source-server"></a>移行元サーバーから Exchange Server 2003 をアンインストールするには  
+##### <a name="to-uninstall-exchange-server-2003-from-the-source-server"></a>Exchange Server 2003 を移行元サーバーからアンインストールするには  
   
 1. 管理者として移行元サーバーにログオンします。  
   
-2. **[スタート]** 、 **[コントロール パネル]** 、 **[プログラムの追加と削除]** の順にクリックします。  
+2. [**スタート**]、[**コントロール パネル**]、[**プログラムの追加と削除**] の順にクリックします。  
   
-3. プログラムの一覧で、 **[Windows Small Business Server 2003]** を選択し、 **[変更と削除]** をクリックします。  
+3. プログラムの一覧で、[**Windows Small Business Server 2003**] を選択し、[**変更と削除**] をクリックします。  
   
-4. セットアップ ウィザードで、 **[コンポーネントの選択]** ページが表示されるまで **[次へ]** をクリックします。  
+4. セットアップ ウィザードで、[**コンポーネントの選択**] ページが表示されるまで [**次へ**] をクリックします。  
   
-5. コンポーネントの選択 ページで、**Exchange Server** を展開し、**削除** を選択します。  
+5. [コンポーネントの選択] ページで、[**Exchange Server**] を展開し、[**削除**] を選択します。  
   
    > [!NOTE]
    > 
-   >  Exchange Server によって、メールボックスまたはパブリック フォルダーがサーバー上にないことが確認されます。 データが残っている場合は、 **[削除]** をクリックするとエラー メッセージが表示されます。 この問題を回避するには、トピック「 [SBS 2003 の設定とデータを移行先サーバーに移動](Move-Windows-SBS-2003-settings-and-data-to-the-Destination-Server-for-Windows-Server-Essentials-migration.md)する」のすべての手順を完了していることを確認してください。  
-   > 
-   >  Exchange Server によって、メールボックスまたはパブリック フォルダーがサーバー上にないことが確認されます。 データが残っている場合は、 **[削除]** をクリックするとエラー メッセージが表示されます。 この問題を回避するには、トピック「 [SBS 2003 の設定とデータを移行先サーバーに移動](../migrate/Move-Windows-SBS-2003-settings-and-data-to-the-Destination-Server-for-Windows-Server-Essentials-migration.md)する」のすべての手順を完了していることを確認してください。  
+   >  Exchange Server によって、メールボックスまたはパブリック フォルダーがサーバー上にないことが確認されます。 データが残っている場合は、[**削除**] をクリックするとエラー メッセージが表示されます。 この問題を回避するには、トピック「 [SBS 2003 の設定とデータを移行先サーバーに移動](Move-Windows-SBS-2003-settings-and-data-to-the-Destination-Server-for-Windows-Server-Essentials-migration.md)する」のすべての手順を完了していることを確認してください。  
 
   
 6. **[次へ]** をクリックします。  
   
-7. メッセージが表示されたら、Windows Small Business Server 2003 CD # 3 を挿入し、画面の指示に従います。  
+7. プロンプトが表示されたら、Windows Small Business Server 2003 CD#3 を挿入し、画面に表示される指示に従います。  
   
 ###  <a name="disconnect-printers-that-are-directly-connected-to-the-source-server"></a><a name="BKMK_PhysicallyDisconnect"></a>移行元サーバーに直接接続されているプリンターを切断する  
  移行元サーバーを降格する前に、移行元サーバーに直接接続されていて、移行元サーバーを通して共有されているすべてのプリンターを、物理的に切断します。 移行元サーバーに直接接続されていたプリンターの Active Directory オブジェクトが残っていないことを確認します。 その後、プリンターを移行先サーバーに直接接続し、Windows Server Essentials から共有することができます。  
@@ -86,24 +74,24 @@ Windows Server Essentials のインストールを完了し、移行ウィザー
   
 1.  管理者としてクライアント コンピューターにログオンします。  
   
-2.  [コマンド プロンプト] ウィンドウを管理者として開きます。  
+2.  管理者としてコマンド プロンプト ウィンドウを開きます。  
   
 3.  コマンド プロンプトで、「**gpupdate /force**」と入力して Enter キーを押します。  
   
-4.  処理を終了するには、いったんログオフしてログオンし直すことが必要な場合があります。 **[はい]** をクリックして確認します。  
+4.  処理を終了するには、いったんログオフしてログオンし直すことが必要な場合があります。 [**はい**] をクリックして確認します。  
   
 ##### <a name="to-demote-the-source-server"></a>移行元サーバーを降格するには  
   
-1. 移行元サーバーで、 **[スタート]** 、 **[ファイル名を指定して実行]** の順にクリックし、「**dcpromo**」と入力して、 **[OK]** をクリックします。  
+1. 移行元サーバーで、[**スタート**]、[**ファイル名を指定して実行**] の順にクリックし、「**dcpromo**」と入力して、[**OK**] をクリックします。  
   
 2. **[次へ]** を 2 回クリックします。  
   
    > [!NOTE]
-   >  **[このサーバーはドメインの最後のドメイン コントローラーです]** をオンにしないでください。  
+   >  [**このサーバーはドメインの最後のドメイン コントローラーです**] をオンにしないでください。  
   
-3. サーバーの新しい管理者アカウントのパスワードを入力し、 **[次へ]** をクリックします。  
+3. サーバーの新しい管理者アカウントのパスワードを入力し、[**次へ**] をクリックします。  
   
-4. **[概要]** ダイアログボックスに、AD DS がコンピューターから削除され、サーバーがドメインのメンバーになることが通知されます。 **[次へ]** をクリックします。  
+4. [**概要**] ダイアログ ボックスでは、AD DS がコンピューターから削除されること、およびサーバーがドメインのメンバーになることが示されます。 **[次へ]** をクリックします。  
   
 5. **[完了]** をクリックします。 移行元サーバーが再起動します。  
   
@@ -113,21 +101,19 @@ Windows Server Essentials のインストールを完了し、移行ウィザー
   
 ##### <a name="to-remove-the-source-server-from-active-directory"></a>Active Directory から移行元サーバーを削除するには  
   
-1.  移行先サーバーで、 **[Active Directory ユーザーとコンピューター]** を開きます。  
+1.  移行先サーバーで、[**Active Directory ユーザーとコンピューター**] を開きます。  
   
-2.  **[Active Directory ユーザーとコンピューター]** ナビゲーション ウィンドウで、ドメイン名を展開し、 **[コンピューター]** を展開します。  
+2.  [**Active Directory ユーザーとコンピューター**] ナビゲーション ウィンドウで、ドメイン名を展開し、[**コンピューター**] を展開します。  
   
-3.  サーバーの一覧に移行元サーバーがまだ存在する場合はそれを右クリックし、 **[削除]** をクリックして、 **[はい]** をクリックします。  
+3.  サーバーの一覧に移行元サーバーがまだ存在する場合はそれを右クリックし、[**削除**] をクリックして、[**はい**] をクリックします。  
   
-4.  移行元サーバーが一覧に表示されないことを確認した後、 **[Active Directory ユーザーとコンピューター]** を閉じます。  
+4.  移行元サーバーが一覧に表示されないことを確認した後、[**Active Directory ユーザーとコンピューター**] を閉じます。  
   
 ###  <a name="move-the-dhcp-server-role-from-the-source-server-to-the-router"></a><a name="BKMK_MoveTheDHCPRole"></a>DHCP サーバーの役割を移行元サーバーからルーターに移動する  
   
 > [!NOTE]
 > 
->  移行プロセスを開始する前にこのタスクを既に実行した場合は、「[移行元サーバーを削除して用途変更する](Demote-and-remove-the-Source-Server-from-the-new-Windows-Server-Essentials-network.md#BKMK_RemoveTheSourceServer)」セクションに進んでください。  
-> 
->  移行プロセスを開始する前にこのタスクを既に実行した場合は、「[移行元サーバーを削除して用途変更する](../migrate/Demote-and-remove-the-Source-Server-from-the-new-Windows-Server-Essentials-network.md#BKMK_RemoveTheSourceServer)」セクションに進んでください。  
+>  移行プロセスを開始する前にこのタスクを既に実行した場合は、「[移行元サーバーを削除して用途変更する](Demote-and-remove-the-Source-Server-from-the-new-Windows-Server-Essentials-network.md#BKMK_RemoveTheSourceServer)」セクションに進んでください。
 
   
  移行元サーバーが DHCP の役割を実行している場合、次の手順を実行して、DHCP の役割をルーターに移動します。  
@@ -136,11 +122,11 @@ Windows Server Essentials のインストールを完了し、移行ウィザー
   
 1.  次のようにして、移行元サーバーで DHCP サービスをオフにします。  
   
-    1.  移行元サーバーをクリックし、 **[スタート]** 、 **[管理ツール]** 、 **[サービス]** の順にクリックします。  
+    1.  移行元サーバーをクリックし、[**スタート**]、[**管理ツール**]、[**サービス**] の順にクリックします。  
   
-    2.  現在実行しているサービスの一覧で、 **[Windows Server]** を右クリックし、 **[プロパティ]** をクリックします。  
+    2.  現在実行しているサービスの一覧で、[**Windows Server**] を右クリックし、[**プロパティ**] をクリックします。  
   
-    3.  **[開始の種類]** で、 **[無効]** を選択します。  
+    3.  [**開始の種類**] で、[**無効**] を選択します。  
   
     4.  サービスを停止します。  
   

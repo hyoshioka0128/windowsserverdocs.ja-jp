@@ -8,12 +8,12 @@ ms.assetid: 98f13f63-4480-40ba-a7ef-d1d9b7582e5f
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: c1fd1d21277d32672398d1dd201e2dda24682c2d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 64e982f7932f8ba3ecf83ffe6443391522ad0f12
+ms.sourcegitcommit: 6d6a0225b1f83b71fcb494b94d666cd5e54c7566
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80820025"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85267553"
 ---
 # <a name="install-or-remove-language-packs"></a>言語パックのインストールまたは削除
 
@@ -32,11 +32,11 @@ ms.locfileid: "80820025"
   
  言語パックをインストールするには、次のコマンドを使用する必要があります。  
   
- **dism.exe/online/Add-Package/PackagePath: C:\\< cab ファイルディレクトリへの完全パス\>**  
+ **dism.exe/online/Add-Package/PackagePath: C: \\<cab ファイルディレクトリへの完全パス \>\lp.cab**  
   
  たとえば、次のコマンドはドイツ語の言語パックを追加する方法を示します。  
   
- **dism.exe/online/Add-Package/PackagePath: C:\Users\Administrator\Desktop\WindowsHomeServer-Product-r\de-de\lp.cab**  
+ **dism.exe /online /Add-Package /PackagePath:C:\Users\Administrator\Desktop\WindowsHomeServer-Product-r\de-de\lp.cab**  
   
 > [!IMPORTANT]
 >  また、オペレーティングシステムを完全にローカライズするには、Windows Server Essentials の言語パックも適用する必要があります。  
@@ -44,21 +44,16 @@ ms.locfileid: "80820025"
 ## <a name="removing-language-packs-from-an-image"></a>イメージからの言語パックの削除  
  イメージに含める必要がなくなった言語パックを削除するには、次のコマンドを使用します。  
   
- **dism.exe/online/Remove-Package/PackagePath: C:\\< cab ファイルディレクトリへの完全パス\>**  
+ **dism.exe/online/Remove-Package/PackagePath: C: \\<cab ファイルディレクトリへの完全パス \>\lp.cab**  
   
  たとえば、次のコマンドはドイツ語の言語パックを削除する方法を示します。  
   
- **dism.exe/online/Remove-Package/PackagePath: C:\Users\Administrator\Desktop\WindowsHomeServer-Product-r\de-de\lp.cab**  
+ **dism.exe /online /Remove-Package /PackagePath:C:\Users\Administrator\Desktop\WindowsHomeServer-Product-r\de-de\lp.cab**  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
 
- [イメージ  の作成とカスタマイズ](Creating-and-Customizing-the-Image.md)  
+ [イメージの作成とカスタマイズ](Creating-and-Customizing-the-Image.md)   
  [追加のカスタマイズ](Additional-Customizations.md)   
- [展開  のイメージの準備](Preparing-the-Image-for-Deployment.md)  
+ [展開のためのイメージの準備](Preparing-the-Image-for-Deployment.md)   
  [カスタマー エクスペリエンスのテスト](Testing-the-Customer-Experience.md)
-
- [イメージ  の作成とカスタマイズ](../install/Creating-and-Customizing-the-Image.md)  
- [追加のカスタマイズ](../install/Additional-Customizations.md)   
- [展開  のイメージの準備](../install/Preparing-the-Image-for-Deployment.md)  
- [カスタマー エクスペリエンスのテスト](../install/Testing-the-Customer-Experience.md)
 

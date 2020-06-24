@@ -8,18 +8,18 @@ ms.assetid: 51bcf124-c215-4e9d-9fa8-a90fa2c2fa22
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: aace7849244bb65ec0042971e6ec899f554a62d2
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 20b38be01d091f5dfeb819712c57c1f87eaf770f
+ms.sourcegitcommit: fdc3ce1992f4dd6ea1771479d525126abbbcfa72
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852305"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85256631"
 ---
 # <a name="transition-from-windows-server-essentials-to-windows-server-2012-standard"></a>Windows Server Essentials から Windows Server 2012 Standard への移行
 
 >適用対象: windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
- Windows Server&reg; 2012 Essentials は、最大25人のユーザーと50台のデバイスをサポートしています。 ビジネスニーズが制限を超える場合は、Windows Server Essentials から Windows Server 2012 Standard へのインプレースライセンス移行を実行して、ライセンスに準拠した状態を維持することができます。  
+ Windows Server &reg; 2012 Essentials は、最大25人のユーザーと50台のデバイスをサポートしています。 ビジネスニーズが制限を超える場合は、Windows Server Essentials から Windows Server 2012 Standard へのインプレースライセンス移行を実行して、ライセンスに準拠した状態を維持することができます。  
   
 ## <a name="how-the-transition-affects-user-and-device-limits"></a>ユーザーおよびデバイスの制限に対する移行の影響  
  Windows Server 2012 Standard に移行した後は、ユーザーアカウントとデバイスの制限が削除されますが、Windows Server Essentials に固有の機能 (ダッシュボード、リモート Web アクセス、クライアントコンピューターのバックアップなど) は引き続き使用できます。 ただし、これらの機能の技術的な制限により、サポートされる最大ユーザー数は 75 人、デバイス数は 75 台になります。 75を超えるユーザーアカウントまたはデバイスを追加する必要が生じた場合は、Windows Server Essentials の機能を無効にし、Windows Server 2012 の標準ネイティブツールを使用してユーザーアカウントとデバイスを管理する必要があります。  
@@ -62,7 +62,7 @@ ms.locfileid: "80852305"
   
 2. 管理者として Windows PowerShell を開き、次のコマンドを実行します。  
   
-    **dism/online/set-edition: ServerStandard/accepteula/productkey:** *プロダクトキー*  
+    **dism /online /set-edition:ServerStandard /accepteula /productkey:** *プロダクト キー*  
   
     ここで、*プロダクトキー*は、Windows Server 2012 Standard のコピーのプロダクトキーです。  
   
@@ -85,30 +85,26 @@ ms.locfileid: "80852305"
   
 #### <a name="from-the-alert"></a>アラートからの操作  
   
-1.  [ダッシュボード] から [アラート ビューアー] を開きます。  
+1.  ダッシュボードからアラート ビューアーを開きます。  
   
 2.  [整理] の一覧で、移行後に Windows Server Essentials の機能をオフにする方法に関する情報を報告するアラートを選択します。  
   
-3.  アラートで、 **[Windows Server Essentials の機能を無効にする]** をクリックします。  
+3.  アラートで、[ **Windows Server Essentials の機能を無効にする**] をクリックします。  
   
 #### <a name="from-the-get-help-and-support-pane"></a>[ヘルプとサポートを参照する] ウィンドウからの操作  
   
 1. [ホーム] ページで、[ヘルプとサポートを参照する] をクリックします。  
   
-2. **[Windows Server Essentials 機能の無効化ウィザード]** をクリックします。  
+2. [ **Windows Server Essentials 機能の無効化ウィザード**] をクリックします。  
   
    **Windows Server Essentials 機能の無効化ウィザード**によって実行される一部のタスクが正常に完了しない可能性があります。 場合によっては、これが原因でダッシュボードを実行できなくなることもあります。 この問題が発生した場合は、次のファイルを実行することで手動でウィザードを起動できます。  
   
    **%systemdrive%\Program Files\Windows Server\Bin\TurnOffFeaturesWizard.exe**  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>こちらもご覧ください  
   
 
 -   [Windows Server 2012 R2 Standard への移行](Transition-from-Windows-Server-2012-R2-Essentials-to-Windows-Server-2012-R2-Standard.md)  
   
 -   [サーバー データの Windows Server Essentials への移行](Migrate-Server-Data-to-Windows-Server-Essentials.md)
-
--   [Windows Server 2012 R2 Standard への移行](../migrate/Transition-from-Windows-Server-2012-R2-Essentials-to-Windows-Server-2012-R2-Standard.md)  
-  
--   [サーバー データの Windows Server Essentials への移行](../migrate/Migrate-Server-Data-to-Windows-Server-Essentials.md)
 

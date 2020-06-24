@@ -8,12 +8,12 @@ ms.assetid: a14689e3-2310-4229-bd3e-dafc0e739e02
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: f7914ff205382ed2c74cb130061f850e2c0675f5
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 145d4ef1039093f224e1dc73cb5d8286ddd8e494
+ms.sourcegitcommit: fdc3ce1992f4dd6ea1771479d525126abbbcfa72
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852295"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85256482"
 ---
 # <a name="transition-from-windows-server-essentials-to-windows-server-2012-r2-standard"></a>Windows Server Essentials から Windows Server 2012 R2 Standard への移行
 
@@ -41,7 +41,7 @@ Windows Server 2016 は、現在のワークロードをサポートするクラ
   
     2.  次のコマンドを実行します。  
   
-         **dism/online/set-edition: ServerStandard/geteula:** *eula path* ( *eula path*は、eula ファイルを保存する場所を表します。例: c:\ ws8std_eula .rtf)。 ファイル名拡張子として .rtf を使用してください。  
+         **dism /online /set-edition:ServerStandard /geteula:** *eula path* ( *eula path* は、EULA ファイルの保存先の場所を表します。例: C:\ws8std_eula.rtf)。 ファイル名拡張子として .rtf を使用してください。  
   
     3.  ファイルを保存した場所を開き、そのファイルをダブルクリックして開きます。  
   
@@ -67,10 +67,8 @@ Windows Server 2016 は、現在のワークロードをサポートするクラ
   
    移行後、Windows Server Essentials の機能はサーバーに残り、最大100ユーザーおよび200デバイスでサポートされています。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>こちらもご覧ください  
   
 
 -   [サーバー データの Windows Server Essentials への移行](Migrate-Server-Data-to-Windows-Server-Essentials.md)
-
--   [サーバー データの Windows Server Essentials への移行](../migrate/Migrate-Server-Data-to-Windows-Server-Essentials.md)
 

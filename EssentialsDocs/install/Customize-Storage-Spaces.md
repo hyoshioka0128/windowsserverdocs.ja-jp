@@ -8,12 +8,12 @@ ms.assetid: 3c96d66b-be4a-4572-9b9f-29555c00ae9a
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: c6dee3fdc1c77cedf9f17ffb71a157a1eeb7ec90
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 98f85767f6dddc887dcdeb4585af924d9e103aa8
+ms.sourcegitcommit: 6d6a0225b1f83b71fcb494b94d666cd5e54c7566
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80818055"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85267633"
 ---
 # <a name="customize-storage-spaces"></a>記憶域のカスタマイズ
 
@@ -21,13 +21,10 @@ ms.locfileid: "80818055"
 
 ユーザー エクスペリエンスを向上させるために記憶域を事前構成するには、PostIC.cmd から記憶域構成スクリプトを実行します。 Windows Server Essentials のインストールが完了したら、記憶域スペース構成スクリプトをターゲットコンピューターで実行する必要があります。
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
 
- [イメージ  の作成とカスタマイズ](Creating-and-Customizing-the-Image.md)  
+ [イメージの作成とカスタマイズ](Creating-and-Customizing-the-Image.md)   
  [追加のカスタマイズ](Additional-Customizations.md)   
- [展開  のイメージの準備](Preparing-the-Image-for-Deployment.md)  
- [カスタマーエクスペリエンスのテスト](Testing-the-Customer-Experience.md)[イメージ  の作成とカスタマイズ](../install/Creating-and-Customizing-the-Image.md)  
- [追加のカスタマイズ](../install/Additional-Customizations.md)   
- [展開  のイメージの準備](../install/Preparing-the-Image-for-Deployment.md)  
- [カスタマー エクスペリエンスのテスト](../install/Testing-the-Customer-Experience.md)
-
+ [展開のためのイメージの準備](Preparing-the-Image-for-Deployment.md)   
+ [カスタマー エクスペリエンスのテスト](Testing-the-Customer-Experience.md)
+ 

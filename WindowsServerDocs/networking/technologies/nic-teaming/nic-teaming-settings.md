@@ -9,12 +9,12 @@ ms.assetid: a4caaa86-5799-4580-8775-03ee213784a3
 ms.author: lizross
 author: eross-msft
 ms.date: 09/13/2018
-ms.openlocfilehash: 8ae461f8e9236451e9a6b442cafecee4981ed8ce
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 133e44c83032976f08819529508b3990b6e78596
+ms.sourcegitcommit: fdc3ce1992f4dd6ea1771479d525126abbbcfa72
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80853715"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85256682"
 ---
 # <a name="nic-teaming-settings"></a>NIC チーミングの設定
 このトピックでは、チーミングおよび負荷分散モードなど、NIC チームのプロパティの概要について説明します。 また、スタンバイアダプターの設定とプライマリチームインターフェイスのプロパティについても詳しく説明します。 NIC チームに少なくとも2つのネットワークアダプターがある場合は、フォールトトレランスのためにスタンバイアダプターを指定する必要はありません。
@@ -62,7 +62,7 @@ ms.locfileid: "80853715"
   
 Windows PowerShell を使用して、次のハッシュ関数コンポーネントの値を指定します。  
   
--   発信元および宛先の TCP ポートと、発信元と宛先の IP アドレス。 これは、負荷分散モードとして **[アドレスハッシュ]** を選択した場合の既定値です。  
+-   発信元および宛先の TCP ポートと、発信元と宛先の IP アドレス。 これは、負荷分散モードとして [**アドレスハッシュ**] を選択した場合の既定値です。  
   
 -   送信元と送信先の IP アドレスのみ。  
   
@@ -70,15 +70,15 @@ Windows PowerShell を使用して、次のハッシュ関数コンポーネン�
   
 TCP ポートハッシュを使用すると、トラフィックストリームが最も細かく分散されるため、NIC チームメンバー間で個別に移動できるストリームが小さくなります。 ただし、tcp ポートハッシュは、tcp または UDP ベースではないトラフィックや、IPsec で保護されたトラフィックなどによって、TCP ポートと UDP ポートがスタックから隠されている場合は使用できません。 このような場合、ハッシュは自動的に IP アドレスハッシュを使用します。トラフィックが IP トラフィックでない場合は、MAC アドレスハッシュが使用されます。  
   
-### <a name="hyper-v-port"></a>Hyper-v ポート
+### <a name="hyper-v-port"></a>Hyper-V ポート
   
 [!INCLUDE [hyper-v-port-shortdesc-include](../../includes/hyper-v-port-shortdesc-include.md)]  
   
-隣接するスイッチは、1つのポートで特定の MAC アドレスを常に認識するため、スイッチは、宛先 MAC (VM MAC) アドレスに基づいて複数のリンクに受信負荷 (スイッチからホストへのトラフィック) を分散します。 これは特に便利です仮想マシン キュー (VMQs) を使用している場合、キューは、トラフィックが到着する期待される場所で特定の NIC で配置できるためです。  
+隣接するスイッチは、1つのポートで特定の MAC アドレスを常に認識するため、スイッチは、宛先 MAC (VM MAC) アドレスに基づいて複数のリンクに受信負荷 (スイッチからホストへのトラフィック) を分散します。 これは特に便利ですバーチャル マシン キュー (VMQs) を使用している場合、キューは、トラフィックが到着する期待される場所で特定の NIC で配置できるためです。  
   
 ただし、ホストにいくつかの Vm がある場合は、このモードはありませんな負荷分散を実現するために必要なレベルです。 このモードは、単一のインターフェイスで利用できる帯域幅を 1 つの VM (つまり、1 つのスイッチ ポートからのトラフィック) を常にも制限されます。 NIC チーミングでは、ソース MAC アドレスを使用する代わりに、Hyper-v 仮想スイッチポートが識別子として使用されます。これは、一部のインスタンスでは、1つのスイッチポートで複数の MAC アドレスを使用して VM を構成する可能性があるためです。  
   
-### <a name="dynamic"></a>Dynamic
+### <a name="dynamic"></a>動的
   
 [!INCLUDE [dynamic-shortdesc-include](../../includes/dynamic-shortdesc-include.md)]
   
@@ -102,13 +102,13 @@ TCP ポートハッシュを使用すると、トラフィックストリーム�
   
 ![プライマリチームインターフェイスのプロパティ](../../media/Create-a-New-NIC-Team-on-a-Host-Computer-or-VM/nict_10_primaryteaminterface.jpg)  
   
-強調表示されたリンクをクリックすると、次の **[新しいチームインターフェイス]** ダイアログボックスが表示されます。  
+強調表示されたリンクをクリックすると、次の [**新しいチームインターフェイス**] ダイアログボックスが表示されます。  
   
 ![[新しいチーム インターフェイス] ダイアログ ボックス](../../media/Create-a-New-NIC-Team-on-a-Host-Computer-or-VM/nict_newteaminterface.jpg)  
   
 Vlan を使用している場合は、このダイアログボックスを使用して VLAN 番号を指定できます。  
   
-Vlan を使用しているかどうかにかかわらず、NIC チームの tNIC 名を指定できます。  
+Vlan を使用しているかどうかにかかわらず、NIC チームの NIC 名を指定できます。  
   
 
 

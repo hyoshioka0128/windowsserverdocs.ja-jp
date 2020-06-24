@@ -8,12 +8,12 @@ ms.assetid: 8841c3aa-7aaa-4cc0-b1e1-ab0643f29586
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 0976028d743b70fe3e8c527903bbbe3d1197e13f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 8c6e72be42672cff246beec54f7a47865da146f0
+ms.sourcegitcommit: 6d6a0225b1f83b71fcb494b94d666cd5e54c7566
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80819915"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85267543"
 ---
 # <a name="prepare-the-technician-computer"></a>テクニシャン コンピューターの準備
 
@@ -25,17 +25,11 @@ ms.locfileid: "80819915"
   
 -   Windows 7、Windows 8、または Windows 10 を実行しているコンピューターに、 [Microsoft web サイト](https://go.microsoft.com/fwlink/?LinkID=248647)から windows ADK をインストールします。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
 
- [Windows Server ESSENTIALS ADK でのはじめに](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
- [イメージ  の作成とカスタマイズ](Creating-and-Customizing-the-Image.md)  
+ [Windows Server Essentials ADK でのはじめに](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
+ [イメージの作成とカスタマイズ](Creating-and-Customizing-the-Image.md)   
  [追加のカスタマイズ](Additional-Customizations.md)   
- [展開  のイメージの準備](Preparing-the-Image-for-Deployment.md)  
+ [展開のためのイメージの準備](Preparing-the-Image-for-Deployment.md)   
  [カスタマー エクスペリエンスのテスト](Testing-the-Customer-Experience.md)
-
- [Windows Server ESSENTIALS ADK でのはじめに](../install/Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
- [イメージ  の作成とカスタマイズ](../install/Creating-and-Customizing-the-Image.md)  
- [追加のカスタマイズ](../install/Additional-Customizations.md)   
- [展開  のイメージの準備](../install/Preparing-the-Image-for-Deployment.md)  
- [カスタマー エクスペリエンスのテスト](../install/Testing-the-Customer-Experience.md)
 

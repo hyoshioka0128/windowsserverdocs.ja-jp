@@ -8,12 +8,12 @@ ms.assetid: 2fe8e35c-69f9-40b3-a270-22e2402510d8
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: ddcdb9576072af6b7014f6dc9b0c38e9f5bdd25d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 69a57333990a225663d2cd3cc61c75947d07cdab
+ms.sourcegitcommit: 6d6a0225b1f83b71fcb494b94d666cd5e54c7566
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80818365"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85267373"
 ---
 # <a name="create-a-bootable-usb-flash-drive"></a>ブート可能な USB フラッシュ ドライブの作成
 
@@ -36,13 +36,13 @@ ms.locfileid: "80818365"
   
 1.  USB フラッシュ ドライブを実行中のコンピューターに挿入します。  
   
-2.  [コマンド プロンプト] ウィンドウを管理者として開きます。  
+2.  管理者としてコマンド プロンプト ウィンドウを開きます。  
   
-3.  「`diskpart`」と入力します。  
+3.  「`diskpart`.  
   
-4.  開いた新しいコマンド ライン ウィンドウで、USB フラッシュ ドライブ番号またはドライブ文字を確認するために、コマンド プロンプトに「`list disk`」と入力して Enter キーを押します。 `list disk` コマンドは、コンピューター上のすべてのディスクを表示します。 USB フラッシュ ドライブのドライブ番号またはドライブ文字をメモしておきます。  
+4.  開いた新しいコマンド ライン ウィンドウで、USB フラッシュ ドライブ番号またはドライブ文字を確認するために、コマンド プロンプトに「 `list disk`」と入力して Enter キーを押します。 `list disk` コマンドは、コンピューター上のすべてのディスクを表示します。 USB フラッシュ ドライブのドライブ番号またはドライブ文字をメモしておきます。  
   
-5.  コマンド プロンプトで「`select disk <X>`」(X は USB フラッシュ ドライブのドライブ番号またはドライブ文字) と入力し、Enter キーを押します。  
+5.  コマンド プロンプトで「 `select disk <X>`」(X は USB フラッシュ ドライブのドライブ番号またはドライブ文字) と入力し、Enter キーを押します。  
   
 6.  「 `clean`」と入力して、Enter キーを押します。 このコマンドは、USB フラッシュ ドライブからすべてのデータを削除します。  
   
@@ -61,18 +61,12 @@ ms.locfileid: "80818365"
   
 12. カスタム イメージの準備が完了したら、それを USB フラッシュ ドライブのルートに保存します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
 
- [Windows Server ESSENTIALS ADK でのはじめに](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
- [イメージ  の作成とカスタマイズ](Creating-and-Customizing-the-Image.md)  
+ [Windows Server Essentials ADK でのはじめに](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
+ [イメージの作成とカスタマイズ](Creating-and-Customizing-the-Image.md)   
  [追加のカスタマイズ](Additional-Customizations.md)   
- [展開  のイメージの準備](Preparing-the-Image-for-Deployment.md)  
- [カスタマー エクスペリエンスのテスト](Testing-the-Customer-Experience.md)   
+ [展開のためのイメージの準備](Preparing-the-Image-for-Deployment.md)   
+ [カスタマー エクスペリエンスのテスト](Testing-the-Customer-Experience.md)     
 
- [Windows Server ESSENTIALS ADK でのはじめに](../install/Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
- [イメージ  の作成とカスタマイズ](../install/Creating-and-Customizing-the-Image.md)  
- [追加のカスタマイズ](../install/Additional-Customizations.md)   
- [展開  のイメージの準備](../install/Preparing-the-Image-for-Deployment.md)  
- [カスタマー エクスペリエンスのテスト](../install/Testing-the-Customer-Experience.md)   
-
- [お役に立ちますか?](https://windows.microsoft.com/windows/support)
+ [このガイドの利用方法](https://windows.microsoft.com/windows/support)
