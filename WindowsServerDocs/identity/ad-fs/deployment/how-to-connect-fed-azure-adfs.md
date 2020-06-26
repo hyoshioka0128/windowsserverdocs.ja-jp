@@ -8,12 +8,12 @@ ms.topic: get-started-article
 ms.date: 10/28/2018
 ms.subservice: hybrid
 ms.author: billmath
-ms.openlocfilehash: 16bf61ae4601848f12d7ecd56d751837dd153408
-ms.sourcegitcommit: 2cc251eb5bc3069bf09bc08e06c3478fcbe1f321
+ms.openlocfilehash: 1786b7c9a10e11e95f736d1db20bdc12eb4844b7
+ms.sourcegitcommit: fea590c092d7abcb55be2b424458faa413795f5c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84333963"
+ms.lasthandoff: 06/25/2020
+ms.locfileid: "85372219"
 ---
 # <a name="deploying-active-directory-federation-services-in-azure"></a>Azure での Active Directory フェデレーション サービスのデプロイ
 AD FS は、単純かつ安全な ID フェデレーションと Web シングル サインオン (SSO) 機能を実現します。 Azure AD または O365 とのフェデレーションによって、ユーザーはオンプレミスの資格情報を認証に使用し、クラウド内のあらゆるリソースにアクセスすることができます。 そのため、オンプレミスとクラウドの両方のリソースに確実にアクセスできるよう、AD FS インフラストラクチャには、高い可用性を確保することが重要となります。 AD FS を Azure にデプロイすると、必要な高可用性を最小限の手間で確保できます。
@@ -107,7 +107,7 @@ ExpressRoute の使用をお勧めしますが、所属する組織に合った�
 
 次の可用性セットを作成します。
 
-| 可用性セット | Role | 障害ドメイン | 更新ドメイン |
+| 可用性セット | ロール | 障害ドメイン | 更新ドメイン |
 |:---:|:---:|:---:|:--- |
 | contosodcset |DC/ADFS |3 |5 |
 | contosowapset |WAP |3 |5 |
@@ -115,7 +115,7 @@ ExpressRoute の使用をお勧めしますが、所属する組織に合った�
 ### <a name="4-deploy-virtual-machines"></a>4. 仮想マシンを展開する
 次に、インフラストラクチャ内の各ロールのホストとなる仮想マシンをデプロイします。 それぞれの可用性セットには、最低でも 2 つのマシンをデプロイすることをお勧めします。 基本的なデプロイでは 4 つの仮想マシンを作成します。
 
-| Machine | Role | Subnet | 可用性セット | ストレージ アカウント | IP アドレス |
+| Machine | ロール | Subnet | 可用性セット | ストレージ アカウント | IP アドレス |
 |:---:|:---:|:---:|:---:|:---:|:---:|
 | contosodc1 |DC/ADFS |INT |contosodcset |contososac1 |静的 |
 | contosodc2 |DC/ADFS |INT |contosodcset |contososac2 |静的 |
@@ -131,7 +131,7 @@ DNS が管理下にある場合は、静的 IP アドレスをお勧めします
 ### <a name="5-configuring-the-domain-controller--ad-fs-servers"></a>5. ドメインコントローラー/AD FS サーバーを構成する
  受信要求を認証するためには、AD FS がドメイン コントローラーに問い合わせを行う必要があります。 認証のたびに Azure がオンプレミスの DC とやり取りするのでは無駄が大きいため、ドメイン コントローラーのレプリカを Azure にデプロイすることをお勧めします。 高い可用性を確保するために、少なくとも 2 つのドメイン コントローラーから成る可用性セットを作成することをお勧めします。
 
-| ドメイン コントローラー | Role | ストレージ アカウント |
+| ドメイン コントローラー | ロール | ストレージ アカウント |
 |:---:|:---:|:---:|
 | contosodc1 |[レプリカ] |contososac1 |
 | contosodc2 |[レプリカ] |contososac2 |
@@ -198,8 +198,13 @@ ILB をデプロイするには、Azure ポータルで [ロード バランサ�
 
 **6.5.DNS に ILB を反映する**
 
-DNS サーバーに移動して、ILB の CNAME を作成します。 CNAME には、IP アドレスが ILB の IP アドレスを指すフェデレーション サービスの値を指定する必要があります。 たとえば ILB の DIP アドレスが 10.3.0.8 であるとき、インストールされているフェデレーション サービスが fs.contoso.com である場合は、10.3.0.8 を指す fs.contoso.com の CNAME を作成します。
-これで fs.contoso.com についてのすべての通信は最終的に ILB に到達し、適切にルーティングされます。
+内部 DNS サーバーを使用して、ILB の A レコードを作成します。 A レコードは、IP アドレスが ILB の IP アドレスを指すフェデレーションサービス用である必要があります。 たとえば、ILB IP アドレスが10.3.0.8 で、インストールされているフェデレーションサービスが fs.contoso.com の場合、10.3.0.8 を指す fs.contoso.com の A レコードを作成します。
+これにより、fs.contoso.com のすべてのデータ trasmitted が ILB で終了し、適切にルーティングされるようになります。 
+
+> [!NOTE]
+>デプロイでも IPv6 を使用している場合は、必ず対応する AAAA レコードを作成してください。
+>
+>
 
 ### <a name="7-configuring-the-web-application-proxy-server"></a>7. Web アプリケーションプロキシサーバーを構成する
 **7.1.AD FS サーバーに到達するための構成を Web アプリケーション プロキシ サーバーに対して行う**
@@ -263,7 +268,7 @@ ILB と同じ手順に従って、TCP 443 の負荷分散規則を構成しま�
 
 | ルール | 説明 | Flow |
 |:--- |:--- |:---:|
-| AllowHTTPSFromDMZ |DMZ からの HTTPS 通信を許可します。 |受信 |
+| AllowHTTPSFromDMZ |DMZ からの HTTPS 通信を許可します。 |着信 |
 | DenyInternetOutbound |インターネットへのアクセスを禁止します。 |送信 |
 
 ![INT access rules (inbound)](./media/how-to-connect-fed-azure-adfs/nsg_int.png)
@@ -272,7 +277,7 @@ ILB と同じ手順に従って、TCP 443 の負荷分散規則を構成しま�
 
 | ルール | 説明 | Flow |
 |:--- |:--- |:---:|
-| AllowHTTPSFromInternet |インターネットから DMZ への HTTPS を許可します。 |受信 |
+| AllowHTTPSFromInternet |インターネットから DMZ への HTTPS を許可します。 |着信 |
 | DenyInternetOutbound |インターネットへの通信は HTTPS を除きすべてブロックします。 |送信 |
 
 ![EXT access rules (inbound)](./media/how-to-connect-fed-azure-adfs/nsg_dmz.png)
@@ -331,7 +336,7 @@ AD FS のテストは、IdpInitiatedSignon.aspx ページを使用して行う�
 | AdminUserName |仮想マシンのローカル管理者の名前 |
 | AdminPassword |仮想マシンのローカル管理者アカウントのパスワード |
 
-## <a name="additional-resources"></a>その他のリソース
+## <a name="additional-resources"></a>その他の技術情報
 * [可用性セット](https://aka.ms/Azure/Availability) 
 * [Azure Load Balancer](https://aka.ms/Azure/ILB)
 * [内部ロード バランサー](https://aka.ms/Azure/ILB/Internal)

@@ -8,14 +8,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: fb07120d4b79cfc5be772a75e5f1e2e6ca2081ed
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 9a3f67bbde127dae3a0f6ffd4c948f46c5a4a9d1
+ms.sourcegitcommit: fea590c092d7abcb55be2b424458faa413795f5c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80853935"
+ms.lasthandoff: 06/25/2020
+ms.locfileid: "85372189"
 ---
-# <a name="ad-fs-2016-design-guide"></a>AD FS 2016 設計ガイド
+# <a name="ad-fs-design-guide"></a>AD FS 設計ガイド
 
 
 
@@ -26,7 +26,7 @@ AD FS 設計ガイドは、AD FS のデプロイを設計するための包括�
   
 
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
 Windows Server 2016 の AD FS の容量計画については、 [AD FS の容量計画ワークシート](http://adfsdocs.blob.core.windows.net/adfs/ADFSCapacity2016.xlsx)を参照してください。  
   
-[Active Directory フェデレーション サービスの概要](../../Active-Directory-Federation-Services.md)
+[Active Directory フェデレーション サービスの概要に関するページ](../../Active-Directory-Federation-Services.md)

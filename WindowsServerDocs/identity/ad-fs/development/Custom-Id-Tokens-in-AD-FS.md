@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.reviewer: anandy
 ms.technology: identity-adfs
-ms.openlocfilehash: 331e5ff2dbe7f172488543d1d1f5ed0f757cd584
-ms.sourcegitcommit: 2cc251eb5bc3069bf09bc08e06c3478fcbe1f321
+ms.openlocfilehash: 9ffc8351c2c5033346f04e3cd4dc6f8ba4914149
+ms.sourcegitcommit: fea590c092d7abcb55be2b424458faa413795f5c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84333953"
+ms.lasthandoff: 06/25/2020
+ms.locfileid: "85372209"
 ---
 # <a name="customize-claims-to-be-emitted-in-id_token-when-using-openid-connect-or-oauth-with-ad-fs-2016-or-later"></a>OpenID Connect または OAuth を AD FS 2016 以降で使用する場合に id_token で出力される要求をカスタマイズする
 
@@ -40,7 +40,7 @@ ms.locfileid: "84333953"
 
 ![制限](media/Custom-Id-Tokens-in-AD-FS/restrict2.png)
 
-AD FS サーバーに[KB4019472](https://support.microsoft.com/help/4019472/windows-10-update-kb4019472)がインストールされている
+AD FS サーバーに[KB4019472](https://support.microsoft.com/help/4019472/windows-10-update-kb4019472)以降のセキュリティ更新プログラムがインストールされている
 1. `response_mode`が form_post として設定されています
 2. パブリックと機密の両方のクライアントが ID トークンでカスタム要求を取得できます。
 3. `allatclaims`クライアント– RP ペアにスコープを割り当てます。
@@ -62,12 +62,12 @@ Grant-AdfsApplicationPermission -ClientRoleIdentifier "https://my/privateclient"
 
    ![クライアント](media/Custom-Id-Tokens-in-AD-FS/clientsnap1.png)
 
-3. [**クライアント識別子**の値をコピーします。  この値は、アプリケーションの web.config ファイルの ida: ClientId の値として後で使用されます。
+3. [**クライアント識別子**の値をコピーします。  この値は、アプリケーション web.config ファイルの ida: ClientId の値として後で使用されます。
 4. **リダイレクト URI**には、次のように入力し  -  **https://localhost:44320/** ます。  **[追加]** をクリックします。 **[次へ]** をクリックします。
 
    ![クライアント](media/Custom-Id-Tokens-in-AD-FS/clientsnap2.png)
 
-5. [ **WEB API の構成**] 画面で、[**識別子**] に次のように入力し  -  **https://contoso.com/WebApp** ます。  **[追加]** をクリックします。 **[次へ]** をクリックします。  この値は、アプリケーションの web.config ファイルの**ida: ResourceID**で後で使用されます。
+5. [ **WEB API の構成**] 画面で、[**識別子**] に次のように入力し  -  **https://contoso.com/WebApp** ます。  **[追加]** をクリックします。 **[次へ]** をクリックします。  この値は、アプリケーション web.config ファイルの**ida: ResourceID**で後で使用されます。
 
    ![クライアント](media/Custom-Id-Tokens-in-AD-FS/clientsnap3.png)
 
@@ -96,7 +96,7 @@ Grant-AdfsApplicationPermission -ClientRoleIdentifier "https://my/privateclient"
 
     ![クライアント](media/Custom-Id-Tokens-in-AD-FS/clientsnap9.PNG)
 
-13. **変換要求規則の追加ウィザード**画面で、[**要求規則名**] に「 **Forcustomidtoken** 」、**カスタム規則**に次の要求規則を入力します。 [**完了**] をクリック
+13. **変換要求規則の追加ウィザード**画面で、[**要求規則名**] に「 **Forcustomidtoken** 」、**カスタム規則**に次の要求規則を入力します。 **[完了]** をクリックします。
 
     ```
     x:[]
@@ -128,7 +128,7 @@ git clone https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-op
 
 1. Visual Studio を使用してサンプルを開きます。
 2. 不足しているすべての Nuget が復元されるように、アプリをリビルドします。
-3. Web.config ファイルを開きます。  次のように、次の値を変更します。
+3. web.config ファイルを開きます。  次のように、次の値を変更します。
 
    ```xml
    <add key="ida:ClientId" value="[Replace this Client Id from #3 above under section Create and configure an Application Group in AD FS 2016 or later]" />
@@ -219,6 +219,6 @@ AD FS サインインページにリダイレクトされます。 要求に従�
 
 ![AD FS OpenID](media/Custom-Id-Tokens-in-AD-FS/AD_FS_OpenID_9.png)
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 [AD FS の開発](../../ad-fs/AD-FS-Development.md)

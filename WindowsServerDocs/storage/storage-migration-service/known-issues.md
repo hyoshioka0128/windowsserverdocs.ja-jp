@@ -8,12 +8,12 @@ ms.date: 06/02/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 5a4a99434d67c08551d97589f8f2638e1024754d
-ms.sourcegitcommit: 5fac756c2c9920757e33ef0a68528cda0c85dd04
+ms.openlocfilehash: 638f4d122b25c870ed323b94d32b6cefca4be5ff
+ms.sourcegitcommit: fea590c092d7abcb55be2b424458faa413795f5c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84306501"
+ms.lasthandoff: 06/25/2020
+ms.locfileid: "85372199"
 ---
 # <a name="storage-migration-service-known-issues"></a>記憶域移行サービスの既知の問題
 
@@ -68,9 +68,9 @@ Windows 管理センターまたは PowerShell を使用して転送操作の詳
 
 この問題は、記憶域移行サービスで許可されている既定の1分のタイムアウトではフィルター処理できない、非常に多くの転送ファイルが原因で発生します。 
 
-この問題を回避するには、次のようにします。
+この問題の回避方法:
 
-1. Orchestrator コンピューターで Notepad.exe を使用して *%SYSTEMROOT%\SMS\Microsoft.StorageMigration.Service.exe.config*ファイルを編集し、"sendtimeout" を1分の既定値から10分に変更します。
+1. Orchestrator コンピューターで、Notepad.exe を使用して *% SYSTEMROOT% \SMS\Microsoft.StorageMigration.Service.exe.config*ファイルを編集し、"sendtimeout" を1分の既定値から10分に変更します。
 
    ```
      <bindings>
@@ -80,7 +80,7 @@ Windows 管理センターまたは PowerShell を使用して転送操作の詳
    ```
 
 2. Orchestrator コンピューターで "Storage Migration Service" サービスを再起動します。 
-3. Orchestrator コンピューターで、Regedit.exe を起動します。
+3. Orchestrator コンピューターで、を起動し Regedit.exe
 4. 次のレジストリ サブキーを探してクリックします。 
 
    `HKEY_LOCAL_MACHINE\Software\Microsoft\SMSPowershell`
@@ -142,11 +142,11 @@ Windows Server 2019 の展開先コンピューターに Storage Migration Servi
 
   icacls d:\test\Source:
 
-  icacls d:\test\thatcher.png/save out .txt/t thatcher (A;;FA、;、BA) (A;; 0x1200a9;;;DD) (A;; 0x1301bf;;;DU) (A; ID; FA;;;BA (A; ID; FA;;;SY) (A; ID; 0x1200a9;;;BU
+  icacls d:\test\thatcher.png/保存 out.txt/t thatcher.png 12 月 AI (A;;FA、;、BA) (A;; 0x1200a9;;;DD) (A;; 0x1301bf;;;DU) (A; ID; FA;;;BA (A; ID; FA;;;SY) (A; ID; 0x1200a9;;;BU
 
 コピー先ファイル:
 
-  icacls d:\test\thatcher.png/save out .txt/t thatcher (A;;FA、;、BA) (A;; 0x1301bf;;;DU) (A;; 0x1200a9;;;DD) (A; ID; FA;;;BA (A; ID; FA;;;SY) (A; ID; 0x1200a9;;;BU)**S: PAINO_ACCESS_CONTROL**
+  icacls d:\test\thatcher.png/保存 out.txt/t thatcher.png 12 月 AI (A;;FA、;、BA) (A;; 0x1301bf;;;DU) (A;; 0x1200a9;;;DD) (A; ID; FA;;;BA (A; ID; FA;;;SY) (A; ID; 0x1200a9;;;BU)**S: PAINO_ACCESS_CONTROL**
 
 DFSR デバッグログ:
 
@@ -378,7 +378,7 @@ Windows Server 2008 R2 クラスターソースに対して切り取りを実行
 
 1. この問題は、 [KB4537818](https://support.microsoft.com/help/4537818/windows-10-update-kb4537818) update によって最初に解決されました。 以前のコードの欠陥により、静的 IP アドレスがすべて使用されませんでした。
 
-2. ソースコンピューターのネットワークインターフェイスでデフォルトゲートウェイの IP アドレスを指定していない場合、KB4537818 の更新プログラムでもこの問題が発生します。 この問題を回避するには、ネットワーク接続アプレット (NCPA.CPL」) を使用して、ネットワークインターフェイスで有効な既定の IP アドレスを設定します。CPL) または New-netroute Powershell コマンドレットを設定します。   
+2. ソースコンピューターのネットワークインターフェイスでデフォルトゲートウェイの IP アドレスを指定していない場合、KB4537818 の更新プログラムでもこの問題が発生します。 この問題を回避するには、ネットワーク接続アプレット (NCPA.CPL) または New-netroute Powershell コマンドレットを使用して、ネットワークインターフェイスに有効な既定の IP アドレスを設定します。   
 
 ## <a name="slower-than-expected-re-transfer-performance"></a>予想される再転送パフォーマンスを低下させる
 
@@ -431,7 +431,7 @@ Windows Server 2008 R2 クラスターソースに対して切り取りを実行
  
  ストレージ移行サービスをドメインコントローラーと共に転送用に使用する場合は、Windows 管理センターの [転送の設定] ページで [ユーザーとグループを転送しない] を常に選択してください。
  
- ## <a name="error-53-failed-to-inventory-all-specified-devices-when-running-inventory"></a>エラー53、インベントリの実行時に、指定したすべてのデバイスのインベントリに失敗しました。 
+## <a name="error-53-failed-to-inventory-all-specified-devices-when-running-inventory"></a>エラー53、インベントリの実行時に、指定したすべてのデバイスのインベントリに失敗しました。 
 
 インベントリを実行しようとすると、次のようなメッセージが表示されます。
 
@@ -490,7 +490,7 @@ Windows Server 2008 R2 クラスターソースに対して切り取りを実行
  - ソース移行アカウントに、ソースコンピューターに接続するためのリモートレジストリアクセス許可がありません。
  - 移行元コンピューターのレジストリ内で、"HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows NT\CurrentVersion" または "HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\LanmanServer" の下に読み取りアクセス許可がありません。
  
- ## <a name="cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer"></a>"38% のソースコンピューターのネットワークインターフェイスのマッピングが停止しています..." 
+## <a name="cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer"></a>"38% のソースコンピューターのネットワークインターフェイスのマッピングが停止しています..." 
 
 ソースコンピュータの切り取りを実行しようとすると、"38% のソースコンピュータ上のネットワークインターフェイスのマッピング中に、カットオーバー" が停止します。記憶域移行サービスのイベントログに次のエラーが表示されます。
 
@@ -531,6 +531,16 @@ Storage Migration Service は、削除プロセスの一環として、一時的
 1. この競合する GPO を適用する Active Directory OU から、移行元コンピューターを一時的に移動します。 
 2. この競合するポリシーを適用する GPO を一時的に無効にします。
 3. この設定を [無効] に設定し、他の Gpo より優先順位の高い、移行元サーバーの特定の OU に適用する新しい GPO を一時的に作成します。
+
+## <a name="inventory-or-transfer-fail-when-using-credentials-from-a-different-domain"></a>別のドメインの資格情報を使用すると、インベントリまたは転送が失敗する
+
+ターゲットサーバーとは異なるドメインの移行資格情報を使用しているときに、ストレージ移行サービスでインベントリを実行したり、Windows Server を対象にしたりしようとすると、次のエラーが表示されます。 
+
+    The server was unable to process the request due to an internal error
+    
+    04/28/2020-11:31:01.169 [Erro] Failed device discovery stage SystemInfo with error: (0x490) Could not find computer object 'myserver' in Active Directory    [d:\os\src\base\dms\proxy\discovery\discoveryproxy\DeviceDiscoveryOperation.cs::TryStage::1042]
+
+この問題は、Storage Migration Service のコード障害が原因で発生します。 この問題を回避するには、移行元と移行先のコンピューターが属しているのと同じドメインからの移行資格情報を使用します。 たとえば、移行元と移行先のコンピューターが "contoso.com" フォレストの "corp.contoso.com" ドメインに属している場合は、' corp\myaccount ' を使用して、' contoso\myaccount ' 資格情報ではなく、移行を実行します。
 
 ## <a name="see-also"></a>関連項目
 
