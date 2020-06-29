@@ -6,20 +6,20 @@ ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 03/29/2018
-ms.openlocfilehash: 26454881279e1d33392a827f794788370def2cab
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ce3b32bdb0dfb51237f934f23207167a215a0024
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858975"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475609"
 ---
 # <a name="delimit-the-allocation-of-volumes-in-storage-spaces-direct"></a>記憶域スペースダイレクトのボリュームの割り当てを区切ります。
-> 適用対象: Windows Server 2019
+> 適用対象:Windows Server 2019
 
 Windows Server 2019 では、記憶域スペースダイレクトでボリュームの割り当てを手動で区切るオプションが導入されています。 これにより、特定の条件下でフォールトトレランスを大幅に向上させることができますが、管理上の考慮事項と複雑さが増加します。 このトピックでは、そのしくみについて説明し、PowerShell の例を示します。
 
    > [!IMPORTANT]
-   > この機能は、Windows Server 2019 で新しく追加された機能です。 Windows Server 2016 では使用できません。 
+   > この機能は、Windows Server 2019 で新しく追加された機能です。 Windows Server 2016 では使用できません。
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -62,19 +62,19 @@ Windows Server 2019 では、記憶域スペースダイレクトでボリュー
 
 存続確率は、サーバーの数とその他の要因によって異なります。詳細については、「[分析](#analysis)」を参照してください。
 
-#### <a name="disadvantages"></a>欠点
+#### <a name="disadvantages"></a>短所
 
 区切られた割り当てにより、管理上の考慮事項と複雑さが増加します。
 
 1. 管理者は、各ボリュームの割り当てを区切ることによって、サーバー間での記憶域使用率のバランスを取るとともに、「[ベストプラクティス](#best-practices)」セクションで説明されているように、サバイバルの確率を高くします。
 
-2. 区切られた割り当てでは、サーバーごとに1つの容量ドライブに相当するものを予約します **(最大値はありません)** 。 これは、通常の割り当てに関して公開されている[推奨事項](plan-volumes.md#choosing-the-size-of-volumes)を超えており、合計4つの容量ドライブを qpu します。
+2. 区切られた割り当てでは、サーバーごとに1つの容量ドライブに相当するものを予約します **(最大値はありません)**。 これは、通常の割り当てに関して公開されている[推奨事項](plan-volumes.md#choosing-the-size-of-volumes)を超えており、合計4つの容量ドライブを qpu します。
 
 3. サーバー[とそのドライブの削除](remove-servers.md#remove-a-server-and-its-drives)に関するページで説明されているように、サーバーで障害が発生し、交換が必要になった場合、管理者は、新しいサーバーを追加して失敗したボリュームの delimitation を削除することで、影響を受けるボリュームの更新を行います。次の例を参照してください。
 
 ## <a name="usage-in-powershell"></a>PowerShell での使用法
 
-`New-Volume` コマンドレットを使用して記憶域スペースダイレクトにボリュームを作成できます。
+コマンドレットを使用して `New-Volume` 記憶域スペースダイレクトでボリュームを作成できます。
 
 たとえば、通常の3方向ミラーボリュームを作成するには、次のようにします。
 
@@ -86,7 +86,7 @@ New-Volume -FriendlyName "MyRegularVolume" -Size 100GB
 
 3方向ミラーボリュームを作成し、その割り当てを区切るには、次のようにします。
 
-1. まず、クラスター内のサーバーを `$Servers`変数に割り当てます。
+1. まず、クラスター内のサーバーを変数に割り当て `$Servers` ます。
 
     ```PowerShell
     $Servers = Get-StorageFaultDomain -Type StorageScaleUnit | Sort FriendlyName
@@ -95,7 +95,7 @@ New-Volume -FriendlyName "MyRegularVolume" -Size 100GB
    > [!TIP]
    > 記憶域スペースダイレクトでは、"ストレージスケールユニット" という用語は、直接接続されたドライブとドライブを持つ直接接続された外部エンクロージャを含む、1台のサーバーに接続されているすべての未加工のストレージを指します。 このコンテキストでは、' server ' と同じです。
 
-2. 新しい `-StorageFaultDomainsToUse` パラメーターで使用するサーバーと、`$Servers`にインデックスを付けることによって、どのサーバーを使用するかを指定します。 たとえば、1番目、2番目、3番目、および4番目のサーバー (インデックス0、1、2、および 3) への割り当てを区切るには、次のようにします。
+2. 新しいパラメーターで使用するサーバー `-StorageFaultDomainsToUse` と、にインデックスを付けることによって、どのサーバーを使用するかを指定し `$Servers` ます。 たとえば、1番目、2番目、3番目、および4番目のサーバー (インデックス0、1、2、および 3) への割り当てを区切るには、次のようにします。
 
     ```PowerShell
     New-Volume -FriendlyName "MyVolume" -Size 100GB -StorageFaultDomainsToUse $Servers[0,1,2,3]
@@ -103,21 +103,21 @@ New-Volume -FriendlyName "MyRegularVolume" -Size 100GB
 
 ### <a name="see-a-delimited-allocation"></a>区切られた割り当てを表示する
 
-*Myvolume*がどのように割り当てられているかを確認するには、 [「付録](#appendix):」の `Get-VirtualDiskFootprintBySSU.ps1` スクリプトを使用します。
+*Myvolume*がどのように割り当てられているかを確認するには、 `Get-VirtualDiskFootprintBySSU.ps1` [付録](#appendix)のスクリプトを使用します。
 
 ```PowerShell
 PS C:\> .\Get-VirtualDiskFootprintBySSU.ps1
 
 VirtualDiskFriendlyName TotalFootprint Server1 Server2 Server3 Server4 Server5 Server6
 ----------------------- -------------- ------- ------- ------- ------- ------- -------
-MyVolume                300 GB         100 GB  100 GB  100 GB  100 GB  0       0      
+MyVolume                300 GB         100 GB  100 GB  100 GB  100 GB  0       0
 ```
 
 Server1、Server2、Server3、およびサーバー4にのみ、 *Myvolume*のスラブが含まれていることに注意してください。
 
 ### <a name="change-a-delimited-allocation"></a>区切られた割り当てを変更する
 
-新しい `Add-StorageFaultDomain` および `Remove-StorageFaultDomain` のコマンドレットを使用して、割り当ての区切り方法を変更します。
+新しい `Add-StorageFaultDomain` `Remove-StorageFaultDomain` コマンドレットとコマンドレットを使用して、割り当ての区切り方法を変更します。
 
 たとえば、1台のサーバーで*Myvolume*を移動するには、次のようにします。
 
@@ -139,16 +139,16 @@ Server1、Server2、Server3、およびサーバー4にのみ、 *Myvolume*の�
     Get-StoragePool S2D* | Optimize-StoragePool
     ```
 
-`Get-StorageJob`による再調整の進行状況を監視できます。
+では、再調整の進行状況を監視でき `Get-StorageJob` ます。
 
-完了したら、`Get-VirtualDiskFootprintBySSU.ps1` を再実行して、 *Myvolume*が移動したことを確認します。
+完了したら、をもう一度実行して、 *Myvolume*が移動したことを確認し `Get-VirtualDiskFootprintBySSU.ps1` ます。
 
 ```PowerShell
 PS C:\> .\Get-VirtualDiskFootprintBySSU.ps1
 
 VirtualDiskFriendlyName TotalFootprint Server1 Server2 Server3 Server4 Server5 Server6
 ----------------------- -------------- ------- ------- ------- ------- ------- -------
-MyVolume                300 GB         0       100 GB  100 GB  100 GB  100 GB  0      
+MyVolume                300 GB         0       100 GB  100 GB  100 GB  100 GB  0
 ```
 
 Server1 には*Myvolume*のスラブがなく、代わりに Server5 が使用することに注意してください。
@@ -167,7 +167,7 @@ Server1 には*Myvolume*のスラブがなく、代わりに Server5 が使用�
 
 ### <a name="stagger-delimited-allocation-volumes"></a>区切られた割り当てボリュームの時差
 
-フォールトトレランスを最大化するには、各ボリュームの割り当てを一意にします。つまり、*すべて*のサーバーが別のボリュームと共有されることはありません (重複は問題ありません)。 
+フォールトトレランスを最大化するには、各ボリュームの割り当てを一意にします。つまり、*すべて*のサーバーが別のボリュームと共有されることはありません (重複は問題ありません)。
 
 たとえば、8ノードシステムの場合: Volume 1: Servers 1、2、3、4 Volume 2: Servers 5、6、7、8 Volume 3: Servers 3、4、5、6 Volume 4: Servers 1、2、7、8
 
@@ -200,7 +200,7 @@ Server1 には*Myvolume*のスラブがなく、代わりに Server5 が使用�
 
 いいえ。通常の割り当てと同じです。
 
-## <a name="see-also"></a>参照
+## <a name="additional-references"></a>その他のリファレンス
 
 - [記憶域スペースダイレクトの概要](storage-spaces-direct-overview.md)
 - [記憶域スペースダイレクトのフォールトトレランス](storage-spaces-fault-tolerance.md)
@@ -209,7 +209,7 @@ Server1 には*Myvolume*のスラブがなく、代わりに Server5 が使用�
 
 このスクリプトは、ボリュームがどのように割り当てられているかを確認するのに役立ちます。
 
-前述のように使用するには、コピー/貼り付けを行って `Get-VirtualDiskFootprintBySSU.ps1`として保存します。
+前述のとおりに使用するには、コピー/貼り付けを行って、名前を付けて保存し `Get-VirtualDiskFootprintBySSU.ps1` ます。
 
 ```PowerShell
 Function ConvertTo-PrettyCapacity {

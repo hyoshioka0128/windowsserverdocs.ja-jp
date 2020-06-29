@@ -8,16 +8,16 @@ author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 664b3cfc1e529fe3591f6477ae0eb0b64e32441a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 24714e7af844116629fa4c0eebf5050f9c150c50
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856735"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475539"
 ---
 # <a name="create-a-host-key-and-add-it-to-hgs"></a>ホストキーを作成して HGS に追加する
 
->適用対象: Windows Server 2019
+>適用対象:Windows Server 2019
 
 
 このトピックでは、ホストキーの構成証明 (キーモード) を使用して、保護されたホストになるように Hyper-v ホストを準備する方法について説明します。 ホストキーペアを作成し (または既存の証明書を使用して)、キーの公開半分を HGS に追加します。
@@ -29,7 +29,7 @@ ms.locfileid: "80856735"
 
     ```powershell
     Install-WindowsFeature Hyper-V, HostGuardian -IncludeManagementTools -Restart
-    ``` 
+    ```
 
 3.    ホストキーを自動的に生成するか、既存の証明書を選択します。 カスタム証明書を使用している場合は、少なくとも2048ビットの RSA キー、クライアント認証 EKU、およびデジタル署名キーの使用が必要です。
 
@@ -37,7 +37,7 @@ ms.locfileid: "80856735"
     Set-HgsClientHostKey
     ```
 
-    また、独自の証明書を使用する場合は、拇印を指定することもできます。 
+    また、独自の証明書を使用する場合は、拇印を指定することもできます。
     これは、複数のコンピューターで証明書を共有する場合や、TPM または HSM にバインドされた証明書を使用する場合に便利です。 次に、TPM バインド証明書を作成する例を示します。これにより、秘密キーが盗まれて別のコンピューターで使用され、TPM 1.2 のみが必要になります。
 
     ```powershell
@@ -59,13 +59,13 @@ ms.locfileid: "80856735"
 
 ```powershell
 Add-HgsAttestationHostKey -Name MyHost01 -Path "C:\temp\MyHost01-HostKey.cer"
-``` 
+```
 
-## <a name="next-step"></a>次の手順
+## <a name="next-step"></a>次のステップ
 
 > [!div class="nextstepaction"]
-> [ホストが正常に証明できることを確認する](guarded-fabric-confirm-hosts-can-attest-successfully.md)
+> [ホストが正しく証明できることを確認する](guarded-fabric-confirm-hosts-can-attest-successfully.md)
 
-## <a name="see-also"></a>参照
+## <a name="additional-references"></a>その他のリファレンス
 
-- [保護されたホストとシールドされた Vm のホストガーディアンサービスの展開](guarded-fabric-deploying-hgs-overview.md)
+- [保護されたホストとシールドされた VM のためのホスト ガーディアン サービスの展開](guarded-fabric-deploying-hgs-overview.md)

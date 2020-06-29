@@ -8,12 +8,12 @@ ms.author: jeffrew
 ms.date: 11/21/2019
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 58b6f5dd064eb315ac2d4518283a870d137f837a
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 31eb0e3c960d50ae4cbb8a3bab1b3d6db62e2807
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "74908306"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475689"
 ---
 # <a name="use-powershell-to-manage-windows-admin-center-settings"></a>PowerShell を使用して Windows Admin Center の設定を管理する
 
@@ -27,7 +27,7 @@ ms.locfileid: "74908306"
 
 [!INCLUDE [ps-extensions](../includes/ps-extensions.md)]
 
-### <a name="see-also"></a>関連項目
+### <a name="additional-references"></a>その他の参照情報
 
 * [高可用な Windows Admin Center ゲートウェイをクラスターにデプロイする](../deploy/high-availability.md)
 * [Cloud Shell を使用して Windows Admin Center ゲートウェイを Azure にデプロイする](../azure/deploy-wac-in-azure.md)
