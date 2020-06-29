@@ -7,19 +7,19 @@ ms.topic: article
 ms.author: timwi; chrisrob; herbertm; kenbrumf;  mleary; shawnrab
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 1c41c6cc14f9a35a808eebfe025252090247f8a2
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 7da3e421dd129e54cb013b91a0fa931cb874e815
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851865"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471477"
 ---
 # <a name="troubleshooting-active-directory-domain-services-performance"></a>Active Directory Domain Services のパフォーマンスのトラブルシューティング
 
 パフォーマンスのトラブルシューティングを追加する方法の詳細については、「[ブランチオフィス環境の監視](https://technet.microsoft.com/library/dd736504.aspx)」を参照してください。
 
-## <a name="see-also"></a>参照
-- [パフォーマンスチューニング Active Directory サーバー](index.md)
+## <a name="additional-references"></a>その他のリファレンス
+- [Active Directory サーバーのパフォーマンス チューニング](index.md)
 - [ハードウェアに関する考慮事項](hardware-considerations.md)
 - [LDAP に関する考慮事項](ldap-considerations.md)
 - [ドメイン コントローラーとサイトの適切な配置に関する考慮事項](site-definition-considerations.md)

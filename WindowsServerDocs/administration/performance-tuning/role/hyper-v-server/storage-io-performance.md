@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 83b22c47cb23b02bb9984e03d78fcae93be1ca0a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: c77f084e06e71c9aafd658b59ff385af85ef0b9d
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851815"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471317"
 ---
 # <a name="hyper-v-storage-io-performance"></a>Hyper-v ストレージ i/o パフォーマンス
 
@@ -62,7 +62,7 @@ Windows Server 2012 以降で作成された新しい VHD には、4 KB のア�
 Convert-VHD –Path E:\vms\testvhd\test.vhd –DestinationPath E:\vms\testvhd\test-converted.vhd
 ```
 
-システム上のすべての Vhd の配置プロパティを確認し、最適な 4 KB のアラインメントに変換する必要があります。 元の VHD からのデータで新しい VHD を作成するには、 **[ソースから作成]** オプションを使用します。
+システム上のすべての Vhd の配置プロパティを確認し、最適な 4 KB のアラインメントに変換する必要があります。 元の VHD からのデータで新しい VHD を作成するには、[**ソースから作成**] オプションを使用します。
 
 Windows Powershell を使用して配置を確認するには、次に示すように配置線を確認します。
 
@@ -160,7 +160,7 @@ VHD は親 VHD ファイルを指しています。 に書き込まれていな�
 
 ## <a name="block-size-considerations"></a>ブロックサイズに関する考慮事項
 
-ブロックサイズは、パフォーマンスに大きな影響を与えます。 ブロックサイズは、ディスクを使用しているワークロードの割り当てパターンと一致させることをお勧めします。 たとえば、アプリケーションが 16 MB のチャンク単位で割り当てを行っている場合、仮想ハードディスクのブロックサイズを 16 MB にするのが最適です。 &gt;2 MB のブロックサイズは、VHDX 形式のバーチャルハードディスクでのみ可能です。 ランダム i/o ワークロードの割り当てパターンよりも大きなブロックサイズを使用すると、ホスト上の領域の使用量が大幅に増加します。
+ブロックサイズは、パフォーマンスに大きな影響を与えます。 ブロックサイズは、ディスクを使用しているワークロードの割り当てパターンと一致させることをお勧めします。 たとえば、アプリケーションが 16 MB のチャンク単位で割り当てを行っている場合、仮想ハードディスクのブロックサイズを 16 MB にするのが最適です。 2 MB のブロックサイズ &gt; は、VHDX 形式のバーチャルハードディスクでのみ可能です。 ランダム i/o ワークロードの割り当てパターンよりも大きなブロックサイズを使用すると、ホスト上の領域の使用量が大幅に増加します。
 
 ## <a name="sector-size-implications"></a>セクターサイズの影響
 
@@ -176,7 +176,7 @@ VHD は親 VHD ファイルを指しています。 に書き込まれていな�
 
 -   4 KB のバッファーのデータは、更新された 512 バイト セクターを含むように変更されます。
 
--   ディスク上の物理セクターに、更新された 4 KB のバッファーの書き込みを実行します。
+-   更新された 4 KB のバッファーが、ディスクの物理セクターに書き戻されます。
 
 このプロセスは、読み取り/変更/書き込み (RMW) と呼ばれます。 RMW プロセスの全体的なパフォーマンスの影響は、ワークロードによって異なります。 RMW プロセスでは、次の理由により、仮想ハードディスクのパフォーマンスが低下します。
 
@@ -244,7 +244,7 @@ Windows Server 2012 ストレージスタックで最初に導入された次の
 
 -   高負荷のプロセッサ間の中断を避けるために、仮想プロセッサ間での割り込み分布を含む、より効率的な i/o 完了メカニズム。
 
-Windows Server 2012 で導入されたいくつかのレジストリエントリは、HKLM\\System\\CurrentControlSet\\Enum\\VMBUS\\{device id}\\{instance id}\\StorChannel に配置されています。これにより、チャネルの数を調整できます。 また、i/o の完了を処理する仮想プロセッサを、アプリケーションによって i/o プロセッサとして割り当てられた仮想 Cpu に配置します。 レジストリ設定は、デバイスのハードウェアキーでアダプターごとに構成されます。
+Windows Server 2012 で導入されたいくつかのレジストリエントリは、HKLM \\ System \\ CurrentControlSet \\ Enum \\ VMBUS \\ {device id} \\ {instance id} \\ storchannel にあります。これにより、チャネルの数を調整できます。 また、i/o の完了を処理する仮想プロセッサを、アプリケーションによって i/o プロセッサとして割り当てられた仮想 Cpu に配置します。 レジストリ設定は、デバイスのハードウェアキーでアダプターごとに構成されます。
 
 -   **Channelcount (DWORD)** 使用するチャネルの合計数 (最大 16)。 既定値は、仮想プロセッサ/16 の数である天井です。
 
@@ -270,7 +270,7 @@ Hyper-v 固有の SCSI、対応 IDE、および仮想ファイバーチャネル
 
 このような理由から、仮想ファイバーチャネルディスクを使用しない場合は、SCSI コントローラーに接続された VHDX ファイルを使用することをお勧めします。
 
-## <a name="see-also"></a>参照
+## <a name="additional-references"></a>その他のリファレンス
 
 -   [Hyper-V の用語](terminology.md)
 

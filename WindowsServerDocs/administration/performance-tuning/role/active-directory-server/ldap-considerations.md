@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: timwi; chrisrob; herbertm; kenbrumf;  mleary; shawnrab
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 86aef48575388ad76ff22fc6027c5ce2d4b6694a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 2ef32b379dcc5d1c2d8217564b639f44d024e5ee
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851895"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471548"
 ---
 # <a name="ldap-considerations-in-adds-performance-tuning"></a>での LDAP に関する考慮事項によるパフォーマンスチューニングの追加
 
@@ -47,12 +47,12 @@ Active Directory に対して使用するクエリを適切に記述、構築、
 
 - 長い期間の大量のクエリでは、ATQ LDAP スレッドの消費と枯渇が発生しています。 次のパフォーマンスカウンターを監視します。
 
-    - **NTDS\\要求の待機時間**–これは、要求の処理にかかる時間の影響を受けます。 ただし、120秒 (既定値) の後に要求がタイムアウトになるようにすると、ほとんどの場合、実行時間が大幅に短縮され、極端に長時間に実行されるクエリは、全体の数値で非表示になります。 Active Directory 絶対しきい値ではなく、この基準の変更を検索します。
+    - **NTDS \\要求の待機時間**–これは、要求の処理にかかる時間の影響を受けます。 ただし、120秒 (既定値) の後に要求がタイムアウトになるようにすると、ほとんどの場合、実行時間が大幅に短縮され、極端に長時間に実行されるクエリは、全体の数値で非表示になります。 Active Directory 絶対しきい値ではなく、この基準の変更を検索します。
 
         > [!NOTE]
         > この値が高い場合は、他のドメインに対する "プロキシ処理" 要求の遅延を示すインジケーターや、CRL チェックを行うこともできます。
 
-    - **NTDS\\推定キュー遅延**-最適なパフォーマンスを得るには、要求がサービスの待機を待機する時間がないことを意味する0に近いことをお勧めします。
+    - **NTDS \\推定キュー遅延**–最適なパフォーマンスを得るためには、最適なパフォーマンスを得るためには0に近い必要があります。これは、要求がサービスの待機に時間を費やすことがないためです。
 
 これらのシナリオは、次の1つまたは複数の方法を使用して検出できます。
 
@@ -64,7 +64,7 @@ Active Directory に対して使用するクエリを適切に記述、構築、
 
 -   [Microsoft Server Performance Advisor](../../../server-performance-advisor/microsoft-server-performance-advisor.md)Active Directory Advisor パック
 
--   先祖インデックスを使用する "(objectClass =\*)" 以外の任意のフィルターを使用して検索します。
+-   先祖インデックスを使用する "(objectClass =)" 以外の任意のフィルターを使用して検索し \* ます。
 
 ### <a name="other-index-considerations"></a>その他のインデックスに関する考慮事項
 
@@ -80,11 +80,11 @@ Active Directory に対して使用するクエリを適切に記述、構築、
 
 -   インデックスは、medial 検索文字列と最終的な検索文字列をサポートするために必要です。 最初の検索文字列にタプルインデックスは必要ありません。
 
-    -   最初の検索文字列– (samAccountName = MYPC\*)
+    -   最初の検索文字列– (samAccountName = MYPC \* )
 
-    -   Medial 検索文字列-(samAccountName =\*MYPC\*)
+    -   Medial 検索文字列-(samAccountName = \* mypc \* )
 
-    -   最終的な検索文字列– (samAccountName =\*MYPC $)
+    -   最終的な検索文字列– (samAccountName = \* mypc $)
 
 -   インデックスを作成すると、インデックスの作成中にディスク i/o が生成されます。 これは、優先順位の低いバックグラウンドスレッドで実行され、受信要求はインデックス構築より優先されます。 環境の容量計画が正常に完了している場合は、このことを意識する必要はありません。 ただし、書き込みが多いシナリオや、ドメインコントローラー記憶域の負荷が不明な環境では、クライアントエクスペリエンスが低下する可能性があるため、時間外に行う必要があります。
 
@@ -98,10 +98,10 @@ Active Directory に対して使用するクエリを適切に記述、構築、
 
 -   [インデックス付き属性](https://msdn.microsoft.com/library/windows/desktop/ms677112.aspx)
 
-## <a name="see-also"></a>参照
+## <a name="additional-references"></a>その他のリファレンス
 
-- [パフォーマンスチューニング Active Directory サーバー](index.md)
+- [Active Directory サーバーのパフォーマンス チューニング](index.md)
 - [ハードウェアに関する考慮事項](hardware-considerations.md)
 - [ドメイン コントローラーとサイトの適切な配置に関する考慮事項](site-definition-considerations.md)
-- [ADDS パフォーマンスのトラブルシューティング](troubleshoot.md) 
+- [ADDS パフォーマンスのトラブルシューティング](troubleshoot.md)
 - [Active Directory Domain Services のキャパシティ プランニング](https://go.microsoft.com/fwlink/?LinkId=324566)

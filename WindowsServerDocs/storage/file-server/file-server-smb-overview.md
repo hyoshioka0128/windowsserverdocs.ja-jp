@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 01/10/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: aafcfcd4d0f2f14836c5b7dee2bdbccbf99fa887
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 2c64914e840c4e8a84603144fd499e091f0cb46c
+ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "78169622"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "85070541"
 ---
 # <a name="overview-of-file-sharing-using-the-smb-3-protocol-in-windows-server"></a>Windows Server の SMB 3 プロトコルを使用したファイル共有の概要
 
@@ -119,7 +119,7 @@ SMB ダイレクトの要件は次のとおりです。
 
 Windows Server 2012 R2、Windows Server 2012、および Windows Server 2016 の SMB および関連テクノロジに関する Web 上のその他のリソースを次の一覧に示します。
 
-* [Windows Server の記憶域](../storage.md)
+* [Windows Server の記憶域](../storage.yml)
 * [アプリケーション データ用のスケールアウト ファイル サーバー](../../failover-clustering/sofs-overview.md)
 * [SMB ダイレクトを使用してファイル サーバーのパフォーマンスを向上させる](smb-direct.md)
 * [Hyper-V over SMB の展開](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134187(v%3dws.11)>)

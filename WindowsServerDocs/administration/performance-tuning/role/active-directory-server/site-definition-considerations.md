@@ -7,14 +7,14 @@ ms.topic: article
 ms.author: timwi; chrisrob; herbertm; kenbrumf;  mleary; shawnrab
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: aac7b8f37de2132778bd681d2f2e29ad0ad0810d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 19574c859e038374a4cf3fe1e452adae0891e067
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851875"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471487"
 ---
-# <a name="proper-placement-of-domain-controllers-and-site-considerations"></a>ドメインコントローラーとサイトの適切な配置に関する考慮事項
+# <a name="proper-placement-of-domain-controllers-and-site-considerations"></a>ドメイン コントローラーとサイトの適切な配置に関する考慮事項
 
 適切なサイト定義は、パフォーマンスにとって重要です。 クライアントのサイトが不足すると、認証とクエリのパフォーマンスが低下する可能性があります。 さらに、クライアントでの IPv6 の導入により、要求は IPv4 または IPv6 アドレスから取得され、Active Directory は IPv6 用に適切に定義されたサイトを持つ必要があります。 両方が構成されている場合、オペレーティングシステムは IPv6 を優先します。
 
@@ -34,7 +34,7 @@ Rodc が使用されているシナリオでは、読み取り/書き込み Dc �
 
 ## <a name="optimization-considerations-for-trusts"></a>信頼の最適化に関する考慮事項
 
-フォレスト内のシナリオの場合、信頼は、次のドメイン階層に従って処理されます:&gt; 子ドメイン-&gt; フォレストルートドメイン-&gt; 子ドメイン&gt; の親子ドメイン。 これは、信頼階層内の Dc に通過認証要求の集約によって、フォレストルートのセキュリティで保護されたチャネルと各親が過負荷になる可能性があることを意味します。 これにより、認証によって、上のフローに影響を与える高可用性リンクを転送する必要がある場合に、地理的に大きい分散の Active Directory で遅延が発生することもあります。 オーバーロードは、フォレスト間および下位レベルの信頼のシナリオで発生する可能性があります。 次の推奨事項は、すべてのシナリオに適用されます。
+フォレスト内のシナリオでは、信頼は、次のドメイン階層に従って処理されます。つまり、[大子ドメイン]、[子ドメイン]、[フォレストルートドメイン]、[子ドメイン]、[親子ドメイン] の順に展開し &gt; &gt; &gt; &gt; ます。 これは、信頼階層内の Dc に通過認証要求の集約によって、フォレストルートのセキュリティで保護されたチャネルと各親が過負荷になる可能性があることを意味します。 これにより、認証によって、上のフローに影響を与える高可用性リンクを転送する必要がある場合に、地理的に大きい分散の Active Directory で遅延が発生することもあります。 オーバーロードは、フォレスト間および下位レベルの信頼のシナリオで発生する可能性があります。 次の推奨事項は、すべてのシナリオに適用されます。
 
 -   セキュリティで保護されたチャネル全体の負荷をサポートするように MaxConcurrentAPI を適切に調整します。 詳細については、「 [MaxConcurrentApi 設定を使用して NTLM 認証のパフォーマンスチューニングを行う方法](https://support.microsoft.com/kb/2688798/EN-US)」を参照してください。
 
@@ -67,7 +67,7 @@ Rodc が使用されているシナリオでは、読み取り/書き込み Dc �
         > [!NOTE]
         > クライアントが使用できるドメインコントローラーの数について、約50の実質的な制限があります。 これらのドメインコントローラーは、サイトに最適で最高容量のドメインコントローラーである必要があります。
 
-    
+
     -  信頼されたドメインと信頼する側のドメインのドメインコントローラーを同じ物理的な場所に配置することを検討してください。
 
 すべての信頼のシナリオで、資格情報は、認証要求で指定されたドメインに従ってルーティングされます。 これは、LookupAccountName や LsaLookupNames (およびその他のもの) に対するクエリにも当てはまります。これらは、最も一般的に使用される Api にすぎません。 これらの Api のドメインパラメーターに NULL 値が渡されると、ドメインコントローラーは、使用可能なすべての信頼されるドメインに指定されているアカウント名の検索を試みます。
@@ -76,9 +76,9 @@ Rodc が使用されているシナリオでは、読み取り/書き込み Dc �
 
 -   使用可能なすべての信頼に対して NULL ドメインが指定された認証要求を渡すことを無効にします。 [Active Directory ドメインコントローラーに多数の外部の信頼がある場合、Lsass.exe プロセスが応答を停止することがある](https://support.microsoft.com/kb/923241/EN-US)
 
-## <a name="see-also"></a>参照
-- [パフォーマンスチューニング Active Directory サーバー](index.md)
+## <a name="additional-references"></a>その他のリファレンス
+- [Active Directory サーバーのパフォーマンス チューニング](index.md)
 - [ハードウェアに関する考慮事項](hardware-considerations.md)
 - [LDAP に関する考慮事項](ldap-considerations.md)
-- [ADDS パフォーマンスのトラブルシューティング](troubleshoot.md) 
+- [ADDS パフォーマンスのトラブルシューティング](troubleshoot.md)
 - [Active Directory Domain Services のキャパシティ プランニング](https://go.microsoft.com/fwlink/?LinkId=324566)

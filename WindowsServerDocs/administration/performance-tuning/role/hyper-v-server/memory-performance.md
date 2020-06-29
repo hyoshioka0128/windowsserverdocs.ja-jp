@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 5f683b85657b8dd263e93380b71c646ad677950c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b513dd3346d593ec4c823808f540bce68dd472ce
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851725"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471367"
 ---
 # <a name="hyper-v-memory-performance"></a>Hyper-v メモリのパフォーマンス
 
@@ -41,7 +41,7 @@ ms.locfileid: "80851725"
 
 Windows Server 2016 の hyper-v は、ルートパーティションの管理オペレーティングシステムの実行時の正常性を監視し、ルートパーティションの高パフォーマンスと信頼性を確保しながら、子パーティションに安全に割り当てることができるメモリの量を判断します。
 
-## <a name="see-also"></a>参照
+## <a name="additional-references"></a>その他のリファレンス
 
 -   [Hyper-V の用語](terminology.md)
 

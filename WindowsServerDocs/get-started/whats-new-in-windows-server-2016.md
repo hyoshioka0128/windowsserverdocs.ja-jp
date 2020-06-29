@@ -10,12 +10,12 @@ author: jasongerend
 ms.author: jgerend
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c140c61a5887cc63b2a9d0b468f8d1daf02cd76
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: c3eb62d53ef11d5531590e1a6d46cd6cacaf2e4a
+ms.sourcegitcommit: 5bc5aaf341c711113ca03d1482f933b05b146007
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "76822715"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85094536"
 ---
 # <a name="whats-new-in-windows-server-2016"></a>Windows Server 2016 の新機能
 
@@ -59,7 +59,7 @@ Windows Server 2016 には、不正に使用されているファブリックか
 
 シールドされた仮想マシンを使用するための詳細および手順については、[シールドされた VM と保護されたファブリックの検証ガイド: Windows Server 2016 (TPM)](https://aka.ms/shieldedvms) に関する記事を参照してください。  
 
-## <a name="identity-and-access"></a>[ID およびアクセス](../identity/Identity-and-Access.md)  
+## <a name="identity-and-access"></a>[ID およびアクセス](../identity/Identity-and-Access.yml)  
 ID での新機能では、組織が Active Directory 環境をセキュリティで保護する機能が強化され、クラウドのみの展開およびハイブリッドの展開に移行するために役立ちます。ハイブリッドの展開では、一部のアプリケーションとサービスはクラウドでホストされ、残りはオンプレミスでホストされます。  
 
 ### <a name="active-directory-certificate-services"></a>Active Directory 証明書サービス  
@@ -74,7 +74,7 @@ Active Directory フェデレーション サービスの新機能。 Windows Se
 ### <a name="web-application-proxy"></a>Web アプリケーション プロキシ  
 Web アプリケーション プロキシの最新バージョンでは、より多くのアプリケーションの発行と事前認証を可能にする新機能に力を入れており、ユーザー エクスペリエンスの向上が図られています。 新機能の一覧をご覧ください。新機能には、Exchange ActiveSync などのリッチ クライアント アプリの事前認証や、SharePoint アプリの発行を容易にするワイルドカード ドメインなどがあります。 詳細については、「[Web Application Proxy in Windows Server 2016 (Windows Server 2016 の Web アプリケーション プロキシ)](../remote/remote-access/web-application-proxy/web-application-proxy-windows-server.md)」を参照してください。  
 
-##  <a name="administration"></a>[管理](../administration/manage-windows-server.md)  
+##  <a name="administration"></a>[管理](../administration/manage-windows-server.yml)  
 管理と自動化の領域では、Windows PowerShell など Windows Server 2016 を実行および管理する IT プロフェッショナル向けのツールとリファレンス情報に力を入れています。
 
 Windows PowerShell 5.1 に追加された重要な新機能には、クラスを使った開発のサポートや新しいセキュリティ機能があります。それらの機能により、用途が広がり、使いやすさが向上し、Windows ベースの環境をより簡単かつ包括的に制御して管理できます。 詳細については、「[WMF 5.1 の新しいシナリオと機能](https://docs.microsoft.com/powershell/wmf/5.1/scenarios-features)」を参照してください。
@@ -98,7 +98,7 @@ Windows Server 2016 および Windows 10 には、新しい PackageManagement �
 
 詳しくは、「[PowerShell とブルー チーム](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/)」を参照してください。
 
-## <a name="networking"></a>[ネットワーク](../networking/Networking.md)  
+## <a name="networking"></a>[ネットワーク](../networking/index.yml)  
 この領域には、IT プロフェッショナルが Windows Server 2016 を設計、展開、保守するためのネットワーク製品と機能が含まれています。  
 
 ### <a name="software-defined-networking"></a>ソフトウェアによるネットワーク制御
@@ -132,7 +132,7 @@ Device Guard は、サーバーで実行できるコードを指定するポリ�
 制御フロー ガード (CFG) は、メモリ破損の脆弱性に対処するために作成されたプラットフォームのセキュリティ機能です。 詳細については、「[Control Flow Guard (制御フロー ガード)](https://msdn.microsoft.com/library/windows/desktop/mt637065(v=vs.85).aspx)」を参照してください。
 
 
-## <a name="storage"></a>[ストレージ](../storage/storage.md)
+## <a name="storage"></a>[ストレージ](../storage/storage.yml)
 
 Windows Server 2016 の記憶域には、ソフトウェアによる記憶域と従来のファイル サーバーに対する新機能と強化機能が含まれています。 新機能のいくつかを以下に示します。強化機能および詳細情報については、「[What's New in Storage in Windows Server 2016 (Windows Server 2016 の記憶域の新機能)](../storage/whats-new-in-storage.md)」を参照してください。
 

@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: a7c37638e25fc0d16447ab57bf369255dab9c859
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 5f2e8a0816fdd78491c18e196a57a38734e3368e
+ms.sourcegitcommit: 5bc5aaf341c711113ca03d1482f933b05b146007
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "75950255"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85094506"
 ---
 # <a name="folder-redirection-offline-files-and-roaming-user-profiles-overview"></a>フォルダー リダイレクト、オフライン ファイル、移動ユーザー プロファイルの概要
 
@@ -123,7 +123,7 @@ Windows 8 と Windows Server 2012 の導入以前は、ユーザーが従量制�
 プライマリ コンピューターを指定するには、環境が次の要件を満たす必要があります。
 
 - Windows Server 2012 のスキーマと条件を含むように、Active Directory Domain Services (AD DS) スキーマを更新する必要があります (このスキーマは、Windows Server 2012 以降のドメイン コントローラーをインストールすると自動的に更新されます)。 AD DS スキーマのアップグレードについて詳しくは、「[Windows Server 2016 へのドメイン コントローラーのアップグレード](../../identity/ad-ds/deploy/upgrade-domain-controllers.md)」をご覧ください。
-- クライアント コンピューターは、Windows 10、Windows 8.1、Windows 8、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、または Windows Server 2012 を実行していて、管理対象の Active Directory ドメインに参加している必要があります。
+- クライアント コンピューターは、Windows 10、Windows 8.1、Windows 8、Windows Server 2019、Windows Server 2016、Wndows Server 2012 R2、または Windows Server 2012 を実行していて、管理対象の Active Directory ドメインに参加している必要があります。
 
 ## <a name="more-information"></a>説明を見る
 
@@ -135,4 +135,4 @@ Windows 8 と Windows Server 2012 の導入以前は、ユーザーが従量制�
 | 展開 | [フォルダー リダイレクト オフライン ファイルおよび移動ユーザー プロファイルを展開する](deploy-folder-redirection.md)<br>[エンド ユーザー データの一元管理ソリューションの実装: フォルダー リダイレクトとオフライン ファイルのテクノロジの検証と展開](https://download.microsoft.com/download/3/0/1/3019A3DA-2F41-4F2D-BBC9-A6D24C4C68C4/Implementing%20an%20End-User%20Data%20Centralization%20Solution.docx)<br>[ローミング ユーザー データ展開の管理ガイド](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-vista/cc766489(v=ws.10)>)<br>[Windows 7 コンピューターの新しいオフライン ファイル機能の構成手順ガイド](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff633429(v=ws.10)>)<br>[フォルダー リダイレクトを使用する](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753996(v=ws.11)>)<br>[フォルダー リダイレクトの実装](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc737434(v=ws.10)>) (Windows Server 2003) |
 | ツールと設定 | [MSDN でのオフライン ファイル](https://msdn.microsoft.com/library/cc296092.aspx)<br>[オフライン ファイル グループ ポリシー リファレンス](https://msdn.microsoft.com/library/ms878937.aspx) (Windows 2000) |
 | コミュニティ リソース | [ファイル サービスとストレージに関するフォーラム](https://social.technet.microsoft.com/forums/windowsserver/home?forum=winserverfiles)<br>[Hey, Scripting Guy! Windows でオフライン ファイル機能を使用する方法](<https://blogs.technet.microsoft.com/heyscriptingguy/2009/06/02/hey-scripting-guy-how-can-i-enable-and-disable-offline-files/>)<br>[Hey, Scripting Guy! オフライン ファイルを有効および無効にする方法](<https://blogs.technet.microsoft.com/heyscriptingguy/2009/06/02/hey-scripting-guy-how-can-i-enable-and-disable-offline-files/>) |
-| 関連テクノロジ|[Windows Server の ID およびアクセス](../../identity/identity-and-access.md)<br>[Windows Server の記憶域](../storage.md)<br>[リモート アクセスおよびサーバー管理](../../remote/index.md) |
+| 関連テクノロジ|[Windows Server の ID およびアクセス](../../identity/identity-and-access.yml)<br>[Windows Server の記憶域](../storage.yml)<br>[リモート アクセスおよびサーバー管理](../../remote/index.md) |

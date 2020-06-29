@@ -7,12 +7,12 @@ ms.topic: landing-page
 ms.author: davso; ericam; yashi
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: ec36d87957e5bbe897597e330e766c3193cd30d0
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 249500249921d21184dc8cd14993741392927586
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80851695"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471207"
 ---
 # <a name="performance-tuning-web-servers"></a>Web サーバーのパフォーマンス チューニング
 
@@ -57,7 +57,7 @@ ms.locfileid: "80851695"
 >[!Warning]
 > 増分バックアップ ユーティリティなどの一部のアプリケーションは、この更新情報に依存しており、この情報がないと正しく機能しません。
 
-## <a name="see-also"></a>関連項目
+## <a name="additional-references"></a>その他の参照情報
 - [IIS 10.0 のパフォーマンス チューニング](tuning-iis-10.md)
 - [HTTP 1.1/2 のチューニング](http-performance.md)
 

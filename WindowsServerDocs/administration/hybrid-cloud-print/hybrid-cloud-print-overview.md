@@ -3,15 +3,16 @@ title: Windows Server ハイブリッドクラウド印刷の概要
 description: ハイブリッドクラウド印刷を使用すると、IT 担当者は BYOD またはドメイン参加済みデバイスの印刷要件をサポートできます。
 ms.prod: windows-server
 ms.technology: server-general
+ms.topic: conceptual
 author: trudyha
 ms.author: trudyha
 ms.date: 10/16/2017
-ms.openlocfilehash: f448e8709f9e73165ba1a477c59567fcff4a2008
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 2585037412dd77435ec056336509dbf9c47c7dd2
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852005"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85469827"
 ---
 # <a name="windows-server-hybrid-cloud-print-overview"></a>Windows Server ハイブリッドクラウド印刷の概要
 
@@ -26,13 +27,13 @@ IT 管理者にとって、**ハイブリッドクラウド印刷**では、Azur
 **ハイブリッドクラウド印刷**を使用すると、組織内のユーザーが自分のデスクや職場から離れている場合でも、作業を完了するために使用するデバイスから印刷できます。
 
 **ハイブリッドクラウド印刷**は、windows 10 の作成者 Update と Windows 10 S でサポートされています。
- 
+
 ## <a name="feature-summary"></a>機能の概要
 **ハイブリッドクラウド印刷**は、**探索**サービスと**Windows プリント**サービスという2つの主要なサーバー側コンポーネントで構成されています。
 - IIS サービスで実行されている**探索**サービスエンドポイントは、クラウドでのプリンター検出のための業界標準をサポートしています。
 - 業界標準のインターネット印刷プロトコル (IPP) をサポートする IIS サービスで実行されている**Windows 印刷**サービスエンドポイント。これにより、広範なクライアント OS のサポートが実現します。
 
-## <a name="deployment"></a>展開
+## <a name="deployment"></a>デプロイ
 **ハイブリッドクラウド印刷**では、組織がユーザー認証を必要とする場所に応じて、いくつかの異なる展開オプションをサポートしています。 デプロイは次のようになります。
 
 ![ハイブリッドクラウド印刷ソリューションのグラフィックを示す図](../media/hybrid-cloud-print/wshcp-deployment-options.png)
@@ -40,11 +41,11 @@ IT 管理者にとって、**ハイブリッドクラウド印刷**では、Azur
 *ハイブリッドクラウド印刷ソリューションの図*
 
 図には次のように表示されます。
-- ユーザー id プロバイダーとして Azure Active Directory を使用した**ハイブリッドクラウド印刷**。 
-- **Windows 印刷**サービスと**探索**サービスのエンドポイントが Azure Active Directory に登録され、クライアントデバイスは、これらのサービスに対して使用する必要なユーザー認証トークンを取得できるようになります。 
+- ユーザー id プロバイダーとして Azure Active Directory を使用した**ハイブリッドクラウド印刷**。
+- **Windows 印刷**サービスと**探索**サービスのエンドポイントが Azure Active Directory に登録され、クライアントデバイスは、これらのサービスに対して使用する必要なユーザー認証トークンを取得できるようになります。
 - **Microsoft Intune**などの MDM サービスは、Azure Active Directory を**Windows プリント**サービスおよび**探索**サービスに接続するために必要なポリシーをクライアントデバイスにプロビジョニングします。
 
-この表には、図の要素に関する詳細情報が含まれています。  
+この表には、図の要素に関する詳細情報が含まれています。
 
 | 要素 | 説明 |
 | ------- | ----------- |
@@ -57,8 +58,8 @@ IT 管理者にとって、**ハイブリッドクラウド印刷**では、Azur
 | BYOD デバイス/Windows プリントサーバーのスプーラ/プリンタ | これらはそのようなものです。 デプロイの機能に変更はありません。 |
 
 **ハイブリッドクラウド印刷**をインストールするには、次の2つの方法があります。
-- \* * 必要に応じて、役割と機能のファイルの追加と削除の詳細については、「 [Windows Server でのオンデマンド機能の構成](https://docs.microsoft.com/windows-server/administration/server-manager/configure-features-on-demand-in-windows-server)」を参照してください。 
-- \* * Windows Server 2016 の設定では、管理者は、 **[設定]**  ->  **[アプリ]**  ->  **[オプション機能の管理]**  -> 機能の**追加**とオンデマンドパッケージの検索を行うことができます。 
+- * * 必要に応じて、役割と機能のファイルの追加と削除の詳細については、「 [Windows Server でのオンデマンド機能の構成](https://docs.microsoft.com/windows-server/administration/server-manager/configure-features-on-demand-in-windows-server)」を参照してください。
+- * * Windows Server 2016 の設定、管理者は、[**設定**] [アプリ] [  ->  **Apps**  ->  **オプション機能の管理**] 機能を  ->  **追加**し、[オンデマンドで機能] パッケージを検索します。
 - PowerShell コマンド-PowerShell 管理者ウィンドウで、次のコマンドを実行します。
 
 ```PowerShell

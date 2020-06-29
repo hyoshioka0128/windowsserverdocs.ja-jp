@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: d7b96574dcfc2a4417aa36780d7bd87c2556f61f
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 658875f132712d34a2c59967ebd316e8c5edca7c
+ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "75950259"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "85070551"
 ---
 # <a name="smb-security-enhancements"></a>SMB セキュリティ拡張機能
 
@@ -122,5 +122,5 @@ Set-SmbServerConfiguration –EnableSMB1Protocol $false
 Windows Server 2012 での SMB テクノロジと関連テクノロジに関するその他の資料を以下に示します。
 
 - [サーバー メッセージ ブロック](file-server-smb-overview.md)
-- [Windows Server の記憶域](../storage.md)
+- [Windows Server の記憶域](../storage.yml)
 - [アプリケーション データ用のスケールアウト ファイル サーバー](../../failover-clustering/sofs-overview.md)

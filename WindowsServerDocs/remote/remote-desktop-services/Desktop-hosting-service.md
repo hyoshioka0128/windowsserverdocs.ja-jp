@@ -8,12 +8,12 @@ ms.date: 07/06/2018
 ms.topic: article
 author: heidilohr
 manager: lizross
-ms.openlocfilehash: 64e433ed379ca322996bcfe2d0ddd513e074b85e
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 2ee11e40d5fb69141ad5dd5342f8574b22232bbd
+ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80854715"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "85070476"
 ---
 # <a name="desktop-hosting-service"></a>デスクトップ ホスティング サービス
 
@@ -70,7 +70,7 @@ SQL データベースの展開方法は複数あります。
 
 詳細については、以下の記事を参照してください。
 
-* [Windows Server の記憶域](../../storage/storage.md)
+* [Windows Server の記憶域](../../storage/storage.yml)
 * [Azure portal で Windows VM にマネージド データ ディスクをアタッチする方法](https://docs.microsoft.com/azure/virtual-machines/windows/attach-managed-disk-portal?toc=%2Fazure%2Fvirtual-machines%2Fwindows%2Fclassic%2Ftoc.json)
 
 ### <a name="user-profile-disks"></a>ユーザー プロファイル ディスク

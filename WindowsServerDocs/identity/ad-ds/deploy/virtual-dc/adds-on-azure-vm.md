@@ -8,18 +8,18 @@ ms.date: 04/11/2019
 ms.technology: identity-adds
 ms.topic: article
 ms.prod: windows-server
-ms.openlocfilehash: e0a10e27e044fd1df7cbdb943964440983ce494c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 536c35077d402370eab7758b8b31cf1916f8ae6f
+ms.sourcegitcommit: 96db7769c3be9d7534bfed942697122ce907a28a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390648"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85448474"
 ---
 # <a name="install-a-new-active-directory-forest-using-azure-cli"></a>Azure CLI を使用して新しい Active Directory フォレストをインストールする
 
 AD DS は、多くのオンプレミスのインスタンスで実行されるのと同じ方法で、Azure 仮想マシン (VM) で実行できます。 この記事では、Azure portal と Azure CLI を使用して、Azure 可用性セットに新しい AD DS フォレストを2つの新しいドメインコントローラーにデプロイする手順について説明します。 多くのお客様は、ラボを作成するとき、または Azure でドメインコントローラーをデプロイする準備をする際に役立つこのガイダンスを見つけています。
 
-## <a name="components"></a>コンポーネント
+## <a name="components"></a>Components
 
 * すべてを配置するリソースグループ。
 * Vm への RDP アクセスを許可する[Azure Virtual Network](https://docs.microsoft.com/azure/virtual-network/virtual-networks-overview.md)、サブネット、ネットワークセキュリティグループ、およびルール。
@@ -38,22 +38,22 @@ AD DS は、多くのオンプレミスのインスタンスで実行される�
 
 環境の作成には、 [Azure portal](https://portal.azure.com)と[Azure CLI](https://docs.microsoft.com/cli/azure/overview?view=azure-cli-latest)を使用します。
 
-この Azure CLI は、コマンドラインまたはスクリプトで Azure リソースを作成および管理するために使用されます。 このチュートリアルでは、Azure CLI を使用して、Windows Server 2019 を実行する仮想マシンを展開する方法について詳しく説明します。 デプロイが完了したら、サーバーに接続して AD DS をインストールします。
+Azure CLI は、コマンドラインやスクリプトで Azure リソースを作成および管理するために使用します。 このチュートリアルでは、Azure CLI を使用して、Windows Server 2019 を実行する仮想マシンを展開する方法について詳しく説明します。 デプロイが完了したら、サーバーに接続して AD DS をインストールします。
 
 Azure サブスクリプションをお持ちでない場合は、開始する前に[無料アカウントを作成](https://azure.microsoft.com/free)してください。
 
 ### <a name="using-azure-cli"></a>Azure CLI の使用
 
-次のスクリプトは、Azure で新しい Active Directory フォレストのドメインコントローラーを構築するために、2つの Windows Server 2019 Vm の構築プロセスを自動化します。 管理者は、必要に応じて以下の変数を変更し、1つの操作として完了することができます。 このスクリプトは、必要なリソースグループ、ネットワークセキュリティグループ、リモートデスクトップ、仮想ネットワークとサブネット、および可用性グループを作成します。 各 Vm は、20 GB のデータディスクを使用して構築され、AD DS をインストールするためにキャッシュが無効になります。
+次のスクリプトは、Azure で新しい Active Directory フォレストのドメインコントローラーを構築するために、2つの Windows Server 2019 Vm の構築プロセスを自動化します。 管理者は、必要に応じて以下の変数を変更し、1回の操作で完了することができます。 このスクリプトは、必要なリソースグループ、ネットワークセキュリティグループ、リモートデスクトップ、仮想ネットワークとサブネット、および可用性グループを作成します。 各 Vm は、20 GB のデータディスクを使用して構築され、AD DS をインストールするためにキャッシュが無効になります。
 
-次のスクリプトは、Azure portal から直接実行できます。 CLI をローカルにインストールして使用することを選択した場合、このクイックスタートでは Azure CLI バージョン2.0.4 以降を実行している必要があります。 `az --version` を実行してバージョンを確認します。 をインストールまたはアップグレードする必要がある場合は、「 [install Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)」を参照してください。
+次のスクリプトは、Azure portal から直接実行できます。 CLI をローカルにインストールして使用する場合、このクイック スタートを実施するには、Azure CLI バージョン 2.0.4 以降を実行している必要があります。 バージョンを確認するには、`az --version` を実行します。 インストールまたはアップグレードする必要がある場合は、「[Azure CLI 2.0 のインストール](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)」を参照してください。
 
 | 変数名 | 目的 |
 | :---: | :--- |
 | AdminUsername | ローカル管理者として各 VM で構成されるユーザー名。 |
 | AdminPassword | 各 VM でローカル管理者のパスワードとして構成されるクリアテキストのパスワード。 |
 | ResourceGroupName | リソースグループに使用する名前。 既存の名前を複製することはできません。 |
-| Location | デプロイ先となる Azure の場所の名前。 `az account list-locations`を使用して、現在のサブスクリプションでサポートされているリージョンを一覧表示します。 |
+| 場所 | デプロイ先となる Azure の場所の名前。 を使用して、現在のサブスクリプションでサポートされているリージョンを一覧表示 `az account list-locations` します。 |
 | VNetName | Azure 仮想ネットワークに割り当てる名前は、既存の名前と重複させることはできません。 |
 | VNetAddress | Azure ネットワークに使用する IP スコープ。 既存の範囲を複製することはできません。 |
 | SubnetName | IP サブネットを割り当てる名前。 既存の名前を複製することはできません。 |
@@ -155,24 +155,24 @@ az vm create \
 
 ## <a name="dns-and-active-directory"></a>DNS と Active Directory
 
-このプロセスの一部として作成された Azure 仮想マシンが、既存のオンプレミス Active Directory インフラストラクチャの拡張機能である場合は、仮想ネットワークの DNS 設定を、デプロイ前にオンプレミスの DNS サーバーを含めるように変更する必要があります。 この手順は、Azure で新しく作成されたドメインコントローラーがオンプレミスのリソースを解決し、レプリケーションを実行できるようにするために重要です。 DNS、Azure、および設定の構成方法の詳細については、「[独自の dns サーバーを使用する名前解決](https://docs.microsoft.com/azure/virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances#name-resolution-that-uses-your-own-dns-server)」セクションを参照してください。
+このプロセスの一部として作成された Azure 仮想マシンが、既存のオンプレミス Active Directory インフラストラクチャの拡張機能になる場合は、仮想ネットワークの DNS 設定を、デプロイ前にオンプレミスの DNS サーバーを含むように変更する必要があります。 この手順は、Azure で新しく作成されたドメインコントローラーがオンプレミスのリソースを解決し、レプリケーションを実行できるようにするために重要です。 DNS、Azure、および設定の構成方法の詳細については、「[独自の dns サーバーを使用する名前解決](https://docs.microsoft.com/azure/virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances#name-resolution-that-uses-your-own-dns-server)」セクションを参照してください。
 
-Azure で新しいドメインコントローラーを昇格した後、仮想ネットワークのプライマリおよびセカンダリ DNS サーバーに設定する必要があります。オンプレミスの DNS サーバーは、3番目以降に降格されます。 DNS サーバーの変更の詳細については、「[仮想ネットワークの作成、変更、削除](https://docs.microsoft.com/azure/virtual-network/manage-virtual-network#change-dns-servers)」を参照してください。
+Azure で新しいドメインコントローラーを昇格した後は、仮想ネットワークのプライマリおよびセカンダリ DNS サーバーに設定する必要があります。オンプレミスの DNS サーバーは、3番目以降に降格されます。 DNS サーバーの変更の詳細については、「[仮想ネットワークの作成、変更、削除](https://docs.microsoft.com/azure/virtual-network/manage-virtual-network#change-dns-servers)」を参照してください。
 
 オンプレミスネットワークを Azure に拡張する方法については、「[サイト間 VPN 接続を作成](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal
 )する」を参照してください。
 
 ## <a name="configure-the-vms-and-install-active-directory-domain-services"></a>Vm を構成してインストール Active Directory Domain Services
 
-スクリプトが完了したら、 [Azure portal](https://portal.azure.com)を参照し、 **[仮想マシン]** をクリックします。
+スクリプトが完了したら、 [Azure portal](https://portal.azure.com)を参照し、[**仮想マシン**] をクリックします。
 
 ### <a name="configure-the-first-domain-controller"></a>最初のドメインコントローラーを構成する
 
 スクリプトで指定した資格情報を使用して AZDC01 に接続します。
 
 * データディスクの初期化とフォーマットを F:
-   * スタート メニューを開き、**コンピューターの管理** を参照します。
-   * [**記憶域** > **ディスクの管理**] を参照します。
+   * [スタート] メニューを開き、[**コンピューターの管理**] を参照します。
+   * **記憶域**  >  **ディスクの管理**を参照する
    * MBR としてディスクを初期化する
    * 新しいシンプルボリュームを作成してドライブ文字を割り当てる F: 必要に応じてボリュームラベルを指定できます。
 * サーバーマネージャーを使用して Active Directory Domain Services をインストールする
@@ -180,7 +180,7 @@ Azure で新しいドメインコントローラーを昇格した後、仮想�
    * [ドメインコントローラーオプション] ページで、[ドメインネームシステム (DNS) サーバーおよびグローバルカタログ (GC)] チェックボックスをオンのままにします。
    * 組織の要件に基づいてディレクトリサービス復元モードのパスワードを指定する
    * C: のパスを、場所の入力を求められたときに作成した F: ドライブを指すように変更します。
-   * ウィザードで選択した内容を確認し、 **[次へ]** をクリックします。
+   * ウィザードで選択した内容を確認し、[**次へ**] をクリックします。
 
 > [!NOTE]
 > 前提条件の確認では、物理ネットワークアダプターに静的 IP アドレスが割り当てられていないことが警告されます。これは、Azure 仮想ネットワークで静的 IP が割り当てられているため、無視してかまいません。
@@ -189,57 +189,57 @@ Azure で新しいドメインコントローラーを昇格した後、仮想�
 
 ウィザードがインストールプロセスを完了すると、VM が再起動されます。
 
-VM が再起動すると、使用された資格情報ではなく、この時点で作成したドメインのメンバーとして再度ログインします。
+VM の再起動が完了したら、前に使用した資格情報を使用してもう一度ログインしますが、今回は作成したドメインのメンバーとして再度ログインします。
 
    > [!NOTE]
    > ドメインコントローラーへの昇格後の最初のログオンは、通常よりも時間がかかる場合があります。 紅茶、コーヒー、水、その他の飲み物を選ぶことができます。
 
-[Azure 仮想ネットワークでは ipv6 がサポートされ](https://docs.microsoft.com/azure/virtual-network/virtual-networks-faq#do-vnets-support-ipv6)ないため、ipv6 経由の IPv4 を優先するように vm を設定する必要があります。 このタスクを実行する方法の詳細については、サポート技術情報の記事「 [Windows で IPv6 を構成](https://support.microsoft.com/help/929852/guidance-for-configuring-ipv6-in-windows-for-advanced-users)する」を参照してください。
+[Azure 仮想ネットワークは ipv6 をサポートするようになりまし](https://docs.microsoft.com/azure/virtual-network/virtual-networks-faq#do-vnets-support-ipv6)たが、ipv6 経由で IPv4 を優先するように vm を設定する場合、このタスクを実行する方法については、サポート技術情報の記事「 [Windows での高度なユーザー向けの IPv6 の構成に関するガイダンス](https://support.microsoft.com/help/929852/guidance-for-configuring-ipv6-in-windows-for-advanced-users)」を参照してください。
 
 ### <a name="configure-the-second-domain-controller"></a>2番目のドメインコントローラーを構成する
 
 スクリプトで指定した資格情報を使用して AZDC02 に接続します。
 
 * データディスクの初期化とフォーマットを F:
-   * スタート メニューを開き、**コンピューターの管理** を参照します。
-   * [**記憶域** > **ディスクの管理**] を参照します。
+   * [スタート] メニューを開き、[**コンピューターの管理**] を参照します。
+   * **記憶域**  >  **ディスクの管理**を参照する
    * MBR としてディスクを初期化する
-   * 新しいシンプルボリュームを作成してドライブ文字を割り当てる F: 必要に応じてボリュームラベルを指定できます。
+   * 新しいシンプルボリュームを作成し、ドライブ文字 F: を割り当てます (必要に応じてボリュームラベルを指定できます)。
 * サーバーマネージャーを使用して Active Directory Domain Services をインストールする
 * ドメインコントローラーの昇格
    * 既存のドメインにドメインコントローラーを追加する-CONTOSO.com
    * 操作を実行するための資格情報を指定します
    * C: のパスを、場所の入力を求められたときに作成した F: ドライブを指すように変更します。
-   * [ドメインコントローラーオプション] ページで、[ドメインネームシステム (DNS) サーバーおよびグローバルカタログ (GC)] チェックボックスがオンになっていることを確認します。
+   * [ドメインコントローラーオプション] ページで、[ドメインネームシステム (DNS) サーバー] および [グローバルカタログ (GC)] がオンになっていることを確認します。
    * 組織の要件に基づいてディレクトリサービス復元モードのパスワードを指定する
-   * ウィザードで選択した内容を確認し、 **[次へ]** をクリックします。
+   * ウィザードで選択した内容を確認し、[**次へ**] をクリックします。
 
 > [!NOTE]
-> 前提条件の確認では、物理ネットワークアダプターに静的 IP アドレスが割り当てられていないことが警告されます。これは、Azure 仮想ネットワークで静的 IP が割り当てられているため、無視してかまいません。
+> 前提条件の確認では、物理ネットワークアダプターに静的 IP アドレスが割り当てられていないことが警告されます。 Azure 仮想ネットワークに静的 Ip が割り当てられているため、これは無視しても問題ありません。
 
 * **インストール**の選択
 
 ウィザードがインストールプロセスを完了すると、VM が再起動されます。
 
-VM が再起動すると、使用された資格情報ではなく、CONTOSO.com ドメインのメンバーとして再度ログインします。
+VM の再起動が完了したら、前に使用した資格情報で、今度は CONTOSO.com ドメインのメンバーとして再度ログインします。
 
-[Azure 仮想ネットワークでは ipv6 がサポートされ](https://docs.microsoft.com/azure/virtual-network/virtual-networks-faq#do-vnets-support-ipv6)ないため、ipv6 経由の IPv4 を優先するように vm を設定する必要があります。 このタスクを実行する方法の詳細については、サポート技術情報の記事「 [Windows で IPv6 を構成](https://support.microsoft.com/help/929852/guidance-for-configuring-ipv6-in-windows-for-advanced-users)する」を参照してください。
+[Azure 仮想ネットワークは ipv6 をサポートするようになりまし](https://docs.microsoft.com/azure/virtual-network/virtual-networks-faq#do-vnets-support-ipv6)たが、ipv6 経由で IPv4 を優先するように vm を設定する場合、このタスクを実行する方法については、サポート技術情報の記事「 [Windows での高度なユーザー向けの IPv6 の構成に関するガイダンス](https://support.microsoft.com/help/929852/guidance-for-configuring-ipv6-in-windows-for-advanced-users)」を参照してください。
 
 ### <a name="configure-dns"></a>DNS を構成する
 
-Azure で新しいドメインコントローラーを昇格した後、仮想ネットワークのプライマリおよびセカンダリ DNS サーバーに設定する必要があります。オンプレミスの DNS サーバーは、3番目以降に降格されます。 DNS サーバーの変更の詳細については、「[仮想ネットワークの作成、変更、削除](https://docs.microsoft.com/azure/virtual-network/manage-virtual-network#change-dns-servers)」を参照してください。
+Azure で新しいドメインコントローラーを昇格した後は、仮想ネットワークのプライマリおよびセカンダリ DNS サーバーに設定する必要があります。オンプレミスの DNS サーバーは、3番目以降に降格されます。 DNS サーバーの変更の詳細については、「[仮想ネットワークの作成、変更、削除](https://docs.microsoft.com/azure/virtual-network/manage-virtual-network#change-dns-servers)」を参照してください。
 
-### <a name="wrap-up"></a>折り返し
+### <a name="wrap-up"></a>まとめ
 
-この時点で、環境にはドメインコントローラーのペアがあり、追加のサーバーが環境に追加されるように Azure 仮想ネットワークが構成されています。 サイトとサービスの構成、監査、バックアップ、組み込みの管理者アカウントのセキュリティ保護などの Active Directory Domain Services のインストール後のタスクは、この時点で完了する必要があります。
+この時点で、環境にはドメインコントローラーのペアがあり、Azure 仮想ネットワークが構成され、追加のサーバーが環境に追加される可能性があります。 サイトとサービスの構成、監査、バックアップ、組み込みの管理者アカウントのセキュリティ保護などの Active Directory Domain Services のインストール後のタスクは、この時点で完了する必要があります。
 
 ## <a name="removing-the-environment"></a>環境を削除しています
 
-上記で作成したリソースグループのテストが完了したときに環境を削除するには、この手順によって、そのリソースグループの一部であるすべてのコンポーネントが削除されます。
+環境を削除するには、テストが完了したら、上で作成したリソースグループを削除できます。 このステップでは、そのリソースグループの一部であるすべてのコンポーネントが削除されます。
 
 ### <a name="remove-using-the-azure-portal"></a>Azure portal を使用して削除する
 
-Azure portal から、 **[リソースグループ]** に移動し、この例の ADonAzureVMs で作成したリソースグループを選択し、 **[リソースグループの削除]** を選択します。 このプロセスでは、リソースグループ内に含まれるすべてのリソースを削除する前に確認メッセージが表示されます。
+Azure portal から、[**リソースグループ**] に移動し、作成したリソースグループ (この例では ADonAzureVMs) を選択し、[**リソースグループの削除**] を選択します。 このプロセスでは、リソースグループ内に含まれるすべてのリソースを削除する前に確認メッセージが表示されます。
 
 ### <a name="remove-using-the-azure-cli"></a>Azure CLI を使用して削除する
 
@@ -255,6 +255,6 @@ az group delete --name ADonAzureVMs
 * [Azure AD Connect](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-get-started-express)
 * [バックアップと回復](https://docs.microsoft.com/azure/virtual-machines/windows/backup-recovery)
 * [サイト間 VPN 接続](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal)
-* [監査](https://docs.microsoft.com/azure/virtual-machines/windows/monitor)
+* [Monitoring](https://docs.microsoft.com/azure/virtual-machines/windows/monitor)
 * [セキュリティとポリシー](https://docs.microsoft.com/azure/virtual-machines/windows/security-policy)
 * [メンテナンスと更新](https://docs.microsoft.com/azure/virtual-machines/windows/maintenance-and-updates)

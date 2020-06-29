@@ -1,5 +1,5 @@
 ---
-title: 永続メモリの理解と配置
+title: 永続的なメモリの理解とデプロイ
 description: 永続メモリの概要と、Windows Server 2019 で記憶域スペースダイレクトを使用して設定する方法の詳細について説明します。
 ms.prod: windows-server
 ms.author: adagashe
@@ -8,16 +8,16 @@ ms.topic: article
 author: adagashe
 ms.date: 1/27/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 43268986f0ef42aabc218062ac19f1d98f27be6d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 2f5f88ac2ec728e176735ad58d9d67112583c527
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80861035"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85469647"
 ---
-# <a name="understand-and-deploy-persistent-memory"></a>永続メモリの理解と配置
+# <a name="understand-and-deploy-persistent-memory"></a>永続的なメモリの理解とデプロイ
 
-> 適用対象: Windows Server 2019
+> 適用対象:Windows Server 2019
 
 永続メモリ (または PMem) は、手頃な価格の大きな容量と永続性を備えた一意の組み合わせを提供する新しい種類のメモリテクノロジです。 この記事では、記憶域スペースダイレクトを使用して、PMem の背景と、Windows Server 2019 に展開する手順について説明します。
 
@@ -27,7 +27,7 @@ PMem は、電力サイクルを通じてコンテンツを保持する非揮発
 
 これらの利点の一部を確認するには、Microsoft Ignite 2018 の次のデモを参照してください。
 
-[![Microsoft Ignite 2018 Pmem demo](http://img.youtube.com/vi/8WMXkMLJORc/0.jpg)](http://www.youtube.com/watch?v=8WMXkMLJORc)
+[![Microsoft Ignite 2018 Pmem デモ](http://img.youtube.com/vi/8WMXkMLJORc/0.jpg)](http://www.youtube.com/watch?v=8WMXkMLJORc)
 
 フォールトトレランスを提供するストレージシステムでは、必ず書き込みの分散コピーが作成されます。 このような操作では、ネットワークを経由し、バックエンドの書き込みトラフィックを増幅する必要があります。 このため、最大の IOPS ベンチマーク番号は、通常、読み取りのみを測定することで達成されます。特に、可能な限りローカルコピーから読み取るためにストレージシステムに共通の意味の最適化がある場合は特にそうです。 記憶域スペースダイレクトは、そのために最適化されています。
 
@@ -37,40 +37,40 @@ PMem は、電力サイクルを通じてコンテンツを保持する非揮発
 
 ビデオをよく見ると、さらに多くの jaw が削除されていることがわかります。 Windows のファイルシステムは、13.7 M を超える IOPS でも、常に40μs 未満の待機時間を報告しています。 (これはマイクロ秒の記号で、1秒の万です)。この速度は、一般的なすべての flash ベンダ人格が現在提供しているものよりもはるかに高速です。
 
-Windows Server 2019 および Intel&reg;&trade; Optane で記憶域スペースダイレクト、DC 永続メモリによってパフォーマンスが飛躍的に向上します。 この業界トップレベルの HCI ベンチマークは、予測可能で非常に短い待機時間で、13.7 M IOPS を超えています。これは、以前の業界トップレベルの6.7 ベンチマークである 6.7 M IOPS を超えています。 さらに、この時点では、12% 未満のサーバーノードを2年前に&mdash;必要があります。
+Windows Server 2019 および Intel Optane DC 永続メモリの記憶域スペースダイレクトと共に、パフォーマンスが飛躍的に &reg; &trade; 向上します。 この業界トップレベルの HCI ベンチマークは、予測可能で非常に短い待機時間で、13.7 M IOPS を超えています。これは、以前の業界トップレベルの6.7 ベンチマークである 6.7 M IOPS を超えています。 さらに、今回は、12% 未満のサーバーノードを2年前にしか必要と &mdash; していませんでした。
 
 ![IOPS の向上](media/deploy-pmem/iops-gains.png)
 
-テストハードウェアは、3方向のミラーリングと区切られた ReFS ボリュームを使用するように構成された12サーバークラスターでした。 **12** x INTEL&reg; S2600WFT、 **384 GiB** memory、2 x 28 コア "cascadelake" **1.5 TB** Intel&reg; Optane&trade; DC 永続メモリ (キャッシュとして)、32 **TB NVMe** (4 x 8 TB intel&reg; DC P4510) (容量× 2 **x** Mellanox Gbps)。 4 25
+テストハードウェアは、3方向のミラーリングと区切られた ReFS ボリュームを使用するように構成された12台のサーバークラスター、 **12** x intel &reg; S2600WFT、 **384 GiB** memory、2 x 28 コア "cascadelake、 **1.5 tb** Intel &reg; Optane &trade; DC 永続メモリ (キャッシュとしての 4 25)、 **32 TB** NVMe (4 x 8 TB &reg; )。 **2**
 
-次の表は、完全なパフォーマンスの値を示しています。  
+次の表は、完全なパフォーマンスの値を示しています。
 
-| ベンチマーク                   | パフォーマンス テスト         |
+| ベンチマーク                   | パフォーマンス         |
 |-----------------------------|---------------------|
 | 4K 100% のランダム読み取り         | 1380万 IOPS   |
 | 4K 90/10% ランダム読み取り/書き込み | 945万 IOPS   |
 | 2 MB 順次読み取り         | 549 GB/秒のスループット |
 
-### <a name="supported-hardware"></a>サポートされているハードウェア
+### <a name="supported-hardware"></a>サポートされるハードウェア
 
-次の表は、Windows Server 2019 および Windows Server 2016 でサポートされる永続メモリハードウェアを示しています。  
+次の表は、Windows Server 2019 および Windows Server 2016 でサポートされる永続メモリハードウェアを示しています。
 
 | 永続メモリテクノロジ                                      | Windows Server 2016 | Windows Server 2019 |
 |-------------------------------------------------------------------|--------------------------|--------------------------|
-| 永続モードでの**NVDIMM**                                  | サポート対象                | サポート対象                |
-| アプリダイレクトモードでの**Intel Optane&trade; DC 永続メモリ**             | サポートされない            | サポート対象                |
-| **Intel Optane&trade; DC 永続メモリ**(メモリモード) | サポート対象            | サポート対象                |
+| 永続モードでの**NVDIMM**                                  | サポートされています                | サポートされています                |
+| **Intel Optane &trade;** アプリダイレクトモードでの DC 永続メモリ             | サポートされていません            | サポートされています                |
+| **Intel Optane &trade;メモリモードの DC 永続メモリ** | サポートされています            | サポートされています                |
 
-> [!NOTE]  
+> [!NOTE]
 > Intel Optane は、*メモリ*(揮発性) モードと*アプリダイレクト*(永続的) モードの両方をサポートしています。
-   
-> [!NOTE]  
-> 複数の Intel&reg; Optane&trade; PMem モジュールがあるシステムを、複数の名前空間に分割されたアプリダイレクトモードで再起動すると、関連する論理記憶域ディスクの一部またはすべてにアクセスできなくなる可能性があります。 この問題は、バージョン1903よりも前のバージョンの Windows Server 2019 で発生します。
->   
+
+> [!NOTE]
+> 複数の Intel &reg; Optane PMem モジュールが複数の名前空間に分割されているシステムを再起動すると &trade; 、関連する論理記憶域ディスクの一部またはすべてにアクセスできなくなる可能性があります。 この問題は、バージョン1903よりも前のバージョンの Windows Server 2019 で発生します。
+>
 > このようなアクセスが失われるのは、システムの起動時に、PMem モジュールが未トレーニングまたは失敗したためです。 このような場合は、システム上のすべての PMem モジュールのすべてのストレージ名前空間が失敗します。これには、障害が発生したモジュールに物理的にマップされていない名前空間も含まれます。
->   
+>
 > すべての名前空間へのアクセスを復元するには、失敗したモジュールを置き換えます。
->   
+>
 > Windows Server 2019 バージョン1903またはそれ以降のバージョンでモジュールが失敗した場合、影響を受けたモジュールに物理的にマップされている名前空間にのみアクセスできなくなります。 その他の名前空間は影響を受けません。
 
 では、永続メモリの構成方法について説明します。
@@ -90,7 +90,7 @@ DiskNumber Size   HealthStatus AtomicityType CanBeRemoved PhysicalDeviceIds Unsa
 3          252 GB Healthy      None          True         {1020, 1120}      0
 ```
 
-論理 PMem ディスク #2 が物理デバイス Id20 と Id120 を使用し、論理 PMem ディスク #3 物理デバイス Id1020 と Id1120 を使用していることがわかります。  
+論理 PMem ディスク #2 が物理デバイス Id20 と Id120 を使用し、論理 PMem ディスク #3 物理デバイス Id1020 と Id1120 を使用していることがわかります。
 
 論理ドライブが使用するインターリーブセットに関する詳細情報を取得するには、次のように**取得**します。
 
@@ -158,9 +158,9 @@ Windows Server 2019 の記憶域スペースダイレクトでは、キャッシ
 
 ### <a name="understanding-dax"></a>DAX について
 
-永続メモリにアクセスするには、2つの方法があります。 サポートしているシステムは次のとおりです。
+永続メモリにアクセスするには、2つの方法があります。 これらは次のとおりです。
 
-1. **直接アクセス (DAX)** 。これはメモリのように動作し、待機時間が最短になります。 アプリは、スタックをバイパスして、永続的なメモリを直接変更します。 DAX は NTFS と組み合わせてのみ使用できることに注意してください。
+1. **直接アクセス (DAX)**。これはメモリのように動作し、待機時間が最短になります。 アプリは、スタックをバイパスして、永続的なメモリを直接変更します。 DAX は NTFS と組み合わせてのみ使用できることに注意してください。
 1. アプリの互換性のためにストレージのように動作する**アクセスをブロック**します。 このような場合、データはスタックを介して流れます。 この構成は、NTFS および ReFS と組み合わせて使用できます。
 
 次の図は、DAX 構成の例を示しています。
@@ -253,7 +253,7 @@ SerialNumber               HealthStatus OperationalStatus  OperationalDetails
 802c-01-1602-117cb64f      Warning      Predictive Failure {Threshold Exceeded,NVDIMM_N Error}
 ```
 
-**HealthStatus**は、PMem ディスクが正常であるかどうかを示します。  
+**HealthStatus**は、PMem ディスクが正常であるかどうかを示します。
 
 **Unsaf のカウント**値は、この論理ディスクのデータ損失の原因となる可能性があるシャットダウンの数を追跡します。 これは、このディスクの基になるすべての PMem デバイスの安全でないシャットダウン数の合計です。 正常性状態の詳細に**ついては**、get-help などの情報を検索するために、 **Get PmemPhysicalDevice**コマンドレットを使用します。
 
@@ -289,7 +289,7 @@ Remove the persistent memory disk(s)?
 Removing the persistent memory disk. This may take a few moments.
 ```
 
-> [!IMPORTANT]  
+> [!IMPORTANT]
 > 永続メモリディスクを削除すると、そのディスク上のデータが失われます。
 
 もう1つのコマンドレットには**Initialize-PmemPhysicalDevice**を使用する必要があります。 このコマンドレットは、物理永続メモリデバイスのラベル記憶域領域を初期化し、PMem デバイス上の破損したラベルストレージ情報を消去できます。
@@ -306,11 +306,11 @@ Initializing the physical persistent memory device. This may take a few moments.
 Initializing the physical persistent memory device. This may take a few moments.
 ```
 
-> [!IMPORTANT]  
+> [!IMPORTANT]
 > **Initialize-PmemPhysicalDevice は、** 永続メモリ内のデータ損失を発生させます。 これは、永続メモリ関連の問題を修正するための最後の手段として使用します。
 
-## <a name="see-also"></a>参照
+## <a name="additional-references"></a>その他のリファレンス
 
 - [記憶域スペースダイレクトの概要](storage-spaces-direct-overview.md)
-- [Windows での記憶域クラスメモリ (NVDIMM) の正常性管理](storage-class-memory-health.md)
+- [Windows での記憶域クラス メモリ (NVDIMM-N) の正常性管理](storage-class-memory-health.md)
 - [キャッシュについて](understand-the-cache.md)

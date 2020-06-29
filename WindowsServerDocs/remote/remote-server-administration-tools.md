@@ -8,12 +8,12 @@ ms.assetid: d54a1f5e-af68-497e-99be-97775769a7a7
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dansimp
-ms.openlocfilehash: 307da083db2e5cc76c4eda825f0e080d7f026821
-ms.sourcegitcommit: 7288aca86fc76b9ff6177a17027118d1f21707a9
+ms.openlocfilehash: 69b31c8ef0ce093604ee9fd8fe382d75f7f88595
+ms.sourcegitcommit: aeefdf7814a4672b2dcd7537204205bb7ee5f9a0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83380695"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84514912"
 ---
 # <a name="remote-server-administration-tools"></a>リモート サーバー管理ツール
 
@@ -56,7 +56,7 @@ Windows PowerShell およびサーバー マネージャーのリモート管理
 
 Windows 10 October 2018 Update 以降では、RSAT は Windows 10 の**オンデマンド機能**のセットとして含まれています。 RSAT パッケージをダウンロードするのではなく、 **[設定]** の **[オプション機能の管理]** に移動し、 **[機能の追加]** をクリックして、使用可能な RSAT ツールの一覧を表示します。 必要な特定の RSAT ツールを選択してインストールします。 インストールの進行状況を見るには、 **[戻る]** ボタンをクリックして、 **[オプション機能の管理]** ページで状態を表示します。
         
-[**オンデマンド機能**で利用可能な RSAT ツールの一覧](https://docs.microsoft.co    /wi    dows-hardware/manufacture/desktop/features-on-demand-non-language-fod#remote-server-administration-tools-rsat)を参照してください。 グラフィカルな**設定**アプリでインストールするだけでなく、[**DISM /Add-Capability**](https://docs.microsoft.com/windows-hardware/manufacture/desktop/features-on-demand-v2--capabilities#using-dism-add-capability-to-add-or-remove-fods) を使用してコマンド ラインまたはオートメーションで特定の RSAT ツールをインストールすることもできます。
+[**オンデマンド機能**で利用可能な RSAT ツールの一覧](https://docs.microsoft.com/windows-hardware/manufacture/desktop/features-on-demand-non-language-fod#remote-server-administration-tools-rsat)を参照してください。 グラフィカルな**設定**アプリでインストールするだけでなく、[**DISM /Add-Capability**](https://docs.microsoft.com/windows-hardware/manufacture/desktop/features-on-demand-v2--capabilities#using-dism-add-capability-to-add-or-remove-fods) を使用してコマンド ラインまたはオートメーションで特定の RSAT ツールをインストールすることもできます。
 
 オンデマンド機能の利点の 1 つは、インストールした機能は Windows 10 のバージョンをアップグレードしても保持されることです。        
         
