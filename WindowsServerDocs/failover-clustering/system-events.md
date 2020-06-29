@@ -8,12 +8,12 @@ ms.author: jgerend
 manager: lizross
 ms.technology: storage-failover-clustering
 ms.date: 01/14/2020
-ms.openlocfilehash: eea98579a66f1db7f7ec873bda6a2c934841736f
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 24be2b39c8130b97d22ee182c0064986b3378549
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720509"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85472979"
 ---
 # <a name="failover-clustering-system-log-events"></a>フェールオーバークラスタリングのシステムログイベント
 
@@ -185,7 +185,7 @@ RPC サービスにインターフェイスを登録できなかったため、�
 
 ### <a name="event-1024-cp_reg_ckpt_restore_failed"></a>イベント 1024: CP_REG_CKPT_RESTORE_FAILED
 
-クラスターリソース ' %1 ' のレジストリチェックポイントをレジストリキー HKEY_LOCAL_MACHINE\\%2 に復元できませんでした。 リソースが正しく機能しない可能性があります。
+クラスターリソース ' %1 ' のレジストリチェックポイントをレジストリキー HKEY_LOCAL_MACHINE %2 に復元できませんでした \\ 。 リソースが正しく機能しない可能性があります。
 他のプロセスがこのレジストリサブツリーのレジストリキーを開くハンドルを持っていないことを確認してください。
 
 ### <a name="event-1034-res_disk_missing"></a>イベント 1034: RES_DISK_MISSING
@@ -464,7 +464,7 @@ IP インターフェイス ' %1 ' (アドレス ' %2 ') の正常性チェッ�
 
 ### <a name="event-1234-cluster_event_account_missing_privs"></a>イベント 1234: CLUSTER_EVENT_ACCOUNT_MISSING_PRIVS
 
-クラスターサービスによって、サービスアカウントに必要な特権が1つ以上不足していることが検出されました。 権限のない一覧は次のとおりです: ' %1 '。サービスアカウントに現在許可されていません。 ' Sc.exe qprivs clussvc ' を使用して、クラスターサービス (ClusSvc) の特権を確認してください。 さらに、既定の特権を変更した可能性のある Active Directory Domain Services のセキュリティポリシーまたはグループポリシーを確認します。 次のコマンドを入力して、正しく機能するために必要な特権をクラスターサービスに付与します。
+クラスターサービスによって、サービスアカウントに必要な特権が1つ以上不足していることが検出されました。 権限のない一覧は次のとおりです: ' %1 '。サービスアカウントに現在許可されていません。 ' sc.exe qprivs clussvc ' を使用して、クラスターサービス (ClusSvc) の特権を確認してください。 さらに、既定の特権を変更した可能性のある Active Directory Domain Services のセキュリティポリシーまたはグループポリシーを確認します。 次のコマンドを入力して、正しく機能するために必要な特権をクラスターサービスに付与します。
 
 ```
 sc.exe privs
@@ -600,7 +600,7 @@ IPv6 トンネルアドレスリソース ' %1 ' をオンラインにできま�
 
 ### <a name="event-1567-service_failed_to_change_log_size"></a>イベント 1567: SERVICE_FAILED_TO_CHANGE_LOG_SIZE
 
-トレースログのサイズを変更できませんでしたクラスターサービス。 ' \| ClusterLogSize \*' という PowerShell コマンドレットを使用して、設定を確認してください。 また、パフォーマンスモニタースナップインを使用して、FailoverClustering のイベントトレースセッション設定を確認します。
+トレースログのサイズを変更できませんでしたクラスターサービス。 ' ClusterLogSize ' という \| PowerShell コマンドレットを使用して、設定を確認してください \* 。 また、パフォーマンスモニタースナップインを使用して、FailoverClustering のイベントトレースセッション設定を確認します。
 
 ### <a name="event-1567-res_vipaddr_address_interface_failed"></a>イベント 1567: RES_VIPADDR_ADDRESS_INTERFACE_FAILED
 
@@ -608,7 +608,7 @@ IP インターフェイス ' %1 ' (アドレス ' %2 ') の正常性チェッ�
 
 ### <a name="event-1568-res_cloud_witness_cant_communicate_to_azure"></a>イベント 1568: RES_CLOUD_WITNESS_CANT_COMMUNICATE_TO_AZURE
 
-クラウド監視リソースが Microsoft Azure ストレージサービスに接続できませんでした。<br><br>クラスターリソース: %1 <br>クラスターノード: %2 
+クラウド監視リソースが Microsoft Azure ストレージサービスに接続できませんでした。<br><br>クラスターリソース: %1 <br>クラスターノード: %2
 
 #### <a name="guidance"></a>ガイダンス
 
@@ -620,7 +620,7 @@ IP インターフェイス ' %1 ' (アドレス ' %2 ') の正常性チェッ�
 
 ### <a name="event-1569-res_cloud_witness_token_expired"></a>イベント 1569: RES_CLOUD_WITNESS_TOKEN_EXPIRED
 
-クラウド監視リソースが Microsoft Azure ストレージサービスで認証できませんでした。 Microsoft Azure ストレージアカウントに接続しようとしているときに、アクセス拒否エラーが返されました。 <br><br>クラスターリソース: %1 
+クラウド監視リソースが Microsoft Azure ストレージサービスで認証できませんでした。 Microsoft Azure ストレージアカウントに接続しようとしているときに、アクセス拒否エラーが返されました。 <br><br>クラスターリソース: %1
 
 #### <a name="guidance"></a>ガイダンス
 
@@ -664,11 +664,11 @@ IP インターフェイス ' %1 ' (アドレス ' %2 ') の正常性チェッ�
 
 ### <a name="event-1606-res_disk_cno_check_failed"></a>イベント 1606: RES_DISK_CNO_CHECK_FAILED
 
-クラスターディスクリソース ' %1 ' には、BitLocker で保護されているボリューム ' %2 ' が含まれていますが、このボリュームの Active Directory クラスター名アカウント (クラスター名オブジェクトまたは CNO とも呼ばれます) は、ボリュームの BitLocker 保護機能ではありません。 これは、BitLocker で保護されたボリュームに必要です。 この問題を解決するには、最初にクラスターからディスクを削除します。 次に、Manage-bde.exe コマンドラインツールを使用してクラスター名を ADAccountOrGroup プロテクターとして追加します。これに\\は\$ 、クラスター名として「domain ClusterName」という形式を使用します。 次に、ディスクをクラスターに追加し直します。 詳細については、Manage-bde.exe のドキュメントを参照してください。
+クラスターディスクリソース ' %1 ' には、BitLocker で保護されているボリューム ' %2 ' が含まれていますが、このボリュームの Active Directory クラスター名アカウント (クラスター名オブジェクトまたは CNO とも呼ばれます) は、ボリュームの BitLocker 保護機能ではありません。 これは、BitLocker で保護されたボリュームに必要です。 この問題を解決するには、最初にクラスターからディスクを削除します。 次に、Manage-bde.exe コマンドラインツールを使用してクラスター名を ADAccountOrGroup プロテクターとして追加します。これには、クラスター名として「domain ClusterName」という形式を使用し \\ \$ ます。 次に、ディスクをクラスターに追加し直します。 詳細については、Manage-bde.exe のドキュメントを参照してください。
 
 ### <a name="event-1607-res_disk_cno_unlock_failed"></a>イベント 1607: RES_DISK_CNO_UNLOCK_FAILED
 
-クラスターディスクリソース ' %1 ' は、BitLocker で保護されているボリューム ' %2 ' のロックを解除できませんでした。 クラスター名オブジェクト (CNO) は、このボリュームの有効な BitLocker プロテクターとして設定されていません。 この問題を解決するには、クラスターからディスクを削除します。 次に、Manage-bde.exe コマンドラインツールを使用して、ドメイン\\ClusterName\$形式でクラスター名を ADAccountOrGroup プロテクターとして追加し、クラスターにディスクを追加し直します。 詳細については、Manage-bde.exe のドキュメントを参照してください。
+クラスターディスクリソース ' %1 ' は、BitLocker で保護されているボリューム ' %2 ' のロックを解除できませんでした。 クラスター名オブジェクト (CNO) は、このボリュームの有効な BitLocker プロテクターとして設定されていません。 この問題を解決するには、クラスターからディスクを削除します。 次に、Manage-bde.exe コマンドラインツールを使用して、ドメイン ClusterName 形式を使用してクラスター名を ADAccountOrGroup プロテクターとして追加 \\ \$ し、クラスターにディスクを追加し直します。 詳細については、Manage-bde.exe のドキュメントを参照してください。
 
 ### <a name="event-1608-res_fileserver_leader_failed"></a>イベント 1608: RES_FILESERVER_LEADER_FAILED
 
@@ -725,7 +725,7 @@ IP インターフェイス ' %1 ' (アドレス ' %2 ') の正常性チェッ�
 
 ### <a name="event-1683-res_netname_computer_account_no_dc"></a>イベント 1683: RES_NETNAME_COMPUTER_ACCOUNT_NO_DC
 
-クラスターサービスは、ドメイン上の使用可能なドメインコントローラーにアクセスできませんでした。 これは、クラスターネットワーク名の認証に依存する機能に影響する可能性があります。<br><br>DC サーバー: %1 
+クラスターサービスは、ドメイン上の使用可能なドメインコントローラーにアクセスできませんでした。 これは、クラスターネットワーク名の認証に依存する機能に影響する可能性があります。<br><br>DC サーバー: %1
 
 #### <a name="guidance"></a>ガイダンス
 
@@ -780,7 +780,7 @@ Active Directory で、ネットワーク名のコンピューターオブジェ
 
 ### <a name="event-4613-nodecleanup_clear_clusdisk_database_failed"></a>イベント 4613: NODECLEANUP_CLEAR_CLUSDISK_DATABASE_FAILED
 
-クラスターサービスは、クラスターを破棄しているときに、ID ' %2 ' のクラスター化されたディスクを正しくクリーンアップできませんでした。 エラーコードは ' %1 ' でした。 クリーンアップが正常に完了するまで、このディスクにアクセスできない可能性があります。 手動クリーンアップの場合は、Windows レジストリの\\' HKEY_LOCAL_MACHINE SYSTEM\\CurrentControlSet\\Services\\の ClusDisk\\パラメーター ' キーの ' AttachedDisks ' 値を削除します。
+クラスターサービスは、クラスターを破棄しているときに、ID ' %2 ' のクラスター化されたディスクを正しくクリーンアップできませんでした。 エラーコードは ' %1 ' でした。 クリーンアップが正常に完了するまで、このディスクにアクセスできない可能性があります。 手動クリーンアップの場合は、Windows レジストリの ' HKEY_LOCAL_MACHINE \\ SYSTEM \\ CurrentControlSet \\ Services の \\ ClusDisk パラメーター ' キーの ' AttachedDisks ' 値を削除 \\ します。
 
 ### <a name="event-4615-nodecleanup_disable_cluster_service_failed"></a>イベント 4615: NODECLEANUP_DISABLE_CLUSTER_SERVICE_FAILED
 
@@ -1106,7 +1106,7 @@ Chkdsk の出力がファイル ' %3 ' に記録されます。<br> Chkdsk で�
 
 ### <a name="event-1605-res_disk_spotfix_performed"></a>イベント 1605: RES_DISK_SPOTFIX_PERFORMED
 
-クラスターディスクリソース ' %1 ' がボリューム ' %2 ' での Chkdsk.exe/spotfix の実行を完了しました。
+ボリューム ' %2 ' のクラスターディスクリソース ' %1 ' の ChkDsk.exe/spotfix の実行が完了しました。
 リターンコードは ' %4 ' でした。 ChkDsk からの出力がファイル ' %3 ' に記録されました。<br>
 ChkDsk からの追加情報については、アプリケーションイベントログを確認してください。
 
@@ -1251,6 +1251,6 @@ ChkDsk からの追加情報については、アプリケーションイベン�
 クラスターの物理ディスクリソース ' %1 ' がソフトウェアスナップショットを削除しました。 クラスターの共有ボリューム ' %2 ' のソフトウェアスナップショットは ' %3 ' 日より古いため、削除されました。 スナップショット ID は ' %4 ' でしたが、' %6 ' のノード ' %5 ' から作成されました。
 バックアップジョブの完了後に、バックアップアプリケーションによってスナップショットが削除されることが想定されています。 スナップショットが存在することが予想される時間を超過しました。 バックアップアプリケーションで、バックアップジョブが正常に完了していることを確認します。
 
-## <a name="see-also"></a>関連項目
+## <a name="additional-references"></a>その他のリファレンス
 
 -   [Windows Server 2008 でのフェールオーバークラスタリングコンポーネントの詳細なイベント情報](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753362(v%3dws.10))

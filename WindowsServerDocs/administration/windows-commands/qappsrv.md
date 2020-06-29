@@ -1,6 +1,6 @@
 ---
 title: qappsrv
-description: '* * * * のリファレンストピック'
+description: Qappsrv コマンドのリファレンストピック。ネットワーク上のすべてのリモートデスクトップセッションホストサーバーの一覧を表示します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,26 +9,26 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f2757797e4f2177adf295618dbe7fa1080513888
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: e3fe8c90d222ad9aeaf97f5451ede2658eb38e58
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722737"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85472097"
 ---
 # <a name="qappsrv"></a>qappsrv
 
 > 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-ネットワーク上のすべてのリモート デスクトップ セッション ホスト (RD セッション ホスト) サーバーの一覧を表示します。
+ネットワーク上のすべてのリモートデスクトップセッションホストサーバーの一覧を表示します。 最新バージョンの新機能については、「 [Windows Server でのリモートデスクトップサービスの新](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn283323(v=ws.11))機能」を参照してください。
 
 > [!NOTE]
-> Windows Server 2008 R2 で、「ターミナル サービス」は「リモート デスクトップ サービス」に名前変更されました。 最新バージョンの新機能については、Windows Server TechNet ライブラリの「 [Windows server 2012 のリモートデスクトップサービスの新機能](https://technet.microsoft.com/library/hh831527)」を参照してください。
-
-## <a name="remarks"></a>Remarks
-このコマンドは、 **query termserver**コマンドと同じです。
+> このコマンドは、 [query termserver コマンド](query-termserver.md)と同じです。
 
 ## <a name="additional-references"></a>その他のリファレンス
-[クエリ termserver](query-termserver.md)
-- [コマンドライン構文のキー](command-line-syntax-key.md)
-[リモートデスクトップサービス (ターミナルサービス) のコマンドリファレンス](remote-desktop-services-terminal-services-command-reference.md)
+
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [query termserver コマンド](query-termserver.md)
+
+- [リモート デスクトップ サービス (ターミナル サービス) のコマンド リファレンス](remote-desktop-services-terminal-services-command-reference.md)

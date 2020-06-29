@@ -1,6 +1,6 @@
 ---
 title: rcp
-description: '* * * * のリファレンストピック'
+description: Rcp コマンドのリファレンストピック。コンピューター間でファイルをコピーします。 このコマンドは非推奨とされており、Windows の将来のリリースでサポートされるとは限りません。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,15 +9,22 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 52728f144c8fd8688514bbef659e276ef06c185c
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: 1e06f9751a690e1593a0fb3e30dc31c14c8f960a
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222835"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471867"
 ---
 # <a name="rcp"></a>rcp
 
+>[!IMPORTANT]
+> このコマンドは非推奨とされました。
 
+**機能の追加ウィザード**を使用して、UNIX ベースアプリケーション用サブシステムをインストールできます。 詳細およびダウンロードファイルについては、「 [Microsoft Windows 7 および Windows Server 2008 R2 の UNIX ベースアプリケーション用サブシステムのユーティリティと SDK](https://www.microsoft.com/download/details.aspx?id=2391)」を参照してください。
 
-コンピューター間でファイルをコピーします。 このコマンドは非推奨とされました。 機能の追加ウィザードを使用して UNIX ベース アプリケーション用サブシステムをインストールすることができます。 詳細については、次を参照してください。 [Windows Server 2008 の UNIX 相互運用性コンポーネント](https://go.microsoft.com/fwlink/?LinkId=191835) 、Microsoft Web サイトにします。 インストールが完了したら、C シェルや Korn シェルのコマンド ウィンドウを開きますして実行する **rcp**します。 詳細については、次のように入力します。 **man rcp** C シェルや Korn シェルのプロンプトでします。
+インストール後、C シェル (csh または tcsh) または KornShell コマンドウィンドウを開き、 **rcp**を実行できます。 詳細については、C シェルまたは KornShell プロンプトで「 **man rcp** 」と入力してください。
+
+## <a name="additional-references"></a>その他のリファレンス
+
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

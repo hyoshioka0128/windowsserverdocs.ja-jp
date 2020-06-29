@@ -7,16 +7,16 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 10/08/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: b06d69c020ea38a2fb9f23df2cfd9cd4191ae315
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 5e7a4469a3f72737801a5110e322533df9764e20
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80857555"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85473589"
 ---
-# <a name="drive-symmetry-considerations-for-storage-spaces-direct"></a>記憶域スペースダイレクトの対称に関する考慮事項 
+# <a name="drive-symmetry-considerations-for-storage-spaces-direct"></a>記憶域スペースダイレクトの対称に関する考慮事項
 
-> 適用対象: Windows Server 2019、Windows Server 2016
+> 適用先:Windows Server 2019、Windows Server 2016
 
 [記憶域スペースダイレクト](storage-spaces-direct-overview.md)は、すべてのサーバーにまったく同じドライブがある場合に最適です。
 
@@ -26,13 +26,13 @@ ms.locfileid: "80857555"
 
 ## <a name="constraints"></a>制約
 
-### <a name="type"></a>種類
+### <a name="type"></a>Type
 
 すべてのサーバーは、同じ[種類のドライブ](choosing-drives.md#drive-types)を持つ必要があります。
 
 たとえば、1台のサーバーに NVMe がある場合、それらは*すべて*nvme を持つ必要があります。
 
-### <a name="number"></a>数値
+### <a name="number"></a>Number
 
 すべてのサーバーのドライブ数は、種類ごとに同じである必要があります。
 
@@ -86,11 +86,11 @@ ms.locfileid: "80857555"
    > [!TIP]
    > キャッシュのバインドの詳細について[は、「キャッシュ](understand-the-cache.md)について」を参照してください。
 
-## <a name="example-configurations"></a>構成の例
+## <a name="example-configurations"></a>構成例
 
 サポートされている構成とサポートされていない構成を次に示します。
 
-### <a name="supported-supported-different-models-between-servers"></a>![サポート済み](media/drive-symmetry-considerations/supported.png) サポートされている: サーバー間で異なるモデル
+### <a name="supported-supported-different-models-between-servers"></a>![サポート対象](media/drive-symmetry-considerations/supported.png) サポートされている: サーバー間で異なるモデル
 
 最初の2つのサーバーは、NVMe モデル "X" を使用しますが、3台目のサーバーでは、非常に似た NVMe モデル "Z" を使用します。
 
@@ -101,7 +101,7 @@ ms.locfileid: "80857555"
 
 これはサポートされています。
 
-### <a name="supported-supported-different-models-within-server"></a>![サポート済み](media/drive-symmetry-considerations/supported.png) サポートされている: サーバー内の異なるモデル
+### <a name="supported-supported-different-models-within-server"></a>![サポート対象](media/drive-symmetry-considerations/supported.png) サポートされている: サーバー内の異なるモデル
 
 すべてのサーバーで、HDD モデル "Y" と "Z" の異なる組み合わせが使用されていますが、これは非常によく似ています。 すべてのサーバーには、合計10個の HDD があります。
 
@@ -113,7 +113,7 @@ ms.locfileid: "80857555"
 
 これはサポートされています。
 
-### <a name="supported-supported-different-sizes-across-servers"></a>![サポート済み](media/drive-symmetry-considerations/supported.png) サポートされている: サーバー間で異なるサイズ
+### <a name="supported-supported-different-sizes-across-servers"></a>![サポート対象](media/drive-symmetry-considerations/supported.png) サポートされている: サーバー間で異なるサイズ
 
 最初の2台のサーバーは 4 TB の HDD を使用しますが、3台目のサーバーは非常に類似した 6 TB の HDD を使用します。
 
@@ -124,7 +124,7 @@ ms.locfileid: "80857555"
 
 これはサポートされていますが、これは残された容量になります。
 
-### <a name="supported-supported-different-sizes-within-server"></a>![サポート済み](media/drive-symmetry-considerations/supported.png) サポートされている: サーバー内のさまざまなサイズ
+### <a name="supported-supported-different-sizes-within-server"></a>![サポート対象](media/drive-symmetry-considerations/supported.png) サポートされている: サーバー内のさまざまなサイズ
 
 すべてのサーバーで、1.2 TB と非常に類似した 1.6 TB SSD の混合が使用されています。 各サーバーには合計4つの SSD があります。
 
@@ -136,7 +136,7 @@ ms.locfileid: "80857555"
 
 これはサポートされています。
 
-### <a name="unsupported-not-supported-different-types-of-drives-across-servers"></a>![サポートされない](media/drive-symmetry-considerations/unsupported.png) サポートされていません: サーバー間のさまざまな種類のドライブ
+### <a name="unsupported-not-supported-different-types-of-drives-across-servers"></a>![サポートされていない](media/drive-symmetry-considerations/unsupported.png) サポートされていません: サーバー間のさまざまな種類のドライブ
 
 サーバー1は NVMe を持っていますが、他のサーバーは存在しません。
 
@@ -148,7 +148,7 @@ ms.locfileid: "80857555"
 
 これはサポートされていません。 ドライブの種類は、すべてのサーバーで同じである必要があります。
 
-### <a name="unsupported-not-supported-different-number-of-each-type-across-servers"></a>![サポートされない](media/drive-symmetry-considerations/unsupported.png) サポートされていません: サーバー間での各種類の数が異なります
+### <a name="unsupported-not-supported-different-number-of-each-type-across-servers"></a>![サポートされていない](media/drive-symmetry-considerations/unsupported.png) サポートされていません: サーバー間での各種類の数が異なります
 
 サーバー3には他より多くのドライブがあります。
 
@@ -159,12 +159,12 @@ ms.locfileid: "80857555"
 
 これはサポートされていません。 各種類のドライブの数は、すべてのサーバーで同じである必要があります。
 
-### <a name="unsupported-not-supported-only-hdd-drives"></a>![サポートされない](media/drive-symmetry-considerations/unsupported.png) サポートされていません: HDD ドライブのみ
+### <a name="unsupported-not-supported-only-hdd-drives"></a>![サポートされていない](media/drive-symmetry-considerations/unsupported.png) サポートされていません: HDD ドライブのみ
 
 すべてのサーバーに HDD ドライブしか接続されていません。
 
 |サーバー 1|サーバー2|サーバー3|
-|-|-|-| 
+|-|-|-|
 |18 x HDD (容量) |18 x HDD (容量)|18 x HDD (容量)|
 
 これはサポートされていません。 各サーバーに接続されている2つ以上のキャッシュドライブ (NvME または SSD) を追加する必要があります。
@@ -180,7 +180,7 @@ ms.locfileid: "80857555"
 | すべてのサーバーで同じドライブモデル        | 推奨   |
 | すべてのサーバーで同じドライブサイズ         | 推奨   |
 
-## <a name="see-also"></a>参照
+## <a name="additional-references"></a>その他のリファレンス
 
 - [ハードウェア要件の記憶域スペースダイレクト](storage-spaces-direct-hardware-requirements.md)
 - [記憶域スペースダイレクトの概要](storage-spaces-direct-overview.md)

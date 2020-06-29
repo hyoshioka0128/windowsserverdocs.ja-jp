@@ -1,6 +1,6 @@
 ---
 title: pwlauncher
-description: '* * * * のリファレンストピック'
+description: Pwlauncher コマンドのリファレンストピック。 Windows To 進むスタートアップオプション (pwlauncher) を有効または無効にします。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,44 +9,39 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0ddda3ab7831643c3c2c096ae87893d97f90155c
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 4b6793dead3a41abb82bc3940d0314bcd7610418
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722753"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85472117"
 ---
 # <a name="pwlauncher"></a>pwlauncher
 
-
-
 Windows To 進むスタートアップオプション (pwlauncher) を有効または無効にします。 **Pwlauncher**コマンドラインツールを使用すると、コンピューターを Windows to 移動ワークスペースで自動的に起動するように構成することができます (1 つが存在する場合)。ただし、ファームウェアを入力したり、スタートアップオプションを変更したりする必要はありません。
 
-
+Windows To 進むスタートアップオプションを使用すると、ファームウェアが USB からの起動をサポートしている限り、Windows 内から USB から起動するようにコンピューターを構成することができます。 システムが常に USB から起動できるようにするには、まず考慮する必要があることに注意してください。 たとえば、マルウェアを含む USB デバイスが誤ってシステムを危険にさらす可能性がある場合や、複数の USB ドライブが接続され、ブートの競合が発生する場合があります。 このため、既定の構成では、Windows To 進むスタートアップオプションが既定で無効になっています。 また、Windows To ゴースタートアップオプションを構成するには、管理者特権が必要です。 Pwlauncher コマンドラインツールまたは**Windows To ゴースタートアップオプションを変更**するアプリを使用して Windows to 進むスタートアップオプションを有効にすると、コンピューターは起動前にコンピューターに挿入されている任意の USB デバイスから起動しようとします。
 
 ## <a name="syntax"></a>構文
 
 ```
-Pwlauncher {/enable | /disable}
+pwlauncher {/enable | /disable}
 ```
 
 ### <a name="parameters"></a>パラメーター
 
-|パラメーター|[説明]|
-|---------|-----------|
-|/enable|Windows To ゴースタートアップオプションを有効にして、コンピューターが現在 USB デバイスから自動的に起動するようにします。|
-|/disable|ファームウェアで手動で構成しない限り、Windows To 進むスタートアップオプションを無効にして、コンピューターを USB デバイスから起動できないようにします。|
-|/?|コマンド プロンプトにヘルプを表示します。|
+| パラメーター | 説明 |
+|--|--|
+| /enable | Windows To ゴースタートアップオプションを有効にします。これにより、コンピューターは、USB デバイスが存在する場合に自動的に起動します。 |
+| /disable | Windows To ゴースタートアップオプションを無効にします。これにより、ファームウェアで手動で構成しない限り、コンピューターを USB デバイスからブートできなくなります。 |
+| /? | コマンド プロンプトにヘルプを表示します。 |
 
-## <a name="remarks"></a>Remarks
+### <a name="examples"></a>例
 
-Windows To ハードルを使用するユーザーにとって最も大きなメリットは、USB からコンピューターを起動することです。 これは、通常、コンピューターが正しく構成されるまで、ファームウェアを入力してさまざまな構成オプションを試すことによって行われます。 これはほとんどのユーザーにとって簡単な作業ではありません。ファームウェアには、不適切に使用した場合にシステムを使用できなくなるオプションが含まれているため、非常に危険です。 この問題を軽減するために、windows 8 以降のオペレーティングシステムには、windows To ゴースタートアップオプションという機能が含まれています。この機能を使用すると、ファームウェアが USB からの起動をサポートしている限り、ファームウェアを入力することなく、USB から起動するようにユーザーのコンピューターを構成できます。 システムが常に USB から起動できるようにするには、まず考慮する必要があることに注意してください。 たとえば、マルウェアを含む USB デバイスが誤ってシステムを危険にさらす可能性がある場合や、複数の USB ドライブが接続され、ブートの競合が発生する場合があります。 このため、既定の構成では、Windows To 進むスタートアップオプションが既定で無効になっています。 また、Windows To ゴースタートアップオプションを構成するには、管理者特権が必要です。 Pwlauncher コマンドラインツールまたは**Windows To ゴースタートアップオプションを変更**するアプリを使用して Windows to 進むスタートアップオプションを有効にすると、コンピューターは起動前にコンピューターに挿入されている任意の USB デバイスから起動しようとします。
+USB からのブートを有効にするには:
 
-## <a name="examples"></a>例
-
-**Pwlauncher**コマンドを使用して、USB からのブートを有効にする方法について説明します。
 ```
-Pwlauncher /enable
+pwlauncher /enable
 ```
 
 ## <a name="additional-references"></a>その他のリファレンス

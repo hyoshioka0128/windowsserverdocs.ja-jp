@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: c836da8f83510e6547e0e182ac06fd2151dd9c41
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 9eb93e46adb0e8a7c956bd8db2795fe06bc04724
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80857065"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85472949"
 ---
 # <a name="credentials-protection-and-management"></a>資格情報の保護と管理
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016
+>適用先:Windows Server (半期チャネル)、Windows Server 2016
 
 IT プロフェッショナル向けのこのトピックでは、資格情報の盗難を減らすために、Windows Server 2012 R2 で導入され、資格情報の保護とドメイン認証を制御するための Windows 8.1 について説明します。
 
@@ -58,17 +58,17 @@ Protected Users グループのメンバーは、以下の認証方法によっ�
 
 -   ユーザー
 
--   コンピューター
+-   Computer
 
 -   管理されたサービス アカウント
 
--   グループ管理サービス アカウント
+-   グループの管理されたサービス アカウント
 
 詳細については、「[認証ポリシーと認証ポリシー サイロ](authentication-policies-and-authentication-policy-silos.md)」を参照してください。
 
 保護されたアカウントの構成方法の詳細については、「[保護されるアカウントの構成方法](how-to-configure-protected-accounts.md)」を参照してください。
 
-## <a name="see-also"></a>参照
+## <a name="additional-references"></a>その他のリファレンス
 LSA と LSASS の詳細については、「 [Windows のログオンと認証の技術概要](https://technet.microsoft.com/library/dn169029(v=ws.10).aspx)」を参照してください。
 
 

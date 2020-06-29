@@ -1,6 +1,6 @@
 ---
 title: オンライン
-description: '* * * * のリファレンストピック'
+description: オンラインコマンドのリファレンストピック。オフラインのディスクまたはボリュームをオンライン状態にします。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,32 +9,31 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a0e7582bdaebb5f3e5180d1baace980d3006b2e9
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: b5983e033755cdc9cd28b2b149fea657a06bd164
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723405"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85472608"
 ---
 # <a name="online"></a>オンライン
-
-
 
 オフラインのディスクまたはボリュームをオンライン状態にかかります。
 
 ## <a name="syntax"></a>構文
 
 ```
-Offline disk
-Offline volume
+online disk
+online volume
 ```
 
 ### <a name="parameters"></a>パラメーター
 
-|パラメーター|[説明]|
-|---------|-----------|
-|[オフラインのディスク](offline-disk.md)|オンライン状態にフォーカスがあるオフライン ディスクを移動します。|
-|[ボリュームをオフラインにする](offline-volume.md)|オンライン状態に、オフラインのボリュームがフォーカスを移動します。|
+| パラメーター | 説明 |
+|--|--|
+| [online disk](online-disk.md) | オンライン状態にフォーカスがあるオフライン ディスクを移動します。 |
+| [online volume](online-volume.md) | オンライン状態に、オフラインのボリュームがフォーカスを移動します。 |
 
 ## <a name="additional-references"></a>その他のリファレンス
 
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

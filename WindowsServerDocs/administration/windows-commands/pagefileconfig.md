@@ -1,6 +1,6 @@
 ---
 title: pagefileconfig
-description: '* * * * のリファレンストピック'
+description: Pagefileconfig.vbs コマンドのリファレンストピックです。 このコマンドは非推奨とされており、Windows の将来のリリースでサポートされるとは限りません。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,22 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 74accc6a1551530eaa967cc5896fc3bfe5f168bf
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 562421db96ebb62cc75a1ff04ffe532bc8c63652
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993389"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85472578"
 ---
 # <a name="pagefileconfig"></a>pagefileconfig
 
-> 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用対象: Windows Server 2003、Windows Server 2003 R2、Windows Server 2003 SP1、Windows Server 2003 SP2
 
-pagefileconfig.vbs は非推奨とされており、Windows の将来のリリースでサポートされるとは限りません。
-このツールは、Windows Server 2003 に含まれます。 詳細については、「 [pagefileconfig.vbs](https://technet.microsoft.com/library/cc772827.aspx)」を参照してください。
+>[!IMPORTANT]
+> このコマンドは非推奨とされました。
+
+管理者が、システムのページングファイルの仮想メモリ設定を表示および構成できるようにします。 説明と使用方法については、「 [pagefileconfig.vbs](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc772827(v=ws.10))」を参照してください。
+
+## <a name="additional-references"></a>その他のリファレンス
+
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

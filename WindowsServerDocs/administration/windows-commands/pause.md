@@ -1,6 +1,6 @@
 ---
 title: pause
-description: '* * * * のリファレンストピック'
+description: 一時停止コマンドのリファレンストピック。バッチプログラムの処理を中断します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,22 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 89e76c4f45f59c32ef879fb518a1a92c973f5cdf
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: f603802926d0f9418a82e1f4981181889fc573ef
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723351"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85472518"
 ---
 # <a name="pause"></a>pause
 
-
-
-バッチ ファイルの処理を中断し、次のようなダイアログを表示します。
-```
-Press any key to continue . . .
-```
-
+バッチプログラムの処理を中断し、プロンプトを表示します。`Press any key to continue . . .`
 
 ## <a name="syntax"></a>構文
 
@@ -34,35 +28,30 @@ pause
 
 ### <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
-|---------|-----------|
-|/?|コマンド プロンプトにヘルプを表示します。|
+| パラメーター | 説明 |
+|--|--|
+| /? | コマンド プロンプトにヘルプを表示します。 |
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>注釈
 
-- 実行すると、 **を一時停止** コマンドを次のメッセージが表示されます。  
-  ```
-  Press any key to continue . . .
-  ```  
-- バッチ プログラムを停止するには、CTRL + C を押すと、次のメッセージが表示されます。  
-  ```
-  Terminate batch job (Y/N)?
-  ```  
-  Y (yes) キーを押して、このメッセージに応答をバッチ プログラムが終了し、制御がオペレーティング システムに戻ります。
-- 挿入することができます、 **を一時停止** コマンドを処理したくないバッチ ファイルのセクションまでにします。 **を一時停止** を一時停止バッチ ファイルの処理には、ctrl キーを押しながら C キーを押してしてバッチ プログラムを停止するには Y キーを押します。
+- CTRL + C キーを押してバッチプログラムを停止すると、次のメッセージが表示され `Terminate batch job (Y/N)?` ます。 このメッセージに応答して**Y** (yes の場合) を押すと、バッチプログラムが終了し、制御がオペレーティングシステムに戻ります。
+
+- 挿入することができます、 **を一時停止** コマンドを処理したくないバッチ ファイルのセクションまでにします。 **一時停止**時に batch プログラムの処理が中断された場合は、CTRL + C キーを押してから**Y**キーを押してバッチプログラムを停止することができます。
 
 ## <a name="examples"></a>例
 
 いずれのドライブでディスクを変更するユーザーの入力を要求するバッチ ファイルを作成するには、次のように入力します。
+
 ```
-@echo off 
-:Begin 
-copy a:*.* 
-echo Put a new disk into drive A 
-pause 
+@echo off
+:Begin
+copy a:*.*
+echo Put a new disk into Drive A
+pause
 goto begin
 ```
-この例では、ドライブのディスク上のすべてのファイルは、現在のディレクトリにコピーされます。 メッセージでは、A、ドライブに新しいディスクを挿入するように求められます後、 **を一時停止** コマンドは、ディスクに変更され、処理を再開する任意のキーを押してようにの処理を中断します。 このバッチ ファイルは、無限ループで実行される —、 **goto 開始** コマンドは、バッチ ファイルの先頭のラベルに、コマンド インタープリターを送信します。 このバッチ ファイルを停止するには、ctrl キーを押しながら C キーを押して、Y キーを押します。
+
+この例では、ドライブ A のディスクにあるすべてのファイルが現在のディレクトリにコピーされます。 新しいディスクをドライブ A に挿入するようにメッセージが表示された後、**一時停止**コマンドを実行すると、ディスクを変更し、任意のキーを押して処理を再開できるように処理が中断されます。 このバッチ ファイルは、無限ループで実行される —、 **goto 開始** コマンドは、バッチ ファイルの先頭のラベルに、コマンド インタープリターを送信します。
 
 ## <a name="additional-references"></a>その他のリファレンス
 

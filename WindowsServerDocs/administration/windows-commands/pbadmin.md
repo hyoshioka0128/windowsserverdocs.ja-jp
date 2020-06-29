@@ -1,6 +1,6 @@
 ---
 title: pbadmin
-description: '* * * * のリファレンストピック'
+description: Pbadmin コマンドのリファレンストピックです。 このコマンドは非推奨とされており、Windows の将来のリリースでサポートされるとは限りません。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,17 +9,22 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 95308b6098c44cdab7aaae3d8550717e8269fcfc
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 68535895386910a358ee0515dc7f09edb2122be8
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993372"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85472498"
 ---
 # <a name="pbadmin"></a>pbadmin
 
+> 適用対象: Windows Server 2003、Windows Server 2003 R2、Windows Server 2003 SP1、Windows Server 2003 SP2
 
+>[!IMPORTANT]
+> このコマンドは非推奨とされました。
 
-Pbadmin は非推奨とされ、Windows の将来のリリースでサポートされるとは限りません。
+電話帳を管理します。 パラメーターを指定せずに使用します。 padmin は電話帳管理者を起動します。 説明と使用方法については、「 [pbadmin](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc755767(v=ws.10))」を参照してください。
 
-このツールは、Windows Server 2003 に含まれます。 詳細については、「 [Pbadmin](https://technet.microsoft.com/library/cc755767(v=ws.10).aspx)」を参照してください。
+## <a name="additional-references"></a>その他のリファレンス
+
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

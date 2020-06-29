@@ -1,6 +1,6 @@
 ---
 title: popd
-description: Pushd コマンドによって最後に格納されたディレクトリにディレクトリを変更する方法について説明します。
+description: Pnputil コマンドのリファレンストピックです。このコマンドは、現在のディレクトリを、pushd コマンドによって最後に格納されたディレクトリに変更します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,38 +9,38 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: a9cf2814afcab3e6d7373642ad5bf8bc828bf07b
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 0784d925eedb1202bf94fbd2951081efcc0c496b
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83821222"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85472388"
 ---
 # <a name="popd"></a>popd
 
 > 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-現在のディレクトリを、 **pushd**コマンドによって最後に格納されたディレクトリに変更します。
+**Popd**コマンドは、現在のディレクトリを、 **pushd**コマンドによって最後に格納されたディレクトリに変更します。
 
+**Pushd**コマンドを使用するたびに、使用するために1つのディレクトリが格納されます。 ただし、 **pushd**コマンドを複数回使用して、複数のディレクトリを格納することができます。 ディレクトリは仮想スタックに連続して格納されるため、 **pushd**コマンドを1回使用すると、コマンドを使用するディレクトリがスタックの一番下に配置されます。 コマンドを再度使用すると、2つ目のディレクトリが最初のディレクトリの上に配置されます。 このプロセスは、 **pushd**コマンドを使用するたびに繰り返されます。
+
+**Popd**コマンドを使用すると、スタックの一番上にあるディレクトリが削除され、現在のディレクトリがそのディレクトリに変更されます。 **Popd**コマンドを再度使用すると、スタック上の次のディレクトリが削除されます。 コマンド拡張機能が有効になっている場合は、 **pushd**コマンドによって作成されたドライブ文字の割り当てが削除**されます**。
 
 ## <a name="syntax"></a>構文
+
 ```
 popd
 ```
 
-#### <a name="parameters"></a>パラメーター
-|パラメーター|説明|
-|-------|--------|
-|/?|コマンド プロンプトにヘルプを表示します。|
+### <a name="parameters"></a>パラメーター
 
-## <a name="remarks"></a>注釈
--   **Pushd**コマンドを使用するたびに、使用するために1つのディレクトリが格納されます。 ただし、 **pushd**コマンドを複数回使用して、複数のディレクトリを格納することができます。
-    ディレクトリは、仮想スタックに連続して格納されます。 **Pushd**コマンドを1回使用すると、コマンドを使用するディレクトリがスタックの一番下に配置されます。 コマンドを再度使用すると、2つ目のディレクトリが最初のディレクトリの上に配置されます。 このプロセスは、 **pushd**コマンドを使用するたびに繰り返されます。
-    **Popd**コマンドを使用して、現在のディレクトリを、 **pushd**コマンドによって最後に格納されたディレクトリに変更することができます。 **Popd**コマンドを使用すると、スタックの一番上にあるディレクトリがスタックから削除され、現在のディレクトリがそのディレクトリに変更されます。 **Popd**コマンドを再度使用すると、スタック上の次のディレクトリが削除されます。
--   コマンド拡張機能を有効にすると、 **pushd**によって作成されたドライブ文字の割り当てが削除**されます**。
+| パラメーター | 説明 |
+|--|--|
+| /? | コマンド プロンプトにヘルプを表示します。 |
 
-## <a name="examples"></a><a name="BKMK_examples"></a>例
-コマンドを使用してバッチプログラム内の**popd**コマンドを実行し、バッチプログラムを実行したディレクトリから現在のディレクトリを変更してから、**次のよう**に変更する方法を説明します。
+### <a name="examples"></a>例
+
+バッチプログラムが実行されたディレクトリから現在のディレクトリを変更し、それを元に戻すには、次のように入力します。
 
 ```
 @echo off
@@ -53,6 +53,7 @@ echo All text files deleted in the %1 directory
 ```
 
 ## <a name="additional-references"></a>その他のリファレンス
--   [pushd](pushd.md)
+
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 
+- [pushd](pushd.md)

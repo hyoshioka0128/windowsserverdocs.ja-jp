@@ -3,16 +3,16 @@ title: Windows Server のバランスの取れた電源プランのプロセッ�
 description: Windows Server のバランスの取れた電源プランのプロセッサ電源管理 (PPM) のチューニング
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
-ms.topic: article
+ms.topic: conceptual
 ms.author: qizha;tristanb
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 5c7319c843609f8bf846dd6ccf4bc2bf91f3b942
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 25244ecb653f7a1b8461130bba40901b35945765
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851975"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471617"
 ---
 # <a name="processor-power-management-ppm-tuning-for-the-windows-server-balanced-power-plan"></a>Windows Server のバランスの取れた電源プランのプロセッサ電源管理 (PPM) のチューニング
 
@@ -25,30 +25,29 @@ Windows server 2008 以降、Windows Server では、**バランス**、**高パ
 
 ## <a name="windows-processor-power-tuning-methodology"></a>Windows プロセッサの電力チューニング方法
 
-
 ### <a name="tested-workloads"></a>テストされたワークロード
 
 ワークロードは、"通常の" Windows Server のワークロードのベストエフォートセットに対応するために選択されます。 当然ながら、このセットは、実際のサーバー環境全体を代表するためのものではありません。
 
 各電源ポリシーの調整は、次の5つのワークロードによって行われます。
 
--   **IIS Web サーバーワークロード**
+- **IIS Web サーバーワークロード**
 
     IIS Web サーバーを実行しているプラットフォームのエネルギー効率を最適化するために、Web 基礎と呼ばれる Microsoft 内部ベンチマークが使用されます。 セットアップには、web サーバーと、web アクセストラフィックをシミュレートする複数のクライアントが含まれています。 動的、静的ホット (メモリ内)、および静的コールド (ディスクアクセスが必要) の web ページの分布は、実稼働サーバーの統計的な調査に基づいています。 サーバーの CPU コアを完全使用率 (テスト対象の範囲の一端) にプッシュするには、セットアップに十分な速度のネットワークリソースとディスクリソースが必要です。
 
--   **SQL Server データベースワークロード**
+- **SQL Server データベースワークロード**
 
     [TPC-E](http://www.tpc.org/tpce/default.asp)ベンチマークは、データベースパフォーマンス分析のための一般的なベンチマークです。 これは、PPM チューニング最適化の OLTP ワークロードを生成するために使用されます。 このワークロードには非常に多くのディスク i/o があるため、記憶域システムとメモリサイズのパフォーマンス要件が高くなります。
 
--   **ファイルサーバーのワークロード**
+- **ファイルサーバーのワークロード**
 
     [FSCT](http://www.snia.org/sites/default/files2/sdc_archives/2009_presentations/tuesday/BartoszNyczkowski-JianYan_FileServerCapacityTool.pdf)と呼ばれる Microsoft が開発したベンチマークは、SMB ファイルサーバーのワークロードを生成するために使用されます。 サーバー上に大きなファイルセットを作成し、多くのクライアントシステム (実際または仮想化) を使用して、ファイルのオープン、クローズ、読み取り、書き込み操作を生成します。 操作ミックスは、実稼働サーバーの統計スタディに基づいています。 CPU、ディスク、およびネットワークリソースがストレスになります。
 
--   **SPECpower – JAVA ワークロード**
+- **SPECpower – JAVA ワークロード**
 
-    [Specpower\_ssj2008](http://spec.org/power_ssj2008/)は、電力とパフォーマンスの特性を共同で評価する業界標準の仕様ベンチマークです。 CPU 負荷レベルが異なるサーバー側の Java ワークロードです。 多くのディスクリソースやネットワークリソースは必要ありませんが、メモリ帯域幅の特定の要件があります。 ほとんどすべての CPU アクティビティは、ユーザーモードで実行されます。カーネルモードのアクティビティは、電源管理の決定を除けば、ベンチマークのパワーとパフォーマンスの特性にあまり影響しません。
+    [Specpower \_ ssj2008](http://spec.org/power_ssj2008/)は、電力とパフォーマンスの特性を共同で評価する業界標準の仕様ベンチマークです。 CPU 負荷レベルが異なるサーバー側の Java ワークロードです。 多くのディスクリソースやネットワークリソースは必要ありませんが、メモリ帯域幅の特定の要件があります。 ほとんどすべての CPU アクティビティは、ユーザーモードで実行されます。カーネルモードのアクティビティは、電源管理の決定を除けば、ベンチマークのパワーとパフォーマンスの特性にあまり影響しません。
 
--   **アプリケーションサーバーのワークロード**
+- **アプリケーションサーバーのワークロード**
 
     [SAP SD](http://global.sap.com/campaigns/benchmark/index.epx)ベンチマークは、アプリケーションサーバーのワークロードを生成するために使用されます。 2層のセットアップが使用されます。これは、データベースとアプリケーションサーバーが同じサーバーホスト上にあります。 このワークロードでは、パフォーマンスメトリックとして応答時間も利用されます。これは、テストされた他のワークロードとは異なります。 したがって、このパラメーターは、PPM パラメーターの応答性に対する影響を確認するために使用されます。 それにもかかわらず、待機時間の影響を受けるすべての運用ワークロードを代表することは意図されていません。
 
@@ -125,8 +124,8 @@ CPU の周波数を中程度の使用率レベルで増加させたい場合 (�
 
 このため、Windows では最初に**バランス**の取れた電源プランが提供されているので、多くの場合、特定のサーバー上の特定のワークロードに対して手動チューニングを行う必要はありません。
 
-## <a name="see-also"></a>参照
-- [サーバーハードウェアのパフォーマンスに関する考慮事項](../index.md)
+## <a name="see-also"></a>関連項目
+- [サーバーのハードウェア パフォーマンスに関する考慮事項](../index.md)
 - [サーバー ハードウェアの電源に関する考慮事項](../power.md)
 - [電源とパフォーマンスのチューニング](power-performance-tuning.md)
 - [プロセッサの電源管理チューニング](processor-power-management-tuning.md)

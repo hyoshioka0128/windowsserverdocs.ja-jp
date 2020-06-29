@@ -9,22 +9,22 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 48171657b42ec8b6ba09aa6a35a2f898d6775d07
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 72ad55fad515ea769ea739f037165547b1104889
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80857085"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85472959"
 ---
 # <a name="authentication-policies-and-authentication-policy-silos"></a>認証ポリシーと認証ポリシー サイロ
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016
+>適用先:Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックでは、IT プロフェッショナル向けに、認証ポリシー サイロについて、およびサイロに属するアカウントを制限するポリシーについて説明します。 また、認証ポリシーを使用してアカウントの範囲を制限する方法についても説明します。
 
-認証ポリシー サイロおよびそれに付随するポリシーは、高い特権を持つ資格情報の使用を、特定のユーザー、コンピューター、またはサービスに関係するシステムに限定するための手段です。 サイロは、Active Directory Domain Services (AD DS) で、Active Directory 管理センターおよび Active Directory Windows PowerShell コマンドレットを使用して定義および管理できます。
+認証ポリシー サイロおよびそれに付随するポリシーは、高い特権を持つ資格情報の使用を、特定のユーザー、コンピューター、またはサービスに関係するシステムに限定するための手段です。 サイロの定義と管理は、Active Directory Domain Services (AD DS) で Active Directory 管理センターと Active Directory Windows PowerShell コマンドレットを使用して行います。
 
-認証ポリシー サイロはコンテナーであり、管理者がこのコンテナーにユーザー アカウント、コンピューター アカウント、サービス アカウントを割り当てます。 これで、アカウントの集合を、そのコンテナーに割り当てられた認証ポリシーで管理できるようになります。 この方法を利用すると、リソースに対する個々のアカウントのアクセス権を管理者が常に把握している必要がなくなるとともに、悪意のあるユーザーが資格情報を盗んで他のリソースにアクセスすることを防止するのにも役立ちます。
+認証ポリシー サイロはコンテナーであり、管理者がこのコンテナーにユーザー アカウント、コンピューター アカウント、サービス アカウントを割り当てます。 これで、アカウントの集合を、そのコンテナーに割り当てられた認証ポリシーで管理できるようになります。 この方法を利用すると、リソースに対する個々のアカウントのアクセス権を管理者が常に把握している必要がなくなると共に、悪意のあるユーザーが資格情報を盗んで他のリソースにアクセスすることを防止するのにも役立ちます。
 
 Windows Server 2012 R2 で導入された機能を使用すると、高い特権を持つユーザーのセットをホストする認証ポリシーサイロを作成できます。 認証ポリシーをこのコンテナーに割り当てると、ドメイン内のどの部分で特権アカウントを使用できるかを制限できます。 アカウントが Protected Users セキュリティ グループに属しているときは、制御がさらに強化され、たとえば Kerberos プロトコル以外は使用できなくなります。
 
@@ -35,7 +35,7 @@ Windows Server 2012 R2 で導入された機能を使用すると、高い特権
 ### <a name="about-authentication-policy-silos"></a>認証ポリシー サイロについて
 認証ポリシー サイロとは、どのアカウントをサイロによって制限できるかを制御するものであり、サイロで定義された認証ポリシーがメンバーに適用されます。 サイロの作成は、組織の要件に基づいて行うことができます。 サイロはユーザー、コンピューター、サービスに対する Active Directory オブジェクトであり、次の表に示すスキーマで定義されます。
 
-**認証ポリシーサイロの Active Directory スキーマ**
+**認証ポリシー サイロに対応する Active Directory スキーマ**
 
 |表示名|説明|
 |--------|--------|
@@ -49,7 +49,7 @@ Windows Server 2012 R2 で導入された機能を使用すると、高い特権
 認証ポリシー サイロを構成するには、Active Directory 管理コンソールまたは Windows PowerShell を使用します。 詳細については、「[保護されるアカウントの構成方法](how-to-configure-protected-accounts.md)」をご覧ください。
 
 ### <a name="about-authentication-policies"></a>認証ポリシーについて
-認証ポリシーとは、特定のアカウント タイプに対して、Kerberos プロトコルのチケット保証チケット (TGT) 有効期間プロパティと認証アクセス制御条件を定義するものです。 ポリシーはに基づいて構築されており、認証ポリシーサイロと呼ばれる AD DS コンテナーを制御します。
+認証ポリシーとは、特定のアカウント タイプに対して、Kerberos プロトコルのチケット保証チケット (TGT) 有効期間プロパティと認証アクセス制御条件を定義するものです。 このポリシーの基盤でありポリシーによって制御される AD DS のコンテナーを、認証ポリシー サイロといいます。
 
 認証ポリシーによって制御されるものは次のとおりです。
 
@@ -73,21 +73,21 @@ Active Directory 勘定科目の種類によって、呼び出し元のロール
 
     スタンドアロンの管理されたサービス アカウントまたはグループの管理されたサービス アカウント、またはこの 2 種類のサービス アカウントから派生したカスタム アカウント オブジェクトが使用されます。 ポリシーでは、デバイスのアクセス制御条件を設定できます。これは、管理されたサービスアカウントの資格情報を Active Directory id を持つ特定のデバイスに制限するために使用されます。 サービスは、Protected Users セキュリティ グループのメンバーであってはなりません。メンバーになっている場合は、そのサービスに対する認証はすべて失敗となります。
 
--   **Pc**
+-   **Computer**
 
     コンピューター アカウント オブジェクト、またはコンピューター アカウント オブジェクトから派生したカスタム アカウント オブジェクトが使用されます。 ポリシーの中でアクセス制御条件を設定しておくと、そのアカウントに対する認証をユーザーおよびデバイスのプロパティに基づいて許可することができます。 コンピューターは、Protected Users セキュリティ グループのメンバーであってはなりません。メンバーになっている場合は、そのコンピューターに対する認証はすべて失敗となります。 既定では、NTLM 認証を使用しようとしても拒否されます。 コンピューター アカウントに対しては TGT 有効期間を設定しないでください。
 
 > [!NOTE]
 > アカウントの集合に対する認証ポリシーを設定することは、ポリシーを認証ポリシー サイロに関連付けなくても可能です。 この方法を使用できるのは、保護対象のアカウントが 1 つだけの場合です。
 
-**認証ポリシーの Active Directory スキーマ**
+**認証ポリシーに対応する Active Directory スキーマ**
 
 ユーザー、コンピューター、サービスに対応する Active Directory オブジェクトのポリシーは、次の表に示すスキーマで定義されます。
 
-|種類|表示名|説明|
+|Type|表示名|説明|
 |----|--------|--------|
 |ポリシー|Authentication Policy|このクラスのインスタンスは、割り当てられたプリンシパルの認証ポリシー動作を定義します。|
-|ポリシー|認証ポリシー|このクラスのコンテナーに、認証ポリシー オブジェクトを入れることができます。|
+|ポリシー|Authentication Policies|このクラスのコンテナーに、認証ポリシー オブジェクトを入れることができます。|
 |ポリシー|Authentication Policy Enforced|認証ポリシーを強制適用するかどうかを指定します。<p>強制適用されないときは、ポリシーは既定で監査モードとなり、成功や失敗の可能性を示すイベントが生成されますが、システムは保護されません。|
 |ポリシー|Assigned Authentication Policy Backlink|この属性は、msDS-AssignedAuthNPolicy の後方リンクです。|
 |ポリシー|Assigned Authentication Policy|AuthNPolicy をこのプリンシパルに適用するかどうかを指定します。|
@@ -96,26 +96,26 @@ Active Directory 勘定科目の種類によって、呼び出し元のロール
 |ユーザー|ms-DS-User-Allowed-To-Authenticate-To|この属性は、そのユーザー アカウントの下で実行されるサービスに対する認証を受けることのできるプリンシパルを指定するのに使用されます。|
 |ユーザー|ms-DS-User-Allowed-To-Authenticate-From|この属性は、ユーザー アカウントがどのデバイスへのサインインを許可されているかを指定するのに使用されます。|
 |ユーザー|User TGT Lifetime|ユーザーに対して発行される Kerberos TGT の最長有効期間を指定します (秒単位)。 作成された TGT は更新不可能です。|
-|コンピューター|Computer Authentication Policy|このサイロ オブジェクトに割り当てられたコンピューターに、どの AuthNPolicy を適用するかを指定します。|
-|コンピューター|Computer Authentication Policy Backlink|この属性は、msDS-ComputerAuthNPolicy の後方リンクです。|
-|コンピューター|ms-DS-Computer-Allowed-To-Authenticate-To|この属性は、そのコンピューター アカウントの下で実行されるサービスに対する認証を受けることのできるプリンシパルを指定するのに使用されます。|
-|コンピューター|Computer TGT Lifetime|コンピューターに対して発行される Kerberos TGT の最大有効期間を指定します (秒単位)。 この設定を変更することはお勧めしません。|
-|Service|Service Authentication Policy|このサイロ オブジェクトに割り当てられたサービスに、どの AuthNPolicy を適用するかを指定します。|
-|Service|Service Authentication Policy Backlink|この属性は、msDS-ServiceAuthNPolicy の後方リンクです。|
-|Service|ms-DS-Service-Allowed-To-Authenticate-To|この属性は、そのサービス アカウントの下で実行されるサービスに対する認証を受けることのできるプリンシパルを指定するのに使用されます。|
-|Service|ms-DS-Service-Allowed-To-Authenticate-From|この属性は、サービス アカウントがどのデバイスに対してサインインを許可されているかを指定するのに使用されます。|
-|Service|Service TGT Lifetime|サービスに対して発行される Kerberos TGT の最大有効期間を指定します (秒単位)。|
+|Computer|Computer Authentication Policy|このサイロ オブジェクトに割り当てられたコンピューターに、どの AuthNPolicy を適用するかを指定します。|
+|Computer|Computer Authentication Policy Backlink|この属性は、msDS-ComputerAuthNPolicy の後方リンクです。|
+|Computer|ms-DS-Computer-Allowed-To-Authenticate-To|この属性は、そのコンピューター アカウントの下で実行されるサービスに対する認証を受けることのできるプリンシパルを指定するのに使用されます。|
+|Computer|Computer TGT Lifetime|コンピューターに対して発行される Kerberos TGT の最大有効期間を指定します (秒単位)。 この設定を変更することはお勧めしません。|
+|サービス|Service Authentication Policy|このサイロ オブジェクトに割り当てられたサービスに、どの AuthNPolicy を適用するかを指定します。|
+|サービス|Service Authentication Policy Backlink|この属性は、msDS-ServiceAuthNPolicy の後方リンクです。|
+|サービス|ms-DS-Service-Allowed-To-Authenticate-To|この属性は、そのサービス アカウントの下で実行されるサービスに対する認証を受けることのできるプリンシパルを指定するのに使用されます。|
+|サービス|ms-DS-Service-Allowed-To-Authenticate-From|この属性は、サービス アカウントがどのデバイスに対してサインインを許可されているかを指定するのに使用されます。|
+|サービス|Service TGT Lifetime|サービスに対して発行される Kerberos TGT の最大有効期間を指定します (秒単位)。|
 
 認証ポリシーをサイロごとに構成するには、Active Directory 管理コンソールまたは Windows PowerShell を使用します。 詳細については、「[保護されるアカウントの構成方法](how-to-configure-protected-accounts.md)」をご覧ください。
 
-## <a name="how-it-works"></a>方法
+## <a name="how-it-works"></a>しくみ
 ここでは、認証ポリシー サイロと認証ポリシーがどのように、Protected Users セキュリティ グループおよび Windows での Kerberos プロトコル実装と連携するかについて説明します。
 
--   [認証サイロと認証ポリシーで Kerberos プロトコルを使用する方法](#BKMK_HowKerbUsed)
+-   [Kerberos プロトコルと認証サイロおよびポリシーとの連携のしくみ](#BKMK_HowKerbUsed)
 
--   [ユーザーサインインの制限のしくみ](#BKMK_HowRestrictingSignOn)
+-   [ユーザー サインインの制限のしくみ](#BKMK_HowRestrictingSignOn)
 
--   [サービスチケット発行の制限のしくみ](#BKMK_HowRestrictingServiceTicket)
+-   [サービス チケット発行の制限のしくみ](#BKMK_HowRestrictingServiceTicket)
 
 **保護されたアカウント**
 
@@ -139,7 +139,7 @@ Protected Users セキュリティグループは、Windows Server 2012 R2 お�
 
 -   [Kerberos 認証の変更](https://technet.microsoft.com/library/dd560670(v=ws.10).aspx)(windows Server 2008 R2 および windows 7)
 
-### <a name="how-the-kerberos-protocol-is-used-with-authentication-policy-silos-and-policies"></a><a name="BKMK_HowKerbUsed"></a>認証ポリシーサイロとポリシーで Kerberos プロトコルを使用する方法
+### <a name="how-the-kerberos-protocol-is-used-with-authentication-policy-silos-and-policies"></a><a name="BKMK_HowKerbUsed"></a>Kerberos プロトコルと認証ポリシー サイロおよびポリシーとの連携のしくみ
 ドメイン アカウントが認証ポリシー サイロにリンクされている状態でユーザーがサインインすると、セキュリティ アカウント マネージャーによって "認証ポリシー サイロ" というタイプのクレームが追加され、サイロが値として指定されます。 アカウントにおけるこのクレームによって、対象のサイロへのアクセスが可能になります。
 
 認証ポリシーが強制適用されているときに、ドメイン アカウントに対する認証サービス要求がドメイン コントローラー上で受信されると、ドメイン コントローラーは更新不可の TGT を返します。この TGT の有効期間は、あらかじめ設定されているとおりとなります (ドメイン TGT の有効期間がそれよりも短い場合を除く)。
@@ -166,14 +166,14 @@ Protected Users セキュリティグループは、Windows Server 2012 R2 お�
 
 認証ポリシーをサイロごとに構成するには、Active Directory 管理コンソールまたは Windows PowerShell を使用します。 詳細については、「[保護されるアカウントの構成方法](how-to-configure-protected-accounts.md)」をご覧ください。
 
-### <a name="how-restricting-a-user-sign-in-works"></a><a name="BKMK_HowRestrictingSignOn"></a>ユーザーサインインの制限のしくみ
+### <a name="how-restricting-a-user-sign-in-works"></a><a name="BKMK_HowRestrictingSignOn"></a>ユーザー サインインの制限のしくみ
 このような認証ポリシーは特定のアカウントに適用されるものであるため、サービスで使用されるアカウントにも適用されます。 あるサービスに対するパスワードの使用を特定のホストだけに制限する必要がある場合に、この設定が役立ちます。 たとえば、グループの管理されたサービス アカウントの構成の中で、ホストがパスワードを Active Directory Domain Services から取得することが許可されているとします。 しかし、そのパスワードはどのホストからでも初期認証に使用できます。 アクセス制御条件を適用すると、特定のホストだけがパスワードを取得できるように制限できるので、保護が強化されます。
 
 システム、ネットワークサービス、またはその他のローカルサービス id として実行されるサービスは、ネットワークサービスに接続するときに、そのホストのコンピューターアカウントを使用します。 コンピューター アカウントに制限をかけることはできません。 したがって、サービスが使用しているコンピューター アカウントが Windows ホストのものではない場合でも、そのアカウントに制限をかけることはできません。
 
-特定のホストへのユーザーのサインインを制限するには、ドメインコントローラーでホストの id を検証する必要があります。 Kerberos 認証とともに Kerberos 防御 ("ダイナミック アクセス制御" 機能の一部) を使用する場合は、ユーザーがホストから認証を行うときに、そのホストの TGT がキー配布センターに提示されます。 この防御された TGT の内容を使用してアクセス検査が行われ、そのホストを許可するかどうかが判断されます。
+特定のホストへのユーザーのサインインを制限するには、ドメインコントローラーでホストの id を検証する必要があります。 Kerberos 認証と共に Kerberos 防御 ("ダイナミック アクセス制御" 機能の一部) を使用する場合は、ユーザーがホストから認証を行うときに、そのホストの TGT がキー配布センターに提示されます。 この防御された TGT の内容を使用してアクセス検査が行われ、そのホストを許可するかどうかが判断されます。
 
-ユーザーが Windows にサインインするときや、アプリケーションの資格情報入力画面でドメイン資格情報を入力するときに、既定の設定では防御されていない AS-REQ がドメイン コントローラーに送信されます。 Windows 7 または Windows Vista を実行しているコンピューターなど、防御をサポートしていないコンピューターからユーザーが要求を送信している場合、要求は失敗します。
+ユーザーが Windows にサインインするときや、アプリケーションの資格情報入力画面でドメイン資格情報を入力するときに、既定の設定では防御されていない AS-REQ がドメイン コントローラーに送信されます。 ユーザーの要求の送信元であるコンピューターが防御をサポートしていない場合、たとえば Windows 7 や Windows Vista を実行しているコンピューターの場合は、要求が失敗となります。
 
 次のリストは、このプロセスの説明です。
 
@@ -200,7 +200,7 @@ Protected Users セキュリティグループは、Windows Server 2012 R2 お�
 
 3.  ドメイン コントローラーから、防御された応答が返され (AS-REP)、認証が続行されます。
 
-### <a name="how-restricting-service-ticket-issuance-works"></a><a name="BKMK_HowRestrictingServiceTicket"></a>サービスチケット発行の制限のしくみ
+### <a name="how-restricting-service-ticket-issuance-works"></a><a name="BKMK_HowRestrictingServiceTicket"></a>サービス チケット発行の制限のしくみ
 アカウントが許可されておらず、TGT を持つユーザーがサービスに接続しようとすると (サービスのサービスプリンシパル名 (SPN) によって識別されるサービスに対して認証を必要とするアプリケーションを開くなど)、次のシーケンスが発生します。
 
 1.  SPN から SPN1 への接続を試行するために、TGS-REQ がドメイン コントローラーに送信されます。これは、SPN1 に対するサービス チケットを要求するものです。
@@ -221,7 +221,7 @@ Protected Users セキュリティグループは、Windows Server 2012 R2 お�
 
 4.  ドメイン コントローラーは要求への応答として、チケット保証サービス応答 (TGS-REP) を返します。
 
-## <a name="associated-error-and-informational-event-messages"></a><a name="BKMK_ErrorandEvents"></a>関連するエラーおよび情報イベントメッセージ
+## <a name="associated-error-and-informational-event-messages"></a><a name="BKMK_ErrorandEvents"></a>関連するエラー/情報イベント メッセージ
 次の表は、Protected Users セキュリティ グループや認証ポリシー サイロに適用される認証ポリシーに関連するイベントの説明です。
 
 これらのイベントは、"アプリケーションとサービス ログ" (**Microsoft\Windows\Authentication**) に記録されます。
@@ -236,7 +236,7 @@ Protected Users セキュリティグループは、Windows Server 2012 R2 お�
 |106<p>**AuthenticationPolicyFailures-DomainController**|理由: ユーザーまたはデバイスがサーバーへの認証を許可されていないため、Kerberos 制限エラーが発生します。<p>イベントがドメイン コントローラーのログに記録されます。これは、強制適用されているアクセス制御制限にユーザーとデバイスの一方または両方が適合していないことが理由で Kerberos サービス チケットが拒否されたことを示すものです。<p>デバイス、ポリシー、およびサイロの名前が表示されます。|
 |306<p>**AuthenticationPolicyFailures-DomainController**|理由: ユーザーまたはデバイスがサーバーへの認証を許可されていないため、Kerberos の制限エラーが発生する可能性があります。<p>監査モードでは、情報イベントがドメイン コントローラーのログに記録されます。これは、ユーザーとデバイスの一方または両方がアクセス制御制限に適合していないことが理由で Kerberos サービス チケットが拒否されることを示すものです。<p>デバイス、ポリシー、およびサイロの名前が表示されます。|
 
-## <a name="see-also"></a>参照
+## <a name="additional-references"></a>その他のリファレンス
 [保護されるアカウントの構成方法](how-to-configure-protected-accounts.md)
 
 [資格情報の保護と管理](credentials-protection-and-management.md)

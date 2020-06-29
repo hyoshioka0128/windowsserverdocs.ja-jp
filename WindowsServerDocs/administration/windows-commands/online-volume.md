@@ -1,6 +1,6 @@
 ---
-title: オンラインボリューム
-description: '* * * * のリファレンストピック'
+title: online volume
+description: オンラインボリュームコマンドのリファレンストピック。オフラインボリュームをオンライン状態にします。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,24 +9,22 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bb2ee396e4fa8a2e61001df0d979d85dabe1aa32
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 83a1e4bf1d6afe9485ab71c9af372166797900b3
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723421"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85472668"
 ---
-# <a name="online-volume"></a>オンラインボリューム
+# <a name="online-disk"></a>online disk
 
+オフラインボリュームをオンライン状態にします。 このコマンドは、障害が発生しているか、失敗したか、冗長状態になっているボリュームに対して機能します。
 
-
-ボリュームをオンライン状態には現在オフラインになっています。
-
-> [!IMPORTANT]
-> このコマンドは、Windows Vista のどのエディションでも使用できません。
+> [!NOTE]
+> **オンラインボリューム**コマンドを正常に実行するには、ボリュームを選択する必要があります。 使用して、 [ボリュームを選択して](select-volume.md) コマンドのボリュームを選択し、それにフォーカスをします。
 
 > [!IMPORTANT]
-> 読み取り専用ボリュームで使用されている場合、このコマンドは失敗します。
+> 読み取り専用ディスクで使用されている場合、このコマンドは失敗します。
 
 ## <a name="syntax"></a>構文
 
@@ -36,18 +34,14 @@ online volume [noerr]
 
 ### <a name="parameters"></a>パラメーター
 
-|パラメーター|[説明]|
-|---------|-----------|
-|noerr|スクリプト専用です。 エラーが発生しても、エラーが発生しなかったかのように DiskPart はコマンドの処理を続けます。 このパラメーターは、エラー発生すると、DiskPart はエラー コードを生成して終了します。|
+| パラメーター | 説明 |
+|--|--|
+| noerr | スクリプト専用です。 エラーが発生しても、エラーが発生しなかったかのように DiskPart はコマンドの処理を続けます。 このパラメーターは、エラー発生すると、DiskPart はエラー コードを生成して終了します。 |
 
-## <a name="remarks"></a>Remarks
+### <a name="examples"></a>例
 
--   このコマンドは、失敗したかが失敗している場合、または、冗長の失敗の状態にするボリュームでは動作します。
--   このコマンドを成功させるには、ボリュームを選択してください。 使用して、 **ボリュームを選択して** コマンドのボリュームを選択し、それにフォーカスをします。
+フォーカスがあるボリュームをオンラインにするには、次のように入力します。
 
-## <a name="examples"></a>例
-
-ボリュームをオンラインをダウンするには、次のように入力します。
 ```
 online volume
 ```
@@ -55,4 +49,3 @@ online volume
 ## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
-

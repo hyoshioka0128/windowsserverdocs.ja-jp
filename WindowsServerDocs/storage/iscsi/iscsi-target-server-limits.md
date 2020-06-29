@@ -8,12 +8,12 @@ author: JasonGerend
 manager: dougkim
 ms.author: jgerend
 ms.date: 09/11/2018
-ms.openlocfilehash: 31853f1adaed6794138861da0991aa47e79602bc
-ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
+ms.openlocfilehash: 6799e0e3b47d6cc98cbb42407ffbed1a9578675a
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "85070567"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85473439"
 ---
 # <a name="iscsi-target-server-scalability-limits"></a>iSCSI ターゲットサーバーのスケーラビリティの制限
 
@@ -32,10 +32,10 @@ ms.locfileid: "85070567"
 </colgroup>
 <thead>
 <tr class="header">
-<th><p>Item</p></th>
+<th><p>項目</p></th>
 <th><p>サポートの制限</p></th>
 <th><p>リレーションシップ?</p></th>
-<th><p>コメント</p></th>
+<th><p>解説</p></th>
 </tr>
 </thead>
 <tbody>
@@ -89,10 +89,10 @@ ms.locfileid: "85070567"
 </colgroup>
 <thead>
 <tr class="header">
-<th><p>Item</p></th>
+<th><p>項目</p></th>
 <th><p>サポートの制限</p></th>
 <th><p>リレーションシップ?</p></th>
-<th><p>コメント</p></th>
+<th><p>解説</p></th>
 </tr>
 </thead>
 <tbody>
@@ -104,9 +104,9 @@ ms.locfileid: "85070567"
 </tr>
 <tr class="even">
 <td><p>複数のアクティブなクラスターノード</p></td>
-<td><p>サポート状況</p></td>
-<td> 
-<p>N/A</p></td>
+<td><p>サポートされています</p></td>
+<td>
+<p>該当なし</p></td>
 <td><p>フェールオーバークラスター内の各アクティブノードは、実行可能な所有者ノードとして機能する他のノードと異なる iSCSI ターゲットサーバークラスターインスタンスを所有しています。</p></td>
 </tr>
 <tr class="odd">
@@ -129,8 +129,8 @@ ms.locfileid: "85070567"
 </tr>
 <tr class="even">
 <td><p>マルチパス入出力 (MPIO)</p></td>
-<td><p>サポート状況</p></td>
-<td><p>N/A</p></td>
+<td><p>サポートされています</p></td>
+<td><p>該当なし</p></td>
 <td></td>
 </tr>
 <tr class="odd">
@@ -141,7 +141,7 @@ ms.locfileid: "85070567"
 </tr>
 <tr class="even">
 <td><p>スタンドアロン iSCSI ターゲットサーバーから、クラスター化された iSCSI ターゲットサーバーへの変換またはその逆の変換</p></td>
-<td><p>サポートなし</p></td>
+<td><p>サポートされていません</p></td>
 <td><p>いいえ</p></td>
 <td><p>ISCSI ターゲットインスタンスと仮想ディスク構成データ (スナップショットメタデータを含む) は、変換中に失われます。</p></td>
 </tr>
@@ -159,10 +159,10 @@ ms.locfileid: "85070567"
 </colgroup>
 <thead>
 <tr class="header">
-<th><p>Item</p></th>
+<th><p>項目</p></th>
 <th><p>サポートの制限</p></th>
 <th><p>リレーションシップ?</p></th>
-<th><p>コメント</p></th>
+<th><p>解説</p></th>
 </tr>
 </thead>
 <tbody>
@@ -186,20 +186,20 @@ ms.locfileid: "85070567"
 </tr>
 <tr class="even">
 <td><p>IPv4</p></td>
-<td><p>サポート状況</p></td>
-<td><p>N/A</p></td>
+<td><p>サポートされています</p></td>
+<td><p>該当なし</p></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><p>IPv6</p></td>
-<td><p>サポート状況</p></td>
-<td><p>N/A</p></td>
+<td><p>サポートされています</p></td>
+<td><p>該当なし</p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>TCP オフロード</p></td>
-<td><p>サポート状況</p></td>
-<td><p>N/A</p></td>
+<td><p>サポートされています</p></td>
+<td><p>該当なし</p></td>
 <td><p>大規模な送信 (セグメンテーション)、チェックサム、割り込みモデレート、RSS オフロードの活用</p></td>
 </tr>
 <tr class="odd">
@@ -210,20 +210,20 @@ ms.locfileid: "85070567"
 </tr>
 <tr class="even">
 <td><p>Jumbo Frame</p></td>
-<td><p>サポート状況</p></td>
-<td><p>N/A</p></td>
+<td><p>サポートされています</p></td>
+<td><p>該当なし</p></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><p>IPSec</p></td>
-<td><p>サポート状況</p></td>
-<td><p>N/A</p></td>
+<td><p>サポートされています</p></td>
+<td><p>該当なし</p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>CRC オフロード</p></td>
-<td><p>サポート状況</p></td>
-<td><p>N/A</p></td>
+<td><p>サポートされています</p></td>
+<td><p>該当なし</p></td>
 <td></td>
 </tr>
 </tbody>
@@ -240,10 +240,10 @@ ms.locfileid: "85070567"
 </colgroup>
 <thead>
 <tr class="header">
-<th><p>Item</p></th>
+<th><p>項目</p></th>
 <th><p>サポートの制限</p></th>
 <th><p>リレーションシップ?</p></th>
-<th><p>コメント</p></th>
+<th><p>解説</p></th>
 </tr>
 </thead>
 <tbody>
@@ -290,13 +290,13 @@ ms.locfileid: "85070567"
 </tr>
 <tr class="odd">
 <td><p>VHD の固定形式</p></td>
-<td><p>サポート状況</p></td>
+<td><p>サポートされています</p></td>
 <td><p>いいえ</p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>VHD 差分形式</p></td>
-<td><p>サポート状況</p></td>
+<td><p>サポートされています</p></td>
 <td><p>いいえ</p></td>
 <td><p>差分 VHD ベースの iSCSI 仮想ディスクを使用してスナップショットを作成することはできません。</p></td>
 </tr>
@@ -327,14 +327,14 @@ ms.locfileid: "85070567"
 </tr>
 <tr class="odd">
 <td><p>ReFS</p></td>
-<td><p>サポート状況</p></td>
-<td><p>N/A</p></td>
+<td><p>サポートされています</p></td>
+<td><p>該当なし</p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>NTFS</p></td>
-<td><p>サポート状況</p></td>
-<td><p>N/A</p></td>
+<td><p>サポートされています</p></td>
+<td><p>該当なし</p></td>
 <td></td>
 </tr>
 <tr class="odd">
@@ -352,12 +352,12 @@ ms.locfileid: "85070567"
 <tr class="odd">
 <td><p>論理ユニットの圧縮</p></td>
 <td><p>はい (Windows Server 2012 R2 以降のみ)</p></td>
-<td><p>N/A</p></td>
+<td><p>該当なし</p></td>
 <td><p>LUN を圧縮するには、 <a href="https://docs.microsoft.com/powershell/module/iscsitarget/resize-iscsivirtualdisk">convert-iscsivirtualdisk</a>を使用します。</p></td>
 </tr>
 <tr class="even">
 <td><p>論理ユニットの複製</p></td>
-<td><p>サポートなし</p></td>
+<td><p>サポートされていません</p></td>
 <td><p>該当なし</p></td>
 <td><p>差分 Vhd を使用して、ディスクデータを迅速に複製できます。</p></td>
 </tr>
@@ -374,55 +374,55 @@ ms.locfileid: "85070567"
 </colgroup>
 <thead>
 <tr class="header">
-<th><p>Item</p></th>
+<th><p>項目</p></th>
 <th><p>サポートの制限</p></th>
-<th><p>コメント</p></th>
+<th><p>解説</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>スナップショットの作成</p></td>
-<td><p>サポート状況</p></td>
+<td><p>サポートされています</p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>スナップショットの復元</p></td>
-<td><p>サポート状況</p></td>
+<td><p>サポートされています</p></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><p>書き込み可能なスナップショット</p></td>
-<td><p>サポートなし</p></td>
+<td><p>サポートされていません</p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>スナップショット–完全に変換</p></td>
-<td><p>サポートなし</p></td>
+<td><p>サポートされていません</p></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><p>スナップショット–オンラインロールバック</p></td>
-<td><p>サポートなし</p></td>
+<td><p>サポートされていません</p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>スナップショット–書き込み可能に変換</p></td>
-<td><p>サポートなし</p></td>
+<td><p>サポートされていません</p></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><p>スナップショット-リダイレクト</p></td>
-<td><p>サポートなし</p></td>
+<td><p>サポートされていません</p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>スナップショット-ピン留め</p></td>
-<td><p>サポートなし</p></td>
+<td><p>サポートされていません</p></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><p>ローカルマウント</p></td>
-<td><p>サポート状況</p></td>
+<td><p>サポートされています</p></td>
 <td><p>ローカルにマウントされた iSCSI 仮想ディスクは非推奨です-詳細については、「 <a href="https://technet.microsoft.com/library/dn303411.aspx">Windows Server 2012 R2 で削除された機能または非推奨の機能</a>」を参照してください。 ダイナミックディスクスナップショットをローカルにマウントすることはできません。</p></td>
 </tr>
 </tbody>
@@ -537,7 +537,7 @@ ISCSI ターゲット記憶域プロバイダーの詳細については、「 [
 
   - IPXE を使用した CD または USB ディスク
 
-## <a name="see-also"></a>関連項目
+## <a name="additional-references"></a>その他のリファレンス
 
 iSCSI ターゲット サーバーと関連テクノロジに関するその他のリソースを次に示します。
 

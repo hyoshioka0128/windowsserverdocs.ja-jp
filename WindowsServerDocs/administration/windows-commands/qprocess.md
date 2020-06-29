@@ -1,6 +1,6 @@
 ---
 title: qprocess
-description: '* * * * のリファレンストピック'
+description: Qprocess コマンドのリファレンストピック。リモートデスクトップセッションホストサーバーで実行されているプロセスに関する情報を表示します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,26 +9,26 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4e0ebf422019d6e8023a2a3cc5da2085635c8422
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: e27902e363f067619543252552fd2f9ede906b62
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436347"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85472037"
 ---
 # <a name="qprocess"></a>qprocess
 
 > 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-リモート デスクトップ セッション ホスト (RD セッション ホスト) サーバーで実行されているプロセスに関する情報を表示します。
+リモートデスクトップセッションホストサーバーで実行されているプロセスに関する情報を表示します。 最新バージョンの新機能については、「 [Windows Server でのリモートデスクトップサービスの新](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn283323(v=ws.11))機能」を参照してください。
 
 > [!NOTE]
-> Windows Server 2008 R2 で、「ターミナル サービス」は「リモート デスクトップ サービス」に名前変更されました。 最新バージョンの新機能については、Windows Server TechNet ライブラリの「 [Windows server 2012 のリモートデスクトップサービスの新機能](https://technet.microsoft.com/library/hh831527)」を参照してください。
-
-## <a name="remarks"></a>解説
-このコマンドと同じ、 **クエリ プロセス** コマンドです。
+> このコマンドは、 [query process コマンド](query-process.md)と同じです。
 
 ## <a name="additional-references"></a>その他のリファレンス
-[query process](query-process.md)
-- [コマンドライン構文のキー](command-line-syntax-key.md) 
-[リモートデスクトップサービス (ターミナルサービス) のコマンドリファレンス](remote-desktop-services-terminal-services-command-reference.md)
+
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [クエリ処理コマンド](query-process.md)
+
+- [リモート デスクトップ サービス (ターミナル サービス) のコマンド リファレンス](remote-desktop-services-terminal-services-command-reference.md)

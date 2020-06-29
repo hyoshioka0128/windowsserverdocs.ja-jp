@@ -8,18 +8,18 @@ ms.topic: article
 author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c424d19c006cfae6343d577dc08ff3553a5616b
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 46b4502bb0408b3fb7afe51234c81695ec54e48b
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80825875"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85473139"
 ---
 # <a name="whats-new-in-windows-server"></a>Windows Server の新機能
 
 > 適用先:Windows Server 2019、Windows Server 2016、Windows Server (半期チャネル)
 
-これらの各 Windows Server リリースの新機能を確認できます。  
+これらの各 Windows Server リリースの新機能を確認できます。
 
 長期的なサービス チャネル (LTSC) リリース:
 
@@ -35,7 +35,7 @@ ms.locfileid: "80825875"
 
 Windows Server 半期チャネル リリースは、オペレーティング システムの新機能をより速いペースで提供します。 新しいリリースは 6 か月ごとに提供され、18 か月間サポートされます。 サポートの日付については「[Windows Server のリリース情報](windows-server-release-info.md)」と[ライフサイクル サポートのページ](https://support.microsoft.com/lifecycle)を参照してください。また、可能であれば常に最新のリリースを使用してください。
 
-## <a name="see-also"></a>関連項目
+## <a name="additional-references"></a>その他の参照情報
 
 - [リリース ノート:Windows Server 2019 に関する重要な問題](../get-started-19/rel-notes-19.md)
 - [リリース ノート:Windows Server 2016 に関する重要な問題](Windows-Server-2016-GA-Release-Notes.md)

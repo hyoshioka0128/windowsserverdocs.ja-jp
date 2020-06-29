@@ -7,12 +7,12 @@ ms.technology: storage-health-service
 ms.topic: article
 author: cosmosdarwin
 ms.date: 08/14/2017
-ms.openlocfilehash: a8262567abdd18847e99026c43d722351a00d3f2
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: d2284587ca68bbcf8648adeb2de361cb95e0f6d2
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720538"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85473259"
 ---
 # <a name="health-service-settings"></a>ヘルスサービスの設定
 
@@ -27,7 +27,7 @@ ms.locfileid: "82720538"
 ### <a name="usage"></a>使用法
 
 ```PowerShell
-Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name <SettingName> -Value <Value>  
+Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name <SettingName> -Value <Value>
 ```
 
 #### <a name="example"></a>例
@@ -99,7 +99,7 @@ Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name "System.Storage.V
 "System.LogLevel" = 4
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="additional-references"></a>その他のリファレンス
 
 - [Windows Server 2016 のヘルス サービス](health-service-overview.md)
 - [Windows Server 2016 での記憶域スペース ダイレクト](../storage/storage-spaces/storage-spaces-direct-overview.md)

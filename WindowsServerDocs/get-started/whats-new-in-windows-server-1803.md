@@ -8,12 +8,12 @@ author: greg-lindsay
 ms.author: greg-lindsay
 ms.localizationpriority: high
 ms.date: 05/07/2018
-ms.openlocfilehash: 8b359ac883c24d559e2c3d47db5b68e4f5341338
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: c4676ee720780ac7f347d98048c920bd4ce68e59
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826005"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85473189"
 ---
 # <a name="whats-new-in-windows-server-version-1803"></a>Windows Server バージョン 1803 の新機能
 
@@ -35,7 +35,7 @@ Windows Server バージョン 1709 は、半期チャネルの最初のリリ�
 
 利用統計情報とフィードバックに基づき、これらのチャネルは次の一般的な戦略に十分に従っていることが実証されています。
 - 半期チャネルは、コンテナーやマイクロサービスなどの現在のアプリケーションやイノベーション シナリオに最適です。
-- 長期サービス チャネルは、ソフトウェア定義データセンターやハイパーコンバージド インフラストラクチャ (HCI) などのコア インフラストラクチャ シナリオに推奨されるリリースです。 
+- 長期サービス チャネルは、ソフトウェア定義データセンターやハイパーコンバージド インフラストラクチャ (HCI) などのコア インフラストラクチャ シナリオに推奨されるリリースです。
 
 半期チャネルと長期サービス チャネルの特定のシナリオは次のとおりです。
 
@@ -51,7 +51,7 @@ Windows Server バージョン 1709 は、半期チャネルの最初のリリ�
 ## <a name="application-platform-and-containers"></a>アプリケーション プラットフォームとコンテナー
 
 - 最適化
-    - Server Core 基本コンテナー イメージは、Windows Server バージョン 1709 から 30% 減少します。 
+    - Server Core 基本コンテナー イメージは、Windows Server バージョン 1709 から 30% 減少します。
     - また、アプリケーションの互換性が向上し、従来のアプリケーションをコンテナー化するのに役立ちます。
     - さまざまな修正や最適化のおかげでコンテナーの起動パフォーマンスおよび実行時パフォーマンスも向上しています。
 - コンテナーのネットワーク: localhost と HTTP プロキシのサポートが追加され、コンテナーの拡張性と起動時間が向上しています。
@@ -70,16 +70,16 @@ Windows Server バージョン 1709 は、半期チャネルの最初のリリ�
 
 WSL によって、サーバーの管理者は Windows Server の Linux から既存のツールとスクリプトを使用することができます。 [コマンド ラインに関するブログ](https://blogs.msdn.microsoft.com/commandline/tag/wsl/)で紹介された、バックグラウンド タスク、DriveFS、WSLPath などの多くの機能強化は、Windows Server の一部として含まれるようになりました。
 
-### <a name="kubernetes"></a>Kubernetes 
+### <a name="kubernetes"></a>Kubernetes
 
-Kubernetes (一般的に K8s と呼ばれます) は、[Cloud Native Computing Foundation](https://www.cncf.io) の管理の下で開発されたコンテナー化されたアプリケーションの展開、スケーリング、管理を自動化するためのオープン ソース システムです。 
+Kubernetes (一般的に K8s と呼ばれます) は、[Cloud Native Computing Foundation](https://www.cncf.io) の管理の下で開発されたコンテナー化されたアプリケーションの展開、スケーリング、管理を自動化するためのオープン ソース システムです。
 
 Windows Server バージョン 1709 では、ユーザーは次のような Windows ネットワーク機能で Kubernetes を利用することができました。
 - 共有ポッド コンパートメント: インフラストラクチャ ポッドとワーカー ポッドで、ネットワーク コンパートメントを共有できるようになりました (Linux 名前空間と同様)。
 - エンドポイントの最適化: コンパートメントの共有により、コンテナー サービスは以前の半数以上のエンドポイントを追跡する必要があります。
 - データ パスの最適化: 仮想フィルタリング プラットフォームおよびホスト ネットワーク サービスへの機能強化により、カーネルに基づく負荷分散が可能になります。
 
-Windows Server バージョン 1803 のリリースに伴い、次の Kubernetes リリースでより多くの機能が利用できるようになります。 
+Windows Server バージョン 1803 のリリースに伴い、次の Kubernetes リリースでより多くの機能が利用できるようになります。
 - Kubernetes によってオーケストレーションされる Windows コンテナーの[ストレージ プラグイン](https://github.com/Microsoft/K8s-Storage-Plugins)。
 - [Project Calico での Tigera](https://cloudblogs.microsoft.com/windowsserver/2017/12/07/securing-modernized-apps-and-simplified-networking-on-windows-with-calico/) との提携などのイニシアティブによるクラウド スケールのネットワーク。
 - ポッドごとの複数のコンテナーを含む Hyper-V 分離ポッドのための Windows プラットフォーム サポート。
@@ -90,7 +90,7 @@ Windows Server バージョン 1803 のリリースに伴い、次の Kubernetes
 - ASP.net パフォーマンス カウンターを破損する問題が修正されました。
 - コンテナーで実行されているサービスがシャットダウン通知を受信しないという問題が修正されました。
     - 具体的には、通知は、Server Core と Nano Server の両方のコンテナー ベースのイメージ用の CTRL_SHUTDOWN_EVENT に変更されました。 また、通知が Server Core のコンテナー ベースのイメージに拡張され、コンテナーで実行されているすべてのプロセスに影響するようになりました。これには、コンテナーで実行されているサービスへのサービス シャットダウン通知の送信が含まれます。
-- 固定データ ドライブが書き込み可能である (FDVDenyWriteAccess) ために BitLocker 保護が必要かどうかを決定するポリシー設定が適用された docker pull および docker load の非互換性が修正されました。 
+- 固定データ ドライブが書き込み可能である (FDVDenyWriteAccess) ために BitLocker 保護が必要かどうかを決定するポリシー設定が適用された docker pull および docker load の非互換性が修正されました。
 
 ## <a name="storage"></a>記憶域
 
@@ -108,7 +108,7 @@ Windows 展開サービス (WDS) の役割のトランスポート サーバー�
 Install-WindowsFeature -Name WDS
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="additional-references"></a>その他の参照情報
 
 [Windows Server のリリース情報](https://docs.microsoft.com/windows-server/get-started/windows-server-release-info)<br>
 [Windows 10 バージョン 1803 の新機能 (IT 技術者向けコンテンツ)](https://docs.microsoft.com/windows/whats-new/whats-new-windows-10-version-1803)

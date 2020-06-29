@@ -1,6 +1,6 @@
 ---
 title: query user
-description: '* * * * のリファレンストピック'
+description: クエリユーザーコマンドのリファレンストピックでは、リモートデスクトップセッションホストサーバー上のユーザーセッションに関する情報を表示します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,57 +9,76 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e8c095226a5445e976e47e461044ec002dc007fe
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 7885df2287134cca9935926abd926a077ac8fdb3
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722691"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471947"
 ---
 # <a name="query-user"></a>query user
 
 > 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-リモートデスクトップセッションホスト (rd セッションホスト) サーバー上のユーザーセッションに関する情報を表示します。
+リモートデスクトップセッションホストサーバー上のユーザーセッションに関する情報を表示します。 このコマンドを使用すると、特定のユーザーが特定のリモートデスクトップセッションホストサーバーにログオンしているかどうかを確認できます。 このコマンドは、次の情報を返します。
+
+- ユーザーの名前
+
+- リモートデスクトップセッションホストサーバー上のセッションの名前
+
+- セッション ID
+
+- セッションの状態 (アクティブまたは切断)
+
+- アイドル時間 (セッションで最後のキーストロークまたはマウスの移動からの分数)
+
+- ユーザーがログオンした日付と時刻
 
 > [!NOTE]
-> Windows Server 2008 R2 で、「ターミナル サービス」は「リモート デスクトップ サービス」に名前変更されました。 最新バージョンの新機能については、Windows Server TechNet ライブラリの「 [Windows server 2012 のリモートデスクトップサービスの新機能](https://technet.microsoft.com/library/hh831527)」を参照してください。
-> ## <a name="syntax"></a>構文
-> ```
-> query user [<UserName> | <SessionName> | <SessionID>] [/server:<ServerName>]
-> ```
-> ### <a name="parameters"></a>パラメーター
-> 
-> |      パラメーター       |                                                     [説明]                                                     |
-> |----------------------|---------------------------------------------------------------------------------------------------------------------|
-> |      <UserName>      |                            クエリを実行するユーザーのログオン名を指定します。                             |
-> |    <SessionName>     |                              クエリを実行するセッションの名前を指定します。                              |
-> |     <SessionID>      |                               クエリを実行するセッションの ID を指定します。                               |
-> | /server:<ServerName> | 照会する rd セッションホストサーバーを指定します。 それ以外の場合は、現在の rd セッションホストサーバーが使用されます。 |
-> |          /?          |                                        コマンド プロンプトにヘルプを表示します。                                         |
-> 
-> ## <a name="remarks"></a>Remarks
-> - このコマンドを使用すると、特定のユーザーが特定の rd セッションホストサーバーにログオンしているかどうかを確認できます。 **query user**は、次の情報を返します。
->   -   ユーザーの名前
->   -   Rd セッションホストサーバー上のセッションの名前
->   -   セッション ID
->   -   (アクティブまたは切断) セッションの状態
->   -   アイドル時間 (セッションで最後にキーストロークやマウスの動きを以降の分単位の数)
->   -   ユーザーがログオンした日付と時刻
-> - **クエリユーザー**を使用するには、フルコントロールアクセス許可またはクエリ情報の特別なアクセス許可を持っている必要があります。
-> - <*UserName*> *、<の*SessionID>、または <*SessionID*> を指定せずに**クエリユーザー**を使用すると、サーバーにログオンしているすべてのユーザーの一覧が返されます。 またはも使用できます **クエリ セッション** 、サーバー上のすべてのセッションの一覧を表示します。
-> - **クエリ ユーザー** 情報、不等号 (>) を返しますが、現在のセッションの前に表示されます。
-> - **/Server** パラメーターは、使用する場合にのみ必要 **クエリ ユーザー** リモート サーバーからです。
->   ## <a name="examples"></a>例
-> - システムにログオンしているすべてのユーザーに関する情報を表示するには、次のように入力します。
->   ```
->   query user
->   ```
-> - サーバー SERver1 のユーザー USER1 に関する情報を表示するには、次のように入力します。
->   ```
->   query user USER1 /server:SERver1
->   ```
->   ## <a name="additional-references"></a>その他のリファレンス
->   - [コマンドライン構文キー](command-line-syntax-key.md)
->   [クエリ](query.md)
->   [リモートデスクトップサービス (ターミナルサービス) コマンドリファレンス](remote-desktop-services-terminal-services-command-reference.md)
+> 最新バージョンの新機能については、「 [Windows Server でのリモートデスクトップサービスの新](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn283323(v=ws.11))機能」を参照してください。
+
+## <a name="syntax"></a>構文
+
+```
+query user [<username> | <sessionname> | <sessionID>] [/server:<servername>]
+```
+
+### <a name="parameters"></a>パラメーター
+
+| パラメーター | 説明 |
+|--|--|
+| `<username>` | クエリを実行するユーザーのログオン名を指定します。 |
+| `<sessionname>` | クエリを実行するセッションの名前を指定します。 |
+| `<sessionID>` | クエリを実行するセッションの ID を指定します。 |
+| /server:`<servername>` | クエリを実行するリモートデスクトップセッションホストサーバーを指定します。 それ以外の場合は、現在のリモートデスクトップセッションホストサーバーが使用されます。 このパラメーターは、リモートサーバーからこのコマンドを使用している場合にのみ必要です。 |
+| /? | コマンド プロンプトにヘルプを表示します。 |
+
+#### <a name="remarks"></a>注釈
+
+- このコマンドを使用するには、フルコントロールアクセス許可または特殊なアクセス許可が必要です。
+
+- <*username*> *、<の*sessionID>、または*sessionID*パラメーターを使用してユーザーを指定しない場合、サーバーにログオンしているすべてのユーザーの一覧が返されます。 または、 **query session**コマンドを使用して、サーバー上のすべてのセッションの一覧を表示することもできます。
+
+- **クエリユーザー**が情報を返すと、 `(>)` 現在のセッションの前に不等号が表示されます。
+
+### <a name="examples"></a>例
+
+システムにログオンしているすべてのユーザーに関する情報を表示するには、次のように入力します。
+
+```
+query user
+```
+
+サーバー *Server1*のユーザー *USER1*に関する情報を表示するには、次のように入力します。
+
+```
+query user USER1 /server:Server1
+```
+
+## <a name="additional-references"></a>その他のリファレンス
+
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [クエリコマンド](query.md)
+
+- [リモート デスクトップ サービス (ターミナル サービス) のコマンド リファレンス](remote-desktop-services-terminal-services-command-reference.md)

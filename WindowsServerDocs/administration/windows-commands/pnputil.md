@@ -1,6 +1,6 @@
 ---
 title: pnputil
-description: Pnputil ユーティリティを使用してドライバーストアを管理する方法について説明します。
+description: pnputil.exe ユーティリティを使用して、ドライバーパッケージの追加、ドライバーパッケージの削除、およびドライバーストア内のドライバーパッケージの一覧表示を行う、pnputil コマンドのリファレンストピックです。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 4c6bcb138e8bd7308c01c2c53fba83b69362298a
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 6484a3e55c6e5f3b4cb51119ead5cb488dca0721
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436367"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85472401"
 ---
 # <a name="pnputil"></a>pnputil
 
-Pnputil は、ドライバーストアの管理に使用できるコマンドラインユーティリティです。 Pnputil を使用して、ドライバーパッケージの追加、ドライバーパッケージの削除、およびストア内のドライバーパッケージの一覧表示を行うことができます。
+Pnputil.exe は、ドライバーストアの管理に使用できるコマンドラインユーティリティです。 このコマンドを使用して、ドライバーパッケージの追加、ドライバーパッケージの削除、およびストア内のドライバーパッケージの一覧表示を行うことができます。
 
 ## <a name="syntax"></a>構文
 
@@ -28,27 +28,49 @@ pnputil.exe [-f | -i] [ -? | -a | -d | -e ] <INF name>
 
 ### <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
-|---------|-----------|
-|-a|識別された INF ファイルを追加することを指定します。|
-|-d|特定された INF ファイルを削除することを指定します。|
-|-E|すべてのサードパーティ製 INF ファイルを列挙するように指定します。|
-|-f|特定された INF ファイルを強制的に削除するように指定します。 **– I**パラメーターと組み合わせて使用することはできません。|
-|-i|識別された INF ファイルをインストールするように指定します。 は、 **-f**パラメーターと組み合わせて使用することはできません。|
-|/?|コマンド プロンプトにヘルプを表示します。|
+| パラメーター | 説明 |
+|--|--|
+| -a | 識別された INF ファイルを追加することを指定します。 |
+| -d | 特定された INF ファイルを削除することを指定します。 |
+| -E | すべてのサードパーティ製 INF ファイルを列挙するように指定します。 |
+| -f | 特定された INF ファイルを強制的に削除するように指定します。 **– I**パラメーターと共に使用することはできません。 |
+| -i | 識別された INF ファイルをインストールするように指定します。 は、 **-f**パラメーターと組み合わせて使用することはできません。 |
+| /? | コマンド プロンプトにヘルプを表示します。 |
 
+### <a name="examples"></a>例
 
-## <a name="examples"></a>例
+USBCAM という名前の INF ファイルを追加します。INF、次のように入力します。
 
--   pnputil-a a:\usbcam\USBCAM.INF は、USBCAM によって指定された INF ファイルを追加します。INF
--   svcutil.exe-c:\ ドライバー \* 。 inf によってすべての inf ファイルが追加されます。
--   pnputil-i-a a:\usbcam\USBCAM.INF は、指定されたドライバーを追加してインストールします。
--   pnputil – e は、すべてのサードパーティ製ドライバーを列挙します。
--   svcutil.exe-d oem0 は、指定されたを削除します。
--   svcutil.exe-f-d oem0 を指定すると、指定した INF ファイルが強制的に削除されます。
+```
+pnputil.exe -a a:\usbcam\USBCAM.INF
+```
+
+C:\ ドライバーにあるすべての INF ファイルを追加するには、次のように入力します。
+
+```
+pnputil.exe -a c:\drivers\*.inf
+```
+
+USBCAM を追加してインストールします。INF ドライバー、次のように入力します。
+
+```
+pnputil.exe -i -a a:\usbcam\USBCAM.INF
+```
+
+すべてのサードパーティドライバーを列挙するには、次のように入力します。
+
+```
+pnputil.exe –e
+```
+
+Oem0 という名前の INF ファイルとドライバーを削除するには、次のように入力します。
+
+```
+pnputil.exe -d oem0.inf
+```
 
 ## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 
-[Popd](popd.md)
+- [popd コマンド](popd.md)

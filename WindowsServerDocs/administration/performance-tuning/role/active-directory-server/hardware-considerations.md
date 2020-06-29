@@ -7,14 +7,14 @@ ms.topic: article
 ms.author: timwi; chrisrob; herbertm; kenbrumf;  mleary; shawnrab
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: c40faca06668adf6fd29a5e4e753e5790b8104b7
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 1fef257f860895b20c1ca1a24b6fa50e16f70c8c
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851915"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471577"
 ---
-# <a name="hardware-considerations-in-adds-performance-tuning"></a>のハードウェアの考慮事項により、パフォーマンスチューニングが追加されます。 
+# <a name="hardware-considerations-in-adds-performance-tuning"></a>のハードウェアの考慮事項により、パフォーマンスチューニングが追加されます。
 
 >[!Important]
 > 以下は、 [Active Directory Domain Services の容量計画](https://go.microsoft.com/fwlink/?LinkId=324566)に関する記事で詳しく説明されている Active Directory ワークロードのために、サーバーハードウェアを最適化するための主な推奨事項と考慮事項の概要を示しています。 リーダーは、 [Active Directory Domain Services のキャパシティプランニング](https://go.microsoft.com/fwlink/?LinkId=324566)を検討して、これらの推奨事項に関する技術的な理解と影響を高めます。
@@ -25,9 +25,9 @@ Active Directory は、メモリと同じくらいの量のデータベースを
 
 -   Active Directory ベストプラクティスでは、DIT 全体をメモリに読み込むために十分な RAM を確保し、オペレーティングシステムやその他のインストールされているアプリケーション (ウイルス対策、バックアップソフトウェア、監視など) に対応することをお勧めします。
 
-    -   レガシプラットフォームの制限事項については、「 [Windows server 2003 または windows 2000 Server を実行しているドメインコントローラーの lsass.exe プロセスによるメモリ使用量](https://support.microsoft.com/kb/308356)」を参照してください。
+    -   レガシプラットフォームの制限事項については、「 [Windows server 2003 または windows 2000 server を実行しているドメインコントローラーでの Lsass.exe プロセスによるメモリ使用量](https://support.microsoft.com/kb/308356)」を参照してください。
 
-    -   メモリ\\長期的なスタンバイキャッシュの有効期間 &gt; 30 分のパフォーマンスカウンターを使用します。
+    -   メモリの \\ 長期的な平均スタンバイキャッシュ有効期間 ( &gt; 30 分) パフォーマンスカウンターを使用します。
 
 -   オペレーティングシステム、ログ、およびデータベースを別のボリュームに配置します。 DIT のすべてまたは大部分がキャッシュされた場合、キャッシュが安定した状態になると、これは関連性が低くなり、ストレージレイアウトの柔軟性が多少向上します。 DIT 全体がキャッシュされないシナリオでは、オペレーティングシステム、ログ、およびデータベースを別のボリュームに分割することが重要になります。
 
@@ -41,13 +41,13 @@ Active Directory は、メモリと同じくらいの量のデータベースを
 
 -   ディスクサブシステムのパフォーマンスは、ボリュームごとに個別に確認してください。 ほとんどの Active Directory シナリオは主に読み取りに基づいているため、DIT をホストするボリュームの統計情報は検査するのが最も重要です。 ただし、オペレーティングシステムやログファイルのドライブを含め、残りのドライブの監視を見落とさないようにしてください。 記憶域がパフォーマンスのボトルネックにならないようにドメインコントローラーが適切に構成されているかどうかを判断するには、「記憶域サブシステムの標準ストレージに関する推奨事項」を参照してください。 多くの環境では、負荷の急激な増加や急増に対応できる十分なヘッドルームがあることを保証することが理念です。 これらのしきい値は警告しきい値であり、負荷の急激な増加や急増に対応するヘッドルームが制限され、クライアントの応答性が低下します。 簡単に言うと、これらのしきい値を超えても、短期間 (5 ~ 15 分) では悪くありません。ただし、これらの統計情報を使用して継続して実行されているシステムはデータベースを完全にキャッシュしておらず、過剰に調査する必要があります。
 
-    -   データベース = =&gt; インスタンス (lsass/NTDSA.DLL)\\i/o データベース読み取り平均待機時間 &lt; 15ms 秒
+    -   Database = = &gt; Instances (lsass/ntdsa.dll) \\ I/o データベース読み取り平均待機時間 &lt; 15ms 秒
 
-    -   データベース = =&gt; インスタンス (lsass/NTDSA.DLL)\\i/o データベース読み取り数/秒 &lt; 10
+    -   Database = = &gt; Instances (lsass/ntdsa.dll) \\ I/o データベース読み取り数 &lt; 10
 
-    -   Database = =&gt; Instances (lsass/NTDSA.DLL)\\i/o ログ書き込みの平均待機時間 &lt; 10 ミリ秒
+    -   Database = = &gt; Instances (lsass/ntdsa.dll) \\ I/o ログ書き込み平均待機時間 &lt; 10 ミリ秒
 
-    -   Database = =&gt; Instances (lsass/NTDSA.DLL)\\i/o ログの書き込み数/秒–情報のみです。
+    -   Database = = &gt; Instances (lsass/ntdsa.dll) \\ i/o ログの書き込み数/秒–情報提供のみ。
 
         データの一貫性を維持するには、すべての変更をログに書き込む必要があります。 ここでは、適切な番号も不適切な数値もありません。これは、ストレージがサポートしている量の尺度にすぎません。
 
@@ -61,7 +61,7 @@ Active Directory は、メモリと同じくらいの量のデータベースを
 
 -   CPU 負荷を軽減するために、ハードウェアの追加、負荷の最適化、クライアントの他の場所への接続、または環境からの負荷の削除を行います。
 
--   プロセッサ情報 (\_合計)\\% Processor 使用率 &lt; 60% パフォーマンスカウンタを使用します。
+-   プロセッサ情報 ( \_ Total) \\ % Processor 使用率 &lt; 60% パフォーマンスカウンタを使用してください。
 
 ## <a name="avoid-overloading-the-network-adapter"></a>ネットワークアダプターの過負荷を回避する
 
@@ -69,11 +69,11 @@ Active Directory は、メモリと同じくらいの量のデータベースを
 
 -   ネットワークサブシステムを調整する方法の詳細については、「[ネットワークサブシステムのパフォーマンスチューニング](../../../../networking/technologies/network-subsystem/net-sub-performance-top.md)」を参照してください。
 
--   Compare NetworkInterface (\*)\\Bytes Sent/Sec with NetworkInterface (\*)\\Current 帯域幅パフォーマンスカウンタを使用します。 比率は、使用率が60% 未満である必要があります。
+-   Compare NetworkInterface ( \* ) \\ Bytes Sent/Sec with NetworkInterface ( \* ) \\ Current 帯域幅パフォーマンスカウンタを使用します。 比率は、使用率が60% 未満である必要があります。
 
-## <a name="see-also"></a>参照
-- [パフォーマンスチューニング Active Directory サーバー](index.md)
+## <a name="additional-references"></a>その他のリファレンス
+- [Active Directory サーバーのパフォーマンス チューニング](index.md)
 - [LDAP に関する考慮事項](ldap-considerations.md)
 - [ドメイン コントローラーとサイトの適切な配置に関する考慮事項](site-definition-considerations.md)
-- [ADDS パフォーマンスのトラブルシューティング](troubleshoot.md) 
+- [ADDS パフォーマンスのトラブルシューティング](troubleshoot.md)
 - [Active Directory Domain Services のキャパシティ プランニング](https://go.microsoft.com/fwlink/?LinkId=324566)

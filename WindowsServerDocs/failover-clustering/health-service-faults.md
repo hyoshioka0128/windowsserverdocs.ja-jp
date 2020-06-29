@@ -7,12 +7,12 @@ ms.technology: storage-health-service
 ms.topic: article
 author: cosmosdarwin
 ms.date: 10/05/2017
-ms.openlocfilehash: 5fe2f98c89d97325c1f59dc6ba292831e0ffa5ff
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: de2e9939302c0b9937fb54b4082feeecf6de5295
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720562"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85473109"
 ---
 # <a name="health-service-faults"></a>ヘルスサービスエラー
 
@@ -20,9 +20,9 @@ ms.locfileid: "82720562"
 
 ## <a name="what-are-faults"></a>障害とは
 
-ヘルスサービスは、記憶域スペースダイレクトクラスターを絶えず監視して問題を検出し、"障害" を生成します。 1つの新しいコマンドレットで現在のエラーが表示されるため、すべてのエンティティや機能を順番に確認することなく、デプロイの正常性を簡単に確認できます。 障害は正確で理解しやすく、意思決定に役立つように設計されています。  
+ヘルスサービスは、記憶域スペースダイレクトクラスターを絶えず監視して問題を検出し、"障害" を生成します。 1つの新しいコマンドレットで現在のエラーが表示されるため、すべてのエンティティや機能を順番に確認することなく、デプロイの正常性を簡単に確認できます。 障害は正確で理解しやすく、意思決定に役立つように設計されています。
 
-各エラーには、次の5つの重要なフィールドが含まれます。  
+各エラーには、次の5つの重要なフィールドが含まれます。
 
 -   重大度
 -   問題の説明
@@ -30,51 +30,51 @@ ms.locfileid: "82720562"
 -   障害が発生したエンティティの識別情報
 -   物理的な場所 (該当する場合)
 
-たとえば、一般的な障害は次のとおりです。  
+たとえば、一般的な障害は次のとおりです。
 
 ```
-Severity: MINOR                                         
-Reason: Connectivity has been lost to the physical disk.                           
-Recommendation: Check that the physical disk is working and properly connected.    
-Part: Manufacturer Contoso, Model XYZ9000, Serial 123456789                        
+Severity: MINOR
+Reason: Connectivity has been lost to the physical disk.
+Recommendation: Check that the physical disk is working and properly connected.
+Part: Manufacturer Contoso, Model XYZ9000, Serial 123456789
 Location: Seattle DC, Rack B07, Node 4, Slot 11
 ```
 
  >[!NOTE]
- > 物理的な場所は、障害ドメインの構成から取得されます。 障害ドメインの詳細については、「 [Windows Server 2016 の障害ドメイン](fault-domains.md)」を参照してください。 こうした情報を指定していない場合、スロット番号しか表示されないなどのように、場所フィールドがあまり役に立ちません。  
+ > 物理的な場所は、障害ドメインの構成から取得されます。 障害ドメインの詳細については、「 [Windows Server 2016 の障害ドメイン](fault-domains.md)」を参照してください。 こうした情報を指定していない場合、スロット番号しか表示されないなどのように、場所フィールドがあまり役に立ちません。
 
 ## <a name="root-cause-analysis"></a>根本原因分析
 
-ヘルスサービスは、障害が発生しているエンティティ間で潜在的な因果関係を評価して、根本的に同じ問題が発生した場合に発生する障害を特定し、組み合わせることができます。 影響の連鎖を認識することにより、レポートに記載される分量が絞られます。 たとえば、サーバーがダウンしている場合は、サーバー内のどのドライブも接続できなくなることが予想されます。 そのため、根本原因 (この場合はサーバー) に対して1つの障害のみが発生します。  
+ヘルスサービスは、障害が発生しているエンティティ間で潜在的な因果関係を評価して、根本的に同じ問題が発生した場合に発生する障害を特定し、組み合わせることができます。 影響の連鎖を認識することにより、レポートに記載される分量が絞られます。 たとえば、サーバーがダウンしている場合は、サーバー内のどのドライブも接続できなくなることが予想されます。 そのため、根本原因 (この場合はサーバー) に対して1つの障害のみが発生します。
 
 ## <a name="usage-in-powershell"></a>PowerShell での使用法
 
 PowerShell の現在のエラーを確認するには、次のコマンドレットを実行します。
 
 ```PowerShell
-Get-StorageSubSystem Cluster* | Debug-StorageSubSystem  
+Get-StorageSubSystem Cluster* | Debug-StorageSubSystem
 ```
 
-これにより、記憶域スペースダイレクトクラスター全体に影響を与える障害が返されます。 多くの場合、これらの障害はハードウェアまたは構成に関連しています。 エラーがない場合、このコマンドレットは何も返しません。  
+これにより、記憶域スペースダイレクトクラスター全体に影響を与える障害が返されます。 多くの場合、これらの障害はハードウェアまたは構成に関連しています。 エラーがない場合、このコマンドレットは何も返しません。
 
 >[!NOTE]
 > 運用環境以外の環境では、1つの物理ディスクを削除するか、1つのノードをシャットダウンするなどして、自分でエラーをトリガーすることで、この機能を試すことができます。 障害が発生すると、物理ディスクを再挿入するか、ノードを再起動すると、エラーが再び表示されなくなります。
 
-次のコマンドレットを使用すると、特定のボリュームまたはファイル共有のみに影響を与えるエラーを表示することもできます。  
+次のコマンドレットを使用すると、特定のボリュームまたはファイル共有のみに影響を与えるエラーを表示することもできます。
 
 ```PowerShell
-Get-Volume -FileSystemLabel <Label> | Debug-Volume  
+Get-Volume -FileSystemLabel <Label> | Debug-Volume
 
-Get-FileShare -Name <Name> | Debug-FileShare  
+Get-FileShare -Name <Name> | Debug-FileShare
 ```
 
-これにより、特定のボリュームまたはファイル共有のみに影響するすべてのエラーが返されます。 多くの場合、これらの障害は容量計画、データの回復性、または記憶域のサービス品質や記憶域レプリカなどの機能に関連しています。 
+これにより、特定のボリュームまたはファイル共有のみに影響するすべてのエラーが返されます。 多くの場合、これらの障害は容量計画、データの回復性、または記憶域のサービス品質や記憶域レプリカなどの機能に関連しています。
 
 ## <a name="usage-in-net-and-c"></a>.NET および C での使用#
 
 ### <a name="connect"></a>接続する
 
-ヘルスサービスを照会するには、クラスターで**CimSession**を確立する必要があります。 これを行うには、完全な .NET でしか使用できないものが必要になります。つまり、web アプリまたはモバイルアプリから直接この操作を行うことはできません。 これらのコードサンプルでは\#、このデータアクセス層で最も単純な選択肢である C を使用します。
+ヘルスサービスを照会するには、クラスターで**CimSession**を確立する必要があります。 これを行うには、完全な .NET でしか使用できないものが必要になります。つまり、web アプリまたはモバイルアプリから直接この操作を行うことはできません。 これらのコードサンプルでは \# 、このデータアクセス層で最も単純な選択肢である C を使用します。
 
 ```
 using System.Security;
@@ -105,7 +105,7 @@ public CimSession Connect(string Domain = "...", string Computer = "...", string
 
 **CimSession**を確立したら、クラスターで WINDOWS MANAGEMENT INSTRUMENTATION (WMI) を照会できます。
 
-エラーまたはメトリックを取得するには、いくつかの関連オブジェクトのインスタンスを取得する必要があります。 最初に、クラスター上の記憶域スペースダイレクトを表す**MSFT\_StorageSubSystem** 。 これを使用すると、クラスター内のすべての**msft\_storagenode**情報と、すべての**msft\_ボリューム**(データボリューム) を取得できます。 最後に、 **\_MSFT storagehealth**、ヘルスサービス自体も必要になります。
+エラーまたはメトリックを取得するには、いくつかの関連オブジェクトのインスタンスを取得する必要があります。 最初に、クラスター上の記憶域スペースダイレクトを表す**MSFT \_ StorageSubSystem** 。 これを使用すると、クラスター内のすべての**msft \_ storagenode**情報と、すべての**msft \_ ボリューム**(データボリューム) を取得できます。 最後に、 **MSFT \_ storagehealth**、ヘルスサービス自体も必要になります。
 
 ```
 CimInstance Cluster;
@@ -153,7 +153,7 @@ foreach (CimInstance Node in Nodes)
 
 Windows Server 2016 の各スコープで使用できる障害の完全な一覧については、以下で説明します。
 
-```       
+```
 public void GetFaults(CimSession Session, CimInstance Target)
 {
     // Set Parameters (None)
@@ -176,7 +176,7 @@ public void GetFaults(CimSession Session, CimInstance Target)
 
 独自のエラー表現を構築して永続化することが適切な場合もあります。 たとえば、この**Myfault**クラスは、 **FaultId**を含む、エラーのいくつかの重要なプロパティを格納します。このプロパティは、後で更新または削除通知を関連付けたり、同じエラーが何度も検出された場合に重複除去するために使用できます。
 
-```       
+```
 public class MyFault {
     public String FaultId { get; set; }
     public String Reason { get; set; }
@@ -212,9 +212,9 @@ foreach (CimInstance DiagnoseResult in DiagnoseResults)
 
 エラーを作成、削除、または更新すると、ヘルスサービスによって WMI イベントが生成されます。 これらは、頻繁にポーリングせずにアプリケーションの状態を同期させるために不可欠です。たとえば、電子メール通知を送信するタイミングを決定する場合などに役立ちます。 このサンプルコードでは、これらのイベントをサブスクライブするために、オブザーバーデザインパターンを再度使用します。
 
-まず、 **MSFT\_StorageFaultEvent**イベントをサブスクライブします。
+まず、 **MSFT \_ StorageFaultEvent**イベントをサブスクライブします。
 
-```      
+```
 public void ListenForFaultEvents()
 {
     IObservable<CimSubscriptionResult> Events = Session.SubscribeAsync(
@@ -222,7 +222,7 @@ public void ListenForFaultEvents()
     // Subscribe the Observer
     FaultsObserver<CimSubscriptionResult> Observer = new FaultsObserver<CimSubscriptionResult>(this);
     IDisposable Disposeable = Events.Subscribe(Observer);
-}   
+}
 ```
 
 次に、新しいイベントが生成されるたびに**Onnext ()** メソッドが呼び出されるオブザーバーを実装します。
@@ -241,7 +241,7 @@ class FaultsObserver : IObserver
 
         if (SubscriptionResult != null)
         {
-            // Unpack            
+            // Unpack
             CimKeyedCollection<CimProperty> Properties = SubscriptionResult.Instance.CimInstanceProperties;
             String ChangeType = Properties["ChangeType"].Value.ToString();
             String FaultId = Properties["FaultId"].Value.ToString();
@@ -283,7 +283,7 @@ class FaultsObserver : IObserver
 
 ### <a name="properties-of-faults"></a>エラーのプロパティ
 
-次の表は、fault オブジェクトのいくつかの重要なプロパティを示しています。 完全なスキーマでは、 *storagewmi .mof*の**\_MSFT StorageDiagnoseResult**クラスを調べます。
+次の表は、fault オブジェクトのいくつかの重要なプロパティを示しています。 完全なスキーマでは、 *storagewmi .mof*の**MSFT \_ StorageDiagnoseResult**クラスを調べます。
 
 | **プロパティ**              | **例**                                                     |
 |---------------------------|-----------------------------------------------------------------|
@@ -307,7 +307,7 @@ class FaultsObserver : IObserver
 
 ## <a name="properties-of-fault-events"></a>Fault イベントのプロパティ
 
-次の表は、fault イベントのいくつかの重要なプロパティを示しています。 完全なスキーマでは、 *storagewmi .mof*の**\_MSFT StorageFaultEvent**クラスを調べます。
+次の表は、fault イベントのいくつかの重要なプロパティを示しています。 完全なスキーマでは、 *storagewmi .mof*の**MSFT \_ StorageFaultEvent**クラスを調べます。
 
 **ChangeType**は、エラーが作成、削除、または更新されているかどうか、および**FaultId**を示すことに注意してください。 イベントには、影響を受けたエラーのすべてのプロパティも含まれます。
 
@@ -326,7 +326,7 @@ class FaultsObserver : IObserver
 
 ## <a name="coverage"></a>対象範囲
 
-Windows Server 2016 では、ヘルスサービスによって次のエラーカバレッジが提供されます。  
+Windows Server 2016 では、ヘルスサービスによって次のエラーカバレッジが提供されます。
 
 ### <a name="physicaldisk-8"></a>**PhysicalDisk (8)**
 
@@ -513,12 +513,12 @@ Windows Server 2016 では、ヘルスサービスによって次のエラーカ
 * 理由: *"1 つ以上のストレージコンシューマー (通常は Virtual Machines) が、id {id} の存在しないポリシーを使用しています。"*
 * RecommendedAction: *"不足している記憶域 QoS ポリシーを再作成します。"*
 
-<sup>1</sup>ボリュームが 80% full (軽微な重大度) または 90% full (重要度) に達したことを示します。  
-<sup>2</sup>は、ボリューム上の一部の .vhd が、24時間枠のローリングで 10% (マイナー)、30% (メジャー)、または 50% (重大) の最小 IOPS を満たしていないことを示します。  
+<sup>1</sup>ボリュームが 80% full (軽微な重大度) または 90% full (重要度) に達したことを示します。
+<sup>2</sup>は、ボリューム上の一部の .vhd が、24時間枠のローリングで 10% (マイナー)、30% (メジャー)、または 50% (重大) の最小 IOPS を満たしていないことを示します。
 
 >[!NOTE]
-> ファン、電源、センサーなどのストレージ格納装置コンポーネントの正常性は、SCSI エンクロージャ サービス (SES) から取得されます。 この情報は、ベンダーから提供されていない場合はヘルス サービスで表示されません。  
+> ファン、電源、センサーなどのストレージ格納装置コンポーネントの正常性は、SCSI エンクロージャ サービス (SES) から取得されます。 この情報は、ベンダーから提供されていない場合はヘルス サービスで表示されません。
 
-## <a name="see-also"></a>関連項目
+## <a name="additional-references"></a>その他のリファレンス
 
 - [Windows Server 2016 のヘルス サービス](health-service-overview.md)

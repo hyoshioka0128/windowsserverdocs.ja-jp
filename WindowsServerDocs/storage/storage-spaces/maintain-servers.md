@@ -9,22 +9,22 @@ author: eldenchristensen
 ms.date: 10/08/2018
 ms.assetid: 73dd8f9c-dcdb-4b25-8540-1d8707e9a148
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ccf8d809354f96277701cd365966ba5e914f64b
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a317f358c37f607475890efe773b57ee8efaeb14
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80857535"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85473479"
 ---
 # <a name="taking-a-storage-spaces-direct-server-offline-for-maintenance"></a>記憶域スペース ダイレクト サーバーをメンテナンスのためオフラインにする
 
-> 適用対象: Windows Server 2019、Windows Server 2016
+> 適用先:Windows Server 2019、Windows Server 2016
 
 このトピックは、[記憶域スペース ダイレクト](storage-spaces-direct-overview.md)を持つサーバーを適切に再起動したりシャットダウンしたりする方法のガイダンスを提供します。
 
 記憶域スペース ダイレクトでは、サーバーをオフラインにする (停止する) ことは、クラスター内のすべてのサーバーで共有されているストレージの一部をオフラインにすることも意味します。 これを行うためには、オフラインにするサーバーを一時停止 (中断) し、役割をクラスター内の他のサーバーに移動して、クラスター内の他のサーバー上ですべてのデータを利用できることを確認し、保守中にデータが安全でアクセス可能な状態になるようにする必要があります。
 
-次の手順を使用して、記憶域スペース ダイレクトのクラスター内のサーバーを適切に一時停止してから、オフラインにします。 
+次の手順を使用して、記憶域スペース ダイレクトのクラスター内のサーバーを適切に一時停止してから、オフラインにします。
 
    > [!IMPORTANT]
    > 記憶域スペース ダイレクトのクラスターに更新をインストールするには、クラスター対応更新 (CAU) を使用します。これによりこのトピックの手順が自動的に実行されるため、更新をインストールするときに手順を別途実行する必要がありません。 詳しくは、「[クラスター対応更新 (CAU)](https://technet.microsoft.com/library/hh831694.aspx)」をご覧ください。
@@ -36,7 +36,7 @@ ms.locfileid: "80857535"
 これを行うには、管理者権限を使用して PowerShell セッションを開き、次のコマンドを実行して、ボリュームの状態を確認します。
 
 ```PowerShell
-Get-VirtualDisk 
+Get-VirtualDisk
 ```
 
 この出力の例を次に示します。
@@ -50,7 +50,7 @@ MyVolume3    Mirror                OK                Healthy      True          
 
 すべてのボリューム (仮想ディスク) の **HealthStatus** プロパティが **Healthy** であることを確認します。
 
-これを行うには、フェールオーバー クラスター マネージャーで、 **[記憶域]**  >  **[ディスク]** の順に移動します。
+フェールオーバークラスターマネージャーでこれを行うには、[**記憶域**ディスク] にアクセスし  >  **Disks**ます。
 
 すべてのボリューム (仮想ディスク) の **[状態]** 列が **[オンライン]** であることを確認します。
 
@@ -67,11 +67,11 @@ PowerShell で次のコマンドレットを (管理者として) 実行して�
 Suspend-ClusterNode -Drain
 ```
 
-これを行うには、フェールオーバー クラスター マネージャーで、 **[ノード]** に移動し、ノードを右クリックして、 **[一時停止]**  >  **[役割のドレイン]** の順に選択します。
+これを行うには、フェールオーバー クラスター マネージャーで、**[ノード]** に移動し、ノードを右クリックして、**[一時停止]** > **[役割のドレイン]** の順に選択します。
 
 ![一時停止とドレイン](media/maintain-servers/pause-drain.png)
 
-すべての仮想マシンでは、クラスター内の他のサーバーへのライブ マイグレーションが開始されます。 この処理には数分かかる場合があります。
+すべての仮想マシンでは、クラスター内の他のサーバーへのライブ マイグレーションが開始されます。 これには数分かかることがあります。
 
    > [!NOTE]
    > クラスター ノードの一時停止とドレインが適切に行われると、Windows は自動的に安全性チェックを実行して、安全に続行できることを確認します。 正常でないボリュームがある場合は、停止して、安全に続行できないことを警告します。
@@ -82,12 +82,12 @@ Suspend-ClusterNode -Drain
 
 サーバーのドレインが完了すると、フェールオーバー クラスター マネージャーと PowerShell で **[一時停止]** と表示されます。
 
-![一時停止](media/maintain-servers/paused.png)
+![Paused](media/maintain-servers/paused.png)
 
 これ通常どおり、安全に再起動したり、シャットダウンすることができます (たとえば、Restart-Computer や Stop-Computer PowerShell を使用できます)。
 
 ```PowerShell
-Get-VirtualDisk 
+Get-VirtualDisk
 
 FriendlyName ResiliencySettingName OperationalStatus HealthStatus IsManualAttach Size
 ------------ --------------------- ----------------- ------------ -------------- ----
@@ -114,7 +114,7 @@ Resume-ClusterNode
 Resume-ClusterNode –Failback Immediate
 ```
 
-これを行うには、フェールオーバー クラスター マネージャーで、 **[ノード]** に移動し、ノードを右クリックして、 **[再開]**  >  **[役割のフェールバック]** の順に選択します。
+これを行うには、フェールオーバー クラスター マネージャーで、**[ノード]** に移動し、ノードを右クリックして、**[再開]** > **[役割のフェールバック]** の順に選択します。
 
 ![再開 - フェールバック](media/maintain-servers/resume-failback.png)
 
@@ -143,7 +143,7 @@ Repair True             00:06:52    Running   68              20104802841    221
    > [!WARNING]
    > これらの修復ジョブが完了するまでは、他のサーバーを安全にオフラインにすることはできません。
 
-この間、ボリュームは引き続き **Warning** と表示されます。これは通常な動作です。 
+この間、ボリュームは引き続き **Warning** と表示されます。これは通常な動作です。
 
 たとえば、`Get-VirtualDisk` コマンドレットを使用すると、次のような出力となる場合があります。
 ```
@@ -154,7 +154,7 @@ MyVolume2    Mirror                InService         Warning      True          
 MyVolume3    Mirror                InService         Warning      True           1 TB
 ```
 
-ジョブが完了したら、再度 **コマンドレットを使用して、ボリュームが**Healthy`Get-VirtualDisk` と表示されることを確認します。 次に出力の例を示します。
+ジョブが完了したら、再度 `Get-VirtualDisk` コマンドレットを使用して、ボリュームが **Healthy** と表示されることを確認します。 出力例を次に示します。
 
 ```
 FriendlyName ResiliencySettingName OperationalStatus HealthStatus IsManualAttach Size
@@ -173,17 +173,17 @@ MyVolume3    Mirror                OK                Healthy      True          
 2. 仮想ディスクをオフラインにします。
 3. クラスターを停止して、記憶域プールをオフラインにします。 **クラスターの停止コマンドレット**を実行するか、フェールオーバークラスターマネージャーを使用してクラスターを停止します。
 4. 各ノードの services.msc で、クラスターサービスを**無効**に設定します。 これにより、修正プログラムの適用中にクラスターサービスが起動しなくなります。
-5. すべてのノードに Windows Server の累積更新プログラムと必要なサービススタックの更新プログラムを適用します。 (すべてのノードを同時に更新できます。クラスターが停止してから待つ必要はありません)。  
+5. すべてのノードに Windows Server の累積更新プログラムと必要なサービススタックの更新プログラムを適用します。 (すべてのノードを同時に更新できます。クラスターが停止してから待つ必要はありません)。
 6. ノードを再起動し、すべてが適切であることを確認します。
-7. 各ノードでクラスターサービスを **自動**」に戻します。
-8. クラスターを起動します。 クラスターの**起動**コマンドレットを実行するか、フェールオーバークラスターマネージャーを使用します。 
+7. 各ノードでクラスターサービスを [**自動**」に戻します。
+8. クラスターを起動します。 クラスターの**起動**コマンドレットを実行するか、フェールオーバークラスターマネージャーを使用します。
 
    数分で指定します。  記憶域プールが正常であることを確認してください。
 9. 仮想ディスクをオンラインに戻します。
 10. **Get Volume**および**VirtualDisk**コマンドレットを実行して、仮想ディスクの状態を監視します。
 
 
-## <a name="see-also"></a>参照
+## <a name="additional-references"></a>その他のリファレンス
 
 - [記憶域スペースダイレクトの概要](storage-spaces-direct-overview.md)
 - [クラスター対応更新 (CAU)](https://technet.microsoft.com/library/hh831694.aspx)

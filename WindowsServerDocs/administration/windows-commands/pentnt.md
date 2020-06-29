@@ -1,25 +1,30 @@
 ---
 title: pentnt
-description: '* * * * のリファレンストピック'
+description: Pentnt コマンドのリファレンストピックです。 このコマンドは非推奨とされており、Windows の将来のリリースでサポートされるとは限りません。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
-ms.assetid: c0455cd4-ad6b-4945-bcc8-ed621a00b530
+ms.assetid: 4911e640-aa7f-4afb-abc2-5eefc7010204
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a9d637df1207aa4b2bcc0e044029d61cfe370dc5
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 99ef498c148e8277e95fb496979e51eedccfb897
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993358"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85472488"
 ---
 # <a name="pentnt"></a>pentnt
 
+> 適用対象: Windows Server 2003、Windows Server 2003 R2、Windows Server 2003 SP1、Windows Server 2003 SP2
 
+>[!IMPORTANT]
+> このコマンドは非推奨とされました。
 
-Pentnt は非推奨とされ、Windows の将来のリリースでサポートされるとは限りません。
+Pentium チップ内の浮動小数点除算エラー (存在する場合) を検出し、浮動小数点ハードウェアを無効にして、浮動小数点エミュレーションをオンにします。 説明と使用方法については、「 [pentnt](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc755868(v=ws.10))」を参照してください。
 
-このツールは、Windows Server 2003 に含まれます。 詳細については、「 [Pentnt](https://technet.microsoft.com/library/cc755868(v=ws.10).aspx)」を参照してください。
+## <a name="additional-references"></a>その他のリファレンス
+
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
