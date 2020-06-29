@@ -7,16 +7,16 @@ ms.technology: storagespaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 03/15/2019
-ms.openlocfilehash: ac4edccf0c1f8882dd2544b2544c3d8555bbc716
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 4faf4ade53074677b34b037c5ba6d551beb8542e
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80857345"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474909"
 ---
 # <a name="nested-resiliency-for-storage-spaces-direct"></a>記憶域スペースダイレクトのための入れ子になった回復性
 
-> 適用対象: Windows Server 2019
+> 適用対象:Windows Server 2019
 
 入れ子になった回復性は、Windows Server 2019 の[記憶域スペースダイレクト](storage-spaces-direct-overview.md)の新機能であり、2台のサーバーからなるクラスターが記憶域の可用性を失うことなく同時に複数のハードウェア障害に耐えられるようにします。そのため、ユーザー、アプリ、および仮想マシンは中断することなく実行されます。 このトピックでは、そのしくみについて説明します。また、作業を開始するための詳細な手順について説明し、よく寄せられる質問に回答します。
 
@@ -40,7 +40,7 @@ ms.locfileid: "80857345"
 
 トレードオフとは、入れ子になった回復性が**従来の双方向ミラーリングよりも容量効率が低い**ことを意味します。つまり、使用可能な領域がわずかに少なくなります。 詳細については、以下の「[容量の効率性](#capacity-efficiency)」セクションを参照してください。
 
-## <a name="how-it-works"></a>方法
+## <a name="how-it-works"></a>しくみ
 
 ### <a name="inspiration-raid-51"></a>インスピレーション: RAID 5 + 1
 
@@ -73,7 +73,7 @@ Windows Server 2019 の記憶域スペースダイレクトには、ソフトウ
   | 4                          | 35.7%      | 34.1%      | 32.6%      |
   | 5                          | 37.7%      | 35.7%      | 33.9%      |
   | 6                          | 39.1%      | 36.8%      | 34.7%      |
-  | 7 +                         | 40.0%      | 37.5%      | 35.3%      |
+  | 7+                         | 40.0%      | 37.5%      | 35.3%      |
 
   > [!NOTE]
   > **興味をお持ちの場合は、完全な数学の例を次に示します。** 2台のサーバーそれぞれに6つの容量ドライブがあり、10 gb のミラーと 90 GB のパリティで構成される 1 100 GB のボリュームを作成するとします。 サーバーローカル双方向ミラーは50.0% の効率を実現します。つまり、10 GB のミラーデータは、各サーバーに格納するのに 20 GB かかります。 両方のサーバーにミラー化され、合計フットプリントは 40 GB です。 サーバーローカルの単一パリティ (この場合は 5/6 = 83.3% 効率)。つまり、90 GB のパリティデータは、各サーバーに格納するために 108 GB を必要とします。 両方のサーバーにミラー化され、合計フットプリントは 216 GB です。 総フットプリントは [(10 GB/50.0%) + (90 GB/83.3%)] × 2 = 256 GB であり、全体的な容量の効率39.1 を最大にしたものになります。
@@ -88,30 +88,30 @@ PowerShell で使い慣れた記憶域コマンドレットを使用して、入
 
 ### <a name="step-1-create-storage-tier-templates"></a>手順 1: 記憶域階層テンプレートを作成する
 
-まず、`New-StorageTier` コマンドレットを使用して新しい記憶域階層テンプレートを作成します。 この操作は一度だけ行う必要があります。作成したすべての新しいボリュームでこれらのテンプレートを参照できます。 容量ドライブの `-MediaType` と、必要に応じて任意の `-FriendlyName` を指定します。 他のパラメーターは変更しないでください。
+まず、コマンドレットを使用して新しい記憶域階層テンプレートを作成し `New-StorageTier` ます。 この操作は一度だけ行う必要があります。作成したすべての新しいボリュームでこれらのテンプレートを参照できます。 容量ドライブのを指定し、 `-MediaType` 必要に応じ `-FriendlyName` て任意のを指定します。 他のパラメーターは変更しないでください。
 
 容量ドライブがハードディスクドライブ (HDD) の場合は、管理者として PowerShell を起動し、次のように実行します。
 
-```PowerShell 
+```PowerShell
 # For mirror
 New-StorageTier -StoragePoolFriendlyName S2D* -FriendlyName NestedMirror -ResiliencySettingName Mirror -MediaType HDD -NumberOfDataCopies 4
 
 # For parity
-New-StorageTier -StoragePoolFriendlyName S2D* -FriendlyName NestedParity -ResiliencySettingName Parity -MediaType HDD -NumberOfDataCopies 2 -PhysicalDiskRedundancy 1 -NumberOfGroups 1 -FaultDomainAwareness StorageScaleUnit -ColumnIsolation PhysicalDisk 
-``` 
+New-StorageTier -StoragePoolFriendlyName S2D* -FriendlyName NestedParity -ResiliencySettingName Parity -MediaType HDD -NumberOfDataCopies 2 -PhysicalDiskRedundancy 1 -NumberOfGroups 1 -FaultDomainAwareness StorageScaleUnit -ColumnIsolation PhysicalDisk
+```
 
-容量ドライブがソリッドステートドライブ (SSD) の場合は、代わりに `-MediaType` を `SSD` に設定します。 他のパラメーターは変更しないでください。
+容量ドライブがソリッドステートドライブ (SSD) の場合は、 `-MediaType` 代わりにをに設定し `SSD` ます。 他のパラメーターは変更しないでください。
 
 > [!TIP]
-> `Get-StorageTier`を使用して、階層が正常に作成されたことを確認します。
+> で正常に作成された層を確認 `Get-StorageTier` します。
 
 ### <a name="step-2-create-volumes"></a>手順 2: ボリュームを作成する
 
-次に、`New-Volume` コマンドレットを使用して新しいボリュームを作成します。
+次に、コマンドレットを使用して新しいボリュームを作成し `New-Volume` ます。
 
 #### <a name="nested-two-way-mirror"></a>入れ子になった双方向ミラー
 
-入れ子になった双方向ミラーを使用するには、`NestedMirror` 層テンプレートを参照し、サイズを指定します。 例 :
+入れ子になった双方向ミラーを使用するには、 `NestedMirror` 層テンプレートを参照し、サイズを指定します。 次に例を示します。
 
 ```PowerShell
 New-Volume -StoragePoolFriendlyName S2D* -FriendlyName Volume01 -StorageTierFriendlyNames NestedMirror -StorageTierSizes 500GB
@@ -119,7 +119,7 @@ New-Volume -StoragePoolFriendlyName S2D* -FriendlyName Volume01 -StorageTierFrie
 
 #### <a name="nested-mirror-accelerated-parity"></a>入れ子になったミラーアクセラレータパリティ
 
-入れ子になったミラーアクセラレータのパリティを使用するには、`NestedMirror` 層と `NestedParity` 層の両方のテンプレートを参照し、ボリュームの各部分に1つずつ、2つのサイズを指定します (ミラーの最初、パリティ 2)。 たとえば、20% の入れ子になった双方向ミラーと80% の入れ子になったパリティである 1 500 GB ボリュームを作成するには、次のように実行します。
+入れ子になったミラーアクセラレータパリティを使用するには、層テンプレートと層テンプレートの両方を参照 `NestedMirror` `NestedParity` し、ボリュームの各部分に1つずつ、2つのサイズを指定します (ミラーの最初、パリティ 2)。 たとえば、20% の入れ子になった双方向ミラーと80% の入れ子になったパリティである 1 500 GB ボリュームを作成するには、次のように実行します。
 
 ```PowerShell
 New-Volume -StoragePoolFriendlyName S2D* -FriendlyName Volume02 -StorageTierFriendlyNames NestedMirror, NestedParity -StorageTierSizes 100GB, 400GB
@@ -159,7 +159,7 @@ Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name "System.Storage.N
 
 ### <a name="can-i-use-nested-resiliency-with-multiple-types-of-capacity-drives"></a>複数の種類の容量ドライブで入れ子になった回復性を使用できますか。
 
-はい、上記の[手順 1](#step-1-create-storage-tier-templates)で、それぞれのレベルの `-MediaType` を指定するだけです。 たとえば、同じクラスター内の NVMe、SSD、HDD では、NVMe はキャッシュを提供し、後者の2つは容量を提供します。 `NestedMirror` レベルを `-MediaType SSD` に、`NestedParity` レベルを `-MediaType HDD`に設定します。 この場合、パリティ容量の効率は HDD のドライブの数によってのみ異なります。また、サーバーごとに少なくとも4つのディスクが必要です。
+はい `-MediaType` 。上記の[手順 1](#step-1-create-storage-tier-templates)で、それぞれの階層のを指定するだけです。 たとえば、同じクラスター内の NVMe、SSD、HDD では、NVMe はキャッシュを提供し、後者の2つは容量を提供します。 `NestedMirror` レベルをに、 `-MediaType SSD` 層を `NestedParity` に設定 `-MediaType HDD` します。 この場合、パリティ容量の効率は HDD のドライブの数によってのみ異なります。また、サーバーごとに少なくとも4つのディスクが必要です。
 
 ### <a name="can-i-use-nested-resiliency-with-3-or-more-servers"></a>入れ子になった回復性を3台以上のサーバーで使用できますか。
 
@@ -171,11 +171,11 @@ Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name "System.Storage.N
 
 ### <a name="does-nested-resiliency-change-how-drive-replacement-works"></a>[回復性の入れ子になっている場合、ドライブの交換方法を変更しますか?]
 
-No:
+いいえ。
 
 ### <a name="does-nested-resiliency-change-how-server-node-replacement-works"></a>回復性を入れ子にすると、サーバーノードの交換のしくみが変わりますか。
 
-No: サーバーノードとそのドライブを置き換えるには、次の順序に従います。
+いいえ。 サーバーノードとそのドライブを置き換えるには、次の順序に従います。
 
 1. 発信サーバーのドライブをインベントリから削除する
 2. 新しいサーバーとそのドライブをクラスターに追加します。
@@ -184,9 +184,9 @@ No: サーバーノードとそのドライブを置き換えるには、次の�
 
 詳細については、[サーバーの削除](remove-servers.md)に関するトピックを参照してください。
 
-## <a name="see-also"></a>参照
+## <a name="additional-references"></a>その他のリファレンス
 
 - [記憶域スペースダイレクトの概要](storage-spaces-direct-overview.md)
 - [記憶域スペースダイレクトのフォールトトレランスについて](storage-spaces-fault-tolerance.md)
 - [記憶域スペースダイレクトのボリュームを計画する](plan-volumes.md)
-- [記憶域スペースダイレクトでボリュームを作成する](create-volumes.md)
+- [記憶域スペース ダイレクトのボリュームの作成](create-volumes.md)

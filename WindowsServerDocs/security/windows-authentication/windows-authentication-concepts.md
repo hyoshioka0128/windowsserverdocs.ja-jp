@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 4051bfea26d5c96d02132b50373f56b7b17ce5fb
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0b26dca42d64338adeb8d818629e6a5f8b037f30
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80857475"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475239"
 ---
 # <a name="windows-authentication-concepts"></a>Windows 認証の概念
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016
+>適用先:Windows Server (半期チャネル)、Windows Server 2016
 
 このリファレンスの概要トピックでは、Windows 認証の基礎となる概念について説明します。
 
@@ -54,7 +54,7 @@ Passport が有効であることが証明され、その所有者であるこ�
 ## <a name="credentials"></a>資格情報
 Passport と関連する可能性のある visas は、旅行のために受け入れられる資格情報です。 ただし、これらの資格情報では、旅行時に国内のすべてのリソースを入力したり、アクセスしたりすることはできません。 たとえば、会議に参加するには、追加の資格情報が必要です。 Windows では、アカウント所有者がネットワーク経由でリソースにアクセスできるようにするために、資格情報を何度も入力しなくても資格情報を管理できます。 この種類のアクセスでは、ユーザーは、別のアカウント識別子またはパスワードを入力しなくても、使用することが許可されているすべてのアプリケーションとデータソースにアクセスするために、システムから一度認証を受けることができます。 Windows プラットフォームでは、オペレーティングシステムのローカルセキュリティ機関 (LSA) のユーザー資格情報をローカルにキャッシュすることで、ネットワーク全体で1つのユーザー id (Active Directory によって管理される) を使用できるようになります。 ユーザーがドメインにログオンすると、Windows 認証パッケージは資格情報を透過的に使用して、ネットワークリソースに対して資格情報を認証するときにシングルサインオンを提供します。 資格情報の詳細については、「 [Windows 認証の資格情報プロセス](credentials-processes-in-windows-authentication.md)」を参照してください。
 
-旅行のための多要素認証の形式は、passport やカンファレンスの登録情報などの id を認証するために複数のドキュメントを提供し、提示する必要がある場合があります。 Windows では、スマートカード、仮想スマートカード、および生体認証テクノロジを使用して、このフォームまたは認証を実装しています。 
+旅行のための多要素認証の形式は、passport やカンファレンスの登録情報などの id を認証するために複数のドキュメントを提供し、提示する必要がある場合があります。 Windows では、スマートカード、仮想スマートカード、および生体認証テクノロジを使用して、このフォームまたは認証を実装しています。
 
 ## <a name="security-principals-and-accounts"></a>セキュリティプリンシパルとアカウント
 Windows では、アクションを開始できるすべてのユーザー、サービス、グループ、またはコンピューターは、セキュリティプリンシパルです。 セキュリティプリンシパルにはアカウントがあります。アカウントは、コンピューターに対してローカルにすることも、ドメインベースにすることもできます。 たとえば、Windows クライアントのドメインに参加しているコンピューターは、ユーザーがログオンしていない場合でも、ドメインコントローラーと通信することで、ネットワークドメインに参加できます。 通信を開始するには、コンピューターがドメイン内にアクティブなアカウントを持っている必要があります。 コンピューターからの通信を受け入れる前に、ドメインコントローラーのローカルセキュリティ機関がコンピューターの id を認証し、ユーザーのセキュリティプリンシパルの場合と同様に、コンピューターのセキュリティコンテキストを定義します。 このセキュリティコンテキストでは、ネットワーク上の特定のコンピューター、ユーザー、サービス、グループ、またはコンピューター上のユーザーまたはサービスの id と機能を定義します。 たとえば、アクセス可能なファイル共有やプリンターなどのリソースや、そのリソースのユーザー、サービス、またはコンピューターによって実行される読み取り、書き込み、変更などの操作を定義します。 詳細については、「[セキュリティプリンシパル](https://technet.microsoft.com/itpro/windows/keep-secure/security-principals)」を参照してください。
@@ -69,13 +69,13 @@ Windows では、アクションを開始できるすべてのユーザー、サ
 
 -   [Active Directory アカウント](https://technet.microsoft.com/itpro/windows/keep-secure/active-directory-accounts)
 
--   [Active Directory セキュリティグループ](https://technet.microsoft.com/itpro/windows/keep-secure/active-directory-security-groups)
+-   [Active Directory セキュリティ グループ](https://technet.microsoft.com/itpro/windows/keep-secure/active-directory-security-groups)
 
--   [ローカルアカウント](https://technet.microsoft.com/itpro/windows/keep-bastion.local-accounts)
+-   [ローカル アカウント](https://technet.microsoft.com/itpro/windows/keep-bastion.local-accounts)
 
 -   [Microsoft アカウント](https://technet.microsoft.com/itpro/windows/keep-secure/microsoft-accounts)
 
--   [サービスアカウント](https://technet.microsoft.com/itpro/windows/keep-secure/service-accounts)
+-   [サービス アカウント](https://technet.microsoft.com/itpro/windows/keep-secure/service-accounts)
 
 -   [特別な Id](https://technet.microsoft.com/itpro/windows/keep-secure/special-identities)
 
@@ -103,7 +103,7 @@ Windows では、アクションを開始できるすべてのユーザー、サ
 
 制約付き委任の詳細については、「 [Kerberos の制約付き委任の概要](../kerberos/kerberos-constrained-delegation-overview.md)」を参照してください。
 
-## <a name="see-also"></a>参照
+## <a name="additional-references"></a>その他のリファレンス
 [Windows のログオンと認証の技術概要](https://technet.microsoft.com/library/dn269029.aspx)
 
 

@@ -8,19 +8,19 @@ author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 9972ec77b78c6c4efa2d52fffd44d27d71a1afe0
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 85cfdbe5e95c9177194a2b6ac7b5d22e1fd9fc0e
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856365"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475015"
 ---
 # <a name="shielded-vms---preparing-a-vm-shielding-helper-vhd"></a>シールドされた Vm-VM シールドヘルパー VHD の準備
 
 >適用対象: windows server 2019、Windows Server (半期チャネル)、Windows Server 2016
 
 > [!IMPORTANT]
-> これらの手順を開始する前に、Windows Server 2016 用の最新の累積的な更新プログラムがインストールされていること、または最新の Windows 10[リモートサーバー管理ツール](https://www.microsoft.com/download/details.aspx?id=45520)を使用していることを確認してください。 それ以外の場合、プロシージャは機能しません。 
+> これらの手順を開始する前に、Windows Server 2016 用の最新の累積的な更新プログラムがインストールされていること、または最新の Windows 10[リモートサーバー管理ツール](https://www.microsoft.com/download/details.aspx?id=45520)を使用していることを確認してください。 それ以外の場合、プロシージャは機能しません。
 
 このセクションでは、既存の Vm をシールドされた Vm に変換するためのサポートを有効にするホスティングサービスプロバイダーによって実行される手順の概要を説明します。
 
@@ -55,11 +55,11 @@ ms.locfileid: "80856365"
 
 ## <a name="configure-vmm-host-guardian-server-settings"></a>VMM ホストガーディアンサーバー設定の構成
 
-VMM コンソールで、設定 ウィンドウを開き、**全般** の下にある **ガーディアンサービスの設定** をホストします。 このウィンドウの下部には、ヘルパー VHD の場所を構成するためのフィールドがあります。 [参照] ボタンを使用して、ライブラリ共有から VHD を選択します。 共有にディスクが表示されない場合は、VMM でライブラリを表示するために手動で更新する必要がある場合があります。
+VMM コンソールで、[設定] ウィンドウを開き、[**全般**] の下にある [**ガーディアンサービスの設定**] をホストします。 このウィンドウの下部には、ヘルパー VHD の場所を構成するためのフィールドがあります。 [参照] ボタンを使用して、ライブラリ共有から VHD を選択します。 共有にディスクが表示されない場合は、VMM でライブラリを表示するために手動で更新する必要がある場合があります。
 
 ![VMM-ホストガーディアンサービスの設定](../media/Guarded-Fabric-Shielded-VM/guarded-host-vmm-hgs-settings-01.png)
 
-## <a name="see-also"></a>参照
+## <a name="additional-references"></a>その他のリファレンス
 
-- [保護されたホストとシールドされた Vm のホスティングサービスプロバイダーの構成手順](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
+- [保護されたホストとシールドされた VM のためのホスティング サービス プロバイダーの構成手順](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
 - [保護されたファブリックとシールドされた VM](guarded-fabric-and-shielded-vms-top-node.md)

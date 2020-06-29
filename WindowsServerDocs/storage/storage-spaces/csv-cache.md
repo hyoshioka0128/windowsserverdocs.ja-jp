@@ -8,15 +8,15 @@ ms.topic: article
 author: eldenchristensen
 ms.date: 02/20/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: d9ebc40b69373dafbebdb87f2abe624a5a7a4375
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: fff78ddc831ae9f6cba103d7630da3afec2c87d7
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858955"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474239"
 ---
 # <a name="using-storage-spaces-direct-with-the-csv-in-memory-read-cache"></a>CSV インメモリ読み取りキャッシュでの記憶域スペースダイレクトの使用
-> 適用対象: Windows Server 2016、Windows Server 2019
+> 適用先:Windows Server 2019、Windows Server 2016
 
 このトピックでは、システムメモリを使用して[記憶域スペースダイレクト](storage-spaces-direct-overview.md)のパフォーマンスを向上させる方法について説明します。
 
@@ -24,7 +24,7 @@ ms.locfileid: "80858955"
 
 メモリ内キャッシュはサーバーローカルであるため、ハイパー集約記憶域スペースダイレクト配置のデータの局所性が向上します。最近の読み取りは、仮想マシンが実行されているのと同じホスト上のメモリにキャッシュされるので、ネットワーク経由での読み取り回数を減らすことができます。 これにより、待機時間が短くなり、ストレージのパフォーマンスが向上します。
 
-## <a name="planning-considerations"></a>計画時の注意事項
+## <a name="planning-considerations"></a>計画に関する考慮事項
 
 インメモリ読み取りキャッシュは、仮想デスクトップインフラストラクチャ (VDI) などの読み取り負荷の高いワークロードで最も効果的です。 逆に、ワークロードの書き込みが非常に多い場合は、キャッシュのオーバーヘッドが値より多くなり、無効にする必要があります。
 
@@ -40,7 +40,7 @@ CSV インメモリ読み取りキャッシュでは、合計物理メモリの�
 
 CSV インメモリ読み取りキャッシュは、Windows Server 2016 と Windows Server 2019 の両方で同じ機能を使用して利用できます。 Windows Server 2016 では、既定で無効になっています。 Windows Server 2019 では、既定で 1 GB が割り当てられています。
 
-| [OS バージョン]          | 既定の CSV キャッシュサイズ |
+| OS バージョン          | 既定の CSV キャッシュサイズ |
 |---------------------|------------------------|
 | Windows Server 2016 | 0 (無効)           |
 | Windows Server 2019 | 1 GiB                   |
@@ -51,7 +51,7 @@ PowerShell を使用して割り当てられているメモリの量を確認す
 (Get-Cluster).BlockCacheSize
 ```
 
-返される値は、サーバーごとに mebibytes (MiB) です。 たとえば、`1024` は1ギビバイト (GiB) を表します。
+返される値は、サーバーごとに mebibytes (MiB) です。 たとえば、は `1024` 1 ギビバイト (GiB) を表します。
 
 割り当てられるメモリの量を変更するには、PowerShell を使用してこの値を変更します。 たとえば、サーバーごとに2つの GiB を割り当てるには、次のように実行します。
 
@@ -69,6 +69,6 @@ Get-ClusterSharedVolume | ForEach {
 }
 ```
 
-## <a name="see-also"></a>参照
+## <a name="additional-references"></a>その他のリファレンス
 
 - [記憶域スペースダイレクトの概要](storage-spaces-direct-overview.md)

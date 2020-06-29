@@ -8,12 +8,12 @@ author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 0f678172d397ff61fd336b7c844d43f77bea7fad
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 59b6aaa22fa89620df2ce6757b2d9f5ffe91c652
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856835"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475349"
 ---
 # <a name="deploy-guarded-hosts"></a>保護されたホストの展開
 
@@ -28,16 +28,16 @@ ms.locfileid: "80856835"
 
 **ホストキーの構成証明の場合**:
 1. [ホストキーを作成](guarded-fabric-create-host-key.md#create-a-host-key)する: ファブリックドメインから HGS ドメインに DNS フォワーダーを設定する方法について説明します。
-2. [構成証明サービスにホストキーを追加](guarded-fabric-create-host-key.md#add-the-host-key-to-the-attestation-service)する: ファブリックドメインで Active Directory セキュリティグループを設定し、保護されたホストをそのグループのメンバーとして追加し、そのグループ識別子を HGS 管理者に提供する方法を指示します。 
+2. [構成証明サービスにホストキーを追加](guarded-fabric-create-host-key.md#add-the-host-key-to-the-attestation-service)する: ファブリックドメインで Active Directory セキュリティグループを設定し、保護されたホストをそのグループのメンバーとして追加し、そのグループ識別子を HGS 管理者に提供する方法を指示します。
 3. [保護されたホストが証明できることを確認する](guarded-fabric-confirm-hosts-can-attest-successfully.md)
 
 
 **管理者によって信頼された構成証明の場合**:
 1. [ファブリック dns を構成](guarded-fabric-configuring-fabric-dns.md)する: ファブリックドメインから HGS ドメインに DNS フォワーダーを設定する方法について説明します。
-2. [セキュリティグループの作成](guarded-fabric-admin-trusted-attestation-creating-a-security-group.md): ファブリックドメインで Active Directory セキュリティグループを設定し、保護されたホストをそのグループのメンバーとして追加し、そのグループ ID を HGS 管理者に提供する方法を示します。 
+2. [セキュリティグループの作成](guarded-fabric-admin-trusted-attestation-creating-a-security-group.md): ファブリックドメインで Active Directory セキュリティグループを設定し、保護されたホストをそのグループのメンバーとして追加し、そのグループ ID を HGS 管理者に提供する方法を示します。
 3. [保護されたホストが証明できることを確認する](guarded-fabric-confirm-hosts-can-attest-successfully.md)
 
 
-## <a name="see-also"></a>参照
+## <a name="additional-references"></a>その他のリファレンス
 
 - [保護されたファブリックとシールドされた Vm の展開タスク](guarded-fabric-deploying-hgs-overview.md#deployment-tasks-for-guarded-fabrics-and-shielded-vms)

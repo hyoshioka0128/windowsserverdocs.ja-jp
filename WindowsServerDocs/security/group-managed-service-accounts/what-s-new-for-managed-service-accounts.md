@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: facc816ef46ebeadb30ccabac9c0b3e6a896264d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 1411f312def0da79de4c18d6d652e0223ea27b48
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856965"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474449"
 ---
-# <a name="what39s-new-for-managed-service-accounts"></a>管理&#39;されたサービスアカウントの新機能
+# <a name="what39s-new-for-managed-service-accounts"></a>管理されたサービスアカウントの新&#39;
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016
+>適用先:Windows Server (半期チャネル)、Windows Server 2016
 
 IT プロフェッショナル向けのこのトピックでは、Windows Server 2012 および Windows 8 でのグループの管理されたサービスアカウント (gMSA) の導入により、管理されたサービスアカウントの機能の変更について説明します。
 
@@ -27,7 +27,7 @@ IT プロフェッショナル向けのこのトピックでは、Windows Server
 ## <a name="whats-new-for-managed-service-accounts-in-windows-server-2012-and-windows-8"></a><a name="versions"></a>Windows Server 2012 および Windows 8 での管理されたサービスアカウントの新機能
 ここでは、Windows Server 2012 および Windows 8 で MSA に加えられた機能の変更について説明します。
 
-### <a name="group-managed-service-accounts"></a>グループ管理サービス アカウント
+### <a name="group-managed-service-accounts"></a>Group Managed Service Accounts
 ドメイン アカウントがドメイン内のサーバーに対して構成されている場合、クライアント コンピューターは、そのサービスに対して認証を行い、接続できます。 これまでは、パスワードを管理しなくても ID が提供されたアカウントは 2 種類だけで、 次のような制限もありました。
 
 -   コンピューター アカウントは、1 つのドメイン サーバーに制限され、パスワードはコンピューターによって管理される
@@ -44,15 +44,15 @@ IT プロフェッショナル向けのこのトピックでは、Windows Server
 
 Windows Server 2012 または Windows 8 を実行しているコンピューターでは、サービスコントロールマネージャーを使用して、グループの MSA を作成および管理できます。これにより、サーバーファームに展開されたサービスの多数のインスタンスを1つのサーバーから管理できます。 管理されたサービス アカウントの管理に使用していたツールとユーティリティ (IIS アプリケーション プール マネージャーなど) は、グループの管理されたサービス アカウントにも使用できます。 ドメイン管理者は、サービスの管理をサービス管理者に委任できます。サービス管理者は、管理されたサービス アカウントまたはグループの管理されたサービス アカウントのライフサイクル全体を管理できます。 既存のクライアント コンピューターは、認証先のサービス インスタンスを把握しなくても、こうしたサービスに対して認証を実行できるようになります。
 
-### <a name="removed-or-deprecated-functionality"></a><a name="interoperability"></a>削除または非推奨の機能
+### <a name="removed-or-deprecated-functionality"></a><a name="interoperability"></a>削除された機能または非推奨の機能
 Windows Server 2012 の場合、Windows PowerShell コマンドレットは、既定では、サーバーの管理されたサービスアカウントではなく、グループの管理されたサービスアカウントを管理します。
 
-## <a name="see-also"></a>参照
+## <a name="additional-references"></a>その他のリファレンス
 
--   [グループの管理されたサービスアカウントの概要](group-managed-service-accounts-overview.md)
+-   [グループの管理されたサービス アカウントの概要](group-managed-service-accounts-overview.md)
 
 -   [Active Directory Domain Services の概要](active-directory-domain-services-overview.md)
 
--   [管理されたサービスアカウント: 理解、実装、ベストプラクティス、およびトラブルシューティング](https://blogs.technet.com/b/askds/archive/20../managed-service-accounts-understanding-implementing-best-practices-and-troubleshooting.aspx)
+-   [Managed Service Accounts:Understanding, Implementing, Best Practices, and Troubleshooting (管理されたサービス アカウント: 理解、実装、ベスト プラクティス、およびトラブルシューティング)](https://blogs.technet.com/b/askds/archive/20../managed-service-accounts-understanding-implementing-best-practices-and-troubleshooting.aspx)
 
 

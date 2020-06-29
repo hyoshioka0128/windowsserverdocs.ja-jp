@@ -9,12 +9,12 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 09/19/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c623049c33e02dd99974723d4cd257ca9304219
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 19679a6838d583ef93175f5f95aa21e8aeca9b36
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80859005"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475259"
 ---
 # <a name="choosing-drives-for-storage-spaces-direct"></a>記憶域スペース ダイレクト用のドライブの選択
 
@@ -48,14 +48,14 @@ ms.locfileid: "80859005"
             <img src="media/understand-the-cache/HDD-100px.png">
         </td>
         <td style="padding: 10px; border: 0;" valign="middle">
-            <b>HDD</b> は、膨大な記憶域容量を提供する、回転式の磁気ハード ディスク ドライブです。
+            <b>Hdd</b>は、大量の記憶域容量を提供する、磁気ハードディスクドライブの回転を指します。
         </td>
     </tr>
 </table>
 
-## <a name="built-in-cache"></a>組み込みのキャッシュ
+## <a name="built-in-cache"></a>ビルトイン キャッシュ
 
-記憶域スペース ダイレクトには、組み込みのサーバー側キャッシュが装備されています。 これは、大規模で永続的なリアルタイムの読み取りおよび書き込みキャッシュです。 複数の種類のドライブが存在する展開では、"最速" の種類のすべてのドライブを自動的に使うように構成されます。 残りのドライブはデータ格納用に使われます。
+記憶域スペース ダイレクトには、組み込みのサーバー側キャッシュが装備されています。 これは、大規模で永続的なリアルタイムの読み取りおよび書き込みキャッシュです。 複数の種類のドライブが存在する展開では、"最速" の種類のすべてのドライブを自動的に使うように構成されます。 残りのドライブは、キャパシティとして使用されます。
 
 詳しくは、「[記憶域スペース ダイレクトのキャッシュについて](understand-the-cache.md)」をご覧ください。
 
@@ -116,10 +116,10 @@ ms.locfileid: "80859005"
 
 サーバーごとのストレージ容量の合計を約400テラバイト (TB) に制限することをお勧めします。 サーバーごとの記憶域容量がこれよりも多くなると、ソフトウェア更新プログラムを適用する場合など、ダウンタイムや再起動の後でデータを再同期する際に必要となる時間が長くなります。 記憶域プールあたりの現在の最大サイズは、Windows Server 2019 の場合は4ペタバイト (PB) (4000 TB)、Windows Server 2016 の場合は1ペタバイトです。
 
-## <a name="see-also"></a>参照
+## <a name="additional-references"></a>その他のリファレンス
 
 - [記憶域スペースダイレクトの概要](storage-spaces-direct-overview.md)
-- [記憶域スペースダイレクトのキャッシュについて](understand-the-cache.md)
+- [記憶域スペース ダイレクトのキャッシュについて](understand-the-cache.md)
 - [ハードウェア要件の記憶域スペースダイレクト](storage-spaces-direct-hardware-requirements.md)
-- [記憶域スペースダイレクトのボリュームの計画](plan-volumes.md)
+- [記憶域スペース ダイレクトのボリュームの計画](plan-volumes.md)
 - [フォールト トレランスと記憶域の効率](storage-spaces-fault-tolerance.md)

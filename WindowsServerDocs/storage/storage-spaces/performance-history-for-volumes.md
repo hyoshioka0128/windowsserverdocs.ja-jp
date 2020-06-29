@@ -7,16 +7,16 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 02/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f6acf062d2dba7c2a1a04d8a3f7cb4d7bd51a4d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: e8e8b6ce7a6ab676e1fca32f360370180b38eae2
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856135"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474649"
 ---
 # <a name="performance-history-for-volumes"></a>ボリュームのパフォーマンス履歴
 
-> 適用対象: Windows Server 2019
+> 適用対象:Windows Server 2019
 
 [記憶域スペースダイレクトのパフォーマンス履歴](performance-history.md)のこのサブトピックでは、ボリュームに対して収集されたパフォーマンス履歴の詳細について説明します。 パフォーマンス履歴は、クラスター内のすべてのクラスターの共有ボリューム (CSV) で利用できます。 ただし、OS ブートボリュームまたはその他の非 CSV ストレージでは使用できません。
 
@@ -27,7 +27,7 @@ ms.locfileid: "80856135"
 
 これらのシリーズは、対象となるすべてのボリュームについて収集されます。
 
-| 系列                    | Unit             |
+| 系列                    | ユニット             |
 |---------------------------|------------------|
 | `volume.iops.read`        | 1秒あたり       |
 | `volume.iops.write`       | 1秒あたり       |
@@ -35,9 +35,9 @@ ms.locfileid: "80856135"
 | `volume.throughput.read`  | 1秒あたりのバイト数 |
 | `volume.throughput.write` | 1秒あたりのバイト数 |
 | `volume.throughput.total` | 1秒あたりのバイト数 |
-| `volume.latency.read`     | 秒          |
-| `volume.latency.write`    | 秒          |
-| `volume.latency.average`  | 秒          |
+| `volume.latency.read`     | seconds          |
+| `volume.latency.write`    | seconds          |
+| `volume.latency.average`  | seconds          |
 | `volume.size.total`       | バイト            |
 | `volume.size.available`   | バイト            |
 
@@ -59,7 +59,7 @@ ms.locfileid: "80856135"
 
 ## <a name="where-they-come-from"></a>どこから来ているか
 
-`iops.*`、`throughput.*`、および `latency.*` シリーズは、`Cluster CSVFS` パフォーマンスカウンターセットから収集されます。 クラスター内のすべてのサーバーは、所有権に関係なく、すべての CSV ボリュームにインスタンスを持ちます。 ボリューム `MyVolume` に記録されたパフォーマンス履歴は、クラスター内のすべてのサーバー上の `MyVolume` インスタンスの集計です。
+`iops.*`、 `throughput.*` 、およびの各 `latency.*` 系列は、 `Cluster CSVFS` パフォーマンスカウンターセットから収集されます。 クラスター内のすべてのサーバーは、所有権に関係なく、すべての CSV ボリュームにインスタンスを持ちます。 ボリュームについて記録されたパフォーマンス履歴 `MyVolume` は、 `MyVolume` クラスター内のすべてのサーバー上のインスタンスの集計です。
 
 | 系列                    | ソースカウンター         |
 |---------------------------|------------------------|
@@ -74,12 +74,12 @@ ms.locfileid: "80856135"
 | `volume.latency.average`  | *上記の平均* |
 
    > [!NOTE]
-   > カウンターは、サンプリングされるのではなく、間隔全体にわたって測定されます。 たとえば、ボリュームが9秒間アイドル状態で、30秒以内に 30 Io が完了した場合、その `volume.iops.total` は、この10秒間に平均で1秒あたり 3 Io として記録されます。 これにより、パフォーマンス履歴がすべてのアクティビティをキャプチャし、ノイズに対して堅牢になります。
+   > カウンターは、サンプリングされるのではなく、間隔全体にわたって測定されます。 たとえば、ボリュームが9秒間アイドル状態で、30秒間 30 Io が完了した場合、 `volume.iops.total` この10秒間に平均で1秒あたり 3 io として記録されます。 これにより、パフォーマンス履歴がすべてのアクティビティをキャプチャし、ノイズに対して堅牢になります。
 
    > [!TIP]
    > これらは、一般的な[VM](https://github.com/Microsoft/diskspd/blob/master/Frameworks/VMFleet/watch-cluster.ps1)車両ベンチマークフレームワークで使用されるものと同じカウンターです。
 
-`size.*` シリーズは、WMI の `MSFT_Volume` クラス (ボリュームごとに1つのインスタンス) から収集されます。
+シリーズは、 `size.*` WMI のクラスから収集され `MSFT_Volume` ます。ボリュームごとに1つのインスタンスがあります。
 
 | 系列                    | Source プロパティ |
 |---------------------------|-----------------|
@@ -94,6 +94,6 @@ ms.locfileid: "80856135"
 Get-Volume -FriendlyName <FriendlyName> | Get-ClusterPerf
 ```
 
-## <a name="see-also"></a>参照
+## <a name="additional-references"></a>その他のリファレンス
 
-- [記憶域スペースダイレクトのパフォーマンス履歴](performance-history.md)
+- [記憶域スペース ダイレクトのパフォーマンス履歴](performance-history.md)

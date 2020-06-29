@@ -9,12 +9,12 @@ author: justinha
 ms.author: justinha
 manager: brianlic
 ms.date: 05/16/2018
-ms.openlocfilehash: 105225736d6b883e8451aa599af1937068ebe43d
-ms.sourcegitcommit: f22e4d67dd2a153816acf8355e50319dbffc5acf
+ms.openlocfilehash: fac7e780fc584f0ce4dde8bb87ce37035840a40a
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "83546566"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474879"
 ---
 # <a name="overview-of-tls---ssl-schannel-ssp"></a>TLS SSL (Schannel SSP) の概要
 
@@ -58,7 +58,7 @@ TLS クライアントが要求をサーバーに送信すると、TLS サーバ
 ### <a name="management-of-trusted-issuers-for-client-authentication"></a><a name="BKMK_TrustedIssuers"></a>クライアント認証のための信頼された発行者の管理
 SSL または TLS を使用したクライアント コンピューターの認証が必要な場合は、信頼された証明書の発行者の一覧を送信するようにサーバーを構成できます。 この一覧には、サーバーが信頼する証明書の発行者のセットが含まれます。これが、複数の証明書が存在する場合にクライアント コンピューターがどのクライアント証明書を選択するかについてのヒントとなります。 さらに、構成されている信頼された発行者の一覧に対して、クライアント コンピューターがサーバーに送信する証明書チェーンを検証する必要があります。
 
-Windows Server 2012 および Windows 8 より前の場合、Schannel SSP (http.sys および IIS を含む) を使用するアプリケーションまたはプロセスは、証明書信頼リスト (CTL) を使用してクライアント認証をサポートしている信頼された発行者の一覧を提供できます。
+Windows Server 2012 および Windows 8 より前の場合、Schannel SSP (HTTP.sys および IIS を含む) を使用するアプリケーションまたはプロセスは、証明書信頼リスト (CTL) を使用してクライアント認証をサポートしている信頼された発行者の一覧を提供できます。
 
 Windows Server 2012 および Windows 8 では、次のように、基になる認証プロセスに変更が加えられました。
 
@@ -104,7 +104,7 @@ Schannel の資格情報について定義されるデータ (アプリケーシ
 
 Schannel プロバイダーでは、3 種類のクライアント認証信頼モードがサポートされます。 信頼モードは、クライアントの証明書チェーンの検証を実行する方法を制御し、HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\Schannel. の下の "ClientAuthTrustMode" REG_DWORD によって制御されるシステム全体の設定です。
 
-|値|信頼モード|説明|
+|[値]|信頼モード|説明|
 |-----|-------|--------|
 |0|コンピューター信頼 (既定値)|信頼された発行者の一覧内の証明書によってクライアント証明書が発行される必要があります。|
 |1|排他的ルート信頼|呼び出し元によって指定された信頼された発行者ストアに含まれているルート証明書にクライアント証明書をチェーンする必要があります。 さらに、信頼された発行者の一覧内の発行者から証明書を発行する必要があります。|
@@ -147,7 +147,7 @@ DTLS over UDP を使用するアプリケーションでは、Windows Server 201
 ### <a name="deprecated-functionality"></a><a name="BKMK_Deprecated"></a>非推奨の機能
 Windows Server 2012 および Windows 8 の Schannel SSP では、非推奨の機能はありません。
 
-## <a name="see-also"></a>関連項目
+## <a name="additional-references"></a>その他のリファレンス
 -   [プライベート クラウド セキュリティ モデル: ラッパー機能](https://social.technet.microsoft.com/wiki/contents/articles/6756.private-cloud-security-model-wrapper-functionality.aspx)
 
 

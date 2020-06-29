@@ -7,16 +7,16 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 02/02/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: a6c6065b8d7963ada5d80844b270fe088eaa6e56
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 7e1620f7010d4f37713de20f2b4c12f100be61dc
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80859455"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474769"
 ---
 # <a name="performance-history-for-drives"></a>ドライブのパフォーマンス履歴
 
-> 適用対象: Windows Server 2019
+> 適用対象:Windows Server 2019
 
 [記憶域スペースダイレクトのパフォーマンス履歴](performance-history.md)のこのサブトピックでは、ドライブ用に収集されたパフォーマンス履歴の詳細について説明します。 パフォーマンス履歴は、バスやメディアの種類に関係なく、クラスター記憶域サブシステムのすべてのドライブで使用できます。 ただし、OS ブートドライブでは使用できません。
 
@@ -27,7 +27,7 @@ ms.locfileid: "80859455"
 
 これらのシリーズは、対象となるすべてのドライブについて収集されます。
 
-| 系列                          | Unit             |
+| 系列                          | ユニット             |
 |---------------------------------|------------------|
 | `physicaldisk.iops.read`        | 1秒あたり       |
 | `physicaldisk.iops.write`       | 1秒あたり       |
@@ -35,9 +35,9 @@ ms.locfileid: "80859455"
 | `physicaldisk.throughput.read`  | 1秒あたりのバイト数 |
 | `physicaldisk.throughput.write` | 1秒あたりのバイト数 |
 | `physicaldisk.throughput.total` | 1秒あたりのバイト数 |
-| `physicaldisk.latency.read`     | 秒          |
-| `physicaldisk.latency.write`    | 秒          |
-| `physicaldisk.latency.average`  | 秒          |
+| `physicaldisk.latency.read`     | seconds          |
+| `physicaldisk.latency.write`    | seconds          |
+| `physicaldisk.latency.average`  | seconds          |
 | `physicaldisk.size.total`       | バイト            |
 | `physicaldisk.size.used`        | バイト            |
 
@@ -59,7 +59,7 @@ ms.locfileid: "80859455"
 
 ## <a name="where-they-come-from"></a>どこから来ているか
 
-`iops.*`、`throughput.*`、および `latency.*` シリーズは、ドライブが接続されているサーバー上の `Physical Disk` パフォーマンスカウンターセットから収集されます。これは、ドライブごとに1つのインスタンスです。 これらのカウンターは `partmgr.sys` によって測定され、Windows ソフトウェアスタックやネットワークホップの多くは含まれません。 デバイスハードウェアのパフォーマンスの代表的なものです。
+`iops.*`、 `throughput.*` 、およびの `latency.*` 各系列は、 `Physical Disk` ドライブが接続されているサーバー上のパフォーマンスカウンターセットから収集されます。このカウンターは、ドライブごとに1つのインスタンスになります。 これらのカウンターはによって測定され、 `partmgr.sys` Windows ソフトウェアスタックやネットワークホップの多くは含まれません。 デバイスハードウェアのパフォーマンスの代表的なものです。
 
 | 系列                          | ソースカウンター           |
 |---------------------------------|--------------------------|
@@ -74,9 +74,9 @@ ms.locfileid: "80859455"
 | `physicaldisk.latency.average`  | `Avg. Disk sec/Transfer` |
 
    > [!NOTE]
-   > カウンターは、サンプリングされるのではなく、間隔全体にわたって測定されます。 たとえば、ドライブが9秒間アイドル状態で、30秒間 30 Io が完了した場合、その `physicaldisk.iops.total` は、この10秒間に平均で1秒あたり 3 Io として記録されます。 これにより、パフォーマンス履歴がすべてのアクティビティをキャプチャし、ノイズに対して堅牢になります。
+   > カウンターは、サンプリングされるのではなく、間隔全体にわたって測定されます。 たとえば、ドライブが9秒間アイドル状態で、30秒間 30 Io が完了した場合、 `physicaldisk.iops.total` この10秒間に平均で1秒あたり 3 io として記録されます。 これにより、パフォーマンス履歴がすべてのアクティビティをキャプチャし、ノイズに対して堅牢になります。
 
-`size.*` シリーズは、WMI の `MSFT_PhysicalDisk` クラスから収集されます。1つのドライブにつき1つのインスタンスです。
+シリーズは、 `size.*` WMI のクラスから収集され `MSFT_PhysicalDisk` ます。このクラスは、1ドライブにつき1つのインスタンスです。
 
 | 系列                          | Source プロパティ        |
 |---------------------------------|------------------------|
@@ -91,6 +91,6 @@ ms.locfileid: "80859455"
 Get-PhysicalDisk -SerialNumber <SerialNumber> | Get-ClusterPerf
 ```
 
-## <a name="see-also"></a>参照
+## <a name="additional-references"></a>その他のリファレンス
 
-- [記憶域スペースダイレクトのパフォーマンス履歴](performance-history.md)
+- [記憶域スペース ダイレクトのパフォーマンス履歴](performance-history.md)

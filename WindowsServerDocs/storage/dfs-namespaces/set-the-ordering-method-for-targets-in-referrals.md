@@ -8,16 +8,16 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: bb42a98666941c5dfa50a8dfbf45635ad25dc767
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9b420e311c98477d369c81f10eca274e665dae3a
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386137"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475159"
 ---
 # <a name="set-the-ordering-method-for-targets-in-referrals"></a>紹介におけるターゲットの順序指定方法を設定する
 
-> 適用対象:Windows Server 2019、Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
+> 適用対象: Windows Server 2019、Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
 
 紹介とは、ユーザーが名前空間のルートにアクセスするか、ターゲットを持つフォルダーにアクセスしたときに、クライアント コンピューターがドメイン コントローラーまたは名前空間サーバーから受信する、順序付きのターゲット一覧です。 クライアントは、紹介を受信した後、一覧の先頭のターゲットにアクセスしようとします。 そのターゲットにアクセスできない場合は、次のターゲットにアクセスしようとします。
 クライアント サイト上のターゲットは常に紹介の最初にリストされます。 クライアント サイト外のターゲットは、順序指定方法に従ってリストされます。
@@ -28,29 +28,29 @@ ms.locfileid: "71386137"
 
 名前空間ルートにおける順序指定方法を設定するには、次の手順を使用します。
 
-1.  **[スタート]** をクリックし、 **[管理ツール]** をポイントして、 **[DFS 管理]** をクリックします。
+1.  [**スタート**] をクリックし、[**管理ツール**] をポイントして、[**DFS 管理**] をクリックします。
 
-2.  コンソール ツリーの **[名前空間]** ノードで、名前空間を右クリックし、 **[プロパティ]** をクリックします。
+2.  コンソール ツリーの **[名前空間]** ノードで、名前空間を右クリックし、**[プロパティ]** をクリックします。
 
 3.  **[紹介]** タブで、順序指定方法を選択します。
 
 > [!NOTE]
 > Windows PowerShell を使って名前空間ルートの紹介におけるターゲットの順序指定方法を設定するには、次のいずれかのパラメーターを指定して [Set-DfsnRoot](https://technet.microsoft.com/library/jj884281.aspx) コマンドレットを使います。
->    -   **EnableSiteCosting** の場合、 **"最低コストの順序指定"** の方法が指定されます。
->    -   **EnableInsiteReferrals** の場合、 **"クライアント サイト外のターゲットを除外する"** 順序指定方法が指定されます。
->    -   いずれかのパラメーターを省略すると、 **"ランダム順序"** の参照順序指定方法が指定されます。 
+>    -   **EnableSiteCosting** の場合、**"最低コストの順序指定"** の方法が指定されます。
+>    -   **EnableInsiteReferrals** の場合、**"クライアント サイト外のターゲットを除外する"** 順序指定方法が指定されます。
+>    -   いずれかのパラメーターを省略すると、**"ランダム順序"** の参照順序指定方法が指定されます。
 
 DFSN Windows PowerShell モジュールは、Windows Server 2012 で導入されました。
-   
+
 ## <a name="to-set-the-ordering-method-for-targets-in-folder-referrals"></a>フォルダー紹介におけるターゲットの順序指定方法を設定するには
 
 ターゲットを持つフォルダーは、名前空間ルートからの順序指定方法を継承します。 順序指定方法は、次の手順を使用して上書きできます。
 
-1.  **[スタート]** をクリックし、 **[管理ツール]** をポイントして、 **[DFS 管理]** をクリックします。
+1.  [**スタート**] をクリックし、[**管理ツール**] をポイントして、[**DFS 管理**] をクリックします。
 
-2.  コンソール ツリーの **[名前空間]** ノードで、ターゲットを持つフォルダーを右クリックし、 **[プロパティ]** をクリックします。
+2.  コンソール ツリーの **[名前空間]** ノードで、ターゲットを持つフォルダーを右クリックし、**[プロパティ]** をクリックします。
 
-3.  **[紹介]** タブで、 **[クライアント サイト外のターゲットを除外する]** チェック ボックスをオンにします。
+3.  **[紹介]** タブで、**[クライアント サイト外のターゲットを除外する]** チェック ボックスをオンにします。
 
 > [!NOTE]
 > Windows PowerShell を使ってクライアント サイト外のフォルダー ターゲットを除外するには、[Set-DfsnFolder –EnableInsiteReferrals](https://technet.microsoft.com/library/jj884283.aspx) コマンドレットを使います。
@@ -67,7 +67,7 @@ DFSN Windows PowerShell モジュールは、Windows Server 2012 で導入され
 
 この方法では、ターゲットが次のように順序指定されます。
 
-1.  クライアントと同じ Active Directory Directory Services (AD DS) サイト内のターゲットは、紹介の先頭にランダムな順序で一覧表示されます。
+1.  クライアントと同じ Active Directory ディレクトリ サービス (AD DS) サイト内のターゲットは、紹介の一番上にランダムな順序でリストされます。
 2.  クライアント サイト外部のターゲットは、ランダムな順序でリストされます。
 
 同じサイトのターゲット サーバーがない場合、クライアント コンピューターは、接続のコストやターゲットとの距離に関係なくランダムなターゲット サーバーに紹介されます。
@@ -89,7 +89,7 @@ DFSN Windows PowerShell モジュールは、Windows Server 2012 で導入され
 > [!NOTE]
 > 順序指定方法が **[クライアント サイト外のターゲットを除外する]** に設定されている場合でも、ターゲット優先順位が [すべてのターゲットのうち最初のターゲット] または [すべてのターゲットのうち最後のターゲット] に設定されたターゲットは紹介にリストされます。
 
-## <a name="see-also"></a>関連項目 
+## <a name="additional-references"></a>その他のリファレンス
 
 -   [DFS 名前空間を調整する](tuning-dfs-namespaces.md)
 -   [DFS 名前空間の管理アクセス許可を委任する](delegate-management-permissions-for-dfs-namespaces.md)

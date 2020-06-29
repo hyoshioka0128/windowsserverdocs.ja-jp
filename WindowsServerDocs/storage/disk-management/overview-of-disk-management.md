@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 46ed1256ed9039311939f9de12ea46416443be9c
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: e200901d8ddd59f0c0bc45b34681f3aa41b44923
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71402144"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474419"
 ---
 # <a name="overview-of-disk-management"></a>ディスクの管理の概要
 
@@ -49,7 +49,7 @@ ms.locfileid: "71402144"
 
 ディスクの管理では、EFI システム パーティションと回復パーティションが 100% 空き容量であると表示する場合がありますが、これは正しくありません。 これらのパーティションは一般的に、PC が正常に動作するために必要な非常に重要なファイルでほぼいっぱいになっています。 これらは PC を起動したり問題からの回復を支援したりするジョブを実行させるために、そのままにしておくことをお勧めします。
 
-## <a name="see-also"></a>関連項目
+## <a name="additional-references"></a>その他の参照情報
 
 - [ディスクを管理する](manage-disks.md)
 - [ベーシック ボリュームを管理する](manage-basic-volumes.md)

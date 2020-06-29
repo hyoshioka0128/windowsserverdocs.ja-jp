@@ -7,16 +7,16 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 02/02/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: e2379ce540cb26c02bc79f591d2a597874ab287c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 597abd8e389421eb6875ff3cc94b457f341be3b7
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856215"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474749"
 ---
 # <a name="performance-history-for-network-adapters"></a>ネットワークアダプターのパフォーマンス履歴
 
-> 適用対象: Windows Server 2019
+> 適用対象:Windows Server 2019
 
 [記憶域スペースダイレクトのパフォーマンス履歴](performance-history.md)のこのサブトピックでは、ネットワークアダプターについて収集されるパフォーマンス履歴の詳細について説明します。 ネットワークアダプターのパフォーマンス履歴は、クラスター内のすべてのサーバーのすべての物理ネットワークアダプターで使用できます。 リモートダイレクトメモリアクセス (RDMA) のパフォーマンス履歴は、RDMA が有効になっているすべての物理ネットワークアダプターで使用できます。
 
@@ -27,7 +27,7 @@ ms.locfileid: "80856215"
 
 これらのシリーズは、対象となるすべてのネットワークアダプターについて収集されます。
 
-| 系列                               | Unit            |
+| 系列                               | ユニット            |
 |--------------------------------------|-----------------|
 | `netadapter.bandwidth.inbound`       | 1秒あたりのビット数 |
 | `netadapter.bandwidth.outbound`      | 1秒あたりのビット数 |
@@ -52,24 +52,24 @@ ms.locfileid: "80856215"
 
 ## <a name="where-they-come-from"></a>どこから来ているか
 
-`bytes.*` シリーズは、ネットワークアダプターがインストールされているサーバーの `Network Adapter` パフォーマンスカウンターセット (ネットワークアダプターごとに1つのインスタンス) から収集されます。
+シリーズは、 `bytes.*` ネットワークアダプターがインストールされているサーバーの `Network Adapter` パフォーマンスカウンターセット (ネットワークアダプターごとに1つのインスタンス) から収集されます。
 
 | 系列                           | ソースカウンター           |
 |----------------------------------|--------------------------|
-| `netadapter.bandwidth.inbound`   | 8× `Bytes Received/sec` |
-| `netadapter.bandwidth.outbound`  | 8× `Bytes Sent/sec`     |
-| `netadapter.bandwidth.total`     | 8× `Bytes Total/sec`    |
+| `netadapter.bandwidth.inbound`   | 8×`Bytes Received/sec` |
+| `netadapter.bandwidth.outbound`  | 8×`Bytes Sent/sec`     |
+| `netadapter.bandwidth.total`     | 8×`Bytes Total/sec`    |
 
-`rdma.*` シリーズは、ネットワークアダプターがインストールされているサーバーの `RDMA Activity` パフォーマンスカウンターセットから収集されます。これは、RDMA が有効になっているネットワークアダプターごとに1つのインスタンスです。
+シリーズは、 `rdma.*` `RDMA Activity` ネットワークアダプターがインストールされているサーバー上のパフォーマンスカウンターセットから収集されます。これは、RDMA が有効になっているネットワークアダプターごとに1つのインスタンスです。
 
 | 系列                               | ソースカウンター           |
 |--------------------------------------|--------------------------|
-| `netadapter.bandwidth.rdma.inbound`  | 8× `Inbound bytes/sec`  |
-| `netadapter.bandwidth.rdma.outbound` | 8× `Outbound bytes/sec` |
+| `netadapter.bandwidth.rdma.inbound`  | 8×`Inbound bytes/sec`  |
+| `netadapter.bandwidth.rdma.outbound` | 8×`Outbound bytes/sec` |
 | `netadapter.bandwidth.rdma.total`    | *上記の8倍の合計*   |
 
    > [!NOTE]
-   > カウンターは、サンプリングされるのではなく、間隔全体にわたって測定されます。 たとえば、ネットワークアダプターが9秒間アイドル状態で200ビットを10秒間転送する場合、その `netadapter.bandwidth.total` は、この10秒間に平均で1秒あたり20ビットとして記録されます。 これにより、パフォーマンス履歴がすべてのアクティビティをキャプチャし、ノイズに対して堅牢になります。
+   > カウンターは、サンプリングされるのではなく、間隔全体にわたって測定されます。 たとえば、ネットワークアダプターが9秒間アイドル状態で、200ビットを10秒間転送する場合、 `netadapter.bandwidth.total` この10秒間に平均で1秒あたり20ビットとして記録されます。 これにより、パフォーマンス履歴がすべてのアクティビティをキャプチャし、ノイズに対して堅牢になります。
 
 ## <a name="usage-in-powershell"></a>PowerShell での使用法
 
@@ -79,6 +79,6 @@ ms.locfileid: "80856215"
 Get-NetAdapter <Name> | Get-ClusterPerf
 ```
 
-## <a name="see-also"></a>参照
+## <a name="additional-references"></a>その他のリファレンス
 
-- [記憶域スペースダイレクトのパフォーマンス履歴](performance-history.md)
+- [記憶域スペース ダイレクトのパフォーマンス履歴](performance-history.md)

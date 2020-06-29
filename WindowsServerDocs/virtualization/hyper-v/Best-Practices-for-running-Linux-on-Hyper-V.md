@@ -9,12 +9,12 @@ ms.assetid: a08648eb-eea0-4e2b-87fb-52bfe8953491
 author: shirgall
 ms.author: kathydav
 ms.date: 04/15/2020
-ms.openlocfilehash: d8861369abe24ea0d34dce209a5d98e854c4c95d
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 75b471d4083ef1597d5edcc775ea6fc847992483
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82072238"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474469"
 ---
 # <a name="best-practices-for-running-linux-on-hyper-v"></a>HYPER-V で Linux を実行するためのベスト プラクティス
 
@@ -78,11 +78,11 @@ Kickstart ファイルをプレインストールカーネルに指定すると�
 
 Linux カーネルには、要求の順序を変更するための2セットのディスク i/o スケジューラが用意されています。  1つは古い ' blk ' サブシステム用で、もう1つは新しい "blk" サブシステム用です。 どちらの場合も、現在のソリッドステートディスクでは、スケジュールの決定を基になる Hyper-v ハイパーバイザーに渡すスケジューラを使用することをお勧めします。 "Blk" サブシステムを使用する Linux カーネルの場合、これは "noop" スケジューラです。 "Blk" サブシステムを使用する Linux カーネルの場合、これは "none" スケジューラです。
 
-特定のディスクの場合、使用可能なスケジューラは、現在選択されているスケジューラが角かっこで囲ま`<diskname>`れた、次のファイルシステムの場所で確認できます。 このファイルシステムの場所に書き込むことで、スケジューラを変更できます。 再起動の間に保持するために、変更を初期化スクリプトに追加する必要があります。 詳細については、Linux ディストリビューションのドキュメントを参照してください。
+特定のディスクの場合、使用可能なスケジューラは、 `<diskname>` 現在選択されているスケジューラが角かっこで囲まれた、次のファイルシステムの場所で確認できます。 このファイルシステムの場所に書き込むことで、スケジューラを変更できます。 再起動の間に保持するために、変更を初期化スクリプトに追加する必要があります。 詳細については、Linux ディストリビューションのドキュメントを参照してください。
 
 ## <a name="numa"></a>NUMA
 
-2.6.37 未満の Linux カーネル バージョンは、HYPER-V で大きい VM サイズの NUMA をサポートできません。 この問題は、主に、アップストリームの Red Hat 2.6.32 カーネルを使用した古いディストリビューションに影響し、Red Hat Enterprise Linux (RHEL) 6.6 (kernel-2.6.32-504) で修正されました。 2.6.37 より古いカスタム カーネルまたは2.6.32-504 より古い RHEL ベースのカーネルを実行しているシステムでは、grub.conf のカーネル コマンドラインで、ブート パラメーター `numa=off` を設定する必要があります。 詳細については、[Red Hat KB 436883](https://access.redhat.com/solutions/436883) を参照してください。
+2\.6.37 未満の Linux カーネル バージョンは、HYPER-V で大きい VM サイズの NUMA をサポートできません。 この問題は、主に、アップストリームの Red Hat 2.6.32 カーネルを使用した古いディストリビューションに影響し、Red Hat Enterprise Linux (RHEL) 6.6 (kernel-2.6.32-504) で修正されました。 2.6.37 より古いカスタム カーネルまたは2.6.32-504 より古い RHEL ベースのカーネルを実行しているシステムでは、grub.conf のカーネル コマンドラインで、ブート パラメーター `numa=off` を設定する必要があります。 詳細については、[Red Hat KB 436883](https://access.redhat.com/solutions/436883) を参照してください。
 
 ## <a name="reserve-more-memory-for-kdump"></a>Kdump 用に追加のメモリを予約する
 
@@ -94,7 +94,7 @@ Hyper-v では、ディスク上に存在する可能性のあるパーティシ
 
 VHD または VHDX のサイズを変更した後、管理者は、fdisk や parted などのユーティリティを使用して、パーティション、ボリューム、ファイルシステムの構造を更新し、ディスクのサイズの変化を反映する必要があります。 GUID パーティションテーブル (GPT) を持つ VHD または VHDX のサイズを縮小または拡大すると、パーティション管理ツールを使用してパーティションのレイアウトを確認したときに警告が表示され、管理者は1つ目と2番目の GPT ヘッダーを修正するように警告されます。 この手動の手順は、データ損失なしでも安全に実行できます。
 
-## <a name="see-also"></a>関連項目
+## <a name="additional-references"></a>その他のリファレンス
 
 * [Windows にインストールされた Hyper-v の Linux および FreeBSD 仮想マシンがサポートされています。](Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)
 

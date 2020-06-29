@@ -7,16 +7,16 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 02/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: cf4bdabb132c832370e5dffec215c24b54aebdd7
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 7ed910aba376ba7f78c628d7f47bdd21b366459d
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856195"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474739"
 ---
 # <a name="performance-history-for-servers"></a>サーバーのパフォーマンス履歴
 
-> 適用対象: Windows Server 2019
+> 適用対象:Windows Server 2019
 
 [記憶域スペースダイレクトのパフォーマンス履歴](performance-history.md)のこのサブトピックでは、サーバーに対して収集されたパフォーマンス履歴の詳細について説明します。 パフォーマンス履歴は、クラスター内のすべてのサーバーで使用できます。
 
@@ -27,18 +27,18 @@ ms.locfileid: "80856195"
 
 これらのシリーズは、対象となるすべてのサーバーについて収集されます。
 
-| 系列                           | Unit    |
+| 系列                           | ユニット    |
 |----------------------------------|---------|
-| `clusternode.cpu.usage`          | percent |
-| `clusternode.cpu.usage.guest`    | percent |
-| `clusternode.cpu.usage.host`     | percent |
+| `clusternode.cpu.usage`          | パーセント |
+| `clusternode.cpu.usage.guest`    | パーセント |
+| `clusternode.cpu.usage.host`     | パーセント |
 | `clusternode.memory.total`       | バイト   |
 | `clusternode.memory.available`   | バイト   |
 | `clusternode.memory.usage`       | バイト   |
 | `clusternode.memory.usage.guest` | バイト   |
 | `clusternode.memory.usage.host`  | バイト   |
 
-さらに、`physicaldisk.size.total` などのドライブシリーズは、サーバーに接続されているすべての対象ドライブについて集計され、`networkadapter.bytes.total` などのネットワークアダプターシリーズは、サーバーに接続されているすべての対象ネットワークアダプターについて集計されます。
+さらに、サーバーに接続されている `physicaldisk.size.total` すべての対象ドライブのドライブシリーズが集計され、などのネットワークアダプターシリーズが、サーバーに接続されているすべての使用可能な `networkadapter.bytes.total` ネットワークアダプターについて集計されます。
 
 ## <a name="how-to-interpret"></a>解釈する方法
 
@@ -55,7 +55,7 @@ ms.locfileid: "80856195"
 
 ## <a name="where-they-come-from"></a>どこから来ているか
 
-`cpu.*` シリーズは、Hyper-v が有効になっているかどうかに応じて、さまざまなパフォーマンスカウンターから収集されます。
+シリーズは、 `cpu.*` hyper-v が有効になっているかどうかに応じて、さまざまなパフォーマンスカウンターから収集されます。
 
 Hyper-v が有効になっている場合:
 
@@ -65,7 +65,7 @@ Hyper-v が有効になっている場合:
 | `clusternode.cpu.usage.guest`    | `Hyper-V Hypervisor Virtual Processor` > `_Total` > `% Total Run Time`      |
 | `clusternode.cpu.usage.host`     | `Hyper-V Hypervisor Root Virtual Processor` > `_Total` > `% Total Run Time` |
 
-`% Total Run Time` カウンターを使用すると、パフォーマンス履歴属性のすべての使用状況が確実になります。
+カウンターを使用すると、 `% Total Run Time` パフォーマンス履歴属性のすべての使用が保証されます。
 
 Hyper-v が有効になっていない場合:
 
@@ -75,14 +75,14 @@ Hyper-v が有効になっていない場合:
 | `clusternode.cpu.usage.guest`    | *回* |
 | `clusternode.cpu.usage.host`     | *合計使用量と同じ* |
 
-不完全同期の場合、`clusternode.cpu.usage` は常にプラス `clusternode.cpu.usage.guest`に `clusternode.cpu.usage.host` ます。
+不完全同期の場合、 `clusternode.cpu.usage` は常に `clusternode.cpu.usage.host` + `clusternode.cpu.usage.guest` です。
 
-同じ注意をして、`clusternode.cpu.usage.guest` は常に、ホストサーバー上のすべての仮想マシンの `vm.cpu.usage` の合計になります。
+同じ注意をして、 `clusternode.cpu.usage.guest` は常に `vm.cpu.usage` ホストサーバー上のすべての仮想マシンのの合計になります。
 
-`memory.*` シリーズは (近日公開予定) です。
+`memory.*`シリーズは (近日公開予定) です。
 
   > [!NOTE]
-  > カウンターは、サンプリングされるのではなく、間隔全体にわたって測定されます。 たとえば、サーバーが9秒間アイドル状態で、10秒間に100% の CPU が急増した場合、その `clusternode.cpu.usage` は10秒間隔で平均で10% として記録されます。 これにより、パフォーマンス履歴がすべてのアクティビティをキャプチャし、ノイズに対して堅牢になります。
+  > カウンターは、サンプリングされるのではなく、間隔全体にわたって測定されます。 たとえば、サーバーが9秒間アイドル状態で、10秒間に100% の CPU が急増している場合、その `clusternode.cpu.usage` は10秒間隔で平均で10% として記録されます。 これにより、パフォーマンス履歴がすべてのアクティビティをキャプチャし、ノイズに対して堅牢になります。
 
 ## <a name="usage-in-powershell"></a>PowerShell での使用法
 
@@ -92,6 +92,6 @@ Hyper-v が有効になっていない場合:
 Get-ClusterNode <Name> | Get-ClusterPerf
 ```
 
-## <a name="see-also"></a>参照
+## <a name="additional-references"></a>その他のリファレンス
 
-- [記憶域スペースダイレクトのパフォーマンス履歴](performance-history.md)
+- [記憶域スペース ダイレクトのパフォーマンス履歴](performance-history.md)

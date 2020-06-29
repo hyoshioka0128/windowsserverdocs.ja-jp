@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/16/2018
-ms.openlocfilehash: d0c066b063cbfc8def54c2e0d02cbb0eaf7f1d40
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 79477aa441b82854852fe35a9b45bafdee664532
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852925"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475269"
 ---
 # <a name="datagram-transport-layer-security-protocol"></a>データグラム トランスポート層セキュリティ プロトコル
 
@@ -29,9 +29,8 @@ Windows Server 2012 および Windows 8 の Schannel SSP で導入された DTLS
 
 構成に使用できる暗号スイートは、TLS 用に構成できるようになった後に、パターン化されます。 RC4 は許可されていません。 Schannel では、Cryptography Next Generation (CNG) が引き続き使用されます。 これは、Windows Vista で導入された FIPS 140 認定を利用しています。
 
-## <a name="see-also"></a>参照
+## <a name="additional-references"></a>その他のリファレンス
 
 [IETF RFC 4347 データグラムトランスポート層のセキュリティ](http://tools.ietf.org/html/rfc4347)
 
 
-                                        

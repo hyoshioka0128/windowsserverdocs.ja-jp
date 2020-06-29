@@ -6,16 +6,16 @@ ms.author: cosdar
 ms.prod: windows-server
 ms.technology: manage
 ms.date: 11/04/2019
-ms.openlocfilehash: 62bf21dd0afcb99aa77cff8a733e80fc4cffe2fb
-ms.sourcegitcommit: 1da993bbb7d578a542e224dde07f93adfcd2f489
+ms.openlocfilehash: 088fb7b8f03ab7e575b562572f2e29e1b5774760
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73587232"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474489"
 ---
 # <a name="deploy-hyperconverged-infrastructure-with-windows-admin-center"></a>Windows 管理センターを使用してハイパー集約インフラストラクチャを展開する
 
-> 適用対象: Windows 管理センター、Windows 管理センタープレビュー
+> 適用先:Windows Admin Center、Windows Admin Center Preview
 
 Windows 管理センター[バージョン 1910](https://docs.microsoft.com/windows-server/manage/windows-admin-center/understand/windows-admin-center)以降を使用して、2つ以上の適切な windows サーバーを使用してハイパー集約インフラストラクチャを展開することができます。 この新しい機能では、機能のインストール、ネットワークの構成、クラスターの作成、記憶域スペースダイレクトまたはソフトウェアによるネットワーク制御 (SDN) の展開など、選択した場合に役立つマルチステージワークフローの形式を使用します。
 
@@ -26,12 +26,12 @@ Windows 管理センター[バージョン 1910](https://docs.microsoft.com/wind
 
 ## <a name="preview-the-workflow"></a>ワークフローのプレビュー
 
-### <a name="1-prerequisites"></a>1. 前提条件
+### <a name="1-prerequisites"></a>1.前提条件
 
 Windows 管理センターのクラスター作成ワークフローでは、ベアメタルオペレーティングシステムのインストールは実行されないため、まず各サーバーに Windows Server をインストールする必要があります。 サポートされているバージョンは、Windows Server 2016、Windows Server 2019、および Windows Server Insider Preview です。 また、ワークフローを開始する前に、Windows 管理センターが実行されているのと同じ Active Directory ドメインに各サーバーを参加させる必要があります。
 
 ### <a name="2-install-windows-admin-center"></a>2. Windows 管理センターをインストールする
- 
+
 指示に従って、最新バージョンの Windows 管理センターを[ダウンロードしてインストール](https://docs.microsoft.com/windows-server/manage/windows-admin-center/understand/windows-admin-center)します。
 
 ### <a name="3-install-the-cluster-creation-extension"></a>3. クラスター作成拡張機能をインストールする
@@ -68,7 +68,7 @@ Windows 管理センターのクラスター作成ワークフローでは、ベ
 
 これらの Windows PowerShell コマンドレットを使用して、ワークフローの実行内容を確認します。
 
-インストールされている Windows 機能を確認するには、`Get-WindowsFeature` コマンドレットを使用します。 次に、例を示します。
+インストールされている Windows 機能を確認するには、コマンドレットを使用し `Get-WindowsFeature` ます。 次に例を示します。
 
 ```PowerShell
 Get-WindowsFeature "Hyper-V", "Failover-Clustering", "Data-Center-Bridging", "BitLocker"
@@ -79,7 +79,7 @@ Get-WindowsFeature "Hyper-V", "Failover-Clustering", "Data-Center-Bridging", "Bi
   > [!Note]
   > インストールされる機能は、選択したクラスターの種類によって異なります。
 
-ネットワークアダプターとそのプロパティ (名前、IPv4 アドレス、VLAN ID など) を表示するには、次のようにします。
+ネットワーク アダプターとそれらのプロパティ (名前、IPv4 アドレス、VLAN ID など) を表示するには、次を実行します。
 
 ```PowerShell
 Get-NetAdapter | Where Status -Eq "Up" | Sort InterfaceAlias | Format-Table Name, InterfaceDescription, Status, LinkSpeed, VLANID, MacAddress
@@ -88,7 +88,7 @@ Get-NetAdapter | Where Status -Eq "Up" | Get-NetIPAddress -AddressFamily IPv4 -E
 
 ![PowerShell の出力のスクリーンショット](../media/deploy-hyperconverged-infrastructure/script-out-2.png)
 
-Hyper-v 仮想スイッチと、物理ネットワークアダプターのチーミング方法を確認するには、次の手順を実行します。
+Hyper-V 仮想スイッチと、物理ネットワーク アダプターのチーミング方法を表示するには、次を実行します。
 
 ```PowerShell
 Get-VMSwitch
@@ -176,7 +176,7 @@ Get-VMSwitch | Remove-VMSwitch
 ```
 
 > [!Note]
-> `Remove-VMSwitch` コマンドレットは、仮想アダプターを自動的に削除し、物理アダプターのスイッチ埋め込みチーミングを元に戻します。
+> `Remove-VMSwitch`コマンドレットは、仮想アダプターを自動的に削除し、物理アダプターのスイッチ埋め込みチーミングを元に戻します。
 
 名前、IPv4 アドレス、VLAN ID などのネットワークアダプターのプロパティを変更した場合は、次のようになります。
 
@@ -191,28 +191,28 @@ Get-NetAdapter | Where Name -Ne "Management" | Set-NetAdapter -VlanID 0
 
 これで、ワークフローを開始する準備ができました。
 
-## <a name="feedback"></a>Feedback
+## <a name="feedback"></a>フィードバック
 
 このプレビューリリースでは、お客様のご意見をお寄せください。 チームに連絡を取るための方法をいくつか次に示します。
 
 - [UserVoice で機能要求を送信して投票する](https://windowsserver.uservoice.com/forums/295071/category/319162?query=%5Bhci%5D)
 - [Microsoft Tech Community で Windows 管理センターフォーラムに参加する](https://techcommunity.microsoft.com/t5/Windows-Server-Management/bd-p/WindowsServerManagement)
 - Email hci-展開 [at] microsoft.com
-- [@servermgmt](https://twitter.com/servermgmt)にツイート
+- ツイート[@servermgmt](https://twitter.com/servermgmt)
 
-## <a name="report-an-issue"></a>問題を報告する
+## <a name="report-an-issue"></a>問題の報告
 
 上に示したチャネルを使用して、クラスター作成ワークフローの問題を報告します。
 
 可能であれば、問題を迅速に再現して解決するために、次の情報を含めてください。
 
-- 選択したクラスターの種類 (例: *"ハイパー収束"* )
-- 問題が発生したステップ (例: *"3.2 クラスターの作成"* )
-- クラスター作成拡張機能のバージョン。 **設定** > **拡張**機能 > **インストールされている拡張機能** にアクセスし、**バージョン** 列 (例: *"1.0.30"* ) を参照します。
+- 選択したクラスターの種類 (例: *"ハイパー収束"*)
+- 問題が発生したステップ (例: *"3.2 クラスターの作成"*)
+- クラスター作成拡張機能のバージョン。 [**設定**] [拡張] [  >  **Extensions**  >  **インストール済みの拡張**] にアクセスし、[**バージョン**] 列 (例: *"1.0.30"*) を参照します。
 - エラーメッセージ。画面上またはブラウザーコンソールで、 **F12**キーを押して開くことができます。
-- 環境に関するその他の関連情報 
+- 環境に関するその他の関連情報
 
-## <a name="see-also"></a>関連項目
+## <a name="additional-references"></a>その他のリファレンス
 
 - [Hello, Windows 管理センター](https://docs.microsoft.com/windows-server/manage/windows-admin-center/understand/windows-admin-center)
 - [記憶域スペース ダイレクトの展開](https://docs.microsoft.com/windows-server/storage/storage-spaces/deploy-storage-spaces-direct)
