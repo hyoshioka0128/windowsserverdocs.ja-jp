@@ -7,18 +7,18 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 05/08/2020
+ms.date: 06/16/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 745f911367471d3708c57a3c777743a65c5bd4a8
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 4606938a6c01e20c847b3a6c198de8a1c61c59f0
+ms.sourcegitcommit: 5bc5aaf341c711113ca03d1482f933b05b146007
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993351"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85094517"
 ---
 # <a name="supported-remote-desktop-rdp-file-settings"></a>サポートされるリモート デスクトップ RDP ファイルの設定
 
-次の表には、リモート デスクトップ クライアントで使用できる、サポートされる RDP ファイル設定の一覧が含まれています。
+次の表には、リモート デスクトップ クライアントで使用できる、サポートされる RDP ファイル設定の一覧が含まれています。 設定を構成する場合は、[クライアントの比較](./remote-desktop-app-compare.md)に関するページを確認し、各クライアントがサポートするリダイレクトを確認します。
 
 この表では、どの設定が Windows Virtual Desktop でカスタム プロパティとしてサポートされるかも示しています。 PowerShell を使用して Windows Virtual Desktop ホスト プールの RDP プロパティをカスタマイズする方法の詳細については、[こちらのドキュメント](https://go.microsoft.com/fwlink/?linkid=2098243&clcid=0x409)を参照してください。
 
@@ -31,7 +31,7 @@ ms.locfileid: "82993351"
 | username:s:value | リモート コンピューターへのサインインに使用されるユーザー アカウントの名前を指定します。 | 任意の有効なユーザー名。 | | |
 | domain:s:value | リモート コンピューターへのサインインに使用するユーザー アカウントが存在するドメインの名前を指定します。 | "CONTOSO" などの有効なドメイン名。 | | |
 | gatewayhostname:s:value | RD ゲートウェイのホスト名を指定します。 | 有効な名前、IPv4 アドレス、または IPv6 アドレス。 | | |
-| gatewaycredentialssource:i:value | RD ゲートウェイの認証方法を指定します。 | - 0:パスワードを要求する (NTLM)</br>- 1:[スマート カードを使用する]</br>- 4:ユーザーに後で選択させる | 0 | |
+| gatewaycredentialssource:i:value | RD ゲートウェイの認証方法を指定します。 | - 0:パスワードを要求する (NTLM)</br>- 1:[スマート カードを使用する]</br>- 2:現在のログオン ユーザーの資格情報を使用する。</br>- 3:ユーザーに資格情報の入力を求めるプロンプトを表示し、基本認証を使用する</br>- 4:ユーザーに後で選択させる</br>- 5:Cookie ベースの認証を使用する | 0 | |
 | gatewayprofileusagemethod:i:value | 既定の RD ゲートウェイ設定を使用するかどうかを指定します。 | - 0:管理者によって指定された既定のプロファイル モードを使用する</br>- 1:ユーザーによって指定された明示的設定を使用する | 0 | |
 | gatewayusagemethod:i:value | どのような場合に接続に RD ゲートウェイを使用するかを指定します。 | - 0:RD ゲートウェイを使用しない</br>- 1:常に RD ゲートウェイを使用する</br>- 2:RD セッション ホストへの直接接続を確立できない場合、RD ゲートウェイを使用する</br>- 3:既定の RD ゲートウェイ設定を使用する</br>- 4:RD ゲートウェイを使用せず、ローカル アドレスのゲートウェイをバイパスする</br>このプロパティ値を 0 または 4 に設定することは実質的に同等ですが、このプロパティを 4 に設定すると、ローカル アドレスをバイパスするオプションが有効になります。 | 0 | |
 | promptcredentialonce:i:value | ユーザーの資格情報を保存して、RD ゲートウェイとリモート コンピューターの両方に使用するかどうかを決定します。 | - 0:リモート セッションでは同じ資格情報を使用しない</br>- 1:リモート セッションでは同じ資格情報を使用する | 1 | |
@@ -87,7 +87,7 @@ ms.locfileid: "82993351"
 |------------------------------------|------------------------|------------------------|:----------------------:|:-----------------------:|
 | remoteapplicationcmdline:s:value | RemoteApp の省略可能なコマンド ライン パラメーター。 | 有効なコマンド ライン パラメータ。 | | |
 | remoteapplicationexpandcmdline:i:value | RemoteApp コマンド ライン パラメーターに含まれている環境変数をローカルで展開するか、またはリモートで展開するかを決定します。 | - 0:環境変数は、ローカル コンピューターの値に展開される</br>- 1:環境変数は、リモート コンピューターの値に展開される | 1 | |
-| remoteapplicationexpandworkingdir | RemoteApp の作業ディレクトリ パラメーターに含まれている環境変数をローカルに展開するか、またはリモートに展開するかを決定します。 | - 0:環境変数は、ローカル コンピューターの値に展開される</br> - 1:環境変数は、リモート コンピューターの値に展開される。</br>RemoteApp の作業ディレクトリは、シェルの作業ディレクトリ パラメーターを使用して指定されます。 | 1 | |
+| remoteapplicationexpandworkingdir:i:value | RemoteApp の作業ディレクトリ パラメーターに含まれている環境変数をローカルに展開するか、またはリモートに展開するかを決定します。 | - 0:環境変数は、ローカル コンピューターの値に展開される</br> - 1:環境変数は、リモート コンピューターの値に展開される。</br>RemoteApp の作業ディレクトリは、シェルの作業ディレクトリ パラメーターを使用して指定されます。 | 1 | |
 | remoteapplicationfile:s:value | RemoteApp によってリモート コンピューターで開かれるファイルを指定します。</br>ローカル ファイルを開くには、ソース ドライブのドライブ リダイレクトも有効にする必要があります。 | 有効なファイル パス。 | | |
 | remoteapplicationicon:s:value | RemoteApp を起動しているときにクライアント UI に表示されるアイコン ファイルを指定します。 ファイル名が指定されていない場合、クライアントでは、標準のリモート デスクトップ アイコンが使用されます。 サポートされるのは、".ico" ファイルのみになります。 | 有効なファイル パス。 | | |
 | remoteapplicationmode:i:value | 接続が RemoteApp セッションとして起動されるかどうかを決定します。 | - 0:RemoteApp セッションを起動しない</br>- 1:RemoteApp セッションを起動する | 1 | |

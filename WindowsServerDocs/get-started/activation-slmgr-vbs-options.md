@@ -12,12 +12,12 @@ appliesto:
 - Windows Server 2012 R2
 - Windows 10
 - Windows 8.1
-ms.openlocfilehash: 25c12322ef648655a301931c9273e8d941ebe62e
-ms.sourcegitcommit: aed942d11f1a361fc1d17553a4cf190a864d1268
+ms.openlocfilehash: c0d8019812144cc3e4bd33cfaf2ca2c0c1b7eefa
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83235230"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85473179"
 ---
 # <a name="slmgrvbs-options-for-obtaining-volume-activation-information"></a>ボリューム ライセンス認証情報を取得するための Slmgr.vbs オプション
 
@@ -39,9 +39,9 @@ slmgr.vbs [<ComputerName> [<User> <Password>]] [<Options>]
 
 > [!IMPORTANT]
 > Windows 7 と Windows Server 2008 R2 での WMI の変更が理由で、Slmgr.vbs スクリプトはどのプラットフォームでも動作するようには作られていません。 Slmgr.vbs を使用した Windows Vista&reg; オペレーティング システムからの Windows 7 または Windows Server 2008 R2 システムの管理はサポートされていません。 古いバージョンのシステムの管理を Windows 7 や Windows Server 2008 R2 から実行しようとすると、バージョン不一致エラーが発生します。 たとえば、**cscript slmgr.vbs \<vista\_machine\_name\> /dlv** を実行すると、出力は次のようになります。
->  
+>
 >> Microsoft (R) Windows Script Host Version 5.8 Copyright (C) Microsoft Corporation. All rights reserved.
->>  
+>>
 >> リモート コンピューターではこのバージョンの Slmgr.vbs はサポートされていません
 
 ## <a name="general-slmgrvbs-options"></a>一般的な Slmgr.vbs のオプション
@@ -121,7 +121,7 @@ slmgr.vbs [<ComputerName> [<User> <Password>]] [<Options>]
 |\/ao-list |このローカル コンピューターで使用できるライセンス認証オブジェクトをすべて表示します。 |
 |\/del-ao &lt;AO_DN&gt;<br />\/del-ao &lt;AO_RDN&gt; |指定したライセンス認証オブジェクトをフォレストから削除します。 |
 
-## <a name="see-also"></a>関連項目
+## <a name="additional-references"></a>その他の参照情報
 
 - [ボリューム ライセンス認証のテクニカル リファレンス](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn502529%28v%3dws.11%29)
 - [ボリューム ライセンス認証の概要](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831612%28v%3dws.11%29)

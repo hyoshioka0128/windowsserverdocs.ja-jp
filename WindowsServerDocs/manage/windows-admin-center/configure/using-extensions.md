@@ -7,12 +7,12 @@ author: daniellee-msft
 ms.author: jol
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 2b8a9f5ebab22891b8b97c9c56bba3837cbb9371
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 4ba2e760d57f1c3f59e40b78b449a8831b8093d2
+ms.sourcegitcommit: fe89b8001ad664b3618708b013490de93501db05
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "81269299"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84942311"
 ---
 # <a name="install-and-manage-extensions"></a>拡張機能のインストールと管理
 
@@ -56,12 +56,12 @@ Windows Admin Center は複数のフィードをサポートしており、一�
 
 ### <a name="manually-downloading-extension-packages"></a>拡張機能パッケージを手動でダウンロードする
 
-1. インターネットに接続できる別のコンピューターで Web ブラウザーを開き、[https://msft-sme.myget.org/gallery/windows-admin-center-feed](https://msft-sme.myget.org/gallery/windows-admin-center-feed) の URL に移動します。 
+1. インターネットに接続できる別のコンピューターで Web ブラウザーを開き、[https://dev.azure.com/WindowsAdminCenter/Windows%20Admin%20Center%20Feed/_packaging?_a=feed&feed=WAC](https://dev.azure.com/WindowsAdminCenter/Windows%20Admin%20Center%20Feed/_packaging?_a=feed&feed=WAC) の URL に移動します。 
 
-   * 拡張機能パッケージを表示するには、必要に応じて msft-sme.myget.org 上でアカウントを作成し、ログインします。
+   * 拡張機能パッケージを表示するには、Microsoft アカウントを作成してログインすることが必要な場合もあります。
 
 2. インストールするパッケージの名前をクリックすると、パッケージの詳細ページが表示されます。
-3. パッケージの詳細ページの右側のペインにある **[ダウンロード]** リンクをクリックし、拡張機能の .nupkg ファイルをダウンロードします。
+3. パッケージの詳細ページの上部ナビゲーション バーにある **[ダウンロード]** リンクをクリックし、拡張機能の .nupkg ファイルをダウンロードします。
 4. ダウンロードするすべてのパッケージについて、手順 2 と 3 を繰り返します。
 5. Windows Admin Center がインストールされているコンピューターからアクセスできる共有ファイル、またはコンピューターのローカル ディスクにパッケージ ファイルをコピーします。
 6. [指示に従って別のフィードから拡張機能をインストールします](#installing-extensions-from-a-different-feed)。

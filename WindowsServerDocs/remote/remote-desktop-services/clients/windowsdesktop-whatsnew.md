@@ -7,14 +7,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 05/27/2020
+ms.date: 06/23/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d49c49def8b110f42a6d56354c73e5a75b04b7e
-ms.sourcegitcommit: 4fec7d82f0772d03a9e8cac20092a4309b0f796e
+ms.openlocfilehash: 5c3fc20ea42deaa9dd96fd9f7bfabfcb85462bdd
+ms.sourcegitcommit: 6d6a0225b1f83b71fcb494b94d666cd5e54c7566
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84025513"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85267663"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Windows デスクトップ クライアントの新機能
 
@@ -26,8 +26,21 @@ Windows デスクトップ クライアントの詳細については、「[Wind
 
 |ユーザー グループ |バージョン  |
 |-----------|---------|
-|パブリック     |1.2.1026 |
-|Insider    |1.2.1026 |
+|パブリック     |1.2.1104 |
+|Insider    |1.2.1104 |
+
+## <a name="updates-for-version-121104"></a>バージョン 1.2.1104 の更新内容
+
+*公開日:2020 年 6 月 23 日*
+
+ダウンロード:[Windows 64 ビット](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4zeHS)、[Windows 32 ビット](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4zrAd)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4zeHR)
+
+- Windows Virtual Desktop Spring 2020 Update をサポートするために、**サブスクライブ** オプションの自動検出ロジックが更新されました。 Spring Update リソースのみを使用しているお客様は、Fall 2019 リリースについて同意する必要がなくなります。
+- スケール ファクターが最大 400% の高 DPI デバイスのサポートが強化されました。
+- 切断ダイアログが表示されない問題が修正されました。
+- コマンド バーのヒントが予想よりも長く表示される問題を修正しました。
+- 更新の直後にサブスクライブしようとしたときのクラッシュを修正しました。
+- 一部の言語での日付と時刻の誤った解析によるクラッシュを修正しました。
 
 ## <a name="updates-for-version-121026"></a>バージョン 1.2.1026 の更新内容
 
@@ -76,8 +89,6 @@ Windows デスクトップ クライアントの詳細については、「[Wind
 
 *公開日:2020 年 3 月 24 日*
 
-ダウンロード:[Windows 64 ビット](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4siSh)、[Windows 32 ビット](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4siSi)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4sllb)
-
 - 他のリモート デスクトップ クライアントとの一貫性を保つために、ワークスペースの "更新" アクションの名前を "最新の情報に更新" に変更しました。
 - コンテキスト メニューからワークスペースを直接更新できるようになりました。
 - 手動でワークスペースを更新すると、すべてのローカル コンテンツが確実に更新されるようになります。
@@ -90,8 +101,6 @@ Windows デスクトップ クライアントの詳細については、「[Wind
 
 *公開日:2020 年 2 月 25 日*
 
-ダウンロード:[Windows 64 ビット](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4qeak)、[Windows 32 ビット](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4qm7h)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4qm7g)
-
 - RDP ファイルに署名がない場合、または signscope プロパティのいずれかが変更されている場合、Windows Virtual Desktop への接続がブロックされるようになりました。
 - ワークスペースが空であるか削除されている場合は、接続センターが空ではないように見えます。
 - トラブルシューティングを改善するために、切断メッセージにアクティビティ ID とエラー コードを追加しました。 **Ctrl + C** でダイアログ メッセージをコピーできます。
@@ -102,8 +111,6 @@ Windows デスクトップ クライアントの詳細については、「[Wind
 ## <a name="updates-for-version-12605"></a>バージョン 1.2.605 の更新内容
 
 *公開日:2020 年 1 月 29 日*
-
-ダウンロード:[Windows 64 ビット](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4oHrD)、[Windows 32 ビット](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4oJZs)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4oXhD)
 
 - デスクトップ接続に使用する表示内容を選択できるようになりました。 この設定を変更するには、デスクトップ接続のアイコンを右クリックして、 **[設定]** を選択します。
 - 接続設定に使用可能な適正なスケール ファクターが表示されなかった問題が修正されました。
@@ -116,8 +123,6 @@ Windows デスクトップ クライアントの詳細については、「[Wind
 
 *公開日:2019/12/04*
 
-ダウンロード:[Windows 64 ビット](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4k7jH)、[Windows 32 ビット](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4k7jL)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4k27O)
-
 - クライアントの上部にあるコマンド バーの [その他のオプション] ボタンを使用して、更新プログラムに関する情報に直接アクセスできるようになりました。
 - クライアントのコマンド バーからフィードバックを報告できるようになりました。
 - [フィードバック] オプションは、フィードバック ハブを使用できる場合にのみ表示されるようになりました。
@@ -128,8 +133,6 @@ Windows デスクトップ クライアントの詳細については、「[Wind
 ## <a name="updates-for-version-12431"></a>バージョン 1.2.431 の更新内容
 
 *公開日:2019 年 11 月 12 日*
-
-ダウンロード:[Windows 64 ビット](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE48kow)、[Windows 32 ビット](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE48koA)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE48zYj)
 
 - 32 ビットおよび ARM64 バージョンのクライアントが利用可能になりました。
 - クライアントでは、接続バーに対して行ったすべての変更 (その位置、サイズ、固定状態など) が保存され、これらの変更がセッション間に適用されます。
@@ -148,8 +151,6 @@ Windows デスクトップ クライアントの詳細については、「[Wind
 ## <a name="updates-for-version-12247"></a>バージョン 1.2.247 の更新内容
 
 *公開日:2019 年 9 月 17 日*
-
-ダウンロード:[Windows 64 ビット](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3LkSa)
 
 - ローカライズされたバージョンのフォールバック言語が強化されました (たとえば、FR-CA は英語ではなくフランス語で正しく表示されます)。
 - サブスクリプションを削除すると、クライアントでは、保存された資格情報が Credential Manager から適切に削除されるようになりました。
