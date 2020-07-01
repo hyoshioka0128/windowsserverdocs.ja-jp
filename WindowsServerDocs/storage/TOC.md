@@ -104,6 +104,7 @@
 ### [ミラーリングによって高速化されたパリティ](refs/mirror-accelerated-parity.md)
 ### [ブロックの複製](refs/block-cloning.md)
 ### [整合性ストリーム](refs/integrity-streams.md)
+### [ReFSUtil](../administration/windows-commands/refsutil.md)
 
 ## ストレージ移行サービス
 ### [概要](storage-migration-service/overview.md)
