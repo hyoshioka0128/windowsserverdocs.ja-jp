@@ -1,4 +1,4 @@
-# [仮想化](virtualization.md)
+# [仮想化](virtualization.yml)
 
 ## [保護されたファブリックとシールドされた VM](../security/guarded-fabric-shielded-vm/guarded-fabric-and-shielded-vms-top-node.md)
 

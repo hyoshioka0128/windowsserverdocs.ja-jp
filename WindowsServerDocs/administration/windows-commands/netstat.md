@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6eae779216724d82ef7ca05026bcfd9725e6ea35
-ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
+ms.openlocfilehash: 6e9cd59169922bb6d76b6c65f3381e653df97109
+ms.sourcegitcommit: 457e88e5aa6be13a2bffdb8e434a8efc3698678f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84721545"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85548846"
 ---
 # <a name="netstat"></a>netstat
 
@@ -28,14 +28,15 @@ ms.locfileid: "84721545"
 ## <a name="syntax"></a>構文
 
 ```
-netstat [-a] [-e] [-n] [-o] [-p <Protocol>] [-r] [-s] [<interval>]
+netstat [-a] [-b] [-e] [-n] [-o] [-p <Protocol>] [-r] [-s] [<interval>]
 ```
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | Description |
+| パラメーター | 説明 |
 | --------- | ----------- |
 | -a | すべてのアクティブな TCP 接続と、コンピューターがリッスンする TCP および UDP ポートが表示されます。 |
+| -b | 各接続またはリスニングポートの作成に関連する実行可能ファイルが表示されます。 よく知られている実行可能ファイルでは、複数の独立したコンポーネントをホストしている場合があります。この場合、接続またはリスニングポートの作成に関係するコンポーネントのシーケンスが表示されます。 この場合、実行可能ファイル名は一番下の [] にあり、一番上にあるコンポーネントは、TCP/IP に到達するまで続きます。 このオプションは時間がかかる可能性があり、十分なアクセス許可がない場合は失敗します。
 | -E | バイトと送受信されるパケットの数などのイーサネットの統計情報を表示します。 このパラメーターと組み合わせることができます **-s**します。 |
 | -n | アクティブな TCP 接続の表示、ただし、アドレスし [ポート番号が数値で表される、名前を決定する試行が行われません。 |
 | -o | アクティブな TCP 接続が表示され、接続ごとにプロセス ID (PID) が含まれています。 Windows タスク マネージャーで [プロセス] タブには、PID に基づくアプリケーションが表示されます。 このパラメーターと組み合わせることができます **-a**, 、**-n**, 、および **-p**します。 |
@@ -49,7 +50,7 @@ netstat [-a] [-e] [-n] [-o] [-p <Protocol>] [-r] [-s] [<interval>]
 
 - **Netstat**コマンドは、次の統計情報を提供します。
 
-    | パラメーター | Description |
+    | パラメーター | 説明 |
     | --------- | ----------- |
     | Mask | プロトコルの名前 (TCP または UDP)。 |
     | ローカルアドレス | ローカルコンピューターの IP アドレスと使用されているポート番号。 IP アドレスに対応するローカル コンピューターの名前とポートの名前が示すようにしない限り、 **-n** パラメーターを指定します。 ポートがまだ確立されていない場合、ポート番号は、アスタリスク (*) として表示されます。 |
@@ -82,6 +83,6 @@ netstat -o 5
 netstat -n -o
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

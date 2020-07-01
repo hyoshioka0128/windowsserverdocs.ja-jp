@@ -1,0 +1,139 @@
+### YamlMime:Landing
+title: Windows Server のセキュリティに関するドキュメント
+summary: Windows Server セキュリティは、セキュリティ侵害を防止し、悪意のある攻撃をブロックし、仮想マシン、アプリケーション、およびデータのセキュリティを強化するために、オペレーティングシステムに組み込まれている保護レイヤーを提供します。
+metadata:
+  title: Windows Server のセキュリティに関するドキュメント
+  description: Windows Server のセキュリティの概要について説明します。
+  ms.topic: landing-page
+  author: coreyp-at-msft
+  ms.author: coreyp
+  ms.date: 5/19/2020
+  ms.openlocfilehash: 5e20d4eabc7a9630e6a0eb880ddeabff3735f1ab
+  ms.sourcegitcommit: 457e88e5aa6be13a2bffdb8e434a8efc3698678f
+  ms.translationtype: MT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 06/30/2020
+  ms.locfileid: "85549184"
+landingContent:
+- title: Windows Server のセキュリティの概要
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Windows Server のセキュリティについてのブログ記事
+      url: https://blogs.technet.microsoft.com/windowsserver/2016/04/25/ten-reasons-youll-love-windows-server-2016-8-security/
+    - text: Datacenter and Private Cloud Security Blog (データ センターおよびプライベート クラウドのセキュリティについてのブログ)
+      url: https://blogs.technet.microsoft.com/datacentersecurity/
+    - text: Addressing emerging threats and landscape shifts (新たな脅威とランドスケープの変化への対応)
+      url: https://www.youtube.com/watch?v=B5JMYxYWx1k&feature=youtu.be
+    - text: Protecting Your Datacenter and Cloud from Emerging Threats (新たな脅威からのデータ センターとクラウドの保護) についてのブログ投稿
+      url: https://blogs.technet.com/b/windowsserver/archive/2015/11/18/protecting-your-datacenter-and-cloud-november-update.aspx
+    - text: Ignite でのセキュリティおよび保証の概要セッション
+      url: https://channel9.msdn.com/events/ignite/2015/brk2482
+- title: シールドされた VM による安全な仮想化
+  linkLists:
+  - linkListType: video
+    links:
+    - text: Channel 9 でのシールドされた VM
+      url: https://channel9.msdn.com/Shows/Mechanics/Introduction-to-Shielded-Virtual-Machines-in-Windows-Server-2016
+    - text: シールドされた VM のデモ
+      url: https://www.youtube.com/watch?v=xip5Qtk-7d8
+    - text: Shielded Virtual Machines in Windows Server (Windows Server でのシールドされた仮想マシン) についてのビデオ チュートリアル
+      url: http://microsoft-cloud.cloudguides.com/Guides/Shielded%Virtual%Machines%in%Windows%Server.htm
+    - text: 'Harden the Fabric: Protecting Tenant Secrets in Hyper-V (ファブリックの強化: Hyper-V のテナントの機密情報を保護する) (Ignite ビデオ)'
+      url: https://channel9.msdn.com/events/ignite/2015/brk3457
+  - linkListType: how-to-guide
+    links:
+    - text: Guarded Fabric Deployment Guide (保護されたファブリックの展開ガイド)
+      url: guarded-fabric-shielded-vm/guarded-fabric-deploying-hgs-overview.md
+    - text: ブランチ オフィス内のシールドされた VM および保護されたファブリック
+      url: guarded-fabric-shielded-vm/guarded-fabric-manage-branch-office.md
+    - text: Shielded VM and Guarded Fabric Troubleshooting Guide (シールドされた VM と保護されたファブリックのトラブルシューティング ガイド)
+      url: guarded-fabric-shielded-vm/guarded-fabric-troubleshoot-overview.md
+- title: OS とアプリケーションのセキュリティ強化
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Windows Defender アプリケーション制御 (WDAC) 展開ガイド
+      url: https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-contro
+    - text: トランスポート層セキュリティ レジストリ設定
+      url: https://docs.microsoft.com/windows-server/security/tls/tls-registry-settings
+    - text: 制御フロー ガード
+      url: https://docs.microsoft.com/windows/desktop/SecBP/control-flow-guard
+    - text: Windows Defender
+      url: https://technet.microsoft.com/windows-server-docs/security/windows-defender/windows-defender-overview-windows-server
+  - linkListType: video
+    links:
+    - text: Device Guard のデモ ビデオ
+      url: https://www.youtube.com/watch?v=F-pTkesjkhI
+- title: 特権アクセスの管理
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Securing Privileged Access (特権アクセスの保護)
+      url: https://technet.microsoft.com/windows-server-docs/security/securing-privileged-access/securing-privileged-access
+    - text: Microsoft Identity Manager による Just-In-Time 管理
+      url: https://technet.microsoft.com/library/mt150258.aspx
+    - text: Just Enough Administration に関する記事
+      url: https://aka.ms/JEA
+  - linkListType: video
+    links:
+    - text: Protecting Windows and Microsoft Azure Active Directory with Privileged Access Management (特権アクセス管理による Windows と Microsoft Azure Active Directory の保護)
+      url: https://channel9.msdn.com/events/ignite/2015/brk3873
+    - text: Just Enough Administration のデモ ビデオ
+      url: https://www.youtube.com/watch?v=xnBrbkY9P20
+- title: 資格情報の保護
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Credential Guard で派生ドメイン資格情報を保護
+      url: https://docs.microsoft.com/windows/security/identity-protection/credential-guard/credential-guard
+    - text: Protect Remote Desktop credentials with Remote Credential Guard (Remote Credential Guard によるリモート デスクトップ資格情報の保護)
+      url: https://docs.microsoft.com/windows/security/identity-protection/remote-credential-guard
+  - linkListType: video
+    links:
+    - text: Credential Guard のデモ ビデオ
+      url: https://www.youtube.com/watch?v=eUpKOGSl7yk
+- title: 脅威の検出と対応
+  linkLists:
+  - linkListType: video
+    links:
+    - text: Security Threat Analysis Using Microsoft Operations Management Suite (Microsoft Operations Management Suite を使用したセキュリティ上の脅威についての分析)
+      url: https://channel9.msdn.com/events/ignite/2015/brk3464
+    - text: Microsoft Operations Management Suite (OMS)
+      url: https://www.youtube.com/watch?v=_SaDw1dRy2k
+    - text: OMS および Windows Server
+      url: https://www.youtube.com/watch?v=_SaDw1dRy2k
+  - linkListType: overview
+    links:
+    - text: Microsoft Advanced Threat Analytics
+      url: https://blogs.technet.com/b/ad/archive/2015/07/22/microsoft-advanced-threat-analytics-coming-next-month.aspx
+- title: ネットワークのセキュリティ
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: データセンターのファイアウォールの概要
+      url: https://technet.microsoft.com/library/dn920240.aspx
+    - text: Windows Server の DNS の新機能
+      url: https://technet.microsoft.com/windows-server-docs/networking/dns/what-s-new-in-dns-server
+- title: コンプライアンスに関する規制へのセキュリティ機能のマッピング
+  linkLists:
+  - linkListType: download
+    links:
+    - text: Hyper-V のシールドされた VM のコンプライアンスのマッピングに関するホワイト ペーパー
+      url: https://download.microsoft.com/download/6/D/0/6D06E149-B4C1-4EED-ACD5-DF6066E93CC0/Coalfire_Branded_Hyper_V_Shielded_VMs_Whitepaper_EN_US.pdf
+    - text: JEA と JIT のコンプライアンスのマッピングに関するホワイト ペーパー
+      url: https://download.microsoft.com/download/2/7/A/27A2B5BB-6B52-4482-87C1-DA9D6B6D8C8D/Coalfire_Branded_Privileged_Identity_Manager_Whitepaper_EN_US.pdf
+    - text: Credential Guard のコンプライアンスのマッピングに関するホワイト ペーパー
+      url: https://download.microsoft.com/download/6/9/D/69D9E610-D23C-4F7E-A8CC-D65B87CEB4F8/Coalfire_Branded_Device_Guard_Whitepaper_EN_US.pdf
+    - text: Credential Guard のコンプライアンスのマッピングに関するホワイト ペーパー
+      url: https://download.microsoft.com/download/8/1/2/812009C9-E4B8-4D4B-AADD-FDC373D0A076/Coalfire_Branded_Credential_Guard_Whitepaper_EN_US.pdf
+    - text: Windows Defender のコンプライアンスのマッピングに関するホワイト ペーパー
+      url: https://download.microsoft.com/download/C/7/7/C778B7BB-0783-42D7-93A9-B86DFB5A7BAD/Coalfire_Branded_Windows_Defender_Whitepaper_EN_US.pdf
+- title: 以前のバージョンの Windows Server
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Windows の以前のバージョンに関するドキュメント
+      url: https://docs.microsoft.com/previous-versions/windows/
+    - text: 特定の情報を検索する
+      url: https://docs.microsoft.com/search/?search=Windows+Server&dataSource=previousVersions

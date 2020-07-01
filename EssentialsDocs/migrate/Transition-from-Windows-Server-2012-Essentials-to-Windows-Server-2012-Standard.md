@@ -8,12 +8,12 @@ ms.assetid: 51bcf124-c215-4e9d-9fa8-a90fa2c2fa22
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: e99cceb1acc6df7c9b30cef9f473531a6c35c5c7
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 2477cac206af4e70d10e28d7b1da637b7b7accff
+ms.sourcegitcommit: 457e88e5aa6be13a2bffdb8e434a8efc3698678f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470247"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85548816"
 ---
 # <a name="transition-from-windows-server-essentials-to-windows-server-2012-standard"></a>Windows Server Essentials から Windows Server 2012 Standard への移行
 
@@ -75,11 +75,13 @@ ms.locfileid: "85470247"
 ## <a name="turn-off--windows-server-essentials-features"></a>Windows Server Essentials の機能を無効にする
  サーバーを管理するために Windows Server Essentials ダッシュボードまたはその他の付加価値機能が不要になった場合は、機能を無効にしてサーバーから削除することができます。
 
- **Windows Server Essentials 機能の無効化ウィザード**を使用すると、機能をアンインストールできます。 また、Windows Server Essentials サーバーソフトウェアによって作成されたファイルのサーバーもクリーンアップします。  クリーンアップ操作の一部はすぐに実行されますが、サーバーの再起動後に開始される操作もあります。
+ **Windows Server Essentials 機能の無効化ウィザード:**
+ 
+- 機能をアンインストールするのに役立ちます。 また、Windows Server Essentials サーバーソフトウェアによって作成されたファイルのサーバーもクリーンアップします。  クリーンアップ操作の一部はすぐに実行されますが、サーバーの再起動後に開始される操作もあります。
 
- **Windows Server Essentials 機能の無効化ウィザード**を実行するには、すべてのアドインを手動でアンインストールしてから、ウィザードを完了する必要があります。 インストールされているアドインの一覧を表示するには、ダッシュボードの [アプリケーション] ページを開きます。 インストールされているアドインがウィザードによって検出されると、警告が表示され、アンインストールを求めるメッセージが表示されます。
+- では、ウィザードを完了する前に、すべてのアドインを手動でアンインストールする必要があります。 インストールされているアドインの一覧を表示するには、ダッシュボードの [アプリケーション] ページを開きます。 インストールされているアドインがウィザードによって検出されると、警告が表示され、アンインストールを求めるメッセージが表示されます。
 
- Windows **Server Essentials 機能**の無効化ウィザードでは、Windows server essentials の機能を無効にした後で、クライアントコンピューターのバックアップファイルを保持するかどうかを選択できます。
+- Windows Server Essentials の機能を無効にした後で、クライアントコンピューターのバックアップファイルを保持するかどうかを選択できます。
 
  ダッシュボードから**Windows Server Essentials 機能**の無効化ウィザードを実行するには、次の2つの方法があります。
 
@@ -101,7 +103,7 @@ ms.locfileid: "85470247"
 
    **%systemdrive%\Program Files\Windows Server\Bin\TurnOffFeaturesWizard.exe**
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 
 -   [Windows Server 2012 R2 Standard への移行](Transition-from-Windows-Server-2012-R2-Essentials-to-Windows-Server-2012-R2-Standard.md)
