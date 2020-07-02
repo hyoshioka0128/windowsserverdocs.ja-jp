@@ -9,12 +9,12 @@ ms.assetid: 06ab4f5f-6b8e-4058-8108-76785aa93d4c
 author: larsiwer
 ms.author: kathydav
 ms.date: 10/04/2016
-ms.openlocfilehash: 7eb867529d38ab21ee21c19f92c89ed4128b0ea4
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 1b3c7b636d9c93ff0392f266d1e6e18d36dfd15f
+ms.sourcegitcommit: 457e88e5aa6be13a2bffdb8e434a8efc3698678f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80860805"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85548916"
 ---
 # <a name="generation-2-virtual-machine-security-settings-for-hyper-v"></a>Hyper-V の第 2 世代仮想マシンのセキュリティ設定
 
@@ -83,4 +83,4 @@ Windows 10 Anniversary Update より前のバージョンの Windows を実行�
 
 ホスト ガーディアン サービスを設定せずに、シールドされた仮想マシンをローカルで実行できます。 ただし、別のホストに移行すると、起動できないことがあります。 新しいホストで仮想マシンを実行することを承認するために、その仮想マシンのキーの保護機能を更新する必要があります。 詳細については、「[保護されたファブリックとシールドされた VM](https://go.microsoft.com/fwlink/?LinkId=746381)」を参照してください。  
 
-Windows Server のセキュリティの詳細については、「[セキュリティおよび保証](../../../security/Security-and-Assurance.md)」を参照してください。  
+Windows Server のセキュリティの詳細については、「[セキュリティおよび保証](../../../security/Security-and-Assurance.yml)」を参照してください。  

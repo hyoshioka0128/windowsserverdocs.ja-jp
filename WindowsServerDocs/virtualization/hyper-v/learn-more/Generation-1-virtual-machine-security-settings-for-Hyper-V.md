@@ -9,12 +9,12 @@ ms.assetid: f8f8c569-8b74-4c19-876e-1c7d00cce308
 author: larsiwer
 ms.author: kathydav
 ms.date: 10/04/2016
-ms.openlocfilehash: f745ccd9e5a82aa79fb58798f233bf2662b00a70
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 01a4882ec766673af5ff8f57debb829ace743d77
+ms.sourcegitcommit: 457e88e5aa6be13a2bffdb8e434a8efc3698678f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475639"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85548705"
 ---
 # <a name="generation-1-virtual-machine-security-settings"></a>第 1 世代仮想マシンのセキュリティ設定
 
@@ -39,11 +39,11 @@ Hyper-V マネージャーで第 1 世代仮想マシンのセキュリティ設
 - この仮想マシンの承認済みの保護されたファブリックの一部であるか、
 - この仮想マシンのいずれかのガーディアンからの秘密キーを持っている。
 
-保護されたファブリックの詳細については、「[セキュリティおよび保証](../../../security/Security-and-Assurance.md)」の「シールドされた VM の概要」セクションを参照してください。
+保護されたファブリックの詳細については、「[セキュリティおよび保証](../../../security/Security-and-Assurance.yml)」の「シールドされた VM の概要」セクションを参照してください。
 
 仮想マシンの IDE コントローラーの 1 つにある空のスロットにキー記憶域ドライブを追加できます。 これを行うには、 **[キー記憶域ドライブの追加]** をクリックして、この仮想マシンの最初の空き IDE コントローラー スロットにキー記憶域ドライブを追加します。
 
 ## <a name="additional-references"></a>その他の参照情報
 
 - [Hyper-V マネージャーの第 2 世代仮想マシンのセキュリティ設定](Generation-2-virtual-machine-security-settings-for-hyper-v.md)
-- [セキュリティおよび保証](../../../security/Security-and-Assurance.md)
+- [セキュリティおよび保証](../../../security/Security-and-Assurance.yml)

@@ -10,12 +10,12 @@ author: jasongerend
 ms.author: jgerend
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: c3eb62d53ef11d5531590e1a6d46cd6cacaf2e4a
-ms.sourcegitcommit: 5bc5aaf341c711113ca03d1482f933b05b146007
+ms.openlocfilehash: 01b06c2869469ee65e23df2b1f5ca35fb266d234
+ms.sourcegitcommit: 457e88e5aa6be13a2bffdb8e434a8efc3698678f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85094536"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85548735"
 ---
 # <a name="whats-new-in-windows-server-2016"></a>Windows Server 2016 の新機能
 
@@ -23,7 +23,7 @@ ms.locfileid: "85094536"
 
 ![新聞を示すアイコン](media/whats-new.png) Windows の最新の機能については、「[Windows Server の新機能](whats-new-in-windows-server.md)」を参照してください。 ここでは、Windows Server&reg; 2016 の新機能および変更された機能について説明します。 ここに記載されている新機能と変更された機能は、このリリースを使う際に影響が最も大きいと思われるものです。
 
-## <a name="compute"></a>[Compute](../virtualization/virtualization.md)
+## <a name="compute"></a>[Compute](../virtualization/virtualization.yml)
 
 仮想領域には、Windows Server を設計、展開、および保守する IT プロフェッショナル向けの仮想化製品と機能が含まれます。  
 
@@ -109,8 +109,8 @@ Windows Server 2016 および Windows 10 には、新しい PackageManagement �
 
 パケット損失から回復する際の TCP 動作を改善するために、TCP Tail Loss Probe (TLP) と Recent Acknowledgement (RACK) が実装されました。 TLP は、再転送タイムアウト (RTO) を高速回復に変換する際に役立ちます。また、RACK は高速回復の所要時間を短縮し、損失パケットを再転送します。 
 
-## <a name="security-and-assurance"></a>[セキュリティおよび保証](../security/Security-and-Assurance.md)  
-IT プロフェッショナルがデータ センターとクラウド環境に展開するためのセキュリティ ソリューションと機能が含まれます。 Windows Server 2016 でのセキュリティについては、「[セキュリティおよび保証](../security/Security-and-Assurance.md)」を参照してください。  
+## <a name="security-and-assurance"></a>[セキュリティおよび保証](../security/Security-and-Assurance.yml)  
+IT プロフェッショナルがデータ センターとクラウド環境に展開するためのセキュリティ ソリューションと機能が含まれます。 Windows Server 2016 でのセキュリティについては、「[セキュリティおよび保証](../security/Security-and-Assurance.yml)」を参照してください。  
 
 ### <a name="just-enough-administration"></a>Just Enough Administration  
 Windows Server 2016 の Just Enough Administration は、Windows PowerShell で管理可能なすべての対象について代理管理を実現するセキュリティ テクノロジです。 機能には、ネットワーク ID での実行、PowerShell ダイレクト経由での接続、JEA エンドポイントとの間での安全なファイル コピー、既定で JEA コンテキストで起動する PowerShell コンソールの構成のサポートが含まれます。 詳細については、[GitHub での JEA](https://aka.ms/JEA) に関する記事を参照してください。
