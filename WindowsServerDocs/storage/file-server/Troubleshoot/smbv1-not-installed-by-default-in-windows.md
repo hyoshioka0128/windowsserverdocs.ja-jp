@@ -5,37 +5,42 @@ author: Deland-Han
 manager: dcscontentpm
 ms.topic: article
 ms.author: delhan
-ms.date: 12/25/2019
-ms.openlocfilehash: a1e1a30530f937289770bcef9e71189bf69719ce
-ms.sourcegitcommit: 7200143aa787c7ac05ae0e012263b1c9a95b87ed
+ms.date: 07/01/2020
+ms.openlocfilehash: 18c315a8b3562c25b5fe1c537a8922fc148e444b
+ms.sourcegitcommit: c40c29683d25ed75b439451d7fa8eda9d8d9e441
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84721760"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85833288"
 ---
 # <a name="smbv1-is-not-installed-by-default-in-windows-10-version-1709-windows-server-version-1709-and-later-versions"></a>SMBv1 は、Windows 10 バージョン1709、Windows Server バージョン1709以降のバージョンでは既定でインストールされません。
 
 ## <a name="summary"></a>まとめ
 
-Windows 10 秋の更新プログラムおよび Windows Server バージョン 1709 (RS3) 以降のバージョンでは、Server Message Block version 1 (SMBv1) のネットワークプロトコルは既定でインストールされなくなりました。 2007年以降、SMBv2 以降のプロトコルに置き換えられました。 Microsoft は、2014の SMBv1 プロトコルを一般に非推奨としました。 
+Windows 10 秋の更新プログラムおよび Windows Server バージョン 1709 (RS3) 以降のバージョンでは、Server Message Block version 1 (SMBv1) のネットワークプロトコルは既定でインストールされなくなりました。 2007で始まる SMBv2 以降のプロトコルに置き換えられました。 Microsoft は、2014で SMBv1 プロトコルを一般に非推奨としました。 
 
-SMBv1 では、Windows 10 秋の更新プログラムおよび Windows Server バージョン 1709 (RS3) で次の動作が実行されます。 
+SMBv1 の Windows 10 と Windows Server では、バージョン 1709 (RS3) 以降の動作が次のようになっています。 
  
 - SMBv1 には、個別にアンインストールできるクライアントとサーバーの両方のサブ機能が用意されました。    
-- Windows 10 Enterprise および Windows 10 の教育には、クリーンインストール後に既定で SMBv1 クライアントまたはサーバーが含まれなくなりました。    
+- Windows 10 Enterprise、Windows 10 の教育、および Windows 10 Pro のワークステーションでは、クリーンインストール後に既定で SMBv1 クライアントまたはサーバーが含まれなくなりました。    
 - Windows Server 2016 には、クリーンインストール後に既定で SMBv1 クライアントまたはサーバーが含まれなくなりました。    
-- Windows 10 Home と Windows 10 Professional では、クリーンインストール後に既定で SMBv1 サーバーが含まれなくなりました。    
-- Windows 10 Home と Windows 10 Professional には、クリーンインストール後も既定で SMBv1 クライアントが含まれています。 SMBv1 クライアントが合計で15日間使用されていない場合 (オフになっているコンピューターは除く)、自動的に自動的にアンインストールされます。    
-- Windows 10 Home と Windows 10 Professional のインプレースアップグレードと Insider 便では、最初に SMBv1 が自動的に削除されるわけではありません。 SMBv1 クライアントまたはサーバーが合計で15日間使用されていない (コンピューターがオフになっている時間を除く) 場合、それぞれが自動的にアンインストールされます。     
-- Windows 10 Enterprise および Windows 10 教育エディションのインプレースアップグレードと Insider 便では、SMBv1 は自動的には削除されません。 管理者は、これらの管理された環境で SMBv1 をアンインストールすることを決定する必要があります。 Windows 10 バージョン 1809 (RS5) 以降のバージョンでは、管理者は "SMB 1.0/CIFS 自動削除" 機能を有効にすることで、SMBv1 の自動削除を有効にすることができます。    
+- Windows 10 Home と Windows 10 Pro では、クリーンインストール後に既定で SMBv1 サーバーが含まれなくなりました。    
+- Windows 10 Home と Windows 10 Pro には、クリーンインストール後も既定で SMBv1 クライアントが含まれています。 SMBv1 クライアントが合計で15日間使用されていない場合 (オフになっているコンピューターは除く)、自動的に自動的にアンインストールされます。    
+- Windows 10 Home と Windows 10 Pro のインプレースアップグレードと Insider 便では、最初に SMBv1 が自動的に削除されるわけではありません。 SMBv1 クライアントまたはサーバーが合計で15日間使用されていない (コンピューターがオフになっている時間を除く) 場合、それぞれが自動的にアンインストールされます。     
+- Windows 10 Enterprise、Windows 10 の教育、windows 10 Pro for Workstation の各エディションのインプレースアップグレードと Insider 便では、SMBv1 は自動的に削除されません。 管理者は、これらの管理された環境で SMBv1 をアンインストールすることを決定する必要があります。 
 - 15日後の SMBv1 の自動削除は、1回限りの操作です。 管理者が SMBv1 を再インストールした場合、それ以上のアンインストールは試行されません。
 - SMB バージョン2.02、2.1、3.0、3.02、および3.1.1 の各機能はまだ完全にサポートされており、SMBv2 バイナリの一部として既定で含まれています。    
 - Computer Browser サービスは SMBv1 に依存しているため、SMBv1 クライアントまたはサーバーがアンインストールされると、サービスはアンインストールされます。 これは、従来の NetBIOS データグラムブラウズ方法を使用して、エクスプローラーネットワークが Windows コンピューターを表示できなくなることを意味します。    
 - SMBv1 は、Windows 10 および Windows Server 2016 のすべてのエディションでも再インストールできます。    
- 
+
+SMBv1 の Windows 10 では、バージョン 1809 (RS5) 以降、次の動作が追加されています。 バージョン1709のその他すべての動作は引き続き適用されます。
+
+- Windows 10 Pro では、クリーンインストール後に既定で SMBv1 クライアントが含まれなくなりました。
+- Windows 10 Enterprise、Windows 10 の教育、および Windows 10 Pro のワークステーションでは、管理者は "SMB 1.0/CIFS 自動削除" 機能を有効にすることで、SMBv1 の自動削除を有効にすることができます。
+
   > [!NOTE]
-  > Windows 10、バージョン 1803 (RS4) Professional は、Windows 10、バージョン 1703 (RS2)、Windows 10、バージョン 1607 (RS1) と同じ方法で SMBv1 を処理します。 この問題は、Windows 10 バージョン 1809 (RS5) で修正されました。 SMBv1 は、手動でアンインストールすることもできます。 ただし、次のシナリオでは、Windows は15日後に SMBv1 を自動的にアンインストールしません。 
- 
+  > Windows 10 バージョン 1803 (RS4) Pro では、Windows 10、バージョン 1703 (RS2)、Windows 10、バージョン 1607 (RS1) と同じ方法で SMBv1 を処理します。 この問題は、Windows 10 バージョン 1809 (RS5) で修正されました。 SMBv1 は、手動でアンインストールすることもできます。 ただし、次のシナリオでは、Windows は15日後に SMBv1 を自動的にアンインストールしません。 
+
 -  Windows 10 バージョン1803のクリーンインストールを実行します。     
 -  Windows 10、バージョン1607、または Windows 10、バージョン1703を windows 10、バージョン1803に直接アップグレードする場合は、最初に Windows 10 バージョン1709にアップグレードする必要があります。     
  
@@ -120,7 +125,7 @@ The client has SMB1 disabled or uninstalled. For more information: https://go.mi
 [SMBv1 製品クリアリングハウス](https://techcommunity.microsoft.com/t5/Storage-at-Microsoft/SMB1-Product-Clearinghouse/ba-p/426008) 
 #### <a name="leasing-mode"></a>リースモード
 
-Oplock を無効にする必要があるなど、レガシソフトウェアの動作に対してアプリケーションの互換性を提供するために SMBv1 が必要な場合、Windows はリースモードと呼ばれる新しい SMB 共有フラグを提供します。このフラグは、リースや oplock などの最新の SMB セマンティクスを共有が無効にするかどうかを指定します。
+Oplock を無効にする必要があるなど、レガシソフトウェアの動作に対してアプリケーションの互換性を提供するために SMBv1 が必要な場合、Windows はリースモードと呼ばれる新しい SMB 共有フラグを提供します。 このフラグは、リースや oplock などの最新の SMB セマンティクスを共有が無効にするかどうかを指定します。
 
 Oplock またはリースを使用せずに共有を指定して、レガシアプリケーションが SMBv2 以降のバージョンで動作できるようにすることができます。 これを行うには、 **-LeasingMode None**パラメーターと共に**New-smbshare**または**new-smbshare** PowerShell コマンドレットを使用し   ます。
 

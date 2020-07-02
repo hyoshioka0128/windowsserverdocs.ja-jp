@@ -7,18 +7,18 @@ manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: eldenchristensen
-ms.date: 08/05/2019
+ms.date: 06/24/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 42022b6e2e3564d1440e2ba1d45f9f98430242c0
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0e34f74226edb56e8db0290fd5dc83f0c6e54221
+ms.sourcegitcommit: c40c29683d25ed75b439451d7fa8eda9d8d9e441
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80861055"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85833325"
 ---
 # <a name="storage-spaces-direct-hardware-requirements"></a>記憶域スペース ダイレクトのハードウェア要件
 
-> 適用対象: Windows Server 2019、Windows Server 2016
+> 適用先:Windows Server 2019、Windows Server 2016
 
 このトピックでは、記憶域スペース ダイレクトを使用するための最小ハードウェア要件について説明します。
 
@@ -33,11 +33,11 @@ ms.locfileid: "80861055"
 
 ![SDDC が表示されている Windows Server カタログのスクリーンショット](media/hardware-requirements/sddc-aqs.png)
 
-完全に構成されたクラスター (サーバー、ネットワーク、および記憶域) は、フェールオーバークラスターマネージャーのウィザードに従って、または PowerShell の `Test-Cluster`[コマンドレット](https://docs.microsoft.com/powershell/module/failoverclusters/test-cluster?view=win10-ps)を使用して、すべての[クラスター検証テスト](https://technet.microsoft.com/library/cc732035(v=ws.10).aspx)に合格する必要があります。
+完全に構成されたクラスター (サーバー、ネットワーク、および記憶域) は、フェールオーバークラスターマネージャーのウィザードまたは PowerShell のコマンドレットに従って、すべての[クラスター検証テスト](https://technet.microsoft.com/library/cc732035(v=ws.10).aspx)に合格する必要があり `Test-Cluster` [cmdlet](https://docs.microsoft.com/powershell/module/failoverclusters/test-cluster?view=win10-ps)ます。
 
 また、次の要件が適用されます。
 
-## <a name="servers"></a>[サーバー]
+## <a name="servers"></a>サーバー
 
 - 2 台～ 16 台
 - すべてのサーバーを同じ製造元およびモデルにすることをお勧めします。
@@ -52,7 +52,7 @@ ms.locfileid: "80861055"
 - Windows Server、Vm、およびその他のアプリやワークロード用のメモリ足
 - 各サーバーのキャッシュドライブ容量が 1 tb あたり 4 GB の RAM (記憶域スペースダイレクトメタデータ用)
 
-## <a name="boot"></a>Boot
+## <a name="boot"></a>ブート
 
 - Windows Server でサポートされているすべてのブートデバイスで、 [SATADOM が含まれるようになりました](https://cloudblogs.microsoft.com/windowsserver/2017/08/30/announcing-support-for-satadom-boot-drives-in-windows-server-2016/)。
 - RAID 1 ミラーは必要**ありません**が、ブートではサポートされています。
@@ -78,15 +78,16 @@ Small scale 2-3 ノードの最小相互接続
 
 ## <a name="drives"></a>ドライブ
 
-記憶域スペースダイレクトは、1台のサーバーに物理的に接続されている直接接続 SATA、SAS、または NVMe ドライブに対応しています。 ドライブ選択の他のヒントについては、「[ドライブの選択](choosing-drives.md)」をご覧ください。
+記憶域スペースダイレクトは、1台のサーバーに物理的に接続されている直接接続 SATA、SAS、NVMe、または永続メモリ (PMem) ドライブを使用します。 ドライブの選択の詳細については、「[ドライブの選択](choosing-drives.md)」および「永続メモリの概要[と展開](deploy-pmem.md)」を参照してください。
 
-- SATA、SAS、NVMe (M. 2、米国2、およびカードの追加) ドライブがすべてサポートされます。
+- SATA、SAS、persistent memory、NVMe (M. 2、U 2、およびカードの追加) ドライブがすべてサポートされます。
 - 512n、512n、および4K のネイティブドライブがすべてサポートされています。
 - ソリッドステートドライブは[、電源損失保護を](https://blogs.technet.microsoft.com/filecab/2016/11/18/dont-do-it-consumer-ssd/)提供する必要があります。
 - すべてのサーバーで同じ数と種類のドライブ–[ドライブの対称に関する考慮事項](drive-symmetry-considerations.md)を参照してください。
 - キャッシュデバイスは 32 GB 以上である必要があります
+- 固定メモリデバイスは、ブロックストレージモードで使用されます。
 - 永続メモリデバイスをキャッシュデバイスとして使用する場合は、NVMe または SSD 容量デバイスを使用する必要があります (Hdd は使用できません)。
-- NVMe ドライバーは、Windows に付属している Microsoft 提供のドライバーです。 (stornvme .sys)
+- NVMe ドライバーは、Windows に付属している Microsoft 提供のドライバー (stornvme.sys)
 - 推奨: 容量ドライブの数は、キャッシュドライブの数の倍数になります。
 - 推奨: キャッシュドライブには、1日あたり少なくとも3つのドライブ書き込み (DWPD)、または少なくとも4テラバイトの書き込み (tbw) が必要です。1日[あたり記憶域スペースダイレクトのドライブの書き込み量 (dwpd)、テラバイトの書き込み (TBW)、および推奨される最小値](https://blogs.technet.microsoft.com/filecab/2017/08/11/understanding-dwpd-tbw/)について確認してください。
 

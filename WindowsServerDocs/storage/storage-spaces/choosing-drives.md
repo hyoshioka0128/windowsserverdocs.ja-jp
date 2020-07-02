@@ -7,32 +7,40 @@ manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
-ms.date: 09/19/2019
+ms.date: 07/01/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 19679a6838d583ef93175f5f95aa21e8aeca9b36
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 2ffe34097971f4477f0f536637b49b704678c93e
+ms.sourcegitcommit: c40c29683d25ed75b439451d7fa8eda9d8d9e441
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475259"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85833368"
 ---
 # <a name="choosing-drives-for-storage-spaces-direct"></a>記憶域スペース ダイレクト用のドライブの選択
 
->適用対象: Windows 2019、Windows Server 2016
+>適用先:Windows Server 2019、Windows Server 2016
 
 このトピックでは、パフォーマンスや容量の要件を満たすように[記憶域スペース ダイレクト](storage-spaces-direct-overview.md)でドライブを選ぶ方法のガイダンスについて説明します。
 
 ## <a name="drive-types"></a>ドライブの種類
 
-現在、記憶域スペース ダイレクトは、次の 3 種類のドライブで動作します。
+記憶域スペースダイレクト現在、次の4種類のドライブで動作します。
 
 <table>
+    <tr style="border: 0;">
+        <td style="padding: 10px; border: 0; width:70px">
+            <img src="media/understand-the-cache/pmem-100px.png">
+        </td>
+        <td style="padding: 10px; border: 0;" valign="middle">
+            <b>PMem</b>とは、新しい種類の低待機時間、高パフォーマンスストレージを指します。
+        </td>
+    </tr>
     <tr style="border: 0;">
         <td style="padding: 10px; border: 0; width:70px">
             <img src="media/understand-the-cache/NVMe-100px.png">
         </td>
         <td style="padding: 10px; border: 0;" valign="middle">
-            <b>NVMe</b> (Non-Volatile Memory Express) は、PCIe バスに直接取り付けられるソリッドステート ドライブです。 一般的なフォーム ファクターは、2.5" U.2、PCIe アドイン カード (AIC)、および M.2 です。 NVMe は、現在サポートされている他の種類のドライブと比較すると、より短い待機時間で、より高い IOPS と IO スループットを実現します。
+            <b>NVMe</b> (Non-Volatile Memory Express) は、PCIe バスに直接取り付けられるソリッドステート ドライブです。 一般的なフォーム ファクターは、2.5" U.2、PCIe アドイン カード (AIC)、および M.2 です。 NVMe は、永続メモリを除き、現在サポートされている他の種類のドライブよりも高い IOPS と IO スループットを提供します。
         </td>
     </tr>
     <tr style="border: 0;">
@@ -116,7 +124,7 @@ ms.locfileid: "85475259"
 
 サーバーごとのストレージ容量の合計を約400テラバイト (TB) に制限することをお勧めします。 サーバーごとの記憶域容量がこれよりも多くなると、ソフトウェア更新プログラムを適用する場合など、ダウンタイムや再起動の後でデータを再同期する際に必要となる時間が長くなります。 記憶域プールあたりの現在の最大サイズは、Windows Server 2019 の場合は4ペタバイト (PB) (4000 TB)、Windows Server 2016 の場合は1ペタバイトです。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [記憶域スペースダイレクトの概要](storage-spaces-direct-overview.md)
 - [記憶域スペース ダイレクトのキャッシュについて](understand-the-cache.md)
