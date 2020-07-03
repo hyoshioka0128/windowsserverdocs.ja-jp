@@ -1,6 +1,6 @@
 ---
-title: reg インポート
-description: '* * * * のリファレンストピック'
+title: reg import
+description: Reg import コマンドの参照記事。エクスポートされたレジストリサブキー、エントリ、および値を含むファイルの内容をローカルコンピューターのレジストリにコピーします。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,50 +9,49 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3e7e033091752f97086fd27fcb94e62469f0cced
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 77c8284dd2341f37292afdfd810b2182686aad68
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722550"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931860"
 ---
-# <a name="reg-import"></a>reg インポート
-
-
+# <a name="reg-import"></a>reg import
 
 コピーを含むファイルの内容は、ローカル コンピューターのレジストリにレジストリ キー、エントリ、および値をエクスポートします。
-
-
 
 ## <a name="syntax"></a>構文
 
 ```
-Reg import FileName
+reg import <filename>
 ```
 
 ### <a name="parameters"></a>パラメーター
 
-|パラメーター|[説明]|
-|---------|-----------|
-|\<ファイル名>|ローカル コンピューターのレジストリにコピーされるコンテンツを含むファイルのパスと名前を指定します。 使用してこのファイルを事前に作成する必要があります **reg エクスポート**します。|
-|/?|ヘルプを表示 **reg インポート** コマンド プロンプト。|
+| パラメーター | 説明 |
+|--|--|
+| `<filename>` | ローカル コンピューターのレジストリにコピーされるコンテンツを含むファイルのパスと名前を指定します。 使用してこのファイルを事前に作成する必要があります **reg エクスポート**します。 |
+| /? | コマンド プロンプトにヘルプを表示します。 |
 
-## <a name="remarks"></a>Remarks
+#### <a name="remarks"></a>注釈
 
-次の表に、戻り値の **reg インポート** 操作します。
+- **Reg インポート**操作の戻り値は次のとおりです。
 
-|値|[説明]|
-|-----|-----------|
-|0|Success|
-|1|障害|
+    | 値 | [説明] |
+    |--|--|
+    | 0 | 成功 |
+    | 1 | 障害 |
 
-## <a name="examples"></a>例
+### <a name="examples"></a>例
 
 レジストリ エントリ AppBkUp.reg という名前のファイルからをインポートするには、次のように入力します。
+
 ```
 reg import AppBkUp.reg
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [reg export コマンド](reg-export.md)

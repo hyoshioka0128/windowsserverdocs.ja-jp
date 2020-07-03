@@ -1,6 +1,6 @@
 ---
 title: findstr
-description: ファイル内のテキストのパターンを検索する findstr コマンドのリファレンストピックです。
+description: Findstr コマンドの参照記事。ファイル内のテキストのパターンを検索します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7f8d353b6d3aee77960b208d89372aee5dca07e3
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: f0cf30f19ef23c1b3275b6b7632b03f0dd8e433a
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436118"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931429"
 ---
 # <a name="findstr"></a>findstr
 
@@ -48,11 +48,11 @@ findstr [/b] [/e] [/l | /r] [/s] [/i] [/x] [/v] [/n] [/m] [/o] [/p] [/f:<file>] 
 | /g`<file>` | 指定されたファイルから検索文字列を取得します。 |
 | d`<dirlist>` | 指定されたディレクトリのリストを検索します。 各ディレクトリは、セミコロン (;) など) で区切る必要があり `dir1;dir2;dir3` ます。 |
 | /a`<colorattribute>` | 2桁の16進数を持つ色属性を指定します。 詳細 `color /?` については、「」と入力してください。 |
-| `<strings>` | *Filename*で検索するテキストを指定します。 必須。 |
+| `<strings>` | *Filename*で検索するテキストを指定します。 必須です。 |
 | `[\<drive>:][<path>]<filename>[ ...]` | 検索する場所とファイルを指定します。 少なくとも1つのファイル名が必要です。 |
 | /? | コマンド プロンプトでヘルプを表示します。 |
 
-#### <a name="remarks"></a>解説
+#### <a name="remarks"></a>注釈
 
 - すべての**findstr**コマンドラインオプションは、コマンド文字列の*文字列*と*ファイル名*の前に記述する必要があります。
 
@@ -99,7 +99,7 @@ findstr hello there x.y
 findstr /c:hello there x.y
 ```
 
-ファイルの*提案*に、(最初の大文字の W を含む) word*ウィンドウ*のすべての出現箇所を検索するには、次のように入力します。
+ファイル*proposal.txt*に word*ウィンドウ*(最初の大文字の W) の出現箇所をすべて検索するには、次のように入力します。
 
 ```
 findstr Windows proposal.txt
@@ -117,7 +117,7 @@ findstr /s /i Windows *.*
 findstr /b /n /r /c:^ *FOR *.bas
 ```
 
-テキストファイル内で検索する正確なファイルを一覧表示するには、ファイル*stringlist .txt*の検索条件を使用して、 *filelist*に示されているファイルを検索し、結果をファイルの結果に格納し*ます。* 次に、次のように入力します。
+テキストファイル内で検索するファイルの正確な一覧を表示するには、ファイル*stringlist.txt*の検索条件を使用して*filelist.txt*に示されているファイルを検索し、結果をファイルの結果に保存します。次に、次のように入力し*ます。*
 
 ```
 findstr /g:stringlist.txt /f:filelist.txt > results.out
@@ -135,6 +135,6 @@ Word コンピューターを含むすべてのファイルを一覧表示し、
 findstr /s /i /m <comp.* *.*
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

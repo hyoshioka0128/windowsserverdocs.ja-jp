@@ -1,6 +1,6 @@
 ---
 title: ftp mdelete
-description: Ftp mdelete コマンドのリファレンストピックで、リモートコンピューター上のファイルを削除します。
+description: Ftp mdelete コマンドの参照記事で、リモートコンピューター上のファイルを削除します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8ee1882878ce06a16bd6ff6f0dcaa512d6d8b56a
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 720ae8b5ebb0ef380f6547a85913cd84c6d98c7e
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820232"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931172"
 ---
 # <a name="ftp-mdelete"></a>ftp mdelete
 
@@ -35,13 +35,13 @@ mdelete <remotefile>[...]
 
 ### <a name="examples"></a>例
 
-リモートファイル*の .exe*と*b .exe*を削除するには、次のように入力します。
+*a.exe*と*b.exe*のリモートファイルを削除するには、次のように入力します。
 
 ```
 mdelete a.exe b.exe
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

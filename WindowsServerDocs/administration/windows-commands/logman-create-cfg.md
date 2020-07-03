@@ -1,6 +1,6 @@
 ---
-title: logman 作成 cfg
-description: Logman create cfg コマンドのリファレンストピックでは、構成データコレクターを作成します。
+title: logman create cfg
+description: 構成データコレクターを作成する logman create cfg コマンドの参照記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 518b0c7bddf1d74522a376aafb7da85abb849ac4
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: f4ae073561ddfc26f4a6a1af834113cff0cc9e29
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222974"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932085"
 ---
-# <a name="logman-create-cfg"></a>logman 作成 cfg
+# <a name="logman-create-cfg"></a>logman create cfg
 
 > 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -56,7 +56,7 @@ logman create cfg <[-n] <name>> [options]
 | -ftc`<path [path [...]]>` | 収集するファイルの完全パスを指定します。 |
 | /? | 状況依存のヘルプを表示します。 |
 
-#### <a name="remarks"></a>解説
+#### <a name="remarks"></a>注釈
 
 - [-] が一覧表示されている場合は、余分なハイフン (-) を追加すると、オプションが無効になります。
 
@@ -74,7 +74,7 @@ logman create cfg cfg_log -reg HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\
 logman create cfg cfg_log -mgt root\wmi:select * FROM MSNdis_Vendordriverversion
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

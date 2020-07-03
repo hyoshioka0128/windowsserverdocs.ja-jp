@@ -1,6 +1,6 @@
 ---
 title: nfsshare
-description: NFS (Network File System) 共有を制御する nfsshare コマンドのリファレンストピックです。
+description: NFS (Network File System) 共有を制御する nfsshare コマンドの参照記事。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4774d5ce929de5e79e2cde78e45b0cd9bdca163c
-ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
+ms.openlocfilehash: 4901e0c9ee0701261dc6abb8cfd69cc02d4dd02e
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84721525"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932043"
 ---
 # <a name="nfsshare"></a>nfsshare
 
@@ -29,7 +29,7 @@ nfsshare {<sharename> | <drive>:<path> | * } /delete
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | Description |
+| パラメーター | 説明 |
 | --------- | ----------- |
 | -o anon =`{yes|no}` | 匿名 (マップされていない) ユーザーが共有ディレクトリにアクセスできるかどうかを指定します。 |
 | -o rw =`[<host>[:<host>]...]` | *ホスト*によって指定されたホストまたはクライアントグループによる、共有ディレクトリへの読み取り/書き込みアクセスを提供します。 ホスト名とグループ名は、コロン (**:**) で区切る必要があります。 *Host*が指定されていない場合は、すべてのホストとクライアントグループ ( **ro**オプションで指定されたものを除く) が読み取り/書き込みアクセス権を取得します。 どちらの場合、 **ro** も **rw** オプションが設定されている、すべてのクライアントが共有ディレクトリへの読み取り/書き込みアクセス権を持ちます。 |
@@ -47,7 +47,7 @@ nfsshare {<sharename> | <drive>:<path> | * } /delete
 
 - *Sharename*とが使用されている場合 `<drive>:<path>` 、このコマンドはによって識別されるフォルダーを `<drive>:<path>` *sharename*としてエクスポートします。 **/Delete**オプションを使用すると、指定したフォルダーは NFS クライアントで使用できなくなります。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

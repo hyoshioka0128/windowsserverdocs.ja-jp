@@ -1,6 +1,6 @@
 ---
 title: 新規
-description: キャプチャと検出イメージ、マルチキャスト転送、および名前空間を作成する新しいのリファレンストピックです。
+description: キャプチャと検出イメージ、マルチキャスト転送、および名前空間を作成する新しいのリファレンス記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c73ba52725ecb35fb57b0435fa46729a1983d777
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 93efc135e62dc1445a6002444bf3e14ac24adeb2
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719693"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932145"
 ---
 # <a name="new"></a>新規
 
@@ -23,7 +23,7 @@ ms.locfileid: "82719693"
 キャプチャを作成し、イメージ、マルチキャスト転送、および名前空間を検出します。
 
 ## <a name="subcommands"></a>サブコマンド
-|サブコマンド|[説明]|
+|サブコマンド|説明|
 |-------|--------|
 |[新しいキャプチャ イメージのコマンドを使用してください。](using-the-new-captureimage-command.md)|既存のブートイメージから新しいキャプチャイメージを作成します。|
 |[新しい検出イメージのコマンドを使用してください。](using-the-new-discoverimage-command.md)|既存のブートイメージから新しい検出イメージを作成します。|

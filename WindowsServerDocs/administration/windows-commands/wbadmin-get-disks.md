@@ -1,6 +1,6 @@
 ---
-title: wbadmin のディスクの取得
-description: Wbadmin get disks のリファレンストピック。ローカルコンピューターで現在オンラインになっている内部ディスクと外部ディスクが一覧表示されます。
+title: wbadmin get disks
+description: Wbadmin get disks の参照記事。ローカルコンピューターで現在オンラインになっている内部ディスクと外部ディスクの一覧が表示されます。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 299a80d5ff7115b65b5550464a6a9a6457649499
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: e9a479b3509939c17ab986ce68c9a057ac3e773c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83819272"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932129"
 ---
-# <a name="wbadmin-get-disks"></a>wbadmin のディスクの取得
+# <a name="wbadmin-get-disks"></a>wbadmin get disks
 
 
 
@@ -34,7 +34,7 @@ wbadmin get disks
 
 このサブコマンドにはパラメーターがありません。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 -   [Wbadmin](wbadmin.md)

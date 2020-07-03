@@ -1,6 +1,6 @@
 ---
 title: fsutil wim
-description: Windows イメージ (WIM) でサポートされているファイルを検出および管理するための機能を提供する、fsutil wim コマンドのリファレンストピックです。
+description: Windows イメージ (WIM) でサポートされているファイルを検出および管理するための機能を提供する、fsutil wim コマンドのリファレンス記事です。
 ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
@@ -9,12 +9,12 @@ ms.technology: storage
 ms.assetid: 6c6ff819-f349-4aea-b0be-1f637f631736
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: db6a946eac59269d2bb4072c46552ac84366ed40
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 791eb80942187b0a0309097b2b785fb3dcea88ec
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436827"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931415"
 ---
 # <a name="fsutil-wim"></a>fsutil wim
 
@@ -69,7 +69,7 @@ fsutil wim C:\Windows\Notepad.exe
 fsutil wim removewims C: 2
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

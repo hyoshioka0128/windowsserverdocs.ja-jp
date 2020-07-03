@@ -1,6 +1,6 @@
 ---
 title: prnport
-description: ポート構成の表示と変更に加えて、標準の TCP/IP プリンターポートを作成、削除、および一覧表示する prnport.vbs コマンドのリファレンストピックです。
+description: Prnport.vbs コマンドの参照記事。ポート構成の表示と変更に加えて、標準の TCP/IP プリンターポートを作成、削除、および一覧表示します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9c209c06c2253e924e5a71753fec0b8ab0ee158d
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 4b373547050d3d3dfb1d64160959c8dbb9e6f5c5
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472207"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931159"
 ---
 # <a name="prnport"></a>prnport
 
 > 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-作成、削除、および表示して、ポート構成を変更するだけでなく、標準の TCP/IP プリンター ポートを一覧表示します。 このコマンドは、ディレクトリにある Visual Basic スクリプトです `%WINdir%\System32\printing_Admin_Scripts\<language>` 。 コマンドプロンプトでこのコマンドを使用するには、「 **cscript** 」に続けて prnport.vbs ファイルの完全なパスを入力するか、ディレクトリを適切なフォルダーに変更します。 たとえば、`cscript %WINdir%\System32\printing_Admin_Scripts\en-US\prnport` のように指定します。
+作成、削除、および表示して、ポート構成を変更するだけでなく、標準の TCP/IP プリンター ポートを一覧表示します。 このコマンドは、ディレクトリにある Visual Basic スクリプトです `%WINdir%\System32\printing_Admin_Scripts\<language>` 。 コマンドプロンプトでこのコマンドを使用するには、「 **cscript** 」に続けて prnport.vbs ファイルの完全なパスを入力するか、ディレクトリを適切なフォルダーに変更します。 例: `cscript %WINdir%\System32\printing_Admin_Scripts\en-US\prnport`。
 
 ## <a name="syntax"></a>構文
 
@@ -86,7 +86,7 @@ cscript prnport -t -s Server1 -r IP_10.2.3.4 -me -y public -i 1 -n 9100
 cscript prnport -a -r IP_10.2.3.4 -h 10.2.3.4
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

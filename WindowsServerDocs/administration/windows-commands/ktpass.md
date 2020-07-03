@@ -1,6 +1,6 @@
 ---
 title: ktpass
-description: Ktpass コマンドのリファレンストピックでは、AD DS でホストまたはサービスのサーバープリンシパル名を構成し、サービスの共有シークレットキーを含む... キーを生成します。
+description: Ktpass コマンドの参照記事。このコマンドは、AD DS でホストまたはサービスのサーバープリンシパル名を構成し、サービスの共有シークレットキーを含む... キーを生成します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 432918343ccee70f0c30d294a349fb721f18f705
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: fbf7b47f4f21a2c964d14dd1200b15ad635d7471
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83817232"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931826"
 ---
 # <a name="ktpass"></a>ktpass
 
@@ -47,8 +47,8 @@ ktpass
 | パラメーター | 説明 |
 | --------- | ------------|
 | /out`<filename>` | 生成する Kerberos version 5. キータブファイルの名前を指定します。 **注:** これは、Windows オペレーティングシステムを実行していないコンピューターに転送する、キーが付けられたファイルです。その後、既存の.............. */Etc/Krb5.keytab*ファイルを置き換えます。 |
-| /princ`<principalname>` | の形式でプリンシパル名を指定し host/computer.contoso.com@CONTOSO.COM ます。 **警告:** このパラメーターでは、大文字と小文字が区別されます。 |
-| /mapuser`<useraccount>` | **Princ**パラメーターによって指定された Kerberos プリンシパルの名前を、指定されたドメインアカウントにマップします。 |
+| /princ `<principalname>` | の形式でプリンシパル名を指定し host/computer.contoso.com@CONTOSO.COM ます。 **警告:** このパラメーターでは、大文字と小文字が区別されます。 |
+| /mapuser `<useraccount>` | **Princ**パラメーターによって指定された Kerberos プリンシパルの名前を、指定されたドメインアカウントにマップします。 |
 | /mapop`{add|set}` | マッピング属性を設定する方法を指定します。<ul><li>**追加**-指定したローカルユーザー名の値を追加します。 既定値です。</li><li>**設定**-指定したローカルユーザー名のデータ暗号化標準 (DES) のみの暗号化の値を設定します。</li></ul> |
 | `{-|+}`desonly | 既定では、DES のみの暗号化が設定されます。<ul><li>**+** DES のみの暗号化のアカウントを設定します。</li><li>**-** アカウントの制限を、DES のみの暗号化に対して解放します。 **重要:** Windows では既定で DES がサポートされていません。</li></ul> |
 | /in`<filename>` | Windows オペレーティングシステムを実行していないホストコンピューターから読み取るための、キーのキーファイルを指定します。 |
@@ -94,6 +94,6 @@ Windows オペレーティングシステムを実行していないホストコ
 
 3. Windows オペレーティングシステムを実行していないホストコンピューター上の */Etc/Krb5.keytab*ファイルに、このキーファイルをマージします。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

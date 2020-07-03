@@ -1,6 +1,6 @@
 ---
 title: nslookup set srchlist
-description: Nslookup set srchlist コマンドのリファレンストピック。これにより、既定のドメインネームシステム (DNS) のドメイン名と検索リストが変更されます。
+description: Nslookup set srchlist コマンドの参照記事。既定のドメインネームシステム (DNS) のドメイン名と検索リストが変更されます。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ed9bbce1910324c4cae5da4228a6d3d1f269d050
-ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
+ms.openlocfilehash: 5d43107ed2c777349a8cac1a0411c035371bc0f7
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84721402"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930417"
 ---
 # <a name="nslookup-set-srchlist"></a>nslookup set srchlist
 
@@ -30,7 +30,7 @@ set srchlist=<domainname>[/...]
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | Description |
+| パラメーター | 説明 |
 | --------- | ----------- |
 | `<domainname>` | 既定の DNS ドメインと検索リストの新しい名前を指定します。 既定のドメイン名の値は、ホスト名に基づいています。 最大6つの名前をスラッシュ (/) で区切って指定できます。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
@@ -48,7 +48,7 @@ DNS ドメインを*mfg.widgets.com*に設定し、検索リストを3つの名�
 set srchlist=mfg.widgets.com/mrp2.widgets.com/widgets.com
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

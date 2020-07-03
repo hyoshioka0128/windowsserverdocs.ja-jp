@@ -1,6 +1,6 @@
 ---
 title: 編集
-description: '[編集] コマンドのリファレンストピックでは、MS-DOS エディターを起動して、ASCII テキストファイルを作成および変更できます。'
+description: '[編集] コマンドの参照記事。これにより、MS-DOS エディターが起動され、ASCII テキストファイルを作成および変更できるようになります。'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a9f6c78889f466015d60149c27a87dcefe840133
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: a28af13c5f627010dce1321027b8a246560829f1
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436917"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930494"
 ---
 # <a name="edit"></a>編集
 
@@ -38,7 +38,7 @@ edit [/b] [/h] [/r] [/s] [/<nnn>] [[<drive>:][<path>]<filename> [<filename2> [..
 | `<nnn>` | バイナリファイルを読み込み、行を*nnn*文字幅に折り返します。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-#### <a name="remarks"></a>解説
+#### <a name="remarks"></a>注釈
 
 - 追加のヘルプを表示するには、MS-DOS エディターを開き、F1 キーを押します。
 
@@ -52,12 +52,12 @@ MS-DOS エディターを開くには、次のように入力します。
 edit
 ```
 
-現在のディレクトリに*newtextfile*という名前のファイルを作成して編集するには、次のように入力します。
+現在のディレクトリ内の*newtextfile.txt*という名前のファイルを作成して編集するには、次のように入力します。
 
 ```
 edit newtextfile.txt
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

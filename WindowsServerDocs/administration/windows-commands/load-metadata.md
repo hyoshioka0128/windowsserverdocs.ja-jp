@@ -1,6 +1,6 @@
 ---
-title: メタデータの読み込み
-description: "\"メタデータの読み込み\" コマンドのリファレンストピック。このコマンドは、転送可能なシャドウコピーをインポートする前にメタデータ .cab ファイルを読み込み、または復元の場合にライターメタデータを読み込みます。"
+title: load metadata
+description: "\"メタデータの読み込み\" コマンドの参照記事。このコマンドは、転送可能なシャドウコピーをインポートする前にメタデータ .cab ファイルを読み込み、または復元の場合にライターメタデータを読み込みます。"
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c7dc967476412261e7afc228088566f74ec4208c
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 01e782d0214da70f831b81120aff3c5097895036
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820192"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931687"
 ---
 # <a name="load-metadata"></a>メタデータの読み込み
 
@@ -31,7 +31,7 @@ load metadata [<drive>:][<path>]<metadata.cab>
 | パラメーター | 説明 |
 | --------- | ----------- |
 | `[<drive>:][<path>]` | メタデータファイルの場所を指定します。 |
-| メタデータ .cab | 読み込むメタデータ .cab ファイルを指定します。 |
+| metadata.cab | 読み込むメタデータ .cab ファイルを指定します。 |
 
 ## <a name="remarks"></a>注釈
 
@@ -41,13 +41,13 @@ load metadata [<drive>:][<path>]<metadata.cab>
 
 ## <a name="examples"></a>例
 
-既定の場所から metafile というメタデータファイルを読み込むには、次のように入力します。
+既定の場所から metafile.cab という名前のメタデータファイルを読み込むには、次のように入力します。
 
 ```
 load metadata metafile.cab
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

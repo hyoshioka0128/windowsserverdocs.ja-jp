@@ -1,6 +1,6 @@
 ---
 title: get-サーバー
-description: 指定された Windows 展開サービスサーバーから情報を取得する、get Server のリファレンストピックです。
+description: 指定された Windows 展開サービスサーバーから情報を取得する、get Server のリファレンス記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a760371797af8eb95da386a3a5b9dbb0dcf7ba3c
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: f035462de8966756e4b47ca6ba04b7d30a9cb1c6
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719738"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932179"
 ---
 # <a name="get-server"></a>get-サーバー
 
@@ -27,7 +27,7 @@ ms.locfileid: "82719738"
 wdsutil [Options] /Get-Server [/Server:<Server name>] /Show:{Config | Images | All} [/detailed]
 ```
 ### <a name="parameters"></a>パラメーター
-|パラメーター|[説明]|
+|パラメーター|説明|
 |-------|--------|
 |[/Server:<Server name>]|サーバーの名前を指定します。 NetBIOS 名または完全修飾ドメイン名 (FQDN) を指定できます。 サーバー名が指定されていない場合は、ローカル サーバーが使用されます。|
 |/表示: {Config & #124 文字です。イメージと #124 文字です。すべて}|返される情報の種類を指定します。<p>-   **Config**は構成情報を返します。<br />-   **イメージは**、イメージグループ、ブートイメージ、およびインストールイメージに関する情報を返します。<br />-   **All**は、構成情報とイメージ情報を返します。|
@@ -41,12 +41,12 @@ wdsutil /Get-Server /Show:Config
 ```
 wdsutil /verbose /Get-Server /Server:MyWDSServer /Show:All /detailed
 ```
-## <a name="additional-references"></a>その他のリファレンス
-- [コマンドライン構文](command-line-syntax-key.md)
-[の](using-the-disable-server-command.md)
-キーを使用して無効にするサーバーのコマンドを使用して、[有効](using-the-enable-server-command.md)
-にするサーバーのコマンドを使用して、サーバーの[初期化](using-the-initialize-server-command.md)
-コマンドを使用してサブコマンド: サーバーを[設定](subcommand-set-server.md)
-[Subcommand: start-Server](subcommand-start-server.md)
-[Subcommand: stop-Server](subcommand-stop-server.md)
-するサブコマンド: サーバー[の](the-uninitialize-server-option.md)サーバーを指定します。
+## <a name="additional-references"></a>その他の参照情報
+- [コマンドライン構文のキー](command-line-syntax-key.md) 
+[サーバーの無効化コマンド](using-the-disable-server-command.md) 
+ の使用[Enable Server コマンド](using-the-enable-server-command.md) 
+ の使用[Initialize-Server コマンド](using-the-initialize-server-command.md) 
+ の使用[サブコマンド: サーバー](subcommand-set-server.md) 
+ の設定[サブコマンド: start-Server](subcommand-start-server.md) 
+[サブコマンド: サーバー](subcommand-stop-server.md) 
+ の停止[初期化解除サーバーオプション](the-uninitialize-server-option.md)

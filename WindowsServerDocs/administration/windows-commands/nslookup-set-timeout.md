@@ -1,6 +1,6 @@
 ---
 title: nslookup set timeout
-description: Nslookup set timeout コマンドのリファレンストピック。これにより、検索要求への応答を待機する秒数の初期値が変更されます。
+description: Nslookup set timeout コマンドの参照記事。これにより、検索要求への応答を待機する秒数の初期値が変更されます。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0d8fd0d96226e193ba723cc0a726ddf5362a538c
-ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
+ms.openlocfilehash: 6df8d1229dd57a84cb0dced3829bb328e41f092c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84721387"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930350"
 ---
 # <a name="nslookup-set-timeout"></a>nslookup set timeout
 
@@ -30,7 +30,7 @@ set timeout=<number>
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | Description |
+| パラメーター | 説明 |
 | ---------- | ---------- |
 | `<number>` | 応答を待機する秒数を指定します。 待機する既定の秒数は**5**です。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
@@ -44,7 +44,7 @@ set timeout=<number>
 set timeout=2
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

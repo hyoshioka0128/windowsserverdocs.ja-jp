@@ -1,6 +1,6 @@
 ---
-title: wbadmin の回復の開始
-description: 指定したパラメーターに基づいて回復操作を実行する wbadmin start recovery のリファレンストピックです。
+title: wbadmin start recovery
+description: 指定したパラメーターに基づいて回復操作を実行する wbadmin start recovery のリファレンス記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ec116bb69dd70cb58f6cb71ccf9ccfa04dea2e54
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 2a8934d9177d81cd05124175e64746ecdb4a1bc1
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82725888"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930957"
 ---
-# <a name="wbadmin-start-recovery"></a>wbadmin の回復の開始
+# <a name="wbadmin-start-recovery"></a>wbadmin start recovery
 
 指定したパラメーターに基づいて回復操作を実行します。
 
@@ -42,7 +42,7 @@ wbadmin start recovery
 
 ### <a name="parameters"></a>パラメーター
 
-|パラメーター|[説明]|
+|パラメーター|説明|
 |---------|-----------|
 |-version|復元するバックアップのバージョン識別子を MM/DD/YYYY-HH: MM 形式で指定します。 バージョン識別子を把握していない場合は、入力 **wbadmin のバージョンを取得する**です。|
 |-項目|回復するボリューム、アプリケーション、ファイル、またはフォルダーのコンマ区切りの一覧を指定します。</br>- **Itemtype**が**volume**の場合、ボリュームドライブ文字、ボリュームマウントポイント、または GUID ベースのボリューム名を指定することによって、ボリュームを1つだけ指定できます。</br>- **Itemtype**が**App**の場合、1つのアプリケーションのみを指定できます。 回復するには、アプリケーションが Windows Server バックアップに登録されている必要があります。 また **、値の**表示方法を使用して、Active Directory のインストールを回復することもできます。 詳細については、「」の「解説」を参照してください。</br>- **Itemtype**が**File**の場合は、ファイルまたはフォルダーを指定できますが、同じボリュームの一部である必要があり、同じ親フォルダーの下にある必要があります。|
@@ -57,7 +57,7 @@ wbadmin start recovery
 |-noRollForward|アプリケーションを回復する場合にのみ有効です。 バックアップからの最新バージョンが選択されている場合に、アプリケーションの以前の特定の時点への復旧を許可します。 最新ではないその他のバージョンのアプリケーションでは、以前の特定の時点への復旧が既定値として行われます。|
 |-quiet|ユーザーにプロンプトを表示せずにサブコマンドを実行します。|
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>注釈
 
 -   特定のバックアップバージョンから回復可能な項目の一覧を表示するには、 **wbadmin get items**を使用します。 バックアップ時にボリュームにマウントポイントまたはドライブ文字がない場合、このサブコマンドは、ボリュームの回復に使用する GUID ベースのボリューム名を返します。
 -   **-Itemtype**が**App**の場合は、値を使用して、[メディア**からのインストール**]**操作を実行し、** Active Directory Domain Services に必要なすべての関連データを回復することができます。 次に、Active Directory データベース、レジストリ、および SYSVOL の状態のコピー**を作成し**、この情報を **-recoverytarget**で指定した場所に保存します。 このパラメーターは **、-recoverytarget**が指定されている場合にのみ使用してください。
@@ -79,17 +79,17 @@ wbadmin start recovery -version:03/31/2013-09:00 -itemType:App -items:Registry -
 ```
 wbadmin start recovery -version:03/31/2013-09:00 -itemType:File -items:d:\folder -recursive
 ```
-9:00 2013 年3月31日からのバックアップの回復を実行するには、volume \\ \\? \Volume{cc566d14-44a0-11d9-9d93-806e6f6e6963}\, type:
+9:00 2013 年3月31日からのバックアップの回復を実行するには、volume \\ \\ ? \Volume{cc566d14-44a0-11d9-9d93-806e6f6e6963} \, type:
 ```
-wbadmin start recovery -version:03/31/2013-09:00 -itemType:Volume 
+wbadmin start recovery -version:03/31/2013-09:00 -itemType:Volume
 -items:\\?\Volume{cc566d14-44a0-11d9-9d93-806e6f6e6963}\
 ```
-2013年4月30日からのバックアップの回復を実行するには、server01 の共有フォルダー \\ \\servername\share の午前9:00 に、次のように入力します。
+2013年4月30日からのバックアップの回復を実行するには、server01 の共有フォルダー servername\share の午前9:00 に、 \\ \\ 次のように入力します。
 ```
 wbadmin start recovery -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 -   [コマンド ライン構文の記号](command-line-syntax-key.md)
 -   [Wbadmin](wbadmin.md)

@@ -1,6 +1,6 @@
 ---
 title: wbadmin start systemstaterecovery
-description: Wbadmin start systemstaterecovery のリファレンストピック。ここでは、指定した場所へのシステム状態の回復を実行します。
+description: Wbadmin start systemstaterecovery の参照記事。指定した場所へのシステム状態の回復を実行します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: edbd6acefe2ef921b9325de4808753d5929efd1e
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: a1645c1612bcc0e10fc6b2526805b169004e4ce1
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83821382"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930894"
 ---
 # <a name="wbadmin-start-systemstaterecovery"></a>wbadmin start systemstaterecovery
 
@@ -29,7 +29,7 @@ ms.locfileid: "83821382"
 
 
 
-## <a name="syntax"></a>構文
+## <a name="syntax"></a>Syntax
 
 Windows Server 2008 の構文:
 ```
@@ -79,7 +79,7 @@ wbadmin start systemstaterecovery
   wbadmin start systemstaterecovery -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
   ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 -   [Wbadmin](wbadmin.md)

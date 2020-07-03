@@ -1,6 +1,6 @@
 ---
 title: fsutil behavior
-description: NTFS ボリュームの動作を照会または設定する、fsutil behavior コマンドのリファレンストピックです。
+description: NTFS ボリュームの動作を照会または設定する、fsutil behavior コマンドのリファレンス記事です。
 ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
@@ -9,12 +9,12 @@ ms.technology: storage
 ms.topic: article
 ms.date: 10/16/2017
 ms.assetid: 84eaba2c-c0af-49e1-bbbd-2ed2928e5e4b
-ms.openlocfilehash: f1196169ea1d198c4855f06edef542ef34876a2a
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 74a974bcb7f8138d28e563db35bbde7ae689e110
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436007"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931837"
 ---
 # <a name="fsutil-behavior"></a>fsutil behavior
 
@@ -66,9 +66,9 @@ fsutil behavior set {allowextchar {1|0} | bugcheckoncorrupt {1|0} | disable8dot3
 | memoryusage`<value>` | NTFS ページプールメモリおよび NTFS 非ページプールメモリの内部キャッシュレベルを構成します。 を**1**または**2**に設定します。 **1** (既定値) に設定すると、NTFS では既定のサイズのページプールメモリが使用されます。 **2**に設定すると、NTFS によって、ルックアサイドリストとメモリのしきい値のサイズが大きくなります。 (ルックアサイドリストは、カーネルおよびデバイスドライバーがファイルシステム操作 (ファイルの読み取りなど) のためにプライベートメモリキャッシュとして作成する固定サイズのメモリバッファーのプールです。<p>このパラメーターを有効にするには、コンピューターを再起動する必要があります。 |
 | quotanotify`<frequency>` | NTFS クォータ違反がシステムログでどの程度の頻度で報告されるかを構成します。 の有効な値は**0 ~ 4294967295**の範囲です。 既定の頻度は**3600**秒 (1 時間) です。<p>このパラメーターを有効にするには、コンピューターを再起動する必要があります。 |
 | symlinkevaluation`<symboliclinktype>` | コンピューター上に作成できるシンボリックリンクの種類を制御します。 有効な選択肢は次のとおりです。<ul><li>**1** -ローカルシンボリックリンクに対してローカル`L2L:{0|1}`</li><li>**2** -リモートシンボリックリンクに対してローカル`L2R:{1|0}`</li><li>**3** -リモートからローカルへのシンボリックリンク`R2R:{1|0}`</li><li>**4** -リモートシンボリックリンクへのリモートシンボリックリンク`R2L:{1|0}`</li></ul> |
-| disabledeletenotify | (**1**) を無効にするか、(**0**) 削除通知を有効にします。 削除通知 (トリムまたはマップ解除とも呼ばれます) は、ファイルの削除操作によって解放されたクラスターの基になる記憶装置を通知する機能です。 さらに<ul><li>ReFS v2 を使用するシステムでは、trim は既定で無効になっています。</li><li>ReFS v1 を使用するシステムでは、trim は既定で有効になっています。</li><li>NTFS を使用するシステムでは、管理者が無効にしない限り、既定で trim が有効になります。</li><li>ハードディスクドライブまたは SAN で trim がサポートされていないと報告された場合、ハードディスクドライブと San はトリム通知を受け取りません。</li><li>有効または無効にしても、再起動は必要ありません。</li><li>Trim は、次のマップ解除コマンドが発行されるときに有効になります。</li><li>既存の配信 IO は、レジストリの変更による影響を受けません。</li><li>Trim を有効または無効にしても、サービスの再起動は必要ありません。</li></ul> |
+| disabledeletenotify | (**1**) を無効にするか、(**0**) 削除通知を有効にします。 削除通知 (トリムまたはマップ解除とも呼ばれます) は、ファイルの削除操作によって解放されたクラスターの基になる記憶装置を通知する機能です。 さらに:<ul><li>ReFS v2 を使用するシステムでは、trim は既定で無効になっています。</li><li>ReFS v1 を使用するシステムでは、trim は既定で有効になっています。</li><li>NTFS を使用するシステムでは、管理者が無効にしない限り、既定で trim が有効になります。</li><li>ハードディスクドライブまたは SAN で trim がサポートされていないと報告された場合、ハードディスクドライブと San はトリム通知を受け取りません。</li><li>有効または無効にしても、再起動は必要ありません。</li><li>Trim は、次のマップ解除コマンドが発行されるときに有効になります。</li><li>既存の配信 IO は、レジストリの変更による影響を受けません。</li><li>Trim を有効または無効にしても、サービスの再起動は必要ありません。</li></ul> |
 
-#### <a name="remarks"></a>解説
+#### <a name="remarks"></a>注釈
 
 - MFT ゾーンは、MFT の断片化を防ぐためにマスターファイルテーブル (MFT) を必要に応じて拡張できるようにするための予約領域です。 ボリューム上のファイルの平均サイズが 2 KB 以下の場合は、 **mftzone**値を**2**に設定すると便利です。 ボリューム上のファイルの平均サイズが 1 KB 以下の場合は、 **mftzone**の値を**4**に設定すると便利です。
 
@@ -129,7 +129,7 @@ NTFS および ReFS v1 の TRIM (disabledeletenotify) の既定の動作を上�
 fsutil behavior set disabledeletenotify 1
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

@@ -1,6 +1,6 @@
 ---
 title: ver
-description: Ver のリファレンストピック。オペレーティングシステムのバージョン番号が表示されます。
+description: オペレーティングシステムのバージョン番号を表示する ver のリファレンス記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7050dddda6cc27c50980f2e44f40e1f682c1d375
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: bd9b40fa526c2917b6cdcbc8d54da510eb40bc53
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720309"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931340"
 ---
 # <a name="ver"></a>ver
 
@@ -22,7 +22,7 @@ ms.locfileid: "82720309"
 
 オペレーティング システムのバージョン番号を表示します。
 
-このコマンドは、Windows コマンドプロンプト (Cmd.exe) ではサポートされていますが、PowerShell ではサポートされていません。
+このコマンドは、Windows コマンドプロンプト (Cmd.exe) でサポートされていますが、PowerShell ではサポートされていません。
 
 
 
@@ -53,6 +53,6 @@ $PSVersionTable.BuildVersion
 ````
 
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

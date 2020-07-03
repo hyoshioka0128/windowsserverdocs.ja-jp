@@ -1,6 +1,6 @@
 ---
 title: rcp
-description: Rcp コマンドのリファレンストピック。コンピューター間でファイルをコピーします。 このコマンドは非推奨とされており、Windows の将来のリリースでサポートされるとは限りません。
+description: Rcp コマンドの参照記事。コンピューター間でファイルをコピーします。 このコマンドは非推奨とされており、Windows の将来のリリースでサポートされるとは限りません。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1e06f9751a690e1593a0fb3e30dc31c14c8f960a
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 34e58471a3f79e2f8ae6f060ec945bfc43b004c3
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471867"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931994"
 ---
 # <a name="rcp"></a>rcp
 
@@ -25,6 +25,6 @@ ms.locfileid: "85471867"
 
 インストール後、C シェル (csh または tcsh) または KornShell コマンドウィンドウを開き、 **rcp**を実行できます。 詳細については、C シェルまたは KornShell プロンプトで「 **man rcp** 」と入力してください。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

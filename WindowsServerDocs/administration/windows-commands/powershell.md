@@ -1,6 +1,6 @@
 ---
 title: PowerShell
-description: Powershell コマンドのリファレンストピック。コマンドプロンプトから PowerShell コンソールを開きます。
+description: Powershell コマンドのリファレンス記事。コマンドプロンプトから PowerShell コンソールを開きます。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: e38684943c6c0c9a4371803d7e473c14cbef7a91
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 8a252efe57cec1e77bd4d814ced75decb1f2ceb7
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472347"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931373"
 ---
 # <a name="powershell"></a>PowerShell
 
@@ -62,7 +62,7 @@ Windows PowerShell は、特にシステム管理用に設計された、タス�
 
 - Windows PowerShell は、Windows Server オペレーティング システムの Server Core インストール オプションで実行されます。 ただし、 [Windows PowerShell Integrated Scripting Environment (ISE)](https://docs.microsoft.com/previous-versions//hh849182(v=technet.10))などのグラフィックユーザーインターフェイスを必要とする機能や、 [Out GridView](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/out-gridview)および[Show Command コマンド](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Utility/Show-Command)レットは、Server Core インストールでは実行されません。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [about_PowerShell.Exe](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_exe)
 

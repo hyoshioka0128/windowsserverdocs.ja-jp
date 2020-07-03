@@ -1,6 +1,6 @@
 ---
 title: qwinsta
-description: Qwinsta コマンドのリファレンストピックでは、リモートデスクトップセッションホストサーバー上のセッションに関する情報を表示します。
+description: Qwinsta コマンドの参照記事。リモートデスクトップセッションホストサーバー上のセッションに関する情報を表示します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9122576cc0b972e01a7593fae918aed378297fc8
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: c9b79495d3fa142fd343b9c521563e093d20fc68
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471877"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932007"
 ---
 # <a name="qwinsta"></a>qwinsta
 
@@ -85,7 +85,7 @@ qwinsta /server:Server2
 qwinsta modeM02
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

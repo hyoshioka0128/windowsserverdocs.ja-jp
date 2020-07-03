@@ -1,6 +1,6 @@
 ---
 title: fsutil tiering
-description: Fsutil tiering コマンドのリファレンストピック。これにより、フラグの設定や無効化、階層の一覧表示など、ストレージ層の機能を管理できます。
+description: Fsutil tiering コマンドの参照記事。これにより、フラグの設定や無効化、層の一覧表示など、記憶域階層の機能の管理が可能になります。
 ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
@@ -9,12 +9,12 @@ ms.technology: storage
 ms.assetid: e5f55f3e-8d2a-4526-8d67-36a539126c22
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 4fad2f5a7d868a38e187f49598235c40590e8eeb
-ms.sourcegitcommit: ef089864980a1d4793a35cbf4cbdd02ce1962054
+ms.openlocfilehash: 1463a6c50d2f735456e0675bdeef235cb5484b3e
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84149765"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932092"
 ---
 # <a name="fsutil-tiering"></a>fsutil tiering
 
@@ -76,7 +76,7 @@ fsutil tiering regionlist C:
 fsutil tiering tierlist C:
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

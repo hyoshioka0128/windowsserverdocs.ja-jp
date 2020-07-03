@@ -1,6 +1,6 @@
 ---
-title: 復元の終了
-description: 復元セッションを終了し、関連するライターに**postrestore**イベントを発行する、restore コマンドの参照トピック。
+title: end restore
+description: 復元セッションを終了し、関連するライターに**postrestore**イベントを発行する、restore コマンドの参照記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,23 +9,23 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1fc76727a4c668c7440fefe9dfc3ceaa08ee7cd4
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 9bf5cb35617a64e07d830fd322b985c89663d2f4
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436897"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930814"
 ---
-# <a name="end-restore"></a>復元の終了
+# <a name="end-restore"></a>end restore
 
 復元セッションを終了し、関連するライターに**postrestore**イベントを発行します。
 
-## <a name="syntax"></a>構文
+## <a name="syntax"></a>Syntax
 
 ```
 end restore
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

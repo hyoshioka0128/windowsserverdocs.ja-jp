@@ -1,6 +1,6 @@
 ---
 title: list
-description: List コマンドのリファレンストピックです。ディスクの一覧、ディスク内のパーティション、ディスク内のボリューム、またはバーチャルハードディスク (Vhd) の一覧が表示されます。
+description: List コマンドの参照記事。ディスクの一覧、ディスク内のパーティション、ディスク内のボリューム、またはバーチャルハードディスク (Vhd) の一覧が表示されます。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 422460fc405326b5802ff1f00827f690d6599b1b
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: fda60b0520da00659d0ac8fc9cab483c62e2a6a7
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820202"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931708"
 ---
 # <a name="list"></a>list
 
@@ -52,6 +52,6 @@ list volume
 list vdisk
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

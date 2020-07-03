@@ -1,6 +1,6 @@
 ---
 title: wbadmin start systemstatebackup
-description: Wbadmin start systemstatebackup のリファレンストピック。ローカルコンピューターのシステム状態のバックアップを作成し、指定された場所に保存します。
+description: Wbadmin start systemstatebackup のリファレンス記事。ローカルコンピューターのシステム状態のバックアップを作成し、指定された場所に保存します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5de3531f19312b9d0d7969a63639db6388487bc2
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 1e92c508d2c9ca9ae759d81292ec3d511144dbd7
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83821182"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930909"
 ---
 # <a name="wbadmin-start-systemstatebackup"></a>wbadmin start systemstatebackup
 
@@ -53,7 +53,7 @@ wbadmin start systemstatebackup
 wbadmin start systemstatebackup -backupTarget:f:
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 -   [Wbadmin](wbadmin.md)

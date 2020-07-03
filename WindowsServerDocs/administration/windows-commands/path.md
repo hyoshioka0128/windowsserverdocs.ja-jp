@@ -1,6 +1,6 @@
 ---
-title: path
-description: PATH 環境変数でコマンドパスを設定するためのリファレンストピックでは、実行可能 (.exe) ファイルの検索に使用するディレクトリのセットを指定します。
+title: パス
+description: PATH 環境変数でコマンドパスを設定するための参照記事。実行可能ファイル (.exe) を検索するために使用されるディレクトリのセットを指定します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6fadeb2108f0e59ee2f45f3cf45338046a345006
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: f324c2b0fc84d2df05f7df93d83799b3ac463d5d
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472568"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932022"
 ---
-# <a name="path"></a>path
+# <a name="path"></a>パス
 
 PATH 環境変数でコマンドパスを設定し、実行可能 (.exe) ファイルの検索に使用するディレクトリのセットを指定します。 パラメーターを指定せずに使用した場合、このコマンドは現在のコマンドパスを表示します。
 
@@ -53,6 +53,6 @@ path ;
 path c:\user\taxes;b:\user\invest;b:\bin
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

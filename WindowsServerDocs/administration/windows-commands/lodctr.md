@@ -1,6 +1,6 @@
 ---
 title: lodctr
-description: Lodctr コマンドのリファレンストピックでは、パフォーマンスカウンターの名前とレジストリ設定をファイルに登録または保存し、信頼されたサービスを指定することができます。
+description: Lodctr コマンドのリファレンス記事。これにより、パフォーマンスカウンターの名前とレジストリ設定をファイルに登録または保存し、信頼されたサービスを指定することができます。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 221737d68280dabf34c270fccff02071ebf9b5a2
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: e8b1cae87818d3f77474e4193b03836bf1c84990
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820182"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931654"
 ---
 # <a name="lodctr"></a>lodctr
 
@@ -45,12 +45,12 @@ lodctr <filename> [/s:<filename>] [/r:<filename>] [/t:<servicename>]
 
 ### <a name="examples"></a>例
 
-現在のパフォーマンスレジストリ設定と説明テキストを file *perf 作成 1*に保存するには、次のように入力します。
+現在のパフォーマンスレジストリ設定と説明テキストをファイル*パフォーマンス backup1.txt*に保存するには、次のように入力します。
 
 ```
 lodctr /s:perf backup1.txt
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

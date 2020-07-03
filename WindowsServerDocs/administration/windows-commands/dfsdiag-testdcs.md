@@ -1,6 +1,6 @@
 ---
 title: dfsdiag testdcs
-description: 指定されたドメイン内のドメインコントローラーの構成をチェックする、dfs diag testdcs コマンドのリファレンストピックです。
+description: 指定されたドメイン内のドメインコントローラーの構成をチェックする、dfs diag testdcs コマンドの参照記事。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0bbe47474f99edb1626e61a372b02090d3a45ee3
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 1eca75d233661d51a36b52b79230ad36b704e203
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993001"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930660"
 ---
 # <a name="dfsdiag-testdcs"></a>dfsdiag testdcs
 
@@ -40,7 +40,7 @@ dfsdiag /testdcs [/domain:<domain_name>]
 | --------- | ----------- |
 | /domain`<domain_name>` | 確認するドメインの名前。 このパラメーターは省略可能です。 既定値は、ローカルホストが参加しているローカルドメインです。 |
 
-## <a name="examples"></a>使用例
+## <a name="examples"></a>例
 
 *Contoso.com*ドメイン内のドメインコントローラーの構成を確認するには、次のように入力します。
 
@@ -48,7 +48,7 @@ dfsdiag /testdcs [/domain:<domain_name>]
 dfsdiag /testdcs /domain:contoso.com
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

@@ -1,6 +1,6 @@
 ---
 title: nslookup view
-description: Nslookup view コマンドのリファレンストピック。これにより、前の**ls**コマンドまたはサブコマンドの出力が並べ替えられ、一覧表示されます。
+description: Nslookup view コマンドの参照記事。これにより、前の**ls**コマンドまたはサブコマンドの出力が並べ替えられ、一覧表示されます。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 74ee505a2a84eab23c218c145606d9e58fcd4b5f
-ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
+ms.openlocfilehash: ef16b03fbf5e109e580d243dfffc3b8f1d5712da
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84721165"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930233"
 ---
 # <a name="nslookup-view"></a>nslookup view
 
@@ -30,13 +30,13 @@ view <filename>
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | Description |
+| パラメーター | 説明 |
 | --------- | ----------- |
 | `<filename>` | 前の**ls**コマンドまたはサブコマンドからの出力を含むファイルの名前を指定します。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 | /help | コマンド プロンプトにヘルプを表示します。 |
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

@@ -1,6 +1,6 @@
 ---
-title: wbadmin 停止ジョブ
-description: 現在実行中のバックアップまたは回復操作をキャンセルする wbadmin stop ジョブのリファレンストピックです。 取り消された操作は再開できません。最初から取り消されたバックアップまたは回復操作を再実行する必要があります。
+title: wbadmin stop job
+description: 現在実行中のバックアップまたは回復操作をキャンセルする wbadmin stop ジョブの参照記事。 取り消された操作は再開できません。最初から取り消されたバックアップまたは回復操作を再実行する必要があります。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6e6d2be62468102060aad502d47efbb6eae4fca8
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 2c6961b1fae425d06577fce3a93dca6262dd7127
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83821362"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930887"
 ---
-# <a name="wbadmin-stop-job"></a>wbadmin 停止ジョブ
+# <a name="wbadmin-stop-job"></a>wbadmin stop job
 
 
 
@@ -37,7 +37,7 @@ wbadmin stop job
 |---------|-----------|
 |-quiet|ユーザーにプロンプトを表示せずにサブコマンドを実行します。|
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 -   [Wbadmin](wbadmin.md)

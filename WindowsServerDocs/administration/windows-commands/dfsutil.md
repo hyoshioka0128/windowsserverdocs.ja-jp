@@ -1,6 +1,6 @@
 ---
 title: dfsutil
-description: DFS 名前空間、サーバー、およびクライアントを管理する dfsutil コマンドのリファレンストピックです。
+description: DFS 名前空間、サーバー、およびクライアントを管理する dfsutil コマンドのリファレンス記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d6905d90ee42958e47dfed4869520000a4fd3ddf
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: c741635b2566a7bec7775de691105c15591caa62
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82992618"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930611"
 ---
 # <a name="dfsutil"></a>dfsutil
 
@@ -45,8 +45,8 @@ Dfsutil コマンドは、DFS 名前空間、サーバー、およびクライ�
 | 斜め | 診断を実行するか、dfs dirs/dfspath を表示します。 |
 | cache | クライアントキャッシュを表示またはフラッシュします。 |
 
-これらの各コマンドの詳細については、DFS 名前空間の管理ツールがインストールされているサーバーでコマンドプロンプト`dfsutil client /?`を`dfsutil diag /?`開き、 `dfsutil cache /?`「」、「」、または「」と入力します。
+これらの各コマンドの詳細については、DFS 名前空間の管理ツールがインストールされているサーバーでコマンドプロンプトを開き、「」、「」、または「」と入力し `dfsutil client /?` `dfsutil diag /?` `dfsutil cache /?` ます。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

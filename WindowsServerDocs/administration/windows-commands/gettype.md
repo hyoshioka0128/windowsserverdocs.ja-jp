@@ -1,6 +1,6 @@
 ---
 title: gettype
-description: Gettype コマンドのリファレンストピックです。 このコマンドは非推奨とされており、Windows の将来のリリースでサポートされるとは限りません。
+description: Gettype コマンドの参照記事です。 このコマンドは非推奨とされており、Windows の将来のリリースでサポートされるとは限りません。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1acd3747082d23f9129a766344061af2140692f9
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 69c3b20ed0b555e781fcf93dc830075b3150ef88
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83818982"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931185"
 ---
 # <a name="gettype"></a>gettype
 
@@ -22,6 +22,6 @@ ms.locfileid: "83818982"
 
 このツールは、Windows Server 2003 に含まれます。 詳細については、「 [gettype](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc773104(v=ws.10))」を参照してください。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

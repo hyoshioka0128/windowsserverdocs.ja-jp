@@ -1,6 +1,6 @@
 ---
 title: driverquery
-description: Driverquery コマンドのリファレンストピック。管理者は、インストールされているデバイスドライバーとそのプロパティの一覧を表示できます。
+description: Driverquery コマンドの参照記事。管理者は、インストールされているデバイスドライバーとそのプロパティの一覧を表示できます。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f4754cba8cf4cb3a5f01b0aeb0095f727a072a5c
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 8ad0a028217e07d8c15b59dc96e31c8f236dd743
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436937"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931462"
 ---
 # <a name="driverquery"></a>driverquery
 
@@ -30,7 +30,7 @@ driverquery [/s <system> [/u [<domain>\]<username> [/p <password>]]] [/fo {table
 
 | パラメーター | 説明 |
 | --------- |------------ |
-| /s`<system>` | 名前またはリモート コンピューターの IP アドレスを指定します。 円記号を使用しないでください。 既定はローカル コンピュータです。 |
+| /s`<system>` | 名前またはリモート コンピューターの IP アドレスを指定します。 円記号を使用しないでください。 既定値はローカル コンピューターです。 |
 | /u`[<domain>]<username>` | *ユーザー*または*ドメイン \*ユーザーによって指定されたユーザーアカウントの資格情報でコマンドを実行します。 既定では、 */s*は、コマンドを発行しているコンピューターに現在ログオンしているユーザーの資格情報を使用します。 **/s**が指定されている場合を除き、 **/u**は使用できません。 |
 | /p`<password>` | 指定されているユーザー アカウントのパスワードを指定します、 **/u** パラメーター。 **/p**は、 **/u**が指定されている場合には使用できません。 |
 | /fo テーブル | 出力を表として書式設定します。 既定値です。 |
@@ -73,6 +73,6 @@ driverquery /s server1
 driverquery /s server1 /u maindom\user1 /p p@ssw3d
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

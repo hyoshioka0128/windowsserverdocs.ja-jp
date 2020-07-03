@@ -1,6 +1,6 @@
 ---
 title: pubprn
-description: Active Directory Domain Services にプリンターを発行する pubprn.vbs コマンドのリファレンストピックです。
+description: Pubprn.vbs コマンドの参照記事。プリンターを Active Directory Domain Services に発行します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3d45291b22978dd3fe2781699eaf616b9d08a4bf
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: c73c79450d4feb4d2567f29bfed56364dea9b5a8
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472147"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932014"
 ---
 # <a name="pubprn"></a>pubprn
 
 > 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-プリンターを Active Directory ドメイン サービスに発行します。 このコマンドは、ディレクトリにある Visual Basic スクリプトです `%WINdir%\System32\printing_Admin_Scripts\<language>` 。 コマンドプロンプトでこのコマンドを使用するには、「 **cscript** 」に続けて pubprn.vbs ファイルの完全なパスを入力するか、ディレクトリを適切なフォルダーに変更します。 たとえば、`cscript %WINdir%\System32\printing_Admin_Scripts\en-US\pubprn` のように指定します。
+プリンターを Active Directory ドメイン サービスに発行します。 このコマンドは、ディレクトリにある Visual Basic スクリプトです `%WINdir%\System32\printing_Admin_Scripts\<language>` 。 コマンドプロンプトでこのコマンドを使用するには、「 **cscript** 」に続けて pubprn.vbs ファイルの完全なパスを入力するか、ディレクトリを適切なフォルダーに変更します。 例: `cscript %WINdir%\System32\printing_Admin_Scripts\en-US\pubprn`。
 
 ## <a name="syntax"></a>構文
 
@@ -55,7 +55,7 @@ MyDomain.company.com ドメイン内の MyContainer コンテナーに対して�
 cscript pubprn \\Server1\Laserprinter1 LDAP://CN=MyContainer,DC=MyDomain,DC=company,DC=Com
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

@@ -1,6 +1,6 @@
 ---
 title: dfsdiag testdfsintegrity
-description: 分散ファイルシステム (DFS) 名前空間の整合性をチェックする、DFS diag testdfsintegrity コマンドのリファレンストピックです。
+description: 分散ファイルシステム (DFS) 名前空間の整合性をチェックする、DFS diag testdfsintegrity コマンドの参照記事。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b54c7f597926abc91bb9201dfec1a04f44e04ecb
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: e7896174bb58c957e4c24b1c3f7e1b2bacc9f95f
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82992958"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930629"
 ---
 # <a name="dfsdiag-testdfsintegrity"></a>dfsdiag testdfsintegrity
 
@@ -42,7 +42,7 @@ dfsdiag /testdfsintegrity /DFSroot: <DFS root path> [/recurse] [/full]
 | /recurse | 名前空間の interlinks を含め、テストを実行します。 |
 | /full | 共有および NTFS Acl の一貫性と、すべてのフォルダーターゲットのクライアント側の構成を確認します。 また、online プロパティが設定されていることを確認します。 |
 
-## <a name="examples"></a>使用例
+## <a name="examples"></a>例
 
 相互リンクを含め、 *com\MyNamespace*の分散ファイルシステム (DFS) 名前空間の整合性と整合性を確認するには、次のように入力します。
 
@@ -50,7 +50,7 @@ dfsdiag /testdfsintegrity /DFSroot: <DFS root path> [/recurse] [/full]
 dfsdiag /testdfsintegrity /DFSRoot:\contoso.com\MyNamespace /recurse /full
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

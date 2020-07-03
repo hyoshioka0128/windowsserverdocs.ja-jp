@@ -1,6 +1,6 @@
 ---
 title: diantz
-description: 既存のファイルをキャビネット (.cab) ファイルにパッケージ化する、dipackages z コマンドのリファレンストピックです。
+description: 既存のファイルをキャビネット (.cab) ファイルにパッケージ化する、dipackages z コマンドのリファレンス記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e45c0c4f71bc7faf6d5de0fa198ac872f6ff2597
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 61a10c2fb67225de1060d64db6fda4e4ff703a7b
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82992503"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930606"
 ---
 # <a name="diantz"></a>diantz
 
@@ -41,7 +41,7 @@ diantz [/v[<n>]] [/d var=<value> ...] /f <directives_file> [...]
 | /v[`<n>`] | 詳細レベルのデバッグ設定 (0 = なし、..., 3 = フル)。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

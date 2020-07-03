@@ -1,6 +1,6 @@
 ---
 title: query
-description: クエリコマンドのリファレンストピック。プロセス、セッション、およびリモートデスクトップセッションホストサーバーに関する情報が表示されます。
+description: クエリコマンドの参照記事。プロセス、セッション、およびリモートデスクトップセッションホストサーバーに関する情報が表示されます。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ba5785fb37821848f98383da5b972333dfc8a9cc
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: a00ef08f72108643a045e5b48ec1c69155dd0fd8
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471937"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931134"
 ---
 # <a name="query"></a>query
 
@@ -40,7 +40,7 @@ query user
 | [query termserver](query-termserver.md) | ネットワーク上のすべてのリモートデスクトップセッションホストサーバーの一覧を表示します。 |
 | [query user](query-user.md) | リモートデスクトップセッションホストサーバー上のユーザーセッションに関する情報を表示します。 |
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

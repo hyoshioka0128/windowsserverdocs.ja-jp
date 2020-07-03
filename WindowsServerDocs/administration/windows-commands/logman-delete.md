@@ -1,6 +1,6 @@
 ---
 title: logman delete
-description: Logman delete コマンドのリファレンストピックでは、既存のデータコレクターを削除します。
+description: 既存のデータコレクターを削除する logman delete コマンドの参照記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 18739f3d7ab5af38dbe369e45aca8393ba3a3152
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: 505cd8a09bcbb1e46f16242818825f3c504955b9
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222944"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930419"
 ---
 # <a name="logman-delete"></a>logman delete
 
@@ -47,7 +47,7 @@ logman delete <[-n] <name>> [options]
 logman delete perf_log
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

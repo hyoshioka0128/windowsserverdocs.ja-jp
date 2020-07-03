@@ -1,6 +1,6 @@
 ---
 title: fc
-description: Fc コマンドのリファレンストピック。2つのファイルまたはファイルのセットを比較し、それらの違いを表示します。
+description: 2つのファイルまたはファイルのセットを比較し、それらの違いを表示する fc コマンドのリファレンス記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 146ae51334f40284e15c2a4564de8dd04660bf25
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 6d9e12853d2634f7e7bcbd976b6c301f8e02c0dc
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437157"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930482"
 ---
 # <a name="fc"></a>fc
 
@@ -46,9 +46,9 @@ fc /b [<drive1:>][<path1>]<filename1> [<drive2:>][<path2>]<filename2>
 | `[<drive2>:][<path2>]<filename2>` | 比較する2番目のファイルまたは一連のファイルの場所と名前を指定します。 *filename2*が必要です。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-#### <a name="remarks"></a>解説
+#### <a name="remarks"></a>注釈
 
-- このコマンドは、c:\WINDOWS\fc.exe. によって implemeted されます。 PowerShell 内でこのコマンドを使用することもできますが、完全な実行可能ファイル (fc-sw) を必ず指定してください。これは、' fc ' は、形式がカスタムのエイリアスでもあるためです。
+- このコマンドは c:\WINDOWS\fc.exe によって implemeted されます。 PowerShell でこのコマンドを使用することもできますが、完全な実行可能ファイル (fc.exe) は必ず指定してください。これは、' fc ' は、形式がカスタムのエイリアスでもあるためです。
 
 - **Fc**を使用して ASCII 比較を行う場合、次の順序で2つのファイルの相違点が**fc**によって表示されます。
 
@@ -86,7 +86,7 @@ fc /b [<drive1:>][<path1>]<filename1> [<drive2:>][<path2>]<filename2>
 fc /a monthly.rpt sales.rpt
 ```
 
-2つのバッチファイルのバイナリ比較を行うには、次*earnings.bat*のように*入力します*。
+2つのバッチファイル ( *profits.bat*と*earnings.bat*のバイナリ比較を行うには、次のように入力します。
 
 ```
 fc /b profits.bat earnings.bat
@@ -102,20 +102,20 @@ fc /b profits.bat earnings.bat
 FC: earnings.bat longer than profits.bat
 ```
 
-次のメッセージ**が表示されます**。この場合、収益と収益の .bat ファイルが同一である場合は、
+profits.bat と earnings.bat ファイルが同じ場合、 **fc**では次のメッセージが表示されます。
 
 ```
 Comparing files profits.bat and earnings.bat
 FC: no differences encountered
 ```
 
-現在のディレクトリにあるすべての .bat ファイルを*新しい*ファイルと比較するには、次のように入力します。
+現在のディレクトリ内のすべての .bat ファイルをファイル*new.bat*と比較するには、次のように入力します。
 
 ```
 fc *.bat new.bat
 ```
 
-ドライブ C の*新しい .bat*ファイルをドライブ D の*新しい*ファイルと比較するには、次のように入力します。
+ドライブ C のファイル*new.bat*とドライブ D のファイル*new.bat*を比較するには、次のように入力します。
 
 ```
 fc c:new.bat d:*.bat
@@ -127,6 +127,6 @@ C ドライブのルートディレクトリにある各バッチファイルを
 fc c:*.bat d:*.bat
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

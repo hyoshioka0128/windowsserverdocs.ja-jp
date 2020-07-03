@@ -1,6 +1,6 @@
 ---
 title: echo
-description: Echo コマンドのリファレンストピック。メッセージを表示したり、コマンドエコー機能をオンまたはオフにしたりします。
+description: Echo コマンドの参照記事。メッセージを表示したり、コマンドエコー機能をオンまたはオフにしたりします。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ca2a10a5d52c9d175d453a164f3ab4f47ca0841d
-ms.sourcegitcommit: 430c6564c18f89eecb5bbc39cfee1a6f1d8ff85b
+ms.openlocfilehash: bc463efef38e07c1ce8b9ebee1ddd7bdfd7d3066
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83855666"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930526"
 ---
 # <a name="echo"></a>echo
 
@@ -35,7 +35,7 @@ echo [on | off]
 | `<message>` | 画面に表示するテキストを指定します。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-#### <a name="remarks"></a>コメント
+#### <a name="remarks"></a>注釈
 
 - コマンドは、 `echo <message>` **echo**がオフになっている場合に特に便利です。 コマンドを何も表示せずに、数行のメッセージを表示するには、 `echo <message>` batch プログラムの**echo off**コマンドの後にいくつかのコマンドを含めることができます。
 
@@ -104,7 +104,7 @@ echo This directory contains no text files.
 This directory contains no text files.
 ```
 
-バッチファイルの実行時に .txt ファイルが見つかった場合は、次の出力が表示されます (この例では、File1、File2、および File3 ファイルが存在するものとします)。
+バッチファイルの実行時に .txt ファイルが見つかった場合は、次の出力が表示されます (この例では、File1.txt、File2.txt、File3.txt 存在するファイル)。
 
 ```
 This directory contains the following text files:
@@ -113,6 +113,6 @@ File2.txt
 File3.txt
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

@@ -1,6 +1,6 @@
 ---
 title: get TransportServer
-description: 指定されたトランスポートサーバーに関する情報を表示する get TransportServer のリファレンストピックです。
+description: 指定されたトランスポートサーバーに関する情報を表示する、TransportServer のリファレンス記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 82ab5f901240f964bd22e7fb8053ed95b1c6fe51
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 115942290679decd8b8c660e4113576efb30123d
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719724"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932170"
 ---
 # <a name="get-transportserver"></a>get TransportServer
 
@@ -27,7 +27,7 @@ ms.locfileid: "82719724"
 wdsutil [Options] /Get-TransportServer [/Server:<Server name>] /Show:{Config}
 ```
 ### <a name="parameters"></a>パラメーター
-|パラメーター|[説明]|
+|パラメーター|説明|
 |-------|--------|
 |[/Server:<Server name>]|サーバーの名前を指定します。 NetBIOS 名または完全修飾ドメイン名 (FQDN) のいずれかを指定できます。 サーバー名が指定されていない場合は、ローカルのサーバーが使用されます。|
 |/表示: {Config}|指定したトランスポート サーバーの構成情報を返します。|
@@ -40,10 +40,10 @@ wdsutil /Get-TransportServer /Show:Config
 ```
 wdsutil /Get-TransportServer /Server:MyWDSServer /Show:Config
 ```
-## <a name="additional-references"></a>その他のリファレンス
-- [コマンドライン構文のキー](command-line-syntax-key.md)
-[無効](using-the-disable-transportserver-command.md)
-にする-transportserver コマンドを使用して、[有効](using-the-enable-transportserver-command.md)
-にするコマンドを使用してサブコマンド:[set transportserver](subcommand-set-transportserver.md)
-サブコマンド:[開始](subcommand-start-transportserver.md)
-transportserver サブコマンド:[停止 transportserver](subcommand-stop-transportserver.md)
+## <a name="additional-references"></a>その他の参照情報
+- [コマンドライン構文のキー](command-line-syntax-key.md) 
+[無効化-TransportServer コマンド](using-the-disable-transportserver-command.md) 
+ の使用[Enable TransportServer コマンド](using-the-enable-transportserver-command.md) 
+ の使用[サブコマンド: Set TransportServer](subcommand-set-transportserver.md) 
+[サブコマンド: 開始 TransportServer](subcommand-start-transportserver.md) 
+[サブコマンド: 停止 TransportServer](subcommand-stop-transportserver.md)

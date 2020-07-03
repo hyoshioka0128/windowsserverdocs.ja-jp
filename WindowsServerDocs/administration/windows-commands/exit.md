@@ -1,6 +1,6 @@
 ---
 title: exit
-description: コマンドインタープリターを終了する exit のリファレンストピックです。
+description: コマンドインタープリターを終了する終了の参照記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fdfec9861e63f7484a9c45c45a22d19873cabbe9
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: d28f15ba1453b32d8e464fd768a3b7895819d11c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83819502"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931452"
 ---
 # <a name="exit"></a>exit
 
@@ -32,7 +32,7 @@ exit [/b] [<exitcode>]
 
 | パラメーター | 説明 |
 | --------- | ----------- |
-| /b | Cmd.exe を終了する代わりに、現在のバッチスクリプトを終了します。 バッチスクリプトの外部から実行された場合は、Cmd.exe を終了します。 |
+| /b | Cmd.exe を終了するのではなく、現在のバッチスクリプトを終了します。 バッチスクリプトの外部から実行された場合は、Cmd.exe 終了します。 |
 | `<exitcode>` | 数値を指定します。 **/B**が指定されている場合、ERRORLEVEL 環境変数はその数値に設定されます。 コマンドインタープリターを終了すると、プロセス終了コードはその番号に設定されます。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
@@ -44,6 +44,6 @@ exit [/b] [<exitcode>]
 exit
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

@@ -1,6 +1,6 @@
 ---
-title: logman 作成アラート
-description: Logman アラートデータコレクターを作成する logman 作成アラートコマンドのリファレンストピックです。
+title: logman create alert
+description: Logman アラートデータコレクターを作成する logman 作成アラートコマンドの参照記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 10d19f6c86d09c698a6871ae0f0e530c5189c0ca
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: cb2c1372caefd18e9625eedfe71538a78bfc84e4
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222826"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931640"
 ---
-# <a name="logman-create-alert"></a>logman 作成アラート
+# <a name="logman-create-alert"></a>logman create alert
 
 > 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -58,7 +58,7 @@ logman create alert <[-n] <name>> [options]
 | -[-] targ`<argument>` | -Tn を使用して指定されたタスクで使用されるタスク引数を指定します。 |
 | /? | 状況依存のヘルプを表示します。 |
 
-#### <a name="remarks"></a>解説
+#### <a name="remarks"></a>注釈
 
 - [-] が一覧表示されている場合は、余分なハイフン (-) を追加すると、オプションが無効になります。
 
@@ -73,7 +73,7 @@ logman create alert new_alert -th \Processor(_Total)\% Processor time>50
 > [!NOTE]
 > 定義されているしきい値は、カウンターによって収集された値に基づいています。したがって、この例では、50の値は 50% Processor time に相当します。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

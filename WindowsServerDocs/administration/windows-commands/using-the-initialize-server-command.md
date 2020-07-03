@@ -1,6 +1,6 @@
 ---
 title: Initialize-サーバー
-description: サーバーの役割をインストールした後に最初に使用するために Windows 展開サービスサーバーを構成する Initialize-Server のリファレンストピック。
+description: サーバーの役割をインストールした後に最初に使用するために Windows 展開サービスサーバーを構成する、Initialize-Server のリファレンス記事。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 54180923a077c0b423e73588bcbd1c03b0154d08
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 22c93a07e4c2785e8cda497e9698b2031c764a42
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719716"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932164"
 ---
 # <a name="initialize-server"></a>Initialize-サーバー
 
@@ -26,7 +26,7 @@ ms.locfileid: "82719716"
 wdsutil /Initialize-Server [/Server:<Server name>] /remInst:<Full path> [/Authorize]
 ```
 ### <a name="parameters"></a>パラメーター
-|パラメーター|[説明]|
+|パラメーター|説明|
 |-------|--------|
 |[/Server:<Server name>]|サーバーの名前を指定します。 NetBIOS 名または完全修飾ドメイン名 (FQDN) のいずれかを指定できます。 サーバー名が指定されていない場合は、ローカルのサーバーが使用されます。|
 |remInst<Full path>|RemoteInstall フォルダーの完全なパスと名前を指定します。 指定したフォルダーが既に存在しない場合、コマンドの実行時に、このオプションを作成します。 常に発生した場合でも、リモート コンピューターのローカル パスを入力する必要があります。 例: **D:\remoteInstall**。|
@@ -40,12 +40,12 @@ wdsutil /Initialize-Server /remInst:F:\remoteInstall
 ```
 wdsutil /verbose /Progress /Initialize-Server /Server:MyWDSServer /remInst:C:\remoteInstall
 ```
-## <a name="additional-references"></a>その他のリファレンス
-- [コマンドライン構文](command-line-syntax-key.md)
-[の](using-the-disable-server-command.md)
-キーを使用してサーバーを無効にするコマンドを使用して、[有効](using-the-enable-server-command.md)
-にするサーバーのコマンドを使用して[get](using-the-get-server-command.md)
-サーバーコマンドを使用してサブコマンド[: サーバーを](subcommand-start-server.md)
-[設定](subcommand-set-server.md)
-
-[し](the-uninitialize-server-option.md)[ます。](subcommand-stop-server.md)
+## <a name="additional-references"></a>その他の参照情報
+- [コマンドライン構文のキー](command-line-syntax-key.md) 
+[サーバーの無効化コマンド](using-the-disable-server-command.md) 
+ の使用[Enable Server コマンド](using-the-enable-server-command.md) 
+ の使用[Get Server コマンド](using-the-get-server-command.md) 
+ の使用[サブコマンド: サーバー](subcommand-set-server.md) 
+ の設定[サブコマンド: start-Server](subcommand-start-server.md) 
+[サブコマンド: サーバー](subcommand-stop-server.md) 
+ の停止[初期化解除サーバーオプション](the-uninitialize-server-option.md)

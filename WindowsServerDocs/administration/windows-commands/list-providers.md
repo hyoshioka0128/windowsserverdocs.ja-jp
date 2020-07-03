@@ -1,6 +1,6 @@
 ---
-title: プロバイダーの一覧表示
-description: '[プロバイダーの一覧表示] コマンドのリファレンストピックでは、システムに現在登録されているシャドウコピープロバイダーの一覧を示します。'
+title: list providers
+description: '[リストプロバイダー] コマンドの参照記事。システムに現在登録されているシャドウコピープロバイダーが一覧表示されます。'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 98615dfa92c24b91babb55ae3545065834887e5d
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 64996c7a85fa7ad20a5ffbb1c22ae3396820b676
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83817242"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931799"
 ---
-# <a name="list-providers"></a>プロバイダーの一覧表示
+# <a name="list-providers"></a>list providers
 
 システムに現在登録されているシャドウコピープロバイダーの一覧を表示します。
 
@@ -45,6 +45,6 @@ list providers
 1 provider registered.
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

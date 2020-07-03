@@ -1,6 +1,6 @@
 ---
 title: regsvr32
-description: '* * * * のリファレンストピック'
+description: Regsvr32 コマンドのリファレンス記事。レジストリのコマンドコンポーネントとして .dll ファイルを登録します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,45 +9,42 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: beadc9e9e614e2fe4cffad5dc263cfb1d4aecf67
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: e7a1a9247b66e5eb1a23c1f5ef33fbcb98c53bd7
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722483"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930970"
 ---
 # <a name="regsvr32"></a>regsvr32
 
-
-
 レジストリ内のコマンド コンポーネントとして .dll ファイルを登録します。
-
-
 
 ## <a name="syntax"></a>構文
 
 ```
-regsvr32 [/u] [/s] [/n] [/i[:cmdline]] <DllName>
+regsvr32 [/u] [/s] [/n] [/i[:cmdline]] <Dllname>
 ```
 
 ### <a name="parameters"></a>パラメーター
 
-|パラメーター|[説明]|
-|---------|-----------|
-|/U|サーバーの登録を解除します。|
-|/s|実行 **Regsvr32** せず、メッセージを表示します。|
-|/n|実行 **Regsvr32** 呼び出さずに **DllRegisterServer**します。 (必要、 **/i** パラメーターです)。|
-|/i:\<cmdline>|省略可能なコマンドライン文字列を渡します (*cmdline*) に **DllInstall**します。 組み合わせてこのパラメーターを使用する場合、 **/u** 呼び出しパラメーター、 **DllUninstall**します。|
-|\<DllName>|登録される .dll ファイルの名前。|
-|/?|コマンド プロンプトにヘルプを表示します。|
+| パラメーター | 説明 |
+|--|--|
+| /U | サーバーの登録を解除します。 |
+| /s | メッセージが表示されないようにします。 |
+| /n | **DllRegisterServer**を呼び出さないようにします。 このパラメーターでは、 **/i**パラメーターも使用する必要があります。 |
+| /i`<cmdline>` | 省略可能なコマンドライン文字列を渡します (*cmdline*) に **DllInstall**します。 このパラメーターを **/u**パラメーターと共に使用すると、 **dlluninstall**が呼び出されます。 |
+| `<Dllname>` | 登録される .dll ファイルの名前。 |
+| /? | コマンド プロンプトにヘルプを表示します。 |
 
-## <a name="examples"></a>例
+### <a name="examples"></a>例
 
 Active Directory スキーマの .dll ファイルを登録するには、次のように入力します。
+
 ```
 regsvr32 schmmgmt.dll
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

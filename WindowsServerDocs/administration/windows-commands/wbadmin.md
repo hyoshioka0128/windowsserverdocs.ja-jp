@@ -1,6 +1,6 @@
 ---
 title: wbadmin
-description: コマンドプロンプトからオペレーティングシステム、ボリューム、ファイル、フォルダー、およびアプリケーションをバックアップして復元できる wbadmin のリファレンストピックです。
+description: コマンドプロンプトからオペレーティングシステム、ボリューム、ファイル、フォルダー、およびアプリケーションをバックアップして復元できる wbadmin のリファレンス記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 94f07d17d46dad4e5301ba3ea6be94b10f26a3af
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: fab17e2d3f1806543eedd8a918ae679a32265742
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82725834"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930847"
 ---
 # <a name="wbadmin"></a>wbadmin
 
@@ -28,7 +28,7 @@ ms.locfileid: "82725834"
 
 ## <a name="subcommands"></a>サブコマンド
 
-|サブコマンド|[説明]|
+|サブコマンド|説明|
 |----------|-----------|
 |[Wbadmin enable backup](wbadmin-enable-backup.md)|定期的にスケジュールされたバックアップを構成して有効にします。|
 |[Wbadmin disable backup](wbadmin-disable-backup.md)|毎日のバックアップを無効にします。|
@@ -46,7 +46,7 @@ ms.locfileid: "82725834"
 |[Wbadmin restore catalog](wbadmin-restore-catalog.md)|ローカルコンピューター上のバックアップカタログが破損している場合に、指定した記憶域の場所からバックアップカタログを回復します。|
 |[Wbadmin delete catalog](wbadmin-delete-catalog.md)|ローカル コンピューター上のバックアップ カタログを削除します。 このサブコマンドは、このコンピューター上のバックアップカタログが破損していて、カタログの復元に使用できる別の場所にバックアップが保存されていない場合にのみ使用してください。|
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 -   [バックアップと回復](https://go.microsoft.com/fwlink/?LinkID=195054)
 -   [Windows PowerShell の Windows Server バックアップコマンドレット](https://technet.microsoft.com/library/jj902428.aspx)

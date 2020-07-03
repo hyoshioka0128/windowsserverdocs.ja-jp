@@ -1,6 +1,6 @@
 ---
 title: sfc
-description: すべての保護されたシステムファイルの整合性をスキャンおよび検証し、不適切なバージョンを正しいバージョンに置き換える sfc のリファレンストピックです。
+description: すべての保護されたシステムファイルの整合性をスキャンおよび検証し、不適切なバージョンを正しいバージョンに置き換える sfc のリファレンス記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: af2167e1e23b0698c17159b1ae6b1970a06219d4
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 8f4b0798f9c0e3e1c70ca701de1ea2246bddf7b9
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83821264"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931608"
 ---
 # <a name="sfc"></a>sfc
 
@@ -34,7 +34,7 @@ sfc [/scannow] [/verifyonly] [/scanfile=<file>] [/verifyfile=<file>] [/offwindir
 |/scannow|すべての保護されたシステム ファイルの整合性をスキャンし、可能であれば、問題のあるファイルを修復します。|
 |/verifyonly|すべての保護されたシステム ファイルの整合性をスキャンします。 修復操作は実行されません。|
 |/scanfile|指定されたファイルの整合性をスキャンし、可能であれば、問題が検出された場合、ファイルを修復します。|
-|\<ファイル>|指定した完全なパスとファイル名|
+|\<file>|指定した完全なパスとファイル名|
 |/verifyfile|指定されたファイルの整合性を検証します。 修復操作は実行されません。|
 |/offwindir|オフライン修復用のオフラインの windows ディレクトリの場所を指定します。|
 |/offbootdir|オフラインのオフライン ブート ディレクトリの場所を指定します|
@@ -57,6 +57,6 @@ sfc /verifyfile=c:\windows\system32\kernel32.dll
 sfc /scanfile=d:\windows\system32\kernel32.dll /offbootdir=d:\ /offwindir=d:\windows
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

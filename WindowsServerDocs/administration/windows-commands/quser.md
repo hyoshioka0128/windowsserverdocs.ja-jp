@@ -1,6 +1,6 @@
 ---
 title: quser
-description: リモートデスクトップセッションホストサーバー上のユーザーセッションに関する情報を表示する、quser コマンドのリファレンストピックです。
+description: リモートデスクトップセッションホストサーバー上のユーザーセッションに関する情報を表示する、quser コマンドのリファレンス記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e51abe030ca0f473246cdc85fd01d89fddf8b056
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 7df52ea8d2b30d9e365d6dc79d53aad9bd0782f9
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471927"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931116"
 ---
 # <a name="quser"></a>quser
 
@@ -75,7 +75,7 @@ quser
 quser USER1 /server:Server1
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

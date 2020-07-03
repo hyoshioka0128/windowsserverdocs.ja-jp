@@ -1,6 +1,6 @@
 ---
 title: nslookup set port
-description: Nslookup set port コマンドのリファレンストピックです。このコマンドは、既定の TCP/UDP ドメインネームシステム (DNS) ネームサーバーポートを、指定された値に変更します。
+description: Nslookup set port コマンドの参照記事。このコマンドは、既定の TCP/UDP ドメインネームシステム (DNS) ネームサーバーポートを、指定された値に変更します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e2468b1168e6886aca78e09caaa9375dedbb1662
-ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
+ms.openlocfilehash: e6605a34c6f8ed0b18870ad6ab68af1331c13c14
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84721597"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931254"
 ---
 # <a name="nslookup-set-port"></a>nslookup set port
 
@@ -28,12 +28,12 @@ set port=<port>
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | Description |
+| パラメーター | 説明 |
 | ---------- | ---------- |
 | `<port>` | 既定の TCP/UDP DNS ネームサーバーポートの新しい値を指定します。 既定のポートは**53**です。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 | /help | コマンド プロンプトにヘルプを表示します。 |
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

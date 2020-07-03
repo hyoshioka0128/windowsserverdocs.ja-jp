@@ -1,6 +1,6 @@
 ---
-title: ライターの一覧表示
-description: リストライターコマンドのリファレンストピック。システム上のライターが一覧表示されます。
+title: list writers
+description: システム上のライターを一覧表示する、list writer コマンドのリファレンス記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 85f351ca20332ad67f24c7d66142f7209c0ec425
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: a3b4334d9f1f1a76b390a29a1b9cfd877da91185
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83817162"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931777"
 ---
-# <a name="list-writers"></a>ライターの一覧表示
+# <a name="list-writers"></a>list writers
 
 システム上のライターを一覧表示します。 パラメーターを指定せず**に使用**する場合は、リスト**メタデータ**の出力が既定で表示されます。
 
@@ -64,6 +64,6 @@ Listing writer status ...
 8 writers listed.
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

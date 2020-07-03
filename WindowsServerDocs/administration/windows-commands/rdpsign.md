@@ -1,6 +1,6 @@
 ---
 title: rdpsign
-description: RDP ファイルにデジタル署名する方法について説明します。
+description: Rdpsign コマンドの参照記事。これにより、リモートデスクトッププロトコル (.rdp) ファイルにデジタル署名することができます。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 4245ea533238d31457563f4d3521fdb09ff1f255
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 2aefbc144820d0132bd4993d150dec955e22e01d
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722626"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931972"
 ---
 # <a name="rdpsign"></a>rdpsign
 
@@ -22,51 +22,63 @@ ms.locfileid: "82722626"
 
 リモート デスクトップ プロトコル (.rdp) ファイルにデジタル署名することできます。
 
-
 > [!NOTE]
-> Windows Server 2008 R2 で、「ターミナル サービス」は「リモート デスクトップ サービス」に名前変更されました。 最新バージョンの新機能については、Windows Server TechNet ライブラリの「 [Windows server 2012 のリモートデスクトップサービスの新機能](https://technet.microsoft.com/library/hh831527)」を参照してください。
+> 最新バージョンの新機能については、「 [Windows Server でのリモートデスクトップサービスの新](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn283323(v=ws.11))機能」を参照してください。
 
 ## <a name="syntax"></a>構文
+
 ```
 rdpsign /sha1 <hash> [/q | /v |] [/l] <file_name.rdp>
 ```
 
 ### <a name="parameters"></a>パラメーター
 
-|パラメーター|[説明]|
-|-------|--------|
-|/sha1 \<hash>|これは、セキュア ハッシュ アルゴリズム 1 (SHA1) ハッシュ、証明書ストアに含まれている署名証明書の拇印を指定します。 Windows Server 2012 R2 以前で使用されています。|
-|/sha256 \<hash>|証明書ストアに含まれる署名証明書のセキュアハッシュアルゴリズム 256 (SHA256) ハッシュであるサムプリントを指定します。 Windows Server 2016 以降の/sha1 を置き換えます。|
-|/q|非表示モードです。 コマンドが成功すると、出力なしは、コマンドが失敗した場合は、最小限の出力。|
-|/v|詳細モード。 すべての警告、メッセージ、および状態を表示します。|
-|/l|実際には、入力ファイルのいずれかを置き換えることがなく、署名と出力の結果をテストします。|
-|/?|コマンド プロンプトにヘルプを表示します。|
+| パラメーター | 説明 |
+|--|--|
+| /sha1`<hash>` | これは、セキュア ハッシュ アルゴリズム 1 (SHA1) ハッシュ、証明書ストアに含まれている署名証明書の拇印を指定します。 Windows Server 2012 R2 以前で使用されています。 |
+| /sha256`<hash>` | 証明書ストアに含まれる署名証明書のセキュアハッシュアルゴリズム 256 (SHA256) ハッシュであるサムプリントを指定します。 Windows Server 2016 以降の/sha1 を置き換えます。 |
+| /q | 非表示モードです。 コマンドが成功すると、出力なしは、コマンドが失敗した場合は、最小限の出力。 |
+| /v | 詳細モード。 すべての警告、メッセージ、および状態を表示します。 |
+| /l | 実際には、入力ファイルのいずれかを置き換えることがなく、署名と出力の結果をテストします。 |
+| `<file_name.rdp>` | .Rdp ファイルの名前。 完全なファイル名を使用して署名する .rdp ファイル (複数可) を指定する必要があります。 ワイルドカード文字は使用できません。 |
+| /? | コマンド プロンプトにヘルプを表示します。 |
 
-## <a name="remarks"></a>Remarks
--   SHA1 または SHA256 証明書の拇印は、信頼された .rdp ファイルの発行元を表す必要があります。 証明書の拇印を取得するには、証明書スナップインを開き、使用する証明書をダブルクリックします (ローカルコンピューターの証明書ストアまたは個人証明書ストアのいずれか)。次に、[**詳細**] タブをクリックし、**フィールド**の一覧で [**拇印**] をクリックします。
+#### <a name="remarks"></a>注釈
+
+- SHA1 または SHA256 証明書の拇印は、信頼された .rdp ファイルの発行元を表す必要があります。 証明書の拇印を取得するには、**証明**書スナップインを開き、使用する証明書をダブルクリックします (ローカルコンピューターの証明書ストアまたは個人証明書ストアのいずれか)。次に、[**詳細**] タブをクリックし、**フィールド**の一覧で [**拇印**] をクリックします。
 
     > [!NOTE]
-    > Rdpsign ツールで使用するために拇印をコピーする場合は、スペースを削除する必要があります。
+    > rdpsign.exe ツールで使用するために拇印をコピーする場合は、スペースを削除する必要があります。
 
--   完全なファイル名を使用して署名する .rdp ファイル (複数可) を指定する必要があります。 ワイルドカード文字は使用できません。
--   符号付きの出力ファイルは、入力ファイルで上書きされます。
--   いずれかの .rdp ファイルの読み取りまたは書き込みができない場合、複数のファイルが指定されていると、ツールは次のファイルに進みます。
+- 署名された出力ファイルは、入力ファイルを上書きします。
 
-## <a name="examples"></a><a name="BKMK_examples"></a>例
-- File1.rdp の名前は、.rdp ファイルをサインインするには、.rdp ファイルを保存したフォルダーに移動し、し、次のように入力します。
-  ```
-  rdpsign /sha1 hash file1.rdp
-  ```
-  > [!NOTE]
-  > *ハッシュ* 値はスペースを含めないの SHA1 証明書の拇印を表します。
-- .Rdp ファイルを実際には、ファイルへの署名せずにデジタル署名が成功したかどうかをテストするには、次のように入力します。
-  ```
-  rdpsign /sha1 hash /l file1.rdp
-  ```
-- 複数の .rdp ファイルを署名するには、スペースを使用して、ファイル名を区切ります。 たとえば、File1.rdp、File2.rdp、および File3.rdp という複数の .rdp ファイルをサインインするには、次のように入力します。
-  ```
-  rdpsign /sha1 hash file1.rdp file2.rdp file3.rdp
-  ```
-  ## <a name="see-also"></a>参照
-  - [コマンドライン構文のキー](command-line-syntax-key.md)
-  [リモートデスクトップサービス (ターミナルサービス) のコマンドリファレンス](remote-desktop-services-terminal-services-command-reference.md)
+- 複数のファイルが指定されていて、いずれかの .rdp ファイルの読み取りまたは書き込みができない場合、ツールは次のファイルに進みます。
+
+### <a name="examples"></a>例
+
+*File1*という名前の .rdp ファイルに署名するには、.rdp ファイルを保存したフォルダーに移動し、次のように入力します。
+
+```
+rdpsign /sha1 hash file1.rdp
+```
+
+> [!NOTE]
+> *ハッシュ* 値はスペースを含めないの SHA1 証明書の拇印を表します。
+
+ファイルに実際に署名せずに、.rdp ファイルのデジタル署名が成功するかどうかをテストするには、次のように入力します。
+
+```
+rdpsign /sha1 hash /l file1.rdp
+```
+
+、 *File1*、 *file2*、および*file3*という名前の複数の .rdp ファイルに署名するには、次のように入力します (ファイル名の間にスペースが含まれます)。
+
+```
+rdpsign /sha1 hash file1.rdp file2.rdp file3.rdp
+```
+
+## <a name="see-also"></a>関連項目
+
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [リモート デスクトップ サービス (ターミナル サービス) のコマンド リファレンス](remote-desktop-services-terminal-services-command-reference.md)

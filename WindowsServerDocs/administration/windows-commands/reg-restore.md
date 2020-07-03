@@ -1,6 +1,6 @@
 ---
-title: reg 復元
-description: '* * * * のリファレンストピック'
+title: reg restore
+description: レジストリに保存されたサブキーとエントリを書き込む reg restore コマンドの参照記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,52 +9,52 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4d490f99f032b38c8bbbe9352b8571b4a85202e1
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 1483fc6998d7b286a81dc3cb1df021afb7e66650
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722520"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931039"
 ---
-# <a name="reg-restore"></a>reg 復元
-
-
+# <a name="reg-restore"></a>reg restore
 
 書き込みが保存されたサブキーとエントリは、レジストリをバックアップします。
-
-
 
 ## <a name="syntax"></a>構文
 
 ```
-Reg restore <KeyName> <FileName>
+reg restore <keyname> <filename>
 ```
 
 ### <a name="parameters"></a>パラメーター
 
-|パラメーター|[説明]|
-|---------|-----------|
-|\<KeyName>|復元するサブキーの完全なパスを指定します。 復元操作は、ローカル コンピューターでのみ機能します。 られているキー名では、有効なルート キーを含める必要があります。 有効なルート キー: HKLM、HKCU、HKCR、HKU、および HKCC します。|
-|\<ファイル名>|レジストリに書き込まれるコンテンツを含むファイルのパスと名前を指定します。 このファイルはで事前に作成する必要があります、 **reg 保存** .hiv 拡張機能を使用して操作します。|
-|/?|ヘルプを表示 **reg 復元** コマンド プロンプト。|
+| パラメーター | 説明 |
+|--|--|
+| `<keyname>` | 復元するサブキーの完全なパスを指定します。 復元操作は、ローカルコンピューターでのみ機能します。 *Keyname*には、有効なルートキーを含める必要があります。 ローカルコンピューターの有効なルートキーは、 **HKLM**、 **HKCU**、 **HKCR**、 **HKU**、および**HKCC**です。 レジストリキー名にスペースが含まれている場合は、キー名を引用符で囲みます。 |
+| `<filename>` | レジストリに書き込まれるコンテンツを含むファイルのパスと名前を指定します。 このファイルは、事前に**reg save**コマンドを使用して作成する必要があり、.hiv 拡張子を持つ必要があります。 |
+| /? | コマンド プロンプトにヘルプを表示します。 |
 
-## <a name="remarks"></a>Remarks
+#### <a name="remarks"></a>注釈
 
--   すべてのレジストリ エントリを編集する前に保存された親サブキー、 **reg 保存** 操作します。 復元と元のサブキーの編集に失敗した場合、 **reg 復元** 操作します。
--   次の表に、戻り値の **reg 復元** 操作します。
+- レジストリエントリを編集する前に、 **reg save**コマンドを使用して親サブキーを保存する必要があります。 編集に失敗した場合は、 **reg 復元**操作を使用して元のサブキーを復元できます。
 
-|値|[説明]|
-|-----|-----------|
-|0|Success|
-|1|障害|
+- **Reg 復元**操作の戻り値は次のとおりです。
 
-## <a name="examples"></a>例
+    | 値 | [説明] |
+    |--|--|
+    | 0 | 成功 |
+    | 1 | 障害 |
+
+### <a name="examples"></a>例
 
 キー、HKLM\Software\Microsoft\ResKit NTRKBkUp.hiv をという名前のファイルを復元し、キーの既存の内容を上書きする、次のように入力します。
+
 ```
-REG RESTORE HKLM\Software\Microsoft\ResKit NTRKBkUp.hiv
+reg restore HKLM\Software\Microsoft\ResKit NTRKBkUp.hiv
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [reg save コマンド](reg-save.md)
