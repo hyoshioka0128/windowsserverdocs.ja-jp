@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getmodificationtime
-description: Bitsadmin getmodificationtime コマンドのリファレンストピック。このコマンドは、ジョブが最後に変更された時刻、またはデータが正常に転送された日時を取得します。
+description: Bitsadmin getmodificationtime コマンドの参照記事。ジョブが最後に変更された時刻、またはデータが正常に転送された日時を取得します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6bab8c317917894a351c03df1efefb17842ecb7d
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 9055c0ac70bc2360601ecd1b1f91c8ad3908d704
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82717836"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928164"
 ---
 # <a name="bitsadmin-getmodificationtime"></a>bitsadmin getmodificationtime
 
@@ -28,7 +28,7 @@ bitsadmin /getmodificationtime <job>
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | [説明] |
+| パラメーター | 説明 |
 | -------------- | -------------- |
 | ジョブ (job) | ジョブの表示名または GUID。 |
 
@@ -40,7 +40,7 @@ bitsadmin /getmodificationtime <job>
 bitsadmin /getmodificationtime myDownloadJob
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

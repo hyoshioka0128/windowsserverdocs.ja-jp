@@ -1,6 +1,6 @@
 ---
 title: ksetup dumpstate
-description: コンピューターで定義されているすべての領域の領域設定の現在の状態を表示する、ksetup dumpstate commnand のリファレンストピック。
+description: コンピューターで定義されているすべての領域の領域設定の現在の状態を表示する、ksetup dumpstate commnand の参照記事。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4ccb75ac143239d97b823fb7030f9a8020b4b4f6
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 86e3761af14da9e1b8f52f4ce6859128fcda7bb7
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83817742"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929165"
 ---
 # <a name="ksetup-dumpstate"></a>ksetup dumpstate
 
@@ -26,7 +26,7 @@ ms.locfileid: "83817742"
 ksetup /dumpstate
 ```
 
-### <a name="remarks"></a>解説
+### <a name="remarks"></a>Remarks
 
 - このコマンドの出力には、既定の領域 (コンピューターがメンバーとなっているドメイン) と、このコンピューターで定義されているすべての領域が含まれます。 各領域には次のものが含まれます。
 
@@ -48,7 +48,7 @@ ksetup /dumpstate
 ksetup /dumpstate
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

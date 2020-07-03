@@ -1,6 +1,6 @@
 ---
 title: fsutil volume
-description: ボリュームのマウントを解除する、またはハードディスクドライブにクエリを実行して、ハードディスクドライブ上で現在使用可能な空き領域の容量、または特定のクラスターを使用しているファイルを確認するには、fsutil volume コマンドの参照トピック。
+description: ボリュームのマウントを解除する、またはハードディスクドライブに照会して、ハードディスクドライブ上で現在使用可能な空き領域の容量や特定のクラスターを使用しているファイルを確認するには、fsutil volume コマンドの参照記事。
 ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
@@ -9,12 +9,12 @@ ms.technology: storage
 ms.assetid: 0397c204-b3f8-4fd8-b71d-b7efb117766d
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 18671447664c47af48b4ca074aab823fd2b78625
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: aef1012cef33aeb2718dac4681b9119ea1a16590
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436837"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929245"
 ---
 # <a name="fsutil-volume"></a>fsutil volume
 
@@ -87,7 +87,7 @@ fsutil volume list
 fsutil volume querycluster C: 50 0x2000
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

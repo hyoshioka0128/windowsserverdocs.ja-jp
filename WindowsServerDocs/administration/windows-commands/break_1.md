@@ -1,6 +1,6 @@
 ---
 title: break
-description: Break コマンドのリファレンストピックです。 このコマンドは使用されなくなりました。
+description: Break コマンドの参照記事です。 このコマンドは使用されなくなりました。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 301c526903c95dec90c4883a54713eee20f516d2
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 77cf4baa0e0343294e85318015942b39b6d6bfce
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82708781"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928481"
 ---
 # <a name="break"></a>break
 
@@ -25,14 +25,14 @@ MS-DOS システムの拡張された CTRL + C チェックを設定または解
 
 コマンド拡張機能が有効になっていて、Windows プラットフォームで実行されている場合、 **break**コマンドをバッチファイルに挿入すると、デバッガーによってデバッグされている場合に、ハードコーディングされたブレークポイントが入力されます。
 
-## <a name="syntax"></a>構文
+## <a name="syntax"></a>Syntax
 
 ```
 break=[on|off]
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
-  
+
 - [break コマンド](break.md)

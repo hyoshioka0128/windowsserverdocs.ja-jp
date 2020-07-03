@@ -1,6 +1,6 @@
 ---
 title: defrag
-description: デフラグコマンドのリファレンストピック。ローカルボリューム上の断片化されたファイルを特定して統合し、システムのパフォーマンスを向上させます。
+description: デフラグコマンドの参照記事。ローカルボリューム上の断片化されたファイルを特定して統合し、システムのパフォーマンスを向上させます。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bf3ca6febfa07c7780b959389ff57fe4f3a0018b
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: c952ff78147d3b4c6097aaf9dd87e55ecc7911ad
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993149"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928791"
 ---
 # <a name="defrag"></a>defrag
 
@@ -55,13 +55,13 @@ defrag <volume> [<parameters>]
 | /x | 指定されたボリュームで空き領域の統合を実行します。 |
 | /? | このヘルプ情報を表示します。 |
 
-#### <a name="remarks"></a>Remarks
+#### <a name="remarks"></a>注釈
 
 - 次のような特定のファイルシステムのボリュームまたはドライブを最適化することはできません。
 
   - ファイルシステムによってロックされているボリューム。
 
-  - ファイルシステムがダーティとマークされていることを示すボリューム。破損している可能性があることを示します。<br>このボリュームまた`chkdsk`はドライブを最適化するには、を実行する必要があります。 `fsutil dirty`コマンドを使用して、ボリュームがダーティかどうかを確認できます。
+  - ファイルシステムがダーティとマークされていることを示すボリューム。破損している可能性があることを示します。<br>このボリュームまたはドライブを最適化するには、を実行する必要があり `chkdsk` ます。 コマンドを使用して、ボリュームがダーティかどうかを確認でき `fsutil dirty` ます。
 
   - ネットワークドライブ。
 
@@ -79,13 +79,13 @@ defrag <volume> [<parameters>]
 
 - 既定では、 **/a**パラメーターまたは **/v**パラメーターを指定しない場合、**デフラグ**は分析レポートと最適化レポートの両方の概要を表示します。
 
-- **>** <em>Filename .txt</em>と入力すると、レポートをテキストファイルに送信できます。ここで、 *filename*は指定したファイル名です。 例: `defrag volume /v > FileName.txt`
+- FileName.txtを入力してレポートをテキストファイルに送信でき **>** <em>FileName.txt</em>ます。ここで*FileName.txt*は指定したファイル名です。 例: `defrag volume /v > FileName.txt`
 
 - 最適化プロセスを中断するには、コマンドラインで**ctrl + C**キーを押します。
 
 - **デフラグ**コマンドとディスクデフラグツールを同時に実行することはできません。 ディスクデフラグツールを使用してボリュームを最適化しているときに、コマンドラインで**デフラグ**コマンドを実行した場合、 **defrag**コマンドは失敗します。 逆に、**デフラグ**コマンドを実行してディスクデフラグツールを開くと、ディスクデフラグツールの最適化オプションは使用できません。
 
-## <a name="examples"></a>使用例
+## <a name="examples"></a>例
 
 進行状況と詳細出力を提供しながらドライブ C のボリュームを最適化するには、次のように入力します。
 
@@ -131,7 +131,7 @@ defrag /c /h /v
 
     - コンピューターがバックアップを開始しました (アイドル状態から再開されました)。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 
@@ -139,6 +139,6 @@ defrag /c /h /v
 
 - [fsutil](fsutil.md)
 
-- [fsutil ダーティ](fsutil-dirty.md)
+- [fsutil dirty](fsutil-dirty.md)
 
 - [最適化-ボリューム Powershell](https://docs.microsoft.com/powershell/module/storage/optimize-volume?view=win10-ps)

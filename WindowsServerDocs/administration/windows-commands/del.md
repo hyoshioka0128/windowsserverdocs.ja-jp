@@ -1,6 +1,6 @@
 ---
 title: del
-description: Del コマンドのリファレンストピック。1つ以上のファイルを削除します。
+description: Del コマンドの参照記事。1つ以上のファイルを削除します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f32efd6e29a715cdc67b5a1ddcb166922d1cfcc9
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 57f0026aebd7ff2119c7de49a03679792c3e5f0c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993125"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928775"
 ---
 # <a name="del"></a>del
 
@@ -44,9 +44,9 @@ erase [/p] [/f] [/s] [/q] [/a[:]<attributes>] <names>
 | /a [:]`<attributes>` | 次のファイル属性に基づいてファイルを削除します。<ul><li>**r**読み取り専用ファイル</li><li>**h**隠しファイル</li><li>コンテンツにインデックスが**設定され**ていないファイル</li><li>**s**システムファイル</li><li>アーカイブの準備**が**できているファイル</li><li>**左**再解析ポイント</li><li>**-**' Not ' を意味するプレフィックスとして使用されます。</li></ul>. |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-#### <a name="remarks"></a>Remarks
+#### <a name="remarks"></a>注釈
 
-- `del /p`コマンドを使用すると、次のメッセージが表示されます。
+- コマンドを使用すると、 `del /p` 次のメッセージが表示されます。
 
     `FileName, Delete (Y/N)?`
 
@@ -54,7 +54,7 @@ erase [/p] [/f] [/s] [/q] [/a[:]<attributes>] <names>
 
 - コマンド拡張機能を無効にすると、削除されているファイルの名前を表示する代わりに、 **/s**パラメーターに、見つからなかったファイルの名前が表示されます。
 
-- `<names>`パラメーターに特定のフォルダーを指定すると、含まれているすべてのファイルも削除されます。 たとえば、 *\ work*フォルダー内のすべてのファイルを削除する場合は、次のように入力します。
+- パラメーターに特定のフォルダーを指定すると `<names>` 、含まれているすべてのファイルも削除されます。 たとえば、 *\ work*フォルダー内のすべてのファイルを削除する場合は、次のように入力します。
 
   ```
   del \work
@@ -75,7 +75,7 @@ erase [/p] [/f] [/s] [/q] [/a[:]<attributes>] <names>
   > [!NOTE]
   > **Del**コマンドでワイルドカード文字を使用する前に、同じワイルドカード文字を**dir**コマンドと共に使用して、削除されるすべてのファイルを一覧表示します。
 
-## <a name="examples"></a>使用例
+## <a name="examples"></a>例
 
 C ドライブの Test という名前のフォルダー内のすべてのファイルを削除するには、次のいずれかを入力します。
 
@@ -96,7 +96,7 @@ del *.bat
 del /a:r *.*
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

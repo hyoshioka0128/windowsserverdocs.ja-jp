@@ -1,6 +1,6 @@
 ---
 title: bitsadmin create
-description: 指定された表示名で転送ジョブを作成する bitsadmin create コマンドのリファレンストピックです。
+description: 指定された表示名で転送ジョブを作成する bitsadmin create コマンドの参照記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 728027eb4680805c1f9a2afc32d8d37a14239597
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: b3e0f8fb7d8396a238cabcbeb375f61cbe526c3f
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718217"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928341"
 ---
 # <a name="bitsadmin-create"></a>bitsadmin create
 
@@ -23,7 +23,7 @@ ms.locfileid: "82718217"
 指定された表示名を使用して転送ジョブを作成します。
 
 > [!NOTE]
-> **/Upload** および/ **uploadの**パラメーターの型は、BITS 1.2 以前ではサポートされていません。
+> **/Upload**   および/ **uploadの**パラメーターの型は、BITS 1.2 以前ではサポートされていません。
 
 ## <a name="syntax"></a>構文
 
@@ -46,7 +46,7 @@ bitsadmin /create [type] displayname
 bitsadmin /create myDownloadJob
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

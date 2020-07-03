@@ -1,6 +1,6 @@
 ---
 title: 更新-ServerFiles
-description: 更新プログラム ServerFiles のリファレンストピック。サーバーの%Windir%\System32\RemInst フォルダーに格納されている最新のファイルを使用して、REMINST 共有フォルダー内のファイルを更新します。
+description: 更新プログラム ServerFiles のリファレンス記事。サーバーの%Windir%\System32\RemInst フォルダーに格納されている最新のファイルを使用して、REMINST 共有フォルダー内のファイルを更新します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0005d8e198300c4aad9fdfc772957b460d6fee74
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 79b9332d5962c7e3c50ea3d7c71f33111a0e74b8
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721380"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930132"
 ---
 # <a name="update-serverfiles"></a>更新-ServerFiles
 
@@ -28,9 +28,9 @@ WDSUTIL [Options] /Update-ServerFiles [/Server:<Server name>]
 
 ### <a name="parameters"></a>パラメーター
 
-|パラメーター|[説明]|
+|パラメーター|説明|
 |---------|-----------|
-|[/Server:\<サーバー名>]|サーバーの名前を指定します。 NetBIOS 名または完全修飾ドメイン名 (FQDN) のいずれかを指定できます。 サーバー名が指定されていない場合は、ローカルのサーバーが使用されます。|
+|[/Server:\<Server name>]|サーバーの名前を指定します。 NetBIOS 名または完全修飾ドメイン名 (FQDN) のいずれかを指定できます。 サーバー名が指定されていない場合は、ローカルのサーバーが使用されます。|
 
 ## <a name="examples"></a>例
 
@@ -40,6 +40,6 @@ WDSUTIL /Update-ServerFiles
 WDSUTIL /Verbose /Progress /Update-ServerFiles /Server:MyWDSServer
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

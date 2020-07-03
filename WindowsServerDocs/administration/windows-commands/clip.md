@@ -1,6 +1,6 @@
 ---
 title: clip
-description: コマンドの出力をコマンドラインから Windows クリップボードにリダイレクトする、clip コマンドのリファレンストピックです。
+description: コマンドの出力をコマンドラインから Windows クリップボードにリダイレクトする、clip コマンドの参照記事。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 61c905e3dcce52f3a3d35adeac55fc5df574f664
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 3c0e23c18d356740a639af760fc7433db59d012a
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82712790"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929890"
 ---
 # <a name="clip"></a>clip
 
@@ -29,7 +29,7 @@ clip < <filename>
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | [説明] |
+| パラメーター | 説明 |
 | --------- | ----------- |
 | `<command>` | 出力を Windows クリップボードに送信するコマンドを指定します。 |
 | `<filename>` | Windows クリップボードに送信する内容を含むファイルを指定します。 |
@@ -49,12 +49,12 @@ dir | clip
 awk -f generic.awk input.txt | clip
 ```
 
-*Readme.txt*という名前のファイルの内容を Windows クリップボードにコピーするには、次のように入力します。
+*readme.txt*という名前のファイルの内容を Windows クリップボードにコピーするには、次のように入力します。
 
 ```
 clip < readme.txt
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

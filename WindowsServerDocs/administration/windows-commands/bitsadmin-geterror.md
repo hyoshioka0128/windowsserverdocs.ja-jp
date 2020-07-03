@@ -1,6 +1,6 @@
 ---
 title: bitsadmin geterror
-description: 指定されたジョブの詳細なエラー情報を取得する bitsadmin geterror コマンドのリファレンストピックです。
+description: Bitsadmin geterror コマンドの参照記事。指定されたジョブの詳細なエラー情報を取得します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e7275bb813ef65f304cf8111c5a1ee387b7528e5
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 1d729b946df4af33da3a55ff8051c59fbb5d7efe
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718016"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928300"
 ---
 # <a name="bitsadmin-geterror"></a>bitsadmin geterror
 
@@ -28,7 +28,7 @@ bitsadmin /geterror <job>
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | [説明] |
+| パラメーター | 説明 |
 | -------------- | -------------- |
 | ジョブ (job) | ジョブの表示名または GUID。 |
 
@@ -40,7 +40,7 @@ bitsadmin /geterror <job>
 bitsadmin /geterror myDownloadJob
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

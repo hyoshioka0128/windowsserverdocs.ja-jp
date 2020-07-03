@@ -1,6 +1,6 @@
 ---
 title: diskpart のスクリプトと例
-description: Diskpart スクリプトのリファレンストピックと、ディスク関連のタスク (ボリュームの作成やダイナミックディスクへのディスクの変換など) を自動化する方法の例を紹介します。
+description: Diskpart スクリプトのリファレンス記事と、ディスク関連のタスク (ボリュームの作成やダイナミックディスクへのディスクの変換など) を自動化する方法の例を紹介します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 546f867b2cde199f54975a127b0faf11130996d2
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: f2715332a8a6adff29f31a4dbd7d3e7a27a4a6f2
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354672"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929326"
 ---
 # <a name="diskpart-scripts-and-examples"></a>diskpart のスクリプトと例
 
@@ -47,13 +47,13 @@ Diskpart スクリプトを作成するには、実行する Diskpart コマン�
     diskpart /s scriptname.txt > logfile.txt
     ```
 
-### <a name="remarks"></a>解説
+### <a name="remarks"></a>注釈
 
 - **Diskpart**コマンドをスクリプトの一部として使用する場合は、すべての diskpart 操作を1つの diskpart スクリプトの一部として実行することをお勧めします。 連続した diskpart スクリプトを実行できますが、その後のスクリプトで**diskpart**コマンドを実行する前に、前回の実行を完全にシャットダウンするには、各スクリプトの間に少なくとも15秒かかることが必要です。 このようにしないと、以降のスクリプトが失敗することがあります。 `timeout /t 15`Diskpart スクリプトと共にコマンドをバッチファイルに追加することで、連続する diskpart スクリプトの間に一時停止を追加できます。
 
 - Diskpart の起動時に、diskpart のバージョンとコンピューター名がコマンドプロンプトに表示されます。 既定では、スクリプト化されたタスクの実行中に diskpart によってエラーが検出された場合、diskpart はスクリプトの処理を停止し、エラーコードを表示します ( **noerr**パラメーターを指定していない場合)。 ただし、 **noerr**パラメーターを使用したかどうかにかかわらず、構文エラーが発生した場合、diskpart は常にエラーを返します。 **Noerr**パラメーターを使用すると、ディスクの合計数に関係なく、1つのスクリプトを使用してすべてのディスクのすべてのパーティションを削除するなど、便利なタスクを実行できます。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

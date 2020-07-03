@@ -1,6 +1,6 @@
 ---
 title: convert basic
-description: '[基本の変換] コマンドのリファレンストピックでは、空のダイナミックディスクをベーシックディスクに変換します。'
+description: '[基本の変換] コマンドの参照記事では、空のダイナミックディスクをベーシックディスクに変換します。'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e44ecc9f5d18bbe426c63f8854e7c3347f418bb2
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: a61c3d9fd8d708a41347f0bcf46aa627e960153c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720790"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928987"
 ---
 # <a name="convert-basic"></a>convert basic
 
@@ -34,7 +34,7 @@ convert basic [noerr]
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | [説明] |
+| パラメーター | 説明 |
 | --------- | ----------- |
 | noerr | スクリプト専用です。 エラーが発生しても、エラーが発生しなかったかのように DiskPart はコマンドの処理を続けます。 このパラメーターは、エラー発生すると、DiskPart はエラー コードを生成して終了します。 |
 
@@ -46,7 +46,7 @@ convert basic [noerr]
 convert basic
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

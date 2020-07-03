@@ -8,12 +8,12 @@ ms.date: 03/26/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: fab7dff1efc8b21a3b8fdacdeb9d446d7bc0cc30
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 6ec1093a77b036cada9e54c82234d653362ce4d3
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475309"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930099"
 ---
 # <a name="storage-migration-service-overview"></a>記憶域移行サービスの概要
 
@@ -51,7 +51,7 @@ Storage Migration Service を使用すると、Windows Server または Azure �
 
 > [!VIDEO https://www.youtube.com/embed/h-Xc9j1w144]
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 Storage Migration Service を使用するには、次のものが必要です。
 
@@ -136,6 +136,8 @@ Windows 管理センターバージョン1910では、Azure 仮想マシンを�
 
    Storage Migration Service を使用して Azure Vm に移行する方法を示すビデオを次に示します。
    > [!VIDEO https://www.youtube-nocookie.com/embed/k8Z9LuVL0xQ]
+   
+新しいオペレーティングシステムに移行せずに仮想マシンを Azure にリフトアンドシフトする場合は、Azure Migrate の使用を検討してください。 詳細については、「 [Azure Migrate の概要](https://go.microsoft.com/fwlink/?linkid=2056064)」を参照してください。
 
 ## <a name="whats-new-in-storage-migration-service"></a>Storage Migration Service の新機能
 
@@ -149,7 +151,7 @@ Windows Server バージョン1903以降、または[KB4512534](https://support.
 - Azure File Sync を使用した Azure へ移行された共有のより簡単な同期
 - Azure などの新しいネットワークへの移行
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [記憶域移行サービスを使用してファイルサーバーを移行する](migrate-data.md)
 - [記憶域移行サービスに関してよく寄せられる質問 (FAQ)](faq.md)

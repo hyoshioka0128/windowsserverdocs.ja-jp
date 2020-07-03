@@ -1,6 +1,6 @@
 ---
 title: cscript
-description: Cscript コマンドのリファレンストピック。コマンドライン環境で実行されるようにスクリプトを開始します。
+description: Cscript コマンドのリファレンス記事。コマンドライン環境で実行されるようにスクリプトを開始します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 24d5d46a0a994ca44230076786fbd59c00cbdc57
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: e7f6731c264fc5a22bee2d94b41a555431e48b42
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437057"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928838"
 ---
 # <a name="cscript"></a>cscript
 
@@ -49,12 +49,12 @@ cscript <scriptname.extension> [/b] [/d] [/e:<engine>] [{/h:cscript | /h:wscript
 | /t: <seconds> | スクリプトを実行できる最長時間を秒単位で指定します。 最大32767秒を指定できます。 既定では、時間制限はありません。 |
 | /U | コンソールからリダイレクトされる入力と出力の Unicode を指定します。 |
 | /x | デバッガーでスクリプトを開始します。 |
-| /? | 使用可能なコマンドパラメーターを表示し、それらを使用するためのヘルプを提供します。 これは、パラメーターを指定せずに**cscript.exe**を入力し、スクリプトを使用しない場合と同じです。 |
+| /? | 使用可能なコマンドパラメーターを表示し、それらを使用するためのヘルプを提供します。 これは、パラメーターを指定せずに**cscript.exe**を入力する場合と同じですが、スクリプトはありません。 |
 | scriptarguments | スクリプトに渡される引数を指定します。 各スクリプト引数の前にはスラッシュ () を付ける必要があり **/** ます。 |
 
-#### <a name="remarks"></a>解説
+#### <a name="remarks"></a>注釈
 
-- 各パラメーターは省略可能です。ただし、スクリプトを指定せずにスクリプトの引数を指定することはできません。 スクリプトまたはスクリプトの引数を指定しない場合、cscript.exe 構文と有効なホストオプションが cscript.exe によって表示されます。
+- 各パラメーターは省略可能です。ただし、スクリプトを指定せずにスクリプトの引数を指定することはできません。 スクリプトまたはスクリプトの引数を指定しない場合は、cscript.exe の構文と有効なホストオプションが cscript.exe 表示されます。
 
 - **/T**パラメーターを指定すると、タイマーを設定することによって、スクリプトの過剰な実行を防ぐことができます。 実行時間が指定された値を超えると、cscript はスクリプトエンジンを中断し、プロセスを終了します。
 
@@ -62,6 +62,6 @@ cscript <scriptname.extension> [/b] [/d] [/e:<engine>] [{/h:cscript | /h:wscript
 
 - 拡張子が関連付けられていないスクリプトファイルをダブルクリックすると、[**ファイルを開くアプリケーション**の選択] ダイアログボックスが表示されます。 [Wscript] または [cscript] を選択し、[この**ファイルの種類を開くには常にこのプログラムを使用する**] を選択します。 これにより、このファイルの種類のファイルの既定のスクリプトホストとして wscript.exe または cscript が登録されます。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

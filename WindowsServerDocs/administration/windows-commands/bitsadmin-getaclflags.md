@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getaclflags
-description: アクセス制御リスト (ACL) の伝達フラグを取得する bitsadmin getaclflags コマンドのリファレンストピック。
+description: アクセス制御リスト (ACL) の伝達フラグを取得する bitsadmin getaclflags コマンドの参照記事。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a9ca541b488c3c83e7a64a138bae0914001778e3
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 0a05a0ed1c29e7cf1b0583ce9a0fcfdbe73e7a12
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718172"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928333"
 ---
 # <a name="bitsadmin-getaclflags"></a>bitsadmin getaclflags
 
@@ -28,11 +28,11 @@ bitsadmin /getaclflags <job>
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | [説明] |
+| パラメーター | 説明 |
 | --------- | ----------- |
 | ジョブ (job) | ジョブの表示名または GUID。 |
 
-### <a name="remarks"></a>Remarks
+### <a name="remarks"></a>注釈
 
 次のフラグ値のうち1つ以上を返します。
 
@@ -52,7 +52,7 @@ bitsadmin /getaclflags <job>
 bitsadmin /getaclflags myDownloadJob
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

@@ -1,6 +1,6 @@
 ---
 title: ksetup delrealmflags
-description: 指定された領域から領域フラグを削除する ksetup delrealmflags コマンドのリファレンストピックです。
+description: Ksetup delrealmflags コマンドの参照記事。指定された領域から領域フラグを削除します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a8d983a00683fec0fa1bb9801caabe226a4ffeb9
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 9d3c81d1b034f6c53c33271c1c9e61a0fc5d4893
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83817832"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929175"
 ---
 # <a name="ksetup-delrealmflags"></a>ksetup delrealmflags
 
@@ -36,10 +36,10 @@ ksetup /delrealmflags <realmname> [sendaddress] [tcpsupported] [delegate] [ncsup
 
 - 領域フラグは、Windows Server オペレーティングシステムに基づいていない Kerberos 領域の追加機能を指定します。 Windows Server を実行しているコンピューターは、kerberos サーバーを使用して、Windows Server オペレーティングシステムを実行しているドメインを使用するのではなく、kerberos 領域で認証を管理できます。 このエントリにより、領域の機能が確立され、次のようになります。
 
-| 値 | 領域フラグ | Description |
+| 値 | 領域フラグ | 説明 |
 | ----- | ---------- | ----------- |
-| 0xF | すべて | すべての領域フラグが設定されます。 |
-| 0x00 | なし | 領域フラグが設定されておらず、追加の機能は有効になっていません。 |
+| 0xF | All | すべての領域フラグが設定されます。 |
+| 0x00 | None | 領域フラグが設定されておらず、追加の機能は有効になっていません。 |
 | 0x01 | sendaddress | この IP アドレスは、チケット保証チケット内に含まれます。 |
 | 0x02 | tcpsupported | この領域では、伝送制御プロトコル (TCP) とユーザーデータグラムプロトコル (UDP) の両方がサポートされています。 |
 | 0x04 | delegate | この領域のすべてのユーザーが委任に対して信頼されています。 |
@@ -66,7 +66,7 @@ ksetup /delrealmflags CONTOSO ncsupported delegate
 
 領域フラグが削除されたことを確認するには、「」と入力して `ksetup` 出力を表示し、テキスト「 **realm flags =**」を探します。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

@@ -1,6 +1,6 @@
 ---
 title: chcp
-description: アクティブなコンソールのコードページを変更する chcp コマンドのリファレンストピックです。
+description: アクティブなコンソールのコードページを変更する chcp コマンドの参照記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0f1291176ed5245b06c68491f0d5cb0ae9b0b600
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: a07d439a4738053ea9a76b4ca68fadec2a215ff0
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82715329"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930026"
 ---
 # <a name="chcp"></a>chcp
 
@@ -28,7 +28,7 @@ chcp [<nnn>]
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | [説明] |
+| パラメーター | 説明 |
 | --------- | ----------- |
 | `<nnn>` | コードページを指定します。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
@@ -37,20 +37,20 @@ chcp [<nnn>]
 
 | コード ページ | 国/地域または言語 |
 | --------- | -------------------------- |
-| 437 | United States |
+| 437 | アメリカ合衆国 |
 | 850 | 多言語 (ラテン I) |
 | 852 | スラブ語 (ラテン II) |
 | 855 | キリル語 (ロシア) |
 | 857 | トルコ語 |
-| 860 | Portuguese |
+| 860 | ポルトガル語 |
 | 861 | アイスランド語 |
 | 863 | カナダ-フランス語 |
 | 865 | 北欧 |
 | 866 | ロシア語 |
 | 869 | モダンギリシャ語 |
-| 936 | Chinese |
+| 936 | 中国語 |
 
-#### <a name="remarks"></a>Remarks
+#### <a name="remarks"></a>注釈
 
 - Windows と共にインストールされる相手先ブランド供給 (OEM) コードページのみが、ラスターフォントを使用するコマンドプロンプトウィンドウに正しく表示されます。 他のコードページは、全画面表示モードまたは TrueType フォントを使用するコマンドプロンプトウィンドウで正しく表示されます。
 
@@ -76,6 +76,6 @@ chcp 850
 
 指定したコードページが無効な場合は、次のエラーメッセージが表示されます。`Invalid code page`
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

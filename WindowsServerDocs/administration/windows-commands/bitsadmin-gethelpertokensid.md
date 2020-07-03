@@ -1,6 +1,6 @@
 ---
 title: bitsadmin gethelpertokensid
-description: BITS 転送ジョブのヘルパートークンが設定されている場合に、その SID を返す bitsadmin geの pertokensid コマンドのリファレンストピックです。
+description: BITS 転送ジョブのヘルパートークンが設定されている場合、その SID を返す bitsadmin geの pertokensid コマンドの参照記事。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -8,12 +8,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/01/2019
-ms.openlocfilehash: c45bf86d8a7364289db41fa390f319270a2a8386
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: b616b9cc80b21c4c6a72fcca55dcdd893fac2730
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82717895"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928192"
 ---
 # <a name="bitsadmin-gethelpertokensid"></a>bitsadmin gethelpertokensid
 
@@ -30,7 +30,7 @@ bitsadmin /gethelpertokensid <job>
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | [説明] |
+| パラメーター | 説明 |
 | -------------- | -------------- |
 | ジョブ (job) | ジョブの表示名または GUID。 |
 
@@ -42,7 +42,7 @@ bitsadmin /gethelpertokensid <job>
 bitsadmin /gethelpertokensid myDownloadJob
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

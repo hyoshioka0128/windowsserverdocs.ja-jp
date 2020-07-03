@@ -1,6 +1,6 @@
 ---
 title: diskcopy
-description: Diskcopy コマンドの参照トピック。コピー先ドライブのフォーマット済みまたは未フォーマットのフロッピーディスクに、ソースドライブのフロッピーディスクの内容をコピーします。
+description: Diskcopy コマンドの参照記事。コピー先ドライブのフォーマット済みまたは未フォーマットのフロッピーディスクに、ソースドライブのフロッピーディスクの内容をコピーします。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/07/2018
-ms.openlocfilehash: 99d1007a7c6f154b621e43d674d06f25b2911f00
-ms.sourcegitcommit: aed942d11f1a361fc1d17553a4cf190a864d1268
+ms.openlocfilehash: 7b29e81dc1befff8cd90b460b1117207146fa191
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83235184"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929341"
 ---
 # <a name="diskcopy"></a>diskcopy
 
@@ -34,7 +34,7 @@ diskcopy [<drive1>: [<drive2>:]] [/v]
 | /v | 情報が正しくコピーされていることを確認します。 このオプションを選択すると、コピー処理が遅くなります。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-#### <a name="remarks"></a>Remarks
+#### <a name="remarks"></a>注釈
 
 - **Diskcopy**は、同じ種類である必要があるフロッピーディスクなどのリムーバブルディスクでのみ機能します。 ハードディスクでは、 **diskcopy**を使用できません。 *Drive1*または*drive2*のハードディスクドライブを指定すると、次のエラーメッセージ**が表示さ**れます。
 
@@ -97,7 +97,7 @@ diskcopy b: a:
 diskcopy a: a:
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

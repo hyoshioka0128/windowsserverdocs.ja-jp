@@ -1,6 +1,6 @@
 ---
 title: bitsadmin cache および clear
-description: Bitsadmin cache および clear コマンドのリファレンストピック。ローカルキャッシュを削除します。
+description: Bitsadmin cache および clear コマンドの参照記事。ローカルキャッシュを削除します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6195bfc28c59fe7609f4a8164fa080ff7f7b977d
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 624045036cae03e790c93a03be1007a8140f8d6a
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718274"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928436"
 ---
 # <a name="bitsadmin-cache-and-clear"></a>bitsadmin cache および clear
 
@@ -34,7 +34,7 @@ bitsadmin /cache /clear
 bitsadmin /cache /clear
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

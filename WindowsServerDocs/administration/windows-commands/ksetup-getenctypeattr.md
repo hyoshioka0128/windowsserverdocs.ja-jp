@@ -1,6 +1,6 @@
 ---
 title: ksetup getenctypeattr
-description: Ksetup getenctypeattr コマンドのリファレンストピックで、ドメインの暗号化の種類の属性を取得します。
+description: Ksetup getenctypeattr コマンドの参照記事。ドメインの暗号化の種類の属性を取得します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2acead4ff1179002303c18d4feff262080203a28
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 1fa86e8f9a9f2a2e552c7b968c447707b09e7e86
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83817702"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929143"
 ---
 # <a name="ksetup-getenctypeattr"></a>ksetup getenctypeattr
 
@@ -42,7 +42,7 @@ ksetup /getenctypeattr <domainname>
 ksetup /getenctypeattr mit.contoso.com
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

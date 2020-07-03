@@ -1,6 +1,6 @@
 ---
 title: delete
-description: パーティションまたはボリュームを削除する delete コマンドのリファレンストピックです。
+description: 削除コマンドの参照記事。パーティションまたはボリュームを削除します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d87c3696c9f459098b3b1834f46dbb76a49d5d74
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: c3ebd26438836d19f0bcae51a26ba09ebe4fa723
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993086"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929487"
 ---
 # <a name="delete"></a>delete
 
@@ -38,6 +38,6 @@ delete volume
 | [影の削除](delete-shadows.md) | シャドウコピーを削除します。 |
 | [ボリュームの削除](delete-volume.md) | ボリュームを削除します。 |
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

@@ -1,6 +1,6 @@
 ---
-title: 復元の開始
-description: '[復元の開始] コマンドのリファレンストピック。復元セッションを開始し、関連するライターに復元前イベントを発行します。'
+title: begin restore
+description: '[復元の開始] コマンドの参照記事。復元セッションを開始し、関連するライターに復元前イベントを発行します。'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,26 +9,26 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 98967290bd7f15a518848b53b43e8c9daeb8b860
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 6f97c35eb8a98aedecfd2f5a8dc87d4ddc3a3cd6
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718509"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928523"
 ---
-# <a name="begin-restore"></a>復元の開始
+# <a name="begin-restore"></a>begin restore
 
 > 適用対象: Windows Server 2012 R2、Windows Server 2012
 
 復元セッションを開始し、関連するライターに**復元前**イベントを発行します。
 
-## <a name="syntax"></a>構文
+## <a name="syntax"></a>Syntax
 
 ```
 begin restore
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

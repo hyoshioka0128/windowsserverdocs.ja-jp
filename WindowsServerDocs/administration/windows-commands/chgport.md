@@ -1,6 +1,6 @@
 ---
 title: chgport
-description: Chgport コマンドのリファレンストピック。これは、MS-DOS アプリケーションと互換性のある COM ポートマッピングを一覧表示または変更します。
+description: Chgport コマンドの参照記事。 MS-DOS アプリケーションと互換性のある COM ポートマッピングを一覧表示または変更します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 869573f733460bef21c96deb36ef716b7255635c
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 5eb2172d607433be922f04e54955d0d636b59355
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82714475"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929071"
 ---
 # <a name="chgport"></a>chgport
 
@@ -25,7 +25,7 @@ ms.locfileid: "82714475"
 > [!NOTE]
 > このコマンドは、**ポートの変更コマンド**に置き換えられました。 構文とパラメーターの詳細を含む詳細については、「 [change port command](change-port.md)」を参照してください。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

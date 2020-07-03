@@ -1,6 +1,6 @@
 ---
 title: compact
-description: Compact コマンドのリファレンストピック。 NTFS パーティション上のファイルまたはディレクトリの圧縮を表示または変更します。
+description: Compact コマンドの参照記事。 NTFS パーティション上のファイルまたはディレクトリの圧縮を表示または変更します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 52830530fa281025fcfd970b7675b98004e2a918
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: c17f7c934ecd4b6988b3ab606059a2acd31b852b
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82710947"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929001"
 ---
 # <a name="compact"></a>compact
 
@@ -28,11 +28,11 @@ compact [/c | /u] [/s[:<dir>]] [/a] [/i] [/f] [/q] [<filename>[...]]
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | [説明] |
+| パラメーター | 説明 |
 | --------- | ----------- |
 | /c | 指定したディレクトリまたはファイルを圧縮します。 |
 | /U | 指定したディレクトリまたはファイルの圧縮を解除します。 |
-| /s [:`<dir>`] | 指定されたディレクトリのすべてのサブディレクトリ (指定されていない場合は、現在のディレクトリ) に**compact**コマンドを適用します。 |
+| /s [: `<dir>` ] | 指定されたディレクトリのすべてのサブディレクトリ (指定されていない場合は、現在のディレクトリ) に**compact**コマンドを適用します。 |
 | /a | 非表示またはシステムファイルを表示します。 |
 | /i | エラーを無視します。 |
 | /f | 指定したディレクトリまたはファイルの圧縮または圧縮解除を強制的に実行します。 **/f**は、システムのクラッシュによって操作が中断されたときに部分的に圧縮されたファイルの場合に使用されます。 ファイル全体を強制的に圧縮するには、 **/c**および **/f**パラメーターを使用して、部分的に圧縮されたファイルを指定します。 |
@@ -40,7 +40,7 @@ compact [/c | /u] [/s[:<dir>]] [/a] [/i] [/f] [/q] [<filename>[...]]
 | `<filename>` | ファイルまたはディレクトリを指定します。 複数のファイル名を使用できます。また、 **&#42;** と **?** ワイルドカード文字。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-#### <a name="remarks"></a>Remarks
+#### <a name="remarks"></a>注釈
 
 - このコマンドは、NTFS ファイルシステムの圧縮機能のコマンドラインバージョンです。 ディレクトリの圧縮状態は、ファイルがディレクトリに追加されたときに自動的に圧縮されるかどうかを示します。 ディレクトリの圧縮状態を設定しても、必ずしもディレクトリに既に存在するファイルの圧縮状態が変更されるわけではありません。
 
@@ -75,7 +75,7 @@ compact /c /i /s:\
 compact /c /s:\tmp *.bmp
 ```
 
-システムクラッシュ中に部分的に圧縮されたファイル*ゼブラ*の完全な圧縮を強制的に実行するには、次のように入力します。
+システムクラッシュ中に部分的に圧縮されたファイル*zebra.bmp*の完全な圧縮を強制的に実行するには、次のように入力します。
 
 ```
 compact /c /f zebra.bmp
@@ -87,6 +87,6 @@ compact /c /f zebra.bmp
 compact /u c:\tmp
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

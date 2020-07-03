@@ -1,6 +1,6 @@
 ---
 title: choice
-description: Choice コマンドのリファレンストピックでは、バッチプログラム内の1文字の選択肢の一覧から1つの項目を選択するようにユーザーに要求し、選択した選択範囲のインデックスを返します。
+description: 選択コマンドの参照記事。バッチプログラムで1つの項目を選択して、選択した項目のインデックスを返すようにユーザーに要求します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 32c0daa680178c1952015c62c6c6749acf5f6143
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 745321c6388e6faa9de1ce1a8a24afe66514d259
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82713533"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929983"
 ---
 # <a name="choice"></a>choice
 
@@ -28,9 +28,9 @@ choice [/c [<choice1><choice2><…>]] [/n] [/cs] [/t <timeout> /d <choice>] [/m 
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | [説明] |
+| パラメーター | 説明 |
 | --------- | ----------- |
-| スイッチ`<choice1><choice2><…>` | 作成する選択肢の一覧を指定します。 有効な選択肢は、a-z、a-z、0-9、および拡張 ASCII 文字 (128-254) です。 既定の一覧は YN で、として`[Y,N]?`表示されます。 |
+| スイッチ`<choice1><choice2><…>` | 作成する選択肢の一覧を指定します。 有効な選択肢は、a-z、a-z、0-9、および拡張 ASCII 文字 (128-254) です。 既定の一覧は YN で、として表示され `[Y,N]?` ます。 |
 | /n | 選択項目の一覧を非表示にします。選択肢は引き続き有効であり、( **/m**で指定されている場合) メッセージテキストが引き続き表示されます。 |
 | /cs | 選択肢で大文字と小文字を区別することを指定します。 既定では、選択肢の大文字と小文字は区別されません。 |
 | /t`<timeout>` | **/D**によって指定された既定の選択を使用する前に、一時停止する秒数を指定します。 使用可能な値は**0** ~ **9999**です。 **/T**が**0**に設定されている場合、 **choice**は、既定の選択を返す前に一時停止しません。 |
@@ -38,11 +38,11 @@ choice [/c [<choice1><choice2><…>]] [/n] [/cs] [/t <timeout> /d <choice>] [/m 
 | /m`<text>` | 選択肢の一覧の前に表示するメッセージを指定します。 **/M**が指定されていない場合は、choice プロンプトだけが表示されます。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>注釈
 
-- **ERRORLEVEL**環境変数は、ユーザーが選択肢の一覧から選択するキーのインデックスに設定されます。 リスト内の最初の選択肢は、値`1`、2番目の値、 `2`などを返します。 ユーザーが無効なキーを押すと、警告ビープ音が**鳴ります**。 
+- **ERRORLEVEL**環境変数は、ユーザーが選択肢の一覧から選択するキーのインデックスに設定されます。 リスト内の最初の選択肢は、値、 `1` 2 番目の値、 `2` などを返します。 ユーザーが無効なキーを押すと、警告ビープ音が**鳴ります**。
 
-- **Choice**がエラー状態を検出した場合は**ERRORLEVEL** 、の`255`ERRORLEVEL 値を返します。 ユーザーが CTRL + BREAK キーまたは CTRL + C キー **choice**を押した場合、Choice `0`は**ERRORLEVEL**値を返します。
+- **Choice**がエラー状態を検出した場合は、の**ERRORLEVEL**値を返し `255` ます。 ユーザーが CTRL + BREAK キーまたは CTRL + C キーを押した場合、 **choice**は**ERRORLEVEL**値を返し `0` ます。
 
 > [!NOTE]
 > バッチプログラムで**ERRORLEVEL**値を使用する場合は、それらを降順に一覧表示する必要があります。
@@ -83,8 +83,8 @@ choice /c ync /t 5 /d n
 ```
 
 > [!NOTE]
-> この例では、ユーザーが5秒以内にキーを押していない場合、 **choice**は既定で**N**を選択`2`し、のエラー値を返します。 それ以外の場合、 **choice**はユーザーの選択に対応する値を返します。
+> この例では、ユーザーが5秒以内にキーを押していない場合、 **choice**は既定で**N**を選択し、のエラー値を返し `2` ます。 それ以外の場合、 **choice**はユーザーの選択に対応する値を返します。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

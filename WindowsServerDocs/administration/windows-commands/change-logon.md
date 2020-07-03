@@ -1,6 +1,6 @@
 ---
 title: change logon
-description: '[ログオンの変更] コマンドのリファレンストピック。クライアントセッションからのログオンを有効または無効にしたり、現在のログオンステータスを表示したりします。'
+description: '[ログオンの変更] コマンドの参照記事。クライアントセッションからのログオンを有効または無効にしたり、現在のログオンステータスを表示したりします。'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4a2ebe75f6efa8c3bcfc0018d1f4e6051bb9ebb7
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 1561434347bc6a56e628f185e0984e33587bd999
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82716131"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929126"
 ---
 # <a name="change-logon"></a>change logon
 
@@ -33,7 +33,7 @@ change logon {/query | /enable | /disable | /drain | /drainuntilrestart}
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | [説明] |
+| パラメーター | 説明 |
 | --------- | ----------- |
 | /query | 有効または無効になっているかどうかについて、現在のログオン状態を表示します。 |
 | /enable | コンソールからではなく、クライアントセッションからのログオンを有効にします。 |
@@ -42,7 +42,7 @@ change logon {/query | /enable | /disable | /drain | /drainuntilrestart}
 | 再起動する (& a) | コンピューターが再起動されるまで新しいクライアントセッションからのログオンを無効にしますが、既存のセッションへの再実行を許可します。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-#### <a name="remarks"></a>Remarks
+#### <a name="remarks"></a>注釈
 
 - システムを再起動すると、ログオンが再度有効になります。
 
@@ -51,7 +51,7 @@ change logon {/query | /enable | /disable | /drain | /drainuntilrestart}
 ### <a name="examples"></a>例
 
 - 現在のログオン状態を表示するには、次のように入力します。
-  
+
   ```
   change logon /query
   ```
@@ -67,8 +67,8 @@ change logon {/query | /enable | /disable | /drain | /drainuntilrestart}
   ```
   change logon /disable
   ```
-  
-## <a name="additional-references"></a>その他のリファレンス
+
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

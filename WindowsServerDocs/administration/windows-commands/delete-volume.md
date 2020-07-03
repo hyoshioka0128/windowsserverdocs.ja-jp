@@ -1,6 +1,6 @@
 ---
 title: delete volume
-description: ボリュームの削除コマンドのリファレンストピックでは、選択したボリュームを削除します。
+description: ボリュームの削除コマンドの参照記事。選択されたボリュームを削除します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 59856e89ff96d2881040365d157540dc62c1aeb0
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 217e9ff1ccb470b5431143360286d312b09a1951
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993097"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928718"
 ---
 # <a name="delete-volume"></a>delete volume
 
@@ -35,7 +35,7 @@ delete volume [noerr]
 | --------- | ----------- |
 | noerr | スクリプト専用です。 エラーが発生しても、エラーが発生しなかったかのように DiskPart はコマンドの処理を続けます。 このパラメーターは、エラー発生すると、DiskPart はエラー コードを生成して終了します。 |
 
-## <a name="examples"></a>使用例
+## <a name="examples"></a>例
 
 フォーカスがあるボリュームを削除するには、次のように入力します。
 
@@ -43,7 +43,7 @@ delete volume [noerr]
 delete volume
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

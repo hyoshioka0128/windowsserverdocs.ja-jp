@@ -1,6 +1,6 @@
 ---
 title: create partition logical
-description: Create partition logical コマンドのリファレンストピックです。このコマンドは、既存の拡張パーティションに論理パーティションを作成します。
+description: Create partition logical コマンドの参照記事。既存の拡張パーティションに論理パーティションを作成します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 99b8c837fe5da295087f9b146bf429d91ebc8693
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 4860f61d23c9ae51732c1fb0e127047c4944d2ed
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993267"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929671"
 ---
 # <a name="create-partition-logical"></a>create partition logical
 
@@ -38,15 +38,15 @@ create partition logical [size=<n>] [offset=<n>] [align=<n>] [noerr]
 | パラメーター | 説明 |
 | --------- | ----------- |
 | サイズ =`<n>` | 論理パーティションのサイズをメガバイト (MB) 単位で指定します。このサイズは拡張パーティションよりも小さくする必要があります。 サイズが指定されていない場合、パーティションは拡張パーティションの空き領域がなくなるまで続行されます。 |
-| オフセット =`<n>` | パーティションが作成されるオフセットをキロバイト (KB) 単位で指定します。 オフセットは、使用されるシリンダーサイズを完全に埋めるために切り上げられます。 オフセットが指定されない場合、パーティションを保持するうえで十分な大きさを持つ最初のディスク拡張にパーティションが配置されます。 パーティションは、少なくとも、 **size =`<n>`** で指定された数と同じ長さのバイトになります。 論理パーティションのサイズを指定する場合は、拡張パーティションよりも小さくする必要があります。 |
+| オフセット =`<n>` | パーティションが作成されるオフセットをキロバイト (KB) 単位で指定します。 オフセットは、使用されるシリンダーサイズを完全に埋めるために切り上げられます。 オフセットが指定されない場合、パーティションを保持するうえで十分な大きさを持つ最初のディスク拡張にパーティションが配置されます。 パーティションは、少なくとも、 **size = `<n>` **で指定された数と同じ長さのバイトになります。 論理パーティションのサイズを指定する場合は、拡張パーティションよりも小さくする必要があります。 |
 | align =`<n>` | すべてのボリュームまたはパーティションエクステントを最も近いアラインメント境界に配置します。 通常、パフォーマンスを向上させるために、ハードウェア RAID 論理ユニット番号 (LUN) アレイと共に使用します。 `<n>`ディスクの先頭から最も近いアラインメント境界までのキロバイト (KB) 数を指定します。 |
 | noerr | スクリプト専用です。 エラーが発生しても、エラーが発生しなかったかのように DiskPart はコマンドの処理を続けます。 このパラメーターは、エラー発生すると、DiskPart はエラー コードを生成して終了します。 |
 
-#### <a name="remarks"></a>Remarks
+#### <a name="remarks"></a>注釈
 
 - **Size**パラメーターと**offset**パラメーターが指定されていない場合、論理パーティションは拡張パーティションで使用可能な最大のディスクエクステントに作成されます。
 
-## <a name="examples"></a>使用例
+## <a name="examples"></a>例
 
 サイズが 1000 mb の論理パーティションを作成するには、選択したディスクの拡張パーティションで、次のように入力します。
 
@@ -54,7 +54,7 @@ create partition logical [size=<n>] [offset=<n>] [align=<n>] [noerr]
 create partition logical size=1000
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

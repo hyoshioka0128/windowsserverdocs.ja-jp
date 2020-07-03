@@ -1,6 +1,6 @@
 ---
 title: date
-description: システム日付を表示または設定する date コマンドのリファレンストピックです。 パラメーターを指定せずに使用する場合は、
+description: システム日付を表示または設定する date コマンドの参照記事です。 パラメーターを指定せずに使用する場合は、
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 64d0d94061e1b5c7891b364f4c0fe153b44a564e
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: d22c354af45aa0c6383c0dde911b03704bd7a150
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993200"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928814"
 ---
 # <a name="date"></a>date
 
@@ -37,7 +37,7 @@ date [/t | <month-day-year>]
 | /t | 新しい日付を求めるメッセージを表示せずに現在の日付を表示します。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-## <a name="examples"></a>使用例
+## <a name="examples"></a>例
 
 コマンド拡張機能が有効になっている場合、現在のシステム日付を表示するには、次のように入力します。
 
@@ -62,6 +62,6 @@ Enter the new date: (mm-dd-yyyy)
 
 現在の日付を保持し、コマンドプロンプトに戻るには、 **enter キーを**押します。 現在の日付を変更するには、新しい日付を入力し **、enter キーを押します。**
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

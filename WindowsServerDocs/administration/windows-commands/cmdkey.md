@@ -1,6 +1,6 @@
 ---
 title: cmdkey
-description: 保存されているユーザー名とパスワードまたは資格情報を作成、一覧表示、削除する、cmdkey コマンドのリファレンストピックです。
+description: 保存されているユーザー名とパスワードまたは資格情報を作成、一覧表示、削除する、cmdkey コマンドの参照記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4005707785101fcc1fb0030ffe895668bd65f730
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: a7a5446a692719a55575853df6aebc78733135b8
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82712154"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929837"
 ---
 # <a name="cmdkey"></a>cmdkey
 
@@ -32,13 +32,13 @@ cmdkey [{/add:<targetname>|/generic:<targetname>}] {/smartcard | /user:<username
 
 | パラメーター | 説明 |
 | ---------- | ----------- |
-| /add`<targetname>` | ユーザー名とパスワードを一覧に追加します。<p>には、この`<targetname>`エントリが関連付けられるコンピューターまたはドメイン名を識別するのパラメーターが必要です。 |
-| /一般`<targetname>` | 汎用的な資格情報をリストに追加します。<p>には、この`<targetname>`エントリが関連付けられるコンピューターまたはドメイン名を識別するのパラメーターが必要です。 |
+| /add`<targetname>` | ユーザー名とパスワードを一覧に追加します。<p>には、 `<targetname>` このエントリが関連付けられるコンピューターまたはドメイン名を識別するのパラメーターが必要です。 |
+| /一般`<targetname>` | 汎用的な資格情報をリストに追加します。<p>には、 `<targetname>` このエントリが関連付けられるコンピューターまたはドメイン名を識別するのパラメーターが必要です。 |
 | /smartcard | スマートカードから資格情報を取得します。 このオプションを使用したときにシステムに複数のスマートカードが見つかった場合、 **cmdkey**は使用可能なすべてのスマートカードに関する情報を表示し、使用するスマートカードを指定するようにユーザーに求めます。 |
-| /user`<username>` | このエントリで格納するユーザー名またはアカウント名を指定します。 が`<username>`指定されていない場合は、要求されます。 |
-|渡す`<password>` | このエントリで格納するパスワードを指定します。 が`<password>`指定されていない場合は、要求されます。 パスワードは、保存された後は表示されません。 |
-| /delete{:`<targetname>` | 電話帳 | ユーザー名とパスワードを一覧から削除します。 が`<targetname>`指定されている場合、そのエントリは削除されます。 を`/ras`指定した場合、格納されているリモートアクセスエントリは削除されます。 |
-| /list`<targetname>` | 保存されているユーザー名と資格情報の一覧を表示します。 が`<targetname>`指定されていない場合は、保存されているユーザー名と資格情報がすべて一覧表示されます。 |
+| /user`<username>` | このエントリで格納するユーザー名またはアカウント名を指定します。 が指定されていない場合は `<username>` 、要求されます。 |
+|渡す`<password>` | このエントリで格納するパスワードを指定します。 が指定されていない場合は `<password>` 、要求されます。 パスワードは、保存された後は表示されません。 |
+| /delete{:`<targetname>` | 電話帳 | ユーザー名とパスワードを一覧から削除します。 `<targetname>`が指定されている場合、そのエントリは削除されます。 を指定した場合 `/ras` 、格納されているリモートアクセスエントリは削除されます。 |
+| /list`<targetname>` | 保存されているユーザー名と資格情報の一覧を表示します。 が `<targetname>` 指定されていない場合は、保存されているユーザー名と資格情報がすべて一覧表示されます。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
 ## <a name="examples"></a>例
@@ -73,6 +73,6 @@ cmdkey /delete /ras
 cmdkey /delete:server01
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

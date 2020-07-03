@@ -1,6 +1,6 @@
 ---
-title: fsutil ダーティ
-description: ボリュームのダーティビットを照会または設定する fsutil dirty コマンドのリファレンストピックです。
+title: fsutil dirty
+description: ボリュームのダーティビットを照会または設定する fsutil dirty コマンドの参照記事。
 ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
@@ -9,14 +9,14 @@ ms.technology: storage
 ms.assetid: 385a2a7c-d6bd-4f11-9c18-fca0413f9e97
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 72defd974177675f53e89fb8570f028580b7e167
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: c61ab5405fb5b469b6f4513459e4096524f4b7fe
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83435867"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929260"
 ---
-# <a name="fsutil-dirty"></a>fsutil ダーティ
+# <a name="fsutil-dirty"></a>fsutil dirty
 
 > 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows 10、Windows Server 2012 R2、Windows 8.1、Windows Server 2012、Windows 8
 
@@ -36,7 +36,7 @@ fsutil dirty {query | set} <volumepath>
 | set | 指定されたボリュームのダーティビットを設定します。 |
 | `<volumepath>` | ドライブ名の後にコロンまたは GUID を指定します。次の形式で指定し `volume{GUID}` ます。 |
 
-#### <a name="remarks"></a>解説
+#### <a name="remarks"></a>注釈
 
 - ボリュームのダーティビットは、ファイルシステムが不整合な状態にある可能性があることを示します。 次の理由により、ダーティビットを設定できます。
 
@@ -70,7 +70,7 @@ fsutil dirty query c:
 fsutil dirty set C:
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

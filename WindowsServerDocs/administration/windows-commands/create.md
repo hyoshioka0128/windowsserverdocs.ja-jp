@@ -1,6 +1,6 @@
 ---
 title: create
-description: Create コマンドのリファレンストピックでは、ディスク上のパーティションまたはシャドウパーティション、1つまたは複数のディスク上のボリューム、または仮想ハードディスク (VHD) を作成します。
+description: Create コマンドの参照記事。ディスク上のパーティションまたはシャドウパーティション、1つまたは複数のディスク上のボリューム、または仮想ハードディスク (VHD) を作成します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f371bee591e29a45b1488b2c36112b55ed54d3f8
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 0b5b31f43e58b9e2eddb18f624c1054c9d028f4c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993189"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929530"
 ---
 # <a name="create"></a>create
 
@@ -41,6 +41,6 @@ create volume
 | [ボリューム raid の作成コマンド](create-volume-raid.md) | 指定された3つ以上のダイナミックディスクを使用して RAID-5 ボリュームを作成します。 |
 | [ボリュームストライプの作成コマンド](create-volume-stripe.md) | 2つ以上の指定されたダイナミックディスクを使用してストライプボリュームを作成します。 |
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

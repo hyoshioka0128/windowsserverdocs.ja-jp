@@ -1,6 +1,6 @@
 ---
 title: compact vdisk
-description: Compact vdisk コマンドのリファレンストピックでは、容量可変の拡張バーチャルハードディスク (VHD) ファイルの物理サイズを削減します。
+description: Compact vdisk コマンドの参照記事。容量可変の拡張バーチャルハードディスク (VHD) ファイルの物理サイズが削減されます。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c4ae5c653645c9f6f3ef97501a59932682c24be3
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 7379975981c2df386b7180c814799f7129eee7da
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82711148"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929054"
 ---
 # <a name="compact-vdisk"></a>compact vdisk
 
@@ -34,7 +34,7 @@ compact vdisk
 
 - 圧縮解除された、または読み取り専用としてアタッチされている、動的に拡張された Vhd のみを使用できます。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

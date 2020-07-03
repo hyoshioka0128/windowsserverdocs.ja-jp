@@ -1,6 +1,6 @@
 ---
 title: comp
-description: Comp コマンドのリファレンストピック。2つのファイルまたはファイルのセットの内容をバイト単位で比較します。
+description: Comp コマンドの参照記事。2つのファイルまたはファイルのセットの内容をバイト単位で比較します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c2939ee2166d961cae8ae0699c130e91117dd8a6
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 65008945e2994b9040fcac663185d0526910b8bc
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82711462"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929710"
 ---
 # <a name="comp"></a>comp
 
@@ -28,7 +28,7 @@ comp [<data1>] [<data2>] [/d] [/a] [/l] [/n=<number>] [/c]
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | [説明] |
+| パラメーター | 説明 |
 | --------- | ----------- |
 | `<data1>` | 比較する1つ目のファイルまたはファイルのセットの場所と名前を指定します。 ワイルドカード文字 (**&#42;** と **?**) を使用して、複数のファイルを指定できます。 |
 | `<data2>` | 比較する2番目のファイルまたは一連のファイルの場所と名前を指定します。 ワイルドカード文字 (**&#42;** と **?**) を使用して、複数のファイルを指定できます。 |
@@ -40,7 +40,7 @@ comp [<data1>] [<data2>] [/d] [/a] [/l] [/n=<number>] [/c]
 | /off [行] | オフライン属性が設定されたファイルを処理します。 |
 | /? | コマンド プロンプトでヘルプを表示します。 |
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>注釈
 
 - 比較中、 **comp**では、ファイル間の異なる情報の場所を識別するメッセージが表示されます。 各メッセージは、等しくないバイトのオフセットメモリアドレスとバイトの内容 ( **/a**または **/d**コマンドラインパラメーターが指定されていない場合は16進表記) を示します。 メッセージは次の形式で表示されます。
 
@@ -81,7 +81,7 @@ comp [<data1>] [<data2>] [/d] [/a] [/l] [/n=<number>] [/c]
 
 ## <a name="examples"></a>例
 
-ディレクトリ*c:\ レポート*の内容をバックアップディレクトリ`\\sales\backup\april`と比較するには、次のように入力します。
+ディレクトリ*c:\ レポート*の内容をバックアップディレクトリと比較するには `\\sales\backup\april` 、次のように入力します。
 
 ```
 comp c:\reports \\sales\backup\april
@@ -93,6 +93,6 @@ comp c:\reports \\sales\backup\april
 comp \invoice\*.txt \invoice\backup\*.txt /n=10 /d
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

@@ -1,6 +1,6 @@
 ---
 title: diskcomp
-description: 2つのフロッピーディスクの内容を比較する、コマンドの参照トピック。
+description: 2つのフロッピーディスクの内容を比較する、コマンドの参照記事。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fcb810f4cd18d51f8151b27a6f447c86130624fd
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: efd935d4630d9397d97863d6d373db3801a97b17
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82992518"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929358"
 ---
 # <a name="diskcomp"></a>diskcomp
 
@@ -33,7 +33,7 @@ diskcomp [<drive1>: [<drive2>:]]
 | `<drive1>` | フロッピーディスクの1つを含むドライブを指定します。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-#### <a name="remarks"></a>解説
+#### <a name="remarks"></a>注釈
 
 - この**コマンドは**、フロッピーディスクでのみ機能します。 ハードディスクで**は使用でき**ません。 ドライブ1または*drive2*のハードディスクドライブを指定*すると、* **次のエラーメッセージが表示さ**れます。
 
@@ -138,6 +138,6 @@ goto exit
 :exit
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

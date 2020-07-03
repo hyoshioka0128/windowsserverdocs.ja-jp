@@ -1,6 +1,6 @@
 ---
 title: コマンドライン構文のキー
-description: コマンドライン構文キーのリファレンストピック。コマンドライン構文を示すために使用される表記法について説明します。
+description: コマンドライン構文キーのリファレンス記事。コマンドライン構文を示すために使用される表記法について説明します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3a3c78b6081733164be3a656e67c35dd3e2b5e2d
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 7beaab6b6ac05f8e440276424d2cbdb81ddc73b4
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82711951"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929727"
 ---
 # <a name="command-line-syntax-key"></a>コマンドライン構文のキー
 
 次の表に、コマンド ライン構文を示すために使用される表記規則の説明を示します。
 
-| 表記 | [説明] |
+| Notation | 説明 |
 | -------- | ----------- |
 | 角かっこ ([ ]) または中かっこ ({ }) がないテキスト | 表示されているとおりに入力する必要がある項目。 |
 | `<Text inside angle brackets>` | 値を指定する必要があるプレースホルダー。 |

@@ -1,6 +1,6 @@
 ---
 title: bitsadmin cache
-description: Bitsadmin cache コマンドのリファレンストピック。 bitsadmin キャッシュスイッチの一覧が含まれています。
+description: Bitsadmin cache コマンドの参照記事。 bitsadmin キャッシュスイッチの一覧が含まれています。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bf54225263b238cc7b6ba04d9881f4bc224d29b9
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 57b3897e89c70658d5b4015668d7b966222ce15d
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718265"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928417"
 ---
 # <a name="bitsadmin-cache"></a>bitsadmin cache
 
@@ -41,7 +41,7 @@ bitsadmin /cache /setexpirationtime
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | [説明] |
+| パラメーター | 説明 |
 | -------------- | -------------- |
 | [bitsadmin cache および help](bitsadmin-cache-and-help.md) | /Cache スイッチのコマンドラインの使用法を表示します。 |
 | [bitsadmin cache および clear](bitsadmin-cache-clear.md) | ローカルキャッシュを削除します。 |
@@ -54,7 +54,7 @@ bitsadmin /cache /setexpirationtime
 | [bitsadmin cache および getexpirationtime](bitsadmin-cache-and-getexpirationtime.md) | キャッシュの有効期限を取得します。 |
 | [bitsadmin cache および setexpirationtime](bitsadmin-cache-and-setexpirationtime.md) | キャッシュの有効期限を設定します。 |
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

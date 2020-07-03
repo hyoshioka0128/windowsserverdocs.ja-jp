@@ -1,6 +1,6 @@
 ---
 title: chglogon
-description: Chglogon コマンドのリファレンストピックでは、リモートデスクトップセッションホストサーバー上のクライアントセッションからのログオンを有効または無効にしたり、現在のログオンステータスを表示したりします。
+description: Chglogon コマンドの参照記事。リモートデスクトップセッションホストサーバー上のクライアントセッションからのログオンを有効または無効にしたり、現在のログオンステータスを表示したりします。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ ms.date: 10/16/2017
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: f232439e51f2d32f1ef4834a3bba7f4428cce093
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 582dc84e54b491f7deb92c249a258d7f321b3f9c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82714546"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929095"
 ---
 # <a name="chglogon"></a>chglogon
 
@@ -25,7 +25,7 @@ ms.locfileid: "82714546"
 > [!NOTE]
 > このコマンドは、**変更ログコマンド**に置き換えられました。 構文とパラメーターの詳細を含む詳細については、「 [change logon コマンド](change-logon.md)」を参照してください。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

@@ -1,6 +1,6 @@
 ---
-title: 詳細 vdisk
-description: 選択された仮想ハードディスク (VHD) のプロパティを表示する detail vdisk コマンドのリファレンストピックです。
+title: detail vdisk
+description: 選択された仮想ハードディスク (VHD) のプロパティを表示する detail vdisk コマンドのリファレンス記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fe754b5f089900ac97f288bc2cc8c72327a1bc82
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 5d3f061706bef2d4636e9f18ba428e7ddfb90bdd
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993024"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929369"
 ---
-# <a name="detail-vdisk"></a>詳細 vdisk
+# <a name="detail-vdisk"></a>detail vdisk
 
 > 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -36,7 +36,7 @@ detail vdisk
 detail vdisk
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 
@@ -52,6 +52,6 @@ detail vdisk
 
 - [merge vdisk コマンド](merge-vdisk.md)
 
-- [vdisk の選択](select-vdisk.md)
+- [select vdisk](select-vdisk.md)
 
 - [list コマンド](list.md)

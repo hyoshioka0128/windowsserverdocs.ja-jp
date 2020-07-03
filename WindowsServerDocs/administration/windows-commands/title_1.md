@@ -1,6 +1,6 @@
 ---
 title: title
-description: '[タイトル] のリファレンストピック。コマンドプロンプトウィンドウのタイトルを作成します。'
+description: '[タイトル] の参照記事。コマンドプロンプトウィンドウのタイトルを作成します。'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a94fe033bfd43d825c5beb7c915937bc4419b18f
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 732a0de30b9495e6281248120d2a90f85734ad8b
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721343"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930057"
 ---
 # <a name="title"></a>title
 
@@ -30,19 +30,19 @@ title [<String>]
 
 ### <a name="parameters"></a>パラメーター
 
-|パラメーター|[説明]|
+|パラメーター|説明|
 |---------|-----------|
-|\<文字列>|コマンド プロンプト ウィンドウのタイトルを指定します。|
+|\<String>|コマンド プロンプト ウィンドウのタイトルを指定します。|
 |/?|コマンド プロンプトにヘルプを表示します。|
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>注釈
 
 -   バッチ プログラムのウィンドウのタイトルを作成するには、 **タイトル** バッチ ファイルの先頭にあるコマンドです。
 -   ウィンドウのタイトルを設定した後のみを使用してリセットできます、 **タイトル** コマンドです。
 
 ## <a name="examples"></a>例
 
-次のサンプルスクリプトでは、バッチファイルによって**copy**コマンドが実行されている間、コマンドプロンプトウィンドウのタイトルがファイルの更新に変更されます。 コマンドが実行されると、テキスト`Files Updated`が表示され、コマンドプロンプトウィンドウのタイトルがコマンドプロンプトに戻されます。
+次のサンプルスクリプトでは、バッチファイルによって**copy**コマンドが実行されている間、コマンドプロンプトウィンドウのタイトルがファイルの更新に変更されます。 コマンドが実行されると、テキスト `Files Updated` が表示され、コマンドプロンプトウィンドウのタイトルがコマンドプロンプトに戻されます。
 ```
 @echo off
 title Updating Files
@@ -51,6 +51,6 @@ echo Files Updated.
 title Command Prompt
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

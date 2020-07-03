@@ -1,6 +1,6 @@
 ---
 title: create partition extended
-description: Create partition extended コマンドのリファレンストピック。フォーカスがあるディスクに拡張パーティションを作成します。
+description: パーティションの拡張コマンドの参照記事。フォーカスがあるディスクに拡張パーティションを作成します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9d2cc591dca276f70b3ddda1827607d5e2953ed2
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 6acc766a6d9e2fd51bc9c6726d5dec2168ec7eef
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993281"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929682"
 ---
 # <a name="create-partition-extended"></a>create partition extended
 
@@ -42,7 +42,7 @@ create partition extended [size=<n>] [offset=<n>] [align=<n>] [noerr]
 | align =`<n>` | すべてのパーティションエクステントを最も近いアラインメント境界に配置します。 通常、パフォーマンスを向上させるために、ハードウェア RAID 論理ユニット番号 (LUN) アレイと共に使用します。 `<n>`ディスクの先頭から最も近いアラインメント境界までのキロバイト (KB) 数を指定します。 |
 | noerr | スクリプト専用です。 エラーが発生しても、エラーが発生しなかったかのように DiskPart はコマンドの処理を続けます。 このパラメーターは、エラー発生すると、DiskPart はエラー コードを生成して終了します。 |
 
-## <a name="examples"></a>使用例
+## <a name="examples"></a>例
 
 サイズが 1000 mb の拡張パーティションを作成するには、次のように入力します。
 
@@ -50,7 +50,7 @@ create partition extended [size=<n>] [offset=<n>] [align=<n>] [noerr]
 create partition extended size=1000
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

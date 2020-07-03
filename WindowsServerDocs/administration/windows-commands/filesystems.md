@@ -1,6 +1,6 @@
 ---
 title: filesystems
-description: '[ファイルシステム] コマンドのリファレンストピック。フォーカスがあるボリュームの現在のファイルシステムに関する情報を表示し、ボリュームのフォーマットがサポートされているファイルシステムの一覧を表示します。'
+description: '[ファイルシステム] コマンドの参照記事。フォーカスがあるボリュームの現在のファイルシステムに関する情報を表示し、ボリュームのフォーマットがサポートされているファイルシステムの一覧を表示します。'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8c31a8978beecda223bc75b1374ef4ac473bf1c6
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 55219ae6a01c260a18592a59785558f3ff87715a
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437167"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929292"
 ---
 # <a name="filesystems"></a>filesystems
 
@@ -22,12 +22,12 @@ ms.locfileid: "83437167"
 
 この操作を成功させるのには、ボリュームを選択してください。 [[ボリュームの選択] コマンド](select-volume.md)を使用してボリュームを選択し、それにフォーカスを移動します。
 
-## <a name="syntax"></a>構文
+## <a name="syntax"></a>Syntax
 
 ```
 filesystems
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
