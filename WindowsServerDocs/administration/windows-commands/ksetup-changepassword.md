@@ -1,6 +1,6 @@
 ---
 title: ksetup changepassword
-description: Ksetup changepassword コマンドのリファレンストピックです。このコマンドは、キー配布センター (KDC) パスワード (kpasswd) 値を使用して、ログオンしているユーザーのパスワードを変更します。
+description: Ksetup changepassword コマンドのリファレンス記事。これは、ログオンしているユーザーのパスワードを変更するために、キー配布センター (KDC) パスワード (kpasswd) 値を使用します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5c1ed9d9b611a7911c4a22c7ca803b480f52f323
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: e49a9c0a796357c89efd3c86373c77468670176c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83817982"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925501"
 ---
 # <a name="ksetup-changepassword"></a>ksetup changepassword
 
@@ -64,7 +64,7 @@ ksetup /domain CONTOSO /changepassword Pas$w0rd Pa$$w0rd
 ksetup /changepassword Pas$w0rd *
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

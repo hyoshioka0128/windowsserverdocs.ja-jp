@@ -1,6 +1,6 @@
 ---
 title: goto
-description: Goto コマンドのリファレンストピックです。このコマンドは、cmd.exe をバッチプログラムのラベル付きの行に指示します。
+description: Goto コマンドの参照記事。バッチプログラムのラベルが付けられた行に cmd.exe を指示します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1eb1b6b275887de535614fa5df4adabe33406a31
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: afc77f7837ddaeb0552052538537285f0d652682
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83818972"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924687"
 ---
 # <a name="goto"></a>goto
 
-Cmd.exe をバッチプログラムのラベル付きの行に指示します。 バッチプログラム内では、このコマンドはラベルによって識別される行にコマンド処理を指示します。 ラベルが見つかると、処理が続行され、次の行で始まるコマンドが開始されます。
+バッチプログラムのラベル付きの行に cmd.exe を指示します。 バッチプログラム内では、このコマンドはラベルによって識別される行にコマンド処理を指示します。 ラベルが見つかると、処理が続行され、次の行で始まるコマンドが開始されます。
 
 ## <a name="syntax"></a>構文
 
@@ -35,7 +35,7 @@ goto <label>
 
 #### <a name="remarks"></a>注釈
 
--  コマンド拡張機能が有効になっている場合 (既定)、target ラベルが**EOF**の**goto**コマンドを使用する場合は、現在のバッチスクリプトファイルの末尾に制御を移し、ラベルを定義せずにバッチスクリプトファイルを終了します。 このコマンドを **: EOF**ラベルと共に使用する場合は、ラベルの前にコロンを挿入する必要があります。 (例: `goto:EOF`)。
+-  コマンド拡張機能が有効になっている場合 (既定)、target ラベルが**EOF**の**goto**コマンドを使用する場合は、現在のバッチスクリプトファイルの末尾に制御を移し、ラベルを定義せずにバッチスクリプトファイルを終了します。 このコマンドを **: EOF**ラベルと共に使用する場合は、ラベルの前にコロンを挿入する必要があります。 例: `goto:EOF`。
 
 - *Label*パラメーターにはスペースを使用できますが、他の区切り記号 (セミコロン;) (;) など) を含めることはできません。または等号 (=)) にします。
 
@@ -56,7 +56,7 @@ echo An error occurred during formatting.
 echo End of batch program.
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

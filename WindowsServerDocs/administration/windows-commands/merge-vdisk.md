@@ -1,6 +1,6 @@
 ---
-title: マージ vdisk
-description: Merge vdisk コマンドのリファレンストピック。差分仮想ハードディスク (VHD) とそれに対応する親 VHD をマージします。
+title: merge vdisk
+description: Merge vdisk コマンドの参照記事。差分仮想ハードディスク (VHD) とそれに対応する親 VHD をマージします。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ccd288baff691576c15c3e9c686b6708d1c45ee8
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: 41201885861b7084fa7b49be8b5bf5a0e7394981
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354622"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925037"
 ---
-# <a name="merge-vdisk"></a>マージ vdisk
+# <a name="merge-vdisk"></a>merge vdisk
 
 > 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -45,7 +45,7 @@ merge vdisk depth=<n>
 merge vdisk depth=1
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

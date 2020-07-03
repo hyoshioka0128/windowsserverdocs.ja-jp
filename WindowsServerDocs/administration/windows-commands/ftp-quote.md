@@ -1,6 +1,6 @@
 ---
-title: ftp 引用符
-description: リモート ftp サーバーに逐語的引数を送信する、ftp 引用符コマンドのリファレンストピックです。
+title: ftp quote
+description: リモート ftp サーバーに逐語的引数を送信する、ftp 引用符コマンドの参照記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 87dd81d4feb6a5509a8609f5c479e3352d5fb7ea
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: ce1f0c009ff9e68c4b8f1f9bc074d91d235d1955
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820342"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925080"
 ---
-# <a name="ftp-quote"></a>ftp 引用符
+# <a name="ftp-quote"></a>ftp quote
 
 > 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -45,7 +45,7 @@ quote <argument>[ ]
 quote quit
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

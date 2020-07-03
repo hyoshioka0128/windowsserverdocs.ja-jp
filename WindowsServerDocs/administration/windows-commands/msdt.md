@@ -1,6 +1,6 @@
 ---
 title: msdt
-description: コマンドラインまたは自動スクリプトの一部としてトラブルシューティングパックを起動し、ユーザー入力なしの追加オプションを有効にする、msdt コマンドのリファレンストピックです。
+description: Msdt コマンドの参照記事。コマンドラインでトラブルシューティングパックを起動するか、自動スクリプトの一部として、ユーザー入力なしで追加のオプションを有効にします。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 47eaf859c86a939777ce8878937d36f2c581ab31
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: 99ba1320171e4e305209f06fbee617e54c979d30
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354373"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925024"
 ---
 # <a name="msdt"></a>msdt
 
@@ -52,7 +52,7 @@ msdt </id <name> | /path <name> | /cab < name>> <</parameter> [options] … <par
 | 1 | **存在しますが、修正されていません。** トラブルシューティングツールによって、固定されていない状態の1つ以上の根本原因が特定されました。 このコードは、別の根本原因が修正された場合でも返されます。 |
 | 2 | **見つかりませんでした:** トラブルシューティングツールは、根本的な原因を特定できませんでした。 |
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

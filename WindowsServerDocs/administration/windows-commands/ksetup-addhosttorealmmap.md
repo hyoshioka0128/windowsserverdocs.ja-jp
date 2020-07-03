@@ -1,6 +1,6 @@
 ---
-title: ksetup addhostの almmap
-description: Ksetup addhost almmap コマンドのリファレンストピックでは、指定されたホストと領域の間にサービスプリンシパル名 (SPN) マッピングを追加します。
+title: ksetup addhosttorealmmap
+description: Ksetup addhost almmap コマンドの参照記事。このコマンドは、指定されたホストと領域の間にサービスプリンシパル名 (SPN) マッピングを追加します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ee2639a5bb071bdd3d6ac3f6373e881c18f3bf9a
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 830db84e210b94088e74fd08909f7c47ff84df98
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83818112"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925575"
 ---
-# <a name="ksetup-addhosttorealmmap"></a>ksetup addhostの almmap
+# <a name="ksetup-addhosttorealmmap"></a>ksetup addhosttorealmmap
 
 指定されたホストと領域の間に、サービスプリンシパル名 (SPN) マッピングを追加します。 このコマンドでは、同じ DNS サフィックスを共有しているホストまたは複数のホストを領域にマップすることもできます。
 
@@ -45,7 +45,7 @@ ksetup /addhosttorealmmap IPops897 CONTOSO
 
 レジストリを調べて、マッピングが意図したとおりに発生したことを確認してください。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

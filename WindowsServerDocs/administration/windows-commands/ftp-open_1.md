@@ -1,6 +1,6 @@
 ---
-title: ftp を開く
-description: 指定された ftp サーバーに接続する、ftp open コマンドのリファレンストピックです。
+title: ftp open
+description: 指定された ftp サーバーに接続する、ftp open コマンドの参照記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 63e428164ece405a6a83041edd46ffe332b13c3a
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 888b8f917d82d72f47a737c2f0edc42451de7164
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820402"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925790"
 ---
-# <a name="ftp-open"></a>ftp を開く
+# <a name="ftp-open"></a>ftp open
 
 > 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -49,7 +49,7 @@ TCP ポート*755*でリッスンしている*ftp.microsoft.com*で ftp サー�
 open ftp.microsoft.com 755
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

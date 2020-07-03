@@ -1,6 +1,6 @@
 ---
 title: ftp get
-description: 現在のファイル転送の種類を使用してリモートファイルをローカルコンピューターにコピーする ftp get コマンドのリファレンストピックです。
+description: Ftp get コマンドの参照記事。現在のファイル転送の種類を使用してリモートファイルをローカルコンピューターにコピーします。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b7254cac15afc446695f22ee1a63f2f4573d3565
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: de084813ee837ecea2f0871589218d3262b40bba
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83819712"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925925"
 ---
 # <a name="ftp-get"></a>ftp get
 
@@ -46,13 +46,13 @@ get <remotefile> [<localfile>]
 get test.txt
 ```
 
-現在のファイル転送*を使用して* *test.txt*をローカルコンピューターにコピーするには、次のように入力します。
+現在のファイル転送を使用して*test1.txt*としてローカルコンピューターに*test.txt*をコピーするには、次のように入力します。
 
 ```
 get test.txt test1.txt
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

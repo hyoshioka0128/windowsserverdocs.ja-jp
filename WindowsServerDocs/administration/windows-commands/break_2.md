@@ -1,6 +1,6 @@
 ---
 title: break
-description: 中断コマンドのリファレンストピック。 VSS からシャドウコピーボリュームの関連付けを解除し、通常のボリュームとしてアクセスできるようにします。
+description: 中断コマンドの参照記事。 VSS からシャドウコピーボリュームの関連付けを解除し、通常のボリュームとしてアクセスできるようにします。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7e8789ab68ecb98d190a79c3f1088aad05b83562
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 7f3974f183215a42920f7406a62ab335eb101f56
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82707782"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924895"
 ---
 # <a name="break"></a>break
 
@@ -33,7 +33,7 @@ break [writable] <setid>
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | [説明] |
+| パラメーター | 説明 |
 | --------- | ----------- |
 | 書き込み可能 | ボリュームの読み取り/書き込みアクセスを有効にします。 |
 | \<setid> | シャドウコピーセットの ID を指定します。 **Load metadata**コマンドによって環境変数として格納されているシャドウコピー ID のエイリアスは、 *SetID*パラメーターで使用できます。 |
@@ -46,6 +46,6 @@ break [writable] <setid>
 break writable %Alias1%
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

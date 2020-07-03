@@ -1,6 +1,6 @@
 ---
 title: ntfrsutl
-description: Ntfrsutl コマンドのリファレンストピック。これにより、NT ファイルレプリケーションサービス (NTFRS) の内部テーブル、スレッド、およびメモリ情報がダンプされます。
+description: Ntfrsutl コマンドの参照記事。これにより、NT ファイルレプリケーションサービス (NTFRS) の内部テーブル、スレッド、およびメモリ情報がダンプされます。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f931d916888a372d66a1cc06cb7543067b9b9d3b
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 56aefc1277f67dc6a06ba4686c26f81592afc2f3
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472768"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925334"
 ---
 # <a name="ntfrsutl"></a>ntfrsutl
 
@@ -65,6 +65,6 @@ C:\Program Files\SupportTools>ntfrsutl poll wrkstn-1
 C:\Program Files\SupportTools>ntfrsutl version
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

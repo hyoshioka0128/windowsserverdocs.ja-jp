@@ -1,6 +1,6 @@
 ---
 title: gpresult
-description: Gpresult コマンドのリファレンストピック。リモートユーザーとコンピューターのポリシーの結果セット (RSoP) 情報を表示します。
+description: リモートユーザーとコンピューターのポリシーの結果セット (RSoP) 情報を表示する、gpresult コマンドのリファレンス記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e88a75a15168baaf2e49ca08ff20d3a8ffb5620c
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: b55db74c0c8f9c527ade8412f50ef83ea675a5c6
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83818862"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924639"
 ---
 # <a name="gpresult"></a>gpresult
 
@@ -22,7 +22,7 @@ ms.locfileid: "83818862"
 
 リモートユーザーとコンピューターのポリシーの結果セット (RSoP) 情報を表示します。 ファイアウォール経由でリモートターゲットコンピューターの RSoP レポートを使用するには、ポートで受信ネットワークトラフィックを有効にするファイアウォール規則が必要です。
 
-## <a name="syntax"></a>構文
+## <a name="syntax"></a>Syntax
 
 ```
 gpresult [/s <system> [/u <username> [/p [<password>]]]] [/user [<targetdomain>\]<targetuser>] [/scope {user | computer}] {/r | /v | /z | [/x | /h] <filename> [/f] | /?}
@@ -35,7 +35,7 @@ gpresult [/s <system> [/u <username> [/p [<password>]]]] [/user [<targetdomain>\
 
 | パラメーター | 説明 |
 | --------- | ----------- |
-| /s`<system>` | 名前またはリモート コンピューターの IP アドレスを指定します。 バックスラッシュは使用しないでください。 既定はローカル コンピュータです。 |
+| /s`<system>` | 名前またはリモート コンピューターの IP アドレスを指定します。 バックスラッシュは使用しないでください。 既定値はローカル コンピューターです。 |
 | /u`<username>` | 指定されたユーザーの資格情報を使用してコマンドを実行します。 既定のユーザーは、コマンドを発行するコンピューターにログオンしているユーザーです。 |
 | /p`[<password>]` | **/U**パラメーターに指定されているユーザーアカウントのパスワードを指定します。 **/P**を省略した場合、 **gpresult**はパスワードの入力を求めます。 **/P**パラメーターは、 **/x**または **/h**と共に使用することはできません。 |
 | /user`[<targetdomain>\]<targetuser>]` | RSoP データを表示するリモートユーザーを指定します。 |
@@ -63,7 +63,7 @@ gpresult [/s <system> [/u <username> [/p [<password>]]]] [/user [<targetdomain>\
 gpresult /s srvmain /u maindom\hiropln /p p@ssW23 /user targetusername /scope user /r
 ```
 
-グループポリシーに関する利用可能なすべての情報を、 *maindom\hiropln*という名前のファイルに保存するに*は、* コンピューターの *p@ssW23* *srvmain*に、次のように入力します。
+グループポリシーに関する利用可能なすべての情報をという*policy.txt*名前のファイルに保存する*maindom\hiropln*には、maindom\hiropln *p@ssW23* コンピューターの*srvmain*に、次のように入力します。
 
 ```
 gpresult /s srvmain /u maindom\hiropln /p p@ssW23 /user targetusername /z > policy.txt
@@ -75,6 +75,6 @@ gpresult /s srvmain /u maindom\hiropln /p p@ssW23 /user targetusername /z > poli
 gpresult /s srvmain /u maindom\hiropln /p p@ssW23 /r
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

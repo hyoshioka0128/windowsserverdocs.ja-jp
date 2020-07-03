@@ -1,6 +1,6 @@
 ---
-title: logman の開始と logman の停止
-description: Logman start および logman stop コマンドのリファレンストピック。データコレクターを起動し、開始時刻を手動に設定するか、データコレクターセットを停止し、終了時刻を手動に設定します。
+title: logman start および logman stop
+description: Logman start および logman stop コマンドのリファレンス記事。データコレクターを起動し、開始時刻を手動に設定します。または、データコレクターセットを停止し、終了時刻を手動に設定します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: db0111c4f58f0a28ad76affd3e4d8e24d4a927c2
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: b7b7da9aad31b977c2343e6f784b19dd420c21e6
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222915"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925425"
 ---
-# <a name="logman-start-and-logman-stop"></a>logman の開始と logman の停止
+# <a name="logman-start-and-logman-stop"></a>logman start および logman stop
 
 > 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -48,7 +48,7 @@ logman stop <[-n] <name>> [options]
 logman start perf_log -s server_1
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

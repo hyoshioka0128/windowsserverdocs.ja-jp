@@ -1,6 +1,6 @@
 ---
 title: ftp mls
-description: Ftp mls コマンドのリファレンストピック。リモートディレクトリにあるファイルとサブディレクトリの省略形の一覧を表示します。
+description: Ftp mls コマンドの参照記事。リモートディレクトリにあるファイルとサブディレクトリの省略形の一覧を表示します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 372c0b9a42fdfb8600083a301b71c37ada43c014
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 6c2e87cbf0455fccb99435e0a8b67fd30164e35b
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820395"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925855"
 ---
 # <a name="ftp-mls"></a>ftp mls
 
@@ -43,13 +43,13 @@ mls <remotefile>[ ] <localfile>
 mls dir1 dir2 -
 ```
 
-*Dir1*と*dir2*のファイルとサブディレクトリの省略リストをローカルファイル*dirlist .txt*に保存するには、次のように入力します。
+*Dir1*と*dir2*のファイルとサブディレクトリの省略リストをローカルファイル*dirlist.txt*に保存するには、次のように入力します。
 
 ```
 mls dir1 dir2 dirlist.txt
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

@@ -1,6 +1,6 @@
 ---
 title: prndrvr
-description: Prndrvr.vbs コマンドのリファレンストピックでは、プリンタードライバーを追加、削除、および一覧表示します。
+description: Prndrvr.vbs コマンドの参照記事。プリンタードライバーを追加、削除、および一覧表示します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 62c63819c175f4b3f3770d90da0bd560443ccb77
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 4f256d003ac0884b100aedb24bbb55e663444911
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472297"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924200"
 ---
 # <a name="prndrvr"></a>prndrvr
 
 > 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-追加、削除、およびプリンター ドライバーの一覧を表示します。 このコマンドは、ディレクトリにある Visual Basic スクリプトです `%WINdir%\System32\printing_Admin_Scripts\<language>` 。 コマンドプロンプトでこのコマンドを使用するには、「 **cscript** 」に続けて prndrvr.vbs ファイルの完全なパスを入力するか、ディレクトリを適切なフォルダーに変更します。 たとえば、`cscript %WINdir%\System32\printing_Admin_Scripts\en-US\prndrvr` のように指定します。
+追加、削除、およびプリンター ドライバーの一覧を表示します。 このコマンドは、ディレクトリにある Visual Basic スクリプトです `%WINdir%\System32\printing_Admin_Scripts\<language>` 。 コマンドプロンプトでこのコマンドを使用するには、「 **cscript** 」に続けて prndrvr.vbs ファイルの完全なパスを入力するか、ディレクトリを適切なフォルダーに変更します。 例: `cscript %WINdir%\System32\printing_Admin_Scripts\en-US\prndrvr`。
 
 パラメーターを指定せずに使用します。 **prndrvr.vbs**はコマンドラインヘルプを表示します。
 
@@ -73,7 +73,7 @@ cscript prndrvr -a -m Laser printer model 1 -v 3 -e Windows x64 -i c:\temp\Laser
 cscript prndrvr -a -m Laser printer model 1 -v 3 -e Windows x64
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

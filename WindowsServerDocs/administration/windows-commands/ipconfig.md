@@ -1,6 +1,6 @@
 ---
 title: ipconfig
-description: Ipconfig コマンドのリファレンストピック。現在のすべての TCP/IP ネットワーク構成値を表示し、動的ホスト構成プロトコル (DHCP) とドメインネームシステム (DNS) の設定を更新します。
+description: Ipconfig コマンドの参照記事。現在のすべての TCP/IP ネットワーク構成値を表示し、動的ホスト構成プロトコル (DHCP) とドメインネームシステム (DNS) の設定を更新します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e08e8c493b40475ba61ea76be6b49b9c4e21c1cf
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 3567f855a6066ed318f10daa22f1ca8de0d565c4
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83818392"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924357"
 ---
 # <a name="ipconfig"></a>ipconfig
 
@@ -88,6 +88,6 @@ ipconfig /showclassid Local*
 ipconfig /setclassid Local Area Connection TEST
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

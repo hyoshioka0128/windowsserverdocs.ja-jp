@@ -1,6 +1,6 @@
 ---
 title: 検索
-description: 検索コマンドのリファレンストピックでは、ファイル内のテキスト文字列を検索し、指定された文字列をファイルに表示します。
+description: 検索コマンドの参照記事。ファイル内のテキスト文字列を検索し、指定された文字列をファイルに表示します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0273405ce5e5b4958a347cd1eaddee0a38897f0c
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 8ebebcd29faad50aec84dd464ff0f745d2ddf52c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437007"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925251"
 ---
 # <a name="find"></a>検索
 
@@ -35,11 +35,11 @@ find [/v] [/c] [/n] [/i] [/off[line]] <string> [[<drive>:][<path>]<filename>[...
 | /n | 各行の前に、ファイルの行番号を指定します。 |
 | /i | 検索で大文字と小文字を区別しないことを指定します。 |
 | [/off [行]] | オフライン属性が設定されているファイルはスキップされません。 |
-| `<string>` | 必須。 検索する文字のグループを引用符で囲んで指定します。 |
+| `<string>` | 必須です。 検索する文字のグループを引用符で囲んで指定します。 |
 | `[<drive>:][<path>]<filename>` | 指定した文字列を検索するファイルの場所と名前を指定します。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-#### <a name="remarks"></a>解説
+#### <a name="remarks"></a>注釈
 
 - **/I**を使用しない場合、このコマンドは*文字列*として指定した内容を検索します。 たとえば、このコマンドでは、との文字を別々に扱い `a` `A` ます。 ただし、 **/i**を使用した場合、検索は大文字と小文字が区別されないようになり、 `a` と `A` は同じ文字として扱われます。
 
@@ -63,7 +63,7 @@ find [/v] [/c] [/n] [/i] [/off[line]] <string> [[<drive>:][<path>]<filename>[...
 find pencil sharpener pencil.ad
 ```
 
-「」というテキストを検索するために、"ドキュメントに記載されているもののみを説明しています。 最終的なレポートではありません。 " *レポート .doc*ファイルで、次のように入力します。
+「」というテキストを検索するために、"ドキュメントに記載されているもののみを説明しています。 最終的なレポートではありません。 " *report.doc*ファイルで、次のように入力します。
 
 ```
 find ""The scientists labeled their paper for discussion only. It is not a final report."" report.doc
@@ -83,7 +83,7 @@ dir c:\ /s /b | find CPU
 
 **検索**検索では大文字と小文字が区別され、 **dir**は大文字の出力を生成するので、文字列 CPU を大文字で入力するか、[**検索**] で **/i**コマンドラインオプションを使用する必要があります。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

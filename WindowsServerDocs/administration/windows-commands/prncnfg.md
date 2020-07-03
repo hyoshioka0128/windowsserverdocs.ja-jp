@@ -1,6 +1,6 @@
 ---
 title: prncnfg
-description: Prncnfg.vbs コマンドのリファレンストピックでは、プリンターに関する構成情報を構成または表示します。
+description: Prncnfg.vbs コマンドの参照記事。プリンターに関する構成情報を構成または表示します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: b60faaa5537ebdf8860c9b0471cf879677b80f1d
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 11eb66c3e1d4fb457f9655750d92ab90ad9b473b
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472307"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924235"
 ---
 # <a name="prncnfg"></a>prncnfg
 
 > 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-プリンターに関する構成情報を表示または構成します。 このコマンドは、ディレクトリにある Visual Basic スクリプトです `%WINdir%\System32\printing_Admin_Scripts\<language>` 。 コマンドプロンプトでこのコマンドを使用するには、「 **cscript** 」に続けて prncnfg.vbs ファイルの完全なパスを入力するか、ディレクトリを適切なフォルダーに変更します。 たとえば、`cscript %WINdir%\System32\printing_Admin_Scripts\en-US\prncnfg` のように指定します。
+プリンターに関する構成情報を表示または構成します。 このコマンドは、ディレクトリにある Visual Basic スクリプトです `%WINdir%\System32\printing_Admin_Scripts\<language>` 。 コマンドプロンプトでこのコマンドを使用するには、「 **cscript** 」に続けて prncnfg.vbs ファイルの完全なパスを入力するか、ディレクトリを適切なフォルダーに変更します。 例: `cscript %WINdir%\System32\printing_Admin_Scripts\en-US\prncnfg`。
 
 ## <a name="syntax"></a>構文
 
@@ -82,7 +82,7 @@ cscript prncnfg -t -S HRServer -P colorprinter_2 +keepprintedjobs
 cscript prncnfg -x -S HRServer -P colorprinter_2 -z "colorprinter 3"
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

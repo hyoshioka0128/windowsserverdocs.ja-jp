@@ -1,6 +1,6 @@
 ---
 title: diskpart のインポート
-description: ローカルコンピューターのディスクグループに外部ディスクグループをインポートするインポートコマンドのリファレンストピックです。
+description: インポートコマンドの参照記事。外部ディスクグループをローカルコンピューターのディスクグループにインポートします。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6912aa9698d484501cad5f3cdfb5b19955bb4931
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 072c012e5e2cc8d49811fbfa1cff5140b2c745a1
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83818452"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924420"
 ---
-# <a name="import-diskpart"></a>インポート (diskpart)
+# <a name="import-diskpart"></a>import (diskpart)
 
 外部ディスクグループをローカルコンピューターのディスクグループにインポートします。 このコマンドは、フォーカスがあるディスクと同じグループにあるすべてのディスクをインポートします。
 
@@ -42,7 +42,7 @@ import [noerr]
 import
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

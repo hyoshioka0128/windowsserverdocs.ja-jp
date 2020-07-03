@@ -1,6 +1,6 @@
 ---
 title: fsutil quota
-description: Fsutil quota コマンドのリファレンストピック。これは、NTFS ボリュームのディスククォータを管理して、ネットワークベースの記憶域をより細かく制御できるようにします。
+description: Fsutil quota コマンドの参照記事。これは、NTFS ボリュームのディスククォータを管理して、ネットワークベースの記憶域をより細かく制御できるようにします。
 ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
@@ -9,12 +9,12 @@ ms.technology: storage
 ms.assetid: 21225c11-7c72-4ea2-96bd-e63d4beb3be5
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 54c4f6fe5fd5ae7a43d5057cd5837374f1b94ecd
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: f757f822a903f6b5c6d221e17f87cf1e73d1555f
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83435818"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925228"
 ---
 # <a name="fsutil-quota"></a>fsutil quota
 
@@ -43,12 +43,12 @@ fsutil quota [violations]
 | query | 既存のディスククォータの一覧を表示します。 |
 | track | 指定されたボリュームのディスク使用量を追跡します。 |
 | 事項 | システムログとアプリケーションログを検索し、クォータ違反が検出されたか、ユーザーがクォータしきい値またはクォータ制限に達したことを示すメッセージを表示します。 |
-| `<volumepath>` | 必須。 ドライブ名の後にコロン、または形式の GUID を指定し `volume{GUID}` ます。 |
+| `<volumepath>` | 必須です。 ドライブ名の後にコロン、または形式の GUID を指定し `volume{GUID}` ます。 |
 | `<threshold>`  | 警告が発行される制限 (バイト単位) を設定します。 このパラメーターは、コマンドに必要です `fsutil quota modify` 。 |
 | `<limit>` | 最大許容ディスク使用量 (バイト単位) を設定します。 このパラメーターは、コマンドに必要です `fsutil quota modify` 。 |
 | `<username>` | ドメインまたはユーザー名を指定します。 このパラメーターは、コマンドに必要です `fsutil quota modify` 。 |
 
-#### <a name="remarks"></a>解説
+#### <a name="remarks"></a>注釈
 
 - ディスククォータはボリューム単位で実装され、ハードおよびソフトの両方の記憶域の制限をユーザーごとに実装することができます。
 
@@ -68,7 +68,7 @@ fsutil quota query volume{928842df-5a01-11de-a85c-806e6f6e6963}
 fsutil quota query C:
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

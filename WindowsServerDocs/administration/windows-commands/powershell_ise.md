@@ -1,6 +1,6 @@
 ---
 title: PowerShell_ise
-description: Windows PowerShell Integrated Scripting Environment (ISE) セッションを開始する PowerShell_ise コマンドのリファレンストピックです。
+description: Windows PowerShell Integrated Scripting Environment (ISE) セッションを開始する PowerShell_ise コマンドのリファレンス記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4c1b525c0178b08e34851b800be8ce4791f38913
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 3f983ea5b8464748d86264108a2ee8660ca0e3f2
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472337"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85926056"
 ---
 # <a name="powershell_ise"></a>PowerShell_ise
 
@@ -64,7 +64,7 @@ Windows PowerShell Integrated Scripting Environment (ISE) は、読み取り、�
 
 - Windows PowerShell は、Windows Server オペレーティング システムの Server Core インストール オプションで実行されます。 ただし、Windows PowerShell ISE には、グラフィック ユーザー インターフェイスが必要であるために、Server Core インストールで実行にしないとはされません。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [about_PowerShell_Ise.exe](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_ise_exe
 

@@ -1,6 +1,6 @@
 ---
 title: icacls
-description: 指定されたファイルの随意アクセス制御リスト (DACL) を表示または変更し、格納されている Dacl を指定したディレクトリ内のファイルに適用する、icacls コマンドのリファレンストピックです。
+description: Icacls コマンドの参照記事。指定されたファイルの随意アクセス制御リスト (DACL) を表示または変更し、格納されている Dacl を指定したディレクトリ内のファイルに適用します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 08/21/2018
-ms.openlocfilehash: dcf4fa9fa9205a762ead99ac4a8486ac04c23514
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 386e008ef7095cbef8d84b33682b494d8d6c9c52
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724874"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924524"
 ---
 # <a name="icacls"></a>icacls
 
@@ -32,7 +32,7 @@ icacls <directory> [/substitute <sidold> <sidnew> [...]] [/restore <aclfile> [/c
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | [説明] |
+| パラメーター | 説明 |
 | --------- | ----------- |
 | `<filename>` | Dacl を表示するファイルを指定します。 |
 | `<directory>` | Dacl を表示するディレクトリを指定します。 |
@@ -40,24 +40,24 @@ icacls <directory> [/substitute <sidold> <sidnew> [...]] [/restore <aclfile> [/c
 | /c | ファイルエラーが発生しても操作を続行します。 エラーメッセージは引き続き表示されます。 |
 | /l | 変換先ではなく、シンボリックリンクに対して操作を実行します。 |
 | /q | 成功メッセージを表示しません。 |
-| [/保存`<ACLfile>` [/t] [/c] [/l] [/q]] | は、 **/restore**で後で使用するために、一致するすべてのファイルの Dacl を*aclfile*に格納します。 |
-| [/setowner `<username>` [/t] [/c] [/l] [/q]] | 一致するすべてのファイルの所有者を、指定したユーザーに変更します。 |
-| [/findsid `<sid>` [/t] [/c] [/l] [/q]] | 指定されたセキュリティ識別子 (SID) を明示的に示す DACL を含む、一致するすべてのファイルを検索します。 |
+| [/保存 `<ACLfile>`/tスイッチ/l[/q]] | は、 **/restore**で後で使用するために、一致するすべてのファイルの Dacl を*aclfile*に格納します。 |
+| [/setowner `<username>`/tスイッチ/l[/q]] | 一致するすべてのファイルの所有者を、指定したユーザーに変更します。 |
+| [/findsid `<sid>`/tスイッチ/l[/q]] | 指定されたセキュリティ識別子 (SID) を明示的に示す DACL を含む、一致するすべてのファイルを検索します。 |
 | [/verify [/t] [/c] [/l] [/q]] | Acl を持つすべてのファイルを検索します。これは、標準ではないか、または ACE (アクセス制御エントリ) のカウントと整合性がありません。 |
 | [/リセット [/t] [/c] [/l] [/q]] | 一致するすべてのファイルについて、Acl を既定の継承された Acl に置き換えます。 |
-| [/grant [: r] \<sid>:<perm>[...]] | 指定されたユーザーアクセス権を付与します。 権限は、以前に許可された明示的な権限に代わるものです。<p>**: R**を追加しない場合は、以前に許可した明示的なアクセス許可にアクセス許可が追加されることを意味します。 |
-| [/拒否\<sid>:<perm>[...]] | 指定されたユーザーアクセス権を明示的に拒否します。 明示的な拒否 ACE は、指定された権限に対して追加され、明示的な許可では同じ権限が削除されます。 |
-| [/remove`[:g | :d]]` `<sid>`[...]/tスイッチ/l/q | 指定された SID のすべての出現箇所を DACL から削除します。 このコマンドでは、次のものも使用できます。<ul><li>**: g** -指定した SID に対して付与されているすべての権限を削除します。</li><li>**:d** -指定した SID に対するすべての拒否された権限を削除します。 |
+| [/grant [: r] \<sid> : <perm> [...]] | 指定されたユーザーアクセス権を付与します。 権限は、以前に許可された明示的な権限に代わるものです。<p>**: R**を追加しない場合は、以前に許可した明示的なアクセス許可にアクセス許可が追加されることを意味します。 |
+| [/拒否 \<sid> : <perm> [...]] | 指定されたユーザーアクセス権を明示的に拒否します。 明示的な拒否 ACE は、指定された権限に対して追加され、明示的な許可では同じ権限が削除されます。 |
+| [/remove `[:g | :d]]` `<sid>`[...]/tスイッチ/l/q | 指定された SID のすべての出現箇所を DACL から削除します。 このコマンドでは、次のものも使用できます。<ul><li>**: g** -指定した SID に対して付与されているすべての権限を削除します。</li><li>**:d** -指定した SID に対するすべての拒否された権限を削除します。 |
 | [/setintegritylevel [(CI) (OI)] `<Level>:<Policy>`[...]] | 一致するすべてのファイルに整合性 ACE を明示的に追加します。 レベルは次のように指定できます。<ul><li>**l** -低</li><li>**m**-中</li><li>**h** -高</li></ul>整合性 ACE の継承オプションはレベルの前に配置でき、ディレクトリにのみ適用されます。 |
-| [/代替`<sidold> <sidnew>` [...]] | 既存の SID (*sidold*) を新しい sid (*sidold*) に置き換えます。 `<directory>`パラメーターを指定してを使用する必要があります。 |
-| /restore `<ACLfile>` [/c] [/l] [/q] | 格納されて`<ACLfile>`いる dacl をから指定されたディレクトリ内のファイルに適用します。 `<directory>`パラメーターを指定してを使用する必要があります。 |
+| [/代替 `<sidold> <sidnew>`[...]] | 既存の SID (*sidold*) を新しい sid (*sidold*) に置き換えます。 パラメーターを指定してを使用する必要があり `<directory>` ます。 |
+| /restore `<ACLfile>` [/c] [/l] [/q] | 格納されている Dacl をから `<ACLfile>` 指定されたディレクトリ内のファイルに適用します。 パラメーターを指定してを使用する必要があり `<directory>` ます。 |
 | /inheritancelevel:`[e | d | r]` | 継承レベルを設定します。次のような場合があります。<ul><li>**e** -継承を有効にする</li><li>**d** -継承を無効にして ace をコピーする</li><li>**r** -継承されたすべての ace を削除します。</li></ul> |
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>注釈
 
 - Sid は、数字またはフレンドリ名の形式で指定できます。 数値形式を使用する場合は、 **&#42;** ワイルドカード文字を SID の先頭に接辞します。
 
-- このコマンドは、ACE エントリの正規の順序を次のように保持します。  
+- このコマンドは、ACE エントリの正規の順序を次のように保持します。
 
     - 明示的な拒否
 
@@ -123,7 +123,7 @@ icacls <directory> [/substitute <sidold> <sidnew> [...]] [/restore <aclfile> [/c
 
       - **WA** -属性の書き込み
 
-  - 継承権限は、次`<perm>`のいずれかの形式にすることができ、ディレクトリにのみ適用されます。
+  - 継承権限は、 `<perm>` 次のいずれかの形式にすることができ、ディレクトリにのみ適用されます。
 
       - **(OI)** -オブジェクト継承
 
@@ -159,6 +159,6 @@ SID S-1-1-0 で定義されたユーザーを許可するには、"Test2" とい
 icacls test2 /grant *S-1-1-0:(d,wdac)
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

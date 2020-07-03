@@ -1,6 +1,6 @@
 ---
-title: ftp 送信
-description: Ftp 送信コマンドのリファレンストピック。現在のファイル転送の種類を使用してローカルファイルをリモートコンピューターにコピーします。
+title: ftp send
+description: Ftp 送信コマンドの参照記事。現在のファイル転送の種類を使用してローカルファイルをリモートコンピューターにコピーします。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 12ce45a0eb26e1aa4a0d7daace831751e1b67f4a
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 4d261db79483800507d62e9d4253a58b2b9359fe
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820302"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925698"
 ---
-# <a name="ftp-send"></a>ftp 送信
+# <a name="ftp-send"></a>ftp send
 
 > 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -40,19 +40,19 @@ send <localfile> [<remotefile>]
 
 ### <a name="examples"></a>例
 
-ローカルファイル*test.txt*をコピーし、リモートコンピューター上に*test1*という名前を指定するには、次のように入力します。
+ローカルファイル*test.txt*をコピーし、リモートコンピューターで*test1.txt*という名前を指定するには、次のように入力します。
 
 ```
 send test.txt test1.txt
 ```
 
-ローカルファイルの*setup.exe*をリモートコンピューターにコピーするには、次のように入力します。
+ローカルファイル*program.exe*をリモートコンピューターにコピーするには、次のように入力します。
 
 ```
 send program.exe
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

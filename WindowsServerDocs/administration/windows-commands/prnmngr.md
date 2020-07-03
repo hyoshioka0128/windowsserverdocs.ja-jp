@@ -1,6 +1,6 @@
 ---
 title: prnmngr
-description: 既定のプリンターの設定と表示に加えて、プリンターまたはプリンターの接続を追加、削除、および一覧表示する prnmngr コマンドのリファレンストピックです。
+description: 既定のプリンターの設定と表示に加えて、プリンターまたはプリンターの接続を追加、削除、および一覧表示する prnmngr コマンドの参照記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 1ccc04e7e040612d9243fe1e3f5ed67b8131ab9d
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 562d25a95fa3ccd556b65d0a29b866557c842c55
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472217"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924179"
 ---
 # <a name="prnmngr"></a>prnmngr
 
 > 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-追加、削除、およびプリンターまたは設定し、既定のプリンターを表示するだけでなく、プリンター接続を一覧表示します。 このコマンドは、ディレクトリにある Visual Basic スクリプトです `%WINdir%\System32\printing_Admin_Scripts\<language>` 。 コマンドプロンプトでこのコマンドを使用するには、「 **cscript** 」に続けて prnmngr ファイルの完全なパスを入力するか、ディレクトリを適切なフォルダーに変更します。 たとえば、`cscript %WINdir%\System32\printing_Admin_Scripts\en-US\prnmngr` のように指定します。
+追加、削除、およびプリンターまたは設定し、既定のプリンターを表示するだけでなく、プリンター接続を一覧表示します。 このコマンドは、ディレクトリにある Visual Basic スクリプトです `%WINdir%\System32\printing_Admin_Scripts\<language>` 。 コマンドプロンプトでこのコマンドを使用するには、「 **cscript** 」に続けて prnmngr ファイルの完全なパスを入力するか、ディレクトリを適切なフォルダーに変更します。 例: `cscript %WINdir%\System32\printing_Admin_Scripts\en-US\prnmngr`。
 
 ## <a name="syntax"></a>構文
 
@@ -65,7 +65,7 @@ HRServer という名前のリモートコンピューターから colorprinter_
 cscript prnmngr -d -s HRServer -p colorprinter_2
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

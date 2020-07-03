@@ -1,6 +1,6 @@
 ---
 title: nslookup
-description: Nslookup コマンドのリファレンストピックでは、ドメインネームシステム (DNS) インフラストラクチャの診断に使用できる情報を表示します。
+description: Nslookup コマンドの参照記事。ドメインネームシステム (DNS) インフラストラクチャの診断に使用できる情報が表示されます。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 589b8dd5e1244a5aeb27f33b4985f07b776bc7bd
-ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
+ms.openlocfilehash: 87f973349426016b6d62bd1f018f268d4e873c51
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84721155"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925380"
 ---
 # <a name="nslookup"></a>nslookup
 
@@ -90,6 +90,6 @@ nslookup [exit | finger | help | ls | lserver | root | server | set | view] [opt
   | 拒絶 | DNS ネームサーバーが要求の処理を拒否しました。 |
   | 形式エラー | DNS ネームサーバーで、要求パケットの形式が正しくないことが検出されました。 **Nslookup**でエラーが発生している可能性があります。 |
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

@@ -1,6 +1,6 @@
 ---
 title: eventcreate
-description: Eventcreate コマンドのリファレンストピック。これにより、管理者は、指定されたイベントログにカスタムイベントを作成できます。
+description: Eventcreate コマンドの参照記事。管理者は、指定されたイベントログにカスタムイベントを作成できます。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8348e61f6cd94c9b660d0ad9cac4cb1f96920cad
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 60ed97eeffc8ae2410fdd8f296a0e8348f376652
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436877"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925311"
 ---
 # <a name="eventcreate"></a>eventcreate
 
@@ -33,7 +33,7 @@ eventcreate [/s <computer> [/u <domain\user> [/p <password>]] {[/l {APPLICATION|
 
 | パラメーター | 説明 |
 | --------- |------------ |
-| /s`<computer>` | 名前またはリモート コンピューターの IP アドレスを指定します (円記号を使用しない)。 既定はローカル コンピュータです。 |
+| /s`<computer>` | 名前またはリモート コンピューターの IP アドレスを指定します (円記号を使用しない)。 既定値はローカル コンピューターです。 |
 | /u`<domain\user>` | またはによって指定されたユーザーのアカウントアクセス許可を使用してコマンドを実行し `<user>` `<domain\user>` ます。 既定値は、コマンドを実行しているコンピューターの現在のログオンユーザーのアクセス許可です。 |
 | /p`<password>` | 指定されているユーザー アカウントのパスワードを指定します、 **/u** パラメーター。 |
 | /l`{APPLICATION | SYSTEM}` | イベントが作成されるイベントログの名前を指定します。 有効なログ名は、**アプリケーション**または**システム**です。 |
@@ -57,6 +57,6 @@ eventcreate /s server1 /s server2 /u user /p password /id 100 /t error /so winmg
 eventcreate /s server /u user /id 100 /t warning /so winmgmt /d Remote machine with partial user credentials
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

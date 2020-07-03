@@ -1,6 +1,6 @@
 ---
 title: if
-description: If コマンドのリファレンストピック。バッチプログラムで条件付き処理を実行します。
+description: If コマンドのリファレンス記事。バッチプログラムで条件付き処理を実行します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d6f73e784d6fb394db258a056f38045b6a545469
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: dd55ebb6ae3562906efdc710f7a067a7e7514e59
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83818552"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924474"
 ---
 # <a name="if"></a>if
 
 バッチプログラムで条件付き処理を実行します。
 
-## <a name="syntax"></a>構文
+## <a name="syntax"></a>Syntax
 
 ```
 if [not] ERRORLEVEL <number> <command> [else <expression>]
@@ -41,13 +41,13 @@ if defined <variable> <command> [else <expression>]
 | パラメーター | 説明 |
 | --------- |------------ |
 | not | 条件が false の場合にのみコマンドを実行するように指定します。 |
-| errorlevel`<number>` | Cmd.exe によって実行された前のプログラムが、 *number*以上の終了コードを返した場合にのみ、true 条件を指定します。 |
+| errorlevel`<number>` | Cmd.exe によって実行された前回のプログラムが、 *number*以上の終了コードを返した場合にのみ、true の条件を指定します。 |
 | `<command>` | 前の条件が満たされた場合に実行するコマンドを指定します。 |
 | `<string1>==<string2>` | *String1*と*string2*が同じ場合にのみ true 条件を指定します。 これらの値には、リテラル文字列またはバッチ変数 (など) を指定でき `%1` ます。 リテラル文字列を引用符で囲む必要はありません。 |
 | まだ`<filename>` | 指定されたファイル名が存在する場合に true 条件を指定します。 |
 | `<compareop>` | 次のように、3文字の比較演算子を指定します。<ul><li>**等しい**-Equal to</li><li>**Neq** -等しくない</li><li>**Lss** -より小さい</li><li>**Leq** -以下</li><li>**Gtr** -より大きい</li><li>**Geq** -以上</li></ul> |
 | /i | 大文字小文字を無視するように文字列比較を強制します。 **/I**は、 `string1==string2` **if**の形式で使用できます。 これらの比較は一般に、 *string1*と*string2*の両方が数字のみで構成されている場合、文字列は数値に変換され、数値比較が実行されます。 |
-| cmdextversion`<number>` | Cmd.exe のコマンド拡張機能に関連付けられている内部バージョン番号が、指定された数以上である場合にのみ、true 条件を指定します。 最初のバージョンは1です。 コマンド拡張機能に大幅な拡張が追加されると、1つずつ増加します。 コマンド拡張機能が無効になっている場合 (既定では、コマンド拡張機能が有効になっている場合)、 **cmdextversion**条件は満たされません。 |
+| cmdextversion`<number>` | Cmd.exe のコマンド拡張機能に関連付けられている内部バージョン番号が指定した数以上の場合にのみ、true 条件を指定します。 最初のバージョンは1です。 コマンド拡張機能に大幅な拡張が追加されると、1つずつ増加します。 コマンド拡張機能が無効になっている場合 (既定では、コマンド拡張機能が有効になっている場合)、 **cmdextversion**条件は満たされません。 |
 | defined `<variable>` | *変数*が定義されている場合に true 条件を指定します。 |
 | `<expression>` | コマンドラインコマンドと、 **else**句でコマンドに渡すパラメーターを指定します。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
@@ -62,7 +62,7 @@ if defined <variable> <command> [else <expression>]
 
   - **% errorlevel%**: errorlevel 環境変数の現在の値の文字列形式に展開されます。 この変数は、ERRORLEVEL という名前の既存の環境変数が存在しないことを前提としています。 存在する場合は、代わりに ERRORLEVEL 値を取得します。
 
-  - **% cmdcmdline%**: cmd.exe によって処理される前に cmd.exe に渡された元のコマンドラインに展開されます。 これは、CMDCMDLINE という名前の既存の環境変数が存在しないことを前提としています。 存在する場合は、代わりに CMDCMDLINE 値を取得します。
+  - **% cmdcmdline%**: Cmd.exe によって処理される前に Cmd.exe に渡された元のコマンドラインに展開されます。 これは、CMDCMDLINE という名前の既存の環境変数が存在しないことを前提としています。 存在する場合は、代わりに CMDCMDLINE 値を取得します。
 
   - **% cmdextversion%**: **cmdextversion**の現在の値の文字列形式に展開されます。 これは、CMDEXTVERSION という名前の既存の環境変数が存在しないことを前提としています。 存在する場合は、代わりに CMDEXTVERSION の値を取得します。
 
@@ -124,7 +124,7 @@ ERRORLEVEL 環境変数の値が1以下の場合は、[ok] を指定すると、
 if %errorlevel% LEQ 1 goto okay
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

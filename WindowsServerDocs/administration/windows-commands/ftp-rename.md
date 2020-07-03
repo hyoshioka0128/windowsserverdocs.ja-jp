@@ -1,6 +1,6 @@
 ---
-title: ftp の名前変更
-description: リモートファイルの名前を変更する ftp rename コマンドのリファレンストピックです。
+title: ftp rename
+description: リモートファイルの名前を変更する ftp rename コマンドの参照記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a8d3ea25e48266db6a4a282f2ea395bd8b8d5fd9
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: f46caa4394be9edc80da018d88809a0dd6e91862
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820312"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925736"
 ---
-# <a name="ftp-rename"></a>ftp の名前変更
+# <a name="ftp-rename"></a>ftp rename
 
 > 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -37,13 +37,13 @@ rename <filename> <newfilename>
 
 ### <a name="examples"></a>例
 
-リモートファイルの*例*の名前を*example1*に変更するには、次のように入力します。
+リモートファイル*example.txt*の名前を*example1.txt*に変更するには、次のように入力します。
 
 ```
 rename example.txt example1.txt
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

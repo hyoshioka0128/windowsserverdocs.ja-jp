@@ -1,6 +1,6 @@
 ---
 title: graftabl
-description: Graftabl コマンドのリファレンストピック。 Windows オペレーティングシステムで、拡張文字セットをグラフィックモードで表示できるようにします。
+description: Graftabl コマンドのリファレンス記事。 Windows オペレーティングシステムで、拡張文字セットをグラフィックモードで表示できるようにします。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 149ae92db534cef66c966462e51906304588b042
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 9259833856ec5c6de402b0db0a4de4636a66f508
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83818692"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924591"
 ---
 # <a name="graftabl"></a>graftabl
 
@@ -69,7 +69,7 @@ graftabl 437
 graftabl 850
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

@@ -1,6 +1,6 @@
 ---
 title: pnpunattend
-description: Pnpunattend コマンドのリファレンストピック。コンピューター上のデバイスドライバーを監査するだけでなく、サイレントドライバインストールも実行します。
+description: Pnpunattend コマンドの参照記事。コンピューター上のデバイスドライバーを監査するだけでなく、サイレントドライバインストールも実行します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 23456ec8f8fda5f84819a7105ee1f46814d2f806
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: cb01e2afa763d3e2c906d1b3ac5f194143caf114
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472407"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924245"
 ---
 # <a name="pnpunattend"></a>pnpunattend
 
@@ -45,9 +45,9 @@ PnPUnattend.exe auditsystem [/help] [/?] [/h] [/s] [/l]
 | パラメーター | 説明 |
 |--|--|
 | auditsystem | オンラインでのドライバーのインストールを指定します。<p>必須。ただし、 **/help**または/? でこのコマンドを実行する場合を除き**ます。** %2!d! です。 |
-| /s | 省略可能。 インストールしなくてもドライバーの検索を指定します。 |
-| /l | 省略可能。 コマンド プロンプトで、このコマンドのログ情報を指定します。 |
-| `/? | /help` | 省略可能。 コマンド プロンプトで次のコマンドのヘルプを表示します。 |
+| /s | 任意。 インストールしなくてもドライバーの検索を指定します。 |
+| /l | 任意。 コマンド プロンプトで、このコマンドのログ情報を指定します。 |
+| `/? | /help` | 任意。 コマンド プロンプトで次のコマンドのヘルプを表示します。 |
 
 ### <a name="examples"></a>例
 
@@ -57,6 +57,6 @@ PnPUnattend.exe auditsystem [/help] [/?] [/h] [/s] [/l]
 pnpunattend auditsystem /s /l
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

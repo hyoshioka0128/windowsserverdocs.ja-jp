@@ -1,6 +1,6 @@
 ---
 title: fsutil sparse
-description: スパースファイルを管理する fsutil sparse コマンドのリファレンストピックです。
+description: スパースファイルを管理する fsutil sparse コマンドのリファレンス記事です。
 ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
@@ -9,12 +9,12 @@ ms.technology: storage
 ms.assetid: 77545920-2d13-4f35-a4d1-14dbec8340dc
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: e68ac844bb7aa7e22a9df0ddb0c982b3701231d7
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: c765b096f1b41b211d3a779d8f838aa56f31aeb8
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83435717"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925210"
 ---
 # <a name="fsutil-sparse"></a>fsutil sparse
 
@@ -45,7 +45,7 @@ fsutil sparse [setrange] <filename> <beginningoffset> <length>
 | `<beginningoffset>` | スパースとしてマークするファイル内のオフセットを指定します。 |
 | `<length>` | スパースとしてマークするファイル内の領域の長さを指定します (バイト単位)。 |
 
-#### <a name="remarks"></a>解説
+#### <a name="remarks"></a>注釈
 
 - 意味のある、または0以外のデータはすべて割り当てられますが、意味のないすべてのデータ (0 で構成される大きな文字列データ) は割り当てられません。
 
@@ -57,13 +57,13 @@ fsutil sparse [setrange] <filename> <beginningoffset> <length>
 
 ### <a name="examples"></a>例
 
-*C:\temp*ディレクトリの*file.txt*という名前のファイルをスパースとしてマークするには、次のように入力します。
+*C:\temp*ディレクトリ内の*sample.txt*という名前のファイルをスパースとしてマークするには、次のように入力します。
 
 ```
 fsutil sparse setflag c:\temp\sample.txt
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

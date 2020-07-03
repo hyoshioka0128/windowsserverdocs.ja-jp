@@ -1,6 +1,6 @@
 ---
 title: gpt
-description: Gpt コマンドのリファレンストピック。フォーカスのあるパーティションに gpt 属性を割り当てます。
+description: Gpt コマンドの参照記事。フォーカスのあるパーティションに gpt 属性を割り当てます。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b1e33b89c1918fcb83dd9d42c155f845805307d9
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 40d3536f5a6be0bf520095e3ba61f75b7a2addc7
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83818802"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924616"
 ---
 # <a name="gpt"></a>gpt
 
@@ -51,7 +51,7 @@ Gpt ディスクの移動中に、コンピューターがフォーカスのあ�
 gpt attributes=0x8000000000000000
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

@@ -1,6 +1,6 @@
 ---
 title: fsutil objectid
-description: Fsutil objectid コマンドのリファレンストピックです。オブジェクト識別子を管理して、ファイル、ディレクトリ、リンクなどの他のオブジェクトを追跡します。
+description: Fsutil objectid コマンドの参照記事。ファイル、ディレクトリ、リンクなどの他のオブジェクトを追跡するためにオブジェクト識別子を管理します。
 ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
@@ -9,12 +9,12 @@ ms.technology: storage
 ms.assetid: 693ab895-9d0c-47c1-9f52-df5cd287842a
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: cdaa3fb0a8a439e568e4b181890db49923e109e7
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 5ab0b95bdcde8bce51e1d5a2c14888229621fcaa
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83435809"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925246"
 ---
 # <a name="fsutil-objectid"></a>fsutil objectid
 
@@ -48,7 +48,7 @@ fsutil objectid [set] <objectID> <birthvolumeID> <birthobjectID> <domainID> <fil
 | `<domainID>` | 16バイトの16進数ドメイン識別子。 この値は現在使用されていないため、すべてゼロに設定する必要があります。 |
 | `<filename>` | ファイル名と拡張子を含むファイルへの完全パスを指定します (例*C:\documents\filename.txt*)。 |
 
-#### <a name="remarks"></a>解説
+#### <a name="remarks"></a>注釈
 
 - オブジェクト識別子を持つすべてのファイルには、誕生日のボリューム識別子、生のオブジェクト識別子、およびドメイン識別子も含まれています。 ファイルを移動すると、オブジェクト識別子が変更される場合がありますが、誕生日のボリュームと生のオブジェクトの識別子は変わりません。 この動作により、Windows オペレーティングシステムは、移動された場所に関係なく、常にファイルを見つけることができます。
 
@@ -70,7 +70,7 @@ fsutil objectid [set] <objectID> <birthvolumeID> <birthobjectID> <domainID> <fil
 
 `fsutil objectid set 40dff02fc9b4d4118f120090273fa9fc f86ad6865fe8d21183910008c709d19e 40dff02fc9b4d4118f120090273fa9fc 00000000000000000000000000000000 c:\temp\sample.txt`
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

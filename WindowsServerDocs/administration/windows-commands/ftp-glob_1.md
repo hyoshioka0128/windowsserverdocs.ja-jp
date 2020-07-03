@@ -1,6 +1,6 @@
 ---
-title: ftp の glob
-description: Ftp の glob コマンドのリファレンストピックです。ローカルファイル名のワイルドカードの展開を切り替えることができます。
+title: ftp glob
+description: Ftp glob コマンドの参照記事。ローカルファイル名にワイルドカードの展開を許可します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 35adf2af74a2bcaf952e7bbb58f550fac968aa6f
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 6388fd43ee21d68ac48888ed2e950b2aeca5a5c6
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83819722"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925915"
 ---
-# <a name="ftp-glob"></a>ftp の glob
+# <a name="ftp-glob"></a>ftp glob
 
 > 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -36,7 +36,7 @@ glob
 glob
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

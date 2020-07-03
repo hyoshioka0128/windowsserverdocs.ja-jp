@@ -1,6 +1,6 @@
 ---
 title: ftp mput
-description: Ftp mput コマンドのリファレンストピックでは、現在のファイル転送の種類を使用してローカルファイルをリモートコンピューターにコピーします。
+description: Ftp mput コマンドの参照記事。現在のファイル転送の種類を使用してローカルファイルをリモートコンピューターにコピーします。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5006c1ba19f0e017dea377b47bd0d89a68266382
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 506a4d9a64f1dd9b4b37088a30926190d7675695
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820412"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925804"
 ---
 # <a name="ftp-mput"></a>ftp mput
 
@@ -36,13 +36,13 @@ mput <localfile>[ ]
 
 ### <a name="examples"></a>例
 
-現在のファイル転送の種類を使用して*Program1*と*program2.c*をリモートコンピューターにコピーするには、次のように入力します。
+現在のファイル転送の種類を使用して*Program1.exe*および*Program2.exe*をリモートコンピューターにコピーするには、次のように入力します。
 
 ```
 mput Program1.exe Program2.exe
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

@@ -1,6 +1,6 @@
 ---
 title: print
-description: プリンターにテキストファイルを送信する print コマンドのリファレンストピックです。
+description: プリンターにテキストファイルを送信する print コマンドの参照記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2d9cbb4230976572ddd7a26565d616c87ce2ea8d
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: a8e8cf07ca19af1cf0a0445b9feed06916be10c0
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472317"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85926038"
 ---
 # <a name="print"></a>print
 
@@ -53,7 +53,7 @@ print /d:lpt2 report.txt
 print /d:\\copyroom\printer1 c:\accounting\report.txt
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

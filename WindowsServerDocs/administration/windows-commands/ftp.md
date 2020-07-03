@@ -1,6 +1,6 @@
 ---
 title: ftp
-description: Ftp コマンドのリファレンストピックです。このコマンドは、ファイル転送プロトコル (ftp) サーバーサービスを実行しているコンピューターとの間でファイルを転送します。
+description: Ftp コマンドのリファレンス記事です。このコマンドは、ファイル転送プロトコル (ftp) サーバーサービスを実行しているコンピューターとの間でファイルを転送します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3920306ce05aeb1b1e364c8146c461ea187f6560
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: e78148e1e7dc4f402d80bb4ebfbcbdac52249407
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820242"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925611"
 ---
 # <a name="ftp"></a>ftp
 
@@ -65,13 +65,13 @@ ftp [-v] [-d] [-i] [-n] [-g] [-s:<filename>] [-a] [-A] [-x:<sendbuffer>] [-r:<re
 ftp ftp.example.microsoft.com
 ```
 
-という名前の ftp サーバーにログオン `ftp.example.microsoft.com` し、 *resync*という名前のファイルに含まれている**ftp**コマンドを実行するには、次のように入力します。
+という名前の ftp サーバーにログオン `ftp.example.microsoft.com` し、 *resync.txt*という名前のファイルに格納されている**ftp**コマンドを実行するには、次のように入力します。
 
 ```
 ftp -s:resync.txt ftp.example.microsoft.com
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

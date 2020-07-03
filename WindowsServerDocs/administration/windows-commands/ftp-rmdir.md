@@ -1,6 +1,6 @@
 ---
 title: ftp rmdir
-description: Ftp rmdir コマンドのリファレンストピックで、ルートディレクトリを削除します。
+description: Ftp rmdir コマンドの参照記事。ルートディレクトリを削除します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1abbc66ee470d7939f45e7e961c502a3b4689f7b
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: feaa9d5d2dac1b0ccac3706eb2f8838dc6bd6c07
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83821452"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925706"
 ---
 # <a name="ftp-rmdir"></a>ftp rmdir
 
@@ -42,7 +42,7 @@ rmdir <directory>
 rmdir pictures
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

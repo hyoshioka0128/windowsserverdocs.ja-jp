@@ -1,6 +1,6 @@
 ---
-title: ksetup サーバー
-description: Ksetup server コマンドのリファレンストピックでは、Windows オペレーティングシステムを実行しているコンピューターの名前を指定できます。これにより、ksetup コマンドによって行われた変更によって、対象のコンピューターが更新されます。
+title: ksetup server
+description: Ksetup server コマンドの参照記事。 Windows オペレーティングシステムを実行しているコンピューターの名前を指定できます。 ksetup コマンドによって行われた変更によって、対象のコンピューターが更新されます。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e39a3fbef4b99848d2a90c81007c526597c77275
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 99c708c3842d1d2d36783db09d60750bb2703670
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83817522"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85926096"
 ---
-# <a name="ksetup-server"></a>ksetup サーバー
+# <a name="ksetup-server"></a>ksetup server
 
 Windows オペレーティングシステムを実行しているコンピューターの名前を指定できます。そのため、 **ksetup**コマンドによって行われた変更によって、対象のコンピューターが更新されます。
 
@@ -45,7 +45,7 @@ Contoso ドメインに接続されている*IPops897*コンピューターで**
 ksetup /server IPops897.corp.contoso.com
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

@@ -1,6 +1,6 @@
 ---
 title: 非アクティブ
-description: 非アクティブなコマンドのリファレンストピックでは、システムパーティションまたはブートパーティションを、基本マスターブートレコード (MBR) ディスクで非アクティブとしてマークします。
+description: 非アクティブなコマンドの参照記事。ベーシックマスターブートレコード (MBR) ディスクで、フォーカスがあるシステムパーティションまたはブートパーティションを非アクティブとしてマークします。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9861a54c284002e53b0a8fc354aa883d80fff0e7
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: db7d279577b8120137b4397551a480ea2d2a0e8a
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83818442"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924410"
 ---
 # <a name="inactive"></a>非アクティブ
 
@@ -39,7 +39,7 @@ inactive
 inactive
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

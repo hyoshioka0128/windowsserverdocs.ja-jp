@@ -1,6 +1,6 @@
 ---
-title: ftp 受信
-description: 現在のファイル転送の種類を使用してリモートファイルをローカルコンピューターにコピーする、ftp の recv コマンドのリファレンストピックです。
+title: ftp recv
+description: 現在のファイル転送の種類を使用してリモートファイルをローカルコンピューターにコピーする、ftp の recv コマンドに関するリファレンス記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 011a42d3279a2fa26202d7d886a992956e70f6a1
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 01f9fc1d8e233d8e2c38f606dea12f5d342d5e44
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820332"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925784"
 ---
-# <a name="ftp-recv"></a>ftp 受信
+# <a name="ftp-recv"></a>ftp recv
 
 > 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -46,13 +46,13 @@ recv <remotefile> [<localfile>]
 recv test.txt
 ```
 
-現在のファイル転送*を使用して* *test.txt*をローカルコンピューターにコピーするには、次のように入力します。
+現在のファイル転送を使用して*test1.txt*としてローカルコンピューターに*test.txt*をコピーするには、次のように入力します。
 
 ```
 recv test.txt test1.txt
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

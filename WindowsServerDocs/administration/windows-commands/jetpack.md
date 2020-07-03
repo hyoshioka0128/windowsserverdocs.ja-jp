@@ -1,6 +1,6 @@
 ---
 title: jetpack
-description: Windows インターネットネームサービス (WINS) または動的ホスト構成プロトコル (DHCP) データベースを圧縮する、jetpack コマンドのリファレンストピックです。
+description: Windows インターネットネームサービス (WINS) または動的ホスト構成プロトコル (DHCP) データベースを圧縮する、jetpack コマンドのリファレンス記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6d77f9c964f5820fc7a44b803bb765e94cb35637
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: b0aa52bad06865641da5fabf25c27ceb8c7a0bbd
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83818252"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924329"
 ---
 # <a name="jetpack"></a>jetpack
 
@@ -22,7 +22,7 @@ ms.locfileid: "83818252"
 
 Windows インターネットネームサービス (WINS) または動的ホスト構成プロトコル (DHCP) データベースを圧縮します。 30 MB に近づくときは、WINS データベースを圧縮することをお勧めします。
 
-Jetpack は、次の方法でデータベースを圧縮します。
+Jetpack.exe は、次の方法でデータベースを圧縮します。
 
 1. データベース情報を一時データベースファイルにコピーしています。
 
@@ -41,7 +41,7 @@ jetpack.exe <database_name> <temp_database_name>
 | パラメーター | 説明 |
 | ------- | -------- |
 | `<database_name>` | 元のデータベースファイルの名前を指定します。 |
-| `<temp_database_name>` | Jetpack によって作成される一時データベースファイルの名前を指定します。<p>注: この一時ファイルは、コンパクトプロセスが完了すると削除されます。 このコマンドを正常に動作させるには、一時ファイル名が一意であること、およびその名前のファイルが存在しないことを確認する必要があります。 |
+| `<temp_database_name>` | jetpack.exe によって作成される一時データベースファイルの名前を指定します。<p>注: この一時ファイルは、コンパクトプロセスが完了すると削除されます。 このコマンドを正常に動作させるには、一時ファイル名が一意であること、およびその名前のファイルが存在しないことを確認する必要があります。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
 ### <a name="examples"></a>例
@@ -64,6 +64,6 @@ jetpack Dhcp.mdb Tmp.mdb
 NET start DHCPSERVER
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

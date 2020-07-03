@@ -1,6 +1,6 @@
 ---
-title: reg アンロード
-description: Reg unload コマンドのリファレンストピック。 reg 読み込み操作を使用して読み込まれたレジストリのセクションを削除します。
+title: reg unload
+description: Reg unload コマンドの参照記事。 reg 読み込み操作を使用して読み込まれたレジストリのセクションを削除します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,54 +9,51 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 029b9225f8a437be18c3056d97e153075d9df7c9
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 6728f898bd8c2c65aff922943ccef58d4d9fd738
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722502"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925989"
 ---
-# <a name="reg-unload"></a>reg アンロード
-
-
+# <a name="reg-unload"></a>reg unload
 
 レジストリを使用して既に読み込まれているセクションを削除、 **reg ロード** 操作します。
-
-
 
 ## <a name="syntax"></a>構文
 
 ```
-reg unload <KeyName>
+reg unload <keyname>
 ```
 
 ### <a name="parameters"></a>パラメーター
 
-|パラメーター|[説明]|
-|---------|-----------|
-|\<KeyName>|アンロードするサブキーの完全なパスを指定します。 リモートコンピューターを指定する場合は、コンピューター名を*KeyName*の\\ \\一部\)として ComputerName という形式で指定します。 ComputerName \\ \\\ を省略すると、操作は既定でローカルコンピューターに設定されます。 *KeyName* 有効なルート キーを含める必要があります。 ローカル コンピューターの有効なルート キーは、HKLM、HKCU、HKCR、HKU、および HKCC です。 リモート コンピューターが指定されている場合は、有効なルート キーは HKLM および HKU です。|
-|/?|ヘルプを表示 **reg アンロード** コマンド プロンプト。|
+| パラメーター | 説明 |
+|--|--|
+| `<keyname>` | サブキーの完全なパスを指定します。 リモートコンピューターを指定するには、コンピューター名 (形式) を `\\<computername>\` *keyname*の一部として含めます。 省略 `\\<computername>\` すると、操作は既定でローカルコンピューターに設定されます。 *Keyname*には、有効なルートキーを含める必要があります。 ローカルコンピューターの有効なルートキーは、 **HKLM**、 **HKCU**、 **HKCR**、 **HKU**、および**HKCC**です。 リモートコンピューターが指定されている場合、有効なルートキーは**HKLM**と**HKU**です。 レジストリキー名にスペースが含まれている場合は、キー名を引用符で囲みます。 |
+| /? | コマンド プロンプトにヘルプを表示します。 |
 
-## <a name="remarks"></a>Remarks
+#### <a name="remarks"></a>注釈
 
-次の表に、戻り値の **reg アンロード** オプション。
+- **Reg アンロード**操作の戻り値は次のとおりです。
 
-|値|[説明]|
-|-----|-----------|
-|0|Success|
-|1|障害|
+    | 値 | [説明] |
+    |--|--|
+    | 0 | 成功 |
+    | 1 | 障害 |
 
 ## <a name="examples"></a>例
 
 TempHive ファイル HKLM ハイブをアンロードするには、次のように入力します。
+
 ```
-REG UNLOAD HKLM\TempHive
+reg unload HKLM\TempHive
 ```
 
 > [!CAUTION]
-> 代替手段があるない場合は、直接、レジストリを編集しないでください。 レジストリエディターでは、標準のセーフガードがバイパスされるため、パフォーマンスを低下させたり、システムに損害を与えたり、Windows の再インストールが必要になることもあります。 ほとんどのレジストリ設定は、コントロールパネルまたは Microsoft 管理コンソール (MMC) のプログラムを使用して、安全に変更できます。 レジストリを直接編集する必要がある場合は、最初にバックアップします。
+> 代替手段がなければ、レジストリを直接編集しないでください。 レジストリエディターでは、標準のセーフガードがバイパスされるため、パフォーマンスを低下させたり、システムに損害を与えたり、Windows の再インストールが必要になることもあります。 ほとんどのレジストリ設定は、コントロールパネルまたは Microsoft 管理コンソール (MMC) のプログラムを使用して、安全に変更できます。 レジストリを直接編集する必要がある場合は、最初にバックアップします。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

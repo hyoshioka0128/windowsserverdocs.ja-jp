@@ -1,6 +1,6 @@
 ---
-title: logman api の作成
-description: Logman create api コマンドのリファレンストピック。 API トレースデータコレクターを作成します。
+title: logman create api
+description: Logman create api コマンドのリファレンス記事。 API トレースデータコレクターを作成します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f479fcdf3db4bb5a61b0cd0724220d27c934872f
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: 2294cb7ba7ab962dbba33b0e2612b8dee2d72004
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222807"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925435"
 ---
-# <a name="logman-create-api"></a>logman api の作成
+# <a name="logman-create-api"></a>logman create api
 
 > 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -59,30 +59,30 @@ logman create api <[-n] <name>> [options]
 | -exe`<value>` | API トレースの実行可能ファイルへの完全パスを指定します。 |
 | /? | 状況依存のヘルプを表示します。 |
 
-#### <a name="remarks"></a>解説
+#### <a name="remarks"></a>注釈
 
 - [-] が一覧表示されている場合は、余分なハイフン (-) を追加すると、オプションが無効になります。
 
 ### <a name="examples"></a>例
 
-実行可能ファイル c:\windows\notepad.exe に対して trace_notepad という API トレースカウンターを作成し、結果を c:\notepad.etl ファイルに格納するには、次のように入力します。
+実行可能ファイル c:\windows\notepad.exe に対して trace_notepad という API トレースカウンターを作成し、結果をファイル c:\notepad.etl に格納するには、次のように入力します。
 
 ```
 logman create api trace_notepad -exe c:\windows\notepad.exe -o c:\notepad.etl
 ```
 
-Trace_notepad という API トレースカウンターを作成するには、実行可能ファイル c:\windows\notepad.exe のモジュールによって生成された値を c:\windows\system32\advapi32.dll に収集し、次のように入力します。
+Trace_notepad という API トレースカウンターを作成するには、実行可能ファイル c:\windows\notepad.exe に対して、c:\windows\system32\advapi32.dll でモジュールによって生成された値を収集するために、次のように入力します。
 
 ```
 logman create api trace_notepad -exe c:\windows\notepad.exe -mods c:\windows\system32\advapi32.dll
 ```
 
-モジュール kernel32.dll によって生成された API 呼び出し TlsGetValue を除く、実行可能ファイル c:\windows\notepad.exe に対して、trace_notepad という API トレースカウンターを作成するには、次のように入力します。
+モジュール kernel32.dll によって生成された API 呼び出し TlsGetValue を除く、実行可能ファイル c:\windows\notepad.exe に対して trace_notepad という API トレースカウンターを作成するには、次のように入力します。
 ```
 logman create api trace_notepad -exe c:\windows\notepad.exe -exapis kernel32.dll!TlsGetValue
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

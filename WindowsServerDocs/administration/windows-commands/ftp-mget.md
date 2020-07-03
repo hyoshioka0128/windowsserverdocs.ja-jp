@@ -1,6 +1,6 @@
 ---
 title: ftp mget
-description: 現在のファイル転送の種類を使用してリモートファイルをローカルコンピューターにコピーする、ftp mget コマンドのリファレンストピックです。
+description: 現在のファイル転送の種類を使用してリモートファイルをローカルコンピューターにコピーする、ftp mget コマンドの参照記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 93d562fcdaec0d6609e7be8b3543cd55bb910238
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 7239f31fa0a9b40d9bba4db0c3e1e29df5c03108
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820432"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925896"
 ---
 # <a name="ftp-mget"></a>ftp mget
 
@@ -36,13 +36,13 @@ mget <remotefile>[ ]
 
 ### <a name="examples"></a>例
 
-現在のファイル転送の種類を使用して、リモートファイル*の .exe*および*b .exe*をローカルコンピューターにコピーするには、次のように入力します。
+現在のファイル転送の種類を使用してリモートファイル*a.exe*および*b.exe*をローカルコンピューターにコピーするには、次のように入力します。
 
 ```
 mget a.exe b.exe
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 
