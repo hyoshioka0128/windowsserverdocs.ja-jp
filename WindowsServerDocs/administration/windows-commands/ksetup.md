@@ -1,6 +1,6 @@
 ---
 title: ksetup
-description: Kerberos プロトコルとキー配布センター (KDC) を設定して管理する方法に関連したタスクを実行する、Kerberos 領域をサポートするための ksetup コマンドのリファレンストピックです。
+description: Kerberos プロトコルとキー配布センター (KDC) を設定および管理して Kerberos 領域をサポートするためのタスクを実行する、ksetup コマンドのリファレンス記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 82b1627a8ddbc9e51ac32825c5a42c3df9effbf7
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: a0398d53516f81de68a7de5854ed2c996a78d1e5
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83817352"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922632"
 ---
 # <a name="ksetup"></a>ksetup
 
@@ -63,24 +63,24 @@ ksetup
 | [ksetup delkdc](ksetup-delkdc.md) | 領域の KDC エントリを削除します。 |
 | [ksetup addkpasswd](ksetup-addkpasswd.md) | 領域の kpasswd サーバーアドレスを追加します。 |
 | [ksetup delkpasswd](ksetup-delkpasswd.md) | 領域の kpasswd サーバーアドレスを削除します。 |
-| [ksetup サーバー](ksetup-server.md) | 変更を適用する Windows コンピューターの名前を指定できます。 |
+| [ksetup server](ksetup-server.md) | 変更を適用する Windows コンピューターの名前を指定できます。 |
 | [ksetup setcomputerpassword](ksetup-setcomputerpassword.md) | コンピューターのドメインアカウント (またはホストプリンシパル) のパスワードを設定します。 |
 | [ksetup removerealm](ksetup-removerealm.md) | 指定された領域のすべての情報をレジストリから削除します。 |
-| [ksetup ドメイン](ksetup-domain.md) | ドメインを指定できます (が `<domainname>` **/domain**パラメーターによってまだ設定されていない場合)。 |
+| [ksetup domain](ksetup-domain.md) | ドメインを指定できます (が `<domainname>` **/domain**パラメーターによってまだ設定されていない場合)。 |
 | [ksetup changepassword](ksetup-changepassword.md) | Kpasswd を使用して、ログオンしているユーザーのパスワードを変更できます。 |
 | [ksetup listrealmflags](ksetup-listrealmflags.md) | **Ksetup**が検出できる領域フラグを一覧表示します。 |
 | [ksetup setrealmflags](ksetup-setrealmflags.md) | 特定の領域の領域フラグを設定します。 |
 | [ksetup addrealmflags](ksetup-addrealmflags.md) | 領域に領域フラグを追加します。 |
 | [ksetup delrealmflags](ksetup-delrealmflags.md) | 領域から領域フラグを削除します。 |
 | [ksetup dumpstate](ksetup-dumpstate.md) | 指定されたコンピューターの Kerberos 構成を分析します。 レジストリに対するレルムマッピングにホストを追加します。 |
-| [ksetup addhostの almmap](ksetup-addhosttorealmmap.md) | ホストを Kerberos 領域にマップするレジストリ値を追加します。 |
-| [ksetup delhostの almmap](ksetup-delhosttorealmmap.md) | ホストコンピューターを Kerberos 領域にマップしたレジストリ値を削除します。 |
+| [ksetup addhosttorealmmap](ksetup-addhosttorealmmap.md) | ホストを Kerberos 領域にマップするレジストリ値を追加します。 |
+| [ksetup delhosttorealmmap](ksetup-delhosttorealmmap.md) | ホストコンピューターを Kerberos 領域にマップしたレジストリ値を削除します。 |
 | [ksetup setenctypeattr](ksetup-setenctypeattr.md) | ドメインの1つ以上の暗号化の種類の信頼属性を設定します。 |
 | [ksetup getenctypeattr](ksetup-getenctypeattr.md) | ドメインの暗号化の種類の信頼属性を取得します。 |
 | [ksetup addenctypeattr](ksetup-addenctypeattr.md) | ドメインの暗号化の種類の信頼属性に暗号化の種類を追加します。 |
 | [ksetup delenctypeattr](ksetup-delenctypeattr.md) | ドメインの暗号化の種類の信頼属性を削除します。 |
 | /? | コマンド プロンプトでヘルプを表示します。 |
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

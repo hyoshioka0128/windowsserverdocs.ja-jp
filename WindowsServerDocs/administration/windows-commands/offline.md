@@ -1,6 +1,6 @@
 ---
 title: offline
-description: オンラインディスクまたはボリュームをオフライン状態にする offline コマンドのリファレンストピックです。
+description: オンラインディスクまたはボリュームをオフライン状態にする offline コマンドの参照記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f189ba1208e9e9a6769321170d2a9289b10189e8
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: d1f8f5b7aaab32bcc99cc2b74c8f0e3baf152d80
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472680"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922603"
 ---
 # <a name="offline"></a>offline
 
@@ -34,6 +34,6 @@ offline volume
 | [offline disk](offline-disk.md) | オフラインの状態にフォーカスがあるオンライン ディスクを移動します。 |
 | [offline volume](offline-volume.md) | オフラインの状態に、オンラインのボリュームがフォーカスを移動します。 |
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

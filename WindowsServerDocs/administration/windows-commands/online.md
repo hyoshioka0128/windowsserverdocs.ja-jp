@@ -1,6 +1,6 @@
 ---
 title: オンライン
-description: オンラインコマンドのリファレンストピック。オフラインのディスクまたはボリュームをオンライン状態にします。
+description: オンラインコマンドの参照記事。オフラインのディスクまたはボリュームをオンライン状態にします。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b5983e033755cdc9cd28b2b149fea657a06bd164
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: d18ba172af7ab003368b36daa89ef0d7ac88a7a3
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472608"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922594"
 ---
 # <a name="online"></a>オンライン
 
@@ -34,6 +34,6 @@ online volume
 | [online disk](online-disk.md) | オンライン状態にフォーカスがあるオフライン ディスクを移動します。 |
 | [online volume](online-volume.md) | オンライン状態に、オフラインのボリュームがフォーカスを移動します。 |
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

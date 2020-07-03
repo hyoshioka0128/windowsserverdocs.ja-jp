@@ -1,6 +1,6 @@
 ---
 title: assign
-description: Assign コマンドのリファレンストピック。フォーカスがあるボリュームにドライブ文字またはマウントポイントを割り当てます。
+description: Assign コマンドの参照記事。フォーカスのあるボリュームにドライブ文字またはマウントポイントを割り当てます。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f17c22a0052ade6f16e7842813a04c95e76b57ab
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 8bfcb43b2e42ca65d767f0683bf13dc971073c27
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718984"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923997"
 ---
 # <a name="assign"></a>assign
 
@@ -35,7 +35,7 @@ assign [{letter=<d> | mount=<path>}] [noerr]
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | [説明] |
+| パラメーター | 説明 |
 | --------- | ----------- |
 | `letter=<d>` | ボリュームに割り当てるドライブ文字です。 |
 | `mount=<path>` | ボリュームに割り当てるマウントポイントのパス。 このコマンドの使用方法については、「[ドライブにマウントポイントフォルダーパスを割り当てる](https://docs.microsoft.com/windows-server/storage/disk-management/assign-a-mount-point-folder-path-to-a-drive)」を参照してください。 |
@@ -49,7 +49,7 @@ assign [{letter=<d> | mount=<path>}] [noerr]
 assign letter=e
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

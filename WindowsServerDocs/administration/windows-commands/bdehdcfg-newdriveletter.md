@@ -1,6 +1,6 @@
 ---
 title: bdehdcfg newdriveletter
-description: Bdehdcfg newdriveletter コマンドのリファレンストピック。これにより、システムドライブとして使用されるドライブの部分に新しいドライブ文字が割り当てられます。
+description: Bdehdcfg newdriveletter コマンドの参照記事。システムドライブとして使用されるドライブの部分に新しいドライブ文字を割り当てます。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: da09ae1469c6fc8370e6bd0f2f7a8f3efd8dc4f0
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: f210056f74e930ad39361c9fc0cbf05d6e1894f4
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718663"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923490"
 ---
 # <a name="bdehdcfg-newdriveletter"></a>bdehdcfg: newdriveletter
 
@@ -28,19 +28,19 @@ bdehdcfg -target {default|unallocated|<drive_letter> shrink|<drive_letter> merge
 
 #### <a name="parameters"></a>パラメーター
 
-| パラメーター | [説明] |
+| パラメーター | 説明 |
 | ---------| ----------- |
 | `<drive_letter>` | 指定されたターゲットドライブに割り当てられるドライブ文字を定義します。 |
 
 ## <a name="examples"></a>例
 
-ドライブ文字`P`を既定のドライブに割り当てるには、次のようにします。
+ドライブ文字を既定のドライブに割り当てるには、次のようにし `P` ます。
 
 ```
 bdehdcfg -target default -newdriveletter P:
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

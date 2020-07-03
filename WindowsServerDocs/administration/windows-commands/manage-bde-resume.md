@@ -1,6 +1,6 @@
 ---
 title: manage-bde resume
-description: 一時停止された後に BitLocker 暗号化または暗号化解除を再開する、manage-bde resume コマンドのリファレンストピックです。
+description: 一時停止した後に BitLocker 暗号化または暗号化解除を再開する、manage-bde resume コマンドのリファレンス記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 17a41a0a5c97bb20c1010c968e495ffbc81649cf
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: d5bbdf58f290dc18c299a3cfdb8aca7bfd0e69e6
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222115"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922295"
 ---
 # <a name="manage-bde-resume"></a>manage-bde resume
 
@@ -31,7 +31,7 @@ manage-bde -resume [<drive>] [-computername <name>] [{-?|/?}] [{-help|-h}]
 | パラメーター | 説明 |
 | --------- | ----------- |
 | `<drive>` | コロンの後にドライブ文字を表します。 |
-| -computername | Manage-bde.exe を使用して、別のコンピューター上の BitLocker 保護を変更することを指定します。 また、このコマンドの省略版として **-cn**を使用することもできます。 |
+| -computername | manage-bde.exe が別のコンピューターの BitLocker 保護を変更するために使用されることを指定します。 また、このコマンドの省略版として **-cn**を使用することもできます。 |
 | `<name>` | BitLocker による保護を変更するコンピューターの名前を表します。 指定できる値には、コンピューターの NetBIOS 名とコンピューターの IP アドレスが含まれます。 |
 | -? または /? | コマンドプロンプトで簡単なヘルプを表示します。 |
 | -help または-h | 表示は、コマンド プロンプトでヘルプを完了します。 |
@@ -44,7 +44,7 @@ manage-bde -resume [<drive>] [-computername <name>] [{-?|/?}] [{-help|-h}]
 manage-bde –resume C:
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

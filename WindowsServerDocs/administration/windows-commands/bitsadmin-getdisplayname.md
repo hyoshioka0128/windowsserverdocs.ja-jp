@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getdisplayname
-description: 指定されたジョブの表示名を取得する bitsadmin getdisplayname コマンドのリファレンストピックです。
+description: Bitsadmin getdisplayname コマンドの参照記事。指定されたジョブの表示名を取得します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0d47a70d34dbff0249a9d69f1db1deaa879c76c8
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 4b0e768f377b9faa23eb59645cbecdc129f1e573
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437067"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923042"
 ---
 # <a name="bitsadmin-getdisplayname"></a>bitsadmin getdisplayname
 
@@ -40,7 +40,7 @@ bitsadmin /getdisplayname <job>
 bitsadmin /getdisplayname myDownloadJob
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

@@ -1,6 +1,6 @@
 ---
 title: change port
-description: ポートの変更コマンドのリファレンストピック。 MS-DOS アプリケーションと互換性があるように、COM ポートマッピングを一覧表示または変更します。
+description: ポートの変更コマンドの参照記事。 MS-DOS アプリケーションと互換性のある COM ポートマッピングを一覧表示または変更します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8dcf1097ea037aff9269edafea6e640054a697e3
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 0735c4c21ae8e321da1cfe31c2874f3dcfc540c7
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82716078"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922506"
 ---
 # <a name="change-port"></a>change port
 
@@ -33,14 +33,14 @@ change port [<portX>=<portY| /d <portX | /query]
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | [説明] |
+| パラメーター | 説明 |
 |-----------------|----------------------------------------|
-| <portX>=<portY> | COM `<*portX*>`をにマップする`<*portY*>` |
+| <portX>=<portY> | COM `<*portX*>` をにマップする`<*portY*>` |
 | d<portX> | COM のマッピングを削除します。`<*portX*>` |
 | /query | 現在のポートマッピングが表示されます。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-#### <a name="remarks"></a>Remarks
+#### <a name="remarks"></a>注釈
 
 - ほとんどの MS-DOS アプリケーションは、COM1 ~ COM4 のシリアルポートのみをサポートしています。 **ポートの変更**コマンドは、シリアルポートを別のポート番号にマップします。これにより、高番号の COM ポートをサポートしていないアプリがシリアルポートにアクセスできるようになります。 再マッピングは現在のセッションに対してのみ機能し、セッションからログオフして再度ログオンした場合は保持されません。
 
@@ -49,18 +49,18 @@ change port [<portX>=<portY| /d <portX | /query]
 ## <a name="examples"></a>例
 
 - MS-DOS ベースのアプリケーションで使用するために COM12 を COM1 にマップするには、次のように入力します。
-  
+
   ```
   change port com12=com1
   ```
 
 - 現在のポートマッピングを表示するには、次のように入力します。
-  
+
   ```
   change port /query
   ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

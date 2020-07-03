@@ -1,6 +1,6 @@
 ---
 title: bdehdcfg driveinfo
-description: Bdehdcfg driveinfo コマンドのリファレンストピックでは、ドライブ文字、合計サイズ、最大空き領域、およびパーティションの特性が表示されます。
+description: Bdehdcfg driveinfo コマンドの参照記事。ドライブ文字、合計サイズ、最大空き領域、およびパーティションの特性が表示されます。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b18b4c3e128cd17353d369b418a049d0208cb654
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 0063c73cd20aca8c8fe5cc21b245517475268c64
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718689"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923485"
 ---
 # <a name="bdehdcfg-driveinfo"></a>bdehdcfg: driveinfo
 
@@ -33,7 +33,7 @@ bdehdcfg -driveinfo <drive_letter>
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | [説明] |
+| パラメーター | 説明 |
 | --------- | ----------- |
 | <drive_letter> | ドライブ文字の後にコロンを続けて指定します。 |
 
@@ -45,7 +45,7 @@ C: ドライブのドライブ情報を表示するには、次のようにし�
 bdehdcfg  driveinfo C:
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

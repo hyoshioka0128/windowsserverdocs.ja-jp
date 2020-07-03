@@ -1,6 +1,6 @@
 ---
 title: bdehdcfg
-description: BitLocker ドライブ暗号化に必要なパーティションをハードドライブに準備する bdehdcfg コマンドのリファレンストピックです。
+description: BitLocker ドライブ暗号化に必要なパーティションをハードドライブに準備する bdehdcfg コマンドのリファレンス記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3bcc901847bb8d687d59bc3270dab39de0af8d60
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 0a8b926459f2d1fb96b9a48910c163eb9aaab02c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718566"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923350"
 ---
 # <a name="bdehdcfg"></a>bdehdcfg
 
@@ -41,7 +41,7 @@ bdehdcfg [–driveinfo <drive_letter>] [-target {default|unallocated|<drive_lett
 
 #### <a name="parameters"></a>パラメーター
 
-| パラメーター | [説明] |
+| パラメーター | 説明 |
 | --------- |----------- |
 | [bdehdcfg: driveinfo](bdehdcfg-driveinfo.md) | ドライブ文字、合計サイズ、最大空き領域、および指定されたドライブ上のパーティションのパーティション特性が表示されます。 有効なパーティションだけが一覧表示されます。 4つのプライマリパーティションまたは拡張パーティションが既に存在する場合、未割り当ての領域は表示されません。 |
 | [bdehdcfg: ターゲット](bdehdcfg-target.md) | システムドライブとして使用するドライブの部分を定義し、その部分をアクティブにします。 |
@@ -51,6 +51,6 @@ bdehdcfg [–driveinfo <drive_letter>] [-target {default|unallocated|<drive_lett
 | [bdehdcfg: 再起動](bdehdcfg-restart.md) | ドライブの準備が完了した後で、コンピューターを再起動するように指示します。 |
 | /? | コマンド プロンプトでヘルプを表示します。 |
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

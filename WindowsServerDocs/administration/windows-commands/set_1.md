@@ -1,6 +1,6 @@
 ---
 title: set
-description: Cmd.exe 環境変数の表示、設定、または削除を行う set のリファレンストピックです。
+description: cmd.exe 環境変数の表示、設定、または削除を行う set のリファレンス記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5de835dd591e1f70acc896772df501d5ddbdf237
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 002ac4624d9ed501fab7816a83c2a0c5fc6a2bce
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83819392"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922829"
 ---
 # <a name="set"></a>set
 
-Cmd.exe 環境変数を表示、設定、または削除します。 パラメーターを指定せずに使用する場合 **設定** 現在の環境変数の設定が表示されます。
+cmd.exe 環境変数を表示、設定、または削除します。 パラメーターを指定せずに使用する場合 **設定** 現在の環境変数の設定が表示されます。
 
 
 
@@ -34,12 +34,12 @@ set /a <Variable>=<Expression>
 
 |パラメーター|説明|
 |---------|-----------|
-|\<変数>|設定または変更するには、環境変数を指定します。|
-|\<文字列>|指定された環境変数に関連付ける文字列を指定します。|
+|\<Variable>|設定または変更するには、環境変数を指定します。|
+|\<String>|指定された環境変数に関連付ける文字列を指定します。|
 |/p|値を設定 *変数* の入力をユーザーが入力行にします。|
-|\<PromptString>|省略可能。 入力をユーザーに入力を求めるメッセージを指定します。 このパラメーターを併用、 **/p** コマンド ライン オプションです。|
+|\<PromptString>|任意。 入力をユーザーに入力を求めるメッセージを指定します。 このパラメーターを併用、 **/p** コマンド ライン オプションです。|
 |/a|セット *文字列* に評価される数値式です。|
-|\<式の>|数値式を指定します。 使用できる有効な演算子の「解説」を参照してください *式*します。|
+|\<Expression>|数値式を指定します。 使用できる有効な演算子の「解説」を参照してください *式*します。|
 |/?|コマンド プロンプトにヘルプを表示します。|
 
 ## <a name="remarks"></a>注釈
@@ -145,6 +145,6 @@ set p
 > [!NOTE]
 > このコマンドでは、既定で有効になっているコマンド拡張機能が必要です。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

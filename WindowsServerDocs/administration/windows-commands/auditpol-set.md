@@ -1,6 +1,6 @@
 ---
-title: auditpol セット
-description: Auditpol set コマンドのリファレンストピックでは、ユーザーごとの監査ポリシー、システム監査ポリシー、または監査オプションを設定します。
+title: auditpol set
+description: Auditpol set コマンドの参照記事。ユーザーごとの監査ポリシー、システム監査ポリシー、または監査オプションを設定します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 73868d6044d8742d4d9e0ce76e0668402f230f86
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: bc42168d65116261d57053e0812cbb49e17021d5
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718888"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923695"
 ---
-# <a name="auditpol-set"></a>auditpol セット
+# <a name="auditpol-set"></a>auditpol set
 
 > 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -38,7 +38,7 @@ auditpol /set
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | [説明] |
+| パラメーター | 説明 |
 | --------- | ----------- |
 | /user | カテゴリまたはサブカテゴリによって指定されたユーザーごとの監査ポリシーが設定されているセキュリティプリンシパル。 カテゴリまたはサブカテゴリオプションは、セキュリティ識別子 (SID) または名前として指定する必要があります。 |
 | /include | /User で指定します。システム監査ポリシーによって指定されていない場合でも、ユーザーごとのポリシーによって監査が生成されることを示します。 この設定は既定値であり、/include と/exclude の両方のパラメーターが明示的に指定されていない場合に自動的に適用されます。 |
@@ -92,7 +92,7 @@ auditpol /set /subcategory:{0ccee9210-69ae-11d9-bed3-505054503030},{0ccee9211-69
 auditpol /set /option:CrashOnAuditFail /value:enable
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

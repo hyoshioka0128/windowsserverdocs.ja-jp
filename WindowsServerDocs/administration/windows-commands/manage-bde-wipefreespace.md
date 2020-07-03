@@ -1,6 +1,6 @@
 ---
 title: manage-bde wipefreespace 領域
-description: Manage-bde wipefreespace 領域内に存在していた可能性のあるデータフラグメントを削除する、ボリューム上の空き領域をワイプするための参照トピック。
+description: Manage-bde wipefreespace 領域の参照記事。このコマンドは、領域内に存在していた可能性のあるデータフラグメントを削除して、ボリューム上の空き領域を消去します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 09bc59ab631dd1fa2177b50aa4187b30239571bd
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: 872c3722028af1612fb80e3b98650ee0a39261ce
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222123"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922176"
 ---
 # <a name="manage-bde-wipefreespace"></a>manage-bde wipefreespace 領域
 
@@ -32,7 +32,7 @@ manage-bde -wipefreespace|-w [<drive>] [-cancel] [-computername <name>] [{-?|/?}
 | --------- | ----------- |
 | `<drive>` | コロンの後にドライブ文字を表します。 |
 | -キャンセル | プロセスでは、空き領域のクリーン インストールをキャンセルします。 |
-| -computername | Manage-bde.exe を使用して、別のコンピューター上の BitLocker 保護を変更することを指定します。 また、このコマンドの省略版として **-cn**を使用することもできます。 |
+| -computername | manage-bde.exe が別のコンピューターの BitLocker 保護を変更するために使用されることを指定します。 また、このコマンドの省略版として **-cn**を使用することもできます。 |
 | `<name>` | BitLocker による保護を変更するコンピューターの名前を表します。 指定できる値には、コンピューターの NetBIOS 名とコンピューターの IP アドレスが含まれます。 |
 | -? または /? | コマンドプロンプトで簡単なヘルプを表示します。 |
 | -help または-h | 表示は、コマンド プロンプトでヘルプを完了します。 |
@@ -59,7 +59,7 @@ manage-bde -w -cancel C:
 manage-bde -wipefreespace -cancel C:
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

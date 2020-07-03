@@ -1,6 +1,6 @@
 ---
-title: ボリュームの追加
-description: '[ボリュームの追加] コマンドのリファレンストピック。シャドウコピーセットにボリュームを追加します。これはシャドウコピーするボリュームのセットです。'
+title: add volume
+description: '[ボリュームの追加] コマンドの参照記事。シャドウコピーセットにボリュームを追加します。これはシャドウコピーするボリュームのセットです。'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a8cfd3d8f7d9f008e3136d8f694dc00370b8b0f2
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 3cd80a60fd3215a2234d4eb5be8a62da91e2cba4
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719207"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924084"
 ---
-# <a name="add-volume"></a>ボリュームの追加
+# <a name="add-volume"></a>add volume
 
 シャドウコピーするボリュームのセットであるボリュームをシャドウコピーセットに追加します。 シャドウコピーが作成されると、環境変数によってエイリアスがシャドウ ID にリンクされるため、エイリアスをスクリプト作成に使用できます。
 
@@ -32,14 +32,14 @@ add volume <volume> [provider <providerid>]
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | [説明] |
+| パラメーター | 説明 |
 | --------- | ----------- |
 | `<volume>` | シャドウコピーセットに追加するボリュームを指定します。 シャドウコピーの作成には、少なくとも1つのボリュームが必要です。 |
 | `[provider \<providerid>]` | シャドウコピーの作成に使用する登録済みプロバイダーのプロバイダー ID を指定します。 **プロバイダー**が指定されていない場合は、既定のプロバイダーが使用されます。 |
 
 ## <a name="examples"></a>例
 
-登録されているプロバイダーの現在の一覧を`diskshadow>`表示するには、プロンプトで次のように入力します。
+登録されているプロバイダーの現在の一覧を表示するには、 `diskshadow>` プロンプトで次のように入力します。
 
 ```
 list providers
@@ -62,7 +62,7 @@ list providers
 add volume c: alias System1
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

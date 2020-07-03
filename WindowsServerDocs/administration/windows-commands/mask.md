@@ -1,6 +1,6 @@
 ---
 title: mask
-description: Mask コマンドのリファレンストピック。インポートコマンドを使用してインポートされたハードウェアシャドウコピーを削除します。
+description: Mask コマンドの参照記事。 import コマンドを使用してインポートされたハードウェアシャドウコピーを削除します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ee01bb74b1fef1bb31a266c01a9e9bde7743691d
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: 2839fce0a64f187c1445a5f6a4af6c5f0ebc9fb8
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354642"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922109"
 ---
 # <a name="mask"></a>mask
 
@@ -32,7 +32,7 @@ mask <shadowsetID>
 | --------- | ----------- |
 | shadowsetID | 指定されたシャドウコピーセット ID に属するシャドウコピーを削除します。 |
 
-#### <a name="remarks"></a>解説
+#### <a name="remarks"></a>注釈
 
 - *ShadowSetID*の代わりに、既存のエイリアスまたは環境変数を使用できます。 既存のエイリアスを表示するには、パラメーターを指定せずに**add**を使用します。
 
@@ -44,6 +44,6 @@ mask <shadowsetID>
 mask %Import_1%
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

@@ -1,6 +1,6 @@
 ---
 title: manage-bde setidentifier
-description: Manage-bde setidentifier コマンドのリファレンストピック。ドライブの [ドライブ識別子] フィールドを、[組織の一意の識別子を指定してくださいグループポリシー] 設定で指定された値に設定します。
+description: Manage-bde setidentifier コマンドのリファレンス記事。ドライブの [ドライブ識別子] フィールドを、[組織の一意の識別子を指定してくださいグループポリシー] 設定で指定された値に設定します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5b4a21df9d177d7bf6813abb0d418d7355d5e59a
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: 7d20120bf4c6ec76fa6ba040141afadea2a748d5
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222606"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922254"
 ---
 # <a name="manage-bde-setidentifier"></a>manage-bde setidentifier
 
@@ -31,7 +31,7 @@ manage-bde –setidentifier <drive> [-computername <name>] [{-?|/?}] [{-help|-h}
 | パラメーター | 説明 |
 | --------- | ----------- |
 | `<drive>` | コロンの後にドライブ文字を表します。 |
-| -computername | Manage-bde.exe を使用して、別のコンピューター上の BitLocker 保護を変更することを指定します。 また、このコマンドの省略版として **-cn**を使用することもできます。 |
+| -computername | manage-bde.exe が別のコンピューターの BitLocker 保護を変更するために使用されることを指定します。 また、このコマンドの省略版として **-cn**を使用することもできます。 |
 | `<name>` | BitLocker による保護を変更するコンピューターの名前を表します。 指定できる値には、コンピューターの NetBIOS 名とコンピューターの IP アドレスが含まれます。 |
 | -? または /? | コマンドプロンプトで簡単なヘルプを表示します。 |
 | -help または-h | 表示は、コマンド プロンプトでヘルプを完了します。 |
@@ -44,7 +44,7 @@ C の BitLocker ドライブ識別子フィールドを設定するには、次�
 manage-bde –setidentifier C:
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

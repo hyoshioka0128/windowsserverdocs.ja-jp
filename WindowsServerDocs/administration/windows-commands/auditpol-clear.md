@@ -1,6 +1,6 @@
 ---
-title: auditpol クリア
-description: Auditpol clear コマンドのリファレンストピックでは、すべてのユーザーのユーザーごとの監査ポリシーを削除し、すべてのサブカテゴリのシステム監査ポリシーをリセット (無効) し、すべての監査オプションを無効に設定します。
+title: auditpol clear
+description: Auditpol clear コマンドの参照記事。すべてのユーザーについてユーザーごとの監査ポリシーが削除され、すべてのサブカテゴリのシステム監査ポリシーがリセット (無効) され、すべての監査オプションが無効に設定されます。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a3d4765907f1dd614f5d0a61585ea09069652ecb
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 797f26ab9e191176808bbce917ca5ac0fa3d73a3
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719147"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923799"
 ---
-# <a name="auditpol-clear"></a>auditpol クリア
+# <a name="auditpol-clear"></a>auditpol clear
 
 > 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -32,7 +32,7 @@ auditpol /clear [/y]
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | [説明] |
+| パラメーター | 説明 |
 | ----------- | --------------- |
 | /y | すべての監査ポリシー設定をクリアする必要があるかどうかを確認するプロンプトを表示しません。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
@@ -54,7 +54,7 @@ auditpol /clear /y
 > [!NOTE]
 > 前の例は、スクリプトを使用してこの操作を実行する場合に役立ちます。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

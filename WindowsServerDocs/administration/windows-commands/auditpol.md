@@ -1,6 +1,6 @@
 ---
 title: auditpol
-description: Auditpol コマンドのリファレンストピックでは、に関する情報を表示し、監査ポリシーを操作する関数を実行します。
+description: Auditpol コマンドの参照記事。監査ポリシーを操作するための情報を表示し、関数を実行します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 89fee7ccd3b6671a6f2633c3b5d15d0cbee261fa
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: f3f503b957175ba2a3997202d83c171cf8683032
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718828"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923665"
 ---
 # <a name="auditpol"></a>auditpol
 
@@ -42,7 +42,7 @@ auditpol command [<sub-command><options>]
 
 ### <a name="parameters"></a>パラメーター
 
-| サブコマンド | [説明] |
+| サブコマンド | 説明 |
 | ----------- | ----------- |
 | /get | 現在の監査ポリシーを表示します。 詳細については、「 [auditpol get](auditpol-get.md)の構文とオプション」を参照してください。 |
 | /set | 監査ポリシーを設定します。 詳細については、「 [auditpol set](auditpol-set.md) for 構文 and options」を参照してください。 |
@@ -54,6 +54,6 @@ auditpol command [<sub-command><options>]
 | /resourcesacl | グローバルリソースシステムアクセス制御リスト (Sacl) を構成します。 **注:** Windows 7 および Windows Server 2008 R2 にのみ適用されます。 詳細については、「 [Auditpol resourceSACL](auditpol-resourcesacl.md)」を参照してください。 |
 | /?| コマンド プロンプトにヘルプを表示します。 |
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

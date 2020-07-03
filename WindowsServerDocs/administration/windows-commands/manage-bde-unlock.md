@@ -1,6 +1,6 @@
 ---
 title: manage-bde のロック解除
-description: 復元パスワードまたは回復キーを使用して BitLocker で保護されているドライブのロックを解除する manage-bde unlock コマンドのリファレンストピックです。
+description: 復元パスワードまたは回復キーを使用して BitLocker で保護されているドライブのロックを解除する manage-bde unlock コマンドのリファレンス記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 67d4c0ec78870af45f0b98f2ab04d85b19e92af9
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: 1be2bf029a378015cd20f21c236c0d519f2e072a
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222155"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922206"
 ---
 # <a name="manage-bde-unlock"></a>manage-bde のロック解除
 
@@ -39,7 +39,7 @@ manage-bde -unlock {-recoverypassword <password>|-recoverykey <pathtoexternalkey
 | -cf`<pathtocertificatefile>` | 証明書ファイルへのパス |
 | -ct`<certificatethumbprint>` | 必要に応じて、暗証番号 (pin) を含む証明書の拇印 (の暗証番号 (pin))。 |
 | -パスワード | ボリュームのロックを解除するパスワードを入力するプロンプトが表示されます。 使用することも **- pw** としてこのコマンドの簡易版です。 |
-| -computername | Manage-bde.exe を使用して、別のコンピューター上の BitLocker 保護を変更することを指定します。 また、このコマンドの省略版として **-cn**を使用することもできます。 |
+| -computername | manage-bde.exe が別のコンピューターの BitLocker 保護を変更するために使用されることを指定します。 また、このコマンドの省略版として **-cn**を使用することもできます。 |
 | `<name>` | BitLocker による保護を変更するコンピューターの名前を表します。 指定できる値には、コンピューターの NetBIOS 名とコンピューターの IP アドレスが含まれます。 |
 | -? または /? | コマンドプロンプトで簡単なヘルプを表示します。 |
 | -help または-h | 表示は、コマンド プロンプトでヘルプを完了します。 |
@@ -52,7 +52,7 @@ manage-bde -unlock {-recoverypassword <password>|-recoverykey <pathtoexternalkey
 manage-bde –unlock E: -recoverykey F:\Backupkeys\recoverykey.bek
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

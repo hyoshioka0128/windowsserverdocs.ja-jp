@@ -1,6 +1,6 @@
 ---
 title: 対象
-description: ファイルのセット内で、各ファイルに対して指定されたコマンドを実行する for コマンドのリファレンストピックです。
+description: ファイルのセット内で、各ファイルに対して指定されたコマンドを実行する for コマンドの参照記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 24ef5bc159e67862d419bd2728b14585f8b095d4
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 44b6497af626079b05768fd245c1b86693bdfe61
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437017"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922419"
 ---
 # <a name="for"></a>対象
 
@@ -31,12 +31,12 @@ for {%% | %}<variable> in (<set>) do <command> [<commandlineoptions>]
 | パラメーター | 説明 |
 | --------- | ----------- |
 | `{%% | %}<variable>` | 必須です。 置き換え可能なパラメーターを表します。 `%`コマンドプロンプトで**for**コマンドを実行するには、1つのパーセント記号 () を使用します。 `%%`バッチファイル内で**for**コマンドを実行するには、2つのパーセント記号 () を使用します。 変数は大文字と小文字が区別され、 **% a**、 **% b**、 **% c**などのアルファベット順の値で表す必要があります。 |
-| (`<set>`) | 必須。 1つ以上のファイル、ディレクトリ、またはテキスト文字列、またはコマンドを実行する値の範囲を指定します。 かっこが必要です。 |
-| `<command>` | 必須。 各ファイル、ディレクトリ、またはテキスト文字列、または*set*に含まれる値の範囲に対して実行するコマンドを指定します。 |
+| (`<set>`) | 必須です。 1つ以上のファイル、ディレクトリ、またはテキスト文字列、またはコマンドを実行する値の範囲を指定します。 かっこが必要です。 |
+| `<command>` | 必須です。 各ファイル、ディレクトリ、またはテキスト文字列、または*set*に含まれる値の範囲に対して実行するコマンドを指定します。 |
 | `<commandlineoptions>` | 指定したコマンドで使用するコマンドラインオプションを指定します。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-#### <a name="remarks"></a>解説
+#### <a name="remarks"></a>注釈
 
 - このコマンドは、バッチファイル内で使用することも、コマンドプロンプトから直接使用することもできます。
 
@@ -117,7 +117,7 @@ for {%% | %}<variable> in (<set>) do <command> [<commandlineoptions>]
 
   - **変数の代入:** 次の表に、省略可能な構文 (任意の変数**I**) を示します。
 
-    | 修飾子を持つ変数 | Description |
+    | 修飾子を持つ変数 | 説明 |
     | ---------------------- | ----------- |
     |` %~I` | `%I`を展開して、周囲の引用符を削除します。 |
     | `%~fI `| `%I`は、完全修飾パス名に展開されます。 |
@@ -133,7 +133,7 @@ for {%% | %}<variable> in (<set>) do <command> [<commandlineoptions>]
 
     次の表に、複合結果を取得するために使用できる修飾子の組み合わせを示します。
 
-    | 結合された修飾子を持つ変数 | Description |
+    | 結合された修飾子を持つ変数 | 説明 |
     | -------------------------------- | ----------- |
     | `%~dpI `| `%I`は、ドライブ文字とパスのみに展開されます。 |
     | `%~nxI` | `%I`ファイル名と拡張子のみを展開します。 |
@@ -147,7 +147,7 @@ for {%% | %}<variable> in (<set>) do <command> [<commandlineoptions>]
 
 - **文字列の解析:**`for /f` `<literalstring>` 二重引用符 (usebackq*を使用*し*ない*) または単一引用符 (usebackq) (たとえば、(MyString) または (' MyString ')) でラップすることにより、即時文字列で解析ロジックを使用できます。 `<literalstring>`は、ファイルからの1行の入力として扱われます。 二重引用符で解析する場合、 `<literalstring>` コマンドシンボル (など `\ & | > < ^` ) は通常の文字として扱われます。
 
-- **出力の解析:** コマンドを使用すると、 `for /f` かっこの間に逆引用符を付けることによって、コマンドの出力を解析でき `<command>` ます。 これはコマンドラインとして扱われ、Cmd.exe に渡されます。 出力はメモリにキャプチャされ、ファイルであるかのように解析されます。
+- **出力の解析:** コマンドを使用すると、 `for /f` かっこの間に逆引用符を付けることによって、コマンドの出力を解析でき `<command>` ます。 これはコマンドラインとして扱われ、子 Cmd.exe に渡されます。 出力はメモリにキャプチャされ、ファイルであるかのように解析されます。
 
 ## <a name="examples"></a>例
 
@@ -181,6 +181,6 @@ for /f eol=; tokens=2,3* delims=, %i in (myfile.txt) do @echo %i %j %k
 for /f usebackq delims== %i in ('set') do @echo %i
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

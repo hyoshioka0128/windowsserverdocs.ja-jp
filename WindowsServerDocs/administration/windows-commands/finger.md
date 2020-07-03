@@ -1,6 +1,6 @@
 ---
 title: finger
-description: Finger コマンドのリファレンストピック。 finger サービスまたはデーモンを実行している指定されたリモートコンピューター上のユーザーに関する情報を表示します。
+description: 指のサービスまたはデーモンを実行している指定されたリモートコンピューター上のユーザーに関する情報を表示する、finger コマンドの参照記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a3403e10a1777bc117659eb052958d3a20668557
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: fd629374b601686e91e5238ae8db060e0b6bf0f8
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437237"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922424"
 ---
 # <a name="finger"></a>finger
 
@@ -40,7 +40,7 @@ finger [-l] [<user>] [@<host>] [...]
 | `@<host>` | ユーザー情報を探している finger サービスを実行しているリモートコンピューターを指定します。 コンピューター名または IP アドレスを指定できます。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-#### <a name="remarks"></a>解説
+#### <a name="remarks"></a>注釈
 
 - **指**パラメーターの前には、スラッシュ (/) ではなくハイフン (-) を付ける必要があります。
 
@@ -60,6 +60,6 @@ finger user1@users.microsoft.com
 finger @users.microsoft.com
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

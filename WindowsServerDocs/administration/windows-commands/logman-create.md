@@ -1,6 +1,6 @@
 ---
 title: logman create
-description: Logman create コマンドのリファレンストピックでは、カウンター、トレース、構成データコレクター、または API を作成します。
+description: Logman create コマンドのリファレンス記事。カウンター、トレース、構成データコレクター、または API を作成します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c4a68be098f868cdd9cd48c1e7c68fc183fa1fab
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: 695a101a0aa6a720b64ffee6617085d13b6e83d1
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222953"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922323"
 ---
 # <a name="logman-create"></a>logman create
 
@@ -32,13 +32,13 @@ logman create <counter | trace | alert | cfg | api> <[-n] <name>> [options]
 
 | パラメーター | 説明 |
 | --------- | ----------- |
-| [logman カウンターの作成](logman-create-counter.md) | カウンターデータコレクターを作成します。 |
-| [logman 作成トレース](logman-create-trace.md) | トレースデータコレクターを作成します。 |
-| [logman 作成アラート](logman-create-alert.md) | アラートデータコレクターを作成します。 |
-| [logman 作成 cfg](logman-create-cfg.md) | 構成データコレクターを作成します。 |
-| [logman api の作成](logman-create-api.md) | API トレースデータコレクターを作成します。 |
+| [logman create counter](logman-create-counter.md) | カウンターデータコレクターを作成します。 |
+| [logman create trace](logman-create-trace.md) | トレースデータコレクターを作成します。 |
+| [logman create alert](logman-create-alert.md) | アラートデータコレクターを作成します。 |
+| [logman create cfg](logman-create-cfg.md) | 構成データコレクターを作成します。 |
+| [logman create api](logman-create-api.md) | API トレースデータコレクターを作成します。 |
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

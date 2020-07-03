@@ -1,6 +1,6 @@
 ---
 title: bitsadmin cache と deleteURL
-description: Bitsadmin cache および deleteURL コマンドのリファレンストピック。指定された URL のすべてのキャッシュエントリを削除します。
+description: Bitsadmin cache および deleteURL コマンドのリファレンス記事。指定された URL のすべてのキャッシュエントリを削除します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 075c48e5c8c205cbbf3fe476260ec7909edcc3e6
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 8d1ed4710bfeeefa721308c54075ddc8da5c5216
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718445"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923338"
 ---
 # <a name="bitsadmin-cache-and-deleteurl"></a>bitsadmin cache と deleteURL
 
@@ -34,13 +34,13 @@ bitsadmin /deleteURL URL
 
 ## <a name="examples"></a>例
 
-次のすべての`https://www.contoso.com/en/us/default.aspx`キャッシュエントリを削除するには:
+次のすべてのキャッシュエントリを削除するには `https://www.contoso.com/en/us/default.aspx` :
 
 ```
-bitsadmin /deleteURL https://www.contoso.com/en/us/default.aspx 
+bitsadmin /deleteURL https://www.contoso.com/en/us/default.aspx
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

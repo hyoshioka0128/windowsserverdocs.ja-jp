@@ -1,6 +1,6 @@
 ---
 title: ImageDriverPackage を追加します。
-description: 追加 ImageDriverPackage のリファレンストピックでは、ドライバーストア内のドライバーパッケージをサーバー上の既存のブートイメージに追加します。
+description: 追加 ImageDriverPackage のリファレンス記事。ドライバーストア内のドライバーパッケージをサーバー上の既存のブートイメージに追加します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4c221d77f80cefdcf6e6214cdd7441ecde5cb693
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 450b06c2c935f83a0851fb887f34d7403061fea8
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721066"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922061"
 ---
 # <a name="add-imagedriverpackage"></a>ImageDriverPackage を追加します。
 
@@ -24,14 +24,14 @@ ms.locfileid: "82721066"
 
 ## <a name="syntax"></a>構文
 ```
-wdsutil /add-ImageDriverPackage [/Server:<Server name>media:<Image namemediatype:Boot /Architecture:{x86 | ia64 | x64} 
+wdsutil /add-ImageDriverPackage [/Server:<Server name>media:<Image namemediatype:Boot /Architecture:{x86 | ia64 | x64}
 ```
 ```
 [/Filename:<File name>] {/DriverPackage:<Package Name> | /PackageId:<ID>}
 ```
 ### <a name="parameters"></a>パラメーター
 
-|                 パラメーター                  |                                                                                                                                                                                                            [説明]                                                                                                                                                                                                             |
+|                 パラメーター                  |                                                                                                                                                                                                            説明                                                                                                                                                                                                             |
 |--------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |           /Server<Server name>           |                                                                                                                                               サーバーの名前を指定します。 これには、NetBIOS 名または FQDN を指定できます。 サーバー名が指定されていない場合は、ローカル サーバーが使用されます。                                                                                                                                                |
 |             用紙<Image name>             |                                                                                                                                                                                       ドライバーを追加するイメージの名前を指定します。                                                                                                                                                                                        |
@@ -49,6 +49,6 @@ wdsutil /add-ImageDriverPackagmedia:WinPE Boot Imagemediatype:Boot /Architecture
 ```
 wdsutil /verbose /add-ImageDriverPackagmedia:WinPE Boot Image /Server:MyWDSServemediatype:Boot /Architecture:x64 /PackageId:{4D36E972-E325-11CE-Bfc1-08002BE10318}
 ```
-## <a name="additional-references"></a>その他のリファレンス
-- [コマンドライン構文のキー](command-line-syntax-key.md)
-[追加 imagedriverpackages コマンドを使用して](using-the-add-imagedriverpackages-command.md)
+## <a name="additional-references"></a>その他の参照情報
+- [コマンドライン構文のキー](command-line-syntax-key.md) 
+[追加 ImageDriverPackages コマンドを使用して](using-the-add-imagedriverpackages-command.md)ください。

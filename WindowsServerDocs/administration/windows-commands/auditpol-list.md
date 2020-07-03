@@ -1,6 +1,6 @@
 ---
-title: auditpol リスト
-description: '[Auditpol リスト] コマンドのリファレンストピック。監査ポリシーのカテゴリとサブカテゴリを一覧表示したり、ユーザーごとの監査ポリシーが定義されているユーザーの一覧を表示したりします。'
+title: auditpol list
+description: '[Auditpol リスト] コマンドの参照記事。監査ポリシーのカテゴリとサブカテゴリを一覧表示したり、ユーザーごとの監査ポリシーが定義されているユーザーの一覧を表示したりします。'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 96ee4388c716c066a2e9b55b57dd2e70b4b4f69c
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: a0ce67b9907fa4c5207d75422dc972d70f5e6eea
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719096"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923715"
 ---
-# <a name="auditpol-list"></a>auditpol リスト
+# <a name="auditpol-list"></a>auditpol list
 
 > 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -34,7 +34,7 @@ auditpol /list
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | [説明] |
+| パラメーター | 説明 |
 | ------- | -------- |
 | /user | ユーザーごとの監査ポリシーが定義されているすべてのユーザーを取得します。 /V パラメーターと共に使用すると、ユーザーのセキュリティ識別子 (SID) も表示されます。 |
 | /category | システムによって認識されるカテゴリの名前を表示します。 /V パラメーターと共に使用すると、カテゴリのグローバル一意識別子 (GUID) も表示されます。 |
@@ -69,7 +69,7 @@ auditpol /list /subcategory:* /r
 auditpol /list /subcategory:detailed Tracking,DS Access
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

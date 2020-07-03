@@ -1,6 +1,6 @@
 ---
 title: fsutil transaction
-description: NTFS トランザクションを管理する fsutil transaction コマンドのリファレンストピックです。
+description: NTFS トランザクションを管理する fsutil transaction コマンドのリファレンス記事です。
 ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
@@ -9,12 +9,12 @@ ms.technology: storage
 ms.assetid: f2eefaaf-2817-4ac7-abac-d2b65fa971dc
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: fc81934c5838fd81722b27a7b7e57b14709ed26a
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 95cd9a8f62aa9dd64d46a875a90847a65589b447
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437047"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922336"
 ---
 # <a name="fsutil-transaction"></a>fsutil transaction
 
@@ -52,7 +52,7 @@ fsutil transaction [rollback] <GUID>
 fsutil transaction fileinfo c:\test.txt
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

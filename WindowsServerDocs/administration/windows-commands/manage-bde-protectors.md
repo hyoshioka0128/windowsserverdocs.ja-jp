@@ -1,6 +1,6 @@
 ---
 title: manage-bde プロテクターの管理
-description: BitLocker 暗号化キーに使用される保護方法を管理する manage-bde プロテクターコマンドのリファレンストピックです。
+description: BitLocker 暗号化キーに使用される保護方法を管理する manage-bde プロテクターコマンドのリファレンス記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 08/06/2018
-ms.openlocfilehash: 999c92fd9f2bfedad92a9c68c1528ee66836f315
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: d277c070ff0cdee0d93d7a8be11dc13bea5adb95
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222626"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922303"
 ---
 # <a name="manage-bde-protectors"></a>manage-bde プロテクターの管理
 
@@ -40,7 +40,7 @@ manage-bde -protectors [{-get|-add|-delete|-disable|-enable|-adbackup|-aadbackup
 | -adbackup | Active Directory ドメイン サービス (AD DS) に指定されたドライブのすべての回復情報をバックアップします。 AD DS に 1 つの回復キーのみをバックアップするには、追加、 **-id** パラメーターをバックアップする特定の回復キーの ID を指定します。 |
 | -aadbackup | 指定されたドライブのすべての回復情報を Azure Active Directory (Azure AD) にバックアップします。 Azure AD に1つの回復キーだけをバックアップするには、 **-id**パラメーターを追加し、バックアップする特定の回復キーの id を指定します。 |
 | `<drive>` | コロンの後にドライブ文字を表します。 |
-| -computername | Manage-bde.exe を使用して、別のコンピューター上の BitLocker 保護を変更することを指定します。 また、このコマンドの省略版として **-cn**を使用することもできます。 |
+| -computername | manage-bde.exe が別のコンピューターの BitLocker 保護を変更するために使用されることを指定します。 また、このコマンドの省略版として **-cn**を使用することもできます。 |
 | `<name>` | BitLocker による保護を変更するコンピューターの名前を表します。 指定できる値には、コンピューターの NetBIOS 名とコンピューターの IP アドレスが含まれます。 |
 | -? または /? | コマンドプロンプトで簡単なヘルプを表示します。 |
 | -help または-h | コマンドプロンプトで完全なヘルプを表示します。 |
@@ -99,10 +99,10 @@ manage-bde -protectors -delete <drive> [-type {recoverypassword|externalkey|cert
 | tpmandpin | ドライブに関連付けられている TPM および PIN ベースのキー保護機能を削除する必要があることを指定します。 |
 | tpmandpinandstartupkey | ドライブに関連付けられている TPM、PIN、およびスタートアップキーに基づくキープロテクターを削除する必要があることを指定します。 |
 | password | ドライブに関連付けられているパスワード キーの保護を削除するかを指定します。 |
-| ID | ドライブに関連付けられているすべての id キー プロテクターを削除するかを指定します。 |
+| identity | ドライブに関連付けられているすべての id キー プロテクターを削除するかを指定します。 |
 | -ID | キー識別子を使用して削除するキー保護機能を識別します。 このパラメーターは、代わりのオプションを **-型** パラメーター。 |
 | `<keyprotectorID>` | 個々 のキー保護機能、ドライブを削除するを識別します。 使用して、キー保護機能の Id を表示できる、 **から manage-bde-プロテクター-取得** コマンドです。 |
-| -computername | Manage-bde.exe を使用して、別のコンピューター上の BitLocker 保護を変更することを指定します。 また、このコマンドの省略版として **-cn**を使用することもできます。 |
+| -computername | manage-bde.exe が別のコンピューターの BitLocker 保護を変更するために使用されることを指定します。 また、このコマンドの省略版として **-cn**を使用することもできます。 |
 | `<name>` | BitLocker による保護を変更するコンピューターの名前を表します。 指定できる値には、コンピューターの NetBIOS 名とコンピューターの IP アドレスが含まれます。 |
 | -? または /? | コマンドプロンプトで簡単なヘルプを表示します。 |
 | -help または-h | コマンドプロンプトで完全なヘルプを表示します。 |
@@ -117,7 +117,7 @@ manage-bde -protectors -disable <drive> [-rebootcount <integer 0 - 15>] [-comput
 | --------- | ----------- |
 | `<drive>` | コロンの後にドライブ文字を表します。 |
 | rebootcount | オペレーティングシステムボリュームの保護が中断され、Windows が再起動された後に、 **rebootcount**パラメーターで指定した回数だけ再開されることを指定します。 保護を無期限に中断する場合は**0**を指定します。 このパラメーターを指定しないと、Windows の再起動後に BitLocker 保護が自動的に再開されます。 使用することも **-rc** としてこのコマンドの簡易版です。 |
-| -computername | Manage-bde.exe を使用して、別のコンピューター上の BitLocker 保護を変更することを指定します。 また、このコマンドの省略版として **-cn**を使用することもできます。 |
+| -computername | manage-bde.exe が別のコンピューターの BitLocker 保護を変更するために使用されることを指定します。 また、このコマンドの省略版として **-cn**を使用することもできます。 |
 | `<name>` | BitLocker による保護を変更するコンピューターの名前を表します。 指定できる値には、コンピューターの NetBIOS 名とコンピューターの IP アドレスが含まれます。 |
 | -? または /? | コマンドプロンプトで簡単なヘルプを表示します。 |
 | -help または-h | コマンドプロンプトで完全なヘルプを表示します。 |
@@ -154,7 +154,7 @@ manage-bde -protectors -delete C: -type tpmandstartupkey
 manage-bde -protectors -adbackup C:
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

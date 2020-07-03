@@ -1,6 +1,6 @@
 ---
 title: format
-description: Format コマンドのリファレンストピックでは、Windows ファイルを受け入れるようにディスクをフォーマットします。
+description: Format コマンドの参照記事。 Windows ファイルを受け入れるようにディスクをフォーマットします。
 ms.prod: windows-server
 manager: dongill
 ms.author: jgerend
@@ -9,14 +9,14 @@ ms.topic: article
 ms.assetid: 51ec7423-9a01-4219-868a-25d69cdcc832
 author: jasongerend
 ms.date: 10/16/2017
-ms.openlocfilehash: abe05c4bf8174fd76cedc29f2bce1c83587c3d8a
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 1ce046cf3bdce046a86d98228223cc2bc03b7c31
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436987"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922678"
 ---
-# <a name="format"></a>形式
+# <a name="format"></a>フォーマット
 
 > 適用対象: Windows 10、Windows Server 2016
 
@@ -52,7 +52,7 @@ format <volume> [/q]
 | /x | フォーマットされる前に、必要に応じてボリュームのマウントを解除します。 ボリュームに対して開いているハンドルは、無効になります。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-#### <a name="remarks"></a>解説
+#### <a name="remarks"></a>注釈
 
 - **Format**コマンドを実行すると、新しいルートディレクトリとディスクのファイルシステムが作成されます。 また、ディスク上の不良領域を確認し、ディスク上のすべてのデータを削除することもできます。 新しいディスクを使用できるようにするには、まず、このコマンドを使用してディスクをフォーマットする必要があります。
 
@@ -116,6 +116,6 @@ format a: /q
 format a: /v:DATA
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](https://technet.microsoft.com/library/cc771080.aspx)

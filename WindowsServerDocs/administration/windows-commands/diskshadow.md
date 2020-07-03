@@ -1,6 +1,6 @@
 ---
 title: Diskshadow (英語の可能性あり)
-description: ボリュームシャドウコピーサービス (VSS) によって提供される機能を公開するツールである、Diskshadow コマンドのリファレンストピックです。
+description: ボリュームシャドウコピーサービス (VSS) によって提供される機能を公開するツールである、Diskshadow コマンドのリファレンス記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,23 +9,23 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ae3a4ba57d9c29375c560c300a4e4ead807184fc
-ms.sourcegitcommit: aed942d11f1a361fc1d17553a4cf190a864d1268
+ms.openlocfilehash: 02e2836cd69b1fe85ea4f86da125c95c9ca1e4ea
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83235190"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922794"
 ---
 # <a name="diskshadow"></a>Diskshadow (英語の可能性あり)
 
 > 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-Diskshadow は、ボリュームシャドウコピーサービス (VSS) によって提供される機能を公開するツールです。 既定では、Diskshadow は、Diskraid や Diskpart と同様の対話型のコマンドインタープリターを使用します。 Diskshadow には、スクリプト可能なモードも含まれています。
+Diskshadow.exe は、ボリュームシャドウコピーサービス (VSS) によって提供される機能を公開するツールです。 既定では、Diskshadow は、Diskraid や Diskpart と同様の対話型のコマンドインタープリターを使用します。 Diskshadow には、スクリプト可能なモードも含まれています。
 
 > [!NOTE]
 > Diskshadow を実行するには、ローカルの Administrators グループのメンバーシップ、またはそれと同等のメンバーシップが最低限必要です。
 
-## <a name="syntax"></a>構文
+## <a name="syntax"></a>Syntax
 
 対話モードの場合は、コマンドプロンプトで次のように入力して、Diskshadow コマンドインタープリターを開始します。
 
@@ -33,7 +33,7 @@ Diskshadow は、ボリュームシャドウコピーサービス (VSS) によ�
 diskshadow
 ```
 
-スクリプトモードで、次のように入力し*ます。* ここで、test.txt は、Diskshadow コマンドを含むスクリプトファイルです。
+スクリプトモードの場合は、次のように入力します。 *script.txt*は、Diskshadow コマンドを含むスクリプトファイルです。
 
 ```
 diskshadow -s script.txt
@@ -43,7 +43,7 @@ diskshadow -s script.txt
 
 Diskshadow コマンドインタープリターで、またはスクリプトファイルを使用して、次のコマンドを実行できます。 シャドウコピーを作成するには、少なくとも**追加**と**作成**のみが必要です。 ただし、これによってコンテキストとオプションの設定がなくなりされ、コピーバックアップが作成され、バックアップ実行スクリプトを使用せずにシャドウコピーが作成されます。
 
-| command | 説明 |
+| コマンド | 説明 |
 | --------- | ----------- |
 | [set コマンド](set_2.md) | シャドウコピーを作成するためのコンテキスト、オプション、詳細モード、およびメタデータファイルを設定します。 |
 | [メタデータの読み込みコマンド](load-metadata.md) | 転送可能なシャドウコピーをインポートする前に、または復元の場合にライターメタデータを読み込む前に、メタデータ .cab ファイルを読み込みます。 |
@@ -100,6 +100,6 @@ end backup
 #End of script
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

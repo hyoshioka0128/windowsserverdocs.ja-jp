@@ -1,6 +1,6 @@
 ---
-title: bdehdcfg ターゲット
-description: BitLocker と Windows 回復によってシステムドライブとして使用するパーティションを準備する bdehdcfg target コマンドのリファレンストピックです。
+title: bdehdcfg target
+description: BitLocker と Windows 回復によってシステムドライブとして使用するパーティションを準備する bdehdcfg target コマンドのリファレンス記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b7f98f42675a49ab34ca1cf759efb9d40a69c38a
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 509c659907878f7b0ddc0b0c601715fa996c5fe7
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718597"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923364"
 ---
 # <a name="bdehdcfg-target"></a>bdehdcfg: ターゲット
 
@@ -28,7 +28,7 @@ bdehdcfg -target {default|unallocated|<drive_letter> shrink|<drive_letter> merge
 
 #### <a name="parameters"></a>パラメーター
 
-| パラメーター | [説明] |
+| パラメーター | 説明 |
 | --------- | ----------- |
 | default | は、コマンドラインツールが BitLocker セットアップウィザードと同じプロセスに従うことを示します。 |
 | 未 | ディスク上の使用可能な未割り当て領域からシステムパーティションを作成します。 |
@@ -43,7 +43,7 @@ bdehdcfg -target {default|unallocated|<drive_letter> shrink|<drive_letter> merge
 bdehdcfg -target P: merge
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

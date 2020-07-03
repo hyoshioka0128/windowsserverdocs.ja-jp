@@ -1,6 +1,6 @@
 ---
 title: forfiles
-description: Forfiles コマンドのリファレンストピックでは、ファイルまたはファイルのセットに対してコマンドを選択して実行します。
+description: Forfiles コマンドのリファレンス記事。ファイルまたは一連のファイルでコマンドを選択して実行します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/20/2020
-ms.openlocfilehash: 96ef7d016bd13961a4814ba4cd09095aed4f0e97
-ms.sourcegitcommit: 29f7a4811b4d36d60b8b7c55ce57d4ee7d52e263
+ms.openlocfilehash: 26c443aa05d081fc257dc49d2f2c7f6a9adae865
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83716847"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922399"
 ---
 # <a name="forfiles"></a>forfiles
 
@@ -28,7 +28,7 @@ forfiles [/P pathname] [/M searchmask] [/S] [/C command] [/D [+ | -] [{<date> | 
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | [説明] |
+| パラメーター | Description |
 | --------- | ----------- |
 | /P`<pathname>` | 検索の開始位置を示すパスを指定します。 既定では、検索は現在の作業ディレクトリから開始されます。 |
 | /M`<searchmask>` | 指定された検索マスクに従ってファイルを検索します。 既定の searchmask は `*` です。 |
@@ -37,7 +37,7 @@ forfiles [/P pathname] [/M searchmask] [/S] [/C command] [/D [+ | -] [{<date> | 
 | D`[{+\|-}][{<date> | <days>}]` | 指定された期間内に最後に変更された日付のファイルを選択します:<ul><li>日付 **+** **-** が MM/DD/YYYY の形式で指定された日付 () 以上 () またはそれより前*date* () であるファイルを選択します。</li><li>現在の日付に指定された日数を加算した日付、または現在の日付から指定した日数を引いた値 () までの最終更新日を含むファイルを選択 **+** **-** します。</li><li>*Days*の有効な値には、0 ~ 32768 の範囲の任意の数を指定します。 符号が指定されていない場合、 **+** 既定ではが使用されます。</li></ul> |
 | /? | コマンドウィンドウにヘルプテキストを表示します。 |
 
-#### <a name="remarks"></a>解説
+#### <a name="remarks"></a>注釈
 
 - `forfiles /S`コマンドはに似てい `dir /S` ます。
 
@@ -55,7 +55,7 @@ forfiles [/P pathname] [/M searchmask] [/S] [/C command] [/D [+ | -] [{<date> | 
     | @FDATE | ファイルで最後に変更された日付スタンプ。 |
     | @FTIME | ファイルの最終更新日時スタンプ。 |
 
-- **Forfiles**コマンドを使用すると、に対してコマンドを実行したり、複数のファイルに引数を渡したりすることができます。 たとえば、.txt というファイル名拡張子を持つツリー内のすべてのファイルに対して**type**コマンドを実行できます。 または、すべてのバッチファイル (* .bat) をドライブ C で実行し、ファイル名 Myinput を最初の引数として指定することもできます。
+- **Forfiles**コマンドを使用すると、に対してコマンドを実行したり、複数のファイルに引数を渡したりすることができます。 たとえば、.txt というファイル名拡張子を持つツリー内のすべてのファイルに対して**type**コマンドを実行できます。 または、すべてのバッチファイル (* .bat) をドライブ C で実行し、ファイル名を最初の引数として Myinput.txt することもできます。
 
 - このコマンドは、次のことができます。
 
@@ -101,6 +101,6 @@ forfiles /S /M *.* /D -01/01/2007 /C "cmd /c echo @file is outdated."
 forfiles /S /M *.* /C "cmd /c echo The extension of @file is 0x09@ext"
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

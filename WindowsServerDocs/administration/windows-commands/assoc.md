@@ -1,6 +1,6 @@
 ---
 title: assoc
-description: ファイル名拡張子の関連付けを表示または変更する assoc コマンドのリファレンストピックです。
+description: ファイル名拡張子の関連付けを表示または変更する assoc コマンドの参照記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,19 +9,19 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 58735201a1a0711db4d0cee9c292363acf5121f3
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 6e6d72dce2a3e820b52a33bf11dbf38890278fb8
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83819642"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924040"
 ---
 # <a name="assoc"></a>assoc
 
 ファイル名拡張子の関連付けを表示または変更します。 パラメーターを指定せずに使用した場合、 **assoc**は、現在のファイル名拡張子のすべての関連付けの一覧を表示します。
 
 > [!NOTE]
-> このコマンドは、cmd.exe 内でのみサポートされており、PowerShell からは使用できません。
+> このコマンドは cmd.exe 内でのみサポートされており、PowerShell からは使用できません。
 
 ## <a name="syntax"></a>構文
 
@@ -68,13 +68,13 @@ assoc .bak=
 assoc | more
 ```
 
-**Assoc**の出力をファイルに送信するには、次のように入力します。
+ファイル assoc.txt に**assoc**の出力を送信するには、次のように入力します。
 
 ```
 assoc>assoc.txt
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

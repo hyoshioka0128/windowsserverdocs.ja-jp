@@ -1,6 +1,6 @@
 ---
 title: perfmon
-description: 特定のスタンドアロンモードで Windows 信頼性とパフォーマンスモニターを起動する perfmon コマンドのリファレンストピックです。
+description: 特定のスタンドアロンモードで Windows 信頼性とパフォーマンスモニターを起動する perfmon コマンドのリファレンス記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/25/2018
-ms.openlocfilehash: 96d1589dcd75814c37c2ad295cf60887eb07739c
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 5beaa1692f3fc4aa66eae81069f0ead5839d22e3
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472478"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922840"
 ---
 # <a name="perfmon"></a>perfmon
 
@@ -35,7 +35,7 @@ perfmon </res|report|rel|sys>
 | /rel | 信頼性モニターを起動します。 |
 | /sys | パフォーマンスモニターを起動します。 |
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

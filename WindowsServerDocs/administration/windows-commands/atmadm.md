@@ -1,6 +1,6 @@
 ---
 title: atmadm
-description: AtM コールマネージャーによって非同期転送モード (atM) ネットワークに登録されている接続とアドレスを監視する、atmadm コマンドのリファレンストピックです。
+description: 非同期転送モード (atM) ネットワーク上の atM コールマネージャーによって登録された接続とアドレスを監視する、atmadm コマンドのリファレンス記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 32dad00e5a4d03c905f95c48e112f512a9dbc2e5
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 1985634cdbaff0dfe0dcefd53395bc4f62614f2a
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718916"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923921"
 ---
 # <a name="atmadm"></a>atmadm
 
@@ -30,14 +30,14 @@ atmadm [/c][/a][/s]
 
 #### <a name="parameters"></a>パラメーター
 
-| パラメーター | [説明] |
+| パラメーター | 説明 |
 | ------- | -------- |
 | /c | このコンピューターにインストールされている atM ネットワークアダプターへの現在のすべての接続に関する呼び出し情報を表示します。 |
 | /a | このコンピューターにインストールされている各アダプターの登録済み atM ネットワークサービスアクセスポイント (NSAP) アドレスを表示します。 |
 | /s | アクティブな atM 接続の状態を監視するための統計情報を表示します。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-### <a name="remarks"></a>Remarks
+### <a name="remarks"></a>注釈
 
 - **Atmadm/c**コマンドを実行すると、次のような出力が生成されます。
 
@@ -74,7 +74,7 @@ atmadm [/c][/a][/s]
 
     次の表に、 **atmadm/c**サンプル出力の各要素について説明します。
 
-    | データの種類 | 画面表示 | [説明] |
+    | データの種類 | 画面表示 | 説明 |
     | -------- | --------- | -------- |
     | 接続情報 | /アウトの選択 | 呼び出しの方向。 **の**は、別のデバイスからの atM ネットワークアダプターに対するものです。  これは、atM ネットワークアダプターから別のデバイスに**送信**されます。 |
     | PMP | ポイント対 multipoint 呼び出し。 |
@@ -112,7 +112,7 @@ atmadm [/c][/a][/s]
 
     次の表に、 **atmadm/s**サンプル出力の各要素について説明します。
 
-    | コールマネージャーの統計情報 | [説明] |
+    | コールマネージャーの統計情報 | 説明 |
     | ------------- | -------- |
     | 現在のアクティブな呼び出し | このコンピューターにインストールされている atM アダプターで現在アクティブになっている呼び出し。 |
     | 成功した着信呼び出しの合計数 | この atM ネットワーク上の他のデバイスから正常に受信した呼び出し。 |
@@ -144,6 +144,6 @@ atmadm /a
 atmadm /s
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

@@ -1,6 +1,6 @@
 ---
 title: bitsadmin cache および help
-description: '**キャッシュ**スイッチのコマンドラインの使用法を表示する bitsadmin cache および help コマンドのリファレンストピックです。'
+description: '**キャッシュ**スイッチのコマンドラインの使用法を表示する bitsadmin cache および help コマンドのリファレンス記事です。'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 79d8dd2ce5af1e1160692f13974c56842fb163cd
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 36f8343704d0842497082e9d473250c6ba2cb1c1
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718361"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923276"
 ---
 # <a name="bitsadmin-cache-and-help"></a>bitsadmin cache および help
 
@@ -34,7 +34,7 @@ bitsadmin /cache /help
 bitsadmin /cache /help
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

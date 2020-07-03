@@ -1,6 +1,6 @@
 ---
 title: bitsadmin peercaching および help
-description: '**Bitsadmin のピアキャッシュ**と**ヘルプ**のリファレンストピックでは、/ピアキャッシュスイッチのコマンドラインの使用法を示します。'
+description: '**Bitsadmin のピアキャッシュ**と**ヘルプ**のリファレンス記事。/ピアキャッシュスイッチのコマンドラインの使用方法を表示します。'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 08cb792989470d7492ff2da4b63ddd686b35b232
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 1cef716cd7487868adcd9df32904fda331e49fc1
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82717248"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922925"
 ---
 # <a name="bitsadmin-peercaching-and-help"></a>bitsadmin peercaching および help
 
@@ -34,7 +34,7 @@ bitsadmin /peercaching /help
 bitsadmin /peercaching /help
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

@@ -1,6 +1,6 @@
 ---
-title: 属性ディスク
-description: Attributes disk コマンドのリファレンストピック。ディスクの属性を表示、設定、またはクリアします。
+title: attributes disk
+description: ディスクの属性を表示、設定、または消去する disk コマンドの属性に関するリファレンス記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c3d378439b30328e4df48020fa4b3288f7af31c6
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 02ad39b84afb2487b388d046d6409a682b58615b
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718896"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923897"
 ---
-# <a name="attributes-disk"></a>属性ディスク
+# <a name="attributes-disk"></a>attributes disk
 
 ディスクの属性を表示、設定、またはクリアします。 このコマンドを使用してディスクの現在の属性を表示する場合、スタートアップディスク属性は、コンピューターを起動するために使用されるディスクを表します。 ダイナミックミラーの場合は、ブートボリュームのブートプレックスを含むディスクが表示されます。
 
@@ -31,7 +31,7 @@ attributes disk [{set | clear}] [readonly] [noerr]
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | [説明] |
+| パラメーター | 説明 |
 | --------- | ----------- |
 | set | フォーカスがあるディスクの指定された属性を設定します。 |
 | オフ | フォーカスがあるディスクの指定された属性をクリアします。 |
@@ -52,7 +52,7 @@ attributes disk
 attributes disk set readonly
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

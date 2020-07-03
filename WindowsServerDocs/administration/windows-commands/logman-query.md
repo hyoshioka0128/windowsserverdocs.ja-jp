@@ -1,6 +1,6 @@
 ---
 title: logman query
-description: データコレクターまたはデータコレクターセットのプロパティを照会する logman クエリコマンドのリファレンストピックです。
+description: データコレクターまたはデータコレクターセットのプロパティを照会する logman クエリコマンドのリファレンス記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f37b78023fd12c1d58234cdecdb69af8a1c6002d
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: ea436ec676ee8097a0df80467744b76f2deeca42
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222815"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922307"
 ---
 # <a name="logman-query"></a>logman query
 
@@ -58,7 +58,7 @@ logman query perf_log
 logman query providers
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

@@ -1,6 +1,6 @@
 ---
-title: auditpol の取得
-description: Auditpol get コマンドのリファレンストピック。システムポリシー、ユーザーごとのポリシー、監査オプション、および監査セキュリティ記述子オブジェクトを取得します。
+title: auditpol get
+description: Auditpol get コマンドの参照記事。システムポリシー、ユーザーごとのポリシー、監査オプション、および監査セキュリティ記述子オブジェクトを取得します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 859ea9e2e42af0fe7f34f4e378166685f8316b9e
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 698823ae48dd4ca52cb26d583a35d3faf1c1d03a
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719135"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923746"
 ---
-# <a name="auditpol-get"></a>auditpol の取得
+# <a name="auditpol-get"></a>auditpol get
 
 > 適用対象: Windows Server (半期チャネル)、Windows Server、2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -38,7 +38,7 @@ auditpol /get
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | [説明] |
+| パラメーター | 説明 |
 | --------- | ----------- |
 | /user | ユーザーごとの監査ポリシーを照会する対象のセキュリティプリンシパルを表示します。 /Category パラメーターまたは/サブカテゴリパラメーターのどちらかを指定する必要があります。 ユーザーは、セキュリティ識別子 (SID) または名前として指定できます。 ユーザーアカウントが指定されていない場合は、システム監査ポリシーが照会されます。 |
 | /category | グローバル一意識別子 (GUID) または名前によって指定された1つ以上の監査カテゴリ。 アスタリスク (*) を使用して、すべての監査カテゴリを照会する必要があることを示すことができます。 |
@@ -48,7 +48,7 @@ auditpol /get
 | /r | 出力をレポート形式で、コンマ区切り値 (CSV) で表示します。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-### <a name="remarks"></a>Remarks
+### <a name="remarks"></a>注釈
 
 すべてのカテゴリおよびサブカテゴリは、引用符 (") で囲まれた GUID または名前で指定できます。 ユーザーは SID または名前で指定できます。
 
@@ -61,7 +61,7 @@ auditpol /get /user:{S-1-5-21-1443922412-3030960370-963420232-51} /category:Syst
 ```
 
 > [!NOTE]
-> このコマンドは、2つのシナリオで役立ちます。 1) 特定のユーザーアカウントで疑わしいアクティビティを監視する場合は、 `/get`コマンドを使用して、追加の監査を有効にする包含ポリシーを使用して、特定のカテゴリの結果を取得できます。 2) アカウントの監査設定によって多数の余分なイベントがログに記録さ`/get`れる場合は、コマンドを使用して、除外ポリシーを使用してそのアカウントの不要なイベントを除外できます。 すべてのカテゴリの一覧を表示するに`auditpol /list /category`は、コマンドを使用します。
+> このコマンドは、2つのシナリオで役立ちます。 1) 特定のユーザーアカウントで疑わしいアクティビティを監視する場合は、コマンドを使用して、 `/get` 追加の監査を有効にする包含ポリシーを使用して、特定のカテゴリの結果を取得できます。 2) アカウントの監査設定によって多数の余分なイベントがログに記録される場合は、コマンドを使用して、除外ポリシーを使用して `/get` そのアカウントの不要なイベントを除外できます。 すべてのカテゴリの一覧を表示するには、コマンドを使用し `auditpol /list /category` ます。
 
 カテゴリおよび特定のサブカテゴリについて、ユーザーごとの監査ポリシーを取得するには、次のように入力します。これにより、そのサブカテゴリの包括的設定と排他設定が Guest アカウントの [システム] カテゴリに表示されます。
 
@@ -105,7 +105,7 @@ auditpol /get /option:AuditBaseObjects
 auditpol /get /option:CrashOnAuditFail /r
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

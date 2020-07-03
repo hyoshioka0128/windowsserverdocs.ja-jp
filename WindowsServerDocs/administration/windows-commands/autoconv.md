@@ -1,6 +1,6 @@
 ---
 title: autoconv
-description: ファイルアロケーションテーブル (Fat) および Fat32 ボリュームを NTFS ファイルシステムに変換する autoconv コマンドのリファレンストピックです。
+description: ファイルアロケーションテーブル (Fat) および Fat32 ボリュームを NTFS ファイルシステムに変換する autoconv コマンドのリファレンス記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ea8f55270435c6632be2e527569b4a4b4ca81136
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: c6d54f413ab9d4f680f59294a3f01c1de02db222
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718772"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923569"
 ---
 # <a name="autoconv"></a>autoconv
 
@@ -23,9 +23,9 @@ ms.locfileid: "82718772"
 ファイルアロケーションテーブル (Fat) および Fat32 ボリュームを NTFS ファイルシステムに変換します。これにより、 **autochk**が実行された後も、既存のファイルやディレクトリはそのまま残ります。 NTFS ファイルシステムに変換されたボリュームは、Fat または Fat32 に変換することはできません。
 
 > [!IMPORTANT]
-> コマンドラインから**autoconv**を実行することはできません。 このは、 **convert.exe**を使用して設定した場合にのみ、スタートアップ時に実行できます。
+> コマンドラインから**autoconv**を実行することはできません。 **convert.exe**によって設定した場合は、起動時にのみ実行できます。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

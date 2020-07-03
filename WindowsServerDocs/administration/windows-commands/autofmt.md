@@ -1,6 +1,6 @@
 ---
 title: autofmt
-description: Autofmt コマンドのリファレンストピック。 Windows 回復コンソールから呼び出されたときに、ドライブまたはパーティションをフォーマットします。
+description: Autofmt コマンドのリファレンス記事。 Windows 回復コンソールから呼び出されたときに、ドライブまたはパーティションをフォーマットします。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b7b82d940f2d8bd54d023a2a105208d1a18fc4c8
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 1b6f4ae3fe630ba01d9c789a9f7d73a11a31f456
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718761"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923555"
 ---
 # <a name="autofmt"></a>autofmt
 
@@ -23,7 +23,7 @@ ms.locfileid: "82718761"
 > [!IMPORTANT]
 > コマンドラインから直接**autofmt**を実行することはできません。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 
