@@ -1,6 +1,6 @@
 ---
 title: uniqueid
-description: フォーカスがあるディスクの GUID パーティションテーブル (GPT) 識別子またはマスターブートレコード (MBR) 署名を表示または設定する uniqueid のリファレンストピックです。
+description: フォーカスがあるディスクの GUID パーティションテーブル (GPT) 識別子またはマスターブートレコード (MBR) 署名を表示または設定する uniqueid の参照記事。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: efaafe889f04511ceef7441b0a42b73259aadedf
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 5acf29d9a7dfd505a5ecdad2a08dfdb1a9f4d975
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721178"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85937284"
 ---
 # <a name="uniqueid"></a>uniqueid
 
@@ -31,12 +31,12 @@ uniqueid disk [id={<dword> | <GUID>}] [noerr]
 
 ### <a name="parameters"></a>パラメーター
 
-|  パラメーター   |                                                                                             [説明]                                                                                              |
+|  パラメーター   |                                                                                             説明                                                                                              |
 |--------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | id = {\<dword> |                                                                                               <GUID>}                                                                                                |
 |    noerr     | スクリプト専用です。 エラーが発生しても、エラーが発生しなかったかのように DiskPart はコマンドの処理を続けます。 このパラメーターは、エラー発生すると、DiskPart はエラー コードを生成して終了します。 |
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>注釈
 
 -   このコマンドは、ベーシックディスクとダイナミックディスクで機能します。
 -   このコマンドを成功させるには、ディスクを選択してください。 使用して、 **select ディスク** コマンド ディスクを選択し、それにフォーカスをします。
@@ -56,5 +56,5 @@ Baf784e7-6bbd-4cfb-aaac-e86c96e166ee にフォーカスがある GPT ディス�
 uniqueid disk id=baf784e7-6bbd-4cfb-aaac-e86c96e166ee
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 

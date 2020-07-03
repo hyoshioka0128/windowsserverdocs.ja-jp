@@ -1,6 +1,6 @@
 ---
 title: tsprof
-description: リモートデスクトップサービスユーザーの構成情報をあるユーザーから別のユーザーにコピーする tsprof のリファレンストピックです。
+description: リモートデスクトップサービスユーザーの構成情報をあるユーザーから別のユーザーにコピーする tsprof のリファレンス記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b5a4980455eb2901db949a06f0c6dfec9ecf5793
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: b0b030f6f1353a6570883cf44c17e383b929cb3a
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721235"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85937332"
 ---
 # <a name="tsprof"></a>tsprof
 
@@ -38,20 +38,20 @@ tsprof /q {/domain:<DomainName> | /local} <UserName>
 ```
 
 ### <a name="parameters"></a>パラメーター
-|パラメーター|[説明]|
+|パラメーター|説明|
 |-------|--------|
 |/update|ドメイン <*DomainName*> 内の <*ユーザー名*> のプロファイルパス情報を <*Profilepath*> に更新します。|
-|/domain:\<DomainName>|操作が適用されるドメインの名前を指定します。|
+|/domain\<DomainName>|操作が適用されるドメインの名前を指定します。|
 |/local|ローカルユーザーアカウントにのみ操作を適用します。|
-|/profile:\<パス>|[ローカルユーザーとグループ]、[active directory ユーザーとコンピューター] のリモートデスクトップサービス拡張機能に表示されるプロファイルパスを指定します。|
-|\<ユーザー名>|サーバープロファイルパスを更新または照会するユーザーの名前を指定します。|
-|/copy|ユーザー構成情報を\< *sourceuser*> から\< *destinationuser*> にコピーし、 \< *destinationuser*> のプロファイルパス情報を\< *Profilepath*> に更新します。 \< *Sourceuser*> と\< *destinationuser*> の両方がローカルであるか、または\<domain *DomainName*> に含まれている必要があります。|
+|/profile\<path>|[ローカルユーザーとグループ]、[active directory ユーザーとコンピューター] のリモートデスクトップサービス拡張機能に表示されるプロファイルパスを指定します。|
+|\<UserName>|サーバープロファイルパスを更新または照会するユーザーの名前を指定します。|
+|/copy|からにユーザー構成情報をコピー \<*SourceUser*> \<*DestinationUser*> し、のプロファイルパス情報をに更新し \<*DestinationUser*> \<*Profilepath*> ます。 とはどちらもローカルであるか、 \<*SourceUser*> \<*DestinationUser*> またはドメイン内に存在する必要があり \<*DomainName*> ます。|
 |\<Src_usr>|ユーザー構成情報をコピーするユーザーの名前を指定します。|
 |\<Dest_usr>|ユーザー構成情報をコピーするユーザーの名前を指定します。|
 |/q|サーバープロファイルパスに対してクエリを実行するユーザーの現在のプロファイルパスを表示します。|
 |/?|コマンド プロンプトにヘルプを表示します。|
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>注釈
 -   **Tsprof**コマンドを使用できるのは、windows server 2008 を実行しているコンピューターにターミナルサーバーの役割サービスをインストールした場合、または windows Server 2008 R2 を実行しているコンピューターに RD セッションホスト役割サービスをインストールした場合のみです。
 
 ## <a name="examples"></a>例
@@ -64,6 +64,6 @@ tsprof /q {/domain:<DomainName> | /local} <UserName>
     tsprof /update /local /profile:c:\profiles LocalUser1
     ```
 
-## <a name="additional-references"></a>その他のリファレンス
-- [コマンドライン構文のキー](command-line-syntax-key.md)
+## <a name="additional-references"></a>その他の参照情報
+- [コマンドライン構文のキー](command-line-syntax-key.md) 
 [リモートデスクトップサービス (ターミナルサービス) のコマンドリファレンス](remote-desktop-services-terminal-services-command-reference.md)

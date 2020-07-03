@@ -1,6 +1,6 @@
 ---
 title: add
-description: さまざまな add コマンドのリファレンストピックです。
+description: さまざまな add コマンドのリファレンス記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,19 +9,19 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3320a6074a1eb385eeca36207ac699287b0258f9
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 23bcfa5d304839094151d8baa9a7ebd77334d469
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721152"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85937252"
 ---
 # <a name="add"></a>add
 
 > 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 ## <a name="subcommands"></a>サブコマンド
-|サブコマンド|[説明]|
+|サブコマンド|説明|
 |-------|--------|
 |[デバイスの追加のコマンドを使用してください。](using-the-add-device-command.md)|Active directory 内のコンピューターを事前にステージングします。|
 |[イメージを使用して、追加のコマンド](using-the-add-image-command.md)|ブートイメージまたはインストールイメージを追加します。|

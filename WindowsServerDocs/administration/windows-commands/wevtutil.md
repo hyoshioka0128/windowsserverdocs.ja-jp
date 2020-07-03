@@ -1,6 +1,6 @@
 ---
 title: wevtutil
-description: Wevtutil のリファレンストピック。イベントログとパブリッシャーに関する情報を取得できます。
+description: Wevtutil のリファレンス記事。イベントログとパブリッシャーに関する情報を取得できます。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 22195f3a163e1a4123b51d005b0367cc61411651
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: f87ab51c0e24f9df421d7540e85d05a534635947
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222613"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936643"
 ---
 # <a name="wevtutil"></a>wevtutil
 
@@ -87,7 +87,7 @@ wevtutil [{el | enum-logs}] [{gl | get-log} <Logname> [/f:<Format>]]
 |     /a\<Auth>     |                                                                                                                                                                                             リモートコンピューターに接続するための認証の種類を定義します。 \<Auth>既定値、Negotiate、Kerberos、NTLM のいずれかを指定できます。 既定値は Negotiate です。                                                                                                                                                                                              |
 |  方向\<Unicode>   |                                                                                                                                                                                                             Unicode で出力を表示します。 \<Unicode>true または false を指定できます。 <Unicode>が true の場合、出力は Unicode になります。                                                                                                                                                                                                             |
 
-## <a name="remarks"></a>解説
+## <a name="remarks"></a>注釈
 
 -   構成ファイルを sl パラメーターと共に使用する
 
@@ -124,11 +124,11 @@ wevtutil sl /c:config.xml
 ```
 wevtutil gp Microsoft-Windows-Eventlog /ge:true
 ```
-MyManifest xml マニフェストファイルから発行元とログをインストールします。
+myManifest.xml マニフェストファイルからパブリッシャーとログをインストールします。
 ```
 wevtutil im myManifest.xml
 ```
-MyManifest .xml マニフェストファイルから発行元とログをアンインストールします。
+myManifest.xml マニフェストファイルから発行元とログをアンインストールします。
 ```
 wevtutil um myManifest.xml
 ```
@@ -149,6 +149,6 @@ C:\admin\backups\a10306.evtx に保存した後、アプリケーションログ
 wevtutil cl Application /bu:C:\admin\backups\a10306.evtx
 ```
 
-#### <a name="additional-references"></a>その他のリファレンス
+#### <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

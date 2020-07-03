@@ -1,6 +1,6 @@
 ---
 title: nslookup 終了
-description: Nslookup コマンドラインツールを終了する nslookup exit コマンドのリファレンストピックです。
+description: Nslookup コマンドラインツールを終了する nslookup exit コマンドの参照記事。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c233e39d711c37540c30bc64296c6b24b57689c8
-ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
+ms.openlocfilehash: f265379c8692d24fff3ad6c0be25295f656c756d
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84721485"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936527"
 ---
 # <a name="nslookup-exit"></a>nslookup/exit
 
@@ -33,6 +33,6 @@ nslookup /exit
 | /? | コマンド プロンプトにヘルプを表示します。 |
 | /help | コマンド プロンプトにヘルプを表示します。 |
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

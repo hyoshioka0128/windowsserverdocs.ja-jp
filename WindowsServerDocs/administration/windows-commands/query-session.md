@@ -1,6 +1,6 @@
 ---
 title: query session
-description: クエリセッションコマンドのリファレンストピックでは、リモートデスクトップセッションホストサーバー上のセッションに関する情報を表示します。
+description: クエリセッションコマンドの参照記事。リモートデスクトップセッションホストサーバー上のセッションに関する情報を表示します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 57b8587c0a02067a3472561e08fbfa461c1448b9
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 440830af55763fbb3ebee7cdbdca97ca11cde30c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472007"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85937030"
 ---
 # <a name="query-session"></a>query session
 
@@ -85,7 +85,7 @@ query session /server:Server2
 query session modeM02
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

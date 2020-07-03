@@ -1,6 +1,6 @@
 ---
 title: waitfor
-description: システムでシグナルを送信または待機する waitfor のリファレンストピックです。 **Waitfor** をネットワーク経由でコンピューターを同期するために使用します。
+description: システムでシグナルを送信または待機する waitfor のリファレンス記事です。 **Waitfor** をネットワーク経由でコンピューターを同期するために使用します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1264fa3bffde303577bd56a0f1f68a6d7b2d98c2
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 9a80b606fc91ec146a6808bde97a8d7f0081d0ff
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720220"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85937012"
 ---
 # <a name="waitfor"></a>waitfor
 
@@ -33,17 +33,17 @@ waitfor [/t <Timeout>] <SignalName>
 
 ### <a name="parameters"></a>パラメーター
 
-|       パラメーター       |                                                                                         [説明]                                                                                          |
+|       パラメーター       |                                                                                         説明                                                                                          |
 |-----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|    /s \<コンピューター>     | 名前またはリモート コンピューターの IP アドレスを指定します (円記号を使用しない)。 既定はローカル コンピュータです。 このパラメーターは、コマンドで指定されたすべてのファイルとフォルダーに適用されます。 |
-| /u [\<ドメイン>\]<User> |                              指定したユーザー アカウントの資格情報を使用してスクリプトを実行します。 既定では、 **waitfor** 現在のユーザーの資格情報を使用します。                               |
-|   /p [\<パスワード>]    |                                                    指定されているユーザー アカウントのパスワードを指定します、 **/u** パラメーター。                                                     |
+|    /s\<Computer>     | 名前またはリモート コンピューターの IP アドレスを指定します (円記号を使用しない)。 既定値はローカル コンピューターです。 このパラメーターは、コマンドで指定されたすべてのファイルとフォルダーに適用されます。 |
+| u\<Domain>\]<User> |                              指定したユーザー アカウントの資格情報を使用してスクリプトを実行します。 既定では、 **waitfor** 現在のユーザーの資格情報を使用します。                               |
+|   /p [\<Password>]    |                                                    指定されているユーザー アカウントのパスワードを指定します、 **/u** パラメーター。                                                     |
 |          /si          |                                                                        ネットワーク経由で指定されたシグナルを送信します。                                                                        |
-|     /t \<タイムアウト>     |                                              シグナルを待機する秒数を指定します。 既定では、 **waitfor** が無制限に待機します。                                               |
+|     /t\<Timeout>     |                                              シグナルを待機する秒数を指定します。 既定では、 **waitfor** が無制限に待機します。                                               |
 |     \<SignalName>     |                                                信号を指定する **waitfor** まで待機するか、または送信します。 *信号名* 小文字は区別されません。                                                 |
 |          /?           |                                                                             コマンド プロンプトにヘルプを表示します。                                                                             |
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>注釈
 
 -   シグナル名には、225 文字を超えることはできません。 有効な文字には、a ~ z、A ~ Z、0 ~ 9、および拡張文字セット (128 ~ 255) ASCII が含まれます。
 -   使用しない場合 **/s**, 、信号は、ドメイン内のすべてのシステムにブロードキャストされます。 使用する場合 **/s**, 、信号が、指定したシステムにのみ送信します。
@@ -70,6 +70,6 @@ Espresso\ build007 信号を手動でアクティブ化するには、次のよ�
 waitfor /si espresso\build007
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

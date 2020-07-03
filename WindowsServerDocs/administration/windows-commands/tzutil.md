@@ -1,6 +1,6 @@
 ---
 title: tzutil
-description: Windows タイムゾーンユーティリティを表示する tzutil のリファレンストピックです。
+description: Windows タイムゾーンユーティリティを表示する tzutil のリファレンス記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5d4a94fa9f776af1ae21ad9057b6f9225691b516
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 99d88057c88a55aaf529d238088f8422c33e9ba7
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83821302"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85937293"
 ---
 # <a name="tzutil"></a>tzutil
 
@@ -31,8 +31,8 @@ tzutil [/?] [/g] [/s <timeZoneID>[_dstoff]] [/l]
 |-------|--------|
 |/?|コマンド プロンプトにヘルプを表示します。|
 |/g|現在のタイムゾーン ID を表示します。|
-|/s \< timeZoneID> [_dstoff]|指定されたタイムゾーン ID を使用して、現在のタイムゾーンを設定します。 **_Dstoff**サフィックスは、タイムゾーンの夏時間調整を無効にします (該当する場合)。|
-|/l|有効なタイムゾーン Id と表示名をすべて一覧表示します。 次のように出力されます。<p>-   \<表示名><br />-   \<タイムゾーン ID>|
+|/s \<timeZoneID> [_dstoff]|指定されたタイムゾーン ID を使用して、現在のタイムゾーンを設定します。 **_Dstoff**サフィックスは、タイムゾーンの夏時間調整を無効にします (該当する場合)。|
+|/l|有効なタイムゾーン Id と表示名をすべて一覧表示します。 次のように出力されます。<p>-   \<display name><br />-   \<time zone ID>|
 
 ## <a name="remarks"></a>注釈
 終了コード**0**は、コマンドが正常に完了したことを示します。
@@ -50,6 +50,6 @@ tzutil /s Pacific Standard time
 ```
 tzutil /s Pacific Standard time_dstoff
 ```
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

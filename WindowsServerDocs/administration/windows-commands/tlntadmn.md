@@ -1,6 +1,6 @@
 ---
 title: tlntadmn
-description: ローカルコンピューターまたはリモートコンピューターを管理し、telnet サーバーサービスを実行している tlntの管理のトピックを参照してください。
+description: ローカルコンピューターまたはリモートコンピューターを管理し、telnet サーバーサービスを実行している tlntの管理に関する参照記事。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fcade72f7170e94463abb9b473d4c6bd2251f086
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: 602f3aa99f9d0e47fbbde1ab5c09b193446d8a7c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222643"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936912"
 ---
 # <a name="tlntadmn"></a>tlntadmn
 
@@ -30,7 +30,7 @@ tlntadmn [<computerName>] [-u <UserName>] [-p <Password>] [{start | stop | pause
 
 |                   パラメーター                    |                                                                                                                                                       説明                                                                                                                                                        |
 |------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|                \<computerName>                 |                                                                                                                    接続先のサーバーの名前を指定します。 既定はローカル コンピュータです。                                                                                                                    |
+|                \<computerName>                 |                                                                                                                    接続先のサーバーの名前を指定します。 既定値はローカル コンピューターです。                                                                                                                    |
 |         -u \<UserName> -p\<Password>          |                                                管理するリモートサーバーの管理者資格情報を指定します。 このパラメーターは、管理者資格情報でログオンしていないリモートサーバーを管理する場合に必要です。                                                |
 |                     start                      |                                                                                                                                            telnet サーバーサービスを開始します。                                                                                                                                             |
 |                      stop                      |                                                                                                                                             Telnet サーバーサービスを停止します。                                                                                                                                              |
@@ -50,7 +50,7 @@ tlntadmn [<computerName>] [-u <UserName>] [-p <Password>] [{start | stop | pause
 |     config モード = {console &#124; stream}      |                                                                                                                                             操作のモードを指定します。                                                                                                                                             |
 |                       -?                       |                                                                                                                                           コマンド プロンプトにヘルプを表示します。                                                                                                                                           |
 
-## <a name="remarks"></a>解説
+## <a name="remarks"></a>注釈
 -   サーバーの設定を表示するには、パラメーターを指定せずに「 **tlntを**使用します。
 -   **Tlntて n**コマンドを使用するには、管理者の資格情報を使用してローカルコンピューターにログオンする必要があります。 リモートコンピューターを管理するには、リモートコンピューターの管理者資格情報も指定する必要があります。 これを行うには、ローカルコンピューターとリモートコンピューターの両方の管理者資格情報を持つアカウントを使用してローカルコンピューターにログオンします。 この方法を使用できない場合は、 **-u**パラメーターと **-p**パラメーターを使用して、リモートコンピューターの管理者資格情報を指定できます。
 
@@ -64,6 +64,6 @@ tlntadmn config timeout=0:30:0
 tlntadmn -s
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 -   [telnet 操作ガイド](https://technet.microsoft.com/library/cc753164(v=ws.10).aspx)
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

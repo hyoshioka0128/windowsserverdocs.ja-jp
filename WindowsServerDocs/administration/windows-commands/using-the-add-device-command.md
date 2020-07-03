@@ -1,6 +1,6 @@
 ---
 title: デバイスの追加
-description: Active directory ドメインサービスでコンピューターを事前にステージングする追加デバイスのリファレンストピックです。 プレステージしたコンピューターは、既知のコンピューターとも呼ばれます。
+description: Active directory ドメインサービスでコンピューターを事前にステージングする追加デバイスのリファレンス記事です。 プレステージしたコンピューターは、既知のコンピューターとも呼ばれます。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bf98e59bfdb86529d5dd2132a55d6666850f00ae
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: e410132ea3d7ce151c47d4708f284a8e44448aaf
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721145"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85937247"
 ---
 # <a name="add-device"></a>デバイスの追加
 
@@ -24,11 +24,11 @@ Active directory ドメインサービスでコンピューターを事前にス
 
 ## <a name="syntax"></a>構文
 ```
-wdsutil /add-Device /Device:<Device name> /ID:<UUID | MAC address> [/ReferralServer:<Server name>] [/BootProgram:<Relative path>] [/WdsClientUnattend:<Relative path>] 
+wdsutil /add-Device /Device:<Device name> /ID:<UUID | MAC address> [/ReferralServer:<Server name>] [/BootProgram:<Relative path>] [/WdsClientUnattend:<Relative path>]
 [/User:<Domain\User | User@Domain>] [/JoinRights:{JoinOnly | Full}] [/JoinDomain:{Yes | No}] [/BootImagepath:<Relative path>] [/OU:<DN of OU>] [/Domain:<Domain>]
 ```
 ### <a name="parameters"></a>パラメーター
-|パラメーター|[説明]|
+|パラメーター|説明|
 |-------|--------|
 |ドライブ<computer name>|追加するコンピューターの名前を指定します。|
 |/ID: <UUID &#124; MAC アドレス>|GUID/UUID またはコンピューターの MAC アドレスのいずれかを指定します。 GUID/UUID は、バイナリ文字列または GUID 文字列の2つの形式のいずれかである必要があります。 次に例を示します。<p>バイナリ文字列: **/ID:ACEFA3E81F20694E953EB2DAA1E8B1B6**<p>GUID 文字列: **/ID:E8A3EFAC-201F-4E69-953E-B2DAA1E8B1B6**<p>MAC アドレスは、次の形式である必要があります: **00B056882FDC** (ダッシュ) または **00-B0-56-88-2F-DC** (ダッシュ付き)|
@@ -38,7 +38,7 @@ wdsutil /add-Device /Device:<Device name> /ID:<UUID | MAC address> [/ReferralSer
 |[/User: <Domain\User &#124; User@Domain>]|指定したユーザー、コンピューターをドメインに参加させるために必要な権限を与えるコンピューター アカウント オブジェクトのアクセス許可を設定します。|
 |[/JoinRights: {JoinOnly & #124 文字です。完全}]|ユーザーに割り当てられる権限の種類を指定します。<p>-   **Joinonly**では、ユーザーがコンピューターをドメインに参加させる前に、管理者がコンピューターアカウントをリセットする必要があります。<br />-   **Full**を指定すると、コンピューターをドメインに参加させる権限を含む、ユーザーにフルアクセスできます。|
 |[/JoinDomain: {[はい] (& a) #124 文字です。No}]|ドメインに、オペレーティング システムのインストール中のこのコンピューター アカウントとコンピューターを参加する必要があるかどうかを指定します。 既定値は **[はい]** です。|
-|[/BootImagepath:<Relative path>]|このコンピューターで使用するブートイメージを remoteInstall フォルダーからの相対パスで指定します。|
+|[/BootImagepath: <Relative path> ]|このコンピューターで使用するブートイメージを remoteInstall フォルダーからの相対パスで指定します。|
 |[/OU:<DN of OU>]|コンピューター アカウント オブジェクトを作成する必要が組織単位の識別名。 例: **OU = MyOU, CN テスト, DC = Domain, DC = com を =** です。 既定の場所は、既定のコンピュータのコンテナーです。|
 |[/ドメイン:<Domain>]|コンピューター アカウント オブジェクトを作成するドメイン。 既定の場所は、ローカル ドメインです。|
 ## <a name="examples"></a>例
@@ -48,12 +48,12 @@ wdsutil /add-Device /Device:computer1 /ID:00-B0-56-88-2F-DC
 ```
 コンピューターを追加するには、GUID 文字列を使用して、次のように入力します。
 ```
-wdsutil /add-Device /Device:computer1 /ID:{E8A3EFAC-201F-4E69-953F-B2DAA1E8B1B6} /ReferralServer:WDSServer1 /BootProgram:boot\x86\pxeboot.com 
+wdsutil /add-Device /Device:computer1 /ID:{E8A3EFAC-201F-4E69-953F-B2DAA1E8B1B6} /ReferralServer:WDSServer1 /BootProgram:boot\x86\pxeboot.com
 /WDSClientUnattend:WDSClientUnattend\unattend.xml /User:Domain\MyUser/JoinRights:Full /BootImagepath:boot\x86\images\boot.wim /OU:OU=MyOU,CN=Test,DC=Domain,DC=com
 ```
-## <a name="additional-references"></a>その他のリファレンス
-- [コマンドライン構文のキー](command-line-syntax-key.md)
-get デバイス[コマンド](using-the-get-alldevices-command.md)
-を使用して get[デバイス](using-the-get-device-command.md)
-コマンドを使用して[サブコマンド: set-デバイス](subcommand-set-device.md)
-の[新しい-WdsClient](https://technet.microsoft.com/library/dn283430.aspx)
+## <a name="additional-references"></a>その他の参照情報
+- [コマンドライン構文のキー](command-line-syntax-key.md) 
+[Get AllDevices コマンド](using-the-get-alldevices-command.md) 
+ の使用[Get デバイスコマンド](using-the-get-device-command.md) 
+ の使用[サブコマンド: デバイス](subcommand-set-device.md) 
+ の設定[New-WdsClient](https://technet.microsoft.com/library/dn283430.aspx)

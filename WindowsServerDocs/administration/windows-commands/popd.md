@@ -1,6 +1,6 @@
 ---
 title: popd
-description: Pnputil コマンドのリファレンストピックです。このコマンドは、現在のディレクトリを、pushd コマンドによって最後に格納されたディレクトリに変更します。
+description: Pnputil コマンドの参照記事。現在のディレクトリを、pushd コマンドによって最後に格納されたディレクトリに変更します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 0784d925eedb1202bf94fbd2951081efcc0c496b
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 002a0d84770738db2b00bedcd1e01df3b1b61b76
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472388"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936998"
 ---
 # <a name="popd"></a>popd
 
@@ -52,7 +52,7 @@ cls
 echo All text files deleted in the %1 directory
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

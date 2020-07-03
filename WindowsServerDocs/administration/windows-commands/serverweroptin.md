@@ -1,6 +1,6 @@
 ---
 title: serverweroptin
-description: '* * * * のリファレンストピック'
+description: 参照記事 * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6329552d3525a1330286e04c6400378b14039fbf
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: b8684f448f18ce28e572909fe3958e0e7b6d6a38
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83821272"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85937134"
 ---
 # <a name="serverweroptin"></a>serverweroptin
 
@@ -45,6 +45,6 @@ serverweroptin /detailed
 ```
 serverweroptin /summary
 ```
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

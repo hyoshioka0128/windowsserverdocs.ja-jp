@@ -1,6 +1,6 @@
 ---
 title: サブコマンド set DriverGroup
-description: サブコマンド set DriverGroup のリファレンストピック。サーバー上の既存のドライバーグループのプロパティを設定します。
+description: サブコマンド set DriverGroup の参照記事。サーバー上の既存のドライバーグループのプロパティを設定します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c70db688e17d185813298cea4fcee3b664f53d64
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: bffd46298dce4313f9506129faf0684413c0d08a
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721741"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85937195"
 ---
 # <a name="subcommand-set-drivergroup"></a>サブコマンド: セット DriverGroup
 
@@ -27,7 +27,7 @@ ms.locfileid: "82721741"
 wdsutil /Set-DriverGroup /DriverGroup:<Group Name> [/Server:<Server Name>] [/Name:<New Group Name>] [/Enabled:{Yes | No}] [/Applicability:{Matched | All}]
 ```
 ### <a name="parameters"></a>パラメーター
-|パラメーター|[説明]|
+|パラメーター|説明|
 |-------|--------|
 |DriverGroup<Group Name>|ドライバー グループの名前を指定します。|
 |[/Server:<Server name>]|サーバーの名前を指定します。 これには、NetBIOS 名または FQDN を指定できます。 サーバー名が指定されていない場合は、ローカル サーバーが使用されます。|
@@ -42,6 +42,6 @@ wdsutil /Set-DriverGroup /DriverGroup:printerdrivers /Enabled:Yes
 ```
 wdsutil /Set-DriverGroup /DriverGroup:printerdrivers /Name:colorprinterdrivers /Applicability:All
 ```
-## <a name="additional-references"></a>その他のリファレンス
-- [コマンドライン構文のキー](command-line-syntax-key.md)
-[サブコマンド: set drivergroupfilter](subcommand-set-drivergroupfilter.md)
+## <a name="additional-references"></a>その他の参照情報
+- [コマンドライン構文のキー](command-line-syntax-key.md) 
+[サブコマンド: Set DriverGroupFilter](subcommand-set-drivergroupfilter.md)

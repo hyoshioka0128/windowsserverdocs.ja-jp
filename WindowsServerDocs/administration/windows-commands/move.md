@@ -1,6 +1,6 @@
 ---
 title: 移動
-description: Move コマンドのリファレンストピック。1つ以上のファイルを1つのディレクトリから別のディレクトリに移動します。
+description: Move コマンドの参照記事。1つ以上のファイルを1つのディレクトリから別のディレクトリに移動します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 283ee793769d991c1932eb2271c5117354bdf6a4
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: 4cc1f7c04a54b78da7b24dbedad225a7326766cd
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354503"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936309"
 ---
 # <a name="move"></a>移動
 
@@ -47,6 +47,6 @@ move [{/y|-y}] [<source>] [<target>]
 move \data\*.xls \second_q\reports\
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

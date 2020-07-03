@@ -1,6 +1,6 @@
 ---
 title: コンテキストの設定
-description: シャドウコピーの作成のコンテキストを設定する Set context のリファレンストピックです。
+description: シャドウコピーの作成のコンテキストを設定する、Set context の参照記事。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9494cb8a0a6b0e320240d74980049a4e49843ecd
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 98fb69f84b15a2444d24e4b6515ff9ff665b9aa7
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721932"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85937112"
 ---
 # <a name="set-contex"></a>セットのコンテキスト
 
@@ -30,14 +30,14 @@ set context {clientaccessible | persistent [nowriters] | volatile [nowriters]}
 
 ### <a name="parameters"></a>パラメーター
 
-|パラメーター|[説明]|
+|パラメーター|説明|
 |---------|-----------|
 |clientaccessible|シャドウ コピーがクライアントのバージョンの Windows で使用できることを指定します。|
 |一貫|シャドウ コピーがプログラムの終了、リセット、または再起動の間で永続化することを指定します。|
 |volatile|上のシャドウ コピーの削除は、終了またはリセットします。|
 |nowriters|すべてのライターを除外することを指定します。|
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>注釈
 
 -   *Clientaccessible* コンテキストは既定では永続的です。
 
@@ -48,6 +48,6 @@ set context {clientaccessible | persistent [nowriters] | volatile [nowriters]}
 set context persistent
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

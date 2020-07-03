@@ -1,6 +1,6 @@
 ---
 title: offline disk
-description: Offline disk コマンドのリファレンストピック。オフラインの状態に焦点を合わせてオンラインディスクを取得します。
+description: オフラインディスクコマンドの参照記事。オフライン状態に焦点を合わせてオンラインディスクを取得します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1c62a79db39a7c36e14a8430b47c634f80c0c0c8
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: cc8a746e09e5756eec1890d1715a88e60696cd49
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472748"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936753"
 ---
 # <a name="offline-disk"></a>offline disk
 
@@ -45,6 +45,6 @@ offline disk [noerr]
 offline disk
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

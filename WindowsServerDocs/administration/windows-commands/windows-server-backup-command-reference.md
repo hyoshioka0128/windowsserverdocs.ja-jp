@@ -1,6 +1,6 @@
 ---
 title: Windows Server バックアップ コマンドのリファレンス
-description: Backup コマンドリファレンスのリファレンストピックです。
+description: Backup コマンドリファレンスの参照記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 69121e445e5c7a967c30b0a911c639431c7dd74a
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 32dfcc619fd12f4ac2e409fe8119bfa5dca225a7
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720717"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936254"
 ---
 # <a name="windows-server-backup-command-reference"></a>Windows Server バックアップ コマンドのリファレンス
 
@@ -26,7 +26,7 @@ ms.locfileid: "82720717"
 
 実行する必要があります **wbadmin** 管理者特権でコマンド プロンプトからです。 (管理者特権のコマンドプロンプトを開くには、[**スタート**] ボタンをクリックし、[**コマンドプロンプト**] を右クリックして、[**管理者として実行**] をクリックします)。
 
-|サブコマンド|[説明]|
+|サブコマンド|説明|
 |----------|-----------|
 |[Wbadmin enable backup](wbadmin-enable-backup.md)|構成し、毎日のバックアップ スケジュールを有効にします。|
 |[Wbadmin disable backup](wbadmin-disable-backup.md)|毎日のバックアップを無効にします。|

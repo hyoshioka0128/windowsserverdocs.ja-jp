@@ -1,6 +1,6 @@
 ---
 title: unlodctr
-description: Unlodctr のリファレンストピックでは、サービスまたはデバイスドライバーのパフォーマンスカウンターの名前と説明テキストをシステムレジストリから削除します。
+description: Unlodctr の参照記事。サービスまたはデバイスドライバーのパフォーマンスカウンター名と説明テキストをシステムレジストリから削除します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8551b6fc76984b06f28bdda92dcd63791721ec90
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: a054673ada197c6b116abc7eda49c0e755f22af0
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83821292"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85937270"
 ---
 # <a name="unlodctr"></a>unlodctr
 
@@ -29,7 +29,7 @@ Unlodctr <DriverName>
 #### <a name="parameters"></a>パラメーター
 |パラメーター|説明|
 |-------|--------|
-|\<ドライバーの>|Windows Server 2003 レジストリから、ドライバーまたはサービスのパフォーマンスカウンターの名前の設定と説明のテキストを削除し <DriverName> ます。|
+|\<DriverName>|Windows Server 2003 レジストリから、ドライバーまたはサービスのパフォーマンスカウンターの名前の設定と説明のテキストを削除し <DriverName> ます。|
 |/?|コマンド プロンプトにヘルプを表示します。|
 
 ## <a name="remarks"></a>注釈
@@ -43,6 +43,6 @@ Simple Mail Transfer Protocol (SMTP) サービスの現在のパフォーマン�
 ```
 unlodctr SMTPSVC
 ```
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

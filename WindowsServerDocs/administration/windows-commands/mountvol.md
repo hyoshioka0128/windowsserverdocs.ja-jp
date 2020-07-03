@@ -1,6 +1,6 @@
 ---
 title: mountvol
-description: ボリュームマウントポイントを作成、削除、または一覧表示する mountvol コマンドのリファレンストピックです。
+description: Mountvol コマンドの参照記事。ボリュームマウントポイントを作成、削除、または一覧表示します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e024ed1e0684da4e1450343dfd097b43fde5c8f4
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: 1617149fac677069d97b5b7c1353e85b4e1fea14
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354552"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936318"
 ---
 # <a name="mountvol"></a>mountvol
 
@@ -47,7 +47,7 @@ mountvol <drive>: /s
 | /s | 指定されたドライブに EFI システムパーティションをマウントします。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-## <a name="remarks"></a>解説
+## <a name="remarks"></a>注釈
 
 - **/P**パラメーターを使用しているときにボリュームのマウントを解除した場合、ボリュームの一覧にはボリュームマウントポイントが作成されるまでボリュームがマウントされていないと表示されます。
 
@@ -63,6 +63,6 @@ mountvol <drive>: /s
 mountvol \sysmount \\?\volume\{2eca078d-5cbc-43d3-aff8-7e8511f60d0e}\
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

@@ -1,6 +1,6 @@
 ---
 title: 追加 AllDriverPackages サブコマンドを使用します。
-description: フォルダーに格納されているすべてのドライバーパッケージをサーバーに追加する追加 AllDriverPackages のリファレンストピックです。
+description: フォルダーに格納されているすべてのドライバーパッケージをサーバーに追加する追加 AllDriverPackages のリファレンス記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 31daa8fc3e3304dba5079672ea4619fd085dd74f
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: a505175b1b2efc56c9be6d77384c71f8c1db7392
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721159"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85937258"
 ---
 # <a name="add-alldriverpackages"></a>追加-AllDriverPackages
 
@@ -28,12 +28,12 @@ WDSUTIL /Add-AllDriverPackages /FolderPath:<Folder Path> [/Server:<Server name>]
 
 ### <a name="parameters"></a>パラメーター
 
-|          パラメーター           |                                                              [説明]                                                              |
+|          パラメーター           |                                                              説明                                                              |
 |------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-|  /FolderPath:\<フォルダーパス>  |                      ドライバ パッケージの .inf ファイルを含むフォルダーへの完全パスを指定します。                      |
-|   [/Server:\<サーバー名>]   | サーバーの名前を指定します。 これには、NetBIOS 名または FQDN を指定できます。 サーバー名が指定されていない場合は、ローカル サーバーが使用されます。 |
+|  FolderPath\<Folder Path>  |                      ドライバ パッケージの .inf ファイルを含むフォルダーへの完全パスを指定します。                      |
+|   [/Server:\<Server name>]   | サーバーの名前を指定します。 これには、NetBIOS 名または FQDN を指定できます。 サーバー名が指定されていない場合は、ローカル サーバーが使用されます。 |
 |     [/アーキテクチャ: {x86      |                                                                 ia64                                                                  |
-| [/Drivergroup:\<グループ名>] |                             パッケージの追加先となるドライバー グループの名前を指定します。                             |
+| [/DriverGroup:\<Group Name>] |                             パッケージの追加先となるドライバー グループの名前を指定します。                             |
 
 ## <a name="examples"></a>例
 
@@ -45,7 +45,7 @@ WDSUTIL /verbose /Add-AllDriverPackages /FolderPath:C:\Temp\Drivers /Architectur
 WDSUTIL /Add-AllDriverPackages /FolderPath:C:\Temp\Drivers\Printers /DriverGroup:Printer Drivers
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

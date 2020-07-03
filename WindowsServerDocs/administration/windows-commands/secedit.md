@@ -1,6 +1,6 @@
 ---
 title: secedit
-description: '* * * * のリファレンストピック'
+description: 参照記事 * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 56c9cdecfe2a5553230f1c8120c827e7f05d0ba9
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 8e5918265feb7dc72759ea22d2f582e4754df96c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83821096"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936488"
 ---
 # <a name="secedit"></a>secedit
 
@@ -36,7 +36,7 @@ secedit
 
 #### <a name="parameters"></a>パラメーター
 
-|パラメーター|[説明]|
+|パラメーター|Description|
 |---------|-----------|
 |[Secedit:analyze](secedit-analyze.md)|データベースに格納されているベースライン設定に対する現在のシステム設定を分析できます。  分析結果は、データベースの独立した領域には保存され、セキュリティの構成と分析スナップインで表示できます。|
 |[Secedit:configure](secedit-configure.md)|使用すると、システム データベースに格納されているセキュリティ設定を構成できます。|
@@ -62,7 +62,7 @@ secedit
 > [!NOTE]
 > Microsoft 管理コンソール (MMC) とセキュリティの構成と分析スナップインでは、Server Core では使用できません。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 このコマンドの使用方法の例については、サブコマンドのファイルのいずれかの例を参照してください。
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

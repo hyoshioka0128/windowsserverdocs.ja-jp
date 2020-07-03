@@ -1,6 +1,6 @@
 ---
 title: nslookup root
-description: Nslookup root コマンドのリファレンストピックでは、ドメインネームシステム (DNS) のドメイン名空間のルートに対して、既定のサーバーをサーバーに変更します。
+description: Nslookup root コマンドの参照記事。これにより、既定のサーバーは、ドメインネームシステム (DNS) のドメイン名空間のルートのサーバーに変更されます。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0f1f2bbe3b71660d079a0b7c87f5be487e0ff437
-ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
+ms.openlocfilehash: 07dbfcf401314145cb0e7553d71480072da4b574
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84721655"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936283"
 ---
 # <a name="nslookup-root"></a>nslookup root
 
@@ -38,7 +38,7 @@ root
 | /? | コマンド プロンプトにヘルプを表示します。 |
 | /help | コマンド プロンプトにヘルプを表示します。 |
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

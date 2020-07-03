@@ -1,6 +1,6 @@
 ---
 title: remove
-description: '* * * * のリファレンストピック'
+description: 参照記事 * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5f9107a038c90474244d9522a9a1b87794caa198
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 35987813cdaab445d2884d4fa0ff6c421c080432
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722430"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85937018"
 ---
 # <a name="remove"></a>remove
 

@@ -1,6 +1,6 @@
 ---
 title: 追加 DriverGroupPackage
-description: ドライバーパッケージをドライバーグループに追加する追加 DriverGroupPackage のリファレンストピックです。
+description: ドライバーパッケージをドライバーグループに追加する追加 DriverGroupPackage のリファレンス記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4baf4f16740e65c432cc09ca24270ab479346ac2
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 5782fe849669619bf46426ad698866c05007e426
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721114"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85937212"
 ---
 # <a name="add-drivergrouppackage"></a>追加 DriverGroupPackage
 
@@ -28,7 +28,7 @@ wdsutil /add-DriverGroupPackage /DriverGroup:<Group Name> [/Server:<Server Name>
 ```
 ### <a name="parameters"></a>パラメーター
 
-|         パラメーター         |                                                                                                                                               [説明]                                                                                                                                               |
+|         パラメーター         |                                                                                                                                               説明                                                                                                                                               |
 |---------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | DriverGroup<Group Name> |                                                                                                                                 ドライバー グループの名前を指定します。                                                                                                                                 |
 |   Server<Server name>   |                                                                                  サーバーの名前を指定します。 これには、NetBIOS 名または FQDN を指定できます。 サーバー名が指定されていない場合は、ローカル サーバーが使用されます。                                                                                  |
@@ -43,8 +43,8 @@ wdsutil /add-DriverGroupPackage /DriverGroup:printerdrivers /PackageId:{4D36E972
 ```
 wdsutil /add-DriverGroupPackage /DriverGroup:printerdrivers /DriverPackage:XYZ
 ```
-## <a name="additional-references"></a>その他のリファレンス
-- [コマンドライン構文](command-line-syntax-key.md)
-[のキー追加 drivergrouppackages コマンド](using-the-add-drivergrouppackages-command.md)
-を使用して追加[driverpackage コマンド](using-the-add-driverpackage-command.md)
-を使用して追加[alldriverpackages サブ](using-the-add-alldriverpackages-subcommand.md)コマンド
+## <a name="additional-references"></a>その他の参照情報
+- [コマンドライン構文のキー](command-line-syntax-key.md) 
+[追加 DriverGroupPackages コマンド](using-the-add-drivergrouppackages-command.md) 
+ を使用してください。[追加 DriverPackage コマンド](using-the-add-driverpackage-command.md) 
+ を使用してください。[Add AllDriverPackages サブコマンドを使用する](using-the-add-alldriverpackages-subcommand.md)

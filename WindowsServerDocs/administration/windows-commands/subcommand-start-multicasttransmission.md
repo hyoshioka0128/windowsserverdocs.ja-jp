@@ -1,6 +1,6 @@
 ---
 title: サブコマンド/Get-multicasttransmission
-description: サブコマンド/Get-multicasttransmission のリファレンストピックです。これにより、イメージのスケジュールされたキャスト転送が開始されます。
+description: サブコマンド/Get-multicasttransmission の参照記事。イメージのスケジュールされたキャスト転送を開始します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5f3ea615da5aa48e805b3b5e3d0df0a02198a304
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: adb09457e2bf26242da9f6d31ee5e71882d7c10a
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721670"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936965"
 ---
 # <a name="subcommand-start-multicasttransmission"></a>サブコマンド:/start-multicasttransmission
 
@@ -22,8 +22,8 @@ ms.locfileid: "82721670"
 
 イメージのスケジュールされたキャスト転送を開始します。
 
-## <a name="syntax"></a>構文
-**Windows Server 2008**
+## <a name="syntax"></a>Syntax
+**Windows Server 2008**
 ```
 wdsutil /start-MulticastTransmissiomedia:<Image name> [/Server:<Server namemediatype:InstallmediaGroup:<Image group name>] [/Filename:<File name>]
 ```
@@ -44,7 +44,7 @@ wdsutil [Options] /start-MulticastTransmissiomedia:<Image name>
         [/Filename:<File name>]
 ```
 ### <a name="parameters"></a>パラメーター
-|パラメーター|[説明]|
+|パラメーター|説明|
 |-------|--------|
 用紙<Image name>|イメージの名前を指定します。|
 |[/Server:<Server name>]|サーバーの名前を指定します。 NetBIOS 名または完全修飾ドメイン名 (FQDN) のいずれかを指定できます。 サーバー名が指定されていない場合は、ローカルのサーバーが使用されます。|
@@ -64,9 +64,9 @@ wdsutil /start-MulticastTransmission /Server:MyWDSServemedia:Vista with Officeme
 wdsutil /start-MulticastTransmission /Server:MyWDSServemedia:X64 Boot Imagemediatype:Boot /Architecture:x64
 /Filename:boot.wim\n\
 ```
-## <a name="additional-references"></a>その他のリファレンス
-- [コマンドライン構文のキー](command-line-syntax-key.md)
-[AllMulticastTransmissions コマンド](using-the-get-allmulticasttransmissions-command.md)
-を使用して[/get-multicasttransmission コマンド](using-the-get-multicasttransmission-command.md)
-を使用して[/get-multicasttransmission コマンド](using-the-new-multicasttransmission-command.md)
-を使用して[削除/get-multicasttransmission コマンド](using-the-remove-multicasttransmission-command.md)を使用して
+## <a name="additional-references"></a>その他の参照情報
+- [コマンドライン構文のキー](command-line-syntax-key.md) 
+[AllMulticastTransmissions コマンド](using-the-get-allmulticasttransmissions-command.md) 
+ の使用[/Get-multicasttransmission コマンド](using-the-get-multicasttransmission-command.md) 
+ の使用[/Get-multicasttransmission コマンド](using-the-new-multicasttransmission-command.md) 
+ の使用[/Get-multicasttransmission コマンドを使用する](using-the-remove-multicasttransmission-command.md)

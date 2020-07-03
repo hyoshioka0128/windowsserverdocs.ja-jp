@@ -1,6 +1,6 @@
 ---
-title: telnet セット
-description: オプションを設定する telnet set のリファレンストピックです。
+title: telnet set
+description: オプションを設定する telnet set のリファレンス記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 477c2ee259301af26870339a2c329c2c3502963b
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: 7415f084e73d87eb767ed0b487f42e103b998c23
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222675"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85937359"
 ---
 # <a name="telnet-set"></a>telnet: 設定
 
@@ -42,7 +42,7 @@ set [bsasdel] [crlf] [delasbs] [escape <Char>] [localecho] [logfile <FileName>] 
 | {ansi & #124; vt100 & #124; vt52 & #124; vtnt} 用語 |                                                                                                                                        端末の種類を設定します。                                                                                                                                        |
 |                        ?                         |                                                                                                                                    このコマンドのヘルプを表示します。                                                                                                                                    |
 
-## <a name="remarks"></a>解説
+## <a name="remarks"></a>注釈
 1. 使用することができます、 **未設定** コマンドに設定されているオプションをオフにします。
 2. 英語以外のバージョンの telnet では、**コードセット**を <option> 使用できます。 **コードセット** <option>現在のコードセットをオプションに設定します。これには、次のいずれかを指定できます: **SHIFT JIS**、**日本語 EUC**、 **jis 漢字**、 **Jis 漢字 (78)**、 **DEC 漢字**、 **NEC 漢字**。 同じコードがリモート コンピューターのセットを設定する必要があります。
    ## <a name="examples"></a>例
@@ -50,5 +50,5 @@ set [bsasdel] [crlf] [delasbs] [escape <Char>] [localecho] [logfile <FileName>] 
    ```
    set logfile tnlog.txt
    ```
-   ## <a name="additional-references"></a>その他のリファレンス
+   ## <a name="additional-references"></a>その他の参照情報
 3. - [コマンド ライン構文の記号](command-line-syntax-key.md)

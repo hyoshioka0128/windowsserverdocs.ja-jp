@@ -1,6 +1,6 @@
 ---
 title: tpmtool
-description: トラステッドプラットフォームモジュールに関する情報を取得する tpmtool のリファレンストピックです。
+description: トラステッドプラットフォームモジュールに関する情報を取得する tpmtool のリファレンス記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -8,12 +8,12 @@ author: ashleytqy
 ms.author: ashleytqy
 manager: ronaldai
 ms.date: 05/07/2019
-ms.openlocfilehash: 6f529939304cb3992992d9587c2180f80f8a0f01
-ms.sourcegitcommit: 9889f20270e8eb7508d06cbf844cba9159e39697
+ms.openlocfilehash: a6b092f9242f76092cb45e484ef59d8bb29147dc
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "83551119"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936899"
 ---
 # <a name="tpmtool"></a>tpmtool
 
@@ -34,7 +34,7 @@ tpmtool /parameter [<arguments>]
 |パラメーター|説明|
 |---------|-----------|
 |getdeviceinformation|TPM の基本情報が表示されます。 情報フラグの値の意味については、[こちら](https://docs.microsoft.com/windows/desktop/SecProv/win32-tpm-isreadyinformation#parameters)を参照してください。|
-|gatherlogs [出力ディレクトリのパス]|TPM ログを収集し、指定したディレクトリに格納します。 このディレクトリが存在しない場合は、作成されます。 既定では、これらは現在のディレクトリに配置されます。 生成される可能性があるファイルは次のとおりです。 </br>-TpmEvents</br>-TpmInformation .txt</br>-SRTMBoot dat</br>-SRTMResume. dat</br>-DRTMBoot dat</br>-DRTMResume dat</br>|
+|gatherlogs [出力ディレクトリのパス]|TPM ログを収集し、指定したディレクトリに格納します。 このディレクトリが存在しない場合は、作成されます。 既定では、これらは現在のディレクトリに配置されます。 生成される可能性があるファイルは次のとおりです。 </br>-TpmEvents</br>-TpmInformation.txt</br>-SRTMBoot dat</br>-SRTMResume. dat</br>-DRTMBoot dat</br>-DRTMResume dat</br>|
 |drivertracing [開始/停止]|TPM ドライバーのトレースの収集を開始または停止します。 トレースログ TPMTRACE が生成され、現在のディレクトリに配置されます。|
 |/?|コマンド プロンプトにヘルプを表示します。|
 

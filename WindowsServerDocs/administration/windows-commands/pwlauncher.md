@@ -1,6 +1,6 @@
 ---
 title: pwlauncher
-description: Pwlauncher コマンドのリファレンストピック。 Windows To 進むスタートアップオプション (pwlauncher) を有効または無効にします。
+description: Pwlauncher コマンドの参照記事。 Windows To 進むスタートアップオプション (pwlauncher) を有効または無効にします。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4b6793dead3a41abb82bc3940d0314bcd7610418
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 29e7434731bc89dff9bddbaedb8a6179f266fa28
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472117"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936704"
 ---
 # <a name="pwlauncher"></a>pwlauncher
 
@@ -44,6 +44,6 @@ USB からのブートを有効にするには:
 pwlauncher /enable
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

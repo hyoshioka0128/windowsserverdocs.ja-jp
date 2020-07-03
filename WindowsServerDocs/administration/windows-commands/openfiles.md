@@ -1,6 +1,6 @@
 ---
 title: openfiles
-description: Openfiles コマンドのリファレンストピック。管理者は、システムで開かれているファイルおよびディレクトリのクエリ、表示、または切断を行うことができます。
+description: Openfiles コマンドの参照記事。管理者は、システムで開かれているファイルおよびディレクトリのクエリ、表示、または切断を行うことができます。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e55dd88052f1bbfdebb02d1fb6d6f48261643c5c
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 1c1683bb916e068d83ab30e03fdd76e35abb77df
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472598"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936790"
 ---
 # <a name="openfiles"></a>openfiles
 
@@ -171,6 +171,6 @@ openfiles /local on
 openfiles /local off
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
