@@ -1,6 +1,6 @@
 ---
 title: netcfg
-description: Netcfg コマンドのリファレンストピックでは、Windows プレインストール環境 (WinPE) をインストールします。これは、ワークステーションの展開に使用される簡易版の Windows です。
+description: Netcfg コマンドのリファレンス記事。ワークステーションの展開に使用される簡易版の Windows で Windows プレインストール環境 (WinPE) をインストールします。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5a308441df55873b205972d703ec52f53345beb5
-ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
+ms.openlocfilehash: 0f9ed2dde5d85be5432fb7b3af8279b2e71e9db0
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84721555"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934812"
 ---
 # <a name="netcfg"></a>netcfg
 
@@ -30,7 +30,7 @@ netcfg [/v] [/e] [/winpe] [/l ] /c /i
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | Description |
+| パラメーター | 説明 |
 | --------- | ----------- |
 | /v | 詳細 (詳細) モードで実行します。 |
 | /e | は、インストールおよびアンインストール中にサービス環境変数を使用します。 |
@@ -86,6 +86,6 @@ netcfg /s n
 netcfg /b ms_tcpip
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

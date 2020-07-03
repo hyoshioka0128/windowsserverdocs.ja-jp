@@ -1,6 +1,6 @@
 ---
 title: get
-description: 指定されたオブジェクトに関するプロパティまたは属性を取得する get のリファレンストピックです。
+description: 指定されたオブジェクトに関するプロパティまたは属性を取得する get の参照記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 981ed8978df3d53505e6da5296dbb25cce38bb71
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 6e61be9480065518cf053966a851458af39f5c5d
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719972"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85935027"
 ---
 # <a name="get"></a>get
 
@@ -23,7 +23,7 @@ ms.locfileid: "82719972"
 プロパティまたは指定したオブジェクトに関する属性を取得します。
 
 ## <a name="subcommands"></a>サブコマンド
-|サブコマンド|[説明]|
+|サブコマンド|説明|
 |-------|--------|
 |[取得しているコマンドを使用してください。](using-the-get-alldevices-command.md)|事前設定されたすべてのコンピューターに関する情報を表示します。|
 |[Get AllImageGroups コマンドを使用してください。](using-the-get-allimagegroups-command.md)|すべてのイメージ グループに関する情報を表示します。|

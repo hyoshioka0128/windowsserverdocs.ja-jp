@@ -1,6 +1,6 @@
 ---
 title: nfsstat
-description: Nfsstat コマンドのリファレンストピックでは、ネットワークファイルシステム (NFS) とリモートプロシージャコール (RPC) の呼び出しに関する統計情報を表示します。
+description: Nfsstat コマンドの参照記事。ネットワークファイルシステム (NFS) とリモートプロシージャコール (RPC) の呼び出しに関する統計情報を表示します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 85eb1184d3eb8ee731cf698a6d805e3f11d878ce
-ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
+ms.openlocfilehash: 833081baa3ae9a0c2493623a7d015334087ee26d
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84721515"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934788"
 ---
 # <a name="nfsstat"></a>nfsstat
 
@@ -28,7 +28,7 @@ nfsstat [-c][-s][-n][-r][-z][-m]
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | Description |
+| パラメーター | 説明 |
 | --------- | ----------- |
 | -c | クライアントによって送信および拒否されたクライアント側 NFS および RPC および NFS 呼び出しのみが表示されます。 NFS または RPC の情報のみを表示するには、このフラグを **-n**または **-r**パラメーターと組み合わせます。 |
 | -S | サーバー側の NFS およびサーバーによって拒否された RPC および NFS の呼び出しのみを表示します。 NFS または RPC の情報のみを表示するには、このフラグを **-n**または **-r**パラメーターと組み合わせます。 |
@@ -69,7 +69,7 @@ nfsstat -s
 nfsstat -z
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

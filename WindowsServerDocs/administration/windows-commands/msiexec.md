@@ -1,6 +1,6 @@
 ---
 title: msiexec
-description: Msiexec コマンドのリファレンストピック。コマンドラインから Windows インストーラーのインストール、変更、および操作を実行するための手段を提供します。
+description: Msiexec コマンドのリファレンス記事。コマンドラインから Windows インストーラーのインストール、変更、操作を実行するための手段を提供します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f84df28104f581873fe1fd86a3abd6a51532b020
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: aacdc55ac3895efad7dd9499ea1402b538fb8a9b
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354342"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934964"
 ---
 # <a name="msiexec"></a>msiexec
 
@@ -45,7 +45,7 @@ msiexec.exe [/i][/a][/j{u|m|/g|/t}][/x] <path_to_package>
 
 #### <a name="examples"></a>例
 
-C: ドライブから*example .msi*という名前のパッケージをインストールするには、通常のインストールプロセスを使用して、次のように入力します。
+通常のインストールプロセスを使用して、C: ドライブから*example.msi*という名前のパッケージをインストールするには、次のように入力します。
 
 ```
 msiexec.exe /i "C:\example.msi"
@@ -66,7 +66,7 @@ msiexec.exe /i <path_to_package> [/quiet][/passive][/q{n|b|r|f}]
 | パラメーター | 説明 |
 | ------- | -------- |
 | `<path_to_package>` | インストールパッケージファイルの場所と名前を指定します。 |
-| /quiet | 非表示モードを指定します。これは、ユーザー操作が不要であることを意味します。 |
+| スイッチを | 非表示モードを指定します。これは、ユーザー操作が不要であることを意味します。 |
 | /passive | 無人モードを指定します。これは、インストール時に進行状況バーのみを表示することを意味します。 |
 | /qn | インストールプロセス中に UI が存在しないことを指定します。 |
 | /qn + | 最後のダイアログボックスを除いて、インストール処理中に UI が存在しないことを指定します。 |
@@ -75,13 +75,13 @@ msiexec.exe /i <path_to_package> [/quiet][/passive][/q{n|b|r|f}]
 | /qr | インストールプロセス中の UI エクスペリエンスの縮小を指定します。 |
 | /qf | インストールプロセス中の完全な UI エクスペリエンスを指定します。 |
 
-##### <a name="remarks"></a>解説
+##### <a name="remarks"></a>注釈
 
 - インストールがユーザーによって取り消された場合、モーダルボックスは表示されません。 **Qb +!** または、 **[キャンセル**] ボタンを非表示**にします**。
 
 #### <a name="examples"></a>例
 
-標準のインストールプロセスと UI を使用せずにパッケージ*c:\*をインストールするには、次のように入力します。
+通常のインストールプロセスと UI を使用せずにパッケージ*C:\example.msi*をインストールするには、次のように入力します。
 
 ```
 msiexec.exe /i "C:\example.msi" /qn
@@ -108,7 +108,7 @@ msiexec.exe /i <path_to_package> [/norestart][/promptrestart][/forcerestart]
 
 #### <a name="examples"></a>例
 
-最後に再起動せずに通常のインストールプロセスを使用してパッケージ*c:\*をインストールするには、次のように入力します。
+パッケージ*C:\example.msi*をインストールするには、最後に再起動せずに通常のインストールプロセスを使用して、次のように入力します。
 
 ```
 msiexec.exe /i "C:\example.msi" /norestart
@@ -152,7 +152,7 @@ msiexec.exe [/i][/x] <path_to_package> [/L{i|w|e|a|r|u|c|m|o|p|v|x+|!|*}] <path_
 
 #### <a name="examples"></a>例
 
-パッケージ*c:\*をインストールするには、提供されたすべてのログ情報 (詳細出力を含む) を使用して通常のインストールプロセスを実行し、出力ログファイルを*C:\package.log*に格納します。次に、次のように入力します。
+パッケージ*C:\example.msi*をインストールするには、すべてのログ情報 (詳細出力を含む) を使用して通常のインストールプロセスを実行し、出力ログファイルを*C:\package.log*に格納するには、次のように入力します。
 
 ```
 msiexec.exe /i "C:\example.msi" /L*V "C:\package.log"
@@ -227,7 +227,7 @@ msiexec.exe /fa {AAD3D77A-7476-469F-ADF4-04424124E91D}
 
 このコマンドを使用してパブリックプロパティを設定できます。 使用可能なプロパティとその設定方法の詳細については、「[パブリックプロパティ](https://docs.microsoft.com/windows/win32/msi/public-properties)」を参照してください。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

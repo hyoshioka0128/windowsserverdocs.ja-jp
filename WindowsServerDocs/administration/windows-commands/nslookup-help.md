@@ -1,6 +1,6 @@
 ---
 title: nslookup help
-description: Nslookup ヘルプコマンドのリファレンストピック。サブコマンドのヘルプコンテンツが表示されます。
+description: サブコマンドのヘルプコンテンツを表示する nslookup ヘルプコマンドのリファレンス記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1d9cab0becb33993cd6c517e2aa0f1e26b3839e8
-ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
+ms.openlocfilehash: 193a2130cd3b70e35295226b15947103859fe672
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84721475"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934754"
 ---
 # <a name="nslookup-help"></a>nslookup help
 
@@ -37,6 +37,6 @@ help
 | /? | コマンド プロンプトにヘルプを表示します。 |
 | /help | コマンド プロンプトにヘルプを表示します。 |
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

@@ -1,6 +1,6 @@
 ---
 title: netstat
-description: Netstat コマンドのリファレンストピックでは、アクティブな TCP 接続、コンピューターがリッスンしているポート、イーサネット統計、IP ルーティングテーブル、IPv4 統計情報、および IPv6 統計が表示されます。
+description: Netstat コマンドの参照記事。アクティブな TCP 接続、コンピューターがリッスンしているポート、イーサネット統計、IP ルーティングテーブル、IPv4 統計情報、および IPv6 統計が表示されます。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6e9cd59169922bb6d76b6c65f3381e653df97109
-ms.sourcegitcommit: 457e88e5aa6be13a2bffdb8e434a8efc3698678f
+ms.openlocfilehash: c53ac83c1037d5f4998bb6efa43d66b418119df8
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/30/2020
-ms.locfileid: "85548846"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934800"
 ---
 # <a name="netstat"></a>netstat
 

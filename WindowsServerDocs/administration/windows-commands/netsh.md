@@ -1,6 +1,6 @@
 ---
 title: netsh
-description: Netsh コマンドのリファレンストピック。これは、現在実行中のコンピューターのネットワーク構成をローカルまたはリモートで表示または変更できるコマンドラインスクリプトユーティリティです。
+description: Netsh コマンドのリファレンス記事。これは、現在実行中のコンピューターのネットワーク構成をローカルまたはリモートで表示または変更できるコマンドラインスクリプトユーティリティです。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c538dd10f86d252390a4e862e7b97204d1c945c9
-ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
+ms.openlocfilehash: 4d39b891b9a8b6e313121756aa8266c79b5bfaca
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84721105"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934783"
 ---
 # <a name="netsh"></a>netsh
 
@@ -30,7 +30,7 @@ netsh [-a <Aliasfile>][-c <Context>][-r <Remotecomputer>][-u [<domainname>\<user
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | Description |
+| パラメーター | 説明 |
 | --------- | ----------- |
 | -a`<Aliasfile>` | エイリアスファイルを実行した後に netsh プロンプトに戻り、1つまたは複数の netsh コマンドを含むテキストファイルの名前を返すことを指定します。 |
 | -c`<Context>` | Netsh が指定した netsh コンテキストと、入力する netsh コンテキストを入力するように指定します。 |
@@ -47,6 +47,6 @@ netsh [-a <Aliasfile>][-c <Context>][-r <Remotecomputer>][-u [<domainname>\<user
 
 - 文字列値に文字間のスペースが含まれている場合は、文字列値を引用符で囲む必要があります。 たとえば、 `-r "contoso remote device"` と記述します。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

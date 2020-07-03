@@ -1,6 +1,6 @@
 ---
-title: logman インポートと logman エクスポート
-description: Logman インポートと logman エクスポートに関するリファレンストピック。 XML ファイルからデータコレクターセットをインポートしたり、データコレクターセットを XML ファイルにエクスポートしたりします。
+title: logman import および logman export
+description: Logman インポートおよび logman エクスポートに関するリファレンス記事。 XML ファイルからデータコレクターセットをインポートしたり、データコレクターセットを XML ファイルにエクスポートしたりします。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3ad664548dce51d7631a6d1a02d628af91e1921f
-ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
+ms.openlocfilehash: d5fbe0139a1c320056e4ba80a845b43755fc0026
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84721143"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934392"
 ---
-# <a name="logman-import-and-logman-export"></a>logman インポートと logman エクスポート
+# <a name="logman-import-and-logman-export"></a>logman import および logman export
 
 > 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -31,7 +31,7 @@ logman export <[-n] <name> <-xml <name> [options]
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | Description |
+| パラメーター | 説明 |
 | --------- | ----------- |
 | -s`<computer name>` | 指定したリモートコンピューターでコマンドを実行します。 |
 | -config`<value>` | コマンドオプションを含む設定ファイルを指定します。 |
@@ -50,7 +50,7 @@ XML ファイル*c:\windows\perf_log.xml*をコンピューター *server_1*か�
 logman import perf_log -s server_1 -xml c:\windows\perf_log.xml
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

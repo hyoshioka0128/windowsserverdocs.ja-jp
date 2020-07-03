@@ -1,6 +1,6 @@
 ---
 title: get-AllImageGroups
-description: Get-AllImageGroups のリファレンストピック。サーバー上のすべてのイメージグループとそれらのイメージグループ内のすべてのイメージに関する情報を取得します。
+description: Get AllImageGroups のリファレンス記事。サーバー上のすべてのイメージグループとそれらのイメージグループ内のすべてのイメージに関する情報を取得します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 204618955e91f1c9c9659d37ac3dfe2a01897c51
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: d5863ecc22ff5b96024cb3ba2bdbcac9f7ae8455
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720027"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85935187"
 ---
 # <a name="get-allimagegroups"></a>get-AllImageGroups
 
@@ -27,7 +27,7 @@ ms.locfileid: "82720027"
 wdsutil [Options] /Get-AllImageGroups [/Server:<Server name>] [/detailed]
 ```
 ### <a name="parameters"></a>パラメーター
-|パラメーター|[説明]|
+|パラメーター|説明|
 |-------|--------|
 |[/Server:<Server name>]|サーバーの名前を指定します。 NetBIOS 名または完全修飾ドメイン名 (FQDN) のいずれかを指定できます。 サーバー名が指定されていない場合は、ローカルのサーバーが使用されます。|
 |詳細/|各イメージからイメージのメタデータを返します。 このパラメーターを使用しない場合、既定の動作は、イメージの名前、説明、および各イメージのファイル名のみを返すには。|
@@ -37,9 +37,9 @@ wdsutil [Options] /Get-AllImageGroups [/Server:<Server name>] [/detailed]
 wdsutil /Get-AllImageGroups
 wdsutil /verbose /Get-AllImageGroups /Server:MyWDSServer /detailed
 ```
-## <a name="additional-references"></a>その他のリファレンス
-- [コマンドライン構文](command-line-syntax-key.md)
-[のキー追加 imagegroup コマンド](using-the-add-imagegroup-command.md)
-を使用して[get](using-the-get-imagegroup-command.md)
-imagegroup コマンドを使用して[削除 imagegroup](using-the-remove-imagegroup-command.md)
-コマンドを使用して[サブコマンド: セット imagegroup](subcommand-set-imagegroup.md)
+## <a name="additional-references"></a>その他の参照情報
+- [コマンドライン構文のキー](command-line-syntax-key.md) 
+[追加 ImageGroup コマンド](using-the-add-imagegroup-command.md) 
+ を使用してください。[Get ImageGroup コマンド](using-the-get-imagegroup-command.md) 
+ の使用[削除 ImageGroup コマンド](using-the-remove-imagegroup-command.md) 
+ を使用してください。[サブコマンド: セット ImageGroup](subcommand-set-imagegroup.md)

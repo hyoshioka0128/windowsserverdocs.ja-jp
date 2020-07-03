@@ -1,6 +1,6 @@
 ---
 title: telnet
-description: Telnet サーバーサービスを実行しているコンピューターと通信する telnet のリファレンストピックです。
+description: Telnet サーバーサービスを実行しているコンピューターと通信する telnet のリファレンス記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c1718d1d74849949769d4d8fffbf3d93cc088742
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: a5f588328deb51109ee9139b6e7dfaad8f0166dc
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83821032"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934222"
 ---
 # <a name="telnet"></a>telnet
 
@@ -30,11 +30,11 @@ telnet [/a] [/e <EscapeChar>] [/f <FileName>] [/l <UserName>] [/t {vt100 | vt52 
 |パラメーター|説明|
 |-------|--------|
 |/a|自動ログオンを試行します。 [/L] オプションと同じですが、現在ログオンしているユーザーの名前が使用されます。|
-|/e \< EscapeChar>|Telnet クライアントプロンプトを入力するために使用されるエスケープ文字。|
-|/f \< ファイル名>|クライアント側のログ記録に使用するファイル名。|
-|/l \< ユーザー名>|リモート コンピューター上でログオンするユーザー名を指定します。|
+|/e\<EscapeChar>|Telnet クライアントプロンプトを入力するために使用されるエスケープ文字。|
+|/f \<FileName>|クライアント側のログ記録に使用するファイル名。|
+|/l\<UserName>|リモート コンピューター上でログオンするユーザー名を指定します。|
 |/t {vt100 & #124; vt52 & #124; ansi & #124; vtnt}|端末の種類を指定します。 サポートされている種類の端末は、vt52、vt100、ansi、および vtnt です。|
-|\<ホスト> [ \< ポート>]|ホスト名またはリモートのコンピューターに、接続して、必要に応じて使用する TCP ポートの IP アドレスを指定します (既定では TCP ポート 23)。|
+|\<Host> [\<Port>]|ホスト名またはリモートのコンピューターに、接続して、必要に応じて使用する TCP ポートの IP アドレスを指定します (既定では TCP ポート 23)。|
 |/?|コマンド プロンプトにヘルプを表示します。 または、/h を入力することができます。|
 
 ## <a name="remarks"></a>注釈
@@ -46,12 +46,12 @@ Telnet を使用して、telnet.microsoft.com で telnet サーバーサービ�
 ```
 telnet telnet.microsoft.com
 ```
-Telnet を使用して、TCP ポート44の telnet.microsoft.com で telnet サーバーサービスを実行しているコンピューターに接続し、telnetlog という名前のローカルファイルにセッションアクティビティを記録します。
+Telnet を使用して、TCP ポート44の telnet.microsoft.com で telnet サーバーサービスを実行しているコンピューターに接続し、という名前のローカルファイルにセッションアクティビティを記録し telnetlog.txt
 ```
 telnet /f telnetlog.txt telnet.microsoft.com 44
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 -   [Telnet をインストールする](https://technet.microsoft.com/library/cc754293(v=ws.10).aspx)
 -   [telnet のテクニカルリファレンス](https://technet.microsoft.com/library/cc754987(v=ws.10).aspx)
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

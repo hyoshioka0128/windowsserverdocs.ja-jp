@@ -1,6 +1,6 @@
 ---
 title: 取得-AllDevices
-description: すべての事前設定されたコンピューターの Windows 展開サービスのプロパティを表示する、get AllDevices のリファレンストピックです。
+description: すべての事前設定されたコンピューターの Windows 展開サービスのプロパティを表示する、get AllDevices のリファレンス記事。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 26e114be7ecf104687da237636b54b79e4114591
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: b5eae53c2dcd39a7f3587f4c3c6bf96d4782ea05
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720899"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85935219"
 ---
 # <a name="get-alldevices"></a>取得-AllDevices
 
@@ -27,7 +27,7 @@ ms.locfileid: "82720899"
 wdsutil [Options] /Get-AllDevices [/forest:{Yes | No}] [/ReferralServer:<Server name>]
 ```
 ### <a name="parameters"></a>パラメーター
-|パラメーター|[説明]|
+|パラメーター|説明|
 |-------|--------|
 |[/forest: {Yes &#124; No}]|Windows 展開サービスがフォレスト全体またはローカル ドメインでコンピューターを返すかどうかを指定します。 既定の設定は **いいえ**, 、ローカル ドメイン内のコンピューターのみが返されることを意味します。|
 |[/ReferralServer:<Server name>]|指定されたサーバーの事前登録されているコンピューターのみを返します。|
@@ -37,8 +37,8 @@ wdsutil [Options] /Get-AllDevices [/forest:{Yes | No}] [/ReferralServer:<Server 
 wdsutil /Get-AllDevices
 wdsutil /verbose /Get-AllDevices /forest:Yes /ReferralServer:MyWDSServer
 ```
-## <a name="additional-references"></a>その他のリファレンス
-- [コマンドライン構文のキー](command-line-syntax-key.md)
-[サブコマンド:](subcommand-set-device.md)
-デバイスの[追加](using-the-add-device-command.md)
-[コマンドを](using-the-get-device-command.md)使用してデバイスを設定するコマンドを使用して、デバイスを設定します。
+## <a name="additional-references"></a>その他の参照情報
+- [コマンドライン構文のキー](command-line-syntax-key.md) 
+[サブコマンド: デバイス](subcommand-set-device.md) 
+ の設定[デバイスの追加コマンド](using-the-add-device-command.md) 
+ の使用[Get デバイスコマンドの使用](using-the-get-device-command.md)

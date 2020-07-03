@@ -1,6 +1,6 @@
 ---
 title: lpq
-description: Lpq コマンドのリファレンストピック。ラインプリンターデーモン (LPD) を実行しているコンピューターの印刷キューの状態を表示します。
+description: Lpq コマンドの参照記事。ラインプリンターデーモン (LPD) を実行しているコンピューターの印刷キューの状態を表示します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1ecce9b1b4255e5e769fe76b0f753226d61fa916
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: 373b1af5acbc43cbf52c45667c6feb571f1855a8
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222726"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934550"
 ---
 # <a name="lpq"></a>lpq
 
@@ -45,7 +45,7 @@ lpq -S <servername> -P <printername> [-l]
 lpq -S 10.0.0.45 -P Laserprinter1
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

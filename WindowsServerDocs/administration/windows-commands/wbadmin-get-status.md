@@ -1,6 +1,6 @@
 ---
-title: wbadmin の状態の取得
-description: 現在実行中のバックアップまたは回復操作の状態を報告する wbadmin get status のリファレンストピックです。
+title: wbadmin get status
+description: 現在実行中のバックアップまたは回復操作の状態を報告する wbadmin get status の参照記事。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0e41c54b9f916f0032a4976cdfa6d3ca101fb744
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: a5f073941fa0d336e513c8de7502a601f1de5711
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83821192"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934333"
 ---
-# <a name="wbadmin-get-status"></a>wbadmin の状態の取得
+# <a name="wbadmin-get-status"></a>wbadmin get status
 
 
 
@@ -39,7 +39,7 @@ wbadmin get status
 -   このサブコマンドは、現在のバックアップまたは回復操作が完了するまで停止しません。コマンドウィンドウを閉じた場合でも、サブコマンドは引き続き実行されます。
 -   現在のバックアップまたは回復操作を停止する場合は、 **wbadmin stop job**サブコマンドを使用します。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 -   [Wbadmin](wbadmin.md)

@@ -1,6 +1,6 @@
 ---
 title: qappsrv
-description: Qappsrv コマンドのリファレンストピック。ネットワーク上のすべてのリモートデスクトップセッションホストサーバーの一覧を表示します。
+description: Qappsrv コマンドのリファレンス記事。ネットワーク上のすべてのリモートデスクトップセッションホストサーバーの一覧を表示します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e3fe8c90d222ad9aeaf97f5451ede2658eb38e58
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 43f72aa6bcc92cdb613cd75c368766e1d62b04e2
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472097"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85935470"
 ---
 # <a name="qappsrv"></a>qappsrv
 
@@ -25,7 +25,7 @@ ms.locfileid: "85472097"
 > [!NOTE]
 > このコマンドは、 [query termserver コマンド](query-termserver.md)と同じです。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

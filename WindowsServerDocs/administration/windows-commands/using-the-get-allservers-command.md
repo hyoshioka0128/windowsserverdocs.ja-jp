@@ -1,6 +1,6 @@
 ---
 title: 取得-AllServers
-description: すべての Windows 展開サービスサーバーに関する情報を取得する get AllServers のリファレンストピックです。
+description: すべての Windows 展開サービスサーバーに関する情報を取得する get AllServers のリファレンス記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b623b5e95e2a57147b7d9d191d42556191dd8e4d
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: a02515b138c9db6a1d320a4ad466700c15b84749
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719980"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85935059"
 ---
 # <a name="get-allservers"></a>取得-AllServers
 
@@ -31,7 +31,7 @@ WDSUTIL [Options] /Get-AllServers /Show:{Config | Images | All} [/Detailed] [/Fo
 
 ### <a name="parameters"></a>パラメーター
 
-|   パラメーター   |                                                                                                                 [説明]                                                                                                                  |
+|   パラメーター   |                                                                                                                 説明                                                                                                                  |
 |---------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | /Show: {Config |                                                                                                                    イメージ                                                                                                                    |
 |  [/詳細]  | 組み合わせて使用すると、 **/Show:Images** または **/Show:All**, 、すべてのイメージの各イメージからメタデータを返します。 場合、 **詳細/** オプションを指定しない場合、既定の動作は、イメージの名前、説明、およびファイル名を返す。 |
@@ -48,6 +48,6 @@ WDSUTIL /Get-AllServers /Show:Config
 WDSUTIL /Verbose /Get-AllServers /Show:All /Detailed /Forest:Yes
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

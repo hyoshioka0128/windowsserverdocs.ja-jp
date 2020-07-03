@@ -1,6 +1,6 @@
 ---
 title: nslookup set domain
-description: Nslookup set domain コマンドのリファレンストピックでは、既定のドメインネームシステム (DNS) のドメイン名を指定された名前に変更します。
+description: Nslookup set domain コマンドの参照記事。既定のドメインネームシステム (DNS) のドメイン名を指定した名前に変更します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e672bf53e655ef12cadb2a30aaa377b24e49afec
-ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
+ms.openlocfilehash: eaa12029beab301f955a4c9bed4595831f6ebf12
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84721635"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934412"
 ---
 # <a name="nslookup-set-domain"></a>nslookup set domain
 
@@ -30,7 +30,7 @@ set domain=<domainname>
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | Description |
+| パラメーター | 説明 |
 | --------- | ----------- |
 | `<domainname>` | 既定の DNS ドメイン名の新しい名前を指定します。 既定値はホストの名前です。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
@@ -44,7 +44,7 @@ set domain=<domainname>
 
 - [Nslookup set srchlist](nslookup-set-srchlist.md)コマンドを使用して別のリストを指定し、 [nslookup set all](nslookup-set-all.md)コマンドを使用して一覧を表示します。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

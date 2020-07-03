@@ -1,6 +1,6 @@
 ---
 title: mmc
-description: Mmc コマンドのリファレンストピックでは、特定の mmc コンソールを開いたり、作成者モードで mmc を開いたり、32ビットまたは64ビットバージョンの mmc を開くように指定したりできます。
+description: Mmc コマンドの参照記事。特定の mmc コンソールを開いたり、作成者モードで mmc を開いたり、32ビットまたは64ビットバージョンの mmc を開くように指定したりできます。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1de1bc7912b995bf7df0e1acb50cfee18747b700
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: 8c93416c9939d37e8d672a7e8d52d01ddfebd48e
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354592"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85935760"
 ---
 # <a name="mmc"></a>mmc
 
@@ -38,7 +38,7 @@ mmc <path>\<filename>.msc [/a] [/64] [/32]
 | /32 | 32ビットバージョンの**mmc** (mmc32) を開きます。 Microsoft 64 ビットオペレーティングシステムを実行している場合は、32ビットのみのスナップインがあるときに、このコマンドラインオプションを使用して mmc を開くことによって、32ビットのスナップインを実行できます。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-## <a name="remarks"></a>解説
+## <a name="remarks"></a>注釈
 
 - 環境変数を使用すると、コンソールファイルの明示的な場所に依存しないコマンドラインやショートカットを作成できます。 たとえばかどうか、コンソール ファイルへのパスがシステム フォルダーには (たとえば、 **mmc c:\winnt\system32\console_name.msc**)、拡張可能なデータ文字列を使用することができます **%systemroot%** 場所を指定 (**mmc%systemroot%\system32\console_name.msc**)。 これは、別のコンピューターで作業している組織内のユーザーにタスクを委任する場合に便利です。
 
@@ -48,6 +48,6 @@ mmc <path>\<filename>.msc [/a] [/64] [/32]
 
 - コマンドラインを使用して、 **mmc**および保存されているコンソールを開くためのショートカットを作成できます。 コマンド ライン コマンドは、 **実行** コマンドを **開始** ] メニューの [任意のコマンド プロンプト ウィンドウで、ショートカット、またはバッチ ファイルまたはコマンドを呼び出すプログラムにします。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

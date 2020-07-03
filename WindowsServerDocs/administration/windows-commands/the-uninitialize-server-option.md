@@ -1,6 +1,6 @@
 ---
 title: 初期化解除-サーバー
-description: 初期サーバー構成中にサーバーに加えられた変更を元に戻すサーバーの初期化解除に関するリファレンストピックです。
+description: 初期サーバー構成中にサーバーに加えられた変更を元に戻すサーバーの初期化解除に関するリファレンス記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4d7747a44172b7382bd22a7d48ccc717a89ccacb
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: fdbe391a7335c347f05f9f9c06bbade3474fa30e
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721394"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85935871"
 ---
 # <a name="uninitialize-server"></a>初期化解除-サーバー
 
@@ -27,7 +27,7 @@ ms.locfileid: "82721394"
 wdsutil [Options] /Uninitialize-Server [/Server:<Server name>]
 ```
 ### <a name="parameters"></a>パラメーター
-|パラメーター|[説明]|
+|パラメーター|説明|
 |-------|--------|
 |[/Server:<Server name>]|サーバーの名前を指定します。 NetBIOS 名または完全修飾ドメイン名 (FQDN) のいずれかを指定できます。 サーバー名が指定されていない場合は、ローカルのサーバーが使用されます。|
 ## <a name="examples"></a>例
@@ -36,12 +36,12 @@ wdsutil [Options] /Uninitialize-Server [/Server:<Server name>]
 wdsutil /Uninitialize-Server
 wdsutil /verbose /Uninitialize-Server /Server:MyWDSServer
 ```
-## <a name="additional-references"></a>その他のリファレンス
-- [コマンドライン構文](command-line-syntax-key.md)
-[の](using-the-disable-server-command.md)
-キーを使用してサーバーを無効にするコマンドを使用して、[有効](using-the-enable-server-command.md)
-にするサーバーのコマンドを使用して[get](using-the-get-server-command.md)
-server コマンドを使用して、[Initialize](using-the-initialize-server-command.md)
-サーバーコマンドを使用してサブコマンド: サーバーを[設定](subcommand-set-server.md)
-するサブコマンド: サーバーの[起動](subcommand-start-server.md)
-サブコマンド:[サーバーの停止](subcommand-stop-server.md)
+## <a name="additional-references"></a>その他の参照情報
+- [コマンドライン構文のキー](command-line-syntax-key.md) 
+[サーバーの無効化コマンド](using-the-disable-server-command.md) 
+ の使用[Enable Server コマンド](using-the-enable-server-command.md) 
+ の使用[Get Server コマンド](using-the-get-server-command.md) 
+ の使用[Initialize-Server コマンド](using-the-initialize-server-command.md) 
+ の使用[サブコマンド: サーバー](subcommand-set-server.md) 
+ の設定[サブコマンド: start-Server](subcommand-start-server.md) 
+[サブコマンド: サーバーの停止](subcommand-stop-server.md)

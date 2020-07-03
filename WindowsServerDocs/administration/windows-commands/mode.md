@@ -1,6 +1,6 @@
 ---
 title: mode
-description: システムの状態の表示、システム設定の変更、またはポートまたはデバイスの再構成を行う mode コマンドのリファレンストピック。
+description: システムの状態の表示、システム設定の変更、またはポートまたはデバイスの再構成を行う mode コマンドの参照記事。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f4c895c59bb527b8bfb6973a72d0d4e163cb2ace
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: 5794b80f7457b133d3e5b599cb12613469ad58eb
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354582"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936052"
 ---
 # <a name="mode"></a>mode
 
@@ -166,6 +166,6 @@ mode con[:] [rate=<r> delay=<d>]
 | delay =`<d>` | キーを押した、前に文字の出力に、キーを押しながら後までの経過時間を指定します。 既定値は 2 (. 50 秒) ですが、1 (. 25 秒)、3 (75 秒)、または 4 (1 秒) を使用することもできます。 このパラメーターを設定する場合は、 **rate**パラメーターも設定する必要があります。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

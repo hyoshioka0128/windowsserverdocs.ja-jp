@@ -1,6 +1,6 @@
 ---
 title: tsdiscon
-description: リモートデスクトップセッションホストサーバーからセッションを切断する tsdiscon のリファレンストピックです。
+description: Tsdiscon のリファレンス記事。リモートデスクトップセッションホストサーバーからセッションを切断します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e2a97d1b157445fd43acce5a80f3d793ed5ae5af
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 05bf4e05648b0e5dd87657396df763432fab38f0
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721260"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934188"
 ---
 # <a name="tsdiscon"></a>tsdiscon
 
@@ -34,15 +34,15 @@ tsdiscon [<SessionID> | <SessionName>] [/server:<ServerName>] [/v]
 
 ### <a name="parameters"></a>パラメーター
 
-|パラメーター|[説明]|
+|パラメーター|説明|
 |-------|--------|
 |\<SessionId>|切断するセッションの ID を指定します。|
-|\<セッション名>|切断するセッションの名前を指定します。|
+|\<SessionName>|切断するセッションの名前を指定します。|
 |/server:\<ServerName>|切断するセッションを含むターミナルサーバーを指定します。 それ以外の場合は、現在の rd セッションホストサーバーが使用されます。|
 |/v|実行されているアクションに関する情報を表示します。|
 |/?|コマンド プロンプトにヘルプを表示します。|
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>注釈
 -   別のユーザーをセッションから切断するには、フルコントロールアクセス許可を持っているか、特殊なアクセス許可を切断する必要があります。
 -   セッション ID またはセッション名が指定されていない場合、 **tsdiscon**は現在のセッションを切断します。
 -   セッションを切断したときに実行されていたアプリケーションは、データを失うことなくそのセッションに再接続すると、自動的に実行されます。 **リセットセッション**を使用して、切断されたセッションの実行中のアプリケーションを終了します。ただし、セッションでデータが失われる可能性があることに注意してください。
@@ -62,6 +62,6 @@ tsdiscon [<SessionID> | <SessionName>] [/server:<ServerName>] [/v]
   ```
   tsdiscon TERM04
   ```
-  ## <a name="additional-references"></a>その他のリファレンス
-  - [コマンドライン構文のキー](command-line-syntax-key.md)
+  ## <a name="additional-references"></a>その他の参照情報
+  - [コマンドライン構文のキー](command-line-syntax-key.md) 
   [リモートデスクトップサービス (ターミナルサービス) のコマンドリファレンス](remote-desktop-services-terminal-services-command-reference.md)

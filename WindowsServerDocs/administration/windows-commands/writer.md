@@ -1,6 +1,6 @@
 ---
 title: ライター
-description: ライターのリファレンストピック。ライターまたはコンポーネントが含まれていること、またはバックアップまたは復元の手順でライターまたはコンポーネントが含まれていることを確認します。
+description: ライターの参照記事。ライターまたはコンポーネントが含まれていること、またはバックアップまたは復元の手順でライターまたはコンポーネントが含まれていることを確認します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: aed202ac774b17041f48df24333565727b110c53
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 16746f2f070b87e0c287f3a49b19a480ba5399c9
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720643"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936092"
 ---
 # <a name="writer"></a>ライター
 
@@ -31,11 +31,11 @@ writer exclude [<Writer> | <Component>]
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター  |                                                                                      [説明]                                                                                      |
+| パラメーター  |                                                                                      説明                                                                                      |
 |------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |   確認   | 指定されたライターまたはコンポーネントが、バックアップまたは復元の手順に含まれていることを確認します。 ライターまたはコンポーネントが含まれていない場合、バックアップまたは復元の手順は失敗します。 |
-|  exclude   |                                                   指定されたライターまたはコンポーネントをバックアップまたは復元の手順から除外します。                                                    |
-| [\<ライター> |                                                                                     <Component>]                                                                                      |
+|  除外   |                                                   指定されたライターまたはコンポーネントをバックアップまたは復元の手順から除外します。                                                    |
+| [\<Writer> |                                                                                     <Component>]                                                                                      |
 
 ## <a name="examples"></a>例
 
@@ -48,6 +48,6 @@ writer verify {4dc3bdd4-ab48-4d07-adb0-3bee2926fd7f}
 writer exclude System Writer
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

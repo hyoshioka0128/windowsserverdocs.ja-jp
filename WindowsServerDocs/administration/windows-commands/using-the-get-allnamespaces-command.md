@@ -1,6 +1,6 @@
 ---
 title: get-AllNamespaces
-description: サーバー上のすべての名前空間に関する情報を表示する、get-AllNamespaces のリファレンストピックです。
+description: サーバー上のすべての名前空間に関する情報を表示する、get-AllNamespaces のリファレンス記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 710918eb11ef7a746716a1a2bff9200cfa1d98c1
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: de44d659657a8d6df10c0f2ea7b7fb2a670b7f88
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720005"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85935054"
 ---
 # <a name="get-allnamespaces"></a>get-AllNamespaces
 
@@ -22,7 +22,7 @@ ms.locfileid: "82720005"
 
 サーバー上のすべての名前空間についての情報を表示します。
 
-## <a name="syntax"></a>構文
+## <a name="syntax"></a>Syntax
 Windows Server 2008:
 ```
 wdsutil /Get-AllNamespaces [/Server:<Server name>] [/ContentProvider:<name>] [/Show:Clients] [/ExcludedeletePending]
@@ -55,8 +55,8 @@ wdsutil /Get-AllNamespaces
   ```
   wdsutil /Get-AllNamespaces /Server:MyWDSServer /ContentProvider:MyContentProv /details:Clients /ExcludedeletePending
   ```
-  ## <a name="additional-references"></a>その他のリファレンス
-  - [コマンドライン構文のキー](command-line-syntax-key.md)
-  [Using the new-Namespace Command](using-the-new-namespace-command.md)
-  名前空間を削除するコマンドを使用して名前空間[を削除](using-the-remove-namespace-command.md)
-  するコマンドを使用して[サブコマンド: 開始名前空間](subcommand-start-namespace.md)
+  ## <a name="additional-references"></a>その他の参照情報
+  - [コマンドライン構文のキー](command-line-syntax-key.md) 
+  [新しい名前空間のコマンド](using-the-new-namespace-command.md) 
+   を使用する[名前空間の削除コマンド](using-the-remove-namespace-command.md) 
+   を使用する[サブコマンド: 名前空間の開始](subcommand-start-namespace.md)

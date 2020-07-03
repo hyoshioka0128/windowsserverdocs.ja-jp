@@ -1,6 +1,6 @@
 ---
-title: telnet を開く
-description: Telnet サーバーに接続する telnet open のリファレンストピックです。
+title: telnet open
+description: Telnet サーバーに接続する telnet open の参照記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 s.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0be8aca4cb061df55674a405eb1cf2a5e643cb4f
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: f3b27088d464e62b24479eaa87f44b91f7d95d12
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222717"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85935333"
 ---
 # <a name="telnet-open"></a>telnet: 開く
 
@@ -38,5 +38,5 @@ Telnet.microsoft.com で telnet サーバーに接続します。
 ```
 o telnet.microsoft.com
 ```
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

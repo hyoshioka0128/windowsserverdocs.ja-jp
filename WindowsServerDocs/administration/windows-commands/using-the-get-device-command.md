@@ -1,6 +1,6 @@
 ---
 title: get-デバイス
-description: 事前登録されたコンピューター (つまり、active directory ドメインサービスのコンピューターアカウントに適用された物理コンピューター) に関する Windows 展開サービス情報を取得する、デバイスの参照トピック。
+description: 事前登録されたコンピューター (つまり、active directory ドメインサービスのコンピューターアカウントに適用された物理コンピューター) に関する Windows 展開サービス情報を取得する、デバイスの参照記事。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6f89266a2f70523ec332ed7cfb6a976f87a8e4f2
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 0367af83ffb826b9bf3a3b94102d02e4d7ee7205
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719959"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85935016"
 ---
 # <a name="get-device"></a>get-デバイス
 
@@ -27,7 +27,7 @@ ms.locfileid: "82719959"
 wdsutil /Get-Device {/Device:<Device name> | /ID:<MAC or UUID>} [/Domain:<Domain>] [/forest:{Yes | No}]
 ```
 ### <a name="parameters"></a>パラメーター
-|パラメーター|[説明]|
+|パラメーター|説明|
 |-------|--------|
 |ドライブ<Device name>|コンピューター (SAMAccountName) の名前を指定します。|
 |番号<MAC or UUID>|次の例に示すように、MAC アドレスまたはコンピューターの UUID (GUID) のいずれかを指定します。 有効な GUID は、バイナリ文字列または GUID 文字列の2つの形式のいずれかにする必要があります。<p>-   **バイナリ文字列**:/ID: ACEFA3E81F20694E953EB2DAA1E8B1B6<br />-   **MAC アドレス**: 00B056882FDC (ダッシュなし) または 00-B0-56-88-2F-DC (ダッシュ付き)<br />-   **GUID 文字列**:/ID: E8A3EFAC-4E69-953-B2DAA1E8B1B6|
@@ -46,8 +46,8 @@ wdsutil /verbose /Get-Device /ID:00-B0-56-88-2F-DC /Domain:MyDomain
 ```
 wdsutil /verbose /Get-Device /ID:E8A3EFAC-201F-4E69-953-B2DAA1E8B1B6 /forest:Yes
 ```
-## <a name="additional-references"></a>その他のリファレンス
-- [コマンドライン構文のキー](command-line-syntax-key.md)
-[サブコマンド: set-](subcommand-set-device.md)
-デバイスの[追加コマンド](using-the-add-device-command.md)
-を使用して[get alldevices コマンド](using-the-get-alldevices-command.md)を使用します。
+## <a name="additional-references"></a>その他の参照情報
+- [コマンドライン構文のキー](command-line-syntax-key.md) 
+[サブコマンド: デバイス](subcommand-set-device.md) 
+ の設定[デバイスの追加コマンド](using-the-add-device-command.md) 
+ の使用[Get AllDevices コマンドの使用](using-the-get-alldevices-command.md)

@@ -1,6 +1,6 @@
 ---
-title: logman 作成トレース
-description: イベントトレースデータコレクターを作成する logman create trace コマンドのリファレンストピックです。
+title: logman create trace
+description: イベントトレースデータコレクターを作成する logman create trace コマンドの参照記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 015fb7842146e372b36c71fe95a3598bdfa48676
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: 2e4d824bbdba93f220b744c334381a2751f11476
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222981"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934289"
 ---
-# <a name="logman-create-trace"></a>logman 作成トレース
+# <a name="logman-create-trace"></a>logman create trace
 
 > 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -63,7 +63,7 @@ logman create trace <[-n] <name>> [options]
 | -モード`<globalsequence|localsequence|pagedmemory>` | イベントトレースセッションロガーモードを次のように指定します。<ul><li>**Globalsequence** -イベントトレーサーは、イベントを受信したトレースセッションに関係なく、受信したすべてのイベントにシーケンス番号を追加します。</li><li>**Localsequence** -イベントトレーサーが特定のトレースセッションで受信したイベントのシーケンス番号を追加することを指定します。 このオプションを使用すると、すべてのセッションで重複するシーケンス番号が存在する可能性がありますが、各トレースセッション内で一意になります。</li><li>**Pagedmemory** -イベントトレーサーが、既定の非ページメモリプールではなく、ページングされたメモリを内部バッファー割り当てに使用することを指定します。</li></ul> |
 | /? | 状況依存のヘルプを表示します。 |
 
-#### <a name="remarks"></a>解説
+#### <a name="remarks"></a>注釈
 
 - [-] が一覧表示されている場合は、余分なハイフン (-) を追加すると、オプションが無効になります。
 
@@ -75,7 +75,7 @@ logman create trace <[-n] <name>> [options]
 logman create trace trace_log -nb 16 256 -bs 64 -o c:\logfile
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

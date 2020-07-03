@@ -1,6 +1,6 @@
 ---
 title: 'secedit: validate'
-description: '* * * * のリファレンストピック'
+description: 参照記事 * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b93ad6ceadb08f6df8390edc3fc454d951519aad
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 7f2da0792768a6b6d6113842614bc6f93c258822
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83821101"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85935973"
 ---
 # <a name="seceditvalidate"></a>secedit: validate
 
@@ -33,7 +33,7 @@ Secedit /validate <configuration file name>
 
 |パラメーター|説明|
 |---------|-----------|
-|[構成ファイル名]|必須。</br>検証で適用するセキュリティ テンプレートのパスとファイル名を指定します。|
+|[構成ファイル名]|必須です。</br>検証で適用するセキュリティ テンプレートのパスとファイル名を指定します。|
 
 ## <a name="remarks"></a>注釈
 
@@ -52,7 +52,7 @@ Windows Server 2008 で `Secedit /refreshpolicy` に置き換えられました 
 Secedit /validate secRBKcontoso.inf
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 -   [Secedit:generaterollback](secedit-generaterollback.md)
 -   [Secedit](secedit.md)

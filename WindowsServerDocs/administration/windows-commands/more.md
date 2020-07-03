@@ -1,6 +1,6 @@
 ---
 title: その他
-description: '[その他] コマンドのリファレンストピックでは、一度に1つの出力画面が表示されます。'
+description: '[その他] コマンドのリファレンス記事。一度に1つの出力画面が表示されます。'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/26/2019
-ms.openlocfilehash: 042669aa638990375157d08d9e12840ade486165
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: fec0ffbd7f2ce5d1efe1953cb4ab283d33f06ec8
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354572"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85935730"
 ---
 # <a name="more"></a>その他
 
@@ -45,7 +45,7 @@ more [/c] [/p] [/s] [/t<n>] [+<n>] [<files>]
 | `<files>` | 表示するファイルの一覧を指定します。 ファイルは、スペースを使用して区切る必要があります。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-#### <a name="remarks"></a>解説
+#### <a name="remarks"></a>注釈
 
 - 次のサブコマンドは、**より多く**のプロンプト () で受け入れられ `-- More --` ます。
 
@@ -106,7 +106,7 @@ more s
 
 次のよう**に、スキップ**する行の数を求めるプロンプトが表示され `-- More -- Lines:` ます。 スキップする行数を入力し、enter キーを押します。 これらの行がスキップされたことを示すように画面が変更されます。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

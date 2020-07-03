@@ -1,6 +1,6 @@
 ---
 title: net print
-description: Net print コマンドのリファレンストピックです。 このコマンドは非推奨とされており、Windows の将来のリリースでサポートされるとは限りません。
+description: Net print コマンドの参照記事です。 このコマンドは非推奨とされており、Windows の将来のリリースでサポートされるとは限りません。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2d8744c3ef4540652b495aea0037e97f433238f2
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: af02ca14156c8a85ee54700983e2af6807752f91
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354312"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934822"
 ---
 # <a name="net-print"></a>net print
 
@@ -39,7 +39,7 @@ net print {\\<computername>\<sharename> | \\<computername> <jobnumber> [/hold | 
 | `[/hold | /release | /delete]` | 印刷ジョブで実行するアクションを指定します。 ジョブ番号を指定しても、何も指定しない場合は、印刷ジョブに関する情報が表示されます。<ul><li>**/hold**は、ジョブを遅延させ、他の印刷ジョブが解放されるまでそのジョブをバイパスできるようにします。</li><li>**/release** -遅延された印刷ジョブを解放します。</li><li>**/delete** -印刷キューから印刷ジョブを削除します。</li></ul> |
 | help | コマンド プロンプトにヘルプを表示します。 |
 
-#### <a name="remarks"></a>解説
+#### <a name="remarks"></a>注釈
 
 - コマンドを実行すると、 `net print\\<computername>` 印刷ジョブに関する情報が共有プリンターキューに表示されます。 次に示すのは、*レーザー*という名前の共有プリンターのキューにあるすべての印刷ジョブのレポートの例です。
 
@@ -93,7 +93,7 @@ net print \\Production 263 /hold
 net print \\Production 263 /release
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

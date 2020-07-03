@@ -1,6 +1,6 @@
 ---
 title: get AllDriverGroups
-description: サーバー上のすべてのドライバーグループに関する情報を表示する、get AllDriverGroups のリファレンストピックです。
+description: サーバー上のすべてのドライバーグループに関する情報を表示する、get AllDriverGroups のリファレンス記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c4ac3e0c7b05c96383714c3a702cffd6aa8df18a
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 4c254ee19cb7f447d0fb071469c50107205de98b
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720889"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85935208"
 ---
 # <a name="get-alldrivergroups"></a>get AllDriverGroups
 
@@ -27,7 +27,7 @@ ms.locfileid: "82720889"
 wdsutil /Get-AllDriverGroups [/Server:<Server name>] [/Show:{PackageMetaData | Filters | All}]
 ```
 ### <a name="parameters"></a>パラメーター
-|パラメーター|[説明]|
+|パラメーター|説明|
 |-------|--------|
 |[/Server:<Server name>]|サーバーの名前を指定します。 これには、NetBIOS 名または FQDN を指定できます。 サーバー名が指定されていない場合は、ローカル サーバーが使用されます。|
 |[/Show: {行き着きます & #124 文字です。フィルターと #124 文字です。All}]|指定したグループ内のすべてのドライバー パッケージのメタデータを表示します。 **行き着きます** ドライバー グループのすべてのフィルターに関する情報を表示します。 **フィルター** すべてのドライバー パッケージのメタデータと、グループのフィルターが表示されます。|
@@ -39,6 +39,6 @@ wdsutil /Get-AllDriverGroups /Server:MyWdsServer /Show:All
 ```
 wdsutil /Get-AllDriverGroups [/Show:PackageMetaData]
 ```
-## <a name="additional-references"></a>その他のリファレンス
-- [Command-Line Syntax Key](command-line-syntax-key.md)
-[Get drivergroup コマンドを使用した](using-the-get-drivergroup-command.md)コマンドライン構文のキー
+## <a name="additional-references"></a>その他の参照情報
+- [コマンドライン構文のキー](command-line-syntax-key.md) 
+[Get DriverGroup コマンドを使用して](using-the-get-drivergroup-command.md)ください。

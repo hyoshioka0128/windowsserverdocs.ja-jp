@@ -1,6 +1,6 @@
 ---
 title: repair-bde
-description: '* * * * のリファレンストピック'
+description: 参照記事 * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 235640cacc6c0cca5ee9e820606082afe5d39d41
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: a2ba82708acd9c5830e2dc8a09cd804ade342066
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820112"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85935639"
 ---
 # <a name="repair-bde"></a>repair-bde
 
@@ -57,7 +57,7 @@ repair-bde <InputVolume> <OutputVolumeorImage> [-rk] [–rp] [-pw] [–kp] [–l
 
 ## <a name="examples"></a>例
 
-ドライブ C の修復を試行し、ドライブ C からドライブ D にコンテンツを書き込むには、ドライブ F に格納された回復キーファイル (RecoveryKey. bek) を使用して、ドライブ Z のログファイル (output.txt) にこの試行の結果を書き込みます。
+ドライブ C の修復を試行し、ドライブ C からドライブ D にコンテンツを書き込むには、ドライブ F に格納されている回復キーファイル (RecoveryKey. bek) を使用し、この試行の結果をドライブ Z のログファイル (log.txt) に書き込みます。
 ```
 repair-bde C: D: -rk F:\RecoveryKey.bek –lf Z:\log.txt
 ```
@@ -74,6 +74,6 @@ repair-bde C: D: -kp F:\RecoveryKeyPackage -rk F:\RecoveryKey.bek -f
 repair-bde C: D: -pw
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

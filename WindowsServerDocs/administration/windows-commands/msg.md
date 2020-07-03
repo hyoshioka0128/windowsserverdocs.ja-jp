@@ -1,6 +1,6 @@
 ---
 title: msg
-description: リモートデスクトップセッションホストサーバー上のユーザーにメッセージを送信する msg コマンドのリファレンストピック
+description: リモートデスクトップセッションホストサーバー上のユーザーにメッセージを送信する msg コマンドのリファレンス記事
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5eca19eee696e7a45cec2f16398055a7b06d00d6
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: 6eff557b1fb7eb2c5f67b2902762786bbfc839c1
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354362"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934973"
 ---
 # <a name="msg"></a>msg
 
@@ -79,6 +79,6 @@ msg * Let's meet at 1PM today
 msg * /time:10 Let's meet at 1PM today
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

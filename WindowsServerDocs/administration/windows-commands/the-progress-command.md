@@ -1,6 +1,6 @@
 ---
 title: progress
-description: コマンドの実行中に進行状況を表示する、進行状況に関するリファレンストピックです。
+description: 進行状況に関する参照記事。コマンドの実行中に進行状況を表示します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3fcb06304df22208cef013d73a4ebf0af1991f88
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 9e9650a980d74f15bc0ec5c88d8df2dc93a3d8b0
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721431"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934588"
 ---
 # <a name="progress"></a>progress
 

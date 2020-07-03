@@ -1,6 +1,6 @@
 ---
 title: setx
-description: ユーザーまたはシステム環境で環境変数を作成または変更する setx のリファレンストピック。プログラミングやスクリプトは必要ありません。
+description: ユーザーまたはシステム環境で環境変数を作成または変更する setx の参照記事。プログラミングやスクリプトは必要ありません。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 63cfb28770f635f97c8f3c7a701d9e959cee4a05
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 69dcbca54419acb9ede0924e3e835bdfaf0633c1
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721848"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85935890"
 ---
 # <a name="setx"></a>setx
 
@@ -32,23 +32,23 @@ setx [/s <Computer> [/u [<Domain>\]<User name> [/p [<Password>]]]] /f <FileName>
 
 ### <a name="parameters"></a>パラメーター
 
-|         パラメーター          |                                                                                                                                              [説明]                                                                                                                                              |
+|         パラメーター          |                                                                                                                                              説明                                                                                                                                              |
 |----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|       /s \<コンピューター>       |                                                                                  名前またはリモート コンピューターの IP アドレスを指定します。 円記号を使用しないでください。 既定値は、ローカル コンピューターの名前です。                                                                                  |
-| /u [\<ドメイン>\]<User name> |                                                                                           指定したユーザー アカウントの資格情報でスクリプトを実行します。 既定値は、システムのアクセス許可です。                                                                                            |
-|      /p [\<パスワード>]      |                                                                                                         指定されているユーザー アカウントのパスワードを指定します、 **/u** パラメーター。                                                                                                         |
-|        \<変数>         |                                                                                                                 設定する環境変数の名前を指定します。                                                                                                                  |
-|          \<値の>          |                                                                                                                環境変数を設定する値を指定します。                                                                                                                 |
-|         /k \<パス>         | 変数のベースをレジストリ キーの情報に設定されるように指定します。 P*パス* は次の構文を使用します。</br>`\\<HIVE>\<KEY>\...\<Value>`</br>たとえば、[次のパスを指定します。</br>`HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation\StandardName` |
-|      /f \<ファイル名>       |                                                                                                                               使用するファイルを指定します。                                                                                                                                |
-|        /a \<X>、<Y>         |                                                                                                                    検索パラメーターとして、絶対座標およびオフセットを指定します。                                                                                                                    |
-|   /r \<X>、<Y><String>   |                                                                                                            相対座標とからのオフセットを指定 **文字列** としてパラメーターを検索します。                                                                                                            |
+|       /s\<Computer>       |                                                                                  名前またはリモート コンピューターの IP アドレスを指定します。 円記号を使用しないでください。 既定値は、ローカル コンピューターの名前です。                                                                                  |
+| u\<Domain>\]<User name> |                                                                                           指定したユーザー アカウントの資格情報でスクリプトを実行します。 既定値は、システムのアクセス許可です。                                                                                            |
+|      /p [\<Password>]      |                                                                                                         指定されているユーザー アカウントのパスワードを指定します、 **/u** パラメーター。                                                                                                         |
+|        \<Variable>         |                                                                                                                 設定する環境変数の名前を指定します。                                                                                                                  |
+|          \<Value>          |                                                                                                                環境変数を設定する値を指定します。                                                                                                                 |
+|         /k\<Path>         | 変数のベースをレジストリ キーの情報に設定されるように指定します。 P*パス* は次の構文を使用します。</br>`\\<HIVE>\<KEY>\...\<Value>`</br>たとえば、[次のパスを指定します。</br>`HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation\StandardName` |
+|      /f \<File name>       |                                                                                                                               使用するファイルを指定します。                                                                                                                                |
+|        /a \<X> 、<Y>         |                                                                                                                    検索パラメーターとして、絶対座標およびオフセットを指定します。                                                                                                                    |
+|   /r \<X> 、 <Y><String>   |                                                                                                            相対座標とからのオフセットを指定 **文字列** としてパラメーターを検索します。                                                                                                            |
 |             /m             |                                                                                                システムの環境での変数の設定を指定します。 既定の設定は、ローカルの環境です。                                                                                                 |
 |             /x             |                                                                                                       ファイルを無視して、座標が表示されます、 **/a**, 、**/r**, 、および **/d** コマンド ライン オプションです。                                                                                                        |
-|      /d \<区切り記号>      |                    などの区切り記号を指定**\\**します **。また、** 4 つの組み込みの区切り記号 (スペース、タブ、ENTER、およびラインフィード) に加えて使用することもできます。 有効な区切り記号には、ASCII 文字が含まれます。 区切り文字の最大数は、15、組み込みの区切り記号を含みます。                    |
+|      d\<Delimiters>      |                    **などの**区切り記号を指定します。また、 **\\** 4 つの組み込みの区切り記号 (スペース、タブ、ENTER、およびラインフィード) に加えて使用することもできます。 有効な区切り記号には、ASCII 文字が含まれます。 区切り文字の最大数は、15、組み込みの区切り記号を含みます。                    |
 |             /?             |                                                                                                                                 コマンド プロンプトにヘルプを表示します。                                                                                                                                  |
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>注釈
 
 -   **Setx** コマンドは、UNIX ユーティリティ SETENV に似ています。
 -   **Setx** は直接かつ永続的にシステムを設定する環境変数の値のみコマンドラインまたはプログラムによる方法を提供します。 システム環境変数を使用して手動で構成できます **コントロール パネルの [** またはレジストリ エディターを使用します。 **設定** コマンド インタープリター (Cmd.exe) の内部では、コマンドが現在のコンソール ウィンドウのみのユーザー環境変数を設定します。
@@ -74,9 +74,9 @@ PATH 環境変数で定義された検索パスを使用するローカル環境
 ```
 setx MYPATH %PATH%
 ```
-をに**~** **%** 置き換えた後、path 環境変数で定義された検索パスを使用するようにローカル環境の MYPATH 環境変数を設定するには、次のように入力します。
+をに置き換えた後、PATH 環境変数で定義された検索パスを使用するようにローカル環境の MYPATH 環境変数を設定するには **~** **%** 、次のように入力します。
 ```
-setx MYPATH ~PATH~ 
+setx MYPATH ~PATH~
 ```
 Brand1 に Computer1 という名前のリモート コンピューター上のローカル環境でコンピューターの環境変数を設定するには、次のように入力します。
 ```
@@ -88,11 +88,11 @@ setx /s computer1 /u maindom\hiropln /p p@ssW23 MYPATH %PATH%
 ```
 値をローカル環境で費用の環境変数を設定する、 **HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation\StandardName** レジストリ キーの型。
 ```
-setx TZONE /k HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation\StandardName 
+setx TZONE /k HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation\StandardName
 ```
 Computer1 をという名前の値をリモート コンピューターのローカル環境で費用の環境変数を設定する、 **HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation\StandardName** レジストリ キーの型。
 ```
-setx /s computer1 /u maindom\hiropln /p p@ssW23 TZONE /k HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation\StandardName 
+setx /s computer1 /u maindom\hiropln /p p@ssW23 TZONE /k HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation\StandardName
 ```
 値をシステムの環境でビルドの環境変数を設定する、 **HKEY_LOCAL_MACHINE\Software\Microsoft\WindowsNT\CurrentVersion\CurrentBuildNumber** レジストリ キーの型。
 ```
@@ -110,19 +110,19 @@ setx /f ipconfig.out /x
 ```
 setx IPADDR /f ipconfig.out /a 5,11
 ```
-ローカル環境で OCTET1 環境変数を、座標 5 ** #$ \*** で見つかった値に設定するには、次のように入力します。
+ローカル環境で OCTET1 環境変数を、座標5で見つかった値に設定するには、次のように入力し** #$ \* ます。**
 ```
-setx OCTET1 /f ipconfig.out /a 5,3 /d #$*. 
+setx OCTET1 /f ipconfig.out /a 5,3 /d #$*.
 ```
 ローカル環境で IPGATEWAY 環境変数を設定するには、次のように入力して、ゲートウェイの座標に関して、座標 0, 7 で見つかった値を指定します。
 ```
-setx IPGATEWAY /f ipconfig.out /r 0,7 Gateway 
+setx IPGATEWAY /f ipconfig.out /r 0,7 Gateway
 ```
 Ipconfig.out という名前のファイルの内容を表示する: 内容の対応する座標と共に: Computer1 という名前のコンピューターを入力します。
 ```
-setx /s computer1 /u maindom\hiropln /p p@ssW23 /f ipconfig.out /x 
+setx /s computer1 /u maindom\hiropln /p p@ssW23 /f ipconfig.out /x
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

@@ -1,6 +1,6 @@
 ---
 title: manage-bde 変更キーを管理します。
-description: オペレーティングシステムドライブのスタートアップキーを変更する manage-bde 変更キーコマンドのリファレンストピックです。
+description: オペレーティングシステムドライブのスタートアップキーを変更する manage-bde 変更キーコマンドのリファレンス記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2b6cc92aa20d8c3c0469a5a78bca4bb9b6260132
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: 7f6b09dfdb73e019b909f43e14a82465573c1a6f
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222996"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934995"
 ---
 # <a name="manage-bde-changekey"></a>manage-bde 変更キーを管理します。
 
@@ -31,7 +31,7 @@ manage-bde -changekey [<drive>] [<pathtoexternalkeydirectory>] [-computername <n
 | パラメーター | 説明 |
 | --------- | ----------- |
 | `<drive>` | コロンの後にドライブ文字を表します。 |
-| -computername | Manage-bde.exe を使用して、別のコンピューター上の BitLocker 保護を変更することを指定します。 また、このコマンドの省略版として **-cn**を使用することもできます。 |
+| -computername | manage-bde.exe が別のコンピューターの BitLocker 保護を変更するために使用されることを指定します。 また、このコマンドの省略版として **-cn**を使用することもできます。 |
 | `<name>` | BitLocker による保護を変更するコンピューターの名前を表します。 指定できる値には、コンピューターの NetBIOS 名とコンピューターの IP アドレスが含まれます。 |
 | -? または /? | コマンドプロンプトで簡単なヘルプを表示します。 |
 | -help または-h | 表示は、コマンド プロンプトでヘルプを完了します。 |
@@ -44,7 +44,7 @@ manage-bde -changekey [<drive>] [<pathtoexternalkeydirectory>] [-computername <n
 manage-bde -changekey C: E:\
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

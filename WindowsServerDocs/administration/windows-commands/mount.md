@@ -1,6 +1,6 @@
 ---
 title: マウント
-description: Network File System (NFS) ネットワーク共有をマウントする mount コマンドのリファレンストピックです。
+description: Network File System (NFS) ネットワーク共有をマウントする mount コマンドのリファレンス記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 823b88b8ab1168776c25e05e3dbf5ec08d784724
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: 505094251ab6b0053cc3d46801ba5f6170201ecd
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354562"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85935723"
 ---
 # <a name="mount"></a>マウント
 
@@ -49,6 +49,6 @@ mount [-o <option>[...]] [-u:<username>] [-p:{<password> | *}] {\\<computername>
 | `<sharename>` | ファイル システムの名前を指定します。 |
 | `<devicename>` | デバイスのドライブ文字と名前を指定します。 アスタリスク (**&#42;**) を使用する場合、この値は使用可能な最初のドライバー文字を表します。 |
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

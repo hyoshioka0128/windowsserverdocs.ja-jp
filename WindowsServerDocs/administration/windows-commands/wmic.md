@@ -1,6 +1,6 @@
 ---
 title: wmic
-description: 対話型コマンドシェル内に WMI 情報を表示する wmic のリファレンストピックです。
+description: 対話型コマンドシェル内に WMI 情報を表示する wmic のリファレンス記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 252ba6b59c29378dd1f5e437de21a2ec4f5ec5c8
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: c14f877c226bdd376da39cfa6e8f11116d59fe56
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720654"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936115"
 ---
 # <a name="wmic"></a>wmic
 
@@ -24,7 +24,7 @@ ms.locfileid: "82720654"
 
 
 
-## <a name="syntax"></a>構文
+## <a name="syntax"></a>Syntax
 
 ```
 wmic </parameter>
@@ -34,12 +34,12 @@ wmic </parameter>
 
 次のサブコマンドは常に使用できます。
 
-|サブコマンド|[説明]|
+|サブコマンド|説明|
 |-----------|-----------|
 |class|WMIC の既定のエイリアスモードをエスケープして、WMI スキーマ内のクラスに直接アクセスします。|
-|path|WMIC の既定のエイリアスモードをエスケープして、WMI スキーマ内のインスタンスに直接アクセスできるようにします。|
+|パス|WMIC の既定のエイリアスモードをエスケープして、WMI スキーマ内のインスタンスに直接アクセスできるようにします。|
 |context|すべてのグローバルスイッチの現在の値を表示します。|
-|[終了\|終了]|WMIC コマンドシェルを終了します。|
+|[終了 \| 終了]|WMIC コマンドシェルを終了します。|
 
 ## <a name="examples"></a>例
 
@@ -71,6 +71,6 @@ AGGREGATE    : ON
 wmic /locale:ms_409
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

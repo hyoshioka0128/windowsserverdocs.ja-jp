@@ -8,12 +8,12 @@ ms.date: 05/20/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 13f25252d60cb0bde67cca1e1aa5106435c3f361
-ms.sourcegitcommit: 2cc251eb5bc3069bf09bc08e06c3478fcbe1f321
+ms.openlocfilehash: 77e3b48874d2b8898b7510ff04ebb133b9358a73
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84333917"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85935547"
 ---
 # <a name="ad-fs-extranet-lockout-and-extranet-smart-lockout"></a>AD FS エクストラネットのロックアウトおよびエクストラネットのスマート ロックアウト
 
@@ -212,7 +212,7 @@ AD FS は、アカウントのアクティビティデータを管理する3つ�
 
 `Get-ADFSAccountActivity user@contoso.com`
 
-  プロパティ:
+  ［プロパティ］:
     - BadPwdCountFamiliar: 既知の場所から認証が成功したときにインクリメントされます。
     - BadPwdCountUnknown: 不明な場所からの認証が失敗した場合に増分されます。
     - Lastfail Auth親しん: 使い慣れた場所から認証に失敗した場合、Lastfail Authunknown は認証に失敗した時刻に設定されます。
@@ -285,12 +285,12 @@ A: クライアントが Web アプリケーションプロキシサーバー経
 A: ESL は、Exchange Online やその他の従来の認証ブルートフォース攻撃のシナリオを防ぐためにうまく機能します。 レガシ認証には、00000000-0000-0000-0000-000000000000 の "アクティビティ ID" があります。これらの攻撃では、悪意のあるアクターが Exchange Online の基本認証 (従来の認証とも呼ばれます) を利用して、クライアント IP アドレスが Microsoft one として表示されるようにしています。 クラウドプロキシの Exchange online サーバーは、Outlook クライアントに代わって認証確認を行います。 これらのシナリオでは、悪意のある送信者の IP アドレスは、クライアントの ip アドレスになります。また、Microsoft Exchange Online server の IP アドレスは、クライアントの ip アドレスの値になります。
 エクストラネットのスマートロックアウトでは、ネットワーク Ip、転送された ip、x 転送済みのクライアント IP、および ip アドレスの値が確認されます。 要求が成功すると、すべての Ip がなじみのあるリストに追加されます。 要求が受信され、提示された Ip のいずれかが見覚えのあるリストに含まれていない場合、要求は不明としてマークされます。 未知の場所からの要求はブロックされますが、使い慣れたユーザーは正常にサインインできます。  
 
-* * Q: ESL を有効にする前に、ADFSArtifactStore のサイズを見積もることはできますか。
+**ESL を有効にする前に、ADFSArtifactStore のサイズを見積もることはできますか?**
 
 A: ESL が有効になっている場合、AD FS は、ADFSArtifactStore データベース内のユーザーのアカウントの利用状況と既知の場所を追跡します。 このデータベースのサイズは、追跡されるユーザーと既知の場所の数に比例してスケーリングされます。 ESL の有効化を計画するとき、ADFSArtifactStore データベースのサイズは、10 万ユーザーあたり最大 1 GB の割合で増加すると見積もることができます。 AD FS ファームが Windows Internal Database (WID) を使用している場合、データベースファイルの既定の場所は C:\Windows\WID\Data\. です。 このドライブがいっぱいにならないよう、ESL を有効にする前に、少なくとも 5 GB の空き記憶域があることを確認してください。 ESL を有効にした後は、ディスク記憶域に加えて、プロセス メモリの総量も、50 万人以下のユーザーに対して、最大 1 GB の RAM が追加されるものとして計画します。
 
 
-## <a name="additional-references"></a>その他の参照情報  
+## <a name="additional-references"></a>その他のリファレンス  
 [Active Directory フェデレーションサービス (AD FS) をセキュリティで保護するためのベストプラクティス](../../ad-fs/deployment/best-practices-securing-ad-fs.md)
 
 [Set-adfsproperties](https://technet.microsoft.com/itpro/powershell/windows/adfs/set-adfsproperties)
