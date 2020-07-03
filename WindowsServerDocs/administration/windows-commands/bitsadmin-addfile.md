@@ -1,6 +1,6 @@
 ---
 title: bitsadmin addfile
-description: Bitsadmin addfile コマンドのリファレンストピックです。このコマンドは、指定されたジョブにファイルを追加します。
+description: Bitsadmin addfile コマンドの参照記事。指定されたジョブにファイルを追加します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: eaa7d77c9d6160bbd2bdf6a1431232af22bc3e37
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 817a6d3af81d88e571db17c3f57dc129130b2783
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718496"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927106"
 ---
 # <a name="bitsadmin-addfile"></a>bitsadmin addfile
 
@@ -28,7 +28,7 @@ bitsadmin /addfile <job> <remoteURL> <localname>
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | [説明] |
+| パラメーター | 説明 |
 | --------- | ----------- |
 | ジョブ (job) | ジョブの表示名または GUID。 |
 | remoteURL | サーバー上のファイルの URL。 |
@@ -44,7 +44,7 @@ bitsadmin /addfile myDownloadJob http://downloadsrv/10mb.zip c:\10mb.zip
 
 追加する各ファイルに対してこの呼び出しを繰り返します。 複数のジョブが*Mydownloadjob*を名前として使用する場合は、ジョブを一意に識別するために、 *mydownloadjob*をジョブの GUID に置き換える必要があります。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

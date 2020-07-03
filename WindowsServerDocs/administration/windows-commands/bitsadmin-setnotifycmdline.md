@@ -1,6 +1,6 @@
 ---
 title: bitsadmin setnotifycmdline
-description: Bitsadmin setnotifycmdline コマンドのリファレンストピックでは、ジョブがデータの転送を終了したとき、またはジョブが状態に入ったときに実行されるコマンドラインコマンドを設定します。
+description: Bitsadmin setnotifycmdline コマンドの参照記事。ジョブがデータの転送を終了したとき、またはジョブが状態に入ったときに実行されるコマンドラインコマンドを設定します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b21d7151a5b646a4fe07d073220614f5e3c99539
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: c4466a0011f7bb1648cb7e2a51113f0a3d21c7e5
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720129"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927650"
 ---
 # <a name="bitsadmin-setnotifycmdline"></a>bitsadmin setnotifycmdline
 
@@ -31,7 +31,7 @@ bitsadmin /setnotifycmdline <job> <program_name> [program_parameters]
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | [説明] |
+| パラメーター | 説明 |
 | --------- | ----------- |
 | ジョブ (job) | ジョブの表示名または GUID。 |
 | program_name | ジョブの完了時に実行するコマンドの名前。 この値は NULL として設定できますが、その場合は*program_parameters*も null に設定する必要があります。 |
@@ -39,19 +39,19 @@ bitsadmin /setnotifycmdline <job> <program_name> [program_parameters]
 
 ## <a name="examples"></a>例
 
-*Mydownloadjob*という名前のジョブの完了時に notepad.exe を実行するには、次のようにします。
+*Mydownloadjob*という名前のジョブの完了時に Notepad.exe を実行するには、次のようにします。
 
 ```
 bitsadmin /setnotifycmdline myDownloadJob c:\winnt\system32\notepad.exe NULL
 ```
 
-ソフトウェアライセンス条項のテキストを Notepad.exe に表示するには、myDownloadJob という名前のジョブが完了します。
+Notepad.exe に EULA のテキストを表示するには、myDownloadJob という名前のジョブが完了します。
 
 ```
 bitsadmin /setnotifycmdline myDownloadJob c:\winnt\system32\notepad.exe notepad c:\eula.txt
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

@@ -1,6 +1,6 @@
 ---
 title: bitsadmin peers
-description: Bitsadmin ピアコマンドのリファレンストピックです。これにより、/ピアスイッチが一覧表示されます。
+description: Bitsadmin ピアコマンドの参照記事。/ピアスイッチの一覧が表示されます。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fa2929b842b64841b7b2d50578133dd040475c80
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 3e01a02c2615d353cbdaaa6980e86a965edce018
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82717106"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927996"
 ---
 # <a name="bitsadmin-peers"></a>bitsadmin peers
 
@@ -32,14 +32,14 @@ bitsadmin /peers /list
 ```
 
 ### <a name="parameters"></a>パラメーター
-| パラメーター | [説明] |
+| パラメーター | 説明 |
 | -------------- | -------------- |
 | [bitsadmin peers および help](bitsadmin-peers-and-help.md) | /ピアスイッチのコマンドラインの使用法を表示します。 |
 | [bitsadmin peers および discover](bitsadmin-peers-and-discover.md) | ピアを再び検出します。 |
 | [bitsadmin peers および clear](bitsadmin-peers-and-clear.md) | ピアの一覧をクリアします。 |
 | [bitsadmin peers および list](bitsadmin-peers-and-list.md) | すべてのピアを一覧表示します。 |
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

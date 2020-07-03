@@ -1,6 +1,6 @@
 ---
 title: bitsadmin setpriority
-description: 指定されたジョブの優先順位を設定する bitsadmin setpriority コマンドのリファレンストピックです。
+description: 指定されたジョブの優先度を設定する bitsadmin setpriority コマンドの参照記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 556a1d94700780ea22acc1e4c2f32961c0e43342
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 07afd9c636a5dbcd4e70de71b3a6f515e7e02bae
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82717255"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927594"
 ---
 # <a name="bitsadmin-setpriority"></a>bitsadmin setpriority
 
@@ -28,7 +28,7 @@ bitsadmin /setpriority <job> <priority>
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | [説明] |
+| パラメーター | 説明 |
 | --------- | ----------- |
 | ジョブ (job) | ジョブの表示名または GUID。 |
 | priority | ジョブの優先順位を設定します。次に例を示します。<ul><li>FOREGROUND</li><li>HIGH</li><li>NORMAL</li><li>LOW</li></ul> |
@@ -41,7 +41,7 @@ bitsadmin /setpriority <job> <priority>
 bitsadmin /setpriority myDownloadJob NORMAL
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

@@ -1,6 +1,6 @@
 ---
 title: bitsadmin info
-description: Bitsadmin info コマンドのリファレンストピック。指定されたジョブに関する概要情報が表示されます。
+description: Bitsadmin info コマンドの参照記事。指定されたジョブに関する概要情報が表示されます。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 904f70c82ab4bcc4fb25f759898674cc719b1954
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 0b9a284ee1e0ab8501f0fb6bc3417ca399996a08
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82717436"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85926559"
 ---
 # <a name="bitsadmin-info"></a>bitsadmin info
 
@@ -28,7 +28,7 @@ bitsadmin /info <job> [/verbose]
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | [説明] |
+| パラメーター | 説明 |
 | -------------- | -------------- |
 | ジョブ (job) | ジョブの表示名または GUID。 |
 | /verbose | 任意。 各ジョブの詳細情報を提供します。 |
@@ -41,7 +41,7 @@ bitsadmin /info <job> [/verbose]
 bitsadmin /info myDownloadJob
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

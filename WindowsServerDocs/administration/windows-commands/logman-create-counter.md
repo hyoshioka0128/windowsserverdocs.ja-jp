@@ -1,6 +1,6 @@
 ---
-title: logman カウンターの作成
-description: Logman create counter コマンドのリファレンストピックでは、カウンターデータコレクターを作成します。
+title: logman create counter
+description: Logman create counter コマンドに関するリファレンス記事では、カウンターデータコレクターを作成します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 63fd94fb32fe27b48460922818d1a7220f7f5d7a
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: 80ea79eb8c286a8dbe7c020b4c23ae1483d2cb9b
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222967"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927200"
 ---
-# <a name="logman-create-counter"></a>logman カウンターの作成
+# <a name="logman-create-counter"></a>logman create counter
 
 > 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -56,7 +56,7 @@ logman create counter <[-n] <name>> [options]
 | -sc`<value>` | パフォーマンスカウンターデータコレクターを使用して収集するサンプルの最大数を指定します。 |
 | /? | 状況依存のヘルプを表示します。 |
 
-#### <a name="remarks"></a>解説
+#### <a name="remarks"></a>注釈
 
 - [-] が一覧表示されている場合は、余分なハイフン (-) を追加すると、オプションが無効になります。
 
@@ -74,7 +74,7 @@ logman create counter perf_log -c \Processor(_Total)\% Processor time
 logman create counter perf_log -c \Processor(_Total)\% Processor time -max 10 -rf 01:00
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

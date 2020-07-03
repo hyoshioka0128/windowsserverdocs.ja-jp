@@ -1,6 +1,6 @@
 ---
 title: bitsadmin replaceremoteprefix
-description: Bitsadmin replaceremoteprefix コマンドのリファレンストピック。必要に応じて、ジョブ内のすべてのファイルのリモート URL を*oldprefix*から*newprefix*に変更します。
+description: Bitsadmin replaceremoteprefix コマンドの参照記事。必要に応じて、ジョブ内のすべてのファイルのリモート URL を*oldprefix*から*newprefix*に変更します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 745d026513413db799e86df3422d5ee19c89274f
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: e2453ac4c223baa049980578c81d9bc6539baac7
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82717035"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927979"
 ---
 # <a name="bitsadmin-replaceremoteprefix"></a>bitsadmin replaceremoteprefix
 
@@ -28,7 +28,7 @@ bitsadmin /replaceremoteprefix <job> <oldprefix> <newprefix>
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | [説明] |
+| パラメーター | 説明 |
 | -------------- | -------------- |
 | ジョブ (job) | ジョブの表示名または GUID。 |
 | oldprefix | 既存の URL プレフィックス。 |
@@ -36,13 +36,13 @@ bitsadmin /replaceremoteprefix <job> <oldprefix> <newprefix>
 
 ## <a name="examples"></a>例
 
-*Mydownloadjob*という名前のジョブ内のすべてのファイルのリモート URL *http://stageserver*を*http://prodserver*に変更するには、をからに変更します。
+*Mydownloadjob*という名前のジョブ内のすべてのファイルのリモート URL をに変更するには、をからに変更し *http://stageserver* *http://prodserver* ます。
 
 ```
 bitsadmin /replaceremoteprefix myDownloadJob http://stageserver http://prodserver
 ```
 
-## <a name="additional-information"></a>追加情報
+## <a name="additional-information"></a>関連情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

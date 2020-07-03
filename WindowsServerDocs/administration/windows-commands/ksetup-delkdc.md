@@ -1,6 +1,6 @@
 ---
 title: ksetup delkdc
-description: Ksetup delkdc コマンドのリファレンストピックでは、Kerberos 領域のキー配布センター (KDC) 名のインスタンスを削除します。
+description: Ksetup delkdc コマンドのリファレンス記事。 Kerberos 領域のキー配布センター (KDC) 名のインスタンスを削除します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bd3901558f1cda0d2e1d4e7c12b0d2b151870fa8
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 2d0477fd7317b0b9424fd6199cfde268c00dd1d6
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83817852"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85926129"
 ---
 # <a name="ksetup-delkdc"></a>ksetup delkdc
 
@@ -52,7 +52,7 @@ ksetup
 ksetup /delkdc CORP.CONTOSO.COM mitkdc.contoso.com
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

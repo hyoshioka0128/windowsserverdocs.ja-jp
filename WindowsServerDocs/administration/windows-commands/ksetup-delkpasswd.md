@@ -1,6 +1,6 @@
 ---
 title: ksetup delkpasswd
-description: Ksetup delkpasswd コマンドのリファレンストピックでは、領域の Kerberos パスワードサーバー (kpasswd) を削除します。
+description: Ksetup delkpasswd コマンドの参照記事。これにより、領域の Kerberos パスワードサーバー (kpasswd) が削除されます。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a84a70158ad707fb36d1ca8a4879a93fe0b7df06
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 05002c860575bce84748adc2fc353f0994d559ab
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83817842"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85926138"
 ---
 # <a name="ksetup-delkpasswd"></a>ksetup delkpasswd
 
@@ -45,7 +45,7 @@ ksetup /delkpasswd CORP.CONTOSO.COM mitkdc.contoso.com
 
 領域 CORP を確保します。CONTOSO.COM が Kerberos パスワードサーバー (KDC 名) にマップされていない場合は、 `ksetup` Windows コンピューターにと入力し、出力を表示します。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

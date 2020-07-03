@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getnotifyinterface
-description: Bitsadmin getnotifyinterface コマンドのリファレンストピックでは、指定されたジョブの COM コールバックインターフェイスを別のプログラムが登録したかどうかを判断します。
+description: Bitsadmin getnotifyinterface コマンドの参照記事。指定されたジョブの COM コールバックインターフェイスを別のプログラムが登録したかどうかを判断します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2158759067010292ca213f97014857354247b9c7
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 9c86b611eb5f46759c474171085884c5702e07d1
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82717736"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85926904"
 ---
 # <a name="bitsadmin-getnotifyinterface"></a>bitsadmin getnotifyinterface
 
@@ -28,7 +28,7 @@ bitsadmin /getnotifyinterface <job>
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | [説明] |
+| パラメーター | 説明 |
 | -------------- | -------------- |
 | ジョブ (job) | ジョブの表示名または GUID。 |
 
@@ -47,7 +47,7 @@ bitsadmin /getnotifyinterface <job>
 bitsadmin /getnotifyinterface myDownloadJob
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

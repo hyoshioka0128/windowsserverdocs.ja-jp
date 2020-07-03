@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getpriority
-description: 指定されたジョブの優先度を取得する bitsadmin getpriority コマンドのリファレンストピックです。
+description: Bitsadmin getpriority コマンドの参照記事。指定されたジョブの優先順位を取得します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -8,12 +8,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/01/2019
-ms.openlocfilehash: 38f92e83ccf5b048d168ce6a21c6026f490b18bf
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 39ce769e2eb1dcf7a05d416dc2a66c6c082c9ae4
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82717676"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85926851"
 ---
 # <a name="bitsadmin-getpriority"></a>bitsadmin getpriority
 
@@ -27,7 +27,7 @@ bitsadmin /getpriority <job>
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | [説明] |
+| パラメーター | 説明 |
 | -------------- | -------------- |
 | ジョブ (job) | ジョブの表示名または GUID。 |
 
@@ -43,7 +43,7 @@ bitsadmin /getpriority <job>
 
 - **低画質**
 
-- **知ら**
+- **UNKNOWN**
 
 ## <a name="examples"></a>例
 
@@ -53,7 +53,7 @@ bitsadmin /getpriority <job>
 bitsadmin /getpriority myDownloadJob
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

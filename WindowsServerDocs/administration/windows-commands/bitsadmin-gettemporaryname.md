@@ -1,6 +1,6 @@
 ---
 title: bitsadmin gettemporaryname
-description: Bitsadmin gettemporary name コマンドのリファレンストピックでは、ジョブ内の指定されたファイルの一時ファイル名を報告します。
+description: Bitsadmin gettemporary name コマンドの参照記事。ジョブ内の指定されたファイルの一時ファイル名を報告します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f7780691f37fb78f1553fa993fd408d224be39ff
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 0b5dab756856f0c0905d7e3b523a2ec4f3d7cad6
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82717490"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85926657"
 ---
 # <a name="bitsadmin-gettemporaryname"></a>bitsadmin gettemporaryname
 
@@ -28,7 +28,7 @@ bitsadmin /gettemporaryname <job> <file_index>
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | [説明] |
+| パラメーター | 説明 |
 | -------------- | -------------- |
 | ジョブ (job) | ジョブの表示名または GUID。 |
 | file_index | 0から開始します。 |
@@ -41,7 +41,7 @@ bitsadmin /gettemporaryname <job> <file_index>
 bitsadmin /gettemporaryname myDownloadJob 1
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

@@ -1,6 +1,6 @@
 ---
 title: bitsadmin util および repairservice
-description: Bitsadmin util と repairservice コマンドのリファレンストピック。これにより、さまざまなバージョンの BITS サービスの既知の問題が修正されます。
+description: Bitsadmin util と repairservice コマンドのリファレンス記事。さまざまなバージョンの BITS サービスの既知の問題を修正します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0104a3f2ace972821151bf5083f9b0795e427ff1
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: cf62a9410765914187b6a60ff5376e8ff5aabe03
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82707653"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927346"
 ---
 # <a name="bitsadmin-util-and-repairservice"></a>bitsadmin util および repairservice
 
@@ -31,7 +31,7 @@ bitsadmin /util /repairservice [/force]
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | [説明] |
+| パラメーター | 説明 |
 | --------- | ----------- |
 | /force | 任意。 サービスを削除してから再度作成します。|
 
@@ -46,7 +46,7 @@ BITS サービス構成を修復するには:
 bitsadmin /util /repairservice
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

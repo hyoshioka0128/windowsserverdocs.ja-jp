@@ -1,6 +1,6 @@
 ---
 title: bitsadmin util
-description: Util スイッチの一覧を示す bitsadmin util コマンドのリファレンストピックです。
+description: Util スイッチの一覧を示す bitsadmin util コマンドのリファレンス記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0fa7e8f67dd1c7c77ac489b38aa967e55f0e3506
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 96708544053c760153fbb18d813880564fd49bac
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82707586"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927285"
 ---
 # <a name="bitsadmin-util"></a>bitsadmin util
 
@@ -36,7 +36,7 @@ bitsadmin /util /version
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | [説明] |
+| パラメーター | 説明 |
 | --------- | ----------- |
 | [bitsadmin util および help](bitsadmin-util-and-help.md) | /Util スイッチのコマンドラインの使用法を表示します。 /? を指定することもできます。 |
 | [bitsadmin util および getieproxy](bitsadmin-util-and-getieproxy.md) | 指定されたサービスアカウントのプロキシの使用状況を取得します。 |
@@ -44,7 +44,7 @@ bitsadmin /util /version
 | [bitsadmin util および setieproxy](bitsadmin-util-and-setieproxy.md) | サービスアカウントを使用してファイルを転送するときに使用するプロキシ設定を指定します。 |
 | [bitsadmin util および version](bitsadmin-util-and-version.md) | BITS サービスのバージョンが表示されます。 |
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

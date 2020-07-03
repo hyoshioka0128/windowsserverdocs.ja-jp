@@ -1,6 +1,6 @@
 ---
 title: bitsadmin peers および list
-description: すべてのピアを一覧表示する bitsadmin ピアと list コマンドのリファレンストピックです。
+description: すべてのピアを一覧表示する bitsadmin ピアと list コマンドのリファレンス記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a6c1f8fbcb6ca40c86a1d589ba7217392b9875cf
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 056e6734de857da7fc99bb0c7a9f525e9553d3eb
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82717146"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85926479"
 ---
 # <a name="bitsadmin-peers-and-list"></a>bitsadmin peers および list
 
@@ -34,7 +34,7 @@ bitsadmin /peers /list
 bitsadmin /peers /list
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

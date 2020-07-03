@@ -1,6 +1,6 @@
 ---
 title: bitsadmin setnoprogresstimeout
-description: Bitsadmin setnoprogresstimeout コマンドのリファレンストピックでは、一時的なエラーが発生した後にサービスがファイルの転送を試行する時間の長さを秒単位で設定します。
+description: Bitsadmin setnoprogresstimeout コマンドの参照記事では、一時的なエラーが発生した後にサービスがファイルの転送を試行する時間を秒単位で設定します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 398882cf795e98dc0bbc0fb81006d3406fded707
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 9bb7ac4cd03148c533aa27f62a1c9770465673a5
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720111"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927671"
 ---
 # <a name="bitsadmin-setnoprogresstimeout"></a>bitsadmin setnoprogresstimeout
 
@@ -28,12 +28,12 @@ bitsadmin /setnoprogresstimeout <job> <timeoutvalue>
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | [説明] |
+| パラメーター | 説明 |
 | --------- | ----------- |
 | ジョブ (job) | ジョブの表示名または GUID。 |
 | timeoutvalue | 最初のエラーの後、ファイルの転送を BITS が待機する時間 (秒単位)。 |
 
-### <a name="remarks"></a>Remarks
+### <a name="remarks"></a>注釈
 
 - ジョブが最初の一時的なエラーを検出したときに、"進行状況なし" のタイムアウト間隔が開始されます。
 
@@ -49,7 +49,7 @@ bitsadmin /setnoprogresstimeout <job> <timeoutvalue>
 bitsadmin /setnoprogresstimeout myDownloadJob 20
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

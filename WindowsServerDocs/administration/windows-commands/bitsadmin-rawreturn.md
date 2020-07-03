@@ -1,6 +1,6 @@
 ---
 title: bitsadmin rawreturn
-description: Bitsadmin rawreturn コマンドのリファレンストピック。解析に適したデータを返します。
+description: Bitsadmin rawreturn コマンドの参照記事。解析に適したデータを返します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: af465bb9f51ab6f43980c43bf2be1f5158429a82
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 1b537b21678c100364406d4c59eaa02efd143e21
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82717082"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85926461"
 ---
 # <a name="bitsadmin-rawreturn"></a>bitsadmin rawreturn
 
@@ -37,7 +37,7 @@ bitsadmin /rawreturn
 bitsadmin /rawreturn /getstate myDownloadJob
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

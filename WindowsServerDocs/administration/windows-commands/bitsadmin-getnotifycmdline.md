@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getnotifycmdline
-description: Bitsadmin getnotifycmdline コマンドのリファレンストピックでは、ジョブがデータの転送を終了したときに実行されるコマンドラインコマンドを取得します。
+description: Bitsadmin getnotifycmdline コマンドの参照記事。ジョブがデータの転送を終了したときに実行されるコマンドラインコマンドを取得します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4d4c47c4a1b9ea06fd804c8f2c48e9ac0ce1b319
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 233186edcdb10d98e1d1139ebd63943647b84ae4
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82717799"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85926997"
 ---
 # <a name="bitsadmin-getnotifycmdline"></a>bitsadmin getnotifycmdline
 
@@ -31,7 +31,7 @@ bitsadmin /getnotifycmdline <job>
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | [説明] |
+| パラメーター | 説明 |
 | -------------- | -------------- |
 | ジョブ (job) | ジョブの表示名または GUID。 |
 
@@ -43,7 +43,7 @@ bitsadmin /getnotifycmdline <job>
 bitsadmin /getnotifycmdline myDownloadJob
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

@@ -1,6 +1,6 @@
 ---
 title: lpr
-description: Lpr コマンドのリファレンストピック。印刷用の準備として、ラインプリンタデーモン (LPD) サービスを実行しているコンピューターまたはプリンターの共有デバイスにファイルを送信します。
+description: Lpr コマンドの参照記事。印刷用の準備として、ラインプリンタデーモン (LPD) サービスを実行しているコンピューターまたはプリンターの共有デバイスにファイルを送信します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d11b72ee807869613505052cfb51e80a89a80d70
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: 9ea40ef71da7804f01c963049f07e1f6b5395354
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84223024"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927114"
 ---
 # <a name="lpr"></a>lpr
 
@@ -44,7 +44,7 @@ lpr [-S <servername>] -P <printername> [-C <bannercontent>] [-J <jobname>] [-o |
 
 ### <a name="examples"></a>例
 
-*10.0.0.45*で、LPD ホストの*Laserprinter1*プリンターキューに*ドキュメントの .txt*テキストファイルを印刷するには、次のように入力します。
+*Document.txt*テキストファイルを*10.0.0.45*の LPD ホスト上の*Laserprinter1*プリンターキューに出力するには、次のように入力します。
 
 ```
 lpr -S 10.0.0.45 -P Laserprinter1 -o Document.txt
@@ -56,7 +56,7 @@ Laserprinter1 Adobe PostScript ファイルを*10.0.0.45*の LPD ホスト上の
 lpr -S 10.0.0.45 -P Laserprinter1 -o l PostScript_file.ps
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

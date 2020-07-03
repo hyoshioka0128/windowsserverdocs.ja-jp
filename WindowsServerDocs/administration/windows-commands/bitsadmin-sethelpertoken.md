@@ -1,6 +1,6 @@
 ---
 title: bitsadmin sethelpertoken
-description: Bitsadmin se pertoken コマンドのリファレンストピック。このコマンドは、現在のコマンドプロンプトのプライマリトークン (または、指定されている場合は任意のローカルユーザーアカウントのトークン) を BITS 転送ジョブのヘルパートークンとして設定します。
+description: Bitsadmin se pertoken コマンドの参照記事。このコマンドは、現在のコマンドプロンプトのプライマリトークン (または、指定されている場合は任意のローカルユーザーアカウントのトークン) を BITS 転送ジョブのヘルパートークンとして設定します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -8,12 +8,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/01/2019
-ms.openlocfilehash: b125f95e262c2fd78f20266e3e2b6c80cea5a789
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 21dee45610823cd70e8b7209ec99e080746316f9
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719396"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927781"
 ---
 # <a name="bitsadmin-sethelpertoken"></a>bitsadmin sethelpertoken
 
@@ -30,12 +30,12 @@ bitsadmin /sethelpertoken <job> [<user_name@domain> <password>]
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | [説明] |
+| パラメーター | 説明 |
 | --------- | ----------- |
 | ジョブ (job) | ジョブの表示名または GUID。 |
 | `<username@domain>` `<password>` | 任意。 使用するトークンのローカルユーザーアカウントの資格情報。 |
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

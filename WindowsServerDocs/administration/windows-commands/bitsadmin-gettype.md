@@ -1,6 +1,6 @@
 ---
 title: bitsadmin gettype
-description: 指定されたジョブのジョブの種類を取得する bitsadmin gettype コマンドのリファレンストピックです。
+description: Bitsadmin gettype コマンドの参照記事。指定されたジョブのジョブの種類を取得します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 151f9b8e81229a666111ebcd20f060d84160445a
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: c7224add1b503d9ec50e84879a47442c12447e5d
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82717476"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85926646"
 ---
 # <a name="bitsadmin-gettype"></a>bitsadmin gettype
 
@@ -28,7 +28,7 @@ bitsadmin /gettype <job>
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | [説明] |
+| パラメーター | 説明 |
 | -------------- | -------------- |
 | ジョブ (job) | ジョブの表示名または GUID。 |
 
@@ -36,12 +36,12 @@ bitsadmin /gettype <job>
 
 返される出力値は次のようになります。
 
-| Type | 説明 |
+| 型 | 説明 |
 | --------------- | ----------- |
 | ダウンロード | このジョブはダウンロードです。 |
 | アップロード | ジョブはアップロードです。 |
 | アップロード-応答 | ジョブは、アップロード応答です。 |
-| Unknown | ジョブの種類が不明です。 |
+| 不明 | ジョブの種類が不明です。 |
 
 ## <a name="examples"></a>例
 
@@ -51,7 +51,7 @@ bitsadmin /gettype <job>
 bitsadmin /gettype myDownloadJob
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

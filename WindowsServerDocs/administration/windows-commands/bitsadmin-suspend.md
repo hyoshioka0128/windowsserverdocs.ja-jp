@@ -1,6 +1,6 @@
 ---
 title: bitsadmin suspend
-description: 指定されたジョブを中断する bitsadmin suspend コマンドのリファレンストピックです。
+description: Bitsadmin suspend コマンドの参照記事。指定されたジョブを中断します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8117cf9f4286994847e53dca8065da6821d47c5d
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 42257d31dbada2badc12b44b6375702ac41a91ca
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720449"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927474"
 ---
 # <a name="bitsadmin-suspend"></a>bitsadmin suspend
 
@@ -30,7 +30,7 @@ bitsadmin /suspend <job>
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | [説明] |
+| パラメーター | 説明 |
 | --------- | ---------- |
 | ジョブ (job) | ジョブの表示名または GUID。 |
 
@@ -43,7 +43,7 @@ bitsadmin /suspend <job>
 bitsadmin /suspend myDownloadJob
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

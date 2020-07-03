@@ -1,6 +1,6 @@
 ---
 title: ftp ls
-description: Ftp ls コマンドのリファレンストピック。リモートコンピューターのファイルとサブディレクトリの省略形の一覧を表示します。
+description: Ftp ls コマンドの参照記事。リモートコンピューターのファイルとサブディレクトリの省略形の一覧を表示します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9ae913f001c3ddffce9ff81c9c5c5fd32f436da5
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 1e4bd476f87487e400751b7173f0c670867de54c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820172"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927193"
 ---
 # <a name="ftp-ls"></a>ftp ls
 
@@ -43,13 +43,13 @@ ls [<remotedirectory>] [<localfile>]
 ls
 ```
 
-リモートコンピューター上の*dir1*の省略形の一覧を取得し、 *dirlist .txt*という名前のローカルファイルに保存するには、次のように入力します。
+リモートコンピューター上の*dir1*の省略形の一覧を取得し、それを*dirlist.txt*という名前のローカルファイルに保存するには、次のように入力します。
 
 ```
 ls dir1 dirlist.txt
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

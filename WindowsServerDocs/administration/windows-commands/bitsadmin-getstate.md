@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getstate
-description: 指定されたジョブの状態を取得する bitsadmin getstate コマンドのリファレンストピックです。
+description: Bitsadmin getstate コマンドの参照記事。指定されたジョブの状態を取得します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ab014c96c6d5d62232243d704d41d33cfcfc50f0
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: fd698727cba25f15a12a331f847e7f8436d3d54e
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82717538"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85926673"
 ---
 # <a name="bitsadmin-getstate"></a>bitsadmin getstate
 
@@ -28,7 +28,7 @@ bitsadmin /getstate <job>
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | [説明] |
+| パラメーター | Description |
 | -------------- | -------------- |
 | ジョブ (job) | ジョブの表示名または GUID。 |
 
@@ -56,7 +56,7 @@ bitsadmin /getstate <job>
 bitsadmin /getstate myDownloadJob
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

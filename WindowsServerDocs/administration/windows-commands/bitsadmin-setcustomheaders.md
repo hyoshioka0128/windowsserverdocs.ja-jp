@@ -1,6 +1,6 @@
 ---
 title: bitsadmin setcustomheaders
-description: GET 要求にカスタム HTTP ヘッダーを追加する bitsadmin setcustomheaders コマンドのリファレンストピックです。
+description: Bitsadmin setcustomheaders コマンドの参照記事。 GET 要求にカスタム HTTP ヘッダーを追加します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 92728f8d63a22cf9d13d6c02a69359583a9fc5cc
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 74a8c5f4aa464aa9f362a9761c9f1c449fbaad00
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719323"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927849"
 ---
 # <a name="bitsadmin-setcustomheaders"></a>bitsadmin setcustomheaders
 
@@ -28,7 +28,7 @@ bitsadmin /setcustomheaders <job> <header1> <header2> <...>
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | [説明] |
+| パラメーター | 説明 |
 | --------- | ----------- |
 | ジョブ (job) | ジョブの表示名または GUID。 |
 | `<header1> <header2>`などなど | ジョブのカスタムヘッダー。 |
@@ -41,7 +41,7 @@ bitsadmin /setcustomheaders <job> <header1> <header2> <...>
 bitsadmin /setcustomheaders myDownloadJob accept-encoding:deflate/gzip
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

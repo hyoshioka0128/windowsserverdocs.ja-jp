@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getnotifyflags
-description: 指定されたジョブの通知フラグを取得する bitsadmin getnotifyflags コマンドのリファレンストピックです。
+description: Bitsadmin getnotifyflags コマンドの参照記事。指定されたジョブの通知フラグを取得します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 36e4c3584b2e3be9c9985756aeaec08b40e74b0c
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 0ea97c039f372a2211b1e2a6c640c4499a38dfe4
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82717764"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85926925"
 ---
 # <a name="bitsadmin-getnotifyflags"></a>bitsadmin getnotifyflags
 
@@ -28,15 +28,15 @@ bitsadmin /getnotifyflags <job>
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | [説明] |
+| パラメーター | Description |
 | -------------- | -------------- |
 | ジョブ (job) | ジョブの表示名または GUID。 |
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>注釈
 
 ジョブには、次の1つまたは複数の通知フラグを含めることができます。
 
-| フラグ | [説明] |
+| フラグ | 説明 |
 | ----- | ----- |
 | 0x001 | ジョブ内のすべてのファイルが転送されたときにイベントを生成します。 |
 | 0x002 | エラーが発生したときにイベントを生成します。 |
@@ -51,7 +51,7 @@ bitsadmin /getnotifyflags <job>
 bitsadmin /getnotifyflags myDownloadJob
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

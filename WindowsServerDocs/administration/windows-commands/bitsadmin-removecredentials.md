@@ -1,6 +1,6 @@
 ---
 title: bitsadmin removecredentials
-description: Bitsadmin removecredentials コマンドのリファレンストピックでは、ジョブから資格情報を削除します。
+description: Bitsadmin removecredentials コマンドの参照記事。ジョブから資格情報が削除されます。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e4dcfaa55847e531871c6a7ad9fd84c3861c4cd9
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: cebfac50504a02cd98ea94d9f0611f804148feac
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82717048"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85926430"
 ---
 # <a name="bitsadmin-removecredentials"></a>bitsadmin removecredentials
 
@@ -31,7 +31,7 @@ bitsadmin /removecredentials <job> <target> <scheme>
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | [説明] |
+| パラメーター | 説明 |
 | -------------- | -------------- |
 | ジョブ (job) | ジョブの表示名または GUID。 |
 | ターゲット (target) | **サーバー**または**プロキシ**のいずれかを使用します。 |
@@ -45,7 +45,7 @@ bitsadmin /removecredentials <job> <target> <scheme>
 bitsadmin /removecredentials myDownloadJob SERVER BASIC
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

@@ -1,6 +1,6 @@
 ---
 title: bitsadmin
-description: Bitsadmin コマンドのリファレンストピックです。これは、ジョブの作成、ダウンロード、アップロード、およびジョブの進行状況の監視に使用されるコマンドラインツールです。
+description: Bitsadmin コマンドのリファレンス記事。ジョブの作成、ダウンロード、アップロード、およびジョブの進行状況の監視に使用されるコマンドラインツールです。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,20 +9,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 94a829ce21c4571188fb5ffeb9a0a1d991637d07
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: e9fd70e4e74dc25c32ff3a74be2fc1c66d697367
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82710047"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85926374"
 ---
 # <a name="bitsadmin"></a>bitsadmin
 
 > 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows 10
 
-Bitsadmin は、ジョブの作成、ダウンロード、アップロード、および進行状況の監視に使用されるコマンドラインツールです。 Bitsadmin ツールは、実行する作業を識別するためにスイッチを使用します。 または`bitsadmin /help`を`bitsadmin /?`呼び出して、スイッチの一覧を取得できます。
+Bitsadmin は、ジョブの作成、ダウンロード、アップロード、および進行状況の監視に使用されるコマンドラインツールです。 Bitsadmin ツールは、実行する作業を識別するためにスイッチを使用します。 `bitsadmin /?`またはを呼び出して `bitsadmin /help` 、スイッチの一覧を取得できます。
 
-ほとんどのスイッチに`<job>`はパラメーターが必要です。これは、ジョブの表示名または GUID に設定します。 ジョブの表示名は一意である必要はありません。 **/Create**スイッチと **/list**スイッチは、ジョブの GUID を返します。
+ほとんどのスイッチにはパラメーターが必要です `<job>` 。これは、ジョブの表示名または GUID に設定します。 ジョブの表示名は一意である必要はありません。 **/Create**スイッチと **/list**スイッチは、ジョブの GUID を返します。
 
 既定では、自分のジョブに関する情報にアクセスできます。 別のユーザーのジョブに関する情報にアクセスするには、管理者特権が必要です。 ジョブが管理者特権で作成された場合は、管理者特権のウィンドウから**bitsadmin**を実行する必要があります。それ以外の場合は、ジョブへの読み取り専用アクセス権が付与されます。
 
