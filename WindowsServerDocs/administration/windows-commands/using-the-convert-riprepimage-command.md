@@ -1,6 +1,6 @@
 ---
 title: RiprepImage
-description: RiprepImage のリファレンストピックでは、既存のリモートインストール準備 (RIPrep) イメージを Windows イメージ (.wim) 形式に変換します。
+description: 既存のリモートインストール準備 (RIPrep) イメージを Windows イメージ (.wim) 形式に変換する RiprepImage のリファレンス記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 12bdd6c49b5fdec0c0e4980a1abf7e21cefc538e
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: d0e360a23874ada4659819395db16de7527208b4
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721035"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934115"
 ---
 # <a name="convert-riprepimage"></a>RiprepImage
 
@@ -34,10 +34,10 @@ WDSUTIL [Options] /Convert-RIPrepImage /FilePath:<File path and name>
 
 ### <a name="parameters"></a>パラメーター
 
-|            パラメーター            |                                                                                                                                                                                                                                                                                                               [説明]                                                                                                                                                                                                                                                                                                                |
+|            パラメーター            |                                                                                                                                                                                                                                                                                                               説明                                                                                                                                                                                                                                                                                                                |
 |---------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| FilePath:\<ファイルのパスと名前> |                                                                                                                                                                                                       RIPrep イメージに対応する .sif ファイルの完全パスとファイル名を指定します。 このファイルは、Riprep.sif と通常呼ばれるは、RIPrep イメージを含むフォルダーの \Templates サブフォルダーにあります。                                                                                                                                                                                                       |
-|        /DestinationImage        | 次のオプションを使用してコピー先の画像の設定を指定します。</br>-/FilePath:\<ファイルのパスと名前>-新しいファイルの完全なファイルパスを設定します。 例: **C:\Temp\convert.wim**</br>-[/Name:\<名前>]-イメージの表示名を設定します。 表示名が指定されていない場合は、ソース イメージの表示名が使用されます。</br>-[/Description: \<description>]-イメージの説明を設定します。</br>-[/InPlace] には、変換を実行して、既定の動作は、元のイメージのコピーではなくを元の RIPrep イメージを指定します。</br>-[/Overwrite: {はい |
+| FilePath\<File path and name> |                                                                                                                                                                                                       RIPrep イメージに対応する .sif ファイルの完全パスとファイル名を指定します。 このファイルは、Riprep.sif と通常呼ばれるは、RIPrep イメージを含むフォルダーの \Templates サブフォルダーにあります。                                                                                                                                                                                                       |
+|        /DestinationImage        | 次のオプションを使用してコピー先の画像の設定を指定します。</br>-/FilePath:\<File path and name> -新しいファイルのファイルの完全パスを設定します。 例: **C:\Temp\convert.wim**</br>-[/Name:\<Name>]-イメージの表示名を設定します。 表示名が指定されていない場合は、ソース イメージの表示名が使用されます。</br>-[/説明: \<Description>]-イメージの説明を設定します。</br>-[/InPlace] には、変換を実行して、既定の動作は、元のイメージのコピーではなくを元の RIPrep イメージを指定します。</br>-[/Overwrite: {はい |
 
 ## <a name="examples"></a>例
 
@@ -56,6 +56,6 @@ WDSUTIL /Verbose /Progress /Convert-RiPrepImage /FilePath:\\Server
 /Overwrite:Append
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

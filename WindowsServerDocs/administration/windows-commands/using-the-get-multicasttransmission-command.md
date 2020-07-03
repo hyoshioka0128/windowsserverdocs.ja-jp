@@ -1,6 +1,6 @@
 ---
 title: /Get-multicasttransmission
-description: 指定されたイメージのマルチキャスト転送に関する情報を表示する/Get-multicasttransmission のリファレンストピックです。
+description: 指定されたイメージのマルチキャスト転送に関する情報を表示する/Get-multicasttransmission のリファレンス記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a848a4aceb41b4da679d9182459df29c89008fea
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: a764aa0a975fe29daed54e50b7ab0284a12a399f
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719755"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932201"
 ---
 # <a name="get-multicasttransmission"></a>/Get-multicasttransmission
 
@@ -22,10 +22,10 @@ ms.locfileid: "82719755"
 
 指定したイメージのマルチキャスト転送に関する情報を表示します。
 
-## <a name="syntax"></a>構文
-**Windows Server 2008**
+## <a name="syntax"></a>Syntax
+**Windows Server 2008**
 ```
-wdsutil [Options] /Get-MulticastTransmissiomedia:<Image name> [/Server:<Server name>mediatype:InstallmediaGroup:<Image group name>] 
+wdsutil [Options] /Get-MulticastTransmissiomedia:<Image name> [/Server:<Server name>mediatype:InstallmediaGroup:<Image group name>]
 [/Filename:<File name>] [/Show:Clients]
 ```
 **Windows Server 2008 R2**ブートイメージの転送:
@@ -47,7 +47,7 @@ wdsutil [Options] /Get-MulticastTransmissiomedia:<Image name>
      [/Filename:<File name>]
 ```
 ### <a name="parameters"></a>パラメーター
-|パラメーター|[説明]|
+|パラメーター|説明|
 |-------|--------|
 用紙<Image name>|このイメージに関連付けられているマルチキャスト転送を表示します。|
 |[/Server:<Server name>]|サーバーの名前を指定します。 NetBIOS 名または完全修飾ドメイン名 (FQDN) を指定できます。 サーバー名が指定されていない場合は、ローカル サーバーが使用されます。|
@@ -55,7 +55,7 @@ mediatype: インストール|イメージの種類を指定します。 この�
 |\mediaGroup:<Image group name>]|イメージを含むイメージ グループを指定します。 イメージ グループ名が指定されていないサーバーに 1 つだけのイメージ グループが存在する場合は、そのイメージ グループを使用します。 サーバーの 1 つ以上のイメージ グループが存在する場合は、イメージ グループを指定するこのオプションを使用する必要があります。|
 |/アーキテクチャ: {x86 & #124; ia64 & #124; x64}|転送に関連付けられているブート イメージのアーキテクチャを指定します。 さまざまなアーキテクチャでブート イメージで同じイメージの名前を指定することも可能であるために、適切なイメージが使用されるようにするアーキテクチャを指定してください。|
 |[/ファイル名:<File name>]|イメージを含むファイルを指定します。 イメージは、名前によって一意に識別できない場合、は、ファイル名を指定するこのオプションを使用する必要があります。|
-|[/ショー: クライアント]<p>or<p>[詳細: クライアント]|マルチキャスト転送に接続されているクライアント コンピューターに関する情報を表示します。|
+|[/ショー: クライアント]<p>または<p>[詳細: クライアント]|マルチキャスト転送に接続されているクライアント コンピューターに関する情報を表示します。|
 ## <a name="examples"></a>例
 **Windows Server 2008**"Vista with Office" という名前のイメージの転送に関する情報を表示するには、次のいずれかを入力します。
 ```
@@ -73,9 +73,9 @@ wdsutil /Get-MulticastTransmission /Server:MyWDSServemedia:Vista with Officemedi
 ```
 wdsutil /Get-MulticastTransmission /Server:MyWDSServemedia:X64 Boot Imagemediatype:Boot /Architecture:x64 /Filename:boot.wim /details:Clients
 ```
-## <a name="additional-references"></a>その他のリファレンス
-- [コマンドライン構文のキー](command-line-syntax-key.md)
-[AllMulticastTransmissions コマンド](using-the-get-allmulticasttransmissions-command.md)
-を使用して[/get-multicasttransmission コマンド](using-the-new-multicasttransmission-command.md)
-を使用して[/get-multicasttransmission コマンド](using-the-remove-multicasttransmission-command.md)
-を使用して[サブコマンド:/get-multicasttransmission](subcommand-start-multicasttransmission.md)
+## <a name="additional-references"></a>その他の参照情報
+- [コマンドライン構文のキー](command-line-syntax-key.md) 
+[AllMulticastTransmissions コマンド](using-the-get-allmulticasttransmissions-command.md) 
+ の使用[/Get-multicasttransmission コマンド](using-the-new-multicasttransmission-command.md) 
+ の使用[/Get-multicasttransmission コマンド](using-the-remove-multicasttransmission-command.md) 
+ を使用する[サブコマンド:/get-multicasttransmission](subcommand-start-multicasttransmission.md)

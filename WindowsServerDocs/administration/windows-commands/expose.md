@@ -1,6 +1,6 @@
 ---
-title: さらす
-description: '[公開] コマンドのリファレンストピック。ドライブ文字、共有、またはマウントポイントとして永続的なシャドウコピーを公開します。'
+title: expose
+description: '[公開] コマンドの参照記事。ドライブ文字、共有、またはマウントポイントとして永続的なシャドウコピーを公開します。'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d4e8ebf71f6ddcb457460f8174793586e81c73a6
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 816aad0ba57a30d9d3a05709941b1915d9a97d03
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437177"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932403"
 ---
-# <a name="expose"></a>さらす
+# <a name="expose"></a>expose
 
 は、ドライブ文字、共有、またはマウントポイントとして、永続的なシャドウコピーを公開します。
 
@@ -43,7 +43,7 @@ VSS_SHADOW_1 環境変数に関連付けられている永続的なシャドウ�
 expose %vss_shadow_1% x:
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

@@ -1,6 +1,6 @@
 ---
 title: get DriverPackageFile
-description: ドライバーパッケージについての情報を表示する get DriverPackageFile のリファレンストピック。これには、ドライバーパッケージに含まれるドライバーとファイルが含まれます。
+description: ドライバーパッケージについての情報を表示する get DriverPackageFile の参照記事。ドライバーパッケージに含まれるドライバーとファイルを含みます。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 71fc38e31471a1deb9d6be29b04d3cd911be1bd6
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 1daa93cb8976229c4c847390416f9332769c5ff5
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719932"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932245"
 ---
 # <a name="get-driverpackagefile"></a>get DriverPackageFile
 
@@ -28,11 +28,11 @@ WDSUTIL /Get-DriverPackageFile /InfFile:<Inf File path> [/Architecture:{x86 | ia
 
 ### <a name="parameters"></a>パラメーター
 
-|         パラメーター         |                              [説明]                               |
+|         パラメーター         |                              説明                               |
 |---------------------------|------------------------------------------------------------------------|
-| /Inffile:\<Inf ファイルのパス> | ドライバー パッケージの .inf ファイルの完全パスとファイル名を指定します。 |
+| /InfFile:\<Inf File path> | ドライバー パッケージの .inf ファイルの完全パスとファイル名を指定します。 |
 |    [/アーキテクチャ: {x86    |                                  ia64                                  |
-|     [/Show: {Drivers      |                                 ファイル                                  |
+|     [/Show: {Drivers      |                                 Files                                  |
 
 ## <a name="examples"></a>例
 
@@ -41,6 +41,6 @@ WDSUTIL /Get-DriverPackageFile /InfFile:<Inf File path> [/Architecture:{x86 | ia
 WDSUTIL /Get-DriverPackageFile /InfFile:C:\temp\1394.inf /Architecture:x86
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

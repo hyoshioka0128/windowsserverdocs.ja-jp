@@ -1,6 +1,6 @@
 ---
 title: macfile
-description: Macintosh サーバー、ボリューム、ディレクトリ、およびファイルのファイルサーバーを管理する、macfile コマンドのリファレンストピックです。
+description: Macintosh サーバー、ボリューム、ディレクトリ、およびファイルのファイルサーバーを管理する、macfile コマンドのリファレンス記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 740044088bef1537b5b41493f46be9275be84874
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: 6937e8bbf40ec9ce908be095e5de0e04f793f40e
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84223020"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933657"
 ---
 # <a name="macfile"></a>macfile
 
@@ -61,7 +61,7 @@ macfile directory[/server:\\<computername>] /path:<directory> [/owner:<ownername
 | 第 10 | ディレクトリの名前変更、移動、または削除を行うことはできません。 |
 | 11 番目 | 変更は、現在のディレクトリとすべてのサブディレクトリに適用されます。 |
 
-##### <a name="remarks"></a>解説
+##### <a name="remarks"></a>注釈
 
 - 入力した情報にスペースや特殊文字が含まれている場合は、テキストを引用符で囲みます (" `<computer name>` " など)。
 
@@ -101,7 +101,7 @@ macfile forkize[/server:\\<computername>] [/creator:<creatorname>] [/type:<typen
 | targetfile`<filepath>` | データフォークとリソースフォークを結合することによって作成されるファイルの場所を指定します。または、変更する型またはクリエーターを含むファイルの場所を指定します。 ファイルは、指定されたサーバー上に存在する必要があります。 このパラメーターは必須です。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-##### <a name="remarks"></a>解説
+##### <a name="remarks"></a>注釈
 
 - 入力した情報にスペースや特殊文字が含まれている場合は、テキストを引用符で囲みます (" `<computer name>` " など)。
 
@@ -113,7 +113,7 @@ macfile forkize[/server:\\<computername>] [/creator:<creatorname>] [/type:<typen
 macfile forkize /resourcefork:c:\cross\mac\appcode /type:APPL /creator:MAGNOLIA /targetfile:D:\Release\tree_app
 ```
 
-ファイルの作成者を*Microsoft Word 5.1*に変更するには、 *D:\Word documents\Group files*ディレクトリの*file.txt*ファイルで、次のように入力します。 * \\ *
+ファイルの作成者を*Microsoft Word 5.1*に変更するには、 *D:\Word documents\Group files*ディレクトリにあるファイル*Word.txt*のサーバー * \\ ServerA*で、次のように入力します。
 
 ```
 macfile forkize /server:\\ServerA /creator:MSWD /type:TEXT /targetfile:d:\Word documents\Group files\Word.txt
@@ -138,7 +138,7 @@ macfile server [/server:\\<computername>] [/maxsessions:{number | unlimited}] [/
 | /loginmessage:`<message>` | Macintosh サーバーのファイルサーバーにサインインするときに、Macintosh ユーザーに表示されるメッセージを変更します。 サインインメッセージの最大文字数は199です。 省略した場合は、 **loginmessage** メッセージは、サーバーは変更されません。 既存のサインインメッセージを削除するには、 **/loginmessage**パラメーターを含めますが、 *message*変数は空白のままにします。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-##### <a name="remarks"></a>解説
+##### <a name="remarks"></a>注釈
 
 - 入力した情報にスペースや特殊文字が含まれている場合は、テキストを引用符で囲みます (" `<computer name>` " など)。
 
@@ -176,7 +176,7 @@ macfile volume /remove[/server:\\<computername>] /name:<volumename>
 | /remove | Macintosh からアクセス可能なボリュームを削除する場合に必要です。 指定されたボリュームを削除します。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-##### <a name="remarks"></a>解説
+##### <a name="remarks"></a>注釈
 
 - 入力した情報にスペースや特殊文字が含まれている場合は、テキストを引用符で囲みます (" `<computer name>` " など)。
 
@@ -206,6 +206,6 @@ macfile volume /add /server:\\Magnolia /name:Landscape Design /path:e:\trees
 macfile volume /remove /name:Sales Reports
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

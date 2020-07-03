@@ -1,6 +1,6 @@
 ---
 title: tracert
-description: Tracert の参照トピックでは、転送先へのパスを指定します。これにより、インターネット制御メッセージプロトコル (ICMP) のエコー要求または ICMPv6 メッセージが転送先に送信され、時間がライブ (TTL) フィールドの値が増加します。
+description: Tracert の参照記事。この記事では、インターネット制御メッセージプロトコル (ICMP) のエコー要求または ICMPv6 メッセージを宛先に送信して、時間をライブ (TTL) フィールドの値を段階的に増加させることで、宛先へのパスを決定します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a6ef48350a0b8a4f67f1e564a9ca16db8b4dd5e6
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: adc73fdd646b3a9f7202f286912b5295f0c4e140
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472929"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933733"
 ---
 # <a name="tracert"></a>tracert
 
@@ -65,6 +65,6 @@ Corp7.microsoft.com という名前のホストへのパスをトレースし、
 tracert /j 10.12.0.1 10.29.3.1 10.1.44.1 corp7.microsoft.com
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

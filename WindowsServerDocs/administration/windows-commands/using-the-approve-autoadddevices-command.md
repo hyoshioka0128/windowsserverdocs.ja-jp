@@ -1,6 +1,6 @@
 ---
 title: 承認-AutoaddDevices
-description: '[承認-AutoaddDevices] の参照トピック。管理者の承認が保留中のコンピューターを承認します。'
+description: '[承認-AutoaddDevices] の参照記事。管理者の承認が保留中のコンピューターを承認します。'
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0143c9ab6221eb5633284bd3f2982312bbcda15c
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 8c7a4756a90c329ba6cccd1c1b7c1b93d58d06b4
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721041"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934137"
 ---
 # <a name="approve-autoadddevices"></a>承認-AutoaddDevices
 
@@ -24,11 +24,11 @@ ms.locfileid: "82721041"
 
 ## <a name="syntax"></a>構文
 ```
-wdsutil [Options] /Approve-AutoaddDevices [/Server:<Server name>] /RequestId:{<Request ID>| ALL} [/MachineName:<Device name>] [/OU:<DN of OU>] 
+wdsutil [Options] /Approve-AutoaddDevices [/Server:<Server name>] /RequestId:{<Request ID>| ALL} [/MachineName:<Device name>] [/OU:<DN of OU>]
 [/User:<Domain\User | User@Domain>] [/JoinRights:{JoinOnly | Full}] [/JoinDomain:{Yes | No}] [/ReferralServer:<Server name>] [/BootProgram:<Relative path>] [/WdsClientUnattend:<Relative path>] [/BootImagepath:<Relative path>]
 ```
 ### <a name="parameters"></a>パラメーター
-|パラメーター|[説明]|
+|パラメーター|説明|
 |-------|--------|
 |[/Server:<Server name>]|サーバーの名前を指定します。 NetBIOS 名または完全修飾ドメイン名 (FQDN) のいずれかを指定できます。 サーバー名が指定されていない場合は、ローカルのサーバーが使用されます。|
 |/RequestId: {要求 ID と #124 文字です。すべて}|保留中のコンピューターに割り当てられた要求 ID を指定します。 指定 **すべて** 保留中のすべてのコンピューターを承認します。|
@@ -40,7 +40,7 @@ wdsutil [Options] /Approve-AutoaddDevices [/Server:<Server name>] /RequestId:{<R
 |[/ReferralServer:<Server name>]|簡易ファイル転送プロトコル (tftp) を使用して、ネットワークブートプログラムとブートイメージをダウンロードするために、接続するサーバーの名前を指定します。|
 |[/BootProgram:<Relative path>]|RemoteInstall フォルダからこのコンピュータが受信するネットワークブートプログラムへの相対パスを指定します。 例: **boot\x86\pxeboot.com**します。|
 |[/WdsClientUnattend:<Relative path>]|Windows 展開サービスクライアントを自動化する無人セットアップファイルへの remoteInstall フォルダーからの相対パスを指定します。|
-|[/BootImagepath:<Relative path>]|RemoteInstall フォルダからこのコンピュータが受信するブートイメージへの相対パスを指定します。|
+|[/BootImagepath: <Relative path> ]|RemoteInstall フォルダからこのコンピュータが受信するブートイメージへの相対パスを指定します。|
 ## <a name="examples"></a>例
 12 の要求 Id を使用してコンピューターを承認するには、次のように入力します。
 ```
@@ -48,15 +48,15 @@ wdsutil /Approve-AutoaddDevices /RequestId:12
 ```
 指定した設定を使用してイメージを展開 20 の要求 Id を使用してコンピューターを承認して、次のように入力します。
 ```
-wdsutil /Approve-AutoaddDevices /RequestId:20 /MachineName:computer1 /OU:OU=Test,CN=company,DC=Domain,DC=Com /User:Domain\User1 
+wdsutil /Approve-AutoaddDevices /RequestId:20 /MachineName:computer1 /OU:OU=Test,CN=company,DC=Domain,DC=Com /User:Domain\User1
 /JoinRights:Full /ReferralServer:MyWDSServer /BootProgram:boot\x86\pxeboot.n12 /WdsClientUnattend:WDSClientUnattend\Unattend.xml /BootImagepath:boot\x86\images\boot.wim
 ```
 承認保留中のすべてのコンピューターに、次のように入力します。
 ```
 wdsutil /verbose /Approve-AutoaddDevices /RequestId:ALL
 ```
-## <a name="additional-references"></a>その他のリファレンス
-- [コマンドライン構文のキー](command-line-syntax-key.md)
-[削除-autoadddevices コマンド](using-the-delete-autoadddevices-command.md)
-を使用して[get autoadddevices](using-the-get-autoadddevices-command.md)
-コマンドを使用して[拒否 autoadddevices コマンド](using-the-reject-autoadddevices-command.md)を使用して
+## <a name="additional-references"></a>その他の参照情報
+- [コマンドライン構文のキー](command-line-syntax-key.md) 
+[Delete AutoaddDevices コマンド](using-the-delete-autoadddevices-command.md) 
+ の使用[Get AutoaddDevices コマンド](using-the-get-autoadddevices-command.md) 
+ の使用[拒否 AutoaddDevices コマンドの使用](using-the-reject-autoadddevices-command.md)

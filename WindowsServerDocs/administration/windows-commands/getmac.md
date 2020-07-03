@@ -1,6 +1,6 @@
 ---
 title: getmac
-description: Getmac コマンドのリファレンストピック。このコマンドは、メディアアクセスコントロール (MAC) アドレスと、各ネットワークに関連付けられているネットワークプロトコルの一覧をローカルまたはネットワーク経由で返します。
+description: Getmac コマンドのリファレンス記事。このコマンドは、メディアアクセスコントロール (MAC) アドレスと、各ネットワークに関連付けられているネットワークプロトコルの一覧をローカルまたはネットワーク経由で返します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b84218b5506770bbefd5af8c89801547cc658f88
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 345daa310b075f8a094dd8a87e7c1c0d3694ab10
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83819092"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932342"
 ---
 # <a name="getmac"></a>getmac
 
@@ -32,7 +32,7 @@ getmac[.exe][/s <computer> [/u <domain\<user> [/p <password>]]][/fo {table | lis
 
 | パラメーター | 説明 |
 | --------- |------------ |
-| /s`<computer>` | 名前またはリモート コンピューターの IP アドレスを指定します (円記号を使用しない)。 既定はローカル コンピュータです。 |
+| /s`<computer>` | 名前またはリモート コンピューターの IP アドレスを指定します (円記号を使用しない)。 既定値はローカル コンピューターです。 |
 | /u`<domain>\<user>` | *User*または*domain\user*によって指定されたユーザーのアカウントアクセス許可を使用してコマンドを実行します。 既定値は、コマンドを実行しているコンピューターの現在のログオンユーザーのアクセス許可です。 |
 | /p`<password>` | 指定されているユーザー アカウントのパスワードを指定します、 **/u** パラメーター。 |
 | /fo {テーブル | list | 市区 | クエリ出力に使用する形式を指定します。 有効な値は **テーブル**, 、**リスト**, 、および **csv**します。 出力の既定の形式は**table**です。 |
@@ -68,6 +68,6 @@ getmac /s srvmain /u maindom\hiropln /p p@ssW23 /fo list /v
 getmac /s srvmain /u maindom\hiropln /p p@ssW23 /fo table /nh
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

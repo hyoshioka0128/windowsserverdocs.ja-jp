@@ -1,6 +1,6 @@
 ---
 title: nfsadmin
-description: NFS サーバーと NFS クライアントの両方を管理する nfsadmin コマンドのリファレンストピックです。
+description: NFS サーバーと NFS クライアントの両方を管理する nfsadmin コマンドの参照記事。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c122577758dd28d11d25445ca9dc98ed03024c77
-ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
+ms.openlocfilehash: ad88594d534c64c0651fcc4e094fef669a02f16c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84721535"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932334"
 ---
 # <a name="nfsadmin"></a>nfsadmin
 
@@ -22,7 +22,7 @@ ms.locfileid: "84721535"
 
 Nfs サーバーまたは nfs クライアントを、Microsoft Services for Network File System (NFS) を実行しているローカルコンピューターまたはリモートコンピューター上で管理するコマンドラインユーティリティ。 パラメーターを指定せずに使用します。 nfsadmin server には、NFS 構成設定の現在のサーバーが表示され、nfsadmin client には、NFS 構成設定の現在のクライアントが表示されます。
 
-## <a name="syntax"></a>構文
+## <a name="syntax"></a>Syntax
 
 ```
 nfsadmin server [computername] [-u Username [-p Password]] -l
@@ -42,7 +42,7 @@ nfsadmin client [computername] [-u Username [-p Password]] config option[...]
 
 ### <a name="general-parameters"></a>一般的なパラメーター
 
-| パラメーター | Description |
+| パラメーター | 説明 |
 | --------- | ----------- |
 | computername | 管理するリモート コンピューターを指定します。 Windows インターネットネームサービス (WINS) 名またはドメインネームシステム (DNS) 名またはインターネットプロトコル (IP) アドレスを使用して、コンピューターを指定できます。 |
 | -u ユーザー名 | 使用する資格情報を持つユーザーのユーザー名を指定します。 *Domain\username*という形式のユーザー名にドメイン名を追加する必要がある場合があります。 |
@@ -50,7 +50,7 @@ nfsadmin client [computername] [-u Username [-p Password]] config option[...]
 
 ### <a name="server-for-nfs-related-parameters"></a>NFS サーバーに関連するパラメーター
 
-| パラメーター | Description |
+| パラメーター | 説明 |
 | --------- | ----------- |
 | -l | クライアントによって保持されているすべてのロックを一覧表示します。 |
 | -r`{client|all}` | 保持するロックの解放、 クライアント または、 すべて すべてのクライアントで指定しました。 |
@@ -108,7 +108,7 @@ nfsadmin server config
 nfsadmin client config
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

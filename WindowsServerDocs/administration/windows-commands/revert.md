@@ -1,6 +1,6 @@
 ---
-title: 反転
-description: '* * * * のリファレンストピック'
+title: revert
+description: 参照記事 * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b967904c28661be82909ebcc0aa7cb42c73e418c
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 8d2d8bfbfa10df9776e849b1450c2fce47c097b7
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722334"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933038"
 ---
-# <a name="revert"></a>反転
+# <a name="revert"></a>revert
 
 
 
@@ -30,10 +30,10 @@ revert <ShadowCopyID>
 
 ### <a name="parameters"></a>パラメーター
 
-|パラメーター|[説明]|
+|パラメーター|説明|
 |---------|-----------|
 |\<ShadowCopyID>|ボリュームを元に戻すシャドウ コピー ID を指定します。|
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

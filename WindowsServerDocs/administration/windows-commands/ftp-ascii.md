@@ -1,6 +1,6 @@
 ---
 title: ftp ascii
-description: Ftp ascii コマンドのリファレンストピックで、ファイル転送の種類を ASCII に設定します。
+description: Ftp ascii コマンドの参照記事。ファイル転送の種類を ASCII に設定します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f9bf3f278bb478c7244f90533a689f41fd910783
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: e3ba10ba6498b48a19aacf6235c84a890c7db63a
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820042"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933323"
 ---
 # <a name="ftp-ascii"></a>ftp ascii
 
@@ -36,7 +36,7 @@ ascii
 ascii
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

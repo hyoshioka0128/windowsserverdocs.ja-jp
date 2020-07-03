@@ -1,6 +1,6 @@
 ---
 title: コピー DriverGroup
-description: フィルター、ドライバーパッケージ、有効/無効の状態を含む、サーバー上の既存のドライバーグループを複製する、コピー DriverGroup のリファレンストピックです。
+description: フィルター、ドライバーパッケージ、有効/無効の状態を含む、サーバー上の既存のドライバーグループを複製する、コピー DriverGroup の参照記事。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: dc157e9ef6d07a45efe2a19221fb3a046b2f65c1
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: d9be90f065cc76e16b7b45135c60b5206c7bf581
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721012"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934082"
 ---
 # <a name="copy-drivergroup"></a>コピー DriverGroup
 
@@ -28,11 +28,11 @@ WDSUTIL /Copy-DriverGroup [/Server:<Server name>] /DriverGroup:<Source Group Nam
 
 ### <a name="parameters"></a>パラメーター
 
-|パラメーター|[説明]|
+|パラメーター|説明|
 |---------|-----------|
-|[/Server:\<サーバー名>]|サーバーの名前を指定します。 これには、NetBIOS 名または FQDN を指定できます。 サーバー名が指定されていない場合は、ローカル サーバーが使用されます。|
-|/Drivergroup:\<ソースグループ名>|ソースのドライバー グループの名前を指定します。|
-|/GroupName:\<新しいグループ名>|新しいドライバー グループの名前を指定します。|
+|[/Server:\<Server name>]|サーバーの名前を指定します。 これには、NetBIOS 名または FQDN を指定できます。 サーバー名が指定されていない場合は、ローカル サーバーが使用されます。|
+|DriverGroup\<Source Group Name>|ソースのドライバー グループの名前を指定します。|
+|GroupName\<New Group Name>|新しいドライバー グループの名前を指定します。|
 
 ## <a name="examples"></a>例
 
@@ -44,6 +44,6 @@ WDSUTIL /Copy-DriverGroup /Server:MyWdsServer /DriverGroup:PrinterDrivers /Group
 WDSUTIL /Copy-DriverGroup /DriverGroup:PrinterDrivers /GroupName:ColorPrinterDrivers
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

@@ -1,6 +1,6 @@
 ---
 title: ksetup mapuser
-description: Kerberos プリンシパルの名前をアカウントにマップする ksetup mapuser コマンドのリファレンストピックです。
+description: Kerberos プリンシパルの名前をアカウントにマップする ksetup mapuser コマンドの参照記事。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0ac2f3e30b3057ceea4376d7ffe8286875d5301d
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: f387b8c3ff7cf7515a4f2ed9b8ea62d379332ec7
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83817672"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933690"
 ---
 # <a name="ksetup-mapuser"></a>ksetup mapuser
 
@@ -30,7 +30,7 @@ ksetup /mapuser <principal> <account>
 
 | パラメーター | 説明 |
 | --------- | ----------- |
-| `<principal>` | 任意のプリンシパルユーザーの完全修飾ドメイン名を指定します。 たとえば、「 mike@corp.CONTOSO.COM 」のように入力します。 アカウントパラメーターを指定しない場合、指定されたプリンシパルのマッピングが削除されます。 |
+| `<principal>` | 任意のプリンシパルユーザーの完全修飾ドメイン名を指定します。 たとえば、mike@corp.CONTOSO.COM のようにします。 アカウントパラメーターを指定しない場合、指定されたプリンシパルのマッピングが削除されます。 |
 | `<account>` | このコンピューターに存在するアカウントまたはセキュリティグループの名前を指定します ( **Guest**、 **Domain Users**、 **Administrator**など)。 このパラメーターを省略すると、指定したプリンシパルのマッピングが削除されます。 |
 
 #### <a name="remarks"></a>注釈
@@ -76,7 +76,7 @@ CONTOSO Kerberos 領域内のすべてのアカウントを、このコンピュ
 ksetup /mapuser * *
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

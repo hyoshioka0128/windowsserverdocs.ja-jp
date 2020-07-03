@@ -1,6 +1,6 @@
 ---
-title: wbadmin のバックアップの無効化
-description: 既存のスケジュールされた毎日のバックアップの実行を停止する wbadmin disable backup のリファレンストピックです。
+title: wbadmin disable backup
+description: 既存のスケジュールされた毎日のバックアップの実行を停止する wbadmin disable backup のリファレンス記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6bc211946c908b44b196995a9e5000d6ff3b7f82
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 88383975aa3ae8d6821698159e6ee445198301c5
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83821422"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933669"
 ---
-# <a name="wbadmin-disable-backup"></a>wbadmin のバックアップの無効化
+# <a name="wbadmin-disable-backup"></a>wbadmin disable backup
 
 
 
@@ -37,7 +37,7 @@ wbadmin disable backup
 |---------|-----------|
 |-quiet|ユーザーにプロンプトを表示せずにサブコマンドを実行します。|
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 -   [Wbadmin](wbadmin.md)

@@ -1,6 +1,6 @@
 ---
 title: リモート デスクトップ サービス (ターミナル サービス) のコマンド リファレンス
-description: '* * * * のリファレンストピック'
+description: 参照記事 * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 630b2274e96e446af07f7630d95056b40858209f
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 55466409517b63c52f88a7acec3a8f4aba7d258d
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722441"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933469"
 ---
 # <a name="remote-desktop-services-terminal-services-command-reference"></a>リモート デスクトップ サービス (ターミナル サービス) のコマンド リファレンス
 
@@ -23,8 +23,8 @@ ms.locfileid: "82722441"
 リモート デスクトップ サービスのコマンド ライン ツールの一覧を次に示します。
 > [!NOTE]
 > Windows Server 2008 R2 で、「ターミナル サービス」は「リモート デスクトップ サービス」に名前変更されました。 最新バージョンの新機能については、Windows Server TechNet ライブラリの「 [Windows server 2012 のリモートデスクトップサービスの新機能](https://technet.microsoft.com/library/hh831527)」を参照してください。
-> 
-> |                 command                 |                                                      説明                                                       |
+>
+> |                 コマンド                 |                                                      説明                                                       |
 > |-----------------------------------------|------------------------------------------------------------------------------------------------------------------------|
 > |           [change](change.md)           | ログオン、COM ポートのマッピング、およびインストールモードのリモートデスクトップセッションホスト (rd セッションホスト) サーバーの設定を変更します。 |
 > |     [change logon](change-logon.md)     |    Rd セッションホストサーバー上のクライアントセッションからのログオンを有効または無効にします。または、現在のログオン状態を表示します。     |
@@ -42,8 +42,8 @@ ms.locfileid: "82722441"
 > |            [query](query.md)            |                      プロセス、セッション、および rd セッションホストサーバーに関する情報を表示します。                      |
 > |    [query process](query-process.md)    |                  Rd セッションホストサーバーで実行されているプロセスに関する情報を表示します。                   |
 > |    [query session](query-session.md)    |                           Rd セッションホストサーバー上のセッションに関する情報を表示します。                            |
-> | [クエリ termserver](query-termserver.md) |                             ネットワーク上のすべての rd セッションホストサーバーの一覧を表示します。                             |
-> |       [ユーザーのクエリ](query-user.md)       |                         Rd セッションホストサーバー上のユーザーセッションに関する情報を表示します。                         |
+> | [query termserver](query-termserver.md) |                             ネットワーク上のすべての rd セッションホストサーバーの一覧を表示します。                             |
+> |       [query user](query-user.md)       |                         Rd セッションホストサーバー上のユーザーセッションに関する情報を表示します。                         |
 > |            [quser](quser.md)            |                         Rd セッションホストサーバー上のユーザーセッションに関する情報を表示します。                         |
 > |          [qwinsta](qwinsta.md)          |                           Rd セッションホストサーバー上のセッションに関する情報を表示します。                            |
 > |          [rdpsign](rdpsign.md)          |                          リモート デスクトップ プロトコル (.rdp) ファイルにデジタル署名することできます。                          |

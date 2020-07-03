@@ -1,6 +1,6 @@
 ---
-title: ftp の削除
-description: Ftp delete コマンドのリファレンストピックで、リモートコンピューター上のファイルを削除します。
+title: ftp delete
+description: Ftp delete コマンドの参照記事。リモートコンピューター上のファイルを削除します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 43ea2ef90f29970a42b0196717ce4d2d3552a32c
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 5e59abdb18104ad23e5e46ffa01b9bfcf015768c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83819953"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933266"
 ---
-# <a name="ftp-delete"></a>ftp の削除
+# <a name="ftp-delete"></a>ftp delete
 
 > 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -42,7 +42,7 @@ delete <remotefile>
 delete test.txt
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

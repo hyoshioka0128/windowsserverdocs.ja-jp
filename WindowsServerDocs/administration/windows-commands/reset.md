@@ -1,6 +1,6 @@
 ---
 title: reset
-description: '* * * * のリファレンストピック'
+description: 参照記事 * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0701324ad1ee94cc645c7519d81fef7357b6a34a
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 8a412eff7bdf432608a999edb4531074ed5e8f26
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722353"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933094"
 ---
 # <a name="reset"></a>reset
 
@@ -32,6 +32,6 @@ reset
 
 -   使用すると、 **リセット** コマンドなどのコマンドの状態を紛失した **追加**, 、**設定**, 、**ロード**, 、または **ライター**します。 **リセット**では、IVssBackupComponent インターフェイスも解放され、非永続的なシャドウコピーは失われます。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

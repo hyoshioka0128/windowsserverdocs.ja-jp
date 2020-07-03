@@ -1,6 +1,6 @@
 ---
-title: ftp 終了
-description: Ftp プロンプトで、リモートサーバーとの ftp セッションを終了し、ftp プロンプトのままにする ftp close コマンドのリファレンストピックです。
+title: ftp close
+description: リモートサーバーとの ftp セッションを終了し、ftp プロンプトで保持する ftp close コマンドの参照記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 12b8ef1dd750da0f40279088be66b8249c0d78f4
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 7123a0aaa26d9b7cc046f0b045e5d1219827d7c9
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83819992"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933280"
 ---
-# <a name="ftp-close"></a>ftp 終了
+# <a name="ftp-close"></a>ftp close
 
 > 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -36,7 +36,7 @@ close
 close
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

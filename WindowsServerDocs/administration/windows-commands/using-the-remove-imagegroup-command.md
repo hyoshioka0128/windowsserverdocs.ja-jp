@@ -1,6 +1,6 @@
 ---
 title: イメージグループの削除
-description: サーバーからイメージグループを削除する remove ImageGroup のリファレンストピックです。
+description: サーバーからイメージグループを削除する、remove ImageGroup のリファレンス記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f814d83a32a8c739e7462bc77251cf3f3f4fe20e
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 3d11a24152250786e600332c5eea0a6ffebc4848
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720353"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933333"
 ---
 # <a name="using-the-remove-imagegroup-command"></a>削除 ImageGroup コマンドを使用してください。
 
@@ -27,7 +27,7 @@ ms.locfileid: "82720353"
 wdsutil [Options] /remove-ImageGroumediaGroup:<Image group name> [/Server:<Server name>]
 ```
 ### <a name="parameters"></a>パラメーター
-|パラメーター|[説明]|
+|パラメーター|説明|
 |-------|--------|
 mediaGroup:<Image group name>|削除するイメージ グループの名前を指定します。|
 |[/Server:<Server name>]|サーバーの名前を指定します。 NetBIOS 名または完全修飾ドメイン名 (FQDN) のいずれかを指定できます。 サーバー名が指定されていない場合は、ローカルのサーバーが使用されます。|
@@ -35,11 +35,11 @@ mediaGroup:<Image group name>|削除するイメージ グループの名前を�
 イメージ グループを削除するには、次のいずれかを入力します。
 ```
 wdsutil /remove-ImageGroumediaGroup:ImageGroup1
-wdsutil /verbose /remove-ImageGroumediaGroup:My Image Group /Server:MyWDSServer 
+wdsutil /verbose /remove-ImageGroumediaGroup:My Image Group /Server:MyWDSServer
 ```
-## <a name="additional-references"></a>その他のリファレンス
-- [コマンド ライン構文の記号](command-line-syntax-key.md)  
-[追加 ImageGroup コマンドを使用してください。](using-the-add-imagegroup-command.md)  
-[Get AllImageGroups コマンドを使用してください。](using-the-get-allimagegroups-command.md)  
-[Get ImageGroup コマンドを使用してください。](using-the-get-imagegroup-command.md)  
-[サブコマンド: セット ImageGroup](subcommand-set-imagegroup.md)  
+## <a name="additional-references"></a>その他の参照情報
+- [コマンドライン構文のキー](command-line-syntax-key.md) 
+[追加 ImageGroup コマンド](using-the-add-imagegroup-command.md) 
+ を使用してください。[Get AllImageGroups コマンド](using-the-get-allimagegroups-command.md) 
+ の使用[Get ImageGroup コマンド](using-the-get-imagegroup-command.md) 
+ の使用[サブコマンド: セット ImageGroup](subcommand-set-imagegroup.md)

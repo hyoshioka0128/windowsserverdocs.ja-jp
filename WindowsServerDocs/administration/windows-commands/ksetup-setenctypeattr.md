@@ -1,6 +1,6 @@
 ---
 title: ksetup setenctypeattr
-description: Ksetup setenctypeattr コマンドのリファレンストピックでは、ドメインの暗号化の種類の属性を設定します。
+description: Ksetup setenctypeattr コマンドの参照記事。ドメインの暗号化の種類の属性を設定します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e76ad3d08505208346ff2a3e100194239187953d
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 8bb8411a795d0167af1fc921fdf1c19febcb8527
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83817362"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933913"
 ---
 # <a name="ksetup-setenctypeattr"></a>ksetup setenctypeattr
 
@@ -65,7 +65,7 @@ ksetup /setenctypeattr corp.contoso.com AES-256-CTS-HMAC-SHA1-96
 ksetup /getenctypeattr corp.contoso.com
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

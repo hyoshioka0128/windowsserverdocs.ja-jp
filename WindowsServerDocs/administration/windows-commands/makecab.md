@@ -1,6 +1,6 @@
 ---
 title: makecab
-description: Makecab コマンドのリファレンストピックでは、既存のファイルをキャビネット (.cab) ファイルにパッケージ化します。
+description: Makecab コマンドの参照記事。既存のファイルをキャビネット (.cab) ファイルにパッケージ化します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 192471e6045a530e9deedec70cc957b9362b3ae7
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: 60203390ab0955e3f8a2c52887b21192d1ec32f2
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354662"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933540"
 ---
 # <a name="makecab"></a>makecab
 
@@ -45,7 +45,7 @@ makecab [/v[<n>]] [/d var=<value> ...] /f <directives_file> [...]
 | /v[`<n>`] | 詳細レベルのデバッグ設定 (0 = なし、..., 3 = フル)。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

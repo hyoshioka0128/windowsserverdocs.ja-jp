@@ -1,6 +1,6 @@
 ---
-title: ftp ディレクトリ
-description: Ftp dir コマンドのリファレンストピック。リモートコンピューター上のディレクトリファイルとサブディレクトリの一覧を表示します。
+title: ftp dir
+description: Ftp dir コマンドの参照記事。リモートコンピューター上のディレクトリファイルとサブディレクトリの一覧を表示します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6a120691964b7303cf3241ffef2f11d81573ba4d
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: b1234b11beb61027a8e56f713f76d2c2bdcc4618
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83819862"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933153"
 ---
-# <a name="ftp-dir"></a>ftp ディレクトリ
+# <a name="ftp-dir"></a>ftp dir
 
 > 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -43,13 +43,13 @@ dir [<remotedirectory>] [<localfile>]
 dir dir1
 ```
 
-リモートコンピューター上の現在のディレクトリの一覧をローカルファイル*dirlist .txt*に保存するには、次のように入力します。
+リモートコンピューター上の現在のディレクトリの一覧をローカルファイル*dirlist.txt*に保存するには、次のように入力します。
 
 ```
 dir . dirlist.txt
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

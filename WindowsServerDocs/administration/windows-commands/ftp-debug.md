@@ -1,6 +1,6 @@
 ---
-title: ftp デバッグ
-description: デバッグモードを切り替える ftp デバッグコマンドのリファレンストピックです。
+title: ftp debug
+description: デバッグモードを切り替える ftp デバッグコマンドの参照記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 45360009a921154ddddb723eaebdcd37729dc835
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 88e23da66c1c02df140ba809396efd64e39281f2
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83819982"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933268"
 ---
-# <a name="ftp-debug"></a>ftp デバッグ
+# <a name="ftp-debug"></a>ftp debug
 
 > 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -36,7 +36,7 @@ debug
 debug
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

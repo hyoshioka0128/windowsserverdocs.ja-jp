@@ -1,6 +1,6 @@
 ---
-title: ftp ユーザー
-description: リモートコンピューターに対してユーザーを指定する、ftp ユーザーコマンドのリファレンストピックです。
+title: ftp user
+description: リモートコンピューターに対してユーザーを指定する、ftp ユーザーコマンドの参照記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f0773084ee718db37d6c79009d66d754283f94c8
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: e6a01cbea0de80bfa78194d5b2d559a894d4ed77
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820262"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932366"
 ---
-# <a name="ftp-user"></a>ftp ユーザー
+# <a name="ftp-user"></a>ftp user
 
 > 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -44,7 +44,7 @@ user <username> [<password>] [<account>]
 user User1 Password1
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

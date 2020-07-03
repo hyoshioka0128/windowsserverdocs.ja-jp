@@ -1,6 +1,6 @@
 ---
 title: Scwcmd
-description: '* * * * のリファレンストピック'
+description: 参照記事 * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9a8c002aa735b188fdd9ad75b0db7dbe06053516
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: bb651c2b527d332f70cd0686a7d57f089bc987ac
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83821162"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932615"
 ---
 # <a name="scwcmd"></a>Scwcmd
 
 > 適用対象: Windows Server 2012 R2、Windows Server 2012
 
-セキュリティ構成ウィザード (SCW) に含まれている Scwcmd コマンドラインツールを使用して、次のタスクを実行できます。
+セキュリティ構成ウィザード (SCW) に含まれている Scwcmd.exe コマンドラインツールを使用して、次のタスクを実行できます。
 -   SCW で生成されたポリシーを使用して 1 つまたは複数のサーバーを構成します。
 -   SCW で生成されたポリシーを使用して 1 つまたは複数のサーバーを分析します。
 -   HTML 形式では、分析結果を表示します。
@@ -38,7 +38,7 @@ scwcmd <command> [<subcommand>]
 
 ### <a name="parameters"></a>パラメーター
 
-|サブコマンド|Description|
+|サブコマンド|説明|
 |----------|-----------|
 |/analyze|コンピューターが、ポリシーに準拠しているかどうかを判断します。</br>参照してください [Scwcmd: 分析](scwcmd-analyze.md) 構文とオプションについてです。|
 |/configure|SCW で生成されたセキュリティ ポリシーをコンピューターに適用されます。</br>参照してください [Scwcmd: 構成](scwcmd-configure.md) 構文とオプションについてです。|
@@ -48,6 +48,6 @@ scwcmd <command> [<subcommand>]
 |/view|指定した .xsl 変換を使用して .xml ファイルを表示します。</br>参照してください [Scwcmd: ビュー](scwcmd-view.md) 構文とオプションについてです。|
 |/?|コマンド プロンプトにヘルプを表示します。|
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

@@ -1,6 +1,6 @@
 ---
-title: wbadmin delete カタログ
-description: Wbadmin delete catalog のリファレンストピック。ローカルコンピューターに格納されているバックアップカタログを削除します。
+title: wbadmin delete catalog
+description: Wbadmin delete catalog の参照記事。ローカルコンピューターに格納されているバックアップカタログを削除します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4903c7ad2996a9f69d20f4711364669b87366527
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: ec2c35fc8a279c604f76c71dc6ed9aeb50a0ffd7
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83821442"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933723"
 ---
-# <a name="wbadmin-delete-catalog"></a>wbadmin delete カタログ
+# <a name="wbadmin-delete-catalog"></a>wbadmin delete catalog
 
 
 
@@ -41,7 +41,7 @@ wbadmin delete catalog
 
 コンピューターのバックアップ カタログを削除した場合の Windows Server バックアップ スナップインを使用してそのコンピューターで作成されたバックアップにアクセスすることができなきます。 この場合、別のバックアップ場所にアクセスする場合は、使用 **wbadmin restore catalog** をその場所からカタログのバックアップを復元します。 バックアップ カタログを削除した後は、新しいバックアップを作成する必要があります。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 -   [Wbadmin](wbadmin.md)

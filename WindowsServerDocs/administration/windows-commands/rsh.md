@@ -1,6 +1,6 @@
 ---
 title: rsh
-description: '* * * * のリファレンストピック'
+description: 参照記事 * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2c0c61ae26e6cec9beb6f7e54e84b81577cbd992
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: 5a94d6c53697247048022f3745d09dd3ee1443db
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222082"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932883"
 ---
 # <a name="rsh"></a>rsh
 

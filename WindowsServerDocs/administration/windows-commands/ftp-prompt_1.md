@@ -1,6 +1,6 @@
 ---
-title: ftp プロンプト
-description: プロンプトモードのオンとオフを切り替える ftp prompt コマンドのリファレンストピックです。
+title: ftp prompt
+description: プロンプトモードのオンとオフを切り替える ftp prompt コマンドのリファレンス記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 57f0e1eead36665c19845944bf22325b1aecebbb
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: e0859d3989a054d03421f08f5df7823a690dc85c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820382"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933114"
 ---
-# <a name="ftp-prompt"></a>ftp プロンプト
+# <a name="ftp-prompt"></a>ftp prompt
 
 > 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -39,7 +39,7 @@ prompt
 prompt
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

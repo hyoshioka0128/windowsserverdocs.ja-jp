@@ -1,6 +1,6 @@
 ---
 title: サーバーを無効にする
-description: Windows 展開サービスサーバーのすべてのサービスを無効にする、サーバーを無効にするためのリファレンストピックです。
+description: Windows 展開サービスサーバーのすべてのサービスを無効にする無効化サーバーのリファレンス記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5df5c7e2f18cdda2aeeea22c209881077c681f03
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 30b2593a9d2f83c70467fb58766e14b040931d5f
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720971"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933948"
 ---
 # <a name="disable-server"></a>サーバーを無効にする
 
@@ -28,9 +28,9 @@ WDSUTIL [Options] /Disable-Server [/Server:<Server name>]
 
 ### <a name="parameters"></a>パラメーター
 
-|パラメーター|[説明]|
+|パラメーター|説明|
 |---------|-----------|
-|[/Server:\<サーバー名>]|サーバーの名前を指定します。 NetBIOS 名または完全修飾ドメイン名 (FQDN) のいずれかを指定できます。 サーバー名が指定されていない場合は、ローカルのサーバーが使用されます。|
+|[/Server:\<Server name>]|サーバーの名前を指定します。 NetBIOS 名または完全修飾ドメイン名 (FQDN) のいずれかを指定できます。 サーバー名が指定されていない場合は、ローカルのサーバーが使用されます。|
 
 ## <a name="examples"></a>例
 
@@ -40,7 +40,7 @@ WDSUTIL /Disable-Server
 WDSUTIL /Verbose /Disable-Server /Server:MyWDSServer
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

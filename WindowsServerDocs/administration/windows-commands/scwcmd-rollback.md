@@ -1,6 +1,6 @@
 ---
 title: Scwcmd ロールバック
-description: '* * * * のリファレンストピック'
+description: 参照記事 * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 288c5bb14602e895648cfdc1535b734a823b7233
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: b329791b16e333e38669258eeeedfa8d65f334db
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820962"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932657"
 ---
 # <a name="scwcmd-rollback"></a>Scwcmd: ロールバック
 
@@ -32,9 +32,9 @@ scwcmd rollback /m:<ComputerName> [/u:<UserName>] [/pw:<Password>]
 
 |パラメーター|説明|
 |---------|-----------|
-|/m: \< ComputerName>|NetBIOS 名、DNS 名、またはロールバック操作が実行するコンピューターの IP アドレスを指定します。|
-|/u: \< ユーザー名>|リモートのロールバックを実行するときに使用する代替のユーザー アカウントを指定します。 既定値は、ユーザーには、ログオンしています。|
-|/pw: \< パスワード>|リモートのロールバックを実行するときに使用する、代替のユーザー資格情報を指定します。 既定値は、ユーザーには、ログオンしています。|
+|/m\<ComputerName>|NetBIOS 名、DNS 名、またはロールバック操作が実行するコンピューターの IP アドレスを指定します。|
+|/u\<UserName>|リモートのロールバックを実行するときに使用する代替のユーザー アカウントを指定します。 既定値は、ユーザーには、ログオンしています。|
+|pw\<Password>|リモートのロールバックを実行するときに使用する、代替のユーザー資格情報を指定します。 既定値は、ユーザーには、ログオンしています。|
 |/?|コマンド プロンプトにヘルプを表示します。|
 
 ## <a name="remarks"></a>注釈
@@ -48,6 +48,6 @@ Scwcmd.exe は Windows Server 2008 R2、Windows Server 2008 または Windows Se
 scwcmd rollback /m:172.16.0.0
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

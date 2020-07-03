@@ -1,6 +1,6 @@
 ---
 title: 取得-ImageGroup
-description: イメージグループとその中のイメージに関する情報を取得する、get ImageGroup のリファレンストピックです。
+description: イメージグループとその中のイメージに関する情報を取得する、get ImageGroup の参照記事。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 30a87085cb935f95a209ffdd78ecf2b9fb45dc15
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 32ca965981b02bd951a0cc84160a2c5ea0643ae0
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719898"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932208"
 ---
 # <a name="get-imagegroup"></a>取得-ImageGroup
 
@@ -27,7 +27,7 @@ ms.locfileid: "82719898"
 wdsutil [Options] /Get-ImageGroumediaGroup:<Image group name> [/Server:<Server name>] [/detailed]
 ```
 ### <a name="parameters"></a>パラメーター
-|パラメーター|[説明]|
+|パラメーター|説明|
 |-------|--------|
 mediaGroup:<Image group name>|イメージグループの名前を指定します。|
 |[/Server:<Server name>]|サーバーの名前を指定します。 NetBIOS 名または完全修飾ドメイン名 (FQDN) のいずれかを指定できます。 サーバー名が指定されていない場合は、ローカルのサーバーが使用されます。|
@@ -41,9 +41,9 @@ wdsutil /Get-ImageGroumediaGroup:ImageGroup1
 ```
 wdsutil /verbose /Get-ImageGroumediaGroup:ImageGroup1 /Server:MyWDSServer /detailed
 ```
-## <a name="additional-references"></a>その他のリファレンス
-- [コマンドライン構文](command-line-syntax-key.md)
-[のキー追加 imagegroup コマンド](using-the-add-imagegroup-command.md)
-を使用して[get allimagegroups コマンド](using-the-get-allimagegroups-command.md)
-を使用して[削除 imagegroup コマンド](using-the-remove-imagegroup-command.md)
-を使用して[サブコマンド: セット imagegroup](subcommand-set-imagegroup.md)
+## <a name="additional-references"></a>その他の参照情報
+- [コマンドライン構文のキー](command-line-syntax-key.md) 
+[追加 ImageGroup コマンド](using-the-add-imagegroup-command.md) 
+ を使用してください。[Get AllImageGroups コマンド](using-the-get-allimagegroups-command.md) 
+ の使用[削除 ImageGroup コマンド](using-the-remove-imagegroup-command.md) 
+ を使用してください。[サブコマンド: セット ImageGroup](subcommand-set-imagegroup.md)

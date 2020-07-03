@@ -1,6 +1,6 @@
 ---
 title: 無効化 (disable)
-description: Windows 展開サービスのすべてのサービスを無効にする、disable のリファレンストピックです。
+description: Windows 展開サービスのすべてのサービスを無効にする、disable のリファレンス記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e4523c75af4f75488f6dc0fad5dbb4ebc2442f7d
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 54c8fdd3014ecd7a11039ecdb7771b0517e756e1
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720978"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933967"
 ---
 # <a name="disable"></a>無効化 (disable)
 
@@ -23,7 +23,7 @@ ms.locfileid: "82720978"
 Windows 展開サービスのすべてのサービスを無効にします。
 
 ## <a name="subcommands"></a>サブコマンド
-|サブコマンド|[説明]|
+|サブコマンド|説明|
 |-------|--------|
 |[無効にするサーバーのコマンドを使用します。](using-the-disable-server-command.md)|指定されたサーバー (展開サーバー) のすべての Windows 展開サービスのサービスを無効にします。|
 |[無効にする TransportServer コマンドを使用してください。](using-the-disable-transportserver-command.md)|指定されたトランスポート サーバーのすべての Windows 展開サービスのサービスを無効にします。|

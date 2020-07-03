@@ -1,6 +1,6 @@
 ---
 title: 削除 DriverPackage
-description: ドライバーパッケージをサーバーから削除する、削除 DriverPackage のリファレンストピックです。
+description: ドライバーパッケージをサーバーから削除する削除 DriverPackage のリファレンス記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 623fa7bb22c4aa4e545156cf0b214a4042fb90a3
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: c39f34d1556e6ad0f61f3f1cc3cf0aac36b18ee5
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720384"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933453"
 ---
 # <a name="remove-driverpackage"></a>削除 DriverPackage
 
-> 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012 
+> 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 サーバーからドライバー パッケージを削除します。
 
@@ -28,7 +28,7 @@ wdsutil /remove-DriverPackage [/Server:<Server name>] {/DriverPackage:<Package N
 ```
 ### <a name="parameters"></a>パラメーター
 
-|        パラメーター        |                                                                            [説明]                                                                             |
+|        パラメーター        |                                                                            説明                                                                             |
 |-------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [/Server:<Server name>] |              サーバーの名前を指定します。 これには、NetBIOS 名または FQDN を指定できます。 サーバー名が指定されていない場合は、ローカル サーバーが使用されます。              |
 | [/DriverPackage:<Name>] |                                                        削除するドライバー パッケージの名前を指定します。                                                         |
@@ -42,6 +42,6 @@ wdsutil /remove-DriverPackage /PackageId:{4D36E972-E325-11CE-Bfc1-08002BE10318}
 ```
 wdsutil /remove-DriverPackage /Server:MyWdsServer /DriverPackage:MyDriverPackage
 ```
-## <a name="additional-references"></a>その他のリファレンス
-- [コマンドライン構文のキー](command-line-syntax-key.md)
-[削除 driverpackages コマンドを使用して](using-the-remove-driverpackages-command.md)
+## <a name="additional-references"></a>その他の参照情報
+- [コマンドライン構文のキー](command-line-syntax-key.md) 
+[削除 DriverPackages コマンドを使用して](using-the-remove-driverpackages-command.md)ください。

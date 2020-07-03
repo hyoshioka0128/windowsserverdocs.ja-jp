@@ -1,6 +1,6 @@
 ---
 title: 削除-AutoaddDevices
-description: 自動追加データベースから保留中、拒否、または承認されているコンピューターを削除する AutoaddDevices の参照トピック。
+description: 自動追加データベースから保留中、拒否、または承認されたコンピューターを削除する、AutoaddDevices の参照記事。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 90b5b24b68b2cfe3d387cb02b3715b70edba4300
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 60acfbb5ec1bc3f9268044eb0dbcc9ea19ff8ab9
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720990"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933976"
 ---
 # <a name="delete-autoadddevices"></a>削除-AutoaddDevices
 
@@ -27,7 +27,7 @@ ms.locfileid: "82720990"
 wdsutil /delete-AutoaddDevices [/Server:<Server name>] /Devicetype:{PendingDevices | RejectedDevices |ApprovedDevices}
 ```
 ### <a name="parameters"></a>パラメーター
-|パラメーター|[説明]|
+|パラメーター|説明|
 |-------|--------|
 |[/Server:<Server name>]|サーバーの名前を指定します。 NetBIOS 名または完全修飾ドメイン名 (FQDN) のいずれかを指定できます。 サーバー名が指定されていない場合は、ローカルのサーバーが使用されます。|
 |/Devicetype: {PendingDevices &#124; RejectedDevices &#124;ApprovedDevices}|データベースから削除するコンピューターの種類を指定します。 次の 3 種類のいずれかになります。<p>-   **Pendingdevices**は、状態が [保留中] になっているデータベース内のすべてのコンピューターを返します。<br />-   **RejectedDevices**は、データベース内の、状態が拒否のすべてのコンピューターを返します。<br />-   **ApprovedDevices**は、状態が承認済みのすべてのコンピューターを返します。|
@@ -40,8 +40,8 @@ wdsutil /delete-AutoaddDevices /Devicetype:RejectedDevices
 ```
 wdsutil /verbose /delete-AutoaddDevices /Server:MyWDSServer /Devicetype:ApprovedDevices
 ```
-## <a name="additional-references"></a>その他のリファレンス
-- [コマンドライン構文のキー](command-line-syntax-key.md)
-[承認-autoadddevices](using-the-approve-autoadddevices-command.md)
-コマンドを使用して[get autoadddevices](using-the-get-autoadddevices-command.md)
-コマンドを使用して[拒否 autoadddevices コマンド](using-the-reject-autoadddevices-command.md)を使用して
+## <a name="additional-references"></a>その他の参照情報
+- [コマンドライン構文のキー](command-line-syntax-key.md) 
+[承認-AutoaddDevices コマンド](using-the-approve-autoadddevices-command.md) 
+ の使用[Get AutoaddDevices コマンド](using-the-get-autoadddevices-command.md) 
+ の使用[拒否 AutoaddDevices コマンドの使用](using-the-reject-autoadddevices-command.md)

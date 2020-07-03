@@ -1,6 +1,6 @@
 ---
-title: logman 更新 cfg
-description: 既存の構成データコレクターのプロパティを更新する logman update cfg コマンドのリファレンストピックです。
+title: logman update cfg
+description: 既存の構成データコレクターのプロパティを更新する logman update cfg コマンドの参照記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: af4d61372aa5b10d5bb2a5c93e16df391eadfd2f
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: 6e2d50504d8d4b9a92d36e4279a10526ddbd7877
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222784"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933891"
 ---
-# <a name="logman-update-cfg"></a>logman 更新 cfg
+# <a name="logman-update-cfg"></a>logman update cfg
 
 > 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -57,7 +57,7 @@ logman update cfg <[-n] <name>> [options]
 | -ftc`<path [path [...]]>` | 収集するファイルの完全パスを指定します。 |
 | /? | 状況依存のヘルプを表示します。 |
 
-#### <a name="remarks"></a>解説
+#### <a name="remarks"></a>注釈
 
 - [-] が一覧表示されている場合は、余分なハイフン (-) を追加すると、オプションが無効になります。
 
@@ -69,7 +69,7 @@ logman update cfg <[-n] <name>> [options]
 logman update cfg cfg_log -reg HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\Currentverion\
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

@@ -1,6 +1,6 @@
 ---
-title: logman 更新アラート
-description: 既存のアラートデータコレクターのプロパティを更新する logman 更新アラートコマンドのリファレンストピックです。
+title: logman update alert
+description: 既存のアラートデータコレクターのプロパティを更新する logman 更新アラートコマンドの参照記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 49d07744df911b054c9c9235b297090e8c39019b
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: 84e198ef528d1f9192662ed89ad39b6884fab742
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222796"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932276"
 ---
-# <a name="logman-update-alert"></a>logman 更新アラート
+# <a name="logman-update-alert"></a>logman update alert
 
 > 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -58,7 +58,7 @@ logman update alert <[-n] <name>> [options]
 | -[-] targ`<argument>` | -Tn を使用して指定されたタスクで使用されるタスク引数を指定します。 |
 | /? | 状況依存のヘルプを表示します。 |
 
-#### <a name="remarks"></a>解説
+#### <a name="remarks"></a>注釈
 
 - [-] が一覧表示されている場合は、余分なハイフン (-) を追加すると、オプションが無効になります。
 
@@ -70,7 +70,7 @@ logman update alert <[-n] <name>> [options]
 logman update alert new_alert -th \Processor(_Total)\% Processor time>40
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

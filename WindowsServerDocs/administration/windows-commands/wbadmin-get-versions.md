@@ -1,6 +1,6 @@
 ---
-title: wbadmin get のバージョン
-description: Wbadmin get バージョンのリファレンストピックでは、ローカルコンピューターまたは別のコンピューターに格納されている利用可能なバックアップの詳細を一覧表示します。
+title: wbadmin get versions
+description: Wbadmin get バージョンの参照記事。ローカルコンピューターまたは別のコンピューターに格納されている利用可能なバックアップの詳細が表示されます。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1eabc053e5cb1bdd517cfb02a13e955707ffacf6
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 6729189bb15fd3aeb10172288504e9809b082edb
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820512"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932324"
 ---
-# <a name="wbadmin-get-versions"></a>wbadmin get のバージョン
+# <a name="wbadmin-get-versions"></a>wbadmin get versions
 
 
 
@@ -54,7 +54,7 @@ wbadmin get versions -backupTarget:h:
 wbadmin get versions -backupTarget:\\servername\share -machine:server01
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 -   [Wbadmin](wbadmin.md)

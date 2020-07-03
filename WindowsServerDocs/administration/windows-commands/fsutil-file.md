@@ -1,6 +1,6 @@
 ---
 title: fsutil file
-description: ユーザー名を指定してファイルを検索する、ファイルに割り当てられた範囲を照会する、ファイルの短い名前を設定する、ファイルの有効なデータ長を設定する、ファイルのデータをゼロに設定する、または新しいファイルを作成する、fsutil file コマンドのリファレンストピックです。
+description: ユーザー名でファイルを検索する、ファイルに割り当てられた範囲を照会する、ファイルの短い名前を設定する、ファイルの有効なデータ長を設定する、ファイルのデータをゼロに設定する、または新しいファイルを作成する、fsutil file コマンドの参照記事。
 ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
@@ -9,12 +9,12 @@ ms.technology: storage
 ms.assetid: 9f3dc104-dd69-4b03-b824-a29896780164
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: e9be8f6d21b89d1017371b9697e1227122826a7d
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 6909d381ef5dfebb343e70ad117a1a5b400481fa
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83435877"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932297"
 ---
 # <a name="fsutil-file"></a>fsutil file
 
@@ -72,7 +72,7 @@ fsutil file [setzerodata] offset=<offset> length=<length> <filename>
 | `<datalength>` | ファイルの長さをバイト単位で指定します。 |
 | データの setゼロ | ファイルの範囲 (*オフセット*と*長さ*で指定) をゼロに設定します。これにより、ファイルが空になります。 ファイルがスパースファイルの場合は、基になるアロケーションユニットがデコミットされます。 |
 
-#### <a name="remarks"></a>解説
+#### <a name="remarks"></a>注釈
 
 - NTFS には、ファイルの長さに関する重要な概念が2つあります。ファイルの終端 (EOF) マーカーと有効なデータ長 (VDL) です。 EOF は、ファイルの実際の長さを示します。 VDL は、ディスク上の有効なデータの長さを識別します。 VDL と EOF の間の読み取りでは、C2 オブジェクト再利用要件を維持するために、自動的に0が返されます。
 
@@ -116,13 +116,13 @@ fsutil file queryextents C:\Temp\sample.txt
 fsutil file seteof C:\testfile.txt 1000
 ```
 
-ファイルの短い名前を設定するには、ドライブ C の*longfilename .txt*に*次のよう*に入力します。
+ファイルの短い名前を設定するには、ドライブ C で*longfile.txt*に*longfilename.txt* 、次のように入力します。
 
 ```
 fsutil file setshortname c:\longfilename.txt longfile.txt
 ```
 
-NTFS ボリューム上の*testfile*という名前のファイルの有効なデータ長を*4096 バイト*に設定するには、次のように入力します。
+NTFS ボリューム上の*testfile.txt*という名前のファイルの有効なデータ長を*4096 バイト*に設定するには、次のように入力します。
 
 ```
 fsutil file setvaliddata c:\testfile.txt 4096
@@ -134,7 +134,7 @@ NTFS ボリューム上のファイルの範囲をゼロに設定して空にす
 fsutil file setzerodata offset=100 length=150 c:\temp\sample.txt
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

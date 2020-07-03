@@ -1,6 +1,6 @@
 ---
 title: copy
-description: イメージまたはドライバーグループをコピーする copy のリファレンストピックです。
+description: イメージまたはドライバーグループをコピーするコピーの参照記事。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7c6e5d28f4af5f3e5e4d8496f5abba1b441e9ec3
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 3ab26daa41ab1378105fb1787988093f8114ade2
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721020"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934109"
 ---
 # <a name="copy"></a>copy
 
@@ -23,7 +23,7 @@ ms.locfileid: "82721020"
 イメージ、ドライバー グループをコピーします。
 
 ## <a name="subcommands"></a>サブコマンド
-|サブコマンド|[説明]|
+|サブコマンド|説明|
 |-------|--------|
 |[コピー イメージのコマンドを使用してください。](using-the-copy-image-command.md)|同じイメージ グループ内にあるイメージをコピーします。|
 |[コピー DriverGroup コマンドを使用してください。](using-the-copy-drivergroup-command.md)|サーバー上の既存のドライバー グループにコピーします。|

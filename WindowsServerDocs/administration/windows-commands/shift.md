@@ -1,6 +1,6 @@
 ---
 title: shift
-description: バッチファイル内のバッチパラメーターの位置を変更する shift のリファレンストピックです。
+description: バッチファイル内のバッチパラメーターの位置を変更する、shift のリファレンス記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 870bda19de3426fd7007020efb2f3db39bf654c8
-ms.sourcegitcommit: 7116460855701eed4e09d615693efa4fffc40006
+ms.openlocfilehash: c72f1f2390a1adaa993be2caa7954d72dede51e9
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83433166"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932578"
 ---
 # <a name="shift"></a>shift
 
@@ -32,10 +32,10 @@ shift [/n <N>]
 
 |パラメーター|説明|
 |---------|-----------|
-|/n \< n>|移行を開始することを指定、 *N*番目の引数、 *N* は 8 ~ 0 の値。 既定で有効になっているコマンド拡張機能が必要です。|
+|ms-dos\<N>|移行を開始することを指定、 *N*番目の引数、 *N* は 8 ~ 0 の値。 既定で有効になっているコマンド拡張機能が必要です。|
 |/?|コマンド プロンプトにヘルプを表示します。|
 
-## <a name="remarks"></a>解説
+## <a name="remarks"></a>注釈
 
 - **Shift キーを押し** コマンド バッチのパラメーターの値を変更する **%0** を通じて **%9** 前に各パラメーターをコピーして: の値 **%1** にコピー **%0**, の値 **%2** にコピー **%1**, 、という具合です。 これは、パラメーターの数にかかわらず、同じ操作を実行するバッチ ファイルを作成するため便利です。
 - コマンド拡張機能が有効になっている場合、 **shift** コマンドをサポートする、 **/n** コマンド ライン オプションです。 **/N** n 番目の引数で移行を開始するオプションが指定場所 **N** は 8 ~ 0 の値。 など **SHIFT/2** 移動することに **%3** に **%2**, 、**%4** に **%3**, のままにし、 **%0** と **%1** 影響はありません。 既定では、コマンド拡張機能が有効にします。
@@ -47,11 +47,11 @@ shift [/n <N>]
 
 Mycopy.bat をというサンプル バッチ ファイルの次の行を使用する方法をデモンストレーションする **shift** バッチ パラメーターの任意の数にします。 この例では、Mycopy.bat は、特定のディレクトリにファイルの一覧をコピーします。 バッチ パラメーターは、ディレクトリとファイル名の引数によって表されます。
 ```
-@echo off 
+@echo off
 rem MYCOPY.BAT copies any number of files
 rem to a directory.
 rem The command uses the following syntax:
-rem mycopy dir file1 file2 ... 
+rem mycopy dir file1 file2 ...
 set todir=%1
 :getfile
 shift
@@ -63,6 +63,6 @@ set todir=
 echo All done
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

@@ -1,6 +1,6 @@
 ---
 title: コピー-イメージ
-description: コピーイメージのリファレンストピック。同じイメージグループ内のイメージをコピーします。
+description: コピーイメージの参照記事。同じイメージグループ内のイメージをコピーします。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b3ffd590682ec36f78d3cbd53fd67fe3b5981e4c
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 04af31680a99c5da60b721ad5dc31cbd3851538d
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720997"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933989"
 ---
 # <a name="copy-image"></a>コピー-イメージ
 
@@ -34,7 +34,7 @@ wdsutil [Options] /copy-Imagmedia:<Image name> [/Server:<Server name>]
          [/Description:<Description>]
 ```
 ### <a name="parameters"></a>パラメーター
-|パラメーター|[説明]|
+|パラメーター|説明|
 |-------|--------|
 用紙<Image name>|コピーするイメージの名前を指定します。|
 |[/Server:<Server name>]|サーバーの名前を指定します。 NetBIOS 名または完全修飾ドメイン名 (FQDN) のいずれかを指定できます。 サーバー名が指定されていない場合は、ローカルのサーバーが使用されます。|
@@ -49,14 +49,14 @@ wdsutil /copy-Imagmedia:Windows Vista with Officemediatype:Install /DestinationI
 ```
 指定されたイメージのコピーを作成するには、指定した設定を適用し、名前を WindowsVista.wim、型のコピー。
 ```
-wdsutil /verbose /Progress /copy-Imagmedia:Windows Vista with Office /Server:MyWDSServemediatype:InstalmediaGroup:ImageGroup1 
+wdsutil /verbose /Progress /copy-Imagmedia:Windows Vista with Office /Server:MyWDSServemediatype:InstalmediaGroup:ImageGroup1
 /Filename:install.wim /DestinationImage /Name:copy of Windows Vista with Office /Filename:WindowsVista.wim /Description:This is a copy of the original Windows image with Office installed
 ```
-## <a name="additional-references"></a>その他のリファレンス
-- [コマンドライン構文](command-line-syntax-key.md)
-[のキー追加イメージ](using-the-add-image-command.md)
-のコマンドを使用して[エクスポートイメージ](using-the-export-image-command.md)
-のコマンドを使用して[get](using-the-get-image-command.md)
-イメージのコマンドを使用して削除イメージのコマンドを使用して[削除](using-the-remove-image-command.md)
-[イメージ](using-the-replace-image-command.md)
-のコマンドを使用して[サブコマンド:](subcommand-set-image.md)イメージを設定する
+## <a name="additional-references"></a>その他の参照情報
+- [コマンドライン構文のキー](command-line-syntax-key.md) 
+[[イメージの追加] コマンド](using-the-add-image-command.md) 
+ の使用[Export-Image コマンド](using-the-export-image-command.md) 
+ の使用[Get イメージコマンド](using-the-get-image-command.md) 
+ の使用[イメージの削除コマンド](using-the-remove-image-command.md) 
+ を使用する[置換イメージのコマンド](using-the-replace-image-command.md) 
+ を使用する[サブコマンド: イメージの設定](subcommand-set-image.md)

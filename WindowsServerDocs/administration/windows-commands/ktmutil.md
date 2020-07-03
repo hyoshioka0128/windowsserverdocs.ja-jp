@@ -1,6 +1,6 @@
 ---
 title: ktmutil
-description: カーネルトランザクションマネージャーユーティリティを起動する ktmutil コマンドのリファレンストピックです。
+description: カーネルトランザクションマネージャーユーティリティを起動する ktmutil コマンドの参照記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9ca26d2289e32d8eb618ab7cc9393678a16e318b
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: aa4cbd503894cd99910f401ec026022a9ba1453c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83817312"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933883"
 ---
 # <a name="ktmutil"></a>ktmutil
 
@@ -42,6 +42,6 @@ GUID 311a9209-03f4-11dc-918f-00188b8f707b を持つ Indoubt トランザクシ�
 ktmutil force commit {311a9209-03f4-11dc-918f-00188b8f707b}
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

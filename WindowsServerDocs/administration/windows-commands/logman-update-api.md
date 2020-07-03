@@ -1,6 +1,6 @@
 ---
-title: logman 更新 api
-description: 既存の API 追跡データコレクターのプロパティを更新する logman 更新 api コマンドのリファレンストピックです。
+title: logman update api
+description: 既存の API 追跡データコレクターのプロパティを更新する logman 更新 api コマンドのリファレンス記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0087edc7cd96bf2bf7611d9a3975d97384c02949
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: 40575772e5f82474c4afbd4809773f47d7e4e075
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222776"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933873"
 ---
-# <a name="logman-update-api"></a>logman 更新 api
+# <a name="logman-update-api"></a>logman update api
 
 > 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -59,7 +59,7 @@ logman update api <[-n] <name>> [options]
 | -exe`<value>` | API トレースの実行可能ファイルへの完全パスを指定します。 |
 | /? | 状況依存のヘルプを表示します。 |
 
-#### <a name="remarks"></a>解説
+#### <a name="remarks"></a>注釈
 
 - [-] が一覧表示されている場合は、余分なハイフン (-) を追加すると、オプションが無効になります。
 
@@ -71,7 +71,7 @@ logman update api <[-n] <name>> [options]
 logman update api trace_notepad -exe c:\windows\notepad.exe -exapis kernel32.dll!TlsGetValue
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

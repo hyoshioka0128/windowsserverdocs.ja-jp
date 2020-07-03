@@ -1,6 +1,6 @@
 ---
 title: shrink
-description: DiskPart の圧縮に関するリファレンストピックでは、指定した量だけ選択したボリュームのサイズを縮小します。
+description: DiskPart 圧縮の参照記事。指定した量だけ選択したボリュームのサイズを縮小します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 357a2320bf8b26130c9aa148d513edff6f1e85db
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 69405e7eda6b7565e9c8effe6639b6ba4dc9e4c2
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721798"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932592"
 ---
 # <a name="shrink"></a>shrink
 
@@ -29,7 +29,7 @@ shrink querymax [noerr]
 ```
 ### <a name="parameters"></a>パラメーター
 
-|  パラメーター  |                                                                                             [説明]                                                                                              |
+|  パラメーター  |                                                                                             説明                                                                                              |
 |-------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 必要な =<n> |                                                     メガバイト (MB)、ボリュームのサイズを小さく領域の必要な量を指定します。                                                     |
 | 最小 =<n> |                                                           (Mb) ではボリュームのサイズを小さくには、領域の最小容量を指定します。                                                           |
@@ -37,7 +37,7 @@ shrink querymax [noerr]
 |   nowait    |                                                       圧縮処理がまだ進行中のときに、直ちにコマンドを返します。                                                        |
 |    noerr    | スクリプトの場合のみ。 エラーが発生しても、エラーが発生しなかったかのように DiskPart はコマンドの処理を続けます。 このパラメーターは、エラー発生すると、DiskPart はエラー コードを生成して終了します。 |
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>注釈
 - NTFS ファイル システムでフォーマットされている場合またはファイル システムがあるない場合にのみ、ボリュームのサイズを小さくことができます。
 - このコマンドは、ベーシック ボリュームとシンプル ボリュームまたはスパン ダイナミック ボリュームは機能します。
 - 目的の量が指定されていない場合、ボリュームは最小値 (指定されている場合) によって縮小されます。

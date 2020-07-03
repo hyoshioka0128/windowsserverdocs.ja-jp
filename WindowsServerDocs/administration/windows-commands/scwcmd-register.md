@@ -1,6 +1,6 @@
 ---
 title: Scwcmd レジスタ
-description: '* * * * のリファレンストピック'
+description: 参照記事 * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c7540bb4ba83ebffa12f1f6d9b48f0f9ff787d68
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 7917cfe8f71673ad45d8d3e32d29798757367c2a
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820972"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932648"
 ---
 # <a name="scwcmd-register"></a>Scwcmd: 登録
 
@@ -32,9 +32,9 @@ scwcmd register /kbname:<MyApp> [/kbfile:<kb.xml>] [/kb:<path>] [/d]
 
 |パラメーター|説明|
 |---------|-----------|
-|/kb 名: \< MyApp>|セキュリティ構成データベースの拡張機能の登録を使用する名前を指定します。 このパラメーターを指定する必要があります。|
-|/kb ファイル: \< Kb .xml>|拡張またはカスタマイズの基本のセキュリティの構成データベースに使用されるセキュリティの構成データベース ファイルのパスとファイル名を指定します。 セキュリティの構成データベース ファイルが SCW のスキーマに準拠したことを確認するには、%windir%\security\KBRegistrationInfo.xsd スキーマ定義ファイルを使用します。 しない限り、このオプションを指定する必要があります、 **/d** パラメーターを指定します。|
-|/kb: \< パス>|更新するセキュリティの構成データベース ファイルを含むディレクトリへのパスを指定します。 このオプションが指定されていない場合は、%windir%\security\msscw\kbs が使用されます。|
+|/kbname:\<MyApp>|セキュリティ構成データベースの拡張機能の登録を使用する名前を指定します。 このパラメーターを指定する必要があります。|
+|/kbfile\<Kb.xml>|拡張またはカスタマイズの基本のセキュリティの構成データベースに使用されるセキュリティの構成データベース ファイルのパスとファイル名を指定します。 セキュリティの構成データベース ファイルが SCW のスキーマに準拠したことを確認するには、%windir%\security\KBRegistrationInfo.xsd スキーマ定義ファイルを使用します。 しない限り、このオプションを指定する必要があります、 **/d** パラメーターを指定します。|
+|/kb\<Path>|更新するセキュリティの構成データベース ファイルを含むディレクトリへのパスを指定します。 このオプションが指定されていない場合は、%windir%\security\msscw\kbs が使用されます。|
 |/d|セキュリティの構成データベースからセキュリティの構成データベースの拡張機能の登録を解除します。 登録を解除する拡張機能は、/kbname パラメーターを指定します。 ( **/Kb ファイル**パラメーターを指定しないでください)。拡張機能の登録を解除するセキュリティ構成データベースは、 **/kb**パラメーターによって指定されます。|
 |/?|コマンド プロンプトにヘルプを表示します。|
 
@@ -44,7 +44,7 @@ Scwcmd.exe は Windows Server 2008 R2、Windows Server 2008 または Windows Se
 
 ## <a name="examples"></a>例
 
-SCWKBForMyApp という名前のセキュリティ構成データベースファイルを、次の場所にある MyApp という名前で登録するには \\ \\ 、次のように入力します。
+SCWKBForMyApp.xml という名前のセキュリティ構成データベースファイルを、次の場所にある MyApp という名前で登録するには \\ \\ 、次のように入力します。
 ```
 scwcmd register /kbfile:d:\SCWKBForMyApp.xml /kbname:MyApp /kb:\\kbserver\kb
 ```
@@ -53,6 +53,6 @@ Kb にあるセキュリティ構成データベース MyApp の登録を解除�
 scwcmd register /d /kbname:MyApp /kb:\\kbserver\kb
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

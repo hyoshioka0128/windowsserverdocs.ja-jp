@@ -1,6 +1,6 @@
 ---
 title: risetup
-description: '* * * * のリファレンストピック'
+description: 参照記事 * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 38334bb757339d06fb5ff67a11c6a31800e66ffb
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 30e040f80ea729629ac5e8c6f472ec9e57cd4579
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722308"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932909"
 ---
 # <a name="risetup"></a>risetup
 

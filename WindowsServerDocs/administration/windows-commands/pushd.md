@@ -1,6 +1,6 @@
 ---
 title: pushd
-description: Pushd コマンドの参照トピック。 popd コマンドで使用する現在のディレクトリを格納し、指定されたディレクトリに変更します。
+description: Pushd コマンドの参照記事。 popd コマンドで使用する現在のディレクトリを格納し、指定されたディレクトリに変更します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ca15d4279c65164c385ce3dce57d0420ad5aace3
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 871834ae1ac29eb53be982831e7ede93d9d309cf
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472137"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933750"
 ---
 # <a name="pushd"></a>pushd
 
@@ -57,7 +57,7 @@ cls
 echo All text files deleted in the %1 directory
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

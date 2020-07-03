@@ -1,6 +1,6 @@
 ---
-title: ftp ベル
-description: Ftp ベルコマンドのリファレンストピックでは、各ファイル転送コマンドの完了後に可聴音が発生するように切り替えます。
+title: ftp bell
+description: Ftp ベルコマンドの参照記事。各ファイル転送コマンドの完了後に可聴音が発生するように切り替えます。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c445e929c9d3adad2bfa620b522e4befbb7c1cff
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 9481911f9de9eb62baea492964987908daa94ce1
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820022"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933303"
 ---
-# <a name="ftp-bell"></a>ftp ベル
+# <a name="ftp-bell"></a>ftp bell
 
 > 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -36,7 +36,7 @@ bell
 bell
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

@@ -1,6 +1,6 @@
 ---
 title: wbadmin delete systemstatebackup
-description: 指定したシステム状態のバックアップを削除する wbadmin delete systemstatebackup のリファレンストピックです。
+description: 指定したシステム状態のバックアップを削除する wbadmin delete systemstatebackup の参照記事。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a84112191ad1b5873ad09c467fb3668107f2b24e
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: a17ed3595f0e1dd369e762150c8f45fe6f983822
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83821432"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933710"
 ---
 # <a name="wbadmin-delete-systemstatebackup"></a>wbadmin delete systemstatebackup
 
@@ -29,7 +29,7 @@ ms.locfileid: "83821432"
 
 
 
-## <a name="syntax"></a>構文
+## <a name="syntax"></a>Syntax
 
 ```
 wbadmin delete systemstatebackup
@@ -68,7 +68,7 @@ wbadmin delete systemstatebackup -keepVersions:3
 wbadmin delete systemstatebackup -backupTarget:f -deleteOldest
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 -   [Wbadmin](wbadmin.md)

@@ -1,6 +1,6 @@
 ---
 title: Scwcmd ビュー
-description: '* * * * のリファレンストピック'
+description: 参照記事 * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bb38d5100eab74573d5f5ffb4ec684b2b19c3bbb
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: cbae5f3d0157424fb9281d47cdf126bf106447c3
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820942"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932616"
 ---
 # <a name="scwcmd-view"></a>Scwcmd: ビュー
 
@@ -32,8 +32,8 @@ scwcmd view /x:<Xmlfile.xml> [/s:<Xslfile.xsl>]
 
 |パラメーター|説明|
 |---------|-----------|
-|/x: \< Xmlfile>|表示する .xml ファイルを指定します。 このパラメーターを指定する必要があります。|
-|/s: \< Xslfile>|レンダリング プロセスの一環として、.xml ファイルに適用する .xsl 変換を指定します。 このパラメーターは、SCW の .xml ファイルでは省略可能です。 ときに、 **ビュー** コマンドを使用して、SCW の .xml ファイルを表示、読み込み、指定された .xml ファイルを正しい既定の変換に自動的に試みます。 .Xsl 変換が指定されている場合、変換が .xsl トランス フォームと同じディレクトリに .xml ファイルであることを前提として記述する必要があります。|
+|x\<Xmlfile.xml>|表示する .xml ファイルを指定します。 このパラメーターを指定する必要があります。|
+|/s\<Xslfile.xsl>|レンダリング プロセスの一環として、.xml ファイルに適用する .xsl 変換を指定します。 このパラメーターは、SCW の .xml ファイルでは省略可能です。 ときに、 **ビュー** コマンドを使用して、SCW の .xml ファイルを表示、読み込み、指定された .xml ファイルを正しい既定の変換に自動的に試みます。 .Xsl 変換が指定されている場合、変換が .xsl トランス フォームと同じディレクトリに .xml ファイルであることを前提として記述する必要があります。|
 |/?|コマンド プロンプトにヘルプを表示します。|
 
 ## <a name="remarks"></a>注釈
@@ -47,6 +47,6 @@ Scwcmd.exe は Windows Server 2008 R2、Windows Server 2008 または Windows Se
 scwcmd view /x:C:\policies\Policyfile.xml /s:C:\viewers\Policyview.xsl
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

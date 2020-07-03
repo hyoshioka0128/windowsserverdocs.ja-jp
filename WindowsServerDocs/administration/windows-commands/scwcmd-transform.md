@@ -1,6 +1,6 @@
 ---
 title: Scwcmd 変換
-description: '* * * * のリファレンストピック'
+description: 参照記事 * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 86c88f0207a53da813f5d4eaed399375bfc5bc02
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: b70557b64a4cb68a0435bee9db033c893186dc0c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820952"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932628"
 ---
 # <a name="scwcmd-transform"></a>Scwcmd: 変換
 
@@ -39,8 +39,8 @@ scwcmd transform /p:<Policyfile.xml> /g:<GPODisplayName>
 
 |パラメーター|説明|
 |---------|-----------|
-|/p: \< policyfile .xml>|適用される .xml ポリシー ファイルのパスとファイル名を指定します。 このパラメーターを指定する必要があります。|
-|/g: \< GPODisplayName>|GPO の表示名を指定します。 このパラメーターを指定する必要があります。|
+|/p\<Policyfile.xml>|適用される .xml ポリシー ファイルのパスとファイル名を指定します。 このパラメーターを指定する必要があります。|
+|/g\<GPODisplayName>|GPO の表示名を指定します。 このパラメーターを指定する必要があります。|
 |/?|コマンド プロンプトにヘルプを表示します。|
 
 ## <a name="remarks"></a>注釈
@@ -54,6 +54,6 @@ FileServerPolicy.xml という名前のファイルから FileServerSecurity と
 scwcmd transform /p:FileServerPolicy.xml /g:FileServerSecurity
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

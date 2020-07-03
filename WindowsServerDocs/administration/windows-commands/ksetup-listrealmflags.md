@@ -1,6 +1,6 @@
 ---
 title: ksetup listrealmflags
-description: Ksetup listrealmflags コマンドのリファレンストピックでは、ksetup によって報告される可能性のある領域フラグを一覧表示します。
+description: Ksetup listrealmflags コマンドの参照記事。 ksetup によって報告される使用可能な領域フラグを一覧表示します。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5c5ebbee7f937733286e0354eca1cf5524459e86
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: d094b7d627885d25313b73bb51a1bbeeec2832d6
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83817722"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933684"
 ---
 # <a name="ksetup-listrealmflags"></a>ksetup listrealmflags
 
@@ -26,14 +26,14 @@ ms.locfileid: "83817722"
 ksetup /listrealmflags
 ```
 
-### <a name="remarks"></a>解説
+### <a name="remarks"></a>Remarks
 
 - 領域フラグは、Windows Server オペレーティングシステムに基づいていない Kerberos 領域の追加機能を指定します。 Windows Server を実行しているコンピューターは、kerberos サーバーを使用して、Windows Server オペレーティングシステムを実行しているドメインを使用するのではなく、kerberos 領域で認証を管理できます。 このエントリにより、領域の機能が確立され、次のようになります。
 
-| 値 | 領域フラグ | Description |
+| 値 | 領域フラグ | 説明 |
 | ----- | ---------- | ----------- |
-| 0xF | すべて | すべての領域フラグが設定されます。 |
-| 0x00 | なし | 領域フラグが設定されておらず、追加の機能は有効になっていません。 |
+| 0xF | All | すべての領域フラグが設定されます。 |
+| 0x00 | None | 領域フラグが設定されておらず、追加の機能は有効になっていません。 |
 | 0x01 | sendaddress | この IP アドレスは、チケット保証チケット内に含まれます。 |
 | 0x02 | tcpsupported | この領域では、伝送制御プロトコル (TCP) とユーザーデータグラムプロトコル (UDP) の両方がサポートされています。 |
 | 0x04 | delegate | この領域のすべてのユーザーが委任に対して信頼されています。 |
@@ -62,7 +62,7 @@ ksetup /setrealmflags CORP.CONTOSO.COM sendaddress tcpsupported delete ncsupport
 ksetup /setrealmflags CORP.CONTOSO.COM 0xF
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 
