@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.date: 01/07/2020
 ms.localizationpriority: high
 ms.prod: windows-server
-ms.openlocfilehash: 1094072935d463aa57eb6d44d14d008067745f03
-ms.sourcegitcommit: 599162b515c50106fd910f5c180e1a30bbc389b9
+ms.openlocfilehash: cb91b884edfbd105bc9e88a9d11b3b96055247c9
+ms.sourcegitcommit: c40c29683d25ed75b439451d7fa8eda9d8d9e441
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83775326"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85833335"
 ---
 # <a name="windows-admin-center"></a>Windows Admin Center
 
@@ -25,7 +25,7 @@ Windows Admin Center は、Windows サーバー、クラスター、ハイパー
 
 ## <a name="download-now"></a>今すぐダウンロード
 
-**Microsoft Evaluation Center から、[Windows Admin Center](https://www.microsoft.com/evalcenter/evaluate-windows-admin-center)** をダウンロードできます。 "評価を開始する" と記載されていますが、これは、Windows または Windows Server のライセンスの一部として含まれる、運用環境での使用のために一般公開されているバージョンです。
+**Microsoft Evaluation Center から、[Windows Admin Center](https://www.microsoft.com/evalcenter/evaluate-windows-admin-center)** をダウンロードできます。 "評価を開始する" と記載されていますが、これは、運用環境での使用のために一般公開されているバージョンです。
 
 インストールの詳細については、[インストール](deploy/install.md)に関する記事を参照してください。 Windows Admin Center の概要に関するヒントは、[概要](use/get-started.md)に関する記事を参照してください。
 
