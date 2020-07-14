@@ -10,12 +10,12 @@ manager: lizross
 ms.author: helohr
 date: 06/01/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 978c42b70f1c74a009640f7feda8dee7a82c9cff
-ms.sourcegitcommit: 75b4cf49dd918ff98258dcae6e6e8d7825c9adec
+ms.openlocfilehash: 4eae1c991b3ce418f95b6b47eda485845a336e2f
+ms.sourcegitcommit: 9a72fa784206a4b780d6d1d630ec6f21fecb8db3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84269236"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86052587"
 ---
 # <a name="get-started-with-the-ios-client"></a>iOS クライアントの概要
 
@@ -167,7 +167,7 @@ PC またはワークスペースに接続する場合、ユーザー アカウ�
 | マウス ポインター | 右ボタンのクリック          | 2 本の指でタップする                                              |
 | マウス ポインター | 右クリックしてドラッグ | 2 本の指でダブルタップから長押しして、ドラッグする                    |
 | マウス ポインター | マウス ホイール          | 2 本の指でダブルタップして押したまま、上または下にドラッグする                |
-| マウス ポインター | ズーム                 | 2 本の指を使用し、ピンチして拡大し、指を開いて縮小する |
+| マウス ポインター | ズーム                 | 2 本の指を使用し、ピンチして縮小し、指を開いて拡大する |
 
 ## <a name="supported-input-devices"></a>サポートされている入力デバイス
 
