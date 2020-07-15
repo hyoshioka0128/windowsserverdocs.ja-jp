@@ -7,13 +7,13 @@ author: rick-man
 ms.author: rickman
 manager: stevelee
 ms.topic: article
-ms.date: 08/21/2019
-ms.openlocfilehash: 7ca8d29b58dc8682575d9cb8b0f26aa49b257335
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.date: 07/14/2020
+ms.openlocfilehash: c8e0e8798da9cb4a2b3ca317d9632450ade82504
+ms.sourcegitcommit: f81aa22739d818382d314561dece59a9341dfb6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80307851"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86390099"
 ---
 # <a name="plan-for-gpu-acceleration-in-windows-server"></a>Windows Server での GPU アクセラレーションの計画
 
@@ -46,7 +46,7 @@ Windows Server では、VM ワークロードに加えて、Windows コンテナ
 
 DDA の展開では、仮想マシンの数を制限することができます。これは、各物理 GPU が最大1つの VM にアクセラレーションを提供できるためです。 共有仮想マシンをサポートするアーキテクチャを持つサービスを開発している場合は、VM ごとに複数の高速ワークロードをホストすることを検討してください。 たとえば、RDS でデスクトップリモート処理サービスを構築している場合、Windows Server のマルチセッション機能を利用して、各 VM で複数のユーザーデスクトップをホストすることにより、ユーザーの規模を向上させることができます。 これらのユーザーは、GPU アクセラレーションの利点を共有します。
 
-詳しくは、次のトピックをご覧ください。
+詳細については、以下のトピックを参照してください。
 
 - [個別のデバイス割り当ての展開の計画](plan-for-deploying-devices-using-discrete-device-assignment.md)
 - [個別のデバイスの割り当てを使用してグラフィックスデバイスをデプロイする](../deploy/Deploying-graphics-devices-using-dda.md)
@@ -54,14 +54,14 @@ DDA の展開では、仮想マシンの数を制限することができます�
 ## <a name="remotefx-vgpu"></a>RemoteFX vGPU
 
 > [!NOTE]
-> RemoteFX vGPU は Windows Server 2016 で完全にサポートされていますが、Windows Server 2019 ではサポートされていません。
+> セキュリティ上の問題のため、2020年7月14日以降のセキュリティ更新プログラムでは、RemoteFX vGPU は既定で無効になっています。 詳細については、 [KB 4570006](https://support.microsoft.com/help/4570006)を参照してください。
 
 RemoteFX vGPU は、1つの物理 GPU を複数の仮想マシン間で共有することを可能にするグラフィックス仮想化テクノロジです。 RemoteFX vGPU デプロイでは、仮想化されたワークロードは Microsoft の RemoteFX 3D アダプターで実行されます。これにより、ホストとゲスト間の GPU 処理要求が調整されます。 RemoteFX vGPU は、専用 GPU リソースを必要としない、ナレッジワーカーおよび高度なバーストワークロードに最適です。 RemoteFX vGPU では、Windows Vm への GPU アクセラレーションのみを行うことができます。
 
-詳しくは、次のトピックをご覧ください。
+詳細については、以下のトピックを参照してください。
 
 - [RemoteFX vGPU を使ったグラフィックス デバイスの展開](../deploy/deploy-graphics-devices-using-remotefx-vgpu.md)
-- [RemoteFX 3D ビデオアダプター (vGPU) のサポート](../../../remote/remote-desktop-services/rds-supported-config.md#remotefx-3d-video-adapter-vgpu-support)
+- [RemoteFX 3D ビデオ アダプター (vGPU) のサポート](../../../remote/remote-desktop-services/rds-supported-config.md#remotefx-3d-video-adapter-vgpu-support)
 
 ## <a name="comparing-dda-and-remotefx-vgpu"></a>DDA と RemoteFX vGPU の比較
 
@@ -74,7 +74,7 @@ RemoteFX vGPU は、1つの物理 GPU を複数の仮想マシン間で共有す
 | アプリの互換性     | DX 11.1、OpenGL 4.4、OpenCL 1.1                                                     | ベンダーから提供されるすべての GPU 機能 (DX 12、OpenGL、CUDA)                       |
 | AVC444                | 既定で有効                                                                  | 使用可能なグループポリシー                                                      |
 | GPU VRAM              | 最大 1 GB の専用 VRAM                                                           | GPU でサポートされている VRAM まで                                                     |
-| フレーム率            | 最大 30 fps                                                                         | 最大 60 fps                                                                         |
+| フレーム レート            | 最大 30 fps                                                                         | 最大 60 fps                                                                         |
 | ゲスト内の GPU ドライバー   | RemoteFX 3D アダプター ディスプレイ ドライバー (Microsoft)                                      | GPU ベンダードライバー (NVIDIA、AMD、Intel)                                              |
 | ホスト OS のサポート       | Windows Server 2016                                                                 | Windows Server 2016;Windows Server 2019                                            |
 | ゲスト OS のサポート      | Windows Server 2012 R2Windows Server 2016;Windows 7 SP1、Windows 8.1;Windows 10 | Windows Server 2012 R2Windows Server 2016;Windows Server 2019;Windows 10;マシン |

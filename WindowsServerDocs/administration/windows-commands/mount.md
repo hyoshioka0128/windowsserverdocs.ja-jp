@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 505094251ab6b0053cc3d46801ba5f6170201ecd
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: a81e5d6583eeb6859d5c82065b5bab5fff7c6c9f
+ms.sourcegitcommit: 102a929be3523dbd6523079f0a5738844cef81b4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85935723"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86384642"
 ---
 # <a name="mount"></a>マウント
 
@@ -43,7 +43,7 @@ mount [-o <option>[...]] [-u:<username>] [-p:{<password> | *}] {\\<computername>
 | -o casesensitive | サーバー上のファイル参照を強制的に大文字と小文字を区別します。 |
 | -o fileaccess =`<mode>` | NFS 共有で作成された新しいファイルの既定のアクセス許可モードを指定します。 *Ogw*の形式で、3桁の数字として*mode*を指定します。ここで、 *o*、 *g*、および*w*はそれぞれ、ファイルの所有者、グループ、および世界に与えられたアクセス権を表す数字です。 次のような数字が0-7 の範囲に含まれている必要があります。<ul><li>**0:** アクセスなし</li><li>**1:** x (実行アクセス)</li><li>**2:** w (書き込みアクセス)</li><li>**3:** wx (書き込みおよび実行アクセス)</li><li>**4:** r (読み取りアクセス)</li><li>**5:** rx (読み取りおよび実行アクセス)</li><li>**6:** rw (読み取りおよび書き込みアクセス)</li><li>**7:** rwx (読み取り、書き込み、実行アクセス)</li></ul> |
 | -o lang =`{euc-jp|euc-tw|euc-kr|shift-jis|Big5|Ksc5601|Gb2312-80|Ansi)` | NFS 共有で構成する言語エンコードを指定します。 共有で使用できる言語は1つだけです。 この値には、次のいずれかの値を含めることができます。<ul><li>**euc-jp:** 日本語</li><li>**euc-tw:** 中国語</li><li>**韓国:** 韓国語</li><li>**シフト jis:** 日本語</li><li>**Big5:** 中国語</li><li>**Ksc5601:** 韓国語</li><li>**Gb2312-80:** 簡体字中国語</li><li>**Ansi:** ANSI エンコード</li></ul> |
-| u`<username>` | 共有のマウントに使用するユーザー名を指定します。 *ユーザー名*の前に円記号 (*) が付いていない場合は *\** 、UNIX ユーザー名として扱われます。 |
+| u`<username>` | 共有のマウントに使用するユーザー名を指定します。 *Username*の前に円記号 () が付いていない場合は **\\** 、UNIX ユーザー名として扱われます。 |
 | irtran-p`<password>` | 共有をマウントするために使用するパスワード。 アスタリスク (**&#42;**) を使用すると、パスワードの入力を求めるメッセージが表示されます。 |
 | `<computername>` | NFS サーバーの名前を指定します。 |
 | `<sharename>` | ファイル システムの名前を指定します。 |

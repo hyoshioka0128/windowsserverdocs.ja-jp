@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 1411f312def0da79de4c18d6d652e0223ea27b48
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 0932493c157bc9de39d3b3c819fa03b9a760a059
+ms.sourcegitcommit: 102a929be3523dbd6523079f0a5738844cef81b4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474449"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86384652"
 ---
 # <a name="what39s-new-for-managed-service-accounts"></a>管理されたサービスアカウントの新&#39;
 
@@ -47,12 +47,12 @@ Windows Server 2012 または Windows 8 を実行しているコンピュータ�
 ### <a name="removed-or-deprecated-functionality"></a><a name="interoperability"></a>削除された機能または非推奨の機能
 Windows Server 2012 の場合、Windows PowerShell コマンドレットは、既定では、サーバーの管理されたサービスアカウントではなく、グループの管理されたサービスアカウントを管理します。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 -   [グループの管理されたサービス アカウントの概要](group-managed-service-accounts-overview.md)
 
 -   [Active Directory Domain Services の概要](active-directory-domain-services-overview.md)
 
--   [Managed Service Accounts:Understanding, Implementing, Best Practices, and Troubleshooting (管理されたサービス アカウント: 理解、実装、ベスト プラクティス、およびトラブルシューティング)](https://blogs.technet.com/b/askds/archive/20../managed-service-accounts-understanding-implementing-best-practices-and-troubleshooting.aspx)
+-   [Managed Service Accounts:Understanding, Implementing, Best Practices, and Troubleshooting (管理されたサービス アカウント: 理解、実装、ベスト プラクティス、およびトラブルシューティング)](https://techcommunity.microsoft.com/t5/ask-the-directory-services-team/managed-service-accounts-understanding-implementing-best/ba-p/397009)
 
 
