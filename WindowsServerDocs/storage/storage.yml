@@ -7,13 +7,13 @@ metadata:
   ms.topic: landing-page
   author: JasonGerend
   ms.author: jgerend
-  ms.date: 06/09/2020
-  ms.openlocfilehash: 288c6da7afdd2b218227af0db83c487053a11d58
-  ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
+  ms.date: 07/15/2020
+  ms.openlocfilehash: 0a26ee716f1308451f695843243a71002dfa5ca1
+  ms.sourcegitcommit: a5badf6b08ec0b25ec73df4b827c4e40b5ccd974
   ms.translationtype: MT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 06/18/2020
-  ms.locfileid: "85070978"
+  ms.lasthandoff: 07/16/2020
+  ms.locfileid: "86410376"
 landingContent:
 - title: Windows Server ストレージについて
   linkLists:
@@ -79,6 +79,8 @@ landingContent:
       url: https://azure.microsoft.com/documentation/services/storage/
     - text: Azure StorSimple
       url: https://www.microsoft.com/cloud-platform/azure-storsimple
+    - text: Azure 共有ディスク
+      url: /azure/virtual-machines/windows/disks-shared
 - title: 以前のバージョンの Windows Server
   linkLists:
   - linkListType: overview
