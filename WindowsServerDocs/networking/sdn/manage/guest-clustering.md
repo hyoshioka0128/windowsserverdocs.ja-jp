@@ -1,24 +1,20 @@
 ---
 title: 仮想ネットワークでのゲスト クラスタリング
 description: 仮想ネットワークに接続されている仮想マシンは、ネットワークコントローラーが割り当てた IP アドレスのみを使用してネットワーク上の通信を行うことができます。  Microsoft フェールオーバークラスタリングなど、floating IP アドレスを必要とするクラスタリングテクノロジでは、いくつかの追加の手順を正しく機能させる必要があります。
-manager: dougkim
-ms.custom: na
+manager: grcusanz
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-sdn
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8e9e5c81-aa61-479e-abaf-64c5e95f90dc
 ms.author: grcusanz
-author: shortpatti
+author: AnirbanPaul
 ms.date: 08/26/2018
-ms.openlocfilehash: 05704beeae27bd9de9ad0c5cf578581c650a976f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6889b58f5d49a4932ef8277b11e1002e85606f3f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406032"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854455"
 ---
 # <a name="guest-clustering-in-a-virtual-network"></a>仮想ネットワークでのゲスト クラスタリング
 
@@ -146,7 +142,7 @@ Floating IP を到達可能にする方法は、SLB\) 仮想 IP \(VIP\)\(ソフ�
    
    $ClusterNetworkName = "Cluster Network 1"
    $IPResourceName =  
-   $ILBIP = “192.168.2.100” 
+   $ILBIP = "192.168.2.100" 
 
    $nodes = @("DB1", "DB2")
    ```

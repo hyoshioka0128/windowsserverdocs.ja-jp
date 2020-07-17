@@ -9,14 +9,13 @@ ms.custom: it-pro
 ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
-ms.assetid: ''
 ms.date: 05/01/2018
-ms.openlocfilehash: d393ad4af81ee1c24fa5f28b8a3b05217e7b34dd
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: def65c174ff608301f8d4f35ef1ce19818103e61
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71396290"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859375"
 ---
 # <a name="network-policy-server-user-data-collection"></a>ネットワークポリシーサーバーのユーザーデータコレクション
 
@@ -27,12 +26,12 @@ ms.locfileid: "71396290"
 
 ## <a name="information-collected-by-nps"></a>NPS によって収集された情報
 
-- Timestamp
+- [タイムスタンプ]
 - イベントのタイムスタンプ
 - Username
 - 完全修飾ユーザー名
 - クライアント IP アドレス
-- クライアントベンダー
+- クライアント ベンダー
 - クライアントのフレンドリ名
 - [認証の種類]
 - RADIUS プロトコルに関する他の多くのフィールド
@@ -41,10 +40,10 @@ ms.locfileid: "71396290"
 
 アカウンティングデータが有効で構成されている場合は、構成に応じて、SQL Server またはログファイルからユーザーの NPS 認証試行のレコードを取得できます。 
 
-アカウンティングデータが SQL Server 用に構成されている場合は、User_Name = `'<username>'` のすべてのレコードを照会します。
+アカウンティングデータが SQL Server 用に構成されている場合は、User_Name = `'<username>'`れるすべてのレコードに対してクエリを実行します。
 
-アカウンティングデータがログファイルに対して構成されている場合は、ログ`<username>`ファイルでを検索して、すべてのログエントリを検索します。
+アカウンティングデータがログファイルに対して構成されている場合は、ログファイルで `<username>` を検索して、すべてのログエントリを検索します。
 
 ネットワークポリシーとアクセスサービスのイベントログエントリは、アカウンティングデータにマルチ商法と見なされ、収集する必要はありません。
 
-アカウンティングデータが有効になっていない場合は、 `<username>`を検索することにより、ネットワークポリシーとアクセスサービスのイベントログからユーザーの NPS 認証試行のレコードを取得できます。
+アカウンティングデータが有効になっていない場合は、ネットワークポリシーとアクセスサービスのイベントログから、`<username>`を検索することによって、ユーザーの NPS 認証試行のレコードを取得できます。

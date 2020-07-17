@@ -1,6 +1,5 @@
 ---
 title: SQL Server レプリケーションを使用した地理的な冗長性の設定
-description: ''
 author: billmath
 manager: femila
 ms.date: 05/31/2017
@@ -9,12 +8,12 @@ ms.prod: windows-server
 ms.technology: active-directory-federation-services
 ms.author: billmath
 ms.assetId: 7b9f9a4f-888c-4358-bacd-3237661b1935
-ms.openlocfilehash: 16cf1a237043aa546d4fc24164045aa9f9a1e6ac
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 54106ae635d44368542986c7c469560981f9888a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71359819"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855845"
 ---
 # <a name="setup-geographic-redundancy-with-sql-server-replication"></a>SQL Server レプリケーションを使用した地理的な冗長性の設定
 
@@ -156,7 +155,7 @@ SQL server ファームをインストールして構成します。 詳細に�
   
 4.  また、[ **SQL Server エージェント\\ジョブ**] ノードの下で、パブリケーション\/サブスクリプションの操作を実行するようにスケジュールされているジョブ\)\(を確認することもできます。  ローカルジョブのみが表示されます。そのため、トラブルシューティングのために、パブリッシャーとサブスクライバーを確認してください。  右\-ジョブをクリックし、 **[履歴の表示]** を選択して、実行履歴と結果を表示します。  
   
-## <a name="sqlagent"></a>ドメインアカウント CONTOSO\\sqlagent の SQL ログインを構成します  
+## <a name="configure-sql-login-for-the-domain-account-contososqlagent"></a><a name="sqlagent"></a>ドメインアカウント CONTOSO\\sqlagent の SQL ログインを構成します  
   
 1.  前の手順で **[エージェントセキュリティ]** ページで作成および構成した新しいドメインユーザーの名前を CONTOSO\\sqlagent \(プライマリおよびレプリカ SQL Server に新しいログインを作成します。\)  
   

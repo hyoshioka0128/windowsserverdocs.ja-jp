@@ -1,6 +1,5 @@
 ---
 title: AD フォレストの回復-完全なサーバーのバックアップ
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,16 +8,16 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: 9238cb27-0020-42f7-90d6-fcebf7e3c0bc
 ms.technology: identity-adds
-ms.openlocfilehash: 14aa7abc19573b76ebc144cb6dea5f510b45e269
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 321f927a3efc4f2391daff92ac4c8b7acb47c055
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369346"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80824285"
 ---
 # <a name="ad-forest-recovery---backing-up-the-system-state-data"></a>AD フォレストの回復-システム状態データのバックアップ  
 
->適用先:Windows Server 2016、Windows Server 2012、および 2012 R2、Windows Server 2008 および 2008 R2
+>適用対象: Windows Server 2016、Windows Server 2012、および 2012 R2、Windows Server 2008 および 2008 R2
 
 Windows Server バックアップまたは wbadmin を使用して DC 上でシステム状態のバックアップを実行するには、次の手順に従います。  
 

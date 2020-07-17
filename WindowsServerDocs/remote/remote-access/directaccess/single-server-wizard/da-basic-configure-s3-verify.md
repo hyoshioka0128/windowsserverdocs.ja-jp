@@ -2,22 +2,18 @@
 title: 手順 3 の展開を確認します
 description: このトピックは、「Windows Server 2016 用はじめにウィザードを使用して単一の DirectAccess サーバーを展開する」の一部です。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 45e9edd6-acca-4d59-851a-a0cc8bd8b4c6
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 29457f6f1859a8f3aee2f9d0f84e226b20905175
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: fc858152d05d540633085960f70d3193c486a7b8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388529"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80819355"
 ---
 # <a name="step-3-verify-deployments"></a>手順 3 の展開を確認します
 
@@ -37,7 +33,7 @@ ms.locfileid: "71388529"
   
     すべての企業リソースにアクセスできます。  
   
-## <a name="BKMK_Links"></a>前の手順  
+## <a name="previous-step"></a><a name="BKMK_Links"></a>前の手順  
   
 -   [手順 2: DirectAccess サーバーを構成する](da-basic-configure-s2-server.md)  
   

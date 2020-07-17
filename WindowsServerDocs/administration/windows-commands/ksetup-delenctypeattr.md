@@ -1,75 +1,75 @@
 ---
-title: 'ksetup: delenctypeattr'
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+title: ksetup delenctypeattr
+description: Ksetup delenctypeattr の参照記事。ドメインの暗号化の種類の属性が削除されます。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4fc25ef3-e271-4229-a712-72c507df55aa
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e3810d83c06b9ea08766451e13390b02b1867c83
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5aabbb99f40d8d22189d6abccc188161b7ee2f5c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71375159"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925482"
 ---
-# <a name="ksetupdelenctypeattr"></a>ksetup: delenctypeattr
+# <a name="ksetup-delenctypeattr"></a>ksetup delenctypeattr
 
+ドメインの暗号化の種類の属性を削除します。 正常に完了したか、完了しなかったときに、ステータスメッセージが表示されます。
 
-
-ドメインの暗号化の種類の属性を削除します。 このコマンドの使用方法の例については、次を参照してください。 [例](#BKMK_Examples)します。
+Kerberos チケット保証チケット (TGT) とセッションキーの暗号化の種類を表示するには、 **klist**コマンドを実行し、出力を表示します。 コマンドを実行して、に接続してを使用するようにドメインを設定でき `ksetup /domain <domainname>` ます。
 
 ## <a name="syntax"></a>構文
 
 ```
-ksetup /delenctypeattr <DomainName> 
+ksetup /delenctypeattr <domainname>
 ```
 
 ### <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
-|---------|-----------|
-|\<DomainName >|接続を確立するドメインの名前。 完全修飾ドメイン名、または名前の単純な形式 (corp.contoso.com や contoso など) を使用します。|
+| パラメーター | 説明 |
+| ----------| ----------- |
+| `<domainname>` | 接続を確立するドメインの名前。 完全修飾ドメイン名または名前の単純な形式 (corp.contoso.com や contoso など) のいずれかを使用できます。 |
 
-## <a name="remarks"></a>コメント
+### <a name="examples"></a>例
 
-Kerberos チケット保証チケット (TGT) とセッションキーの暗号化の種類を表示するには、 **klist**コマンドを実行し、出力を表示します。
+このコンピューターに設定されている現在の暗号化の種類を確認するには、次のように入力します。
 
-正常に完了したか、完了しなかったときに、ステータスメッセージが表示されます。
-
-接続先として使用するドメインを設定するには、 **ksetup/domain \< domainname >** コマンドを実行します。
-
-## <a name="BKMK_Examples"></a>例
-
-このコンピューターに設定されている現在の暗号化の種類を確認します。
 ```
 klist
 ```
-ドメインを mit.contoso.com に設定します。
+
+ドメインを mit.contoso.com に設定するには、次のように入力します。
+
 ```
 ksetup /domain mit.contoso.com
 ```
-ドメインの暗号化の種類の属性を確認します。
+
+ドメインの暗号化の種類の属性を確認するには、次のように入力します。
+
 ```
 ksetup /getenctypeattr mit.contoso.com
 ```
-ドメイン mit.contoso.com の 暗号化の種類の設定属性を削除します。
+
+ドメイン mit.contoso.com の [暗号化の種類の設定] 属性を削除するには、次のように入力します。
+
 ```
 ksetup /delenctypeattr mit.contoso.com
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
--   [Klist](klist.md)
--   [Ksetup:domain](ksetup-domain.md)
--   [Ksetup:addenctypeattr](ksetup-addenctypeattr.md)
--   [Ksetup:setenctypeattr](ksetup-setenctypeattr.md)
--   [Ksetup:delenctypeattr](ksetup-delenctypeattr.md)
--   [コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [klist コマンド](klist.md)
+
+- [ksetup コマンド](ksetup.md)
+
+- [ksetup domain コマンド](ksetup-domain.md)
+
+- [ksetup addenctypeattr コマンド](ksetup-addenctypeattr.md)
+
+- [ksetup setenctypeattr コマンド](ksetup-setenctypeattr.md)

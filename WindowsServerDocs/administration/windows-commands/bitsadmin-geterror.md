@@ -1,50 +1,47 @@
 ---
 title: bitsadmin geterror
-description: '**Bitsadmin geterror**の Windows コマンドトピックでは、指定されたジョブの詳細なエラー情報を取得します。'
-ms.custom: na
+description: Bitsadmin geterror コマンドの参照記事。指定されたジョブの詳細なエラー情報を取得します。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: cbe5bca1-d2dd-4ce6-903f-f85de4a2ec6a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0f9bd607886d00ede4e1da91ed73eff2794db6ce
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1d729b946df4af33da3a55ff8051c59fbb5d7efe
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71381644"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928300"
 ---
 # <a name="bitsadmin-geterror"></a>bitsadmin geterror
-
-
 
 指定されたジョブの詳細なエラー情報を取得します。
 
 ## <a name="syntax"></a>構文
 
 ```
-bitsadmin /GetError <Job>
+bitsadmin /geterror <job>
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
-|---------|-----------|
-|Job|ジョブの表示名または GUID|
+| パラメーター | 説明 |
+| -------------- | -------------- |
+| ジョブ (job) | ジョブの表示名または GUID。 |
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a>例
 
-次の例では、 *Mydownloadjob*という名前のジョブのエラー情報を取得します。
+*Mydownloadjob*という名前のジョブのエラー情報を取得するには、次のようにします。
+
 ```
-C:\>bitsadmin /GetError myDownloadJob
+bitsadmin /geterror myDownloadJob
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [bitsadmin コマンド](bitsadmin.md)

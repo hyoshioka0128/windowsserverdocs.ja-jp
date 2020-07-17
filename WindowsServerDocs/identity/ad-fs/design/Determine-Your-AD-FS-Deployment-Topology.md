@@ -1,7 +1,6 @@
 ---
 ms.assetid: f67b0bc9-e5af-4891-9da0-d9be539af42d
 title: AD FS 展開トポロジの決定
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b9128dded44e83acc63cef6785a1949e614cf6a7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0336c54357745217c30e14afc0824f97d476b45d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408116"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855155"
 ---
 # <a name="determine-your-ad-fs-deployment-topology"></a>AD FS 展開トポロジの決定
 
@@ -22,7 +21,7 @@ Active Directory フェデレーションサービス (AD FS) \(\) AD FS の展�
   
 この展開トポロジに関するトピックを読む前に、まず次の表に示したタスクを記載された順に実行することをお勧めします。  
   
-|推奨されるタスク|説明|リファレンス|  
+|推奨されるタスク|説明|参照|  
 |--------------------|---------------|-------------|  
 |フェデレーションサーバーファーム内の他のフェデレーションサーバーに AD FS データを格納し、レプリケートする方法を確認します。|AD FS 構成データベースに保存されている基になるデータの目的と使用可能なレプリケーション方法について理解します。 このトピックでは、構成データベースの概念について説明し、Windows Internal Database \(WID\) と Microsoft SQL Server という2つのデータベースの種類について説明します。|[AD FS 構成データベースの役割](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md)|  
 |組織で展開する AD FS 構成データベースの種類を選択する。|AD FS 構成データベースとして WID または SQL Server のどちらかを使用することに関連するさまざまな利点および制約事項と、データベースでサポートされるさまざまな利用シナリオを確認します。|[AD FS 展開トポロジに関する考慮事項](AD-FS-Deployment-Topology-Considerations.md)|  

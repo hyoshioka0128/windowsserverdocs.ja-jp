@@ -1,50 +1,47 @@
 ---
 title: bitsadmin getdescription
-description: '**Bitsadmin getdescription**の Windows コマンドトピックでは、指定されたジョブの説明を取得します。'
-ms.custom: na
+description: Bitsadmin getdescription コマンドの参照記事。指定されたジョブの説明を取得します。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f3974603-ebbe-4d31-8217-040fe2d90c85
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 02ab91ad9b6d1d6d1ef67465bb5c982fbddc1bb4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 74e54f963325c0b7222dbd0f9bdccd44d0efc5e1
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71381646"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923064"
 ---
 # <a name="bitsadmin-getdescription"></a>bitsadmin getdescription
-
-
 
 指定されたジョブの説明を取得します。
 
 ## <a name="syntax"></a>構文
 
 ```
-bitsadmin /GetDescription <Job>
+bitsadmin /getdescription <job>
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
-|---------|-----------|
-|Job|ジョブの表示名または GUID|
+| パラメーター | 説明 |
+| -------------- | -------------- |
+| ジョブ (job) | ジョブの表示名または GUID。 |
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a>例
 
-次の例では、 *Mydownloadjob*という名前のジョブの説明を取得します。
+*Mydownloadjob*という名前のジョブの説明を取得するには、次のようにします。
+
 ```
-C:\>bitsadmin /GetDescription myDownloadJob
+bitsadmin /getdescription myDownloadJob
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [bitsadmin コマンド](bitsadmin.md)

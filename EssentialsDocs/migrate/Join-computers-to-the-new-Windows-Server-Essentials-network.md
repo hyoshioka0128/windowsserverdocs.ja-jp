@@ -1,39 +1,35 @@
 ---
-title: 新しい Windows Server Essentials network1 にコンピューターを参加させる
-description: Windows Server Essentials を使用する方法について説明します
-ms.custom: na
+title: 新しい Windows Server Essentials ネットワークにコンピューターを参加させる
+description: Windows Server Essentials の使用方法について説明します。
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+ms.prod: windows-server
 ms.topic: article
 ms.assetid: d94de050-3300-4323-a5ea-c824cb9cecc9
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 62f31f859ed3fd0f77baf37d3467d4702b24ad95
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 29ea08ff981723a256606bbecdcb3b98fe9d8eec
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66432914"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852575"
 ---
-# <a name="join-computers-to-the-new-windows-server-essentials-network1"></a>新しい Windows Server Essentials network1 にコンピューターを参加させる
+# <a name="join-computers-to-the-new-windows-server-essentials-network1"></a>新しい Windows Server Essentials ネットワークにコンピューターを参加させる
 
->適用先:Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
+>適用対象: windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
 ##  <a name="BKMK_JoinComputers"></a>   
- 移行プロセスの次の手順では、クライアント コンピューターを新しい Windows Server Essentials ネットワークに参加させるし、グループ ポリシー設定を更新します。  
+ 移行プロセスの次の手順では、クライアントコンピューターを新しい Windows Server Essentials ネットワークに参加させ、グループポリシーの設定を更新します。  
   
 ### <a name="domain-joined-client-computers"></a>ドメインに参加しているクライアント コンピューター  
- **http://** <em>destination-servername</em> **/connect** を参照し、新しいコンピューターの場合と同じように Windows Server コネクタ ソフトウェアをインストールします。 インストール プロセスは、クライアント コンピューターがドメインに参加する場合でも参加しない場合でも同じです。  
+ **http://** <em>移行先サーバー名</em> **/connect** を参照し、新しいコンピューターの場合と同じように Windows Server コネクタ ソフトウェアをインストールします。 インストール プロセスは、クライアント コンピューターがドメインに参加する場合でも参加しない場合でも同じです。  
   
 > [!NOTE]
 >  Windows Server コネクタ ソフトウェアは、Windows XP または Windows Vista を実行しているコンピューターはサポートしていません。 既にドメインに参加している Windows XP または Windows Vista を実行しているコンピューターがある場合は、この手順を省略できます。  
   
 ### <a name="non-domain-joined-client-computers"></a>ドメインに参加していないクライアント コンピューター  
- **http://** <em>destination-servername</em> **/connect** を参照し、新しいコンピューターの場合と同じように Windows Server コネクタ ソフトウェアをインストールします。 インストール プロセスは、クライアント コンピューターがドメインに参加しているかどうかにかかわらず同じです。  
+ **http://** <em>移行先サーバー名</em> **/connect** を参照し、新しいコンピューターの場合と同じように Windows Server コネクタ ソフトウェアをインストールします。 インストール プロセスは、クライアント コンピューターがドメインに参加しているかどうかにかかわらず同じです。  
   
 > [!NOTE]
 >  Windows Server コネクタ ソフトウェアは、Windows XP または Windows Vista を実行しているコンピューターはサポートしていません。 既にドメインに参加している Windows XP または Windows Vista を実行しているコンピューターがある場合は、この手順を省略できます。  
@@ -47,9 +43,9 @@ ms.locfileid: "66432914"
   
 1.  コマンド プロンプト ウィンドウを開きます。  
   
-2.  コマンド プロンプトで「 **GPRESULT /R**」と入力し、Enter キーを押します。  
+2.  コマンド プロンプトで「**GPRESULT /R**」と入力し、Enter キーを押します。  
   
-3.  グループ ポリシーの適用 セクションの結果の出力を確認してください: ことなど、移行先サーバーの一覧を確認して**DestinationSrv.Domain.local**します。 次に、例を示します。  
+3.  によって適用されたグループポリシーセクションの結果出力を確認し、宛先サーバーが一覧表示されていることを確認します (例: **Destinationsrv. Domain. local**)。 例 :  
   
     ```  
     USER SETTINGS  
@@ -67,8 +63,8 @@ ms.locfileid: "66432914"
   
 5.  移行先サーバーがまだ表示されない場合は、グループ ポリシーの設定またはこの特定のクライアント コンピューターへのポリシーの適用にエラーがある可能性があります。 移行先サーバーが表示されない場合は、次の手順を実行してください。  
   
-    1.  **[スタート]** ボタンをクリックし、 **[ファイル名を指定して実行]** をクリックし、「 **rsop.msc** 」 (ポリシーの結果セット) と入力して、Enter キーを押します。  
+    1.  **[スタート]** ボタンをクリックし、 **[ファイル名を指定して実行]** をクリックし、「**rsop.msc**」 (ポリシーの結果セット) と入力して、Enter キーを押します。  
   
-    2.  ノードに表示されるまでに X 印が付いたツリーを展開します。  
+    2.  ノードが表示されるまで、X 印の付いたツリーを展開します。  
   
     3.  ノードを右クリックし、 **[エラーの表示]** をクリックして、一覧のコンピューターでグループ ポリシーの設定が失敗する理由についての情報を確認します。

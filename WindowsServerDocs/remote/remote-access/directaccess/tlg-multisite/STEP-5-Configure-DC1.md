@@ -2,26 +2,22 @@
 title: 手順 5 DC1 を構成する
 description: このトピックは、「Windows Server 2016 用の DirectAccess マルチサイト展開のテストラボガイド」の一部です。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 70357156-fcb0-4346-a61e-4ea963e3ffb0
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: aa251ccc0cc48e3805667a247047711c2ae4fcf6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: d7bf3fff3100f866b16d4932cf9df05d16c50d40
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388304"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861575"
 ---
 # <a name="step-5-configure-dc1"></a>手順 5 DC1 を構成する
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 DC1 は、corp.contoso.com ドメインのドメインコントローラー、DNS サーバー、および DHCP サーバーとして機能します。  
   
@@ -64,21 +60,21 @@ DC1 は、corp.contoso.com ドメインのドメインコントローラー、DN
   
 3.  **[新しいオブジェクト-グループ]** ダイアログボックスの **[グループ名]** に、「 **Win7_Clients_Site1**」と入力します。  
   
-4.  [ **グループのスコープ**, 、] をクリックして **グローバル**, [ **グループの種類**, 、] をクリックして **セキュリティ**, 、順にクリック **OK**します。  
+4.  **[グループのスコープ]** の下で **[グローバル]** をクリックし、 **[グループの種類]** の下で **[セキュリティ]** をクリックし、 **[OK]** をクリックします。  
   
-5.  **Win7_Clients_Site1**セキュリティグループをダブルクリックし、Win7_Clients_Site1 の **[プロパティ]** ダイアログボックスの **[メンバー]** タブをクリックします。  
+5.  **Win7_Clients_Site1**セキュリティグループをダブルクリックし、Win7_Clients_Site1 の **[プロパティ]** ダイアログボックスで、 **[メンバー]** タブをクリックします。  
   
 6.  **[メンバー]** タブで **[追加]** をクリックします。  
   
 7.  **[ユーザー、連絡先、コンピューター、またはサービスアカウントの選択]** ダイアログボックスで、 **[オブジェクトの種類]** をクリックします。 **[オブジェクトの種類]** ダイアログボックスで、 **[コンピューター]** を選択し、 **[OK]** をクリックします。  
   
-8.  **[選択するオブジェクト名を入力してください]** **に「Win7_Clients_Site1」と入力し**、 **[ok]** をクリックします。次に、 **[のプロパティ]** ダイアログボックスで **[ok]** をクリックします。  
+8.  **[選択するオブジェクト名を入力してください]** ボックスに「「」**と入力し、[** **ok**] をクリックします。次に、 **[Win7_Clients_Site1 のプロパティ]** ダイアログボックスで [ **ok]** をクリックします。  
   
 9. **Active Directory ユーザーとコンピューター**  コンソールの左側のウィンドウで、**users** を右クリックし、**新規作成** をポイントして、**グループ** をクリックします。  
   
 10. **[新しいオブジェクト-グループ]** ダイアログボックスの **[グループ名]** に、「 **Win7_Clients_Site2**」と入力します。  
   
-11. [ **グループのスコープ**, 、] をクリックして **グローバル**, [ **グループの種類**, 、] をクリックして **セキュリティ**, 、順にクリック **OK**します。  
+11. **[グループのスコープ]** の下で **[グローバル]** をクリックし、 **[グループの種類]** の下で **[セキュリティ]** をクリックし、 **[OK]** をクリックします。  
   
 12. **[Active Directory ユーザーとコンピューター]** コンソールを閉じます。  
   

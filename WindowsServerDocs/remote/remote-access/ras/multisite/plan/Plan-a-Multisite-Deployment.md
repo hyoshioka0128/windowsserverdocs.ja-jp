@@ -2,26 +2,22 @@
 title: マルチサイト展開を計画する
 description: このトピックは、「Windows Server 2016 のマルチサイト展開に複数のリモートアクセスサーバーを展開する」の一部です。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8387eabe-7363-4367-b5b1-03c67baa2933
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 95c575b255e7495f85e731bdb84ae441e35b1463
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 507dae03ca13f4d485d6d1db0676f9d3c7b057bc
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404473"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858335"
 ---
 # <a name="plan-a-multisite-deployment"></a>マルチサイト展開を計画する
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
  Windows Server 2016、Windows Server 2012 では、DirectAccess とルーティングとリモートアクセスサービス (RRAS) VPN を1つのリモートアクセスの役割に結合しています。 この概要では、マルチサイト構成で Windows Server 2016 または Windows Server 2012 のリモートアクセスを展開するために必要な計画手順について説明します。  
   

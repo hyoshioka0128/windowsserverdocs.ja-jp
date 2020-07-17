@@ -1,7 +1,6 @@
 ---
 ms.assetid: ad3f0480-99f7-428a-ab33-6d165a440840
 title: シナリオでは、分類を使用してデータに関する洞察を得ます
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,20 +8,20 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: cd6a6e9d3cb452a2cd0a48c6207aea181d85dc7b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a92f8791d5ceef3a8dbba4541588da1d48c4fbff
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357448"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861115"
 ---
-# <a name="scenario-get-insight-into-your-data-by-using-classification"></a>シナリオ:分類を使用してデータの情報を得る
+# <a name="scenario-get-insight-into-your-data-by-using-classification"></a>Scenario: Get Insight into Your Data by Using Classification
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 データおよび記憶域リソースへの依存は、ほとんどの組織で重要度を増し続けています。 IT 管理者は、従来よりも大規模かつ複雑な記憶域インフラストラクチャを監視しながら総保有コストを妥当な水準に保つ責任を負うという、難しさを増す課題に直面しています。 記憶域リソースの管理はデータのボリュームや可用性だけに関することではなくなり、企業のポリシーを適用し、記憶域の消費用途を知ることで、効率的な使用率とリスク軽減のためのコンプライアンスを実現することも含まれるようになりました。 ファイル分類インフラストラクチャは、データを効率よく管理できるように分類プロセスを自動化することによって、データの性質を理解できるようにします。 ファイル分類インフラストラクチャでは、手動、プログラム、自動の 3 つの分類方法を使用できます。 このトピックでは自動ファイル分類方法について扱います。  
   
-## <a name="BKMK_OVER"></a>シナリオの説明  
+## <a name="scenario-description"></a><a name="BKMK_OVER"></a>シナリオの説明  
 ファイル分類インフラストラクチャは分類規則を使用して、自動的にファイルをスキャンし、ファイルのコンテンツに従って分類します。 分類プロパティは、Active Directory で集約的に定義されるため、その定義は、組織内のファイル サーバー全体で共有できます。 ファイルで標準文字列またはパターンに一致する文字列 (正規表現) をスキャンする分類規則を作成できます。 構成した分類パラメーターがファイル内で見つかった場合、そのファイルは、分類規則での構成に従って分類されます。 分類規則の例をいくつか挙げます。  
   
 -   "Contoso Confidential" という文字列を含むファイルを、ビジネスに大きな影響を与えるものとして分類します。  
@@ -38,12 +37,12 @@ ms.locfileid: "71357448"
 ## <a name="in-this-scenario"></a>このシナリオの内容  
 このシナリオは、ダイナミック アクセス制御のシナリオの一部です。 ダイナミック アクセス制御の追加情報については、次のトピックを参照してください。  
   
--   [ダイナミック アクセス制御: シナリオの概要](Dynamic-Access-Control--Scenario-Overview.md)  
+-   [動的 Access Control: シナリオの概要](Dynamic-Access-Control--Scenario-Overview.md)  
   
-## <a name="BKMK_APP"></a>実用的なアプリケーション  
+## <a name="practical-applications"></a><a name="BKMK_APP"></a>実用的なアプリケーション  
 Windows Server 2012 のファイル分類インフラストラクチャは、ビジネスデータ所有者が簡単にデータを分類してラベル付けできるようにすることで、動的 Access Control に貢献します。 集約型アクセス ポリシーに保管されている分類情報を使用して、ビジネスにとって重要なデータ クラスのアクセス ポリシーを定義できます。  
   
-## <a name="BKMK_NEW"></a>このシナリオに含まれる機能  
+## <a name="features-included-in-this-scenario"></a><a name="BKMK_NEW"></a>このシナリオに含まれる機能  
 次の表で、このシナリオに含まれる機能を紹介すると共に、それをシナリオに活かす方法について説明します。  
   
 |機能|このシナリオのサポート方法|  

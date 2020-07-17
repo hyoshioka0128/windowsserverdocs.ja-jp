@@ -1,19 +1,18 @@
 ---
 title: DNS クライアントのトラブルシューティング
 description: この記事では、クライアント側からの DNS の問題をトラブルシューティングする方法について説明します。
-manager: willchen
-ms.prod: ''
+manager: dcscontentpm
 ms.technology: networking-dns
 ms.topic: article
 ms.author: delhan
 ms.date: 8/8/2019
 author: Deland-Han
-ms.openlocfilehash: 1f18159d6232bd9e7864b13419b3648c12b9f44f
-ms.sourcegitcommit: 0e3c2473a54f915d35687d30d1b4b1ac2bae4068
+ms.openlocfilehash: ffc772bafa0027d516194b2741e7680065c0db4b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68917819"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860065"
 ---
 # <a name="troubleshooting-dns-clients"></a>DNS クライアントのトラブルシューティング
 
@@ -37,9 +36,9 @@ ms.locfileid: "68917819"
 
 クライアントに有効な TCP/IP 構成がない場合は、次のいずれかの方法を使用します。
 
-* 動的に構成されたクライアント`ipconfig /renew`の場合は、コマンドを使用して手動でクライアントに対して、DHCP サーバーによる IP アドレス構成の更新を強制します。
+* 動的に構成されたクライアントの場合は、`ipconfig /renew` コマンドを使用して、クライアントが DHCP サーバーを使用して IP アドレスの構成を手動で更新するように強制します。
 
-* 静的に構成されたクライアントの場合は、有効な構成設定を使用するか、ネットワークの DNS 構成を完了するように、クライアントの TCP/IP プロパティを変更します。
+* 静的に構成されたクライアントの場合は、クライアントの TCP/IP プロパティを変更して、有効な構成設定を使用するようにするか、またはネットワークに対する DNS 構成を行います。
 
 ## <a name="check-network-connection"></a>ネットワーク接続の確認
 
@@ -57,7 +56,7 @@ ping 10.0.0.1
 
 ### <a name="dns-query-tests"></a>DNS クエリテスト
 
-Dns クライアントが dns サーバーコンピューターに対して ping を実行できる場合は、 `nslookup`次のコマンドを使用して、サーバーが dns クライアントに応答できるかどうかをテストします。 Nslookup ではクライアントの DNS キャッシュを使用しないため、名前解決では、クライアントの構成済みの DNS サーバーが使用されます。
+Dns クライアントが DNS サーバーコンピューターに対して ping を実行できる場合は、次の `nslookup` コマンドを使用して、サーバーが DNS クライアントに応答できるかどうかをテストします。 Nslookup ではクライアントの DNS キャッシュを使用しないため、名前解決では、クライアントの構成済みの DNS サーバーが使用されます。
 
 #### <a name="test-a-client"></a>クライアントをテストする
 
@@ -119,14 +118,14 @@ nslookup app1.corp.contoso.com
 nslookup <external name>
 ```
 
-以下に例を示します。 
+例 : 
 ```cmd
 nslookup bing.com
 ```
 
-これらの4つのテストがすべて成功し`ipconfig /displaydns`た場合は、を実行して、失敗した名前の出力を確認します。 失敗した名前の下に "名前が存在しません" と表示される場合は、否定応答が DNS サーバーから返され、クライアントにキャッシュされていました。 
+これらの4つのテストがすべて成功した場合は、`ipconfig /displaydns` を実行し、失敗した名前の出力を確認します。 失敗した名前の下に "名前が存在しません" と表示される場合は、否定応答が DNS サーバーから返され、クライアントにキャッシュされていました。 
 
-この問題を解決するには、を実行`ipconfig /flushdns`してキャッシュをクリアします。
+この問題を解決するには、`ipconfig /flushdns`を実行してキャッシュをクリアします。
 
 ## <a name="next-step"></a>次の手順
 

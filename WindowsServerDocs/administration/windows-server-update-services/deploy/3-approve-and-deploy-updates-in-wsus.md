@@ -2,7 +2,6 @@
 title: '手順 3: WSUS で更新プログラムを承認および展開する'
 description: Windows Server Update Service (WSUS) のトピック - WSUS での更新プログラムの承認と展開は、WSUS を展開するための 4 つの手順のうちの手順 3 です
 ms.prod: windows-server
-ms.reviewer: na
 ms.technology: manage-wsus
 ms.topic: article
 ms.assetid: 8d728ff9-170f-47e6-aefe-52be93315a75
@@ -10,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 68ff4c893302167815e3e8368d8b03f97d9be131
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d8758c4f957d2d9abb156652a568b23634cb1bf0
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361691"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "80828855"
 ---
 # <a name="step-3-approve-and-deploy-updates-in-wsus"></a>手順 3:WSUS で更新プログラムを承認および展開する
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用先:Windows Server 2019、Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 コンピューター グループ内のコンピューターは、今後 24 時間以内に自動的に WSUS サーバーに接続して更新プログラムを取得します。 WSUS のレポート機能を使用して、これらの更新プログラムがテスト コンピューターに展開されたかどうかを判断することができます。 テストが正常に完了したら、組織内の該当するコンピューター グループに対して更新プログラムを承認することができます。 次のチェック リストでは、WSUS 管理コンソールを使用し、更新プログラムを承認して展開する手順について説明します。
 
@@ -29,7 +28,7 @@ ms.locfileid: "71361691"
 |[3.2. 自動承認規則を構成する](3-approve-and-deploy-updates-in-wsus.md#BKM_3.2.a.)|選択したグループに対する更新プログラムのインストールを自動的に承認するように WSUS を構成し、既存の更新プログラムに対する改訂の承認方法を構成します。|
 |[3.3. インストールされた更新プログラムを WSUS レポートで確認する](3-approve-and-deploy-updates-in-wsus.md#BKM_3.3.)|WSUS のレポート機能を使用して、インストールされた更新プログラム、これらの更新プログラムを受け取ったコンピューターなどの詳細を確認します。|
 
-## <a name="BKM_3.1."></a>3.1. WSUS 更新プログラムを承認および展開する
+## <a name="31-approve-and-deploy-wsus-updates"></a><a name=BKM_3.1.></a>3.1. WSUS 更新プログラムを承認および展開する
 更新プログラムを承認および展開するには、次の手順を実行します。
 
 #### <a name="to-approve-and-deploy-wsus-updates"></a>WSUS 更新プログラムを承認および展開するには
@@ -48,7 +47,7 @@ ms.locfileid: "71361691"
 
 7.  **[承認の進行状況]** ウィンドウが表示され、更新プログラムの承認に関するタスクの進行状況が示されます。 承認プロセスが完了したら、 **[閉じる]** をクリックします。
 
-## <a name="BKM_3.2.a."></a>3.2. 自動承認規則を構成する
+## <a name="32-configure-auto-approval-rules"></a><a name=BKM_3.2.a.></a>3.2. 自動承認規則を構成する
 自動承認では、選択したグループに対して更新プログラムのインストールを自動的に承認する方法や、既存の更新プログラムに対する改訂の承認方法を指定できます。
 
 #### <a name="to-configure-automatic-approvals"></a>自動更新を構成するには
@@ -73,7 +72,7 @@ ms.locfileid: "71361691"
 
 7.  **[OK]** をクリックして [自動承認] ダイアログを閉じます。
 
-## <a name="BKM_3.3."></a>3.3. インストールされた更新プログラムを WSUS レポートで確認する
+## <a name="33-review-installed-updates-with-wsus-reports"></a><a name=BKM_3.3.></a>3.3. インストールされた更新プログラムを WSUS レポートで確認する
 更新プログラムを承認後 24 時間以内は、WSUS のレポート機能を使用して、更新プログラムがテスト グループ コンピューターに展開されたかどうかを判断することができます。 更新プログラムの状態を確認するには、次のように WSUS のレポート機能を使用できます。
 
 #### <a name="to-review-updates"></a>更新プログラムを確認するには

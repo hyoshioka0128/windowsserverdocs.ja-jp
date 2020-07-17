@@ -4,17 +4,16 @@ description: KMS ライセンス認証プロセス中に発生する可能性の
 ms.topic: article
 ms.date: 10/3/2019
 ms.technology: server-general
-ms.assetid: ''
 author: Teresa-Motiv
 ms.author: v-tea
 manager: dcscontentpm
 ms.localizationpriority: medium
-ms.openlocfilehash: dab8294837a5f9116328e59364de9beb139a4b77
-ms.sourcegitcommit: 9855d6b59b1f8722f39ae74ad373ce1530da0ccf
+ms.openlocfilehash: 3446ad0954510d8c96e9a2d361f24c90d325b782
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71963008"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "80826255"
 ---
 # <a name="kms-activation-known-issues"></a>KMS ライセンス認証: 既知の問題
 
@@ -35,7 +34,7 @@ KMS クライアント コンピューターで、 **[システム]** コント�
 
 ## <a name="the-kms-client-computer-does-not-activate"></a>KMS クライアント コンピューターがライセンス認証されない
 
-KMS ライセンス認証のしきい値が満たされていることを確認します。 KMS ホスト コンピューターで、Slmgr.vbs を実行し、 **/dli** コマンド ライン オプションを使用してホストの現在のカウント ("現在の数") を確認します。 KMS ホストに示されたカウントが 25 になるまで、Windows 7 クライアント コンピューターをライセンス認証することはできません。 Windows Server 2008 R2 KMS クライアントでは、ライセンス認証に必要な KMS カウントは 5 です。 KMS の要件の詳細については、「[ボリューム ライセンス認証の計画ガイド](http://go.microsoft.com/fwlink/?linkid=155926)」を参照してください。 
+KMS ライセンス認証のしきい値が満たされていることを確認します。 KMS ホスト コンピューターで、Slmgr.vbs を実行し、 **/dli** コマンド ライン オプションを使用してホストの現在のカウント ("現在の数") を確認します。 KMS ホストに示されたカウントが 25 になるまで、Windows 7 クライアント コンピューターをライセンス認証することはできません。 Windows Server 2008 R2 KMS クライアントでは、ライセンス認証に必要な KMS カウントは 5 です。 KMS の要件の詳細については、「[ボリューム ライセンス認証の計画ガイド](https://go.microsoft.com/fwlink/?linkid=155926)」を参照してください。 
 
 KMS クライアント コンピューター上のアプリケーション イベント ログで、イベント ID 12289 を調べます。 このイベントの次の情報を確認します。
 
@@ -86,4 +85,4 @@ KMS キーは、KMS ホストにのみインストールする必要がありま
 
 KMS ホストに障害が発生した場合は、新しいホストに KMS ホスト キーをインストールし、そのホストをライセンス認証する必要があります。 新しい KMS ホストの SRV RR が DNS データベースにあることを確認します。 障害が発生した KMS ホストと同じコンピューター名と IP アドレスを使用して新しい KMS ホストをインストールすると、障害が発生したホストの DNS SRV レコードを新しい KMS ホストで使用できます。 新しいホストのコンピューター名が異なる場合は、障害が発生したホストの DNS SRV RR を手動で削除するか、(DNS で清掃が有効になっている場合は) DNS によって自動的に削除されるようにすることができます。 ネットワークで DDNS を使用している場合は、新しい KMS ホストによって DNS サーバー上に新しい SRV RR が自動的に作成されます。 その後、新しい KMS ホストによるクライアント更新要求の収集が開始され、KMS ライセンス認証のしきい値が満たされるとすぐにクライアントのライセンス認証が始まります。
 
-KMS クライアントで自動検出を使用していれば、元の KMS ホストが更新要求に応答しない場合、別の KMS ホストが自動的に選択されます。 クライアントで自動検出を使用していない場合は、**slmgr.vbs /skms** を実行して、障害が発生した KMS ホストに割り当てられていた KMS クライアント コンピューターを手動で更新する必要があります。 このシナリオを回避するには、自動検出を使用するように KMS クライアントを構成します。 詳細については、「[ボリューム ライセンス認証の展開ガイド](http://go.microsoft.com/fwlink/?linkid=150083)」を参照してください。
+KMS クライアントで自動検出を使用していれば、元の KMS ホストが更新要求に応答しない場合、別の KMS ホストが自動的に選択されます。 クライアントで自動検出を使用していない場合は、**slmgr.vbs /skms** を実行して、障害が発生した KMS ホストに割り当てられていた KMS クライアント コンピューターを手動で更新する必要があります。 このシナリオを回避するには、自動検出を使用するように KMS クライアントを構成します。 詳細については、「[ボリューム ライセンス認証の展開ガイド](https://go.microsoft.com/fwlink/?linkid=150083)」を参照してください。

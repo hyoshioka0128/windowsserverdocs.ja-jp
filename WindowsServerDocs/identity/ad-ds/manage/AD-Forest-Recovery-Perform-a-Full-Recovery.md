@@ -1,6 +1,5 @@
 ---
 title: AD フォレストの回復-サーバーの完全回復の実行
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: 1a1182a6-4462-4a13-806e-0e642a0d5db2
 ms.technology: identity-adds
-ms.openlocfilehash: 1ade1f2e316387fbe84209c1bc7a986fff6f2a71
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: bf321ae769aa6f0da1cebce7700ea429161a0956
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390543"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80824015"
 ---
 # <a name="ad-forest-recovery---performing-a-full-server-recovery"></a>AD フォレストの回復-サーバーの完全回復の実行 
 
@@ -52,7 +51,7 @@ Windows Server 2016、2012 R2、または2012のサーバーの完全復旧を�
    -  自動的に再起動し、ディスクエラーをチェックする**高度な**機能の選択を解除します。 これらは既定で有効になっています。
    ![サーバーの復元](media/AD-Forest-Recovery-Perform-a-Full-Recovery/restore6.png)
 8. **[次へ]** をクリックします。
-9. **[Finish]** (完了) をクリックします。 続行するかどうかを確認するメッセージが表示されます。 **[はい]** をクリックします。 
+9. **[完了]** をクリックします。 続行するかどうかを確認するメッセージが表示されます。 **[はい]** をクリックします。 
    ![サーバーの復元](media/AD-Forest-Recovery-Perform-a-Full-Recovery/restore11.png) 
 10. これが完了したら、「 [AD フォレストの回復-DFSR によってレプリケートされた sysvol の権限のある同期を実行する](AD-Forest-Recovery-Authoritative-Recovery-SYSVOL.md)」の説明に従って、SYSVOL の authoritative restore を実行します。
 
@@ -76,7 +75,7 @@ Windows Server 2016、2012 R2、または2012のサーバーの完全復旧を�
     - ドライバーのインストール
     - 自動的に再起動し、ディスクエラーをチェックする**高度な**機能の選択を解除します。 これらは既定で有効になっています。
 12. **[次へ]** をクリックします。
-13. **[Finish]** (完了) をクリックします。 続行するかどうかを確認するメッセージが表示されます。 **[はい]** をクリックします。  
+13. **[完了]** をクリックします。 続行するかどうかを確認するメッセージが表示されます。 **[はい]** をクリックします。  
 14. これが完了したら、「 [AD フォレストの回復-DFSR によってレプリケートされた sysvol の権限のある同期を実行する](AD-Forest-Recovery-Authoritative-Recovery-SYSVOL.md)」の説明に従って、SYSVOL の authoritative restore を実行します。
 
 ## <a name="enabling-the-network-adapter-for-a-network-backup"></a>ネットワークバックアップ用にネットワークアダプターを有効にする
@@ -84,7 +83,7 @@ Windows Server 2016、2012 R2、または2012のサーバーの完全復旧を�
 ネットワーク共有から復元するために、コマンドプロンプトからネットワークアダプターを有効にする必要がある場合は、次の手順を実行します。
 
 1. Windows セットアップを開始するには、言語、時刻と通貨の形式、およびキーボードのオプションを指定し、 **[次へ]** をクリックします。 
-2. **[コンピューターの修復]** をクリックします。 I
+2. **[コンピューターの修復]** をクリックします。 i
 3. **[トラブルシューティング]** をクリックし、 **[コマンドプロンプト]** をクリックします。 
 4. 次のコマンドを入力し、Enter キーを押します。  
 
@@ -120,7 +119,7 @@ Windows Server 2016、2012 R2、または2012のサーバーの完全復旧を�
    set address "Name of Network Adapter" static IPv4 Address SubnetMask IPv4 Gateway Address 1  
    ```  
 
-   次に、例を示します。  
+   例 :  
   
    ```  
    set address "Local Area Connection" static 192.168.1.2 255.0.0.0 192.168.1.1 1  
@@ -130,7 +129,7 @@ Windows Server 2016、2012 R2、または2012のサーバーの完全復旧を�
 
 6. ネットワークアダプターが動作しているので、上記の手順を選択して復元を完了します。
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 
 - [AD フォレストの回復ガイド](AD-Forest-Recovery-Guide.md)
 - [AD フォレストの回復 - 手順](AD-Forest-Recovery-Procedures.md)

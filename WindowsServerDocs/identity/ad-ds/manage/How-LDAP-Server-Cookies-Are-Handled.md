@@ -1,7 +1,6 @@
 ---
 ms.assetid: 3acaa977-ed63-4e38-ac81-229908c47208
 title: LDAP サーバー Cookie の処理方法
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: c825ae9c9b52068b58b99bc6ff597304c9643d17
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f90f53763e7a31ffed1fd820061910742e5cf98a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390083"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80823235"
 ---
 # <a name="how-ldap-server-cookies-are-handled"></a>LDAP サーバー Cookie の処理方法
 
@@ -126,7 +125,7 @@ The client should consider a more efficient search filter.  The limit for Maximu
   
 DC や LDAP サーバーにイベント 2898 が表示された場合は、MaxResultSetsPerConn を 25 に設定することをお勧めします。 1 つの LDAP 接続で 25 を超える並列ページング検索は普通ではありません。 イベント 2898 が引き続き表示される場合は、エラーが発生した LDAP クライアント アプリケーションを調査してみてください。 何らかの理由で余分なページング検索結果の取得から抜け出せなくなり、Cookie が保留のまま、新しいクエリが再度開始された可能性があります。 そのため、ある時点で目的に応じた十分な Cookie がアプリケーションにあるかを確認し、MaxResultSetsPerConn に 25 よりも大きな値を設定することもできます。ドメイン コントローラーにイベント 2899 が記録されている場合、計画は異なります。 DC および LDAP サーバーが、十分なメモリ (数 GB の空きメモリ) を搭載したマシンで稼動する場合、LDAP サーバーの MaxResultsetSize を 250 MB 以上に設定することをお勧めします。 この制限は、非常に大規模なディレクトリであっても、大量の LDAP ページ検索に十分に対応できます。  
   
-250 MB 以上のプールでイベント 2899 が変わらず表示される場合は、多くのクライアントに非常に大量のオブジェクトが返され、非常に高い頻度でクエリを実行している可能性があります。 [Active Directory のデータ コレクター セット](http://blogs.technet.com/b/askds/archive/2010/06/08/son-of-spa-ad-data-collector-sets-in-win2008-and-beyond.aspx) を使用して収集できるデータは、LDAP サーバーを常にビジー状態にする、反復ページング クエリを検索するのに役立ちます。 これらのクエリはすべて、使用されたページのサイズに一致する "返されたエントリ" が多数表示されます。  
+250 MB 以上のプールでイベント 2899 が変わらず表示される場合は、多くのクライアントに非常に大量のオブジェクトが返され、非常に高い頻度でクエリを実行している可能性があります。 [Active Directory のデータ コレクター セット](https://blogs.technet.com/b/askds/archive/2010/06/08/son-of-spa-ad-data-collector-sets-in-win2008-and-beyond.aspx) を使用して収集できるデータは、LDAP サーバーを常にビジー状態にする、反復ページング クエリを検索するのに役立ちます。 これらのクエリはすべて、使用されたページのサイズに一致する "返されたエントリ" が多数表示されます。  
   
 可能であれば、アプリケーションの設計を確認し、頻度が低く、データ量が少なく、このデータを照会するクライアントインスタンスの数が少ない別のアプローチを実装する必要があります。ソースコードにアクセスできるアプリケーションの場合、[効率的な Ad 対応アプリケーションを作成](https://msdn.microsoft.com/library/ms808539.aspx)するためのこのガイドは、アプリケーションが ad にアクセスするための最適な方法を理解するのに役立ちます。  
   

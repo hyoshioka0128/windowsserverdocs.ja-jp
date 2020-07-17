@@ -1,24 +1,24 @@
 ---
 title: Kerberos とサービス プリンシパル名 (SPN)
 description: ネットワークコントローラーは、管理クライアントと通信するための複数の認証方法をサポートしています。 Kerberos ベースの認証 (X509 証明書ベースの認証) を使用できます。 テスト配置に認証を使用しないオプションもあります。
-manager: dougkim
+manager: grcusanz
 ms.prod: windows-server
 ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: bc625de9-ee31-40a4-9ad2-7448bfbfb6e6
-ms.author: pashort
-author: shortpatti
+ms.author: anpaul
+author: AnirbanPaul
 ms.date: 08/23/2018
-ms.openlocfilehash: 78d5d2144e0def8e69a2a4ae5fdc2d7718936710
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 12ad2b27d275c074e0d8baacccd864e8926f405f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355769"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854375"
 ---
 # <a name="kerberos-with-service-principal-name-spn"></a>Kerberos とサービス プリンシパル名 (SPN)
 
->適用対象:Windows Server 2019
+>適用対象: Windows Server 2019
 
 ネットワークコントローラーは、管理クライアントと通信するための複数の認証方法をサポートしています。 Kerberos ベースの認証 (X509 証明書ベースの認証) を使用できます。 テスト配置に認証を使用しないオプションもあります。
 
@@ -30,7 +30,7 @@ SPN は、ネットワークコントローラーによって自動的に構成�
 
 1.  ドメインコントローラーコンピューターで、 **Active Directory ユーザーとコンピューター** を起動します。
 
-2.  [**詳細\>表示**] を選択します。
+2.  [**表示 \> 詳細設定**] を選択します。
 
 3.  **[コンピューター]** で、いずれかのネットワークコントローラーのコンピューターアカウントを見つけて右クリックし、 **[プロパティ]** を選択します。
 
@@ -58,7 +58,7 @@ SPN は、ネットワークコントローラーによって自動的に構成�
 
 ## <a name="failure-to-provide-permissions-for-spn-registrationmodification"></a>SPN の登録または変更に対するアクセス許可を提供できませんでした
 
-**新しい**Windows Server 2019 の展開では、[rest クライアント認証に Kerberos を使用する] を選択し、SPN を登録または変更するためのアクセス許可をネットワークコントローラーノードに付与しないと、ネットワークコントローラーでの rest 操作は失敗し、管理できません。SDN。
+**新しい**Windows Server 2019 の展開では、[rest クライアント認証に Kerberos を使用する] を選択し、SPN を登録または変更するためのアクセス許可をネットワークコントローラーノードに付与しないと、ネットワークコントローラーに対する rest 操作が失敗し、SDN を管理できなくなります。
 
 Windows Server 2016 から Windows Server 2019 にアップグレードする場合、[REST クライアント認証に Kerberos を使用する] を選択した場合、REST 操作はブロックされず、既存の運用環境のデプロイの透明性が確保されます。 
 
@@ -66,7 +66,7 @@ SPN が登録されていない場合、REST クライアント認証は NTLM �
 
 
 >[!TIP]
->通常、REST ベースの操作には、IP アドレスまたは DNS 名を使用するようにネットワークコントローラーを構成できます。 ただし、Kerberos を構成するときに、ネットワークコントローラーに対する REST クエリに IP アドレスを使用することはできません。 \<たとえば、を使用 https://networkcontroller.consotso.com\> することはできますが、 \< を使用 https://192.34.21.3\> することはできません。 IP アドレスが使用されている場合、サービスプリンシパル名は機能しません。
+>通常、REST ベースの操作には、IP アドレスまたは DNS 名を使用するようにネットワークコントローラーを構成できます。 ただし、Kerberos を構成するときに、ネットワークコントローラーに対する REST クエリに IP アドレスを使用することはできません。 たとえば、\<https://networkcontroller.consotso.com\>を使用できますが、\<https://192.34.21.3\>を使用することはできません。 IP アドレスが使用されている場合、サービスプリンシパル名は機能しません。
 >
 >Windows Server 2016 で Kerberos 認証と共に REST 操作に IP アドレスを使用していた場合、実際の通信は NTLM 認証を介して行われていました。 このような展開では、Windows Server 2019 にアップグレードすると、引き続き NTLM ベースの認証を使用します。 Kerberos ベースの認証に移行するには、REST 操作にネットワークコントローラーの DNS 名を使用し、SPN を登録するためのアクセス許可をネットワークコントローラーノードに付与する必要があります。
 

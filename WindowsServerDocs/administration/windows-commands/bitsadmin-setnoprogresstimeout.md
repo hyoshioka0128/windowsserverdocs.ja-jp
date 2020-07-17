@@ -1,24 +1,20 @@
 ---
 title: bitsadmin setnoprogresstimeout
-description: '**Bitsadmin setnoprogresstimeout**の Windows コマンドに関するトピックでは、一時的なエラーが発生した後にサービスがファイルの転送を試行する時間の長さを秒単位で設定します。'
-ms.custom: na
+description: Bitsadmin setnoprogresstimeout コマンドの参照記事では、一時的なエラーが発生した後にサービスがファイルの転送を試行する時間を秒単位で設定します。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7fac50d9-cc6b-46a4-a96f-fab751ee1756
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 761d0d76a2c70af9d4ad68aa564c1a9816691d0d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9bb7ac4cd03148c533aa27f62a1c9770465673a5
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71380500"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927671"
 ---
 # <a name="bitsadmin-setnoprogresstimeout"></a>bitsadmin setnoprogresstimeout
 
@@ -27,29 +23,34 @@ ms.locfileid: "71380500"
 ## <a name="syntax"></a>構文
 
 ```
-bitsadmin /SetNoProgressTimeout <Job> <TimeOutvalue>
+bitsadmin /setnoprogresstimeout <job> <timeoutvalue>
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
-|---------|-----------|
-|Job|ジョブの表示名または GUID|
-|TimeOutvalue|秒単位で表された数値。|
+| パラメーター | 説明 |
+| --------- | ----------- |
+| ジョブ (job) | ジョブの表示名または GUID。 |
+| timeoutvalue | 最初のエラーの後、ファイルの転送を BITS が待機する時間 (秒単位)。 |
 
-## <a name="remarks"></a>コメント
+### <a name="remarks"></a>注釈
 
--   ジョブで一時的なエラーが発生した場合、進行状況のタイムアウト間隔は開始されません。
--   データのバイトが正常に転送されると、タイムアウト間隔が停止またはリセットされます。
--   進行状況のタイムアウト間隔が*TimeOutvalue*を超えると、ジョブは致命的なエラー状態になります。
+- ジョブが最初の一時的なエラーを検出したときに、"進行状況なし" のタイムアウト間隔が開始されます。
 
-## <a name="BKMK_examples"></a>例
+- データのバイトが正常に転送されると、タイムアウト間隔が停止またはリセットされます。
 
-次の例では、 *Mydownloadjob*という名前のジョブの 進行状況なしのタイムアウト値を20秒に設定します。
+- "進行状況なし" のタイムアウト間隔が*timeoutvalue*を超えると、ジョブは致命的なエラー状態になります。
+
+## <a name="examples"></a>例
+
+*Mydownloadjob*という名前のジョブの "進行状況なし" タイムアウト値を20秒に設定するには、次のようにします。
+
 ```
-C:\>bitsadmin /SetNoProgressTimeout myDownloadJob 20
+bitsadmin /setnoprogresstimeout myDownloadJob 20
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [bitsadmin コマンド](bitsadmin.md)

@@ -1,75 +1,62 @@
 ---
 title: print
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: プリンターにテキストファイルを送信する print コマンドの参照記事です。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: aa2325d5-a993-4ed3-b996-255165452db8
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ada0657e2f17754e55e97e6488aac99fb0025afb
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a8e8cf07ca19af1cf0a0445b9feed06916be10c0
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71372155"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85926038"
 ---
 # <a name="print"></a>print
 
+テキスト ファイルをプリンターに送信します。 ファイルは、ローカル コンピューターのシリアル ポートまたはパラレル ポートに接続されているプリンターに送信する場合、バック グラウンドで印刷できます。
 
-
-テキスト ファイルをプリンターに送信します。
-
-このコマンドを使用する方法の例については、[例](#BKMK_examples)を参照してください。
+> [!NOTE]
+> コマンドプロンプトから多くの構成タスクを実行するには、[[モード] コマンド](mode.md)を使用します。これには、パラレルポートまたはシリアルポートに接続されているプリンターの構成、プリンターの状態の表示、またはコードページ切り替え用のプリンターの準備が含まれます。
 
 ## <a name="syntax"></a>構文
 
 ```
-Print [/d:<PrinterName>] [<Drive>:][<Path>]<FileName>[ ...]
+print [/d:<printername>] [<drive>:][<path>]<filename>[ ...]
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
-|---------|-----------|
-|/d:\<PrinterName >|ジョブを印刷するプリンターを指定します。 ローカルに接続されたプリンターに印刷するには、プリンターが接続されているコンピューターで、ポートを指定します。</br>-パラレル ポートに有効な値は、LPT1、LPT2、LPT3 です。</br>にシリアル ポート用有効な値は、COM1、COM2、COM3、COM4 です。</br>また、キュー名 (\\\\*ServerName*\*PrinterName *) を使用して、ネットワークプリンターを指定することもできます。 プリンターを指定しないと、印刷ジョブが既定では LPT1 に送信されます。|
-|\<ドライブ >:|印刷するファイルの場所の論理的または物理的なドライブを指定します。 現在のドライブに印刷するファイルがある場合、このパラメーターは必要ありません。|
-|\<パス >|印刷するファイルの場所を指定します。 印刷するファイルが現在のディレクトリにある場合、このパラメーターは必要ありません。|
-|\<ファイル名 > [...]|必須。 印刷するファイルを指定します。 1 つのコマンドでは、複数のファイルを含めることができます。|
-|/?|コマンド プロンプトにヘルプを表示します。|
+| パラメーター | 説明 |
+|--|--|
+| d`<printername>` | ジョブを印刷するプリンターを指定します。 ローカルに接続されたプリンターに印刷するには、プリンターが接続されているコンピューターで、ポートを指定します。 パラレルポートの有効な値は、 **LPT1**、 **LPT2**、および**LPT3**です。 シリアルポートの有効な値は、 **COM1**、 **COM2**、 **COM3**、および**COM4**です。 また、キュー名 () を使用して、ネットワークプリンターを指定することもでき `\\server_name\printer_name` ます。 プリンターを指定しない場合、既定で印刷ジョブは**LPT1**に送信されます。 |
+| `<drive>`: | 印刷するファイルの場所の論理的または物理的なドライブを指定します。 印刷するファイルが現在のドライブにある場合、このパラメーターは必要ありません。 |
+| `<path>` | 印刷するファイルの場所を指定します。 印刷するファイルが現在のディレクトリにある場合、このパラメーターは必要ありません。 |
+| `<filename>[ ...]` | 必須です。 印刷するファイルを指定します。 1 つのコマンドでは、複数のファイルを含めることができます。 |
+| /? | コマンド プロンプトにヘルプを表示します。 |
 
-## <a name="remarks"></a>注釈
+### <a name="examples"></a>例
 
--   ファイルは、ローカル コンピューターのシリアル ポートまたはパラレル ポートに接続されているプリンターに送信する場合、バック グラウンドで印刷できます。
--   コマンド プロンプトからさまざまな構成タスクを実行するにを使用して、 **モード** コマンドです。
+現在のディレクトリにある**report.txt**ファイルを、ローカルコンピューター上の**lpt2**に接続されているプリンターに送信するには、次のように入力します。
 
-    の詳細については、「[モード](mode.md)」を参照してください。  
-    -   パラレル ポートに接続されているプリンターを構成します。
-    -   シリアル ポートに接続されているプリンターを構成します。
-    -   プリンターの状態を表示します。
-    -   コード ページ切り替えのプリンターを準備します。
-
-## <a name="BKMK_examples"></a>例
-
-LPT2 に、ローカル コンピューター上のプリンターには、現在のディレクトリに Report.txt に接続されているファイルを送信するには、次のように入力します。
 ```
 print /d:lpt2 report.txt
 ```
-C:\ Accounting ディレクトリにある test.txt ファイルを \\\\CopyRoom サーバーの Printer1 印刷キューに送信するには、次のように入力します。
+
+**C:\ アカウンティング**ディレクトリにある**report.txt**ファイルを、 **/d: \\ copyroom**サーバーの**printer1**印刷キューに送信するには、次のように入力します。
+
 ```
-print /d:\\copyroom\printer1 c:\accounting\report.txt 
+print /d:\\copyroom\printer1 c:\accounting\report.txt
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
 
-[印刷コマンドのリファレンス](print-command-reference.md)
+- [印刷コマンドのリファレンス](print-command-reference.md)
 
-[モード](mode.md)
+- [モードコマンド](mode.md)

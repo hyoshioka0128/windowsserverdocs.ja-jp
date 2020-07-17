@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: 4842a4ab-70bb-4744-bea7-70f2ac892ad1
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 25b8586d370865dd3ae4393c2536c348a5d0810f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: d64498d5d77483ae43ade01b30aaeecd3e9fc753
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71396187"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80315983"
 ---
 # <a name="install-network-policy-server"></a>ネットワーク ポリシー サーバーをインストールする
 
@@ -36,7 +36,7 @@ Windows PowerShell を使用してこの手順を実行するには、Windows Po
 
 1.  NPS1 のサーバー マネージャーで、 **[管理]** をクリックし、 **[役割と機能の追加]** をクリックします。 役割と機能の追加ウィザードが起動されます。
 
-2.  **開始する前に**, 、クリックして **次**します。
+2.  **[開始する前に]** で **[次へ]** をクリックします。
 
     > [!NOTE]
     > 以前、役割と機能の追加ウィザードの実行時に **[既定でこのページを表示しない]** をクリックした場合、 **[開始する前に]** ページは表示されません。

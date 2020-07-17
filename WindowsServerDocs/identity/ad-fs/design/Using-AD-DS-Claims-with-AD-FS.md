@@ -1,7 +1,6 @@
 ---
 ms.assetid: 460792e4-9f1d-4e7b-b6b2-53e057f839df
 title: AD FS 展開トポロジに関する考慮事項
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,20 +8,20 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 881cdc02d06ce5afd3c0706f9c1ea5fa2576799f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3086de9dc34f555d5f6056716ab9572b980f1962
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71358919"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858755"
 ---
 # <a name="using-ad-ds-claims-with-ad-fs"></a>AD DS の要求を AD FS と共に使用する
   
   
-Active Directory Domain Services \(AD DS\)発行されたユーザーとデバイスの信頼性情報を Active Directory フェデレーションサービス (AD FS) \(と共に使用することで、フェデレーションアプリケーションの高度なアクセス制御を有効にすることができ AD FS\-\).  
+Active Directory Domain Services \(\)AD DS を使用することにより、フェデレーションアプリケーションのより高度なアクセス制御を有効にすることができます。 \-Active Directory フェデレーションサービス (AD FS) \(AD FS と共にユーザーとデバイスの信頼性情報を発行\)ます。  
   
 ## <a name="about-dynamic-access-control"></a>ダイナミック アクセス制御について  
-「Windows Server® 2012 では、ダイナミック アクセス制御機能により組織ユーザーの信頼性情報に基づいてファイルへのアクセス許可を \(ユーザー アカウントの属性によって供給される\) とデバイスの信頼性情報 \(コンピューター アカウントの属性によって供給されるは\) Active Directory ドメイン サービスによって発行される \(AD DS\)します。 要求を発行する AD DS は、Kerberos 認証プロトコルを使って Windows 統合認証に統合されます。  
+Windows Server&reg; 2012 では、動的 Access Control 機能を使用して、ユーザーアカウント属性\) およびデバイスの信頼性情報によって供給されるユーザー要求 \(に基づいてファイルへのアクセス権を付与することができます。これは \(\) Active Directory Domain Services \(によって発行された AD DS コンピューターアカウントの属性によって供給されます。\) 要求を発行する AD DS は、Kerberos 認証プロトコルを使って Windows 統合認証に統合されます。  
   
 ダイナミック アクセス制御の詳細については、次を参照してください。 [ダイナミック アクセス制御: コンテンツ ロードマップ](../../solution-guides/Dynamic-Access-Control--Scenario-Overview.md#BKMK_APP)します。  
   
@@ -42,16 +41,16 @@ Active Directory Domain Services \(AD DS\)発行されたユーザーとデバ�
   
     -   AD DS セキュリティ グループをアプリケーションと統合 Windows 認証を介してアクセス可能なリソースへのアクセスを制御するそれ以外の場合に使用されます。  
   
-    -   \-企業間の\/ B2Bインターネット\)アクセス可能なアプリケーションとリソースへのアクセスを制御するために使用されるフォレストの信頼。 \(\-  
+    -   ビジネス\-へのアクセスを制御するために使用されるフォレストの信頼は、インターネットにアクセス可能なアプリケーションとリソース \/ のビジネス \(B2B\)\-ます。  
   
--   組織は、特定のコンピューターアカウントの属性値が AD DS \(に格納されているかどうかに基づいて、クライアントコンピューターからのネットワークリソースへの不正アクセスを防ぐことができるようになりました。たとえば、コンピューターの DNS 名\)がアクセス制御と一致するかどうかリソース\(のポリシー (たとえば、要求に\-対応する Web アプリケーション\)など、信頼性\)情報または証明書利用者ポリシー \(を持つ acld のファイルサーバー)。 これにより管理者はリソースやアプリケーションをさらに細かくアクセス制御ポリシーを設定できます。  
+-   \(AD DS に格納されている特定のコンピューターアカウントの属性値 (たとえば、コンピューターの DNS\) 名が \(リソースのアクセス制御ポリシーと一致しているかどうかなどに基づいて、クライアントコンピューターからのネットワークリソースへの不正アクセスを防ぐことができるようになりました。たとえば、要求\) を含むファイルサーバーや、証明書利用者ポリシー \(たとえば、要求\-\) これにより管理者はリソースやアプリケーションをさらに細かくアクセス制御ポリシーを設定できます。  
   
     -   Windows 統合認証を使用してのみアクセスできます。  
   
     -   インターネットの AD FS の認証メカニズムを使用してアクセスできます。 AD FS を使用して、デバイスの信頼性情報を発行したインターネット アクセス可能なリソースまたは証明書利用者アプリケーションで使用できる SAML トークンにカプセル化されることができます、AD FS の要求に AD DS を変換することができます。  
   
 ## <a name="differences-between-ad-ds-and-ad-fs-issued-claims"></a>AD DS および AD FS の違いは、要求を発行  
-AD DS vs から発行されるクレームを理解するために重要な 2 つの差別化する要素があります。AD FS します。 これらの相違点は次のとおりです。  
+AD DS と AD FS から発行される要求について理解するために重要な2つの差別化要因があります。 これらの相違点は次のとおりです。  
   
 -   AD DS では、Kerberos チケット、SAML トークンではないでカプセル化されたクレームを発行できるのみです。 AD DS での要求を発行する方法の詳細については、次を参照してください。 [ダイナミック アクセス制御: コンテンツ ロードマップ](../../solution-guides/Dynamic-Access-Control--Scenario-Overview.md#BKMK_APP)します。  
   
@@ -78,5 +77,5 @@ AD DS 発行された要求は、AD FS と共に使用して、ユーザーと�
   
 AD DS が発行されたクレームの AD FS と連動するために必要なクレーム ルールを作成する方法の詳細については、次を参照してください。 [入力方向の要求を変換するルールを作成する](../../ad-fs/operations/Create-a-Rule-to-Transform-an-Incoming-Claim.md)です。  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 [Windows Server 2012 での AD FS 設計ガイド](AD-FS-Design-Guide-in-Windows-Server-2012.md)

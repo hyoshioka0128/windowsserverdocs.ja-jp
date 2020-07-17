@@ -1,24 +1,20 @@
 ---
 title: IM を使用する
 description: MultiPoint Services でインスタントメッセージングを使用する方法について説明します。
-ms.custom: na
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 475cde97-d05c-4589-afa9-96db891bd271
 author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 202c5c1c336bb1692f819e5dfb9dba41914c288e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4e967c40231f36cb4eb53b661d50cd7b88a9dd3e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394860"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820555"
 ---
 # <a name="use-im"></a>IM を使用する
 それがサーバー設定で有効になっている場合、MultiPoint ダッシュボードとステーション ユーザーは IM を介してプライベート メッセージを交換することができます。

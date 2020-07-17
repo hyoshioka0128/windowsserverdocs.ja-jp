@@ -8,10 +8,10 @@ ms.author: phstee
 author: phstee
 ms.date: 10/16/2017
 ms.openlocfilehash: f684a87b091ffd95bb65c0b5f3aa0dfc9f405825
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "71355038"
 ---
 # <a name="performance-tuning-guidelines-for-windows-server-2016"></a>Windows Server 2016 のパフォーマンス チューニング ガイドライン
@@ -23,7 +23,7 @@ ms.locfileid: "71355038"
 > [!warning]
 > レジストリ設定とチューニング パラメーターは、Windows Server のバージョン間で大幅に変更されます。 予期しない結果を回避するために、必ず最新のチューニング ガイドラインを使用してください。
 
-## <a name="in-this-guide"></a>このガイドについて
+## <a name="in-this-guide"></a>このガイドの内容
 このガイドでは、Windows Server 2016 のパフォーマンスとチューニングのガイダンスを 3 つのカテゴリに整理しています。
 
 |サーバー ハードウェア | サーバーの役割 | サーバー サブシステム |

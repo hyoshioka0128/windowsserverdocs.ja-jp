@@ -2,20 +2,19 @@
 title: ゲストオペレーティングシステムでサポートされている場合にのみ SCSI コントローラーを構成する
 description: このベストプラクティスアナライザールールのテキストのオンラインバージョン。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: 861f194f-467e-4b07-a1c5-55b35f6327c4
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: da8d929a8f06f58610913d28d2f1e90299efb235
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: cf206d9568ef7634d724f3fce450985c34ebfac5
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366419"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80862165"
 ---
 # <a name="configure-scsi-controllers-only-when-supported-by-the-guest-operating-system"></a>ゲストオペレーティングシステムでサポートされている場合にのみ SCSI コントローラーを構成する
 
@@ -27,7 +26,7 @@ ms.locfileid: "71366419"
 |-|-|  
 |**オペレーティング システム**|Windows Server 2016|  
 |**製品/機能**|Hyper-V|  
-|**順**|Warning|  
+|**順**|［警告］|  
 |**カテゴリ**|構成|  
   
 次のセクションでは、斜体は、この問題のためのベスト プラクティス アナライザー ツールで表示される UI テキストを示します。  

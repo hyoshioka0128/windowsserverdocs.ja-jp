@@ -1,7 +1,6 @@
 ---
 ms.assetid: 73a4deba-7da6-4eae-8fdd-2a4d369f9cbb
 title: 仮想化ドメイン コントローラーのテクニカル リファレンスの付録
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: e1018d5bbff5922df5a696e5c4fad12dc9f6ec3d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ee5a46781a61b8546fef113763c0d8ef9ca9f6cc
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408585"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853985"
 ---
 # <a name="virtualized-domain-controller-technical-reference-appendix"></a>仮想化ドメイン コントローラーのテクニカル リファレンスの付録
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 このトピックでは、次の内容について説明します。  
   
@@ -26,7 +25,7 @@ ms.locfileid: "71408585"
   
 -   [Fixvdcpermissions.ps1](../../../ad-ds/reference/virtual-dc/../../../ad-ds/reference/virtual-dc/Virtualized-Domain-Controller-Technical-Reference-Appendix.md#BKMK_FixPDCPerms)  
   
-## <a name="BKMK_Terms"></a>関する  
+## <a name="terminology"></a><a name="BKMK_Terms"></a>関する  
   
 -   **Snapshot** -特定の時点における仮想マシンの状態。 これは、作成された以前のスナップショットのチェーン、ハードウェア、および仮想化プラットフォームに依存します。  
   
@@ -44,7 +43,7 @@ ms.locfileid: "71408585"
   
 -   **Import/Export** -仮想マシン全体 (VM ファイル、VHD、およびマシン構成) を保存することをユーザーに許可する hyper-v の機能。 その後、ユーザーはそのファイルセットを使用して、同じ VM (復元) と同じマシン上にコンピューターを戻すことができます。また、同じ VM (移動)、または新しい VM (コピー) としてコンピューターを戻すことができます。  
   
-## <a name="BKMK_FixPDCPerms"></a>Fixvdcpermissions.ps1  
+## <a name="fixvdcpermissionsps1"></a><a name="BKMK_FixPDCPerms"></a>Fixvdcpermissions.ps1  
   
 ```  
 # Unsigned script, requires use of set-executionpolicy remotesigned -force  

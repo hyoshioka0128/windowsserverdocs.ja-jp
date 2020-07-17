@@ -5,19 +5,18 @@ manager: dougkim
 ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
-ms.assetid: ''
 ms.author: dacuo
-author: shortpatti
+author: dcuomo
 ms.date: 09/07/2018
-ms.openlocfilehash: dce890d5ae542789c49bf08b5e7f25e62ea2e8c2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0ffb417728bbdb73d8fb462ff7783b17b511bcd3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355300"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80814775"
 ---
 # <a name="rsc-in-the-vswitch"></a>VSwitch 内の RSC
->適用対象:Windows Server 2019
+>適用対象: Windows Server 2019
 
 VSwitch 内の受信セグメント合体 (RSC) は、Windows Server 2019 および Windows 10 10 月2018更新プログラムの機能です。これにより、ホストの CPU 使用率を削減し、複数の TCP セグメントを少数に結合して、仮想ワークロードのスループットを向上させることができます。楕円. 処理を減らす、大きなセグメント (結合) は、多数の小さなセグメントを処理するよりも効率的です。
 
@@ -27,7 +26,7 @@ Windows Server 2012 以降には、受信セグメントの結合とも呼ばれ
 
 データパスが仮想スイッチを通過するワークロードでは、この機能を活用できます。
 
-以下に例を示します。
+例 :
 
 -   以下を含む仮想 Nic をホストします。
 
@@ -41,7 +40,7 @@ Windows Server 2012 以降には、受信セグメントの結合とも呼ばれ
 
 -   ソフトウェア定義ネットワーク GRE ゲートウェイ
 
--   コンテナー
+-   Container
 
 この機能と互換性のないワークロードは次のとおりです。
 
@@ -66,7 +65,7 @@ Get-VMSwitch -Name vSwitchName | Select-Object *RSC*
 
 
 >[!IMPORTANT]
->重要:VSwitch の RSC は、既存の接続に影響を与えることなく、すぐに有効または無効にすることができます。
+>重要: vSwitch の RSC は、既存の接続に影響を与えることなく、すぐに有効または無効にすることができます。
 
 
 **VSwitch で RSC を無効にする**

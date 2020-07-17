@@ -1,7 +1,6 @@
 ---
 ms.assetid: 8c179884-f0d9-4c7a-973d-820119cf3c38
 title: すべてのユーザーを許可する規則を作成する
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 1356218c5f9f47073f007286e8acfdf4c3608b73
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 894857813115002f3998a9ab5000d57b944fd448
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407623"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80816785"
 ---
 # <a name="create-a-rule-to-permit-all-users"></a>すべてのユーザーを許可する規則を作成する
 
@@ -24,7 +23,7 @@ Windows Server 2016 では、 **Access Control ポリシー**を使用して、�
   
 で AD FS 管理スナップ\-を使用して要求規則を作成するには、次の手順を実行します。  
   
-この手順を実行するには、ローカル コンピューターの **Administrators**グループのメンバーシップか、それと同等のメンバーシップが最低限必要です。  適切なアカウントの使用方法の詳細を確認し、グループ メンバーシップ [ローカルおよびドメインの既定のグループ](https://go.microsoft.com/fwlink/?LinkId=83477)します。 
+この手順を完了するには、ローカル コンピューター上の **Administrators** または同等のメンバーシップが最低限必要です。  適切なアカウントの使用方法の詳細を確認し、グループ メンバーシップ [ローカルおよびドメインの既定のグループ](https://go.microsoft.com/fwlink/?LinkId=83477)します。 
 
 ## <a name="to-create-a-rule-to-permit-all-users-in-windows-server-2016"></a>Windows Server 2016 のすべてのユーザーを許可するルールを作成するには
 

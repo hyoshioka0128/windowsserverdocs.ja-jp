@@ -1,28 +1,24 @@
 ---
 title: Azure での UPD 記憶域用に 2 ノードの記憶域スペース ダイレクト SOFS を展開する
 description: RDS で記憶域スペース ダイレクトを使用する方法について説明します。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1099f21d-5f07-475a-92dd-ad08bc155da1
 author: haley-rowland
 ms.author: harowl
 ms.date: 07/17/2018
 manager: scottman
-ms.openlocfilehash: 2d82379dfbc03d28ec174e66862f130f2a3c50a6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2386a231edf80fa611daf71c171bc0de3a7b497e
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387132"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "80855545"
 ---
 # <a name="deploy-a-two-node-storage-spaces-direct-scale-out-file-server-for-upd-storage-in-azure"></a>Azure での UPD 記憶域用に 2 ノードの記憶域スペース ダイレクト スケールアウト ファイル サーバーを展開する
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016
+>適用先:Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016
 
 リモート デスクトップ サービス (RDS) では、ユーザー プロファイル ディスク (Upd) のドメインに参加しているファイル サーバーが必要です。 Azure で高可用性のドメインに参加しているスケール アウト ファイル サーバー (SOFS) を展開するには、Windows Server 2016 で直接記憶域スペースを使用します。 UPD またはリモート デスクトップ サービスに慣れていない場合は、「[リモート デスクトップ サービスへようこそ](welcome-to-rds.md)」を参照してください。
 
@@ -35,13 +31,13 @@ DS シリーズ Vm と premium storage データ ディスクと、SOFS を展�
 
 これらの手順では、2 つのノードの展開です。 次の表では、お客様のビジネス ユーザーの数の Upd を格納する必要があります、VM とディスクのサイズを示します。 
 
-| Users | 合計 (GB) | VM | ディスク数 | ディスクの種類 | ディスク サイズ (GB) | 構成   |
+| ユーザー | 合計 (GB) | VM | ディスク数 | ディスクの種類 | ディスク サイズ (GB) | 構成   |
 |-------|------------|----|---------|-----------|----------------|-----------------|
-| 10    | 50         | DS1 | 2       | P10       | 128            | x (DS1 + 2 P10) 2  |
-| 25    | 125        | DS1 | 2       | P10       | 128            | x (DS1 + 2 P10) 2  |
-| 50    | 250        | DS1 | 2       | P10       | 128            | x (DS1 + 2 P10) 2  |
-| 100   | 500        | DS1 | 2       | P20       | 512            | x (DS1 + 2 P20)  |
-| 250   | 1250       | DS1 | 2       | P30       | 1024           | x (DS1 + 2 P30) 2  |
+| 10    | 50         | DS1 | 2 で保護されたプロセスとして起動されました       | P10       | 128            | x (DS1 + 2 P10) 2  |
+| 25    | 125        | DS1 | 2 で保護されたプロセスとして起動されました       | P10       | 128            | x (DS1 + 2 P10) 2  |
+| 50    | 250        | DS1 | 2 で保護されたプロセスとして起動されました       | P10       | 128            | x (DS1 + 2 P10) 2  |
+| 100   | 500        | DS1 | 2 で保護されたプロセスとして起動されました       | P20       | 512            | x (DS1 + 2 P20)  |
+| 250   | 1250       | DS1 | 2 で保護されたプロセスとして起動されました       | P30       | 1024           | x (DS1 + 2 P30) 2  |
 | 500   | 2500       | DS2 | 3       | P30       | 1024           | x (DS2 + 3 P30)  |
 | 1000  | 5000       | DS3 | 5       | P30       | 1024           | x (DS3 + 5 P30) 2  |
 | 2500  | 12500      | DS4 | 13      | P30       | 1024           | x (DS4 + 13 P30) 2 |
@@ -131,8 +127,8 @@ DS シリーズ Vm と premium storage データ ディスクと、SOFS を展�
     7. SOFS クラスター上には、新しい SMB ファイル共有を作成します。
 
        ```powershell
-       New-Item -Path C:\ClusterStorage\Volume1\Data -ItemType Directory
-       New-SmbShare -Name UpdStorage -Path C:\ClusterStorage\Volume1\Data
+       New-Item -Path C:\ClusterStorage\VDisk01\Data -ItemType Directory
+       New-SmbShare -Name UpdStorage -Path C:\ClusterStorage\VDisk01\Data
        ```
 
 これで、`\\my-sofs1\UpdStorage` に共有が作成され、ユーザーに対して [UPD を有効](https://social.technet.microsoft.com/wiki/contents/articles/15304.installing-and-configuring-user-profile-disks-upd-in-windows-server-2012.aspx)にしたときに UPD 記憶域に使用できます。 

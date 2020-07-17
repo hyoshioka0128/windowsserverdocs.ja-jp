@@ -1,62 +1,58 @@
 ---
 title: bitsadmin setnotifycmdline
-description: Windows コマンドのトピック * * * *-bitsadmin setnotifycmdlineSets、ジョブがデータの転送を終了したとき、またはジョブが状態に入ったときに実行されるコマンドラインコマンドを設定します。
-ms.custom: na
+description: Bitsadmin setnotifycmdline コマンドの参照記事。ジョブがデータの転送を終了したとき、またはジョブが状態に入ったときに実行されるコマンドラインコマンドを設定します。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 415ae6ef-8549-48b2-9693-2368a6e24075
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7a307fe552e7d8ec5852de953a3a439cb02246ec
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c4466a0011f7bb1648cb7e2a51113f0a3d21c7e5
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71380480"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927650"
 ---
 # <a name="bitsadmin-setnotifycmdline"></a>bitsadmin setnotifycmdline
 
-ジョブがデータの転送を終了したとき、またはジョブが状態に入ったときに実行されるコマンドラインコマンドを設定します。
+ジョブがデータの転送を終了した後、またはジョブが指定された状態になった後に実行されるコマンドラインコマンドを設定します。
 
-**BITS 1.2 以前**: サポートされていません。
+> [!NOTE]
+> このコマンドは、BITS 1.2 以前ではサポートされていません。
 
 ## <a name="syntax"></a>構文
 
 ```
-bitsadmin /SetNotifyCmdLine <Job> <ProgramName> [ProgramParameters]
+bitsadmin /setnotifycmdline <job> <program_name> [program_parameters]
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
-|---------|-----------|
-|Job|ジョブの表示名または GUID|
-|ProgramName|ジョブの完了時に実行するコマンドの名前。|
-|ProgramParameters|*ProgramName*に渡すパラメーター。|
+| パラメーター | 説明 |
+| --------- | ----------- |
+| ジョブ (job) | ジョブの表示名または GUID。 |
+| program_name | ジョブの完了時に実行するコマンドの名前。 この値は NULL として設定できますが、その場合は*program_parameters*も null に設定する必要があります。 |
+| program_parameters | *Program_name*に渡すパラメーター。 この値は NULL として設定できます。 *Program_parameters*が NULL に設定されていない場合は、 *program_parameters*の最初のパラメーターが*program_name*と一致している必要があります。 |
 
-## <a name="remarks"></a>コメント
+## <a name="examples"></a>例
 
-*ProgramName*と*PROGRAMPARAMETERS*には NULL を指定できます。 *ProgramName*が null の場合、 *PROGRAMPARAMETERS*は null である必要があります。
+*Mydownloadjob*という名前のジョブの完了時に Notepad.exe を実行するには、次のようにします。
 
-> [!IMPORTANT]
-> *Programparameters*が NULL でない場合、 *programparameters*の最初のパラメーターは*ProgramName*と一致する必要があります。
-
-## <a name="BKMK_examples"></a>例
-
-次の例では、 *Mydownloadjob*という名前のジョブが完了したときに、メモ帳を実行するためにサービスによって使用されるコマンドラインコマンドを設定します。
 ```
-C:\>bitsadmin /SetNotifyCmdLine myDownloadJob c:\winnt\system32\notepad.exe NULL
-```
-```
-C:\>bitsadmin /SetNotifyCmdLine myDownloadJob c:\winnt\system32\notepad.exe "notepad c:\eula.txt"
+bitsadmin /setnotifycmdline myDownloadJob c:\winnt\system32\notepad.exe NULL
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+Notepad.exe に EULA のテキストを表示するには、myDownloadJob という名前のジョブが完了します。
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+```
+bitsadmin /setnotifycmdline myDownloadJob c:\winnt\system32\notepad.exe notepad c:\eula.txt
+```
+
+## <a name="additional-references"></a>その他の参照情報
+
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [bitsadmin コマンド](bitsadmin.md)

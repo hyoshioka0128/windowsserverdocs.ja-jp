@@ -7,12 +7,12 @@ author: daniellee-msft
 ms.author: jol
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 7c1a70e36dfac9b23ded8f920ffcc8cccbfff023
-ms.sourcegitcommit: 7c7fc443ecd0a81bff6ed6dbeeaf4f24582ba339
+ms.openlocfilehash: 4ba2e760d57f1c3f59e40b78b449a8831b8093d2
+ms.sourcegitcommit: fe89b8001ad664b3618708b013490de93501db05
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2019
-ms.locfileid: "74903950"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84942311"
 ---
 # <a name="install-and-manage-extensions"></a>拡張機能のインストールと管理
 
@@ -36,7 +36,7 @@ Windows Admin Center は複数のフィードをサポートしており、一�
 1. 右上の **[設定]** ボタンをクリックし、左ペインの **[拡張機能]** をクリックします。
 2. 右側のペインで **[フィード]** タブをクリックします。
 3. 別のフィードを追加するには **[追加]** ボタンをクリックします。 NuGet フィードの場合は、NuGet V2 フィードの URL を入力します。 NuGet フィード プロバイダーまたは管理者は、URL 情報を指定できる必要があります。 ファイル共有の場合は、拡張機能パッケージ ファイル (.nupkg) が格納されているファイル共有の完全パスを入力します。
-4. **[追加]** をクリックします。 この変更を行うために、ゲートウェイを特権モードで実行する必要がある場合は、UAC の昇格プロンプトが表示されます。
+4. **[追加]** をクリックします。 この変更を行うために、ゲートウェイを特権モードで実行する必要がある場合は、UAC の昇格プロンプトが表示されます。 このプロンプトは、デスクトップ モードで Windows Admin Center を実行している場合にのみ表示されます。
 
 **[使用可能な拡張機能]** 一覧には、すべての登録済みフィードの拡張機能が表示されます。 **[Package Feed]\(パッケージ フィード\)** 列を使用して、各拡張機能のフィード元を確認できます。
 
@@ -56,12 +56,12 @@ Windows Admin Center は複数のフィードをサポートしており、一�
 
 ### <a name="manually-downloading-extension-packages"></a>拡張機能パッケージを手動でダウンロードする
 
-1. インターネットに接続できる別のコンピューターで Web ブラウザーを開き、[https://msft-sme.myget.org/gallery/windows-admin-center-feed](https://msft-sme.myget.org/gallery/windows-admin-center-feed) の URL に移動します。 
+1. インターネットに接続できる別のコンピューターで Web ブラウザーを開き、[https://dev.azure.com/WindowsAdminCenter/Windows%20Admin%20Center%20Feed/_packaging?_a=feed&feed=WAC](https://dev.azure.com/WindowsAdminCenter/Windows%20Admin%20Center%20Feed/_packaging?_a=feed&feed=WAC) の URL に移動します。 
 
-   * 拡張機能パッケージを表示するには、必要に応じて msft-sme.myget.org 上でアカウントを作成し、ログインします。
+   * 拡張機能パッケージを表示するには、Microsoft アカウントを作成してログインすることが必要な場合もあります。
 
 2. インストールするパッケージの名前をクリックすると、パッケージの詳細ページが表示されます。
-3. パッケージの詳細ページの右側のペインにある **[ダウンロード]** リンクをクリックし、拡張機能の .nupkg ファイルをダウンロードします。
+3. パッケージの詳細ページの上部ナビゲーション バーにある **[ダウンロード]** リンクをクリックし、拡張機能の .nupkg ファイルをダウンロードします。
 4. ダウンロードするすべてのパッケージについて、手順 2 と 3 を繰り返します。
 5. Windows Admin Center がインストールされているコンピューターからアクセスできる共有ファイル、またはコンピューターのローカル ディスクにパッケージ ファイルをコピーします。
 6. [指示に従って別のフィードから拡張機能をインストールします](#installing-extensions-from-a-different-feed)。
@@ -86,4 +86,4 @@ Windows Admin Center プレビューには、ゲートウェイ拡張機能を�
 
 [!INCLUDE [ps-extensions](../includes/ps-extensions.md)]
 
-### <a name="learn-more-about-building-an-extension-with-the-windows-admin-center-sdkextendextensibility-overviewmd"></a>[Windows Admin Center SDK を使用した拡張機能の構築の詳細については、こちらを参照してください](../extend/extensibility-overview.md)。
+### <a name="learn-more-about-building-an-extension-with-the-windows-admin-center-sdk"></a>[Windows Admin Center SDK を使用した拡張機能の構築の詳細については、こちらを参照してください](../extend/extensibility-overview.md)。

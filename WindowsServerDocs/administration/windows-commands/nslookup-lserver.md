@@ -1,43 +1,45 @@
 ---
 title: nslookup lserver
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Nslookup lserver コマンドの参照記事。最初のサーバーを指定したドメインネームシステム (DNS) ドメインに変更します。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: aee5ea0b-bb17-4c14-bde7-2f7a91f2f22b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 347ad6e380f8d8163c4954771c9e985271b2d549
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1f8d40a39abb6f96e900aee6dc029963ed7c0486
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71373077"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931268"
 ---
 # <a name="nslookup-lserver"></a>nslookup lserver
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-指定したドメインネームシステム (DNS) ドメインに既定のサーバーを変更します。
+指定したドメインネームシステム (DNS) ドメインに初期サーバーを変更します。
+
+このコマンドは、初期サーバーを使用して、指定された DSN ドメインに関する情報を検索します。 現在の既定のサーバーを使用して情報を参照する場合は、 [nslookup server](nslookup-server.md)コマンドを使用します。
+
 ## <a name="syntax"></a>構文
-```
-lserver <DNSDomain> 
-```
-## <a name="parameters"></a>パラメーター
 
-|    パラメーター    |                      説明                      |
-|-----------------|-------------------------------------------------------|
-|   <DNSDomain>   | 既定のサーバーの新しい DNS ドメインを指定します。  |
-| {ヘルプ&#124; ?} | **Nslookup**サブコマンドの簡単な概要を表示します。 |
+```
+lserver <DNSdomain>
+```
 
-## <a name="remarks"></a>注釈
-- **Lserver**コマンドは、初期サーバーを使用して、指定された DNS ドメインに関する情報を検索します。 これは、現在の既定のサーバーを使用する**サーバー**コマンドとは対照的です。
-  ## <a name="additional-references"></a>その他の参照情報
-  [Nslookup サーバー](nslookup-server.md)
-  [コマンドライン構文のキー](command-line-syntax-key.md)
+### <a name="parameters"></a>パラメーター
+
+| パラメーター | 説明 |
+| --------- | ----------- |
+| `<DNSdomain>` | 初期サーバーの DNS ドメインを指定します。 |
+| /? | コマンド プロンプトにヘルプを表示します。 |
+| /help | コマンド プロンプトにヘルプを表示します。 |
+
+## <a name="additional-references"></a>その他の参照情報
+
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [nslookup server](nslookup-server.md)

@@ -1,24 +1,24 @@
 ---
 title: Virtual Network の暗号化を構成する
 description: 仮想ネットワーク暗号化を使用すると、"暗号化が有効になっている" とマークされているサブネット内で相互に通信する仮想マシン間で仮想ネットワークトラフィックを暗号化できます。
-manager: brianlic
+manager: grcusanz
 ms.prod: windows-server
 ms.technology: networking-hv-switch
 ms.topic: get-started-article
 ms.assetid: 378213f5-2d59-4c9b-9607-1fc83f8072f1
-ms.author: pashort
-author: shortpatti
+ms.author: anpaul
+author: AnirbanPaul
 ms.date: 08/08/2018
-ms.openlocfilehash: 40150e312f4776ec093c9230eedb646eec277f49
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: daca59ffbb428e4bdfa2a71c156653389275960f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405803"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853595"
 ---
 # <a name="configure-encryption-for-a-virtual-subnet"></a>仮想サブネットの暗号化の構成
 
->適用対象:Windows Server
+>適用対象: Windows Server
 
 仮想ネットワークの暗号化を使用すると、"暗号化が有効になっている" とマークされているサブネット内で相互に通信する Vm 間の仮想ネットワークトラフィックを暗号化できます。 また、この機能は、仮想サブネットのデータグラム トランスポート層セキュリティ (DTLS) を利用して、パケットを暗号化します。 DTLS は、物理ネットワークへのアクセスを持つユーザーによる盗聴、改ざん、偽造に対する保護を提供します。
 
@@ -118,7 +118,7 @@ ms.locfileid: "71405803"
 
 3. 各 hyper-v ホストに証明書をインストールする 
 
-   PS c:\> dir c:\$subjectname. *
+   PS C:\> dir c:\$subjectname. *
 
 
 ~~~
@@ -175,7 +175,7 @@ Mode                LastWriteTime         Length Name
 
 6. 証明書がインストールされていることを確認します。<p>My および Root 証明書ストアの内容を確認して、証明書を確認します。
 
-   PS C:\> -pssession Server1 を入力します。
+   PS C:\> 入力 pssession Server1
 
 ~~~
 [Server1]: PS C:\> get-childitem cert://localmachine/my,cert://localmachine/root | ? {$_.Subject -eq "CN=EncryptedVirtualNetworks"}
@@ -246,7 +246,7 @@ Thumbprint                                Subject
 _**おめでとう!**_ これらの手順が完了したら、次の手順を実行します。 
 
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ:
 
 
 

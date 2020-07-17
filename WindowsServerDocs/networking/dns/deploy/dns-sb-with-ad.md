@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-dns
 ms.topic: article
 ms.assetid: f9533204-ad7e-4e49-81c1-559324a16aeb
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 1a05bdcbf6205b8be7044c92e3dcf71a6e62bed6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 8bb95412702fed5b7f809e3e699b0ab0a556455c
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356027"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317858"
 ---
 # <a name="use-dns-policy-for-split-brain-dns-in-active-directory"></a>Active Directory でスプリット ブレイン DNS に DNS ポリシーを使用する
 
@@ -33,7 +33,7 @@ Windows Server 2016 では、DNS ポリシーのサポートは、統合され�
 
 ##  <a name="example-split-brain-dns-in-active-directory"></a>Active Directory での\-ブレイン DNS の分割の例
 
-この例では、1 つ架空の企業、www.career.contoso.com で仕事紹介 Web サイトを保持する contoso 社で使用します。
+この例では、1 つ架空の企業、 www.career.contoso.com で仕事紹介 Web サイトを保持する contoso 社で使用します。
 
 サイトには、内部の求人が利用可能な内部ユーザー用、2 つのバージョンがあります。 この内部サイトは、ローカル IP アドレス 10.0.0.39 から入手できます。 
 
@@ -102,7 +102,7 @@ Dns ポリシーを使用して DNS スプリットブレイン展開を構成�
 
 この新しいゾーンスコープを Active Directory 統合ゾーンに追加するので、ゾーンのスコープとその中のレコードは、Active Directory 経由でドメイン内の他のレプリカサーバーにレプリケートされます。
 
-既定では、ゾーンスコープはすべての DNS ゾーンに存在します。 このゾーンのスコープでは、ゾーンと同じ名前と、従来の DNS の機能がこのスコープで動作します。 この既定のゾーンスコープは、www.career.contoso.com の内部バージョンをホストします。
+既定では、ゾーンスコープはすべての DNS ゾーンに存在します。 このゾーンのスコープでは、ゾーンと同じ名前と、従来の DNS の機能がこのスコープで動作します。 この既定のゾーンスコープは、 www.career.contoso.com の内部バージョンをホストします。
 
 次のコマンド例を使用すると、DNS サーバーでゾーンのスコープを作成できます。
 
@@ -114,7 +114,7 @@ Dns ポリシーを使用して DNS スプリットブレイン展開を構成�
 
 次の手順では、web サーバーホストを表すレコードを、\)内部クライアントの外部および既定の \(の2つのゾーンスコープに追加します。 
 
-既定の内部ゾーンスコープでは、レコード www.career.contoso.com は、プライベート IP アドレスである IP アドレス10.0.0.39 を使用して追加されます。外部ゾーンスコープでは、www.career.contoso.com\) \(同じレコードがパブリック IP アドレス65.55.39.10 と共に追加されます。 
+既定の内部ゾーンスコープでは、レコード www.career.contoso.com は、プライベート IP アドレスである IP アドレス10.0.0.39 を使用して追加されます。外部ゾーンスコープでは、 www.career.contoso.com\) \(同じレコードがパブリック IP アドレス65.55.39.10 と共に追加されます。 
 
 レコードは、既定の内部ゾーンのスコープと外部ゾーンのスコープの両方に \(\)、それぞれのゾーンのスコープと共にドメイン全体で自動的にレプリケートされます。
 

@@ -2,22 +2,18 @@
 title: 手順 1 DirectAccess の構成を完了する
 description: このトピックは、「windows Server 2016 用 Windows NLB を使用するクラスターでの DirectAccess のデモンストレーション」のテストラボガイドに含まれています。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e1e15544-b575-4f39-af0b-771bfae8b0b7
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: cb009d5872d2045124601f1459e829a4d15f3058
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 760bf279eb81f618bf5a3258270def564d9d64c9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404886"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80819325"
 ---
 # <a name="step-1-complete-the-directaccess-configuration"></a>手順 1 DirectAccess の構成を完了する
 

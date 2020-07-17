@@ -1,7 +1,6 @@
 ---
 ms.assetid: 66664b80-2590-46c0-bfca-82402088e42c
 title: LDAP 属性を要求として送信するルールを作成する
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,40 +8,40 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 4fd5a8683c9bb7bc096298caa1597a760d33edc4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6280ee1fb761b154cadb948d18c7b67cb6b8e784
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71358129"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80816655"
 ---
 # <a name="create-a-rule-to-send-ldap-attributes-as-claims"></a>LDAP 属性を要求として送信するルールを作成する
 
 
-Active Directory フェデレーションサービス (AD FS) \( \(AD FS\)で "ldap 属性を要求として送信" 規則テンプレートを使用して、ライトウェイトディレクトリアクセスプロトコル LDAP\)から属性を選択する規則を作成できます。証明書利用者に要求として送信するための Active Directory などの属性ストア。 たとえば、この規則テンプレートを使用して、認証されたユーザーの属性値を**displayName**および**telephoneNumber** Active Directory 属性から抽出し、それらを送信する要求規則として送信 LDAP 属性を作成することができます。2つの異なる出力方向の要求としての値。  
+Active Directory フェデレーションサービス (AD FS) \(AD FS\)で "LDAP 属性を要求として送信" 規則テンプレートを使用して、ライトウェイトディレクトリアクセスプロトコル \(LDAP\) 属性ストア (Active Directory など) から証明書利用者に要求として送信する属性を選択する規則を作成できます。 たとえば、この規則テンプレートを使用して、[LDAP 属性を要求として送信] 規則を作成して、認証されたユーザーの属性値を**displayName**属性と**telephoneNumber** Active Directory 属性から抽出し、それらの値を2つの異なる出力方向の要求として送信することができます。  
   
-この規則を使用して、すべてのユーザーのグループメンバーシップを送信することもできます。 個々のグループのメンバーシップのみを送信する場合は、"グループ メンバーシップを要求として送信" 規則テンプレートを使用します。 AD FS 管理スナップイン\-を使用して要求規則を作成するには、次の手順を実行します。  
+この規則を使用して、すべてのユーザーのグループメンバーシップを送信することもできます。 個々のグループのメンバーシップのみを送信する場合は、"グループ メンバーシップを要求として送信" 規則テンプレートを使用します。 で AD FS 管理スナップ\-を使用して要求規則を作成するには、次の手順を実行します。  
   
-この手順を実行するには、ローカル コンピューターの **Administrators**グループのメンバーシップか、それと同等のメンバーシップが最低限必要です。  適切なアカウントの使用方法の詳細を確認し、グループ メンバーシップ [ローカルおよびドメインの既定のグループ](https://go.microsoft.com/fwlink/?LinkId=83477)します。  
+この手順を完了するには、ローカル コンピューター上の **Administrators** または同等のメンバーシップが最低限必要です。  適切なアカウントの使用方法の詳細を確認し、グループ メンバーシップ [ローカルおよびドメインの既定のグループ](https://go.microsoft.com/fwlink/?LinkId=83477)します。  
 
 ## <a name="to-create-a-rule-to-send-ldap-attributes-as-claims-for-a-relying-party-trust-in-windows-server-2016"></a>Windows Server 2016 で証明書利用者信頼の要求として LDAP 属性を送信する規則を作成するには 
 
 1.  サーバーマネージャーで、 **[ツール]** をクリックし、 **[AD FS の管理]** を選択します。  
   
 2.  コンソールツリーの  **AD FS**で、**証明書利用者の信頼** をクリックします。 
-![ルールの作成](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule9.PNG)  
+ルール](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule9.PNG) を作成 ![には  
   
-3.  選択\-した信頼を右クリックし、 **[要求の発行ポリシーの編集]** をクリックします。
-![ルールの作成](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule10.PNG)   
+3.  選択した信頼を右\-クリックし、 **[要求の発行ポリシーの編集]** をクリックします。
+ルール](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule10.PNG) を作成 ![には   
   
 4.  **[要求発行ポリシーの編集]** ダイアログボックスの **[発行変換規則]** で、 **[規則の追加]** をクリックして規則ウィザードを開始します。 
-![ルールの作成](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule11.PNG)    
+ルール](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule11.PNG) を作成 ![には    
 
 5.  **[規則テンプレートの選択]** ページの **[要求規則テンプレート]** で、一覧から **[LDAP 属性を要求として送信]** を選択し、 **[次へ]** をクリックします。  
-![ルールの作成](media/Create-a-Rule-to-Send-LDAP-Attributes-as-Claims/ldap1.PNG)    
+ルール](media/Create-a-Rule-to-Send-LDAP-Attributes-as-Claims/ldap1.PNG) を作成 ![には    
 
 6.  **[規則の構成]** ページの **[要求規則名]** に、この規則の表示名を入力し、**属性ストア**を選択します。次に、LDAP 属性を選択して、出力方向の要求の種類にマップします。 
-![ルールの作成](media/Create-a-Rule-to-Send-LDAP-Attributes-as-Claims/ldap2.PNG)    
+ルール](media/Create-a-Rule-to-Send-LDAP-Attributes-as-Claims/ldap2.PNG) を作成 ![には    
 
 7.  **[完了]** ボタンをクリックします。  
   
@@ -53,19 +52,19 @@ Active Directory フェデレーションサービス (AD FS) \( \(AD FS\)で "l
 1.  サーバーマネージャーで、 **[ツール]** をクリックし、 **[AD FS の管理]** を選択します。  
   
 2.  コンソールツリーの  **AD FS**で、**要求プロバイダー信頼** をクリックします。 
-![ルールの作成](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule1.PNG)  
+ルール](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule1.PNG) を作成 ![には  
   
-3.  選択\-した信頼を右クリックし、 **[要求規則の編集]** をクリックします。
-![ルールの作成](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule2.PNG)   
+3.  選択した信頼を右\-クリックし、 **[要求規則の編集]** をクリックします。
+ルール](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule2.PNG) を作成 ![には   
   
 4.  **[要求規則の編集]** ダイアログボックスの **[受け入れ変換規則]** で、 **[規則の追加]** をクリックして規則ウィザードを開始します。
-![ルールの作成](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule3.PNG)    
+ルール](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule3.PNG) を作成 ![には    
 
 5.  **[規則テンプレートの選択]** ページの **[要求規則テンプレート]** で、一覧から **[LDAP 属性を要求として送信]** を選択し、 **[次へ]** をクリックします。  
-![ルールの作成](media/Create-a-Rule-to-Send-LDAP-Attributes-as-Claims/ldap1.PNG)       
+ルール](media/Create-a-Rule-to-Send-LDAP-Attributes-as-Claims/ldap1.PNG) を作成 ![には       
 
 6.  **[規則の構成]** ページの **[要求規則名]** に、この規則の表示名を入力し、**属性ストア**を選択します。次に、LDAP 属性を選択して、出力方向の要求の種類にマップします。 
-![ルールの作成](media/Create-a-Rule-to-Send-LDAP-Attributes-as-Claims/ldap2.PNG)      
+ルール](media/Create-a-Rule-to-Send-LDAP-Attributes-as-Claims/ldap2.PNG) を作成 ![には      
 
 7.  **[完了]** ボタンをクリックします。  
   
@@ -77,12 +76,12 @@ Active Directory フェデレーションサービス (AD FS) \( \(AD FS\)で "l
   
 1.  サーバーマネージャーで、 **[ツール]** をクリックし、 **[AD FS の管理]** を選択します。  
   
-2.  コンソールツリーの [ **AD\\fsad FS の信頼関係**] で、 **[要求プロバイダー信頼]** または **[証明書利用者信頼]** をクリックし、この規則を作成する一覧内の特定の信頼をクリックします。  
+2.  コンソールツリーの [ **AD FSAD FS\\信頼関係**] で、 **[要求プロバイダー信頼]** または **[証明書利用者信頼]** をクリックし、この規則を作成する一覧内の特定の信頼をクリックします。  
   
-3.  選択\-した信頼を右クリックし、 **[要求規則の編集]** をクリックします。
-![ルールの作成](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule6.PNG)  
+3.  選択した信頼を右\-クリックし、 **[要求規則の編集]** をクリックします。
+ルール](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule6.PNG) を作成 ![には  
   
-4.  **[要求規則の編集]** ダイアログボックスで、編集する信頼とこの規則を作成する規則セットに応じて、次のタブのいずれかを選択し、 **[規則の追加]** をクリックして、その規則セットに関連付けられている規則ウィザードを開始します。:  
+4.  **[要求規則の編集]** ダイアログボックスで、編集する信頼とこの規則を作成する規則セットに応じて、次のタブのいずれかを選択し、 **[規則の追加]** をクリックして、その規則セットに関連付けられている規則ウィザードを開始します。  
   
     -   **受け入れ変換規則**  
   
@@ -91,12 +90,12 @@ Active Directory フェデレーションサービス (AD FS) \( \(AD FS\)で "l
     -   **発行承認規則**  
   
     -   **委任の承認規則**  
-![ルールの作成](media/Create-a-Rule-to-Permit-All-Users/permitall5.PNG) 
+ルール](media/Create-a-Rule-to-Permit-All-Users/permitall5.PNG) を作成 ![には 
   
 5.  **[規則テンプレートの選択]** ページの **[要求規則テンプレート]** で、一覧から **[LDAP 属性を要求として送信]** を選択し、 **[次へ]** をクリックします。  
-![ルールの作成](media/Create-a-Rule-to-Send-LDAP-Attributes-as-Claims/ldap3.PNG)  
+ルール](media/Create-a-Rule-to-Send-LDAP-Attributes-as-Claims/ldap3.PNG) を作成 ![には  
   
-6.  **規則の構成** ページの **要求規則名** で、この規則の表示名を入力し、**属性ストア** で  **Active Directory**を選択し、**LDAP 属性と出力方向の要求の種類のマッピング** で目的のドロップ\-ダウンリストからの**LDAP 属性**および対応する**出力方向の要求の種類**。  
+6.  **[規則の構成]** ページの **[要求規則名]** で、この規則の表示名を入力し、 **[属性ストア]** で **[Active Directory]** を選択します。 **[ldap 属性と出力方向の要求の種類のマッピング]** で、\-ドロップダウンリストから目的の**ldap 属性**と対応する**出力方向の要求**の種類を選択します。  
   
     この規則の一部として要求を発行する Active Directory 属性ごとに、別の行で新しい LDAP 属性と出力方向の要求の種類のペアを選択する必要があります。  
 ![ルールの作成](media/Create-a-Rule-to-Send-LDAP-Attributes-as-Claims/ldap4.PNG)    
@@ -107,9 +106,9 @@ Active Directory フェデレーションサービス (AD FS) \( \(AD FS\)で "l
 ## <a name="additional-references"></a>その他の参照情報 
 [要求規則を構成する](Configure-Claim-Rules.md)  
  
-[チェックリスト:証明書利用者信頼の要求規則の作成](https://technet.microsoft.com/library/ee913578.aspx)  
+[チェックリスト: 証明書利用者信頼の要求規則を作成する](https://technet.microsoft.com/library/ee913578.aspx)  
 
-[チェックリスト:要求プロバイダー信頼の要求規則の作成](https://technet.microsoft.com/library/ee913564.aspx)  
+[チェックリスト: 要求プロバイダー信頼の要求規則を作成する](https://technet.microsoft.com/library/ee913564.aspx)  
   
 [承認要求規則を使用する場合](../../ad-fs/technical-reference/When-to-Use-an-Authorization-Claim-Rule.md)  
 

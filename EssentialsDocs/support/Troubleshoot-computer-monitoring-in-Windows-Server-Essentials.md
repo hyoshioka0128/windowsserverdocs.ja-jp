@@ -1,38 +1,34 @@
 ---
 title: Windows Server Essentials でのコンピューターの監視のトラブルシューティング
-description: Windows Server Essentials を使用する方法について説明します
-ms.custom: na
+description: Windows Server Essentials の使用方法について説明します。
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+ms.prod: windows-server
 ms.topic: article
 ms.assetid: f1e6b377-4a24-4d28-9b25-05910914826b
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 1adf8ae2dd8763d0bc5a514609bb2470de6acde4
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 5e2c8706c29e63a74d637e4a2c072d0ffa0a56d5
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66436069"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852205"
 ---
 # <a name="troubleshoot-computer-monitoring-in-windows-server-essentials"></a>Windows Server Essentials でのコンピューターの監視のトラブルシューティング
 
->適用先:Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
+>適用対象: windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-このトピックでは、アラート ビューアーおよび Windows Server Essentials での電子メール通知を介したコンピューターの正常性状態の監視中に発生する問題のトラブルシューティングを提供します。  
+このトピックでは、Windows Server Essentials のアラートビューアーおよび電子メール通知を使用して、コンピューターの正常性状態を監視するときに発生する問題のトラブルシューティングについて説明します。  
   
 > [!NOTE]
->  Windows Server Essentials コミュニティの最新のトラブルシューティング情報について、お勧めしますをご覧ください、 [Windows Server Essentials フォーラム](https://social.technet.microsoft.com/Forums/winserveressentials/threads)します。 Windows Server Essentials フォーラムは、ヘルプを検索したり、質問したりするために最適な場所です。  
+>  Windows Server Essentials コミュニティの最新のトラブルシューティング情報については、 [Windows Server Essentials フォーラム](https://social.technet.microsoft.com/Forums/winserveressentials/threads)を参照することをお勧めします。 Windows Server Essentials フォーラムは、ヘルプを検索したり、質問したりするために最適な場所です。  
   
-##  <a name="BKMK_TS"></a> アラートの電子メール通知のトラブルシューティング  
+##  <a name="troubleshooting-email-notifications-for-alerts"></a><a name="BKMK_TS"></a>アラートの電子メール通知のトラブルシューティング  
  ここではアラート用の電子メール通知を使用する場合に発生する可能性のあるさまざまな問題を示します。  
   
 ### <a name="cannot-send-the-test-email-for-the-alert"></a>アラート用のテスト電子メールを送信できない  
- **問題**エラーが発生するメッセージが表示されたら、アラート用のテスト電子メールを送信できません。  
+ **問題**"アラートのテスト電子メールを送信できません" というエラーメッセージが表示されます。  
   
  **原因** : このエラーは、アラート通知の設定の次のいずれかの問題が原因で発生する可能性があります。  
   
@@ -53,7 +49,7 @@ ms.locfileid: "66436069"
      %ProgramData%\Microsoft\Windows Server\Logs\SharedServiceHost-AlertServiceConfig.log  
   
     > [!TIP]
-    >  ProgramData フォルダーを表示するには、隠しファイルを表示させる必要があります。 リボンの ProgramData フォルダーが表示されないかどうか**ビュー** ] タブで、**表示/非表示**グループで、[、**アイテムを非表示**テキスト ボックス。  
+    >  ProgramData フォルダーを表示するには、隠しファイルを表示させる必要があります。 ProgramData フォルダーが表示されない場合は、リボンの **[表示]** タブの **[表示/非]** 表示 グループで、 **[非表示の項目]** ボックスを選択します。  
   
 ##### <a name="to-update-your-email-notification-setup-for-alerts"></a>アラートの電子メール通知のセットアップを更新するには  
   

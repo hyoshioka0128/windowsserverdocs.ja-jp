@@ -1,6 +1,5 @@
 ---
 title: 保護されたファブリックの展開のクイックスタート
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: e060e052-39a0-4154-90bb-b97cc6dde68e
@@ -9,12 +8,12 @@ author: justinha
 ms.author: justinha
 ms.technology: security-guarded-fabric
 ms.date: 01/30/2019
-ms.openlocfilehash: 8359532113e04e2247b4af34effc7f5b89d36f34
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c0e29abf14ff1dded12e7e20a0c0a74f80a91d8e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402415"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856745"
 ---
 # <a name="quick-start-for-guarded-fabric-deployment"></a>保護されたファブリックの展開のクイックスタート
 
@@ -22,7 +21,7 @@ ms.locfileid: "71402415"
 
 このトピックでは、保護されたファブリックとは何か、その要件、および展開プロセスの概要について説明します。 詳細な展開手順については、「保護され[たホストとシールドされた vm のホストガーディアンサービスの展開](https://technet.microsoft.com/windows-server-docs/security/guarded-fabric-shielded-vm/guarded-fabric-deploying-hgs-overview)」を参照してください。
 
-ビデオがお好みの場合は、 [Windows Server 2016 でシールドされた vm と保護されたファブリックをデプロイする](https://mva.microsoft.com/en-US/training-courses/deploying-shielded-vms-and-a-guarded-fabric-with-windows-server-2016-17131?l=WFLef7vUD_4604300474)Microsoft Virtual Academy コースを参照してください。
+ビデオがお好みの場合は、 [Windows Server 2016 でシールドされた vm と保護されたファブリックをデプロイする](https://mva.microsoft.com/training-courses/deploying-shielded-vms-and-a-guarded-fabric-with-windows-server-2016-17131?l=WFLef7vUD_4604300474)Microsoft Virtual Academy コースを参照してください。
 
 ## <a name="what-is-a-guarded-fabric"></a>保護されたファブリックとは
 
@@ -105,9 +104,9 @@ LiveKd によって使用されるような代替のデバッグ手法はブロ�
 
 TPM モードでは、次の3つが必要です。 
 
-1.  各 Hyper-v ホスト上の TPM 2.0 からの_公開保証キー_ (または_EKpub_)。 EKpub をキャプチャするには、`Get-PlatformIdentifier`を使用します。 
-2.  _ハードウェアベースライン_。 各 Hyper-v ホストが同一である場合は、1つのベースラインが必要です。 それ以外の場合は、ハードウェアのクラスごとに1つ必要になります。 ベースラインは、信頼できるコンピューティンググループのログファイル (TCGlog) の形式です。 TCGlog には、ホストが完全に起動された場所まで、ホストが UEFI ファームウェアからカーネルを介して実行したすべてのものが含まれています。 ハードウェアのベースラインを取得するには、Hyper-v の役割と Host Guardian Hyper-v サポート機能をインストールし、`Get-HgsAttestationBaselinePolicy`を使用します。 
-3.  _コード整合性ポリシー_。 各 Hyper-v ホストが同一である場合、必要なのは1つの CI ポリシーだけです。 それ以外の場合は、ハードウェアのクラスごとに1つ必要になります。 Windows Server 2016 と Windows 10 の両方に、_ハイパーバイザーによって適用されるコード整合性 (HVCI)_ と呼ばれる、CI ポリシーの新しい形式が適用されています。 HVCI は強力な強制を実現し、信頼された管理者が実行を許可したバイナリのみをホストで実行できるようにします。 これらの手順は、HGS に追加される CI ポリシーでラップされます。 HGS は、シールドされた Vm の実行が許可される前に、各ホストの CI ポリシーを測定します。 CI ポリシーをキャプチャするには、`New-CIPolicy`を使用します。 次に、`ConvertFrom-CIPolicy`を使用して、ポリシーをバイナリ形式に変換する必要があります。
+1.    各 Hyper-v ホスト上の TPM 2.0 からの_公開保証キー_ (または_EKpub_)。 EKpub をキャプチャするには、`Get-PlatformIdentifier`を使用します。 
+2.    _ハードウェアベースライン_。 各 Hyper-v ホストが同一である場合は、1つのベースラインが必要です。 それ以外の場合は、ハードウェアのクラスごとに1つ必要になります。 ベースラインは、信頼できるコンピューティンググループのログファイル (TCGlog) の形式です。 TCGlog には、ホストが完全に起動された場所まで、ホストが UEFI ファームウェアからカーネルを介して実行したすべてのものが含まれています。 ハードウェアのベースラインを取得するには、Hyper-v の役割と Host Guardian Hyper-v サポート機能をインストールし、`Get-HgsAttestationBaselinePolicy`を使用します。 
+3.    _コード整合性ポリシー_。 各 Hyper-v ホストが同一である場合、必要なのは1つの CI ポリシーだけです。 それ以外の場合は、ハードウェアのクラスごとに1つ必要になります。 Windows Server 2016 と Windows 10 の両方に、_ハイパーバイザーによって適用されるコード整合性 (HVCI)_ と呼ばれる、CI ポリシーの新しい形式が適用されています。 HVCI は強力な強制を実現し、信頼された管理者が実行を許可したバイナリのみをホストで実行できるようにします。 これらの手順は、HGS に追加される CI ポリシーでラップされます。 HGS は、シールドされた Vm の実行が許可される前に、各ホストの CI ポリシーを測定します。 CI ポリシーをキャプチャするには、`New-CIPolicy`を使用します。 次に、`ConvertFrom-CIPolicy`を使用して、ポリシーをバイナリ形式に変換する必要があります。
 
 ![Id、ベースライン、および CI ポリシーを抽出する](../media/Guarded-Fabric-Shielded-VM/guarded-fabric-deployment-step-three-extract-identity-baseline-ci-policy.png)
 

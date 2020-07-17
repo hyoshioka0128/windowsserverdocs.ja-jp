@@ -2,26 +2,22 @@
 title: 手順 4 OTP を使用した DirectAccess の検証
 description: このトピックは、「Windows Server 2016 で OTP 認証を使用してリモートアクセスを展開する」の一部です。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ed49a0a3-1c45-42e5-8f13-cad20c1c1d68
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 83ea3c4e4feefacde3e1ed7be6b605d8c0e644a3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 14d8a3a2138682fb552538948db604a75a1fe898
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366974"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858205"
 ---
 # <a name="step-4-verify-directaccess-with-otp"></a>手順 4 OTP を使用した DirectAccess の検証
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックでは、OTP 展開で DirectAccess が正しく構成されていることを確認する方法について説明します。
   
@@ -36,7 +32,7 @@ ms.locfileid: "71366974"
 4. OTP の状態に緑色のアイコンが表示され、動作していることを確認します。  
   
     > [!NOTE]  
-    > 正常性状態の更新間隔は、レジストリキー HKLM\SYSTEM\CCS\Services\Ramgmtsvc\parameters\HealthRefreshTimeout からの値と、リモートアクセスで設定された**サーバーの利用状況の時間間隔**の最大値になります。configuration.  
+    > 正常性状態の更新間隔は、レジストリキー HKLM\SYSTEM\CCS\Services\Ramgmtsvc\parameters\HealthRefreshTimeout からの値と、リモートアクセス構成で設定された**サーバーの利用状況の時間間隔**の最大値になります。  
   
 ### <a name="to-verify-access-to-internal-resources-using-otp-authentication"></a>OTP 認証を使用して内部リソースへのアクセスを検証するには  
   

@@ -6,15 +6,15 @@ ms.technology: networking
 ms.topic: article
 ms.assetid: 6d53c797-fb67-4b9e-9066-1c9a8b76d2aa
 manager: dougkim
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 09/14/2018
-ms.openlocfilehash: d10e8ca6e4689b89a8b9532f77613f17280282b1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 57fc944461254e78635913ac298bacc26a0789f2
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355475"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309614"
 ---
 # <a name="physical-switch-configuration-for-converged-nic"></a>収束 NIC の物理スイッチ構成
 
@@ -45,7 +45,7 @@ ms.locfileid: "71355475"
 13. [実行 \(表示] ポートで構成が正しくセットアップされていることを確認し\)
 14. スイッチを再起動する間に設定を維持するには、wr \(\)
 
-### <a name="tips"></a>テクニック
+### <a name="tips"></a>ヒント:
 1.  No #command # はコマンドを否定します。
 2.  新しい VLAN を追加する方法: ストレージネットワークが VLAN 100 にある場合は、int vlan 100 \(\)
 3.  既存の Vlan を確認する方法: vlan を表示する

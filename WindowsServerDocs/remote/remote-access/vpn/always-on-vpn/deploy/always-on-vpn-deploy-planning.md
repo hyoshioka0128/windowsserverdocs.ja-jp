@@ -6,22 +6,22 @@ ms.technology: networking-ras
 ms.topic: article
 ms.assetid: 3c9de3ec-4bbd-4db0-b47a-03507a315383
 ms.localizationpriority: medium
-ms.author: pashort
-author: shortpatti
+ms.author: v-tea
+author: Teresa-MOTIV
 ms.date: 11/05/2018
-ms.openlocfilehash: f92cfdbe13633dd4c59012f566c6888fdc7fc7a1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c1e85f2ee44d241bdc04e63d20de36e5cdeafb1a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388164"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80814495"
 ---
 # <a name="step-1-plan-the-always-on-vpn-deployment"></a>手順 1. Always On VPN 展開を計画する
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows 10
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows 10
 
-- [**先の：** Always On VPN を展開するためのワークフローについて説明します](always-on-vpn-deploy-deployment.md)
-- [**次に：** 手順 2.サーバーインフラストラクチャの構成](vpn-deploy-server-infrastructure.md)
+- [**前へ:** Always On VPN を展開するためのワークフローについて説明します](always-on-vpn-deploy-deployment.md)
+- [**次のようになります。** 手順 2.サーバーインフラストラクチャの構成](vpn-deploy-server-infrastructure.md)
 
 この手順では、Always On VPN 展開の計画と準備を開始します。 を VPN サーバーとして使用する予定のコンピューターにリモートアクセスサーバーの役割をインストールする前に、次のタスクを実行します。 適切な計画の後で、Always On VPN を展開し、必要に応じて Azure AD を使用して VPN 接続の条件付きアクセスを構成します。
 
@@ -71,6 +71,6 @@ Vpn サーバーは、構成した静的アドレスプールまたは DHCP サ�
 
 ほとんどの環境では、新しい内部境界ネットワークに接続するために、エッジファイアウォールと VPN サーバーで静的ルートを調整します。 ただし、複雑な環境では、内部ルーターに静的ルートを追加したり、vpn サーバーと VPN クライアントに関連付けられた IP アドレスのブロックの内部ファイアウォール規則を調整したりすることが必要になる場合があります。
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ:
 
-[手順 2.サーバーインフラストラクチャ](vpn-deploy-server-infrastructure.md)を構成します。この手順では、VPN をサポートするために必要なサーバー側コンポーネントをインストールして構成します。 サーバー側のコンポーネントには、ユーザー、VPN サーバー、および NPS サーバーによって使用される証明書を配布するように PKI を構成することが含まれます。
+[手順 2.サーバーインフラストラクチャの構成](vpn-deploy-server-infrastructure.md): この手順では、VPN をサポートするために必要なサーバー側コンポーネントをインストールして構成します。 サーバー側のコンポーネントには、ユーザー、VPN サーバー、および NPS サーバーによって使用される証明書を配布するように PKI を構成することが含まれます。

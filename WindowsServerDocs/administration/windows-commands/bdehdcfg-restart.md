@@ -1,53 +1,45 @@
 ---
 title: bdehdcfg restart
-description: Bdehdcfg restart の Windows コマンドのトピック-ドライブの準備が完了した後にコンピューターを再起動する必要があることを bdehdcfg に指示します。
-ms.custom: na
+description: Bdehdcfg restart コマンドのリファレンス記事。ドライブの準備が完了した後で、コンピューターを再起動する必要があることを bdehdcfg に伝えます。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a98b76bb-36f1-4790-b337-7dc35f606bc6
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e6c4e48b051f567c98ea679feaa22f995982a899
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 02d57eaef9b2f6e705a5bb30d7d52a09579d27c9
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71382214"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923467"
 ---
 # <a name="bdehdcfg-restart"></a>bdehdcfg: 再起動
 
-
-
-ドライブの準備が完了した後にコンピューターを再起動する必要があることを Bdehdcfg コマンドラインツールに通知します。 このコマンドを使用する方法の例については、「[例](#BKMK_Examples)」を参照してください。
+ドライブの準備が完了した後にコンピューターを再起動する必要があることを bdehdcfg コマンドラインツールに通知します。 他のユーザーがコンピューターにログオンしていて、 **quiet**コマンドが指定されていない場合は、コンピューターを再起動するかどうかを確認するメッセージが表示されます。
 
 ## <a name="syntax"></a>構文
 
 ```
-bdehdcfg -target {default|unallocated|<DriveLetter> shrink|<DriveLetter> merge} -restart
+bdehdcfg -target {default|unallocated|<drive_letter> shrink|<drive_letter> merge} -restart
 ```
 
-### <a name="parameters"></a>パラメーター
+#### <a name="parameters"></a>パラメーター
 
-このコマンドは、追加のパラメーターを受け取りません。
+このコマンドには追加のパラメーターはありません。
 
-## <a name="remarks"></a>コメント
+## <a name="examples"></a>例
 
-他のユーザーがコンピューターにログオンしていて、 **quiet**コマンドが指定されていない場合は、コンピューターを再起動するかどうかを確認するプロンプトが表示されます。
+**Restart**コマンドを使用するには:
 
-## <a name="BKMK_Examples"></a>例
-
-次の例は、 **restart**コマンドの使用方法を示しています。
 ```
 bdehdcfg -target default -restart
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
--   [コマンド ライン構文の記号](command-line-syntax-key.md)
--   [Bdehdcfg](bdehdcfg.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [bdehdcfg](bdehdcfg.md)

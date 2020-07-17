@@ -1,28 +1,24 @@
 ---
 title: pnputil
-description: Pnputil ユーティリティを使用してドライバーストアを管理する方法について説明します。
-ms.custom: na
+description: pnputil.exe ユーティリティを使用して、ドライバーパッケージの追加、ドライバーパッケージの削除、およびドライバーストア内のドライバーパッケージの一覧表示を行う、pnputil コマンドの参照記事。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: fab686b8-09d3-4f6c-afa2-630e6036f44c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: f20c60bfd9ae33497dd356c7797b9fb1d2b51d18
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 01b8aee1aa4dfb85b590c9d4abbec471fc437da8
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71372288"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930242"
 ---
 # <a name="pnputil"></a>pnputil
 
-Pnputil は、ドライバーストアの管理に使用できるコマンドラインユーティリティです。 Pnputil を使用して、ドライバーパッケージの追加、ドライバーパッケージの削除、およびストア内のドライバーパッケージの一覧表示を行うことができます。
+Pnputil.exe は、ドライバーストアの管理に使用できるコマンドラインユーティリティです。 このコマンドを使用して、ドライバーパッケージの追加、ドライバーパッケージの削除、およびストア内のドライバーパッケージの一覧表示を行うことができます。
 
 ## <a name="syntax"></a>構文
 
@@ -30,29 +26,51 @@ Pnputil は、ドライバーストアの管理に使用できるコマンドラ
 pnputil.exe [-f | -i] [ -? | -a | -d | -e ] <INF name>
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
-|---------|-----------|
-|-a|識別された INF ファイルを追加することを指定します。|
-|-d|特定された INF ファイルを削除することを指定します。|
-|-e|すべてのサードパーティ製 INF ファイルを列挙するように指定します。|
-|-f|特定された INF ファイルを強制的に削除するように指定します。 **– I**パラメーターと組み合わせて使用することはできません。|
-|-i|識別された INF ファイルをインストールするように指定します。 は、 **-f**パラメーターと組み合わせて使用することはできません。|
-|/?|コマンド プロンプトにヘルプを表示します。|
+| パラメーター | 説明 |
+|--|--|
+| -a | 識別された INF ファイルを追加することを指定します。 |
+| -d | 特定された INF ファイルを削除することを指定します。 |
+| -E | すべてのサードパーティ製 INF ファイルを列挙するように指定します。 |
+| -f | 特定された INF ファイルを強制的に削除するように指定します。 **– I**パラメーターと共に使用することはできません。 |
+| -i | 識別された INF ファイルをインストールするように指定します。 は、 **-f**パラメーターと組み合わせて使用することはできません。 |
+| /? | コマンド プロンプトにヘルプを表示します。 |
 
+### <a name="examples"></a>例
 
-## <a name="examples"></a>使用例
+USBCAM という名前の INF ファイルを追加します。INF、次のように入力します。
 
--   pnputil-a a:\usbcam\USBCAM.INF は、USBCAM によって指定された INF ファイルを追加します。INF
--   svcutil.exe-a c:\ drivers\*.inf にすべての INF ファイルが追加されます。
--   pnputil-i-a a:\usbcam\USBCAM.INF は、指定されたドライバーを追加してインストールします。
--   pnputil – e は、すべてのサードパーティ製ドライバーを列挙します。
--   svcutil.exe-d oem0 は、指定されたを削除します。
--   svcutil.exe-f-d oem0 を指定すると、指定した INF ファイルが強制的に削除されます。
+```
+pnputil.exe -a a:\usbcam\USBCAM.INF
+```
+
+C:\ ドライバーにあるすべての INF ファイルを追加するには、次のように入力します。
+
+```
+pnputil.exe -a c:\drivers\*.inf
+```
+
+USBCAM を追加してインストールします。INF ドライバー、次のように入力します。
+
+```
+pnputil.exe -i -a a:\usbcam\USBCAM.INF
+```
+
+すべてのサードパーティドライバーを列挙するには、次のように入力します。
+
+```
+pnputil.exe –e
+```
+
+Oem0 という名前の INF ファイルとドライバーを削除するには、次のように入力します。
+
+```
+pnputil.exe -d oem0.inf
+```
 
 ## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
 
-[Popd](popd.md)
+- [popd コマンド](popd.md)

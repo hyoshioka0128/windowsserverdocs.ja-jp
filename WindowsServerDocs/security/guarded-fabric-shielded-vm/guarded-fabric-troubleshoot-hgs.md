@@ -1,19 +1,19 @@
 ---
 title: ホストガーディアンサービスのトラブルシューティング
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: 424b8090-0692-49a6-9dc4-3c0e77d74b80
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 09/25/2019
-ms.openlocfilehash: d34bbeee1a980aba76b5bed994be8db7fc8c8acf
-ms.sourcegitcommit: de71970be7d81b95610a0977c12d456c3917c331
+ms.openlocfilehash: 4cbbb41b965a44b6c81b58adc94990bb4d6af046
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71940823"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856405"
 ---
 # <a name="troubleshooting-the-host-guardian-service"></a>ホストガーディアンサービスのトラブルシューティング
 
@@ -108,7 +108,7 @@ CSR プロパティ | 必須の値
 -------------|---------------
 アルゴリズム    | RSA
 キーサイズ     | 2048ビット以上
-キー使用法    | Signature/Sign/Digitalsignature ビット
+[キーの使用法]    | Signature/Sign/Digitalsignature ビット
 
 **暗号化証明書**
 
@@ -116,7 +116,7 @@ CSR プロパティ | 必須の値
 -------------|---------------
 アルゴリズム    | RSA
 キーサイズ     | 2048ビット以上
-キー使用法    | 暗号化/暗号化/DataEncipherment
+[キーの使用法]    | 暗号化/暗号化/DataEncipherment
 
 **証明書サービステンプレートの Active Directory**
 

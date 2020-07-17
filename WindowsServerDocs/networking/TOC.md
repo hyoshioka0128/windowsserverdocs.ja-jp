@@ -1,4 +1,4 @@
-# [ネットワーク](Networking.md)
+# [ネットワークのドキュメント](index.yml)
 ## [Windows Server でサポートされるネットワークのシナリオ](windows-server-supported-networking-scenarios.md)
 
 ## [ネットワークの新機能](What-s-New-in-Networking.md)
@@ -93,6 +93,12 @@
 #### [DHCP サブネットの選択オプション](technologies/dhcp/dhcp-subnet-options.md)
 #### [DNS レコード登録の DHCP ログ記録イベント](technologies/dhcp/dhcp-dns-events.md)
 ### [Windows PowerShell を使用した DHCP の展開](technologies/dhcp/dhcp-deploy-wps.md)
+### [DHCP に関する問題のトラブルシューティング](../troubleshoot/troubleshoot-dhcp-issue.md)
+#### [動的ホスト構成プロトコル (DHCP) の基礎](../troubleshoot/dynamic-host-configuration-protocol-basics.md)
+#### [DHCP のトラブルシューティングに関する一般的なガイダンス](../troubleshoot/general-guidance-to-troubleshoot-dhcp.md)
+##### [DHCP サーバーなしで TCP/IP 自動アドレス指定を使用する方法](../troubleshoot/how-to-use-automatic-tcpip-addressing-without-a-dh.md)
+#### [DHCP クライアントでの問題のトラブルシューティング](../troubleshoot/troubleshoot-problems-on-dhcp-client.md)
+#### [DHCP サーバーでの問題のトラブルシューティング](../troubleshoot/troubleshoot-problems-on-dhcp-server.md)
 
 ## [ハイパフォーマンス ネットワーク (HPN)](technologies/hpn/hpn-top.md)
 ### [ネットワーク オフロードおよび最適化テクノロジ](technologies/hpn/network-offload-and-optimization.md)
@@ -204,6 +210,7 @@
 ### [ネットワーク シェル (netsh) のサンプル バッチ ファイル](technologies/netsh/netsh-wins.md)
 ### [netsh http コマンド](technologies/netsh/netsh-http.md)
 ### [netsh interface portproxy コマンド](technologies/netsh/netsh-interface-portproxy.md)
+### [netsh mbn コマンド](technologies/netsh/netsh-mbn.md)
 
 ## [ネットワーク サブシステムのパフォーマンスの調整](technologies/network-subsystem/net-sub-performance-top.md)
 ### [ネットワーク アダプターを選択する](technologies/network-subsystem/net-sub-choose-nic.md)
@@ -253,7 +260,7 @@
 ### [SDN の計画](sdn/plan/Plan-a-Software-Defined-Network-Infrastructure.md)
 #### [ネットワーク コントローラーを展開するためのインストールおよび準備の要件](sdn/plan/Installation-and-Preparation-Requirements-for-Deploying-Network-Controller.md)
 
-### [SDN の展開](sdn/deploy/Deploy-Software-Defined-Networking.md)
+### SDN の展開
 #### [SDN インフラストラクチャの展開](sdn/deploy/Deploy-a-Software-Defined-Network-Infrastructure.md)
 ##### [スクリプトを使用して SDN インフラストラクチャを展開する](sdn/deploy/Deploy-a-Software-Defined-Network-infrastructure-using-scripts.md)
 #### [Windows PowerShell を使用して SDN テクノロジを展開する](sdn/deploy/Deploy-Software-Defined-Network-Technologies-using-Windows-powershell.md)

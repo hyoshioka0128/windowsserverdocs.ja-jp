@@ -2,22 +2,18 @@
 title: DirectAccess クラスター/NLB テスト ラボの構成手順
 description: このトピックは、「windows Server 2016 用 Windows NLB を使用するクラスターでの DirectAccess のデモンストレーション」のテストラボガイドに含まれています。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e508d3ee-ffa6-463f-a3dd-9e35e745c005
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 108c63298ad3382f5ece790258f2d278bb03b78b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: c4f683cd9745bdb61ee95d89bcfc37622a4acf2c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388404"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853015"
 ---
 # <a name="steps-for-configuring-the-directaccess-cluster-nlb-test-lab"></a>DirectAccess クラスター/NLB テスト ラボの構成手順
 

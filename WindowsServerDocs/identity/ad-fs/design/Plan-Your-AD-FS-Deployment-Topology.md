@@ -1,7 +1,6 @@
 ---
 ms.assetid: 5c8c6cc0-0d22-4f27-a111-0aa90db7d6c8
 title: AD FS 展開トポロジの計画
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,20 +8,20 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 9cd036e9dd0b249197fb475504c9cad532ead0ea
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 53364e076a8c3b7d95e8c834a5a7621071ed6061
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408033"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858675"
 ---
 # <a name="plan-your-ad-fs-deployment-topology"></a>AD FS 展開トポロジの計画
 
 Active Directory フェデレーションサービス (AD FS) \(\) AD FS の展開を計画するための最初の手順として、組織のニーズを満たす適切な展開トポロジを決定します。  
   
-このトピックを読む前に、フェデレーションサーバーファーム内の他のフェデレーションサーバーにデータを格納してレプリケートする AD FS 方法を確認し、AD FS con に格納されている基になるデータに使用できるレプリケーション方法とその目的を理解していることを確認してください。f) データベース。  
+このトピックを読む前に、AD FS データをフェデレーションサーバーファームの他のフェデレーションサーバーに格納してレプリケートする方法を確認し、AD FS 構成データベースに格納されている基になるデータに使用できるレプリケーション方法とレプリケーション方法を理解していることを確認してください。  
   
-AD FS 構成データを格納するために使用できるデータベースの種類には、Windows Internal Database \(WID\) と Microsoft SQL Server の2種類があります。 詳細については、「 [The Role of the AD FS Configuration Database](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md)」を参照してください。 AD FS 構成データベースとして WID または SQL Server を使用することに関連したさまざまな利点と制限事項を確認し、サポートするさまざまなアプリケーションシナリオを選択してください。  
+AD FS 構成データを格納するために使用できるデータベースの種類には、Windows Internal Database \(WID\) と Microsoft SQL Server の2種類があります。 詳細については、「[AD FS 構成データベースの役割](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md)」を参照してください。 AD FS 構成データベースとして WID または SQL Server を使用することに関連したさまざまな利点と制限事項を確認し、サポートするさまざまなアプリケーションシナリオを選択してください。  
   
 > [!IMPORTANT]  
 > 基本的な冗長性、負荷分散、およびフェデレーションサービス \(を拡張するオプションを実装するには\)必要に応じて、使用するデータベースの種類に関係なく、すべての運用環境のフェデレーションサーバーファームごとに少なくとも2台のフェデレーションサーバーを展開することをお勧めします。  
@@ -34,11 +33,11 @@ AD FS は、データベースを使用して構成を格納し、場合によ�
   
 ||機能|WID でのサポート|SQL Server でのサポート
 | --- | --- | --- |--- |
-|AD FS 機能|フェデレーション サーバー ファーム展開|[はい]。 100を超える証明書利用者信頼がある場合、WID ファームには、最大30個のフェデレーションサーバーがあります。</br></br>WID ファームでは、トークンリプレイ検出またはアーティファクト解決 (Security Assertion Markup Language (SAML) プロトコルの一部) はサポートされていません。 |[はい]。 1 つのファーム内に展開できるフェデレーション サーバーの数について制限はありません。  
-|AD FS 機能|SAML アーティファクト解決 </br></br>**注:** この機能は、Microsoft Online Services、Microsoft Office 365、Microsoft Exchange、または Microsoft Office SharePoint シナリオには必要ありません。|X|〇  
-|AD FS 機能|SAML\/WS\-フェデレーション トークン リプレイ検出|X|〇  
-|データベースの機能|プルレプリケーションを使用した基本的なデータベースの冗長化。読み取りをホストしている1つ以上のサーバーが、データベースの読み取り\/書き込みコピーをホストするソースサーバーに対して行われた変更を\-、データベースのコピーのみをホストします。|〇|X 
-|データベースの機能|データベース層でのフェールオーバークラスタリングやミラーリング \(など、高\-可用性ソリューションを使用したデータベースの冗長性\)**注:** すべての AD FS 配置トポロジは、AD FS サービス層でのクラスタリングをサポートしています。|X|〇  
+|AD FS 機能|フェデレーション サーバー ファーム展開|はい。 100を超える証明書利用者信頼がある場合、WID ファームには、最大30個のフェデレーションサーバーがあります。</br></br>WID ファームでは、トークンリプレイ検出またはアーティファクト解決 (Security Assertion Markup Language (SAML) プロトコルの一部) はサポートされていません。 |はい。 1 つのファーム内に展開できるフェデレーション サーバーの数について制限はありません。  
+|AD FS 機能|SAML アーティファクト解決 </br></br>**注:** この機能は、Microsoft Online Services、Microsoft Office 365、Microsoft Exchange、または Microsoft Office SharePoint シナリオには必要ありません。|いいえ|はい  
+|AD FS 機能|SAML\/WS\-フェデレーション トークン リプレイ検出|いいえ|はい  
+|データベースの機能|プルレプリケーションを使用した基本的なデータベースの冗長化。読み取りをホストしている1つ以上のサーバーが、データベースの読み取り\/書き込みコピーをホストするソースサーバーに対して行われた変更を\-、データベースのコピーのみをホストします。|はい|いいえ 
+|データベースの機能|データベース層でのフェールオーバークラスタリングやミラーリング \(など、高\-可用性ソリューションを使用したデータベースの冗長性\)**注:** すべての AD FS 配置トポロジは、AD FS サービス層でのクラスタリングをサポートしています。|いいえ|はい  
 
   
 ## <a name="sql-server-considerations"></a>SQL Server に関する考慮事項  
@@ -53,7 +52,7 @@ SQL Server を AD FS 展開の構成データベースとして選ぶ場合は�
   
 対照的に、フェデレーション サーバーが展開されているファームで SQL Server データベースを使用する場合は、AD FS 構成データベースのローカル インスタンスが各フェデレーション サーバーに存在していなくてもかまいません。 したがって、必要なハードウェア リソースの量はかなり少なくなる可能性があります。  
   
-## <a name="BKMK_1"></a>フェデレーションサーバーを配置する場所  
+## <a name="where-to-place-a-federation-server"></a><a name="BKMK_1"></a>フェデレーションサーバーを配置する場所  
 セキュリティのベストプラクティスとして、ファイアウォールの前に AD FS フェデレーションサーバーを配置し、それらを企業ネットワークに接続して、インターネットからの露出を防ぐことをお勧めします。 これは、フェデレーションサーバーがセキュリティトークンを付与するための完全な権限を持っているため、重要です。 そのため、ドメイン コント ローラーと同様に保護する必要があります。 フェデレーションサーバーが侵害された場合、悪意のあるユーザーが、すべての Web アプリケーションおよび AD FS によって保護されているフェデレーションサーバーに対してフルアクセストークンを発行できるようになります。  
   
 > [!NOTE]  

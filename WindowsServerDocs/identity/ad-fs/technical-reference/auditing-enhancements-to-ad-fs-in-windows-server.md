@@ -1,7 +1,6 @@
 ---
 ms.assetid: 208928eb-bb17-4984-a312-23fff43133e3
 title: Windows Server 2016 での AD FS の監査機能の強化
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,34 +8,34 @@ ms.date: 10/25/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 4eb93513d12b2bba2620ff16be24f62ace5dee85
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 191ecf5b3c7bf6c8c44d4d3553cd6e98b5543351
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407251"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853805"
 ---
 # <a name="auditing-enhancements-to-ad-fs-in-windows-server-2016"></a>Windows Server 2016 での AD FS の監査機能の強化
 
 
-現時点では、Windows Server 2012 R2 の AD FS には、1つの要求に対して生成される監査イベントが多数あり、ログインまたはトークンの発行アクティビティに関する関連情報が存在しない (一部のバージョンの AD FS) か、複数の監査イベントに分散されています。 既定では、AD FS 監査イベントは、詳細な性質のために無効になっています。  
+現時点では、Windows Server 2012 R2 の AD FS には、1つの要求に対して生成される監査イベントが多数あり、ログインまたはトークンの発行アクティビティに関する関連情報が存在しない (一部のバージョンの AD FS) か、複数の監査イベントに分散されています。 既定で、AD FS 監査イベントは冗長な性質のために無効になっています。  
     Windows Server 2016 の AD FS のリリースにより、監査が効率化され、詳細が少なくなりました。  
   
 ## <a name="auditing-levels-in-ad-fs-for-windows-server-2016"></a>Windows Server 2016 の AD FS の監査レベル  
-既定では、Windows Server 2016 の AD FS には、基本的な監査が有効になっています。  基本的な監査を使用すると、管理者は1つの要求に対して5つ以下のイベントを表示できます。  これは、1つの要求を表示するために、管理者が確認する必要があるイベントの数が大幅に減少することを示しています。   監査レベルを上げたり下げたりするには、PowerShell cmdlt を使用します。Set-adfsproperties-AuditLevel を設定します。  次の表は、使用可能な監査レベルを示しています。  
+既定では、Windows Server 2016 の AD FS には、基本的な監査が有効になっています。  基本的な監査を使用すると、管理者は1つの要求に対して5つ以下のイベントを表示できます。  これは、1つの要求を表示するために、管理者が確認する必要があるイベントの数が大幅に減少することを示しています。   監査レベルは、PowerShell cmdlt: Set-adfsproperties-AuditLevel を使用して発生または減少させることができます。  次の表は、使用可能な監査レベルを示しています。  
   
 ||||  
 |-|-|-|  
-|監査レベル|PowerShell の構文|説明|  
+|Audit Level|PowerShell の構文|説明|  
 |なし|Set-adfsproperties-AuditLevel None|監査は無効になり、イベントはログに記録されません。|  
 |基本 (既定値)|Set-adfsproperties-AuditLevel Basic|1つの要求に対して記録されるイベントは5件までです|  
 |Verbose|Set-adfsproperties-AuditLevel Verbose|すべてのイベントがログに記録されます。  これにより、要求ごとに膨大な量の情報がログに記録されます。|  
   
-現在の監査レベルを表示するには、PowerShell cmdlt を使用します。Set-adfsproperties。  
+現在の監査レベルを表示するには、PowerShell の cmdlt: Set-adfsproperties を使用します。  
   
 ![監査の強化](media/Auditing-Enhancements-to-AD-FS-in-Windows-Server-2016/ADFS_Audit_1.PNG)  
   
-監査レベルを上げたり下げたりするには、PowerShell cmdlt を使用します。Set-adfsproperties-AuditLevel を設定します。  
+監査レベルは、PowerShell cmdlt: Set-adfsproperties-AuditLevel を使用して発生または減少させることができます。  
   
 ![監査の強化](media/Auditing-Enhancements-to-AD-FS-in-Windows-Server-2016/ADFS_Audit_2.png)  
   

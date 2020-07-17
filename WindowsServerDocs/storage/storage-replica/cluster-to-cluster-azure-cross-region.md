@@ -1,7 +1,6 @@
 ---
 title: Azure リージョンを超えてクラスター間の記憶域レプリカを構成する
 description: Azure のクラスターからクラスターへのストレージレプリケーションのクロスリージョン
-keywords: 記憶域レプリカ、サーバーマネージャー、Windows Server、Azure、クラスター、クロスリージョン、異なるリージョン
 author: arduppal
 ms.author: arduppal
 ms.date: 12/19/2018
@@ -9,21 +8,21 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: storage-replica
 manager: mchad
-ms.openlocfilehash: 26eba76c836d1157f4d4c10d7a989a3a7dcc1538
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ee4f508cf0a65b59c3253d6865c649cc9652c569
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71393827"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856305"
 ---
 # <a name="cluster-to-cluster-storage-replica-cross-region-in-azure"></a>Azure リージョンを超えてクラスター間の記憶域レプリカを構成する
 
-> 適用対象:Windows Server 2019、Windows Server 2016、Windows Server (半期チャネル)
+> 適用対象: Windows Server 2019、Windows Server 2016、Windows Server (半期チャネル)
 
 Azure でリージョンをまたがるアプリケーションのストレージレプリカをクラスター化するようにクラスターを構成できます。 次の例では、2ノードクラスターを使用していますが、クラスターへのクラスターの記憶域レプリカは2ノードクラスターに制限されていません。 次の図は、相互に通信できる2ノード記憶域スペースダイレクトクラスターであり、同じドメイン内にあり、リージョンが異なる場合があります。
 
 プロセスの完全なチュートリアルについては、以下のビデオをご覧ください。
-> [!video https://www.microsoft.com/en-us/videoplayer/embed/RE26xeW]
+> [!video https://www.microsoft.com/videoplayer/embed/RE26xeW]
 
 ![Azure での C2C SR を示すアーキテクチャ図は、同じリージョンにあります。](media/Cluster-to-cluster-azure-cross-region/architecture.png)
 > [!IMPORTANT]
@@ -59,7 +58,7 @@ Azure でリージョンをまたがるアプリケーションのストレー�
       - 各コンピューターに少なくとも2つの管理ディスクを追加する
       - フェールオーバークラスタリングと記憶域レプリカ機能をインストールする
 
-   可用性セットで仮想ネットワーク (**azcross**) とネットワークセキュリティグループ (**azcross nsg**) を使用して、リソースグループ (**sr-iov**クロス) に2つの仮想マシン (、 **azcross2**) を作成します (**azcross**). 作成中に標準のパブリック IP アドレスを各仮想マシンに割り当てる
+   可用性セット (**azcross**) で仮想ネットワーク (**azcross VNET**) とネットワークセキュリティグループ (**azcross nsg**) を使用して、リソースグループ (**sr-iov**) に2つの仮想マシン (**azcross1**、 **azcross2**) を作成します。 作成中に標準のパブリック IP アドレスを各仮想マシンに割り当てる
       - 各コンピューターに少なくとも2つの管理ディスクを追加する
       - フェールオーバークラスタリングと記憶域レプリカ機能をインストールする
 
@@ -93,16 +92,16 @@ Azure でリージョンをまたがるアプリケーションのストレー�
 8. 各クラスター (**azlbr1**、 **azlbazcross**) の内部 Standard SKU [Load Balancer](https://ms.portal.azure.com/#create/Microsoft.LoadBalancer-ARM)を作成します。
 
    クラスター IP アドレスをロードバランサーの静的プライベート IP アドレスとして指定します。
-      - azlbr1 = > フロントエンド IP:10.3.0.100 (仮想ネットワーク (**az2az**) サブネットから未使用の IP アドレスを取得する)
+      - azlbr1 = > フロントエンド IP: 10.3.0.100 (仮想ネットワーク (**az2az**) サブネットから未使用の ip アドレスを取得する)
       - 各ロードバランサーのバックエンドプールを作成します。 関連付けられているクラスターノードを追加します。
       - 正常性プローブの作成: ポート59999
-      - 負荷分散規則の作成:有効な Floating IP を使用して HA ポートを許可します。
+      - 負荷分散規則の作成: 有効な Floating IP を使用して HA ポートを許可します。
 
    クラスター IP アドレスをロードバランサーの静的プライベート IP アドレスとして指定します。 
-      - azlbazcross = > フロントエンド IP:10.0.0.10 (仮想ネットワーク (**azcross VNET**) サブネットから未使用の IP アドレスを取得する)
+      - azlbazcross = > フロントエンド IP: 10.0.0.10 (仮想ネットワーク (**AZクロス VNET**) サブネットから未使用の ip アドレスを取得する)
       - 各ロードバランサーのバックエンドプールを作成します。 関連付けられているクラスターノードを追加します。
       - 正常性プローブの作成: ポート59999
-      - 負荷分散規則の作成:有効な Floating IP を使用して HA ポートを許可します。 
+      - 負荷分散規則の作成: 有効な Floating IP を使用して HA ポートを許可します。 
 
 9. Vnet 間接続用の[仮想ネットワークゲートウェイ](https://ms.portal.azure.com/#create/Microsoft.VirtualNetworkGateway-ARM)を作成します。
 
@@ -135,7 +134,7 @@ Azure でリージョンをまたがるアプリケーションのストレー�
      $IPResourceName = "Cluster IP Address" # IP Address cluster resource name.
      $ILBIP = "10.3.0.100" # IP Address in Internal Load Balancer (ILB) - The static IP address for the load balancer configured in the Azure portal.
      [int]$ProbePort = 59999
-     Get-ClusterResource $IPResourceName | Set-ClusterParameter -Multiple @{"Address"="$ILBIP";"ProbePort"=$ProbePort;"SubnetMask"="255.255.255.255";"Network"="$ClusterNetworkName";”ProbeFailureThreshold”=5;"EnableDhcp"=0}  
+     Get-ClusterResource $IPResourceName | Set-ClusterParameter -Multiple @{"Address"="$ILBIP";"ProbePort"=$ProbePort;"SubnetMask"="255.255.255.255";"Network"="$ClusterNetworkName";"ProbeFailureThreshold"=5;"EnableDhcp"=0}  
     ```
 
 12. 任意の1つのノード**azcross1**/**azcross2**から次のコマンドを実行します。
@@ -144,7 +143,7 @@ Azure でリージョンをまたがるアプリケーションのストレー�
      $IPResourceName = "Cluster IP Address" # IP Address cluster resource name.
      $ILBIP = "10.0.0.10" # IP Address in Internal Load Balancer (ILB) - The static IP address for the load balancer configured in the Azure portal.
      [int]$ProbePort = 59999
-     Get-ClusterResource $IPResourceName | Set-ClusterParameter -Multiple @{"Address"="$ILBIP";"ProbePort"=$ProbePort;"SubnetMask"="255.255.255.255";"Network"="$ClusterNetworkName";”ProbeFailureThreshold”=5;"EnableDhcp"=0}  
+     Get-ClusterResource $IPResourceName | Set-ClusterParameter -Multiple @{"Address"="$ILBIP";"ProbePort"=$ProbePort;"SubnetMask"="255.255.255.255";"Network"="$ClusterNetworkName";"ProbeFailureThreshold"=5;"EnableDhcp"=0}  
     ```
 
     両方のクラスターが相互に接続/通信できることを確認します。

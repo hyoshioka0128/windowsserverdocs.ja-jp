@@ -1,28 +1,24 @@
 ---
 title: リモート デスクトップ - ネットワーク外部から PC へのアクセスを許可する
 description: PC のネットワーク外部から PC にリモートでアクセスするためのオプションについて説明する
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
-ms.tgt_pltfrm: na
 ms.topic: article
 author: haley-rowland
 manager: dongill
 ms.author: elizapo
 ms.date: 04/04/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: a8062530d5ea546ebb822f1c1149aeca5799a023
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9cc1b7568006ef9e32132d772702212c5fd78ec4
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387816"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "80857425"
 ---
 # <a name="remote-desktop---allow-access-to-your-pc-from-outside-your-pcs-network"></a>リモート デスクトップ - PC のネットワーク外部から PC へのアクセスを許可する
 
->適用対象:Windows 10、Windows Server 2016
+>適用先:Windows 10、Windows Server 2016
 
 リモート デスクトップ クライアントを使用して、PC に接続するときは、ピア ツー ピア接続を作成しています。 これは、PC ("ホスト" と呼ばれることがあります) への直接アクセスが必要なことを意味します。 お使いの PC が実行されているネットワークの外部から PC に接続する必要がある場合、そのアクセスを有効にする必要があります。 ポート フォワーディングを使用したり、VPN を設定するなどのいくつかの選択肢があります。
 

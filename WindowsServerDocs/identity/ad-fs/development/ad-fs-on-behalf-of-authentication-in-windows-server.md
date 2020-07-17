@@ -1,7 +1,6 @@
 ---
 ms.assetid: 5052f13c-ff35-471d-bff5-00b5dd24f8aa
 title: AD FS 2016 以降で OAuth を使用して、の代理 (OBO) を使用して多層アプリケーションを構築する
-description: ''
 author: billmath
 ms.author: billmath
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 02/22/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 9c6c6e7d2c12b6b822989bba05370015f7cd1833
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ed8bb6300360553e0809f4a30cec38bc37777ae9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407812"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858845"
 ---
 # <a name="build-a-multi-tiered-application-using-on-behalf-of-obo-using-oauth-with-ad-fs-2016-or-later"></a>AD FS 2016 以降で OAuth を使用して、の代理 (OBO) を使用して多層アプリケーションを構築する
 
@@ -59,7 +58,7 @@ WebAPIOBO | ユーザーが ToDoItem を追加したときに必要な操作を�
 
 このサンプルでは、SQL LocalDB v1.0 も使用されています。 サンプルで作業する前に、SQL LocalDB をインストールします。
 
-## <a name="setting-up-the-environment"></a>環境のセットアップ
+## <a name="setting-up-the-environment"></a>環境の設定
 次の基本的なセットアップを使用します。
 
 1. **DC**: AD FS がホストされるドメインのドメインコントローラー
@@ -129,7 +128,7 @@ AD FS 管理 MMC を開き、新しいアプリケーショングループを追
     => issue(claim = c);
 
     @RuleName = "Issue user_impersonation scope"
-    => issue(Type = "https://schemas.microsoft.com/identity/claims/scope", Value = "user_impersonation");
+    => issue(Type = "http://schemas.microsoft.com/identity/claims/scope", Value = "user_impersonation");
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO10.PNG)
 
@@ -222,14 +221,13 @@ ToDoListResourceId と ToDoListBaseAddress の正しい値を読み取るよう�
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO3.PNG)
 
-* 適切なコントローラー名を指定してください
+* コントローラーに適切な名前を付けます。
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO13.PNG)
 
 * コントローラーに次のコードを追加します。
 
-
-~~~
+```cs
     using System;
     using System.Collections.Generic;
     using System.Linq;
@@ -238,15 +236,16 @@ ToDoListResourceId と ToDoListBaseAddress の正しい値を読み取るよう�
     using System.Web.Http;
     namespace WebAPIOBO.Controllers
     {
+        [Authorize]
         public class WebAPIOBOController : ApiController
         {
             public IHttpActionResult Get()
             {
-                return Ok("WebAPI via OBO");
+                return Ok($"WebAPI via OBO (user: {User.Identity.Name}");
             }
         }
     }
-~~~
+```
 
 このコードは、誰かが WebAPI WebAPIOBO に Get 要求を行ったときに、単に文字列を返します。
 
@@ -274,7 +273,7 @@ ToDoListService WebAPI を構成したときと同じように、ウィザード
 * Web.config ファイルを開きます。
 * 次のキーを変更する
 
-| Key                      | Value                                                                                                                                                                                                                   |
+| Key                      | 値                                                                                                                                                                                                                   |
 |:-------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | ida: 対象ユーザー             | ToDoListService WebAPI を構成するときに AD FS に指定された ToDoListService の ID (例: https://localhost:44321/)。                                                                                         |
 | ida: ClientID             | ToDoListService WebAPI を構成するときに AD FS に指定された ToDoListService の ID (例: <https://localhost:44321/>)。 </br>**Ida: Audience と ida: ClientID が相互に一致することが非常に重要です。** |
@@ -359,7 +358,7 @@ AD FS は、Nmae 要求を発行していますが、NameIdentifier 要求を発
     // POST api/todolist
     public async Task Post(TodoItem todo)
     {
-      if (!ClaimsPrincipal.Current.FindFirst("http://schemas.microsoft.com/identity/claims/scope").Value.Contains("user_impersonation"))
+      if (!ClaimsPrincipal.Current.FindFirst("https://schemas.microsoft.com/identity/claims/scope").Value.Contains("user_impersonation"))
         {
             throw new HttpResponseException(new HttpResponseMessage { StatusCode = HttpStatusCode.Unauthorized, ReasonPhrase = "The Scope claim does not contain 'user_impersonation' or scope claim not found" });
         }
@@ -499,5 +498,5 @@ Fiddler で詳細なトレースを確認することもできます。 Fiddler 
 トークンエンドポイントとの2つ目のやり取りでは、 **requested_token_use**が**on_behalf_of**として設定されていて、中間層 web サービス用に取得したアクセストークンを使用していることを確認できます。つまり、の代わりにトークンを取得するアサーションとして https://localhost:44321/ ます。
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO23.PNG)
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 [AD FS の開発](../../ad-fs/AD-FS-Development.md)  

@@ -1,7 +1,6 @@
 ---
 ms.assetid: 3eb89320-d8b0-463f-b9e9-5a5b6e96e0b8
 title: 高度な機能の有効化に関するその他のリソースの検索
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,24 +8,21 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 9e1413f45b1ca7092ca000f60cb8b6bdb4626f6e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6ddf40d50ea59e552b3a98690336de995fe49a14
+ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408813"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81624240"
 ---
 # <a name="finding-additional-resources-for-enabling-advanced-features"></a>高度な機能の有効化に関するその他のリソースの検索
 
->適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
-Active Directory Domain Services に関する次のドキュメント (AD DS) については、Windows Server 2008 テクニカルライブラリを参照してください。  
-  
--   Windows Server 2008 フォレストルートドメインの展開の詳細については、「 [Windows server 2008 フォレストルートドメインの展開 \[LH\]](assetId:///92406e8d-dc1c-4740-a00a-2c4032896dd1)」を参照してください。  
-  
--   Active Directory ドメインを Windows Server 2008 にアップグレードする方法の詳細については、「 [Active Directory ドメインを Windows server 2008 AD DS\]\[ドメインにアップグレード](assetId:///9c91be5f-df14-40b2-b176-2b1852a51e61)する」を参照してください。  
-  
--   AD DS の展開の詳細については、「Windows Server 2008 Active Directory Domain Services のインストールと削除」 ([https://go.microsoft.com/fwlink/?LinkId=100492](https://go.microsoft.com/fwlink/?LinkId=100492)) の手順ガイドを参照してください。  
-  
+Active Directory Domain Services に関する次のドキュメント (AD DS) については、Windows Server 2008 テクニカルライブラリを参照してください。
 
+- Windows Server 2008 フォレストルートドメインの展開の詳細については、「 [Windows server 2008 フォレストルートドメインの展開](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731174(v=ws.10))」を参照してください。
 
+- Active Directory ドメインを Windows Server 2008 にアップグレードする方法の詳細については、「 [Active Directory ドメインの Windows server 2008 へのアップグレード」および「Windows server 2008 R2 AD DS ドメイン](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731188(v=ws.10))」を参照してください。
+
+- AD DS の展開の詳細については、「ステップバイステップガイド-Windows Server 2008 [AD DS インストールと削除](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc755258(v=ws.10))の手順ガイド」を参照してください。

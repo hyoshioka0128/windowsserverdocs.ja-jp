@@ -1,28 +1,24 @@
 ---
 title: リモート デスクトップ サービス - Multi-factor Authentication
 description: RDS で MFA を使用するための計画に関する情報。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 09ea784e-5644-417a-a3d9-bdbcebc313f9
 author: lizap
 ms.author: elizapo
 ms.date: 09/07/2016
 manager: dongill
-ms.openlocfilehash: 833eafd0b762098b67b11e6e5f26f63e62057fd1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c46ad24c62510b4a100a89b5c10a8f52c1a66151
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403846"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "80857355"
 ---
 # <a name="remote-desktop-services---multi-factor-authentication"></a>リモート デスクトップ サービス - Multi-factor Authentication
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016
+>適用先:Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016
 
 Multi-factor Authentication で Active Directory を活用し、ビジネス リソースの高度なセキュリティ保護を適用します。
 

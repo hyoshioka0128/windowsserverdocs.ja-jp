@@ -1,23 +1,24 @@
 ---
-ms.assetid: 6c6ff819-f349-4aea-b0be-1f637f631736
-title: Fsutil wim
+title: fsutil wim
+description: Windows イメージ (WIM) でサポートされているファイルを検出および管理するための機能を提供する、fsutil wim コマンドのリファレンス記事です。
 ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
 author: toklima
 ms.technology: storage
-audience: IT Pro
+ms.assetid: 6c6ff819-f349-4aea-b0be-1f637f631736
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: fc79b70e8dedb9ecad5e8c6e89f51ece3279faa4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 791eb80942187b0a0309097b2b785fb3dcea88ec
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71376657"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931415"
 ---
-# <a name="fsutil-wim"></a>Fsutil wim
->適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows 10
+# <a name="fsutil-wim"></a>fsutil wim
+
+> 適用先:Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows 10
 
 Windows イメージ (WIM) でサポートされているファイルを検出および管理するための機能を提供します。
 
@@ -32,18 +33,15 @@ fsutil wim [removewim] <drive name> <data source>
 
 ### <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
-|-------------|---------------|
-|enumfiles|WIM によってサポートされるファイルを列挙します。|
-|\<ドライブ名 >|ドライブ名を指定します。|
-|データソース > の \<|データソースを指定します。|
-|enumwims|バッキング WIM ファイルを列挙します。|
-|queryfile|ファイルが WIM によってバックアップされているかどうかを照会し、その場合は WIM ファイルの詳細を表示します。|
-|\<ファイル名 >|ファイル名を指定します。|
-|removewim|バッキングファイルから WIM を削除します。|
-
-
-
+| パラメーター | 説明 |
+| --------- | ----------- |
+| enumfiles | WIM によってサポートされるファイルを列挙します。 |
+| `<drive name>` | ドライブ名を指定します。 |
+| `<data source>` | データソースを指定します。 |
+| enumwims | バッキング WIM ファイルを列挙します。 |
+| queryfile | ファイルが WIM によってバックアップされているかどうかを照会し、その場合は WIM ファイルの詳細を表示します。 |
+| `<filename>` | ファイル名を指定します。 |
+| removewim | バッキングファイルから WIM を削除します。 |
 
 ### <a name="examples"></a>例
 
@@ -71,7 +69,8 @@ fsutil wim C:\Windows\Notepad.exe
 fsutil wim removewims C: 2
 ```
 
-### <a name="additional-references"></a>その他の参照情報
-[コマンド ライン構文の記号](Command-Line-Syntax-Key.md)
+## <a name="additional-references"></a>その他の参照情報
 
-[Fsutil](Fsutil.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [fsutil](fsutil.md)

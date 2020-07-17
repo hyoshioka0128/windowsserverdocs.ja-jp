@@ -4,15 +4,15 @@ description: ソフトウェア定義ネットワーク (SDN) のパフォーマ
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: grcusanz; AnPaul
+ms.author: grcusanz; anpaul
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 8227c94e6785f4acf9135aac12406b6ac98a0910
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: cfd166aab7a0ef0383fe4700fdf50cc6d35289b1
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383520"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "80851615"
 ---
 # <a name="performance-tuning-software-defined-networks"></a>ソフトウェア定義ネットワークのパフォーマンス チューニング
 

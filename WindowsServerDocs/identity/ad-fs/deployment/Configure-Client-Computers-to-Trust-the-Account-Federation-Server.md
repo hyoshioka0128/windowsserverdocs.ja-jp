@@ -1,7 +1,6 @@
 ---
 ms.assetid: 4ae26970-e42e-4e69-887a-b16d2f8d0695
 title: アカウントフェデレーションサーバーを信頼するようにクライアントコンピューターを構成する
-description: ''
 author: billmath
 manager: femila
 ms.date: 05/31/2017
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 8c047f69cb0cb2db57ea33697c49e53a212fe823
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5022be852ab72f57c90d957cb1111f10e9b03a90
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71359861"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854945"
 ---
 # <a name="configure-client-computers-to-trust-the-account-federation-server"></a>アカウントフェデレーションサーバーを信頼するようにクライアントコンピューターを構成する
 

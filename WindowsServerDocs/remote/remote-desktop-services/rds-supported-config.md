@@ -1,24 +1,20 @@
 ---
 title: リモート デスクトップ サービスにおいてサポートされる構成
 description: Windows Server 2016 および Windows Server 2019 の RDS においてサポートされる構成に関する情報を示します。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 10/22/2019
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c925c7eb-6880-411f-8e59-bd0f57cc5fc3
 author: lizap
 manager: dongill
-ms.openlocfilehash: e501d550e5371c668f7e243f00106a0b79f694dc
-ms.sourcegitcommit: 214847318401cebdcb7f1924a731b4439c9d8a24
+ms.openlocfilehash: dae6c00bd09e9c10e32932701095244a75f9ca7a
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74187883"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "80860115"
 ---
 # <a name="supported-configurations-for-remote-desktop-services"></a>リモート デスクトップ サービスにおいてサポートされる構成
 
@@ -49,9 +45,9 @@ Windows Server 2016 も実行しているリモート デスクトップ セッ�
 
 |HA における 3 つ以上の接続ブローカー|RDSH または RDVH 2019|RDSH または RDVH 2016|RDSH または RDVH 2012 R2|
 |---|---|---|---|
- |Windows Server 2019 の接続ブローカー|サポート対象|サポート対象|サポート対象|
- |Windows Server 2016 の接続ブローカー|該当なし|サポート対象|サポート対象|
- |Windows Server 2012 R2 の接続ブローカー|該当なし|該当なし|サポートされない|
+ |Windows Server 2019 の接続ブローカー|サポート|サポート|サポート|
+ |Windows Server 2016 の接続ブローカー|なし|サポート|サポート|
+ |Windows Server 2012 R2 の接続ブローカー|なし|なし|サポートしていません。|
 
 ## <a name="support-for-graphics-processing-unit-gpu-acceleration"></a>グラフィックス処理装置 (GPU) アクセラレーションのサポート
 
@@ -71,11 +67,11 @@ Microsoft 以外のハイパーバイザーまたはクラウド プラットフ
 
 |機能|Windows Server 2008 R2|Windows Server 2012 R2|Windows Server 2016|Windows Server 2019|
 |---|---|---|---|---|
-|すべての RDP セッションでのハードウェア GPU の使用|X|〇|〇|〇|
-|H.264/AVC ハードウェア エンコード (GPU によってサポートされている場合)|X|X|〇|〇|
-|OS に提供される複数の GPU 間の負荷分散|X|X|X|〇|
-|帯域幅の使用量を最小化するための H.264/AVC エンコードの最適化|X|X|X|〇|
-|4K 解像度のための H.264/AVC のサポート|X|X|X|〇|
+|すべての RDP セッションでのハードウェア GPU の使用|いいえ|はい|はい|はい|
+|H.264/AVC ハードウェア エンコード (GPU によってサポートされている場合)|いいえ|いいえ|はい|はい|
+|OS に提供される複数の GPU 間の負荷分散|いいえ|いいえ|いいえ|はい|
+|帯域幅の使用量を最小化するための H.264/AVC エンコードの最適化|いいえ|いいえ|いいえ|はい|
+|4K 解像度のための H.264/AVC のサポート|いいえ|いいえ|いいえ|はい|
 
 ### <a name="vdi-support-for-gpus"></a>GPU の VDI サポート
 
@@ -83,11 +79,11 @@ Microsoft 以外のハイパーバイザーまたはクラウド プラットフ
 
 |機能|Windows 7 SP1|Windows 8.1|Windows 10|
 |---|---|---|---|
-|すべての RDP セッションでのハードウェア GPU の使用|X|〇|〇|
-|H.264/AVC ハードウェア エンコード (GPU によってサポートされている場合)|X|X|Windows 10 1703 以降|
-|OS に提供される複数の GPU 間の負荷分散|X|X|Windows 10 1803 以降|
-|帯域幅の使用量を最小化するための H.264/AVC エンコードの最適化|X|X|Windows 10 1803 以降|
-|4K 解像度のための H.264/AVC のサポート|X|X|Windows 10 1803 以降|
+|すべての RDP セッションでのハードウェア GPU の使用|いいえ|はい|はい|
+|H.264/AVC ハードウェア エンコード (GPU によってサポートされている場合)|いいえ|いいえ|Windows 10 1703 以降|
+|OS に提供される複数の GPU 間の負荷分散|いいえ|いいえ|Windows 10 1803 以降|
+|帯域幅の使用量を最小化するための H.264/AVC エンコードの最適化|いいえ|いいえ|Windows 10 1803 以降|
+|4K 解像度のための H.264/AVC のサポート|いいえ|いいえ|Windows 10 1803 以降|
 
 ### <a name="remotefx-3d-video-adapter-vgpu-support"></a>RemoteFX 3D ビデオ アダプター (vGPU) のサポート
 

@@ -3,23 +3,23 @@ title: 記憶域スペース ダイレクトでのサーバーの削除
 ms.assetid: 9d8499a7-1307-473d-9f00-8a051164fad2
 ms.prod: windows-server
 ms.author: cosdar
-ms.manager: eldenc
+manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 description: Windows Server で記憶域スペース ダイレクト クラスターからサーバーを削除する方法。
 ms.date: 2/5/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: ce8caef2b51279c97cc012045750b7a73d97a4ba
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0dd888048edc96d6001492e92ba6d519c751bdaa
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402811"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474569"
 ---
 # <a name="removing-servers-in-storage-spaces-direct"></a>記憶域スペース ダイレクトでのサーバーの削除
 
->適用対象:Windows Server 2019、Windows Server 2016
+>適用先:Windows Server 2019、Windows Server 2016
 
 このトピックでは、PowerShell を使って[記憶域スペース ダイレクト](storage-spaces-direct-overview.md)でサーバーを削除する方法について説明します。
 
@@ -52,7 +52,7 @@ Remove-ClusterNode <Name> -CleanUpDisks
 
 Windows はそのサーバーに保存されたデータをすべてクラスター内の他のサーバーに移動する必要があるため、このコマンドレットの実行には時間がかかることがあります (場合によっては数時間)。 この処理が完了すると、ドライブは記憶域プールから完全に削除され、影響を受けるボリュームが正常な状態に戻ります。
 
-### <a name="requirements"></a>要件
+### <a name="requirements"></a>必要条件
 
 完全にスケール イン (サーバー*と*そのドライブを削除) するには、クラスターが次の 2 つの要件を満たしている必要があります。 満たしていない場合、**Remove-ClusterNode -CleanUpDisks** コマンドレットは、中断を最小限に抑えるため、データ移動を開始する前にすぐにエラーを返します。
 
@@ -79,6 +79,6 @@ Windows はそのサーバーに保存されたデータをすべてクラスタ
    >[!NOTE]
    > 障害発生時やメンテナンス時など、短期的にサーバーが減ってもかまいません。 しかし、ボリュームが完全に正常な状態に戻るには、上に示したサーバーの最小数が必要です。
 
-## <a name="see-also"></a>関連項目
+## <a name="additional-references"></a>その他のリファレンス
 
 - [記憶域スペースダイレクトの概要](storage-spaces-direct-overview.md)

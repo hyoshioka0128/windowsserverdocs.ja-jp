@@ -2,22 +2,18 @@
 title: 境界ゲートウェイ プロトコル (BGP)
 description: このトピックを使用すると、BGP でサポートされている展開トポロジ、BGP の機能など、Windows Server 2016 の Border Gateway Protocol (BGP) について理解することができます。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 78cc2ce3-a48e-45db-b402-e480b493fab1
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: ae6fddce1564e44ad72a5630c6abb16cdb6735d1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 5407c2580f9546c59df9e6c1c35520449bdfaa3f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388983"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815865"
 ---
 # <a name="border-gateway-protocol-bgp"></a>境界ゲートウェイ プロトコル (BGP)
 
@@ -30,7 +26,7 @@ ms.locfileid: "71388983"
 >   
 > -   [BGP Windows PowerShell コマンド リファレンス](../../remote-access/bgp/BGP-Windows-PowerShell-Command-Reference.md)  
   
-このトピックは次のセクションで構成されます。  
+このトピックの内容は次のとおりです。  
   
 -   [BGP でサポートされる展開トポロジ](#bkmk_top)  
   
@@ -61,7 +57,7 @@ Enable-RemoteAccessRoutingDomain -Name $Contoso_RoutingDomain -Type All -PassThr
 Enable-RemoteAccessRoutingDomain -Name $Fabrikam_RoutingDomain -Type All -PassThru  
 ```  
   
-## <a name="bkmk_top"></a>BGP でサポートされる展開トポロジ  
+## <a name="bgp-supported-deployment-topologies"></a><a name="bkmk_top"></a>BGP でサポートされる展開トポロジ  
 ここでは、エンタープライズ サイトがクラウド サービス プロバイダー (CSP) のデータセンターに接続されている、サポートされている展開トポロジを示します。  
   
 どのシナリオでも、CSP ゲートウェイは Windows Server 2016 の RAS ゲートウェイです。 複数のテナントからの複数の接続を処理できる RAS ゲートウェイは、Hyper-v ホストと、実際にゲートウェイとして構成されている VM で構成されます。 このエッジ ゲートウェイは、エンタープライズおよび CSP サブネット ルートを交換するためのマルチテナントの BGP ルーターとして、サイト間 VPN 接続で構成されます。  
@@ -80,7 +76,7 @@ Enable-RemoteAccessRoutingDomain -Name $Fabrikam_RoutingDomain -Type All -PassTh
   
 以降のセクションでは、サポートされているそれぞれの BGP トポロジに関する追加の情報を示します。  
   
-### <a name="bkmk_top1"></a>エンタープライズサイトのエッジにある BGP を使用した RAS VPN サイト対サイトゲートウェイ  
+### <a name="ras-vpn-site-to-site-gateway-with-bgp-at-enterprise-site-edge"></a><a name="bkmk_top1"></a>エンタープライズサイトのエッジにある BGP を使用した RAS VPN サイト対サイトゲートウェイ  
 このトポロジは、CSP に接続されているエンタープライズ サイトを表しています。 エンタープライズルーティングトポロジには、内部ルーター、CSP との VPN サイト間接続用に構成された Windows Server 2016 RAS ゲートウェイ、およびエッジファイアウォールデバイスが含まれています。 RAS ゲートウェイは、S2S VPN と BGP 接続を終了します。  
   
 ![RAS VPN サイト対サイトゲートウェイ](../../media/Border-Gateway-Protocol-BGP/bgp_01.jpg)  
@@ -97,7 +93,7 @@ Enable-RemoteAccessRoutingDomain -Name $Fabrikam_RoutingDomain -Type All -PassTh
   
     -   エッジ デバイスでは、静的ルートまたはインターフェイスを構成して、BGP を使用してアドバタイズするルートを選択できます。 さらに、エッジ デバイスは、IGP を使用して外部ルートを他の内部設置型ルーターに配布します。  
   
-### <a name="bkmk_top2"></a>エンタープライズサイトのエッジに BGP があるサードパーティのゲートウェイ  
+### <a name="third-party-gateway-with-bgp-at-enterprise-site-edge"></a><a name="bkmk_top2"></a>エンタープライズサイトのエッジに BGP があるサードパーティのゲートウェイ  
 このトポロジは、サード パーティ製のエッジ ルーターを使用して CSP に接続するエンタープライズ サイトを表しています。 エッジ ルーターは、サイト間 VPN ゲートウェイとしても機能します。  
   
 ![エンタープライズ サイトのエッジに BGP が配置されたサード パーティのゲートウェイ](../../media/Border-Gateway-Protocol-BGP/bgp_02.jpg)  
@@ -108,7 +104,7 @@ Enable-RemoteAccessRoutingDomain -Name $Fabrikam_RoutingDomain -Type All -PassTh
   
 -   エッジ デバイスは、内部ゲートウェイ プロトコル (IGP) を実装し、内部ルーティングに直接参加します。  
   
-### <a name="bkmk_top3"></a>CSP クラウドデータセンターに接続する複数のエンタープライズサイト  
+### <a name="multiple-enterprise-sites-connecting-to-csp-cloud-datacenter"></a><a name="bkmk_top3"></a>CSP クラウドデータセンターに接続する複数のエンタープライズサイト  
 このトポロジは、サード パーティ製のゲートウェイを使用して CSP に接続する複数のエンタープライズ サイトを表しています。 サード パーティ製のエッジ デバイスは、サイト間 VPN ゲートウェイと BGP ルーターとして機能します。  
   
 ![CSP クラウドデータセンターに接続する複数のエンタープライズサイト](../../media/Border-Gateway-Protocol-BGP/bgp_03.jpg)  
@@ -125,7 +121,7 @@ Enable-RemoteAccessRoutingDomain -Name $Fabrikam_RoutingDomain -Type All -PassTh
   
 接続に失敗したため、エンタープライズサイト1の bgp ルーターがエンタープライズサイト2の BGP ルーターに接続できない場合、サイト1の BGP ルーターは、CSP BGP ルーターからエンタープライズサイト2ネットワークへのルートの学習を動的に開始し、トラフィックはシームレスに行われます。CSP の Windows Server BGP ルーターを介して、サイト1からサイト2に再ルーティングされます。  
   
-### <a name="bkmk_top4"></a>BGP と VPN の別個の終了ポイント  
+### <a name="separate-termination-points-for-bgp-and-vpn"></a><a name="bkmk_top4"></a>BGP と VPN の別個の終了ポイント  
 このトポロジは、2 つの異なるルーターを BGP のエンドポイントとサイト間 VPN のエンドポイントとして使用するエンタープライズを表しています。 サイト間 VPN は、Windows Server 2016 RAS ゲートウェイ上で終了し、BGP は内部ルーターで終了します。 Csp は、接続の CSP 側で、VPN と BGP の両方の接続を RAS ゲートウェイとして終了します。 この構成では、内部のサード パーティ製のルーター ハードウェアは、IGP への BGP ルートの再配布だけでなく、BGP への IGP ルートの再配布をサポートする必要があります。  
   
 ![BGP と VPN とで異なる終端点](../../media/Border-Gateway-Protocol-BGP/bgp_04.jpg)  
@@ -144,7 +140,7 @@ Enable-RemoteAccessRoutingDomain -Name $Fabrikam_RoutingDomain -Type All -PassTh
   
 この時点以降、エンタープライズ内部ルーターと CSP RAS ゲートウェイは、ルーティング情報を交換します。 エンタープライズ RAS BGP ルーターは、ネットワーク間でパケットを物理的にルーティングするために、CSP ルートとエンタープライズルートを学習します。  
   
-## <a name="bkmk_features"></a>BGP の機能  
+## <a name="bgp-features"></a><a name="bkmk_features"></a>BGP の機能  
 RAS ゲートウェイの BGP ルーターの機能を次に示します。  
   
 **リモートアクセスの役割サービスとしての BGP ルーティング**。 リモートアクセスを BGP LAN ルーターとして使用する場合は、リモートアクセス**サービス (RAS)** の役割サービスをインストールせずに、リモートアクセスサーバーの役割の**ルーティング**役割サービスをインストールできるようになりました。  これにより、BGP ルーターのメモリフットプリントが減少し、動的 BGP ルーティングに必要なコンポーネントのみがインストールされます。 ルーティングの役割サービスは、BGP ルーター VM のみが必要であり、DirectAccess または VPN を使用する必要がない場合に便利です。 さらに、BGP を使用する LAN ルーターとしてリモートアクセスを使用すると、内部ネットワーク上で BGP の動的ルーティングの利点を利用できます。  

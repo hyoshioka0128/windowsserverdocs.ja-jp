@@ -8,15 +8,15 @@ ms.date: 02/21/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 5985fc022a084e0e36e12ea60f18d1650c8c6b51
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e42c5b6d53cd3985fefc2c93ab10b59383a35af0
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366205"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950180"
 ---
 # <a name="ad-fs-troubleshooting---events-and-logging"></a>AD FS のトラブルシューティング-イベントとログ
-AD FS は、トラブルシューティングで使用できる2つの主要なログを提供します。  これらは次のとおりです。
+AD FS は、トラブルシューティングで使用できる2つの主要なログを提供します。  以下の説明を参照してください。
 
 - 管理ログ
 - トレースログ  
@@ -30,7 +30,7 @@ AD FS は、トラブルシューティングで使用できる2つの主要な�
 1.  イベント ビューアーを開きます。
 2.  **[アプリケーションとサービスログ] を**展開します。
 3.  **[AD FS]** を展開します。
-4.  **[管理者]** をクリックします。
+4.  **[管理]** をクリックします。
 
 ![監査の強化](media/ad-fs-tshoot-logging/event1.PNG)  
 
@@ -40,10 +40,10 @@ AD FS は、トラブルシューティングで使用できる2つの主要な�
 ### <a name="to-enable-and-view-the-trace-log"></a>トレースログを有効にして表示するには
 1.  イベント ビューアーを開きます。
 2.  **[アプリケーションとサービスログ]** を右クリックし、表示 をクリックして、 **[分析およびデバッグログの表示]** をクリックします。  これにより、左側に追加のノードが表示されます。
-![監査の強化](media/ad-fs-tshoot-logging/event2.PNG)  
+![監査の機能強化](media/ad-fs-tshoot-logging/event2.PNG)  
 3.  トレースの AD FS 展開
 4.  デバッグ を右クリックし、**ログを有効にする** を選択します。
-![監査の強化](media/ad-fs-tshoot-logging/event3.PNG)  
+![監査の機能強化](media/ad-fs-tshoot-logging/event3.PNG)  
 
 
 ## <a name="event-auditing-information-for-ad-fs-on-windows-server-2016"></a>Windows Server 2016 での AD FS に関するイベント監査情報  
@@ -57,15 +57,15 @@ Set-AdfsProperties -AuditLevel
 
 |監査レベル|PowerShell の構文|説明|  
 |----- | ----- | ----- |
-|なし|Set-adfsproperties-AuditLevel None|監査は無効になり、イベントはログに記録されません。|  
+|None|Set-adfsproperties-AuditLevel None|監査は無効になり、イベントはログに記録されません。|  
 |基本 (既定値)|Set-adfsproperties-AuditLevel Basic|1つの要求に対して記録されるイベントは5件までです|  
 |Verbose|Set-adfsproperties-AuditLevel Verbose|すべてのイベントがログに記録されます。  これにより、要求ごとに膨大な量の情報がログに記録されます。|  
   
-現在の監査レベルを表示するには、PowerShell cmdlt を使用します。Set-adfsproperties。  
+現在の監査レベルを表示するには、PowerShell の cmdlt: Set-adfsproperties を使用します。  
   
 ![監査の強化](media/ad-fs-tshoot-logging/ADFS_Audit_1.PNG)  
   
-監査レベルを上げたり下げたりするには、PowerShell cmdlt を使用します。Set-adfsproperties-AuditLevel を設定します。  
+監査レベルは、PowerShell cmdlt: Set-adfsproperties-AuditLevel を使用して発生または減少させることができます。  
   
 ![監査の強化](media/ad-fs-tshoot-logging/ADFS_Audit_2.png)  
   
@@ -91,16 +91,16 @@ AD FS サービスアカウントのセキュリティ監査では、パスワ�
 ### <a name="to-enable-security-auditing"></a>セキュリティ監査を有効にするには
 1. スタート をクリックし、**プログラム**、**管理ツール** の順にポイントして、**ローカルセキュリティポリシー** をクリックします。
 2. **"セキュリティの設定\ローカル ポリシー\ユーザー権利の管理"** フォルダーに移動して、 **[セキュリティ監査の生成]** をダブルクリックします。
-3. **[ローカルセキュリティの設定]** タブで、AD FS サービスアカウントが一覧に表示されていることを確認します。 表示されていない場合は、[ユーザーまたはグループの追加] をクリックして一覧に追加し、[OK] をクリックします。
+3. **[ローカル セキュリティの設定]** タブで、AD FS サービス アカウントが表示されていることを確認します。 表示されていない場合は、[ユーザーまたはグループの追加] クリックして一覧に追加し、[OK] をクリックします。
 4. 昇格した特権でコマンドプロンプトを開き、次のコマンドを実行して、"アプリケーションが生成されました" または "エラー: 有効/成功: 有効にする" というコマンドを実行します。
 5. **ローカルセキュリティポリシー**を閉じ、AD FS 管理スナップインを開きます。
  
 AD FS 管理スナップインを開くには、[スタート] をクリックし、[プログラム]、[管理ツール] の順にポイントして、[AD FS の管理] をクリックします。
  
 6. [操作] ウィンドウで、[フェデレーションサービスのプロパティの編集] をクリックします。
-7. [フェデレーションサービスのプロパティ] ダイアログボックスで、[イベント] タブをクリックします。
-8. [**成功の監査**と**失敗の監査**] チェックボックスをオンにします。
-9. [OK] をクリックします。
+7. [フェデレーション サービスのプロパティ] ダイアログ ボックスで、[イベント] タブをクリックします。
+8. **[成功の監査]** チェック ボックスと **[失敗の監査]** チェック ボックスをオンにします。
+9. ［OK］をクリックします。
 
 ![監査の強化](media/ad-fs-tshoot-logging/event4.PNG)  
  
@@ -139,16 +139,16 @@ AD FS 管理スナップインを開くには、[スタート] をクリック�
 ![activityid](media/ad-fs-tshoot-logging/activityid2.png)
 
 トラブルシューティングプロセスを支援するために、AD FS サーバーでトークン発行プロセスが失敗するたびに、AD FS 呼び出し元 ID イベントもログに記録します。 このイベントには、この情報がトークン要求の一部としてフェデレーションサービスに渡されたと仮定した場合の、次のいずれかの要求の種類と値が含まれます。
-- http://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountnameh
+- https://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountnameh
 - http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier
 - http://schemas.xmlsoap.org/ws/2005/05/identity/claims/upnh
-- http://schemas.microsoft.com/ws/2008/06/identity/claims/upn
+- https://schemas.microsoft.com/ws/2008/06/identity/claims/upn
 - http://schemas.xmlsoap.org/claims/UPN
 - http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddressh
-- http://schemas.microsoft.com/ws/2008/06/identity/claims/emailaddress 
+- https://schemas.microsoft.com/ws/2008/06/identity/claims/emailaddress 
 - http://schemas.xmlsoap.org/claims/EmailAddress
 - http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name
-- http://schemas.microsoft.com/ws/2008/06/identity/claims/name
+- https://schemas.microsoft.com/ws/2008/06/identity/claims/name
 - http://schemas.xmlsoap.org/ws/2005/05/identity/claims/privatepersonalidentifier 
 
 呼び出し元 ID イベントは、アクティビティ ID をログに記録して、特定の要求のイベントログをフィルター処理または検索するためにアクティビティ id を使用できるようにします。
@@ -156,6 +156,6 @@ AD FS 管理スナップインを開くには、[スタート] をクリック�
 
 
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 - [AD FS のトラブルシューティング](ad-fs-tshoot-overview.md)

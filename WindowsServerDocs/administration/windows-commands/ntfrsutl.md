@@ -1,77 +1,70 @@
 ---
 title: ntfrsutl
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Ntfrsutl コマンドの参照記事。これにより、NT ファイルレプリケーションサービス (NTFRS) の内部テーブル、スレッド、およびメモリ情報がダンプされます。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d7721a19-5a87-4ab6-b816-65d2da2c811f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f1301b6876698e9eb552ae0ef9e70ed278319a7c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 56aefc1277f67dc6a06ba4686c26f81592afc2f3
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71372625"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925334"
 ---
 # <a name="ntfrsutl"></a>ntfrsutl
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-NT ファイルレプリケーションサービスの内部テーブル、スレッド、およびメモリ情報を \(NTFRS\)にダンプします。 ローカルサーバーとリモートサーバーに対して実行されます。 サービスコントロールマネージャー \(SCM\) での NTFRS の回復設定は、コンピューター上の重要なログイベントを特定して維持するために重要な場合があります。 このツールを使用すると、これらの設定を簡単に確認できます。   
-  
-## <a name="syntax"></a>構文  
-  
-```  
-ntfrsutl[idtable|configtable|inlog|outlog][<computer>]  
-ntfrsutl[memory|threads|stage][<computer>]  
-ntfrsutl ds[<computer>]  
-ntfrsutl [sets][<computer>]  
-ntfrsutl [version][<computer>]  
-ntfrsutl poll[/quickly[=[<N>]]][/slowly[=[<N>]]][/now][<computer>]  
-```  
-  
-### <a name="parameters"></a>パラメーター  
-  
-|  パラメーター  |                                                                                                                                                                                                                                                                                                                                        説明                                                                                                                                                                                                                                                                                                                                         |
-|-------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|   idtable   |                                                                                                                                                                                                                                                                                                                                          ID テーブル                                                                                                                                                                                                                                                                                                                                          |
-| configtable |                                                                                                                                                                                                                                                                                                                                  FRS 構成テーブル                                                                                                                                                                                                                                                                                                                                   |
-|    inlog    |                                                                                                                                                                                                                                                                                                                                        受信ログ                                                                                                                                                                                                                                                                                                                                         |
-|   outlog    |                                                                                                                                                                                                                                                                                                                                        送信ログ                                                                                                                                                                                                                                                                                                                                        |
-| <computer>  |                                                                                                                                                                                                                                                                                                                                  コンピューターを指定します。                                                                                                                                                                                                                                                                                                                                   |
-|   memory    |                                                                                                                                                                                                                                                                                                                                        メモリ使用量                                                                                                                                                                                                                                                                                                                                        |
-|   レッド   |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-|    stage    |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-|     Ds      |                                                                                                                                                                                                                                                                                                                         NTFRS サービスの DS のビューを一覧表示します。                                                                                                                                                                                                                                                                                                                          |
-|    組     |                                                                                                                                                                                                                                                                                                                             アクティブなレプリカセットを指定します                                                                                                                                                                                                                                                                                                                              |
-|   version   |                                                                                                                                                                                                                                                                                                                       API と NTFRS サービスのバージョンを指定します。                                                                                                                                                                                                                                                                                                                        |
-|    投票     | 現在のポーリング間隔を指定します。<br /><br />パラメーター:<br /><br /><ul><li>**\=** \[ <N>\]\]をすばやく\[ **\/** 、\(ポーリングを迅速に\)<br /><br /><ul><li>安定した構成が rectrieved になる**まで迅速にポーリング \-**</li><li>既定の分ごとに迅速に **\=** \- ポーリングできます。</li><li>*N*分ごとに迅速に **\=** <N> \- ポーリング</li></ul></li><li>**\/速度が遅い**\[ **\=** \[ <N>\]\] \(ポーリングに時間がかかる\)<br /><br /><ul><li>安定した構成が取得されるまで、**緩やか**な \- ポーリングを行う</li><li>**低速\=** \- ポーリングが既定の分数ごとに遅くなる</li><li>**速度が遅い\=** <N> \- ポーリングを*N*分ごとに迅速に行う</li></ul></li><li>今すぐポーリングを \( **\/** \)</li></ul> |
-|     \/ ですか。     |                                                                                                                                                                                                                                                                                                                            コマンド プロンプトにヘルプを表示します。                                                                                                                                                                                                                                                                                                                            |
-  
-## <a name="BKMK_Examples"></a>例  
-ファイルレプリケーションのポーリング間隔を確認するには、次のようにします。  
-  
-```  
-C:\Program Files\SupportTools>ntfrsutl poll wrkstn-1  
-```  
-  
-現在の NTFRS アプリケーションプログラムインターフェイス \(API\) バージョンを確認するには、次のようにします。  
-  
-```  
-C:\Program Files\SupportTools>ntfrsutl version  
-```  
-  
-## <a name="additional-references"></a>その他の参照情報  
-  
--   [コマンド ライン構文の記号](command-line-syntax-key.md)  
-  
-  
-  
+ローカルサーバーとリモートサーバーの両方から、NT ファイルレプリケーションサービス (NTFRS) の内部テーブル、スレッド、およびメモリ情報をダンプします。 サービスコントロールマネージャー (SCM) での NTFRS の回復設定は、コンピューター上の重要なログイベントを特定して維持するために重要な場合があります。 このツールを使用すると、これらの設定を簡単に確認できます。
 
+## <a name="syntax"></a>構文
+
+```
+ntfrsutl[idtable|configtable|inlog|outlog][<computer>]
+ntfrsutl[memory|threads|stage][<computer>]
+ntfrsutl ds[<computer>]
+ntfrsutl [sets][<computer>]
+ntfrsutl [version][<computer>]
+ntfrsutl poll[/quickly[=[<n>]]][/slowly[=[<n>]]][/now][<computer>]
+```
+
+### <a name="parameters"></a>パラメーター
+
+| パラメーター | 説明 |
+| --------- | ----------- |
+| idtable | ID テーブルを指定します。 |
+| configtable | FRS 構成テーブルを指定します。 |
+| inlog | 受信ログを指定します。 |
+| outlog | 送信ログを指定します。 |
+| `<computer>` | コンピューターを指定します。 |
+| memory | メモリ使用量を指定します。 |
+| スレッド | メモリ使用量を指定します。 |
+| 準備 | メモリ使用量を指定します。 |
+| ds | NTFRS サービスの DS のビューを一覧表示します。 |
+| セット | アクティブなレプリカセットを指定します。 |
+| version | API と NTFRS サービスのバージョンを指定します。 |
+| 投票 | 現在のポーリング間隔を指定します。<ul><li>`/quickly`-安定した構成を取得するまで迅速にポーリングします。</li><li>`/quickly=`-既定の分単位の間隔でポーリングを迅速に行います。</li><li>`/quickly=<n>`- *N*分ごとにポーリングを迅速に行います。</li><li>`/slowly`-安定した構成を取得するまで、ポーリング速度が低下します。</li><li>`/slowly=`-既定の分数 (分単位) ごとにポーリングが遅くなります。</li><li>`/slowly=<n>`- *N*分ごとにポーリングが遅くなります。</li><li>`/now`-今すぐポーリング。</li></ul>|
+| /? | コマンド プロンプトにヘルプを表示します。 |
+
+### <a name="examples"></a>例
+
+ファイルレプリケーションのポーリング間隔を決定するには、次のように入力します。
+
+```
+C:\Program Files\SupportTools>ntfrsutl poll wrkstn-1
+```
+
+現在の NTFRS アプリケーションプログラムインターフェイス (API) のバージョンを確認するには、次のように入力します。
+
+```
+C:\Program Files\SupportTools>ntfrsutl version
+```
+
+## <a name="additional-references"></a>その他の参照情報
+
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

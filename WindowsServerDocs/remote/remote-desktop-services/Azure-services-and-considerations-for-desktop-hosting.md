@@ -1,28 +1,24 @@
 ---
 title: デスクトップ ホスティングの Azure サービスと考慮事項
 description: リモート デスクトップ ホスティング ソリューションに関する Azure に固有の考慮事項について説明します。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
 ms.author: helohr
 ms.date: 07/06/2018
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0f402ae3-5391-4c7d-afea-2c5c9044de46
 author: heidilohr
-manager: dougkim
-ms.openlocfilehash: 5c3b1ef044be70002918b7ef1379513bdbfb930c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+manager: lizross
+ms.openlocfilehash: f73f28500c136ec8bdd32084cc5949f5e9804699
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387961"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "80818525"
 ---
 # <a name="azure-services-and-considerations-for-desktop-hosting"></a>デスクトップ ホスティングの Azure サービスと考慮事項
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016
+>適用先:Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016
 
 次のセクションでは、Azure インフラストラクチャ サービスについて説明します。
   
@@ -47,7 +43,7 @@ ms.locfileid: "71387961"
 - RD Web アクセスのサイト URL、名前、および証明書は、スプーフィング攻撃を防止するために、一意であり各テナントから認識できるものにする必要があります。  
 - デスクトップ ホスティング サービスの通常の操作中は、ユーザーをテナントのデスクトップ ホスティング クラウド サービスに安全に接続できるようにする RD Web および RD ゲートウェイ仮想マシンを除く、すべての仮想マシン用のすべてのパブリック IP アドレスを削除してください。 管理タスクに必要な場合にパブリック IP アドレスを一時的に追加することがありますが、後で必ず削除してください。  
   
-詳しくは、次の記事をご覧ください。
+詳細については、以下の記事を参照してください。
 
 - [セキュリティと保護](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831778(v=ws.11))  
 - [IIS 8 について推奨するセキュリティ運用方法](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj635855(v=ws.11))  
@@ -63,7 +59,7 @@ ms.locfileid: "71387961"
 - Azure データ センター内の物理コンピューター リソースは、Hyper-V を使用して仮想化されます。 Hyper-V ホストはホスト クラスター内で構成されていないため、仮想マシンの可用性は、Azure インフラストラクチャ内で使用される個々のサーバーの可用性に依存します。 可用性を高めるために、各役割サービスの仮想マシンの複数インスタンスを 1 つの可用性セット内に作成でき、その後、仮想マシン内にゲスト クラスタリングを実装できます。  
 - 一般的なストレージ構成では、サービス プロバイダーは、複数のコンテナー (たとえばテナントごとに 1 つ) を持つ 1 つのストレージ アカウントを持ち、各コンテナーには複数のディスクがあります。 ただし、1 つのストレージ アカウントで実現できる記憶域とパフォーマンスの合計には制限があります。 多数のテナントをサポートするサービス プロバイダーや、ストレージ容量またはパフォーマンスについて高い要件を持つテナントの場合、サービス プロバイダーは複数のストレージ アカウントを作成する必要があります。  
   
-詳しくは、次の記事をご覧ください。
+詳細については、以下の記事を参照してください。
 
 - [Cloud Services のサイズ](https://docs.microsoft.com/azure/cloud-services/cloud-services-sizes-specs)  
 - [Microsoft Azure 仮想マシンの料金の詳細](https://azure.microsoft.com/pricing/details/virtual-machines/)  

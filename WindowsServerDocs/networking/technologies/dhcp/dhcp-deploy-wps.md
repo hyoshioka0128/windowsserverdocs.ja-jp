@@ -6,23 +6,23 @@ ms.technology: networking-dhcp
 ms.topic: article
 ms.assetid: 7110ad21-a33e-48d5-bb3c-129982913bc8
 manager: brianlic
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 66e5845bdc8f473929bfd97a3999be82cd7730c8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 1e962948feaf6bb37beeb3c241d3ae3369be77dc
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405770"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860705"
 ---
 # <a name="deploy-dhcp-using-windows-powershell"></a>Windows PowerShell を使用した DHCP の展開
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016
+> 適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 このガイドでは、Windows PowerShell を使用して、IP アドレスと DHCP オプションをネットワーク上の1つまたは複数のサブネットに接続されている IPv4 DHCP クライアントに自動的に割り当てる DHCP\) サーバー \(DHCP server を展開する方法について説明します。
 
->[!NOTE]
->このドキュメントを TechNet ギャラリーから Word 形式でダウンロードするには、「 [Windows Server 2016 で Windows PowerShell を使用して DHCP を展開](https://gallery.technet.microsoft.com/Deploy-DHCP-Using-Windows-246dd293)する」を参照してください。
+> [!NOTE]
+> このドキュメントを TechNet ギャラリーから Word 形式でダウンロードするには、「 [Windows Server 2016 で Windows PowerShell を使用して DHCP を展開](https://gallery.technet.microsoft.com/Deploy-DHCP-Using-Windows-246dd293)する」を参照してください。
 
 DHCP サーバーを使用して IP アドレスを割り当てると、ネットワーク上のすべてのコンピューターにあるすべてのネットワークアダプターに対して TCP/IP v4 設定を手動で構成する必要がないため、管理オーバーヘッドが節約されます。 DHCP では、コンピューターまたは他の DHCP クライアントがネットワークに接続されているときに TCP/IP v4 構成が自動的に実行されます。
 
@@ -39,19 +39,19 @@ DHCP サーバーは、スタンドアロンサーバーとして、または Ac
 - [DHCP 用の Windows PowerShell コマンド](#bkmk_dhcpwps)
 - [このガイドの「Windows PowerShell コマンドの一覧」](#bkmk_list)
 
-## <a name="bkmk_overview"></a>DHCP 展開の概要
+## <a name="dhcp-deployment-overview"></a><a name="bkmk_overview"></a>DHCP 展開の概要
 
 次の図は、このガイドを使用して展開できるシナリオを示しています。 このシナリオでは、Active Directory ドメインに1つの DHCP サーバーが含まれています。 サーバーは、2つの異なるサブネット上の DHCP クライアントに IP アドレスを提供するように構成されています。 サブネットは、DHCP 転送が有効になっているルーターによって分離されます。
 
 ![DHCP ネットワークトポロジの概要](../../media/Core-Network-Guide/cng16_overview.jpg)
 
-## <a name="bkmk_technologies"></a>テクノロジの概要
+## <a name="technology-overviews"></a><a name="bkmk_technologies"></a>テクノロジの概要
 
 次のセクションでは、DHCP と TCP/IP の概要について簡単に説明します。
 
 ### <a name="dhcp-overview"></a>DHCP の概要
 
-DHCP は、ホストの IP 構成の管理を簡略化するための IP 標準です。 DHCP 標準によって、ネットワーク上の DHCP 対応クライアントへの IP アドレスの動的割り当てやその他の関連する構成の詳細を管理するための方法として、DHCP サーバーを使用できるようになります。
+DHCP は、ホストの IP 構成の管理を簡略化するための IP 標準です。 DHCP 規格を使用することで、DHCP サーバーは、IP アドレスや関連するその他の構成データをネットワーク上の DHCP 対応クライアントへ動的に割り当てることができます。
 
 DHCP では、静的 IP アドレスを使用してすべてのデバイスを手動で構成するのではなく、DHCP サーバーを使用して、ローカルネットワーク上のコンピューターまたは他のデバイス (プリンターなど) に IP アドレスを動的に割り当てることができます。
 
@@ -113,7 +113,7 @@ TCP/IP には基本的な TCP/IP ユーティリティが用意されていま�
 
 - 有線イーサネットまたはワイヤレス802.11 テクノロジが有効になっているタブレットと携帯電話
 
-## <a name="bkmk_plan"></a>DHCP の展開を計画する
+## <a name="plan-dhcp-deployment"></a><a name="bkmk_plan"></a>DHCP の展開を計画する
 
 DHCP サーバーの役割をインストールする前の主要な計画手順を次に示します。
 
@@ -131,17 +131,17 @@ DHCP メッセージはブロードキャスト メッセージであるため�
 
 各サブネットには、固有の IP アドレスの範囲を設定する必要があります。 これらの範囲は、DHCP サーバー上にスコープと共に表されます。
 
-スコープとは、DHCP サービスを使用するサブネット上のコンピューターの IP アドレスを管理するためのグループです。 管理者は、まず各物理サブネットのスコープを作成します。次に、そのスコープを使用して、クライアントによって使用されるパラメーターを定義します。
+スコープとは、サブネット上でDHCP サービスを使用するコンピューターを対象にする IP アドレスを管理用にグループ化したものです。 管理者は、まず各物理サブネットのスコープを作成します。次に、そのスコープを使用して、クライアントによって使用されるパラメーターを定義します。
 
 スコープには、次のプロパティがあります。
 
-- IP アドレスの範囲。DHCP サービス リースの提供時に、この範囲のアドレスが使用されるか除外されます。
+- IP アドレスの範囲。これは、DHCP サービスによるリース提供の目的で使用されるアドレスに含まれるか、または除外されるものです。
 
 - サブネット マスク。任意の IP アドレスのサブネット プレフィックスを決定します。
 
-- スコープ名。スコープの作成時に割り当てられます。
+- スコープ名。これは、スコープが作成されるときに割り当てられます。
 
-- リース期間の値。動的に割り当てられた IP アドレスを受け取る DHCP クライアントに割り当てられます。
+- リース持続期間の値。これは、動的に割り当てられる IP アドレスを受け取る DHCP クライアントに対して、リースが行われる期間の長さです。
 
 - DHCP クライアントに割り当てるために構成された DHCP スコープ オプション。DNS サーバー IP アドレス、ルーター (デフォルト ゲートウェイ) IP アドレスなどがあります。
 
@@ -183,11 +183,11 @@ DHCP サーバー上にスコープを作成する場合、DHCP サーバーが 
 
 この問題を解決するために、DHCP スコープの除外範囲を作成できます。 除外範囲は、DHCP サーバーが使用できない範囲の IP アドレス範囲内にある、連続した範囲の IP アドレスです。 除外範囲を作成した場合、DHCP サーバーはその範囲にあるアドレスを割り当てません。そのため、ユーザーは IP アドレスを競合させることなく、その範囲のアドレスを手動で割り当てることができます。
 
-各スコープの除外範囲を作成することによって、DHCP サーバーによる配布から IP アドレスを除外できます。 静的 IP アドレスを使用して構成されているすべてのデバイスに対し、除外を適用する必要があります。 他のサーバー、非 DHCP クライアント、ディスクレス ワークステーション、またはルーティングとリモート アクセスおよび PPP クライアントに手動で割り当てた IP アドレスは、すべて除外アドレスに含める必要があります。
+各スコープに対して除外範囲を作成することで、IP アドレスを DHCP サーバーによる配布から除外することができます。 静的 IP アドレスを使用して構成されているすべてのデバイスに対し、除外を適用する必要があります。 他のサーバー、非 DHCP クライアント、ディスクレス ワークステーション、またはルーティングとリモート アクセスおよび PPP クライアントに手動で割り当てた IP アドレスは、すべて除外アドレスに含める必要があります。
 
 除外範囲は、将来のネットワークの拡張に対応できるよう、余分なアドレスを含めて構成することをお勧めします。 次の表は、IP アドレス範囲が 10.0.0.1-10.0.0.254 でサブネットマスクが255.255.255.0 のスコープの除外範囲の例を示しています。
 
-|構成項目|値の例|
+|構成アイテム|値の例|
 |-----------------------|------------------|
 |除外範囲の開始 IP アドレス|10.0.0.1|
 |除外範囲の終了 IP アドレス|「10.0.0.25|
@@ -202,20 +202,20 @@ DHCP サーバー上にスコープを作成する場合、DHCP サーバーが 
 
 次の表は、AD DS と DNS の構成項目の追加例を示しています。
 
-|構成項目|値の例|
+|構成アイテム|値の例|
 |-----------------------|------------------|
-|ネットワーク接続バインディング|Ethernet|
+|ネットワーク接続バインディング|イーサネット|
 |DNS サーバー設定|DC1.corp.contoso.com|
 |優先 DNS サーバーの IP アドレス|10.0.0.2|
-|スコープ値<br /><br />1. スコープ名<br />2. 開始 IP アドレス<br />3. 終了 IP アドレス<br />4. サブネットマスク<br />5. 既定のゲートウェイ (オプション)<br />6. リース期間|1. プライマリサブネット<br />2. 10.0.0.1<br />3. 10.0.0.254<br />4. 255.255.255.0<br />5. 10.0.0.1<br />6. 8 日|
+|スコープ値<p>1. スコープ名<br />2. 開始 IP アドレス<br />3. 終了 IP アドレス<br />4. サブネットマスク<br />5. 既定のゲートウェイ (オプション)<br />6. リース期間|1. プライマリサブネット<br />2. 10.0.0.1<br />3. 10.0.0.254<br />4. 255.255.255.0<br />5. 10.0.0.1<br />6. 8 日|
 |IPv6 DHCP サーバーの操作モード|無効|
 
-## <a name="bkmk_lab"></a>テストラボでのこのガイドの使用
+## <a name="using-this-guide-in-a-test-lab"></a><a name="bkmk_lab"></a>テストラボでのこのガイドの使用
 
 このガイドを使用して、実稼働環境に展開する前に、テストラボに DHCP を展開することができます。 
 
->[!NOTE]
->テストラボに DHCP を展開しない場合は、「 [dhcp の展開](#bkmk_deploy)」セクションに進むことができます。
+> [!NOTE]
+> テストラボに DHCP を展開しない場合は、「 [dhcp の展開](#bkmk_deploy)」セクションに進むことができます。
 
 ラボの要件は、物理サーバーまたは仮想マシン \(Vm\)使用しているかどうか、および Active Directory ドメインを使用しているか、スタンドアロンの DHCP サーバーを展開しているかによって異なります。
 
@@ -234,7 +234,7 @@ Vm を使用してテストラボに DHCP を展開するには、次のリソ�
 物理サーバーの Hyper-v マネージャーで、次の項目を作成します。
 
 1. 1つの**内部**仮想スイッチ。 **外部**仮想スイッチを作成しないでください。これは、\-hyper-v ホストが dhcp サーバーを含むサブネット上にある場合、テスト VM は dhcp サーバーから IP アドレスを受信するためです。 さらに、展開するテスト DHCP サーバーは、\-Hyper-v ホストがインストールされているサブネット上の他のコンピューターに IP アドレスを割り当てる場合があります。
-1. Windows Server 2016 を実行している1台の VM が、作成した内部仮想スイッチに接続されている Active Directory Domain Services のドメインコントローラーとして構成されています。 このガイドに適合するために、このサーバーには静的に構成された IP アドレス10.0.0.2 が必要です。 AD DS の展開の詳細については、「Windows Server 2016[コアネットワークガイド](https://technet.microsoft.com/windows-server-docs/networking/core-network-guide/core-network-guide#BKMK_deployADDNS01)」の**DC1 の展開**に関するセクションを参照してください。
+1. Windows Server 2016 を実行している1台の VM が、作成した内部仮想スイッチに接続されている Active Directory Domain Services のドメインコントローラーとして構成されています。 このガイドに適合するために、このサーバーには静的に構成された IP アドレス10.0.0.2 が必要です。 AD DS の展開の詳細については、「Windows Server 2016[コアネットワークガイド](https://docs.microsoft.com/windows-server/networking/core-network-guide/core-network-guide#BKMK_deployADDNS01)」の**DC1 の展開**に関するセクションを参照してください。
 1. このガイドを使用して DHCP サーバーとして構成し、作成した内部仮想スイッチに接続されている、Windows Server 2016 を実行している1台の VM。 
 1. 作成した内部仮想スイッチに接続されている Windows クライアントオペレーティングシステムを実行している1つの VM。 dhcp サーバーが dhcp クライアントに IP アドレスと DHCP オプションを動的に割り当てていることを確認するために使用します。
 
@@ -257,12 +257,12 @@ Vm を使用してテストラボに DHCP を展開するには、次のリソ�
 この展開には、1つのハブまたはスイッチ、2台の物理サーバー、1つの物理クライアントが必要です。
 
 1. イーサネットケーブルを使用して物理コンピューターを接続できる1つのイーサネットハブまたはスイッチ
-2. Active Directory Domain Services が設定されたドメインコントローラーとして構成された Windows Server 2016 を実行している1台の物理コンピューター。 このガイドに適合するために、このサーバーには静的に構成された IP アドレス10.0.0.2 が必要です。 AD DS の展開の詳細については、「Windows Server 2016[コアネットワークガイド](https://technet.microsoft.com/windows-server-docs/networking/core-network-guide/core-network-guide#BKMK_deployADDNS01)」の**DC1 の展開**に関するセクションを参照してください。
-3. このガイドを使用して DHCP サーバーとして構成する Windows Server 2016 を実行している1台の物理コンピューター。 
+2. Active Directory Domain Services が設定されたドメインコントローラーとして構成された Windows Server 2016 を実行している1台の物理コンピューター。 このガイドに適合するために、このサーバーには静的に構成された IP アドレス10.0.0.2 が必要です。 AD DS の展開の詳細については、「Windows Server 2016[コアネットワークガイド](https://docs.microsoft.com/windows-server/networking/core-network-guide/core-network-guide#BKMK_deployADDNS01)」の**DC1 の展開**に関するセクションを参照してください。
+3. このガイドを使用して DHCP サーバーとして構成する Windows Server 2016 を実行している1台の物理コンピューター。
 4. DHCP サーバーが DHCP クライアントに IP アドレスと DHCP オプションを動的に割り当てていることを確認するために使用する、Windows クライアントオペレーティングシステムを実行している1台の物理コンピューター。
 
->[!NOTE]
->このデプロイに十分なテストコンピューターがない場合は、AD DS と DHCP の両方に対して1つのテストコンピューターを使用できます。ただし、この構成は運用環境では推奨されません。
+> [!NOTE]
+> このデプロイに十分なテストコンピューターがない場合は、AD DS と DHCP の両方に対して1つのテストコンピューターを使用できます。ただし、この構成は運用環境では推奨されません。
 
 **スタンドアロン DHCP サーバーの展開**
 
@@ -273,7 +273,7 @@ Vm を使用してテストラボに DHCP を展開するには、次のリソ�
 3. DHCP サーバーが DHCP クライアントに IP アドレスと DHCP オプションを動的に割り当てていることを確認するために使用する、Windows クライアントオペレーティングシステムを実行している1台の物理コンピューター。
 
 
-## <a name="bkmk_deploy"></a>DHCP の展開
+## <a name="deploy-dhcp"></a><a name="bkmk_deploy"></a>DHCP の展開
 
 このセクションでは、1台のサーバーに DHCP を展開するために使用できる Windows PowerShell コマンドの例を示します。 これらのコマンド例をサーバーで実行する前に、ネットワークと環境に合わせてコマンドを変更する必要があります。 
 
@@ -287,8 +287,8 @@ Vm を使用してテストラボに DHCP を展開するには、次のリソ�
 - DHCP オプションの値 (既定のゲートウェイ、ドメイン名、DNS または WINS サーバーなど)
 - インターフェイス名
 
->[!IMPORTANT]
->コマンドを実行する前に、環境に合わせてすべてのコマンドを確認および変更します。
+> [!IMPORTANT]
+> コマンドを実行する前に、環境に合わせてすべてのコマンドを確認および変更します。
 
 ### <a name="where-to-install-dhcp---on-a-physical-computer-or-a-vm"></a>DHCP をインストールする場所 (物理コンピューターまたは VM)
 
@@ -321,8 +321,8 @@ Set-DnsClientServerAddress -InterfaceAlias "Ethernet" -ServerAddresses 10.0.0.2
 
 これらのコマンドの詳細については、次のトピックを参照してください。
 
-- [New-netipaddress](https://technet.microsoft.com/itpro/powershell/windows/tcpip/new-netipaddress)
-- [設定-DnsClientServerAddress](https://technet.microsoft.com/itpro/powershell/windows/dns-client/set-dnsclientserveraddress)
+- [New-netipaddress](https://docs.microsoft.com/powershell/module/nettcpip/New-NetIPAddress)
+- [設定-DnsClientServerAddress](https://docs.microsoft.com/powershell/module/dnsclient/Set-DnsClientServerAddress)
 
 **コンピューターの名前を変更する**
 
@@ -335,8 +335,8 @@ Restart-Computer
 
 これらのコマンドの詳細については、次のトピックを参照してください。
 
-- [コンピューター名の変更](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.management/rename-computer)
-- [Restart-Computer](https://msdn.microsoft.com/powershell/reference/4.0/microsoft.powershell.management/restart-computer)
+- [コンピューター名の変更](https://docs.microsoft.com/powershell/module/microsoft.powershell.management/rename-computer)
+- [Restart-Computer](https://docs.microsoft.com/powershell/module/microsoft.powershell.management/restart-computer)
 
 ### <a name="join-the-computer-to-the-domain-optional"></a>コンピューターをドメインに参加させる \(オプション\)
 
@@ -354,7 +354,7 @@ Restart-Computer
 
 コンピューターの追加コマンドの詳細については、次のトピックを参照してください。
 
-- [コンピューターの追加](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.management/add-computer)
+- [コンピューターの追加](https://docs.microsoft.com/powershell/module/microsoft.powershell.management/add-computer?view=powershell-5.1)
 
 ### <a name="install-dhcp"></a>DHCP のインストール
 
@@ -366,7 +366,7 @@ Install-WindowsFeature DHCP -IncludeManagementTools
 
 このコマンドの詳細については、次のトピックを参照してください。
 
-- [Install-Add-windowsfeature](https://technet.microsoft.com/itpro/powershell/windows/server-manager/install-windowsfeature)
+- [Install-Add-windowsfeature](https://docs.microsoft.com/powershell/module/servermanager/install-windowsfeature)
 
 ### <a name="create-dhcp-security-groups"></a>DHCP セキュリティグループを作成する
 
@@ -387,19 +387,19 @@ Restart-Service dhcpserver
 これらのコマンドの詳細については、次のトピックを参照してください。
 
 - [ネットワーク シェル (netsh)](../netsh/netsh.md)
-- [サービスの再起動](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.management/restart-service)
+- [サービスの再起動](https://docs.microsoft.com/powershell/module/microsoft.powershell.management/restart-service)
 
 ### <a name="authorize-the-dhcp-server-in-active-directory-optional"></a>Active Directory \(オプション\) で DHCP サーバーを承認する
 
 ドメイン環境に DHCP をインストールする場合は、次の手順を実行して、DHCP サーバーがドメインで動作することを承認する必要があります。
 
->[!NOTE]
->Active Directory ドメインにインストールされている承認されていない DHCP サーバーは、正常に機能しないため、DHCP クライアントに IP アドレスをリースしません。 承認されていない DHCP サーバーの自動無効化は、承認されていない DHCP サーバーがネットワーク上のクライアントに誤った IP アドレスを割り当てないようにするセキュリティ機能です。
+> [!NOTE]
+> Active Directory ドメインにインストールされている承認されていない DHCP サーバーは、正常に機能しないため、DHCP クライアントに IP アドレスをリースしません。 承認されていない DHCP サーバーの自動無効化は、承認されていない DHCP サーバーがネットワーク上のクライアントに誤った IP アドレスを割り当てないようにするセキュリティ機能です。
 
 次のコマンドを使用して、Active Directory の承認された DHCP サーバーの一覧に DHCP サーバーを追加できます。 
 
->[!NOTE]
->ドメイン環境がない場合は、このコマンドを実行しないでください。
+> [!NOTE]
+> ドメイン環境がない場合は、このコマンドを実行しないでください。
 
 ```
 Add-DhcpServerInDC -DnsName DHCP1.corp.contoso.com -IPAddress 10.0.0.3
@@ -421,8 +421,8 @@ IPAddress   DnsName
 
 これらのコマンドの詳細については、次のトピックを参照してください。
 
-- [追加-DhcpServerInDC](https://technet.microsoft.com/itpro/powershell/windows/dhcp-server/add-dhcpserverindc)
-- [取得-DhcpServerInDC](https://technet.microsoft.com/itpro/powershell/windows/dhcp-server/get-dhcpserverindc)
+- [追加-DhcpServerInDC](https://docs.microsoft.com/powershell/module/dhcpserver/add-dhcpserverindc)
+- [取得-DhcpServerInDC](https://docs.microsoft.com/powershell/module/dhcpserver/get-dhcpserverindc)
 
 ### <a name="notify-server-manager-that-post-install-dhcp-configuration-is-complete-optional"></a>\-DHCP 構成のインストールが完了したことをサーバーマネージャー通知し \(オプション\)
 
@@ -436,7 +436,7 @@ Set-ItemProperty –Path registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\ServerM
 
 このコマンドの詳細については、次のトピックを参照してください。
 
-- [Get-itemproperty](https://msdn.microsoft.com/powershell/reference/4.0/microsoft.powershell.management/set-itemproperty?f=255&MSPPError=-2147217396)
+- [Get-itemproperty](https://docs.microsoft.com/powershell/module/microsoft.powershell.management/set-itemproperty)
 
 ### <a name="set-server-level-dns-dynamic-update-configuration-settings-optional"></a>サーバーレベルの DNS 動的更新の構成設定 \(オプションの\) に設定します
 
@@ -455,8 +455,8 @@ Set-DhcpServerDnsCredential -Credential $Credential -ComputerName "DHCP1.corp.co
 
 これらのコマンドの詳細については、次のトピックを参照してください。
 
-- [DhcpServerv4DnsSetting](https://technet.microsoft.com/itpro/powershell/windows/dhcp-server/set-dhcpserverv4dnssetting)
-- [DhcpServerDnsCredential](https://technet.microsoft.com/itpro/powershell/windows/dhcp-server/set-dhcpserverdnscredential)
+- [DhcpServerv4DnsSetting](https://docs.microsoft.com/powershell/module/dhcpserver/set-dhcpserverv4dnssetting)
+- [DhcpServerDnsCredential](https://docs.microsoft.com/powershell/module/dhcpserver/set-dhcpserverdnscredential)
 
 ### <a name="configure-the-corpnet-scope"></a>企業ネットワークのスコープを構成する
 
@@ -471,9 +471,9 @@ Set-DhcpServerv4OptionValue -DnsDomain corp.contoso.com -DnsServer 10.0.0.2
 
 これらのコマンドの詳細については、次のトピックを参照してください。
 
-- [DhcpServerv4Scope](https://technet.microsoft.com/itpro/powershell/windows/dhcp-server/add-dhcpserverv4scope)
-- [DhcpServerv4ExclusionRange](https://technet.microsoft.com/itpro/powershell/windows/dhcp-server/add-dhcpserverv4exclusionrange)
-- [DhcpServerv4OptionValue](https://technet.microsoft.com/itpro/powershell/windows/dhcp-server/set-dhcpserverv4optionvalue)
+- [DhcpServerv4Scope](https://docs.microsoft.com/powershell/module/dhcpserver/Add-DhcpServerv4Scope)
+- [DhcpServerv4ExclusionRange](https://docs.microsoft.com/powershell/module/dhcpserver/Add-DhcpServerv4ExclusionRange)
+- [DhcpServerv4OptionValue](https://docs.microsoft.com/powershell/module/dhcpserver/Set-DhcpServerv4OptionValue)
 
 ### <a name="configure-the-corpnet2-scope-optional"></a>Corpnet2 スコープ \(オプション\) を構成します
 
@@ -487,10 +487,10 @@ Set-DhcpServerv4OptionValue -OptionID 3 -Value 10.0.1.1 -ScopeID 10.0.1.0 -Compu
 
 この DHCP サーバーによって提供される追加のサブネットがある場合は、すべてのコマンドパラメーターに異なる値を使用してこれらのコマンドを繰り返し、各サブネットのスコープを追加することができます。
 
->[!IMPORTANT]
->Dhcp クライアントと DHCP サーバー間のすべてのルーターが、DHCP メッセージ転送用に構成されていることを確認します。 DHCP 転送を構成する方法については、ルーターのマニュアルを参照してください。
+> [!IMPORTANT]
+> Dhcp クライアントと DHCP サーバー間のすべてのルーターが、DHCP メッセージ転送用に構成されていることを確認します。 DHCP 転送を構成する方法については、ルーターのマニュアルを参照してください。
 
-## <a name="bkmk_verify"></a>サーバーの機能を確認する
+## <a name="verify-server-functionality"></a><a name="bkmk_verify"></a>サーバーの機能を確認する
 
 Dhcp サーバーが DHCP クライアントに IP アドレスを動的に割り当てていることを確認するために、別のコンピューターをサービスサブネットに接続できます。 イーサネットケーブルをネットワークアダプターに接続し、コンピューターの電源をオンにすると、DHCP サーバーから IP アドレスが要求されます。 **Ipconfig/all**コマンドを使用して結果を確認するか、Windows エクスプローラーまたはその他のアプリケーションを使用してブラウザーまたはファイル共有で Web リソースにアクセスしようとするなどの接続テストを実行して、正常な構成を確認できます。
 
@@ -498,26 +498,26 @@ Dhcp サーバーが DHCP クライアントに IP アドレスを動的に割�
 
 1. イーサネットケーブルがコンピューターとイーサネットスイッチ、ハブ、またはルーターの両方に接続されていることを確認します。
 2. クライアントコンピューターを、ルーターによって DHCP サーバーから分離されたネットワークセグメントに接続している場合は、ルーターが DHCP メッセージを転送するように構成されていることを確認します。
-3. Active Directory から承認された DHCP サーバーの一覧を取得するには、次のコマンドを実行して、DHCP サーバーが Active Directory で承認されていることを確認します。 [取得-DhcpServerInDC](https://technet.microsoft.com/itpro/powershell/windows/dhcp-server/get-dhcpserverindc)。
+3. Active Directory から承認された DHCP サーバーの一覧を取得するには、次のコマンドを実行して、DHCP サーバーが Active Directory で承認されていることを確認します。 [取得-DhcpServerInDC](https://docs.microsoft.com/powershell/module/dhcpserver/Get-DhcpServerInDC)。
 4. スコープがアクティブになっていることを確認するために、DHCP コンソール \(サーバーマネージャー、**ツール**、 **dhcp**\)を開き、サーバーツリーを展開してスコープを確認してから、各スコープを\-右クリックします。 選択したメニューに **[アクティブ]** 化 が含まれている場合は、 **[アクティブ化]** をクリックします。 \(スコープが既にアクティブになっている場合、メニュー選択は **[非アクティブ化]** を読み取ります。\)
 
-## <a name="bkmk_dhcpwps"></a>DHCP 用の Windows PowerShell コマンド
+## <a name="windows-powershell-commands-for-dhcp"></a><a name="bkmk_dhcpwps"></a>DHCP 用の Windows PowerShell コマンド
 
 次のリファレンスでは、Windows Server 2016 のすべての DHCP サーバー Windows PowerShell コマンドについて、コマンドの説明と構文を示します。 このトピックでは、コマンドの先頭にある動詞 ( **Get**や**Set**など) に基づいて、アルファベット順にコマンドを示します。
 
->[!NOTE]
->Windows server 2012 R2 では、Windows Server 2016 コマンドを使用できません。
+> [!NOTE]
+> Windows server 2012 R2 では、Windows Server 2016 コマンドを使用できません。
 
-- [DhcpServer モジュール](https://technet.microsoft.com/itpro/powershell/windows/dhcp-server/index)
+- [DhcpServer モジュール](https://docs.microsoft.com/powershell/module/dhcpserver/)
 
 次のリファレンスでは、Windows Server 2012 R2 のすべての DHCP サーバー Windows PowerShell コマンドについて、コマンドの説明と構文を示します。 このトピックでは、コマンドの先頭にある動詞 ( **Get**や**Set**など) に基づいて、アルファベット順にコマンドを示します。
 
->[!NOTE]
->Windows server 2012 R2 のコマンドは、Windows Server 2016 で使用できます。
+> [!NOTE]
+> Windows server 2012 R2 のコマンドは、Windows Server 2016 で使用できます。
 
-- [Windows PowerShell の DHCP サーバーコマンドレット](https://technet.microsoft.com/library/jj590751.aspx)
+- [Windows PowerShell の DHCP サーバーコマンドレット](https://docs.microsoft.com/windows-server/networking/technologies/dhcp/dhcp-deploy-wps)
 
-## <a name="bkmk_list"></a>このガイドの「Windows PowerShell コマンドの一覧」
+## <a name="list-of-windows-powershell-commands-in-this-guide"></a><a name="bkmk_list"></a>このガイドの「Windows PowerShell コマンドの一覧」
 
 このガイドで使用されているコマンドとサンプル値の簡単な一覧を次に示します。
 

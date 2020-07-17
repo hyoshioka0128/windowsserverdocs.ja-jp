@@ -1,24 +1,20 @@
 ---
 title: タスクの詳細と通知の表示
 description: サーバー マネージャー
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-server-manager
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 95117407-2dd3-4f9a-841f-4331be3544c3
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a3dcbac95e60fce75316f8a4427aef54bdfad15b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0047a9f2d4b6b66cec85b2746b1975af2ced3316
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383020"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851455"
 ---
 # <a name="view-task-details-and-notifications"></a>タスクの詳細と通知の表示
 
@@ -50,7 +46,7 @@ ms.locfileid: "71383020"
 ## <a name="viewing-and-troubleshooting-tasks-by-using-task-details"></a>タスクの詳細を使用したタスクの表示とトラブルシューティング
 **[通知]** メニューの下部にある **[タスクの詳細]** コマンドを使用すると、タスクの **[詳細]** ダイアログボックスが開き、タスクイベント (開始、停止、警告、成功、または失敗) の詳しい説明が表示されます。 **イベント**、**サービス**、**ベストプラクティスアナライザー**タイルなど、サーバーマネージャーの他のリストコントロールと同様に、 **[タスクの詳細]** ダイアログボックスに表示されるタスクに対して実行するクエリをフィルター処理したり作成したりすることができます。 (リストコントロールに対するフィルター処理とクエリの作成の詳細については、「[サーバーマネージャータイルのデータのフィルター処理、並べ替え、およびクエリ](filter-sort-and-query-data-in-server-manager-tiles.md)の実行」を参照してください)。上部のウィンドウでは、 **[通知]** メニューに表示されている通知を確認し、同じタスクに関して生成された通知の数を確認できます。 上部のウィンドウで通知を選択すると、下部のウィンドウに通知の詳細が表示されます。
 
-失敗したタスクのトラブルシューティングには、下のウィンドウが特に役立ちます。 サーバーマネージャーがサーバープールのメンバーであるサーバーに接続できないか、データを取得できない場合、このウィンドウ内のエントリには、多くの場合、Windows リモート管理 (WinRM) の基盤となる Windows リモート管理 (WinRM)、ネットワーク、またはセキュリティの問題のフルテキストなど、詳細なメッセージが表示されます。サーバーマネージャーが対象サーバーと通信できないようにします。
+失敗したタスクのトラブルシューティングには、下のウィンドウが特に役立ちます。 サーバープールのメンバーであるサーバーに対してサーバーマネージャーが接続またはデータを取得できない場合、このウィンドウのエントリには、多くの場合、サーバーマネージャーが対象サーバーと通信できなくなる原因となっている、基になる Windows リモート管理 (WinRM)、ネットワーク、またはセキュリティの問題を含む詳細なメッセージが表示されます。
 
 ## <a name="see-also"></a>参照
 [サーバーマネージャータイルでのデータのフィルター処理、並べ替え、クエリの](filter-sort-and-query-data-in-server-manager-tiles.md)実行

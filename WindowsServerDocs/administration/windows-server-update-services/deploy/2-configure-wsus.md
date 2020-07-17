@@ -2,7 +2,6 @@
 title: 手順 2 - WSUS を構成する
 description: Windows Server Update Service (WSUS) のトピック - 「WSUS を構成する」は、WSUS をデプロイする 4 つの手順のうちの手順 2 です
 ms.prod: windows-server
-ms.reviewer: na
 ms.technology: manage-wsus
 ms.topic: article
 ms.assetid: d4adc568-1f23-49f3-9a54-12a7bec5f27c
@@ -10,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d1a78d2006a45bb2af8f87a91d7bb888964ddbcb
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: aa8a59a25d4a9880c70e593cd31a416ab51552f1
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361670"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "80828865"
 ---
 # <a name="step-2-configure-wsus"></a>手順 2:WSUS を構成する
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用先:Windows Server 2019、Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 WSUS サーバーの役割をサーバーにインストールした後、その役割を適切に構成する必要があります。 次のチェック リストでは、WSUS サーバーの初期構成に関連した手順の概要を示します。
 
@@ -293,7 +292,7 @@ WSUS セットアップでは、WSUS サーバーに接続する各クライア�
 5.  **[クライアント側のターゲットを有効にする]** を選択し、 **[有効]** を選択します。次に、このコンピューターを追加する WSUS コンピューター グループの名前を **[このコンピューターのグループ名をターゲットにする]** ボックスに入力します。
 
     > [!NOTE]
-    > **[クライアント側のターゲットを有効にする]** を有効にすると、クライアント コンピューターは、自動更新が WSUS サーバーにリダイレクトされたときに自分自身を WSUS サーバー上のターゲットのコンピューター グループに追加できます。 状態が [有効] に設定されている場合、このコンピューターは、WSUS サーバーに情報を送信するときに自分自身を特定のコンピューター グループのメンバーとして識別します。WSUS サーバーは、この情報を使用して、このコンピューターに展開する更新プログラムを判定します。 この設定は、クライアント コンピューターが使用するグループを WSUS サーバーに示します。 WSUS サーバーにグループを作成して、そのグループにドメイン メンバー コンピューターを追加する必要があります。
+    > **[クライアント側のターゲットを有効にする]** を有効にすると、クライアント コンピューターは、自動更新が WSUS サーバーにリダイレクトされたときに自分自身を WSUS サーバー上のターゲット コンピューター グループに追加できます。 状態が [有効] に設定されている場合、このコンピューターは、WSUS サーバーに情報を送信するときに自分自身を特定のコンピューター グループのメンバーとして識別します。WSUS サーバーは、この情報を使用して、このコンピューターに展開する更新プログラムを判定します。 この設定は、クライアント コンピューターが使用するグループを WSUS サーバーに示します。 WSUS サーバーにグループを作成して、そのグループにドメイン メンバー コンピューターを追加する必要があります。
 
 6.  **[OK]** をクリックして **"クライアント側のターゲットを有効にする"** ポリシーを閉じ、Windows Update の詳細ウィンドウに戻ります。
 
@@ -375,7 +374,7 @@ WSUS では、SSL 用に 2 つのポートを必要とします。1 つは暗号
 
 -   証明書は、WSUS サーバーと通信するすべてのコンピューターにインポートする必要があります。 これには、すべてのクライアント コンピューター、ダウンストリーム サーバー、および WSUS 管理コンソールを実行しているコンピューターが含まれます。 証明書は、ローカル コンピューターの信頼されたルート CA ストアか、Windows Server Update Service の信頼されたルート CA ストアにインポートする必要があります。
 
--   SSL 用には任意のポートを使用することができます。 ただし、SSL 用に設定するポートにより、WSUS がクリア HTTP トラフィックを送信するために使用するポートも決まります。 次に例を示します。
+-   SSL 用には任意のポートを使用することができます。 ただし、SSL 用に設定するポートにより、WSUS がクリア HTTP トラフィックを送信するために使用するポートも決まります。 次の例を考慮してください。
 
     -   HTTPS トラフィック用に業界標準のポート 443 を使用する場合、WSUS は、クリア HTTP トラフィック用に業界標準のポート 80 を使用します。
 
@@ -395,7 +394,7 @@ WSUS では、SSL 用に 2 つのポートを必要とします。1 つは暗号
 
     **Wsusutil configuressl**_certificateName_
 
-    この場合
+    ここで、
 
     *certificateName* は、WSUS サーバーの DNS 名です。
 

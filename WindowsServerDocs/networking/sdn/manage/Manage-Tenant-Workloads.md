@@ -1,32 +1,28 @@
 ---
 title: テナントのワークロードを管理する
 description: このトピックは、Windows Server 2016 でテナントのワークロードと仮想ネットワークを管理する方法について、ソフトウェアで定義されたネットワークガイドに含まれています。
-manager: dougkim
-ms.custom: na
+manager: grcusanz
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-sdn
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 16359b15-a0e4-4f42-9d70-6ef0d851d219
-ms.author: pashort
-author: shortpatti
+ms.author: anpaul
+author: AnirbanPaul
 ms.date: 08/26/2018
-ms.openlocfilehash: 0d90c9d5f03be5ae69b0f781d8acb51876dc4f8d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a99e42b452920746e96b8bf7258e3f05735459e4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406075"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854495"
 ---
 # <a name="manage-tenant-workloads"></a>テナントのワークロードを管理する
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックには、テナントの仮想マシン (Vm) を追加したり、ネットワーク仮想アプライアンスを使用したり、ソフトウェアの負荷分散を構成したりすることによって、テナントのワークロードを管理するためのドキュメントへのリンクが含まれています。
 
-このセクションには、次のトピックがあります。
+このセクションのトピックは次のとおりです。
 
 - [VM を作成してテナント Virtual Network または VLAN に接続する](Create-a-Tenant-VM.md)
 - [テナント VM ネットワークアダプターのサービス品質 (QoS) の構成](Configure-QoS-for-Tenant-VM-Network-Adapter.md)

@@ -1,32 +1,28 @@
 ---
 title: ソフトウェアの制限のポリシーを使用した電子メール ウイルスからのコンピューターの保護
 description: Windows Server のセキュリティ
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-software-restriction-policies
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 02f23979-f832-4e46-bdea-21fd77db35b2
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 4c691255683eb37eecdbeaa55c094b7ce5c4e26d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 680d0435d77164e101f045b439be6ccb6601dfef
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357651"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855735"
 ---
 # <a name="use-software-restriction-policies-to-help-protect-your-computer-against-an-email-virus"></a>ソフトウェアの制限のポリシーを使用した電子メール ウイルスからのコンピューターの保護
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 このトピックでは、ソフトウェアの制限のポリシー (SRP) を使用してアプリケーション制御ポリシーを設定する方法について説明します。これは、Windows Server 2008 および Windows Vista 以降では、電子メールのウイルスからコンピューターを保護するのに役立ちます。
 
-## <a name="introduction"></a>概要
+## <a name="introduction"></a>はじめに
 ソフトウェアの制限のポリシー (SRP) はグループ ポリシー ベースの機能で、ドメイン内のコンピューターで実行されているソフトウェア プログラムを識別し、これらのプログラムを実行する機能を制御します。 ソフトウェアの制限のポリシーを使えば、コンピューターの構成に厳格な制限を加え、指定したアプリケーションに限って実行を許可することができます。 これらは Microsoft Active Directory Domain Services およびグループポリシーと統合されていますが、スタンドアロンコンピューターで構成することもできます。 SRP の開始点については、「[ソフトウェアの制限のポリシー](software-restriction-policies.md)」を参照してください。
 
 Windows Server 2008 R2 および Windows 7 以降では、アプリケーション制御戦略の一部として、または SRP と連携して Windows AppLocker を使用できます。 

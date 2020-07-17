@@ -2,26 +2,26 @@
 title: 複数言語サポート用のサーバー回復 DVD の作成
 description: Windows Server Essentials の使用方法について説明します。
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.topic: article
 ms.assetid: c7da0f6c-9732-4784-9c28-7dad72c4071d
 author: daveba
 ms.author: daveba
-ms.openlocfilehash: 59d8d41e5836ba88b405a058c8340f454b081c06
-ms.sourcegitcommit: 2082335e1260826fcbc3dccc208870d2d9be9306
+ms.openlocfilehash: 9cafaf25a18ffe17894e11ff0676e492656e5831
+ms.sourcegitcommit: fdc3ce1992f4dd6ea1771479d525126abbbcfa72
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69980246"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85256671"
 ---
 # <a name="create-a-server-recovery-dvd-for-multi-language-support"></a>複数言語サポート用のサーバー回復 DVD の作成
 
->適用先:Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
+>適用対象: windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-##  <a name="BKMK_MLHeadedRecovery"></a>ローカルで管理されているサーバーで複数の言語をサポートするためのサーバーセットアップとサーバー回復 DVD の作成  
+##  <a name="create-a-server-setup-and-server-recovery-dvd-for-multiple-language-support-on-locally-administered-servers"></a><a name="BKMK_MLHeadedRecovery"></a>ローカルで管理されているサーバーで複数の言語をサポートするためのサーバーセットアップとサーバー回復 DVD の作成  
   
 > [!NOTE]
->  まず、 [チュートリアル「」の説明に従って、多言語の Windows イメージを作成する必要があります。Windows Server Essentials install.wim](https://technet.microsoft.com/library/jj126995) pack をインストールする前に、多言語の windows イメージを作成します。  
+>  まず、「[チュートリアル:](https://technet.microsoft.com/library/jj126995) Windows Server Essentials install.wim pack をインストールする前に、多言語 windows イメージの作成」の説明に従って、多言語の windows イメージを作成する必要があります。  
   
  セットアップには、Windows プレインストール環境 (Windows PE) と初期構成という 2 つのフェーズがあります。 既定では、初期構成には言語選択ページは表示されません。  
   
@@ -48,25 +48,25 @@ ms.locfileid: "69980246"
  多言語サポートを Windows セットアップに追加するには、次のものが必要です。  
   
 
--   カスタマイズした WinPE イメージの作成に必要なツールとソース ファイルのすべてを提供するテクニシャン コンピューター。 詳細については、「 [Prepare the Technician Computer](Prepare-the-Technician-Computer.md)」を参照してください。  
+-   カスタマイズした WinPE イメージの作成に必要なツールとソース ファイルのすべてを提供するテクニシャン コンピューター。 詳細については、「[テクニシャン コンピューターの準備](Prepare-the-Technician-Computer.md)」を参照してください。  
 
--   カスタマイズした WinPE イメージの作成に必要なツールとソース ファイルのすべてを提供するテクニシャン コンピューター。 詳細については、「 [Prepare the Technician Computer](../install/Prepare-the-Technician-Computer.md)」を参照してください。  
+-   カスタマイズした WinPE イメージの作成に必要なツールとソース ファイルのすべてを提供するテクニシャン コンピューター。 詳細については、「[テクニシャン コンピューターの準備](../install/Prepare-the-Technician-Computer.md)」を参照してください。  
 
   
 -   Windows Server Essentials DVD。  
   
 -   Windows Server Essentials 言語パック DVD。  
   
-###  <a name="BKMK_Steps"></a>複数言語サポートの追加  
+###  <a name="adding-multiple-language-support"></a><a name="BKMK_Steps"></a>複数言語サポートの追加  
  Windows セットアップに複数の言語サポートを追加するには、Windows Server 2012 および Windows Server Essentials 言語パックを追加して、インストール .wim を更新します。  
   
 #### <a name="update-installwim"></a>Install.wim の更新  
  この手順では、Windows Server 2012 および Windows Server Essentials 言語パックをインストール .wim に追加します。  
   
 > [!NOTE]
->  Windows Server 2012 の言語パックがインストールされていることを確認します。 これで適切なブランド化を取得できます。 Windows Server 2012 多言語ユーザーインターフェイス言語パックは、 [Microsoft.com](https://www.microsoft.com/OEM/en/installation/downloads/Pages/technical-downloads.aspx)で入手できます。 [チュートリアル「」で説明されている手順に従ってください。Windows Server Essentials 言語パックをインストールする](https://technet.microsoft.com/library/jj126995.aspx)前に、多言語 windows イメージの作成に関する多言語の windows イメージを作成します。  
+>  Windows Server 2012 の言語パックがインストールされていることを確認します。 これで適切なブランド化を取得できます。 Windows Server 2012 多言語ユーザーインターフェイス言語パックは、 [Microsoft.com](https://www.microsoft.com/OEM/en/installation/downloads/Pages/technical-downloads.aspx)で入手できます。 「[チュートリアル:](https://technet.microsoft.com/library/jj126995.aspx)多言語の windows イメージの作成」で説明されている手順に従って、Windows Server Essentials 言語パックをインストール .wim に追加します。  
 >   
->  Windows Server Essentials 言語パックは、言語パックメディア () の言語パックメディア\\で利用でき\>ます。この言語パックは、< の選別します。  
+>  Windows Server Essentials 言語パックは、言語パックメディア () の言語パックメディアで利用できます。この言語パックは、 \\<の選別 \> します。  
   
 > [!NOTE]
 >  Windows Server 2012 のリリース以前は、すべての言語パックを利用できない場合があります。  
@@ -108,9 +108,4 @@ ms.locfileid: "69980246"
  [追加のカスタマイズ](Additional-Customizations.md)   
  [展開のためのイメージの準備](Preparing-the-Image-for-Deployment.md)   
  [カスタマー エクスペリエンスのテスト](Testing-the-Customer-Experience.md)
-
- [イメージの作成とカスタマイズ](../install/Creating-and-Customizing-the-Image.md)   
- [追加のカスタマイズ](../install/Additional-Customizations.md)   
- [展開のためのイメージの準備](../install/Preparing-the-Image-for-Deployment.md)   
- [カスタマー エクスペリエンスのテスト](../install/Testing-the-Customer-Experience.md)
 

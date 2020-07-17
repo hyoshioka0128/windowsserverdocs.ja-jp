@@ -1,25 +1,21 @@
 ---
 title: システム要件
 description: 各インストール オプションのクリーン インストールでの記憶域、CPU、ネットワーク、メモリ、RAM の最小要件について説明します。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.date: 10/17/2017
 ms.technology: server-general
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4a8b42d7-9fe5-4efe-9ea1-ace2131fe068
 author: jaimeo
 ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 155e828c77670c7c489b334ec3e7c49aa0809d4d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: cd4666f9ac0677ce8893041ae4e937cca41e8164
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391618"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "80826495"
 ---
 # <a name="system-requirements"></a>システム要件
 
@@ -35,15 +31,15 @@ ms.locfileid: "71391618"
 
 
 ## <a name="review-system-requirements"></a>システム要件を確認する。  
-Windows Server 2016 のシステム要件の概要は次のとおりです。 使用しているコンピューターが "最小" 要件を満たしていない場合は、この製品を正しくインストールすることはできません。 実際の要件は、システム構成やインストールするアプリケーションおよび機能によって異なります。
+Windows Server 2016 のシステム要件の概要は次のとおりです。 使用しているコンピューターが最小要件を満たしていない場合は、この製品を正しくインストールすることはできません。 実際の要件は、システム構成やインストールするアプリケーションおよび機能によって異なります。
 
 特に指定がない限り、これらの最小システム要件はすべてのインストール オプション (Server Core、デスクトップ エクスペリエンス搭載サーバー、および Nano Server) および Standard Edition と Datacenter Edition の両方に適用されます。  
 
 > [!IMPORTANT]  
-> 予定している展開の範囲が多岐にわたる場合、通常適用可能な "推奨" システム要件が現実的ではなくなります。 特定のサーバーの役割に必要なリソースの詳細については、展開する予定の各サーバーの役割のドキュメントで確認してください。 良い結果を得るために、展開のテストを実施して特定の展開シナリオに合ったシステム要件を決定してください。  
+> 予定している展開の範囲が多岐にわたる場合、通常適用可能な推奨システム要件が現実的ではなくなります。 特定のサーバーの役割に必要なリソースの詳細については、展開する予定の各サーバーの役割のドキュメントで確認してください。 良い結果を得るために、展開のテストを実施して特定の展開シナリオに合ったシステム要件を決定してください。  
 
 
-## <a name="processor"></a>処理者  
+## <a name="processor"></a>プロセッサ  
 プロセッサのパフォーマンスは、プロセッサのクロック周波数だけでなく、プロセッサ コアの数やプロセッサ キャッシュのサイズの影響も受けます。 この製品のプロセッサの要件を次に示します。  
 
 **最小**:  
@@ -122,10 +118,10 @@ Windows Server 2016 を実行するコンピューターでは、PCI Express ア
 > - TPM をオフにする UEFI オプションは必須ではありません。  
 
 ## <a name="installation-of-nano-server"></a>Nano Server のインストール  
-Windows Server 2016 を Nano Server としてインストールする詳細な手順については、「[Nano Server のインストール](Getting-Started-with-Nano-Server.md)」を参照してください。
+Windows Server 2016 を Nano Server としてインストールする詳細な手順については、「[Install Nano Server](Getting-Started-with-Nano-Server.md)」 (Nano Server のインストール) を参照してください。
 
-## <a name="additional-resources"></a>その他のリソース
+## <a name="additional-resources"></a>その他の情報
 - [Windows のプロセッサの要件](https://docs.microsoft.com/windows-hardware/design/minimum/windows-processor-requirements)
 - [Windows Server 2016 の Standard エディションと Datacenter エディションの比較](https://docs.microsoft.com/windows-server/get-started/2016-edition-comparison)
 - [Windows 10 のシステム要件](https://www.microsoft.com/windows/windows-10-specifications#system-specifications)
-- [Windows Server 2016 ライセンス データシートのダウンロード](http://download.microsoft.com/download/7/2/9/7290EA05-DC56-4BED-9400-138C5701F174/WS2016LicensingDatasheet.pdf)
+- [Windows Server 2016 ライセンス データシートのダウンロード](https://download.microsoft.com/download/7/2/9/7290EA05-DC56-4BED-9400-138C5701F174/WS2016LicensingDatasheet.pdf)

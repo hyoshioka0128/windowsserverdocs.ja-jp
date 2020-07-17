@@ -1,19 +1,19 @@
 ---
 title: ネットワーク コントローラーの展開後の手順
 description: このトピックでは、Windows Server 2016 Datacenter のネットワークコントローラーの非 Kerberos 展開に関する証明書の構成手順について説明します。
-manager: brianlic
+manager: grcusanz
 ms.prod: windows-server
 ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: eea0aca9-8d89-48fb-8068-fca40c90d34b
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 3f95d2884a808239c1d171eecbc983e26e799102
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: anpaul
+author: AnirbanPaul
+ms.openlocfilehash: bb43de904be7a811083e71edce9421a236f20a27
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355620"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859635"
 ---
 # <a name="post-deployment-steps-for-network-controller"></a>ネットワーク コントローラーの展開後の手順
 

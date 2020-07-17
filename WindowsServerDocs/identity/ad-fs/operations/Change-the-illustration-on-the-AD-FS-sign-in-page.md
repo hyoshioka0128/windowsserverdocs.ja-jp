@@ -1,7 +1,6 @@
 ---
 ms.assetid: a4526500-24b3-423d-805c-24b0d8061aba
 title: AD FS サインインページの図を変更する
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 3da7726ca625c32728fb0ae64d291ae599b6cd8d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: de0fc7af4c4eecad59b7af6b08426ef207da5db1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71358291"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859955"
 ---
 # <a name="change-the-illustration-on-the-ad-fs-sign-in-page"></a>AD FS サインインページの図を変更する
 

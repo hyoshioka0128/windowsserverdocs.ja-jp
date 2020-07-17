@@ -4,15 +4,15 @@ description: Active Directory ワークロードでの LDAP に関する考慮�
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: TimWi; ChrisRob; HerbertM; KenBrumf;  MLeary; ShawnRab
+ms.author: timwi; chrisrob; herbertm; kenbrumf;  mleary; shawnrab
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: f6670c8cfd718360518869f0551461c45e5aed27
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2ef32b379dcc5d1c2d8217564b639f44d024e5ee
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71370282"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471548"
 ---
 # <a name="ldap-considerations-in-adds-performance-tuning"></a>での LDAP に関する考慮事項によるパフォーマンスチューニングの追加
 
@@ -47,12 +47,12 @@ Active Directory に対して使用するクエリを適切に記述、構築、
 
 - 長い期間の大量のクエリでは、ATQ LDAP スレッドの消費と枯渇が発生しています。 次のパフォーマンスカウンターを監視します。
 
-    - **NTDS\\要求の待機時間**–これは、要求の処理にかかる時間の影響を受けます。 ただし、120秒 (既定値) の後に要求がタイムアウトになるようにすると、ほとんどの場合、実行時間が大幅に短縮され、極端に長時間に実行されるクエリは、全体の数値で非表示になります。 Active Directory 絶対しきい値ではなく、この基準の変更を検索します。
+    - **NTDS \\要求の待機時間**–これは、要求の処理にかかる時間の影響を受けます。 ただし、120秒 (既定値) の後に要求がタイムアウトになるようにすると、ほとんどの場合、実行時間が大幅に短縮され、極端に長時間に実行されるクエリは、全体の数値で非表示になります。 Active Directory 絶対しきい値ではなく、この基準の変更を検索します。
 
         > [!NOTE]
         > この値が高い場合は、他のドメインに対する "プロキシ処理" 要求の遅延を示すインジケーターや、CRL チェックを行うこともできます。
 
-    - **NTDS\\推定キュー遅延**-最適なパフォーマンスを得るには、要求がサービスの待機を待機する時間がないことを意味する0に近いことをお勧めします。
+    - **NTDS \\推定キュー遅延**–最適なパフォーマンスを得るためには、最適なパフォーマンスを得るためには0に近い必要があります。これは、要求がサービスの待機に時間を費やすことがないためです。
 
 これらのシナリオは、次の1つまたは複数の方法を使用して検出できます。
 
@@ -60,11 +60,11 @@ Active Directory に対して使用するクエリを適切に記述、構築、
 
 -   [高コストで非効率的な検索の追跡](https://msdn.microsoft.com/library/ms808539.aspx)
 
--   パフォーマンスモニターの Active Directory 診断データコレクターセット ([SPA の Son: Win2008 以降の AD データコレクターセット](http://blogs.technet.com/b/askds/archive/2010/06/08/son-of-spa-ad-data-collector-sets-in-win2008-and-beyond.aspx))
+-   パフォーマンスモニターの Active Directory 診断データコレクターセット ([SPA の Son: Win2008 以降の AD データコレクターセット](https://blogs.technet.com/b/askds/archive/2010/06/08/son-of-spa-ad-data-collector-sets-in-win2008-and-beyond.aspx))
 
 -   [Microsoft Server Performance Advisor](../../../server-performance-advisor/microsoft-server-performance-advisor.md)Active Directory Advisor パック
 
--   先祖インデックスを使用する "(objectClass =\*)" 以外の任意のフィルターを使用して検索します。
+-   先祖インデックスを使用する "(objectClass =)" 以外の任意のフィルターを使用して検索し \* ます。
 
 ### <a name="other-index-considerations"></a>その他のインデックスに関する考慮事項
 
@@ -80,11 +80,11 @@ Active Directory に対して使用するクエリを適切に記述、構築、
 
 -   インデックスは、medial 検索文字列と最終的な検索文字列をサポートするために必要です。 最初の検索文字列にタプルインデックスは必要ありません。
 
-    -   最初の検索文字列– (samAccountName = MYPC\*)
+    -   最初の検索文字列– (samAccountName = MYPC \* )
 
-    -   Medial 検索文字列-(samAccountName =\*MYPC\*)
+    -   Medial 検索文字列-(samAccountName = \* mypc \* )
 
-    -   最終的な検索文字列– (samAccountName =\*MYPC $)
+    -   最終的な検索文字列– (samAccountName = \* mypc $)
 
 -   インデックスを作成すると、インデックスの作成中にディスク i/o が生成されます。 これは、優先順位の低いバックグラウンドスレッドで実行され、受信要求はインデックス構築より優先されます。 環境の容量計画が正常に完了している場合は、このことを意識する必要はありません。 ただし、書き込みが多いシナリオや、ドメインコントローラー記憶域の負荷が不明な環境では、クライアントエクスペリエンスが低下する可能性があるため、時間外に行う必要があります。
 
@@ -98,10 +98,10 @@ Active Directory に対して使用するクエリを適切に記述、構築、
 
 -   [インデックス付き属性](https://msdn.microsoft.com/library/windows/desktop/ms677112.aspx)
 
-## <a name="see-also"></a>関連項目
+## <a name="additional-references"></a>その他のリファレンス
 
-- [パフォーマンスチューニング Active Directory サーバー](index.md)
+- [Active Directory サーバーのパフォーマンス チューニング](index.md)
 - [ハードウェアに関する考慮事項](hardware-considerations.md)
 - [ドメイン コントローラーとサイトの適切な配置に関する考慮事項](site-definition-considerations.md)
-- [ADDS パフォーマンスのトラブルシューティング](troubleshoot.md) 
+- [ADDS パフォーマンスのトラブルシューティング](troubleshoot.md)
 - [Active Directory Domain Services のキャパシティ プランニング](https://go.microsoft.com/fwlink/?LinkId=324566)

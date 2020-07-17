@@ -1,55 +1,51 @@
 ---
 title: Windows Server 2016 Essentials の新機能
-description: Windows Server Essentials を使用する方法について説明します
-ms.custom: na
+description: Windows Server Essentials の使用方法について説明します。
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+ms.prod: windows-server
 ms.topic: article
 ms.assetid: affff774-5fa6-4944-887a-9bfde05f6a3f
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: bc83686f76c49773203d63a88894841f65ffd1d9
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 420d3b043959b8b1201aad7a5b3210fd9bd6a0da
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66433763"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80817755"
 ---
 # <a name="whats-new-in-windows-server-2016-essentials"></a>Windows Server 2016 Essentials の新機能
 
-> 適用先:Windows Server 2016 Essentials
+> 適用対象: Windows Server 2016 Essentials
 
-次に新しい Windows Server 2016 Essentials での機能強化されたとします。
+Windows Server 2016 Essentials の新機能と強化された機能は次のとおりです。
 
-## <a name="integration-with-azure-site-recovery-servicesazure-site-recovery-services-integrationmd"></a>[Azure Site Recovery サービスとの統合](azure-site-recovery-services-integration.md)
+## <a name="integration-with-azure-site-recovery-services"></a>[Azure Site Recovery Services との統合](azure-site-recovery-services-integration.md)
 
-**それが何**--は仮想マシンの保護が失敗したか失敗した場合、Azure Site Recovery Services でのフェールオーバーで保護された仮想マシンが実行されているホスト サーバーにオンプレミスの仮想マシンまでのビジネス継続性の保持またはホスト サーバーは修復された利用できます。 
+保護されているバーチャルマシンに障害が発生した場合、または保護されたバーチャルマシンが実行されているホストサーバーで障害が発生した場合に、オンプレミスのバーチャルマシンまたはホストサーバーが修復されて使用可能になるまで、Azure Site Recovery サービスとのフェールオーバーによっ**て**ビジネスの継続性が維持 --&reg; 
 
-**そのしくみ**--Microsoft Azure で提供されている Azure Site Recovery Services を Azure でのバックアップ コンテナー、仮想マシン (VM) のリアルタイムのレプリケーションを有効にします。 サーバーまたはサイトがダウンしても、ハードウェアまたはその他の障害が原因であることができますフェールオーバー Azure Site Recovery Services で、バックアップ コンテナーに格納されている VM イメージが Azure で実行中の VM としてプロビジョニングされるようにします。 Azure Virtual network と組み合わせると、Azure で実行するサーバーに、オンプレミス サーバーに接続した Pc のクライアントは接続に透過的にします。     
+**しくみ**: Microsoft Azure で提供されている Azure Site Recovery サービスを使用すると、仮想マシン (VM) を Azure のバックアップコンテナーにリアルタイムでレプリケートできます。 ハードウェアやその他の障害が原因でサーバーまたはサイトがダウンした場合は、Azure Site Recovery サービスとのフェールオーバーを実行して、バックアップコンテナーに格納されている VM イメージが Azure で実行中の VM としてプロビジョニングされるようにすることができます。 Azure 仮想ネットワークと組み合わせると、オンプレミスサーバーに接続されているクライアント Pc は、Azure で実行されているサーバーに透過的に接続します。     
                                                                                                                                                                                                                                                                                                                
 
-## <a name="integration-with-azure-virtual-networkazure-virtual-network-integrationmd"></a>[Azure Virtual network との統合](azure-virtual-network-integration.md)
+## <a name="integration-with-azure-virtual-network"></a>[Azure Virtual network との統合](azure-virtual-network-integration.md)
 
-**それが何**--組織にクラウド コンピューティングは、ほとんどすべてのリソース一度に移動できるようします。 代わりに、一部のリソースをクラウドに移行され、一部のオンプレミスで保持します。 そうすることは簡単に時間の経過と共に段階で、組織をクラウドに移動できます。 Azure 仮想ネットワークとの統合は、そのプロセスは、シームレスで管理可能なネットワーク インフラストラクチャを提供します。
+クラウドコンピューティングに対して組織が行っていることは、すべてのリソースを一度に移行することはめったにあり**ません**。 代わりに、リソースをクラウドに移動し、一部のリソースをオンプレミスに保持します。 こうすることで、時間の経過と共に組織を段階的にクラウドに移行することが容易になります。 Azure virtual Network の統合により、そのプロセスをシームレスかつ管理しやすいネットワークインフラストラクチャが提供されます。
 
-**そのしくみ**--Azure の仮想ネットワークでは、ポイント間 (P2P) を作成できるようにする Microsoft Azure またはサイト間 (S2S) 仮想プライベート ネットワーク (次のように Azure で実行されているリソースを提供されているサービス仮想マシンと記憶域) シームレスなアプリケーションおよびリソースにアクセスするローカル ネットワーク上にあるようになります。
+**しくみ**--azure virtual network は Microsoft Azure で提供されるサービスであり、azure で実行されているリソース (仮想マシンやストレージなど) が、シームレスなアプリケーションとリソースのアクセスのためにローカルネットワーク上にあるかのように、組織はポイントツーポイント (P2P) またはサイト間 (S2S) 仮想プライベートネットワークを作成できます。
 
 
 
-## <a name="support-for-larger-deploymentssupport-for-larger-deploymentsmd"></a>[大規模な展開のサポート](support-for-larger-deployments.md) 
+## <a name="support-for-larger-deployments"></a>[大規模な展開のサポート](support-for-larger-deployments.md) 
 
-いくつかの大規模な小規模企業では、機能性と容量を Windows Server Essentials を効果的に実装する必要があります。 Windows Server 2016 Essentials で大規模な展開のサポートを追加することで、ドメイン、ユーザーとデバイスの管理の容易性が向上を提供します。                                                                                                                                                                                                 
+大規模な小規模企業では、Windows Server Essentials を効果的に実装するために、より多くの機能と容量が必要になります。 Windows Server 2016 Essentials では、より大規模な展開のサポートを追加することで、ドメイン、ユーザー、デバイスの管理性が向上します。                                                                                                                                                                                                 
 
  - 複数のドメイン
- - 複数のドメイン コント ローラー                                                                                                                                                                                                                                        
- - 指定されたドメイン コント ローラーを指定する機能                                                                                                                                                                                                                   
+ - 複数のドメインコントローラー                                                                                                                                                                                                                                        
+ - 指定されたドメインコントローラーを指定する機能                                                                                                                                                                                                                   
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
 
-<a name="see-also"></a>関連項目
+<a name="see-also"></a>参照
 --------
 
-[Windows Server Essentials の概要](get-started.md)
+[Windows Server Essentials &copy;&reg; の概要](get-started.md)

@@ -1,22 +1,22 @@
 ---
 title: 新しい専用フォレストで AD モードを使用して HGS クラスターを初期化する (既定)
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 4dd10efecf391f7087962e514db7a59135bd93e8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 851ee57545aa233fd7d6c728b213ba687a1c1371
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403645"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856685"
 ---
 # <a name="initialize-the-hgs-cluster-using-ad-mode-in-a-new-dedicated-forest-default"></a>新しい専用フォレストで AD モードを使用して HGS クラスターを初期化する (既定)
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 >[!IMPORTANT]
 >管理者によって信頼された構成証明 (AD モード) は、Windows Server 2019 以降では非推奨とされます。 TPM の構成証明が不可能な環境では、[ホストキー](guarded-fabric-initialize-hgs-key-mode-default.md)の構成証明を構成します。 ホストキーの構成証明により、AD モードと同様の保証が提供され、セットアップが簡単になります。 
@@ -35,7 +35,7 @@ ms.locfileid: "71403645"
         Initialize-HgsServer -HgsServiceName 'MyHgsDNN' -SigningCertificatePath '.\signCert.pfx' -SigningCertificatePassword $signingCertPass -EncryptionCertificatePath '.\encCert.pfx' -EncryptionCertificatePassword $encryptionCertPass -TrustActiveDirectory
         ```
 
-    -   ローカル証明書ストアにインストールされているエクスポートできない証明書を使用している場合は、次のコマンドを実行します。 証明書の拇印がわからない場合は、`Get-ChildItem Cert:\LocalMachine\My` を実行すると、使用可能な証明書を一覧表示できます。
+    -   ローカル証明書ストアにインストールされているエクスポートできない証明書を使用している場合は、次のコマンドを実行します。 証明書の拇印がわからない場合は、`Get-ChildItem Cert:\LocalMachine\My`を実行して、使用可能な証明書を一覧表示できます。
 
         ```powershell
         Initialize-HgsServer -HgsServiceName 'MyHgsDNN' -SigningCertificateThumbprint '1A2B3C4D5E6F...' -EncryptionCertificateThumbprint '0F9E8D7C6B5A...' --TrustActiveDirectory

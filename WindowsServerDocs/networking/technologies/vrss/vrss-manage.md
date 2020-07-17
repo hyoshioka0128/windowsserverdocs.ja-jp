@@ -8,14 +8,14 @@ ms.assetid: 0fe5bfc3-591f-4a19-b98a-0668d4c9f93a
 ms.localizationpriority: medium
 manager: dougkim
 ms.date: 09/05/2018
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 9d528f7e658d61f613eedc635fb81d8f18fd59aa
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: fc2feb9101c84566304910b1ee24f13f1ac277f1
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405166"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80315355"
 ---
 # <a name="manage-vrss"></a>vRSS の管理
 

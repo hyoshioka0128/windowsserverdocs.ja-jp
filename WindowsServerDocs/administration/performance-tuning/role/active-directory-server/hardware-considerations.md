@@ -4,17 +4,17 @@ description: AD パフォーマンスチューニングにおけるハードウ�
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: TimWi; ChrisRob; HerbertM; KenBrumf;  MLeary; ShawnRab
+ms.author: timwi; chrisrob; herbertm; kenbrumf;  mleary; shawnrab
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 8e9b121036d33bc36cabb92ca682407bc2382fca
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1fef257f860895b20c1ca1a24b6fa50e16f70c8c
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355101"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471577"
 ---
-# <a name="hardware-considerations-in-adds-performance-tuning"></a>のハードウェアの考慮事項により、パフォーマンスチューニングが追加されます。 
+# <a name="hardware-considerations-in-adds-performance-tuning"></a>のハードウェアの考慮事項により、パフォーマンスチューニングが追加されます。
 
 >[!Important]
 > 以下は、 [Active Directory Domain Services の容量計画](https://go.microsoft.com/fwlink/?LinkId=324566)に関する記事で詳しく説明されている Active Directory ワークロードのために、サーバーハードウェアを最適化するための主な推奨事項と考慮事項の概要を示しています。 リーダーは、 [Active Directory Domain Services のキャパシティプランニング](https://go.microsoft.com/fwlink/?LinkId=324566)を検討して、これらの推奨事項に関する技術的な理解と影響を高めます。
@@ -25,13 +25,13 @@ Active Directory は、メモリと同じくらいの量のデータベースを
 
 -   Active Directory ベストプラクティスでは、DIT 全体をメモリに読み込むために十分な RAM を確保し、オペレーティングシステムやその他のインストールされているアプリケーション (ウイルス対策、バックアップソフトウェア、監視など) に対応することをお勧めします。
 
-    -   レガシプラットフォームの制限事項については、「 [Windows server 2003 または windows 2000 Server を実行しているドメインコントローラーの lsass.exe プロセスによるメモリ使用量](https://support.microsoft.com/kb/308356)」を参照してください。
+    -   レガシプラットフォームの制限事項については、「 [Windows server 2003 または windows 2000 server を実行しているドメインコントローラーでの Lsass.exe プロセスによるメモリ使用量](https://support.microsoft.com/kb/308356)」を参照してください。
 
-    -   メモリ\\の長期的な平均スタンバイキャッシュ有効期間 (30 分) &gt;パフォーマンスカウンターを使用します。
+    -   メモリの \\ 長期的な平均スタンバイキャッシュ有効期間 ( &gt; 30 分) パフォーマンスカウンターを使用します。
 
 -   オペレーティングシステム、ログ、およびデータベースを別のボリュームに配置します。 DIT のすべてまたは大部分がキャッシュされた場合、キャッシュが安定した状態になると、これは関連性が低くなり、ストレージレイアウトの柔軟性が多少向上します。 DIT 全体がキャッシュされないシナリオでは、オペレーティングシステム、ログ、およびデータベースを別のボリュームに分割することが重要になります。
 
--   通常、DIT に対する i/o 比は、約 90% の読み取りと書き込みの 10% です。 書き込み i/o ボリュームが 10%-20% を大幅に超えるシナリオは、書き込みが多いと見なされます。 書き込みが多いシナリオでは、Active Directory キャッシュを活用することはできません。 ディレクトリに書き込まれるデータのトランザクションの持続性を保証するために、Active Directory ではディスク書き込みキャッシュは実行されません。 その代わりに、この操作を行わない明示的な要求がない限り、すべての書き込み操作がディスクにコミットされてから、操作の正常完了状態が返されます。 したがって、高速ディスク i/o は、Active Directory への書き込み操作のパフォーマンスにとって重要です。 これらのシナリオのパフォーマンスを向上させる可能性のあるハードウェアの推奨事項を次に示します。
+-   通常、DIT に対する i/o 比は、約90% の読み取りと書き込みの10% です。 書き込み i/o ボリュームが 10%-20% を大幅に超えるシナリオは、書き込みが多いと見なされます。 書き込みが多いシナリオでは、Active Directory キャッシュを活用することはできません。 ディレクトリに書き込まれるデータのトランザクションの持続性を保証するために、Active Directory ではディスク書き込みキャッシュは実行されません。 その代わりに、この操作を行わない明示的な要求がない限り、すべての書き込み操作がディスクにコミットされてから、操作の正常完了状態が返されます。 したがって、高速ディスク i/o は、Active Directory への書き込み操作のパフォーマンスにとって重要です。 これらのシナリオのパフォーマンスを向上させる可能性のあるハードウェアの推奨事項を次に示します。
 
     -   ハードウェア RAID コントローラー
 
@@ -41,13 +41,13 @@ Active Directory は、メモリと同じくらいの量のデータベースを
 
 -   ディスクサブシステムのパフォーマンスは、ボリュームごとに個別に確認してください。 ほとんどの Active Directory シナリオは主に読み取りに基づいているため、DIT をホストするボリュームの統計情報は検査するのが最も重要です。 ただし、オペレーティングシステムやログファイルのドライブを含め、残りのドライブの監視を見落とさないようにしてください。 記憶域がパフォーマンスのボトルネックにならないようにドメインコントローラーが適切に構成されているかどうかを判断するには、「記憶域サブシステムの標準ストレージに関する推奨事項」を参照してください。 多くの環境では、負荷の急激な増加や急増に対応できる十分なヘッドルームがあることを保証することが理念です。 これらのしきい値は警告しきい値であり、負荷の急激な増加や急増に対応するヘッドルームが制限され、クライアントの応答性が低下します。 簡単に言うと、これらのしきい値を超えても、短期間 (5 ~ 15 分) では悪くありません。ただし、これらの統計情報を使用して継続して実行されているシステムはデータベースを完全にキャッシュしておらず、過剰に調査する必要があります。
 
-    -   Database = =&gt; Instances (lsass/ntdsa.dll)\\i/o データベース読み取り平均待機時間&lt; 15ms 秒
+    -   Database = = &gt; Instances (lsass/ntdsa.dll) \\ I/o データベース読み取り平均待機時間 &lt; 15ms 秒
 
-    -   Database = =&gt; Instances (lsass/ntdsa.dll)\\i/o データベース読み取り&lt;数10
+    -   Database = = &gt; Instances (lsass/ntdsa.dll) \\ I/o データベース読み取り数 &lt; 10
 
-    -   Database = =&gt; Instances (lsass/ntdsa.dll)\\i/o ログ書き込み平均待機時間&lt; 10 ミリ秒
+    -   Database = = &gt; Instances (lsass/ntdsa.dll) \\ I/o ログ書き込み平均待機時間 &lt; 10 ミリ秒
 
-    -   Database = =&gt; Instances (lsass/ntdsa.dll)\\i/o ログの書き込み数/秒–情報提供のみ。
+    -   Database = = &gt; Instances (lsass/ntdsa.dll) \\ i/o ログの書き込み数/秒–情報提供のみ。
 
         データの一貫性を維持するには、すべての変更をログに書き込む必要があります。 ここでは、適切な番号も不適切な数値もありません。これは、ストレージがサポートしている量の尺度にすぎません。
 
@@ -55,13 +55,13 @@ Active Directory は、メモリと同じくらいの量のデータベースを
 
 ## <a name="dont-over-tax-the-processors"></a>プロセッサを消費しないようにする
 
-十分な空きサイクルがないプロセッサは、実行のためにスレッドをプロセッサに取得するのに長い待機時間が発生する可能性があります。 多くの環境では、このようなシナリオでのクライアントの応答性への影響を最小限に抑えるために、負荷の急激な増加やスパイクに対応できる十分なヘッドルームがあることを保証することが理念となっています。 簡単に言うと、以下のしきい値を超えても短期的には問題ありません (5 ~ 15 分、1日に数回)。ただし、これらの統計を使用して継続して実行されているシステムでは、異常な負荷に対応するためのヘッドルームは提供されません。cenario. しきい値を超えて一定期間使用されているシステムは、プロセッサの負荷を軽減する方法について調査する必要があります。
+十分な空きサイクルがないプロセッサは、実行のためにスレッドをプロセッサに取得するのに長い待機時間が発生する可能性があります。 多くの環境では、このようなシナリオでのクライアントの応答性への影響を最小限に抑えるために、負荷の急激な増加やスパイクに対応できる十分なヘッドルームがあることを保証することが理念となっています。 簡単に言うと、以下のしきい値を超えても、短期間 (5 ~ 15 分) には問題ありません。ただし、これらの統計を使用して継続的に実行されるシステムでは、異常な負荷に対応するためのヘッドルームは提供されず、過剰に課税されるシナリオに簡単に組み込むことができます。 しきい値を超えて一定期間使用されているシステムは、プロセッサの負荷を軽減する方法について調査する必要があります。
 
 -   プロセッサを選択する方法の詳細については、「[サーバーハードウェアのパフォーマンスチューニング](../../hardware/index.md)」を参照してください。
 
 -   CPU 負荷を軽減するために、ハードウェアの追加、負荷の最適化、クライアントの他の場所への接続、または環境からの負荷の削除を行います。
 
--   プロセッサ情報 (\_Total) \\% のプロセッサ使用率 &lt; 60% パフォーマンスカウンタを使用します。
+-   プロセッサ情報 ( \_ Total) \\ % Processor 使用率 &lt; 60% パフォーマンスカウンタを使用してください。
 
 ## <a name="avoid-overloading-the-network-adapter"></a>ネットワークアダプターの過負荷を回避する
 
@@ -69,11 +69,11 @@ Active Directory は、メモリと同じくらいの量のデータベースを
 
 -   ネットワークサブシステムを調整する方法の詳細については、「[ネットワークサブシステムのパフォーマンスチューニング](../../../../networking/technologies/network-subsystem/net-sub-performance-top.md)」を参照してください。
 
--   Compare NetworkInterface (\*)\\Bytes Sent/Sec with NetworkInterface (\*)\\Current 帯域幅パフォーマンスカウンタを使用します。 比率は、使用率が 60% 未満である必要があります。
+-   Compare NetworkInterface ( \* ) \\ Bytes Sent/Sec with NetworkInterface ( \* ) \\ Current 帯域幅パフォーマンスカウンタを使用します。 比率は、使用率が60% 未満である必要があります。
 
-## <a name="see-also"></a>関連項目
-- [パフォーマンスチューニング Active Directory サーバー](index.md)
+## <a name="additional-references"></a>その他のリファレンス
+- [Active Directory サーバーのパフォーマンス チューニング](index.md)
 - [LDAP に関する考慮事項](ldap-considerations.md)
 - [ドメイン コントローラーとサイトの適切な配置に関する考慮事項](site-definition-considerations.md)
-- [ADDS パフォーマンスのトラブルシューティング](troubleshoot.md) 
+- [ADDS パフォーマンスのトラブルシューティング](troubleshoot.md)
 - [Active Directory Domain Services のキャパシティ プランニング](https://go.microsoft.com/fwlink/?LinkId=324566)

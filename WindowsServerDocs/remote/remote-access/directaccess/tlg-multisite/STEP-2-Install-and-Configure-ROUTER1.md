@@ -2,26 +2,22 @@
 title: 手順 2. ROUTER1 をインストールして構成する
 description: このトピックは、「Windows Server 2016 用の DirectAccess マルチサイト展開のテストラボガイド」の一部です。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: dc20b1a0-540d-4531-a176-50b87c071600
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 0c6bff2acc15b7ff90731e0113ae0d5a429c635c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 5e2b0759e85c05b4ee33971849bd1096d4c8419c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404797"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861605"
 ---
 # <a name="step-2-install-and-configure-router1"></a>手順 2. ROUTER1 をインストールして構成する
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 このマルチサイトのテストラボガイドでは、ルーターコンピューターは、企業ネットワークと2ネットワークのサブネット間に IPv4 と IPv6 のブリッジを提供し、ip-https および Teredo トラフィックのルーターとして機能します。  
   
@@ -40,7 +36,7 @@ ms.locfileid: "71404797"
   
 1.  Windows Server 2016、Windows Server 2012 R2、または Windows Server 2012 (フルインストール) のインストールを開始します。  
   
-2.  手順に従ってインストールを完了し、ローカルの Administrator アカウントの強力なパスワードを指定します。 ローカルの Administrator アカウントを使用してログオンします。  
+2.  手順に従ってインストールを完了し、ローカルの Administrator アカウントの強力なパスワードを指定します。 ローカル管理者アカウントを使用してログオンします。  
   
 3.  ROUTER1 をインターネットにアクセスできるネットワークに接続し Windows Update を実行して、Windows Server 2016、Windows Server 2012 R2、または Windows Server 2012 の最新の更新プログラムをインストールしてから、インターネットから切断します。  
   

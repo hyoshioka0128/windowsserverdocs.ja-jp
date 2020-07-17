@@ -1,7 +1,6 @@
 ---
 ms.assetid: d282bb4e-38a0-4c7c-83d8-f6ea89278057
 title: AD FS 2016 以降で OpenID Connect を使用して web アプリケーションを構築する
-description: ''
 author: billmath
 ms.author: billmath
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 02/22/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 9b3d64558c27e7b4bda20b6af27e02d55431c94d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 49d952a49cf474708f57a0ae2a7760d2470af607
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71358790"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857495"
 ---
 # <a name="build-a-web-application-using-openid-connect-with-ad-fs-2016-and-later"></a>AD FS 2016 以降で OpenID Connect を使用して web アプリケーションを構築する
 
@@ -40,7 +39,7 @@ ms.locfileid: "71358790"
 
 3.  **クライアント識別子**の値をコピーします。  この値は、アプリケーションの web.config ファイルの ida: ClientId の値として後で使用されます。  
 
-4.  **リダイレクト URI** - には、次のよう **https://localhost:44320/** に入力します。  **[追加]** をクリックします。 **[次へ]** をクリックします。  
+4.  **リダイレクト URI:**  -  **https://localhost:44320/** には、次のように入力します。  **[追加]** をクリックします。 **[次へ]** をクリックします。  
 
     ![AD FS OpenID](media/Enabling-OpenId-Connect-with-AD-FS-2016/AD_FS_OpenID_2.PNG)  
 
@@ -118,7 +117,7 @@ git clone https://github.com/Azure-Samples/active-directory-dotnet-webapp-openid
 
         -   信頼された発行者に関するデータの通信に証明機関を使用する代わりに、MetadataAddress を使用して探索ドキュメントの場所を直接指定します。  
 
-        -   Azure AD では、要求に redirect_uri が存在するかどうかは強制されませんが、ADFS では実行されます。 そのため、ここに追加する必要があります。  
+        -   Azure AD では、要求に redirect_uri の存在は強制されませんが、ADFS では実行されます。 そのため、ここに追加する必要があります。  
 
 ## <a name="verify-the-app-is-working"></a>アプリが動作していることを確認する  
 上記の変更が加えられたら、F5 キーを押します。  これにより、サンプルページが表示されます。  [サインイン] をクリックします。  

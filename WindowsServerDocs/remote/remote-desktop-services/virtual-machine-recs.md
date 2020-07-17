@@ -1,25 +1,21 @@
 ---
 title: 仮想マシンのサイズ設定
 description: 各ワークロードの種類の推奨サイズ。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
 ms.author: helohr
 ms.date: 12/02/2019
-ms.tgt_pltfrm: na
 ms.topic: article
 author: Heidilohr
-manager: daveba
-ms.openlocfilehash: 964dba2fc1a3cc1cf0e9cfe2392d40b9ea8f5ece
-ms.sourcegitcommit: cbf0c7c37797c22af989639fac82fc0eee94497f
+manager: lizross
+ms.openlocfilehash: beacd246639b5586c071a24bdd7b09c6aceeadab
+ms.sourcegitcommit: 32f810c5429804c384d788c680afac427976e351
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74700911"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83203384"
 ---
-# <a name="virtual-machine-sizing-guidance"></a>仮想マシンのサイズ設定のガイダンス
+# <a name="virtual-machine-sizing-guidelines"></a>仮想マシンのサイズ設定のガイドライン
 
 リモート デスクトップ サービスまたは Windows 仮想デスクトップのどちらで仮想マシンを実行している場合でも、ワークロードの種類ごとに異なるセッション ホスト仮想マシン (VM) 構成が必要です。 最適なエクスペリエンスを実現するには、ユーザーのニーズに応じてデプロイをスケールします。
 
@@ -29,9 +25,9 @@ ms.locfileid: "74700911"
 
 | ワークロードの種類 | vCPU あたりの最大ユーザー数 | vCPU/RAM/OS ストレージの最小値 | Azure インスタンスの例 | プロファイル コンテナー ストレージの最小値 |
 | --- | --- | --- | --- | --- |
-| 明るい | 6 | 2 vCPUs、8 GB RAM、16 GB ストレージ | D2s_v3、F2s_v2 | 30 GB |
-| 中 | 4 | 4 vCPUs、16 GB RAM、32 GB ストレージ | D4s_v3、F4s_v2 | 30 GB |
-| ヘビー | 2 | 4 vCPUs、16 GB RAM、32 GB ストレージ | D4s_v3、F4s_v2 | 30 GB |
+| 淡色 | 6 | 2 vCPUs、8 GB RAM、16 GB ストレージ | D2s_v3、F2s_v2 | 30 GB |
+| 中間 | 4 | 4 vCPUs、16 GB RAM、32 GB ストレージ | D4s_v3、F4s_v2 | 30 GB |
+| ヘビー | 2 で保護されたプロセスとして起動されました | 4 vCPUs、16 GB RAM、32 GB ストレージ | D4s_v3、F4s_v2 | 30 GB |
 | Power | 1 | 6 vCPUs、56 GB RAM、340 GB ストレージ | D4s_v3、F4s_v2、NV6 | 30 GB |
 
 ## <a name="single-session-recommendations"></a>シングルセッションの推奨事項

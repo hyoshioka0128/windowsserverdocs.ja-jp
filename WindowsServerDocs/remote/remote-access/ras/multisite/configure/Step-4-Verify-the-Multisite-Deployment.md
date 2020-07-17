@@ -2,22 +2,18 @@
 title: 手順4マルチサイト展開を確認する
 description: このトピックは、「Windows Server 2016 のマルチサイト展開に複数のリモートアクセスサーバーを展開する」の一部です。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 345b676a-a397-4d51-9973-8b25bc05fa55
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 3574ef57d18e23668f08dee8b768f0114790f0b8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 1f17f85104b59052de2e1accc20adb2579ac79f4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367130"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858355"
 ---
 # <a name="step-4-verify-the-multisite-deployment"></a>手順4マルチサイト展開を確認する
 

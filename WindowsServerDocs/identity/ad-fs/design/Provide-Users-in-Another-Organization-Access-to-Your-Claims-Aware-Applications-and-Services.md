@@ -1,7 +1,6 @@
 ---
 ms.assetid: de7e1e4a-f96d-4b59-ac9b-f65f5d37a96f
 title: 要求に対応するアプリケーションやサービスへのアクセスを別の組織のユーザーに提供する
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: a0b2429599036f2893f23df7921a11c8232d9f67
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2e47197a980c9bcb576d6634a0031a8ae13afbfd
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71359070"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858605"
 ---
 # <a name="provide-users-in-another-organization-access-to-your-claims-aware-applications-and-services"></a>要求に対応するアプリケーションやサービスへのアクセスを別の組織のユーザーに提供する
 

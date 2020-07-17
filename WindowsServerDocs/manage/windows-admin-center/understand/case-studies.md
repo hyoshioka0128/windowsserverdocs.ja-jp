@@ -9,10 +9,10 @@ ms.date: 06/18/2018
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.openlocfilehash: b0707f8aa7a09fdd18c2107e375ad06d3909955e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "71356899"
 ---
 # <a name="windows-admin-center-case-studies"></a>Windows Admin Center ケース スタディ
@@ -138,7 +138,7 @@ Inside Technologies は単一サーバーに Windows Admin Center を展開し�
 
 Inside Technologies は Windows Admin Center を使用してお客様をリモート管理しています。また、Azure Activity Directory と統合し、多要素認証を利用してセキュリティを向上させています。  Windows Admin Center のダッシュ ボードにより、サーバーごとの各ロールの状態の可視性が向上し、PowerShell を使用して詳細に至るまで管理を容易にしています。  Inside Technologies は、サーバーの管理およびサーバー ロールごとに異なるコンソールを使用するために費やす時間の削減を実現しています。
 
-## <a id="secureguard-copa-data"></a>SecureGUARD / COPA-DATA
+## <a name="secureguard--copa-data"></a><a id="secureguard-copa-data"></a>SecureGUARD / COPA-DATA
 
 [SecureGUARD GmbH](http://www.secureguard.at/) では、一連の製品およびカスタム エンジニアリング サービスによりセキュリティとクラウド インフラストラクチャにおける複雑な IT の問題を企業が解決する支援をしています。 SecureGUARD は、IT セキュリティ アプライアンス、Microsoft Windows Server ベースのアプライアンス、そして最近ではクラウド インフラストラクチャ向けのラック レベルのコンバージド アプライアンスを構築しています。 SecureGUARD は、アプリケーションの開発とデータセンターにおけるマイクロソフト認定ゴールド パートナーです。
  

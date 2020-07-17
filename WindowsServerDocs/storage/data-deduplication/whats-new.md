@@ -9,15 +9,15 @@ manager: klaasl
 ms.author: wgries
 ms.date: 04/17/2019
 ms.openlocfilehash: 577926035840fbd571c8a1157f1da0c2e1b4851b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403170"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79322624"
 ---
 # <a name="whats-new-in-data-deduplication"></a>データ重複除去の新機能
 
-> 適用対象:Windows Server 2019、Windows Server 2016、Windows Server (半期チャネル)
+> 適用対象: Windows Server 2019、Windows Server 2016、Windows Server (半期チャネル)
 
 Windows Server での[データ重複除去](overview.md)は、プライベートクラウドのスケールで、パフォーマンスと柔軟性が高く、管理しやすいように最適化されています。 Windows Server のソフトウェアで定義された記憶域スタックの詳細については、「 [Windows server の記憶域の新機能](../whats-new-in-storage.md)」を参照してください。
 

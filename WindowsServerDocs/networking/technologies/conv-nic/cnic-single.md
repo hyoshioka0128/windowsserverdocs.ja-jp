@@ -6,15 +6,15 @@ ms.technology: networking
 ms.topic: article
 ms.assetid: eed5c184-fa55-43a8-a879-b1610ebc70ca
 manager: dougkim
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 09/14/2018
-ms.openlocfilehash: 2ad7592fd9faf1e92893e6271daabdad907d3aaa
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5a088df043190de9e7f1df4dccdc2fc832751093
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405798"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309622"
 ---
 # <a name="converged-nic-configuration-with-a-single-network-adapter"></a>単一のネットワークアダプターを使用した収束 NIC 構成
 
@@ -40,9 +40,9 @@ ms.locfileid: "71405798"
    _**生じ**_  
 
 
-   | 名前 |    InterfaceDescription     | ifIndex | 状況 |    Mac     | LinkSpeed |
+   | Name |    InterfaceDescription     | ifIndex | 状態 |    Mac     | LinkSpeed |
    |------|-----------------------------|---------|--------|-------------------|-----------|
-   |  M1  | Mellanox/3 Pro... |    4    |   Up   | 7C-FE-90-93-8F-A1 |  40 Gbps  |
+   |  M1  | Mellanox/3 Pro... |    4    |   上へ   | 7C-FE-90-93-8F-A1 |  40 Gbps  |
 
    ---
 
@@ -114,7 +114,7 @@ ms.locfileid: "71405798"
    _**生じ**_
 
 
-   |        パラメーター         |    Value    |
+   |        パラメーター         |    値    |
    |--------------------------|-------------|
    |       ComputerName       | 192.168.1.5 |
    |      リモート アドレス       | 192.168.1.5 |
@@ -142,7 +142,7 @@ ms.locfileid: "71405798"
    _**生じ**_
 
 
-   |        パラメーター         |    Value    |
+   |        パラメーター         |    値    |
    |--------------------------|-------------|
    |       ComputerName       | 192.168.1.5 |
    |      リモート アドレス       | 192.168.1.5 |
@@ -188,7 +188,7 @@ ms.locfileid: "71405798"
    _**生じ**_
 
 
-   | 名前 | DisplayName | DisplayValue | RegistryKeyword | RegistryValue |
+   | Name | DisplayName | DisplayValue | RegistryKeyword | RegistryValue |
    |------|-------------|--------------|-----------------|---------------|
    |  M1  |   VLAN ID   |     101      |     VlanID      |     {101}     |
 
@@ -209,9 +209,9 @@ ms.locfileid: "71405798"
    _**生じ**_
 
 
-   | 名前 |          InterfaceDescription           | ifIndex | 状況 |    Mac     | LinkSpeed |
+   | Name |          InterfaceDescription           | ifIndex | 状態 |    Mac     | LinkSpeed |
    |------|-----------------------------------------|---------|--------|-------------------|-----------|
-   |  M1  | Mellanox: 3 Pro イーサネット Ada... |    4    |   Up   | 7C-FE-90-93-8F-A1 |  40 Gbps  |
+   |  M1  | Mellanox: 3 Pro イーサネット Ada... |    4    |   上へ   | 7C-FE-90-93-8F-A1 |  40 Gbps  |
 
    ---
 
@@ -252,12 +252,12 @@ ms.locfileid: "71405798"
    _**生じ**_
 
 
-   |   パラメーター    |          Value           |
+   |   パラメーター    |          値           |
    |----------------|--------------------------|
-   |      名前      |           SMB            |
+   |      Name      |           SMB            |
    |     所有者      | グループポリシー \(マシン\) |
-   | NetworkProfile |           すべての            |
-   |   優先度   |           127            |
+   | NetworkProfile |           [すべて]            |
+   |   ［優先順位］   |           127            |
    |   JobObject    |          &nbsp;          |
    | NetDirectPort  |           445            |
    | PriorityValue  |            3             |
@@ -274,7 +274,7 @@ ms.locfileid: "71405798"
    _**生じ**_
 
 
-   | Priority | 有効 | PolicySet | ifIndex | IfAlias |
+   | 優先順位 | 有効 | PolicySet | ifIndex | IfAlias |
    |----------|---------|-----------|---------|---------|
    |    0     |  False  |  グローバル   | &nbsp;  | &nbsp;  |
    |    1     |  False  |  グローバル   | &nbsp;  | &nbsp;  |
@@ -305,7 +305,7 @@ ms.locfileid: "71405798"
    _**機能**_   
 
 
-   |      パラメーター      |   ハードウェア   |   現在の    |
+   |      パラメーター      |   ハードウェア   |   現在    |
    |---------------------|--------------|--------------|
    |    MacSecBypass     | NotSupported | NotSupported |
    |     DcbxSupport     |     なし     |     なし     |
@@ -330,9 +330,9 @@ ms.locfileid: "71405798"
    _**OperationalClassifications:**_  
 
 
-   | プロトコル  | ポート/種類 | Priority |
+   | [プロトコル]  | ポート/種類 | 優先順位 |
    |-----------|-----------|----------|
-   |  Default  |  &nbsp;   |    0     |
+   |  既定値  |  &nbsp;   |    0     |
    | NetDirect |    445    |    3     |
 
    ---
@@ -348,7 +348,7 @@ ms.locfileid: "71405798"
    _**生じ**_
 
 
-   | 名前 | アルゴリズム | 帯域幅 (%) | Priority | PolicySet | ifIndex | IfAlias |
+   | Name | アルゴリズム | 帯域幅 (%) | 優先順位 | PolicySet | ifIndex | IfAlias |
    |------|-----------|--------------|----------|-----------|---------|---------|
    | SMB  |    ETS    |      30      |    3     |  グローバル   | &nbsp;  | &nbsp;  |
 
@@ -363,7 +363,7 @@ ms.locfileid: "71405798"
    _**生じ**_
 
 
-   |   名前    | アルゴリズム | 帯域幅 (%) | Priority | PolicySet | ifIndex | IfAlias |
+   |   Name    | アルゴリズム | 帯域幅 (%) | 優先順位 | PolicySet | ifIndex | IfAlias |
    |-----------|-----------|--------------|----------|-----------|---------|---------|
    | [Default] |    ETS    |      70      | 0 ~ 2、4-7  |  グローバル   | &nbsp;  | &nbsp;  |
    |    SMB    |    ETS    |      30      |    3     |  グローバル   | &nbsp;  | &nbsp;  |
@@ -394,7 +394,7 @@ VSwitch を作成し、RDMA (収束 NIC) に移行する前に、ファブリッ
    _**生じ**_
 
 
-   | 名前 |           InterfaceDescription           | 有効 |
+   | Name |           InterfaceDescription           | 有効 |
    |------|------------------------------------------|---------|
    |  M1  | Mellanox/3 Pro イーサネットアダプター |  True   |
 
@@ -478,7 +478,7 @@ Hyper-v スイッチを作成するための準備として、上でインスト
    _**生じ**_
 
 
-   |  名前   | SwitchType |      NetAdapterInterfaceDescription      |
+   |  Name   | SwitchType |      NetAdapterInterfaceDescription      |
    |---------|------------|------------------------------------------|
    | VMSTEST |  外部リンク  | Mellanox/3 Pro イーサネットアダプター |
 
@@ -493,9 +493,9 @@ Hyper-v スイッチを作成するための準備として、上でインスト
    _**生じ**_
 
 
-   |         名前          |        InterfaceDescription         | ifIndex | 状況 |    Mac     | LinkSpeed |
+   |         Name          |        InterfaceDescription         | ifIndex | 状態 |    Mac     | LinkSpeed |
    |-----------------------|-------------------------------------|---------|--------|-------------------|-----------|
-   | VeVMSTEST Net \(\) | Hyper-v 仮想イーサネットアダプターの #2 |   27    |   Up   | E4-1D-2D-07-40-71 |  40 Gbps  |
+   | VeVMSTEST Net \(\) | Hyper-v 仮想イーサネットアダプターの #2 |   27    |   上へ   | E4-1D-2D-07-40-71 |  40 Gbps  |
 
    ---
 
@@ -511,7 +511,7 @@ Hyper-v スイッチを作成するための準備として、上でインスト
    _**生じ**_
 
 
-   |         名前         | IsManagementOs |        VMName        |  SwitchName  | Mac | 状況 | IPAddresses |
+   |         Name         | IsManagementOs |        VMName        |  SwitchName  | Mac | 状態 | IPAddresses |
    |----------------------|----------------|----------------------|--------------|------------|--------|-------------|
    | CORP-外部スイッチ |      True      | CORP-外部スイッチ | 001B785768AA |    Ok を    | &nbsp; |             |
    |       VMSTEST        |      True      |       VMSTEST        | E41D2D074071 |    Ok を    | &nbsp; |             |
@@ -545,9 +545,9 @@ Hyper-v スイッチを作成するための準備として、上でインスト
    _**生じ**_
 
 
-   | VMName | Vmnetworkadaptername は |  Mode  | VlanList |
+   | VMName | Vmnetworkadaptername は |  モード  | VlanList |
    |--------|----------------------|--------|----------|
-   | &nbsp; |       VMSTEST        | アクセス権 |   101    |
+   | &nbsp; |       VMSTEST        | アクセス |   101    |
 
    ---  
 
@@ -568,7 +568,7 @@ Hyper-v スイッチを作成するための準備として、上でインスト
     PingReplyDetails (RTT) : 0 ms
    ```
 
-## <a name="step-9-test-hyper-v-virtual-switch-rdma-mode-2"></a>手順 9: Hyper-v 仮想スイッチ RDMA (モード 2) のテスト
+## <a name="step-9-test-hyper-v-virtual-switch-rdma-mode-2"></a>手順 9. Hyper-v 仮想スイッチ RDMA (モード 2) のテスト
 
 次の図は、hyper-v ホストの現在の状態を示しています。 hyper-v ホスト1の vSwitch を含みます。
 
@@ -596,7 +596,7 @@ Hyper-v スイッチを作成するための準備として、上でインスト
    _**生じ**_
 
 
-   |         名前          |        InterfaceDescription         | 有効 |
+   |         Name          |        InterfaceDescription         | 有効 |
    |-----------------------|-------------------------------------|---------|
    | VeVMSTEST Net \(\) | Hyper-v 仮想イーサネットアダプターの #2 |  False  |
 
@@ -615,9 +615,9 @@ Hyper-v スイッチを作成するための準備として、上でインスト
    _**生じ**_   
 
 
-   |        名前         |        InterfaceDescription         | ifIndex | 状況 |    Mac     | LinkSpeed |
+   |        Name         |        InterfaceDescription         | ifIndex | 状態 |    Mac     | LinkSpeed |
    |---------------------|-------------------------------------|---------|--------|-------------------|-----------|
-   | Veruncommand Net (VMSTEST) | Hyper-v 仮想イーサネットアダプターの #2 |   27    |   Up   | E4-1D-2D-07-40-71 |  40 Gbps  |
+   | Veruncommand Net (VMSTEST) | Hyper-v 仮想イーサネットアダプターの #2 |   27    |   上へ   | E4-1D-2D-07-40-71 |  40 Gbps  |
 
    ---
 
@@ -632,7 +632,7 @@ Hyper-v スイッチを作成するための準備として、上でインスト
    _**生じ**_
 
 
-   |         名前          |        InterfaceDescription         | 有効 |
+   |         Name          |        InterfaceDescription         | 有効 |
    |-----------------------|-------------------------------------|---------|
    | VeVMSTEST Net \(\) | Hyper-v 仮想イーサネットアダプターの #2 |  True   |
 

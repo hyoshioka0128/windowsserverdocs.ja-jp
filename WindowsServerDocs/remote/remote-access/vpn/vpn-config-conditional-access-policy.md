@@ -1,28 +1,22 @@
 ---
 title: 条件付きアクセス ポリシーを構成する
 description: ルート証明書が作成されると、"VPN 接続" によって、顧客のテナントに "VPN サーバー" クラウドアプリケーションの作成がトリガーされます。
-services: active-directory
 ms.prod: windows-server
 ms.technology: networking-ras
-documentationcenter: ''
-ms.assetid: ''
-ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 05/25/2018
-ms.author: pashort
-author: shortpatti
+ms.author: v-tea
+author: Teresa-MOTIV
 ms.localizationpriority: medium
 ms.reviewer: deverette
-ms.openlocfilehash: 22983c085f2b9d9e7e16810e25c6fa50111f9fa6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 754182cc3f60e1e30625c11d8778cf24b6d098ac
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404348"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80819015"
 ---
-# <a name="step-73-configure-the-conditional-access-policy"></a>手順 7.3. 条件付きアクセスポリシーを構成する
+# <a name="step-73-configure-the-conditional-access-policy"></a>手順 7.3. 条件付きアクセス ポリシーを構成する
 
 >適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows 10
 
@@ -93,5 +87,5 @@ VPN ユーザーグループに割り当てられている条件付きアクセ�
 9.  **[新規]** ページで、 **[作成]** を選択します。
 
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次のステップ:
 [手順 7.4.条件付きアクセスルート証明書をオンプレミスの AD にデプロイ](vpn-deploy-cond-access-root-cert-to-on-premise-ad.md)する: この手順では、条件付きアクセスルート証明書を VPN 認証用の信頼されたルート証明書としてオンプレミスの ad にデプロイします。

@@ -8,15 +8,15 @@ ms.date: 08/09/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: ff76a6dffd66296a02cffcbd79bc6dfadc91c14a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8b27097ac64f981343c1d455c826fa1b9004133e
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407794"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949579"
 ---
-# <a name="scenario-native-app-calling-web-api"></a>シナリオ:ネイティブアプリ呼び出し Web API 
->適用先:AD FS 2019 以降 
+# <a name="scenario-native-app-calling-web-api"></a>シナリオ: Web API を呼び出すネイティブアプリ 
+>適用対象: AD FS 2019 以降 
  
 AD FS 2019 によって認証され、 [Msal ライブラリ](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki)を使用してトークンを取得して web api を呼び出すネイティブアプリのサインインユーザーを構築する方法について説明します。  
  
@@ -26,7 +26,7 @@ AD FS 2019 によって認証され、 [Msal ライブラリ](https://github.com
  
  ![概要](media/adfs-msal-native-app-web-api/native1.png)
 
-このフローでは、ネイティブアプリ (パブリッククライアント) に認証を追加します。これにより、ユーザーはサインインして Web API を呼び出すことができます。 ユーザーをサインインさせるネイティブアプリから Web API を呼び出すには、MSAL の[AcquireTokenInteractive](https://docs.microsoft.com/en-us/dotnet/api/microsoft.identity.client.ipublicclientapplication.acquiretokeninteractive?view=azure-dotnet#Microsoft_Identity_Client_IPublicClientApplication_AcquireTokenInteractive_System_Collections_Generic_IEnumerable_System_String__) token 取得方法を使用できます。 この対話を有効にするために、MSAL は web ブラウザーを活用します。 
+このフローでは、ネイティブアプリ (パブリッククライアント) に認証を追加します。これにより、ユーザーはサインインして Web API を呼び出すことができます。 ユーザーをサインインさせるネイティブアプリから Web API を呼び出すには、MSAL の[AcquireTokenInteractive](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.ipublicclientapplication.acquiretokeninteractive?view=azure-dotnet#Microsoft_Identity_Client_IPublicClientApplication_AcquireTokenInteractive_System_Collections_Generic_IEnumerable_System_String__) token 取得方法を使用できます。 この対話を有効にするために、MSAL では Web ブラウザーが利用されます。 
 
  
 アクセストークンを対話形式で取得するように ADFS でネイティブアプリを構成する方法について理解を深めるために、[こちら](https://github.com/microsoft/adfs-sample-msal-dotnet-native-to-webapi)で入手できるサンプルを使用して、アプリの登録とコードの構成手順を説明します。  
@@ -49,11 +49,11 @@ AD FS 2019 によって認証され、 [Msal ライブラリ](https://github.com
   
       ![アプリの Reg](media/adfs-msal-native-app-web-api/native2.png)  
 
-  3. **クライアント識別子**の値をコピーします。 後でアプリケーションの**app.config**ファイルの**ClientId**の値として使用されます。 **リダイレクト URI** https://ToDoListClient には、次のように入力します。 **[追加]** をクリックします。 **[次へ]** をクリックします。  
+  3. **クライアント識別子**の値をコピーします。 後でアプリケーションの**app.config**ファイルの**ClientId**の値として使用されます。 **リダイレクト URI:** https://ToDoListClient には、次のように入力します。 **[追加]** をクリックします。 **[次へ]** をクリックします。  
  
      ![アプリの Reg](media/adfs-msal-native-app-web-api/native3.png) 
 
-  4. [Web API の構成] 画面で、**識別子** https://localhost:44321/ として「」を入力します。 **[追加]** をクリックします。 **[次へ]** をクリックします。 この値**は、後でアプリケーションの app.config** **ファイルと web.config ファイル**で使用されます。
+  4. [Web API の構成] 画面で、**識別子**として「 https://localhost:44321/ 」と入力します。 **[追加]** をクリックします。 **[次へ]** をクリックします。 この値**は、後でアプリケーションの app.config** **ファイルと web.config ファイル**で使用されます。
  
      ![アプリの Reg](media/adfs-msal-native-app-web-api/native4.png)   
   
@@ -109,7 +109,7 @@ AD FS 2019 によって認証され、 [Msal ライブラリ](https://github.com
 
  4. Web.config ファイルを開きます。 次のように変更します。 
     - ida: Audience-上の AD FS セクションのアプリ登録で #4 から**識別子**の値を入力します 
-    - idaAdfsMetadataEndpoint-「 https://[your AD FS hostname]/federationmetadata/2007-06/federationmetadata.xml」と入力します。 
+    - ida: AdfsMetadataEndpoint [your AD FS hostname]/federationmetadata/2007-06/federationmetadata.xml を入力します。 
     
       ![コード構成](media/adfs-msal-native-app-web-api/native13.png)
  
@@ -137,7 +137,7 @@ AD FS 2019 によって認証され、 [Msal ライブラリ](https://github.com
 
     ネイティブアプリの画面が表示されない場合は、プロジェクトリポジトリがシステムに保存されているフォルダーから * msalcache. bin ファイルを検索して削除します。 
 
-  6. AD FS サインインページにリダイレクトされます。 さあ、サインインします。 
+  6. AD FS サインインページにリダイレクトされます。 要求に従ってサインインしてください。 
   
       ![アプリのテスト](media/adfs-msal-native-app-web-api/native18.png)
 
@@ -145,6 +145,6 @@ AD FS 2019 によって認証され、 [Msal ライブラリ](https://github.com
     
        ![アプリのテスト](media/adfs-msal-native-app-web-api/native19.png)
  
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 [AD FS OpenID 接続/OAuth フローとアプリケーション シナリオ](../../overview/ad-fs-openid-connect-oauth-flows-scenarios.md)
  

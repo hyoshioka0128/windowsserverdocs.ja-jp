@@ -2,22 +2,18 @@
 title: 複数の Active Directory フォレスト内のリソースを管理する
 description: このトピックは、Windows Server 2016 の IP アドレス管理 (IPAM) 管理ガイドに含まれています。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ipam
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 82f8f382-246e-4164-8306-437f7a019e0f
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 5fad1062b65b4784a8a5ddfde927951230cb6ab8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: d86b93180708c772c052b242412bfdd1fc7e68c7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355233"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860655"
 ---
 # <a name="manage-resources-in-multiple-active-directory-forests"></a>複数の Active Directory フォレスト内のリソースを管理する
 

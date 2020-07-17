@@ -1,28 +1,24 @@
 ---
 title: 管理対象アプリとデスクトップのプライバシー設定
 description: 管理対象アプリとデスクトップを使用しているときのリモート システムのプライバシー設定に関する情報。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
-ms.tgt_pltfrm: na
 ms.topic: article
 author: davidbel
 manager: daveba
 ms.author: davidbel
 ms.date: 04/12/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 277e099e94d3121f31f5eb98fbca61b84eea1163
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 996f084b86b0a363b0903476598d9edb086b9985
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387616"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "80859485"
 ---
 # <a name="privacy-settings-for-managed-apps-and-desktops"></a>管理対象アプリとデスクトップのプライバシー設定
 
->適用対象:Windows 10、Windows 7、Windows Server 2012 R2、Windows Server 2016、Windows Server 2019
+>適用先:Windows 10、Windows 7、Windows Server 2012 R2、Windows Server 2016、Windows Server 2019
 
 IT 管理者によって用意された管理対象リソース (アプリまたはデスクトップ) にアクセスするとき、リモート システムのプライバシー設定は IT 管理者によって事前に構成されています。 これらの設定は、ローカル システムのプライバシー設定とは異なる場合があります。 ご質問がある場合は、IT 管理者にお問い合わせください。
 

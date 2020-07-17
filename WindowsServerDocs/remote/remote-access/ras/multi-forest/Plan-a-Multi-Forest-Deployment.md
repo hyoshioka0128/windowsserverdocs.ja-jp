@@ -2,22 +2,18 @@
 title: マルチフォレスト展開の計画
 description: このトピックは、「Windows Server 2016 のマルチフォレスト環境にリモートアクセスを展開する」の一部です。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8acc260f-d6d1-4d32-9e3a-1fd0b2a71586
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 2a0f04a3ff7797d18f7647416dc99319860c7030
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: d7661841d10aff634be8f125640e1561ca9490b7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404519"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860435"
 ---
 # <a name="plan-a-multi-forest-deployment"></a>マルチフォレスト展開の計画
 
@@ -38,7 +34,7 @@ ms.locfileid: "71404519"
   
 さらに、リモート アクセス管理者は、すべてのリモート アクセス サーバーのローカル管理者である必要があります。これには、元のリモート アクセス展開へのエントリ ポイントとして追加される新しいフォレストのリモート アクセス サーバーも含まれます。  
   
-## <a name="ClientSG"></a>クライアントセキュリティグループを計画する  
+## <a name="plan-client-security-groups"></a><a name="ClientSG"></a>クライアントセキュリティグループを計画する  
 新しいフォレストの DirectAccess クライアント コンピューターに対して、少なくとも 1 つのセキュリティ グループを新しいフォレストに構成する必要があります。 これは、1 つのセキュリティ グループに複数のフォレストのアカウントを含めることはできないためです。  
   
 > [!NOTE]  

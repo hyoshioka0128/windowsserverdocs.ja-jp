@@ -3,18 +3,17 @@ title: RAS ゲートウェイ GRE トンネルのスループットとパフォ�
 description: このトピックは、情報技術 (IT) の専門家を対象としており、RAS ゲートウェイの汎用ルーティングカプセル化 (GRE) トンネルに関するスループットパフォーマンス情報を提供します。
 manager: brianlic
 ms.prod: windows-server
-ms.date: ''
 ms.technology: networking-ras
 ms.topic: article
 ms.assetid: c051b2ec-de0f-49d1-82b9-5742b259cd7c
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 79a6e822c3ff36f789a7a08b8cd56163014185a4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 3ac381270714ecebc0aa624152700155fe170400
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404682"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80814465"
 ---
 # <a name="ras-gateway-gre-tunnel-throughput-and-performance"></a>RAS ゲートウェイ GRE トンネルのスループットとパフォーマンス
 

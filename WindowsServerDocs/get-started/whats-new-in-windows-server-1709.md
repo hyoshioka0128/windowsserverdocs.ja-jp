@@ -1,6 +1,6 @@
 ---
 title: Windows Server バージョン 1709 の新機能
-description: コンピューティング、ID、管理、自動化、ネットワーク、セキュリティ、記憶域の新機能について。
+description: コンピューティング、ID、管理、自動化、ネットワーク、セキュリティ、記憶域の新機能は何ですか。
 ms.prod: windows-server
 ms.technology: server-general
 ms.topic: article
@@ -8,18 +8,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 ms.localizationpriority: medium
 ms.date: 06/03/2019
-ms.openlocfilehash: 5dbbdc19707f2eadfa3b2c919af95b58645de441
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 07479bc5bd2fdf661db8a30e3a9f20c7cce0513e
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391367"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "80825995"
 ---
 # <a name="whats-new-in-windows-server-version-1709"></a>Windows Server バージョン 1709 の新機能
 
 >適用先:Windows Server (半期チャネル)
 
-<img src="../media/landing-icons/new.png" style='float:left; padding:.5em;' alt="Icon showing a newspaper">&nbsp;Windows の最新の機能については、「[Windows Server の新機能](whats-new-in-windows-server.md)」を参照してください。 ここでは、Windows Server バージョン 1709 の新機能および変更された機能について説明します。 ここに記載されている新機能と変更された機能は、このリリースを使う際に影響が最も大きいと思われるものです。 [Windows Server バージョン 1709 に関するブログの記事](https://blogs.technet.microsoft.com/windowsserver/2017/08/24/sneak-peek-1-windows-server-version-1709/)もご覧ください。
+<img src=../media/landing-icons/new.png style='float:left; padding:.5em;' alt=Icon showing a newspaper>&nbsp;Windows の最新の機能については、「[Windows Server の新機能](whats-new-in-windows-server.md)」を参照してください。 ここでは、Windows Server バージョン 1709 の新機能および変更された機能について説明します。 ここに記載されている新機能と変更された機能は、このリリースを使う際に影響が最も大きいと思われるものです。 [Windows Server バージョン 1709 に関するブログの記事](https://blogs.technet.microsoft.com/windowsserver/2017/08/24/sneak-peek-1-windows-server-version-1709/)もご覧ください。
 
 > [!IMPORTANT]
 > Windows Server バージョン 1709 は、2019 年 4 月 9 日時点でサポート対象外です。
@@ -37,7 +37,7 @@ ms.locfileid: "71391367"
 | ------------- | ------------- | ------------ |
 | リリース サイクル  | 年に 2 回 (春と秋)  | 2 ～ 3 年ごと |
 | サポート スケジュール  | 18 か月間のメインストリームの運用サポート  | 5 年間のメインストリーム サポートと 5 年間の延長サポート |
-| 対象  | ソフトウェア アシュアランスまたは Azure (クラウドでホストされている場合)  | すべてのチャンネル |
+| 可用性  | ソフトウェア アシュアランスまたは Azure (クラウドでホストされている場合)  | すべてのチャンネル |
 | 名称に関する規則  | Windows Server バージョン YYMM  | Windows Server YYYY |
 
 詳細については、[サービス チャネルの比較](https://docs.microsoft.com/windows-server/get-started/semi-annual-channel-overview)に関するページを参照してください。
@@ -88,7 +88,7 @@ Project Honolulu には、PC、Windows サーバー、フェールオーバー �
 
 **SMBLoris の脆弱性** サービス拒否を引き起こす可能性がある "SMBLoris" と呼ばれる問題が解決されました。
 
-## <a name="storage"></a>ストレージ
+## <a name="storage"></a>記憶域
 
 **記憶域レプリカ**: Windows Server 2016 の記憶域レプリカによって追加されたディザスター リカバリーによる保護が拡張され、以下の機能が含まれるようになりました。
 - **テスト フェールオーバー**: 宛先の記憶域をマウントするオプションが、テスト フェールオーバー機能によって可能になりました。 レプリケートされた記憶域のスナップショットを、宛先ノードで、テストやバックアップの目的で、一時的にマウントすることができます。  詳細については、「[記憶域レプリカについてよく寄せられる質問](https://aka.ms/srfaq)」をご覧ください。 
@@ -103,7 +103,7 @@ Project Honolulu には、PC、Windows サーバー、フェールオーバー �
 - **データ重複除去で ReFS をサポート**: ReFS による最新ファイル システムの長所とデータ重複除去のいずれかを選択する必要がなくなりました。ReFS を有効にしているときにいつでもデータ重複除去を有効にできるようになりました。 ReFS によって記憶域の効率が 95% 以上向上します。
 - **重複除去されたボリュームへの最適化された送受信のための DataPort API**: 開発者は、データ重複除去によって効率的にデータを保存する方法に関する知識を活用して、ボリューム、サーバー、クラスター間で効率的にデータを移動することができます。
 
-## <a name="remote-desktop-services-rds"></a>リモート デスクトップ サービス (RDS)
+## <a name="remote-desktop-services-rds"></a>リモート デスクトップ サービスの概要
 
 **RDS が Azure AD と統合され**、条件付きアクセス ポリシー、多要素認証、Azure AD を使用した他の SaaS アプリとの統合認証などを活用できます。 詳細については、[RDS 展開と Azure AD Domain Services との統合に関するページ](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/rds-azure-adds)をご覧ください。
 

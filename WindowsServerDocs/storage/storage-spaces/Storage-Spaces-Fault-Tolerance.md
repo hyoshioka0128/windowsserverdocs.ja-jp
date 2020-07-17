@@ -2,7 +2,7 @@
 title: 記憶域スペース ダイレクトでのフォールト トレランスと記憶域の効率
 ms.prod: windows-server
 ms.author: cosmosdarwin
-ms.manager: eldenc
+manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
@@ -10,16 +10,16 @@ ms.date: 10/11/2017
 ms.assetid: 5e1d7ecc-e22e-467f-8142-bad6d82fc5d0
 description: ミラーリングとパリティを含む記憶域スペース ダイレクトにおける回復性オプションの説明。
 ms.localizationpriority: medium
-ms.openlocfilehash: d2220584c0021352110b27c3107d1113eb17ef59
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 540398e78b35d7cd61464e012d0f3ccfa85d7152
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71393809"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475489"
 ---
 # <a name="fault-tolerance-and-storage-efficiency-in-storage-spaces-direct"></a>記憶域スペース ダイレクトでのフォールト トレランスと記憶域の効率
 
->適用対象:Windows Server 2016
+>適用先:Windows Server 2016
 
 このトピックでは、[記憶域スペース ダイレクト](storage-spaces-direct-overview.md)で利用できる回復オプションを紹介し、規模に関する要件、記憶域の効率、一般的な利点、およびそれぞれのトレードオフの概要について説明します。 また、作業を開始するための使用方法についても説明します。このトピックでは、詳細を確認する際に役立つ優れたドキュメントやブログなどのコンテンツを参照しています。
 
@@ -33,13 +33,13 @@ RAID と同様に、記憶域スペースの実装方法には複数の方法が
 
 ## <a name="mirroring"></a>ミラーリング
 
-ミラーリングでは、すべてのデータのコピーを複数維持することでフォールト トレランスが実現されます。 これは、RAID-1 に非常に類似しています。 データのストライプ方法や配置方法は重要となりますが (詳しくは[このブログ](https://blogs.technet.microsoft.com/filecab/2016/11/21/deep-dive-pool-in-spaces-direct/)をご覧ください)、ミラーリングを使用して保存されたすべてのデータが、そのまま複数回書き込まれるということも重要な点です。 各コピーは個別の物理ハードウェア (異なるサーバーの異なるドライブ) に書き込まれます。これは、各ハードウェアでエラーが発生した場合を想定した措置です。
+ミラーリングを使ってあらゆるデータのコピーを複数保持することによって、フォールト トレランスが実現します。 これは、RAID-1 に非常に類似しています。 データをストライピングして配置する方法は、重要ではありません (詳細については、こちらの[ブログ](https://blogs.technet.microsoft.com/filecab/2016/11/21/deep-dive-pool-in-spaces-direct/)を参照してください)。ただし、ミラーリングを使用して格納されているデータはすべて、複数回記述されます。 コピーはそれぞれ、障害の発生が個別にとどまることが想定される別々の物理ハードウェア (別のサーバーの別のドライブ) に書き込まれます。
 
 Windows Server 2016 では、記憶域スペース用に 2 種類のミラーリング ("双方向" と "3 方向") が用意されています。
 
 ### <a name="two-way-mirror"></a>双方向ミラー
 
-双方向ミラーリングでは、すべてのデータについて 2 つのコピーが書き込まれます。 その記憶域の効率は 50% です。つまり、1 TB のデータを書き込むには、少なくとも 2 TB の物理的な記憶域の容量が必要になります。 同様に、少なくとも 2 つの[ハードウェア "障害ドメイン"](../../failover-clustering/fault-domains.md) が必要になります (記憶域スペース ダイレクトでは 2 台のサーバーを意味します)。
+双方向ミラーリングでは、すべてのデータについて 2 つのコピーが書き込まれます。 その記憶域の効率は 50% です。つまり、1 TB のデータを書き込むには、少なくとも 2 TB の物理的な記憶域の容量が必要になります。 同様に、2台のサーバーを意味する、少なくとも2つの[ハードウェアの障害ドメイン](../../failover-clustering/fault-domains.md)(記憶域スペースダイレクト) が必要です。
 
 ![双方向ミラー](media/Storage-Spaces-Fault-Tolerance/two-way-mirror-180px.png)
 
@@ -50,13 +50,13 @@ Windows Server 2016 では、記憶域スペース用に 2 種類のミラーリ
 
 3 方向ミラーリングでは、すべてのデータについて 3 つのコピーが書き込まれます。 その記憶域の効率は 33.3% です。つまり、1 TB のデータを書き込むには、少なくとも 3 TB の物理的な記憶域の容量が必要になります。 同様に、少なくとも 3 つのハードウェア障害ドメインが必要になります (記憶域スペース ダイレクトでは 3 台のサーバーを意味します)。
 
-3 方向ミラーリングでは、[一度に少なくとも 2 件のハードウェア問題 (ドライブやサーバー)](#examples) に安全に対処できます。 たとえば、あるサーバーを再起動しているときに別のドライブやサーバーで突然障害が発生した場合、すべてのデータの安全性が保たれ、アクセスし続けることができます。
+3方向のミラーリングでは、同時に少なくとも[2 つのハードウェアの問題 (ドライブまたはサーバー)](#examples)を許容できます。 たとえば、あるサーバーの再起動中に別のドライブまたはサーバーに突然障害が発生した場合でも、あらゆるデータが安全かつアクセス可能な状態に保たれます。
 
 ![3 方向ミラー](media/Storage-Spaces-Fault-Tolerance/three-way-mirror-180px.png)
 
 ## <a name="parity"></a>パリティ
 
-パリティ エンコード ("イレイジャー コーディング (消失訂正符号)" と呼ばれる場合もあります) では、ビット単位の演算を使用してフォールト トレランスが実現されるため、[複雑さが大幅に増す可能性があります](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/LRC12-cheng20webpage.pdf)。 パリティのしくみはミラーリングよりわかりにくいですが、パリティを理解する際に役立つ、優れたオンライン リソースが多数あります (たとえば、サード パーティの「[Dummies Guide to Erasure Coding](http://smahesh.com/blog/2012/07/01/dummies-guide-to-erasure-coding/)」(イレイジャー コーディングのダミーガイド) など)。 あえて言うなら、パリティではフォールト トレランスを損なうことなく、優れた記憶域の効率が実現されます。
+パリティ エンコード ("イレイジャー コーディング (消失訂正符号)" と呼ばれる場合もあります) では、ビット単位の演算を使用してフォールト トレランスが実現されるため、[複雑さが大幅に増す可能性があります](https://www.microsoft.com/research/wp-content/uploads/2016/02/LRC12-cheng20webpage.pdf)。 パリティのしくみはミラーリングよりわかりにくいですが、パリティを理解する際に役立つ、優れたオンライン リソースが多数あります (たとえば、サード パーティの「[Dummies Guide to Erasure Coding](http://smahesh.com/blog/2012/07/01/dummies-guide-to-erasure-coding/)」(イレイジャー コーディングのダミーガイド) など)。 あえて言うなら、パリティではフォールト トレランスを損なうことなく、優れた記憶域の効率が実現されます。
 
 Windows Server 2016 では、記憶域スペース用に 2 種類のパリティ ("シングル" パリティと "デュアル" パリティ) が用意されています。"デュアル" パリティでは、大規模な場合に対応するための "ローカル再構築コード" と呼ばれる高度な手法が採用されています。
 
@@ -89,7 +89,7 @@ Windows Server 2016 の記憶域スペースでは、Microsoft Research によ�
 
 ![ローカル再構築コード](media/Storage-Spaces-Fault-Tolerance/local-reconstruction-codes-180px.png)
 
-[ローカル再構築コードでのさまざまな障害シナリオの処理方法や、ローカル再構築コードが注目に値する理由](https://blogs.technet.microsoft.com/filecab/2016/09/06/volume-resiliency-and-efficiency-in-storage-spaces-direct/)について詳しくかつ非常にわかりやすく説明したチュートリアルをご覧になることをお勧めします。このチュートリアルは弊社の [Claus Joergensen](https://twitter.com/clausjor) によって作成されました。
+このチュートリアルでは、[ローカル再構築コードがさまざまな障害シナリオを処理する方法と](https://blogs.technet.microsoft.com/filecab/2016/09/06/volume-resiliency-and-efficiency-in-storage-spaces-direct/)、それが魅力的である理由を私たちの[Claus](https://twitter.com/clausjor)eminently によってどのように扱うかについて、さらに詳しく説明します。
 
 ## <a name="mirror-accelerated-parity"></a>ミラーリングによって高速化されたパリティ
 
@@ -102,7 +102,7 @@ Windows Server 2016 以降では、記憶域スペース ダイレクトの 1 �
 > [!IMPORTANT]
 > ほとんどのパフォーマンスが重視されるワークロードには、ミラーリングを使用することをお勧めします。 ワークロードに応じて、パフォーマンスと容量のバランスを取る方法については詳しくは、[ボリュームの計画](plan-volumes.md#choosing-the-resiliency-type)」をご覧ください。
 
-## <a name="summary"></a>概要
+## <a name="summary"></a><a name="summary"></a>概要
 
 このセクションでは、記憶域スペース ダイレクトで利用可能な回復性の種類、それぞれの種類を使用するための最小スケール要件、それぞれの種類で許容できる障害の数、対応する記憶域の効率についてまとめています。
 
@@ -125,7 +125,7 @@ Windows Server 2016 以降では、記憶域スペース ダイレクトの 1 �
 |    混在               |    4                                |
 
    >[!TIP]
-   > [シャーシまたはラックのフォールト トレランス](../../failover-clustering/fault-domains.md)を使っている場合を除き、障害ドメインの数はサーバーの数を表します。 記憶域スペース ダイレクトの最小要件を満たしている限り、各サーバーのドライブの数は、使用できる回復性の種類に影響しません。 
+   > [シャーシまたはラックのフォールト トレランス](../../failover-clustering/fault-domains.md)を使っている場合を除き、障害ドメインの数はサーバーの数を表します。 記憶域スペース ダイレクトの最小要件を満たしている限り、各サーバーのドライブの数は、使用できる回復性の種類に影響しません。
 
 ### <a name="dual-parity-efficiency-for-hybrid-deployments"></a>ハイブリッド展開でのデュアル パリティの効率
 
@@ -171,7 +171,7 @@ Windows Server 2016 以降では、記憶域スペース ダイレクトの 1 �
 |    15                 |    RS 6+2           |    75.0%        |
 |    16                 |    LRC (12, 2, 1)   |    80.0        |
 
-## <a name="examples"></a>例
+## <a name="examples"></a><a name="examples"></a>例
 
 サーバーが 2 台のみである場合を除き、3 方向ミラーリングとデュアル パリティの両方またはいずれかを使用することをお勧めします。これらにより、フォールト トレランスが向上するためです。 具体的には、2 つの障害ドメイン (記憶域スペース ダイレクトでは 2 台のサーバーを意味する) が同時に発生した障害の影響を受けた場合でも、すべてのデータの安全性と継続的なアクセス可能性を維持できます。
 
@@ -179,44 +179,44 @@ Windows Server 2016 以降では、記憶域スペース ダイレクトの 1 �
 
 次の 6 つの例は、3 方向ミラーリングやデュアル パリティで対処**できる**状態を示しています。
 
-- **1.**  1つのドライブが失われた (キャッシュドライブを含む)
-- **2.**  1台のサーバーが失われました
+- **1.**    1 つのドライブが失われた (キャッシュ ドライブを含む)
+- **2.**    1 台のサーバーが失われた
 
 ![fault-tolerance-examples-1-and-2](media/Storage-Spaces-Fault-Tolerance/Fault-Tolerance-Example-12.png)
 
-- **番.**  1台のサーバーと1台のドライブが失われました
-- **4/4.**  異なるサーバーで2つのドライブが失われた
+- **3.**    1 台のサーバーと 1 つのドライブが失われた
+- **4.**    異なるサーバーの 2 つのドライブが失われた
 
 ![fault-tolerance-examples-3-and-4](media/Storage-Spaces-Fault-Tolerance/Fault-Tolerance-Example-34.png)
 
-- **5/5.**  2台以上のドライブが失われ、最大で2台のサーバーが影響を受ける
-- **4/6.**  2つのサーバーが失われました
+- **5.**    2 台を超えるドライブが失われたが、影響を受けるサーバーが最大で 2 台である
+- **6.**    2 台のサーバーが失われた
 
 ![fault-tolerance-examples-5-and-6](media/Storage-Spaces-Fault-Tolerance/Fault-Tolerance-Example-56.png)
 
-... いずれの場合も、すべてのボリュームのオンライン状態が維持されます (クラスターがクォーラムを維持することを確認してください)。
+... いずれの場合も、すべてのボリュームのオンライン状態が維持されます  (クラスターがクォーラムを維持することを確認してください)。
 
 ### <a name="examples-where-everything-goes-offline"></a>すべてがオフラインになる例
 
 有効期間中は、記憶域スペースでは任意の数の障害に対応できます。これは、各障害が発生した後で、十分な時間があれば、完全な回復状態に復元されるためです。 ただし、特定の時点で、最大で 2 つの障害ドメインが障害の影響を受けても安全です。 したがって、次に示す例は、3 方向ミラーリングやデュアル パリティでは対処**できない**状態です。
 
-- **7.** 3台以上のサーバーで一度にドライブが失われる
-- **8.** 3台以上のサーバーが一度に失われました
+- **7.** 同時に 3 台以上のサーバーでドライブが失われた
+- **8.** 同時に 3 台以上のサーバーが失われた
 
 ![fault-tolerance-examples-7-and-8](media/Storage-Spaces-Fault-Tolerance/Fault-Tolerance-Example-78.png)
 
-## <a name="usage"></a>使用方法
+## <a name="usage"></a>使用法
 
 「[記憶域スペース ダイレクトのボリュームの作成](create-volumes.md)」をご覧ください。
 
-## <a name="see-also"></a>関連項目
+## <a name="additional-references"></a>その他のリファレンス
 
 以下のすべてのリンクは、このトピックの本文内に記載されています。
 
-- [Windows Server 2016 の記憶域スペースダイレクト](storage-spaces-direct-overview.md)
+- [Windows Server 2016 での記憶域スペース ダイレクト](storage-spaces-direct-overview.md)
 - [Windows Server 2016 での障害ドメインの認識](../../failover-clustering/fault-domains.md)
-- [Microsoft Research による Azure での消去コーディング](https://www.microsoft.com/en-us/research/publication/erasure-coding-in-windows-azure-storage/)
-- [ローカル再構築コードとパリティボリュームの高速化](https://blogs.technet.microsoft.com/filecab/2016/09/06/volume-resiliency-and-efficiency-in-storage-spaces-direct/)
-- [Storage Management API のボリューム](https://blogs.technet.microsoft.com/filecab/2016/08/29/deep-dive-volumes-in-spaces-direct/)
-- [Microsoft Ignite 2016 でのストレージの効率に関するデモ](https://www.youtube.com/watch?v=-LK2ViRGbWs&t=36m55s)
-- [記憶域スペースダイレクトの容量計算ツールのプレビュー](http://aka.ms/s2dcalc)
+- [Erasure Coding in Azure by Microsoft Research (Microsoft Research による Azure でのイレイジャー コーディング)](https://www.microsoft.com/research/publication/erasure-coding-in-windows-azure-storage/)
+- [Local Reconstruction Codes and Accelerating Parity Volumes (ローカル再構築コードとパリティ ボリュームの高速化)](https://blogs.technet.microsoft.com/filecab/2016/09/06/volume-resiliency-and-efficiency-in-storage-spaces-direct/)
+- [Volumes in the Storage Management API (Storage Management API でのボリューム)](https://blogs.technet.microsoft.com/filecab/2016/08/29/deep-dive-volumes-in-spaces-direct/)
+- [Storage Efficiency Demo at Microsoft Ignite 2016 (Microsoft Ignite 2016 での記憶域の効率に関するデモ)](https://www.youtube.com/watch?v=-LK2ViRGbWs&t=36m55s)
+- [Capacity Calculator for Storage Spaces Direct (記憶域スペース ダイレクトの容量計算 (プレビュー版))](https://aka.ms/s2dcalc)

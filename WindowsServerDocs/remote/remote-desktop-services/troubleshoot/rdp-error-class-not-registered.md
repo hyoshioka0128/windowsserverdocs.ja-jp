@@ -1,24 +1,19 @@
 ---
 title: クライアントが接続できず、クラスが登録されていませんというエラーが発生する
 description: リモート デスクトップ接続での "クラスが登録されていません" エラーのトラブルシューティング。
-audience: itpro
-ms.custom: na
 ms.reviewer: rklemen
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: troubleshooting
-ms.assetid: ''
 author: kaushika-msft
-manager: ''
+manager: dcscontentpm
 ms.author: delhan
 ms.date: 07/24/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: cdc6d1c292f554e6d7fedd3fea0b1e9d6673df0c
-ms.sourcegitcommit: f6503e503d8f08ba8000db9c5eda890551d4db37
+ms.openlocfilehash: 52e696bd4229b947ea63a379211192b8664a9f93
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68529892"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "80857185"
 ---
 # <a name="clients-cant-connect-and-get-the-class-not-registered-error"></a>クライアントが接続できず、"クラスが登録されていません" というエラーが発生する
 

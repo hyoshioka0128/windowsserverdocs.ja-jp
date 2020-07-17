@@ -1,27 +1,23 @@
 ---
 title: ユーザー ステーションを分割する
 description: 2人のユーザーが同じステーションを使用できるように、MultiPoint Services の表示を分割する方法について説明します。
-ms.custom: na
 ms.date: 07/08/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f0d1fc9c-f5ea-45bc-a8da-623c5d081cdf
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.openlocfilehash: 5067df3f5902570d56ee130264c751d66b5b0d3f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: db828da06045bb884db138458f875af1d4d5b99d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394948"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853895"
 ---
 # <a name="split-a-user-station"></a>ユーザー ステーションを分割する
-解像度が 1024x768 を超える MultiPoint モニターは、 **[ステーション]** タブの **[ステーションの分割]** タスクを使用して 2 つのステーションに分割できます。分割時にモニターに表示されているデスクトップがモニターの左半分に移動し、同じモニターの右半分に新しいステーションが作成されます。 新しいステーションの作成を完了するには、新しいステーションにキーボード、マウス、USB ハブをマッピングする必要があります。 ステーションの分割後は、あるユーザーが左のステーションにログオンし、別のユーザーが右のステーションにログオンできます。  
+解像度が1024x768 を超える MultiPoint Services ステーションモニターは、[**ステーション] タブの [** **ステーションの分割**] タスクを使用して2つのステーションに分割できます。分割が発生したときにモニター上に存在するデスクトップがモニターの左半分に移動し、同じモニターの右側に新しいステーションが作成されます。 新しいステーションの作成を完了するには、新しいステーションにキーボード、マウス、USB ハブをマッピングする必要があります。 ステーションの分割後は、あるユーザーが左のステーションにログオンし、別のユーザーが右のステーションにログオンできます。  
   
 分割画面ステーションを使用する利点があります。  
   
@@ -50,5 +46,5 @@ ms.locfileid: "71394948"
   
 3.  **[ステーション タスク]** で **[ステーションの分割解除]** をクリックします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [ユーザー ステーションの管理](Manage-User-Stations.md)

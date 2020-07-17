@@ -1,68 +1,67 @@
 ---
 title: ボリュームのパフォーマンス履歴
 ms.author: cosdar
-ms.manager: eldenc
+manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 02/09/2018
-Keywords: 記憶域スペース ダイレクト
 ms.localizationpriority: medium
-ms.openlocfilehash: fea1d3d67ab96d95b1699e8ac0129dba698477fe
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e8e8b6ce7a6ab676e1fca32f360370180b38eae2
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59882953"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474649"
 ---
 # <a name="performance-history-for-volumes"></a>ボリュームのパフォーマンス履歴
 
-> 適用先:Windows Server Insider Preview
+> 適用対象:Windows Server 2019
 
-このサブ トピックの[記憶域スペース ダイレクトのパフォーマンスの履歴](performance-history.md)ボリューム用に収集されたパフォーマンスの履歴の詳細について説明します。 パフォーマンス履歴をすべてクラスター共有ボリューム (CSV)、クラスターで使用することができます。 ただし、OS の使用がないボリュームやその他の非 CSV 記憶域を起動します。
+[記憶域スペースダイレクトのパフォーマンス履歴](performance-history.md)のこのサブトピックでは、ボリュームに対して収集されたパフォーマンス履歴の詳細について説明します。 パフォーマンス履歴は、クラスター内のすべてのクラスターの共有ボリューム (CSV) で利用できます。 ただし、OS ブートボリュームまたはその他の非 CSV ストレージでは使用できません。
 
    > [!NOTE]
-   > コレクションの新規作成または名前が変更されたボリュームを開始するまで数分かかる場合があります。
+   > 新しく作成された、または名前が変更されたボリュームの収集が開始されるまでに数分かかる場合があります。
 
-## <a name="series-names-and-units"></a>系列名とユニット
+## <a name="series-names-and-units"></a>系列の名前と単位
 
-これらの系列が対象となるボリュームごとに収集されます。
+これらのシリーズは、対象となるすべてのボリュームについて収集されます。
 
-| シリーズ                    | Unit             |
+| 系列                    | ユニット             |
 |---------------------------|------------------|
-| `volume.iops.read`        | 1 秒あたり       |
-| `volume.iops.write`       | 1 秒あたり       |
-| `volume.iops.total`       | 1 秒あたり       |
-| `volume.throughput.read`  | 1 秒あたりのバイト数 |
-| `volume.throughput.write` | 1 秒あたりのバイト数 |
-| `volume.throughput.total` | 1 秒あたりのバイト数 |
-| `volume.latency.read`     | 秒数          |
-| `volume.latency.write`    | 秒数          |
-| `volume.latency.average`  | 秒数          |
-| `volume.size.total`       | バイト数            |
-| `volume.size.available`   | バイト数            |
+| `volume.iops.read`        | 1秒あたり       |
+| `volume.iops.write`       | 1秒あたり       |
+| `volume.iops.total`       | 1秒あたり       |
+| `volume.throughput.read`  | 1秒あたりのバイト数 |
+| `volume.throughput.write` | 1秒あたりのバイト数 |
+| `volume.throughput.total` | 1秒あたりのバイト数 |
+| `volume.latency.read`     | seconds          |
+| `volume.latency.write`    | seconds          |
+| `volume.latency.average`  | seconds          |
+| `volume.size.total`       | バイト            |
+| `volume.size.available`   | バイト            |
 
 ## <a name="how-to-interpret"></a>解釈する方法
 
-| シリーズ                    | 解釈する方法                                                              |
+| 系列                    | 解釈する方法                                                              |
 |---------------------------|-------------------------------------------------------------------------------|
-| `volume.iops.read`        | このボリュームで完了した 1 秒あたりの読み取り操作の数。                |
-| `volume.iops.write`       | このボリュームで完了した 1 秒あたりの書き込み操作の数。               |
-| `volume.iops.total`       | 合計数は、読み取りまたは書き込みこのボリュームで完了した 1 秒あたりの操作。 |
-| `volume.throughput.read`  | 1 秒間には、このボリュームからの読み取りデータの量。                            |
-| `volume.throughput.write` | 1 秒間には、このボリュームに書き込まれたデータの量。                           |
-| `volume.throughput.total` | データの読み取りまたは書き込みを 1 秒間には、このボリュームの合計数量。        |
+| `volume.iops.read`        | このボリュームで1秒間に実行された読み取り操作の数。                |
+| `volume.iops.write`       | このボリュームで1秒あたりに完了した書き込み操作の数。               |
+| `volume.iops.total`       | このボリュームによって完了された1秒あたりの読み取りまたは書き込み操作の合計数。 |
+| `volume.throughput.read`  | このボリュームから読み取られたデータの1秒あたりの数。                            |
+| `volume.throughput.write` | このボリュームに書き込まれたデータの1秒あたりの数。                           |
+| `volume.throughput.total` | このボリュームから読み取られた、または1秒あたりに書き込まれたデータの合計量。        |
 | `volume.latency.read`     | このボリュームからの読み取り操作の平均待機時間。                          |
 | `volume.latency.write`    | このボリュームへの書き込み操作の平均待機時間。                           |
-| `volume.latency.average`  | このボリュームの間のすべての操作の平均待機時間。                     |
-| `volume.size.total`       | ボリュームの記憶域の合計容量。                                     |
-| `volume.size.available`   | ボリュームの使用可能記憶域容量。                                 |
+| `volume.latency.average`  | このボリュームとの間のすべての操作の平均待機時間。                     |
+| `volume.size.total`       | ボリュームの合計記憶域容量。                                     |
+| `volume.size.available`   | ボリュームの使用可能な記憶域容量。                                 |
 
-## <a name="where-they-come-from"></a>来た
+## <a name="where-they-come-from"></a>どこから来ているか
 
-`iops.*`、 `throughput.*`、および`latency.*`シリーズがから収集された、`Cluster CSVFS`パフォーマンス カウンターのセット。 所有権に関わらず、すべての CSV ボリュームのインスタンスが実行されて、クラスター内のすべてのサーバー。 ボリュームのパフォーマンス履歴が記録された`MyVolume`の集計、`MyVolume`クラスター内のすべてのサーバー上のインスタンス。
+`iops.*`、 `throughput.*` 、およびの各 `latency.*` 系列は、 `Cluster CSVFS` パフォーマンスカウンターセットから収集されます。 クラスター内のすべてのサーバーは、所有権に関係なく、すべての CSV ボリュームにインスタンスを持ちます。 ボリュームについて記録されたパフォーマンス履歴 `MyVolume` は、 `MyVolume` クラスター内のすべてのサーバー上のインスタンスの集計です。
 
-| シリーズ                    | ソースのカウンター         |
+| 系列                    | ソースカウンター         |
 |---------------------------|------------------------|
 | `volume.iops.read`        | `Reads/sec`            |
 | `volume.iops.write`       | `Writes/sec`           |
@@ -75,26 +74,26 @@ ms.locfileid: "59882953"
 | `volume.latency.average`  | *上記の平均* |
 
    > [!NOTE]
-   > カウンターは、サンプリングされなかった、全体の間隔で測定されます。 たとえば、ボリュームがアイドル状態の場合は 9 秒が完了すると 30 IOs 10 日の 2 番目の`volume.iops.total`この 10 秒間に平均で 1 秒あたりの 3 つの IOs として記録されます。 これにより、そのパフォーマンス履歴がすべてのアクティビティをキャプチャしがノイズに堅牢になりました。
+   > カウンターは、サンプリングされるのではなく、間隔全体にわたって測定されます。 たとえば、ボリュームが9秒間アイドル状態で、30秒間 30 Io が完了した場合、 `volume.iops.total` この10秒間に平均で1秒あたり 3 io として記録されます。 これにより、パフォーマンス履歴がすべてのアクティビティをキャプチャし、ノイズに対して堅牢になります。
 
    > [!TIP]
-   > これらは、人気のあるによって使用される同じカウンター [VM Fleet](https://github.com/Microsoft/diskspd/blob/master/Frameworks/VMFleet/watch-cluster.ps1)ベンチマーク フレームワーク。
+   > これらは、一般的な[VM](https://github.com/Microsoft/diskspd/blob/master/Frameworks/VMFleet/watch-cluster.ps1)車両ベンチマークフレームワークで使用されるものと同じカウンターです。
 
-`size.*`シリーズがから収集された、 `MSFT_Volume` WMI、ボリュームごとの 1 つのインスタンスのクラス。
+シリーズは、 `size.*` WMI のクラスから収集され `MSFT_Volume` ます。ボリュームごとに1つのインスタンスがあります。
 
-| シリーズ                    | Source プロパティ |
+| 系列                    | Source プロパティ |
 |---------------------------|-----------------|
 | `volume.size.total`       | `Size`          |
 | `volume.size.available`   | `SizeRemaining` |
 
 ## <a name="usage-in-powershell"></a>PowerShell での使用法
 
-使用して、 [Get-volume](https://docs.microsoft.com/powershell/module/storage/get-volume)コマンドレット。
+[Get Volume](https://docs.microsoft.com/powershell/module/storage/get-volume)コマンドレットを使用します。
 
 ```PowerShell
 Get-Volume -FriendlyName <FriendlyName> | Get-ClusterPerf
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="additional-references"></a>その他のリファレンス
 
-- [記憶域スペース ダイレクトのパフォーマンスの履歴](performance-history.md)
+- [記憶域スペース ダイレクトのパフォーマンス履歴](performance-history.md)

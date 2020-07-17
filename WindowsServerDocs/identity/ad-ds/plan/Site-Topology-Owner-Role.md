@@ -1,7 +1,6 @@
 ---
 ms.assetid: af76ddbe-83a2-4a62-9989-873e3bb1c772
 title: サイト トポロジの所有者の役割
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 7b010dcb7a150f4ebcfcc941aa9e5c016795e717
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1e90c88db6a40de48444e047628abcee6cc3673b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402494"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80821825"
 ---
 # <a name="site-topology-owner-role"></a>サイト トポロジの所有者の役割
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 サイトトポロジを管理する管理者は、サイトトポロジの所有者と呼ばれます。 サイトトポロジの所有者は、サイト間のネットワークの条件を理解し、Active Directory Domain Services (AD DS) の設定を変更してサイトトポロジへの変更を実装する権限を持っています。 サイトトポロジの変更は、レプリケーショントポロジの変更に影響します。 サイトトポロジの所有者の責任は次のとおりです。  
   

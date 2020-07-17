@@ -4,15 +4,15 @@ description: Linux および BSD の仮想マシン
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: Asmahi; SandySp; JoPoulso
+ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 5668629e7eded214525561d30fec496a4e91b8dc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1109eb50bbe052b39fe7a91903fa0aea58b6e4f1
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385069"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471387"
 ---
 # <a name="linux-virtual-machine-considerations"></a>Linux 仮想マシンに関する考慮事項
 
@@ -24,9 +24,9 @@ Linux および BSD の仮想マシンには、Hyper-v の Windows 仮想マシ�
 
 ## <a name="linux-network-performance"></a>Linux ネットワークパフォーマンス
 
-既定では、ハードウェアの高速化とオフロードが既定で有効になっています。 ホスト上の NIC のプロパティで vRSS が有効になっていて、Linux ゲストには vRSS を使用する機能がある場合は、機能が有効になります。 Powershell では、`EnableNetAdapterRSS` コマンドを使用して同じパラメーターを変更できます。
+既定では、ハードウェアの高速化とオフロードが既定で有効になっています。 ホスト上の NIC のプロパティで vRSS が有効になっていて、Linux ゲストには vRSS を使用する機能がある場合は、機能が有効になります。 Powershell では、コマンドを使用して同じパラメーターを変更でき `EnableNetAdapterRSS` ます。
 
-同様に、VMMQ (仮想スイッチ RSS) 機能は、ゲストの > **プロパティ**で使用される物理 NIC で有効にすることができ**ます。**  > **詳細**設定 タブでは、次のようにして、Powershell で **仮想スイッチ rss** を **有効** または 有効にする に設定 > ます。
+同様に、ゲスト**プロパティ**の [  >  **構成...**  >  ] で使用される物理 NIC で、VMMQ (仮想スイッチ RSS) 機能を有効にすることもできます。**[詳細**設定] タブで、次のものを使用して、**仮想スイッチ RSS**を**有効**に設定 > か、Powershell で VMMQ を有効にします。
 
 ```PowerShell
  Set-VMNetworkAdapter -VMName **$VMName** -VmmqEnabled $True
@@ -49,15 +49,15 @@ net.ipv4.ip_local_port_range = 10240 65535
 net.ipv4.tcp_abort_on_overflow = 1
 ```
 
-ネットワークマイクロベンチマークの便利なツールは ntttcp です。これは、Linux と Windows の両方で使用できます。 Linux バージョンはオープンソースであり、 [github.com の ntttcp-linux](https://github.com/Microsoft/ntttcp-for-linux)から入手できます。 Windows のバージョンについては、[ダウンロードセンター](https://gallery.technet.microsoft.com/NTttcp-Version-528-Now-f8b12769)を参照してください。 ワークロードをチューニングする場合は、スループットを最大にするために必要な数のストリームを使用することをお勧めします。 Ntttcp を使用してトラフィックをモデル化すると、`-P` パラメーターによって、使用する並列接続の数が設定されます。
+ネットワークマイクロベンチマークの便利なツールは ntttcp です。これは、Linux と Windows の両方で使用できます。 Linux バージョンはオープンソースであり、 [github.com の ntttcp-linux](https://github.com/Microsoft/ntttcp-for-linux)から入手できます。 Windows のバージョンについては、[ダウンロードセンター](https://gallery.technet.microsoft.com/NTttcp-Version-528-Now-f8b12769)を参照してください。 ワークロードをチューニングする場合は、スループットを最大にするために必要な数のストリームを使用することをお勧めします。 Ntttcp を使用してトラフィックをモデル化すると、パラメーターによって、 `-P` 使用される並列接続の数が設定されます。
 
 ## <a name="linux-storage-performance"></a>Linux ストレージのパフォーマンス
 
-次のようなベストプラクティスについては、「 [hyper-v で Linux を実行するためのベストプラクティス](https://technet.microsoft.com/windows-server-docs/compute/hyper-v/best-practices-for-running-linux-on-hyper-v)」に記載されています。 Linux カーネルには、さまざまなアルゴリズムで要求を並べ替えるための異なる i/o スケジューラがあります。 NOOP は、ハイパーバイザーによって実行されるスケジュールの決定を渡す先入れ先出しキューです。 Hyper-v で Linux 仮想マシンを実行する場合は、スケジューラとして NOOP を使用することをお勧めします。 特定のデバイスの scheduler を変更するには、ブートローダーの構成 (/etc/grub.conf など) で、`elevator=noop` をカーネルパラメーターに追加してから、を再起動します。
+次のようなベストプラクティスについては、「 [hyper-v で Linux を実行するためのベストプラクティス](https://technet.microsoft.com/windows-server-docs/compute/hyper-v/best-practices-for-running-linux-on-hyper-v)」に記載されています。 Linux カーネルには、さまざまなアルゴリズムで要求を並べ替えるための異なる i/o スケジューラがあります。 NOOP は、ハイパーバイザーによって実行されるスケジュールの決定を渡す先入れ先出しキューです。 Hyper-v で Linux 仮想マシンを実行する場合は、スケジューラとして NOOP を使用することをお勧めします。 特定のデバイスの scheduler を変更するには、ブートローダーの構成 (/etc/grub.conf など) で、を `elevator=noop` カーネルパラメーターに追加してから、を再起動します。
 
 ネットワークの場合と同様に、Linux ゲストのパフォーマンスは、記憶域を使用すると、ホストのビジー状態を維持するのに十分な深さのキューから最大限に活用できます。 Microbaio エンジンを使用した fio ベンチマークツールでは、マイクロベンチマークストレージのパフォーマンスが最も高くなります。
 
-## <a name="see-also"></a>関連項目
+## <a name="additional-references"></a>その他のリファレンス
 
 -   [Hyper-V の用語](terminology.md)
 

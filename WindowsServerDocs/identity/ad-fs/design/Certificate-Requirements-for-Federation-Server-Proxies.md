@@ -1,7 +1,6 @@
 ---
 ms.assetid: dc24adb7-385d-4a92-ab81-78ba73df0118
 title: フェデレーション サーバー プロキシの証明書の要件
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: dab77c3e3226e89eb3ac9b74e7db9b6df8f181bf
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: cc32288d01d7e1386f146716f45f0e49ced3d48e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408146"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858125"
 ---
 # <a name="certificate-requirements-for-federation-server-proxies"></a>フェデレーション サーバー プロキシの証明書の要件
 

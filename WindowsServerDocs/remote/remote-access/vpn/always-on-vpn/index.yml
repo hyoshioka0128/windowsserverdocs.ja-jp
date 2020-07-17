@@ -1,100 +1,76 @@
-### YamlMime:YamlDocument
-documentType: LandingData
-title: Always On VPN のリモート アクセス
+### YamlMime:Landing
+title: Always On VPN のドキュメント
+summary: Always On VPN の機能、技術、および展開について説明します。
 metadata:
-  document_id: null
-  title: Always On VPN のリモート アクセス
+  title: Always On VPN のドキュメント
   description: Always On VPN の機能、技術、および展開について説明します。
-  text: Always On VPN では、個人所有のデバイスを含め、接続されているすべてのデバイスにリモート アクセスするための 1 つのまとまりのあるソリューションが提供されます。 Always On VPN では、接続の種類がユーザーまたはデバイス専用である必要はなく、両方の組み合わせにすることができます。 たとえば、リモート デバイス管理用のデバイス認証を有効にし、会社の内部サイトとサービスへの接続に対するユーザー認証を有効にすることができます。
-  keywords: 'Windows 10, Windows Server, Windows Server 2016, リモート アクセス, VPN'
-  ms.localizationpriority: high
-  author: shortpatti
-  ms.author: pashort
-  ms.date: 11/05/2018
-  ms.topic: article
-  ms.devlang: na
-sections:
-  - title: 詳細...
-  - items:
-      - type: markdown
-        text: Windows 10 を実行しているリモート クライアント コンピューターに対して、以下に説明する 4 つのシナリオのいずれかを使用して、リモート アクセスをポイント ツー サイトの VPN 接続用のシングル テナント VPN RAS ゲートウェイとして展開する準備をしましょう。  現在 DirectAccess を使用している場合は、DirectAccess から Always On VPN に移行する前に Always On VPN 機能を慎重に調査して、すべてのリモート アクセス ニーズが対処されるかどうかを確認することをお勧めします。
-  - items:
-      - type: list
-        style: cards
-        className: cardsE
-        columns: 3
-        items:
-          - href: \windows-server\remote\remote-access\vpn\always-on-vpn\deploy\always-on-vpn-deploy
-            html: <p>Always On VPN の展開と開始場所について説明します。</p>
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_get-started.svg'
-            title: 体験の開始
-          - href: \windows-server\remote\remote-access\vpn\vpn-map-da
-            html: <p>Always On VPN の機能について説明します。</p>
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_quick-start.svg'
-            title: Always On VPN の機能
-          - href: \windows-server\remote\remote-access\vpn\always-on-vpn\always-on-vpn-enhancements
-            html: <p>統合、セキュリティ、接続性、ネットワーク制御、互換性における主な改善点について説明します。</p>
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_whats-new.svg'
-            title: Always On VPN の機能強化
-          - href: \windows-server\remote\remote-access\vpn\always-on-vpn\always-on-vpn-technology-overview
-            html: <p>Always On VPN の展開で使用されるテクノロジについて説明します。</p>
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_overview.svg'
-            title: テクノロジの概要
-          - href: \windows-server\remote\remote-access\vpn\always-on-vpn\deploy\always-on-vpn-adv-options
-            html: <p>VPN 接続のセキュリティと可用性を向上させるために追加できる高度な VPN 機能について説明します。</p>
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_advanced.svg'
-            title: 高度な機能で Always On VPN を拡張する
-  - title: はじめに.
-    items:
-      - type: paragraph
-        text: ドメインに参加している Windows 10 クライアント コンピューターに Always On VPN 接続を展開します。 DirectAccess から Always On VPN に移行し、Azure AD を使用して条件付きアクセスを構成することもできます。
-      - type: list
-        style: cards
-        className: cardsE
-        columns: 3
-        items:
-          - href: \windows-server\remote\remote-access\vpn\always-on-vpn\deploy\always-on-vpn-deploy-deployment
-            html: <p>VPN 接続の展開に必要なものを検出します。</p>
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_architecture.svg'
-            title: 展開のワークフローとシナリオ
-          - href: \windows-server\remote\remote-access\vpn\always-on-vpn\deploy\always-on-vpn-deploy-planning
-            html: <p>Always On VPN 展開の計画と準備を開始します。</p>
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_guidelines.svg'
-            title: Always On VPN 展開を計画する
-          - href: \windows-server\remote\remote-access\vpn\always-on-vpn\deploy\vpn-deploy-server-infrastructure
-            html: <p>Windows 10 クライアント VPN 接続と共に VPN インフラストラクチャの設定と構成を開始します。</p>
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_setup.svg'
-            title: VPN インフラストラクチャの展開
-          - href: \windows-server\remote\remote-access\vpn\ad-ca-vpn-connectivity-windows10
-            html: <p>VPN ユーザーが Azure AD 条件付きアクセスを使用してリソースにアクセスする方法を微調整します。</p>
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_setup.svg'
-            title: 条件付きのアクセスの構成
-  - items:
-      - type: list
-        style: cards
-        className: cardsL
-        items:
-          - title: Always On VPN のトラブルシューティング
-            html: |-
-              <p><a class="barLink" href="/windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy-troubleshooting#vpnprofileps1-script-issues">VPN_Profile.ps1 スクリプトの問題</a></p>
-              <p><a class="barLink" href="/windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy-troubleshooting#always-on-vpn-client-connection-issues">Always On VPN クライアント接続の問題</a></p>
-              <p><a class="barLink" href="/windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy-troubleshooting#azure-ad-conditional-access-connection-issues">Azure AD 条件付きアクセス接続の問題</a></p>
-              <p><a class="barLink" href="/windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy-troubleshooting#error-codes">エラー コード</a></p><br>
-              <p><a class="barLink" href="/windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy-troubleshooting#logs">ログ ファイル</a></p></div>
-          - title: その他の資料
-            html: |-
-              <p><a class="barLink" href="https://docs.microsoft.com/windows/access-protection/vpn/vpn-guide">Windows 10 VPN テクニカル ガイド</a></p>
-              <p><a class="barLink" href="https://msdn.microsoft.com/windows/hardware/commercialize/customize/mdm/vpnv2-csp">VPNv2 CSP</a></p>
-              <p><a class="barLink" href="https://technet.microsoft.com/library/hh831740.aspx">Active Directory 証明書サービスの概要</a></p>
-              <p><a class="barLink" href="https://technet.microsoft.com/library/cc730705.aspx">証明書テンプレート</a></p>
-              <p><a class="barLink" href="https://social.technet.microsoft.com/wiki/contents/articles/2901.public-key-infrastructure-design-guidance.aspx">公開キー基盤設計ガイダンス</a></p><p></p>
-              <p><a class="barLink" href="https://social.technet.microsoft.com/wiki/contents/articles/15037.ad-cs-step-by-step-guide-two-tier-pki-hierarchy-deployment.aspx">AD CS ステップ バイ ステップ ガイド - 2 層 PKI 階層の展開</a></p>
+  ms.service: help
+  ms.topic: landing-page
+  author: eross-msft
+  ms.author: lizross
+  ms.date: 06/10/2020
+  ms.openlocfilehash: 2196c278e66adbf910646ab1c080efe39e2a4fe7
+  ms.sourcegitcommit: 1c9cb4be74d92afb938cad870c0b4bf506b89e98
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 06/24/2020
+  ms.locfileid: "85332619"
+landingContent:
+- title: Always On VPN について
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Always On VPN の機能
+      url: /windows-server/remote/remote-access/vpn/vpn-map-da
+    - text: テクノロジの概要
+      url: /windows-server/remote/remote-access/vpn/always-on-vpn/always-on-vpn-technology-overview
+    - text: Always On VPN の機能強化
+      url: /windows-server/remote/remote-access/vpn/always-on-vpn/always-on-vpn-technology-overview
+    - text: Always On VPN の高度な機能
+      url: /windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-adv-options
+    - text: Windows Server および Windows 10 のための Always On VPN 展開
+      url: /windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy
+- title: Always On VPN の展開
+  linkLists:
+  - linkListType: deploy
+    links:
+    - text: 展開のワークフローとシナリオ
+      url: /windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy-deployment
+    - text: Always On VPN 展開を計画する
+      url: /windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy-planning
+    - text: VPN インフラストラクチャの展開
+      url: /windows-server/remote/remote-access/vpn/always-on-vpn/deploy/vpn-deploy-server-infrastructure
+    - text: 条件付きのアクセスの構成
+      url: /windows-server/remote/remote-access/vpn/ad-ca-vpn-connectivity-windows10
+- title: トラブルシューティング
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: VPN_Profile.ps1 スクリプトの問題
+      url: /windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy-troubleshooting#vpnprofileps1-script-issues
+    - text: Always On VPN クライアント接続の問題
+      url: /windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy-troubleshooting#always-on-vpn-client-connection-issues
+    - text: Azure AD 条件付きアクセス接続の問題
+      url: /windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy-troubleshooting#azure-ad-conditional-access-connection-issues
+  - linkListType: reference
+    links:
+    - text: エラー コード
+      url: /windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy-troubleshooting#error-codes
+    - text: ログ ファイル
+      url: /windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy-troubleshooting#logs
+- title: その他の資料
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Windows 10 VPN テクニカル ガイド
+      url: https://docs.microsoft.com/windows/access-protection/vpn/vpn-guide
+    - text: VPNv2 CSP
+      url: https://msdn.microsoft.com/windows/hardware/commercialize/customize/mdm/vpnv2-csp
+    - text: Active Directory 証明書サービス
+      url: https://technet.microsoft.com/library/hh831740.aspx
+    - text: 証明書テンプレート
+      url: https://technet.microsoft.com/library/cc730705.aspx
+    - text: 公開キー基盤設計ガイダンス
+      url: https://social.technet.microsoft.com/wiki/contents/articles/2901.public-key-infrastructure-design-guidance.aspx
+    - text: AD CS ステップ バイ ステップ ガイド - 2 層 PKI 階層の展開
+      url: https://social.technet.microsoft.com/wiki/contents/articles/15037.ad-cs-step-by-step-guide-two-tier-pki-hierarchy-deployment.aspx

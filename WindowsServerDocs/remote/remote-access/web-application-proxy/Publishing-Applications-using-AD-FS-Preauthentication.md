@@ -1,19 +1,18 @@
 ---
 ms.assetid: 5f733510-c96e-4d3a-85d2-4407de95926e
 title: AD FS 事前認証を使用してアプリケーションを公開する
-description: ''
-author: kgremban
-manager: femila
+ms.author: kgremban
+author: eross-msft
 ms.date: 07/13/2016
 ms.topic: article
 ms.prod: windows-server
 ms.technology: web-app-proxy
-ms.openlocfilehash: bd5c4c97e01942e7c5ab8ed1aba3fcf92030ac59
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 97bfae42c873ecf7196138920a21d96714239da9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404267"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80818705"
 ---
 # <a name="publishing-applications-using-ad-fs-preauthentication"></a>AD FS 事前認証を使用してアプリケーションを公開する
 
@@ -70,9 +69,9 @@ AD FS 事前認証を使用して公開できるすべての種類のアプリ�
 > 外部 URL とバックエンド サーバーの URL を構成するときに、IP アドレスではなく、完全修飾ドメイン名 (FQDN) を含めます。  
   
 > [!NOTE]  
-> このトピックでは、サンプル Windows PowerShell コマンドレットを紹介します。ここで説明する手順の一部はこのコマンドレットで自動化できます。 詳しくは、 [コマンドレットの使用に関するページ](https://go.microsoft.com/fwlink/p/?linkid=230693)をご覧ください。  
+> このトピックには、説明する手順の一部を自動化するために使用できるサンプルの Windows PowerShell コマンドレットが含まれます。 詳しくは、 [コマンドレットの使用に関するページ](https://go.microsoft.com/fwlink/p/?linkid=230693)をご覧ください。  
   
-## <a name="BKMK_1.1"></a>Web ブラウザークライアント用の要求ベースのアプリケーションを公開する  
+## <a name="publish-a-claims-based-application-for-web-browser-clients"></a><a name="BKMK_1.1"></a>Web ブラウザークライアント用の要求ベースのアプリケーションを公開する  
 認証の要求を使用するアプリケーションを公開するには、フェデレーション サービスにアプリケーションの証明書利用者信頼を追加する必要があります。  
   
 要求ベースのアプリケーションを公開し、ブラウザーからアプリケーションにアクセスする場合、一般的な認証フローは次のとおりです。  
@@ -130,7 +129,7 @@ AD FS 事前認証を使用して公開できるすべての種類のアプリ�
   
 ![](../../media/Publishing-Applications-using-AD-FS-Preauthentication/PowerShellLogoSmall.gif) ***<em>Windows PowerShell の同等のコマンド</em>***  
   
-以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
+次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 書式上の制約のため、複数行にわたって折り返される場合でも、各コマンドレットは 1 行に入力してください。  
   
 ```  
 Add-WebApplicationProxyApplication  
@@ -142,7 +141,7 @@ Add-WebApplicationProxyApplication
     -ADFSRelyingPartyName 'SP_Relying_Party'  
 ```  
   
-## <a name="BKMK_1.2"></a>Web ブラウザークライアント用の統合 Windows 認証ベースのアプリケーションを公開する  
+## <a name="publish-an-integrated-windows-authenticated-based-application-for-web-browser-clients"></a><a name="BKMK_1.2"></a>Web ブラウザークライアント用の統合 Windows 認証ベースのアプリケーションを公開する  
 Web アプリケーションプロキシを使用して、統合 Windows 認証を使用するアプリケーションを公開できます。つまり、Web アプリケーションプロキシは、必要に応じて事前認証を実行し、統合 Windows 認証を使用する公開されたアプリケーションに対して SSO を実行できます。 統合 Windows 認証を使用するアプリケーションを公開するには、フェデレーション サービスに要求対応ではない証明書利用者信頼を追加する必要があります。  
   
 Web アプリケーションプロキシがシングルサインオン (SSO) を実行し、Kerberos の制約付き委任を使用して資格情報の委任を実行できるようにするには、Web アプリケーションプロキシサーバーがドメインに参加している必要があります。 「 [Plan Active Directory](https://technet.microsoft.com/library/dn383648.aspx#BKMK_AD)」を参照してください。  
@@ -212,7 +211,7 @@ Web アプリケーションプロキシがシングルサインオン (SSO) を
   
 ![](../../media/Publishing-Applications-using-AD-FS-Preauthentication/PowerShellLogoSmall.gif) ***<em>Windows PowerShell の同等のコマンド</em>***  
   
-以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
+次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 書式上の制約のため、複数行にわたって折り返される場合でも、各コマンドレットは 1 行に入力してください。  
   
 ```  
 Add-WebApplicationProxyApplication  
@@ -225,7 +224,7 @@ Add-WebApplicationProxyApplication
     -ADFSRelyingPartyName 'Non-Claims_Relying_Party'  
 ```  
   
-## <a name="BKMK_1.3"></a>MS-OFBA を使用するアプリケーションを公開する  
+## <a name="publish-an-application-that-uses-ms-ofba"></a><a name="BKMK_1.3"></a>MS-OFBA を使用するアプリケーションを公開する  
 Web アプリケーションプロキシは、バックエンドサーバーのドキュメントやデータにアクセスする Microsoft Word などの Microsoft Office クライアントからのアクセスをサポートします。 これらのアプリケーションと標準的なブラウザーの唯一の違いは、STS へのリダイレクトは通常の HTTP リダイレクトではなく、特別な MS OFBA ヘッダーを使用して行われます。 [https://msdn.microsoft.com/library/dd773463(v=office.12).aspx](https://msdn.microsoft.com/library/dd773463(v=office.12).aspx)を参照してください。 バックエンド アプリケーションは、要求ベースまたは IWA ベースです。   
 MS OFBA を使用するクライアントのアプリケーションを公開するには、アプリケーションの証明書利用者信頼をフェデレーションサービスに追加する必要があります。 アプリケーションに応じて、要求ベースの認証または統合 Windows 認証を使用できます。 そのため、アプリケーションに応じて、関連する証明書利用者信頼を追加する必要があります。  
   
@@ -312,7 +311,7 @@ HTTP Basic を使用するクライアントの認証フローについては、
   
 ![](../../media/Publishing-Applications-using-AD-FS-Preauthentication/PowerShellLogoSmall.gif) ***<em>Windows PowerShell の同等のコマンド</em>***  
   
-以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
+次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 書式上の制約のため、複数行にわたって折り返される場合でも、各コマンドレットは 1 行に入力してください。  
   
 この Windows PowerShell スクリプトでは、ワークプレースに参加しているデバイスだけでなく、すべてのデバイスの事前認証が有効になります。  
   
@@ -339,7 +338,7 @@ Add-WebApplicationProxyApplication
      -ADFSRelyingPartyName 'EAS_Relying_Party'  
 ```  
   
-## <a name="BKMK_1.4"></a>Microsoft Store アプリなどの OAuth2 を使用するアプリケーションを発行する  
+## <a name="publish-an-application-that-uses-oauth2-such-as-a-microsoft-store-app"></a><a name="BKMK_1.4"></a>Microsoft Store アプリなどの OAuth2 を使用するアプリケーションを発行する  
 Microsoft Store アプリ用のアプリケーションを公開するには、アプリケーションの証明書利用者信頼をフェデレーションサービスに追加する必要があります。  
   
 Web アプリケーションプロキシがシングルサインオン (SSO) を実行し、Kerberos の制約付き委任を使用して資格情報の委任を実行できるようにするには、Web アプリケーションプロキシサーバーがドメインに参加している必要があります。 「 [Plan Active Directory](https://technet.microsoft.com/library/dn383648.aspx#BKMK_AD)」を参照してください。  
@@ -418,7 +417,7 @@ Microsoft Store アプリを使用するクライアントの認証フローを�
   
 8.  **[結果]** ページで、アプリケーションが正常に公開されたことを確認し、 **[閉じる]** をクリックします。  
   
-ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
+書式上の制約のため、複数行にわたって折り返される場合でも、各コマンドレットは 1 行に入力してください。  
   
 フェデレーションサーバーアドレス fs.contoso.com の OAuth 認証 URL と/adfs/oauth2/の URL パスを設定するには、次のようにします。  
   
@@ -439,7 +438,7 @@ Add-WebApplicationProxyApplication
     -UseOAuthAuthentication  
 ```  
   
-## <a name="BKMK_Links"></a>関連項目  
+## <a name="see-also"></a><a name="BKMK_Links"></a>関連項目  
   
 -   [Web アプリケーション プロキシのトラブルシューティング](https://technet.microsoft.com/library/dn770156.aspx)  
   

@@ -1,27 +1,24 @@
 ---
 title: WSUS レプリカ モードを実行する
-description: 'Windows Server Update Service (WSUS) のトピック-レプリカモードの構成方法 '
+description: Windows Server Update Service (WSUS) のトピック-レプリカモードの構成方法
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-wsus
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d218cd6b-3b6b-4429-913b-31d412ce3356
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5323210962298ff3f2d0b159cba7726adfbb89d1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0680cba35066d0fb752a714424729eed7f47211a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361623"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828615"
 ---
 # <a name="running-wsus-replica-mode"></a>WSUS レプリカ モードを実行する
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 レプリカ モードで実行されている WSUS サーバーは、更新プログラムの承認と管理サーバーで作成したコンピューター グループを継承します。 レプリカ モードを使用するシナリオで、通常、1 つの管理サーバーで、サイトや組織の構造に基づいて、組織全体で 1 つ以上の従属レプリカ WSUS サーバーに分散します。 更新プログラムを承認し、レプリカ モードのサーバーをミラー化し、管理サーバー上のコンピューター グループを作成します。 レプリカ モードのサーバーは WSUS セットアップ中にのみ設定できますまたこのシナリオを実装する場合は重要な更新プログラム承認を組織では、コンピューター グループが一元的に管理します。
 

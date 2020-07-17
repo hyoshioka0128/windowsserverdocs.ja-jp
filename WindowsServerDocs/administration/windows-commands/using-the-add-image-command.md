@@ -1,34 +1,31 @@
 ---
-title: イメージを使用して、追加のコマンド
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+title: イメージの追加
+description: Windows 展開サービスサーバーにイメージを追加する追加イメージのリファレンス記事です。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d5b6f4da-90ba-4b0e-9423-66c8ef5172e2
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b0d671dd482710c486a6936cdbe3b1cc6b331866
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 535c303e779441dd164174e7a7e311747a9c1e4d
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71363742"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929135"
 ---
-# <a name="using-the-add-image-command"></a>イメージを使用して、追加のコマンド
+# <a name="add-image"></a>イメージの追加
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-Windows 展開サービスサーバーにイメージを追加します。 このコマンドを使用する方法の例については、次を参照してください。 [例](#BKMK_examples)します。
-## <a name="syntax"></a>構文
+Windows 展開サービス サーバーにイメージを追加します。
+
+## <a name="syntax"></a>Syntax
 ブートイメージの場合は、次の構文を使用します。
 ```
-wdsutil /add-ImagmediaFile:<wim file path> [/Server:<Server name>mediatype:Boot [/Skipverify] [/Name:<Image name>] [/Description:<Image description>] 
+wdsutil /add-ImagmediaFile:<wim file path> [/Server:<Server name>mediatype:Boot [/Skipverify] [/Name:<Image name>] [/Description:<Image description>]
 [/Filename:<New wim file name>]
 ```
 インストールイメージの場合は、次の構文を使用します。
@@ -44,38 +41,38 @@ wdsutil /add-ImagmediaFile:<wim file path>
      [/Filename:<File name>]
      [/UnattendFile:<Unattend file path>]
 ```
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 |パラメーター|説明|
 |-------|--------|
 mediaFile: < .wim ファイルのパス >|追加するイメージを含む Windows イメージ (.wim) ファイルの完全パスとファイル名を指定します。|
 |[/Server:<Server name>]|サーバーの名前を指定します。 NetBIOS 名または完全修飾ドメイン名 (FQDN) のいずれかを指定できます。 サーバー名が指定されていない場合は、ローカルのサーバーが使用されます。|
-メディアの種類: {ブート&#124;インストール}|追加するイメージの種類を指定します。|
+mediatype: {Boot&#124;Install}|追加するイメージの種類を指定します。|
 |[/Skipverify]|ある整合性の検証は実行されません、ソース イメージ ファイルのイメージを追加する前に指定します。|
 |[/Name:<Name>]|イメージの表示名を設定します。|
 |/Description<Description>]|イメージの説明を設定します。|
 |[/ファイル名:<Filename>]|.Wim ファイルの新しいファイル名を指定します。 これにより、イメージを追加するときに、.wim ファイルのファイル名を変更することができます。 ファイル名が指定されていない場合、ソース イメージ ファイル名が使用されます。 常に、Windows 展開サービスをセットアップ先のコンピューターのブート イメージ ストアにファイル名が一意かどうかをチェックします。|
 |\mediaGroup:<Image group name>]|イメージが追加されるイメージ グループの名前を指定します。 サーバーの 1 つ以上のイメージ グループが存在する場合は、イメージ グループを指定してください。 これが指定されていないイメージ グループが存在しない場合は、新しいイメージ グループが作成されます。 それ以外の場合、既存のイメージ グループが使用されます。|
-|[/Singleimage: <Single image name>][/Name: <Name>]/Description<Description>]|.Wim ファイルから指定された 1 つのイメージをコピーし、イメージの表示名と説明を設定します。|
+|[/Singleimage: <Single image name> ][/Name: <Name> ]/Description<Description>]|.Wim ファイルから指定された 1 つのイメージをコピーし、イメージの表示名と説明を設定します。|
 |[/UnattendFile:<Unattend file path>]|無人インストール ファイルが追加されているイメージと関連付けるへの完全パスを指定します。 場合 **/SingleImage** が指定されていない、同じ無人セットアップ ファイルはすべての .wim ファイル内のイメージに関連付けられます。|
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a>例
 ブート イメージを追加するには、次のように入力します。
 ```
-wdsutil /add-ImagmediaFile:"C:\MyFolder\Boot.wimmediatype:Boot
-wdsutil /verbose /Progress /add-ImagmediaFile:\\MyServer\Share\Boot.wim /Server:MyWDSServemediatype:Boot /Name:"My WinPE Image" 
-/Description:"WinPE Image containing the WDS Client" /Filename:WDSBoot.wim
+wdsutil /add-ImagmediaFile:C:\MyFolder\Boot.wimmediatype:Boot
+wdsutil /verbose /Progress /add-ImagmediaFile:\\MyServer\Share\Boot.wim /Server:MyWDSServemediatype:Boot /Name:My WinPE Image
+/Description:WinPE Image containing the WDS Client /Filename:WDSBoot.wim
 ```
 インストール イメージを追加するには、次のいずれかを入力します。
 ```
-wdsutil /add-ImagmediaFile:"C:\MyFolder\Install.wimmediatype:Install
-wdsutil /verbose /Progress /add-ImagmediaFile:\\MyServer\Share \Install.wim /Server:MyWDSServemediatype:InstalmediaGroup:ImageGroup1 
-/SingleImage:"Windows Pro" /Name:"My WDS Image"
-/Description:"Windows Pro image with Microsoft Office" /Filename:"Win Pro.wim" /UnattendFile:"\\server\share\unattend.xml"
+wdsutil /add-ImagmediaFile:C:\MyFolder\Install.wimmediatype:Install
+wdsutil /verbose /Progress /add-ImagmediaFile:\\MyServer\Share \Install.wim /Server:MyWDSServemediatype:InstalmediaGroup:ImageGroup1
+/SingleImage:Windows Pro /Name:My WDS Image
+/Description:Windows Pro image with Microsoft Office /Filename:Win Pro.wim /UnattendFile:\\server\share\unattend.xml
 ```
-#### <a name="additional-references"></a>その他の参照情報
-[コマンドライン構文のポイント](command-line-syntax-key.md)
-[コピー イメージのコマンドを使用して](using-the-copy-image-command.md)
-[/export-image コマンドを使用して](using-the-export-image-command.md)
-[get イメージのコマンドを使用して](using-the-get-image-command.md)
-[削除イメージのコマンドを使用して](using-the-remove-image-command.md)
-[置換イメージのコマンドを使用して](using-the-replace-image-command.md)
-[サブコマンド: 画像の設定](subcommand-set-image.md)
+## <a name="additional-references"></a>その他の参照情報
+- [コマンドライン構文のキー](command-line-syntax-key.md) 
+[コピーイメージのコマンド](using-the-copy-image-command.md) 
+ を使用する[Export-Image コマンド](using-the-export-image-command.md) 
+ の使用[Get イメージコマンド](using-the-get-image-command.md) 
+ の使用[イメージの削除コマンド](using-the-remove-image-command.md) 
+ を使用する[置換イメージのコマンド](using-the-replace-image-command.md) 
+ を使用する[サブコマンド: イメージの設定](subcommand-set-image.md)

@@ -2,25 +2,23 @@
 title: フェールオーバー クラスタ リングのないライブ マイグレーションを使用して仮想マシンを移動するには
 description: スタンドアロン環境でライブマイグレーションを実行するための前提条件と手順について説明します。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 75c32e42-97f7-48df-aac9-1d82d34825e1
-author: KBDAzure
+author: kbdazure
 ms.author: kathydav
 ms.date: 01/17/2017
-ms.openlocfilehash: 55c96ff4696871e4013c3abd6247209d0d4517c0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 41d5edb02d4384955e711024d4e4d68cee5d3937
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71392557"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858925"
 ---
 # <a name="use-live-migration-without-failover-clustering-to-move-a-virtual-machine"></a>フェールオーバー クラスタ リングのないライブ マイグレーションを使用して仮想マシンを移動するには
 
->適用先:Windows Server 2016
+>適用対象: Windows Server 2016
 
 この記事では、フェールオーバー クラスタ リングを使用せず、ライブ移行の手順を実行して仮想マシンを移動する方法を説明します。 ライブ マイグレーションは、著しいダウンタイムなしの HYPER-V ホスト間で実行中の仮想マシンを移動します。   
   
@@ -61,7 +59,7 @@ PS C:\> Move-VM LMTest TestServer02 -IncludeStorage -DestinationStoragePath D:\L
 制約付き委任をセットアップしていない場合、仮想マシンを移動するには移行元サーバーにサインインする必要があります。 これを行わない場合は、エラーが発生する認証の試行は失敗し、このメッセージが表示されます。  
   
 "仮想マシンの移行操作は、移行元で失敗しました。  
-ホスト*コンピューター名*との接続を確立できませんでした:セキュリティパッケージ0x8009030E で利用できる資格情報がありません。 "
+ホストとの接続を確立できませんでした *コンピューター名*: 0x8009030E セキュリティ パッケージで使用できる資格情報はありません"。
   
  この問題を解決する、移行元サーバーにサインインし、移動を実行してください再します。 ライブ マイグレーションを実行する前に、移行元サーバーにサインインすることを回避するのには、制約付き委任を設定します。 ドメイン管理者の資格情報を制約付き委任を設定する必要があります。 手順については、次を参照してください。 [ライブ マイグレーションのためのホスト設定](../deploy/Set-up-hosts-for-live-migration-without-Failover-Clustering.md)します。 
  
@@ -69,14 +67,14 @@ PS C:\> Move-VM LMTest TestServer02 -IncludeStorage -DestinationStoragePath D:\L
  
  プロセッサの互換性がオンになっていない仮想マシンに 1 つ以上のスナップショットがある場合、ホストに異なるバージョンのプロセッサがあると、移行が失敗します。 エラーが発生し、このメッセージが表示されます。
  
-**The machine は対象のコンピューターに移動できません。対象のコンピューターのハードウェアが、この仮想マシンのハードウェア要件と互換性がありません。**
+**バーチャルマシンを対象コンピューターに移動できません。対象コンピューターのハードウェアは、この仮想マシンのハードウェア要件と互換性がありません。**
  
  この問題を解決するには、仮想マシンをシャット ダウンし、プロセッサの互換性設定を有効にします。
  
 1. HYPER-V マネージャーからの **仮想マシン**  ウィンドウが仮想マシンを右クリックし、設定 をクリックします。
 2. ナビゲーション ウィンドウで **[プロセッサ]** をクリック **互換性**します。
 3. 確認 **異なるプロセッサ バージョンがコンピューターへ移行する**です。
-4. **[OK]** をクリックします。
+4. **[OK]** をクリックすると、
  
    Windows PowerShell を使用する、 [Set-vmprocessor](https://technet.microsoft.com/library/hh848533.aspx) コマンドレット。
  

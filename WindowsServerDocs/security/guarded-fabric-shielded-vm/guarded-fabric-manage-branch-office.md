@@ -1,21 +1,21 @@
 ---
 title: ブランチオフィスに関する考慮事項
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
-ms.openlocfilehash: 5a07553e6662fd79230d566ba2049c5e8997f4d6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a9893ecd76e142dd243a1d99e83a48d2edfd5872
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403581"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856565"
 ---
 # <a name="branch-office-considerations"></a>ブランチ オフィスに関する考慮事項
 
-> 適用対象:Windows Server 2019、Windows Server (半期チャネル)、 
+> 適用対象: Windows Server 2019、Windows Server (半期チャネル)、 
 
 この記事では、ブランチオフィスでのシールドされたバーチャルマシンの実行に関するベストプラクティスと、Hyper-v ホストで HGS への接続が制限されている期間がある可能性がある他のリモートシナリオについて説明します。
 
@@ -24,7 +24,7 @@ ms.locfileid: "71403581"
 Windows Server バージョン1709以降では、プライマリ HGS が応答していないときに使用するために、Hyper-v ホスト上に追加のホストガーディアンサービス Url のセットを構成できます。
 これにより、ローカルの HGS クラスターを実行できます。ローカルの HGS クラスターは、ローカルサーバーがダウンしている場合に、企業のデータセンターの HGS にフォールバックする機能で、プライマリサーバーとして使用されます。
 
-フォールバックオプションを使用するには、2つの HGS サーバーをセットアップする必要があります。 Windows Server 2019 または Windows Server 2016 を実行し、同じクラスターまたは異なるクラスターの一部にすることができます。 クラスターが異なる場合は、運用方法を確立して、2つのサーバー間で構成証明ポリシーが同期されていることを確認する必要があります。 どちらも、シールドされた Vm を実行するように Hyper-v ホストを正しく承認し、シールドされた Vm を起動するために必要なキーマテリアルを持っている必要があります。 2つのクラスター間で共有暗号化証明書と署名証明書のペアを使用することも、別の証明書を使用して、シールドデータ内のガーディアン (暗号化/署名証明書のペア) の両方を承認するように HGS シールドされた VM を構成することもできます。拡張子.
+フォールバックオプションを使用するには、2つの HGS サーバーをセットアップする必要があります。 Windows Server 2019 または Windows Server 2016 を実行し、同じクラスターまたは異なるクラスターの一部にすることができます。 クラスターが異なる場合は、運用方法を確立して、2つのサーバー間で構成証明ポリシーが同期されていることを確認する必要があります。 どちらも、シールドされた Vm を実行するように Hyper-v ホストを正しく承認し、シールドされた Vm を起動するために必要なキーマテリアルを持っている必要があります。 2つのクラスター間で共有暗号化証明書と署名証明書のペアを選択するか、別の証明書を使用して、シールドシールドされた VM を構成して、シールドデータファイル内のガーディアン (暗号化/署名証明書ペア) の両方を承認することができます。
 
 次に、Hyper-v ホストを Windows Server バージョン1709または Windows Server 2019 にアップグレードし、次のコマンドを実行します。
 ```powershell
@@ -61,4 +61,4 @@ Set-HgsKeyProtectionConfiguration -AllowKeyMaterialCaching:$true
 ```
 
 キャッシュ可能なキープロテクターは各シールドされた VM に対して一意であるため、HGS でこの設定を有効にした後で、再起動せずに、シールドされた Vm を起動してキャッシュ可能なキー保護機能を取得する必要があります。
-シールドされた VM が古いバージョンの Windows Server を実行している Hyper-v ホストに移行する場合、または古いバージョンの HGS から新しいキー保護機能を取得する場合は、オフラインモードで起動することはできませんが、HGS へのアクセスが利用可能になったときにオンラインモードで実行を継続できます。でき.
+シールドされた VM が古いバージョンの Windows Server を実行している Hyper-v ホストに移行する場合、または古いバージョンの HGS から新しいキー保護機能を取得する場合は、オフラインモードで起動することはできませんが、HGS へのアクセスが可能な場合はオンラインモードで実行を継続できます。

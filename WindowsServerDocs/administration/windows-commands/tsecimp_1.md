@@ -1,28 +1,22 @@
 ---
 title: tsecimp
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: 拡張マークアップ言語 (XML) ファイルから TAPI サーバーセキュリティファイル (Tsec.ini) に割り当て情報をインポートする tsecimp のリファレンス記事です。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d7488ec6-0eff-45ff-89ee-9cbe752416bf
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1c596d6d24a611882c0ecf234c22c83a268ec53c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d221479e23c737529305a2354e6a5a52b957bd8e
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71363933"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931481"
 ---
 # <a name="tsecimp"></a>tsecimp
-
-
 
 拡張マークアップ言語 (XML) ファイルからの割り当て情報を TAPI サーバーセキュリティファイル (Tsec.ini) にインポートします。 また、このコマンドを使用して、TAPI プロバイダーと、それぞれに関連付けられている回線デバイスの一覧を表示したり、コンテンツをインポートせずに XML ファイルの構造を検証したり、ドメインのメンバーシップを確認したりすることもできます。
 
@@ -33,27 +27,27 @@ tsecimp /f <Filename> [{/v | /u}]
 tsecimp /d
 ```
 
-### <a name="parameters"></a>パラメーター
+#### <a name="parameters"></a>パラメーター
 
 |パラメーター|説明|
 |---------|-----------|
-|/f \<ファイル名 >|必須。 インポートする割り当て情報を含む XML ファイルの名前を指定します。|
-|/v|Tsec.ini ファイルに情報をインポートせずに、XML ファイルの構造を検証します。|
-|/u|各ユーザーが XML ファイルで指定されたドメインのメンバーであるかどうかを確認します。 このパラメーターを使用するコンピューターは、ネットワークに接続されている必要があります。 大量のユーザー割り当て情報を処理する場合、このパラメーターを使用するとパフォーマンスが大幅に低下する可能性があります。|
-|/d|インストールされているテレフォニープロバイダーの一覧を表示します。 テレフォニープロバイダーごとに、関連付けられた回線デバイスと、各回線デバイスに関連付けられているアドレスおよびユーザーが一覧表示されます。|
+|/f \<Filename>|必須です。 インポートする割り当て情報を含んだ XML ファイルの名前を指定します。|
+|/v|Tsec.ini ファイルに情報をインポートせず、XML ファイルの構造を検証します。|
+|/U|各ユーザーについて、XML ファイルで指定されたドメインのメンバーかどうかをチェックします。 このパラメーターは、ネットワークに接続されているコンピューター上で使用する必要があります。 大量のユーザー割り当て情報を処理する場合、このパラメーターを指定するとパフォーマンスが大幅に低下することがあります。|
+|/d|インストールされているテレフォニー プロバイダーの一覧を表示します。 テレフォニー プロバイダーごとに、関連付けられた回線デバイスと、各回線デバイスに関連付けられたアドレスおよびユーザーが表示されます。|
 |/?|コマンド プロンプトにヘルプを表示します。|
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>注釈
 
--   割り当て情報のインポート元となる XML ファイルは、以下で説明する構造に従う必要があります。  
+-   割り当て情報のインポート元となる XML ファイルは、次に説明する構造に従っている必要があります。
     -   **UserList**要素
 
         **UserList**は、XML ファイルの最上位の要素です。
     -   **User**要素
 
-        各**user**要素には、ドメインのメンバーであるユーザーに関する情報が含まれています。 各ユーザーには、1つまたは複数のラインデバイスが割り当てられている可能性があります。
+        各**user**要素には、ドメインのメンバーであるユーザーに関する情報が含まれています。 各ユーザーには 1 つ以上の回線デバイスが割り当てられることがあります。
 
-        さらに、各**ユーザー**要素には、 **nomerge**という名前の属性が含まれている場合があります。 この属性が指定されている場合、ユーザーに対する現在のラインデバイスの割り当てはすべて削除されてから、新しいものが作成されます。 この属性を使用すると、不要なユーザー割り当てを簡単に削除できます。 既定では、この属性は設定されていません。
+        さらに、各**ユーザー**要素には、 **nomerge**という名前の属性が含まれている場合があります。 この属性が指定されている場合、ユーザーに対する回線デバイスの現在の割り当ては、新しい割り当てが作成される前にすべて削除されます。 この属性を使用すると、無用なユーザー割り当てを簡単に削除できます。 既定では、この属性は指定されません。
 
         **User**要素には、ユーザーのドメインとユーザー名を指定する単一の**domainusername**要素が含まれている必要があります。 **User**要素には、ユーザーのフレンドリ名を指定する**FriendlyName**要素が1つ含まれている場合もあります。
 
@@ -63,24 +57,24 @@ tsecimp /d
         **Linelist**要素には、ユーザーに割り当てられる可能性のある各行またはデバイスに関する情報が含まれています。 各**Linelist**要素には、複数の**Line**要素を含めることができます。
     -   **Line**要素
 
-        各**line**要素は、ラインデバイスを指定します。 Line**要素の下**に**Address**要素または**PermanentID**要素を追加することによって、各ラインデバイスを識別する必要があります。
+        各**line**要素は、ラインデバイスを指定します。 **Line 要素の下**に**Address**要素または**PermanentID**要素を追加することによって、各ラインデバイスを識別する必要があります。
 
-        各**Line**要素に対して、 **Remove**属性を設定できます。 この属性を設定すると、その行デバイスはユーザーに割り当てられなくなります。 この属性が設定されていない場合、ユーザーはその回線デバイスにアクセスできます。 ユーザーが回線デバイスを使用できない場合、エラーは表示されません。
+        各**Line**要素に対して、 **Remove**属性を設定できます。 この属性を設定した場合、当該ユーザーはその回線デバイスに割り当てられなくなります。 設定しない場合、当該ユーザーはその回線デバイスにアクセスできます。 ユーザーが回線デバイスを使用できない場合、エラーは表示されません。
 
-## <a name="examples"></a>使用例
-- 次のサンプル XML コードセグメントでは、上で定義した要素の正しい使用方法を示しています。  
-  - 次のコードは、User1 に割り当てられているすべてのラインデバイスを削除します。  
+## <a name="examples"></a>例
+- 次に示す部分的な XML コードのサンプルは、上で定義した要素の正しい使用法を示しています。
+  - 次のコードは、User1 に割り当てられているすべてのラインデバイスを削除します。
     ```
     <UserList>
-      <User NoMerge="1">
+      <User NoMerge=1>
         <DomainUser>domain1\user1</DomainUser>
       </User>
     </UserList>
-    ```  
-  - 次のコードは、User1 に割り当てられたすべてのラインデバイスを削除してから、アドレス99999を使用して1行を割り当てます。 1つのラインデバイスが以前に割り当てられているかどうかに関係なく、User1 にはその他の回線デバイスは割り当てられません。  
+    ```
+  - 次のコードは、User1 に割り当てられたすべてのラインデバイスを削除してから、アドレス99999を使用して1行を割り当てます。 これ以外の回線デバイスが既に User1 に割り当てられていたとしても、以後 User1 に割り当てられるのはこの回線だけとなります。
     ```
     <UserList>
-      <User NoMerge="1">
+      <User NoMerge=1>
         <DomainUser>domain1\user1</DomainUser>
         <FriendlyName>User1</FriendlyName>
         <LineList>
@@ -90,8 +84,8 @@ tsecimp /d
         </LineList>
       </User>
     </UserList>
-    ```  
-  - 次のコードでは、以前に割り当てられた回線デバイスを削除せずに、User1 に1つのラインデバイスを追加します。  
+    ```
+  - 次のコードでは、既に User1 に割り当てられている回線デバイスを削除することなく、1 つの回線デバイスを追加します。
     ```
     <UserList>
       <User>
@@ -104,8 +98,8 @@ tsecimp /d
         </LineList>
       </User>
     </UserList>
-    ```  
-  - 次のコードでは、行アドレス99999を追加し、User1 アクセスから行アドレス88888を削除します。  
+    ```
+  - 次のコードでは、行アドレス99999を追加し、User1 アクセスから行アドレス88888を削除します。
     ```
     <UserList>
       <User>
@@ -115,14 +109,14 @@ tsecimp /d
           <Line>
             <Address>99999</Address>
           </Line>
-          <Line Remove="1">
+          <Line Remove=1>
             <Address>88888</Address>
           </Line>
         </LineList>
       </User>
     </UserList>
-    ```  
-  - 次のコードでは、永続的なデバイス1000を追加し、User1 アクセスから88888行目を削除します。  
+    ```
+  - 次のコードでは、永続的なデバイス1000を追加し、User1 アクセスから88888行目を削除します。
     ```
     <UserList>
       <User>
@@ -132,7 +126,7 @@ tsecimp /d
           <Line>
             <PermanentID>1000</PermanentID>
           </Line>
-          <Line Remove="1">
+          <Line Remove=1>
             <Address>88888</Address>
           </Line>
         </LineList>
@@ -140,26 +134,26 @@ tsecimp /d
     </UserList>
     ```
 
--   次のサンプル出力は、現在の TAPI 構成を表示するために **/d**コマンドラインオプションを指定した後に表示されます。 テレフォニープロバイダーごとに、関連付けられた回線デバイスと、各回線デバイスに関連付けられているアドレスおよびユーザーが一覧表示されます。  
+-   次のサンプル出力は、現在の TAPI 構成を表示するために **/d**コマンドラインオプションを指定した後に表示されます。 テレフォニー プロバイダーごとに、関連付けられた回線デバイスと、各回線デバイスに関連付けられたアドレスおよびユーザーが表示されます。
     ```
     NDIS Proxy TAPI Service Provider
-            Line: "WAN Miniport (L2TP)"
+            Line: WAN Miniport (L2TP)
                     Permanent ID: 12345678910
 
     NDIS Proxy TAPI Service Provider
-            Line: "LPT1DOMAIN1\User1"
+            Line: LPT1DOMAIN1\User1
                     Permanent ID: 12345678910
 
     Microsoft H.323 Telephony Service Provider
-            Line: "H323 Line"
+            Line: H323 Line
                     Permanent ID: 123456
                     Addresses:
                             BLDG1-TAPI32
 
     ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
 
-[コマンドシェルの概要](https://technet.microsoft.com/library/cc737438(v=ws.10).aspx)
+[コマンド シェルの概要](https://technet.microsoft.com/library/cc737438(v=ws.10).aspx)

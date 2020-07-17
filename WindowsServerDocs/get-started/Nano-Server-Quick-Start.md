@@ -2,28 +2,26 @@
 title: Nano Server のクイック スタート
 description: 物理マシンまたは仮想マシンに基本的な Nano Server を迅速に展開する手順
 ms.prod: windows-server
-ms.service: na
 manager: DonGill
 ms.technology: server-nano
 ms.date: 09/05/2017
-ms.tgt_pltfrm: na
 ms.topic: get-started-article
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 5de589d9da1c7d4fc9eb116e6ea1f6a326d1ad7c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7729b853f2e54c7f99d428fcb821a68d7a22aef0
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391720"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "80826815"
 ---
 # <a name="nano-server-quick-start"></a>Nano Server のクイック スタート
 
 >適用先:Windows Server 2016
 
 > [!IMPORTANT]
-> Windows Server バージョン 1709 以降、Nano Server は[コンテナー基本 OS イメージ](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image)としてのみ提供されます。 その意味については、「[Nano Server に加えられる変更](nano-in-semi-annual-channel.md)」をご覧ください。 
+> Windows Server バージョン 1709 以降では、Nano Server は[コンテナーの基本 OS イメージ](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image)としてのみ提供されます。 その意味については、[Nano Server に加えられる変更](nano-in-semi-annual-channel.md)に関する記事をご覧ください。 
 
 DHCP を使用して IP アドレスを取得する Nano Server の基本的な展開をすばやく開始するには、このセクションの手順に従います。 Nano Server VHD は、仮想マシンで実行するか、物理コンピューター上で起動することができます。それぞれで手順は若干異なります。
 

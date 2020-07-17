@@ -1,7 +1,6 @@
 ---
 ms.assetid: 7671e0c9-faf0-40de-808a-62f54645f891
 title: Windows Server 2016 での AD FS へのアップグレード
-description: ''
 author: billmath
 manager: femila
 ms.date: 04/09/2018
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 428e35524fbcfe5177b544e1c6cc6fa32ec32056
-ms.sourcegitcommit: 4a03f263952c993dfdf339dd3491c73719854aba
+ms.openlocfilehash: 9389d1565462572a5617856f0f2531580b069745
+ms.sourcegitcommit: 074b59341640a8ae0586d6b37df7ba256e03a0c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74791369"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81650073"
 ---
 # <a name="upgrading-to-ad-fs-in-windows-server-2016-using-a-wid-database"></a>WID データベースを使用した、Windows Server 2016 での AD FS へのアップグレード
 
@@ -34,7 +33,7 @@ Windows Server 2016 の AD FS では、ファームの動作レベル (FBL) が�
 | ------------- | ------------- | ------------- |
 | 2012 R2  | 1  | AdfsConfiguration |
 | 2016  | 3  | AdfsConfigurationV3 |
-| 2019  | ホーム フォルダーが置かれているコンピューターにアクセスできない  | AdfsConfigurationV4 |
+| 2019  | 4  | AdfsConfigurationV4 |
 
 > [!NOTE]
 > FBL をアップグレードすると、新しい AD FS 構成データベースが作成されます。  各 Windows Server AD FS バージョンおよび FBL 値の構成データベースの名前については、上記の表を参照してください。
@@ -57,17 +56,20 @@ Windows Server 2016 の AD FS では、ファームの動作レベル (FBL) が�
 > [!NOTE]
 > Windows Server 2019 FBL の AD FS に移行する前に、Windows Server 2016 または 2012 R2 のすべてのノードを削除する必要があります。 Windows Server 2016 または 2012 R2 OS を Windows Server 2019 にアップグレードするだけで、それが2019ノードになるようにすることはできません。 これを削除し、新しい2019ノードに置き換える必要があります。
 
+> [!NOTE]
+> AlwaysOnAvailability グループまたはマージレプリケーションが AD FS で構成されている場合は、アップグレードの前にすべての ADFS データベースのすべてのレプリケーションを削除し、すべてのノードがプライマリ SQL データベースをポイントするようにします。 これを実行した後、ドキュメントに従ってファームのアップグレードを実行します。 アップグレード後、AlwaysOnAvailability グループまたはマージレプリケーションを新しいデータベースに追加します。
+
 ##### <a name="to-upgrade-your-ad-fs-farm-to-windows-server-2019-farm-behavior-level"></a>AD FS ファームを Windows Server 2019 ファームの動作レベルにアップグレードするには
 
 1. サーバーマネージャーを使用して、Windows Server 2019 に Active Directory フェデレーションサービス (AD FS) の役割をインストールします。
 
 2. AD FS 構成ウィザードを使用して、新しい Windows Server 2019 サーバーを既存の AD FS ファームに参加させます。
 
-![アップグレード](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_1.png)
+![upgrade](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_1.png)
 
 3. Windows Server 2019 フェデレーションサーバーで、AD FS 管理を開きます。 このフェデレーションサーバーはプライマリサーバーではないため、管理機能を使用できないことに注意してください。
 
-![アップグレード](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_3.png)
+![upgrade](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_3.png)
 
 4. Windows Server 2019 サーバーで、管理者特権の PowerShell コマンドウィンドウを開き、次のコマンドレットを実行します。
 
@@ -75,7 +77,7 @@ Windows Server 2016 の AD FS では、ファームの動作レベル (FBL) が�
 Set-AdfsSyncProperties -Role PrimaryComputer
 ```
 
-![アップグレード](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_4.png)
+![upgrade](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_4.png)
 
 5. 以前にプライマリとして構成されていた AD FS サーバーで、管理者特権の PowerShell コマンドウィンドウを開き、次のコマンドレットを実行します。
 
@@ -83,24 +85,25 @@ Set-AdfsSyncProperties -Role PrimaryComputer
 Set-AdfsSyncProperties -Role SecondaryComputer -PrimaryComputerName {FQDN}
 ```
 
-![アップグレード](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_5.png)
+![upgrade](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_5.png)
 
 6. 次に、Windows Server 2016 フェデレーションサーバーで AD FS 管理を開きます。 プライマリロールがこのサーバーに転送されているため、すべての管理機能が表示されるようになりました。
 
-![アップグレード](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_6.png)
+![upgrade](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_6.png)
 
-7. AD FS 2012 R2 ファームを2016または2019にアップグレードする場合、ファームのアップグレードでは、AD スキーマが少なくともレベル85である必要があります。  スキーマをアップグレードするには、Windows Server 2016 のインストールメディアを使用してコマンドプロンプトを開き、support\adprep ディレクトリに移動します。 次のように実行します。 `adprep /forestprep`
+7. AD FS 2012 R2 ファームを2016または2019にアップグレードする場合、ファームのアップグレードでは、AD スキーマが少なくともレベル85である必要があります。  スキーマをアップグレードするには、Windows Server 2016 のインストールメディアを使用してコマンドプロンプトを開き、support\adprep ディレクトリに移動します。 次のコマンドを実行します: `adprep /forestprep`
 
-![アップグレード](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_7.png)
+![upgrade](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_7.png)
 
-実行が完了すると `adprep/domainprep`
+実行が完了したら`adprep/domainprep`
 
 > [!NOTE]
 > 次の手順を実行する前に、[設定] から Windows Update を実行して、Windows Server が最新であることを確認します。 更新の必要がなくなるまで、このプロセスを続けます。
 
-![アップグレード](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_8.png)
+![upgrade](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_8.png)
 
 8. Windows Server 2016 サーバーで PowerShell を開き、次のコマンドレットを実行します。
+
 
 > [!NOTE]
 > 次の手順を実行する前に、すべての 2012 R2 サーバーをファームから削除する必要があります。
@@ -109,19 +112,19 @@ Set-AdfsSyncProperties -Role SecondaryComputer -PrimaryComputerName {FQDN}
 Invoke-AdfsFarmBehaviorLevelRaise
 ```
 
-![アップグレード](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_9.png)
+![upgrade](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_9.png)
 
 9. プロンプトが表示されたら、「Y」と入力します。これにより、レベルの引き上げが開始されます。 これが完了すると、FBL が正常に発生しました。
 
-![アップグレード](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_10.png)
+![upgrade](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_10.png)
 
 10. ここで、[AD FS の管理] にアクセスすると、新しい機能が追加された AD FS バージョンが表示されます。
 
-![アップグレード](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_12.png)
+![upgrade](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_12.png)
 
-11. 同様に、PowerShell コマンドレット: `Get-AdfsFarmInformation` を使用して、現在の FBL を表示できます。
+11. 同様に、PowerShell コマンドレット`Get-AdfsFarmInformation`を使用して、現在の fbl を表示できます。
 
-![アップグレード](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_13.png)
+![upgrade](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_13.png)
 
 12. WAP サーバーを最新レベルにアップグレードするには、各 Web アプリケーションプロキシで、管理者特権のウィンドウで次の PowerShell コマンドレットを実行して、WAP を再構成します。
 
@@ -148,3 +151,16 @@ Set-WebApplicationProxyConfiguration -UpgradeConfigurationVersion
 ```
 
 これにより、WAP サーバーのアップグレードが完了します。
+
+
+> [!NOTE] 
+> ハイブリッド証明書信頼を使用する Windows Hello for Business が実行されている場合、AD FS 2019 には既知の PRT の問題が存在します。 ADFS 管理者イベント ログで、次のエラーが発生することがあります。Received invalid Oauth request. \(無効な Oauth 要求を受信しました。\) The client 'NAME' is forbidden to access the resource with scope 'ugs'. \(クライアント 'NAME' はスコープ 'ugs' のリソースにアクセスすることが許可されていません。\) このエラーを修復するには、次のようにします。 
+> 1. AD FS 管理コンソールを起動します。 [Services]\(サービス\) > [Scope Descriptions]\(スコープ記述\) を参照します
+> 2. [Scope Descriptions]\(スコープ記述\) を右クリックし、[Add Scope Description]\(スコープ記述の追加\) を選択します
+> 3. 名前に「ugs」と入力し、[適用] > [OK] をクリックします
+> 4. 管理者として PowerShell を起動します
+> 5. コマンド "Get-AdfsApplicationPermission" を実行します。 ClientRoleIdentifier を含む ScopeNames :{openid, aza} を探します。 ObjectIdentifier をメモしておきます。
+> 6. コマンド "Set-AdfsApplicationPermission -TargetIdentifier <手順 5 の ObjectIdentifier> -AddScope 'ugs' を実行します
+> 7. ADFS サービスを再起動します。
+> 8. クライアント側:クライアントを再起動します。 ユーザーは WHFB をプロビジョニングするように求められます。
+> 9. プロビジョニング ウィンドウがポップアップ表示されない場合は、NGC トレース ログを収集し、さらにトラブルシューティングを行う必要があります。

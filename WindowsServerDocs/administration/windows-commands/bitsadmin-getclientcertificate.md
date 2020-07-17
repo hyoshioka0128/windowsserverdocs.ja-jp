@@ -1,50 +1,47 @@
 ---
 title: bitsadmin getclientcertificate
-description: '**Bitsadmin getclientcertificate**の Windows コマンドトピックでは、ジョブからクライアント証明書を取得します。'
-ms.custom: na
+description: Bitsadmin getclientcertificate コマンドの参照記事で、ジョブからクライアント証明書を取得します。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4fc8f408-085e-43a0-9fa8-3d798ef107b1
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 613feafb442f63513d34e9038647c4dbeb278630
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5113214f106aea21b1b13f08cc08002237730daf
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71381721"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928512"
 ---
 # <a name="bitsadmin-getclientcertificate"></a>bitsadmin getclientcertificate
-
-
 
 ジョブからクライアント証明書を取得します。
 
 ## <a name="syntax"></a>構文
 
 ```
-bitsadmin /GetClientCertificate <Job>
+bitsadmin /getclientcertificate <job>
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
-|---------|-----------|
-|Job|ジョブの表示名または GUID|
+| パラメーター | 説明 |
+| -------------- | -------------- |
+| ジョブ (job) | ジョブの表示名または GUID。 |
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a>例
 
-次の例では、 *Mydownloadjob*という名前のジョブのクライアント証明書を取得します。
+*Mydownloadjob*という名前のジョブのクライアント証明書を取得するには、次のようにします。
+
 ```
-C:\>bitsadmin / GetClientCertificate myDownloadJob
+bitsadmin /getclientcertificate myDownloadJob
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [bitsadmin コマンド](bitsadmin.md)

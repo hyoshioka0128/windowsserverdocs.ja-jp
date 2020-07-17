@@ -1,28 +1,24 @@
 ---
 title: 更新プログラムの同期を設定する
 description: Windows Server Update Service (WSUS) のトピック-更新プログラムの同期をセットアップして構成する方法
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-wsus
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ddd5c395-451b-44a0-8e08-a05db26d2282
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4559016388f9b0d765c8e4d76f76fa7ef0a7f0f0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f4da028b2100d824b55c00c185f8b90df7d787bf
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361602"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828544"
 ---
 # <a name="setting-up-update-synchronizations"></a>更新プログラムの同期を設定する
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2019、Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 同期中には、WSUS サーバーは、更新ソースから更新プログラム (メタデータとファイルの更新) をダウンロードします。 一緒にダウンロード新しい製品の分類、カテゴリ、存在する場合。 WSUS サーバーを初めて同期すると、すべての同期オプションを構成したときに指定した更新プログラムがダウンロードされます。 初回同期後は、WSUS サーバーは、更新プログラムを更新ソースと既存の更新と期限切れのメタデータ内の変更履歴からの更新のみをダウンロードします。
 
@@ -77,7 +73,7 @@ Microsoft Update カタログサイトからの更新プログラムの同期の
 
     -   プロキシサーバーに接続しているユーザーの基本認証を有効にする場合は、 **[基本認証を許可する (クリアテキストでパスワードを送信する)]** チェックボックスをオンにします。
 
-3.  **[OK]** をクリックします。
+3.  **[OK]** をクリックすると、
 
     > [!NOTE]
     > WSUS を開始すると、すべてのネットワーク トラフィックが、ために、Microsoft update に直接接続されている WSUS サーバーで Windows ファイアウォールを構成する必要はありません。
@@ -89,7 +85,7 @@ WSUS サーバーが更新ソースと同期する方法をカスタマイズす
 
 -   同期のためのカスタム ポートを指定できます。 ポートを構成する方法の詳細については、次を参照してください。 [手順 3: WSUS を構成する](../deploy/2-configure-wsus.md) WSUS deployment guide の「します。
 
--   WSUS サーバー間での更新情報のセキュリティで保護された同期には、セキュリティで保護されたソケット レイヤー (SSL) を使用できます。 SSL の使用に関する詳細については、"3.5 のセクションを参照してください。 セキュリティで保護された WSUS に Secure Sockets Layer プロトコル"の [手順 3: WSUS を構成する](../deploy/2-configure-wsus.md) WSUS deployment guide の「します。
+-   WSUS サーバー間での更新情報のセキュリティで保護された同期には、セキュリティで保護されたソケット レイヤー (SSL) を使用できます。 SSL の使用方法の詳細については、セクション3.5 を参照してください。 Wsus の展開ガイドの[「手順 3: wsus を構成する](../deploy/2-configure-wsus.md)」の Secure Sockets Layer プロトコルを使用して wsus をセキュリティで保護します。
 
 ## <a name="synchronizing-manually-or-automatically"></a>手動または自動で同期します。
 WSUS サーバーを手動で同期するか、自動的に同期するには、その時刻を指定します。
@@ -110,7 +106,7 @@ WSUS サーバーを手動で同期するか、自動的に同期するには、
 
 4.  1**日の同期**については、毎日実行する同期の数を選択します。 たとえば、する場合は 4 つの同期を開始、毎日午前 3 時にの同期が午前 3 時まで、午前 9時 00分午後 3 時と午後 9時 00分 1 日です。 (ランダムな時間のオフセットが、スケジュールされた同期にかかる時間を間隔に、Microsoft Update サーバー接続するために追加されることに注意してください)。
 
-5.  **[OK]** をクリックします。
+5.  **[OK]** をクリックすると、
 
 #### <a name="to-synchronize-your-wsus-server-immediately"></a>WSUS サーバーをすぐに同期するには
 

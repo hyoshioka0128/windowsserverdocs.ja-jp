@@ -1,24 +1,23 @@
 ---
 title: 仮想ネットワークの使用状況測定の送信
 description: クラウドネットワーク収益化の基本的な側面は、ネットワーク帯域幅の送信です。 たとえば、Microsoft Azure ビジネスモデルでの送信データ転送。 送信データは、特定の請求サイクルで、インターネット経由で Azure データセンターから移動されるデータの合計量に基づいて課金されます。
-manager: dougkim
+manager: grcusanz
 ms.prod: windows-server
 ms.technology: networking-hv-switch
 ms.topic: get-started-article
-ms.assetid: ''
-ms.author: pashort
-author: shortpatti
+ms.author: anpaul
+author: AnirbanPaul
 ms.date: 10/02/2018
-ms.openlocfilehash: e68a3889867b75152ea941ac1d8eb113b9acd3cb
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a5d530d5cd1b42206bd6881ee902496713573793
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406010"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854435"
 ---
 # <a name="egress-metering-in-a-virtual-network"></a>仮想ネットワークの使用状況測定の送信
 
->適用対象:Windows Server 2019
+>適用対象: Windows Server 2019
 
 
 クラウドネットワーク収益化の基本的な側面は、ネットワーク帯域幅の使用量によって課金できるようになっています。 送信データは、特定の請求サイクルにおいて、インターネット経由でデータセンターから移動されるデータの総量に基づいて課金されます。
@@ -51,7 +50,7 @@ Windows Server 2019 の SDN ネットワークトラフィックの送信測定�
    ```
 
 
-## <a name="example-manage-the-unbilled-address-ranges-of-a-virtual-network"></a>例:仮想ネットワークの未請求のアドレス範囲を管理する
+## <a name="example-manage-the-unbilled-address-ranges-of-a-virtual-network"></a>例: 仮想ネットワークの未請求アドレス範囲を管理する
 
 仮想ネットワークの "非ユーザー設定" プロパティを設定することに**より、請求**された送信測定から除外する IP サブネットプレフィックスのセットを管理できます。  仮想ネットワーク上のネットワークインターフェイスによって送信された、プレフィックスのいずれかに一致する宛先 IP アドレスを持つトラフィックは、BilledEgressBytes プロパティに含まれません。
 

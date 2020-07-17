@@ -2,22 +2,18 @@
 title: エントリ ポイント追加のトラブルシューティング
 description: このトピックは、「Windows Server 2016 のマルチサイト展開に複数のリモートアクセスサーバーを展開する」の一部です。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: dcc1037f-1a65-4497-99e6-0df9aef748a8
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 7e93c972dbbe2971796c12cdeea27474723a80ac
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 9e8f67709e6059b879eab92fdd06609df90cb9a2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404462"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858305"
 ---
 # <a name="troubleshooting-adding-entry-points"></a>エントリ ポイント追加のトラブルシューティング
 

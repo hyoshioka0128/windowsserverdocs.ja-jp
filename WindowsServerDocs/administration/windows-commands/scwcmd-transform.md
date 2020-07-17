@@ -1,26 +1,22 @@
 ---
 title: Scwcmd 変換
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: 参照記事 * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 640dd892-0bb9-416d-8318-60a26605bcf4
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 36ee3a99828c7fdd9d4fc0ca14cbc0e203b01ea0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b70557b64a4cb68a0435bee9db033c893186dc0c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71384310"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932628"
 ---
-# <a name="scwcmd-transform"></a>Scwcmd: transform
+# <a name="scwcmd-transform"></a>Scwcmd: 変換
 
 > 適用対象: Windows Server 2012 R2、Windows Server 2012
 
@@ -31,7 +27,7 @@ ms.locfileid: "71384310"
 > [!IMPORTANT]
 > インターネット インフォメーション サービス (IIS) セキュリティ ポリシー設定は、グループ ポリシーを使用して展開できません。</br>> 承認されたアプリケーションを一覧表示するファイアウォールポリシーは、サーバーが最後に起動されたときに Windows ファイアウォールサービスが自動的に開始しない限り、サーバーに展開しないでください。
 
-このコマンドの使用方法の例については、次を参照してください。 [例](#BKMK_Examples)します。
+
 
 ## <a name="syntax"></a>構文
 
@@ -39,25 +35,25 @@ ms.locfileid: "71384310"
 scwcmd transform /p:<Policyfile.xml> /g:<GPODisplayName>
 ```
 
-### <a name="parameters"></a>パラメーター
+#### <a name="parameters"></a>パラメーター
 
 |パラメーター|説明|
 |---------|-----------|
-|/p:\<Policyfile .xml >|適用される .xml ポリシー ファイルのパスとファイル名を指定します。 このパラメーターを指定する必要があります。|
-|/g:\<GPODisplayName >|GPO の表示名を指定します。 このパラメーターを指定する必要があります。|
+|/p\<Policyfile.xml>|適用される .xml ポリシー ファイルのパスとファイル名を指定します。 このパラメーターを指定する必要があります。|
+|/g\<GPODisplayName>|GPO の表示名を指定します。 このパラメーターを指定する必要があります。|
 |/?|コマンド プロンプトにヘルプを表示します。|
 
 ## <a name="remarks"></a>注釈
 
 Scwcmd.exe は Windows Server 2008 R2、Windows Server 2008 または Windows Server 2003 を実行するコンピューターにできるだけです。
 
-## <a name="BKMK_Examples"></a>例
+## <a name="examples"></a>例
 
 FileServerPolicy.xml という名前のファイルから FileServerSecurity という名前の GPO を作成するには、次のように入力します。
 ```
 scwcmd transform /p:FileServerPolicy.xml /g:FileServerSecurity
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
--   [コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

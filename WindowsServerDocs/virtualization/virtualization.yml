@@ -1,0 +1,75 @@
+### YamlMime:Landing
+title: 仮想化のドキュメント
+summary: Windows Server の仮想化は、ソフトウェア定義インフラストラクチャを作成するために必要な基盤技術の 1 つです。 仮想化機能は、ネットワークやストレージとともに、お客様のワークロードの処理に必要な柔軟性を実現します。
+metadata:
+  title: 仮想化のドキュメント
+  description: Windows Server の仮想化は、ソフトウェア定義インフラストラクチャを作成するために必要な基盤技術の 1 つです。
+  ms.topic: landing-page
+  author: eross-msft
+  ms.author: lizross
+  ms.prod: windows-server
+  manager: brianlic
+  ms.technology: compute
+  ms.assetid: c248b41f-0de3-7136-9a25-b4b07e41ebf0
+  ms.localizationpriority: high
+  ms.openlocfilehash: 65230ad9d35239a86f5c213807c5f8eed9edfa68
+  ms.sourcegitcommit: 457e88e5aa6be13a2bffdb8e434a8efc3698678f
+  ms.translationtype: MT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 06/30/2020
+  ms.locfileid: "85549177"
+landingContent:
+- title: Windows コンテナー
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Windows コンテナー
+      url: /virtualization/windowscontainers
+    - text: ウィンドウコンテナーの概要
+      url: /virtualization/windowscontainers/about/
+    - text: コンテナーと仮想マシン
+      url: /virtualization/windowscontainers/about/containers-vs-vm
+- title: Windows 10 の Hyper-V
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Windows 10 の hyper-v の概要
+      url: /virtualization/hyper-v-on-windows
+    - text: Windows 10 の Hyper-v について
+      url: /virtualization/hyper-v-on-windows/about/
+  - linkListType: get-started
+    links:
+    - text: Hyper-V をインストールする
+      url: /virtualization/hyper-v-on-windows/quick-start/enable-hyper-v
+    - text: 仮想マシンを作成する
+      url: /virtualization/hyper-v-on-windows/quick-start/create-virtual-machine
+- title: Windows Server 上の Hyper-V
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Windows Server 上の Hyper-V
+      url: hyper-v/Hyper-V-on-Windows-Server.md
+    - text: HYPER-V テクノロジの概要
+      url: hyper-v/Hyper-V-Technology-Overview.md
+  - linkListType: reference
+    links:
+    - text: Microsoft Hyper-V Server 2016
+      url: /windows-server/virtualization/hyper-v/hyper-v-server-2016
+    - text: Windows Server 上の Hyper-v のシステム要件
+      url: hyper-v/System-requirements-for-Hyper-V-on-Windows.md
+- title: Hyper-V 仮想スイッチ
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Hyper-V 仮想スイッチ
+      url: hyper-v-virtual-switch/Hyper-V-Virtual-Switch.md
+  - linkListType: how-to-guide
+    links:
+    - text: Hyper-V 仮想スイッチを管理する
+      url: hyper-v-virtual-switch/Manage-Hyper-V-Virtual-Switch.md
+- title: 保護されたファブリックを使用して、Vm に安全な環境を提供する
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: 保護されたファブリックとシールドされた VM
+      url: ../security/guarded-fabric-shielded-vm/guarded-fabric-and-shielded-vms.md

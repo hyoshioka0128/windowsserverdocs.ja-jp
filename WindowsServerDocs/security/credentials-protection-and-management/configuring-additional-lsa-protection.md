@@ -1,24 +1,20 @@
 ---
 title: 追加の LSA の保護の構成
 description: Windows Server のセキュリティ
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-credential-protection
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 038e7c2b-c032-491f-8727-6f3f01116ef9
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 40e489089fc0c15c3e6ebf7b654377f4d6f7e482
-ms.sourcegitcommit: 3d76683718ec6f38613f552f518ebfc6a5db5401
+ms.openlocfilehash: 1c923cfe39892ba105c437cf73843c2f6d07e49b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74829631"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857075"
 ---
 # <a name="configuring-additional-lsa-protection"></a>追加の LSA の保護の構成
 
@@ -64,7 +60,7 @@ LSA の保護が有効になっている場合は、カスタム LSA プラグ�
 一般に、実行中の保護されたプロセスをデバッグする方法はサポートされていません。
 
 ## <a name="how-to-identify-lsa-plug-ins-and-drivers-that-fail-to-run-as-a-protected-process"></a>保護されたプロセスとして実行できない LSA プラグインおよびドライバーを識別する方法
-ここで説明するイベントは、アプリケーションとサービス ログ\Microsoft\Windows\CodeIntegrity の下にある Operational ログに記録されます。 これらは、署名が原因で読み込まれていない LSA プラグインおよびドライバーを識別するのに役立ちます。 これらのイベントを管理するには、 **wevtutil** コマンドライン ツールを使用してください。 このツールの詳細については、[Wevtutil に関するページ](../../administration/windows-commands/Wevtutil.md)を参照してください。
+ここで説明するイベントは、アプリケーションとサービス ログ\Microsoft\Windows\CodeIntegrity の下にある Operational ログに記録されます。 これらは、署名が原因で読み込まれていない LSA プラグインおよびドライバーを識別するのに役立ちます。 これらのイベントを管理するには、**wevtutil** コマンド ライン ツールを使用できます。 このツールの詳細については、[Wevtutil に関するページ](../../administration/windows-commands/Wevtutil.md)を参照してください。
 
 ### <a name="before-opting-in-how-to-identify-plug-ins-and-drivers-loaded-by-the-lsassexe"></a>オプトインの前に:lsass.exe によって読み込まれるプラグインとドライバーを識別する方法
 監査モードを使用して、LSA の保護モードで読み込むことができない LSA プラグインおよびドライバーを識別できます。 監査モードでは、システムによってイベント ログが生成され、LSA の保護が有効である場合に、LSA の下で読み込みに失敗するすべてのプラグインとドライバーを識別できます。 メッセージは、プラグインやドライバーをブロックすることなく、ログに記録されます。
@@ -112,14 +108,14 @@ LSA の保護が有効になっている場合は、カスタム LSA プラグ�
 
 9. **[値の種類]** ボックスで、 **[REG_DWORD]** クリックして選択します。
 
-10. **[値のデータ]** ボックスに「 **00000008**」と入力します。
+10. **[値のデータ]** ボックスに「**00000008**」と入力します。
 
-11. **[OK]** をクリックします。
+11. **[OK]** をクリックすると、
 
 > [!NOTE]
 > GPO を有効にするには、GPO の変更をドメイン内のすべてのドメイン コントローラーに対してレプリケートする必要があります。
 
-複数のコンピューターで追加の LSA の保護をオプトインするには、グループ ポリシーのレジストリに関するクライアント側拡張機能を使用して、HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa を変更します。 これを実行する手順については、このトピックの「 [資格情報に対する追加の LSA の保護を構成する方法](#BKMK_HowToConfigure) 」を参照してください。
+複数のコンピューターで追加の LSA の保護をオプトインするには、グループ ポリシーのレジストリに関するクライアント側拡張機能を使用して、HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa を変更します。 この方法に関する手順については、このトピックの「[資格情報に対する追加の LSA の保護を構成する方法](#BKMK_HowToConfigure)」を参照してください。
 
 ### <a name="after-opting-in-how-to-identify-plug-ins-and-drivers-loaded-by-the-lsassexe"></a>オプトインの後で:lsass.exe によって読み込まれるプラグインとドライバーを識別する方法
 イベント ログを使用して、LSA の保護モードで読み込むことができなかった LSA プラグインおよびドライバーを識別できます。 LSA の保護されたプロセスが有効である場合、LSA の下で読み込みに失敗したすべてのプラグインとドライバーを識別できます。
@@ -134,7 +130,7 @@ LSA の保護が有効になっている場合は、カスタム LSA プラグ�
 
 共有セクションは、通常、インスタンス データが同じセキュリティ コンテキストを使用するその他のプロセスを操作するためのプログラミング手法の結果です。 これによりセキュリティの脆弱性が高くなる場合があります。
 
-## <a name="BKMK_HowToConfigure"></a>資格情報の追加の LSA 保護を構成する方法
+## <a name="how-to-configure-additional-lsa-protection-of-credentials"></a><a name="BKMK_HowToConfigure"></a>資格情報の追加の LSA 保護を構成する方法
 Windows 8.1 を実行しているデバイスでは (セキュアブートまたは UEFI の有無にかかわらず)、このセクションで説明されている手順を実行して構成を行うことができます。 Windows RT 8.1 を実行しているデバイスの場合、lsass.exe の保護は常に有効になり、無効にすることはできません。
 
 ### <a name="on-x86-based-or-x64-based-devices-using-secure-boot-and-uefi-or-not"></a>x86 ベースまたは x64 ベースのデバイスでセキュア ブートや UEFI を使用するかどうか
@@ -174,7 +170,7 @@ UEFI またはセキュア ブートをサポートしていない x86 ベース
 
 10. **[値のデータ]** ボックスに「**00000001**」と入力します。
 
-11. **[OK]** をクリックします。
+11. **[OK]** をクリックすると、
 
 ##### <a name="to-disable-lsa-protection"></a>LSA の保護を無効にするには
 
@@ -196,7 +192,7 @@ Windows が起動したときに LSA が保護モードで起動されたかど�
 
 -   12: LSASS.exe がレベル 4 で保護されたプロセスとして起動されました
 
-## <a name="additional-resources"></a>その他の資料
+## <a name="additional-resources"></a>その他のリソース
 [資格情報の保護と管理](credentials-protection-and-management.md)
 
 [LSA のファイル署名サービス](https://go.microsoft.com/fwlink/?LinkId=392590)

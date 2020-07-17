@@ -1,51 +1,52 @@
 ---
-title: bitsadmin util とバージョン
-description: '**Bitsadmin util とバージョン**の Windows コマンドに関するトピックでは、BITS サービスのバージョンが表示されます。'
-ms.custom: na
+title: bitsadmin util および version
+description: BITS サービスのバージョンを表示する bitsadmin util と version コマンドのリファレンス記事です。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 98f17328-dfbd-4cbb-93c1-b8d424bc3f0a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 495ef17bbf6f39f20f6729b64de4b4bec0f9a3c2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9b0a1a6b6c866acafa8eaccd6ade170abd58bf01
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71380199"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927290"
 ---
-# <a name="bitsadmin-util-and-version"></a>bitsadmin util とバージョン
+# <a name="bitsadmin-util-and-version"></a>bitsadmin util および version
 
 BITS サービスのバージョン (2.0 など) を表示します。
 
-**BITSAdmin 1.5 以前**: サポートされていません。
+> [!NOTE]
+> このコマンドは、BITS 1.5 以前ではサポートされていません。
 
 ## <a name="syntax"></a>構文
 
 ```
-bitsadmin /Util /Version [/Verbose]
+bitsadmin /util /version [/verbose]
 ```
 
-## <a name="remarks"></a>コメント
+### <a name="parameters"></a>パラメーター
 
-**Verbose**スイッチは次の処理を実行します。
--   各 BITS 関連の DLL のファイルバージョンを表示します。
--   BITS サービスを開始できることを確認します。
--   ビットグループポリシー値を表示します (Windows Vista のみ)
+| パラメーター | 説明 |
+| --------- | ----------- |
+| /verbose | このスイッチを使用して、BITS 関連の各 DLL のファイルバージョンを表示し、BITS サービスを開始できるかどうかを確認します。|
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a>例
 
-次の例では、BITS サービスのバージョンを示しています。
+BITS サービスのバージョンを表示します。
+
 ```
-C:\>bitsadmin /Util /Version
+bitsadmin /util /version
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [bitsadmin util コマンド](bitsadmin-util.md)
+
+- [bitsadmin コマンド](bitsadmin.md)

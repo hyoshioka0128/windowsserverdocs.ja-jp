@@ -2,22 +2,18 @@
 title: DirectAccess
 description: このトピックでは、Windows Server 2016 の DirectAccess の簡単な概要について説明します。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 6b71d18e-1939-4fc0-bb42-29e0e5ffc8da
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 4cc5ed275a6dc3cd235aa0ff1bfb0f0f46350a2b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: facd4fc6821d8f1dc927e1247aa3e2537e027f2f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394511"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857465"
 ---
 # <a name="directaccess"></a>DirectAccess
 

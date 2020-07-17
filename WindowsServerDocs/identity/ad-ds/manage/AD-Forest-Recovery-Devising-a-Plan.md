@@ -1,6 +1,5 @@
 ---
 title: AD フォレストの回復-AD フォレストの復旧計画の策定
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,16 +8,16 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: 17381f30-55f2-4e00-977a-b701675fa4ff
 ms.technology: identity-adds
-ms.openlocfilehash: 0ef0fbc19f1b3ba5a46fe09f66da6721f2e84712
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ebdff0616d0e3a99b710e07e3bff149a275ff4ea
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369147"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80824026"
 ---
 # <a name="ad-forest-recovery---devising-an-ad-forest-recovery-plan"></a>AD フォレストの回復-AD フォレストの復旧計画の策定
 
->適用先:Windows Server 2016、Windows Server 2012、および 2012 R2、Windows Server 2008 および 2008 R2
+>適用対象: Windows Server 2016、Windows Server 2012、および 2012 R2、Windows Server 2008 および 2008 R2
 
 環境やビジネス要件によっては、このガイドで説明されているすべての手順を実行して、フォレストの回復を正常に実行する必要がある場合があります。 このガイドは、フォレストの復旧のためのテンプレートとしてのみ機能するので、環境に適したカスタムフォレストの復旧計画を作成し、ビジネスのニーズを満たすことが重要です。  
   

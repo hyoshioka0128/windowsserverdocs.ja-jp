@@ -2,24 +2,22 @@
 title: Windows Server での Hyper-v ネットワークの計画
 description: Hyper-v の基本的なネットワークに必要なものについて説明し、手順へのリンクを示します。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
-author: KBDAzure
+author: kbdazure
 ms.author: kathydav
 ms.date: 10/04/2016
-ms.openlocfilehash: f09bc82d0dd47d3393dd05dcf03913db11e4c335
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3127c9579493ad8b317667b61de88304fd14f6cf
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71392506"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860765"
 ---
 # <a name="plan-for-hyper-v-networking-in-windows-server"></a>Windows Server での Hyper-v ネットワークの計画
 
->適用先:Microsoft Hyper-V Server 2016、Windows Server 2016、Microsoft Hyper-V Server 2019、Windows Server 2019
+>適用対象: Microsoft Hyper-V Server 2016、Windows Server 2016、Microsoft Hyper-V Server 2019、Windows Server 2019
   
 Hyper-v でのネットワークについての基本的な理解は、仮想マシンのネットワークを計画するのに役立ちます。 この記事では、ライブマイグレーションを使用する場合や、他のサーバーの機能や役割で Hyper-v を使用する場合のネットワークの考慮事項についても説明します。  
   

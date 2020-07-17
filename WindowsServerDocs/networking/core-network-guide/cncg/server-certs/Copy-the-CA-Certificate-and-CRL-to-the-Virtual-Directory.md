@@ -6,19 +6,19 @@ ms.topic: article
 ms.assetid: a1b5fa23-9cb1-4c32-916f-2d75f48b42c7
 ms.prod: windows-server
 ms.technology: networking
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 07/19/2018
-ms.openlocfilehash: 335efc4fae1f12f2af8443e91c67ff6ba936edb0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 275bec5c950ea20c3a7d5a933648cf7e068164d1
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356212"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318352"
 ---
 # <a name="copy-the-ca-certificate-and-crl-to-the-virtual-directory"></a>CA 証明書と CRL を仮想ディレクトリにコピーする
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 証明書失効リストとエンタープライズルート CA 証明書を証明機関から Web サーバー上の仮想ディレクトリにコピーし、AD CS が正しく構成されていることを確認するには、次の手順に従います。 以下のコマンドを実行する前に、ディレクトリとサーバーの名前を、実際の展開に適した名前に置き換えてください。  
   
@@ -48,7 +48,7 @@ ms.locfileid: "71356212"
 > [!TIP]  
 > 項目の**状態**が **[OK]** になっていない場合は、次の手順を実行します。  
 > -   Web サーバーで共有を開き、証明書と証明書失効リストファイルが正常に共有にコピーされたことを確認します。 共有に正常にコピーされなかった場合は、正しいファイルソースと共有先を使用してコピーコマンドを変更し、コマンドを再度実行します。  
-> -   [CA 拡張] タブで、CDP と AIA の正しい場所を入力したことを確認します。指定した場所に余分なスペースやその他の文字がないことを確認します。  
+> -   [CA 拡張] タブで CDP と AIA の正しい場所を入力したことを確認します。指定した場所に余分なスペースやその他の文字がないことを確認してください。  
 > -   CRL と CA 証明書を Web サーバー上の正しい場所にコピーしたこと、および場所が CA 上の CDP と AIA の場所に指定した場所と一致していることを確認します。  
 > -   CA 証明書と CRL が保存されている仮想フォルダーのアクセス許可が正しく構成されていることを確認します。  
   

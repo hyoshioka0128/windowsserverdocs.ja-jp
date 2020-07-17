@@ -8,12 +8,12 @@ author: lizap
 ms.author: elizapo
 ms.localizationpriority: medium
 ms.date: 12/18/2018
-ms.openlocfilehash: bcc4bf7b3fbdbff1aed2c8dd07b90346fe9eebab
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 577014f6fd7e3a3eb58567b1a644d44360f9e498
+ms.sourcegitcommit: 51e0b575ef43cd16b2dab2db31c1d416e66eebe8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383433"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76259054"
 ---
 # <a name="administer-a-server-core-server"></a>Server Core サーバーの管理
 
@@ -124,12 +124,12 @@ Windows PowerShell のリモート処理を有効にすることができます�
 |         ワーク グループ内のコンピューターの名前を変更する         |                                                                                                                                                                **netdom renamecomputer \<currentcomputername\>/NewName:\<newcomputername\>** <br>コンピューターを再起動します。                                                                                                                                                                 |
 |                ページング ファイルの管理を無効にする                 |                                                                                                                                                                        **名前が "\<computername\>" に設定している wmic コンピューター名 = False**                                                                                                                                                                         |
 |                   ページング ファイルを構成する                   |                                                            **wmic pagefileset where name = "\<path/filename\>" set =\<InitialSize\>, MaximumSize =\<maxsize\>** <br>*Path/filename*はページングファイルのパスと名前、 *initialsize*はページングファイルの開始サイズ (バイト単位)、 *maxsize*はページファイルの最大サイズ (バイト単位) です。                                                             |
-|                 静的 IP アドレスに変更する                 | **ipconfig/all** <br>関連する情報を記録するか、テキストファイル (**ipconfig/all > ipconfig**) にリダイレクトします。<br>**netsh interface ipv4 show インターフェイス**<br>インターフェイスリストがあることを確認します。<br>**netsh interface ipv4 set address name \<ID from interface list\> source = 静的アドレス =\<優先 IP アドレス\> gateway =\<gateway アドレス\>**<br>**Ipconfig/all**を実行して、DHCP Enabled が**No**に設定されていることを確認します。 |
+|                 静的 IP アドレスに変更する                 | **ipconfig/all** <br>関連する情報を記録するか、テキストファイル (**ipconfig/all > ipconfig**) にリダイレクトします。<br>**netsh interface ipv4 show インターフェイス**<br>インターフェイスリストがあることを確認します。<br>**netsh インターフェイス ipv4 set address \<インターフェイスリストからの名前 ID\> ソース = 静的アドレス =\<優先 IP アドレス\> gateway =\<ゲートウェイアドレス\>**<br>**Ipconfig/all**を実行して、DHCP Enabled が**No**に設定されていることを確認します。 |
 |                   静的 DNS アドレスを設定します。                   |   <strong>netsh interface ipv4 add dnsserver name =\<名前またはネットワークインターフェイスカードの ID\> アドレス\<= プライマリ DNS サーバーの IP アドレス\> index = 1 <br></strong>netsh interface ipv4 add dnsserver name =\<セカンダリ DNS サーバーの\> アドレス = セカンダリ DNS サーバーの\<IP アドレス\> インデックス = 2\*\* <br> 必要に応じて、サーバーを追加します。<br>**Ipconfig/all**を実行して、アドレスが正しいことを確認します。   |
 | 静的 IP アドレスから DHCP によって提供された IP アドレスに変更する |                                                                                                                                      **netsh interface ipv4 set address name =\<ローカルシステム\> ソース = DHCP の IP アドレス** <br>**Ipconfig/all**を実行して、DCHP Enabled が**Yes**に設定されていることを確認します。                                                                                                                                      |
 |                      プロダクト キーを入力する                      |                                                                                                                                                                                                   **slmgr.vbs – ipk \<プロダクトキー\>**                                                                                                                                                                                                    |
 |                  サーバーをローカルにライセンス認証する                  |                                                                                                                                                                                                           **slmgr.vbs-ato**                                                                                                                                                                                                            |
-|                 サーバーをリモートからライセンス認証する                  |                                            **cscript slmgr.vbs – ipk \<プロダクトキー\>\<サーバー名\>\<ユーザー名\>パスワード \<** \> <br>**cscript slmgr.vbs-ato \<servername\> \<ユーザー名\> \<パスワード\>** <br>**Cscript slmgr.vbs**を実行してコンピューターの GUID を取得する <br> **Cscript slmgr.vbs-dli \<GUID\>を実行します。** <br>ライセンスステータスが "ライセンス済み **(アクティブ化済み)** " に設定されていることを確認します。                                             |
+|                 サーバーをリモートからライセンス認証する                  |                                            **cscript slmgr.vbs – ipk \<プロダクトキー\>\<サーバー名\>\<ユーザー名\>パスワード \<** <br>**cscript slmgr.vbs-ato \<servername\> \<ユーザー名\> \<パスワード\>** <br>**Cscript slmgr.vbs**を実行してコンピューターの GUID を取得する <br> **Cscript slmgr.vbs-dli \<GUID\>を実行します。** <br>ライセンスステータスが "ライセンス済み **(アクティブ化済み)** " に設定されていることを確認します。                                             |
 
 ### <a name="networking-and-firewall"></a>ネットワークとファイアウォール
 
@@ -140,7 +140,7 @@ Windows PowerShell のリモート処理を有効にすることができます�
 |IPSEC 構成を表示または変更する|**netsh ipsec**| 
 |NAP 構成を表示または変更する|**netsh nap**| 
 |IP から物理アドレスへの変換を表示または変更する|**arp**| 
-|ローカルルーティングテーブルを表示または構成する|**回送**| 
+|ローカルルーティングテーブルを表示または構成する|**route**| 
 |DNS サーバーの設定を表示または構成する|**nslookup**| 
 |プロトコル統計と現在の TCP/IP ネットワーク接続を表示する|**netstat**| 
 |NetBIOS over TCP/IP (NBT) を使用してプロトコル統計と現在の TCP/IP 接続を表示する|**nbtstat**| 

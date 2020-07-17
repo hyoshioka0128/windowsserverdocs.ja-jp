@@ -2,26 +2,22 @@
 title: リモート アクセス クラスター展開を計画する
 description: このトピックは、「Windows Server 2016 のクラスターにリモートアクセスを展開する」の一部です。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 88ffd598-2fde-402c-bd12-be790f84dc96
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 764fd6d272a498898bbdb1f1da68e0d41c39cf84
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 9a3bf30f6de6472fdd67748a3a387eaa2068d5c4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404613"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855255"
 ---
 # <a name="plan-a-remote-access-cluster-deployment"></a>リモート アクセス クラスター展開を計画する
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
  Windows Server 2016 および Windows Server 2012 は、DirectAccess とリモートアクセスサービス (RAS) VPN を1つのリモートアクセスの役割に結合します。 この概要では、Windows Server 2016 または Windows Server 2012 リモートアクセスサーバーのクラスターを展開するために必要な計画手順について説明します。
   
@@ -31,7 +27,7 @@ ms.locfileid: "71404613"
   
 -   [手順 3: 負荷分散されたクラスターの展開を計画](Step-3-Plan-a-Load-Balanced-Cluster-Deployment.md)します。  
   
--   手順 4:リモートアクセスの高度な展開の計画に関する決定事項を記録します。 このレコードは、展開の手順の完了にかかわる全員がジョブエイドとして使用できます。  
+-   手順 4: リモートアクセスの高度な展開の計画に関する決定事項を記録します。 このレコードは、展開の手順の完了にかかわる全員がジョブエイドとして使用できます。  
   
 これらの計画手順を完了したら、「[リモートアクセスクラスターを構成](../configure/Configure-a-Remote-Access-Cluster.md)する」を参照してください。 
 

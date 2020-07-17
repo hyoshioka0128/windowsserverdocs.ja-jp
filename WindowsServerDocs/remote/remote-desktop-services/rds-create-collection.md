@@ -1,28 +1,24 @@
 ---
 title: リモート デスクトップ サービス コレクションを作成する
 description: RDS の展開に、RDSH および RemoteApp プログラムを追加する方法について説明します。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 10/22/2019
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ae9767e3-864a-4eb2-96c0-626759ce6d60
 author: lizap
 manager: dongill
-ms.openlocfilehash: 92af2b4e9fb174f1aa815256148ee8d5c7c7181a
-ms.sourcegitcommit: 3262c5c7cece9f2adf2b56f06b7ead38754a451c
+ms.openlocfilehash: 6a842c7984dc63fe40c05300f6cfbb6718846525
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72812249"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "80852955"
 ---
 # <a name="create-a-remote-desktop-services-collection-for-desktops-and-apps-to-run"></a>デスクトップとアプリを実行するためのリモート デスクトップ サービス コレクションを作成する
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016
+>適用先:Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016
 
 次の手順を使用して、リモート デスクトップ サービス セッションのコレクションを作成します。 セッション コレクションには、ユーザー向けに利用可能にするアプリとデスクトップを保持します。 コレクションを作成した後は、ユーザーがアクセスできるように公開します。
 

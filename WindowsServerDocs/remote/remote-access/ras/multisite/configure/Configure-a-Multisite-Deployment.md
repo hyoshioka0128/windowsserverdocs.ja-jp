@@ -2,22 +2,18 @@
 title: マルチサイト展開を構成する
 description: このトピックは、「Windows Server 2016 のマルチサイト展開に複数のリモートアクセスサーバーを展開する」の一部です。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: cb84920e-7cf5-4266-b071-d09e3d5e1f10
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 25c0ce5d62268f64113ebc39345b2d50867bebf7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 2c2d044c02673d74d7aa8ec076aeac7e2f1aebdb
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367125"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858385"
 ---
 # <a name="configure-a-multisite-deployment"></a>マルチサイト展開を構成する
 

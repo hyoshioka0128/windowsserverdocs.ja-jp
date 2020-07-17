@@ -1,23 +1,23 @@
 ---
 title: 追加の HGS ノードを構成する
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: 227f723b-acb2-42a7-bbe3-44e82f930e35
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
-ms.date: 10/22/2018
-ms.openlocfilehash: 5277a97f7f58d9d7edb1457cb363cb6ddf1d8b59
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.date: 01/14/2020
+ms.openlocfilehash: d131643db4dfb179f5bdb8bcbad9f003d1ae61e1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403697"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856895"
 ---
 # <a name="configure-additional-hgs-nodes"></a>追加の HGS ノードを構成する
 
->適用対象:Windows Server 2019、Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: windows server 2019、Windows Server (半期チャネル)、Windows Server 2016
 
 運用環境では、hgs ノードがダウンした場合でも、シールドされた Vm の電源をオンにできるように、高可用性クラスターで HGS を設定する必要があります。 テスト環境では、セカンダリ HGS ノードは必要ありません。
 
@@ -116,7 +116,7 @@ ms.locfileid: "71403697"
 SSL 証明書を使用して HGS エンドポイントをセキュリティで保護する場合は、このノード、および HGS クラスター内の他のすべてのノードで SSL 証明書を構成する必要があります。
 SSL 証明書は HGS によってレプリケートさ*れず*、すべてのノードに同じキーを使用する必要はありません (つまり、ノードごとに異なる ssl 証明書を持つことができます)。
 
-SSL 証明書を要求するときは、クラスターの完全修飾ドメイン名 (の`Get-HgsServer`出力に示されているとおり) が、証明書のサブジェクト共通名であるか、サブジェクト代替 DNS 名として含まれていることを確認します。
+SSL 証明書を要求するときは、クラスターの完全修飾ドメイン名 (`Get-HgsServer`の出力に示されているとおり) が、証明書のサブジェクトの共通名であるか、サブジェクト代替 DNS 名として含まれていることを確認します。
 証明機関から証明書を取得したら、 [HgsServer](https://technet.microsoft.com/itpro/powershell/windows/hgsserver/set-hgsserver)で使用するように HGS を構成できます。
 
 ```powershell
@@ -141,16 +141,8 @@ HGS ノードを使用停止にするには:
 
    これにより、クラスターからノードが削除され、構成証明とキー保護サービスがアンインストールされます。 
    クラスター内の最後のノードの場合は、-Force を使用して、Active Directory で最後のノードを削除してクラスターを破棄する必要があることを示す必要があります。 
-   
+
    HGS が要塞フォレスト (既定) に展開されている場合、これは唯一の手順です。 
    必要に応じて、ドメインからコンピューターの参加を解除し、Active Directory から gMSA アカウントを削除できます。
 
-1. HGS によって独自のドメインが作成された場合は、 [hgs をアンインストール](guarded-fabric-manage-hgs.md#clearing-the-hgs-configuration)してドメインを切断し、ドメインコントローラーを降格する必要もあります。
-
-
-
-## <a name="next-step"></a>次の手順
-
-> [!div class="nextstepaction"]
-> [HGS の構成を検証する](guarded-fabric-verify-hgs-configuration.md)
-
+2. HGS によって独自のドメインが作成された場合は、 [hgs をアンインストール](guarded-fabric-manage-hgs.md#clearing-the-hgs-configuration)してドメインを切断し、ドメインコントローラーを降格する必要もあります。

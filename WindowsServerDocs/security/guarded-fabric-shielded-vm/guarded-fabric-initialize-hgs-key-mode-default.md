@@ -1,22 +1,22 @@
 ---
 title: 新しい専用フォレストでキーモードを使用して HGS クラスターを初期化する (既定)
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: b8c5c090f97ee02a8c9e5bc6041eacb01c1fa4cf
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: feae5230eec6b3f3c0471f75199970a47016a583
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402403"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856665"
 ---
 # <a name="initialize-the-hgs-cluster-using-key-mode-in-a-new-dedicated-forest-default"></a>新しい専用フォレストでキーモードを使用して HGS クラスターを初期化する (既定)
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016
 
 
 1.  [!INCLUDE [Initialize HGS](../../../includes/guarded-fabric-initialize-hgs-default-step-one.md)] 
@@ -33,7 +33,7 @@ ms.locfileid: "71402403"
         Initialize-HgsServer -HgsServiceName 'MyHgsDNN' -SigningCertificatePath '.\signCert.pfx' -SigningCertificatePassword $signingCertPass -EncryptionCertificatePath '.\encCert.pfx' -EncryptionCertificatePassword $encryptionCertPass -TrustHostkey
         ```
 
-    -   ローカル証明書ストアにインストールされているエクスポートできない証明書を使用している場合は、次のコマンドを実行します。 証明書の拇印がわからない場合は、`Get-ChildItem Cert:\LocalMachine\My` を実行すると、使用可能な証明書を一覧表示できます。
+    -   ローカル証明書ストアにインストールされているエクスポートできない証明書を使用している場合は、次のコマンドを実行します。 証明書の拇印がわからない場合は、`Get-ChildItem Cert:\LocalMachine\My`を実行して、使用可能な証明書を一覧表示できます。
 
         ```powershell
         Initialize-HgsServer -HgsServiceName 'MyHgsDNN' -SigningCertificateThumbprint '1A2B3C4D5E6F...' -EncryptionCertificateThumbprint '0F9E8D7C6B5A...' --TrustHostKey

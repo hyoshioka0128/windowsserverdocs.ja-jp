@@ -8,25 +8,25 @@ ms.author: jol
 ms.date: 06/18/2018
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 16e758f0a8746d41adcdafb2bc1be2d91a3fc29c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b7f015ac4c9906447069501bf0922b36306a51d7
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406802"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950495"
 ---
 # <a name="manage-failover-clusters-with-windows-admin-center"></a>Windows 管理センターを使用してフェールオーバークラスターを管理する
 
->適用先:Windows Admin Center、Windows Admin Center Preview
+>適用対象: Windows Admin Center、Windows Admin Center Preview
 
 > [!Tip]
 > Windows Admin Center を初めて使用する場合
-> [Windows Admin Center についての詳細を確認する](../understand/windows-admin-center.md)か、[今すぐダウンロード](https://aka.ms/windowsadmincenter)してください。
+> [Windows 管理センターの詳細については、](../overview.md)こちらを参照してください。
 
 ## <a name="managing-failover-clusters"></a>フェールオーバークラスターの管理
-[フェールオーバークラスタリング](https://docs.microsoft.com/windows-server/failover-clustering/failover-clustering-overview)は、複数のサーバーを1つのフォールトトレラントクラスターにグループ化して、スケールアウトファイルサーバー、hyper-v、およびなどのアプリケーションとサービスの可用性とスケーラビリティを向上させることができる Windows Server の機能です。Microsoft SQL Server。
+[フェールオーバークラスタリング](https://docs.microsoft.com/windows-server/failover-clustering/failover-clustering-overview)は、複数のサーバーを1つのフォールトトレラントクラスターにグループ化して、スケールアウトファイルサーバー、hyper-v、Microsoft SQL Server などのアプリケーションとサービスの可用性とスケーラビリティを向上させることができる Windows Server の機能です。
 
-フェールオーバークラスターノードは、Windows 管理センターで[サーバー接続](manage-servers.md)として追加することで、個々のサーバーとして管理できますが、フェールオーバークラスターとして追加して、クラスターリソース、記憶域、ネットワーク、ノード、役割、仮想を表示および管理することもできます。マシンと仮想スイッチ。
+フェールオーバークラスターノードは、Windows 管理センターで[サーバー接続](manage-servers.md)として追加することで、個々のサーバーとして管理できますが、フェールオーバークラスターとして追加して、クラスターリソース、記憶域、ネットワーク、ノード、役割、仮想マシン、仮想スイッチを表示および管理することもできます。
 
 ![フェールオーバークラスターの概要画面](../media/manage-failover-clusters/fcm-overview.png)
 
@@ -54,8 +54,8 @@ Windows 管理センターにクラスターを追加するには:
 | ディスク | クラスターの共有ディスクとボリュームを表示する |
 | ネットワーク | クラスター内のネットワークを表示する |
 | ノード | クラスターノードの表示と管理 |
-| ロール | クラスターの役割を管理するか、空の役割を作成する |
-| 更新プログラム | クラスター対応更新の管理 ( [CredSSP](../understand/faq.md#does-windows-admin-center-use-credssp)が必要) |
+| 役割 | クラスターの役割を管理するか、空の役割を作成する |
+| 更新 | クラスター対応更新の管理 ( [CredSSP](../understand/faq.md#does-windows-admin-center-use-credssp)が必要) |
 | [仮想マシン](manage-virtual-machines.md) | バーチャルマシンの表示と管理 |
 | 仮想スイッチ | 仮想スイッチの表示と管理 |
 

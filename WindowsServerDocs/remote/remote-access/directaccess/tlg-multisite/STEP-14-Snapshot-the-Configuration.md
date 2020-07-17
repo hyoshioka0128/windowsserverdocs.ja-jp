@@ -2,26 +2,22 @@
 title: 手順 14. 構成のスナップショットを設定する
 description: このトピックは、「Windows Server 2016 用の DirectAccess マルチサイト展開のテストラボガイド」の一部です。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8e17d886-f216-400e-bd31-808aceb88033
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: c1d8ddf2949c2b859ac0d734149eddd88874998a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 63d053cd4e573f2174164bc5666db6dbc2dc18a7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388327"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861615"
 ---
 # <a name="step-14-snapshot-the-configuration"></a>手順 14. 構成のスナップショットを設定する
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 これで、DirectAccess マルチサイトのテストラボが完成します。 この構成を保存して、その他の DirectAccess モジュールテストラボガイド、テストラボガイド拡張機能、または独自の実験と学習のために、作業中の DirectAccess マルチサイト構成にすばやく戻ることができるようにするには、次の操作を行います。:  
   

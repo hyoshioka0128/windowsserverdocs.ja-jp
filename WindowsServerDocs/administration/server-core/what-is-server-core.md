@@ -7,25 +7,27 @@ ms.sitesec: library
 author: lizap
 ms.localizationpriority: medium
 ms.date: 02/20/2018
-ms.openlocfilehash: 269be253367ba2bc692a5903e7d519a40f487d8b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 17bca691fef0ed9478c8ddb49e0511b0a16ac7b7
+ms.sourcegitcommit: 75e87fef264e30af3dfeb57923d5d82b0c51de5d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383340"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85279617"
 ---
 # <a name="what-is-the-server-core-installation-option-in-windows-server"></a>Windows Server の Server Core インストールオプションとは
 
-> 適用対象:Windows Server 2019、Windows Server 2016、および Windows Server (半期チャネル)
+> 適用対象: Windows Server 2019、Windows Server 2016、および Windows Server (半期チャネル)
 
-Server Core オプションは、Windows Server の Standard edition または Datacenter edition を展開するときに使用できる最小インストールオプションです。 Server Core には、ほとんどのサーバーの役割は含まれません。 Server Core ではディスクフットプリントが小さくなるため、コードベースが小さくなるため、攻撃対象領域が小さくなります。 
+Server Core オプションは、Windows Server の Standard edition または Datacenter edition を展開するときに使用できる最小インストールオプションです。 Server Core には、ほとんどのサーバーの役割は含まれません。 Server Core ではディスクフットプリントが小さくなるため、コードベースが小さくなるため、攻撃対象領域が小さくなります。
 
-## <a name="server-core-vs-server-with-desktop-experience"></a>サーバー (コア) vs Server とデスクトップエクスペリエンス 
-Windows Server をインストールすると、選択したサーバーの役割のみがインストールされます。これにより、Windows Server の全体的なフットプリントが軽減されます。 ただし、[デスクトップエクスペリエンス搭載サーバー] インストールオプションでは、特定の使用シナリオに必要ではない多くのサービスやその他のコンポーネントもインストールされます。 
+## <a name="server-core-vs-server-with-desktop-experience"></a>サーバー (コア) vs Server とデスクトップエクスペリエンス
 
-ここでは、server core のインストールによって、一般的に使用されるサーバーの役割をサポートするうえで重要ではないサービスやその他の機能を排除します。 たとえば、hyper-v サーバーはグラフィカルユーザーインターフェイス (GUI) を必要としません。これは、Windows PowerShell を使用してコマンドラインから、または Hyper-v マネージャーを使用してリモートで Hyper-v のほぼすべての側面を管理できるためです。 
+Windows Server をインストールすると、選択したサーバーの役割のみがインストールされます。これにより、Windows Server の全体的なフットプリントが軽減されます。 ただし、[デスクトップエクスペリエンス搭載サーバー] インストールオプションでは、特定の使用シナリオに必要ではない多くのサービスやその他のコンポーネントもインストールされます。
+
+ここでは、server core のインストールによって、一般的に使用されるサーバーの役割をサポートするうえで重要ではないサービスやその他の機能を排除します。 たとえば、hyper-v サーバーはグラフィカルユーザーインターフェイス (GUI) を必要としません。これは、Windows PowerShell を使用してコマンドラインから、または Hyper-v マネージャーを使用してリモートで Hyper-v のほぼすべての側面を管理できるためです。
 
 ## <a name="the-server-core-difference---core-capabilities-without-the-frills"></a>Frills を使用しない、Server Core の差分コア機能
+
 システムへの Server Core のインストールが完了し、初めてサインインするときは、少し驚きます。 サーバーのデスクトップエクスペリエンスインストールオプションと Server Core の主な違いは、Server Core には次の GUI シェルパッケージが含まれていないことです。
 
 - Microsoft-Windows-Server-Shell-Package
@@ -47,48 +49,52 @@ Server Core は、UI がないだけでなく、次のようなデスクトッ�
 > この一覧はクイックリファレンスを目的としています。完全な一覧を示すものではありません。
 
 
-| アプリケーション                     | Server Core     | デスクトップ エクスペリエンス搭載サーバー |
+| Application                        | Server Core     | デスクトップ エクスペリエンス搭載サーバー |
 |------------------------------------|-----------------|--------------------------------|
-| コマンド プロンプト                     | available (利用可能)       | available (利用可能)                      |
-| Windows PowerShell/Microsoft .NET | available (利用可能)       | available (利用可能)                      |
-| Perfmon.exe                        | 利用不可  | available (利用可能)                      |
-| Windbg (GUI)                         | サポート       | サポート                      |
-| Resmon .exe                         | 利用不可   | available (利用可能)                      |
-| Regedit                            | available (利用可能)       | available (利用可能)                      |
-| Fsutil .exe                         | available (利用可能)       | available (利用可能)                      |
-| Disksnapshot .exe                   | 利用不可   | available (利用可能)                      |
-| Diskpart.exe                       | available (利用可能)       | available (利用可能)                      |
-| Diskmgmt.msc                       | 利用不可   | available (利用可能)                      |
-| Devmgmt.msc                        | 利用不可   | available (利用可能)                      |
-| サーバー マネージャー                     | 利用不可  | available (利用可能)                      |
-| Mmc.exe                            | 利用不可   | available (利用可能)                      |
-| Eventvwr                           | 利用不可  | available (利用可能)                      |
-| Wevtutil (イベントクエリ)           | available (利用可能)       | available (利用可能)                      |
-| Services.msc                       | 利用不可   | available (利用可能)                      |
-| コントロール パネル                      | 利用不可   | available (利用可能)                      |
-| Windows Update (GUI)                 | 利用不可 | available (利用可能)                      |
-| エクスプローラー                   | 利用不可   | available (利用可能)                      |
-| タスク バー                            | 利用不可   | available (利用可能)                      |
-| タスクバーの通知              | 利用不可   | available (利用可能)                      |
-| Taskmgr-networking                            | available (利用可能)       | available (利用可能)                      |
-| Internet Explorer または Edge          | 利用不可   | available (利用可能)                      |
-| 組み込みのヘルプ システム               | 利用不可   | available (利用可能)                      |
-| Windows 10 シェル                   | 利用不可   | available (利用可能)                      |
-| Windows Media Player               | 利用不可   | available (利用可能)                      |
-| PowerShell                         | available (利用可能)       | available (利用可能)                      |
-| PowerShell ISE                     | 利用不可   | available (利用可能)                      |
-| PowerShell IME                     | available (利用可能)       | available (利用可能)                      |
-| Mstsc.exe                          | 利用不可   | available (利用可能)                      |
-| リモート デスクトップ サービス            | available (利用可能)       | available (利用可能)                      |
-| Hyper-V マネージャー                    | 利用不可  | available (利用可能)                      |
+| コマンド プロンプト                     | 利用可能       | 利用可能                      |
+| Windows PowerShell/Microsoft .NET | 利用可能       | 利用可能                      |
+| Perfmon.exe                        | 利用不可   | 利用可能                      |
+| Windbg (GUI)                       | サポート対象       | サポート対象                      |
+| Resmon.exe                         | 利用不可   | 利用可能                      |
+| Regedit                            | 利用可能       | 利用可能                      |
+| Fsutil.exe                         | 利用可能       | 利用可能                      |
+| Disksnapshot.exe                   | 利用不可   | 利用可能                      |
+| Diskpart.exe                       | 利用可能       | 利用可能                      |
+| Diskmgmt.msc                       | 利用不可   | 利用可能                      |
+| Devmgmt.msc                        | 利用不可   | 利用可能                      |
+| サーバー マネージャー                     | 利用不可   | 利用可能                      |
+| Mmc.exe                            | 利用不可   | 利用可能                      |
+| Eventvwr                           | 利用不可   | 利用可能                      |
+| Wevtutil (イベントクエリ)           | 利用可能       | 利用可能                      |
+| Services.msc                       | 利用不可   | 利用可能                      |
+| コントロール パネル                      | 利用不可   | 利用可能                      |
+| Windows Update (GUI)               | 利用不可   | 利用可能                      |
+| Windows エクスプローラー                   | 利用不可   | 利用可能                      |
+| タスク バー                            | 利用不可   | 利用可能                      |
+| タスクバーの通知              | 利用不可   | 利用可能                      |
+| Taskmgr-networking                            | 利用可能       | 利用可能                      |
+| Internet Explorer または Edge          | 利用不可   | 利用可能                      |
+| 組み込みのヘルプ システム               | 利用不可   | 利用可能                      |
+| Windows 10 シェル                   | 利用不可   | 利用可能                      |
+| Windows Media Player               | 利用不可   | 利用可能                      |
+| PowerShell                         | 利用可能       | 利用可能                      |
+| PowerShell ISE                     | 利用不可   | 利用可能                      |
+| PowerShell IME                     | 利用可能       | 利用可能                      |
+| Mstsc.exe                          | 利用不可   | 利用可能                      |
+| リモート デスクトップ サービス            | 利用可能       | 利用可能                      |
+| Hyper-V マネージャーは                    | 利用不可   | 利用可能                      |
+| ワードパッド\*                          | 利用不可   | 利用可能                      |
 
 
 Server Core に含まれる*内容の*詳細については、「 [Windows Server-server core に含まれる役割、役割サービス、および機能](server-core-roles-and-services.md)」を参照してください。 Server Core に含まれて*いない*内容の詳細については、「 [server core に含まれていない役割、役割サービス、および機能](server-core-removed-roles.md)」を参照してください。
 
+\*を参照してください。RTF ファイルは、Server Core SKU にローカルに保存されています。ユーザーは、ワードパッドがある別の Windows コンピューターにファイルをコピーできます。
+
 ## <a name="get-started-using-server-core"></a>Server Core の使用を開始する
+
 Windows Server の Server Core インストールオプションをインストール、構成、および管理するには、次の情報を使用します。
 
-Server Core インストール: 
+Server Core インストール:
 - [Server Core に含まれる役割、役割サービス、および機能](server-core-roles-and-services.md)
 - [Server Core にない役割、役割サービス、および機能](server-core-removed-roles.md)
 - [Server Core インストールオプションをインストールする](../../get-started/getting-started-with-server-core.md)

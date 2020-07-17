@@ -1,50 +1,47 @@
 ---
 title: bitsadmin getcustomheaders
-description: '**Bitsadmin getcustomheaders**の Windows コマンドトピックでは、ジョブからカスタム HTTP ヘッダーを取得します。'
-ms.custom: na
+description: Bitsadmin getcustomheaders コマンドの参照記事で、ジョブからカスタム HTTP ヘッダーを取得します。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1f0d38d3-e865-4474-81e8-773d65c3d1cc
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 039669fca42803ff22eb4e3d13dfdef5f0a06f93
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7482c3eb4b259051ebd63677c70dbaabfb013314
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71381661"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923070"
 ---
 # <a name="bitsadmin-getcustomheaders"></a>bitsadmin getcustomheaders
-
-
 
 ジョブからカスタム HTTP ヘッダーを取得します。
 
 ## <a name="syntax"></a>構文
 
 ```
-bitsadmin /GetCustomHeaders <Job>
+bitsadmin /getcustomheaders <job>
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
-|---------|-----------|
-|Job|ジョブの表示名または GUID|
+| パラメーター | 説明 |
+| -------------- | -------------- |
+| ジョブ (job) | ジョブの表示名または GUID。 |
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a>例
 
-次の例では、 *Mydownloadjob*という名前のジョブのカスタムヘッダーを取得します。
+*Mydownloadjob*という名前のジョブのカスタムヘッダーを取得するには、次のようにします。
+
 ```
-C:\>bitsadmin /GetCustomHeaders myDownloadJob
+bitsadmin /getcustomheaders myDownloadJob
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [bitsadmin コマンド](bitsadmin.md)

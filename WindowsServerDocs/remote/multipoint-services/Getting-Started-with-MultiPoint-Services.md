@@ -1,24 +1,20 @@
 ---
 title: MultiPoint Services でのはじめに
 description: MultiPoint サービスを紹介し、使用を開始します。
-ms.custom: na
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: aca5f0be-f253-46b5-b1e7-0bffa15f3227
 author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: cf31e62345b006ef9572a2ea97a23e3e0bf41b64
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2213c734831c1cde88ad0e2b6fb172f99a31b89c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71395374"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859235"
 ---
 # <a name="getting-started-with-multipoint-services"></a>MultiPoint Services でのはじめに
 MultiPoint Services システムでは、多くのユーザーが、ステーションハブを使用して物理的に接続されている複数のステーションを1台のコンピューターにしか使用できません。 各ステーションは、通常、ステーションハブ、マウス、キーボード、およびビデオモニターで構成されています。 MultiPoint Services ステーションの各ユーザーには、MultiPoint Manager を使用して管理できる一意の Windows コンピューティングセッションがあります。  
@@ -59,14 +55,14 @@ MultiPoint マネージャーを使用して実行できるアクションの種
   
 -   **コンソールモードへの切り替え:** Multipoint services システムに新しいソフトウェアをインストールするために、MultiPoint Services システムをコンソールモードに変更することができます。 ソフトウェアのインストールとライセンスのオプションに応じて、すべてのユーザーがソフトウェアを実行できるように指定することも、ソフトウェアのみを使用することもできます。  
   
--   **行う**MultiPoint Services で問題が発生した場合は、[トラブルシューティング](Troubleshooting.md)のセクションを参照して、問題の解決に役立つトピックを見つけてください。  
+-   **トラブルシューティング:** MultiPoint Services で問題が発生した場合は、[トラブルシューティング](Troubleshooting.md)のセクションを参照して、問題の解決に役立つトピックを見つけてください。  
   
 ## <a name="overview-of-multipoint-dashboard"></a>MultiPoint ダッシュボードの概要  
 MultiPoint ダッシュボードには、一般的な毎日のタスクにアクセスする2つのタブのいずれかを選択できるリボンエクスペリエンスがあります。  
   
 タブは次のとおりです。  
   
--   **[ホーム] タブ:** ステーションをブロックまたはブロック解除する、web の制限オプションを設定する、他のデスクトップにデスクトップを表示する、アプリケーションを起動または終了する、インスタントメッセージングで通信する、他のユーザーにリモートデスクトップコントロールを使用する、デスクトップのサムネイルビューを調整する、有効または無効にするインスタントメッセージングとアプリケーションの自動起動。 詳細については、「 [MultiPoint ダッシュボードを使用したユーザーデスクトップの管理](Manage-User-Desktops-Using-MultiPoint-Dashboard.md)」を参照してください。  
+-   **[ホーム] タブ:** ステーションをブロックまたはブロック解除する、web の制限オプションを設定する、他のデスクトップにデスクトップを投影する、アプリケーションを起動または閉じる、インスタントメッセージングで通信する、他のユーザーにリモートデスクトップコントロールを使用する、デスクトップのサムネイルビューを調整する、インスタントメッセージングとアプリケーションの自動起動を有効または無効にする。 詳細については、「 [MultiPoint ダッシュボードを使用したユーザーデスクトップの管理](Manage-User-Desktops-Using-MultiPoint-Dashboard.md)」を参照してください。  
   
 -   **[システム] タブ:** すべてのシステムまたは選択したシステムを再起動、シャットダウン、または再マップします。 詳細については、 [Multipoint ダッシュボードを使用した Multipoint システムの管理](Manage-MultiPoint-Systems-Using-MultiPoint-Dashboard.md)に関するトピックを参照してください。  
   
@@ -95,7 +91,7 @@ Multipoint services の使用を毎日開始するときに、multipoint service
   
 -   ユーザーがパスワードを忘れた場合は、標準の Windows ユーザーアカウント管理機能を使用する **[ユーザー]** タブからパスワードをリセットできます。 詳細については、「[ユーザーアカウントを更新または削除する](Update-or-Delete-a-User-Account.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [MultiPoint Server システムの管理](managing-your-multipoint-services-system.md)  
 [ソフトウェアライセンスのコンプライアンスに関する重要な情報](Important-Information-about-Software-License-Compliance.md)  
 [MultiPoint マネージャーを使用したシステム タスクの管理](Manage-System-Tasks-Using-MultiPoint-Manager.md)  

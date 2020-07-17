@@ -1,30 +1,24 @@
 ---
-title: 詳細パーティション
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+title: detail partition
+description: '[詳細パーティション] コマンドの参照記事。選択したパーティションのプロパティが表示されます。'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 672a2c7a-1721-4845-9c23-7af50367170e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9ead078217804def619998b1d31e55744f2e1c6b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2df0a5fe9af0c7856298786a6783d6af715766be
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71378520"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929399"
 ---
-# <a name="detail-partition"></a>詳細パーティション
+# <a name="detail-partition"></a>detail partition
 
-
-
-選択したパーティションのプロパティを表示します。
+選択したパーティションのプロパティを表示します。 開始する前に、この操作を成功させるには、パーティションを選択する必要があります。 [[パーティションの選択](select-partition.md)] コマンドを使用してパーティションを選択し、それにフォーカスを移動します。
 
 ## <a name="syntax"></a>構文
 
@@ -32,18 +26,16 @@ ms.locfileid: "71378520"
 detail partition
 ```
 
-## <a name="remarks"></a>コメント
-
--   この操作を成功させるには、パーティションを選択する必要があります。 **[パーティションの選択**] コマンドを使用してパーティションを選択し、それにフォーカスを移動します。
-
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a>例
 
 選択したパーティションのプロパティを表示するには、次のように入力します。
+
 ```
 detail partition
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
 
+- [詳細コマンド](detail.md)

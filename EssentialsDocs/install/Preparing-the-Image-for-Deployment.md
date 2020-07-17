@@ -1,27 +1,23 @@
 ---
 title: イメージの展開の準備
-description: Windows Server Essentials を使用する方法について説明します
-ms.custom: na
+description: Windows Server Essentials の使用方法について説明します。
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+ms.prod: windows-server
 ms.topic: article
 ms.assetid: 681c6cad-7fde-494f-86a5-f4c7c15d23f9
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 16411ab073e9417c52592aa9a6b13707dd461537
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 8ef4cb775f6d73f94a47d5d86ca235d459dd4b10
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59838533"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80819905"
 ---
 # <a name="preparing-the-image-for-deployment"></a>イメージの展開の準備
 
->適用先:Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
+>適用対象: windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
 イメージを準備するための一般的なツールは、sysprep.exe です。 イメージを保存したサーバーを再起動する際に初期構成が実行されるように、このツールを実行してイメージを一般化しサーバーをシャットダウンします。 イメージへのすべての変更は、sysprep.exe を実行する前に完了しておく必要があります。  
   
@@ -32,7 +28,7 @@ ms.locfileid: "59838533"
   
 1.  追加した SkipIC.txt を削除します。  
   
-2.  昇格した [コマンド プロンプト] ウィンドウを開きます。 **[スタート]** ボタンをクリックし、**[コマンド プロンプト]** を右クリックして、**[管理者として実行]** を選択します。  
+2.  昇格した [コマンド プロンプト] ウィンドウを開きます。 **[スタート]** ボタンをクリックし、 **[コマンド プロンプト]** を右クリックして、 **[管理者として実行]** を選択します。  
   
 3.  サーバーが準拠しなくなる前にユーザーに十分な猶予期間を与えるように、次のコマンドを実行してレジストリ キーをリセットします。  
   
@@ -58,7 +54,7 @@ ms.locfileid: "59838533"
     %systemroot%\system32\reg.exe add "HKLM\Software\microsoft\windows server\setup" /v HWRequirementChecks /t REG_DWORD /d 0 /f  
     ```  
   
-7.  (省略可能) **%programdata%\Microsoft\Windows Server\Logs**にあるログを削除します。  
+7.  (省略可能) **%programdata%\Microsoft\Windows Server\Logs** にあるログを削除します。  
   
 8.  次のテンプレートに示すように sysprep に対して unattended xml ファイルを準備します。  
   
@@ -123,7 +119,7 @@ ms.locfileid: "59838533"
     ```  
   
     > [!IMPORTANT]
-    >  unattend.xml は、sysprep のパラメーターとしてではなく、%systemdrive% の下に追加することもできます。 ファイルが c:\ 下にある場合ユーザーの設定は、対象が、ユーザーの設定でない説明する sysprep のパラメーターとして使用する場合。 %systemdrive% の下の unattend.xml は、サーバーを再起動するたびに削除されます。 そのため、%systemdrive% の下に unattend.xml を作成した後でサーバーが再起動されていないことを確認します。  
+    >  unattend.xml は、sysprep のパラメーターとしてではなく、%systemdrive% の下に追加することもできます。 ファイルが c:\ の下にある場合ユーザーの設定によってカバーされますが、sysprep のパラメーターとして使用される場合は、ユーザーの設定によってカバーされません。 %systemdrive% の下の unattend.xml は、サーバーを再起動するたびに削除されます。 そのため、%systemdrive% の下に unattend.xml を作成した後でサーバーが再起動されていないことを確認します。  
   
 10. Windows OOBE キー ページをスキップする場合は、次のコマンドを実行してレジストリ キーを追加します。  
   

@@ -6,18 +6,18 @@ ms.topic: article
 ms.assetid: 0a39ecae-39cc-4f26-bd6f-b71ed02fc4ad
 ms.prod: windows-server
 ms.technology: networking
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 0dce886555167ad651704045120fb92eff0dcea1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 0636fc321b4e94351628fd577526a8e81b4fc4cf
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356177"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318311"
 ---
 # <a name="deploy-server-certificates-for-8021x-wired-and-wireless-deployments"></a>802.1 X 有線および無線展開のサーバー証明書を展開する
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 このガイドを使用して、リモートアクセスおよびネットワークポリシーサーバー (NPS) インフラストラクチャサーバーにサーバー証明書を展開することができます。   
 
@@ -58,10 +58,10 @@ ms.locfileid: "71356177"
 - すべてのサーバー証明書には、サーバー認証の目的と、拡張キー使用法 (EKU) の拡張機能でのクライアント認証の目的が含まれています。  
 - スケーラビリティ。 このガイドを使用してエンタープライズルート CA を展開した後、エンタープライズの下位 Ca を追加することで公開キー基盤 (PKI) を拡張できます。  
 - 管理の容易さ。 Ad cs を管理するには、AD CS コンソールを使用するか、Windows PowerShell のコマンドとスクリプトを使用します。  
-- 簡易化。 Active Directory グループアカウントとグループメンバーシップを使用して、サーバー証明書を登録するサーバーを指定します。   
+- 簡潔さ。 Active Directory グループアカウントとグループメンバーシップを使用して、サーバー証明書を登録するサーバーを指定します。   
 - サーバー証明書を展開する場合、証明書は、このガイドの手順に従って構成したテンプレートに基づいています。 つまり、特定の種類のサーバーに対して異なる証明書テンプレートをカスタマイズすることも、発行するすべてのサーバー証明書に同じテンプレートを使用することもできます。  
 
-## <a name="bkmk_pre"></a>このガイドを使用するための前提条件  
+## <a name="prerequisites-for-using-this-guide"></a><a name="bkmk_pre"></a>このガイドを使用するための前提条件  
 
 このガイドでは、Windows Server 2016 で AD CS と Web サーバー (IIS) サーバーの役割を使用してサーバー証明書を展開する方法について説明します。 このガイドの手順を実行するための前提条件を次に示します。  
 
@@ -71,15 +71,15 @@ ms.locfileid: "71356177"
 
 - 展開を実行する前に、このガイドの「計画」セクションを読んで、この展開の準備ができていることを確認する必要があります。  
 - このガイドの手順は、表示されている順序で実行する必要があります。 サーバーを展開する手順を実行せずに CA を展開したり、展開が失敗したりすることはありません。  
-- ネットワーク上に2台の新しいサーバーを展開する必要があります。1つはエンタープライズルート CA として AD CS をインストールし、もう1つは Web サーバー (IIS) をインストールするサーバーで、CA が証明書失効リスト (CRL) を Web se に発行できるようにするためです。r.   
+- ネットワーク上に2台の新しいサーバーを展開する必要があります。1つはエンタープライズルート CA として AD CS をインストールし、もう1台は Web サーバー (IIS) をインストールするサーバーで、CA が証明書失効リスト (CRL) を Web に公開できるようにするためです。server.   
 
 >[!NOTE]  
 >このガイドでデプロイする Web および AD CS サーバーに静的 IP アドレスを割り当てる準備ができています。また、組織の名前付け規則に従ってコンピューターの名前を指定することもできます。 さらに、コンピューターをドメインに参加させる必要があります。  
 
-## <a name="bkmk_not"></a>このガイドで提供されていないもの  
+## <a name="what-this-guide-does-not-provide"></a><a name="bkmk_not"></a>このガイドで提供されていないもの  
 このガイドでは、AD CS を使用して公開キー基盤 (PKI) を設計および展開するための包括的な手順については説明しません。 このガイドでは、テクノロジを展開する前に、AD CS のドキュメントと PKI の設計に関するドキュメントを参照することをお勧めします。   
 
-## <a name="bkmk_tech"></a>テクノロジの概要  
+## <a name="technology-overviews"></a><a name="bkmk_tech"></a>テクノロジの概要  
 AD CS と Web サーバー (IIS) のテクノロジの概要を次に示します。  
 
 ### <a name="active-directory-certificate-services"></a>Active Directory 証明書サービス  

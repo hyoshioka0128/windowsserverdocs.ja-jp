@@ -7,25 +7,25 @@ ms.topic: article
 ms.author: phstee
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 498e72377197bd2185a518949520275c36295a77
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3c011d3c6e75fb1d5212d9b1ec3c6e6c69fac5d6
+ms.sourcegitcommit: 3f9bcd188dda12dc5803defb47b2c3a907504255
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355080"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77001867"
 ---
 # <a name="additional-performance-tuning-resources"></a>その他のパフォーマンスチューニングリソース
 
 このチューニングガイドで説明されている概念の詳細については、このトピックのリンクを使用してください。
 
 ## <a name="microsoft-windows-server-websites"></a>Microsoft Windows Server Web サイト
--   [Windows Server カタログ](http://www.windowsservercatalog.com/)
+-   [Windows Server カタログ](https://www.windowsservercatalog.com/)
 
 -   [Windows Sysinternals](https://technet.microsoft.com/sysinternals/default.aspx)
 
 -   [トランザクション処理のパフォーマンスの協議](http://www.tpc.org/)
 
--   [Windows アセスメント &amp; デプロイメント キット](https://developer.microsoft.com/en-us/windows/hardware/windows-assessment-deployment-kit)
+-   [Windows アセスメント &amp; デプロイメント キット](https://developer.microsoft.com/windows/hardware/windows-assessment-deployment-kit)
 
 ## <a name="power-management-tuning-resources"></a>電源管理のチューニングに関するリソース
 
@@ -33,25 +33,25 @@ ms.locfileid: "71355080"
 
 -   [PowerCfg を使用してシステムのエネルギー効率を評価する](https://technet.microsoft.com/library/cc748940.aspx)
 
--   [割り込みアフィニティポリシーツール](https://support.microsoft.com/en-us/kb/252867)
+-   [割り込みアフィニティポリシーツール](https://support.microsoft.com/kb/252867)
 
 ## <a name="networking-subsystem-tuning-resources"></a>ネットワークサブシステムのチューニングに関するリソース
 
--   [スケーラブルなネットワーク:受信処理のボトルネックの排除— RSS の概要](https://download.microsoft.com/download/5/D/6/5D6EAF2B-7DDF-476B-93DC-7CF0072878E6/NDIS_RSS.doc)
+-   [スケーラブルなネットワーク: 受信処理のボトルネックの排除-RSS の概要](https://download.microsoft.com/download/5/D/6/5D6EAF2B-7DDF-476B-93DC-7CF0072878E6/NDIS_RSS.doc)
 
 -   [Windows フィルタリングプラットフォーム](https://msdn.microsoft.com/windows/hardware/gg463267.aspx)
 
--   [ネットワーク展開ガイド:高速ネットワーク機能の展開](https://technet.microsoft.com/library/gg162681.aspx)
+-   [ネットワーク展開ガイド: 高速ネットワーク機能の展開](https://technet.microsoft.com/library/gg162681.aspx)
 
 ## <a name="storage-subsystem-tuning-resources"></a>記憶域サブシステムのチューニングに関するリソース
 
--   [Windows 用ディスクサブシステムのパフォーマンス分析](https://download.microsoft.com/download/e/b/a/eba1050f-a31d-436b-9281-92cdfeae4b45/subsys_perf.doc)(このドキュメントの一部は最新ではありませんが、キャプチャされた一般的な観測とガイドラインの多くは、まだ正確であり、関連しています)。
+-   [Windows 用ディスクサブシステムのパフォーマンス分析](https://download.microsoft.com/download/e/b/a/eba1050f-a31d-436b-9281-92cdfeae4b45/subsys_perf.doc)(このドキュメントの一部は最新ではありませんが、キャプチャされた一般的な観測とガイドラインの多くは、引き続き正確であり、関連しています)。
 
 ## <a name="file-server-tuning-resources"></a>ファイルサーバーのチューニングに関するリソース
 
 -   [ネットワークファイルシステム用の Microsoft サービスのパフォーマンスチューニングガイドライン](https://technet.microsoft.com/library/bb463205.aspx)
 
--   [\[MS-FSSO\]:ファイルアクセスサービスシステムの概要](https://download.microsoft.com/download/5/0/1/501ED102-E53F-4CE0-AA6B-B0F93629DDC6/Windows/%5bMS-FSSO%5d.pdf)
+-   [\[MS FSSO\]: ファイルアクセスサービスシステムの概要](https://download.microsoft.com/download/5/0/1/501ED102-E53F-4CE0-AA6B-B0F93629DDC6/Windows/%5bMS-FSSO%5d.pdf)
 
 -   [TCP チューニング診断ツールを無効にする方法](https://support.microsoft.com/kb/967475)
 
@@ -65,7 +65,7 @@ ms.locfileid: "71355080"
 
 -   [Hyper-v 動的メモリ構成ガイド](https://technet.microsoft.com/library/ff817651.aspx)
 
--   [NUMA ノードの分散](http://blogs.technet.com/b/winserverperformance/archive/2009/12/10/numa-node-balancing.aspx)
+-   [NUMA ノードの分散](https://blogs.technet.com/b/winserverperformance/archive/2009/12/10/numa-node-balancing.aspx)
 
 -   [Hyper-v WMI プロバイダー](https://msdn2.microsoft.com/library/cc136992(VS.85).aspx)
 
@@ -73,9 +73,9 @@ ms.locfileid: "71355080"
 
 -   [Virtual Machines とゲストオペレーティングシステムについて](https://technet.microsoft.com/library/cc794868(v=ws.10))
 
--   [Hyper-v 記憶域の最適化とトラブルシューティング](http://blogs.msdn.com/b/microsoft_press/archive/2013/07/24/new-book-optimizing-and-troubleshooting-hyper-v-storage.aspx)
+-   [Hyper-v 記憶域の最適化とトラブルシューティング](https://blogs.msdn.com/b/microsoft_press/archive/2013/07/24/new-book-optimizing-and-troubleshooting-hyper-v-storage.aspx)
 
--   [Hyper-v ネットワークの最適化とトラブルシューティング](http://blogs.msdn.com/b/microsoft_press/archive/2013/07/12/rtm-d-today-optimizing-and-troubleshooting-hyper-v-networking.aspx)
+-   [Hyper-v ネットワークの最適化とトラブルシューティング](https://blogs.msdn.com/b/microsoft_press/archive/2013/07/12/rtm-d-today-optimizing-and-troubleshooting-hyper-v-networking.aspx)
 
 ## <a name="print-server-tuning-resources"></a>プリントサーバーのチューニングリソース
 
@@ -97,9 +97,9 @@ ms.locfileid: "71355080"
 
 -   [オンライントランザクション処理 (OLTP) のパフォーマンスチューニング](https://msdn.microsoft.com/library/windows/hardware/dn567642(v=vs.85).aspx)
 
--   [2 つのオブジェクトが等しいかどうかをテストする方法ソフト NUMA を使用するように SQL Server を構成する](https://go.microsoft.com/fwlink/?LinkId=98292)
+-   [方法: ソフト NUMA を使用するように SQL Server を構成する](https://go.microsoft.com/fwlink/?LinkId=98292)
 
--   [2 つのオブジェクトが等しいかどうかをテストする方法NUMA ノードへの TCP/IP ポートのマッピング](https://go.microsoft.com/fwlink/?LinkId=98293)
+-   [方法: NUMA ノードに TCP/IP ポートをマップする](https://go.microsoft.com/fwlink/?LinkId=98293)
 
 -   [ALTER SERVER CONFIGURATION (Transact-sql)](https://msdn.microsoft.com/library/ee210585.aspx)
 

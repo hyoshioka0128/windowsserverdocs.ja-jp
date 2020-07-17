@@ -1,42 +1,38 @@
 ---
 title: Windows Server Essentials での Anywhere Access の管理
-description: Windows Server Essentials を使用する方法について説明します
-ms.custom: na
+description: Windows Server Essentials の使用方法について説明します。
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+ms.prod: windows-server
 ms.topic: article
 ms.assetid: c369c317-f94d-4179-a735-e74bf6f62692
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: c9857cc6dd056e36133736c4888b46505ec8c3c7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5abb2cf509c0b695f9019d249e819756f7092efa
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59838613"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85470877"
 ---
 # <a name="manage-anywhere-access-in-windows-server-essentials"></a>Windows Server Essentials での Anywhere Access の管理
 
->適用先:Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
+>適用対象: windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-ネットワークを有効にする、Windows Server Essentials エクスペリエンス役割がインストールされた、Anywhere Access の機能、リモート Web アクセス、仮想プライベート ネットワーク、および Windows Server Essentials、または Windows Server 2012 R2 で DirectAccess を有効にするとユーザーのデバイスをいつでもでも、インターネットに接続された任意の場所からサーバー リソースにアクセスします。 以下のトピックでは、リモート Web アクセス、仮想プライベート ネットワーク (VPN)、および DirectAccess の各機能をサーバーで構成する方法について説明します。  
-  
--   [リモート Web アクセスを管理します。](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md)  
-  
-     リモート Web アクセスは、効率的でタッチ操作に適したブラウザー エクスペリエンスを提供し、インターネットに接続していればどこからでも、デバイスを問わずにアプリケーションやデータにアクセスできる環境を実現します。  
-  
--   [VPN を管理します。](Manage-VPN-in-Windows-Server-Essentials.md)  
-  
-     仮想プライベート ネットワーク (VPN) 接続を使用すると、自宅や外出先で作業をするユーザーが、インターネットなどのパブリック ネットワークによって提供されるインフラストラクチャを使用して、プライベート ネットワーク上のサーバーにアクセスできるようになります。  
-  
--   [DirectAccess を構成します。](Configure-DirectAccess-in-Windows-Server-Essentials.md)  
-  
-     DirectAccess では、"仮想プライベート ネットワーク (VPN) 接続を確立することがなくインターネットを搭載したリモートの場所からセント秒のネットワーク組織にシームレスに接続できます。 DirectAccess では、組織の生産性の向上"セント s モバイル ユーザーがオフィスの内外では、同じ接続性を提供することで。  
-  
-## <a name="see-also"></a>関連項目  
+Windows Server Essentials で Anywhere Access 機能、リモート Web アクセス、仮想プライベートネットワーク、および DirectAccess を有効にすると、windows server Essentials Experience 役割がインストールされた Windows Server 2012 R2 で、ネットワークユーザーは、インターネットに接続している任意の場所から、いつでも、どのデバイスでもサーバーリソースにアクセスできるようになります。 以下のトピックでは、リモート Web アクセス、仮想プライベート ネットワーク (VPN)、および DirectAccess の各機能をサーバーで構成する方法について説明します。
 
--   [Windows Server Essentials を管理します。](Manage-Windows-Server-Essentials.md)
+-   [リモート Web アクセスの管理](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md)
+
+     リモート Web アクセスは、効率的でタッチ操作に適したブラウザー エクスペリエンスを提供し、インターネットに接続していればどこからでも、デバイスを問わずにアプリケーションやデータにアクセスできる環境を実現します。
+
+-   [VPN の管理](Manage-VPN-in-Windows-Server-Essentials.md)
+
+     仮想プライベート ネットワーク (VPN) 接続を使用すると、自宅や外出先で作業をするユーザーが、インターネットなどのパブリック ネットワークによって提供されるインフラストラクチャを使用して、プライベート ネットワーク上のサーバーにアクセスできるようになります。
+
+-   [DirectAccess の構成](Configure-DirectAccess-in-Windows-Server-Essentials.md)
+
+     DirectAccess を使用すると、仮想プライベートネットワーク (VPN) 接続を確立しなくても、インターネットに接続できる任意のリモートの場所から組織の "され s ネットワークにシームレスに接続することができます。 DirectAccess を使用すると、オフィス内外で同じ接続性を提供することで、組織の "され s モバイル従業員" の生産性が向上します。
+
+## <a name="additional-references"></a>その他のリファレンス
+
+-   [Windows Server Essentials の管理](Manage-Windows-Server-Essentials.md)

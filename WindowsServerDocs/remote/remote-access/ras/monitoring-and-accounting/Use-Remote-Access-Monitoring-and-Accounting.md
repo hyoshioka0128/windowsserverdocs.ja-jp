@@ -2,30 +2,26 @@
 title: リモート アクセスの監視とアカウンティングを使用する
 description: このトピックは、Windows Server 2016 のリモートアクセスの監視とアカウンティングに関するガイドの一部です。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 92519b49-0df4-43c1-9717-f13570644212
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: eb7c052358bc50f9b466b7ac862e77be7b044685
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 03d367f2f981ca3ed649f1ca4d5eca23967c9cfc
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367146"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860515"
 ---
 # <a name="use-remote-access-monitoring-and-accounting"></a>リモート アクセスの監視とアカウンティングを使用する
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 リモート アクセス監視では、DirectAccess 接続と VPN 接続に関するリモート ユーザーの活動と状態が報告されます。 クライアント接続の回数と期間 (他の統計も含めて) が追跡され、サーバーの操作状態が監視されます。 使いやすい監視コンソールでは、リモート アクセス インフラストラクチャ全体を表示できます。 監視ビューは、単一のサーバー、クラスター、およびマルチサイトの構成について表示できます。  
   
-**注:** Windows Server 2012 では、DirectAccess およびルーティングとリモート アクセス サービス (RRAS) は単一のリモート アクセスの役割に統合されています。  
+**注:** Windows Server 2012 が DirectAccess およびルーティングとリモート アクセス サービス (RRAS) を 1 つのリモート アクセス役割に結合します。  
   
 > [!NOTE]  
 > このトピックに加え、次のトピックをリモート アクセスの監視に利用できます。  
@@ -37,7 +33,7 @@ ms.locfileid: "71367146"
 > -   [接続しているリモート クライアントの活動と状態を監視する](Monitor-connected-remote-clients-for-activity-and-status.md)  
 > -   [履歴データを使ってリモート クライアントの使用状況レポートを生成する](Generate-a-usage-report-for-remote-clients-using-historical-data.md)  
 
-## <a name="in-this-guide"></a>このガイドについて  
+## <a name="in-this-guide"></a>このガイドの内容  
 このドキュメントでは、リモート アクセスの監視機能を利用するために、DirectAccess 管理コンソールおよびそれに対応する Windows PowerShell コマンドレット (リモート アクセス サーバーの役割の一部として提供されます) を使用する手順を説明します。  
   
 次に示す監視とアカウンティングのシナリオについて説明しています。  

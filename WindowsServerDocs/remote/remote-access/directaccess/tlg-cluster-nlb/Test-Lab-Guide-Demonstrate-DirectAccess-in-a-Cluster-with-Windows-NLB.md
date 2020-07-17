@@ -2,22 +2,18 @@
 title: テストラボガイド-Windows NLB を使用するクラスターでの DirectAccess のデモンストレーション
 description: このトピックは、「windows Server 2016 用 Windows NLB を使用するクラスターでの DirectAccess のデモンストレーション」のテストラボガイドに含まれています。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: db15dcf5-4d64-48d7-818a-06c2839e1289
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: e0c82f9f56ea680c11cd612e17326fe7cf96aeca
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: fc9f619835262a47894f23c5c04e4c89d4463d7a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388429"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80819065"
 ---
 # <a name="test-lab-guide-demonstrate-directaccess-in-a-cluster-with-windows-nlb"></a>テスト ラボ ガイド: Windows NLB を使用するクラスターでの DirectAccess のデモンストレーション
 
@@ -31,12 +27,12 @@ ms.locfileid: "71388429"
 > [!IMPORTANT]  
 > このラボは、最小限のコンピューターを使って概念を実証するためのものです。 このガイドで詳しく説明されている構成は、テスト ラボでの使用のみを目的としています。運用環境では使用しないでください。  
   
-## <a name="KnownIssues"></a>既知の問題  
+## <a name="known-issues"></a><a name="KnownIssues"></a>既知の問題  
 クラスター構成シナリオには、次の既知の問題があります。  
   
 -   単一のネットワーク アダプターを使用して IPv4 のみの展開で DirectAccess を構成し、既定の DNS64 (":3333::" を含む IPv6 アドレス) がネットワーク アダプターに自動的に構成された後で、リモート アクセス管理コンソールを使用して負荷分散を有効にしようとすると、IPv6 DIP の指定を求められます。 IPv6 DIP を指定すると、 **[コミット]** をクリックした後に "パラメーターが正しくありません" というエラーで構成が失敗します。  
   
-    この問題の解決策は、以下のとおりです。  
+    この問題を解決するには、次の手順を実行します。  
   
     1.  「 [Back up and Restore Remote Access Configuration (リモート アクセスの構成のバックアップと復元)](https://gallery.technet.microsoft.com/Back-up-and-Restore-Remote-e157e6a6)」からバックアップおよび復元用のスクリプトをダウンロードします。  
   
@@ -44,7 +40,7 @@ ms.locfileid: "71388429"
   
     3.  失敗した手順まで、負荷分散の有効化を試みます。 [負荷分散の有効化] ダイアログ ボックスで、詳細領域を展開し、詳細領域内を右クリックして、 **[スクリプトのコピー]** をクリックします。  
   
-    4.  メモ帳を開き、クリップボードの内容を貼り付けます。 次に、例を示します。  
+    4.  メモ帳を開き、クリップボードの内容を貼り付けます。 例 :  
   
         ```  
         Set-RemoteAccessLoadBalancer -InternetDedicatedIPAddress @('10.244.4.19/255.255.255.0','fdc4:29bd:abde:3333::2/128') -InternetVirtualIPAddress @('fdc4:29bd:abde:3333::1/128', '10.244.4.21/255.255.255.0') -ComputerName 'DA1.domain1.corp.contoso.com' -Verbose  
@@ -52,7 +48,7 @@ ms.locfileid: "71388429"
   
     5.  開いているリモート アクセス ダイアログ ボックスをすべて閉じ、リモート アクセス管理コンソールを閉じます。  
   
-    6.  貼り付けたテキストを編集して、IPv6 アドレスを削除します。 次に、例を示します。  
+    6.  貼り付けたテキストを編集して、IPv6 アドレスを削除します。 例 :  
   
         ```  
         Set-RemoteAccessLoadBalancer -InternetDedicatedIPAddress @('10.244.4.19/255.255.255.0') -InternetVirtualIPAddress @('10.244.4.21/255.255.255.0') -ComputerName 'DA1.domain1.corp.contoso.com' -Verbose  

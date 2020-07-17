@@ -2,24 +2,23 @@
 title: 仮想マシンの一時停止を避ける
 description: このベストプラクティスアナライザールールのテキストのオンラインバージョン。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: 930f927c-e414-4a36-9786-028941e886e4
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 406b24edd4a7e87e32058006590ac7cd37206568
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 56c147f6bd2423cdbe2c8847efb43d8601e12ddf
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366450"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857745"
 ---
 # <a name="avoid-pausing-a-virtual-machine"></a>仮想マシンの一時停止を避ける
 
->適用先:Windows Server 2016
+>適用対象: Windows Server 2016
 
 ベストプラクティスとスキャンの詳細については、「[ベストプラクティスアナライザースキャンの実行」および「スキャン結果の管理](https://go.microsoft.com/fwlink/p/?LinkID=223177)」を参照してください。
   
@@ -27,7 +26,7 @@ ms.locfileid: "71366450"
 |-|-|  
 |**オペレーティング システム**|Windows Server 2016|  
 |**製品/機能**|Hyper-V|  
-|**順**|警告|  
+|**順**|［警告］|  
 |**カテゴリ**|構成|  
 
 次のセクションでは、斜体は、この問題のためのベスト プラクティス アナライザー ツールで表示される UI テキストを示します。
@@ -59,7 +58,7 @@ ms.locfileid: "71366450"
   
 #### <a name="use-windows-powershell-to-resume-the-virtual-machine"></a>Windows PowerShell を使用して仮想マシンを再開する  
   
-この操作は、ホスト上のすべての仮想マシンを取得した後、フィルターとパイプラインを使用して1つのコマンドで実行できます。 型:  
+この操作は、ホスト上のすべての仮想マシンを取得した後、フィルターとパイプラインを使用して1つのコマンドで実行できます。 [種類]:  
   
 ```  
 get-vm | where state -eq 'paused' | resume-vm  

@@ -2,22 +2,18 @@
 title: 履歴データを使ってリモート クライアントの使用状況レポートを生成する
 description: このトピックは、Windows Server 2016 のリモートアクセスの監視とアカウンティングに関するガイドの一部です。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0305467b-ce39-4532-a05a-2cc5ff946f55
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: bae50345e8a6fd4018857e2a754d0274ce02855d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: ae862b596ff8c3d222c8f448f9b81b3c6bea05be
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367254"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860565"
 ---
 # <a name="generate-a-usage-report-for-remote-clients-using-historical-data"></a>履歴データを使ってリモート クライアントの使用状況レポートを生成する
 
@@ -61,7 +57,7 @@ ms.locfileid: "71367254"
   
 windows PowerShell の ![](../../../media/Generate-a-usage-report-for-remote-clients-using-historical-data/PowerShellLogoSmall.gif)***<em>windows powershell の同等のコマンド</em>***  
   
-以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
+次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 書式上の制約のため、複数行にわたって折り返される場合でも、各コマンドレットは 1 行に入力してください。  
   
 次のスクリプトでのレポートを作成する日付範囲の変更、 **- StartDateTime** と **- EndDateTime** パラメーター。  
   

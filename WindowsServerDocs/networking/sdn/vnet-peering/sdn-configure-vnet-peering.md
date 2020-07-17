@@ -1,24 +1,23 @@
 ---
 title: 仮想ネットワーク ピアリングの構成
 description: 仮想ネットワークピアリングの構成には、ピアリングされる2つの仮想ネットワークの作成が含まれます。
-manager: dougkim
+manager: grcusanz
 ms.prod: windows-server
 ms.technology: networking-hv-switch
 ms.topic: get-started-article
-ms.assetid: ''
-ms.author: pashort
-author: shortpatti
+ms.author: anpaul
+author: AnirbanPaul
 ms.date: 08/08/2018
-ms.openlocfilehash: 4d35501b8d876f2a178a4744d495125dea8da6c7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ede13fd47c32b2d75ec71ad7c7bf7eb50c269c82
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405815"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853565"
 ---
 # <a name="configure-virtual-network-peering"></a>仮想ネットワーク ピアリングの構成
 
->適用対象:Windows Server
+>適用対象: Windows Server
 
 この手順では、Windows PowerShell を使用して、それぞれ1つのサブネットを持つ2つの仮想ネットワークを作成します。 次に、2つの仮想ネットワーク間のピアリングを構成して、両者間の接続を有効にします。
 

@@ -6,18 +6,18 @@ ms.topic: article
 ms.assetid: 4acdc3ad-078e-45cc-b54c-e9456e0c90f5
 ms.prod: windows-server
 ms.technology: networking
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 024fc73c4ed089d81808cf44d7cfe8b01bfffaa0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: fffb03a707c48c8dd485c68b5c6bf10783b0e6cf
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406330"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318367"
 ---
 # <a name="install-the-certification-authority"></a>証明機関をインストールする
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 この手順を使用すると、ネットワーク ポリシー サーバー (NPS)、ルーティングとリモート アクセス サービス (RRAS)、またはその両方を実行しているサーバーにサーバー証明書を登録できるように、Active Directory 証明書サービス (AD CS) をインストールします。  
   
@@ -36,16 +36,16 @@ ms.locfileid: "71406330"
 >   
 > `Install-AdcsCertificationAuthority -CAType EnterpriseRootCA`  
   
-### <a name="to-install-active-directory-certificate-services"></a>Active Directory Certificate Services をインストールするには  
+### <a name="to-install-active-directory-certificate-services"></a>Active Directory 証明書サービスをインストールするには  
 
 > [!TIP]
 > Windows PowerShell を使用して Active Directory 証明書サービスをインストールする場合は、コマンドレットとオプションのパラメーターの[AdcsCertificationAuthority](https://docs.microsoft.com/powershell/module/adcsdeployment/install-adcscertificationauthority?view=win10-ps)を参照してください。
   
-1.  Enterprise Admins グループとルート ドメインの Domain Admins グループの両方のメンバーとしてログオンします。  
+1.  Enterprise Admins グループとルート ドメインの Domain Admins グループの両方のメンバーであるアカウントでログオンします。  
   
 2.  サーバー マネージャーで、 **[管理]** をクリックし、 **[役割と機能の追加]** をクリックします。 役割と機能の追加ウィザードが起動されます。  
   
-3.  **開始する前に**, 、クリックして **次**します。  
+3.  **[開始する前に]** で **[次へ]** をクリックします。  
   
     > [!NOTE]  
     > 以前、役割と機能の追加ウィザードの実行時に **[既定でこのページを表示しない]** をクリックした場合、 **[開始する前に]** ページは表示されません。  
@@ -74,9 +74,9 @@ ms.locfileid: "71406330"
   
 15. **CA 名** ページで、CA の推奨される共通名を保持するか、必要に応じて名前を変更します。 している AD CS をインストールした後、CA の名前を変更できないために、CA 名は名前付け規則と目的で、互換性のあることを確認します。 **[次へ]** をクリックします。  
   
-16. **有効期間** ] ページの [ **有効期間の指定**, 、番号を入力し、時刻の値 (年、月、週、または日) を選択します。 5 年間の既定の設定をお勧めします。 **[次へ]** をクリックします。  
+16. **有効期間** ] ページの [ **有効期間の指定**, 、番号を入力し、時刻の値 (年、月、週、または日) を選択します。 既定の設定値は 5 年間 (推奨) です。 **[次へ]** をクリックします。  
   
-17. **CA データベース** ] ページの [ **データベースの場所を指定**, 、証明書データベースと証明書データベース ログのフォルダーの場所を指定します。 既定の場所以外の場所を指定する場合は、フォルダーが承認されていないユーザーまたはコンピューターが、CA データベースとログ ファイルにアクセスすることを防ぐアクセス制御リスト (Acl) で保護されていることを確認します。 **[次へ]** をクリックします。  
+17. **CA データベース** ] ページの [ **データベースの場所を指定**, 、証明書データベースと証明書データベース ログのフォルダーの場所を指定します。 既定の場所以外の場所を指定する場合は、指定したフォルダーが、承認されていないユーザーやコンピューターによる CA データベースや CA ログ ファイルへのアクセスを防止するアクセス制御リスト (ACL) によって、セキュリティで保護されていることを確認してください。 **[次へ]** をクリックします。  
   
 18. **確認**, 、クリックして **構成** を選択内容を適用し、をクリックして **閉じる**します。  
   

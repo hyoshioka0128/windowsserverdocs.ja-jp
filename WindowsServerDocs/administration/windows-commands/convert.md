@@ -1,67 +1,43 @@
 ---
 title: convert
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: ディスクの種類をディスクから別のディスクに変換する convert コマンドの参照記事です。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: 96e437c0-1aa3-46ab-9078-a7b8cdaf3792
+ms.assetid: ae151297-af21-4701-bd69-21d775518e03
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c1e22f67768bbe2f37f3627ca69b162cae96f2d4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f93f2b16838a6f54af3f28b7e0883808a6cd013a
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71379081"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928901"
 ---
 # <a name="convert"></a>convert
 
-
-
-ファイルアロケーションテーブル (FAT) および FAT32 ボリュームを NTFS ファイルシステムに変換し、既存のファイルとディレクトリをそのまま残します。 NTFS ファイルシステムに変換されたボリュームは、FAT または FAT32 に変換することはできません。
-
-このコマンドを使用する方法の例については、[例](#BKMK_examples)を参照してください。
+ディスクをディスクの種類別に変換します。
 
 ## <a name="syntax"></a>構文
 
 ```
-convert [<Volume>] /fs:ntfs [/v] [/cvtarea:<FileName>] [/nosecurity] [/x]
+convert basic
+convert dynamic
+convert gpt
+convert mbr
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
-|---------|-----------|
-|\<ボリューム >|NTFS に変換するドライブ文字 (後ろにコロンを付ける)、マウントポイント、またはボリューム名を指定します。|
-|/fs: ntfs|必須。 ボリュームを NTFS に変換します。|
-|/v|変換処理中にすべてのメッセージを表示する、詳細モードでの**変換**を実行します。|
-|/cvtarea:\<ファイル名 >|マスターファイルテーブル (MFT) とその他の NTFS メタデータファイルが、既存の連続するプレースホルダーファイルに書き込まれるように指定します。 このファイルは、変換するファイルシステムのルートディレクトリに存在する必要があります。 **/Cvtarea**パラメーターを使用すると、変換後のファイルシステムの断片化が少なくなる可能性があります。 最良の結果を得るために、このファイルのサイズは、ファイルシステム内のファイルとディレクトリの数を 1 KB 乗算する必要があります。ただし、**変換**ユーティリティでは任意のサイズのファイルを使用できます。</br>重要:**変換**を実行する前に、 **fsutil file createnew**コマンドを使用してプレースホルダーファイルを作成する必要があります。 **変換**では、このファイルは作成されません。 **Convert**は、このファイルを NTFS メタデータで上書きします。 変換後、このファイル内の未使用の領域は解放されます。|
-|/nosecurity|変換されたファイルおよびディレクトリのセキュリティ設定で、すべてのユーザーがアクセスできるように指定します。|
-|/x|必要に応じて、変換前にボリュームをマウント解除します。 ボリュームに対して開いているハンドルは、無効になります。|
-|/?|コマンド プロンプトにヘルプを表示します。|
+| パラメーター | 説明 |
+| --------- | ----------- |
+| [基本コマンドの変換](convert-basic.md) | 空のダイナミック ディスクをベーシック ディスクに変換します。 |
+| [動的コマンドの変換](convert-dynamic.md) | ベーシック ディスクをダイナミック ディスクに変換します。 |
+| [gpt コマンドの変換](convert-gpt.md) | マスター ブート レコード (MBR) パーティション スタイルを持つ空のベーシック ディスクを、GUID パーティション テーブル (GPT) パーティション スタイルを持つベーシック ディスクに変換します。 |
+| [mbr コマンドの変換](convert-mbr.md) | GUID パーティションテーブル (GPT) パーティションスタイルを持つ空のベーシックディスクを、マスターブートレコード (MBR) パーティションスタイルを持つベーシックディスクに変換します。 |
 
-## <a name="remarks"></a>注釈
+## <a name="additional-references"></a>その他の参照情報
 
--   **Convert**がドライブをロックできない場合 (ドライブがシステムボリュームまたは現在のドライブの場合など)、次にコンピューターを再起動するときにドライブを変換するオプションが表示されます。 変換を完了するためにコンピューターをすぐに再起動できない場合は、コンピューターを再起動する時間を計画し、変換処理が完了するまでの時間を考慮してください。
--   FAT または FAT32 から NTFS に変換されたボリュームの場合:
-
-    既存のディスク使用量により、MFT は NTFS でフォーマットされたボリュームとは別の場所に作成されるため、ボリュームのパフォーマンスは、もともと NTFS でフォーマットされたボリュームの場合ほど良好ではない可能性があります。 最適なパフォーマンスを得るには、これらのボリュームを再作成し、NTFS ファイルシステムでフォーマットすることを検討してください。
-
-    FAT または FAT32 から NTFS へのボリューム変換では、ファイルはそのまま残りますが、NTFS でフォーマットされたボリュームと比較して、パフォーマンス上の利点がない可能性があります。 たとえば、変換されたボリュームでは、MFT が断片化される可能性があります。 また、変換されたブートボリュームでは、 **convert**は Windows セットアップ時に適用されるのと同じ既定のセキュリティを適用します。
-
-## <a name="BKMK_examples"></a>例
-
-ドライブ E のボリュームを NTFS に変換し、変換処理中にすべてのメッセージを表示するには、次のように入力します。
-```
-convert e: /fs:ntfs /v
-```
-
-#### <a name="additional-references"></a>その他の参照情報
-
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

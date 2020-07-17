@@ -1,36 +1,32 @@
 ---
-title: ユーザー アカウント制御の概要
+title: ユーザー アカウント制御の概要 (英語ページの可能性があります)
 description: Windows Server のセキュリティ
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-tpm
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1b7a39cd-fc10-4408-befd-4b2c45806732
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: bdc9f4dc4b8e19d62288f12a4f2b4e8c86b93b68
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6b79d4317303257677c01e81a655942b7e5a82d3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403314"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856315"
 ---
-# <a name="user-account-control-overview"></a>ユーザー アカウント制御の概要
+# <a name="user-account-control-overview"></a>ユーザー アカウント制御の概要 (英語ページの可能性があります)
 UAC\) \(ユーザーアカウント制御は、Microsoft の全体的なセキュリティビジョンの基本コンポーネントです。  UAC は、悪意のあるプログラムの影響を軽減するのに役立ちます。
 
-## <a name="BKMK_OVER"></a>機能の説明
+## <a name="feature-description"></a><a name="BKMK_OVER"></a>機能の説明
 UAC では、すべてのユーザーが、標準ユーザー アカウントを使って自身のコンピューターにログオンできます。 標準ユーザー トークンを使って起動されたプロセスでは、標準ユーザーに付与されたアクセス権を使ってタスクが実行されます。 たとえば、エクスプローラーでは、標準ユーザー レベルのアクセス許可が自動的に継承されます。 また、Windows エクスプローラーを使用して実行されたプログラム \(たとえば、ダブル\-によってアプリケーションショートカット\) クリックすることによって、標準のユーザーアクセス許可セットを使用して実行することもできます。 多くのアプリケーション (オペレーティングシステム自体に含まれているものを含む) は、この方法で適切に動作するように設計されています。
 
 特にセキュリティ設定を考慮して設計されていないその他のアプリケーションについては、正常に実行するために追加のアクセス許可が必要になることがよくあります。 これらの種類のプログラムは、レガシアプリケーションと呼ばれます。 さらに、新しいソフトウェアをインストールしたり、Windows ファイアウォールなどのプログラムの構成を変更したりする操作には、標準ユーザーアカウントで使用できるものよりも多くのアクセス許可が必要です。
 
 アプリケーションを標準のユーザー権限で実行する必要がある場合、UAC はトークンに追加のユーザーグループを復元できます。 これにより、コンピューターまたはデバイスにシステムレベルの変更を加えるプログラムを、ユーザーが明示的に制御できるようになります。
 
-## <a name="BKMK_APP"></a>実用的なアプリケーション
+## <a name="practical-applications"></a><a name="BKMK_APP"></a>実用的なアプリケーション
 UAC の管理者承認モードは、管理者の知識がなくても、悪意のあるプログラムがサイレントインストールされるのを防ぐのに役立ちます。 また、不注意によるシステム\-広範な変更から保護するのにも役立ちます。 最後に挙げるのは、このモードによる高度なコンプライアンスの実施です。この場合、管理者は積極的に同意するか、管理プロセスごとに資格情報を提供する必要があります。
 
 

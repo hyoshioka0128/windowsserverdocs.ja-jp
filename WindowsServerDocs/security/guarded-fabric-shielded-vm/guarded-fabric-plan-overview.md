@@ -1,22 +1,22 @@
 ---
 title: 保護されたファブリックとシールドされた Vm の計画
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: a754b78c-048d-4be9-a846-cf41ff0bcbc4
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
-ms.openlocfilehash: f0ace5a081569cbe1ecb86c63fd88635035cf908
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b35b74b4f82360f65bfdd7bc9addf58b914627d4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403555"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856525"
 ---
 # <a name="planning-a-guarded-fabric"></a>保護されたファブリックの計画
 
->適用対象:Windows Server 2019、Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: windows server 2019、Windows Server (半期チャネル)、Windows Server 2016
 
 次のトピックでは、保護されたファブリックとシールドされた仮想マシン (Vm) のデプロイの計画について説明します。
 

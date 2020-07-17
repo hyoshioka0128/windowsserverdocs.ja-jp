@@ -1,35 +1,34 @@
 ---
 title: chgusr
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Chgusr コマンドの参照記事。リモートデスクトップセッションホストサーバーのインストールモードを変更します。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f119d9d3-ed8b-42da-81f7-77591d908c83
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a19699e63168edc603e0292280b868306cbc6f90
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 450d19dc8b7b415a44d290ee3ed360a4f5014ee3
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71379479"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930019"
 ---
 # <a name="chgusr"></a>chgusr
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-リモートデスクトップセッションホスト (rd セッションホスト) サーバーのインストールモードを変更します。  
+リモートデスクトップセッションホストサーバーのインストールモードを変更します。
+
 > [!NOTE]
-> Windows Server 2008 R2 で、「ターミナル サービス」は「リモート デスクトップ サービス」に名前変更されました。 最新バージョンの新機能については、Windows Server TechNet ライブラリの[Windows Server 2012 のリモートデスクトップサービスの新機能](https://technet.microsoft.com/library/hh831527) を参照してください。  
-> ## <a name="remarks"></a>コメント  
-> このコマンドは、[ユーザーの**変更**] コマンドと同じです。  
-> #### <a name="additional-references"></a>その他の参照情報  
-> [change user](change-user.md)  
-> [コマンド ライン構文の記号](command-line-syntax-key.md)  
-> [リモートデスクトップサービス&#40;ターミナルサービス&#41;のコマンドリファレンス](remote-desktop-services-terminal-services-command-reference.md)  
+> このコマンドは、**ユーザーの変更コマンド**に置き換えられました。 構文とパラメーターの詳細を含む詳細については、「 [change user command](change-user.md)」を参照してください。
+
+## <a name="additional-references"></a>その他の参照情報
+
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [ユーザーの変更コマンド](change-user.md)
+
+- [リモート デスクトップ サービス (ターミナル サービス) のコマンド リファレンス](remote-desktop-services-terminal-services-command-reference.md)

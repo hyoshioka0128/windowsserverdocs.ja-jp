@@ -1,6 +1,5 @@
 ---
 title: トークンバインドの概要
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: 4623a48c-cefd-4a27-9173-2af58ac212f2
@@ -8,16 +7,16 @@ manager: alanth
 author: justinha
 ms.technology: security-authentication
 ms.date: 11/09/2016
-ms.openlocfilehash: 52ba35808b34eb07ecd6ac92819e9dc7a693b15b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d067db04fe881193143104ce9f75a0c9932907e7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403322"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855895"
 ---
 # <a name="introducing-token-binding"></a>トークンバインドの概要
 
->適用先:Windows Server 2016 と Windows 10
+>適用対象: Windows Server 2016 および Windows 10
 
 トークンバインドプロトコルを使用すると、アプリケーションとサービスは、セキュリティトークンを TLS レイヤーに暗号化して、トークンの盗難やリプレイ攻撃を軽減できます。 有効期間が長く、一意に識別できる TLS [RFC5246] のバインドは、複数の TLS セッションと接続にまたがることができます。
 
@@ -30,7 +29,7 @@ ms.locfileid: "71403322"
     - トークンバインドプロトコルが更新されました[[tokbind-01]](https://datatracker.ietf.org/doc/draft-ietf-tokbind-protocol/01/)
     - トークンバインドネゴシエーションの TLS 拡張機能が追加されました[[tokbind-00]](https://tools.ietf.org/html/draft-popov-tokbind-negotiation-00)
     - WinInet & HTTP です。HTTP 更新によるトークンバインドの SYS サポート[[draft-tokbind-02]](https://datatracker.ietf.org/doc/draft-ietf-tokbind-https/02/)
-- Windows 10、バージョン 1507 (サービス更新プログラム[KB4034668](https://support.microsoft.com/kb/KB4034668)、windows 10、バージョン1511、サービス更新プログラム[KB4034660](https://support.microsoft.com/kb/KB4034660)、windows 10、バージョン1607、windows Server 2016、サービス更新[KB4034658](https://support.microsoft.com/kb/KB4034658)サポートトークンバインドプロトコル)バージョン0.10 –既定でオン
+- Windows 10、バージョン 1507 (サービス更新プログラム[KB4034668](https://support.microsoft.com/kb/KB4034668)、windows 10、バージョン1511、サービス更新[KB4034660](https://support.microsoft.com/kb/KB4034660)、windows 10、バージョン1607、windows Server 2016 with サービス更新[KB4034658](https://support.microsoft.com/kb/KB4034658)サポートトークンバインドプロトコルバージョン0.10 –既定)
     - トークンバインドプロトコルが更新されました[[tokbind-10]](https://datatracker.ietf.org/doc/draft-ietf-tokbind-protocol/10/)
     - トークンバインドネゴシエーションの TLS 拡張機能が追加されました[[tokbind-05]](https://tools.ietf.org/html/draft-ietf-tokbind-negotiation-05)
     - WinInet & HTTP です。HTTP 更新によるトークンバインドの SYS サポート[[draft-ietf-tokbind-06]](https://datatracker.ietf.org/doc/draft-ietf-tokbind-https/06/)

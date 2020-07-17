@@ -2,26 +2,23 @@
 title: サーバー クリーンアップ ウィザード
 description: Windows Server Update Service (WSUS) トピック-サーバークリーンアップウィザードを使用してディスク領域を管理する方法
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-wsus
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7c351797-2716-4442-a668-60d5b4e77751
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e285e59a27b6bf0ef1bf3b1ab0f78a96efa60c87
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 12049e2bba28f2381e6e80db07768b4e180861d6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361528"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828536"
 ---
 # <a name="the-server-cleanup-wizard"></a>サーバー クリーンアップ ウィザード
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 サーバークリーンアップウィザードはユーザーインターフェイスに統合されており、ディスク領域の管理に使用できます。 このウィザードでは、次の操作を実行できます。
 
@@ -51,7 +48,7 @@ ms.locfileid: "71361528"
   > [!IMPORTANT]
   >  サーバークリーンアップウィザードを使用して不要なコンテンツを削除すると、Microsoft Update カタログサイトからダウンロードしたすべてのプライベート更新ファイルも削除されます。 これらのファイルは、サーバークリーンアップウィザードの実行後に再インポートする必要があります。 
 
-自動承認規則を使用して更新プログラムが承認されている場合は、"承認済み" 状態のままになっている可能性があり、サーバークリーンアップウィザードでは削除されません。 "承認済み" 状態にある自動承認された更新プログラムを削除するには、WSUS 管理者が、優先される更新プログラムの承認状態を "未承認" に手動で設定する必要があります。これにより、サーバークリーンアップウィザードによる拒否の対象となります。 サーバークリーンアップウィザードを実行すると、新しい更新プログラムが承認され、更新プログラムを "拒否" としてマークする前に、必要に応じて更新されるクライアントシステムがまだ報告されていないことが確認されます。
+自動承認規則を使用して更新プログラムが承認されている場合、更新プログラムは承認済みの状態である可能性があり、サーバークリーンアップウィザードによって削除されることはありません。 承認済みの状態にある自動承認された更新プログラムを削除するには、WSUS 管理者は、[優先される更新プログラムの承認ステータス] を [承認されていません] に手動で設定する必要があります。これにより、サーバークリーンアップウィザードによる拒否の対象となります。 サーバークリーンアップウィザードを実行すると、新しい更新プログラムが承認され、更新プログラムを拒否済みとしてマークする前に、必要に応じて更新するクライアントシステムがまだ報告されていないことが確認されます。
 
 
 

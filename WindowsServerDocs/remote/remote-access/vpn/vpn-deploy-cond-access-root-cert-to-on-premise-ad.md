@@ -1,22 +1,19 @@
 ---
 title: オンプレミスの AD に条件付きアクセス ルート証明書を展開する
-description: ''
-services: active-directory
 ms.prod: windows-server
 ms.technology: networking-ras
-ms.workload: identity
 ms.topic: article
 ms.date: 06/28/2019
-ms.author: pashort
-author: shortpatti
+ms.author: v-tea
+author: Teresa-MOTIV
 ms.localizationpriority: medium
 ms.reviewer: deverette
-ms.openlocfilehash: 67d361db7a2dd3f2879e8beb924075dae68d52a3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 27a99696f575afa61d3e39aff13fb58cc955936b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404316"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80818785"
 ---
 # <a name="step-74-deploy-conditional-access-root-certificates-to-on-premises-ad"></a>手順 7.4. 条件付きアクセスルート証明書をオンプレミスの AD にデプロイする
 
@@ -57,6 +54,6 @@ ms.locfileid: "71404316"
       - AIA コンテナー
       - 証明機関コンテナー
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次のステップ:
 
-[手順 7.5.OMA-URI ベースの VPNv2 プロファイルを Windows 10 デバイスに作成](vpn-create-oma-dm-based-vpnv2-profiles.md)する: この手順では、Intune を使用して oma-uri ベースの VPNv2 プロファイルを作成し、VPN デバイス構成ポリシーを展開することができます。 VPNv2 プロファイルを作成するために SCCM または PowerShell スクリプトを使用する場合、詳細については、 [VPNV2 CSP 設定](https://docs.microsoft.com/windows/client-management/mdm/vpnv2-csp)を参照してください。
+[手順 7.5.OMA-URI ベースの VPNv2 プロファイルを Windows 10 デバイスに作成](vpn-create-oma-dm-based-vpnv2-profiles.md)する: この手順では、Intune を使用して oma-uri ベースの VPNv2 プロファイルを作成し、VPN デバイス構成ポリシーを展開することができます。 VPNv2 プロファイルを作成するために Microsoft エンドポイント Configuration Manager または PowerShell スクリプトを使用する場合は、 [VPNV2 CSP の設定](https://docs.microsoft.com/windows/client-management/mdm/vpnv2-csp)に関する詳細を参照してください。

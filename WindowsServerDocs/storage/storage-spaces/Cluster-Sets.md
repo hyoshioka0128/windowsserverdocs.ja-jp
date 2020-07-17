@@ -1,23 +1,24 @@
 ---
 title: クラスター セット
 ms.prod: windows-server
-ms.manager: eldenc
+manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: johnmarlin-msft
+ms.author: johnmar
 ms.date: 01/30/2019
 description: この記事では、クラスターセットのシナリオについて説明します。
 ms.localizationpriority: medium
-ms.openlocfilehash: 52d686fa9797d84f56182b15c36a26440792ec13
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 64aeda27d5554e3f348a77b0ae785ddcf05dee00
+ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402918"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83436617"
 ---
 # <a name="cluster-sets"></a>クラスター セット
 
-> 適用対象: Windows Server 2019
+> 適用先:Windows Server 2019
 
 クラスターセットは、Windows Server 2019 リリースの新しいクラウドスケールアウトテクノロジです。これにより、単一のソフトウェア定義データセンター (SDDC) クラウド内のクラスターノード数が桁違いに増加します。 クラスターセットは、複数のフェールオーバークラスター (コンピューティング、ストレージ、またはハイパー収束) の疎結合グループです。 クラスターセットテクノロジを使用すると、クラスターセット内のメンバークラスター間での仮想マシンの円滑な、および仮想マシンの円滑なのサポートで設定されている統合ストレージの名前空間を利用できます。
 
@@ -25,13 +26,13 @@ ms.locfileid: "71402918"
 
 ## <a name="technology-introduction"></a>テクノロジの概要
 
-クラスターセットテクノロジは、特定の顧客からの要求を満たすために開発されています。 クラスターセットの値の提案は、次のようにまとめることができます。  
+クラスターセットテクノロジは、特定の顧客からの要求を満たすために開発されています。 クラスターセットの値の提案は、次のようにまとめることができます。
 
 - 1つのクラスターにソフトウェアの障害境界を保持しながら、複数の小さいクラスターを1つの大きなファブリックに結合することで、可用性の高い仮想マシンを実行するためにサポートされる SDDC クラウドスケールを大幅に向上させることができます。
 - この大規模なファブリック全体で仮想マシンを移行することによって、テナントの仮想マシンの可用性に影響を与えることなく、クラスターのオンボードと削除を含むフェールオーバークラスターのライフサイクル全体を管理します
 - ハイパー収束 I のコンピューティングからストレージへの比率を簡単に変更する
 - 最初の仮想マシンの配置と後続の仮想マシンの移行におけるクラスター全体での[Azure のような障害ドメインと可用性セット](htttps://docs.microsoft.com/azure/virtual-machines/windows/manage-availability)の利点
-- 個々の障害ドメインを維持しながら、最大の効率を維持しながらも、異なる世代の CPU ハードウェアを同じクラスターセットファブリックに一致させます。  クラスターセット全体だけでなく、個々のクラスターにも同じハードウェアの推奨事項があることに注意してください。
+- 個々の障害ドメインを同時に維持しながら、効率を最大化すると同時に、異なる世代の CPU ハードウェアを同じクラスターセットファブリックに一致させます。 クラスターセット全体だけでなく、個々のクラスターにも同じハードウェアの推奨事項があることに注意してください。
 
 高レベルのビューでは、クラスターセットは次のようになります。
 
@@ -41,7 +42,7 @@ ms.locfileid: "71402918"
 
 **管理クラスター**
 
-クラスターセットの管理クラスターは、クラスターセット全体の高可用性管理プレーンと、統合ストレージ名前空間 (クラスターセット名前空間) の参照スケールアウトファイルサーバー (SOFS) をホストするフェールオーバークラスターです。 管理クラスターは、仮想マシンのワークロードを実行するメンバークラスターから論理的に切り離されています。 これにより、クラスターセットの管理プレーンは、すべてのローカライズされたクラスター全体の障害 (メンバークラスターの機能低下など) に回復できるようになります。   
+クラスターセットの管理クラスターは、クラスターセット全体の高可用性管理プレーンと、統合ストレージ名前空間 (クラスターセット名前空間) の参照スケールアウトファイルサーバー (SOFS) をホストするフェールオーバークラスターです。 管理クラスターは、仮想マシンのワークロードを実行するメンバークラスターから論理的に切り離されています。 これにより、クラスターセットの管理プレーンは、すべてのローカライズされたクラスター全体の障害 (メンバークラスターの機能低下など) に回復できるようになります。
 
 **メンバークラスター**
 
@@ -57,28 +58,28 @@ ms.locfileid: "71402918"
 
 **クラスターセットワーカー**
 
-クラスターセットの展開では、CS マスターは "クラスターセットワーカー" (CS Worker) と呼ばれるメンバークラスター上の新しいクラスターリソースと対話します。 CS-Worker は、CS マスターによって要求されたローカルクラスターの相互作用を調整するために、クラスター上の唯一の窓口として機能します。 このような対話の例としては、バーチャルマシンの配置やクラスタローカルのリソースインベントリなどがあります。 クラスターセット内の各メンバークラスターには、1つの CS Worker インスタンスのみが存在します。 
+クラスターセットの展開では、CS マスターは "クラスターセットワーカー" (CS Worker) と呼ばれるメンバークラスター上の新しいクラスターリソースと対話します。 CS-Worker は、CS マスターによって要求されたローカルクラスターの相互作用を調整するために、クラスター上の唯一の窓口として機能します。 このような対話の例としては、バーチャルマシンの配置やクラスタローカルのリソースインベントリなどがあります。 クラスターセット内の各メンバークラスターには、1つの CS Worker インスタンスのみが存在します。
 
 **障害ドメイン**
 
-障害ドメインとは、障害が発生したときに管理者が判断したソフトウェアとハードウェアの成果物をグループ化したものです。  管理者は1つまたは複数のクラスターを障害ドメインとして指定できますが、各ノードは可用性セット内の障害ドメインに参加することができます。 クラスターセットの設計により、データセンターのトポロジに関する考慮事項 (PDU、ネットワークなど、メンバークラスターが共有する) に精通している管理者に障害ドメインの境界決定を行うことができます。 
+障害ドメインとは、障害が発生したときに管理者が判断したソフトウェアとハードウェアの成果物をグループ化したものです。 管理者は1つまたは複数のクラスターを障害ドメインとして指定できますが、各ノードは可用性セット内の障害ドメインに参加することができます。 クラスターセットの設計により、データセンターのトポロジに関する考慮事項 (PDU、ネットワークなど、メンバークラスターが共有する) に精通している管理者に障害ドメインの境界決定を行うことができます。
 
 **可用性セット**
 
-可用性セットを使用すると、管理者は、クラスター化されたワークロードを可用性セットに整理し、その可用性セットにワークロードを展開することで、クラスター化されたワークロードの必要な冗長性を構成できます。 たとえば、2層アプリケーションをデプロイする場合は、各レベルの可用性セットに少なくとも2つの仮想マシンを構成することをお勧めします。これにより、可用性セット内の1つの障害ドメインがダウンしたときに、アプリケーションが少なくとも同じ可用性セットの異なる障害ドメインでホストされている各層内の1つの仮想マシン。
+可用性セットを使用すると、管理者は、クラスター化されたワークロードを可用性セットに整理し、その可用性セットにワークロードを展開することで、クラスター化されたワークロードの必要な冗長性を構成できます。 たとえば、2層アプリケーションを配置する場合は、各層の可用性セットに少なくとも2つの仮想マシンを構成することをお勧めします。これにより、その可用性セット内の1つの障害ドメインがダウンしたときに、アプリケーションは、同じ可用性セットの異なる障害ドメインでホストされている各層に少なくとも1つ
 
 ## <a name="why-use-cluster-sets"></a>クラスターセットを使用する理由
 
-クラスターセットは、回復性を犠牲にすることなくスケールの利点を提供します。  
+クラスターセットは、回復性を犠牲にすることなくスケールの利点を提供します。
 
-クラスターセットを使用すると、複数のクラスターをクラスター化して大規模なファブリックを作成できます。一方、各クラスターは回復性を維持するために独立しています。  たとえば、仮想マシンを実行している4ノード HCI クラスターがいくつかあるとします。  各クラスターは、それ自体に必要な回復性を提供します。  ストレージまたはメモリがいっぱいになった場合は、次の手順でスケールアップします。  スケールアップには、いくつかのオプションと考慮事項があります。
+クラスターセットを使用すると、複数のクラスターをクラスター化して大規模なファブリックを作成できます。一方、各クラスターは回復性を維持するために独立しています。 たとえば、仮想マシンを実行している4ノード HCI クラスターがいくつかあるとします。 各クラスターは、それ自体に必要な回復性を提供します。 ストレージまたはメモリがいっぱいになった場合は、次の手順でスケールアップします。 スケールアップには、いくつかのオプションと考慮事項があります。
 
-1. 現在のクラスターに記憶域を追加します。  記憶域スペースダイレクトでは、まったく同じモデル/ファームウェアドライブを使用できない場合があるため、このようなことは難しい場合があります。  再構築時間の考慮も考慮する必要があります。
-2. メモリを追加します。  マシンが処理できるメモリが不足している場合はどうすればよいでしょうか。  使用可能なすべてのメモリスロットがいっぱいになった場合はどうなりますか。
-3. 現在のクラスターに、ドライブを含むコンピューティングノードを追加します。  これは、考慮する必要があるオプション1に戻ります。
+1. 現在のクラスターに記憶域を追加します。 記憶域スペースダイレクトでは、まったく同じモデル/ファームウェアドライブを使用できない場合があるため、このようなことは難しい場合があります。 再構築時間の考慮も考慮する必要があります。
+2. メモリを追加します。 マシンが処理できるメモリが不足している場合はどうすればよいでしょうか。  使用可能なすべてのメモリスロットがいっぱいになった場合はどうなりますか。
+3. 現在のクラスターに、ドライブを含むコンピューティングノードを追加します。 これは、考慮する必要があるオプション1に戻ります。
 4. 新しいクラスター全体を購入する
 
-ここで、クラスターセットはスケーリングの利点を提供します。  クラスターをクラスターセットに追加した場合、追加購入を行わなくても、別のクラスターで使用可能な記憶域またはメモリを活用できます。  回復性の観点からは、記憶域スペースダイレクトにノードを追加しても、クォーラムに対する追加の投票は提供されません。  [ここで](drive-symmetry-considerations.md)説明したように、記憶域スペースダイレクトクラスターは、停止する前に2つのノードが失われる可能性があります。  4ノードの HCI クラスターがある場合、3つのノードがダウンするとクラスター全体が停止します。  8ノードクラスターがある場合、3つのノードがダウンするとクラスター全体が停止します。  セットに2つの4ノード HCI クラスターがあるクラスターセットでは、1つの HCI 内の2つのノードがダウンし、もう一方の HCI に1つのノードがダウンします。両方のクラスターが稼働しています。  1つの大きな16ノード記憶域スペースダイレクトクラスターを作成するか、4ノードクラスターに分割してクラスターセットを使用する方がよいでしょうか。  クラスターセットを持つ4ノードクラスターが4つある場合、同じスケールが得られますが、複数のコンピューティングノードが (予期しない、またはメンテナンスのために) ダウンし、運用が継続される可能性があるため、回復性が向上します。
+ここで、クラスターセットはスケーリングの利点を提供します。 クラスターをクラスターセットに追加した場合、追加購入を行わなくても、別のクラスターで使用可能な記憶域またはメモリを活用できます。 回復性の観点からは、記憶域スペースダイレクトにノードを追加しても、クォーラムに対する追加の投票は提供されません。 [ここで](drive-symmetry-considerations.md)説明したように、記憶域スペースダイレクトクラスターは、停止する前に2つのノードが失われる可能性があります。 4ノードの HCI クラスターがある場合、3つのノードがダウンするとクラスター全体が停止します。 8ノードクラスターがある場合、3つのノードがダウンするとクラスター全体が停止します。 セットに2つの4ノード HCI クラスターがあるクラスターセットでは、1つの HCI 内の2つのノードがダウンし、もう一方の HCI に1つのノードがダウンします。両方のクラスターが稼働しています。 1つの大きな16ノード記憶域スペースダイレクトクラスターを作成するか、4ノードクラスターに分割してクラスターセットを使用する方がよいでしょうか。  クラスターセットを持つ4ノードクラスターが4つある場合、同じスケールが得られますが、複数のコンピューティングノードが (予期しない、またはメンテナンスのために) ダウンし、運用が継続される可能性があるため、回復性が向上します。
 
 ## <a name="considerations-for-deploying-cluster-sets"></a>クラスターセットの展開に関する考慮事項
 
@@ -92,27 +93,29 @@ ms.locfileid: "71402918"
 
 答えが「はい」の場合は、クラスターセットが必要です。
 
-それ以外にも、データセンターの戦略全体が変更される可能性がある場合に考慮すべき項目がいくつかあります。  SQL Server が良い例です。  クラスター間で SQL Server 仮想マシンを移動するには、ライセンス SQL を追加のノードで実行する必要がありますか。  
+それ以外にも、データセンターの戦略全体が変更される可能性がある場合に考慮すべき項目がいくつかあります。 SQL Server が良い例です。 クラスター間で SQL Server 仮想マシンを移動するには、ライセンス SQL を追加のノードで実行する必要がありますか。
 
 ## <a name="scale-out-file-server-and-cluster-sets"></a>スケールアウトファイルサーバーとクラスターセット
 
-Windows Server 2019 には、インフラストラクチャスケールアウトファイルサーバー (SOFS) と呼ばれる、新しいスケールアウトファイルサーバーの役割があります。 
+Windows Server 2019 には、インフラストラクチャスケールアウトファイルサーバー (SOFS) と呼ばれる、新しいスケールアウトファイルサーバーの役割があります。
 
 インフラストラクチャ SOFS の役割には、次の考慮事項が適用されます。
 
-1.  フェールオーバークラスターには、最大で1つの Infrastructure SOFS クラスターロールしか存在できません。 Infrastructure SOFS ロールは、 **ClusterScaleOutFileServerRole**コマンドレットに " **-Infrastructure**" スイッチパラメーターを指定することによって作成されます。  次に、例を示します。
+1. フェールオーバークラスターには、最大で1つの Infrastructure SOFS クラスターロールしか存在できません。 Infrastructure SOFS ロールは、 **ClusterScaleOutFileServerRole**コマンドレットに "**-Infrastructure**" スイッチパラメーターを指定することによって作成されます。 たとえば、次のように入力します。
 
-        Add-ClusterScaleoutFileServerRole -Name "my_infra_sofs_name" -Infrastructure
+    ```PowerShell
+    Add-ClusterScaleoutFileServerRole -Name "my_infra_sofs_name" -Infrastructure
+    ```
 
-2.  フェールオーバーで作成された各 CSV ボリュームは、CSV ボリューム名に基づいて自動生成された名前で SMB 共有の作成を自動的にトリガーします。 管理者は、CSV ボリュームの作成/変更操作を使用する以外に、SOFS ロールの下にある SMB 共有を直接作成または変更することはできません。
+2. フェールオーバーで作成された各 CSV ボリュームは、CSV ボリューム名に基づいて自動生成された名前で SMB 共有の作成を自動的にトリガーします。 管理者は、CSV ボリュームの作成/変更操作を使用する以外に、SOFS ロールの下にある SMB 共有を直接作成または変更することはできません。
 
-3.  ハイパー収束構成では、インフラストラクチャの SOFS により、SMB クライアント (Hyper-v ホスト) は、保証された継続的可用性 (CA) とインフラストラクチャ SOFS SMB サーバーとの間で通信を行うことができます。 このハイパー収束 SMB ループバック CA は、仮想ディスク (VHDx) ファイルにアクセスする仮想マシンを介して実現され、所有している仮想マシンの id がクライアントとサーバーの間で転送されます。 この id 転送では、以前と同じように、標準のハイパー収束クラスター構成と同様に、ACL を使用した VHDx ファイルが許可されます。
+3. ハイパー収束構成では、インフラストラクチャの SOFS により、SMB クライアント (Hyper-v ホスト) は、保証された継続的可用性 (CA) とインフラストラクチャ SOFS SMB サーバーとの間で通信を行うことができます。 このハイパー収束 SMB ループバック CA は、仮想ディスク (VHDx) ファイルにアクセスする仮想マシンを介して実現され、所有している仮想マシンの id がクライアントとサーバーの間で転送されます。 この id 転送では、以前と同じように、標準のハイパー収束クラスター構成と同様に、ACL を使用した VHDx ファイルが許可されます。
 
 クラスターセットを作成すると、クラスターセットの名前空間は、各メンバークラスターのインフラストラクチャ SOFS、さらには管理クラスターのインフラストラクチャ SOFS に依存します。
 
-メンバークラスターがクラスターセットに追加された時点で、管理者は、そのクラスターに SOFS インフラストラクチャが既に存在する場合は、その名前を指定します。 インフラストラクチャ SOFS が存在しない場合、この操作によって新しいメンバークラスターの新しい Infrastructure SOFS ロールが作成されます。 インフラストラクチャ SOFS の役割がメンバークラスターに既に存在する場合、追加操作によって、必要に応じて、指定した名前に暗黙的に名前が変更されます。 メンバークラスター上の既存のシングルトン SMB サーバーまたは非インフラストラクチャ SOFS ロールは、クラスターセットによって未使用されたままになります。 
+メンバークラスターがクラスターセットに追加された時点で、管理者は、そのクラスターに SOFS インフラストラクチャが既に存在する場合は、その名前を指定します。 インフラストラクチャ SOFS が存在しない場合、この操作によって新しいメンバークラスターの新しい Infrastructure SOFS ロールが作成されます。 インフラストラクチャ SOFS の役割がメンバークラスターに既に存在する場合、追加操作によって、必要に応じて、指定した名前に暗黙的に名前が変更されます。 メンバークラスター上の既存のシングルトン SMB サーバーまたは非インフラストラクチャ SOFS ロールは、クラスターセットによって未使用されたままになります。
 
-クラスターセットの作成時に、管理者は、既に存在する AD コンピューターオブジェクトを管理クラスターの名前空間ルートとして使用することができます。 クラスターセット作成操作では、管理クラスターにインフラストラクチャ SOFS クラスター役割を作成するか、既に説明したように、既存のインフラストラクチャ SOFS 役割の名前を変更します。 管理クラスターのインフラストラクチャ SOFS は、クラスターセットの名前空間の参照 (クラスターセットの名前空間) SOFS として使用されます。 これは、クラスターセットの名前空間 SOFS 上の各 SMB 共有が、Windows Server 2019 で新しく導入された "SimpleReferral" という種類の参照共有であることを意味します。  この参照を使用すると、SMB クライアントは、メンバークラスター SOFS でホストされているターゲットの SMB 共有にアクセスできます。 クラスターセット名前空間の参照 SOFS は、軽量の参照メカニズムであるため、i/o パスには参加しません。 SMB 参照は各クライアントノードにキャッシュされ、クラスターセット名前空間は必要に応じてこれらの参照を動的に動的に更新します。永続的
+クラスターセットの作成時に、管理者は、既に存在する AD コンピューターオブジェクトを管理クラスターの名前空間ルートとして使用することができます。 クラスターセット作成操作では、管理クラスターにインフラストラクチャ SOFS クラスター役割を作成するか、既に説明したように、既存のインフラストラクチャ SOFS 役割の名前を変更します。 管理クラスターのインフラストラクチャ SOFS は、クラスターセットの名前空間の参照 (クラスターセットの名前空間) SOFS として使用されます。 これは、クラスターセットの名前空間 SOFS 上の各 SMB 共有が、Windows Server 2019 で新しく導入された "SimpleReferral" という種類の参照共有であることを意味します。 この参照を使用すると、SMB クライアントは、メンバークラスター SOFS でホストされているターゲットの SMB 共有にアクセスできます。 クラスターセット名前空間の参照 SOFS は、軽量の参照メカニズムであるため、i/o パスには参加しません。 SMB 参照は各クライアントノードにキャッシュされ、クラスターセット名前空間は必要に応じてこれらの参照を動的に動的に更新します。永続的
 
 ## <a name="creating-a-cluster-set"></a>クラスターセットの作成
 
@@ -123,134 +126,168 @@ Windows Server 2019 には、インフラストラクチャスケールアウト
 1. Windows Server 2019 を実行している管理クライアントを構成します。
 2. この管理サーバーにフェールオーバークラスターツールをインストールします。
 3. クラスターメンバーを作成する (各クラスターに少なくとも2つのクラスター共有ボリュームを持つ2つ以上のクラスター)
-4. メンバークラスターをまたがっする管理クラスター (物理またはゲスト) を作成します。  この方法では、メンバークラスターの障害が発生しても、クラスターセットの管理プレーンが引き続き使用できるようになります。
+4. メンバークラスターをまたがっする管理クラスター (物理またはゲスト) を作成します。 この方法では、メンバークラスターの障害が発生しても、クラスターセットの管理プレーンが引き続き使用できるようになります。
 
 ### <a name="steps"></a>手順
 
-1. 前提条件の定義に従って、3つのクラスターから新しいクラスターセットを作成します。  次の表は、作成するクラスターの例を示しています。  この例では、クラスターセットの名前は**Csmaster**です。
+1. 前提条件の定義に従って、3つのクラスターから新しいクラスターセットを作成します。 次の表は、作成するクラスターの例を示しています。 この例では、クラスターセットの名前は**Csmaster**です。
 
-   | クラスタ名               | 後で使用する Infrastructure SOFS の名前 | 
-   |----------------------------|-------------------------------------------|
-   | クラスターの設定                | SOFS-CLUSTERSET                           |
-   | CLUSTER1                   | SOFS-CLUSTER1                             |
-   | CLUSTER2                   | SOFS-CLUSTER2                             |
+   | クラスター名 | 後で使用する Infrastructure SOFS の名前 |
+   |--------------|-------------------------------------------|
+   | クラスターの設定  | SOFS-CLUSTERSET                           |
+   | CLUSTER1     | SOFS-CLUSTER1                             |
+   | CLUSTER2     | SOFS-CLUSTER2                             |
 
 2. すべてのクラスターが作成されたら、次のコマンドを使用してクラスターセットマスタを作成します。
 
-        New-ClusterSet -Name CSMASTER -NamespaceRoot SOFS-CLUSTERSET -CimSession SET-CLUSTER
+    ```PowerShell
+    New-ClusterSet -Name CSMASTER -NamespaceRoot SOFS-CLUSTERSET -CimSession SET-CLUSTER
+    ```
 
-3. クラスターサーバーをクラスターセットに追加するには、次のものを使用します。
+3. クラスターサーバーをクラスターセットに追加するには、次のコマンドセットを使用します。
 
-        Add-ClusterSetMember -ClusterName CLUSTER1 -CimSession CSMASTER -InfraSOFSName SOFS-CLUSTER1
-        Add-ClusterSetMember -ClusterName CLUSTER2 -CimSession CSMASTER -InfraSOFSName SOFS-CLUSTER2
+    ```PowerShell
+    Add-ClusterSetMember -ClusterName CLUSTER1 -CimSession CSMASTER -InfraSOFSName SOFS-CLUSTER1
+    Add-ClusterSetMember -ClusterName CLUSTER2 -CimSession CSMASTER -InfraSOFSName SOFS-CLUSTER2
+    ```
 
    > [!NOTE]
    > 静的 IP アドレススキームを使用している場合は、**新しい-ClusterSet**コマンドに *-staticaddress x* .x を含める必要があります。
 
-4. クラスターメンバーから設定されたクラスターを作成したら、ノードセットとそのプロパティを一覧表示できます。  クラスターセット内のすべてのメンバークラスターを列挙するには、次のようにします。
+4. クラスターメンバーから設定されたクラスターを作成したら、ノードセットとそのプロパティを一覧表示できます。 クラスターセット内のすべてのメンバークラスターを列挙するには、次のようにします。
 
-        Get-ClusterSetMember -CimSession CSMASTER
+    ```PowerShell
+    Get-ClusterSetMember -CimSession CSMASTER
+    ```
 
 5. 管理クラスターノードを含む、クラスターセット内のすべてのメンバークラスターを列挙するには、次のようにします。
 
-        Get-ClusterSet -CimSession CSMASTER | Get-Cluster | Get-ClusterNode
+    ```PowerShell
+    Get-ClusterSet -CimSession CSMASTER | Get-Cluster | Get-ClusterNode
+    ```
 
 6. メンバークラスターからすべてのノードを一覧表示するには、次のようにします。
 
-        Get-ClusterSetNode -CimSession CSMASTER
+    ```PowerShell
+    Get-ClusterSetNode -CimSession CSMASTER
+    ```
 
 7. クラスターセット全体のすべてのリソースグループを一覧表示するには、次のようにします。
 
-        Get-ClusterSet -CimSession CSMASTER | Get-Cluster | Get-ClusterGroup 
+    ```PowerShell
+    Get-ClusterSet -CimSession CSMASTER | Get-Cluster | Get-ClusterGroup
+    ```
 
-8. クラスターセットの作成プロセスによって1つの SMB 共有が作成されたことを確認するには (Volume1 として識別されるか、または、各クラスターメンバーのインフラストラクチャ SOFS で、ScopeName がインフラストラクチャファイルサーバーの名前であり、両方とも名前が付けられています)、CSV ボリューム:
+8. クラスターセットの作成プロセスによって1つの SMB 共有が作成されたことを確認するには (Volume1 として識別されるか、CSV フォルダーにラベルが付けられているかどうか)、各クラスターメンバーの CSV ボリュームのインフラストラクチャ SOFS で、ScopeName がインフラストラクチャファイルサーバー名とパスであることを確認します。
 
-        Get-SmbShare -CimSession CSMASTER
+    ```PowerShell
+    Get-SmbShare -CimSession CSMASTER
+    ```
 
-8. クラスターセットには、確認のために収集できるデバッグログがあります。  クラスターセットとクラスターデバッグログの両方を、すべてのメンバーと管理クラスターに対して収集できます。
+9. クラスターセットのデバッグログを収集して確認することができます。 クラスターセットとクラスターデバッグログの両方を、すべてのメンバーと管理クラスターに対して収集できます。
 
-        Get-ClusterSetLog -ClusterSetCimSession CSMASTER -IncludeClusterLog -IncludeManagementClusterLog -DestinationFolderPath <path>
+    ```PowerShell
+    Get-ClusterSetLog -ClusterSetCimSession CSMASTER -IncludeClusterLog -IncludeManagementClusterLog -DestinationFolderPath <path>
+    ```
 
-9. すべてのクラスターセットメンバー間で Kerberos の[制約付き委任](https://blogs.technet.microsoft.com/virtualization/2017/02/01/live-migration-via-constrained-delegation-with-kerberos-in-windows-server-2016/)を構成します。
+10. すべてのクラスターセットメンバー間で Kerberos の[制約付き委任](https://techcommunity.microsoft.com/t5/virtualization/live-migration-via-constrained-delegation-with-kerberos-in/ba-p/382334)を構成します。
 
-10. クラスターセット内の各ノードで、クラスター間の仮想マシンのライブマイグレーションの認証の種類を Kerberos に構成します。
+11. クラスターセット内の各ノードで、クラスター間の仮想マシンのライブマイグレーションの認証の種類を Kerberos に構成します。
 
-        foreach($h in $hosts){ Set-VMHost -VirtualMachineMigrationAuthenticationType Kerberos -ComputerName $h }
+    ```PowerShell
+    foreach($h in $hosts){ Set-VMHost -VirtualMachineMigrationAuthenticationType Kerberos -ComputerName $h }
+    ```
 
-11. クラスターセット内の各ノードのローカルの administrators グループに管理クラスターを追加します。
+12. クラスターセット内の各ノードのローカルの administrators グループに管理クラスターを追加します。
 
-        foreach($h in $hosts){ Invoke-Command -ComputerName $h -ScriptBlock {Net localgroup administrators /add <management_cluster_name>$} }
+    ```PowerShell
+    foreach($h in $hosts){ Invoke-Command -ComputerName $h -ScriptBlock {Net localgroup administrators /add <management_cluster_name>$} }
+    ```
 
 ## <a name="creating-new-virtual-machines-and-adding-to-cluster-sets"></a>新しいバーチャルマシンの作成とクラスターセットへの追加
 
-クラスターセットを作成したら、次の手順として、新しい仮想マシンを作成します。  通常、仮想マシンを作成してクラスターに追加するときは、クラスターに対していくつかのチェックを行い、実行するのが最適であるかどうかを確認する必要があります。  これらのチェックには次のものが含まれます。
+クラスターセットを作成したら、次の手順として、新しい仮想マシンを作成します。 通常、仮想マシンを作成してクラスターに追加するときは、クラスターに対していくつかのチェックを行い、実行するのが最適であるかどうかを確認する必要があります。 これらのチェックには次のものが含まれます。
 
 - クラスターノードで使用可能なメモリの量を確認できます。
 - クラスターノードで使用できるディスク領域はどのくらいですか?
 - 仮想マシンには特定の記憶域要件が必要です (つまり、SQL Server の仮想マシンがより高速なドライブを実行しているクラスターにアクセスする場合や、インフラストラクチャの仮想マシンが非常に重要ではなく、低速のドライブで実行できる場合)。
 
-この質問に回答したら、クラスター上に仮想マシンを作成する必要があります。  クラスターセットの利点の1つは、クラスターセットがこれらのチェックを行い、最適なノードに仮想マシンを配置することです。
+この質問に回答したら、クラスター上に仮想マシンを作成する必要があります。 クラスターセットの利点の1つは、クラスターセットがこれらのチェックを行い、最適なノードに仮想マシンを配置することです。
 
-次のコマンドはどちらも最適なクラスターを識別し、仮想マシンを展開します。  次の例では、仮想マシンで少なくとも 4 gb のメモリが使用可能であり、1つの仮想プロセッサを使用する必要があることを指定して、新しい仮想マシンが作成されます。
+次のコマンドはどちらも最適なクラスターを識別し、仮想マシンを展開します。 次の例では、仮想マシンで少なくとも 4 gb のメモリが使用可能であり、1つの仮想プロセッサを使用する必要があることを指定して、新しい仮想マシンが作成されます。
 
 - 仮想マシンで4gb が使用可能であることを確認します。
 - 1で使用する仮想プロセッサを設定します
 - バーチャルマシンに使用可能な CPU が少なくとも10% あることを確認してください
 
-   ```PowerShell
-   # Identify the optimal node to create a new virtual machine
-   $memoryinMB=4096
-   $vpcount = 1
-   $targetnode = Get-ClusterSetOptimalNodeForVM -CimSession CSMASTER -VMMemory $memoryinMB -VMVirtualCoreCount $vpcount -VMCpuReservation 10
-   $secure_string_pwd = convertto-securestring "<password>" -asplaintext -force
-   $cred = new-object -typename System.Management.Automation.PSCredential ("<domain\account>",$secure_string_pwd)
+```PowerShell
+# Identify the optimal node to create a new virtual machine
+$memoryinMB=4096
+$vpcount = 1
+$targetnode = Get-ClusterSetOptimalNodeForVM -CimSession CSMASTER -VMMemory $memoryinMB -VMVirtualCoreCount $vpcount -VMCpuReservation 10
+$secure_string_pwd = convertto-securestring "<password>" -asplaintext -force
+$cred = new-object -typename System.Management.Automation.PSCredential ("<domain\account>",$secure_string_pwd)
 
-   # Deploy the virtual machine on the optimal node
-   Invoke-Command -ComputerName $targetnode.name -scriptblock { param([String]$storagepath); New-VM CSVM1 -MemoryStartupBytes 3072MB -path $storagepath -NewVHDPath CSVM.vhdx -NewVHDSizeBytes 4194304 } -ArgumentList @("\\SOFS-CLUSTER1\VOLUME1") -Credential $cred | Out-Null
-   
-   Start-VM CSVM1 -ComputerName $targetnode.name | Out-Null
-   Get-VM CSVM1 -ComputerName $targetnode.name | fl State, ComputerName
-   ```
+# Deploy the virtual machine on the optimal node
+Invoke-Command -ComputerName $targetnode.name -scriptblock { param([String]$storagepath); New-VM CSVM1 -MemoryStartupBytes 3072MB -path $storagepath -NewVHDPath CSVM.vhdx -NewVHDSizeBytes 4194304 } -ArgumentList @("\\SOFS-CLUSTER1\VOLUME1") -Credential $cred | Out-Null
 
-完了すると、仮想マシンとその配置場所に関する情報が表示されます。  上の例では、次のように表示されます。
+Start-VM CSVM1 -ComputerName $targetnode.name | Out-Null
+Get-VM CSVM1 -ComputerName $targetnode.name | fl State, ComputerName
+```
 
-        State         : Running
-        ComputerName  : 1-S2D2
+完了すると、仮想マシンとその配置場所に関する情報が表示されます。 上の例では、次のように表示されます。
 
-仮想マシンを追加するのに十分なメモリ、cpu、またはディスク領域がない場合は、次のエラーが表示されます。
+```
+State         : Running
+ComputerName  : 1-S2D2
+```
 
-      Get-ClusterSetOptimalNodeForVM : A cluster node is not available for this operation.  
+仮想マシンを追加するのに十分なメモリ、CPU 容量、またはディスク領域がない場合は、次のエラーが表示されます。
 
-作成された仮想マシンは、指定された特定のノードの Hyper-v マネージャーに表示されます。  クラスターセットの仮想マシンとしてクラスターに追加するには、次のコマンドを実行します。  
+```
+Get-ClusterSetOptimalNodeForVM : A cluster node is not available for this operation.
+```
 
-        Register-ClusterSetVM -CimSession CSMASTER -MemberName $targetnode.Member -VMName CSVM1
+作成された仮想マシンは、指定された特定のノードの Hyper-v マネージャーに表示されます。 クラスターセット仮想マシンとして追加し、クラスターに追加するには、次のコマンドを使用します。
+
+```PowerShell
+Register-ClusterSetVM -CimSession CSMASTER -MemberName $targetnode.Member -VMName CSVM1
+```
 
 完了すると、出力は次のようになります。
 
-         Id  VMName  State  MemberName  PSComputerName
-         --  ------  -----  ----------  --------------
-          1  CSVM1      On  CLUSTER1    CSMASTER
+```
+Id  VMName  State  MemberName  PSComputerName
+--  ------  -----  ----------  --------------
+ 1  CSVM1     On   CLUSTER1    CSMASTER
+```
 
-既存の仮想マシンでクラスターを追加した場合は、仮想マシンをクラスターセットに登録して、すべての仮想マシンを一度に登録する必要があります。次のコマンドを使用します。
+既存の仮想マシンでクラスターを追加した場合は、仮想マシンもクラスターセットに登録する必要があります。 すべての仮想マシンを一度に登録するには、次のコマンドを使用します。
 
-        Get-ClusterSetMember -name CLUSTER3 -CimSession CSMASTER | Register-ClusterSetVM -RegisterAll -CimSession CSMASTER
+```PowerShell
+Get-ClusterSetMember -Name CLUSTER3 -CimSession CSMASTER | Register-ClusterSetVM -RegisterAll -CimSession CSMASTER
+```
 
-ただし、仮想マシンへのパスをクラスターセットの名前空間に追加する必要があるため、このプロセスは完了しません。
+ただし、このプロセスはまだ完了していません。仮想マシンへのパスをクラスターセットの名前空間に追加する必要があるためです。
 
-たとえば、既存のクラスターが追加され、事前に構成された仮想マシンがローカルクラスターの共有ボリューム (CSV) に存在する場合、VHDX のパスは "C:\ClusterStorage\Volume1\MYVM\Virtual Hard Disks\MYVM.vhdx." のようになります。  記憶域の移行は、CSV パスが1つのメンバークラスターに対してローカルに設計されているため、実現する必要があります。 このため、メンバークラスター間でライブマイグレーションを実行すると、は仮想マシンにアクセスできなくなります。 
+たとえば、既存のクラスターが追加され、ローカルクラスターの共有ボリューム (CSV) に存在する、事前に構成された仮想マシンがあるとします。 VHDX のパスは、"C:\ClusterStorage\Volume1\MYVM\Virtual ハードディスク \ vhdx" に似ています。 CSV パスは単一のメンバークラスターに対してローカルに設計されているため、記憶域の移行を行う必要があります。そのため、メンバークラスター間でライブマイグレーションを実行すると、仮想マシンにアクセスできなくなります。
 
-この例では、CLUSTER3 というスケールアウトファイルサーバーインフラストラクチャを使用してを SOFS としてクラスターセットに追加し、CLUSTER3 として追加しました。  仮想マシンの構成と記憶域を移動するには、次のコマンドを実行します。
+この例では、CLUSTER3 というスケールアウトファイルサーバーインフラストラクチャを使用してを SOFS としてクラスターセットに追加し、CLUSTER3 として追加しました。 仮想マシンの構成と記憶域を移動するには、次のコマンドを実行します。
 
-        Move-VMStorage -DestinationStoragePath \\SOFS-CLUSTER3\Volume1 -Name MYVM
+```PowerShell
+Move-VMStorage -DestinationStoragePath \\SOFS-CLUSTER3\Volume1 -Name MYVM
+```
 
 完了すると、次の警告が表示されます。
 
-        WARNING: There were issues updating the virtual machine configuration that may prevent the virtual machine from running.  For more information view the report file below.
-        WARNING: Report file location: C:\Windows\Cluster\Reports\Update-ClusterVirtualMachineConfiguration '' on date at time.htm.
+```
+WARNING: There were issues updating the virtual machine configuration that may prevent the virtual machine from running. For more information view the report file below.
+WARNING: Report file location: C:\Windows\Cluster\Reports\Update-ClusterVirtualMachineConfiguration '' on date at time.htm.
+```
 
-この警告は、"仮想マシンロールの記憶域構成に変更が検出されませんでした。" という警告が無視される場合があります。  実際の物理的な場所としての警告の理由は変わりません。構成パスのみ。 
+この警告は、"仮想マシンロールの記憶域構成に変更が検出されませんでした。" という警告が無視される場合があります。 実際の物理的な場所としての警告の理由は変わりません。構成パスのみ。
 
-移動 VMStorage の詳細については、こちらの[リンク](https://docs.microsoft.com/powershell/module/hyper-v/move-vmstorage?view=win10-ps)を参照してください。 
+移動 VMStorage の詳細については、こちらの[リンク](https://docs.microsoft.com/powershell/module/hyper-v/move-vmstorage?view=win10-ps)を参照してください。
 
 異なるクラスターセットクラスター間での仮想マシンのライブマイグレーションは、以前と同じではありません。 クラスター化されていないシナリオでは、手順は次のようになります。
 
@@ -258,75 +295,91 @@ Windows Server 2019 には、インフラストラクチャスケールアウト
 2. 仮想マシンを別のクラスターのメンバーノードにライブマイグレーションします。
 3. 仮想マシンを新しい仮想マシンロールとしてクラスターに追加します。
 
-クラスターセットでは、これらの手順は必要ありません。コマンドは1つだけ必要です。  まず、次のコマンドを使用して、すべてのネットワークを移行に使用できるように設定する必要があります。
+クラスターセットでは、これらの手順は必要ありません。コマンドは1つだけ必要です。 まず、次のコマンドを使用して、すべてのネットワークを移行に使用できるように設定する必要があります。
 
-    Set-VMHost -UseAnyNetworkMigration $true
+```PowerShell
+Set-VMHost -UseAnyNetworkForMigration $true
+```
 
-たとえば、クラスターセットの仮想マシンを CLUSTER1 から CL3 に移動します。  1つのコマンドは次のようになります。
+たとえば、クラスターセットの仮想マシンを CLUSTER1 から CL3 に移動します。 1つのコマンドは次のようになります。
 
-        Move-ClusterSetVM -CimSession CSMASTER -VMName CSVM1 -Node NODE2-CL3
+```PowerShell
+Move-ClusterSetVM -CimSession CSMASTER -VMName CSVM1 -Node NODE2-CL3
+```
 
-ただし、仮想マシンの記憶域または構成ファイルは移動されないことに注意してください。  バーチャルマシンへのパスは \\SOFS-CLUSTER1\VOLUME1. のままであるため、この手順は必要ありません。  仮想マシンを登録した後、クラスターセットにインフラストラクチャファイルサーバー共有パスがある場合、ドライブと仮想マシンは仮想マシンと同じコンピューター上に存在する必要はありません。
+ただし、仮想マシンの記憶域または構成ファイルは移動されないことに注意してください。 仮想マシンへのパスは SOFS-CLUSTER1\VOLUME1. のままであるため、これは必要ありません。 \\ \\ 仮想マシンを登録した後、クラスターセットにインフラストラクチャファイルサーバー共有パスがある場合、ドライブと仮想マシンは仮想マシンと同じコンピューター上に存在する必要はありません。
 
 ## <a name="creating-availability-sets-fault-domains"></a>可用性セットの障害ドメインの作成
 
-概要で説明したように、Azure と同様の障害ドメインと可用性セットは、クラスターセットで構成できます。  これは、最初の仮想マシンの配置とクラスター間での移行に役立ちます。  
+概要で説明したように、Azure と同様の障害ドメインと可用性セットは、クラスターセットで構成できます。 これは、最初の仮想マシンの配置とクラスター間での移行に役立ちます。
 
-次の例では、クラスターセットに参加する4つのクラスターがあります。  セット内では、2つのクラスターと、他の2つのクラスターで作成された障害ドメインを使用して、論理障害ドメインが作成されます。  これらの2つの障害ドメインは、可用性セットを構成します。 
+次の例では、クラスターセットに参加する4つのクラスターがあります。 セット内では、2つのクラスターと、他の2つのクラスターで作成された障害ドメインを使用して、論理障害ドメインが作成されます。 これらの2つの障害ドメインは、可用性セットを構成します。
 
-次の例では、CLUSTER1 と CLUSTER2 は**FD1**という障害ドメインにあり、CLUSTER3 と CLUSTER4 は**FD2**という障害ドメインにあります。  可用性セットは**Csmaster と**呼ばれ、2つの障害ドメインで構成されます。
+次の例では、CLUSTER1 と CLUSTER2 は**FD1**という障害ドメインにあり、CLUSTER3 と CLUSTER4 は**FD2**という障害ドメインにあります。 可用性セットは**Csmaster と**呼ばれ、2つの障害ドメインで構成されます。
 
 障害ドメインを作成するには、次のコマンドを実行します。
 
-        New-ClusterSetFaultDomain -Name FD1 -FdType Logical -CimSession CSMASTER -MemberCluster CLUSTER1,CLUSTER2 -Description "This is my first fault domain"
+```PowerShell
+New-ClusterSetFaultDomain -Name FD1 -FdType Logical -CimSession CSMASTER -MemberCluster CLUSTER1,CLUSTER2 -Description "This is my first fault domain"
 
-        New-ClusterSetFaultDomain -Name FD2 -FdType Logical -CimSession CSMASTER -MemberCluster CLUSTER3,CLUSTER4 -Description "This is my second fault domain"
+New-ClusterSetFaultDomain -Name FD2 -FdType Logical -CimSession CSMASTER -MemberCluster CLUSTER3,CLUSTER4 -Description "This is my second fault domain"
+```
 
 これらが正常に作成されたことを確認するために、出力を表示した状態で ClusterSetFaultDomain を実行できます。
 
-        PS C:\> Get-ClusterSetFaultDomain -CimSession CSMASTER -FdName FD1 | fl *
+```PowerShell
+PS C:\> Get-ClusterSetFaultDomain -CimSession CSMASTER -FdName FD1 | fl *
 
-        PSShowComputerName    : True
-        FaultDomainType       : Logical
-        ClusterName           : {CLUSTER1, CLUSTER2}
-        Description           : This is my first fault domain
-        FDName                : FD1
-        Id                    : 1
-        PSComputerName        : CSMASTER
+PSShowComputerName    : True
+FaultDomainType       : Logical
+ClusterName           : {CLUSTER1, CLUSTER2}
+Description           : This is my first fault domain
+FDName                : FD1
+Id                    : 1
+PSComputerName        : CSMASTER
+```
 
 障害ドメインが作成されたので、可用性セットを作成する必要があります。
 
-        New-ClusterSetAvailabilitySet -Name CSMASTER-AS -FdType Logical -CimSession CSMASTER -ParticipantName FD1,FD2
+```PowerShell
+New-ClusterSetAvailabilitySet -Name CSMASTER-AS -FdType Logical -CimSession CSMASTER -ParticipantName FD1,FD2
+```
 
 作成されたことを検証するには、次を使用します。
 
-        Get-ClusterSetAvailabilitySet -AvailabilitySetName CSMASTER-AS -CimSession CSMASTER
+```PowerShell
+Get-ClusterSetAvailabilitySet -AvailabilitySetName CSMASTER-AS -CimSession CSMASTER
+```
 
-新しい仮想マシンを作成する場合は、最適なノードを決定する際に、-AvailabilitySet パラメーターを使用する必要があります。  次のようになります。
+新しい仮想マシンを作成する場合は、最適なノードを決定する際に、-AvailabilitySet パラメーターを使用する必要があります。 次のようになります。
 
-        # Identify the optimal node to create a new virtual machine
-        $memoryinMB=4096
-        $vpcount = 1
-        $av = Get-ClusterSetAvailabilitySet -Name CSMASTER-AS -CimSession CSMASTER
-        $targetnode = Get-ClusterSetOptimalNodeForVM -CimSession CSMASTER -VMMemory $memoryinMB -VMVirtualCoreCount $vpcount -VMCpuReservation 10 -AvailabilitySet $av
-        $secure_string_pwd = convertto-securestring "<password>" -asplaintext -force
-        $cred = new-object -typename System.Management.Automation.PSCredential ("<domain\account>",$secure_string_pwd)
+```PowerShell
+# Identify the optimal node to create a new virtual machine
+$memoryinMB=4096
+$vpcount = 1
+$av = Get-ClusterSetAvailabilitySet -Name CSMASTER-AS -CimSession CSMASTER
+$targetnode = Get-ClusterSetOptimalNodeForVM -CimSession CSMASTER -VMMemory $memoryinMB -VMVirtualCoreCount $vpcount -VMCpuReservation 10 -AvailabilitySet $av
+$secure_string_pwd = convertto-securestring "<password>" -asplaintext -force
+$cred = new-object -typename System.Management.Automation.PSCredential ("<domain\account>",$secure_string_pwd)
+```
 
 さまざまなライフサイクルが原因でクラスターセットからクラスターを削除する。 クラスターセットからクラスターを削除する必要がある場合もあります。 ベストプラクティスとして、クラスターセットのすべての仮想マシンをクラスターから移動することをお勧めします。 これは、**移動 ClusterSetVM**と**移動 vmstorage**コマンドを使用して実現できます。
 
-ただし、仮想マシンも移動されない場合、クラスターセットは一連の操作を実行して、管理者に直感的な結果を提供します。  クラスターがセットから削除されると、削除するクラスターでホストされているその他のすべてのクラスターセット仮想マシンは、そのクラスターにバインドされた高可用性仮想マシンになります (記憶域にアクセスできることが前提です)。  クラスターセットでも、次の方法でインベントリが自動的に更新されます。
+ただし、仮想マシンも移動されない場合、クラスターセットは一連の操作を実行して、管理者に直感的な結果を提供します。 クラスターがセットから削除されると、削除するクラスターでホストされているその他のすべてのクラスターセット仮想マシンは、そのクラスターにバインドされた高可用性仮想マシンになります (記憶域にアクセスできることが前提です)。 クラスターセットでも、次の方法でインベントリが自動的に更新されます。
 
 - 現在削除されていたクラスターとそのクラスターで実行されている仮想マシンの正常性を追跡できなくなりました
 - クラスターセットの名前空間と、現在削除されているクラスターでホストされている共有へのすべての参照を削除します。
 
 たとえば、クラスターセットから CLUSTER1 クラスターを削除するコマンドは次のようになります。
 
-        Remove-ClusterSetMember -ClusterName CLUSTER1 -CimSession CSMASTER
+```PowerShell
+Remove-ClusterSetMember -ClusterName CLUSTER1 -CimSession CSMASTER
+```
 
 ## <a name="frequently-asked-questions-faq"></a>よく寄せられる質問 (FAQ)
 
 **質問:** クラスターセットでは、ハイパー集約クラスターのみを使用するように制限されていますか。 <br>
-**回答:** 違います。  記憶域スペースダイレクトと従来のクラスターを混在させることができます。
+**回答:** 違います。 記憶域スペースダイレクトと従来のクラスターを混在させることができます。
 
 **質問:** クラスターセットを System Center Virtual Machine Manager で管理できますか。 <br>
 **回答:** System Center Virtual Machine Manager は現在クラスターセットをサポートしていません <br><br> **質問:** Windows Server 2012 R2 または2016クラスターを同じクラスターセットに共存させることはできますか。 <br>
@@ -340,10 +393,10 @@ Windows Server 2019 には、インフラストラクチャスケールアウト
 **回答:** このリリースの PowerShell または WMI。
 
 **質問:** クラスター間のライブマイグレーションは、さまざまな世代のプロセッサでどのように動作しますか。  <br>
-**回答:** クラスターセットはプロセッサの違いに対しては機能しないため、現在サポートされている Hyper-v は置き換えられます。  そのため、プロセッサ互換性モードはクイック移行で使用する必要があります。  クラスターセットの推奨事項は、個々のクラスター内で同じプロセッサハードウェアを使用することと、クラスター間のライブマイグレーションを実行するクラスターセット全体を使用することです。
+**回答:** クラスターセットはプロセッサの違いに対しては機能しないため、現在サポートされている Hyper-v は置き換えられます。 そのため、プロセッサ互換性モードはクイック移行で使用する必要があります。 クラスターセットの推奨事項は、個々のクラスター内で同じプロセッサハードウェアを使用することと、クラスター間のライブマイグレーションを実行するクラスターセット全体を使用することです。
 
 **質問:** クラスターの障害が発生した場合、クラスターに仮想マシンを自動的にフェールオーバーさせることはできますか。  <br>
-**回答:** このリリースでは、クラスターセットの仮想マシンはクラスター間でのみ手動でライブマイグレーションできます。ただし、自動的にフェールオーバーすることはできません。 
+**回答:** このリリースでは、クラスターセットの仮想マシンはクラスター間でのみ手動でライブマイグレーションできます。ただし、自動的にフェールオーバーすることはできません。
 
 **質問:** クラスター障害に対する記憶域の回復性を確保するにはどうすればよいですか。 <br>
 **回答:** 複数のクラスターにまたがる記憶域レプリカ (SR) ソリューションをメンバークラスター全体で使用して、クラスター障害に対する記憶域の回復性を実現します。
@@ -352,10 +405,10 @@ Windows Server 2019 には、インフラストラクチャスケールアウト
 **回答:** このリリースでは、このようなクラスターセットの名前空間の参照の変更は、SR フェールオーバーでは発生しません。 このシナリオが重要であるかどうか、およびその使用方法についてマイクロソフトにお知らせください。
 
 **質問:** 障害復旧時に障害ドメイン間で仮想マシンをフェールオーバーすることはできますか (障害ドメイン全体がダウンした場合など)。 <br>
-**回答:** いいえ。論理障害ドメイン内でのクラスター間フェールオーバーは、まだサポートされていません。 
+**回答:** いいえ。論理障害ドメイン内でのクラスター間フェールオーバーは、まだサポートされていません。
 
-**質問:** クラスターは複数のサイト (または DNS ドメイン) のクラスターにまたがることができますか。 <br> 
-**回答:** このシナリオはテストされていないため、運用環境でのサポートはすぐには計画されていません。 このシナリオが重要であるかどうか、およびその使用方法についてマイクロソフトにお知らせください。
+**質問:** クラスターは複数のサイト (または DNS ドメイン) のクラスターにまたがることができますか。 <br>
+**回答:** これはテストされていないシナリオで、運用環境のサポートについてすぐには計画されません。 このシナリオが重要であるかどうか、およびその使用方法についてマイクロソフトにお知らせください。
 
 **質問:** クラスターセットは IPv6 で動作しますか。 <br>
 **回答:** IPv4 と IPv6 は両方とも、フェールオーバークラスターと同様にクラスターセットでサポートされます。
@@ -371,9 +424,9 @@ Windows Server 2019 には、インフラストラクチャスケールアウト
 
 **質問:** クラスターセットの名前空間は高可用性ですか。 <br>
 **回答:** はい。クラスターセットの名前空間は、管理クラスターで実行されている継続的に使用可能な (CA) 紹介 SOFS 名前空間サーバーを介して提供されます。 ローカライズされたクラスター全体の障害に対して回復力を持たせるために、メンバークラスターから十分な数の仮想マシンを用意することをお勧めします。 ただし、予期しない致命的なエラー (たとえば、管理クラスター内のすべての仮想マシンが同時にダウンする) を考慮するために、再起動後も各クラスターセットノードに参照情報が永続的にキャッシュされます。
- 
+
 **質問:** クラスターセットの記憶域のパフォーマンスが低下するのは、クラスターの名前空間に基づく記憶域ですか。 <br>
-**回答:** 違います。 クラスターセットの名前空間では、クラスターセット内でオーバーレイ参照名前空間を提供します。概念的には分散ファイルシステム名前空間 (DFSN) と同様です。 また、DFSN とは異なり、すべてのクラスターセット名前空間の参照メタデータは、管理者の介入なしに自動で設定され、すべてのノードで自動更新されます。そのため、ストレージアクセスパスのパフォーマンスオーバーヘッドはほとんどありません。 
+**回答:** 違います。 クラスターセットの名前空間では、クラスターセット内でオーバーレイ参照名前空間を提供します。概念的には分散ファイルシステム名前空間 (DFSN) と同様です。 また、DFSN とは異なり、すべてのクラスターセット名前空間の参照メタデータは、管理者の介入なしに自動で設定され、すべてのノードで自動更新されます。そのため、ストレージアクセスパスのパフォーマンスオーバーヘッドはほとんどありません。
 
 **質問:** クラスターセットメタデータをバックアップするにはどうすればよいですか。 <br>
-**回答:** このガイダンスは、フェールオーバークラスターと同じです。 システム状態のバックアップでも、クラスターの状態がバックアップされます。  Windows Server バックアップによって、ノードのクラスターデータベースだけを復元できます (自己復旧のロジックが多数存在するためには必要ありません)。また、すべてのノードでクラスターデータベース全体をロールバックするには、権限のある復元を実行します。 クラスターセットの場合は、このような権限のある復元をまずメンバークラスターで行い、次に必要に応じて管理クラスターで行うことをお勧めします。
+**回答:** このガイダンスは、フェールオーバークラスターと同じです。 システム状態のバックアップでも、クラスターの状態がバックアップされます。 Windows Server バックアップによって、ノードのクラスターデータベースだけを復元できます (自己復旧のロジックが多数存在するためには必要ありません)。また、すべてのノードでクラスターデータベース全体をロールバックするには、権限のある復元を実行します。 クラスターセットの場合は、このような権限のある復元をまずメンバークラスターで行い、次に必要に応じて管理クラスターで行うことをお勧めします。

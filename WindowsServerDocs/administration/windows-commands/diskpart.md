@@ -1,119 +1,108 @@
 ---
-title: DiskPart コマンド
+title: diskpart
+description: Diskpart コマンドインタープリターのリファレンス記事。コンピューターのドライブを管理するのに役立ちます。
 ms.prod: windows-server
 ms.technology: storage
-author: JasonGerend
+author: jasongerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 0826b773927f09cc846fb1cfdf4d5dfbf75d5cca
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 87fc3a2e91b2f5ac22e87485d9258ef369ff0da0
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71377833"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929309"
 ---
-# <a name="diskpart-commands"></a>DiskPart コマンド
+# <a name="diskpart"></a>diskpart
 
-適用先:Windows 10、Windows 8.1、Windows 8、Windows 7、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、windows server 2008 R2、Windows Server 2008
+> 適用対象: Windows 10、Windows 8.1、Windows 8、Windows 7、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、windows server 2008 R2、Windows Server 2008
 
-DiskPart コマンドを使用すると、PC のドライブ (ディスク、パーティション、ボリューム、または仮想ハードディスク) を管理できます。 DiskPart コマンドを使用するには、まず、オブジェクトを一覧表示してから、フォーカスを与えるオブジェクトを選択する必要があります。 オブジェクトにフォーカスがある場合、入力した DiskPart コマンドはそのオブジェクトに対して動作します。
+Diskpart コマンドインタープリターを使用すると、コンピューターのドライブ (ディスク、パーティション、ボリューム、または仮想ハードディスク) を管理できます。
 
-**List disk、list volume、list partition**、および**list vdisk**コマンドを使用して、使用可能なオブジェクトの一覧を表示し、オブジェクトの番号またはドライブ文字を特定できます。 **List disk、list vdisk** 、および**list volume**コマンドは、コンピューター上のすべてのディスクとボリュームを表示します。 ただし、 **list partition**コマンドは、フォーカスのあるディスク上のパーティションのみを表示します。 **List**コマンドを使用すると、フォーカスがあるオブジェクトの横にアスタリスク (\*) が表示されます。
+**Diskpart**コマンドを使用するには、まず、オブジェクトを一覧表示してから、フォーカスを与えるオブジェクトを選択する必要があります。 オブジェクトにフォーカスがあると、入力した diskpart コマンドがそのオブジェクトに対して動作します。
 
-オブジェクトを選択すると、別のオブジェクトを選択するまでフォーカスがそのオブジェクトに残ります。 たとえば、フォーカスがディスク0に設定されていて、ディスク2で [ボリューム 8] を選択した場合、フォーカスはディスク0からディスク2のボリューム8に移ります。 一部のコマンドでは、フォーカスが自動的に変更されます。 たとえば、新しいパーティションを作成すると、フォーカスは自動的に新しいパーティションに切り替わります。
+## <a name="list-available-objects"></a>使用可能なオブジェクトの一覧表示
 
-選択したディスクのパーティションにのみフォーカスを移すことができます。 パーティションにフォーカスがある場合、関連するボリューム (存在する場合) にもフォーカスがあります。 ボリュームにフォーカスがある場合、関連するディスクとパーティションには、ボリュームが1つの特定のパーティションにマップされている場合にもフォーカスがあります。 そうでない場合は、ディスクとパーティションにフォーカスが失われます。
+次のように使用して、使用可能なオブジェクトの一覧を表示し、オブジェクトの番号またはドライブ文字を特定することができます。
 
-## <a name="diskpart-commands"></a>DiskPart コマンド
+- `list disk`-コンピューター上のすべてのディスクを表示します。
 
-DiskPart コマンドインタープリターを起動するには、コマンドプロンプトで次のように入力します。
+- `list volume`-コンピューター上のすべてのボリュームを表示します。
 
-`diskpart`
+- `list partition`-コンピューターにフォーカスがあるディスク上のパーティションを表示します。
+
+- `list vdisk`-コンピューター上のすべての仮想ディスクを表示します。
+
+**リスト**コマンドを実行すると、フォーカスがあるオブジェクトの横にアスタリスク (*) が表示されます。
+
+## <a name="determine-focus"></a>フォーカスの決定
+
+オブジェクトを選択すると、別のオブジェクトを選択するまで、フォーカスはそのオブジェクトに残ります。 たとえば、フォーカスがディスク0に設定されていて、ディスク2で [ボリューム 8] を選択した場合、フォーカスはディスク0からディスク2のボリューム8に移ります。
+
+一部のコマンドでは、フォーカスが自動的に変更されます。 たとえば、新しいパーティションを作成すると、フォーカスは自動的に新しいパーティションに切り替わります。
+
+選択したディスクのパーティションにのみフォーカスを移すことができます。 パーティションにフォーカスがある場合、関連するボリューム (存在する場合) にもフォーカスがあります。 ボリュームにフォーカスがあると、関連するディスクとパーティションには、ボリュームが1つの特定のパーティションにマップされている場合にもフォーカスがあります。 そうでない場合は、ディスクとパーティションにフォーカスが失われます。
+
+## <a name="syntax"></a>Syntax
+
+Diskpart コマンドインタープリターを起動するには、コマンドプロンプトで次のように入力します。
+
+```
+diskpart <parameter>
+```
 
 > [!IMPORTANT]
-> DiskPart を実行するには、ローカルの**Administrators**グループのメンバーシップ、またはそれと同等のメンバーシップが最低限必要です。 
+> Diskpart を実行するには、ローカルの**Administrators**グループ、または同様のアクセス許可を持つグループに存在する必要があります。
 
-Diskpart コマンドインタープリターでは、次のコマンドを実行できます。
+### <a name="parameters"></a>パラメーター
 
-  - [Active](active.md)  
-      
-  - [[追加]](add.md)  
-      
-  - [割り当てる](assign.md)  
-      
-  - [Vdisk のアタッチ](attach-vdisk.md)  
-      
-  - [Attributes](attributes.md)  
-      
-  - [オートマ](automount.md)  
-      
-  - [改](break.md)  
-      
-  - [中身](clean.md)  
-      
-  - [Compact vdisk](compact-vdisk.md)  
-      
-  - [[変換]](convert.md)  
-      
-  - [作成](create.md)  
-      
-  - [削除](delete.md)  
-      
-  - [Vdisk のデタッチ](detach-vdisk.md)  
-      
-  - [データ](detail.md)  
-      
-  - [終了](exit.md)  
-      
-  - [Vdisk を展開する](expand-vdisk.md)  
-      
-  - [Extend](extend.md)  
-      
-  - [ファイルシステム](filesystems.md)  
-      
-  - [形式](format.md)  
-      
-  - [GPT](gpt.md)  
-      
-  - [ヘルプ](help.md)  
-      
-  - [[インポート]](import.md)  
-      
-  - [稼動](inactive.md)  
-      
-  - [表](list.md)  
-      
-  - [マージ vdisk](merge-vdisk.md)  
-      
-  - [なっ](offline.md)  
-      
-  - [オンライン](online.md)  
-      
-  - [回復](recover.md)  
-      
-  - [Rem](rem.md)  
-      
-  - [[削除]](remove.md)  
-      
-  - [回復](repair.md)  
-      
-  - [再スキャン](rescan.md)  
-      
-  - [日数](retain.md)  
-      
-  - [San](san.md)  
-      
-  - [Select](select.md)  
-      
-  - [Id の設定](set-id.md)  
-      
-  - [伸縮](shrink.md)  
-      
-  - [Uniqueid](uniqueid.md)  
-      
+Diskpart コマンドインタープリターから次のコマンドを実行できます。
+
+| コマンド | 説明 |
+| ------- | ----------- |
+| [active](active.md) | フォーカスがあるディスクのパーティションをアクティブとしてマークします。 |
+| [add](add.md) | フォーカスのあるシンプル ボリュームを、指定されたディスクにミラー化します。 |
+| [assign](assign.md) | フォーカスがあるボリュームに、ドライブ文字またはマウント ポイントを割り当てます。 |
+| [vdisk のアタッチ](attach-vdisk.md) | 仮想ハードディスク (VHD) を接続します。これにより、ホストコンピューターにローカルハードディスクドライブとして表示されます。 |
+| [attributes](attributes.md) | ディスクまたはボリュームの属性を表示、設定、またはクリアします。 |
+| [automount](automount.md) | 自動マウント機能を有効または無効にします。 |
+| [break](break.md) | フォーカスのあるミラー ボリュームを 2 つのシンプル ボリュームに分割します。 |
+| [clean](clean.md) | フォーカスがあるディスクから、パーティション フォーマットまたはボリューム フォーマットをすべて削除します。 |
+| [compact vdisk](compact-vdisk.md) | 容量可変の拡張バーチャルハードディスク (VHD) ファイルの物理サイズを小さくします。 |
+| [convert](convert.md) | ファイルアロケーションテーブル (FAT) および FAT32 ボリュームを NTFS ファイルシステムに変換し、既存のファイルとディレクトリをそのまま残します。 |
+| [create](create.md) | ディスク上のパーティション、1つまたは複数のディスク上のボリューム、または仮想ハードディスク (VHD) を作成します。 |
+| [delete](delete.md) | パーティションまたはボリュームを削除します。 |
+| [detach vdisk](detach-vdisk.md) | 選択した仮想ハードディスク (VHD) がホストコンピューター上のローカルハードディスクドライブとして表示されなくなります。 |
+| [detail](detail.md) | 選択したディスク、パーティション、ボリューム、または仮想ハードディスク (VHD) に関する情報を表示します。 |
+| [exit](exit.md) | Diskpart コマンドインタープリターを終了します。 |
+| [expand vdisk](expand-vdisk.md) | 仮想ハードディスク (VHD) を指定されたサイズに拡張します。 |
+| [extend](extend.md) | フォーカスがあるボリュームまたはパーティションを、そのファイルシステムと共に、ディスク上の空き領域 (未割り当て) に拡張します。 |
+| [filesystems](filesystems.md) | フォーカスがあるボリュームの現在のファイルシステムに関する情報を表示し、ボリュームのフォーマットがサポートされているファイルシステムの一覧を表示します。 |
+| [format](format.md) | Windows ファイルを受け入れるようにディスクをフォーマットします。 |
+| [gpt](gpt.md) | ベーシック GUID パーティションテーブル (gpt) ディスクにフォーカスがあるパーティションに gpt 属性を割り当てます。 |
+| [help](help.md) | 使用可能なコマンドの一覧、または指定したコマンドの詳細なヘルプ情報を表示します。 |
+| [import](import.md) | 外部ディスクグループをローカルコンピューターのディスクグループにインポートします。 |
+| [inactive](inactive.md) | 基本マスターブートレコード (MBR) ディスクで、フォーカスがあるシステムパーティションまたはブートパーティションを非アクティブとしてマークします。 |
+| [list](list.md) | ディスクのパーティション、ディスク内のボリューム、またはバーチャルハードディスク (Vhd) のディスクの一覧を表示します。 |
+| [merge vdisk](merge-vdisk.md) | 差分仮想ハード_ディスク (VHD)、対応する親 VHD をマージします。 |
+| [offline](offline.md) | オンラインのディスクまたはボリュームをオフライン状態にかかります。 |
+| [online](online.md) | オフラインのディスクまたはボリュームをオンライン状態にかかります。 |
+| [recover](recover.md) | ディスクグループ内のすべてのディスクの状態を更新し、無効なディスクグループのディスクを回復します。また、古いデータを保持しているミラーボリュームと RAID-5 ボリュームを再同期します。 |
+| [rem](rem.md) | スクリプトにコメントを追加できます。 |
+| [remove](remove.md) | ボリュームからドライブ文字またはマウントポイントを削除します。 |
+| [repair](repair.md) | 障害が発生したディスク領域を指定されたダイナミックディスクに交換することで、フォーカスのある RAID-5 ボリュームを修復します。 |
+| [rescan](rescan.md) | コンピューターに追加された新しいディスクを検索します。 |
+| [retain](retain.md) | ブートとして使用する既存のダイナミック シンプル ボリュームまたはシステム ボリュームを準備します。 |
+| [san](san.md) | オペレーティングシステムの記憶域ネットワーク (san) ポリシーを表示または設定します。 |
+| [select](select.md) | フォーカスを移動すると、ディスク、パーティション、ボリューム、またはバーチャル ハード_ディスク (VHD) します。 |
+| [set id](set-id.md) | フォーカスのあるパーティションの [パーティションの種類] フィールドを変更します。 |
+| [shrink](shrink.md) | 指定した量だけ、選択したボリュームのサイズが小さくなります。 |
+| [uniqueid](uniqueid.md) | フォーカスがあるディスクの GUID パーティションテーブル (GPT) 識別子またはマスターブートレコード (MBR) 署名を表示または設定します。 |
 
 ## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
 
-[Windows PowerShell の記憶域コマンドレット](https://docs.microsoft.com/powershell/module/storage/)
+- [ディスク管理の概要](https://docs.microsoft.com/windows-server/storage/disk-management/overview-of-disk-management)
+
+- [Storage Cmdlets in Windows PowerShell (Windows PowerShell の記憶域コマンドレット)](https://docs.microsoft.com/powershell/module/storage/)

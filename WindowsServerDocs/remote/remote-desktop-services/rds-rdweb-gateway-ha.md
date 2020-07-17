@@ -1,27 +1,23 @@
 ---
 title: RD Web およびゲートウェイ Web フロントに高可用性を追加する
 description: RDS 展開に RD Web およびゲートウェイ サーバーをインストールする手順について説明します。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
-ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 ms.author: elizapo
 ms.date: 11/08/2016
 manager: dongill
-ms.openlocfilehash: 5838480847e5f86a03f264a0ece1f8d4097597cc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e98bbda5460311dd379eab6f5a5bde0ec3845d5c
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387226"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "80860285"
 ---
 # <a name="add-high-availability-to-the-rd-web-and-gateway-web-front"></a>RD Web およびゲートウェイ Web フロントに高可用性を追加する
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016
+>適用先:Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016
 
 
 リモート デスクトップ Web アクセス (RD Web アクセス) およびリモート デスクトップ ゲートウェイ (RD ゲートウェイ) ファームを展開して、Windows Server リモート デスクトップ サービス (RDS) 展開の可用性を向上し規模を拡大することができます 

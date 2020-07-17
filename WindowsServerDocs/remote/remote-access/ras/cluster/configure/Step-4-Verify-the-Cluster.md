@@ -2,26 +2,22 @@
 title: 手順 4. クラスターを確認する
 description: このトピックは、「Windows Server 2016 のクラスターにリモートアクセスを展開する」の一部です。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f22dcf10-b453-4664-a9ef-e40e95c72f63
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 738b7d6aad1c9684ac1e12981213caaf3f745c2c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: c31db158856eb3c3881a36c29e40d1227116201f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367396"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855265"
 ---
 # <a name="step-4-verify-the-cluster"></a>手順 4. クラスターを確認する
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックでは、DirectAccess クラスターの展開が正しく構成されていることを確認する方法について説明します。  
   

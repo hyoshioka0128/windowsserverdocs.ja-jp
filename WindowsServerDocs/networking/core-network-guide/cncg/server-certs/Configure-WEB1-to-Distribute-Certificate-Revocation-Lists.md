@@ -6,22 +6,22 @@ ms.topic: article
 ms.assetid: fa4a8c41-8c2a-425c-8511-736fe5d196ac
 ms.prod: windows-server
 ms.technology: networking
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 5d53cbba37699346db110f0748a9c3e0c834c18e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 3319715e70c1e68739a10a4c67a9fa404d5ad80e
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356284"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318412"
 ---
 # <a name="configure-web1-to-distribute-certificate-revocation-lists-crls"></a>証明書失効リスト (Crl) を配布するように WEB1 を構成する
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 次の手順を使用して、Crl を配布するように web サーバー WEB1 を構成できます。  
   
-ルート CA の拡張機能には、ルート CA からの CRL を https://pki.corp.contoso.com/pki 経由で利用できることが明記されています。 現時点では、WEB1 には PKI 仮想ディレクトリがないため、作成する必要があります。  
+ルート CA の拡張機能には、ルート CA からの CRL を https://pki.corp.contoso.com/pki経由で利用できるようになったことが示されていました。 現時点では、WEB1 には PKI 仮想ディレクトリがないため、作成する必要があります。  
   
 この手順を実行するには、 **Domain Admins**のメンバーである必要があります。  
   
@@ -48,7 +48,7 @@ ms.locfileid: "71356284"
   
 9. **[エイリアス]** に「 **pki**」と入力します。 **[物理パス]** に「 **c:\ pki**」と入力し、[ **OK]** をクリックします。  
   
-10. CA 証明書と CRL の妥当性を任意のクライアントがチェックできるようにするために、pki 仮想ディレクトリへの匿名アクセスを有効にします。 そのためには次を行います。  
+10. CA 証明書と CRL の妥当性を任意のクライアントがチェックできるようにするために、pki 仮想ディレクトリへの匿名アクセスを有効にします。 そのためには、次の操作を実行します。  
   
     1.  **[接続]** ウィンドウで、 **[pki]** が選択されていることを確認します。  
   
@@ -60,7 +60,7 @@ ms.locfileid: "71356284"
   
     5.  **[pki のアクセス許可]** ダイアログ ボックスで、 **[追加]** をクリックします。  
   
-    6.  **[ユーザー、コンピューター、サービスアカウント、またはグループの選択**] で、「ANONYMOUS LOGON」と入力し**ます。[全員**] をクリックし、 **[名前の確認]** をクリックします。 **[OK]** をクリックします。  
+    6.  **[ユーザー、コンピューター、サービスアカウント、またはグループの選択**] で、「ANONYMOUS LOGON」と入力し**ます。[全員**] をクリックし、 **[名前の確認]** をクリックします。 **[OK]** をクリックすると、  
   
     7.  **[ユーザー、コンピューター、サービス アカウントまたはグループの選択]** ダイアログ ボックスで、 **[OK]** をクリックします。  
   

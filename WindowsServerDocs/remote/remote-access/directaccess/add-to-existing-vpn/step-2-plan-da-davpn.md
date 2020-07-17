@@ -2,26 +2,22 @@
 title: 手順 2 DirectAccess 展開を計画する
 description: このトピックは、「Windows Server 2016 の既存のリモートアクセス (VPN) 展開に DirectAccess を追加する」の一部です。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 72b5b2af-6925-41e0-a3f9-b8809ed711d1
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: cd42d00d8bddc786ea8a13faf10703361bf8da7b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 98fb738f3535845a2117f2f6547856b9081bd7d4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404962"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859545"
 ---
 # <a name="step-2-plan-the-directaccess-deployment"></a>手順 2 DirectAccess 展開を計画する
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 リモート アクセス インフラストラクチャの計画後、DirectAccess を有効にする次の手順は、DirectAccess の有効化ウィザードの設定を計画することです。  
   
@@ -30,7 +26,7 @@ ms.locfileid: "71404962"
 |クライアント展開の計画|クライアント コンピューターが DirectAccess を使用して、接続できるようにする方法を計画します。 DirectAccess クライアントとして構成する管理対象のコンピューターを決定します。|  
 |リモート アクセス サーバーの展開の計画|リモート アクセス サーバーの展開方法を計画します。|  
   
-## <a name="bkmk_2_1_client"></a>クライアント展開の計画  
+## <a name="planning-for-client-deployment"></a><a name="bkmk_2_1_client"></a>クライアント展開の計画  
 クライアントの展開の計画時には 2 つの決定事項があります。  
   
 -   DirectAccess をモバイル コンピューターのみから使用できるようにするか、すべてのコンピューターから使用できるようにするか  
@@ -41,7 +37,7 @@ ms.locfileid: "71404962"
   
     DirectAccess 設定は DirectAccess クライアント GPO に含まれます。 GPO は、DirectAccess の有効化ウィザードで指定したセキュリティ グループに含まれるコンピューターに適用されます。 サポートされる任意のドメインに含まれるセキュリティ グループを指定できます。 リモート アクセスを構成する前に、セキュリティ グループを作成する必要があります。 リモート アクセスの展開の完了後、セキュリティ グループにコンピューターを追加できますが、別のドメインに存在するクライアント コンピューターをセキュリティ グループに追加した場合、クライアント GPO はこれらのクライアントに適用されないことに注意してください。 たとえば、ドメイン A に DirectAccess クライアント用の SG1 を作成し、後でドメイン B のクライアントをこのグループに追加した場合、クライアント GPO はドメイン B のクライアントに適用されません。この問題を回避するには、クライアント コンピューターを含むドメインごとに、新しいクライアント セキュリティ グループを作成します。 または新しいセキュリティ グループを作成しない場合は、新しいドメインに対して、新しい GPO の名前で Add-DAClient コマンドレットを実行します。  
   
-## <a name="bkmk_2_2_server"></a>リモートアクセスサーバーの展開の計画  
+## <a name="planning-for-remote-access-server-deployment"></a><a name="bkmk_2_2_server"></a>リモートアクセスサーバーの展開の計画  
 リモート アクセス サーバーの展開を計画する場合、多くの決定事項があります。  
   
 -   **ネットワークトポロジ**-リモートアクセスサーバーを展開するときに使用できるトポロジは2つあります。  
@@ -56,9 +52,9 @@ ms.locfileid: "71404962"
   
 -   **Ip-https 証明書**-sstp VPN が構成されている場合、DirectAccess の有効化ウィザードは、ip-https 用に sstp で使用される証明書を取得します。 SSTP VPN が構成されていない場合、ウィザードは IP-HTTPS 用の証明書が構成されているかどうかを確認しようとします。 構成されていない場合は、IP-HTTPS 用の自己署名証明書を自動的に提供します。ウィザードは Kerberos 認証を自動的に有効にします。 IPv4 のみの環境では、プロトコル変換のために NAT64 と DNS64 も有効になります。  
   
--   **Ipv6 プレフィックス**-ウィザードがネットワークアダプターに ipv6 が展開されたことを検出した場合、内部ネットワークの ipv6 プレフィックス、DirectAccess クライアントコンピューターに割り当てる ipv6 プレフィックス、および VPN クライアントに割り当てる ipv6 プレフィックスを自動的に作成します。コンピューター. 自動的に生成されたプレフィックスがネィティブ IPv6 または ISATAP インフラストラクチャに正しくない場合は、それらを手動で変更する必要があります。 「1.1 ネットワークおよびサーバーのトポロジと設定を計画する」を参照してください。  
+-   **Ipv6 プレフィックス**-ウィザードがネットワークアダプターに ipv6 が展開されたことを検出した場合、内部ネットワークの ipv6 プレフィックス、DirectAccess クライアントコンピューターに割り当てる ipv6 プレフィックス、および VPN クライアントコンピューターに割り当てる ipv6 プレフィックスが自動的に作成されます。 自動的に生成されたプレフィックスがネィティブ IPv6 または ISATAP インフラストラクチャに正しくない場合は、それらを手動で変更する必要があります。 「1.1 ネットワークおよびサーバーのトポロジと設定の計画」を参照してください。  
   
--   **Windows 7 クライアント**-既定では、windows 7 クライアントコンピューターは windows Server 2012 リモートアクセス展開に接続できません。 組織内に、内部リソースへのリモートアクセスを必要とする Windows 7 クライアントコンピューターがある場合は、接続を許可することができます。 内部リソースへのアクセスを許可するクライアントコンピューターは、DirectAccess の有効化ウィザードで指定したセキュリティグループのメンバーである必要があります。  
+-   **Windows 7 クライアント**-既定では、windows 7 クライアントコンピューターは windows Server 2012 リモートアクセス展開に接続できません。 組織内に、内部リソースへのリモートアクセスを必要とする Windows 7 クライアントコンピューターがある場合は、接続を許可することができます。 内部リソースへのアクセスを許可するすべてのクライアント コンピューターは、DirectAccess の有効化ウィザードで指定したセキュリティ グループのメンバーになる必要があります。  
   
     > [!NOTE]
     > Windows 7 クライアントコンピューターが DirectAccess を使用して接続できるようにするには、コンピューター証明書認証を使用する必要があります。

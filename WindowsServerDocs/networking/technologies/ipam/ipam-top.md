@@ -2,22 +2,18 @@
 title: IP アドレス管理 (IPAM)
 description: このトピックでは、Windows Server 2016 の IPAM に関する情報へのリンクを示します。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ipam
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 6a6291ba-0d39-4434-a8c5-0f0369860faa
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 1eb835691e32ff962c892ca4e75d60e5513e198b
-ms.sourcegitcommit: 4a03f263952c993dfdf339dd3491c73719854aba
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 13bfe9d0f01c1ab7edf6c01cc4b31a2ba5062aa6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74791515"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854785"
 ---
 # <a name="ip-address-management-ipam"></a>IP アドレス管理 (IPAM)
 

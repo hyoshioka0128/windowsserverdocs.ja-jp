@@ -1,7 +1,6 @@
 ---
 ms.assetid: ad0bf21d-2ace-4565-b1f5-ce57c8eb2689
 title: フェデレーション サーバー プロキシ ファームを作成するのに適した状況
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 247daf1b9b49124188f6bb16bce7da381fe997ef
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d4b2b889159dee9f3b93a54a2b1924be286792f4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402429"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858495"
 ---
 # <a name="when-to-create-a-federation-server-proxy-farm"></a>フェデレーション サーバー プロキシ ファームを作成するのに適した状況
 
@@ -31,8 +30,8 @@ Microsoft NLB テクノロジを使用してクラスターの FQDN を構成す
   
 |タスク|説明|  
 |--------|---------------|  
-|ファーム内のすべてのプロキシが同じ AD FS フェデレーションサービス名を指すようにする|フェデレーションサーバープロキシを作成する場合は、ファームに参加するすべてのフェデレーションサーバープロキシに対して、AD FS フェデレーションサーバープロキシ構成ウィザードで同じフェデレーションサービス名を入力する必要があります。 フェデレーションサーバープロキシは、この DNS ホスト名を構成する URL を使用して、接続先の AD FS フェデレーションサービスインスタンスを決定します。<br /><br />詳細については、「 [Configure a Computer for the Federation Server Proxy Role](../../ad-fs/deployment/Configure-a-Computer-for-the-Federation-Server-Proxy-Role.md)」を参照してください。|  
-|証明書を取得して共有する|パブリック証明機関 \(CA\)(VeriSign など) からサーバー認証証明書を取得した後、すべてのフェデレーションサーバープロキシが、各フェデレーションサーバープロキシの既定の Web サイトで同じ証明書の同じ秘密キー部分を共有するように証明書を構成できます。 証明書を共有するには、各フェデレーションサーバープロキシの既定の Web サイトに同じサーバー認証証明書をインストールする必要があります。 詳細については、「[サーバー認証証明書を既定の Web サイトにインポートする](../../ad-fs/deployment/Import-a-Server-Authentication-Certificate-to-the-Default-Web-Site.md)」を参照してください。<br /><br />詳細については、「 [Certificate Requirements for Federation Server Proxies](Certificate-Requirements-for-Federation-Server-Proxies.md)」を参照してください。|  
+|ファーム内のすべてのプロキシが同じ AD FS フェデレーションサービス名を指すようにする|フェデレーションサーバープロキシを作成する場合は、ファームに参加するすべてのフェデレーションサーバープロキシに対して、AD FS フェデレーションサーバープロキシ構成ウィザードで同じフェデレーションサービス名を入力する必要があります。 フェデレーションサーバープロキシは、この DNS ホスト名を構成する URL を使用して、接続先の AD FS フェデレーションサービスインスタンスを決定します。<p>詳細については、「 [Configure a Computer for the Federation Server Proxy Role](../../ad-fs/deployment/Configure-a-Computer-for-the-Federation-Server-Proxy-Role.md)」を参照してください。|  
+|証明書を取得して共有する|パブリック証明機関 \(CA\)(VeriSign など) からサーバー認証証明書を取得した後、すべてのフェデレーションサーバープロキシが、各フェデレーションサーバープロキシの既定の Web サイトで同じ証明書の同じ秘密キー部分を共有するように証明書を構成できます。 証明書を共有するには、各フェデレーションサーバープロキシの既定の Web サイトに同じサーバー認証証明書をインストールする必要があります。 詳細については、「[サーバー認証証明書を既定の Web サイトにインポートする](../../ad-fs/deployment/Import-a-Server-Authentication-Certificate-to-the-Default-Web-Site.md)」を参照してください。<p>詳細については、「 [Certificate Requirements for Federation Server Proxies](Certificate-Requirements-for-Federation-Server-Proxies.md)」を参照してください。|  
   
 フェデレーションサーバープロキシファームを作成するために新しいフェデレーションサーバープロキシを追加する方法の詳細については、「[チェックリスト: フェデレーションサーバープロキシの](../../ad-fs/deployment/Checklist--Setting-Up-a-Federation-Server-Proxy.md)セットアップ」を参照してください。  
   

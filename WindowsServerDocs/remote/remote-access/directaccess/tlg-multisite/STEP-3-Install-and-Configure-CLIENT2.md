@@ -2,22 +2,18 @@
 title: 手順 3. のインストールと構成
 description: このトピックは、「Windows Server 2016 用の DirectAccess マルチサイト展開のテストラボガイド」の一部です。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f009fdd1-94e6-4ccb-8c6e-609a5394db53
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 4b2d8cb1538de35a97ae83888d26abd7ad7bc8b3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: c651a9173fa15856e62bf09767ed90375acefcd5
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388321"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861595"
 ---
 # <a name="step-3-install-and-configure-client2"></a>手順 3. のインストールと構成
 

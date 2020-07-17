@@ -1,7 +1,6 @@
 ---
 ms.assetid: 38bbc002-a8fa-4211-9328-4ef67fca0acf
 title: ローカライズのカスタマイズ
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: ba3441d362960e054791ca3d6872dba6c7bd9a12
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: eab7062c6678c0e9f3ef970ef9cff97fa63dd868
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357980"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80816395"
 ---
 # <a name="customization-for-localization"></a>ローカライズのカスタマイズ 
 

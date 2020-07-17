@@ -9,12 +9,12 @@ ms.date: 10/02/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 230fdaac28f4766c33e62362ca4c7e4d20f22c8e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b832756e123bee0223738ee804ac3a4db2371e84
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357741"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855295"
 ---
 # <a name="managing-ssl-certificates-in-ad-fs-and-wap-in-windows-server-2016"></a>Windows Server 2016 の AD FS と WAP で SSL 証明書を管理する
 
@@ -38,7 +38,7 @@ ms.locfileid: "71357741"
 
 ## <a name="replacing-the-ssl-certificate-for-ad-fs"></a>AD FS の SSL 証明書の置き換え
 > [!NOTE]
-> AD FS SSL 証明書が、AD FS 管理スナップインで見つかった AD FS サービス通信証明書と同じではありません。 AD FS SSL 証明書を変更するには、PowerShell を使用する必要があります。
+> AD FS SSL 証明書は、AD FS 管理スナップインで見つかる AD FS サービス通信証明書と同じものではありません。 AD FS SSL 証明書を変更するには、PowerShell を使用する必要があります。
 
 まず、AD FS サーバーで実行されている証明書バインドモード (既定の証明書認証バインドまたは代替クライアント TLS バインドモード) を決定します。
 
@@ -46,7 +46,7 @@ ms.locfileid: "71357741"
 AD FS 既定では、ポート443でのデバイス証明書の認証と、ポート 49443 (または443ではない構成可能なポート) でのユーザー証明書の認証が実行されます。
 このモードでは、powershell コマンドレット Set-adfssslcertificate を使用して SSL 証明書を管理します。
 
-次の手順を実行します。
+下記の手順に従ってください。
 
 1. まず、新しい証明書を取得する必要があります。 これは通常、サードパーティの公開証明書プロバイダーに証明書署名要求 (CSR) を送信することによって行われます。 Windows 7 以降の PC から、CSR を生成するにはさまざまな方法があります。 このことについては、ベンダーにドキュメントが必要です。
 
@@ -77,7 +77,7 @@ dir Cert:\LocalMachine\My\
 代替クライアント TLS バインドモードで構成されている場合、AD FS はポート443でデバイス証明書認証を実行し、別のホスト名でポート443でもユーザー証明書認証を実行します。 ユーザー証明書のホスト名は、"certauth.fs.contoso.com" など、"certauth" で事前に付加された AD FS ホスト名です。
 このモードでは、powershell コマンドレット AdfsAlternateTlsClientBinding を使用して SSL 証明書を管理します。 これにより、代替のクライアント TLS バインドだけでなく、AD FS が SSL 証明書を設定するその他のすべてのバインドも管理されます。
 
-次の手順を実行します。
+下記の手順に従ってください。
 
 1. まず、新しい証明書を取得する必要があります。 これは通常、サードパーティの公開証明書プロバイダーに証明書署名要求 (CSR) を送信することによって行われます。 Windows 7 以降の PC から、CSR を生成するにはさまざまな方法があります。 このことについては、ベンダーにドキュメントが必要です。
 

@@ -6,18 +6,18 @@ ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: get-started-article
 ms.assetid: 2cda192f-6b45-4e6c-88d9-70ca179ddb94
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: f058dbec42997f22106666b014508191a8861694
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 40e871c25e31bbb15964d856da0f83cdaf50c48b
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406484"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80319313"
 ---
 # <a name="create-the-branchcache-file-servers-organizational-unit"></a>BranchCache ファイル サーバー組織単位を作成する
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 次の手順を使用して、BranchCache ファイルサーバーの Active Directory Domain Services (AD DS) に組織単位 (OU) を作成できます。  
   

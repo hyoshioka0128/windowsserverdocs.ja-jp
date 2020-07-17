@@ -8,16 +8,13 @@ manager: dcscontentpm
 ms.date: 11/22/2019
 ms.topic: article
 ms.prod: windows-server
-audience: Admin
-ms.custom:
-- CSSTroubleshoot
 ms.technology: identity-adds
-ms.openlocfilehash: 500ffe05fe75db99f98fda09b5f86b8547ea7e32
-ms.sourcegitcommit: 30de12eebeb0fc79567d6bb6ab513692ea2415d3
+ms.openlocfilehash: b9e1cf812234bc3b0bd81db7045ed83208f3a0ff
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74853587"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80824365"
 ---
 # <a name="ad-ds-troubleshooting"></a>AD FS のトラブルシューティング
 

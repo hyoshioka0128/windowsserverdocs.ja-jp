@@ -1,24 +1,20 @@
 ---
 title: データグラム トランスポート層セキュリティ プロトコル
 description: Windows Server のセキュリティ
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-tls-ssl
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 57b8873a-ad9c-4f2c-93e0-a2af352c6965
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/16/2018
-ms.openlocfilehash: f603dc0c5616619088537ffcbd06f64baece0e23
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 79477aa441b82854852fe35a9b45bafdee664532
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402297"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475269"
 ---
 # <a name="datagram-transport-layer-security-protocol"></a>データグラム トランスポート層セキュリティ プロトコル
 
@@ -33,7 +29,7 @@ Windows Server 2012 および Windows 8 の Schannel SSP で導入された DTLS
 
 構成に使用できる暗号スイートは、TLS 用に構成できるようになった後に、パターン化されます。 RC4 は許可されていません。 Schannel では、Cryptography Next Generation (CNG) が引き続き使用されます。 これは、Windows Vista で導入された FIPS 140 認定を利用しています。
 
-## <a name="see-also"></a>関連項目
+## <a name="additional-references"></a>その他のリファレンス
 
 [IETF RFC 4347 データグラムトランスポート層のセキュリティ](http://tools.ietf.org/html/rfc4347)
 

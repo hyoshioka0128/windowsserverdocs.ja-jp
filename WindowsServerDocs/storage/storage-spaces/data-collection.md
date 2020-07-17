@@ -1,33 +1,30 @@
 ---
 title: 記憶域スペースダイレクトを使用した診断データの収集
 description: 記憶域スペースダイレクトのデータ収集ツールとその実行方法の具体的な例について説明します。
-keywords: 記憶域スペース, データ収集, トラブルシューティング, イベントチャネル, SDDCDiagnosticInfo
-ms.assetid: ''
 ms.prod: windows-server
 ms.author: adagashe
 ms.technology: storage-spaces
 ms.topic: article
 author: adagashe
 ms.date: 10/24/2018
-ms.localizationpriority: ''
-ms.openlocfilehash: 67f35e3afa8e9eafabe7b22eb60cc85c7be6cb23
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 75a74017f48b357dd029b062a7ce06775836bd0a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402877"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858965"
 ---
 # <a name="collect-diagnostic-data-with-storage-spaces-direct"></a>記憶域スペースダイレクトを使用した診断データの収集
 
-> 適用対象:Windows Server 2019、Windows Server 2016
+> 適用対象: Windows Server 2019、Windows Server 2016
 
 記憶域スペースダイレクトとフェールオーバークラスターのトラブルシューティングに必要なデータを収集するために使用できるさまざまな診断ツールがあります。 この記事では、 **SDDCDiagnosticInfo** -クラスターの診断に役立つすべての関連情報を収集するワンタッチツールに注目します。
 
-**SDDCDiagnosticInfo**が密度のログやその他の情報があることから、次に示すトラブルシューティングの情報は、エスカレートされた高度な問題をトラブルシューティングし、にデータを送信する必要がある場合に役立ちます。トリアージ用の Microsoft。
+**SDDCDiagnosticInfo**のログやその他の情報が高密度であることを考えると、以下に示すトラブルシューティングの情報は、エスカレートされた高度な問題のトラブルシューティングに役立ちます。また、トリアージのためにデータをマイクロソフトに送信することが必要になる場合があります。
 
 ## <a name="installing-get-sddcdiagnosticinfo"></a>SDDCDiagnosticInfo をインストールしています
 
-**SDDCDiagnosticInfo** PowerShell コマンドレット ( **PCStorageDiagnosticInfo**(以前の**テスト-storagehealth**) を使用すると、フェールオーバークラスタリング (クラスター、リソース、ネットワーク、ノード)、記憶域スペース (物理ディスク、エンクロージャ) のログを収集し、正常性チェックを実行できます。仮想ディスク)、クラスターの共有ボリューム、SMB ファイル共有、および重複除去。 
+**SDDCDiagnosticInfo** PowerShell コマンドレット ( **PCStorageDiagnosticInfo**(以前の**テスト-storagehealth**) を使用すると、フェールオーバークラスタリング (クラスター、リソース、ネットワーク、ノード)、記憶域スペース (物理ディスク、エンクロージャ、仮想ディスク)、クラスターの共有ボリューム、SMB ファイル共有、および重複除去のログを収集し、正常性チェックを実行できます。 
 
 スクリプトをインストールする方法は2つあります。どちらも以下のようなものです。
 
@@ -35,12 +32,15 @@ ms.locfileid: "71402877"
 
 [PowerShell ギャラリー](https://www.powershellgallery.com/packages/PrivateCloud.DiagnosticInfo)は、GitHub リポジトリのスナップショットです。 PowerShell ギャラリーから項目をインストールするには、PowerShellGet モジュールの最新バージョンが必要であることに注意してください。これは、Windows 10、Windows Management Framework (WMF) 5.0、または MSI ベースのインストーラー (PowerShell 3 および4の場合) で使用できます。
 
+[Microsoft ネットワーク診断ツール](https://www.powershellgallery.com/packages/MSFT.Network.Diag)の最新バージョンは、SDDCDiagnosticInfo がこれに依存しているため、このプロセス中にもインストールされます。 このマニフェストモジュールには、microsoft の Microsoft Core ネットワーク製品グループによって管理されるネットワーク診断およびトラブルシューティングツールが含まれています。
+
 モジュールをインストールするには、PowerShell で管理者特権を使用して次のコマンドを実行します。
 
 ``` PowerShell
 Install-PackageProvider NuGet -Force
 Install-Module PrivateCloud.DiagnosticInfo -Force
 Import-Module PrivateCloud.DiagnosticInfo -Force
+Install-Module -Name MSFT.Network.Diag
 ```
 
 モジュールを更新するには、PowerShell で次のコマンドを実行します。
@@ -51,7 +51,7 @@ Update-Module PrivateCloud.DiagnosticInfo
 
 ### <a name="github"></a>GitHub
 
-[GitHub リポジトリ](https://github.com/PowerShell/PrivateCloud.DiagnosticInfo/)は、このモジュールの最新バージョンです。ここでは繰り返し反復しているためです。 GitHub からモジュールをインストールするには、[アーカイブ](https://github.com/PowerShell/PrivateCloud.DiagnosticInfo/archive/master.zip)から最新のモジュールをダウンロードし、PrivateCloud ディレクトリを抽出して、```$env:PSModulePath``` が指す正しい PowerShell モジュールパスに DiagnosticInfo します。
+[GitHub リポジトリ](https://github.com/PowerShell/PrivateCloud.DiagnosticInfo/)は、このモジュールの最新バージョンです。ここでは繰り返し反復しているためです。 GitHub からモジュールをインストールするには、[アーカイブ](https://github.com/PowerShell/PrivateCloud.DiagnosticInfo/archive/master.zip)から最新のモジュールをダウンロードし、PrivateCloud ディレクトリを正しい PowerShell モジュールパスに抽出し ```$env:PSModulePath```
 
 ``` PowerShell
 # Allowing Tls12 and Tls11 -- e.g. github now requires Tls12
@@ -161,7 +161,7 @@ SDDCDiagnosticInfo の zip 形式の出力に含まれるファイルを次に�
 ### <a name="health-summary-report"></a>正常性の概要レポート
 
 正常性の概要レポートは、次の形式で保存されます。
-- 0_CloudHealthSummary
+- 0_CloudHealthSummary .log
 
 このファイルは収集されたすべてのデータを解析した後に生成され、システムの概要を簡単に示すために使用されます。 次のものが含まれます。
 

@@ -1,27 +1,23 @@
 ---
 title: Windows Server 2016 での hyper-v ネットワーク仮想化の概要
 description: このトピックでは、Windows Server 2016 での Hyper-v ネットワーク仮想化の概要について説明します。
-manager: brianlic
-ms.custom: na
+manager: grcusanz
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-sdn
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0115b7ad-d229-4c69-9d7e-a3f5fbaa3b2f
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 0eda30b0980f2080f1603eb906fd308440316248
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: anpaul
+author: AnirbanPaul
+ms.openlocfilehash: fc81e753675792eeda01e5048f0e3fad88b69b92
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405944"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854255"
 ---
 # <a name="hyper-v-network-virtualization-overview-in-windows-server-2016"></a>Windows Server 2016 での hyper-v ネットワーク仮想化の概要
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 Windows Server 2016 および Virtual Machine Manager では、Microsoft はエンドツーエンドのネットワーク仮想化ソリューションを提供しています。  Microsoft のネットワーク仮想化ソリューションは、次の5つの主要なコンポーネントで構成されています。  
 
@@ -43,11 +39,11 @@ Windows Server 2016 でのネットワーク仮想化の技術的な詳細につ
 
 -   [Hyper-v ネットワーク仮想化の概要](assetId:///bf1dba9d-1960-4dd2-a5e2-99466a02044b)(Windows Server 2012 R2)  
 
--   [Hyper-v の概要](assetId:///5aad349f-ef06-464a-b36f-366fbb040143)  
+-   [Hyper-V の概要](assetId:///5aad349f-ef06-464a-b36f-366fbb040143)  
 
 -   [Hyper-V 仮想スイッチの概要](assetId:///e6ec46af-6ef4-49b3-b1f1-5268dc03f05b)  
 
-## <a name="BKMK_OVER"></a>機能の説明  
+## <a name="feature-description"></a><a name="BKMK_OVER"></a>機能の説明  
 Hyper-v ネットワーク仮想化では、サーバー仮想化 (ハイパーバイザー) によってオペレーティングシステムに "仮想マシン" が提供されるのと同様に、仮想マシンに "仮想ネットワーク" (VM ネットワークと呼ばれます) を提供します。 ネットワーク仮想化は、仮想ネットワークを物理ネットワーク インフラストラクチャから切り離し、仮想マシンのプロビジョニングから VLAN や階層的な IP アドレス割り当ての制約を除去します。 このような柔軟性により、ユーザーは IaaS クラウドを簡単に移動でき、ホスト側やデータセンターの管理者はインフラストラクチャを効率よく管理できるようになる一方で、必要なマルチテナントの分離、セキュリティ要件、およびオーバーラップする仮想マシン IP アドレスのサポートは維持されます。  
 
 ユーザーはデータセンターをクラウドにシームレスに拡張することを希望しています。 現在は、そのようなシームレスなハイブリッド クラウド アーキテクチャには技術的な課題があります。 最も大きな課題の1つは、クラウド内の既存のネットワークトポロジ (サブネット、IP アドレス、ネットワークサービスなど) を再利用し、オンプレミスのリソースとそのクラウドリソースの間を橋渡しすることです。  Hyper-V ネットワーク仮想化は、基盤の物理ネットワークから独立した VM ネットワークの概念を提供します。 1 つ以上の仮想サブネットから構成される VM ネットワークのこの概念により、仮想ネットワークに接続された仮想マシンの物理ネットワーク内の正確な場所は、仮想ネットワーク トポロジから分離されます。 その結果、クラウド内の既存の IP アドレスとトポロジを維持しながら仮想サブネットをクラウドに簡単に移動でき、既存のサービスはサブネットの物理的な場所に関係なく動作を続けることができます。 つまり、Hyper-V ネットワーク仮想化はシームレスなハイブリッド クラウドを可能にします。  
@@ -58,7 +54,7 @@ Hyper-v ネットワーク仮想化では、サーバー仮想化 (ハイパー�
 
 インフラストラクチャ所有者の場合は、仮想マシンの配置の柔軟性が増すため、仮想マシンを変更したりネットワークを再構成したりしなくても、データセンター内の任意の場所にワークロードを移動できます。 たとえば、Hyper-V ネットワーク仮想化ではサブネット間のライブ マイグレーションが可能であるため、サービスを停止することなく仮想マシンをデータセンター内のどこにでもライブ マイグレーションできます。 従来のライブ マイグレーションは同じサブネットに限られ、仮想マシンの場所が制限されていました。 サブネット間のライブ マイグレーションにより、管理者は動的なリソース要件やエネルギー効率に基づいてワークロードを統合でき、ユーザーのワークロード稼働時間を中断することなくインフラストラクチャのメンテナンスを実行できます。  
 
-## <a name="BKMK_APP"></a>実用的なアプリケーション  
+## <a name="practical-applications"></a><a name="BKMK_APP"></a>実用的なアプリケーション  
 仮想化データセンターの飛躍と共に、IT 組織やホスティング プロバイダー (コロケーションを運用したり物理サーバーのレンタルを行うプロバイダー) は、顧客にオンデマンドで簡単にサーバー インスタンスを提供できる柔軟性に優れた仮想化インフラストラクチャを展開するようになってきました。 この新しい形態のサービスは Infrastructure as a Service (IaaS) と呼ばれています。 Windows Server 2016 では、企業ユーザーがプライベートクラウドを構築し、IT as a service の運用モデルに移行できるようにするために必要なプラットフォーム機能がすべて提供されます。 また、Windows Server 2016 2016 を使用すると、ホスト側はパブリッククラウドを構築し、IaaS ソリューションを顧客に提供することができます。 Virtual Machine Manager および Windows Azure Pack と組み合わせて Hyper-v ネットワーク仮想化ポリシーを管理することにより、強力なクラウドソリューションが提供されます。  
 
 Windows Server 2016 Hyper-v ネットワーク仮想化は、企業が専用 IaaS クラウドを拡張するときに発生する管理オーバーヘッドを削減するポリシーベースでソフトウェア制御のネットワーク仮想化を提供し、クラウドのホストを改善します。より高いリソース使用率を実現するために、仮想マシンを管理するための柔軟性とスケーラビリティ。  
@@ -91,7 +87,7 @@ VLAN の欠点に加えて、仮想マシンの IP アドレス割り当てに�
 
 Hyper-V ネットワーク仮想化は、ユーザーの仮想マシンの仮想ネットワークを、物理ネットワーク インフラストラクチャから切り離します。 その結果、ユーザーの仮想マシンは元の IP アドレスを維持でき、一方で、データセンター管理者は物理 IP アドレスまたは VLAN ID を再構成することなくデータセンター内の任意の場所にユーザーの仮想マシンをプロビジョニングできます。 次のセクションでは主な機能をまとめます。  
 
-## <a name="BKMK_NEW"></a>重要な機能  
+## <a name="important-functionality"></a><a name="BKMK_NEW"></a>重要な機能  
 Windows Server 2016 の Hyper-v ネットワーク仮想化の主な機能、利点、および機能を次に示します。  
 
 -   **柔軟なワークロード配置-Vlan なしでのネットワークの分離と IP アドレスの再利用を可能にします。**  
@@ -132,16 +128,16 @@ Windows Server 2016 の Hyper-v ネットワーク仮想化の主な機能、利
 
     Windows Server 2016 のネットワーク仮想化ポリシーは、Microsoft ネットワークコントローラーを介して構成されます。 ネットワーク コント ローラーには、Restful Northbound API と、ポリシーを構成する Windows PowerShell インターフェイスがあります。 Microsoft ネットワークコントローラーの詳細については、「[ネットワークコントローラー](../../../sdn/technologies/network-controller/../../../sdn/technologies/network-controller/Network-Controller.md)」を参照してください。  
 
-## <a name="BKMK_SOFT"></a>ソフトウェア要件  
+## <a name="software-requirements"></a><a name="BKMK_SOFT"></a>ソフトウェア要件  
 Microsoft ネットワークコントローラーを使用する hyper-v ネットワーク仮想化には、Windows Server 2016 および Hyper-v の役割が必要です。  
 
-## <a name="BKMK_LINKS"></a>関連項目  
+## <a name="see-also"></a><a name="BKMK_LINKS"></a>関連項目  
 Windows Server 2016 での Hyper-v ネットワーク仮想化の詳細については、次のリンクを参照してください。  
 
 
-|       コンテンツの種類       |                                                                                                                                リファレンス                                                                                                                                |
+|       コンテンツの種類       |                                                                                                                                参照                                                                                                                                |
 |--------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **コミュニティリソース**  |     -   [プライベートクラウドアーキテクチャのブログ](https://blogs.technet.com/b/privatecloud/archive/2012/03/19/cloud-datacenter-network-architecture-in-the-windows-server-8-era.aspx)<br />-Ask 質問: [cloudnetfb@microsoft.com](mailto:%20cloudnetfb@microsoft.com)     |
+| **コミュニティ リソース**  |     -   [プライベートクラウドアーキテクチャのブログ](https://blogs.technet.com/b/privatecloud/archive/2012/03/19/cloud-datacenter-network-architecture-in-the-windows-server-8-era.aspx)<br />-Ask 質問: [cloudnetfb@microsoft.com](mailto:%20cloudnetfb@microsoft.com)     |
 |         **RFC**          |                                                                                                     -VXLAN- [RFC 7348](https://www.rfc-editor.org/info/rfc7348)                                                                                                      |
-| **関連テクノロジ** | -   [ネットワークコントローラー](../../../sdn/technologies/network-controller/../../../sdn/technologies/network-controller/Network-Controller.md)<br />-   [Hyper-v ネットワーク仮想化の概要](assetId:///bf1dba9d-1960-4dd2-a5e2-99466a02044b)(Windows Server 2012 R2) |
+| **関連テクノロジ** | [ネットワークコントローラー](../../../sdn/technologies/network-controller/../../../sdn/technologies/network-controller/Network-Controller.md)の -   <br />-   [Hyper-v ネットワーク仮想化の概要](assetId:///bf1dba9d-1960-4dd2-a5e2-99466a02044b)(Windows Server 2012 R2) |
 

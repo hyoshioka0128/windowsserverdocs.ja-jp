@@ -4,15 +4,15 @@ description: パフォーマンスチューニングに関するメモリの考�
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: Asmahi; SandySp; JoPoulso
+ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 88827176e8a425e9bf68fdc170a4a114346562f0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b513dd3346d593ec4c823808f540bce68dd472ce
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385086"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471367"
 ---
 # <a name="hyper-v-memory-performance"></a>Hyper-v メモリのパフォーマンス
 
@@ -41,7 +41,7 @@ ms.locfileid: "71385086"
 
 Windows Server 2016 の hyper-v は、ルートパーティションの管理オペレーティングシステムの実行時の正常性を監視し、ルートパーティションの高パフォーマンスと信頼性を確保しながら、子パーティションに安全に割り当てることができるメモリの量を判断します。
 
-## <a name="see-also"></a>関連項目
+## <a name="additional-references"></a>その他のリファレンス
 
 -   [Hyper-V の用語](terminology.md)
 

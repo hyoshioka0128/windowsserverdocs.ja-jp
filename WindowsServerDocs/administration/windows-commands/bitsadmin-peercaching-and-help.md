@@ -1,44 +1,43 @@
 ---
-title: bitsadmin のピアキャッシュとヘルプ
-description: '**Bitsadmin ピアキャッシュとヘルプ**に関する Windows コマンドトピックでは、**ピアキャッシュ**スイッチのコマンドラインの使用方法を示します。'
-ms.custom: na
+title: bitsadmin peercaching および help
+description: '**Bitsadmin のピアキャッシュ**と**ヘルプ**のリファレンス記事。/ピアキャッシュスイッチのコマンドラインの使用方法を表示します。'
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2cb0fcc0-5464-47c9-b44d-dd32a4f0d907
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7d01d6cc50552320d99e668a6fc7292a2275b9db
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1cef716cd7487868adcd9df32904fda331e49fc1
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71381067"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922925"
 ---
-# <a name="bitsadmin-peercaching-and-help"></a>bitsadmin のピアキャッシュとヘルプ
+# <a name="bitsadmin-peercaching-and-help"></a>bitsadmin peercaching および help
 
-
-
-**ピアキャッシュ**スイッチのコマンドラインの使用法を表示します。
+**/ピアキャッシュ**スイッチのコマンドラインの使用法を表示します。
 
 ## <a name="syntax"></a>構文
 
 ```
-Bitsadmin /PeerCaching /Help 
+bitsadmin /peercaching /help
 ```
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a>例
 
-次のコマンドは、**ピアキャッシュ**スイッチのコマンドラインヘルプを表示します。
+**/ピアキャッシュ**スイッチのコマンドラインヘルプを表示するには、次のようにします。
+
 ```
-Bitsadmin /PeerCaching /Help
+bitsadmin /peercaching /help
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [bitsadmin コマンド](bitsadmin.md)
+
+- [bitsadmin ピアキャッシュコマンド](bitsadmin-peercaching.md)

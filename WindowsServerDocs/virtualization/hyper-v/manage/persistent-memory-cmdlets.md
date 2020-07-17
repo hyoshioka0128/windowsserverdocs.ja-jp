@@ -2,24 +2,21 @@
 title: Hyper-v Vm 用の永続メモリデバイスを構成するためのコマンドレット
 description: Hyper-v Vm の永続メモリデバイスを構成する方法
 ms.prod: windows-server
-ms.service: na
-manager: jasgroce
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b5715c02-a90f-4de9-a71e-0fc08039ba1d
 author: coreyp-at-msft
 ms.author: coreyp
-ms.openlocfilehash: ecae1fe96bc5088fa840c6e2e24a75bb72a9e8f3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b58e2a4e2f31c5bf3e49b89da912b77060e334ed
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71392534"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860425"
 ---
 # <a name="cmdlets-for-configuring-persistent-memory-devices-for-hyper-v-vms"></a>Hyper-v Vm 用の永続メモリデバイスを構成するためのコマンドレット
 
->適用先:Windows Server 2019
+>適用対象: Windows Server 2019
 
 この記事では、システム管理者および IT プロフェッショナルに、永続メモリ (ストレージクラスメモリまたは NVDIMM) を使用した Hyper-v Vm の構成に関する情報を提供します。 JDEC に準拠している NVDIMM-N 永続メモリデバイスは、Windows Server 2016 と Windows 10 でサポートされており、非常に短い待機時間の少ない非揮発性デバイスへのバイトレベルのアクセスを提供します。 VM 永続メモリデバイスは、Windows Server 2019 でサポートされています。 
 

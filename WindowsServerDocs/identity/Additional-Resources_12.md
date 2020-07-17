@@ -1,28 +1,22 @@
 ---
 ms.assetid: 20dff664-2370-469b-96a8-df1acf7c7f12
 title: その他のリソース
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.service: ''
-ms.suite: na
 ms.technology: identity-adds
-ms.tgt_pltfrm: na
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/07/2018
-ms.openlocfilehash: 36fb987bae28edc6745227bc9ce9a51d16cce9b3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6f1d9a19e62a505b2f9e15c074cb32240983e889
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391140"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80825735"
 ---
 # <a name="additional-resources"></a>その他のリソース
 
->適用先:Windows Server
+>適用対象: Windows Server
 
 Repadmin.exe を使用して Active Directory レプリケーションを管理する方法の詳細については、次のリソースを参照してください。 
 

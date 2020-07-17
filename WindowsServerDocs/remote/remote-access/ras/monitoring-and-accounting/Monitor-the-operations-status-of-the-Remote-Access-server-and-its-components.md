@@ -2,22 +2,18 @@
 title: リモート アクセス サーバーとそのコンポーネントの操作状態を監視する
 description: このトピックは、Windows Server 2016 のリモートアクセスの監視とアカウンティングに関するガイドの一部です。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 077a3a64-2fa3-4994-9711-ec1fbdc081ba
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: d0ad63ec88a428239a174a0217db94c44ab799bc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: a93f8100b16da1cabbda8ed3e273a2601adb647a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404545"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860525"
 ---
 # <a name="monitor-the-operations-status-of-the-remote-access-server-and-its-components"></a>リモート アクセス サーバーとそのコンポーネントの操作状態を監視する
 
@@ -42,7 +38,7 @@ ms.locfileid: "71404545"
   
 windows PowerShell の ![](../../../media/Monitor-the-operations-status-of-the-Remote-Access-server-and-its-components/PowerShellLogoSmall.gif)***<em>windows powershell の同等のコマンド</em>***  
   
-以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
+次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 書式上の制約のため、複数行にわたって折り返される場合でも、各コマンドレットは 1 行に入力してください。  
   
 > [!NOTE]  
 > クラスターの状態を操作するためのコマンドは、参照用です。  

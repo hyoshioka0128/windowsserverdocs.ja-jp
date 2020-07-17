@@ -1,28 +1,24 @@
 ---
 title: セキュリティ サポート プロバイダー インターフェイスのアーキテクチャ
 description: Windows Server のセキュリティ
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-windows-auth
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: de09e099-5711-48f8-adbd-e7b8093a0336
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 4db407b24b00bc8313d2e17f1fcf55d9fa160c8c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2faf67f71d5bb04e23f034e738b64c62a7df4f05
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403310"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475249"
 ---
 # <a name="security-support-provider-interface-architecture"></a>セキュリティ サポート プロバイダー インターフェイスのアーキテクチャ
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016
+>適用先:Windows Server (半期チャネル)、Windows Server 2016
 
 IT プロフェッショナル向けのこのリファレンストピックでは、セキュリティサポートプロバイダインターフェイス (SSPI) アーキテクチャで使用される Windows 認証プロトコルについて説明します。
 
@@ -58,10 +54,10 @@ Windows で特定の認証プロトコルを呼び出す既定のセキュリテ
 
 [セキュリティサポートプロバイダーの選択](security-support-provider-interface-architecture.md#BKMK_SecuritySupportProviderSelection)
 
-### <a name="BKMK_KerbSSP"></a>Kerberos セキュリティサポートプロバイダ
+### <a name="kerberos-security-support-provider"></a><a name="BKMK_KerbSSP"></a>Kerberos セキュリティサポートプロバイダ
 この SSP は、Microsoft によって実装されている Kerberos version 5 プロトコルのみを使用します。 このプロトコルは、ネットワーク作業グループの RFC 4120 と下書きのリビジョンに基づいています。 これは、対話型ログオンのパスワードまたはスマートカードと共に使用される業界標準のプロトコルです。 また、Windows でのサービスの推奨される認証方法でもあります。
 
-Kerberos プロトコルは Windows 2000 以降の既定の認証プロトコルであるため、すべてのドメインサービスで Kerberos SSP がサポートされています。 これらのサービスには、次のようなものがあります。
+Kerberos プロトコルは Windows 2000 以降の既定の認証プロトコルであるため、すべてのドメインサービスで Kerberos SSP がサポートされています。 次のようなサービスがあります。
 
 -   ライトウェイトディレクトリアクセスプロトコル (LDAP) を使用する Active Directory クエリ
 
@@ -81,7 +77,7 @@ Kerberos プロトコルは Windows 2000 以降の既定の認証プロトコル
 
 -   ドメインユーザーとコンピューターの証明書サービスを Active Directory するための証明書要求
 
-場所:%windir%\Windows\System32\kerberos.dll
+場所:% windir% \Windows\System32\kerberos.dll
 
 このプロバイダーは、このトピックの冒頭にある「**適用対象**」の一覧に記載されているバージョンと、windows Server 2003 および windows XP に既定で含まれています。
 
@@ -89,19 +85,19 @@ Kerberos プロトコルは Windows 2000 以降の既定の認証プロトコル
 
 -   [Microsoft Kerberos (Windows)](https://msdn.microsoft.com/library/aa378747(VS.85).aspx)
 
--   [\[MS-16\]: Kerberos プロトコル拡張機能](https://msdn.microsoft.com/library/cc233855(PROT.10).aspx)
+-   [\[MS-16 \] : Kerberos プロトコル拡張機能](https://msdn.microsoft.com/library/cc233855(PROT.10).aspx)
 
--   [\[MS SFU\]: Kerberos プロトコル拡張機能: ユーザーと制約付き委任プロトコルの仕様のサービス](https://msdn.microsoft.com/library/cc246071(PROT.13).aspx)
+-   [\[MS SFU \] : Kerberos プロトコル拡張機能: ユーザーと制約付き委任プロトコルの仕様のサービス](https://msdn.microsoft.com/library/cc246071(PROT.13).aspx)
 
 -   [Kerberos SSP/AP (Windows)](https://msdn.microsoft.com/library/aa377942(VS.85).aspx)
 
 -   Windows Vista の[Kerberos の機能強化](https://technet.microsoft.com/library/cc749438(v=ws.10).aspx)
 
--   Windows 7 の[Kerberos 認証の変更点](https://technet.microsoft.com/library/dd560670(v=ws.10).aspx) 
+-   Windows 7 の[Kerberos 認証の変更点](https://technet.microsoft.com/library/dd560670(v=ws.10).aspx)
 
 -   [Kerberos 認証のテクニカルリファレンス](https://technet.microsoft.com/library/cc739058(v=ws.10).aspx)
 
-### <a name="BKMK_NTLMSSP"></a>NTLM セキュリティサポートプロバイダ
+### <a name="ntlm-security-support-provider"></a><a name="BKMK_NTLMSSP"></a>NTLM セキュリティサポートプロバイダ
 Ntlm セキュリティサポートプロバイダー (NTLM SSP) は、NTLM チャレンジ応答認証を許可し、整合性と機密性のオプションをネゴシエートするために、セキュリティサポートプロバイダーインターフェイス (SSPI) によって使用されるバイナリメッセージングプロトコルです。 NTLM は、サーバーメッセージブロックや CIFS 認証、HTTP ネゴシエート認証 (インターネット Web 認証など)、リモートプロシージャコールサービスなど、SSPI 認証が使用される場所で使用されます。 NTLM SSP には、NTLM と NTLM バージョン 2 (NTLMv2) の認証プロトコルが含まれています。
 
 サポートされている Windows オペレーティングシステムでは、次の場合に NTLM SSP を使用できます。
@@ -114,7 +110,7 @@ Ntlm セキュリティサポートプロバイダー (NTLM SSP) は、NTLM チ�
 
 -   リモートプロシージャコールサービスまたは DCOM サービスをセキュリティで保護する
 
-場所:%windir%\Windows\System32\ msv1_0
+場所:% windir% \Windows\System32\msv1_0.dll
 
 このプロバイダーは、このトピックの冒頭にある「**適用対象**」の一覧に記載されているバージョンと、windows Server 2003 および windows XP に既定で含まれています。
 
@@ -122,22 +118,22 @@ Ntlm セキュリティサポートプロバイダー (NTLM SSP) は、NTLM チ�
 
 -   [MSV1_0 認証パッケージ (Windows)](https://msdn.microsoft.com/library/aa378753(VS.85).aspx)
 
--   Windows 7 での[NTLM 認証の変更点](https://technet.microsoft.com/library/dd566199(v=ws.10).aspx) 
+-   Windows 7 での[NTLM 認証の変更点](https://technet.microsoft.com/library/dd566199(v=ws.10).aspx)
 
 -   [Microsoft NTLM (Windows)](https://msdn.microsoft.com/library/aa378749(VS.85).aspx)
 
--   [NTLM 使用法ガイドの監査と制限](https://technet.microsoft.com/library/jj865674(v=ws.10).aspx)
+-   [Auditing and restricting NTLM usage guide (NTLM の使用の監査と制限を行うためのガイド)](https://technet.microsoft.com/library/jj865674(v=ws.10).aspx)
 
-### <a name="BKMK_DigestSSP"></a>ダイジェストセキュリティサポートプロバイダ
+### <a name="digest-security-support-provider"></a><a name="BKMK_DigestSSP"></a>ダイジェストセキュリティサポートプロバイダ
 ダイジェスト認証は、ライトウェイトディレクトリアクセスプロトコル (LDAP) と web 認証に使用される業界標準です。 ダイジェスト認証は、MD5 ハッシュまたはメッセージダイジェストとして、ネットワーク経由で資格情報を転送します。
 
-次の場合にダイジェスト SSP (Wdigest .dll) が使用されます。
+ダイジェスト SSP (Wdigest.dll) は、次の場合に使用されます。
 
 -   Internet Explorer とインターネットインフォメーションサービス (IIS) へのアクセス
 
 -   LDAP クエリ
 
-場所:%windir%\Windows\System32\Digest.dll
+場所:% windir% \Windows\System32\Digest.dll
 
 このプロバイダーは、このトピックの冒頭にある「**適用対象**」の一覧に記載されているバージョンと、windows Server 2003 および windows XP に既定で含まれています。
 
@@ -145,9 +141,9 @@ Ntlm セキュリティサポートプロバイダー (NTLM SSP) は、NTLM チ�
 
 -   [Microsoft ダイジェスト認証 (Windows)](https://msdn.microsoft.com/library/aa378745(VS.85).aspx)
 
--   [\[MS-DPSP\]: ダイジェストプロトコルの拡張機能](https://msdn.microsoft.com/library/cc227906(PROT.13).aspx)
+-   [\[MS-DPSP \] : Digest プロトコル拡張機能](https://msdn.microsoft.com/library/cc227906(PROT.13).aspx)
 
-### <a name="BKMK_SchannelSSP"></a>Schannel セキュリティサポートプロバイダ
+### <a name="schannel-security-support-provider"></a><a name="BKMK_SchannelSSP"></a>Schannel セキュリティサポートプロバイダ
 セキュリティで保護されたチャネル (Schannel) は、ユーザーがセキュリティで保護された web サーバーにアクセスしようとした場合など、web ベースのサーバー認証に使用されます。
 
 TLS プロトコル、SSL プロトコル、プライベート通信テクノロジ (PCT) プロトコル、およびデータグラムトランスポート層 (DTLS) プロトコルは、公開キー暗号化に基づいています。 Schannel には、これらすべてのプロトコルが用意されています。 どの Schannel プロトコルでも、クライアント/サーバー モデルが使用されています。 Schannel SSP では、公開キー証明書を使用して利用者を認証します。 パーティを認証するときに、Schannel SSP は次の優先順位でプロトコルを選択します。
@@ -170,7 +166,7 @@ TLS プロトコル、SSL プロトコル、プライベート通信テクノロ
 
 DTLS は、アプリケーションによって明示的に呼び出されたときに使用されます。 DTLS と Schannel プロバイダーで使用されるその他のプロトコルの詳細については、「 [Schannel Security Support Provider テクニカルリファレンス](../tls/schannel-security-support-provider-technical-reference.md)」を参照してください。
 
-場所:%windir%\Windows\System32\Schannel.dll
+場所:% windir% \Windows\System32\Schannel.dll
 
 このプロバイダーは、このトピックの冒頭にある「**適用対象**」の一覧に記載されているバージョンと、windows Server 2003 および windows XP に既定で含まれています。
 
@@ -183,16 +179,16 @@ DTLS は、アプリケーションによって明示的に呼び出されたと
 
 -   [TLS/SSL テクニカルリファレンス](https://technet.microsoft.com/library/cc784149(v=ws.10).aspx)
 
--   [\[MS TLSP\]: Transport Layer Security (TLS) プロファイル](https://msdn.microsoft.com/library/dd207968(PROT.13).aspx)
+-   [\[MS TLSP \] : Transport Layer Security (TLS) プロファイル](https://msdn.microsoft.com/library/dd207968(PROT.13).aspx)
 
-### <a name="BKMK_NegoSSP"></a>セキュリティサポートプロバイダーのネゴシエート
-Simple and Protected GSS API ネゴシエーションメカニズム (SPNEGO) は、特定の認証プロトコルのネゴシエーションに使用できる Negotiate SSP の基礎を形成します。 アプリケーションが SSPI を呼び出してネットワークにログオンするときに、要求を処理する SSP を指定できます。 アプリケーションで Negotiate SSP が指定されている場合は、要求を分析し、顧客が構成したセキュリティポリシーに基づいて、要求を処理するための適切なプロバイダーを選択します。
+### <a name="negotiate-security-support-provider"></a><a name="BKMK_NegoSSP"></a>セキュリティサポートプロバイダーのネゴシエート
+Simple and Protected GSS API ネゴシエーションメカニズム (SPNEGO) は、特定の認証プロトコルのネゴシエーションに使用できる Negotiate SSP の基礎を形成します。 アプリケーションは、SSPI を呼び出してネットワークにログオンするときに、要求を処理する SSP を指定できます。 アプリケーションで Negotiate SSP が指定されている場合は、要求を分析し、顧客が構成したセキュリティポリシーに基づいて、要求を処理するための適切なプロバイダーを選択します。
 
 SPNEGO は、RFC 2478 で指定されています。
 
 サポートされている Windows オペレーティングシステムのバージョンでは、ネゴシエートセキュリティサポートプロバイダーが Kerberos プロトコルと NTLM のどちらかを選択します。 ネゴシエートでは、認証に関係するシステムのいずれかでプロトコルを使用できない場合、または呼び出し元のアプリケーションが Kerberos プロトコルを使用するための十分な情報を提供しなかった場合を除き、Kerberos プロトコルが既定で選択されます。
 
-場所:%windir%\Windows\System32\lsasrv.dll
+場所:% windir% \Windows\System32\lsasrv.dll
 
 このプロバイダーは、このトピックの冒頭にある「**適用対象**」の一覧に記載されているバージョンと、windows Server 2003 および windows XP に既定で含まれています。
 
@@ -200,24 +196,24 @@ SPNEGO は、RFC 2478 で指定されています。
 
 -   [Microsoft Negotiate (Windows)](https://msdn.microsoft.com/library/aa378748(VS.85).aspx)
 
--   [\[MS-SPNG\]: Simple および Protected GSS-API ネゴシエーションメカニズム (SPNEGO) の拡張機能](https://msdn.microsoft.com/library/cc247021(PROT.13).aspx)
+-   [\[MS-SPNG \] : Simple および PROTECTED GSS-API ネゴシエーションメカニズム (SPNEGO) の拡張機能](https://msdn.microsoft.com/library/cc247021(PROT.13).aspx)
 
--   [\[N2HT\]: Negotiate と Nego2 HTTP 認証プロトコルの仕様](https://msdn.microsoft.com/library/dd303576(PROT.13).aspx)
+-   [\[N2HT \] : Negotiate と NEGO2 HTTP 認証プロトコルの仕様](https://msdn.microsoft.com/library/dd303576(PROT.13).aspx)
 
-### <a name="BKMK_CredSSP"></a>資格情報セキュリティサポートプロバイダ
+### <a name="credential-security-support-provider"></a><a name="BKMK_CredSSP"></a>資格情報セキュリティサポートプロバイダ
 Credential Security Service Provider (CredSSP) は、新しいターミナルサービスとリモートデスクトップサービスセッションを開始するときにシングルサインオン (SSO) ユーザーエクスペリエンスを提供します。 CredSSP を使用すると、アプリケーションは、クライアントのポリシーに基づいて、(クライアント側の SSP を使用して) クライアントコンピューターからターゲットサーバーにユーザーの資格情報を委任することができます。 CredSSP ポリシーはグループポリシーを使用して構成され、資格情報の委任は既定で無効になっています。
 
-場所:%windir%\Windows\System32\credssp.dll
+場所:% windir% \Windows\System32\credssp.dll
 
 このプロバイダーは、このトピックの冒頭にある「**適用対象**」の一覧に指定されているバージョンに既定で含まれています。
 
 **資格情報 SSP に関するその他のリソース**
 
--   [\[MS-CSSP\]: Credential Security Support Provider (CredSSP) プロトコル仕様](https://msdn.microsoft.com/library/cc226764(PROT.13).aspx)
+-   [\[MS-CSSP \] : Credential Security Support Provider (CredSSP) プロトコル仕様](https://msdn.microsoft.com/library/cc226764(PROT.13).aspx)
 
 -   [資格情報セキュリティサービスプロバイダーとターミナルサービスログオン用 SSO](https://technet.microsoft.com/library/cc749211(v=ws.10).aspx)
 
-### <a name="BKMK_NegoExtsSSP"></a>Negotiate Extension セキュリティサポートプロバイダ
+### <a name="negotiate-extensions-security-support-provider"></a><a name="BKMK_NegoExtsSSP"></a>Negotiate Extension セキュリティサポートプロバイダ
 Negotiate Extensions (NegoExts) は、Microsoft およびその他のソフトウェア会社によって実装されているアプリケーションとシナリオについて、NTLM または Kerberos プロトコル以外の Ssp の使用をネゴシエートする認証パッケージです。
 
 この Negotiate パッケージに対するこの拡張機能では、次のシナリオが許可されます。
@@ -230,18 +226,18 @@ Negotiate Extensions (NegoExts) は、Microsoft およびその他のソフト�
 
 -   **クライアントコンピューターとサーバーの間のリッチクライアントの可用性。** オペレーティングシステムのネットワークと認証のコンポーネントが使用されます。
 
-Windows Negotiate パッケージでは、Kerberos と NTLM の場合と同じ方法で NegoExts SSP を扱います。 スタートアップ時に、ローカルシステム権限 (LSA) に NegoExts dll が読み込まれます。 要求のソースに基づいて認証要求を受信すると、サポートされている Ssp 間で NegoExts がネゴシエートします。 資格情報とポリシーを収集して暗号化し、セキュリティトークンが作成された適切な SSP にその情報を送信します。
+Windows Negotiate パッケージでは、Kerberos と NTLM の場合と同じ方法で NegoExts SSP を扱います。 起動時に、NegoExts.dll がローカルシステム権限 (LSA) に読み込まれます。 要求のソースに基づいて認証要求を受信すると、サポートされている Ssp 間で NegoExts がネゴシエートします。 資格情報とポリシーを収集して暗号化し、セキュリティトークンが作成された適切な SSP にその情報を送信します。
 
 NegoExts でサポートされている Ssp は、Kerberos や NTLM などのスタンドアロンの Ssp ではありません。 そのため、NegoExts SSP では、何らかの理由で認証方法が失敗すると、認証エラーメッセージが表示されるか、ログに記録されます。 再ネゴシエーションまたは代替の認証方法は使用できません。
 
-場所:%windir%\Windows\System32\negoexts.dll
+場所:% windir% \Windows\System32\negoexts.dll
 
 このプロバイダーは、このトピックの冒頭にある「**適用対象**」の一覧に記載されているバージョンに既定で含まれています (windows Server 2008 と windows Vista は除く)。
 
-### <a name="BKMK_PKU2USSP"></a>PKU2U セキュリティサポートプロバイダ
+### <a name="pku2u-security-support-provider"></a><a name="BKMK_PKU2USSP"></a>PKU2U セキュリティサポートプロバイダ
 PKU2U プロトコルは、Windows 7 および Windows Server 2008 R2 の SSP として導入され、実装されています。 この SSP は、特に Windows 7 で導入されたホームグループと呼ばれるメディアおよびファイル共有機能を通じて、ピアツーピア認証を有効にします。 この機能は、ドメインのメンバーではないコンピューター間での共有を許可します。
 
-場所:%windir%\Windows\System32\pku2u.dll
+場所:% windir% \Windows\System32\pku2u.dll
 
 このプロバイダーは、このトピックの冒頭にある「**適用対象**」の一覧に記載されているバージョンに既定で含まれています (windows Server 2008 と windows Vista は除く)。
 
@@ -249,8 +245,8 @@ PKU2U プロトコルは、Windows 7 および Windows Server 2008 R2 の SSP �
 
 -   [オンライン Id 統合の概要](https://technet.microsoft.com/library/dd560662(v=ws.10).aspx)
 
-## <a name="BKMK_SecuritySupportProviderSelection"></a>セキュリティサポートプロバイダーの選択
-Windows SSPI では、インストールされているセキュリティサポートプロバイダーでサポートされているプロトコルのいずれかを使用できます。 ただし、すべてのオペレーティングシステムが Windows Server を実行している特定のコンピューターと同じ SSP パッケージをサポートしているわけではないため、クライアントとサーバーは両方がサポートしているプロトコルを使用するためにネゴシエーションを行う必要があります。 Windows Server では、可能な場合、クライアントコンピューターとアプリケーションは、強力な標準ベースのプロトコルである Kerberos プロトコルを使用することを推奨しますが、オペレーティングシステムは、Kerberos をサポートしていないクライアントコンピューターとクライアントアプリケーションを引き続き許可します。認証するプロトコル。
+## <a name="security-support-provider-selection"></a><a name="BKMK_SecuritySupportProviderSelection"></a>セキュリティサポートプロバイダーの選択
+Windows SSPI では、インストールされているセキュリティサポートプロバイダーでサポートされているプロトコルのいずれかを使用できます。 ただし、すべてのオペレーティングシステムが Windows Server を実行している特定のコンピューターと同じ SSP パッケージをサポートしているわけではないため、クライアントとサーバーは両方がサポートしているプロトコルを使用するためにネゴシエーションを行う必要があります。 Windows Server では、可能な場合、クライアントコンピューターとアプリケーションは、強力な標準ベースのプロトコルである Kerberos プロトコルを使用することを推奨しますが、オペレーティングシステムは、Kerberos プロトコルをサポートしていないクライアントコンピューターとクライアントアプリケーションの認証を引き続き許可します。
 
 認証を行う前に、2つの通信コンピューターが両方のプロトコルでサポートできるプロトコルに同意する必要があります。 SSPI を介して任意のプロトコルを使用できるようにするには、各コンピューターに適切な SSP が必要です。 たとえば、クライアントコンピューターとサーバーが Kerberos 認証プロトコルを使用するには、Kerberos v5 がサポートされている必要があります。 Windows Server では、関数**EnumerateSecurityPackages**を使用して、コンピューターでサポートされている ssp と、それらの ssp の機能を識別します。
 
@@ -260,7 +256,7 @@ Windows SSPI では、インストールされているセキュリティサポ�
 
 2.  [Negotiate オプション](#BKMK_Negotiate)
 
-### <a name="BKMK_SingleAuth"></a>単一の認証プロトコル
+### <a name="single-authentication-protocol"></a><a name="BKMK_SingleAuth"></a>単一の認証プロトコル
 サーバーで1つの許容されるプロトコルが指定されている場合、クライアントコンピューターは指定されたプロトコルをサポートする必要があります。指定しない場合、通信は失敗します。 1つの許容されるプロトコルを指定すると、認証の交換は次のように行われます。
 
 1.  クライアントコンピューターは、サービスへのアクセスを要求します。
@@ -269,7 +265,7 @@ Windows SSPI では、インストールされているセキュリティサポ�
 
 3.  クライアントコンピューターは、応答の内容を調べ、指定されたプロトコルをサポートしているかどうかを確認します。 クライアントコンピューターが指定されたプロトコルをサポートしている場合は、認証が続行されます。 クライアントコンピューターでプロトコルがサポートされていない場合、クライアントコンピューターにリソースへのアクセスが許可されているかどうかに関係なく、認証は失敗します。
 
-### <a name="BKMK_Negotiate"></a>Negotiate オプション
+### <a name="negotiate-option"></a><a name="BKMK_Negotiate"></a>Negotiate オプション
 Negotiate オプションを使用すると、クライアントとサーバーが許容されるプロトコルを検索することができます。 これは、単純および保護された GSS API ネゴシエーションメカニズム (SPNEGO) に基づいています。 認証プロトコルに対してネゴシエートするオプションで認証が開始されると、SPNEGO の交換は次のように行われます。
 
 1.  クライアントコンピューターは、サービスへのアクセスを要求します。
@@ -284,7 +280,7 @@ Negotiate オプションを使用すると、クライアントとサーバー�
 
     -   クライアントコンピューターが、一覧に示されているプロトコルのいずれかをサポートしていない場合、認証の交換は失敗します。
 
-## <a name="see-also"></a>関連項目
+## <a name="additional-references"></a>その他のリファレンス
 [Windows 認証のアーキテクチャ](https://technet.microsoft.com/library/dn169024(v=ws.10).aspx)
 
 

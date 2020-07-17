@@ -1,7 +1,6 @@
 ---
 ms.assetid: ac727bd1-a892-47ed-a7ba-439b34187d4e
 title: AD DS インストール ウィザードおよび削除ウィザードのページの説明
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 3563c30e86c53435c10cafc840a71c7b8c526943
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7370dfed68e22ca88030aec913db4eb52eef9ec3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391204"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80825455"
 ---
 # <a name="ad-ds-installation-and-removal-wizard-page-descriptions"></a>AD DS インストール ウィザードおよび削除ウィザードのページの説明
 
@@ -40,7 +39,7 @@ ms.locfileid: "71391204"
   
 -   [前提条件の確認](../../ad-ds/deploy/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions.md#BKMK_PrerqCheckPage)  
   
--   [結果](../../ad-ds/deploy/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions.md#BKMK_Results)  
+-   [生じ](../../ad-ds/deploy/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions.md#BKMK_Results)  
   
 -   [役割の削除の資格情報](../../ad-ds/deploy/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions.md#BKMK_RemovalCredsPage)  
   
@@ -50,7 +49,7 @@ ms.locfileid: "71391204"
   
 -   [役割の削除の選択の確認](../../ad-ds/deploy/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions.md#BKMK_ConfirmRoleRemovalPage)  
   
-## <a name="BKMK_DepConfigPage"></a>配置構成  
+## <a name="deployment-configuration"></a><a name="BKMK_DepConfigPage"></a>配置構成  
 サーバー マネージャーは、すべてのドメイン コントローラーのインストールを **[配置構成]** ページで開始します。 このページおよび以降のページの他のオプションおよび必須フィールドは、選択した展開操作によって異なります。 たとえば、新しいフォレストを作成した場合、 **[準備オプション]** ページは表示されませんが、既存のフォレストまたはドメインで Windows Server 2012 を実行する最初のドメインコントローラーをインストールした場合に表示されます。  
   
 一部の検証テストは、このページで実行され、後で前提条件確認の一部として再度実行されます。 たとえば、Windows 2000 の機能レベルがあるフォレストに最初の Windows Server 2012 ドメインコントローラーをインストールしようとすると、このページにエラーが表示されます。  
@@ -96,14 +95,14 @@ ms.locfileid: "71391204"
   
 既存のドメインにドメインコントローラーを追加する方法の詳細については、「[既存の&#40;ドメインレベル&#41;200 にレプリカ Windows Server 2012 ドメインコントローラーをインストール](../../ad-ds/deploy/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-.md)する」を参照してください。  
   
-## <a name="BKMK_DCOptionsPage"></a>ドメインコントローラーオプション  
+## <a name="domain-controller-options"></a><a name="BKMK_DCOptionsPage"></a>ドメインコントローラーオプション  
 新しいフォレストを作成している場合、[ドメイン コントローラー オプション] ページには次のオプションが表示されます。  
   
 ![AD DS インストール](media/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions/ADDS_SMI_DCOptions_Forest.gif)  
   
 -   既定では、フォレストおよびドメインの機能レベルは Windows Server 2012 に設定されています。  
   
-    Windows Server 2012 ドメインの機能レベルで利用可能な新機能が1つあります。動的 Access Control と Kerberos 防御の KDC 管理用テンプレートポリシーのサポートには2つの設定があります (常に要求を提供し、防御認証に失敗します)。要求)。 Windows Server 2012 ドメインの機能レベルが必要です。 詳細については、「 [Kerberos 認証の新機能](https://technet.microsoft.com/library/hh831747.aspx)」の「信頼性情報、複合認証、および kerberos 防御のサポート」を参照してください。    
+    Windows Server 2012 ドメインの機能レベルで利用可能な新機能が1つあります。動的 Access Control と Kerberos 防御の KDC 管理用テンプレートポリシーのサポートには、Windows Server 2012 ドメインの機能レベルを必要とする2つの設定 (常に要求を提供し、防御認証要求を送信します) があります。 詳細については、「 [Kerberos 認証の新機能](https://technet.microsoft.com/library/hh831747.aspx)」の「信頼性情報、複合認証、および kerberos 防御のサポート」を参照してください。    
     Windows Server 2012 フォレストの機能レベルでは新しい機能は提供されませんが、フォレスト内に作成された新しいドメインは、Windows Server 2012 ドメインの機能レベルで自動的に動作するようになります。 Windows Server 2012 ドメインの機能レベルでは、動的 Access Control と Kerberos 防御のサポートの横に新しい機能はありませんが、ドメイン内のすべてのドメインコントローラーが Windows Server 2012 を実行していることが保証されます。 別の機能レベルで使用できる他の機能の詳細については、「 [AD DS の機能レベルとは](../active-directory-functional-levels.md)」を参照してください。  
   
     Windows Server 2012 を実行するドメインコントローラーは、機能レベル以外にも、以前のバージョンの Windows Server を実行しているドメインコントローラーでは使用できない追加機能を提供します。 たとえば、Windows Server 2012 を実行するドメインコントローラーは仮想ドメインコントローラーの複製に使用できますが、以前のバージョンの Windows Server を実行するドメインコントローラーは使用できません。  
@@ -127,7 +126,7 @@ ms.locfileid: "71391204"
 -   **[ドメイン コントローラー オプション]** ページでは、フォレストの構成から適切な Active Directory 論理**サイト名**を選択することもできます。 既定では、最も適切なサブネットのサイトが選択されます。 サイトが 1 つだけの場合は、そのサイトが自動的に選択されます。  
   
     > [!IMPORTANT]  
-    > サーバーが Active Directory サブネットに属しておらず、複数のサイトが存在する場合は、何も選択されておらず、一覧からサイトを選択するまで **[次へ**] ボタンは使用できません。  
+    > サーバーが Active Directory のサブネットに属しておらず複数のサイトがある場合は、既定では何も選択されず、リストからサイトを選択するまで **[次へ]** ボタンは使用できません。  
   
 ドメインを作成する方法の詳細については、「 [Install a New Windows Server 2012 Active Directory Child また&#40;は Tree&#41;domain Level 200](../../ad-ds/deploy/../../ad-ds/deploy/../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-.md)」を参照してください。  
   
@@ -141,7 +140,7 @@ ms.locfileid: "71391204"
   
 既存のドメインにドメインコントローラーを追加する方法の詳細については、「[既存の&#40;ドメインレベル&#41;200 にレプリカ Windows Server 2012 ドメインコントローラーをインストール](../../ad-ds/deploy/../../ad-ds/deploy/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-.md)する」を参照してください。  
   
-## <a name="BKMK_DNSOptionsPage"></a>DNS オプション  
+## <a name="dns-options"></a><a name="BKMK_DNSOptionsPage"></a>DNS オプション  
 DNS サーバーをインストールする場合は、 **[DNS オプション]** ページが表示されます。  
   
 ![AD DS インストール](media/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions/ADDS_SMI_DNSOptions_Replica.gif)  
@@ -168,14 +167,14 @@ DNS サーバーをインストールするときは、ゾーンに対する権�
   
 -   [フォワーダーについ](https://go.microsoft.com/fwlink/?LinkId=164778)て (https://go.microsoft.com/fwlink/?LinkId=164778)  
   
-## <a name="BKMK_RODCOptionsPage"></a>RODC オプション  
+## <a name="rodc-options"></a><a name="BKMK_RODCOptionsPage"></a>RODC オプション  
 読み取り専用ドメイン コントローラー (RODC) をインストールするときは、次のオプションが表示されます。  
   
 ![AD DS インストール](media/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions/ADDS_SMI_RODCOptions.gif)  
   
 -   委任される管理者アカウントには、RODC に対するローカル管理アクセス許可が与えられます。 これらのユーザーは、ローカルコンピューターの Administrators グループに相当する特権を使用して操作できます。 これらのユーザーは、Domain Admins グループまたはドメインの組み込みの Administrator グループのメンバーではありません。 このオプションは、ドメインの管理アクセス許可を与えることなく支社の管理を委任する場合に便利です。 管理の委任の構成は必要ありません。 詳細については、「[管理者の役割の分離](https://technet.microsoft.com/library/cc753170(v=WS.10).aspx)」を参照してください。  
   
--   パスワード レプリケーション ポリシーはアクセス制御リスト (ACL) として機能します。 パスワード レプリケーション ポリシーによって、RODC がパスワードをキャッシュできるかどうかが決まります。 RODC は、認証済みのユーザーまたはコンピューターのログオン要求を受け取った後、パスワード レプリケーション ポリシーを参照して、アカウントのパスワードをキャッシュする必要があるかどうかを判別します。 同じアカウントによる以降のログオンをいっそう効率よく実行できます。  
+-   パスワード レプリケーション ポリシーは、アクセス制御リスト (ACL) として機能します。 パスワード レプリケーション ポリシーによって、RODC がパスワードをキャッシュできるかどうかが決まります。 認証されたユーザーまたはコンピューターのログオン要求を受け取った RODC は、パスワード レプリケーション ポリシーを参照して、そのアカウントのパスワードをキャッシュする必要があるかどうかを判断します。 同じアカウントによる以降のログオンをいっそう効率よく実行できます。  
   
     パスワード レプリケーション ポリシー (PRP) には、パスワードをキャッシュできるアカウント、およびパスワードのキャッシュを明示的に拒否されているアカウントが列記されています。 キャッシュできるアカウントのリストにユーザーおよびコンピューターが含まれていたとしても、RODC がそのアカウントのパスワードを実際にキャッシュしているとは限りません。 たとえば、管理者は事前に RODC がキャッシュするアカウントを指定できます。 これにより、RODC はハブ サイトへの WAN リンクがオフラインであっても、それらのアカウントを認証できます。  
   
@@ -183,7 +182,7 @@ DNS サーバーをインストールするときは、ゾーンに対する権�
   
 Rodc のインストールの詳細については、「 [Windows Server 2012 Active Directory 読み取り専用ドメインコントローラー &#40;の&#41; &#40;RODC レベル&#41;200 をインストールする](../../ad-ds/deploy/RODC/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-.md)」を参照してください。  
   
-## <a name="BKMK_AdditionalOptionsPage"></a>その他のオプション  
+## <a name="additional-options"></a><a name="BKMK_AdditionalOptionsPage"></a>その他のオプション  
 新しいドメインを作成している場合、 **[追加オプション]** ページには次のオプションが表示されます。  
   
 ![AD DS インストール](media/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions/ADDS_SMI_AdditionalOptions_Child.gif)  
@@ -198,7 +197,7 @@ Rodc のインストールの詳細については、「 [Windows Server 2012 Ac
   
 ドメインを作成する方法の詳細については、「 [Install a New Windows Server 2012 Active Directory Child また&#40;は Tree&#41;domain Level 200](../../ad-ds/deploy/../../ad-ds/deploy/../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-.md)」を参照してください。 既存のドメインにドメインコントローラーを追加する方法の詳細については、「[既存の&#40;ドメインレベル&#41;200 にレプリカ Windows Server 2012 ドメインコントローラーをインストール](../../ad-ds/deploy/../../ad-ds/deploy/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-.md)する」を参照してください。  
   
-## <a name="BKMK_Paths"></a>パス  
+## <a name="paths"></a><a name="BKMK_Paths"></a>パス  
 **[パス]** ページには次のオプションが表示されます。  
   
 ![AD DS インストール](media/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions/ADDS_SMI_Paths.gif)  
@@ -207,10 +206,10 @@ Rodc のインストールの詳細については、「 [Windows Server 2012 Ac
   
 AD DS データベース (NTDS.DIT)、ログ ファイル、SYSVOL の場所を指定します。 ローカル インストールの場合は、ファイルを保存する場所を指定できます。  
   
-## <a name="BKMK_AdprepCreds"></a>準備オプション  
+## <a name="preparation-options"></a><a name="BKMK_AdprepCreds"></a>準備オプション  
 ![AD DS インストール](media/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions/ADDS_SMI_PreparationOptions.gif)  
   
-現在のログオンで使用している資格情報が adprep.exe コマンドを実行するには十分ではなく、AD DS のインストールを完了するために adprep を実行する必要がある場合は、adprep.exe を実行するための資格情報の入力を求められます。 Windows Server 2012 を実行する最初のドメインコントローラーを既存のドメインまたはフォレストに追加するには、Adprep を実行する必要があります。 具体的な機能は次のとおりです。  
+現在のログオンで使用している資格情報が adprep.exe コマンドを実行するには十分ではなく、AD DS のインストールを完了するために adprep を実行する必要がある場合は、adprep.exe を実行するための資格情報の入力を求められます。 Windows Server 2012 を実行する最初のドメインコントローラーを既存のドメインまたはフォレストに追加するには、Adprep を実行する必要があります。 より詳細な情報:  
   
 -   Windows Server 2012 を実行する最初のドメインコントローラーを既存のフォレストに追加するには、Adprep/forestprep を実行する必要があります。 このコマンドは、Enterprise Admins グループ、Schema Admins グループ、およびスキーマ マスターをホストするドメインの Domain Admins グループのメンバーが実行する必要があります。 このコマンドが正常に完了するには、コマンドを実行するコンピューターとフォレストのスキーマ マスターが接続されている必要があります。  
   
@@ -220,14 +219,14 @@ AD DS データベース (NTDS.DIT)、ログ ファイル、SYSVOL の場所を�
   
 Adprep.exe の詳細については、「 [adprep.exe の統合](../../ad-ds/deploy/What-s-New-in-Active-Directory-Domain-Services-Installation-and-Removal.md#BKMK_NewAdprep)」および「 [adprep.exe の実行](https://technet.microsoft.com/library/dd464018(WS.10).aspx)」を参照してください。  
   
-## <a name="BKMK_ViewInstallOptionsPage"></a>オプションの確認  
+## <a name="review-options"></a><a name="BKMK_ViewInstallOptionsPage"></a>オプションの確認  
 ![AD DS インストール](media/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions/ADDS_SMI_ReviewOptions.gif)  
   
 -   **[オプションの確認]** ページでは、インストールを開始する前に、設定を検証し、設定が要件を満たしていることを確認できます。 これがサーバー マネージャーを使用するインストールを停止する最後の機会ではありません。 このページでは、構成を続行する前に設定を検討して確認することだけができます。  
   
 -   サーバー マネージャーの **[オプションの確認]** ページにあるオプションの **[スクリプトの表示]** ボタンを使用すると、現在の ADDSDeployment モジュール構成を単一の Windows PowerShell スクリプトとして含む Unicode テキスト ファイルを作成することもできます。 これにより、サーバー マネージャーのグラフィカル インターフェイスを Windows PowerShell 展開スタジオとして使用できます。 Active Directory ドメイン サービス構成ウィザードを使用してオプションを構成し、構成をエクスポートした後、ウィザードをキャンセルします。 これによって有効で正しい構文のサンプルが作成されるので、それをさらに変更したり、直接使用したりできます。  
   
-## <a name="BKMK_PrerqCheckPage"></a>前提条件の確認  
+## <a name="prerequisites-check"></a><a name="BKMK_PrerqCheckPage"></a>前提条件の確認  
 ![AD DS インストール](media/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions/ADDS_SMI_PrerequisitesCheck.gif)  
   
 このページでは次のような警告が表示されます。  
@@ -240,7 +239,7 @@ Adprep.exe の詳細については、「 [adprep.exe の統合](../../ad-ds/dep
   
 AD DS のインストールで実行される具体的な前提条件の確認の詳細については、「[前提条件のテスト](../../ad-ds/manage/AD-DS-Simplified-Administration.md#BKMK_ADDSInstallPrerequisiteTests)」を参照してください。  
   
-## <a name="BKMK_Results"></a>生じ  
+## <a name="results"></a><a name="BKMK_Results"></a>生じ  
 ![AD DS インストール](media/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions/ADDS_SMI_SMResultsBeta.gif)  
   
 このページでは、インストールの結果を確認できます。  
@@ -249,7 +248,7 @@ AD DS のインストールで実行される具体的な前提条件の確認�
   
 このような状態で対象サーバーの再起動が失敗した場合は、手動で再起動する必要があります。 shutdown.exe や Windows PowerShell などのツールでは再起動できません。 リモート デスクトップ サービスを使用して対象サーバーにログオンし、リモートでシャットダウンできます。  
   
-## <a name="BKMK_RemovalCredsPage"></a>役割の削除の資格情報  
+## <a name="role-removal-credentials"></a><a name="BKMK_RemovalCredsPage"></a>役割の削除の資格情報  
 ![AD DS インストール](media/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions/ADDS_RRW_Credentials.gif)  
   
 降格オプションは **[資格情報]** ページで構成します。 次の一覧から降格の実行に必要な資格情報を指定します。  
@@ -263,7 +262,7 @@ AD DS のインストールで実行される具体的な前提条件の確認�
   
 AD DS の削除の詳細については、「 [Active Directory Domain Services を削除する (レベル 100)](assetId:///99b97af0-aa7e-41ed-8c81-4eee6c03eb4c) 」および「[ドメインコントローラーとドメイン&#40;レベル 200&#41;の降格](Demoting-Domain-Controllers-and-Domains--Level-200-.md)」を参照してください。  
   
-## <a name="BKMK_RemovalOptionsPage"></a>AD DS の削除オプションと警告  
+## <a name="ad-ds-removal-options-and-warnings"></a><a name="BKMK_RemovalOptionsPage"></a>AD DS の削除オプションと警告  
 [オプションの確認] ページに関するヘルプが必要な場合は、「オプションの確認」を参照してください。  
   
 ドメイン コントローラーが DNS サーバーの役割やグローバル カタログ サーバーなどの他の役割をホストしている場合、次の警告ページが表示されます。  
@@ -298,14 +297,14 @@ AD DS の削除の詳細については、「 [Active Directory Domain Services 
   
 AD DS の削除の詳細については、「 [Active Directory Domain Services を削除する (レベル 100)](assetId:///99b97af0-aa7e-41ed-8c81-4eee6c03eb4c) 」および「[ドメインコントローラーとドメイン&#40;レベル 200&#41;の降格](Demoting-Domain-Controllers-and-Domains--Level-200-.md)」を参照してください。  
   
-## <a name="BKMK_NewAdminPwdPage"></a>新しい管理者パスワード  
+## <a name="new-administrator-password"></a><a name="BKMK_NewAdminPwdPage"></a>新しい管理者パスワード  
 降格が完了し、コンピューターがドメインメンバーサーバーまたはワークグループコンピューターになると、 **[新しい管理者パスワード]** ページでビルトインローカルコンピューターの管理者アカウントのパスワードを入力する必要があります。  
   
 ![AD DS インストール](media/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions/ADDS_RRW_NewAdminPwd.gif)  
   
 AD DS の削除の詳細については、「 [Active Directory Domain Services を削除する (レベル 100)](assetId:///99b97af0-aa7e-41ed-8c81-4eee6c03eb4c) 」および「[ドメインコントローラーとドメイン&#40;レベル 200&#41;の降格](Demoting-Domain-Controllers-and-Domains--Level-200-.md)」を参照してください。  
   
-## <a name="BKMK_ConfirmRoleRemovalPage"></a>オプションの確認  
+## <a name="review-options"></a><a name="BKMK_ConfirmRoleRemovalPage"></a>オプションの確認  
 **[オプションの確認]** ページでは、他の降格を自動的に実行できるように、降格の構成設定を Windows PowerShell スクリプトにエクスポートできます。 AD DS を削除するには **[降格]** をクリックします。  
   
 ![AD DS インストール](media/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions/ADDS_RRW_ReviewOptions.gif)  

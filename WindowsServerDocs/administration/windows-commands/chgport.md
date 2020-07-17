@@ -1,35 +1,34 @@
 ---
 title: chgport
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Chgport コマンドの参照記事。 MS-DOS アプリケーションと互換性のある COM ポートマッピングを一覧表示または変更します。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8adb145f-6c53-4549-9253-9a966794a4f3
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fb03014811d006e9dd60f5af75a076c559981fe2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5eb2172d607433be922f04e54955d0d636b59355
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71379496"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929071"
 ---
 # <a name="chgport"></a>chgport
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-MS-DOS アプリケーションと互換性があるように、COM ポートのマッピングを一覧表示または変更します。
+一覧表示したり、MS-DOS アプリケーションと互換性がある COM ポートのマッピングを変更します。
+
 > [!NOTE]
-> Windows Server 2008 R2 で、「ターミナル サービス」は「リモート デスクトップ サービス」に名前変更されました。 最新バージョンの新機能については、Windows Server TechNet ライブラリの[Windows Server 2012 のリモートデスクトップサービスの新機能](https://technet.microsoft.com/library/hh831527) を参照してください。
-> ## <a name="remarks"></a>コメント
-> このコマンドは、[ポートの**変更**] コマンドと同じです。
-> #### <a name="additional-references"></a>その他の参照情報
-> [ポートの変更](change-port.md)
-> [コマンドライン構文のキー](command-line-syntax-key.md)
-> [リモートデスクトップサービス&#40;ターミナル&#41;サービスのコマンドリファレンス](remote-desktop-services-terminal-services-command-reference.md)
+> このコマンドは、**ポートの変更コマンド**に置き換えられました。 構文とパラメーターの詳細を含む詳細については、「 [change port command](change-port.md)」を参照してください。
+
+## <a name="additional-references"></a>その他の参照情報
+
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [ポートの変更コマンド](change-port.md)
+
+- [リモート デスクトップ サービス (ターミナル サービス) のコマンド リファレンス](remote-desktop-services-terminal-services-command-reference.md)

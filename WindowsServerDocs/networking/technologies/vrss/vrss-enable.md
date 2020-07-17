@@ -8,14 +8,14 @@ ms.assetid: cb48315c-0204-4927-aa24-64f6789c2e20
 manager: dougkim
 ms.localizationpriority: medium
 ms.date: 09/05/2018
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 8f2886f01e4835cf2edb86fcae0a1fe77bc03d25
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: e4be9060da4a738e3ad8e4976d037f3a05467da3
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405267"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80315374"
 ---
 # <a name="enable-vrss-on-a-virtual-network-adapter"></a>Virtual Network アダプターでの vRSS の有効化
 
@@ -53,7 +53,7 @@ Windows PowerShell またはデバイスマネージャーを使用して、vRSS
 
 7.  **[値]** の選択が**有効になっ**ていることを確認します。 
 
-8.  **[OK]** をクリックします。
+8.  **[OK]** をクリックすると、
   
 > [!NOTE]
 > **[詳細設定]** タブには、アダプターでサポートされている RSS キューの数も表示されます。

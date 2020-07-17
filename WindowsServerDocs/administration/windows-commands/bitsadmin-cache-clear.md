@@ -1,44 +1,41 @@
 ---
-title: bitsadmin cache clear
-description: '**Bitsadmin cache clear**の Windows コマンドのトピックでは、ローカルキャッシュを消去します。'
-ms.custom: na
+title: bitsadmin cache および clear
+description: Bitsadmin cache および clear コマンドの参照記事。ローカルキャッシュを削除します。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 125426bc-5f90-4cdb-ba14-24be428c66c7
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c91079c439c505a0e73e48cc5fbcb26679b150b6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 624045036cae03e790c93a03be1007a8140f8d6a
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71381930"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928436"
 ---
-# <a name="bitsadmin-cache-and-clear"></a>bitsadmin cache と clear
-
-
+# <a name="bitsadmin-cache-and-clear"></a>bitsadmin cache および clear
 
 ローカルキャッシュを削除します。
 
 ## <a name="syntax"></a>構文
 
 ```
-bitsadmin /Cache /Clear 
+bitsadmin /cache /clear
 ```
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a>例
 
-次の例では、ローカルキャッシュを削除します。
+ローカルキャッシュを削除するには:
+
 ```
-C:\>bitsadmin /Cache /Clear 
+bitsadmin /cache /clear
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [bitsadmin cache コマンド](bitsadmin-cache.md)

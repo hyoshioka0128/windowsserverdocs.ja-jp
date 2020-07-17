@@ -1,6 +1,5 @@
 ---
 title: AD フォレストの回復-krbtgt パスワードのリセット
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: 3bd6c1d0-d316-4b03-b7b4-557d4537635c
 ms.technology: identity-adds
-ms.openlocfilehash: 14dd09c6177d473547a67e1d79e9714f0a7a29b3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e2d19621c80b40fa70706bf75434dce74693990d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390303"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80823635"
 ---
 # <a name="ad-forest-recovery---resetting-the-krbtgt-password"></a>AD フォレストの回復-krbtgt パスワードのリセット
 
@@ -29,7 +28,7 @@ ms.locfileid: "71390303"
   
 ## <a name="to-reset-the-krbtgt-password"></a>Krbtgt パスワードをリセットするには  
   
-1. をクリックして**開始**、 をポイント**コントロール パネルの** 、 をポイント**管理ツール**、順にクリックします**Active Directory ユーザーとコンピューター**します。
+1. **[スタート]** をクリックし、 **[コントロールパネル]** をポイントします。次に、 **[管理ツール]** をポイントし、 **[Active Directory ユーザーとコンピューター]** をクリックします。
 2. **[表示]** をクリックし、 **[高度な機能]** をクリックします。
 3. コンソールツリーで、ドメインコンテナーをダブルクリックし、 **[ユーザー]** をクリックします。
 4. 詳細ウィンドウで、 **krbtgt**ユーザーアカウントを右クリックし、 **[パスワードのリセット]** をクリックします。
@@ -39,7 +38,7 @@ ms.locfileid: "71390303"
 > [!NOTE]
 > この操作は2回実行する必要があります。 Krbtgt アカウントのパスワードの履歴は2です。つまり、最新の2つのパスワードが含まれています。 パスワードを2回リセットすると、履歴から古いパスワードが実質的にクリアされるため、別の DC がこの DC で古いパスワードを使用してレプリケートする方法はありません。
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 
 - [AD フォレストの回復ガイド](AD-Forest-Recovery-Guide.md)
 - [AD フォレストの回復 - 手順](AD-Forest-Recovery-Procedures.md) 

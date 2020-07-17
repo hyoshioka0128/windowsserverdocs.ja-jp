@@ -1,45 +1,41 @@
 ---
-title: 手順 3:新しい Windows Server Essentials サーバーにコンピューターを参加させる
-description: Windows Server Essentials を使用する方法について説明します
-ms.custom: na
+title: '手順 3: 新しい Windows Server Essentials サーバーにコンピューターを参加させる'
+description: Windows Server Essentials の使用方法について説明します。
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+ms.prod: windows-server
 ms.topic: article
 ms.assetid: a0e07d1a-8409-429b-87d7-0f4a7e14d668
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: f71ac280e2de0b7d945f2d979fe52d173f7c3323
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8efb8251bd85638b8ad4b760a5292a2b6d6681fd
+ms.sourcegitcommit: 2f072c0c02e3e0deae331ca64b375d63b89d0522
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59861873"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83404540"
 ---
-# <a name="step-3-join-computers-to-the-new-windows-server-essentials-server"></a>手順 3:新しい Windows Server Essentials サーバーにコンピューターを参加させる
+# <a name="step-3-join-computers-to-the-new-windows-server-essentials-server"></a>手順 3: 新しい Windows Server Essentials サーバーにコンピューターを参加させる
 
->適用先:Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
+>適用対象: Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials
 
-移行プロセスの次の手順では、クライアント コンピューターを Windows Server Essentials を実行している新しいサーバーに接続します。  
+移行プロセスの次の手順では、Windows Server Essentials を実行している新しいサーバーにクライアントコンピューターを接続します。  
   
 > [!NOTE]
 >  Windows XP または Windows Vista オペレーティング システムを搭載しているコンピューターの場合は、この手順をスキップできます。 Windows Server コネクタ ソフトウェアは、Windows XP または Windows Vista を実行しているコンピューターはサポートしていません。  
   
- クライアント コンピューターを追加するには、新しい Windows Server Essentials サーバーに、前に、クライアント コンピューターの Windows Server コネクタ ソフトウェアをアンインストールすることによって、移行元サーバーから切断する必要があります。  
+ クライアントコンピューターを新しい Windows Server Essentials サーバーに参加させる前に、クライアントコンピューターで Windows Server コネクタソフトウェアをアンインストールして、移行元サーバーからクライアントコンピューターを切断する必要があります。  
   
 ### <a name="to-uninstall-windows-server-connector-on-a-client-computer"></a>クライアント コンピューターで Windows Server コネクタをアンインストールするには  
   
-1.  クライアント コンピューターでコントロール パネルを開き、**[プログラムと機能]** を開きます。  
+1.  クライアント コンピューターでコントロール パネルを開き、[**プログラムと機能**] を開きます。  
   
 2.  プログラムのリストで、コンピューターで実行しているコネクタ アプリケーションを右クリックします。  
   
     > [!NOTE]
-    >  コネクタ アプリケーションは、 **Windows Small Business Server 2011 Essentials Connector**、または**Windows Server Essentials Connector**、Windows Server Essentials のバージョンに応じて、クライアント コンピューターに接続されています。  
+    >  コネクタアプリケーションは、クライアントコンピューターが接続されていた Windows Server Essentials のバージョンに応じて、 **Windows Small Business Server 2011 Essentials connector**または**Windows server essentials connector**にすることができます。  
   
-3.  **[アンインストール]** をクリックします。  
+3.  [**アンインストール**] をクリックします。  
   
 ### <a name="to-reconnect-a-client-computer-to-the-server"></a>クライアント コンピューターをサーバーに再接続するには  
   
@@ -50,13 +46,13 @@ ms.locfileid: "59861873"
   
 2.  Internet Explorer などのインターネット ブラウザーを開きます。  
   
-3.  アドレス バーに「 **http://<servername\>/connect**、し、ENTER キーを押します。  
+3.  アドレスバーに「 **http://<servername \> /Connect**」と入力し、enter キーを押します。  
   
-4.  新しい Windows Server Essentials サーバーにクライアント コンピューターを参加させる、画面の指示に従います。  
+4.  画面の指示に従って、新しい Windows Server Essentials サーバーにクライアントコンピューターを参加させます。  
   
 ## <a name="next-steps"></a>次のステップ  
- クライアント コンピューターは、Windows Server Essentials を実行している新しいサーバーに参加しているがします。 次に「[手順 4。Windows Server Essentials の移行先サーバーへの移行の設定とデータの移動](Step-4--Move-settings-and-data-to-the-Destination-Server-for-Windows-Server-Essentials-migration.md)します。  
+ Windows Server Essentials を実行している新しいサーバーにクライアントコンピューターを参加させました。 [次に、「手順 4: Windows Server Essentials への移行のために設定とデータを移行先サーバーに移動](Step-4--Move-settings-and-data-to-the-Destination-Server-for-Windows-Server-Essentials-migration.md)する」に進みます。  
   
 
-すべての手順を表示するを参照してください。 [Windows Server Essentials への移行](Migrate-from-Previous-Versions-to-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md)します。
+すべての手順を表示するには、「 [Windows Server Essentials への移行](Migrate-from-Previous-Versions-to-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md)」を参照してください。
 

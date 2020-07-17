@@ -1,37 +1,30 @@
 ---
 title: 記憶域のカスタマイズ
-description: Windows Server Essentials を使用する方法について説明します
-ms.custom: na
+description: Windows Server Essentials の使用方法について説明します。
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+ms.prod: windows-server
 ms.topic: article
 ms.assetid: 3c96d66b-be4a-4572-9b9f-29555c00ae9a
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: d1b88a0b06931b38072674db403d1c1b75d8af05
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 98f85767f6dddc887dcdeb4585af924d9e103aa8
+ms.sourcegitcommit: 6d6a0225b1f83b71fcb494b94d666cd5e54c7566
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59844293"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85267633"
 ---
 # <a name="customize-storage-spaces"></a>記憶域のカスタマイズ
 
->適用先:Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
+>適用対象: windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-ユーザー エクスペリエンスを向上させるために記憶域を事前構成するには、PostIC.cmd から記憶域構成スクリプトを実行します。 Windows Server Essentials のインストールが完了した後、ターゲット コンピューターでは、記憶域スペースの構成スクリプトを実行する必要があります。
+ユーザー エクスペリエンスを向上させるために記憶域を事前構成するには、PostIC.cmd から記憶域構成スクリプトを実行します。 Windows Server Essentials のインストールが完了したら、記憶域スペース構成スクリプトをターゲットコンピューターで実行する必要があります。
   
 ## <a name="see-also"></a>関連項目  
 
- [作成して、イメージをカスタマイズします。](Creating-and-Customizing-the-Image.md)   
+ [イメージの作成とカスタマイズ](Creating-and-Customizing-the-Image.md)   
  [追加のカスタマイズ](Additional-Customizations.md)   
- [イメージの展開の準備](Preparing-the-Image-for-Deployment.md)   
- [カスタマー エクスペリエンスのテスト](Testing-the-Customer-Experience.md)[を作成して、イメージをカスタマイズします。](../install/Creating-and-Customizing-the-Image.md)   
- [追加のカスタマイズ](../install/Additional-Customizations.md)   
- [イメージの展開の準備](../install/Preparing-the-Image-for-Deployment.md)   
- [カスタマー エクスペリエンスのテスト](../install/Testing-the-Customer-Experience.md)
-
+ [展開のためのイメージの準備](Preparing-the-Image-for-Deployment.md)   
+ [カスタマー エクスペリエンスのテスト](Testing-the-Customer-Experience.md)
+ 

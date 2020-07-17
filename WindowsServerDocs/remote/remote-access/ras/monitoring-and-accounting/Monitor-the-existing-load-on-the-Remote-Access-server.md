@@ -2,22 +2,18 @@
 title: リモート アクセス サーバー上の既存の負荷を監視する
 description: このトピックは、Windows Server 2016 のリモートアクセスの監視とアカウンティングに関するガイドの一部です。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 62fa2895-62ae-42cf-817c-53e06ac2a26c
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 43c447205a5ef0cbd33b0486e01d630e6d00c633
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: ba9aa4ea0e8031601ce04fd25814785e4b739f51
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367219"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860535"
 ---
 # <a name="monitor-the-existing-load-on-the-remote-access-server"></a>リモート アクセス サーバー上の既存の負荷を監視する
 
@@ -60,7 +56,7 @@ ms.locfileid: "71367219"
   
 windows PowerShell の ![](../../../media/Monitor-the-existing-load-on-the-Remote-Access-server/PowerShellLogoSmall.gif)***<em>windows powershell の同等のコマンド</em>***  
   
-以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
+次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 書式上の制約のため、複数行にわたって折り返される場合でも、各コマンドレットは 1 行に入力してください。  
   
 ```  
 PS> Get-RemoteAccessConnectionStatisticsSummary  

@@ -1,7 +1,6 @@
 ---
 ms.assetid: 6127963f-71b2-4d8f-8b53-7c525bf06521
 title: 入力方向の要求をパススルーまたはフィルター処理するルールを作成する
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,20 +8,20 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 145558e620188c4311d79d2a9ba4ed7aaf7b13a8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: fb885d8b822faf4bd5ee82ad70c59b99678a58e9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71358140"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80816835"
 ---
 # <a name="create-a-rule-to-pass-through-or-filter-an-incoming-claim"></a>入力方向の要求をパススルーまたはフィルター処理するルールを作成する
 
-Active Directory フェデレーションサービス (AD FS) \(AD FS\)の [入力方向の要求をパススルーまたはフィルター処理する] 規則テンプレートを使用して、選択した要求の種類ですべての入力方向の要求を渡すことができます。 また、選択した要求の種類を使用して、入力方向の要求の値をフィルター処理することもできます。 たとえば、この規則テンプレートを使用して、すべての入力方向のグループ要求を送信する規則を作成できます。 また、この規則を使用すると、@fabrikamで終わる要求\) UPN \(UPN のみを送信できます。  
+Active Directory フェデレーションサービス (AD FS) \(AD FS\)の [入力方向の要求をパススルーまたはフィルター処理する] 規則テンプレートを使用して、選択した要求の種類ですべての入力方向の要求を渡すことができます。 また、選択された要求の種類の入力方向の要求値をフィルターすることもできます。 たとえば、この規則テンプレートを使用して、入力方向のすべてのグループ要求を送信する規則を作成できます。 また、この規則を使用すると、@fabrikamで終わる要求\) UPN \(UPN のみを送信できます。  
   
 で AD FS 管理スナップ\-を使用して要求規則を作成するには、次の手順を実行します。  
   
-この手順を実行するには、ローカル コンピューターの **Administrators**グループのメンバーシップか、それと同等のメンバーシップが最低限必要です。  適切なアカウントの使用方法の詳細を確認し、グループ メンバーシップ [ローカルおよびドメインの既定のグループ](https://go.microsoft.com/fwlink/?LinkId=83477)します。   
+この手順を完了するには、ローカル コンピューター上の **Administrators** または同等のメンバーシップが最低限必要です。  適切なアカウントの使用方法の詳細を確認し、グループ メンバーシップ [ローカルおよびドメインの既定のグループ](https://go.microsoft.com/fwlink/?LinkId=83477)します。   
 
 ## <a name="to-create-a-rule-to-pass-through-or-filter-an-incoming-claim-on-a-relying-party-trust-in-windows-server-2016"></a>Windows Server 2016 で証明書利用者信頼に対して入力方向の要求をパススルーまたはフィルター処理する規則を作成するには 
 

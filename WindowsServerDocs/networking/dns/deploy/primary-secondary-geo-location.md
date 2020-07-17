@@ -6,18 +6,18 @@ ms.prod: windows-server
 ms.technology: networking-dns
 ms.topic: article
 ms.assetid: a9ee7a56-f062-474f-a61c-9387ff260929
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 6a7836160fc7363ec3d7b2fb11e194db82970f9a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: f9bc1a35016ca5946eddeada2088a83f1fa8ca05
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406152"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317751"
 ---
 # <a name="use-dns-policy-for-geo-location-based-traffic-management-with-primary-secondary-deployments"></a>プライマリ-セカンダリの展開での地理的な場所ベースのトラフィック管理に DNS ポリシーを使用する
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックを使用すると、プライマリとセカンダリの両方の DNS サーバーが、DNS の展開に含まれている場合は、地理的な場所ベースのトラフィック管理用の DNS ポリシーを作成するのに方法について説明します。  
 
@@ -37,7 +37,7 @@ Woodgrove.com お客様が企業の web サイトから応答性の高いエク�
   
 Contoso クラウド サービスとは、米国とヨーロッパ、Contoso が woodgrove.com 用のポータルを順序付け、食品をホストするのに 2 つのデータ センターです。  
   
-Contoso の DNS 展開には、次の2つのセカンダリサーバーが含まれています。**SecondaryServer1**、IP アドレスは10.0.0.2 です。と**SecondaryServer2**、IP アドレスは10.0.0.3 です。 これらのセカンダリ サーバーは、2 つの異なるリージョン内のネーム サーバーとして、ヨーロッパと米国 SecondaryServer2 SecondaryServer1 で動作しています。
+Contoso の DNS の展開には、2 つのセカンダリ サーバーが含まれています: **SecondaryServer1**, 、10.0.0.2; IP アドレスを持つと **SecondaryServer2**, を IP アドレス 10.0.0.3 します。 これらのセカンダリ サーバーは、2 つの異なるリージョン内のネーム サーバーとして、ヨーロッパと米国 SecondaryServer2 SecondaryServer1 で動作しています。
   
 プライマリの書き込み可能なゾーンのコピーがある **PrimaryServer** (IP アドレス 10.0.0.1) ゾーンの変更が行われる場所です。 セカンダリ サーバーへの転送を正規のゾーン、セカンダリ サーバーも、PrimaryServer のゾーンに新しいデータを最新されます。
   

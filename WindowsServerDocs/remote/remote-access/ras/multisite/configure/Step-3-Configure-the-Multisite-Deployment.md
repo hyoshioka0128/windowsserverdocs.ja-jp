@@ -2,22 +2,18 @@
 title: 手順3マルチサイト展開を構成する
 description: このトピックは、「Windows Server 2016 のマルチサイト展開に複数のリモートアクセスサーバーを展開する」の一部です。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ea7ecd52-4c12-4a49-92fd-b8c08cec42a9
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: ccfde5d13b9b2b722498e824d497a9b790875e14
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 2aaba78a0793ff1d2d81f81f884872aa289cf037
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404506"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858365"
 ---
 # <a name="step-3-configure-the-multisite-deployment"></a>手順3マルチサイト展開を構成する
 
@@ -36,9 +32,9 @@ ms.locfileid: "71404506"
 |3.7。 マルチサイト展開へのエントリポイントの追加|マルチサイト展開にエントリポイントを追加します。|  
   
 > [!NOTE]  
-> このトピックでは、サンプル Windows PowerShell コマンドレットを紹介します。ここで説明する手順の一部はこのコマンドレットで自動化できます。 詳しくは、 [コマンドレットの使用に関するページ](https://go.microsoft.com/fwlink/p/?linkid=230693)をご覧ください。  
+> このトピックには、説明する手順の一部を自動化するために使用できるサンプルの Windows PowerShell コマンドレットが含まれます。 詳しくは、 [コマンドレットの使用に関するページ](https://go.microsoft.com/fwlink/p/?linkid=230693)をご覧ください。  
   
-## <a name="BKMK_ConfigServer"></a>3.1。 リモートアクセスサーバーを構成する  
+## <a name="31-configure-remote-access-servers"></a><a name="BKMK_ConfigServer"></a>3.1. リモートアクセスサーバーを構成する  
 
   
 ### <a name="to-install-the-remote-access-role"></a>リモート アクセスの役割をインストールするには  
@@ -63,7 +59,7 @@ ms.locfileid: "71404506"
   
 10. **[次へ]** をクリックし、 **[インストール]** をクリックします。  
   
-11.  **[インストールの進行状況]** ダイアログで、インストールが正常に完了したことを確認し、 **[閉じる]** をクリックします。  
+11.  **[インストールの進行状況]** ダイアログでインストールが成功したことを確認し、 **[閉じる]** をクリックします。  
   
   
 windows PowerShell の ![](../../../../media/Step-3-Configure-the-Multisite-Deployment/PowerShellLogoSmall.gif)***<em>windows powershell の同等のコマンド</em>***  
@@ -71,13 +67,13 @@ windows PowerShell の ![](../../../../media/Step-3-Configure-the-Multisite-Depl
   
 手順 1-3 は手動で実行する必要があり、この Windows PowerShell コマンドレットを使用して実行することはできません。  
   
-以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
+次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 書式上の制約のため、複数行にわたって折り返される場合でも、各コマンドレットは 1 行に入力してください。  
   
 ```  
 Install-WindowsFeature RemoteAccess -IncludeManagementTools  
 ```  
   
-## <a name="BKMK_Admin"></a>3.2。 管理者アクセス権の付与  
+## <a name="32-grant-administrator-access"></a><a name="BKMK_Admin"></a>3.2. 管理者アクセス権の付与  
   
 #### <a name="to-grant-administrator-permissions"></a>管理者権限を付与するには  
   
@@ -99,12 +95,12 @@ Install-WindowsFeature RemoteAccess -IncludeManagementTools
   
 9. マルチサイト展開の一部となるすべてのリモートアクセスサーバーで、この手順を繰り返します。  
   
-## <a name="BKMK_IPHTTPS"></a>3.3。 マルチサイト展開用に ip-https を構成する  
-マルチサイト展開に追加される各リモートアクセスサーバーで、ip-https web サーバーへの HTTPS 接続を検証するために SSL 証明書が必要です。 この手順を完了するには、少なくともローカルの **Administrators** グループ、またはそれと同等のメンバーシップが必要です。  
+## <a name="33-configure-ip-https-for-a-multisite-deployment"></a><a name="BKMK_IPHTTPS"></a>3.3. マルチサイト展開用に ip-https を構成する  
+マルチサイト展開に追加される各リモートアクセスサーバーで、ip-https web サーバーへの HTTPS 接続を検証するために SSL 証明書が必要です。 この手順を完了するには、ローカルの **Administrators** グループのメンバーシップが最低限必要です。  
   
 #### <a name="to-obtain-an-ip-https-certificate"></a>Ip-https 証明書を取得するには  
   
-1.  各リモートアクセスサーバーで、**スタート**画面で「 **mmc**」と入力し、enter キーを押します。 **[ユーザー アカウント制御]** ダイアログ ボックスが表示されたら、表示された操作が正しいことを確認し、 **[はい]** をクリックします。  
+1.  各リモートアクセスサーバーで、**スタート**画面で「 **mmc**」と入力し、enter キーを押します。 **[ユーザー アカウント制御]** ダイアログ ボックスが表示された場合、表示された操作が目的の操作であることを確認して、 **[はい]** をクリックします。  
   
 2.  **[ファイル]** をクリックし、 **[スナップインの追加と削除]** をクリックします。  
   
@@ -137,12 +133,12 @@ Install-WindowsFeature RemoteAccess -IncludeManagementTools
   
 14. 展開内のすべてのリモートアクセスサーバーでこの手順を繰り返します。  
   
-## <a name="BKMK_NLS"></a>3.4。 マルチサイト展開用にネットワークロケーションサーバーを構成する  
-最初のサーバーをセットアップするときに、リモートアクセスサーバーにネットワークロケーションサーバーの web サイトをセットアップすることを選択した場合は、追加する各新しいリモートアクセスサーバーを、t 用に選択したのと同じサブジェクト名を持つ Web サーバー証明書を使用して構成する必要があります。最初のサーバーのネットワークロケーションサーバー。 各サーバーは、ネットワークロケーションサーバーへの接続を認証するために証明書を必要とします。また、内部ネットワークに配置されているクライアントコンピューターは、DNS で web サイトの名前を解決できなければなりません。  
+## <a name="34-configure-the-network-location-server-for-a-multisite-deployment"></a><a name="BKMK_NLS"></a>3.4。 マルチサイト展開用にネットワークロケーションサーバーを構成する  
+最初のサーバーをセットアップするときに、リモートアクセスサーバーにネットワークロケーションサーバーの web サイトをセットアップすることを選択した場合は、追加する各新しいリモートアクセスサーバーは、と同じサブジェクト名を持つ Web サーバー証明書を使用して構成する必要があります。最初のサーバーのネットワークロケーションサーバー。 各サーバーは、ネットワークロケーションサーバーへの接続を認証するために証明書を必要とします。また、内部ネットワークに配置されているクライアントコンピューターは、DNS で web サイトの名前を解決できなければなりません。  
   
 #### <a name="to-install-a-certificate-for-network-location"></a>ネットワークの場所の証明書をインストールするには  
   
-1.  リモートアクセスサーバーの場合:**スタート**画面で「 **mmc**」と入力し、enter キーを押します。 **[ユーザー アカウント制御]** ダイアログ ボックスが表示されたら、表示された操作が正しいことを確認し、 **[はい]** をクリックします。  
+1.  リモートアクセスサーバーの場合:**スタート**画面で「 **mmc**」と入力し、enter キーを押します。 **[ユーザー アカウント制御]** ダイアログ ボックスが表示された場合、表示された操作が目的の操作であることを確認して、 **[はい]** をクリックします。  
   
 2.  **[ファイル]** をクリックし、 **[スナップインの追加と削除]** をクリックします。  
   
@@ -178,7 +174,7 @@ Install-WindowsFeature RemoteAccess -IncludeManagementTools
   
 14. 展開内のすべてのリモートアクセスサーバーでこの手順を繰り返します。  
   
-### <a name="NLS"></a>ネットワークロケーションサーバーの DNS レコードを作成するには  
+### <a name="to-create-the-network-location-server-dns-records"></a><a name="NLS"></a>ネットワークロケーションサーバーの DNS レコードを作成するには  
   
 1.  DNS サーバー:**スタート**画面で「 **dnsmgmt.msc**」と入力し、enter キーを押します。  
   
@@ -194,7 +190,7 @@ Install-WindowsFeature RemoteAccess -IncludeManagementTools
   
 7.  展開で追加のエントリポイントとしてサーバーを追加する前に、この手順を繰り返します。  
   
-## <a name="BKMK_Client"></a>3.5。 マルチサイト展開用に DirectAccess クライアントを構成する  
+## <a name="35-configure-directaccess-clients-for-a-multisite-deployment"></a><a name="BKMK_Client"></a>3.5。 マルチサイト展開用に DirectAccess クライアントを構成する  
 DirectAccess Windows クライアントコンピューターは、DirectAccess の関連付けを定義するセキュリティグループのメンバーである必要があります。 マルチサイトを有効にする前に、これらのセキュリティグループには、Windows 8 クライアントと Windows 7 クライアントの両方を含めることができます (適切な "ダウンレベル" モードが選択されている場合)。 マルチサイトを有効にすると、シングルサーバーモードの既存のクライアントセキュリティグループは、Windows 8 専用のセキュリティグループに変換されます。 マルチサイトを有効にした後、DirectAccess Windows 7 クライアントコンピューターを、対応する専用 Windows 7 クライアントセキュリティグループ (特定のエントリポイントに関連付けられている) に移動するか、DirectAccess 経由で接続することはできません。 Windows 7 クライアントは、Windows 8 セキュリティグループである既存のセキュリティグループから最初に削除する必要があります。 注意: windows 7 および Windows 8 の両方のクライアントセキュリティグループのメンバーである Windows 7 クライアントコンピューターでは、リモート接続が失われ、SP1 がインストールされていない Windows 7 クライアントは、企業接続も失われます。 そのため、すべての Windows 7 クライアントコンピューターを Windows 8 セキュリティグループから削除する必要があります。  
   
 #### <a name="remove--windows-7--clients-from-windows-8-security-groups"></a>Windows 7 クライアントを Windows 8 セキュリティグループから削除する  
@@ -210,7 +206,7 @@ DirectAccess Windows クライアントコンピューターは、DirectAccess �
 > [!IMPORTANT]  
 > リモートアクセスのマルチサイト構成を有効にすると、すべてのクライアントコンピューター (Windows 7 および Windows 8) は、企業ネットワークに直接または VPN を使用してグループポリシーを更新できるようになるまで、リモート接続を失います。 これは、初めてマルチサイト機能を有効にする場合や、マルチサイトを無効にする場合にも当てはまります。  
   
-## <a name="BKMK_Enable"></a>3.6。 マルチサイト展開を有効にする  
+## <a name="36-enable-the-multisite-deployment"></a><a name="BKMK_Enable"></a>3.6。 マルチサイト展開を有効にする  
 マルチサイト展開を構成するには、既存のリモートアクセスサーバーでマルチサイト機能を有効にします。 デプロイでマルチサイトを有効にする前に、次の情報があることを確認してください。  
   
 1.  デプロイ内のすべてのエントリポイントで DirectAccess クライアント接続を負荷分散する場合は、グローバルロードバランサーの設定と IP アドレス。  
@@ -219,9 +215,9 @@ DirectAccess Windows クライアントコンピューターは、DirectAccess �
   
 3.  グループポリシーオブジェクト名。既定以外のグループポリシーオブジェクトを使用する必要がある場合は、Windows 7 クライアントコンピューターのサポートが必要な場合は、展開の最初のエントリポイントとして Windows 7 クライアントコンピューターに適用されます。  
   
-### <a name="EnabledMultisite"></a>マルチサイト構成を有効にするには  
+### <a name="to-enable-a-multisite-configuration"></a><a name="EnabledMultisite"></a>マルチサイト構成を有効にするには  
   
-1.  既存のリモートアクセスサーバーで、 **[スタート]** 画面で「 **ramgmtui.exe**」と入力し、enter キーを押します。 **[ユーザー アカウント制御]** ダイアログ ボックスが表示されたら、表示された操作が正しいことを確認し、 **[はい]** をクリックします。  
+1.  既存のリモートアクセスサーバーで、 **[スタート]** 画面で「 **ramgmtui.exe**」と入力し、enter キーを押します。 **[ユーザー アカウント制御]** ダイアログ ボックスが表示された場合、表示された操作が目的の操作であることを確認して、 **[はい]** をクリックします。  
   
 2.  リモートアクセス管理コンソールで、 **[構成]** をクリックし、 **[タスク]** ウィンドウで **[マルチサイトを有効にする]** をクリックします。  
   
@@ -262,7 +258,7 @@ DirectAccess Windows クライアントコンピューターは、DirectAccess �
   
 windows PowerShell の ![](../../../../media/Step-3-Configure-the-Multisite-Deployment/PowerShellLogoSmall.gif)***<em>windows powershell の同等のコマンド</em>***  
   
-以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
+次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 書式上の制約のため、複数行にわたって折り返される場合でも、各コマンドレットは 1 行に入力してください。  
   
 "Edge1" という名前の最初のエントリポイントで "Contoso" という名前のマルチサイト展開を有効にするには この展開では、クライアントがエントリポイントを手動で選択することができ、グローバルロードバランサーは使用しません。  
   
@@ -276,7 +272,7 @@ Windows 7 クライアントコンピューターがセキュリティグルー�
 Add-DAClient -EntrypointName 'Edge1-US' -DownlevelSecurityGroupNameList @('corp.contoso.com\DA_Clients_US') -DownlevelGpoName @('corp.contoso.com\DA_W7_Clients_GPO_US)  
 ```  
   
-## <a name="BKMK_EntryPoint"></a>3.7。 マルチサイト展開へのエントリポイントの追加  
+## <a name="37-add-entry-points-to-the-multisite-deployment"></a><a name="BKMK_EntryPoint"></a>3.7。 マルチサイト展開へのエントリポイントの追加  
 の展開でマルチサイトを有効にした後で、エントリポイントの追加ウィザードを使用して、エントリポイントを追加できます。 エントリポイントを追加する前に、次の情報があることを確認してください。  
   
 -   グローバル負荷分散を使用している場合は、新しいエントリポイントごとにグローバルロードバランサーの IP アドレス。  
@@ -287,9 +283,9 @@ Add-DAClient -EntrypointName 'Edge1-US' -DownlevelSecurityGroupNameList @('corp.
   
 -   IPv6 が組織のネットワークに展開されている場合は、新しいエントリポイントの ip-https プレフィックスを準備する必要があります。  
   
-### <a name="AddEP"></a>マルチサイト展開にエントリポイントを追加するには  
+### <a name="to-add-entry-points-to-your-multisite-deployment"></a><a name="AddEP"></a>マルチサイト展開にエントリポイントを追加するには  
   
-1.  既存のリモートアクセスサーバーで、 **[スタート]** 画面で「 **ramgmtui.exe**」と入力し、enter キーを押します。 **[ユーザー アカウント制御]** ダイアログ ボックスが表示されたら、表示された操作が正しいことを確認し、 **[はい]** をクリックします。  
+1.  既存のリモートアクセスサーバーで、 **[スタート]** 画面で「 **ramgmtui.exe**」と入力し、enter キーを押します。 **[ユーザー アカウント制御]** ダイアログ ボックスが表示された場合、表示された操作が目的の操作であることを確認して、 **[はい]** をクリックします。  
   
 2.  リモートアクセス管理コンソールで、 **[構成]** をクリックし、 **[タスク]** ウィンドウで **[エントリポイントの追加]** をクリックします。  
   
@@ -338,13 +334,13 @@ Add-DAClient -EntrypointName 'Edge1-US' -DownlevelSecurityGroupNameList @('corp.
 15. **[エントリポイントの追加]** ダイアログボックスで **[閉じる]** をクリックし、エントリポイントの追加ウィザードで **[閉じる]** をクリックします。  
   
     > [!NOTE]  
-    > 追加されたエントリポイントが既存のエントリポイントまたはクライアントコンピューターとは異なるフォレストにある場合は、 **[タスク]** ウィンドウで **[管理サーバーの更新]** をクリックして、新しいフォレストのドメインコントローラーと System Center Configuration Manager を検出する必要があります。  
+    > 追加されたエントリポイントが既存のエントリポイントまたはクライアントコンピューターとは異なるフォレストにある場合は、 **[タスク]** ウィンドウで **[管理サーバーの更新]** をクリックして、新しいフォレストのドメインコントローラーと Configuration Manager を検出する必要があります。  
   
 16. マルチサイト展開に追加するすべてのエントリポイントについて、手順 2. の手順を繰り返します。  
   
 windows PowerShell の ![](../../../../media/Step-3-Configure-the-Multisite-Deployment/PowerShellLogoSmall.gif)***<em>windows powershell の同等のコマンド</em>***  
   
-以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
+次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 書式上の制約のため、複数行にわたって折り返される場合でも、各コマンドレットは 1 行に入力してください。  
   
 Edge2 という名前の2番目のエントリポイントとして corp2 ドメインからコンピューター edge2 を追加するには、次のように入力します。 エントリポイントの構成は、クライアント IPv6 プレフィックス ' 2001: db8: 2: 2000::/64 '、接続先アドレス (edge2 コンピューター上の IP-HTTPS 証明書) ' edge2.contoso.com '、"DirectAccess サーバーの設定-Edge2" という名前のサーバー GPO、およびインターネットと Corpnet2 という名前の内部インターフェイスと外部インターフェイスです。  
   
@@ -358,6 +354,6 @@ Windows 7 クライアントコンピューターが、セキュリティグル�
 Add-DAClient -EntrypointName 'Edge2-Europe' -DownlevelGpoName @('corp.contoso.com\ DA_W7_Clients_GPO_Europe') -DownlevelSecurityGroupNameList @('corp.contoso.com\DA_Clients_Europe')  
 ```  
   
-## <a name="BKMK_Links"></a>関連項目  
+## <a name="see-also"></a><a name="BKMK_Links"></a>関連項目  
   
 -   [手順 2: マルチサイトインフラストラクチャを構成する](Step-2-Configure-the-Multisite-Infrastructure.md)

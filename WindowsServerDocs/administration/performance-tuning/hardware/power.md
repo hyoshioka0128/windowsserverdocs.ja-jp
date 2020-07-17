@@ -1,20 +1,20 @@
 ---
-title: サーバーハードウェアの電源に関する考慮事項
-description: サーバーハードウェアの電源に関する考慮事項
+title: Windows Server ハードウェアの電源に関する考慮事項
+description: Windows Server ハードウェアの機能に関する考慮事項。
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
-ms.topic: article
-ms.author: Qizha;TristanB
+ms.topic: conceptual
+ms.author: qizha;tristanb
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: a9d4653824d497ea0c42337260aa788bab354ba3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0e110fbb41f44a4c8ac6ab014eeae44e542ade41
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355017"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471687"
 ---
-# <a name="server-hardware-power-considerations"></a>サーバーハードウェアの電源に関する考慮事項
+# <a name="server-hardware-power-considerations"></a>サーバー ハードウェアの電源に関する考慮事項
 
 企業およびデータセンター環境では、エネルギー効率の重要性が高まっていることを認識することが重要です。 高いパフォーマンスと低エネルギーの使用は、多くの場合、目標が競合していますが、サーバーコンポーネントを慎重に選択することで、それらの間で適切なバランスを取ることができます。 以下のセクションでは、サーバーハードウェアコンポーネントの電源特性と機能に関するガイドラインを示します。
 
@@ -26,49 +26,55 @@ ms.locfileid: "71355017"
 
 協調電源管理の手法の詳細については、「[高度な構成と電源インターフェイスの仕様](http://www.uefi.org/sites/default/files/resources/ACPI_5_1release.pdf)」の「コラボレーションプロセッサパフォーマンス制御」セクションを参照してください。
 
-
 ## <a name="memory-recommendations"></a>メモリに関する推奨事項
+
 システム電源の合計の割合が増加しているメモリアカウント。 メモリテクノロジ、エラー修正コード (ECC)、バスの頻度、容量、密度、ランクの数など、多くの要因がメモリ DIMM のエネルギー消費に影響します。 そのため、大量のメモリを購入する前に、予想される電力定格を比較することをお勧めします。
 
 低電力メモリを使用できるようになりましたが、パフォーマンスとコストのトレードオフを考慮する必要があります。 サーバーがページングされる場合は、ページングディスクのエネルギーコストも考慮する必要があります。
 
-
 ## <a name="disks-recommendations"></a>ディスクに関する推奨事項
+
 RPM が高いほど、電力消費量が増加します。 SSD ドライブは、回転ドライブよりも電力効率に優れています。 また、2.5 インチドライブでは、一般に3.5 インチドライブよりも電力が少なくなります。
 
 ## <a name="network-and-storage-adapter-recommendations"></a>ネットワークと記憶域アダプターに関する推奨事項
+
 一部のアダプターでは、アイドル期間中にエネルギー消費量が減少します。 これは、10 Gb のネットワークアダプターと高帯域幅 (4-8 Gb) の記憶域リンクに関する重要な考慮事項です。 このようなデバイスは、大量のエネルギーを消費する可能性があります。
 
-
 ## <a name="power-supply-recommendations"></a>電源装置に関する推奨事項
+
 パワーサプライの効率を向上させることは、パフォーマンスに影響を与えることなくエネルギー消費を削減するための優れた方法です。 高効率のパワーサプライを使用すると、サーバーごとに1年あたり多くのキロワット時間を節約できます。
 
-
 ## <a name="fan-recommendations"></a>ファンに関する推奨事項
+
 ファンは、電源装置と同様に、システムのパフォーマンスに影響を与えることなくエネルギー消費量を削減できる領域です。 可変速度ファンを使用すると、システムの負荷が減少したときに RPM を減らすことができるため、不要なエネルギー消費をなくすことができます。
 
-
 ## <a name="usb-devices-recommendations"></a>USB デバイスに関する推奨事項
+
 Windows Server 2016 では、USB デバイスのセレクティブサスペンドが既定で有効になっています。 ただし、デバイスドライバーが正しく記述されていないと、システムのエネルギー効率がかなりの量になる可能性があります。 潜在的な問題を回避するには、USB デバイスを切断するか、BIOS で無効にするか、USB デバイスを必要としないサーバーを選択します。
 
-
 ## <a name="remotely-managed-power-strip-recommendations"></a>リモートで管理された電源ストリップの推奨事項
+
 電源ストリップは、サーバーハードウェアの不可欠な部分ではありませんが、データセンターで大きな違いがあります。 測定値は、接続されていても電源がオフになっているボリュームサーバーは、最大で30ワットの電力を必要とする可能性があることを示しています。
 
 電力を無駄にしないように、サーバーのラックごとにリモートで管理された電源ストリップをデプロイして、プログラムを使用して特定のサーバーから電力を切断することができます。
 
 ## <a name="processor-terminology"></a>プロセッサの用語
+
 このトピック全体で使用されるプロセッサ用語は、次の図で使用可能なコンポーネントの階層を反映しています。 コンポーネントの大規模から最小の粒度で使用される用語は次のとおりです。
 
--   プロセッサソケット
--   NUMA ノード (NUMA node)
--   Core
--   論理プロセッサ
+- プロセッサソケット
+- NUMA ノード (NUMA node)
+- コア
+- 論理プロセッサ
 
 ![プロセッサの用語](../media/perftune-guide-figure-1.png)
 
-## <a name="see-also"></a>関連項目
-- [サーバーハードウェアのパフォーマンスに関する考慮事項](index.md)
+## <a name="additional-references"></a>その他のリファレンス
+
+- [サーバーのハードウェア パフォーマンスに関する考慮事項](index.md)
+
 - [電源とパフォーマンスのチューニング](power/power-performance-tuning.md)
+
 - [プロセッサの電源管理チューニング](power/processor-power-management-tuning.md)
+
 - [推奨されるバランスのプラン パラメーター](power/recommended-balanced-plan-parameters.md)

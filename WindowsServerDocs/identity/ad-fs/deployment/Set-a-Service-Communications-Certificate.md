@@ -1,7 +1,6 @@
 ---
 ms.assetid: 638c89bd-87e6-484b-9d2e-8ae2a74227e5
 title: サービス通信証明書を設定する
-description: ''
 author: billmath
 manager: femila
 ms.date: 05/31/2017
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: d0464853c73f88ed76545921ffc8a4bf8551c800
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6e0f9e6cca4fe915d3faed77fd5b5db543596d70
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408327"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855305"
 ---
 # <a name="set-a-service-communications-certificate"></a>サービス通信証明書を設定する
 
@@ -30,7 +29,7 @@ Active Directory フェデレーションサービス (AD FS) \(\) AD FS のフ�
 > [!NOTE]  
 > の AD FS 管理スナップ\-は、サービス通信証明書としてのフェデレーションサーバーのサーバー認証証明書を参照します。  
 
-この手順を実行するには、ローカル コンピューターの **Administrators**グループのメンバーシップか、それと同等のメンバーシップが最低限必要です。  適切なアカウントとグループメンバーシップの使用に関する詳細については、\(http:\/\/go.microsoft.com\/fwlink\/? [」を参照](https://go.microsoft.com/fwlink/?LinkId=83477)してください。LinkId\=83477\)。   
+この手順を完了するには、ローカル コンピューター上の **Administrators** または同等のメンバーシップが最低限必要です。  適切なアカウントとグループメンバーシップの使用に関する詳細については、\(http:\/\/go.microsoft.com\/fwlink\/? [」を参照](https://go.microsoft.com/fwlink/?LinkId=83477)してください。LinkId\=83477\)。   
 
 ### <a name="to-set-a-service-communications-certificate"></a>サービス通信証明書を設定するには  
 

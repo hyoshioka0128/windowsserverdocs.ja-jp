@@ -2,26 +2,22 @@
 title: 手順 3 DC1 を構成する
 description: このトピックは、「テストラボガイド-OTP 認証を使用した DirectAccess のデモンストレーション」と「RSA SecurID for Windows Server 2016」に含まれています。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 836a2a08-3d22-48d2-873e-80d7e57ebbd6
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 7655208fb537e78839f2b459c8df0e24c0573aa7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 07167f2bc68ab8c465a96ce00552339d04dbb198
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367547"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856075"
 ---
 # <a name="step-3-configure-dc1"></a>手順 3 DC1 を構成する
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 DC1 は、corp.contoso.com ドメインのドメインコントローラー、DNS サーバー、および DHCP サーバーとして機能します。 DC1 を次のように構成します。  
   
@@ -31,7 +27,7 @@ DC1 は、corp.contoso.com ドメインのドメインコントローラー、DN
   
 2.  **[アカウント]** タブで、 **[ユーザーログオン名]** が User1 に設定されていることを確認します。 それ以外の場合は、 **[ユーザーログオン名]** フィールドに「 **User1** 」と入力します。  
   
-3.  **[OK]** をクリックします。 **[Active Directory ユーザーとコンピューター]** コンソールを閉じます。  
+3.  **[OK]** をクリックすると、 **[Active Directory ユーザーとコンピューター]** コンソールを閉じます。  
   
 
 

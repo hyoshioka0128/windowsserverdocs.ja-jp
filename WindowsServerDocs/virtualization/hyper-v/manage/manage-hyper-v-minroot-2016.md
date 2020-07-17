@@ -1,19 +1,16 @@
 ---
 title: Minroot
 description: ホスト CPU リソース制御の構成
-keywords: Windows 10, Hyper-V
 author: allenma
 ms.date: 12/15/2017
 ms.topic: article
-ms.prod: windows-10-hyperv
-ms.service: windows-10-hyperv
-ms.assetid: ''
-ms.openlocfilehash: 92de899a39aed05e2f598fcb3aae3fbae3f1cb67
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.prod: windows-server
+ms.openlocfilehash: de621b3bfdc9792e61e6d21d9f3774da76c55df6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70872037"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860785"
 ---
 # <a name="hyper-v-host-cpu-resource-management"></a>Hyper-v ホスト CPU リソース管理
 
@@ -21,7 +18,7 @@ Windows Server 2016 以降で導入された hyper-v ホスト CPU リソース�
 
 Hyper-v ホストのハードウェアの詳細については、「 [Windows 10 hyper-v のシステム要件](https://docs.microsoft.com/virtualization/hyper-v-on-windows/reference/hyper-v-requirements)」を参照してください。
 
-## <a name="background"></a>背景情報
+## <a name="background"></a>背景
 
 Hyper-v ホストの CPU リソースの制御を設定する前に、Hyper-v アーキテクチャの基本を確認すると便利です。  
 一般的な概要については、「 [Hyper-v アーキテクチャ](https://docs.microsoft.com/windows-server/administration/performance-tuning/role/hyper-v-server/architecture)」セクションを参照してください。
@@ -39,7 +36,7 @@ Hyper-v ホストの CPU リソースの制御を設定する前に、Hyper-v �
 
 ## <a name="the-minimum-root-or-minroot-configuration"></a>最小ルートまたは "Minroot" 構成
 
-Hyper-v の初期バージョンには、パーティションごとに 64 VPs のアーキテクチャの上限がありました。  これは、ルートパーティションとゲストパーティションの両方に適用されます。  64を超える論理プロセッサを搭載したシステムがハイエンドサーバーに登場したため、Hyper-v は、最大 320 LPs を備えたホストをサポートする1つのポイントで、これらの大規模なシステムをサポートするために、ホストのスケール制限も進化しました。  ただし、その時点でパーティション数の 64 VP を破ると、いくつかの課題が生じ、パーティションごとに 64 VPs を超えることをサポートするという複雑な問題が発生しました。  これに対処するために、Hyper-v では、ルートパーティションに与えられた VPs の数が、基になるコンピューターに多数の論理プロセッサがある場合でも、64に制限されています。  ハイパーバイザーは、ゲスト VPs を実行するために使用可能なすべての LPs を引き続き使用しますが、ルートパーティションは64に人為的に制限されています。  この構成は、"最小ルート" または "minroot" 構成と呼ばれていました。  パフォーマンステストでは、64 LPs を超える大規模なシステムであっても、多数のゲスト Vm とゲスト VPs に十分なサポートを提供するために、ルートが64ルート VPs を超える必要がないことが確認されました。実際には、64ルート VPs よりもはるかに少ない場合が多い(ゲスト Vm の数とサイズ、実行されている特定のワークロードなど) によって異なります。
+Hyper-v の初期バージョンには、パーティションごとに 64 VPs のアーキテクチャの上限がありました。  これは、ルートパーティションとゲストパーティションの両方に適用されます。  64を超える論理プロセッサを搭載したシステムがハイエンドサーバーに登場したため、Hyper-v は、最大 320 LPs を備えたホストをサポートする1つのポイントで、これらの大規模なシステムをサポートするために、ホストのスケール制限も進化しました。  ただし、その時点でパーティション数の 64 VP を破ると、いくつかの課題が生じ、パーティションごとに 64 VPs を超えることをサポートするという複雑な問題が発生しました。  これに対処するために、Hyper-v では、ルートパーティションに与えられた VPs の数が、基になるコンピューターに多数の論理プロセッサがある場合でも、64に制限されています。  ハイパーバイザーは、ゲスト VPs を実行するために使用可能なすべての LPs を引き続き使用しますが、ルートパーティションは64に人為的に制限されています。  この構成は、"最小ルート" または "minroot" 構成と呼ばれていました。  パフォーマンステストでは、64 LPs を超える大規模なシステムであっても、ルートは、多数のゲスト Vm とゲスト VPs に十分なサポートを提供するために64ルート VPs を超える必要がないことを確認しました。実際には、ゲスト Vm の数とサイズによっては、通常は64ルート VPs よりもはるかに少ない。、実行されている特定のワークロードなどです。
 
 現在、この "minroot" の概念は引き続き使用されています。  実際、Windows Server 2016 Hyper-v がホスト LPs から 512 LPs に対する最大のアーキテクチャサポート上限を引き上げた場合でも、ルートパーティションは最大320の LPs に制限されます。
 
@@ -51,13 +48,13 @@ Windows Server 2016 Hyper-v では、既定のしきい値である 320 LPs が�
 Minroot 構成は、ハイパーバイザー BCD エントリを介して制御されます。 Minroot を有効にするには、コマンドプロンプトで管理者特権を使用します。
 
 ```
-    bcdedit /set hypervisorrootproc n
+     bcdedit /set hypervisorrootproc n
 ```
 ここで、n はルート VPs の数です。 
 
 システムを再起動する必要があります。また、OS ブートの有効期間中、新しいルートプロセッサの数が保持されます。  Minroot 構成は、実行時に動的に変更することはできません。
 
-複数の NUMA ノードがある場合、各ノードは`n/NumaNodeCount`プロセッサを取得します。
+複数の NUMA ノードがある場合、各ノードは `n/NumaNodeCount` プロセッサを取得します。
 
 複数の NUMA ノードがある場合は、VM のトポロジが、対応する VM の NUMA ノード VPs を実行するために各 NUMA ノードに十分な空き LPs (つまり、ルート VPs のない LPs) があることを確認する必要があります。
 

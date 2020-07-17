@@ -4,15 +4,15 @@ description: Windows Server 16 でのキャッシュとメモリマネージャ�
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: Pavel; ATales
+ms.author: pavel; atales
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: d55ad122048a8b180c9d12abe03666b796c3e9b5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0b01808564cfaf1eaedf30a66c774e2228205847
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71370006"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851655"
 ---
 # <a name="troubleshoot-cache-and-memory-manager-performance-issues"></a>キャッシュとメモリマネージャーのパフォーマンスの問題のトラブルシューティング
 
@@ -21,13 +21,13 @@ Windows Server 2012 より前では、特定のワークロードで使用可能
 
 ## <a name="counters-to-monitor"></a>監視するカウンター
 
--   メモリ\\の長期平均スタンバイキャッシュ有効期間 (秒) &lt; 1800 秒
+-   メモリ\\長期間のスタンバイキャッシュの有効期間 &lt; 1800 秒
 
--   使用\\可能なメモリのメガバイト数が不足しています
+-   メモリ\\使用可能なメガバイト数が不足しています
 
 -   メモリ\\システムキャッシュ常駐バイト数
 
-使用可能\\なメモリのメガバイト数が少なく、メモリ\\システムキャッシュ常駐バイトが物理メモリの重要な部分を消費している場合は、 [rammap](https://technet.microsoft.com/sysinternals/ff700229.aspx)を使用して、キャッシュがどのように使用されているかを調べることができます。
+メモリ\\使用可能なメガバイト数が少なく、同時にメモリ\\システムキャッシュ常駐バイトが物理メモリの重要な部分を占めている場合は、 [Rammap](https://technet.microsoft.com/sysinternals/ff700229.aspx)を使用して、キャッシュがどのように使用されているかを調べることができます。
 
 ## <a name="system-file-cache-contains-ntfs-metafile-data-structures"></a>システムファイルキャッシュに NTFS メタファイルデータ構造が含まれている
 
@@ -41,10 +41,10 @@ Windows Server 2012 より前では、特定のワークロードで使用可能
 ## <a name="system-file-cache-contains-memory-mapped-files"></a>システムファイルキャッシュにメモリマップファイルが含まれています
 
 
-この問題は、RAMMAP の出力で、非常に多くのアクティブなマップ済みファイルページによって示されています。 これは通常、サーバー上の一部のアプリケーションが、ファイル\_フラグ\_ランダム\_アクセスフラグが設定された[CreateFile](https://msdn.microsoft.com/library/windows/desktop/aa363858.aspx) API を使用して多数の大きなファイルを開いていることを示しています。
+この問題は、RAMMAP の出力で、非常に多くのアクティブなマップ済みファイルページによって示されています。 これは通常、サーバー上の一部のアプリケーションが、ファイル\_フラグ\_ランダム\_アクセスフラグが設定された[CreateFile](https://msdn.microsoft.com/library/windows/desktop/aa363858.aspx) API を使用して多数の大きなファイルを開こうとしていることを示します。
 
-この問題の詳細については、サポート技術情報の記事[2549369](https://support.microsoft.com/default.aspx?scid=kb;en-US;2549369)で説明されています。 File\_フラグ\_ランダム\_アクセスフラグは、メモリ内のファイルのマップされたビューを可能な限り長く保持するためのキャッシュマネージャーのヒントです (メモリマネージャーによってメモリ不足の状態が通知されるまで)。 同時に、このフラグは、ファイルデータのプリフェッチを無効にするようにキャッシュマネージャーに指示します。
+この問題の詳細については、サポート技術情報の記事[2549369](https://support.microsoft.com/default.aspx?scid=kb;en-US;2549369)で説明されています。 ファイル\_フラグ\_ランダム\_アクセスフラグは、キャッシュマネージャーがファイルのマップされたビューを可能な限り長くメモリに保持するためのヒントです (メモリマネージャーがメモリ不足の状態を通知しないようにするため)。 同時に、このフラグは、ファイルデータのプリフェッチを無効にするようにキャッシュマネージャーに指示します。
 
-この状況は、Windows Server 2012 以降で設定のトリミングの機能強化により、ある程度軽減されていますが、問題自体は、ファイル\_フラグ\_をランダム\_に使用せずに、アプリケーションベンダーによって主に対処する必要があります。アクセス。 アプリケーションベンダー向けの代替ソリューションとして、ファイルへのアクセス時に低メモリ優先度を使用することもできます。 これは、 [Setthreadinformation](https://msdn.microsoft.com/library/windows/desktop/hh448390.aspx) API を使用して実現できます。 低いメモリ優先度でアクセスされるページは、作業セットから積極的に削除されます。
+この状況は、Windows Server 2012 以降で設定のトリミングの機能強化によって、ある程度軽減されていますが、この問題自体は、ファイル\_フラグ\_ランダム\_アクセスを使用せずに、アプリケーションベンダーによって主に対処する必要があります。 アプリケーションベンダー向けの代替ソリューションとして、ファイルへのアクセス時に低メモリ優先度を使用することもできます。 これは、 [Setthreadinformation](https://msdn.microsoft.com/library/windows/desktop/hh448390.aspx) API を使用して実現できます。 低いメモリ優先度でアクセスされるページは、作業セットから積極的に削除されます。
 
-キャッシュマネージャーは、Windows Server 2016 以降では、トリミングに関する決定を行うときに FILE_FLAG_RANDOM_ACCESS を無視することで、これをさらに軽減します。これにより、FILE_FLAG_RANDOM_ACCESS フラグを使用せずに開いた他のファイルと同様に処理されます (キャッシュマネージャーはこれを受け入れます)。ファイルデータのプリフェッチを無効にするフラグ。 このフラグを使用して多数のファイルを開いて、真のランダムな方法でアクセスした場合は、システムキャッシュが肥大化する可能性があります。 アプリケーションでは FILE_FLAG_RANDOM_ACCESS を使用しないことを強くお勧めします。
+キャッシュマネージャーは、Windows Server 2016 以降では、トリミングに関する決定を行うときに FILE_FLAG_RANDOM_ACCESS を無視することで、これをさらに軽減します。そのため、FILE_FLAG_RANDOM_ACCESS フラグを指定せずに開いた他のファイルと同様に処理されます (キャッシュマネージャーでは、ファイルデータのプリフェッチを無効にするために、このフラグは引き続き このフラグを使用して多数のファイルを開いて、真のランダムな方法でアクセスした場合は、システムキャッシュが肥大化する可能性があります。 FILE_FLAG_RANDOM_ACCESS アプリケーションでは使用しないことを強くお勧めします。

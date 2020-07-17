@@ -2,22 +2,18 @@
 title: 手順 3-高度な DirectAccess 展開を確認する
 description: このトピックは、「Windows Server 2016 の詳細設定を使用して単一の DirectAccess サーバーを展開する」の一部です。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ae8bbff0-c981-4bc6-8df1-861621d0627f
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 51ce3fa1a72420f7272141bb5361b20360b7000c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: aca9cc008a096b16e01e5adb2608279ac7ded58b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404907"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861475"
 ---
 # <a name="step-3-verify-the-advanced-directaccess-deployment"></a>手順 3-高度な DirectAccess 展開を確認する
 
@@ -37,7 +33,7 @@ ms.locfileid: "71404907"
   
     すべての企業リソースにアクセスできます。  
   
-## <a name="BKMK_Links"></a>前の手順  
+## <a name="previous-step"></a><a name="BKMK_Links"></a>前の手順  
   
 -   [手順 2: DirectAccess サーバーの構成](Step-2-Configuring-DirectAccess-Servers.md)  
   

@@ -1,55 +1,51 @@
 ---
 title: bitsadmin wrap
-description: '**Bitsadmin wrap**の Windows コマンドトピックでは、コマンドウィンドウの右端から次の行まで拡張する出力テキストの行をラップします。'
-ms.custom: na
+description: Bitsadmin wrap コマンドの参照記事。コマンドウィンドウの右端から次の行まで拡張する出力テキストの行をラップします。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 14e57522-539d-4621-ad15-09f7a44ccab7
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5609fb6f38716795a545e0c7fe3939f893a8c8d5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e47f5e38555eb2464d3febf5f958ce5a6af20452
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71380683"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927250"
 ---
 # <a name="bitsadmin-wrap"></a>bitsadmin wrap
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-コマンドウィンドウに合わせるために出力をラップします。
+コマンドウィンドウの右端から次の行まで拡張する出力テキストの行をラップします。 このスイッチは、他のスイッチの前に指定する必要があります。
+
+既定では、 [bitsadmin monitor](bitsadmin-monitor.md)スイッチを除くすべてのスイッチによって出力テキストがラップされます。
 
 ## <a name="syntax"></a>構文
 
 ```
-bitsadmin /Wrap Job
+bitsadmin /wrap <job>
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
-|-------|--------|
-|Job|ジョブの表示名または GUID|
+| パラメーター | 説明 |
+| --------- | ---------- |
+| ジョブ (job) | ジョブの表示名または GUID。 |
 
-## <a name="remarks"></a>コメント
+## <a name="examples"></a>例
 
-他のスイッチの前に指定します。 既定では、 [bitsadmin monitor](bitsadmin-monitor.md)スイッチを除くすべてのスイッチが出力をラップします。
-
-## <a name="BKMK_examples"></a>例
-
-次の例では、 *Mydownloadjob*という名前のジョブの情報を取得し、出力をラップします。
+*Mydownloadjob*という名前のジョブの情報を取得し、出力テキストをラップするには、次のように入力します。
 
 ```
-C:\>bitsadmin /Wrap /Info myDownloadJob /verbose
+bitsadmin /wrap /info myDownloadJob /verbose
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [bitsadmin コマンド](bitsadmin.md)

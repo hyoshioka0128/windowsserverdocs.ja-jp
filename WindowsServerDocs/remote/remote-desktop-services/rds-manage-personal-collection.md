@@ -1,29 +1,25 @@
 ---
 title: RDS で個人用デスクトップ セッション コレクションを管理する
 description: RDS の展開に、RDSH および RemoteApp プログラムを追加する方法について説明します。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 11/08/2016
-ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: 6bf0ad3a2cd35c9794fd13631ed29df94725685c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7088d164ecdd7211894b004ed580eecb33d1ba60
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387406"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "80861065"
 ---
-## <a name="manage-your-personal-desktop-session-collections"></a>個人用デスクトップ セッション コレクションを管理する
+# <a name="manage-your-personal-desktop-session-collections"></a>個人用デスクトップ セッション コレクションを管理する
 
 以下の情報を使用して、リモート デスクトップ サービスで個人用デスクトップ セッション コレクションを管理します。
 
-### <a name="manually-assign-a-user-to-a-personal-session-host"></a>ユーザーを個人用セッション ホストに手動で割り当てる
+## <a name="manually-assign-a-user-to-a-personal-session-host"></a>ユーザーを個人用セッション ホストに手動で割り当てる
 コレクション内の個人用セッション ホスト サーバーにユーザーを手動で割り当てるには、**Set-RDPersonalSessionDesktopAssignment** コマンドレットを使用します。 このコマンドレットは、次のパラメーターをサポートしています。
 
 -CollectionName \<string\>
@@ -49,7 +45,7 @@ ms.locfileid: "71387406"
 
 **–Path** は、インポートするファイルのパスとファイル名を指定します。
  
-### <a name="removing-a-user-assignment-from-a-personal-session-host"></a>個人用セッション ホストからのユーザー割り当ての削除
+## <a name="removing-a-user-assignment-from-a-personal-session-host"></a>個人用セッション ホストからのユーザー割り当ての削除
 個人用セッション デスクトップとユーザー間の関連付けを削除するには、**Remove-RDPersonalSessionDesktopAssignment** コマンドレットを使用します。 このコマンドレットは、次のパラメーターをサポートしています。
 
 -CollectionName \<string\>
@@ -64,7 +60,7 @@ ms.locfileid: "71387406"
 
 **–Force** を指定すると、ユーザーへの確認なしにコマンドが強制的に実行されます。
 
-### <a name="query-user-assignments"></a>ユーザー割り当てをクエリする
+## <a name="query-user-assignments"></a>ユーザー割り当てをクエリする
 個人用セッション デスクトップおよび関連付けられているユーザー アカウントの一覧を取得するには、**Get-RDPersonalSessionDesktopAssignment** コマンドレットを使用します。 このコマンドレットは、次のパラメーターをサポートしています。
 
 -CollectionName \<string\>

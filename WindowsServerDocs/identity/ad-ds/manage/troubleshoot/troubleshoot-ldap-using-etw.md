@@ -1,26 +1,20 @@
 ---
 title: ETW を使用した LDAP 接続のトラブルシューティング
 description: ETW をオンにして、AD DS ドメインコントローラー間の LDAP 接続をトレースする方法
-audience: Admin
-ms.custom:
-- CI ID 110964
-- CSSTroubleshoot
 author: Teresa-Motiv
 manager: dcscontentpm
 ms.prod: windows-server-dev
 ms.technology: active-directory-lightweight-directory-services
-ms.tgt_platform: multiple
-keywords:
-- イベントトレース LDAP
+audience: Admin
 ms.author: v-tea
 ms.topic: article
 ms.date: 11/22/2019
-ms.openlocfilehash: 32929a89e959ee28fdf29ec121e74eafcb0209e4
-ms.sourcegitcommit: 30de12eebeb0fc79567d6bb6ab513692ea2415d3
+ms.openlocfilehash: f7b7df714dbd02b15555fa20c70c1e995e121a48
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74854181"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822935"
 ---
 # <a name="using-etw-to-troubleshoot-ldap-connections"></a>ETW を使用した LDAP 接続のトラブルシューティング
 

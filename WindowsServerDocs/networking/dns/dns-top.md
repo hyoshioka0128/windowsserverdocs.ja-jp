@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-dns
 ms.topic: article
 ms.assetid: 1324ba18-4e28-4b9d-bbe7-75707e6d30ab
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 6ad3b66ff0b271c3b6f6134a96aaf6b5171bc7d4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: f23b6c1056ea29f583da055b303fb648539240ba
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406168"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317711"
 ---
 # <a name="domain-name-system-dns"></a>ドメイン ネーム システム (DNS)
 

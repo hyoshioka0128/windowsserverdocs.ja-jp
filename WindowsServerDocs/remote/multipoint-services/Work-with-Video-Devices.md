@@ -1,24 +1,20 @@
 ---
 title: ビデオ デバイスを使用する
 description: ビデオモニターとプロジェクターが MultiPoint Services のステーションを操作する方法について説明します。
-ms.custom: na
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2f7f5a97-efd2-4184-8ad3-cf029d615eab
 author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: b7019000c99295204f196ee918129cded02e084f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6b967d4523058fe1dfcb086e5918f84257bd51bf
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71389252"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820445"
 ---
 # <a name="work-with-video-devices"></a>ビデオ デバイスを使用する
 モニターやプロジェクターなどのビデオ デバイスが MultiPoint Services システムのコンピューターまたは MultiPoint Services *ステーション*に接続されているときに、ビデオ デバイスがどのように機能するかについて説明します。  
@@ -53,12 +49,12 @@ MultiPoint Services システムのハードウェアにより、ビデオ モ�
   
 -   DVI プラグと VGA プラグを変換するには、アダプターまたはコンバーター デバイスを使用する必要がある場合があります。  
   
--   "Y" スプリッター ケーブルを使用すると、両方のビデオ デバイスのビデオ品質が低下する可能性があります。  
+-   "Y" スプリッターケーブルを使用すると、両方のビデオデバイスでビデオの品質が低下する可能性があります。  
   
--   "Y" スプリッター ケーブルを使用してプロジェクターとモニターの両方を使用する場合、MultiPoint Services は、両方のデバイスの画面解像度を、どちらか低い方の最大解像度 (通常はプロジェクター) に調整します。  
+-   "Y" スプリッターケーブルを介してプロジェクターとモニターの両方を使用する場合、MultiPoint Services では、両方のデバイスの画面の解像度を、いずれかのデバイス (通常はプロジェクター) の最も低い最大解像度に調整します。  
   
 -   MultiPoint Services では、複数のモニター間での1つのステーションの表示の拡張はサポートされていません。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [ステーション ハードウェアの管理](Manage-Station-Hardware.md)  
 [ステーションをセットアップする](Set-Up-a-Station.md) 

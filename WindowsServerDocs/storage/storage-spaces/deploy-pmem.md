@@ -1,52 +1,49 @@
 ---
-title: 永続メモリの理解と配置
+title: 永続的なメモリの理解とデプロイ
 description: 永続メモリの概要と、Windows Server 2019 で記憶域スペースダイレクトを使用して設定する方法の詳細について説明します。
-keywords: 記憶域スペースダイレクト、永続メモリ、pmem、ストレージ、S2D
-ms.assetid: ''
-ms.prod: ''
+ms.prod: windows-server
 ms.author: adagashe
 ms.technology: storage-spaces
 ms.topic: article
 author: adagashe
-ms.date: 3/26/2019
-ms.localizationpriority: ''
-ms.openlocfilehash: 549cc6dbeec3d414e886f6ebf32315ae13627812
-ms.sourcegitcommit: de71970be7d81b95610a0977c12d456c3917c331
+ms.date: 1/27/2020
+ms.localizationpriority: medium
+ms.openlocfilehash: 2f5f88ac2ec728e176735ad58d9d67112583c527
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71940806"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85469647"
 ---
----
-# <a name="understand-and-deploy-persistent-memory"></a>永続メモリの理解と配置
+# <a name="understand-and-deploy-persistent-memory"></a>永続的なメモリの理解とデプロイ
 
->適用対象:Windows Server 2019
+> 適用対象:Windows Server 2019
 
-永続メモリ (または PMem) は、手頃な価格の大きな容量と永続性を備えた一意の組み合わせを提供する新しい種類のメモリテクノロジです。 このトピックでは、PMem の背景と、記憶域スペースダイレクトで Windows Server 2019 を使用して展開する手順について説明します。
+永続メモリ (または PMem) は、手頃な価格の大きな容量と永続性を備えた一意の組み合わせを提供する新しい種類のメモリテクノロジです。 この記事では、記憶域スペースダイレクトを使用して、PMem の背景と、Windows Server 2019 に展開する手順について説明します。
 
-## <a name="background"></a>背景情報
+## <a name="background"></a>背景
 
-PMem は、電力サイクルを通じてコンテンツを保持する非揮発性 RAM (NVDIMM) の一種です。 予期しない停電、ユーザーによるシャットダウン、システムクラッシュなどが発生した場合でも、システムの電源が切れた場合でも、メモリの内容は維持されます。この一意の特性は、PMem をストレージとして使用することもできることを意味します。これは、"ストレージクラスメモリ" として参照される可能性があるためです。
+PMem は、電力サイクルを通じてコンテンツを保持する非揮発性 RAM (NVDIMM) の一種です。 システムの電源が切れた場合でも、予期しない停電、ユーザーによるシャットダウン、システムクラッシュなどが発生した場合でも、メモリの内容は維持されます。 この一意の特性は、ストレージとして PMem を使用することもできることを意味します。 これは、"ストレージクラスメモリ" として、PMem を参照しているユーザーを聞いてくる可能性があります。
 
-これらの利点の一部を確認するには、Microsoft Ignite 2018 からのこのデモを見てみましょう。
+これらの利点の一部を確認するには、Microsoft Ignite 2018 の次のデモを参照してください。
 
 [![Microsoft Ignite 2018 Pmem デモ](http://img.youtube.com/vi/8WMXkMLJORc/0.jpg)](http://www.youtube.com/watch?v=8WMXkMLJORc)
 
-フォールトトレランスを提供するすべてのストレージシステムは、ネットワークを経由してバックエンドの書き込み増幅を発生させる必要がある、書き込みの分散コピーを必ず作成します。 このため、最大の IOPS ベンチマーク番号は、通常、読み取り専用で実現されます。特に、ストレージシステムが、可能な限りローカルコピーからの読み取りを行うための共通の最適化がある場合は、特に記憶域スペースダイレクトます。
+フォールトトレランスを提供するストレージシステムでは、必ず書き込みの分散コピーが作成されます。 このような操作では、ネットワークを経由し、バックエンドの書き込みトラフィックを増幅する必要があります。 このため、最大の IOPS ベンチマーク番号は、通常、読み取りのみを測定することで達成されます。特に、可能な限りローカルコピーから読み取るためにストレージシステムに共通の意味の最適化がある場合は特にそうです。 記憶域スペースダイレクトは、そのために最適化されています。
 
-**100% の読み取りでは、クラスターは 13798674 IOPS を提供します。**
+**読み取り操作のみを使用して測定された場合、クラスターは 13798674 IOPS を提供します。**
 
 ![13.7 m IOPS レコードスクリーンショット](media/deploy-pmem/iops-record.png)
 
-ビデオをよく見ると、さらに多くの jaw を削除することが待機時間であることがわかります。 13.7 M を超える IOPS であっても、Windows のファイルシステムは、常に40μs 未満の待機時間を報告しています。 (これはマイクロ秒の記号で、1秒の万です)。これは、一般的なすべての flash ベンダ人格が現在提供しているものよりもはるかに高速な順序です。
+ビデオをよく見ると、さらに多くの jaw が削除されていることがわかります。 Windows のファイルシステムは、13.7 M を超える IOPS でも、常に40μs 未満の待機時間を報告しています。 (これはマイクロ秒の記号で、1秒の万です)。この速度は、一般的なすべての flash ベンダ人格が現在提供しているものよりもはるかに高速です。
 
-Windows Server 2019 および Intel®™ Optane で記憶域スペースダイレクト、DC 永続メモリによってパフォーマンスが飛躍的に向上します。 この業界最先端の HCI ベンチマークは、予測可能で非常に短い待機時間で、13.7 M IOPS を超えています。これは、以前の業界トップレベルの6.7 ベンチマークである 6.7 M IOPS を超えています。 さらに、今回は12台のサーバーノードだけが必要でした。
+Windows Server 2019 および Intel Optane DC 永続メモリの記憶域スペースダイレクトと共に、パフォーマンスが飛躍的に &reg; &trade; 向上します。 この業界トップレベルの HCI ベンチマークは、予測可能で非常に短い待機時間で、13.7 M IOPS を超えています。これは、以前の業界トップレベルの6.7 ベンチマークである 6.7 M IOPS を超えています。 さらに、今回は、12% 未満のサーバーノードを2年前にしか必要と &mdash; していませんでした。
 
 ![IOPS の向上](media/deploy-pmem/iops-gains.png)
 
-使用されるハードウェアは、3方向のミラーリングと区切られた ReFS ボリュームを使用する12台のサーバークラスターで、 **12** x INTEL® S2600WFT、 **384 GiB** memory、2 x 28 コア "cascadelake"、 **1.5 TB** Intel® Optane™ DC 永続メモリ (キャッシュ)、 **32 TB** NVMe (4 x 8 TB Intel® DC P4510) 容量、 **2** x Mellanox/4 25 Gbps
+テストハードウェアは、3方向のミラーリングと区切られた ReFS ボリュームを使用するように構成された12台のサーバークラスター、 **12** x intel &reg; S2600WFT、 **384 GiB** memory、2 x 28 コア "cascadelake、 **1.5 tb** Intel &reg; Optane &trade; DC 永続メモリ (キャッシュとしての 4 25)、 **32 TB** NVMe (4 x 8 TB &reg; )。 **2**
 
-次の表には、完全なパフォーマンスの数値が含まれています。 
+次の表は、完全なパフォーマンスの値を示しています。
 
 | ベンチマーク                   | パフォーマンス         |
 |-----------------------------|---------------------|
@@ -54,58 +51,61 @@ Windows Server 2019 および Intel®™ Optane で記憶域スペースダイ�
 | 4K 90/10% ランダム読み取り/書き込み | 945万 IOPS   |
 | 2 MB 順次読み取り         | 549 GB/秒のスループット |
 
-### <a name="supported-hardware"></a>サポートされているハードウェア
+### <a name="supported-hardware"></a>サポートされるハードウェア
 
-次の表は、Windows Server 2019 および Windows Server 2016 でサポートされている永続メモリハードウェアを示しています。 Intel Optane では、メモリ (揮発性) とアプリダイレクト (つまり、 永続的) モード。
+次の表は、Windows Server 2019 および Windows Server 2016 でサポートされる永続メモリハードウェアを示しています。
 
 | 永続メモリテクノロジ                                      | Windows Server 2016 | Windows Server 2019 |
 |-------------------------------------------------------------------|--------------------------|--------------------------|
-| 永続モードでの**NVDIMM**                                  | Supported                | Supported                |
-| アプリダイレクトモードでの**Intel Optane™ DC 永続メモリ**             | サポート非対象            | Supported                |
-| **Intel Optane™ DC 永続メモリ**(メモリモード) | Supported            | Supported                |
+| 永続モードでの**NVDIMM**                                  | サポートされています                | サポートされています                |
+| **Intel Optane &trade;** アプリダイレクトモードでの DC 永続メモリ             | サポートされていません            | サポートされています                |
+| **Intel Optane &trade;メモリモードの DC 永続メモリ** | サポートされています            | サポートされています                |
+
+> [!NOTE]
+> Intel Optane は、*メモリ*(揮発性) モードと*アプリダイレクト*(永続的) モードの両方をサポートしています。
+
+> [!NOTE]
+> 複数の Intel &reg; Optane PMem モジュールが複数の名前空間に分割されているシステムを再起動すると &trade; 、関連する論理記憶域ディスクの一部またはすべてにアクセスできなくなる可能性があります。 この問題は、バージョン1903よりも前のバージョンの Windows Server 2019 で発生します。
+>
+> このようなアクセスが失われるのは、システムの起動時に、PMem モジュールが未トレーニングまたは失敗したためです。 このような場合は、システム上のすべての PMem モジュールのすべてのストレージ名前空間が失敗します。これには、障害が発生したモジュールに物理的にマップされていない名前空間も含まれます。
+>
+> すべての名前空間へのアクセスを復元するには、失敗したモジュールを置き換えます。
+>
+> Windows Server 2019 バージョン1903またはそれ以降のバージョンでモジュールが失敗した場合、影響を受けたモジュールに物理的にマップされている名前空間にのみアクセスできなくなります。 その他の名前空間は影響を受けません。
 
 では、永続メモリの構成方法について説明します。
 
-## <a name="interleave-sets"></a>インターリーブセット
+## <a name="interleaved-sets"></a>インターリーブセット
 
-### <a name="understanding-interleave-sets"></a>インターリーブセットについて
+### <a name="understanding-interleaved-sets"></a>インターリーブセットについて
 
-NVDIMM が standard DIMM (メモリ) スロットに存在し、プロセッサの近くにデータが配置されていることを思い出してください。これにより、待機時間が短縮され、パフォーマンスが向上します。 これを基にして、インターリーブセットは、2つ以上の NVDIMMs が N 方向インターリーブセットを作成し、スループットを向上させるためにストライプの読み取り/書き込み操作を行う場合に使用します。 最も一般的な設定は、2方向または4方向のインターリーブです。
-
-インターリーブセットは、多くの場合、複数の永続メモリデバイスが1つの論理ディスクとして Windows Server に表示されるように、プラットフォームの BIOS で作成できます。 各永続メモリ論理ディスクには、次のものを実行して、物理デバイスのインターリーブセットが含まれています。
+NVDIMM が standard DIMM (メモリ) スロットに存在することを思い出してください。これにより、データがプロセッサの近くに配置されます。 この構成により、待機時間が短縮され、フェッチのパフォーマンスが向上します。 スループットをさらに向上させるために、2つ以上の NVDIMMs が n 方向インターリーブセットを作成して、読み取り/書き込み操作をストライピングします。 最も一般的な構成は、双方向または4方向のインターリーブです。 インターリーブセットを使用すると、複数の永続メモリデバイスが1つの論理ディスクとして Windows Server に表示されるようになります。 次のように、Windows PowerShell の**Get PmemDisk**コマンドレットを使用して、このような論理ディスクの構成を確認できます。
 
 ```PowerShell
 Get-PmemDisk
-```
 
-出力例を次に示します。
-
-```
 DiskNumber Size   HealthStatus AtomicityType CanBeRemoved PhysicalDeviceIds UnsafeShutdownCount
 ---------- ----   ------------ ------------- ------------ ----------------- -------------------
 2          252 GB Healthy      None          True         {20, 120}         0
 3          252 GB Healthy      None          True         {1020, 1120}      0
 ```
 
-論理 pmem ディスク #2 には、Id20 と Id120 の物理デバイスと論理 pmem ディスク #3 Id1020 と Id1120 の物理デバイスがあることがわかります。 また、次のように、特定の pmem ディスクを使用して、インターリーブセット内のすべての物理 NVDIMMs を取得することもできます。
+論理 PMem ディスク #2 が物理デバイス Id20 と Id120 を使用し、論理 PMem ディスク #3 物理デバイス Id1020 と Id1120 を使用していることがわかります。
 
+論理ドライブが使用するインターリーブセットに関する詳細情報を取得するには、次のように**取得**します。
 
 ```PowerShell
 (Get-PmemDisk)[0] | Get-PmemPhysicalDevice
-```
 
-出力例を次に示します。
-
-```
 DeviceId DeviceType           HealthStatus OperationalStatus PhysicalLocation FirmwareRevision Persistent memory size Volatile memory size
 -------- ----------           ------------ ----------------- ---------------- ---------------- ---------------------- --------------------
 20       Intel INVDIMM device Healthy      {Ok}              CPU1_DIMM_C1     102005310        126 GB                 0 GB
 120      Intel INVDIMM device Healthy      {Ok}              CPU1_DIMM_F1     102005310        126 GB                 0 GB
 ```
 
-### <a name="configuring-interleave-sets"></a>インターリーブセットの構成
+### <a name="configuring-interleaved-sets"></a>インターリーブセットの構成
 
-インターリーブセットを構成するには、次の PowerShell コマンドレットを実行します。
+インターリーブされたセットを構成するには、まず、システム上の論理 PMem ディスクに割り当てられていないすべての永続メモリ領域を確認します。 これを行うには、次の PowerShell コマンドレットを実行します。
 
 ```PowerShell
 Get-PmemUnusedRegion
@@ -116,9 +116,7 @@ RegionId TotalSizeInBytes DeviceId
        3     270582939648 {1020, 1120}
 ```
 
-これは、システム上の論理永続メモリディスクに割り当てられていないすべての永続メモリ領域を示しています。
-
-デバイスの種類、場所、状態、動作状態など、システム内のすべての永続的なメモリデバイス情報を表示するには、ローカルサーバーで次のコマンドレットを実行します。
+デバイスの種類、場所、状態、動作状態など、システム内のすべての PMem デバイス情報を表示するには、ローカルサーバーで次のコマンドレットを実行します。
 
 ```PowerShell
 Get-PmemPhysicalDevice
@@ -132,7 +130,7 @@ DeviceId DeviceType           HealthStatus OperationalStatus PhysicalLocation Fi
 20       Intel INVDIMM device Healthy      {Ok}              CPU1_DIMM_C1     102005310        126 GB                 0 GB
 ```
 
-使用されていない pmem 領域があるため、新しい永続メモリディスクを作成できます。 未使用の領域を使用して複数の永続メモリディスクを作成するには、次の方法があります。
+使用可能な使用されていない PMem 領域があるため、新しい永続メモリディスクを作成できます。 未使用の領域を使用して、次のコマンドレットを実行することで、複数の永続メモリディスクを作成できます。
 
 ```PowerShell
 Get-PmemUnusedRegion | New-PmemDisk
@@ -150,11 +148,11 @@ DiskNumber Size   HealthStatus AtomicityType CanBeRemoved PhysicalDeviceIds Unsa
 3          252 GB Healthy      None          True         {1020, 1120}      0
 ```
 
-Get PhysicalDisk | を実行できることに注意してください。 **ここ**では、同じ結果を得るために、 **-PmemDisk**ではなく、MEDIATYPE-Eq SCM を指定します。 新しく作成された永続メモリディスクは、PowerShell と Windows 管理センターに表示されるドライブに1:1 対応します。
+Get-PhysicalDisk | を実行できることに注意してください。 **ここ**では、同じ結果を得るために、 **-PmemDisk**ではなく、MEDIATYPE-Eq SCM を指定します。 新しく作成された PMem ディスクは、PowerShell と Windows 管理センターに表示されるドライブと1対1で対応します。
 
 ### <a name="using-persistent-memory-for-cache-or-capacity"></a>キャッシュまたは容量に永続的なメモリを使用する
 
-Windows Server 2019 の記憶域スペースダイレクトでは、キャッシュまたは容量ドライブとして永続メモリの使用がサポートされています。 キャッシュと容量のドライブの設定の詳細については、こちらの[ドキュメント](understand-the-cache.md)を参照してください。
+Windows Server 2019 の記憶域スペースダイレクトでは、キャッシュまたは容量ドライブのいずれかとして永続メモリを使用することがサポートされています。 キャッシュと容量のドライブを設定する方法の詳細については、「[記憶域スペースダイレクトのキャッシュについ](understand-the-cache.md)て」を参照してください。
 
 ## <a name="creating-a-dax-volume"></a>DAX ボリュームの作成
 
@@ -162,16 +160,16 @@ Windows Server 2019 の記憶域スペースダイレクトでは、キャッシ
 
 永続メモリにアクセスするには、2つの方法があります。 これらは次のとおりです。
 
-1. **直接アクセス (DAX)** 。これはメモリのように動作し、待機時間が最短になります。 アプリは、スタックをバイパスして、永続的なメモリを直接変更します。 これは NTFS でのみ使用できることに注意してください。
-2. アプリの互換性のためにストレージのように動作する**アクセスをブロック**します。 データはこのセットアップのスタックを経由し、NTFS および ReFS と共に使用できます。
+1. **直接アクセス (DAX)**。これはメモリのように動作し、待機時間が最短になります。 アプリは、スタックをバイパスして、永続的なメモリを直接変更します。 DAX は NTFS と組み合わせてのみ使用できることに注意してください。
+1. アプリの互換性のためにストレージのように動作する**アクセスをブロック**します。 このような場合、データはスタックを介して流れます。 この構成は、NTFS および ReFS と組み合わせて使用できます。
 
-この例を次に示します。
+次の図は、DAX 構成の例を示しています。
 
 ![DAX スタック](media/deploy-pmem/dax.png)
 
 ### <a name="configuring-dax"></a>DAX の構成
 
-永続メモリに DAX ボリュームを作成するには、PowerShell コマンドレットを使用する必要があります。 **-Isdax**スイッチを使用して、DAX が有効になるようにボリュームをフォーマットすることができます。
+永続メモリディスクに DAX ボリュームを作成するには、PowerShell コマンドレットを使用する必要があります。 **-Isdax**スイッチを使用して、DAX が有効になるようにボリュームをフォーマットすることができます。
 
 ```PowerShell
 Format-Volume -IsDax:$true
@@ -234,10 +232,10 @@ Type                 : Basic
 
 永続メモリを使用する場合、監視エクスペリエンスにはいくつかの違いがあります。
 
-1. 永続メモリは物理ディスクのパフォーマンスカウンターを作成しないため、Windows 管理センターのグラフに表示されるかどうかはわかりません。
-2. 永続メモリは Storport 505 データを作成しないため、プロアクティブな外れ値検出は行われません。
+- 永続メモリは物理ディスクのパフォーマンスカウンターを作成しないので、Windows 管理センターのグラフには表示されません。
+- 永続メモリは Storport 505 データを作成しないため、プロアクティブな外れ値検出は行われません。
 
-これとは別に、監視エクスペリエンスは他の物理ディスクと同じです。 次のように実行して、永続メモリディスクの正常性を照会できます。
+これとは別に、監視エクスペリエンスは他の物理ディスクの場合と同じです。 次のコマンドレットを実行して、永続的なメモリディスクの正常性を照会できます。
 
 ```PowerShell
 Get-PmemDisk
@@ -255,9 +253,9 @@ SerialNumber               HealthStatus OperationalStatus  OperationalDetails
 802c-01-1602-117cb64f      Warning      Predictive Failure {Threshold Exceeded,NVDIMM_N Error}
 ```
 
-**HealthStatus**は、永続メモリディスクが正常であるかどうかを示します。 **Unsaf**は、この論理ディスクのデータ損失の原因となる可能性があるシャットダウンの数を追跡します。 これは、このディスクの基になるすべての永続メモリデバイスの unsafe シャットダウンカウントの合計です。 次のコマンドを使用して正常性の情報を照会することもできます。 **OperationalStatus**と**OperationalDetails**は、正常性状態に関する詳細情報を提供します。
+**HealthStatus**は、PMem ディスクが正常であるかどうかを示します。
 
-永続メモリデバイスの正常性を照会するには:
+**Unsaf のカウント**値は、この論理ディスクのデータ損失の原因となる可能性があるシャットダウンの数を追跡します。 これは、このディスクの基になるすべての PMem デバイスの安全でないシャットダウン数の合計です。 正常性状態の詳細に**ついては**、get-help などの情報を検索するために、 **Get PmemPhysicalDevice**コマンドレットを使用します。
 
 ```PowerShell
 Get-PmemPhysicalDevice
@@ -270,13 +268,13 @@ DeviceId DeviceType           HealthStatus OperationalStatus PhysicalLocation Fi
 20       Intel INVDIMM device Unhealthy    {HardwareError}   CPU1_DIMM_C1     102005310        126 GB                 0 GB
 ```
 
-これは、どの永続メモリデバイスが異常であるかを示します。 異常なデバイス (**DeviceId**) 20 は、上記の例のケースに一致します。 BIOS から**PhysicalLocation**を使用すると、障害が発生している永続メモリデバイスを特定するのに役立ちます。
+このコマンドレットは、どの永続メモリデバイスが異常であるかを示します。 異常なデバイス (**DeviceId** 20) は、前の例のケースと一致します。 BIOS の**PhysicalLocation**を使用すると、どの永続メモリデバイスが障害状態であるかを特定するのに役立ちます。
 
 ## <a name="replacing-persistent-memory"></a>永続メモリの置換
 
-ここでは、永続メモリの正常性状態を表示する方法について説明します。 障害が発生したモジュールを交換する必要がある場合は、永続メモリディスクを再プロビジョニングする必要があります (上記の手順を参照してください)。
+この記事では、永続メモリの正常性状態を表示する方法について説明します。 障害が発生したモジュールを交換する必要がある場合は、PMem ディスクを再プロビジョニングする必要があります (前に説明した手順を参照してください)。
 
-トラブルシューティングを行うときに、特定の永続メモリディスクを削除する**削除 PmemDisk**を使用する必要がある場合があります。 現在のすべての永続ディスクを削除するには、次の方法があります。
+トラブルシューティングを行うときに、**削除 PmemDisk**を使用する必要がある場合があります。 このコマンドレットは、特定の永続メモリディスクを削除します。 次のコマンドレットを実行して、現在のすべての PMem ディスクを削除できます。
 
 ```PowerShell
 Get-PmemDisk | Remove-PmemDisk
@@ -291,9 +289,10 @@ Remove the persistent memory disk(s)?
 Removing the persistent memory disk. This may take a few moments.
 ```
 
-永続メモリディスクを削除すると、そのディスク上のデータが失われることに注意してください。
+> [!IMPORTANT]
+> 永続メモリディスクを削除すると、そのディスク上のデータが失われます。
 
-別のコマンドレットが必要になることもあります。 **PmemPhysicalDevice**は、物理永続メモリデバイスのラベルストレージ領域を初期化します。 これは、永続メモリデバイスの破損したラベルのストレージ情報を消去するために使用できます。
+もう1つのコマンドレットには**Initialize-PmemPhysicalDevice**を使用する必要があります。 このコマンドレットは、物理永続メモリデバイスのラベル記憶域領域を初期化し、PMem デバイス上の破損したラベルストレージ情報を消去できます。
 
 ```PowerShell
 Get-PmemPhysicalDevice | Initialize-PmemPhysicalDevice
@@ -307,10 +306,11 @@ Initializing the physical persistent memory device. This may take a few moments.
 Initializing the physical persistent memory device. This may take a few moments.
 ```
 
-このコマンドは、永続的なメモリ関連の問題を修正するための最後の手段として使用する必要があることに注意してください。 これにより、永続メモリへのデータ損失が発生します。
+> [!IMPORTANT]
+> **Initialize-PmemPhysicalDevice は、** 永続メモリ内のデータ損失を発生させます。 これは、永続メモリ関連の問題を修正するための最後の手段として使用します。
 
-## <a name="see-also"></a>関連項目
+## <a name="additional-references"></a>その他のリファレンス
 
 - [記憶域スペースダイレクトの概要](storage-spaces-direct-overview.md)
-- [Windows での記憶域クラスメモリ (NVDIMM) の正常性管理](storage-class-memory-health.md)
+- [Windows での記憶域クラス メモリ (NVDIMM-N) の正常性管理](storage-class-memory-health.md)
 - [キャッシュについて](understand-the-cache.md)

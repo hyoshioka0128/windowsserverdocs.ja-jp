@@ -6,26 +6,26 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: a09bfb03-95fc-4534-bf3c-97078ef6b07e
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: b8ae0ab02a5c14675d543087f635d53ee63e0423
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: dd56dfd4db9dd41c98141e2239efcca544a364fe
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71396252"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80316166"
 ---
 # <a name="disable-nas-notification-forwarding-in-nps"></a>NPS での NAS 通知の転送を無効にする
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 ネットワークアクセスサーバー (Nas) から NPS に構成されているリモート RADIUS サーバーグループのメンバーへの開始および停止メッセージの転送を無効にするには、次の手順を実行します。
 
-リモート RADIUS サーバーグループが構成されていて、NPS**接続要求ポリシー**で [**このリモート radius サーバーグループにアカウンティング要求を転送**する] チェックボックスをオフにした場合、これらのグループは引き続き NAS の開始と停止の通知を送信します。送信. 
+リモート RADIUS サーバーグループが構成されていて、NPS**接続要求ポリシー**で [**このリモート radius サーバーグループにアカウンティング要求を転送**する] チェックボックスをオフにした場合、これらのグループには引き続き NAS の開始および停止通知メッセージが送信されます。 
 
-これにより、不要なネットワークトラフィックが作成されます。 このトラフィックを排除するには、各リモート RADIUS サーバーグループ内の個々のサーバーに対する NAS 通知転送を無効にします。
+そのため、ネットワーク トラフィックが不必要に増大することになります。 このトラフィックを排除するには、各リモート RADIUS サーバーグループ内の個々のサーバーに対する NAS 通知転送を無効にします。
 
-この手順を実行する、 **管理者** グループです。
+この手順を完了するには、**Administrators** グループのメンバーである必要があります。
 
 ### <a name="to-disable-nas-notification-forwarding"></a>NAS の通知転送を無効にするには
 

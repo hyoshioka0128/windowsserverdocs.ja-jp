@@ -1,37 +1,78 @@
 ---
 title: nfsstat
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Nfsstat コマンドの参照記事。ネットワークファイルシステム (NFS) とリモートプロシージャコール (RPC) の呼び出しに関する統計情報を表示します。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: da7a9768-44bd-404b-97ee-c388d00dc395
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4f9db119596b5602f18acfa10af6aa1b7cbbc9b2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 833081baa3ae9a0c2493623a7d015334087ee26d
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71373179"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934788"
 ---
 # <a name="nfsstat"></a>nfsstat
 
-
-
-使用する **nfsstat** を表示または nfs サーバーへの呼び出しのカウントをリセットします。
+ネットワークファイルシステム (NFS) とリモートプロシージャコール (RPC) の呼び出しに関する統計情報を表示するコマンドラインユーティリティ。 パラメーターを指定せずに使用します。このコマンドは、すべての統計データをリセットせずに表示します。
 
 ## <a name="syntax"></a>構文
 
 ```
-nfsstat [-z]
+nfsstat [-c][-s][-n][-r][-z][-m]
 ```
 
-## <a name="description"></a>説明
+### <a name="parameters"></a>パラメーター
 
-せずに使用すると、 **~ z** オプション、 **nfsstat** コマンド ライン ユーティリティは、サービスの開始時、またはを使用して、カウンターがリセットされたときに、カウンターが 0 に設定された後にサーバーに加えられた NFS V2、NFS V3 およびマウント V3 の呼び出しの数を表示 **nfsstat z**します。
+| パラメーター | 説明 |
+| --------- | ----------- |
+| -c | クライアントによって送信および拒否されたクライアント側 NFS および RPC および NFS 呼び出しのみが表示されます。 NFS または RPC の情報のみを表示するには、このフラグを **-n**または **-r**パラメーターと組み合わせます。 |
+| -S | サーバー側の NFS およびサーバーによって拒否された RPC および NFS の呼び出しのみを表示します。 NFS または RPC の情報のみを表示するには、このフラグを **-n**または **-r**パラメーターと組み合わせます。 |
+| -M | マウントオプション、システム内部のマウントフラグ、およびその他のマウント情報によって設定されたマウントフラグに関する情報を表示します。 |
+| -n | クライアントとサーバーの両方の NFS 情報を表示します。 NFS クライアントまたはサーバーの情報のみを表示するには、このフラグと **-c**または **-s**パラメーターを組み合わせます。 |
+| -r | クライアントとサーバーの両方の RPC 情報を表示します。 RPC クライアントまたはサーバーの情報のみを表示するには、このフラグと **-c**または **-s**パラメーターを組み合わせます。 |
+| -Z | 呼び出しの統計をリセットします。 このフラグはルートユーザーのみが使用でき、他のパラメーターと組み合わせて表示後に特定の統計のセットをリセットできます。 |
+
+### <a name="examples"></a>例
+
+クライアントによって送信および拒否された RPC および NFS 呼び出しの数に関する情報を表示するには、次のように入力します。
+
+```
+nfsstat -c
+```
+
+クライアントの NFS 呼び出しに関連する情報を表示して印刷するには、次のように入力します。
+
+```
+nfsstat -cn
+```
+
+クライアントとサーバーの両方の RPC 呼び出しに関連する情報を表示するには、次のように入力します。
+
+```
+nfsstat -r
+```
+
+サーバーによって受信および拒否された RPC および NFS 呼び出しの数に関する情報を表示するには、次のように入力します。
+
+```
+nfsstat -s
+```
+
+クライアントとサーバーのすべての呼び出しに関連する情報をゼロにリセットするには、次のように入力します。
+
+```
+nfsstat -z
+```
+
+## <a name="additional-references"></a>その他の参照情報
+
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [サービスがネットワーク ファイル システム コマンドのリファレンス](services-for-network-file-system-command-reference.md)
+
+- [NFS コマンドレットリファレンス](https://docs.microsoft.com/powershell/module/nfs)

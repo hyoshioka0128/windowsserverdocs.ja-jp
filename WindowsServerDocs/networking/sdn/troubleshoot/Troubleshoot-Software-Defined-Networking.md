@@ -1,19 +1,19 @@
 ---
 title: SDN のトラブルシューティング
 description: このトピックでは、Windows Server 2016 でのソフトウェア定義ネットワークのトラブルシューティングに関するコンテンツへのリンクを示します。
-manager: brianlic
+manager: grcusanz
 ms.prod: windows-server
 ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: 427048db-bab6-49b1-9611-099bb547ec0e
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 33eef13bc13081acf398f3d3f26dc04219aa1d20
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: anpaul
+author: AnirbanPaul
+ms.openlocfilehash: 2b69541415d297f3831a5736e572956b69417a67
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405829"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859565"
 ---
 # <a name="troubleshoot-sdn"></a>SDN のトラブルシューティング
 
@@ -30,7 +30,7 @@ ms.locfileid: "71405829"
 > - [SDN の管理](../manage/manage-sdn.md)
 > - [SDN のセキュリティ](../security/sdn-security-top.md)
 
-ここでは、次のトピックについて説明します。
+このセクションのトピックは次のとおりです。
 
 - [Windows Server ソフトウェア定義ネットワーク スタックのトラブルシューティング](https://docs.microsoft.com/windows-server/networking/sdn/troubleshoot/troubleshoot-windows-server-software-defined-networking-stack)
 - ブログ投稿[SDN のトラブルシューティング: UDP 通信エラーとネットワークコントローラー証明書の変更](https://techcommunity.microsoft.com/t5/Networking-Blog/SDN-Troubleshooting-UDP-Communication-failures-and-changing-the/ba-p/339694)

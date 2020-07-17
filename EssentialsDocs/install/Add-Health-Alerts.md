@@ -1,27 +1,23 @@
 ---
 title: 正常性アラートの追加
-description: Windows Server Essentials を使用する方法について説明します
-ms.custom: na
+description: Windows Server Essentials の使用方法について説明します。
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+ms.prod: windows-server
 ms.topic: article
 ms.assetid: 270e0aac-dc42-46f3-a20b-a68ffbded06d
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 8c3ba4746211690ad52f775b8bdc1ccf9b6c74b7
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 2540c4af032d35f5be71338513030c59cb18953d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66433720"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80817626"
 ---
 # <a name="add-health-alerts"></a>正常性アラートの追加
 
->適用先:Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
+>適用対象: windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
 正常性アドインは、アラートの定義、正常性チェック、ネットワークの問題の修復を提供します。 正常性アドインは、特定の機能の正常性情報を評価するために使用されるコードまたはデータをコメントする xml ファイルから構成されます。 正常性アドインは、開発者によって作成され、管理者によってサーバーとクライアント コンピューターにインストールされます。  
   
@@ -36,7 +32,7 @@ ms.locfileid: "66433720"
   
 2. Definition.xml ファイルと Definition.xml.config ファイルを新しいフォルダーにコピーします。  
   
-3. 条件または操作用にバイナリ ファイルを作成した場合、これらのファイルも **%ProgramFiles%\Windows Server\Bin**にコピーする必要があります。  
+3. 条件または操作用にバイナリ ファイルを作成した場合、これらのファイルも **%ProgramFiles%\Windows Server\Bin** にコピーする必要があります。  
   
    クライアント コンピューターが、XML ファイルを適切な場所に抽出するスケジュールされたタスクを 6 時間ごとに実行します。 クライアント コンピューターとサーバーを強制的に同期させるには、このタスクを手動で実行します。  
   
@@ -49,8 +45,8 @@ ms.locfileid: "66433720"
     > [!NOTE]
     >  このタスクでは、バイナリ ファイルはインストールされません。 バイナリ ファイルは、クライアント コンピューターの **%ProgramFiles%\Windows Server\Bin** フォルダーに手動でコピーする必要があります。  
   
-## <a name="see-also"></a>関連項目  
- [作成して、イメージをカスタマイズします。](Creating-and-Customizing-the-Image.md)   
+## <a name="see-also"></a>参照  
+ [イメージ  の作成とカスタマイズ](Creating-and-Customizing-the-Image.md)  
  [追加のカスタマイズ](Additional-Customizations.md)   
- [イメージの展開の準備](Preparing-the-Image-for-Deployment.md)   
+ [展開  のイメージの準備](Preparing-the-Image-for-Deployment.md)  
  [カスタマー エクスペリエンスのテスト](Testing-the-Customer-Experience.md)

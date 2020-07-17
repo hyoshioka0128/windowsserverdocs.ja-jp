@@ -1,60 +1,48 @@
 ---
-title: 復元 (recover)
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+title: recover
+description: 回復コマンドの参照記事。このコマンドは、不良ディスクまたは不良ディスクから読み取り可能な情報を回復します。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: cf9be2e3-90c8-4773-a201-dc503b91948e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 415efe2d1e60ca70d68059b5702108440da735f3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ab7f502b046bf30a40b1fdd386c7faddc5c8f15a
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71371770"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931933"
 ---
-# <a name="recover"></a>復元 (recover)
+# <a name="recover"></a>recover
 
+正しくないか欠陥があるディスクから読み取り可能な情報を復元します。 このコマンドは、ファイルをセクターごとに読み取り、適切なセクターからデータを回復します。 不良セクターのデータは失われます。 ファイルを回復するときに不良セクターのすべてのデータが失われたために、一度に 1 つのファイルを回復する必要があります。
 
-
-正しくないか欠陥があるディスクから読み取り可能な情報を復元します。
-
-このコマンドを使用する方法の例については、[例](#BKMK_examples)を参照してください。
+**Chkdsk**コマンドによって報告された不良セクターは、ディスクの操作準備が整ったときに不良とマークされました。 これらに問題ありません、および **回復** 影響しません。
 
 ## <a name="syntax"></a>構文
 
 ```
-recover [<Drive>:][<Path>]<FileName>
+recover [<drive>:][<path>]<filename>
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
-|           パラメーター           |                                          説明                                          |
-|-------------------------------|-----------------------------------------------------------------------------------------------|
-| [\<Drive >:][<Path>] <FileName> | 回復するファイルの名前と場所を指定します。 *ファイル名* が必要です。 |
-|              /?               |                             コマンド プロンプトにヘルプを表示します。                              |
+| パラメーター | 説明 |
+|--|--|
+| `[<drive>:][<path>]<filename>` | 回復するファイル名 (現在のディレクトリにない場合はファイルの場所) を指定します。 *ファイル名*が必要です。ワイルドカードはサポートされていません。 |
+| /? | コマンド プロンプトにヘルプを表示します。 |
 
-## <a name="remarks"></a>コメント
+### <a name="examples"></a>例
 
--   **回復** コマンドは、ファイル、セクターごとを読み取り、データを正常なセクターから回復します。 不良セクターのデータは失われます。
--   によって報告された不良セクター **chkdsk** 操作用にディスクに作成されたときに"bad"が設定されました。 これらに問題ありません、および **回復** 影響しません。
--   ファイルを回復するときに不良セクターのすべてのデータが失われたために、一度に 1 つのファイルを回復する必要があります。
--   [回復] コマンドでは **&#42;** 、ワイルドカード文字 (および **?** ) は使用できません。 ファイル (および現在のディレクトリになっていない場合は、ファイルの場所) を指定する必要があります。
+ファイル*story.txt*を回復する*には、* 次のように入力します。
 
-## <a name="BKMK_examples"></a>例
-
-D ドライブに \Fiction ディレクトリに Story.txt ファイルを復元するには、次のように入力します。
 ```
-recover d:\fiction\story.txt 
+recover d:\fiction\story.txt
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

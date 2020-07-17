@@ -1,6 +1,5 @@
 ---
 title: AD フォレストの回復-SYSVOL の権限のある同期
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,16 +8,16 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: 38a1c543-c76d-4b8e-a06b-53742aaa172f
 ms.technology: identity-adds
-ms.openlocfilehash: 051e3fdb1c801ab6f19b276b66599ea555026845
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4c797c98fc8d41621954077ebf470f1f52604cf7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369384"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80824305"
 ---
 # <a name="ad-forest-recovery---performing-an-authoritative-synchronization-of-dfsr-replicated-sysvol"></a>AD フォレストの回復-DFSR によってレプリケートされた SYSVOL の権限のある同期を実行する  
 
->適用先:Windows Server 2016、Windows Server 2012、および 2012 R2、Windows Server 2008 および 2008 R2
+>適用対象: Windows Server 2016、Windows Server 2012、および 2012 R2、Windows Server 2008 および 2008 R2
 
 SYSVOL の authoritative restore を実行するには、さまざまな方法があります。 **Msdfsr-Options**属性を編集するか、wbadmin – authsysvol を使用してシステム状態の復元を実行することができます。 システム状態のバックアップを復元するオプションがある場合 (つまり、AD DS を同じハードウェアおよびオペレーティングシステムのインスタンスに復元する場合)、wbadmin – authsysvol を使用する方が簡単です。 ただし、ベアメタル復元を実行する必要がある場合は、 **Msdfsr-Options**属性を編集する必要があります。  
 

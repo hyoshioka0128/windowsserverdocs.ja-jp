@@ -1,7 +1,6 @@
 ---
 ms.assetid: 6785de86-4f7d-4ed1-9055-8de0871d59b5
 title: 付録 M-ドキュメントリンクと推奨資料
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 120ea3e754598217cc6108e84ba3839b13599fd2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f1c13f0a7054f236f1ba35201ad9ad62c978d08f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71368939"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80823295"
 ---
 # <a name="appendix-m-document-links-and-recommended-reading"></a>付録 M: ドキュメントのリンクと推奨資料
 
@@ -28,7 +27,7 @@ ms.locfileid: "71368939"
   
 |||  
 |-|-|  
-|**Links**|**ハイパーリンク**|  
+|**リンク**|**ハイパーリンク**|  
 |[セキュリティ管理に関する10の不変法](https://technet.microsoft.com/library/cc722488.aspx)|[https://technet.microsoft.com/library/cc722488.aspx](https://technet.microsoft.com/library/cc722488.aspx)|  
 |[Microsoft セキュリティコンプライアンスマネージャー](https://technet.microsoft.com/library/cc677002.aspx)|[https://technet.microsoft.com/library/cc677002.aspx](https://technet.microsoft.com/library/cc677002.aspx)|  
 |[Gartner Symposium ITXPO](http://www.gartner.com/technology/symposium/orlando/)|[http://www.gartner.com/technology/symposium/orlando/](http://www.gartner.com/technology/symposium/orlando/)|  
@@ -48,22 +47,22 @@ ms.locfileid: "71368939"
 |[既定では、管理者アカウントは無効になっています](https://technet.microsoft.com/library/cc753450.aspx)|[https://technet.microsoft.com/library/cc753450.aspx](https://technet.microsoft.com/library/cc753450.aspx)|  
 |[管理者アカウントのセキュリティ計画ガイド](https://technet.microsoft.com/library/cc162797.aspx)|[https://technet.microsoft.com/library/cc162797.aspx](https://technet.microsoft.com/library/cc162797.aspx)|  
 |[Microsoft Windows セキュリティリソースキット](https://www.microsoft.com/learning/en/us/book.aspx?ID=6815&locale=en-us)|[https://www.microsoft.com/learning/en/us/book.aspx?ID=6815&locale=en-us](https://www.microsoft.com/learning/en/us/book.aspx?ID=6815&locale=en-us)|  
-|[Windows Server 2008 R2 の AD DS の認証メカニズムの保証ステップバイステップガイド](https://technet.microsoft.com/library/dd378897(WS.10).aspx)|[https://technet.microsoft.com/library/dd378897(WS.10).aspx](https://technet.microsoft.com/library/dd378897(WS.10).aspx)|  
+|[Windows Server 2008 R2 での AD DS 用の認証メカニズム保証の手順ガイド](https://technet.microsoft.com/library/dd378897(WS.10).aspx)|[https://technet.microsoft.com/library/dd378897(WS.10).aspx](https://technet.microsoft.com/library/dd378897(WS.10).aspx)|  
 |[Windows Server Update Services](https://technet.microsoft.com/windowsserver/bb332157)|[https://technet.microsoft.com/windowsserver/bb332157](https://technet.microsoft.com/windowsserver/bb332157)|  
 |[個人用仮想デスクトップ](https://technet.microsoft.com/library/dd759174.aspx)|[https://technet.microsoft.com/library/dd759174.aspx](https://technet.microsoft.com/library/dd759174.aspx)|  
 |[読み取り専用ドメインコントローラーの計画と展開ガイド](https://go.microsoft.com/fwlink/?LinkID=135993)|[https://technet.microsoft.com/library/cc771744(WS.10).aspx](https://technet.microsoft.com/library/cc771744(WS.10).aspx)|  
 |[Hyper-v でのドメインコントローラーの実行](https://technet.microsoft.com/library/dd363553(v=ws.10).aspx)|[https://technet.microsoft.com/library/dd363553(v=ws.10).aspx](https://technet.microsoft.com/library/dd363553(v=ws.10).aspx)|  
-|[Hyper-v セキュリティガイド](https://www.microsoft.com/download/details.aspx?id=16650)|[https://www.microsoft.com/download/details.aspx?id=16650](https://www.microsoft.com/en-us/download/details.aspx?id=16650)|  
-|[ディレクトリサービスチームに質問する](http://blogs.technet.com/b/askds/archive/2011/09/12/managing-rid-pool-depletion.aspx)|[http://blogs.technet.com/b/askds/archive/2011/09/12/managing-rid-pool-depletion.aspx](http://blogs.technet.com/b/askds/archive/2011/09/12/managing-rid-pool-depletion.aspx)|  
+|[Hyper-v セキュリティガイド](https://www.microsoft.com/download/details.aspx?id=16650)|[https://www.microsoft.com/download/details.aspx?id=16650](https://www.microsoft.com/download/details.aspx?id=16650)|  
+|[ディレクトリサービスチームに質問する](https://blogs.technet.com/b/askds/archive/2011/09/12/managing-rid-pool-depletion.aspx)|[https://blogs.technet.com/b/askds/archive/2011/09/12/managing-rid-pool-depletion.aspx](https://blogs.technet.com/b/askds/archive/2011/09/12/managing-rid-pool-depletion.aspx)|  
 |[ドメインと信頼関係に対してファイアウォールを構成する方法](https://support.microsoft.com/kb/179442)|[https://support.microsoft.com/kb/179442](https://support.microsoft.com/kb/179442)|  
 |[2009 Verizon データ侵害レポート](http://www.verizonbusiness.com/resources/security/reports/2009_databreach_rp.pdf)|[http://www.verizonbusiness.com/resources/security/reports/2009_databreach_rp.pdf](http://www.verizonbusiness.com/resources/security/reports/2009_databreach_rp.pdf)|  
 |[2012 Verizon データ侵害レポート](http://www.verizonbusiness.com/resources/reports/rp_data-breach-investigations-report-2012_en_xg.pdf)|[http://www.verizonbusiness.com/resources/reports/rp_data-breach-investigations-report-2012_en_xg.pdf](http://www.verizonbusiness.com/resources/reports/rp_data-breach-investigations-report-2012_en_xg.pdf)|  
-|[Windows 2008 での監査の変更の概要](http://blogs.technet.com/b/askds/archive/2007/10/19/introducing-auditing-changes-in-windows-2008.aspx)|[http://blogs.technet.com/b/askds/archive/2007/10/19/introducing-auditing-changes-in-windows-2008.aspx](http://blogs.technet.com/b/askds/archive/2007/10/19/introducing-auditing-changes-in-windows-2008.aspx)|  
-|[Vista および2008の優れた監査手法](http://blogs.technet.com/b/askds/archive/2007/11/16/cool-auditing-tricks-in-vista-and-2008.aspx)|[http://blogs.technet.com/b/askds/archive/2007/11/16/cool-auditing-tricks-in-vista-and-2008.aspx](http://blogs.technet.com/b/askds/archive/2007/11/16/cool-auditing-tricks-in-vista-and-2008.aspx)|  
-|[グローバルオブジェクトアクセスの監査はマジック](http://blogs.technet.com/b/askds/archive/2011/03/10/global-object-access-auditing-is-magic.aspx)|[http://blogs.technet.com/b/askds/archive/2011/03/10/global-object-access-auditing-is-magic.aspx](http://blogs.technet.com/b/askds/archive/2011/03/10/global-object-access-auditing-is-magic.aspx)|  
-|[Windows Server 2008 および Windows Vista での監査のためのワンストップショップ](http://blogs.technet.com/b/askds/archive/2008/03/27/one-stop-shop-for-auditing-in-windows-server-2008-and-windows-vista.aspx)|[http://blogs.technet.com/b/askds/archive/2008/03/27/one-stop-shop-for-auditing-in-windows-server-2008-and-windows-vista.aspx](http://blogs.technet.com/b/askds/archive/2008/03/27/one-stop-shop-for-auditing-in-windows-server-2008-and-windows-vista.aspx)|  
+|[Windows 2008 での監査の変更の概要](https://blogs.technet.com/b/askds/archive/2007/10/19/introducing-auditing-changes-in-windows-2008.aspx)|[https://blogs.technet.com/b/askds/archive/2007/10/19/introducing-auditing-changes-in-windows-2008.aspx](https://blogs.technet.com/b/askds/archive/2007/10/19/introducing-auditing-changes-in-windows-2008.aspx)|  
+|[Vista および2008の優れた監査手法](https://blogs.technet.com/b/askds/archive/2007/11/16/cool-auditing-tricks-in-vista-and-2008.aspx)|[https://blogs.technet.com/b/askds/archive/2007/11/16/cool-auditing-tricks-in-vista-and-2008.aspx](https://blogs.technet.com/b/askds/archive/2007/11/16/cool-auditing-tricks-in-vista-and-2008.aspx)|  
+|[グローバルオブジェクトアクセスの監査はマジック](https://blogs.technet.com/b/askds/archive/2011/03/10/global-object-access-auditing-is-magic.aspx)|[https://blogs.technet.com/b/askds/archive/2011/03/10/global-object-access-auditing-is-magic.aspx](https://blogs.technet.com/b/askds/archive/2011/03/10/global-object-access-auditing-is-magic.aspx)|  
+|[Windows Server 2008 および Windows Vista での監査のためのワンストップショップ](https://blogs.technet.com/b/askds/archive/2008/03/27/one-stop-shop-for-auditing-in-windows-server-2008-and-windows-vista.aspx)|[https://blogs.technet.com/b/askds/archive/2008/03/27/one-stop-shop-for-auditing-in-windows-server-2008-and-windows-vista.aspx](https://blogs.technet.com/b/askds/archive/2008/03/27/one-stop-shop-for-auditing-in-windows-server-2008-and-windows-vista.aspx)|  
 |[AD DS 監査のステップバイステップガイド](https://technet.microsoft.com/library/a9c25483-89e2-4202-881c-ea8e02b4b2a5.aspx)|[https://technet.microsoft.com/library/a9c25483-89e2-4202-881c-ea8e02b4b2a5.aspx](https://technet.microsoft.com/library/a9c25483-89e2-4202-881c-ea8e02b4b2a5.aspx)|  
-|[Windows 7 および 2008 R2 で効果的な監査ポリシーを取得する](http://blogs.technet.com/b/askds/archive/2011/03/11/getting-the-effective-audit-policy-in-windows-7-and-2008-r2.aspx)|[http://www.verizonbusiness.com/resources/reports/rp_data-breach-investigations-report-2012_en_xg.pdf](http://www.verizonbusiness.com/resources/reports/rp_data-breach-investigations-report-2012_en_xg.pdf)|  
+|[Windows 7 および 2008 R2 で効果的な監査ポリシーを取得する](https://blogs.technet.com/b/askds/archive/2011/03/11/getting-the-effective-audit-policy-in-windows-7-and-2008-r2.aspx)|[http://www.verizonbusiness.com/resources/reports/rp_data-breach-investigations-report-2012_en_xg.pdf](http://www.verizonbusiness.com/resources/reports/rp_data-breach-investigations-report-2012_en_xg.pdf)|  
 |[サンプルスクリプト](https://support.microsoft.com/kb/921469)|[http://www.verizonbusiness.com/resources/reports/rp_data-breach-investigations-report-2012_en_xg.pdf](http://www.verizonbusiness.com/resources/reports/rp_data-breach-investigations-report-2012_en_xg.pdf)|  
 |[監査オプションの種類](https://msdn.microsoft.com/library/dd973862(prot.20).aspx)|[http://www.verizonbusiness.com/resources/reports/rp_data-breach-investigations-report-2012_en_xg.pdf](http://www.verizonbusiness.com/resources/reports/rp_data-breach-investigations-report-2012_en_xg.pdf)|  
 |[Windows 7 および Windows Server 2008 R2 での高度なセキュリティ監査](https://social.technet.microsoft.com/wiki/contents/articles/advanced-security-auditing-in-windows-7-and-windows-server-2008-r2.aspx)|[https://social.technet.microsoft.com/wiki/contents/articles/advanced-security-auditing-in-windows-7-and-windows-server-2008-r2.aspx](https://social.technet.microsoft.com/wiki/contents/articles/advanced-security-auditing-in-windows-7-and-windows-server-2008-r2.aspx)|  
@@ -71,16 +70,16 @@ ms.locfileid: "71368939"
 |[グループポリシーを使用して、windows Server 2008 ドメイン、Windows Server 2003 ドメイン、または Windows 2000 サーバードメイン内の windows Vista ベースおよび Windows Server 2008 ベースのコンピューターについて、詳細なセキュリティ監査設定を構成する方法](https://support.microsoft.com/kb/921469)|[https://support.microsoft.com/kb/921469](https://support.microsoft.com/kb/921469)|  
 |[高度なセキュリティ監査ポリシーのステップバイステップガイド](https://technet.microsoft.com/library/dd408940(WS.10).aspx)|[https://technet.microsoft.com/library/dd408940(WS.10).aspx](https://technet.microsoft.com/library/dd408940(WS.10).aspx)|  
 |[脅威と対策ガイド](https://technet.microsoft.com/library/hh125921(v=ws.10).aspx)|[https://technet.microsoft.com/library/hh125921(v=ws.10).aspx](https://technet.microsoft.com/library/hh125921(v=ws.10).aspx)|  
-|[MaxTokenSize と Kerberos トークンの膨張](http://blogs.technet.com/b/shanecothran/archive/2010/07/16/maxtokensize-and-kerberos-token-bloat.aspx)|[http://blogs.technet.com/b/shanecothran/archive/2010/07/16/maxtokensize-and-kerberos-token-bloat.aspx](http://blogs.technet.com/b/shanecothran/archive/2010/07/16/maxtokensize-and-kerberos-token-bloat.aspx)|  
+|[MaxTokenSize と Kerberos トークンの膨張](https://blogs.technet.com/b/shanecothran/archive/2010/07/16/maxtokensize-and-kerberos-token-bloat.aspx)|[https://blogs.technet.com/b/shanecothran/archive/2010/07/16/maxtokensize-and-kerberos-token-bloat.aspx](https://blogs.technet.com/b/shanecothran/archive/2010/07/16/maxtokensize-and-kerberos-token-bloat.aspx)|  
 |[認証メカニズムの保証](https://technet.microsoft.com/library/dd391847(v=WS.10).aspx)|[https://technet.microsoft.com/library/dd391847(v=WS.10).aspx](https://technet.microsoft.com/library/dd391847(v=WS.10).aspx)|  
 |[Microsoft データ分類ツールキット](https://technet.microsoft.com/library/hh204743.aspx)|[https://technet.microsoft.com/library/hh204743.aspx](https://technet.microsoft.com/library/hh204743.aspx)|  
-|[動的 Access Control](http://blogs.technet.com/b/windowsserver/archive/2012/05/22/introduction-to-windows-server-2012-dynamic-access-control.aspx)|[http://blogs.technet.com/b/windowsserver/archive/2012/05/22/introduction-to-windows-server-2012-dynamic-access-control.aspx](http://blogs.technet.com/b/windowsserver/archive/2012/05/22/introduction-to-windows-server-2012-dynamic-access-control.aspx)|  
+|[動的 Access Control](https://blogs.technet.com/b/windowsserver/archive/2012/05/22/introduction-to-windows-server-2012-dynamic-access-control.aspx)|[https://blogs.technet.com/b/windowsserver/archive/2012/05/22/introduction-to-windows-server-2012-dynamic-access-control.aspx](https://blogs.technet.com/b/windowsserver/archive/2012/05/22/introduction-to-windows-server-2012-dynamic-access-control.aspx)|  
 |[絶対ソフトウェア](http://www.absolute.com/en/landing/Google/absolute-software-google/computrace-and-absolute-manage?gclid=CPPh5P6v3rMCFQtxQgodFEQAnA)|[http://www.absolute.com/en/landing/Google/absolute-software-google/computrace-and-absolute-manage?gclid=CPPh5P6v3rMCFQtxQgodFEQAnA](http://www.absolute.com/en/landing/Google/absolute-software-google/computrace-and-absolute-manage?gclid=CPPh5P6v3rMCFQtxQgodFEQAnA)|  
 |[絶対管理](http://www.absolute.com/landing/Google/absolute-manage-google/it-asset-management-software)|[http://www.absolute.com/landing/Google/absolute-manage-google/it-asset-management-software](http://www.absolute.com/landing/Google/absolute-manage-google/it-asset-management-software)|  
 |[MDM の絶対管理](http://www.absolute.com/landing/Google/MDM-google/mobile-device-management)|[http://www.absolute.com/landing/Google/MDM-google/mobile-device-management](http://www.absolute.com/landing/Google/MDM-google/mobile-device-management)|  
 |[このように](http://www.solarwinds.com/eminentware-products.aspx)|[http://www.solarwinds.com/eminentware-products.aspx](http://www.solarwinds.com/eminentware-products.aspx)|  
 |[EminentWare WSUS 拡張パック](http://solarwinds-marketing.s3.amazonaws.com/solarwinds/Datasheets/EminentWare-WSUS-Extension-Pack-005-Datasheet2.pdf)|[http://solarwinds-marketing.s3.amazonaws.com/solarwinds/Datasheets/EminentWare-WSUS-Extension-Pack-005-Datasheet2.pdf](http://solarwinds-marketing.s3.amazonaws.com/solarwinds/Datasheets/EminentWare-WSUS-Extension-Pack-005-Datasheet2.pdf)|  
-|[EminentWare System Center Configuration Manager 拡張パック](http://solarwinds-marketing.s3.amazonaws.com/solarwinds/Datasheets/EminentWare-Extension-Pack-for-CM-Datasheet-006-Revised.pdf)|[http://solarwinds-marketing.s3.amazonaws.com/solarwinds/Datasheets/EminentWare-Extension-Pack-for-CM-Datasheet-006-Revised.pdf](http://solarwinds-marketing.s3.amazonaws.com/solarwinds/Datasheets/EminentWare-Extension-Pack-for-CM-Datasheet-006-Revised.pdf)|  
+|[EminentWare Configuration Manager 拡張パック](http://solarwinds-marketing.s3.amazonaws.com/solarwinds/Datasheets/EminentWare-Extension-Pack-for-CM-Datasheet-006-Revised.pdf)|[http://solarwinds-marketing.s3.amazonaws.com/solarwinds/Datasheets/EminentWare-Extension-Pack-for-CM-Datasheet-006-Revised.pdf](http://solarwinds-marketing.s3.amazonaws.com/solarwinds/Datasheets/EminentWare-Extension-Pack-for-CM-Datasheet-006-Revised.pdf)|  
 |[GFI ソフトウェア](http://www.gfi.com/?adv=952&loc=58&gclid=CLq9y5603rMCFal7QgodMFkAyA)|[http://www.gfi.com/?adv=952&loc=58&gclid=CLq9y5603rMCFal7QgodMFkAyA](http://www.gfi.com/?adv=952&loc=58&gclid=CLq9y5603rMCFal7QgodMFkAyA)|  
 |[GFI LanGuard](http://www.gfi.com/network-security-vulnerability-scanner/?adv=952&loc=60&gclid=CP2t-7i03rMCFQuCQgodNkAA7g)|[http://www.gfi.com/network-security-vulnerability-scanner/?adv=952&loc=60&gclid=CP2t-7i03rMCFQuCQgodNkAA7g](http://www.gfi.com/network-security-vulnerability-scanner/?adv=952&loc=60&gclid=CP2t-7i03rMCFQuCQgodNkAA7g)|  
 |[Secunia](http://secunia.com/)|[http://secunia.com/](http://secunia.com/)|  
@@ -141,7 +140,7 @@ ms.locfileid: "71368939"
 |[Microsoft サポートの記事251343](https://support.microsoft.com/kb/251343)|[https://support.microsoft.com/kb/251343](https://support.microsoft.com/kb/251343)|  
 |[rootDSE の変更操作](https://msdn.microsoft.com/library/cc223297.aspx)|[https://msdn.microsoft.com/library/cc223297.aspx](https://msdn.microsoft.com/library/cc223297.aspx)|  
 |[AD DS のバックアップと回復の手順ガイド](https://technet.microsoft.com/library/cc771290(v=ws.10).aspx)|[https://technet.microsoft.com/library/cc771290(v=ws.10).aspx](https://technet.microsoft.com/library/cc771290(v=ws.10).aspx)|  
-|[Kerberos でサポートされる暗号化の種類の Windows 構成](http://blogs.msdn.com/b/openspecification/archive/2011/05/31/windows-configurations-for-kerberos-supported-encryption-type.aspx)|[http://blogs.msdn.com/b/openspecification/archive/2011/05/31/windows-configurations-for-kerberos-supported-encryption-type.aspx](http://blogs.msdn.com/b/openspecification/archive/2011/05/31/windows-configurations-for-kerberos-supported-encryption-type.aspx)|  
+|[Kerberos でサポートされる暗号化の種類の Windows 構成](https://blogs.msdn.com/b/openspecification/archive/2011/05/31/windows-configurations-for-kerberos-supported-encryption-type.aspx)|[https://blogs.msdn.com/b/openspecification/archive/2011/05/31/windows-configurations-for-kerberos-supported-encryption-type.aspx](https://blogs.msdn.com/b/openspecification/archive/2011/05/31/windows-configurations-for-kerberos-supported-encryption-type.aspx)|  
 |[UAC のプロセスと相互作用](https://technet.microsoft.com/library/dd835561(v=WS.10).aspx)|[https://technet.microsoft.com/library/dd835561(v=WS.10).aspx#1](https://technet.microsoft.com/library/dd835561(v=WS.10).aspx)|  
 |[EmpowerID](http://www.empowerid.com/products/authorizationservices)|[http://www.empowerid.com/products/authorizationservices](http://www.empowerid.com/products/authorizationservices)|  
 |[ロールベースのアクセス制御 (RBAC)](http://pic.dhe.ibm.com/infocenter/aix/v7r1/index.jsp?topic=%2Fcom.ibm.aix.security%2Fdoc%2Fsecurity%2Fdomain_rbac.htm)|[http://pic.dhe.ibm.com/infocenter/aix/v7r1/index.jsp?topic=%2Fcom.ibm.aix.security%2Fdoc%2Fsecurity%2Fdomain_rbac.htm](http://pic.dhe.ibm.com/infocenter/aix/v7r1/index.jsp?topic=%2Fcom.ibm.aix.security%2Fdoc%2Fsecurity%2Fdomain_rbac.htm)|  
@@ -163,11 +162,11 @@ ms.locfileid: "71368939"
 |[Windows のユーザーアカウントに最小特権の原則を適用する](https://www.microsoft.com/download/details.aspx?id=4868)|[https://www.microsoft.com/download/details.aspx?id=4868](https://www.microsoft.com/download/details.aspx?id=4868)|  
 |[管理者アカウントのセキュリティ計画ガイド](https://www.microsoft.com/download/details.aspx?id=19406)|[https://www.microsoft.com/download/details.aspx?id=19406](https://www.microsoft.com/download/details.aspx?id=19406)|  
 |Windows Server 2003 の[Active Directory インストールをセキュリティで保護するためのベストプラクティスガイド](https://www.microsoft.com/download/details.aspx?id=16755)|[https://www.microsoft.com/download/details.aspx?id=16755](https://www.microsoft.com/download/details.aspx?id=16755)|  
-|Windows Server 2003 の[Active Directory 管理の委任に関するベストプラクティス](https://www.microsoft.com/download/details.aspx?id=21678)|[https://www.microsoft.com/en-us/download/details.aspx?id=21678](https://www.microsoft.com/download/details.aspx?id=21678)|  
+|Windows Server 2003 の[Active Directory 管理の委任に関するベストプラクティス](https://www.microsoft.com/download/details.aspx?id=21678)|[https://www.microsoft.com/download/details.aspx?id=21678](https://www.microsoft.com/download/details.aspx?id=21678)|  
 |[Microsoft サポートのライフサイクル](https://support.microsoft.com/lifecycle/)|[https://support.microsoft.com/common/international.aspx?RDPATH=%2flifecycle%2fdefault.aspx](https://support.microsoft.com/common/international.aspx?RDPATH=%2flifecycle%2fdefault.aspx)|  
 |[Active Directory 技術仕様](https://msdn.microsoft.com/library/cc223122(v=prot.20).aspx)|[https://msdn.microsoft.com/library/cc223122(v=prot.20).aspx](https://msdn.microsoft.com/library/cc223122(v=prot.20).aspx)|  
 |[Nonadministrator ユーザーが委任されている場合に、Windows Server 2003 ベースまたは Windows Server 2008 ベースのドメインコントローラーにコンピューターを参加させると、エラーメッセージ "アクセスが拒否されました"](https://support.microsoft.com/kb/932455)|[https://support.microsoft.com/kb/932455](https://support.microsoft.com/kb/932455)| 
-|[Windows Server 2008 R2 の AD DS の認証メカニズムの保証ステップバイステップガイド](https://technet.microsoft.com/library/dd378897(WS.10).aspx)|[https://technet.microsoft.com/library/dd378897(WS.10).aspx](https://technet.microsoft.com/library/dd378897(WS.10).aspx)|  
+|[Windows Server 2008 R2 での AD DS 用の認証メカニズム保証の手順ガイド](https://technet.microsoft.com/library/dd378897(WS.10).aspx)|[https://technet.microsoft.com/library/dd378897(WS.10).aspx](https://technet.microsoft.com/library/dd378897(WS.10).aspx)|  
 |[厳密な KDC 検証](https://www.microsoft.com/download/details.aspx?id=6382)|[https://www.microsoft.com/download/details.aspx?id=6382](https://www.microsoft.com/download/details.aspx?id=6382)|  
   
 ### <a name="recommended-reading"></a>推奨資料  
@@ -198,15 +197,15 @@ ms.locfileid: "71368939"
 #### <a name="copyright-information"></a>著作権情報  
 このドキュメントに記載された情報は、各項目に関する発行日現在の Microsoft Corporation の見解を表明するものです。 Microsoft は絶えず変化する市場に対応しなければならないため、ここに記載した情報に対していかなる責務を負うものではなく、発行日以降に提示された情報の正確性を保障するものではありません。  
   
-このホワイトペーパーは、情報提供のみを目的としています。 このドキュメントでは、Microsoft が明示または黙示を保証するものではありません。  
+このホワイト ペーパーは、情報提供のみを目的としています。 このドキュメントでは、Microsoft が明示または黙示を保証するものではありません。  
   
-お客様ご自身の責任において、適用されるすべての著作権関連法規に従ったご使用を願います。 著作権に関する権利を制限することなく、このドキュメントのいかなる部分も、お客様のシステムに対して再現、保存、または導入されることはありません。また、任意の形式で、または任意の方法 (電子、機械的、複写、記録、またはその他) で送信することもできません。Microsoft Corporation の書面による許可はありません。  
+お客様ご自身の責任において、適用されるすべての著作権関連法規に従ったご使用を願います。 このドキュメントのいかなる部分も、米国 Microsoft Corporation の書面による許諾を受けることなく、その目的を問わず、どのような形態であっても、複製または譲渡することは禁じられています。ここでいう形態とは、複写や記録など、電子的な、または物理的なすべての手段を含みます。ただしこれは、著作権法上のお客様の権利を制限するものではありません。  
   
-マイクロソフトは、このドキュメントに記載されている内容に関し、特許権、特許出願、商標権、著作権、またはその他の知的財産権を有する場合があります。 別途マイクロソフトのライセンス契約上に明示の規定のない限り、このドキュメントはこれらの特許、商標、著作権、またはその他の無体財産権に関する権利をお客様に許諾するものではありません。  
+マイクロソフトは、このドキュメントに記載されている内容に関し、特許、特許申請、商標、著作権、またはその他の無体財産権を有する場合があります。 別途マイクロソフトのライセンス契約上に明示の規定のない限り、このドキュメントはこれらの特許、商標、著作権、またはその他の無体財産権に関する権利をお客様に許諾するものではありません。  
   
-Microsoft、Active Directory、BitLocker、Hyper-v、Internet Explorer、Windows Vista、Windows、および Windows Server は、Microsoft Corporation の米国やその他の国における登録商標または商標です。 その他のすべての商標は、該当する各社が所有しています。  
+Microsoft、Active Directory、BitLocker、Hyper-v、Internet Explorer、Windows Vista、Windows、および Windows Server は、Microsoft Corporation の米国やその他の国における登録商標または商標です。 その他の商標類はすべてその権利者に帰属します。  
   
-例として記載されている会社、組織、製品、ドメイン名、電子メールアドレス、ロゴ、人名、場所、およびイベントは、架空のものです。 実在する企業、団体、製品、ドメイン名、電子メール アドレス、ロゴ、人物、場所、出来事などとは一切関係ありません。  
+例として登場する企業、組織、製品、ドメイン名、電子メール アドレス、ロゴ、人物、場所、およびイベントはすべて架空のものです。 実在する名称とは一切関係ありません。  
   
 ? 2013 Microsoft Corporation. All rights reserved.  
   

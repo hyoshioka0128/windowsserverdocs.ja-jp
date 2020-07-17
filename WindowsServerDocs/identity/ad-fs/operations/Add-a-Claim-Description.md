@@ -1,7 +1,6 @@
 ---
 ms.assetid: 7d230527-f4fe-4572-8838-0b354ee0b06b
 title: 要求記述を追加する
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: ff50ac8d41a5bbde282b1d5b93c85610f841b5ab
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9c5293dc6070c9483054ce1dd827a20ec377573b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407786"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859715"
 ---
 # <a name="add-a-claim-description"></a>要求記述を追加する
 
@@ -25,14 +24,14 @@ ms.locfileid: "71407786"
 
 要求を追加するには、次の手順を実行します。
 
-この手順を実行するには、ローカル コンピューターの **Administrators**グループのメンバーシップか、それと同等のメンバーシップが最低限必要です。  適切なアカウントの使用方法の詳細を確認し、グループ メンバーシップ [ローカルおよびドメインの既定のグループ](https://go.microsoft.com/fwlink/?LinkId=83477)します。
+この手順を完了するには、ローカル コンピューター上の **Administrators** または同等のメンバーシップが最低限必要です。  適切なアカウントの使用方法の詳細を確認し、グループ メンバーシップ [ローカルおよびドメインの既定のグループ](https://go.microsoft.com/fwlink/?LinkId=83477)します。
 
 ## <a name="to-add-a-claim-description"></a>要求の説明を追加するには
 
 1. サーバーマネージャーで、 **[ツール]** をクリックし、 **[AD FS の管理]** を選択します。 
 
 2. **[サービス]** を展開し、右側の **[要求の説明の追加]** をクリックします。
-   ![要求の説明の追加](media/Add-a-Claim-Description/claimdesc1.png)
+   要求の説明を追加 ![](media/Add-a-Claim-Description/claimdesc1.png)
 
 3. 要求の説明の追加 ダイアログボックスの **表示名** に、この要求のグループまたはロールを識別する一意の名前を入力します。
 
@@ -50,10 +49,10 @@ ms.locfileid: "71407786"
 - To publish this claim to make partners aware that this server can issue this claim, click **Publish this claim in federation metadata as a claim type that this Federation Service can send**.
 ~~~
 
-8. **[OK]** をクリックします。
+8. **[OK]** をクリックすると、
 
 ![要求の説明の追加](media/Add-a-Claim-Description/claimdesc2.png)
 
 
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [AD FS の運用](../../ad-fs/AD-FS-2016-Operations.md) 

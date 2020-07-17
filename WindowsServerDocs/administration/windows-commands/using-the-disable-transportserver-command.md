@@ -1,48 +1,45 @@
 ---
-title: 無効にする TransportServer コマンドを使用してください。
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+title: 無効にする-TransportServer
+description: トランスポートサーバーのすべてのサービスを無効にする、無効にする TransportServer のリファレンス記事です。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a009706b-8e89-486b-8e3d-512cd9f4de74
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7531f8a638ac8fabdad08cc0134dbc63873505de
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e9d25159cb81408b5a8085fb830eec4479d953f4
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71363462"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933930"
 ---
-# <a name="using-the-disable-transportserver-command"></a>無効にする TransportServer コマンドを使用してください。
+# <a name="disable-transportserver"></a>無効にする-TransportServer
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 トランスポート サーバーのすべてのサービスを無効にします。
+
 ## <a name="syntax"></a>構文
 ```
 wdsutil [Options] /Disable-TransportServer [/Server:<Server name>]
 ```
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 |パラメーター|説明|
 |-------|--------|
 |[/Server:<Server name>]|無効にするトランスポート サーバーの名前を指定します。 NetBIOS 名または完全修飾ドメイン名 (FQDN) のいずれかを指定できます。 トランスポート サーバーの名前が指定されていない場合は、ローカルのサーバーが使用されます。|
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a>例
 サーバーを無効にするには、次のように入力します。
 ```
 wdsutil /Disable-TransportServer
 wdsutil /verbose /Disable-TransportServer /Server:MyWDSServer
 ```
-#### <a name="additional-references"></a>その他の参照情報
-[コマンドライン構文のポイント](command-line-syntax-key.md)
-[TransportServer 有効にするコマンドを使用して](using-the-enable-transportserver-command.md)
-[get TransportServer コマンドを使用して](using-the-get-transportserver-command.md)
-[サブコマンド: Set-transportserver](subcommand-set-transportserver.md)
-[サブコマンド: 開始 TransportServer](subcommand-start-transportserver.md)
+## <a name="additional-references"></a>その他の参照情報
+- [コマンドライン構文のキー](command-line-syntax-key.md) 
+[Enable TransportServer コマンド](using-the-enable-transportserver-command.md) 
+ の使用[Get TransportServer コマンド](using-the-get-transportserver-command.md) 
+ を使用する[サブコマンド: Set TransportServer](subcommand-set-transportserver.md) 
+[サブコマンド: 開始 TransportServer](subcommand-start-transportserver.md) 
 [サブコマンド: 停止 TransportServer](subcommand-stop-transportserver.md)

@@ -11,15 +11,15 @@ ms.author: jgerend
 manager: dougkim
 ms.localizationpriority: medium
 ms.openlocfilehash: 140f67a9dab5cf1f10cdb0c5c51a031a0dfb9dd3
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66443551"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "79323644"
 ---
 # <a name="windows-server-installation-and-upgrade"></a>Windows Server のインストールとアップグレード
 
->適用対象:Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
+>適用先:Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
 
 Windows Server 2019 をお求めですか? [Windows Server 2019 のインストール、アップグレード、または移行](../get-started-19/install-upgrade-migrate-19.md)に関する記事を参照してください。
 
@@ -44,7 +44,7 @@ Windows Server の移行ドキュメントは、Windows Server を実行する�
 ## <a name="license-conversion"></a>ライセンス変換
 一部のオペレーティング システム リリースでは、簡単なコマンドと適切なライセンス キーにより、1 回の手順で特定のリリース エディションを同じリリースの別のエディションに変換できます。 これを**ライセンス変換**と呼びます。 たとえば、サーバーで Windows Server 2016 Standard を実行している場合、Windows Server 2016 Datacenter に変換できます。 一部の Windows Server のリリースでは、OEM 版、ボリューム ライセンス版、製品版の間を同じコマンドと適切なキーによって自由に変換できます。
 
-## <a name="upgrade"></a>アップグレード
+## <a name="upgrade"></a>アップグレード パッケージ、アップグレード
 同じハードウェアを使い、サーバーをフラット化せずに、セットアップされているすべてのサーバーの役割を保持する場合は、**アップグレード**が適切です。これには多くの方法があります。 通常のアップグレードでは、設定、サーバーの役割、データを保持したまま、古いオペレーティング システムから新しいバージョンへと移行します。 たとえば、サーバーが Windows Server 2012 R2 を実行している場合、Windows Server 2016 にアップグレードできます。 ただし、すべての古いオペレーティング システムが、すべての新しいオペレーティング システムに移行できるわけではありません。
  
 >[!NOTE]
@@ -64,7 +64,7 @@ Windows Server 2016 Technical Preview で使用できる複数のインストー
 アップグレードに関する重要な注意事項と制限事項、Windows Server 2016 のエディション間のライセンス変換、評価版から製品版への変換などについて詳しくは、「[Windows Server 2016 のアップグレード オプションと変換オプション](https://go.microsoft.com/fwlink/?LinkId=828602)」をご覧ください。
  
 >[!NOTE]
->注:Server Core インストールからデスクトップ搭載サーバー インストールへの切り替え (およびその逆方向の切り替え) を行うアップグレードはサポートされていません。 アップグレードまたは変換する既存のオペレーティング システムが Server Core インストールである場合は、移行後も新しいオペレーティング システムの Server Core インストールとなります。
+>注: Server Core インストールからデスクトップ搭載サーバー インストールへの切り替え (およびその逆方向の切り替え) を行うアップグレードはサポートされていません。 アップグレードまたは変換する既存のオペレーティング システムが Server Core インストールである場合は、移行後も新しいオペレーティング システムの Server Core インストールとなります。
  
 以下のクイック リファレンス表では、以前の Windows Server 製品版の各エディションから Windows Server 2016 製品版の各エディションへのサポートされているアップグレード オプションを示します。
 
@@ -87,7 +87,7 @@ Windows Server 2016 Standard (製品版) は、Windows Server 2016 Datacenter (�
 
 Windows Server 2016 Essentials (製品版) は、Windows Server 2016 Standard (製品版) に変換できます。
 
-Windows Server 2016 Standard の評価版は、Windows Server 2016 Standard (製品版)、Datacenter (製品版) のいずれかに変換できます。
+Windows Server 2016 Standard の評価版を Windows Server 2016 Standard (製品版)、Datacenter (製品版) のいずれかに変換できます。
 
 Windows Server 2016 Datacenter の評価版は、Windows Server 2016 Datacenter (製品版) に変換できます。
  

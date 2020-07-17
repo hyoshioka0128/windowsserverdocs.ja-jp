@@ -1,27 +1,27 @@
 ---
 title: Windows Server 用 SDN の新機能
 description: このトピックでは、Windows Server 1709 のソフトウェア定義ネットワークの新機能について説明します。
-manager: dougkim
+manager: grcusanz
 ms.prod: windows-server
 ms.technology: networking-hv-switch
 ms.topic: get-started-article
 ms.assetid: efad919b-e9e7-4a0c-b373-e68a092f93b5
-ms.author: pashort
-author: shortpatti
+ms.author: anpaul
+author: AnirbanPaul
 ms.date: 10/02/2018
-ms.openlocfilehash: 09fcf8e3faf8d8b7f943255599dd3b273314db23
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5c6e90b590af9292b1749acdbdbc143752a1e30a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405998"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854395"
 ---
 # <a name="whats-new-in-sdn-for-windows-server-2019"></a>Windows Server 2019 の SDN の新機能
 
->適用対象:Windows Server (半期チャネル)
+>適用対象: Windows Server (半期チャネル)
 
 
-|                         **機能**                          |                                                                                                                                                                                         **[説明]**                                                                                                                                                                                         | **新規/更新** |
+|                         **機能**                          |                                                                                                                                                                                         **説明**                                                                                                                                                                                         | **新規/更新** |
 |--------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------|
 | [暗号化されたネットワーク](vnet-encryption/sdn-vnet-encryption.md) | 仮想ネットワーク暗号化を使用すると、"暗号化が有効になっている" とマークされているサブネット内で相互に通信する仮想マシン間で仮想ネットワークトラフィックを暗号化できます。 また、この機能は、仮想サブネットのデータグラム トランスポート層セキュリティ (DTLS) を利用して、パケットを暗号化します。 DTLS は、物理ネットワークへのアクセスを持つユーザーによる盗聴、改ざん、偽造に対する保護を提供します。 |       新規       |
 |    [ファイアウォールの監査](security/sdn-firewall-auditing.md)    |                                                                                            ファイアウォール監査は、Windows Server 2019 の SDN ファイアウォールの新機能です。 SDN ファイアウォールを有効にすると、ログが有効になっている SDN ファイアウォール規則 (Acl) によって処理されるすべてのフローが記録されます。                                                                                            |       新規       |

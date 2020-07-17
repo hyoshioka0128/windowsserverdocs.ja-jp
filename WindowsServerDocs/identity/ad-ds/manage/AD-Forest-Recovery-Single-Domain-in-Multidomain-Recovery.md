@@ -1,6 +1,5 @@
 ---
 title: AD フォレストの回復-マルチドメインフォレスト内の単一ドメインの回復
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,16 +8,16 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: 267541be-2ea7-4af6-ab34-8b5a3fedee2d
 ms.technology: identity-adds
-ms.openlocfilehash: 2582ffacb169b59692c0510469131b58be09d5f3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 13153358f50302de722109bfe101911e3bac4708
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71368933"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80823445"
 ---
 # <a name="ad-forest-recovery---recovering-a-single-domain-in-a-multidomain-forest"></a>AD フォレストの回復-マルチドメインフォレスト内の単一ドメインの回復
 
->適用先:Windows Server 2016、Windows Server 2012、および 2012 R2、Windows Server 2008 および 2008 R2
+>適用対象: Windows Server 2016、Windows Server 2012、および 2012 R2、Windows Server 2008 および 2008 R2
 
 フォレストの完全復旧ではなく、複数のドメインを持つフォレスト内の単一ドメインのみを回復する必要がある場合があります。 このトピックでは、単一ドメインを回復するための考慮事項について説明します。  
   

@@ -7,15 +7,14 @@ ms.sitesec: library
 author: mikeblodge
 ms.author: mikeblodge
 ms.date: 07/12/2018
-ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.localizationpriority: high
-ms.openlocfilehash: cc666c253975396412188896ff223f2c808f098d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3d2c55430a78eaabfe55b764275c6e61fa80368a
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391557"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "80826215"
 ---
 # <a name="upgrade-windows-server-2008-and-windows-server-2008-r2"></a>Windows Server 2008 と Windows Server 2008 R2 のアップグレード
 

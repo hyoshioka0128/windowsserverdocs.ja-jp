@@ -2,20 +2,19 @@
 title: テスト フェールオーバーの実行には、少なくとも毎月フェールオーバーが成功し、フェールオーバー後に予期した仮想マシンのワークロードとして動作することを確認するには
 description: このベストプラクティスアナライザールールのテキストのオンラインバージョン。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: 57a8aa50-e59e-4a4b-8571-1099d5a8eee4
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: c7f7c0e1076358ef417b4d98632bd65257989df3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f99ccfe065015d1731978ba5e7f31c766c343efc
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71393459"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858935"
 ---
 # <a name="test-failovers-should-be-carried-out-at-least-monthly-to-verify-that-failover-will-succeed-and-that-virtual-machine-workloads-will-operate-as-expected-after-failover"></a>テスト フェールオーバーの実行には、少なくとも毎月フェールオーバーが成功し、フェールオーバー後に予期した仮想マシンのワークロードとして動作することを確認するには
 
@@ -27,7 +26,7 @@ ms.locfileid: "71393459"
 |-|-|  
 |**オペレーティング システム**|Windows Server 2016| 
 |**製品/機能**|Hyper-V|  
-|**順**|Warning|  
+|**順**|［警告］|  
 |**カテゴリ**|運用|  
   
 次のセクションでは、斜体は、この問題のためのベスト プラクティス アナライザー ツールで表示される UI テキストを示します。  

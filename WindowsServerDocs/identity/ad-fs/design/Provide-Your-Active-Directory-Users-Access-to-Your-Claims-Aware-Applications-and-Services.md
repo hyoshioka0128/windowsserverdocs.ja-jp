@@ -1,7 +1,6 @@
 ---
 ms.assetid: d254fca3-85a1-424d-ac22-d6687ec3798e
 title: Active Directory ユーザーに要求に対応するアプリケーションとサービスへのアクセスを提供する
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 48436f8e98af965f2bc2b38d296c4a15924e4db1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0cb530eacfa8239f3a2a135397e54becfadb602b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407953"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858575"
 ---
 # <a name="provide-your-active-directory-users-access-to-your-claims-aware-applications-and-services"></a>Active Directory ユーザーに要求に対応するアプリケーションとサービスへのアクセスを提供する
 

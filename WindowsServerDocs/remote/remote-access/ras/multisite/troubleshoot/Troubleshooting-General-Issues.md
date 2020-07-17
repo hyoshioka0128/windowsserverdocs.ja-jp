@@ -2,22 +2,18 @@
 title: 一般的な問題のトラブルシューティング
 description: このトピックは、「Windows Server 2016 のマルチサイト展開に複数のリモートアクセスサーバーを展開する」の一部です。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 354ae5e3-bae1-44f9-afd7-7eaba70f2346
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: a2b8d7decad482ca8756aa4d82baa35abf16f5fe
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: f32cd835f0a959ca8b690674983718e8cbcc6acf
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404449"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858285"
 ---
 # <a name="troubleshooting-general-issues"></a>一般的な問題のトラブルシューティング
 
@@ -43,7 +39,7 @@ DirectAccess は、展開内のいずれかのエントリポイントの GPO �
 > [!NOTE]  
 > このシナリオは、現在のエントリポイントのサーバー GPO が使用できない場合には発生しません。  
   
-`Get-DAEntryPointDC` コマンドレットを使用して、サーバー Gpo を格納 `Get-DAMultiSite` しているすべてのドメインコントローラーの一覧を表示し、`Get-RemoteAccess` と組み合わせて展開内のサーバー Gpo の完全な一覧を取得することができます。 次に、例を示します。  
+`Get-DAEntryPointDC` コマンドレットを使用して、サーバー Gpo を格納 `Get-DAMultiSite` しているすべてのドメインコントローラーの一覧を表示し、`Get-RemoteAccess` と組み合わせて展開内のサーバー Gpo の完全な一覧を取得することができます。 例 :  
   
 ```  
 $ServerGpos = Get-DAEntryPointDC | ForEach-Object {   

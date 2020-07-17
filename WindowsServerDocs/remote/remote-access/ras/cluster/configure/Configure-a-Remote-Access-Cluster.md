@@ -2,23 +2,19 @@
 title: リモート アクセス クラスターを構成する
 description: このトピックは、「Windows Server 2016 のクラスターにリモートアクセスを展開する」の一部です。
 manager: dougkim
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e8df3619-f365-4070-8117-888c88db13eb
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 05/25/2018
-ms.openlocfilehash: 4c80aa5cc42c9c340e2699eed29bedeb9027f6bf
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a700084a2bc9d0135622311d32df8020bd49adb1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404623"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861455"
 ---
 # <a name="configure-a-remote-access-cluster"></a>リモート アクセス クラスターを構成する
 

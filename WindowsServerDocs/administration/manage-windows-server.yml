@@ -1,0 +1,71 @@
+### YamlMime:Landing
+title: Windows Server 管理のドキュメント
+summary: 必要な機能を使用するためのロールを含め、Windows Server を環境に展開した後は、次のステップとしてそれらのサーバを管理します。 Windows Server には、Windows Server 環境の理解、特定のサーバーの管理、パフォーマンスの微調整、そして最終的には数多くの管理タスクの自動化に役立ついくつかのツールが用意されています。
+metadata:
+  title: Windows Server 管理のドキュメント
+  description: Windows Server を管理するためのツール、推奨事項、およびガイダンスについて説明します。
+  ms.topic: landing-page
+  author: lizap
+  ms.author: elizapo
+  ms.date: 06/09/2020
+  ms.openlocfilehash: a115a703071b52e7a27d925578d7703f270b925b
+  ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
+  ms.translationtype: MT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 06/18/2020
+  ms.locfileid: "85070970"
+landingContent:
+- title: Windows Server システムと環境の管理
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Windows Admin Center による UI を使用しないオンプレミス システム、リモート システム、およびシステムの管理
+      url: ../manage/windows-admin-center/overview.md
+    - text: サーバー マネージャーを使用したオンプレミス システムの管理
+      url: server-manager/server-manager.md
+    - text: リモート システムと UI のないシステムの管理には、リモート サーバー管理ツール (RSAT) を使用します。
+      url: ../remote/remote-server-administration-tools.md
+    - text: Windows Server システムの更新プログラムの管理
+      url: windows-server-update-services/get-started/windows-server-update-services-wsus.md
+- title: 環境に関する情報の収集
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: セットアップおよびブート イベント収集
+      url: get-started-with-setup-and-boot-event-collection.md
+    - text: ソフトウェア インベントリ ログ (SIL)
+      url: software-inventory-logging/get-started-with-software-inventory-logging.md
+    - text: ユーザー アクセス ログ (UAL)
+      url: user-access-logging/get-started-with-user-access-logging.md
+- title: Windows Server 環境のパフォーマンスの調整
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: パフォーマンスの調整ガイドライン
+      url: performance-tuning/index.md
+    - text: Microsoft Server Performance Advisor
+      url: server-performance-advisor/microsoft-server-performance-advisor.md
+- title: Windows Server の管理の自動化
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Windows PowerShell
+      url: https://docs.microsoft.com/powershell/scripting/overview
+    - text: Windows のコマンド
+      url: windows-commands/windows-commands.md
+    - text: システム インサイト
+      url: ..\manage\system-insights\overview.md
+- title: オンプレミス、リモート、および仮想サーバーへのアクセス
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: リモート デスクトップ サービス
+      url: ../remote/remote-desktop-services/welcome-to-rds.md
+- title: 以前のバージョンの Windows Server
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Windows の以前のバージョンに関するドキュメント
+      url: https://docs.microsoft.com/previous-versions/windows/
+    - text: 特定の情報を検索する
+      url: https://docs.microsoft.com/search/?search=Windows+Server&dataSource=previousVersions

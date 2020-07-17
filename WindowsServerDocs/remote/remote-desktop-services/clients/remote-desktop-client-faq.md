@@ -1,12 +1,8 @@
 ---
 title: リモート デスクトップ クライアントに関する FAQ
 description: リモート デスクトップ クライアントについてよく寄せられる質問
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 785a18cf-a5d0-4bc2-95e4-9ef53ee8f65a
 author: lizap
@@ -14,16 +10,16 @@ manager: dongill
 ms.author: elizapo
 ms.date: 07/16/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 54ed455955053ebb234864f827759385ecf3d3c5
-ms.sourcegitcommit: 73898afec450fb3c2f429ca373f6b48a74b19390
+ms.openlocfilehash: a91980477b34bb529e3e6f3c6ff66da9ea7f3c84
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71935034"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "80856055"
 ---
 # <a name="frequently-asked-questions-about-the-remote-desktop-clients"></a>リモート デスクトップ クライアントについてよく寄せられる質問
 
->適用対象:Windows 10、Windows 8.1、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2
+>適用先:Windows 10、Windows 8.1、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2
 
 デバイス (Android、Mac、iOS、または Windows) でリモート デスクトップ クライアントを設定し終えると、疑問が生じることがあります。 リモート デスクトップ クライアントに関するよく寄せられる質問に対する回答を示します。 
 
@@ -67,7 +63,7 @@ Windows 10 用には、次の操作を行います。
 特定のユーザーがこの PC にアクセスするためのアクセス許可を与えることができます。これを行うには、 **[Select users that can remotely access this PC]** (この PC にリモートからアクセスできるユーザーを選択する) をクリックします。
 Administrators グループのメンバーにはアクセス権が自動的に与えられます。
 
-Windows 8.1 用内のリモート接続を許可するように表示される指示に従います [リモート デスクトップ接続を使用して別のデスクトップに接続する](https://support.microsoft.com/en-us/help/17463/windows-7-connect-to-another-computer-remote-desktop-connection#1TC=windows-8)です。
+Windows 8.1 用内のリモート接続を許可するように表示される指示に従います [リモート デスクトップ接続を使用して別のデスクトップに接続する](https://support.microsoft.com/help/17463/windows-7-connect-to-another-computer-remote-desktop-connection#1TC=windows-8)です。
 
 
 

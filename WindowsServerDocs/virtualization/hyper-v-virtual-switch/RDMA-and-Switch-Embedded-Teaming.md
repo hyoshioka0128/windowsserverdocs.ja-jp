@@ -6,16 +6,16 @@ ms.prod: windows-server
 ms.technology: networking-hv-switch
 ms.topic: get-started-article
 ms.assetid: 68c35b64-4d24-42be-90c9-184f2b5f19be
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: b39cac842f115a1828c666eec52f17f80971510c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: cfa8076b84a2fc62cec2a709fc15d3dc5be8eb77
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365691"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80307995"
 ---
-# <a name="remote-direct-memory-access-rdma-and-switch-embedded-teaming-set"></a>リモート ダイレクト メモリ アクセス\(RDMA\)スイッチ埋め込みチーミング\(SET\)
+# <a name="remote-direct-memory-access-rdma-and-switch-embedded-teaming-set"></a>リモートダイレクトメモリアクセス \(RDMA\) とスイッチ埋め込みチーミング \(設定\)
 
 >適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
@@ -25,7 +25,7 @@ ms.locfileid: "71365691"
 > このトピックに加えて、次のスイッチ埋め込みチーミングコンテンツを使用できます。 
 > - TechNet ギャラリーのダウンロード: [Windows Server 2016 NIC とスイッチ Embedded チーミングユーザーガイド](https://gallery.technet.microsoft.com/Windows-Server-2016-839cb607?redir=0)
 
-## <a name="bkmk_rdma"></a>Hyper-v を使用した RDMA インターフェイスの構成  
+## <a name="configuring-rdma-interfaces-with-hyper-v"></a><a name="bkmk_rdma"></a>Hyper-v を使用した RDMA インターフェイスの構成  
 
 Windows Server 2012 R2 では、RDMA サービスが HYPER-V 仮想スイッチにバインドされていないことができますを提供するネットワーク アダプターと同じコンピューターに RDMA と HYPER-V の両方を使用します。 これにより、HYPER-V ホストにインストールするために必要な物理ネットワーク アダプターの数が増加します。
 
@@ -94,7 +94,7 @@ RDMA 機能を確認します。
 
     Get-NetAdapterRdma
 
-###  <a name="bkmk_set-rdma"></a>SET と RDMA vNICs を使用して Hyper-v 仮想スイッチを作成する
+###  <a name="create-a-hyper-v-virtual-switch-with-set-and-rdma-vnics"></a><a name="bkmk_set-rdma"></a>SET と RDMA vNICs を使用して Hyper-v 仮想スイッチを作成する
 
 RDMA チーミングをサポートする Hyper-v 仮想スイッチ上の vNICs\) \(Hyper-v ホスト仮想ネットワークアダプターで RDMA クローラーを使用するには、次の例の Windows PowerShell コマンドを使用できます。
 
@@ -144,7 +144,7 @@ RDMA 機能を確認します。機能が0以外であることを確認しま�
 
 - [セットチームの管理](#bkmk_manage)
 
-## <a name="bkmk_over"></a>設定の概要
+## <a name="set-overview"></a><a name="bkmk_over"></a>設定の概要
 
 セットは、Hyper-v を含む環境で使用できる代替 NIC チーミングソリューションであり、Windows Server 2016 の SDN\) stack \(のソフトウェアによって定義されたソフトウェアを含みます。 セットは、HYPER-V 仮想スイッチにいくつかの NIC チーミング機能を統合します。
 
@@ -167,15 +167,15 @@ RDMA 機能を確認します。機能が0以外であることを確認しま�
 
 さらに、一連のアーキテクチャは、チームのインターフェイスを公開しません。 代わりに、HYPER-V 仮想スイッチ ポートを構成する必要があります。
 
-## <a name="bkmk_avail"></a>可用性の設定
+## <a name="set-availability"></a><a name="bkmk_avail"></a>可用性の設定
 
 セットは、Hyper-v ホストと SDN スタックを含む Windows Server 2016 のすべてのバージョンで使用できます。 さらに、ツールがサポートされているクライアントのオペレーティング システムを実行しているリモート コンピューターからセットを管理するのに Windows PowerShell コマンドとリモート デスクトップ接続を使用することができます。
 
-## <a name="bkmk_nics"></a>セットに対してサポートされている Nic
+## <a name="supported-nics-for-set"></a><a name="bkmk_nics"></a>セットに対してサポートされている Nic
 
 Windows Server 2016 の SET チームで、Windows ハードウェアの認定とロゴ \(WHQL\) テストに合格したイーサネット NIC を使用できます。 セットチームのメンバーであるすべてのネットワークアダプターが同一であることが必要です。これは、同じ製造元、同じモデル、同じファームウェア、およびドライバー\)\(である必要があります。 セットは、チーム内の 1 つまたは 8 のネットワーク アダプター間でサポートします。
   
-## <a name="bkmk_compat"></a>Windows Server ネットワークテクノロジとの互換性を設定する
+## <a name="set-compatibility-with-windows-server-networking-technologies"></a><a name="bkmk_compat"></a>Windows Server ネットワークテクノロジとの互換性を設定する
 
 セットは、Windows Server 2016 では、次のネットワーク テクノロジとの互換性です。
 
@@ -210,7 +210,7 @@ SET は、Windows Server 2016 の次のネットワークテクノロジと互�
 
 - 仮想マシンの QoS \(VM-QoS\)。 VM QoS は使用できますが、既定では無効になっています。 SET 環境で VM の QoS を構成すると、QoS の設定によって予期しない結果が発生します。
 
-## <a name="bkmk_modes"></a>モードと設定の設定
+## <a name="set-modes-and-settings"></a><a name="bkmk_modes"></a>モードと設定の設定
 
 NIC チーミングとは異なり、セット チームを作成するときに、チーム名インストールを構成することはできません。 さらに、NIC チーミングでサポートされてスタンバイ アダプターを使用してはセットではサポートされていません。 セットを展開するときに、すべてのネットワーク アダプターがアクティブとスタンバイ モードでは [なし] です。
 
@@ -253,7 +253,7 @@ Vm は、HYPER-V 仮想スイッチのポートに接続されます。 セッ�
 
 動的モード アルゴリズムは、十分な長さの中断が TCP フロー - で発生した場合などに flowlet 境界が検出されたことを検出すると、アルゴリズムで該当する場合は、別のチーム メンバーへの流れが自動的に再分散します。  一般的でない状況によっては、アルゴリズム可能性があります、flowlets が含まれていないフローを再調整も定期的にします。 このため、TCP フローとチーム メンバー間のアフィニティは動的な分散アルゴリズムは、チーム メンバーの作業負荷のバランスを取る動作いつでも変更できます。
 
-## <a name="bkmk_vmq"></a>セットと仮想マシンキュー (VMQs)
+## <a name="set-and-virtual-machine-queues-vmqs"></a><a name="bkmk_vmq"></a>セットと仮想マシンキュー (VMQs)
 
 VMQ と SET は連携して機能します。 Hyper-v を使用してを設定するときは常に VMQ を有効にする必要があります。
 
@@ -273,15 +273,15 @@ VMQ 設定の一部では、RSS のキューの設定に見えますが、どの
 
 - チームメンバーのプロセッサは、実用的で、重複していない程度にする必要があります。 たとえば、4コアのホスト \(8 個の論理プロセッサが2つの 10 Gbps Nic のチームと\) している場合は、2の基本プロセッサを使用して4コアを使用するように最初のプロセッサを設定できます。2つ目は、基本プロセッサ6を使用し、2コアを使用するように設定されています。
 
-## <a name="bkmk_hnv"></a>HNV\) \(Hyper-v ネットワーク仮想化を設定します。
+## <a name="set-and-hyper-v-network-virtualization-hnv"></a><a name="bkmk_hnv"></a>HNV\) \(Hyper-v ネットワーク仮想化を設定します。
 
 セットは、Windows Server 2016 で HYPER-V ネットワーク仮想化の完全な互換性です。 HNV の管理システムでは、HNV トラフィック用に最適化された方法でネットワーク トラフィックの負荷を配布する設定は、セットのドライバーに情報を提供します。
   
-## <a name="bkmk_live"></a>設定とライブマイグレーション
+## <a name="set-and-live-migration"></a><a name="bkmk_live"></a>設定とライブマイグレーション
 
 ライブマイグレーションは、Windows Server 2016 でサポートされています。
 
-## <a name="bkmk_mac"></a>送信パケットでの MAC アドレスの使用
+## <a name="mac-address-use-on-transmitted-packets"></a><a name="bkmk_mac"></a>送信パケットでの MAC アドレスの使用
 
 動的な負荷分散を使用して SET チームを構成すると、1つのソース \(のパケット (単一の VM\) など) が複数のチームメンバーに同時に分散されます。 
 
@@ -311,7 +311,7 @@ VMQ 設定の一部では、RSS のキューの設定に見えますが、どの
   
     - アフィニティを設定したチーム メンバー以外のチーム メンバーに送信されるパケットがソース MAC アドレスの置換が完了には  
   
-## <a name="bkmk_manage"></a>セットチームの管理
+## <a name="managing-a-set-team"></a><a name="bkmk_manage"></a>セットチームの管理
 
 SET teams の管理には System Center Virtual Machine Manager \(VMM\) を使用することをお勧めしますが、Windows PowerShell を使用して設定を管理することもできます。 次のセクションでは、Windows PowerShell コマンド セットの管理に使用できるを提供します。
 

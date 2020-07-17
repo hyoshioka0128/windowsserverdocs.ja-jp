@@ -1,71 +1,78 @@
 ---
 title: cmdkey
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: 保存されているユーザー名とパスワードまたは資格情報を作成、一覧表示、削除する、cmdkey コマンドの参照記事です。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5fcd68ee-a14a-4b71-9300-c3f5c5d31e8e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: dc2b12cb53eef930d05c1e291de5574a8ba94306
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a7a5446a692719a55575853df6aebc78733135b8
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71379310"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929837"
 ---
 # <a name="cmdkey"></a>cmdkey
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 保存されたユーザー名とパスワードのほか、資格情報の作成、一覧表示、削除を行います。
 
 ## <a name="syntax"></a>構文
-```
-cmdkey [{/add:<TargetName>|/generic:<TargetName>}] {/smartcard|/user:<UserName> [/pass:<Password>]} [/delete{:<TargetName>|/ras}] /list:<TargetName>
-```
-## <a name="parameters"></a>パラメーター
 
-|             パラメーター             |                                                                                    説明                                                                                     |
-|------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|         /add: <TargetName>          | ユーザー名とパスワードを一覧に追加します。<br /><br />@No__t-0 のパラメーターが必要です。このパラメーターは、このエントリが関連付けられるコンピューターまたはドメイン名を識別します。 |
-|       /汎用: <TargetName>        |   汎用的な資格情報をリストに追加します。<br /><br />@No__t-0 のパラメーターが必要です。このパラメーターは、このエントリが関連付けられるコンピューターまたはドメイン名を識別します。    |
-|             /smartcard             |                                                                    スマートカードから資格情報を取得します。                                                                     |
-|          /user: <UserName>          |                                 このエントリで格納するユーザー名またはアカウント名を指定します。 *UserName*が指定されていない場合は、要求されます。                                  |
-|          /pass: <Password>          |                                       このエントリで格納するパスワードを指定します。 *パスワード*が指定されていない場合は、要求されます。                                        |
-| /delete{: <TargetName> &#124; /ras} |  ユーザー名とパスワードを一覧から削除します。 *TargetName*を指定すると、そのエントリは削除されます。 /Ras を指定した場合、格納されているリモートアクセスエントリが削除されます。   |
-|         /list: <TargetName>         |                  保存されているユーザー名と資格情報の一覧を表示します。 *TargetName*が指定されていない場合、保存されているすべてのユーザー名と資格情報が一覧表示されます。                   |
-|                 /?                 |                                                                        コマンド プロンプトにヘルプを表示します。                                                                        |
+```
+cmdkey [{/add:<targetname>|/generic:<targetname>}] {/smartcard | /user:<username> [/pass:<password>]} [/delete{:<targetname> | /ras}] /list:<targetname>
+```
 
-## <a name="remarks"></a>コメント
-- /smartcard コマンドラインオプションを使用しているときに、システムに複数のスマートカードが見つかった場合、使用可能なすべてのスマートカードに関する情報が表示され、使用するスマートカードを指定するように**求められ**ます。
-- パスワードは、保存されると表示されません。
-  ## <a name="BKMK_examples"></a>例
-  保存されているすべてのユーザー名と資格情報の一覧を表示するには、次のように入力します。
-  ```
-  cmdkey /list
-  ```
-  パスワード Kleo でコンピューター Server01 にアクセスするためのユーザー名とパスワードを追加するには、次のように入力します。
-  ```
-  cmdkey /add:server01 /user:mikedan /pass:Kleo
-  ```
-  コンピューター Server01 にアクセスするためのユーザー名とパスワードを追加して、Server01 にアクセスするたびにパスワードの入力を求めるには、次のように入力します。
-  ```
-  cmdkey /add:server01 /user:mikedan
-  ```
-  リモートアクセスに格納されている資格情報を削除するには、次のように入力します。
-  ```
-  cmdkey /delete /ras
-  ```
-  Server01 に格納されている資格情報を削除するには、次のように入力します。
-  ```
-  cmdkey /delete:Server01
-  ```
-  ## <a name="additional-references"></a>その他の参照情報
-  [コマンド ライン構文の記号](command-line-syntax-key.md)
+### <a name="parameters"></a>パラメーター
+
+| パラメーター | 説明 |
+| ---------- | ----------- |
+| /add`<targetname>` | ユーザー名とパスワードを一覧に追加します。<p>には、 `<targetname>` このエントリが関連付けられるコンピューターまたはドメイン名を識別するのパラメーターが必要です。 |
+| /一般`<targetname>` | 汎用的な資格情報をリストに追加します。<p>には、 `<targetname>` このエントリが関連付けられるコンピューターまたはドメイン名を識別するのパラメーターが必要です。 |
+| /smartcard | スマートカードから資格情報を取得します。 このオプションを使用したときにシステムに複数のスマートカードが見つかった場合、 **cmdkey**は使用可能なすべてのスマートカードに関する情報を表示し、使用するスマートカードを指定するようにユーザーに求めます。 |
+| /user`<username>` | このエントリで格納するユーザー名またはアカウント名を指定します。 が指定されていない場合は `<username>` 、要求されます。 |
+|渡す`<password>` | このエントリで格納するパスワードを指定します。 が指定されていない場合は `<password>` 、要求されます。 パスワードは、保存された後は表示されません。 |
+| /delete{:`<targetname>` | 電話帳 | ユーザー名とパスワードを一覧から削除します。 `<targetname>`が指定されている場合、そのエントリは削除されます。 を指定した場合 `/ras` 、格納されているリモートアクセスエントリは削除されます。 |
+| /list`<targetname>` | 保存されているユーザー名と資格情報の一覧を表示します。 が `<targetname>` 指定されていない場合は、保存されているユーザー名と資格情報がすべて一覧表示されます。 |
+| /? | コマンド プロンプトにヘルプを表示します。 |
+
+## <a name="examples"></a>例
+
+保存されているすべてのユーザー名と資格情報の一覧を表示するには、次のように入力します。
+
+```
+cmdkey /list
+```
+
+パスワード*Kleo*でコンピューター *Server01* *にアクセスするため*のユーザー名とパスワードを追加するには、次のように入力します。
+
+```
+cmdkey /add:server01 /user:mikedan /pass:Kleo
+```
+
+コンピューター *Server01* *にアクセスするため*のユーザー名とパスワードを追加して、Server01 にアクセスするたびにパスワードの入力を求めるには、次のように入力します。
+
+```
+cmdkey /add:server01 /user:mikedan
+```
+
+リモートアクセスによって格納された資格情報を削除するには、次のように入力します。
+
+```
+cmdkey /delete /ras
+```
+
+*Server01*に格納されている資格情報を削除するには、次のように入力します。
+
+```
+cmdkey /delete:server01
+```
+
+## <a name="additional-references"></a>その他の参照情報
+
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

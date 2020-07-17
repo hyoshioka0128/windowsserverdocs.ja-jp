@@ -9,10 +9,10 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: 2baf24ed656ef06d44dff93180701d25e6852500
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "71385860"
 ---
 # <a name="shrink-a-basic-volume"></a>ベーシック ボリュームを圧縮する
@@ -53,10 +53,10 @@ ms.locfileid: "71385860"
 
 4.  **DISKPART** プロンプトで、「`shrink [desired=<desiredsize>] [minimum=<minimumsize>]`」と入力します。 選択したボリュームを、可能であればメガバイト (MB) 単位で *desiredsize* のサイズに圧縮します。*desiredsize* が大きすぎる場合は、*minimumsize* に圧縮します。
 
-| Value             | 説明 |
+| 値             | 説明 |
 | ---               | ----------- |
 | **list volume** | すべてのディスク上のベーシック ボリュームとダイナミック ボリュームの一覧を表示します。 |
-| **select volume** | <em>volumenumber</em> がボリューム番号である指定されたボリュームを選択し、そのボリュームにフォーカスを移動します。 ボリュームが指定されていない場合、**select** コマンドは、フォーカスがある現在のボリュームを一覧表示します。 番号、ドライブ文字、マウント ポイント パスでボリュームを指定できます。 ベーシック ディスクでボリュームを選択すると、対応するパーティションにフォーカスが移動します。 |
+| **select volume** | <em>volumenumber</em> がボリューム番号である指定されたボリュームを選択し、そのボリュームにフォーカスを移動します。 ボリュームが指定されていない場合、**select** コマンドは、フォーカスがある現在のボリュームを一覧表示します。 ボリュームの指定は、番号、ドライブ文字、またはマウント ポイント パスで行うことができます。 ベーシック ディスク上でボリュームを選択すると、対応するパーティションもフォーカスされます。 |
 | **shrink** | フォーカスのあるボリュームを圧縮して、未割り当て領域を作成します。 データの損失は発生しません。 パーティションに移動できないファイル (ページ ファイルやシャドウ コピーの記憶域など) が含まれている場合は、そのボリュームは、移動できないファイルが配置されている位置まで圧縮されます。 |
 | **desired=** <em>desiredsize</em> | 現在のパーティションに回復する領域の容量をメガバイト単位で指定します。 |
 | **minimum=** <em>minimumsize</em> | 現在のパーティションに回復する領域の最小容量をメガバイト単位で指定します。 必要なサイズや最小サイズを指定しない場合、このコマンドはできる限り最大容量の領域を解放します。 |

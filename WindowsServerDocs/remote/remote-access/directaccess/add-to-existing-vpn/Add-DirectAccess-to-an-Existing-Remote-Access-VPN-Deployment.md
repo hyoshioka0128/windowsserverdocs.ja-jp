@@ -2,29 +2,25 @@
 title: Add DirectAccess to an Existing Remote Access (VPN) Deployment
 description: このトピックは、「Windows Server 2016 の既存のリモートアクセス (VPN) 展開に DirectAccess を追加する」の一部です。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b5db01f7-1ae0-46f2-9be7-8d9e121446b2
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 9266acfb38c65711d6d0b12e2b6223a8a4e91746
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 6d948c01721cc960d46da7d026fb4caab12670a6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388801"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854064"
 ---
 # <a name="add-directaccess-to-an-existing-remote-access-vpn-deployment"></a>Add DirectAccess to an Existing Remote Access (VPN) Deployment
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
   
-## <a name="BKMK_OVER"></a>シナリオの説明  
-このシナリオでは、VPN を既にインストールして構成した後に、windows Server 2016、Windows Server 2012 R2、または Windows Server 2012 を実行する1台のコンピューターが、推奨設定を使用して DirectAccess サーバーとして構成されます。 負荷分散クラスター、マルチサイト展開、または2要素クライアント認証などのエンタープライズ機能を使用して DirectAccess を構成する場合は、このトピックで説明するシナリオを実行して、単一のサーバーをセットアップしてから、エンタープライズをセットアップします。「[企業でのリモートアクセスの展開](../../ras/Deploy-Remote-Access-in-an-Enterprise.md)」で説明されているシナリオ。  
+## <a name="scenario-description"></a><a name="BKMK_OVER"></a>シナリオの説明  
+このシナリオでは、VPN を既にインストールして構成した後に、windows Server 2016、Windows Server 2012 R2、または Windows Server 2012 を実行する1台のコンピューターが、推奨設定を使用して DirectAccess サーバーとして構成されます。 負荷分散クラスター、マルチサイト展開、または2要素クライアント認証などのエンタープライズ機能を使用して DirectAccess を構成する場合は、このトピックで説明するシナリオを実行して単一のサーバーを設定し、「[企業でのリモートアクセスの展開](../../ras/Deploy-Remote-Access-in-an-Enterprise.md)」で説明されているように、エンタープライズシナリオを設定します。  
   
 ## <a name="in-this-scenario"></a>このシナリオの内容  
 単一のリモート アクセス サーバーを設定するには、いくつかの計画と展開の手順が必要です。  
@@ -55,7 +51,7 @@ ms.locfileid: "71388801"
   
     このフェーズでは、展開が想定どおりに機能していることを確認します。  
   
-## <a name="BKMK_APP"></a>実用的なアプリケーション  
+## <a name="practical-applications"></a><a name="BKMK_APP"></a>実用的なアプリケーション  
 単一のリモート アクセス サーバーを展開すると、次のことが実現されます。  
   
 -   **簡単なアクセス**  
@@ -66,15 +62,15 @@ ms.locfileid: "71388801"
   
     リモート アクセス管理者は、クライアント コンピューターが企業内部ネットワーク上に存在しない場合でも、インターネットにアクセスできる DirectAccess クライアント コンピューターを DirectAccess を使用してリモート管理できます。 企業の要件を満たしていないクライアント コンピューターを管理サーバーによって自動的に修正できます。  
   
-## <a name="BKMK_NEW"></a>このシナリオに必要な役割と機能  
+## <a name="roles-and-features-required-for-this-scenario"></a><a name="BKMK_NEW"></a>このシナリオに必要な役割と機能  
 次の表に、このシナリオに必要な役割と機能を示します。  
   
 |役割/機能|このシナリオのサポート方法|  
 |---------|-----------------|  
-|リモート アクセスの役割|この役割をインストールまたはアンインストールするには、サーバー マネージャー コンソールまたは Windows PowerShell を使用します。 この役割には、以前は Windows Server 2008 R2 の機能であった DirectAccess と、以前はネットワーク ポリシーとアクセス サービス (NPAS) サーバーの役割の役割サービスであったリモート アクセス サービスが含まれています。 リモート アクセスの役割は、次の 2 つのコンポーネントで構成されています。<br /><br />1. DirectAccess およびルーティングとリモート アクセス サービス (RRAS) VPN:リモート アクセス管理コンソールで管理されます。<br />2. RRAS ルーティング:ルーティングとリモート アクセス管理コンソールで管理されます。<br /><br />リモート アクセス サーバーの役割は、次のサーバーの機能に依存しています。<br /><br />-インターネットインフォメーションサービス (IIS) Web サーバー: リモートアクセスサーバーのネットワークロケーションサーバーと既定の web プローブを構成するために必要です。<br />-Windows Internal Database:リモート アクセス サーバーでのローカル アカウンティングに使用されます。|  
-|リモート アクセス管理ツールの機能|この機能は、次のようにインストールされます。<br /><br />-リモートアクセスの役割がインストールされている場合は、既定でリモートアクセスサーバーにインストールされます。 リモート管理コンソール ユーザー インターフェイスおよび Windows PowerShell コマンドレットをサポートします。<br />-必要に応じて、リモートアクセスサーバーの役割を実行していないサーバーにインストールします。 この場合、これは DirectAccess および VPN を実行するリモート アクセス コンピューターのリモート管理に使用されます。<br /><br />リモート アクセス管理ツールの機能は、次の要素で構成されています。<br /><br />-リモートアクセス GUI<br />-Windows PowerShell 用リモートアクセスモジュール<br /><br />次の要素と依存関係があります。<br /><br />-グループポリシー管理コンソール<br />-RAS 接続マネージャー管理キット (CMAK)<br />-Windows PowerShell 3.0<br />-グラフィカル管理ツールとインフラストラクチャ|  
+|リモート アクセスの役割|この役割をインストールまたはアンインストールするには、サーバー マネージャー コンソールまたは Windows PowerShell を使用します。 この役割には、以前は Windows Server 2008 R2 の機能であった DirectAccess と、以前はネットワーク ポリシーとアクセス サービス (NPAS) サーバーの役割の役割サービスであったリモート アクセス サービスが含まれています。 リモート アクセスの役割は、次の 2 つのコンポーネントで構成されています。<p>1. DirectAccess およびルーティングとリモートアクセスサービス (RRAS) VPN: リモートアクセス管理コンソールで管理されます。<br />2. RRAS ルーティング: ルーティングとリモートアクセスコンソールで管理されます。<p>リモート アクセス サーバーの役割は、次のサーバーの機能に依存しています。<p>-インターネットインフォメーションサービス (IIS) Web サーバー: リモートアクセスサーバーのネットワークロケーションサーバーと既定の web プローブを構成するために必要です。<br />-Windows Internal Database: リモートアクセスサーバーのローカルアカウンティングに使用されます。|  
+|リモート アクセス管理ツールの機能|この機能は、次のようにインストールされます。<p>-リモートアクセスの役割がインストールされている場合は、既定でリモートアクセスサーバーにインストールされます。 リモート管理コンソール ユーザー インターフェイスおよび Windows PowerShell コマンドレットをサポートします。<br />-必要に応じて、リモートアクセスサーバーの役割を実行していないサーバーにインストールします。 この場合、これは DirectAccess および VPN を実行するリモート アクセス コンピューターのリモート管理に使用されます。<p>リモート アクセス管理ツールの機能は、次の要素で構成されています。<p>-リモートアクセス GUI<br />-Windows PowerShell 用リモートアクセスモジュール<p>次の要素と依存関係があります。<p>-グループポリシー管理コンソール<br />-RAS 接続マネージャー管理キット (CMAK)<br />-Windows PowerShell 3.0<br />-グラフィカル管理ツールとインフラストラクチャ|  
   
-## <a name="BKMK_HARD"></a>ハードウェア要件  
+## <a name="hardware-requirements"></a><a name="BKMK_HARD"></a>ハードウェア要件  
 このシナリオのハードウェア要件は次のとおりです。  
   
 **サーバーの要件**  
@@ -94,7 +90,7 @@ ms.locfileid: "71388801"
 -   クライアントコンピューターは、Windows 8 または Windows 7 を実行している必要があります。  
   
     > [!NOTE]  
-    > DirectAccess クライアントとして使用できるオペレーティング システムは、Windows Server 2012、Windows Server 2008 R2、Windows 8 Enterprise、Windows 7 Enterprise、および Windows 7 Ultimate。  
+    > DirectAccess クライアントとして使用できるオペレーティングシステムは、Windows Server 2012、Windows Server 2008 R2、Windows 8 Enterprise、Windows 7 Enterprise、および Windows 7 Ultimate だけです。  
   
 **インフラストラクチャと管理サーバーの要件**  
   
@@ -104,7 +100,7 @@ ms.locfileid: "71388801"
   
 -   Windows Server 2012、Windows Server 2008 R2、または Windows Server 2008 SP2 を実行している DNS サーバーが必要です。  
   
-## <a name="BKMK_SOFT"></a>ソフトウェア要件  
+## <a name="software-requirements"></a><a name="BKMK_SOFT"></a>ソフトウェア要件  
 このシナリオのソフトウェア要件は次のとおりです。  
   
 **サーバーの要件**  
@@ -119,7 +115,7 @@ ms.locfileid: "71388801"
   
 -   DirectAccess クライアントは、ドメイン メンバーである必要があります。 クライアントが含まれているドメインは、リモート アクセス サーバーと同じフォレストに属することや、リモート アクセス サーバーのフォレストまたはドメインと双方向の信頼を確立することができます。  
   
--   DirectAccess クライアントとして構成するコンピューターが属する Active Directory セキュリティ グループが必要です。 DirectAccess クライアントの設定の構成時にセキュリティ グループを指定しなかった場合、既定では、Domain Computers セキュリティ グループのすべてのノート PC (DirectAccess 対応) にクライアントの GPO が適用されます。 DirectAccess クライアントとして使用できるオペレーティング システムは、Windows Server 2012、Windows Server 2008 R2、Windows 8 Enterprise、Windows 7 Enterprise、および Windows 7 Ultimate。  
+-   DirectAccess クライアントとして構成するコンピューターが属する Active Directory セキュリティ グループが必要です。 DirectAccess クライアントの設定の構成時にセキュリティ グループを指定しなかった場合、既定では、Domain Computers セキュリティ グループのすべてのノート PC (DirectAccess 対応) にクライアントの GPO が適用されます。 DirectAccess クライアントとして使用できるオペレーティングシステムは、Windows Server 2012、Windows Server 2008 R2、Windows 8 Enterprise、Windows 7 Enterprise、および Windows 7 Ultimate だけです。  
   
     > [!NOTE]  
     > DirectAccess クライアントとして構成されるコンピューターを含むドメインごとにセキュリティ グループを作成することをお勧めします。  

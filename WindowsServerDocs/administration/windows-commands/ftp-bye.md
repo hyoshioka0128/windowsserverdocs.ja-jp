@@ -1,43 +1,48 @@
 ---
 title: ftp bye
-description: Ftp bye の Windows コマンドに関するトピック
-ms.custom: na
+description: リモートコンピューターで ftp セッションを終了して終了する、ftp bye コマンドの参照記事です。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: f20e2bf2-7d12-4606-942a-8ed555eb8e90 vhorne
+ms.assetid: f20e2bf2-7d12-4606-942a-8ed555eb8e90
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 592796ca91a847b16ff8daab7ab1252f252105b7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 430a343c4ae8bd06975a77b2818a8c3bc4d26d19
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71376509"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933311"
 ---
-# <a name="ftp-bye"></a>ftp: bye
+# <a name="ftp-bye"></a>ftp bye
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-リモートコンピューターとの ftp セッションを終了し、終了します。   
-## <a name="syntax"></a>構文  
-```  
-bye  
-```  
-### <a name="parameters"></a>パラメーター  
-なし  
-## <a name="remarks"></a>コメント  
-**Bye**と**quit**は、両方ともリモートコンピューターとの ftp セッションを終了し、終了します。  
-## <a name="BKMK_Examples"></a>例  
-リモートコンピューターで ftp セッションを終了し、を終了します。  
-```  
-bye  
-```  
-## <a name="additional-references"></a>その他の参照情報  
--   [ftp: 終了](ftp-quit.md)  
--   [コマンド ライン構文の記号](command-line-syntax-key.md)  
+リモートコンピューターで ftp セッションを終了し、終了します。
+
+> [!NOTE]
+> このコマンドは、 [ftp quit コマンド](ftp-quit.md)と同じです。
+
+## <a name="syntax"></a>構文
+
+```
+bye
+```
+
+### <a name="examples"></a>例
+
+リモートコンピューターとの ftp セッションを終了して終了するには、次のように入力します。
+
+```
+bye
+```
+
+## <a name="additional-references"></a>その他の参照情報
+
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [ftp 終了コマンド](ftp-quit.md)
+
+- [追加の FTP ガイダンス](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))

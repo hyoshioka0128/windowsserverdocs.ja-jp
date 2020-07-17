@@ -2,26 +2,22 @@
 title: マルチサイト展開のトラブルシューティング
 description: このトピックは、「Windows Server 2016 のマルチサイト展開に複数のリモートアクセスサーバーを展開する」の一部です。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f92b1335-ac4a-4501-a5ec-d1851e6f0fc7
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: a886740afeabf19f1a8f3035d15a5e5803bc1596
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: b9bfaf25363c716351c8849e0d04b54dbf005a18
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367092"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858315"
 ---
 # <a name="troubleshoot-a-multisite-deployment"></a>マルチサイト展開のトラブルシューティング
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックでは、リモート アクセスのマルチサイト展開を構成するときに発生する最も一般的なエラーのトラブルシューティング方法について説明します。   
   

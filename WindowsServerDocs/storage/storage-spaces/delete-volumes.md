@@ -8,15 +8,15 @@ ms.author: jgerend
 manager: daveba
 ms.technology: storage-spaces
 ms.date: 05/07/2019
-ms.openlocfilehash: a144479c196f42939aee6eb26227ed2e2b22d87a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 34df5ecc2ff085535878133db98cf345990165e0
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402856"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475229"
 ---
 # <a name="deleting-volumes-in-storage-spaces-direct"></a>記憶域スペースダイレクトのボリュームの削除
-> 適用対象:Windows Server 2019、Windows Server 2016
+> 適用先:Windows Server 2019、Windows Server 2016
 
 このトピックでは、Windows 管理センターを使用して[記憶域スペースダイレクト](storage-spaces-direct-overview.md)クラスター上のボリュームを削除する手順について説明します。
 
@@ -26,14 +26,14 @@ ms.locfileid: "71402856"
 
 Windows 管理センターでボリュームを削除するには:
 
-1. Windows 管理センターで、記憶域スペースダイレクトクラスターに接続し、 **[ツール]** ウィンドウで **[ボリューム]** を選択します。
-2. ボリューム ページで、**インベントリ** タブを選択し、削除するボリュームを選択します。
-4. ボリュームの詳細ページの上部にある **[削除]** を選択します。
-5. 確認 ダイアログボックスで、ボリュームを削除することを確認するチェックボックスをオンにして、**削除** を選択します。
+1. Windows Admin Center で、記憶域スペース ダイレクト クラスターに接続し、 **[ツール]** ペインで **[ボリューム]** を選択します。
+2. [ボリューム] ページで、[**インベントリ**] タブを選択し、削除するボリュームを選択します。
+4. ボリュームの詳細ページの上部で、 **[削除]** を選択します。
+5. 確認のダイアログで、ボリュームの削除を確認するチェック ボックスをオンにして、 **[削除]** を選択します。
 
-## <a name="see-also"></a>関連項目
+## <a name="additional-references"></a>その他のリファレンス
 
-- [Windows Server 2016 の記憶域スペースダイレクト](storage-spaces-direct-overview.md)
-- [記憶域スペースダイレクトのボリュームの計画](plan-volumes.md)
-- [記憶域スペースダイレクトでのボリュームの作成](create-volumes.md)
-- [記憶域スペースダイレクトでのボリュームの拡張](resize-volumes.md)
+- [Windows Server 2016 での記憶域スペース ダイレクト](storage-spaces-direct-overview.md)
+- [記憶域スペース ダイレクトのボリュームの計画](plan-volumes.md)
+- [記憶域スペース ダイレクトのボリュームの作成](create-volumes.md)
+- [記憶域スペース ダイレクトのボリュームの拡張](resize-volumes.md)

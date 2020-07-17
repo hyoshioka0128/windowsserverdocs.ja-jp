@@ -1,26 +1,23 @@
 ---
 title: Windows エラー報告を使用したフェールオーバークラスターのトラブルシューティング
 description: WER レポートを使用したフェールオーバークラスターのトラブルシューティング。レポートを収集して一般的な問題を診断する方法の詳細については、「」を確認してください。
-keywords: フェールオーバークラスター、WER レポート、診断、クラスター、Windows エラー報告
 ms.prod: windows-server
 ms.technology: storage-failover-clustering
 ms.author: vpetter
-ms.topic: article
-author: vpetter
+author: dcuomo
 ms.date: 03/27/2018
-ms.localizationpriority: ''
-ms.openlocfilehash: 46c633af8cf82ac43d2a787a7193685d88ad0ecc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e8db88dc4fe3ad9176299c5b423a7aac6093f254
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361009"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80827355"
 ---
 # <a name="troubleshooting-a-failover-cluster-using-windows-error-reporting"></a>Windows エラー報告を使用したフェールオーバークラスターのトラブルシューティング 
 
-> 適用対象:Windows Server 2019、Windows Server 2016、Windows Server
+> 適用対象: Windows Server 2019、Windows Server 2016、Windows Server
 
-Windows エラー報告 (WER) は、高度な管理者または階層3のサポートが Windows によって検出された情報を収集し、マイクロソフトに報告するために役立つ、柔軟なイベントベースのフィードバックインフラストラクチャです。とは、使用可能な任意のソリューションをユーザーに提供します。 この[リファレンス](https://docs.microsoft.com/powershell/module/windowserrorreporting/)では、すべての WindowsErrorReporting コマンドレットの説明と構文について説明します。
+Windows エラー報告 (WER) は、高度な管理者または階層3のサポートが、Windows によって検出されたハードウェアとソフトウェアの問題に関する情報を収集し、Microsoft に報告し、利用可能なソリューションをユーザーに提供するために設計された、柔軟なイベントベースのフィードバックインフラストラクチャです。 この[リファレンス](https://docs.microsoft.com/powershell/module/windowserrorreporting/)では、すべての WindowsErrorReporting コマンドレットの説明と構文について説明します。
 
 以下に示すトラブルシューティングの情報は、エスカレートされた高度な問題のトラブルシューティングに役立ちます。また、トリアージのためにデータをマイクロソフトに送信することが必要になる場合もあります。
 
@@ -255,7 +252,7 @@ DynamicSig[29].Name=FailureTime
 DynamicSig[29].Value=2017//12//12-22:38:05.485
 ```
 
-リソースをオンラインにできなかったため、ダンプは収集されませんでしたが、Windows エラー報告レポートはログを収集しました。 Microsoft Message Analyzer を使用してすべての .evtx ファイルを開くと、システムチャネル、アプリケーションチャネル、フェールオーバークラスター診断チャネル、およびその他のクエリを使用して収集されたすべての情報が表示されます **。** 汎用チャネル。
+リソースをオンラインにできなかったため、ダンプは収集されませんでしたが、Windows エラー報告レポートはログを収集しました。 Microsoft Message Analyzer を使用してすべての **.evtx**ファイルを開くと、システムチャネル、アプリケーションチャネル、フェールオーバークラスター診断チャネル、および他のいくつかの汎用チャネルを通じて収集されたすべての情報が表示されます。
 
 ```powershell
 PS C:\Windows\system32> (Get-ClusterResourceType -Name "Physical Disk").DumpLogQuery
@@ -302,7 +299,7 @@ Message Analyzer を使用すると、プロトコルメッセージングトラ
 
 ![プロバイダー別にグループ化されたログ](media/troubleshooting-using-WER-reports/logs-grouped-by-providers.png)
 
-ディスクが失敗した原因を特定するには、 **FailoverClustering/diagnostics**と**FailoverClustering/DiagnosticVerbose**の下のイベントに移動します。 その後、次のクエリを実行します。**EventData ["LogString"] に "Cluster Disk 10" が含まれて**います。  これにより、次の出力が得られます。
+ディスクが失敗した原因を特定するには、 **FailoverClustering/diagnostics**と**FailoverClustering/DiagnosticVerbose**の下のイベントに移動します。 次のクエリを実行します。 **EventData ["LogString"] に "Cluster Disk 10" が含まれて**います。  これにより、次の出力が得られます。
 
 ![実行中のログクエリの出力](media/troubleshooting-using-WER-reports/output-of-running-log-query.png)
 
@@ -398,9 +395,9 @@ DynamicSig[29].Name=HangThreadId
 DynamicSig[29].Value=10008
 ```
 
-ダンプで収集するサービスとプロセスの一覧は、次のプロパティによって制御されます。**PS C:\Windows\system32 > (Get ClusterResourceType-Name "Physical Disk")。DumpServicesSmphost**
+ダンプで収集するサービスとプロセスの一覧は、 **PS C:\Windows\system32 > (Get ClusterResourceType-Name "Physical Disk") プロパティによって制御されます。DumpServicesSmphost**
 
-ハングが発生した原因を特定するには、dum ファイルを開きます。 その後、次のクエリを実行します。**EventData ["LogString"] に "Cluster Disk 10" が含まれています。** これにより、次の出力が得られます。
+ハングが発生した原因を特定するには、dum ファイルを開きます。 次のクエリを実行します。 **EventData ["LogString"] に "Cluster Disk 10" が含まれている**と、次の出力が得られます。
 
 ![実行中のログクエリ2の出力](media/troubleshooting-using-WER-reports/output-of-running-log-query-2.png)
 

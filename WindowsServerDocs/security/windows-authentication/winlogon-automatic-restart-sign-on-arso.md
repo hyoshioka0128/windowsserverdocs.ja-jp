@@ -1,24 +1,19 @@
 ---
 title: Winlogon 自動再起動サインオン (ARSO)
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.service: na
-ms.suite: na
 ms.technology: security-auditing
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 15cddcfa-8a8e-45e4-bb76-b8e1a14ceac0
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: f085cf78a01148f97a450577131213ce977a432a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3dd66cc799ee23f77c9c60e23e49d3088a27b2fc
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402324"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855105"
 ---
 # <a name="winlogon-automatic-restart-sign-on-arso"></a>Winlogon 自動再起動サインオン (ARSO)
 
@@ -60,13 +55,13 @@ Windows 8 では、ロック画面アプリが導入されました。  これ�
   
     -   Server Sku で既定で無効になっています。  
   
--   どうしてでしょうか?  
+-   その理由を教えてください。  
   
     -   戻り、ユーザーがログオンするまで、一部の更新プログラムを終了できません。  
   
     -   良いユーザー エクスペリエンス: 15 分の更新のインストールを完了するを待機する必要はありません  
   
--   その方法は? 自動ログオン  
+-   その方法は? AutoLogon  
   
     -   パスワードが格納されて、その資格情報では、ログインを使用  
   
@@ -93,9 +88,9 @@ Windows 8.1/Windows Server 2012 R2、Windows Update 再起動した後に、ロ�
   
 **レジストリエディター**  
   
-|［値の名前］|種類|データ|  
+|［値の名前］|種類|Data|  
 |-------|----|----|  
-|DisableAutomaticRestartSignOn|DWORD|0<br /><br />**例:**<br /><br />0 (有効)。<br /><br />1 (無効)|  
+|DisableAutomaticRestartSignOn|DWORD|0<p>**例:**<p>0 (有効)。<p>1 (無効)|  
   
 **ポリシーのレジストリの場所:** HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System  
   
@@ -145,8 +140,8 @@ WinLogon が自動的にロックしたときに WinLogon の状態のトレー�
 ## <a name="additional-resources"></a>その他のリソース  
 **テーブル SEQ テーブル \\\* アラビア語 3: ARSO 用語集**  
   
-|用語|定義|  
+|用語|Definition|  
 |----|-------|  
-|Autologon|自動ログオンは、いくつかのリリースの Windows に存在した機能です。  これは Windows の自動ログオン v3.01 などのツールがある Windows のドキュメント化された機能 *[http:/technet.microsoft.com/sysinternals/bb963905.aspx](https://technet.microsoft.com/sysinternals/bb963905.aspx)*<br /><br />デバイスの 1 人のユーザーの資格情報を入力しなくても自動的にサインインできます。 資格情報が構成され、暗号化された LSA シークレットとしてレジストリに格納します。|  
+|Autologon|自動ログオンは、いくつかのリリースの Windows に存在した機能です。  これは Windows の自動ログオン v3.01 などのツールがある Windows のドキュメント化された機能 *[http:/technet.microsoft.com/sysinternals/bb963905.aspx](https://technet.microsoft.com/sysinternals/bb963905.aspx)*<p>デバイスの 1 人のユーザーの資格情報を入力しなくても自動的にサインインできます。 資格情報が構成され、暗号化された LSA シークレットとしてレジストリに格納します。|  
   
 

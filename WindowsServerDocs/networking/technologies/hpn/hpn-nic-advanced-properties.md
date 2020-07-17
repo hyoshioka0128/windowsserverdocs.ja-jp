@@ -6,15 +6,15 @@ ms.technology: networking
 ms.topic: article
 ms.assetid: 0cafb1cc-5798-42f5-89b6-3ffe7ac024ba
 manager: dougkim
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 09/20/2018
-ms.openlocfilehash: 1395cefca5d9ef696eed3f2735334954b9ee02a5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 78d320f4309d60fa0396cbd723feafa07a65aea1
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405712"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317000"
 ---
 # <a name="nic-advanced-properties"></a>NIC 詳細プロパティ
 
@@ -38,7 +38,7 @@ ms.locfileid: "71405712"
 
     ![C1 プロパティ](../../media/network-offload-and-optimization/c1-properties.png)
 
-   c. 詳細設定のプロパティを表示するには、 **[詳細設定]** タブをクリックします。<p>この一覧の項目は `Get-NetAdapterAdvancedProperties` 出力の項目に関連付けられています。
+   c. 詳細設定のプロパティを表示するには、 **[詳細設定]** タブをクリックします。<p>この一覧の項目は、`Get-NetAdapterAdvancedProperties` の出力の項目に関連付けられています。
 
    ![Chelsio ネットワークアダプターのプロパティ](../../media/network-offload-and-optimization/chelsio-network-adapter-properties.png)
 

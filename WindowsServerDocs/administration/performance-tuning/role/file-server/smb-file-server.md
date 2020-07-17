@@ -5,14 +5,14 @@ ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
 author: phstee
-ms.author: NedPyle; Danlo; DKruse
+ms.author: nedpyle; danlo; dkruse
 ms.date: 4/14/2017
-ms.openlocfilehash: 5383d16ac4c98651aa6afe996dbad88a6d60ee7a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 89017686801501593c51245d44bf88a6ecf4baf6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71370227"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851825"
 ---
 # <a name="performance-tuning-for-smb-file-servers"></a>SMB ファイルサーバーのパフォーマンスチューニング
 
@@ -54,7 +54,7 @@ SMB マルチチャネルの詳細については、「 [Smb マルチチャネ�
 
 SMB スケールアウトを使用すると、クラスター構成の SMB 3.0 でクラスターのすべてのノードの共有を表示できます。 このアクティブ/アクティブ構成を使用すると、複数のボリューム、共有、およびクラスターリソースを含む複雑な構成を使用せずに、ファイルサーバークラスターをさらに拡張することができます。 最大共有帯域幅は、すべてのファイルサーバークラスターノードの合計帯域幅です。 合計帯域幅は、1つのクラスターノードの帯域幅によって制限されなくなりましたが、その代わりに、バッキングストレージシステムの機能に依存しています。 ノードを追加することで合計の帯域幅を増大することができます。
 
-SMB スケールアウトの詳細については、「[アプリケーションデータの概要」](https://technet.microsoft.com/library/hh831349.aspx)および「スケール[アウトするため](http://blogs.technet.com/b/filecab/archive/2013/12/05/to-scale-out-or-not-to-scale-out-that-is-the-question.aspx)のブログの投稿」 (スケールアウトファイルサーバーを参照してください。
+SMB スケールアウトの詳細については、「[アプリケーションデータの概要」](https://technet.microsoft.com/library/hh831349.aspx)および「スケール[アウトするため](https://blogs.technet.com/b/filecab/archive/2013/12/05/to-scale-out-or-not-to-scale-out-that-is-the-question.aspx)のブログの投稿」 (スケールアウトファイルサーバーを参照してください。
 
 ### <a name="performance-counters-for-smb-30"></a>SMB 3.0 のパフォーマンスカウンター
 
@@ -64,7 +64,7 @@ SMB スケールアウトの詳細については、「[アプリケーション
 
     これらのカウンターは、SMB 2.0 以降のバージョンを使用しているクライアントによってアクセスされているサーバー上のファイル共有に関する情報を表示します。
 
-    Windows の通常のディスクカウンターを使い慣れている場合、特定のあくまが発生することがあります。 これは偶然ではありません。 SMB クライアント共有のパフォーマンスカウンターは、ディスクカウンターと正確に一致するように設計されています。 この方法により、現在使用しているアプリケーションディスクのパフォーマンスチューニングに関するガイダンスを簡単に再利用できます。 カウンターマッピングの詳細については、「[共有クライアントパフォーマンスカウンターのブログ](http://blogs.technet.com/b/josebda/archive/2012/11/19/windows-server-2012-file-server-tip-new-per-share-smb-client-performance-counters-provide-great-insight.aspx)」を参照してください。
+    Windows の通常のディスクカウンターを使い慣れている場合、特定のあくまが発生することがあります。 これは偶然ではありません。 SMB クライアント共有のパフォーマンスカウンターは、ディスクカウンターと正確に一致するように設計されています。 この方法により、現在使用しているアプリケーションディスクのパフォーマンスチューニングに関するガイダンスを簡単に再利用できます。 カウンターマッピングの詳細については、「[共有クライアントパフォーマンスカウンターのブログ](https://blogs.technet.com/b/josebda/archive/2012/11/19/windows-server-2012-file-server-tip-new-per-share-smb-client-performance-counters-provide-great-insight.aspx)」を参照してください。
 
 -   **SMB サーバー共有**
 
@@ -86,7 +86,7 @@ SMB スケールアウトの詳細については、「[アプリケーション
 
 -   **物理ディスク、SMB、CSV FS パフォーマンスカウンターの関係**
 
-    物理ディスク、SMB、および CSV FS (ファイルシステム) カウンターの関連の詳細については、次のブログ記事を参照してください。[クラスターの共有ボリュームパフォーマンスカウンター](http://blogs.msdn.com/b/clustering/archive/2014/06/05/10531462.aspx)です。
+    物理ディスク、SMB、および CSV FS (ファイルシステム) カウンターの関連の詳細については、次のブログ記事を参照してください。[クラスターの共有ボリュームパフォーマンスカウンター](https://blogs.msdn.com/b/clustering/archive/2014/06/05/10531462.aspx)です。
 
 ## <a name="tuning-parameters-for-smb-file-servers"></a>SMB ファイルサーバーのチューニングパラメーター
 
@@ -106,7 +106,7 @@ SMB スケールアウトの詳細については、「[アプリケーション
   既定値は、それぞれ512と8192です。 これらのパラメーターを使用すると、サーバーは、指定された境界内でクライアント操作の同時実行を動的に調整できます。 クライアントによっては、高帯域幅の待機時間の長いリンクを超えるファイルのコピーなど、高い同時実行性の制限によりスループットが向上する場合があります。
     
   > [!TIP]
-  > Windows 10 および Windows Server 2016 より前では、クライアントに付与されるクレジットの数は、ネットワーク待機時間に基づいて付与するクレジットの最適な数を決定しようとしたアルゴリズムに基づいて、Smb2CreditsMin と Smb2CreditsMax の間で動的に変化します。クレジットを使用します。 Windows 10 および Windows Server 2016 では、SMB サーバーは、構成されているクレジットの最大数まで、要求時に無条件にクレジットを付与するように変更されました。 この変更の一環として、サーバーのメモリが不足しているときに各接続のクレジットウィンドウのサイズを小さくするクレジット制限メカニズムが削除されました。 スロットルをトリガーしたカーネルのメモリ不足イベントは、サーバーのメモリが不足している場合 (< 数 MB)、役に立たない場合にのみ通知されます。 サーバーではクレジットウィンドウが縮小されないため、Smb2CreditsMin 設定は不要になり、現在は無視されています。
+  > Windows 10 および Windows Server 2016 より前では、クライアントに付与されるクレジットの数は、ネットワーク待機時間とクレジットの使用量に基づいて、付与するクレジットの最適な数を決定しようとしたアルゴリズムに基づいて、Smb2CreditsMin と Smb2CreditsMax の間で動的に変化します。 Windows 10 および Windows Server 2016 では、SMB サーバーは、構成されているクレジットの最大数まで、要求時に無条件にクレジットを付与するように変更されました。 この変更の一環として、サーバーのメモリが不足しているときに各接続のクレジットウィンドウのサイズを小さくするクレジット制限メカニズムが削除されました。 スロットルをトリガーしたカーネルのメモリ不足イベントは、サーバーのメモリが不足している場合 (< 数 MB)、役に立たない場合にのみ通知されます。 サーバーではクレジットウィンドウが縮小されないため、Smb2CreditsMin 設定は不要になり、現在は無視されています。
   > 
   > クレジットに関する問題があるかどうかを確認するために、\\の SMB クライアント共有を監視することができます。
 
@@ -148,7 +148,7 @@ SMB スケールアウトの詳細については、「[アプリケーション
 
 次の設定は、多くの場合に、ファイルサーバーのパフォーマンスに対してコンピューターを最適化することができます。 この設定は、すべてのコンピューターに最適で妥当というわけでありません。 個々の設定を適用する前に、その影響を評価する必要があります。
 
-| パラメーター                       | Value | Default |
+| パラメーター                       | 値 | 既定値 |
 |---------------------------------|-------|---------|
 | AdditionalCriticalWorkerThreads | 64    | 0       |
 | MaxThreadsPerQueue              | 64    | 20      |
@@ -156,4 +156,4 @@ SMB スケールアウトの詳細については、「[アプリケーション
 
 ### <a name="smb-client-performance-monitor-counters"></a>SMB クライアントパフォーマンスモニターカウンター
 
-SMB クライアントカウンターの詳細については、「 [Windows server 2012 ファイルサーバーのヒント: 新しい共有ごとの SMB クライアントパフォーマンスカウンター](http://blogs.technet.com/b/josebda/archive/2012/11/19/windows-server-2012-file-server-tip-new-per-share-smb-client-performance-counters-provide-great-insight.aspx)は、優れた洞察を提供します。
+SMB クライアントカウンターの詳細については、「 [Windows server 2012 ファイルサーバーのヒント: 新しい共有ごとの SMB クライアントパフォーマンスカウンター](https://blogs.technet.com/b/josebda/archive/2012/11/19/windows-server-2012-file-server-tip-new-per-share-smb-client-performance-counters-provide-great-insight.aspx)は、優れた洞察を提供します。

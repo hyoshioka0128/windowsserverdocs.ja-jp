@@ -2,26 +2,22 @@
 title: DNS ゾーン管理
 description: このトピックは、Windows Server 2016 の IP アドレス管理 (IPAM) 管理ガイドに含まれています。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ipam
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: de3dc14b-164a-49f1-8a57-b9e788046c23
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: c5249cc61d1f6d4794c73b595781a59af0783f9f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 27d65f1e456bad843fefd18fff45cd5ef6258278
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355258"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860685"
 ---
 # <a name="dns-zone-management"></a>DNS ゾーン管理
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックでは、IPAM クライアントコンソールを使用して DNS ゾーンを管理する方法について説明します。  
   
@@ -37,7 +33,7 @@ Windows Server 2016 で IPAM を展開するときに、IPAM を使用して DNS
   
 IPAM コンソールでは、特定の DNS ゾーンの DNS リソースレコードを表示し、種類、IP アドレス、リソースレコードデータ、およびその他のフィルターオプションに基づいてレコードをフィルター処理できます。 また、特定のゾーンの DNS リソースレコードを編集することもできます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [IPAM の管理](Manage-IPAM.md)  
   
 

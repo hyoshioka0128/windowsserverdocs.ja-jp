@@ -1,27 +1,23 @@
 ---
 title: Azure Site Recovery を使用して RDS のディザスター リカバリーを有効にする
 description: Azure Site Recovery を使用して RDS のディザスター リカバリーを有効にする方法について説明します。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 05/05/2017
-ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: 38aea3dfced6ec67ae8418f697d78fa7e3c72420
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0c7af18be4aa767009f1dd0b82f145ffe6874768
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403989"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "80861405"
 ---
 # <a name="enable-disaster-recovery-of-rds-using-azure-site-recovery"></a>Azure Site Recovery を使用して RDS のディザスター リカバリーを有効にする
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016
+>適用先:Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016
 
 ディザスター リカバリーに向けて RDS の展開が適切に構成されているようにするには、RDS の展開を構成しているすべてのコンポーネントを保護する必要があります。
 
@@ -50,7 +46,7 @@ RDS 展開の種類に応じて、Azure Site Recovery で、異なるコンポ�
 
 |               展開の種類                |                                                                                                     保護の手順                                                                                                     |
 |----------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|     個人用仮想デスクトップ (管理対象外)     | 1. RDVH の役割がインストールされて、すべての仮想化ホストの準備が整っていることを確認します。    </br>2. 接続ブローカー。  </br>3.個人用デスクトップ。 </br>4。ゴールド テンプレート VM。 </br>5。Web アクセス、ライセンス サーバー、およびゲートウェイ サーバー |
-| プールされた仮想デスクトップ (UPD なしで管理) |                    1. RDVH の役割がインストールされて、すべての仮想化ホストの準備が整っている。  </br>2. 接続ブローカー。  </br>3.ゴールド テンプレート VM。 </br>4。Web アクセス、ライセンス サーバー、およびゲートウェイ サーバー。                    |
-|   RemoteApp とデスクトップ セッション (UPD なし)   |                                                          1. セッション ホスト。  </br>2. 接続ブローカー。 </br>3.Web アクセス、ライセンス サーバー、およびゲートウェイ サーバー。                                                           |
+|     個人用仮想デスクトップ (管理対象外)     | 1.RDVH の役割がインストールされて、すべての仮想化ホストの準備が整っていることを確認します。    </br>2.接続ブローカー。  </br>3.個人用デスクトップ。 </br>4.ゴールド テンプレート VM。 </br>5.Web アクセス、ライセンス サーバー、およびゲートウェイ サーバー |
+| プールされた仮想デスクトップ (UPD なしで管理) |                    1.RDVH の役割がインストールされて、すべての仮想化ホストの準備が整っている。  </br>2.接続ブローカー。  </br>3.ゴールド テンプレート VM。 </br>4.Web アクセス、ライセンス サーバー、およびゲートウェイ サーバー。                    |
+|   RemoteApp とデスクトップ セッション (UPD なし)   |                                                          1.セッション ホスト。  </br>2.接続ブローカー。 </br>3.Web アクセス、ライセンス サーバー、およびゲートウェイ サーバー。                                                           |
 

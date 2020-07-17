@@ -1,27 +1,23 @@
 ---
 title: リモート デスクトップ サービスで個人用セッション デスクトップを使用する
 description: RDS から、個人用に設定された割り当て済みデスクトップを共有する方法について説明します。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
-ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 ms.author: elizapo
 ms.date: 10/22/2019
 manager: dongill
-ms.openlocfilehash: 9386733911ca81ad60d038854bd68e5603aae4cf
-ms.sourcegitcommit: 3262c5c7cece9f2adf2b56f06b7ead38754a451c
+ms.openlocfilehash: c0c36793d08391ad98fa797004ed6dec9883e9f1
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72812287"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "80857405"
 ---
 # <a name="use-personal-session-desktops-with-remote-desktop-services"></a>リモート デスクトップ サービスで個人用セッション デスクトップを使用する
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016
+>適用先:Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016
 
 個人用セッション デスクトップを使用して、クラウド コンピューティング環境でサーバー ベースの個人用デスクトップを展開できます。  (クラウド コンピューティング環境では、ファブリック Hyper-V サーバーと、Microsoft Azure クラウドや Microsoft クラウド プラットフォームなどのゲスト仮想マシンとが区別されます)。個人用セッション デスクトップ機能は、各ユーザーが管理者特権を持つ自身の個人用セッション ホストに割り当てられている新しい種類のセッション コレクションを作成するように、リモート デスクトップ サービスのセッション ベースのデスクトップ展開シナリオを拡張します。 
 

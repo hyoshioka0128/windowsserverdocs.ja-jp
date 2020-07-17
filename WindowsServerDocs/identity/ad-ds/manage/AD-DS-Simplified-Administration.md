@@ -1,7 +1,6 @@
 ---
 ms.assetid: f74eec9a-2485-4ee0-a0d8-cce01250a294
 title: AD DS の簡略化された管理
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,16 +8,16 @@ ms.date: 08/09/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 4f12b1e88414a17c8fb82a707bd4399505df4c6c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e1989630cadd7d63f8ed041174135722d568484f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369450"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80824425"
 ---
 # <a name="ad-ds-simplified-administration"></a>AD DS の簡略化された管理
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 このトピックでは、Windows Server 2012 ドメインコントローラーの展開と管理の機能と利点、および以前のオペレーティングシステムの DC 展開と新しい Windows Server 2012 の実装の違いについて説明します。  
   
@@ -66,7 +65,7 @@ Adprep および以前のオペレーティング システムでのフォレス
   
 Active Directory Domain Services は、これらのハブの役割の1つです。ドメインコントローラーまたは Windows 8 のリモートサーバー管理ツールでサーバーマネージャーを実行すると、フォレスト内のドメインコントローラーに関する最新の重要な問題が表示されます。  
   
-次のようなビューがあります。  
+次の表示があります。  
   
 - サーバーの可用性  
 - CPU とメモリの高い使用率に関するパフォーマンス モニターの警告  
@@ -114,7 +113,7 @@ AD DS のサイト トポロジとレプリケーションの詳細について�
 
 Windows 2000 Active Directory では、RID マスターが導入されました。これは、ユーザー、グループ、コンピューターといったセキュリティ トラスティのセキュリティ識別子 (SID) を作成するために、相対識別子のプールをドメイン コントローラーに対して発行します。  既定では、このグローバル RID 空間は、ドメイン内で作成される合計 2<sup>30</sup> (つまり 1,073,741,823) 個の SID に制限されています。 SID をプールに戻したり、再発行したりすることはできません。 時間の経過と共に、大規模なドメインでは RID の残数が少なくなったり、何らかのアクシデントによって RID が無駄に減り、最終的に枯渇したりする場合があります。  
   
-Windows Server 2012 では、RID の発行と管理に関する多数の問題に対処しています。それらの問題は、1999 年に最初の Active Directory ドメインが作成されて以降、AD DS が進化を続ける過程で、お客様と Microsoft カスタマー サポートによって発見されたものです。 これには次が含まれます。  
+Windows Server 2012 では、RID の発行と管理に関する多数の問題に対処しています。それらの問題は、1999 年に最初の Active Directory ドメインが作成されて以降、AD DS が進化を続ける過程で、お客様と Microsoft カスタマー サポートによって発見されたものです。 次のようなクラスがあります。  
 
 - RID 消費の警告が定期的にイベント ログに書き込まれます。  
 - 管理者が RID プールを無効にすると、イベントがログに記録されます。  
@@ -173,7 +172,7 @@ Adprep をスキーマ マスター上で実行する必要はなくなりまし
 > [!IMPORTANT]  
 > Windows Server 2012 用の 32 ビット Adprep32.exe ツールはありません。 フォレストとドメインを準備するには、ドメイン コントローラーとして実行される、メンバー サーバーとして実行される、またはワークグループ内で実行される、1 台以上の Windows Server 2008 x64、Windows Server 2008 R2、または Windows Server 2012 コンピューターが必要です。 Adprep.exe は Windows Server 2003 x64 上では実行されません。  
   
-## <a name="BKMK_PrereuisiteChecking"></a>前提条件の確認
+## <a name="prerequisite-checking"></a><a name="BKMK_PrereuisiteChecking"></a>前提条件の確認
 
 Windows PowerShell の ADDSDeployment マネージ コードに組み込まれている前提条件チェック システムは、操作に基づいてさまざまなモードで動作します。 次の表に、各テストについて、それがいつ使用され、何がどのような方法で検証されるのかについて説明します。 検証が失敗し、エラー情報だけでは問題のトラブルシューティングを行えない場合に、この表が役立ちます。  
   
@@ -191,23 +190,23 @@ Windows PowerShell の ADDSDeployment マネージ コードに組み込まれ�
 
 通常、これらのコマンドレットを実行する必要はありません。既定で、展開コマンドレットと一緒に自動的に実行されます。  
 
-#### <a name="BKMK_ADDSInstallPrerequisiteTests"></a>前提条件テスト
+#### <a name="prerequisite-tests"></a><a name="BKMK_ADDSInstallPrerequisiteTests"></a>前提条件テスト
 
 ||||  
 |-|-|-|  
-|テスト名|プロトコル<br /><br />使用される|説明と注意事項|  
-|VerifyAdminTrusted<br /><br />ForDelegationProvider|LDAP|既存のパートナー ドメイン コントローラーに対する "コンピューターとユーザー アカウントに委任時の信頼を付与" (SeEnableDelegationPrivilege) 特権がユーザーにあることを検証します。 構成された tokenGroups 属性へのアクセスが必要になります。<br /><br />Windows Server 2003 ドメイン コントローラーに接続するときは使用されません。 昇格の前にこの特権を手動で確認する必要があります。|  
-|VerifyADPrep<br /><br />Prerequisites (フォレスト)|LDAP|rootDSE namingContexts 属性およびスキーマ名前付けコンテキストの fsmoRoleOwner 属性を使って、スキーマ マスターを検出して接続します。 AD DS のインストールにとってどの準備操作 (forestprep、domainprep、または rodcprep) が必要なのかを判断します。 スキーマ objectVersion が想定されていることと、それがさらに拡張を必要としているかどうかを検証します。|  
-|VerifyADPrep<br /><br />Prerequisites (ドメインおよび RODC)|LDAP|rootDSE namingContexts 属性およびインフラストラクチャ コンテナーの fsmoRoleOwner 属性を使って、インフラストラクチャ マスターを検出して接続します。 RODC のインストールの場合、このテストはドメイン名前付けマスターを検出し、それがオンラインであることを確認します。|  
-|CheckGroup<br /><br />メンバーシップ|LDAP、<br /><br />SMB 経由の RPC (LSARPC)|操作に応じて、ユーザーが Domain Admins グループまたは Enterprise Admins グループのメンバーであることを検証します (ドメイン コントローラーの追加または降格の場合は DA、ドメインの追加または削除の場合は EA)。|  
-|CheckForestPrep<br /><br />GroupMembership|LDAP、<br /><br />SMB 経由の RPC (LSARPC)|ユーザーが Schema Admins グループおよび Enterprise Admins グループのメンバーであることと、既存のドメイン コントローラーに対する "監査とセキュリティ ログの管理" (SeSecurityPrivilege) 特権を持っていることを検証します。|  
-|CheckDomainPrep<br /><br />GroupMembership|LDAP、<br /><br />SMB 経由の RPC (LSARPC)|ユーザーが Domain Admins グループのメンバーであることと、既存のドメイン コントローラーに対する "監査とセキュリティ ログの管理" (SeSecurityPrivilege) 特権を持っていることを検証します。|  
-|CheckRODCPrep<br /><br />GroupMembership|LDAP、<br /><br />SMB 経由の RPC (LSARPC)|ユーザーが Enterprise Admins グループのメンバーであることと、既存のドメイン コントローラーに対する "監査とセキュリティ ログの管理" (SeSecurityPrivilege) 特権を持っていることを検証します。|  
-|VerifyInitSync<br /><br />AfterReboot|LDAP|スキーマ マスターが rootDSE 属性 becomeSchemaMaster に対してダミー値を設定して再起動してから 1 回以上レプリケートしていることを検証します。|  
-|VerifySFUHotFix<br /><br />Applied|LDAP|既存のフォレスト スキーマに既知の問題、"OID が 1.2.840.113556.1.4.7000.187.102 の UID 属性に対する SFU2 拡張" が含まれていないことを検証します。<br /><br />([https://support.microsoft.com/kb/821732](https://support.microsoft.com/kb/821732))|  
-|VerifyExchange<br /><br />SchemaFixed|LDAP、WMI、DCOM、RPC|既存のフォレストのスキーマに、Exch、Exch、Ms-exch-labeleduri、Exch の各拡張機能の2000問題がまだ含まれていないことを検証する ([https://support.microsoft.com/kb/314649](https://support.microsoft.com/kb/314649))|  
-|VerifyWin2KSchema<br /><br />一貫性|LDAP|既存のフォレスト スキーマに一貫性のある (サード パーティによって間違って変更されていない) コアの属性とクラスがあることを検証します。|  
-|DCPromo|RPC 経由の DRSR<br /><br />LDAP、<br /><br />DNS<br /><br />SMB 経由の RPC (SAMR)|プロモーション コードに渡されるコマンド ライン構文を検証し、昇格をテストします。 フォレストまたはドメインを新規に作成する場合、既存のフォレストまたはドメインがないことを検証します。|  
-|VerifyOutbound<br /><br />ReplicationEnabled|LDAP、SMB 経由の DRSR、SMB 経由の RPC (LSARPC)|レプリケーション パートナーとして指定された既存のドメイン コントローラーで出力方向のレプリケーションが有効であることを検証します。そのために、NTDS 設定オブジェクトの NTDSDSA_OPT_DISABLE_OUTBOUND_REPL (0x00000004) のオプション属性を確認します。|  
-|VerifyMachineAdmin<br /><br />Password|RPC 経由の DRSR<br /><br />LDAP、<br /><br />DNS<br /><br />SMB 経由の RPC (SAMR)|DSRM のセーフ モードのパスワード セットがドメインの複雑さの要件を満たしていることを検証します。|  
+|テスト名|プロトコル<p>使用される|説明と注意事項|  
+|VerifyAdminTrusted<p>ForDelegationProvider|LDAP|既存のパートナー ドメイン コントローラーに対する "コンピューターとユーザー アカウントに委任時の信頼を付与" (SeEnableDelegationPrivilege) 特権がユーザーにあることを検証します。 構成された tokenGroups 属性へのアクセスが必要になります。<p>Windows Server 2003 ドメイン コントローラーに接続するときは使用されません。 昇格の前にこの特権を手動で確認する必要があります。|  
+|VerifyADPrep<p>Prerequisites (フォレスト)|LDAP|rootDSE namingContexts 属性およびスキーマ名前付けコンテキストの fsmoRoleOwner 属性を使って、スキーマ マスターを検出して接続します。 AD DS のインストールにとってどの準備操作 (forestprep、domainprep、または rodcprep) が必要なのかを判断します。 スキーマ objectVersion が想定されていることと、それがさらに拡張を必要としているかどうかを検証します。|  
+|VerifyADPrep<p>Prerequisites (ドメインおよび RODC)|LDAP|rootDSE namingContexts 属性およびインフラストラクチャ コンテナーの fsmoRoleOwner 属性を使って、インフラストラクチャ マスターを検出して接続します。 RODC のインストールの場合、このテストはドメイン名前付けマスターを検出し、それがオンラインであることを確認します。|  
+|CheckGroup<p>[メンバーシップ]|LDAP、<p>SMB 経由の RPC (LSARPC)|操作に応じて、ユーザーが Domain Admins グループまたは Enterprise Admins グループのメンバーであることを検証します (ドメイン コントローラーの追加または降格の場合は DA、ドメインの追加または削除の場合は EA)。|  
+|CheckForestPrep<p>GroupMembership|LDAP、<p>SMB 経由の RPC (LSARPC)|ユーザーが Schema Admins グループおよび Enterprise Admins グループのメンバーであることと、既存のドメイン コントローラーに対する "監査とセキュリティ ログの管理" (SeSecurityPrivilege) 特権を持っていることを検証します。|  
+|CheckDomainPrep<p>GroupMembership|LDAP、<p>SMB 経由の RPC (LSARPC)|ユーザーが Domain Admins グループのメンバーであることと、既存のドメイン コントローラーに対する "監査とセキュリティ ログの管理" (SeSecurityPrivilege) 特権を持っていることを検証します。|  
+|CheckRODCPrep<p>GroupMembership|LDAP、<p>SMB 経由の RPC (LSARPC)|ユーザーが Enterprise Admins グループのメンバーであることと、既存のドメイン コントローラーに対する "監査とセキュリティ ログの管理" (SeSecurityPrivilege) 特権を持っていることを検証します。|  
+|VerifyInitSync<p>AfterReboot|LDAP|スキーマ マスターが rootDSE 属性 becomeSchemaMaster に対してダミー値を設定して再起動してから 1 回以上レプリケートしていることを検証します。|  
+|VerifySFUHotFix<p>Applied|LDAP|既存のフォレスト スキーマに既知の問題、"OID が 1.2.840.113556.1.4.7000.187.102 の UID 属性に対する SFU2 拡張" が含まれていないことを検証します。<p>([https://support.microsoft.com/kb/821732](https://support.microsoft.com/kb/821732))|  
+|VerifyExchange<p>SchemaFixed|LDAP、WMI、DCOM、RPC|既存のフォレストスキーマにまだ2000問題が含まれていないことを検証する: Exch、Exch-Ms-exch-labeleduri、Exch ([https://support.microsoft.com/kb/314649](https://support.microsoft.com/kb/314649)) を使用します。|  
+|VerifyWin2KSchema<p>一貫性|LDAP|既存のフォレスト スキーマに一貫性のある (サード パーティによって間違って変更されていない) コアの属性とクラスがあることを検証します。|  
+|DCPromo|RPC 経由の DRSR<p>LDAP、<p>DNS<p>SMB 経由の RPC (SAMR)|プロモーション コードに渡されるコマンド ライン構文を検証し、昇格をテストします。 フォレストまたはドメインを新規に作成する場合、既存のフォレストまたはドメインがないことを検証します。|  
+|VerifyOutbound<p>ReplicationEnabled|LDAP、SMB 経由の DRSR、SMB 経由の RPC (LSARPC)|レプリケーション パートナーとして指定された既存のドメイン コントローラーで出力方向のレプリケーションが有効であることを検証します。そのために、NTDS 設定オブジェクトの NTDSDSA_OPT_DISABLE_OUTBOUND_REPL (0x00000004) のオプション属性を確認します。|  
+|VerifyMachineAdmin<p>Password|RPC 経由の DRSR<p>LDAP、<p>DNS<p>SMB 経由の RPC (SAMR)|DSRM のセーフ モードのパスワード セットがドメインの複雑さの要件を満たしていることを検証します。|  
 |VerifySafeModePassword|*該当なし*|ローカルの Administrator パスワード セットが、コンピューター セキュリティ ポリシーの複雑さの要件を満たしていることを検証します。|  

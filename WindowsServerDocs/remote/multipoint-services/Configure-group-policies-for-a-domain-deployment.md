@@ -1,24 +1,20 @@
 ---
 title: ドメイン展開用のグループ ポリシーを構成する
 description: MultiPoint Services でグループポリシーを設定する方法について説明します。
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 13e5fa90-d330-4155-a6b8-78eb650cbbfa
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 5ac6524289d231d152e366d2ba750a59d27ce14f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e851d12dad29de8b3498aad220354d31917fadee
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71395523"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80862185"
 ---
 # <a name="configure-group-policies-for-a-domain-deployment"></a>ドメイン展開用のグループ ポリシーを構成する
 MultiPoint Services のドメインの展開が正常に機能するようにするには、MultiPoint Services システムの WMSshell ユーザーアカウントに次のグループポリシー設定を適用します。  
@@ -39,14 +35,14 @@ WMSshell ユーザーアカウントは、MultiPoint services がコンソール
 |設定|値|  
 |-----------|----------|  
 |スクリーン セーバーを有効にする|無効|  
-|スクリーン セーバーのタイムアウト|無効<br /><br />秒: xxx|  
+|スクリーン セーバーのタイムアウト|無効<p>秒: xxx|  
 |スクリーン セーバーをパスワードで保護する|無効|  
   
 **ポリシー:** コンピューターの構成 > Windows の設定 > セキュリティ設定 > ローカルポリシー > ユーザー権利**の割り当て > ローカルログオンを許可する**  
   
 |設定|値|  
 |-----------|----------|  
-|ローカル ログオンを許可|アカウントの一覧に WMSshell アカウントが含まれていることを確認します。<br /><br />**注:** 既定では、WMSshell アカウントは Users グループのメンバーです。 ユーザーグループが一覧にあり、WMSshell が Users グループのメンバーである場合は、WMSshell アカウントを一覧に追加する必要はありません。|  
+|ローカル ログオンを許可する|アカウントの一覧に WMSshell アカウントが含まれていることを確認します。<p>**注:** 既定では、WMSshell アカウントは Users グループのメンバーです。 ユーザーグループが一覧にあり、WMSshell が Users グループのメンバーである場合は、WMSshell アカウントを一覧に追加する必要はありません。|  
   
 > [!IMPORTANT]  
 > グループポリシーを設定する場合は、ポリシーによって自動更新が妨げられないようにし、MultiPoint サーバーで Windows エラー報告のエラーを報告するようにしてください。 これらの設定は、Windows MultiPoint Server のインストール中に選択された **[更新プログラムを自動的にインストール]** する と **[自動 Windows エラー報告]** 設定 で設定します。 **[サーバー設定の編集]** を使用して multipoint マネージャーで構成するか、ディスク保護のスケジュールされた更新プログラムで構成します。  
@@ -55,7 +51,7 @@ WMSshell ユーザーアカウントは、MultiPoint services がコンソール
 MultiPoint Services をドメインに展開する場合は、次のレジストリサブキーを更新する必要があります。  
   
 > [!IMPORTANT]  
-> レジストリを正しく編集しないと、システムが正常に動作しなくなる場合があります。 レジストリを変更する前に、コンピューター上の重要なデータのバックアップを作成する必要があります。  
+> レジストリの編集を誤ると、システムに重大な損害を与える可能性があります。 レジストリを変更する前に、コンピューター上の重要なデータのバックアップを作成する必要があります。  
   
 #### <a name="to-update-registry-subkeys-for-a-domain-deployment-of-multipoint-services"></a>MultiPoint Services のドメイン展開のレジストリサブキーを更新するには  
   

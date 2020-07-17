@@ -1,8 +1,9 @@
 # <a name="contributing-to-windows-server-technical-documentation"></a>Windows Server 技術ドキュメントへの投稿
 
-Windows Server 技術ドキュメントに関心をありがとうございます。 ドキュメントへのフィードバック、編集、追加に感謝いたします。Windows Server の技術的なコンテンツを保持する 2 つの別々 の場所があります。 パブリックの場所のいずれか (windowsserverdocs)、もう一方はプライベート (windowsserverdocs pr)。 ユーザーに協力する位置を決定します。
+Windows Server 技術ドキュメントにご関心をお寄せいただきありがとうございます。ドキュメントへのフィードバック、編集、追記に感謝いたします。Windows Server の技術的なコンテンツ保持のため、2 つの場所を別々にご用意しております。パブリック (windowsserverdocs) と、プライベート (windowsserverdocs pr) です。マイクロソフトの従業員であるかどうかによって、ご協力いただく場所が異なります。
 
-- **Microsoft の従業員わかりません。** Microsoft 以外の従業員としては、パブリックな場所に協力する必要があります。 その方法については、この記事を続行します。
+- **私はマイクロソフトの従業員ではありません。** マイクロソフトの従業員ではない場合、パブリックな場所に貢献する必要があります。 その方法については、この記事を読み進めてください。
+
 
 - **私はマイクロソフトの従業員です。** マイクロソフトの従業員としてを実行しているに基づいてのオプションがあります。
 
@@ -23,7 +24,7 @@ Windows Server 技術ドキュメントに関心をありがとうございま�
 
 ### <a name="to-edit-a-topic"></a>トピックを編集するには
 
-1. ページに移動 https://docs.microsoft.com/windows-serverを更新し、選択する**編集**します。
+1. ページに移動 https://docs.microsoft.com/windows-server を更新し、選択する**編集**します。
 
     ![GitHub の Web、[編集] リンクを表示](media/contribute-link.png)
 

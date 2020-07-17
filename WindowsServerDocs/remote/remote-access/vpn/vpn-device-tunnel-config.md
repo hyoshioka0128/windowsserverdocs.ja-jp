@@ -6,15 +6,15 @@ ms.date: 11/05/2018
 ms.technology: networking-ras
 ms.topic: article
 ms.assetid: 158b7a62-2c52-448b-9467-c00d5018f65b
-ms.author: pashort
-author: shortpatti
+ms.author: v-tea
+author: Teresa-MOTIV
 ms.localizationpriority: medium
-ms.openlocfilehash: a216c490c92461e07fd5093783ec2c3049e8accb
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 855eb8d45297f15afceedf6cc11c2175c899ae45
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388031"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80818795"
 ---
 # <a name="configure-vpn-device-tunnels-in-windows-10"></a>Windows 10 で VPN デバイストンネルを構成する
 
@@ -37,8 +37,8 @@ Always On VPN を使用すると、デバイスまたはコンピューター用
 VPN 接続に対してコンピューター証明書認証を有効にし、受信 VPN 接続を認証するためのルート証明機関を定義する必要があります。 
 
 ```PowerShell
-$VPNRootCertAuthority = “Common Name of trusted root certification authority”
-$RootCACert = (Get-ChildItem -Path cert:LocalMachine\root | Where-Object {$_.Subject -Like “*$VPNRootCertAuthority*” })
+$VPNRootCertAuthority = "Common Name of trusted root certification authority"
+$RootCACert = (Get-ChildItem -Path cert:LocalMachine\root | Where-Object {$_.Subject -Like "*$VPNRootCertAuthority*" })
 Set-VpnAuthProtocol -UserAuthProtocolAccepted Certificate, EAP -RootCertificateNameToAccept $RootCACert -PassThru
 ```
 
@@ -46,9 +46,9 @@ Set-VpnAuthProtocol -UserAuthProtocolAccepted Certificate, EAP -RootCertificateN
 
 ## <a name="vpn-device-tunnel-configuration"></a>VPN デバイストンネルの構成
 
-次のサンプルプロファイル XML は、デバイストンネル経由でクライアントが開始したプルのみが必要なシナリオに適したガイダンスを提供します。  トラフィックフィルターは、デバイスのトンネルを管理トラフィックのみに制限するために利用されます。  この構成は、Windows Update、一般的なグループポリシー (GP) と System Center Configuration Manager (SCCM) の更新シナリオ、および、キャッシュされた資格情報を使用しない最初のログオンの VPN 接続、またはパスワードリセットのシナリオに適しています。 
+次のサンプルプロファイル XML は、デバイストンネル経由でクライアントが開始したプルのみが必要なシナリオに適したガイダンスを提供します。  トラフィックフィルターは、デバイスのトンネルを管理トラフィックのみに制限するために利用されます。  この構成は、Windows Update、一般的なグループポリシー (GP) と Microsoft エンドポイント Configuration Manager の更新シナリオ、および、キャッシュされた資格情報を使用しない最初のログオンの VPN 接続、またはパスワードリセットのシナリオに適しています。 
 
-Windows リモート管理 (WinRM)、リモート GPUpdate、およびリモートの SCCM 更新シナリオなど、サーバーによって開始されるプッシュケースの場合は、トラフィックフィルターを使用できないように、デバイストンネルで受信トラフィックを許可する必要があります。  デバイストンネルプロファイルでトラフィックフィルターをオンにすると、デバイストンネルは受信トラフィックを拒否します。  この制限は、今後のリリースでは削除される予定です。
+Windows リモート管理 (WinRM)、リモート GPUpdate、リモート Configuration Manager の更新シナリオなど、サーバーによって開始されるプッシュケースの場合は、トラフィックフィルターを使用できないように、デバイストンネルで受信トラフィックを許可する必要があります。  デバイストンネルプロファイルでトラフィックフィルターをオンにすると、デバイストンネルは受信トラフィックを拒否します。  この制限は、今後のリリースでは削除される予定です。
 
 
 ### <a name="sample-vpn-profilexml"></a>VPN profileXML の例
@@ -173,7 +173,7 @@ VPN の展開に役立つその他のリソースを次に示します。
 
 VPN クライアント構成リソースは次のとおりです。
 
-- [System Center Configuration Manager で VPN プロファイルを作成する方法](https://docs.microsoft.com/sccm/protect/deploy-use/create-vpn-profiles)
+- [Configuration Manager で VPN プロファイルを作成する方法](https://docs.microsoft.com/configmgr/protect/deploy-use/create-vpn-profiles)
 - [Windows 10 クライアント Always On VPN 接続を構成する](always-on-vpn/deploy/vpn-deploy-client-vpn-connections.md)
 - [VPN プロファイルのオプション](https://docs.microsoft.com/windows/access-protection/vpn/vpn-profile-options)
 

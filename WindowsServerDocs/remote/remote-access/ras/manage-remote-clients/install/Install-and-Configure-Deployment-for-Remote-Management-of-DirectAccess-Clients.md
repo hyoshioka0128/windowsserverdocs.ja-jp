@@ -2,22 +2,18 @@
 title: DirectAccess クライアントのリモート管理の展開をインストールして構成する
 description: このトピックは、「Windows Server 2016 で DirectAccess クライアントをリモート管理する」ガイドの一部です。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4adce101-1e30-439e-b78b-65b26479f33e
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: c28e29e57728c2d4fa6fec9bc6f86b5c7b7b70a5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 91ae2d7a059d6b7cfcea7e1754b69a7d42ebfa00
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404599"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855191"
 ---
 # <a name="install-and-configure-deployment-for-remote-management-of-directaccess-clients"></a>DirectAccess クライアントのリモート管理の展開をインストールして構成する
 

@@ -2,28 +2,26 @@
 title: HYPER-V でジェネレーション 1 または 2 の仮想マシンを作成するか。
 description: サポートされているブート方法やその他の機能の違いなど、ニーズを満たす世代を選択する際に役立つ考慮事項を示します。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 02e31413-6140-4723-a8d6-46c7f667792d
-author: KBDAzure
+author: kbdazure
 ms.author: kathydav
 ms.date: 12/05/2016
-ms.openlocfilehash: bd0b50534096bc06edb41390ef2c4ec3554d8406
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0e8b8dbaa937229b5a87560f3993bb07d7cd7ff8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71364082"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860775"
 ---
 # <a name="should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v"></a>HYPER-V でジェネレーション 1 または 2 の仮想マシンを作成するか。
 
 >適用対象: Windows 10、Windows Server 2016、Microsoft Hyper-V Server 2016、Windows Server 2019、Microsoft Hyper-V Server 2019
 
 > [!NOTE]
-> Windows 仮想マシン (VM) をオンプレミスから Microsoft Azure にアップロードする予定がある場合、第1世代と第2世代の Vm を VHD ファイル形式でアップロードし、容量固定のディスクを使用できます。 Azure でサポートされている第2世代の機能の詳細については、「 [azure での第2世代の vm](https://docs.microsoft.com/azure/virtual-machines/windows/generation-2) 」を参照してください。 Windows VHD または VHDX のアップロードの詳細については、「 [Azure にアップロードする WINDOWS vhd または vhdx を準備](https://docs.microsoft.com/azure/virtual-machines/windows/prepare-for-upload-vhd-image)する」を参照してください。
+> Windows 仮想マシン (Vm) をオンプレミスから Microsoft Azure にアップロードする予定がある場合、第1世代と第2世代の Vm を VHD ファイル形式でアップロードし、容量固定のディスクを使用することがサポートされています。 Azure でサポートされている第2世代の機能の詳細については、「 [azure での第2世代の vm](https://docs.microsoft.com/azure/virtual-machines/windows/generation-2) 」を参照してください。 Windows VHD または VHDX のアップロードの詳細については、「 [Azure にアップロードする WINDOWS vhd または vhdx を準備](https://docs.microsoft.com/azure/virtual-machines/windows/prepare-for-upload-vhd-image)する」を参照してください。
 
 第 1 世代または第 2 世代バーチャル マシンを作成するために選択を選んでいるゲスト オペレーティング システムのインストールと仮想マシンを展開に使用するブート方法です。 次のステートメントのいずれかが true でない限り、セキュア ブートのような機能を活用する第 2 世代仮想マシンを作成することをお勧めします。  
 
@@ -57,7 +55,7 @@ ms.locfileid: "71364082"
 
 次の表は、第 1 世代と第 2 世代の仮想マシン用にどの 64 ビット バージョンの Windows をゲスト オペレーティング システムとして使用できるかを示しています。  
 
-|64 ビット バージョンの Windows|第 1 世代|第 2 世代|  
+|64 ビット バージョンの Windows|第 1 世代|世代 2|  
 |-------------------------------|----------------|----------------|  
 | Windows Server 2019 |&#10004;|&#10004;|  
 | Windows Server 2016 |&#10004;|&#10004;|  
@@ -72,7 +70,7 @@ ms.locfileid: "71364082"
 
 次の表は、第 1 世代と第 2 世代の仮想マシン用にどの 32 ビット バージョンの Windows をゲスト オペレーティング システムとして使用できるかを示しています。
 
-|32 ビット バージョンの Windows|第 1 世代|第 2 世代|  
+|32 ビット バージョンの Windows|第 1 世代|世代 2|  
 |-------------------------------|----------------|----------------|  
 |Windows 10|&#10004;| &#10006;|  
 |Windows 8.1|&#10004;| &#10006;|  
@@ -83,7 +81,7 @@ ms.locfileid: "71364082"
 
 次の表に、第1世代と第2世代の仮想マシンのゲストオペレーティングシステムとして使用できる、RHEL\) および CentOS \(Red Hat Enterprise Linux のバージョンを示します。
 
-|オペレーティング システムのバージョン|第 1 世代|第 2 世代|  
+|オペレーティング システムのバージョン|第 1 世代|世代 2|  
 |-----------------------------|----------------|----------------|  
 |RHEL/CentOS 7.x シリーズ|&#10004;|&#10004;|  
 |RHEL/CentOS 6.x シリーズ|&#10004;|&#10004;<br />**注:** Windows Server 2016 以降でのみサポートされています。|  
@@ -95,7 +93,7 @@ ms.locfileid: "71364082"
 
 次の表は、第 1 世代と第 2 世代の仮想マシン用にどのバージョンの Debian をゲスト オペレーティング システムとして使用できるかを示しています。
 
-|オペレーティング システムのバージョン|第 1 世代|第 2 世代|  
+|オペレーティング システムのバージョン|第 1 世代|世代 2|  
 |-----------------------------|----------------|----------------|  
 |Debian 7.x シリーズ|&#10004;| &#10006;|  
 |Debian 8. x シリーズ|&#10004;|&#10004;|  
@@ -106,7 +104,7 @@ ms.locfileid: "71364082"
 
 次の表は、第 1 世代と第 2 世代の仮想マシン用にどのバージョンの FreeBSD をゲスト オペレーティング システムとして使用できるかを示しています。  
 
-|オペレーティング システムのバージョン|第 1 世代|第 2 世代|  
+|オペレーティング システムのバージョン|第 1 世代|世代 2|  
 |-----------------------------|----------------|----------------|  
 |FreeBSD 10 と 10.1|&#10004;| &#10006;|  
 |FreeBSD 9.1 および 9.3|&#10004;| &#10006;|  
@@ -118,14 +116,14 @@ ms.locfileid: "71364082"
 
 次の表は、第 1 世代と第 2 世代の仮想マシン用にどのバージョンの Red Hat Compatible Kernel Series をゲスト オペレーティング システムとして使用できるかを示しています。  
 
-|Red Hat 互換カーネル シリーズのバージョン|第 1 世代|第 2 世代|  
+|Red Hat 互換カーネル シリーズのバージョン|第 1 世代|世代 2|  
 |---------------------------------------------|----------------|----------------|  
 |Oracle Linux 7.x シリーズ|&#10004;|&#10004;|
 |Oracle Linux 6.x シリーズ|&#10004;| &#10006;|  
 
 次の表は、第 1 世代と第 2 世代の仮想マシン用にどのバージョンの Unbreakable Enterprise Kernel をゲスト オペレーティング システムとして使用できるかを示しています。
 
-|Unbreakable Enterprise カーネル (UEK) バージョン|第 1 世代|第 2 世代|  
+|Unbreakable Enterprise カーネル (UEK) バージョン|第 1 世代|世代 2|  
 |--------------------------------------------------|----------------|----------------|  
 |Oracle Linux UEK R3 QU3|&#10004;| &#10006;|  
 |Oracle Linux UEK R3 QU2|&#10004;| &#10006;|  
@@ -137,7 +135,7 @@ ms.locfileid: "71364082"
 
 次の表は、第1世代および第2世代仮想マシンのゲストオペレーティングシステムとして使用できる SUSE のバージョンを示しています。
 
-|オペレーティング システムのバージョン|第 1 世代|第 2 世代|  
+|オペレーティング システムのバージョン|第 1 世代|世代 2|  
 |-----------------------------|----------------|----------------|  
 |SUSE Linux Enterprise Server 12 シリーズ|&#10004;|&#10004;|  
 |SUSE Linux Enterprise Server 11 シリーズ|&#10004;| &#10006;|  
@@ -149,7 +147,7 @@ ms.locfileid: "71364082"
 
 次の表は、第 1 世代と第 2 世代の仮想マシン用にどのバージョンの Ubuntu をゲスト オペレーティング システムとして使用できるかを示しています。
 
-|オペレーティング システムのバージョン|第 1 世代|第 2 世代|  
+|オペレーティング システムのバージョン|第 1 世代|世代 2|  
 |-----------------------------|----------------|----------------|  
 |Ubuntu 14.04 およびそれ以降のバージョン|&#10004;|&#10004;|  
 |Ubuntu 12.04|&#10004;| &#10006;|  
@@ -160,7 +158,7 @@ ms.locfileid: "71364082"
 
 次の表は、メソッドは第 1 世代と第 2 世代仮想マシンでサポートされているブートを示します。  
 
-|起動方法|第 1 世代|第 2 世代|  
+|起動方法|第 1 世代|世代 2|  
 |---------------|----------------|----------------|  
 |標準のネットワーク アダプターを使用した PXE ブート| &#10006;|&#10004;|  
 |レガシ ネットワーク アダプターを使用して PXE ブート|&#10004;| &#10006;|  
@@ -188,17 +186,17 @@ ms.locfileid: "71364082"
 |IDE コントローラー|仮想 SCSI コントローラー|.vhdx から起動 (最大サイズ 64 TB、オンライン サイズ変更機能)|  
 |IDE CD-ROM|仮想 SCSI CD-ROM|SCSI コントローラーあたり最大 64 台の SCSI DVD デバイスをサポート|  
 |従来の BIOS|UEFI ファームウェア|セキュア ブート|  
-|レガシ ネットワーク アダプター|合成ネットワーク アダプター|IPv4 および IPv6 でのネットワーク ブート|  
-|フロッピー コントローラーおよび DMA コントローラー|フロッピー コントローラーのサポートはなし|該当なし|  
+|レガシ ネットワーク アダプター|[統合ネットワーク アダプター]|IPv4 および IPv6 でのネットワーク ブート|  
+|フロッピー コントローラーおよび DMA コントローラー|フロッピー コントローラーのサポートはなし|N/A|  
 |COM ポートに対する Universal Asynchronous Receiver/Transmitter (UART)|デバッグ用のオプション UART|より高速で高信頼性|  
 |i8042 キーボード コントローラー|ソフトウェア ベースの入力|エミュレーションがないため、使用するリソースが減ります。 また、ゲスト オペレーティング システムから攻撃を受ける機会が減少します。|  
 |PS/2 キーボード|ソフトウェア ベースのキーボード|エミュレーションがないため、使用するリソースが減ります。 また、ゲスト オペレーティング システムから攻撃を受ける機会が減少します。|  
 |PS/2 マウス|ソフトウェア ベースのマウス|エミュレーションがないため、使用するリソースが減ります。 また、ゲスト オペレーティング システムから攻撃を受ける機会が減少します。|  
 |S3 ビデオ|ソフトウェア ベースのビデオ|エミュレーションがないため、使用するリソースが減ります。 また、ゲスト オペレーティング システムから攻撃を受ける機会が減少します。|  
-|PCI バス|必要ありません|該当なし|  
-|Programmable Interrupt Controller (PIC)|必要ありません|該当なし|  
-|Programmable Interval Timer (PIT)|必要ありません|該当なし|  
-|スーパー I/O デバイス|必要ありません|該当なし|  
+|PCI バス|必要ありません|N/A|  
+|Programmable Interrupt Controller (PIC)|必要ありません|N/A|  
+|Programmable Interval Timer (PIT)|必要ありません|N/A|  
+|スーパー I/O デバイス|必要ありません|N/A|  
 
 ## <a name="more-about-generation-2-virtual-machines"></a>第 2 世代仮想マシンの詳細について
 
@@ -253,6 +251,6 @@ COM ポートを追加するには:
 
 ## <a name="see-also"></a>参照  
 
-- [Hyper-v 上の Linux および FreeBSD Virtual Machines](../Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)
-- [VMConnect を使用して Hyper-v 仮想マシン上のローカルリソースを使用する](../learn-more/Use-local-resources-on-Hyper-V-virtual-machine-with-VMConnect.md)
+- [Hyper-V での Linux および FreeBSD の仮想マシン](../Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)
+- [VMConnect を使って Hyper-V 仮想マシン上でローカル リソースを使用する](../learn-more/Use-local-resources-on-Hyper-V-virtual-machine-with-VMConnect.md)
 - [Windows Server 2016 での Hyper-v のスケーラビリティの計画](Plan-for-Hyper-V-scalability-in-Windows-Server-2016.md)

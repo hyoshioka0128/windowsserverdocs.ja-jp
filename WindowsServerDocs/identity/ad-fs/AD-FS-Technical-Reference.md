@@ -1,7 +1,6 @@
 ---
 ms.assetid: e2c940f5-4b1f-457a-bc71-dcced0c752f7
 title: AD FS テクニカル リファレンス
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 29c52b21e5bb30fc54c2f561015c64ae93447836
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 54d97a0dc9e4c752f4b5141fba015edc4ed4d8b4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408562"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854145"
 ---
 # <a name="ad-fs-technical-reference"></a>AD FS テクニカル リファレンス
 
@@ -29,8 +28,8 @@ ms.locfileid: "71408562"
 > [!TIP]
 > AD FS 2.0 の設計に関するその他のコンテンツについては、Microsoft TechNet Wiki の[AD FS 2.0 コンテンツマップ](https://social.technet.microsoft.com/wiki/contents/articles/2735.ad-fs-2-0-content-map.aspx)に関するページを参照してください。 このページは、AD FS 2.0 コミュニティのメンバーによって管理され、AD FS 製品チームによって定期的にモニターされています。
 
-## <a name="see-also"></a>関連項目
-[Active Directory フェデレーションサービス (AD FS) の概要](AD-FS-2016-Overview.md)
+## <a name="see-also"></a>参照
+[Active Directory フェデレーション サービスの概要](AD-FS-2016-Overview.md)
 
 
 

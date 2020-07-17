@@ -2,7 +2,6 @@
 title: Windows Server Update Services を展開する
 description: Windows Server Update Service (WSUS) のトピック - 展開プロセスの概要とそれを実現するための 4 つの手順へのリンク
 ms.prod: windows-server
-ms.reviewer: na
 ms.technology: manage-wsus
 ms.topic: get-started-article
 ms.assetid: 2708f6b2-4252-4b8f-9b7e-84c9b4222075
@@ -10,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e3e6bcd5f90d1a7df2a35dda45b4bf8951940815
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b9cc96badad864a0d76ef6295c604ff22ca4455f
+ms.sourcegitcommit: fb808a6fc851a3e5c47e6a7654366145d2f19554
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361678"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84740615"
 ---
 # <a name="deploy-windows-server-update-services"></a>Windows Server Update Services を展開する
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用先:Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 Windows Server Update Services (WSUS) を使用すると、IT 管理者は Microsoft 製品の最新の更新プログラムを展開できます。 WSUS は Windows Server のサーバーの役割の 1 つで、更新プログラムを管理および配布するためにインストールできます。 1 台の WSUS サーバーを、組織内にある他の WSUS サーバー用の更新プログラムの供給元として運用できます。 更新プログラムの供給元として機能する WSUS サーバーは、"アップストリーム サーバー" と呼ばれます。  
 

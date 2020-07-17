@@ -1,7 +1,6 @@
 ---
 ms.assetid: 0fd7b6aa-3e50-45a3-a3a6-56982844363e
 title: イベント ID 2088-レプリケーションの成功時に DNS 参照エラーが発生しました
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: d51cbcc93a8decbcb72a1e91854a09345507511d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f84fd7be45995e9e0b318b42c8b4152af244a9da
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71368913"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80823055"
 ---
 # <a name="event-id-2088-dns-lookup-failure-occurred-with-replication-success"></a>イベント ID 2088: DNS 参照エラーが発生しましたが、レプリケーションは成功しました
 
@@ -54,7 +53,7 @@ ms.locfileid: "71368913"
 
 ユーザーの操作: 
 
-1) ソースドメインコントローラーが機能しなくなった場合、または別のコンピューター名または NTDSDSA オブジェクト GUID を使用してそのオペレーティングシステムが再インストールされている場合は、「MSKB」の記事に記載されている手順を使用して、ソースドメインコントローラーのメタデータを ntdsutil.exe で削除します。216498。 
+1) ソースドメインコントローラーが機能しなくなった場合、または別のコンピューター名または NTDSDSA オブジェクト GUID を使用してそのオペレーティングシステムが再インストールされている場合は、MSKB の記事216498に記載されている手順を使用して、ソースドメインコントローラーのメタデータを ntdsutil.exe で削除します。 
 
 2) ソースドメインコントローラが Active Directory 実行されていて、ネットワーク上でアクセス可能であることを確認するために、「net view \\&lt;source DC name&gt;」または「ping &lt;source DC name&gt;」と入力します。 
 

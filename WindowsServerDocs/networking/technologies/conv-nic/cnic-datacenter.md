@@ -6,21 +6,21 @@ ms.technology: networking
 ms.topic: article
 ms.assetid: f01546f8-c495-4055-8492-8806eee99862
 manager: dougkim
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 09/17/2018
-ms.openlocfilehash: e4c305a7c8c4c4618b0df1e1b2a646356d8f821f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 54471446fb9eab6dc5dc20043c7cb651766a59a9
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356121"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309647"
 ---
 # <a name="converged-nic-in-a-teamed-nic-configuration-datacenter"></a>チーム化される NIC 構成 (datacenter) での収束 NIC
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
-このトピックでは、スイッチ埋め込みチーミング\(セット\)を使用して、チーム化された nic 構成で収束 nic を展開する手順について説明します。 
+このトピックでは、スイッチ埋め込みチーミング \(SET\)を使用して、チーム化された NIC 構成で収束 NIC を展開する手順について説明します。 
 
 このトピックの構成例では、2つの hyper-v ホスト ( **Hyper-v ホスト 1**と**hyper-v ホスト 2**) について説明します。 両方のホストに2つのネットワークアダプターがあります。 各ホストでは、1つのアダプターが 192.168.1. x/24 サブネットに接続され、1つのアダプターが 192.168.2/24 サブネットに接続されます。
 
@@ -28,7 +28,7 @@ ms.locfileid: "71356121"
 
 ## <a name="step-1-test-the-connectivity-between-source-and-destination"></a>手順 1. ソースとターゲットの間の接続をテストする
 
-物理 NIC が宛先ホストに接続できることを確認します。  このテストでは、レイヤー 3 \(L3\)または IP レイヤーと、レイヤー 2 \(L2\)仮想ローカルエリアネットワーク\(VLAN\)を使用した接続を示します。
+物理 NIC が宛先ホストに接続できることを確認します。  このテストでは、レイヤー 3 \(L3\) または IP レイヤーに加えて、レイヤー 2 \(L2\) 仮想ローカルエリアネットワーク \(VLAN\)を使用して接続をデモンストレーションします。
 
 1. 最初のネットワークアダプターのプロパティを表示します。
 
@@ -39,9 +39,9 @@ ms.locfileid: "71356121"
    _**生じ**_
 
 
-   |    名前    |           InterfaceDescription           | ifIndex | 状況 |    Mac     | LinkSpeed |
+   |    Name    |           InterfaceDescription           | ifIndex | 状態 |    Mac     | LinkSpeed |
    |------------|------------------------------------------|---------|--------|-------------------|-----------|
-   | テスト-40G-1 | Mellanox/3 Pro イーサネットアダプター |   11    |   Up   | E4-1D-07-43-D0 |  40 Gbps  |
+   | テスト-40G-1 | Mellanox/3 Pro イーサネットアダプター |   11    |   上へ   | E4-1D-07-43-D0 |  40 Gbps  |
 
    ---
 
@@ -60,7 +60,7 @@ ms.locfileid: "71356121"
    |   IPAddress    | 192.168.1.3 |
    | InterfaceIndex |     11      |
    | InterfaceAlias | テスト-40G-1  |
-   | AddressFamily  |    Ipv4/ipv6     |
+   | AddressFamily  |    IPv4     |
    |      種類      |   ユニキャスト   |
    |  プレフィックス  |     24      |
 
@@ -75,9 +75,9 @@ ms.locfileid: "71356121"
    _**生じ**_
 
 
-   |    名前    |          InterfaceDescription           | ifIndex | 状況 |    Mac     | LinkSpeed |
+   |    Name    |          InterfaceDescription           | ifIndex | 状態 |    Mac     | LinkSpeed |
    |------------|-----------------------------------------|---------|--------|-------------------|-----------|
-   | テスト-40G-2 | Mellanox/3 Pro イーサネット A... #2 |   13    |   Up   | E4-1D-2D-07-40-70 |  40 Gbps  |
+   | テスト-40G-2 | Mellanox/3 Pro イーサネット A... #2 |   13    |   上へ   | E4-1D-2D-07-40-70 |  40 Gbps  |
 
    ---
 
@@ -96,13 +96,13 @@ ms.locfileid: "71356121"
    |   IPAddress    | 192.168.2.3 |
    | InterfaceIndex |     13      |
    | InterfaceAlias | テスト-40G-2  |
-   | AddressFamily  |    Ipv4/ipv6     |
+   | AddressFamily  |    IPv4     |
    |      種類      |   ユニキャスト   |
    |  プレフィックス  |     24      |
 
    ---
 
-5. 他の NIC チームまたは SET member pNICs に有効な IP アドレスがあることを確認します。<p>別のサブネットで\(ある xxx.xxx を使用します。**2**. xxx vs xxx.xxx。**1**. xxx\)。このアダプターから宛先への送信を容易にします。 そうしないと、両方の2つの pNICs を同じサブネットに配置すると、Windows TCP/IP stack のインターフェイス間の負荷分散と、単純な検証がより複雑になります。
+5. 他の NIC チームまたは SET member pNICs に有効な IP アドレスがあることを確認します。<p>別のサブネットを使用して、xxx.xxx \(します。**2**. xxx vs xxx.xxx。**1**. xxx\)、このアダプターから宛先への送信を容易にします。 そうしないと、両方の2つの pNICs を同じサブネットに配置すると、Windows TCP/IP stack のインターフェイス間の負荷分散と、単純な検証がより複雑になります。
 
 
 ## <a name="step-2-ensure-that-source-and-destination-can-communicate"></a>手順 2. 転送元と転送先が通信できることを確認する
@@ -182,9 +182,9 @@ ms.locfileid: "71356121"
 
 多くのネットワーク構成では、Vlan を利用しています。また、ネットワークで Vlan を使用する予定がある場合は、Vlan が構成されている前のテストを繰り返す必要があります。
 
-この手順では、Nic は**アクセス**モードになっています。 ただし、このガイドの後半で hyper-v 仮想スイッチ\(vSwitch\)を作成する場合、VLAN プロパティは vSwitch ポートレベルで適用されます。 
+この手順では、Nic は**アクセス**モードになっています。 ただし、このガイドの後半で Hyper-v 仮想スイッチ \(vSwitch\) を作成すると、vSwitch ポートレベルで VLAN プロパティが適用されます。 
 
-スイッチは複数の vlan をホストできるため、ラック\(ToR\)物理スイッチの上部に、ホストが接続されているポートをトランクモードで構成する必要があります。
+スイッチは複数の Vlan をホストできるため、ラックの上部 \(ToR\) 物理スイッチが、ホストが接続されているポートをトランクモードで構成する必要があります。
 
 >[!NOTE]
 >スイッチでトランクモードを構成する方法については、ToR スイッチのドキュメントを参照してください。
@@ -195,7 +195,7 @@ ms.locfileid: "71356121"
 
 
 >[!TIP]
->米国\(およびエレクトロニクスエンジニアの IEEE\)ネットワーク標準によれば、物理 NIC のサービス\(品質 QoS\)プロパティは、埋め込まれている 802.1 p ヘッダーで動作します。802.1 q \(vlan\)ヘッダー内で、vlan ID を構成します。
+>IEEE\) ネットワーク標準 \(IEEE の電気およびエレクトロニクスエンジニアによれば、物理 NIC のサービス品質 \(QoS\) プロパティは、VLAN ID を構成するときに、802.1 Q \(VLAN\) ヘッダーに埋め込まれている 802.1 p ヘッダーで動作します。
 
 1. 最初の NIC の VLAN ID を構成します。
 
@@ -207,7 +207,7 @@ ms.locfileid: "71356121"
    _**生じ**_   
 
 
-   |    名前    | DisplayName | DisplayValue | RegistryKeyword | RegistryValue |
+   |    Name    | DisplayName | DisplayValue | RegistryKeyword | RegistryValue |
    |------------|-------------|--------------|-----------------|---------------|
    | テスト-40G-1 |   VLAN ID   |     101      |     VlanID      |     {101}     |
 
@@ -228,9 +228,9 @@ ms.locfileid: "71356121"
    _**生じ**_
 
 
-   |    名前    |          InterfaceDescription           | ifIndex | 状況 |    Mac     | LinkSpeed |
+   |    Name    |          InterfaceDescription           | ifIndex | 状態 |    Mac     | LinkSpeed |
    |------------|-----------------------------------------|---------|--------|-------------------|-----------|
-   | テスト-40G-1 | Mellanox: 3 Pro イーサネット Ada... |   11    |   Up   | E4-1D-07-43-D0 |  40 Gbps  |
+   | テスト-40G-1 | Mellanox: 3 Pro イーサネット Ada... |   11    |   上へ   | E4-1D-07-43-D0 |  40 Gbps  |
 
    ---
 
@@ -244,7 +244,7 @@ ms.locfileid: "71356121"
    _**生じ**_
 
 
-   |    名前    | DisplayName | DisplayValue | RegistryKeyword | RegistryValue |
+   |    Name    | DisplayName | DisplayValue | RegistryKeyword | RegistryValue |
    |------------|-------------|--------------|-----------------|---------------|
    | テスト-40G-2 |   VLAN ID   |     102      |     VlanID      |     {102}     |
 
@@ -265,9 +265,9 @@ ms.locfileid: "71356121"
    _**生じ**_
 
 
-   |    名前    |          InterfaceDescription           | ifIndex | 状況 |    Mac     | LinkSpeed |
+   |    Name    |          InterfaceDescription           | ifIndex | 状態 |    Mac     | LinkSpeed |
    |------------|-----------------------------------------|---------|--------|-------------------|-----------|
-   | テスト-40G-2 | Mellanox: 3 Pro イーサネット Ada... |   11    |   Up   | E4-1D-07-43-D1 |  40 Gbps  |
+   | テスト-40G-2 | Mellanox: 3 Pro イーサネット Ada... |   11    |   上へ   | E4-1D-07-43-D1 |  40 Gbps  |
 
    ---
 
@@ -325,15 +325,15 @@ ms.locfileid: "71356121"
    ![サービスの品質の構成](../../media/Converged-NIC/3-datacenter-configure-qos.jpg)
 
 
-## <a name="step-4-configure-quality-of-service-qos"></a>手順 4. サービス\(品質 QoS の構成\)
+## <a name="step-4-configure-quality-of-service-qos"></a>手順 4. QoS\) \(サービスの品質を構成する
 
 >[!NOTE]
 >相互に通信することを目的としたすべてのホストで、次の DCB と QoS の構成手順をすべて実行する必要があります。
 
-1. 各 hyper-v ホストに\(Data\) Center ブリッジング DCB をインストールします。
+1. 各 Hyper-v ホストにデータセンターブリッジング \(DCB\) をインストールします。
 
    - IWarp を使用するネットワーク構成の場合は**省略可能**。
-   - RDMA サービスに roce \(any バージョン\)を使用するネットワーク構成に**必要です**。
+   - RoCE \(RDMA サービスのすべてのバージョン\) を使用するネットワーク構成に**必要です**。
 
    ```PowerShell
    Install-WindowsFeature Data-Center-Bridging
@@ -351,7 +351,7 @@ ms.locfileid: "71356121"
 2. SMB ダイレクトの QoS ポリシーを設定します。
 
    - IWarp を使用するネットワーク構成の場合は**省略可能**。
-   - RDMA サービスに roce \(any バージョン\)を使用するネットワーク構成に**必要です**。
+   - RoCE \(RDMA サービスのすべてのバージョン\) を使用するネットワーク構成に**必要です**。
 
    次の例のコマンドでは、値 "3" は任意です。 QoS ポリシーの構成全体で同じ値を常に使用する場合は、1 ~ 7 の任意の値を使用できます。
 
@@ -364,10 +364,10 @@ ms.locfileid: "71356121"
 
    |   パラメーター    |          値           |
    |----------------|--------------------------|
-   |      名前      |           SMB            |
+   |      Name      |           SMB            |
    |     所有者      | グループポリシー \(マシン\) |
-   | NetworkProfile |           All            |
-   |   優先度   |           127            |
+   | NetworkProfile |           [すべて]            |
+   |   ［優先順位］   |           127            |
    |   JobObject    |          &nbsp;          |
    | NetDirectPort  |           445            |
    | PriorityValue  |            3             |
@@ -385,11 +385,11 @@ ms.locfileid: "71356121"
 
    |   パラメーター    |          値           |
    |----------------|--------------------------|
-   |      名前      |         DEFAULT          |
+   |      Name      |         DEFAULT          |
    |     所有者      | グループポリシー \(マシン\) |
-   | NetworkProfile |           All            |
-   |   優先度   |           127            |
-   |    テンプレート    |         既定          |
+   | NetworkProfile |           [すべて]            |
+   |   ［優先順位］   |           127            |
+   |    テンプレート    |         既定値          |
    |   JobObject    |          &nbsp;          |
    | PriorityValue  |            0             |
 
@@ -405,7 +405,7 @@ ms.locfileid: "71356121"
    _**生じ**_
 
 
-   | [Priority] | 有効 | PolicySet | ifIndex | IfAlias |
+   | 優先順位 | 有効 | PolicySet | ifIndex | IfAlias |
    |----------|---------|-----------|---------|---------|
    |    0     |  False  |  グローバル   | &nbsp;  | &nbsp;  |
    |    1     |  False  |  グローバル   | &nbsp;  | &nbsp;  |
@@ -439,7 +439,7 @@ ms.locfileid: "71356121"
    _**機能**:_   
 
 
-   |      パラメーター      |   ハードウェア   |   現在の    |
+   |      パラメーター      |   ハードウェア   |   現在    |
    |---------------------|--------------|--------------|
    |    MacSecBypass     | NotSupported | NotSupported |
    |     DcbxSupport     |     なし     |     なし     |
@@ -452,7 +452,7 @@ ms.locfileid: "71356121"
 
    | フィールド |  TSA   | 帯域幅 | 主 |
    |----|--------|-----------|------------|
-   | 0  | 厳密 |  &nbsp;   |    0-7     |
+   | 0  | Strict |  &nbsp;   |    0-7     |
 
    ---
 
@@ -463,9 +463,9 @@ ms.locfileid: "71356121"
    _**OperationalClassifications**:_  
 
 
-   | プロトコル  | ポート/種類 | [Priority] |
+   | [プロトコル]  | ポート/種類 | 優先順位 |
    |-----------|-----------|----------|
-   |  既定  |  &nbsp;   |    0     |
+   |  既定値  |  &nbsp;   |    0     |
    | NetDirect |    445    |    3     |
 
    ---
@@ -483,7 +483,7 @@ ms.locfileid: "71356121"
    _**機能**:_ 
 
 
-   |      パラメーター      |   ハードウェア   |   現在の    |
+   |      パラメーター      |   ハードウェア   |   現在    |
    |---------------------|--------------|--------------|
    |    MacSecBypass     | NotSupported | NotSupported |
    |     DcbxSupport     |     なし     |     なし     |
@@ -496,7 +496,7 @@ ms.locfileid: "71356121"
 
    | フィールド |  TSA   | 帯域幅 | 主 |
    |----|--------|-----------|------------|
-   | 0  | 厳密 |  &nbsp;   |    0-7     |
+   | 0  | Strict |  &nbsp;   |    0-7     |
 
    ---
 
@@ -507,15 +507,15 @@ ms.locfileid: "71356121"
    _**OperationalClassifications**:_  
 
 
-   | プロトコル  | ポート/種類 | [Priority] |
+   | [プロトコル]  | ポート/種類 | 優先順位 |
    |-----------|-----------|----------|
-   |  既定  |  &nbsp;   |    0     |
+   |  既定値  |  &nbsp;   |    0     |
    | NetDirect |    445    |    3     |
 
    ---
 
 
-7. SMB ダイレクト\(RDMA に帯域幅の半分を確保する\)
+7. SMB ダイレクト \(RDMA\) に帯域幅の半分を確保する
 
    ```PowerShell
    New-NetQosTrafficClass "SMB" -priority 3 -bandwidthpercentage 50 -algorithm ETS
@@ -524,7 +524,7 @@ ms.locfileid: "71356121"
    _**生じ**_  
 
 
-   | 名前 | アルゴリズム | 帯域幅 (%) | [Priority] | PolicySet | ifIndex | IfAlias |
+   | Name | アルゴリズム | 帯域幅 (%) | 優先順位 | PolicySet | ifIndex | IfAlias |
    |------|-----------|--------------|----------|-----------|---------|---------|
    | SMB  |    ETS    |      50      |    3     |  グローバル   | &nbsp;  | &nbsp;  |
 
@@ -539,7 +539,7 @@ ms.locfileid: "71356121"
    _**生じ**_  
 
 
-   |   名前    | アルゴリズム | 帯域幅 (%) | [Priority] | PolicySet | ifIndex | IfAlias |
+   |   Name    | アルゴリズム | 帯域幅 (%) | 優先順位 | PolicySet | ifIndex | IfAlias |
    |-----------|-----------|--------------|----------|-----------|---------|---------|
    | [Default] |    ETS    |      50      | 0 ~ 2、4-7  |  グローバル   | &nbsp;  | &nbsp;  |
    |    SMB    |    ETS    |      50      |    3     |  グローバル   | &nbsp;  | &nbsp;  |
@@ -558,7 +558,7 @@ ms.locfileid: "71356121"
    _**生じ**_
 
 
-   | 名前 | アルゴリズム | 帯域幅 (%) | [Priority] | PolicySet | ifIndex | IfAlias |
+   | Name | アルゴリズム | 帯域幅 (%) | 優先順位 | PolicySet | ifIndex | IfAlias |
    |------|-----------|--------------|----------|-----------|---------|---------|
    | IP1  |    ETS    |      10      |    1     |  グローバル   | &nbsp;  | &nbsp;  |
 
@@ -571,7 +571,7 @@ ms.locfileid: "71356121"
    _**生じ**_
 
 
-   | 名前 | アルゴリズム | 帯域幅 (%) | [Priority] | PolicySet | ifIndex | IfAlias |
+   | Name | アルゴリズム | 帯域幅 (%) | 優先順位 | PolicySet | ifIndex | IfAlias |
    |------|-----------|--------------|----------|-----------|---------|---------|
    | IP2  |    ETS    |      10      |    2     |  グローバル   | &nbsp;  | &nbsp;  |
 
@@ -586,7 +586,7 @@ ms.locfileid: "71356121"
     _**生じ**_
 
 
-    |   名前    | アルゴリズム | 帯域幅 (%) | [Priority] | PolicySet | ifIndex | IfAlias |
+    |   Name    | アルゴリズム | 帯域幅 (%) | 優先順位 | PolicySet | ifIndex | IfAlias |
     |-----------|-----------|--------------|----------|-----------|---------|---------|
     | [Default] |    ETS    |      30      |  0、4-7   |  グローバル   | &nbsp;  | &nbsp;  |
     |    SMB    |    ETS    |      50      |    3     |  グローバル   | &nbsp;  | &nbsp;  |
@@ -610,7 +610,7 @@ ms.locfileid: "71356121"
     1
     ```
 
-## <a name="step-5-verify-the-rdma-configuration-mode-1"></a>手順 5. RDMA 構成\(モード1を確認する\) 
+## <a name="step-5-verify-the-rdma-configuration-mode-1"></a>手順 5. RDMA 構成 \(モード 1\) を確認してください 
 
 VSwitch を作成して RDMA \(モード 2\)に移行する前に、ファブリックが正しく構成されていることを確認する必要があります。
 
@@ -628,7 +628,7 @@ VSwitch を作成して RDMA \(モード 2\)に移行する前に、ファブリ
    _**生じ**_
 
 
-   |    名前    |        InterfaceDescription        | 有効 |
+   |    Name    |        InterfaceDescription        | 有効 |
    |------------|------------------------------------|---------|
    | テスト-40G-1 | Mellanox/4 VPI Adapter #2 |  True   |
    | テスト-40G-2 |  Mellanox の送信-4 VPI Adapter   |  True   |
@@ -651,9 +651,9 @@ VSwitch を作成して RDMA \(モード 2\)に移行する前に、ファブリ
 
    ---
 
-3. [Diskspd .exe ユーティリティ](https://aka.ms/diskspd)をダウンロードし、C:\TEST に抽出します。\.
+3. [Diskspd .exe ユーティリティ](https://aka.ms/diskspd)をダウンロードし、C:\TEST に抽出し\.
 
-4. [テスト RDMA PowerShell スクリプト](https://github.com/Microsoft/SDN/blob/master/Diagnostics/Test-Rdma.ps1)をローカルドライブ上のテストフォルダー (C:\TEST など) にダウンロードします。\.
+4. [テスト RDMA PowerShell スクリプト](https://github.com/Microsoft/SDN/blob/master/Diagnostics/Test-Rdma.ps1)をローカルドライブ上のテストフォルダーにダウンロードします (例: C:\TEST\.
 
 5. **Test-Rdma** PowerShell スクリプトを実行して、ifIndex の値を、同じ VLAN 上の最初のリモートアダプターの IP アドレスと共にスクリプトに渡します。<p>この例では、スクリプトはリモートネットワークアダプターの IP アドレス192.168.1.5 に**ifIndex**値14を渡します。
 
@@ -730,7 +730,7 @@ VSwitch を作成して RDMA \(モード 2\)に移行する前に、ファブリ
    _**結果**_
 
 
-   |  名前   | SwitchType | NetAdapterInterfaceDescription |
+   |  Name   | SwitchType | NetAdapterInterfaceDescription |
    |---------|------------|--------------------------------|
    | VMSTEST |  外部リンク  |        チーム化-インターフェイス        |
 
@@ -761,9 +761,9 @@ VSwitch を作成して RDMA \(モード 2\)に移行する前に、ファブリ
    _**生じ**_
 
 
-   |        名前         |        InterfaceDescription         | ifIndex | 状況 |    Mac     | LinkSpeed |
+   |        Name         |        InterfaceDescription         | ifIndex | 状態 |    Mac     | LinkSpeed |
    |---------------------|-------------------------------------|---------|--------|-------------------|-----------|
-   | Veruncommand Net (VMSTEST) | Hyper-v 仮想イーサネットアダプターの #2 |   28    |   Up   | E4-1D-2D-07-40-71 |  80 Gbps  |
+   | Veruncommand Net (VMSTEST) | Hyper-v 仮想イーサネットアダプターの #2 |   28    |   上へ   | E4-1D-2D-07-40-71 |  80 Gbps  |
 
    ---
 
@@ -776,7 +776,7 @@ VSwitch を作成して RDMA \(モード 2\)に移行する前に、ファブリ
    _**生じ**_
 
 
-   |  名前   | IsManagementOs | VMName  |  SwitchName  | Mac | 状況 | IPAddresses |
+   |  Name   | IsManagementOs | VMName  |  SwitchName  | Mac | 状態 | IPAddresses |
    |---------|----------------|---------|--------------|------------|--------|-------------|
    | VMSTEST |      True      | VMSTEST | E41D2D074071 |    Ok を    | &nbsp; |             |
 
@@ -848,7 +848,7 @@ VSwitch を作成して RDMA \(モード 2\)に移行する前に、ファブリ
    PingReplyDetails (RTT) : 0 ms
    ```
 
-   >**重要**結果が例の結果と類似していない場合、ping は失敗し、"警告:192.168.1.5 に Ping を実行できませんでした--状態:DestinationHostUnreachable 不能。 "vEthernet (VMSTEST)" に適切な IP アドレスがあることを確認してください。
+   >**重要**結果が例の結果と類似していない場合、"WARNING: Ping to 192.168.1.5 failed--Status: DestinationHostUnreachable できません" というメッセージが表示されて ping が失敗する場合は、"Ve Net (VMSTEST)" に適切な IP アドレスがあることを確認してください。
    >
    >```PowerShell
    >Get-NetIPAddress -InterfaceAlias "vEthernet (VMSTEST)"
@@ -885,7 +885,7 @@ VSwitch を作成して RDMA \(モード 2\)に移行する前に、ファブリ
    _**生じ**_ 
 
 
-   |         名前         | IsManagementOs | VMName |      SwitchName      |  Mac  | 状況 | IPAddresses |
+   |         Name         | IsManagementOs | VMName |      SwitchName      |  Mac  | 状態 | IPAddresses |
    |----------------------|----------------|--------|----------------------|--------------|--------|-------------|
    | CORP-外部スイッチ |      True      | &nbsp; | CORP-外部スイッチ | 001B785768AA |  Ok を  |   &nbsp;    |
    |         管理          |      True      | &nbsp; |       VMSTEST        | E41D2D074071 |  Ok を  |   &nbsp;    |
@@ -901,9 +901,9 @@ VSwitch を作成して RDMA \(モード 2\)に移行する前に、ファブリ
    _**生じ**_
 
 
-   |      名前       |        InterfaceDescription         | ifIndex | 状況 |    Mac     | LinkSpeed |
+   |      Name       |        InterfaceDescription         | ifIndex | 状態 |    Mac     | LinkSpeed |
    |-----------------|-------------------------------------|---------|--------|-------------------|-----------|
-   | Ve・ Net (の場合) | Hyper-v 仮想イーサネットアダプターの #2 |   28    |   Up   | E4-1D-2D-07-40-71 |  80 Gbps  |
+   | Ve・ Net (の場合) | Hyper-v 仮想イーサネットアダプターの #2 |   28    |   上へ   | E4-1D-2D-07-40-71 |  80 Gbps  |
 
    ---
 
@@ -922,8 +922,8 @@ VSwitch を作成して RDMA \(モード 2\)に移行する前に、ファブリ
 
    _**生じ**_  
 
-   指定管理  
-   Ieeeの優先度タグ:基準  
+   名前: 「」  
+   Ieee優先順位タグ: オン  
 
 2. RDMA 用に2つのホスト vNICs を作成し、vSwitch VMSTEST に接続します。
 
@@ -941,7 +941,7 @@ VSwitch を作成して RDMA \(モード 2\)に移行する前に、ファブリ
    _**生じ**_ 
 
 
-   |         名前         | IsManagementOs |        VMName        |  SwitchName  | Mac | 状況 | IPAddresses |
+   |         Name         | IsManagementOs |        VMName        |  SwitchName  | Mac | 状態 | IPAddresses |
    |----------------------|----------------|----------------------|--------------|------------|--------|-------------|
    | CORP-外部スイッチ |      True      | CORP-外部スイッチ | 001B785768AA |    Ok を    | &nbsp; |             |
    |         管理          |      True      |       VMSTEST        | E41D2D074071 |    Ok を    | &nbsp; |             |
@@ -950,7 +950,7 @@ VSwitch を作成して RDMA \(モード 2\)に移行する前に、ファブリ
 
    ---
 
-## <a name="step-9-assign-an-ip-address-to-the-smb-host-vnics-vethernet-smb1-and-vethernet-smb2"></a>手順 9: IP アドレスを SMB ホスト vnics veSMB2 \(\)と veruncommand net \(に割り当てます。\)
+## <a name="step-9-assign-an-ip-address-to-the-smb-host-vnics-vethernet-smb1-and-vethernet-smb2"></a>手順 9. IP アドレスを SMB ホスト vNICs VeSMB2 に割り当てます。このとき、\(SMB1\) と Veand Net \(\)
 
 テスト-40G-1 とテスト-40G-2 物理アダプターでも、101と102のアクセス VLAN が構成されています。 このため、アダプターはトラフィックにタグを付け、ping は成功します。 以前は、2つの pNIC VLAN Id をゼロに構成し、VMSTEST vSwitch を VLAN 101 に設定しました。 その後、vNIC を使用してリモート VLAN 101 アダプターに ping を実行できますが、現在のところ、VLAN 102 のメンバーはありません。
 
@@ -997,7 +997,7 @@ VSwitch を作成して RDMA \(モード 2\)に移行する前に、ファブリ
    PingReplyDetails (RTT) : 0 ms
    ```
 
-3. インターフェイス\(veSMB2\)の新しい IP アドレスを追加します。
+3. インターフェイス Ve\(SMB2\)の新しい IP アドレスを追加します。
 
    ```PowerShell
    New-NetIPAddress -InterfaceAlias "vEthernet (SMB2)" -IPAddress 192.168.2.222 -PrefixLength 24 
@@ -1136,7 +1136,7 @@ VSwitch を作成して RDMA \(モード 2\)に移行する前に、ファブリ
     ```
 
 
-11. 両方のホスト vnics が同じサブネット上に存在し、同じ VLAN ID \(102\)を持つため、リモートシステムからの接続をテストします。
+11. 両方のホスト vNICs が同じサブネット上に存在し、同じ VLAN ID \(102\)であるため、リモートシステムからの接続をテストします。
 
     ```PowerShell 
     Test-NetConnection 192.168.2.111
@@ -1225,7 +1225,7 @@ VSwitch を作成して RDMA \(モード 2\)に移行する前に、ファブリ
 
 ## <a name="step-10-validate-the-rdma-functionality"></a>手順 10. RDMA 機能を検証します。
 
-Vswitch セットチームの両方のメンバーに対して、リモートシステムから vSwitch を持つローカルシステムへの RDMA 機能を検証します。<p>ホスト vnics \(の SMB1 と SMB2\)の両方が vlan 102 に割り当てられているため、リモートシステムで vlan 102 アダプターを選択できます。 <p>この例では、NIC テスト-40G-2 は RDMA から SMB1 (192.168.2.111) および SMB2 (192.168.2.222) になります。
+Vswitch セットチームの両方のメンバーに対して、リモートシステムから vSwitch を持つローカルシステムへの RDMA 機能を検証します。<p>\(SMB1 と SMB2\) の両方のホスト vNICs が VLAN 102 に割り当てられているため、リモートシステムで VLAN 102 アダプターを選択できます。 <p>この例では、NIC テスト-40G-2 は RDMA から SMB1 (192.168.2.111) および SMB2 (192.168.2.222) になります。
 
 >[!TIP]
 >このシステムでは、ファイアウォールを無効にすることが必要になる場合があります。  詳細については、ファブリックポリシーを参照してください。
@@ -1407,7 +1407,7 @@ Vswitch セットチームの両方のメンバーに対して、リモートシ
    VERBOSE: RDMA traffic test SUCCESSFUL: RDMA traffic was sent to 192.168.2.5
    ```
 
-この出力の最後の行である "RDMA トラフィックテストは成功しました。RDMA トラフィックが192.168.2.5 に送信されました。 "アダプターに収束 NIC が正常に構成されたことを示しています。
+この出力の最後の行である "RDMA トラフィックテストが成功しました: RDMA トラフィックは192.168.2.5 に送信されました" と表示されます。これは、アダプターに収束 NIC を正常に構成したことを示しています。
 
 ## <a name="related-topics"></a>関連トピック 
 

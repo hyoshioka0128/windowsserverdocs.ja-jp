@@ -2,25 +2,23 @@
 title: Windows Server 上の Hyper-v のシステム要件
 description: Windows Server の Hyper-v のハードウェア要件とファームウェア要件の一覧を示します。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: bc4a4971-f727-40cd-91f5-2ee6d24b54cb
-author: KBDAzure
+author: kbdazure
 ms.author: kathydav
 ms.date: 9/30/2016
-ms.openlocfilehash: fabaa1933fef836bb6ce3fc01badf337b832d072
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9bb50448f1ee819b3b886536424ee1556775b78d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365440"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857985"
 ---
 # <a name="system-requirements-for-hyper-v-on-windows-server"></a>Windows Server 上の Hyper-v のシステム要件
 
->適用先:Windows Server 2016、Microsoft Hyper-V Server 2016、Windows Server 2019、Microsoft Hyper-V Server 2019
+>適用対象: Windows Server 2016、Microsoft Hyper-V Server 2016、Windows Server 2019、Microsoft Hyper-V Server 2019
 
 HYPER-V では、特定のハードウェア要件を持ち、一部の HYPER-V 機能の追加要件があります。 この記事で詳細情報を使用すると、どのような要件を計画する方法は、HYPER-V を使用できるように、システムが満たしている必要がありますを決定できます。 その後、確認、 [Windows Server カタログ](https://www.windowsservercatalog.com/)します。 HYPER-V の要件では、仮想化環境には、多くのコンピューティング リソースが必要とするために、Windows Server 2016 の一般的な最小要件が超えていることに留意してください。
 
@@ -91,6 +89,6 @@ Systeminfo.exe
 
 **仮想マシン** の要件。
 
-- 第 2 世代
+- 世代 2
 - ゲストオペレーティングシステムとしての Windows Server 2012 以降
 

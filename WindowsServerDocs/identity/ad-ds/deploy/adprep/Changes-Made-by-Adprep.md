@@ -1,7 +1,6 @@
 ---
 ms.assetid: b432980c-601f-492b-924e-7427419c8457
 title: Changes Made by Adprep.exe
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: f5410f8bbc070735990ca82ac7027f8da971ef49
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2e127e161f129e2a8545b68496ae2420f7a3cdbf
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369428"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80824755"
 ---
 # <a name="changes-made-by-adprepexe"></a>Changes Made by Adprep.exe
 

@@ -1,7 +1,6 @@
 ---
 ms.assetid: 173b72c1-ac83-4f42-abab-cf58f43769f0
 title: 必要なフォレスト数を決定する
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 21bece55ef64a552ddc641befd94d3ce19e78db6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 237012b2a25f0c28beb3b0716287b4f6a554b625
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408881"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822555"
 ---
 # <a name="determining-the-number-of-forests-required"></a>必要なフォレスト数を決定する
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 展開する必要があるフォレストの数を特定するには、組織内の各グループの分離と自律性の要件を慎重に特定して評価し、それらの要件を適切なフォレストの設計モデルにマップする必要があります。  
   

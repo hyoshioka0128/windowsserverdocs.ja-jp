@@ -6,14 +6,14 @@ ms.technology: networking
 ms.topic: article
 ms.assetid: 76974e10-6a57-4533-83be-cfd5a0d364a3
 manager: brianlic
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 935bda5ab47f3e9a362c81a8aeb99ebf22095725
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: d0eb137716795c324afcf1a708fff00c2f7266d6
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405331"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80315561"
 ---
 # <a name="qos-policy-error-and-event-messages"></a>QoS ポリシーのエラーとイベントメッセージ
 
@@ -136,7 +136,7 @@ QoS ポリシーの情報メッセージの一覧を次に示します。
 |||  
 |-|-|  
 |**Id**|16600|  
-|**順**|Warning|  
+|**順**|［警告］|  
 |**SymbolicName**|EVENT_EQOS_WARNING_TEST_1|  
 |**言語**|日本語|  
 |**メッセージ**|EQOS: * * * テスト\*\*\*[,、1つの文字列] "%2"。|  
@@ -144,7 +144,7 @@ QoS ポリシーの情報メッセージの一覧を次に示します。
 |||  
 |-|-|  
 |**Id**|16601|  
-|**順**|Warning|  
+|**順**|［警告］|  
 |**SymbolicName**|EVENT_EQOS_WARNING_TEST_2|  
 |**言語**|日本語|  
 |**メッセージ**|EQOS: * * * テスト\*\*\*[、2つの文字列、string1 は] "%2" [、string2 は] "%3" です。|  
@@ -152,7 +152,7 @@ QoS ポリシーの情報メッセージの一覧を次に示します。
 |||  
 |-|-|  
 |**Id**|16602|  
-|**順**|Warning|  
+|**順**|［警告］|  
 |**SymbolicName**|EVENT_EQOS_WARNING_MACHINE_POLICY_VERSION|  
 |**言語**|日本語|  
 |**メッセージ**|コンピューターの QoS ポリシー "%2" のバージョン番号が無効です。 このポリシーは適用されません。|  
@@ -160,7 +160,7 @@ QoS ポリシーの情報メッセージの一覧を次に示します。
 |||  
 |-|-|  
 |**Id**|16603|  
-|**順**|Warning|  
+|**順**|［警告］|  
 |**SymbolicName**|EVENT_EQOS_WARNING_USER_POLICY_VERSION|  
 |**言語**|日本語|  
 |**メッセージ**|ユーザー QoS ポリシー "%2" に無効なバージョン番号が含まれています。 このポリシーは適用されません。|  
@@ -168,7 +168,7 @@ QoS ポリシーの情報メッセージの一覧を次に示します。
 |||  
 |-|-|  
 |**Id**|16604|  
-|**順**|Warning|  
+|**順**|［警告］|  
 |**SymbolicName**|EVENT_EQOS_WARNING_MACHINE_POLICY_PROFILE_NOT_SPECIFIED|  
 |**言語**|日本語|  
 |**メッセージ**|コンピューターの QoS ポリシー "%2" で、DSCP 値またはスロットル率が指定されていません。 このポリシーは適用されません。|  
@@ -176,7 +176,7 @@ QoS ポリシーの情報メッセージの一覧を次に示します。
 |||  
 |-|-|  
 |**Id**|16605|  
-|**順**|Warning|  
+|**順**|［警告］|  
 |**SymbolicName**|EVENT_EQOS_WARNING_USER_POLICY_PROFILE_NOT_SPECIFIED|  
 |**言語**|日本語|  
 |**メッセージ**|ユーザー QoS ポリシー "%2" では、DSCP 値またはスロットル率が指定されていません。 このポリシーは適用されません。|  
@@ -184,7 +184,7 @@ QoS ポリシーの情報メッセージの一覧を次に示します。
 |||  
 |-|-|  
 |**Id**|16606|  
-|**順**|Warning|  
+|**順**|［警告］|  
 |**SymbolicName**|EVENT_EQOS_WARNING_MACHINE_POLICY_QUOTA_EXCEEDED|  
 |**言語**|日本語|  
 |**メッセージ**|コンピューターの QoS ポリシーの最大数を超えました。 QoS ポリシー "%2" とそれ以降のコンピューター QoS ポリシーは適用されません。|  
@@ -192,7 +192,7 @@ QoS ポリシーの情報メッセージの一覧を次に示します。
 |||  
 |-|-|  
 |**Id**|16607|  
-|**順**|Warning|  
+|**順**|［警告］|  
 |**SymbolicName**|EVENT_EQOS_WARNING_USER_POLICY_QUOTA_EXCEEDED|  
 |**言語**|日本語|  
 |**メッセージ**|ユーザー QoS ポリシーの最大数を超えました。 QoS ポリシー "%2" とそれ以降のユーザー QoS ポリシーは適用されません。|  
@@ -200,7 +200,7 @@ QoS ポリシーの情報メッセージの一覧を次に示します。
 |||  
 |-|-|  
 |**Id**|16608|  
-|**順**|Warning|  
+|**順**|［警告］|  
 |**SymbolicName**|EVENT_EQOS_WARNING_MACHINE_POLICY_CONFLICT|  
 |**言語**|日本語|  
 |**メッセージ**|コンピューターの QoS ポリシー "%2" は、他の QoS ポリシーと競合する可能性があります。 適用されるポリシーに関する規則については、ドキュメントを参照してください。|  
@@ -208,7 +208,7 @@ QoS ポリシーの情報メッセージの一覧を次に示します。
 |||  
 |-|-|  
 |**Id**|16609|  
-|**順**|Warning|  
+|**順**|［警告］|  
 |**SymbolicName**|EVENT_EQOS_WARNING_USER_POLICY_CONFLICT|  
 |**言語**|日本語|  
 |**メッセージ**|ユーザーの QoS ポリシー "%2" は、他の QoS ポリシーと競合する可能性があります。 適用されるポリシーに関する規則については、ドキュメントを参照してください。|  
@@ -216,7 +216,7 @@ QoS ポリシーの情報メッセージの一覧を次に示します。
 |||  
 |-|-|  
 |**Id**|16610|  
-|**順**|Warning|  
+|**順**|［警告］|  
 |**SymbolicName**|EVENT_EQOS_WARNING_MACHINE_POLICY_NO_FULLPATH_APPNAME|  
 |**言語**|日本語|  
 |**メッセージ**|アプリケーションパスを処理できないため、コンピューターの QoS ポリシー "%2" は無視されました。 アプリケーションパスが無効であるか、無効なドライブ文字を含んでいるか、ネットワークにマップされたドライブが含まれている可能性があります。|  
@@ -224,7 +224,7 @@ QoS ポリシーの情報メッセージの一覧を次に示します。
 |||  
 |-|-|  
 |**Id**|16611|  
-|**順**|Warning|  
+|**順**|［警告］|  
 |**SymbolicName**|EVENT_EQOS_WARNING_USER_POLICY_NO_FULLPATH_APPNAME|  
 |**言語**|日本語|  
 |**メッセージ**|アプリケーションパスを処理できないため、ユーザー QoS ポリシー "%2" は無視されました。 アプリケーションパスが無効であるか、無効なドライブ文字を含んでいるか、ネットワークにマップされたドライブが含まれている可能性があります。|  

@@ -1,23 +1,19 @@
 ---
 title: bitsadmin sethttpmethod
-description: '**Bitsadmin sethttpmethod**の Windows コマンドに関するトピックでは、使用する HTTP 動詞を設定します。'
-ms.custom: na
+description: Bitsadmin sethttpmethod コマンドの参照記事。使用する HTTP 動詞を設定します。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/01/2019
-ms.openlocfilehash: 0f23b3b06bb3da448bb4cf18344aecfa31dcecd9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 86d4749de294871a05176239cc1265974d8a7590
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71380611"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927755"
 ---
 # <a name="bitsadmin-sethttpmethod"></a>bitsadmin sethttpmethod
 
@@ -26,16 +22,18 @@ ms.locfileid: "71380611"
 ## <a name="syntax"></a>構文
 
 ```
-bitsadmin /GetHttpMethod <Job> <HTTPMethod>
+bitsadmin /sethttpmethod <job> <httpmethod>
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
-|---------|-----------|
-|Job|ジョブの表示名または GUID|
-|HTTPMethod|使用する HTTP 動詞|
+| パラメーター | 説明 |
+| --------- | ----------- |
+| ジョブ (job) | ジョブの表示名または GUID。 |
+| httpmethod | 使用する HTTP 動詞。 使用可能な動詞の詳細については、「[メソッドの定義](https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html)」を参照してください。 |
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [bitsadmin コマンド](bitsadmin.md)

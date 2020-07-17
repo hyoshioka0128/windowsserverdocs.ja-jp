@@ -10,16 +10,16 @@ author: stevenek
 ms.date: 06/07/2019
 description: 記憶域スペースダイレクトを使用して、Windows Server のソフトウェア定義記憶域を、ハイパー集約型インフラストラクチャまたは収束 (disaggregated とも呼ばれる) インフラストラクチャとして展開する手順を説明します。
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ab96f737f7700e202c9d0382c06859c4ea84118
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 50bcdc175610d6e5c5264f9cb62c7d99d2990ac0
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402813"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85472829"
 ---
 # <a name="deploy-storage-spaces-direct"></a>記憶域スペース ダイレクトの展開
 
-> 適用対象: Windows Server 2019、Windows Server 2016
+> 適用先:Windows Server 2019、Windows Server 2016
 
 このトピックでは、[記憶域スペースダイレクト](storage-spaces-direct-overview.md)を展開する手順について説明します。
 
@@ -29,7 +29,7 @@ ms.locfileid: "71402813"
 > [!Tip]
 > Microsoft Azure に含まれる Hyper-v 仮想マシンを使用して、[ハードウェアなしで記憶域スペースダイレクトを評価](storage-spaces-direct-in-vm.md)することができます。 また、トレーニング目的で使用する[Windows Server の迅速なラボデプロイスクリプト](https://aka.ms/wslab)を確認することもできます。
 
-## <a name="before-you-start"></a>開始前の作業
+## <a name="before-you-start"></a>開始する前に
 
 記憶域スペースダイレクトの[ハードウェア要件](Storage-Spaces-Direct-Hardware-Requirements.md)を確認し、このドキュメントを読み、いくつかの手順に関連する全体的なアプローチと重要な注意事項について理解してください。
 
@@ -39,7 +39,7 @@ ms.locfileid: "71402813"
 
 - **サーバー名。** コンピューター、ファイル、パス、およびその他のリソースに関する組織の名前付けポリシーについて理解を深めます。 複数のサーバーをプロビジョニングする必要があり、それぞれに一意の名前を付けます。
 
-- **ドメイン名。** ドメイン名とドメイン参加に関する組織のポリシーについて理解を深めます。  サーバーをドメインに参加させるため、ドメイン名を指定する必要があります。 
+- **ドメイン名。** ドメイン名とドメイン参加に関する組織のポリシーについて理解を深めます。  サーバーをドメインに参加させるため、ドメイン名を指定する必要があります。
 
 - **RDMA ネットワーク。** RDMA プロトコルには、iWarp と RoCE の2種類があります。 ネットワークアダプターで使用されているものを確認し、RoCE の場合はバージョン (v1 または v2) にも注意してください。 RoCE の場合は、ラックの最上位スイッチのモデルにも注意してください。
 
@@ -62,7 +62,7 @@ ms.locfileid: "71402813"
 - 同じドメインまたは完全に信頼されたドメインに参加している
 - Hyper-V およびフェールオーバー クラスタリング用のリモート サーバー管理ツール (RSAT) と PowerShell モジュール。 RSAT ツールと PowerShell モジュールは Windows Server で使用でき、その他の機能をインストールしなくてもインストールできます。 Windows 10 管理 PC に[リモートサーバー管理ツール](https://www.microsoft.com/download/details.aspx?id=45520)をインストールすることもできます。
 
-管理システムで、フェールオーバー クラスターと Hyper-V 管理ツールをインストールします。 この操作は、サーバー マネージャーで**役割と機能の追加**ウィザードを使用して行うことができます。 **[機能]** ページで、 **[リモート サーバー管理ツール]** を選択し、インストールするツールを選択します。
+管理システムで、フェールオーバー クラスターと Hyper-V 管理ツールをインストールします。 この操作は、サーバー マネージャーで**役割と機能の追加**ウィザードを使用して行うことができます。 **[機能]** ページで、**[リモート サーバー管理ツール]** を選択し、インストールするツールを選択します。
 
 PS セッションを開始し、接続するノードのサーバー名または IP アドレスを使用します。 このコマンドを実行した後でパスワードの入力を求められます。 Windows のセットアップ時に指定した管理者パスワードを入力してください。
 
@@ -80,29 +80,29 @@ PS セッションを開始し、接続するノードのサーバー名また�
    ```
 
 > [!TIP]
-> 管理システムからリモートで展開している場合、 *WinRM で要求を処理できない*ようなエラーが発生することがあります。 この問題を解決するには、Windows PowerShell を使用して、管理コンピューターの信頼されたホストの一覧に各サーバーを追加します。  
->   
-> `Set-Item WSMAN:\Localhost\Client\TrustedHosts -Value Server01 -Force`
->  
-> 注: 信頼されたホストの一覧では、`Server*`のようにワイルドカードがサポートされています。
+> 管理システムからリモートで展開している場合、 *WinRM で要求を処理できない*ようなエラーが発生することがあります。 この問題を解決するには、Windows PowerShell を使用して、管理コンピューターの信頼されたホストの一覧に各サーバーを追加します。
 >
-> 信頼されたホストの一覧を表示するには、「`Get-Item WSMAN:\Localhost\Client\TrustedHosts`」と入力します。  
->   
-> 一覧を空にするには、「`Clear-Item WSMAN:\Localhost\Client\TrustedHost`」と入力します。  
+> `Set-Item WSMAN:\Localhost\Client\TrustedHosts -Value Server01 -Force`
+>
+> 注: 信頼されたホストの一覧では、のようなワイルドカードがサポートされて `Server*` います。
+>
+> 信頼されたホストの一覧を表示するには、「」と入力 `Get-Item WSMAN:\Localhost\Client\TrustedHosts` します。
+>
+> リストを空にするには、「」と入力 `Clear-Item WSMAN:\Localhost\Client\TrustedHost` します。
 
 ### <a name="step-13-join-the-domain-and-add-domain-accounts"></a>手順 1.3: ドメインに参加してドメインアカウントを追加する
 
-ここまでで、ローカル管理者アカウントを使用して個々のサーバーを構成しました。 `<ComputerName>\Administrator`ます。
+ここまでで、ローカル管理者アカウントを使用して個々のサーバーを構成しました `<ComputerName>\Administrator` 。
 
 記憶域スペースダイレクトを管理するには、サーバーをドメインに参加させ、すべてのサーバーの Administrators グループにある Active Directory Domain Services ドメインアカウントを使用する必要があります。
 
-管理システムから、管理者特権で PowerShell コンソールを開きます。 `Enter-PSSession` を使用して各サーバーに接続し、次のコマンドレットを実際のコンピューター名、ドメイン名、ドメイン資格情報に置き換えて実行します。
+管理システムから、管理者特権で PowerShell コンソールを開きます。 を使用 `Enter-PSSession` して各サーバーに接続し、次のコマンドレットを実行します。実際のコンピューター名、ドメイン名、およびドメイン資格情報に置き換えてください。
 
-```PowerShell  
-Add-Computer -NewName "Server01" -DomainName "contoso.com" -Credential "CONTOSO\User" -Restart -Force  
+```PowerShell
+Add-Computer -NewName "Server01" -DomainName "contoso.com" -Credential "CONTOSO\User" -Restart -Force
 ```
 
-ストレージ管理者アカウントが Domain Admins グループのメンバーでない場合は、各ノードのローカルの Administrators グループにストレージ管理者アカウントを追加します。または、さらに詳細には、記憶域管理者に使用するグループを追加します。 次のコマンドを使用できます (または Windows PowerShell 関数を記述して、詳細については、「 [powershell を使用してドメインユーザーをローカルグループに追加](http://blogs.technet.com/b/heyscriptingguy/archive/2010/08/19/use-powershell-to-add-domain-users-to-a-local-group.aspx)する」を参照してください)。
+ストレージ管理者アカウントが Domain Admins グループのメンバーでない場合は、各ノードのローカルの Administrators グループにストレージ管理者アカウントを追加します。または、さらに詳細には、記憶域管理者に使用するグループを追加します。 次のコマンドを使用できます (または Windows PowerShell 関数を記述して、詳細については、「 [powershell を使用してドメインユーザーをローカルグループに追加](https://blogs.technet.com/b/heyscriptingguy/archive/2010/08/19/use-powershell-to-add-domain-users-to-a-local-group.aspx)する」を参照してください)。
 
 ```
 Net localgroup Administrators <Domain\Account> /add
@@ -117,7 +117,7 @@ Net localgroup Administrators <Domain\Account> /add
 - ファイルサーバー (収束展開の場合など、任意のファイル共有をホストする場合)
 - データ センター ブリッジング (iWARP ネットワーク アダプターではなく、RoCEv2 を使用している場合)
 - RSAT クラスタ リング PowerShell
-- Hyper-V の PowerShell
+- Hyper V の PowerShell
 
 PowerShell を使用してインストールするには、 [install-add-windowsfeature](https://docs.microsoft.com/powershell/module/microsoft.windows.servermanager.migration/install-windowsfeature)コマンドレットを使用します。 これは、次のように1つのサーバーで使用できます。
 
@@ -204,7 +204,7 @@ Count Name                          PSComputerName
 
 ### <a name="step-32-validate-the-cluster"></a>手順 3.2: クラスターを検証する
 
-この手順では、クラスター検証ツールを実行して、記憶域スペースダイレクトを使用してクラスターを作成するようにサーバーノードが正しく構成されていることを確認します。 クラスターが作成される前にクラスター検証 (`Test-Cluster`) が実行されると、フェールオーバークラスターとして正常に機能するために適切に構成されているかどうかを確認するテストが実行されます。 次の例では、`-Include` パラメーターを使用して、特定のカテゴリのテストを指定しています。 これにより、記憶域スペース ダイレクトの特定のテストが確実に検証に含まれるようになります。
+この手順では、クラスター検証ツールを実行して、記憶域スペースダイレクトを使用してクラスターを作成するようにサーバーノードが正しく構成されていることを確認します。 クラスターが作成される前にクラスターの検証 () を実行すると `Test-Cluster` 、フェールオーバークラスターとして正常に機能するために適切に構成されているかどうかを確認するテストが実行されます。 次の例では、 `-Include` パラメーターを使用して、特定のカテゴリのテストを指定しています。 これにより、記憶域スペース ダイレクトの特定のテストが確実に検証に含まれるようになります。
 
 記憶域スペース ダイレクト クラスターとして使用する一連のサーバーを検証するには、以下の PowerShell コマンドを使用します。
 
@@ -216,7 +216,7 @@ Test-Cluster –Node <MachineName1, MachineName2, MachineName3, MachineName4> �
 
 この手順では、次の PowerShell コマンドレットを使用して、前の手順でクラスター作成のために検証したノードを含むクラスターを作成します。
 
-クラスターを作成すると、"クラスター化された役割の作成中に問題が発生したため、起動できない可能性があります" という警告が表示されます。 詳細については、以下のレポート ファイルを参照してください" という警告が表示されます。 この警告は無視しても問題ありません。 クラスター クォーラムで使用可能なディスクがないことが原因です。 クラスターの作成後にファイル共有監視またはクラウド監視を構成することをお勧めします。
+クラスターを作成すると、"クラスター化された役割の作成中に問題が発生したため、起動できない可能性があります" という警告が表示されます。 詳細については、以下のレポート ファイルを参照してください" という警告が表示されます。 この警告は無視してかまいません。 クラスター クォーラムで使用可能なディスクがないことが原因です。 クラスターの作成後にファイル共有監視またはクラウド監視を構成することをお勧めします。
 
 > [!Note]
 > サーバーで静的 IP アドレスを使用している場合は、以下のコマンドを変更して静的 IP アドレスを反映させます。その場合、以下のパラメーターを追加し、IP アドレスとして –StaticAddress &lt;X.X.X.X&gt; を指定します。
@@ -229,18 +229,18 @@ Test-Cluster –Node <MachineName1, MachineName2, MachineName3, MachineName4> �
 
 ### <a name="step-34-configure-a-cluster-witness"></a>手順 3.4: クラスター監視を構成する
 
-クラスターのミラーリング監視サーバーを構成することをお勧めします。これにより、3台以上のサーバーを持つクラスターは、2台のサーバーで障害が発生したり、オフラインになったりする可能性があります。 2サーバー配置にはクラスター監視が必要です。それ以外の場合は、オフラインになっているサーバーによって、もう一方も使用できなくなります。 これらのシステムでは、監視としてファイル共有を使用することも、クラウド監視を使用することもできます。 
+クラスターのミラーリング監視サーバーを構成することをお勧めします。これにより、3台以上のサーバーを持つクラスターは、2台のサーバーで障害が発生したり、オフラインになったりする可能性があります。 2サーバー配置にはクラスター監視が必要です。それ以外の場合は、オフラインになっているサーバーによって、もう一方も使用できなくなります。 これらのシステムでは、監視としてファイル共有を使用することも、クラウド監視を使用することもできます。
 
-詳細については、以下のトピックを参照してください。
+詳細については、次のトピックを参照してください。
 
 - [クォーラムを構成および管理する](../../failover-clustering/manage-cluster-quorum.md)
-- [フェールオーバークラスターのクラウド監視をデプロイする](../../failover-clustering/deploy-cloud-witness.md)
+- [フェールオーバー クラスターのクラウド監視を展開する](../../failover-clustering/deploy-cloud-witness.md)
 
 ### <a name="step-35-enable-storage-spaces-direct"></a>手順 3.5: 記憶域スペース ダイレクトを有効にする
 
-クラスターを作成したら、`Enable-ClusterStorageSpacesDirect` PowerShell コマンドレットを使用します。これにより、ストレージシステムが記憶域スペースダイレクトモードになり、次の操作が自動的に実行されます。
+クラスターを作成したら、PowerShell コマンドレットを使用します `Enable-ClusterStorageSpacesDirect` 。これにより、ストレージシステムが記憶域スペースダイレクトモードになり、次の操作が自動的に実行されます。
 
--   **プールを作成する:** "S2D on Cluster1" などの名前を持つ単一の大きなプールを作成します。
+-   **プールを作成します。**"S2D on Cluster1" のような名前を持つ単一の大きなプールを作成します。
 
 -   **記憶域スペース ダイレクトのキャッシュを構成する:** 記憶域スペース ダイレクトで使用可能なメディア (ドライブ) の種類が複数ある場合は、最も高速なものがキャッシュ デバイスとして構成されます (ほとんどの場合、読み書き可能なもの)。
 
@@ -258,7 +258,7 @@ Enable-ClusterStorageSpacesDirect –CimSession <ClusterName>
 
 ### <a name="step-36-create-volumes"></a>手順 3.6: ボリュームを作成する
 
-`New-Volume` コマンドレットを使用することをお勧めします。これは、最も高速で簡単なエクスペリエンスを提供するためです。 このコマンドレット 1 つだけで、仮想ディスクが作成されて、パーティション化およびフォーマットされ、一致する名前を持つボリュームが作成されて、クラスター共有ボリュームに追加されます。すべて 1 つの簡単な手順で行うことができます。
+最速で簡単なエクスペリエンスを提供するため、コマンドレットを使用することをお勧めし `New-Volume` ます。 このコマンドレット 1 つだけで、仮想ディスクが作成されて、パーティション化およびフォーマットされ、一致する名前を持つボリュームが作成されて、クラスター共有ボリュームに追加されます。すべて 1 つの簡単な手順で行うことができます。
 
 詳しくは、「[記憶域スペース ダイレクトのボリュームの作成](create-volumes.md)」をご覧ください。
 
@@ -268,7 +268,7 @@ Enable-ClusterStorageSpacesDirect –CimSession <ClusterName>
 
 CSV キャッシュを有効にすると、ハイパー収束クラスターで Vm を実行するために使用できるメモリの量が減ります。そのため、記憶域のパフォーマンスと Vhd で使用可能なメモリのバランスを取る必要があります。
 
-CSV キャッシュのサイズを設定するには、記憶域クラスターに対する管理者のアクセス許可を持つアカウントを使用して、管理システムで PowerShell セッションを開き、次のスクリプトを使用して、`$ClusterName` と `$CSVCacheSize` の変数を必要に応じて変更します (この例では、サーバーごとに 2 GB の CSV キャッシュを設定します)。
+CSV キャッシュのサイズを設定するには、記憶域クラスターに対する管理者アクセス許可を持つアカウントを使用して、管理システムで PowerShell セッションを開き、次のスクリプトを使用します。次に、必要に応じ `$ClusterName` て変数と変数を変更し `$CSVCacheSize` ます (この例では、サーバーごとに 2 GB の CSV キャッシュを設定します)。
 
 ```PowerShell
 $ClusterName = "StorageSpacesDirect1"
@@ -287,7 +287,7 @@ Write-Output "$ClusterName CSV cache size: $CSVCurrentCacheSize MB"
 
 ハイパー収束クラスターをデプロイする場合は、最後の手順として、記憶域スペースダイレクトクラスターに仮想マシンをプロビジョニングします。
 
-仮想マシンのファイルは、フェールオーバークラスター上のクラスター化された Vm と同様に、systems CSV 名前空間 (例: c:\\ClusterStorage\\Volume1) に格納されている必要があります。
+仮想マシンのファイルは、 \\ \\ フェールオーバークラスター上のクラスター化された vm と同様に、systems CSV 名前空間 (例: c: clusterstorage Volume1) に保存する必要があります。
 
 インボックスツールまたはその他のツールを使用して、System Center Virtual Machine Manager などのストレージと仮想マシンを管理できます。
 
@@ -301,19 +301,19 @@ Write-Output "$ClusterName CSV cache size: $CSVCurrentCacheSize MB"
 
 #### <a name="to-create-a-scale-out-file-server-role-by-using-server-manager"></a>サーバーマネージャーを使用してスケールアウトファイルサーバーロールを作成するには
 
-1. フェールオーバークラスターマネージャーで、クラスターを選択し、 **[役割]** にアクセスして、 **[役割の構成...]** をクリックします。<br>高可用性ウィザードが表示されます。
-2. **[役割の選択]** ページで、 **[ファイルサーバー]** をクリックします。
-3. **[ファイルサーバーの種類]** ページで、[**アプリケーションデータ] の [スケールアウトファイルサーバー**] をクリックします。
-4. **[クライアントアクセスポイント]** ページで、スケールアウトファイルサーバーの名前を入力します。
-5. 図1に示す**ように、ロールに移動**し、作成したクラスター化されたファイルサーバーロールの横に **[状態]** 列に **[実行中]** と表示されていることを確認して、役割が正常に設定されていることを確認します。
+1. フェールオーバークラスターマネージャーで、クラスターを選択し、[**役割**] にアクセスして、[**役割の構成...**] をクリックします。<br>高可用性ウィザードが表示されます。
+2. [**役割の選択**] ページで、[**ファイルサーバー**] をクリックします。
+3. [**ファイルサーバーの種類**] ページで、[**アプリケーションデータ] の [スケールアウトファイルサーバー**] をクリックします。
+4. [**クライアントアクセスポイント**] ページで、スケールアウトファイルサーバーの名前を入力します。
+5. 図1に示す**ように、ロールに移動**し、作成したクラスター化されたファイルサーバーロールの横に [**状態**] 列に [**実行中**] と表示されていることを確認して、役割が正常に設定されていることを確認します。
 
-   スケールアウトファイルサーバーフェールオーバークラスターマネージャー表示されて(media/Hyper-converged-solution-using-Storage-Spaces-Direct-in-Windows-Server-2016/SOFS_in_FCM.png "スケールアウトファイルサーバーいる")![フェールオーバークラスターマネージャーのスクリーンショット]
+   ![スケールアウトファイルサーバーを示すフェールオーバークラスターマネージャーのスクリーンショット](media/Hyper-converged-solution-using-Storage-Spaces-Direct-in-Windows-Server-2016/SOFS_in_FCM.png "スケールアウトファイルサーバーを表示フェールオーバークラスターマネージャー")
 
     **図 1**実行中の状態のスケールアウトファイルサーバーを示すフェールオーバークラスターマネージャー
 
 > [!NOTE]
->  クラスター化された役割を作成した後、数分間でファイル共有を作成できない可能性があるネットワークの伝達の遅延が発生する可能性があります。  
-  
+>  クラスター化された役割を作成した後、数分間でファイル共有を作成できない可能性があるネットワークの伝達の遅延が発生する可能性があります。
+
 #### <a name="to-create-a-scale-out-file-server-role-by-using-windows-powershell"></a>Windows PowerShell を使用してスケールアウトファイルサーバーの役割を作成するには
 
  ファイルサーバークラスターに接続されている Windows PowerShell セッションで、次のコマンドを入力してスケールアウトファイルサーバーの役割を作成し、クラスターの名前に合わせて*Fscluster*を変更し、スケールアウトファイルサーバーの役割を付与する名前と一致するように*SOFS*します。
@@ -329,15 +329,15 @@ Add-ClusterScaleOutFileServerRole -Name SOFS -Cluster FSCLUSTER
 
 仮想ディスクを作成して Csv に追加した後、仮想ディスクごとに1つの CSV につき1つのファイル共有を作成します。 Handiest (VMM) は、アクセス許可を処理するので、これを行う方法としては想定されていますが、環境内に存在しない場合は、Windows PowerShell を使用して展開を部分的に自動化できます。 System Center Virtual Machine Manager
 
-[Hyper-v ワークロードの SMB 共有の構成](http://gallery.technet.microsoft.com/SMB-Share-Configuration-4a36272a)スクリプトに含まれるスクリプトを使用して、グループと共有の作成プロセスを部分的に自動化します。 Hyper-v ワークロード用に記述されているため、他のワークロードを展開する場合は、共有を作成した後で設定を変更したり、追加の手順を実行したりすることが必要になる場合があります。 たとえば、Microsoft SQL Server を使用している場合、SQL Server サービスアカウントには、共有およびファイルシステムに対するフルコントロール権限が付与されている必要があります。
+[Hyper-v ワークロードの SMB 共有の構成](https://gallery.technet.microsoft.com/SMB-Share-Configuration-4a36272a)スクリプトに含まれるスクリプトを使用して、グループと共有の作成プロセスを部分的に自動化します。 Hyper-v ワークロード用に記述されているため、他のワークロードを展開する場合は、共有を作成した後で設定を変更したり、追加の手順を実行したりすることが必要になる場合があります。 たとえば、Microsoft SQL Server を使用している場合、SQL Server サービスアカウントには、共有およびファイルシステムに対するフルコントロール権限が付与されている必要があります。
 
 > [!NOTE]
 >  System Center Virtual Machine Manager を使用して共有を作成しない限り、クラスターノードを追加するときにグループメンバーシップを更新する必要があります。
 
 PowerShell スクリプトを使用してファイル共有を作成するには、次の手順を実行します。
 
-1. [Hyper-v ワークロードの SMB 共有の構成](http://gallery.technet.microsoft.com/SMB-Share-Configuration-4a36272a)に含まれるスクリプトを、ファイルサーバークラスターのいずれかのノードにダウンロードします。
-2. 管理システムでドメイン管理者の資格情報を使用して Windows PowerShell セッションを開き、次のスクリプトを使用して、Hyper-v コンピューターオブジェクトの Active Directory グループを作成し、変数の値を適切なものに変更します。environment
+1. [Hyper-v ワークロードの SMB 共有の構成](https://gallery.technet.microsoft.com/SMB-Share-Configuration-4a36272a)に含まれるスクリプトを、ファイルサーバークラスターのいずれかのノードにダウンロードします。
+2. 管理システムでドメイン管理者の資格情報を使用して Windows PowerShell セッションを開き、次のスクリプトを使用して、環境に合わせて変数の値を変更して、Hyper-v コンピューターオブジェクトの Active Directory グループを作成します。
 
     ```PowerShell
     # Replace the values of these variables
@@ -371,7 +371,7 @@ PowerShell スクリプトを使用してファイル共有を作成するには
 
 ### <a name="step-43-enable-kerberos-constrained-delegation"></a>手順 4.3 Kerberos の制約付き委任を有効にする
 
-リモートのシナリオ管理に Kerberos の制約付き委任を設定し、ライブマイグレーションセキュリティを強化するには、いずれかの記憶域クラスターノードから、 [Hyper-v ワークロードの SMB 共有構成](http://gallery.technet.microsoft.com/SMB-Share-Configuration-4a36272a)に含まれる KCDSetup. ps1 スクリプトを使用します。 スクリプトのための小さなラッパーを次に示します。
+リモートシナリオ管理に Kerberos の制約付き委任を設定し、ライブマイグレーションセキュリティを強化するには、いずれかの記憶域クラスターノードから、 [Hyper-v ワークロードの SMB 共有構成](https://gallery.technet.microsoft.com/SMB-Share-Configuration-4a36272a)に含まれる KCDSetup.ps1 スクリプトを使用します。 スクリプトのための小さなラッパーを次に示します。
 
 ```PowerShell
 $HyperVClusterName = "Compute01"
@@ -386,11 +386,11 @@ CD $ScriptFolder
 
 クラスター化されたファイルサーバーをデプロイした後は、実際のワークロードを導入する前に、合成ワークロードを使用してソリューションのパフォーマンスをテストすることをお勧めします。 これにより、ソリューションが正常に実行されていることを確認し、残存している問題を解決してからワークロードの複雑さを増すことができます。 詳細については、「[合成ワークロードを使用した記憶域スペースのパフォーマンスのテスト](https://technet.microsoft.com/library/dn894707.aspx)」を参照してください。
 
-## <a name="see-also"></a>関連項目
+## <a name="additional-references"></a>その他のリファレンス
 
--   [Windows Server 2016 の記憶域スペースダイレクト](storage-spaces-direct-overview.md)
--   [記憶域スペースダイレクトのキャッシュについて](understand-the-cache.md)
--   [記憶域スペースダイレクトのボリュームの計画](plan-volumes.md)
+-   [Windows Server 2016 での記憶域スペース ダイレクト](storage-spaces-direct-overview.md)
+-   [記憶域スペース ダイレクトのキャッシュについて](understand-the-cache.md)
+-   [記憶域スペース ダイレクトのボリュームの計画](plan-volumes.md)
 -   [記憶域スペースのフォールトトレランス](storage-spaces-fault-tolerance.md)
--   [ハードウェア要件の記憶域スペースダイレクト](Storage-Spaces-Direct-Hardware-Requirements.md)
+-   [記憶域スペース ダイレクトのハードウェア要件](Storage-Spaces-Direct-Hardware-Requirements.md)
 -   [To RDMA, or not to RDMA – that is the question (RDMA すべきか、RDMA せざるべきか、それが問題だ)](https://blogs.technet.microsoft.com/filecab/2017/03/27/to-rdma-or-not-to-rdma-that-is-the-question/) (TechNet ブログ)

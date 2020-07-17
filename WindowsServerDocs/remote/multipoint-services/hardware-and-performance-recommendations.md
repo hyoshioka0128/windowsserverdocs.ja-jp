@@ -1,24 +1,20 @@
 ---
 title: ハードウェア要件とパフォーマンスの推奨事項
 description: MultiPoint サービスのハードウェアとパフォーマンスの要件と推奨事項について説明します。
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 99a5c9c2-270f-4753-a28c-434882c03125
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 284131028b308ee86389f25102d934390ba2f16d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: dcb139cddf6a7838511365c6a85dc12bd06a81eb
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71389113"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820345"
 ---
 # <a name="hardware-requirements-and-performance-recommendations"></a>ハードウェア要件とパフォーマンスの推奨事項
 このトピックでは、MultiPoint Services システムを実行し、ユーザーアプリケーションのシナリオをサポートするために必要なハードウェアについて説明します。 ユーザーシナリオは、CPU、RAM、およびネットワーク帯域幅の要件に直接影響します。  
@@ -41,14 +37,14 @@ MultiPoint Services は共有リソースコンピューティングソリュー
   
 |アプリケーションのシナリオ|最大5つのステーション|6-8 ステーション|9-12 ステーション|13-16 ステーション|17-20 ステーション|21-24 ステーション|  
 |------------------------|----------------------|-------------------|------------------|-------------------|-------------------|-----------------|  
-|**力**<br /><br />Office、web 閲覧、基幹業務アプリケーション|CPU:B<br /><br />RAM:2 GB|CPU:B<br /><br />RAM:4 GB|CPU:4C<br /><br />RAM:6 GB|CPU:4C<br /><br />RAM:8 GB|CPU:4C + MT または6C<br /><br />RAM:10 GB| CPU:6C + MT<br /><br />RAM:12 GB|
-|**多**<br /><br />一部のユーザーが Office、web 閲覧、基幹業務アプリケーション、および不定期に使用するビデオ|CPU:B<br /><br />RAM:2 GB|CPU:B<br /><br />RAM:4 GB|CPU:4C<br /><br />RAM:6 GB|CPU:4C + MT または6C<br /><br />RAM:8 GB|CPU:6C + MT<br /><br />RAM:10 GB| CPU:6C + MT<br /><br />RAM:12 GB| 
-|**ビデオ集中型**<br /><br />Office、web 閲覧、基幹業務アプリケーション、およびすべてのユーザーが頻繁に使用するビデオの**メモ:** ビデオテストは、ネイティブ解像度で 360p h.264 ビデオを使用して実行されました。|CPU:4C + MT<br /><br />RAM:2 GB|CPU:6C + MT<br /><br />RAM:4 GB|CPU:8C + MT<br /><br />RAM:6 GB|CPU:12C + MT<br /><br />RAM:8 GB|CPU:16C + MT<br /><br />RAM:10 GB<br /><br />-シンクライアント:RemoteFX<br />-USB ビデオは推奨されません| CPU:20C + MT<br /><br />RAM:12 GB<br /><br />-シンクライアント:RemoteFX<br />-USB ビデオは推奨されません|   
+|**力**<p>Office、web 閲覧、基幹業務アプリケーション|CPU: 2C<p>RAM: 2 GB|CPU: 2C<p>RAM: 4 GB|CPU: 4C<p>RAM: 6 GB|CPU: 4C<p>RAM: 8 GB|CPU: 4C + MT または6C<p>RAM:10 GB| CPU: 6C + MT<p>RAM:12 GB|
+|**多**<p>一部のユーザーが Office、web 閲覧、基幹業務アプリケーション、および不定期に使用するビデオ|CPU: 2C<p>RAM: 2 GB|CPU: 2C<p>RAM: 4 GB|CPU: 4C<p>RAM: 6 GB|CPU: 4C + MT または6C<p>RAM: 8 GB|CPU: 6C + MT<p>RAM:10 GB| CPU: 6C + MT<p>RAM:12 GB| 
+|**ビデオ集中型**<p>Office、web 閲覧、基幹業務アプリケーション、およびすべてのユーザーが頻繁に使用するビデオ **。注:** ビデオテストは、ネイティブの解像度で360p の h.264 ビデオを使用して実行されました。|CPU: 4C + MT<p>RAM: 2 GB|CPU: 6C + MT<p>RAM: 4 GB|CPU: 8C + MT<p>RAM: 6 GB|CPU: 12C + MT<p>RAM: 8 GB|CPU: 16C + MT<p>RAM:10 GB<p>-シンクライアント: RemoteFX<br />-USB ビデオは推奨されません| CPU: 20C + MT<p>RAM:12 GB<p>-シンクライアント: RemoteFX<br />-USB ビデオは推奨されません|   
   
 ## <a name="minimum-recommended-hardware-for-running-full-windows-10-virtual-desktops"></a>Windows 10 仮想デスクトップ全体を実行するための最小推奨ハードウェア  
 各ステーションに対して完全な仮想オペレーティングシステムインスタンスを実行することは、既定の MultiPoint desktop セッションを実行するよりもコンピューティングリソースが多くなるため、ステーションあたりのホストハードウェア要件は高くなります。  
   
-1.  CPU:ステーションあたり1コアまたはスレッド  
+1.  CPU: ステーションあたり1コアまたはスレッド  
   
 2.  ソリッドステートドライブ (SSD)  
   

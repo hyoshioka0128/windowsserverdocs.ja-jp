@@ -8,16 +8,16 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 6a0fa660db6b03104b585c8ee78a4f20aafe5c88
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c496151ed1f38cd1f2c604bd227627a586e582c6
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403143"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85473699"
 ---
 # <a name="create-a-file-screen-exception"></a>ファイル スクリーンの例外を作成する
 
-> 適用対象:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
+> 適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
 
 ファイル スクリーン処理に対して、例外を許可しなければならない場合があります。 たとえば、ファイル サーバーからのビデオ ファイルをブロックするが、トレーニング グループが、コンピューター ベースのトレーニングに関するビデオ ファイルを保存するだけは許可する必要があるなどの場合です。 他のファイル スクリーンがブロックしているファイルを許可するには、*ファイル スクリーン*の例外を作成します。
 
@@ -33,7 +33,7 @@ ms.locfileid: "71403143"
 
 1.  **[ファイル スクリーンの管理]** で **[ファイル スクリーン]** ノードをクリックします。
 
-2.  **[ファイル スクリーン]** を右クリックし、 **[ファイル スクリーンの例外の作成]** をクリックするか、 **[操作]** ウィンドウで **[ファイル スクリーンの例外の作成]** をクリックします。 **[ファイル スクリーンの例外の作成]** ダイアログ ボックスが表示されます。
+2.  **[ファイル スクリーン]** を右クリックし、**[ファイル スクリーンの例外の作成]** をクリックするか、**[操作]** ウィンドウで **[ファイル スクリーンの例外の作成]** をクリックします。 **[ファイル スクリーンの例外の作成]** ダイアログ ボックスが表示されます。
 
 3.  **[例外のパス]** テキスト ボックスで、例外が適用されるパスを入力するか選択します。 選択したフォルダーとそのすべてのサブフォルダーに、例外が適用されます。
 
@@ -41,11 +41,11 @@ ms.locfileid: "71403143"
 
     -   **[ファイル グループ]** で、ファイル スクリーンから除外する各ファイル グループを選択します。 ファイル グループのチェック ボックスをオンにするには、ファイル グループ ラベルをダブルクリックします。
     -   ファイルグループに含まれる、または除外するファイルの種類を表示する場合は、ファイルグループラベルをクリックし、[ **編集**] をクリックします。
-    -   新しいファイル グループを作成するには、 **[作成]** をクリックします。
+    -   新しいファイル グループを作成するには、**[作成]** をクリックします。
 
 5.  **[OK]** をクリックします。
 
-## <a name="see-also"></a>関連項目
+## <a name="additional-references"></a>その他のリファレンス
 
 -   [ファイルスクリーン処理の管理](file-screening-management.md)
 -   [スクリーン処理のためにファイル グループを定義する](define-file-groups-for-screening.md)

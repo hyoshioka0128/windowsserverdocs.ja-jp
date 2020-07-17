@@ -5,22 +5,22 @@ manager: eldenc
 ms.author: cosdar
 ms.technology: storage-health-service
 ms.topic: article
-ms.assetid: ''
 author: cosmosdarwin
 ms.date: 10/05/2017
-ms.openlocfilehash: e65db8834bd0b059dc7bbebbcaf9288fb46da225
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a1aedd4dc48abb38c33679f219a6825c6a9141bb
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369679"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85473029"
 ---
 # <a name="health-service-reports"></a>レポートのヘルスサービス
-> 適用対象: Windows Server 2019、Windows Server 2016
 
-## <a name="what-are-reports"></a>レポートとは  
+> 適用先:Windows Server 2019、Windows Server 2016
 
-ヘルスサービスにより、記憶域スペースダイレクトクラスターからパフォーマンスと容量に関するライブ情報を取得するために必要な作業が減少します。 1つの新しいコマンドレットには、クラスターメンバーシップを検出するための組み込みロジックを使用して、効率的に収集され、ノード間で動的に集計される、重要なメトリックの curated リストが用意されています。 値はすべて、リアルタイムかつ特定の時点のみのものです。  
+## <a name="what-are-reports"></a>レポートとは
+
+ヘルスサービスにより、記憶域スペースダイレクトクラスターからパフォーマンスと容量に関するライブ情報を取得するために必要な作業が減少します。 1つの新しいコマンドレットには、クラスターメンバーシップを検出するための組み込みロジックを使用して、効率的に収集され、ノード間で動的に集計される、重要なメトリックの curated リストが用意されています。 値はすべて、リアルタイムかつ特定の時点のみのものです。
 
 ## <a name="usage-in-powershell"></a>PowerShell での使用法
 
@@ -30,28 +30,27 @@ ms.locfileid: "71369679"
 Get-StorageSubSystem Cluster* | Get-StorageHealthReport
 ```
 
-省略可能な**Count**パラメーターは、1秒間隔で返される値のセット数を示します。  
+省略可能な**Count**パラメーターは、1秒間隔で返される値のセット数を示します。
 
 ```PowerShell
-Get-StorageSubSystem Cluster* | Get-StorageHealthReport -Count <Count>  
+Get-StorageSubSystem Cluster* | Get-StorageHealthReport -Count <Count>
 ```
 
-また、1つの特定のボリュームまたはサーバーのメトリックを取得することもできます。  
+また、1つの特定のボリュームまたはサーバーのメトリックを取得することもできます。
 
 ```PowerShell
-Get-Volume -FileSystemLabel <Label> | Get-StorageHealthReport -Count <Count>  
+Get-Volume -FileSystemLabel <Label> | Get-StorageHealthReport -Count <Count>
 
 Get-StorageNode -Name <Name> | Get-StorageHealthReport -Count <Count>
 ```
 
-## <a name="usage-in-net-and-c"></a>.NET およびでの使用C#
+## <a name="usage-in-net-and-c"></a>.NET および C での使用#
 
-### <a name="connect"></a>接続
+### <a name="connect"></a>接続する
 
-ヘルスサービスを照会するには、クラスターで**CimSession**を確立する必要があります。 これを行うには、完全な .NET でしか使用できないものが必要になります。つまり、web アプリまたはモバイルアプリから直接この操作を行うことはできません。 これらのコードサンプルでは、このデータアクセス層で最も単純な選択である C\#を使用します。
+ヘルスサービスを照会するには、クラスターで**CimSession**を確立する必要があります。 これを行うには、完全な .NET でしか使用できないものが必要になります。つまり、web アプリまたはモバイルアプリから直接この操作を行うことはできません。 これらのコードサンプルでは \# 、このデータアクセス層で最も単純な選択肢である C を使用します。
 
-``` 
-...
+```
 using System.Security;
 using Microsoft.Management.Infrastructure;
 
@@ -76,11 +75,11 @@ public CimSession Connect(string Domain = "...", string Computer = "...", string
 
 パスワード**SecureString**をユーザー入力から直接作成することをお勧めします。そのため、パスワードはクリアテキストでメモリに格納されることはありません。 これは、さまざまなセキュリティの問題を軽減するのに役立ちます。 しかし実際には、プロトタイプ作成は、プロトタイプ作成の目的では一般的です。
 
-### <a name="discover-objects"></a>オブジェクトの検出
+### <a name="discover-objects"></a>オブジェクトを検出します
 
 **CimSession**を確立したら、クラスターで WINDOWS MANAGEMENT INSTRUMENTATION (WMI) を照会できます。
 
-エラーまたはメトリックを取得するには、いくつかの関連オブジェクトのインスタンスを取得する必要があります。 まず、 **MSFT\_StorageSubSystem**がクラスター上の記憶域スペースダイレクトを表します。 これを使用すると、クラスター内のすべての**msft\_storagenode**およびすべての**msft\_ボリューム**(データボリューム) を取得できます。 最後に、 **MSFT\_StorageHealth**、ヘルスサービス自体も必要になります。
+エラーまたはメトリックを取得するには、いくつかの関連オブジェクトのインスタンスを取得する必要があります。 最初に、クラスター上の記憶域スペースダイレクトを表す**MSFT \_ StorageSubSystem** 。 これを使用すると、クラスター内のすべての**msft \_ storagenode**情報と、すべての**msft \_ ボリューム**(データボリューム) を取得できます。 最後に、 **MSFT \_ storagehealth**、ヘルスサービス自体も必要になります。
 
 ```
 CimInstance Cluster;
@@ -113,7 +112,6 @@ public void DiscoverObjects(CimSession Session)
 「[ストレージ管理 API クラス](https://msdn.microsoft.com/library/windows/desktop/hh830612(v=vs.85).aspx)」で説明されているすべての同じプロパティにアクセスできます。
 
 ```
-...
 using System.Diagnostics;
 
 foreach (CimInstance Node in Nodes)
@@ -209,15 +207,15 @@ public void BeginStreamingMetrics(CimSession Session, CimInstance HealthService,
 
 メトリックのすべてのサンプルは、個々のメトリックに対応する多くの "レコード" を含む "レポート" です。
 
-完全なスキーマの場合は、 **msft\_StorageHealthReport**と**msft\_HealthRecord** *クラスを調べます。*
+完全なスキーマについては、 *storagewmi .mof*の**msft \_ StorageHealthReport**クラスと**msft \_ HealthRecord**クラスを調べます。
 
 各メトリックには、このテーブルにつき3つのプロパティしかありません。
 
 | **プロパティ** | **例**       |
 | -------------|-------------------|
 | 名前         | IOLatencyAverage  |
-| Value        | 0.00021           |
-| 単位        | 3                 |
+| [値]        | 0.00021           |
+| ユニット        | 3                 |
 
 Units = {0, 1, 2, 3, 4}、0 = "Bytes"、1 = "BytesPerSecond"、2 = "CountPerSecond"、3 = "Seconds"、または 4 = "パーセント"。
 
@@ -227,7 +225,7 @@ Windows Server 2016 の各スコープで使用可能なメトリックを以下
 
 ### <a name="msft_storagesubsystem"></a>MSFT_StorageSubSystem
 
-| **名前**                        | **部署** |
+| **名前**                        | **ユニット** |
 |---------------------------------|-----------|
 | CPUUsage                        | 4         |
 | CapacityPhysicalPooledAvailable | 0         |
@@ -251,7 +249,7 @@ Windows Server 2016 の各スコープで使用可能なメトリックを以下
 
 ### <a name="msft_storagenode"></a>MSFT_StorageNode
 
-| **名前**            | **部署** |
+| **名前**            | **ユニット** |
 |---------------------|-----------|
 | CPUUsage            | 4         |
 | IOLatencyAverage    | 3         |
@@ -268,7 +266,7 @@ Windows Server 2016 の各スコープで使用可能なメトリックを以下
 
 ### <a name="msft_volume"></a>MSFT_Volume
 
-| **名前**            | **部署** |
+| **名前**            | **ユニット** |
 |---------------------|-----------|
 | CapacityAvailable   | 0         |
 | CapacityTotal       | 0         |
@@ -282,6 +280,6 @@ Windows Server 2016 の各スコープで使用可能なメトリックを以下
 | Ioby Puttotal   | 1         |
 | IOThroughputWrite   | 1         |
 
-## <a name="see-also"></a>関連項目
+## <a name="additional-references"></a>その他のリファレンス
 
-- [Windows Server 2016 のヘルスサービス](health-service-overview.md)
+- [Windows Server 2016 のヘルス サービス](health-service-overview.md)

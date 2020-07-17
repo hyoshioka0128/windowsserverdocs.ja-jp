@@ -1,32 +1,28 @@
 ---
 title: サーバー マネージャー タイルのデータのフィルター処理、並べ替え、照会
 description: サーバー マネージャー
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-server-manager
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8786f791-73e5-4c75-8d12-46e88a196976
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 89604b73fd071030d0f800b3a38a7ac3858ef1c6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e8447d06c03b6adca00966d05978d4337d9b5984
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383197"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851535"
 ---
 # <a name="filter-sort-and-query-data-in-server-manager-tiles"></a>サーバー マネージャー タイルのデータのフィルター処理、並べ替え、照会
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 Windows Server ではサーバーマネージャーのタイルを使用して、データのフィルター処理と並べ替え、カスタムクエリの作成と保存を行うことができます。 サーバーマネージャーのサーバーの役割またはグループのページにある [イベント]、[パフォーマンス]、[ベストプラクティスアナライザー]、[サービス]、[役割]、[機能] の各タイルにある一覧のエントリに対して、並べ替え、キーワードフィルターの使用、クエリの実行を行うことができます。  
   
-このトピックは次のセクションで構成されます。  
+このトピックの内容は次のとおりです。  
   
 -   [タイル内のリストエントリをフィルター処理する](#BKMK_tiles)  
   
@@ -34,7 +30,7 @@ Windows Server ではサーバーマネージャーのタイルを使用して�
   
 -   [タイルデータに対するカスタムクエリの作成と実行](#BKMK_query)  
   
-## <a name="BKMK_tiles"></a>タイル内のリストエントリをフィルター処理する  
+## <a name="filter-list-entries-in-tiles"></a><a name=BKMK_tiles></a>タイル内のリストエントリをフィルター処理する  
 **[フィルター]** ボックスは、タイルに表示するエントリの一覧を、指定したテキスト文字列が含まれるエントリのみにすばやく絞り込む方法です。  
   
 #### <a name="to-apply-a-filter-to-the-list-of-entries-in-a-tile"></a>タイルのエントリの一覧にフィルターを適用するには  
@@ -49,10 +45,10 @@ Windows Server ではサーバーマネージャーのタイルを使用して�
   
 4.  フィルターをクリアするには、フィルター ボックスの文字列を削除するか、 **[X]** をクリックします。  
   
-## <a name="BKMK_sort"></a>タイル内のリストエントリの並べ替え  
+## <a name="sort-list-entries-in-tiles"></a><a name=BKMK_sort></a>タイル内のリストエントリの並べ替え  
 列見出しをクリックしてサーバーマネージャータイルの一覧のエントリを並べ替えます。 列見出しを初めてクリックすると、列の値は英数字の昇順に並べ替えられます (矢印は上向きになります)。もう一度クリックすると、列の値は英数字の降順に並べ替えられます (矢印は下向きになります)。  
   
-## <a name="BKMK_query"></a>タイルデータに対するカスタムクエリの作成と実行  
+## <a name="create-and-run-custom-queries-on-tile-data"></a><a name=BKMK_query></a>タイルデータに対するカスタムクエリの作成と実行  
 サーバーマネージャーの [イベント]、[パフォーマンス]、[ベストプラクティスアナライザー]、[サービス]、または [役割と機能] の各タイルで、カスタムクエリを作成できます。 既定では、カスタムクエリを作成するための条件を選択する タイル ツールバーの領域は非表示になっています。クエリ条件を表示するには、**展開** (タイルツールバーの右端にあるシェブロンボタン) をクリックします。  
   
 #### <a name="to-create-a-custom-query-for-tile-data"></a>タイル データに対するカスタム クエリを作成するには  
@@ -85,7 +81,7 @@ Windows Server ではサーバーマネージャーのタイルを使用して�
   
 12. 保存済みのクエリを削除するには、 **[保存されている検索クエリ]** をクリックし、削除する保存済みのクエリの名前の近くの **[X]** をクリックします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [サーバー マネージャー](server-manager.md)  
 [パフォーマンス、イベント、サービスのデータの表示と構成](view-and-configure-performance-event-and-service-data.md)  
   

@@ -1,24 +1,20 @@
 ---
 title: リリース ノート - Windows Server バージョン 1803 に関する重要な問題
 description: Windows Server バージョン 1803 をインストールする前に必要な既知の情報、制限時刻、その他の情報について説明する
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.date: 05/07/2018
 ms.technology: server-general
-ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 ms.author: elizapo
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: a250f83a4f46966666556ba3d078d2faf3ea8e06
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a511c9888f27fe97fdeaf65cde022e5c2aa999d4
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391460"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "80826085"
 ---
 # <a name="release-notes-important-issues-in-windows-server-version-1803"></a>リリース ノート:Windows Server バージョン 1803 に関する重要な問題
 

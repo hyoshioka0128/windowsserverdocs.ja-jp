@@ -1,38 +1,34 @@
 ---
 title: Windows Server Essentials での Microsoft Online Services の管理
-description: Windows Server Essentials を使用する方法について説明します
-ms.custom: na
+description: Windows Server Essentials の使用方法について説明します。
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+ms.prod: windows-server
 ms.topic: article
 ms.assetid: 7e50886e-08b8-4c97-95cf-456ba3800ebf
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 9feb65903be589e6f6a9cc6c3b8738d858a70f30
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a24685b674963f170891b8b4e10ae06945010205
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59849513"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85470717"
 ---
 # <a name="manage-microsoft-online-services-in-windows-server-essentials"></a>Windows Server Essentials での Microsoft Online Services の管理
 
->適用先:Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
+>適用対象: windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-次のトピックでは、組織のオンライン サービスを管理するために利用できる方法について説明します。  
-  
--   [Office 365 を管理します。](Manage-Office-365-in-Windows-Server-Essentials.md)   
-  
--   [オンライン バックアップを管理します。](Manage-Online-Backup-in-Windows-Server-Essentials.md)  
-  
--   [SharePoint Online の管理します。](Manage-SharePoint-Online-in-Windows-Server-Essentials.md)  
-  
-## <a name="see-also"></a>関連項目  
-  
--   [Windows Server Essentials を管理します。](Manage-Windows-Server-Essentials.md)  
-  
--   [Windows Server Essentials を使用します。](../use/Use-Windows-Server-Essentials.md)
+次のトピックでは、組織のオンライン サービスを管理するために利用できる方法について説明します。
+
+-   [Office 365 の管理](Manage-Office-365-in-Windows-Server-Essentials.md)
+
+-   [オンライン バックアップの管理](Manage-Online-Backup-in-Windows-Server-Essentials.md)
+
+-   [SharePoint Online の管理](Manage-SharePoint-Online-in-Windows-Server-Essentials.md)
+
+## <a name="additional-references"></a>その他のリファレンス
+
+-   [Windows Server Essentials の管理](Manage-Windows-Server-Essentials.md)
+
+-   [Windows Server Essentials の使用](../use/Use-Windows-Server-Essentials.md)

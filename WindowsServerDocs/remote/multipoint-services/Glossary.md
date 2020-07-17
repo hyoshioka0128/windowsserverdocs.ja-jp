@@ -1,24 +1,20 @@
 ---
 title: 用語集
 description: MultiPoint Services の単語、用語、および概念を定義します。
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 807bce1d-b993-49c6-9783-b01a3c55846c
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 0c966f0c8e1ad239769c58e4648832ae5020d0dc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9a5f76f0f41d9ff1726a1a468fde7f53b6a7634d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71389649"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859225"
 ---
 # <a name="glossary"></a>用語集
 **ステーションを関連付ける**  
@@ -79,13 +75,13 @@ MultiPoint サービスが開始されたときに最初に起動するステー
 MultiPoint Services を実行しているコンピューターに接続するためのユーザーエンドポイント。 サポートされているステーションの種類は、直接ビデオ接続、USB 0 接続、および RDP over LAN 接続ステーションの3つです。 ステーションの詳細については、「 [MultiPoint ステーション](MultiPoint-services-Stations.md)」を参照してください。  
   
 **ステーションハブ**  
-MultiPoint ステーションを作成するモニターに関連付けられている USB ハブ。 これは、周辺機器の USB デバイスを MultiPoint Services に接続します。 関連項目:*Usb ゼロクライアント*および*usb ハブ*。  
+MultiPoint ステーションを作成するモニターに関連付けられている USB ハブ。 これは、周辺機器の USB デバイスを MultiPoint Services に接続します。 関連項目: *usb ゼロクライアント*および*usb ハブ*。  
   
 **ステーションモード**  
 MultiPoint services の2つのモードのいずれかを開始できます。 通常、MultiPoint Services システムはステーションモードです。 ステーションモードの場合、MultiPoint Services ステーションは、各ステーションが Windows オペレーティングシステムを実行している別のコンピューターであるかのように動作し、複数のユーザーが同時にシステムを使用できます。 「*コンソールモード*」も参照してください。  
   
 **USB ハブ**  
-ユニバーサルシリアルバス (USB) 2.0 以降の仕様に準拠する汎用のマルチポート USB 拡張ハブ。 このようなハブには、通常、複数の usb ポートがあります。これにより、コンピューターの1つの USB ポートに複数の USB デバイスを接続できます。 USB ハブは、通常、*外部電源*または*バス電源*を使用できる個別のデバイスです。 一部のキーボードやビデオモニターなど、その他のデバイスでは、USB ハブを設計に組み込むことができます。 関連項目:*USB ゼロクライアント*。  
+ユニバーサルシリアルバス (USB) 2.0 以降の仕様に準拠する汎用のマルチポート USB 拡張ハブ。 このようなハブには、通常、複数の usb ポートがあります。これにより、コンピューターの1つの USB ポートに複数の USB デバイスを接続できます。 USB ハブは、通常、*外部電源*または*バス電源*を使用できる個別のデバイスです。 一部のキーボードやビデオモニターなど、その他のデバイスでは、USB ハブを設計に組み込むことができます。 関連項目: *USB ゼロクライアント*。  
   
 **USB over Ethernet 0 クライアント**  
 Usb ゼロクライアント。 USB ポートではなく LAN 接続を介してコンピューターに接続します。 このクライアントは、データがイーサネット接続を介して送信される場合でも、サーバーに USB デバイスとして表示されます。  

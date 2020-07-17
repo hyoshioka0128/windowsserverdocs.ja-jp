@@ -1,26 +1,20 @@
 ---
 title: 証明書失効リスト (CRL) が無視されるように EAP-TLS を構成する
 description: EAP-TLS クライアントは、NPS サーバーがクライアントの証明書チェーン (ルート証明書を含む) の失効確認を完了し、証明書が失効していることを確認しない限り、接続できません。
-services: active-directory
 ms.prod: windows-server
 ms.technology: networking-ras
-documentationcenter: ''
-ms.assetid: ''
-ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 07/13/2018
-ms.author: pashort
-author: shortpatti
+ms.author: v-tea
+author: Teresa-MOTIV
 ms.localizationpriority: medium
 ms.reviewer: deverette
-ms.openlocfilehash: f2c1de01883f2fb52faebb4abf1d0c9e61f0139b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: db85d71ed1b7d8d5b3c14ac8ea603789422ea2cb
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388073"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80818885"
 ---
 # <a name="step-71-configure-eap-tls-to-ignore-certificate-revocation-list-crl-checking"></a>手順 7.1. 証明書失効リスト (CRL) が無視されるように EAP-TLS を構成する
 
@@ -62,6 +56,6 @@ EAP-TLS クライアントは、NPS サーバーが証明書チェーン (ルー
 |HKLM\SYSTEM\CurrentControlSet\Services\RasMan\PPP\EAP\25     |PEAP         |
 |HKLM\SYSTEM\CurrentControlSet\Services\RasMan\PPP\EAP\26     |EAP-MSCHAP v2         |
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次のステップ:
 
 [手順 7.2.Azure AD を使用した VPN 認証用のルート証明書を作成](vpn-create-root-cert-for-vpn-auth-azure-ad.md)する: この手順では、Azure AD で vpn 認証用の条件付きアクセスルート証明書を構成します。これにより、テナントに Vpn サーバークラウドアプリが自動的に作成されます。

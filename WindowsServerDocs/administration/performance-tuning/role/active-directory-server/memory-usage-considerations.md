@@ -5,14 +5,14 @@ ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: v-tea; lindakup
-author: Teresa-Motiv
+author: teresa-motiv
 ms.date: 7/3/2019
-ms.openlocfilehash: 55ac47d835874ddb8e160603f08cbafa985aad2a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: cceabd73a3064ff82cfe1d3c353ea63574f5feff
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71370289"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851885"
 ---
 # <a name="memory-usage-considerations-for-ad-ds-performance-tuning"></a>AD DS パフォーマンスチューニングに関するメモリ使用量に関する考慮事項
 
@@ -26,7 +26,7 @@ LSASS は、ローカルセキュリティ機関 (LSA) のドメイン認証と 
 - LSA サーバーサービス
 - Secure Sockets Layer (SSL)
 - Kerberos v5 認証プロトコル
-- NTLM 認証プロトコル
+- NTLM 認証プロトコル●ntlmにんしょうぷろとこる○
 - LSA に読み込まれるその他の認証パッケージ
 
 Active Directory データベースサービス (NTDSAI) は、拡張可能なストレージエンジン (ESE、ESENT) で動作します。

@@ -2,23 +2,21 @@
 title: 個別のデバイスの割り当てを使用して NVMe 記憶装置を展開する
 description: DDA を使用して記憶装置を展開する方法について説明します。
 ms.prod: windows-server
-ms.service: na
 ms.technology: hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 author: chrishuybregts
 ms.author: chrihu
 ms.assetid: 1c36107e-78c9-4ec0-a313-6ed557ac0ffc
-ms.openlocfilehash: eb76b25e8ff1428b2c03b37dde1f76562751d3bb
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2b92b175a6e914b62b069f76f92255cb99d55d74
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71364317"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860905"
 ---
 # <a name="deploy-nvme-storage-devices-using-discrete-device-assignment"></a>個別のデバイスの割り当てを使用して NVMe 記憶装置を展開する
 
->適用先:Microsoft Hyper-V Server 2016、Windows Server 2016
+>適用対象: Microsoft Hyper-V Server 2016、Windows Server 2016
 
 Windows Server 2016 以降では、個別のデバイス割り当て (DDA) を使用して、PCIe デバイス全体を VM に渡すことができます。  これにより、デバイスのネイティブドライバーを利用できるのに対して、VM 内から NVMe ストレージやグラフィックスカードなどのデバイスに高パフォーマンスでアクセスできるようになります。  デバイスの展開については、デバイス[の個別割り当てを使用したデバイスの展開計画](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md)に関するページを参照してください。DDA でデバイスを使用するには、次の3つの手順を実行します。
 -   DDA 用に VM を構成する
@@ -39,7 +37,7 @@ Set-VM -Name VMName -AutomaticStopAction TurnOff
 ## <a name="dismount-the-device-from-the-host-partition"></a>ホストパーティションからデバイスのマウントを解除する
 
 ### <a name="locating-the-devices-location-path"></a>デバイスの場所のパスを特定する
-ホストからデバイスをマウント解除してマウントするには、PCI ロケーションパスが必要です。  ロケーションパスの例は次`"PCIROOT(20)#PCI(0300)#PCI(0000)#PCI(0800)#PCI(0000)"`のようになります。   ロケーションパスの詳細については、こちらを参照してください。[個別のデバイスの割り当てを使用してデバイスを展開](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md)することを計画します。
+ホストからデバイスをマウント解除してマウントするには、PCI ロケーションパスが必要です。  ロケーションパスの例は次のようになります: `"PCIROOT(20)#PCI(0300)#PCI(0000)#PCI(0800)#PCI(0000)"`。   場所のパスの詳細については、「[個別のデバイスの割り当てを使用したデバイスの展開の計画](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md)」を参照してください。
 
 ### <a name="disable-the-device"></a>デバイスを無効にする
 デバイスマネージャーまたは PowerShell を使用して、デバイスが "無効" になっていることを確認します。  
@@ -56,7 +54,7 @@ Dismount-VMHostAssignableDevice -LocationPath $locationPath
 Add-VMAssignableDevice -LocationPath $locationPath -VMName VMName
 ```
 
-## <a name="whats-next"></a>次の内容
+## <a name="whats-next"></a>次の課題
 デバイスが VM に正常にマウントされると、その VM を起動して、ベアメタルシステムで実行されていた場合と同じように、通常どおりにデバイスと対話できるようになります。  これを確認するには、ゲスト VM でデバイスマネージャーを開き、ハードウェアが表示されていることを確認します。
 
 ## <a name="removing-a-device-and-returning-it-to-the-host"></a>デバイスを削除してホストに戻す

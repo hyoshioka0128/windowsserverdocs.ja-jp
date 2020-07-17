@@ -2,26 +2,22 @@
 title: 手順 13 NAT デバイスの背後からの DirectAccess 接続をテストする
 description: このトピックは、「Windows Server 2016 用の DirectAccess マルチサイト展開のテストラボガイド」の一部です。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 796825c3-5e3e-4745-a921-25ab90b95ede
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 41701592c0d9b143c84ad3fbad3fd77491eff5a0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 9422f3840899edc7dad6b51dd42a95eafb3856a5
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404713"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860345"
 ---
 # <a name="step-13-test-directaccess-connectivity-from-behind-a-nat-device"></a>手順 13 NAT デバイスの背後からの DirectAccess 接続をテストする
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 DirectAccess クライアントを NAT デバイスまたは Web プロキシ サーバーの背後からインターネットに接続すると、DirectAccess クライアントでは、リモート アクセス サーバーへの接続に Teredo または IP-HTTPS が使用されます。 NAT デバイスが、リモートアクセスサーバーのパブリック IP アドレスへの発信 UDP ポート3544を有効にすると、Teredo が使用されます。 Teredo を使用できない場合、DirectAccess クライアントは、発信 TCP ポート 443 の IP-HTTPS にフォールバックされます。その結果、従来の SSL ポートで、ファイアウォールまたは Web プロキシ サーバーを経由してアクセスできるようになります。 Web プロキシに認証が必要な場合、IP-HTTPS 接続は失敗します。 また、Web プロキシが発信 SSL 検査を実行している場合も IP-HTTPS 接続は失敗します。これは、HTTPS セッションがリモート アクセス サーバーではなく Web プロキシで中断されるためです。  
   
@@ -36,7 +32,7 @@ EDGE1 と EDGE1 がまだ実行されていない場合は開始し、インタ�
   
 これらのテストを実行する前に、インターネットスイッチから CLIENT1 とを取り外し、Homenet スイッチに接続します。 現在のネットワークを定義するネットワークの種類を確認するメッセージが表示されたら、 **[ホームネットワーク]** を選択します。  
   
-## <a name="TeredoCLIENT1"></a>Teredo 接続をテストする  
+## <a name="test-teredo-connectivity"></a><a name="TeredoCLIENT1"></a>Teredo 接続をテストする  
   
 1. CLIENT1 で、管理者特権の Windows PowerShell ウィンドウを開きます。  
   
@@ -58,15 +54,15 @@ EDGE1 と EDGE1 がまだ実行されていない場合は開始し、インタ�
   
 8. Windows PowerShell ウィンドウで、「 **ping 2-** Windows」と入力し、enter キーを押します。 IPv6 アドレス (2-3、2001: db8: 2:: 3) からの応答が表示されます。  
   
-9. Internet explorer を開き、Internet Explorer のアドレスバーに **https://2-app1/** を入力して、enter キーを押します。 2-3 に既定の IIS web サイトが表示されます。  
+9. Internet explorer を開き、Internet Explorer のアドレスバーに「 **https://2-app1/** 」と入力して、enter キーを押します。 2-3 に既定の IIS web サイトが表示されます。  
   
 10. Internet Explorer のアドレスバーに「 **https://app2/** 」と入力し、enter キーを押します。 APP2 の既定の Web サイトが表示されます。  
   
-11. **スタート**画面で、「<strong>\\ \ App2\Files</strong>」と入力し、enter キーを押します。 [新しいテキスト ドキュメント] ファイルをダブルクリックします。 これは、SMB を使用して IPv4 のみのサーバーに接続し、IPv4 のみのホストのリソースを取得できたことを示します。  
+11. **スタート**画面で、「<strong>\\\App2\Files</strong>」と入力し、enter キーを押します。 [新しいテキスト ドキュメント] ファイルをダブルクリックします。 これは、SMB を使用して IPv4 のみのサーバーに接続し、IPv4 のみのホストのリソースを取得できたことを示します。  
   
 12. この手順を連続で繰り返します。  
   
-## <a name="IPHTTPS_CLIENT1"></a>Ip-https 接続のテスト  
+## <a name="test-ip-https-connectivity"></a><a name="IPHTTPS_CLIENT1"></a>Ip-https 接続のテスト  
   
 1. CLIENT1 で、管理者特権の Windows PowerShell ウィンドウを開き、「 **netsh interface teredo set state disabled** 」と入力し、enter キーを押します。 その結果、クライアント コンピューターで Teredo が無効になり、クライアント コンピューターが IP-HTTPS を使用するように構成できます。 コマンドの完了時に、**OK** 応答が表示されます。  
   
@@ -82,11 +78,11 @@ EDGE1 と EDGE1 がまだ実行されていない場合は開始し、インタ�
   
 7. Windows PowerShell ウィンドウで、「 **ping 2-** Windows」と入力し、enter キーを押します。 IPv6 アドレス (2-3、2001: db8: 2:: 3) からの応答が表示されます。  
   
-8. Internet explorer を開き、Internet Explorer のアドレスバーに **https://2-app1/** を入力して、enter キーを押します。 2-3 に既定の IIS web サイトが表示されます。  
+8. Internet explorer を開き、Internet Explorer のアドレスバーに「 **https://2-app1/** 」と入力して、enter キーを押します。 2-3 に既定の IIS web サイトが表示されます。  
   
 9. Internet Explorer のアドレスバーに「 **https://app2/** 」と入力し、enter キーを押します。 APP2 の既定の Web サイトが表示されます。  
   
-10. **スタート**画面で、「<strong>\\ \ App2\Files</strong>」と入力し、enter キーを押します。 [新しいテキスト ドキュメント] ファイルをダブルクリックします。 これは、SMB を使用して IPv4 のみのサーバーに接続し、IPv4 のみのホストのリソースを取得できたことを示します。  
+10. **スタート**画面で、「<strong>\\\App2\Files</strong>」と入力し、enter キーを押します。 [新しいテキスト ドキュメント] ファイルをダブルクリックします。 これは、SMB を使用して IPv4 のみのサーバーに接続し、IPv4 のみのホストのリソースを取得できたことを示します。  
   
 11. この手順を連続で繰り返します。  
   

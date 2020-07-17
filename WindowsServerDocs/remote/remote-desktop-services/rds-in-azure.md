@@ -1,28 +1,24 @@
 ---
 title: ARM と Azure Marketplace を使った RDS のシームレスな展開
 description: ARM テンプレートと Azure Marketplace を使用して、Azure 内に小規模な RDS の展開を作成する方法について説明します。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5f72ceb6-6f90-48f6-bfc3-bdad63984ce7
 author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 02/10/2017
-ms.openlocfilehash: 9ada41e929c5e67cfcb1dcc5e7b4bc761c762d99
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 55f43e90aabd4c8ace3a333e3e6d86a49fb69210
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387454"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "80855085"
 ---
 # <a name="seamlessly-deploy-rds-with-arm-and-azure-marketplace"></a>ARM と Azure Marketplace を使った RDS のシームレスな展開
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2
+>適用先:Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2
 
 リモート デスクトップ サービス (RDS) は、コスト効率よく Windows デスクトップおよびアプリケーションをホストするために選択できるプラットフォームです。 [Azure Marketplace のオファリング](#basic-rds-through-the-azure-marketplace)または[クイックスタート テンプレート](#customized-rds-using-quickstart-templates)を使用して、Azure IaaS のデプロイ上に迅速に RDS を作成することができます。 Azure Marketplace では、ユーザー用にテスト ドメインを作成し、テストと概念実証に対応するシンプルかつ簡単なメカニズムを提供します。 一方、クイックスタート テンプレートでは、既存のドメインを使用でき、運用環境を構築するための優れたツールを提供します。 設定が終わったら、Windows、Mac、iOS、および Android 対応の Microsoft リモート デスクトップ アプリを使用して、さまざまなプラットフォームとデバイスから、公開されたデスクトップおよびアプリケーションに接続できます。
 

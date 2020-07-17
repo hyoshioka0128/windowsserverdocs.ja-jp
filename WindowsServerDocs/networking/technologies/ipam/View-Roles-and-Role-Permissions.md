@@ -2,30 +2,26 @@
 title: 役割および役割のアクセス許可を表示する
 description: このトピックは、Windows Server 2016 の IP アドレス管理 (IPAM) 管理ガイドに含まれています。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ipam
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: da8dce90-b54c-4ded-a48a-0cda5ccf1d8a
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 9f35f4a79bcdfebaedb2e5be5c34725d13a04fe9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 7baa5370177485c11bf64c11fe93ece81e1ffa69
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71401866"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854815"
 ---
 # <a name="view-roles-and-role-permissions"></a>役割および役割のアクセス許可を表示する
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックでは、IPAM クライアントコンソールで Access Control ユーザーロールを表示する方法について説明します。  
   
-メンバーシップ **管理者**, 、同等の権限をこの手順を実行するために必要な最低限のですか。  
+この手順を実行するには、**Administrators** のメンバーシップ、またはそれと同等のメンバーシップが最低限必要です。  
   
 ### <a name="to-view-access-control-roles"></a>Access Control の役割を表示するには  
   
@@ -41,7 +37,7 @@ ms.locfileid: "71401866"
   
     ![ロール権限の表示](../../media/View-Roles-and-Role-Permissions/ipam_ViewRoles_02.jpg)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [ロールベースの Access Control](Role-based-Access-Control.md)  
 [IPAM の管理](Manage-IPAM.md)  
   

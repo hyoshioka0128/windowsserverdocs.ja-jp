@@ -1,25 +1,21 @@
 ---
 title: デスクトップ エクスペリエンス搭載サーバーのインストール
-description: 'デスクトップ エクスペリエンス搭載サーバー インストールを入手してインストールする方法について説明します。 '
-ms.custom: na
+description: デスクトップ エクスペリエンス搭載サーバー インストールを入手してインストールする方法について説明します。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.date: 01/18/2017
 ms.technology: server-general
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5b38b8a0-4dfc-4130-be00-fc58bba99595
 author: jaimeo
 ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d92ae9e0013d622c1e0a6b8b6a1662dc82360f2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 18c454d9ef4deb8c9ea681a486e85f356ad5c9cd
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391789"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "80826945"
 ---
 # <a name="install-server-with-desktop-experience"></a>デスクトップ エクスペリエンス搭載サーバーのインストール
 > 適用先:Windows Server 2016
@@ -33,7 +29,7 @@ Windows Server 2016 をセットアップ ウィザードを使用してイン�
 >
 > 以前にリリースされた一部の Windows Server とは異なり、インストール後に、Server Core とデスクトップ エクスペリエンス搭載サーバーとの間の変換は実行できません。 デスクトップ エクスペリエンス搭載サーバーをインストールし、後で Server Core を使用することになった場合は、新規インストールを実行する必要があります。
 
-**ユーザー インターフェイス:** 標準のグラフィカル ユーザー インターフェイス ("サーバー グラフィック シェル")。 サーバー グラフィック シェルには、Windows 10 の新しいシェルが含まれています。 このオプションによって既定でインストールされる具体的な Windows 機能は、User-Interfaces-Infra、Server-GUI-Shell、Server-GUI-Mgmt-Infra、InkAndHandwritingServices、ServerMediaFoundation、およびデスクトップ エクスペリエンスです。 これらの機能は、このリリースのサーバー マネージャーに表示されますが、アンインストールはサポートされておらず、今後のリリースでは入手できません。
+**ユーザー インターフェイス:** 標準のグラフィカル ユーザー インターフェイス (サーバー グラフィック シェル)。 サーバー グラフィック シェルには、Windows 10 の新しいシェルが含まれています。 このオプションによって既定でインストールされる具体的な Windows 機能は、User-Interfaces-Infra、Server-GUI-Shell、Server-GUI-Mgmt-Infra、InkAndHandwritingServices、ServerMediaFoundation、およびデスクトップ エクスペリエンスです。 これらの機能は、このリリースのサーバー マネージャーに表示されますが、アンインストールはサポートされておらず、今後のリリースでは入手できません。
 
 **サーバーの役割をローカルにインストール、構成、アンインストール:** サーバー マネージャーまたは Windows PowerShell を使用
 
@@ -86,26 +82,26 @@ Windows Server 2016 をセットアップ ウィザードを使用してイン�
 
 ボリューム ライセンス版や評価版などの間でのライセンスの変換など、Windows Server 2016 に移るためのさまざまな追加オプションの詳細については、[アップグレード オプション](Supported-Upgrade-Paths.md)に関するページを参照してください。
 
-### <a name="migration"></a>Migration
+### <a name="migration"></a>移行
 **移行**とは、ハードウェアまたは仮想マシンの異なるセットにクリーン インストールを実行した後、古いサーバーのワークロードを新しいサーバーに転送することによって既存のオペレーティング システムから Windows Server 2016 に移ることを表します。 移行はインストールしているサーバーの役割に応じて大きく異なる場合があります。移行の詳細については、「[Windows Server Installation, Upgrade, and Migration (Windows Server のインストール、アップグレード、移行)](https://technet.microsoft.com/windowsserver/dn458795)」を参照してください。
 
 移行できるかどうかは、サーバーの役割によって異なります。 次の表には、特に Windows Server 2016 に移る際のサーバーの役割のアップグレードおよび移行オプションの説明が示されています。 個々の役割の移行ガイドについては、「[Windows Server の役割と機能を移行する](https://technet.microsoft.com/windowsserver/jj554790.aspx)」を参照してください。 インストールとアップグレードの詳細については、「[Windows Server Installation, Upgrade, and Migration (Windows Server のインストール、アップグレード、移行)](https://technet.microsoft.com/windowsserver/dn458795)」を参照してください。
 
 |サーバーの役割|Windows Server 2012 R2 からアップグレードできるか?|Windows Server 2012 からアップグレードできるか?|移行はサポートされているか?|ダウンタイムなしで移行を完了できるか?|  
 |-------------------|----------|--------------|--------------|----------|  
-|Active Directory 証明書サービス| 〇|    〇|    〇|    X|
-|Active Directory Domain Services|  〇|    〇|    〇|    〇|
-|Active Directory フェデレーション サービス|  X| X| 〇|    いいえ (新しいノードをファームに追加する必要がある)|
-|Active Directory ライトウェイト ディレクトリ サービス|   〇|    〇|    〇|    〇|
-|Active Directory Rights Management サービス|   〇|    〇|    〇|    X|
-|フェールオーバー クラスター|はい (ノードの一時停止、ドレイン、削除、Windows Server 2016 へのアップグレード、元のクラスターへの再参加を含む[クラスター OS のローリング アップグレード](https://technet.microsoft.com/windows-server-docs/failover-clustering/cluster-operating-system-rolling-upgrade) プロセスを使用)。 はい (アップグレードのためにサーバーがクラスターによって削除された後、別のクラスターに追加された場合)。|いいえ (サーバーがクラスターに属している場合)。 はい (アップグレードのためにサーバーがクラスターによって削除された後、別のクラスターに追加された場合)。  |〇|いいえ (Windows Server 2012 フェールオーバー クラスターの場合)。 はい (Hyper-V VM を備えた Windows Server 2012 R2 フェールオーバー クラスター、またはスケールアウト ファイル サーバーの役割を実行している Windows Server 2012 R2 フェールオーバー クラスターの場合)。 [クラスター OS のローリング アップグレード](https://technet.microsoft.com/windows-server-docs/failover-clustering/cluster-operating-system-rolling-upgrade)に関するページを参照。|
-|ファイル サービスおよび記憶域サービス| 〇|    〇|    サブ機能によって異なる|  X|
-|印刷サービスと FAX サービス|    X| X| はい (Printbrm.exe)| X|
-|リモート デスクトップ サービス|   はい (すべてのサブロールで可能。ただし、混在モードのファームはサポートされていない)|   はい (すべてのサブロールで可能。ただし、混在モードのファームはサポートされていない)|   〇|    X|
-|Web サーバー (IIS)|  〇|    〇|    〇|    X|
-|Windows Server Essentials Experience|  〇|    該当なし - 新機能|  〇|    X|
-|Windows Server Update Services|    〇|    〇|    〇|    X|
-|ワーク フォルダー|  〇|    〇|    〇|    はい ([クラスター OS のローリング アップグレード](https://technet.microsoft.com/windows-server-docs/failover-clustering/cluster-operating-system-rolling-upgrade)を使用した場合に WS 2012 R2 クラスターから)。|
+|Active Directory 証明書サービス|    はい|    はい|    はい|    いいえ|
+|[Active Directory Domain Services]|    はい|    はい|    はい|    はい|
+|Active Directory フェデレーション サービス|    いいえ|    いいえ|    はい|    いいえ (新しいノードをファームに追加する必要がある)|
+|Active Directory ライトウェイト ディレクトリ サービス|    はい|    はい|    はい|    はい|
+|Active Directory Rights Management サービス|    はい|    はい|    はい|    いいえ|
+|フェールオーバー クラスター|はい (ノードの一時停止、ドレイン、削除、Windows Server 2016 へのアップグレード、元のクラスターへの再参加を含む[クラスター OS のローリング アップグレード](https://technet.microsoft.com/windows-server-docs/failover-clustering/cluster-operating-system-rolling-upgrade) プロセスを使用)。 はい (アップグレードのためにサーバーがクラスターによって削除された後、別のクラスターに追加された場合)。|いいえ (サーバーがクラスターに属している場合)。 はい (アップグレードのためにサーバーがクラスターによって削除された後、別のクラスターに追加された場合)。    |はい|いいえ (Windows Server 2012 フェールオーバー クラスターの場合)。 はい (Hyper-V VM を備えた Windows Server 2012 R2 フェールオーバー クラスター、またはスケールアウト ファイル サーバーの役割を実行している Windows Server 2012 R2 フェールオーバー クラスターの場合)。 [クラスター OS のローリング アップグレード](https://technet.microsoft.com/windows-server-docs/failover-clustering/cluster-operating-system-rolling-upgrade)に関するページを参照。|
+|ファイル サービスおよび記憶域サービス|    はい|    はい|    サブ機能によって異なる|    いいえ|
+|印刷サービスと FAX サービス|    いいえ|    いいえ|    はい (Printbrm.exe)|    いいえ|
+|リモート デスクトップ サービス|    はい (すべてのサブロールで可能。ただし、混在モードのファームはサポートされていない)|    はい (すべてのサブロールで可能。ただし、混在モードのファームはサポートされていない)|    はい|    いいえ|
+|Web サーバー (IIS)|    はい|    はい|    はい|    いいえ|
+|Windows Server Essentials Experience|    はい|    該当なし - 新機能|    はい|    いいえ|
+|Windows Server Update Services|    はい|    はい|    はい|    いいえ|
+|作業フォルダー|    はい|    はい|    はい|    はい ([クラスター OS のローリング アップグレード](https://technet.microsoft.com/windows-server-docs/failover-clustering/cluster-operating-system-rolling-upgrade)を使用した場合に WS 2012 R2 クラスターから)。|
 
 > [!IMPORTANT]  
 > セットアップが完了し、必要なサーバーの役割と機能をすべてインストールしたら、Windows Update またはその他の更新方法を使用して Windows Server 2016 に適用可能な更新プログラムがあるかどうかをすぐに確認し、ある場合はインストールします。

@@ -1,35 +1,30 @@
 ---
 title: convert mbr
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Mbr の変換コマンドの参照記事。 GUID パーティションテーブル (GPT) パーティションスタイルを持つ空のベーシックディスクを、マスターブートレコード (MBR) パーティションスタイルを持つベーシックディスクに変換します。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a635a4c0-af73-4330-b021-51d483424537
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 47001415158b3bdb0b06af9114b995a6f0634da1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d53d46b5d7f5a06f389fc665d69508122bd679d9
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71379071"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928947"
 ---
 # <a name="convert-mbr"></a>convert mbr
 
-
-
-GUID パーティションテーブル (GPT) パーティションスタイルを持つ空のベーシックディスクを、マスターブートレコード (MBR) パーティションスタイルを持つベーシックディスクに変換します。
+GUID パーティションテーブル (GPT) パーティションスタイルを持つ空のベーシックディスクを、マスターブートレコード (MBR) パーティションスタイルを持つベーシックディスクに変換します。 この操作を成功させるには、ベーシックディスクを選択する必要があります。 [[ディスクの選択] コマンド](select-disk.md)を使用してベーシックディスクを選択し、それにフォーカスを移動します。
 
 > [!IMPORTANT]
-> MBR ディスクに変換するには、ディスクを空にする必要があります。 データをバックアップしてから、ディスクを変換する前にすべてのパーティションまたはボリュームを削除します。
+> ディスクをベーシック ディスクに変換するためには、そのディスクが空である必要があります。 ディスクを変換する前に、データのバックアップをとり、パーティションまたはボリュームをすべて削除してください。
 
-このコマンドの使用方法については、「 [GUID パーティションテーブルディスクをマスターブートレコードディスクに変更](https://go.microsoft.com/fwlink/?LinkId=207050)する」 (https://go.microsoft.com/fwlink/?LinkId=207050) を参照してください。
+> [!NOTE]
+> このコマンドの使用方法については、「 [GUID パーティションテーブルディスクをマスターブートレコードディスクに変更](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc725797(v=ws.11))する」を参照してください。
 
 ## <a name="syntax"></a>構文
 
@@ -37,24 +32,22 @@ GUID パーティションテーブル (GPT) パーティションスタイル�
 convert mbr [noerr]
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
-|---------|-----------|
-|noerr|スクリプトの場合のみ。 エラーが発生した場合、DiskPart はエラーが発生しなかったかのようにコマンドを処理し続けます。 このパラメーターは、エラー発生すると、DiskPart はエラー コードを生成して終了します。|
+| パラメーター | 説明 |
+| --------- | ----------- |
+| noerr | スクリプト専用です。 エラーが発生しても、エラーが発生しなかったかのように DiskPart はコマンドの処理を続けます。 このパラメーターは、エラー発生すると、DiskPart はエラー コードを生成して終了します。 |
 
-## <a name="remarks"></a>コメント
+## <a name="examples"></a>例
 
--   この操作を成功させるには、ベーシックディスクを選択する必要があります。 **[ディスクの選択**] コマンドを使用してベーシックディスクを選択し、それにフォーカスを移動します。
+ベーシックディスクを GPT パーティションスタイルから MBR パーティションスタイルに変換するには> 次のように入力します。
 
-## <a name="BKMK_examples"></a>例
-
-ベーシックディスクを GPT パーティションスタイルから MBR パーティションスタイルに変換するには > 次のように入力します。
 ```
 convert mbr
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
 
+- [convert コマンド](convert.md)

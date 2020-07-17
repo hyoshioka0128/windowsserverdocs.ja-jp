@@ -1,7 +1,6 @@
 ---
 ms.assetid: 87196b65-a356-409f-9af0-b5950797d668
 title: 付録 A-キー AD DS の使用条件の確認
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 81beba874440f7a75c2d7932357fae70f046d996
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ad8c1cf769c0c2a22e2d55f7bd2d111095410afe
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71409011"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822865"
 ---
-# <a name="appendix-a-reviewing-key-ad-ds-terms"></a>付録 A:キー AD DS 条項の確認
+# <a name="appendix-a-reviewing-key-ad-ds-terms"></a>付録 A: 重要な AD DS の用語の確認
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 次の用語は、Windows Server 2008 Active Directory Domain Services (AD DS) の展開プロセスに関連しています。  
   
@@ -41,7 +40,7 @@ ms.locfileid: "71409011"
 ## <a name="active-directory-functional-level"></a>Active Directory 機能レベル  
 ドメイン全体またはフォレスト全体の AD DS の高度な機能を有効にする AD DS 設定。  
   
-## <a name="migration"></a>Migration  
+## <a name="migration"></a>移行  
 オブジェクトを新しいドメインでアクセスできるようにするために、オブジェクトの特性を維持または変更する一方で、オブジェクトをソースドメインからターゲットドメインに移動するプロセス。  
   
 ## <a name="domain-restructure"></a>ドメインの再構築  
@@ -54,7 +53,7 @@ ms.locfileid: "71409011"
 ドメインのディレクトリサービスを新しいバージョンのディレクトリサービスにアップグレードするプロセス。 これには、すべてのドメインコントローラー上のオペレーティングシステムのアップグレードと、該当する場合は AD DS 機能レベルの引き上げが含まれます。  
   
 ## <a name="in-place-domain-upgrade"></a>インプレースドメインアップグレード  
-特定のドメインにあるすべてのドメインコントローラのオペレーティングシステムをアップグレードするプロセス。たとえば、Windows Server 2003 を Windows Server 2008 にアップグレードし、該当する場合はドメインの機能レベルを上げ、ユーザーなどのドメインオブジェクトはそのままにします。とグループが配置されています。  
+特定のドメインにあるすべてのドメインコントローラのオペレーティングシステムをアップグレードするプロセス。たとえば、Windows Server 2003 を Windows Server 2008 にアップグレードし、該当する場合はドメインの機能レベルを上げ、ユーザーやグループなどのドメインオブジェクトはそのままにします。  
   
 ## <a name="forest-root-domain"></a>フォレストルートドメイン  
 Active Directory フォレストに作成される最初のドメイン。 このドメインは、フォレストのルートドメインとして自動的に指定されます。 これにより、Active Directory フォレストインフラストラクチャの基盤が提供されます。  

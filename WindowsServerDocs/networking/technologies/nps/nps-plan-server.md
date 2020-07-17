@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: 2900dd2c-0f70-4f8d-9650-ed83d51d509a
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: bbcf3338f2cd6d8662a84faf263b486e31b140e5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 0e012746841bcf736b7698afb5d7c807194bbec0
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405332"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80315730"
 ---
 # <a name="plan-nps-as-a-radius-server"></a>NPS を RADIUS サーバーとして計画する
 
@@ -105,7 +105,7 @@ EAP-TLS では、NPS は証明機関 \(CA\)からサーバー証明書を登録�
 
 この認証プロセスを成功させるには、すべてのコンピューターが、ローカルコンピューターと現在のユーザーの信頼されたルート証明機関の証明書ストアに組織の CA 証明書を持っている必要があります。
 
-### <a name="peap-ms-chap-v2"></a>PEAP-TLS v2
+### <a name="peap-ms-chap-v2"></a>PEAP-MS-CHAP v2
 
 PEAP-TLS v2 は、サーバー認証に証明書を使用し、ユーザー認証にパスワードベースの資格情報を使用します。 証明書はサーバー認証にのみ使用されるため、PEAP ms-chap v2 を使用するために PKI を展開する必要はありません。 PEAP ms-chap v2 を展開するときに、次の2つの方法のいずれかで NPS のサーバー証明書を取得できます。
 

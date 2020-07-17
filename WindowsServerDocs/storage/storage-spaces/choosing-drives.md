@@ -3,36 +3,44 @@ ms.assetid: 1368bc83-9121-477a-af09-4ae73ac16789
 title: 記憶域スペース ダイレクト用のドライブの選択
 ms.prod: windows-server
 ms.author: cosdar
-ms.manager: eldenc
+manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
-ms.date: 09/19/2019
+ms.date: 07/01/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 21ba41f636c95660d16055908f6bef857b0f3608
-ms.sourcegitcommit: 73898afec450fb3c2f429ca373f6b48a74b19390
+ms.openlocfilehash: 2ffe34097971f4477f0f536637b49b704678c93e
+ms.sourcegitcommit: c40c29683d25ed75b439451d7fa8eda9d8d9e441
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71934993"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85833368"
 ---
 # <a name="choosing-drives-for-storage-spaces-direct"></a>記憶域スペース ダイレクト用のドライブの選択
 
->適用対象:Windows 2019、Windows Server 2016
+>適用先:Windows Server 2019、Windows Server 2016
 
 このトピックでは、パフォーマンスや容量の要件を満たすように[記憶域スペース ダイレクト](storage-spaces-direct-overview.md)でドライブを選ぶ方法のガイダンスについて説明します。
 
 ## <a name="drive-types"></a>ドライブの種類
 
-現在、記憶域スペース ダイレクトは、次の 3 種類のドライブで動作します。
+記憶域スペースダイレクト現在、次の4種類のドライブで動作します。
 
 <table>
+    <tr style="border: 0;">
+        <td style="padding: 10px; border: 0; width:70px">
+            <img src="media/understand-the-cache/pmem-100px.png">
+        </td>
+        <td style="padding: 10px; border: 0;" valign="middle">
+            <b>PMem</b>とは、新しい種類の低待機時間、高パフォーマンスストレージを指します。
+        </td>
+    </tr>
     <tr style="border: 0;">
         <td style="padding: 10px; border: 0; width:70px">
             <img src="media/understand-the-cache/NVMe-100px.png">
         </td>
         <td style="padding: 10px; border: 0;" valign="middle">
-            <b>NVMe</b> (Non-Volatile Memory Express) は、PCIe バスに直接取り付けられるソリッドステート ドライブです。 一般的なフォーム ファクターは、2.5" U.2、PCIe アドイン カード (AIC)、および M.2 です。 NVMe は、現在サポートされている他の種類のドライブと比較すると、より短い待機時間で、より高い IOPS と IO スループットを実現します。
+            <b>NVMe</b> (Non-Volatile Memory Express) は、PCIe バスに直接取り付けられるソリッドステート ドライブです。 一般的なフォーム ファクターは、2.5" U.2、PCIe アドイン カード (AIC)、および M.2 です。 NVMe は、永続メモリを除き、現在サポートされている他の種類のドライブよりも高い IOPS と IO スループットを提供します。
         </td>
     </tr>
     <tr style="border: 0;">
@@ -48,14 +56,14 @@ ms.locfileid: "71934993"
             <img src="media/understand-the-cache/HDD-100px.png">
         </td>
         <td style="padding: 10px; border: 0;" valign="middle">
-            <b>HDD</b> は、膨大な記憶域容量を提供する、回転式の磁気ハード ディスク ドライブです。
+            <b>Hdd</b>は、大量の記憶域容量を提供する、磁気ハードディスクドライブの回転を指します。
         </td>
     </tr>
 </table>
 
-## <a name="built-in-cache"></a>組み込みのキャッシュ
+## <a name="built-in-cache"></a>ビルトイン キャッシュ
 
-記憶域スペース ダイレクトには、組み込みのサーバー側キャッシュが装備されています。 これは、大規模で永続的なリアルタイムの読み取りおよび書き込みキャッシュです。 複数の種類のドライブが存在する展開では、"最速" の種類のすべてのドライブを自動的に使うように構成されます。 残りのドライブはデータ格納用に使われます。
+記憶域スペース ダイレクトには、組み込みのサーバー側キャッシュが装備されています。 これは、大規模で永続的なリアルタイムの読み取りおよび書き込みキャッシュです。 複数の種類のドライブが存在する展開では、"最速" の種類のすべてのドライブを自動的に使うように構成されます。 残りのドライブは、キャパシティとして使用されます。
 
 詳しくは、「[記憶域スペース ダイレクトのキャッシュについて](understand-the-cache.md)」をご覧ください。
 
@@ -110,16 +118,16 @@ ms.locfileid: "71934993"
 
 すべてのサーバーには、少なくとも 2 台のキャッシュ ドライブ (冗長性を確保するために必要な最小台数) が必要です。 データ格納用ドライブの数は、キャッシュ ドライブの数の倍数にすることをお勧めします。 たとえば、4 台のキャッシュ ドライブがある場合は、容量ドライブが 7 台や 9 台ではなく 8 台 (1:2 の比率) の場合に、より一貫したパフォーマンスが得られます。
 
-キャッシュは、アプリケーションとワークロードのワーキングセット (つまり、特定の時点でアクティブに読み取りおよび書き込みを行っているすべてのデータ) に合わせてサイズ設定する必要があります。 キャッシュのサイズについては、それ以外の要件はありません。 Hdd を使用した展開では、1台のサーバーの容量が 10% になります。たとえば、各サーバーに4× 4 TB HDD = 16 TB の容量がある場合は、サーバーあたり 2 x 800 GB SSD = 1.6 TB のキャッシュが必要です。 すべてのフラッシュデプロイ (特に非常に[耐久性の高い](https://blogs.technet.microsoft.com/filecab/2017/08/11/understanding-dwpd-tbw/)ssd) では、容量の 5% に近い状態にすることができます。たとえば、各サーバーに 24 x 1.2 tb SSD = 28.8 TB の容量がある場合は、サーバーあたり 2 x 750 GB NVMe = 1.5 tb のキャッシュを使用します。 キャッシュ ドライブは、いつでも追加または取り外して、後で調整することができます。
+キャッシュは、アプリケーションとワークロードのワーキングセット (つまり、特定の時点でアクティブに読み取りおよび書き込みを行っているすべてのデータ) に合わせてサイズ設定する必要があります。 キャッシュのサイズについては、それ以外の要件はありません。 Hdd を使用した展開では、1台のサーバーの容量が10% になります。たとえば、各サーバーに4× 4 TB HDD = 16 TB の容量がある場合は、サーバーあたり 2 x 800 GB SSD = 1.6 TB のキャッシュが必要です。 すべてのフラッシュデプロイ (特に非常に[耐久性の高い](https://blogs.technet.microsoft.com/filecab/2017/08/11/understanding-dwpd-tbw/)ssd) では、容量の5% に近い状態にすることができます。たとえば、各サーバーに 24 x 1.2 tb SSD = 28.8 TB の容量がある場合は、サーバーあたり 2 x 750 GB NVMe = 1.5 tb のキャッシュを使用します。 キャッシュ ドライブは、いつでも追加または取り外して、後で調整することができます。
 
 ### <a name="general"></a>全般
 
 サーバーごとのストレージ容量の合計を約400テラバイト (TB) に制限することをお勧めします。 サーバーごとの記憶域容量がこれよりも多くなると、ソフトウェア更新プログラムを適用する場合など、ダウンタイムや再起動の後でデータを再同期する際に必要となる時間が長くなります。 記憶域プールあたりの現在の最大サイズは、Windows Server 2019 の場合は4ペタバイト (PB) (4000 TB)、Windows Server 2016 の場合は1ペタバイトです。
 
-## <a name="see-also"></a>関連項目
+## <a name="additional-references"></a>その他の参照情報
 
 - [記憶域スペースダイレクトの概要](storage-spaces-direct-overview.md)
-- [記憶域スペースダイレクトのキャッシュについて](understand-the-cache.md)
+- [記憶域スペース ダイレクトのキャッシュについて](understand-the-cache.md)
 - [ハードウェア要件の記憶域スペースダイレクト](storage-spaces-direct-hardware-requirements.md)
-- [記憶域スペースダイレクトのボリュームの計画](plan-volumes.md)
+- [記憶域スペース ダイレクトのボリュームの計画](plan-volumes.md)
 - [フォールト トレランスと記憶域の効率](storage-spaces-fault-tolerance.md)

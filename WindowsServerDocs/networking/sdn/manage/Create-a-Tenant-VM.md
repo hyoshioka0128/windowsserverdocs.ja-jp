@@ -1,28 +1,24 @@
 ---
 title: VM を作成し、テナントの仮想ネットワークまたは VLAN に接続する
 description: このトピックでは、テナント VM を作成し、Hyper-v ネットワーク仮想化を使用して作成した仮想ネットワークまたは仮想ローカルエリアネットワーク (VLAN) に接続する方法について説明します。
-manager: dougkim
-ms.custom: na
+manager: grcusanz
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-sdn
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 3c62f533-1815-4f08-96b1-dc271f5a2b36
-ms.author: pashort
-author: shortpatti
+ms.author: anpaul
+author: AnirbanPaul
 ms.date: 08/24/2018
-ms.openlocfilehash: 3e0678fb204e0895bf4429e8bb877a3f1c0e7a97
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3949c4f10015a7fdfe4955b950b109a702553c45
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355858"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854515"
 ---
 # <a name="create-a-vm-and-connect-to-a-tenant-virtual-network-or-vlan"></a>VM を作成し、テナントの仮想ネットワークまたは VLAN に接続する
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックでは、テナント VM を作成し、Hyper-v ネットワーク仮想化を使用して作成した仮想ネットワークまたは仮想ローカルエリアネットワーク (VLAN) に接続します。 Windows PowerShell Network Controller コマンドレットを使用して、仮想ネットワークまたは NetworkControllerRESTWrappers に接続し、VLAN に接続することができます。
 
@@ -57,7 +53,7 @@ ms.locfileid: "71355858"
 2. ネットワークアダプターの接続先のサブネットを含む仮想ネットワークを取得します。
 
    ```Powershell 
-   $vnet = get-networkcontrollervirtualnetwork -connectionuri $uri -ResourceId “Contoso_WebTier”
+   $vnet = get-networkcontrollervirtualnetwork -connectionuri $uri -ResourceId "Contoso_WebTier"
    ```
 
 3. ネットワークコントローラーにネットワークインターフェイスオブジェクトを作成します。
@@ -77,14 +73,14 @@ ms.locfileid: "71355858"
    $ipconfiguration = new-object Microsoft.Windows.NetworkController.NetworkInterfaceIpConfiguration
    $ipconfiguration.resourceid = "MyVM_IP1"
    $ipconfiguration.properties = new-object Microsoft.Windows.NetworkController.NetworkInterfaceIpConfigurationProperties
-   $ipconfiguration.properties.PrivateIPAddress = “24.30.1.101”
+   $ipconfiguration.properties.PrivateIPAddress = "24.30.1.101"
    $ipconfiguration.properties.PrivateIPAllocationMethod = "Static"
     
    $ipconfiguration.properties.Subnet = new-object Microsoft.Windows.NetworkController.Subnet
    $ipconfiguration.properties.subnet.ResourceRef = $vnet.Properties.Subnets[0].ResourceRef
     
    $vmnicproperties.IpConfigurations = @($ipconfiguration)
-   New-NetworkControllerNetworkInterface –ResourceID “MyVM_Ethernet1” –Properties $vmnicproperties –ConnectionUri $uri
+   New-NetworkControllerNetworkInterface –ResourceID "MyVM_Ethernet1" –Properties $vmnicproperties –ConnectionUri $uri
    ```
 
 4. ネットワークコントローラーからネットワークインターフェイスの InstanceId を取得します。
@@ -103,7 +99,7 @@ ms.locfileid: "71355858"
     
    $FeatureId = "9940cd46-8b06-43bb-b9d5-93d50381fd56"
     
-   $vmNics = Get-VMNetworkAdapter -VMName “MyVM”
+   $vmNics = Get-VMNetworkAdapter -VMName "MyVM"
     
    $CurrentFeature = Get-VMSwitchExtensionPortFeature -FeatureId $FeatureId -VMNetworkAdapter $vmNics
     
@@ -134,7 +130,7 @@ ms.locfileid: "71355858"
 6. VM を起動します。
 
    ```PowerShell
-    Get-VM -Name “MyVM” | Start-VM 
+    Get-VM -Name "MyVM" | Start-VM 
    ```
 
 Vm を作成し、テナント Virtual Network に VM を接続して、テナントのワークロードを処理できるように VM を開始しました。
@@ -155,7 +151,7 @@ Vm を作成し、テナント Virtual Network に VM を接続して、テナ�
 2. VM ネットワークアダプターに VLAN ID を設定します。
 
    ```PowerShell
-   Set-VMNetworkAdapterIsolation –VMName “MyVM” -AllowUntaggedTraffic $true -IsolationMode VLAN -DefaultIsolationId 123
+   Set-VMNetworkAdapterIsolation –VMName "MyVM" -AllowUntaggedTraffic $true -IsolationMode VLAN -DefaultIsolationId 123
    ```
 
 3. 論理ネットワークサブネットを取得し、ネットワークインターフェイスを作成します。 
@@ -174,14 +170,14 @@ Vm を作成し、テナント Virtual Network に VM を接続して、テナ�
     $ipconfiguration = new-object Microsoft.Windows.NetworkController.NetworkInterfaceIpConfiguration
     $ipconfiguration.resourceid = "MyVM_Ip1"
     $ipconfiguration.properties = new-object Microsoft.Windows.NetworkController.NetworkInterfaceIpConfigurationProperties
-    $ipconfiguration.properties.PrivateIPAddress = “10.127.132.177”
+    $ipconfiguration.properties.PrivateIPAddress = "10.127.132.177"
     $ipconfiguration.properties.PrivateIPAllocationMethod = "Static"
 
     $ipconfiguration.properties.Subnet = new-object Microsoft.Windows.NetworkController.Subnet
     $ipconfiguration.properties.subnet.ResourceRef = $logicalnet.Properties.Subnets[0].ResourceRef
 
     $vmnicproperties.IpConfigurations = @($ipconfiguration)
-    $vnic = New-NetworkControllerNetworkInterface –ResourceID “MyVM_Ethernet1” –Properties $vmnicproperties –ConnectionUri $uri
+    $vnic = New-NetworkControllerNetworkInterface –ResourceID "MyVM_Ethernet1" –Properties $vmnicproperties –ConnectionUri $uri
 
     $vnic.InstanceId
    ```
@@ -192,7 +188,7 @@ Vm を作成し、テナント Virtual Network に VM を接続して、テナ�
    #The hardcoded Ids in this section are fixed values and must not change.
    $FeatureId = "9940cd46-8b06-43bb-b9d5-93d50381fd56"
 
-   $vmNics = Get-VMNetworkAdapter -VMName “MyVM”
+   $vmNics = Get-VMNetworkAdapter -VMName "MyVM"
 
    $CurrentFeature = Get-VMSwitchExtensionPortFeature -FeatureId $FeatureId -VMNetworkAdapter $vmNic
         
@@ -223,7 +219,7 @@ Vm を作成し、テナント Virtual Network に VM を接続して、テナ�
 5. VM を起動します。
 
    ```PowerShell
-   Get-VM -Name “MyVM” | Start-VM 
+   Get-VM -Name "MyVM" | Start-VM 
    ```
 
 Vm が正常に作成され、VM が VLAN に接続され、VM が開始され、テナントのワークロードを処理できるようになりました。

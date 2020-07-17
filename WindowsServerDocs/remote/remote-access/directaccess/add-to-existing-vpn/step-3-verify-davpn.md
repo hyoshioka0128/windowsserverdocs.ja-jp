@@ -2,26 +2,22 @@
 title: 手順 3. 展開を確認する
 description: このトピックは、「Windows Server 2016 の既存のリモートアクセス (VPN) 展開に DirectAccess を追加する」の一部です。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 43ac612e-2e77-418c-8171-ebb2086b7cb6
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 82acca0309835149ca35676784120b3130e72a54
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: b187d017a3cf2865a92d95a8ae93bec11ff457f0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388697"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859535"
 ---
 # <a name="step-3-verify-the-deployment"></a>手順 3. 展開を確認する
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックでは、DirectAccess 展開が正しく構成されていることを確認する方法について説明します。  
   

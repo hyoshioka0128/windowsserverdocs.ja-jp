@@ -1,27 +1,26 @@
 ---
 title: カスタムポートで証明書キーに基づく更新の証明書の登録 Web サービスを構成する
-description: ''
 author: Deland-Han
 ms.author: delhan
 manager: dcscontentpm
 ms.date: 11/12/2019
 ms.topic: article
 ms.prod: windows-server
-ms.openlocfilehash: 3d3d08d6abe9daa571dd7365815c1fc61f926501
-ms.sourcegitcommit: e5df3fd267352528eaab5546f817d64d648b297f
+ms.openlocfilehash: a21a34448248658d2ceffcad07d2a4e6e17b9348
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/18/2019
-ms.locfileid: "74163103"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856345"
 ---
 # <a name="configuring-certificate-enrollment-web-service-for-certificate-key-based-renewal-on-a-custom-port"></a>カスタムポートで証明書キーに基づく更新の証明書の登録 Web サービスを構成する
 
 > 執筆者: Windows グループを使用した Jitesh Thakur、Meera Mohideen、Technical advisor。
 Windows グループを使用した ankit Tyagi サポートエンジニア
 
-## <a name="summary"></a>概要
+## <a name="summary"></a>要約
 
-この記事では、443以外のカスタムポートに証明書の登録ポリシー Web サービス (CEP) と証明書の登録 Web サービス (CES) を実装する手順について説明します。この方法では、証明書キーに基づく書き換えによって自動のCEP および CES の更新機能。
+この記事では、CEP および CES の自動更新機能を利用するための証明書キーベースの更新に443以外のカスタムポートに証明書の登録ポリシー Web サービス (CEP) と証明書の登録 Web サービス (CES) を実装する手順について説明します。
 
 この記事では、CEP と CES の動作、およびセットアップガイドラインについても説明します。
 
@@ -44,7 +43,7 @@ Windows グループを使用した ankit Tyagi サポートエンジニア
 
 - 証明書の有効期間が終了すると、コンピューターは証明書ベースの CES キーベースの書き換えを使用して、同じチャネルで証明書を更新します。
 
-![展開](media/certificate-enrollment-certificate-key-based-renewal-1.png)
+![配置](media/certificate-enrollment-certificate-key-based-renewal-1.png)
 
 ## <a name="configuration-instructions"></a>構成の手順
 
@@ -224,14 +223,14 @@ Set-ADUser -Identity cepcessvc -Add @{'msDS-AllowedToDelegateTo'=@('HOST/CA1.con
    
    CN = ENTCA、CN = Enrollment Services、CN = Public Key Services、CN = Services、CN = Configuration、DC = contoso、DC = com
 
-3. CA オブジェクトを右クリックして編集します。 アプリケーション設定で見つかった CEP および CES サーバー Uri でカスタムポートを使用して、 **mspki-site-name**属性を変更します。 次に、例を示します。
+3. CA オブジェクトを右クリックして編集します。 アプリケーション設定で見つかった CEP および CES サーバー Uri でカスタムポートを使用して、 **mspki-site-name**属性を変更します。 例 :
 
    ```
    140https://cepces.contoso.com:49999/ENTCA_CES_UsernamePassword/service.svc/CES0   
    181https://cepces.contoso.com:49999/ENTCA_CES_Certificate/service.svc/CES1
    ```
    
-   ![ADSI エディター](media/certificate-enrollment-certificate-key-based-renewal-8.png) 
+   ![ADSI Edit](media/certificate-enrollment-certificate-key-based-renewal-8.png) 
 
 #### <a name="configure-the-client-computer"></a>クライアントコンピューターを構成する
 
@@ -246,7 +245,7 @@ Set-ADUser -Identity cepcessvc -Add @{'msDS-AllowedToDelegateTo'=@('HOST/CA1.con
  
 4. **証明書サービスクライアント証明書の登録ポリシー**を有効にします。
 
-   」を参照します。 **[追加]** をクリックして登録ポリシーを追加し、ADSI で編集した**USERNAMEPASSWORD**で CEP URI を入力します。
+   a. **[追加]** をクリックして登録ポリシーを追加し、ADSI で編集した**USERNAMEPASSWORD**で CEP URI を入力します。
    
    b. **[認証の種類]** で、 **[ユーザー名/パスワード]** を選択します。
    
@@ -264,7 +263,7 @@ Set-ADUser -Identity cepcessvc -Add @{'msDS-AllowedToDelegateTo'=@('HOST/CA1.con
 
 6. **Gpedit.msc を**再度開きます。 **[証明書サービスクライアント-証明書の登録ポリシー]** を編集し、キーに基づく更新登録ポリシーを追加します。
 
-   」を参照します。 **[追加]** をクリックし、ADSI で編集した**証明書**を含む CEP URI を入力します。 
+   a. **[追加]** をクリックし、ADSI で編集した**証明書**を含む CEP URI を入力します。 
    
    b. 優先度を**1**に設定し、ポリシーサーバーを検証します。 最初に登録した証明書を認証して選択するよう求められます。
 
@@ -279,7 +278,7 @@ Set-ADUser -Identity cepcessvc -Add @{'msDS-AllowedToDelegateTo'=@('HOST/CA1.con
 
 コンピューターの個人証明書ストアを開き、[アーカイブ済み証明書] ビューを追加します。 これを行うには、ローカルコンピューターアカウントスナップインを mmc.exe に追加し、 **[証明書 (ローカルコンピューター)]** をクリックして強調表示します。 mmc の右側または上部にある [**操作] タブ**で **[表示]** をクリックし、 **[オプションの表示]** をクリックして、アーカイブされた **[証明書]** をクリックし、[ **OK]** を
 
-### <a name="method-1"></a>方法1 
+### <a name="method-1"></a>方法 1 : 
 
 次のコマンドを実行します。
 
@@ -287,7 +286,7 @@ Set-ADUser -Identity cepcessvc -Add @{'msDS-AllowedToDelegateTo'=@('HOST/CA1.con
 certreq -machine -q -enroll -cert <thumbprint> renew
 ```
 
-![コマンドを使用します](media/certificate-enrollment-certificate-key-based-renewal-14.png)
+![コマンド](media/certificate-enrollment-certificate-key-based-renewal-14.png)
 
 ### <a name="method-2"></a>方法 2
 
@@ -297,14 +296,14 @@ certreq -machine -q -enroll -cert <thumbprint> renew
 
 したがって、時刻を午後8:10 時に進める場合は、 19日に、更新ウィンドウがテンプレートで8時間に設定されていたため、Certutil-pulse (AE エンジンをトリガーする) を実行すると、証明書が登録されます。
 
-![コマンドを使用します](media/certificate-enrollment-certificate-key-based-renewal-15.png)
+![コマンド](media/certificate-enrollment-certificate-key-based-renewal-15.png)
  
 テストが完了したら、時刻の設定を元の値に戻してから、クライアントコンピューターを再起動します。
 
 > [!Note]
 > 前のスクリーンショットは、CA の日付が18に設定されているため、自動登録エンジンが想定どおりに動作することを示す例です。 そのため、証明書の発行は続行されます。 実際の状況では、この大量の更新は行われません。
 
-## <a name="references"></a>参照先
+## <a name="references"></a>参照
 
 [テストラボガイド: 証明書キーベースの書き換えのデモンストレーション](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj590165(v%3Dws.11))
 
@@ -314,7 +313,7 @@ certreq -machine -q -enroll -cert <thumbprint> renew
 
 [AdcsEnrollmentWebService](https://docs.microsoft.com/powershell/module/adcsdeployment/install-adcsenrollmentwebservice?view=win10-ps)
 
-関連項目
+参照
 
 [Windows Server セキュリティフォーラム](https://aka.ms/adcsforum)
 

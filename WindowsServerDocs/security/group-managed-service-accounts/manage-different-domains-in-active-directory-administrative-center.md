@@ -1,22 +1,18 @@
 ---
 title: Active Directory 管理センターでのさまざまなドメインの管理
-ms.prod: windows-server
 description: Windows Server のセキュリティ
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+ms.prod: windows-server
 ms.assetid: 166351c3-4076-48be-aa8f-797adf1e9d68
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 71edf6bb38cc665fe5c780ce986d0c0b8807d6ab
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6690ffbc558db4026c3fe67168907ca953ad4081
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386927"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856985"
 ---
 # <a name="manage-different-domains-in-active-directory-administrative-center"></a>Active Directory 管理センターでのさまざまなドメインの管理
 
@@ -24,7 +20,7 @@ ms.locfileid: "71386927"
 
   Active Directory 管理を開くと、このコンピューターで現在ログオンしているドメイン \(ローカルドメイン\) Active Directory 管理センターナビゲーションウィンドウの左側のウィンドウ \(に表示されます。\) 現在のログオン資格情報セットの権利に応じて、このローカルドメイン内の Active Directory オブジェクトを表示または管理できます。
 
- 同じフォレスト内の他のドメインの Active Directory オブジェクト、またはローカルとの信頼関係が確立された別のフォレスト内のドメインで、同じログオン資格情報のセットと同じ Active Directory 管理センターインスタンスを使用して表示または管理することもできます。領域. 1つの\-方向の信頼と2つの\-方向の信頼の両方がサポートされています。
+ 同じフォレスト内の他のドメインにある Active Directory オブジェクト、またはローカルドメインとの信頼関係が確立されている別のフォレスト内のドメインで、同じログオン資格情報のセットと同じインスタンス Active Directory 管理センターを使用して表示または管理することもできます。 1つの\-方向の信頼と2つの\-方向の信頼の両方がサポートされています。
 
 > [!NOTE]
 >  ドメイン a とドメイン B の間に\-一方向の信頼がある場合、ドメイン a のユーザーはドメイン B のリソースにアクセスできますが、ドメイン B のユーザーはドメイン A のリソースにアクセスできません。ドメイン A がローカルドメインであるコンピューターで Active Directory 管理センターを実行している場合は、現在のログオン資格情報のセットと同じ Active Directory 管理センターのインスタンスでドメイン B に ただし、ドメイン B がローカルドメインであるコンピューターで Active Directory 管理センターを実行している場合は、Active Directory 管理センターの同じインスタンスにある同じ資格情報のセットを使用してドメイン A に接続することはできません。
@@ -74,7 +70,7 @@ ms.locfileid: "71386927"
 
    Active Directory 管理センターナビゲーションウィンドウのカスタマイズの詳細については、「 [Active Directory 管理センターのナビゲーションウィンドウをカスタマイズ](customize-the-active-directory-administrative-center-navigation-pane.md)する」を参照してください。
 
-   現在のログオン資格情報のセットとは異なるログオン資格情報のセットを使用して、Active Directory 管理センターを開くこともできます。 次の手順のコマンドは、通常のユーザー資格情報を使用して Active Directory 管理センターを実行しているコンピューターにログオンしているが、このコンピューターで Active Directory 管理センターを使用してを管理する場合に役立ちます。管理者としてのローカルドメイン。 このコマンド \(、Active Directory 管理センターを使用して、現在のログオン資格情報のセットとは異なる資格情報のセットを使用して、ローカルドメインとは異なる外部ドメインをリモートで管理する場合にも役立ちます。 ただし、外部ドメインには、ローカルドメインとの信頼関係が確立されている必要があります。\)
+   現在のログオン資格情報のセットとは異なるログオン資格情報のセットを使用して、Active Directory 管理センターを開くこともできます。 次の手順のコマンドは、通常のユーザー資格情報を使用して Active Directory 管理センターを実行しているコンピューターにログオンしているが、このコンピューターで Active Directory 管理センターを使用して、ローカルドメインを管理者として管理する場合に役立ちます。 このコマンド \(、Active Directory 管理センターを使用して、現在のログオン資格情報のセットとは異なる資格情報のセットを使用して、ローカルドメインとは異なる外部ドメインをリモートで管理する場合にも役立ちます。 ただし、外部ドメインには、ローカルドメインとの信頼関係が確立されている必要があります。\)
 
    この手順を完了するために最低限必要なグループ メンバーシップはありません。
 

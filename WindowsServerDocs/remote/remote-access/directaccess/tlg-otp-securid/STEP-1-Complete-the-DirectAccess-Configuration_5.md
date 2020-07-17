@@ -2,22 +2,18 @@
 title: 手順 1 DirectAccess の構成を完了する
 description: このトピックは、「テストラボガイド-OTP 認証を使用した DirectAccess のデモンストレーション」と「RSA SecurID for Windows Server 2016」に含まれています。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a815bc0d-4b4f-432e-85f0-23b2cc67d827
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 61d5dcc42dea79b67a6cceb5ad1574f02f1d9a1d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: c21c17f7392dfdc05ea6730c115bcc6b7e00e487
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367573"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860315"
 ---
 # <a name="step-1-complete-the-directaccess-configuration"></a>手順 1 DirectAccess の構成を完了する
 

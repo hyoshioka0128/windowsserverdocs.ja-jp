@@ -1,23 +1,22 @@
 ---
 title: 仮想マシンのリソースコントロール
 description: VM の CPU グループの使用
-keywords: Windows 10, Hyper-V
 author: allenma
 ms.date: 06/18/2018
 ms.topic: article
-ms.prod: windows-10-hyperv
+ms.prod: windows-server
 ms.service: windows-10-hyperv
 ms.assetid: cc7bb88e-ae75-4a54-9fb4-fc7c14964d67
-ms.openlocfilehash: 41390421c9e3126915cdf2e827e251e84495bafd
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: ebb5f9a0ca9c50a5e5357e3dd2c755095da98d11
+ms.sourcegitcommit: 32f810c5429804c384d788c680afac427976e351
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70872018"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83203537"
 ---
->適用先:Windows Server 2016、Microsoft Hyper-V Server 2016、Windows Server 2019、Microsoft Hyper-V Server 2019
-
 # <a name="virtual-machine-resource-controls"></a>仮想マシンのリソースコントロール
+
+> 適用先:Windows Server 2016、Microsoft Hyper-V Server 2016、Windows Server 2019、Microsoft Hyper-V Server 2019
 
 この記事では、仮想マシンの Hyper-v リソースと分離の制御について説明します。  これらの機能は、仮想マシンの CPU グループとして、または "CPU グループ" と呼ばれますが、Windows Server 2016 で導入されました。  CPU グループを使用すると、Hyper-v 管理者は、ゲスト仮想マシン間でホストの CPU リソースの管理と割り当てをより適切に行うことができます。  Hyper-v 管理者は、CPU グループを使用して次のことができます。
 
@@ -31,7 +30,7 @@ ms.locfileid: "70872018"
 
 CPU グループは、Hyper-v ホストコンピューティングサービス (HCS) を介して管理されます。 HCS、その genesis、HCS Api へのリンクの詳細については、Microsoft 仮想化チームのブログで[ホストコンピューティングサービス (hcs) の導入](https://blogs.technet.microsoft.com/virtualization/2017/01/27/introducing-the-host-compute-service-hcs/)に関する投稿を参照してください。
 
->[!NOTE] 
+>[!NOTE]
 >CPU グループを作成および管理するために使用できるのは HCS だけです。Hyper-v マネージャーアプレット、WMI および PowerShell 管理インターフェイスは、CPU グループをサポートしていません。
 
 Microsoft では、HCS インターフェイスを使用して CPU グループを管理する、 [Microsoft ダウンロードセンター](https://go.microsoft.com/fwlink/?linkid=865968)にコマンドラインユーティリティ (cpu) を提供しています。  このユーティリティでは、ホストの CPU トポロジを表示することもできます。
@@ -46,13 +45,13 @@ CPU グループの上限は、G = *n* x *C*として計算されます。
     *n* is the total number of logical processors (LPs) in the group
     *C* is the maximum CPU allocation — that is, the class of service desired for the group, expressed as a percentage of the system's total compute capacity
 
-たとえば、CPU グループが4つの論理プロセッサ (LPs) で構成され、キャップが 50% であるとします。
+たとえば、CPU グループが4つの論理プロセッサ (LPs) で構成され、キャップが50% であるとします。
 
     G = n * C
     G = 4 * 50%
     G = 2 LP's worth of CPU time for the entire group
 
-この例では、CPU グループ G に2世代の CPU 時間が割り当てられています。  
+この例では、CPU グループ G に2世代の CPU 時間が割り当てられています。
 
 グループキャップは、グループにバインドされている仮想マシンまたは仮想プロセッサの数に関係なく、CPU グループに割り当てられている仮想マシンの状態 (シャットダウンや開始など) に関係なく適用されることに注意してください。 そのため、同じ CPU グループにバインドされている各 VM は、グループの合計 CPU 割り当ての割合を受け取り、CPU グループにバインドされている Vm の数によって変化します。 そのため、vm が CPU グループからバインドまたはバインド解除されている場合、CPU グループ全体の上限を readjusted に設定し、結果として得られる VM あたりの上限を維持するように設定する必要があります。 VM ホスト管理者または仮想化管理ソフトウェアレイヤーは、必要に応じてグループキャップを管理し、必要に応じて VM ごとの CPU リソース割り当てを実現します。
 
@@ -60,39 +59,39 @@ CPU グループの上限は、G = *n* x *C*として計算されます。
 
 いくつかの簡単な例を見てみましょう。 まず、Hyper-v ホスト管理者がゲスト Vm 用に2層のサービスをサポートするとします。
 
-1. ローエンドの "C" 層。 このレベルには、ホストのコンピューティングリソース全体の 10% を与えます。
+1. ローエンドの "C" 層。 このレベルには、ホストのコンピューティングリソース全体の10% を与えます。
 
-1. 中間範囲 "B" 層。 この層には、ホストのコンピューティングリソース全体の 50% が割り当てられます。
+1. 中間範囲 "B" 層。 この層には、ホストのコンピューティングリソース全体の50% が割り当てられます。
 
 この例のこの時点では、個々の VM キャップ、重み、予約など、他の CPU リソース制御が使用されていないことをアサートします。
 ただし、後で説明するように、個々の VM の上限は重要です。
 
 わかりやすくするために、各 VM には VP が1つあり、ホストには8個の LPs があると仮定してみましょう。 空のホストから始めます。
 
-"B" 層を作成するために、ホストの管理は、グループの上限を 50% に設定します。
+"B" 層を作成するために、ホストの管理は、グループの上限を50% に設定します。
 
     G = n * C
     G = 8 * 50%
     G = 4 LP's worth of CPU time for the entire group
 
 ホスト管理者は、1つの "B" 層の VM を追加します。
-この時点で、"B" 層の VM は、ホストの CPU のうち最大 50% を使用できます。また、この例のシステムでは、4つの LPs に相当します。
+この時点で、"B" 層の VM は、ホストの CPU のうち最大50% を使用できます。また、この例のシステムでは、4つの LPs に相当します。
 
-これで、管理者は2つ目の "Tier B" VM を追加します。 CPU グループの割り当ては、すべての Vm 間で均等に分割されます。 グループ B には合計2つの Vm があります。そのため、各 VM は、グループ B の合計である 50%、25%、またはそれに相当する2つのコンピューティング時間の半分を獲得します。
+これで、管理者は2つ目の "Tier B" VM を追加します。 CPU グループの割り当ては、すべての Vm 間で均等に分割されます。 グループ B には合計2つの Vm があります。そのため、各 VM は、グループ B の合計である50%、25%、またはそれに相当する2つのコンピューティング時間の半分を獲得します。
 
 ## <a name="setting-cpu-caps-on-individual-vms"></a>個々の Vm での CPU キャップの設定
 
 グループキャップに加えて、各 VM は個別の "VM cap" も持つことができます。 CPU の上限、重量、予約など、VM ごとの CPU リソース制御は、その概要以降、Hyper-v に含まれていました。
 グループの上限と組み合わせると、VM の上限は、グループに使用可能な CPU リソースがある場合でも、各 VP が取得できる CPU の最大量を指定します。
 
-たとえば、ホスト管理者は、"C" Vm に 10% の VM キャップを配置することができます。
-このようにして、ほとんどの "C" VPs がアイドル状態であっても、各 VP が 10% を超えることはありません。
+たとえば、ホスト管理者は、"C" Vm に10% の VM キャップを配置することができます。
+このようにして、ほとんどの "C" VPs がアイドル状態であっても、各 VP が10% を超えることはありません。
 VM cap を使用しない場合、"C" Vm は、その層で許可されているレベルを超えてパフォーマンスをさせる可能性があります。
 
 ## <a name="isolating-vm-groups-to-specific-host-processors"></a>特定のホストプロセッサに VM グループを分離する
 
 Hyper-v ホスト管理者は、コンピューティングリソースを VM に専用にすることもできます。
-たとえば、管理者が、クラスキャップが 100% の premium "A" VM を提供したいとします。
+たとえば、管理者が、クラスキャップが100% の premium "A" VM を提供したいとします。
 これらの premium Vm では、最小のスケジューリング待機時間とジッターも必要です。つまり、他の VM によってスケジュール解除されていない可能性があります。
 この分離を実現するために、特定の LP アフィニティマッピングで CPU グループを構成することもできます。
 
@@ -121,7 +120,7 @@ Hyper-v ホスト管理者は、コンピューティングリソースを VM �
 
 Cpu 使用率ツールの使用方法の例をいくつか見てみましょう。
 
->[!NOTE] 
+>[!NOTE]
 >Cpu グループツールのコマンドラインパラメーターは、区切り記号としてスペースのみを使用して渡されます。 '/' または '-' 文字は、必要なコマンドラインスイッチを続行できません。
 
 ### <a name="discovering-the-cpu-topology"></a>CPU トポロジの検出
@@ -129,7 +128,7 @@ Cpu 使用率ツールの使用方法の例をいくつか見てみましょう�
 次に示すように、Getcpu トポロジで Cpu グループを実行すると、現在のシステムに関する情報が返されます。これには、LP インデックス、LP が属する NUMA ノード、パッケージとコア Id、およびルート VP インデックスが含まれます。
 
 次の例は、2つの CPU ソケットと NUMA ノード、合計 32 LPs、およびマルチスレッド化が有効になっているシステムを示しています。また、各 NUMA ノードの8つのルート VPs である Minroot を有効にするように構成されています。
-ルート VPs を持つ LPs は RootVpIndex > = 0 です。RootVpIndex が-1 の LPs は、ルートパーティションでは使用できませんが、ハイパーバイザーによって引き続き管理されており、他の構成設定で許可されているようにゲスト VPs を実行します。
+ルート VPs を持つ LPs は RootVpIndex >= 0 です。RootVpIndex が-1 の LPs は、ルートパーティションでは使用できませんが、ハイパーバイザーによって引き続き管理されており、他の構成設定で許可されているようにゲスト VPs を実行します。
 
 ```console
 C:\vm\tools>CpuGroups.exe GetCpuTopology
@@ -217,9 +216,9 @@ CpuGroupId                          CpuCap LpIndexes
 36AB08CB-3A76-4B38-992E-000000000004 65536 24,25,26,27,28,29,30,31
 ```
 
-### <a name="example-5--set-the-cpu-group-cap-to-50"></a>例 5-CPU グループの上限を 50% に設定する
+### <a name="example-5--set-the-cpu-group-cap-to-50"></a>例 5-CPU グループの上限を50% に設定する
 
-ここでは、CPU グループの上限を 50% に設定します。
+ここでは、CPU グループの上限を50% に設定します。
 
 ```console
 C:\vm\tools>CpuGroups.exe SetGroupProperty /GroupId:36AB08CB-3A76-4B38-992E-000000000001 /CpuCap:32768

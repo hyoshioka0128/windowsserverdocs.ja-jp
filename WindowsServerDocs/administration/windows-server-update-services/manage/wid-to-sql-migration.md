@@ -2,26 +2,23 @@
 title: WSUS データベースを (Windows Internal Database) WID から SQL に移行する
 description: Windows Server Update Service (WSUS) トピック-Windows Internal Database インスタンスから SQL Server のローカルまたはリモートインスタンスに WSUS データベース (SUSDB) を移行する方法について説明します。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-wsus
-ms.tgt_pltfrm: na
 ms.topic: get-started article
 ms.assetid: 90e3464c-49d8-4861-96db-ee6f8a09g7dr
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dougkim
 ms.date: 07/25/2018
-ms.openlocfilehash: 0977aa1fd9a6848bd7b85bb592b6a82556277e72
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: facd846dd0c20ee2e5001b0592651ce310e19097
+ms.sourcegitcommit: 29f7a4811b4d36d60b8b7c55ce57d4ee7d52e263
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361582"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83716887"
 ---
->適用対象: Windows Server 2012、Windows Server 2012 R2、Windows Server 2016
-
 # <a name="migrating-the-wsus-database-from-wid-to-sql"></a>WID から SQL への WSUS データベースの移行
+
+> 適用対象: Windows Server 2012、Windows Server 2012 R2、Windows Server 2016
 
 WSUS データベース (SUSDB) を Windows Internal Database インスタンスから SQL Server のローカルまたはリモートインスタンスに移行するには、次の手順を実行します。
 
@@ -47,7 +44,7 @@ PowerShell (管理者特権) から、次のように実行します。
 
 #### <a name="using-sql-management-studio"></a>SQL Management Studio の使用
 
-1. **SUSDB** -&gt;**タスク**-を右クリックし &gt; [**切断**: ![image1.](images/image1.png)
+1. **SUSDB**タスクを右クリックして、 - &gt; **Tasks** - &gt; [**デタッチ**] をクリックします。 ![ image1.](images/image1.png)
 2. [**既存の接続を削除**する] をオンにし、[ **OK]** をクリックします (アクティブな接続が存在する場合は省略可能)。
     ![image2](images/image2.png)
 
@@ -70,17 +67,17 @@ PowerShell (管理者特権) から、次のように実行します。
 
 ### <a name="copy-the-susdb-files-to-the-sql-server"></a>SUSDB ファイルを SQL Server にコピーします。
 
-1. WID データフォルダー ( **% SystemDrive%** \** Windows\WID\Data * *) から SQL インスタンスのデータフォルダーに、 **SUSDB**と**SUSDB\_** コピーします。
+1. WID **SUSDB.mdf**データフォルダー (**% SystemDrive%** Windows WID データ) から SUSDB と**SUSDB を \_ ** \\ SQL インスタンスのデータフォルダーに** \\ \\ **コピーします。
 
 > [!TIP]
 > たとえば、SQL インスタンスフォルダーが**C:\Program SERVER\MSSQL12. sql の場合、MSSQLSERVER\MSSQL**、WID Data フォルダーは**C:\Windows\WID\Data で**、SUSDB ファイルを**C:\WINDOWS\WID\DATA**から**C:\Program Server\MSSQL12. SQL にコピーします。MSSQLSERVER\MSSQL\Data**
 
 ### <a name="attach-susdb-to-the-sql-instance"></a>SUSDB を SQL インスタンスにアタッチする
 
-1. **SQL Server Management Studio**の **[インスタンス]** ノードで、 **[データベース]** を右クリックし、 **[アタッチ]** をクリックします。
+1. **SQL Server Management Studio**の [**インスタンス**] ノードで、[**データベース**] を右クリックし、[**アタッチ**] をクリックします。
     ![image3](images/image3.png)
-2. **[データベースの接続]** ボックスの **[アタッチするデータベース]** で、 **[追加]** ボタンをクリックし、(WID フォルダーからコピーした) **SUSDB**ファイルを見つけて、 **[OK]** をクリックします。
-    ![image4.jpg](images/image4.png) ![image5](images/image5.png)
+2. [**データベースの接続**] ボックスの [**アタッチするデータベース**] で、[**追加**] ボタンをクリックし、(WID フォルダーからコピーした) **SUSDB**ファイルを見つけて、[ **OK**] をクリックします。
+    ![image4.jpg ](images/image4.png) ![ image5](images/image5.png)
 
 > [!TIP]
 > これは、Transact-sql を使用して行うこともできます。  [データベースをアタッチする](https://docs.microsoft.com/sql/relational-databases/databases/attach-a-database)手順については、SQL のドキュメントを参照してください。
@@ -105,28 +102,28 @@ SUSDB をアタッチした後、次の手順を実行して、 **NT AUTHORITY\N
 
 1. SQL Server Management Studio にアクセス
 2. インスタンスを開く
-3. **[セキュリティ]** をクリックします。
-4. **[ログイン]** をクリックします。
+3. [**セキュリティ**] をクリックします。
+4. [**ログイン**] をクリックします。
 
 **NT AUTHORITY\NETWORK SERVICE**アカウントが一覧表示されます。 そうでない場合は、新しいログイン名を追加して追加する必要があります。
 
 > [!IMPORTANT]
-> SQL インスタンスが WSUS とは別のコンピューターにある場合、WSUS サーバーのコンピューターアカウントは **[FQDN]\\[WSUSComputerName] $** の形式で一覧表示されます。  そうでない場合は、次の手順を使用して追加し、 **nt AUTHORITY\NETWORK service**を WSUS サーバーのコンピューターアカウント ( **[FQDN]\\[WSUSComputerName] $** ) に置き換えることができます。これは、 **nt AUTHORITY\NETWORK service**に権限***を付与することに追加***されます。
+> SQL インスタンスが WSUS とは別のコンピューターにある場合は、WSUS サーバーのコンピューターアカウントが **[FQDN] \\ [WSUSComputerName] $** という形式で表示されている必要があります。  そうでない場合は、次の手順を使用して追加し、 **nt AUTHORITY\NETWORK service**を WSUS サーバーのコンピューターアカウント (**[FQDN] \\ [WSUSComputerName] $**) に置き換えます。これは、 **nt AUTHORITY\NETWORK service**に権限を付与すること***に追加***されます。
 
 ##### <a name="adding-nt-authoritynetwork-service-and-granting-it-rights"></a>NT AUTHORITY\NETWORK サービスを追加してアクセス権を付与する
 
-1. **[ログイン]** を右クリックし、 **[新しいログイン...]** をクリックします。
+1. [**ログイン**] を右クリックし、[**新しいログイン...** ] をクリックします。
     ![image6](images/image6.png)
-2. **[全般]** ページで、**ログイン名**(**NT AUTHORITY\NETWORK SERVICE**) に入力し、既定の**データベース**を SUSDB に設定します。
+2. [**全般**] ページで、**ログイン名**(**NT AUTHORITY\NETWORK SERVICE**) に入力し、既定の**データベース**を SUSDB に設定します。
     ![image7](images/image7.png)
-3. **[サーバーの役割]** ページで、 **[パブリック]** と **[sysadmin]** が選択されていることを確認します。
+3. [**サーバーの役割**] ページで、[**パブリック**] と [ **sysadmin** ] が選択されていることを確認します。
     ![image8](images/image8.png)
-4. **[ユーザーマッピング]** ページで、次のようにします。
-    - **[このログインにマップ]** されたユーザー で、 **[SUSDB]** を選択します。
-    - **[データベースロールのメンバーシップ: SUSDB]** で、次のチェックボックスがオンになっていることを確認します。
-        - **共用**
+4. [**ユーザーマッピング**] ページで、次のようにします。
+    - [**このログインにマップ**されたユーザー] で、[ **SUSDB** ] を選択します。
+    - [**データベースロールのメンバーシップ: SUSDB**] で、次のチェックボックスがオンになっていることを確認します。
+        - **public**
         - **webService** ![image9](images/image9.png)
-5. **[OK]** をクリックします。
+5. **[OK]**
 
 [ログイン] の下に**NT AUTHORITY\NETWORK SERVICE**が表示されます。
 ![image10](images/image10.png)
@@ -135,13 +132,13 @@ SUSDB をアタッチした後、次の手順を実行して、 **NT AUTHORITY\N
 
 1. SUSDB を右クリックします。
 2. **プロパティ**の選択
-3. **[アクセス許可]**
+3. [**アクセス許可**]
 
 **NT AUTHORITY\NETWORK SERVICE**アカウントが一覧表示されます。
 
 1. そうでない場合は、アカウントを追加します。
 2. [ログイン名] ボックスに、次の形式で WSUS コンピューターを入力します。
-    > [**FQDN]\\[WSUSComputerName] $**
+    > [**FQDN] \\[WSUSComputerName] $**
 3. **既定のデータベース**が**SUSDB**に設定されていることを確認します。
 
     > [!TIP]
@@ -149,22 +146,22 @@ SUSDB をアタッチした後、次の手順を実行して、 **NT AUTHORITY\N
     >
     > ![image11](images/image11.png)
 
-4. **[ユーザーマッピング]** ページで、 **[このログインにマップ]** されたユーザー の下にある**SUSDB**データベースを選択します。
-5. **"データベースロールのメンバーシップ: SUSDB"** : ![image12](images/image12.png) で**webservice**を確認します。
-6. **[OK]** をクリックして設定を保存します。
+4. [**ユーザーマッピング**] ページで、[**このログインにマップ**されたユーザー] の下にある**SUSDB**データベースを選択します。
+5. **データベースロールメンバーシップ**の下で、SUSDB: image12 の**web サービス**を確認します。 ![](images/image12.png)
+6. [ **OK** ] をクリックして設定を保存します。
     > [!NOTE]
     > 変更を有効にするには、SQL サービスの再起動が必要になる場合があります。
 
 ### <a name="edit-the-registry-to-point-wsus-to-the-sql-server-instance"></a>レジストリを編集して、WSUS が SQL Server インスタンスを指すようにします。
 
 > [!IMPORTANT]
-> 慎重にこのセクションの手順に従います。 誤ってレジストリを変更すると、重大な問題が発生する可能性があります。 変更する前に、問題が発生した場合に[復元するためにレジストリをバックアップ](https://support.microsoft.com/en-us/help/322756)します。
+> 慎重にこのセクションの手順に従います。 レジストリを正しく変更しないと、重大な問題が発生する可能性があります。 変更する前に、問題が発生した場合に[復元するためにレジストリをバックアップ](https://support.microsoft.com/help/322756)します。
 
-1. **[スタート]** ボタンをクリックし、 **[ファイル名を指定して実行]** をクリックして、「**regedit**」と入力し、 **[OK]** をクリックします。
+1. **[スタート]** ボタン、 **[ファイル名を指定して実行]** の順にクリックし、「**regedit**」と入力して **[OK]** をクリックします。
 2. 次のキーを見つけます。 **HKEY_LOCAL_MACHINE \software\microsoft\updateservices\server\setup\sqlservername**
-3. **[値]** テキストボックスに「 **[ServerName]\\[InstanceName]** 」と入力し、 **[OK]** をクリックします。 インスタンス名が既定のインスタンスの場合は、「 **[ServerName]** 」と入力します。
-4. 次のキーを見つけます。 **HKEY_LOCAL_MACHINE \Software\microsoft\update Services\Server\Setup\Installed Role Services\UpdateServices-WidDatabase** ![image13](images/image13.png)
-5. キーの名前を**Updateservices-Database** ![image41](images/image14.png) に変更します。
+3. [**値**] テキストボックスに「 **[ServerName] \\ [InstanceName]**」と入力し、[ **OK**] をクリックします。 インスタンス名が既定のインスタンスの場合は、「 **[ServerName]**」と入力します。
+4. 次のキーを見つけます。 **HKEY_LOCAL_MACHINE \Software\microsoft\update Services\Server\Setup\Installed Role Services\UpdateServices-WidDatabase** ![ image13](images/image13.png)
+5. キーの名前を**Updateservices-Database** image41 に変更します。 ![](images/image14.png)
 
     > [!NOTE]
     > このキーを更新しない場合、 **WsusUtil**は、移行した SQL インスタンスではなく、WID のサービスを試行します。
@@ -184,7 +181,7 @@ PowerShell (管理者特権) から、次のように実行します。
 ## <a name="uninstalling-the-wid-role-not-recommended"></a>WID ロールのアンインストール (推奨されません)
 
 > [!WARNING]
-> WID ロールを削除すると、インストール後のタスクに WSUSUtil が必要とするスクリプトを含むデータベースフォルダー ( **%SystemDrive%\Program Files\Update Services\Database**) も削除されます。 WID ロールをアンインストールする場合は、事前に **%SystemDrive%\Program Files\Update Services\Database**フォルダーをバックアップしていることを確認してください。
+> WID ロールを削除すると、インストール後のタスクに WSUSUtil が必要とするスクリプトを含むデータベースフォルダー (**%SystemDrive%\Program Files\Update Services\Database**) も削除されます。 WID ロールをアンインストールする場合は、事前に **%SystemDrive%\Program Files\Update Services\Database**フォルダーをバックアップしていることを確認してください。
 
 PowerShell の使用:
 

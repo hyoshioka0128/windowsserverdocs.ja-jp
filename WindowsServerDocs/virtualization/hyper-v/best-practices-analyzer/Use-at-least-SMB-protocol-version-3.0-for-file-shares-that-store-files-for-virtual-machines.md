@@ -2,20 +2,19 @@
 title: バーチャルマシンのファイルを保存するファイル共有には、SMB プロトコルバージョン3.0 以降を使用してください。
 description: このベストプラクティスアナライザールールのテキストのオンラインバージョン。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: 4bb832b8-f1aa-4c1f-a0f2-324dd53553ea
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: af23c3c860a47d0dd9096bc3f5ff466aca7836b6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 64c78c4725c84cbd02276cb2c0eadffae42d7060
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71393323"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854195"
 ---
 # <a name="use-at-least-smb-protocol-version-30-for-file-shares-that-store-files-for-virtual-machines"></a>バーチャルマシンのファイルを保存するファイル共有には、SMB プロトコルバージョン3.0 以降を使用してください。
 

@@ -1,61 +1,58 @@
 ---
-title: bitsadmin Transfer
-description: '**Bitsadmin Transfer**の Windows コマンドトピックでは、1つ以上のファイルを転送します。'
-ms.custom: na
+title: bitsadmin transfer
+description: Bitsadmin transfer コマンドの参照記事。1つ以上のファイルを転送します。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: fe302141-b33a-4a05-835e-dc4fc4db7d5a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2a12e6e2023c979d5b0c095c1eddd77eb5155d1e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 57de6db53433d0da1a4efd8c212a23183edcbcf9
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71380354"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927423"
 ---
-# <a name="bitsadmin-transfer"></a>bitsadmin Transfer
+# <a name="bitsadmin-transfer"></a>bitsadmin transfer
 
-1つ以上のファイルを転送します。 複数のファイルを転送するには、複数の \<RemoteFileName\>-\<LocalFileName\> のペアを指定します。 ペアはスペースで区切られます。
+1つ以上のファイルを転送します。 既定では、BITSAdmin サービスは、**通常**の優先順位で実行されるダウンロードジョブを作成し、転送が完了するか重大なエラーが発生するまで、進行状況の情報を使用してコマンドウィンドウを更新します。
 
-## <a name="syntax"></a>構文
-
-```
-bitsadmin /Transfer <Name> [<Type>] [/Priority <Job_Priority>] [/ACLFlags <Flags>] [/DYNAMIC] <RemoteFileName> <LocalFileName>
-```
-
-## <a name="parameters"></a>パラメーター
-
-|パラメーター|説明|
-|---------|-----------|
-|名前|ジョブの名前を指定します。 ほとんどのコマンドとは異なり、 **name**には GUID ではなく名前のみを指定できます。|
-|種類|省略可能: ジョブの種類を指定します。 ダウンロードジョブの場合は **/ダウンロード**(既定値)、アップロードジョブの場合は **/upload**を使用します。|
-|Priority|省略可能: job_priority を次のいずれかの値に設定します。</br>-前景</br>-高</br>-通常</br>-低|
-|ACLFlags|省略可能: ファイルをダウンロードするときに所有者と ACL の情報を保持することを示します。 たとえば、ファイルで所有者とグループを管理するには、フラグを `OG`に設定します。 次のフラグの1つまたは複数を指定します。</br>-O: 所有者の情報をファイルにコピーします。</br>-G: グループ情報をファイルと共にコピーします。</br>-D: DACL 情報をファイルと共にコピーします。</br>-S: ファイルを使用して SACL 情報をコピーします。|
-|動的 \/|[**BITS_JOB_PROPERTY_DYNAMIC_CONTENT**](/windows/desktop/api/bits5_0/ne-bits5_0-bits_job_property_id)を使用してジョブを構成します。これにより、サーバー側の要件が緩和されされます。|
-|RemoteFileName|サーバーに転送されるときのファイルの名前です。|
-|LocalFileName|ローカルに存在するファイルの名前。|
-
-## <a name="remarks"></a>注釈
-
-既定では、BITSAdmin サービスは、**通常**の優先順位で実行されるダウンロードジョブを作成し、転送が完了するか重大なエラーが発生するまで、進行状況の情報を使用してコマンドウィンドウを更新します。 サービスは、すべてのファイルを正常に転送し、重大なエラーが発生した場合にジョブをキャンセルすると、ジョブを完了します。 ジョブにファイルを追加できない場合、または*種類*または*Job_Priority*に無効な値を指定した場合、サービスはジョブを作成しません。 複数のファイルを転送するには、複数の*remotefilename*-*localfilename*のペアを指定します。 ペアはスペースで区切られます。
+サービスは、すべてのファイルを正常に転送し、重大なエラーが発生した場合にジョブをキャンセルすると、ジョブを完了します。 ジョブにファイルを追加できない場合、または*種類*または*job_priority*に無効な値を指定した場合、サービスはジョブを作成しません。 複数のファイルを転送するには、複数のペアを指定し `<RemoteFileName>-<LocalFileName>` ます。 ペアはスペースで区切る必要があります。
 
 > [!NOTE]
 > 一時的なエラーが発生した場合、BITSAdmin コマンドは引き続き実行されます。 コマンドを終了するには、CTRL + C キーを押します。
 
-## <a name="BKMK_examples"></a>例
+## <a name="syntax"></a>構文
 
-次の例では、 *Mydownloadjob*という名前の転送ジョブを開始します。
 ```
-C:\>bitsadmin /Transfer myDownloadJob http://prodserver/audio.wma c:\downloads\audio.wma
+bitsadmin /transfer <name> [<type>] [/priority <job_priority>] [/ACLflags <flags>] [/DYNAMIC] <remotefilename> <localfilename>
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+### <a name="parameters"></a>パラメーター
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+| パラメーター | 説明 |
+| --------- | ----------- |
+| name | ジョブの名前。 このコマンドに GUID を指定することはできません。 |
+| 型 | 任意。 ジョブの種類を設定します。次に例を示します。<ul><li>**ダウンロード.** 既定値。 ダウンロードジョブにこの種類を選択します。</li><li>**5d.** アップロードジョブの場合は、この種類を選択します。</li></ul> |
+| priority | 任意。 ジョブの優先順位を設定します。次に例を示します。<ul><li>FOREGROUND</li><li>HIGH</li><li>NORMAL</li><li>LOW</li></ul> |
+| ACLflags | 任意。 ファイルをダウンロードするときに所有者と ACL の情報を保持することを示します。 次のように、1つまたは複数の値を指定します。<ul><li>**o** -所有者の情報をファイルにコピーします。</li><li>**g** -グループ情報をファイルと共にコピーします。</li><li>**d** -随意アクセス制御リスト (DACL) の情報をファイルと共にコピーします。</li><li>**s** -システムアクセス制御リスト (SACL) の情報をファイルにコピーします。</li></ul> |
+| /動的 | [**BITS_JOB_PROPERTY_DYNAMIC_CONTENT**](https://docs.microsoft.com/windows/win32/api/bits5_0/ne-bits5_0-bits_job_property_id)を使用してジョブを構成します。これにより、サーバー側の要件が緩和されます。 |
+| remotefilename | サーバーに転送された後のファイルの名前です。 |
+| localfilename | ローカルに存在するファイルの名前。 |
+
+## <a name="examples"></a>例
+
+*Mydownloadjob*という名前の転送ジョブを開始するには、次のようにします。
+
+```
+bitsadmin /transfer myDownloadJob http://prodserver/audio.wma c:\downloads\audio.wma
+```
+
+## <a name="additional-references"></a>その他の参照情報
+
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [bitsadmin コマンド](bitsadmin.md)

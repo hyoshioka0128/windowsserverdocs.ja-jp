@@ -1,26 +1,22 @@
 ---
-title: 反転
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+title: revert
+description: 参照記事 * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 75ad40e4-502a-401e-b11e-8b31e00424b5
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3243f13a4997824d9fff7c874ce26d56325fefa4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8d2d8bfbfa10df9776e849b1450c2fce47c097b7
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71371451"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933038"
 ---
-# <a name="revert"></a>反転
+# <a name="revert"></a>revert
 
 
 
@@ -32,12 +28,12 @@ ms.locfileid: "71371451"
 revert <ShadowCopyID>
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
 |パラメーター|説明|
 |---------|-----------|
-|\<ShadowCopyID >|ボリュームを元に戻すシャドウ コピー ID を指定します。|
+|\<ShadowCopyID>|ボリュームを元に戻すシャドウ コピー ID を指定します。|
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

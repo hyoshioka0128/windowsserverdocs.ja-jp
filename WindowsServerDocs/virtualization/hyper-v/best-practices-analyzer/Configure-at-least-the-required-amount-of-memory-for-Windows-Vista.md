@@ -2,20 +2,19 @@
 title: Windows Vista を実行し、を有効にした仮想マシンに対して、少なくとも必要なメモリ容量を構成し動的メモリ
 description: このベストプラクティスアナライザールールのテキストのオンラインバージョン。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: d3de7614-6eee-4839-a939-d390bca9ba89
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: d86510f0676c4d542f43d73cc8a5607aabfb3e18
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b140376ee58d2940fb26c5c090e9b454ead9b5ca
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366371"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80862075"
 ---
 # <a name="configure-at-least-the-required-amount-of-memory-for-a-virtual-machine-running-windows-vista-and-enabled-for-dynamic-memory"></a>Windows Vista を実行し、を有効にした仮想マシンに対して、少なくとも必要なメモリ容量を構成し動的メモリ
 
@@ -55,7 +54,7 @@ ms.locfileid: "71366371"
   
 5.  **動的メモリ**で、**最小 RAM**を 256 mb 以上、 **ram の最大値**を 512 mb に変更します。  
   
-6.  **[OK]** をクリックします。  
+6.  **[OK]** をクリックすると、  
   
 ### <a name="increase-memory-using-windows-powershell"></a>Windows PowerShell を使用してメモリを増やす  
   

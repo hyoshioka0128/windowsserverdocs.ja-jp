@@ -1,24 +1,22 @@
 ---
 title: Windows Server 2019 ゲートウェイのパフォーマンス
-description: ''
-manager: dougkim
+manager: grcusanz
 ms.prod: windows-server
 ms.technology: networking-hv-switch
 ms.topic: get-started-article
-ms.assetid: ''
-ms.author: pashort
-author: shortpatti
+ms.author: anpaul
+author: AnirbanPaul
 ms.date: 08/22/2018
-ms.openlocfilehash: 58e85c15723126f2976fac3ccc21b3cfc6585750
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 34890a5d93d6e2e214e401f5566cbb0ffde37508
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355929"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855705"
 ---
 # <a name="windows-server-2019-gateway-performance"></a>Windows Server 2019 ゲートウェイのパフォーマンス
 
->適用対象:Windows Server
+>適用対象: Windows Server
 
 
 Windows Server 2016 では、お客様の懸念事項の1つは、SDN ゲートウェイが最新のネットワークのスループット要件を満たすことができなかったことです。 Ipsec と GRE トンネルのネットワークスループットは、IPsec 接続が約 300 Mbps で、GRE 接続が約 2.5 Gbps であるという単一の接続スループットに制限されていました。

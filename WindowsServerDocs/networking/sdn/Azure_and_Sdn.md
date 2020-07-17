@@ -1,27 +1,23 @@
 ---
 title: Microsoft Azure と SDN
 description: このトピックでは、Microsoft Azure に用意されているソフトウェアによるネットワーク制御 (SDN) テクノロジについて説明します。
-manager: brianlic
-ms.custom: na
+manager: grcusanz
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-sdn
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 79e87013-7f27-4031-8383-288bcb291731
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: ea279a6131c06d5bb991edbbf22c1ba0d5ffc592
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: anpaul
+author: AnirbanPaul
+ms.openlocfilehash: f89024d3bbc97c8896858ee9ad3fee763e6d9fc3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406146"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859115"
 ---
 # <a name="microsoft-azure-and-software-defined-networking"></a>Microsoft Azure とソフトウェア定義ネットワーク
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 Microsoft Azure は、Microsoft のクラウドプラットフォームです。これは、コンピューティング、ストレージ、データ、ネットワーク、アプリといった統合サービスのコレクションであり、より迅速に移行し、より多くの作業を行い、コストを節約するのに役立ちます。  
   

@@ -1,27 +1,23 @@
 ---
 title: デスクトップ ホスティング サービス
 description: デスクトップ ホスティング サービスのコンポーネントについて説明します。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
 ms.author: helohr
 ms.date: 07/06/2018
-ms.tgt_pltfrm: na
 ms.topic: article
 author: heidilohr
-manager: dougkim
-ms.openlocfilehash: 7ff88368c937890d3d5c4f650f6c4c08d404069f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+manager: lizross
+ms.openlocfilehash: 2ee11e40d5fb69141ad5dd5342f8574b22232bbd
+ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387861"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "85070476"
 ---
 # <a name="desktop-hosting-service"></a>デスクトップ ホスティング サービス
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016
+>適用先:Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016
 
 この記事では、デスクトップ ホスティング サービスのコンポーネントについて詳しく説明します。
 
@@ -31,7 +27,7 @@ ms.locfileid: "71387861"
 
 プロバイダーのデスクトップ ホスティング サービスは、分離されたテナント環境のセットとして実装されます。 各テナントの環境は、ストレージ コンテナー、一連の仮想マシン、および Azure サービスの組み合わせで構成されます。これらはすべて、分離された仮想ネットワークを介して通信します。 各仮想マシンには、テナントのホストされたデスクトップ環境を構成する 1 つ以上のコンポーネントが含まれています。 次のサブセクションでは、各テナントのホストされたデスクトップ環境を構成するコンポーネントについて説明します。
 
-## <a name="active-directory-domain-services"></a>Active Directory Domain Services
+## <a name="active-directory-domain-services"></a>[Active Directory Domain Services]
 
 Active Directory Domain Services (AD DS) は、テナントのユーザーがデスクトップとアプリケーションにサインインしてワークロードを実行できるように、ドメインおよびフォレストの情報を提供します。 また、これにより、Windows アプリケーションに必要になる場合があるファイル共有とデータベースの設定や接続も行えます。
 
@@ -43,7 +39,7 @@ AD DS の展開には複数の方法があります。
 2. テナントの仮想ネットワーク環境でスタンドアロン AD DS サーバーを設定します。 これにより、仮想マシンで実行されている AD DS インスタンスを完全に制御できます。
 3. テナントの構内にある AD DS サーバーへのサイト間 VPN 接続を作成します。 これにより、テナントがそれらの既存の AD DS インスタンスに接続できるので、ユーザー、グループ、組織単位などの重複を減らすことができます。
 
-詳しくは、次の記事をご覧ください。
+詳細については、以下の記事を参照してください。
 
 * [Active Directory Domain Services のドキュメント](https://docs.microsoft.com/azure/active-directory-domain-services/)
 * [Windows Server 2012 R2 用のデスクトップ ホスティングの参照アーキテクチャ ガイド](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal)
@@ -72,9 +68,9 @@ SQL データベースの展開方法は複数あります。
 
 小規模テナントは、テナントの環境内の単一の仮想マシンでファイル サーバーと [RD ライセンスのロール](rds-roles.md#remote-desktop-licensing)を組み合わせることで、コストを削減できます。
 
-詳しくは、次の記事をご覧ください。
+詳細については、以下の記事を参照してください。
 
-* [Windows Server の記憶域](../../storage/storage.md)
+* [Windows Server の記憶域](../../storage/storage.yml)
 * [Azure portal で Windows VM にマネージド データ ディスクをアタッチする方法](https://docs.microsoft.com/azure/virtual-machines/windows/attach-managed-disk-portal?toc=%2Fazure%2Fvirtual-machines%2Fwindows%2Fclassic%2Ftoc.json)
 
 ### <a name="user-profile-disks"></a>ユーザー プロファイル ディスク

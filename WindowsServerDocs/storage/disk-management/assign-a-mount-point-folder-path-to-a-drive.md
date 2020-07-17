@@ -1,59 +1,59 @@
 ---
 title: ドライブにマウント ポイント フォルダー パスを割り当てます。
 description: この記事では、ドライブに (ドライブ文字ではなく) マウント ポイント フォルダー パスを割り当てる方法について説明します。
-keywords: 仮想化, セキュリティ, マルウェア
-ms.date: 06/07/2019
+ms.date: 06/07/2020
 ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 1255eadd50adb0eaaf44774e150d69f6dad8adae
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9757f5f5f68eea0fc1d468a8d8e6fd341e2ecc6a
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386052"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475439"
 ---
-# <a name="assign-a-mount-point-folder-path-to-a-drive"></a>ドライブにマウント ポイント フォルダー パスを割り当てる
+# <a name="mount-a-drive-in-a-folder"></a>ドライブをフォルダーにマウントする
 
-> **適用対象:** Windows 10、Windows 8.1、Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> **適用対象:** Windows 10、Windows 8.1、Windows Server 2019、Windows Server 2016、Wndows Server 2012 R2、Windows Server 2012
 
-ディスクの管理を使用して、ドライブに (ドライブ文字ではなく) マウント ポイント フォルダー パスを割り当てることができます。 マウント ポイント フォルダー パスは、ベーシックまたはダイナミック NTFS ボリューム上の空のフォルダーに対してのみ使用できます。
+ディスクの管理を使用して、必要に応じてドライブ文字を割り当てる代わりに、フォルダーにマウントする (ドライブへのアクセスを可能にする) ことができます。 これにより、ドライブが別のフォルダーとして表示されるようになります。 ベーシックまたはダイナミック NTFS ボリューム上の空のフォルダーにのみドライブをマウントできます。
 
-## <a name="assigning-a-mount-point-folder-path-to-a-drive"></a>ドライブにマウント ポイント フォルダー パスを割り当てる
+## <a name="mounting-a-drive-in-an-empty-folder"></a>空のフォルダーにドライブをマウントする
 
 > [!NOTE]
 > 以下の手順を実行するには、少なくとも **Backup Operators** または **Administrators** グループのメンバーである必要があります。
 
-#### <a name="to-assign-a-mount-point-folder-path-to-a-drive-by-using-the-windows-interface"></a>Windows インターフェイスを使用して、ドライブにマウント ポイント フォルダー パスを割り当てるには
+### <a name="to-mount-a-drive-in-an-empty-folder-by-using-the-windows-interface"></a>Windows インターフェイスを使用して空のフォルダーにドライブをマウントするには
 
-1.  ディスクの管理で、マウント ポイント フォルダー パスを割り当てるパーティションまたはボリュームを右クリックします。 
-2. **[ドライブ文字とパスの変更]** をクリックし、 **[追加]** をクリックします。 
+1.  ディスクの管理で、ドライブをマウントするパーティションまたはボリュームを右クリックします。
+2. **[ドライブ文字とパスの変更]** をクリックし、 **[追加]** をクリックします。
 3. **[次の空の NTFS フォルダーにマウントする]** をクリックします。
 4. NTFS ボリュームじょうの空のフォルダーへのパスを入力するか、 **[参照]** をクリックしてフォルダーを見つけます。
 
-#### <a name="to-assign-a-mount-point-folder-path-to-a-drive-using-a-command-line"></a>コマンド ラインを使用してドライブにマウント ポイント フォルダー パスを割り当てるには
+### <a name="to-mount-a-drive-in-an-empty-folder-using-a-command-line"></a>コマンド ラインを使用して空のフォルダーにドライブをマウントするには
 
 1.  コマンド プロンプトを開き、「`diskpart`」と入力します。
 
 2.  **DISKPART** プロンプトで、「`list volume`」と入力し、パスを割り当てる対象のボリューム番号を書き留めます。
 
-3.  **DISKPART** プロンプトで、「`select volume <volumenumber>`」と入力します。 
-
-4. パスを割り当てるシンプル ボリュームの*ボリューム番号*を選択します。
+3.  **DISKPART** プロンプトで、「`select volume <volumenumber>`」と入力し、パスを割り当てる対象のボリューム番号を指定します。
 
 5.  **DISKPART** プロンプトで、「`assign [mount=<path>]`」と入力します。
 
-#### <a name="to-remove-a-mount-point-folder-path-to-a-drive"></a>ドライブのマウント ポイント フォルダー パスを削除するには
+### <a name="to-remove-a-mount-point"></a>マウント ポイントを削除するには
 
--   マウント ポイント フォルダー パスを削除するには、パスをクリックし、 **[削除]** をクリックします。
+ドライブにフォルダーを介してアクセスできなくなるようにマウント ポイントを削除するには、次のようにします。
 
-| Value | 説明 |
+1. フォルダーにマウントされているドライブを長押し (または右クリック) して、 **[ドライブ文字とパスの変更]** を選択します。
+2. 一覧からフォルダーを選択し、 **[削除]** を選択します。
+
+| 値 | 説明 |
 | --- | --- |
 | **list volume** | すべてのディスク上のベーシック ボリュームとダイナミック ボリュームの一覧を表示します。 |
-| **select volume**        | <em>volumenumber</em> がボリューム番号である指定されたボリュームを選択し、そのボリュームにフォーカスを移動します。 ボリュームが指定されていない場合、**select** コマンドは、フォーカスがある現在のボリュームを一覧表示します。 番号、ドライブ文字、マウント ポイント フォルダー パスでボリュームを指定できます。 ベーシック ディスクでボリュームを選択すると、対応するパーティションにフォーカスが移動します。|
+| **select volume**        | <em>volumenumber</em> がボリューム番号である指定されたボリュームを選択し、そのボリュームにフォーカスを移動します。 ボリュームが指定されていない場合、**select** コマンドは、フォーカスがある現在のボリュームを一覧表示します。 番号、ドライブ文字、マウント ポイント フォルダー パスでボリュームを指定できます。 ベーシック ディスク上でボリュームを選択すると、対応するパーティションもフォーカスされます。|
 | **assign** | <ul><li> フォーカスがあるボリュームにドライブ文字またはマウント ポイント フォルダー パスを割り当てます。 ドライブ文字またはマウント ポイント フォルダー パスが指定されていない場合は、次に利用可能なドライブ文字が割り当てられます。 ドライブ文字またはマウント ポイント フォルダー パスが既に使用中の場合、エラーが生成されます。</li>  <li>**assign** コマンドを使用して、リムーバブル ドライブに関連付けられているドライブ名を変更できます。</li> <li> ブート ボリュームまたはページング ファイルが含まれているボリュームにドライブ文字を割り当てることはできません。 さらに、Original Equipment Manufacturer (OEM) パーティション、EFI システム パーティション、またはベーシック データ パーティション以外の任意の GPT パーティションにドライブ文字を割り当てることはできません。</li></ul> |
 | **mount=** <em>path</em> | マウントされたドライブが存在する、空の既存の NTFS フォルダーを指定します。  |
 
@@ -65,7 +65,5 @@ ms.locfileid: "71386052"
 -   ドライブにマウント ポイント フォルダー パスを割り当てるときに、**イベント ビューアー**を使用して、システム ログに、マウント ポイント フォルダー パスの障害を示す、クラスター サービスのエラーや警告がないことを確認します。 これらのエラーは、 **[ソース]** 列の **[ClusSvc]** と **[カテゴリ]** 列の **[物理ディスク リソース]** に表示されます。
 -   [mountvol](https://go.microsoft.com/fwlink/?linkid=64111) コマンドを使用して、マウントされたドライブを作成することもできます。
 
-## <a name="see-also"></a>関連項目
+## <a name="additional-references"></a>その他の参照情報
 -   [コマンド ライン構文の表記規則](https://technet.microsoft.com/library/cc742449(v=ws.11).aspx)
-
-

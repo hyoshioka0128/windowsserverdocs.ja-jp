@@ -3,18 +3,17 @@ title: Windows Server のリリース情報
 description: Windows Server に関するリリース情報
 ms.prod: windows-server
 ms.technology: server-general
-ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 11/12/2019
+ms.date: 04/14/2020
 author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: high
-ms.openlocfilehash: c27fd6652e86211449c1db0e69e88a604d659498
-ms.sourcegitcommit: b9ec35416a06854c1bc875a2b731d42a436fe313
+ms.openlocfilehash: 455b5609c1409d7c01e464c51025042d3b0090c8
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73956053"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "81385308"
 ---
 # <a name="windows-server-release-information"></a>Windows Server のリリース情報
 
@@ -24,13 +23,16 @@ ms.locfileid: "73956053"
 
 ## <a name="windows-server-current-versions-by-servicing-option"></a>サービス オプションごとの Windows Server の最新バージョン
 
-| Windows Server リリース | バージョン | OS ビルド | 対象 | メインストリーム サポートの終了日|延長サポートの終了日 |
+| Windows Server リリース | バージョン | OS ビルド | 可用性 | メインストリーム サポートの終了日|延長サポートの終了日 |
 |----------------|---------|----------|----------|---------|----------|
-| Windows Server Version 1909 (半期チャネル) (Datacenter Core、Standard Core) | 1909  | 18363.418.191007-0143 | 2019 年 11 月 12 日 | 2021 年 5 月 11 日 | レビューのメモ |
-| Windows Server バージョン 1903 (半期チャネル)(Datacenter Core、Standard Core) | 1903  | 18362.30.190401-1528 | 2019 年 5 月 21 日 | 2020 年 12 月 8 日 | レビューのメモ |
+| Windows Server Version 1909 (半期チャネル) (Datacenter Core、Standard Core) | 1909  | 18363.418.191007-0143 | 2019 年 11 月 12 日 | 2021 年 5 月 11 日 | 注意欄を参照 |
+| Windows Server バージョン 1903 (半期チャネル)(Datacenter Core、Standard Core) | 1903  | 18362.30.190401-1528 | 2019 年 5 月 21 日 | 2020 年 12 月 8 日 | 注意欄を参照 |
 |Windows Server 2019 (長期サービス チャネル)(Datacenter、Essentials、Standard)|1809|17763.107.1010129-1455|2018 年 11 月 13 日|2024 年 1 月 9 日|2029 年 1 月 9 日|
-|Windows Server バージョン 1809 (半期チャネル)(Datacenter Core、Standard Core)|1809|17763.107.1010129-1455|2018 年 11 月 13 日|2020 年 5 月 12 日|レビューのメモ|
+|Windows Server バージョン 1809 (半期チャネル)(Datacenter Core、Standard Core)|1809|17763.107.1010129-1455|2018 年 11 月 13 日|2020 年 11 月 10 日|注意欄を参照|
 | Windows Server 2016 (Long-term Servicing チャネル)| 1607 | 14393.0 | 2016 年 10 月 15 日 |2022 年 1 月 11 日| 2027 年 1 月 11 日|
 
-> [!NOTE]
+> [!IMPORTANT]
+> Windows Server バージョン 1809 のサービス終了は、現在進行中の公衆衛生における危機のため、延期されました。 詳細については、[サポートに関する記事](https://support.microsoft.com/help/4557164)をご覧ください。
+
+>[!NOTE]
 > Windows Server バージョン 1803 以降は、[モダン ライフサイクル ポリシー](https://support.microsoft.com/help/30881)によって管理されます。 サービス要件およびその他の重要な情報の詳細については、[Windows のライフサイクルに関する FAQ](https://support.microsoft.com/help/18581/lifecycle-faq-windows-products)および[サービス チャネルの比較](../get-started-19/servicing-channels-19.md)に関するページを参照してください。

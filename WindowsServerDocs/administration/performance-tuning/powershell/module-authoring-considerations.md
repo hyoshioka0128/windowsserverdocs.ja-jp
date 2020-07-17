@@ -4,15 +4,15 @@ description: PowerShell モジュールの作成に関する考慮事項
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: JasonSh
+ms.author: jasonsh
 author: lzybkr
 ms.date: 10/16/2017
-ms.openlocfilehash: 8945339e7a7950d3cd722ab2af629b45e7f6dd5d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 25b202e56286b7c26c3150642a656eb31a120808
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71370359"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851935"
 ---
 # <a name="powershell-module-authoring-considerations"></a>PowerShell モジュールの作成に関する考慮事項
 
@@ -28,10 +28,10 @@ ms.locfileid: "71370359"
 
 ### <a name="guidelines"></a>ガイドライン
 
-* モジュールマニフェストでは、`AliasesToExport`、`CmdletsToExport`、`FunctionsToExport` の各エントリにワイルドカードを使用しないでください。
+* モジュールマニフェストでは、`AliasesToExport`、`CmdletsToExport`、`FunctionsToExport` エントリでワイルドカードを使用しないでください。
 
-* モジュールが特定の種類のコマンドをエクスポートしない場合は、`@()` を指定することにより、マニフェストで明示的に指定します。
-Missing または `$null` のエントリは、ワイルドカード `*` を指定した場合と同じです。
+* モジュールが特定の型のコマンドをエクスポートしない場合は、`@()`を指定して、マニフェストで明示的に指定します。
+見つからないエントリまたは `$null` エントリは、ワイルドカード `*`を指定することと同じです。
 
 可能な限り、次のことを避ける必要があります。
 

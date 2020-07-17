@@ -1,23 +1,19 @@
 ---
 title: bitsadmin getpriority
-description: '**Bitsadmin getpriority**の Windows コマンドトピックでは、指定されたジョブの優先順位を取得します。'
-ms.custom: na
+description: Bitsadmin getpriority コマンドの参照記事。指定されたジョブの優先順位を取得します。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/01/2019
-ms.openlocfilehash: 0b8914f27c690aa9bb9cbf30430b3edf55f2eb92
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 39ce769e2eb1dcf7a05d416dc2a66c6c082c9ae4
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71381431"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85926851"
 ---
 # <a name="bitsadmin-getpriority"></a>bitsadmin getpriority
 
@@ -26,26 +22,39 @@ ms.locfileid: "71381431"
 ## <a name="syntax"></a>構文
 
 ```
-bitsadmin /GetPriority <Job>
+bitsadmin /getpriority <job>
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
-|---------|-----------|
-|Job|ジョブの表示名または GUID|
+| パラメーター | 説明 |
+| -------------- | -------------- |
+| ジョブ (job) | ジョブの表示名または GUID。 |
 
-## <a name="remarks"></a>コメント
+#### <a name="output"></a>出力
 
-優先順位は、 **[フォアグラウンド]** 、 **[高]** 、 **[標準]** 、 **[低]** 、または **[不明]** のいずれかです。
+このコマンドで返される優先順位は次のとおりです。
 
-## <a name="BKMK_examples"></a>例
+- **フォア**
 
-次の例では、 *Mydownloadjob*という名前のジョブの優先順位を取得します。
+- **高い**
+
+- **通常**
+
+- **低画質**
+
+- **UNKNOWN**
+
+## <a name="examples"></a>例
+
+*Mydownloadjob*という名前のジョブの優先順位を取得するには、次のようにします。
+
 ```
-C:\>bitsadmin /GetPriority myDownloadJob
+bitsadmin /getpriority myDownloadJob
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [bitsadmin コマンド](bitsadmin.md)

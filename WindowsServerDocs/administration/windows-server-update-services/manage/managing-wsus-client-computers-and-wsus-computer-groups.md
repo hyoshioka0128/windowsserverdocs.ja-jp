@@ -1,28 +1,24 @@
 ---
 title: WSUS クライアント コンピューターと WSUS コンピューター グループを管理する
 description: Windows Server Update Service (WSUS) のトピック-クライアントコンピューターとグループを管理する方法
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-wsus
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4b1ea915-0f9f-4f0e-8913-a1dd460d07ab
 author: coreyp-at-msft
 ms.author: coreyp
 manager: lizapo
 ms.date: 10/16/2017
-ms.openlocfilehash: 454fa385dc9fb91218ad836d4ad34e92e9644dac
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3ac5a0c09d28de53430ded651b6da92ba92a1f68
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361629"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828627"
 ---
 # <a name="managing-wsus-client-computers-and-wsus-computer-groups"></a>WSUS クライアント コンピューターと WSUS コンピューター グループを管理する
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2019、Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 [コンピューター] ノードは、wsus クライアントコンピューターとデバイスを管理するための WSUS 管理コンソールの [集約型アクセスポイント] です。 このノードの下には、設定したさまざまなグループ (既定のグループである [割り当てられていないコンピューター]) が表示されます。
 

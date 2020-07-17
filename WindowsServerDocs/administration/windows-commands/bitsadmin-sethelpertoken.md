@@ -1,43 +1,42 @@
 ---
-title: bitsadmin sei pertoken
-description: '**Bitsadmin se pertoken**の Windows コマンドのトピック-現在のコマンドプロンプトのプライマリトークン (または、指定されている場合は任意のローカルユーザーアカウントのトークン) を BITS 転送ジョブのヘルパートークンとして設定します。'
-ms.custom: na
+title: bitsadmin sethelpertoken
+description: Bitsadmin se pertoken コマンドの参照記事。このコマンドは、現在のコマンドプロンプトのプライマリトークン (または、指定されている場合は任意のローカルユーザーアカウントのトークン) を BITS 転送ジョブのヘルパートークンとして設定します。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/01/2019
-ms.openlocfilehash: 91c03366998168dad9ab4530ef36a5020b8ad6ec
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 21dee45610823cd70e8b7209ec99e080746316f9
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71380568"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927781"
 ---
-# <a name="bitsadmin-sethelpertoken"></a>bitsadmin sei pertoken
+# <a name="bitsadmin-sethelpertoken"></a>bitsadmin sethelpertoken
 
-現在のコマンドプロンプトのプライマリトークン (または、指定されている場合は任意のローカルユーザーアカウントのトークン) を BITS 転送ジョブの [ヘルパートークン](/windows/desktop/bits/helper-tokens-for-bits-transfer-jobs)として設定します。
+現在のコマンドプロンプトのプライマリトークン (または、指定されている場合は任意のローカルユーザーアカウントのトークン) を BITS 転送ジョブの [ヘルパートークン](https://docs.microsoft.com/windows/win32/bits/helper-tokens-for-bits-transfer-jobs)として設定します。
 
-**BITS 3.0 以前**: サポートされていません。
+> [!NOTE]
+> このコマンドは、BITS 3.0 以前ではサポートされていません。
 
 ## <a name="syntax"></a>構文
 
 ```
-bitsadmin /SetHelperToken <Job> [\<username@domain\> \<password\>]
+bitsadmin /sethelpertoken <job> [<user_name@domain> <password>]
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
-|---------|-----------|
-|Job|ジョブの表示名または GUID。|
-|\<username@domain\> \<パスワード\>|必要に応じて、使用するトークンを持つローカルユーザーアカウントの資格情報&mdash;ます。|
+| パラメーター | 説明 |
+| --------- | ----------- |
+| ジョブ (job) | ジョブの表示名または GUID。 |
+| `<username@domain>` `<password>` | 任意。 使用するトークンのローカルユーザーアカウントの資格情報。 |
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [bitsadmin コマンド](bitsadmin.md)

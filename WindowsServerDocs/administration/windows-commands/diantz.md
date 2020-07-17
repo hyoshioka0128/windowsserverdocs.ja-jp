@@ -1,31 +1,48 @@
 ---
 title: diantz
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: 既存のファイルをキャビネット (.cab) ファイルにパッケージ化する、dipackages z コマンドのリファレンス記事です。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 218ed5d7-1203-4d68-ad9b-65cdd022d54f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c136a936a937e15eeca7e1badf1ba35ddbb6664a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 61a10c2fb67225de1060d64db6fda4e4ff703a7b
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71377890"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930606"
 ---
 # <a name="diantz"></a>diantz
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-このコマンドは、 **makecab**コマンドと同じです。
-構文とパラメーターについては、「 [makecab](makecab.md) 」を参照してください。
+キャビネット (.cab) ファイルに既存のファイルをパッケージ化します。 このコマンドは、更新された[makecab コマンド](makecab.md)と同じ操作を実行します。
+
+## <a name="syntax"></a>構文
+
+```
+diantz [/v[n]] [/d var=<value> ...] [/l <dir>] <source> [<destination>]
+diantz [/v[<n>]] [/d var=<value> ...] /f <directives_file> [...]
+```
+
+### <a name="parameters"></a>パラメーター
+
+| パラメーター | 説明 |
+| --------- | ----------- |
+| `<source>` | ファイルを圧縮します。 |
+| `<destination>` | ファイル名を使用して、圧縮されたファイルに付けます。 省略すると、ソース ファイル名の最後の文字はアンダー スコア (_) に置き換えられ、送信先として使用します。 |
+| /f `<directives_file>` | (繰り返される場合もありますが **) 使用されているファイル**。 |
+| /d var =`<value>` | 指定した値を含む変数を定義します。 |
+| /l`<dir>` | 変換先を配置する場所 (既定値は現在のディレクトリ)。 |
+| /v[`<n>`] | 詳細レベルのデバッグ設定 (0 = なし、..., 3 = フル)。 |
+| /? | コマンド プロンプトにヘルプを表示します。 |
+
 ## <a name="additional-references"></a>その他の参照情報
--   [コマンド ライン構文の記号](command-line-syntax-key.md)
 
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [Microsoft キャビネット形式](https://docs.microsoft.com/previous-versions/bb417343(v=msdn.10))

@@ -5,15 +5,15 @@ ms.prod: windows-server
 ms.date: 11/10/2017
 ms.technology: server-general
 ms.topic: article
-author: greg-lindsay
-ms.author: greg-lindsay
+author: eross-msft
+ms.author: chrisrin
 ms.localizationpriority: high
-ms.openlocfilehash: 187abe06b469abe511d4bbbfb0aac9237d3c650a
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 90d3a9c2d5355d1059e944485414a2b6d0e5d0bc
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70868524"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "79432441"
 ---
 # <a name="azure-hybrid-benefit-for-windows-server"></a>Windows Server 向け Azure ハイブリッド特典
 
@@ -21,7 +21,7 @@ ms.locfileid: "70868524"
 
 ## <a name="benefit-description-rules-and-use-cases"></a>特典の説明、ルール、使用事例
 
-Windows Server 向け Azure ハイブリッド特典を利用すると、オンプレミスのソフトウェア アシュアランス付き Windows Server ライセンスを使用して、Azure で Windows Server VM のコストを最大 40% 節減できます。  この特典では、Windows Server のライセンス料金がソフトウェア アシュアランス特典でカバーされるため、お客様が支払うのは仮想マシンの基本コンピューティング料金のみです。  この特典は、Windows Server 2008R2、2012、2012R2、2016 リリースの Standard エディションと Datacenter エディションの両方に適用されます。  この特典は、すべての地域とソブリン クラウドで利用できます。
+Windows Server 向け Azure ハイブリッド特典を利用すると、オンプレミスのソフトウェア アシュアランス付き Windows Server ライセンスを使用して、Azure で Windows Server VM のコストを最大 40% 節減できます。  この特典では、Windows Server のライセンス料金がソフトウェア アシュアランス特典でカバーされるため、お客様が支払うのは仮想マシンのインフラストラクチャのコストに対してのみです。  この特典は、Windows Server 2008R2、2012、2012R2、2016 リリースの Standard エディションと Datacenter エディションの両方に適用されます。  この特典は、すべての地域とソブリン クラウドで利用できます。
 
 
 ![画像 1](media/ahb01.png)
@@ -49,24 +49,24 @@ SA 付き Windows Server 要件参照テーブル:
  
 Windows Server 向け Azure ハイブリッド特典は、ニーズに応じた構成での実行や、さまざまな種類の VM の組み合わせに対応する優れた柔軟性を備えています。
 
-さまざまなライセンス位置を使用した構成例
+さまざまなライセンス位置を使用した構成例:
 
 ![画像 4](media/ahb04.png)
 ![画像 5](media/ahb05.png)
 
  
-Windows Server 向け Azure ハイブリッド特典の詳細については、Azure ハイブリッド特典 の Web サイトを参照してください。
+Windows Server 向け Azure ハイブリッド特典の詳細については、Azure ハイブリッド特典の Web サイトを参照してください。
 
 ## <a name="how-to-maintain-compliance"></a>ライセンス要件への準拠を維持する方法
 
 お客様が Windows Server の VM に Azure ハイブリッド特典を適用する場合、この特典をライセンス認証する前に、使用可能なライセンスの数と、SA/サブスクリプションのそれぞれの保証期間を確認したうえで、上記のガイドラインを適用して適切な数の VM に特典をデプロイする必要があります。 既に Azure ハイブリッド特典を使用して VM を実行している場合は、インベントリを実行して稼働ユニット数を確認し、保有するアクティブな SA ライセンスの数に照らしてチェックする必要があります。  ご使用中の SA ライセンス位置については、Microsoft Enterprise Agreement のライセンス専門家にお問い合わせください。
 サブスクリプションで Windows Server 向け Azure ハイブリッド特典を使用してデプロイされたすべての仮想マシンを表示し、数を確認するには、次のいずれかの操作を行います。
 
-1. Microsoft Azure Portal を構成して、Windows Server 向け Azure ハイブリッド特典の利用状況を表示します。Microsoft Azure Portal で仮想マシン セクションのリスト ビューに、“Azure Hybrid Benefit” 列を追加します。 
+1. Microsoft Azure portal を構成して、Windows Server 向け Azure ハイブリッド特典の利用状況を表示します。Microsoft Azure portal で仮想マシン セクションのリスト ビューに、“Azure Hybrid Benefit” 列を追加します。 
 
     ![画像 6](media/ahb06.png)
 
-2.  PowerShell を使用して、Windows Server 向け Azure ハイブリッド特典の利用状況を一覧表示します。
+2.  PowerShell を使用して、Windows Server 向け Azure ハイブリッド特典の利用状況を一覧表示します
 
     ```
     $vms = Get-AzureRMVM 
@@ -84,7 +84,7 @@ Windows Server 向け Azure ハイブリッド特典の詳細については、A
 
 所有する各サブスクリプションでインベントリを実行して、すべてのライセンス位置を包括的に把握してください。
 
-[Azure Hybrid Benefit WS SA Count Tool](http://download.microsoft.com/download/7/1/2/712FEFF0-155C-4ABF-96C0-CE4EC4DB0516/Azure_Hybrid_Benefit_Windows_Server_SA_Count_Tool.xlsx)
+[Azure Hybrid Benefit WS SA Count Tool](https://download.microsoft.com/download/7/1/2/712FEFF0-155C-4ABF-96C0-CE4EC4DB0516/Azure_Hybrid_Benefit_Windows_Server_SA_Count_Tool.xlsx)
 
 上の操作を行った結果、実行中の Azure ハイブリッド特典インスタンス数に対応する十分なライセンスがあることが確認された場合、それ以上の作業は必要ありません。 特典を適用できる VM の数に余裕があることがわかった場合、現在、全額が課金されている実行中のインスタンスを特典利用に切り替えることで、料金をさらに最適化できます。
 
@@ -92,10 +92,10 @@ Windows Server 向け Azure ハイブリッド特典の詳細については、A
 
 Windows Server のソフトウェア アシュアランスやサブスクリプションは、以下のマイクロソフトのライセンス チャネルを組み合わせて購入できます。
 
-| Channel                      | Open     | OVS      | Select/ Select Plus  | MPSA       | EA/EAS   |
+| ［チャネル］                      | 開く     | OVS      | Select/Select Plus  | MPSA       | EA/EAS   |
 |------------------------------|----------|----------|-----------------------|-----------|----------|
-| 一般的なサイズ (デバイス数)  | 5 ～ 250    | 5 ～ 250    | >250                  | >250      | >500     |
-| SA/サブスクリプション            | 省略可能 | 含まれる | 省略可能              | 省略可能  | 含まれる |
+| 一般的なサイズ (デバイス数)  | 5 から 250    | 5 から 250    | >250                  | >250      | >500     |
+| SA/サブスクリプション            | オプション | 含まれる | オプション              | オプション  | 含まれる |
 
 マイクロソフトは、Azure ハイブリッド特典の使用の適格性を確認するために、随時、エンド カスタマーを監査する権利を留保します。 
 

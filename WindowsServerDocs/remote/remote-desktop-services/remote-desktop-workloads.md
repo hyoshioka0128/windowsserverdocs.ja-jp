@@ -1,23 +1,19 @@
 ---
 title: リモート デスクトップのワークロード
 description: リモート デスクトップによって管理される仮想マシンのさまざまな種類のワークロードの概要を簡単に説明します。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
 ms.author: helohr
 ms.date: 12/02/2019
-ms.tgt_pltfrm: na
 ms.topic: article
 author: Heidilohr
-manager: daveba
-ms.openlocfilehash: 32781946ad2c49ec51e11dfe1e8af078425d35b0
-ms.sourcegitcommit: cbf0c7c37797c22af989639fac82fc0eee94497f
+manager: lizross
+ms.openlocfilehash: 53c120be0ca91f0a9331a0585be8b4335f863a56
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74700931"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "80857245"
 ---
 # <a name="remote-desktop-workloads"></a>リモート デスクトップのワークロード
 
@@ -27,8 +23,8 @@ ms.locfileid: "74700931"
 
 | ワークロードの種類 | ユーザーの例 | サンプル アプリ |
 | --- | --- | --- |
-| 明るい | 基本的なデータ入力タスクを実行するユーザー | データベース エントリ アプリケーション、コマンドライン インターフェイス |
-| 中 | コンサルタントと市場調査員 | データベース エントリ アプリケーション、コマンドライン インターフェイス、Microsoft Word、静的 Web ページ |
+| 淡色 | 基本的なデータ入力タスクを実行するユーザー | データベース エントリ アプリケーション、コマンドライン インターフェイス |
+| 中間 | コンサルタントと市場調査員 | データベース エントリ アプリケーション、コマンドライン インターフェイス、Microsoft Word、静的 Web ページ |
 | ヘビー | ソフトウェア エンジニア、コンテンツ作成者 | データベース エントリ アプリケーション、コマンドライン インターフェイス、Microsoft Word、静的 Web ページ、Microsoft Outlook、Microsoft PowerPoint、動的 Web ページ |
 | Power | グラフィック デザイナー、3D モデル メーカー、機械学習研究者 | データベース エントリ アプリケーション、コマンドライン インターフェイス、Microsoft Word、静的 Web ページ、Microsoft Outlook、Microsoft PowerPoint、動的 Web ページ、Adobe Photoshop、Adobe Illustrator、コンピューター支援設計 (CAD)、コンピューター支援製造 (CAM) |
 

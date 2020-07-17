@@ -5,15 +5,16 @@ ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
+manager: lizross
 ms.technology: storage-failover-clustering
 ms.date: 06/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: da0f541c34c7f8687822bec365364fdd406fa3c3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1d275e0379b5374899437bcf1f0387b304350840
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369737"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80827745"
 ---
 # <a name="use-cluster-shared-volumes-in-a-failover-cluster"></a>フェールオーバークラスターでクラスターの共有ボリュームを使用する
 
@@ -65,7 +66,7 @@ CSV をサポートするネットワークを構成するときは、次の考�
 
 #### <a name="about-io-synchronization-and-io-redirection-in-csv-communication"></a>CSV 通信での I/O 同期と I/O リダイレクトについて
 
-- **I/o 同期**: CSV を使用すると、複数のノードが同じ共有記憶域に同時に読み取り/書き込みアクセスできるようになります。 ノードが CSV ボリュームでディスク入力/出力 (I/O) を実行する場合、ノードは記憶域ネットワーク (SAN) などを通して直接記憶域と通信します。 しかし、LUN に関連付けられている物理ディスク リソースを “所有” するノード (コーディネーター ノードと呼ぶ) は常に 1 つです。 CSV ボリュームのコーディネーター ノードは、フェールオーバー クラスター マネージャーの **[ディスク]** の下に **[所有者ノード]** として表示されます。 また、 [Get ClusterSharedVolume](https://docs.microsoft.com/powershell/module/failoverclusters/get-clustersharedvolume?view=win10-ps) Windows PowerShell コマンドレットの出力にも表示されます。
+- **I/o 同期**: CSV を使用すると、複数のノードが同じ共有記憶域に同時に読み取り/書き込みアクセスできるようになります。 ノードが CSV ボリュームでディスク入力/出力 (I/O) を実行する場合、ノードは記憶域ネットワーク (SAN) などを通して直接記憶域と通信します。 ただし、どの時点でも、1つのノード (コーディネーターノードと呼ばれます) は、LUN に関連付けられている物理ディスクリソースを "所有" します。 CSV ボリュームのコーディネーター ノードは、フェールオーバー クラスター マネージャーの **[ディスク]** の下に **[所有者ノード]** として表示されます。 また、 [Get ClusterSharedVolume](https://docs.microsoft.com/powershell/module/failoverclusters/get-clustersharedvolume?view=win10-ps) Windows PowerShell コマンドレットの出力にも表示されます。
 
   >[!NOTE]
   >Windows Server 2012 R2 では、CSV の所有権は、各ノードが所有する CSV ボリュームの数に基づいて、フェールオーバークラスターノード全体に均等に分散されます。 また、CSV がフェールオーバーした、ノードがクラスターに戻された、新しいノードをクラスターに追加した、クラスター ノードを再起動した、フェールオーバー クラスターをシャットダウン後に起動したなどの状況が発生した場合、所有権は自動的に再分配されます。
@@ -103,14 +104,14 @@ CSV を使用するには、記憶域とディスクが次の要件を満たし�
 - **クラスター記憶域の CSV ディスクまたは他のディスクの選択**。 クラスター化された仮想マシン用のディスクを 1 つ以上選択する場合は、各ディスクの使用方法を検討します。 ディスクが Hyper-V によって作成されるファイル (VHD ファイルや構成ファイルなど) を格納するために使用される場合は、クラスター記憶域の CSV ディスクまたはその他の使用可能なディスクを選択できます。 ディスクが仮想マシンに直接アタッチされる物理ディスク (パススルー ディスク) である場合は、CSV ディスクを選択できず、クラスター記憶域のその他の使用可能なディスクから選択する必要があります。
 - **ディスクを識別するためのパス名**。 CSV のディスクは、パス名で識別されます。 各パスは、ノードのシステムドライブの **\\ClusterStorage**フォルダーの下に番号付きのボリュームとして表示されます。 このパスは、クラスター内のどのノードから参照しても同じです。 必要な場合、ボリューム名を変更できます。
 
-CSV 用の記憶域の要件については、記憶域のベンダーが提供するガイドラインを確認してください。 CSV 用の記憶域の計画に関するその他の考慮事項については、後述の「 [フェールオーバー クラスターで CSV を使用するための計画](#plan-to-use-csv-in-a-failover-cluster) 」を参照してください。
+CSV 用の記憶域の要件については、記憶域のベンダーが提供するガイドラインを確認してください。 CSV 用の記憶域の計画に関するその他の考慮事項については、このトピックの「[フェールオーバー クラスターで CSV を使用するための計画](#plan-to-use-csv-in-a-failover-cluster)」を参照してください。
 
 ### <a name="node-requirements"></a>ノードの要件
 
 CSV を使用するには、ノードが次の要件を満たしている必要があります。
 
 - **システム ディスクのドライブ文字**。 すべてのノードで、システム ディスクのドライブ文字は同じにする必要があります。
-- **認証プロトコル**。 NTLM プロトコルをすべてのノードで有効にする必要があります。 これは既定で有効になっています。
+- **認証プロトコル**。 NTLM プロトコルをすべてのノードで有効にする必要があります。 既定では、これが有効になります。
 
 ## <a name="plan-to-use-csv-in-a-failover-cluster"></a>フェールオーバー クラスターで CSV を使用するための計画
 
@@ -163,9 +164,9 @@ CSV を使用するフェールオーバー クラスターの記憶域構成を
 
 #### <a name="windows-powershell-equivalent-commands-add-a-disk-to-available-storage"></a>Windows PowerShell の同等のコマンド (使用可能な記憶域にディスクを追加する)
 
-以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。
+次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 書式上の制約のため、複数行にわたって折り返される場合でも、各コマンドレットは 1 行に入力してください。
 
-次の例では、クラスターに追加できる状態にあるディスクを識別し、それらを **使用可能記憶域** グループに追加します。
+次の例では、クラスターに追加できる状態にあるディスクを識別し、それらを**使用可能記憶域**グループに追加します。
 
 ```PowerShell
 Get-ClusterAvailableDisk | Add-ClusterDisk
@@ -183,9 +184,9 @@ Get-ClusterAvailableDisk | Add-ClusterDisk
 
 #### <a name="windows-powershell-equivalent-commands-add-a-disk-to-csv"></a>Windows PowerShell の同等のコマンド (CSV へのディスクの追加)
 
-以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。
+次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 書式上の制約のため、複数行にわたって折り返される場合でも、各コマンドレットは 1 行に入力してください。
 
-次の例では、 *使用可能記憶域* にある **Cluster Disk 1** をローカル クラスター上の CSV に追加します。
+次の例では、*使用可能記憶域*にある **Cluster Disk 1** をローカル クラスター上の CSV に追加します。
 
 ```PowerShell
 Add-ClusterSharedVolume –Name "Cluster Disk 1"
@@ -255,7 +256,7 @@ CSV 用のバックアップ アプリケーションとバックアップ ス�
 > [!WARNING]
 > バックアップ データを CSV ボリュームに復元する必要がある場合は、バックアップ アプリケーションに、クラスター ノードにまたがってアプリケーション間の整合性が維持されるデータを維持および復元する機能と、その機能に対する制限があるかどうかを確認してください。 たとえば、一部のアプリケーションでは、CSV ボリュームをバックアップしたノードとは異なるノードで CSV を復元する場合、復元を実行するノードでアプリケーションの状態に関する重要なデータを誤って上書きする可能性があります。
 
-## <a name="more-information"></a>詳細情報
+## <a name="more-information"></a>詳細
 
 - [フェールオーバー クラスタリング](failover-clustering.md)
 - [クラスター化された記憶域スペースの展開](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj822937(v%3dws.11)>)

@@ -2,26 +2,22 @@
 title: 手順 7. 2-3 をインストールして構成する
 description: このトピックは、「Windows Server 2016 用の DirectAccess マルチサイト展開のテストラボガイド」の一部です。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1cc0abc6-be4d-4cbe-bd0c-cc448bf294f6
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: c5a316e1230692fb800c088d752c26ec4a0f3349
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 8b6f5438498349e7d02fd6c9122d300e55fe2517
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388263"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861555"
 ---
 # <a name="step-7-install-and-configure-2-app1"></a>手順 7. 2-3 をインストールして構成する
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 2-[web とファイル共有サービス] を提供します。 2-構成要素は次のもので構成されます。  
   
@@ -35,20 +31,20 @@ ms.locfileid: "71388263"
   
 - 2-3 に共有フォルダーを作成する 
   
-## <a name="bkmk_InstallOS"></a>2-3 にオペレーティングシステムをインストールする  
+## <a name="install-the-operating-system-on-2-app1"></a><a name="bkmk_InstallOS"></a>2-3 にオペレーティングシステムをインストールする  
 最初に、Windows Server 2016、Windows Server 2012 R2、または Windows Server 2012 をインストールします。  
   
 #### <a name="to-install-the-operating-system-on-2-app1"></a>2-3 にオペレーティングシステムをインストールするには  
   
 1.  Windows Server 2016、Windows Server 2012 R2、または Windows Server 2012 (フルインストール) のインストールを開始します。  
   
-2.  手順に従ってインストールを完了し、ローカルの Administrator アカウントの強力なパスワードを指定します。 ローカルの Administrator アカウントを使用してログオンします。  
+2.  手順に従ってインストールを完了し、ローカルの Administrator アカウントの強力なパスワードを指定します。 ローカル管理者アカウントを使用してログオンします。  
   
 3.  インターネットにアクセスできるネットワークに 2-3 を接続し Windows Update を実行して、Windows Server 2016、Windows Server 2012 R2、または Windows Server 2012 の最新の更新プログラムをインストールしてから、インターネットから切断します。  
   
 4.  2-3 を企業ネットワークサブネットに接続します。  
   
-## <a name="bkmk_TCP"></a>TCP/IP のプロパティを構成する  
+## <a name="configure-tcpip-properties"></a><a name="bkmk_TCP"></a>TCP/IP のプロパティを構成する  
 2-3 で TCP/IP プロパティを構成します。  
   
 #### <a name="to-configure-tcpip-properties"></a>TCP/IP のプロパティを構成するには  
@@ -59,11 +55,11 @@ ms.locfileid: "71388263"
   
 3.  **[インターネット プロトコル バージョン 4 (TCP/IPv4)]** をクリックし、 **[プロパティ]** をクリックします。  
   
-4.  **[次の IP アドレスを使う]** をクリックします。 **[IP アドレス]** に、「 **10.2.0.3**」と入力します。 **[サブネット マスク]** に、「 **255.255.255.0**」と入力します。 **[デフォルトゲートウェイ]** で、「 **10.2.0.254**」と入力します。  
+4.  **[次の IP アドレスを使う]** をクリックします。 **[IP アドレス]** に、「 **10.2.0.3**」と入力します。 **[サブネット マスク]** に、「**255.255.255.0**」と入力します。 **[デフォルトゲートウェイ]** で、「 **10.2.0.254**」と入力します。  
   
 5.  **[次の DNS サーバーのアドレスを使う]** をクリックします。 **[優先 DNS サーバー]** に、「 **10.2.0.1**」と入力します。  
   
-6.  **詳細設定]** [、] **[DNS** タブの順にクリックします。 **[この接続の DNS サフィックス]** に「 **corp2.corp.contoso.com**」と入力し、[ **OK]** を2回クリックします。  
+6.  **[詳細設定]** をクリックし、 **[DNS]** タブをクリックします。 **[この接続の DNS サフィックス]** に「 **corp2.corp.contoso.com**」と入力し、[ **OK]** を2回クリックします。  
   
 7.  **[インターネット プロトコル バージョン 6 (TCP/IPv6)]** をクリックし、 **[プロパティ]** をクリックします。  
   
@@ -77,7 +73,7 @@ ms.locfileid: "71388263"
   
 12. **[ネットワーク接続]** ウィンドウを閉じます。  
   
-## <a name="bkmk_JoinDomain"></a>2 ~ 3 を CORP2 ドメインに参加させる  
+## <a name="join-2-app1-to-the-corp2-domain"></a><a name="bkmk_JoinDomain"></a>2 ~ 3 を CORP2 ドメインに参加させる  
 2 ~ 3 を corp2.corp.contoso.com ドメインに参加させます。  
   
 #### <a name="to-join-2-app1-to-the-corp2-domain"></a>2 ~ 3 を CORP2 ドメインに参加させるには  
@@ -100,7 +96,7 @@ ms.locfileid: "71388263"
   
 9. コンピューターが再起動したら、 **[ユーザーの切り替え]** をクリックし、 **[その他のユーザー]** をクリックして、管理者アカウントを使用して CORP2 ドメインにログオンします。  
   
-## <a name="bkmk_IIS"></a>2-3 に Web サーバー (IIS) の役割をインストールします。  
+## <a name="install-the-web-server-iis-role-on-2-app1"></a><a name="bkmk_IIS"></a>2-3 に Web サーバー (IIS) の役割をインストールします。  
 Web サーバー (IIS) の役割をインストールして、2つの web サーバーを作成します。  
   
 #### <a name="to-install-the-web-server-iis-role"></a>Web サーバー (IIS) の役割をインストールするには  
@@ -115,7 +111,7 @@ Web サーバー (IIS) の役割をインストールして、2つの web サー
   
 5.  インストールが正常に完了したことを確認し、 **[閉じる]** をクリックします。  
   
-## <a name="bkmk_Share"></a>2-3 に共有フォルダーを作成する  
+## <a name="create-a-shared-folder-on-2-app1"></a><a name="bkmk_Share"></a>2-3 に共有フォルダーを作成する  
 2-3 のフォルダー内に共有フォルダーとテキストファイルを作成します。  
   
 #### <a name="to-create-a-shared-folder"></a>共有フォルダーを作成するには  

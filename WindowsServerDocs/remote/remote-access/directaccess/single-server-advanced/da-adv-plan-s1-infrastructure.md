@@ -2,22 +2,18 @@
 title: 手順1高度な DirectAccess インフラストラクチャを計画する
 description: このトピックは、「Windows Server 2016 の詳細設定を使用して単一の DirectAccess サーバーを展開する」の一部です。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: aa3174f3-42af-4511-ac2d-d8968b66da87
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 9fa6fe4de0c8723c17f6a61717281d0a38d1b579
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 80f6a06eefeccb727071432d4c519f42128da3c4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388660"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80819655"
 ---
 # <a name="step-1-plan-the-advanced-directaccess-infrastructure"></a>手順1高度な DirectAccess インフラストラクチャを計画する
 
@@ -66,8 +62,8 @@ ms.locfileid: "71388660"
   
     ||外部ネットワーク アダプター|内部ネットワーク アダプター|ルーティングの要件|  
     |-|--------------|--------------|------------|  
-    |IPv4 インターネットと IPv4 イントラネット|適切なサブネット マスクを使用して、連続する 2 つの静的パブリック IPv4 アドレスを構成します (Teredo についてのみ必要)。<br/><br/>また、インターネット ファイアウォール、またはローカルのインターネット サービス プロバイダー (ISP) のルーターのデフォルト ゲートウェイ IPv4 アドレスも構成します。 **注:** Teredo サーバーとして機能し、Windows ベースのクライアントが DirectAccess サーバーを使用して背後にある NAT デバイスの種類を検出するように、DirectAccess サーバーに 2 つの連続するパブリック IPv4 アドレスが必要です。|次を構成します。<br/><br/>適切なサブネット マスクを持つ IPv4 イントラネット アドレスが。<br/>イントラネット名前空間の接続専用 DNS サフィックスが。 DNS サーバーも、内部インターフェイスで構成する必要があります。 **注意:** イントラネット インターフェイスで、既定のゲートウェイを構成しません。|内部 IPv4 ネットワーク上のすべてのサブネットに到達できるように DirectAccess サーバーを構成するには、次の操作を行います。<br/><br/>イントラネット上のすべての場所の IPv4 アドレス空間を一覧表示します。<br/>-を使用して、 **ルート追加-p** または**netsh interface ipv4 ルートを追加する** IPv4 アドレス空間を静的ルートとして DirectAccess サーバーの IPv4 ルーティング テーブルに追加するコマンドです。|  
-    |IPv6 インターネットおよび IPv6 イントラネット|次を構成します。<br/><br/>-ISP から提供されたアドレス構成を使用します。<br/>-を使用して、 **Route Print** コマンドの既定の IPv6 ルートが存在して、IPv6 ルーティング テーブルの ISP ルーターを指していることを確認します。<br/>-ISP およびイントラネットのルーターが RFC 4191 に記述され、ローカル イントラネット ルーターより高い既定の基本設定を使用して既定のルーター基本設定を使用しているかどうかを決定します。<br/>    どちらについても使用している場合は、既定のルートに他の構成は必要ありません。 ISP ルーターの高度な基本設定によって、DirectAccess サーバーの既定の IPv6 アクティブ ルートが IPv6 インターネットを示すことが保証されます。<br/><br/>DirectAccess サーバーは IPv6 ルーターであるため、ネイティブ IPv6 インフラストラクチャがある場合は、インターネット インターフェイスからイントラネット上のドメイン コントローラーに到達することもできます。 この場合、DirectAccess サーバーのインターネット接続インターフェイスの IPv6 アドレスへの接続を防ぐ境界ネットワークのドメイン コントローラーに、パケット フィルターを追加します。|次を構成します。<br/><br/>-既定の優先レベルを使用していない場合は、次のコマンドを使用してイントラネット インターフェイスを構成できます**netsh interface ipv6 設定 InterfaceIndex ignoredefaultroutes = 有効になっている**します。<br/>    このコマンドにより、イントラネット ルーターをポイントする追加の既定のルートは IPv6 ルーティング テーブルに追加されなくなります。 イントラネット インターフェイスのインターフェイス インデックスは、次のコマンドを使用して入手できます: **netsh interface ipv6 show interface**。|IPv6 イントラネットがある場合、IPv6 のすべての場所に到達できるように DirectAccess サーバーを構成するには、次のようにします。<br/><br/>IPv6 アドレス空間は、イントラネット上のすべての場所を一覧表示します。<br/>-を使用して、 **netsh interface ipv6 ルートを追加する** 、IPv6 アドレス空間を静的ルートとして DirectAccess サーバーの IPv6 ルーティング テーブルに追加するコマンドです。|  
+    |IPv4 インターネットと IPv4 イントラネット|適切なサブネット マスクを使用して、連続する 2 つの静的パブリック IPv4 アドレスを構成します (Teredo についてのみ必要)。<br/><br/>また、インターネット ファイアウォール、またはローカルのインターネット サービス プロバイダー (ISP) のルーターのデフォルト ゲートウェイ IPv4 アドレスも構成します。 **注:** Teredo サーバーとして機能し、Windows ベースのクライアントが DirectAccess サーバーを使用して背後にある NAT デバイスの種類を検出するように、DirectAccess サーバーに 2 つの連続するパブリック IPv4 アドレスが必要です。|次の内容を構成します。<br/><br/>適切なサブネット マスクを持つ IPv4 イントラネット アドレスが。<br/>イントラネット名前空間の接続専用 DNS サフィックスが。 DNS サーバーも、内部インターフェイスで構成する必要があります。 **注意:** イントラネット インターフェイスで、既定のゲートウェイを構成しません。|内部 IPv4 ネットワーク上のすべてのサブネットに到達できるように DirectAccess サーバーを構成するには、次の操作を行います。<br/><br/>イントラネット上のすべての場所の IPv4 アドレス空間を一覧表示します。<br/>-を使用して、 **ルート追加-p** または**netsh interface ipv4 ルートを追加する** IPv4 アドレス空間を静的ルートとして DirectAccess サーバーの IPv4 ルーティング テーブルに追加するコマンドです。|  
+    |IPv6 インターネットおよび IPv6 イントラネット|次の内容を構成します。<br/><br/>-ISP から提供されたアドレス構成を使用します。<br/>-を使用して、 **Route Print** コマンドの既定の IPv6 ルートが存在して、IPv6 ルーティング テーブルの ISP ルーターを指していることを確認します。<br/>-ISP およびイントラネットのルーターが RFC 4191 に記述され、ローカル イントラネット ルーターより高い既定の基本設定を使用して既定のルーター基本設定を使用しているかどうかを決定します。<br/>    どちらについても使用している場合は、既定のルートに他の構成は必要ありません。 ISP ルーターの高度な基本設定によって、DirectAccess サーバーの既定の IPv6 アクティブ ルートが IPv6 インターネットを示すことが保証されます。<br/><br/>DirectAccess サーバーは IPv6 ルーターであるため、ネイティブ IPv6 インフラストラクチャがある場合は、インターネット インターフェイスからイントラネット上のドメイン コントローラーに到達することもできます。 この場合、DirectAccess サーバーのインターネット接続インターフェイスの IPv6 アドレスへの接続を防ぐ境界ネットワークのドメイン コントローラーに、パケット フィルターを追加します。|次の内容を構成します。<br/><br/>-既定の優先レベルを使用していない場合は、次のコマンドを使用してイントラネット インターフェイスを構成できます**netsh interface ipv6 設定 InterfaceIndex ignoredefaultroutes = 有効になっている**します。<br/>    このコマンドにより、イントラネット ルーターをポイントする追加の既定のルートは IPv6 ルーティング テーブルに追加されなくなります。 イントラネット インターフェイスのインターフェイス インデックスは、次のコマンドを使用して入手できます: **netsh interface ipv6 show interface**。|IPv6 イントラネットがある場合、IPv6 のすべての場所に到達できるように DirectAccess サーバーを構成するには、次のようにします。<br/><br/>IPv6 アドレス空間は、イントラネット上のすべての場所を一覧表示します。<br/>-を使用して、 **netsh interface ipv6 ルートを追加する** 、IPv6 アドレス空間を静的ルートとして DirectAccess サーバーの IPv6 ルーティング テーブルに追加するコマンドです。|  
     |IPv4 インターネットおよび IPv6 イントラネット|DirectAccess サーバーは、既定の IPv6 ルート トラフィックを IPv4 インターネットで、Microsoft 6to4 アダプターから 6to4 リレーに転送します。 次のコマンドを使用して、Microsoft 6to4 アダプターの IPv4 アドレスで DirectAccess サーバーを構成できます。`netsh interface ipv6 6to4 set relay name=<ipaddress> state=enabled`|||  
   
     > [!NOTE]  
@@ -465,9 +461,9 @@ DirectAccess クライアントは、Windows Update やウイルス対策の更�
   
 -   ドメイン コント ローラーでの自動検出のドメイン コント ローラーは、DirectAccess サーバーおよびクライアント コンピューターと同じフォレスト内のすべてのドメインに対して実行されます。  
   
--   System Center Configuration Manager サーバーでの自動検出 System Center Configuration Manager サーバーは、DirectAccess サーバーおよびクライアント コンピューターと同じフォレスト内のすべてのドメインに対して実行されます。  
+-   Microsoft エンドポイント Configuration Manager サーバー-DirectAccess サーバーとクライアントコンピューターと同じフォレスト内のすべてのドメインに対して、Configuration Manager サーバーの自動検出が実行されます。  
   
-ドメイン コントローラーと System Center Configuration Manager サーバーは、DirectAccess が最初に構成されたときに自動的に検出されます。 検出されたドメイン コント ローラーは、コンソールに表示されませんが、Windows PowerShell コマンドレットを使用して設定を取得することができます **Get-damgmtserver-型すべて**です。 ドメイン コントローラー、または System Center Configuration Manager サーバーが変更された場合、リモート アクセス管理コンソールで、 **[管理サーバーの更新]** をクリックすると、管理サーバーの一覧が更新されます。  
+ドメインコントローラーと Configuration Manager サーバーは、DirectAccess の初回構成時に自動的に検出されます。 検出されたドメイン コント ローラーは、コンソールに表示されませんが、Windows PowerShell コマンドレットを使用して設定を取得することができます **Get-damgmtserver-型すべて**です。 ドメインコントローラまたは Configuration Manager サーバーが変更された場合は、リモートアクセス管理コンソールで **[管理サーバーの更新]** をクリックすると、管理サーバーの一覧が更新されます。  
   
 **管理サーバーの要件**  
   
@@ -484,7 +480,7 @@ DirectAccess クライアントは、Windows Update やウイルス対策の更�
   
 DirectAccess は、次のような AD DS と Active Directory グループ ポリシー オブジェクト (Gpo) を使用します。  
   
--   **\[認証]**  
+-   **[認証]**  
   
     AD DS は認証に使用されます。 インフラストラクチャ トンネルでは、DirectAccess サーバーに接続しているコンピューター アカウントに NTLMv2 認証が使用され、アカウントは Active Directory ドメインに表示されている必要があります。 イントラネット トンネルは、ユーザーが 2 番目のトンネルを作成する際に Kerberos 認証を使用します。  
   
@@ -677,13 +673,13 @@ GPO 設定を手動で変更する場合は、次の点を考慮してくださ�
   
 リモートアクセス管理コンソールに、 **gpo (gpo 名) が見つからないこと**を示すエラーメッセージが表示されます。 構成設定を削除するには、次の手順に従います。  
   
-1.  Windows PowerShell コマンドレットを実行 **uninstall-remoteaccess**します。  
+1.  Windows PowerShell コマンドレット **Uninstall-remoteaccess** を実行します。  
   
 2.  リモート アクセス管理コンソールを開きます。  
   
 3.  GPO が見つからないというエラー メッセージが表示されます。 **[構成設定の削除]** をクリックします。 完了後、サーバーは構成されていない状態で復元されます。  
   
-## <a name="next-steps"></a>次のステップ  
+## <a name="next-steps"></a>次のステップ:  
   
 -   [手順 2: DirectAccess の展開を計画する](da-adv-plan-s2-deployments.md)  
   

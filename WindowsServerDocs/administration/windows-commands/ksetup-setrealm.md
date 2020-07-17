@@ -1,58 +1,52 @@
 ---
-title: 'ksetup: setrealm'
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+title: ksetup setrealm
+description: Ksetup setrealm コマンドの参照記事。 Kerberos 領域の名前を設定します。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ab268c40-276b-46ef-ab16-d5ce7667fbed
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1bbe5c000b7e84066c19511639fe3d92d7e4b558
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c6fa5573322237dfee5909d9afc2e99696ac82b3
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71374901"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933133"
 ---
-# <a name="ksetupsetrealm"></a>ksetup: setrealm
+# <a name="ksetup-setrealm"></a>ksetup setrealm
 
+Kerberos 領域の名前を設定します。
 
-
-Kerberos 領域の名前を設定します。 このコマンドの使用方法の例については、次を参照してください。 [例](#BKMK_Examples)します。
+> [!IMPORTANT]
+> ドメインコントローラーでの Kerberos 領域の設定はサポートされていません。 これを行おうとすると、警告とコマンドエラーが発生します。
 
 ## <a name="syntax"></a>構文
 
 ```
-ksetup /setrealm <DNSDomainName>
+ksetup /setrealm <DNSdomainname>
 ```
 
 ### <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
-|---------|-----------|
-|\<DNSDomainName >|DNS ドメイン名は、完全修飾ドメイン名または単純なドメイン名の形式で指定できます。|
+| パラメーター | 説明 |
+| --------- | ----------- |
+| `<DNSdomainname>` | CORP など、大文字の DNS 名を指定します。CONTOSO.COM。 完全修飾ドメイン名を使用することも、名前の単純な形式を使用することもできます。 DNS 名に大文字を使用しない場合は、続行するかどうかを確認するメッセージが表示されます。 |
 
-## <a name="remarks"></a>コメント
+### <a name="examples"></a>例
 
-DNS ドメイン名パラメーターは大文字で入力する必要があります。 それ以外の場合、 **ksetup**コマンドは検証を続行するように要求します。
+このコンピューターの領域を特定のドメイン名に設定し、ドメインコントローラー以外のアクセスを CONTOSO Kerberos 領域のみに制限するには、次のように入力します。
 
-ドメインコントローラーでの Kerberos 領域の設定はサポートされていません。 これを行おうとすると、警告とコマンドのエラーが発生します。
-
-## <a name="BKMK_Examples"></a>例
-
-このコンピューターの領域を特定のドメイン名に設定して、ドメインコントローラー以外のアクセスを CONTOSO Kerberos 領域のみに制限します。
 ```
 ksetup /setrealm CONTOSO
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
--   [コマンド ライン構文の記号](command-line-syntax-key.md)
--   [Ksetup](ksetup.md)
--   [Ksetup:removerealm](ksetup-removerealm.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [ksetup コマンド](ksetup.md)
+
+- [ksetup removerealm](ksetup-removerealm.md)

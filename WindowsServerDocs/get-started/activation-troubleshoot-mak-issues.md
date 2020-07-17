@@ -4,17 +4,16 @@ description: MAK ライセンス認証プロセス中に発生する可能性の
 ms.topic: article
 ms.date: 10/3/2019
 ms.technology: server-general
-ms.assetid: ''
 author: Teresa-Motiv
 ms.author: v-tea
 manager: dcscontentpm
 ms.localizationpriority: medium
-ms.openlocfilehash: 25fa6d32571597136580afe062aa8d9c7e2d82b7
-ms.sourcegitcommit: 9855d6b59b1f8722f39ae74ad373ce1530da0ccf
+ms.openlocfilehash: 0f4153387d740379e66eca9e8069b7a446a1ec71
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71962988"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "80826235"
 ---
 # <a name="mak-activation-known-issues"></a>MAK ライセンス認証: 既知の問題
 
@@ -26,7 +25,7 @@ ms.locfileid: "71962988"
 
 ## <a name="the-computer-does-not-activate-over-the-internet"></a>コンピューターがインターネット経由でライセンス認証されない
 
-必要なポートがファイアウォールで開かれていることを確認します。 ポートの一覧については、「[ボリューム ライセンス認証の展開ガイド](http://go.microsoft.com/fwlink/?linkid=150083)」を参照してください。
+必要なポートがファイアウォールで開かれていることを確認します。 ポートの一覧については、「[ボリューム ライセンス認証の展開ガイド](https://go.microsoft.com/fwlink/?linkid=150083)」を参照してください。
 
 ## <a name="internet-and-telephone-activation-fail"></a>インターネットと電話によるライセンス認証が失敗する
 

@@ -1,28 +1,24 @@
 ---
 title: リモート デスクトップ サービスのアーキテクチャ
 description: RDS のアーキテクチャ図
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 02/10/2017
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7f73bb0a-ce98-48a4-9d9f-cf7438936ca1
 author: lizap
 manager: dongill
-ms.openlocfilehash: 7cd46cadf5ed5424e50556ee0c91a80804108113
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 441b0b24fd4b4dc18d3afd65283bbf7ff2417048
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404217"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "80818440"
 ---
 # <a name="remote-desktop-services-architecture"></a>リモート デスクトップ サービスのアーキテクチャ
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016
+>適用先:Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016
 
 エンド ユーザー向けの Windows のアプリとデスクトップをホストするようにリモート デスクトップ サービスを展開するためのさまざまな構成を以下に示します。
 
@@ -32,8 +28,8 @@ ms.locfileid: "71404217"
 ## <a name="standard-rds-deployment-architectures"></a>標準の RDS 展開アーキテクチャ
 
 リモート デスクトップ サービスには、次の 2 つの標準的アーキテクチャがあります。
--   基本的な展開 – これには、完全に有効な RDS 環境を作成するための最小数のサーバーが含まれます。
--   高可用性の展開 – これには、RDS 環境で保証される最も高い稼働時間を実現するために必要なすべてのコンポーネントが含まれます。
+-    基本的な展開 – これには、完全に有効な RDS 環境を作成するための最小数のサーバーが含まれます。
+-    高可用性の展開 – これには、RDS 環境で保証される最も高い稼働時間を実現するために必要なすべてのコンポーネントが含まれます。
 
 ### <a name="basic-deployment"></a>基本的な展開
 

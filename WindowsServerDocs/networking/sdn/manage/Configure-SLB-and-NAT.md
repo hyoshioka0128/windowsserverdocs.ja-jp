@@ -1,38 +1,34 @@
 ---
 title: 負荷分散およびネットワーク アドレス変換 (NAT) のためのソフトウェア ロード バランサーを構成する
 description: このトピックは、Windows Server 2016 でテナントのワークロードと仮想ネットワークを管理する方法について、ソフトウェアで定義されたネットワークガイドに含まれています。
-manager: dougkim
-ms.custom: na
+manager: grcusanz
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-sdn
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 73bff8ba-939d-40d8-b1e5-3ba3ed5439c3
-ms.author: pashort
-author: shortpatti
+ms.author: anpaul
+author: AnirbanPaul
 ms.date: 08/23/2018
-ms.openlocfilehash: 80f1319c1abc845d7e63a2d53868bf7a3c381019
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8728ea8732c762003a2bd356d00b9776c82eb481
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406099"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854545"
 ---
 # <a name="configure-the-software-load-balancer-for-load-balancing-and-network-address-translation-nat"></a>負荷分散およびネットワーク アドレス変換 (NAT) のためのソフトウェア ロード バランサーを構成する
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
-このトピックでは、ソフトウェアで定義されたネットワーク\(SDN\)ソフトウェアロードバランサー \(SLB\)を使用して、送信ネットワークアドレス\(変換\)NAT を提供する方法について説明します。受信 NAT、またはアプリケーションの複数のインスタンス間での負荷分散。
+このトピックでは、ソフトウェアで定義されたネットワーク \(SDN\) ソフトウェアロードバランサー \(SLB\) を使用して、アプリケーションの複数のインスタンス間で送信ネットワークアドレス変換 \(NAT\)、受信 NAT、または負荷分散を行う方法について説明します。
 
 ## <a name="software-load-balancer-overview"></a>ソフトウェアの Load Balancer の概要
 
-SDN ソフトウェア Load Balancer \(SLB\)は、高可用性とネットワークパフォーマンスをアプリケーションに提供します。 これは、ロードバランサー \(セットで定義\)されているクラウドサービスまたは仮想マシンの正常なサービスインスタンス間で着信トラフィックを分散するレイヤー 4 TCP、UDP ロードバランサーです。
+SDN ソフトウェア Load Balancer \(SLB\) は、高可用性とネットワークパフォーマンスをアプリケーションに提供します。 これは、ロードバランサーセットで定義されているクラウドサービスまたは仮想マシンの正常なサービスインスタンス間で着信トラフィックを分散するレイヤー 4 \(TCP、UDP\) ロードバランサーです。
 
 SLB を構成して、次の操作を実行します。
 
-- 仮想ネットワークの外部の受信トラフィックを仮想マシン\(vm\)に負荷分散します。これは、パブリック VIP 負荷分散とも呼ばれます。
+- 仮想ネットワークの外部の受信トラフィックを仮想マシン \(Vm\)に負荷分散します (パブリック VIP 負荷分散とも呼ばれます)。
 - 仮想ネットワーク内の Vm 間、クラウドサービス内の Vm 間、またはクロスプレミス仮想ネットワーク内のオンプレミスコンピューターと Vm 間で着信トラフィックを負荷分散します。 
 - ネットワークアドレス変換 (NAT) を使用して、仮想ネットワークから外部送信先に VM ネットワークトラフィックを転送します。これは、送信 NAT とも呼ばれます。
 - 外部トラフィックを特定の VM に転送する (受信 NAT とも呼ばれます)。
@@ -40,7 +36,7 @@ SLB を構成して、次の操作を実行します。
 
 
 
-## <a name="example-create-a-public-vip-for-load-balancing-a-pool-of-two-vms-on-a-virtual-network"></a>例:仮想ネットワーク上の2つの Vm のプールを負荷分散するためのパブリック VIP を作成する
+## <a name="example-create-a-public-vip-for-load-balancing-a-pool-of-two-vms-on-a-virtual-network"></a>例: 仮想ネットワーク上の2つの Vm のプールを負荷分散するためのパブリック VIP を作成する
 
 この例では、パブリック VIP を持つロードバランサーオブジェクトを作成し、VIP への要求を処理するプールメンバーとして2つの Vm を作成します。 このコード例では、いずれかのプールメンバーが応答しなくなったかどうかを検出する HTTP 正常性プローブも追加されています。
 
@@ -136,7 +132,7 @@ SLB を構成して、次の操作を実行します。
 7. 次の例に従って、このバックエンドプールにネットワークインターフェイスを追加します。
 
 
-## <a name="example-use-slb-for-outbound-nat"></a>例:送信 NAT に SLB を使用する
+## <a name="example-use-slb-for-outbound-nat"></a>例: 送信 NAT に SLB を使用する
 
 この例では、仮想ネットワークのプライベートアドレス空間上の VM にインターネットへの送信に接続するために、バックエンドプールを使用して SLB を構成します。 
 
@@ -195,7 +191,7 @@ SLB を構成して、次の操作を実行します。
 
 4. 次の例に従って、インターネットアクセスを提供するネットワークインターフェイスを追加します。
 
-## <a name="example-add-network-interfaces-to-the-back-end-pool"></a>例:バックエンドプールへのネットワークインターフェイスの追加
+## <a name="example-add-network-interfaces-to-the-back-end-pool"></a>例: バックエンドプールへのネットワークインターフェイスの追加
 この例では、ネットワークインターフェイスをバックエンドプールに追加します。  VIP に対して行われた要求を処理できる各ネットワークインターフェイスに対して、この手順を繰り返す必要があります。 
 
 また、1つのネットワークインターフェイスでこのプロセスを繰り返して、複数のロードバランサーオブジェクトに追加することもできます。 たとえば、web サーバー VIP 用のロードバランサーオブジェクトと、送信 NAT を提供する別のロードバランサーオブジェクトがあるとします。
@@ -221,7 +217,7 @@ SLB を構成して、次の操作を実行します。
    ``` 
 
 
-## <a name="example-use-the-software-load-balancer-for-forwarding-traffic"></a>例:トラフィックの転送にソフトウェア Load Balancer を使用する
+## <a name="example-use-the-software-load-balancer-for-forwarding-traffic"></a>例: トラフィックの転送にソフトウェア Load Balancer を使用する
 個々のポートを定義せずに仮想ネットワーク上の単一のネットワークインターフェイスに仮想 IP をマップする必要がある場合は、L3 転送ルールを作成できます。  このルールは、PublicIPAddress オブジェクトに含まれる割り当て済み VIP を使用して、VM との間のすべてのトラフィックを転送します。
 
 VIP と DIP を同じサブネットとして定義した場合、これは NAT を使用せずに L3 転送を実行するのと同じです。
@@ -248,7 +244,7 @@ VIP と DIP を同じサブネットとして定義した場合、これは NAT 
    New-NetworkControllerNetworkInterface -ConnectionUri $uri -ResourceId $nic.ResourceId -Properties $nic.properties -PassInnerException
    ```
 
-## <a name="example-use-the-software-load-balancer-for-forwarding-traffic-with-a-dynamically-allocated-vip"></a>例:動的に割り当てられた VIP でトラフィックを転送するためにソフトウェア Load Balancer を使用する
+## <a name="example-use-the-software-load-balancer-for-forwarding-traffic-with-a-dynamically-allocated-vip"></a>例: 動的に割り当てられた VIP でトラフィックを転送するためにソフトウェア Load Balancer を使用する
 この例では、前の例と同じ操作を繰り返しますが、特定の IP アドレスを指定するのではなく、ロードバランサーの利用可能な vip プールから VIP を自動的に割り当てます。 
 
 1. VIP を格納するパブリック IP オブジェクトを作成します。
@@ -287,7 +283,7 @@ VIP と DIP を同じサブネットとして定義した場合、これは NAT 
    $nic.properties.IpConfigurations[0].Properties.PublicIPAddress = $publicIP
    New-NetworkControllerNetworkInterface -ConnectionUri $uri -ResourceId $nic.ResourceId -Properties $nic.properties -PassInnerException
    ```
-   ## <a name="example-remove-a-publicip-address-that-is-being-used-for-forwarding-traffic-and-return-it-to-the-vip-pool"></a>例:トラフィックの転送に使用されているパブリック Ip アドレスを削除して、VIP プールに戻します。
+   ## <a name="example-remove-a-publicip-address-that-is-being-used-for-forwarding-traffic-and-return-it-to-the-vip-pool"></a>例: トラフィックの転送に使用されているパブリック Ip アドレスを削除し、それを VIP プールに返す
    この例では、前の例で作成した PublicIPAddress リソースを削除します。  PublicIPAddress が削除されると、PublicIPAddress への参照がネットワークインターフェイスから自動的に削除され、トラフィックが転送されなくなり、再利用のために IP アドレスがパブリック VIP プールに返されます。  
 
 4. パブリック Ip を削除する

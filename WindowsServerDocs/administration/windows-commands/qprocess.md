@@ -1,38 +1,34 @@
 ---
 title: qprocess
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Qprocess コマンドの参照記事。リモートデスクトップセッションホストサーバーで実行されているプロセスに関する情報が表示されます。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 9825cb01-11e0-4cd1-8142-57910e2f4056
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 51693f81e8e394df02bf35f1a6d91ed06b98e4bb
-ms.sourcegitcommit: c9d856c22b42d2a4fb8fe6acc6c5b6be673647f2
+ms.openlocfilehash: 2c7c62c4beb3d501fc6ff4926a054e2ae0bad043
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72165046"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934378"
 ---
 # <a name="qprocess"></a>qprocess
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-リモート デスクトップ セッション ホスト (RD セッション ホスト) サーバーで実行されているプロセスに関する情報を表示します。
+リモートデスクトップセッションホストサーバーで実行されているプロセスに関する情報を表示します。 最新バージョンの新機能については、「 [Windows Server でのリモートデスクトップサービスの新](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn283323(v=ws.11))機能」を参照してください。
 
 > [!NOTE]
-> Windows Server 2008 R2 で、「ターミナル サービス」は「リモート デスクトップ サービス」に名前変更されました。 最新バージョンの新機能については、Windows Server TechNet ライブラリの[Windows Server 2012 のリモートデスクトップサービスの新機能](https://technet.microsoft.com/library/hh831527) を参照してください。
-
-## <a name="remarks"></a>コメント
-このコマンドと同じ、 **クエリ プロセス** コマンドです。
+> このコマンドは、 [query process コマンド](query-process.md)と同じです。
 
 ## <a name="additional-references"></a>その他の参照情報
-[query process](query-process.md)  
-[コマンド ライン構文の記号](command-line-syntax-key.md)  
-[リモートデスクトップサービス&#40;ターミナルサービス&#41;のコマンドリファレンス](remote-desktop-services-terminal-services-command-reference.md)  
+
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [クエリ処理コマンド](query-process.md)
+
+- [リモート デスクトップ サービス (ターミナル サービス) のコマンド リファレンス](remote-desktop-services-terminal-services-command-reference.md)

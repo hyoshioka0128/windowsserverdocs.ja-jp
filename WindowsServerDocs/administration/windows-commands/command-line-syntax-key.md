@@ -1,36 +1,30 @@
 ---
-title: コマンド ライン構文の記号
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+title: コマンドライン構文のキー
+description: コマンドライン構文キーのリファレンス記事。コマンドライン構文を示すために使用される表記法について説明します。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 338c0381-ad63-4a4c-bd2c-42c7a93821fe
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b4f8d1e492ee14c3f94c1de00812edcf60c52991
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7beaab6b6ac05f8e440276424d2cbdb81ddc73b4
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71379234"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929727"
 ---
-# <a name="command-line-syntax-key"></a>コマンド ライン構文の記号
+# <a name="command-line-syntax-key"></a>コマンドライン構文のキー
 
+次の表に、コマンド ライン構文を示すために使用される表記規則の説明を示します。
 
-
-次の表では、コマンドライン構文を示すために使用される表記法について説明します。
-
-|表し|説明|
-|--------|-----------|
-|角かっこまたは中かっこを含まないテキスト|表示されるように入力する必要がある項目|
-|\<山かっこ内のテキスト >|値を指定する必要があるプレースホルダー|
-|[角かっこ内のテキスト]|省略可能な項目|
-|{中かっこ内のテキスト}|必須項目のセット1つ選択する|
-|縦棒 (\|)|相互に排他的な項目の区切り記号1つ選択する|
-|省略記号 (...)|繰り返し可能な項目|
+| Notation | 説明 |
+| -------- | ----------- |
+| 角かっこ ([ ]) または中かっこ ({ }) がないテキスト | 表示されているとおりに入力する必要がある項目。 |
+| `<Text inside angle brackets>` | 値を指定する必要があるプレースホルダー。 |
+| `[Text inside square brackets]` | オプションの項目。 |
+| `{Text inside braces}` | 必須項目のセット。 1つを選択する必要があります。 |
+| 縦棒`(|)`| 相互に排他的な項目の区切り記号。 1つを選択する必要があります。 |
+| 省略記号`(…)` | 繰り返して複数回使用できる項目。 |

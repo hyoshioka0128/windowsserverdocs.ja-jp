@@ -1,34 +1,30 @@
 ---
 title: 管理者のための Windows デスクトップ クライアント
 description: Windows デスクトップ クライアントの情報は、主に管理者に役立ちます。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
-ms.tgt_pltfrm: na
 ms.topic: article
 author: heidilohr
-manager: daveba
+manager: lizross
 ms.author: helohr
 ms.date: 09/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: b3fc8be8ad53213c41c6683d3cfc9233198d50e3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 202b39c33896f6b5e570c8abcf630dad436466c3
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404106"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "80861425"
 ---
 # <a name="windows-desktop-client-for-admins"></a>管理者のための Windows デスクトップ クライアント
 
->適用対象:Windows 10 および Windows 7
+>適用先:Windows 10 および Windows 7
 
 このトピックでは、管理者にとって役に立つ Windows デスクトップ クライアントに関する追加情報を示します。 基本的な使用方法については、「[Windows デスクトップ クライアントの概要](windowsdesktop.md)」を参照してください。
 
 ## <a name="installation-options"></a>インストール オプション
 
-ユーザーはダウンロード後にクライアントを直接インストールできますが、管理者が複数のデバイスに展開する場合は、他の方法でデバイスにクライアントを展開することもできます。 グループ ポリシーまたは System Center Configuration Manager を使用して展開すると、コマンド ラインを使用してインストーラーをサイレント モードで実行できます。 デバイスごとまたはユーザーごとにクライアントを展開するには、次のコマンドを実行します。
+ユーザーはダウンロード後にクライアントを直接インストールできますが、管理者が複数のデバイスに展開する場合は、他の方法でデバイスにクライアントを展開することもできます。 グループ ポリシーまたは Microsoft Endpoint Configuration Manager を使用して展開すると、コマンド ラインを使用してインストーラーをサイレント モードで実行できます。 デバイスごとまたはユーザーごとにクライアントを展開するには、次のコマンドを実行します。
 
 ### <a name="per-device-installation"></a>デバイスごとのインストール
 

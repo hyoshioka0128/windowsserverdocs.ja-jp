@@ -1,27 +1,23 @@
 ---
 title: SDN の RAS ゲートウェイ
 description: このトピックでは、Windows Server 2016 のソフトウェアベース、マルチテナント、Border Gateway Protocol (BGP) 対応ルーターである RAS ゲートウェイについて説明します。
-manager: brianlic
-ms.custom: na
+manager: grcusanz
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-sdn
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a32357a5-ab1a-4a4c-848a-7a4ed65b1921
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 20fc19dc31ee612de0a736bfe989f930a9afa202
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: anpaul
+author: AnirbanPaul
+ms.openlocfilehash: 3059da769e8ab5719be657c82d3f075a686f6691
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405871"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859595"
 ---
 # <a name="ras-gateway-for-sdn"></a>SDN の RAS ゲートウェイ
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016 # # SDN 用 RAS ゲートウェイ  
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016 # # SDN 用 RAS ゲートウェイ  
 
 
 RAS ゲートウェイは、クラウドサービスプロバイダー (Csp) および Hyper-v ネットワーク仮想化を使用して複数のテナント仮想ネットワークをホストする企業向けに設計された、ソフトウェアベースのマルチテナントの Border Gateway Protocol (BGP) 対応ルーターです。 RAS ゲートウェイは、場所に関係なく、物理ネットワークと VM ネットワークリソース間のネットワークトラフィックをルーティングします。 ネットワークトラフィックは、同じ物理的な場所またはさまざまな場所でルーティングできます。   

@@ -1,34 +1,38 @@
 # <a name="windows-server-documentation"></a>Windows Server のドキュメント
 
-Microsoft Windows Server のオープン ソースのドキュメントへようこそ。 オープン ソースに貢献するが提供する以上の更新プログラムは、問題があるときに連絡を知らせることですが。
+Microsoft Windows Server のオープンソースドキュメントへようこそ。 オープン ソースの共同作成とは、ドキュメントを更新する行為のみを指すものではありません。問題を見つけたときに Microsoft に連絡することも含まれます。
 
-## <a name="public-vs-private-repo-contributions"></a>パブリックとプライベート リポジトリの投稿
+## <a name="public-vs-private-repo-contributions"></a>パブリックリポジトリとプライベートリポジトリの投稿
 
-Windows Server の技術的なコンテンツを保持する 2 つの別々 の場所があります。 パブリックの場所のいずれか (windowsserverdocs)、もう一方はプライベート (windowsserverdocs pr)。 ユーザーに協力する位置を決定します。
+Windows Server の技術コンテンツを保持する場所は2つあります。 一方の場所はパブリック (windowsserverdocs) で、もう一方はプライベート (windowsserverdocs-pr) です。 だれがどの場所に投稿するかを決定します。
 
-- **Microsoft の従業員わかりません。** Microsoft 以外の従業員としては、パブリックな場所に協力する必要があります。 その方法については、次を参照してください。、 [Windows Server 技術ドキュメントに貢献する](https://github.com/MicrosoftDocs/windowsserverdocs/blob/master/CONTRIBUTING.md)記事。
+- **Microsoft の従業員ではありません。** マイクロソフト以外の従業員は、公共の場所に投稿する必要があります。 その方法については、 [Windows Server のテクニカルドキュメントに](https://github.com/MicrosoftDocs/windowsserverdocs/blob/master/CONTRIBUTING.md)関する記事を参照してください。
 
-- **私はマイクロソフトの従業員です。** マイクロソフトの従業員としてを実行しているに基づいてのオプションがあります。
+- **私は Microsoft の従業員です。** Microsoft の従業員は、何をしようとしているかに応じて、オプションがあります。
 
-    - **新しい記事を作成します。** 新しい記事を作成するには、作成する必要があり、GitHub アカウントとツールを設定すると、フォークと複製 windowsserverdocs pr リポジトリでは、独自のリモート ブランチを設定、アーティクルを作成および最後に、新しいプル要求の承認および発行を作成します。 これらの手順については、次を参照してください。、 [GitHub および Visual Studio Code を使用して新しい Windows Server の記事を作成](https://github.com/MicrosoftDocs/windowsserverdocs/blob/master/Contributor-guide/create-new-using-github.md)記事。
+    - **新しい記事を作成します。** 新しい記事を作成するには、GitHub アカウントとツールを作成して設定し、windowsserverdocs-pr リポジトリをフォークして複製し、リモートブランチを設定して、記事を作成し、最後に承認と発行のための新しいプル要求を作成する必要があります。 これらの手順については、GitHub を使用した[新しい Windows Server の作成に関する記事と Visual Studio Code](https://github.com/MicrosoftDocs/windowsserverdocs/blob/master/Contributor-guide/create-new-using-github.md)に関する記事をご覧ください。
 
-    - **既存のアーティクルに大きな変化を作成します。** 既存の記事に大幅な変更するには、手順を利用できる、 [GitHub および Visual Studio Code を使用して、既存の Windows Server の記事を編集](https://github.com/MicrosoftDocs/windowsserverdocs/blob/master/Contributor-guide/edit-existing-using-github.md)記事。
+    - **既存の記事に大きな変更を加えます。** 既存の記事に大幅な変更を加えるには、GitHub を使用した[既存の Windows Server の編集に関する記事と Visual Studio Code](https://github.com/MicrosoftDocs/windowsserverdocs/blob/master/Contributor-guide/edit-existing-using-github.md)の記事の手順に従ってください。
 
-    - **既存の記事に軽微な変更を行います。** 既存の記事に軽微な変更するには、手順を利用できる、 [web ブラウザーと GitHub を使用して既存の Windows Server の記事を更新](https://github.com/MicrosoftDocs/windowsserverdocs/blob/master/Contributor-guide/github-browser-updates.md)記事。
+    - **既存のアーティクルに対して軽微な変更を行います。** 既存の記事に軽微な変更を加えるには、 [web ブラウザーと GitHub を使用した既存の Windows Server の更新に関する](https://github.com/MicrosoftDocs/windowsserverdocs/blob/master/Contributor-guide/github-browser-updates.md)記事に記載されている手順に従ってください。
 
-## <a name="windowsserverdocs-pr-private-and-windowsserverdocs-public"></a>WindowsServerDocs pr (プライベート) と windowsserverdocs (パブリック)
+## <a name="windowsserverdocs-pr-private-and-windowsserverdocs-public"></a>WindowsServerDocs-pr (プライベート) および windowsserverdocs (パブリック)
 
-これらのリポジトリを選択し、積極的に管理されてソースに公開されている Windows Server のコンテンツが含まれています[docs.microsoft.com](https://docs.microsoft.com):
+これらのリポジトリは、 [docs.microsoft.com](https://docs.microsoft.com)に公開されている Windows Server コンテンツのソースを含む、アクティブに管理されています。
 
-- [Windows Server ホーム ページ](https://docs.microsoft.com/windows-server/)
+- [Windows Server ホームページ](https://docs.microsoft.com/windows-server/)
 - [Windows Server 2019](https://docs.microsoft.com/windows-server/get-started-19/get-started-19)
 - [Windows Server 2016](https://docs.microsoft.com/windows-server/get-started/server-basics)
-- [Essentials Server 2016 および Essentials Server 2019](https://docs.microsoft.com/windows-server-essentials/get-started/get-started)
+- [Essentials サーバー2016および Essentials サーバー2019](https://docs.microsoft.com/windows-server-essentials/get-started/get-started)
+
+## <a name="markdown-info"></a>Markdown 情報
+
+Docs.microsoft.com で Markdown を使用する方法の詳細については、「 [Docs Markdown reference](https://review.docs.microsoft.com/help/contribute/markdown-reference?branch=master)」を参照してください。 このコンテンツのパブリックにアクセスできるバージョンは次のとおりです。[パブリック Docs markdown リファレンス](https://docs.microsoft.com/contribute/markdown-reference)。
 
 ## <a name="license"></a>ライセンス
 
-参照してください[ライセンス](https://github.com/MicrosoftDocs/windowsserverdocs-pr/blob/master/LICENSE)、[ライセンス コード](https://github.com/MicrosoftDocs/windowsserverdocs-pr/blob/master/LICENSE-CODE)と[ThirdPartyNotices](https://github.com/MicrosoftDocs/windowsserverdocs-pr/blob/master/ThirdPartyNotices)のすべてのライセンス情報です。
+ライセンス情報については、[LICENSE](https://github.com/MicrosoftDocs/windowsserverdocs-pr/blob/master/LICENSE)、[LICENSE-CODE](https://github.com/MicrosoftDocs/windowsserverdocs-pr/blob/master/LICENSE-CODE)、[ThirdPartyNotices](https://github.com/MicrosoftDocs/windowsserverdocs-pr/blob/master/ThirdPartyNotices) を参照してください。
 
 ## <a name="code-of-conduct"></a>倫理規定
 
-このプロジェクトを採用しています、 [Microsoft オープン ソース倫理規定](https://opensource.microsoft.com/codeofconduct/)します。 詳細については、次を参照してください。、 [FAQ の実施コード](https://opensource.microsoft.com/codeofconduct/faq/)にお問い合わせくださいまたは[ opencode@microsoft.com ](mailto:opencode@microsoft.com)その他の質問またはコメント。
+このプロジェクトでは、[Microsoft オープン ソースの倫理規定](https://opensource.microsoft.com/codeofconduct/)を採用しています。 詳細については、[倫理規定についてよくある質問](https://opensource.microsoft.com/codeofconduct/faq/)を参照するか、[opencode@microsoft.com](mailto:opencode@microsoft.com) 宛てに質問またはコメントをお送りください。

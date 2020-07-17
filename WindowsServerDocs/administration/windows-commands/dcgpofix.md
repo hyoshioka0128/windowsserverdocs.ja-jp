@@ -1,62 +1,56 @@
 ---
 title: dcgpofix
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: ドメインの既定のグループポリシーオブジェクト (Gpo) を再作成する、dcgpofix コマンドの参照記事です。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 81d5fa65-2aea-49d3-b353-357441846c00
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2592210ae688f47dcf2d32c7bef560d52223141c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: cf9e3c37c054c34d602e472a2c5f83e9a8b284b9
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71378763"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928806"
 ---
 # <a name="dcgpofix"></a>dcgpofix
 
+ドメインの既定のグループポリシーオブジェクト (Gpo) を再作成します。 グループポリシー管理コンソール (GPMC) にアクセスするには、サーバーマネージャーを通じてグループポリシー管理を機能としてインストールする必要があります。
 
-
-ドメインの既定のグループポリシーオブジェクト (Gpo) を再作成します。 このコマンドの使用方法の例については、次を参照してください。 [例](#BKMK_Examples)します。
+>[!IMPORTANT]
+> ベストプラクティスとして、既定のドメインポリシー GPO は、既定の**アカウントポリシー**設定、パスワードポリシー、アカウントロックアウトポリシー、および Kerberos ポリシーを管理するためにのみ構成することをお勧めします。 また、[既定のドメインコントローラーポリシー] GPO は、ユーザー権利と監査ポリシーを設定するためにのみ構成する必要があります。
 
 ## <a name="syntax"></a>構文
 
 ```
-DCGPOFix [/ignoreschema] [/target: {Domain | DC | Both}] [/?]
+dcgpofix [/ignoreschema] [/target: {domain | dc | both}] [/?]
 ```
 
 ### <a name="parameters"></a>パラメーター
 
-|    パラメーター    |                                                                                                 説明                                                                                                 |
-|-----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|  /ignoreschema  | スキーマ mc® Active Directory のバージョンを無視します。</br>次のコマンドを実行します。 それ以外の場合、コマンドは、コマンドが配布された Windows バージョンと同じスキーマバージョンでのみ機能します。 |
-| /target {ドメイン |                                                                                                     DC                                                                                                      |
-|       /?        |                                                                                    コマンド プロンプトでヘルプを表示します。                                                                                     |
+| パラメーター | 説明 |
+| --------- | ----------- |
+| /ignoreschema | では、このコマンドを実行すると、Active Directory スキーマのバージョンは無視されます。 それ以外の場合、コマンドは、コマンドが配布された Windows バージョンと同じスキーマバージョンでのみ機能します。 |
+| `/target {domain | dc | both` | 既定のドメインポリシー、既定のドメインコントローラーポリシー、または両方の種類のポリシーを対象にするかどうかを指定します。 |
+| /? | コマンド プロンプトでヘルプを表示します。 |
 
-## <a name="remarks"></a>コメント
+## <a name="examples"></a>例
 
--   **Dcgpofix**コマンドは、windows Server 2008 R2 および windows server 2008 で使用できます。ただし、server Core インストールは除きます。
--   グループポリシー管理コンソール (GPMC) は Windows Server 2008 R2 および Windows Server 2008 と共に配布されますが、サーバーマネージャーを通じてグループポリシー管理を機能としてインストールする必要があります。
+既定の**アカウントポリシー**設定、パスワードポリシー、アカウントロックアウトポリシー、および Kerberos ポリシーを管理するには、Active Directory スキーマのバージョンを無視するには、次のように入力します。
 
-## <a name="BKMK_Examples"></a>例
-
-既定のドメインポリシー GPO を元の状態に復元します。 この GPO に対して行った変更はすべて失われます。 ベストプラクティスとして、既定のドメインポリシー GPO は、既定のアカウントポリシー設定、パスワードポリシー、アカウントロックアウトポリシー、および Kerberos ポリシーを管理するためにのみ構成することをお勧めします。 この例では、Active Directory スキーマのバージョンを無視します。そのため、コマンドが配布された Windows バージョンと同じスキーマに、 **dcgpofix**コマンドが制限されることはありません。
 ```
-dcgpofix /ignoreschema /target:Domain
-```
-既定のドメインコントローラーポリシー GPO を元の状態に復元します。 この GPO に対して行った変更はすべて失われます。 ベストプラクティスとして、既定のドメインコントローラーポリシー GPO は、ユーザー権利と監査ポリシーを設定するためにのみ構成することをお勧めします。 この例では、Active Directory スキーマのバージョンを無視します。そのため、コマンドが配布された Windows バージョンと同じスキーマに、 **dcgpofix**コマンドが制限されることはありません。
-```
-dcgpofix /ignoreschema /target:DC
+dcgpofix /ignoreschema /target:domain
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+ユーザー権利と監査ポリシーを設定するためだけに既定のドメインコントローラーポリシー GPO を構成するには、Active Directory スキーマのバージョンを無視するには、次のように入力します。
 
--   [グループポリシー TechCenter](https://go.microsoft.com/fwlink/?LinkID=145531)
--   [コマンド ライン構文の記号](command-line-syntax-key.md)
+```
+dcgpofix /ignoreschema /target:dc
+```
+
+## <a name="additional-references"></a>その他の参照情報
+
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

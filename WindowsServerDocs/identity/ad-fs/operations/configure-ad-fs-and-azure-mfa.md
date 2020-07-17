@@ -1,7 +1,6 @@
 ---
 ms.assetid: 24c4b9bb-928a-4118-acf1-5eb06c6b08e5
 title: AD FS 2016 と Azure MFA を構成する
-description: ''
 ms.author: billmath
 author: billmath
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 01/28/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: d00092ee2cd4e6cc74d48e08ad5c316c2b309ab4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d519b47d048068ad53e4f11a6b64621ab5f232b1
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357872"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855315"
 ---
 # <a name="configure-azure-mfa-as-authentication-provider-with-ad-fs"></a>AD FS を使用して Azure MFA を認証プロバイダーとして構成する
 
@@ -25,10 +24,10 @@ Windows Server 2012 R2 の AD FS とは異なり、AD FS 2016 Azure MFA アダ�
 
 ## <a name="registering-users-for-azure-mfa-with-ad-fs"></a>AD FS を使用した Azure MFA へのユーザーの登録
 
-AD FS では&#34;、インライン&#34;での証明をサポートしたり、電話番号やモバイルアプリなどの Azure MFA セキュリティ検証情報を登録したりすることはできません。 つまり、ユーザーは、Azure MFA を使用[https://account.activedirectory.windowsazure.com/Proofup.aspx](https://account.activedirectory.windowsazure.com/Proofup.aspx)して AD FS アプリケーションに対して認証を行う前に、にアクセスして校正を取得する必要があります。 Azure AD にまだ校正していないユーザーが AD FS で Azure MFA による認証を試行した場合、AD FS エラーが発生します。  AD FS の管理者は、このエラーエクスペリエンスをカスタマイズして、ユーザーを proofup ページに導くことができます。  これを行うには、[AD FS] ページ内のエラーメッセージ文字列を検出し、ユーザーにアクセス[https://aka.ms/mfasetup](https://aka.ms/mfasetup)するための新しいメッセージを表示してから、認証を再試行します。 詳細については、この記事の「ユーザーが MFA の検証方法を登録できるように、AD FS web ページをカスタマイズする」を参照してください。
+AD FS では&#34;、インライン&#34;での証明をサポートしたり、電話番号やモバイルアプリなどの Azure MFA セキュリティ検証情報を登録したりすることはできません。 つまり、ユーザーは、Azure MFA を使用して AD FS アプリケーションに対して認証する前に、 [https://account.activedirectory.windowsazure.com/Proofup.aspx](https://account.activedirectory.windowsazure.com/Proofup.aspx)にアクセスして校正を取得する必要があります。 Azure AD にまだ校正していないユーザーが AD FS で Azure MFA による認証を試行した場合、AD FS エラーが発生します。  AD FS の管理者は、このエラーエクスペリエンスをカスタマイズして、ユーザーを proofup ページに導くことができます。  これを行うには、[AD FS] ページ内のエラーメッセージ文字列を検出し、ユーザーに[https://aka.ms/mfasetup](https://aka.ms/mfasetup)アクセスして認証を再実行するように指示する新しいメッセージを表示します。 詳細については、この記事の「ユーザーが MFA の検証方法を登録できるように、AD FS web ページをカスタマイズする」を参照してください。
 
 >[!NOTE]
-> 以前は、ユーザーは、登録のために MFA で認証[https://account.activedirectory.windowsazure.com/Proofup.aspx](https://account.activedirectory.windowsazure.com/Proofup.aspx)する必要がありました[https://aka.ms/mfasetup](https://aka.ms/mfasetup)(ショートカットを使用するなど)。  これで、MFA 検証情報をまだ登録していない AD FS ユーザーは&#34;、プライマリ認証 (Windows 統合[https://aka.ms/mfasetup](https://aka.ms/mfasetup)認証、ユーザー名、パスワードなど) のみを使用してショートカットを使用して Azure AD s proofup ページにアクセスできるようになりました。FS web ページ)。  ユーザーに検証方法が構成されていない場合、Azure AD によってインライン登録が実行&#34;され、ユーザーが追加のセキュリティ確認&#34;のためにこのアカウントを設定する必要があることを示すメッセージが管理者によって表示されます。今すぐ設定&#34;するには、&#34;ここを選択します。
+> 以前は、ユーザーは、登録のために MFA で認証する必要がありました (たとえば、ショートカット[https://aka.ms/mfasetup](https://aka.ms/mfasetup)を使用して、 [https://account.activedirectory.windowsazure.com/Proofup.aspx](https://account.activedirectory.windowsazure.com/Proofup.aspx)にアクセスしています)。  これで、MFA の検証情報をまだ登録していない AD FS ユーザー&#34;は、ショートカット[https://aka.ms/mfasetup](https://aka.ms/mfasetup) (Windows 統合認証、ユーザー名とパスワードなど、AD FS web ページを介して) Azure AD s proofup ページにアクセスできるようになりました。  ユーザーに検証方法が構成されていない場合、Azure AD はインライン登録を実行します&#34;&#34;&#34;。これにより、管理者は、追加のセキュリティ確認のためにこのアカウントを設定する必要&#34;があるというメッセージが表示されます。その後、ユーザーはこれを選択して設定できます。
 > 少なくとも1つの MFA 検証方法が既に構成されているユーザーは、proofup ページにアクセスするときに MFA を提供するように求められます。
 
 ## <a name="recommended-deployment-topologies"></a>推奨される展開トポロジ
@@ -44,7 +43,7 @@ AD FS で Azure MFA をプライマリ認証として使用するには、いく
 
 これを行うには、オンプレミスで MFA を実行するように Azure AD ドメイン&#34;設定を構成&#34;します (supportsmfa を $True に設定します)。  この構成では、必要な条件付きアクセスのシナリオに対して&#34;追加の&#34;認証または真の MFA を実行するために、Azure AD によって AD FS が求められます。  
 
-前述のように、まだ登録していない (MFA 検証情報を構成した) AD FS ユーザーは、カスタマイズされた AD FS [https://aka.ms/mfasetup](https://aka.ms/mfasetup)のエラーページを使用して、確認情報を構成してから AD FS ログインを再試行するように求められます。  
+前述のように、まだ登録していない (MFA 検証情報を構成した) AD FS ユーザーは、カスタマイズされた AD FS のエラーページを通じて、 [https://aka.ms/mfasetup](https://aka.ms/mfasetup)にアクセスして確認情報を構成してから AD FS ログインを再試行するように求めるメッセージを表示する必要があります。  
 Azure MFA をプライマリとして扱うのは1つの要素であるため、初期構成の後、ユーザーは、Azure AD での確認情報の管理や更新、または MFA を必要とする他のリソースへのアクセスについて、追加の要素を提供する必要があります。
 
 >[!NOTE]
@@ -56,9 +55,9 @@ Set-AdfsClaimsProviderTrust -AnchorClaimType "http://schemas.xmlsoap.org/ws/2005
 
 ### <a name="azure-mfa-as-additional-authentication-to-office-365"></a>Office 365 に対する追加認証としての Azure MFA
 
-以前は、Office 365 または他の証明書利用者の AD FS で、Azure MFA を追加の認証方法として使用する場合は、複合 MFA を実行するように Azure AD を構成することをお勧めします。これは AD FS でプライマリ認証がオンプレミスで実行され、MFA が tr です。Azure AD によってピアリングされます。 これで、ドメインの SupportsMfa 設定が $True に設定されている場合に AD FS での追加認証として Azure MFA を使用できるようになりました。  
+以前は、Office 365 またはその他の証明書利用者に対して AD FS の追加の認証方法として Azure MFA を使用する場合は、複合 MFA を実行するように Azure AD を構成し、AD FS でプライマリ認証がオンプレミスで実行され、MFA が Azure AD によってトリガーされるようにすることが最善の方法でした。 これで、ドメインの SupportsMfa 設定が $True に設定されている場合に AD FS での追加認証として Azure MFA を使用できるようになりました。  
 
-前述のように、まだ登録していない (MFA 検証情報を構成した) AD FS ユーザーは、カスタマイズされた AD FS [https://aka.ms/mfasetup](https://aka.ms/mfasetup)のエラーページを使用して、確認情報を構成してから AD FS ログインを再試行するように求められます。  
+前述のように、まだ登録していない (MFA 検証情報を構成した) AD FS ユーザーは、カスタマイズされた AD FS のエラーページを通じて、 [https://aka.ms/mfasetup](https://aka.ms/mfasetup)にアクセスして確認情報を構成してから AD FS ログインを再試行するように求めるメッセージを表示する必要があります。  
 
 ## <a name="pre-requisites"></a>前提条件
 
@@ -78,8 +77,8 @@ AD FS での認証に Azure MFA を使用する場合は、次の前提条件が
 - オンプレミス環境は[Azure AD とフェデレーションされます。](https://azure.microsoft.com/documentation/articles/active-directory-aadconnect-get-started-custom/#configuring-federation-with-ad-fs)  
 - Windows [PowerShell 用 windows Azure Active Directory モジュール](https://docs.microsoft.com/powershell/module/Azuread/?view=azureadps-2.0)。  
 - Azure AD PowerShell を使用して構成する Azure AD インスタンスのグローバル管理者のアクセス許可。  
-- Azure MFA の AD FS ファームを構成するためのエンタープライズ管理者の資格情報。  
-  
+- Azure MFA の AD FS ファームを構成するためのエンタープライズ管理者の資格情報。
+
 ## <a name="configure-the-ad-fs-servers"></a>AD FS サーバーを構成する
 
 AD FS のために Azure MFA の構成を完了するには、説明されている手順を使用して各 AD FS サーバーを構成する必要があります。 
@@ -87,7 +86,7 @@ AD FS のために Azure MFA の構成を完了するには、説明されてい
 >[!NOTE]
 >ファーム内の**すべて**の AD FS サーバーでこれらの手順が実行されていることを確認します。 ファーム内に複数の AD FS サーバーがある場合は Azure AD PowerShell を使用して必要な構成をリモートで実行できます。  
 
-### <a name="step-1-generate-a-certificate-for-azure-mfa-on-each-ad-fs-server-using-the-new-adfsazuremfatenantcertificate-cmdlet"></a>手順 1:コマンドレットを使用して、 `New-AdfsAzureMfaTenantCertificate`各 AD FS サーバーに Azure MFA の証明書を生成する
+### <a name="step-1-generate-a-certificate-for-azure-mfa-on-each-ad-fs-server-using-the-new-adfsazuremfatenantcertificate-cmdlet"></a>手順 1: `New-AdfsAzureMfaTenantCertificate` コマンドレットを使用して、各 AD FS サーバーで Azure MFA の証明書を生成する
 
 まず、Azure MFA で使用する証明書を生成する必要があります。  これは、PowerShell を使用して行うことができます。  生成された証明書は、ローカルコンピューターの証明書ストアにあり、Azure AD ディレクトリの TenantID を含むサブジェクト名でマークされます。
 
@@ -98,12 +97,12 @@ TenantID は Azure AD 内のディレクトリの名前であることに注意�
 
 ![AD FS と MFA](media/Configure-AD-FS-2016-and-Azure-MFA/ADFS_AzureMFA1.PNG)  
   
-### <a name="step-2-add-the-new-credentials-to-the-azure-multi-factor-auth-client-service-principal"></a>手順 2:Azure Multi-factor Auth クライアントのサービスプリンシパルに新しい資格情報を追加する
+### <a name="step-2-add-the-new-credentials-to-the-azure-multi-factor-auth-client-service-principal"></a>手順 2: Azure Multi-factor Auth クライアントのサービスプリンシパルに新しい資格情報を追加する
 
-AD FS サーバーが Azure Multi-factor Auth クライアントと通信できるようにするには、Azure Multi-factor Auth クライアントのサービスプリンシパルに資格情報を追加する必要があります。 `New-AdfsAzureMFaTenantCertificate`コマンドレットを使用して生成された証明書は、これらの資格情報として機能します。 PowerShell を使用して次の操作を実行し、Azure Multi-factor Auth クライアントのサービスプリンシパルに新しい資格情報を追加します。  
+AD FS サーバーが Azure Multi-factor Auth クライアントと通信できるようにするには、Azure Multi-factor Auth クライアントのサービスプリンシパルに資格情報を追加する必要があります。 `New-AdfsAzureMFaTenantCertificate` コマンドレットを使用して生成された証明書は、これらの資格情報として機能します。 PowerShell を使用して次の操作を実行し、Azure Multi-factor Auth クライアントのサービスプリンシパルに新しい資格情報を追加します。  
 
 > [!NOTE]
-> この手順を完了するには、を使用して`Connect-MsolService`PowerShell を使用して Azure AD のインスタンスに接続する必要があります。  これらの手順では、既に PowerShell を使用して接続していることを前提とします  詳細については、を参照[ `Connect-MsolService`してください。](https://msdn.microsoft.com/library/dn194123.aspx)  
+> この手順を完了するには、`Connect-MsolService`を使用して、PowerShell を使用して Azure AD のインスタンスに接続する必要があります。  これらの手順では、既に PowerShell を使用して接続していることを前提とします  詳細については、「`Connect-MsolService`」を参照してください[。](https://msdn.microsoft.com/library/dn194123.aspx)  
 
 **Azure Multi-factor Auth クライアントに対する新しい資格情報として証明書を設定する**  
 
@@ -117,25 +116,40 @@ AD FS サーバーが Azure Multi-factor Auth クライアントと通信でき�
   
 ## <a name="configure-the-ad-fs-farm"></a>AD FS ファームの構成  
   
-各 AD FS サーバーで前のセクションを完了したら、 `Set-AdfsAzureMfaTenant`コマンドレットを実行する必要があります。  
-  
-このコマンドレットは、AD FS ファームに対して1回だけ実行する必要があります。  PowerShell を使用してこの手順を完了します。
-  
-> [!NOTE]  
-> これらの変更を反映するには、ファーム内の各サーバーで AD FS サービスを再起動する必要があります。  
-  
-    Set-AdfsAzureMfaTenant -TenantId <tenant ID> -ClientId 981f26a1-7f43-403b-a875-f8b09b8cd720  
+各 AD FS サーバーで前のセクションを完了したら、 [AdfsAzureMfaTenant](https://docs.microsoft.com/powershell/module/adfs/export-adfsauthenticationproviderconfigurationdata)コマンドレットを使用して Azure テナント情報を設定します。 このコマンドレットは、AD FS ファームに対して1回だけ実行する必要があります。
 
-![AD FS と MFA](media/Configure-AD-FS-2016-and-Azure-MFA/ADFS_AzureMFA5.png)  
-  
-その後、Azure MFA は、イントラネットおよびエクストラネットで使用するための主要な認証方法として使用できることがわかります。    
-  
+PowerShell プロンプトを開き、 [AdfsAzureMfaTenant](https://docs.microsoft.com/powershell/module/adfs/export-adfsauthenticationproviderconfigurationdata)コマンドレットを使用して独自の*tenantId*を入力します。 Microsoft Azure Government cloud を使用しているお客様の場合は、`-Environment USGov` パラメーターを追加します。
+
+> [!NOTE]
+> これらの変更を反映するには、ファーム内の各サーバーで AD FS サービスを再起動する必要があります。 影響を最小限に抑えるには、各 AD FS サーバーを1つずつ NLB ローテーションから取り出し、すべての接続がドレインされるのを待ちます。
+
+```powershell
+Set-AdfsAzureMfaTenant -TenantId <tenant ID> -ClientId 981f26a1-7f43-403b-a875-f8b09b8cd720
+```
+
+![AD FS と MFA](media/Configure-AD-FS-2016-and-Azure-MFA/ADFS_AzureMFA5.png)
+
+最新の Service Pack のない Windows Server では、 [AdfsAzureMfaTenant](https://docs.microsoft.com/powershell/module/adfs/export-adfsauthenticationproviderconfigurationdata)コマンドレットの `-Environment` パラメーターはサポートされていません。 Azure Government cloud を使用していて、前の手順で `-Environment` パラメーターが指定されていないために Azure テナントを構成できなかった場合は、次の手順を実行してレジストリエントリを手動で作成します。 前のコマンドレットでテナント情報が正しく登録されているか、Azure Government クラウドに登録されていない場合は、この手順をスキップします。
+
+1. AD FS サーバーで**レジストリエディター**を開きます。
+1. `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\ADFS` に移動します。 次のレジストリキー値を作成します。
+
+    | レジストリ キー       | 値 |
+    |--------------------|-----------------------------------|
+    | SasUrl             | https://adnotifications.windowsazure.us/StrongAuthenticationService.svc/Connector |
+    | StsUrl             | https://login.microsoftonline.us |
+    | ResourceUri        | https://adnotifications.windowsazure.us/StrongAuthenticationService.svc/Connector |
+
+1. これらの変更が反映される前に、ファーム内の各サーバーで AD FS サービスを再起動します。 影響を最小限に抑えるには、各 AD FS サーバーを1つずつ NLB ローテーションから取り出し、すべての接続がドレインされるのを待ちます。
+
+その後、Azure MFA は、イントラネットおよびエクストラネットで使用するための主要な認証方法として使用できることがわかります。
+
 ![AD FS と MFA](media/Configure-AD-FS-2016-and-Azure-MFA/ADFS_AzureMFA6.png)  
 
 ## <a name="renew-and-manage-ad-fs-azure-mfa-certificates"></a>Azure MFA 証明書 AD FS の更新と管理
 
 次のガイダンスでは、AD FS サーバー上の Azure MFA 証明書を管理する方法について説明します。
-既定では、Azure MFA で AD FS を構成すると、 `New-AdfsAzureMfaTenantCertificate` PowerShell コマンドレットを使用して生成された証明書は2年間有効になります。  証明書の有効期限が近づいていることを確認し、新しい証明書を更新してインストールするには、次の手順を使用します。
+既定では、Azure MFA で AD FS を構成すると、`New-AdfsAzureMfaTenantCertificate` の PowerShell コマンドレットを使用して生成された証明書は2年間有効になります。  証明書の有効期限が近づいていることを確認し、新しい証明書を更新してインストールするには、次の手順を使用します。
 
 ### <a name="assess-ad-fs-azure-mfa-certificate-expiration-date"></a>Azure MFA 証明書の有効期限日を評価 AD FS
 
@@ -145,21 +159,24 @@ AD FS サーバーが Azure Multi-factor Auth クライアントと通信でき�
 
 証明書の有効期間が間もなく終了する場合は、各 AD FS サーバーに新しい Azure MFA 証明書を生成して、更新プロセスを開始します。 PowerShell コマンドウィンドウで、次のコマンドレットを使用して、各 AD FS サーバーに新しい証明書を生成します。
 
+> [!CAUTION]
+> 証明書の有効期限が既に切れている場合は、次のコマンドに `-Renew $true` パラメーターを追加しないでください。 このシナリオでは、既存の有効期限が切れた証明書は、そのまま残され、追加の証明書が作成されるのではなく、新しい証明書に置き換えられます。
+
 ```
 PS C:\> $newcert = New-AdfsAzureMfaTenantCertificate -TenantId <tenant id such as contoso.onmicrosoft.com> -Renew $true
 ```
 
-このコマンドレットの結果として、2日後2日 + 2 年後に有効な新しい証明書が生成されます。  AD FS と Azure MFA の操作は、このコマンドレットまたは新しい証明書の影響を受けません。 (注: 2 日間の遅延は意図的であり、以下の手順を実行して、テナントの新しい証明書を構成するための時間を提供します。 AD FS は、Azure MFA でその証明書を使用して開始します)。
+証明書の有効期限がまだ切れていない場合は、2日後2日 + 2 年後に有効な新しい証明書が生成されます。 AD FS と Azure MFA の操作は、このコマンドレットまたは新しい証明書の影響を受けません。 (注: 2 日間の遅延は意図的であり、以下の手順を実行して、テナントの新しい証明書を構成するための時間を提供します。 AD FS は、Azure MFA でその証明書を使用して開始します)。
 
 ### <a name="configure-each-new-ad-fs-azure-mfa-certificate-in-the-azure-ad-tenant"></a>Azure AD テナントでの新しい AD FS Azure MFA 証明書の構成
 
-Azure AD PowerShell モジュールを使用して、(各 AD FS サーバー上の) 新しい証明書ごとに、次のように Azure AD テナント設定を更新します (注: `Connect-MsolService`最初にを使用してテナントに接続し、次のコマンドを実行する必要があります)。
+Azure AD PowerShell モジュールを使用して、(各 AD FS サーバー上の) 新しい証明書ごとに、次のように Azure AD テナント設定を更新します (注: まず、`Connect-MsolService` を使用してテナントに接続し、次のコマンドを実行する必要があります)。
 
 ```
 PS C:/> New-MsolServicePrincipalCredential -AppPrincipalId 981f26a1-7f43-403b-a875-f8b09b8cd720 -Type Asymmetric -Usage Verify -Value $newcert
 ```
 
-`$certbase64`は新しい証明書です。  Base64 でエンコードされた証明書を取得するには、証明書 (秘密キーを除く) を DER エンコードファイルとしてエクスポートし、Notepad.exe で開き、PowerShell セッションにコピー/貼り`$certbase64`付け、変数に割り当てます。
+以前の証明書の有効期限が既に切れている場合は、AD FS サービスを再起動して新しい証明書を取得します。 期限切れになる前に証明書を更新した場合は、AD FS サービスを再起動する必要はありません。
 
 ### <a name="verify-that-the-new-certificates-will-be-used-for-azure-mfa"></a>新しい証明書が Azure MFA に使用されることを確認する
 
@@ -288,6 +305,6 @@ Azure MFA をプライマリ認証として使用している場合、校正ユ�
     Set-AdfsWebConfig -ActiveThemeName "ProofUp"
     ```
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ:
 
 [AD FS と Azure MFA によって使用される TLS/SSL プロトコルと暗号スイートを管理する](manage-ssl-protocols-in-ad-fs.md)

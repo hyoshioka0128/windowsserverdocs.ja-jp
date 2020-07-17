@@ -2,22 +2,18 @@
 title: 手順 2-高度な DirectAccess 展開を計画する
 description: このトピックは、「Windows Server 2016 の詳細設定を使用して単一の DirectAccess サーバーを展開する」の一部です。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 3bba28d4-23e2-449f-8319-7d2190f68d56
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: b093c4cbf5ceb06e84d5e07c8735106797932bc1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: cf17c7f1349d5b3ee5b3efe0a872dd433ecbfe8d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404925"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80819576"
 ---
 # <a name="step-2-plan-advanced-directaccess-deployments"></a>手順 2-高度な DirectAccess 展開を計画する
 
@@ -99,7 +95,7 @@ DirectAccess サーバーの展開を計画している場合は、次の決定�
   
     リモート アクセス サーバーのセットアップ ウィザードで、ネットワーク アダプターに IPv6 が展開されていることが検出された場合、内部ネットワーク向けの IPv6 プレフィックス、DirectAccess クライアント コンピューターに割り当てられる IPv6 プレフィックス、VPN クライアント コンピューターに割り当てられる IPv6 プレフィックスが自動的に設定されます。 自動的に生成されたプレフィックスがネイティブ IPv6 インフラストラクチャ向けに適切でない場合は、手動で変更する必要があります。 詳細については、「 [1.1 ネットワークトポロジと設定を計画](da-adv-plan-s1-infrastructure.md#11-plan-network-topology-and-settings)する」を参照してください。  
   
--   **\[認証]**  
+-   **[認証]**  
   
     DirectAccess クライアントが DirectAccess サーバーを認証する方法を決定します。  
   

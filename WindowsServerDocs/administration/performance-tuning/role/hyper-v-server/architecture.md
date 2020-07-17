@@ -4,15 +4,15 @@ description: パフォーマンスチューニングのための hyper-v アー�
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: Asmahi; SandySp; JoPoulso
+ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 0feb2977791dd181907c381e4898924ff51c2bc5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: fd154ef12bd356d872229cc5cb67a7b8d3e0e628
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383491"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471497"
 ---
 # <a name="hyper-v-architecture"></a>Hyper-V のアーキテクチャ
 
@@ -28,7 +28,7 @@ Windows Server 2008 以降では、オペレーティングシステムの機能
 
 以下のセクションでは、Hyper-v の役割を実行しているサーバーのパフォーマンスを向上させるベストプラクティスについて説明します。
 
-## <a name="see-also"></a>関連項目
+## <a name="additional-references"></a>その他のリファレンス
 
 -   [Hyper-V の用語](terminology.md)
 

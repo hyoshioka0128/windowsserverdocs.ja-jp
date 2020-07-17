@@ -2,26 +2,22 @@
 title: 手順 6 Install and Configure 2-DC1
 description: このトピックは、「Windows Server 2016 用の DirectAccess マルチサイト展開のテストラボガイド」の一部です。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 3d66901a-c40b-474c-9948-f989f399cfea
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 4c7a8243922f58f9705a85cd30b2a68cf4d876c6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 21591de4527cc33857e215d9521f2f1458c1f3c6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404779"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861565"
 ---
 # <a name="step-6-install-and-configure-2-dc1"></a>手順 6 Install and Configure 2-DC1
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 2-DC1 には次のサービスが用意されています。  
   
@@ -50,7 +46,7 @@ ms.locfileid: "71404779"
   
 1.  Windows Server 2016、Windows Server 2012 R2、または Windows Server 2012 のインストールを開始します。  
   
-2.  指示に従ってインストールを完了します。これには、Windows Server 2016、Windows Server 2012 R2、または Windows Server 2012 (フルインストール) とローカル管理者アカウントの強力なパスワードを指定します。 ローカルの Administrator アカウントを使用してログオンします。  
+2.  指示に従ってインストールを完了します。これには、Windows Server 2016、Windows Server 2012 R2、または Windows Server 2012 (フルインストール) とローカル管理者アカウントの強力なパスワードを指定します。 ローカル管理者アカウントを使用してログオンします。  
   
 3.  インターネットにアクセスできるネットワークに 2 ~ DC1 を接続し Windows Update を実行して、Windows Server 2016、Windows Server 2012 R2、または Windows Server 2012 の最新の更新プログラムをインストールしてから、インターネットから切断します。  
   
@@ -67,7 +63,7 @@ ms.locfileid: "71404779"
   
 3.  **[インターネット プロトコル バージョン 4 (TCP/IPv4)]** をクリックし、 **[プロパティ]** をクリックします。  
   
-4.  **[次の IP アドレスを使う]** をクリックします。 **[IP アドレス]** に、「 **10.2.0.1**」と入力します。 **[サブネット マスク]** に、「 **255.255.255.0**」と入力します。 **[デフォルトゲートウェイ]** で、「 **10.2.0.254**」と入力します。 **[優先 dns サーバー]** で **[次の dns サーバーのアドレスを使用する]** をクリックし、「 **10.2.0.1**」と入力して、 **[代替 dns サーバー]** に「 **10.0.0.1**」と入力します。  
+4.  **[次の IP アドレスを使う]** をクリックします。 **[IP アドレス]** に、「 **10.2.0.1**」と入力します。 **[サブネット マスク]** に、「**255.255.255.0**」と入力します。 **[デフォルトゲートウェイ]** で、「 **10.2.0.254**」と入力します。 **[優先 dns サーバー]** で **[次の dns サーバーのアドレスを使用する]** をクリックし、「 **10.2.0.1**」と入力して、 **[代替 dns サーバー]** に「 **10.0.0.1**」と入力します。  
   
 5.  **[詳細設定]** 、 **[DNS]** タブの順にクリックします。  
   
@@ -181,13 +177,13 @@ CORP2 ドメイン内のコンピューターは、の証明機関からコン�
   
 6.  **選択するオブジェクト名を入力してください** に「domain Admins」と入力し**ます。ドメインコンピューター**  をクリックし、 **OK**をクリックします。  
   
-7.  **[クライアント-サーバー認証のプロパティ]** ダイアログボックスの **[グループ名またはユーザー名]** で、 **[ドメイン管理者 (CORP2\Domain admins)]** をクリックし、 **[ドメイン管理者のアクセス許可]** の **[許可]** 列で **[書き込み]** を選択します。を**登録**します。  
+7.  **[クライアント-サーバー認証のプロパティ]** ダイアログボックスの **[グループ名またはユーザー名]** で、 **[ドメイン管理者 (CORP2\Domain admins)]** をクリックし、 **[ドメイン管理者のアクセス許可]** の **[許可]** 列で [**書き込み**と**登録**] を選択します。  
   
 8.  **[グループ名またはユーザー名]** で、 **[ドメインコンピューター (CORP2\Domain コンピューター)]** をクリックし、 **[ドメインコンピューターのアクセス許可]** の **[許可]** 列で [**登録**と**自動登録**] を選択し、 **[OK]** をクリックします。  
   
 9. 証明書テンプレート コンソールを閉じます。  
   
-## <a name="replication"></a>DC1 と 2-DC1 の間のレプリケーションを強制する  
+## <a name="force-replication-between-dc1-and-2-dc1"></a><a name="replication"></a>DC1 と 2-DC1 の間のレプリケーションを強制する  
 2 EDGE1 で証明書を登録する前に、DC1 から 2-DC1 への設定のレプリケーションを強制する必要があります。 この操作は、DC1 で実行する必要があります。  
   
 ### <a name="to-force-replication"></a>レプリケーションを強制するには  
@@ -200,7 +196,7 @@ CORP2 ドメイン内のコンピューターは、の証明機関からコン�
   
 4.  **[Defaul? サイトのプロパティ]** ダイアログボックスの **[コスト]** で「 **1**」と入力し、 **[すべてのレプリケート]** に「 **15**」と入力して、[ **OK]** をクリックします。 レプリケーションが完了するまで15分待ちます。  
   
-5.  コンソールツリーでレプリケーションを強制的に実行するには、詳細ウィンドウで **[Sites\Default-First-Site-name\Servers\DC1\NTDS の設定]** を展開し、[ **<automatically generated>** ] を右クリックして **[今すぐ]** レプリケート をクリックし、 **[今すぐレプリケート]** ダイアログボックスで[ **OK]** をクリックします。  
+5.  コンソールツリーでレプリケーションを強制的に実行するには、詳細ウィンドウで **Sites\Default-First-Site-name\Servers\DC1\NTDS の設定** を展開し、 **<automatically generated>** を右クリックして **今すぐ**レプリケート をクリックし、**今すぐレプリケート** ダイアログボックスで **OK** をクリックします。  
   
 6.  レプリケーションが正常に完了したことを確認するには、次の手順を実行します。  
   

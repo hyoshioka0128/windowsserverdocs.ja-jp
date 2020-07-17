@@ -1,28 +1,24 @@
 ---
 title: リモート デスクトップ サービスを使ってみる
 description: Windows Server 2016 で RDS の使用を開始するための情報を提供します。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 10/11/2016
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e8f8cfd2-c62e-4f9b-b843-099fd37c6d58
 author: lizap
 manager: dongill
-ms.openlocfilehash: bdce4b2144330fcfc91772403047d6bb908a0d63
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 583f62784aa171ddb20ddf3e5cd0a4e6c6223884
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387549"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "80861395"
 ---
 # <a name="get-started-with-remote-desktop-services-in-windows-server-2016"></a>Windows Server 2016 でリモート デスクトップ サービスを使ってみる
 
-> 適用対象:Windows Server 2016
+> 適用先:Windows Server 2016
 
 エクスプ ローラーを使用してリモート デスクトップ サービスの Windows Server 2016 を開始するのにには、次の情報を使用します。
 

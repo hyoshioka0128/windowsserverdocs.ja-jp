@@ -2,23 +2,23 @@
 title: ソフトウェア定義ネットワーク インフラストラクチャを展開する
 description: このトピックでは、Windows Server 2016 のスクリプトを使用して、Microsoft ソフトウェア定義ネットワーク (SDN) インフラストラクチャを展開する方法に関するトピックへのリンクを示します。
 ms.prod: windows-server
-ms.service: virtual-network
 ms.technology: networking-sdn
 ms.topic: get-started-article
 ms.assetid: 6c665c88-df28-4150-81d4-a47e9fa5255c
-ms.author: daveba
 ms.date: 08/23/2018
-author: daveba
-ms.openlocfilehash: 6450419e03b07c4350edbf58a8c3ab8e48cbac7a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: anpaul
+author: AnirbanPaul
+manager: grcusanz
+ms.openlocfilehash: 99b5b54e12362f3468220c6ddb9a4f32ace243a6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406137"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860715"
 ---
 # <a name="deploy-a-software-defined-network-infrastructure"></a>ソフトウェアで定義されたネットワークインフラストラクチャを展開する
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 Microsoft のソフトウェア定義ネットワーク (SDN) インフラストラクチャを展開します。   
   

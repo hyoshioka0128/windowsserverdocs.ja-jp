@@ -1,0 +1,120 @@
+### YamlMime:Landing
+title: ネットワークのドキュメント
+summary: ネットワークでは、ソフトウェア定義されているデータ センター (SDDC) プラットフォームの基礎の一部と、Windows Server 2016 には、組織の完全に実現された SDDC ソリューションに移動するための新機能と更新のソフトウェアによるネットワーク制御 (SDN) テクノロジが用意されています。
+metadata:
+  title: ネットワークのドキュメント
+  description: このトピックでは、Windows Server 2016 で利用できるソフトウェア定義ネットワークおよびネットワーク プラットフォーム テクノロジの概要について説明します。
+  layout: LandingPage
+  ms.technology: networking
+  ms.topic: landing-page
+  manager: dougkim
+  author: AnirbanPaul
+  ms.author: anpaul
+  ms.date: 06/11/2020
+  ms.assetid: daaf6b61-5953-4c2d-b6b8-7c885b552646
+  ms.localizationpriority: medium
+  ms.openlocfilehash: 9b419210689e0ca11bfc2c285cd6669d3a883679
+  ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 06/18/2020
+  ms.locfileid: "85071003"
+landingContent:
+- title: ネットワークについて
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Windows Server でサポートされるネットワーク シナリオ
+      url: windows-server-supported-networking-scenarios.md
+  - linkListType: whats-new
+    links:
+    - text: ネットワークの新機能
+      url: What-s-New-in-Networking.md
+  - linkListType: reference
+    links:
+    - text: Windows Server ライブラリ
+      url: /previous-versions/windows/
+    - text: Windows Server 2003/2003 R2 の削除されたコンテンツ
+      url: https://www.microsoft.com/download/details.aspx?id=53314
+- title: ソフトウェア定義ネットワーク
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: ソフトウェア定義ネットワーク (SDN)
+      url: sdn/index.yml
+    - text: ネットワーク コントローラー
+      url: sdn/technologies/network-controller/Network-Controller.md
+    - text: SDN のソフトウェア負荷分散 (SLB)
+      url: sdn/technologies/network-function-virtualization/software-load-balancing-for-sdn.md
+    - text: SDN の RAS ゲートウェイ
+      url: sdn/technologies/network-function-virtualization/RAS-Gateway-for-SDN.md
+    - text: ネットワーク機能の仮想化
+      url: sdn/technologies/network-function-virtualization/Network-Function-Virtualization.md
+    - text: データセンターのファイアウォールの概要
+      url: sdn/technologies/network-function-virtualization/Datacenter-Firewall-Overview.md
+  - linkListType: deploy
+    links:
+    - text: スクリプトを使用して SDN インフラストラクチャを展開する
+      url: sdn/deploy/Deploy-a-Software-Defined-Network-infrastructure-using-scripts.md
+- title: ネットワー キング テクノロジ
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: BranchCache
+      url: branchcache/BranchCache.md
+    - text: コア ネットワーク ガイド
+      url: core-network-guide/core-network-guide-windows-server.md
+    - text: DirectAccess
+      url: ../remote/remote-access/da-stub.md
+    - text: ドメイン ネーム システム (DNS)
+      url: dns/dns-top.md
+    - text: 動的ホスト構成プロトコル (DHCP)
+      url: technologies/dhcp/dhcp-top.md
+    - text: Hyper-V ネットワーク仮想化
+      url: sdn/technologies/hyper-v-network-virtualization/Hyper-V-Network-Virtualization.md
+    - text: Hyper-V 仮想スイッチ
+      url: ../virtualization/hyper-v-virtual-switch/Hyper-V-Virtual-Switch.md
+    - text: IP アドレス管理 (IPAM) に関するページ
+      url: technologies/ipam/ipam-top.md
+    - text: ネットワーク負荷分散 (NLB)
+      url: technologies/Network-Load-Balancing.md
+- title: ネットワー キング テクノロジ
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: ネットワーク ポリシー サーバー
+      url: technologies/nps/nps-top.md
+    - text: ネットワーク シェル (netsh)
+      url: technologies/netsh/netsh.md
+    - text: ネットワークのサブシステムのパフォーマンス チューニング
+      url: technologies/network-subsystem/net-sub-performance-top.md
+    - text: NIC チーミング
+      url: technologies/nic-teaming/NIC-Teaming.md
+    - text: サービス品質 (QoS) ポリシー
+      url: technologies/qos/qos-policy-top.md
+    - text: 'Windows インターネット ネーム サービス (WINS: Windows Internet Name Service)'
+      url: technologies/wins/wins-top.md
+    - text: リモート アクセス
+      url: ../remote/remote-access/remote-access.md
+    - text: Windows コンテナー ネットワーク
+      url: /virtualization/windowscontainers/container-networking/architecture
+    - text: 仮想プライベート ネットワーク (VPN)
+      url: ../remote/remote-access/vpn/vpn-top.md
+  - linkListType: reference
+    links:
+    - text: Windows Server 2016 における Web アプリケーション プロキシ
+      url: /windows-server/remote/remote-access/web-application-proxy/web-application-proxy-windows-server
+    - text: リモート アクセスの Always On VPN 展開ガイド
+      url: /windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy
+- title: ハイパフォーマンス ネットワーク
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: ハイパフォーマンス ネットワーク
+      url: technologies/hpn/hpn-top.md
+    - text: コンバージド ネットワーク インターフェイス カード (NIC)
+      url: technologies/conv-nic/cnic-top.md
+    - text: Data Center Bridging (DCB)
+      url: technologies/dcb/dcb-top.md
+    - text: Virtual Receive Side Scaling (vRSS)
+      url: technologies/vrss/vrss-top.md

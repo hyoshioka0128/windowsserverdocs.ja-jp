@@ -1,27 +1,23 @@
 ---
 title: Azure ディザスター リカバリーを使用して RDS のディザスター リカバリーを設定する
 description: RDS 展開のディザスター リカバリーに Azure ディザスター リカバリーを使用する方法について説明する
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 06/12/2017
-ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: 514262fde3b433baf89fe8f5a0cf8b04ef267354
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 68fa7026a3198b7800c4855f8472f4a0bec62009
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387536"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "80858995"
 ---
 # <a name="set-up-disaster-recovery-for-rds-using-azure-site-recovery"></a>Azure Site Recovery を使用して RDS のディザスター リカバリーを設定する
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016
+>適用先:Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016
 
 Azure Site Recovery を使用して、リモート デスクトップ サービス展開のディザスター リカバリー ソリューションを作成することができます。 
 
@@ -35,9 +31,9 @@ Azure Site Recovery を使用して、リモート デスクトップ サービ�
 
 | 展開の種類                          | Hyper-V サイト間 | Hyper-V サイトと Azure 間 | VMWare サイトと Azure 間 | 物理サイトと Azure 間 |
 |------------------------------------------|----------------------|-----------------------|---------------------|----------------------|-----------------------|------------------------|
-| プールされた仮想デスクトップ (管理対象外)       |〇|X|X|X |
-| プールされた仮想デスクトップ (管理対象、UPD なし) | 〇|X|X|X|
-| RemoteApp とデスクトップ セッション (UPD なし) | 〇|〇|〇|〇  |
+| プールされた仮想デスクトップ (管理対象外)       |はい|いいえ|いいえ|いいえ |
+| プールされた仮想デスクトップ (管理対象、UPD なし) | はい|いいえ|いいえ|いいえ|
+| RemoteApp とデスクトップ セッション (UPD なし) | はい|はい|はい|はい  |
 
 ## <a name="prerequisites"></a>前提条件
 

@@ -1,24 +1,20 @@
 ---
 title: データセンターのファイアウォール アクセス制御リスト (ACL) を構成する
 description: 特定の Acl をネットワークインターフェイスに適用できます。  ネットワークインターフェイスが接続されている仮想サブネット上で Acl も設定されている場合、両方の Acl が適用されますが、ネットワークインターフェイスの Acl は仮想サブネット Acl の上位に優先されます。
-manager: dougkim
-ms.custom: na
+manager: grcusanz
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-sdn
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 25f18927-a63e-44f3-b02a-81ed51933187
-ms.author: pashort
-author: shortpatti
+ms.author: anpaul
+author: AnirbanPaul
 ms.date: 08/23/2018
-ms.openlocfilehash: 2e3f365a820de67dec87ea209cbfeb22d9091616
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f6b1078f88b2d377c3c49934e2b1bd219641d82e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406106"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854565"
 ---
 # <a name="configure-datacenter-firewall-access-control-lists-acls"></a>データセンターのファイアウォール Access Control リスト (Acl) の構成
 

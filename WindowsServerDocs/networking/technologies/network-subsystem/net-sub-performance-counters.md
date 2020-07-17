@@ -5,15 +5,15 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: 7ebaa271-2557-4c24-a679-c3d863e6bf9e
-manager: brianlic
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 7ebff972d670f3fd0b8d12959d161bce03ac487e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+manager: dcscontentpm
+ms.author: v-tea
+author: Teresa-Motiv
+ms.openlocfilehash: e3350d476b9bfe8ef38cab610a225dcffe0bd02a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71401842"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80862195"
 ---
 # <a name="network-related-performance-counters"></a>ネットワーク関連のパフォーマンス カウンター
 
@@ -27,7 +27,7 @@ ms.locfileid: "71401842"
   
 -   [受信側結合 (RSC) のパフォーマンス](#bkmk_rsc)  
   
-##  <a name="bkmk_ru"></a>リソース使用率  
+##  <a name="resource-utilization"></a><a name="bkmk_ru"></a>リソース使用率  
 
 次のパフォーマンスカウンターは、ネットワークリソースの使用率に関連しています。  
   
@@ -47,7 +47,7 @@ ms.locfileid: "71401842"
   
 - ネットワークインターフェイス (*)、ネットワークアダプター (\*)  
   
-  - 受信バイト数/秒  
+  - Bytes Received/sec  
   
   - 送信バイト数/秒  
   
@@ -69,7 +69,7 @@ ms.locfileid: "71401842"
   
     このカウンターは、Dpc が論理プロセッサの DPC キューに追加された平均速度です。 各論理プロセッサには、独自の DPC キューがあります。 このカウンターは、キュー内の Dpc の数ではなく、Dpc がキューに追加される速度を計測します。 最後の2つのサンプルで観測された値の差を、サンプリング間隔の時間で割った値が表示されます。  
   
-##  <a name="bkmk_np"></a>潜在的なネットワークの問題  
+##  <a name="potential-network-problems"></a><a name="bkmk_np"></a>潜在的なネットワークの問題  
 
 次のパフォーマンスカウンターは、潜在的なネットワークの問題に関連しています。  
   
@@ -119,7 +119,7 @@ ms.locfileid: "71401842"
   
     -   拒否された接続数/秒  
   
-##  <a name="bkmk_rsc"></a>受信側結合 (RSC) のパフォーマンス  
+##  <a name="receive-side-coalescing-rsc-performance"></a><a name="bkmk_rsc"></a>受信側結合 (RSC) のパフォーマンス  
 
 次のパフォーマンスカウンターは、RSC のパフォーマンスに関連しています。  
   

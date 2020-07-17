@@ -1,7 +1,6 @@
 ---
 ms.assetid: 04b63d9f-e924-4146-9b1d-785ed8b4239c
 title: AD FS 1.x との相互運用性の計画
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: e9f72bd83c90a804749329521a72e3232589c735
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a0bbf64a7bf110e3d73084dd047c84b2b83be8d9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407966"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858615"
 ---
 # <a name="planning-for-interoperability-with-ad-fs-1x"></a>AD FS 1.x との相互運用性の計画
 
-Active Directory フェデレーションサービス (AD FS) \(\) AD FS windows Server®2012を実行しているフェデレーションサーバーは、windows server 2003 R2 AD FS \(と共にインストールされた\) 1.0 フェデレーションサービスと、Windows Server 2008 または Windows Server 2008 R2 AD FS \(と共にインストールされた\) 1.1 フェデレーションサービスの両方と相互運用できます。 次の相互運用性の任意の組み合わせがサポートされています。  
+Active Directory フェデレーションサービス (AD FS) \(\) AD FS windows Server&reg; 2012 を実行しているフェデレーションサーバーは、windows server 2003 R2 AD FS \(と共にインストールされた\) 1.0 フェデレーションサービスと、Windows Server 2008 または Windows Server 2008 R2 AD FS \(と共にインストールされた\) 1.1 フェデレーションサービスの両方と相互運用できます。 次の相互運用性の任意の組み合わせがサポートされています。  
 
 -   任意の AD FS 1。*x*フェデレーションサービスは、Windows Server 2012 の AD FS フェデレーションサービスで使用できる要求を送信できます。 詳細については、「[チェックリスト: AD FS 1.x からの要求を使用するように AD FS を構成する](../../ad-fs/deployment/Checklist--Configuring-AD-FS--to-Consume-Claims-from-AD-FS-1.x.md)」を参照してください。  
 

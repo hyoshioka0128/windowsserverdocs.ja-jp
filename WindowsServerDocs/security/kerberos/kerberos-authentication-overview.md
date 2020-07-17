@@ -1,24 +1,20 @@
 ---
 title: Kerberos Authentication Overview
 description: Windows Server のセキュリティ
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-kerberos
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 646c6309-e865-4be2-b415-44dd125af5c2
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 33712dc8502035bd9e47e1d2bdd4583eb8347dec
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6b5ec9bfa5c17a9ee9a5ad15af183d25bd533d7e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386307"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856325"
 ---
 # <a name="kerberos-authentication-overview"></a>Kerberos Authentication Overview
 
@@ -26,12 +22,12 @@ ms.locfileid: "71386307"
 
 Kerberos は、ユーザーまたはホストの身元を確認するために使用される認証プロトコルです。 このトピックには、Windows Server 2012 および Windows 8 での Kerberos 認証に関する情報が含まれています。
 
-## <a name="BKMK_OVER"></a>機能の説明
+## <a name="feature-description"></a><a name="BKMK_OVER"></a>機能の説明
 Windows Server オペレーティング システムには、公開キー認証、承認データの転送、委任のために、Kerberos Version 5 認証プロトコルと拡張機能が実装されています。 Kerberos 認証クライアントは、セキュリティサポートプロバイダー \(SSP\)として実装されており、SSPI\)\(セキュリティサポートプロバイダーインターフェイスを使用してアクセスできます。 初期のユーザー認証は、アーキテクチャの Winlogon シングルサイン\-と統合されています。
 
 Kerberos キー配布センター \(KDC\) は、ドメインコントローラーで実行されている他の Windows Server セキュリティサービスと統合されています。 KDC は、そのセキュリティアカウントデータベースとしてドメインの Active Directory Domain Services データベースを使用します。 ドメインまたはフォレスト内の既定の Kerberos 実装には、Active Directory Domain Services が必要です。
 
-## <a name="kerb_tr_Kerb_Benefits"></a>実用的なアプリケーション
+## <a name="practical-applications"></a><a name="kerb_tr_Kerb_Benefits"></a>実用的なアプリケーション
 ドメイン\-ベースの認証に Kerberos を使用すると、次の利点が得られます。
 
 -   **委任された認証。**

@@ -1,79 +1,78 @@
 ---
-title: インターフェイスポートプロキシ用の Netsh コマンド
-description: Netsh interface のポートプロキシコマンドを使用して、IPv4 と IPv6 のネットワークとアプリケーションの間のプロキシとして機能します。
+title: interface portproxy の netsh コマンド
+description: IPv4 および IPv6 のネットワークとアプリケーション間でプロキシとして機能させるために、netsh interface portproxy コマンドを使用します。
 ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
-ms.assetid: ''
 manager: dougkim
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/30/2018
-ms.openlocfilehash: 6244213ea689f07230ce53288e52959972112037
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
-ms.translationtype: MT
+ms.openlocfilehash: e9c4cff4d1424c244857cf75be41d445b299f1f2
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405507"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "80853745"
 ---
 # <a name="netsh-interface-portproxy-commands"></a>Netsh interface portproxy コマンド
 
-**Netsh interface のポートプロキシ**コマンドを使用して、IPv4 と IPv6 のネットワークとアプリケーションの間のプロキシとして機能します。 これらのコマンドを使用して、次の方法でプロキシサービスを確立できます。
+IPv4 および IPv6 のネットワークとアプリケーション間でプロキシとして機能させるために、**netsh interface portproxy** コマンドを使用します。 これらのコマンドを使用して、次の方式でプロキシ サービスを確立できます。
 
--   IPv4 で構成されたコンピューターおよびアプリケーションメッセージを、IPv4 で構成された他のコンピューターおよびアプリケーションに送信します。
+-   IPv4 で構成されたコンピューターおよびアプリケーションのメッセージが、IPv4 で構成された他のコンピューターおよびアプリケーションに送信される。
 
--   IPv6 で構成されたコンピューターおよびアプリケーションに送信される、IPv4 で構成されたコンピューターおよびアプリケーションのメッセージ。
+-   IPv4 で構成されたコンピューターおよびアプリケーションのメッセージが、IPv6 で構成されたコンピューターおよびアプリケーションに送信される。
 
--   IPv4 で構成されたコンピューターおよびアプリケーションに送信される、IPv6 で構成されたコンピューターおよびアプリケーションのメッセージ。
+-   IPv6 で構成されたコンピューターおよびアプリケーションのメッセージが、IPv4 で構成されたコンピューターおよびアプリケーションに送信される。
 
--   IPv6 で構成されたコンピューターおよびアプリケーションメッセージは、IPv6 で構成された他のコンピューターおよびアプリケーションに送信されます。
+-   IPv6 で構成されたコンピューターおよびアプリケーションのメッセージが、IPv6 で構成された他のコンピューターおよびアプリケーションに送信される。
 
-これらのコマンドを使用してバッチファイルまたはスクリプトを作成する場合、各コマンドは**netsh interface のポートプロキシ**を使用して開始する必要があります。 たとえば、 **delete v4tov6**コマンドを使用して、サーバーがリッスンする ipv4 アドレスの一覧から ipv4 ポートとアドレスを削除するように指定する場合は、バッチファイルまたはスクリプトで次の構文を使用する必要があります。
+これらのコマンドを使用してバッチ ファイルまたはスクリプトを作成する場合、各コマンドは **netsh interface portproxy** から開始される必要があります。 たとえば、**delete v4tov6** コマンドを使用して、ポートプロキシ サーバー上でサーバーがリッスンする IPv4 アドレスの一覧から IPv4 ポートとアドレスを削除する場合、バッチ ファイルまたはスクリプトでは次の構文を使用する必要があります。
 
 ```PowerShell
 netsh interface portproxy delete v4tov6listenport= {Integer | ServiceName} [[listenaddress=] {IPv4Address| HostName}] [[protocol=]tcp]
 ```
 
-使用可能な netsh interface プロキシコマンドは次のとおりです。
+利用可能な netsh interface portproxy コマンドを次に示します。
 
--   [v4tov4 の追加](#add-v4tov4)
+-   [add v4tov4](#add-v4tov4)
 
--   [v4tov6 の追加](#add-v4tov6)
+-   [add v4tov6](#add-v4tov6)
 
--   [v6tov4 の追加](#add-v6tov4)
+-   [add v6tov4](#add-v6tov4)
 
--   [v6tov6 の追加](#add-v6tov6)
+-   [add v6tov6](#add-v6tov6)
 
--   [v4tov4 の削除](#delete-v4tov4)
+-   [delete v4tov4](#delete-v4tov4)
 
--   [v4tov6 の削除](#delete-v4tov6)
+-   [delete v4tov6](#delete-v4tov6)
 
--   [v6tov6 の削除](#delete-v6tov6)
+-   [delete v6tov6](#delete-v6tov6)
 
--   [解除](#reset)
+-   [reset](#reset)
 
--   [v4tov4 の設定](#set-v4tov4)
+-   [set v4tov4](#set-v4tov4)
 
--   [v4tov6 の設定](#set-v4tov6)
+-   [set v4tov6](#set-v4tov6)
 
 -   [setv6tov4](#set-v6tov4)
 
--   [v6tov6 の設定](#set-v6tov6)
+-   [set v6tov6](#set-v6tov6)
 
--   [すべて表示](#show-all)
+-   [show all](#show-all)
 
--   [v4tov4 の表示](#show-v4tov4)
+-   [show v4tov4](#show-v4tov4)
 
--   [v4tov6 の表示](#show-v4tov6)
+-   [show v4tov6](#show-v4tov6)
 
--   [v6tov4 の表示](#show-v6tov4)
+-   [show v6tov4](#show-v6tov4)
 
--   [v6tov6 の表示](#show-v6tov6)
+-   [show v6tov6](#show-v6tov6)
 
 
-## <a name="add-v4tov4"></a>v4tov4 の追加
+## <a name="add-v4tov4"></a>add v4tov4
 
-プロキシサーバーは、特定のポートおよび IPv4 アドレスに送信されたメッセージをリッスンし、ポートと IPv4 アドレスをマップして、別の TCP 接続を確立した後に受信したメッセージを送信します。
+ポートプロキシ サーバーでは、特定のポートと IPv4 アドレスに送信されるメッセージをリッスンして、別個の TCP 接続が確立された後に受信したメッセージを送信するためのポートと IPv4 アドレスをマップします。
 
 ### <a name="syntax"></a>構文
 
@@ -81,20 +80,20 @@ netsh interface portproxy delete v4tov6listenport= {Integer | ServiceName} [[lis
 add v4tov4 listenport= {Integer | ServiceName} [[connectaddress=] {IPv4Address | HostName}] [[connectport=] {Integer | ServiceName}] [[listenaddress=] {IPv4Address | HostName}] [[protocol=]tcp]
 ```
 
-### <a name="parameters"></a>パラメーター
+#### <a name="parameters"></a>パラメーター
 
 
 |                    |                                                                                                                                                                                                   |
 |--------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|   **listenport が**   |                                                           リッスンするポート番号またはサービス名を使用して、IPv4 ポートを指定します。                                                            |
-| **connectaddress** | 接続先の IPv4 アドレスを指定します。 使用可能な値は、IP アドレス、コンピューターの NetBIOS 名、またはコンピューターの DNS 名です。 アドレスが指定されていない場合、既定値はローカルコンピューターです。 |
-|  **connectport**   |       接続先のポート番号またはサービス名を使用して、IPv4 ポートを指定します。 **Connectport**が指定されていない場合、既定値はローカルコンピューターの**listenport が**の値になります。        |
-| **リッスンアドレス**  | リッスンする IPv4 アドレスを指定します。 使用可能な値は、IP アドレス、コンピューターの NetBIOS 名、またはコンピューターの DNS 名です。 アドレスが指定されていない場合、既定値はローカルコンピューターです。 |
-|    **プロトコール**    |                                                                                  使用するプロトコルを指定します。                                                                                   |
+|   **listenport**   |                                                           ポート番号またはサービス名によって、リッスンする IPv4 ポートを指定します。                                                            |
+| **connectaddress** | 接続先の IPv4 アドレスを指定します。 使用可能な値は、IP アドレス、コンピューターの NetBIOS 名、またはコンピューターの DNS 名です。 アドレスが指定されない場合、既定値はローカル コンピューターです。 |
+|  **connectport**   |       ポート番号またはサービス名によって、接続する IPv4 ポートを指定します。 **connectport** が指定されない場合、既定値はローカル コンピューター上の **listenport** の値です。        |
+| **listenaddress**  | リッスンする IPv4 アドレスを指定します。 使用可能な値は、IP アドレス、コンピューターの NetBIOS 名、またはコンピューターの DNS 名です。 アドレスが指定されない場合、既定値はローカル コンピューターです。 |
+|    **protocol**    |                                                                                  使用するプロトコルを指定します。                                                                                   |
 
-## <a name="add-v4tov6"></a>v4tov6 の追加
+## <a name="add-v4tov6"></a>add v4tov6
 
-プロキシサーバーは、特定のポートおよび IPv4 アドレスに送信されたメッセージをリッスンし、ポートと IPv6 アドレスをマップして、別の TCP 接続を確立した後に受信したメッセージを送信します。
+ポートプロキシ サーバーでは、特定のポートと IPv4 アドレスに送信されるメッセージをリッスンして、別個の TCP 接続が確立された後に受信したメッセージを送信するためのポートと IPv6 アドレスをマップします。
 
 ### <a name="syntax"></a>構文
 
@@ -102,19 +101,19 @@ add v4tov4 listenport= {Integer | ServiceName} [[connectaddress=] {IPv4Address |
 add v4tov6 listenport= {Integer | ServiceName} [[connectaddress=] {IPv6Address | HostName} [[connectport=] {Integer | ServiceName}] [[listenaddress=] {IPv4Address | HostName} [[protocol=]tcp]
 ```
 
-### <a name="parameters"></a>パラメーター
+#### <a name="parameters"></a>パラメーター
 
 |                    |                                                                                                                                                                                                   |
 |--------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|   **listenport が**   |                                                           リッスンするポート番号またはサービス名を使用して、IPv4 ポートを指定します。                                                            |
-| **connectaddress** | 接続先の IPv6 アドレスを指定します。 使用可能な値は、IP アドレス、コンピューターの NetBIOS 名、またはコンピューターの DNS 名です。 アドレスが指定されていない場合、既定値はローカルコンピューターです。 |
-|  **connectport**   |       接続先のポート番号またはサービス名を使用して、IPv6 ポートを指定します。 **Connectport**が指定されていない場合、既定値はローカルコンピューターの**listenport が**の値になります。        |
-| **リッスンアドレス**  | リッスンする IPv4 アドレスを指定します。 使用可能な値は、IP アドレス、コンピューターの NetBIOS 名、またはコンピューターの DNS 名です。 アドレスが指定されていない場合、既定値はローカルコンピューターです。  |
-|    **プロトコール**    |                                                                                  使用するプロトコルを指定します。                                                                                   |
+|   **listenport**   |                                                           ポート番号またはサービス名によって、リッスンする IPv4 ポートを指定します。                                                            |
+| **connectaddress** | 接続先の IPv6 アドレスを指定します。 使用可能な値は、IP アドレス、コンピューターの NetBIOS 名、またはコンピューターの DNS 名です。 アドレスが指定されない場合、既定値はローカル コンピューターです。 |
+|  **connectport**   |       ポート番号またはサービス名によって、接続する IPv6 ポートを指定します。 **connectport** が指定されない場合、既定値はローカル コンピューター上の **listenport** の値です。        |
+| **listenaddress**  | リッスンする IPv4 アドレスを指定します。 使用可能な値は、IP アドレス、コンピューターの NetBIOS 名、またはコンピューターの DNS 名です。 アドレスが指定されない場合、既定値はローカル コンピューターです。  |
+|    **protocol**    |                                                                                  使用するプロトコルを指定します。                                                                                   |
 
-## <a name="add-v6tov4"></a>v6tov4 の追加
+## <a name="add-v6tov4"></a>add v6tov4
 
-プロキシサーバーは、特定のポートおよび IPv6 アドレスに送信されたメッセージをリッスンし、別の TCP 接続を確立した後に受信したメッセージを送信するポートと IPv4 アドレスをマップします。
+ポートプロキシ サーバーでは、特定のポートと IPv6 アドレスに送信されるメッセージをリッスンして、別個の TCP 接続が確立された後に受信したメッセージの送信先とするポートと IPv4 アドレスをマップします。
 
 ### <a name="syntax"></a>構文
 
@@ -122,19 +121,19 @@ add v4tov6 listenport= {Integer | ServiceName} [[connectaddress=] {IPv6Address |
 add v6tov4 listenport= {Integer | ServiceName} [[connectaddress=] {IPv4Address | HostName} [[connectport=] {Integer | ServiceName}] [[listenaddress=] {IPv6Address | HostName} [[protocol=]tcp]
 ```
 
-### <a name="parameters"></a>パラメーター
+#### <a name="parameters"></a>パラメーター
 
 |                    |                                                                                                                                                                                                   |
 |--------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|   **listenport が**   |                                                           リッスンするポート番号またはサービス名を使用して、IPv6 ポートを指定します。                                                            |
-| **connectaddress** | 接続先の IPv4 アドレスを指定します。 使用可能な値は、IP アドレス、コンピューターの NetBIOS 名、またはコンピューターの DNS 名です。 アドレスが指定されていない場合、既定値はローカルコンピューターです。 |
-|  **connectport**   |       接続先のポート番号またはサービス名を使用して、IPv4 ポートを指定します。 **Connectport**が指定されていない場合、既定値はローカルコンピューターの**listenport が**の値になります。        |
-| **リッスンアドレス**  | リッスンする IPv6 アドレスを指定します。 使用可能な値は、IP アドレス、コンピューターの NetBIOS 名、またはコンピューターの DNS 名です。 アドレスが指定されていない場合、既定値はローカルコンピューターです。  |
-|    **プロトコール**    |                                                                                  使用するプロトコルを指定します。                                                                                   |
+|   **listenport**   |                                                           ポート番号またはサービス名によって、リッスンする IPv6 ポートを指定します。                                                            |
+| **connectaddress** | 接続先の IPv4 アドレスを指定します。 使用可能な値は、IP アドレス、コンピューターの NetBIOS 名、またはコンピューターの DNS 名です。 アドレスが指定されない場合、既定値はローカル コンピューターです。 |
+|  **connectport**   |       ポート番号またはサービス名によって、接続する IPv4 ポートを指定します。 **connectport** が指定されない場合、既定値はローカル コンピューター上の **listenport** の値です。        |
+| **listenaddress**  | リッスンする IPv6 アドレスを指定します。 使用可能な値は、IP アドレス、コンピューターの NetBIOS 名、またはコンピューターの DNS 名です。 アドレスが指定されない場合、既定値はローカル コンピューターです。  |
+|    **protocol**    |                                                                                  使用するプロトコルを指定します。                                                                                   |
 
-## <a name="add-v6tov6"></a>v6tov6 の追加
+## <a name="add-v6tov6"></a>add v6tov6
 
-プロキシサーバーは、特定のポートおよび IPv6 アドレスに送信されたメッセージをリッスンし、別の TCP 接続を確立した後に受信したメッセージを送信するポートと IPv6 アドレスをマップします。
+ポートプロキシ サーバーでは、特定のポートと IPv6 アドレスに送信されるメッセージをリッスンして、別個の TCP 接続が確立された後に受信したメッセージの送信先とするポートと IPv6 アドレスをマップします。
 
 ### <a name="syntax"></a>構文
 
@@ -142,19 +141,19 @@ add v6tov4 listenport= {Integer | ServiceName} [[connectaddress=] {IPv4Address |
 add v6tov6 listenport= {Integer | ServiceName} [[connectaddress=] {IPv6Address | HostName} [[connectport=] {Integer | ServiceName}] [[listenaddress=] {IPv6Address | HostName} [[protocol=]tcp]
 ```
 
-### <a name="parameters"></a>パラメーター
+#### <a name="parameters"></a>パラメーター
 
 |                    |                                                                                                                                                                                                   |
 |--------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|   **listenport が**   |                                                           リッスンするポート番号またはサービス名を使用して、IPv6 ポートを指定します。                                                            |
-| **connectaddress** | 接続先の IPv6 アドレスを指定します。 使用可能な値は、IP アドレス、コンピューターの NetBIOS 名、またはコンピューターの DNS 名です。 アドレスが指定されていない場合、既定値はローカルコンピューターです。 |
-|  **connectport**   |       接続先のポート番号またはサービス名を使用して、IPv6 ポートを指定します。 **Connectport**が指定されていない場合、既定値はローカルコンピューターの**listenport が**の値になります。        |
-| **リッスンアドレス**  | リッスンする IPv6 アドレスを指定します。 使用可能な値は、IP アドレス、コンピューターの NetBIOS 名、またはコンピューターの DNS 名です。 アドレスが指定されていない場合、既定値はローカルコンピューターです。  |
-|    **プロトコール**    |                                                                                  使用するプロトコルを指定します。                                                                                   |
+|   **listenport**   |                                                           ポート番号またはサービス名によって、リッスンする IPv6 ポートを指定します。                                                            |
+| **connectaddress** | 接続先の IPv6 アドレスを指定します。 使用可能な値は、IP アドレス、コンピューターの NetBIOS 名、またはコンピューターの DNS 名です。 アドレスが指定されない場合、既定値はローカル コンピューターです。 |
+|  **connectport**   |       ポート番号またはサービス名によって、接続する IPv6 ポートを指定します。 **connectport** が指定されない場合、既定値はローカル コンピューター上の **listenport** の値です。        |
+| **listenaddress**  | リッスンする IPv6 アドレスを指定します。 使用可能な値は、IP アドレス、コンピューターの NetBIOS 名、またはコンピューターの DNS 名です。 アドレスが指定されない場合、既定値はローカル コンピューターです。  |
+|    **protocol**    |                                                                                  使用するプロトコルを指定します。                                                                                   |
 
-## <a name="delete-v4tov4"></a>v4tov4 の削除
+## <a name="delete-v4tov4"></a>delete v4tov4
 
-プロキシサーバーは、サーバーがリッスンする IPv4 ポートとアドレスの一覧から IPv4 アドレスを削除します。
+ポートプロキシ サーバーでは、サーバーがリッスンする IPv4 ポートとアドレスの一覧から、IPv4 アドレスを削除します。
 
 ### <a name="syntax"></a>構文
 
@@ -162,17 +161,17 @@ add v6tov6 listenport= {Integer | ServiceName} [[connectaddress=] {IPv6Address |
 delete v4tov4 listenport= {Integer | ServiceName} [[listenaddress=] {IPv4Address | HostName} [[protocol=]tcp]
 ```
 
-### <a name="parameters"></a>パラメーター
+#### <a name="parameters"></a>パラメーター
 
 |                   |                                                                                                          |
 |-------------------|----------------------------------------------------------------------------------------------------------|
-|  **listenport が**   |                                    削除する IPv4 ポートを指定します。                                    |
-| **リッスンアドレス** | 削除する IPv4 アドレスを指定します。 アドレスが指定されていない場合、既定値はローカルコンピューターです。 |
-|   **プロトコール**    |                                      使用するプロトコルを指定します。                                      |
+|  **listenport**   |                                    削除する IPv4 ポートを指定します。                                    |
+| **listenaddress** | 削除する IPv4 アドレスを指定します。 アドレスが指定されない場合、既定値はローカル コンピューターです。 |
+|   **protocol**    |                                      使用するプロトコルを指定します。                                      |
 
-## <a name="delete-v4tov6"></a>v4tov6 の削除
+## <a name="delete-v4tov6"></a>delete v4tov6
 
-プロキシサーバーは、サーバーがリッスンする IPv4 アドレスの一覧から IPv4 ポートとアドレスを削除します。
+ポートプロキシ サーバーでは、サーバーがリッスンする IPv4 アドレスの一覧から、IPv4 ポートとアドレスを削除します。
 
 ### <a name="syntax"></a>構文
 
@@ -180,17 +179,17 @@ delete v4tov4 listenport= {Integer | ServiceName} [[listenaddress=] {IPv4Address
 delete v4tov6 listenport= {Integer | ServiceName} [[listenaddress=] {IPv4Address | HostName} [[protocol=]tcp]
 ```
 
-### <a name="parameters"></a>パラメーター
+#### <a name="parameters"></a>パラメーター
 
 |                   |                                                                                                          |
 |-------------------|----------------------------------------------------------------------------------------------------------|
-|  **listenport が**   |                                    削除する IPv4 ポートを指定します。                                    |
-| **リッスンアドレス** | 削除する IPv4 アドレスを指定します。 アドレスが指定されていない場合、既定値はローカルコンピューターです。 |
-|   **プロトコール**    |                                      使用するプロトコルを指定します。                                      |
+|  **listenport**   |                                    削除する IPv4 ポートを指定します。                                    |
+| **listenaddress** | 削除する IPv4 アドレスを指定します。 アドレスが指定されない場合、既定値はローカル コンピューターです。 |
+|   **protocol**    |                                      使用するプロトコルを指定します。                                      |
 
-## <a name="delete-v6tov4"></a>v6tov4 の削除
+## <a name="delete-v6tov4"></a>delete v6tov4
 
-プロキシサーバーは、サーバーがリッスンする IPv6 アドレスの一覧から IPv6 ポートとアドレスを削除します。
+ポートプロキシ サーバーでは、サーバーがリッスンする IPv6 アドレスの一覧から、IPv6 ポートとアドレスを削除します。
 
 ### <a name="syntax"></a>構文
 
@@ -198,17 +197,17 @@ delete v4tov6 listenport= {Integer | ServiceName} [[listenaddress=] {IPv4Address
 delete v6tov4 listenport= {Integer | ServiceName} [[listenaddress=] {IPv6Address | HostName} [[protocol=]tcp]
 ```
 
-### <a name="parameters"></a>パラメーター
+#### <a name="parameters"></a>パラメーター
 
 |                   |                                                                                                          |
 |-------------------|----------------------------------------------------------------------------------------------------------|
-|  **listenport が**   |                                    削除する IPv6 ポートを指定します。                                    |
-| **リッスンアドレス** | 削除する IPv6 アドレスを指定します。 アドレスが指定されていない場合、既定値はローカルコンピューターです。 |
-|   **プロトコール**    |                                      使用するプロトコルを指定します。                                      |
+|  **listenport**   |                                    削除する IPv6 ポートを指定します。                                    |
+| **listenaddress** | 削除する IPv6 アドレスを指定します。 アドレスが指定されない場合、既定値はローカル コンピューターです。 |
+|   **protocol**    |                                      使用するプロトコルを指定します。                                      |
 
-## <a name="delete-v6tov6"></a>v6tov6 の削除
+## <a name="delete-v6tov6"></a>delete v6tov6
 
-プロキシサーバーは、サーバーがリッスンする IPv6 アドレスの一覧から IPv6 アドレスを削除します。
+ポートプロキシ サーバーでは、サーバーがリッスンする IPv6 アドレスの一覧から、IPv6 アドレスを削除します。
 
 ### <a name="syntax"></a>構文
 
@@ -216,13 +215,13 @@ delete v6tov4 listenport= {Integer | ServiceName} [[listenaddress=] {IPv6Address
 delete v6tov6 listenport= {Integer | ServiceName} [[listenaddress=] {IPv6Address | HostName} [[protocol=]tcp]
 ```
 
-### <a name="parameters"></a>パラメーター
+#### <a name="parameters"></a>パラメーター
 
 |                   |                                                                                                          |
 |-------------------|----------------------------------------------------------------------------------------------------------|
-|  **listenport が**   |                                    削除する IPv6 ポートを指定します。                                    |
-| **リッスンアドレス** | 削除する IPv6 アドレスを指定します。 アドレスが指定されていない場合、既定値はローカルコンピューターです。 |
-|   **プロトコール**    |                                      使用するプロトコルを指定します。                                      |
+|  **listenport**   |                                    削除する IPv6 ポートを指定します。                                    |
+| **listenaddress** | 削除する IPv6 アドレスを指定します。 アドレスが指定されない場合、既定値はローカル コンピューターです。 |
+|   **protocol**    |                                      使用するプロトコルを指定します。                                      |
 
 ## <a name="reset"></a>reset
 
@@ -232,9 +231,9 @@ IPv6 構成の状態をリセットします。
 
 `reset`
 
-## <a name="set-v4tov4"></a>v4tov4 の設定
+## <a name="set-v4tov4"></a>set v4tov4
 
-**Add v4tov4**コマンドを使用して作成されたポートプロキシサーバー上の既存のエントリのパラメーター値を変更するか、ポートとアドレスのペアをマップする新しいエントリをリストに追加します。
+**add v4tov4** コマンドを使用して作成されたポートプロキシ サーバー上での既存のエントリのパラメーター値を変更するか、またはポート/アドレスのペアをマップする新しいエントリを一覧に追加します。
 
 ### <a name="syntax"></a>構文
 
@@ -242,19 +241,19 @@ IPv6 構成の状態をリセットします。
 set v4tov4 listenport= {Integer | ServiceName} [[connectaddress=] {IPv4Address | HostName} [[connectport=] {Integer | ServiceName}] [[listenaddress=] {IPv4Address | HostName} [[protocol=]tcp]
 ```
 
-### <a name="parameters"></a>パラメーター
+#### <a name="parameters"></a>パラメーター
 
 |                    |                                                                                                                                                                                                   |
 |--------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|   **listenport が**   |                                                           リッスンするポート番号またはサービス名を使用して、IPv4 ポートを指定します。                                                            |
-| **connectaddress** | 接続先の IPv4 アドレスを指定します。 使用可能な値は、IP アドレス、コンピューターの NetBIOS 名、またはコンピューターの DNS 名です。 アドレスが指定されていない場合、既定値はローカルコンピューターです。 |
-|  **connectport**   |       接続先のポート番号またはサービス名を使用して、IPv4 ポートを指定します。 **Connectport**が指定されていない場合、既定値はローカルコンピューターの**listenport が**の値になります。        |
-| **リッスンアドレス**  | リッスンする IPv4 アドレスを指定します。 使用可能な値は、IP アドレス、コンピューターの NetBIOS 名、またはコンピューターの DNS 名です。 アドレスが指定されていない場合、既定値はローカルコンピューターです。 |
-|    **プロトコール**    |                                                                                  使用するプロトコルを指定します。                                                                                   |
+|   **listenport**   |                                                           ポート番号またはサービス名によって、リッスンする IPv4 ポートを指定します。                                                            |
+| **connectaddress** | 接続先の IPv4 アドレスを指定します。 使用可能な値は、IP アドレス、コンピューターの NetBIOS 名、またはコンピューターの DNS 名です。 アドレスが指定されない場合、既定値はローカル コンピューターです。 |
+|  **connectport**   |       ポート番号またはサービス名によって、接続する IPv4 ポートを指定します。 **connectport** が指定されない場合、既定値はローカル コンピューター上の **listenport** の値です。        |
+| **listenaddress**  | リッスンする IPv4 アドレスを指定します。 使用可能な値は、IP アドレス、コンピューターの NetBIOS 名、またはコンピューターの DNS 名です。 アドレスが指定されない場合、既定値はローカル コンピューターです。 |
+|    **protocol**    |                                                                                  使用するプロトコルを指定します。                                                                                   |
 
-## <a name="set-v4tov6"></a>v4tov6 の設定
+## <a name="set-v4tov6"></a>set v4tov6
 
-**Add v4tov6**コマンドを使用して作成されたポートプロキシサーバー上の既存のエントリのパラメーター値を変更するか、ポートとアドレスのペアをマップする新しいエントリをリストに追加します。
+**add v4tov6** コマンドを使用して作成されたポートプロキシ サーバー上での既存のエントリのパラメーター値を変更するか、またはポート/アドレスのペアをマップする新しいエントリを一覧に追加します。
 
 ### <a name="syntax"></a>構文
 
@@ -262,19 +261,19 @@ set v4tov4 listenport= {Integer | ServiceName} [[connectaddress=] {IPv4Address |
 set v4tov6 listenport= {Integer | ServiceName} [[connectaddress=] {IPv6Address | HostName} [[connectport=] {Integer | ServiceName}] [[listenaddress=] {IPv4Address | HostName} [[protocol=]tcp]
 ```
 
-### <a name="parameters"></a>パラメーター
+#### <a name="parameters"></a>パラメーター
 
 |                    |                                                                                                                                                                                                   |
 |--------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|   **listenport が**   |                                                           リッスンするポート番号またはサービス名を使用して、IPv4 ポートを指定します。                                                            |
-| **connectaddress** | 接続先の IPv6 アドレスを指定します。 使用可能な値は、IP アドレス、コンピューターの NetBIOS 名、またはコンピューターの DNS 名です。 アドレスが指定されていない場合、既定値はローカルコンピューターです。 |
-|  **connectport**   |       接続先のポート番号またはサービス名を使用して、IPv6 ポートを指定します。 **Connectport**が指定されていない場合、既定値はローカルコンピューターの**listenport が**の値になります。        |
-| **リッスンアドレス**  | リッスンする IPv4 アドレスを指定します。 使用可能な値は、IP アドレス、コンピューターの NetBIOS 名、またはコンピューターの DNS 名です。 アドレスが指定されていない場合、既定値はローカルコンピューターです。  |
-|    **プロトコール**    |                                                                                  使用するプロトコルを指定します。                                                                                   |
+|   **listenport**   |                                                           ポート番号またはサービス名によって、リッスンする IPv4 ポートを指定します。                                                            |
+| **connectaddress** | 接続先の IPv6 アドレスを指定します。 使用可能な値は、IP アドレス、コンピューターの NetBIOS 名、またはコンピューターの DNS 名です。 アドレスが指定されない場合、既定値はローカル コンピューターです。 |
+|  **connectport**   |       ポート番号またはサービス名によって、接続する IPv6 ポートを指定します。 **connectport** が指定されない場合、既定値はローカル コンピューター上の **listenport** の値です。        |
+| **listenaddress**  | リッスンする IPv4 アドレスを指定します。 使用可能な値は、IP アドレス、コンピューターの NetBIOS 名、またはコンピューターの DNS 名です。 アドレスが指定されない場合、既定値はローカル コンピューターです。  |
+|    **protocol**    |                                                                                  使用するプロトコルを指定します。                                                                                   |
 
-## <a name="set-v6tov4"></a>v6tov4 の設定
+## <a name="set-v6tov4"></a>set v6tov4
 
-**Add v6tov4**コマンドを使用して作成されたポートプロキシサーバー上の既存のエントリのパラメーター値を変更するか、ポートとアドレスのペアをマップする新しいエントリをリストに追加します。
+**add v6tov4** コマンドを使用して作成されたポートプロキシ サーバー上での既存のエントリのパラメーター値を変更するか、またはポート/アドレスのペアをマップする新しいエントリを一覧に追加します。
 
 ### <a name="syntax"></a>構文
 
@@ -282,19 +281,19 @@ set v4tov6 listenport= {Integer | ServiceName} [[connectaddress=] {IPv6Address |
 set v6tov4 listenport= {Integer | ServiceName} [[connectaddress=] {IPv4Address | HostName} [[connectport=] {Integer | ServiceName}] [[listenaddress=] {IPv6Address | HostName} [[protocol=]tcp]
 ```
 
-### <a name="parameters"></a>パラメーター
+#### <a name="parameters"></a>パラメーター
 
 |                    |                                                                                                                                                                                                   |
 |--------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|   **listenport が**   |                                                           リッスンするポート番号またはサービス名を使用して、IPv6 ポートを指定します。                                                            |
-| **connectaddress** | 接続先の IPv4 アドレスを指定します。 使用可能な値は、IP アドレス、コンピューターの NetBIOS 名、またはコンピューターの DNS 名です。 アドレスが指定されていない場合、既定値はローカルコンピューターです。 |
-|  **connectport**   |       接続先のポート番号またはサービス名を使用して、IPv4 ポートを指定します。 **Connectport**が指定されていない場合、既定値はローカルコンピューターの**listenport が**の値になります。        |
-| **リッスンアドレス**  | リッスンする IPv6 アドレスを指定します。 使用可能な値は、IP アドレス、コンピューターの NetBIOS 名、またはコンピューターの DNS 名です。 アドレスが指定されていない場合、既定値はローカルコンピューターです。  |
-|    **プロトコール**    |                                                                                  使用するプロトコルを指定します。                                                                                   |
+|   **listenport**   |                                                           ポート番号またはサービス名によって、リッスンする IPv6 ポートを指定します。                                                            |
+| **connectaddress** | 接続先の IPv4 アドレスを指定します。 使用可能な値は、IP アドレス、コンピューターの NetBIOS 名、またはコンピューターの DNS 名です。 アドレスが指定されない場合、既定値はローカル コンピューターです。 |
+|  **connectport**   |       ポート番号またはサービス名によって、接続する IPv4 ポートを指定します。 **connectport** が指定されない場合、既定値はローカル コンピューター上の **listenport** の値です。        |
+| **listenaddress**  | リッスンする IPv6 アドレスを指定します。 使用可能な値は、IP アドレス、コンピューターの NetBIOS 名、またはコンピューターの DNS 名です。 アドレスが指定されない場合、既定値はローカル コンピューターです。  |
+|    **protocol**    |                                                                                  使用するプロトコルを指定します。                                                                                   |
 
-## <a name="set-v6tov6"></a>v6tov6 の設定
+## <a name="set-v6tov6"></a>set v6tov6
 
-**Add v6tov6**コマンドを使用して作成されたポートプロキシサーバー上の既存のエントリのパラメーター値を変更するか、ポートとアドレスのペアをマップする新しいエントリをリストに追加します。
+**add v6tov6** コマンドを使用して作成されたポートプロキシ サーバー上での既存のエントリのパラメーター値を変更するか、またはポート/アドレスのペアをマップする新しいエントリを一覧に追加します。
 
 ### <a name="syntax"></a>構文
 
@@ -302,53 +301,53 @@ set v6tov4 listenport= {Integer | ServiceName} [[connectaddress=] {IPv4Address |
 set v6tov6 listenport= {Integer | ServiceName} [[connectaddress=] {IPv6Address | HostName} [[connectport=] {Integer | ServiceName}] [[listenaddress=] {IPv6Address | HostName} [[protocol=]tcp]
 ```
 
-### <a name="parameters"></a>パラメーター
+#### <a name="parameters"></a>パラメーター
 
 |                    |                                                                                                                                                                                                    |
 |--------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|   **listenport が**   |                                                            リッスンするポート番号またはサービス名を使用して、IPv6 ポートを指定します。                                                            |
-| **connectaddress** | 接続先の IPv6 アドレスを指定します。 使用可能な値は、IP アドレス、コンピューターの NetBIOS 名、またはコンピューターの DNS 名です。 アドレスが指定されていない場合、既定値はローカルコンピューターです。  |
-|  **connectport**   |        接続先のポート番号またはサービス名を使用して、IPv6 ポートを指定します。 **Connectport**が指定されていない場合、既定値はローカルコンピューターの**listenport が**の値になります。        |
-| **リッスンアドレス**  | リッスンする IPv6 アドレスを指定します。 使用可能な値は、IP アドレス、コンピューターの NetBIOS 名、またはコンピューターの DNS 名です。 アドレスを指定しない場合、既定値はローカルコンピューターになります。 |
-|    **プロトコール**    |                                                                                   使用するプロトコルを指定します。                                                                                   |
+|   **listenport**   |                                                            ポート番号またはサービス名によって、リッスンする IPv6 ポートを指定します。                                                            |
+| **connectaddress** | 接続先の IPv6 アドレスを指定します。 使用可能な値は、IP アドレス、コンピューターの NetBIOS 名、またはコンピューターの DNS 名です。 アドレスが指定されない場合、既定値はローカル コンピューターです。  |
+|  **connectport**   |        ポート番号またはサービス名によって、接続する IPv6 ポートを指定します。 **connectport** が指定されない場合、既定値はローカル コンピューター上の **listenport** の値です。        |
+| **listenaddress**  | リッスンする IPv6 アドレスを指定します。 使用可能な値は、IP アドレス、コンピューターの NetBIOS 名、またはコンピューターの DNS 名です。 アドレスを指定しない場合、既定値はローカル コンピューターです。 |
+|    **protocol**    |                                                                                   使用するプロトコルを指定します。                                                                                   |
 
 ## <a name="show-all"></a>すべての表示
 
-V4tov4、v4tov6、v6tov4、および v6tov6 のポートとアドレスのペアを含む、すべてのポートプロキシパラメーターが表示されます。
+v4tov4、v4tov6、v6tov4、および v6tov6 のポート/アドレスのペアを含め、すべてのポートプロキシ パラメータ―を表示します。
 
 ### <a name="syntax"></a>構文
 
 `show all`
 
 
-## <a name="show-v4tov4"></a>v4tov4 の表示
+## <a name="show-v4tov4"></a>show v4tov4
 
-V4tov4 のポートプロキシパラメーターを表示します。
+v4tov4 ポートプロキシ パラメーターを表示します。
 
 ### <a name="syntax"></a>構文
 
 `show v4tov4`
 
-## <a name="show-v4tov6"></a>v4tov6 の表示
+## <a name="show-v4tov6"></a>show v4tov6
 
-V4tov6 のポートプロキシパラメーターを表示します。
+v4tov6 ポートプロキシ パラメーターを表示します。
 
 ### <a name="syntax"></a>構文
 
 `show v4tov6`
 
-## <a name="show-v6tov4"></a>v6tov4 の表示
+## <a name="show-v6tov4"></a>show v6tov4
 
-V6tov4 のポートプロキシパラメーターを表示します。
+v6tov4 ポートプロキシ パラメーターを表示します。
 
 ### <a name="syntax"></a>構文
 
 `show v6tov4`
 
 
-## <a name="show-v6tov6"></a>v6tov6 の表示
+## <a name="show-v6tov6"></a>show v6tov6
 
-V6tov6 のポートプロキシパラメーターを表示します。
+v6tov6 ポートプロキシ パラメーターを表示します。
 
 ### <a name="syntax"></a>構文
 

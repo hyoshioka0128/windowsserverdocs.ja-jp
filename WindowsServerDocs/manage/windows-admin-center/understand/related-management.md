@@ -8,11 +8,11 @@ ms.author: harowl
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.openlocfilehash: d681e5007cd3ae3c14de774df0bc85abc23b51d7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406832"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "79323534"
 ---
 # <a name="windows-admin-center-and-related-management-solutions-from-microsoft"></a>Windows Admin Center と Microsoft の関連する管理ソリューション
 

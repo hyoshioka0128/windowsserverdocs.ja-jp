@@ -1,44 +1,39 @@
 ---
-title: なっ
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+title: offline
+description: オンラインディスクまたはボリュームをオフライン状態にする offline コマンドの参照記事です。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 44b265b2-fb08-4e7a-8939-c004258196b2
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c05b171426dde9c16116882af9f64e9ad80c130c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d1f8f5b7aaab32bcc99cc2b74c8f0e3baf152d80
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71372537"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922603"
 ---
-# <a name="offline"></a>なっ
-
-
+# <a name="offline"></a>offline
 
 オンラインのディスクまたはボリュームをオフライン状態にかかります。
 
 ## <a name="syntax"></a>構文
 
 ```
-Offline disk
-Offline volume
+offline disk
+offline volume
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
-|---------|-----------|
-|[オフラインディスク](offline-disk.md)|オフラインの状態にフォーカスがあるオンライン ディスクを移動します。|
-|[オフラインボリューム](offline-volume.md)|オフラインの状態に、オンラインのボリュームがフォーカスを移動します。|
+| パラメーター | 説明 |
+| --------- | ----------- |
+| [offline disk](offline-disk.md) | オフラインの状態にフォーカスがあるオンライン ディスクを移動します。 |
+| [offline volume](offline-volume.md) | オフラインの状態に、オンラインのボリュームがフォーカスを移動します。 |
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

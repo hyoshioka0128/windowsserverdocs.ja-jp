@@ -2,19 +2,17 @@
 title: 個別のデバイスの割り当てを使用したデバイスの展開の計画
 description: Windows Server で DDA がどのように機能するかについて説明します。
 ms.prod: windows-server
-ms.service: na
 ms.technology: hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 author: chrishuybregts
 ms.author: chrihu
 ms.date: 08/21/2019
-ms.openlocfilehash: 114dd87b86bfffd1070229af57ae65deea2c2db0
-ms.sourcegitcommit: 81198fbf9e46830b7f77dcd345b02abb71ae0ac2
+ms.openlocfilehash: 9cc9614524c424398df550351aa2abfa7d173d43
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72923861"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856095"
 ---
 # <a name="plan-for-deploying-devices-using-discrete-device-assignment"></a>個別のデバイスの割り当てを使用したデバイスの展開の計画
 >適用対象: Microsoft Hyper-V Server 2016、Windows Server 2016、Microsoft Hyper-V Server 2019、Windows Server 2019
@@ -29,11 +27,11 @@ GPU 仮想化のその他の方法については、「 [Windows Server での g
 個別のデバイスの割り当ては、第1または第2世代の Vm でサポートされています。  また、サポートされているゲストには、Windows 10、Windows Server 2019、Windows Server 2016、 [KB 3133690](https://support.microsoft.com/kb/3133690)が適用された windows server 2012r2、および Linux OS のさまざまなディストリビューションが含まれ[ます。](../supported-linux-and-freebsd-virtual-machines-for-hyper-v-on-windows.md)
 
 ## <a name="system-requirements"></a>システム要件
-[Windows Server のシステム要件](../../../get-started/System-Requirements--and-Installation.md)と[Hyper-v のシステム要件](../System-requirements-for-Hyper-V-on-Windows.md)に加えて、個別のデバイスの割り当てには、PCIe の構成に対してオペレーティングシステムの制御を与えることができるサーバークラスのハードウェアが必要です。fabric (ネイティブ PCI Express コントロール)。 さらに、PCIe ルート複合は、"Access Control Services" (ACS) をサポートする必要があります。これにより、Hyper-v は i/o MMU を通過するすべての PCIe トラフィックを強制的に強制できます。
+[Windows Server のシステム要件](../../../get-started/System-Requirements--and-Installation.md)と[Hyper-v のシステム要件](../System-requirements-for-Hyper-V-on-Windows.md)に加えて、個別のデバイスの割り当てには、PCIE ファブリック (ネイティブ PCI Express control) の構成に対してオペレーティングシステムの制御を与えることができるサーバークラスのハードウェアが必要です。 さらに、PCIe ルート複合は、"Access Control Services" (ACS) をサポートする必要があります。これにより、Hyper-v は i/o MMU を通過するすべての PCIe トラフィックを強制的に強制できます。
 
 これらの機能は通常、サーバーの BIOS で直接公開されることはなく、多くの場合、他の設定の背後で隠されています。  たとえば、sr-iov のサポートには同じ機能が必要であり、BIOS では "SR-IOV を有効にする" の設定が必要になる場合があります。  BIOS で正しい設定を識別できない場合は、システムベンダーにお問い合わせください。
 
-ハードウェアが個別のデバイス割り当てに対応できるようにするために、エンジニアは[コンピュータープロファイルスクリプト](#machine-profile-script)をまとめました。これを hyper-v 対応ホストで実行して、サーバーが正しくセットアップされているかどうか、およびデバイスに対応しているかどうかをテストできます。個別のデバイスの割り当て。
+ハードウェアが個別のデバイスの割り当てに対応できるように、エンジニアは[コンピュータープロファイルスクリプト](#machine-profile-script)をまとめました。このスクリプトは、サーバーが正しく設定されているかどうか、およびデバイスの個別割り当てに対応しているデバイスをテストするために、hyper-v 対応ホストで実行できます。
 
 ## <a name="device-requirements"></a>デバイスの要件
 すべての PCIe デバイスを個別のデバイス割り当てで使用できるわけではありません。  たとえば、レガシ (INTx) PCI 割り込みを利用する古いデバイスはサポートされていません。 Jake Oshin の[ブログ投稿](https://blogs.technet.microsoft.com/virtualization/2015/11/20/discrete-device-assignment-machines-and-devices/)はより詳細に説明されています。ただし、コンシューマーの場合は、[コンピュータープロファイルスクリプト](#machine-profile-script)を実行すると、デバイスの個別割り当てに使用できるデバイスが表示されます。
@@ -63,8 +61,8 @@ GPU 仮想化のその他の方法については、「 [Windows Server での g
 ホストからデバイスをマウント解除してマウントするには、PCIe ロケーションパスが必要です。  ロケーションパスの例は次のようになります: `"PCIROOT(20)#PCI(0300)#PCI(0000)#PCI(0800)#PCI(0000)"`。   [コンピュータープロファイルスクリプト](#machine-profile-script)は、PCIe デバイスの場所のパスも返します。
 
 ### <a name="getting-the-location-path-by-using-device-manager"></a>デバイスマネージャーを使用した場所のパスの取得
-![「デバイス マネージャー」](../deploy/media/dda-devicemanager.png)
-- デバイスマネージャーを開き、デバイスを見つけます。  
+![デバイス マネージャー](../deploy/media/dda-devicemanager.png)
+- デバイス マネージャーを開き、デバイスを見つけます。  
 - デバイスを右クリックし、[プロパティ] を選択します。
 - [詳細] タブに移動し、プロパティドロップダウンで [ロケーションパス] を選択します。  
 - "PCIROOT" で始まるエントリを右クリックし、[コピー] を選択します。  これで、そのデバイスの場所のパスが作成されました。

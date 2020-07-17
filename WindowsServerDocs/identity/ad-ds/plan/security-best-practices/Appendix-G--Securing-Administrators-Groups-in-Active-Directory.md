@@ -1,7 +1,6 @@
 ---
 ms.assetid: 4baefbd3-038f-44c0-85ba-f24e9722b757
 title: 付録 G-Active Directory での管理者グループのセキュリティ保護
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: cdea04e211b1873ff51c4bc3dc9ff24e746ead69
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f113dc7fc5b131a2c0ef10433125ef12a775707c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408644"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80821525"
 ---
 # <a name="appendix-g-securing-administrators-groups-in-active-directory"></a>付録 G: Active Directory の Administrators グループをセキュリティで保護する
 
@@ -32,17 +31,17 @@ Enterprise Admins (EA) グループおよび Domain Admins (DA) グループの�
 
 2.  各ドメインのメンバーサーバーとワークステーションが含まれている Ou にリンクされた Gpo では、BA グループは、 **Computer Configuration\Policies\Windows 権利 Policies \ User Rights Assignment**の次のユーザー権利に追加する必要があります。  
 
-    -   ネットワークからのこのコンピューターへのアクセスを拒否する  
+    -   ネットワークからのこのコンピュータへのアクセスを拒否する  
 
-    -   バッチ ジョブとしてのログオンを拒否  
+    -   バッチ ジョブとしてのログオン権限を拒否する  
 
-    -   サービスとしてのログオンを拒否  
+    -   サービスとしてのログオン権限を拒否する  
 
 3.  フォレスト内の各ドメインのドメインコントローラー OU で、Administrators グループには次のユーザー権利が付与されている必要があります。  
 
-    -   ネットワークからこのコンピューターにアクセスする  
+    -   ネットワーク経由でコンピューターへアクセス  
 
-    -   ローカル ログオンを許可  
+    -   ローカル ログオンを許可する  
 
     -   リモート デスクトップ サービスを使ったログオンを許可する  
 
@@ -271,7 +270,7 @@ GPO の変更の影響を受けたメンバーサーバーまたはワークス�
 
 7.  **[プログラム/スクリプト]** フィールドの **[参照]** をクリックし、 **[バッチファイルの作成]** セクションで作成したバッチファイルを探して選択し、 **[開く]** をクリックします。  
 
-8.  **[OK]** をクリックします。  
+8.  **[OK]** をクリックすると、  
 
 9. **[全般]** タブをクリックします。  
 
@@ -281,7 +280,7 @@ GPO の変更の影響を受けたメンバーサーバーまたはワークス�
 
 12. [**ユーザーがログオンしているかどうかにかかわら**ず、**パスワードを保存**しない] を選択します。 タスクは、ローカルコンピューターのリソースにのみアクセスできます。  
 
-13. **[OK]** をクリックします。  
+13. **[OK]** をクリックすると、  
 
 14. タスクを実行するためのユーザーアカウントの資格情報を要求するダイアログボックスが表示されます。  
 

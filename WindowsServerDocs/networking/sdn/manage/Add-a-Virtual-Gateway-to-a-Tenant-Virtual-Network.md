@@ -1,28 +1,24 @@
 ---
 title: テナントの仮想ネットワークに仮想ゲートウェイを追加する
 description: Windows PowerShell のコマンドレットとスクリプトを使用して、テナントの仮想ネットワークのサイト間接続を提供する方法について説明します。
-manager: dougkim
-ms.custom: na
+manager: grcusanz
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-sdn
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b9552054-4eb9-48db-a6ce-f36ae55addcd
-ms.author: pashort
-author: shortpatti
+ms.author: anpaul
+author: AnirbanPaul
 ms.date: 08/23/2018
-ms.openlocfilehash: deeb226d81c48e0e389ea4d2619c43aca01e25c2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: de7a5a612ac4a1b0415c3d7d29435cfc5debacf9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355888"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854575"
 ---
 # <a name="add-a-virtual-gateway-to-a-tenant-virtual-network"></a>テナントの仮想ネットワークに仮想ゲートウェイを追加する 
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016 
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016 
 
 Windows PowerShell のコマンドレットとスクリプトを使用して、テナントの仮想ネットワークのサイト間接続を提供する方法について説明します。 このトピックでは、ネットワークコントローラーを使用して、ゲートウェイプールのメンバーである RAS ゲートウェイのインスタンスにテナント仮想ゲートウェイを追加します。 RAS ゲートウェイは、各テナントで使用される帯域幅に応じて、最大100のテナントをサポートします。 ネットワークコントローラーは、テナント用の新しい仮想ゲートウェイを展開するときに使用する最適な RAS ゲートウェイを自動的に決定します。  
 
@@ -33,7 +29,7 @@ Windows PowerShell のコマンドレットとスクリプトを使用して、�
 
 |                                                        ネットワーク接続オプション                                                         |                                              BGP 構成オプション                                               |
 |-------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------|
-| <ul><li>IPSec サイト間仮想プライベートネットワーク (VPN)</li><li>汎用ルーティングカプセル化 (GRE)</li><li>レイヤー 3 転送</li></ul> | <ul><li>BGP ルーターの構成</li><li>BGP ピアの構成</li><li>BGP ルーティングポリシーの構成</li></ul> |
+| <ul><li>IPSec サイト間仮想プライベートネットワーク (VPN)</li><li>Generic Routing Encapsulation (GRE)</li><li>レイヤー 3 転送</li></ul> | <ul><li>BGP ルーターの構成</li><li>BGP ピアの構成</li><li>BGP ルーティングポリシーの構成</li></ul> |
 
 ---
 

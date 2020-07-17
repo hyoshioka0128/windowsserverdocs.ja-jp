@@ -1,7 +1,6 @@
 ---
 ms.assetid: 8a3cf2ae-2511-4eea-afd5-a43179a78613
 title: ディレクトリ サービス コンポーネントの更新
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,18 +8,18 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: d79f31572bc30d0f4fa3af45671c58b799e40f02
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: cde839feda47d55415b2b6cc1026a7a3e6515a44
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390017"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80823095"
 ---
 # <a name="directory-services-component-updates"></a>ディレクトリ サービス コンポーネントの更新
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-**作成者**:Justin 書籍、シニアサポートエスカレーションエンジニア (Windows グループ)  
+**Author**: Justin 書籍、シニアサポートエスカレーションエンジニア (Windows グループ)  
   
 > [!NOTE]  
 > この内容は Microsoft カスタマー サポート エンジニアによって作成され、TechNet が通常提供しているトピックよりも詳細な Windows Server 2012 R2 の機能やソリューションの技術的説明を求めている、経験豊かな管理者とシステム設計者を対象としています。 ただし、TechNet と同様の編集過程は実施されていないため、言語によっては通常より洗練されていない文章が見られる場合があります。  
@@ -42,7 +41,7 @@ ms.locfileid: "71390017"
   
     -   [Active Directory レプリケーション スループットの向上](../../../ad-ds/manage/component-updates/Directory-Services-component-updates.md#BKMK_ADRepl)  
   
-## <a name="BKMK_FL"></a>ドメインとフォレストの機能レベル  
+## <a name="domain-and-forest-functional-levels"></a><a name="BKMK_FL"></a>ドメインとフォレストの機能レベル  
   
 ### <a name="overview"></a>概要  
 このセクションでは、ドメインとフォレストの機能レベルの変更について簡単に説明します。  
@@ -50,9 +49,9 @@ ms.locfileid: "71390017"
 ### <a name="new-dfl-and-ffl"></a>新しい DFL と FFL  
 リリースでは、新しいドメインとフォレストの機能レベルがあります。  
   
--   フォレストの機能レベル:Windows Server 2012 R2  
+-   フォレストの機能レベル: Windows Server 2012 R2  
   
--   ドメインの機能レベル:Windows Server 2012 R2  
+-   ドメインの機能レベル: Windows Server 2012 R2  
   
 ### <a name="the-windows-server-2012-r2-domain-functional-level-enables-support-for-the-following"></a>Windows Server 2012 R2 ドメインの機能レベルにより、次のサポートが有効になります。  
   
@@ -60,15 +59,15 @@ ms.locfileid: "71390017"
   
     *保護されたユーザー*が Windows Server 2012 R2 ドメインに対する認証を行うことができ**なくなり**ます。  
   
-    -   NTLM 認証を使用した認証  
+    -   NTLM 認証で認証を行う  
   
-    -   Kerberos 事前認証で DES または RC4 暗号スイートを使用する  
+    -   Kerberos の事前認証で DES または RC4 の暗号スイートを使用する  
   
-    -   制約なしの委任または制約付き委任を使用して委任する  
+    -   制約なしの委任または制約付き委任を使用して委任される  
   
-    -   最初の4時間の有効期間を超えてユーザーチケット (Tgt) を更新する  
+    -   最初の 4 時間の有効期間を超えてユーザー チケット (TGT) を更新する  
   
-2.  Authentication Policies  
+2.  認証ポリシー  
   
     新しいフォレストベースの Active Directory ポリシーでは、Windows Server 2012 R2 ドメインのアカウントに適用して、アカウントがサインオンできるホストを制御し、アカウントとして実行されているサービスに認証のアクセス制御条件を適用することができます。  
   
@@ -145,7 +144,7 @@ Windows Server 2012 R2 を実行している DC を、2003 DFL を実行して�
   
 2.  Sch69  
   
-## <a name="BKMK_NTFRS"></a>NTFRS の非推奨  
+## <a name="deprecation-of-ntfrs"></a><a name="BKMK_NTFRS"></a>NTFRS の非推奨  
   
 ### <a name="overview"></a>概要  
 FRS は、Windows Server 2012 R2 で非推奨とされます。  FRS の廃止は、Windows Server 2008 の最小ドメイン機能レベル (DFL) を適用することで実現されます。  この強制は、サーバーマネージャーまたは Windows PowerShell を使用して新しいドメインが作成された場合にのみ存在します。  
@@ -156,7 +155,7 @@ FRS は、Windows Server 2012 R2 で非推奨とされます。  FRS の廃止�
   
 ![ディレクトリサービスの更新](media/Directory-Services-component-updates/GTR_ADDS_PS_InstallDFL2.gif)  
   
-## <a name="BKMK_LDAPQuery"></a>LDAP クエリオプティマイザーの変更  
+## <a name="ldap-query-optimizer-changes"></a><a name="BKMK_LDAPQuery"></a>LDAP クエリオプティマイザーの変更  
   
 ### <a name="overview"></a>概要  
 LDAP クエリオプティマイザーアルゴリズムが再評価され、さらに最適化されました。  その結果、LDAP search の効率と複雑なクエリの LDAP 検索時間のパフォーマンスが向上します。  
@@ -172,7 +171,7 @@ LDAP クエリオプティマイザーアルゴリズムが再評価され、さ
 > -   AD のパフォーマンスの問題に関するサポート呼び出しが少ない  
 > -   Windows Server 2008 R2 に移植される (KB 2862304)  
   
-### <a name="background"></a>背景情報  
+### <a name="background"></a>背景  
 Active Directory を検索する機能は、ドメインコントローラーによって提供されるコアサービスです。  その他のサービスや基幹業務アプリケーションは、Active Directory の検索に依存しています。  この機能が使用できない場合は、ビジネス操作が中止されることがあります。  コアと使用率の高いサービスとして、ドメインコントローラーは LDAP 検索トラフィックを効率的に処理することが不可欠です。  Ldap クエリオプティマイザーアルゴリズムでは、ldap 検索フィルターを、データベース内に既にインデックスが作成されているレコードを使用して満たすことのできる結果セットにマッピングすることにより、ldap 検索を可能な限り効率的にすることを試みます。  このアルゴリズムは再評価され、さらに最適化されました。  その結果、LDAP search の効率と複雑なクエリの LDAP 検索時間のパフォーマンスが向上します。  
   
 ### <a name="details-of-change"></a>変更の詳細  
@@ -268,7 +267,7 @@ Log Record Bytes Generated: 0
   
         ![ディレクトリサービスの更新](media/Directory-Services-component-updates/GTR_ADDS_Event1644.gif)  
   
-### <a name="BKMK_EnableStats"></a>LDP で Stats コントロールを有効にするには  
+### <a name="to-enable-the-stats-control-in-ldp"></a><a name="BKMK_EnableStats"></a>LDP で Stats コントロールを有効にするには  
   
 1.  LDP.EXE を開き、ドメインコントローラーに接続してバインドします。  
   
@@ -286,7 +285,7 @@ Log Record Bytes Generated: 0
   
     ![ディレクトリサービスの更新](media/Directory-Services-component-updates/GTR_ADDS_SearchOptions.gif)  
   
-### <a name="try-this-use-ldp-to-return-query-statistics"></a>次のことを試してみてください。LDP を使用してクエリの統計情報を取得する  
+### <a name="try-this-use-ldp-to-return-query-statistics"></a>試してみる: LDP を使用してクエリの統計情報を返す  
 ドメインコントローラー、または AD DS ツールがインストールされているドメインに参加しているクライアントまたはサーバーで、次の操作を実行します。  Windows Server 2012 DC と Windows Server 2012 R2 DC を対象として、次の手順を繰り返します。  
   
 1.  [「より効率的な MICROSOFT AD 対応アプリケーションの作成」](https://msdn.microsoft.com/library/ms808539.aspx)の記事を確認し、必要に応じて参照してください。  
@@ -308,7 +307,7 @@ Log Record Bytes Generated: 0
   
 [951581](https://support.microsoft.com/kb/951581) AD または LDS/ADAM ディレクトリサービスでの LDAP クエリの実行速度が予想よりも遅く、イベント ID 1644 がログに記録されることがある  
   
-## <a name="BKMK_1644"></a>1644イベントの改善  
+## <a name="1644-event-improvements"></a><a name="BKMK_1644"></a>1644イベントの改善  
   
 ### <a name="overview"></a>概要  
 この更新により、トラブルシューティングのために、LDAP 検索結果の統計がイベント ID 1644 に追加されます。  また、新しいレジストリ値を使用して、時間ベースのしきい値でログ記録を有効にすることもできます。  これらの機能強化は、Windows server 2012 および Windows Server 2008 R2 SP1 で、KB [2800945](https://support.microsoft.com/kb/2800945)を使用して提供され、windows SERVER 2008 SP2 で使用できるようになりました。  
@@ -317,7 +316,7 @@ Log Record Bytes Generated: 0
 > -   非効率的または高価な LDAP 検索のトラブルシューティングを支援するために、追加の LDAP 検索統計情報がイベント ID 1644 に追加されます。  
 > -   検索時間のしきい値を指定できるようになりました (例 高コストで非効率的な検索結果のしきい値を指定する代わりに、100ミリ秒よりも長い時間がかかっている検索のイベント1644をログに記録します。  
   
-### <a name="background"></a>背景情報  
+### <a name="background"></a>背景  
 パフォーマンスの問題のトラブルシューティング Active Directory、LDAP 検索アクティビティが問題に寄与している可能性があることが明らかになります。  ドメインコントローラーによって処理される高価または非効率的な LDAP クエリを確認できるように、ログ記録を有効にすることを決定しました。  ログ記録を有効にするには、フィールドエンジニアリング診断の値を設定し、必要に応じて、高価または非効率的な検索結果のしきい値を指定できます。  フィールドエンジニアリングのログ記録レベルを5にすると、これらの条件を満たす検索は、イベント ID 1644 のディレクトリサービスイベントログに記録されます。  
   
 イベントには次のものが含まれます。  
@@ -326,7 +325,7 @@ Log Record Bytes Generated: 0
   
 -   開始ノード  
   
--   Assert  
+-   フィルター  
   
 -   ［検索範囲］  
   
@@ -372,11 +371,11 @@ Windows Registry Editor Version 5.00
   
 ![ディレクトリサービスの更新](media/Directory-Services-component-updates/GTR_ADDS_Event1644_2012.gif)  
   
-新規  
+NEW  
   
 ![ディレクトリサービスの更新](media/Directory-Services-component-updates/GTR_ADDS_Event1644_2012R2.gif)  
   
-#### <a name="try-this-use-the-event-log-to-return-query-statistics"></a>次のことを試してみてください。イベントログを使用してクエリの統計情報を返す  
+#### <a name="try-this-use-the-event-log-to-return-query-statistics"></a>試してみよう: イベントログを使用してクエリの統計情報を返す  
   
 1.  Windows Server 2012 DC と Windows Server 2012 R2 DC を対象として、次の手順を繰り返します。 各検索の後に、両方の Dc でイベント ID 1644s を確認します。  
   
@@ -386,7 +385,7 @@ Windows Registry Editor Version 5.00
   
 4.  1つまたは複数の属性のインデックスが作成されていないため、クエリオプティマイザーで最適化できない LDAP 検索を実行します。  
   
-## <a name="BKMK_ADRepl"></a>Active Directory レプリケーションのスループットの向上  
+## <a name="active-directory-replication-throughput-improvement"></a><a name="BKMK_ADRepl"></a>Active Directory レプリケーションのスループットの向上  
   
 ### <a name="overview"></a>概要  
 AD レプリケーションでは、レプリケーショントランスポートに RPC を使用します。 既定では、RPC は8K の送信バッファーと5K パケットサイズを使用します。 これにより、送信側インスタンスが3つのパケット (約15,000 分のデータ) を送信し、さらに送信する前にネットワークラウンドトリップを待機する必要があるという、実質的な効果があります。 3ミリ秒の往復時間が想定されている場合、スループットは、1 gbps または 10 Gbps のネットワークであっても、最大で 40 mbps になります。  

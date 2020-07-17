@@ -1,43 +1,46 @@
 ---
-title: ftp prompt_1
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+title: ftp prompt
+description: プロンプトモードのオンとオフを切り替える ftp prompt コマンドのリファレンス記事です。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: 930df39b-45c4-4e0b-bfe2-1d1963be817a vhorne
+ms.assetid: 930df39b-45c4-4e0b-bfe2-1d1963be817a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 08c7f9c14f4168bb5d3aa874711669eede8d0d87
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e0859d3989a054d03421f08f5df7823a690dc85c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71376201"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933114"
 ---
-# <a name="ftp-prompt_1"></a>ftp: prompt_1
+# <a name="ftp-prompt"></a>ftp prompt
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-間で切り替わる **プロンプト** モード オン/オフします。   
-## <a name="syntax"></a>構文  
-```  
-prompt  
-```  
-### <a name="parameters"></a>パラメーター  
-なし  
-## <a name="remarks"></a>コメント  
-- 既定では、 **プロンプト** にします。  
-- **ftp**では、ファイルを選択して取得または保存できるように、複数のファイル転送中にプロンプトが表示されます。  **Mget** と **mput** 場合は、すべてのファイルを転送 **プロンプト** は無効になっています。  
-  ## <a name="BKMK_Examples"></a>例  
-  オンとオフは、プロンプト モードを切り替えます。  
-  ```  
-  prompt  
-  ```  
-  ## <a name="additional-references"></a>その他の参照情報  
-- [コマンド ライン構文の記号](command-line-syntax-key.md)  
+プロンプトモードのオンとオフを切り替えます。 既定では、プロンプトモードはオンになっています。 プロンプトモードが有効になっている場合、ftp コマンドは複数のファイル転送中にプロンプトを表示して、ファイルを選択して取得または保存できるようにします。
+
+> [!NOTE]
+> プロンプトモードがオフになっている場合は、 [ftp の mget](ftp-mget.md)コマンドと[ftp mput](ftp-mput_1.md)コマンドを使用してすべてのファイルを転送できます。
+
+## <a name="syntax"></a>構文
+
+```
+prompt
+```
+
+### <a name="examples"></a>例
+
+プロンプトモードのオンとオフを切り替えるには、次のように入力します。
+
+```
+prompt
+```
+
+## <a name="additional-references"></a>その他の参照情報
+
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [追加の FTP ガイダンス](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))

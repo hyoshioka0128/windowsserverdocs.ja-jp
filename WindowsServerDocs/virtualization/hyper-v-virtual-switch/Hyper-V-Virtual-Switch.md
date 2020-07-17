@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-hv-switch
 ms.topic: article
 ms.assetid: 398440ac-5988-41ce-b91e-eab343a255d3
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: c508005af67e9dd5b0c9a22693aca25eb19e8e48
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: fb2ebf485b5004e457558fc16d8535662c0c5ff2
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366831"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80307982"
 ---
 # <a name="hyper-v-virtual-switch"></a>Hyper-V 仮想スイッチ
 
@@ -57,7 +57,7 @@ Hyper-v 仮想スイッチの機能を使用すると、テナントの分離の
 >[!NOTE]
 > Windows Server 2016 では、仮想 NIC を持つ VM は、仮想 NIC の最大スループットを正確に表示します。 **ネットワーク接続**の仮想 nic 速度を表示するには、目的の仮想 nic アイコンを右クリックし、 **[状態]** をクリックします。 [仮想 NIC の**状態**] ダイアログボックスが開きます。 **[接続]** の **[速度]** の値は、サーバーにインストールされている物理 NIC の速度と一致します。
   
-## <a name="bkmk_apps"></a>Hyper-v 仮想スイッチの使用
+## <a name="uses-for-hyper-v-virtual-switch"></a><a name="bkmk_apps"></a>Hyper-v 仮想スイッチの使用
 
 Hyper-v 仮想スイッチのいくつかのユースケースシナリオを次に示します。
 
@@ -69,7 +69,7 @@ Hyper-v 仮想スイッチのいくつかのユースケースシナリオを次
   
 **転送拡張機能は、VLAN ID を管理**します。主要なスイッチ会社は、ネットワークのすべてのポリシーを適用する転送拡張機能を構築しています。 管理される要素の 1 つに、仮想ローカル エリア ネットワーク (VLAN) ID があります。 仮想スイッチは、VLAN の制御を転送拡張機能に渡します。 会社のインストールをプログラムによって呼び出す Windows Management Instrumentation (WMI) アプリケーションプログラミングインターフェイス (API) を呼び出して、透過性をオンにし、Hyper-v 仮想スイッチに対して、VLAN タグに対する操作を実行しないように指示します。  
   
-## <a name="bkmk_func"></a>Hyper-v 仮想スイッチの機能
+## <a name="hyper-v-virtual-switch-functionality"></a><a name="bkmk_func"></a>Hyper-v 仮想スイッチの機能
  
 Hyper-V 仮想スイッチに備えられているいくつかの主要な機能について説明します。  
   

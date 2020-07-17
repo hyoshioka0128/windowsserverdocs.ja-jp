@@ -1,19 +1,19 @@
 ---
 title: HGS で必要な TPM モード情報をキャプチャする
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: 915b1338-5085-481b-8904-75d29e609e93
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 04/01/2019
-ms.openlocfilehash: ba67cb80a405cd1c6d368a52798e3dec4d9861cb
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 480901321b53adb03cc44f7e8b7c597c77404c90
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403519"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856425"
 ---
 # <a name="authorize-guarded-hosts-using-tpm-based-attestation"></a>TPM ベースの構成証明を使用して保護されたホストを承認する
 

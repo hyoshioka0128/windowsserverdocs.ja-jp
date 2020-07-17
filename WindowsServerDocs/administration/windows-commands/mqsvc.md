@@ -1,41 +1,33 @@
 ---
 title: mqsvc
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Mqsvc コマンドの参照記事。異なるタイミングで実行されているアプリが、一時的にオフラインになっている可能性がある異種ネットワークやシステム間で通信できるようにします。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8bfd7874-ccb4-453f-b908-3a5b9aee0ad6
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8dcf98fa02eaede162fd75181af7a070b8a0aed4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: caf2cc4cd67795789ae61c0e8e958f605bb88523
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71373520"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928549"
 ---
 # <a name="mqsvc"></a>mqsvc
 
+メッセージキューテクノロジを使用すると、異なるタイミングで実行されているアプリが、一時的にオフラインになっている可能性のある異種ネットワークやシステム間で通信できるようになります。 メッセージ キューにより、メッセージの確実な配信、効率的なルーティング、セキュリティ、優先度に基づくメッセージングが可能になります。 MSMQ を使用することにより、非同期メッセージングと同期メッセージングのどちらのシナリオに対するソリューションも実装できます。 メッセージキューの詳細については、「[メッセージキュー (MSMQ)](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/ms711472(v=vs.85))」を参照してください。
 
-
-メッセージキューテクノロジを使用すると、異なるタイミングで実行されているアプリケーションが、一時的にオフラインになっている可能性のある異種ネットワークやシステム間で通信できるようになります。 メッセージキューは、保証されたメッセージ配信、効率的なルーティング、セキュリティ、および優先度ベースのメッセージングを提供します。 非同期メッセージングと同期メッセージングの両方のシナリオに対応するソリューションを実装するために使用できます。 このコマンドの詳細については、MSDN の「[メッセージキュー (MSMQ)](https://go.microsoft.com/fwlink/?LinkId=248723) 」を参照してください。
-
-## <a name="syntax"></a>構文
+## <a name="syntax"></a>Syntax
 
 ```
-Mqsvc.exe
+mqsvc.exe
 ```
 
-### <a name="parameters"></a>パラメーター
+## <a name="additional-references"></a>その他の参照情報
 
-なし
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
 
-#### <a name="additional-references"></a>その他の参照情報
-
--   [コマンド ライン構文の記号](command-line-syntax-key.md)
+- [MSMQ Powershell リファレンス](https://docs.microsoft.com/powershell/module/msmq/?view=win10-ps)

@@ -1,28 +1,24 @@
 ---
 title: キー配布サービス KDS ルート キーの作成
 description: Windows Server のセキュリティ
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-gmsa
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 42e5db8f-1516-4d42-be0a-fa932f5588e9
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: fd335d61eae7cf753d09436d54f14c7d6004d643
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d26cd32f021e8b00c6c9c6d3949a00f71096a3c9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386905"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857015"
 ---
 # <a name="create-the-key-distribution-services-kds-root-key"></a>キー配布サービス KDS ルート キーの作成
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 IT 担当者向けのこのトピックでは、windows PowerShell を使用してドメインコントローラーに Microsoft キー配布サービス (kdssvc.dll) のルートキーを作成し、Windows Server 2012 以降でグループの管理されたサービスアカウントのパスワードを生成する方法について説明します。
 
@@ -65,7 +61,7 @@ DC が 1 つしか存在しないテスト環境では、次の手順を実行�
 
     **Add-kdsrootkey-EffectiveTime ((取得日). addhours (-10))**
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 [グループの管理されたサービス アカウントの概要](getting-started-with-group-managed-service-accounts.md)
 
 

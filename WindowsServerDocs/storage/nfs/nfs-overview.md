@@ -8,16 +8,16 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 72f71bc6605103f8240bcd531da3a5b58d470181
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2589e21c54fa864629f81b5889d0442c6f0de254
+ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403045"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "85070564"
 ---
 # <a name="network-file-system-overview"></a>ネットワーク ファイル システムの概要
 
->適用対象:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 このトピックでは、Windows Server のファイルサービスおよび記憶域サービスのサーバーの役割に含まれるネットワークファイルシステムの役割サービスと機能について説明します。 Network File System (NFS) は、Windows コンピューターと Windows 以外のコンピューターの両方を含む異種環境がある企業向けのファイル共有ソリューションを提供します。
 
@@ -33,7 +33,7 @@ Windows では、オペレーティングシステムのバージョンとファ
 
 | オペレーティング システム | NFS サーバーのバージョン |NFS クライアントのバージョン|
 | ----------------- | ------------------- | ----------------- |
-| Windows 7、Windows 8.1、Windows 10 | なし | NFSv2、NFSv3 |
+| Windows 7、Windows 8.1、Windows 10 | N/A | NFSv2、NFSv3 |
 | Windows Server 2008、Windows Server 2008 R2 | NFSv2、NFSv3 | NFSv2、NFSv3 |
 | Windows Server 2012、Windows Server 2012 R2、Windows Server 2016、Windows Server 2019 | NFSv2、NFSv3、NFSv 4.1  | NFSv2、NFSv3 |
 
@@ -52,9 +52,9 @@ Network File System の新機能と変更された機能には、NFS バージ�
 |機能|新規/更新|説明|
 |---|---|---|
 |[NFS バージョン4.1](#nfs-version-41)|新規|NFS バージョン3と比較して、セキュリティ、パフォーマンス、および相互運用性が向上しました。|
-|[NFS インフラストラクチャ](#nfs-infrastructure)|更新|は、展開と管理性を向上させ、セキュリティを強化します。|
-|[NFS バージョン3の継続的可用性](#nfs-version-3-continuous-availability)|更新|NFS バージョン3クライアントの継続的な可用性を向上させます。|
-|[展開と管理の容易性の向上](#deployment-and-manageability-improvements)|更新|新しい Windows PowerShell コマンドレットと新しい WMI プロバイダーを使用して NFS を簡単に展開および管理できます。|
+|[NFS インフラストラクチャ](#nfs-infrastructure)|更新済み|は、展開と管理性を向上させ、セキュリティを強化します。|
+|[NFS バージョン3の継続的可用性](#nfs-version-3-continuous-availability)|更新済み|NFS バージョン3クライアントの継続的な可用性を向上させます。|
+|[展開と管理の容易性の向上](#deployment-and-manageability-improvements)|更新済み|新しい Windows PowerShell コマンドレットと新しい WMI プロバイダーを使用して NFS を簡単に展開および管理できます。|
 
 ## <a name="nfs-version-41"></a>NFS バージョン4.1
 
@@ -110,12 +110,12 @@ NFS の展開と管理は、次の点で改善されています。
 
 Windows Server 2012 の NFS では、nfs 用に nfs モジュールが導入されています。これには、NFS 専用の新しいコマンドレットがいくつかあります。 これらのコマンドレットは、NFS 管理タスクを自動化する簡単な方法を提供します。 詳細については、「 [Windows PowerShell の NFS コマンドレット](https://docs.microsoft.com/powershell/module/nfs/?view=win10-ps)」を参照してください。
 
-## <a name="additional-information"></a>追加情報
+## <a name="additional-information"></a>関連情報
 
 次の表に、NFS の評価に関するその他のリソースを示します。
 
-|コンテンツの種類|参考資料|
+|コンテンツ タイプ|参考資料|
 |---|---|
-|展開|[ネットワーク ファイル システムの展開](deploy-nfs.md)|
+|デプロイ|[ネットワーク ファイル システムの展開](deploy-nfs.md)|
 |操作|[Windows PowerShell の NFS コマンドレット](https://docs.microsoft.com/powershell/module/nfs/?view=win10-ps)|
-|関連テクノロジ|[Windows Server の記憶域](../storage.md)|
+|関連テクノロジ|[Windows Server の記憶域](../storage.yml)|

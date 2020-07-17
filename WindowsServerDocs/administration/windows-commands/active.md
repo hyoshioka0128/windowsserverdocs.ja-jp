@@ -1,33 +1,27 @@
 ---
 title: active
-description: '**アクティブ**なベーシックディスクに関する Windows コマンドのトピックでは、パーティションをアクティブとしてマークします。'
-ms.custom: na
+description: ベーシックディスク上のアクティブなコマンドの参照記事は、パーティションをアクティブとしてマークします。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1f25da2e-87fc-4392-a7ee-f38d09b7873c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c926bf9b7a583cf7eaa23166e09e6f0a1599e625
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a5df2f67c087be31190c512be0f6b20d8a1d72cb
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71382848"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924145"
 ---
 # <a name="active"></a>active
 
-
-
-ベーシックディスクでは、はパーティションをアクティブとしてマークします。
+ベーシック ディスクで、フォーカスのあるパーティションをアクティブとしてマークします。 アクティブとしてマークできるのはパーティションのみです。 この操作を正常に実行するには、パーティションを選択する必要があります。 **[パーティションの選択**] コマンドを使用してパーティションを選択し、それにフォーカスを移動します。
 
 > [!CAUTION]
-> DiskPart では、パーティションがオペレーティングシステムのスタートアップファイルを含むことができるかどうかのみが検証されます。 DiskPart では、パーティションの内容は確認されません。 パーティションを誤ってアクティブとしてマークし、オペレーティングシステムのスタートアップファイルが含まれていない場合は、コンピューターが起動しないことがあります。
+> DiskPart は、基本入出力システム (BIOS) または拡張ファームウェアインターフェイス (EFI) に対してのみ、パーティションまたはボリュームが有効なシステムパーティションまたはシステムボリュームであること、およびオペレーティングシステムのスタートアップファイルを含むことができることを通知します。 DiskPart では、パーティションの内容を確認できません。 パーティションを誤ってアクティブとしてマークし、オペレーティングシステムのスタートアップファイルが含まれていない場合は、コンピューターが起動しないことがあります。
 
 ## <a name="syntax"></a>構文
 
@@ -35,18 +29,16 @@ ms.locfileid: "71382848"
 active
 ```
 
-## <a name="remarks"></a>コメント
-
--   これにより、パーティションまたはボリュームが有効なシステムパーティションまたはシステムボリュームであることが、基本入出力システム (BIOS) または拡張ファームウェアインターフェイス (EFI) に通知されます。
--   アクティブとしてマークできるのはパーティションのみです。
--   この操作を成功させるには、パーティションを選択する必要があります。 **[パーティションの選択**] コマンドを使用してパーティションを選択し、それにフォーカスを移動します。
-
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a>例
 
 アクティブパーティションとしてフォーカスを持つパーティションをマークするには、次のように入力します。
+
 ```
 active
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [パーティションの選択コマンド](select-partition.md)

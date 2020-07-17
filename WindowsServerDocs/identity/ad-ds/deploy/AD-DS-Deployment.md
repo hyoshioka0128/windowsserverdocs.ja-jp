@@ -1,7 +1,6 @@
 ---
 ms.assetid: 241d93f9-06cf-4327-96a3-70dfe656f19d
 title: AD DS 展開
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,16 +8,16 @@ ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 475b042c5b3a64acc793ff37501169d20ab2c3f1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1f32b51ac9832f6dd7817b0faf40dd3a8c9dd35f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390990"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80825375"
 ---
 # <a name="ad-ds-deployment"></a>AD DS 展開
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 このガイドでは、Windows Server 2012 で Active Directory Domain Services (AD DS) をインストールして削除する方法、および既存の Active Directory 環境に新しいドメインコントローラーを追加するときに注意する必要がある重要な問題について説明します。  
   

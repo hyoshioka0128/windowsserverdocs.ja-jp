@@ -1,29 +1,25 @@
 ---
 title: Android クライアントの概要
 description: Android クライアントに関する一般的な情報。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 64f038e1-40ec-4c67-938b-72edea49e5d8
 author: heidilohr
-manager: daveba
+manager: lizross
 ms.author: helohr
-ms.date: 12/02/2019
+ms.date: 03/12/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: a1349f1181cdf2ead51a263a3ba62c1789c76b3b
-ms.sourcegitcommit: cbf0c7c37797c22af989639fac82fc0eee94497f
+ms.openlocfilehash: a9cb49f2570b297c81f41412ad041215090538d0
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74700165"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "80856235"
 ---
 # <a name="get-started-with-the-android-client"></a>Android クライアントの概要
 
->適用対象:Android 4.1 以降
+>適用先:Android 4.1 以降
 
 Android 用リモート デスクトップ クライアントを使用して、Google Play ストアをサポートする Android デバイスまたは Chromebook から直接 Windows のアプリおよびデスクトップを使用することができます。
 
@@ -222,10 +218,18 @@ RD ゲートウェイを削除するには:
 | [マウス モード]    | マウス操作         | ジェスチャ                                                                 |
 |---------------|----------------------|-------------------------------------------------------------------------|
 | 直接タッチ  | 左クリック           | 1 本の指でタップする                                                     |
-| 直接タッチ  | 右クリック          | 1 本の指で長押ししてから離す                              |
+| 直接タッチ  | 右ボタンのクリック          | 1 本の指で長押ししてから離す                              |
 | マウス ポインター | ズーム                 | 2 本の指を使って、ピンチで縮小または指を開いて拡大する。 |
 | マウス ポインター | 左クリック           | 1 本の指でタップする                                                     |
 | マウス ポインター | 左クリックしてドラッグ  | 1 本の指でダブルタップから長押しして、ドラッグする                          |
-| マウス ポインター | 右クリック          | 2 本の指でタップする                                                    |
+| マウス ポインター | 右ボタンのクリック          | 2 本の指でタップする                                                    |
 | マウス ポインター | 右クリックしてドラッグ | 2 本の指でダブルタップから長押しして、ドラッグする                         |
 | マウス ポインター | マウス ホイール          | 2 本の指で長押しして、上または下にドラッグする                     |
+
+## <a name="join-the-beta-channel"></a>Beta チャネルに参加する
+
+他のユーザーより前に最新の機能にアクセスしたい場合、または新しいバージョンがリリースされる前に問題の検出をお手伝いいただける場合は、Beta チャネルをご利用ください。 Beta チャネルは、エンタープライズ管理者が環境内のユーザーに対して新しいバージョンの Android クライアントを検証するのにも優れた方法です。
+
+Beta に参加するには、プレビュー バージョンへのアクセスに同意して、クライアントをダウンロードするだけです。 Google Play ストアを通じて、プレビュー バージョンを直接受け取ることができます。
+
+[Beta に参加する](https://play.google.com/apps/testing/com.microsoft.rdc.androidx)

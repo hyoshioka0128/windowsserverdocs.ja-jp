@@ -1,24 +1,20 @@
 ---
 title: 資格情報の保護と管理
 description: Windows Server のセキュリティ
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-credential-protection
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e457229c-0126-40fe-948c-101c943e1b57
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 31f0f89099a71f8ea6abcf0064113d6af9608c5a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9eb93e46adb0e8a7c956bd8db2795fe06bc04724
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403799"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85472949"
 ---
 # <a name="credentials-protection-and-management"></a>資格情報の保護と管理
 
@@ -60,19 +56,19 @@ Protected Users グループのメンバーは、以下の認証方法によっ�
 
 新しい Active Directory オブジェクトクラスである認証ポリシーを使用すると、Windows Server 2012 R2 ドメインの機能レベルを持つドメイン内のアカウントクラスに認証構成を適用できます。 認証ポリシーは、Kerberos AS または TGS の交換時に適用されます。 次の Active Directory アカウント クラスがあります。
 
--   User
+-   ユーザー
 
--   [Computer]
+-   Computer
 
 -   管理されたサービス アカウント
 
--   グループ管理サービス アカウント
+-   グループの管理されたサービス アカウント
 
 詳細については、「[認証ポリシーと認証ポリシー サイロ](authentication-policies-and-authentication-policy-silos.md)」を参照してください。
 
 保護されたアカウントの構成方法の詳細については、「[保護されるアカウントの構成方法](how-to-configure-protected-accounts.md)」を参照してください。
 
-## <a name="see-also"></a>関連項目
+## <a name="additional-references"></a>その他のリファレンス
 LSA と LSASS の詳細については、「 [Windows のログオンと認証の技術概要](https://technet.microsoft.com/library/dn169029(v=ws.10).aspx)」を参照してください。
 
 

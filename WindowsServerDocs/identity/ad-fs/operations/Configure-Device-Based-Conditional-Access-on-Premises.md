@@ -1,7 +1,6 @@
 ---
 ms.assetid: 35de490f-c506-4b73-840c-b239b72decc2
 title: オンプレミスのデバイス ベースの条件付きアクセスを構成する
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 08/11/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: a7646144b591fd7327f881cb54489201140e9287
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 19e139df53cd1c076f8d5597c1c68b8ffe2cfe91
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71358149"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80817175"
 ---
 # <a name="configure-on-premises-conditional-access-using-registered-devices"></a>登録済みデバイスを使用したオンプレミスの条件付きアクセスの構成
 
@@ -30,7 +29,7 @@ ms.locfileid: "71358149"
 |-----|-----
 |Azure AD Premium を使用した Azure AD サブスクリプション | オンプレミスの条件付きアクセスに対してデバイスの書き戻しを有効にするに[は、無料試用版に問題があり](https://azure.microsoft.com/trial/get-started-active-directory/)ます  
 |Intune サブスクリプション|デバイスコンプライアンスシナリオの MDM 統合にのみ必要です。[無料試用版には問題あり](https://portal.office.com/Signup/Signup.aspx?OfferId=40BE278A-DFD1-470a-9EF7-9F2596EA7FF9&dl=INTUNE_A&ali=1#0)ません
-|Azure AD Connect|2015年11月の QFE 以降。  [ここで](https://www.microsoft.com/en-us/download/details.aspx?id=47594)最新バージョンを入手してください。  
+|Azure AD Connect|2015年11月の QFE 以降。  [ここで](https://www.microsoft.com/download/details.aspx?id=47594)最新バージョンを入手してください。  
 |Windows Server 2016|AD FS のビルド10586以降  
 |Windows Server 2016 Active Directory スキーマ|スキーマレベル85以上が必要です。
 |Windows Server 2016 ドメインコントローラー|これは、Hello For Business のキー信頼のデプロイにのみ必要です。  詳細については、[こちら](https://aka.ms/whfbdocs)を参照してください。  
@@ -45,7 +44,7 @@ ms.locfileid: "71358149"
     - これは、AD FS が参加しているフォレストに対してのみ必要です。
 
 > [!NOTE]
-> Windows Server 2016 でスキーマバージョン (レベル85以上) にアップグレードする前に Azure AD Connect をインストールした場合は、Azure AD Connect インストールを再実行し、オンプレミスの AD スキーマを更新して、の同期規則を確認する必要があります。' KeyCredentialLink ' が構成されています。
+> Windows Server 2016 でスキーマのバージョン (レベル85以上) にアップグレードする前に Azure AD Connect をインストールした場合は、Azure AD Connect のインストールを再実行し、オンプレミスの AD スキーマを更新して、更新の同期規則が構成されていることを確認する必要があります。
 
 ### <a name="verify-your-schema-level"></a>スキーマレベルを確認する
 スキーマレベルを確認するには、次の手順を実行します。
@@ -54,7 +53,7 @@ ms.locfileid: "71358149"
 2.  ADSIEdit を使用して、"CN = Schema, CN = Configuration, DC =<domain>, DC =<com> を右クリックし、[プロパティ] を選択します。  フォレスト情報がある relpace のドメインと com 部分。
 3.  属性エディターの下で、objectVersion 属性を見つけ、そのバージョンを確認します。  
 
-![ADSI エディター](media/Configure-Device-Based-Conditional-Access-on-Premises/adsiedit.png)  
+![ADSI Edit](media/Configure-Device-Based-Conditional-Access-on-Premises/adsiedit.png)  
 
 次の PowerShell コマンドレットを使用することもできます (オブジェクトはスキーマの名前付けコンテキスト情報に置き換えてください)。
 
@@ -166,7 +165,7 @@ AD DS オブジェクトおよびコンテナーが Azure AD からのデバイ�
  
 
 
-- CN=RegisteredDevices,DC=&lt;ドメイン&gt; の ms-DS-DeviceContainer 型のオブジェクト        
+- CN=RegisteredDevices,DC=&lt;ドメイン&gt; の ms-DS-DeviceContainer 型のオブジェクト          
     - AD FS サービス アカウントへの読み取りアクセス権   
     - Azure AD Connect sync AD コネクタ アカウントへの読み取り/書き込みアクセス権</br></br>
 

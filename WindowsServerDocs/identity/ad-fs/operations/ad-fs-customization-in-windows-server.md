@@ -1,7 +1,6 @@
 ---
 ms.assetid: 25f5aff1-6abf-4dea-b531-f1d9943bc181
 title: Windows Server 2016 での AD FS のカスタマイズ
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 4b0ea70bd9346bf8abee4e0d96a8915e29cac462
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3f46ea97034c382d1846ff95bb0974307943bbc5
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357783"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860095"
 ---
 # <a name="ad-fs-customization-in-windows-server-2016"></a>Windows Server 2016 での AD FS のカスタマイズ
 

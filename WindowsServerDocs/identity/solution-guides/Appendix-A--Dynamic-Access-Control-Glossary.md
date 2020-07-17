@@ -1,7 +1,6 @@
 ---
 ms.assetid: 7f6b27e5-dc55-4ffc-8e76-6d57e65a870b
 title: 付録 A 動的 Access Control 用語集
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 5508c3397039a1a70c07f1dc5f29e06bd02234a0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 328d8c74e57150c94d0a6032ff88a3600fe0baf3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357608"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859285"
 ---
 # <a name="appendix-a-dynamic-access-control-glossary"></a>付録 A: ダイナミック アクセス制御の用語集
 
@@ -22,7 +21,7 @@ ms.locfileid: "71357608"
 
 次に、動的 Access Control シナリオに含まれる用語と定義の一覧を示します。  
   
-|用語|定義|  
+|用語|Definition|  
 |--------|--------------|  
 |自動分類|管理者によって構成された分類規則によって決定される分類プロパティに基づいて発生する分類。|  
 |CAPID|集約型アクセスポリシー ID。 この ID は、特定の集約型アクセスポリシーを参照し、ファイルやフォルダーのセキュリティ記述子からポリシーを参照するために使用されます。|  
@@ -43,7 +42,7 @@ ms.locfileid: "71357608"
 |セキュリティ記述子|アクセス制御リストなど、セキュリティ保護可能なリソースに関連付けられているセキュリティ情報を格納するデータ構造。|  
 |セキュリティ記述子定義言語|セキュリティ記述子の情報をテキスト文字列として記述する仕様。|  
 |ステージングポリシー|まだ有効ではない集約型アクセスポリシー。|  
-|システムアクセス制御リスト (SACL)|監査レコードを生成する必要がある特定のトラスティによるアクセス試行の種類を指定するアクセス制御リスト。|  
+|システム アクセス制御リスト (SACL)|監査レコードを生成する必要がある特定のトラスティによるアクセス試行の種類を指定するアクセス制御リスト。|  
 |ユーザー要求|ユーザーセキュリティトークン内で提供されるユーザーの属性。 例としては、Department、Company、Project、Security クリアランスなどがあります。  ユーザーが属しているセキュリティグループなど、Windows Server 2012 より前のシステムからのユーザートークン内の情報は、ユーザーの信頼性情報と見なすこともできます。 一部のユーザー要求は Active Directory を通じて提供され、ユーザーがスマートカードを使用してログインしたかどうかなど、動的に計算されます。|  
 |ユーザートークン|ユーザーと、そのユーザーに関連付けられているユーザー要求とデバイスの信頼性情報を識別するデータオブジェクト。 リソースへのユーザーのアクセスを承認するために使用されます。|  
   

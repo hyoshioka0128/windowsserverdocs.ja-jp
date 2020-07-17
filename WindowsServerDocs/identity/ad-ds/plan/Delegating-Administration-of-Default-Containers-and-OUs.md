@@ -1,7 +1,6 @@
 ---
 ms.assetid: ac6604b0-7459-4ff3-af1c-4936897f5d14
 title: 既定のコンテナーと OU の管理を委任する
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,18 +8,18 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 15c6688e32a7ebefbb2dd0fa1e53a4d72baef267
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a8523ee738b991714a9c8673b6faaff7d9003987
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408938"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80822655"
 ---
 # <a name="delegating-administration-of-default-containers-and-ous"></a>既定のコンテナーと OU の管理を委任する
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-すべての Active Directory ドメインには、Active Directory Domain Services (AD DS) のインストール中に作成されるコンテナーと組織単位 (Ou) の標準セットが含まれています。 次に例を示します。  
+すべての Active Directory ドメインには、Active Directory Domain Services (AD DS) のインストール中に作成されるコンテナーと組織単位 (Ou) の標準セットが含まれています。 これには次のものがあります。  
   
 -   階層のルートコンテナーとして機能するドメインコンテナー  
   
@@ -52,7 +51,7 @@ Windows Server 2003 から Windows Server 2008 にインプレースドメイン
   
 |よく知られているユーザーとグループ|ビルトインアカウント|  
 |--------------------------------|----------------------|  
-|Cert Publishers<br /><br />ドメイン コントローラー<br /><br />Group Policy Creator Owners<br /><br />KRBTGT<br /><br />ドメインのゲスト<br /><br />管理者<br /><br />Domain Admins<br /><br />スキーマ管理者 (フォレストのルートドメインのみ)<br /><br />Enterprise Admins (フォレストのルートドメインのみ)<br /><br />ドメインユーザー|管理者<br /><br />Guest<br /><br />Guests<br /><br />Account Operators<br /><br />管理者<br /><br />Backup Operators<br /><br />入力方向のフォレスト信頼ビルダー<br /><br />Print Operators<br /><br />Pre-Windows 2000 Compatible Access<br /><br />Server Operators<br /><br />Users|  
+|Cert Publishers<p>ドメイン コントローラ<p>Group Policy Creator Owners<p>KRBTGT<p>ドメインのゲスト<p>管理者<p>Domain Admins<p>スキーマ管理者 (フォレストのルートドメインのみ)<p>Enterprise Admins (フォレストのルートドメインのみ)<p>ドメインユーザー|管理者<p>ゲスト<p>Guests<p>Account Operators<p>管理者<p>Backup Operators<p>入力方向のフォレスト信頼ビルダー<p>Print Operators<p>Pre-Windows 2000 Compatible Access<p>Server Operators<p>Users|  
   
 ## <a name="domain-controller-ou"></a>ドメインコントローラー OU  
 ドメインコントローラーがドメインに追加されると、そのコンピューターオブジェクトがドメインコントローラー OU に自動的に追加されます。 この OU には、ポリシーの既定のセットが適用されています。 これらのポリシーがすべてのドメインコントローラーに一様に適用されるようにするには、ドメインコントローラーのコンピューターオブジェクトをこの OU の外に移動しないことをお勧めします。 既定のポリシーを適用しないと、ドメインコントローラーが正常に機能しなくなる可能性があります。  

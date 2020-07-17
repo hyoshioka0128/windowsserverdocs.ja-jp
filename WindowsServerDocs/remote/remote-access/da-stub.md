@@ -4,21 +4,20 @@ description: このトピックでは、Windows Server 2016 の DirectAccess ド
 manager: brianlic
 ms.prod: windows-server
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a3673bb8-43dc-44e2-9e10-caf09bae2aa9
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: c75cb392446eadc78ff4bff63ff5b66cda88a329
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 5b03096a1b099f59e95d1a20028922a1817d534f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388868"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815805"
 ---
 # <a name="directaccess"></a>DirectAccess
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 Windows Server 2016 において、**DirectAccess と VPN** は、**リモート アクセス** サーバー ロールのロール サービスです。
 

@@ -1,43 +1,40 @@
 ---
 title: shadow
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Shadow の参照記事。リモートデスクトップセッションホストサーバー上の別のユーザーのアクティブなセッションをリモートで制御できます。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f81d9717-6883-4e14-9508-4b2a87e48ea7 Lizap
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cb2fad4b0a553e736755f2dc56e5d88297a1fef5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f4f7d6483e46708cab31d46b917f16b1eba29a58
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383961"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85935879"
 ---
 # <a name="shadow"></a>shadow
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-では、リモートデスクトップセッションホスト (rd セッションホスト) サーバー上の別のユーザーのアクティブなセッションをリモートで制御できます。
-このコマンドの使用方法の例については、「[例](#BKMK_examples)」を参照してください。
+では、リモートデスクトップセッションホストサーバー上の別のユーザーのアクティブなセッションをリモートで制御できます。
+
+
 
 ## <a name="syntax"></a>構文
 ```
 shadow {<SessionName> | <SessionID>} [/server:<ServerName>] [/v]
 ```
 
-### <a name="parameters"></a>パラメーター
+#### <a name="parameters"></a>パラメーター
 |パラメーター|説明|
 |-------|--------|
-|\<のセッション >|リモートで制御するセッションの名前を指定します。|
-|\<SessionID >|リモートで制御するセッションの ID を指定します。 使用 **クエリ ユーザー** セッションとのセッション Id の一覧を表示します。|
-|/server:\<ServerName >|リモートで制御するセッションを含む rd セッションホストサーバーを指定します。 既定では、現在の rd セッション Host4 サーバーが使用されます。|
+|\<SessionName>|リモートで制御するセッションの名前を指定します。|
+|\<SessionID>|リモートで制御するセッションの ID を指定します。 使用 **クエリ ユーザー** セッションとのセッション Id の一覧を表示します。|
+|/server:\<ServerName>|リモートで制御するセッションを含む rd セッションホストサーバーを指定します。 既定では、現在の rd セッション Host4 サーバーが使用されます。|
 |/v|実行されているアクションに関する情報を表示します。|
 |/?|コマンド プロンプトにヘルプを表示します。|
 
@@ -48,9 +45,9 @@ shadow {<SessionName> | <SessionID>} [/server:<ServerName>] [/v]
 -   監視を開始する前に、サーバーは、セッションは、この警告が無効になっている場合を除き、リモートで制御されようしようとしていますが、ユーザーに警告します。 セッションは、ユーザーからの応答を待機している間は、数秒以内に停止したように見える場合があります。 ユーザーとセッションのリモートコントロールを構成するには、リモートデスクトップサービス構成ツール、または [ローカルユーザーとグループ] と [active directory ユーザーとコンピューター] のリモートデスクトップサービス拡張機能を使用します。
 -   セッションがリモートで制御または操作が失敗したセッションで使用されるビデオの解像度をサポートできる必要があります。
 -   コンソール セッションもリモートで制御できます別のセッションも、リモートで使用して制御できる別のセッション。
--   リモートコントロール (シャドウ) を終了する場合は、CTRL +\* キーを押します (テンキーの \* を使用します)。
+-   リモートコントロール (シャドウ) を終了する場合は、CTRL + \* (テンキーからを使用することによって \* のみ) を押します。
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a>例
 -   セッション 93 をシャドウする次のように入力します。
     ```
     shadow 93
@@ -60,6 +57,6 @@ shadow {<SessionName> | <SessionID>} [/server:<ServerName>] [/v]
     shadow ACCTG01
     ```
 
-#### <a name="additional-references"></a>その他の参照情報
-[コマンドライン構文キー](command-line-syntax-key.md)
-[リモート デスクトップ サービスと&#40;です。ターミナル サービスと&#41;です。コマンドのリファレンス](remote-desktop-services-terminal-services-command-reference.md)
+## <a name="additional-references"></a>その他の参照情報
+- [コマンドライン構文のキー](command-line-syntax-key.md) 
+[リモートデスクトップサービス (ターミナルサービス) のコマンドリファレンス](remote-desktop-services-terminal-services-command-reference.md)

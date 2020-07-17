@@ -1,32 +1,28 @@
 ---
 title: Windows Server Update Services を使用して更新プログラムを管理する
 description: Windows Server Update Service (WSUS) のトピック-関連トピックへのリンクが記載された Update Management の概要
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-wsus
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 28fde77a-f5fc-4e51-835d-8bc304dcfa54
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e80f6763d7b1aa11603cbd2bb8756a426d685092
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: cbf1e94c0f5467f4b4beb8e96cd5f2a26b43513a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361502"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828485"
 ---
 # <a name="update-management-with-windows-server-update-services"></a>Windows Server Update Services を使用して更新プログラムを管理する
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2019、Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 更新プログラムのコンプライアンスとネットワークの正常性を全体的に確認するには、WSUS 管理コンソールのホーム ページを定期的にチェックする必要があります。 ダウンロードが失敗したり、クライアント コンピューターから WSUS サーバーへのレポートが失敗する恐れがある場合は、アプリケーションのログを頻繁にチェックしてください。 このガイドでは、Windows Server Update Services の管理に役立つ情報を提供します。  
   
-## <a name="in-this-guide"></a>このガイドについて  
+## <a name="in-this-guide"></a>このガイドの内容  
 このガイドには、以下の情報が記載されています。  
   
 -   [更新プログラムの同期を設定する](setting-up-update-synchronizations.md)  

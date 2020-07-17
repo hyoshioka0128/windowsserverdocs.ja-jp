@@ -2,25 +2,23 @@
 title: PowerShell Direct を使用して Windows 仮想マシンを管理する
 description: PowerShell Direct を使用して仮想マシンを管理する手順について説明します。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b5715c02-a90f-4de9-a71e-0fc09093ba2d
-author: KBDAzure
+author: kbdazure
 ms.author: kathydav
 ms.date: 10/04/2016
-ms.openlocfilehash: f42e221b073cf199117f85ea96beef4997bbbbc5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c4a051de2d8f62c38ae0c44b1a62d5bf9df339e8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71392745"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859435"
 ---
 # <a name="manage-windows-virtual-machines-with-powershell-direct"></a>PowerShell Direct を使用して Windows 仮想マシンを管理する
 
->適用先:Windows 10、Windows Server 2016、Windows Server 2019
+>適用対象: Windows 10、Windows Server 2016、Windows Server 2019
   
 PowerShell Direct を使用すると、windows 10、windows Server 2016、または Windows Server 2019 Hyper-v ホストから、windows 10、Windows Server 2016、または Windows Server 2019 の仮想マシンをリモートで管理できます。 PowerShell Direct を使用すると、Hyper-v ホストまたは仮想マシンのいずれかのネットワーク構成またはリモート管理設定に関係なく、仮想マシン内で Windows PowerShell を管理できます。 これを使うと、Hyper-V 管理者が仮想マシンの管理や設定を容易に自動化したり、スクリプトを作成したりすることができます。  
   
@@ -62,7 +60,7 @@ PowerShell ダイレクトを実行するには、次の 2 つの方法があり
 Invoke-Command -VMName PSTest  -FilePath C:\script\foo.ps1  
 ```  
   
-1 つのコマンドを使用するには、 **-ScriptBlock** パラメーターを使用します。  
+単一のコマンドを実行するには、 **-ScriptBlock** パラメーターを使用します。  
   
 ```  
 Invoke-Command -VMName PSTest  -ScriptBlock { cmdlet }  
@@ -83,7 +81,7 @@ Invoke-Command -VMName PSTest  -ScriptBlock { cmdlet }
   
 [GET VM](https://docs.microsoft.com/powershell/module/hyper-v/get-vm)コマンドレットを使用して、使用している資格情報が hyper-v の管理者ロールを持っていることを確認し、ホスト上でローカルに実行されている仮想マシンの一覧を取得して、起動します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [「-PSSession」と入力します。](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession)  
 [終了-PSSession](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession)  
 [Invoke コマンド](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Invoke-Command)  

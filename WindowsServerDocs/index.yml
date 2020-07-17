@@ -6,16 +6,16 @@ metadata:
   description: Windows Server は、ワークグループからデータ センターに至るまで、接続型アプリケーション、ネットワーク、および Web サービスのインフラストラクチャを構築するためのプラットフォームです。
   author: eross-msft
   manager: daveba
-  ms.service: windows-server-threshold
+  ms.service: windows-server
   ms.topic: hub-page
   ms.date: 06/06/2019
   ms.author: lizross
-  ms.openlocfilehash: b16b9235cbcb149ec7f10ce76b0cf594e9bb2a29
-  ms.sourcegitcommit: 30de12eebeb0fc79567d6bb6ab513692ea2415d3
+  ms.openlocfilehash: 91a9a648c5b51f098a94300ffb1dd3f7ce76bdd8
+  ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 12/05/2019
-  ms.locfileid: "74853577"
+  ms.lasthandoff: 04/23/2020
+  ms.locfileid: "81123164"
 highlightedContent:
   items:
   - title: Windows Server 2019 の新着情報
@@ -36,9 +36,9 @@ highlightedContent:
   - title: Windows Server 2016 の概要
     itemType: how-to-guide
     url: /windows-server/get-started/server-basics
-  - title: Windows Server 2008 R2 および Windows Server 2008 のサービスの終了
-    itemType: overview
-    url: /windows-server/get-started/modernize-windows-server-2008
+  - title: Windows Server 2008 および 2008 R2 の拡張セキュリティ更新プログラムを使用する
+    itemType: how-to-guide
+    url: /windows-server/get-started/extended-security-updates
   - title: Windows Insider Program for Server
     itemType: overview
     url: /windows-insider/at-work/
@@ -61,7 +61,7 @@ conceptualContent:
     footerLink:
       url: /windows-server/upgrade/upgrade-overview
       text: さらに詳しく
-  - title: ID とアクセス
+  - title: ID およびアクセス
     links:
     - url: /windows-server/identity/ad-ds/ad-ds-getting-started
       itemType: overview
@@ -145,7 +145,7 @@ conceptualContent:
     footerLink:
       url: /windows-server/security/security-and-assurance
       text: さらに詳しく
-  - title: ストレージ
+  - title: 記憶域
     links:
     - url: /windows-server/storage/whats-new-in-storage
       itemType: whats-new
@@ -190,12 +190,9 @@ conceptualContent:
 additionalContent:
   sections:
   - items:
-    - title: Windows Server 2012 R2 および Windows Server 2012
-      summary: Windows Server 2012 R2 および Windows Server 2012 を管理する IT 担当者向けの技術コンテンツです。
+    - title: Windows Server 2012 R2 および Windows Server 2012 (アーカイブ)
+      summary: Windows Server 2012 R2 および Windows Server 2012 を管理する IT 担当者向けの技術コンテンツのアーカイブです。
       url: https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh801901(v=ws.11)
-    - title: Windows Server 2008 R2 および Windows Server 2008
-      summary: Windows Server 2008 R2 および Windows Server 2008 を管理する IT 担当者向けの技術コンテンツです。
-      url: https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349801(v=ws.10)
-    - title: Windows Server 2008 開発者向けストーリー
-      summary: Windows Server 2008 の新機能や拡張機能のいくつかを検討している開発者やその他のテクノロジの専門家および管理者向けのコンテンツです。
-      url: https://docs.microsoft.com/previous-versions/windows/server-2008/bb852234(v=msdn.10)
+    - title: Windows Server Essentials
+      summary: 最大 25 人のユーザーと 50 台のデバイスを備えた小規模企業向けに設計された、クラウドに接続された最初のサーバーである Windows Server Essentials を管理する IT プロフェッショナル向けの技術コンテンツです。
+      url: https://docs.microsoft.com/en-us/windows-server-essentials/get-started/get-started

@@ -2,20 +2,19 @@
 title: 動的メモリは有効になっていますが、一部の仮想マシンでは応答しません
 description: このベストプラクティスアナライザールールのテキストのオンラインバージョン。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: 91b7f50f-a071-4ab6-beb1-1b29f92f52b6
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 9aa482d91c94a7a619bb65046cf152d6a5f8827a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 98bf61e6e132db8c8a16bf719410aefb433a1d99
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71393680"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861985"
 ---
 # <a name="dynamic-memory-is-enabled-but-not-responding-on-some-virtual-machines"></a>動的メモリは有効になっていますが、一部の仮想マシンでは応答しません
 
@@ -27,7 +26,7 @@ ms.locfileid: "71393680"
 |-|-|  
 |**オペレーティング システム**|Windows Server 2016|  
 |**製品/機能**|Hyper-V|  
-|**順**|Warning|  
+|**順**|［警告］|  
 |**カテゴリ**|構成|  
   
 次のセクションでは、斜体は、この問題のためのベスト プラクティス アナライザー ツールで表示される UI テキストを示します。  

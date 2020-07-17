@@ -1,7 +1,6 @@
 ---
 ms.assetid: aae907eb-11cf-4a87-a046-8680872ed0b1
 title: アクセス拒否アシスタンスのシナリオ
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: d3c1354c54cf421e59d6b37a44ce703f52b6f4b7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a6418f7ac317f060adb72f32e231e1577a5f8b92
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357478"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861145"
 ---
 # <a name="scenario-access-denied-assistance"></a>シナリオ:アクセス拒否アシスタンス
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 アクセス許可がないファイル サーバー上の共有ファイルおよびフォルダーにユーザーがアクセスしようとすると、アクセス拒否メッセージが表示されます。 多くの場合、管理者はアクセスの問題をトラブルシューティングするための適切なコンテキストを持っていないため、問題を解決するのが困難になります。  
   
@@ -33,25 +32,25 @@ ms.locfileid: "71357478"
   
 Windows Server 2012 のアクセス拒否アシスタンスは、関連するアクセス詳細をファイルサーバー管理者に提供するため、問題と適切なツールを特定して、アクセス要求を満たすように構成を変更することができます。 たとえば、現在アクセス権を持たないファイルにユーザーがアクセスできるようになるまでの手順の例を次に示します。  
   
--   ユーザーは \\ \ financeshares 共有フォルダー内のファイルを読み取ろうとしましたが、サーバーにはアクセス拒否メッセージが表示されます。  
+-   ユーザーが \\\financeshares 共有フォルダー内のファイルを読み取ろうとしましたが、サーバーにはアクセス拒否メッセージが表示されています。  
   
 -    Windows Server 2012 では、アシスタンスを要求するオプションを使用して、アクセス拒否アシスタンスの情報がユーザーに表示されます。  
   
 -   ユーザーがリソースに対するアクセスを要求すると、サーバーは、アクセス要求情報が含まれた電子メースをフォルダー所有者に送信する。  
   
-「 [Plan for Access-Denied Assistance](assetId:///b169f0a4-8b97-4da8-ae4a-c8f1986d19e1)」に、アクセス拒否アシスタンスを構成するための計画に関する情報があります。  
+「[アクセス拒否アシスタンスの計画](assetId:///b169f0a4-8b97-4da8-ae4a-c8f1986d19e1)」に、アクセス拒否アシスタンスを構成するための計画に関する情報があります。  
   
 アクセス拒否アシスタンスの構成の手順については、「[アクセス拒否アシスタンス&#40;の展開&#41;のデモンストレーション](Deploy-Access-Denied-Assistance--Demonstration-Steps-.md)」を参照してください。  
   
 ## <a name="in-this-scenario"></a>このシナリオの内容  
 このシナリオは、ダイナミック アクセス制御のシナリオの一部です。 ダイナミック アクセス制御の追加情報については、次のトピックを参照してください。  
   
--   [ダイナミック アクセス制御: シナリオの概要](Dynamic-Access-Control--Scenario-Overview.md)  
+-   [動的 Access Control: シナリオの概要](Dynamic-Access-Control--Scenario-Overview.md)  
   
 ## <a name="practical-applications"></a>実際の適用例  
 Windows Server 2012 のアクセス拒否アシスタンスは、ユーザーがアクセス拒否メッセージから直接、共有ファイルおよびフォルダーへのアクセスを要求できるようにすることで、動的 Access Control に貢献します。  
   
-## <a name="BKMK_NEW"></a>このシナリオに含まれる機能  
+## <a name="features-included-in-this-scenario"></a><a name="BKMK_NEW"></a>このシナリオに含まれる機能  
 次の表で、このシナリオに含まれる機能を紹介すると共に、それをシナリオに活かす方法について説明します。  
   
 |機能|このシナリオのサポート方法|  

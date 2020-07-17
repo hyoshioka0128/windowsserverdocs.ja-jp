@@ -8,15 +8,15 @@ ms.date: 08/09/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 870dbb4303d216f05bc372610f3121ff08fc8c25
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f28e5feccb7544046104658585ab3f739f659957
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407845"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949504"
 ---
-# <a name="scenario-web-app-server-app-calling-web-api"></a>シナリオ:Web アプリ (サーバーアプリ) Web API の呼び出し 
->適用先:AD FS 2019 以降 
+# <a name="scenario-web-app-server-app-calling-web-api"></a>シナリオ: web アプリ (サーバーアプリ) で Web API を呼び出す 
+>適用対象: AD FS 2019 以降 
  
 AD FS 2019 によって認証される web アプリのサインインユーザーを構築し、 [Msal ライブラリ](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki)を使用してトークンを取得して web api を呼び出す方法について説明します。  
  
@@ -26,12 +26,12 @@ AD FS 2019 によって認証される web アプリのサインインユーザ�
  
 ![Web アプリ呼び出し web api の概要](media/adfs-msal-web-app-web-api/webapp1.png)
 
-このフローでは、Web アプリ (サーバーアプリ) に認証を追加します。これにより、ユーザーはサインインして web API を呼び出すことができます。 Web アプリから Web API を呼び出すには、MSAL の[AcquireTokenByAuthorizationCode](https://docs.microsoft.com/en-us/dotnet/api/microsoft.identity.client.acquiretokenbyauthorizationcodeparameterbuilder?view=azure-dotnet) token の取得方法を使用します。 認証コードフローを使用して、取得したトークンをトークンキャッシュに格納します。 その後、コントローラーは必要に応じてキャッシュからトークンをサイレントに取得します。 必要に応じて、MSAL によってトークンが更新されます。 
+このフローでは、Web アプリ (サーバーアプリ) に認証を追加します。これにより、ユーザーはサインインして web API を呼び出すことができます。 Web アプリから Web API を呼び出すには、MSAL の[AcquireTokenByAuthorizationCode](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.acquiretokenbyauthorizationcodeparameterbuilder?view=azure-dotnet) token の取得方法を使用します。 承認コード フローを使用して、取得したトークンをトークン キャッシュに格納します。 次に、コントローラーでは、必要に応じてキャッシュからトークンが自動的に取得されます。 必要に応じて、MSAL によってトークンが更新されます。 
 
 Web Api を呼び出す Web Apps: 
 
 
-- は、機密クライアントアプリケーションです。 
+- 機密クライアント アプリケーションです。 
 - そのため、AD FS でシークレット (アプリケーションの共有シークレット、証明書、または AD アカウント) が登録されています。 このシークレットは、トークンを取得するために AD FS の呼び出し時に渡されます。  
 
 ADFS で Web アプリを登録する方法と、Web API を呼び出すトークンを取得するように構成する方法について理解を深めるには、[こちら](https://github.com/microsoft/adfs-sample-msal-dotnet-webapp-to-webapi)で入手できるサンプルを使用し、アプリの登録とコードの構成の手順について説明します。  
@@ -51,7 +51,7 @@ ADFS で Web アプリを登録する方法と、Web API を呼び出すトー�
   
       ![アプリケーショングループの追加](media/adfs-msal-web-app-web-api/webapp2.png)
   
-  3. **クライアント識別子**の値をコピーします。 この値は、アプリケーションの**web.config**ファイルの**ida: ClientId**の値として後で使用されます。 **リダイレクト URI** - には、次のよう https://localhost:44326 に入力します。 [追加] をクリックします。 **[次へ]** をクリックします。 
+  3. **クライアント識別子**の値をコピーします。 この値は、アプリケーションの**web.config**ファイルの**ida: ClientId**の値として後で使用されます。 **リダイレクト URI:**  - https://localhost:44326 には、次のように入力します。 [追加] をクリックします。 **[次へ]** をクリックします。 
   
       ![アプリケーショングループの追加](media/adfs-msal-web-app-web-api/webapp3.png)
   
@@ -59,7 +59,7 @@ ADFS で Web アプリを登録する方法と、Web API を呼び出すトー�
   
       ![アプリケーショングループの追加](media/adfs-msal-web-app-web-api/webapp4.png)
   
-  5. [Web API の構成] 画面で、**識別子** https://webapi として「」を入力します。 **[追加]** をクリックします。 **[次へ]** をクリックします。 この値は、アプリケーションの**web.config**ファイルの**Ida: graphresourceid**で後で使用されます。 
+  5. [Web API の構成] 画面で、**識別子**として「 https://webapi 」と入力します。 **[追加]** をクリックします。 **[次へ]** をクリックします。 この値は、アプリケーションの**web.config**ファイルの**Ida: graphresourceid**で後で使用されます。 
   
       ![アプリケーショングループの追加](media/adfs-msal-web-app-web-api/webapp5.png)
   
@@ -108,7 +108,7 @@ ADFS で Web アプリを登録する方法と、Web API を呼び出すトー�
   
       ![アプリケーショングループの追加](media/adfs-msal-web-app-web-api/webapp10.png)
 
-  4. AD FS サインインページにリダイレクトされます。 さあ、サインインします。 
+  4. AD FS サインインページにリダイレクトされます。 要求に従ってサインインしてください。 
   
       ![アプリケーショングループの追加](media/adfs-msal-web-app-web-api/webapp11.png)
 
@@ -120,6 +120,6 @@ ADFS で Web アプリを登録する方法と、Web API を呼び出すトー�
   
       ![アプリケーショングループの追加](media/adfs-msal-web-app-web-api/webapp13.png)
  
- ## <a name="next-steps"></a>次の手順
+ ## <a name="next-steps"></a>次のステップ
 [AD FS OpenID 接続/OAuth フローとアプリケーション シナリオ](../../overview/ad-fs-openid-connect-oauth-flows-scenarios.md)
  

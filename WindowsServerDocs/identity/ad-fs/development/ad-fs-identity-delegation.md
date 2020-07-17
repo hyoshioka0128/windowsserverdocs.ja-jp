@@ -8,12 +8,12 @@ ms.date: 02/22/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 292bec5f73e2746103ffc41cde729ddc59728e0b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c36de1c3565be7f0f0e6c6203a21345f3d227e96
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407870"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857325"
 ---
 # <a name="identity-delegation-scenario-with-ad-fs"></a>AD FS を使用した id 委任のシナリオ
 
@@ -26,20 +26,20 @@ ms.locfileid: "71407870"
 
 次の図は、Fabrikam の従業員が Contoso.com アプリケーションで公開されているリソースにアクセスする一般的な id 委任シナリオを示しています。
 
-![同一。](media/ad-fs-identity-delegation/id1.png)
+![ID](media/ad-fs-identity-delegation/id1.png)
 
 このシナリオに参加する架空のユーザーは次のとおりです。
 
-- 佐藤Contoso のリソースにアクセスする Fabrikam の従業員。
-- Danielアプリケーションで必要な変更を実装する Contoso アプリケーション開発者。
-- AdamContoso IT 管理者。
+- Frank: Contoso のリソースにアクセスする Fabrikam の従業員。
+- Daniel: アプリケーションで必要な変更を実装する Contoso アプリケーション開発者。
+- Adam: Contoso IT 管理者。
 
 このシナリオに関連するコンポーネントは次のとおりです。
 
-- web1最初の呼び出し元の委任された id を必要とするバックエンドリソースへのリンクを持つ Web アプリケーション。 このアプリケーションは ASP.NET を使用して構築されています。
+- web1: 最初の呼び出し元の委任された id を必要とするバックエンドリソースへのリンクを含む Web アプリケーション。 このアプリケーションは ASP.NET を使用して構築されています。
 - SQL Server にアクセスする Web サービス。最初の呼び出し元の委任された id と、直前の呼び出し元の id が必要です。 このサービスは、WCF を使用して構築されています。
-- sts1:要求プロバイダーの役割を持つ STS。アプリケーション (web1) によって予期される要求を出力します。 また、Fabrikam.com とアプリケーションの信頼関係が確立されています。
-- sts2:Fabrikam.com の id プロバイダーの役割を果たす STS。 Fabrikam の従業員が認証に使用するエンドポイントを提供します。 Fabrikam の従業員が Contoso.com のリソースにアクセスできるように、Contoso.com との信頼関係が確立されました。
+- sts1: 要求プロバイダーの役割を持つ STS で、アプリケーション (web1) によって予期される要求を出力します。 また、Fabrikam.com とアプリケーションの信頼関係が確立されています。
+- sts2: Fabrikam.com の id プロバイダーのロールに含まれる STS で、Fabrikam の従業員が認証に使用するエンドポイントを提供します。 Fabrikam の従業員が Contoso.com のリソースにアクセスできるように、Contoso.com との信頼関係が確立されました。
 
 >[!NOTE] 
 >このシナリオでよく使用される "ActAs token" という用語は、STS によって発行され、ユーザーの id が含まれているトークンを指します。 アクタープロパティには、STS の id が含まれています。
@@ -57,7 +57,7 @@ ms.locfileid: "71407870"
 Fabrikam.com 管理者は、次の3つのオプションを使用できます。 Frank:
 
 
-1. Active Directory®フェデレーションサービス (AD FS) などの STS 製品を購入してインストールします。
+1. Active Directory&reg; フェデレーションサービス (AD FS) などの STS 製品を購入してインストールします。
 2. LiveID STS などのクラウド STS 製品をサブスクライブします。
 3. WIF を使用してカスタム STS を構築します。
 

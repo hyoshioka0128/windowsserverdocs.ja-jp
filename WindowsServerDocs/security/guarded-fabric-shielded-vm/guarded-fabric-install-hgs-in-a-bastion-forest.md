@@ -1,18 +1,18 @@
 ---
 title: 既存の要塞フォレストに HGS をインストールする
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 5c503331893dbea65c99d79eb7444893d5f3b657
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 20e0d5e73713c0d6280e95d51ec8de8fde612350
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403597"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856585"
 ---
 # <a name="install-hgs-in-an-existing-bastion-forest"></a>既存の要塞フォレストに HGS をインストールする 
 
@@ -146,7 +146,7 @@ HGS を高度にロックされた環境に展開する場合、特定のグル�
 
 
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次のステップ:
 
 - TPM ベースの構成証明を設定する次の手順については、「[既存の要塞フォレストで tpm モードを使用して HGS クラスターを初期化](guarded-fabric-initialize-hgs-tpm-mode-bastion.md)する」を参照してください。
 - ホストキーの構成証明を設定する次の手順については、「[既存の要塞フォレストでキーモードを使用して HGS クラスターを初期化](guarded-fabric-initialize-hgs-key-mode-bastion.md)する」を参照してください。

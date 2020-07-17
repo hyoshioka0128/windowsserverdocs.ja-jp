@@ -1,55 +1,51 @@
 ---
 title: manage-bde ロック
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Manage-bde ロックコマンドのリファレンス記事。ロック解除キーが指定されていない場合、BitLocker で保護されているドライブをロックして、アクセスを防止します。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b8858e61-3a7e-4d03-8c98-5c09853f35e8
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d773d7f02a509b3186d7b552993277369411f963
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b67342579c827ad195ddf506e529fbfb370a6d94
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71374042"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931623"
 ---
-# <a name="manage-bde-lock"></a>manage-bde: lock
+# <a name="manage-bde-lock"></a>manage-bde ロック
 
-
-
-BitLocker で保護されているドライブをロックして、ロック解除キーが指定されていない限り、アクセスできないようにします。 このコマンドの使用方法の例については、次を参照してください。 [例](#BKMK_Examples)します。
+BitLocker で保護されているドライブをロックして、ロック解除キーが指定されていない限り、アクセスできないようにします。
 
 ## <a name="syntax"></a>構文
 
 ```
-manage-bde -lock [<Drive>] [-computername <Name>] [{-?|/?}] [{-help|-h}]
+manage-bde -lock [<drive>] [-computername <name>] [{-?|/?}] [{-help|-h}]
 ```
 
 ### <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
-|---------|-----------|
-|\<Drive >|コロンの後にドライブ文字を表します。|
-|-computername|別のコンピューターに BitLocker による保護を変更する、bde.exe を使用することを指定します。 また、このコマンドの省略版として **-cn**を使用することもできます。|
-|\<名前 >|BitLocker による保護を変更するコンピューターの名前を表します。 指定できる値には、コンピューターの NetBIOS 名とコンピューターの IP アドレスが含まれます。|
-|-? または /?|コマンドプロンプトで簡単なヘルプを表示します。|
-|-help または-h|表示は、コマンド プロンプトでヘルプを完了します。|
+| パラメーター | 説明 |
+| --------- | ----------- |
+| `<drive>` | コロンの後にドライブ文字を表します。 |
+| -computername | manage-bde.exe が別のコンピューターの BitLocker 保護を変更するために使用されることを指定します。 また、このコマンドの省略版として **-cn**を使用することもできます。 |
+| `<name>` | BitLocker による保護を変更するコンピューターの名前を表します。 指定できる値には、コンピューターの NetBIOS 名とコンピューターの IP アドレスが含まれます。 |
+| -? または /? | コマンドプロンプトで簡単なヘルプを表示します。 |
+| -help または-h | 表示は、コマンド プロンプトでヘルプを完了します。 |
 
-## <a name="BKMK_Examples"></a>例
+### <a name="examples"></a>例
 
-次の例は、 **-lock**コマンドを使用してデータドライブ D をロックする方法を示しています。
+データドライブ D をロックするには、次のように入力します。
+
 ```
 manage-bde –lock D:
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
--   [コマンド ライン構文の記号](command-line-syntax-key.md)
--   [Manage-bde](manage-bde.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [manage-bde コマンド](manage-bde.md)

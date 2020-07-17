@@ -2,22 +2,18 @@
 title: Windows PowerShell で役割ベースのアクセス制御を管理する
 description: このトピックは、Windows Server 2016 の IP アドレス管理 (IPAM) 管理ガイドに含まれています。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ipam
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4f13f78e-0114-4e41-9a28-82a4feccecfc
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: dec5c9b9b5d5fe858e063af70ff0a8e16991e632
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 8fd8a0780e18324748e0352b124b2e3182bca13b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355214"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860645"
 ---
 # <a name="manage-role-based-access-control-with-windows-powershell"></a>Windows PowerShell で役割ベースのアクセス制御を管理する
 
@@ -72,7 +68,7 @@ IPAM オブジェクトにアクセススコープを設定するには、`Set-I
   
 -   IP アドレス ブロック  
   
--   IP アドレスの範囲  
+-   IP Address Range  
   
 -   IP アドレス空間  
   

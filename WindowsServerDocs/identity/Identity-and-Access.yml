@@ -1,0 +1,53 @@
+### YamlMime:Landing
+title: Id およびアクセスのドキュメント
+summary: アクセスと ID のテクノロジを使用すると、オンプレミス、クラウドのみ、およびハイブリッドの展開で Active Directory 環境をセキュリティ保護できます。ハイブリッドの展開では、一部のアプリケーションとサービスはクラウドでホストされ、残りはオンプレミスでホストされます。
+metadata:
+  title: Id およびアクセスのドキュメント
+  description: アクセスと ID のテクノロジを使用すると、オンプレミス、クラウドのみ、およびハイブリッドの展開で Active Directory 環境をセキュリティ保護できます。ハイブリッドの展開では、一部のアプリケーションとサービスはクラウドでホストされ、残りはオンプレミスでホストされます。
+  ms.topic: landing-page
+  author: billmath
+  ms.author: billmath
+  ms.date: 5/18/2020
+  ms.openlocfilehash: 10723952ab4b146c491f469e6569670ad0f1c5e1
+  ms.sourcegitcommit: 5bc5aaf341c711113ca03d1482f933b05b146007
+  ms.translationtype: MT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 06/19/2020
+  ms.locfileid: "85095683"
+landingContent:
+- title: Id およびアクセステクノロジについて
+  linkLists:
+  - linkListType: whats-new
+    links:
+    - text: 新機能
+      url: ad-fs/overview/whats-new-active-directory-federation-services-windows-server.md
+  - linkListType: overview
+    links:
+    - text: Active Directory Domain Services の Privileged Access Management と AD DS
+      url: https://technet.microsoft.com/library/dn903243.aspx
+    - text: 'エンタープライズ向け Windows 10: 作業用のデバイスを使用する方法'
+      url: https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-windows10-devices-overview/?rnd=1
+    - text: Active Directory ドメイン サービス
+      url: ../identity/ad-ds/Active-Directory-Domain-Services.md
+    - text: Active Directory フェデレーション サービス (AD FS)
+      url: Active-Directory-Federation-Services.md
+- title: ソリューションとシナリオ ガイド
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: 任意の場所の任意のデバイスからの企業リソースへのセキュリティで保護されたアクセス
+      url: https://technet.microsoft.com/library/dn550982.aspx
+    - text: 任意のデバイスからの職場への参加による業務用アプリケーション間の SSO とシームレスな 2 要素認証
+      url: https://technet.microsoft.com/library/dn280945.aspx
+    - text: 追加の多要素認証による個人情報アプリケーションのリスク管理
+      url: https://technet.microsoft.com/library/dn280949.aspx
+    - text: 条件付きアクセス制御によってリスクを管理する
+      url: https://technet.microsoft.com/library/dn280937.aspx
+- title: 以前のバージョンの Windows Server
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Windows の以前のバージョンに関するドキュメント
+      url: https://docs.microsoft.com/previous-versions/windows/
+    - text: 特定の情報を検索する
+      url: https://docs.microsoft.com/search/?search=Windows+Server&dataSource=previousVersions

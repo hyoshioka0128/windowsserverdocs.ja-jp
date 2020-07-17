@@ -1,50 +1,47 @@
 ---
-title: bitsadmin cache と delete
-description: '**Bitsadmin cache と delete**の Windows コマンドのトピックでは、特定のキャッシュエントリが削除されます。'
-ms.custom: na
+title: bitsadmin cache および delete
+description: 特定のキャッシュエントリを削除する bitsadmin cache と delete コマンドのリファレンス記事です。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 22540273-55a5-46ea-869b-6df2aa6808a1
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 87c3ffd7e0c9c43e8e2eb6e5d5a1d98610a4d9ad
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 739215722eac761aed45d6b4dba32b2b001450b3
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71382074"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927049"
 ---
-# <a name="bitsadmin-cache-and-delete"></a>bitsadmin cache と delete
-
-
+# <a name="bitsadmin-cache-and-delete"></a>bitsadmin cache および delete
 
 特定のキャッシュエントリを削除します。
 
 ## <a name="syntax"></a>構文
 
 ```
-bitsadmin /Cache /Delete RecordID 
+bitsadmin /cache /delete recordID
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
-|---------|-----------|
-|RecordID|キャッシュエントリに関連付けられている GUID。|
+| パラメーター | 説明 |
+| -------------- | -------------- |
+| recordID | キャッシュエントリに関連付けられている GUID。 |
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a>例
 
-次の例では、{6511FB02-E195-40A2-B595-E8E2F8F47702} の RecordID を使用して、キャッシュエントリを削除します。
+{6511FB02-E195-40A2-B595-E8E2F8F47702} の RecordID を使用してキャッシュエントリを削除するには、次のように入力します。
+
 ```
-C:\>bitsadmin /Cache /Delete {6511FB02-E195-40A2-B595-E8E2F8F47702} 
+bitsadmin /cache /delete {6511FB02-E195-40A2-B595-E8E2F8F47702}
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [bitsadmin cache コマンド](bitsadmin-cache.md)

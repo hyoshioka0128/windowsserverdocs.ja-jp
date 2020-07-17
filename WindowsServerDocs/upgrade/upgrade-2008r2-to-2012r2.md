@@ -1,97 +1,97 @@
 ---
-title: Windows Server 2008 R2 を Windows Server 2012 R2 にアップグレードするMicrosoft Docs
-description: Windows Server 2008 R2 から Windows Server 2012 R2 にインプレースアップグレードを実行する方法について説明します。
-ms.prod: windows server
+title: Windows Server 2008 R2 から Windows Server 2012 R2 へのアップグレード | Microsoft Docs
+description: Windows Server 2008 R2 から Windows Server 2012 R2 に移行するためのインプレース アップグレードを実行する方法について説明します。
+ms.prod: windows-server
 ms.technology: server-general
 ms.topic: upgrade
 author: RobHindman
 ms.author: robhind
 ms.date: 09/16/2019
-ms.openlocfilehash: d5051239f7269eb4b6361187121ac960e06f6d9e
-ms.sourcegitcommit: 27f0caf74e88781054250455c3c1adf06deb6234
-ms.translationtype: MT
+ms.openlocfilehash: 5e4436bb6e4db19e015056b67730619a93396f9e
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71125082"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "80854265"
 ---
 # <a name="upgrade-windows-server-2008-r2-to-windows-server-2012-r2"></a>Windows Server 2008 R2 から Windows Server 2012 R2 へのアップグレード
 
-サーバーをフラット化せずに、既に設定したものと同じハードウェアとすべてのサーバーの役割を維持する場合は、インプレースアップグレードを実行します。 インプレースアップグレードでは、設定、サーバーの役割、データをそのまま維持しながら、古いオペレーティングシステムから新しいオペレーティングシステムに移行することができます。 この記事は、Windows Server 2008 R2 から Windows Server 2012 R2 に移行する際に役立ちます。
+同じハードウェアをそのまま使用し、サーバーをフラット化せずに、既に設定しているすべてのサーバーの役割を保持する場合は、インプレース アップグレードを実行します。 インプレース アップグレードでは、設定、サーバーの役割、データを保持しながら、古いオペレーティング システムから新しいものに移行できます。 この記事は、Windows Server 2008 R2 から Windows Server 2012 R2 に移行する際に役立ちます。
 
-Windows Server 2019 にアップグレードするには、このトピックを最初に使用して、Windows Server 2012 R2 にアップグレードして[から、Windows server 2012 r2 から Windows server 2019 に](upgrade-2012r2-to-2019.md)アップグレードします。
+Windows Server 2019 にアップグレードするには、まずこのトピックを使用して Windows Server 2012 R2 にアップグレードしてから、[Windows Server 2012 R2 から Windows Server 2019 にアップグレードします](upgrade-2012r2-to-2019.md)。
 
-## <a name="before-you-begin-your-in-place-upgrade"></a>インプレースアップグレードを開始する前に
+## <a name="before-you-begin-your-in-place-upgrade"></a>インプレース アップグレードを開始する前に
 
-Windows Server のアップグレードを開始する前に、診断とトラブルシューティングのためにデバイスから情報を収集することをお勧めします。 この情報は、アップグレードが失敗した場合にのみ使用することを目的としているため、デバイスから取得できる場所に情報を保存しておく必要があります。
+Windows Server のアップグレードを開始する前に、診断とトラブルシューティングのためにデバイスから情報を収集することをお勧めします。 この情報は、アップグレードが失敗した場合にのみ使用することを目的としているため、デバイスからアクセスできる場所に保存しておく必要があります。
 
 ### <a name="to-collect-your-info"></a>情報を収集するには
 
-1. コマンドプロンプトを開き、に`c:\Windows\system32`アクセスして、「 **systeminfo**」と入力します。
+1. コマンド プロンプトを開き、`c:\Windows\system32` に移動して、「**systeminfo.exe**」と入力します。
 
-2. 生成されたシステム情報をデバイスのどこかにコピーして貼り付け、保存します。
+2. 結果として得られたシステム情報をデバイスから任意の場所にコピーして貼り付け、保存します。
 
-3. コマンドプロンプトに「 **ipconfig/all** 」と入力し、結果の構成情報をコピーして、上記と同じ場所に貼り付けます。
+3. コマンド プロンプトに「**ipconfig /all**」と入力し、結果として得られた構成情報をコピーして、上記と同じ場所に貼り付けます。
 
-4. レジストリエディターを開き、HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsNT\CurrentVersion hive に移動します。次に、Windows Server **Buildlabex** (バージョン) と**EditionID** (エディション) をコピーして、上記と同じ場所に貼り付けます。
+4. レジストリ エディターを開き、HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsNT\CurrentVersion ハイブに移動して、Windows Server **BuildLabEx** (バージョン) と **EditionID** (エディション) をコピーし、上記と同じ場所に貼り付けます。
 
-Windows Server 関連のすべての情報を収集したら、オペレーティングシステム、アプリ、および仮想マシンをバックアップすることを強くお勧めします。 また、サーバーで現在実行されているすべての仮想マシンを**シャットダウン**、**クイックマイグレーション**、または**ライブマイグレーション**する必要があります。 インプレースアップグレード中に仮想マシンを実行することはできません。
+Windows Server 関連のすべての情報を収集後、オペレーティング システム、アプリ、および仮想マシンをバックアップすることを強くお勧めします。 また、サーバー上で現在実行されているすべての仮想マシンの**シャットダウン**、**クイック マイグレーション**、または**ライブ マイグレーション**を行う必要があります。 インプレース アップグレード中に仮想マシンを実行することはできません。
 
 ## <a name="to-perform-the-upgrade"></a>アップグレードを実行するには
 
-1. **Buildlabex**の値に、Windows Server 2008 R2 が実行されていることが示されていることを確認します。
+1. **BuildLabEx** 値に、Windows Server 2008 R2 が実行中されていることが示されていることを確認します。
 
-2. Windows Server 2012 R2 セットアップメディアを見つけて **、setup.exe を選択し**ます。
+2. Windows Server 2012 R2 セットアップ メディアを見つけて、**setup.exe** を選択します。
 
-    ![Setup.exe ファイルが表示されているエクスプローラー](media/upgrade-2008r2-2012r2/setup-2012r2.png)
+    ![setup.exe ファイルが表示されているエクスプローラー](media/upgrade-2008r2-2012r2/setup-2012r2.png)
 
-3. **[はい]** を選択して、セットアッププロセスを開始します。
+3. **[はい]** を選択して、セットアップ プロセスを開始します。
 
-    ![セットアップを開始するアクセス許可を要求するユーザーアカウント制御](media/upgrade-2008r2-2012r2/start-setup-uac-box.png)
+    ![セットアップを開始するためのアクセス許可を要求するユーザー アカウント制御](media/upgrade-2008r2-2012r2/start-setup-uac-box.png)
 
-4. Windows Server 2012 R2 画面で、**今すぐインストール** を選択します。
+4. Windows Server 2012 R2 の画面で、 **[今すぐインストール]** を選択します。
 
-5. インターネットに接続されているデバイスの場合は、[オンラインにする] を選択して、**今すぐ更新プログラムをインストールします (推奨)** 。
+5. インターネットに接続されているデバイスの場合は、 **[オンラインで今すぐ更新プログラムをインストールする (推奨)]** を選択します。
 
-    ![重要な Windows 更新プログラムを取得するためにオンラインにすることを選択する画面](media/upgrade-2008r2-2012r2/imp-updates-win-setup.png)
+    ![重要な Windows 更新プログラムをオンラインで取得することを選択する画面](media/upgrade-2008r2-2012r2/imp-updates-win-setup.png)
 
 6. インストールする Windows Server 2012 R2 エディションを選択し、 **[次へ]** を選択します。
 
     ![インストールする Windows Server 2012 R2 エディションを選択する画面](media/upgrade-2008r2-2012r2/select-os-edition.png)
 
-7. **[ライセンス条項に同意]** します を選択して、配布チャネル (、Retail、Volume LICENSE、OEM、ODM など) に基づいてライセンス契約の条項に同意し、 **[次へ]** を選択します。
+7. 配布チャネル (製品版、ボリューム ライセンス、OEM、ODM など) に応じて、 **[同意します]** を選択してライセンス条項に同意し、 **[次へ]** を選択します。
 
-    ![使用許諾契約書に同意する画面](media/upgrade-2008r2-2012r2/license-terms.png)
+    ![ライセンス条項に同意する画面](media/upgrade-2008r2-2012r2/license-terms.png)
 
-8. [ **アップグレード] を選択します。インプレースアップグレードを選択するには、Windows を**インストールし、ファイル、設定、およびアプリケーションを保持します。
+8. **[Upgrade:Install Windows and keep files, settings, and applications]\(アップグレード: Windows をインストールし、ファイル、設定、アプリを引き継ぐ\)** を選択して、インプレース アップグレードを行うことを選択します。
 
     ![インストールの種類を選択する画面](media/upgrade-2008r2-2012r2/choose-install-upgrade.png)
 
-9. セットアップでは、 [Windows server のインストールとアップグレード](https://docs.microsoft.com/windows-server/get-started/installation-and-upgrade)に関する記事の情報を使用して、アプリが windows Server 2012 R2 と互換性があることを確認し、 **[次へ]** を選択します。
+9. セットアップから、「[Windows Server のインストールとアップグレード](https://docs.microsoft.com/windows-server/get-started/installation-and-upgrade)」の記事に記載されている情報を使用してアプリが Windows Server 2012 R2 と互換性があることを確認してから **[次へ]** を選択するよう促されます。
 
-    ![アプリの互換性を確認するようにという画面が表示される](media/upgrade-2008r2-2012r2/compatibility-report.png)
+    ![アプリの互換性を確認するよう促す画面](media/upgrade-2008r2-2012r2/compatibility-report.png)
 
-10. アップグレードを推奨しないことを示すページが表示された場合は、無視して **[確認]** を選択できます。 クリーンインストールを求めるメッセージが表示されましたが、必須ではありません。
+10. アップグレードが推奨されないことを示すページが表示された場合、これを無視して **[確認]** を選択することができます。 これはクリーン インストールを促すために導入されたものですが、必須ではありません。
 
-    ![アップグレードの進行状況を示す画面](media/upgrade-2008r2-2012r2/upgrading-windows-with-progress.png)
+    ![アップグレードの進行状況を表示している画面](media/upgrade-2008r2-2012r2/upgrading-windows-with-progress.png)
 
-    インプレースアップグレードが開始され、 **Windows のアップグレード**画面が進行状況と共に表示されます。 アップグレードが完了すると、サーバーが再起動します。
+    インプレース アップグレードが開始され、進行状況を示す **[Windows をアップグレードしています]** 画面が表示されます。 アップグレードが完了すると、サーバーが再起動します。
 
 ## <a name="after-your-upgrade-is-done"></a>アップグレードの完了後
 
-アップグレードが完了したら、Windows Server 2012 R2 へのアップグレードが正常に完了したことを確認する必要があります。
+アップグレードの完了後、Windows Server 2012 R2 へのアップグレードが成功したことを確認する必要があります。
 
 ### <a name="to-make-sure-your-upgrade-was-successful"></a>アップグレードが成功したかどうかを確認するには
 
-1. レジストリエディターを開き、HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsNT\CurrentVersion hive にアクセスして、 **ProductName**を表示します。 Windows server 2012 R2 のエディション ( **Windows server 2012 R2 Datacenter**など) が表示できます。
+1. レジストリ エディターを開き、HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsNT\CurrentVersion ハイブに移動して、**ProductName** を表示します。 **Windows Server 2012 R2 Datacenter** など、Windows Server 2012 R2 のエディションが表示されるはずです。
 
 2. すべてのアプリケーションが実行されており、アプリケーションへのクライアント接続が正常に行われていることを確認します。
 
-アップグレード中に問題が発生したと思われる場合は、 `%SystemRoot%\Panther` (通常は`C:\Windows\Panther`) ディレクトリをコピーして zip 形式にし、Microsoft サポートに問い合わせてください。
+アップグレード中に問題が発生したと思われる場合は、`%SystemRoot%\Panther` (通常は `C:\Windows\Panther`) ディレクトリをコピーして zip 圧縮し、Microsoft サポートにお問い合わせください。
 
 ## <a name="next-steps"></a>次の手順
 
-Windows Server 2012 R2 から Windows Server 2019 に移行するには、もう一度アップグレードを実行します。 詳細な手順については、「 [Windows server 2012 R2 から Windows server 2019 へのアップグレード](upgrade-2012r2-to-2019.md)」を参照してください。
+Windows Server 2012 R2 から Windows Server 2019 に移行するもう 1 つのアップグレードを実行できます。 詳細な手順については、「[Windows Server 2012 R2 から Windows Server 2019 へのアップグレード](upgrade-2012r2-to-2019.md)」を参照してください。
 
 ## <a name="related-articles"></a>関連記事
 
-- Windows Server 2012 R2 の詳細と情報については、「 [Windows server 2012 r2 および Windows server 2012](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh801901(v=ws.11))」を参照してください。
+- Windows Server 2012 R2 に関する情報と詳細については、「[Windows Server 2012 R2 および Windows Server 2012](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh801901(v=ws.11))」を参照してください。

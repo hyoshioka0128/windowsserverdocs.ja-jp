@@ -8,10 +8,10 @@ ms.author: phstee
 author: phstee
 ms.date: 01/08/2018
 ms.openlocfilehash: 9c012711dff3746587b4a04b31d9c23ebb7de4cd
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "71370553"
 ---
 # <a name="server-hardware-performance-considerations"></a>サーバーのハードウェア パフォーマンスに関する考慮事項
@@ -41,7 +41,7 @@ Hyper-V の場合は、プロセッサが SLAT (第 2 レベルのアドレス�
 ## <a name="memory-ram-and-paging-storage-recommendations"></a>メモリ (RAM) とページング ストレージに関する推奨事項
 
 >[!Note] 
-> Windows Server 2016 を新たにインストールして実行した場合、Windows Server 2012 R2 と比較して、一部のシステムでストレージのパフォーマンスが低下することがあります。 Windows Server 2016 の開発では、プラットフォームのセキュリティと信頼性を強化するため、複数の変更が行われました。 これらの中には、Windows Defender を既定で有効にするなど、I/O パスの延伸につながる変更が含まれているため、特定のワークロードとパターンで I/O パフォーマンスが低下する可能性があります。 Windows Defender は、システム保護のための重要な層であるため、無効にすることはお勧めできません。 
+> Windows Server 2016 を新たにインストールして実行した場合、Windows Server 2012 R2 と比較して、一部のシステムではストレージのパフォーマンスが低下することがあります。 Windows Server 2016 の開発では、プラットフォームのセキュリティと信頼性を強化するために、複数の変更が行われました。 これらの中には、Windows Defender を既定で有効にするなど、I/O パスの延伸につながる変更が含まれているため、特定のワークロードとパターンで I/O パフォーマンスが低下する可能性があります。 Windows Defender はシステム保護のための重要な層であるため、Microsoft では無効にすることをお勧めしていません。 
 
 メモリのニーズに合うように RAM を増やしてください。
 コンピューターのメモリが不足し、より多くのメモリがすぐに必要になる場合、Windows ではページングと呼ばれる処理によってハード ディスク領域を使用してシステム RAM を補完します。 ページングが過度になると、システム全体のパフォーマンスが低下します。

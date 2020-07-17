@@ -4,15 +4,15 @@ description: Windows Server 2016 でのキャッシュとメモリマネージ�
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: Pavel; ATales
+ms.author: pavel; atales
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 5f66f43a0d1b003ab833c91538594510b44027d6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ef3658ab0f035435f6140c1dfa585de78537d37a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71384933"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851645"
 ---
 # <a name="cache-and-memory-manager-improvements"></a>キャッシュとメモリマネージャーの機能強化
 

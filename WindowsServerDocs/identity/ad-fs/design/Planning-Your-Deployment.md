@@ -1,7 +1,6 @@
 ---
 ms.assetid: bb9b9e18-bf2f-4115-be77-9a165944db41
 title: 展開の計画
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 607dc34c8f44d8d96a8dc0c9d1ed004edc799167
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6386aac112fcf936ccdd9772e3d5566d8dd21ad8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407997"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858645"
 ---
 # <a name="planning-your-deployment"></a>展開の計画
 
@@ -23,7 +22,7 @@ ms.locfileid: "71407997"
 > [!NOTE]  
 > 組織がフェデレーション契約で果たす役割をすべての当事者が明確に理解するようにしてください。  
   
-[フェデレーション WEB SSO 設計](Federated-Web-SSO-Design.md)では、AD FS は、\) の AD FS 管理スナップ\-で*id プロバイダー*とも呼ばれる*アカウントパートナー* \(のような用語を*使用し、* \(の AD FS 管理スナップ\-で*証明書利用者*と呼ばれることもあり\) アカウントをホストする組織を、Web \(ベースのリソースをホストしている組織から区別するのに役立ち\)リソースパートナー\)。\-\(  
+[フェデレーション WEB SSO 設計](Federated-Web-SSO-Design.md)では、AD FS は、*アカウント*パートナー \(などの用語を*使用します*。これは\) の AD FS 管理スナップ\-で*id プロバイダー*とも呼ばれ、\(の AD FS 管理スナップ *\-で、* アカウントパートナー\) をホストする組織と、リソースパートナー \(\) の Web\-ベースのリソースをホストする組織を区別するのに役立ちます。\(\)  
   
 [Web SSO Design](Web-SSO-Design.md)では、組織はユーザーに対してアプリケーションへのアクセスを提供するため、アカウント パートナーとリソース パートナー両方の役割を実行します。  
   

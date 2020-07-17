@@ -1,24 +1,20 @@
 ---
 title: MultiPoint Services のサイトの計画
 description: Windows Server 2016 での MultiPoint サービスの展開の計画に関する情報
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 063783cd-d748-489e-b175-46eadc993f7a
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 744e49f47f7144dac82dbe68c885060b0c08490d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1ad91d0e4f3e8de806ff46bf6b83051177025661
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71389597"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853445"
 ---
 # <a name="multipoint-services-site-planning"></a>MultiPoint Services のサイトの計画
 MultiPoint Services を実行している1台以上のコンピューターとそれに関連付けられているステーションが配置される場所を考慮する必要があります。  
@@ -127,8 +123,8 @@ USB ゼロクライアントまたはステーションハブが連続してデ�
 次のコンポーネントでは、電源ストリップまたはアウトレットへのアクセスが必要です。  
   
 -   Server  
--   [モニタ] をクリックします。
--   中間ハブ\((使用されている場合)\) 
+-   監視
+-   使用する場合、中間ハブ \(\) 
 -   一部の USB ゼロクライアント  
 -   電源が入っている USB デバイス (一部の外部記憶装置や DVD ドライブなど)  
   
@@ -154,6 +150,6 @@ USB ゼロクライアントまたはステーションハブが連続してデ�
   
 ![MultiPoint Services アクティビティセンター](./media/WMSActivityCenter.gif)  
   
-**小規模ビジネスオフィス**このセットアップでは、MultiPoint Services を実行しているコンピューターを中央の場所に配置し、オフィス内のユーザーがローカルエリアネットワーク\(LAN\)を使用してそのコンピューターに接続します。  
+**小規模ビジネスオフィス**このセットアップでは、MultiPoint Services を実行しているコンピューターを中央の場所に配置し、オフィス内のユーザーがローカルエリアネットワーク \(LAN\)を使用してそのコンピューターに接続します。  
   
 ![USB ゼロ クライアント接続ステーション](./media/Diagram1.gif)

@@ -1,26 +1,26 @@
 ---
 title: HCN の RPC コンテキスト ハンドル
-description: ''
 ms.author: jmesser
 author: jmesser81
+ms.prod: windows-server
 ms.date: 11/05/2018
-ms.openlocfilehash: 0eb620fe52de5ee98a247e17ed73304b2325c7c8
-ms.sourcegitcommit: 213989f29cc0c30a39a78573bd4396128a59e729
+ms.openlocfilehash: d55a990b2158f8dfbc61d8e75e9b0606edc9bf7c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70031489"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859865"
 ---
 # <a name="rpc-context-handles-for-hcn"></a>HCN の RPC コンテキスト ハンドル
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2019
+>適用対象: Windows Server (半期チャネル)、Windows Server 2019
 
 
 ## <a name="hcn_network"></a>HCN_Network
 
-HCN ネットワークは、ホストコンピューティングネットワークとそれに関連付けられたシステムリソースおよびポリシーを表すために使用されるエンティティです。 たとえば、HCN ネットワークは、通常、一連のメタデータ (id、名前、種類)、仮想スイッチ、ホスト仮想ネットワークアダプター (ネットワークの既定のゲートウェイとして機能します)、NAT インスタンス (ネットワークの種類で必要な場合)、サブネットおよび MAC プールのセットで構成されます。、および適用するネットワーク全体のポリシー (Acl など)。
+HCN ネットワークは、ホストコンピューティングネットワークとそれに関連付けられたシステムリソースおよびポリシーを表すために使用されるエンティティです。 たとえば、HCN ネットワークは通常、一連のメタデータで構成されます (例: id、名前、種類)、仮想スイッチ、ホスト仮想ネットワークアダプター (ネットワークの既定のゲートウェイとして機能します)、NAT インスタンス (ネットワークの種類で必要な場合)、サブネットと MAC プールのセット、適用するネットワーク全体のポリシー (Acl など)。
 
-HCN ネットワークエンティティは、HCN_NETWORK RPC コンテキストハンドルを使用して表されます。
+HCN ネットワークエンティティは HCN_NETWORK RPC コンテキストハンドルを使用して表されます。
 
 ```
 
@@ -152,7 +152,7 @@ HcnCloseNetwork(
 ## <a name="hcn_endpoint"></a>HCN_Endpoint
 
 HCN エンドポイントは、HCN ネットワーク上の IP エンドポイントと、それに関連付けられたシステムリソースおよびポリシーを表すために使用されるエンティティです。 たとえば、HCN エンドポイントは、通常、一連のメタデータ (id、名前、親ネットワーク id など)、ネットワーク id (IP アドレス、MAC アドレスなど)、適用されるエンドポイント固有のポリシー (Acl、ルートなど) で構成されます。
-HCN エンドポイントエンティティは、HCN_ENDPOINT RPC コンテキストハンドルを使用して表されます。
+HCN エンドポイントエンティティは HCN_ENDPOINT RPC コンテキストハンドルを使用して表されます。
 
 ```
 
@@ -287,7 +287,7 @@ HcnCloseEndpoint(
 
 HCN 名前空間は、ホストコンピューティングネットワークの名前空間を表すために使用されるエンティティです。 名前空間を使用すると、分離されたネットワーク環境を1つのホストに配置できます。この場合、各名前空間には、他の名前空間とは別の独自のネットワークインターフェイスとルーティングテーブルがあります。
 
-HCN 名前空間エンティティは、HCN_NAMESPACE RPC コンテキストハンドルを使用して表されます。
+HCN 名前空間エンティティは HCN_NAMESPACE RPC コンテキストハンドルを使用して表されます。
 
 ```
 /// Handle to an operation
@@ -422,7 +422,7 @@ HcnCloseNamespace(
 ## <a name="hcn_loadbalancer"></a>HCN_LoadBalancer
 
 HCN LoadBalancer は、ホストコンピューティングネットワーク LoadBalancer を表すために使用されるエンティティです。 LoadBalancers を使用すると、負荷分散されたホストコンピューティングネットワークエンドポイントを使用できます。
-HCN LoadBalancer エンティティは、HCN_LOADBALANCER RPC コンテキストハンドルを使用して表されます。
+HCN LoadBalancer エンティティは HCN_LOADBALANCER RPC コンテキストハンドルを使用して表されます。
 
 ```
 /// Handle to an operation

@@ -1,27 +1,23 @@
 ---
 title: Datacenter Firewall の概要
 description: このトピックでは、Windows Server 2016 のネットワーク層、5タプル (プロトコル、発信元と宛先の IP アドレス、送信元と送信先の IP アドレス)、ステートフル、マルチテナントファイアウォールのデータセンターのファイアウォールについて説明します。
-manager: brianlic
-ms.custom: na
+manager: grcusanz
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-sdn
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 67576533-206b-428a-956c-ed8c53218d9b
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 9562972f731a553dbc3e5558fcce1d5c51d539d0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: anpaul
+author: AnirbanPaul
+ms.openlocfilehash: 2f50ee45d64f6888306a5fb5efc8c9b801a1c3d0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405884"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859645"
 ---
 # <a name="datacenter-firewall-overview"></a>Datacenter Firewall の概要
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 データセンターのファイアウォールは、Windows Server 2016 に含まれる新しいサービスです。 これは、ネットワーク層、5組 (プロトコル、発信元と宛先のポート番号、送信元と送信先の IP アドレス)、ステートフル、マルチテナントファイアウォールです。 テナント管理者は、サービスプロバイダーによってサービスとして展開され、サービスとして提供されると、インターネットおよびイントラネットネットワークからの不要なトラフィックから仮想ネットワークを保護するために、ファイアウォールポリシーをインストールして構成することができます。  
   

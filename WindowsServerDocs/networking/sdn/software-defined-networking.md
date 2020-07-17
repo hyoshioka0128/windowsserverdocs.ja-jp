@@ -1,24 +1,24 @@
 ---
 title: ソフトウェア定義ネットワーク (SDN)
 description: ソフトウェア定義ネットワーク (SDN) は、データ センター内のルーター、スイッチ、およびゲートウェイなどの物理および仮想ネットワーク デバイスを一元的に構成・管理する手段を提供します。 このトピックでは、Windows Server、System Center、および Microsoft Azure で提供されるソフトウェア定義ネットワーク (SDN) テクノロジについて説明します。
-manager: dougkim
+manager: grcusanz
 ms.prod: windows-server
 ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: 9a1ea73c-20cd-42c5-95ad-b003b9cc6d64
-ms.author: pashort
-author: shortpatti
+ms.author: anpaul
+author: AnirbanPaul
 ms.date: 08/09/2018
-ms.openlocfilehash: dd2b39f3563a47db18564de282f2646ec269e584
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 355375b17132a46f070d5ef34cd6ea02a36868e0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405922"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854335"
 ---
 # <a name="sdn-in-windows-server-overview"></a>Windows Server の SDN の概要
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 
 ソフトウェア定義ネットワーク (SDN) は、データ センター内のルーター、スイッチ、およびゲートウェイなどの物理および仮想ネットワーク デバイスを一元的に構成・管理する手段を提供します。 既存の SDN と互換性のあるデバイスを使用して、仮想ネットワークと物理ネットワークの間の統合をさらに強化することができます。 Hyper-v 仮想スイッチ、Hyper-v ネットワーク仮想化、RAS ゲートウェイなどの仮想ネットワーク要素は、SDN インフラストラクチャの不可欠な要素として設計されています。 

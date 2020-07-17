@@ -1,27 +1,30 @@
 ---
 title: rcp
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Rcp コマンドの参照記事。コンピューター間でファイルをコピーします。 このコマンドは非推奨とされており、Windows の将来のリリースでサポートされるとは限りません。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: 83ad713c-63c9-458c-8ad8-39a6ddeb1690 vhorne
+ms.assetid: 83ad713c-63c9-458c-8ad8-39a6ddeb1690
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9e62243c2ca41b66dea69f82d36ad082bbaeee42
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 34e58471a3f79e2f8ae6f060ec945bfc43b004c3
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71384816"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931994"
 ---
 # <a name="rcp"></a>rcp
 
+>[!IMPORTANT]
+> このコマンドは非推奨とされました。
 
+**機能の追加ウィザード**を使用して、UNIX ベースアプリケーション用サブシステムをインストールできます。 詳細およびダウンロードファイルについては、「 [Microsoft Windows 7 および Windows Server 2008 R2 の UNIX ベースアプリケーション用サブシステムのユーティリティと SDK](https://www.microsoft.com/download/details.aspx?id=2391)」を参照してください。
 
-コンピューター間でファイルをコピーします。 このコマンドは廃止されました。 機能の追加ウィザードを使用して UNIX ベース アプリケーション用サブシステムをインストールすることができます。 詳細については、次を参照してください。 [Windows Server 2008 の UNIX 相互運用性コンポーネント](https://go.microsoft.com/fwlink/?LinkId=191835) 、Microsoft Web サイトにします。 インストールが完了したら、C シェルや Korn シェルのコマンド ウィンドウを開きますして実行する **rcp**します。 詳細については、次のように入力します。 **man rcp** C シェルや Korn シェルのプロンプトでします。
+インストール後、C シェル (csh または tcsh) または KornShell コマンドウィンドウを開き、 **rcp**を実行できます。 詳細については、C シェルまたは KornShell プロンプトで「 **man rcp** 」と入力してください。
+
+## <a name="additional-references"></a>その他の参照情報
+
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

@@ -1,51 +1,48 @@
 ---
 title: bitsadmin setdisplayname
-description: '**Bitsadmin setdisplayname**の Windows コマンドトピックでは、指定されたジョブの表示名を設定します。'
-ms.custom: na
+description: Bitsadmin setdisplayname コマンドの参照記事。指定されたジョブの表示名を設定します。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 13706c53-fb5f-4879-b5ca-82531361d6e1
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 10a5607eb26f8199ec415a4cec17d03015a26bcd
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b7cd1ce068e1e2a89b27ee88653fdd014d2da178
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71380635"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927794"
 ---
 # <a name="bitsadmin-setdisplayname"></a>bitsadmin setdisplayname
-
-
 
 指定されたジョブの表示名を設定します。
 
 ## <a name="syntax"></a>構文
 
 ```
-bitsadmin /SetDisplayName <Job> <DisplayName>
+bitsadmin /setdisplayname <job> <display_name>
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
-|---------|-----------|
-|Job|ジョブの表示名または GUID|
-|DisplayName|指定されたジョブの表示名に使用されるテキスト。|
+| パラメーター | 説明 |
+| --------- | ----------- |
+| ジョブ (job) | ジョブの表示名または GUID。 |
+| display_name | 特定のジョブの表示名として使用されるテキスト。 |
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a>例
 
-次の例では、 *Mydownloadjob*という名前のジョブの表示名を*myDownloadJob2*に設定します。
+ジョブの表示名を*Mydownloadjob*に設定するには、次のようにします。
+
 ```
-C:\>bitsadmin /SetDisplayName myDownloadJob "Download Music Job"
+bitsadmin /setdisplayname myDownloadJob
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [bitsadmin コマンド](bitsadmin.md)

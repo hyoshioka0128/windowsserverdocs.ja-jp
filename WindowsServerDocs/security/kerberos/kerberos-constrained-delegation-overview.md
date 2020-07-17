@@ -1,24 +1,20 @@
 ---
 title: Kerberos Constrained Delegation Overview
 description: Windows Server のセキュリティ
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-kerberos
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 51923b0a-0c1a-47b2-93a0-d36f8e295589
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: e6e62effcb875c0e3a1cdd6c886f3d74923e1b94
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 07717743017c15a7bdabd3c3ce38d75a02980460
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403419"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858865"
 ---
 # <a name="kerberos-constrained-delegation-overview"></a>Kerberos Constrained Delegation Overview
 
@@ -42,7 +38,7 @@ Windows Server 2012 R2 および Windows Server 2012 の Kerberos プロトコ�
 
 制約付き委任を使用すると、サービス管理者は、アプリケーションサービスがユーザーの代理として動作できる範囲を制限することで、アプリケーションの信頼境界を指定して適用することができます。 サービス管理者は、どのフロントエンド サービス アカウントがそれぞれのバックエンド サービスに委任できるのかを構成できます。
 
-Windows Server 2012 R2 および Windows Server 2012 のドメイン間で制約付き委任をサポートすることで、Microsoft Internet Security and セラレーション (ISA) Server、Microsoft Forefront Threat Management Gateway、Microsoft Exchange などのフロントエンドサービスがサポートされます。Outlook Web アクセス (OWA)、および Microsoft SharePoint Server は、他のドメインのサーバーに対する認証に制約付き委任を使用するように構成できます。 これにより、既存の Kerberos インフラストラクチャを使用して、ドメインをまたがるサービス ソリューションがサポートされます。 Kerberos の制約付き委任は、ドメイン管理者またはサービス管理者が管理できます。
+Windows Server 2012 R2 および Windows Server 2012 のドメイン間で制約付き委任をサポートすることにより、Microsoft Internet Security and セラレーション (ISA) Server、Microsoft Forefront Threat Management Gateway、Microsoft Exchange Outlook Web アクセス (OWA)、Microsoft SharePoint Server などのフロントエンドサービスで、他のドメインのサーバーに対する認証に制約付き委任を使用するように構成できます。 これにより、既存の Kerberos インフラストラクチャを使用して、ドメインをまたがるサービス ソリューションがサポートされます。 Kerberos の制約付き委任は、ドメイン管理者またはサービス管理者が管理できます。
 
 ## <a name="resource-based-constrained-delegation-across-domains"></a>リソースに基づくドメイン間の制約付き委任
 
@@ -83,7 +79,7 @@ KDC ではプロトコルの遷移が制限されないため、このコント�
 
 -   リソースサービスを構成するには、 **PrincipalsAllowedToDelegateToAccount**パラメーターを使用して、 **New-Adcomputer**、 **new Adserviceaccount**、 **new Adcomputer**、 **set Adcomputer**、set **adserviceaccount**、および**set adcomputer**コマンドレットを使用します。
 
-## <a name="BKMK_SOFT"></a>ソフトウェア要件
+## <a name="software-requirements"></a><a name="BKMK_SOFT"></a>ソフトウェア要件
 リソースベースの制約付き委任は、Windows Server 2012 R2 および Windows Server 2012 を実行しているドメインコントローラーでのみ構成できますが、混在モードのフォレスト内で適用できます。
 
 Windows server より前のオペレーティングシステムを実行しているフロントエンドドメインとバックエンドドメイン間の参照パスで、ユーザーアカウントドメイン内の Windows Server 2012 を実行しているすべてのドメインコントローラーに対して、次の修正プログラムを適用する必要があります。 Windows Server 2008 R2 ベースのドメインコントローラー (https://support.microsoft.com/en-gb/help/2665790/resource-based-constrained-delegation-kdc-err-policy-failure-in-enviro)を持つ環境では、リソースベースの制約付き KDC_ERR_POLICY 委任

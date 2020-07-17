@@ -1,50 +1,47 @@
 ---
-title: bitsadmin cache と info
-description: '**Bitsadmin cache および info**の Windows コマンドに関するトピックでは、特定のキャッシュエントリがダンプされます。'
-ms.custom: na
+title: bitsadmin cache および info
+description: 特定のキャッシュエントリをダンプする bitsadmin cache と info コマンドのリファレンス記事です。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 15975cbf-dba6-49ca-a725-d15ce1952de5
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 11963ff5640ef30e597e5e802778aff121c0efb3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: dabf9b229138bf1d39863643574c5509ffcfcd91
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71381971"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923260"
 ---
-# <a name="bitsadmin-cache-and-info"></a>bitsadmin cache と info
-
-
+# <a name="bitsadmin-cache-and-info"></a>bitsadmin cache および info
 
 特定のキャッシュエントリをダンプします。
 
 ## <a name="syntax"></a>構文
 
 ```
-bitsadmin /Cache /Info RecordID [/Verbose] 
+bitsadmin /cache /info recordID [/verbose]
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
-|---------|-----------|
-|RecordID|キャッシュエントリに関連付けられている GUID。|
+| Paramreter | 説明 |
+| -------------- | -------------- |
+| recordID | キャッシュエントリに関連付けられている GUID。 |
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a>例
 
-次の例では、{6511FB02-E195-40A2-B595-E8E2F8F47702} の RecordID を使用して、キャッシュエントリをダンプします。
+RecordID の値 {6511FB02-E195-40A2-B595-E8E2F8F47702} を使用してキャッシュエントリをダンプするには、次のように入力します。
+
 ```
-C:\>bitsadmin /Cache /Info {6511FB02-E195-40A2-B595-E8E2F8F47702} 
+bitsadmin /cache /info {6511FB02-E195-40A2-B595-E8E2F8F47702}
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [bitsadmin cache コマンド](bitsadmin-cache.md)

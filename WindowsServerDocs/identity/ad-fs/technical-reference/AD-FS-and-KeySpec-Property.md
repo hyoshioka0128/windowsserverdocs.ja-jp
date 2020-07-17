@@ -1,6 +1,5 @@
 ---
 title: Active Directory フェデレーションサービス (AD FS) と証明書キー指定のプロパティ情報
-description: ''
 author: billmath
 manager: femila
 ms.date: 05/31/2017
@@ -9,12 +8,12 @@ ms.prod: windows-server
 ms.assetid: a5307da5-02ff-4c31-80f0-47cb17a87272
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 51c9828cfe494c68422f4985e5b17113020c8414
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e3ddc427d84a79d831c61cad8087dbfa1d3fb564
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407423"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860245"
 ---
 # <a name="ad-fs-and-certificate-keyspec-property-information"></a>AD FS と certificate KeySpec のプロパティ情報
 キー指定 ("KeySpec") は、証明書とキーに関連付けられているプロパティです。 証明書に関連付けられた秘密キーを署名、暗号化、またはその両方に使用できるかどうかを指定します。   
@@ -42,7 +41,7 @@ KeySpec 値が正しくないと、次のような AD FS と Web アプリケー
 ## <a name="what-causes-the-problem"></a>問題の原因
 KeySpec プロパティは、microsoft CryptoAPI (CAPI) によって生成または取得されたキーを Microsoft レガシ暗号化ストレージプロバイダー (CSP) から使用できるようにする方法を指定します。
 
-KeySpec 値**1**または**AT_KEYEXCHANGE**は、署名と暗号化に使用できます。  値**2**または**AT_SIGNATURE**は、署名にのみ使用されます。
+KeySpec 値**1**または**AT_KEYEXCHANGE**は、署名と暗号化に使用できます。  値**2**、または**AT_SIGNATURE**は、署名にのみ使用されます。
 
 最も一般的な KeySpec mis 構成では、トークン署名証明書以外の証明書に対して値2を使用します。  
 
@@ -53,14 +52,14 @@ Cryptography Next Generation (CNG) プロバイダーを使用してキーが生
 ### <a name="example"></a>例
 従来の CSP の例として、Microsoft Enhanced Cryptographic Provider があります。 
 
-Microsoft RSA CSP キーの blob 形式には、 **CALG_RSA_KEYX**または**CALG_RSA_SIGN**のいずれかのアルゴリズム識別子が含まれています。この識別子は、 <strong>AT_KEYEXCHANGE * * または * * AT_SIGNATURE</strong>キーの要求を処理します。
+Microsoft RSA CSP キー blob 形式には、 <strong>AT_KEYEXCHANGE * * または * * AT_SIGNATURE</strong>キーの要求を処理するために、それぞれ**CALG_RSA_KEYX**または**CALG_RSA_SIGN**のいずれかのアルゴリズム識別子が含まれています。
 
 RSA キーアルゴリズム識別子は、次のように KeySpec 値にマップされます。
 
 | プロバイダーでサポートされているアルゴリズム| CAPI 呼び出しのキー指定値 |
 | --- | --- |
-|CALG_RSA_KEYX :署名と復号化に使用できる RSA キー| AT_KEYEXCHANGE (または KeySpec = 1)|
-CALG_RSA_SIGN :RSA 署名のみのキー |AT_SIGNATURE (または KeySpec = 2)|
+|CALG_RSA_KEYX: 署名と復号化に使用できる RSA キー| AT_KEYEXCHANGE (または KeySpec = 1)|
+CALG_RSA_SIGN: RSA 署名のみのキー |AT_SIGNATURE (または KeySpec = 2)|
 
 ## <a name="keyspec-values-and-associated-meanings"></a>KeySpec 値と関連する意味
 さまざまな KeySpec 値の意味を次に示します。
@@ -78,11 +77,11 @@ CALG_RSA_SIGN :RSA 署名のみのキー |AT_SIGNATURE (または KeySpec = 2)|
 
 ![Keyspec cert](media/AD-FS-and-KeySpec-Property/keyspec1.png)
 
-[CERT_KEY_PROV_INFO_PROP_ID] で、次の2つの項目を検索します。
+[CERT_KEY_PROV_INFO_PROP_ID] で、次の2つの項目を探します。
 
 
 1. **Providertype:** 証明書で、新しい Certificate Next GENERATION (CNG) api に基づく従来の暗号化ストレージプロバイダー (CSP) またはキー記憶域プロバイダーを使用するかどうかを示します。  0以外の値は、レガシプロバイダーを示します。
-2. **KeySpec**AD FS 証明書の有効な KeySpec 値を次に示します。
+2. **KeySpec:** AD FS 証明書の有効な KeySpec 値を次に示します。
 
    レガシ CSP プロバイダー (ProviderType が0に等しくない):
 
@@ -90,14 +89,14 @@ CALG_RSA_SIGN :RSA 署名のみのキー |AT_SIGNATURE (または KeySpec = 2)|
    | --- | --- |
    |サービス通信|1|
    |トークンの復号化|1|
-   |トークン署名|1 と 2|
-   |SSL (SSL)|1|
+   |トークンの署名|1 と 2|
+   |SSL|1|
 
    CNG プロバイダー (ProviderType = 0):
 
    |AD FS 証明書の目的|有効な KeySpec 値|
    | --- | --- |   
-   |SSL (SSL)|0|
+   |SSL|0|
 
 ## <a name="how-to-change-the-keyspec-for-your-certificate-to-a-supported-value"></a>証明書の keyspec をサポートされている値に変更する方法
 KeySpec 値を変更しても、証明機関によって証明書が再生成または再発行される必要はありません。  KeySpec を変更するには、次の手順を使用して、完全な証明書と秘密キーを PFX ファイルから証明書ストアに再インポートします。
@@ -107,8 +106,8 @@ KeySpec 値を変更しても、証明機関によって証明書が再生成ま
 2. 秘密キーを含む証明書を PFX ファイルにエクスポートします。
 3. AD FS と WAP サーバーごとに次の手順を実行します。
     1. (AD FS/WAP サーバーから) 証明書を削除します。
-    2. 管理者特権の PowerShell コマンドプロンプトを開き、次のコマンドレット構文を使用して、各 AD FS および WAP サーバーで PFX ファイルをインポートします。このとき、AT_KEYEXCHANGE 値を指定します (すべて AD FS 証明書の目的で機能します)。
-        1. C: \>certutil – importpfx certfile .pfx AT_KEYEXCHANGE
+    2. 管理者特権の PowerShell コマンドプロンプトを開き、次のコマンドレット構文を使用して、各 AD FS および WAP サーバーで PFX ファイルをインポートします。このとき、AT_KEYEXCHANGE の値 (すべての AD FS 証明書の目的で機能します) を指定します。
+        1. C:\>certutil – importpfx certfile .pfx AT_KEYEXCHANGE
         2. PFX パスワードを入力してください
     3. 上記の手順を完了したら、次の手順を実行します。
         1. 秘密キーのアクセス許可を確認する

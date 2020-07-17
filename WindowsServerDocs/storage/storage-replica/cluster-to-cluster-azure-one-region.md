@@ -1,7 +1,6 @@
 ---
 title: Azure の同じリージョン内のクラスター記憶域レプリカへのクラスター化
 description: クラスターからクラスターへのストレージレプリケーション (Azure の同じリージョン内)
-keywords: 記憶域レプリカ、サーバーマネージャー、Windows Server、Azure、クラスター、同じリージョン
 author: arduppal
 ms.author: arduppal
 ms.date: 04/26/2019
@@ -9,26 +8,26 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: storage-replica
 manager: mchad
-ms.openlocfilehash: 55d9c600c86b6b64efdb5c7d4437697539f887ae
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 00dbf709139ef245b94a3f083ab83a12503131c2
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402950"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80856295"
 ---
 # <a name="cluster-to-cluster-storage-replica-within-the-same-region-in-azure"></a>Azure の同じリージョン内のクラスター記憶域レプリカへのクラスター化
 
-> 適用対象:Windows Server 2019、Windows Server 2016、Windows Server (半期チャネル)
+> 適用対象: Windows Server 2019、Windows Server 2016、Windows Server (半期チャネル)
 
 Azure の同じリージョン内でストレージレプリケーションをクラスター化するようにクラスターを構成できます。 次の例では、2ノードクラスターを使用していますが、クラスターへのクラスターの記憶域レプリカは2ノードクラスターに制限されていません。 次の図は、相互に通信できる2ノード記憶域スペースダイレクトクラスターであり、同じドメイン内にあり、同じリージョン内に存在します。
 
 プロセスの完全なチュートリアルについては、以下のビデオをご覧ください。
 
 パート1
-> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE26f2Y]
+> [!VIDEO https://www.microsoft.com/videoplayer/embed/RE26f2Y]
 
 パート2
-> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE269Pq]
+> [!VIDEO https://www.microsoft.com/videoplayer/embed/RE269Pq]
 
 ![アーキテクチャダイアグラムでは、同じリージョン内の Azure のクラスター間ストレージレプリカが紹介されています。](media/Cluster-to-cluster-azure-one-region/architecture.png)
 > [!IMPORTANT]
@@ -76,16 +75,16 @@ Azure の同じリージョン内でストレージレプリケーションを�
 11. 各クラスター (**azlbr1**、**azlbr2**) の内部 Standard SKU [Load Balancer](https://ms.portal.azure.com/#create/Microsoft.LoadBalancer-ARM)を作成します。 
    
     クラスター IP アドレスをロードバランサーの静的プライベート IP アドレスとして指定します。
-    - azlbr1 = > フロントエンド IP:10.3.0.100 (仮想ネットワーク (**az2az**) サブネットから未使用の IP アドレスを取得する)
+    - azlbr1 = > フロントエンド IP: 10.3.0.100 (仮想ネットワーク (**az2az**) サブネットから未使用の ip アドレスを取得する)
     - 各ロードバランサーのバックエンドプールを作成します。 関連付けられているクラスターノードを追加します。
     - 正常性プローブの作成: ポート59999
-    - 負荷分散規則の作成:有効な Floating IP を使用して HA ポートを許可します。 
+    - 負荷分散規則の作成: 有効な Floating IP を使用して HA ポートを許可します。 
    
     クラスター IP アドレスをロードバランサーの静的プライベート IP アドレスとして指定します。
-    - azlbr2 = > フロントエンド IP:10.3.0.101 (仮想ネットワーク (**az2az**) サブネットから未使用の IP アドレスを取得する)
+    - azlbr2 = > フロントエンド IP: 10.3.0.101 (仮想ネットワーク (**az2az**) サブネットから未使用の ip アドレスを取得する)
     - 各ロードバランサーのバックエンドプールを作成します。 関連付けられているクラスターノードを追加します。
     - 正常性プローブの作成: ポート59999
-    - 負荷分散規則の作成:有効な Floating IP を使用して HA ポートを許可します。 
+    - 負荷分散規則の作成: 有効な Floating IP を使用して HA ポートを許可します。 
    
 12. 各クラスターノードで、ポート 59999 (正常性プローブ) を開きます。 
    
@@ -103,7 +102,7 @@ Azure の同じリージョン内でストレージレプリケーションを�
      $IPResourceName = "Cluster IP Address" # IP Address cluster resource name.
      $ILBIP = "10.3.0.100" # IP Address in Internal Load Balancer (ILB) - The static IP address for the load balancer configured in the Azure portal.
      [int]$ProbePort = 59999
-     Get-ClusterResource $IPResourceName | Set-ClusterParameter -Multiple @{"Address"="$ILBIP";"ProbePort"=$ProbePort;"SubnetMask"="255.255.255.255";"Network"="$ClusterNetworkName";”ProbeFailureThreshold”=5;"EnableDhcp"=0}
+     Get-ClusterResource $IPResourceName | Set-ClusterParameter -Multiple @{"Address"="$ILBIP";"ProbePort"=$ProbePort;"SubnetMask"="255.255.255.255";"Network"="$ClusterNetworkName";"ProbeFailureThreshold"=5;"EnableDhcp"=0}
     ```
 
 14. 任意の1つのノード**az2az3**/**az2az4**から次のコマンドを実行します。 
@@ -113,7 +112,7 @@ Azure の同じリージョン内でストレージレプリケーションを�
     $IPResourceName = "Cluster IP Address" # IP Address cluster resource name.
     $ILBIP = "10.3.0.101" # IP Address in Internal Load Balancer (ILB) - The static IP address for the load balancer configured in the Azure portal.
     [int]$ProbePort = 59999
-    Get-ClusterResource $IPResourceName | Set-ClusterParameter -Multiple @{"Address"="$ILBIP";"ProbePort"=$ProbePort;"SubnetMask"="255.255.255.255";"Network"="$ClusterNetworkName";”ProbeFailureThreshold”=5;"EnableDhcp"=0}  
+    Get-ClusterResource $IPResourceName | Set-ClusterParameter -Multiple @{"Address"="$ILBIP";"ProbePort"=$ProbePort;"SubnetMask"="255.255.255.255";"Network"="$ClusterNetworkName";"ProbeFailureThreshold"=5;"EnableDhcp"=0}  
     ```   
     両方のクラスターが相互に接続/通信できることを確認します。 
 

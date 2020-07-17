@@ -4,15 +4,15 @@ description: Active Directory サーバーのパフォーマンス チューニ�
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: landing-page
-ms.author: TimWi; ChrisRob; HerbertM; KenBrumf;  MLeary; ShawnRab; v-tea
+ms.author: timwi; chrisrob; herbertm; kenbrumf;  mleary; shawnrab; v-tea
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: c4d14cfb4bfc8a6919683a360ec171de8250799a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 33dad41e01cab4c36ea55bcb84e8033bd358d617
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71370321"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471567"
 ---
 # <a name="performance-tuning-active-directory-servers"></a>Active Directory サーバーのパフォーマンス チューニング
 
@@ -44,12 +44,12 @@ Active Directory のパフォーマンス チューニングでは、次の 2 �
 
 「[Ask the Directory Services Team (ディレクトリ サービス チームに質問)](https://techcommunity.microsoft.com/t5/Ask-the-Directory-Services-Team/bg-p/AskDS)」のチーム ブログに従って、ADDS の管理に関する最新ニュース、ガイダンスおよびベスト プラクティスの最新情報を常に把握しておくことをお勧めします。
 
-## <a name="see-also"></a>関連項目
+## <a name="additional-references"></a>その他の参照情報
 
 - [AD DS のキャパシティ プランニング](capacity-planning-for-active-directory-domain-services.md)
 - [ハードウェアに関する考慮事項](hardware-considerations.md)
 - [メモリ使用量に関する考慮事項](memory-usage-considerations.md)
 - [LDAP に関する考慮事項](ldap-considerations.md)
 - [ドメイン コントローラーとサイトの適切な配置に関する考慮事項](site-definition-considerations.md)
-- [AD DS パフォーマンスのトラブルシューティング](troubleshoot.md)  
-  
+- [AD DS パフォーマンスのトラブルシューティング](troubleshoot.md)
+

@@ -1,7 +1,6 @@
 ---
 ms.assetid: 330c7b61-dde0-432f-9b74-d250ad9cc808
 title: ページの説明に符号\-を追加する
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 3b34a4e54aebd5b9dc3655eecd770a25f7ea97cf
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8d3cc69bde1c9126f97926802b53d049ed1ef501
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407743"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859995"
 ---
 # <a name="add-sign-in-page-description"></a>ページの説明に符号\-を追加する
 

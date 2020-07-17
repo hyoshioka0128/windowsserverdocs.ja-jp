@@ -2,30 +2,29 @@
 title: Windows ハイパーバイザーが実行されている必要があります。
 description: このベストプラクティスアナライザー規則によって報告された問題を解決するための手順を示します。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: 501a9beb-c464-46c0-88c5-e3e7e3e70101
-author: KBDAzure
+author: kbdazure
 ms.date: 10/03/2016
-ms.openlocfilehash: 51f863425bd1107894fb5e4d44ed7c742a806394
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b24700e0ed617177af888013e36f971870d0ac59
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71393048"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860955"
 ---
 # <a name="windows-hypervisor-must-be-running"></a>Windows ハイパーバイザーが実行されている必要があります。
 
->適用先:Windows Server 2016
+>適用対象: Windows Server 2016
   
 |プロパティ|詳細|  
 |-|-|  
 |**オペレーティング システム**|Windows Server 2016|  
 |**製品/機能**|Hyper-V|  
-|**順**|警告|  
+|**順**|［警告］|  
 |**カテゴリ**|前提条件|  
   
 次のセクションでは、斜体は、この問題のためのベスト プラクティス アナライザー ツールで表示される UI テキストを示します。  
@@ -40,9 +39,9 @@ ms.locfileid: "71393048"
   
 ## <a name="resolution"></a>解決方法  
   
-*Check Windows Server catalog で、このサーバーが Hyper-v を実行することが認められているかどうかを確認します。次に、BIOS でハードウェア依存の仮想化とハードウェアによるデータ実行防止が有効になっていることを確認します。次に、Hyper-v ハイパーバイザーのイベントログを確認します。*  
+*Windows Server カタログを調べて、このサーバーで Hyper-v を実行することが認められているかどうかを確認してください。次に、BIOS でハードウェア依存の仮想化とハードウェアによるデータ実行防止が有効になっていることを確認します。次に、Hyper-v ハイパーバイザーのイベントログを確認します。*  
   
-カタログを確認するには、「 [Windows Server catalog](https://go.microsoft.com/fwlink/?LinkId=111228) (https://go.microsoft.com/fwlink/?LinkId=111228) 」を参照してください。  
+カタログを確認するには、「 [Windows Server catalog](https://go.microsoft.com/fwlink/?LinkId=111228) (https://go.microsoft.com/fwlink/?LinkId=111228)」を参照してください。  
   
 > [!CAUTION]  
 > コンピューターのシステム BIOS で特定のパラメーターを変更すると、そのコンピューターがオペレーティングシステムの読み込みを停止したり、ハードディスクドライブなどのハードウェアデバイスが使用できなくなったりする可能性があります。 システム BIOS を構成する適切な方法を判断するには、必ずコンピューターのユーザーマニュアルを参照してください。 また、必要に応じて後で復元できるように、変更するパラメーターと元の値を常に追跡しておくことをお勧めします。 システム BIOS でパラメーターを変更した後に問題が発生した場合は、既定の設定を読み込もうとします (通常は BIOS 構成ユーティリティで使用可能なオプション)。または、コンピューターの製造元に問い合わせてください。  
@@ -78,7 +77,7 @@ ms.locfileid: "71393048"
   
 1.  イベント ビューアーを開きます。 **[スタート]** をクリックし、 **[管理ツール]** をクリックして、 **[イベントビューアー]** をクリックします。  
   
-2.  Hyper-v ハイパーバイザーイベントログを開きます。 ナビゲーションウィンドウで、**アプリケーションとサービスログ**  >> **Microsoft** >> **Windows** >> **hyper-v-ハイパーバイザー** の順に展開し、**操作** をクリックします。  
+2.  Hyper-v ハイパーバイザーイベントログを開きます。 ナビゲーションウィンドウで、**アプリケーションとサービスログ** >> **Microsoft** >> **Windows** >> **hyper-v-ハイパーバイザー** の順に展開し、**操作** をクリックします。  
   
 3.  Windows ハイパーバイザーが実行されている場合は、これ以上の操作は必要ありません。 Windows ハイパーバイザーが実行されていない場合は、次の手順を実行します。  
   
@@ -86,9 +85,9 @@ ms.locfileid: "71393048"
   
 5.  フィルターを使用して、Hyper-v ハイパーバイザーイベントを検索します。   
     1. **[操作]** ウィンドウで、 **[現在のログをフィルター]** をクリックします。 **イベントソース**の場合は、"Hyper-v-ハイパーバイザー" を指定します。   
-    2. 問題を報告するイベントを探します。 たとえば、イベント ID 41 は、BIOS 構成に問題があることを示しています。"Hyper-v の起動に失敗しました。VMX が存在しないか、BIOS で有効になっていません。 "  
+    2. 問題を報告するイベントを探します。 たとえば、イベント ID 41 は、BIOS 構成に問題があることを示しています。 "Hyper-v の起動に失敗しました。VMX が存在しないか、BIOS で有効になっていません。 "  
   
-### <a name="see-also"></a>関連項目  
+### <a name="see-also"></a>参照  
 コンピューターで Hyper-v を実行できるかどうかを確認する方法など、Windows 10 で Hyper-v を使用する方法の詳細については、「 [windows 10 hyper-v のシステム要件](https://msdn.microsoft.com/virtualization/hyperv_on_windows/quick_start/walkthrough_compatibility)」を参照してください。 
 
 

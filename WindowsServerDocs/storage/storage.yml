@@ -1,0 +1,91 @@
+### YamlMime:Landing
+title: Windows Server Storage のドキュメント
+summary: 'Windows Server の記憶域では、仮想化されたワークロードに重点を置いて、ソフトウェア定義型データセンター (SDDC) ユーザー向けの新機能の追加と機能改善が行われました。 また、Windows Server では、既存のワークロードでファイル サーバーを使用する企業ユーザー向けに幅広いサポートも提供しています。 適用対象: Windows Server 2019、Windows Server 2016、Windows Server (半期チャネル)。'
+metadata:
+  title: Windows Server Storage のドキュメント
+  description: Windows Server の記憶域では、仮想化されたワークロードに重点を置いて、ソフトウェア定義型データセンター (SDDC) ユーザー向けの新機能の追加と機能改善が行われました。
+  ms.topic: landing-page
+  author: JasonGerend
+  ms.author: jgerend
+  ms.date: 07/15/2020
+  ms.openlocfilehash: 0a26ee716f1308451f695843243a71002dfa5ca1
+  ms.sourcegitcommit: a5badf6b08ec0b25ec73df4b827c4e40b5ccd974
+  ms.translationtype: MT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 07/16/2020
+  ms.locfileid: "86410376"
+landingContent:
+- title: Windows Server ストレージについて
+  linkLists:
+  - linkListType: whats-new
+    links:
+    - text: 新機能
+      url: whats-new-in-storage.md
+- title: 仮想化されたワークロード用のソフトウェア定義記憶域
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: 記憶域スペース ダイレクト
+      url: storage-spaces/overview.md
+    - text: 記憶域レプリカ
+      url: storage-replica/storage-replica-overview.md
+    - text: 記憶域のサービスの品質 (QoS)
+      url: storage-qos/storage-qos-overview.md
+    - text: データ重複除去
+      url: data-deduplication/overview.md
+- title: 汎用ファイル サーバー
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: ストレージ移行サービス
+      url: storage-migration-service/overview.md
+    - text: 作業フォルダー
+      url: work-folders/work-folders-overview.md
+    - text: オフラインファイルとフォルダーのリダイレクト
+      url: folder-redirection/folder-redirection-rup-overview.md
+    - text: 移動ユーザー プロファイル
+      url: folder-redirection/deploy-roaming-user-profiles.md
+    - text: DFS 名前空間
+      url: dfs-namespaces/dfs-overview.md
+    - text: DFS レプリケーション
+      url: dfs-replication/dfsr-overview.md
+    - text: File Server Resource Manager
+      url: fsrm/fsrm-overview.md
+    - text: iSCSI ターゲット サーバー
+      url: iscsi/iscsi-target-server.md
+    - text: iSCSI ターゲットブート
+      url: iscsi/iscsi-boot-overview.md
+- title: ファイルシステムやプロトコルなど
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: ReFS
+      url: refs/refs-overview.md
+    - text: サーバー メッセージ ブロック (SMB) プロトコル
+      url: file-server/file-server-smb-overview.md
+    - text: 記憶域クラス メモリ
+      url: storage-spaces/Storage-class-memory-health.md
+    - text: BitLocker ドライブ暗号化
+      url: https://technet.microsoft.com/library/cc766295(v=ws.10).aspx
+    - text: NTFS
+      url: https://technet.microsoft.com/library/dn466522(v=ws.11).aspx
+    - text: Network File System (NFS)
+      url: https://technet.microsoft.com/library/jj592688(v=ws.11).aspx
+- title: Azure の場合
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Azure Storage
+      url: https://azure.microsoft.com/documentation/services/storage/
+    - text: Azure StorSimple
+      url: https://www.microsoft.com/cloud-platform/azure-storsimple
+    - text: Azure 共有ディスク
+      url: /azure/virtual-machines/windows/disks-shared
+- title: 以前のバージョンの Windows Server
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Windows の以前のバージョンに関するドキュメント
+      url: https://docs.microsoft.com/previous-versions/windows/
+    - text: 特定の情報を検索する
+      url: https://docs.microsoft.com/search/?search=Windows+Server&dataSource=previousVersions

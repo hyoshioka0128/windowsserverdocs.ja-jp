@@ -1,18 +1,17 @@
 ---
-title: 'SMB: ファイルとプリンターの共有ポートが開いていること'
-TOCTitle: 'SMB: File and printer sharing ports should be open'
+title: SMB ファイルとプリンターの共有ポートを開く
 ms.date: 07/02/2012
 ms.prod: windows-server
 ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 22cd926fdb873538631a6f6850157dceb5a020d7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a7e98129c2fb4f2259364c547b426d46f0a24ef3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385832"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859465"
 ---
 # <a name="smb-file-and-printer-sharing-ports-should-be-open"></a>SMB: ファイルとプリンターの共有ポートが開いていること
 
@@ -21,7 +20,7 @@ ms.locfileid: "71385832"
 
 適用対象: windows Server 2019、Windows Server 2016、Windows Server 2012 R2、windows server 2012、windows server 2008 R2
 
-*このトピックは、ベストプラクティスアナライザースキャンによって識別される特定の問題に対処することを目的としています。このトピックの情報は、ファイルベストプラクティスアナライザーサービスが実行されていて、このトピックで対処している問題が発生しているコンピューターにのみ適用する必要があります。ベストプラクティスとスキャンの詳細については、「* [ベストプラクティスアナライザー](http://go.microsoft.com/fwlink/?linkid=122786%0d%0a)」を参照してください。
+*このトピックは、ベストプラクティスアナライザースキャンによって識別される特定の問題に対処することを目的としています。このトピックの情報は、ファイルベストプラクティスアナライザーサービスが実行されていて、このトピックで対処している問題が発生しているコンピューターにのみ適用する必要があります。ベストプラクティスとスキャンの詳細については、「ベストプラクティスアナライザー」を参照してください* [Best Practices Analyzer](https://go.microsoft.com/fwlink/?linkid=122786%0d%0a)。
 
 
 <table>

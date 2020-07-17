@@ -2,22 +2,18 @@
 title: 手順 1 は、リモート アクセス インフラストラクチャを構成します。
 description: このトピックは、「Windows Server 2016 で DirectAccess クライアントをリモート管理する」ガイドの一部です。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0e7d1f5b-c939-47ca-892f-5bb285027fbc
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 110696d9f1ff082cfae315632c78fddc14359d52
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: d4588304ee3635c20f6b79817dfb54b0fa315357
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367324"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859205"
 ---
 # <a name="step-1-configure-the-remote-access-infrastructure"></a>手順 1 は、リモート アクセス インフラストラクチャを構成します。
 
@@ -40,10 +36,10 @@ ms.locfileid: "71367324"
 |ネットワーク ロケーション サーバーを構成する|ネットワーク ロケーション サーバー Web サイト証明書を含めて、ネットワーク ロケーション サーバーを構成します。|  
   
 > [!NOTE]  
-> このトピックでは、サンプル Windows PowerShell コマンドレットを紹介します。ここで説明する手順の一部はこのコマンドレットで自動化できます。 詳しくは、 [コマンドレットの使用に関するページ](https://go.microsoft.com/fwlink/p/?linkid=230693)をご覧ください。  
+> このトピックには、説明する手順の一部を自動化するために使用できるサンプルの Windows PowerShell コマンドレットが含まれます。 詳しくは、 [コマンドレットの使用に関するページ](https://go.microsoft.com/fwlink/p/?linkid=230693)をご覧ください。  
   
-## <a name="BKMK_ConfigNetworkSettings"></a>サーバーのネットワーク設定を構成する  
-リモートアクセスサーバーをエッジまたはネットワークアドレス変換 (NAT) デバイスの内側に配置するかどうかによって、IPv4 と IPv6 を使用する環境で1台のサーバーを展開するために、次のネットワークインターフェイスのアドレス設定が必要になります。 使用してすべての IP アドレスが構成されている **アダプターの設定を変更する** で、 **Windows ネットワークと共有センター**します。  
+## <a name="configure-server-network-settings"></a><a name="BKMK_ConfigNetworkSettings"></a>サーバーのネットワーク設定を構成する  
+リモートアクセスサーバーをエッジまたはネットワークアドレス変換 (NAT) デバイスの内側に配置するかどうかによって、IPv4 と IPv6 を使用する環境で1台のサーバーを展開するために、次のネットワークインターフェイスのアドレス設定が必要になります。 すべての IP アドレスは、Windows の **[ネットワークと共有センター]** の **[アダプターの設定の変更**] を使用して構成されます。  
   
 **エッジ トポロジ**:  
   
@@ -78,14 +74,14 @@ ms.locfileid: "71367324"
   
     このコマンドで使用する IPsec ポリシーの名前は **DirectAccess DaServerToInfra** と **DirectAccess DaServerToCorp**します。  
   
-## <a name="BKMK_ConfigRouting"></a>企業ネットワークでルーティングを構成する  
+## <a name="configure-routing-in-the-corporate-network"></a><a name="BKMK_ConfigRouting"></a>企業ネットワークでルーティングを構成する  
 次のように、企業ネットワークでルーティングを構成します。  
   
 -   組織でネィティブ IPv6 が展開されている場合、内部ネットワーク上のルーターがリモート アクセス サーバー経由で IPv6 トラフィックをルーティングするようにルートを追加します。  
   
 -   リモート アクセス サーバー上で組織の IPv4 および IPv6 ルートを手動で構成します。 (/48) IPv6 プレフィックスを持つすべてのトラフィックが内部ネットワークに転送されるように、公開されたルートを追加します。 さらに、IPv4 トラフィックの場合、IPv4 トラフィックが内部ネットワークに転送されるように、明示的なルートを追加します。  
   
-## <a name="BKMK_ConfigFirewalls"></a>ファイアウォールを構成する  
+## <a name="configure-firewalls"></a><a name="BKMK_ConfigFirewalls"></a>ファイアウォールを構成する  
 選択したネットワーク設定に応じて、展開で追加のファイアウォールを使用する場合は、リモートアクセストラフィックに対して次のファイアウォール例外を適用します。  
   
 ### <a name="remote-access-server-on-ipv4-internet"></a>IPv4 インターネット上のリモートアクセスサーバー  
@@ -124,12 +120,12 @@ ms.locfileid: "71367324"
   
 -   すべての IPv4 または IPv6 トラフィックの ICMP  
   
-## <a name="BKMK_ConfigCAs"></a>Ca と証明書の構成  
+## <a name="configure-cas-and-certificates"></a><a name="BKMK_ConfigCAs"></a>Ca と証明書の構成  
 コンピューターの認証に証明書を使用して、ユーザー名とパスワードを使用する組み込みの Kerberos 認証を使用するかを選択する Windows Server 2012 を使用すると、リモート アクセスをします。 また、リモートアクセスサーバーで ip-https 証明書を構成する必要があります。 このセクションでは、これらの証明書を構成する方法について説明します。  
   
 公開キー基盤 (PKI) の設定の詳細については、次を参照してください。 [Active Directory Certificate Services](https://technet.microsoft.com/library/cc770357.aspx)します。  
   
-### <a name="BKMK_ConfigIPsec"></a>IPsec 認証を構成する  
+### <a name="configure-ipsec-authentication"></a><a name="BKMK_ConfigIPsec"></a>IPsec 認証を構成する  
 リモートアクセスサーバーとすべての DirectAccess クライアントで、IPsec 認証を使用できるように証明書が必要です。 証明書は、内部証明機関 (CA) によって発行されている必要があります。 リモートアクセスサーバーと DirectAccess クライアントは、ルート証明書と中間証明書を発行する CA を信頼する必要があります。  
   
 ##### <a name="to-configure-ipsec-authentication"></a>IPsec 認証を構成するには  
@@ -145,7 +141,7 @@ ms.locfileid: "71367324"
   
 4.  必要に応じて、証明書の自動登録を構成します。 詳細については、次を参照してください。 [Configure Certificate Autoenrollment](https://technet.microsoft.com/library/cc731522.aspx)します。  
   
-### <a name="BKMK_ConfigCertTemp"></a>証明書テンプレートを構成する  
+### <a name="configure-certificate-templates"></a><a name="BKMK_ConfigCertTemp"></a>証明書テンプレートを構成する  
 内部 CA を使用して証明書を発行する場合は、IP-HTTPS 証明書とネットワークロケーションサーバーの web サイト証明書の証明書テンプレートを構成する必要があります。  
   
 ##### <a name="to-configure-a-certificate-template"></a>証明書テンプレートを構成するには  
@@ -160,7 +156,7 @@ ms.locfileid: "71367324"
   
 -   [ネットワークロケーションサーバーを構成する](#BKMK_ConfigNLS)  
   
-### <a name="BKMK_IPHTTPS"></a>Ip-https 証明書を構成する  
+### <a name="configure-the-ip-https-certificate"></a><a name="BKMK_IPHTTPS"></a>Ip-https 証明書を構成する  
 リモート アクセスでは、リモート アクセス サーバーへの IP-HTTPS 接続を認証するために IP-HTTPS 証明書が必要です。 IP-HTTPS 証明書には 3 つの証明書オプションがあります。  
   
 -   **共用**  
@@ -202,7 +198,7 @@ IP-HTTPS 認証に使用する Web サイトの証明書が次の要件を満た
   
 2.  MMC コンソールで、 **[ファイル]** メニューの **[スナップインの追加と削除]** をクリックします。  
   
-3.  **スナップインを追加または** ダイアログ ボックスで、 をクリックして **証明書**, 、 をクリックして **追加**, 、 をクリックして **コンピューター アカウント**, 、 をクリックして **次**, 、 をクリックして **ローカル コンピューター**, 、 をクリックして **完了**, 、順にクリック **ok**します。  
+3.  **[スナップインの追加と削除]** ダイアログ ボックスで、 **[証明書]** 、 **[追加]** 、 **[コンピューター アカウント]** 、 **[次へ]** 、 **[ローカル コンピューター]** 、 **[完了]** の順にクリックし、 **[OK]** をクリックします。  
   
 4.  証明書スナップインのコンソール ツリーで、 **[証明書 (ローカル コンピューター)]、[個人用]、[証明書]** の順に開きます。  
   
@@ -210,26 +206,26 @@ IP-HTTPS 認証に使用する Web サイトの証明書が次の要件を満た
   
 6.  **証明書の要求** ページで、証明書テンプレートの構成で作成した証明書テンプレートのチェック ボックスをオンにし、必要な場合はクリックして **の詳細については、この証明書を登録するために必要な**です。  
   
-7.  **証明書のプロパティ**  ダイアログ ボックスの 、 **サブジェクト**  タブの 、 **サブジェクト名** 領域で、 **型**,  **共通名**します。  
+7.  **[証明書のプロパティ]** ダイアログ ボックスの **[サブジェクト]** タブで、 **[サブジェクト名]** 領域の **[種類]** から **[共通名]** を選択します。  
   
 8.  **値**, 、リモート アクセス サーバーの外部アダプターまたは IP-HTTPS URL の FQDN の IPv4 アドレスを指定し、クリックして **追加**します。  
   
-9. **代替名** 領域で、 **型**,  **DNS**します。  
+9. **[別名]** 領域の **[種類]** で、 **[DNS]** を選択します。  
   
 10. **値**, 、リモート アクセス サーバーの外部アダプターまたは IP-HTTPS URL の FQDN の IPv4 アドレスを指定し、クリックして **追加**します。  
   
-11. **全般** ] タブの [ **フレンドリ名**, 、証明書を識別するための名前を入力することができます。  
+11. **[全般]** タブの **[フレンドリ名]** に証明書の識別に役立つ名前を入力できます。  
   
-12. **拡張**  タブの横に **拡張キー使用法**, 、矢印をクリックし、サーバー認証がであるかどうかを確認、 **するオプションを選択**  ボックスの一覧です。  
+12. **拡張機能** タブで、**拡張キー使用法** の横の矢印をクリックして、**選択されているオプション** リストに サーバー認証 が含まれていることを確認します。  
   
 13. **[OK]** をクリックし、 **[登録]** をクリックして、 **[完了]** をクリックします。  
   
 14. 証明書スナップインの詳細ウィンドウで、新しい証明書がサーバー認証の目的で登録されていることを確認します。  
   
-## <a name="BKMK_ConfigDNS"></a>DNS サーバーを構成する  
+## <a name="configure-the-dns-server"></a><a name="BKMK_ConfigDNS"></a>DNS サーバーを構成する  
 展開内の内部ネットワークのネットワーク ロケーション サーバー Web サイトの DNS エントリを手動で構成する必要があります。  
   
-### <a name="NLS_DNS"></a>ネットワークロケーションサーバーと web プローブを追加するには  
+### <a name="to-add-the-network-location-server-and-web-probe"></a><a name="NLS_DNS"></a>ネットワークロケーションサーバーと web プローブを追加するには  
   
 1.  内部ネットワーク DNS サーバー上: で、 **開始** 画面で「**dnsmgmt.msc**, 、ENTER キーを押します。  
   
@@ -237,15 +233,15 @@ IP-HTTPS 認証に使用する Web サイトの証明書が次の要件を満た
   
 3.  **新しいホスト** ダイアログ ボックスで、 **名 (使用して親ドメイン名空白の場合)** (これは DirectAccess クライアントがネットワーク ロケーション サーバーへの接続に使用する名前です)、ネットワーク ロケーション サーバー web サイトの DNS 名を入力します。 **IP アドレス** ボックスで、ネットワーク ロケーション サーバーの IPv4 アドレスを入力してをクリックして **ホストの追加**, 、 をクリックし、 **OK**します。  
   
-4.  **新しいホスト** ダイアログ ボックスで、 **名 (使用して親ドメイン名空白の場合)**  (既定の web プローブの名前は directaccess webprobehost) の web プローブの DNS 名を入力します。 **IP アドレス** ボックス、web プローブの IPv4 アドレスを入力し、クリックして **ホストの追加**します。  
+4.  **新しいホスト** ダイアログ ボックスで、 **名 (使用して親ドメイン名空白の場合)**  (既定の web プローブの名前は directaccess webprobehost) の web プローブの DNS 名を入力します。 **[IP アドレス]** ボックスに Web プローブの IPv4 アドレスを入力して、 **[ホストの追加]** をクリックします。  
   
-5.  directaccess-corpconnectivityhost および手動で作成した接続検証ツールに対し、このプロセスを繰り返します。 **DNS** ダイアログ ボックスで、をクリックして **OK**します。  
+5.  directaccess-corpconnectivityhost と手動で作成した接続検証方法について、このプロセスを繰り返します。 **DNS** ダイアログ ボックスで、をクリックして **OK**します。  
   
 6.  **[完了]** をクリックします。  
   
 windows PowerShell の ![](../../../../media/Step-1-Configure-the-Remote-Access-Infrastructure/PowerShellLogoSmall.gif)***<em>windows powershell の同等のコマンド</em>***  
   
-以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
+次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 書式上の制約のため、複数行にわたって折り返される場合でも、各コマンドレットは 1 行に入力してください。  
   
 ```  
 Add-DnsServerResourceRecordA -Name <network_location_server_name> -ZoneName <DNS_zone_name> -IPv4Address <network_location_server_IPv4_address>  
@@ -266,7 +262,7 @@ Add-DnsServerResourceRecordAAAA -Name <network_location_server_name> -ZoneName <
   
     サイト内の自動トンネルアドレッシングプロトコル (ISATAP) は、トンネルを使用して、DirectAccess クライアントが IPv4 インターネット経由でリモートアクセスサーバーに接続できるようにし、IPv4 ヘッダー内に IPv6 パケットをカプセル化します。 イントラネットで、ISATAP ホストへの IPv6 接続を提供するため、リモート アクセスによって使用されます。 ネイティブではない IPv6 ネットワーク環境では、リモートアクセスサーバーは自動的に ISATAP ルーターとして構成します。 ISATAP 名の解決のサポートが必要です。  
   
-## <a name="BKMK_ConfigAD"></a>Active Directory の構成  
+## <a name="configure-active-directory"></a><a name="BKMK_ConfigAD"></a>Active Directory の構成  
 リモート アクセス サーバーとすべての DirectAccess クライアント コンピューターは Active Directory ドメインに参加している必要があります。 DirectAccess クライアント コンピューターは、次のいずれかのドメインの種類のメンバーである必要があります。  
   
 -   リモート アクセス サーバーと同じフォレストに属するドメイン。  
@@ -299,7 +295,7 @@ Add-DnsServerResourceRecordAAAA -Name <network_location_server_name> -ZoneName <
   
 2.  コンピューター アイコンを右クリックし、**プロパティ** をクリックします。  
   
-3.  **システム** ] ページで [ **システムの詳細設定**します。  
+3.  **[システム]** ページで、 **[システムの詳細設定]** をクリックします。  
   
 4.  **[システムのプロパティ]** ダイアログ ボックスの **[コンピューター名]** タブで **[変更]** をクリックします。  
   
@@ -317,7 +313,7 @@ Add-DnsServerResourceRecordAAAA -Name <network_location_server_name> -ZoneName <
   
 windows PowerShell の ![](../../../../media/Step-1-Configure-the-Remote-Access-Infrastructure/PowerShellLogoSmall.gif)***<em>windows powershell の同等のコマンド</em>***  
   
-以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
+次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 書式上の制約のため、複数行にわたって折り返される場合でも、各コマンドレットは 1 行に入力してください。  
   
 > [!NOTE]  
 > 次のコマンドを入力した後で、ドメイン資格情報を指定する必要があります。  
@@ -327,12 +323,12 @@ Add-Computer -DomainName <domain_name>
 Restart-Computer  
 ```  
   
-## <a name="BKMK_ConfigGPOs"></a>Gpo を構成する  
+## <a name="configure-gpos"></a><a name="BKMK_ConfigGPOs"></a>Gpo を構成する  
 リモート アクセスを展開するには、2 つのグループ ポリシー オブジェクトの最小値が必要です。 1 つのグループ ポリシー オブジェクトには、リモート アクセス サーバーの設定が含まれていて、DirectAccess クライアント コンピューターの設定が含まれています。 リモート アクセスを構成するときに、ウィザードは自動的に必要なグループ ポリシー オブジェクトを作成します。 ただし、名前付け規則を実施する組織、またはグループ ポリシー オブジェクトを作成または更新に必要なアクセス許可がないは、リモート アクセスを構成する前に、作成する必要があります。  
   
 グループ ポリシー オブジェクトを作成するを参照してください。 [を作成し、グループ ポリシー オブジェクトを編集](https://technet.microsoft.com/library/cc754740.aspx)します。  
   
-管理者は、組織単位 (OU) に、DirectAccess グループ ポリシー オブジェクトを手動でリンクできます。 次に例を示します。  
+管理者は、組織単位 (OU) に、DirectAccess グループ ポリシー オブジェクトを手動でリンクできます。 次のような項目を考慮します。  
   
 1.  DirectAccess を構成する前に、作成した Gpo をそれぞれの Ou にリンクします。  
   
@@ -351,14 +347,14 @@ Restart-Computer
 > [!NOTE]  
 > グループ ポリシー オブジェクトは、手動で作成されている場合は、グループ ポリシー オブジェクトが使用できないこと、DirectAccess 構成中に考えられるです。 グループ ポリシー オブジェクトは、管理コンピューターに最も近いドメイン コント ローラーにレプリケートするされていない可能性があります。 管理者はレプリケーションが完了するまで待つか、レプリケーションを強制することができます。  
   
-## <a name="BKMK_ConfigSGs"></a>セキュリティグループの構成  
+## <a name="configure-security-groups"></a><a name="BKMK_ConfigSGs"></a>セキュリティグループの構成  
 クライアント コンピューターのグループ ポリシー オブジェクトに含まれる DirectAccess 設定は、リモート アクセスを構成するときに指定したセキュリティ グループのメンバーであるコンピューターにのみ適用されます。  
   
-### <a name="Sec_Group"></a>DirectAccess クライアントのセキュリティグループを作成するには  
+### <a name="to-create-a-security-group-for-directaccess-clients"></a><a name="Sec_Group"></a>DirectAccess クライアントのセキュリティグループを作成するには  
   
 1.  **開始** 画面で「**dsa.msc**, 、ENTER キーを押します。  
   
-2.  **Active Directory ユーザーとコンピューター** コンソールの左側のウィンドウで、セキュリティ グループを含むを右クリックし、ドメインを展開する **ユーザー**, 、 をポイント **新規**, 、クリックして **グループ**します。  
+2.  **[Active Directory ユーザーとコンピューター]** コンソールの左側のウィンドウで、セキュリティ グループを含むドメインを展開し、 **[Users]** を右クリックし、 **[新規作成]** をクリックして、 **[グループ]** をクリックします。  
   
 3.  **[新しいオブジェクト - グループ]** ダイアログ ボックスの **[グループ名]** の下に、セキュリティ グループの名前を入力します。  
   
@@ -372,14 +368,14 @@ Restart-Computer
   
 windows PowerShell の ![](../../../../media/Step-1-Configure-the-Remote-Access-Infrastructure/PowerShellLogoSmall.gif)**Windows powershell の同等のコマンド**  
   
-以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
+次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 書式上の制約のため、複数行にわたって折り返される場合でも、各コマンドレットは 1 行に入力してください。  
   
 ```  
 New-ADGroup -GroupScope global -Name <DirectAccess_clients_group_name>  
 Add-ADGroupMember -Identity DirectAccess_clients_group_name -Members <computer_name>  
 ```  
   
-## <a name="BKMK_ConfigNLS"></a>ネットワークロケーションサーバーを構成する  
+## <a name="configure-the-network-location-server"></a><a name="BKMK_ConfigNLS"></a>ネットワークロケーションサーバーを構成する  
 ネットワークロケーションサーバーは、高可用性を備えたサーバー上に配置する必要があります。また、DirectAccess クライアントによって信頼されている有効な Secure Sockets Layer (SSL) 証明書が必要です。  
   
 > [!NOTE]  
@@ -409,7 +405,7 @@ Add-ADGroupMember -Identity DirectAccess_clients_group_name -Members <computer_n
   
 2.  MMC コンソールで、 **[ファイル]** メニューの **[スナップインの追加と削除]** をクリックします。  
   
-3.  **スナップインを追加または** ダイアログ ボックスで、 をクリックして **証明書**, 、 をクリックして **追加**, 、 をクリックして **コンピューター アカウント**, 、 をクリックして **次**, 、 をクリックして **ローカル コンピューター**, 、 をクリックして **完了**, 、順にクリック **ok**します。  
+3.  **[スナップインの追加と削除]** ダイアログ ボックスで、 **[証明書]** 、 **[追加]** 、 **[コンピューター アカウント]** 、 **[次へ]** 、 **[ローカル コンピューター]** 、 **[完了]** の順にクリックし、 **[OK]** をクリックします。  
   
 4.  証明書スナップインのコンソール ツリーで、 **[証明書 (ローカル コンピューター)]、[個人用]、[証明書]** の順に開きます。  
   
@@ -417,15 +413,15 @@ Add-ADGroupMember -Identity DirectAccess_clients_group_name -Members <computer_n
   
 6.  **証明書の要求** ページで、証明書テンプレートの構成で作成した証明書テンプレートのチェック ボックスをオンにし、必要な場合はクリックして **の詳細については、この証明書を登録するために必要な**です。  
   
-7.  **証明書のプロパティ**  ダイアログ ボックスの 、 **サブジェクト**  タブの 、 **サブジェクト名** 領域で、 **型**,  **共通名**します。  
+7.  **[証明書のプロパティ]** ダイアログ ボックスの **[サブジェクト]** タブで、 **[サブジェクト名]** 領域の **[種類]** から **[共通名]** を選択します。  
   
 8.  **[値]** にネットワーク ロケーション サーバー Web サイトの FQDN を入力して、 **[追加]** をクリックします。  
   
-9. **代替名** 領域で、 **型**,  **DNS**します。  
+9. **[別名]** 領域の **[種類]** で、 **[DNS]** を選択します。  
   
 10. **[値]** にネットワーク ロケーション サーバー Web サイトの FQDN を入力して、 **[追加]** をクリックします。  
   
-11. **全般** ] タブの [ **フレンドリ名**, 、証明書を識別するための名前を入力することができます。  
+11. **[全般]** タブの **[フレンドリ名]** に証明書の識別に役立つ名前を入力できます。  
   
 12. **[OK]** をクリックし、 **[登録]** をクリックして、 **[完了]** をクリックします。  
   
@@ -453,7 +449,7 @@ Add-ADGroupMember -Identity DirectAccess_clients_group_name -Members <computer_n
   
 4.  内部ネットワーク上の DirectAccess クライアントがネットワークロケーションサーバーの名前を解決できること、およびインターネット上の DirectAccess クライアントが名前を解決できないことを確認します。  
   
-## <a name="BKMK_Links"></a>関連項目  
+## <a name="see-also"></a><a name="BKMK_Links"></a>関連項目  
   
 -   [手順 2: リモートアクセスサーバーを構成する](Step-2-Configure-the-Remote-Access-Server.md)
 

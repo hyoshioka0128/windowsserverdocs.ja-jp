@@ -2,21 +2,18 @@
 title: WSUS を使用しない毎月の差分更新 ISV のサポート
 description: Windows Server Update Service (WSUS) のトピック - 独立系ソフトウェア ベンダー (ISV) が WSUS Express 更新プログラム配信ではなく毎月の差分更新プログラムを一時的に使用してパッケージ サイズを小さくする方法
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-wsus
-ms.tgt_pltfrm: na
 ms.topic: get-started article
 author: sakitong
 ms.author: coreyp
 manager: dougkim
 ms.date: 10/16/2017
-ms.openlocfilehash: 4607827d73c34f50f721a2774fa498eb95f9dbb8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3ccddd3bfd55ae340dc5273905bb475e7d2cb98a
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361731"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "80828745"
 ---
 # <a name="monthly-delta-update-isv-support-without-wsus"></a>WSUS を使用しない毎月の差分更新 ISV のサポート
 
@@ -39,7 +36,7 @@ Windows では、バージョン 7 以降、[エクスプレス](https://technet
 >[!IMPORTANT]
 >**差分更新は、Windows 10 バージョン 1607 (Anniversary Update)、バージョン 1703 (Creators Update)、バージョン 1709 (Fall Creators Update) のサービスに利用できます。** バージョン 1709 より後のリリースでは、増分更新を引き続き利用するために[更新プログラムのエクスプレス配信](express-update-delivery-ISV-support.md)をサポートするデプロイ インフラストラクチャを実装する必要があります。
 
-毎月の差分更新を使用すると、パッケージには 1 か月分の更新プログラムのみが含まれます。 毎月の累積には、その更新プログラムのリリースまでのすべての更新プログラムが含まれるので、毎月拡大する大きなファイルになります。 差分更新と毎月の更新は、毎月第 2 火曜日にリリースされ、"Update Tuesday" とも呼ばれています。 次の表は、差分更新と累積更新を比較したものです。
+毎月の差分更新を使用すると、パッケージには 1 か月分の更新プログラムのみが含まれます。 毎月の累積には、その更新プログラムのリリースまでのすべての更新プログラムが含まれるので、毎月拡大する大きなファイルになります。 差分更新と毎月の更新は、毎月第 2 火曜日にリリースされ、Update Tuesday とも呼ばれています。 次の表は、差分更新と累積更新を比較したものです。
 
 |                    | 毎月の**差分**更新                                                                                                                                                                                                       | 毎月の**累積**更新                                                                                                                                                                                             |
 |--------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

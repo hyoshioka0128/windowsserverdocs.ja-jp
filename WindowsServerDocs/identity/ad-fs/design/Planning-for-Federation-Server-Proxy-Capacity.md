@@ -1,7 +1,6 @@
 ---
 ms.assetid: 3ecb6e87-17f1-4d38-97d2-9c4d52b7cf39
 title: フェデレーション サーバー プロキシの容量計画
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: eedb0f2ae4b6f600eb578c5db857cc1d79bccbd1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ec5b6e39e57539ef3de1c7bd5fed9cc8ed2e64be
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407982"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858765"
 ---
 # <a name="planning-for-federation-server-proxy-capacity"></a>フェデレーション サーバー プロキシの容量計画
 

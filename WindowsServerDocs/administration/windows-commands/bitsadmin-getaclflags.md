@@ -1,56 +1,59 @@
 ---
 title: bitsadmin getaclflags
-description: '**Bitsadmin getaclflags**の Windows コマンドトピックでは、アクセス制御リストの伝達フラグを取得します。'
-ms.custom: na
+description: アクセス制御リスト (ACL) の伝達フラグを取得する bitsadmin getaclflags コマンドの参照記事。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 99266def-7479-4430-a61c-98ec433fa88b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ad98cd742161ae06be5cba7acde7b810eaf199d6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0a05a0ed1c29e7cf1b0583ce9a0fcfdbe73e7a12
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71381789"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928333"
 ---
 # <a name="bitsadmin-getaclflags"></a>bitsadmin getaclflags
 
-アクセス制御リスト (ACL) の伝達フラグを取得します。
+項目が子オブジェクトによって継承されているかどうかを示すアクセス制御リスト (ACL) の伝達フラグを取得します。
 
 ## <a name="syntax"></a>構文
 
 ```
-bitsadmin /GetAclFlags <Job>
+bitsadmin /getaclflags <job>
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
-|---------|-----------|
-|Job|ジョブの表示名または GUID|
+| パラメーター | 説明 |
+| --------- | ----------- |
+| ジョブ (job) | ジョブの表示名または GUID。 |
 
-## <a name="remarks"></a>コメント
+### <a name="remarks"></a>注釈
 
-次のフラグ値の1つまたは複数を表示します。
--   O:所有者情報をファイルと共にコピーします。
--   G:グループ情報をファイルと共にコピーします。
--   D:DACL 情報をファイルと共にコピーします。
--   送信:ファイルを使用して SACL 情報をコピーします。
+次のフラグ値のうち1つ以上を返します。
 
-## <a name="BKMK_examples"></a>例
+- **o** -所有者の情報をファイルにコピーします。
 
-次の例では、 *Mydownloadjob*という名前のジョブのアクセス制御リストの伝達フラグを取得します。
+- **g** -グループ情報をファイルと共にコピーします。
+
+- **d** -随意アクセス制御リスト (DACL) の情報をファイルと共にコピーします。
+
+- **s** -システムアクセス制御リスト (SACL) の情報をファイルにコピーします。
+
+## <a name="examples"></a>例
+
+*Mydownloadjob*という名前のジョブのアクセス制御リストの伝達フラグを取得するには、次の操作を行います。
+
 ```
-C:\>bitsadmin /getaclflags myDownloadJob
+bitsadmin /getaclflags myDownloadJob
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [bitsadmin コマンド](bitsadmin.md)

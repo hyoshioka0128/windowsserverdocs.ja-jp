@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: 70569958-d7a7-474e-a817-6b7b5134784a
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 1ba6c059639b9ae7e77a9e103e7ed84f6a2032df
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: f874469666ab9b68d9eb970cf7fcb6a89ef27f0c
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405302"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80315578"
 ---
 # <a name="configure-nps-udp-port-information"></a>NPS の UDP ポート情報を構成する
 
@@ -24,13 +24,13 @@ ms.locfileid: "71405302"
 既定では、NPS は、インストールされているすべてのネットワークアダプターについて、インターネットプロトコルバージョン 6 \(IPv6\) と IPv4 の両方について、ポート1812、1813、1645、および1646の RADIUS トラフィックをリッスンします。
 
 >[!NOTE]
->ネットワークアダプターで IPv4 または IPv6 のいずれかをアンインストールした場合、NPS は、アンインストールされたプロトコルの RADIUS トラフィックを監視しません。
+>IPv4 または IPv6 をネットワーク アダプターからアンインストールした場合、NPS は、アンインストールされたプロトコルについて RADIUS トラフィックを監視しません。
 
-Authentication の場合は1812、アカウンティングの場合は1813のポート値は、インターネット技術標準化委員会 \(IETF\) Rfc 2865 および2866で定義されている RADIUS 標準ポートです。 ただし、既定では、多くのアクセスサーバーは認証要求にポート1645を使用し、アカウンティング要求には1646を使用します。 どのポート番号を使用するかにかかわらず、NPS とアクセスサーバーが同じものを使用するように構成されていることを確認してください。
+Authentication の場合は1812、アカウンティングの場合は1813のポート値は、インターネット技術標準化委員会 \(IETF\) Rfc 2865 および2866で定義されている RADIUS 標準ポートです。 ただし、既定では、多くのアクセスサーバーは認証要求にポート1645を使用し、アカウンティング要求には1646を使用します。 どのようなポート番号を使用する場合でも、NPS とアクセス サーバーに同じポート番号を構成するようにしてください。
 
 >:RADIUS の既定のポート番号を使用しない場合は、ローカルコンピューターのファイアウォールで例外を構成して、新しいポートでの RADIUS トラフィックを許可する必要があります。 詳細については、「 [Configure firewall FOR RADIUS Traffic](nps-firewalls-configure.md)」を参照してください。
 
-この手順を完了するには、少なくとも **Domain Admins** グループ、またはそれと同等のメンバーシップが必要です。
+この手順を完了するには、少なくとも、**Domain Admins** グループ、またはそれと同等の権限を持つグループのメンバである必要があります。
 
 ## <a name="to-configure-nps-udp-port-information"></a>NPS の UDP ポート情報を構成するには 
 

@@ -2,26 +2,22 @@
 title: 手順11マルチサイト展開を構成する
 description: このトピックは、「Windows Server 2016 用の DirectAccess マルチサイト展開のテストラボガイド」の一部です。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8cbdeb1d-5f7c-4360-bcc1-ab40d3cd8040
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 3a80697665eeb67c2dda0d4d25201c7d02ed0c7e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 0061144387adf041216b7d0d264dced916bc7941
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404803"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860355"
 ---
 # <a name="step-11-configure-the-multisite-deployment"></a>手順11マルチサイト展開を構成する
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 マルチサイト展開を構成するには、EDGE1 で現在のリモートアクセス構成ウィザードに変更を加え、マルチサイト機能を有効にしてから、2つ目のエントリポイントとして 2 EDGE1 を追加します。  
   
@@ -31,9 +27,9 @@ ms.locfileid: "71404803"
   
 - 2番目のエントリポイントとして EDGE1 を追加します。  
   
-## <a name="configDA"></a>EDGE1 でのリモートアクセスの構成  
+## <a name="configure-remote-access-on-edge1"></a><a name="configDA"></a>EDGE1 でのリモートアクセスの構成  
   
-1.  **スタート**画面で「**ramgmtui.exe**」と入力し、enter キーを押します。 **[ユーザー アカウント制御]** ダイアログ ボックスが表示されたら、表示された操作が正しいことを確認し、 **[はい]** をクリックします。  
+1.  **スタート**画面で「**ramgmtui.exe**」と入力し、enter キーを押します。 **[ユーザー アカウント制御]** ダイアログ ボックスが表示された場合、表示された操作が目的の操作であることを確認して、 **[はい]** をクリックします。  
   
 2.  リモート アクセス管理コンソールで、 **[構成]** をクリックします。  
   
@@ -43,7 +39,7 @@ ms.locfileid: "71404803"
   
 5.  コンソールの中央のウィンドウの **[手順3インフラストラクチャサーバー]** 領域で、 **[編集]** をクリックします。  
   
-6.  **[DNS サフィックス検索一覧]** をクリックします。 **Dns サフィックス検索一覧** ページで、**dns クライアントサフィックス検索リストを使用して DirectAccess クライアントを構成**する チェックボックスがオンになっていて、**corp.contoso.com** と **corp2.corp.contoso.com** のドメインサフィックスが選択されていることを確認します。**使用するドメインサフィックス** の一覧に表示され、**次へ** をクリックして、完了 をクリックします。  
+6.  **[DNS サフィックス検索一覧]** をクリックします。 **Dns サフィックス検索一覧** ページで、**dns クライアントサフィックスを使用して DirectAccess クライアントを構成**する チェックボックスがオンになっていて、**使用するドメインサフィックス** の一覧に**corp.contoso.com**と**corp2.corp.contoso.com**のドメインサフィックスが表示されていることを確認し、**次へ** をクリックして、完了 をクリックします。  
   
 7.  コンソールの中央のウィンドウで、 **[完了]** をクリックします。  
   
@@ -51,7 +47,7 @@ ms.locfileid: "71404803"
   
 9. **[タスク]** ウィンドウで **[管理サーバーの更新]** をクリックし、完了したら **[閉じる]** をクリックします。  
   
-## <a name="EnabledMultisite"></a>EDGE1 でマルチサイト構成を有効にする  
+## <a name="enable-multisite-configuration-on-edge1"></a><a name="EnabledMultisite"></a>EDGE1 でマルチサイト構成を有効にする  
   
 1.  リモートアクセス管理コンソールの **[タスク]** ウィンドウで、 **[マルチサイトを有効にする]** をクリックします。  
   
@@ -65,7 +61,7 @@ ms.locfileid: "71404803"
   
 6.  **[クライアントサポート]** ページで、 **[Windows 7 を実行しているクライアントコンピューターにこのエントリポイントへのアクセスを許可する]** をクリックし、 **[追加]** をクリックします。  
   
-7.  **[グループの選択]** ダイアログボックスの **[選択するオブジェクト名を入力してください]** に「 **Win7_Clients_Site1**」と入力し、 **[OK]** をクリックして、 **[次へ]** をクリックします。  
+7.  **[グループの選択]** ダイアログボックスの **[選択するオブジェクト名を入力してください]** に**Win7_Clients_Site1**を入力し、 **[OK]** をクリックして、 **[次へ]** をクリックします。  
   
 8.  **[クライアントの GPO 設定]** ページで、 **[次へ]** をクリックします。  
   
@@ -73,7 +69,7 @@ ms.locfileid: "71404803"
   
 10. **[マルチサイト展開の有効化]** ダイアログボックスで **[閉じる]** をクリックし、マルチサイト展開の有効化ウィザードで **[閉じる]** をクリックします。  
   
-## <a name="AddEP"></a>2番目のエントリポイントとして EDGE1 を追加します。  
+## <a name="add-2-edge1-as-a-second-entry-point"></a><a name="AddEP"></a>2番目のエントリポイントとして EDGE1 を追加します。  
   
 1.  リモートアクセス管理コンソールの **[タスク]** ウィンドウで、 **[エントリポイントの追加]** をクリックします。  
   
@@ -89,7 +85,7 @@ ms.locfileid: "71404803"
   
 7.  **[クライアントサポート]** ページで、 **[Windows 7 を実行しているクライアントコンピューターにこのエントリポイントへのアクセスを許可する]** をクリックし、 **[追加]** をクリックします。  
   
-8.  **[グループの選択]** ダイアログボックスの **[選択するオブジェクト名を入力してください]** に「 **Win7_Clients_Site2**」と入力し、 **[OK]** をクリックして、 **[次へ]** をクリックします。  
+8.  **[グループの選択]** ダイアログボックスの **[選択するオブジェクト名を入力してください]** に**Win7_Clients_Site2**を入力し、 **[OK]** をクリックして、 **[次へ]** をクリックします。  
   
 9. **[クライアントの GPO 設定]** ページで、 **[次へ]** をクリックします。  
   

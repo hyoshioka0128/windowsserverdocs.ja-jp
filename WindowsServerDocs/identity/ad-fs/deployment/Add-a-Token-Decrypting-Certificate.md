@@ -1,7 +1,6 @@
 ---
 ms.assetid: 27e1e299-0beb-4e86-8143-1ba031dc3502
 title: トークン暗号化解除証明書を追加する
-description: ''
 author: billmath
 manager: femila
 ms.date: 05/31/2017
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 388414fff97705901bf52ee844b90508d62f8c83
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5714a41950b9c2f818ddc154a9af7a55fdb362d8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408454"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80814966"
 ---
 # <a name="add-a-token-decrypting-certificate"></a>トークン暗号化解除証明書を追加する
 
@@ -25,7 +24,7 @@ ms.locfileid: "71408454"
   
 次の手順を使用して、エクスポートしたファイルからの AD FS 管理スナップ\-に証明書の暗号化解除\-トークンを追加できます。  
   
-この手順を実行するには、ローカル コンピューターの **Administrators**グループのメンバーシップか、それと同等のメンバーシップが最低限必要です。  適切なアカウントとグループメンバーシップの使用に関する詳細については、\(http:\/\/go.microsoft.com\/fwlink\/? [」を参照](https://go.microsoft.com/fwlink/?LinkId=83477)してください。LinkId\=83477\)。   
+この手順を完了するには、ローカル コンピューター上の **Administrators** または同等のメンバーシップが最低限必要です。  適切なアカウントとグループメンバーシップの使用に関する詳細については、\(http:\/\/go.microsoft.com\/fwlink\/? [」を参照](https://go.microsoft.com/fwlink/?LinkId=83477)してください。LinkId\=83477\)。   
   
 ### <a name="to-add-a-token-decrypting-certificate"></a>証明書の暗号化を解除\-トークンを追加するには  
   

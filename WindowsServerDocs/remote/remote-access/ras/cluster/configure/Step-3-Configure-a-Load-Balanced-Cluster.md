@@ -2,22 +2,18 @@
 title: 手順3負荷分散クラスターを構成する
 description: このトピックは、「Windows Server 2016 のクラスターにリモートアクセスを展開する」の一部です。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f000066e-7cf8-4085-82a3-4f4fe1cb3c5c
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: fb7dca9a0f7875936cbb30cbc9c5e9e0a7473237
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 335697f012bf4fef8c448de896ec89ad647cb68b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404633"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855285"
 ---
 # <a name="step-3-configure-a-load-balanced-cluster"></a>手順3負荷分散クラスターを構成する
 
@@ -41,11 +37,11 @@ ms.locfileid: "71404633"
 > [!NOTE]  
 > ネットワーク上の別のコンピューターに既に存在する DIP を使用しないようにしてください。  
   
-## <a name="BKMK_Prefix"></a>3.1 IPv6 プレフィックスを構成する  
+## <a name="31-configure-the-ipv6-prefix"></a><a name="BKMK_Prefix"></a>3.1 IPv6 プレフィックスを構成する  
   
-### <a name="configDA"></a>プレフィックスを構成するには  
+### <a name="to-configure-the-prefix"></a><a name="configDA"></a>プレフィックスを構成するには  
   
-1.  リモートアクセスサーバーで、 **[スタート]** をクリックし、 **[リモートアクセス管理]** をクリックします。 **[ユーザー アカウント制御]** ダイアログ ボックスが表示されたら、表示された操作が正しいことを確認し、 **[はい]** をクリックします。  
+1.  リモートアクセスサーバーで、 **[スタート]** をクリックし、 **[リモートアクセス管理]** をクリックします。 **[ユーザー アカウント制御]** ダイアログ ボックスが表示された場合、表示された操作が目的の操作であることを確認して、 **[はい]** をクリックします。  
   
 2.  リモート アクセス管理コンソールで、 **[構成]** をクリックします。  
   
@@ -57,11 +53,11 @@ ms.locfileid: "71404633"
   
 6.  **[リモートアクセスの確認]** ダイアログボックスで、構成設定を確認し、 **[適用]** をクリックします。 **[リモートアクセス セットアップ ウィザードの設定を適用しています]** ダイアログ ボックスで、 **[閉じる]** をクリックします。  
   
-## <a name="BKMK_NLB"></a>3.2 負荷分散を有効にする  
+## <a name="32-enable-load-balancing"></a><a name="BKMK_NLB"></a>3.2 負荷分散を有効にする  
   
 #### <a name="to-enable-load-balancing"></a>負荷分散を有効にするには  
   
-1.  構成された DirectAccess サーバーで、 **[スタート]** をクリックし、 **[リモートアクセス管理]** をクリックします。 **[ユーザー アカウント制御]** ダイアログ ボックスが表示されたら、表示された操作が正しいことを確認し、 **[はい]** をクリックします。  
+1.  構成された DirectAccess サーバーで、 **[スタート]** をクリックし、 **[リモートアクセス管理]** をクリックします。 **[ユーザー アカウント制御]** ダイアログ ボックスが表示された場合、表示された操作が目的の操作であることを確認して、 **[はい]** をクリックします。  
   
 2.  リモートアクセス管理コンソールの左側のウィンドウで、 **[構成]** をクリックし、 **[タスク]** ウィンドウで **[負荷分散を有効にする]** をクリックします。  
   
@@ -102,7 +98,7 @@ ms.locfileid: "71404633"
   
 windows PowerShell の ![](../../../../media/Step-3-Configure-a-Load-Balanced-Cluster/PowerShellLogoSmall.gif)***<em>windows powershell の同等のコマンド</em>***  
   
-以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
+次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 書式上の制約のため、複数行にわたって折り返される場合でも、各コマンドレットは 1 行に入力してください。  
   
 計画手順で Windows NLB を使用することを選択した場合は、次のように実行します。  
   
@@ -119,12 +115,12 @@ Set-RemoteAccessLoadBalancer -InternetDedicatedIPAddress "2.1.1.20/255.255.255.0
 > [!NOTE]  
 > ステージング Gpo を使用している場合は、他の設定に変更を加えて、ロードバランサーの設定への変更を含めないことをお勧めします。 ロードバランサーの設定を変更する場合は、最初に適用してから、その他の構成の変更を行う必要があります。 また、新しい DirectAccess サーバーでロードバランサーを構成した後で、新しいクラスターに関連する他の DirectAccess 設定を変更する前に、企業内の DNS サーバー間で IP の変更が適用およびレプリケートされるまでしばらくお待ちください。  
   
-## <a name="BKMK_InstallIPHTTP"></a>3.3 IP-HTTPS 証明書をインストールする  
-この手順を完了するには、少なくともローカルの **Administrators** グループ、またはそれと同等のメンバーシップが必要です。  
+## <a name="33-install-the-ip-https-certificate"></a><a name="BKMK_InstallIPHTTP"></a>3.3 IP-HTTPS 証明書をインストールする  
+この手順を完了するには、ローカルの **Administrators** グループのメンバーシップが最低限必要です。  
   
-### <a name="IPHTTPSCert"></a>Ip-https 証明書をインストールするには  
+### <a name="to-install-the-ip-https-certificate"></a><a name="IPHTTPSCert"></a>Ip-https 証明書をインストールするには  
   
-1.  構成されたリモートアクセスサーバーで、 **[スタート]** をクリックし、「 **mmc** 」と入力して、enter キーを押します。 **[ユーザー アカウント制御]** ダイアログ ボックスが表示されたら、表示された操作が正しいことを確認し、 **[はい]** をクリックします。  
+1.  構成されたリモートアクセスサーバーで、 **[スタート]** をクリックし、「 **mmc** 」と入力して、enter キーを押します。 **[ユーザー アカウント制御]** ダイアログ ボックスが表示された場合、表示された操作が目的の操作であることを確認して、 **[はい]** をクリックします。  
   
 2.  MMC コンソールで、 **[ファイル]** メニューの **[スナップインの追加と削除]** をクリックします。  
   
@@ -132,7 +128,7 @@ Set-RemoteAccessLoadBalancer -InternetDedicatedIPAddress "2.1.1.20/255.255.255.0
   
 4.  コンソールの左側のウィンドウで、**証明書 (ローカルコンピューター)** \Personal\Certificates の順に移動します。 IP-HTTPS 証明書を右クリックし、すべての **[タスク]** をポイントして、 **[エクスポート]** をクリックします。  
   
-5.  **[証明書のエクスポートウィザードへようこそ]** ページで、 **[次へ]** をクリックします。  
+5.  **[証明書のエクスポート ウィザードの開始]** ページで、 **[次へ]** をクリックします。  
   
 6.  **[秘密キーのエクスポート]** ページで、 **[はい、秘密キーをエクスポートします]** をクリックし、 **[次へ]** をクリックします。  
   
@@ -148,7 +144,7 @@ Set-RemoteAccessLoadBalancer -InternetDedicatedIPAddress "2.1.1.20/255.255.255.0
   
 12. クラスターメンバーにするすべてのサーバーに証明書をコピーします。  
   
-13. 新しい DirectAccess サーバーで、 **[スタート]** をクリックし、「 **mmc** 」と入力して、enter キーを押します。 **[ユーザー アカウント制御]** ダイアログ ボックスが表示されたら、表示された操作が正しいことを確認し、 **[はい]** をクリックします。  
+13. 新しい DirectAccess サーバーで、 **[スタート]** をクリックし、「 **mmc** 」と入力して、enter キーを押します。 **[ユーザー アカウント制御]** ダイアログ ボックスが表示された場合、表示された操作が目的の操作であることを確認して、 **[はい]** をクリックします。  
   
 14. MMC コンソールで、 **[ファイル]** メニューの **[スナップインの追加と削除]** をクリックします。  
   
@@ -170,12 +166,12 @@ Set-RemoteAccessLoadBalancer -InternetDedicatedIPAddress "2.1.1.20/255.255.255.0
   
 23. クラスターメンバーにするすべてのサーバーで、手順13-22 を繰り返します。  
   
-## <a name="BKMK_NLS"></a>3.4 ネットワークロケーションサーバー証明書をインストールする  
-この手順を完了するには、少なくともローカルの **Administrators** グループ、またはそれと同等のメンバーシップが必要です。  
+## <a name="34-install-the-network-location-server-certificate"></a><a name="BKMK_NLS"></a>3.4 ネットワークロケーションサーバー証明書をインストールする  
+この手順を完了するには、ローカルの **Administrators** グループのメンバーシップが最低限必要です。  
   
 #### <a name="to-install-a-certificate-for-network-location"></a>ネットワークの場所の証明書をインストールするには  
   
-1.  リモートアクセスサーバーで、 **[スタート]** をクリックし、「 **mmc**」と入力して、enter キーを押します。 **[ユーザー アカウント制御]** ダイアログ ボックスが表示されたら、表示された操作が正しいことを確認し、 **[はい]** をクリックします。  
+1.  リモートアクセスサーバーで、 **[スタート]** をクリックし、「 **mmc**」と入力して、enter キーを押します。 **[ユーザー アカウント制御]** ダイアログ ボックスが表示された場合、表示された操作が目的の操作であることを確認して、 **[はい]** をクリックします。  
   
 2.  **[ファイル]** をクリックし、 **[スナップインの追加と削除]** をクリックします。  
   
@@ -208,12 +204,12 @@ Set-RemoteAccessLoadBalancer -InternetDedicatedIPAddress "2.1.1.20/255.255.255.0
   
 14. すべてのサーバー クラスターのメンバーにするには、この手順を繰り返します。  
   
-## <a name="BKMK_Add"></a>3.5 クラスターにサーバーを追加する  
+## <a name="35-add-servers-to-the-cluster"></a><a name="BKMK_Add"></a>3.5 クラスターにサーバーを追加する  
  
   
 #### <a name="to-add-servers-to-the-cluster"></a>クラスターにサーバーを追加するには  
   
-1.  構成された DirectAccess サーバーで、 **[スタート]** をクリックし、 **[リモートアクセス管理]** をクリックします。 **[ユーザー アカウント制御]** ダイアログ ボックスが表示されたら、表示された操作が正しいことを確認し、 **[はい]** をクリックします。  
+1.  構成された DirectAccess サーバーで、 **[スタート]** をクリックし、 **[リモートアクセス管理]** をクリックします。 **[ユーザー アカウント制御]** ダイアログ ボックスが表示された場合、表示された操作が目的の操作であることを確認して、 **[はい]** をクリックします。  
   
 2.  リモート アクセス管理コンソールで、 **[構成]** をクリックします。 **[タスク]** ウィンドウの **[負荷分散クラスター]** で、 **[サーバーの追加または削除]** をクリックします。  
   
@@ -239,7 +235,7 @@ Set-RemoteAccessLoadBalancer -InternetDedicatedIPAddress "2.1.1.20/255.255.255.0
   
 8.  **[概要]** ページで、 **[追加]** をクリックします。  
   
-9. **[完了]** ページで、 **[閉じる]** をクリックします。  
+9. **[完了]** ページで **[閉じる]** をクリックします。  
   
 10. すべてのリモートアクセスサーバーをクラスターに追加するには、この手順を繰り返します。  
   
@@ -249,7 +245,7 @@ Set-RemoteAccessLoadBalancer -InternetDedicatedIPAddress "2.1.1.20/255.255.255.0
   
 windows PowerShell の ![](../../../../media/Step-3-Configure-a-Load-Balanced-Cluster/PowerShellLogoSmall.gif)***<em>windows powershell の同等のコマンド</em>***  
   
-以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
+次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 書式上の制約のため、複数行にわたって折り返される場合でも、各コマンドレットは 1 行に入力してください。  
   
 ```  
 Add-RemoteAccessLoadBalancerNode -RemoteAccessServer <server name>  
@@ -258,12 +254,12 @@ Add-RemoteAccessLoadBalancerNode -RemoteAccessServer <server name>
 > [!NOTE]  
 > 負荷分散クラスターで VPN が有効になっていない場合は、Windows PowerShell コマンドレットを使用して新しいサーバーをクラスターに追加するときに、VPN アドレスの範囲を指定しないでください。 この操作を誤って行った場合は、クラスターからサーバーを削除し、VPN アドレスの範囲を指定せずにクラスターに再度追加します。  
   
-## <a name="BKMK_remove"></a>3.6 クラスターからサーバーを削除する  
+## <a name="36-remove-a-server-from-the-cluster"></a><a name="BKMK_remove"></a>3.6 クラスターからサーバーを削除する  
  
   
 #### <a name="to-remove-a-server-from-the-cluster"></a>クラスターからサーバーを削除するには  
   
-1.  構成されたリモートアクセスサーバーで、 **[スタート]** をクリックし、 **[リモートアクセス管理]** をクリックします。 **[ユーザー アカウント制御]** ダイアログ ボックスが表示されたら、表示された操作が正しいことを確認し、 **[はい]** をクリックします。  
+1.  構成されたリモートアクセスサーバーで、 **[スタート]** をクリックし、 **[リモートアクセス管理]** をクリックします。 **[ユーザー アカウント制御]** ダイアログ ボックスが表示された場合、表示された操作が目的の操作であることを確認して、 **[はい]** をクリックします。  
   
 2.  リモート アクセス管理コンソールで、 **[構成]** をクリックします。 **[タスク]** ウィンドウの **[負荷分散クラスター]** で、 **[サーバーの追加または削除]** をクリックします。  
   
@@ -279,18 +275,18 @@ Add-RemoteAccessLoadBalancerNode -RemoteAccessServer <server name>
   
 windows PowerShell の ![](../../../../media/Step-3-Configure-a-Load-Balanced-Cluster/PowerShellLogoSmall.gif)***<em>windows powershell の同等のコマンド</em>***  
   
-以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
+次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 書式上の制約のため、複数行にわたって折り返される場合でも、各コマンドレットは 1 行に入力してください。  
   
 ```  
 Remove-RemoteAccessLoadBalancerNode -RemoteAccessServer <server name>  
 ```  
   
-## <a name="BKBK_disable"></a>3.7 負荷分散を無効にする  
+## <a name="37-disable-load-balancing"></a><a name="BKBK_disable"></a>3.7 負荷分散を無効にする  
 [Windows PowerShell を使用してこの手順を実行する](assetId:///7a817ca0-2b4a-4476-9d28-9a63ff2453f9)  
   
 #### <a name="to-disable-load-balancing"></a>負荷分散を無効にするには  
   
-1.  構成された DirectAccess サーバーで、 **[スタート]** をクリックし、 **[リモートアクセス管理]** をクリックします。 **[ユーザー アカウント制御]** ダイアログ ボックスが表示されたら、表示された操作が正しいことを確認し、 **[はい]** をクリックします。  
+1.  構成された DirectAccess サーバーで、 **[スタート]** をクリックし、 **[リモートアクセス管理]** をクリックします。 **[ユーザー アカウント制御]** ダイアログ ボックスが表示された場合、表示された操作が目的の操作であることを確認して、 **[はい]** をクリックします。  
   
 2.  リモート アクセス管理コンソールで、 **[構成]** をクリックします。 **[タスク]** ウィンドウの **[負荷分散クラスター]** で、 **[負荷分散を無効にする]** をクリックします。  
   
@@ -300,7 +296,7 @@ Remove-RemoteAccessLoadBalancerNode -RemoteAccessServer <server name>
   
 windows PowerShell の ![](../../../../media/Step-3-Configure-a-Load-Balanced-Cluster/PowerShellLogoSmall.gif)***<em>windows powershell の同等のコマンド</em>***  
   
-以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
+次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 書式上の制約のため、複数行にわたって折り返される場合でも、各コマンドレットは 1 行に入力してください。  
   
 ```  
 set-RemoteAccessLoadBalancer -disable  
@@ -315,7 +311,7 @@ set-RemoteAccessLoadBalancer -disable
 > -   **RemoteAccessLoadBalancer**コマンドレットを使用して負荷分散を無効にした後、2分待ってから、他のコマンドレットを実行します。 これは、 **RemoteAccessLoadBalancer-disable**コマンドレットの後に別のコマンドレットを実行するすべてのスクリプトでも実行する必要があります。  
 > -   負荷分散を無効にすると、クラスターの仮想 IP アドレスが専用 IP アドレスに変更されます。 その結果、サーバーの名前を照会する操作は、サーバー上のキャッシュされた DNS エントリの有効期限が切れるまで失敗します。 サーバーのキャッシュの有効期限が切れるまで、負荷分散を無効にした後で、リモートアクセス PowerShell コマンドレットを実行しないようにしてください。 この問題は、別のドメインにある別のコンピューターからコンピューターの負荷分散を無効にしようとした場合によく見られます。 これは、リモートアクセス管理コンソールから負荷分散を無効にし、構成の読み込みを妨げる可能性がある場合にも発生します。 構成は、キャッシュの有効期限が切れた後、またはフラッシュされた後に読み込まれます。  
   
-## <a name="BKMK_Links"></a>関連項目  
+## <a name="see-also"></a><a name="BKMK_Links"></a>関連項目  
   
 -   [手順 4: クラスターを確認する](Step-4-Verify-the-Cluster.md)  
   

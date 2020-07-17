@@ -1,28 +1,22 @@
 ---
-title: Sc delete
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+title: Sc.exe の削除
+description: Sc.exe ユーティリティを使用してサービスの登録を解除する方法について説明します。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2fe94fb3-e4d1-47b5-b999-39995ecbb644
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ad64d0f7c772b8d29a191b5f3e690d74c8765717
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 284012cf6799df52832e62c3eea1b2f0fcd84805
+ms.sourcegitcommit: 95b60384b0b070263465eaffb27b8e3bb052a4de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71371281"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82850113"
 ---
-# <a name="sc-delete"></a>Sc delete
-
-
+# <a name="scexe-delete"></a>Sc.exe の削除
 
 レジストリからサービス サブキーを削除します。 サービスが実行されている場合、または別のプロセスにサービスへの開いているハンドルがある場合は、サービスが削除対象としてマークします。
 
@@ -31,28 +25,28 @@ ms.locfileid: "71371281"
 ## <a name="syntax"></a>構文
 
 ```
-sc [<ServerName>] delete [<ServiceName>]
+sc.exe [<ServerName>] delete [<ServiceName>]
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
 |パラメーター|説明|
 |---------|-----------|
-|\<ServerName >|サービスが配置されているリモート サーバーの名前を指定します。 名前には UNC (汎用名前付け規則) 形式 (たとえば、\\\\myserver) を使用する必要があります。 SC.exe をローカルで実行するには、このパラメーターを省略します。|
-|\<ServiceName >|によって返されるサービスの名前を指定、 **られて** 操作します。|
+|\<ServerName>|サービスが配置されているリモート サーバーの名前を指定します。 名前には、汎用名前付け規則 (UNC) 形式 (myserver など\\ \\) を使用する必要があります。 SC.exe をローカルで実行するには、このパラメーターを省略します。|
+|\<ServiceName>|によって返されるサービスの名前を指定、 **られて** 操作します。|
 |?|コマンド プロンプトにヘルプを表示します。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>解説
 
-使用 **プログラム追加と削除** に **コントロール パネルの**  DHCP、DNS、またはその他の組み込みのオペレーティング システム サービスを削除します。 なお **プログラム追加と削除** のみ、サービスのレジストリ サブキーは削除されませんが、サービスをアンインストール、ショートカットを削除ができます。
+Sc.exe を使用して、DHCP、DNS、インターネットインフォメーションサービスなどの組み込みのオペレーティングシステムサービスを削除することはお勧めしません。 オペレーティングシステムの役割、サービス、およびコンポーネントをインストール、削除、または再構成するには、「[役割、役割サービス、または機能のインストールまたはアンインストール](/WindowsServerDocs/administration/server-manager/install-or-uninstall-roles-role-services-or-features.md)」を参照してください。
 
 ## <a name="examples"></a>例
 
 サービス サブキーを削除する **NewServ** 、ローカル コンピューター上のレジストリから入力します。
 ```
-sc delete newserv
+sc.exe delete newserv
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

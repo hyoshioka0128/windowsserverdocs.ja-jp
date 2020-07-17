@@ -1,24 +1,19 @@
 ---
 title: リモート ラップトップがワイヤレス ネットワークから切断される
 description: リモート ラップトップがワイヤレス ネットワークから切断される問題のトラブルシューティング。
-audience: itpro
-ms.custom: na
 ms.reviewer: rklemen
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: troubleshooting
-ms.assetid: ''
 author: kaushika-msft
-manager: ''
+manager: dcscontentpm
 ms.author: delhan
 ms.date: 07/24/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 70aaad61cf068fe38fa95127700655db2a186dd1
-ms.sourcegitcommit: f6503e503d8f08ba8000db9c5eda890551d4db37
+ms.openlocfilehash: 72bf482512ff3bb0a678ae59cd6ac20b947a54d9
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68529872"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "80857155"
 ---
 # <a name="remote-laptop-disconnects-from-wireless-network"></a>リモート ラップトップがワイヤレス ネットワークから切断される
 

@@ -2,30 +2,26 @@
 title: DNS リソース レコードの表示をフィルター処理する
 description: このトピックは、Windows Server 2016 の IP アドレス管理 (IPAM) 管理ガイドに含まれています。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ipam
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5b80294a-7325-476b-84eb-69f0d051e8b2
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 541645a274481bb8b044c37df572d7746c5da30e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 21e43751981b0b7b945c0c9404f6f93f36c48f16
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405670"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860665"
 ---
 # <a name="filter-the-view-of-dns-resource-records"></a>DNS リソース レコードの表示をフィルター処理する
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックを使用して、IPAM クライアントコンソールで DNS リソースレコードのビューをフィルター処理できます。  
   
-メンバーシップ **管理者**, 、同等の権限をこの手順を実行するために必要な最低限のですか。  
+この手順を実行するには、**Administrators** のメンバーシップ、またはそれと同等のメンバーシップが最低限必要です。  
   
 ### <a name="to-filter-the-view-of-dns-resource-records"></a>DNS リソースレコードのビューをフィルター処理するには  
   
@@ -59,7 +55,7 @@ ms.locfileid: "71405670"
   
     ![フィルターを実行する](../../media/Filter-the-View-of-DNS-Resource-Records/ipam_FilterRR_05.jpg)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [DNS リソースレコードの管理](DNS-Resource-Record-Management.md)  
 [IPAM の管理](Manage-IPAM.md)  
   

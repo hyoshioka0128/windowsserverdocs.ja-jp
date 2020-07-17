@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-dhcp
 ms.topic: get-started-article
 ms.assetid: beb8c188-6fcf-4520-8825-d17f8ee9fb04
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: ccd8024af30f1103afa8eac52926a6b42d32940a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 5d167666e632aa1a8d92de71feafc9014b66e7ce
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355425"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312602"
 ---
 # <a name="dhcp-logging-events-for-dns-registrations"></a>DNS 登録の DHCP ログイベント
 
@@ -26,7 +26,7 @@ DHCP サーバーのイベントログで、DNS 登録エラーに関する詳�
 
 次の新しい DHCP イベントを使用すると、dns 逆引き\-参照ゾーンが正しく構成されていないために DNS 登録が失敗したことを簡単に特定できます。
 
-|ID|イベント|Value|
+|ID|イベント|値|
 |-----|--------------------|--------------------------------------------------------|
 |20317|DHCPv4 Recorddnsfailure|IPv4 アドレス %1 および FQDN %2 の前方レコード登録がエラー %3 で失敗しました。 このレコードの前方参照ゾーンが DNS サーバー上に存在しないことが原因である可能性があります。|
 |20318|ForwardRecordDNSTimeout|IPv4 アドレス %1 および FQDN %2 の前方レコード登録がエラー %3 で失敗しました。|

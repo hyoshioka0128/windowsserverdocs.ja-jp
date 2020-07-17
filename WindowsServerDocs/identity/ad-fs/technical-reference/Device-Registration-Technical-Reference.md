@@ -1,7 +1,6 @@
 ---
 ms.assetid: 69ec592a-5499-4249-8ba0-afa356a8ff75
 title: デバイス登録のテクニカル リファレンス
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: ab78a5847c52650f2a608dfc89e2001cc43153ff
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0b921e4a88940477ec7d0d4b2fa165880bd41150
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407359"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860225"
 ---
 # <a name="device-registration-technical-reference"></a>デバイス登録のテクニカル リファレンス
 デバイス登録サービス \(DRS\) は、Windows Server 2012 R2 の Active Directory フェデレーションサービスロールに含まれる新しい Windows サービスです。  DRS は、AD FS ファーム内のすべてのフェデレーション サーバーにインストールし、構成する必要があります。  DRS の展開の詳細については、「 [デバイス登録サービスを使用してフェデレーション サーバーを構成する](https://technet.microsoft.com/library/dn486831.aspx)」を参照してください。  
@@ -40,7 +39,7 @@ ms.locfileid: "71407359"
   
 既定では、コンテナーは AD FS と同じドメインに作成されます。  \(例としては、 **CN\=RegisteredDevices、DC\=< default\-\-context >** \)という名前を付けます。このオブジェクトは、Active Directory フォレストがデバイス登録のために初期化されたときに作成されます。  
   
-### <a name="registered-devices"></a>登録済みデバイス  
+### <a name="registered-devices"></a>登録済みのデバイス  
 デバイス オブジェクトは、Active Directory 内の新しい軽量オブジェクトです。  ユーザー、デバイス、および会社の関係を表すために使用されます。  デバイス オブジェクトは、AD FS によって署名された証明書を使用して、物理デバイスを Active Directory 内の論理デバイス オブジェクトに関連付けます。  
   
 登録済みデバイスには、次の要素が含まれます。  

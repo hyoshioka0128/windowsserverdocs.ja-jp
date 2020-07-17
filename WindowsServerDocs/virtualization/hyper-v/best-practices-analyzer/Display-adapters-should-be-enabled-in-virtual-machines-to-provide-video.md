@@ -2,20 +2,19 @@
 title: ビデオ機能を提供するために、仮想マシンでディスプレイアダプターを有効にする必要があります
 description: このベストプラクティスアナライザールールのテキストのオンラインバージョン。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: ac5992e6-3c0b-46c2-a48e-6ef37b679228
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 0c515c7fb1ed160dfee1e1b7303022082e936157
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1821aae18b1712ba7d839ca9f42318edc5ef8a35
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71364910"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80862005"
 ---
 # <a name="display-adapters-should-be-enabled-in-virtual-machines-to-provide-video-capabilities"></a>ビデオ機能を提供するために、仮想マシンでディスプレイアダプターを有効にする必要があります
 
@@ -23,13 +22,13 @@ ms.locfileid: "71364910"
 
 
   
-*ベストプラクティスとスキャンの詳細については、「* [ベストプラクティスアナライザー](https://go.microsoft.com/fwlink/?LinkId=122786)」を参照してください。  
+*ベストプラクティスとスキャンの詳細については、「ベストプラクティスアナライザー」を参照してください* [Best Practices Analyzer](https://go.microsoft.com/fwlink/?LinkId=122786)。  
   
 |プロパティ|詳細|  
 |-|-|  
 |**オペレーティング システム**|Windows Server 2016|  
 |**製品/機能**|Hyper-V|  
-|**順**|Warning|  
+|**順**|［警告］|  
 |**カテゴリ**|構成|  
   
 次のセクションでは、斜体は、この問題のためのベスト プラクティス アナライザー ツールで表示される UI テキストを示します。  

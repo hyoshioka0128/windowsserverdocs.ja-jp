@@ -1,6 +1,5 @@
 ---
 title: AD FS での OpenID 接続のシングル ログアウト
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -8,12 +7,12 @@ ms.date: 11/17/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 5f0127e60243ca81f7e25282adc79e01c54b4b32
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: fe176af74ebabb5cb56d8aa74d755c4e35ec94a3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407856"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857315"
 ---
 #  <a name="single-log-out-for-openid-connect-with-ad-fs"></a>AD FS での OpenID 接続のシングル ログアウト
 
@@ -77,7 +76,7 @@ Set-ADFSProperties -EnableOAuthLogout $true
 >[!NOTE]
 >frontchannel_logout は[KB4038801](https://support.microsoft.com/en-gb/help/4038801/windows-10-update-kb4038801)の vcredist の後で**のみ**サポートされます。
 
-## <a name="client-configuration"></a>クライアントの構成
+## <a name="client-configuration"></a>クライアント構成
 クライアントは、ログインしているユーザーを "ログオフ" する url を実装する必要があります。 管理者は、次の PowerShell コマンドレットを使用して、クライアント構成で LogoutUri を構成できます。 
 
 
@@ -99,7 +98,7 @@ Set-AdfsClient -LogoutUri <url>
 3.  **アプリケーションがログアウト要求を AD FS に送信する**: ユーザーがログアウトを開始した後、アプリケーションは GET 要求を AD FS の end_session_endpoint に送信します。 アプリケーションでは、必要に応じて、この要求のパラメーターとして id_token_hint を含めることができます。 Id_token_hint が存在する場合、AD FS はセッション ID と共に使用して、ログアウト後にクライアントがリダイレクトされる必要がある URI を判別します (post_logout_redirect_uri)。  Post_logout_redirect_uri は、RedirectUris パラメーターを使用して AD FS に登録されている有効な uri である必要があります。
 4.  AD FS は、ログインしている**クライアントにサインアウトを送信**します。 AD FS は、セッション識別子の値を使用して、ユーザーがログインしている関連クライアントを検索します。 識別されたクライアントは、AD FS に登録されている LogoutUri で要求を送信し、クライアント側でログアウトを開始します。
 
-## <a name="faqs"></a>よく寄せられる質問
+## <a name="faqs"></a>FAQ
 **Q:** 探索ドキュメントに frontchannel_logout_supported と frontchannel_logout_session_supported のパラメーターが表示されません。</br>
 **A:** すべての AD FS サーバーに[KB4038801](https://support.microsoft.com/en-gb/help/4038801/windows-10-update-kb4038801)がインストールされていることを確認します。 [KB4038801](https://support.microsoft.com/en-gb/help/4038801/windows-10-update-kb4038801)を使用したサーバー2016でのシングルログアウトを参照してください。
 
@@ -110,5 +109,5 @@ Set-AdfsClient -LogoutUri <url>
 **A:** はい。 登録された `LogoutUri`でサインアウト要求を受信した後、すべての認証済みアイテムを削除するのは、クライアントアプリケーションの役割です。
 
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 [AD FS の開発](../../ad-fs/AD-FS-Development.md)  

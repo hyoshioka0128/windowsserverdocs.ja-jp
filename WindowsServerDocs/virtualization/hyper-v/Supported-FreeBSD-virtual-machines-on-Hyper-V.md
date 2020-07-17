@@ -2,25 +2,23 @@
 title: HYPER-V でサポートされている FreeBSD 仮想マシン
 description: 各バージョンに含まれる Linux integration services と機能の一覧を示します。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 930e758f-bd50-46b4-a3a4-9857110f17b4
 author: shirgall
 ms.author: kathydav
-ms.date: 08/30/2017
-ms.openlocfilehash: b7b02e1ec93d6255412a89e7e7d7b8246cf5e50e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.date: 04/07/2020
+ms.openlocfilehash: 9394ff04b32ab34cbdad6a46573fd3674051db36
+ms.sourcegitcommit: 7b1ebc4934998af2472962ca8cce1c872f39946f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365509"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80994531"
 ---
 # <a name="supported-freebsd-virtual-machines-on-hyper-v"></a>HYPER-V でサポートされている FreeBSD 仮想マシン
 
->適用先:Windows Server 2016、Hyper-v Server 2016、Windows Server 2012 R2、Hyper-v Server 2012 R2、Windows Server 2012、Hyper-v Server の2012、Windows Server 2008 R2、Windows 10、Windows 8.1、windows 8、Windows 7.1、Windows 7
+>適用対象: Windows Server 2019、Hyper-v Server 2019、Windows Server 2016、Hyper-v Server 2016、Windows Server 2012 R2、Hyper-v Server 2012 R2、Windows 10、および Windows 8.1
 
 次の機能の配布マップでは、各バージョンの機能を示します。 既知の問題と各配布の回避策は、表の下に一覧表示されます。
 
@@ -28,50 +26,50 @@ ms.locfileid: "71365509"
 
 * **組み込み**の BIS (Freebsd Integration Service) は、この freebsd リリースの一部として含まれています。
 
-* &#10004 です。の機能使用
+* & #10004 です。の機能使用
 
 * (*空白*) の機能は使用できません
 
-|**機能**|**Windows Server オペレーティングシステムのバージョン**|**11.1/11.2**|**11.0**|**10.3**|**10.2**|**10.0 ~ 10.1**|**9.1-9.3、8.4**|
-|-|-|-|-|-|-|-|-|
-|**可用性**||組み込まれています。|組み込まれています。|組み込まれています。|組み込まれています。|組み込まれています。|[シリアル](https://svnweb.freebsd.org/ports/branches/2015Q1/emulators/hyperv-is/) |
-|**[Core](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**|2019、2016、2012 R2、2012、2008 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004; |
-|Windows Server 2016 の正確な時刻|2019、2016|&#10004;||||||
+|**機能**|**Windows Server オペレーティングシステムのバージョン**|**12-12.1**|**11.1-11.3**|**11.0**|**10.3**|**10.2**|**10.0 ~ 10.1**|**9.1-9.3、8.4**|
+|-|-|-|-|-|-|-|-|-|
+|**可用性**||組み込まれています。|組み込まれています。|組み込まれています。|組み込まれています。|組み込まれています。|組み込まれています。|[Ports](https://svnweb.freebsd.org/ports/branches/2015Q1/emulators/hyperv-is/) |
+|**[Core](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
+|Windows Server 2016 の正確な時刻|2019、2016|&#10004;|&#10004;||||||
 |**[機能](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#networking)**||||||||
-|Jumbo Frame|2019、2016、2012 R2、2012、2008 R2|&#10004 です。注 3|&#10004 です。注 3|&#10004 です。注 3|&#10004 です。注 3|&#10004 です。注 3|&#10004 です。注 3|
-|VLAN のタグ付けとトランキング|2019、2016、2012 R2、2012、2008 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
-|ライブ マイグレーション|2019、2016、2012 R2、2012、2008 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
-|静的 IP インジェクション|2019、2016、2012 R2、2012|&#10004 です。注 4|&#10004 です。注 4|&#10004 です。注 4|&#10004 です。注 4|&#10004 です。注 4|&#10004;|
-|vRSS|2019、2016、2012 R2|&#10004;|&#10004;|||||
-|TCP セグメント化とチェックサムのオフロード|2019、2016、2012 R2、2012、2008 R2|&#10004;|&#10004;|&#10004;|&#10004;|||
-|大規模なオフロード (LRO) が表示されます。|2019、2016、2012 R2、2012、2008 R2|&#10004;|&#10004;|&#10004;||||
-|SR-IOV|2019、2016|||||||
-|**[・](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)**||メモ1|メモ1|メモ1|メモ1|メモ1、2|メモ1、2|
-|VHDX のサイズ変更|2019、2016、2012 R2|&#10004 です。注 7|&#10004 です。注 7|||||
-|仮想ファイバー チャネル|2019、2016、2012 R2|||||||
-|仮想マシンのライブバックアップ|2019、2016、2012 R2|&#10004;||||||
-|トリムのサポート|2019、2016、2012 R2|&#10004;||||||
-|SCSI WWN|2019、2016、2012 R2|||||||
-|**[量](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)**||||||||
-|PAE カーネルサポート|2019、2016、2012 R2、2012、2008 R2|||||||
-|MMIO ギャップの構成|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
-|動的メモリでホット アド|2019、2016、2012 R2、2012|||||||
-|動的メモリ - バルーニング|2019、2016、2012 R2、2012|||||||
-|ランタイムのメモリのサイズ変更|2019、2016|||||||
-|**[Video](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)**||||||||
-|HYPER-V で特定のビデオ デバイス|2019、2016、2012 R2、2012、2008 R2|||||||
-|**[な](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#miscellaneous)**||||||||
-|キー/値ペア|2019、2016、2012 R2、2012、2008 R2|&#10004;|&#10004;|&#10004;|&#10004;注 6|&#10004 です。注 5、6|&#10004;注 6|
-|マスクなしの割り込み|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
-|ホストからゲストへのファイルのコピー|2019、2016、2012 R2|||||||
-|lsvmbus コマンド|2019、2016、2012 R2、2012、2008 R2|||||||
-|Hyper V ソケット|2019、2016|||||||
-|PCI パススルー/DDA|2019、2016|&#10004;||||||
-|**[第2世代仮想マシン](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#generation-2-virtual-machines)**||||||||
-|UEFI を使用したブート|2019、2016、2012 R2|&#10004;||||||
-|セキュアブート|2019、2016|||||||
+|Jumbo Frame|2019、2016、2012 R2|& #10004 です。注 3|& #10004 です。注 3|& #10004 です。注 3|& #10004 です。注 3|& #10004 です。注 3|& #10004 です。注 3|& #10004 です。注 3|
+|VLAN のタグ付けとトランキング|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
+|ライブ マイグレーション|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
+|静的 IP インジェクション|2019、2016、2012 R2|& #10004 です。注 4|& #10004 です。注 4|& #10004 です。注 4|& #10004 です。注 4|& #10004 です。注 4|& #10004 です。注 4|&#10004;|
+|vRSS|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|||||
+|TCP セグメント化とチェックサムのオフロード|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|||
+|大規模なオフロード (LRO) が表示されます。|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;||||
+|SR-IOV|2019、2016|&#10004;|&#10004;|&#10004;|||||
+|**[・](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)**||Note1|メモ1|メモ1|メモ1|メモ1|メモ1、2|メモ1、2|
+|VHDX のサイズ変更|2019、2016、2012 R2|&#10004;注 6|&#10004;注 6|&#10004;注 6|||||
+|仮想ファイバー チャネル|2019、2016、2012 R2||||||||
+|仮想マシンのライブバックアップ|2019、2016、2012 R2|&#10004;|&#10004;||||||
+|トリムのサポート|2019、2016、2012 R2|&#10004;|&#10004;||||||
+|SCSI WWN|2019、2016、2012 R2||||||||
+|**[量](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)**|||||||||
+|PAE カーネルサポート|2019、2016、2012 R2||||||||
+|MMIO ギャップの構成|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
+|動的メモリでホット アド|2019、2016、2012 R2||||||||
+|動的メモリ - バルーニング|2019、2016、2012 R2||||||||
+|ランタイムのメモリのサイズ変更|2019、2016||||||||
+|**[Video](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)**|||||||||
+|HYPER-V で特定のビデオ デバイス|2019、2016、2012 R2||||||||
+|**[な](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#miscellaneous)**|||||||||
+|キー/値ペア|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|& #10004 です。注 5|&#10004;|
+|マスクなしの割り込み|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
+|ホストからゲストへのファイルのコピー|2019、2016、2012 R2||||||||
+|lsvmbus コマンド|2019、2016、2012 R2||||||||
+|Hyper V ソケット|2019、2016||||||||
+|PCI パススルー/DDA|2019、2016|&#10004;|&#10004;||||||
+|**[第2世代仮想マシン](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#generation-2-virtual-machines)**|||||||||
+|UEFI を使用したブート|2019、2016、2012 R2|&#10004;|&#10004;||||||
+|セキュア ブート|2019、2016||||||||
 
-## <a name="BKMK_notes"></a>注記
+## <a name="notes"></a><a name="BKMK_notes"></a>注記
 
 1. 起動時にルートマウントエラーが発生しないように、[ディスクデバイスにラベルを付ける]( https://www.freebsd.org/doc/handbook/geom-glabel.html)ことをお勧めします。
 
@@ -87,18 +85,15 @@ ms.locfileid: "71365509"
 
 5. KVP は、FreeBSD 10.0 のポートによって提供されます。 詳細については、FreeBSD.org の[FreeBSD 10.0 ポート](https://svnweb.freebsd.org/ports/branches/2015Q1/emulators/hyperv-is/)を参照してください。
 
-6. KVP は、Windows Server 2008 R2 で機能しない可能性があります。
-
-7. VHDX のオンラインサイズ変更が FreeBSD 11.0 で適切に行われるようにするには、11.0 + で修正されたジオメトリバグを回避するための特別な手動手順が必要です。これは、ホストが VHDX ディスクのサイズを変更した後、書き込み用にディスクを開き、次のように "gpart 回復" を実行します。
+6. VHDX のオンラインサイズ変更が FreeBSD 11.0 で適切に行われるようにするには、11.0 + で修正されたジオメトリバグを回避するための特別な手動手順が必要です。これは、ホストが VHDX ディスクのサイズを変更した後、書き込み用にディスクを開き、次のように "gpart 回復" を実行します。
     ```sh
     # dd if=/dev/da1 of=/dev/da1 count=0
     # gpart recover da1
     ```
-   **その他の注意事項**:10安定および11安定した機能マトリックスは、FreeBSD 11.1 リリースと同じです。 さらに、FreeBSD 10.2 とそれ以前のバージョン (10.1、10.0、1.x、2.x) は、有効期間が終了します。 サポートされているリリースと最新のセキュリティアドバイザリの最新の一覧については、[こちら](https://security.freebsd.org/)を参照してください。
+   
+**追加の注意事項**:10 安定および11安定した機能マトリックスは、FreeBSD 11.1 リリースと同じです。 さらに、FreeBSD 10.2 とそれ以前のバージョン (10.1、10.0、1.x、2.x) は、有効期間が終了します。 サポートされているリリースと最新のセキュリティアドバイザリの最新の一覧については、[こちら](https://security.freebsd.org/)を参照してください。
 
-**その他の注意事項**:10安定および11安定した機能マトリックスは、FreeBSD 11.1 リリースと同じです。 さらに、FreeBSD 10.2 とそれ以前のバージョン (10.1、10.0、1.x、2.x) は、有効期間が終了します。 サポートされているリリースと最新のセキュリティアドバイザリの最新の一覧については、[こちら](https://security.freebsd.org/)を参照してください。
-
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 * [Hyper-v 上の Linux および FreeBSD 仮想マシンの機能の説明](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md)
 * [Hyper-v で FreeBSD を実行するためのベストプラクティス](Best-practices-for-running-FreeBSD-on-Hyper-V.md)

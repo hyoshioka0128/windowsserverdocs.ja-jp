@@ -4,15 +4,15 @@ description: Hyper-v のパフォーマンスチューニングに関するネ�
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
-ms.author: Asmahi; SandySp; JoPoulso
+ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: e8f4261c11a63786c2d170105fb0fa65dc6966a3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: dcf43bf41edada0a2e3df6fde825ff128a119a8f
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385122"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471357"
 ---
 # <a name="hyper-v-network-io-performance"></a>Hyper-v ネットワーク i/o パフォーマンス
 
@@ -35,7 +35,7 @@ ms.locfileid: "71385122"
 
 Windows Server 2012 R2 では、ネットワーク経由で転送する前にメモリを圧縮したり、ハードウェアでサポートされている場合はリモートダイレクトメモリアクセス (RDMA) を使用して、ライブマイグレーションを高速化するオプションが導入されました。
 
-## <a name="see-also"></a>関連項目
+## <a name="additional-references"></a>その他のリファレンス
 
 -   [Hyper-V の用語](terminology.md)
 

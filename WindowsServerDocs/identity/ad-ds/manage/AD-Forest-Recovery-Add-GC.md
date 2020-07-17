@@ -1,6 +1,5 @@
 ---
 title: AD フォレストの回復-GC の追加
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: 5a291f65-794e-4fc3-996e-094c5845a383
 ms.technology: identity-adds
-ms.openlocfilehash: f82033dd042847c7c735423c25756b936b137230
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c6773dbb20ff560ad4d2ae12155f2b6f6a068b3e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369340"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80824335"
 ---
 # <a name="ad-forest-recovery---adding-the-gc"></a>AD フォレストの回復-GC の追加
 
@@ -81,7 +80,7 @@ GC](media/AD-Forest-Recovery-Add-GC/addgc1.png) を追加 ![には
    nltest /dsgetdc:nonroot domain name /KDC /Force  
    ```
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 
 - [AD フォレストの回復ガイド](AD-Forest-Recovery-Guide.md)
 - [AD フォレストの回復 - 手順](AD-Forest-Recovery-Procedures.md)  

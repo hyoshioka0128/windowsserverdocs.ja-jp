@@ -1,7 +1,5 @@
 ---
-ms.assetid: ''
 title: Active Directory フェデレーションサービス (AD FS) 2.0 のクライアント Access Control ポリシー
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +7,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b0d6133a6fb43b8624dc1329db632fb5dd4aa070
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6ae1f34343e8574ce776fcc5761c078b12bc9977
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71358453"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80814825"
 ---
 # <a name="client-access-control-policies-in-ad-fs-20"></a>AD FS 2.0 のクライアント Access Control ポリシー
 Active Directory フェデレーションサービス (AD FS) 2.0 のクライアントアクセスポリシーでは、リソースへのアクセスを制限または許可することができます。  このドキュメントでは、AD FS 2.0 でクライアントアクセスポリシーを有効にする方法と、最も一般的なシナリオを構成する方法について説明します。
@@ -25,7 +23,7 @@ Active Directory フェデレーションサービス (AD FS) 2.0 のクライ�
 
 ### <a name="step-1-install-the-update-rollup-2-for-ad-fs-20-package-on-your-ad-fs-servers"></a>手順 1: AD FS サーバーに AD FS 2.0 パッケージの更新プログラムのロールアップ2をインストールする
 
-[Active Directory フェデレーションサービス (AD FS) (AD FS) 2.0 パッケージの更新プログラムのロールアップ 2](https://support.microsoft.com/en-us/help/2681584/description-of-update-rollup-2-for-active-directory-federation-services-ad-fs-2.0)をダウンロードし、すべてのフェデレーションサーバーとフェデレーションサーバープロキシにインストールします。
+[Active Directory フェデレーションサービス (AD FS) (AD FS) 2.0 パッケージの更新プログラムのロールアップ 2](https://support.microsoft.com/help/2681584/description-of-update-rollup-2-for-active-directory-federation-services-ad-fs-2.0)をダウンロードし、すべてのフェデレーションサーバーとフェデレーションサーバープロキシにインストールします。
 
 ### <a name="step-2-add-five-claim-rules-to-the-active-directory-claims-provider-trust"></a>手順 2: Active Directory 要求プロバイダー信頼に5つの要求規則を追加する
 
@@ -141,7 +139,7 @@ Active Directory 要求プロバイダー信頼で、新しい要求コンテキ
 
 ### <a name="scenario-4-block-all-external-access-to-office-365-for-designated-active-directory-groups"></a>シナリオ 4: 指定された Active Directory グループの Office 365 への外部アクセスをすべてブロックする
 
-次の例では、IP アドレスに基づいて内部クライアントからのアクセスを有効にします。 これは、指定された Active Directory グループ内の個人を除き、外部クライアント IP アドレスを持つ企業ネットワークの外部に存在するクライアントからのアクセスをブロックします。この規則セットは、[アクセスを許可する] という名前の既定の発行承認規則に基づいています。すべてのユーザー。 要求規則ウィザードを使用して、Microsoft Office 365 Id プラットフォーム証明書利用者信頼に発行承認規則を追加するには、次の手順を実行します。
+次の例では、IP アドレスに基づいて内部クライアントからのアクセスを有効にします。 これは、指定された Active Directory グループ内の個人を除き、外部クライアント IP アドレスを持つ企業ネットワークの外部に存在するクライアントからのアクセスをブロックします。この規則セットは、[すべてのユーザーにアクセスを許可する] という名前の既定の発行承認規則に基づいています。 要求規則ウィザードを使用して、Microsoft Office 365 Id プラットフォーム証明書利用者信頼に発行承認規則を追加するには、次の手順を実行します。
 
 #### <a name="to-create-a-rule-to-block-all-external-access-to-office-365-for-designated-active-directory-groups"></a>指定された Active Directory グループの Office 365 への外部アクセスをすべてブロックするルールを作成するには
 
@@ -187,7 +185,7 @@ HTTP ヘッダーは、現在 Exchange Online によってのみ設定されて�
 
 VPN または Microsoft DirectAccess (DA) によって企業ネットワークに接続されているクライアントは、VPN または DA の構成に応じて、内部の企業クライアントとして、または外部クライアントとして表示されることがあります。
 
-1つまたは複数の IP アドレス: Exchange Online が接続しているクライアントの IP アドレスを特定できない場合は、HTTP ベースの要求に含めることができ、多くの場合にサポートされている非標準ヘッダーの x 転送済みヘッダーの値に基づいて、値が設定されます。市場におけるクライアント、ロードバランサー、およびプロキシ。
+1つまたは複数の IP アドレス: Exchange Online が接続しているクライアントの IP アドレスを特定できない場合、HTTP ベースの要求に含めることができ、多くのクライアント、ロードバランサー、および市場のプロキシでサポートされる、非標準のヘッダーの値に基づいて値が設定されます。
 
 >[!Note]
 >クライアント IP アドレスと、要求を受けた各プロキシのアドレスを示す複数の IP アドレスは、コンマで区切られます。
@@ -203,9 +201,9 @@ IP アドレスの範囲を一致させる必要がある場合は、比較を�
 - 192.168.1.1 –192.168.1.25
 - 10.0.0.1 –10.0.0.14
 
-まず、1つの IP アドレスに一致する基本的なパターンは次のようになります。\b###\.###\.###\.###\b
+まず、1つの IP アドレスに一致する基本的なパターンは次のようになります。 \b # # #\.###\.###\.# # # \b
 
-これを拡張すると、2つの異なる IP アドレスを OR 式と一致させることが できます。\b###\.###\.###\.###\b|\b###\.###\.###\.###\b
+これを拡張すると、2つの異なる IP アドレスを OR 式と一致させることができます。 \b # # #\.###\.###\.# # # \b | \b # # #\.###\.###\.# # # \b
 
 そのため、2つのアドレス (192.168.1.1、10.0.0.1 など) のみを照合する例は次のようになります: \b192\.168\.1\.1 \ b | \b10\.0\.0\.1 \ b
 
@@ -215,7 +213,7 @@ IP アドレスの範囲を一致させる必要がある場合は、比較を�
 >IP アドレスは、数値ではなく文字列として扱われます。
 
 
-このルールは次のように分割されます \b192\.168\.1\.
+ルールは次のように分類されます: \b192\.168\.1\.
 
 これは、192.168.1 から始まる任意の値と一致します。
 
@@ -261,7 +259,7 @@ Regex 式は非常に複雑になる可能性があるため、regex 検証ツ�
 
 AD FS サーバー上のセキュリティログへの監査イベントのログ記録を有効にするには AD FS 2.0 の監査の構成」の手順に従います。
 
-### <a name="event-logging"></a>イベントログ
+### <a name="event-logging"></a>イベント ログ
 
 既定では、失敗した要求は、[アプリケーションとサービスログ] \ AD FS 2.0 \ Admin にあるアプリケーションイベントログに記録されます。 AD FS のイベントログの詳細については、「 [AD FS 2.0 イベントログの設定](https://technet.microsoft.com/library/adfs2-troubleshooting-configuring-computers.aspx)」を参照してください。
 
@@ -271,6 +269,6 @@ AD FS トレースイベントは、AD FS 2.0 デバッグログに記録され�
 
 トレースを有効にした後、次のコマンドライン構文を使用して詳細ログ記録レベルを有効にします。 wevtutil sl "AD FS 2.0 Tracing/Debug"/l: 5  
 
-## <a name="related"></a>関連
+## <a name="related"></a>の関係
 新しい要求の種類の詳細については、「 [AD FS 要求の種類](AD-FS-Claims-Types.md)」を参照してください。
 

@@ -1,27 +1,23 @@
 ---
 title: RD 接続ブローカー サーバーを追加して RDS で高可用性を構成する
 description: 高可用性のために RDS の展開に RD 接続ブローカーを追加する方法について説明します。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 04/10/2017
-ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: 511f852568aa4cc7498e3a0b8deacea83db22c08
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: dc6a9fa0d6834f63c9935518e4b2c26320a04082
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404059"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "80852965"
 ---
 # <a name="add-the-rd-connection-broker-server-to-the-deployment-and-configure-high-availability"></a>RD 接続ブローカー サーバーを展開に追加し、高可用性を構成する
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016
+>適用先:Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016
 
 リモート デスクトップ サービス インフラストラクチャの可用性と規模を向上させるために、リモート デスクトップ接続ブローカー (RD 接続ブローカー) クラスターを展開することができます。 
 
@@ -47,7 +43,7 @@ ms.locfileid: "71404059"
 2. 新しい接続ブローカーに ODBC ドライバーをインストールします。 
    1. 接続ブローカーのために VM を使用する場合は、最初の RD 接続ブローカー用にパブリック IP アドレスを作成します。 (これを行う必要があるのは、RDMS 仮想マシンに、RDP 接続を可能にするパブリック IP アドレスがまだない場合だけです。)
        1. Azure portal で、 **[参照]**  >  **[リソース グループ]** とクリックし、デプロイのリソース グループをクリックしてから、RD 接続ブローカーの最初の仮想マシンをクリックします (たとえば Contoso-Cb1)。
-       2. **[設定] > [ネットワーク インターフェイス]** とクリックして、対応するネットワーク インターフェイスをクリックします。
+       2. **[設定] > [ネットワーク インターフェイス]** の順にクリックして、対応するネットワーク インターフェイスをクリックします。
        3. **[設定] > [IP アドレス]** の順にクリックします。
        4. **[パブリック IP アドレス]** では、 **[有効]** を選択し、 **[IP アドレス]** をクリックします。
        5. 使用したい既存のパブリック IP アドレスがある場合は、一覧からそれを選択します。 それ以外の場合は、 **[新規作成]** をクリックし、名前を入力したら、 **[OK]** 、 **[保存]** の順にクリックします。

@@ -7,15 +7,14 @@ ms.sitesec: library
 author: mikeblodge
 ms.author: mikeblodge
 ms.date: 07/11/2018
-ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.localizationpriority: high
-ms.openlocfilehash: 19e4abf1573b8d3ee99b8e8828c1674f24d27695
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: de9233e31c5530abd207a1bbba0e1e16a07d1561
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391503"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "80826125"
 ---
 # <a name="upload-a-windows-server-20082008-r2-specialized-image-to-azure"></a>Windows Server 2008/2008 R2 に特化されたイメージの Azure へのアップロード 
 
@@ -86,26 +85,26 @@ Login-AzureRmAccount
 > [!IMPORTANT]
 > Azure で定義済みのユーザー イメージを使用しないでください。
 
-1.  新しい[リソース グループ](https://docs.microsoft.com/rest/api/resources/resourcegroups/createorupdate)を作成します。 
-2.  リソース グループ内に新しい[ストレージ BLOB](https://docs.microsoft.com/rest/api/storageservices/put-blob) を作成します。
-3.  ストレージ BLOB 内に[コンテナー](https://docs.microsoft.com/rest/api/storageservices/create-container)を作成します。
-4.  プロパティから BLOB ストレージの URL をコピーします。
-5.  上で指定されたスクリプトを使用して新しいストレージ BLOB にイメージをアップロードします。
-6.  VHD の[ディスク](https://docs.microsoft.com/azure/virtual-machines/windows/prepare-for-upload-vhd-image)を作成します。   
-     a. [ディスク] に移動し、 **[追加]** をクリックします。  
-     b. ディスクの名前を入力します。 使用するサブスクリプションを選択し、地域を設定して、アカウントの種類を選択します。   
+1.    新しい[リソース グループ](https://docs.microsoft.com/rest/api/resources/resourcegroups/createorupdate)を作成します。 
+2.    リソース グループ内に新しい[ストレージ BLOB](https://docs.microsoft.com/rest/api/storageservices/put-blob) を作成します。
+3.    ストレージ BLOB 内に[コンテナー](https://docs.microsoft.com/rest/api/storageservices/create-container)を作成します。
+4.    プロパティから BLOB ストレージの URL をコピーします。
+5.    上で指定されたスクリプトを使用して新しいストレージ BLOB にイメージをアップロードします。
+6.    VHD の[ディスク](https://docs.microsoft.com/azure/virtual-machines/windows/prepare-for-upload-vhd-image)を作成します。   
+     a。    [ディスク] に移動し、 **[追加]** をクリックします。  
+     b.    ディスクの名前を入力します。 使用するサブスクリプションを選択し、地域を設定して、アカウントの種類を選択します。   
      c. [ソースの種類] で、ストレージを選択します。 スクリプトを使用して作成した BLOB VHD の場所を参照します。  
      d. Windows OS の種類とサイズを選択します (既定値: 1023)。   
      e. **[作成]** をクリックします。   
 
-7.  [Disk Created] (作成されたディスク) に移動し、 **[VM の作成]** をクリックします。   
-     a. VM に名前を付けます。   
-     b. ディスクをアップロードした 手順 5 で作成した既存のグループを選択します。   
-     c. VM のサイズと SKU 計画を選びます。   
-     d. 設定ページで、ネットワーク インターフェイスを選択します。 ネットワーク インターフェイスに次の規則が指定されていることを確認します。
+7.    [Disk Created] (作成されたディスク) に移動し、 **[VM の作成]** をクリックします。   
+     a。    VM に名前を付けます。   
+     b.    ディスクをアップロードした 手順 5 で作成した既存のグループを選択します。   
+     c.    VM のサイズと SKU 計画を選びます。   
+     d.    設定ページで、ネットワーク インターフェイスを選択します。 ネットワーク インターフェイスに次の規則が指定されていることを確認します。
  
-        PORT:3389 Protocol: TCP Action: Allow Priority: 1000 Name: ‘RDP-Rule'.   
-     e. **[作成]** をクリックします。
+        ポート: 3389 プロトコル:TCP アクション:許可 優先度:1000 名前:'RDP-Rule'。   
+     e.    **[作成]** をクリックします。
 
 
 

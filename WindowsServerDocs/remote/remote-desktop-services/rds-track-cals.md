@@ -1,28 +1,24 @@
 ---
 title: リモート デスクトップ サービス クライアント アクセス ライセンス (RDS CAL) を追跡する
 description: RDS 展開全体で CAL を追跡する方法について説明します。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 80d82d30-3ad0-4a8c-9a9b-2773c47eee19
 author: lizap
 ms.author: elizapo
 ms.date: 05/11/2017
 manager: dongill
-ms.openlocfilehash: 278aa7a2d35aeacfaee8deddcd64e668a320853f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7e5793427b4a294d90c7b9ebeb66bb27578be190
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387123"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "80857335"
 ---
 # <a name="track-your-remote-desktop-services-client-access-licenses-rds-cals"></a>リモート デスクトップ サービス クライアント アクセス ライセンス (RDS CAL) を追跡する
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016
+>適用先:Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016
 
 リモート デスクトップ ライセンス マネージャー ツールを使用して、リモート デスクトップ ライセンス サーバーから発行された接続ユーザー数の RDS CAL を追跡するレポートを作成できます。
 

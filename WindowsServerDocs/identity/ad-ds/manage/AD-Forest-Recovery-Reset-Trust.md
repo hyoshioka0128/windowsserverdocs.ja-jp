@@ -1,6 +1,5 @@
 ---
 title: AD フォレストの回復-完全なサーバーのバックアップ
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,16 +8,16 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: 398918dc-c8ab-41a6-a377-95681ec0b543
 ms.technology: identity-adds
-ms.openlocfilehash: e9222685e8f6369e560a841990bc13ab8b0e4d37
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6466fbc1caed7dc6efcbcd925eba1bd4e01135b6
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390259"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80823695"
 ---
 # <a name="resetting-a-trust-password-on-one-side-of-the-trust"></a>信頼の1側での信頼されたパスワードのリセット  
 
->適用先:Windows Server 2016、Windows Server 2012、および 2012 R2、Windows Server 2008 および 2008 R2
+>適用対象: Windows Server 2016、Windows Server 2012、および 2012 R2、Windows Server 2008 および 2008 R2
 
  フォレストの回復がセキュリティ侵害に関連している場合は、次の手順を使用して、信頼の一方の側で信頼されたパスワードをリセットします。 これには、子ドメインと親ドメイン間の暗黙的な信頼と、このドメイン (信頼する側のドメイン) と別のドメイン (信頼される側のドメイン) との間の明示的な信頼が含まれます。 
   

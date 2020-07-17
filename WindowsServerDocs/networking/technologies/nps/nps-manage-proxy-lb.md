@@ -6,14 +6,14 @@ ms.technology: networking
 ms.topic: article
 ms.assetid: 528280e6-b47e-489f-b310-b257d434aa0d
 manager: brianlic
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 2d138b9891fb3cfa8e15060be312ff945942c660
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 10a33494365f5a10923dd9ce46c3575675099b27
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405430"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80315974"
 ---
 # <a name="nps-proxy-server-load-balancing"></a>NPS プロキシサーバーの負荷分散
 

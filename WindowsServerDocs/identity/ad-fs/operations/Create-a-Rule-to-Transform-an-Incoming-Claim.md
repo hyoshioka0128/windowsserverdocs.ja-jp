@@ -1,7 +1,6 @@
 ---
 ms.assetid: ef83960f-d2cf-441f-b2b6-d97822ec7149
 title: 入力方向の要求を変換する規則を作成する
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 15a4583d429de9383e9405cfcd444777aa55c921
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 43768b282005ba77d22985aa9a0d563125a97289
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407574"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80816535"
 ---
 # <a name="create-a-rule-to-transform-an-incoming-claim"></a>入力方向の要求を変換する規則を作成する
 
@@ -130,7 +129,7 @@ Active Directory フェデレーションサービス (AD FS) \(AD FS\)で **[�
 >   
 > 動的 Access Control シナリオの詳細については、「[動的 Access Control コンテンツロードマップ](../../solution-guides/dynamic-access-control--scenario-overview.md)」または「 [AD FS での AD DS 要求の使用](https://technet.microsoft.com/library/hh831504.aspx)」を参照してください。  
   
-7. **[Finish]** (完了) をクリックします。  
+7. **[完了]** をクリックします。  
   
 8. **[要求規則の編集]** ダイアログボックスで、 **[OK]** をクリックして規則を保存します。  
 

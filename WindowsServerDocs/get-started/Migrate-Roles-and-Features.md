@@ -11,10 +11,10 @@ ms.author: jgerend
 manager: dougkim
 ms.localizationpriority: medium
 ms.openlocfilehash: 33c1aa654e4c660b4fe2f3305bfaf78b5191220a
-ms.sourcegitcommit: e58e1646ffd75d4a89576d967b2dbbbb84764303
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "70119200"
 ---
 # <a name="migrating-roles-and-features-in-windows-server"></a>Windows Server の役割と機能を移行する
@@ -32,11 +32,11 @@ ms.locfileid: "70119200"
 > [!NOTE]
 > Windows Server のどのバージョンに移行またはアップグレードする場合も、[サポート ライフサイクル ポリシー](https://support.microsoft.com/lifecycle)および対象バージョンのサポート期間を確認し把握したうえで、それに応じて計画を立てる必要があります。 特定の Windows Server リリースのライフサイクルについては、[こちらでご検索ください](https://support.microsoft.com/lifecycle)。
 
-## <a name="windows-server-2019"></a>Windows Server Standard 2012 R2 Japanese 64 Bits
+## <a name="windows-server-2019"></a>Windows Server 2019
 
 ファイル サーバーと記憶域を Windows Server 2019 または Windows Server 2016 に移行するには、[記憶域の移行サービス](../storage/storage-migration-service/overview.md)を使用することをお勧めします。 他の役割を移行するには、Windows Server 2016 および Windows Server 2012 R2 のガイダンスを参照してください。
 
-## <a name="windows-server-2016"></a>WIN ENT LTSB 2016 Estonian 64 Bits
+## <a name="windows-server-2016"></a>Windows Server 2016
 
 ここでは、Windows Server 2016 の移行ガイドを示します。 多くの場合、Windows Server 2012 R2 の移行ガイドを使用することもできます。
 

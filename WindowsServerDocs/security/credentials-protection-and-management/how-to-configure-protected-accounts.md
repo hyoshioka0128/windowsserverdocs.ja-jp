@@ -1,27 +1,22 @@
 ---
 title: 保護されるアカウントの構成方法
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.service: na
-ms.suite: na
 ms.technology: security-auditing
-ms.tgt_pltfrm: na
 ms.topic: article
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: e728265f42289aeceb22c78053f0d84f9bdb9941
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 001a20267aef23e7e4457e0979dca40e821931f4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387389"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857145"
 ---
 # <a name="how-to-configure-protected-accounts"></a>保護されるアカウントの構成方法
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 Pass-the-hash (PtH) 攻撃では、攻撃者はユーザーのパスワード (または他の資格情報の派生物) の基盤となる NTLM ハッシュを使用して、リモートのサーバーまたはサービスに対する認証を行うことができます。 マイクロソフトは以前に、Pass-the-Hash 攻撃を軽減させるための [ガイダンスを公開](https://www.microsoft.com/download/details.aspx?id=36036) しています。  Windows Server 2012 R2 には、さらに、このような攻撃を軽減するために新しい機能が含まれています。 資格情報の盗用を防ぐのに役立つ、その他のセキュリティ機能の詳細については、「 [資格情報の保護と管理](https://technet.microsoft.com/library/dn408190.aspx)」を参照してください。 このトピックでは、次の新機能を構成する方法を説明します。  
   
@@ -33,7 +28,7 @@ Pass-the-hash (PtH) 攻撃では、攻撃者はユーザーのパスワード (�
   
 Windows 8.1 および Windows Server 2012 R2 には、資格情報の盗用を防ぐために役立つ追加の軽減機能が内蔵されています。これらの機能については、以下のトピックで説明しています。  
   
--   [リモートデスクトップの制限付き管理モード](http://blogs.technet.com/b/kfalde/archive/20../restricted-admin-mode-for-rdp-in-windows-8-1-2012-r2.aspx)  
+-   [リモートデスクトップの制限付き管理モード](https://blogs.technet.com/b/kfalde/archive/20../restricted-admin-mode-for-rdp-in-windows-8-1-2012-r2.aspx)  
   
 -   [LSA の保護](https://technet.microsoft.com/library/dn408187)  
   
@@ -65,9 +60,9 @@ Protected Users は、新しいユーザーや既存のユーザーを追加で�
 使用できるグループにユーザーを追加する [UI ツール](https://technet.microsoft.com/library/cc753515.aspx) Active Directory 管理センター (ADAC) または Active Directory ユーザーとコンピューター、またはなどのコマンド ライン ツールなど [Dsmod グループ](https://technet.microsoft.com/library/cc732423.aspx), 、または Windows PowerShell[Add-adgroupmember](https://technet.microsoft.com/library/ee617210.aspx) コマンドレットです。 サービスとコンピューターのアカウントは、Protected Users グループのメンバーに*しないでください*。 これらのアカウントのメンバーシップでは、パスワードまたは証明書が常にホストで利用できるため、ローカル保護が提供されません。  
   
 > [!WARNING]  
-> 認証の制限には回避策はありません。つまり、Enterprise Admins グループや Domain Admins グループのように高い権限を持つグループのメンバーであっても、Protected Users グループの他のメンバーと同じ制限が適用されます。 そのような高い権限を持つグループのすべてのメンバーが Protected Users グループに追加されると、それらのアカウントがすべてロックアウトされる可能性があります。潜在的な影響についての十分なテストが完了するまで、高い権限を持つすべてのアカウントを Protected Users グループに追加することは避けてください。  
+> 認証の制限には回避策はありません。つまり、Enterprise Admins グループや Domain Admins グループのように高い権限を持つグループのメンバーであっても、Protected Users グループの他のメンバーと同じ制限が適用されます。 このようなグループのすべてのメンバーが Protected Users グループに追加されると、それらのすべてのアカウントがロックアウトされる可能性があります。潜在的な影響を十分にテストするまでは、高い特権を持つアカウントを Protected Users グループに追加しないでください。  
   
-Protected Users グループのメンバーは、Kerberos で高度暗号化標準 (AES) を使用して認証できる必要があります。 この方法では、Active Directory のアカウントに対する AES キーが必要です。 パスワードが Windows Server 2008 を実行するドメイン コント ローラーに変更されたか、後でない限り、組み込みの管理者は AES キーを持ちません。 また、以前のバージョンの Windows Server が実行されているドメイン コントローラーでパスワードを変更したアカウントはロックアウトされます。そのため、次のベスト プラクティスに従ってください。  
+Protected Users グループのメンバーは、Kerberos で高度暗号化標準 (AES) を使用して認証できる必要があります。 この方法では、Active Directory のアカウントに対する AES キーが必要です。 パスワードが Windows Server 2008 を実行するドメイン コント ローラーに変更されたか、後でない限り、組み込みの管理者は AES キーを持ちません。 また、以前のバージョンの Windows Server を実行しているドメインコントローラーでパスワードが変更されたアカウントは、すべてロックアウトされます。そのため、次のベストプラクティスに従ってください。  
   
 -   テストしていないドメインにしない限り、 **2008 またはそれ以降、すべてのドメイン コント ローラーが Windows Server を実行**します。  
   
@@ -86,7 +81,7 @@ Protected Users グループのメンバーは、Kerberos で高度暗号化標�
 このセクションでは、Protected Users に関連するイベントのトラブルシューティングに役立つ新しいログについて説明します。さらに、チケット保証チケット (TGT) の有効期限または委任に関する問題のいずれかのトラブルシューティングを行う際に、Protected Users がどのような影響を与えるかを説明します。  
   
 #### <a name="new-logs-for-protected-users"></a>Protected Users 向けの新しいログ  
-2 つの新しい運用管理ログを使用して、Protected Users に関連するイベントのトラブルシューティングに役立てることができます。保護されたユーザー-クライアントログと保護されているユーザーのエラー: ドメインコントローラーのログ。 これらの新しいログはイベント ビューアーにありますが、既定では無効になっています。 ログを有効化するには、 **[アプリケーションとサービス ログ]** 、 **[Microsoft]** 、 **[Windows]** 、 **[Authentication]** の順にクリックし、ログの名前をクリックして **[操作]** をクリックし (またはログを右クリック)、 **[ログの有効化]** をクリックします。  
+Protected Users に関連するイベントのトラブルシューティングに役立つ 2 つの新しい運用管理ログがある: 保護されたユーザー - クライアントのログと保護されているユーザー エラー - ドメイン コント ローラーのログ。 これらの新しいログはイベント ビューアーにありますが、既定では無効になっています。 ログを有効化するには、 **[アプリケーションとサービス ログ]** 、 **[Microsoft]** 、 **[Windows]** 、 **[Authentication]** の順にクリックし、ログの名前をクリックして **[操作]** をクリックし (またはログを右クリック)、 **[ログの有効化]** をクリックします。  
   
 これらのログのイベント詳細については、「 [認証ポリシーと認証ポリシー サイロ](https://technet.microsoft.com/library/dn486813.aspx)」をご覧ください。  
   
@@ -112,14 +107,14 @@ Protected Users グループのメンバーは、Kerberos で高度暗号化標�
 ### <a name="provide-dc-side-protections-for-services-and-computers"></a>サービスとコンピューターに対して DC 側の保護を提供する  
 サービスおよびコンピューター用のアカウントは、**Protected Users** のメンバーにすることはできません。 このセクションでは、これらのアカウントに提供できるドメイン コントローラー ベースの保護について説明します。  
   
--   NTLM 認証の拒否:[NTLM ブロックポリシー](https://technet.microsoft.com/library/jj865674(v=ws.10).aspx)によってのみ構成できます。  
+-   NTLM 認証を拒否する: [ntlm ブロックポリシー](https://technet.microsoft.com/library/jj865674(v=ws.10).aspx)によってのみ構成できます。  
   
--   Kerberos 事前認証でのデータ暗号化標準 (DES) の拒否:Windows Server 2012 R2 ドメインコントローラーは、コンピューターアカウントの DES を受け入れません。ただし、Kerberos でリリースされた Windows のすべてのバージョンも RC4 をサポートしているためです。  
+-   Kerberos 事前認証でのデータ暗号化標準 (DES) の拒否: Kerberos と共にリリースされた Windows のすべてのバージョンには、RC4 もサポートしているという理由だけ DES を構成していないコンピュータのアカウントの Windows Server 2012 R2 のドメイン コント ローラーは DES を受け入れません。  
   
 -   Kerberos 事前認証での RC4 の拒否: 構成できません。  
   
     > [!NOTE]  
-    > [サポートされている暗号化の種類の構成を変更する](http://blogs.msdn.com/b/openspecification/archive/20../windows-configurations-for-kerberos-supported-encryption-type.aspx)ことはできますが、コンピューター アカウントでこれらの設定を変更する場合は、あらかじめターゲット環境でテストすることをお勧めします。  
+    > [サポートされている暗号化の種類の構成を変更する](https://blogs.msdn.com/b/openspecification/archive/20../windows-configurations-for-kerberos-supported-encryption-type.aspx)ことはできますが、コンピューター アカウントでこれらの設定を変更する場合は、あらかじめターゲット環境でテストすることをお勧めします。  
   
 -   ユーザー チケット (TGT) を最初の 4 時間の有効期間に制限:認証ポリシーを使用します。  
   
@@ -132,9 +127,9 @@ Protected Users グループのメンバーは、Kerberos で高度暗号化標�
   
 Windows Server 2012 では、ダイナミック アクセス制御には、組織全体でファイル サーバーを構成する簡単な方法を提供する集約型アクセス ポリシーと呼ばれる Active Directory フォレスト スコープ オブジェクトのクラスが導入されました。 Windows Server 2012 r2、Windows Server 2012 R2 のドメイン内のアカウント クラスに認証の構成を適用する認証ポリシー (objectClass Msds-authnpolicies) と呼ばれる新しいオブジェクト クラスを使用できます。 次の Active Directory アカウント クラスがあります。  
   
--   User  
+-   ユーザー  
   
--   [Computer]  
+-   コンピューター  
   
 -   管理されたサービス アカウントおよびグループの管理されたサービス アカウント (GMSA)  
   
@@ -182,7 +177,7 @@ AP 交換は通常、アプリケーション プロトコル内部のデータ�
 |ユーザー要求またはデバイス アカウント、セキュリティ グループ、または要求に基づくサービス チケット発行の制限| Windows Server 2012 R2 のドメイン機能レベルのリソース ドメインでダイナミック アクセス制御のサポート|  
   
 ### <a name="restrict-a-user-account-to-specific-devices-and-hosts"></a>ユーザー アカウントを特定のデバイスおよびホストに制限する  
-管理権限を持つ重要なアカウントは、**Protected Users** グループのメンバーである必要があります。 既定では、 **Protected Users** グループのメンバーになっているアカウントはありません。 このグループにアカウントを追加する前に、ドメイン コントローラーのサポートを構成し、障害となるような問題がないことを保証するための監査ポリシーを作成してください。  
+管理権限を持つ重要なアカウントは、**Protected Users** グループのメンバーである必要があります。 既定では、**Protected Users** グループのメンバーになっているアカウントはありません。 このグループにアカウントを追加する前に、ドメイン コントローラーのサポートを構成し、障害となるような問題がないことを保証するための監査ポリシーを作成してください。  
   
 #### <a name="configure-domain-controller-support"></a>ドメイン コントローラーのサポートを構成する  
 ユーザーのアカウント ドメインは、Windows Server 2012 R2 のドメイン機能レベル (DFL) にする必要があります。 すべてのドメイン コント ローラーは、Active Directory ドメインと信頼関係を使用して、Windows Server 2012 R2 では、ように [dfl](https://technet.microsoft.com/library/cc753104.aspx) Windows Server 2012 R2 にします。  
@@ -224,9 +219,9 @@ AP 交換は通常、アプリケーション プロトコル内部のデータ�
   
     認証ポリシーは、Active Directory のアカウントの種類に基づいて適用されます。 それぞれの種類に対する設定を構成することで、1 つのポリシーを 3 つのアカウントの種類すべてに適用できます。 次のアカウントの種類があります。  
   
-    -   User  
+    -   ユーザー  
   
-    -   [Computer]  
+    -   コンピューター  
   
     -   管理されたサービス アカウントおよびグループの管理されたサービス アカウント  
   
@@ -346,7 +341,7 @@ AP 交換は通常、アプリケーション プロトコル内部のデータ�
 PS C:\> New-ADAuthenticationPolicy testAuthenticationPolicy -UserAllowedToAuthenticateFrom (Get-Acl .\someFile.txt).sddl  
 ```  
   
-次のコマンドは、 **Filter** パラメーターで指定されるフィルターと一致するすべての認証ポリシーを取得します。  
+次のコマンドは、**Filter** パラメーターで指定されるフィルターと一致するすべての認証ポリシーを取得します。  
   
 ```  
 PS C:\> Get-ADAuthenticationPolicy -Filter "Name -like 'testADAuthenticationPolicy*'" -Server Server02.Contoso.com  
@@ -365,7 +360,7 @@ PS C:\> Set-ADAuthenticationPolicy -Identity ADAuthenticationPolicy1 -Descriptio
 PS C:\> Remove-ADAuthenticationPolicy -Identity ADAuthenticationPolicy1  
 ```  
   
-次のコマンドは、 **Get-ADAuthenticationPolicy** コマンドレットで **Filter** パラメーターを使用し、適用されていない認証ポリシーをすべて取得します。 結果セットは、パイプを使用して **Remove-ADAuthenticationPolicy** コマンドレットに渡されます。  
+次のコマンドは、**Get-ADAuthenticationPolicy** コマンドレットで **Filter** パラメーターを使用し、適用されていない認証ポリシーをすべて取得します。 結果セットは、パイプを使用して **Remove-ADAuthenticationPolicy** コマンドレットに渡されます。  
   
 ```  
 PS C:\> Get-ADAuthenticationPolicy -Filter 'Enforce -eq $false' | Remove-ADAuthenticationPolicy  
@@ -466,7 +461,7 @@ PS C:\>Grant-ADAuthenticationPolicySiloAccess -Identity Silo -Account User01
 PS C:\>Revoke-ADAuthenticationPolicySiloAccess -Identity Silo -Account User01 -Confirm:$False  
 ```  
   
-次の例では、最初に **Get-ADComputer** コマンドレットを使用して、 **Filter** パラメーターで指定されるフィルターに一致するコンピューター アカウントをすべて取得します。 このコマンドの出力は **Set-ADAccountAuthenticatinPolicySilo** に渡され、*Silo* という名前の認証ポリシー サイロと *AuthenticationPolicy02* という名前の認証ポリシーが割り当てられます。  
+次の例では、最初に **Get-ADComputer** コマンドレットを使用して、**Filter** パラメーターで指定されるフィルターに一致するコンピューター アカウントをすべて取得します。 このコマンドの出力は **Set-ADAccountAuthenticatinPolicySilo** に渡され、*Silo* という名前の認証ポリシー サイロと *AuthenticationPolicy02* という名前の認証ポリシーが割り当てられます。  
   
 ```  
 PS C:\>Get-ADComputer -Filter 'Name -like "newComputer*"' | Set-ADAccountAuthenticationPolicySilo -AuthenticationPolicySilo Silo -AuthenticationPolicy AuthenticationPolicy02  

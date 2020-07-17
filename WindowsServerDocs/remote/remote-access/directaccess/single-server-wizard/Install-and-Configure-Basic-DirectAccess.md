@@ -2,22 +2,18 @@
 title: 基本的な DirectAccess をインストールして構成する
 description: このトピックは、「Windows Server 2016 用はじめにウィザードを使用して単一の DirectAccess サーバーを展開する」の一部です。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8228d1ed-0efc-4858-89df-eb2c426440f9
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 5021db0a482950f1da7de3a0d375d287c073aeb8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: dcf87feca2b3827b4bb912f10c5276c747b918bd
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404897"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80819495"
 ---
 # <a name="install-and-configure-basic-directaccess"></a>基本的な DirectAccess をインストールして構成する
 

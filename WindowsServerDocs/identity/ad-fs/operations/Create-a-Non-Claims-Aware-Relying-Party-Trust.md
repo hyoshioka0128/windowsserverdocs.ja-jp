@@ -1,7 +1,6 @@
 ---
 ms.assetid: 7b7ae389-5032-44f7-9c0a-94398c3e4d88
 title: 要求対応ではない証明書利用者信頼を作成する
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b0ea877170a07db6abe9ac82e72d1722600ec933
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c6886145e910b76edbe99549266d651cdd7c3edf
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71358112"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80816925"
 ---
 # <a name="create-a-non-claims-aware-relying-party-trust"></a>要求対応ではない証明書利用者信頼を作成する
 
@@ -25,7 +24,7 @@ ms.locfileid: "71358112"
   
 の AD FS 管理スナップ\-を使用して、新しい非\-要求\-対応証明書利用者信頼を追加するには、次の手順を実行します。  
   
-この手順を実行するには、ローカル コンピューターの **Administrators**グループのメンバーシップか、それと同等のメンバーシップが最低限必要です。  適切なアカウントの使用方法の詳細を確認し、グループ メンバーシップ [ローカルおよびドメインの既定のグループ](https://go.microsoft.com/fwlink/?LinkId=83477)します。   
+この手順を完了するには、ローカル コンピューター上の **Administrators** または同等のメンバーシップが最低限必要です。  適切なアカウントの使用方法の詳細を確認し、グループ メンバーシップ [ローカルおよびドメインの既定のグループ](https://go.microsoft.com/fwlink/?LinkId=83477)します。   
   
 ## <a name="to-create-a-non-claims-aware-relying-party-trust-manually"></a>要求対応ではない証明書利用者信頼を手動で作成するには 
 1. サーバーマネージャーで、 **[ツール]** をクリックし、 **[AD FS の管理]** を選択します。  

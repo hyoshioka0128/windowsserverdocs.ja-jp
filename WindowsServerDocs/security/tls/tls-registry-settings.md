@@ -1,27 +1,23 @@
 ---
 title: トランスポート層セキュリティ (TLS) のレジストリ設定
 description: Windows Server のセキュリティ
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-tls-ssl
-ms.tgt_pltfrm: na
 ms.topic: article
 author: justinha
 ms.author: justinha
-manager: brianlic-msft
+manager: brianlic
 ms.date: 02/28/2019
-ms.openlocfilehash: 60202e537093bd21515043ba56f70f3895c91d42
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d65b314d6896c886ce606d2b649fcfd7309c583b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403410"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820285"
 ---
 # <a name="transport-layer-security-tls-registry-settings"></a>トランスポート層セキュリティ (TLS) のレジストリ設定
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows 10
+>適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows 10
 
 IT プロフェッショナル向けのこのリファレンストピックでは、Schannel セキュリティサポートを通じて、トランスポート層セキュリティ (TLS) プロトコルと Secure Sockets Layer (SSL) プロトコルの Windows 実装でサポートされているレジストリ設定情報を示します。プロバイダー (SSP)。 このトピックで説明するレジストリサブキーとエントリは、Schannel SSP、特に TLS および SSL プロトコルの管理とトラブルシューティングに役立ちます。 
 
@@ -51,9 +47,9 @@ IT プロフェッショナル向けのこのリファレンストピックで�
 3. 1 対 1 のマッピング (サブジェクト/発行者マッピングとも呼ばれます)
 4. 多対 1 のマッピング
 
-適用可能なバージョン:このトピックの最初に示した「**適用先**」を参照。
+適用可能なバージョン: このトピックの冒頭にある「**適用対象**」の一覧を参照してください。
 
-レジストリパス:HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL
+レジストリパス: HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL
 
 ## <a name="ciphers"></a>Ciphers
 
@@ -76,7 +72,7 @@ Schannel SSP によって使用される既定の暗号スイートの順序の�
 
 Windows Server 2008 および Windows Vista 以降では、クライアントの既定のキャッシュ時間は10時間です。
 
-レジストリパス:HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL
+レジストリパス: HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL
 
 既定のクライアント キャッシュ時間
 
@@ -90,11 +86,11 @@ IIS に加えて、http.sys 経由の web サービスは、Active Directory フ
 - Server Name Indication が必要
 - 集中証明書ストアを使用する
 
-この場合、TLS ハンドシェイク中のサーバー hello 応答には、既定で OCSP ホチキス止めステータスは含まれません。 この動作により、パフォーマンスが向上します。Windows OCSP ホチキス止めの実装は、数百のサーバー証明書にスケーリングします。 SNI と CCS を使用すると、何千ものサーバー証明書を持つ可能性のある数千人の web サイトに IIS を拡張できます。この動作を既定で有効に設定すると、パフォーマンスの問題が発生する可能性があります。
+この場合、TLS ハンドシェイク中のサーバー hello 応答には、既定で OCSP ホチキス止めステータスは含まれません。 この動作により、パフォーマンスが向上します。 Windows OCSP ホチキス止めの実装は、数百のサーバー証明書にスケーリングします。 SNI と CCS を使用すると、何千ものサーバー証明書を持つ可能性のある数千人の web サイトに IIS を拡張できます。この動作を既定で有効に設定すると、パフォーマンスの問題が発生する可能性があります。
 
-適用可能なバージョン:Windows Server 2012 および Windows 8 以降のすべてのバージョン。 
+適用可能なバージョン: Windows Server 2012 および Windows 8 以降のすべてのバージョン。 
 
-レジストリパス: [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL]
+レジストリパス: [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL]
 
 次のキーを追加します。
 
@@ -111,11 +107,11 @@ IIS に加えて、http.sys 経由の web サービスは、Active Directory フ
 
 このエントリは、連邦情報処理規格 (FIPS) コンプライアンスを制御します。 既定値は 0 です。
 
-適用可能なバージョン:Windows Server 2012 および Windows 8 以降のすべてのバージョン。 
+適用可能なバージョン: Windows Server 2012 および Windows 8 以降のすべてのバージョン。 
 
-レジストリパス:HKLM SYSTEM\CurrentControlSet\Control\LSA
+レジストリパス: HKLM SYSTEM\CurrentControlSet\Control\LSA
 
-Windows Server FIPS 暗号スイート:「[サポートされている暗号スイートと SCHANNEL SSP のプロトコル](https://technet.microsoft.com/library/dn786419.aspx)」を参照してください。
+Windows Server FIPS 暗号スイート: [SCHANNEL SSP でサポートされている暗号スイートとプロトコル](https://technet.microsoft.com/library/dn786419.aspx)を参照してください。
 
 ## <a name="hashes"></a>Hashes
 
@@ -127,9 +123,9 @@ TLS/SSL ハッシュアルゴリズムは、暗号スイートの順序を構成
 
 これを回避するために、サーバーにはネガティブ キャッシュが用意されており、発行者名がアカウントにマップされていないと、その発行者はキャッシュに追加されます。Schannel SSP は、キャッシュ エントリの有効期限が切れるまで、この発行者名をマップしません。 このレジストリ エントリは、キャッシュ サイズを指定します。 既定では、このエントリはレジストリに存在しません。 既定値は 100 です。 
 
-適用可能なバージョン:Windows Server 2008 および Windows Vista 以降のすべてのバージョン。
+適用可能なバージョン: Windows Server 2008 および Windows Vista 以降のすべてのバージョン。
 
-レジストリパス:HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL
+レジストリパス: HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL
 
 ## <a name="issuercachetime"></a>IssuerCacheTime
 
@@ -137,9 +133,9 @@ TLS/SSL ハッシュアルゴリズムは、暗号スイートの順序を構成
 
 これを回避するために、サーバーにはネガティブ キャッシュが用意されており、発行者名がアカウントにマップされていないと、その発行者はキャッシュに追加されます。Schannel SSP は、キャッシュ エントリの有効期限が切れるまで、この発行者名をマップしません。 パフォーマンス上の理由から、このキャッシュは保持されるため、同じ発行者はマップされなくなります。 既定では、このエントリはレジストリに存在しません。 既定値は 10 分です。
 
-適用可能なバージョン:Windows Server 2008 および Windows Vista 以降のすべてのバージョン。
+適用可能なバージョン: Windows Server 2008 および Windows Vista 以降のすべてのバージョン。
 
-レジストリパス:HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL
+レジストリパス: HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL
 
 ## <a name="keyexchangealgorithm---client-rsa-key-sizes"></a>KeyExchangeAlgorithm-クライアント RSA キーのサイズ
 
@@ -149,7 +145,7 @@ TLS/SSL ハッシュアルゴリズムは、暗号スイートの順序を構成
 
 Windows 10、バージョン1507、および Windows Server 2016 で追加されました。
 
-レジストリパス:HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\KeyExchangeAlgorithms\PKCS
+レジストリパス: HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\KeyExchangeAlgorithms\PKCS
 
 TLS クライアントでサポートされる RSA キーのビット長の最小範囲を指定するには、 **Clientminkeybitlength**エントリを作成します。 既定では、このエントリはレジストリに存在しません。 エントリを作成した後、DWORD 値を目的のビット長に変更します。 構成されていない場合、1024ビットが最小値になります。 
 
@@ -163,7 +159,7 @@ TLS クライアントでサポートされる RSA キーのビット長の最�
 
 Windows 10、バージョン1507、および Windows Server 2016 で追加されました。
 
-レジストリパス:HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\KeyExchangeAlgorithms\Diffie-Hellman
+レジストリパス: HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\KeyExchangeAlgorithms\Diffie-Hellman
 
 TLS クライアントの最小サポート範囲である Diffie-hellman Man キーの長さを指定するには、 **Clientminkeybitlength**エントリを作成します。 既定では、このエントリはレジストリに存在しません。 エントリを作成した後、DWORD 値を目的のビット長に変更します。 構成されていない場合、1024ビットが最小値になります。 
  
@@ -175,9 +171,9 @@ TLS サーバーの既定値として Diffie-hellman Man キーの長さを指�
 
 このエントリは、キャッシュ要素の最大数を制御します。 MaximumCacheSize を 0 に設定すると、サーバー側のセッション キャッシュが無効になり、再接続できなくなります。 前の MaximumCacheSize を増やすと、既定値によって Lsass.exe が消費するメモリ量が多くなります。 通常、各セッションキャッシュ要素には 2 ~ 4 KB のメモリが必要です。 既定では、このエントリはレジストリに存在しません。 既定値は2万要素です。 
 
-適用可能なバージョン:Windows Server 2008 および Windows Vista 以降のすべてのバージョン。
+適用可能なバージョン: Windows Server 2008 および Windows Vista 以降のすべてのバージョン。
 
-レジストリパス:HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL
+レジストリパス: HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL
 
 ## <a name="messaging--fragment-parsing"></a>メッセージング–フラグメント解析
 
@@ -191,7 +187,7 @@ ________________________________________
 Windows 7 および Windows Server 2008 R2 で追加されました。
 Windows XP、Windows Vista、または Windows Server 2008 の Internet Explorer で、断片化された TLS/SSL ハンドシェイクメッセージを解析するための更新プログラムが利用可能になります。
 
-レジストリパス:HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Messaging
+レジストリパス: HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Messaging
 
 TLS クライアントが受け入れる、フラグメント化された TLS ハンドシェイクメッセージの最大許容サイズを指定するには、 **Messagelimitclient**エントリを作成します。 エントリを作成した後、DWORD 値を目的のビット長に変更します。 構成されていない場合、既定値は0x8000 バイトになります。 
 
@@ -211,22 +207,22 @@ TLS クライアントが受け入れる、フラグメント化された TLS �
 
 既定の信頼された発行者リストの動作
 
-| Windows のバージョン | Time |
+| Windows のバージョン | 時間 |
 |-----------------|------|
-| Windows Server 2012 および Windows 8 以降 | false |
-| Windows Server 2008 R2 および Windows 7 以前 | true |
+| Windows Server 2012 および Windows 8 以降 | FALSE |
+| Windows Server 2008 R2 および Windows 7 以前 | TRUE |
 
-適用可能なバージョン:Windows Server 2008 および Windows Vista 以降のすべてのバージョン。
+適用可能なバージョン: Windows Server 2008 および Windows Vista 以降のすべてのバージョン。
 
-レジストリパス:HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL
+レジストリパス: HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL
 
 ## <a name="servercachetime"></a>ServerCacheTime
 
 このエントリは、サーバー側のキャッシュ エントリの有効期限が切れるまでのオペレーティング システムの時間をミリ秒単位で制御します。 値を 0 に設定すると、サーバー側のセッション キャッシュが無効になり、再接続できなくなります。 前の ServerCacheTime を増やすと、既定値によって Lsass.exe が消費するメモリ量が多くなります。 通常、各セッションキャッシュ要素には 2 ~ 4 KB のメモリが必要です。 既定では、このエントリはレジストリに存在しません。 
 
-適用可能なバージョン:Windows Server 2008 および Windows Vista 以降のすべてのバージョン。
+適用可能なバージョン: Windows Server 2008 および Windows Vista 以降のすべてのバージョン。
 
-レジストリパス:HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL
+レジストリパス: HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL
 
 既定のサーバーキャッシュ時間:10 時間
 
@@ -237,7 +233,7 @@ TLS クライアントが受け入れる、フラグメント化された TLS �
 Windows 10、バージョン1607、および Windows Server 2016 以降では、SSL 2.0 は削除されており、サポートされなくなりました。
 SSL 2.0 の既定の設定については、「 [TLS/SSL (SCHANNEL SSP) のプロトコル](https://msdn.microsoft.com/library/windows/desktop/mt808159.aspx)」を参照してください。 
 
-レジストリパス:HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols
+レジストリパス: HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols
 
 SSL 2.0 プロトコルを有効にするには、次の表に示すように、クライアントまたはサーバーのサブキーに**Enabled**エントリを作成します。 既定では、このエントリはレジストリに存在しません。 エントリを作成した後、DWORD 値を1に変更します。 
 
@@ -263,7 +259,7 @@ SSL 2.0 を既定で無効にするには、 **DisabledByDefault**エントリ�
 
 Windows 10、バージョン1607、および Windows Server 2016 以降では、SSL 3.0 は既定で無効になっています。 SSL 3.0 の既定の設定については、「 [TLS/SSL (SCHANNEL SSP) のプロトコル](https://msdn.microsoft.com/library/windows/desktop/mt808159.aspx)」を参照してください。 
 
-レジストリパス:HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols
+レジストリパス: HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols
 
 SSL 3.0 プロトコルを有効にするには、次の表に示すように、クライアントまたはサーバーのサブキーに**Enabled**エントリを作成します。  
 既定では、このエントリはレジストリに存在しません。 エントリを作成した後、DWORD 値を1に変更します。 
@@ -290,7 +286,7 @@ SSL 3.0 を既定で無効にするには、 **DisabledByDefault**エントリ�
 
 TLS 1.0 の既定の設定については、「 [tls/SSL (SCHANNEL SSP) のプロトコル](https://msdn.microsoft.com/library/windows/desktop/mt808159.aspx)」を参照してください。
 
-レジストリパス:HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols
+レジストリパス: HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols
 
 TLS 1.0 プロトコルを有効にするには、次の表に示すように、クライアントまたはサーバーのサブキーのいずれかに**Enabled**エントリを作成します。 既定では、このエントリはレジストリに存在しません。 エントリを作成した後、DWORD 値を1に変更します。 
 
@@ -316,7 +312,7 @@ TLS 1.0 を既定で無効にするには、 **DisabledByDefault**エントリ�
 
 TLS 1.1 の既定の設定については、「 [tls/SSL (SCHANNEL SSP) のプロトコル](https://msdn.microsoft.com/library/windows/desktop/mt808159.aspx)」を参照してください。
 
-レジストリパス:HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols
+レジストリパス: HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols
 
 TLS 1.1 プロトコルを有効にするには、次の表に示すように、クライアントまたはサーバーのサブキーのいずれかに**Enabled**エントリを作成します。 既定では、このエントリはレジストリに存在しません。 エントリを作成した後、DWORD 値を1に変更します。 
 
@@ -342,7 +338,7 @@ TLS 1.1 を既定で無効にするには、 **DisabledByDefault**エントリ�
 
 TLS 1.2 の既定の設定については、「 [tls/SSL (SCHANNEL SSP) のプロトコル](https://msdn.microsoft.com/library/windows/desktop/mt808159.aspx)」を参照してください。
 
-レジストリパス:HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols
+レジストリパス: HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols
 
 TLS 1.2 プロトコルを有効にするには、次の表に示すように、クライアントまたはサーバーのサブキーのいずれかに**Enabled**エントリを作成します。 既定では、このエントリはレジストリに存在しません。 エントリを作成した後、DWORD 値を1に変更します。 
 
@@ -368,7 +364,7 @@ TLS 1.2 を既定で無効にするには、 **DisabledByDefault**エントリ�
 
 DTLS 1.0 の既定の設定については、「 [TLS/SSL (SCHANNEL SSP) のプロトコル](https://msdn.microsoft.com/library/windows/desktop/mt808159.aspx)」を参照してください。
 
-レジストリパス:HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols
+レジストリパス: HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols
 
 DTLS 1.0 プロトコルを有効にするには、次の表に示すように、クライアントまたはサーバーのサブキーのいずれかに**Enabled**エントリを作成します。 既定では、このエントリはレジストリに存在しません。 エントリを作成した後、DWORD 値を1に変更します。 
 
@@ -394,7 +390,7 @@ SSPI アプリが DTLS 1.0 を使用するように要求すると、拒否さ�
 
 DTLS 1.2 の既定の設定については、「 [TLS/SSL (SCHANNEL SSP) のプロトコル](https://msdn.microsoft.com/library/windows/desktop/mt808159.aspx)」を参照してください。
 
-レジストリパス:HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols
+レジストリパス: HKLM SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols
 
 DTLS 1.2 プロトコルを有効にするには、次の表に示すように、クライアントまたはサーバーのサブキーのいずれかに**Enabled**エントリを作成します。 既定では、このエントリはレジストリに存在しません。 エントリを作成した後、DWORD 値を1に変更します。 
 

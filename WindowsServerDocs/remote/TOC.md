@@ -1,4 +1,4 @@
-# [リモート](index.md)
+# [リモート](index.yml)
 ## [MultiPoint Services](multipoint-services/MultiPoint-Services.md)
 ### [MultiPoint Services の展開を計画する](multipoint-services/Planning-a-MultiPoint-Services-Deployment.md)
 #### [MultiPoint Services の紹介](multipoint-services/Introducing-MultiPoint-services.md)

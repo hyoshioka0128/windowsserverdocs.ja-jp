@@ -1,28 +1,24 @@
 ---
 title: デスクトップ ホスティングの参照アーキテクチャ
 description: RDS および Azure でデスクトップ ホスティング ソリューションを作成するためのアーキテクチャに関するガイダンス。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 11/02/2016
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1bac5dd3-8430-46ee-8bef-10cc4b7cc437
 author: lizap
 manager: dongill
-ms.openlocfilehash: b325117c6fecc41bc91fc4384a663c4112d9ddca
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c2bc0c2ba3d12ea1caf8737369ba882f69b111e4
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387902"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "80818455"
 ---
 # <a name="desktop-hosting-reference-architecture"></a>デスクトップ ホスティングの参照アーキテクチャ
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016
+>適用先:Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016
 
 この記事では、リモート デスクトップ サービス (RDS) と Microsoft Azure 仮想マシンを使用してマルチテナント型かつホステッド型の Windows デスクトップおよびアプリケーションのサービス ("デスクトップ ホスティング" と呼ぶ) を作成するための一連のアーキテクチャ ブロックを定義します。 このアーキテクチャの参照を使用して、ユーザー数が 5 人から 5000 人の小規模から中規模の組織を対象とする、高い安全性、拡張性、信頼性を持つデスクトップ ホスティング ソリューションを作成できます。    
   

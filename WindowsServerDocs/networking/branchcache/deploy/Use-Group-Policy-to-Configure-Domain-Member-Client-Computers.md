@@ -6,15 +6,15 @@ ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: get-started-article
 ms.assetid: 911c1538-f79d-42e9-ba38-f4618f87b008
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 06/02/2018
-ms.openlocfilehash: 6f093e605ce735d8f86f7f4d479a646d144e8829
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c6ca1ff8fabb559628afd2dd1abafc56a908909a
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356516"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80319195"
 ---
 # <a name="use-group-policy-to-configure-domain-member-client-computers"></a>グループ ポリシーを使用して、ドメイン メンバー クライアント コンピューターを構成するには
 
@@ -35,13 +35,13 @@ ms.locfileid: "71356516"
   
 メンバーである必要があります **Domain Admins**, 、またはこれらの手順に相当します。  
   
-## <a name="bkmk_gp"></a>グループポリシーオブジェクトを作成し、BranchCache モードを構成するには  
+## <a name="to-create-a-group-policy-object-and-configure-branchcache-modes"></a><a name="bkmk_gp"></a>グループポリシーオブジェクトを作成し、BranchCache モードを構成するには  
   
-1.  なる Active Directory ドメイン サービスのサーバーの役割がインストールされている、サーバー マネージャーで、コンピューターで **ツール**, 、 をクリックし、 **Group Policy Management**します。 グループポリシー管理コンソールが開きます。  
+1.  なる Active Directory ドメイン サービスのサーバーの役割がインストールされている、サーバー マネージャーで、コンピューターで **ツール**, 、 をクリックし、 **Group Policy Management**します。 グループ ポリシーの管理コンソールが表示されます。  
   
 2.  グループポリシー管理コンソールで、次のパスを展開します: **Forest:** *example.com*、 **Domains**、 *example.com*、**グループポリシー Objects**。ここで、 *example.com*は、構成する BranchCache クライアントコンピューターアカウントが配置されているドメインの名前です。  
   
-3.  右クリック **グループ ポリシー オブジェクト**, 、クリックして **新規**します。 **新しい GPO**  ダイアログ ボックスが表示されます。 **名**, 、名前の新しいグループ ポリシー オブジェクト (GPO) を入力します。 たとえば、BranchCache クライアント コンピューター オブジェクトの名前を付ける場合は、「 **BranchCache クライアント コンピューター**します。 **[OK]** をクリックします。  
+3.  右クリック **グループ ポリシー オブジェクト**, 、クリックして **新規**します。 **新しい GPO**  ダイアログ ボックスが表示されます。 **名**, 、名前の新しいグループ ポリシー オブジェクト (GPO) を入力します。 たとえば、BranchCache クライアント コンピューター オブジェクトの名前を付ける場合は、「 **BranchCache クライアント コンピューター**します。 **[OK]** をクリックすると、  
   
 4.  グループ ポリシー管理コンソールで **グループ ポリシー オブジェクト** が選択されているし、詳細ウィンドウで、作成した GPO を右クリックします。 たとえば、GPO BranchCache クライアント コンピューターの名前を付けた場合を右クリックして **BranchCache クライアント コンピューター**します。 **[編集]** をクリックします。 グループポリシー管理エディターコンソールが開きます。  
   
@@ -64,7 +64,7 @@ ms.locfileid: "71356516"
   
 12. 以下の手順を使用すると、グループ ポリシーを使用してクライアント コンピューターでファイアウォールの設定を構成できます。  
   
-## <a name="bkmk_inbound"></a>セキュリティが強化される Windows ファイアウォールの受信トラフィック規則を構成するには  
+## <a name="to-configure-windows-firewall-with-advanced-security-inbound-traffic-rules"></a><a name="bkmk_inbound"></a>セキュリティが強化される Windows ファイアウォールの受信トラフィック規則を構成するには  
   
 1.  グループポリシー管理コンソールで、次のパスを展開します: **Forest:** *example.com*、 **Domains**、 *example.com*、**グループポリシー Objects**。ここで、 *example.com*は、構成する BranchCache クライアントコンピューターアカウントが配置されているドメインの名前です。  
   
@@ -72,7 +72,7 @@ ms.locfileid: "71356516"
   
 3.  グループ ポリシー管理エディター コンソールで、次のパスを展開します。 **コンピューターの構成**, 、**ポリシー**, 、**Windows の設定**, 、**セキュリティ設定**, 、**セキュリティが強化された Windows ファイアウォール**, 、**セキュリティが強化された - LDAP の Windows ファイアウォール**, 、**受信の規則**します。  
   
-4.  受信の **[規則]** を右クリックし、 **[新しい規則]** をクリックします。 新しい受信の規則ウィザードが開きます。  
+4.  右クリック **受信の規則**, 、クリックして **新しいルール**します。 新しい受信の規則ウィザードが開きます。  
   
 5.  **規則の種類**, 、 をクリックして **定義済み**, 、選択肢の一覧を展開し、クリックして **BranchCache - コンテンツの取得 (HTTP を使用して)** します。 **[次へ]** をクリックします。  
   
@@ -94,7 +94,7 @@ ms.locfileid: "71356516"
     > [!IMPORTANT]  
     > 選択する必要があります **接続を許可する** BranchCache クライアントがこのポートでトラフィックを受信できるようにするためです。  
   
-## <a name="bkmk_outbound"></a>セキュリティが強化されるように Windows ファイアウォールの送信トラフィック規則を構成するには  
+## <a name="to-configure-windows-firewall-with-advanced-security-outbound-traffic-rules"></a><a name="bkmk_outbound"></a>セキュリティが強化されるように Windows ファイアウォールの送信トラフィック規則を構成するには  
   
 1.  グループ ポリシー管理エディター コンソールで、右クリック **送信の規則**, 、クリックして **新しいルール**します。 新しい送信規則ウィザードが開きます。  
   

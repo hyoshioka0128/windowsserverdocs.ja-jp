@@ -1,33 +1,29 @@
 ---
 title: リモート デスクトップ サービス (ターミナル サービス) のコマンド リファレンス
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: 参照記事 * * * *-
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2f371848-5c48-470c-908c-afbc95d3a805
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3d13d6ac2e423c5a07a2a84af5e17fe9081cd70f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 55466409517b63c52f88a7acec3a8f4aba7d258d
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71371612"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933469"
 ---
 # <a name="remote-desktop-services-terminal-services-command-reference"></a>リモート デスクトップ サービス (ターミナル サービス) のコマンド リファレンス
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 リモート デスクトップ サービスのコマンド ライン ツールの一覧を次に示します。
 > [!NOTE]
-> Windows Server 2008 R2 で、「ターミナル サービス」は「リモート デスクトップ サービス」に名前変更されました。 最新バージョンの新機能については、Windows Server TechNet ライブラリの[Windows Server 2012 のリモートデスクトップサービスの新機能](https://technet.microsoft.com/library/hh831527) を参照してください。
-> 
+> Windows Server 2008 R2 で、「ターミナル サービス」は「リモート デスクトップ サービス」に名前変更されました。 最新バージョンの新機能については、Windows Server TechNet ライブラリの「 [Windows server 2012 のリモートデスクトップサービスの新機能](https://technet.microsoft.com/library/hh831527)」を参照してください。
+>
 > |                 コマンド                 |                                                      説明                                                       |
 > |-----------------------------------------|------------------------------------------------------------------------------------------------------------------------|
 > |           [change](change.md)           | ログオン、COM ポートのマッピング、およびインストールモードのリモートデスクトップセッションホスト (rd セッションホスト) サーバーの設定を変更します。 |

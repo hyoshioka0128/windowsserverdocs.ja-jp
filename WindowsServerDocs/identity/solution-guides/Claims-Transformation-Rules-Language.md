@@ -1,7 +1,6 @@
 ---
 ms.assetid: e831f781-3c45-4d44-b411-160d121d1324
 title: 要求変換規則言語
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 200d592bc68562856bbdee623e70d73d41457c15
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f391c3f8ef2bb5b12f0dd15db55df4f861c05f9b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357582"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861275"
 ---
 # <a name="claims-transformation-rules-language"></a>要求変換規則言語
 
@@ -24,7 +23,7 @@ ms.locfileid: "71357582"
   
 フォレスト全体の信頼に対する変換ポリシーの Windows PowerShell コマンドレットには、一般的なシナリオで必要な単純なポリシーを設定するためのオプションがあります。 これらのコマンドレットは、要求変換規則言語のポリシーと規則にユーザー入力を変換し、指定された形式で Active Directory に格納します。 要求変換のコマンドレットの詳細については、「[動的 Access Control 用の AD DS コマンドレット](https://go.microsoft.com/fwlink/?LinkId=243150)」を参照してください。  
   
-要求の構成と Active Directory フォレスト内のフォレスト全体の信頼に対する要件によっては、要求の変換ポリシーが、Windows PowerShell コマンドレットでサポートされている Active のポリシーより複雑になることがあります。名簿. このようなポリシーを効果的に作成するには、要求変換規則言語の構文とセマンティクスを理解しておくことが不可欠です。 Active Directory のこの要求変換規則言語 ("言語") は、類似した目的で[Active Directory フェデレーションサービス (AD FS)](https://go.microsoft.com/fwlink/?LinkId=243982)によって使用される言語のサブセットであり、構文とセマンティクスが非常によく似ています。 ただし、許可される操作の数は減り、Active Directory バージョンの言語では追加の構文制限が適用されます。  
+要求の構成と、Active Directory フォレスト内のフォレスト全体の信頼に対する要件によっては、要求変換ポリシーが Active Directory 用の Windows PowerShell コマンドレットでサポートされているポリシーよりも複雑になる場合があります。 このようなポリシーを効果的に作成するには、要求変換規則言語の構文とセマンティクスを理解しておくことが不可欠です。 Active Directory のこの要求変換規則言語 ("言語") は、類似した目的で[Active Directory フェデレーションサービス (AD FS)](https://go.microsoft.com/fwlink/?LinkId=243982)によって使用される言語のサブセットであり、構文とセマンティクスが非常によく似ています。 ただし、許可される操作の数は減り、Active Directory バージョンの言語では追加の構文制限が適用されます。  
   
 このトピックでは、Active Directory の要求変換規則言語の構文とセマンティクス、およびポリシーを作成するときに行う考慮事項について簡単に説明します。 これには、開始するためのいくつかのサンプルルールのセットと、不適切な構文の例と生成されるメッセージの例が用意されており、ルールの作成時にエラーメッセージを解読するのに役立ちます。  
   
@@ -153,7 +152,7 @@ Final Output:
     C1:[] => Issule (claim = C1);  
     ```  
   
-## <a name="security-considerations"></a>セキュリティの考慮事項  
+## <a name="security-considerations"></a>セキュリティに関する考慮事項  
 **フォレストに入る要求**  
   
 フォレストに着信するプリンシパルによって提示される要求は、正しい要求だけを許可または発行するように十分に検査する必要があります。 不適切な要求を行うと、フォレストのセキュリティが損なわれる可能性があります。これは、フォレストに入る要求の変換ポリシーを作成するときに考慮する必要があります。  
@@ -225,7 +224,7 @@ Active Directory は、この場合の目的を特定できず、フェールセ
   
 このセクションでは、不適切な構文を使用して記述されたルールの例と、パーサーによって生成される対応する構文エラーについて説明します。  
   
-1. 以下に例を示します。  
+1. 例:  
   
    ```  
    c1;[]=>Issue(claim=c1);  
@@ -237,7 +236,7 @@ Active Directory は、この場合の目的を特定できず、フェールセ
    *行番号: 1、列番号: 2、エラートークン:;。行: ' c1;[] = > 問題 (要求 = c1); '。*  
    *パーサーエラー: ' POLICY0030: 構文エラーが発生し、予期しない '; ' が発生します。次のいずれかが必要です: ': '。 '*  
   
-2. 以下に例を示します。  
+2. 例:  
   
    ```  
    c1:[]=>Issue(claim=c2);  
@@ -247,7 +246,7 @@ Active Directory は、この場合の目的を特定できず、フェールセ
    **エラーメッセージ**:   
    *POLICY0011: CopyIssuanceStatement: ' c2 ' に指定された条件タグと一致する条件が要求規則にありません。*  
   
-3. 以下に例を示します。  
+3. 例:  
   
    ```  
    c1:[type=="x1", value=="1", valuetype=="bool"]=>Issue(claim=c1)  
@@ -259,7 +258,7 @@ Active Directory は、この場合の目的を特定できず、フェールセ
    行番号: 1、列番号:39、エラートークン: "bool"。 行: ' c1: [type = = "x1", value = = "1", valuetype = = "bool"] = > Issue (claim = c1); '。   
    *パーサーエラー: ' POLICY0030: 構文エラーが発生し、予期しない ' STRING ' が指定されています: ' INT64_TYPE ' ' UINT64_TYPE ' ' STRING_TYPE ' ' BOOLEAN_TYPE ' ' IDENTIFIER '*  
   
-4. 以下に例を示します。  
+4. 例:  
   
    ```  
    c1:[type=="x1", value==1, valuetype=="boolean"]=>Issue(claim=c1);  
@@ -270,7 +269,7 @@ Active Directory は、この場合の目的を特定できず、フェールセ
    *POLICY0002: ポリシーデータを解析できませんでした。*  
    *行番号: 1、列番号:23、エラートークン: 1。行: ' c1: [type = = "x1"、value = = 1、valuetype = = "bool"] = > Issue (claim = c1); '。* <em>パーサーエラー: ' POLICY0029: 予期しない入力です。</em>  
   
-5. 以下に例を示します。  
+5. 例:  
   
    ```  
    c1:[type == "x1", value == "1", valuetype == "boolean"] =>   
@@ -285,7 +284,7 @@ Active Directory は、この場合の目的を特定できず、フェールセ
    *valuetype = = "boolean"] = > Issue (type = c1. type, value = "0", valuetype = = "boolean"); '。*  
    *パーサーエラー: ' POLICY0030: 構文エラーです。予期しない ' = = ' が想定されています。次のいずれかが必要です: ' = '*  
   
-6. 以下に例を示します。  
+6. 例:  
   
    ```  
    c1:[type=="x1", value=="boolean", valuetype=="string"] =>   
@@ -295,7 +294,7 @@ Active Directory は、この場合の目的を特定できず、フェールセ
   
    この例は構文的で、意味は正しいです。 ただし、文字列値として "boolean" を使用すると、混乱を招く可能性があるため、回避する必要があります。 既に説明したように、可能な限り、言語端末を要求値として使用することは避けてください。  
   
-## <a name="BKMK_LT"></a>言語ターミナル  
+## <a name="language-terminals"></a><a name="BKMK_LT"></a>言語ターミナル  
 次の表に、すべてのターミナル文字列と、要求変換ルール言語で使用される関連言語ターミナルの一覧を示します。 これらの定義では、大文字と小文字を区別しない UTF-16 文字列を使用します。  
   
 |String|ターミナル|  
@@ -314,9 +313,9 @@ Active Directory は、この場合の目的を特定できず、フェールセ
 |"=~"|REGEXP_MATCH|  
 |"!~"|REGEXP_NOT_MATCH|  
 |"="|割り当てる|  
-|"& &"|および|  
+|"& &"|AND|  
 |関する|問題|  
-|各種|TYPE|  
+|各種|種類:|  
 |数値|Value|  
 |valuetype|VALUE_TYPE|  
 |言う|言う|  
@@ -324,7 +323,7 @@ Active Directory は、この場合の目的を特定できず、フェールセ
 |"\\" [^\\"\n] *\\" "|STRING|  
 |uint64|UINT64_TYPE|  
 |int64|INT64_TYPE|  
-|文字列|STRING_TYPE|  
+|"文字列"|STRING_TYPE|  
 |演算|BOOLEAN_TYPE|  
   
 ## <a name="language-syntax"></a>言語の構文  

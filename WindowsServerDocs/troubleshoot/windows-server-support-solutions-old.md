@@ -2,23 +2,22 @@
 title: Windows Server 向けの上位のサポート ソリューション
 description: Windows Server の問題のソリューションへのリンクを示します。
 ms.prod: windows-server
-ms.service: na
 manager: alant
 ms.technology: server-general
 ms.date: 03/16/2018
 ms.topic: article
 author: kaushika-msft
 ms.author: elizapo
-ms.openlocfilehash: 1ef9d511f8946452c5f9f05628c67c5908c53a55
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6bd0d22c7df7344e6c4bfbf8360532ab0f36d117
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402764"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820755"
 ---
 # <a name="top-support-solutions-for-windows-server-2016"></a>Windows Server 2016 向けの上位のサポート ソリューション
 
-Microsoft では Windows Server 用の更新プログラムとソリューションの両方を定期的にリリースします。 お客様のサーバーでセキュリティ更新プログラムなどの今後の更新プログラムを受信できることを確認するには、サーバーを最新の状態に維持する必要があります。 リリースされた更新プログラムの完全なリストについては、「[Windows 10 および Windows Server 2016 の更新履歴](https://support.microsoft.com/en-us/help/4000825/windows-10-windows-server-2016-update-history)」をご覧ください。
+Microsoft では Windows Server 用の更新プログラムとソリューションの両方を定期的にリリースします。 お客様のサーバーでセキュリティ更新プログラムなどの今後の更新プログラムを受信できることを確認するには、サーバーを最新の状態に維持する必要があります。 リリースされた更新プログラムの完全なリストについては、「[Windows 10 および Windows Server 2016 の更新履歴](https://support.microsoft.com/help/4000825/windows-10-windows-server-2016-update-history)」をご覧ください。
 
 これらは、Windows Server 2016 を使用する際に発生する最も一般的な問題に関する上位の Microsoft サポート ソリューションです。 次のリンクには、サポート技術情報の記事、更新プログラム、ライブラリの記事へのリンクが含まれます。
 
@@ -27,14 +26,14 @@ Microsoft では Windows Server 用の更新プログラムとソリューショ
 
 ## <a name="solutions-for-installing-or-upgrading-windows-server"></a>Windows Server のインストールとアップグレードに関連するソリューション
 
-- [Windows 10 のアップグレードエラーを解決する:IT 担当者向け技術情報](https://docs.microsoft.com/windows/deployment/upgrade/resolve-windows-10-upgrade-errors)
-- [Windows 10 バージョン1607および Windows Server 2016 のサービススタック更新プログラム:2017年8月8日](https://support.microsoft.com/en-US/help/4035631)
-- [Windows 10 バージョン1607および Windows Server 2016 にアップグレードする場合の互換性更新プログラム:2017年8月3日](https://support.microsoft.com/en-US/help/4033524)
-- [Windows ベースの Azure Vm では、インプレースシステムアップグレードはサポートされていません](https://support.microsoft.com/en-US/help/4014997)
+- [Windows 10 のアップグレードエラーの解決: IT 担当者向け技術情報](https://docs.microsoft.com/windows/deployment/upgrade/resolve-windows-10-upgrade-errors)
+- [Windows 10 バージョン1607および Windows Server 2016 のサービススタック更新プログラム: 2017 年8月8日](https://support.microsoft.com/help/4035631)
+- [Windows 10 バージョン1607および Windows Server 2016 にアップグレードするための互換性更新プログラム: 2017 年8月3日](https://support.microsoft.com/help/4033524)
+- [Windows ベースの Azure Vm では、インプレースシステムアップグレードはサポートされていません](https://support.microsoft.com/help/4014997)
 - [Windows Server 2016 のアップグレードオプションと変換オプション](../get-started/supported-upgrade-paths.md)
 - [Windows Server 2016 のサーバーの役割のアップグレードと移行に関するマトリックス](../get-started/server-role-upgradeability-table.md)
 - [Windows Server のインストールとアップグレード](../get-started/installation-and-upgrade.md)
-- [リリース ノート:Windows Server 2016 に関する重要な問題](../get-started/windows-server-2016-ga-release-notes.md)
+- [リリースノート: Windows Server 2016 に関する重要な問題](../get-started/windows-server-2016-ga-release-notes.md)
 - [Windows Server 2016 への移行に関する推奨事項](../get-started/recommendations-moving-to-server2016.md)
 
 ## <a name="solutions-for-volume-activation"></a>ボリューム ライセンス認証のソリューション
@@ -70,9 +69,9 @@ Microsoft では Windows Server 用の更新プログラムとソリューショ
 
 - [Active Directory レプリケーションの問題のトラブルシューティングに関するページ](../identity/ad-ds/manage/troubleshoot/troubleshooting-active-directory-replication-problems.md)
 - [Microsoft ダウンロードセンターから Active Directory Replication Status ツールをダウンロードする](https://www.microsoft.com/en-in/download/details.aspx?id=30005)
-- [e2e一般的な Active Directory レプリケーションエラーをトラブルシューティングする方法](https://support.microsoft.com/kb/3108513)
-- [AD レプリケーションエラー8606のトラブルシューティング:オブジェクトを作成するための十分な属性が指定されていません](https://support.microsoft.com/kb/2028495)
+- [e2e: 一般的な Active Directory レプリケーションエラーをトラブルシューティングする方法](https://support.microsoft.com/kb/3108513)
+- [AD レプリケーションエラー8606のトラブルシューティング: オブジェクトを作成するための属性が不足しています](https://support.microsoft.com/kb/2028495)
 - [Windows 2000 サーバーと Windows Server 2003 の Active Directory の入力方向のレプリケーション中にイベント ID 2108 とイベント ID 1084 が発生する](https://support.microsoft.com/kb/837932)
-- [AD レプリケーションエラー8451のトラブルシューティング:レプリケーション操作でデータベースエラーが発生しました](https://support.microsoft.com/kb/2645996)
-- [AD レプリケーションエラー1127のトラブルシューティング:ハードディスクにアクセスしているときに、再試行後もディスク操作が失敗する](https://support.microsoft.com/kb/2025726)
+- [AD レプリケーションエラー8451のトラブルシューティング: レプリケーション操作でデータベースエラーが発生しました](https://support.microsoft.com/kb/2645996)
+- [AD レプリケーションエラー1127のトラブルシューティング: ハードディスクへのアクセス中に、再試行後もディスク操作が失敗する](https://support.microsoft.com/kb/2025726)
 - [サーバーメタデータのクリーンアップ](https://technet.microsoft.com/library/cc816907.aspx)

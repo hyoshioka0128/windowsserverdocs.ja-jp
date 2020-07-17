@@ -1,42 +1,49 @@
 ---
-title: bitsadmin gei pertokensid
-description: '**Bitsadmin ge pertokensid**の Windows コマンドのトピックが設定されている場合は、BITS 転送ジョブのヘルパートークンの SID を返します。'
-ms.custom: na
+title: bitsadmin gethelpertokensid
+description: BITS 転送ジョブのヘルパートークンが設定されている場合、その SID を返す bitsadmin geの pertokensid コマンドの参照記事。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/01/2019
-ms.openlocfilehash: a8c2a9f319defd8ac9acd36063ee079c24ad8ae0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b616b9cc80b21c4c6a72fcca55dcdd893fac2730
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71381593"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928192"
 ---
-# <a name="bitsadmin-gethelpertokensid"></a>bitsadmin gei pertokensid
+# <a name="bitsadmin-gethelpertokensid"></a>bitsadmin gethelpertokensid
 
-BITS 転送ジョブの [ヘルパートークン](/windows/desktop/bits/helper-tokens-for-bits-transfer-jobs)が設定されている場合、その SID を返します。
+BITS 転送ジョブの [ヘルパートークン](https://docs.microsoft.com/windows/win32/bits/helper-tokens-for-bits-transfer-jobs)が設定されている場合、その SID を返します。
 
-**BITS 3.0 以前**: サポートされていません。
+> [!NOTE]
+> このコマンドは、BITS 3.0 以前ではサポートされていません。
 
 ## <a name="syntax"></a>構文
 
 ```
-bitsadmin /GetHelperTokensID <Job>
+bitsadmin /gethelpertokensid <job>
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
-|---------|-----------|
-|Job|ジョブの表示名または GUID|
+| パラメーター | 説明 |
+| -------------- | -------------- |
+| ジョブ (job) | ジョブの表示名または GUID。 |
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="examples"></a>例
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+*Mydownloadjob*という名前の BITS 転送ジョブの SID を取得するには、次のようにします。
+
+```
+bitsadmin /gethelpertokensid myDownloadJob
+```
+
+## <a name="additional-references"></a>その他の参照情報
+
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [bitsadmin コマンド](bitsadmin.md)

@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 02/15/2019
-ms.openlocfilehash: 1643568cd1a0cdbb693d773a8357d2c36b701fd3
-ms.sourcegitcommit: 7c7fc443ecd0a81bff6ed6dbeeaf4f24582ba339
+ms.openlocfilehash: fc8e6ffa39320cfc73bf3f5bd0a5bc765ded24b4
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2019
-ms.locfileid: "74903981"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79322874"
 ---
 # <a name="get-started-with-windows-admin-center"></a>Windows 管理センターを使ってみる
 
@@ -21,7 +21,7 @@ ms.locfileid: "74903981"
 
 > [!Tip]
 > Windows Admin Center を初めて使用する場合
-> [Windows Admin Center についての詳細を確認する](../understand/windows-admin-center.md)か、[今すぐダウンロード](https://aka.ms/windowsadmincenter)してください。
+> [Windows Admin Center についての詳細を確認する](../overview.md)か、[今すぐダウンロード](https://aka.ms/windowsadmincenter)してください。
 
 ## <a name="windows-admin-center-installed-on-windows-10"></a>Windows 10 にインストールされた windows 管理センター
 
@@ -52,7 +52,7 @@ Windows 管理センターのインストールが完了したら、メインの
 
  **単一のサーバーまたはクラスターを管理ノードとして追加する**
 
-1. をクリックして **+ 追加** **すべて接続**します。
+1. **[すべての接続]** の下にある **[+ 追加]** をクリックします。
 
    ![](../media/launch/addserver0.png)
 
@@ -97,7 +97,7 @@ Windows 管理センターでは、管理対象ノードで認証を行うため
 
 現在の Windows 資格情報を使用して、管理対象ノードで認証を行うことができます。 これは既定の設定であり、Windows 管理センターはサーバーを追加するときにサインオンを試行します。 
 
-**Windows Server にサービスとして展開された場合のシングルサインオン**
+**Windows Server にサービスとしてデプロイされた場合のシングル サインオン**
 
 Windows Server に Windows 管理センターがインストールされている場合は、シングルサインオンのために追加の構成が必要になります。  [委任のために環境を構成する](../configure/user-access-control.md)
 
@@ -117,7 +117,7 @@ Windows 管理センターが Windows Server でサービスモードで実行�
 
 **ローカル管理者パスワードソリューション (LAPS)**
 
-お使いの環境で[LAPS](https://technet.microsoft.com/mt227395.aspx)を使用していて、Windows 管理センターが WINDOWS 10 PC にインストールされている場合は、LAPS の資格情報を使用して、管理対象ノードで認証を行うことができます。 **このシナリオを使用する場合は、フィードバックを提供してください** [](https://aka.ms/WACFeedback)。
+お使いの環境で[LAPS](https://technet.microsoft.com/mt227395.aspx)を使用していて、Windows 管理センターが WINDOWS 10 PC にインストールされている場合は、LAPS の資格情報を使用して、管理対象ノードで認証を行うことができます。 **このシナリオを使用する場合は、フィードバックを提供してください** [provide feedback](https://aka.ms/WACFeedback)。
 
 ## <a name="using-tags-to-organize-your-connections"></a>タグを使用した接続の整理
 
@@ -151,7 +151,7 @@ Windows 管理センターが Windows Server でサービスモードで実行�
 * 選択したタグのフィルター動作を変更するには、"or"、"and"、または "not" を選択します。
 ![](../media/launch/tags-8.png)
 
-## <a name="use-powershell-to-import-or-export-your-connections-with-tags"></a>PowerShell を使用した接続のインポートまたはエクスポート (タグあり)
+## <a name="use-powershell-to-import-or-export-your-connections-with-tags"></a>PowerShell を使用して (タグを使って) 接続をインポートまたはエクスポートする
 
 [!INCLUDE [ps-connections](../includes/ps-connections.md)]
 

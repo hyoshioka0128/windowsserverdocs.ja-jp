@@ -3,27 +3,27 @@ ms.assetid: 898d72f1-01e7-4b87-8eb3-a8e0e2e6e6da
 title: サーバーまたはドライブを記憶域スペース ダイレクトに追加する
 ms.prod: windows-server
 ms.author: cosdar
-ms.manager: dongill
+manager: dongill
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 11/06/2017
 description: 記憶域スペースダイレクトクラスターにサーバーまたはドライブを追加する方法
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d5949b8fce7253371ee7ecea5118596f713f037
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: be79a2d3e0e8c56afc409298518d967c9bc80453
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71393782"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859125"
 ---
 # <a name="adding-servers-or-drives-to-storage-spaces-direct"></a>サーバーまたはドライブを記憶域スペース ダイレクトに追加する
 
->適用対象:Windows Server 2019、Windows Server 2016
+>適用対象: Windows Server 2019、Windows Server 2016
 
 このトピックでは、サーバーやドライブを記憶域スペース ダイレクトに追加する方法について説明します。
 
-## <a name="adding-servers"></a>サーバーの追加
+## <a name="adding-servers"></a><a name="adding-servers"></a>サーバーの追加
 
 サーバーの追加 (スケール アウトとも呼ばれます) によって、記憶域容量が増えます。また、記憶域のパフォーマンスを向上したり、より優れた記憶域の効率を実現したりすることができます。 展開がハイパーコンバージされている場合、サーバーを追加すると、ワークロードのコンピューティング リソースも増えます。
 
@@ -81,7 +81,7 @@ New-Volume -FriendlyName <Name> -FileSystem CSVFS_ReFS -StoragePoolFriendlyName 
 
 #### <a name="option-3"></a>オプション 3
 
-*Capacity* と呼ばれる **StorageTier** テンプレートに対して **PhysicalDiskRedundancy = 2** を設定し、その階層を参照してボリュームを作成します。
+**Capacity** と呼ばれる **StorageTier** テンプレートに対して *PhysicalDiskRedundancy = 2* を設定し、その階層を参照してボリュームを作成します。
 
 ```PowerShell
 Set-StorageTier -FriendlyName Capacity -PhysicalDiskRedundancy 2 
@@ -121,7 +121,7 @@ New-Volume -FriendlyName <Name> -FileSystem CSVFS_ReFS -StoragePoolFriendlyName 
 
 #### <a name="option-3"></a>オプション 3
 
-単に既存の階層テンプレートを削除し、2 つの新しい階層を作成するのが一番簡単な方法です。 この方法は、階層テンプレートを参照して作成された既存のボリュームには影響しません。テンプレートのみが影響を受けます。
+単に既存の階層テンプレートを削除し、2 つの新しい階層を作成するのが一番簡単な方法です。 これは、階層テンプレートを参照することによって作成された既存のボリュームには影響しません。これはテンプレートにすぎません。
 
 ```PowerShell
 Remove-StorageTier -FriendlyName Capacity
@@ -130,7 +130,7 @@ New-StorageTier -StoragePoolFriendlyName S2D* -MediaType HDD -PhysicalDiskRedund
 New-StorageTier -StoragePoolFriendlyName S2D* -MediaType HDD -PhysicalDiskRedundancy 2 -ResiliencySettingName Parity -FriendlyName Capacity
 ```
 
-これで完了です。 これらの階層テンプレートを参照することにより、ミラーリングによってパリティが高速化されたボリュームを作成することができます。
+以上で終わりです。 これらの階層テンプレートを参照することにより、ミラーリングによってパリティが高速化されたボリュームを作成することができます。
 
 #### <a name="example"></a>例
 
@@ -166,7 +166,7 @@ New-Volume -FriendlyName "Sir-Mix-A-Lot" -FileSystem CSVFS_ReFS -StoragePoolFrie
 
 3. 「[サーバーの追加](#adding-servers)」に従ってクラスターにサーバーを追加します。 新しいサーバーがクラスターに参加すると、(その名前を使用して) プレースホルダー フォールト ドメインに自動的に関連付けられます。
 
-## <a name="adding-drives"></a>ドライブの追加
+## <a name="adding-drives"></a><a name="adding-drives"></a>ドライブの追加
 
 ドライブの追加 (スケール アップとも呼ばれます) によって、記憶域容量が増え、パフォーマンスも改善できます。 空きスロットがある場合、サーバーを追加することなく、各サーバーにドライブを追加して記憶域容量を拡張することができます。 キャッシュ ドライブやデータ格納用ドライブはいつでも個別に追加できます。
 

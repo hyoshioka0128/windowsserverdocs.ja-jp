@@ -2,30 +2,26 @@
 title: アクセス制御のユーザーの役割を作成する
 description: このトピックは、Windows Server 2016 の IP アドレス管理 (IPAM) 管理ガイドに含まれています。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ipam
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ae6a42db-a104-401b-a8e6-b85c47d30b46
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 01e3216ca62cdb780342b477e575e00cdeedc6dd
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 90ba50189b0f42f1f581032b7dc8b52b8c3fca4d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405708"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80814765"
 ---
 # <a name="create-a-user-role-for-access-control"></a>アクセス制御のユーザーの役割を作成する
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックを使用して、IPAM クライアントコンソールで新しい Access Control ユーザーロールを作成できます。  
   
-メンバーシップ **管理者**, 、同等の権限をこの手順を実行するために必要な最低限のですか。  
+この手順を実行するには、**Administrators** のメンバーシップ、またはそれと同等のメンバーシップが最低限必要です。  
   
 > [!NOTE]  
 > ロールを作成した後、アクセスポリシーを作成して、特定のユーザーまたは Active Directory グループにロールを割り当てることができます。 詳細については、「[アクセスポリシーを作成する](../../technologies/ipam/Create-an-Access-Policy.md)」を参照してください。  
@@ -58,7 +54,7 @@ ms.locfileid: "71405708"
   
     ![新しいロールの詳細](../../media/Create-a-User-Role-for-Access-Control/ipam_CreateUserRole_06.jpg)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [ロールベースの Access Control](Role-based-Access-Control.md)  
 [IPAM の管理](Manage-IPAM.md)  
   

@@ -1,27 +1,23 @@
 ---
 title: SDN のソフトウェア負荷分散 (SLB)
 description: このトピックでは、Windows Server 2016 のソフトウェア定義ネットワークのソフトウェア負荷分散について説明します。
-manager: brianlic
-ms.custom: na
+manager: grcusanz
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-sdn
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 97abf182-4725-4026-801c-122db96964ed
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 35743d9e1a25c71a35eed018a4a3882a3d094d76
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: anpaul
+author: AnirbanPaul
+ms.openlocfilehash: 245faa00eed6f8ee49f8d178ab2cde5d01b1e23e
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355567"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859575"
 ---
 # <a name="software-load-balancing-slb-for-sdn"></a>SDN のソフトウェア負荷分散 \(SLB\)
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックでは、Windows Server 2016 のソフトウェア定義ネットワークのソフトウェア負荷分散について説明します。  
 
@@ -114,7 +110,7 @@ SLB には、次を含む、ネットワーク インフラストラクチャの
   
 従来のロード バランサー アプライアンスし、プローブがアプライアンス上で発生した、ネットワーク経由で DIP に移動中とは異なり、DIP があると、さらに、ホストにわたる作業の分散、DIP に SLB ホスト エージェントから直接移動のホスト上で発生した SLB プローブします。  
   
-## <a name="bkmk_infrastructure"></a>ソフトウェア負荷分散インフラストラクチャ  
+## <a name="software-load-balancing-infrastructure"></a><a name="bkmk_infrastructure"></a>ソフトウェア負荷分散インフラストラクチャ  
 Windows Server SLB を展開するには、Windows Server 2016 のネットワーク コント ローラーと 1 つまたは複数の SLB MUX Vm を展開する必要があります。  
   
 さらに、SDN 対応の HYPER-V 仮想スイッチを使用して HYPER-V ホストを構成して、SLB ホスト エージェントが実行されていることを確認する必要があります。  ホストを提供するルーターは、同じコスト (ECMP) のマルチパス ルーティングおよびボーダー ゲートウェイ プロトコル (BGP) をサポートする必要がありますや、SLB MUXes から BGP ピアリングの要求を受け入れるように構成する必要があります。  
@@ -131,7 +127,7 @@ System Center の 2016年では、SLB マネージャーおよびヘルス モ�
 System Center 2016 の詳細については、次を参照してください。 [システム センター 2016](https://www.microsoft.com/server-cloud/products/system-center-2016/)します。  
   
 > [!NOTE]  
-> System Center 2016 を使用しないようにする場合は、ネットワーク コント ローラーおよびその他の SLB インフラストラクチャ インストールし、構成に Windows PowerShell または別の管理アプリケーションを使用できます。 詳細については、[Windows PowerShell を使用してネットワーク コントローラーを展開する](../../../sdn/deploy/Deploy-Network-Controller-using-Windows-PowerShell.md) を参照してください。  
+> System Center 2016 を使用しないようにする場合は、ネットワーク コント ローラーおよびその他の SLB インフラストラクチャ インストールし、構成に Windows PowerShell または別の管理アプリケーションを使用できます。 詳細については、次を参照してください。 [展開ネットワーク コント ローラーが Windows PowerShell を使用して](../../../sdn/deploy/Deploy-Network-Controller-using-Windows-PowerShell.md)します。  
   
 ### <a name="network-controller"></a>ネットワーク コントローラー  
 ネットワーク コント ローラーは、SLB マネージャーをホストし、SLB の次の操作を実行します。  
@@ -179,7 +175,7 @@ BGP ルーターでは、SLB に対して次の操作を実行します。
   
 -   Keep Alive が失敗した場合は、SLB MUXes SLB ローテーションからを削除します。  
   
-## <a name="bkmk_features"></a>ソフトウェアの負荷分散機能  
+## <a name="software-load-balancing-features"></a><a name="bkmk_features"></a>ソフトウェアの負荷分散機能  
 SLB の機能と機能の一部を次に示します。  
   
 **コア機能**  

@@ -1,23 +1,24 @@
 ---
 title: Windows Server 2016/2019 でのクロスドメインクラスター移行
+description: この記事では、Windows Server 2019 クラスターをあるドメインから別のドメインに移動する方法について説明します。
 ms.prod: windows-server
-ms.manager: eldenc
+manager: eldenc
 ms.technology: failover-clustering
 ms.topic: article
 author: johnmarlin-msft
+ms.author: johnmar
 ms.date: 01/18/2019
-description: この記事では、Windows Server 2019 クラスターをあるドメインから別のドメインに移動する方法について説明します。
 ms.localizationpriority: medium
-ms.openlocfilehash: 68f49795124dedf0655726853a4d865686f6d697
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ba556b5a00f3932e2049135b177a7ad8bbceec9c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361413"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80828295"
 ---
 # <a name="failover-cluster-domain-migration"></a>フェールオーバークラスタードメインの移行
 
-> 適用対象:Windows Server 2019、Windows Server 2016
+> 適用対象: Windows Server 2019、Windows Server 2016
 
 このトピックでは、Windows Server フェールオーバークラスターをあるドメインから別のドメインに移動する方法の概要について説明します。
 
@@ -40,7 +41,7 @@ ms.locfileid: "71361413"
 
 Windows Server 2016 以前では、クラスターサービスにドメイン間を移動する機能はありませんでした。  これは、Active Directory Domain Services と作成された仮想名への依存関係が増加したためです。   
 
-## <a name="options"></a>および
+## <a name="options"></a>オプション
 
 このような移動を行うために、2つのオプションがあります。
 

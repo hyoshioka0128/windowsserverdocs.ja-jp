@@ -43,7 +43,7 @@
 
     {
       "source_path": "WindowsServerDocs/networking/sdn/deploy/Deploy-Software-Defined-Networking.md",
-      "redirect_url": "/windows-server/networking/sdn/deploy/plan-a-software-defined-network-infrastructure",
+      "redirect_url": "/windows-server/networking/sdn/deploy/deploy-a-software-defined-network-infrastructure",
       "redirect_document_id": true
     },
     {
@@ -8561,6 +8561,18 @@
   "redirect_url": "/windows-server/manage/windows-admin-center/overview",
   "redirect_document_id": false
 },
+
+{
+  "source_path": "WindowsServerDocs/manage/windows-admin-center/understand/windows-admin-center.md",
+  "redirect_url": "/windows-server/manage/windows-admin-center/overview",
+  "redirect_document_id": true
+},
+{
+  "source_path": "WindowsServerDocs/manage/windows-admin-center/understand/videos.md",
+  "redirect_url": "/windows-server/manage/windows-admin-center/overview#video-based-learning",
+  "redirect_document_id": true
+},
+
 {
   "source_path": "WindowsServerDocs/azure-hybrid-services/index.md",
   "redirect_url": "/windows-server/manage/windows-admin-center/azure/index",
@@ -8629,7 +8641,7 @@
  {
   "source_path": "WindowsServerDocs/windows-server.md",
   "redirect_url": "/windows-server/index",
-  "redirect_document_id": true
+  "redirect_document_id": false
  },
  {
   "source_path": "WindowsServerDocs/azure-stack-hci/index.md",
@@ -8639,6 +8651,11 @@
  {
   "source_path": "WindowsServerDocs/security/set-up-hgs-for-always-encrypted-in-sql-server.md",
   "redirect_url": "https://docs.microsoft.com/sql/relational-databases/security/encryption/always-encrypted-enclaves-host-guardian-service-plan?view=sql-server-ver15",
+  "redirect_document_id": true
+ },
+ {
+  "source_path": "WindowsServerDocs/networking/Networking.md",
+  "redirect_url": "https://docs.microsoft.com/windows-server/networking",
   "redirect_document_id": true
  }
   ]

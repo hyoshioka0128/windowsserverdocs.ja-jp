@@ -1,7 +1,6 @@
 ---
 ms.assetid: e6da5984-d99d-4c34-9c11-4a18cd413f06
 title: Windows Server 2012 のレプリカ ドメイン コントローラーを既存のドメインにインストールする (レベル 200)
-description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -9,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 5e72c18d3aa49774cf73d5365748e7bf20764b22
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 12068e5a062358463cf208f777144091e1de8257
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390838"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80825205"
 ---
 # <a name="install-a-replica-windows-server-2012-domain-controller-in-an-existing-domain-level-200"></a>Windows Server 2012 のレプリカ ドメイン コントローラーを既存のドメインにインストールする (レベル 200)
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 このトピックでは、サーバー マネージャーまたは Windows PowerShell を使用して、既存のフォレスト ドメインを Windows Server 2012 にアップグレードするための手順について説明します。 また Windows Server 2012 を実行するドメイン コントローラーを既存のドメインに追加する方法を説明します。  
   
@@ -28,22 +27,22 @@ ms.locfileid: "71390838"
   
 -   [展開](../../ad-ds/deploy/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-.md#BKMK_Dep)  
   
-## <a name="BKMK_Workflow"></a>アップグレードとレプリカのワークフロー  
+## <a name="upgrade-and-replica-workflow"></a><a name="BKMK_Workflow"></a>アップグレードとレプリカのワークフロー  
 以下の図に、既に AD DS 役割をインストール済みで、既存のドメイン内に新しいドメイン コントローラーを作成するためにサーバー マネージャーを使用して Active Directory ドメイン サービス構成ウィザードを開始した場合の、Active Directory ドメイン サービスの構成プロセスを示します。  
   
 ![レプリカをインストールする](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/adds_forestupgrade.png)  
   
-## <a name="BKMK_PS"></a>アップグレードとレプリカの Windows PowerShell  
+## <a name="upgrade-and-replica-windows-powershell"></a><a name="BKMK_PS"></a>アップグレードとレプリカの Windows PowerShell  
   
 |||  
 |-|-|  
 |**ADDSDeployment コマンドレット**|引数 (**太字** の引数は必須です。 *斜体*の引数は、Windows PowerShell または AD DS 構成ウィザードを使用して指定できます。)|  
-|Install-AddsDomainController|-SkipPreChecks<br /><br />***-DomainName***<br /><br />*-SafeModeAdministratorPassword*<br /><br />*-SiteName*<br /><br />*-ADPrepCredential*<br /><br />-ApplicationPartitionsToReplicate<br /><br />*-Allowdomainコントローラーの再インストール*<br /><br />-Confirm<br /><br />*-CreateDNSDelegation*<br /><br />***-Credential***<br /><br />-CriticalReplicationOnly<br /><br />*-DatabasePath*<br /><br />*-DNSDelegationCredential*<br /><br />-Force<br /><br />*-InstallationMediaPath*<br /><br />*-InstallDNS*<br /><br />*-LogPath*<br /><br />-MoveInfrastructureOperationMasterRoleIfNecessary<br /><br />-NoDnsOnNetwork<br /><br />*-NoGlobalCatalog*<br /><br />-Norebootoncompletion<br /><br />*-ReplicationSourceDC*<br /><br />-SkipAutoConfigureDNS<br /><br />-SiteName<br /><br />*-SystemKey*<br /><br />*-SYSVOLPath*<br /><br />*-UseExistingAccount*<br /><br />*-Whatif*|  
+|Install-AddsDomainController|-SkipPreChecks<p>***-DomainName***<p>*-SafeModeAdministratorPassword*<p>*-SiteName*<p>*-ADPrepCredential*<p>-ApplicationPartitionsToReplicate<p>*-Allowdomainコントローラーの再インストール*<p>-Confirm<p>*-CreateDNSDelegation*<p>***-Credential***<p>-CriticalReplicationOnly<p>*-DatabasePath*<p>*-DNSDelegationCredential*<p>-Force<p>*-InstallationMediaPath*<p>*-InstallDNS*<p>*-LogPath*<p>-MoveInfrastructureOperationMasterRoleIfNecessary<p>-NoDnsOnNetwork<p>*-NoGlobalCatalog*<p>-Norebootoncompletion<p>*-ReplicationSourceDC*<p>-SkipAutoConfigureDNS<p>-SiteName<p>*-SystemKey*<p>*-SYSVOLPath*<p>*-UseExistingAccount*<p>*-Whatif*|  
   
 > [!NOTE]  
 > **-credential** 引数は、フォレストをアップグレードする場合は、Enterprise Admins および Schema Admins グループのメンバーとしてログインしていない場合のみ必須です。新しい DC を既存のドメインに追加する場合は、Domain Admins グループのメンバーとしてログインしていない場合のみ必須です。  
   
-## <a name="BKMK_Dep"></a>ディストリビューション  
+## <a name="deployment"></a><a name="BKMK_Dep"></a>ディストリビューション  
   
 ### <a name="deployment-configuration"></a>展開構成  
 ![レプリカをインストールする](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_SMI_TR_UpgradeDeployConfig.png)  
@@ -122,7 +121,7 @@ Install-AddsDomainController
   
 ```  
   
-最後に、暗号化したパスワードをファイルに保存して後で使用することができます。こうするとクリア テキストのパスワードを表示せずに済みます。 以下に例を示します。  
+最後に、暗号化したパスワードをファイルに保存して後で使用することができます。こうするとクリア テキストのパスワードを表示せずに済みます。 例 :  
   
 ```  
 $file = "c:\pw.txt"  
@@ -167,7 +166,7 @@ DNS 委任を作成する必要があるかどうかの詳細については、�
   
 **[追加オプション]** ページには、レプリケーション ソースとして特定のドメイン コントローラーを指定するか、またはどのドメイン コントローラーでもレプリケーション ソースとして使用できるかを指定する構成オプションがあります。  
   
-また、メディアからのインストール (IFM) オプションを使用して、バックアップされているメディアからドメイン コントローラーをインストールすることもできます。 **[メディアからのインストール]** チェック ボックスをオンにすると参照オプションが表示されます。指定したパスが有効なメディアであることを示すため **[検証]** をクリックする必要があります。 IFM オプションで使用するメディアは、Windows Server バックアップまたは Ntdsutil.exe を使用して、既存の別の Windows Server 2012 コンピューターからのみ作成します。Windows Server 2008 R2 以前のオペレーティング システムを使用して Windows Server 2012 のドメイン コントローラー用のメディアを作成することはできません。 IFM の変更の詳細については、「 [Simplified Administration Appendix](../../ad-ds/deploy/Simplified-Administration-Appendix.md)」を参照してください。 SYSKEY で保護されているメディアを使用する場合、サーバー マネージャーは確認の間にイメージのパスワードの入力を求めます。  
+また、メディアからのインストール (IFM) オプションを使用して、バックアップされているメディアからドメイン コントローラーをインストールすることもできます。 **[メディアからのインストール]** チェック ボックスをオンにすると参照オプションが表示されます。指定したパスが有効なメディアであることを示すため **[検証]** をクリックする必要があります。 IFM オプションで使用するメディアは、Windows Server バックアップまたは Ntdsutil.exe を使用して、既存の別の Windows Server 2012 コンピューターからのみ作成します。Windows Server 2008 R2 以前のオペレーティング システムを使用して Windows Server 2012 のドメイン コントローラー用のメディアを作成することはできません。 IFM の変更内容について詳しくは、[管理の簡素化に関する付録](../../ad-ds/deploy/Simplified-Administration-Appendix.md)をご覧ください。 SYSKEY で保護されているメディアを使用する場合、サーバー マネージャーは確認の間にイメージのパスワードの入力を求めます。  
   
 ![レプリカをインストールする](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_NtdsutilIFM.png)  
   
@@ -221,7 +220,7 @@ Active Directory Paths ADDSDeployment コマンドレット引数は以下のと
   
 サーバー マネージャーの **[オプションの確認]** ページにあるオプションの **[スクリプトの表示]** ボタンを使用すると、現在の ADDSDeployment モジュール構成を単一の Windows PowerShell スクリプトとして含む Unicode テキスト ファイルを作成することもできます。 これにより、サーバー マネージャーのグラフィカル インターフェイスを Windows PowerShell 展開スタジオとして使用できます。 Active Directory ドメイン サービス構成ウィザードを使用してオプションを構成し、構成をエクスポートした後、ウィザードをキャンセルします。  これによって有効で正しい構文のサンプルが作成されるので、それをさらに変更したり、直接使用したりできます。  
   
-以下に例を示します。  
+例 :  
   
 ```  
 #  
@@ -312,7 +311,7 @@ Windows PowerShell を使用してドメインコントローラーをリモー�
 invoke-command {install-addsdomaincontroller "domainname <domain> -credential (get-credential)} -computername <dc name>  
 ```  
   
-以下に例を示します。  
+例 :  
   
 ![レプリカをインストールする](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_PSUpgradeExample.gif)  
   

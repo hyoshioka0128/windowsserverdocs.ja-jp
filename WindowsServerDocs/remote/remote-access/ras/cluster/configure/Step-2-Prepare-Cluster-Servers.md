@@ -2,22 +2,18 @@
 title: 手順 2 は、クラスター サーバーを準備します。
 description: このトピックは、「Windows Server 2016 のクラスターにリモートアクセスを展開する」の一部です。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 35d68abb-6914-42e0-91e8-803933cf785e
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 87983076ee8a7d5546a5ac491ed4ca88153798f0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: e53557f1fb2715f1d0318adc12aebb8f84423519
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367410"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861445"
 ---
 # <a name="step-2-prepare-cluster-servers"></a>手順 2 は、クラスター サーバーを準備します。
 
@@ -27,11 +23,11 @@ ms.locfileid: "71367410"
   
 |タスク|説明|  
 |----|--------|  
-|[2.1 リモートアクセスインフラストラクチャを構成する](#BKMK_config)|クラスターに追加する各サーバーで、サーバーのトポロジ、IP アドレスの指定、ルーティング、および転送を構成します。 仮想マシンの負荷分散されたクラスターを構成する場合は、MAC アドレスのスプーフィングを使用する仮想マシンを構成する必要があります。<br /><br />さらに、各サーバーを同じドメインに参加し、すべてのサーバーを同じサブネットに接続します。|  
+|[2.1 リモートアクセスインフラストラクチャを構成する](#BKMK_config)|クラスターに追加する各サーバーで、サーバーのトポロジ、IP アドレスの指定、ルーティング、および転送を構成します。 仮想マシンの負荷分散されたクラスターを構成する場合は、MAC アドレスのスプーフィングを使用する仮想マシンを構成する必要があります。<p>さらに、各サーバーを同じドメインに参加し、すべてのサーバーを同じサブネットに接続します。|  
 |[2.2 リモートアクセスの役割をインストールする](#BKMK_Install)|クラスターに追加する各追加サーバー リモート アクセスの役割をインストールします。|  
 |[2.3 NLB をインストールする](#BKMK_NLB)|デプロイされているリモート アクセス サーバーおよびクラスターに追加する各追加のサーバーでは、NLB 機能をインストールします。 外部のロード バランサーを使用する場合に、この手順は必要ないことに注意してください。|  
   
-## <a name="BKMK_config"></a>2.1 リモートアクセスインフラストラクチャを構成する  
+## <a name="21-configure-the-remote-access-infrastructure"></a><a name="BKMK_config"></a>2.1 リモートアクセスインフラストラクチャを構成する  
 リモート アクセス クラスターを構成するのには、サーバーのトポロジ、IP アドレスの指定、ルーティング、および転送を構成する必要があります、クラスターの一部を形成するすべてのサーバーにします。  
   
 ### <a name="to-configure-the-remote-access-infrastructure"></a>リモート アクセス インフラストラクチャを構成するには  
@@ -42,7 +38,7 @@ ms.locfileid: "71367410"
   
 3.  それぞれの最初のリモート アクセス サーバーと同じドメインにクラスターを構成するサーバーを参加させます。  
   
-## <a name="BKMK_Install"></a>2.2 リモートアクセスの役割をインストールする  
+## <a name="22-install-the-remote-access-role"></a><a name="BKMK_Install"></a>2.2 リモートアクセスの役割をインストールする  
 リモート アクセス クラスターを構成するのには、クラスターの一部を形成するすべてのサーバーにリモート アクセスの役割をインストールする必要があります。  
   
 ### <a name="to-install-the-remote-access-role-on-always-on-vpn-servers"></a>Always On VPN サーバーにリモートアクセスの役割をインストールするには  
@@ -61,11 +57,11 @@ ms.locfileid: "71367410"
   
 7. **[次へ]** をクリックし、 **[インストール]** をクリックします。  
   
-8.  **[インストールの進行状況]** ダイアログで、インストールが正常に完了したことを確認し、 **[閉じる]** をクリックします。  
+8.  **[インストールの進行状況]** ダイアログでインストールが成功したことを確認し、 **[閉じる]** をクリックします。  
   
 9.  すべてのサーバー クラスターのメンバーにするには、この手順を繰り返します。  
   
-## <a name="BKMK_NLB"></a>2.3 NLB をインストールする  
+## <a name="23-install-nlb"></a><a name="BKMK_NLB"></a>2.3 NLB をインストールする  
 リモート アクセス クラスターを構成するのには、クラスターの一部を形成するすべてのサーバーに、ネットワーク負荷分散機能をインストールする必要があります。  
   
 > [!NOTE]  
@@ -79,11 +75,11 @@ ms.locfileid: "71367410"
   
 3.  **機能の選択**  ダイアログ ボックスで選択 **ネットワーク負荷分散**, 、 をクリックして **機能の追加**, 、 をクリックして **次**, 、 をクリックし、 **インストール**します。  
   
-4.  **[インストールの進行状況]** ダイアログで、インストールが正常に完了したことを確認し、 **[閉じる]** をクリックします。  
+4.  **[インストールの進行状況]** ダイアログでインストールが成功したことを確認し、 **[閉じる]** をクリックします。  
   
 5.  すべてのサーバー クラスターのメンバーにするには、この手順を繰り返します。  
   
-## <a name="BKMK_Links"></a>関連項目  
+## <a name="see-also"></a><a name="BKMK_Links"></a>関連項目  
   
 -   [手順 3: 負荷分散クラスターを構成する](Step-3-Configure-a-Load-Balanced-Cluster.md)  
   

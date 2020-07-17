@@ -1,4 +1,4 @@
-# [ID およびアクセス](Identity-and-Access.md)
+# [ID およびアクセス](Identity-and-Access.yml)
 
 ## [ソリューションとシナリオ ガイド](solution-guides/Solutions-and-Scenario-Guides.md)
 ### [ダイナミック アクセス制御: シナリオの概要](solution-guides/Dynamic-Access-Control--Scenario-Overview.md)
@@ -190,7 +190,7 @@
 ###### [Winlogon 自動再起動サインオン (ARSO)](ad-ds/manage/component-updates/winlogon-automatic-restart-sign-on--arso-.md)
 ###### [TPM キーの構成証明](ad-ds/manage/component-updates/TPM-Key-attestation.md)
 ###### [CA のバックアップと復元の Windows PowerShell コマンドレット](ad-ds/manage/component-updates/CA-Backup-and-Restore-Windows-powershell-cmdlets.md)
-###### [コマンド ライン プロセスの監査](ad-ds/manage/component-updates/Command-line-process-auditing.md)
+###### [コマンド ライン プロセ](ad-ds/manage/component-updates/Command-line-process-auditing.md)スの監査
 ##### [ディレクトリ サービス コンポーネントの更新](ad-ds/manage/component-updates/directory-Services-component-updates.md)
 #### [保護されるアカウントの構成方法](ad-ds/manage/how-to-configure-protected-accounts.md)
 #### [LDAP サーバー Cookie の処理方法](ad-ds/manage/How-LDAP-Server-Cookies-Are-Handled.md)
@@ -268,6 +268,7 @@
 #### [AD FS について推奨するセキュリティ運用方法](ad-fs/deployment/Best-Practices-Securing-AD-FS.md)
 #### [オンプレミスのデバイス ベースの条件付きアクセスを計画する](ad-fs/deployment/Plan-Device-based-Conditional-Access-on-Premises.md)
 #### [AD FS と WAP に必要な更新プログラム](ad-fs/deployment/Updates-for-Active-Directory-Federation-Services-AD-FS.md)
+#### [ドメイン管理特権なしで AD FS ファームを作成する](ad-fs/deployment/Install-AD-FS-Delegated-Admin.md)
 #### [SQL Server レプリケーションを使用した地理的な冗長性の設定](ad-fs/deployment/Set-up-Geographic-Redundancy-with-SQL-Server-Replication.md)
 #### [Windows Server 2012 R2 で AD FS 用のラボ環境をセットアップする](ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)
 #### [WID データベースを使用した、Windows Server 2016 での AD FS へのアップグレード](ad-fs/deployment/Upgrading-to-AD-FS-in-Windows-Server.md)
@@ -392,6 +393,7 @@
 ##### [Windows Server 2012 R2 の AD FS のアクセス制御ポリシー](ad-fs/operations/Access-Control-Policies-W2K12.md)
 ##### [AD FS 2.0 のアクセス制御ポリシー](ad-fs/operations/Access-Control-Policies-in-AD-FS-2.md)
 #### [AD FS 2019 の追加の認証方法](ad-fs/operations/Additional-Authentication-Methods-AD-FS.md)
+#### [AlwaysOn 可用性グループ](ad-fs/operations/ad-fs-always-on.md)
 #### [AD FS prompt login パラメーターのサポート](ad-fs/operations/AD-FS-Prompt-Login.md)
 #### [AD FS のマルチページ サインイン](ad-fs/operations/AD-FS-paginated-sign-in.md)
 #### [AD FS 2016 シングル サイン オンの設定](ad-fs/operations/AD-FS-Single-Sign-On-Settings.md)

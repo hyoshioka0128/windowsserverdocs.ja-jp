@@ -1,24 +1,20 @@
 ---
 title: waitfor
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: システムでシグナルを送信または待機する waitfor のリファレンス記事です。 **Waitfor** をネットワーク経由でコンピューターを同期するために使用します。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a48ef70d-4d28-4035-b6b0-7d7b46ac2157
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: aecea0ad19ee42e61396eb8b8ccd579b9ce2057b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9a80b606fc91ec146a6808bde97a8d7f0081d0ff
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71362604"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85937012"
 ---
 # <a name="waitfor"></a>waitfor
 
@@ -26,7 +22,7 @@ ms.locfileid: "71362604"
 
 送信またはシステムでのシグナルを待機します。 **Waitfor** をネットワーク経由でコンピューターを同期するために使用します。
 
-このコマンドを使用する方法の例については、[例](#BKMK_examples)を参照してください。
+
 
 ## <a name="syntax"></a>構文
 
@@ -35,16 +31,16 @@ waitfor [/s <Computer> [/u [<Domain>\]<User> [/p [<Password>]]]] /si <SignalName
 waitfor [/t <Timeout>] <SignalName>
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
 |       パラメーター       |                                                                                         説明                                                                                          |
 |-----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|    /s \<コンピューター >     | 名前またはリモート コンピューターの IP アドレスを指定します (円記号を使用しない)。 既定はローカル コンピュータです。 このパラメーターは、コマンドで指定されたすべてのファイルとフォルダーに適用されます。 |
-| /u [\<ドメイン >\]<User> |                              指定したユーザー アカウントの資格情報を使用してスクリプトを実行します。 既定では、 **waitfor** 現在のユーザーの資格情報を使用します。                               |
-|   /p [\<パスワード >]    |                                                    指定されているユーザー アカウントのパスワードを指定します、 **/u** パラメーター。                                                     |
+|    /s\<Computer>     | 名前またはリモート コンピューターの IP アドレスを指定します (円記号を使用しない)。 既定値はローカル コンピューターです。 このパラメーターは、コマンドで指定されたすべてのファイルとフォルダーに適用されます。 |
+| u\<Domain>\]<User> |                              指定したユーザー アカウントの資格情報を使用してスクリプトを実行します。 既定では、 **waitfor** 現在のユーザーの資格情報を使用します。                               |
+|   /p [\<Password>]    |                                                    指定されているユーザー アカウントのパスワードを指定します、 **/u** パラメーター。                                                     |
 |          /si          |                                                                        ネットワーク経由で指定されたシグナルを送信します。                                                                        |
-|     /t \<タイムアウト >     |                                              シグナルを待機する秒数を指定します。 既定では、 **waitfor** が無制限に待機します。                                               |
-|     \<SignalName >     |                                                信号を指定する **waitfor** まで待機するか、または送信します。 *信号名* 小文字は区別されません。                                                 |
+|     /t\<Timeout>     |                                              シグナルを待機する秒数を指定します。 既定では、 **waitfor** が無制限に待機します。                                               |
+|     \<SignalName>     |                                                信号を指定する **waitfor** まで待機するか、または送信します。 *信号名* 小文字は区別されません。                                                 |
 |          /?           |                                                                             コマンド プロンプトにヘルプを表示します。                                                                             |
 
 ## <a name="remarks"></a>注釈
@@ -57,23 +53,23 @@ waitfor [/t <Timeout>] <SignalName>
 -   のみ、コンピューターは、信号を送信するコンピューターと同じドメイン内にある場合、シグナルを受信します。
 -   使用する **waitfor** ソフトウェア ビルドをテストする場合。 コンパイルを行うコンピューターが実行されている複数のコンピューターに信号を送信するなど **waitfor** コンパイルが正常に完了後します。 信号の要求を受信したバッチ ファイルを含む **waitfor** コンピューターがすぐにソフトウェアのインストールやコンパイル済みのビルドでテストを実行するように指定できます。
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a>例
 
-"\Build007"信号を受信するまで待機するには、次のように入力します。
+Espressobuild007 シグナルが受信されるまで待機するには、次のように入力します。
 ```
 waitfor espresso\build007
 ```
 既定では、 **waitfor** シグナルを無期限に待機します。
 
-タイムアウトするまでに受信"espresso\compile007"信号を 10 秒間待機するには、次のように入力します。
+Espresso\compile007 シグナルが受信されるまで10秒間待機するには、次のように入力します。
 ```
 waitfor /t 10 espresso\build007
 ```
-"\Build007"信号を手動でアクティブ化には、次のように入力します。
+Espresso\ build007 信号を手動でアクティブ化するには、次のように入力します。
 ```
 waitfor /si espresso\build007
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)

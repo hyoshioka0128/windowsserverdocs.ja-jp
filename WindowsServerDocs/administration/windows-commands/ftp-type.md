@@ -1,53 +1,59 @@
 ---
-title: ftp の種類
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+title: ftp type
+description: ファイル転送の種類を設定または表示する ftp type コマンドの参照記事です。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: 6e96dcd4-08f8-4e7b-90b7-1e1761fea4c7 vhorne
+ms.assetid: 6e96dcd4-08f8-4e7b-90b7-1e1761fea4c7
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: eb254d1c9b17ac6baadf6b84702d2812f1117a93
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ea0b2a319dae65104db8a215e17fa4b579ee6ffa
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71375899"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931188"
 ---
-# <a name="ftp-type"></a>ftp: 種類
+# <a name="ftp-type"></a>ftp type
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-設定またはファイル転送の種類を表示します。   
-## <a name="syntax"></a>構文  
-```  
-type [<typeName>]  
-```  
-### <a name="parameters"></a>パラメーター  
+設定またはファイル転送の種類を表示します。 **Ftp**コマンドでは、ASCII (既定) とバイナリイメージファイル転送の両方の種類がサポートされています。
 
-|  パラメーター   |            説明            |
-|--------------|-----------------------------------|
-| [<typeName>] | ファイル転送の種類を指定します。 |
+- テキストファイルを転送するときは、ASCII を使用することをお勧めします。 ASCII モードでは、ネットワークの標準の文字セットとの間の文字変換が実行されます。 たとえば、行末の文字は、対象のオペレーティングシステムに基づいて必要に応じて変換されます。
 
-## <a name="remarks"></a>コメント  
-- *typeName*が指定されていない場合は、現在の型が表示されます。  
-- **ftp**では、ASCII とバイナリという2種類のファイル転送がサポートされています。  
-  既定のファイル転送の種類は ASCII です。  **Ascii** コマンドは、テキスト ファイルを転送するときに使用する必要があります。 ASCII モードでは、ネットワークの標準の文字セットとの間の文字変換が実行されます。 行末の文字は変換など、転送先にオペレーティング システムに基づき、必要です。  
-  **バイナリ** コマンドは、実行可能ファイルを転送するときに使用する必要があります。 バイナリ モードでは、1 バイト単位で、ファイルが移動します。  
-  ## <a name="BKMK_Examples"></a>例  
-  Ascii ファイル転送の種類を設定します。  
-  ```  
-  type ascii  
-  ```  
-  転送ファイルの種類をバイナリに設定します。  
-  ```  
-  type binary  
-  ```  
-  ## <a name="additional-references"></a>その他の参照情報  
-- [コマンド ライン構文の記号](command-line-syntax-key.md)  
+- 実行可能ファイルを転送するときは、バイナリを使用することをお勧めします。 バイナリモードでは、ファイルは1バイト単位で転送されます。
+
+## <a name="syntax"></a>構文
+
+```
+type [<typename>]
+```
+
+### <a name="parameters"></a>パラメーター
+
+| パラメーター | 説明 |
+| --------- | ----------- |
+| `[<typename>]` | ファイル転送の種類を指定します。 このパラメーターを指定しない場合は、現在の型が表示されます。|
+
+### <a name="examples"></a>例
+
+ファイル転送の種類を ASCII に設定するには、次のように入力します。
+
+```
+type ascii
+```
+
+転送ファイルの種類を binary に設定するには、次のように入力します。
+
+```
+type binary
+```
+
+## <a name="additional-references"></a>その他の参照情報
+
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [追加の FTP ガイダンス](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))

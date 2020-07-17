@@ -1,40 +1,43 @@
 ---
-title: ftp disconnect_1
-description: Ftp disconnect_1 の Windows コマンドに関するトピック
-ms.custom: na
+title: ftp disconnect
+description: Ftp の切断コマンドの参照記事。リモートコンピューターから切断され、ftp プロンプトを保持します。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: f91ac304-f126-49df-9ab9-b8fa2ea515fd vhorne
+ms.assetid: f91ac304-f126-49df-9ab9-b8fa2ea515fd
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6c9aa880063784fa0ac4fb6251e3e2cc5ed16f8e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3287c5714d5174390e6c17e0f6345f2fb25c079b
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71376418"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927236"
 ---
-# <a name="ftp-disconnect_1"></a>ftp: disconnect_1
+# <a name="ftp-disconnect"></a>ftp disconnect
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-リモートコンピューターから切断し、 **ftp >** プロンプトを保持します。   
-## <a name="syntax"></a>構文  
-```  
-disconnect  
-```  
-### <a name="parameters"></a>パラメーター  
-なし  
-## <a name="BKMK_Examples"></a>例  
-リモートコンピューターから切断し、 **ftp >** プロンプトを保持します。  
-```  
-disconnect  
-```  
-## <a name="additional-references"></a>その他の参照情報  
--   [コマンド ライン構文の記号](command-line-syntax-key.md)  
+リモートコンピューターから切断され、プロンプトが表示されたままに `ftp>` なります。
+
+## <a name="syntax"></a>構文
+
+```
+disconnect
+```
+
+### <a name="examples"></a>例
+
+リモートコンピューターから切断し、プロンプトが表示されたままにするには `ftp>` 、次のように入力します。
+
+```
+disconnect
+```
+
+## <a name="additional-references"></a>その他の参照情報
+
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [追加の FTP ガイダンス](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))

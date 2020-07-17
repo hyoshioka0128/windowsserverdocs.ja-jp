@@ -6,18 +6,18 @@ ms.topic: article
 ms.assetid: 1ae4384b-f4e4-41e8-bc5f-9ac41953bca4
 ms.prod: windows-server
 ms.technology: networking
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 2105e2ccad69fcfdbc13e3201b4362e5c6b932e1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 63ae9ef71b913feeeb28e9838f636b316ea2969f
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406275"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318201"
 ---
 # <a name="server-certificate-deployment"></a>サーバー証明書の展開
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 エンタープライズ ルート証明機関 (CA) をインストールしを PEAP および EAP で使用するサーバー証明書を展開する次の手順に従います。  
   
@@ -48,7 +48,7 @@ ms.locfileid: "71406275"
 -   [サーバー証明書のサーバー登録を確認する](../../../core-network-guide/cncg/server-certs/Verify-Server-Enrollment-of-a-Server-Certificate.md)  
   
 > [!NOTE]  
-> このガイドの手順は含まれていません場合に、 **ユーザー アカウント制御** 続行の許可を要求するダイアログ ボックスが開きます。 このダイアログ ボックスを開いているながら、このガイドの手順を実行して、お客様の操作に応答 ダイアログ ボックスが開かれた場合はクリックして場合 **続行**します。  
+> このガイドの手順は含まれていません場合に、 **ユーザー アカウント制御** 続行の許可を要求するダイアログ ボックスが開きます。 このガイドを実行しているときにこのダイアログ ボックスが開いた場合、または操作の結果としてこのダイアログ ボックスが開いた場合、 **[続行]** をクリックします。  
   
 
 

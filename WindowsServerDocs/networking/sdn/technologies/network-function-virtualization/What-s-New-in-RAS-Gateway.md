@@ -1,34 +1,30 @@
 ---
 title: RAS ゲートウェイの新機能
 description: このトピックでは、Windows Server 2016 のソフトウェアベース、マルチテナント、Border Gateway Protocol (BGP) 対応ルーターである RAS ゲートウェイの新機能について説明します。
-manager: brianlic
-ms.custom: na
+manager: grcusanz
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-sdn
-ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 709cb192-313a-47b5-954e-eb5f6fee51a7
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 85595c47c599a72039e93e67ea2f33f92af7200c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: anpaul
+author: AnirbanPaul
+ms.openlocfilehash: 40d553ad5f41c68e8135c3d2c56ac8571d738e95
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405902"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859585"
 ---
 # <a name="whats-new-in-ras-gateway"></a>RAS ゲートウェイの新機能
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックでは、Windows Server 2016 のソフトウェアベース、マルチテナント、Border Gateway Protocol (BGP) 対応ルーターである RAS ゲートウェイの新機能について説明します。 RAS ゲートウェイマルチテナント BGP ルーターは、Hyper-v ネットワーク仮想化を使用して複数のテナント仮想ネットワークをホストするクラウドサービスプロバイダー (Csp) と企業向けに設計されています。  
   
 > [!NOTE]  
 > Windows Server 2012 R2 では、RAS ゲートウェイは RRAS ゲートウェイという名前になっています。System Center Virtual Machine Manager では、RAS ゲートウェイは Windows Server ゲートウェイと呼ばれます。  
   
-このトピックは次のセクションで構成されます。  
+このトピックの内容は次のとおりです。  
   
 -   [サイト間接続のオプション](#bkmk_s2s)  
   
@@ -40,12 +36,12 @@ ms.locfileid: "71405902"
   
 -   [ルートリフレクター](#bkmk_rr)  
   
-## <a name="bkmk_s2s"></a>サイト間接続のオプション  
-RAS ゲートウェイでは、3種類の VPN サイト間接続がサポートされるようになりました。インターネットキー交換バージョン 2 (IKEv2) のサイト間仮想プライベートネットワーク (VPN)、レイヤー 3 (L3) VPN、および汎用ルーティングカプセル化 (GRE) トンネル。  
+## <a name="site-to-site-connectivity-options"></a><a name="bkmk_s2s"></a>サイト間接続のオプション  
+RAS ゲートウェイは、3種類の VPN サイト間接続をサポートするようになりました。インターネットキー交換バージョン 2 (IKEv2) のサイト間仮想プライベートネットワーク (VPN)、レイヤー 3 (L3) VPN、および Generic Routing カプセル化 (GRE) トンネルです。  
   
 GRE の詳細については、「 [Windows Server 2016 の Gre トンネリング](../../../../remote/remote-access/ras-gateway/gre-tunneling-windows-server.md)」を参照してください。  
   
-## <a name="bkmk_pools"></a>ゲートウェイプール  
+## <a name="gateway-pools"></a><a name="bkmk_pools"></a>ゲートウェイプール  
 Windows Server 2016 では、異なる種類のゲートウェイプールを作成できます。 ゲートウェイプールには、RAS ゲートウェイのインスタンスが多数含まれており、物理ネットワークと仮想ネットワークの間でネットワークトラフィックをルーティングします。 ゲートウェイプールは、個々のゲートウェイ機能 (インターネットキー交換バージョン 2 (IKEv2) のサイト間仮想プライベートネットワーク (VPN)、レイヤー 3 (L3) VPN、および Generic Routing Routing (GRE) トンネル) を実行できます。また、プールはこれらのすべてを実行できます。関数とは、混在プールとして機能します。  
   
 インフラストラクチャの要件に基づいて任意のロジックを使用して、ゲートウェイプールを作成できます。 たとえば、次のいずれかの特性に基づいて、ゲートウェイプールを作成できます。  
@@ -60,17 +56,17 @@ Windows Server 2016 では、異なる種類のゲートウェイプールを作
   
 詳細については、「 [RAS Gateway の高可用性](RAS-Gateway-High-Availability.md)」を参照してください。  
   
-## <a name="bkmk_gps"></a>ゲートウェイプールのスケーラビリティ  
+## <a name="gateway-pool-scalability"></a><a name="bkmk_gps"></a>ゲートウェイプールのスケーラビリティ  
 プール内のゲートウェイ Vm を追加または削除することで、ゲートウェイプールを簡単にスケールアップまたはスケールダウンできます。 ゲートウェイを削除または追加しても、プールによって提供されるサービスは中断されません。 また、ゲートウェイのプール全体を追加および削除することもできます。  
   
 詳細については、「 [RAS Gateway の高可用性](RAS-Gateway-High-Availability.md)」を参照してください。  
   
-## <a name="bkmk_m"></a>M + N ゲートウェイプールの冗長性  
+## <a name="mn-gateway-pool-redundancy"></a><a name="bkmk_m"></a>M + N ゲートウェイプールの冗長性  
 すべてのゲートウェイプールは M + N 冗長です。 これは、"m" 個のアクティブなゲートウェイ仮想マシン (Vm) が、"N" 台のスタンバイゲートウェイ Vm によってバックアップされることを意味します。 M + N 冗長性を使用すると、RAS ゲートウェイを展開するときに必要な信頼性レベルを柔軟に決定できます。 Active RAS ゲートウェイ VM ごとに1つのスタンバイ RAS ゲートウェイ (Windows Server 2012 R2 で唯一の構成オプション) を使用するのではなく、必要な数だけスタンバイ Vm を構成できるようになりました。 ネットワークコントローラーのゲートウェイ Service Manager 機能は、スタンバイ RAS ゲートウェイの VM 容量を効率的に使用して、アクティブな RAS ゲートウェイ VM で障害が発生した場合や接続が失われた場合に信頼性の高いフェールオーバーを提供します。  
   
 詳細については、「 [RAS Gateway の高可用性](RAS-Gateway-High-Availability.md)」を参照してください。  
   
-## <a name="bkmk_rr"></a>ルートリフレクター  
+## <a name="route-reflector"></a><a name="bkmk_rr"></a>ルートリフレクター  
 Border Gateway Protocol (BGP) ルートリフレクターが RAS ゲートウェイに含まれるようになり、ルーター間のルート同期に必要な BGP 完全メッシュトポロジの代替手段として使用できるようになりました。 完全メッシュ同期では、すべての BGP ルーターがルーティングトポロジ内の他のすべてのルーターと接続する必要があります。 ただし、ルートリフレクターを使用する場合、ルートリフレクターは、BGP クライアントと呼ばれる他のすべてのルーターと接続する唯一のルーターです。これにより、ルートの同期化が簡素化され、ネットワークトラフィックが減少します。 ルートリフレクターは、すべてのルートを学習し、最適なルートを計算し、その BGP クライアントに最適なルートを再分配します。  
   
 Windows Server 2016 では、個々のテナントのリモートアクセストンネルを複数の RAS ゲートウェイ VM で終了するように構成できます。 これにより、1つの RAS ゲートウェイ VM がテナント接続のすべての帯域幅要件を満たすことができない状況に直面した場合に、クラウドサービスプロバイダーの柔軟性が向上します。  
@@ -93,6 +89,6 @@ Windows Server 2016 では、個々のテナントのリモートアクセスト
   
 -   企業のお客様がお客様のアドレス空間で BGP ルーティングを使用している場合、対応するテナントのすべてのサイトについて、RAS ゲートウェイルートリフレクターが唯一の外部 BGP (eBGP) 近隣ノードになります。 これは、エンタープライズテナントのトンネル終了ポイントに関係なく当てはまります。 言い換えると、CSP データセンター内のどの RAS ゲートウェイ VM がテナントサイトのサイト間 VPN トンネルを終了するかにかかわらず、すべてのテナントサイトの eBGP ピアはルートリフレクターです。  
   
-詳細については、「 [RAS ゲートウェイの展開アーキテクチャ](RAS-Gateway-Deployment-Architecture.md)」と「インターネット技術標準化委員会 (IETF) のコメントの要求」を参照してください [rfc 4456 BGP Route リフレクション:フルメッシュ内部 BGP (IBGP) の代替手段 ](https://tools.ietf.org/html/rfc4456)。  
+詳細については、「 [RAS ゲートウェイの展開アーキテクチャ](RAS-Gateway-Deployment-Architecture.md)」および「インターネット技術標準化委員会 (IETF) に関するコメントの要求」を参照してください。 [RFC 4456 BGP Route リフレクション: FULL メッシュ内部 BGP (Ibgp) の代替手段](https://tools.ietf.org/html/rfc4456)です。  
   
 

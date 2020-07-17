@@ -8,12 +8,12 @@ ms.author: jol
 ms.date: 09/17/2018
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: ee8c0203be25b30f173b1887de506844d5b58738
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 010ab340dc71d199119f1bd51fbc22e3ad449040
+ms.sourcegitcommit: 074b59341640a8ae0586d6b37df7ba256e03a0c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406914"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81650081"
 ---
 # <a name="extensions-for-windows-admin-center"></a>Windows Admin Center の拡張機能
 
@@ -27,10 +27,10 @@ Windows Admin Center 拡張機能は、HTML5、CSS、Angular、TypeScript、jQue
 
 次に、Windows 管理センターの拡張機能を開発することによって、製品と顧客にもたらす価値を示します。
 
-- **Windows 管理センターツールとの統合:** Windows 管理センターのサーバーおよびクラスター管理ツールと製品とサービスを統合し、統合されたシームレスなエンドツーエンドの監視、管理、トラブルシューティングのエクスペリエンスを顧客に提供します。
-- **プラットフォームのセキュリティ、id、および管理機能を活用します。** Windows 管理センターのプラットフォーム機能を活用して、今日の複雑な要件を満たすために、Azure Active Directory (AAD) のサポート、Multi-Factor Authentication、ロールベースの Access Control (RBAC)、ログ記録、製品とサービスの監査を有効にします。IT 組織。
-- **最新の web テクノロジを使用して開発します。** HTML5、CSS、角度、TypeScript、jQuery などの最新の web テクノロジや、Windows 管理センター SDK に含まれる豊富で強力な UI コントロールを使用して、魅力的なユーザーエクスペリエンスをすばやく構築できます。
-- **製品の支援を拡張する:** 新しい Windows 管理センターエコシステムの一部となるのは、急速に成長している顧客ベースを支援し、今年後半に Windows Server 2019 の発売を利用することです。
+- **Windows Admin Center ツールとの統合:** Windows Admin Center でサーバーおよびクラスター管理ツールを使用して製品とサービスを統合し、監視、管理、トラブルシューティングの統一されたシームレスなエンド ツー エンドのエクスペリエンスをお客様に提供できます。
+- **プラットフォームのセキュリティ、id、および管理機能を活用します。** Windows 管理センターのプラットフォーム機能を活用して、現在の IT 組織の複雑な要件を満たすことで、Azure Active Directory (AAD) のサポート、Multi-Factor Authentication、ロールベースの Access Control (RBAC)、ログ記録、製品とサービスの監査を有効にします。
+- **最新の Web テクノロジを使用した開発:** HTML5、CSS、Angular、TypeScript および jQuery、また Windows Admin Center SDK に含まれる充実した強力な UI コントロールを含む最新の Web テクノロジを使用して、魅力的なユーザー エクスペリエンスを簡単に作成できます。
+- **製品の支援を拡張する:** 拡張された顧客ベースを利用して、Windows 管理センターエコシステムの一部になることができます。
 
 ## <a name="start-developing-with-the-windows-admin-center-sdk"></a>Windows 管理センター SDK を使用した開発の開始
 
@@ -42,10 +42,10 @@ GitHub でホストされているサンプルコードもあります。[開発
 
 SDK の詳細を確認し、作業を開始するには、次のトピックを参照してください。
 
-- [拡張機能のしくみを理解する](understand-extensions.md)
+- [拡張機能のしくみについて](understand-extensions.md)
 - [拡張機能の開発](developing-extensions.md)
 - [ガイド](guides.md)
-- [拡張機能を公開する](publish-extensions.md)
+- [拡張機能の公開](publish-extensions.md)
 
 ## <a name="partner-spotlight"></a>パートナー スポットライト
 
@@ -58,7 +58,7 @@ BiitOps の拡張機能は、Windows Server の物理/バーチャルマシン�
 
 ### <a name="dataon"></a>DataON
 
-DataON 拡張機能では、Windows Server に基づいて、ハイパー集約型インフラストラクチャおよびストレージシステムのデータに対する監視、管理、エンドツーエンドの洞察を得ることができます。 拡張機能には、履歴データレポート、ディスクマッピング、システムアラート、SAN などの一意の値が追加されます。これにより、Windows 管理センターサーバーとハイパー集約インフラストラクチャの管理機能がシームレスに補完されます。統合されたエクスペリエンス。 [DataON の MUST 拡張機能と開発エクスペリエンスの詳細については、こちらを参照してください](case-studies/dataon.md)。
+DataON 拡張機能では、Windows Server に基づいて、ハイパー集約型インフラストラクチャおよびストレージシステムのデータに対する監視、管理、エンドツーエンドの洞察を得ることができます。 拡張機能には、履歴データレポート、ディスクマッピング、システムアラート、SAN などの電話ホームサービスなどの一意の値が追加されます。これにより、Windows 管理センターサーバーとハイパー集約型インフラストラクチャの管理機能がシームレスな統合されたエクスペリエンスによって補完されます。 [DataON の MUST 拡張機能と開発エクスペリエンスの詳細については、こちらを参照してください](case-studies/dataon.md)。
 
 ![DataON MUST 拡張機能](../media/extensibility-overview/dataon-must-extension.png)
 
@@ -76,7 +76,7 @@ Lenovo XClarity インテグレーターの拡張機能は、Windows 管理セ�
 
 ### <a name="pure-storage"></a>Pure Storage
 
-純粋なストレージは、データ中心のアーキテクチャを提供し、競争力を高めるためにビジネスを促進する、エンタープライズ、すべてのフラッシュデータストレージソリューションを提供します。 Windows 管理センターの純粋なストレージ拡張機能は、純粋な FlashArray 製品に対する単一のウィンドウビューを提供し、ユーザーが監視タスクを実行したり、リアルタイムのパフォーマンスメトリックを表示したり、単一の UI でストレージボリュームとイニシエーターを管理したりできるようにします。経験. [純粋な拡張機能とその開発エクスペリエンスの詳細については、こちらをご覧](case-studies/purestorage.md)ください。
+純粋なストレージは、データ中心のアーキテクチャを提供し、競争力を高めるためにビジネスを促進する、エンタープライズ、すべてのフラッシュデータストレージソリューションを提供します。 Windows 管理センターの純粋なストレージ拡張機能は、純粋な FlashArray 製品に対する単一のウィンドウビューを提供し、ユーザーが単一の UI エクスペリエンスで監視タスクを実行したり、リアルタイムのパフォーマンスメトリックを表示したり、ストレージボリュームとイニシエーターを管理したりできるようにします。 [純粋な拡張機能とその開発エクスペリエンスの詳細については、こちらをご覧](case-studies/purestorage.md)ください。
 
 ![純粋なストレージ拡張機能](../media/extensibility-overview/purestorage-extension.png)
 
@@ -85,9 +85,3 @@ Lenovo XClarity インテグレーターの拡張機能は、Windows 管理セ�
 QCT Management Suite 拡張機能は、QCT Azure Stack HCI 認定システムの物理サーバーの監視と管理を提供することで、Windows 管理センターを補完します。 QCT Management Suite 拡張機能には、サーバーのハードウェア情報が表示されます。また、物理ディスクを効率的に、ハードウェアイベントログツール、および S.M.A.R.T. に置き換えるための直感的なウィザード UI が用意されています。 ベースの予測ディスク管理。 [QCT Management Suite 拡張機能の詳細については、こちらを参照して](case-studies/qct.md)ください。
 
 ![QCT 拡張機能](../media/extensibility-overview/qct-extension.png)
-
-### <a name="squared-up"></a>Squared Up
-
-Squared Up により、System Center Operations Manager に基づくクラス最高の監視エクスペリエンスと、Azure Log Analytics、Application Insights、およびその他の監視ソリューションとの統合機能が提供されます。 [Squared Up の拡張機能](https://squaredup.com/product/honolulu/windows-admin-center-extension/?utm_source=microsoft-docs&utm_medium=public-relations&utm_campaign=honolulu)により、過去のパフォーマンス データやライブ アプリケーションのトポロジと依存関係を Windows Admin Center が提供するサーバーおよびクラスター管理のコンテキストにもたらしています。また、初期のお客様は、多数の異なるソースからの膨大なデータを単一のエクスペリエンスに統合することの価値を高く評価しています。 [Squared Up の拡張機能と開発エクスペリエンスの詳細については、こちらを参照してください](case-studies/squared-up.md)。
-
-![Squared Up の拡張機能](../media/extensibility-overview/squaredup-extension.png)

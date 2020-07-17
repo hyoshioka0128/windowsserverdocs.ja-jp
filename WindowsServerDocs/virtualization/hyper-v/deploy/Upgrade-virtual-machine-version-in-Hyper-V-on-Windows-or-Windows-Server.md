@@ -2,25 +2,23 @@
 title: Windows 10 または Windows Server の Hyper-v で仮想マシンのバージョンをアップグレードする
 description: バーチャルマシンのバージョンをアップグレードするための手順と考慮事項を示します。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 897f2454-5aee-445c-a63e-f386f514a0f6
 author: jasongerend
 ms.author: jgerend
 ms.date: 05/22/2019
-ms.openlocfilehash: 96678dfab2a3d5b6f503d8ce9d00850a3c437b35
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e08d13e4d9b493b80cad59561c8088c7d3a12b57
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71392935"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80860875"
 ---
 # <a name="upgrade-virtual-machine-version-in-hyper-v-on-windows-10-or-windows-server"></a>Windows 10 または Windows Server の Hyper-v で仮想マシンのバージョンをアップグレードする
 
->適用先:Windows 10、windows Server 2019、Windows Server 2016、Windows Server (半期チャネル)
+>適用対象: Windows 10、Windows Server 2019、Windows Server 2016、Windows Server (半期チャネル)
 
 構成バージョンをアップグレードして、仮想マシンで最新の Hyper-v 機能を使用できるようにします。 これを行わないと、次のようになります。
 
@@ -30,7 +28,7 @@ ms.locfileid: "71392935"
 
 詳細については、「[クラスターオペレーティングシステムのローリングアップグレード](../../../failover-clustering/Cluster-Operating-System-Rolling-Upgrade.md)」および「 [VMM で hyper-v ホストクラスターのローリングアップグレードを実行する](https://docs.microsoft.com/system-center/vmm/hyper-v-rolling-upgrade)」を参照してください。
 
-## <a name="step-1-check-the-virtual-machine-configuration-versions"></a>手順 1:仮想マシンの構成バージョンを確認する
+## <a name="step-1-check-the-virtual-machine-configuration-versions"></a>手順 1: 仮想マシンの構成バージョンを確認する
 
 1. Windows デスクトップ上で、[スタート] ボタンをクリックし、**Windows PowerShell** という名前の一部を入力します。
 2. Windows PowerShell を右クリックして **管理者として実行**します。
@@ -42,7 +40,7 @@ Get-VM * | Format-Table Name, Version
 
 仮想マシンを選択して **[概要]** タブを表示することで、hyper-v マネージャーで構成バージョンを確認することもできます。
 
-## <a name="step-2-upgrade-the-virtual-machine-configuration-version"></a>手順 2:仮想マシンの構成バージョンをアップグレードする
+## <a name="step-2-upgrade-the-virtual-machine-configuration-version"></a>手順 2: 仮想マシンの構成バージョンをアップグレードする
 
 1. Hyper-v マネージャーで仮想マシンをシャットダウンします。
 2. [アクション > アップグレード構成バージョン] を選択します。 このオプションが仮想マシンで使用できない場合は、Hyper-v ホストでサポートされている構成の最大バージョンに既に存在しています。
@@ -110,11 +108,11 @@ Windows Server 2019、Windows Server 2016、または Windows 10 で Hyper-v を
 
  |仮想マシンのファイルの種類 | 説明|
  |---|---|
-|構成 |バイナリファイル形式で格納されている仮想マシンの構成情報。 <br /> ファイル名拡張子:. vmcx <br /> 既定の場所:C:\ProgramData\Microsoft\Windows\Hyper-V\Virtual Machines|
- |ランタイムの状態|バイナリファイル形式で格納されている仮想マシンのランタイム状態情報。 <br />ファイル名拡張子: vmrs と vmrs <br />既定の場所:C:\ProgramData\Microsoft\Windows\Hyper-V\Virtual Machines|
-|バーチャルハードディスク|バーチャルマシンのバーチャルハードディスクを保管します。 <br /> ファイル名拡張子: .vhd または .vhdx <br />既定の場所:ハードディスクの C:\ProgramData\Microsoft\Windows\Hyper-V\Virtual|
- |自動仮想ハードディスク |バーチャルマシンのチェックポイントに使用される差分ディスクファイル。 <br /> ファイル名拡張子:. .avhdx <br /> 既定の場所:ハードディスクの C:\ProgramData\Microsoft\Windows\Hyper-V\Virtual|
- |Checkpoint|チェックポイントは、複数のチェックポイント ファイルに格納されます。 各チェックポイントで、構成ファイルとランタイム状態ファイルが作成されます。 <br /> ファイル名拡張子:. vmrs と. vmcx <br />既定の場所:C:\ProgramData\Microsoft\Windows\Snapshots|
+|構成 |バイナリファイル形式で格納されている仮想マシンの構成情報。 <br /> ファイル名拡張子:. vmcx <br /> 既定の場所: C:\ProgramData\Microsoft\Windows\Hyper-V\Virtual Machines|
+ |ランタイムの状態|バイナリファイル形式で格納されている仮想マシンのランタイム状態情報。 <br />ファイル名拡張子: vmrs と vmrs <br />既定の場所: C:\ProgramData\Microsoft\Windows\Hyper-V\Virtual Machines|
+|バーチャルハードディスク|バーチャルマシンのバーチャルハードディスクを保管します。 <br /> ファイル名拡張子: .vhd または .vhdx <br />既定の場所: C:\ProgramData\Microsoft\Windows\Hyper-V\Virtual ハードディスク|
+ |自動仮想ハードディスク |バーチャルマシンのチェックポイントに使用される差分ディスクファイル。 <br /> ファイル名拡張子:. .avhdx <br /> 既定の場所: C:\ProgramData\Microsoft\Windows\Hyper-V\Virtual ハードディスク|
+ |チェックポイント|チェックポイントは、複数のチェックポイント ファイルに格納されます。 各チェックポイントで、構成ファイルとランタイム状態ファイルが作成されます。 <br /> ファイル名拡張子:. vmrs と. vmcx <br />既定の場所: C:\ProgramData\Microsoft\Windows\Snapshots|
 
 ## <a name="what-happens-if-i-dont-upgrade-the-virtual-machine-configuration-version"></a>仮想マシンの構成バージョンをアップグレードしないとどうなりますか。
 
@@ -132,7 +130,7 @@ Windows Server 2019、Windows Server 2016、または Windows 10 で Hyper-v を
 |ホット アド/リムーブ メモリ|6.2|
 |Linux VM のセキュア ブート|6.2|
 |運用チェックポイント|6.2|
-|PowerShell ダイレクト |6.2|
+|PowerShell Direct |6.2|
 |仮想マシンのグループ化|6.2|
 |仮想トラステッド プラットフォーム モジュール (vTPM)|7.0|
 |仮想マシンの複数のキュー (VMMQ)|7.1|

@@ -6,14 +6,14 @@ ms.topic: article
 ms.assetid: c81e85cb-ecb8-442a-ad27-442c2f9e40df
 ms.prod: windows-server
 ms.technology: networking
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: c0803e369d9b48547190dc242617fed6e72d9ce4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 9c85c4fd9026155fe1ca880ecb05f4c9358a2309
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406339"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318423"
 ---
 # <a name="configure-certificate-auto-enrollment"></a>証明書の自動登録を構成する
 
@@ -42,7 +42,7 @@ ms.locfileid: "71406339"
      2. 期限切れの証明書の更新]、 **[保留中の証明書の更新]** 、および [失効した証明書の削除 を選択します。
      3. **[証明書テンプレートを使用する証明書を更新する]** チェック ボックスをオンにします。
 
-9. **[OK]** をクリックします。
+9. **[OK]** をクリックすると、
 
 ## <a name="configure-user-certificate-auto-enrollment"></a>ユーザー証明書の自動登録を構成する
 
@@ -63,8 +63,8 @@ ms.locfileid: "71406339"
      2. 期限切れの証明書の更新]、 **[保留中の証明書の更新]** 、および [失効した証明書の削除 を選択します。
      3. **[証明書テンプレートを使用する証明書を更新する]** チェック ボックスをオンにします。
 
-9. **[OK]** をクリックします。
+9. **[OK]** をクリックすると、
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 
 [グループポリシーの更新](refresh-group-policy.md)

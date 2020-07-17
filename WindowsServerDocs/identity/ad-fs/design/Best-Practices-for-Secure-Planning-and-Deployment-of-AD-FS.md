@@ -1,7 +1,6 @@
 ---
 ms.assetid: 963a3d37-d5f1-4153-b8d5-2537038863cb
 title: AD FS のセキュリティを考慮した設計と展開のベスト プラクティス
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: be488ccffee7b267d2a3a120b85436abf206f65a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: bcddb3cc7534f45f0a84e25a6174648f1e3b82af
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71359199"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858415"
 ---
 # <a name="best-practices-for-secure-planning-and-deployment-of-ad-fs"></a>AD FS のセキュリティを考慮した設計と展開のベスト プラクティス
 
@@ -57,25 +56,25 @@ ms.locfileid: "71359199"
   
     次の表では、AD FS をインストールしたコンピューターで選択する AD FS サーバーの役割に基づいて、適切な SCW の役割の拡張を登録する方法について説明します。  
   
-    |AD FS サーバーの役割|使用する AD FS 構成データベース|コマンド プロンプトで入力するコマンド|  
+    |AD FS サーバーの役割|使用する AD FS 構成データベース|コマンド プロンプトで次のコマンドを入力します。|  
     |---------------------|-------------------------------------|---------------------------------------------------|  
     |スタンドアロン フェデレーション サーバー|Windows Internal Database|`scwcmd register /kbname:ADFS2Standalone /kbfile:"WindowsADFSscwStandAlone.xml"`|  
     |ファームに加わったフェデレーション サーバー|Windows Internal Database|`scwcmd register /kbname:ADFS2Standalone /kbfile:"WindowsADFSscwFarm.xml"`|  
     |ファームに加わったフェデレーション サーバー|SQL Server|`scwcmd register /kbname:ADFS2Standalone /kbfile:"WindowsADFSscwSQLFarm.xml"`|  
-    |フェデレーション サーバー プロキシ|該当なし|`scwcmd register /kbname:ADFS2Standalone /kbfile:"WindowsADFSscwProxy.xml"`|  
+    |フェデレーション サーバー プロキシ|N/A|`scwcmd register /kbname:ADFS2Standalone /kbfile:"WindowsADFSscwProxy.xml"`|  
   
     AD FS に使用できるデータベースの詳細については、「[AD FS 構成データベースの役割](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md)」を参照してください。  
   
 -   **キオスクが使用されている場合など、セキュリティが非常に重要な懸念事項となる状況でトークンリプレイ検出を使用します。**  
     トークンリプレイ検出は、フェデレーションサービスに対して行われたトークン要求の再生試行が検出され、要求が破棄されることを保証する AD FS の機能です。 トークン リプレイ検出は既定で有効になっています。 この機能は、同じトークンが複数回使用されないようにすることで、WS-Federation パッシブ プロファイルと Security Assertion Markup Language (SAML) WebSSO プロファイルの両方に対して機能します。  
   
-    フェデレーション サービスが開始されると、サービスが対応するすべてのトークンの要求のキャッシュを構築し始めます。 時間と共に、キャッシュに後続のトークンの要求が追加されると、フェデレーション サービスにおいて、トークンの要求を複数回リプレイしようとする試みをより一層検出できるようになります。 トークン リプレイ検出を無効にして、後で再度有効にする場合は、リプレイ キャッシュがコンテンツを再構築するのに十分な時間が経過するまで、フェデレーション サービスは以前に使用された可能性のあるトークンを一定期間受け入れることに留意してください。 詳細については、「 [The Role of the AD FS Configuration Database](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md)」を参照してください。  
+    フェデレーション サービスが開始されると、サービスが対応するすべてのトークンの要求のキャッシュを構築し始めます。 時間と共に、キャッシュに後続のトークンの要求が追加されると、フェデレーション サービスにおいて、トークンの要求を複数回リプレイしようとする試みをより一層検出できるようになります。 トークン リプレイ検出を無効にして、後で再度有効にする場合は、リプレイ キャッシュがコンテンツを再構築するのに十分な時間が経過するまで、フェデレーション サービスは以前に使用された可能性のあるトークンを一定期間受け入れることに留意してください。 詳細については、「[AD FS 構成データベースの役割](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md)」を参照してください。  
   
 -   **特にサポートされている SAML アーティファクト解決を使用する場合は、トークンの暗号化を使用します。**  
   
     トークンの暗号化は、AD FS のデプロイに対して試行される可能性がある man-in-the-middle (MITM) 攻撃に対するセキュリティと保護を強化するために強くお勧めします。 暗号化の使用はスループットに多少影響する可能性がありますが、認識されることは通常なく、多くの展開においてセキュリティの強化のメリットはサーバーのパフォーマンスの点であらゆるコストに勝ります。  
   
-    トークンの暗号化を有効にするには、最初に証明書利用者信頼の暗号化証明書を設定して追加します。 暗号化証明書は、証明書利用者信頼の作成時または後で構成できます。 後で既存の証明書利用者信頼に暗号化証明書を追加するには、AD FS スナップインを使用しているときに、信頼プロパティ内の **[暗号化]** タブで使用する証明書を設定します。 AD FS コマンドレットを使用して既存の信頼の証明書を指定するには、 **ClaimsProviderTrust**コマンドレットまたは**set-relyingpartytrust**コマンドレットの encryptioncertificate パラメーターを使用します。 トークンを復号化するときに使用するフェデレーションサービスの証明書を設定するには、 **get-adfscertificate**コマンドレットを使用し、 *certificatetype*パラメーターに "`Token-Encryption`" を指定します。 特定の証明書利用者信頼に対する暗号化を有効または無効にするには、 *Set-RelyingPartyTrust* コマンドレットの **EncryptClaims** パラメーターを使用します。  
+    トークンの暗号化を有効にするには、最初に証明書利用者信頼の暗号化証明書を設定して追加します。 暗号化証明書は、証明書利用者信頼の作成時または後で構成できます。 後で既存の証明書利用者信頼に暗号化証明書を追加するには、AD FS スナップインを使用しているときに、信頼プロパティ内の **[暗号化]** タブで使用する証明書を設定します。 AD FS コマンドレットを使用して既存の信頼の証明書を指定するには、 **ClaimsProviderTrust**コマンドレットまたは**set-relyingpartytrust**コマンドレットの encryptioncertificate パラメーターを使用します。 トークンを復号化するときに使用するフェデレーションサービスの証明書を設定するには、 **get-adfscertificate**コマンドレットを使用し、 *certificatetype*パラメーターに "`Token-Encryption`" を指定します。 特定の証明書利用者信頼に対する暗号化を有効または無効にするには、*Set-RelyingPartyTrust* コマンドレットの **EncryptClaims** パラメーターを使用します。  
   
 -   **認証の拡張保護を利用する**  
   
@@ -85,9 +84,9 @@ ms.locfileid: "71359199"
   
     保護を強化する機能を有効にするには、**ExtendedProtectionTokenCheck** パラメーターを **Set-ADFSProperties** コマンドレットで使用します。 次の表に、この設定で使用できる値と、値によって指定されるセキュリティのレベルを示します。  
   
-    |パラメーター値|セキュリティ レベル|保護設定|  
+    |[パラメーター値]|セキュリティ レベル|保護設定|  
     |-------------------|------------------|----------------------|  
-    |Require|サーバーは完全にセキュリティで保護されます。|保護の強化が適用され常時必須です。|  
+    |必須|サーバーは完全にセキュリティで保護されます。|保護の強化が適用され常時必須です。|  
     |許可|サーバーは部分的にセキュリティで保護されます。|保護の強化は、関係するシステムでパッチによってサポートされている場合に適用されます。|  
     |なし|サーバーは保護されていません。|保護の強化は適用されません。|  
   
@@ -114,7 +113,7 @@ ms.locfileid: "71359199"
      Windows Server 2016 の AD FS のエクストラネットのスマートロックアウトについては[AD FS 「エクストラネットのスマートロックアウトの保護](../../ad-fs/operations/Configure-AD-FS-Extranet-Smart-Lockout-Protection.md)」を参照してください。  
   
 ## <a name="sql-serverspecific-security-best-practices-for-ad-fs"></a>SQL Server 特有の AD FS のセキュリティに関するベスト プラクティス  
-以下のセキュリティのベストプラクティスは、これらのデータベーステクノロジを使用して AD FS の設計と展開でデータを管理する場合の Microsoft SQL Server®または Windows Internal Database (WID) の使用に固有のものです。  
+以下のセキュリティのベストプラクティスは、これらのデータベーステクノロジを使用して AD FS の設計と展開でデータを管理する場合の Microsoft SQL Server&reg; または Windows Internal Database (WID) の使用に固有のものです。  
   
 > [!NOTE]  
 > これらの推奨事項は SQL Server 製品のセキュリティ ガイダンスを強化するためのものであって、取って代わるものではありません。 セキュリティで保護された SQL Server のインストールを計画する方法の詳細については、「[セキュリティに関する注意事項](https://go.microsoft.com/fwlink/?LinkID=139831)」 (https://go.microsoft.com/fwlink/?LinkID=139831)を参照してください。  
@@ -125,7 +124,7 @@ ms.locfileid: "71359199"
   
 -   **組み込みの既定のシステムサービスアカウントを使用するのではなく、サービスアカウントで SQL Server を実行します。**  
   
-    SQL Server は既定で、LocalSystem や NetworkService アカウントなど、サポートされているビルトイン システム アカウントの 1 つを使用するようインストールおよび構成されることがよくあります。 AD FS の SQL Server インストールのセキュリティを強化するには、可能な限り、SQL Server サービスへのアクセスに別のサービスアカウントを使用し、次のアカウントのセキュリティプリンシパル名 (SPN) を登録して Kerberos 認証を有効にします。Active Directory の展開。 これによってクライアントとサーバー間で相互認証ができるようになります。 別のサービス アカウントの SPN を登録しないと、SQL Server は Windows ベースの認証で NTLM を使用するので、クライアントのみが認証されます。  
+    SQL Server は既定で、LocalSystem や NetworkService アカウントなど、サポートされているビルトイン システム アカウントの 1 つを使用するようインストールおよび構成されることがよくあります。 AD FS の SQL Server インストールのセキュリティを強化するには、可能な限り、SQL Server サービスへのアクセスに別のサービスアカウントを使用し、Active Directory デプロイにこのアカウントのセキュリティプリンシパル名 (SPN) を登録することで Kerberos 認証を有効にします。 これによってクライアントとサーバー間で相互認証ができるようになります。 別のサービス アカウントの SPN を登録しないと、SQL Server は Windows ベースの認証で NTLM を使用するので、クライアントのみが認証されます。  
   
 -   **SQL Server の表面領域を最小化します。**  
   

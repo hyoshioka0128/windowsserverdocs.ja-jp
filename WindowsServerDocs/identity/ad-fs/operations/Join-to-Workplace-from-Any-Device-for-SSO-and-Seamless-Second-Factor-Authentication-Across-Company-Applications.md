@@ -1,7 +1,6 @@
 ---
 ms.assetid: e22d84a5-113d-4bec-b484-036ed29f0c28
 title: 任意のデバイスからの職場への参加による業務用アプリケーション間の SSO とシームレスな 2 要素認証
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 12/05/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 05a8b8bb5685c31ece29ed8eb38d37a424e478b8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 82c94adadb9241e2b7cd8d75ea1693957aaffc61
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357942"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80816265"
 ---
 # <a name="join-to-workplace-from-any-device-for-sso-and-seamless-second-factor-authentication-across-company-applications"></a>任意のデバイスからの職場への参加による業務用アプリケーション間の SSO とシームレスな 2 要素認証
 
@@ -31,7 +30,7 @@ ms.locfileid: "71357942"
 ### <a name="workplace-join"></a>社内参加
 ワークプレース ジョインを使用すると、インフォメーション ワーカーは個人用のデバイスを職場のコンピューターに参加させて、社内のリソースやサービスにアクセスできます。 職場に参加した個人用のデバイスは既知のデバイスとなり、職場のリソースやアプリケーションに対するシームレスな 2 要素認証とシングル サインオンが可能になります。 ワークプレース ジョインによってデバイスを職場に参加させると、そのデバイスの属性をディレクトリから取得して、アプリケーションに対するセキュリティ トークンの発行を承認するために条件付きアクセスを実行できます。 Windows 8.1 と iOS 6.0 以上、および Android 4.0 以上のデバイスでは、ワークプレース ジョインを使用して Windows 8.1 および iOS デバイスを参加させることができます。
 
-### <a name="BKMK_DRS"></a>Azure Active Directory Device Registration サービス
+### <a name="azure-active-directory-device-registration-service"></a><a name="BKMK_DRS"></a>Azure Active Directory Device Registration サービス
 ワークプレース ジョインは、Azure Active Directory Device Registration サービスによって可能になります。 デバイスをワークプレース ジョインによって参加させると、このサービス は Azure Active Directory にデバイス オブジェクトをプロビジョニングし、デバイス ID を表すために使用されるキーをローカル デバイスに設定します。 このデバイス ID は、クラウドとオンプレミスでホストされているアプリケーションのアクセス制御規則と共に使用できます。
 
 詳細については、「 [Azure Active Directory でのデバイス管理の概要](https://docs.microsoft.com/azure/active-directory/device-management-introduction)」を参照してください。
@@ -54,13 +53,13 @@ ms.locfileid: "71357942"
 
 このソリューション ガイドでは、次のチュートリアル手順が用意されています。
 
-1.  [チュートリアル: Workplace Join で Windows デバイスをワークプレースに参加させる](../../ad-fs/operations/Walkthrough--Workplace-Join-with-a-Windows-Device.md)
+1.  [チュートリアル: Windows デバイスでの Workplace Join](../../ad-fs/operations/Walkthrough--Workplace-Join-with-a-Windows-Device.md)
 
-2.  [チュートリアル: Workplace Join で iOS デバイスをワークプレースに参加させる](../../ad-fs/operations/Walkthrough--Workplace-Join-with-an-iOS-Device.md)
+2.  [チュートリアル: iOS デバイスでの Workplace Join](../../ad-fs/operations/Walkthrough--Workplace-Join-with-an-iOS-Device.md)
 
-3.  [チュートリアル: Workplace Join で Android デバイスをワークプレースに参加させる](../../ad-fs/operations/walkthrough--workplace-join-to-an-android-device.md)
+3.  [チュートリアル: Android デバイスでの Workplace Join](../../ad-fs/operations/walkthrough--workplace-join-to-an-android-device.md)
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 [デバイス登録サービスを使用してフェデレーションサーバーを構成する](../deployment/configure-a-federation-server-with-device-registration-service.md)
 
 

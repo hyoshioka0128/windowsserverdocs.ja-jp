@@ -1,7 +1,6 @@
 ---
 ms.assetid: e863ab80-4e4c-48d3-bdaa-31815ef36bae
 title: LDAP ディレクトリに保存されたユーザーを認証するように AD FS を構成する
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,27 +8,27 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 191ec0243c8c34c2084dd07f94f0b3f70b197756
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a3e429d43fd644cd2b8ba3a5b123deecc2696f24
+ms.sourcegitcommit: 912a5a402ecc6b39c1584338ea635a2ac11a4eb9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71358070"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82219286"
 ---
-# <a name="configure-ad-fs-to-authenticate-users-stored-in-ldap-directories"></a>LDAP ディレクトリに保存されたユーザーを認証するように AD FS を構成する
+# <a name="configure-ad-fs-to-authenticate-users-stored-in-ldap-directories-in-windows-server-2016-or-later"></a>Windows Server 2016 以降の LDAP ディレクトリに格納されているユーザーを認証するように AD FS を構成する
 
 次のトピックでは、ライトウェイトディレクトリアクセスプロトコル (LDAP) v3 に準拠したディレクトリに id が格納されているユーザーを AD FS インフラストラクチャで認証できるようにするために必要な構成について説明します。
 
 多くの組織では、id 管理ソリューションは、Active Directory、AD LDS、またはサードパーティの LDAP ディレクトリの組み合わせで構成されています。 LDAP v3 準拠のディレクトリに格納されているユーザーを認証するための AD FS サポートを追加すると、ユーザー id が格納されている場所に関係なく、エンタープライズレベルの AD FS 機能セット全体を活用できます。 AD FS は、すべての LDAP v3 準拠のディレクトリをサポートします。
 
 > [!NOTE]
-> AD FS の一部の機能には、シングルサインオン (SSO)、デバイスの認証、柔軟な条件付きアクセスポリシー、Web アプリケーションプロキシとの統合によるどこからでも機能のサポート、および Azure AD とのシームレスなフェデレーションが含まれます。Office 365 などの SaaS アプリケーションを含むクラウドをユーザーとユーザーが利用できるようにします。  詳細については、「 [Active Directory フェデレーションサービス (AD FS) の概要](../../ad-fs/AD-FS-2016-Overview.md)」を参照してください。
+> AD FS の一部の機能には、シングルサインオン (SSO)、デバイスの認証、柔軟な条件付きアクセスポリシー、Web アプリケーションプロキシとの統合による、どこからでも機能をサポートする機能、および Azure AD とのシームレスなフェデレーションがあります。これにより、Office 365 などの SaaS アプリケーションを含むクラウドを利用できます。  詳細については、「 [Active Directory フェデレーションサービス (AD FS) の概要](../../ad-fs/AD-FS-2016-Overview.md)」を参照してください。
 
 AD FS が LDAP ディレクトリからユーザーを認証できるようにするには、**ローカル要求プロバイダー信頼**を作成することによって、この ldap ディレクトリを AD FS ファームに接続する必要があります。  ローカル要求プロバイダー信頼は、AD FS ファーム内の LDAP ディレクトリを表す信頼オブジェクトです。 ローカル要求プロバイダー信頼オブジェクトは、ローカルのフェデレーションサービスに対してこの LDAP ディレクトリを識別するさまざまな識別子、名前、および規則で構成されます。
 
 複数の**ローカル要求プロバイダー信頼**を追加することにより、同じ AD FS ファーム内で、それぞれが独自の構成を持つ複数の LDAP ディレクトリをサポートできます。 また、AD FS 存在するフォレストによって信頼されていない AD DS フォレストは、ローカル要求プロバイダー信頼としてモデル化することもできます。 Windows PowerShell を使用して、ローカルの要求プロバイダー信頼を作成できます。
 
-LDAP ディレクトリ (ローカル要求プロバイダー信頼) は、同じ AD FS サーバー (要求プロバイダー信頼) と同じ AD FS ファーム内に共存できます。したがって、AD FS の1つのインスタンスは、ユーザーに対するアクセスを認証および承認することができます。AD ディレクトリと非 AD ディレクトリの両方に格納されます。
+LDAP ディレクトリ (ローカル要求プロバイダー信頼) は同じ AD FS サーバー上の AD ディレクトリ (要求プロバイダー信頼) と共存できます。そのため、同じ AD FS ファーム内で、AD FS の1つのインスタンスが、AD ディレクトリと非 AD ディレクトリの両方に格納されているユーザーの認証と承認を行うことができるようになります。
 
 LDAP ディレクトリからのユーザーの認証では、フォームベースの認証のみがサポートされています。 LDAP ディレクトリでのユーザーの認証では、証明書ベースの認証と統合 Windows 認証はサポートされていません。
 
@@ -50,7 +49,7 @@ LDAP ディレクトリからユーザーを認証するように AD FS ファ�
    > [!NOTE]
    > 接続先の LDAP サーバーごとに新しい接続オブジェクトを作成することをお勧めします。 AD FS は、複数のレプリカ LDAP サーバーに接続し、特定の LDAP サーバーがダウンした場合に自動的にフェールオーバーすることができます。 このような場合は、これらのレプリカ LDAP サーバーごとに1つの AdfsLdapServerConnection を作成してから、 **AdfsLocalClaimsProviderTrust**コマンドレットの-**ldapserverconnection**パラメーターを使用して接続オブジェクトの配列を追加します。
 
-   **注:** LDAP インスタンスにバインドするために使用する DN とパスワードを取得するために、資格情報を使用し、パスワードを入力しようとすると、特定の入力形式 (たとえば、domain\username や user@domain.tldなど) のユーザーインターフェイスが必要になるため、エラーが発生する可能性があります。 代わりに、次のように Convertto-html コマンドレットを使用することができます (次の例では、LDAP インスタンスにバインドするために使用する資格情報の DN として uid = admin, ou = system を想定しています)。
+   **注:** LDAP インスタンスにバインドするために使用する DN とパスワードを取得して使用すると、たとえば、domain\username やuser@domain.tldのような特定の入力形式に対するユーザーインターフェイスの要件によって、エラーが発生する可能性があります。 代わりに、次のように Convertto-html コマンドレットを使用することができます (次の例では、LDAP インスタンスにバインドするために使用する資格情報の DN として uid = admin, ou = system を想定しています)。
 
    ```
    $ldapuser = ConvertTo-SecureString -string "uid=admin,ou=system" -asplaintext -force
@@ -93,9 +92,8 @@ LDAP ディレクトリからユーザーを認証するように AD FS ファ�
    -OrganizationalAccountSuffix "vendors.contoso.com"
    ```
 
-   上記の例では、"ベンダ" という名前のローカル要求プロバイダー信頼を作成しています。 `-LdapServerConnection` パラメーターに `$vendorDirectory` を割り当てることによって、このローカル要求プロバイダー信頼が表す LDAP ディレクトリに接続するための AD FS の接続情報を指定します。 手順 1. では、特定の LDAP ディレクトリに接続するときに使用する接続文字列を `$vendorDirectory` 割り当てました。 最後に、`$GivenName`、`$Surname`、および `$CommonName` の LDAP 属性 (AD FS の要求にマップしたもの) を条件付きアクセスの制御に使用するように指定します。これには、多要素認証ポリシーと発行承認規則が含まれます。また、AD FS 発行されたセキュリティトークンの要求を使用して発行することもできます。 Ws-trust などのアクティブなプロトコルを AD FS と共に使用するには、OrganizationalAccountSuffix パラメーターを指定する必要があります。これにより、アクティブな承認要求を処理するときに、AD FS がローカル要求プロバイダー信頼を明確に区別できるようになります。
+   上記の例では、"ベンダ" という名前のローカル要求プロバイダー信頼を作成しています。 このローカル要求プロバイダー信頼が表す LDAP ディレクトリに接続するために、 `$vendorDirectory` `-LdapServerConnection`パラメーターにを割り当てることによって、AD FS の接続情報を指定します。 手順 1. では、特定の LDAP `$vendorDirectory`ディレクトリに接続するときに使用する接続文字列を割り当てました。 最後に、 `$GivenName`、 `$Surname`、および`$CommonName` LDAP 属性 (AD FS 要求にマップしたもの) を、条件付きアクセス制御 (多要素認証ポリシーと発行承認規則を含む) と、AD FS 発行されたセキュリティトークンの要求による発行に使用するように指定します。 Ws-trust などのアクティブなプロトコルを AD FS と共に使用するには、OrganizationalAccountSuffix パラメーターを指定する必要があります。これにより、アクティブな承認要求を処理するときに、AD FS がローカル要求プロバイダー信頼を明確に区別できるようになります。
 
 ## <a name="see-also"></a>参照
 [AD FS の運用](../../ad-fs/AD-FS-2016-Operations.md)
-
 

@@ -1,24 +1,20 @@
 ---
 title: リモート デスクトップ サービス クライアント アクセス ラインセンス (RDS CAL) を移行する
 description: この記事では、新しい Windows Server 2016 ライセンス サーバーに、リモート デスクトップ サービス クライアント アクセス ライセンスを移行する方法について説明します。
-ms.custom: na
 ms.prod: windows-server
-msreviewer: ''
-nams.suite: ''
-nams.technology: remote-desktop-services
+ms.technology: remote-desktop-services
 ms.author: chrimo
 ms.date: 11/01/2016
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 91bdedce-6145-469f-b72e-7e113c4391e9
 author: christianmontoya
 manager: scottman
-ms.openlocfilehash: 02d783916625a6f24e3413e8801686d8e5ddb8f3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5d95c2bc3a92a8cdcba4b308c88d94cb9af6d2a5
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404049"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "80855995"
 ---
 # <a name="migrate-your-remote-desktop-services-client-access-licenses-rds-cals"></a>リモート デスクトップ サービス クライアント アクセス ラインセンス (RDS CAL) を移行する
 

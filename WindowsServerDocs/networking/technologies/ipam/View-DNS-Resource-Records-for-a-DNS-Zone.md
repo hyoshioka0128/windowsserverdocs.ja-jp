@@ -2,30 +2,26 @@
 title: DNS ゾーンの DNS リソース レコードを表示する
 description: このトピックは、Windows Server 2016 の IP アドレス管理 (IPAM) 管理ガイドに含まれています。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ipam
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 375feefc-949e-47c3-9e61-35b79e021966
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 6e4b5ecd87e4976c0c65403bd63180e1d659e40b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: dfd772f89d913cd75b8c31ef4e5236f3cc11263c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405635"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854845"
 ---
 # <a name="view-dns-resource-records-for-a-dns-zone"></a>DNS ゾーンの DNS リソース レコードを表示する
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックを使用して、IPAM クライアント コンソールで、DNS ゾーンの DNS リソース レコードを表示することができます。  
   
-メンバーシップ **管理者**, 、同等の権限をこの手順を実行するために必要な最低限のですか。  
+この手順を実行するには、**Administrators** のメンバーシップ、またはそれと同等のメンバーシップが最低限必要です。  
   
 ### <a name="to-view-dns-resource-records-for-a-zone"></a>ゾーンの DNS リソース レコードを表示するには  
   
@@ -50,7 +46,7 @@ ms.locfileid: "71405635"
   
     ![レコードをフィルターする基準を使用してください。](../../media/View-DNS-Resource-Records-for-a-DNS-Zone/ipam_DNSzones_01d.jpg)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [DNS ゾーンの管理](DNS-Zone-Management.md)  
 [IPAM の管理](Manage-IPAM.md)  
   

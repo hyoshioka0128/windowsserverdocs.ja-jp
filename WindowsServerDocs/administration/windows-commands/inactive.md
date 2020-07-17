@@ -1,30 +1,31 @@
 ---
-title: 稼動
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+title: 非アクティブ
+description: 非アクティブなコマンドの参照記事。ベーシックマスターブートレコード (MBR) ディスクで、フォーカスがあるシステムパーティションまたはブートパーティションを非アクティブとしてマークします。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f4fb4695-4e66-4166-b4ab-2c86a4605580
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9ce91b6a024c165e3aa63148b9ad6dfcc4db7a7c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: db7d279577b8120137b4397551a480ea2d2a0e8a
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71375374"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924410"
 ---
-# <a name="inactive"></a>稼動
+# <a name="inactive"></a>非アクティブ
 
+基本マスターブートレコード (MBR) ディスクで、フォーカスがあるシステムパーティションまたはブートパーティションを非アクティブとしてマークします。
 
+この操作を成功させるには、アクティブなシステムまたはブートパーティションを選択する必要があります。 [[パーティションの選択] コマンド](select-partition.md)を使用してアクティブなパーティションを選択し、それにフォーカスを移動します。
 
-ベーシックマスタブートレコード (MBR) ディスクでは、はシステムパーティションまたはブートパーティションを非アクティブとしてマークします。
+> [!CAUTION]
+> アクティブ パーティションがないコンピューターは、起動しない可能性があります。 システムまたはブートパーティションを非アクティブとしてマークしないでください。これは、Windows ファミリのオペレーティングシステムを十分に理解している経験豊富なユーザーでない限りです。<p>システムパーティションまたはブートパーティションを非アクティブとしてマークした後にコンピューターを起動できない場合は、cd-rom ドライブに Windows セットアップ CD を挿入し、コンピューターを再起動してから、回復コンソールの**fixmbr**コマンドと**fixboot**コマンドを使用してパーティションを修復します。
+>
+> システムパーティションまたはブートパーティションを非アクティブとしてマークした後、コンピューターは、CD-ROM ドライブやプリブート実行環境 (PXE) など、BIOS で指定されている次のオプションから起動します。
 
 ## <a name="syntax"></a>構文
 
@@ -32,20 +33,16 @@ ms.locfileid: "71375374"
 inactive
 ```
 
-## <a name="remarks"></a>コメント
-
-> [!CAUTION]
-> アクティブなパーティションがないと、コンピューターが起動しない可能性があります。 システムまたはブートパーティションを非アクティブとしてマークしないでください。経験豊富なユーザーが Windows ファミリのオペレーティングシステムを十分に理解していることを確認してください。</br>>、システムまたはブートパーティションを非アクティブとしてマークした後にコンピューターを起動できない場合は、cd-rom ドライブに Windows セットアップ CD を挿入し、コンピューターを再起動してから、次**のコマンドを使用して**、パーティションを修復**します。** 回復コンソール。
-> -   システムパーティションまたはブートパーティションを非アクティブとしてマークした後、コンピューターは、CD-ROM ドライブやプリブート実行環境 (PXE) など、BIOS で指定されている次のオプションから起動します。
-> -   この操作を成功させるには、アクティブなシステムまたはブートパーティションを選択する必要があります。 **[パーティションの選択**] コマンドを使用してアクティブなパーティションを選択し、それにフォーカスを移動します。
-
-## <a name="BKMK_examples"></a>例
+### <a name="examples"></a>例
 
 ```
 inactive
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
 
+- [パーティションの選択コマンド](select-partition.md)
+
+- [Windows の起動の問題の高度なトラブルシューティング](https://docs.microsoft.com/windows/client-management/advanced-troubleshooting-boot-problems)

@@ -1,27 +1,23 @@
 ---
 title: Windows SBS 2003 の設定とデータを Windows Server Essentials 移行の移行先サーバーに移動する
 description: Windows Server Essentials の使用方法について説明します。
-ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+ms.prod: windows-server
 ms.topic: article
 ms.assetid: 67087ccb-d820-4642-8ca2-7d2d38714014
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: ba6fbf0237a16451403a7d4618b935c7c01f7064
-ms.sourcegitcommit: e2b565ce85a97c0c51f6dfe7041f875a265b35dd
+ms.openlocfilehash: 732e3de181578ac99388b1ff63e59b9ce1e2afba
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69584785"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80852485"
 ---
 # <a name="move-windows-sbs-2003-settings-and-data-to-the-destination-server-for-windows-server-essentials-migration"></a>Windows SBS 2003 の設定とデータを Windows Server Essentials 移行の移行先サーバーに移動する
 
->適用先:Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
+>適用対象: windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
 移行先サーバーへの設定とデータの移動は次のように行います。
 
@@ -50,17 +46,17 @@ ms.locfileid: "69584785"
 
 1. 移行先サーバーにドメイン管理者としてログオンします。 
 
-2. **[スタート]** ボタンをクリックし、検索ボックスに「 **cmd** 」と入力して、Enter キーを押します。 
+2. **[スタート]** ボタンをクリックし、検索ボックスに「**cmd**」と入力して、Enter キーを押します。 
 
 3. コマンド プロンプトで、次のコマンドを入力して Enter キーを押します。 
 
     `robocopy \\<SourceServerName> \<SharedSourceFolderName> \\<DestinationServerName> \<SharedDestinationFolderName> /E /B /COPY:DATSOU /LOG:C:\Copyresults.txt` 
 
 各項目の意味は次のとおりです。
- - \<SourceServerName\>は、移行元サーバーの名前です。
- - \<共有 dsourcefoldername\>は、移行元サーバー上の共有フォルダーの名前です。
- - \<Destinationservername\>は、移行先サーバーの名前です。
- - \<Shareddestinationfoldername\>は、データがコピーされる移行先サーバー上の共有フォルダーです。 
+ - \<SourceServerName\> は、移行元サーバーの名前です。
+ - \<共有 Dsourcefoldername\> は、移行元サーバー上の共有フォルダーの名前です。
+ - \<DestinationServerName\> は、移行先サーバーの名前です。
+ - \<SharedDestinationFolderName\> は、データがコピーされる移行先サーバー上の共有フォルダーです。 
 
 4. 移行元サーバーから移行する共有フォルダーごとに前記の手順を繰り返します。
 
@@ -109,9 +105,9 @@ Windows Server Essentials のグループポリシーオブジェクト (Gpo) �
 
 2. **[スタート]** ボタンをクリックし、 **[サーバー管理]** をクリックします。 
 
-3. ナビゲーションウィンドウで、 **[詳細管理]** をクリックし、 **[グループポリシー管理]** をクリックして、[**フォレスト:** _\>< ドメイン名_] をクリックします。 
+3. ナビゲーションウィンドウで、 **[詳細管理]** をクリックし、 **[グループポリシー管理]** をクリックします。次に、[**フォレスト:** _< ドメイン名\>_ ] をクリックします。 
 
-4. **[ドメイン]** をクリックし、[ドメイン*名\>の <* ] をクリックして、 **[オブジェクトのグループポリシー]** をクリックします。 
+4. **ドメイン** をクリックし、< のドメイン*名\>* をクリックして、**オブジェクトのグループポリシー** をクリックします。 
 
 5. **[Small Business Server の監査のポリシー]** を右クリックし、 **[削除]** をクリックして、 **[OK]** をクリックします。 
 
@@ -151,9 +147,9 @@ Windows Server Essentials のグループポリシーオブジェクト (Gpo) �
 
 2. **[スタート]** ボタンをクリックし、 **[サーバー管理]** をクリックします。
 
-3. ナビゲーションウィンドウで、 **[詳細管理]** をクリックし、 **[グループポリシー管理]** をクリックして、[**フォレスト:** _\> < networkdomainname_ ] をクリックします。
+3. ナビゲーションウィンドウで、 **[詳細管理]** をクリックし、 **[グループポリシー管理]** をクリックして、[**フォレスト:** _< networkdomainname_ ] をクリックし\>
 
-4. **[ドメイン]** をクリックし、[ *< networkdomainname\>* ] をクリックして、 **[WMI フィルター]** をクリックします。
+4. **ドメイン** をクリックし、 *< networkdomainname\>* をクリックして、**WMI フィルター** をクリックします。
 
 5. **[PostSP2]** を右クリックし、 **[削除]** をクリックして、 **[はい]** をクリックします。
 
@@ -173,9 +169,9 @@ Windows Server Essentials のグループポリシーオブジェクト (Gpo) �
 
  ルーターが UPnP フレームワークをサポートしていない場合、または UPnP フレームワークが無効になっている場合は、黄色の警告アイコンがルーター名の隣に表示されることがあります。 以下のポートが開かれていて、移行先サーバーの IP アドレスに向いていることを確認します。
 
-- ポート 80:HTTP Web トラフィック
+- ポート 80: HTTP Web トラフィック
 
-- ポート 443:HTTPS Web トラフィック
+- ポート 443: HTTPS Web トラフィック
 
 > [!NOTE]
 > 第 2 のサーバーにオンプレミス Exchange サーバーを設定してある場合は、ポート 25 (SMTP 用) も開かれていること、およびオンプレミス Exchange サーバーの IP アドレスにリダイレクトされることを確認する必要があります。

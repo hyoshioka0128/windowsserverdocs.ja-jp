@@ -9,10 +9,10 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: 5c6efb0697af663b32ce6f0e27634c3962eca492
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "71402102"
 ---
 # <a name="convert-a-gpt-disk-into-an-mbr-disk"></a>GPT ディスクを MBR ディスクに変換する
@@ -43,7 +43,7 @@ ms.locfileid: "71402102"
 
 2.  **[コマンド プロンプト]** を右クリックし、 **[管理者として実行]** を選択して、管理者特権でコマンド プロンプトを開きます。
 
-3. 「`diskpart`」と入力します。 ディスクにパーティションやボリュームが含まれていない場合は、手順 6. に進みます。
+3. 「 `diskpart`」と入力し、 ディスクにパーティションやボリュームが含まれていない場合は、手順 6. に進みます。
 
 4.  **DISKPART** プロンプトで、「`list disk`」と入力します。 削除するディスクのディスク番号を書き留めておきます。
 
@@ -56,7 +56,7 @@ ms.locfileid: "71402102"
 
 7.  **DISKPART** プロンプトで、「`convert mbr`」と入力します。
 
-|                Value                  |      説明   |
+|                値                  |      説明   |
 | ------------------------------------- | -----------------  |
 |  <strong>list disk</strong>  | ディスクとディスクに関する情報を一覧表示します。ディスクのサイズ、利用可能な空き領域の容量、ディスクがベーシック ディスクとダイナミック ディスクのどちらであるか、ディスクでマスター ブート レコード (MBR) と GUID パーティション テーブル (GPT) のどちらのパーティション スタイルが使用されているかなどの情報が表示されます。 アスタリスク (\*) でマークされているディスクにフォーカスがあります。 |
 | <strong>select disk</strong> |                                                                                                          <em>disknumber</em> がディスク番号である指定されたディスクを選択し、そのディスクにフォーカスを移動します。                                                                                                           |

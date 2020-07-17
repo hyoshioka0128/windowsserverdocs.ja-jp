@@ -1,6 +1,7 @@
-# はじめに
+# 開始
 ## [Windows Server 2016 の概要](Server-Basics.md)
 ## [Windows Server の新機能](whats-new-in-windows-server.md)
+### [Windows Server バージョン 2004 の新機能](whats-new-in-windows-server-2004.md)
 ### [Windows Server 2019 の新機能](../get-started-19/whats-new-19.md)
 ### [Windows Server 2016 の新機能](whats-new-in-windows-server-2016.md)
 ### [Windows Server 2016 で利用可能な高速更新プログラム](express-updates.md)
@@ -8,6 +9,7 @@
 ## [サービス チャネルの比較](..\get-started-19\servicing-channels-19.md)
 ## [Windows Server リリースのインストールとアップグレード](Installation-and-Upgrade.md)
 ## [Windows Server 2008 と Windows Server 2008 R2 のアップグレード](modernize-windows-server-2008.md)
+### [Windows Server 2008/2008 R2 の拡張セキュリティ更新プログラム](extended-security-updates.md)
 ### [Windows Server 2008/2008 R2 に特化されたイメージの Azure へのアップロード](uploading-specialized-WS08-image-to-azure.md)
 ## [Windows Server の役割と機能の移行](Migrate-Roles-and-Features.md)
 ## [Windows Server 2016 のシステム要件](System-Requirements.md)

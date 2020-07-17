@@ -2,22 +2,18 @@
 title: 手順2詳細な DirectAccess サーバーを構成する
 description: このトピックは、「Windows Server 2016 の詳細設定を使用して単一の DirectAccess サーバーを展開する」の一部です。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 35afec8e-39a4-463b-839a-3c300ab01174
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 0ba2154338871827aae03936e5e39a356a43d675
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: bfcdd58da67f41e84ff0956e3f0a0d9b63fa4f75
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388634"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854875"
 ---
 # <a name="step-2-configure-advanced-directaccess-servers"></a>手順2詳細な DirectAccess サーバーを構成する
 
@@ -27,7 +23,7 @@ ms.locfileid: "71388634"
   
 |タスク|説明|  
 |----|--------|  
-|2.1. リモート アクセスの役割をインストールする|リモート アクセスの役割をインストールします。|  
+|2.1. リモート アクセス役割のインストール|リモート アクセスの役割をインストールします。|  
 |2.2. 展開の種類を構成する|DirectAccess と VPN、DirectAccess のみ、または VPN のみで展開の種類を構成します。|  
 |[高度な DirectAccess 展開を計画する](Plan-an-Advanced-DirectAccess-Deployment.md)|DirectAccess クライアントを含むセキュリティ グループでリモート アクセス サーバーを構成します。|  
 |2.4. リモート アクセス サーバーを構成する|リモート アクセス サーバー設定を構成します。|  
@@ -37,9 +33,9 @@ ms.locfileid: "71388634"
 |2.8. Windows PowerShell を使用してリモート アクセス サーバーを構成する方法|Windows PowerShell を使用してリモートアクセスを構成します。|  
   
 > [!NOTE]  
-> このトピックでは、サンプル Windows PowerShell コマンドレットを紹介します。ここで説明する手順の一部はこのコマンドレットで自動化できます。 詳しくは、 [コマンドレットの使用に関するページ](https://go.microsoft.com/fwlink/p/?linkid=230693)をご覧ください。  
+> このトピックには、説明する手順の一部を自動化するために使用できるサンプルの Windows PowerShell コマンドレットが含まれます。 詳しくは、 [コマンドレットの使用に関するページ](https://go.microsoft.com/fwlink/p/?linkid=230693)をご覧ください。  
   
-## <a name="BKMK_Role"></a>2.1。 リモート アクセスの役割をインストールする  
+## <a name="21-install-the-remote-access-role"></a><a name="BKMK_Role"></a>2.1。 リモート アクセス役割のインストール  
 リモート アクセスを展開するには、組織でリモート アクセス サーバーとして機能するサーバーにリモート アクセスの役割をインストールする必要があります。  
   
 #### <a name="to-install-the-remote-access-role"></a>リモート アクセスの役割をインストールするには  
@@ -58,13 +54,13 @@ ms.locfileid: "71388634"
   
 ![のインストール進行状況の成功](../../../media/Step-2-Configuring-DirectAccess-Servers/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>***  
   
-以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
+次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 書式上の制約のため、複数行にわたって折り返される場合でも、各コマンドレットは 1 行に入力してください。  
   
 ```  
 Install-WindowsFeature RemoteAccess -IncludeManagementTools  
 ```  
   
-## <a name="BKMK_Deploy"></a>2.2。 展開の種類を構成する  
+## <a name="22-configure-the-deployment-type"></a><a name="BKMK_Deploy"></a>2.2。 展開の種類を構成する  
 リモート アクセスは、リモート アクセス管理コンソールを使用して、次の 3 とおりの方法で展開できます。  
   
 -   DirectAccess と VPN  
@@ -77,18 +73,18 @@ Install-WindowsFeature RemoteAccess -IncludeManagementTools
   
 #### <a name="to-configure-the-deployment-type"></a>展開の種類を構成するには  
   
-1.  リモートアクセスサーバーで、リモートアクセス管理コンソールを開きます。 **[スタート]** 画面で、「**ramgmtui.exe**」と入力し、enter キーを押します。 **[ユーザー アカウント制御]** ダイアログ ボックスが表示されたら、表示された操作が正しいことを確認し、 **[はい]** をクリックします。  
+1.  リモートアクセスサーバーで、リモートアクセス管理コンソールを開きます。 **[スタート]** 画面で、「**ramgmtui.exe**」と入力し、enter キーを押します。 **[ユーザー アカウント制御]** ダイアログ ボックスが表示された場合、表示された操作が目的の操作であることを確認して、 **[はい]** をクリックします。  
   
-2.  中央のペインで、リモート アクセス管理コンソールで、クリックして **リモート アクセス セットアップ ウィザードを実行**します。  
+2.  リモート アクセス管理コンソールの中央ウィンドウで、 **[リモート アクセスのセットアップ ウィザードを実行する]** をクリックします。  
   
 3.  **[リモート アクセスの構成]** ダイアログ ボックスで、DirectAccess と VPN、DirectAccess のみ、または VPN のみのどれを展開するかをクリックします。  
   
-## <a name="BKMK_Clients"></a>2.3。 DirectAccess クライアントを構成する  
+## <a name="23-configure-directaccess-clients"></a><a name="BKMK_Clients"></a>2.3。 DirectAccess クライアントを構成する  
 DirectAccess を使用するようにプロビジョニングするクライアント コンピューターは、選択したセキュリティ グループに属している必要があります。 DirectAccess の構成後、セキュリティ グループのクライアント コンピューターは、DirectAccess グループ ポリシー オブジェクト (GPO) を受信するようにプロビジョニングされます。 クライアント アクセスとリモート管理、またはリモート管理のみに DirectAccess の構成を許可する展開シナリオを構成することもできます。  
   
 #### <a name="to-configure-directaccess-clients"></a>DirectAccess クライアントを構成するには  
   
-1.  リモート アクセス管理コンソールの中央のペインでの **手順 1: リモート クライアント** 領域で、をクリックして **構成**します。  
+1.  リモート アクセス管理コンソールの中央ウィンドウの **[手順 1: リモート クライアント]** 領域で、 **[構成]** をクリックします。  
   
 2.  DirectAccess クライアントのセットアップ ウィザードの **[展開シナリオ]** ページで、組織で使用する展開シナリオをクリックし ( **[完全な DirectAccess]** または **[リモート管理のみ]** )、 **[次へ]** をクリックします。  
   
@@ -97,7 +93,7 @@ DirectAccess を使用するようにプロビジョニングするクライア�
 4.  **[グループの選択]** ダイアログ ボックスで、DirectAccess クライアント コンピューターを含むセキュリティ グループを選択します。  
   
     > [!NOTE]  
-    > セキュリティ グループがリモート アクセス サーバーとは異なるフォレストにある場合は、リモート アクセスのセットアップ ウィザードの完了後、**タスク** ウィンドウの **[管理サーバーの更新]** をクリックし、新しいフォレストでドメイン コントローラーと System Center Configuration Manager サーバーを検出します。  
+    > セキュリティグループがリモートアクセスサーバーとは異なるフォレストにある場合は、リモートアクセスのセットアップウィザードを完了した後、 **[タスク]** ウィンドウの **[管理サーバーの更新]** をクリックして、新しいフォレスト内のドメインコントローラーと Configuration Manager サーバーを検出します。  
   
 5.  必要に応じて、 **[モバイル コンピューターに対してのみ DirectAccess を有効にする]** チェック ボックスをオンにして、モバイル コンピューターのみが内部ネットワークにアクセスできるようにします。  
   
@@ -121,9 +117,9 @@ DirectAccess を使用するようにプロビジョニングするクライア�
         > [!NOTE]  
         > ローカルでの名前解決を有効にすると、Network Connectivity Assistant を実行するユーザーは、DirectAccess クライアント コンピューターで構成された DNS サーバーを使用する名前の解決を選択できます。  
   
-9. **[Finish]** (完了) をクリックします。  
+9. **[完了]** をクリックします。  
   
-## <a name="BKMK_Server"></a>2.4。 リモート アクセス サーバーを構成する  
+## <a name="24-configure-the-remote-access-server"></a><a name="BKMK_Server"></a>2.4。 リモート アクセス サーバーを構成する  
 リモート アクセスを展開するには、正しいネットワーク アダプターを使用したリモート アクセス サーバー、クライアント コンピューターが接続できるリモート アクセス サーバー向けのパブリック URL (ConnectTo アドレス)、ConnectTo アドレスに一致するサブジェクトを持つ IP-HTTPS 証明書、IPv6 設定、クライアント コンピューターの認証を構成する必要があります。  
   
 #### <a name="to-configure-the-remote-access-server"></a>リモート アクセス サーバーを構成するには  
@@ -150,29 +146,29 @@ DirectAccess を使用するようにプロビジョニングするクライア�
         > [!NOTE]  
         > この種の展開では、コンピューター証明書認証も使用する必要があります。  
   
-6.  **[Finish]** (完了) をクリックします。  
+6.  **[完了]** をクリックします。  
   
-## <a name="BKMK_Infra"></a>2.5。 インフラストラクチャ サーバーを構成する  
+## <a name="25-configure-the-infrastructure-servers"></a><a name="BKMK_Infra"></a>2.5。 インフラストラクチャ サーバーを構成する  
 リモート アクセス展開でインフラストラクチャ サーバーを構成するには、ネットワーク ロケーション サーバー、DNS 設定 (DNS サフィックス検索一覧を含む)、リモート アクセスで自動的に検出されない管理サーバーを構成する必要があります。  
   
 #### <a name="to-configure-the-infrastructure-servers"></a>インフラストラクチャ サーバーを構成するには  
   
 1.  リモート アクセス管理コンソールの中央ウィンドウの **[手順 3 インフラストラクチャ サーバー]** 領域で、 **[構成]** をクリックします。  
   
-2.  インフラストラクチャ サーバーのセットアップ ウィザードの **[ネットワーク ロケーション サーバー]** ページで、展開のネットワーク ロケーション サーバーの場所に一致するオプションをクリックします。 ネットワーク ロケーション サーバーがリモート Web サーバー上にある場合は、続行する前に **[検証]** をクリックします。 ネットワーク ロケーション サーバーがリモート アクセス サーバーにある場合はクリックして **参照** を適切な証明書を見つけて、クリックして **次**します。  
+2.  インフラストラクチャ サーバーのセットアップ ウィザードの **[ネットワーク ロケーション サーバー]** ページで、展開のネットワーク ロケーション サーバーの場所に一致するオプションをクリックします。 ネットワーク ロケーション サーバーがリモート Web サーバー上にある場合は、続行する前に **[検証]** をクリックします。 ネットワーク ロケーション サーバーがリモート アクセス サーバー上にある場合は、 **[参照]** をクリックして関連する証明書を検索してから、 **[次へ]** をクリックします。  
   
 3.  テーブルの **[DNS]** ページに、名前解決ポリシー テーブル (NRPT) 除外として適用される追加の名前サフィックスを入力します。 ローカルの名前解決オプションを選択して、 **[次へ]** をクリックします。  
   
 4.  **[DNS サフィックス検索一覧]** ページで、リモート アクセス サーバーは展開のドメイン サフィックスを自動的に検出します。 **[追加]** ボタンと **[削除]** ボタンを使用して、使用するドメイン サフィックスの一覧からドメイン サフィックスを追加、削除します。 新しいドメイン サフィックスを追加するには、 **[新しいサフィックス]** にサフィックスを入力して、 **[追加]** をクリックします。 **[次へ]** をクリックします。  
   
-5.  **[管理]** ページで、自動的に検出されない管理サーバーを追加して、 **[次へ]** をクリックします。 リモート アクセスでドメイン コントローラーと System Center Configuration Manager サーバーが自動的に追加されます。  
+5.  **[管理]** ページで、自動的に検出されない管理サーバーを追加して、 **[次へ]** をクリックします。 リモートアクセスは、ドメインコントローラーと Configuration Manager サーバーを自動的に追加します。  
   
     > [!NOTE]  
-    > サーバーは自動的に追加されますが、一覧には表示されません。 構成を初めて適用した後に、System Center Configuration Manager サーバーが一覧に表示されます。  
+    > サーバーは自動的に追加されますが、一覧には表示されません。 構成を最初に適用した後、Configuration Manager サーバーが一覧に表示されます。  
   
-6.  **[Finish]** (完了) をクリックします。  
+6.  **[完了]** をクリックします。  
   
-## <a name="BKMK_App"></a>2.6。 アプリケーション サーバーを構成する  
+## <a name="26-configure-application-servers"></a><a name="BKMK_App"></a>2.6。 アプリケーション サーバーを構成する  
 リモート アクセス展開で、アプリケーション サーバーの構成はオプションの作業です。 リモート アクセスでは、選択したアプリケーション サーバーの認証が要求されますが、これはアプリケーション サーバー セキュリティ グループに含まれているかどうかで決定されます。 既定では、認証を必要とするアプリケーション サーバーへのトラフィックも暗号化されますが、アプリケーション サーバーへのトラフィックは暗号化せず、認証のみを使用する選択も可能です。  
   
 > [!NOTE]  
@@ -188,9 +184,9 @@ DirectAccess を使用するようにプロビジョニングするクライア�
   
 4.  暗号化せずに認証を使用するには、[トラフィックを暗号化しない] を選択し**ます。[認証のみを使用する**] チェックボックスをオンにします。  
   
-5.  **[Finish]** (完了) をクリックします。  
+5.  **[完了]** をクリックします。  
   
-## <a name="BKMK_GPO"></a>2.7。 構成の概要と代替 GPO  
+## <a name="27-configuration-summary-and-alternate-gpos"></a><a name="BKMK_GPO"></a>2.7。 構成の概要と代替 GPO  
 リモート アクセス構成が完了すると、 **[リモート アクセスの確認]** が表示されます。 次のものを含め、これまでに選択したすべての設定を確認できます。  
   
 1.  **GPO 設定**: DirectAccess サーバー GPO 名およびクライアント GPO 名が一覧表示されます。 さらに、 **[GPO 設定]** の見出しの横にある **[変更]** リンクをクリックして、GPO 設定を変更できます。  
@@ -203,10 +199,10 @@ DirectAccess を使用するようにプロビジョニングするクライア�
   
 5.  **アプリケーション サーバー**: 特定のアプリケーション サーバーに対するエンドツーエンド認証の状態に加えて、DirectAccess のリモート管理の状態が表示されます。  
   
-## <a name="BKMK_PS"></a>2.8。 Windows PowerShell を使用してリモート アクセス サーバーを構成する方法  
+## <a name="28-how-to-configure-the-remote-access-server-by-using-windows-powershell"></a><a name="BKMK_PS"></a>2.8。 Windows PowerShell を使用してリモート アクセス サーバーを構成する方法  
 windows PowerShell の ![](../../../media/Step-2-Configuring-DirectAccess-Servers/PowerShellLogoSmall.gif)**Windows powershell の同等のコマンド**  
   
-以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
+次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 書式上の制約のため、複数行にわたって折り返される場合でも、各コマンドレットは 1 行に入力してください。  
   
 ルート**corp.contoso.com**を持つドメイン内でのみ directaccess のエッジトポロジで完全インストールを実行し、次のパラメーターを使用するには: サーバー GPO: **directaccess サーバー設定**、クライアント GPO: directaccess クライアント設定、内部ネットワークアダプター:**企業ネットワーク、外部ネットワークアダプター:** **Internet**、ConnectTto address: **edge1.contoso.com**、およびネットワークロケーションサーバー: **nls.corp.contoso.com**:  
   
@@ -241,7 +237,7 @@ Set-DAClient -OnlyRemoteComputers 'Disabled' -Downlevel 'Enabled'
 Set-DAClientExperienceConfiguration -FriendlyName 'Contoso DirectAccess Connection' -PreferLocalNamesAllowed $False -PolicyStore 'corp.contoso.com\DirectAccess Client Settings' -CorporateResources @('HTTP:https://directaccess-WebProbeHost.corp.contoso.com')  
 ```  
   
-## <a name="BKMK_Links"></a>前の手順  
+## <a name="previous-step"></a><a name="BKMK_Links"></a>前の手順  
   
 -   [手順 1: 高度な DirectAccess インフラストラクチャを構成する](da-adv-configure-s1-infrastructure.md)  
   

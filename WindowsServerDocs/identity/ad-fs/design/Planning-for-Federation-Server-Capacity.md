@@ -1,7 +1,6 @@
 ---
 ms.assetid: 7013fc21-9ced-4f9d-9588-cb04d6d60924
 title: フェデレーション サーバーの容量計画
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 418bc5d53a2bd11afa8563b07bbff76c89495715
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5801196921c1f7632725dfddb2a5c8c2bf4ae2b5
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407978"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858625"
 ---
 # <a name="planning-for-federation-server-capacity"></a>フェデレーション サーバーの容量計画
 
@@ -47,7 +46,7 @@ AD FS 構成データベースのその他の展開情報については、「 [
 > [!NOTE]  
 > AD FS 構成データベースを格納するために専用の SQL Server で構成されたフェデレーションサーバーファームを使用して AD FS 製品チームによって実行されたテストでは、SQL Server の全体的な負荷は低くなります。 1つの SQL Server を使用するように構成されていた4つの\-フェデレーション\-サーバーファームを使用しているテストでは、1つのテストでは、フェデレーションサーバーをターゲットの使用率にするテストがあっても、CPU 使用率が10% を超えません。  
   
-## <a name="bk_estimatefs"></a>組織のフェデレーションサーバーの数を推定する  
+## <a name="estimate-the-number-of-federation-servers-for-your-organization"></a><a name="bk_estimatefs"></a>組織のフェデレーションサーバーの数を推定する  
 フェデレーションサーバーのハードウェア計画プロセスを効率化するための取り組みとして、AD FS 製品チームは、AD FS 容量計画のサイジングスプレッドシートを開発しました。 この Excel スプレッドシートには、組織内のユーザーについて提供する予想される使用状況データを取得し、AD FS 運用環境で推奨される最適なフェデレーションサーバーの数を返す、電卓\-のような機能が含まれています。  
   
 > [!NOTE]  

@@ -1,20 +1,20 @@
 ---
 title: Windows Server ソフトウェア定義ネットワーク スタックのトラブルシューティング
 description: この Windows Server ガイドでは、ソフトウェアによるネットワーク制御 (SDN) に関する一般的なエラーとエラーのシナリオについて説明し、使用可能な診断ツールを活用するトラブルシューティングワークフローの概要を示します。
-manager: ravirao
+manager: grcusanz
 ms.prod: windows-server
 ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: 9be83ed2-9e62-49e8-88e7-f52d3449aac5
-ms.author: pashort
-author: JMesser81
+ms.author: anpaul
+author: AnirbanPaul
 ms.date: 08/14/2018
-ms.openlocfilehash: 22dcfb318a0e60bd1694496288f3e63b2780d643
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 90e3fd4bde06107871cc3a6b31939ca6b30f2473
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355497"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853615"
 ---
 # <a name="troubleshoot-the-windows-server-software-defined-networking-stack"></a>Windows Server ソフトウェア定義ネットワーク スタックのトラブルシューティング
 
@@ -123,7 +123,7 @@ Message:          Host is not Connected.
 
 | **コード**| **メッセージ**| **操作**|  
 |--------|-----------|----------|  
-| Unknown| 不明なエラー| |  
+| 不明| 不明なエラー| |  
 | HostUnreachable                       | ホスト コンピューターが到達可能ではありません。 | ネットワーク コント ローラーとホスト間での管理ネットワーク接続を確認します。 |  
 | PAIpAddressExhausted                  | PA Ip アドレスの不足 | HNV プロバイダー論理サブネットの IP プールのサイズを増やす |  
 | PAMacAddressExhausted                 | PA の Mac アドレスをすべて使用しました。 | Mac プールの範囲を広げる |  
@@ -267,7 +267,7 @@ Thumbprint                                Subject
 各証明書サブジェクト名は何だかどうかを確認するは、次のパラメーターを確認することもできます (ホスト名または NC REST FQDN または IP) が必要な証明書がまだ失効していない、および信頼されたルート証明機関に証明書チェーン内のすべての証明機関が含まれています。
 
 - サブジェクト名  
-- 失効日  
+- 有効期限  
 - 信頼されるルート証明機関  
 
 *修復* 複数の証明書では、HYPER-V ホストに同じサブジェクト名がある、ネットワーク コント ローラーのホストのエージェントは無作為に選択ネットワーク コント ローラーに表示する 1 つです。 これが、既知のネットワーク コント ローラーにサーバー リソースのサムプリントとは一致しません。 この場合、HYPER-V ホスト上の同じサブジェクト名を持つ証明書のいずれかを削除し、ネットワーク コント ローラーのホストのエージェント サービスを再開します。 まだ、接続は確立されません、HYPER-V ホスト上の同じサブジェクト名を持つその他の証明書を削除し、VMM での対応するサーバー リソースを削除します。 次に、vmm は新しい X.509 証明書を生成し、HYPER-V ホストにインストールされるサーバー リソースを再作成します。
@@ -524,7 +524,7 @@ Checking if physical nics support jumbo packets on host
 Physical Nic  <NIC> Ethernet Adapter #2 can support SDN traffic. Encapoverhead value set on the nic is  160
 Cannot send jumbo packets to the destination. Physical switch ports may not be configured to support jumbo packets.
 
-# TODO: Success Results aftering updating MTU on physical switch ports
+
 ```
 
 *対策*
@@ -597,7 +597,7 @@ PA ルーティング情報:
     Local PA IP: 10.10.182.66
     Remote PA IP: 10.10.182.65
 
- <snip> ...
+ <snip>...
 
 4. [テナント]仮想サブネットまたはトラフィックをブロックする VM ネットワーク インターフェイスで指定された分散型のファイアウォール ポリシーがないことを確認します。    
 
@@ -606,7 +606,7 @@ Sa18.nttest.microsoft.com ドメインの sa18n30nc にあるデモ環境で RES
     $uri = "https://sa18n30nc.sa18.nttest.microsoft.com"
     Get-NetworkControllerAccessControlList -ConnectionUri $uri 
 
-# <a name="look-at-ip-configuration-and-virtual-subnets-which-are-referencing-this-acl"></a>この ACL を参照している IP 構成と仮想サブネットを確認します
+## <a name="look-at-ip-configuration-and-virtual-subnets-which-are-referencing-this-acl"></a>この ACL を参照している IP 構成と仮想サブネットを確認します
 
 1. [ホスト]実行 ``Get-ProviderAddress`` 両方の HYPER-V でホストをホストしている 2 つの質問の仮想マシンをテナントし、実行 ``Test-LogicalNetworkConnection`` または ``ping -c <compartment>`` HNV プロバイダーの論理ネットワーク上の接続を検証できる HYPER-V ホストから
 2.  [ホスト]MTU 設定が HYPER-V ホスト上で正しいことと、レイヤー 2 HYPER-V ホストの間にデバイスを切り替えることを確認します。 実行 ``Test-EncapOverheadValue`` 対象のすべての HYPER-V ホストにします。 また間にあるすべてのレイヤー 2 スイッチが MTU 160 バイトの最大のオーバーヘッドを考慮する最小限の 1674 バイトに設定をあることを確認します。  
@@ -692,7 +692,7 @@ VMM の展開は、既定では、ネットワーク コント ローラーの�
 表示される次の診断情報に基づきは、次を修正します。  
 * SLB Multiplexers が接続されていることを確認します。  
   * 証明書の問題を修正します。  
-  * ネットワーク接続の問題を修正します  
+  * ネットワーク接続の問題を修正する  
 * BGP ピアリング情報が正常に構成されていることを確認します。  
 * レジストリでのホスト ID がサーバー リソース内のサーバー インスタンスの ID と一致することを確認 (については、付録を参照 *HostNotConnected* エラー コード)  
 * ログの収集  

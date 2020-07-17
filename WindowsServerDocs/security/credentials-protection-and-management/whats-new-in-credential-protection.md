@@ -1,24 +1,20 @@
 ---
 title: 資格情報の保護の新機能
 description: Windows Server のセキュリティ
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: security-credential-protection
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1b0b5180-f65a-43ac-8ef3-66014116f297
 author: gitmichiko
 ms.author: michikos
 manager: dongill
 ms.date: 03/06/2017
-ms.openlocfilehash: 2351be82ad1d8b9af17715ce363836f57c71ea66
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 35097cee243239735995a00cec7a6fd3936c62a8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386911"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857045"
 ---
 # <a name="whats-new-in-credential-protection"></a>資格情報の保護の新機能
 
@@ -47,7 +43,7 @@ Windows 10 バージョン1703以降、remote Credential Guard は、リモー�
 
 ### <a name="domain-joined-device-support-for-authentication-using-public-key"></a>ドメインに参加しているデバイスで、公開キーを使用した認証がサポートされる
 
-Windows 10 バージョン1507および Windows Server 2016 以降では、ドメインに参加しているデバイスが、バインドされた公開キーを Windows Server 2016 ドメインコントローラー (DC) に登録できる場合、デバイスは Kerberos PKINIT を使用して公開キーで認証できます。Windows Server 2016 DC に対する認証。
+Windows 10 バージョン1507および Windows Server 2016 以降では、ドメインに参加しているデバイスが、バインドされた公開キーを Windows Server 2016 ドメインコントローラー (DC) に登録できる場合、デバイスは Kerberos PKINIT 認証を使用して Windows Server 2016 DC に対して公開キーで認証できます。
 
 Windows Server 2016 以降では、Kdc は Kerberos キー信頼を使用した認証をサポートしています。  
 
@@ -68,7 +64,7 @@ Windows Server 2016 のドメイン機能レベル (DFL) 以降では、Dc は�
 > [!WARNING] 
 > ローリング NTLM シークレットが有効になっているドメインにドメインコントローラーを追加すると、DC が少なくとも11月8日に更新される前に、2016サービスによって DC がクラッシュするリスクがあります。 
 
-構成:新しいドメインの場合、この機能は既定で有効になっています。 既存のドメインの場合は、Active Directory 管理センターで構成する必要があります。 
+[構成]: 新しいドメインの場合、この機能は既定で有効になっています。 既存のドメインの場合は、Active Directory 管理センターで構成する必要があります。 
 
 1. Active Directory 管理センターで、左側のウィンドウのドメインを右クリックし、 **[プロパティ]** を選択します。
 
@@ -78,12 +74,12 @@ Windows Server 2016 のドメイン機能レベル (DFL) 以降では、Dc は�
 
     ![Autoroll の有効期限が切れる NTLM シークレット](../media/Credentials-Protection-And-Management/autoroll-ntlm.png)
 
-3. **[OK]** をクリックします。 
+3. **[OK]** をクリックすると、 
 
 ### <a name="allowing-network-ntlm-when-user-is-restricted-to-specific-domain-joined-devices"></a>ユーザーが特定のドメインに参加しているデバイスに制限されている場合にネットワーク NTLM を許可する
 
 Windows Server 2016 のドメイン機能レベル (DFL) 以降では、ドメインに参加している特定のデバイスにユーザーが制限されている場合、Dc はネットワーク NTLM の許可をサポートできます。 この機能は、下位の DFLs では使用できません。
 
-構成:[認証ポリシー] で、[**ユーザーが選択したデバイスに制限されている場合、NTLM ネットワーク認証を許可**する] をクリックします。 
+構成: [認証ポリシー] で、[**ユーザーが選択したデバイスに制限されている場合、NTLM ネットワーク認証を許可**する] をクリックします。 
 
 [認証ポリシーの詳細についてはこちらをご覧](https://technet.microsoft.com/windows-server-docs/security/credentials-protection-and-management/authentication-policies-and-authentication-policy-silos)ください。

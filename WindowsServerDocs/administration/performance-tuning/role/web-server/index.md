@@ -4,15 +4,15 @@ description: Windows Server 16 上の Web サーバーに対するパフォー�
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: landing-page
-ms.author: DavSo; Ericam; YaShi
+ms.author: davso; ericam; yashi
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 9587eb5215d2920a0146e8a697c6f36c50f19f27
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 249500249921d21184dc8cd14993741392927586
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71370055"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471207"
 ---
 # <a name="performance-tuning-web-servers"></a>Web サーバーのパフォーマンス チューニング
 
@@ -57,7 +57,7 @@ ms.locfileid: "71370055"
 >[!Warning]
 > 増分バックアップ ユーティリティなどの一部のアプリケーションは、この更新情報に依存しており、この情報がないと正しく機能しません。
 
-## <a name="see-also"></a>関連項目
+## <a name="additional-references"></a>その他の参照情報
 - [IIS 10.0 のパフォーマンス チューニング](tuning-iis-10.md)
 - [HTTP 1.1/2 のチューニング](http-performance.md)
 

@@ -4,25 +4,24 @@ description: RRAS は、ルーターとリモートアクセスサーバーの�
 ms.prod: windows-server
 ms.technology: networking-ras
 ms.topic: article
-ms.assetid: ''
 ms.localizationpriority: medium
-ms.author: pashort
-author: shortpatti
+ms.author: v-tea
+author: Teresa-MOTIV
 ms.date: 08/30/2018
 ms.reviewer: deverette
-ms.openlocfilehash: c04074338cf4ba0189eb1e9bc45a80b948fdbfbf
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4cb5d5fc65eee997068ea3192081bf753fdd9083
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388044"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80818985"
 ---
 # <a name="step-3-configure-the-remote-access-server-for-always-on-vpn"></a>手順 3. Always On VPN 用にリモート アクセス サーバーを構成する
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows 10
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows 10
 
-- [**先の：** 手順 2.サーバーインフラストラクチャの構成](vpn-deploy-server-infrastructure.md)
-- [**先の：** 手順 4.ネットワークポリシーサーバー (NPS) をインストールして構成する](vpn-deploy-nps.md)
+- [**前へ:** 手順 2.サーバーインフラストラクチャの構成](vpn-deploy-server-infrastructure.md)
+- [**前へ:** 手順 4.ネットワークポリシーサーバー (NPS) をインストールして構成する](vpn-deploy-nps.md)
 
 RRAS は、さまざまな機能をサポートしているため、ルーターとリモートアクセスサーバーの両方として動作するように設計されています。 この展開では、これらの機能のごく一部のみを必要とします。 IKEv2 VPN 接続と LAN ルーティングのサポートです。
 
@@ -140,7 +139,7 @@ IKEv2 は、「インターネット技術標準化委員会におけるコメ�
 
        [RADIUS 認証] ダイアログボックスが開きます。
 
-    c. **[追加]** をクリックします。
+    c. **[追加]** を選択します。
 
        [RADIUS サーバーの追加] ダイアログボックスが表示されます。
 
@@ -165,11 +164,11 @@ IKEv2 は、「インターネット技術標準化委員会におけるコメ�
 
     - **初期スコア**
 
-    - **[ポート]**
+    - **Port**
 
 13. 必要に応じて、環境の要件に合わせて値を変更し、[ **OK]** を選択します。
 
-    NAS は、大規模なネットワークに対して一定レベルのアクセスを提供するデバイスです。 Radius インフラストラクチャを使用する NAS は、認証、承認、およびアカウンティングのために接続要求とアカウンティングメッセージを RADIUS サーバーに送信する RADIUS クライアントでもあります。
+    NAS は、大規模なネットワークに対して一定レベルのアクセスを提供するデバイスです。 RADIUS インフラストラクチャを使用した NAS は、認証、承認、およびアカウンティングのために、接続要求とアカウンティング メッセージを RADIUS サーバーに送信する RADIUS クライアントでもあります。
 
 14. **アカウンティングプロバイダー**の設定を確認します。
 
@@ -194,11 +193,11 @@ IKEv2 は、「インターネット技術標準化委員会におけるコメ�
 
 16. Optional*Vpn 接続の条件付きアクセスを構成する場合*は、 **[証明書]** ドロップダウンリストの **[SSL 証明書のバインド]** で、VPN サーバー認証を選択します。
 
-17. Optional*VPN 接続の条件付きアクセスを構成する場合*は、NPS MMC で [**ポリシー\\] [ネットワークポリシー** ] の順に展開し、次の操作を行います。 
+17. Optional*VPN 接続の条件付きアクセスを構成する場合*は、NPS MMC で ポリシー を展開し、**ネットワークポリシー\\** します。 
 
     a. **Microsoft ルーティングとリモートアクセスサーバー**のネットワークポリシーへの接続を右クリックし、 **[プロパティ]** を選択します。
 
-    b. [アクセス**権の付与] を選択します。接続要求がこのポリシー**オプションに一致する場合にアクセスを許可します。
+    b. [アクセス権の付与] を選択し**ます。接続要求がこのポリシーオプションに一致する場合にアクセスを許可**します。
 
     c. ネットワークアクセスサーバーの種類 で、ドロップダウンから **リモートアクセスサーバー (VPN ダイヤルアップ)** を選択します。
 
@@ -234,4 +233,4 @@ IKEv2 は、「インターネット技術標準化委員会におけるコメ�
 
 ## <a name="next-step"></a>次の手順
 
-[手順 4.ネットワークポリシーサーバー (NPS)](vpn-deploy-nps.md)をインストールして構成します。この手順では、Windows PowerShell またはサーバーマネージャーの役割と機能の追加ウィザードを使用して、ネットワークポリシーサーバー (NPS) をインストールします。 また、NPS が VPN サーバーから受信する接続要求のすべての認証、承認、およびアカウンティングの各作業を処理するように構成します。
+[手順 4.ネットワークポリシーサーバー (NPS) をインストールして構成](vpn-deploy-nps.md)する: この手順では、Windows PowerShell またはサーバーマネージャーの役割と機能の追加ウィザードを使用して、ネットワークポリシーサーバー (nps) をインストールします。 また、NPS が VPN サーバーから受信する接続要求のすべての認証、承認、およびアカウンティングの各作業を処理するように構成します。

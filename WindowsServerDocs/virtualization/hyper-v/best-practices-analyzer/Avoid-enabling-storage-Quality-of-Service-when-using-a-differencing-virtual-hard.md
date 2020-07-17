@@ -2,20 +2,19 @@
 title: 親と子のバーチャルハードディスクが異なるボリュームにある場合に差分バーチャルハードディスクを使用すると、記憶域のサービスの品質を有効にしない
 description: このベストプラクティスアナライザールールのテキストのオンラインバージョン。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: aa9ed408-65cf-40dc-aad2-118b54c70179
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 716a32de2f9327e5eca38c470fa1b7c44150e9cb
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4190b164b473e54c7fcecd68ddf8f746cebcfdc9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366441"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857785"
 ---
 # <a name="avoid-enabling-storage-quality-of-service-when-using-a-differencing-virtual-hard-disk-when-the-parent-and-child-virtual-hard-disks-are-on-different-volumes"></a>親と子のバーチャルハードディスクが異なるボリュームにある場合に差分バーチャルハードディスクを使用すると、記憶域のサービスの品質を有効にしない
 
@@ -27,7 +26,7 @@ ms.locfileid: "71366441"
 |-|-|  
 |**オペレーティング システム**|Windows Server 2016|  
 |**製品/機能**|Hyper-V|  
-|**順**|Warning|  
+|**順**|［警告］|  
 |**カテゴリ**|構成|  
   
 次のセクションでは、斜体は、この問題のためのベスト プラクティス アナライザー ツールで表示される UI テキストを示します。

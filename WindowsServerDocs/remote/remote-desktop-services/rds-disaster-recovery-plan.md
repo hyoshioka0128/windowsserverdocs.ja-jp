@@ -1,27 +1,23 @@
 ---
 title: ディザスター リカバリー計画を作成する
 description: RDS 展開のディザスター リカバリー計画を作成する方法について説明します。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 05/05/2017
-ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: e4e9a9ab05e672c72925e3699900218abdf1c682
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 18342bb7fd3ad26427ae1e1a051e20444fdff7c2
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404025"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "80859025"
 ---
 # <a name="create-your-disaster-recovery-plan-for-rds"></a>RDS のディザスター リカバリー計画を作成する
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016
+>適用先:Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016
 
 Azure Site Recovery でディザスター リカバリー計画を作成し、フェールオーバー プロセスを自動化することができます。 リカバリー計画には、すべての RDS コンポーネント VM を追加します。
 

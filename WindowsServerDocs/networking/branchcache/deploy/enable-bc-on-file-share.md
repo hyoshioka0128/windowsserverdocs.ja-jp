@@ -2,26 +2,22 @@
 title: ファイル共有上の BranchCache を有効にする (省略可能)
 description: このトピックは、BranchCache 展開ガイドの Windows Server 2016、ブランチ オフィスに WAN 帯域幅使用量を最適化するために分散され、ホスト型キャッシュ モードで BranchCache を展開する方法を示しますの一部
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-bc
-ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 9c465a9e-c504-44ec-9ebc-4e06ba54db30
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 37bab11a0914a3f6854314016bb59297aa6954f2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 501fd1b1ac3b0bc7a0767ec57502ba18a8ee76e4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406357"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861085"
 ---
 # <a name="enable-branchcache-on-a-file-share-optional"></a>ファイル共有上の BranchCache を有効にする (省略可能)
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 次の手順を使用して、ファイル共有で BranchCache を有効にすることができます。  
   
@@ -32,9 +28,9 @@ ms.locfileid: "71406357"
   
 ### <a name="to-enable-branchcache-on-a-file-share"></a>ファイル共有で BranchCache を有効にするには  
   
-1.  Windows PowerShell を開き、「 **mmc**」と入力して、Enter キーを押します。 Microsoft 管理コンソール (MMC) が開きます。  
+1.  Windows PowerShell を開き、「**mmc**」と入力して、Enter キーを押します。 Microsoft 管理コンソール (MMC) が開きます。  
   
-2.  MMC で、 **[ファイル]** メニューの **[スナップインの追加と削除]** をクリックします。 **[スナップインの追加と削除]** ダイアログボックスが表示されます。  
+2.  MMC の **[ファイル]** メニューで、 **[スナップインの追加と削除]** をクリックします。 **[スナップインの追加と削除]** ダイアログボックスが表示されます。  
   
 3.  **[スナップインの追加と削除]** の **[使用できるスナップ]** イン で、 **[共有フォルダー]** をダブルクリックします。 [ローカルコンピューター] オブジェクトが選択された状態で、共有フォルダーウィザードが開きます。 必要に応じてビューを構成し、 **[完了]** をクリックして、 **[OK]** をクリックします。  
   

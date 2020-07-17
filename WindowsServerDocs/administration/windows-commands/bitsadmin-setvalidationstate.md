@@ -1,52 +1,49 @@
 ---
 title: bitsadmin setvalidationstate
-description: '**Bitsadmin setvalidationstate**の Windows コマンドトピック-ジョブ内の指定されたファイルのコンテンツ検証の状態を設定します。'
-ms.custom: na
+description: Bitsadmin setvalidationstate コマンドの参照記事。このコマンドは、ジョブ内の指定されたファイルのコンテンツ検証の状態を設定します。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e8fc8e8c-171c-4681-8057-6986b018e576
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 37d7fa3a8a91abf1e7b6ac5a51b6cebd78984a91
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ae776279b742e3af5af3cf555765007bbf0eb8de
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71380398"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927499"
 ---
 # <a name="bitsadmin-setvalidationstate"></a>bitsadmin setvalidationstate
-
-
 
 ジョブ内の指定されたファイルのコンテンツ検証の状態を設定します。
 
 ## <a name="syntax"></a>構文
 
 ```
-bitsadmin /SetValidationState <Job> <file index> <true|false> 
+bitsadmin /setvalidationstate <job> <file_index> <TRUE|FALSE>
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
-| パラメーター  |          説明           |
-|------------|--------------------------------|
-|    Job     | ジョブの表示名または GUID |
-| ファイルインデックス |         0から開始          |
-|    True    |             False              |
+| パラメーター | 説明 |
+| --------- | ---------- |
+| ジョブ | ジョブの表示名または GUID。 |
+| file_index | 0から開始します。 |
+| TRUE または FALSE | **TRUE**を指定すると、指定したファイルのコンテンツの検証が有効になり、 **FALSE**の場合は無効になります。 |
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a>例
 
-次の例では、 *myjob*という名前のジョブについて、ファイル2のコンテンツ検証の状態を TRUE に設定します。
+*Mydownloadjob*という名前のジョブについて、ファイル2のコンテンツの検証の状態を TRUE に設定するには、次のようにします。
+
 ```
-C:\>bitsadmin /SetValidationState myJob 2 TRUE 
+bitsadmin /setvalidationstate myDownloadJob 2 TRUE
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [bitsadmin コマンド](bitsadmin.md)

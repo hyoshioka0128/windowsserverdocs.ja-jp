@@ -1,31 +1,30 @@
 ---
 title: を使用してネットワークコントローラーのサーバーの役割をインストールサーバーマネージャー
 description: このトピックでは、Windows Server 2016 のサーバーマネージャーを使用して、ネットワークコントローラーのサーバーの役割をインストールする手順について説明します。
-manager: brianlic
+manager: grcusanz
 ms.prod: windows-server
 ms.technology: networking-sdn
-ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 3a6e4352-ff62-4290-b8a4-5c83740070fc
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 8b656bbd823a10f1e36d1757bb53c4565d4e828c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: anpaul
+author: AnirbanPaul
+ms.openlocfilehash: a93d737b80e41fbc4401105a9f72426c3a73fa7d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405837"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859675"
 ---
 # <a name="install-the-network-controller-server-role-using-server-manager"></a>を使用してネットワークコントローラーのサーバーの役割をインストールサーバーマネージャー
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックでは、サーバー マネージャーを使用して、ネットワーク コント ローラー サーバーの役割をインストールする方法の手順を示します。
 
 >[!IMPORTANT]
->ネットワークコントローラーのサーバーの役割を物理ホストに展開しないでください。 ネットワーク コント ローラーを展開するには、ホストにインストールされている HYPER-V 仮想マシン\(VM\)でネットワーク コントローラー サーバーの役割をインストールする必要があります。 次の 3 つの異なる HYPER\-V ホスト上の VM にでネットワーク コントローラーをインストールした後、Windows PowerShell コマンド **New-NetworkControllerServer** を使用してホストをネットワーク コント ローラーに追加して、ソフトウェア定義ネットワーク\(SDN\)のHYPER\-Vホストを有効にする必要があります。 これにより、SDN ソフトウェア ロード バランサーが機能するようになります。 詳細については、[New-NetworkControllerServer](https://technet.microsoft.com/itpro/powershell/windows/network-controller/new-networkcontrollerserver) を参照してください。
+>ネットワークコントローラーのサーバーの役割を物理ホストに展開しないでください。 ネットワークコントローラーを展開するには、hyper-v ホストにインストールされている VM\) \(Hyper-v 仮想マシンにネットワークコントローラーサーバーの役割をインストールする必要があります。 3つの異なる\-Hyper-v ホスト上の Vm にネットワークコントローラーをインストールした後、Windows PowerShell コマンド**NetworkControllerServer**を使用してネットワークコントローラーにホストを追加することで、ソフトウェアで定義されたネットワーク \(SDN\) 用のハイパー\-V ホストを有効にする必要があります。 これにより、SDN ソフトウェア ロード バランサーが機能するようになります。 詳細については、「 [NetworkControllerServer](https://technet.microsoft.com/itpro/powershell/windows/network-controller/new-networkcontrollerserver)」を参照してください。
   
-ネットワーク コントローラーをインストールした後は、追加のネットワーク コントローラーの構成に Windows PowerShell コマンドを使用する必要があります。 詳細については、[Windows PowerShell を使用してネットワーク コントローラーを展開する](../../deploy/Deploy-Network-Controller-using-Windows-PowerShell.md) を参照してください。  
+ネットワーク コント ローラーをインストールした後は、追加のネットワーク コント ローラー構成の Windows PowerShell コマンドを使用する必要があります。 詳細については、次を参照してください。 [展開ネットワーク コント ローラーが Windows PowerShell を使用して](../../deploy/Deploy-Network-Controller-using-Windows-PowerShell.md)します。  
   
 ### <a name="to-install-network-controller"></a>ネットワーク コント ローラーをインストールするには  
   
@@ -39,7 +38,7 @@ ms.locfileid: "71405837"
   
     ![ネットワーク コント ローラーのサーバーの役割](../../../media/Install-the-Network-Controller-server-role-using-Server-Manager/netc_install_07.jpg)  
   
-5.  **ネットワーク コント ローラーに必要な機能を追加**  ダイアログ ボックスが表示されます。 クリックして **機能を追加**します。  
+5.  **ネットワーク コント ローラーに必要な機能を追加**  ダイアログ ボックスが表示されます。 **[機能の追加]** をクリックします。  
   
     ![ネットワーク コント ローラーの機能を追加します。](../../../media/Install-the-Network-Controller-server-role-using-Server-Manager/netc_install_06.jpg)  
   
@@ -53,7 +52,7 @@ ms.locfileid: "71405837"
   
 9. **インストール オプションの確認**, 、選択内容を確認します。 ネットワーク コント ローラーのインストールでは、ウィザードを実行した後、コンピューターを再起動する必要があります。 このため、次のようにクリックします。 **ために必要な場合は、移行先サーバーを自動的に再起動**します。 **追加の役割と機能ウィザード**  ダイアログ ボックスが表示されます。 **[はい]** をクリックします。  
   
-    ![役割および機能の追加ウィザード](../../../media/Install-the-Network-Controller-server-role-using-Server-Manager/netc_install_11.jpg)  
+    ![役割と機能の追加ウィザード](../../../media/Install-the-Network-Controller-server-role-using-Server-Manager/netc_install_11.jpg)  
   
 10. **[インストール オプションの確認]** で、 **[インストール]** をクリックします。  
   
@@ -63,7 +62,7 @@ ms.locfileid: "71405837"
   
     ![サーバー マネージャー](../../../media/Install-the-Network-Controller-server-role-using-Server-Manager/nc_013.jpg)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [ネットワーク コントローラー](Network-Controller.md)  
   
 

@@ -1,30 +1,24 @@
 ---
-title: 'ksetup: dumpstate'
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+title: ksetup dumpstate
+description: コンピューターで定義されているすべての領域の領域設定の現在の状態を表示する、ksetup dumpstate commnand の参照記事。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 3ef2f7b8-97af-4f42-9542-cff324840637
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 625d05b2fea9ae58681648c64e309aa8b2a201ed
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 86e3761af14da9e1b8f52f4ce6859128fcda7bb7
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71375000"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929165"
 ---
-# <a name="ksetupdumpstate"></a>ksetup: dumpstate
+# <a name="ksetup-dumpstate"></a>ksetup dumpstate
 
-
-
-コンピューターに定義されているすべての領域の領域設定の現在の状態を表示します。 このコマンドの使用方法の例については、次を参照してください。 [例](#BKMK_Examples)します。
+コンピューターに定義されているすべての領域の領域設定の現在の状態を表示します。 このコマンドは、 **ksetup**コマンドと同じ出力を表示します。
 
 ## <a name="syntax"></a>構文
 
@@ -32,31 +26,30 @@ ms.locfileid: "71375000"
 ksetup /dumpstate
 ```
 
-### <a name="parameters"></a>パラメーター
+### <a name="remarks"></a>Remarks
 
-なし
+- このコマンドの出力には、既定の領域 (コンピューターがメンバーとなっているドメイン) と、このコンピューターで定義されているすべての領域が含まれます。 各領域には次のものが含まれます。
 
-## <a name="remarks"></a>コメント
+  - この領域に関連付けられているすべてのキー配布センター (Kdc)。
 
-このコマンドの出力には、既定の領域 (コンピューターがメンバーとなっているドメイン) と、このコンピューターで定義されているすべての領域が含まれます。 各領域には次のものが含まれます。
--   この領域に関連付けられているすべてのキー配布センター (Kdc)
--   この領域のすべての**設定領域**フラグ
--   KDC パスワード
+  - この領域のすべての**設定領域**フラグ。
 
-このコマンドでは、DNS の検出またはコマンド**ksetup/domain**によって指定されたドメイン名は表示されません。
+  - KDC パスワード。
 
-このコマンドでは、 **ksetup/setcomputerpassword**コマンドを使用して設定されたコンピューターパスワードは表示されません。
+- このコマンドでは、DNS の検出またはコマンドによって指定されたドメイン名は表示されません `ksetup /domain` 。
 
-**Ksetup**は、 **Ksetup/dumpstate**と同じ出力を生成します。
+- このコマンドでは、コマンドを使用してコンピューターのパスワードを設定することはできません `ksetup /setcomputerpassword` 。
 
-## <a name="BKMK_Examples"></a>例
+## <a name="examples"></a>例
 
-コンピューター上のほとんどの Kerberos 領域構成を検索します。
+コンピューターで Kerberos 領域構成を見つけるには、次のように入力します。
+
 ```
 ksetup /dumpstate
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
--   [Ksetup](ksetup.md)
--   [コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [ksetup コマンド](ksetup.md)

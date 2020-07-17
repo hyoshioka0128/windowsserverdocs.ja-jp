@@ -1,8 +1,7 @@
 ---
 title: 開始
-description: 'サーバーの基礎: システム要件、リリース ノートは、アップグレード オプション'
+description: Server 2016 の基礎 - システム要件、リリース ノート、アップグレード オプション
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: get-started
 ms.date: 03/16/2018
@@ -10,14 +9,14 @@ ms.topic: article
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b8d346ceafb81b02ebbffc62e558800b77f0086
-ms.sourcegitcommit: 8fbd2d877612a9feb02d7d91ed0372d7cd441d5c
+ms.openlocfilehash: 094e4ffdee8480886700a4967ef2281008aad965
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71678809"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "80826545"
 ---
-# <a name="get-started-with-windows-server-2016"></a>Windows Server 2016 の概要
+# <a name="get-started-with-windows-server-2016"></a>Windows Server 2016 を使ってみる
 
 >適用先:Windows Server 2016
 
@@ -30,28 +29,28 @@ ms.locfileid: "71678809"
 > Windows Server 2016 をダウンロードするを参照してください。 [Windows Server の評価](https://www.microsoft.com/evalcenter/evaluate-windows-server-2016)します。
 
 
-## <a name="system-requirementssystem-requirementsmd"></a>[システム要件](system-requirements.md)
+## <a name="system-requirements"></a>[システム要件](system-requirements.md)
 Windows Server 2016 をインストールして実行するための最小ハードウェア要件を確認します。
 
-## <a name="release-notes-important-issues-in-windows-serverwindows-server-2016-ga-release-notesmd"></a>[リリース ノート:Windows Server に関する重要な問題](Windows-Server-2016-GA-Release-Notes.md)
+## <a name="release-notes-important-issues-in-windows-server"></a>[リリース ノート:Windows Server に関する重要な問題](Windows-Server-2016-GA-Release-Notes.md)
 回避や対処を行わないと深刻な問題につながる可能性のある問題について。
 
-## <a name="recommendations-for-moving-to-windows-server-2016recommendations-moving-to-server2016md"></a>[Windows Server 2016 への移行に関する推奨事項](Recommendations-moving-to-Server2016.md)
+## <a name="recommendations-for-moving-to-windows-server-2016"></a>[Windows Server 2016 への移行に関する推奨事項](Recommendations-moving-to-Server2016.md)
 さまざまなシナリオで Windows Server 2016 にアクセスするために使用できる方法をまとめた表。
 
-## <a name="features-removed-or-deprecated-in--windows-server-2016deprecated-featuresmd"></a>[Windows Server 2016 で削除された機能または推奨されなくなった機能](deprecated-features.md)
+## <a name="features-removed-or-deprecated-in--windows-server-2016"></a>[Windows Server 2016 で削除された機能または推奨されなくなった機能](deprecated-features.md)
 Windows Server 2016 から既に削除されている機能や今後削除される可能性があるとして指定されている機能について。
 
-## <a name="upgrade-and-conversion-optionssupported-upgrade-pathsmd"></a>[アップグレード オプションと変換オプション](Supported-Upgrade-Paths.md)
+## <a name="upgrade-and-conversion-options"></a>[アップグレード オプションと変換オプション](Supported-Upgrade-Paths.md)
 現在実行しているエディションから Windows Server 2016 に移行するすべての方法の説明。
 
-## <a name="server-role-upgrade-and-migration-matrixserver-role-upgradeability-tablemd"></a>[サーバー ロールのアップグレードと移行に関する一覧表](Server-Role-Upgradeability-Table.md)
+## <a name="server-role-upgrade-and-migration-matrix"></a>[サーバー ロールのアップグレードと移行に関する一覧表](Server-Role-Upgradeability-Table.md)
 特定のサーバーの役割を Windows Server 2016 に移行するために必要な追加手順についての情報。
 
-## <a name="server-application-compatibility-tableserver-application-compatibilitymd"></a>[サーバー アプリケーションの互換性表](Server-Application-Compatibility.md)
+## <a name="server-application-compatibility-table"></a>[サーバー アプリケーションの互換性表](Server-Application-Compatibility.md)
 SQL は Windows Server 2016 上で動作するか? Exchange を動作させるために必要な手順とは? このトピックで詳しい手順を説明します。
 
-## <a name="server-activation-guideserver-2016-activationmd"></a>[サーバーのライセンス認証ガイド](Server-2016-activation.md)
+## <a name="server-activation-guide"></a>[サーバーのライセンス認証ガイド](Server-2016-activation.md)
 Windows Server 2016 を使った Windows Server 2016 自体と他のオペレーティング システムのライセンス認証に関する基本的な情報。
 
 

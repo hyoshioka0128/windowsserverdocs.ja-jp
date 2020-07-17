@@ -1,32 +1,29 @@
 ---
-title: Get AllNamespaces コマンドを使用してください。
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+title: get-AllNamespaces
+description: サーバー上のすべての名前空間に関する情報を表示する、get-AllNamespaces のリファレンス記事です。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e8fe896d-a69a-4180-923b-9f18185f5941
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0cd90fc650271c863459dd809e47ca6309132de5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: de44d659657a8d6df10c0f2ea7b7fb2a670b7f88
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71363290"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85935054"
 ---
-# <a name="using-the-get-allnamespaces-command"></a>Get AllNamespaces コマンドを使用してください。
+# <a name="get-allnamespaces"></a>get-AllNamespaces
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 サーバー上のすべての名前空間についての情報を表示します。
-## <a name="syntax"></a>構文
-Windows Server 2008 の場合:
+
+## <a name="syntax"></a>Syntax
+Windows Server 2008:
 ```
 wdsutil /Get-AllNamespaces [/Server:<Server name>] [/ContentProvider:<name>] [/Show:Clients] [/ExcludedeletePending]
 ```
@@ -34,7 +31,7 @@ Windows Server 2008 R2:
 ```
 wdsutil /Get-AllNamespaces [/Server:<Server name>] [/ContentProvider:<name>] [/details:Clients] [/ExcludedeletePending]
 ```
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
 |         パラメーター         |                                                                               Windows Server 2008                                                                               | Windows Server 2008 R2 |
 |---------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------|
@@ -44,7 +41,7 @@ wdsutil /Get-AllNamespaces [/Server:<Server name>] [/ContentProvider:<name>] [/d
 |    [詳細: クライアント]     |                           Windows Server 2008 R2 のみサポートされます。 名前空間に接続されているクライアント コンピューターに関する情報を表示します。                           |                        |
 |  [/Excludedeletepending]  |                                                              一覧から任意の非アクティブ化された転送を除外します。                                                              |                        |
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a>例
 すべての名前空間を表示するには、次のように入力します。
 ```
 wdsutil /Get-AllNamespaces
@@ -52,14 +49,14 @@ wdsutil /Get-AllNamespaces
 非アクティブ化するものを除くすべての名前空間を表示するには、次のように入力します。
 - Windows Server 2008
   ```
-  wdsutil /Get-AllNamespaces /Server:MyWDSServer /ContentProvider:"MyContentProv" /Show:Clients /ExcludedeletePending
+  wdsutil /Get-AllNamespaces /Server:MyWDSServer /ContentProvider:MyContentProv /Show:Clients /ExcludedeletePending
   ```
 - Windows Server 2008 R2
   ```
-  wdsutil /Get-AllNamespaces /Server:MyWDSServer /ContentProvider:"MyContentProv" /details:Clients /ExcludedeletePending
+  wdsutil /Get-AllNamespaces /Server:MyWDSServer /ContentProvider:MyContentProv /details:Clients /ExcludedeletePending
   ```
-  #### <a name="additional-references"></a>その他の参照情報
-  [コマンドライン構文のポイント](command-line-syntax-key.md)
-  [新しい名前空間のコマンドを使用して](using-the-new-namespace-command.md)
-  [名前空間の削除 コマンドを使用して](using-the-remove-namespace-command.md)
-  [サブコマンド: 名前空間の開始](subcommand-start-namespace.md)
+  ## <a name="additional-references"></a>その他の参照情報
+  - [コマンドライン構文のキー](command-line-syntax-key.md) 
+  [新しい名前空間のコマンド](using-the-new-namespace-command.md) 
+   を使用する[名前空間の削除コマンド](using-the-remove-namespace-command.md) 
+   を使用する[サブコマンド: 名前空間の開始](subcommand-start-namespace.md)

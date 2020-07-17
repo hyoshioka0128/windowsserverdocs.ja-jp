@@ -2,22 +2,18 @@
 title: OTP 認証を使用するリモート アクセスを構成する
 description: このトピックは、「Windows Server 2016 で OTP 認証を使用してリモートアクセスを展開する」の一部です。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 82505b18-dd77-4dd1-aa27-b2962b8241ca
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: c4340b59fd797d5d9d0e6270409b562128c0ccc1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: fe4ba97eea441cfbb630577605f626c19e39976c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404415"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858245"
 ---
 # <a name="configure-remote-access-with-otp-authentication"></a>OTP 認証を使用するリモート アクセスを構成する
 

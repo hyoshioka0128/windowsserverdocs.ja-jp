@@ -3,29 +3,29 @@ title: 記憶域スペース ダイレクトのキャッシュについて
 ms.assetid: 69b1adc0-ee64-4eed-9732-0fb216777992
 ms.prod: windows-server
 ms.author: cosdar
-ms.manager: dongill
+manager: dongill
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 07/17/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: f2c2e0435d06c18dbacab4e85db770ba86e654b3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f275e7657fc1e5d9ab982726c5b9b9adee381830
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366001"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85473469"
 ---
 # <a name="understanding-the-cache-in-storage-spaces-direct"></a>記憶域スペース ダイレクトのキャッシュについて
 
->適用対象:Windows Server 2019、Windows Server 2016
+>適用先:Windows Server 2019、Windows Server 2016
 
 [記憶域スペース ダイレクト](storage-spaces-direct-overview.md)には、記憶域のパフォーマンスを最大化するために組み込みのサーバー側キャッシュ機能が用意されています。 これは、大規模で永続的なリアルタイムの読み取り*および*書き込みキャッシュです。 記憶域スペース ダイレクトを有効にすると、このキャッシュが自動的に構成されます。 ほとんどの場合、何らかの手動管理が必要になることはありません。
 キャッシュの動作は、存在するドライブの種類によって決まります。
 
 次のビデオでは、記憶域スペース ダイレクトに対するキャッシュの動作に加え、その他の設計に関する考慮事項について説明します。
 
-<strong>記憶域スペースダイレクトの設計に関する考慮事項</strong><br>(20 分)<br>
+<strong>記憶域スペース ダイレクトの設計に関する考慮事項</strong><br>(20 分)<br>
 <iframe src="https://channel9.msdn.com/Blogs/windowsserver/Design-Considerations-for-Storage-Spaces-Direct/player" width="960" height="540" allowFullScreen frameBorder="0"></iframe>
 
 ## <a name="drive-types-and-deployment-options"></a>ドライブの種類と展開オプション
@@ -63,19 +63,19 @@ ms.locfileid: "71366001"
 
 ### <a name="all-flash-deployment-possibilities"></a>オールフラッシュ展開の組み合わせ
 
-オールフラッシュ展開では、記憶域のパフォーマンスを最大化することを目標とし、回転式のハード ディスク ドライブ (HDD) は含まれません。
+オールフラッシュ型のデプロイは、ストレージのパフォーマンスを最大化することを目標としたものであり、回転式のハード ディスク ドライブ (HDD) が含まれません。
 
 ![利用可能なオールフラッシュ展開](media/understand-the-cache/All-Flash-Deployment-Possibilities.png)
 
 ### <a name="hybrid-deployment-possibilities"></a>ハイブリッド展開の組み合わせ
 
-ハイブリッド展開では、パフォーマンスと容量のバランスを保つこと、または容量を最大化することを目標とし、回転式ハード ディスク ドライブ (HDD) が含まれます。
+ハイブリッド型のデプロイは、パフォーマンスとキャパシティのバランスの調和またはキャパシティの最大化を目標としたもので、回転式のハード ディスク ドライブ (HDD) が含まれます。
 
 ![Hybrid-Deployment-Possibilities](media/understand-the-cache/Hybrid-Deployment-Possibilities.png)
 
 ## <a name="cache-drives-are-selected-automatically"></a>キャッシュ ドライブの自動選択
 
-複数の種類のドライブが展開に存在する場合、記憶域スペース ダイレクトは、自動的に "最速" の種類のドライブをキャッシュとして使用します。 残りのドライブはデータ格納用に使われます。
+複数の種類のドライブが展開に存在する場合、記憶域スペース ダイレクトは、自動的に "最速" の種類のドライブをキャッシュとして使用します。 残りのドライブは、キャパシティとして使用されます。
 
 どの種類が "最速" であるかは、次の順序に従って決定されます。
 
@@ -95,7 +95,7 @@ SSD と HDD がある場合は、SSD が HDD のキャッシュになります�
 
 ## <a name="cache-behavior-is-set-automatically"></a>キャッシュ動作の自動設定
 
-キャッシュ動作は、キャッシュ対象のドライブの種類に基づいて自動的に決定されます。 ソリッドステート ドライブを対象とするキャッシュ (SSD 用の NVMe キャッシュなど) では、書き込みだけがキャッシュされます。 ハード ディスク ドライブを対象とするキャッシュ (HDD 用の SSD キャッシュなど) では、読み取りと書き込みの両方がキャッシュされます。
+キャッシュの動作は、キャッシュの対象となるドライブの種類に応じて自動的に決まります。 キャッシュの対象がソリッドステート ドライブの場合 (SSD のキャッシュを NVMe に保存する場合など) には、書き込みのみがキャッシュに保存されます。 ハード ディスク ドライブを対象とするキャッシュ (HDD 用の SSD キャッシュなど) では、読み取りと書き込みの両方がキャッシュされます。
 
 ![Cache-Read-Write-Behavior](media/understand-the-cache/Cache-Read-Write-Behavior.png)
 
@@ -109,23 +109,23 @@ SSD と HDD がある場合は、SSD が HDD のキャッシュになります�
 
 ### <a name="readwrite-caching-for-hybrid-deployments"></a>ハイブリッド展開での読み取り/書き込みキャッシュ
 
-ハード ディスク ドライブ (HDD) をキャッシュする場合は、読み取り *と* 書き込みの両方がキャッシュされ、どちらについてもフラッシュと同様の待機時間 (多くの場合は最大 10 倍向上) が達成されます。 読み取りキャッシュには、最近読み取られたデータと頻繁に読み取られるデータが格納されます。これによって高速アクセスが実現され、HDD へのランダム トラフィックも最小限に抑えられます (シークと回転の遅延のために、HDD へのランダムアクセスによって発生する待ち時間と失われた時間は重要です)。書き込みを吸収して、書き込みと再書き込みを行い、容量ドライブへの累積トラフィックを最小限に抑えるために、書き込みがキャッシュされます。
+ハード ディスク ドライブ (HDD) をキャッシュする場合は、読み取りと書き込みの両方がキャッシュされ**、どちらについてもフラッシュと同様の待機時間 (多くの場合は最大 10 倍向上) が達成されます。 読み取りキャッシュには、最近読み取られたデータと頻繁に読み取られるデータが格納されます。これによって高速アクセスが実現され、HDD へのランダム トラフィックも最小限に抑えられます  (HDD へのランダム アクセスでは、シーク遅延と回転遅延のためにかなりの待機時間や損失時間が生じます)。書き込みキャッシュは、バーストを吸収すると共に、既に説明したように書き込みと再書き込みをまとめ、容量ドライブへの累積トラフィックを最小限に抑えます。
 
 記憶域スペース ダイレクトには、書き込みをステージング解除する前にランダム化を解除するアルゴリズムが実装されています。これにより、ワークロード (仮想マシンなど) から生じた実際の IO がランダムであっても、ディスクに対する IO パターンはシーケンシャルになるようにエミュレートされます。 これで HDD の IOPS とスループットが最大限に引き出されます。
 
 ### <a name="caching-in-deployments-with-drives-of-all-three-types"></a>3 種類すべてのドライブを含む展開でのキャッシュ
 
-3 種類すべてのドライブが存在する場合は、NVMe ドライブが SSD と HDD の両方のキャッシュを提供します。 動作は既に説明したとおりで、SSD に対しては書き込みだけがキャッシュされ、HDD に対しては読み取りと書き込みの両方がキャッシュされます。 HDD をキャッシュするための負荷は、キャッシュ ドライブ間で均等に分散されます。 
+3 種類すべてのドライブが存在する場合は、NVMe ドライブが SSD と HDD の両方のキャッシュを提供します。 動作は既に説明したとおりで、SSD に対しては書き込みだけがキャッシュされ、HDD に対しては読み取りと書き込みの両方がキャッシュされます。 HDD をキャッシュするための負荷は、キャッシュ ドライブ間で均等に分散されます。
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>要約
 
 次の表は、それぞれの組み合わせの展開について、キャッシュとして使われるドライブ、容量として使われるドライブ、キャッシュ動作をまとめたものです。
 
-| 展開     | キャッシュ ドライブ                        | 容量ドライブ | キャッシュ動作 (既定)  |
+| デプロイ     | キャッシュ ドライブ                        | 容量ドライブ | キャッシュ動作 (既定)  |
 | -------------- | ----------------------------------- | --------------- | ------------------------- |
 | すべて NVMe         | なし (オプション: 手動構成) | NVMe            | 書き込みのみ (構成した場合)  |
 | すべて SSD          | なし (オプション: 手動構成) | SSD             | 書き込みのみ (構成した場合)  |
-| NVMe + SSD       | NVMe                                | SSD             | 書き込みのみ                  |
+| NVMe + SSD       | NVMe                                | SSD             | 書き込み専用                  |
 | NVMe + HDD       | NVMe                                | HDD             | 読み取りと書き込み                |
 | SSD + HDD        | SSD                                 | HDD             | 読み取りと書き込み                |
 | NVMe + SSD + HDD | NVMe                                | SSD + HDD       | HDD に対しては読み取りと書き込み、SSD に対しては書き込みのみ  |
@@ -175,7 +175,7 @@ CSV のキャッシュを使うかどうかは任意に選択できます。 記
 
 ## <a name="manual-configuration"></a>手動構成
 
-ほとんどの展開では、手動構成は必要ありません。 これが必要な場合は、次のセクションを参照してください。 
+ほとんどの展開では、手動構成は必要ありません。 これが必要な場合は、次のセクションを参照してください。
 
 セットアップ後にキャッシュデバイスモデルを変更する必要がある場合は、「[ヘルスサービスの概要](../../failover-clustering/health-service-overview.md#supported-components-document)」で説明されているように、ヘルスサービスのサポートコンポーネントに関するドキュメントを編集してください。
 
@@ -196,7 +196,7 @@ CSV のキャッシュを使うかどうかは任意に選択できます。 記
 Get-PhysicalDisk | Group Model -NoElement
 ```
 
-次に出力の例を示します。
+出力例を次に示します。
 
 ```
 Count Name
@@ -235,14 +235,14 @@ Enable-ClusterS2D -CacheDeviceModel "FABRIKAM NVME-1710"
 Get-ClusterStorageSpacesDirect
 ```
 
-次に出力の例を示します。
+出力例を次に示します。
 
 ```
 CacheModeHDD : ReadWrite
 CacheModeSSD : WriteOnly
 ```
 
-その後、次の手順を実行します。
+次に、以下の操作を行います。
 
 ```PowerShell
 Set-ClusterStorageSpacesDirect -CacheModeSSD ReadWrite
@@ -250,7 +250,7 @@ Set-ClusterStorageSpacesDirect -CacheModeSSD ReadWrite
 Get-ClusterS2D
 ```
 
-次に出力の例を示します。
+出力例を次に示します。
 
 ```
 CacheModeHDD : ReadWrite
@@ -271,7 +271,7 @@ Windows の組み込みのパフォーマンス モニター (PerfMon.exe) ユ�
 
 普遍的な規則ではありませんが、読み取りのキャッシュ ミスが多すぎる場合は、キャッシュのサイズが不足している可能性があるため、キャッシュ ドライブを追加してキャッシュを拡張することを検討してください。 キャッシュ ドライブや容量ドライブは、いつでも個別に追加できます。
 
-## <a name="see-also"></a>関連項目
+## <a name="additional-references"></a>その他のリファレンス
 
 - [ドライブと回復性の種類の選択](choosing-drives.md)
 - [フォールト トレランスと記憶域の効率](storage-spaces-fault-tolerance.md)

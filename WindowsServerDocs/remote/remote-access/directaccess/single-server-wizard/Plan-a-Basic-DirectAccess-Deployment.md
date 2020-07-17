@@ -2,22 +2,18 @@
 title: 基本的な DirectAccess 展開を計画する
 description: このトピックは、「Windows Server 2016 用はじめにウィザードを使用して単一の DirectAccess サーバーを展開する」の一部です。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d12632d7-4f47-4b4e-a4ad-f18322d726e2
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 14686e3d3d4dce675961bda320a8753076c84abb
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: b732b5ec8df487b69796eb340a297ddc8db1388c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388597"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80819475"
 ---
 # <a name="plan-a-basic-directaccess-deployment"></a>基本的な DirectAccess 展開を計画する
 

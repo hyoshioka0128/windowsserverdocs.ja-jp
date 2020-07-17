@@ -1,28 +1,24 @@
 ---
 title: サーバー マネージャーのキーボード ショートカット
 description: サーバー マネージャー
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-server-manager
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 96a2a8be-cbeb-4799-9034-284ea057915c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a78a9eb0923a067fe2a8f1c9faee38b9d7f8b944
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8135f453f633f8193fa56d80ae05cd9601435c87
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383173"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80851515"
 ---
 # <a name="keyboard-shortcuts-for-server-manager"></a>サーバー マネージャーのキーボード ショートカット
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 サーバーマネージャーは Windows Server 2012 以降で完全に再設計されているため、Windows Server 2008 R2 または Windows Server 2008 のサーバーマネージャーコンソールで作業していたキーボードショートカットは必ずしも同じコマンドであるとは限りません。 このトピックでは、Windows Server 2012 および windows Server の新しいリリースでのサーバーマネージャーの新しいキーボードショートカットとアクセスキーについて説明します。
 
@@ -52,13 +48,13 @@ ms.locfileid: "71383173"
 |---------|-------|
 |アドレス バーの [戻る] ボタン|**Alt + ←** または **BackSpace**|
 |アドレスバーの [進む] ボタン|**Alt + →**|
-|Refresh|<bpt id="p1">**</bpt>F5<ept id="p1">**</ept>|
+|更新|**F5**|
 |[通知] 領域で、[タスクの詳細] ダイアログボックスを開く|**Alt + N**|
 |[管理] メニュー|**Alt + M**|
-|[表示] メニュー|**Alt + V**|
+|[View (表示)] メニュー|**Alt + V**|
 |[ヘルプ] メニュー|**Alt + H**|
-|サーバーマネージャーヘルプを開く|<bpt id="p1">**</bpt>F1<ept id="p1">**</ept>|
-|拡大する|**Ctrl + 正符号 (+)**|
+|サーバーマネージャーヘルプを開く|**F1**|
+|拡大|**Ctrl + 正符号 (+)**|
 |縮小|**Ctrl + マイナス記号 (-)**|
 |コンソールを 100% で表示する|**Ctrl + 0**|
 
@@ -88,7 +84,7 @@ ms.locfileid: "71383173"
 |リモート デスクトップ|**Alt + K**|
 |Windows エラー報告|**Alt + G**|
 |NIC チーミング|**Alt + T**|
-|カスタマ エクスペリエンス向上プログラム|**Alt + X**|
+|カスタマー エクスペリエンス向上プログラム|**Alt + X**|
 |ワイヤード (イーサネット) 接続|**Alt + O**|
 |IE セキュリティ強化の構成|**Alt + Y**|
 |タイムゾーン|**Alt + Z**|

@@ -1,26 +1,26 @@
 ---
 title: シールドされた Vm-VM シールドヘルパー VHD の準備
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: 0e3414cf-98ca-4e91-9e8d-0d7bce56033b
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 7984d1c965c15f7d8c3f3abfdc99f01e3adc215f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 85cfdbe5e95c9177194a2b6ac7b5d22e1fd9fc0e
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403422"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475015"
 ---
 # <a name="shielded-vms---preparing-a-vm-shielding-helper-vhd"></a>シールドされた Vm-VM シールドヘルパー VHD の準備
 
->適用対象:Windows Server 2019、Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: windows server 2019、Windows Server (半期チャネル)、Windows Server 2016
 
 > [!IMPORTANT]
-> これらの手順を開始する前に、Windows Server 2016 用の最新の累積的な更新プログラムがインストールされていること、または最新の Windows 10[リモートサーバー管理ツール](https://www.microsoft.com/en-us/download/details.aspx?id=45520)を使用していることを確認してください。 それ以外の場合、プロシージャは機能しません。 
+> これらの手順を開始する前に、Windows Server 2016 用の最新の累積的な更新プログラムがインストールされていること、または最新の Windows 10[リモートサーバー管理ツール](https://www.microsoft.com/download/details.aspx?id=45520)を使用していることを確認してください。 それ以外の場合、プロシージャは機能しません。
 
 このセクションでは、既存の Vm をシールドされた Vm に変換するためのサポートを有効にするホスティングサービスプロバイダーによって実行される手順の概要を説明します。
 
@@ -55,11 +55,11 @@ ms.locfileid: "71403422"
 
 ## <a name="configure-vmm-host-guardian-server-settings"></a>VMM ホストガーディアンサーバー設定の構成
 
-VMM コンソールで、設定 ウィンドウを開き、**全般** の下にある **ガーディアンサービスの設定** をホストします。 このウィンドウの下部には、ヘルパー VHD の場所を構成するためのフィールドがあります。 [参照] ボタンを使用して、ライブラリ共有から VHD を選択します。 共有にディスクが表示されない場合は、VMM でライブラリを表示するために手動で更新する必要がある場合があります。
+VMM コンソールで、[設定] ウィンドウを開き、[**全般**] の下にある [**ガーディアンサービスの設定**] をホストします。 このウィンドウの下部には、ヘルパー VHD の場所を構成するためのフィールドがあります。 [参照] ボタンを使用して、ライブラリ共有から VHD を選択します。 共有にディスクが表示されない場合は、VMM でライブラリを表示するために手動で更新する必要がある場合があります。
 
 ![VMM-ホストガーディアンサービスの設定](../media/Guarded-Fabric-Shielded-VM/guarded-host-vmm-hgs-settings-01.png)
 
-## <a name="see-also"></a>関連項目
+## <a name="additional-references"></a>その他のリファレンス
 
-- [保護されたホストとシールドされた Vm のホスティングサービスプロバイダーの構成手順](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
+- [保護されたホストとシールドされた VM のためのホスティング サービス プロバイダーの構成手順](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
 - [保護されたファブリックとシールドされた VM](guarded-fabric-and-shielded-vms-top-node.md)

@@ -2,20 +2,19 @@
 title: Windows 8 を実行し、動的メモリで構成された仮想マシンでは、メモリ設定に推奨値を使用する必要があります。
 description: このベストプラクティスアナライザー規則によって報告された問題を解決するための手順を示します。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: a17d774e-62bb-40a7-9ddb-80d07596d51c
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 9402d511039e03f911b0533a7bc07cba41dcbb3f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a551be3a0f1d4bdd0ca8e9ccbb98a583e55ae461
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366659"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857915"
 ---
 # <a name="a-virtual-machine-running-windows-8-and-configured-with-dynamic-memory-should-use-recommended-values-for-memory-settings"></a>Windows 8 を実行し、動的メモリで構成された仮想マシンでは、メモリ設定に推奨値を使用する必要があります。
 
@@ -27,7 +26,7 @@ ms.locfileid: "71366659"
 |-|-|  
 |**オペレーティング システム**|Windows Server 2016|  
 |**製品/機能**|Hyper-V|  
-|**順**|Warning|  
+|**順**|［警告］|  
 |**カテゴリ**|構成|  
   
 次のセクションでは、斜体は、この問題のためのベスト プラクティス アナライザー ツールで表示される UI テキストを示します。  
@@ -55,7 +54,7 @@ ms.locfileid: "71366659"
   
 5.  **動的メモリ**で、**最小 RAM**を 256 MB 以上、**最大 ram**を 1 GB に変更します。  
   
-6.  **[OK]** をクリックします。  
+6.  **[OK]** をクリックすると、  
   
 ### <a name="increase-memory-using-windows-powershell"></a>Windows PowerShell を使用してメモリを増やす  
   

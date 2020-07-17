@@ -1,24 +1,19 @@
 ---
 title: クライアントが接続できず、使用可能なライセンスがないというエラーが表示される
 description: リモート デスクトップ接続での使用可能なライセンスがないというエラーのトラブルシューティング
-audience: itpro
-ms.custom: na
 ms.reviewer: rklemen
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: troubleshooting
-ms.assetid: ''
 author: kaushika-msft
-manager: ''
+manager: dcscontentpm
 ms.author: delhan
 ms.date: 07/24/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 540c368812866655452115d8928a915a07cacc97
-ms.sourcegitcommit: f6503e503d8f08ba8000db9c5eda890551d4db37
+ms.openlocfilehash: f163908277b2ab8cc0e3bfbcbc4ae5e8001a2b4a
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68529972"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "80857175"
 ---
 # <a name="clients-cant-connect-and-see-no-licenses-available-error"></a>クライアントが接続できず、"使用可能なライセンスがありません" というエラーが表示される
 
@@ -74,7 +69,7 @@ RD ライセンス サーバーを再アクティブ化する方法は、次の�
 2. [レジストリ] メニューで **[レジストリ ファイルのエクスポート]** を選択します。
 3. **[ファイル名]** ボックスに「**exported- Certificate**」と入力し、 **[保存]** を選択します。
 4. 次の各値を右クリックして **[削除]** を選択し、 **[はい]** を選択して削除を確認します。  
-      - **Certificate**
+      - **証明書**
       - **X509 Certificate**
       - **X509 Certificate ID**
       - **X509 Certificate2**

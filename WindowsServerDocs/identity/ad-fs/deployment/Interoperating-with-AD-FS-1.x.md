@@ -1,7 +1,6 @@
 ---
 ms.assetid: 97999892-29c6-4076-be19-5e5259d8ada6
 title: フェデレーション サーバーの展開
-description: ''
 author: billmath
 manager: femila
 ms.date: 05/31/2017
@@ -9,16 +8,16 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: f2aaca5ffc846c41af82c276750c564db38b5020
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 800c7fc23c9b126a17e54311fc6df0d3dcf36b4c
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71359513"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855365"
 ---
 # <a name="interoperating-with-ad-fs-1x"></a>AD FS 1.x との相互運用
 
-Active Directory フェデレーションサービス (AD FS) \(間の相互運用性のために、Windows Server®2012および AD FS 1 で\) AD FS ます。*x*では、組織のニーズに応じて、次の1つ以上のタスクを実行します。  
+Active Directory フェデレーションサービス (AD FS) \(間の相互運用性のために、Windows Server&reg; 2012 および AD FS 1 で\) AD FS ます。*x*では、組織のニーズに応じて、次の1つ以上のタスクを実行します。  
   
 -   Windows Server 2012 と以前のバージョンの AD FS の AD FS 間の相互運用性を計画し、Name ID 要求の種類の詳細について説明します。 詳細については、「 [AD FS 1.x との相互運用性の計画](https://technet.microsoft.com/library/ff678040.aspx)」を参照してください。  
   
@@ -34,9 +33,9 @@ Active Directory フェデレーションサービス (AD FS) \(間の相互運�
 |AD FS 1.x フェデレーションサービス設定|Windows Server 2012 の設定で AD FS フェデレーションサービスと同じです。  
 |----------------------------------------|---------------------------------------------------------------------------------------------------------- 
 |アカウントパートナー|要求プロバイダー信頼  
-|リソースパートナー|証明書利用者信頼 
-|アプリケーション|証明書利用者信頼  
-|Application Properties|証明書利用者信頼のプロパティ  
+|リソースパートナー|証明書利用者の信頼 
+|アプリケーション|証明書利用者の信頼  
+|アプリケーションのプロパティ|証明書利用者信頼のプロパティ  
 |アプリケーションの URL|証明書利用者識別子と WS\-フェデレーションパッシブエンドポイント URL  
 |フェデレーションサービス URI|フェデレーション サービスの識別子  
 |フェデレーションサービスエンドポイント URL|WS\-フェデレーションパッシブエンドポイント URL  

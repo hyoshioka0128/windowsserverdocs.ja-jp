@@ -9,12 +9,12 @@ author: jasongerend
 ms.author: jgerend
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: 93f98a87512232fe0605a9fc90a102c87818c88d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a74f3c6ec629df7d1cc40199091e84989606a50e
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391639"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "80826685"
 ---
 # <a name="features-removed-or-planned-for-replacement-starting-with-windows-server-version-1709"></a>Windows Server バージョン 1709 以降で削除された機能と置換が計画されている機能
 

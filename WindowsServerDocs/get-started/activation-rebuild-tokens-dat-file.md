@@ -9,10 +9,10 @@ ms.author: v-tea
 manager: dcscontentpm
 ms.localizationpriority: medium
 ms.openlocfilehash: 8a5835cd601b2eb327c8605d70bf075e6c8e8414
-ms.sourcegitcommit: 9855d6b59b1f8722f39ae74ad373ce1530da0ccf
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 04/23/2020
 ms.locfileid: "71962998"
 ---
 # <a name="rebuild-the-tokensdat-file"></a>Tokens.dat ファイルの再構築
@@ -67,7 +67,7 @@ Tokens.dat ファイルを再構築するには、次の手順に従います。
    ```
 1. コンピューターを再起動します。
 
-## <a name="more-information"></a>詳細
+## <a name="more-information"></a>説明を見る
 
 Tokens.dat ファイルを再構築したら、次のいずれかの方法を使用してプロダクト キーを再インストールする必要があります。
 

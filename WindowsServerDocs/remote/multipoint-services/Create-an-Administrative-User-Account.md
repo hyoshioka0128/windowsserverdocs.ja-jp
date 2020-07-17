@@ -1,27 +1,23 @@
 ---
 title: 管理ユーザー アカウントを作成する
 description: MultiPoint Services で管理者特権を持つアカウントを作成する
-ms.custom: na
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8ce4c5a9-3dec-412f-910b-54a252f8f209
 author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 6737f7b96396a13aa18485095e0687425cf8b93e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 72b7517d35d18064806d3df35f2f9ed7b636df8d
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71389704"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859775"
 ---
 # <a name="create-an-administrative-user-account"></a>管理ユーザー アカウントを作成する
-MultiPoint Services システムを管理するユーザーには、*管理ユーザー アカウント*を作成します。 管理者アクセス権を持つユーザーを表示するには、MultiPoint マネージャーで **[ユーザー]** タブをクリックします。管理ユーザー アカウントは、[アカウントの種類] 列に **[管理者]** と表示されます。 *管理ユーザー*は、デスクトップとシステムの設定を変更するすべての MultiPoint Manager タスクにアクセスできます。次に例を示します。  
+MultiPoint Services システムを管理するユーザーには、*管理ユーザー アカウント*を作成します。 管理者アクセス権を持つユーザーを表示するには、MultiPoint マネージャーで **[ユーザー]** タブをクリックします。管理ユーザーアカウントは、 **[アカウントの種類]** 列に**管理者**として表示されます。 *管理ユーザー*は、デスクトップとシステムの設定を変更するすべての MultiPoint Manager タスクにアクセスできます。次に例を示します。  
   
 -   アカウントの作成  
   

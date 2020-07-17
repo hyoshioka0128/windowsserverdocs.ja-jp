@@ -1,19 +1,17 @@
 ---
 title: DNS に関連するライセンス認証の問題のトラブルシューティングに関するガイドライン
-description: ''
 ms.topic: article
 ms.date: 09/10/2019
 ms.technology: server-general
-ms.assetid: ''
 author: Teresa-Motiv
 ms.author: v-tea
 ms.localizationpriority: medium
-ms.openlocfilehash: 3165c926c50c2f91544895e0d328f1dae7424b4a
-ms.sourcegitcommit: b7f55949f166554614f581c9ddcef5a82fa00625
+ms.openlocfilehash: f6e600b41e4a485084bd0622c2be0753d0b11c0c
+ms.sourcegitcommit: 6d7a394edefba684f7b6983c65026679c1b7a485
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72588036"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84776714"
 ---
 # <a name="guidelines-for-troubleshooting-dns-related-activation-issues"></a>DNS に関連するライセンス認証の問題のトラブルシューティングに関するガイドライン
 
@@ -31,7 +29,7 @@ ms.locfileid: "72588036"
    - Windows 8
 - ライセンス認証ウィザードから KMS ホスト コンピューターに接続できません。
 
-クライアント システムをライセンス認証しようとすると、ライセンス認証ウィザードでは、DNS を使用して KMS ソフトウェアを実行している対応するコンピューターが検索されます。 ウィザードで DNS が照会され、KMS ホスト コンピューターの DNS エントリが見つからない場合、ウィザードからはエラーが報告されます。   
+クライアント システムをライセンス認証しようとすると、ライセンス認証ウィザードでは、DNS を使用して KMS ソフトウェアを実行している対応するコンピューターが検索されます。 ウィザードで DNS が照会され、KMS ホスト コンピューターの DNS エントリが見つからない場合、ウィザードからはエラーが報告されます。
 
 <a id="list"></a>次の一覧を確認し、お客様の状況に合った方法を見つけてください。
 
@@ -39,7 +37,7 @@ ms.locfileid: "72588036"
 - KMS ホストをインストールして構成する必要がある場合は、「[ライセンス認証するクライアントに合わせて KMS ホストを構成する](#configure-a-kms-host-for-the-clients-to-activate-against)」の手順を実行します。
 - クライアントで既存の KMS ホストを見つけられない場合は、次の手順でルーティング構成のトラブルシューティングを行います。 これらの手順は、最も簡単なものから最も複雑なものの順に並べています。
   - [DNS サーバーへの基本的な IP 接続を確認する](#verify-basic-ip-connectivity-to-the-dns-server)
-  - [KMS ホストの構成を確認する](#verify-the-configuration-of-the-kms-host)  
+  - [KMS ホストの構成を確認する](#verify-the-configuration-of-the-kms-host)
   - [ルーティングの問題の種類を特定する](#determine-the-type-of-routing-issue)
   - [DNS 構成を確認する](#verify-the-dns-configuration)
   - [KMS SRV レコードを手動で作成する](#manually-create-a-kms-srv-record)
@@ -58,7 +56,7 @@ KMS ホストをインストールできない場合、または何らかの理�
     slmgr -ipk xxxxx-xxxxx-xxxxx-xxxxx-xxxxx
    ```
    > [!NOTE]
-   > **xxxxx-xxxxx-xxxxx-xxxxx-xxxxx** のプレースホルダーは、MAK プロダクト キーを表します。  
+   > **xxxxx-xxxxx-xxxxx-xxxxx-xxxxx** のプレースホルダーは、MAK プロダクト キーを表します。
 
 [手順の一覧に戻ります。](#list)
 
@@ -86,33 +84,33 @@ ping コマンドを使用して、DNS サーバーへの基本的な IP 接続�
 
 ## <a name="verify-the-configuration-of-the-kms-host"></a>KMS ホストの構成を確認する
 
-KMS ホスト サーバーのレジストリを調べて、DNS に登録されているかどうかを確認します。 既定で、KMS ホスト サーバーでは、24 時間に 1 回、DNS SRV レコードが動的に登録されます。 
+KMS ホスト サーバーのレジストリを調べて、DNS に登録されているかどうかを確認します。 既定で、KMS ホスト サーバーでは、24 時間に 1 回、DNS SRV レコードが動的に登録されます。
 > [!IMPORTANT]
-> 慎重にこのセクションの手順に従います。 誤ってレジストリを変更すると、重大な問題が発生する可能性があります。 変更する前に、問題が発生した場合に[復元するためにレジストリをバックアップ](https://support.microsoft.com/en-us/help/322756)します。  
+> 慎重にこのセクションの手順に従います。 レジストリを正しく変更しないと、重大な問題が発生する可能性があります。 変更する前に、問題が発生した場合に[復元するためにレジストリをバックアップ](https://support.microsoft.com/help/322756)します。
 
 この設定を確認するには、次の手順を実行します。
-1. レジストリ エディターを開きます。 これを行うには、 **[スタート]** を右クリックし、 **[ファイル名を指定して実行]** を選択して「**regedit**」と入力し、Enter キーを押します。
+1. レジストリ エディターを起動します。 これを行うには、 **[スタート]** を右クリックし、 **[ファイル名を指定して実行]** を選択して「**regedit**」と入力し、Enter キーを押します。
 1. **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SL** サブキーを見つけて、**DisableDnsPublishing** エントリの値を確認します。 このエントリには、次の有効な値があります。
    - **0** または未定義 (既定値):KMS ホストサーバーで 24 時間ごとに SRV レコードが登録されます。
-   - **1**:KMS ホストサーバーでは、自動的に SRV レコードが登録されません。 動的更新がサポートされていない実装の場合は、「[KMS SRV レコードを手動で作成する](#manually-create-a-kms-srv-record)」を参照してください。  
+   - **1**:KMS ホストサーバーでは、自動的に SRV レコードが登録されません。 動的更新がサポートされていない実装の場合は、「[KMS SRV レコードを手動で作成する](#manually-create-a-kms-srv-record)」を参照してください。
 1. **DisableDnsPublishing** エントリがない場合は作成します (型は DWORD です)。 動的登録を許容できる場合は、値を未定義のままにするか、**0** に設定します。
 
 [手順の一覧に戻ります。](#list)
 
 ## <a name="determine-the-type-of-routing-issue"></a>ルーティングの問題の種類を特定する
 
-次のコマンドを使用すると、名前解決の問題か SRV レコードの問題かを判断できます。  
+次のコマンドを使用すると、名前解決の問題か SRV レコードの問題かを判断できます。
 
-1. KMS クライアントで、管理者特権でのコマンド プロンプト ウィンドウを開きます。  
+1. KMS クライアントで、管理者特権でのコマンド プロンプト ウィンドウを開きます。
 1. コマンド プロンプトで次のコマンドを実行します。
    ```cmd
    cscript \windows\system32\slmgr.vbs -skms <KMS_FQDN>:<port>
    cscript \windows\system32\slmgr.vbs -ato
    ```
    > [!NOTE]
-   > このコマンドで、<KMS_FQDN> は KMS ホスト コンピューターの完全修飾ドメイン名 (FQDN) を表し、\<port\> は KMS が使用する TCP ポートを表します。  
+   > このコマンドで、<KMS_FQDN> は KMS ホスト コンピューターの完全修飾ドメイン名 (FQDN) を表し、\<port\> は KMS が使用する TCP ポートを表します。
 
-   これらのコマンドで問題が解決する場合、これは SRV レコードの問題です。 「[KMS クライアントに KMS ホストを手動で割り当てる](#manually-assign-a-kms-host-to-a-kms-client)」の手順に記載されているコマンドのいずれかを使用して解決できます。  
+   これらのコマンドで問題が解決する場合、これは SRV レコードの問題です。 「[KMS クライアントに KMS ホストを手動で割り当てる](#manually-assign-a-kms-host-to-a-kms-client)」の手順に記載されているコマンドのいずれかを使用して解決できます。
 
 1. 問題が引き続き発生する場合は、次のコマンドを実行します。
    ```cmd
@@ -120,7 +118,7 @@ KMS ホスト サーバーのレジストリを調べて、DNS に登録され�
    cscript \windows\system32\slmgr.vbs -ato
    ```
    > [!NOTE]
-   > このコマンドで、\<IP Address\> は KMS ホスト コンピューターの IP アドレスを表し、\<port\> は KMS が使用する TCP ポートを表します。  
+   > このコマンドで、\<IP Address\> は KMS ホスト コンピューターの IP アドレスを表し、\<port\> は KMS が使用する TCP ポートを表します。
 
    これらのコマンドで問題が解決する場合、最も可能性の高いものは名前解決の問題です。 トラブルシューティングの詳細については、「[DNS 構成を確認する](#verify-the-dns-configuration)」の手順を参照してください。
 
@@ -130,7 +128,7 @@ KMS ホスト サーバーのレジストリを調べて、DNS に登録され�
 
 ## <a name="verify-the-dns-configuration"></a>DNS 構成を確認する
 
->[!NOTE]
+> [!NOTE]
 > 特に明記されていない限り、該当するエラーが発生した KMS クライアントで次の手順を実行します。
 
 1. 管理者特権でのコマンド プロンプト ウィンドウを開きます
@@ -143,7 +141,7 @@ KMS ホスト サーバーのレジストリを調べて、DNS に登録され�
    - KMS クライアント コンピューターに使用されるプライマリ DNS サーバーの IP アドレス
    - KMS クライアント コンピューターに使用される既定のゲートウェイの IP アドレス
    - KMS クライアント コンピューターに使用される DNS サフィックス検索一覧
-1. KMS ホスト SRV レコードが DNS に登録されていることを確認します。 これを行うには、次の手順に従います。  
+1. KMS ホスト SRV レコードが DNS に登録されていることを確認します。 これを行うには、次の手順に従います。
    1. 管理者特権のコマンド プロンプト ウィンドウを開きます。
    1. コマンド プロンプトで次のコマンドを実行します。
       ```cmd
@@ -159,7 +157,7 @@ KMS ホスト サーバーのレジストリを調べて、DNS に登録され�
        > [!NOTE]
        > このエントリで、contoso.com は KMS ホストのドメインを表します。
       1. KMS ホストの IP アドレス、ホスト名、ポート、およびドメインを確認します。
-      1. これらの **_vlmcs** エントリが存在し、必要な KMS ホスト名が含まれている場合は、「[KMS クライアントに KMS ホストを手動で割り当てる](#manually-assign-a-kms-host-to-a-kms-client)」に進みます。  
+      1. これらの **_vlmcs** エントリが存在し、必要な KMS ホスト名が含まれている場合は、「[KMS クライアントに KMS ホストを手動で割り当てる](#manually-assign-a-kms-host-to-a-kms-client)」に進みます。
       > [!NOTE]
       > [**nslookup**](https://docs.microsoft.com/windows-server/administration/windows-commands/nslookup) コマンドで KMS ホストが検出されても、DNS クライアントで KMS ホストを検出できるとは限りません。 **nslookup** コマンドで KMS ホストが検出されても KMS ホストを使用してライセンス認証できない場合は、プライマリ DNS サフィックスや DNS サフィックスの検索一覧など、他の DNS 設定を確認します。
 1. プライマリ DNS サフィックスの検索一覧に、KMS ホストに関連付けられた DNS ドメイン サフィックスが含まれていることを確認します。 検索一覧にこの情報が含まれていない場合は、「[複数の DNS ドメインに公開するように KMS ホストを構成する](#configure-the-kms-host-to-publish-in-multiple-dns-domains)」の手順に進みます。
@@ -200,7 +198,7 @@ allow-update { any; };
 ```
 ## <a name="manually-assign-a-kms-host-to-a-kms-client"></a>KMS クライアントに KMS ホストを手動で割り当てる
 
-既定では、KMS クライアントでは自動検出プロセスが使用されます。 このプロセスに従って、KMS クライアントでは、クライアントのメンバーシップ ゾーン内で _vlmcs SRV レコードを公開したサーバーの一覧が DNS に照会されます。 DNS からは、KMS ホストの一覧がランダムな順序で返されます。 クライアントで KMS ホストが選択され、そのホスト上でセッションの確立が試行されます。 この試行が成功すると、クライアントでは KMS ホストの名前がキャッシュされ、次回の更新の試行時にその使用が試行されます。 セッションのセットアップが失敗した場合、クライアントでは別の KMS ホストがランダムに選択されます。 自動検出プロセスを使用することを強くお勧めします。  
+既定では、KMS クライアントでは自動検出プロセスが使用されます。 このプロセスに従って、KMS クライアントでは、クライアントのメンバーシップ ゾーン内で `_vlmcs` SRV レコードを公開したサーバーの一覧が DNS に照会されます。 DNS からは、KMS ホストの一覧がランダムな順序で返されます。 クライアントで KMS ホストが選択され、そのホスト上でセッションの確立が試行されます。 この試行が成功すると、クライアントでは KMS ホストの名前がキャッシュされ、次回の更新の試行時にその使用が試行されます。 セッションのセットアップが失敗した場合、クライアントでは別の KMS ホストがランダムに選択されます。 自動検出プロセスを使用することを強くお勧めします。
 
 ただし、KMS ホストを特定の KMS クライアントに手動で割り当てることができます。 これを行うには、次の手順に従います。
 
@@ -228,26 +226,26 @@ allow-update { any; };
      ```
      > [!NOTE]
      > これらのコマンドには、次のプレースホルダーが使用されています。
-     >- **<KMS_FQDN>** は、KMS ホスト コンピューターの完全修飾ドメイン名 (FQDN) を表します
-     >- **\<IPv4Address\>** は、KMS ホスト コンピューターの IP バージョン 4 アドレスを表します
-     >- **\<IPv6Address\>** は、KMS ホスト コンピューターの IP バージョン 6 アドレスを表します
-     >- **\<NETBIOSName\>** は、KMS ホスト コンピューターの NETBIOS 名を表します
-     >- **\<port\>** は、KMS が使用する TCP ポートを表します。  
+     > - **<KMS_FQDN>** は、KMS ホスト コンピューターの完全修飾ドメイン名 (FQDN) を表します
+     > - **\<IPv4Address\>** は、KMS ホスト コンピューターの IP バージョン 4 アドレスを表します
+     > - **\<IPv6Address\>** は、KMS ホスト コンピューターの IP バージョン 6 アドレスを表します
+     > - **\<NETBIOSName\>** は、KMS ホスト コンピューターの NETBIOS 名を表します
+     > - **\<port\>** は、KMS が使用する TCP ポートを表します。
 
 ## <a name="configure-the-kms-host-to-publish-in-multiple-dns-domains"></a>複数の DNS ドメインに公開するように KMS ホストを構成する
 
 > [!IMPORTANT]
-> 慎重にこのセクションの手順に従います。 誤ってレジストリを変更すると、重大な問題が発生する可能性があります。 変更する前に、問題が発生した場合に[復元するためにレジストリをバックアップ](https://support.microsoft.com/help/322756)します。
+> 慎重にこのセクションの手順に従います。 レジストリを正しく変更しないと、重大な問題が発生する可能性があります。 変更する前に、問題が発生した場合に[復元するためにレジストリをバックアップ](https://support.microsoft.com/help/322756)します。
 
-「[KMS クライアントに KMS ホストを手動で割り当てる](#manually-assign-a-kms-host-to-a-kms-client)」で説明されているように、通常、KMS クライアントでは自動検出プロセスを使用して KMS ホストが識別されます。 このプロセスを実行するには、KMS クライアントコンピューターの DNS ゾーン内の _vlmcs SRV レコードを使用できる必要があります。 DNS ゾーンは、コンピューターのプライマリ DNS サフィックス、または次のいずれかに対応します。
+「[KMS クライアントに KMS ホストを手動で割り当てる](#manually-assign-a-kms-host-to-a-kms-client)」で説明されているように、通常、KMS クライアントでは自動検出プロセスを使用して KMS ホストが識別されます。 このプロセスを実行するには、KMS クライアントコンピューターの DNS ゾーン内の `_vlmcs` SRV レコードを使用できる必要があります。 DNS ゾーンは、コンピューターのプライマリ DNS サフィックス、または次のいずれかに対応します。
 - ドメインに参加しているコンピューターの場合、DNS システム (Active Directory Domain Services (AD DS) DNS など) によって割り当てられたコンピューターのドメイン。
 - ワークグループ コンピューターの場合、コンピューターのドメインは動的ホスト構成プロトコル (DHCP) によって割り当てられます。 このドメイン名は、Request for Comments (RFC) 2132 で定義されているように、コード値が 15 のオプションによって定義されています。
 
-既定で、KMS ホストでは、KMS ホスト コンピューターのドメインに対応する DNS ゾーンに SRV レコードが登録されます。 たとえば、KMS ホストが contoso.com ドメインに参加しているとします。 このシナリオでは、KMS ホストでは、contoso.com DNS ゾーン以下に _vmlcs SRV レコードが登録されます。 そのため、レコードでは、サービスが VLMCS._TCP.CONTOSO.COM と識別します。
+既定で、KMS ホストでは、KMS ホスト コンピューターのドメインに対応する DNS ゾーンに SRV レコードが登録されます。 たとえば、KMS ホストが contoso.com ドメインに参加しているとします。 このシナリオでは、KMS ホストでは、contoso.com DNS ゾーン以下に `_vlmcs` SRV レコードが登録されます。 そのため、レコードでは、サービスが `_VLMCS._TCP.CONTOSO.COM` として識別されます。
 
 KMS ホストと KMS クライアントが異なる DNS ゾーンを使用している場合、複数の DNS ドメインで SRV レコードを自動的に公開するように KMS ホストを構成する必要があります。 これを行うには、次の手順に従います。
 
-1. KMS ホスト上でレジストリ エディターを起動します。 
+1. KMS ホスト上でレジストリ エディターを起動します。
 1. **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SL** サブキーを見つけて選択します。
 1. **[詳細]** ウィンドウで空白の領域を右クリックし、 **[新規作成]** をクリックして、 **[複数行文字列値]** を選択します。
 1. 新しいエントリの名前として、「**DnsDomainPublishList**」と入力します。

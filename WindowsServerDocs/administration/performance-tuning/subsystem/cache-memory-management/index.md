@@ -4,15 +4,15 @@ description: キャッシュおよびメモリ マネージャー サブシス�
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: landing-page
-ms.author: Pavel; ATales
+ms.author: pavel; atales
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: c914768378303b8a36cb2e3ec468e853296249a3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d9b43b418f2f2ddee0e5b064c4a4e2b5d19a4520
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71370023"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "80851675"
 ---
 # <a name="performance-tuning-cache-and-memory-manager"></a>キャッシュおよびメモリ マネージャーのパフォーマンス チューニング
 

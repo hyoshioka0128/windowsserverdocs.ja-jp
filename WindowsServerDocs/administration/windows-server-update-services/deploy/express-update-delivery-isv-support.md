@@ -2,21 +2,18 @@
 title: 更新プログラムのエクスプレス配信 ISV のサポート
 description: Windows Server Update Service (WSUS) のトピック -独立系ソフトウェア ベンダー (ISV) が WSUS を使用して更新プログラムのエクスプレス配信を構成する方法
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-wsus
-ms.tgt_pltfrm: na
 ms.topic: get-started article
 author: sakitong
 ms.author: coreyp
 manager: lizapo
 ms.date: 10/16/2017
-ms.openlocfilehash: a4880a1a66d9c722cfda9e194c4eff38c5058674
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 60d01ef425ed96160cd76afdd7c27c081c778add
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361725"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "80828775"
 ---
 # <a name="express-update-delivery-isv-support"></a>更新プログラムのエクスプレス配信 ISV のサポート
 
@@ -26,7 +23,7 @@ Windows 10 更新プログラムでは、すべてのパッケージにそれま
 
 Windows では、バージョン 7 以降、[エクスプレス](https://technet.microsoft.com/library/cc708456(v=ws.10).aspx#Anchor_2)と呼ばれる機能を使用して Windows Update ダウンロードのサイズを縮小できるようになりました。コンシューマー デバイスでは既定でサポートされていますが、Windows 10 エンタープライズ デバイスでエクスプレスを利用するには、Windows Server Update Services (WSUS) が必要です。
 
-## <a name="how-microsoft-supports-express"></a>マイクロソフトによるエクスプレスのサポート方法
+## <a name="how-microsoft-supports-express"></a>Microsoft によるエクスプレスのサポート方法
 
 - **WSUS スタンドアロンでのエクスプレス**
 
@@ -53,16 +50,16 @@ ISV は、WSUS と WU クライアントを使用して、更新プログラム�
 3.  [**WU クライアント操作を送信するように ISV クライアント エージェントを設定する**](#BKMK_3)
 
 >[!NOTE]
->2017 年 1 月 (またはそれ以降) の Windows 10 バージョン 1607 リリースの累積的な更新プログラム ([KB3213986 (OS ビルド 14393.693)](https://support.microsoft.com/en-us/help/4009938/january-10-2017-kb3213986-os-build-14393-693) をインストールする必要があります。
+>2017 年 1 月 (またはそれ以降) の Windows 10 バージョン 1607 リリースの累積的な更新プログラム ([KB3213986 (OS ビルド 14393.693)](https://support.microsoft.com/help/4009938/january-10-2017-kb3213986-os-build-14393-693) をインストールする必要があります。
     
    - ISV クライアント エージェントは、承認する更新プログラムと、更新プログラムをダウンロードしてインストールするタイミングを決定します
    - WU クライアントは、ダウンロードするバイト範囲を決定し、ダウンロード要求を開始します
 
-### <a name="BKMK_1"></a>手順 1: WSUS を構成する
+### <a name="step-1-configure-wsus"></a><a name=BKMK_1></a>手順 1: WSUS を構成する
 
 WSUS は、Windows Update へのインターフェイスとして機能し、ダウンロードする必要があるエクスプレス パッケージを記述するすべてのメタデータを管理します。 展開する必要がある場合は、[**Windows Server Update Services 3.0 SP2 の概要**](https://technet.microsoft.com/library/dd939931(v=ws.10).aspx)に関するページを参照してください。 WSUS が展開された後の主な考慮事項は、更新プログラムのコンテンツを WSUS サーバーにローカルに保存するかどうかです。 WSUS を構成する場合は、更新プログラムをローカルに保存しないことをお勧めします。 ここでは、これらのパッケージを展開するソフトウェアが環境内に既に存在することを前提としています。 WSUS ローカル ストレージを構成する方法の詳細については、[**更新プログラムの保存場所の決定**](https://technet.microsoft.com/library/cc720494(v=ws.10).aspx)に関するページを参照してください。
 
-### <a name="BKMK_2"></a>手順 2: ISV ファイル キャッシュを指定して設定する 
+### <a name="step-2-specify-and-populate-the-isv-file-cache"></a><a name=BKMK_2></a>手順 2: ISV ファイル キャッシュを指定して設定する 
 
 #### <a name="specify-the-isv-file-cache"></a>ISV ファイル キャッシュを指定する
 
@@ -85,7 +82,7 @@ ISV ファイル キャッシュの別のダウンロード場所を設定する
 > [!IMPORTANT]
 > ISV ファイル キャッシュには次のことが必要です。                                                          
 > - サーバーは RFC (<http://www.w3.org/Protocols/rfc2616/rfc2616.html>                                                                                                                                                              ) に基づき HTTP 1.1 準拠である必要があります  
-> 具体的には、Web サーバーが [**HEAD**](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html) 要求と [**GET**](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.htm) 要求をサポートする必要があります<br>                                                                                                                                                                                                                                                                                                  - 部分的な範囲の要求<br>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   - Keep-Alive<br>                                                                                                                                                                                                                                                                                                                                                                                                                            - "Transfer-Encoding:chunked" を使用しないでください                                                                                                 
+> 具体的には、Web サーバーが [**HEAD**](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html) 要求と [**GET**](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.htm) 要求をサポートする必要があります<br>                                                                                                                                                                                                                                                                                                  - 部分的な範囲の要求<br>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   - Keep-Alive<br>                                                                                                                                                                                                                                                                                                                                                                                                                            - Transfer-Encoding:chunked を使用しないでください                                                                                                 
 
 #### <a name="populate-the-isv-file-cache"></a>ISV ファイル キャッシュを設定する
 
@@ -105,7 +102,7 @@ ISV ファイル キャッシュには、管理対象のクライアントにイ
 
      HTTP サーバー (または localhost) から、MU フォルダー パスとファイル名を参照する **HTTP GET** 要求を ISV ファイルの場所にリダイレクトします。
 
-### <a name="BKMK_3"></a>手順 3: WU クライアント操作を送信するように ISV クライアント エージェントを設定する
+### <a name="step-3-set-up-an-isv-client-agent-to-direct-wu-client-operations"></a><a name=BKMK_3></a>手順 3: WU クライアント操作を送信するように ISV クライアント エージェントを設定する
 
 ISV クライアント エージェントは、次の推奨されるワークフローを使用して、承認された更新プログラムのダウンロードとインストールを調整します。
 

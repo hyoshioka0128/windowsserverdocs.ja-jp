@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: 2555f238-926e-4b20-9bfb-9774831062da
-author: shortpatti
-ms.author: pashort
-ms.openlocfilehash: 10c69e1aa6157c7f088f190c0283b33b630bc25f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+author: eross-msft
+ms.author: lizross
+ms.openlocfilehash: 30e3da7e1365585bf9dc5ff34a72a367e1ed28f7
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406252"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318081"
 ---
 # <a name="wireless-access-deployment-process"></a>ワイヤレス アクセスの展開プロセス
 

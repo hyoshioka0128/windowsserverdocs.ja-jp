@@ -2,26 +2,22 @@
 title: DNS リソース レコードの管理
 description: このトピックは、Windows Server 2016 の IP アドレス管理 (IPAM) 管理ガイドに含まれています。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ipam
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7b66c09d-e401-4f70-9a2a-6047dd629bfa
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 8fe318a8ac17c650d8dbf2339e72b561de529c4a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: eacd7f62148d4d547e76503a6c6cf7280c3f829b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405681"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853555"
 ---
 # <a name="dns-resource-record-management"></a>DNS リソース レコードの管理
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックでは、IPAM を使用して DNS リソースレコードを管理する方法について説明します。  
   
@@ -79,11 +75,11 @@ IPAM によって収集される DNS リソースレコードの種類の一覧�
   
 -   SRV  
   
--   テキスト  
+-   Text  
   
 -   よく知られているサービス  
   
--   WINS  
+-   WINS●wins○  
   
 -   WINS-R  
   
@@ -113,7 +109,7 @@ Ipam を使用すると、IPAM コンソールからリソースレコードに�
   
 Ipam では、IPAM コンソールを使用して行ったすべての DNS 構成の変更が自動的にログに記録されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [IPAM の管理](Manage-IPAM.md)  
   
 

@@ -1,7 +1,6 @@
 ---
 ms.assetid: eefcc989-8763-45ee-8a64-3a97b4397160
 title: AD FS の運用
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 99167850ff9ee193aca888d34d98503ea0554c30
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: cdedcbd5b9491b57ee31170b781dc821853d058f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408552"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80815136"
 ---
 # <a name="ad-fs-operations"></a>AD FS の運用
 
@@ -22,14 +21,15 @@ ms.locfileid: "71408552"
 
 このドキュメントには、AD FS のすべてのドキュメント操作の一覧が含まれています。 
 
-## <a name="service-configuration"></a>サービス構成
+## <a name="service-configuration"></a>サービスの構成
 - [AD FS と WAP 2016 で SSL 証明書を更新する](../ad-fs/operations/Manage-SSL-Certificates-AD-FS-WAP-2016.md)
 - [AD FS の迅速な復元ツール](../ad-fs/operations/AD-FS-Rapid-Restore-Tool.md)
 - [AD FS で証明書認証の代替ホスト名バインドを構成する](../ad-fs/operations/AD-FS-support-for-alternate-hostname-binding-for-certificate-authentication.md)
 - [属性ストアを追加する](../ad-fs/operations/Add-an-Attribute-Store.md)
 - [AD FS 2019 で HTTP セキュリティ応答ヘッダーをカスタマイズする](../ad-fs/operations/customize-http-security-headers-ad-fs.md)
 - [管理者以外のユーザーへの AD FS Powershell コマンドレットのアクセスの委任](../ad-fs/operations/delegate-ad-fs-pshell-access.md)
-- [SQL とアドレスの待機時間の微調整](../ad-fs/operations/adfs-sql-latency.md) 
+- [SQL とアドレスの待機時間の微調整](../ad-fs/operations/adfs-sql-latency.md)
+- [AlwaysOn 可用性グループ](../ad-fs/operations/ad-fs-always-on.md) 
 
 
 ## <a name="authentication-configuration"></a>認証の構成
@@ -82,10 +82,10 @@ ms.locfileid: "71408552"
 - [追加の多要素認証による個人情報アプリケーションのリスク管理](../ad-fs/operations/Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
 - [条件付きアクセス制御によってリスクを管理する](../ad-fs/operations/Manage-Risk-with-Conditional-Access-Control.md)
 - [AD FS ラボ環境を設定する](../ad-fs/operations/Set-up-an-AD-FS-lab-environment.md)
-- [チュートリアル ガイド: 機密アプリケーションの追加 Multi-Factor Authentication によるリスク管理](../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
-- [チュートリアル ガイド: 条件付きアクセス制御によってリスクを管理する](../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md)
-- [チュートリアル: Workplace Join で Windows デバイスをワークプレースに参加させる](../ad-fs/operations/Walkthrough--Workplace-Join-with-a-Windows-Device.md)
-- [チュートリアル: Workplace Join で iOS デバイスをワークプレースに参加させる](../ad-fs/operations/Walkthrough--Workplace-Join-with-an-iOS-Device.md)
+- [チュートリアルガイド: 追加の Multi-Factor Authentication による機密アプリケーションのリスク管理](../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
+- [チュートリアルガイド: 条件付き Access Control によるリスク管理](../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md)
+- [チュートリアル: Windows デバイスでの Workplace Join](../ad-fs/operations/Walkthrough--Workplace-Join-with-a-Windows-Device.md)
+- [チュートリアル: iOS デバイスでの Workplace Join](../ad-fs/operations/Walkthrough--Workplace-Join-with-an-iOS-Device.md)
 
   
 

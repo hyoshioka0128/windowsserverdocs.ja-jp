@@ -2,22 +2,18 @@
 title: 高度な DirectAccess のインストールと構成
 description: このトピックは、「Windows Server 2016 の詳細設定を使用して単一の DirectAccess サーバーを展開する」の一部です。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f45e5b6f-fc66-4deb-bed4-a1baa3cc6dae
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 971885b4e99b3ac83c26bf6df43c275a5b729510
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 6f8237051843b7bf58482cdea68f0c9b35806061
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388641"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859515"
 ---
 # <a name="install-and-configure-advanced-directaccess"></a>高度な DirectAccess のインストールと構成
 

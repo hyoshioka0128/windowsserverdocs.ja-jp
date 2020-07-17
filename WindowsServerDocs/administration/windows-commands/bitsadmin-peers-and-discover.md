@@ -1,44 +1,43 @@
 ---
-title: bitsadmin ピアと検出
-description: '**Bitsadmin ピアと discover**の Windows コマンドに関するトピックは、ピアを再び検出します。'
-ms.custom: na
+title: bitsadmin peers および discover
+description: Bitsadmin ピアと discover コマンドの参照記事。ピアを再び検出します。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 254fa0a3-4501-4272-a020-6ccdb3fcb29b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bad7458d9cace050a9d07fc5978dc9d048094b4b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b9e49111be7c36f6dde5acb82d29eac21d7af57c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71380975"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928045"
 ---
-# <a name="bitsadmin-peers-and-discover"></a>bitsadmin ピアと検出
-
-
+# <a name="bitsadmin-peers-and-discover"></a>bitsadmin peers および discover
 
 ピアを再び検出します。
 
 ## <a name="syntax"></a>構文
 
 ```
-bitsadmin /Peers /Discover 
+bitsadmin /peers /discover
 ```
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a>例
 
-次の例では、ピアを検出します。
+ピアを再び検出するには:
+
 ```
-C:\>bitsadmin /Peers /Discover
+bitsadmin /peers /discover
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [bitsadmin コマンド](bitsadmin.md)
+
+- [bitsadmin ピアコマンド](bitsadmin-peers.md)

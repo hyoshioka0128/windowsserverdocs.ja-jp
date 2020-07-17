@@ -2,22 +2,18 @@
 title: Web プローブ URL のトラブルシューティング
 description: このトピックは、「Windows Server 2016 のマルチサイト展開に複数のリモートアクセスサーバーを展開する」の一部です。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 6dfffd1e-f4f4-43b6-9e3c-49015ce34338
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 132db4811ee135d2ebff99efed6f53b5db1356ad
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 181a609057d9735701a3185f03be96adb5751e47
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404438"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858265"
 ---
 # <a name="troubleshooting-web-probe-urls"></a>Web プローブ URL のトラブルシューティング
 
@@ -25,10 +21,10 @@ ms.locfileid: "71404438"
 
 このトピックでは、`Set-DAEntryPointDC` コマンドに関連する問題のトラブルシューティング情報を示します。 表示されたエラーがエントリ ポイント ドメイン コントローラーの設定に関連していることを確認するには、Windows イベント ログにイベント ID 10065 があることを確認してください。  
   
-## <a name="SaveGPOSettings"></a>サーバーの GPO 設定を保存しています  
+## <a name="saving-server-gpo-settings"></a><a name="SaveGPOSettings"></a>サーバーの GPO 設定を保存しています  
 **エラーを受信しました**。 リモートアクセス設定を GPO < GPO_name > に保存中にエラーが発生しました。  
   
-このエラーのトラブルシューティングを行うには、「サーバーの GPO 設定を保存する」を参照してください。  
+このエラーのトラブルシューティングについては、「サーバーの GPO 設定の保存」を参照してください。  
   
 ## <a name="remote-access-is-not-configured"></a>リモート アクセスが構成されていない  
 **エラーを受信しました**。 リモートアクセスが < server_name > で構成されていません。 マルチサイト展開に属するサーバーの名前を指定してください。  

@@ -1,24 +1,19 @@
 ---
 title: 接続時に、リモート デスクトップ サービスは現在ビジー状態であるというメッセージをユーザーが受け取る
 description: ユーザーがリモートデスクトップ接続を開始したときのリモート デスクトップ サービスは現在ビジー状態であるというエラーのトラブルシューティング。
-audience: itpro
-ms.custom: na
 ms.reviewer: rklemen
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: troubleshooting
-ms.assetid: ''
 author: kaushika-msft
-manager: ''
+manager: dcscontentpm
 ms.author: delhan
 ms.date: 07/24/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 889fd83925081ac1dce386b1cd18fbef59586eb5
-ms.sourcegitcommit: f6503e503d8f08ba8000db9c5eda890551d4db37
+ms.openlocfilehash: c345833ee63a1286a5615998649e8aa9d25896a6
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68529902"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "80857165"
 ---
 # <a name="on-connecting-user-receives-remote-desktop-service-is-currently-busy-message"></a>接続時に、ユーザーが "Remote Desktop Service is currently busy" (リモート デスクトップ サービスは現在ビジー状態です) というメッセージを受け取る
 

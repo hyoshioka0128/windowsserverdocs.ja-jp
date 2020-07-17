@@ -2,24 +2,23 @@
 title: ライブマイグレーショントラフィック用の少なくとも1つのネットワークで、少なくとも 1 Gbps のリンク速度が必要です
 description: このベストプラクティスアナライザールールのテキストのオンラインバージョン。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: 5714df3f-f810-4618-8c93-e24881651100
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 95066cc111fb91ac1d6745dfb93527735de92a69
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 04ce4ea86e39e8bd98216ae4e6b12899c9366421
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365289"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857825"
 ---
 # <a name="at-least-one-network-for-live-migration-traffic-should-have-a-link-speed-of-at-least-1-gbps"></a>ライブマイグレーショントラフィック用の少なくとも1つのネットワークで、少なくとも 1 Gbps のリンク速度が必要です
 
->適用先:Windows Server 2016
+>適用対象: Windows Server 2016
 
 
   
@@ -27,7 +26,7 @@ ms.locfileid: "71365289"
 |-|-|  
 |**オペレーティング システム**|Windows Server 2016|  
 |**製品/機能**|Hyper-V|  
-|**順**|Error|  
+|**順**|エラー|  
 |**カテゴリ**|構成|  
   
 次のセクションでは、斜体は、この問題のためのベスト プラクティス アナライザー ツールで表示される UI テキストを示します。  

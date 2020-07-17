@@ -1,6 +1,5 @@
 ---
 title: AD フォレストの回復-RID プールを無効にする
-description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
@@ -9,16 +8,16 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: 2f5f84df-bd85-4ca4-bdd3-835bd1d45c11
 ms.technology: identity-adds
-ms.openlocfilehash: c3c477e21a455e5e5777da00b064ca7a02672571
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9e693f6f30fb721897eaaac89b3d146c57e0e63f
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390412"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80823925"
 ---
 # <a name="ad-forest-recovery---invalidating-the-current-rid-pool"></a>AD フォレストの回復-現在の RID プールを無効にする  
 
->適用先:Windows Server 2016、Windows Server 2012、および 2012 R2、Windows Server 2008 および 2008 R2
+>適用対象: Windows Server 2016、Windows Server 2012、および 2012 R2、Windows Server 2008 および 2008 R2
 
 Windows PowerShell を使用して、ドメインコントローラーの現在の RID プールを無効にするには、次の手順を使用します。 Windows PowerShell は、windows server 2012 および Windows Server 2008 R2 では既定で有効になっていますが、Windows Server 2008 では、 **[機能の追加]** を使用してインストールする必要があります。 Windows Server 2003 で実行するために[ダウンロード](https://www.microsoft.com/download/details.aspx?id=20020)できます。  
 

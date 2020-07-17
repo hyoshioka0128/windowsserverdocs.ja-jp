@@ -1,7 +1,6 @@
 ---
 ms.assetid: 33b80a3f-67f3-4da7-ac4a-7fd2232fbd5d
 title: WID を使用するスタンドアロン フェデレーション サーバー
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 5fa89a4a57c618fd711234b8770a35750f3099bd
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7253691cff4cc83032e4a345682ca1e43bafddc4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71358958"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80858775"
 ---
 # <a name="stand-alone-federation-server-using-wid"></a>WID を使用するスタンドアロン フェデレーション サーバー
 

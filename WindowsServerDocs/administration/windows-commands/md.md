@@ -1,76 +1,66 @@
 ---
-title: Md
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+title: md
+description: Md コマンドの参照記事。ディレクトリまたはサブディレクトリを作成します。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 82162d00-cc34-4776-9e55-4b4836dbd6a9
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 965a5c506535a2c52d6cc7b3557c6104182c12a5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e7d5dac14572bfe53f92333cddcdc68bfa0aab1a
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71373690"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922098"
 ---
-# <a name="md"></a>Md
+# <a name="md"></a>md
 
-
-
-ディレクトリまたはサブディレクトリを作成します。
+ディレクトリまたはサブディレクトリを作成します。 既定で有効になっているコマンド拡張機能では、1 つを使用できます。 **md** 指定されたパスに中間ディレクトリを作成するコマンドです。
 
 > [!NOTE]
-> このコマンドと同じ、 **mkdir** コマンドです。
-
-このコマンドを使用する方法の例については、[例](#BKMK_examples)を参照してください。
+> このコマンドは、 [mkdir コマンド](mkdir.md)と同じです。
 
 ## <a name="syntax"></a>構文
 
 ```
-md [<Drive>:]<Path>
-mkdir [<Drive>:]<Path>
+md [<drive>:]<path>
 ```
 
-## <a name="parameters"></a>パラメーター
+### <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
-|---------|-----------|
-|\<ドライブ >:|新しいディレクトリを作成するドライブを指定します。|
-|\<パス >|必須。 新しいディレクトリの場所と名前を指定します。 1 つのパスの最大長は、ファイル システムによって決まります。|
-|/?|コマンド プロンプトにヘルプを表示します。|
+| パラメーター | 説明 |
+| --------- | ----------- |
+| `<drive>`: | 新しいディレクトリを作成するドライブを指定します。 |
+| `<path>` | 新しいディレクトリの場所と名前を指定します。 1 つのパスの最大長は、ファイル システムによって決まります。 これは必須パラメーターです。 |
+| /? | コマンド プロンプトにヘルプを表示します。 |
 
-## <a name="remarks"></a>注釈
+### <a name="examples"></a>例
 
-既定で有効になっているコマンド拡張機能では、1 つを使用できます。 **md** 指定されたパスに中間ディレクトリを作成するコマンドです。
+現在のディレクトリ内に*Directory1*という名前のディレクトリを作成するには、次のように入力します。
 
-## <a name="BKMK_examples"></a>例
-
-現在のディレクトリ内で Directory1 という名前のディレクトリを作成するには、次のように入力します。
 ```
 md Directory1
 ```
-ルート ディレクトリ内のディレクトリ ツリー Taxes\Property\Current コマンド拡張機能を有効になっている使用して作成するには、次のように入力します。
+
+ルートディレクトリ内に、コマンド拡張機能が有効になっているディレクトリツリー *Taxes\Property\Current*を作成するには、次のように入力します。
+
 ```
 md \Taxes\Property\Current
 ```
-コマンド拡張機能を無効になっていますが、前の例のように、ルート ディレクトリ内のディレクトリ ツリー Taxes\Property\Current を作成するには、次の一連のコマンドを入力します。
+
+前の例と同じようにルートディレクトリ内にディレクトリツリー *Taxes\Property\Current*を作成するには、コマンド拡張機能を無効にして、次の一連のコマンドを入力します。
+
 ```
 md \Taxes
-cd \Taxes 
-md Property
-cd Property
-md Current
+md \Taxes\Property
+md \Taxes\Property\Current
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
 
-[Cmd](cmd.md)
+- [mkdir コマンド](mkdir.md)

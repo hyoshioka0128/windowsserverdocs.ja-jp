@@ -1,7 +1,6 @@
 ---
 ms.assetid: 7f285c9f-c3e8-4aae-9ff4-a9123815114e
 title: 集約型アクセス ポリシーのシナリオ
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 91fd437895e765d4d73f3a200f76a5f8f96b52f2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a22592e5c8af9fa23725de90a14a9a8a46c286d7
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407090"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861155"
 ---
 # <a name="scenario-central-access-policy"></a>シナリオ:集約型アクセス ポリシー
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 ファイルの集約型アクセス ポリシーを使用すると、組織は、ユーザー グループ、ユーザーの信頼性情報、デバイスの信頼性情報、およびリソース プロパティを使用した条件式を含む承認ポリシーを一元的にデプロイおよび管理できるようになります (信頼性情報とは、その情報が関連付けられているオブジェクトの属性に関するアサーションです)。 たとえば、ビジネス上重要な (HBI) データにアクセスするには、フルタイム従業員であること、管理されたデバイスからアクセス権を取得すること、スマート カードでログオンすることがユーザーに要求されます。 これらのポリシーは Active Directory ドメイン サービス (AD DS) で定義およびホストされます。  
   
@@ -83,9 +82,9 @@ ms.locfileid: "71407090"
   
 -   [集約型アクセスポリシー &#40;のデモンストレーション手順を展開する&#41;](Deploy-a-Central-Access-Policy--Demonstration-Steps-.md)  
   
--   [ダイナミック アクセス制御: シナリオの概要](Dynamic-Access-Control--Scenario-Overview.md)  
+-   [動的 Access Control: シナリオの概要](Dynamic-Access-Control--Scenario-Overview.md)  
   
-## <a name="BKMK_NEW"></a>このシナリオに含まれる役割と機能  
+## <a name="roles-and-features-included-in-this-scenario"></a><a name="BKMK_NEW"></a>このシナリオに含まれる役割と機能  
 次の表で、このシナリオに含まれている役割と機能を紹介すると共に、それをシナリオに活かす方法について説明します。  
   
 |役割/機能|このシナリオのサポート方法|  

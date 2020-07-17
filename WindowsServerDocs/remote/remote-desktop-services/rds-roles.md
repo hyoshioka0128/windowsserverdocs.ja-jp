@@ -7,17 +7,17 @@ ms.author: helohr
 ms.date: 07/06/2018
 ms.topic: article
 author: heidilohr
-manager: dougkim
-ms.openlocfilehash: f26f75b8ce3f5438362c15b84aeca9339b95ebbc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+manager: lizross
+ms.openlocfilehash: 44b98b485b69720a1459f052b68d15617954bffe
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387204"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "75949824"
 ---
 # <a name="remote-desktop-services-roles"></a>リモート デスクトップ サービス ロール
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016
+>適用先:Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016
 
 この記事では、リモート デスクトップ サービス環境内での役割について説明します。
 
@@ -35,7 +35,7 @@ RD セッション ホスト サーバーの仮想マシンをコレクション
 
 さらに、新しい RD セッション ホストの仮想マシンを作成するためのテンプレートとして使用できる Windows Server OS を含む仮想ハード ディスクを作成およびアップロードすることによって、デスクトップをさらにカスタマイズできます。
 
-詳しくは、次の記事をご覧ください。
+詳細については、以下の記事を参照してください。
 
 * [リモート デスクトップ サービス - セキュリティで保護されたデータ ストレージ](rds-plan-secure-data-storage.md)
 * [汎用化した VHD をアップロードして Azure で新しい VM を作成する](https://docs.microsoft.com/azure/virtual-machines/windows/upload-generalized-managed?toc=%2Fazure%2Fvirtual-machines%2Fwindows%2Ftoc.json)
@@ -51,7 +51,7 @@ RD セッション ホスト サーバーの仮想マシンをコレクション
 
 RD 接続ブローカー クラスターを作成する前に、テナントの環境に Azure SQL Database を展開するか、SQL Server AlwaysOn の可用性グループを作成する必要があります。
 
-詳しくは、次の記事をご覧ください。
+詳細については、以下の記事を参照してください。
 
 * [RD 接続ブローカー サーバーを展開に追加し、高可用性を構成する](rds-connection-broker-cluster.md)
 * デスクトップ ホスティング サービスの [SQL データベース](desktop-hosting-service.md#sql-database)。
@@ -66,7 +66,7 @@ RD ゲートウェイ コンポーネントは Secure Sockets Layer (SSL) を使
 
 テナントのユーザーが少ない場合、コストを削減するために、RD Web アクセスおよび RD ゲートウェイの役割を 1 つの仮想マシン上で組み合わせることができます。 さらに多くの RD ゲートウェイ仮想マシンを RD ゲートウェイ ファームに追加して、サービスの可用性を高めてより多くのユーザーにスケールアウトすることもできます。 規模の大きい RD ゲートウェイ ファーム内の仮想マシンは、負荷分散された設定で構成する必要があります。 IP アフィニティは、Windows Server 2016 仮想マシン上で RD ゲートウェイを使用している場合は不要ですが、Windows Server 2012 R2 仮想マシン上でこれを実行している場合は必要です。
 
-詳しくは、次の記事をご覧ください。
+詳細については、以下の記事を参照してください。
 
 * [RD Web およびゲートウェイ Web フロントに高可用性を追加する](rds-rdweb-gateway-ha.md)
 * [リモート デスクトップ サービスのどこからでもアクセス](rds-plan-access-from-anywhere.md)
@@ -96,9 +96,9 @@ RD Web アクセスを構成する方法の詳細については、次の記事�
 
 小さいテナントの場合、単一の仮想マシンにファイル サーバーと RD ライセンス コンポーネントを組み合わせることでコストを削減できます。 サービスの可用性を高めるために、テナントは同じ可用性セット内に 2 つの RD ライセンス サーバー仮想マシンを展開できます。 テナントの環境内のすべての RD サーバーは両方の RD ライセンス サーバーに関連付けられるため、サーバーの 1 つがダウンした場合でも、ユーザーは新しいセッションに引き続き接続できます。
 
-詳しくは、次の記事をご覧ください。
+詳細については、以下の記事を参照してください。
 
 * [クライアント アクセス ライセンス (CAL) を使用して RDS 展開のライセンスを付与する](rds-client-access-license.md)
 * [リモート デスクトップ サービス ライセンス サーバーをアクティブ化する](rds-activate-license-server.md)
 * [リモート デスクトップ サービス クライアント アクセス ラインセンス (RDS CAL) を追跡する](rds-track-cals.md)
-* [Microsoft ボリューム ライセンス: サービス プロバイダー様向けライセンス プログラム](https://www.microsoft.com/en-us/Licensing/licensing-programs/spla-program.aspx)
+* [Microsoft ボリューム ライセンス: サービス プロバイダー様向けライセンス プログラム](https://www.microsoft.com/Licensing/licensing-programs/spla-program.aspx)

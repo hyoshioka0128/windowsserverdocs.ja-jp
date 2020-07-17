@@ -1,24 +1,20 @@
 ---
 title: MultiPoint Services
 description: 複数のユーザーが同じシステムにアクセスできるようにするソリューションである MultiPoint Services の使用方法について説明します。
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 426005e1-03af-4595-9418-964b0962b905
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 4b5900039dc241acb0da75a680b52088a6a6f3c2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2e96621319d541bbc2dc4b7fe9f915397ce451c4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405051"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853435"
 ---
 # <a name="multipoint-services"></a>MultiPoint Services
 MultiPoint Services は、それぞれが独立した使い慣れた Windows エクスペリエンスを持つ複数のユーザーが、1台のコンピューターを同時に共有できるようにするソリューションです。

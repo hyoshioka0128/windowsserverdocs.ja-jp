@@ -2,24 +2,23 @@
 title: 使用中の論理プロセッサの数は、サポートされている最大を超えていない必要があります。
 description: このベストプラクティスアナライザー規則によって報告された問題を解決するための手順を示します。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: 66df8b02-91d1-424b-8934-a39c214d530e
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 380daf333c041c8702228a60c26ab6e76e4cf3e1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b6cd948c47e58dec919cd946ad701f70403d6af3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71393398"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859295"
 ---
 # <a name="the-number-of-logical-processors-in-use-must-not-exceed-the-supported-maximum"></a>使用中の論理プロセッサの数は、サポートされている最大を超えていない必要があります。
 
->適用先:Windows Server 2016
+>適用対象: Windows Server 2016
 
 ベスト プラクティスとスキャンの詳細については、「 [ベスト プラクティス アナライザー](https://go.microsoft.com/fwlink/?LinkId=122786)」をご覧ください。  
   
@@ -27,7 +26,7 @@ ms.locfileid: "71393398"
 |-|-|  
 |**オペレーティング システム**|Windows Server 2016|  
 |**製品/機能**|Hyper-V|  
-|**順**|Error|  
+|**順**|エラー|  
 |**カテゴリ**|ポリシー|  
   
 次のセクションでは、斜体は、この問題のためのベスト プラクティス アナライザー ツールで表示されるテキストを示します。  
@@ -52,7 +51,7 @@ Msconfig を使用して、次の手順を参照してください。 プロセ�
   
 2.  **ブート** ] タブ、[ **詳細オプション**します。  
   
-3.  選択 **プロセッサの数** し、一覧で番号を選択します。 **[OK]** をクリックします。  
+3.  選択 **プロセッサの数** し、一覧で番号を選択します。 **[OK]** をクリックすると、  
   
 4.  プロセッサの新しい番号を使用して実行するコンピューターを再起動します。  
   

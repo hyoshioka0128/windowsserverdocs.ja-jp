@@ -1,24 +1,20 @@
 ---
 title: MultiPoint マネージャーを使用したシステム タスクの管理
 description: MultiPoint Manager の管理タスクの概要
-ms.custom: na
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: efb34298-391c-4435-afdf-1a749f1ce224
 author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 185f4c88286138af61f92f3f349efd8f584ed73c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a1f51d459634f9657a8623e52ed30b88158167ad
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405053"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853515"
 ---
 # <a name="manage-system-tasks-using-multipoint-manager"></a>MultiPoint マネージャーを使用したシステム タスクの管理
 MultiPoint マネージャーでは、 **[ホーム]** タブを使用して multipoint Services タスクを実行し、システムの状態を確認することができます。 **[ホーム]** タブで実行できるタスク:  
@@ -35,7 +31,7 @@ MultiPoint マネージャーでは、 **[ホーム]** タブを使用して mul
   
 -   コンピューターを追加または削除する (詳細は、「[コンピューターを追加または削除する](Add-or-Remove-Computers.md)」で説明しています)。  
 
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [サーバー設定を編集する](Edit-Server-Settings.md)  
 [再起動またはシャットダウンする](Restart-or-Shut-Down.md)  
 [モードの切り替え](Switch-Between-Modes.md)  

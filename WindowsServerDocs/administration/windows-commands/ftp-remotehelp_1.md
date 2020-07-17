@@ -1,49 +1,59 @@
 ---
-title: ftp remotehelp_1
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+title: ftp remotehelp
+description: リモートコマンドのヘルプを表示する、ftp remotehelp コマンドのリファレンス記事です。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
-ms.assetid: ef23adf3-ead4-44c8-ac1d-c8a6f4b2bf73 vhorne
+ms.assetid: ef23adf3-ead4-44c8-ac1d-c8a6f4b2bf73
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bac6fbe4a55c3fed4caab4e30ba848ec9ea68e21
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 54d784751291515a022a561ca9600e3e967a9d8e
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71376027"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925740"
 ---
-# <a name="ftp-remotehelp_1"></a>ftp: remotehelp_1
+# <a name="ftp-remotehelp"></a>ftp remotehelp
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-リモートコマンドのヘルプを表示します。   
-## <a name="syntax"></a>構文  
-```  
-remotehelp [<Command>]  
-```  
-### <a name="parameters"></a>パラメーター  
-|パラメーター|説明|  
-|-------|--------|  
-|[<Command>]|ヘルプを表示するコマンドの名前を指定します。 *コマンド*が指定されていない場合、 **ftp**では、すべてのリモートコマンドの一覧が表示されます。|  
-## <a name="remarks"></a>コメント  
-**引用符**または**リテラル**を使用してリモートコマンドを実行できます。  
-## <a name="BKMK_Examples"></a>例  
-リモートコマンドの一覧を表示します。  
-```  
-remotehelp  
-```  
-この**コマンドの構文**を表示します。  
-```  
-remotehelp feat  
-```  
-## <a name="additional-references"></a>その他の参照情報  
--   [ftp: 引用](ftp-quote.md)  
--   [コマンド ライン構文の記号](command-line-syntax-key.md)  
+リモートコマンドのヘルプを表示します。
+
+## <a name="syntax"></a>構文
+
+```
+remotehelp [<command>]
+```
+
+### <a name="parameters"></a>パラメーター
+
+| パラメーター | 説明 |
+| ------- | -------- |
+| `[<command>]` | ヘルプを表示するコマンドの名前を指定します。 が `<command>` 指定されていない場合、このコマンドはすべてのリモートコマンドの一覧を表示します。 また、 [ftp 引用符](ftp-quote.md)または[ftp リテラル](ftp-literal_1.md)を使用してリモートコマンドを実行することもできます。 |
+
+### <a name="examples"></a>例
+
+リモートコマンドの一覧を表示するには、次のように入力します。
+
+```
+remotehelp
+```
+
+この*コマンドの構文*を表示するには、次のように入力します。
+
+```
+remotehelp feat
+```
+
+## <a name="additional-references"></a>その他の参照情報
+
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [ftp quote](ftp-quote.md)
+
+- [ftp literal](ftp-literal_1.md)
+
+- [追加の FTP ガイダンス](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))

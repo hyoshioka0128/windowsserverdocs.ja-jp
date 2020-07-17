@@ -1,7 +1,6 @@
 ---
 ms.assetid: 01988844-df02-4952-8535-c87aefd8a38a
 title: Deploy Automatic File Classification (Demonstration Steps)
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 7b8d613653bc2effdae155d34a1a94a820bae3aa
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: cc89e97aacab3b764df7314beeab701df846048a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357592"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861255"
 ---
 # <a name="deploy-automatic-file-classification-demonstration-steps"></a>Deploy Automatic File Classification (Demonstration Steps)
 
@@ -37,9 +36,9 @@ ms.locfileid: "71357592"
 -   [手順 4: ファイルが分類されていることを確認する](Deploy-Automatic-File-Classification--Demonstration-Steps-.md#BKMK_Step4)  
   
 > [!NOTE]  
-> このトピックでは、サンプル Windows PowerShell コマンドレットを紹介します。ここで説明する手順の一部はこのコマンドレットで自動化できます。 詳しくは、 [コマンドレットの使用に関するページ](https://go.microsoft.com/fwlink/p/?linkid=230693)をご覧ください。  
+> このトピックには、説明する手順の一部を自動化するために使用できるサンプルの Windows PowerShell コマンドレットが含まれます。 詳しくは、 [コマンドレットの使用に関するページ](https://go.microsoft.com/fwlink/p/?linkid=230693)をご覧ください。  
   
-## <a name="BKMK_Step1"></a>手順 1: リソースプロパティの定義を作成する  
+## <a name="step-1-create-resource-property-definitions"></a><a name="BKMK_Step1"></a>手順 1: リソースプロパティの定義を作成する  
 Impact リソース プロパティおよび Personally Identifiable Information リソース プロパティを有効にして、ファイル分類インフラストラクチャがこれらのリソース プロパティを使用してネットワーク共有フォルダーでスキャンされたファイルにタグを付けることができるようにします。  
   
 [Windows PowerShell を使用してこの手順を実行する](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep1)  
@@ -58,14 +57,14 @@ Impact リソース プロパティおよび Personally Identifiable Information
   
 ![ソリューションガイド](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>***  
   
-以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
+次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 書式上の制約のため、複数行にわたって折り返される場合でも、各コマンドレットは 1 行に入力してください。  
   
 ```  
 Set-ADResourceProperty '"Enabled:$true '"Identity:'CN=Impact_MS,CN=Resource Properties,CN=Claims Configuration,CN=Services,CN=Configuration,DC=contoso,DC=com'   
 Set-ADResourceProperty '"Enabled:$true '"Identity:'CN=PII_MS,CN=Resource Properties,CN=Claims Configuration,CN=Services,CN=Configuration,DC=contoso,DC=com'  
 ```  
   
-## <a name="BKMK_Step2"></a>手順 2: 文字列のコンテンツ分類規則を作成する  
+## <a name="step-2-create-a-string-content-classification-rule"></a><a name="BKMK_Step2"></a>手順 2: 文字列のコンテンツ分類規則を作成する  
 文字列のコンテンツ分類規則は、ファイルで特定の文字列がないかをスキャンします。 文字列が見つかった場合、リソース プロパティの値を構成できます。 この例では、ネットワーク共有フォルダー上の各ファイルをスキャンし、"Contoso Confidential" という文字列を探します。 文字列が見つかった場合、関連ファイルは、ビジネスに大きな影響を与えるものとして分類されます。  
   
 [Windows PowerShell を使用してこの手順を実行する](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep2)  
@@ -74,7 +73,7 @@ Set-ADResourceProperty '"Enabled:$true '"Identity:'CN=PII_MS,CN=Resource Propert
   
 1.  Administrators セキュリティ グループのメンバーとしてファイル サーバーにログオンします。  
   
-2.  Windows PowerShell コマンド プロンプトで「 **Update-FsrmClassificationPropertyDefinition** 」と入力してから、Enter キーを押します。 これにより、ドメイン コントローラーで作成されたプロパティ定義がファイル サーバーに同期されます。  
+2.  Windows PowerShell コマンド プロンプトで「**Update-FsrmClassificationPropertyDefinition**」と入力してから、Enter キーを押します。 これにより、ドメイン コントローラーで作成されたプロパティ定義がファイル サーバーに同期されます。  
   
 3.  ファイル サーバー リソース マネージャーを開きます。 サーバー マネージャーで **[ツール]** をクリックしてから、 **[ファイル サーバー リソース マネージャー]** をクリックします。  
   
@@ -84,7 +83,7 @@ Set-ADResourceProperty '"Enabled:$true '"Identity:'CN=PII_MS,CN=Resource Propert
   
 6.  **[分類規則]** を右クリックし、 **[分類規則の作成]** をクリックします。  
   
-7.  **[全般]** タブの **[規則名]** ボックスに「 **Contoso Confidential**」などの規則名を入力します。  
+7.  **[全般]** タブの **[規則名]** ボックスに「**Contoso Confidential**」などの規則名を入力します。  
   
 8.  **[スコープ]** タブで **[追加]** をクリックし、この規則に含めるフォルダー (D:\Finance Documents など) を選択します。  
   
@@ -103,13 +102,13 @@ Set-ADResourceProperty '"Enabled:$true '"Identity:'CN=PII_MS,CN=Resource Propert
   
 11. **[式の種類]** 列で **[文字列]** を選択します。  
   
-12. **[式]** 列に「 **Contoso Confidential**」と入力してから、 **[OK]** をクリックします。  
+12. **[式]** 列に「**Contoso Confidential**」と入力してから、 **[OK]** をクリックします。  
   
 13. **[評価の種類]** タブで **[既存のプロパティ値を再評価する]** チェック ボックスを選択し、 **[既存の値を上書きする]** をクリックしてから、 **[OK]** をクリックします。  
   
 ![ソリューションガイド](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>***  
   
-以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
+次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 書式上の制約のため、複数行にわたって折り返される場合でも、各コマンドレットは 1 行に入力してください。  
   
 ```  
 $date = Get-Date  
@@ -118,7 +117,7 @@ Set-FsrmClassification -Continuous -schedule $AutomaticClassificationScheduledTa
 New-FSRMClassificationRule -Name 'Contoso Confidential' -Property "Impact_MS" -PropertyValue "3000" -Namespace @('D:\Finance Documents') -ClassificationMechanism "Content Classifier" -Parameters @("StringEx=Min=1;Expr=Contoso Confidential") -ReevaluateProperty Overwrite  
 ```  
   
-## <a name="BKMK_Step3"></a>手順 3: 正規表現のコンテンツ分類規則を作成する  
+## <a name="step-3-create-a-regular-expression-content-classification-rule"></a><a name="BKMK_Step3"></a>手順 3: 正規表現のコンテンツ分類規則を作成する  
 正規表現の分類規則は、正規表現に一致するパターンをファイルでスキャンします。 正規表現に一致する文字列が見つかった場合、リソース プロパティの値を構成できます。 この例では、ネットワーク共有フォルダー上の各ファイルをスキャンし、社会保障番号のパターン (XXX-XX-XXXX) に一致する文字列を検索します。 パターンが見つかった場合、関連ファイルは、個人を特定できる情報が含まれているものと分類されます。  
   
 [Windows PowerShell を使用してこの手順を実行する](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep3)  
@@ -127,7 +126,7 @@ New-FSRMClassificationRule -Name 'Contoso Confidential' -Property "Impact_MS" -P
   
 1.  Administrators セキュリティ グループのメンバーとしてファイル サーバーにサインインします。  
   
-2.  Windows PowerShell コマンド プロンプトで「 **Update-FsrmClassificationPropertyDefinition**」と入力してから、Enter キーを押します。 これにより、ドメイン コントローラーで作成されたプロパティ定義がファイル サーバーに同期されます。  
+2.  Windows PowerShell コマンド プロンプトで「**Update-FsrmClassificationPropertyDefinition**」と入力してから、Enter キーを押します。 これにより、ドメイン コントローラーで作成されたプロパティ定義がファイル サーバーに同期されます。  
   
 3.  ファイル サーバー リソース マネージャーを開きます。 サーバー マネージャーで **[ツール]** をクリックしてから、 **[ファイル サーバー リソース マネージャー]** をクリックします。  
   
@@ -157,13 +156,13 @@ New-FSRMClassificationRule -Name 'Contoso Confidential' -Property "Impact_MS" -P
   
 ![ソリューションガイド](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>***  
   
-以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
+次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 書式上の制約のため、複数行にわたって折り返される場合でも、各コマンドレットは 1 行に入力してください。  
   
 ```  
 New-FSRMClassificationRule -Name "PII Rule" -Property "PII_MS" -PropertyValue "5000" -Namespace @('D:\Finance Documents') -ClassificationMechanism "Content Classifier" -Parameters @("RegularExpressionEx=Min=10;Expr=^(?!000)([0-7]\d{2}|7([0-7]\d|7[012]))([ -]?)(?!00)\d\d\3(?!0000)\d{4}$") -ReevaluateProperty Overwrite  
 ```  
   
-## <a name="BKMK_Step4"></a>手順 4: ファイルが正しく分類されていることを確認する  
+## <a name="step-4-verify-that-the-files-are-classified-correctly"></a><a name="BKMK_Step4"></a>手順 4: ファイルが正しく分類されていることを確認する  
 分類規則で指定されているフォルダー内で作成されたファイルのプロパティを表示することで、ファイルが正しく分類されているかを確認できます。  
   
 #### <a name="to-verify-that-the-files-are-classified-correctly"></a>ファイルが正しく分類されていることを確認するには  
@@ -184,7 +183,7 @@ New-FSRMClassificationRule -Name "PII Rule" -Property "PII_MS" -PropertyValue "5
   
 4.  **[分類]** タブをクリックし、ファイルが正しく分類されていることを確認します。  
   
-## <a name="BKMK_Links"></a>関連項目  
+## <a name="see-also"></a><a name="BKMK_Links"></a>関連項目  
   
 -   [シナリオ: 分類を使用してデータに関する洞察を得る](Scenario--Get-Insight-into-Your-Data-by-Using-Classification.md)  
   

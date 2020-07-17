@@ -1,32 +1,26 @@
 ---
-title: import
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+title: diskshadow のインポート
+description: Import コマンドの参照記事。読み込まれたメタデータファイルからシステムに転送可能なシャドウコピーをインポートします。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7bd78d76-0560-4d47-944c-fe960be2c10b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 50a095c323806dd523994c36c5b427d4ecedf8ef
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ab1c3c6d324cec939a2529191cbc8ce40165b807
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71375496"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924441"
 ---
-# <a name="import"></a>import
-
-
+# <a name="import-diskshadow"></a>インポート (diskshadow)
 
 読み込まれたメタデータファイルからシステムに転送可能なシャドウコピーをインポートします。
 
-このコマンドを使用する方法の例については、[例](#BKMK_examples)を参照してください。
+> :このコマンドを使用する前に、[[メタデータの読み込み] コマンド](load-metadata.md)を使用して、DiskShadow メタデータファイルを読み込む必要があります。
 
 ## <a name="syntax"></a>構文
 
@@ -34,14 +28,14 @@ ms.locfileid: "71375496"
 import
 ```
 
-## <a name="remarks"></a>コメント
+#### <a name="remarks"></a>Remarks
 
--   転送可能なシャドウコピーは、システムにすぐには保存されません。 これらの詳細は、バックアップコンポーネントドキュメント XML ファイルに格納されます。この XML ファイルは、自動的に要求され、.cab メタデータファイルを作業ディレクトリに保存します。 このファイルのパスと名前は、 **[メタデータの設定]** コマンドを使用して変更できます。
--   **Import**を使用するには、 **[メタデータの読み込み]** コマンドを使用して、DiskShadow メタデータファイルを読み込む必要があります。
+- 転送可能シャドウコピーは、システムにすぐには保存されません。 これらの詳細は、バックアップコンポーネントドキュメント XML ファイルに格納されます。この XML ファイルは、自動的に要求され、.cab メタデータファイルを作業ディレクトリに保存します。 この XML ファイルのパスと名前を変更するには、[[メタデータの設定] コマンド](set-metadata.md)を使用します。
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a>例
 
 **Import**コマンドの使用方法を示す DiskShadow スクリプトの例を次に示します。
+
 ```
 #Sample DiskShadow script demonstrating IMPORT
 SET CONTEXT PERSISTENT
@@ -59,6 +53,8 @@ IMPORT
 #The shadow copy will now be loaded into the system.
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンド ライン構文の記号](command-line-syntax-key.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [diskshadow コマンド](diskshadow.md)

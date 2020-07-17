@@ -1,24 +1,20 @@
 ---
 title: コンテナーのエンドポイントをテナントの仮想ネットワークに接続する
 description: このトピックでは、SDN を使用して作成された既存のテナント仮想ネットワークにコンテナーエンドポイントを接続する方法について説明します。 Docker 用の Windows libnetwork プラグインで利用できる l2bridge (および必要に応じて l2tunnel) ネットワークドライバーを使用して、テナント VM にコンテナーネットワークを作成します。
-manager: ravirao
-ms.custom: na
+manager: grcusanz
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-sdn
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f7af1eb6-d035-4f74-a25b-d4b7e4ea9329
-ms.author: pashort
-author: jmesser81
+ms.author: anpaul
+author: AnirbanPaul
 ms.date: 08/24/2018
-ms.openlocfilehash: 83996f7ffb82d01c9f36945efa022f0dd0b9825b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2b8927ec260b4f5a42aa59a25db1b18896ce91ef
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355819"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854535"
 ---
 # <a name="connect-container-endpoints-to-a-tenant-virtual-network"></a>コンテナーのエンドポイントをテナントの仮想ネットワークに接続する
 
@@ -153,6 +149,6 @@ C:\> docker run -it --network=MyContainerOverlayNetwork <image> <cmd>
 >[!NOTE]
 >*L2bridge*または*l2tunnel* container network では、静的 IP の割り当ては、Microsoft SDN スタックではサポートされていません。
 
-## <a name="more-information"></a>詳細情報
+## <a name="more-information"></a>詳細
 SDN インフラストラクチャの展開の詳細については、「[ソフトウェア定義ネットワークインフラストラクチャを展開する](https://docs.microsoft.com/windows-server/networking/sdn/deploy/deploy-a-software-defined-network-infrastructure)」を参照してください。
 

@@ -2,26 +2,23 @@
 title: Windows Server Update Services (WSUS) を使ってみる
 description: Windows Server Update Service (WSUS) のトピック - サーバー ロールとその実際の適用例の概要
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-wsus
-ms.tgt_pltfrm: na
 ms.topic: get-started article
 ms.assetid: 90e3464c-49d8-4861-96db-ee6f8a09ec5b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 5/22/2017
-ms.openlocfilehash: 89247f91f616233fc6e4967a0457ff34fac221da
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 07095fbbe16464645564f07434285c76b8cfd4a1
+ms.sourcegitcommit: fb808a6fc851a3e5c47e6a7654366145d2f19554
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361647"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84740635"
 ---
 # <a name="windows-server-update-services-wsus"></a>Windows Server Update Services (WSUS)
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用先:Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 Windows Server Update Services (WSUS) を使用すると、IT 管理者は Microsoft 製品の最新の更新プログラムを展開できます。 WSUS を使用すると、ネットワーク上のコンピューターに Microsoft Update を通じてリリースされる更新プログラムの配布を完全に管理します。 このトピックでは、このサーバーの役割の概要に加え、WSUS を展開および保守する方法の詳細について説明します。
 

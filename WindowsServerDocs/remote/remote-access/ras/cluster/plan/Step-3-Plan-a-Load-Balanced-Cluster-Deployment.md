@@ -2,26 +2,22 @@
 title: 手順 3. 負荷分散クラスターの展開を計画します。
 description: このトピックは、「Windows Server 2016 のクラスターにリモートアクセスを展開する」の一部です。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-ras
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7540c17b-81de-47de-a04f-3247afa26f70
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: beb2f5ce27115bf328917e38910198794f523547
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 28a255031e9168105b285dbece1c9230d1ab20a9
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404609"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80855235"
 ---
 # <a name="step-3-plan-a-load-balanced-cluster-deployment"></a>手順 3. 負荷分散クラスターの展開を計画します。
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 次の手順では、負荷分散の構成とクラスターの展開を計画します。  
   
@@ -32,7 +28,7 @@ ms.locfileid: "71404609"
 |3.3 が VPN クライアント接続を計画します。|VPN クライアント接続のための要件に注意してください。|  
 |3.4 ネットワーク ロケーション サーバーを計画します。|ネットワーク ロケーション サーバー web サイトがリモート アクセス サーバーでホストされている自己署名証明書を使用しない場合は、クラスター内の各サーバーが、web サイトへの接続を認証するサーバー証明書を持つことを確認します。|  
   
-## <a name="bkmk_2_1_Plan_LB"></a>3.1 負荷分散を計画する  
+## <a name="31-plan-load-balancing"></a><a name="bkmk_2_1_Plan_LB"></a>3.1 負荷分散を計画する  
 リモート アクセスは、1 台のサーバーまたはリモート アクセス サーバーのクラスターに展開できます。 クラスターへのトラフィックは負荷分散する DirectAccess クライアントの高可用性とスケーラビリティを提供できます。 2 つの負荷分散オプションがあります。  
   
 -   **Windows NLB**-Windows NLB は、Windows server の機能です。 これを使用するには、必要としない追加のハードウェア、クラスター内のすべてのサーバーが、トラフィックの負荷を管理するためです。 Windows NLB には、リモート アクセス クラスター内の最大 8 台のサーバーがサポートしています。  
@@ -47,7 +43,7 @@ ms.locfileid: "71404609"
   
     -   管理者は、外部ロード バランサーまたはその逆 Windows NLB を切り替えることができます。 管理者できませんに切り替えること外部ロード バランサーから Windows NLB 8 個を超えるサーバーが外部ロード バランサーの展開で彼は場合に注意してください。  
   
-### <a name="ELBConfigEx"></a>3.1.1 外部 Load Balancer 構成の例  
+### <a name="311-external-load-balancer-configuration-example"></a><a name="ELBConfigEx"></a>3.1.1 外部 Load Balancer 構成の例  
 このセクションでは、新しいリモート アクセスの展開で外部ロード バランサーを有効にするための構成手順について説明します。 外部ロード バランサーを使用する場合、リモート アクセス クラスターは次の図のようになります可能性があります、企業ネットワーク内部ネットワーク上のロード バランサーを経由して外部ネットワークに接続されているロード バランサーを経由してインターネットにリモート アクセス サーバーが接続されています。  
   
 ![外部ロード バランサーの構成例](../../../../media/Step-3-Plan-a-Load-Balanced-Cluster-Deployment/ELBDiagram-URA_Enterprise_NLB-.png)  
@@ -85,7 +81,7 @@ ms.locfileid: "71404609"
   
 6.  計画的な IP アドレスを使用してリモート アクセス サーバーの情報が構成され、計画的な IP アドレスに従って、クラスターの外部および内部の IP アドレスが構成します。  
   
-## <a name="bkmk_2_2_NLB"></a>3.2 ip-https を計画する  
+## <a name="32-plan-ip-https"></a><a name="bkmk_2_2_NLB"></a>3.2 ip-https を計画する  
   
 1.  **証明書の要件**-パブリックまたは内部の証明機関 (CA) によって発行された、IP-HTTPS 証明書または自己署名証明書を使用して選択した単一のリモート アクセス サーバーの展開時にします。 クラスター展開用と同じ種類の証明書を使用して、リモート アクセス クラスターのメンバーごとにする必要があります。 つまり、(推奨)、公共の CA によって発行された証明書を使用している場合は、クラスターのメンバーごとにパブリック CA によって発行された証明書をインストールする必要があります。 新しい証明書のサブジェクト名は、展開で使用されて、IP-HTTPS 証明書のサブジェクト名と同じにする必要があります。 自己署名証明書を使用している場合は、これらを構成することに自動的に各サーバーでクラスターの展開時に注意してください。  
   
@@ -94,7 +90,7 @@ ms.locfileid: "71404609"
     > [!NOTE]  
     > プレフィックスの要件は次の IPv6 を有効になっている内部ネットワークにのみ関係 (IPv6 専用または ipv 4 + IPv6)。 IPv4 のみの企業ネットワークでは、クライアントのプレフィックスが自動的に構成されている、管理者が変更ことはできません。  
   
-## <a name="BKMK_3.3"></a>3.3 VPN クライアント接続の計画  
+## <a name="33-plan-for-vpn-client-connections"></a><a name="BKMK_3.3"></a>3.3 VPN クライアント接続の計画  
 さまざまな VPN クライアントの接続に関する考慮事項があります。  
   
 -   VPN クライアント トラフィックを負荷分散の場合は DHCP を使用して VPN クライアント アドレスが割り当てられるをすることはできません。 静的アドレス プールが必要です。  
@@ -105,8 +101,8 @@ ms.locfileid: "71404609"
   
 -   VPN IPv6 クライアント トラフィックを負荷分散を有効にするには 59 ビットの IPv6 プレフィックスを指定する必要があります。  
   
-## <a name="BKMK_nls"></a>3.4 ネットワークロケーションサーバーを計画する  
-単一のリモート アクセス サーバーで、ネットワーク ロケーション サーバー web サイトを実行している展開時に選択した場合、内部証明機関 (CA) によって発行された証明書または自己署名証明書を使用します。  次のことを考慮してください。  
+## <a name="34-plan-the-network-location-server"></a><a name="BKMK_nls"></a>3.4 ネットワークロケーションサーバーを計画する  
+単一のリモート アクセス サーバーで、ネットワーク ロケーション サーバー web サイトを実行している展開時に選択した場合、内部証明機関 (CA) によって発行された証明書または自己署名証明書を使用します。  次の点に注意してください。  
   
 1.  リモート アクセス クラスターの各メンバーは、ネットワーク ロケーション サーバー web サイトの DNS エントリに対応するネットワーク ロケーション サーバー用の証明書が必要です。  
   

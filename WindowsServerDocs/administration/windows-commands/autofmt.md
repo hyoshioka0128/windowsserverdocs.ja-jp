@@ -1,37 +1,32 @@
 ---
 title: autofmt
-description: '**Autofmt**の windows コマンドに関するトピック-Windows 回復コンソールから呼び出されたときに、ドライブまたはパーティションをフォーマットします。'
-ms.custom: na
+description: Autofmt コマンドのリファレンス記事。 Windows 回復コンソールから呼び出されたときに、ドライブまたはパーティションをフォーマットします。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 81f9abac-f927-41d8-8667-f056db4cb2af
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a15a50966ef4fdcd0abe6615fccae719d73b2d82
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1b6f4ae3fe630ba01d9c789a9f7d73a11a31f456
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71382258"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923555"
 ---
 # <a name="autofmt"></a>autofmt
 
+自動ファイルシステムフォーマットユーティリティを起動します。これにより、ドライブまたはパーティションが Windows 回復コンソールから呼び出されたときにフォーマットされます。
 
+> [!IMPORTANT]
+> コマンドラインから直接**autofmt**を実行することはできません。
 
-Windows 回復コンソールから呼び出されたときに、ドライブまたはパーティションをフォーマットします。
+## <a name="additional-references"></a>その他の参照情報
 
-## <a name="remarks"></a>コメント
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
 
-コマンドラインから直接**Autofmt**を実行することはできません。
+- [Windows 回復環境 (WinRE)](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference)
 
-#### <a name="additional-references"></a>その他の参照情報
-
-[コマンド ライン構文の記号](command-line-syntax-key.md)
-
-[ファイルシステムの操作](https://go.microsoft.com/fwlink/?LinkId=4509)
+- [Windows 回復環境 (WinRE) を使用して一般的なセットアップの問題をトラブルシューティングする方法](https://support.microsoft.com/help/4026030/how-to-use-windows-recovery-environment-winre-to-troubleshoot-common-s)

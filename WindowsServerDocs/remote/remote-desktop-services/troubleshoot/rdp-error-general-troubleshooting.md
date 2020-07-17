@@ -1,24 +1,19 @@
 ---
 title: リモート デスクトップ接続の一般的なトラブルシューティング
 description: リモートデスクトップ接続での "クラスが登録されていません" エラーのトラブルシューティング。
-audience: itpro
-ms.custom: na
 ms.reviewer: rklemen
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: troubleshooting
-ms.assetid: ''
 author: kaushika-msft
-manager: ''
+manager: dcscontentpm
 ms.author: delhan
 ms.date: 07/24/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 39b11dac044c38f1ae80d4401fbb66af0317ab56
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 03c3c8daa8dc4bea0e03ed285a98401f91cdf1cb
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70870696"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "80857215"
 ---
 # <a name="general-remote-desktop-connection-troubleshooting"></a>リモート デスクトップ接続の一般的なトラブルシューティング
 
@@ -202,7 +197,7 @@ RDP ポートを確認または変更するには、レジストリ エディタ
     ```
   
     ![netstat コマンドでは、ポートおよびそれをリッスンしているサービスのリストが生成されます。](../media/troubleshoot-remote-desktop-connections/WPS_netstat.png)
-3. 3\. 状態が「**LISTENING**」の TCP ポート 3389 (または割り当てられた RDP ポート) のエントリを探します。 
+3. 状態が「**LISTENING**」の TCP ポート 3389 (または割り当てられた RDP ポート) のエントリを探します。 
     > [!NOTE]  
    > そのポートを使用しているプロセスまたはサービスのプロセス ID (PID) が、[PID] 列の下に表示されます。
 4. ポート 3389 (または、割り当てられている RDP ポート) を使っているアプリケーションを確認するには、次のコマンドを入力します。  

@@ -1,34 +1,34 @@
 ---
 title: ドライブ文字を変更する
 description: ディスクの管理を使用して Windows でドライブ文字の変更または割り当てを行う方法。
-ms.date: 10/24/2018
+ms.date: 06/08/2020
 ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 3e18092a71e12cadb86052204738fafc8a149ff4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 424fa2c81954e022d7e1b297a60bd3415fdafa39
+ms.sourcegitcommit: a538474d2c0a9520567f4e6ad0933f8660273098
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386018"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84505774"
 ---
 # <a name="change-a-drive-letter"></a>ドライブ文字を変更する
 
-> **適用対象:** Windows 10、Windows 8.1、Windows 7、Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> **適用対象:** Windows 10、Windows 8.1、Windows 7、Windows Server 2019、Windows Server 2016、Wndows Server 2012 R2、Windows Server 2012
 
-ドライブに割り当てられたドライブ文字に満足できない場合、またはドライブ文字がまだ割り当てられていないドライブがある場合、[ディスクの管理] を使用してこれを変更できます。
+ドライブに割り当てられたドライブ文字に満足できない場合、またはドライブ文字がまだ割り当てられていないドライブがある場合、[ディスクの管理] を使用してこれを変更できます。 そうする代わりに、ドライブを空のフォルダーにマウントしてドライブが別のフォルダーとして表示されるようにするには、「[フォルダーにドライブをマウントする](assign-a-mount-point-folder-path-to-a-drive.md)」を参照してください。
 
 > [!IMPORTANT]
 > Windows またはアプリがインストールされているドライブのドライブ文字を変更した場合、そのドライブの実行または検索時にアプリに問題が発生することがあります。 このため、Windows またはアプリがインストールされているドライブのドライブ文字は変更しないことをお勧めします。
 
-ここではドライブ文字を変更する方法を示します (代わりに、ドライブを空のフォルダーにマウントして、ドライブが別のフォルダーとして表示されるようにするには、「[ドライブにマウント ポイント フォルダー パスを割り当てる](assign-a-mount-point-folder-path-to-a-drive.md)」を参照してください)。
+ドライブ文字を変更するには、次の手順を実行します。
 
-1. 管理者のアクセス許可でディスクの管理を開きます。 
-    これを行うには、タスクバーの検索ボックスに「**ディスクの管理**」と入力し、 **[ディスクの管理]** を長押しし (または右クリックし)、 **[管理者として実行]**  >  **[はい]** を選択します。 管理者として開くことができない場合は、代わりに「**コンピューターの管理**」と入力し、 **[記憶域]**  >  **[ディスクの管理]** に移動します。
-1. [ディスクの管理] で、ドライブ文字を変更または追加するドライブを右クリックし、 **[ドライブ文字とパスの変更]** を選択します。
+1. 管理者のアクセス許可でディスクの管理を開きます。
+    これを行うには、[スタート] ボタンを長押し (または右クリック) して、 **[ディスクの管理]** を選択します。
+1. [ディスクの管理] で、ドライブ文字を変更または追加するボリュームを長押し (または右クリック) して、 **[ドライブ文字とパスの変更]** を選択します。
 
     ![ドライブを表示する [ディスクの管理]](media/change-drive-letter.png)
     > [!TIP]

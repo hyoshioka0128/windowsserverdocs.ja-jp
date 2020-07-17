@@ -8,16 +8,16 @@ ms.author: harowl
 ms.date: 06/07/2019
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 96e47a94cb0139e42960baac6d07dbcb61750555
-ms.sourcegitcommit: 7c7fc443ecd0a81bff6ed6dbeeaf4f24582ba339
+ms.openlocfilehash: 39af45506ff7023cebe437992e90f6d4ec051333
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2019
-ms.locfileid: "74903914"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "79323594"
 ---
 # <a name="configure-user-access-control-and-permissions"></a>ユーザー アクセス制御とアクセス許可を構成する
 
-> 適用対象:Windows Admin Center、Windows Admin Center Preview
+> 適用先:Windows Admin Center、Windows Admin Center Preview
 
 Windows Admin Center のユーザー アクセス制御オプションについてよく理解していない場合は、[こちら](../plan/user-access-options.md)で確認してください。
 
@@ -60,7 +60,7 @@ Windows Admin Center ゲートウェイ サービスへのアクセスには、�
 > [!NOTE]
 > Windows アカウントにゲートウェイ マシン上で**管理者アクセス権**があるユーザーには、Azure AD 認証のプロンプトは表示されません。
 
-### <a name="configuring-azure-active-directory-authentication-for-windows-admin-center-preview"></a>Windows Admin Center プレビューの Azure Active Directory 認証の構成
+### <a name="configuring-azure-active-directory-authentication-for-windows-admin-center-preview"></a>Windows Admin Center Preview の Azure Active Directory 認証の構成
 
 Windows Admin Center の **[設定]**  >  **[アクセス]** に移動し、トグル スイッチを使用して [Use Azure Active Directory to add a layer of security to the gateway]\(Azure Active Directory を使用してセキュリティの層をゲートウェイに追加する\) をオンにします。 Azure にゲートウェイを登録していない場合は、この時点で行うように指示されます。
 
@@ -123,7 +123,7 @@ Set-ADComputer -Identity (Get-ADComputer node01) -PrincipalsAllowedToDelegateToA
 Set-ADComputer -Identity (Get-ADComputer node01) -PrincipalsAllowedToDelegateToAccount $null
 ```
 
-## <a name="role-based-access-control"></a>役割ベースのアクセス制御
+## <a name="role-based-access-control"></a>ロール基準のアクセス制御
 
 ロールベースのアクセス制御を使用すると、ローカルの完全な管理者にするのではなく、マシンへの制限付きアクセス権をユーザーに付与できるようになります。
 [ロールベースのアクセス制御と使用できるロールについては、こちらを参照してください。](../plan/user-access-options.md#role-based-access-control)

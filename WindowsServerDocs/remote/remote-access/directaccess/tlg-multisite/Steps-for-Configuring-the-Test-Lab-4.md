@@ -2,22 +2,18 @@
 title: テスト ラボの構成手順
 description: このトピックは、「Windows Server 2016 用の DirectAccess マルチサイト展開のテストラボガイド」の一部です。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: dc7205b4-a822-4038-ab67-ec0a870737f2
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: dd8b8864dff98e51bf55aad9307523df4a0c30bf
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: c83d89cefe330a99777ea204f0aea417f5e03c33
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404696"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861525"
 ---
 # <a name="steps-for-configuring-the-test-lab"></a>テスト ラボの構成手順
 

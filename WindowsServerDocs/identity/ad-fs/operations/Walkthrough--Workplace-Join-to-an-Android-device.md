@@ -1,7 +1,6 @@
 ---
 ms.assetid: a33bd54c-e6db-4b58-8264-c0f34bd8ba39
 title: チュートリアル-Android デバイスへの Workplace Join
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: c021e8b67963df4f885059c75eff5e94d6dcdafb
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a52c5b6e808094e1ef31c800e8a724dd0a37f3d3
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407470"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80816085"
 ---
 # <a name="walkthrough-workplace-join-to-an-android-device"></a>チュートリアル: Android デバイスへの Workplace Join
 

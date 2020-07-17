@@ -1,30 +1,36 @@
 ---
 ms.assetid: 289cbd10-e7ec-4f2e-8dd1-eb5692565578
 title: フェールオーバー クラスタリングの変更履歴のトピック
+description: Windows Server 2016 のフェールオーバークラスタリングに関するドキュメントの新しいトピックと更新されたトピック
 ms.prod: windows-server
 ms.technology: storage-failover-clustering
 ms.topic: article
 author: JasonGerend
-manager: daveba
+manager: lizross
 ms.author: jgerend
-ms.date: 03/08/2019
-description: Windows Server 2016 のフェールオーバークラスタリングに関するドキュメントの新しいトピックと更新されたトピック
-ms.openlocfilehash: 501ad8f63eafdeadffcf5d67646c9e85005cf329
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.date: 01/07/2020
+ms.openlocfilehash: 73767eb8411523a93f3a4fe2e04106c81cc39f9b
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361208"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80827905"
 ---
 # <a name="change-history-for-failover-clustering-topics"></a>フェールオーバー クラスタリングの変更履歴のトピック
 
->適用対象:Windows Server 2019、Windows Server 2016
+>適用対象: Windows Server 2019、Windows Server 2016
 
 このトピックでは、Windows Server の[フェールオーバークラスタリング](failover-clustering-overview.md)に関するドキュメントの新しいトピックと更新されたトピックを示します。
 
 > Windows Server 2016 の更新履歴は、「[Windows 10 および Windows Server 2016 の更新履歴](https://support.microsoft.com/help/4000825/windows-10-and-windows-server-2016-update-history)」をご覧ください。
 
-## <a name="march-2019"></a>2019年3月
+## <a name="january-2020"></a>2020年1月
+
+|新しいトピックまたは変更されたトピック                                    |説明 |
+|--------------------------------------------------------|------------|
+|[クラスターイベント](system-events.md)| 新規     |
+
+## <a name="march-2019"></a>2019 年 3 月
 
 |新しいトピックまたは変更されたトピック                                    |説明 |
 |--------------------------------------------------------|------------|
@@ -56,7 +62,7 @@ ms.locfileid: "71361208"
 |---|---|
 |[クラスタリングの新機能](whats-new-in-failover-clustering.md)| Windows Server 2019 の更新プログラム|
 
-## <a name="june-2018"></a>2018年6月
+## <a name="june-2018"></a>2018 年 6 月
 
 |新しいトピックまたは変更されたトピック|説明|
 |---|---|

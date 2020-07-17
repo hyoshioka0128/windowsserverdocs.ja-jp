@@ -1,24 +1,20 @@
 ---
 title: MultiPoint ステーション
 description: ユーザーのさまざまなオプションを含む、MultiPoint Services のステーションについて説明します。
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f9f9d618-ccfe-41ea-a52c-00c3c7adb51a
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 7b8f757d552bf54cd7f4eed0783ba8e0062b9d30
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3bcdd2d3f7492b29ecf92c59714f1d93b910c9b5
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405081"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80853425"
 ---
 # <a name="multipoint--stations"></a>MultiPoint ステーション
 MultiPoint サービス システムの環境で *ステーション* MultiPoint サービスを実行しているコンピューターに接続するためのユーザーのエンドポイントします。 各ステーションは、ユーザーに独立した Windows 10 エクスペリエンスを提供します。 次のステーションの種類がサポートされています。  
@@ -48,7 +44,7 @@ MultiPoint サービスを実行しているコンピューターでは、1 つ�
   
 **図 1**4つの直接ビデオ接続ステーションを備えた MultiPoint services システム  
   
-### <a name="BKMK_PS2stations"></a>PS/2 ステーション  
+### <a name="ps2-stations"></a><a name="BKMK_PS2stations"></a>PS/2 ステーション  
 MultiPoint サービスでは、ps/2 ステーションを作成する直接ビデオ接続されているモニターに、ps/2 キーボードとマザーボード上にマウス ポインターをマップできます。 マザーボードの高解像度のアナログ オーディオは、このタイプのステーションに関連付けられているオーディオです。 これは、コンピューターには当てはまりませんマザーボードの ps/2 ジャックがない場合。  
   
 ## <a name="usb-zero-client-connected-stations"></a>USB ゼロ-クライアントの接続されたステーション  
@@ -113,15 +109,15 @@ MultiPoint サービス ステーション、モニターにある 1024 x 768 �
   
 **図 4**分割画面ステーションがある MultiPoint Services システム  
   
-## <a name="BKMK_StationTypeComparison"></a>ステーションの種類の比較  
+## <a name="station-type-comparison"></a><a name="BKMK_StationTypeComparison"></a>ステーションの種類の比較  
   
 ||直接のビデオが接続されています。|USB ゼロ クライアント接続|RDP over LAN 接続|  
 |-|--------------------------|-----------------------------|----------------------------|  
 |ビデオのパフォーマンス|ビデオの最適なパフォーマンスの推奨||ネットワーク帯域幅の下にあるビデオ品質の向上の RemoteFX をサポートするシン クライアントを使用してください。|  
 |物理的な制限|ビデオケーブルの長さと USB ハブ、およびケーブルの長さによって制限されます (推奨15メーターの最大長)|USB ハブとケーブルの長さによる制限 (推奨15メーターの最大長)|LAN 配布によって制限されます。|  
 |許可局の数 |ビデオ カード 1 枚あたりビデオ ポート時間のマザーボード上の利用可能な PCIe スロットの数によって制限されます。|USB ゼロ クライアント製造元別に合計数が制限される可能性が (詳細については、次の表の下の注を参照してください)。|ネットワーク スイッチで使用できるポートによって制限されます。|  
-|分割画面|はい|[はい]|いいえ|  
-|MultiPoint マネージャーのステーション周辺機器の状態、自動ログオンの構成、ワークステーションの名前を変更します。|はい|[はい]|いいえ|  
+|分割画面|はい|はい|いいえ|  
+|MultiPoint マネージャーのステーション周辺機器の状態、自動ログオンの構成、ワークステーションの名前を変更します。|はい|はい|いいえ|  
 |サーバーのスタートアップ メニューへのアクセス|はい|いいえ|いいえ|  
   
 > [!NOTE]  

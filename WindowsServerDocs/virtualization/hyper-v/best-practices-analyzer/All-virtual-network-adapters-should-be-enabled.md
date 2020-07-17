@@ -2,24 +2,23 @@
 title: すべての仮想ネットワークアダプターを有効にする必要があります
 description: このベストプラクティスアナライザールールのテキストのオンラインバージョン。
 ms.prod: windows-server
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: b17d647d-a34a-44de-ada6-01a2bf5eeb48
-author: KBDAzure
+author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: fce564fdb47d0677b36078f3d8446579bc06816c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 450a3b42529be9a85991fcaf5263bae7b7827b1a
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366594"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857835"
 ---
 # <a name="all-virtual-network-adapters-should-be-enabled"></a>すべての仮想ネットワークアダプターを有効にする必要があります
 
->適用先:Windows Server 2016
+>適用対象: Windows Server 2016
 
 
   
@@ -27,7 +26,7 @@ ms.locfileid: "71366594"
 |-|-|  
 |**オペレーティング システム**|Windows Server 2016|  
 |**製品/機能**|Hyper-V|  
-|**順**|警告|  
+|**順**|［警告］|  
 |**カテゴリ**|構成|  
   
 次のセクションでは、斜体は、この問題のためのベスト プラクティス アナライザー ツールで表示される UI テキストを示します。  
@@ -44,7 +43,7 @@ ms.locfileid: "71366594"
   
 ## <a name="resolution"></a>解決方法  
   
-*Use & のインターネット設定を使用して、仮想ネットワークアダプターを有効にします。または、仮想スイッチマネージャーを使用して外部仮想スイッチを再構成し、管理オペレーティングシステムと共有しないようにしてください。*  
+*ネットワーク & のインターネット設定を使用して、仮想ネットワークアダプターを有効にします。または、仮想スイッチマネージャーを使用して、外部仮想スイッチが管理オペレーティングシステムと共有されないように再構成します。*  
   
 
 

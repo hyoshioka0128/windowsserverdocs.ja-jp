@@ -1,38 +1,34 @@
 ---
 title: qappsrv
-description: 'Windows コマンドに関するトピック * * * *- '
-ms.custom: na
+description: Qappsrv コマンドのリファレンス記事。ネットワーク上のすべてのリモートデスクトップセッションホストサーバーの一覧を表示します。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7df68283-2484-418c-a8f0-d273884919ad
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6968b7a456ceee409993e22a7a101ed2d76a3d6a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 43f72aa6bcc92cdb613cd75c368766e1d62b04e2
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71371938"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85935470"
 ---
 # <a name="qappsrv"></a>qappsrv
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-ネットワーク上のすべてのリモート デスクトップ セッション ホスト (RD セッション ホスト) サーバーの一覧を表示します。
+ネットワーク上のすべてのリモートデスクトップセッションホストサーバーの一覧を表示します。 最新バージョンの新機能については、「 [Windows Server でのリモートデスクトップサービスの新](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn283323(v=ws.11))機能」を参照してください。
 
 > [!NOTE]
-> Windows Server 2008 R2 で、「ターミナル サービス」は「リモート デスクトップ サービス」に名前変更されました。 最新バージョンの新機能については、Windows Server TechNet ライブラリの[Windows Server 2012 のリモートデスクトップサービスの新機能](https://technet.microsoft.com/library/hh831527) を参照してください。
+> このコマンドは、 [query termserver コマンド](query-termserver.md)と同じです。
 
-## <a name="remarks"></a>コメント
-このコマンドは、 **query termserver**コマンドと同じです。
+## <a name="additional-references"></a>その他の参照情報
 
-#### <a name="additional-references"></a>その他の参照情報
-[query termserver](query-termserver.md)
-[コマンドライン構文のキー](command-line-syntax-key.md)
-[リモートデスクトップサービス&#40;ターミナルサービス&#41;のコマンドリファレンス](remote-desktop-services-terminal-services-command-reference.md)
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
+
+- [query termserver コマンド](query-termserver.md)
+
+- [リモート デスクトップ サービス (ターミナル サービス) のコマンド リファレンス](remote-desktop-services-terminal-services-command-reference.md)

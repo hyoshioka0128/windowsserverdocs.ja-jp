@@ -1,24 +1,20 @@
 ---
 title: MultiPoint サービスに直接ビデオ接続ステーションを設定します。
 description: MultiPoint Services で直接ビデオ接続ステーションを作成する方法について説明します。
-ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 82ba3517-9743-4cde-8eea-63a17edb016f
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.openlocfilehash: ab57f3d996cfe9196fd256a76516a44dc146043b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4bab07a21c6e2de529797e240325b3ff27446fe0
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71389362"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859355"
 ---
 # <a name="set-up-a-direct-video-connected-station-in-multipoint-services"></a>MultiPoint サービスに直接ビデオ接続ステーションを設定します。
 直接ビデオ接続ステーション、モニターが MultiPoint Server コンピューターのビデオ ポートに直接接続されています。 キーボードとマウス USB ハブにし、接続されているし、モニターに関連付けられました。  
@@ -68,4 +64,4 @@ MultiPoint サービス環境内に 2 つ以上の直接のビデオ接続ステ
 2.  開始 (または再開) MultiPoint サービス コンピューターおよびモニターの起動画面に表示を参照してください。 そのステーションとは、プライマリ ステーションです。  
   
     > [!NOTE]  
-    > 場合によっては、BIOS のスタートアップの情報は複数のモニターに同時に表示されます。 その場合は、モニタの見なすことができます、「プライマリ ステーション」BIOS にアクセスするためにします。
+    > 場合によっては、BIOS のスタートアップの情報は複数のモニターに同時に表示されます。 この場合、BIOS にアクセスするために、すべてのモニターを "プライマリステーション" と見なすことができます。

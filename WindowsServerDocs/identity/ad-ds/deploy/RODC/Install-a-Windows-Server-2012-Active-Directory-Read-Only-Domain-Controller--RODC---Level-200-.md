@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 82b0035075c981d123ab3b90d56768940f65558e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: dd3cc1c112560e77d0ab166ffb10a677b62f32e8
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391112"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80825485"
 ---
 # <a name="install-a-windows-server-2012-active-directory-read-only-domain-controller-rodc-level-200"></a>Windows Server 2012 の Active Directory 読み取り専用ドメイン コントローラー (RODC) をインストールする (レベル 200)
 
@@ -33,12 +33,12 @@ ms.locfileid: "71391112"
   
 ![RODC のインストール](media/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-/adds_stagedcreation.png)  
   
-## <a name="BKMK_StagePS"></a>ステージ RODC Windows PowerShell  
+## <a name="stage-rodc-windows-powershell"></a><a name=BKMK_StagePS></a>ステージ RODC Windows PowerShell  
   
 |||  
 |-|-|  
 |**ADDSDeployment コマンドレット**|引数 (**太字** の引数は必須です。 *斜体*の引数は、Windows PowerShell または AD DS 構成ウィザードを使用して指定できます。)|  
-|Add-addsreadonlydomaincontrolleraccount|-SkipPreChecks<br /><br />***-Domainコントローラー Accountname***<br /><br />***-DomainName***<br /><br />***-SiteName***<br /><br />*-AllowPasswordReplicationAccountName*<br /><br />***-Credential***<br /><br />*-DelegatedAdministratorAccountName*<br /><br />*-デ Ypasswordreplicationaccountname*<br /><br />*-NoGlobalCatalog*<br /><br />*-InstallDNS*<br /><br />-ReplicationSourceDC|  
+|Add-addsreadonlydomaincontrolleraccount|-SkipPreChecks<p>***-Domainコントローラー Accountname***<p>***-DomainName***<p>***-SiteName***<p>*-AllowPasswordReplicationAccountName*<p>***-Credential***<p>*-DelegatedAdministratorAccountName*<p>*-デ Ypasswordreplicationaccountname*<p>*-NoGlobalCatalog*<p>*-InstallDNS*<p>-ReplicationSourceDC|  
   
 > [!NOTE]  
 > **-credential** 引数は、Domain Admins グループのメンバーとしてログオンしていない場合にのみ必須です。  
@@ -48,12 +48,12 @@ ms.locfileid: "71391112"
   
 ![RODC のインストール](media/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-/adds_stageddeploy_beta1.png)  
   
-## <a name="BKMK_AttachPS"></a>RODC の接続 Windows PowerShell  
+## <a name="attach-rodc-windows-powershell"></a><a name=BKMK_AttachPS></a>RODC の接続 Windows PowerShell  
   
 |||  
 |-|-|  
 |**ADDSDeployment コマンドレット**|引数 (**太字** の引数は必須です。 *斜体*の引数は、Windows PowerShell または AD DS 構成ウィザードを使用して指定できます。)|  
-|Install-AddsDomaincontroller|-SkipPreChecks<br /><br />***-DomainName***<br /><br />*-SafeModeAdministratorPassword*<br /><br />*-ApplicationPartitionsToReplicate*<br /><br />*-CreateDNSDelegation*<br /><br />***-Credential***<br /><br />-CriticalReplicationOnly<br /><br />*-DatabasePath*<br /><br />*-DNSDelegationCredential*<br /><br />*-InstallationMediaPath*<br /><br />*-LogPath*<br /><br />-Norebootoncompletion<br /><br />*-ReplicationSourceDC*<br /><br />*-SystemKey*<br /><br />*-SYSVOLPath*<br /><br />***-UseExistingAccount***|  
+|Install-AddsDomaincontroller|-SkipPreChecks<p>***-DomainName***<p>*-SafeModeAdministratorPassword*<p>*-ApplicationPartitionsToReplicate*<p>*-CreateDNSDelegation*<p>***-Credential***<p>-CriticalReplicationOnly<p>*-DatabasePath*<p>*-DNSDelegationCredential*<p>*-InstallationMediaPath*<p>*-LogPath*<p>-Norebootoncompletion<p>*-ReplicationSourceDC*<p>*-SystemKey*<p>*-SYSVOLPath*<p>***-UseExistingAccount***|  
   
 > [!NOTE]  
 > **-credential** 引数は、Domain Admins グループのメンバーとしてログオンしていない場合にのみ必須です。  
@@ -94,7 +94,7 @@ ADDSDeployment Windows PowerShell で同じことを実行する引数は以下�
   
 ステージング システムは Windows Server 2008 R2 からの直接ポートであり、新しい Adprep 機能はありません。 段階的 RODC アカウントを展開する予定の場合は、自動 rodcprep 操作が実行されるよう、まずそのドメイン内で非段階的 RODC を展開するか、またはまず手動で adprep.exe /rodcprep を実行します。  
   
-そうしないと、"You will not be able to install a read-only domain controller in this domain because "adprep /rodcprep" was not yet run" というエラーが表示されます。  
+そうしないと、adprep/rodcprep がまだ実行されていないため、このドメインに読み取り専用ドメインコントローラーをインストールできないというエラーが表示されます。  
   
 ![RODC のインストール](media/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-/ADDS_SMI_TR_RODCPrepNotRunError.png)  
   
@@ -120,7 +120,7 @@ ADDSDeployment Windows PowerShell で同じことを実行する引数は以下�
 -sitename <string>  
 ```  
   
-### <a name="additional-domain-controller-options"></a>追加ドメイン コント ローラーのオプション  
+### <a name="additional-domain-controller-options"></a>追加のドメイン コントローラー オプション  
 ![RODC のインストール](media/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-/ADDS_SMI_TR_Stage1DCOptions.png)  
   
 **[追加のドメイン コントローラー オプション]** ダイアログでは、ドメイン コントローラーが、 **[DNS サーバー]** および **[グローバル カタログ]** としても実行されることを指定できます。 Microsoft では、読み取り専用ドメイン コントローラーが DNS と GC サービスを提供することを推奨しているため、どちらも既定でインストールされます。RODC 役割の目的の 1 つは支社のシナリオであり、広域ネットワークが利用できず、これらの DNS およびグローバル カタログサービスなしには支社のコンピューターが AD DS リソースと機能を使用できないような場合を想定しています。  
@@ -173,7 +173,7 @@ ADDSDeployment Windows PowerShell で同じことを実行する引数は以下�
 -delegatedadministratoraccountname <string>  
 ```  
   
-### <a name="summary"></a>概要  
+### <a name="summary"></a>要約  
 ![RODC のインストール](media/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-/ADDS_SMI_TR_Stage1Summary.png)  
   
 **[要約]** ダイアログでは、設定を確認することができます。 これは、ウィザードが段階的アカウントを作成する前にインストールを停止する最後の機会です。 段階的 RODC コンピューター アカウントを作成する準備ができたら **[次へ]** をクリックします。  応答ファイルを非推奨の dcpromo 無人セットアップファイル形式で保存するには、 **[設定のエクスポート]** をクリックします。  
@@ -192,7 +192,7 @@ Add-addsreadonlydomaincontrolleraccount
   
 ```  
   
-必須およびオプションの引数の詳細については、「 [Stage RODC Windows PowerShell](../../../ad-ds/deploy/RODC/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-.md#BKMK_StagePS) 」を参照してください。  
+必須およびオプションの引数について詳しくは、[RODC ステージングの Windows PowerShell に関する説明](../../../ad-ds/deploy/RODC/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-.md#BKMK_StagePS)をご覧ください。  
   
 **Add-addsreadonlydomaincontrolleraccount** が実行するアクションは 1 つでそのフェーズは 2 つだけ (前提条件のチェックとインストール) ですので、以下のスクリーン ショットに、最低限の必須引数を使用したインストール フェーズを示します。  
   
@@ -229,7 +229,7 @@ Install-AddsDomainController
 ### <a name="domain-controller-options"></a>ドメイン コントローラー オプション  
 ![RODC のインストール](media/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-/ADDS_SMI_TR_Stage2DCOptions.png)  
   
-**[ドメイン コントローラー オプション]** ページに、新しいドメイン コントローラーのドメイン コントローラー オプションが表示されます。 このページが表示される際、Active Directory Domain Services 構成ウィザードが既存のドメイン コントローラーに LDAP クエリを送信し、使用されていないアカウントがないかどうか調べます。 クエリによって、現在のコンピューターと同じ名前を共有している非アクティブなドメインコントローラーのコンピューターアカウントが検出されると、ページの上部に、"**ターゲットサーバーの名前と一致する事前に作成された RODC アカウントがディレクトリに存在します" という情報メッセージが表示されます。この既存の RODC アカウントを使用するか、このドメインコントローラーを再インストールするかを選択**してください。 " ウィザードは **[既存の RODC アカウントを使用する]** を既定の構成として使用します。  
+**[ドメイン コントローラー オプション]** ページに、新しいドメイン コントローラーのドメイン コントローラー オプションが表示されます。 このページが表示される際、Active Directory Domain Services 構成ウィザードが既存のドメイン コントローラーに LDAP クエリを送信し、使用されていないアカウントがないかどうか調べます。 現在のコンピューターと同じ名前を共有している非アクティブなドメインコントローラーコンピューターアカウントが検出された場合、ウィザードでは、**ディレクトリ内に存在する対象サーバーの名前と一致する事前に作成された RODC アカウントを読み取る情報メッセージがページの上部に表示されます。この既存の RODC アカウントを使用するか、このドメインコントローラーを再インストールするかを選択し**ます。 ウィザードは **[既存の RODC アカウントを使用する]** を既定の構成として使用します。  
   
 > [!IMPORTANT]  
 > ドメイン コントローラーに物理的な問題があって機能が回復できない場合は **[このドメイン コントローラーを再インストール]** を使用することができます。 これにより、Active Directory のドメイン コントローラー コンピューター アカウントとオブジェクト メタデータを残すことができるため、代わりのドメイン コントローラーの構成時間が節約できます。 新しいコンピューターを*同じ名前で*インストールし、ドメイン内のドメイン コントローラーとして昇格します。 ドメインコントローラーオブジェクトのメタデータを Active Directory から削除した場合 (メタデータのクリーンアップ)、[**このドメインコントローラーを再インストール**する] オプションは使用できません。  
@@ -238,7 +238,7 @@ Install-AddsDomainController
   
 **[ディレクトリ サービスの復元モード パスワード]** には、サーバーに適用されるパスワード ポリシーに従ったパスワードを指定する必要があります。 常に強力で複雑なパスワードを、または可能であればパスフレーズを選択します。  
   
-**ドメイン コントローラー オプション** の ADDSDeployment Windows PowerShell 引数は以下のとおりです。  
+**ドメイン コントローラー オプション**の ADDSDeployment Windows PowerShell 引数は以下のとおりです。  
   
 ```  
 -UseExistingAccount <{$true | $false}>  
@@ -265,7 +265,7 @@ Install-AddsDomainController
 たとえば、**Read-Host** コマンドレットを使用してユーザーにセキュリティで保護された文字列の入力を求めることにより、手動でパスワードの入力を求めることができます。  
   
 ```  
--safemodeadministratorpassword (read-host -prompt "Password:" -assecurestring)  
+-safemodeadministratorpassword (read-host -prompt Password: -assecurestring)  
   
 ```  
   
@@ -275,14 +275,14 @@ Install-AddsDomainController
 セキュリティで保護された文字列は、変換されるクリア テキストの変数として指定することもできますが、これはお勧めしません。  
   
 ```  
--safemodeadministratorpassword (convertto-securestring "Password1" -asplaintext -force)  
+-safemodeadministratorpassword (convertto-securestring Password1 -asplaintext -force)  
 ```  
   
-最後に、暗号化したパスワードをファイルに保存して後で使用することができます。こうするとクリア テキストのパスワードを表示せずに済みます。 次に、例を示します。  
+最後に、暗号化したパスワードをファイルに保存して後で使用することができます。こうするとクリア テキストのパスワードを表示せずに済みます。 例 :  
   
 ```  
-$file = "c:\pw.txt"  
-$pw = read-host -prompt "Password:" -assecurestring  
+$file = c:\pw.txt  
+$pw = read-host -prompt Password: -assecurestring  
 $pw | ConvertFrom-SecureString | Set-Content $file  
   
 -safemodeadministratorpassword (Get-Content $File | ConvertTo-SecureString)  
@@ -299,8 +299,9 @@ $pw | ConvertFrom-SecureString | Set-Content $file
   
 また、メディアからのインストール (IFM) オプションを使用して、バックアップされているメディアからドメイン コントローラーをインストールすることもできます。 **[メディアからのインストール]** チェック ボックスをオンにすると参照オプションが表示されます。指定したパスが有効なメディアであることを示すため **[検証]** をクリックする必要があります。
 
-IFM ソースのガイドライン: • IFM オプションによって使用されるメディアは、Windows Server バックアップまたは Ntdsutil.exe と同じオペレーティングシステムのバージョンを持つ別の既存の Windows Server ドメインコントローラーから作成されます。 たとえば、windows server 2008 R2 以前のオペレーティングシステムを使用して、Windows Server 2012 ドメインコントローラー用のメディアを作成することはできません。
-• IFM ソースデータは書き込み可能なドメインコントローラーからのものである必要があります。 RODC からのソースは、技術的に新しい RODC の作成に使用されますが、IFM ソース RODC がレプリケートされていないことを示す偽陽性のレプリケーション警告があります。
+IFM ソースのガイドライン:
+*    IFM オプションによって使用されるメディアは、Windows Server バックアップまたは Ntdsutil.exe と同じオペレーティングシステムのバージョンを持つ別の既存の Windows Server ドメインコントローラーから作成されます。 たとえば、windows server 2008 R2 以前のオペレーティングシステムを使用して、Windows Server 2012 ドメインコントローラー用のメディアを作成することはできません。
+*    IFM ソースデータは、書き込み可能なドメインコントローラーからのものである必要があります。 RODC からのソースは、技術的に新しい RODC の作成に使用されますが、IFM ソース RODC がレプリケートされていないことを示す偽陽性のレプリケーション警告があります。
 
 IFM の変更内容について詳しくは、[Ntdsutil.exe メディアからのインストールの変更に関する説明](../../../ad-ds/deploy/Simplified-Administration-Appendix.md#BKMK_IFM)をご覧ください。 SYSKEY で保護されているメディアを使用する場合、サーバー マネージャーは確認の間にイメージのパスワードの入力を求めます。 
   
@@ -328,7 +329,7 @@ IFM の変更内容について詳しくは、[Ntdsutil.exe メディアから�
 ### <a name="review-options-and-view-script"></a>オプションの確認とスクリプトの表示  
 ![RODC のインストール](media/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-/ADDS_SMI_TR_Stage2ReviewOptions.png)  
   
-**[オプションの確認]** ページでは、インストールを開始する前に、設定を検証し、設定が要件を満たしていることを確認できます。 これがサーバー マネージャーを使用するインストールを停止する最後の機会ではありません。 このページでは、構成を続行する前に設定を検討して確認することだけができます。 サーバー マネージャーの **[オプションの確認]** ページにあるオプションの **[スクリプトの表示]** ボタンを使用すると、現在の ADDSDeployment モジュール構成を単一の Windows PowerShell スクリプトとして含む Unicode テキスト ファイルを作成することもできます。 これにより、サーバー マネージャーのグラフィカル インターフェイスを Windows PowerShell 展開スタジオとして使用できます。 Active Directory ドメイン サービス構成ウィザードを使用してオプションを構成し、構成をエクスポートした後、ウィザードをキャンセルします。 これによって有効で正しい構文のサンプルが作成されるので、それをさらに変更したり、直接使用したりできます。 次に、例を示します。  
+**[オプションの確認]** ページでは、インストールを開始する前に、設定を検証し、設定が要件を満たしていることを確認できます。 これがサーバー マネージャーを使用するインストールを停止する最後の機会ではありません。 このページでは、構成を続行する前に設定を検討して確認することだけができます。 サーバー マネージャーの **[オプションの確認]** ページにあるオプションの **[スクリプトの表示]** ボタンを使用すると、現在の ADDSDeployment モジュール構成を単一の Windows PowerShell スクリプトとして含む Unicode テキスト ファイルを作成することもできます。 これにより、サーバー マネージャーのグラフィカル インターフェイスを Windows PowerShell 展開スタジオとして使用できます。 Active Directory ドメイン サービス構成ウィザードを使用してオプションを構成し、構成をエクスポートした後、ウィザードをキャンセルします。 これによって有効で正しい構文のサンプルが作成されるので、それをさらに変更したり、直接使用したりできます。 例 :  
   
 ```  
 #  
@@ -339,10 +340,10 @@ Import-Module ADDSDeployment
 Install-ADDSDomainController `  
 -Credential (Get-Credential) `  
 -CriticalReplicationOnly:$false `  
--DatabasePath "C:\Windows\NTDS" `  
--DomainName "corp.contoso.com" `  
--LogPath "C:\Windows\NTDS" `  
--SYSVOLPath "C:\Windows\SYSVOL" `  
+-DatabasePath C:\Windows\NTDS `  
+-DomainName corp.contoso.com `  
+-LogPath C:\Windows\NTDS `  
+-SYSVOLPath C:\Windows\SYSVOL `  
 -UseExistingAccount:$true `  
 -Norebootoncompletion:$false  
 -Force:$true  
@@ -363,7 +364,7 @@ Install-ADDSDomainController `
   
 新しいフォレスト ルート ドメインをインストールするときに、サーバー マネージャー Active Directory ドメイン サービス構成ウィザードが、シリアル化された一連のモジュラー テストを呼び出します。 これらのテストでは、警告と共に、候補となる修正オプションが提示されます。 テストは必要なだけ何度でも実行できます。 ドメイン コントローラーのインストール プロセスは、すべての前提条件テストに合格するまで続行できません。  
   
-**[前提条件のチェック]** では、以前のオペレーティング システムに影響を与えるセキュリティの変更といった関連情報も明らかになります。 前提条件の詳細については、「 [Prerequisite Checking](../../../ad-ds/manage/AD-DS-Simplified-Administration.md#BKMK_PrereuisiteChecking)」を参照してください。  
+**[前提条件のチェック]** では、以前のオペレーティング システムに影響を与えるセキュリティの変更といった関連情報も明らかになります。 前提条件チェックについて詳しくは、[前提条件のチェックに関する説明](../../../ad-ds/manage/AD-DS-Simplified-Administration.md#BKMK_PrereuisiteChecking)をご覧ください。  
   
 サーバー マネージャーを使用する場合は **[前提条件のチェック]** を省略することはできませんが、AD DS 展開コマンドレットと以下の引数を使用すると省略できます。  
   
@@ -421,7 +422,7 @@ Install-addsdomaincontroller
 |||  
 |-|-|  
 |**ADDSDeployment コマンドレット**|引数 (**太字** の引数は必須です。 *斜体*の引数は、Windows PowerShell または AD DS 構成ウィザードを使用して指定できます。)|  
-|Install-AddsDomainController|-SkipPreChecks<br /><br />***-DomainName***<br /><br />*-SafeModeAdministratorPassword*<br /><br />***-SiteName***<br /><br />*-ApplicationPartitionsToReplicate*<br /><br />*-CreateDNSDelegation*<br /><br />***-Credential***<br /><br />*-CriticalReplicationOnly*<br /><br />*-DatabasePath*<br /><br />*-DNSDelegationCredential*<br /><br />-DNSOnNetwork<br /><br />*-InstallationMediaPath*<br /><br />*-InstallDNS*<br /><br />*-LogPath*<br /><br />-MoveInfrastructureOperationMasterRoleIfNecessary<br /><br />*-NoGlobalCatalog*<br /><br />-Norebootoncompletion<br /><br />*-ReplicationSourceDC*<br /><br />-SkipAutoConfigureDNS<br /><br />*-SystemKey*<br /><br />*-SYSVOLPath*<br /><br />*-AllowPasswordReplicationAccountName*<br /><br />*-DelegatedAdministratorAccountName*<br /><br />*-デ Ypasswordreplicationaccountname*<br /><br />***-ReadOnlyReplica***|  
+|Install-AddsDomainController|-SkipPreChecks<p>***-DomainName***<p>*-SafeModeAdministratorPassword*<p>***-SiteName***<p>*-ApplicationPartitionsToReplicate*<p>*-CreateDNSDelegation*<p>***-Credential***<p>*-CriticalReplicationOnly*<p>*-DatabasePath*<p>*-DNSDelegationCredential*<p>-DNSOnNetwork<p>*-InstallationMediaPath*<p>*-InstallDNS*<p>*-LogPath*<p>-MoveInfrastructureOperationMasterRoleIfNecessary<p>*-NoGlobalCatalog*<p>-Norebootoncompletion<p>*-ReplicationSourceDC*<p>-SkipAutoConfigureDNS<p>*-SystemKey*<p>*-SYSVOLPath*<p>*-AllowPasswordReplicationAccountName*<p>*-DelegatedAdministratorAccountName*<p>*-デ Ypasswordreplicationaccountname*<p>***-ReadOnlyReplica***|  
   
 > [!NOTE]  
 > **-credential** 引数は、Domain Admins グループのメンバーとしてログオンしていない場合にのみ必須です。  
@@ -455,7 +456,7 @@ Install-AddsDomainController
 > [!IMPORTANT]  
 > サーバーが Active Directory サブネットに属せず、複数の Active Directory サイトが存在する場合は、何も選択されず、リストからサイトを選択するまでは **[次へ]** ボタンが使用できません。  
   
-**[ディレクトリ サービスの復元モード パスワード]** には、サーバーに適用されるパスワード ポリシーに従ったパスワードを指定する必要があります。 常に強力で複雑なパスワードを、または可能であればパスフレーズを選択します。 **ドメイン コントローラー オプション** の ADDSDeployment Windows PowerShell 引数は以下のとおりです  
+**[ディレクトリ サービスの復元モード パスワード]** には、サーバーに適用されるパスワード ポリシーに従ったパスワードを指定する必要があります。 常に強力で複雑なパスワードを、または可能であればパスフレーズを選択します。**ドメイン コントローラー オプション**の ADDSDeployment Windows PowerShell 引数は以下のとおりです  
   
 ```  
 -UseExistingAccount <{$true | $false}>  
@@ -482,7 +483,7 @@ Install-AddsDomainController
 たとえば、**Read-Host** コマンドレットを使用してユーザーにセキュリティで保護された文字列の入力を求めることにより、手動でパスワードの入力を求めることができます。  
   
 ```  
--safemodeadministratorpassword (read-host -prompt "Password:" -assecurestring)  
+-safemodeadministratorpassword (read-host -prompt Password: -assecurestring)  
   
 ```  
   
@@ -492,14 +493,14 @@ Install-AddsDomainController
 セキュリティで保護された文字列は、変換されるクリア テキストの変数として指定することもできますが、これはお勧めしません。  
   
 ```  
--safemodeadministratorpassword (convertto-securestring "Password1" -asplaintext -force)  
+-safemodeadministratorpassword (convertto-securestring Password1 -asplaintext -force)  
 ```  
   
-最後に、暗号化したパスワードをファイルに保存して後で使用することができます。こうするとクリア テキストのパスワードを表示せずに済みます。 次に、例を示します。  
+最後に、暗号化したパスワードをファイルに保存して後で使用することができます。こうするとクリア テキストのパスワードを表示せずに済みます。 例 :  
   
 ```  
-$file = "c:\pw.txt"  
-$pw = read-host -prompt "Password:" -assecurestring  
+$file = c:\pw.txt  
+$pw = read-host -prompt Password: -assecurestring  
 $pw | ConvertFrom-SecureString | Set-Content $file  
   
 -safemodeadministratorpassword (Get-Content $File | ConvertTo-SecureString)  
@@ -556,8 +557,9 @@ ADDSDeployment Windows PowerShell で同じことを実行する引数は以下�
   
 また、メディアからのインストール (IFM) オプションを使用して、バックアップされているメディアからドメイン コントローラーをインストールすることもできます。 **[メディアからのインストール]** チェック ボックスをオンにすると参照オプションが表示されます。指定したパスが有効なメディアであることを示すため **[検証]** をクリックする必要があります。
 
-IFM ソースのガイドライン: • IFM オプションによって使用されるメディアは、Windows Server バックアップまたは Ntdsutil.exe と同じオペレーティングシステムのバージョンを持つ別の既存の Windows Server ドメインコントローラーから作成されます。 たとえば、windows server 2008 R2 以前のオペレーティングシステムを使用して、Windows Server 2012 ドメインコントローラー用のメディアを作成することはできません。
-• IFM ソースデータは書き込み可能なドメインコントローラーからのものである必要があります。 RODC からのソースは、技術的に新しい RODC の作成に使用されますが、IFM ソース RODC がレプリケートされていないことを示す偽陽性のレプリケーション警告があります。
+IFM ソースのガイドライン:
+*    IFM オプションによって使用されるメディアは、Windows Server バックアップまたは Ntdsutil.exe と同じオペレーティングシステムのバージョンを持つ別の既存の Windows Server ドメインコントローラーから作成されます。 たとえば、windows server 2008 R2 以前のオペレーティングシステムを使用して、Windows Server 2012 ドメインコントローラー用のメディアを作成することはできません。
+*    IFM ソースデータは、書き込み可能なドメインコントローラーからのものである必要があります。 RODC からのソースは、技術的に新しい RODC の作成に使用されますが、IFM ソース RODC がレプリケートされていないことを示す偽陽性のレプリケーション警告があります。
 
 IFM の変更内容について詳しくは、[Ntdsutil.exe メディアからのインストールの変更に関する説明](../../../ad-ds/deploy/Simplified-Administration-Appendix.md#BKMK_IFM)をご覧ください。 SYSKEY で保護されているメディアを使用する場合、サーバー マネージャーは確認の間にイメージのパスワードの入力を求めます。
   
@@ -607,7 +609,7 @@ IFM の変更内容について詳しくは、[Ntdsutil.exe メディアから�
   
 **[オプションの確認]** ページでは、インストールを開始する前に、設定を検証し、設定が要件を満たしていることを確認できます。 これがサーバー マネージャーを使用するインストールを停止する最後の機会ではありません。 このページでは、構成を続行する前に設定を検討して確認することだけができます。  
   
-サーバー マネージャーの **[オプションの確認]** ページにあるオプションの **[スクリプトの表示]** ボタンを使用すると、現在の ADDSDeployment モジュール構成を単一の Windows PowerShell スクリプトとして含む Unicode テキスト ファイルを作成することもできます。 これにより、サーバー マネージャーのグラフィカル インターフェイスを Windows PowerShell 展開スタジオとして使用できます。 Active Directory ドメイン サービス構成ウィザードを使用してオプションを構成し、構成をエクスポートした後、ウィザードをキャンセルします。 これによって有効で正しい構文のサンプルが作成されるので、それをさらに変更したり、直接使用したりできます。 次に、例を示します。  
+サーバー マネージャーの **[オプションの確認]** ページにあるオプションの **[スクリプトの表示]** ボタンを使用すると、現在の ADDSDeployment モジュール構成を単一の Windows PowerShell スクリプトとして含む Unicode テキスト ファイルを作成することもできます。 これにより、サーバー マネージャーのグラフィカル インターフェイスを Windows PowerShell 展開スタジオとして使用できます。 Active Directory ドメイン サービス構成ウィザードを使用してオプションを構成し、構成をエクスポートした後、ウィザードをキャンセルします。 これによって有効で正しい構文のサンプルが作成されるので、それをさらに変更したり、直接使用したりできます。 例 :  
   
 ```  
 #  
@@ -616,18 +618,18 @@ IFM の変更内容について詳しくは、[Ntdsutil.exe メディアから�
   
 Import-Module ADDSDeployment  
 Install-ADDSDomainController `  
--AllowPasswordReplicationAccountName @("CORP\Allowed RODC Password Replication Group", "CORP\Chicago RODC Admins", "CORP\Chicago RODC Users and Computers") `  
+-AllowPasswordReplicationAccountName @(CORP\Allowed RODC Password Replication Group, CORP\Chicago RODC Admins, CORP\Chicago RODC Users and Computers) `  
 -Credential (Get-Credential) `  
 -CriticalReplicationOnly:$false `  
--DatabasePath "C:\Windows\NTDS" `  
--DelegatedAdministratorAccountName "CORP\Chicago RODC Admins" `  
--DenyPasswordReplicationAccountName @("BUILTIN\Administrators", "BUILTIN\Server Operators", "BUILTIN\Backup Operators", "BUILTIN\Account Operators", "CORP\Denied RODC Password Replication Group") `  
--DomainName "corp.contoso.com" `  
+-DatabasePath C:\Windows\NTDS `  
+-DelegatedAdministratorAccountName CORP\Chicago RODC Admins `  
+-DenyPasswordReplicationAccountName @(BUILTIN\Administrators, BUILTIN\Server Operators, BUILTIN\Backup Operators, BUILTIN\Account Operators, CORP\Denied RODC Password Replication Group) `  
+-DomainName corp.contoso.com `  
 -InstallDNS:$true `  
--LogPath "C:\Windows\NTDS" `  
+-LogPath C:\Windows\NTDS `  
 -ReadOnlyReplica:$true `  
--SiteName "Default-First-Site-Name" `  
--SYSVOLPath "C:\Windows\SYSVOL"  
+-SiteName Default-First-Site-Name `  
+-SYSVOLPath C:\Windows\SYSVOL  
 -Force:$true  
   
 ```  
@@ -673,7 +675,7 @@ Install-addsdomaincontroller
   
 ```  
   
-必須およびオプションの引数については、このセクションの最初にある **ADDSDeployment コマンドレット** の表をご覧ください。  
+必須およびオプションの引数については、このセクションの最初にある **ADDSDeployment コマンドレット**の表をご覧ください。  
   
 **Install-addsdomaincontroller** コマンドレットのフェーズは 2 つだけです (前提条件のチェックとインストール)。 以下の 2 つの図は、 **-domainname**、 **-readonlyreplica**、 **-sitename**、および **-credential** の最低限の必須引数を使用したインストール フェーズを示しています。 **Install-ADDSDomainController** は、サーバー マネージャーと同様、昇格プロセスによって自動的にサーバーが再起動されることを知らせます。  
   

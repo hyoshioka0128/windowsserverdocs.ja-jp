@@ -8,16 +8,16 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: f87614d5884d25c4e462cdccd8de72a7980368ec
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e742b5f9f94da06d43127c437f6ce693d4bcfc16
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402006"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85472888"
 ---
 # <a name="classification-management"></a>分類の管理
 
-> 適用対象:Windows Server 2019、Windows Server 2016、Windows Server (半期チャネル)、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
+> 適用対象: Windows Server 2019、Windows Server 2016、Windows Server (半期チャネル)、windows server 2012 R2、windows Server 2012、Windows Server 2008 R2
 
 分類プロパティはファイルを分類するために使用され、スケジュールされたファイル管理タスク用のファイルを選択するために使用できます。
 
@@ -33,6 +33,6 @@ ms.locfileid: "71402006"
 > 電子メール通知や特定のレポート機能を設定するには、まずファイル サーバー リソース マネージャーの全般的なオプションを設定する必要があります。
 
 
-## <a name="see-also"></a>関連項目
+## <a name="additional-references"></a>その他のリファレンス
 
 [ファイル サーバー リソース マネージャーのオプションを設定する](setting-file-server-resource-manager-options.md)

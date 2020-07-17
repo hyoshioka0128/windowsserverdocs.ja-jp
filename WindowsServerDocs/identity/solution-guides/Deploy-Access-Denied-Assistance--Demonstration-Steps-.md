@@ -1,7 +1,6 @@
 ---
 ms.assetid: b035e9f8-517f-432a-8dfb-40bfc215bee5
 title: Deploy Access-Denied Assistance (Demonstration Steps)
-description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: afc05f395753e5c5614e92d109d71e05980d5d92
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: fc23e9d9dae9118bf6d489ed8697ce5bac44e7ba
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407176"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80861265"
 ---
 # <a name="deploy-access-denied-assistance-demonstration-steps"></a>Deploy Access-Denied Assistance (Demonstration Steps)
 
@@ -31,9 +30,9 @@ ms.locfileid: "71407176"
 -   [手順 3: アクセス拒否アシスタンスが正しく構成されていることを確認する](Deploy-Access-Denied-Assistance--Demonstration-Steps-.md#BKMK_3)  
   
 > [!NOTE]  
-> このトピックでは、サンプル Windows PowerShell コマンドレットを紹介します。ここで説明する手順の一部はこのコマンドレットで自動化できます。 詳しくは、 [コマンドレットの使用に関するページ](https://go.microsoft.com/fwlink/p/?linkid=230693)をご覧ください。  
+> このトピックには、説明する手順の一部を自動化するために使用できるサンプルの Windows PowerShell コマンドレットが含まれます。 詳しくは、 [コマンドレットの使用に関するページ](https://go.microsoft.com/fwlink/p/?linkid=230693)をご覧ください。  
   
-## <a name="BKMK_1"></a>手順 1: アクセス拒否アシスタンスを構成する  
+## <a name="step-1-configure-access-denied-assistance"></a><a name="BKMK_1"></a>手順 1: アクセス拒否アシスタンスを構成する  
 グループ ポリシーを使用して、ドメイン内でアクセス拒否アシスタンスを構成できます。あるいは、ファイル サーバー リソース マネージャーのコンソールを使用して、ファイル サーバーごとに個別にアシスタンスを構成できます。 ファイル サーバー上の特定の共有フォルダーのアクセス拒否メッセージを変更することもできます。  
   
 次のようにグループ ポリシーを使用して、ドメインのアクセス拒否アシスタンスを構成できます。  
@@ -72,7 +71,7 @@ ms.locfileid: "71407176"
   
 ![ソリューションガイド](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>***  
   
-以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
+次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 書式上の制約のため、複数行にわたって折り返される場合でも、各コマンドレットは 1 行に入力してください。  
   
 ```  
 Set-GPRegistryValue -Name "Name of GPO" -key "HKLM\Software\Policies\Microsoft\Windows\ADR\AccessDenied" -ValueName AllowEmailRequests -Type DWORD -value 1  
@@ -116,11 +115,11 @@ Set-GPRegistryValue -Name "Name of GPO" -key "HKLM\Software\Policies\Microsoft\W
   
 7.  エラー メッセージがユーザーにどのように表示されるのかを確認する場合は、 **[プレビュー]** をクリックします。  
   
-8.  **[OK]** をクリックします。  
+8.  **[OK]** をクリックすると、  
   
 ![ソリューションガイド](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>***  
   
-以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。
+次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 書式上の制約のため、複数行にわたって折り返される場合でも、各コマンドレットは 1 行に入力してください。
   
 ```  
 Set-FSRMAdrSetting -Event "AccessDenied" -DisplayMessage "Type the text that the user will see in the error message dialog box." -Enabled:$true -AllowRequests:$true  
@@ -144,7 +143,7 @@ Set-FSRMAdrSetting -Event "AccessDenied" -DisplayMessage "Type the text that the
   
 ![ソリューションガイド](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>***  
   
-以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。 
+次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 書式上の制約のため、複数行にわたって折り返される場合でも、各コマンドレットは 1 行に入力してください。 
   
 ```  
 Set-GPRegistryValue -Name "Name of GPO" -key "HKLM\SOFTWARE\Policies\Microsoft\Windows\Explore" -ValueName EnableShellExecuteFileStreamCheck -Type DWORD -value 1  
@@ -183,13 +182,13 @@ Set-GPRegistryValue -Name "Name of GPO" -key "HKLM\SOFTWARE\Policies\Microsoft\W
   
 ![ソリューションガイド](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>***  
   
-以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。 
+次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 書式上の制約のため、複数行にわたって折り返される場合でも、各コマンドレットは 1 行に入力してください。 
   
 ```  
 Set-FSRMMgmtProperty -Namespace "folder path" -Name "AccessDeniedMessage_MS" -Value "Type the text that the user will see in the error message dialog box."  
 ```  
   
-## <a name="BKMK_2"></a>手順 2: 電子メール通知設定を構成する  
+## <a name="step-2-configure-the-email-notification-settings"></a><a name="BKMK_2"></a>手順 2: 電子メール通知設定を構成する  
 アクセス拒否アシスタンス メッセージを送信するファイル サーバーごとに電子メール通知設定を構成する必要があります。  
   
 [Windows PowerShell を使用してこの手順を実行する](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep2)  
@@ -208,23 +207,23 @@ Set-FSRMMgmtProperty -Namespace "folder path" -Name "AccessDeniedMessage_MS" -Va
   
 5.  **[テスト電子メールの送信]** をクリックして、電子メール通知が正しく構成されていることを確認します。  
   
-6.  **[OK]** をクリックします。  
+6.  **[OK]** をクリックすると、  
   
 ![ソリューションガイド](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>***  
   
-以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。
+次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 書式上の制約のため、複数行にわたって折り返される場合でも、各コマンドレットは 1 行に入力してください。
   
 ```  
 set-FSRMSetting -SMTPServer "server1" -AdminEmailAddress "fileadmin@contoso.com" -FromEmailAddress "fileadmin@contoso.com"  
 ```  
   
-## <a name="BKMK_3"></a>手順 3: アクセス拒否アシスタンスが正しく構成されていることを確認する  
+## <a name="step-3-verify-that-access-denied-assistance-is-configured-correctly"></a><a name="BKMK_3"></a>手順 3: アクセス拒否アシスタンスが正しく構成されていることを確認する  
 アクセス拒否アシスタンスが正しく構成されていることを確認するには、Windows 8 を実行しているユーザーが、アクセス権のない共有またはその共有内のファイルにアクセスしようとします。 アクセス拒否メッセージが表示された場合、ユーザーには、 **[サポートの要求]** ボタンが表示されます。 [サポートの要求] ボタンをクリックすると、ユーザーは、アクセス理由を指定してから、フォルダー所有者またはファイル サーバー管理者に電子メールを送信できます。 フォルダー所有者またはファイル サーバー管理者は、到着した電子メールに適切な詳細が含まれているかを確認できます。  
   
 > [!IMPORTANT]  
 > Windows Server 2012 を実行しているユーザーを使用してアクセス拒否アシスタンスを確認する場合は、ファイル共有に接続する前にデスクトップエクスペリエンスをインストールする必要があります。  
   
-## <a name="BKMK_Links"></a>関連項目  
+## <a name="see-also"></a><a name="BKMK_Links"></a>関連項目  
   
 -   [シナリオ: アクセス拒否アシスタンス](Scenario--Access-Denied-Assistance.md)  
   

@@ -1,19 +1,19 @@
 ---
 title: 最上位のC# IPAM & サブネットオブジェクト用に生成されたコードの例
-description: ''
 ms.author: jmesser
 author: jmesser81
+ms.prod: windows-server
 ms.date: 11/05/2018
-ms.openlocfilehash: ae324b0a376f4fdf55cf09df652893b7894cc73e
-ms.sourcegitcommit: 213989f29cc0c30a39a78573bd4396128a59e729
+ms.openlocfilehash: 74096c86fefa82e4cc9dee0d5e6fa981b43d9335
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70031498"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80820955"
 ---
 # <a name="example-of-c-generated-code"></a>C# で生成されたコードの例 
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2019
+>適用対象: Windows Server (半期チャネル)、Windows Server 2019
 
 ```C#
 /* 

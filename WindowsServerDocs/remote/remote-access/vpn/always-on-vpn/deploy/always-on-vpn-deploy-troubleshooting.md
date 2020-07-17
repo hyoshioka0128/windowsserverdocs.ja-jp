@@ -7,14 +7,14 @@ ms.topic: article
 ms.assetid: 4d08164e-3cc8-44e5-a319-9671e1ac294a
 ms.localizationpriority: medium
 ms.date: 06/11/2018
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 649fbc16e3dfef2ed1061d0ba6a5c22a8712b186
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: v-tea
+author: Teresa-MOTIV
+ms.openlocfilehash: 209567ccd88f4b20f98caecc2a13cc671ef09072
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404372"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80854025"
 ---
 # <a name="troubleshoot-always-on-vpn"></a>Always On VPN のトラブルシューティング 
 

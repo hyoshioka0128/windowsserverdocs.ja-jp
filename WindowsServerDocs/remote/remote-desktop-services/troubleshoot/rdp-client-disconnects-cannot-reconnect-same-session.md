@@ -1,30 +1,25 @@
 ---
 title: リモート デスクトップ クライアントが切断され、同じセッションに再接続できない
 description: リモート デスクトップ クライアントが切断されて同じセッションに再接続できない問題のトラブルシューティング。
-audience: itpro
-ms.custom: na
 ms.reviewer: rklemen
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: troubleshooting
-ms.assetid: ''
 author: kaushika-msft
-manager: ''
+manager: dcscontentpm
 ms.author: delhan
 ms.date: 07/24/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 007668d1c0f8f2a6701813385b0e0bb7a09b29a0
-ms.sourcegitcommit: f6503e503d8f08ba8000db9c5eda890551d4db37
+ms.openlocfilehash: 0d116c99b7c8b1daffc4ec58bd93414781eea321
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68529952"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "80857205"
 ---
 # <a name="remote-desktop-client-disconnects-and-cant-reconnect-to-the-same-session"></a>リモート デスクトップ クライアントが切断され、同じセッションに再接続できない
 
 リモート デスクトップに対するリモート デスクトップ クライアントの接続が失われた後、クライアントがすぐに再接続できません。 ユーザーは、次のいずれかのエラーメッセージを受け取ります。
 
-  - The client couldn't connect to the terminal server because of a security error.Make sure you are signed in to the network, then try connecting again. (セキュリティ エラーのため、クライアントはターミナル サーバーに接続できませんでした。ネットワークにサインインしていることを確認してから接続し直してください。)
+  - セキュリティ エラーのため、クライアントはターミナル サーバーに接続できませんでした。 ネットワークにサインインしていることを確認してから、接続を再試行してください。
   - リモート デスクトップが切断されました。 セキュリティ エラーのため、クライアントはリモート コンピューターに接続できませんでした。 ネットワークにログオンしていることを確認してから接続し直してください。
 
 リモート デスクトップ クライアントが再接続すると、RDSH サーバーは、元のセッションではなく、新しいセッションにクライアントを再接続します。 ただし、RDSH サーバーを確認すると、元のセッションがまだアクティブであり、切断状態にならなかったことが示されます。
@@ -40,7 +35,7 @@ ms.locfileid: "68529952"
 
 > [!NOTE]  
 >  - クライアントと RD セッション ホスト サーバーの間の通信で最高レベルの暗号化が必要な場合は、FIPS 準拠の暗号化を使用します。
->  - グループ ポリシーで構成した暗号化レベルの設定により、リモート デスクトップ サービス構成ツールを使用して構成した設定がオーバーライドされます。 また、[[システム暗号化: 暗号化、ハッシュ、署名のための FIPS 準拠アルゴリズムを使う]](https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/system-cryptography-use-fips-compliant-algorithms-for-encryption-hashing-and-signing) ポリシーを有効にした場合、この設定により **[クライアント接続の暗号化レベルを設定する]** ポリシーがオーバーライドされます。 システム暗号化ポリシーは、 **[コンピューターの構成] > [Windows の設定] > [セキュリティ設定] > [ローカル ポリシー] > [セキュリティ オプション]** フォルダーにあります。
+>  - グループ ポリシーで構成した暗号化レベルの設定により、リモート デスクトップ サービス構成ツールを使用して構成した設定がオーバーライドされます。 また、[[システム暗号化: 暗号化、ハッシュ、署名のための FIPS 準拠アルゴリズムを使う]](https://docs.microsoft.com/windows/security/threat-protection/security-policy-settings/system-cryptography-use-fips-compliant-algorithms-for-encryption-hashing-and-signing) ポリシーを有効にした場合、この設定により **[クライアント接続の暗号化レベルを設定する]** ポリシーがオーバーライドされます。 システム暗号化ポリシーは、 **[コンピューターの構成] > [Windows の設定] > [セキュリティ設定] > [ローカル ポリシー] > [セキュリティ オプション]** フォルダーにあります。
 >  - 暗号化レベルを変更した場合、新しい暗号化レベルは、ユーザーが次回サインインした時に有効になります。 1 つのサーバーで複数の暗号化レベルが必要な場合は、複数のネットワーク アダプターをインストールし、各アダプターを個別に構成します。
 >  - 対応する秘密キーが証明書にあることを確認するには、リモート デスクトップ サービスの構成に移動し、証明書を表示する接続を右クリックして、 **[全般]** 、 **[編集]** の順に選択します。 その後、 **[証明書の表示]** を選択します。 **[全般]** タブに移動すると、キーが存在する場合は、"この証明書に対応する秘密キーを持っています" と表示されるはずです。 また、この情報は、証明書スナップインを使用して表示することもできます。
 >  - FIPS 準拠の暗号化 ( **[システム暗号化: 暗号化、ハッシュ、署名のための FIPS 準拠アルゴリズムを使う]** ポリシーまたはリモート デスクトップ サーバーの構成の **[FIPS 準拠]** の設定) では、Microsoft 暗号化モジュールを使用する Federal Information Processing Standard (FIPS) 140-1 暗号化アルゴリズムで、サーバーとクライアントの間で送信されるデータが暗号化および暗号化解除されます。 詳しくは、「[FIPS 140 検証](https://docs.microsoft.com/windows/security/threat-protection/fips-140-validation)」をご覧ください。

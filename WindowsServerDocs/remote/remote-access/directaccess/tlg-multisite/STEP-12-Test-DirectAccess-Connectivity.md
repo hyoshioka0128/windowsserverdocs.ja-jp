@@ -2,26 +2,22 @@
 title: 手順 12. DirectAccess 接続のテスト
 description: このトピックは、「Windows Server 2016 用の DirectAccess マルチサイト展開のテストラボガイド」の一部です。
 manager: brianlic
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: networking-da
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 65ac1c23-3a47-4e58-888d-9dde7fba1586
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: bd0f8ba10536a28479269abafadaaacaffd3d0a8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 85aff4ae9e117359f8827abb15dce47728a30da4
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388383"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80857285"
 ---
 # <a name="step-12-test-directaccess-connectivity"></a>手順 12. DirectAccess 接続のテスト
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 クライアントコンピューターがインターネットまたは Homenet ネットワークに配置されている場合に、そのコンピューターからの接続をテストするには、グループポリシー設定が正しいことを確認する必要があります。  
   
@@ -36,9 +32,9 @@ ms.locfileid: "71388383"
 ## <a name="prerequisites"></a>前提条件  
 両方のクライアントコンピューターを企業ネットワークネットワークに接続し、両方のクライアントコンピューターを再起動します。  
   
-## <a name="policy"></a>クライアントに適切なグループポリシーがあることを確認する  
+## <a name="verify-clients-have-the-correct-group-policy"></a><a name="policy"></a>クライアントに適切なグループポリシーがあることを確認する  
   
-1.  CLIENT1 で、 **[スタート]** をクリックし、「 **powershell**」と入力して、 **[powershell]** を右クリックし、 **[詳細設定]** 、 **[管理者として実行]** の順にクリックします。 **[ユーザー アカウント制御]** ダイアログ ボックスが表示されたら、表示された操作が正しいことを確認し、 **[はい]** をクリックします。  
+1.  CLIENT1 で、 **[スタート]** をクリックし、「 **powershell**」と入力して、 **[powershell]** を右クリックし、 **[詳細設定]** 、 **[管理者として実行]** の順にクリックします。 **[ユーザー アカウント制御]** ダイアログ ボックスが表示された場合、表示された操作が目的の操作であることを確認して、 **[はい]** をクリックします。  
   
 2.  Windows PowerShell ウィンドウで、「 **ipconfig** 」と入力し、enter キーを押します。  
   
@@ -52,7 +48,7 @@ ms.locfileid: "71388383"
   
 4.  次の手順については、Windows PowerShell ウィンドウを開いたままにしておきます。  
   
-5.  次に、 **[スタート]** ボタンをクリックし、 **[すべてのプログラム]** 、 **[アクセサリ]** 、 **[windows powershell]** の順にクリックし、 **[windows powershell]** を右クリックして **[管理者として実行]** をクリックします。 **[ユーザー アカウント制御]** ダイアログ ボックスが表示されたら、表示された操作が正しいことを確認し、 **[はい]** をクリックします。  
+5.  次に、 **[スタート]** ボタンをクリックし、 **[すべてのプログラム]** 、 **[アクセサリ]** 、 **[windows powershell]** の順にクリックし、 **[windows powershell]** を右クリックして **[管理者として実行]** をクリックします。 **[ユーザー アカウント制御]** ダイアログ ボックスが表示された場合、表示された操作が目的の操作であることを確認して、 **[はい]** をクリックします。  
   
 6.  Windows PowerShell ウィンドウで、「 **ipconfig** 」と入力し、enter キーを押します。  
   
@@ -68,7 +64,7 @@ ms.locfileid: "71388383"
   
 8.  次の手順については、Windows PowerShell ウィンドウを開いたままにしておきます。  
   
-## <a name="EDGE1"></a>EDGE1 を使用してインターネットからの DirectAccess 接続をテストする  
+## <a name="test-directaccess-connectivity-from-the-internet-through-edge1"></a><a name="EDGE1"></a>EDGE1 を使用してインターネットからの DirectAccess 接続をテストする  
   
 1. インターネットネットワークから EDGE1 を抜いてください。  
   
@@ -90,10 +86,10 @@ ms.locfileid: "71388383"
   
 7. EDGE1 経由で接続されていることを確認します。 「 **Netsh interface httpstunnel show** interface」と入力し、enter キーを押します。  
   
-   出力には、URL: https://edge1.contoso.com:443/IPHTTPS が含まれている必要があります。  
+   出力には、URL: https://edge1.contoso.com:443/IPHTTPSが含まれている必要があります。  
   
    > [!TIP]  
-   > CLIENT1 では、次の Windows PowerShell コマンドを実行することもできます。**NetIPHTTPSConfiguration**。 出力には、使用可能なサーバー URL 接続と現在アクティブなプロファイルが表示されます。  
+   > CLIENT1 では、次の Windows PowerShell コマンドを実行することもできます: **NetIPHTTPSConfiguration**。 出力には、使用可能なサーバー URL 接続と現在アクティブなプロファイルが表示されます。  
   
 8. Windows PowerShell ウィンドウで、「 **ping** 」と入力し、enter キーを押します。 この場合は、"2001: db8: 1:: 3" に割り当てられた IPv6 アドレスからの応答が表示されます。  
   
@@ -103,17 +99,17 @@ ms.locfileid: "71388383"
   
     APP2 に ping を実行する機能は重要です。成功は、APP2 が IPv4 専用のリソースであるため、NAT64/DNS64 を使用して接続を確立できたことを示しているからです。  
   
-11. Internet explorer を開き、Internet Explorer のアドレスバーに **https://app1/** を入力して、enter キーを押します。 APP1 の既定の IIS Web サイトが表示されます。  
+11. Internet explorer を開き、Internet Explorer のアドレスバーに「 **https://app1/** 」と入力して、enter キーを押します。 APP1 の既定の IIS Web サイトが表示されます。  
   
 12. Internet Explorer のアドレスバーに「 **https://2-app1/** 」と入力し、enter キーを押します。 2-3 の既定の web サイトが表示されます。  
   
 13. Internet Explorer のアドレスバーに「 **https://app2/** 」と入力し、enter キーを押します。 APP2 の既定の Web サイトが表示されます。  
   
-14. **スタート**画面で、「<strong>\\ \ 2-App1\Files</strong>」と入力し、enter キーを押します。 サンプルテキストファイルをダブルクリックします。  
+14. **スタート**画面で、「<strong>\\\2-App1\Files</strong>」と入力し、enter キーを押します。 サンプルテキストファイルをダブルクリックします。  
   
     これは、EDGE1 経由で接続されているときに、corp2.corp.contoso.com ドメイン内のファイルサーバーに接続できることを示しています。  
   
-15. **スタート**画面で、「<strong>\\ \ App2\Files</strong>」と入力し、enter キーを押します。 [新しいテキスト ドキュメント] ファイルをダブルクリックします。  
+15. **スタート**画面で、「<strong>\\\App2\Files</strong>」と入力し、enter キーを押します。 [新しいテキスト ドキュメント] ファイルをダブルクリックします。  
   
     これは、SMB を使用して IPv4 のみのサーバーに接続し、リソースドメイン内のリソースを取得できることを示しています。  
   
@@ -121,13 +117,13 @@ ms.locfileid: "71388383"
   
 17. セキュリティが強化された**Windows ファイアウォール**コンソールで、**パブリックプロファイル**のみがアクティブになっていることに注意してください。 DirectAccess が正しく機能するためには、Windows ファイアウォールが有効になっている必要があります。 Windows ファイアウォールが無効になっている場合、DirectAccess 接続は機能しません。  
   
-18. コンソールの左側のウィンドウで、 **[監視]** ノードを展開し、 **[接続セキュリティの規則]** ノードをクリックします。 アクティブな接続セキュリティ規則が表示されます。**Directaccess ポリシー-ClientToCorp**、 **Directaccess ポリシー-ClientToDNS64NAT64PrefixExemption**、 **Directaccess ポリシー-Clienttocorp**、および**directaccess ポリシー-clienttonla免除**。 中央のペインを右にスクロールすると、 **1 番目の [認証方法**] 列と **[2 番目の認証方法]** 列が表示されます。 最初のルール (ClientToCorp) が Kerberos V5 を使用してイントラネットトンネルを確立し、3番目のルール (clienttocorp) が NTLMv2 を使用してインフラストラクチャトンネルを確立することに注意してください。  
+18. コンソールの左側のウィンドウで、 **[監視]** ノードを展開し、 **[接続セキュリティの規則]** ノードをクリックします。 アクティブな接続セキュリティ規則 ( **Directaccess ポリシー-ClientToCorp**、 **Directaccess ポリシー-ClientToDNS64NAT64PrefixExemption**、 **Directaccess ポリシー-Clienttocorp**、および**directaccess ポリシー-clienttonla免除**) が表示されます。 中央のペインを右にスクロールすると、 **1 番目の [認証方法**] 列と **[2 番目の認証方法]** 列が表示されます。 最初のルール (ClientToCorp) が Kerberos V5 を使用してイントラネットトンネルを確立し、3番目のルール (clienttocorp) が NTLMv2 を使用してインフラストラクチャトンネルを確立することに注意してください。  
   
 19. コンソールの左側のウィンドウで、 **[セキュリティアソシエーション]** ノードを展開し、 **[メインモード]** ノードをクリックします。 「インフラストラクチャトンネルのセキュリティアソシエーション」では、NTLMv2 と、Kerberos V5 を使用したイントラネットトンネルセキュリティの関連付けに注意してください。 **2 番目の認証方法**として **[ユーザー (Kerberos V5)]** と表示されているエントリを右クリックし、 **[プロパティ]** をクリックします。 **[全般]** タブで、 **2 番目の認証ローカル ID**が**CORP\User1**であることを確認します。これは、User1 が Kerberos を使用して CORP ドメインに対して正常に認証できたことを示します。  
   
 20. この手順を、手順 3. で実行します。  
   
-## <a name="secgroup"></a>Win7_Clients_Site2 セキュリティグループへの変更の移動  
+## <a name="move-client2-to-the-win7_clients_site2-security-group"></a><a name="secgroup"></a>Win7_Clients_Site2 セキュリティグループへの変更の移動  
   
 1.  DC1 で **[スタート]** をクリックし、「 **dsa.msc**」と入力して、enter キーを押します。  
   
@@ -151,7 +147,7 @@ ms.locfileid: "71388383"
   
     -   nls.corp.contoso.com-これらの設定は、nls.corp.contoso.com という名前の除外があることを示します。  
   
-## <a name="DAConnect"></a>2-EDGE1 を使用してインターネットからの DirectAccess 接続をテストする  
+## <a name="test-directaccess-connectivity-from-the-internet-through-2-edge1"></a><a name="DAConnect"></a>2-EDGE1 を使用してインターネットからの DirectAccess 接続をテストする  
   
 1. 2 ~ EDGE1 をインターネットネットワークに接続します。  
   
@@ -163,10 +159,10 @@ ms.locfileid: "71388383"
   
 5. EDGE1 を使用して接続していることを確認します。 「 **Netsh interface httpstunnel show** interface」と入力し、enter キーを押します。  
   
-   出力には、URL: https://2-edge1.contoso.com:443/IPHTTPS が含まれている必要があります。  
+   出力には、URL: https://2-edge1.contoso.com:443/IPHTTPSが含まれている必要があります。  
   
    > [!TIP]  
-   > CLIENT1 では、次のコマンドを実行することもできます。**NetIPHTTPSConfiguration**。 出力には、使用可能なサーバー URL 接続と現在アクティブなプロファイルが表示されます。  
+   > CLIENT1 では、次のコマンドも実行できます: **NetIPHTTPSConfiguration**。 出力には、使用可能なサーバー URL 接続と現在アクティブなプロファイルが表示されます。  
   
    > [!NOTE]  
    > CLIENT1 は、企業リソースへの接続に使用するサーバーを自動的に変更します。 コマンドの出力に EDGE1 への接続が表示されている場合は、約5分間待ってから、もう一度やり直してください。  
@@ -179,17 +175,17 @@ ms.locfileid: "71388383"
   
    APP2 に ping を実行する機能は重要です。成功は、APP2 が IPv4 専用のリソースであるため、NAT64/DNS64 を使用して接続を確立できたことを示しているからです。  
   
-9. Internet explorer を開き、Internet Explorer のアドレスバーに **https://app1/** を入力して、enter キーを押します。 APP1 の既定の IIS Web サイトが表示されます。  
+9. Internet explorer を開き、Internet Explorer のアドレスバーに「 **https://app1/** 」と入力して、enter キーを押します。 APP1 の既定の IIS Web サイトが表示されます。  
   
 10. Internet Explorer のアドレスバーに「 **https://2-app1/** 」と入力し、enter キーを押します。 APP2 の既定の Web サイトが表示されます。  
   
 11. Internet Explorer のアドレスバーに「 **https://app2/** 」と入力し、enter キーを押します。 APP3 の既定の web サイトが表示されます。  
   
-12. **スタート**画面で、「<strong>\\ \ App1\Files</strong>」と入力し、enter キーを押します。 サンプルテキストファイルをダブルクリックします。  
+12. **スタート**画面で、「<strong>\\\App1\Files</strong>」と入力し、enter キーを押します。 サンプルテキストファイルをダブルクリックします。  
   
     これは、EDGE1 経由で接続されている場合に、corp.contoso.com ドメイン内のファイルサーバーに接続できたことを示しています。  
   
-13. **スタート**画面で、「<strong>\\ \ App2\Files</strong>」と入力し、enter キーを押します。 [新しいテキスト ドキュメント] ファイルをダブルクリックします。  
+13. **スタート**画面で、「<strong>\\\App2\Files</strong>」と入力し、enter キーを押します。 [新しいテキスト ドキュメント] ファイルをダブルクリックします。  
   
     これは、SMB を使用して IPv4 のみのサーバーに接続し、リソースドメイン内のリソースを取得できることを示しています。  
   

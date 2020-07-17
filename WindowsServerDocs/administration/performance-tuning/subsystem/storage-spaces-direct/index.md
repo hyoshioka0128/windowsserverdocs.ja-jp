@@ -6,14 +6,14 @@ ms.technology: performance-tuning-guide
 ms.topic: article
 ms.assetid: 15a519fa-37cc-4d84-a9fe-097d33bb71ea
 author: phstee
-ms.author: Vshankar; DanLo; clausjor; StevenEk
+ms.author: vshankar; danlo; clausjor; stevenek
 ms.date: 4/14/2017
-ms.openlocfilehash: dabfadb30666ec93aa36985e2bc55a3f496e6d34
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 42d05529aed6f1c5f9c5247a143e256fd52d056a
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383474"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471197"
 ---
 # <a name="performance-tuning-for-storage-spaces-direct"></a>記憶域スペース ダイレクトのパフォーマンス チューニング
 
@@ -36,7 +36,7 @@ SSD または NVMe デバイスを介したキャッシュの既定は書き込�
 
 キャッシュ構成を表示および変更するには、[Get-ClusterStorageSpacesDirect](https://technet.microsoft.com/library/mt634616.aspx) および [Set-ClusterStorageSpacesDirect](https://technet.microsoft.com/library/mt763265.aspx) コマンドレットを使用します。 `CacheModeHDD` および `CacheModeSSD` プロパティは、指定された種類の容量メディア上でキャッシュがどのように機能するかを定義します。
 
-## <a name="see-also"></a>関連項目
+## <a name="additional-references"></a>その他の参照情報
 
 - [記憶域スペース ダイレクトについて](../../../../storage/storage-spaces/understand-storage-spaces-direct.md)
 - [記憶域スペース ダイレクトの計画](../../../../storage/storage-spaces/plan-storage-spaces-direct.md)

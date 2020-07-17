@@ -1,20 +1,20 @@
 ---
 redirect_url: guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md
 title: テナント用のシールドされた Vm-オンプレミスで新しいシールドされた VM を作成し、保護されたファブリックに移動する
-ms.custom: na
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: 0ca1efa0-01f9-4b6f-87d4-c66db00d7d70
 manager: dongill
 author: rpsqrd
+ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: a4b5ff2942c8485a4c10770a4374d56734f7f3c9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c6753ae5d767f0c71b86fc47c1d8bf9971a2a5cc
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402382"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475529"
 ---
 # <a name="shielded-vms-for-tenants---creating-a-new-shielded-vm-on-premises-and-moving-it-to-a-guarded-fabric"></a>テナント用のシールドされた Vm-オンプレミスで新しいシールドされた VM を作成し、保護されたファブリックに移動する
 
@@ -28,13 +28,13 @@ ms.locfileid: "71402382"
 
 1.  手順を開始する前に、次の役割と機能がインストールされた Windows Server 2016 を実行している Hyper-v ホストを使用していることを確認してください。
 
-    - ロール
+    - Role
 
         - Hyper-V
 
-    - 機能
+    - 特徴
 
-        - シールドされた VM ツール\\\\機能管理ツールリモートサーバー管理ツール
+        - リモートサーバー管理ツール \\ 機能管理ツールのシールドされた \\ VM ツール
 
     > [!NOTE]
     > ここで使用するホストは、保護されたファブリック内のホストにすることはでき*ません*。 これは、保護されたファブリックに移行する前に Vm を準備する独立したホストです。
@@ -51,9 +51,9 @@ ms.locfileid: "71402382"
 
 4.  後の手順で必要になるガーディアンキーをインポートするには、次のコマンドを実行します。
 
-    &lt;パス&gt;&lt;Filename&gt;には、前の手順で保存した XML ファイルのパスとファイル名を置き換えます。例: **C:\\temp\\GuardianKey**
+    &lt;[パスの &gt; &lt; ファイル名] には、前の &gt; 手順で保存した XML ファイルのパスとファイル名を置き換えます。例: **C: \\ temp \\GuardianKey.xml**
 
-    &lt;GuardianName&gt;には、ホスティングプロバイダーまたはエンタープライズデータセンターの名前を指定します。たとえば、「 **HostingProvider1**」と指定します。 次の手順の名前を記録します。
+    &lt;GuardianName に &gt; は、ホスティングプロバイダーまたはエンタープライズデータセンターの名前を指定します。たとえば、 **HostingProvider1**のように指定します。 次の手順の名前を記録します。
 
     **-Allowuntrustedroot**は、HGS サーバーが自己署名証明書を使用して設定されている場合にのみ含めます。 (これらの証明書は、HGS のキー保護サービスの一部です)。
 
@@ -73,11 +73,11 @@ ms.locfileid: "71402382"
 
 1. テナント Hyper-v ホストで、新しい第2世代仮想マシンを作成するには、次のコマンドを実行します。
 
-   &lt;ShieldedVMname&gt;の場合は、VM の名前を指定します (例: **ShieldVM1** )。
-    
-   &lt;VHDPath&gt;では、VM の VHDX を格納する場所を指定します。例: **C:\\VMs\\ShieldVM1\\ShieldVM1**
-    
-   &lt;nnGB&gt;の場合は、VHDX のサイズを指定します (例: **60GB** )。
+   ShieldedVMname の場合は、 &lt; &gt; VM の名前を指定します。例: **ShieldVM1**
+
+   VHDPath の場合は、 &lt; &gt; VM の VHDX を格納する場所を指定します。例: **C: \\ VMs \\ ShieldVM1 \\ ShieldVM1**
+
+   Nngb の場合は、 &lt; &gt; VHDX のサイズを指定します (例: **60GB** )。
 
        New-VM -Generation 2 -Name "<ShieldedVMname>" -NewVHDPath <VHDPath>.vhdx -NewVHDSizeBytes <nnGB>
 
@@ -87,7 +87,7 @@ ms.locfileid: "71402382"
 
 4. 新しいキー保護機能を作成するには (このセクションの冒頭で説明)、次のコマンドを実行します。
 
-   &lt;GuardianName&gt;の場合は、前の手順で指定した名前を使用します。たとえば、「 **HostingProvider1** 」と指定します。
+   GuardianName の場合は、 &lt; &gt; 前の手順で指定した名前を使用します。例: **HostingProvider1**
 
    自己署名証明書を許可するには **、-allowuntrustedroot**を含めます。
 
@@ -97,9 +97,9 @@ ms.locfileid: "71402382"
 
        $KP = New-HgsKeyProtector -Owner $Owner -Guardian $Guardian -AllowUntrustedRoot
 
-   複数のデータセンターでシールドされた VM (ディザスターリカバリーサイトやパブリッククラウドプロバイダーなど) を実行できるようにする場合は、 **-ガーディアン**パラメーターにガーディアンの一覧を指定できます。 詳細については、[HgsKeyProtector] (https://docs.microsoft.com/powershell/module/hgsclient/new-hgskeyprotector?view=win10-psを参照してください。
+   複数のデータセンターでシールドされた VM (ディザスターリカバリーサイトやパブリッククラウドプロバイダーなど) を実行できるようにする場合は、 **-ガーディアン**パラメーターにガーディアンの一覧を指定できます。 詳細については、[HgsKeyProtector] (を参照してください https://docs.microsoft.com/powershell/module/hgsclient/new-hgskeyprotector?view=win10-ps 。
 
-5. キー保護機能を使用して vTPM を有効にするには、次のコマンドを実行します。 &lt;ShieldedVMname&gt;については、前の手順で使用したのと同じ VM 名を使用してください。
+5. キー保護機能を使用して vTPM を有効にするには、次のコマンドを実行します。 ShieldedVMname の場合は &lt; &gt; 、前の手順で使用したのと同じ VM 名を使用します。
 
        $VMName="<ShieldedVMname>"
 
@@ -130,7 +130,7 @@ ms.locfileid: "71402382"
 
     Hyper-v マネージャーまたは Windows PowerShell を使用して、シールドされた VM をインポートします。 Vm を起動するには、vm の所有者から vm 構成ファイルをインポートする必要があります。 これは、キープロテクターと VM の仮想 TPM が構成ファイルに格納されているためです。 保護されたファブリック上で実行するように VM が構成されている場合は、正常に起動できる必要があります。
 
-## <a name="see-also"></a>関連項目
+## <a name="additional-references"></a>その他のリファレンス
 
-- [保護されたホストとシールドされた Vm のホスティングサービスプロバイダーの構成手順](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
+- [保護されたホストとシールドされた VM のためのホスティング サービス プロバイダーの構成手順](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
 - [保護されたファブリックとシールドされた VM](guarded-fabric-and-shielded-vms-top-node.md)

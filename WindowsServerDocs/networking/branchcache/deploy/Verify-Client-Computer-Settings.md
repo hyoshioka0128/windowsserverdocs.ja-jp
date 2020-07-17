@@ -6,18 +6,18 @@ ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: get-started-article
 ms.assetid: 31ea58b0-d407-4f62-8ec6-6a1b19174042
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 6d0adbf0db2d7888ca12ca49f50fc37baa8cbc16
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: e4bd3c4d4b2998f5c4faea22887bdef8663587cb
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356508"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80319177"
 ---
 # <a name="verify-client-computer-settings"></a>クライアント コンピューターの設定を確認します。
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 この手順を使用すると、BranchCache のクライアント コンピューターが正しく構成されていることを確認します。  
   

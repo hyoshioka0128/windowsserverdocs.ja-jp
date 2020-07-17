@@ -1,27 +1,23 @@
 ---
 title: MultiPoint ダッシュボード ユーザー アカウントを作成する
-ms.custom: na
 description: ダッシュボードで使用するアカウントを作成する
 ms.prod: windows-server
 ms.technology: multipoint-services
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: eb9d7da1-eb5e-42c0-8d59-bb6d7b007ea9
 author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: b4e5fb85ae1dcaf7bd698f052e990e6ac1ac8dbc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b94c02fe514b4f7a694b908600127eda7c664c09
+ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71389771"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80859795"
 ---
 # <a name="create-a-multipoint-dashboard-user-account"></a>MultiPoint ダッシュボード ユーザー アカウントを作成する
-ステーションに定期的にアクセスするが、MultiPoint Services システムを管理しないユーザーに対して、MultiPoint ダッシュボードユーザーアカウントを作成します。 MultiPoint ダッシュボードユーザーアカウントを持つユーザーは、ほとんどのアプリケーションを実行してファイルを保存できますが、MultiPoint マネージャーを実行することはできません。 MultiPoint ダッシュボードのユーザーアクセス権を持つユーザーを表示するには、MultiPoint マネージャーで **[ユーザー]** タブをクリックします。MultiPoint ダッシュボード ユーザー アカウントは、[アカウントの種類] 列に **[MultiPoint ダッシュボード ユーザー]** として表示されます。  
+ステーションに定期的にアクセスするけれども MultiPoint Services システムの管理は行わないユーザー用には、MultiPoint ダッシュボード ユーザー アカウントを作成します。 MultiPoint ダッシュボードユーザーアカウントを持つユーザーは、ほとんどのアプリケーションを実行してファイルを保存できますが、MultiPoint マネージャーを実行することはできません。 Multipoint ダッシュボードのユーザーアクセス権を持つユーザーを表示するには、MultiPoint マネージャーで **[ユーザー]** タブをクリックします。 multipoint ダッシュボードユーザーアカウントは、 **[アカウントの種類]** 列に**multipoint ダッシュボードユーザー**として表示されます。  
   
 MultiPoint Services のユーザーが Windows でプライベート ドキュメントを保存する場合、各ユーザーは一意のユーザー名とパスワードを使用して MultiPoint Services システムにログオンする必要があります。  
   
@@ -46,5 +42,5 @@ MultiPoint Services のユーザーが Windows でプライベート ドキュ�
   
 8.  **[完了]** をクリックします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [ユーザー アカウントに関する考慮事項](User-Account-Considerations.md)

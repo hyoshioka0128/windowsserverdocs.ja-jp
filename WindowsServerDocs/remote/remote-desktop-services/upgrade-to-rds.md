@@ -1,29 +1,24 @@
 ---
 title: リモート デスクトップ サービスの展開を Windows Server 2016 にアップグレードする
 description: この記事では、既存のリモート デスクトップ サービスの展開を Windows Server 2016 にアップグレードする方法について説明します。
-ms.custom: na
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
 ms.technology: remote-desktop-services
 ms.author: spatnaik
 ms.date: 03/20/2018
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f7b1f1f6-57c8-40ab-a235-e36240dcc1f8
 author: spatnaik
 manager: scottman
-notes: https://social.technet.microsoft.com/wiki/contents/articles/22069.remote-desktop-services-upgrade-guidelines-for-windows-server-2012-r2.aspx
-ms.openlocfilehash: 29648db89b61a9d22aad6d5aa814cfe7f425a970
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8980f7941a997e24ea5c5a9c1f39b4588b234b75
+ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403874"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "80857135"
 ---
 # <a name="upgrading-your-remote-desktop-services-deployments-to-windows-server-2016"></a>リモート デスクトップ サービスの展開を Windows Server 2016 にアップグレードする
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016
+>適用先:Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016
 
 ## <a name="supported-os-upgrades-with-rds-role-installed"></a>RDS 役割がインストールされたサポート対象オペレーティング システムのアップグレード
 Windows Server 2016 へのアップグレードがサポートされるのは、Windows Server 2012 R2 および Windows Server 2016 からのみです。
