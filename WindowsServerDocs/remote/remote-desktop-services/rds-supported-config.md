@@ -4,17 +4,17 @@ description: Windows Server 2016 および Windows Server 2019 の RDS におい
 ms.prod: windows-server
 ms.technology: remote-desktop-services
 ms.author: elizapo
-ms.date: 10/22/2019
+ms.date: 07/14/2020
 ms.topic: article
 ms.assetid: c925c7eb-6880-411f-8e59-bd0f57cc5fc3
 author: lizap
 manager: dongill
-ms.openlocfilehash: dae6c00bd09e9c10e32932701095244a75f9ca7a
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 406112eae884b1e34d54eb18700c3ad28c3f52c6
+ms.sourcegitcommit: f81aa22739d818382d314561dece59a9341dfb6f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80860115"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86390079"
 ---
 # <a name="supported-configurations-for-remote-desktop-services"></a>リモート デスクトップ サービスにおいてサポートされる構成
 
@@ -53,7 +53,7 @@ Windows Server 2016 も実行しているリモート デスクトップ セッ�
 
 リモート デスクトップ サービスは GPU を備えたシステムをサポートします。 GPU を必要とするアプリケーションを、リモート接続を介して使用できます。 さらに、GPU でアクセラレーションされたレンダリングとエンコードを有効にして、アプリのパフォーマンスとスケーラビリティを向上させることができます。
 
-リモート デスクトップ サービスのセッション ホストと単一セッションのクライアント オペレーティングシステム システムは、[Azure の GPU が最適化された仮想マシン サイズ](/en-us/azure/virtual-machines/windows/sizes-gpu)、物理 RDSH サーバーで利用可能な GPU、RemoteFX vGPU (Windows Server 2016 のみ)、サポートされるハイパーバイザーにより VM に提供される GPU など、オペレーティング システムに提供される物理的または仮想の GPU のメリットを活かすことができます。
+リモート デスクトップ サービスのセッション ホストと単一セッションのクライアント オペレーティング システムでは、[Azure の GPU が最適化された仮想マシン サイズ](/en-us/azure/virtual-machines/windows/sizes-gpu)、物理 RDSH サーバーで利用可能な GPU、サポートされるハイパーバイザーにより VM に提供される GPU など、オペレーティング システムに提供される物理的または仮想の GPU のメリットをさまざまな形で活かすことができます。
 
 何が必要かを明確にするには、「[Which graphics virtualization technology is right for you? (どのグラフィックス仮想化技術が適切か)](rds-graphics-virtualization.md)」をご覧ください。 DDA に関する特定の情報については、[個別のデバイス割り当てを展開する計画](../../virtualization/hyper-v/plan/plan-for-deploying-devices-using-discrete-device-assignment.md)に関するページを参照してください。
 
@@ -87,13 +87,15 @@ Microsoft 以外のハイパーバイザーまたはクラウド プラットフ
 
 ### <a name="remotefx-3d-video-adapter-vgpu-support"></a>RemoteFX 3D ビデオ アダプター (vGPU) のサポート
 
+> [!NOTE]
+> セキュリティ上の問題のため、2020 年 7 月 14 日以降のセキュリティ更新プログラムでは、すべてのバージョンの Windows において RemoteFX vGPU は既定で無効になっています。 詳しくは、[KB 4570006](https://support.microsoft.com/help/4570006) をご覧ください。
+
 Windows Server 2012 R2 または Windows Server 2016 で VM が Hyper-V ゲストとして実行されている場合、リモート デスクトップ サービスは RemoteFX vGPU をサポートします。 次のゲスト オペレーティング システムでは、RemoteFX vGPU がサポートされています。
 
 - Windows 7 SP1
 - Windows 8.1
 - Windows 10 1703 以降
 - Windows Server 2016 (シングル セッション配置の場合のみ)
-- Windows Server 2019 (シングル セッション配置の場合のみ)
 
 ### <a name="discrete-device-assignment-support"></a>個別のデバイスの割り当てのサポート
 

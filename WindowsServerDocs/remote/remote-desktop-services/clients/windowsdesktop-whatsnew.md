@@ -7,14 +7,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 06/23/2020
+ms.date: 07/14/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c3fc20ea42deaa9dd96fd9f7bfabfcb85462bdd
-ms.sourcegitcommit: 6d6a0225b1f83b71fcb494b94d666cd5e54c7566
+ms.openlocfilehash: e9449da93e52471d1f21c2b7079a8fed0415a03a
+ms.sourcegitcommit: e6becfd2266fd434b7994455c7782de36af4ff80
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85267663"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86377006"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Windows デスクトップ クライアントの新機能
 
@@ -27,7 +27,18 @@ Windows デスクトップ クライアントの詳細については、「[Wind
 |ユーザー グループ |バージョン  |
 |-----------|---------|
 |パブリック     |1.2.1104 |
-|Insider    |1.2.1104 |
+|Insider    |1.2.1185 |
+
+## <a name="updates-for-version-121185"></a>バージョン 1.2.1185 の更新内容
+
+*公開日:2020 年 7 月 14 日*
+
+ダウンロード:[Windows 64 ビット](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4B1Hr)、[Windows 32 ビット](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4B1Hs)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4B1Hq)
+
+- クライアントの上部にあるコマンド バーのオーバーフロー メニュー ( **...** ) オプションを使用して、複数のユーザー アカウントでワークスペースにサブスクライブできるようになりました。 ワークスペースを区別するために、ワークスペースのタイトルには、すべてのアプリのショートカットのタイトルと同様にユーザー名が含まれるようになりました。
+- トラブルシューティングを改善するため、サブスクリプション エラー メッセージに追加情報が追加されました。
+- ワークスペースの折りたたまれた状態または展開した状態は、更新中に維持されるようになりました。
+- **[接続情報]** ダイアログに **[Send Diagnostics and Close]\(診断を送信して閉じる\)** ボタンが追加されました。
 
 ## <a name="updates-for-version-121104"></a>バージョン 1.2.1104 の更新内容
 

@@ -8,14 +8,14 @@ ms.assetid: 03ec5a3d-d3f2-4afd-9405-ae58b6ecc91c
 author: Heidilohr
 manager: lizross
 ms.author: helohr
-date: 06/01/2020
+ms.date: 07/16/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 4eae1c991b3ce418f95b6b47eda485845a336e2f
-ms.sourcegitcommit: 9a72fa784206a4b780d6d1d630ec6f21fecb8db3
+ms.openlocfilehash: e421795fd3be9e11ddff4cf6b557ebb211e51c53
+ms.sourcegitcommit: b363d8ceed863c8fd5a464bc8afdc4ef1af9a6f8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86052587"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "86445716"
 ---
 # <a name="get-started-with-the-ios-client"></a>iOS クライアントの概要
 
@@ -72,7 +72,10 @@ iOS でアクセスできる管理対象リソースの一覧を取得するに�
 
 1. 接続センターで、 **[+]** をタップし、次に **[ワークスペースの追加]** をタップします。
 2. [フィード URL] フィールドに、追加するフィードの URL を入力します。 この URL には、URL またはメール アドレスを指定できます。
-   - URL を使用する場合は、管理者から提供されたものを使用します。 この URL は通常 <https://rdweb.wvd.microsoft.com> です。
+   - URL を使用する場合は、管理者から提供されたものを使用します。
+      - この URL は、通常、Windows Virtual Desktop の URL です。 どれを使用するかは、使用している Windows Virtual Desktop のバージョンによって異なります。
+        - Fall 2019 バージョンの場合は、`https://rdweb.wvd.microsoft.com/api/feeddiscovery/webfeeddiscovery.aspx` を使用します。
+        - Spring 2020 バージョンの場合は、`https://rdweb.wvd.microsoft.com/api/arm/feeddiscovery` を使用します。
    - 電子メール アドレスを使用する場合は、電子メール アドレスを入力します。 メール アドレスを入力すると、メール アドレスに関連付けられている URL を検索するようにクライアントが指示されます (管理者がそのようにサーバーを構成している場合)。
 3. **[Next]** \(次へ\) をタップします。
 4. 入力が求められたら、自分の資格情報を入力します。
