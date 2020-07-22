@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 05/31/2019
-ms.openlocfilehash: ec01431b320c710eddedc2f9c5e174bea1355b1c
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 49b07845003208dc9c0bd3aaab4082a3e7d6a83a
+ms.sourcegitcommit: b35fbd2a67d7a3395b50b2a3acd0817ba4e36b26
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475699"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86891357"
 ---
 # <a name="connecting-windows-server-to-azure-hybrid-services"></a>Azure ハイブリッド サービスへの Windows Server の接続
 
@@ -33,11 +33,11 @@ Windows Admin Center 内で Azure ハイブリッド サービスを使用する
 
 [Windows Admin Center](../overview.md) の Azure ハイブリッド サービス ツールは、統合されたすべての Azure サービスを一元管理されたハブに集約します。このハブでは、オンプレミスまたはハイブリッド環境に価値をもたらす、利用可能なすべての Azure サービスを簡単に見つけることができます。
 
-![Azure ハイブリッド サービス ツールを示している Windows Admin Center のスクリーンショット](../media/azure-services/ahs-discover.png)
+![Azure ハイブリッド サービス ツールを示している Windows Admin Center のスクリーンショット](../media/azure-services/Azure-Hybrid-Services-Discover.png)
 
 Azure サービスが既に有効になっているサーバーに接続した場合、Azure ハイブリッド サービス ツールは、そのサーバーで有効になっているすべてのサービスを見渡せる 1 枚の窓ガラスとしてとして機能します。 Windows Admin Center 内の関連ツールへのアクセス、Azure サービスの詳細な管理のための Azure portal への移動、ドキュメントでの詳細確認などの作業を指先ひとつで簡単に実行できます。
 
-![サーバーに既にインストールされている Azure サービスを示す Windows Admin Center のスクリーンショット](../media/azure-services/ahs-dayN.png)
+![サーバーに既にインストールされている Azure サービスを示す Windows Admin Center のスクリーンショット](../media/azure-services/Azure-Hybrid-Services-DayN.png)
 
 Azure ハイブリッド サービス ツールから、次の操作を実行できます。
 
