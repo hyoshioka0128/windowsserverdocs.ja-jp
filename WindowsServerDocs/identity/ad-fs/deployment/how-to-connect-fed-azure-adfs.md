@@ -8,12 +8,12 @@ ms.topic: get-started-article
 ms.date: 10/28/2018
 ms.subservice: hybrid
 ms.author: billmath
-ms.openlocfilehash: 1786b7c9a10e11e95f736d1db20bdc12eb4844b7
-ms.sourcegitcommit: fea590c092d7abcb55be2b424458faa413795f5c
+ms.openlocfilehash: eaad015d0097d9b65a4aba8a5846c7782b6966d1
+ms.sourcegitcommit: 4af8ab2e5c199ecff0697e5331fa7f61f2556a8f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2020
-ms.locfileid: "85372219"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86866041"
 ---
 # <a name="deploying-active-directory-federation-services-in-azure"></a>Azure での Active Directory フェデレーション サービスのデプロイ
 AD FS は、単純かつ安全な ID フェデレーションと Web シングル サインオン (SSO) 機能を実現します。 Azure AD または O365 とのフェデレーションによって、ユーザーはオンプレミスの資格情報を認証に使用し、クラウド内のあらゆるリソースにアクセスすることができます。 そのため、オンプレミスとクラウドの両方のリソースに確実にアクセスできるよう、AD FS インフラストラクチャには、高い可用性を確保することが重要となります。 AD FS を Azure にデプロイすると、必要な高可用性を最小限の手間で確保できます。
@@ -107,7 +107,7 @@ ExpressRoute の使用をお勧めしますが、所属する組織に合った�
 
 次の可用性セットを作成します。
 
-| 可用性セット | ロール | 障害ドメイン | 更新ドメイン |
+| 可用性セット | Role | 障害ドメイン | 更新ドメイン |
 |:---:|:---:|:---:|:--- |
 | contosodcset |DC/ADFS |3 |5 |
 | contosowapset |WAP |3 |5 |
@@ -115,7 +115,7 @@ ExpressRoute の使用をお勧めしますが、所属する組織に合った�
 ### <a name="4-deploy-virtual-machines"></a>4. 仮想マシンを展開する
 次に、インフラストラクチャ内の各ロールのホストとなる仮想マシンをデプロイします。 それぞれの可用性セットには、最低でも 2 つのマシンをデプロイすることをお勧めします。 基本的なデプロイでは 4 つの仮想マシンを作成します。
 
-| Machine | ロール | Subnet | 可用性セット | ストレージ アカウント | IP アドレス |
+| Machine | Role | Subnet | 可用性セット | ストレージ アカウント | IP アドレス |
 |:---:|:---:|:---:|:---:|:---:|:---:|
 | contosodc1 |DC/ADFS |INT |contosodcset |contososac1 |静的 |
 | contosodc2 |DC/ADFS |INT |contosodcset |contososac2 |静的 |
@@ -131,7 +131,7 @@ DNS が管理下にある場合は、静的 IP アドレスをお勧めします
 ### <a name="5-configuring-the-domain-controller--ad-fs-servers"></a>5. ドメインコントローラー/AD FS サーバーを構成する
  受信要求を認証するためには、AD FS がドメイン コントローラーに問い合わせを行う必要があります。 認証のたびに Azure がオンプレミスの DC とやり取りするのでは無駄が大きいため、ドメイン コントローラーのレプリカを Azure にデプロイすることをお勧めします。 高い可用性を確保するために、少なくとも 2 つのドメイン コントローラーから成る可用性セットを作成することをお勧めします。
 
-| ドメイン コントローラー | ロール | ストレージ アカウント |
+| ドメイン コントローラー | Role | ストレージ アカウント |
 |:---:|:---:|:---:|
 | contosodc1 |[レプリカ] |contososac1 |
 | contosodc2 |[レプリカ] |contososac2 |
@@ -181,7 +181,13 @@ ILB をデプロイするには、Azure ポータルで [ロード バランサ�
 [ILB 設定] パネルで [正常性プローブ] を選択します。
 
 1. [追加] をクリックします。
-2. プローブの詳細を入力します。a.  **[名前]**: プローブ名。b.  **[プロトコル]**: HTTP c.  **[ポート]**: 80 (HTTP) d.  **[パス]**: /adfs/probe e.  **[間隔]**: 5 (既定値) - この値は、ILB がバックエンド プール内の仮想マシンをプローブする間隔です。f.  **[Unhealthy threshold limit]\(異常しきい値\)**: 2 (既定値) - これはプローブ エラーの連続回数のしきい値です。この値を超えると、ILB はバックエンド プール内の仮想マシンが応答していないと判断し、トラフィックの送信を停止します。
+2. プローブの詳細を指定します  
+   a. **名前**: プローブ名  
+   b. **プロトコル**: HTTP  
+   c. **ポート**:80 (HTTP)  
+   d. **パス**:/adfs/probe   
+   e. **間隔**: 5 (既定値)-これは、ilb がバックエンドプール内のマシンをプローブする間隔です。  
+   f. **[Unhealthy threshold limit]\(異常しきい値\)**: 2 (既定値) - これはプローブ エラーの連続回数のしきい値です。この値を超えると、ILB はバックエンド プール内の仮想マシンが応答していないと判断し、トラフィックの送信を停止します。
 
 
 完全な HTTPS パス チェックが実行できない AD FS 環境での正常性チェックには、明示的に作成された /adfs/probe エンドポイントを使用しています。  基本的なポート 443 チェックでは、最新の AD FS デプロイの状態が正確に反映されないため、この方が明らかに有利な方法といえます。  詳細については、https://blogs.technet.microsoft.com/applicationproxyblog/2014/10/17/hardware-load-balancer-health-checks-and-web-application-proxy-ad-fs-2012-r2/ を参照してください。
@@ -192,7 +198,13 @@ ILB をデプロイするには、Azure ポータルで [ロード バランサ�
 
 1. ILB の設定パネルから負荷分散規則を選択します。
 2. [負荷分散規則] パネルの [追加] をクリックします。
-3. [負荷分散規則の追加] パネルで、a.  **[名前]**: 規則の名前を入力します。b.  **[プロトコル]**: [TCP] を選択します。c.  **[ポート]**: 443。d.  **[バックエンド ポート]**: 443。e.  **[バックエンド プール]**: AD FS クラスター用に作成しておいたプールを選択します。f.  **[プローブ]**: AD FS サーバー用に作成しておいたプローブを選択します。
+3. [負荷分散規則の追加] パネルで、  
+   a. **名前**: 規則の名前を指定します。  
+   b. **プロトコル**: [TCP] を選択します。  
+   c. **ポート**: 443  
+   d. **バックエンドポート**: 443  
+   e. **バックエンドプール**: AD FS クラスター用に作成したプールを選択します  
+   f. **[プローブ]**: AD FS サーバー用に作成しておいたプローブを選択します。
 
 ![Configure ILB balancing rules](./media/how-to-connect-fed-azure-adfs/ilbdeployment5.png)
 
@@ -201,15 +213,21 @@ ILB をデプロイするには、Azure ポータルで [ロード バランサ�
 内部 DNS サーバーを使用して、ILB の A レコードを作成します。 A レコードは、IP アドレスが ILB の IP アドレスを指すフェデレーションサービス用である必要があります。 たとえば、ILB IP アドレスが10.3.0.8 で、インストールされているフェデレーションサービスが fs.contoso.com の場合、10.3.0.8 を指す fs.contoso.com の A レコードを作成します。
 これにより、fs.contoso.com のすべてのデータ trasmitted が ILB で終了し、適切にルーティングされるようになります。 
 
+> [!WARNING]
+> AD FS データベースに WID (Windows Internal Database) を使用している場合は、この値を一時的にプライマリ AD FS サーバーを指すように設定する必要があります。そうしないと、Web アプリケーションプロキシは enrollement に失敗します。 すべての Web Appplication プロキシサーバーを正常に登録したら、この DNS エントリをロードバランサーを指すように変更します。
+
 > [!NOTE]
->デプロイでも IPv6 を使用している場合は、必ず対応する AAAA レコードを作成してください。
->
+> デプロイでも IPv6 を使用している場合は、必ず対応する AAAA レコードを作成してください。
 >
 
 ### <a name="7-configuring-the-web-application-proxy-server"></a>7. Web アプリケーションプロキシサーバーを構成する
 **7.1.AD FS サーバーに到達するための構成を Web アプリケーション プロキシ サーバーに対して行う**
 
 Web アプリケーション プロキシ サーバーが ILB の内側にある AD FS サーバーに到達するためには、%systemroot%\system32\drivers\etc\hosts にその ILB のレコードを作成する必要があります。 識別名 (DN) は、フェデレーション サービスの名前 (例: fs.contoso.com) となることに注意してください。 また、IP エントリは ILB の IP アドレス (例では 10.3.0.8) のものである必要があります。
+
+> [!WARNING]
+> AD FS データベースに WID (Windows Internal Database) を使用している場合は、この値を一時的にプライマリ AD FS サーバーをポイントするように設定する必要があります。そうしないと、Web アプリケーションプロキシは enrollement に失敗します。 すべての Web Appplication プロキシサーバーを正常に登録したら、この DNS エントリをロードバランサーを指すように変更します。
+
 
 **7.2.Web アプリケーション プロキシ ロールをインストールする**
 
@@ -268,7 +286,7 @@ ILB と同じ手順に従って、TCP 443 の負荷分散規則を構成しま�
 
 | ルール | 説明 | Flow |
 |:--- |:--- |:---:|
-| AllowHTTPSFromDMZ |DMZ からの HTTPS 通信を許可します。 |着信 |
+| AllowHTTPSFromDMZ |DMZ からの HTTPS 通信を許可します。 |受信 |
 | DenyInternetOutbound |インターネットへのアクセスを禁止します。 |送信 |
 
 ![INT access rules (inbound)](./media/how-to-connect-fed-azure-adfs/nsg_int.png)
@@ -277,13 +295,13 @@ ILB と同じ手順に従って、TCP 443 の負荷分散規則を構成しま�
 
 | ルール | 説明 | Flow |
 |:--- |:--- |:---:|
-| AllowHTTPSFromInternet |インターネットから DMZ への HTTPS を許可します。 |着信 |
+| AllowHTTPSFromInternet |インターネットから DMZ への HTTPS を許可します。 |受信 |
 | DenyInternetOutbound |インターネットへの通信は HTTPS を除きすべてブロックします。 |送信 |
 
 ![EXT access rules (inbound)](./media/how-to-connect-fed-azure-adfs/nsg_dmz.png)
 
 > [!NOTE]
-> クライアント ユーザー証明書認証 (X509 ユーザー証明書を使用した clientTLS 認証) が必要である場合、AD FS の要件として、受信アクセス用に TCP ポート 49443 を有効にする必要があります。
+> クライアントユーザー証明書認証 (x.509 ユーザー証明書を使用した clientTLS 認証) が必要な場合、AD FS は、受信アクセスに対して TCP ポート49443を有効にする必要があります。
 > 
 > 
 
@@ -339,7 +357,7 @@ AD FS のテストは、IdpInitiatedSignon.aspx ページを使用して行う�
 ## <a name="additional-resources"></a>その他の技術情報
 * [可用性セット](https://aka.ms/Azure/Availability) 
 * [Azure Load Balancer](https://aka.ms/Azure/ILB)
-* [内部ロード バランサー](https://aka.ms/Azure/ILB/Internal)
+* [内部 Load Balancer](https://aka.ms/Azure/ILB/Internal)
 * [インターネットに接続する Load Balancer](https://aka.ms/Azure/ILB/Internet)
 * [ストレージ アカウント](https://aka.ms/Azure/Storage)
 * [Azure 仮想ネットワーク](https://aka.ms/Azure/VNet)

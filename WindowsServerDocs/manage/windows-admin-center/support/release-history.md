@@ -7,18 +7,19 @@ author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 01/06/2020
 ms.prod: windows-server
-ms.openlocfilehash: 3976761836e4bbec2a3d06d56220066a595046b4
-ms.sourcegitcommit: 074b59341640a8ae0586d6b37df7ba256e03a0c6
+ms.openlocfilehash: a047965c260198336d3a34386cb5dc72094e7a16
+ms.sourcegitcommit: b35fbd2a67d7a3395b50b2a3acd0817ba4e36b26
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81650094"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86891337"
 ---
 # <a name="windows-admin-center-release-history"></a>Windows 管理センターリリース履歴
 
 リリースされた最新の機能の一覧を次に示します。
 
-- バージョン[1910.2](https://aka.ms/wac1910.2)は最新の GA リリースです。プラットフォームのアクセシビリティと多くのバグ修正に対する更新が含まれています。
+- バージョン[2007](https://aka.ms/wac2007)は最新の GA リリースです。新しい Azure Stack HCI と、いくつかのツールの新機能がサポートされています。
+- バージョン[1910.2](https://aka.ms/wac1910.2)には、プラットフォームのアクセシビリティの更新と多数のバグ修正が含まれています
 - バージョン[1910](https://aka.ms/wac1910)では、いくつかの新しい Azure ハイブリッドサービスが導入され、以前プレビュー段階にあった機能が GA チャネルに導入されました。
 - バージョン [1909](https://aka.ms/wac1909) では、Azure VM 固有の接続の種類が導入され、従来のフェールオーバー クラスターと HCI クラスターの接続の種類が統合されています。
 - バージョン [1908](https://aka.ms/wac1908) では、視覚的な更新、Packetmon、FlowLog Audit、クラスター用 Azure Monitor のオンボード、および HTTPS 経由の WinRM (ポート 5986) のサポートが追加されています。

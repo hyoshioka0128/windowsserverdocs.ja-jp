@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 9389d1565462572a5617856f0f2531580b069745
-ms.sourcegitcommit: 074b59341640a8ae0586d6b37df7ba256e03a0c6
+ms.openlocfilehash: b6fc6c662630af5658e5f186c958f4ddaffccc42
+ms.sourcegitcommit: 4af8ab2e5c199ecff0697e5331fa7f61f2556a8f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81650073"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86866031"
 ---
 # <a name="upgrading-to-ad-fs-in-windows-server-2016-using-a-wid-database"></a>WID データベースを使用した、Windows Server 2016 での AD FS へのアップグレード
 
@@ -122,7 +122,7 @@ Invoke-AdfsFarmBehaviorLevelRaise
 
 ![upgrade](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_12.png)
 
-11. 同様に、PowerShell コマンドレット`Get-AdfsFarmInformation`を使用して、現在の fbl を表示できます。
+11. 同様に、PowerShell コマンドレットを使用して、 `Get-AdfsFarmInformation` 現在の FBL を表示できます。
 
 ![upgrade](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_13.png)
 
@@ -144,6 +144,9 @@ Get WebApplicationProxyConfiguration コマンドレットを実行して、WAP 
 ```PowerShell
 Get-WebApplicationProxyConfiguration
 ```
+> [!NOTE]
+> ConfigurationVersion が Windows Server 2016 の場合は、次の手順をスキップします。 これは、Windows Server 2016/2019 の Web アプリケーションプロキシの正しい値です。
+
 WAP サーバーの ConfigurationVersion をアップグレードするには、次の Powershell コマンドを実行します。
 
 ```PowerShell
