@@ -9,67 +9,67 @@ metadata:
   author: eross-msft
   ms.author: lizross
   ms.date: 06/10/2020
-  ms.openlocfilehash: 2196c278e66adbf910646ab1c080efe39e2a4fe7
-  ms.sourcegitcommit: 1c9cb4be74d92afb938cad870c0b4bf506b89e98
+  ms.openlocfilehash: c07ada45d2bb1c1d95901bd493754c93ae75d3d4
+  ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 06/24/2020
-  ms.locfileid: "85332619"
+  ms.lasthandoff: 07/23/2020
+  ms.locfileid: "86955094"
 landingContent:
 - title: Always On VPN について
   linkLists:
   - linkListType: overview
     links:
     - text: Always On VPN の機能
-      url: /windows-server/remote/remote-access/vpn/vpn-map-da
+      url: ../vpn-map-da.md
     - text: テクノロジの概要
-      url: /windows-server/remote/remote-access/vpn/always-on-vpn/always-on-vpn-technology-overview
+      url: ./always-on-vpn-technology-overview.md
     - text: Always On VPN の機能強化
-      url: /windows-server/remote/remote-access/vpn/always-on-vpn/always-on-vpn-technology-overview
+      url: ./always-on-vpn-technology-overview.md
     - text: Always On VPN の高度な機能
-      url: /windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-adv-options
+      url: ./deploy/always-on-vpn-adv-options.md
     - text: Windows Server および Windows 10 のための Always On VPN 展開
-      url: /windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy
+      url: ./deploy/always-on-vpn-deploy.md
 - title: Always On VPN の展開
   linkLists:
   - linkListType: deploy
     links:
     - text: 展開のワークフローとシナリオ
-      url: /windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy-deployment
+      url: ./deploy/always-on-vpn-deploy-deployment.md
     - text: Always On VPN 展開を計画する
-      url: /windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy-planning
+      url: ./deploy/always-on-vpn-deploy-planning.md
     - text: VPN インフラストラクチャの展開
-      url: /windows-server/remote/remote-access/vpn/always-on-vpn/deploy/vpn-deploy-server-infrastructure
+      url: ./deploy/vpn-deploy-server-infrastructure.md
     - text: 条件付きのアクセスの構成
-      url: /windows-server/remote/remote-access/vpn/ad-ca-vpn-connectivity-windows10
+      url: ../ad-ca-vpn-connectivity-windows10.md
 - title: トラブルシューティング
   linkLists:
   - linkListType: how-to-guide
     links:
     - text: VPN_Profile.ps1 スクリプトの問題
-      url: /windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy-troubleshooting#vpnprofileps1-script-issues
+      url: ./deploy/always-on-vpn-deploy-troubleshooting.md#vpn_profileps1-script-issues
     - text: Always On VPN クライアント接続の問題
-      url: /windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy-troubleshooting#always-on-vpn-client-connection-issues
+      url: ./deploy/always-on-vpn-deploy-troubleshooting.md#always-on-vpn-client-connection-issues
     - text: Azure AD 条件付きアクセス接続の問題
-      url: /windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy-troubleshooting#azure-ad-conditional-access-connection-issues
+      url: ./deploy/always-on-vpn-deploy-troubleshooting.md#azure-ad-conditional-access-connection-issues
   - linkListType: reference
     links:
     - text: エラー コード
-      url: /windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy-troubleshooting#error-codes
+      url: ./deploy/always-on-vpn-deploy-troubleshooting.md#error-codes
     - text: ログ ファイル
-      url: /windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy-troubleshooting#logs
+      url: ./deploy/always-on-vpn-deploy-troubleshooting.md#logs
 - title: その他の資料
   linkLists:
   - linkListType: overview
     links:
     - text: Windows 10 VPN テクニカル ガイド
-      url: https://docs.microsoft.com/windows/access-protection/vpn/vpn-guide
+      url: /windows/access-protection/vpn/vpn-guide
     - text: VPNv2 CSP
-      url: https://msdn.microsoft.com/windows/hardware/commercialize/customize/mdm/vpnv2-csp
+      url: /windows/client-management/mdm/vpnv2-csp
     - text: Active Directory 証明書サービス
-      url: https://technet.microsoft.com/library/hh831740.aspx
+      url: /previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831740(v=ws.11)
     - text: 証明書テンプレート
-      url: https://technet.microsoft.com/library/cc730705.aspx
+      url: /previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc730705(v=ws.11)
     - text: 公開キー基盤設計ガイダンス
       url: https://social.technet.microsoft.com/wiki/contents/articles/2901.public-key-infrastructure-design-guidance.aspx
     - text: AD CS ステップ バイ ステップ ガイド - 2 層 PKI 階層の展開

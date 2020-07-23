@@ -13,74 +13,74 @@ metadata:
   ms.localizationpriority: high
   ms.topic: landing-page
   ms.date: 06/29/2020
-  ms.openlocfilehash: e9b87bf12add79075d1999f2b8f048314aad57ed
-  ms.sourcegitcommit: 457e88e5aa6be13a2bffdb8e434a8efc3698678f
+  ms.openlocfilehash: f57b5b034ac669b96a241f0913147b0af4fcca0b
+  ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 06/30/2020
-  ms.locfileid: "85549205"
+  ms.lasthandoff: 07/23/2020
+  ms.locfileid: "86964804"
 landingContent:
 - title: MultiPoint Services
   linkLists:
   - linkListType: overview
     links:
     - text: MultiPoint Services の展開を計画する
-      url: /windows-server/remote/multipoint-services/planning-a-multipoint-services-deployment
+      url: ./multipoint-services/planning-a-multipoint-services-deployment.md
     - text: MultiPoint Services の移行
-      url: /windows-server/remote/multipoint-services/multipoint-services-migrate
+      url: ./multipoint-services/multipoint-services-migrate.md
     - text: MultiPoint Services を展開する
-      url: /windows-server/remote/multipoint-services/deploying-multipoint-services
+      url: ./multipoint-services/deploying-multipoint-services.md
     - text: MultiPoint Services の管理
-      url: /windows-server/remote/multipoint-services/managing-multipoint-services
+      url: ./multipoint-services/managing-multipoint-services.md
 - title: リモート デスクトップ サービス
   linkLists:
   - linkListType: get-started
     links:
     - text: 開始
-      url: /windows-server/remote/remote-desktop-services/rds-get-started
+      url: ./remote-desktop-services/rds-get-started.md
   - linkListType: how-to-guide
     links:
     - text: 計画と設計
-      url: /windows-server/remote/remote-desktop-services/rds-plan-and-design
+      url: ./remote-desktop-services/rds-plan-and-design.md
     - text: 構築および展開
-      url: /windows-server/remote/remote-desktop-services/rds-build-and-deploy
+      url: ./remote-desktop-services/rds-build-and-deploy.md
     - text: 実行と調整
-      url: /windows-server/remote/remote-desktop-services/rds-run-and-tune
+      url: ./remote-desktop-services/rds-run-and-tune.md
     - text: リモート デスクトップ リソースへのアクセス
-      url: /windows-server/remote/remote-desktop-services/clients/remote-desktop-clients
+      url: ./remote-desktop-services/clients/remote-desktop-clients.md
 - title: リモート アクセス
   linkLists:
   - linkListType: overview
     links:
     - text: Always On VPN
-      url: /windows-server/remote/remote-access/vpn/always-on-vpn
+      url: ./remote-access/vpn/always-on-vpn/index.yml
     - text: 境界ゲートウェイ プロトコル (BGP)
-      url: /windows-server/remote/remote-access/bgp/border-gateway-protocol-bgp
+      url: ./remote-access/bgp/border-gateway-protocol-bgp.md
     - text: RAS ゲートウェイ
-      url: /windows-server/remote/remote-access/ras-gateway/ras-gateway
+      url: ./remote-access/ras-gateway/ras-gateway.md
     - text: リモート アクセス サーバーの役割
-      url: /windows-server/remote/remote-access/ras/remote-access-server-role-documentation
+      url: ./remote-access/ras/remote-access-server-role-documentation.md
     - text: 仮想プライベート ネットワーク (VPN)
-      url: /windows-server/remote/remote-access/vpn/vpn-top
+      url: ./remote-access/vpn/vpn-top.md
 - title: Web アプリケーション プロキシ
   linkLists:
   - linkListType: overview
     links:
     - text: Windows Server 2016 における Web アプリケーション プロキシ
-      url: /windows-server/remote/remote-access/web-application-proxy/web-application-proxy-windows-server
+      url: ./remote-access/web-application-proxy/web-application-proxy-windows-server.md
   - linkListType: how-to-guide
     links:
     - text: AD FS 事前認証を使用してアプリケーションを公開する
-      url: /windows-server/remote/remote-access/web-application-proxy/publishing-applications-using-ad-fs-preauthentication
+      url: ./remote-access/web-application-proxy/publishing-applications-using-ad-fs-preauthentication.md
     - text: SharePoint、Exchange、および RDG によるアプリケーションの発行
-      url: /windows-server/remote/remote-access/web-application-proxy/publishing-applications-with-sharepoint,-exchange-and-rdg
+      url: ./remote-access/web-application-proxy/publishing-applications-with-sharepoint,-exchange-and-rdg.md
     - text: Web アプリケーション プロキシのトラブルシューティング
-      url: /windows-server/remote/remote-access/web-application-proxy/troubleshooting-web-application-proxy
+      url: ./remote-access/web-application-proxy/troubleshooting-web-application-proxy.md
 - title: ツール
   linkLists:
   - linkListType: overview
     links:
     - text: リモート サーバー管理ツール
-      url: /windows-server/remote/remote-server-administration-tools
+      url: ./remote-server-administration-tools.md
     - text: Windows での OpenSSH
-      url: /windows-server/administration/openssh/openssh_overview
+      url: ../administration/openssh/openssh_overview.md

@@ -201,9 +201,9 @@
 
 ### [仮想プライベート ネットワーク (VPN)](remote-access/vpn/vpn-top.md)
 #### [Windows 10 の VPN デバイス トンネル](remote-access/vpn/vpn-device-tunnel-config.md)
-#### [Windows 10 VPN テクニカル ガイド](https://docs.microsoft.com/windows/security/identity-protection/vpn/vpn-guide)
-#### [IKEv2 VPN 接続で Diffie Hellman プロトコルを構成する方法](https://docs.microsoft.com/windows/security/identity-protection/vpn/how-to-configure-diffie-hellman-protocol-over-ikev2-vpn-connections)
-#### [VPN と Wi-Fi 接続でシングル サインオン (SSO) を使用する方法](https://docs.microsoft.com/windows/security/identity-protection/vpn/how-to-use-single-sign-on-sso-over-vpn-and-wi-fi-connections)
+#### [Windows 10 VPN テクニカル ガイド](/windows/security/identity-protection/vpn/vpn-guide)
+#### [IKEv2 VPN 接続で Diffie Hellman プロトコルを構成する方法](/windows/security/identity-protection/vpn/how-to-configure-diffie-hellman-protocol-over-ikev2-vpn-connections)
+#### [VPN と Wi-Fi 接続でシングル サインオン (SSO) を使用する方法](/windows/security/identity-protection/vpn/how-to-use-single-sign-on-sso-over-vpn-and-wi-fi-connections)
 
 
 #### [DirectAccess](remote-access/directaccess/directAccess.md)
@@ -286,4 +286,3 @@
 ### [AD FS 事前認証を使用してアプリケーションを公開する](remote-access//web-application-proxy/Publishing-Applications-using-AD-FS-Preauthentication.md)
 ### [SharePoint、Exchange、および RDG によるアプリケーションの発行](remote-access//web-application-proxy/Publishing-Applications-with-SharePoint,-Exchange-and-RDG.md)
 ### [Web アプリケーション プロキシのトラブルシューティング](remote-access//web-application-proxy/Troubleshooting-Web-Application-Proxy.md)
-

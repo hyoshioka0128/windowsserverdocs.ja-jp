@@ -275,7 +275,7 @@
 #### [Azure での AD FS の展開](ad-fs/deployment/how-to-connect-fed-azure-adfs.md)
 #### [Azure Traffic Manager による Azure での AD FS](ad-fs/deployment/active-directory-adfs-in-azure-with-azure-traffic-manager.md)  
 #### [SQL データベースを使用した、Windows Server 2016 での AD FS へのアップグレード](ad-fs/deployment/Upgrading-to-AD-FS-in-Windows-Server-SQL.md)
-#### [Azure AD Connect Health を展開してクラウドでオンプレミスの ID インフラストラクチャを監視する](https://azure.microsoft.com/documentation/articles/active-directory-aadconnect-health)
+#### [Azure AD Connect Health を展開してクラウドでオンプレミスの ID インフラストラクチャを監視する](/azure/active-directory/hybrid/whatis-hybrid-identity)
 
 
 #### [Windows Server 2016 と 2012 R2 の AD FS 展開ガイド](ad-fs/deployment/Windows-Server-2012-R2-AD-FS-Deployment-Guide.md)
@@ -330,8 +330,8 @@
 ##### [フェデレーション サーバー プロキシの展開](ad-fs/deployment/Deploying-Federation-Server-Proxies.md)
 ###### [チェックリスト:フェデレーション サーバー プロキシのセットアップ](ad-fs/deployment/Checklist--Setting-Up-a-Federation-Server-Proxy.md)
 ###### [コンピューターのドメインへの参加](ad-fs/deployment/Join-a-computer-to-a-Domain.md)
-###### [境界ネットワークのみを対象とする DNS ゾーンでフェデレーション サーバー プロキシの名前解決を構成する](ad-fs/deployment/Configure-Name-Resolution-for-a-Federation-Server-Proxy-in-a-DNS-Zone-That-Serves-Only-the-Perimeter-Network.md)
-###### [境界ネットワークとインターネット クライアントの両方を対象とする DNS ゾーンでフェデレーション サーバー プロキシの名前解決を構成する](ad-fs/deployment/Configure-Name-Resolution-for-a-Federation-Server-Proxy-in-a-DNS-Zone-That-Serves-Both-the-Perimeter-Network-and-Internet-Clients.md)
+###### [境界ネットワークのみを対象とする DNS ゾーンでフェデレーション サーバー プロキシの名前解決を構成する](./ad-fs/deployment/configure-name-resolution-for-federation-server-proxy-in-dns-zone-serving-only-perimeter-network.md)
+###### [境界ネットワークとインターネット クライアントの両方を対象とする DNS ゾーンでフェデレーション サーバー プロキシの名前解決を構成する](./ad-fs/deployment/configure-name-resolution-for-federation-server-proxy-in-dns-zone-serving-only-perimeter-network.md)
 ###### [サーバー認証証明書の秘密キーの部分をエクスポートする](ad-fs/deployment/Export-the-Private-Key-Portion-of-a-Server-Authentication-Certificate.md)
 ###### [サーバー認証証明書を既定の Web サイトにインポートする](ad-fs/deployment/import-a-Server-Authentication-Certificate-to-the-Default-Web-Site.md)
 ###### [フェデレーション サービス プロキシ役割サービスをインストールする](ad-fs/deployment/Install-the-Federation-Service-Proxy-Role-Service.md)
@@ -345,7 +345,7 @@
 ###### [証明書利用者信頼を手動で作成する](ad-fs/operations/create-a-Relying-Party-Trust.md)
 ###### [要求プロバイダー信頼の手動作成](ad-fs/operations/create-a-Claims-Provider-Trust.md)
 ###### [AD FS 1.x と互換性のある要求を送信する規則を作成する](ad-fs/operations/create-a-Rule-to-Send-an-AD-FS-1x-compatible-Claim.md)
-#### [Azure AD Connect Health の展開](https://azure.microsoft.com/documentation/articles/active-directory-aadconnect-health/)
+#### [Azure AD Connect Health の展開](/azure/active-directory/hybrid/whatis-hybrid-identity)
 #### [Windows Server 2012 R2 への Active Directory フェデレーション サービス (AD FS) 役割サービスの移行](ad-fs/deployment/migrate-ad-fs-service-role-to-windows-server-r2.md)
 ##### [AD FS フェデレーション サーバーの移行準備](ad-fs/deployment/prepare-migrate-ad-fs-server-r2.md)
 #####[AD FS フェデレーション サーバーの移行](ad-fs/deployment/migrate-ad-fs-fed-server-r2.md)
