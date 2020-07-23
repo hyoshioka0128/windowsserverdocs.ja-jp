@@ -8,12 +8,12 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: e6142d3facb32a81d8d7c54afe9c2f60fc9eb674
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: ad4e89be7eeb6190d27ee0e15e370bcaa1806cb8
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81623810"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959374"
 ---
 # <a name="planning-operations-master-role-placement"></a>操作マスターの役割の配置を計画する
 
@@ -55,9 +55,9 @@ PDC エミュレーターは、クライアントパスワードの変更を処�
 
 必要に応じて、パスワード転送操作のために、そのドメインのユーザー数が多い場所に PDC エミュレーターを配置します。 また、レプリケーションの待機時間を最小限に抑えるために、場所が他の場所に適切に接続されていることを確認します。
 
-PDC エミュレーターを配置する場所と、各場所で表される各ドメインのユーザー数に関する情報を文書化するためのワークシートについては、「 [Windows Server 2003 展開キット用のジョブエイド](https://microsoft.com/download/details.aspx?id=9608)」、「Job_Aids_Designing_and_Deploying_Directory_and_Security_Services をダウンロードして、ドメインコントローラーの配置を開く (DSSTOPO_4)」を参照してください。
+各場所で表される各ドメインの PDC エミュレーターとユーザー数に関する情報を文書化するためのワークシートについては、「 [Windows Server 2003 展開キット用のジョブエイド](https://microsoft.com/download/details.aspx?id=9608)」、「Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip をダウンロードして、ドメインコントローラーの配置を開く」 (DSSTOPO_4.doc) を参照してください。
 
-地域ドメインを展開するときに、PDC エミュレーターを配置する必要がある場所に関する情報を参照する必要があります。 地域ドメインの展開に関する詳細については、次を参照してください。 [を展開する Windows Server 2008 地域ドメイン](https://technet.microsoft.com/library/cc755118.aspx)します。
+地域ドメインを展開するときに、PDC エミュレーターを配置する必要がある場所に関する情報を参照する必要があります。 地域ドメインの展開に関する詳細については、次を参照してください。 [を展開する Windows Server 2008 地域ドメイン](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc755118(v=ws.10))します。
 
 ## <a name="requirements-for-infrastructure-master-placement"></a>インフラストラクチャマスターの配置の要件
 
@@ -82,9 +82,9 @@ PDC エミュレーターを配置する場所と、各場所で表される各�
 - サイト C と D のドメインコントローラは、ディレクトリ、DNS、またはカスタムのアプリケーションパーティションを追加または削除できません。
 - サイト C と D のドメインコントローラーでは、スキーマを変更することはできません。
 
-操作マスターの役割の配置を計画するためのワークシートについては、「 [Windows Server 2003 展開キット用のジョブエイド](https://microsoft.com/download/details.aspx?id=9608)」、「Job_Aids_Designing_and_Deploying_Directory_and_Security_Services をダウンロードして、ドメインコントローラーの配置を開く」 (DSSTOPO_4 .doc) を参照してください。
+操作マスターの役割の配置を計画するためのワークシートについては、「 [Windows Server 2003 展開キット用のジョブエイド](https://microsoft.com/download/details.aspx?id=9608)」、「Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip をダウンロードして、ドメインコントローラーの配置を開く」 (DSSTOPO_4.doc) を参照してください。
 
-フォレストルートドメインと地域ドメインを作成するときに、この情報を参照する必要があります。 フォレストルートドメインの展開の詳細については、「 [Windows Server 2008 フォレストルートドメイン](https://technet.microsoft.com/library/cc731174.aspx)の展開の展開」を参照してください。 地域ドメインの展開に関する詳細については、次を参照してください。 [を展開する Windows Server 2008 地域ドメイン](https://technet.microsoft.com/library/cc755118.aspx)します。
+フォレストルートドメインと地域ドメインを作成するときに、この情報を参照する必要があります。 フォレストルートドメインの展開の詳細については、「 [Windows Server 2008 フォレストルートドメイン](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731174(v=ws.10))の展開の展開」を参照してください。 地域ドメインの展開に関する詳細については、次を参照してください。 [を展開する Windows Server 2008 地域ドメイン](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc755118(v=ws.10))します。
 
 ## <a name="next-steps"></a>次のステップ
 

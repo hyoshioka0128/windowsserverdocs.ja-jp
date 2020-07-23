@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 2ce45d3952b6f848635ed601f7ff251fcda3982c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 670c853cb1c41fbbc799eca4cc6ac54588c55761
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80857645"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86960504"
 ---
 # <a name="walkthrough-guide-manage-risk-with-conditional-access-control"></a>チュートリアル ガイド:条件付きアクセス制御によってリスクを管理する
 
@@ -25,15 +25,15 @@ ms.locfileid: "80857645"
 
 このチュートリアルは次のセクションで構成されています。
 
--   [手順 1: ラボ環境のセットアップ](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md#BKMK_1)
+-   [手順 1:ラボ環境のセットアップ](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md#BKMK_1)
 
--   [手順 2: 既定の AD FS アクセス制御メカニズムを確認する](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md#BKMK_2)
+-   [手順 2:AD FS の既定のアクセス制御メカニズムを確認する](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md#BKMK_2)
 
--   [手順 3: ユーザーデータに基づいて条件付きアクセス制御ポリシーを構成する](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md#BKMK_3)
+-   [手順 3:手順 3: ユーザー データに基づく条件付きアクセス制御ポリシーを構成する](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md#BKMK_3)
 
--   [手順 4: 条件付きアクセス制御メカニズムを確認する](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md#BKMK_4)
+-   [手順 4:条件付きアクセス制御メカニズムを確認する](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md#BKMK_4)
 
-## <a name="step-1-setting-up-the-lab-environment"></a><a name="BKMK_1"></a>手順 1: ラボ環境のセットアップ
+## <a name="step-1-setting-up-the-lab-environment"></a><a name="BKMK_1"></a>手順 1:ラボ環境のセットアップ
 このチュートリアルを完了するには、次のコンポーネントで構成された環境が必要です。
 
 -   テストユーザーアカウントとグループアカウントを持つ Active Directory ドメイン。 windows server 2008、Windows Server 2008 R2、または Windows server 2012 で実行され、スキーマが Windows Server 2012 R2 または windows server 2012 R2 で実行されている Active Directory ドメインにアップグレードされます。
@@ -51,12 +51,12 @@ ms.locfileid: "80857645"
 
 このような環境を設定する方法については、次を参照してください。 [Windows Server 2012 R2 の AD FS のラボ環境を設定](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)します。
 
-## <a name="step-2-verify-the-default-ad-fs-access-control-mechanism"></a><a name="BKMK_2"></a>手順 2: 既定の AD FS アクセス制御メカニズムを確認する
+## <a name="step-2-verify-the-default-ad-fs-access-control-mechanism"></a><a name="BKMK_2"></a>手順 2:AD FS の既定のアクセス制御メカニズムを確認する
 この手順では、AD FS の既定のアクセス制御メカニズムにより、ユーザーが AD FS のサインイン ページにリダイレクトされ、有効な資格情報を入力するとアプリケーションへのアクセスが許可されることを確認します。 使用することができます、 **Robert Hatley** AD アカウントと **claimapp** サンプル アプリケーションで構成した [Windows Server 2012 R2 の AD FS のラボ環境を設定](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)します。
 
 #### <a name="to-verify-the-default-ad-fs-access-control-mechanism"></a>AD FS の既定のアクセス制御メカニズムを確認するには
 
-1.  クライアントコンピューターで、ブラウザーウィンドウを開き、サンプルアプリケーション ( **https://webserv1.contoso.com/claimapp** ) に移動します。
+1.  クライアントコンピューターで、ブラウザーウィンドウを開き、サンプルアプリケーション () に移動し **https://webserv1.contoso.com/claimapp** ます。
 
     この操作により、要求がフェデレーション サーバーの役割に自動的にリダイレクトされた後、ユーザー名とパスワードでサインインするように求められます。
 
@@ -64,22 +64,22 @@ ms.locfileid: "80857645"
 
     アプリケーションへのアクセスが許可されます。
 
-## <a name="step-3-configure-conditional-access-control-policy-based-on-user-data"></a><a name="BKMK_3"></a>手順 3: ユーザーデータに基づいて条件付きアクセス制御ポリシーを構成する
+## <a name="step-3-configure-conditional-access-control-policy-based-on-user-data"></a><a name="BKMK_3"></a>手順 3:手順 3: ユーザー データに基づく条件付きアクセス制御ポリシーを構成する
 この手順では、ユーザーのグループ メンバーシップ データに基づくアクセス制御ポリシーを設定します。 つまり、サンプル アプリケーションである **claimapp** を表す証明書利用者信頼について、フェデレーション サーバーで**発行承認規則**を構成します。 この規則のロジックにより、 **Robert Hatley** AD ユーザーは**Finance**グループに属しているため、このアプリケーションにアクセスするために必要な要求が発行されます。 **Robert Hatley**アカウントを**Finance**グループに追加しました。「 [Windows Server 2012 R2 の AD FS 用のラボ環境をセットアップ](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)する」をご確認ください。
 
 AD FS 管理コンソールまたは Windows PowerShell のいずれかを使用してこのタスクを完了できます。
 
 #### <a name="to-configure-conditional-access-control-policy-based-on-user-data-via-the-ad-fs-management-console"></a>AD FS 管理コンソールを使用して、ユーザー データに基づく条件付きアクセス制御ポリシーを構成するには
 
-1.  AD FS 管理コンソールで、 **[信頼関係]** 、 **[証明書利用者信頼]** の順に移動します。
+1.  AD FS 管理コンソールで、**[信頼関係]**、**[証明書利用者信頼]** の順に移動します。
 
-2.  サンプル アプリケーション (**claimapp**) を表す証明書利用者信頼を選択し、 **[操作]** ウィンドウで、またはこの証明書利用者信頼を右クリックして、 **[要求規則の編集]** を選択します。
+2.  サンプル アプリケーション (**claimapp**) を表す証明書利用者信頼を選択し、**[操作]** ウィンドウで、またはこの証明書利用者信頼を右クリックして、**[要求規則の編集]** を選択します。
 
-3.  **[claimapp の要求規則の編集]** ウィンドウで、 **[発行承認規則]** タブを選択し、 **[規則の追加]** をクリックします。
+3.  **[claimapp の要求規則の編集]** ウィンドウで、**[発行承認規則]** タブを選択し、**[規則の追加]** をクリックします。
 
-4.  **発行承認要求規則の追加ウィザード**の **[規則テンプレートの選択]** ページで、 **[入力方向の要求に基づいてユーザーを許可または拒否]** 要求規則テンプレートを選択し、 **[次へ]** をクリックします。
+4.  **発行承認要求規則の追加ウィザード**の **[規則テンプレートの選択]** ページで、**[入力方向の要求に基づいてユーザーを許可または拒否]** 要求規則テンプレートを選択し、**[次へ]** をクリックします。
 
-5.  **[規則の構成]** ページで、次のすべての操作を実行してから、 **[完了]** をクリックします。
+5.  **[規則の構成]** ページで、次のすべての操作を実行してから、**[完了]** をクリックします。
 
     1.  要求規則の名前 (**TestRule** など) を入力します。
 
@@ -112,10 +112,10 @@ Set-AdfsRelyingPartyTrust -TargetRelyingParty $rp -IssuanceAuthorizationRules $G
 > [!NOTE]
 > <group_SID> を必ず AD グループ **Finance** の SID の値に置き換えます。
 
-## <a name="step-4-verify-conditional-access-control-mechanism"></a><a name="BKMK_4"></a>手順 4: 条件付きアクセス制御メカニズムを確認する
-この手順では、前の手順で設定した条件付きアクセス制御ポリシーを確認します。 次の手順を使用して、AD ユーザー **Robert Hatley** が **Finance** グループに属しているためサンプル アプリケーションにアクセスできること、**Finance** グループに属していない AD ユーザーはサンプル アプリケーションにアクセスできないことを確認できます。
+## <a name="step-4-verify-conditional-access-control-mechanism"></a><a name="BKMK_4"></a>手順 4:条件付きアクセス制御メカニズムを確認する
+この手順では、前の手順で設定した条件付きアクセス制御ポリシーを確認します。 次の手順を使用して、**Finance** グループに属している AD ユーザー **Robert Hatley** はサンプル アプリケーションにアクセスでき、**Finance** グループに属していない AD ユーザーはサンプル アプリケーションにアクセスできないことを確認できます。
 
-1.  クライアントコンピューターで、ブラウザーウィンドウを開き、サンプルアプリケーションに移動します。 **https://webserv1.contoso.com/claimapp**
+1.  クライアントコンピューターで、ブラウザーウィンドウを開き、サンプルアプリケーションに移動します。**https://webserv1.contoso.com/claimapp**
 
     この操作により、要求がフェデレーション サーバーの役割に自動的にリダイレクトされた後、ユーザー名とパスワードでサインインするように求められます。
 
@@ -123,13 +123,10 @@ Set-AdfsRelyingPartyTrust -TargetRelyingParty $rp -IssuanceAuthorizationRules $G
 
     アプリケーションへのアクセスが許可されます。
 
-3.  **Finance** グループに属していない別の AD ユーザーの資格情報を入力します (AD でユーザーアカウントを作成する方法の詳細については、「 [https://technet.microsoft.com/library/cc7833232.aspx](https://technet.microsoft.com/library/cc783323%28v=ws.10%29.aspx)」を参照してください。
+3.  **Finance** グループに属していない別の AD ユーザーの資格情報を入力します (AD でユーザーアカウントを作成する方法の詳細については、「」を参照してください [https://technet.microsoft.com/library/cc7833232.aspx](/previous-versions/windows/it-pro/windows-server-2003/cc783323(v=ws.10)) 。
 
-    前の手順でアクセス制御ポリシーが設定されているため、この時点で、 **Finance**グループに属していないこの AD ユーザーに対して "アクセスが拒否されました" というメッセージが表示されます。 既定のメッセージテキストは、**このサイトへのアクセスが許可されていないことを示します。ここをクリックしてサインアウトし、もう一度サインインするか、管理者にアクセス許可を問い合わせてください。** " です。ただし、このテキストはカスタマイズできます。 サインイン エクスペリエンスのカスタマイズ方法については、「 [Customizing the AD FS Sign-in Pages](https://technet.microsoft.com/library/dn280950.aspx)」を参照してください。
+    前の手順でアクセス制御ポリシーが設定されているため、この時点で、 **Finance**グループに属していないこの AD ユーザーに対して "アクセスが拒否されました" というメッセージが表示されます。 既定のメッセージテキストは、**このサイトへのアクセスが許可されていないことを示します。ここをクリックしてサインアウトし、もう一度サインインするか、管理者にアクセス許可を問い合わせてください。** " です。ただし、このテキストはカスタマイズできます。 サインイン エクスペリエンスのカスタマイズ方法については、「 [Customizing the AD FS Sign-in Pages](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn280950(v=ws.11))」を参照してください。
 
 ## <a name="see-also"></a>参照
-[Windows Server 2012 R2 で AD FS のラボ環境をセットアップ](../deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)
-[条件付き Access Control によるリスク管理](../../ad-fs/operations/Manage-Risk-with-Conditional-Access-Control.md)
-
-
-
+[条件付き Access Control](../../ad-fs/operations/Manage-Risk-with-Conditional-Access-Control.md) 
+ によるリスク管理[Windows Server 2012 R2 で AD FS 用のラボ環境をセットアップする](../deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)

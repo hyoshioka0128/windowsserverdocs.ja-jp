@@ -8,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: d1dd406780dc61e1ce52d423ca6148d2a9dd2c3d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 02393a7f34e20b50b60a738ceb0f5f3a2ac17990
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80823085"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958644"
 ---
 # <a name="ca-backup-and-restore-windows-powershell-cmdlets"></a>CA のバックアップと復元の Windows PowerShell コマンドレット
 
-> 適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 > 
 > **Author**: Justin 書籍、シニアサポートエスカレーションエンジニア (Windows グループ)  
 > 
@@ -32,7 +32,7 @@ ADCSAdministration Windows PowerShell モジュールは、Windows Server 2012 �
 -   Restore-CARoleService  
   
 ## <a name="backup-caroleservice"></a>Backup-CARoleService  
-**テーブル SEQ テーブル \\\* アラビア 17: Windows PowerShell コマンドレットのバックアップと復元**  
+**テーブル SEQ テーブル \\ \* アラビア 17: Windows PowerShell コマンドレットのバックアップと復元**  
   
 **ADCSAdministration コマンドレット: Backup-caroleservice**  
   
@@ -74,14 +74,14 @@ Backup-CARoleService c:\adcsbackup5 -Password (ConvertTo-SecureString "Pa55w0rd!
 |-DatabaseOnly|-CA 証明書を使用せずにデータベースを復元します。<p>復元-Backup-caroleservice c:\ adcsbackup6-DatabaseOnly|  
 |-Force|-既存のキーを上書きすることを許可します。<br />-省略可能なパラメーターですが、インプレースで復元する場合は、<p>復元-Backup-caroleservice c:\ adcsbackup1-Force|  
   
-### <a name="issues"></a>問題  
+### <a name="issues"></a>発行  
 パスワードで保護されていないバックアップは、Convertto-html SecureString 関数が-Password パラメーターを指定して Backup-caroleservice を使用して失敗した場合に実行されます。  
   
 ![CA のバックアップと復元](media/CA-Backup-and-Restore-Windows-PowerShell-cmdlets/GTR_ADDS_BackupCARole.gif)  
   
-**テーブル SEQ テーブル \\\* アラビア 18: 一般的なエラー**  
+**テーブル SEQ テーブル \\ \* アラビア 18: 一般的なエラー**  
   
-|操作|エラー|コメント|  
+|アクション|エラー|解説|  
 |----------|---------|-----------|  
 |**復元-Backup-caroleservice C:\ adcsbackup**|Backup-caroleservice: プロセスは、別のプロセスによって使用されているため、ファイルにアクセスできません。 (HRESULT からの例外:<p>0x80070020|Backup-caroleservice コマンドレットを実行する前に、Active Directory Certificate Services サービスを停止します。|  
 |**復元-Backup-caroleservice C:\ adcsbackup**|Backup-caroleservice: ディレクトリが空ではありません。 (HRESULT からの例外: 0x80070091)|-Force パラメーターを使用して、既存のキーを上書きする|  
@@ -89,12 +89,12 @@ Backup-CARoleService c:\adcsbackup5 -Password (ConvertTo-SecureString "Pa55w0rd!
 |**Backup-caroleservice C:\ adcsback15-Password (読み取りホスト-プロンプト "Password:"-AsSecureString)-DatabaseOnly**|Backup-caroleservice: 指定された名前付きパラメーターを使用してパラメーターセットを解決することはできません。|-Password パラメーターは、秘密キーのパスワード保護にのみ使用されます。そのため、パスワードを復元しない場合は無効になります。|  
 |**Backup-caroleservice C:\ adcsback14-Password (読み取りホスト-プロンプト "Password:"-AsSecureString)**|Backup-caroleservice: 指定されたファイルが見つかりません。 (HRESULT からの例外: 0x80070002)|指定されたパスには、有効なデータベースバックアップが含まれていません。  パスが無効であるか、または-KeysOnly オプションを使用してバックアップが実行された可能性があります。|  
   
-## <a name="additional-resources"></a>その他のリソース  
-[Active Directory 証明書サービス移行ガイド](https://technet.microsoft.com/library/ee126170(v=ws.10).aspx)  
+## <a name="additional-resources"></a>その他の情報  
+[Active Directory 証明書サービス移行ガイド](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee126170(v=ws.10))  
   
-[CA データベースおよび秘密キーのバックアップ](https://technet.microsoft.com/library/ee126140(v=ws.10).aspx#BKMK_BackUpDB)  
+[CA データベースおよび秘密キーのバックアップ](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee126140(v=ws.10)#BKMK_BackUpDB)  
   
-[移行先サーバーでの CA データベースおよび構成の復元](https://technet.microsoft.com/library/ee126140(v=ws.10).aspx#BKMK_RestoreCA)  
+[移行先サーバーでの CA データベースおよび構成の復元](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee126140(v=ws.10)#BKMK_RestoreCA)  
   
 ## <a name="try-this-backup-the-ca-in-your-lab-using-windows-powershell"></a>試してみる: Windows PowerShell を使用してラボで CA をバックアップする  
   
@@ -102,5 +102,3 @@ Backup-CARoleService c:\adcsbackup5 -Password (ConvertTo-SecureString "Pa55w0rd!
   
 2.  現時点では、CA の復元を停止します。  
   
-
-

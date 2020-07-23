@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 4ab00fe1fa3a40511ba60234025202e9303455f0
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: 228d4d1644c3bae60dcf293540ad764fb511922a
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81624430"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962504"
 ---
 # <a name="ad-ds-deployment-requirements"></a>AD DS の展開の要件
 
@@ -28,21 +28,21 @@ ms.locfileid: "81624430"
 
 ![AD DS 要件](media/AD-DS-Deployment-Requirements/033aad0b-25ff-4793-8825-88a6daa01a55.gif)
 
-詳細については、「 [Windows Server 2008 のフォレストルートドメインの展開](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731174(v=ws.10))」を参照してください。
+詳細については、「 [Windows Server 2008 のフォレストルートドメインの展開](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc731174(v=ws.10))」を参照してください。
 
 ## <a name="deploying-windows-server-2008-regional-domains"></a>Windows Server 2008 の地域ドメインの展開
 フォレストルートドメインの展開が完了したら、設計によって指定された新しい Windows Server 2008 地域ドメインをデプロイする準備が整います。 これを行うには、各地域ドメインにドメインコントローラーを展開する必要があります。 次の図は、地域ドメインを展開するプロセスを示しています。
 
 ![AD DS 要件](media/AD-DS-Deployment-Requirements/89a878c8-9a94-4180-ad43-ca75316a6318.gif)
 
-詳細については、「 [Windows Server 2008 の地域ドメインの展開](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc755118(v=ws.10))」を参照してください。
+詳細については、「 [Windows Server 2008 の地域ドメインの展開](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc755118(v=ws.10))」を参照してください。
 
 ## <a name="upgrading-active-directory-domains-to-windows-server-2008"></a>Active Directory ドメインの Windows Server 2008 へのアップグレード
-Windows 2000 または Windows Server 2003 ドメインを Windows Server 2008 ドメインにアップグレードすることは、Windows Server 2008 の追加機能を利用するための効率的で簡単な方法です。 ドメインをアップグレードすることで、現在のネットワークとドメインの構成を維持しながら、ネットワークインフラストラクチャのセキュリティ、スケーラビリティ、および管理の容易さを向上させることができます。 Windows 2000 または Windows Server 2003 から Windows Server 2008 にアップグレードするには、最小限のネットワーク構成が必要です。 また、アップグレードはユーザーの操作にほとんど影響しません。 詳細については、「 [Windows server 2008 および Windows server 2008 R2 AD DS ドメインへの Active Directory ドメインのアップグレード](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731188(v=ws.10))」を参照してください。
+Windows 2000 または Windows Server 2003 ドメインを Windows Server 2008 ドメインにアップグレードすることは、Windows Server 2008 の追加機能を利用するための効率的で簡単な方法です。 ドメインをアップグレードすることで、現在のネットワークとドメインの構成を維持しながら、ネットワークインフラストラクチャのセキュリティ、スケーラビリティ、および管理の容易さを向上させることができます。 Windows 2000 または Windows Server 2003 から Windows Server 2008 にアップグレードするには、最小限のネットワーク構成が必要です。 また、アップグレードはユーザーの操作にほとんど影響しません。 詳細については、「 [Windows server 2008 および Windows server 2008 R2 AD DS ドメインへの Active Directory ドメインのアップグレード](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc731188(v=ws.10))」を参照してください。
 
 ## <a name="restructuring-ad-ds-domains"></a>AD DS ドメインの再構築
 Windows Server 2008 フォレスト間でドメインを再構築すると (フォレストの再構築)、環境内のドメインの数を減らすことができるため、管理の複雑さとオーバーヘッドが軽減されます。 この再構築プロセスの一環として、フォレスト間でオブジェクトを移行する場合、ソースドメインとターゲットドメインの両方の環境が同時に存在します。 これにより、必要に応じて移行中にソース環境にロールバックすることができます。
 
 Windows server 2008 フォレスト (フォレスト内再構築) 内で Windows Server 2008 ドメインを再構築すると、ドメイン構造を統合できるため、管理の複雑さとオーバーヘッドが軽減されます。 フォレスト内のドメインを再構築すると、移行されたアカウントはソースドメインに存在しなくなります。
 
-Active Directory 移行ツール (ADMT) バージョン 3.1 (ADMT v1.0) を使用してドメインを再構築する方法の詳細については、「 [ADMT Guide: Active Directory ドメインの移行と再構築](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc974332(v=ws.10))」を参照してください。
+Active Directory 移行ツール (ADMT) バージョン 3.1 (ADMT v1.0) を使用してドメインを再構築する方法の詳細については、「 [ADMT Guide: Active Directory ドメインの移行と再構築](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc974332(v=ws.10))」を参照してください。

@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 480f44c6467587918ad347413315b208c874f8cd
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: e7e248f507ca6d38248bc931cb3d1b98aa385c88
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85922120"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956994"
 ---
 # <a name="manage-bde"></a>manage-bde
 
@@ -55,8 +55,8 @@ manage-bde [-status] [–on] [–off] [–pause] [–resume] [–lock] [–unloc
 | -? または /? | コマンドプロンプトで簡単なヘルプを表示します。 |
 | -help または-h | 表示は、コマンド プロンプトでヘルプを完了します。 |
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 
-- [コマンドラインを使用して BitLocker を有効にします。](https://technet.microsoft.com/library/dd894351(v=ws.10).aspx)
+- [コマンドラインを使用して BitLocker を有効にします。](/previous-versions/windows/it-pro/windows-7/dd894351(v=ws.10))

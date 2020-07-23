@@ -8,12 +8,12 @@ ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 734d5eaef97b23b774eb286134d07a17dc380da1
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: 72abc2b5b45ec1eefbff3ca82b619649ffd0fda9
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81623910"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959764"
 ---
 # <a name="understanding-ad-ds-design"></a>AD DS の設計とは
 
@@ -25,6 +25,6 @@ AD DS 配置プロジェクトには、設計フェーズ、配置フェーズ�
 
 このガイドに記載されている Windows Server AD DS の設計と展開の戦略は、さまざまなラボおよびパイロットプログラムのテストと、お客様の環境での正常な実装に基づいていますが、特定の複雑な環境に合わせて、AD DS の設計と展開をカスタマイズすることが必要になる場合があります。
 
-- ブランチオフィス環境で AD DS を展開する方法の詳細については、「[読み取り専用ドメインコントローラー (RODC) のブランチオフィス計画ガイド](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd734758(v=ws.10))」を参照してください。
-- Exchange 環境で AD DS を展開する方法の詳細については、 [Exchange Server 組織の Active Directory](https://docs.microsoft.com/Exchange/plan-and-deploy/active-directory/active-directory)に関する記事を参照してください。
-- 複数のフォレスト環境で AD DS を展開する方法の詳細については、「 [windows 2000 および Windows Server 2003 における複数のフォレストに関する考慮事項](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc739395(v=ws.10))」を参照してください。
+- ブランチオフィス環境で AD DS を展開する方法の詳細については、「[読み取り専用ドメインコントローラー (RODC) のブランチオフィス計画ガイド](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd734758(v=ws.10))」を参照してください。
+- Exchange 環境で AD DS を展開する方法の詳細については、 [Exchange Server 組織の Active Directory](/exchange/plan-and-deploy/active-directory/active-directory)に関する記事を参照してください。
+- 複数のフォレスト環境で AD DS を展開する方法の詳細については、「 [windows 2000 および Windows Server 2003 における複数のフォレストに関する考慮事項](/previous-versions/windows/it-pro/windows-server-2003/cc739395(v=ws.10))」を参照してください。

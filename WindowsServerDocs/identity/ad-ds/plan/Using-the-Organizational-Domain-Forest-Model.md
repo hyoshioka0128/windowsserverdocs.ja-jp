@@ -8,12 +8,12 @@ ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 1788989d3f2e3ceae46b59e393c925e3b5a7b588
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: 4216dea74b72d2257db32045ffda1a21ba6a4f43
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81623821"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965514"
 ---
 # <a name="using-the-organizational-domain-forest-model"></a>組織のドメイン フォレスト モデルを使用します。
 
@@ -57,4 +57,4 @@ ms.locfileid: "81623821"
 すべてのドメインの所有者を対応するこれらの条件の変更を加えた場合、将来必要がある複数フォレストの展開に組織のドメインに移動することがあります。
 
 > [!NOTE]
-> Windows Server 2008 の Active Directory ドメインにセキュリティ上のリスクを最小限に抑えるには、Active Directory インフラストラクチャの読み取り専用ドメイン コント ローラー (RODC) のデプロイを伴う管理者の役割の分離を使用します。 RODC は、Active Directory データベースの読み取り専用のパーティションをホストする Windows Server 2008 オペレーティング システムのドメイン コント ローラーの新しい型です。 Windows Server 2008 がリリースされる前に、は、ドメイン コント ローラーでサーバー メンテナンス作業をドメイン管理者が実行する必要があります。 Windows Server 2008 でそのユーザーのドメインまたはその他のドメイン コント ローラーの管理者権限を付与することがなくすべてのドメイン ユーザーを RODC のローカルの管理者権限を委任できます。 これにより、委任されたユーザーを RODC にログオンし、サーバー上のドライバーをアップグレードするなどのメンテナンス作業を実行できます。 ただし、この委任されたユーザーは、その他のドメイン コント ローラーにログオンまたはドメイン内の他の管理タスクを実行することはできません。 この方法で信頼されているユーザーができる他のドメインのセキュリティを損なうことがなく、RODC を効果的に管理する権限が委任します。 Rodc の詳細については、「 [AD DS: 読み取り専用ドメインコントローラー](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732801(v=ws.10))」を参照してください。
+> Windows Server 2008 の Active Directory ドメインにセキュリティ上のリスクを最小限に抑えるには、Active Directory インフラストラクチャの読み取り専用ドメイン コント ローラー (RODC) のデプロイを伴う管理者の役割の分離を使用します。 RODC は、Active Directory データベースの読み取り専用のパーティションをホストする Windows Server 2008 オペレーティング システムのドメイン コント ローラーの新しい型です。 Windows Server 2008 がリリースされる前に、は、ドメイン コント ローラーでサーバー メンテナンス作業をドメイン管理者が実行する必要があります。 Windows Server 2008 でそのユーザーのドメインまたはその他のドメイン コント ローラーの管理者権限を付与することがなくすべてのドメイン ユーザーを RODC のローカルの管理者権限を委任できます。 これにより、委任されたユーザーを RODC にログオンし、サーバー上のドライバーをアップグレードするなどのメンテナンス作業を実行できます。 ただし、この委任されたユーザーは、その他のドメイン コント ローラーにログオンまたはドメイン内の他の管理タスクを実行することはできません。 この方法で信頼されているユーザーができる他のドメインのセキュリティを損なうことがなく、RODC を効果的に管理する権限が委任します。 Rodc の詳細については、「 [AD DS: 読み取り専用ドメインコントローラー](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc732801(v=ws.10))」を参照してください。

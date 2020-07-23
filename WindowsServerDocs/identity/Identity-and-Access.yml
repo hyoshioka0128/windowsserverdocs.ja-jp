@@ -8,12 +8,12 @@ metadata:
   author: billmath
   ms.author: billmath
   ms.date: 5/18/2020
-  ms.openlocfilehash: 10723952ab4b146c491f469e6569670ad0f1c5e1
-  ms.sourcegitcommit: 5bc5aaf341c711113ca03d1482f933b05b146007
+  ms.openlocfilehash: e2b31e25b420f15a8c30b496f1bfa654fcc957aa
+  ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
   ms.translationtype: MT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 06/19/2020
-  ms.locfileid: "85095683"
+  ms.lasthandoff: 07/23/2020
+  ms.locfileid: "86959834"
 landingContent:
 - title: Id およびアクセステクノロジについて
   linkLists:
@@ -24,9 +24,9 @@ landingContent:
   - linkListType: overview
     links:
     - text: Active Directory Domain Services の Privileged Access Management と AD DS
-      url: https://technet.microsoft.com/library/dn903243.aspx
+      url: /microsoft-identity-manager/pam/privileged-identity-management-for-active-directory-domain-services
     - text: 'エンタープライズ向け Windows 10: 作業用のデバイスを使用する方法'
-      url: https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-windows10-devices-overview/?rnd=1
+      url: /azure/active-directory/devices/overview
     - text: Active Directory ドメイン サービス
       url: ../identity/ad-ds/Active-Directory-Domain-Services.md
     - text: Active Directory フェデレーション サービス (AD FS)
@@ -36,18 +36,18 @@ landingContent:
   - linkListType: how-to-guide
     links:
     - text: 任意の場所の任意のデバイスからの企業リソースへのセキュリティで保護されたアクセス
-      url: https://technet.microsoft.com/library/dn550982.aspx
+      url: /previous-versions/windows/it-pro/solutions-guidance/dn550982(v=ws.11)
     - text: 任意のデバイスからの職場への参加による業務用アプリケーション間の SSO とシームレスな 2 要素認証
-      url: https://technet.microsoft.com/library/dn280945.aspx
+      url: ./ad-fs/operations/join-to-workplace-from-any-device-for-sso-and-seamless-second-factor-authentication-across-company-applications.md
     - text: 追加の多要素認証による個人情報アプリケーションのリスク管理
-      url: https://technet.microsoft.com/library/dn280949.aspx
+      url: ./ad-fs/operations/manage-risk-with-additional-multi-factor-authentication-for-sensitive-applications.md
     - text: 条件付きアクセス制御によってリスクを管理する
-      url: https://technet.microsoft.com/library/dn280937.aspx
+      url: ./ad-fs/operations/manage-risk-with-conditional-access-control.md
 - title: 以前のバージョンの Windows Server
   linkLists:
   - linkListType: overview
     links:
     - text: Windows の以前のバージョンに関するドキュメント
-      url: https://docs.microsoft.com/previous-versions/windows/
+      url: /previous-versions/windows/
     - text: 特定の情報を検索する
-      url: https://docs.microsoft.com/search/?search=Windows+Server&dataSource=previousVersions
+      url: /search/?dataSource=previousVersions&search=Windows+Server

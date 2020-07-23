@@ -6,12 +6,12 @@ ms.technology: storage
 author: jasongerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 87fc3a2e91b2f5ac22e87485d9258ef369ff0da0
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 1df6abc3ab3ef99139ca50701bd45feab1e28f42
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929309"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958274"
 ---
 # <a name="diskpart"></a>diskpart
 
@@ -43,7 +43,7 @@ Diskpart コマンドインタープリターを使用すると、コンピュ�
 
 選択したディスクのパーティションにのみフォーカスを移すことができます。 パーティションにフォーカスがある場合、関連するボリューム (存在する場合) にもフォーカスがあります。 ボリュームにフォーカスがあると、関連するディスクとパーティションには、ボリュームが1つの特定のパーティションにマップされている場合にもフォーカスがあります。 そうでない場合は、ディスクとパーティションにフォーカスが失われます。
 
-## <a name="syntax"></a>Syntax
+## <a name="syntax"></a>構文
 
 Diskpart コマンドインタープリターを起動するには、コマンドプロンプトで次のように入力します。
 
@@ -99,10 +99,10 @@ Diskpart コマンドインタープリターから次のコマンドを実行�
 | [shrink](shrink.md) | 指定した量だけ、選択したボリュームのサイズが小さくなります。 |
 | [uniqueid](uniqueid.md) | フォーカスがあるディスクの GUID パーティションテーブル (GPT) 識別子またはマスターブートレコード (MBR) 署名を表示または設定します。 |
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 
-- [ディスク管理の概要](https://docs.microsoft.com/windows-server/storage/disk-management/overview-of-disk-management)
+- [ディスク管理の概要](../../storage/disk-management/overview-of-disk-management.md)
 
-- [Storage Cmdlets in Windows PowerShell (Windows PowerShell の記憶域コマンドレット)](https://docs.microsoft.com/powershell/module/storage/)
+- [Storage Cmdlets in Windows PowerShell (Windows PowerShell の記憶域コマンドレット)](/powershell/module/storage/)

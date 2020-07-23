@@ -9,19 +9,19 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5ba9f3c965d4746a5a61f06b99e4601a131ed79e
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 55eabb19e10a7ca6fe4dd705ab91961919bb2b7c
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85928735"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958404"
 ---
 # <a name="delete-disk"></a>delete disk
 
 ディスクの一覧から不足しているダイナミックディスクを削除します。
 
 > [!NOTE]
-> このコマンドの使用方法の詳細については、「不足している[ダイナミックディスクを削除する](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753029(v=ws.11))」を参照してください。
+> このコマンドの使用方法の詳細については、「不足している[ダイナミックディスクを削除する](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc753029(v=ws.11))」を参照してください。
 
 ## <a name="syntax"></a>構文
 
@@ -44,7 +44,7 @@ delete disk [noerr] [override]
 delete disk
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

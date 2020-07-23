@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: b424d758d98315ff63f05926880a23970f54e49c
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: 5a67e85a239036851d628ad1c261a21f6fbc4566
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81623970"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959434"
 ---
 # <a name="planning-global-catalog-server-placement"></a>グローバル カタログ サーバーの配置の計画
 
@@ -49,6 +49,6 @@ Microsoft Exchange、メッセージ キュー (MSMQ とも呼ばれます)、�
 
 ## <a name="enabling-universal-group-membership-caching"></a>ユニバーサル グループ メンバーシップのキャッシュを有効にします。
 
-100人未満のユーザーを含み、グローバルカタログサーバーを必要とする多数のローミングユーザーまたはアプリケーションが含まれていない場所については、Windows Server 2008 を実行しているドメインコントローラーを展開して、ユニバーサルグループメンバーシップのキャッシュを有効にすることができます。 グローバル カタログ サーバーは、ユニバーサル グループ メンバーシップのキャッシュが有効になっている、キャッシュ内のユニバーサル グループ情報を更新できるようにドメイン コント ローラーから 1 つ以上のレプリケーション ホップではないことを確認します。 ユニバーサルグループキャッシュのしくみの詳細については、記事「[グローバルカタログの](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc737410(v=ws.10))しくみ」を参照してください。
+100人未満のユーザーを含み、グローバルカタログサーバーを必要とする多数のローミングユーザーまたはアプリケーションが含まれていない場所については、Windows Server 2008 を実行しているドメインコントローラーを展開して、ユニバーサルグループメンバーシップのキャッシュを有効にすることができます。 グローバル カタログ サーバーは、ユニバーサル グループ メンバーシップのキャッシュが有効になっている、キャッシュ内のユニバーサル グループ情報を更新できるようにドメイン コント ローラーから 1 つ以上のレプリケーション ホップではないことを確認します。 ユニバーサルグループキャッシュのしくみの詳細については、記事「[グローバルカタログの](/previous-versions/windows/it-pro/windows-server-2003/cc737410(v=ws.10))しくみ」を参照してください。
 
-ユニバーサルグループキャッシュを有効にしたグローバルカタログサーバーとドメインコントローラーの配置を計画しているワークシートについては、「 [Windows Server 2003 Deployment Kit 用のジョブエイド](https://microsoft.com/download/details.aspx?id=9608)」、「Job_Aids_Designing_and_Deploying_Directory_and_Security_Services をダウンロードして、ドメインコントローラーの配置を開く (DSSTOPO_4)」を参照してください。 地域ドメイン、フォレスト ルート ドメインを展開するときに、グローバル カタログ サーバーを配置する必要がある場所に関する情報を参照してください。
+ユニバーサルグループキャッシュが有効になっているグローバルカタログサーバーとドメインコントローラーを配置する場所を文書化するためのワークシートについては、「 [Windows Server 2003 展開キット用のジョブエイド](https://microsoft.com/download/details.aspx?id=9608)」、「Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip をダウンロードして、ドメインコントローラーの配置を開く (DSSTOPO_4.doc)」を参照してください。 地域ドメイン、フォレスト ルート ドメインを展開するときに、グローバル カタログ サーバーを配置する必要がある場所に関する情報を参照してください。

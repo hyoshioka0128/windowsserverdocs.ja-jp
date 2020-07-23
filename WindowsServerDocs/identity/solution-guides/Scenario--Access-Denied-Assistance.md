@@ -8,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: a6418f7ac317f060adb72f32e231e1577a5f8b92
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 2d3f0f7f0fa611ab34145aa35291ff9d07b0b205
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80861145"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955954"
 ---
 # <a name="scenario-access-denied-assistance"></a>シナリオ:アクセス拒否アシスタンス
 
->適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
 アクセス許可がないファイル サーバー上の共有ファイルおよびフォルダーにユーザーがアクセスしようとすると、アクセス拒否メッセージが表示されます。 多くの場合、管理者はアクセスの問題をトラブルシューティングするための適切なコンテキストを持っていないため、問題を解決するのが困難になります。  
   
@@ -32,7 +32,7 @@ ms.locfileid: "80861145"
   
 Windows Server 2012 のアクセス拒否アシスタンスは、関連するアクセス詳細をファイルサーバー管理者に提供するため、問題と適切なツールを特定して、アクセス要求を満たすように構成を変更することができます。 たとえば、現在アクセス権を持たないファイルにユーザーがアクセスできるようになるまでの手順の例を次に示します。  
   
--   ユーザーが \\\financeshares 共有フォルダー内のファイルを読み取ろうとしましたが、サーバーにはアクセス拒否メッセージが表示されています。  
+-   ユーザーは \financeshares 共有フォルダー内のファイルを読み取ろうとし \\ ましたが、サーバーにはアクセス拒否メッセージが表示されます。  
   
 -    Windows Server 2012 では、アシスタンスを要求するオプションを使用して、アクセス拒否アシスタンスの情報がユーザーに表示されます。  
   
@@ -40,23 +40,21 @@ Windows Server 2012 のアクセス拒否アシスタンスは、関連するア
   
 「[アクセス拒否アシスタンスの計画](assetId:///b169f0a4-8b97-4da8-ae4a-c8f1986d19e1)」に、アクセス拒否アシスタンスを構成するための計画に関する情報があります。  
   
-アクセス拒否アシスタンスの構成の手順については、「[アクセス拒否アシスタンス&#40;の展開&#41;のデモンストレーション](Deploy-Access-Denied-Assistance--Demonstration-Steps-.md)」を参照してください。  
+アクセス拒否アシスタンスの構成に関する手順については、「[アクセス拒否アシスタンスの展開 &#40;デモンストレーション手順&#41;](Deploy-Access-Denied-Assistance--Demonstration-Steps-.md)」を参照してください。  
   
 ## <a name="in-this-scenario"></a>このシナリオの内容  
 このシナリオは、ダイナミック アクセス制御のシナリオの一部です。 ダイナミック アクセス制御の追加情報については、次のトピックを参照してください。  
   
--   [動的 Access Control: シナリオの概要](Dynamic-Access-Control--Scenario-Overview.md)  
+-   [ダイナミック アクセス制御: シナリオの概要](Dynamic-Access-Control--Scenario-Overview.md)  
   
 ## <a name="practical-applications"></a>実際の適用例  
 Windows Server 2012 のアクセス拒否アシスタンスは、ユーザーがアクセス拒否メッセージから直接、共有ファイルおよびフォルダーへのアクセスを要求できるようにすることで、動的 Access Control に貢献します。  
   
-## <a name="features-included-in-this-scenario"></a><a name="BKMK_NEW"></a>このシナリオに含まれる機能  
+## <a name="features-included-in-this-scenario"></a><a name="BKMK_NEW"></a>このシナリオに含まれている機能  
 次の表で、このシナリオに含まれる機能を紹介すると共に、それをシナリオに活かす方法について説明します。  
   
-|機能|このシナリオのサポート方法|  
+|特徴量|このシナリオのサポート方法|  
 |-----------|---------------------------------|  
-|[ファイルサーバーリソースマネージャーの概要](https://technet.microsoft.com/library/hh831701.aspx)|ファイル サーバーでファイル サーバー リソース マネージャーのコンソールを使用して、アクセス拒否アシスタンスを構成できます。|  
-|[ファイル サービスおよび記憶域サービスの概要](https://technet.microsoft.com/library/hh831487.aspx)|ファイル サーバー リソース マネージャーは、ファイルおよびストレージ サービスの役割のサービスであり、ネットワーク上のファイル サーバーの管理に使用できる一連の機能で構成されています。|  
+|[File Server Resource Manager Overview](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831701(v=ws.11))|ファイル サーバーでファイル サーバー リソース マネージャーのコンソールを使用して、アクセス拒否アシスタンスを構成できます。|  
+|[ファイル サービスおよび記憶域サービスの概要](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831487(v=ws.11))|ファイル サーバー リソース マネージャーは、ファイルおよびストレージ サービスの役割のサービスであり、ネットワーク上のファイル サーバーの管理に使用できる一連の機能で構成されています。|  
   
-
-

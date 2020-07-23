@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c9b79495d3fa142fd343b9c521563e093d20fc68
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 45590cf9b6fdb5de40e4ab25bd444f847d203670
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932007"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956374"
 ---
 # <a name="qwinsta"></a>qwinsta
 
@@ -23,7 +23,7 @@ ms.locfileid: "85932007"
 リモートデスクトップセッションホストサーバー上のセッションに関する情報を表示します。 一覧には、アクティブなセッションだけでなく、サーバーが実行している他のセッションに関する情報も含まれています。
 
 > [!NOTE]
-> このコマンドは、 [query session コマンド](query-session.md)と同じです。 最新バージョンの新機能については、「 [Windows Server でのリモートデスクトップサービスの新](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn283323(v=ws.11))機能」を参照してください。
+> このコマンドは、 [query session コマンド](query-session.md)と同じです。 最新バージョンの新機能については、「 [Windows Server でのリモートデスクトップサービスの新](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn283323(v=ws.11))機能」を参照してください。
 
 ## <a name="syntax"></a>構文
 
@@ -51,7 +51,7 @@ qwinsta [<sessionname> | <username> | <sessionID>] [/server:<servername>] [/mode
 
 - <*username*> *、<sessions*>、または*sessionID*パラメーターを使用してセッションを指定しない場合、このクエリでは、システム内のすべてのアクティブなセッションに関する情報が表示されます。
 
-- **Qwinsta**が情報を返す場合は、 `(>)` 現在のセッションの前に不等号が表示されます。 次に例を示します。
+- **Qwinsta**が情報を返す場合は、 `(>)` 現在のセッションの前に不等号が表示されます。 以下に例を示します。
 
     ```
     C:\>qwinsta
@@ -63,7 +63,7 @@ qwinsta [<sessionname> | <username> | <sessionID>] [/server:<servername>] [/mode
                                         5 idle
     ```
 
-    各値の説明:
+    条件:
   - [セッション名は、セッションに割り当てられた名前**を指定し**ます。
   - **USERNAME**は、セッションに接続されているユーザーのユーザー名を示します。
   - **State**は、セッションの現在の状態に関する情報を提供します。
@@ -85,7 +85,7 @@ qwinsta /server:Server2
 qwinsta modeM02
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

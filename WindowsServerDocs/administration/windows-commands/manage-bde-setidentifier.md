@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7d20120bf4c6ec76fa6ba040141afadea2a748d5
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: c6a04b4f7c04174158a165cf0d41493078af0056
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85922254"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86957044"
 ---
 # <a name="manage-bde-setidentifier"></a>manage-bde setidentifier
 
@@ -44,10 +44,10 @@ C の BitLocker ドライブ識別子フィールドを設定するには、次�
 manage-bde –setidentifier C:
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 
 - [manage-bde コマンド](manage-bde.md)
 
-- [BitLocker 回復ガイド](https://docs.microsoft.com/windows/security/information-protection/bitlocker/bitlocker-recovery-guide-plan)
+- [BitLocker 回復ガイド](/windows/security/information-protection/bitlocker/bitlocker-recovery-guide-plan)

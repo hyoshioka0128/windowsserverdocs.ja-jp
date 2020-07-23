@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: ee2ae5ddf40c6d8b49b9fbd40505f4e8c70fd92c
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: f00a6419bae1951a7c1597212d3c37676a4db90e
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473499"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961254"
 ---
 # <a name="add-namespace-servers-to-a-domain-based-dfs-namespace"></a>ドメインベースの DFS 名前空間に名前空間サーバーを追加する
 
@@ -36,12 +36,11 @@ DFS の管理を使ってドメイン ベース名前空間に名前空間サー
 
 
 > [!TIP]
-> Windows PowerShell を使って名前空間サーバーを追加するには、[New-DfsnRootTarget コマンドレット](https://docs.microsoft.com/powershell/module/dfsn/new-dfsnroottarget)を使います。 DFSN Windows PowerShell モジュールは、Windows Server 2012 で導入されました。
+> Windows PowerShell を使って名前空間サーバーを追加するには、[New-DfsnRootTarget コマンドレット](/powershell/module/dfsn/new-dfsnroottarget)を使います。 DFSN Windows PowerShell モジュールは、Windows Server 2012 で導入されました。
 
 ## <a name="additional-references"></a>その他のリファレンス
 
 -   [DFS 名前空間を展開する](deploying-dfs-namespaces.md)
--   [DFS 名前空間サーバーの要件を確認する](https://technet.microsoft.com/library/cc753448(v=ws.11).aspx)
+-   [DFS 名前空間サーバーの要件を確認する](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753448(v=ws.11))
 -   [DFS 名前空間を作成する](create-a-dfs-namespace.md)
 -   [DFS 名前空間の管理アクセス許可を委任する](delegate-management-permissions-for-dfs-namespaces.md)
-

@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 61a10c2fb67225de1060d64db6fda4e4ff703a7b
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 339ffaa56b65b2b061923ab38ee172c5e933d675
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85930606"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958344"
 ---
 # <a name="diantz"></a>diantz
 
@@ -41,8 +41,8 @@ diantz [/v[<n>]] [/d var=<value> ...] /f <directives_file> [...]
 | /v[`<n>`] | 詳細レベルのデバッグ設定 (0 = なし、..., 3 = フル)。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 
-- [Microsoft キャビネット形式](https://docs.microsoft.com/previous-versions/bb417343(v=msdn.10))
+- [Microsoft キャビネット形式](/previous-versions/bb417343(v=msdn.10))

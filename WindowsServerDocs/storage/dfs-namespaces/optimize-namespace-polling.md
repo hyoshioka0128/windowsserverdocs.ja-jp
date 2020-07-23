@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: ea867cbb36286297ff3c5274d11c36b5815ab9ac
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 4ffcf974bd809d1692e16d632153c213081041c4
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475459"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961234"
 ---
 # <a name="optimize-namespace-polling"></a>名前空間のポーリングを最適化する
 
@@ -35,7 +35,7 @@ ms.locfileid: "85475459"
     -   名前空間サーバーが 17 台以上ある場合は **[スケーラビリティの最適化]** を選択します。 これにより、プライマリ ドメイン コントローラー (PDC) エミュレーターへの負荷が軽減されますが、名前空間に加えられた変更をすべての名前空間サーバーに対してレプリケートするために要する時間は長くなります。 変更がすべてのサーバーに対してレプリケートされるまで、ユーザーには名前空間が不整合な状態で表示される場合があります。
 
 > [!NOTE]
-> Windows PowerShell を使って名前空間ポーリング モードを設定するには、Windows Server 2012 で導入された [Set-DfsnRoot EnableRootScalability](https://technet.microsoft.com/library/jj884281.aspx) コマンドレットを使います。
+> Windows PowerShell を使って名前空間ポーリング モードを設定するには、Windows Server 2012 で導入された [Set-DfsnRoot EnableRootScalability](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771913(v=ws.11)) コマンドレットを使います。
 
 ## <a name="additional-references"></a>その他のリファレンス
 

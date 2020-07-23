@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a2ba82708acd9c5830e2dc8a09cd804ade342066
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 5aaa915ef416130dd2017b8f0f35cd255d207678
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85935639"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956284"
 ---
 # <a name="repair-bde"></a>repair-bde
 
 
 
-BitLocker を使用してドライブが暗号化されている場合は、重大な損傷を受けたハードディスク上の暗号化されたデータにアクセスします。 有効な回復パスワードまたは回復キーを使用してデータの暗号化が解除されるなら、repair-bde はドライブの重要な部分を再構築して、回復可能なデータを修復できます。 ドライブの BitLocker メタデータ データが破損した場合は、回復パスワードまたは回復キーに加えて、バックアップ キー パッケージを提供できる必要があります。 Active Directory ドメイン サービス (AD DS) バックアップの既定の設定を使用した場合、このキー パッケージは AD DS にバックアップされます。 このキー パッケージと回復パスワードまたは回復キーを使用すると、ディスクが破損した場合でも、BitLocker で保護されたドライブの部分の暗号化を解除できます。 各キー パッケージは、対応するドライブ識別子があるドライブに対してのみ動作します。 [Active Directory の BitLocker 回復パスワードビューアー](https://technet.microsoft.com/library/dd875531(v=ws.10).aspx)を使用して、AD DS からこのキーパッケージを取得できます。
+BitLocker を使用してドライブが暗号化されている場合は、重大な損傷を受けたハードディスク上の暗号化されたデータにアクセスします。 有効な回復パスワードまたは回復キーを使用してデータの暗号化が解除されるなら、repair-bde はドライブの重要な部分を再構築して、回復可能なデータを修復できます。 ドライブの BitLocker メタデータ データが破損した場合は、回復パスワードまたは回復キーに加えて、バックアップ キー パッケージを提供できる必要があります。 Active Directory ドメイン サービス (AD DS) バックアップの既定の設定を使用した場合、このキー パッケージは AD DS にバックアップされます。 このキー パッケージと回復パスワードまたは回復キーを使用すると、ディスクが破損した場合でも、BitLocker で保護されたドライブの部分の暗号化を解除できます。 各キー パッケージは、対応するドライブ識別子があるドライブに対してのみ動作します。 [Active Directory の BitLocker 回復パスワードビューアー](/previous-versions/windows/it-pro/windows-7/dd875531(v=ws.10))を使用して、AD DS からこのキーパッケージを取得できます。
 
 > [!NOTE]
 > BitLocker 回復パスワードビューアーは、Windows Server 2012 のサーバー管理を使用してインストール可能な、オプションの管理機能の1つとして含まれています。
@@ -74,6 +74,6 @@ repair-bde C: D: -kp F:\RecoveryKeyPackage -rk F:\RecoveryKey.bek -f
 repair-bde C: D: -pw
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

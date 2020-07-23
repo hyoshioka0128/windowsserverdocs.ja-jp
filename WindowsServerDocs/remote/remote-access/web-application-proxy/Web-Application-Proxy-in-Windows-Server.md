@@ -6,18 +6,18 @@ ms.technology: web-app-proxy
 ms.topic: article
 ms.author: kgremban
 author: eross-msft
-ms.openlocfilehash: 2fef89dc999166a7dcbb0479c28160b14b95340e
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 84c2c735ee3e6b19816acaa8810c297c487f5250
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80818635"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961454"
 ---
 # <a name="web-application-proxy-in-windows-server"></a>Windows Server の Web アプリケーション プロキシ
 
 >適用対象: Windows Server&reg; 2016
 
-**このコンテンツは、オンプレミスバージョンの Web アプリケーションプロキシに関連しています。クラウド経由でオンプレミスアプリケーションへの安全なアクセスを実現するには、 [Azure AD アプリケーションプロキシのコンテンツ](https://azure.microsoft.com/documentation/articles/active-directory-application-proxy-get-started/)を参照してください。**  
+**このコンテンツは、オンプレミスバージョンの Web アプリケーションプロキシに関連しています。クラウド経由でオンプレミスアプリケーションへの安全なアクセスを実現するには、 [Azure AD アプリケーションプロキシのコンテンツ](/azure/active-directory/manage-apps/application-proxy)を参照してください。**  
   
 このセクションの内容では、Windows Server 2016 用の Web アプリケーションプロキシの新機能と変更された機能について説明します。 ここに記載されている新機能と変更点は、プレビューを操作するときに最も大きな影響を与える可能性の高いものです。  
   
@@ -31,7 +31,7 @@ ms.locfileid: "80818635"
   
 - ワイルドカードによるアプリケーションのドメイン公開  
   
-  SharePoint 2013 のようなシナリオをサポートするために、アプリケーションの外部 URL にワイルドカードを含めることができるようになりました。これにより、 https://*. sp-アプリなど、特定のドメイン内から複数のアプリケーションを発行できます。 これにより、SharePoint アプリの発行が簡単になります。  
+  SharePoint 2013 のようなシナリオをサポートするために、アプリケーションの外部 URL にワイルドカードを含めることができるようになりました。これにより、https://*. sp-アプリなど、特定のドメイン内から複数のアプリケーションを発行できます。 これにより、SharePoint アプリの発行が簡単になります。  
   
 - HTTP から HTTPS へのリダイレクト  
   
@@ -47,7 +47,7 @@ ms.locfileid: "80818635"
   
 - 詳細なトラブルシューティングと改善されたサービスログを記録し、完全な監査証跡を作成し、エラー処理を改善します。  
   
-  トラブルシューティングの詳細については、「 [Web アプリケーションプロキシのトラブルシューティング](https://technet.microsoft.com/library/dn770156.aspx)」を参照してください。  
+  トラブルシューティングの詳細については、「 [Web アプリケーションプロキシのトラブルシューティング](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn770156(v=ws.11))」を参照してください。  
   
 - 管理コンソール UI の機能強化  
   
@@ -55,11 +55,9 @@ ms.locfileid: "80818635"
   
 ## <a name="see-also"></a>参照  
   
--   [Windows Server 2016 の新機能](https://technet.microsoft.com/library/dn765472.aspx)  
+-   [Windows Server 2016 の新機能](../../../get-started/whats-new-in-windows-server-2016.md)  
   
 -   [AD FS 事前認証を使用してアプリケーションを公開する](../web-application-proxy/Publishing-Applications-using-AD-FS-Preauthentication.md)  
   
--   [Web アプリケーション プロキシのトラブルシューティング](https://technet.microsoft.com/library/dn770156.aspx)  
+-   [Web アプリケーション プロキシのトラブルシューティング](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn770156(v=ws.11))  
   
-
-

@@ -9,12 +9,12 @@ ms.topic: article
 author: eldenchristensen
 ms.date: 07/15/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 581b80fe07043314e573261a6735f121bc30e2e3
-ms.sourcegitcommit: a5badf6b08ec0b25ec73df4b827c4e40b5ccd974
+ms.openlocfilehash: 50aba2d8edfe74bf6ca51d7c390f2cfc4ead0048
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86410366"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961224"
 ---
 # <a name="using-storage-spaces-direct-in-guest-virtual-machine-clusters"></a>ゲスト仮想マシンクラスターでの記憶域スペースダイレクトの使用
 
@@ -85,8 +85,8 @@ Azure[テンプレート](https://github.com/robotechredmond/301-storage-spaces-
 
     仮想マシンを介して公開される仮想ディスクは、同じサイズと特性を保持する必要があります。 記憶域プールに容量を追加するには、各仮想マシンに仮想ディスクを追加し、プールに追加します。 現在の仮想ディスクと同じサイズおよび特性の仮想ディスクを使用することを強くお勧めします。
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [記憶域スペースダイレクト、ビデオ、ステップバイステップガイドをデプロイするための追加の Azure IAAS VM テンプレート](https://techcommunity.microsoft.com/t5/Failover-Clustering/Deploying-IaaS-VM-Guest-Clusters-in-Microsoft-Azure/ba-p/372126)。
 
-- [その他の記憶域スペースダイレクトの概要](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-direct-overview)
+- [その他の記憶域スペースダイレクトの概要](./storage-spaces-direct-overview.md)

@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d2c85bd48adafb7e171754aad9682e89020b95d0
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 99fabb870fecb0957968d2a0e1fd30512b6d0013
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722230"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956174"
 ---
 # <a name="rwinsta"></a>rwinsta
 
@@ -23,12 +23,12 @@ ms.locfileid: "82722230"
 リモートデスクトップセッションホスト (rd セッションホスト) サーバー上のセッションをリセット (削除) できます。
 
 > [!NOTE]
-> Windows Server 2008 R2 で、「ターミナル サービス」は「リモート デスクトップ サービス」に名前変更されました。 最新バージョンの新機能については、Windows Server TechNet ライブラリの「 [Windows server 2012 のリモートデスクトップサービスの新機能](https://technet.microsoft.com/library/hh831527)」を参照してください。
+> Windows Server 2008 R2 で、「ターミナル サービス」は「リモート デスクトップ サービス」に名前変更されました。 最新バージョンの新機能については、Windows Server TechNet ライブラリの「 [Windows server 2012 のリモートデスクトップサービスの新機能](/previous-versions/orphan-topics/ws.11/hh831527(v=ws.11))」を参照してください。
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>注釈
 このコマンドと同じ、 **セッションをリセット** コマンドです。
 
 ## <a name="additional-references"></a>その他のリファレンス
 [reset session](reset-session.md)
-- [コマンドライン構文のキー](command-line-syntax-key.md)
+- [コマンドライン構文のキー](command-line-syntax-key.md) 
 [リモートデスクトップサービス (ターミナルサービス) のコマンドリファレンス](remote-desktop-services-terminal-services-command-reference.md)

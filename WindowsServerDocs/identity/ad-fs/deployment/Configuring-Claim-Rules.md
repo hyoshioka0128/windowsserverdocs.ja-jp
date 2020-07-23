@@ -8,16 +8,16 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 2ae0c64cd108cd80418451120766eebc9dd282ab
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ff9a17cb54889834e3bb652f89621169daa148ed
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80855505"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966024"
 ---
 # <a name="configuring-claim-rules"></a>要求規則の構成
 
-要求\-ベースの id モデルでは、Active Directory フェデレーションサービス (AD FS) \(AD FS フェデレーションサービスとしての\) は、一連の要求を含むトークンを発行することになります。 要求規則は、AD FS 問題が発生したクレームに関する決定を制御します。 要求規則とすべてのサーバー構成データは、AD FS 構成データベースに格納されます。  
+要求ベースの \- id モデルで \( \) は、フェデレーションサービスとして AD FS Active Directory フェデレーションサービス (AD FS) の機能は、一連の要求を含むトークンを発行することになります。 要求規則は、AD FS 問題が発生したクレームに関する決定を制御します。 要求規則とすべてのサーバー構成データは、AD FS 構成データベースに格納されます。  
   
 AD FS は、要求とその他のコンテキスト情報の形式で提供される id 情報に基づいて、発行の決定を行います。 大まかには、AD FS は、1セットの要求を入力として取得し、さまざまな変換を実行して、出力として別のクレームセットを返すことによって、ルールプロセッサとして動作します。  
   
@@ -39,6 +39,6 @@ AD FS は、要求とその他のコンテキスト情報の形式で提供さ�
   
 -   [カスタム規則を使用して要求を送信する規則を作成する](../../ad-fs/operations/Create-a-Rule-to-Send-Claims-Using-a-Custom-Rule.md)  
 
-## <a name="additional-references"></a>その他の参照情報  
+## <a name="additional-references"></a>その他のリファレンス  
 
-[AD FS の運用](../../ad-fs/AD-FS-2016-Operations.md)
+[AD FS の運用](../ad-fs-operations.md)

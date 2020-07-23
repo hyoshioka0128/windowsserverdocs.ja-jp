@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d8025e897a8ce7083b938e984f9a11b6c32ed312
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 2384ea5a94de64051dc45caecd88e08960b567b0
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85928950"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958534"
 ---
 # <a name="convert-gpt"></a>convert gpt
 
@@ -24,7 +24,7 @@ ms.locfileid: "85928950"
 > ディスクをベーシック ディスクに変換するためには、そのディスクが空である必要があります。 ディスクを変換する前に、データのバックアップをとり、パーティションまたはボリュームをすべて削除してください。 GPT への変換に必要な最小ディスクサイズは 128 mb です。
 
 > [!NOTE]
-> このコマンドの使用方法については、「[マスターブートレコードディスクを GUID パーティションテーブルディスクに変更](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc725671(v=ws.11))する」を参照してください。
+> このコマンドの使用方法については、「[マスターブートレコードディスクを GUID パーティションテーブルディスクに変更](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc725671(v=ws.11))する」を参照してください。
 
 ## <a name="syntax"></a>構文
 
@@ -46,7 +46,7 @@ convert gpt [noerr]
 convert gpt
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

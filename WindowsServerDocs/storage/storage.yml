@@ -8,12 +8,12 @@ metadata:
   author: JasonGerend
   ms.author: jgerend
   ms.date: 07/15/2020
-  ms.openlocfilehash: 0a26ee716f1308451f695843243a71002dfa5ca1
-  ms.sourcegitcommit: a5badf6b08ec0b25ec73df4b827c4e40b5ccd974
+  ms.openlocfilehash: 412ce70a27604b4a710376315f869baf8519d352
+  ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
   ms.translationtype: MT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 07/16/2020
-  ms.locfileid: "86410376"
+  ms.lasthandoff: 07/23/2020
+  ms.locfileid: "86965864"
 landingContent:
 - title: Windows Server ストレージについて
   linkLists:
@@ -37,7 +37,7 @@ landingContent:
   linkLists:
   - linkListType: overview
     links:
-    - text: ストレージ移行サービス
+    - text: 記憶域移行サービス
       url: storage-migration-service/overview.md
     - text: 作業フォルダー
       url: work-folders/work-folders-overview.md
@@ -66,11 +66,11 @@ landingContent:
     - text: 記憶域クラス メモリ
       url: storage-spaces/Storage-class-memory-health.md
     - text: BitLocker ドライブ暗号化
-      url: https://technet.microsoft.com/library/cc766295(v=ws.10).aspx
+      url: /previous-versions/windows/it-pro/windows-vista/cc766295(v=ws.10)
     - text: NTFS
-      url: https://technet.microsoft.com/library/dn466522(v=ws.11).aspx
+      url: /previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn466522(v=ws.11)
     - text: Network File System (NFS)
-      url: https://technet.microsoft.com/library/jj592688(v=ws.11).aspx
+      url: /previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj592688(v=ws.11)
 - title: Azure の場合
   linkLists:
   - linkListType: overview
@@ -86,6 +86,6 @@ landingContent:
   - linkListType: overview
     links:
     - text: Windows の以前のバージョンに関するドキュメント
-      url: https://docs.microsoft.com/previous-versions/windows/
+      url: /previous-versions/windows/
     - text: 特定の情報を検索する
-      url: https://docs.microsoft.com/search/?search=Windows+Server&dataSource=previousVersions
+      url: /search/?dataSource=previousVersions&search=Windows Server

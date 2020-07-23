@@ -8,28 +8,28 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 356d51899e930b487e844d8bdff0f9fe19086d34
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b9d56dd2852d7efdabb0c9fbad221f8b6798ef52
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80855015"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966354"
 ---
 # <a name="checklist-implementing-a-federated-web-sso-design"></a>チェックリスト: フェデレーション Web SSO 設計の実装
 
-この親チェックリストには、\) Active Directory フェデレーションサービス (AD FS) \(AD FS に対する \(SSO\)設計のフェデレーション Web シングル\-署名\-に関する重要な概念へのクロス\-参照リンクが含まれています。 また、この設計を実装するのに必要なタスクの実行を支援する下位チェックリストへのリンクも含まれます。  
+この親チェックリスト \- には、 \- \- \( \) Active Directory フェデレーションサービス (AD FS) AD FS 向けのフェデレーション Web シングルサインオン SSO 設計に \( 関する重要な概念への相互参照リンクが記載されてい \) ます。 また、この設計を実装するのに必要なタスクの実行を支援する下位チェックリストへのリンクも含まれます。  
   
 > [!NOTE]  
-> このチェックリストに記載されているタスクを順番どおりに実行してください。 参照リンクから概念トピックまたは下位チェックリストが表示される場合は、概念トピックを参照した後または下位チェックリストのタスクを実行した後でこのトピックに戻り、このチェックリストの残りのタスクを実行します。  
+> このチェックリストのタスクは順番に実行してください。 参照リンクから概念トピックまたは下位チェックリストが表示される場合は、概念トピックを参照した後または下位チェックリストのタスクを実行した後でこのトピックに戻り、このチェックリストの残りのタスクを実行します。  
   
-フェデレーション web sso](media/2b05dce3-938f-4168-9b8f-1f4398cbdb9b.gif)**のチェックリストの ![: フェデレーション WEB Sso 設計の実装**  
+![フェデレーション web sso](media/2b05dce3-938f-4168-9b8f-1f4398cbdb9b.gif)**のチェックリスト: フェデレーション WEB Sso 設計の実装**  
   
-||タスク|参照|  
+||タスク|リファレンス|  
 |-|--------|-------------|  
-|![フェデレーション web sso](media/icon_checkboxo.gif)|フェデレーション Web SSO 設計に関する重要な概念を確認し、組織のニーズに合わせてこの設計をカスタマイズするために使用できる AD FS 展開の目標を決定します。|![フェデレーション web sso](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[フェデレーション WEB Sso 設計](https://technet.microsoft.com/library/dd807050.aspx)<p>](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[AD FS の展開目標を特定する](https://technet.microsoft.com/library/dd807053.aspx)フェデレーション web sso を ![する<p>![フェデレーション web sso](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[の展開の計画](https://technet.microsoft.com/library/dd807083.aspx)|  
-|![フェデレーション web sso](media/icon_checkboxo.gif)|組織に AD FS を展開するための、ハードウェア、ソフトウェア、証明書、ドメインネームシステム \(DNS\)、属性ストア、およびクライアントの要件を確認します。|フェデレーション web sso](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[の ![付録 a: AD FS 要件の確認](https://technet.microsoft.com/library/ff678034.aspx)|  
-|![フェデレーション web sso](media/icon_checkboxo.gif)|両方のパートナー組織に AD FS を展開する前に、要求、要求規則、属性ストア、および AD FS 構成データベースに関する重要な概念を確認します。|![フェデレーション web sso に](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[ついて理解するキー AD FS の概念](../../ad-fs/technical-reference/Understanding-Key-AD-FS-Concepts.md)|  
-|![フェデレーション web sso](media/icon_checkboxo.gif)|設計計画に従って、各パートナー組織に1つ以上のフェデレーションサーバーをインストールします。 **注:** フェデレーション Web SSO 設計では、アカウントパートナー組織に少なくとも1つのフェデレーションサーバーと、リソースパートナー組織内に少なくとも1つのフェデレーションサーバーが必要です。|フェデレーション web sso](media/bc6cea1a-1c6c-4124-8c8f-1df5adfe8c88.gif)[の ![チェックリスト: フェデレーションサーバーの](Checklist--Setting-Up-a-Federation-Server.md)セットアップ|  
-|![フェデレーション web sso](media/icon_checkboxo.gif)|\(オプション\) 組織にフェデレーションサーバープロキシが必要かどうかを決定します。 設計計画でプロキシを呼び出す場合は、各パートナー組織に1つ以上のフェデレーションサーバープロキシをインストールできます。|フェデレーション web sso](media/bc6cea1a-1c6c-4124-8c8f-1df5adfe8c88.gif)[の ![チェックリスト: フェデレーションサーバープロキシの設定](Checklist--Setting-Up-a-Federation-Server-Proxy.md)|  
+|![フェデレーション web sso](media/icon_checkboxo.gif)|フェデレーション Web SSO 設計に関する重要な概念を確認し、組織のニーズに合わせてこの設計をカスタマイズするために使用できる AD FS 展開の目標を決定します。|![フェデレーション web sso](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[フェデレーション WEB sso の設計](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dd807050(v=ws.11))<p>![](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[AD FS の展開目標を特定する](../design/identifying-your-ad-fs-deployment-goals.md)フェデレーション web sso<p>![フェデレーション web sso](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[の展開の計画](../design/planning-your-deployment.md)|  
+|![フェデレーション web sso](media/icon_checkboxo.gif)|組織に AD FS を展開するための、ハードウェア、ソフトウェア、証明書、ドメインネームシステム \( DNS \) 、属性ストア、およびクライアントの要件を確認します。|![フェデレーション web sso](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[付録 a: AD FS の要件の確認](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/ff678034(v=ws.11))|  
+|![フェデレーション web sso](media/icon_checkboxo.gif)|両方のパートナー組織に AD FS を展開する前に、要求、要求規則、属性ストア、および AD FS 構成データベースに関する重要な概念を確認します。|![フェデレーション web sso に関する](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[重要な AD FS の概念につい](../../ad-fs/technical-reference/Understanding-Key-AD-FS-Concepts.md)て|  
+|![フェデレーション web sso](media/icon_checkboxo.gif)|設計計画に従って、各パートナー組織に1つ以上のフェデレーションサーバーをインストールします。 **注:** フェデレーション Web SSO 設計では、アカウントパートナー組織に少なくとも1つのフェデレーションサーバーと、リソースパートナー組織内に少なくとも1つのフェデレーションサーバーが必要です。|![フェデレーション web sso](media/bc6cea1a-1c6c-4124-8c8f-1df5adfe8c88.gif)[チェックリスト: フェデレーションサーバーのセットアップ](Checklist--Setting-Up-a-Federation-Server.md)|  
+|![フェデレーション web sso](media/icon_checkboxo.gif)|\(\)必要に応じて、組織にフェデレーションサーバープロキシが必要かどうかを決定します。 設計計画でプロキシを呼び出す場合は、各パートナー組織に1つ以上のフェデレーションサーバープロキシをインストールできます。|![フェデレーション web sso](media/bc6cea1a-1c6c-4124-8c8f-1df5adfe8c88.gif)[チェックリスト: フェデレーションサーバープロキシの設定](Checklist--Setting-Up-a-Federation-Server-Proxy.md)|  
 |![フェデレーション web sso](media/icon_checkboxo.gif)|設計計画に基づいて、両方のパートナー組織で証明書の共有、クライアントの構成、および信頼関係の構成を行います。これによって、組織間でフェデレーション信頼を介したコミュニケーションが可能になります。|![フェデレーション web sso](media/bc6cea1a-1c6c-4124-8c8f-1df5adfe8c88.gif)[チェックリスト: アカウントパートナー組織の構成](Checklist--Configuring-the-Account-Partner-Organization.md)<p>![フェデレーション web sso](media/bc6cea1a-1c6c-4124-8c8f-1df5adfe8c88.gif)[チェックリスト: リソースパートナー組織の構成](Checklist--Configuring-the-Resource-Partner-Organization.md)|  
-|![フェデレーション web sso](media/icon_checkboxo.gif)|リソースパートナー組織の管理者は、WIF と WIF SDK を使用して、Web ブラウザーアプリケーション、Web サービスアプリケーション、または Microsoft&reg; Office SharePoint&reg; サーバーアプリケーションを\-有効にすることができます。|![フェデレーション web sso](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[Windows Identity Foundation](https://go.microsoft.com/fwlink/?LinkId=122266)<p>![フェデレーション web sso](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[Windows Identity FOUNDATION SDK](https://go.microsoft.com/fwlink/?LinkId=122266)|  
+|![フェデレーション web sso](media/icon_checkboxo.gif)|リソースパートナー組織の管理者である場合は、 \- &reg; &reg; WIF と WIF SDK を使用して、web ブラウザーアプリケーション、web サービスアプリケーション、または Microsoft Office SharePoint Server アプリケーションを要求することができます。|![フェデレーション web sso](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[Windows Identity Foundation](https://go.microsoft.com/fwlink/?LinkId=122266)<p>![フェデレーション web sso](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[Windows Identity FOUNDATION SDK](https://go.microsoft.com/fwlink/?LinkId=122266)|  

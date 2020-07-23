@@ -6,12 +6,12 @@ manager: dcscontentpm
 ms.topic: article
 ms.author: delhan
 ms.date: 12/25/2019
-ms.openlocfilehash: 210bc2057f25dc196fe9d76495c42f76c8b36311
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 662a58fdeb3cda14a0e54c8d0ab7bd0b85387fd7
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80815345"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86960134"
 ---
 # <a name="smb-multichannel-troubleshooting"></a>SMB マルチチャネルのトラブルシューティング
 
@@ -19,7 +19,7 @@ ms.locfileid: "80815345"
 
 ## <a name="check-the-network-interface-status"></a>ネットワークインターフェイスの状態を確認する
 
-SMB クライアント (MS\_クライアント) および SMB サーバー (MS\_サーバー) で、ネットワークインターフェイスのバインドが**True**に設定されていることを確認します。 次のコマンドを実行すると、両方のネットワークインターフェイスで [**有効** **] の**下に出力が表示されます。
+SMB クライアント (MS **True** \_ クライアント) および SMB サーバー (ms server) で、ネットワークインターフェイスのバインドが True に設定されていることを確認し \_ ます。 次のコマンドを実行すると、両方のネットワークインターフェイスで [**有効** **] の**下に出力が表示されます。
 
 ```PowerShell
 Get-NetAdapterBinding -ComponentID ms_server,ms_msclient
@@ -45,11 +45,11 @@ Get-SmbClientNetworkInterface
 
 **Get NetConnectionProfile**
 
-**[ファイルとプリンターの共有]** グループの下で、ファイアウォールの受信規則を確認して、正しいプロファイルに対して "SMB 受信" が有効になっていることを確認します。
+[**ファイルとプリンターの共有**] グループの下で、ファイアウォールの受信規則を確認して、正しいプロファイルに対して "SMB 受信" が有効になっていることを確認します。
 
 ![SMB インルール](media/smb-multichannel-troubleshooting-1.png)
 
-**[ネットワークと共有センター]** ウィンドウで、**ファイルとプリンターの共有**を有効にすることもできます。 これを行うには、左側のメニューで **[共有の詳細設定を変更]** する を選択し、プロファイルの **[ファイルとプリンターの共有を有効にする]** を選択します。 このオプションを選択すると、ファイルとプリンターの共有のファイアウォール規則が有効になります。
+[**ネットワークと共有センター** ] ウィンドウで、**ファイルとプリンターの共有**を有効にすることもできます。 これを行うには、左側のメニューで [**共有の詳細設定を変更**する] を選択し、プロファイルの [**ファイルとプリンターの共有を有効にする**] を選択します。 このオプションを選択すると、ファイルとプリンターの共有のファイアウォール規則が有効になります。
 
 ![[共有の詳細設定の変更]](media/smb-multichannel-troubleshooting-2.png)
 
@@ -59,23 +59,23 @@ TCP 3 ウェイハンドシェイクから開始する SMB 接続トレース情
 
 SMBv3 接続がネゴシエートされていること、およびサーバーとクライアントの間の何も言語ネゴシエーションに影響していないことを確認*します。* SMBv2 以前のバージョンでは、マルチチャネルはサポートされていません。
 
-ネットワーク\_インターフェイス\_情報パケットを探します。 ここで smb クライアントは、SMB サーバーからアダプターの一覧を要求します。 これらのパケットが交換されない場合、マルチチャネルは機能しません。
+ネットワーク \_ インターフェイス \_ 情報パケットを探します。 ここで smb クライアントは、SMB サーバーからアダプターの一覧を要求します。 これらのパケットが交換されない場合、マルチチャネルは機能しません。
 
 サーバーは、有効なネットワークインターフェイスの一覧を返すことによって応答します。 その後、SMB クライアントは、マルチチャネル用に使用可能なアダプターの一覧にそれらを追加します。 この時点で、マルチチャネルが開始され、少なくとも接続を開始しようとします。
 
-詳しくは、次の記事をご覧ください。
+詳細については、次の記事を参照してください。
 
-- [3.2.4.20.10 アプリケーションがサーバーのネットワークインターフェイスのクエリを要求する](https://docs.microsoft.com/openspecs/windows_protocols/ms-smb2/147adde4-d936-4597-924a-8caa3429c6b0)
+- [3.2.4.20.10 アプリケーションがサーバーのネットワークインターフェイスのクエリを要求する](/openspecs/windows_protocols/ms-smb2/147adde4-d936-4597-924a-8caa3429c6b0)
 
-- [2.2.32.5 NETWORK\_INTERFACE\_情報応答](https://docs.microsoft.com/openspecs/windows_protocols/ms-smb2/fcd862d1-1b85-42df-92b1-e103199f531f)
+- [2.2.32.5 ネットワーク \_ インターフェイス \_ 情報の応答](/openspecs/windows_protocols/ms-smb2/fcd862d1-1b85-42df-92b1-e103199f531f)
 
-- [3.2.5.14.11 ネットワークインターフェイス応答の処理](https://docs.microsoft.com/openspecs/windows_protocols/ms-smb2/5459722b-1eaa-4ead-b465-284363264cad)
+- [3.2.5.14.11 ネットワークインターフェイス応答の処理](/openspecs/windows_protocols/ms-smb2/5459722b-1eaa-4ead-b465-284363264cad)
 
 次のシナリオでは、アダプターを使用できません。
 
 - クライアントにルーティングに関する問題があります。 これは、通常、間違ったインターフェイスでトラフィックを強制する間違ったルーティングテーブルが原因で発生します。
 
-- マルチチャネルの制約が設定されています。 詳細については、「 [SmbMultichannelConstraint](https://docs.microsoft.com/powershell/module/smbshare/new-smbmultichannelconstraint)」を参照してください。
+- マルチチャネルの制約が設定されています。 詳細については、「 [SmbMultichannelConstraint](/powershell/module/smbshare/new-smbmultichannelconstraint)」を参照してください。
 
 - ネットワークインターフェイスの要求パケットと応答パケットがブロックされました。
 

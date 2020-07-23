@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 08/21/2018
-ms.openlocfilehash: bfa92f7e80bbf89fac615a3cd6ddf7057c0d6a4c
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: a07ad9b33000b17f5c6f41835a1a36531b3945af
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936075"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958884"
 ---
 # <a name="wscript"></a>wscript
 
@@ -56,9 +56,9 @@ wscript [<scriptname>] [/b] [/d] [/e:<engine>] [{/h:cscript|/h:wscript}] [/i] [/
 -   **/T**パラメーターを指定すると、タイマーを設定することによって、スクリプトの過剰な実行を防ぐことができます。 時間が指定された値を超えると、 **wscript**はスクリプトエンジンを中断し、プロセスを終了します。
 -   Windows スクリプトファイルは、通常、次のファイル名拡張子のいずれかに**なります。 wsf**、 **.vbs**、 **.js**。
 -   拡張子が関連付けられていないスクリプトファイルをダブルクリックすると、[**ファイルを開くアプリケーション**の選択] ダイアログボックスが表示されます。 [ **Wscript** ] または [ **cscript**] を選択し、[この**ファイルの種類を開くには常にこのプログラムを使用する**] を選択します。 これにより、このファイルの種類のファイルの既定のスクリプトホストとして**wscript.exe**または**cscript.exe**が登録されます。
--   個々のスクリプトのプロパティを設定できます。 詳細については、「 [Windows スクリプトホストの概要](https://technet.microsoft.com/library/cc738350(v=ws.10).aspx)」を参照してください。
+-   個々のスクリプトのプロパティを設定できます。 詳細については、「 [Windows スクリプトホストの概要](/previous-versions/windows/it-pro/windows-server-2003/cc738350(v=ws.10))」を参照してください。
 -   Windows スクリプトホストでは **、wsf**スクリプトファイルを使用できます。 各**wsf**ファイルは、複数のスクリプトエンジンを使用して複数のジョブを実行できます。
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

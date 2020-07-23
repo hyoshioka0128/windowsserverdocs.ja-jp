@@ -1,5 +1,5 @@
 ---
-title: AD FS OpenID Connect/OAuth の概念
+title: AD FS OpenID 接続/OAuth の概念
 description: 最新の認証の概念 AD FS について説明します。
 author: billmath
 ms.author: billmath
@@ -8,14 +8,14 @@ ms.date: 08/09/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 26c1635d4218c7d33377b6b8a90bc96ea4ad37b3
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 353546be17f096b692c2429aa65529d302a2df7e
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948780"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966854"
 ---
-# <a name="ad-fs-openid-connectoauth-concepts"></a>AD FS OpenID Connect/OAuth の概念
+# <a name="ad-fs-openid-connectoauth-concepts"></a>AD FS OpenID 接続/OAuth の概念
 AD FS 2016 以降に適用されます
  
 ## <a name="modern-authentication-actors"></a>先進認証アクター 
@@ -34,7 +34,7 @@ AD FS 2016 以降に適用されます
 ## <a name="application-types"></a>アプリケーションの種類 
  
 
-|アプリケーションの種類|説明|役割|
+|アプリケーションの種類|説明|Role|
 |-----|-----|-----|
 |ネイティブ アプリケーション|**パブリッククライアント**とも呼ばれ、これは、ユーザーが操作する pc またはデバイスで実行されるクライアントアプリとして使用することを目的としています。|リソースへのユーザーアクセスのために、承認サーバー (AD FS) からのトークンを要求します。 Http ヘッダーとしてトークンを使用して、保護されたリソースに HTTP 要求を送信します。| 
 |サーバーアプリケーション (Web アプリ)|サーバー上で実行され、一般にブラウザーを介してユーザーがアクセスできる web アプリケーション。 独自のクライアント "シークレット" または資格情報を維持できるため、**機密クライアント**と呼ばれることもあります。 |リソースへのユーザーアクセスのために、承認サーバー (AD FS) からのトークンを要求します。 トークンを要求する前に、クライアント (Web アプリ) はそのシークレットを使用して認証する必要があります。 | 
@@ -55,16 +55,16 @@ AD FS で構成されたすべての OAuth クライアント (ネイティブ�
  
 AD FS にリソースを登録するときに、AD FS が特定のアクションを実行できるようにスコープを構成できます。 スコープの構成に加えて、アクションを実行するために AD FS 要求でもスコープの値を送信する必要があります。 たとえば、管理者はリソースの登録時に openid としてスコープを構成する必要があります。また、アプリケーション (クライアント) が ID トークンを発行するには、AD FS の認証要求で scope = openid を送信する必要があります。 AD FS で使用できるスコープの詳細については、以下を参照してください。 
  
-- aza-ブローカー  [クライアントに OAuth 2.0 プロトコル拡張](https://docs.microsoft.com/openspecs/windows_protocols/ms-oapxbc/2f7d8875-0383-4058-956d-2fb216b44706)を使用していて、スコープパラメーターにスコープ "aza" が含まれている場合、サーバーは新しいプライマリ更新トークンを発行し、それを応答の refresh_token フィールドに設定するだけでなく、refresh_token_expires_in フィールドを新しいプライマリ更新トークンの有効期間に設定します (適用されている場合)。 
-- openid-アプリケーションが OpenID Connect 承認プロトコルの使用を要求できるようにします。 
-- logon_cert-logon_cert スコープを使用すると、アプリケーションはログオン証明書を要求できます。この証明書は、認証されたユーザーを対話的にログオンするために使用できます。 AD FS サーバーは、応答から access_token パラメーターを省略し、代わりに base64 でエンコードされた CMS 証明書チェーンまたは CMC 完全 PKI 応答を提供します。 詳細について [は、こちら](https://docs.microsoft.com/openspecs/windows_protocols/ms-oapx/32ce8878-7d33-4c02-818b-6c9164cc731e)を参照してください。
-- user_impersonation-AD FS から代理アクセストークンを正常に要求するには、user_impersonation スコープが必要です。 このスコープを使用する方法の詳細については、 [AD FS 2016 で OAuth を使用して、(OBO) を使用して多層アプリケーションを構築](ad-fs-on-behalf-of-authentication-in-windows-server.md)する方法に関する説明を参照してください。 
+- aza- [ブローカークライアントに OAuth 2.0 プロトコル拡張](/openspecs/windows_protocols/ms-oapxbc/2f7d8875-0383-4058-956d-2fb216b44706)を使用していて、   スコープパラメーターにスコープ "aza" が含まれている場合、サーバーは新しいプライマリ更新トークンを発行し、応答の refresh_token フィールドにそれを設定します。また、新しいプライマリ更新トークンが適用されている場合は、その有効期間に refresh_token_expires_in フィールドを設定します。 
+- openid - アプリケーションで OpenID Connect 承認プロトコルの使用を要求できるようにします。 
+- logon_cert - logon_cert スコープを使用すると、アプリケーションでログオン証明書を要求できます。この証明書を使用して、認証されたユーザーを対話的にログオンさせることができます。 AD FS サーバーでは、応答から access_token パラメーターが除去され、代わりに base64 でエンコードされた CMS 証明書チェーンまたは CMC 完全 PKI 応答が提供されます。 詳細について [は、こちら](/openspecs/windows_protocols/ms-oapx/32ce8878-7d33-4c02-818b-6c9164cc731e)を参照してください。
+- user_impersonation - AD FS に On-Behalf-Of アクセス トークンを正常に要求するには、user_impersonation スコープが必要です。 このスコープを使用する方法の詳細については、 [AD FS 2016 で OAuth を使用して、(OBO) を使用して多層アプリケーションを構築](ad-fs-on-behalf-of-authentication-in-windows-server.md)する方法に関する説明を参照してください。 
 - allatclaims – allatclaims スコープを使用すると、アプリケーションはアクセストークン内の要求を ID トークンにも追加するように要求できます。   
-- vpn_cert-vpn_cert スコープでは、アプリケーションが VPN 証明書を要求することができます。 VPN 証明書は、eap-tls 認証を使用して VPN 接続を確立するために使用できます。 これはサポートされなくなりました。 
-- 電子メール-アプリケーションは、サインインしたユーザーの電子メール要求を要求できます。  
-- プロファイル-アプリケーションがサインインユーザーのプロファイル関連の要求を要求できるようにします。  
+- vpn_cert - vpn_cert スコープを使用すると、アプリケーションで VPN 証明書を要求できます。VPN 証明書を使用すると、EAP-TLS 認証を使用して VPN 接続を確立できます。 これはサポートされなくなっています。 
+- email - アプリケーションで、サインインしたユーザーの電子メール要求を要求できます。  
+- profile - アプリケーションで、サインインしたユーザーのプロファイル関連の要求を要求できます。  
 
-## <a name="claims"></a>信頼性情報 
+## <a name="claims"></a>Claims 
  
 AD FS によって発行されたセキュリティトークン (アクセストークンと ID トークン) には、要求、または認証されたサブジェクトに関する情報のアサーションが含まれます。 アプリケーションは、次のようなさまざまなタスクの要求を使用できます。 
 - トークンを検証する 

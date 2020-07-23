@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7df52ea8d2b30d9e365d6dc79d53aad9bd0782f9
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 372622de4e94debcff019f2ab5b7cc793381aedf
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931116"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956404"
 ---
 # <a name="quser"></a>quser
 
@@ -35,7 +35,7 @@ ms.locfileid: "85931116"
 - ユーザーがログオンした日付と時刻
 
 > [!NOTE]
-> このコマンドは、 [query user コマンド](query-user.md)と同じです。 最新バージョンの新機能については、「 [Windows Server でのリモートデスクトップサービスの新](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn283323(v=ws.11))機能」を参照してください。
+> このコマンドは、 [query user コマンド](query-user.md)と同じです。 最新バージョンの新機能については、「 [Windows Server でのリモートデスクトップサービスの新](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn283323(v=ws.11))機能」を参照してください。
 
 ## <a name="syntax"></a>構文
 
@@ -75,7 +75,7 @@ quser
 quser USER1 /server:Server1
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

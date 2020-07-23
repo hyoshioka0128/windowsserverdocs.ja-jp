@@ -6,12 +6,12 @@ manager: dcscontentpm
 ms.topic: article
 ms.author: delhan
 ms.date: 12/25/2019
-ms.openlocfilehash: 654cb1b0eea65457d521d201739721ed8c3c0203
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 21b090e8e70f287e9609d28588403e3aa0988ce4
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80815195"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966304"
 ---
 # <a name="advanced-troubleshooting-server-message-block-smb"></a>高度なトラブルシューティングサーバーメッセージブロック (SMB)
 
@@ -28,7 +28,7 @@ SMB のトラブルシューティングは非常に複雑になる可能性が�
 
 たとえば、windows Server 2016 を使用して windows 10 でホストされている SMB 共有に接続する場合、Windows Server 2016 は smb クライアントと Windows 10 SMB サーバーになります。
 
-### <a name="collect-data"></a>データの収集
+### <a name="collect-data"></a>データを収集する
 
 SMB の問題のトラブルシューティングを行う前に、クライアント側とサーバー側の両方でネットワークトレースを最初に収集することをお勧めします。 次のガイドラインが適用されます。
 
@@ -49,7 +49,7 @@ SMB の問題のトラブルシューティングを行う前に、クライア�
 このセクションでは、netshell を使用してネットワークトレースを収集する手順について説明します。
 
 > [!NOTE]  
-> Netsh トレースによって ETL ファイルが作成されます。 ETL ファイルは、Message Analyzer (MA) およびネットワークモニター3.4 でのみ開くことができます (パーサーをネットワークモニターパーサー \> Windows に設定します)。
+> Netsh トレースによって ETL ファイルが作成されます。 ETL ファイルは、Message Analyzer (MA) およびネットワークモニター 3.4 (パーサーをネットワークモニターパーサーウィンドウに設定する) でのみ開くことができ \> ます。
 
 1. SMB サーバーと SMB クライアントの両方で、 **C**ドライブに**一時**フォルダーを作成します。その後、次のコマンドを実行します。
 
@@ -99,17 +99,17 @@ TCP/IP で次の問題が発生しているかどうかを確認します。
 
 4. TCP 受信ウィンドウが非常に強くなっています。 これは、ストレージが遅い場合や、データが補助的な関数ドライバー (AFD) Winsock バッファーから取得されない問題が原因で発生する場合があります。
 
-顕著な TCP/IP の問題がない場合は、SMB エラーを探します。 これを行うには、次の手順に従います。
+顕著な TCP/IP の問題がない場合は、SMB エラーを探します。 その手順は次のとおりです。
 
 1. SMB エラーは、SMB2 プロトコル仕様に対して常に確認してください。 多くの SMB エラーは害を受けません (有害ではありません)。 次の情報を参照して、エラーが次の問題のいずれかに関連していることを確認する前に、SMB がエラーを返した理由を特定します。
 
-   - [SMB2 Message 構文](https://docs.microsoft.com/openspecs/windows_protocols/ms-smb2/6eaf6e75-9c23-4eda-be99-c9223c60b181)トピックでは、各 SMB コマンドとそのオプションについて説明します。
+   - [SMB2 Message 構文](/openspecs/windows_protocols/ms-smb2/6eaf6e75-9c23-4eda-be99-c9223c60b181)トピックでは、各 SMB コマンドとそのオプションについて説明します。
     
-   - [SMB2 クライアント処理](https://docs.microsoft.com/openspecs/windows_protocols/ms-smb2/df0625a5-6516-4fbe-bf97-01bef451cab2)トピックでは、SMB クライアントが要求を作成し、サーバーメッセージに応答する方法について説明します。
+   - [SMB2 クライアント処理](/openspecs/windows_protocols/ms-smb2/df0625a5-6516-4fbe-bf97-01bef451cab2)トピックでは、SMB クライアントが要求を作成し、サーバーメッセージに応答する方法について説明します。
 
-   - [SMB2 Server Processing](https://docs.microsoft.com/openspecs/windows_protocols/ms-smb2/e1d08834-42e0-41ca-a833-fc26f5132a6f)トピックでは、SMB サーバーが要求を作成し、クライアント要求に応答する方法について説明します。
+   - [SMB2 Server Processing](/openspecs/windows_protocols/ms-smb2/e1d08834-42e0-41ca-a833-fc26f5132a6f)トピックでは、SMB サーバーが要求を作成し、クライアント要求に応答する方法について説明します。
 
-2. FSCTL\_の直後に TCP リセットコマンドが送信されたかどうかを確認し\_ネゴシエート\_情報 (negotiate の検証) コマンドを実行します。 その場合は、次の情報を参照してください。
+2. FSCTL \_ validate \_ ネゴシエート \_ 情報 (negotiate validate) コマンドの直後に、TCP リセットコマンドが送信されるかどうかを確認します。 その場合は、次の情報を参照してください。
 
    - クライアントまたはサーバーでネゴシエートの検証プロセスが失敗した場合、SMB セッションを終了 (TCP リセット) する必要があります。
 
@@ -128,7 +128,7 @@ TCP/IP で次の問題が発生しているかどうかを確認します。
 
 - アプリケーションが実行しようとしている操作の詳細については、「SMB コマンド」を参照してください。
 
-コマンドと操作をプロトコル仕様と比較して、すべてが正しく動作していることを確認します。 そうでない場合は、下位レベルのデータを収集して、根本原因に関する詳細情報を探します。 これを行うには、次の手順に従います。
+コマンドと操作をプロトコル仕様と比較して、すべてが正しく動作していることを確認します。 そうでない場合は、下位レベルのデータを収集して、根本原因に関する詳細情報を探します。 その手順は次のとおりです。
 
 1. 標準のパケットキャプチャを収集します。
 
@@ -136,7 +136,7 @@ TCP/IP で次の問題が発生しているかどうかを確認します。
 
 3. 他のすべてのオプションが失敗した場合は、SMB 自体で問題が発生していると思われる場合、または他のどのデータも根本原因を特定するのに十分ではない場合は、t. を収集します。
 
-例 :
+次に例を示します。
 
 - 1つのファイルサーバーへのファイル転送速度が低下しています。
 
@@ -159,33 +159,33 @@ TCP/IP で次の問題が発生しているかどうかを確認します。
 
 ここでは、SMB 関連のシステムファイルの一覧を示します。 システムファイルを更新し続けるには、最新の更新プログラムの[ロールアップ](https://support.microsoft.com/help/4498140/windows-10-update-history)がインストールされていることを確認してください。
 
-**% Windir%\\system32\\ドライバー**の下に一覧表示される SMB クライアントバイナリ:
+**% Windir% \\ system32 \\ ドライバー**の下に一覧表示される SMB クライアントバイナリ:
 
-- RDBSS
+- RDBSS.sys
 
-- MRXSMB
+- MRXSMB.sys
 
-- MRXSMB10
+- MRXSMB10.sys
 
-- MRXSMB20
+- MRXSMB20.sys
 
-- MUP.SYS
+- MUP.sys
 
-- SMBdirect
+- SMBdirect.sys
 
-**% Windir%\\system32\\ドライバー**の下に一覧表示される SMB サーバーバイナリ:
+**% Windir% \\ system32 \\ ドライバー**の下に一覧表示される SMB サーバーバイナリ:
 
-- SRVNET
+- SRVNET.sys
 
-- SRV.SYS
+- SRV.sys
 
-- SRV2
+- SRV2.sys
 
-- SMBdirect
+- SMBdirect.sys
 
-- **% Windir%\\system32**の下
+- **% Windir% \\ system32**の下
 
-- srvsvc .dll
+- srvsvc.dll
 
 ![SMB コンポーネント](media/troubleshooting-smb-2.png)
 
@@ -199,6 +199,6 @@ SMB の問題をトラブルシューティングする前に、次のコンポ�
 
 - パフォーマンスと安定性を向上させるには、Windows Core を更新します。
 
-## <a name="reference"></a>参照
+## <a name="reference"></a>リファレンス
 
-[Microsoft SMB プロトコルパケット交換シナリオ](https://docs.microsoft.com/windows/win32/fileio/microsoft-smb-protocol-packet-exchange-scenario)
+[Microsoft SMB プロトコルパケット交換シナリオ](/windows/win32/fileio/microsoft-smb-protocol-packet-exchange-scenario)

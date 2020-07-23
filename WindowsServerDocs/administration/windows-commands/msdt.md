@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 99ba1320171e4e305209f06fbee617e54c979d30
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: b5f00f34da20e9e151f093b919244fe3b49a85d6
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85925024"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956894"
 ---
 # <a name="msdt"></a>msdt
 
@@ -30,14 +30,14 @@ msdt </id <name> | /path <name> | /cab < name>> <</parameter> [options] … <par
 
 | パラメーター | Description |
 | --------- | ----------- |
-| /id`<packagename>` | 実行する診断パッケージを指定します。 利用可能なパッケージの一覧については、「[使用可能なトラブルシューティングパック](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/ee424379(v=ws.11)#available-troubleshooting-packs)」を参照してください。 |
+| /id`<packagename>` | 実行する診断パッケージを指定します。 利用可能なパッケージの一覧については、「[使用可能なトラブルシューティングパック](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/ee424379(v=ws.11)#available-troubleshooting-packs)」を参照してください。 |
 | /path`<directory|.diagpkg file|.diagcfg file>` | 診断パッケージへの完全パスを指定します。 ディレクトリを指定する場合は、ディレクトリに診断パッケージが含まれている必要があります。 * */Id * *、 **/dci**、/ **cab**の各パラメーターと共に、 **/path**パラメーターを使用することはできません。 |                                                                                   |
 | /dci`<passkey>` | パスキーフィールドをプリセットします。 このパラメーターは、サポートプロバイダーがパスキーを指定した場合にのみ使用されます。 |
 | /dt`<directory>` | 指定されたディレクトリのトラブルシューティングの履歴を表示します。 診断結果は、ユーザーの **%LOCALAPPDATA%\Diagnostics**または **%LOCALAPPDATA%\ElevatedDiagnostics**ディレクトリに格納されます。 |
 | /af`<answerfile>` | 1つ以上の診断対話に対する応答を含む応答ファイルを XML 形式で指定します。 |
 | /モーダル`<ownerHWND>` | 親コンソールウィンドウハンドル (HWND) によって指定された、10進数のウィンドウにトラブルシューティングパックをモーダルにします。 このパラメーターは、通常、トラブルシューティングパックを起動するアプリケーションによって使用されます。 コンソールウィンドウハンドルの取得の詳細については、「[コンソールウィンドウハンドルを取得する方法 (HWND)](https://support.microsoft.com/help/124103/how-to-obtain-a-console-window-handle-hwnd)」を参照してください。 |
 | その他のオプション`<true|false>` | ユーザーが追加のオプションを調査するかどうかを確認する最後のトラブルシューティング画面を有効 (true) または抑制 (false) します。 通常、このパラメーターは、オペレーティングシステムに含まれていないトラブルシューティングツールによってトラブルシューティングパックが起動されるときに使用されます。 |
-| /param returns`<parameters>` | 応答ファイルと同様に、コマンドラインでの相互作用応答のセットを指定します。 通常、このパラメーターは、TSP デザイナーで作成されたトラブルシューティングパックのコンテキスト内では使用されません。 カスタムパラメーターの開発の詳細については、「 [Windows トラブルシューティングプラットフォーム](https://docs.microsoft.com/previous-versions/windows/desktop/wintt/windows-troubleshooting-toolkit-portal)」を参照してください。 |
+| /param returns`<parameters>` | 応答ファイルと同様に、コマンドラインでの相互作用応答のセットを指定します。 通常、このパラメーターは、TSP デザイナーで作成されたトラブルシューティングパックのコンテキスト内では使用されません。 カスタムパラメーターの開発の詳細については、「 [Windows トラブルシューティングプラットフォーム](/previous-versions/windows/desktop/wintt/windows-troubleshooting-toolkit-portal)」を参照してください。 |
 | /advanced | トラブルシューティングパックが開始されたときに、既定で [ようこそ] ページの [詳細設定] リンクを展開します。 |
 | /カスタム | ユーザーに対して、適用される可能性のある解決策を確認するように求めるメッセージを表示します。 |
 
@@ -52,10 +52,10 @@ msdt </id <name> | /path <name> | /cab < name>> <</parameter> [options] … <par
 | 1 | **存在しますが、修正されていません。** トラブルシューティングツールによって、固定されていない状態の1つ以上の根本原因が特定されました。 このコードは、別の根本原因が修正された場合でも返されます。 |
 | 2 | **見つかりませんでした:** トラブルシューティングツールは、根本的な原因を特定できませんでした。 |
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 
-- [利用可能なトラブルシューティングパック](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/ee424379(v=ws.11)#available-troubleshooting-packs)
+- [利用可能なトラブルシューティングパック](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/ee424379(v=ws.11)#available-troubleshooting-packs)
 
-- [トラブルシューティングパック Powershell リファレンス](https://docs.microsoft.com/powershell/module/troubleshootingpack/?view=win10-ps)
+- [トラブルシューティングパック Powershell リファレンス](/powershell/module/troubleshootingpack/?view=win10-ps)

@@ -9,17 +9,17 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: af02ca14156c8a85ee54700983e2af6807752f91
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 6ac91d2226e9a5394d6f7ea00ab6f268eb99015b
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85934822"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956804"
 ---
 # <a name="net-print"></a>net print
 
 > [!IMPORTANT]
-> このコマンドは非推奨とされました。 ただし、同じタスクの多くは、 [prnjobs.vbs コマンド](prnjobs.md)、 [Windows Management Instrumentation (WMI)](https://docs.microsoft.com/windows/win32/wmisdk/wmi-start-page)、 [Powershell での PRINTMANAGEMENT](https://docs.microsoft.com/powershell/module/printmanagement)、または[IT プロフェッショナル向けのスクリプトリソース](https://gallery.technet.microsoft.com/ScriptCenter/site/search?f%5B0%5D.Type=RootCategory&f%5B0%5D.Value=printing&f%5B0%5D.Text=Printing)を使用して実行できます。
+> このコマンドは非推奨とされました。 ただし、同じタスクの多くは、 [prnjobs.vbs コマンド](prnjobs.md)、 [Windows Management Instrumentation (WMI)](/windows/win32/wmisdk/wmi-start-page)、 [Powershell での PRINTMANAGEMENT](/powershell/module/printmanagement)、または[IT プロフェッショナル向けのスクリプトリソース](https://gallery.technet.microsoft.com/ScriptCenter/site/search?f%5B0%5D.Type=RootCategory&f%5B0%5D.Value=printing&f%5B0%5D.Text=Printing)を使用して実行できます。
 
 指定された印刷キュー、または指定した印刷ジョブに関する情報を表示または指定した印刷ジョブを制御します。
 
@@ -93,7 +93,7 @@ net print \\Production 263 /hold
 net print \\Production 263 /release
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 
@@ -101,8 +101,8 @@ net print \\Production 263 /release
 
 - [prnjobs.vbs コマンド](prnjobs.md)
 
-- [Windows Management Instrumentation (WMI)](https://docs.microsoft.com/windows/win32/wmisdk/wmi-start-page)
+- [Windows Management Instrumentation (WMI)](/windows/win32/wmisdk/wmi-start-page)
 
-- [Powershell での PrintManagement](https://docs.microsoft.com/powershell/module/printmanagement)
+- [Powershell での PrintManagement](/powershell/module/printmanagement)
 
 - [IT プロフェッショナル向けのスクリプトリソース](https://gallery.technet.microsoft.com/ScriptCenter/site/search?f%5B0%5D.Type=RootCategory&f%5B0%5D.Value=printing&f%5B0%5D.Text=Printing)

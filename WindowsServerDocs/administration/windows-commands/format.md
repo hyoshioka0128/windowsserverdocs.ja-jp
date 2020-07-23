@@ -9,21 +9,21 @@ ms.topic: article
 ms.assetid: 51ec7423-9a01-4219-868a-25d69cdcc832
 author: jasongerend
 ms.date: 10/16/2017
-ms.openlocfilehash: 1ce046cf3bdce046a86d98228223cc2bc03b7c31
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 73f83a07cb1537af66d59977099b251b6dd12f47
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85922678"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958224"
 ---
-# <a name="format"></a>フォーマット
+# <a name="format"></a>Format
 
 > 適用対象: Windows 10、Windows Server 2016
 
 Windows ファイルを受け入れるようにディスクをフォーマットします。 ハードドライブをフォーマットするには、Administrators グループのメンバーである必要があります。
 
 > [!NOTE]
-> また、回復コンソールから、さまざまなパラメーターを指定して**format**コマンドを使用することもできます。 回復コンソールの詳細については、「 [Windows 回復環境 (WINDOWS RE)](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference)」を参照してください。
+> また、回復コンソールから、さまざまなパラメーターを指定して**format**コマンドを使用することもできます。 回復コンソールの詳細については、「 [Windows 回復環境 (WINDOWS RE)](/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference)」を参照してください。
 
 ## <a name="syntax"></a>構文
 
@@ -116,6 +116,6 @@ format a: /q
 format a: /v:DATA
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
-- [コマンド ライン構文の記号](https://technet.microsoft.com/library/cc771080.aspx)
+- [コマンド ライン構文の記号](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc771080(v=ws.11))

@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: aa032953255b3731f500bfb4d78eaca0d772d1d8
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 918d629ea0d3d87ea42184580c1be84740d4f79d
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85922726"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958234"
 ---
 # <a name="expand"></a>expand
 
@@ -22,7 +22,7 @@ ms.locfileid: "85922726"
 
 1つ以上の圧縮ファイルを展開します。 また、このコマンドを使用して、配布ディスクから圧縮ファイルを取得することもできます。
 
-**Expand**コマンドは、別のパラメーターを使用して Windows 回復コンソールから実行することもできます。 詳細については、「 [Windows 回復環境 (WinRE)](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference)」を参照してください。
+**Expand**コマンドは、別のパラメーターを使用して Windows 回復コンソールから実行することもできます。 詳細については、「 [Windows 回復環境 (WinRE)](/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference)」を参照してください。
 
 ## <a name="syntax"></a>構文
 
@@ -46,6 +46,6 @@ expand <source>.cab /f:<files> <destination>
 | /f`<files>` | 拡張するキャビネット (.cab) ファイル内のファイルを指定します。 ワイルドカード (**&#42;** または **?**) を使用できます。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

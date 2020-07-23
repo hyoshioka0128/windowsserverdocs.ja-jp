@@ -8,20 +8,20 @@ ms.topic: article
 ms.assetid: 8387eabe-7363-4367-b5b1-03c67baa2933
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 507dae03ca13f4d485d6d1db0676f9d3c7b057bc
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 6a0679ba548aabd9ea83f886e5e8db79480c819e
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858335"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958714"
 ---
 # <a name="plan-a-multisite-deployment"></a>マルチサイト展開を計画する
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016
+>適用先:Windows Server (半期チャネル)、Windows Server 2016
 
  Windows Server 2016、Windows Server 2012 では、DirectAccess とルーティングとリモートアクセスサービス (RRAS) VPN を1つのリモートアクセスの役割に結合しています。 この概要では、マルチサイト構成で Windows Server 2016 または Windows Server 2012 のリモートアクセスを展開するために必要な計画手順について説明します。  
   
-1.  [詳細設定を使用して単一の DirectAccess サーバーを展開](https://technet.microsoft.com/library/hh831436(v=ws.11).aspx)します。 この手順には、単一のサーバーを展開するために必要なインフラストラクチャの計画が含まれます。 これには、ネットワークとサーバーの設定、証明書の要件、DNS 設定、ネットワークロケーションサーバーの展開、DirectAccess 管理サーバー、Active Directory 設定、グループポリシーオブジェクト (Gpo) の計画が含まれます。  
+1.  [詳細設定を使用して単一の DirectAccess サーバーを展開](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831436(v=ws.11))します。 この手順には、単一のサーバーを展開するために必要なインフラストラクチャの計画が含まれます。 これには、ネットワークとサーバーの設定、証明書の要件、DNS 設定、ネットワークロケーションサーバーの展開、DirectAccess 管理サーバー、Active Directory 設定、グループポリシーオブジェクト (Gpo) の計画が含まれます。  
   
 2.  [手順2マルチサイトインフラストラクチャを計画](Step-2-Plan-the-Multisite-Infrastructure.md)します。 この手順には、Active Directory と GPO の計画、および DNS の構成が含まれます。  
   
@@ -32,5 +32,3 @@ ms.locfileid: "80858335"
   
 これらの計画手順を完了したら、「[マルチサイト展開の構成](../configure/Configure-a-Multisite-Deployment.md)」を参照してください。  
   
-
-

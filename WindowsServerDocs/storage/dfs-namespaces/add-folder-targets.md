@@ -8,12 +8,12 @@ ms.technology: storage
 ms.topic: article
 author: jasongerend
 ms-date: 06/05/2017
-ms.openlocfilehash: 2f4e0deb82f16c905f580c13115a5214556d4f5f
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: e5a81f2967953b985028407d53d6a039fd8990eb
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475559"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961274"
 ---
 # <a name="add-folder-targets"></a>フォルダー ターゲットの追加
 
@@ -34,7 +34,7 @@ DFS の管理を使ってフォルダー ターゲットを追加するには、
 4.  フォルダーが DFS レプリケーションを使ってレプリケートされる場合、レプリケーション グループに新しいフォルダー ターゲットを追加するかどうかを指定できます。
 
 > [!TIP]
-> Windows PowerShell を使ってフォルダー ターゲットを追加するには、[New-DfsnFolderTarget](https://docs.microsoft.com/powershell/module/dfsn/new-dfsnfoldertarget) コマンドレットを使います。 DFSN Windows PowerShell モジュールは、Windows Server 2012 で導入されました。
+> Windows PowerShell を使ってフォルダー ターゲットを追加するには、[New-DfsnFolderTarget](/powershell/module/dfsn/new-dfsnfoldertarget) コマンドレットを使います。 DFSN Windows PowerShell モジュールは、Windows Server 2012 で導入されました。
 
 > [!NOTE]
 > フォルダーには、フォルダー ターゲットまたは他の DFS フォルダーを含めることができますが、フォルダー階層の同じレベルに両方を含めることはできません。

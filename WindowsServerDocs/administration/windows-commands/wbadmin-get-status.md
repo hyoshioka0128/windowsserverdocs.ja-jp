@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a5f073941fa0d336e513c8de7502a601f1de5711
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: a9a2a71ed8477722b32b06f37c88b373d6889568
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85934333"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86954624"
 ---
 # <a name="wbadmin-get-status"></a>wbadmin get status
 
@@ -39,8 +39,8 @@ wbadmin get status
 -   このサブコマンドは、現在のバックアップまたは回復操作が完了するまで停止しません。コマンドウィンドウを閉じた場合でも、サブコマンドは引き続き実行されます。
 -   現在のバックアップまたは回復操作を停止する場合は、 **wbadmin stop job**サブコマンドを使用します。
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 -   [Wbadmin](wbadmin.md)
--   [WBJob](https://technet.microsoft.com/library/jj902426.aspx)コマンドレット
+-   [WBJob](/powershell/module/windowserverbackup/?view=winserver2012r2-ps)コマンドレット

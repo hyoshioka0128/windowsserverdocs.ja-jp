@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 506a4d9a64f1dd9b4b37088a30926190d7675695
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: ca0b72fce2ce9408fa04e948c8116a0b9e153268
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85925804"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86957644"
 ---
 # <a name="ftp-mput"></a>ftp mput
 
@@ -42,7 +42,7 @@ mput <localfile>[ ]
 mput Program1.exe Program2.exe
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 
@@ -50,4 +50,4 @@ mput Program1.exe Program2.exe
 
 - [ftp バイナリコマンド](ftp-binary.md)
 
-- [追加の FTP ガイダンス](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))
+- [追加の FTP ガイダンス](/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))

@@ -8,18 +8,18 @@ ms.assetid: c44fe905-a865-4c97-8cc5-fb95fec7d4d5
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dansimp
-ms.openlocfilehash: f3cf9c784c35f04f9232bb05e79acdbd8ed7a09a
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 4b79cf89c1363ba35ba6567139e119e0afeec905
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85937324"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86954859"
 ---
 # <a name="type"></a>型
 
 Windows コマンドシェルの**type**は、テキストファイルの内容を表示する組み込みコマンドです。 **Type**コマンドを使用して、テキストファイルを変更せずに表示します。
 
-PowerShell では、 **type**は**[Get Content](https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-content)** コマンドレットへの組み込みエイリアスであり、ファイルの内容も表示されますが、構文は異なります。
+PowerShell では、 **type**は**[Get Content](/powershell/module/microsoft.powershell.management/get-content)** コマンドレットへの組み込みエイリアスであり、ファイルの内容も表示されますが、構文は異なります。
 
 ## <a name="syntax"></a>構文
 
@@ -50,6 +50,6 @@ type holiday.mar
 type holiday.mar | more
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

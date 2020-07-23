@@ -6,12 +6,12 @@ manager: dcscontentpm
 ms.topic: article
 ms.author: delhan
 ms.date: 12/25/2019
-ms.openlocfilehash: af05daa164b5b2c5eca73eff51d97d4c25ba1ca3
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: cb575015ea8a8fc6cbc35358103774a931b0b749
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80815395"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958864"
 ---
 # <a name="slow-smb-files-transfer-speed"></a>SMB ファイル転送速度の低下
 
@@ -29,7 +29,7 @@ ms.locfileid: "80815395"
     
   - これは通常、初期コピーがキャッシュまたはバッファー (メモリ内または RAID コントローラーのメモリキャッシュ内) にある場合に発生し、キャッシュは実行されます。これにより、データは強制的にディスクに直接書き込まれます (書き込み)。 これは、処理速度が遅いプロセスです。
     
-  - ストレージパフォーマンスモニターカウンターを使用して、時間の経過と共にストレージのパフォーマンスが低下するかどうかを判断します。 詳細については、「 [SMB ファイルサーバーのパフォーマンスチューニング](https://docs.microsoft.com/windows-server/administration/performance-tuning/role/file-server/smb-file-server)」を参照してください。
+  - ストレージパフォーマンスモニターカウンターを使用して、時間の経過と共にストレージのパフォーマンスが低下するかどうかを判断します。 詳細については、「 [SMB ファイルサーバーのパフォーマンスチューニング](../../../administration/performance-tuning/role/file-server/smb-file-server.md)」を参照してください。
 
 - RAMMap (SysInternals) を使用して、メモリ内の "マップされたファイル" の使用状況が空きメモリ不足のために増加するのを停止するかどうかを判断します。
 
@@ -37,7 +37,7 @@ ms.locfileid: "80815395"
 
 - SMBv3 以降のバージョンでは、SMB マルチチャネルが有効で動作していることを確認してください。
 
-- SMB クライアントで、SMB の大きな MTU を有効にし、帯域幅調整を無効にします。 これを行うには、次のコマンドを実行します。  
+- SMB クライアントで、SMB の大きな MTU を有効にし、帯域幅調整を無効にします。 そのためには、次のコマンドを実行します。  
   
   ```PowerShell
   Set-SmbClientConfiguration -EnableBandwidthThrottling 0 -EnableLargeMtu 1
@@ -45,7 +45,7 @@ ms.locfileid: "80815395"
 
 ## <a name="small-file-transfer-is-slow"></a>小さいファイル転送の速度が遅い
 
-SMB による小さいファイルの転送速度の低下は、多くのファイルが存在する場合に最もよく発生します。 これは予期される動作です。
+SMB による小さいファイルの転送速度の低下は、多くのファイルが存在する場合に最もよく発生します。 これは予想される現象です。
 
 ファイルの転送中に、ファイルの作成により、高レベルのプロトコルオーバーヘッドと高いファイルシステムのオーバーヘッドが発生します。 大きなファイル転送の場合、これらのコストは1回だけ発生します。 多数の小さなファイルが転送されると、コストが繰り返し発生し、転送速度が低下します。
 
@@ -65,7 +65,7 @@ SMB による小さいファイルの転送速度の低下は、多くのファ�
 
 この問題は、通常、WAN 接続で発生します。 これは一般的に、Office アプリ (特に Microsoft Excel) がデータにアクセスしてデータを読み取る方法に起因します。
 
-Office と SMB のバイナリが最新であることを確認し、SMB サーバーでリースが無効になっていることを確認することをお勧めします。 これを行うには、次の手順に従います。
+Office と SMB のバイナリが最新であることを確認し、SMB サーバーでリースが無効になっていることを確認することをお勧めします。 その手順は次のとおりです。
    
 1. Windows 8 と Windows Server 2012 以降のバージョンの Windows で、次の PowerShell コマンドを実行します。
       
@@ -89,4 +89,4 @@ Office と SMB のバイナリが最新であることを確認し、SMB サー�
    NET START SERVER
    ```
 
-この問題を回避するには、ファイルをローカルファイルサーバーにレプリケートすることもできます。 詳細については、「 [Aving Office documents to a network server](https://docs.microsoft.com/office/troubleshoot/office/saving-file-to-network-server-slow)」を参照してください。
+この問題を回避するには、ファイルをローカルファイルサーバーにレプリケートすることもできます。 詳細については、「 [Aving Office documents to a network server](/office/troubleshoot/office/saving-file-to-network-server-slow)」を参照してください。

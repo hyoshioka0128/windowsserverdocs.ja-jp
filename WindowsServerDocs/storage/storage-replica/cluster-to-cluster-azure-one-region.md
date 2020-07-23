@@ -8,16 +8,16 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: storage-replica
 manager: mchad
-ms.openlocfilehash: 00dbf709139ef245b94a3f083ab83a12503131c2
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ad806577c1daa46ba77895b6a422c6fdace23c98
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856295"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966814"
 ---
 # <a name="cluster-to-cluster-storage-replica-within-the-same-region-in-azure"></a>Azure の同じリージョン内のクラスター記憶域レプリカへのクラスター化
 
-> 適用対象: Windows Server 2019、Windows Server 2016、Windows Server (半期チャネル)
+> 適用先:Windows Server 2019、Windows Server 2016、Windows Server (半期チャネル)
 
 Azure の同じリージョン内でストレージレプリケーションをクラスター化するようにクラスターを構成できます。 次の例では、2ノードクラスターを使用していますが、クラスターへのクラスターの記憶域レプリカは2ノードクラスターに制限されていません。 次の図は、相互に通信できる2ノード記憶域スペースダイレクトクラスターであり、同じドメイン内にあり、同じリージョン内に存在します。
 
@@ -75,13 +75,13 @@ Azure の同じリージョン内でストレージレプリケーションを�
 11. 各クラスター (**azlbr1**、**azlbr2**) の内部 Standard SKU [Load Balancer](https://ms.portal.azure.com/#create/Microsoft.LoadBalancer-ARM)を作成します。 
    
     クラスター IP アドレスをロードバランサーの静的プライベート IP アドレスとして指定します。
-    - azlbr1 = > フロントエンド IP: 10.3.0.100 (仮想ネットワーク (**az2az**) サブネットから未使用の ip アドレスを取得する)
+    - azlbr1 => フロントエンド IP: 10.3.0.100 (仮想ネットワーク (**az2az**) サブネットから未使用の ip アドレスを取得する)
     - 各ロードバランサーのバックエンドプールを作成します。 関連付けられているクラスターノードを追加します。
     - 正常性プローブの作成: ポート59999
     - 負荷分散規則の作成: 有効な Floating IP を使用して HA ポートを許可します。 
    
     クラスター IP アドレスをロードバランサーの静的プライベート IP アドレスとして指定します。
-    - azlbr2 = > フロントエンド IP: 10.3.0.101 (仮想ネットワーク (**az2az**) サブネットから未使用の ip アドレスを取得する)
+    - azlbr2 => フロントエンド IP: 10.3.0.101 (仮想ネットワーク (**az2az**) サブネットから未使用の ip アドレスを取得する)
     - 各ロードバランサーのバックエンドプールを作成します。 関連付けられているクラスターノードを追加します。
     - 正常性プローブの作成: ポート59999
     - 負荷分散規則の作成: 有効な Floating IP を使用して HA ポートを許可します。 
@@ -95,7 +95,7 @@ Azure の同じリージョン内でストレージレプリケーションを�
 13. ポート59999で正常性プローブメッセージをリッスンし、現在このリソースを所有しているノードから応答するようにクラスターに指示します。 
     クラスターの1つのノードからクラスターごとに1回実行します。 
     
-    この例では、構成値に応じて "ILBIP" を変更してください。 任意の1つのノード**az2az1**/**az2az2**から次のコマンドを実行します。
+    この例では、構成値に応じて "ILBIP" を変更してください。 任意の1つのノード**az2az1**az2az2 から次のコマンドを実行し / **az2az2**ます。
 
     ```PowerShell
      $ClusterNetworkName = "Cluster Network 1" # Cluster network name (Use Get-ClusterNetwork on Windows Server 2012 or higher to find the name. And use Get-ClusterResource to find the IPResourceName).
@@ -105,7 +105,7 @@ Azure の同じリージョン内でストレージレプリケーションを�
      Get-ClusterResource $IPResourceName | Set-ClusterParameter -Multiple @{"Address"="$ILBIP";"ProbePort"=$ProbePort;"SubnetMask"="255.255.255.255";"Network"="$ClusterNetworkName";"ProbeFailureThreshold"=5;"EnableDhcp"=0}
     ```
 
-14. 任意の1つのノード**az2az3**/**az2az4**から次のコマンドを実行します。 
+14. 任意の1つのノード**az2az3**az2az4 から次のコマンドを実行し / **az2az4**ます。 
 
     ```PowerShell
     $ClusterNetworkName = "Cluster Network 1" # Cluster network name (Use Get-ClusterNetwork on Windows Server 2012 or higher to find the name. And use Get-ClusterResource to find the IPResourceName).
@@ -132,13 +132,13 @@ Azure の同じリージョン内でストレージレプリケーションを�
 
 16. 次の手順に進む前に、[クラスター検証テスト](../../failover-clustering/create-failover-cluster.md#validate-the-configuration)を実行します。
 
-17. Windows PowerShell を起動し、[Test-SRTopology](https://docs.microsoft.com/powershell/module/storagereplica/test-srtopology?view=win10-ps) コマンドレットを使用して、記憶域レプリカのすべての要件を満たしているかどうかを判別します。 クイックテストだけでなく、実行時間の長いパフォーマンス評価モードでも、このコマンドレットを使用できます。
+17. Windows PowerShell を起動し、[Test-SRTopology](/powershell/module/storagereplica/test-srtopology?view=win10-ps) コマンドレットを使用して、記憶域レプリカのすべての要件を満たしているかどうかを判別します。 クイックテストだけでなく、実行時間の長いパフォーマンス評価モードでも、このコマンドレットを使用できます。
 
 18. クラスター間の記憶域レプリカを構成します。
    
     あるクラスターから別のクラスターへのアクセスを双方向に許可します。
 
-    この例では、次のようになります。
+    この例では次のようになります。
 
     ```PowerShell
       Grant-SRAccess -ComputerName az2az1 -Cluster SRAZC2

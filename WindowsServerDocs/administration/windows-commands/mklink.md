@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cb8339f7dcb2f397d6b90105e2ccd9bdc8cc07a5
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 22c364a56c804fd71a4b633294491f6b9b084ca0
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85928534"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956984"
 ---
 # <a name="mklink"></a>mklink
 
@@ -48,7 +48,7 @@ rd \MyFolder
 del \MyFile.file
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 
@@ -56,4 +56,4 @@ del \MyFile.file
 
 - [rd コマンド](rd.md)
 
-- [Windows PowerShell の新しい項目](https://docs.microsoft.com/powershell/module/microsoft.powershell.management/new-item?view=powershell-6)
+- [Windows PowerShell の新しい項目](/powershell/module/microsoft.powershell.management/new-item?view=powershell-6)

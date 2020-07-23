@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2584dde27560b5b8f28fb51b8fb5c2cf92a2d805
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 8a31fb2a49e5a85f7fdb4b8b5a7becc8ea57e13d
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85934311"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86954599"
 ---
 # <a name="wbadmin-restore-catalog"></a>wbadmin restore catalog
 
@@ -54,8 +54,8 @@ Server01 の共有フォルダー servername\share に格納されているバ�
 wbadmin restore catalog -backupTarget:\\servername\share -machine:server01
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 -   [Wbadmin](wbadmin.md)
--   [WBCatalog](https://technet.microsoft.com/library/jj902437.aspx)コマンドレット
+-   [WBCatalog](/powershell/module/windowserverbackup/?view=winserver2012r2-ps)コマンドレット

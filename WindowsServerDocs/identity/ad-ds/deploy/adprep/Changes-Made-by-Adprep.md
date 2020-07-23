@@ -8,18 +8,18 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 2e127e161f129e2a8545b68496ae2420f7a3cdbf
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 18bbcea7bab733500f471af452ca2aa898fbce45
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80824755"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86960564"
 ---
 # <a name="changes-made-by-adprepexe"></a>Changes Made by Adprep.exe
 
->適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
-このトピックでは、Adprep.exe が Windows Server 2012 R2 および Windows Server 2012 で行う変更について説明します。  
+このトピックでは、Windows Server 2012 R2 および Windows Server 2012 で Adprep.exe が行う変更について説明します。  
   
 -   [フォレスト全体の更新](../../../ad-ds/deploy/RODC/Forest-Wide-Updates.md)  
   
@@ -30,8 +30,6 @@ ms.locfileid: "80824755"
 -   [スキーマの更新](../../../ad-ds/deploy/Schema-Updates.md)  
   
 ## <a name="see-also"></a>参照  
-[Windows Server 2008 R2: AD DS をサポートするための Adprep.exe の変更点に関する付録](https://technet.microsoft.com/library/dd378876.aspx)  
-[Windows Server 2008: AD DS をサポートするための Adprep.exe の変更点に関する付録](https://technet.microsoft.com/library/cc770703.aspx)  
+[Windows Server 2008 R2: Appendix of Changes to Adprep.exe to Support AD DS (Windows Server 2008 R2: AD DS をサポートするための Adprep.exe への変更 (付録))](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd378876(v=ws.10))  
+[Windows Server 2008: Appendix of Changes to Adprep.exe to Support AD DS (Windows Server 2008: AD DS をサポートするための Adprep.exe への変更 (付録))](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770703(v=ws.10))  
   
-
-

@@ -8,12 +8,12 @@ ms.topic: article
 author: jasongerend
 ms.date: 06/07/2019
 description: このトピックでは、DFS 名前空間について説明します。DFS 名前空間は、複数のサーバー上に配置されている共有フォルダーを、論理的に構造化された 1 つ以上の名前空間にグループ化できる Windows Server の役割サービスです。
-ms.openlocfilehash: fd02f0b65cc57300c673d72c7879a80d48747fa2
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 57d2d8bb7565677afcd2a031807061ab50b6ff16
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471886"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964094"
 ---
 # <a name="dfs-namespaces-overview"></a>DFS 名前空間の概要
 
@@ -32,7 +32,7 @@ DFS 名前空間は、複数のサーバー上に配置されている共有フ�
 
 このトピックでは、DFS のインストール方法、新機能、評価と展開に関する情報の参照先について説明します。
 
-名前空間の管理には、DFS 管理、[Windows PowerShell の DFS 名前空間 (DFSN) コマンドレット](https://docs.microsoft.com/powershell/module/dfsn/?view=win10-ps)、**DfsUtil** コマンド、WMI を呼び出すスクリプトのいずれかを使用できます。
+名前空間の管理には、DFS 管理、[Windows PowerShell の DFS 名前空間 (DFSN) コマンドレット](/powershell/module/dfsn/?view=win10-ps)、**DfsUtil** コマンド、WMI を呼び出すスクリプトのいずれかを使用できます。
 
 ## <a name="server-requirements-and-limits"></a>サーバーの要件と制限
 
@@ -65,7 +65,7 @@ DFS の管理の実行または DFS 名前空間の使用には、その他の�
 
 DFS 名前空間および DFS レプリケーションは、ファイル サービスおよび記憶域サービスの役割の一部です。 DFS 用の管理ツール (DFS の管理、Windows PowerShell 用の DFS 名前空間モジュール、およびコマンド ライン ツール) がリモート サーバー管理ツールの一部として個別にインストールされています。
 
-次のセクションで説明するように、 [Windows 管理センター](../../manage/windows-admin-center/understand/windows-admin-center.md)、サーバーマネージャー、または PowerShell を使用して DFS 名前空間をインストールします。
+次のセクションで説明するように、 [Windows 管理センター](../../manage/windows-admin-center/overview.md)、サーバーマネージャー、または PowerShell を使用して DFS 名前空間をインストールします。
 
 ### <a name="to-install-dfs-by-using-server-manager"></a>サーバー マネージャーを使用して DFS をインストールするには
 
@@ -114,7 +114,7 @@ Microsoft Azure 内の仮想マシンにおける DFS 名前空間の使用は�
 
 - ドメインベースの名前空間は、Azure Active Directory を持つ環境を含む、Azure の仮想マシンでホストすることができます。
 
-Azure 仮想マシンを使い始める方法については、[Azure 仮想マシンのドキュメント](https://docs.microsoft.com/azure/virtual-machines/)を参照してください。
+Azure 仮想マシンを使い始める方法については、[Azure 仮想マシンのドキュメント](/azure/virtual-machines/)を参照してください。
 
 ## <a name="additional-references"></a>その他のリファレンス
 
@@ -122,10 +122,10 @@ Azure 仮想マシンを使い始める方法については、[Azure 仮想マ�
 
 | コンテンツ タイプ        | 参考資料 |
 | ------------------  | ----------------|
-| **製品評価** | [Windows Server での DFS 名前空間と DFS レプリケーションの新機能](https://technet.microsoft.com/library/dn281957(v=ws.11).aspx) |
-| **展開**    | [DFS 名前空間のスケーラビリティに関する考慮事項](https://blogs.technet.com/b/filecab/archive/2012/08/26/dfs-namespace-scalability-considerations.aspx) |
-| **運用**    | [DFS 名前空間: よく寄せられる質問](https://technet.microsoft.com/library/ee404780.aspx) |
+| **製品評価** | [Windows Server での DFS 名前空間と DFS レプリケーションの新機能](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn281957(v=ws.11)) |
+| **デプロイ**    | [DFS 名前空間のスケーラビリティに関する考慮事項](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB) |
+| **操作**    | [DFS 名前空間: よく寄せられる質問](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee404780(v=ws.10)) |
 | **コミュニティ リソース** | [ファイル サービスとストレージに関する TechNet フォーラム](https://social.technet.microsoft.com/forums/winserverfiles/threads/) |
-| **プロトコル**        | [Windows Server のファイルサービスプロトコル](https://msdn.microsoft.com/library/cc239318.aspx)(非推奨) |
+| **プロトコル**        | [Windows Server のファイルサービスプロトコル](/openspecs/windows_protocols/MS-WINPROTLP/df36f95e-6a6b-48d6-a3ae-35a17674f546)(非推奨) |
 | **関連テクノロジ** | [フェールオーバー クラスタリング](../../failover-clustering/failover-clustering-overview.md)|
 | **サポート** | [Windows IT 担当者向けサポート](https://www.microsoft.com/itpro/windows/support)|

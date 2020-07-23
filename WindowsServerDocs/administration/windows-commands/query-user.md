@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8c186e0945612bf7c84637f6b039dcdbac3d68f1
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 6929f7828f82c50723ae0a8c658ee2c79e1f1499
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85930219"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956454"
 ---
 # <a name="query-user"></a>query user
 
@@ -35,7 +35,7 @@ ms.locfileid: "85930219"
 - ユーザーがログオンした日付と時刻
 
 > [!NOTE]
-> 最新バージョンの新機能については、「 [Windows Server でのリモートデスクトップサービスの新](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn283323(v=ws.11))機能」を参照してください。
+> 最新バージョンの新機能については、「 [Windows Server でのリモートデスクトップサービスの新](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn283323(v=ws.11))機能」を参照してください。
 
 ## <a name="syntax"></a>構文
 
@@ -75,7 +75,7 @@ query user
 query user USER1 /server:Server1
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

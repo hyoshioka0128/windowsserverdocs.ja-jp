@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f2715332a8a6adff29f31a4dbd7d3e7a27a4a6f2
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 64355bd452934909d0600fa791e7a4c2d2066b6f
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929326"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958294"
 ---
 # <a name="diskpart-scripts-and-examples"></a>diskpart のスクリプトと例
 
@@ -53,12 +53,12 @@ Diskpart スクリプトを作成するには、実行する Diskpart コマン�
 
 - Diskpart の起動時に、diskpart のバージョンとコンピューター名がコマンドプロンプトに表示されます。 既定では、スクリプト化されたタスクの実行中に diskpart によってエラーが検出された場合、diskpart はスクリプトの処理を停止し、エラーコードを表示します ( **noerr**パラメーターを指定していない場合)。 ただし、 **noerr**パラメーターを使用したかどうかにかかわらず、構文エラーが発生した場合、diskpart は常にエラーを返します。 **Noerr**パラメーターを使用すると、ディスクの合計数に関係なく、1つのスクリプトを使用してすべてのディスクのすべてのパーティションを削除するなど、便利なタスクを実行できます。
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 
-- [サンプル: Windows PE と DiskPart を使用して UEFI/GPT ベースのハードドライブパーティションを構成する](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh825686(v=win.10))
+- [サンプル: Windows PE と DiskPart を使用して UEFI/GPT ベースのハードドライブパーティションを構成する](/previous-versions/windows/it-pro/windows-8.1-and-8/hh825686(v=win.10))
 
-- [サンプル: Windows PE と DiskPart を使用して BIOS/MBR ベースのハードディスクパーティションを構成する](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh825677(v=win.10))
+- [サンプル: Windows PE と DiskPart を使用して BIOS/MBR ベースのハードディスクパーティションを構成する](/previous-versions/windows/it-pro/windows-8.1-and-8/hh825677(v=win.10))
 
-- [Storage Cmdlets in Windows PowerShell (Windows PowerShell の記憶域コマンドレット)](https://docs.microsoft.com/powershell/module/storage/?view=win10-ps)
+- [Storage Cmdlets in Windows PowerShell (Windows PowerShell の記憶域コマンドレット)](/powershell/module/storage/?view=win10-ps)

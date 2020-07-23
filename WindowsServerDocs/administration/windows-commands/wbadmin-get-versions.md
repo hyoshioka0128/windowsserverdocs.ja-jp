@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6729189bb15fd3aeb10172288504e9809b082edb
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 6d122176e37d7c49f9193477e348e44e039e9ac9
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932324"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86954614"
 ---
 # <a name="wbadmin-get-versions"></a>wbadmin get versions
 
@@ -54,8 +54,8 @@ wbadmin get versions -backupTarget:h:
 wbadmin get versions -backupTarget:\\servername\share -machine:server01
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 -   [Wbadmin](wbadmin.md)
--   [WBBackupTarget](https://technet.microsoft.com/library/jj902447.aspx)コマンドレット
+-   [WBBackupTarget](/powershell/module/windowserverbackup/?view=winserver2012r2-ps)コマンドレット

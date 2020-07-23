@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 401e15c248687c7585cb85172b1d4d57125cdc86
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 77fe5b82b73a0f37ba81dda210f15d6017788822
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475179"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966824"
 ---
 # <a name="set-target-priority-to-override-referral-ordering"></a>ターゲット優先順位を設定して紹介順序を上書きする
 
@@ -53,7 +53,7 @@ ms.locfileid: "85475179"
 4.  [**詳細設定**] タブで、[**紹介順序を上書き**する] をクリックし、必要な優先順位をクリックします。
 
 > [!NOTE]
-> Windows PowerShell を使ってターゲット優先順位を設定するには、**ReferralPriorityClass** および **ReferralPriorityRank** パラメーターを指定して [Set-DfsnRootTarget](https://technet.microsoft.com/library/jj884266.aspx) および [Set-DfsnFolderTarget](https://technet.microsoft.com/library/jj884264.aspx) コマンドレットを使います。 これらのコマンドレットは、Windows Server 2012 で導入されました。
+> Windows PowerShell を使ってターゲット優先順位を設定するには、**ReferralPriorityClass** および **ReferralPriorityRank** パラメーターを指定して [Set-DfsnRootTarget](/powershell/module/dfsr/update-dfsrconfigurationfromad?view=win10-ps) および [Set-DfsnFolderTarget](/powershell/module/dfsr/update-dfsrconfigurationfromad?view=win10-ps) コマンドレットを使います。 これらのコマンドレットは、Windows Server 2012 で導入されました。
 
 ## <a name="additional-references"></a>その他のリファレンス
 

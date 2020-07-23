@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d221479e23c737529305a2354e6a5a52b957bd8e
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: c5c3362571df5a3b22dda1b663fcbba749ee6df6
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931481"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86954894"
 ---
 # <a name="tsecimp"></a>tsecimp
 
@@ -31,7 +31,7 @@ tsecimp /d
 
 |パラメーター|説明|
 |---------|-----------|
-|/f \<Filename>|必須です。 インポートする割り当て情報を含んだ XML ファイルの名前を指定します。|
+|/f \<Filename>|必須。 インポートする割り当て情報を含んだ XML ファイルの名前を指定します。|
 |/v|Tsec.ini ファイルに情報をインポートせず、XML ファイルの構造を検証します。|
 |/U|各ユーザーについて、XML ファイルで指定されたドメインのメンバーかどうかをチェックします。 このパラメーターは、ネットワークに接続されているコンピューター上で使用する必要があります。 大量のユーザー割り当て情報を処理する場合、このパラメーターを指定するとパフォーマンスが大幅に低下することがあります。|
 |/d|インストールされているテレフォニー プロバイダーの一覧を表示します。 テレフォニー プロバイダーごとに、関連付けられた回線デバイスと、各回線デバイスに関連付けられたアドレスおよびユーザーが表示されます。|
@@ -152,8 +152,8 @@ tsecimp /d
 
     ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 
-[コマンド シェルの概要](https://technet.microsoft.com/library/cc737438(v=ws.10).aspx)
+[コマンド シェルの概要](/previous-versions/windows/it-pro/windows-server-2003/cc737438(v=ws.10))

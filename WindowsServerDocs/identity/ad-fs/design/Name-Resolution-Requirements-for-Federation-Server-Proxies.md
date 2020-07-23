@@ -8,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 47c5bd23d3ba82c3df81c71951c2a50db0fe99d7
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 540b58c6fe150e5d8781b1d23e97a3efcdf6c43d
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80853045"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959804"
 ---
 # <a name="name-resolution-requirements-for-federation-server-proxies"></a>フェデレーション サーバー プロキシの名前解決の要件
 
-インターネット上のクライアントコンピューターが Active Directory フェデレーションサービス (AD FS) \(\)AD FS によって保護されているアプリケーションにアクセスしようとすると、まずフェデレーションサーバーに対して認証を行う必要があります。 ほとんどの場合、フェデレーション サーバーは通常ありません、インターネットから直接アクセスです。 そのため、インターネット クライアント コンピューターがリダイレクトされるよう、フェデレーション サーバー プロキシを代わりにします。 正常なリダイレクトを実行するには、適切なドメイン ネーム システムを追加する \(DNS\) またはインターネットが直面する複数の DNS ゾーンのレコードです。  
+インターネット上のクライアント コンピューターが Active Directory フェデレーション サービスで保護されているアプリケーションにアクセスしようとした場合に \(AD FS\), 、最初、フェデレーション サーバーを認証する必要があります。 ほとんどの場合、フェデレーション サーバーは通常ありません、インターネットから直接アクセスです。 そのため、インターネット クライアント コンピューターがリダイレクトされるよう、フェデレーション サーバー プロキシを代わりにします。 正常なリダイレクトを実行するには、適切なドメイン ネーム システムを追加する \(DNS\) またはインターネットが直面する複数の DNS ゾーンのレコードです。  
   
 フェデレーション サーバー プロキシをインターネット クライアントをリダイレクトするために使用する方法は、境界ネットワーク内の DNS ゾーンを構成する方法や、インターネット上のユーザーが管理する DNS ゾーンの構成方法によって異なります。 フェデレーション サーバー プロキシは、境界ネットワークで使用することが意図されています。 これらのインターネット クライアント要求をリダイレクト フェデレーション サーバーが正常に DNS は、すべてのインターネット上で正しく構成されている場合にのみ\-を制御するゾーンが直面しています。 インターネットに構成することはそのため、\-ゾーンが直面している —、境界ネットワークのみを提供している DNS ゾーンまたは境界ネットワークとインターネット クライアントの両方を提供している DNS ゾーンがあるかどうか-が重要です。  
   
@@ -42,7 +42,7 @@ ms.locfileid: "80853045"
 ### <a name="2-configure-perimeter-dns"></a>2.境界 DNS を構成する  
 のみ単一 AD FS ホスト名がクライアント コンピューターに転送されるため、インターネットまたはイントラネット上されるかどうか-境界 DNS サーバーを使用する、インターネット上のクライアント コンピューターはアカウント フェデレーション サーバーの FQDN を解決する必要があります \(fs.fabrikam.com\) 境界ネットワーク上のアカウント フェデレーション サーバー プロキシの IP アドレスにします。 境界 DNS にはに 1 つのホストに限定 corp.fabrikam.com DNS ゾーンが含まれているように、しようとすると、fs.fabrikam.com を解決するには、ログオン アカウント フェデレーション サーバー プロキシのクライアントを転送できる、 \(A\) fs のリソース レコード \(fs.fabrikam.com\) と境界ネットワーク上のアカウント フェデレーション サーバー プロキシの IP アドレスです。  
   
-フェデレーション サーバー プロキシの hosts ファイルを変更して、境界ネットワークに DNS を構成する方法の詳細については、次を参照してください。 [、境界ネットワークのみを提供する DNS ゾーンにフェデレーション サーバー プロキシの名前解決を構成する](../../ad-fs/deployment/Configure-Name-Resolution-for-a-Federation-Server-Proxy-in-a-DNS-Zone-That-Serves-Only-the-Perimeter-Network.md)です。  
+フェデレーション サーバー プロキシの hosts ファイルを変更して、境界ネットワークに DNS を構成する方法の詳細については、次を参照してください。 [、境界ネットワークのみを提供する DNS ゾーンにフェデレーション サーバー プロキシの名前解決を構成する](../deployment/configure-name-resolution-for-federation-server-proxy-in-dns-zone-serving-only-perimeter-network.md)です。  
   
 ## <a name="dns-zone-serving-both-the-perimeter-network-and-internet-clients"></a>境界ネットワークとインターネットの両方のクライアントに対応する DNS ゾーン  
 このシナリオでは、ユーザーの組織は、境界ネットワーク内の DNS ゾーンと、インターネット上の 1 つ以上の DNS ゾーンを制御しています。 このシナリオでフェデレーション サーバー プロキシの正常な名前の解決策は、次の条件によって異なります。  
@@ -63,7 +63,7 @@ ms.locfileid: "80853045"
 ### <a name="2-configure-internet-dns"></a>2.インターネット DNS を構成する  
 このシナリオで名前解決が正常に行われるためには、インターネット上のクライアント コンピューターから fs.fabrikam.com へのすべての要求が、ユーザーが制御するインターネット DNS ゾーンによって解決される必要があります。 そのため、境界ネットワーク内には、アカウント フェデレーション サーバー プロキシの IP アドレスに fs.fabrikam.com に対するクライアント要求を転送する、インターネット上の DNS ゾーンを構成する必要があります。  
   
-境界ネットワークとインターネットの DNS ゾーンを変更する方法の詳細については、次を参照してください。 [DNS ゾーンことはどちらも、境界ネットワークとインターネット クライアントでのフェデレーション サーバー プロキシの名前解決を構成する](../../ad-fs/deployment/Configure-Name-Resolution-for-a-Federation-Server-Proxy-in-a-DNS-Zone-That-Serves-Both-the-Perimeter-Network-and-Internet-Clients.md)です。  
+境界ネットワークとインターネットの DNS ゾーンを変更する方法の詳細については、次を参照してください。 [DNS ゾーンことはどちらも、境界ネットワークとインターネット クライアントでのフェデレーション サーバー プロキシの名前解決を構成する](../deployment/configure-name-resolution-for-federation-server-proxy-in-dns-zone-serving-only-perimeter-network.md)です。  
   
 ## <a name="see-also"></a>参照
 [Windows Server 2012 での AD FS 設計ガイド](AD-FS-Design-Guide-in-Windows-Server-2012.md)

@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 9b420e311c98477d369c81f10eca274e665dae3a
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: a993d53611382dcd0007bfecae95da6221cf6016
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475159"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966804"
 ---
 # <a name="set-the-ordering-method-for-targets-in-referrals"></a>紹介におけるターゲットの順序指定方法を設定する
 
@@ -35,7 +35,7 @@ ms.locfileid: "85475159"
 3.  **[紹介]** タブで、順序指定方法を選択します。
 
 > [!NOTE]
-> Windows PowerShell を使って名前空間ルートの紹介におけるターゲットの順序指定方法を設定するには、次のいずれかのパラメーターを指定して [Set-DfsnRoot](https://technet.microsoft.com/library/jj884281.aspx) コマンドレットを使います。
+> Windows PowerShell を使って名前空間ルートの紹介におけるターゲットの順序指定方法を設定するには、次のいずれかのパラメーターを指定して [Set-DfsnRoot](/powershell/module/dfsr/update-dfsrconfigurationfromad?view=win10-ps) コマンドレットを使います。
 >    -   **EnableSiteCosting** の場合、**"最低コストの順序指定"** の方法が指定されます。
 >    -   **EnableInsiteReferrals** の場合、**"クライアント サイト外のターゲットを除外する"** 順序指定方法が指定されます。
 >    -   いずれかのパラメーターを省略すると、**"ランダム順序"** の参照順序指定方法が指定されます。
@@ -53,7 +53,7 @@ DFSN Windows PowerShell モジュールは、Windows Server 2012 で導入され
 3.  **[紹介]** タブで、**[クライアント サイト外のターゲットを除外する]** チェック ボックスをオンにします。
 
 > [!NOTE]
-> Windows PowerShell を使ってクライアント サイト外のフォルダー ターゲットを除外するには、[Set-DfsnFolder –EnableInsiteReferrals](https://technet.microsoft.com/library/jj884283.aspx) コマンドレットを使います。
+> Windows PowerShell を使ってクライアント サイト外のフォルダー ターゲットを除外するには、[Set-DfsnFolder –EnableInsiteReferrals](/powershell/module/dfsr/update-dfsrconfigurationfromad?view=win10-ps) コマンドレットを使います。
 
 ## <a name="target-referral-ordering-methods"></a>ターゲット紹介の順序指定方法
 

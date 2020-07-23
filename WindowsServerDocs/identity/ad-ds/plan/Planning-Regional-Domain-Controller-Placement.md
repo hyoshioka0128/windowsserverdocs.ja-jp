@@ -8,12 +8,12 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: f5b88afe50e9cb498eacf1bbc872718d50cd64da
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: 574c5a4c0d009a34b1d327ac4aef3b9f5210b0bf
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81623929"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959394"
 ---
 # <a name="planning-regional-domain-controller-placement"></a>地域ドメイン コント ローラーの配置の計画
 
@@ -79,6 +79,6 @@ WAN リンクの可用性が信頼性の高い場合はドメイン コント �
 
 ドメイン コント ローラーを維持するためのコストの削減がネットワーク トラフィックより重要な場合は、そのドメインのドメイン コント ローラーを集中管理ししない位置に、地域別のドメイン コント ローラーを配置するか場所に Rodc を配置することを検討してください。
 
-地域別のドメインコントローラーの配置と各場所で表される各ドメインのユーザー数を文書化するのに役立つワークシートについては、「 [Windows Server 2003 展開キット用のジョブエイド](https://microsoft.com/download/details.aspx?id=9608)」、Job_Aids_Designing_and_Deploying_Directory_and_Security_Services をダウンロードして、「ドメインコントローラーの配置」 (DSSTOPO_4) を参照してください。
+各場所に示されている各ドメインについて、地域別のドメインコントローラーの配置とユーザー数を文書化するためのワークシートについては、「 [Windows Server 2003 展開キット用のジョブ支援](https://microsoft.com/download/details.aspx?id=9608)」、「Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip のダウンロード」、「ドメインコントローラーの配置」 (DSSTOPO_4.doc) を参照してください。
 
-地域ドメインを展開するときに、地域別のドメイン コント ローラーを配置する必要がある場所に関する情報を参照する必要があります。 地域ドメインの展開に関する詳細については、次を参照してください。 [を展開する Windows Server 2008 地域ドメイン](https://technet.microsoft.com/library/cc755118.aspx)します。
+地域ドメインを展開するときに、地域別のドメイン コント ローラーを配置する必要がある場所に関する情報を参照する必要があります。 地域ドメインの展開に関する詳細については、次を参照してください。 [を展開する Windows Server 2008 地域ドメイン](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc755118(v=ws.10))します。

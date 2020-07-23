@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 602f3aa99f9d0e47fbbde1ab5c09b193446d8a7c
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 995b2332f98906a1a5b9cb53f504a87fb831c3e0
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936912"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958804"
 ---
 # <a name="tlntadmn"></a>tlntadmn
 
@@ -64,6 +64,6 @@ tlntadmn config timeout=0:30:0
 tlntadmn -s
 ```
 
-## <a name="additional-references"></a>その他の参照情報
--   [telnet 操作ガイド](https://technet.microsoft.com/library/cc753164(v=ws.10).aspx)
+## <a name="additional-references"></a>その他のリファレンス
+-   [telnet 操作ガイド](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753164(v=ws.10))
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

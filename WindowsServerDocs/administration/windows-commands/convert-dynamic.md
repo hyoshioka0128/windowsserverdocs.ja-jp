@@ -9,19 +9,19 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3474da8c1f4a3e58d9e77c36abe4390ec2f5b731
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 8c57986bf46dc7d22eeecfb6d7ad085f5e3f7e8c
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85928979"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958544"
 ---
 # <a name="convert-dynamic"></a>convert dynamic
 
 ベーシック ディスクをダイナミック ディスクに変換します。 この操作を成功させるには、ベーシックディスクを選択する必要があります。 [[ディスクの選択] コマンド](select-disk.md)を使用してベーシックディスクを選択し、それにフォーカスを移動します。
 
 > [!NOTE]
-> このコマンドの使用方法については、「[ダイナミックディスクをベーシックディスクに戻す](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc755238(v=ws.11))」を参照してください。
+> このコマンドの使用方法については、「[ダイナミックディスクをベーシックディスクに戻す](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc755238(v=ws.11))」を参照してください。
 
 ## <a name="syntax"></a>構文
 
@@ -47,7 +47,7 @@ convert dynamic [noerr]
 convert dynamic
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

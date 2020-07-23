@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ec2c35fc8a279c604f76c71dc6ed9aeb50a0ffd7
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: cc64ac7537ee97c763410639870083712ec31ee4
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85933723"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86954684"
 ---
 # <a name="wbadmin-delete-catalog"></a>wbadmin delete catalog
 
@@ -41,8 +41,8 @@ wbadmin delete catalog
 
 コンピューターのバックアップ カタログを削除した場合の Windows Server バックアップ スナップインを使用してそのコンピューターで作成されたバックアップにアクセスすることができなきます。 この場合、別のバックアップ場所にアクセスする場合は、使用 **wbadmin restore catalog** をその場所からカタログのバックアップを復元します。 バックアップ カタログを削除した後は、新しいバックアップを作成する必要があります。
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 -   [Wbadmin](wbadmin.md)
--   [削除 WBCatalog](https://technet.microsoft.com/library/jj902445.aspx)
+-   [削除 WBCatalog](/powershell/module/windowserverbackup/?view=winserver2012r2-ps)

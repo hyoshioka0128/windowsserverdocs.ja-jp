@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d69ac0aa200a694b94d8428e4ae333ae21ed20e1
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 122fa2033ca553f50a7ddf380faa4a31dbb150cd
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85934361"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86954644"
 ---
 # <a name="wbadmin-get-items"></a>wbadmin get items
 
@@ -52,8 +52,8 @@ wbadmin get items -version:03/31/2013-09:00
 wbadmin get items -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 -   [Wbadmin](wbadmin.md)
--   [WBBackupSet](https://technet.microsoft.com/library/jj902473.aspx)コマンドレット
+-   [WBBackupSet](/powershell/module/windowserverbackup/?view=winserver2012r2-ps)コマンドレット

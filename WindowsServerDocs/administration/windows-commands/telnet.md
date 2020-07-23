@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a5f588328deb51109ee9139b6e7dfaad8f0166dc
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 70c4eb44a654094410432dd9d37d0ad0082f5874
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85934222"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958814"
 ---
 # <a name="telnet"></a>telnet
 
@@ -38,7 +38,7 @@ telnet [/a] [/e <EscapeChar>] [/f <FileName>] [/l <UserName>] [/t {vt100 | vt52 
 |/?|コマンド プロンプトにヘルプを表示します。 または、/h を入力することができます。|
 
 ## <a name="remarks"></a>注釈
--   このコマンドを実行する前に、telnet クライアントソフトウェアをインストールする必要があります。 詳細については、「 [telnet のインストール](https://technet.microsoft.com/library/cc754293(v=ws.10).aspx)」を参照してください。
+-   このコマンドを実行する前に、telnet クライアントソフトウェアをインストールする必要があります。 詳細については、「 [telnet のインストール](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754293(v=ws.10))」を参照してください。
 -   Telnet プロンプト (**Microsoft telnet>**) によって示される telnet コンテキストを入力するために、パラメーターを指定せずに telnet を実行できます。 Telnet プロンプトから telnet コマンドを使用して、telnet クライアントを実行しているコンピューターを管理できます。
 
 ## <a name="examples"></a>例
@@ -51,7 +51,7 @@ Telnet を使用して、TCP ポート44の telnet.microsoft.com で telnet サ�
 telnet /f telnetlog.txt telnet.microsoft.com 44
 ```
 
-## <a name="additional-references"></a>その他の参照情報
--   [Telnet をインストールする](https://technet.microsoft.com/library/cc754293(v=ws.10).aspx)
--   [telnet のテクニカルリファレンス](https://technet.microsoft.com/library/cc754987(v=ws.10).aspx)
+## <a name="additional-references"></a>その他のリファレンス
+-   [Telnet をインストールする](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754293(v=ws.10))
+-   [telnet のテクニカルリファレンス](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754987(v=ws.10))
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

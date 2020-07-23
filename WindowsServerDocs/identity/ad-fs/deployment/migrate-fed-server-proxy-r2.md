@@ -8,12 +8,12 @@ ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 57367cadd3c7ce3d031c6eb3a53c333422543dae
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9a9b5f6454ec93ec27f557588016295935827c18
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71359372"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966214"
 ---
 # <a name="migrate-the-active-directory-federation-services-proxy-server-to-windows-server-2012-r2"></a>Active Directory フェデレーションサービス (AD FS) プロキシサーバーを Windows Server 2012 R2 に移行する
 
@@ -26,19 +26,18 @@ Windows Server 2012 R2 の Active Directory フェデレーションサービス
   
 Web アプリケーション プロキシの展開を計画するには、次のトピックの情報を確認できます。  
   
-- [Web アプリケーションプロキシインフラストラクチャを計画する](https://technet.microsoft.com/library/dn383648.aspx)  
+- [Web アプリケーション プロキシ インフラストラクチャを計画する](/previous-versions/orphan-topics/ws.11/dn383648(v=ws.11))  
   
-- [Web アプリケーションプロキシサーバーを計画する](https://technet.microsoft.com/library/dn383647.aspx)  
+- [Web アプリケーション プロキシ サーバーを計画する](/previous-versions/orphan-topics/ws.11/dn383647(v=ws.11))  
   
   Web アプリケーション プロキシを展開するには、次のトピックの手順を実行できます。  
   
-- [Web アプリケーションプロキシインフラストラクチャを構成する](https://technet.microsoft.com/library/dn383644.aspx)  
+- [Web アプリケーション プロキシ インフラストラクチャを構成する](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn383644(v=ws.11))  
   
-- [Web アプリケーションプロキシサーバーをインストールして構成する](https://technet.microsoft.com/library/dn383662.aspx)  
+- [Web アプリケーション プロキシ サーバーをインストールし、構成する](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn383662(v=ws.11))  
   
-## <a name="next-steps"></a>次のステップ
- [Active Directory フェデレーションサービス (AD FS) の役割サービスを Windows Server 2012 R2  に移行する](migrate-ad-fs-service-role-to-windows-server-r2.md)  
- [AD FS フェデレーションサーバー  を移行する準備をしています](prepare-migrate-ad-fs-server-r2.md)  
- [AD FS フェデレーションサーバー   の移行](migrate-ad-fs-fed-server-r2.md)  
- [Windows Server 2012 R2 への AD FS 移行の検証](verify-ad-fs-migration.md)
-
+## <a name="next-steps"></a>次の手順
+ [Active Directory フェデレーションサービス (AD FS) の役割サービスを Windows Server 2012 R2 に移行する](migrate-ad-fs-service-role-to-windows-server-r2.md)   
+ [AD FS フェデレーションサーバーを移行する準備をしています](prepare-migrate-ad-fs-server-r2.md)   
+ [AD FS フェデレーションサーバーの移行](migrate-ad-fs-fed-server-r2.md)    
+ [AD FS から Windows Server 2012 R2 への移行の確認](verify-ad-fs-migration.md)

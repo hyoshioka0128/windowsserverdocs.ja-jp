@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/30/2020
-ms.openlocfilehash: 7b382673be838af739c29ffa294e3d853f0507c2
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 5a1a262957177efd6e393f22c9fd9b5541650666
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85925153"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86957584"
 ---
 # <a name="ftp-put"></a>ftp put
 
@@ -52,7 +52,7 @@ put test.txt test1.txt
 put program.exe
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 
@@ -60,4 +60,4 @@ put program.exe
 
 - [ftp バイナリコマンド](ftp-binary.md)
 
-- [追加の FTP ガイダンス](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))
+- [追加の FTP ガイダンス](/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))

@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c59cfb1174199eb499942f16f7e621437c8fab4f
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: c8c3f45fd3bc241b004f398a9231ff5e9b4041e2
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936204"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958954"
 ---
 # <a name="winnt"></a>winnt
 
@@ -22,4 +22,4 @@ ms.locfileid: "85936204"
 
 Winnt は非推奨とされており、および Windows の将来のリリースでサポートされるとは限りません。
 
-このツールは、Windows Server 2003 に含まれます。 詳細については、「 [Winnt](https://technet.microsoft.com/library/cc755763(v=ws.10).aspx)」を参照してください。
+このツールは、Windows Server 2003 に含まれます。 詳細については、「 [Winnt](/previous-versions/orphan-topics/ws.10/cc755763(v=ws.10))」を参照してください。

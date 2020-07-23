@@ -9,15 +9,15 @@ ms.assetid: 16c217ad-700a-48a3-8398-4a7f7e9edb52
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.openlocfilehash: a0a0e4f50134102bab7c258e47e63bf7d24e60c8
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 1609ff02c8e1b1480d004104bdc7e37f1240729a
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858715"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959274"
 ---
 # <a name="multipoint-services-migration-in-windows-server-2016"></a>Windows Server 2016 での MultiPoint サービスの移行
->適用対象: Windows Server 2016
+>適用先:Windows Server 2016
 
 以前のリリースの Windows Server 2016 MultiPoint Services から、最新バージョンの MultiPoint services に移行できます。 次の情報は、準備情報と移行および検証の手順を示しています。
 
@@ -29,7 +29,7 @@ ms.locfileid: "80858715"
 - 移行プロセスでは、MultiPoint Services ロールのアプリケーションの設定が自動的に収集または記録されることはありません。 移行するアプリケーションに対しては、カスタマイズされた移行計画を作成する必要があります。 これは、MultiPoint Services の仮想デスクトップ機能を使用する場合にも当てはまります。
 - このガイドでは、ユーザーまたは MultiPoint サーバー上の共有フォルダーに保存されたデータを移動する方法については説明しません。 これは、通常のステーションと仮想デスクトップステーションに適用されます。
 - 移行元サーバーで複数の役割が実行されている場合の移行方法については、このガイドには記載されていません。 サーバーで複数の役割が実行されている場合は、役割の移行ガイドで説明されている情報に基づいて、サーバー環境に合わせたカスタムの移行手順を設計する必要があります。
-- このガイドにはリモートデスクトップサービス CAL の移行に関する情報は含まれていません。 この情報については、「[移行リモートデスクトップサービスクライアントアクセスライセンス (RDS cal)](https://technet.microsoft.com/library/dd851844.aspx)」を参照してください。
+- このガイドにはリモートデスクトップサービス CAL の移行に関する情報は含まれていません。 この情報については、「[移行リモートデスクトップサービスクライアントアクセスライセンス (RDS cal)](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11))」を参照してください。
 
 ## <a name="supported-migration-scenarios-for-multipoint-services-in-windows-server-2016"></a>Windows Server 2016 の MultiPoint Services でサポートされている移行シナリオ
 MultiPoint サービスの役割サービスは、Windows Server 2016 Standard および Datacenter で使用できます。 この移行ガイドでは、Windows Server 2016 を実行している移行元サーバーから、同じバージョンを実行している移行先サーバーに Multipoint Services の役割サービスを移行する方法について説明します。

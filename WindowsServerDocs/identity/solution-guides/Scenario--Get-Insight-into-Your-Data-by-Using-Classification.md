@@ -8,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: a92f8791d5ceef3a8dbba4541588da1d48c4fbff
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 8438a1581bbd774f9368f89ee37306e0474a528a
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80861115"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959644"
 ---
-# <a name="scenario-get-insight-into-your-data-by-using-classification"></a>Scenario: Get Insight into Your Data by Using Classification
+# <a name="scenario-get-insight-into-your-data-by-using-classification"></a>シナリオ:分類を使用してデータの情報を得る
 
->適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
 データおよび記憶域リソースへの依存は、ほとんどの組織で重要度を増し続けています。 IT 管理者は、従来よりも大規模かつ複雑な記憶域インフラストラクチャを監視しながら総保有コストを妥当な水準に保つ責任を負うという、難しさを増す課題に直面しています。 記憶域リソースの管理はデータのボリュームや可用性だけに関することではなくなり、企業のポリシーを適用し、記憶域の消費用途を知ることで、効率的な使用率とリスク軽減のためのコンプライアンスを実現することも含まれるようになりました。 ファイル分類インフラストラクチャは、データを効率よく管理できるように分類プロセスを自動化することによって、データの性質を理解できるようにします。 ファイル分類インフラストラクチャでは、手動、プログラム、自動の 3 つの分類方法を使用できます。 このトピックでは自動ファイル分類方法について扱います。  
   
@@ -32,23 +32,21 @@ ms.locfileid: "80861115"
   
 「[自動ファイル分類の計画](assetId:///e3c3bb4b-3034-42b7-b391-8ef5f5851955)」に、自動ファイル分類を構成するための計画に関する情報があります。  
   
-「[自動ファイル分類&#40;の展開&#41;](Deploy-Automatic-File-Classification--Demonstration-Steps-.md)」の手順に従って、ファイルを自動的に分類する方法を確認できます。  
+「自動ファイル分類の展開」でファイルを自動的に分類する方法の手順については[&#41;「デモンストレーション手順 &#40;](Deploy-Automatic-File-Classification--Demonstration-Steps-.md)」を参照してください。  
   
 ## <a name="in-this-scenario"></a>このシナリオの内容  
 このシナリオは、ダイナミック アクセス制御のシナリオの一部です。 ダイナミック アクセス制御の追加情報については、次のトピックを参照してください。  
   
--   [動的 Access Control: シナリオの概要](Dynamic-Access-Control--Scenario-Overview.md)  
+-   [ダイナミック アクセス制御: シナリオの概要](Dynamic-Access-Control--Scenario-Overview.md)  
   
-## <a name="practical-applications"></a><a name="BKMK_APP"></a>実用的なアプリケーション  
+## <a name="practical-applications"></a><a name="BKMK_APP"></a>実際の適用例  
 Windows Server 2012 のファイル分類インフラストラクチャは、ビジネスデータ所有者が簡単にデータを分類してラベル付けできるようにすることで、動的 Access Control に貢献します。 集約型アクセス ポリシーに保管されている分類情報を使用して、ビジネスにとって重要なデータ クラスのアクセス ポリシーを定義できます。  
   
-## <a name="features-included-in-this-scenario"></a><a name="BKMK_NEW"></a>このシナリオに含まれる機能  
+## <a name="features-included-in-this-scenario"></a><a name="BKMK_NEW"></a>このシナリオに含まれている機能  
 次の表で、このシナリオに含まれる機能を紹介すると共に、それをシナリオに活かす方法について説明します。  
   
-|機能|このシナリオのサポート方法|  
+|特徴量|このシナリオのサポート方法|  
 |-----------|---------------------------------|  
-|[ファイルサーバーリソースマネージャーの概要](https://technet.microsoft.com/library/hh831701.aspx)|ファイル分類インフラストラクチャは、ファイル サーバー リソース マネージャーに含まれている機能です。|  
-|[ファイル サービスおよび記憶域サービスの概要](https://technet.microsoft.com/library/hh831487.aspx)|ファイル サーバー リソース マネージャーは、ファイル サービスのサーバーの役割に付属している機能です。|  
+|[File Server Resource Manager Overview](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831701(v=ws.11))|ファイル分類インフラストラクチャは、ファイル サーバー リソース マネージャーに含まれている機能です。|  
+|[ファイル サービスおよび記憶域サービスの概要](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831487(v=ws.11))|ファイル サーバー リソース マネージャーは、ファイル サービスのサーバーの役割に付属している機能です。|  
   
-
-

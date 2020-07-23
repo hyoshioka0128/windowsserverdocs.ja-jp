@@ -8,12 +8,12 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 1abf845ce69b395bf46a0f155db2c683c359207c
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: 451a0b46cd45d0dd28ceb3634da9d847864bd519
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81623880"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86953774"
 ---
 # <a name="selecting-the-forest-root-domain"></a>フォレスト ルート ドメインを選択する
 
@@ -25,7 +25,7 @@ Active Directory フォレストに展開する最初のドメインは、フォ
 
 フォレストルートドメインを選択するには、ドメイン設計内のいずれかの Active Directory ドメインがフォレストのルートドメインとして機能するかどうか、または専用フォレストのルートドメインを展開する必要があるかどうかを判断します。
 
-フォレストルートドメインの展開の詳細については、「 [Windows Server 2008 フォレストルートドメインの展開](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731174(v=ws.10))」を参照してください。
+フォレストルートドメインの展開の詳細については、「 [Windows Server 2008 フォレストルートドメインの展開](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc731174(v=ws.10))」を参照してください。
 
 ## <a name="choosing-a-regional-or-dedicated-forest-root-domain"></a>地域または専用フォレストのルートドメインの選択
 
@@ -88,4 +88,4 @@ Active Directory DNS 所有者は、組織の DNS 所有者と連携して、Act
 
 ## <a name="documenting-the-forest-root-domain-name"></a>フォレストルートドメイン名を文書化する
 
-フォレストルートドメインに選択した DNS プレフィックスとサフィックスを文書化します。 この時点で、どのドメインがフォレストのルートになるかを特定します。 フォレストルートドメイン名の情報を、作成した "ドメイン計画" ワークシートに追加して、新規およびアップグレードされたドメインとドメイン名の計画を文書化することができます。 このファイルを開くには、 [Windows Server 2003 Deployment Kit のジョブエイド](https://microsoft.com/download/details.aspx?id=9608)から Job_Aids_Designing_and_Deploying_Directory_and_Security_Services をダウンロードして、"ドメインの計画" (DSSLOGI_5) を開きます。
+フォレストルートドメインに選択した DNS プレフィックスとサフィックスを文書化します。 この時点で、どのドメインがフォレストのルートになるかを特定します。 フォレストルートドメイン名の情報を、作成した "ドメイン計画" ワークシートに追加して、新規およびアップグレードされたドメインとドメイン名の計画を文書化することができます。 これを開くには、 [Windows Server 2003 Deployment Kit のジョブエイド](https://microsoft.com/download/details.aspx?id=9608)から Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip をダウンロードして、"ドメイン計画" (DSSLOGI_5.doc) を開きます。

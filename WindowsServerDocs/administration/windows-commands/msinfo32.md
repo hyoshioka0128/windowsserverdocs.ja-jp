@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c6506ba51c768f92a19deb1627f5456231cee3f6
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: e43ed2680c099ca97a0074d5f460f504b3edb298
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85934863"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956814"
 ---
 # <a name="msinfo32"></a>msinfo32
 
@@ -22,7 +22,7 @@ ms.locfileid: "85934863"
 
 システム情報ツールを開き、ローカルコンピューター上のハードウェア、システムコンポーネント、およびソフトウェア環境の包括的なビューを表示します。
 
-システム情報のカテゴリによっては、大量のデータが含まれている場合があります。 **Start/wait**コマンドを使用すると、これらのカテゴリのレポートパフォーマンスを最適化できます。 詳細については、「[システム情報](https://technet.microsoft.com/library/cc783305(v=ws.10).aspx)」を参照してください。
+システム情報のカテゴリによっては、大量のデータが含まれている場合があります。 **Start/wait**コマンドを使用すると、これらのカテゴリのレポートパフォーマンスを最適化できます。 詳細については、「[システム情報](/previous-versions/windows/it-pro/windows-server-2003/cc783305(v=ws.10))」を参照してください。
 
 ## <a name="syntax"></a>構文
 
@@ -72,6 +72,6 @@ msinfo32 /nfo syssum.nfo /categories +systemsummary
 msinfo32 /nfo conflicts.nfo /categories +componentsproblemdevices+resourcesconflicts+resourcesforcedhardware
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

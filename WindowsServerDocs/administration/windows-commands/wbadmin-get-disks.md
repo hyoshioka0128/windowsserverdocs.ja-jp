@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e9a479b3509939c17ab986ce68c9a057ac3e773c
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 8b42deb873613a03e985fc9d54f954c4fd6bfb97
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932129"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86954654"
 ---
 # <a name="wbadmin-get-disks"></a>wbadmin get disks
 
@@ -34,8 +34,8 @@ wbadmin get disks
 
 このサブコマンドにはパラメーターがありません。
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 -   [Wbadmin](wbadmin.md)
--   [WBDisk](https://technet.microsoft.com/library/jj902446.aspx)コマンドレット
+-   [WBDisk](/powershell/module/windowserverbackup/?view=winserver2012r2-ps)コマンドレット

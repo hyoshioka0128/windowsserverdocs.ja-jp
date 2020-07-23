@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 440830af55763fbb3ebee7cdbdca97ca11cde30c
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 75cb8deb61ebfe3a4b0db665da4353339ee8d314
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85937030"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956504"
 ---
 # <a name="query-session"></a>query session
 
@@ -23,7 +23,7 @@ ms.locfileid: "85937030"
 リモートデスクトップセッションホストサーバー上のセッションに関する情報を表示します。 一覧には、アクティブなセッションだけでなく、サーバーが実行している他のセッションに関する情報も含まれています。
 
 > [!NOTE]
-> 最新バージョンの新機能については、「 [Windows Server でのリモートデスクトップサービスの新](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn283323(v=ws.11))機能」を参照してください。
+> 最新バージョンの新機能については、「 [Windows Server でのリモートデスクトップサービスの新](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn283323(v=ws.11))機能」を参照してください。
 
 ## <a name="syntax"></a>構文
 
@@ -51,7 +51,7 @@ query session [<sessionname> | <username> | <sessionID>] [/server:<servername>] 
 
 - <*username*> *、<sessions*>、または*sessionID*パラメーターを使用してセッションを指定しない場合、このクエリでは、システム内のすべてのアクティブなセッションに関する情報が表示されます。
 
-- **クエリセッション**で情報が返されると、 `(>)` 現在のセッションの前に不等号が表示されます。 次に例を示します。
+- **クエリセッション**で情報が返されると、 `(>)` 現在のセッションの前に不等号が表示されます。 以下に例を示します。
 
     ```
     C:\>query session
@@ -63,7 +63,7 @@ query session [<sessionname> | <username> | <sessionID>] [/server:<servername>] 
                                         5 idle
     ```
 
-    各値の説明:
+    条件:
   - [セッション名は、セッションに割り当てられた名前**を指定し**ます。
   - **USERNAME**は、セッションに接続されているユーザーのユーザー名を示します。
   - **State**は、セッションの現在の状態に関する情報を提供します。
@@ -85,7 +85,7 @@ query session /server:Server2
 query session modeM02
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

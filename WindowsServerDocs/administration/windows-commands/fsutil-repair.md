@@ -9,18 +9,18 @@ ms.technology: storage
 ms.assetid: 62d77150-1d9e-4069-ab4a-299f33024912
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 700e1f713d503565321ab29f5384d74382c64f21
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 664415f7952add6ae4a52f6550d78c11fa2a2978
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931203"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958194"
 ---
 # <a name="fsutil-repair"></a>fsutil repair
 
 > 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows 10、Windows Server 2012 R2、Windows 8.1、Windows Server 2012、Windows 8
 
-NTFS 自己修復修復操作を管理および監視します。 自己修復 NTFS は、NTFS ファイルシステムの破損を修復しようとしますが、 **Chkdsk.exe**を実行する必要はありません。 詳細については、「[自己修復 NTFS](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771388(v=ws.10))」を参照してください。
+NTFS 自己修復修復操作を管理および監視します。 自己修復 NTFS は、NTFS ファイルシステムの破損を修復しようとしますが、 **Chkdsk.exe**を実行する必要はありません。 詳細については、「[自己修復 NTFS](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc771388(v=ws.10))」を参照してください。
 
 ## <a name="syntax"></a>構文
 
@@ -68,10 +68,10 @@ fsutil repair set c: 1
 fsutil repair set c: 0
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 
 - [fsutil](fsutil.md)
 
-- [自己復旧型の NTFS](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771388(v=ws.10))
+- [自己復旧型の NTFS](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc771388(v=ws.10))

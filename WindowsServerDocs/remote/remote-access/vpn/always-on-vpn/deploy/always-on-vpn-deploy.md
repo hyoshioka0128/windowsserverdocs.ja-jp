@@ -9,14 +9,14 @@ ms.localizationpriority: medium
 ms.date: 12/20/2018
 ms.author: v-tea
 author: Teresa-MOTIV
-ms.openlocfilehash: e107ba0d36a1b59d4bc1bb365fb98aa9285677ba
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: bab89611932316d165e805e96f0a6d2d357c0780
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80860125"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959184"
 ---
-# <a name="always-on-vpn-deployment-for-windows-server-and-windows-10"></a>Windows Server および Windows 10 用の VPN 展開の Always On
+# <a name="always-on-vpn-deployment-for-windows-server-and-windows-10"></a>Windows Server および Windows 10 のための Always On VPN 展開
 
 >適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows 10
 
@@ -65,9 +65,9 @@ Always On VPN は、リモートアクセスのための単一の統合された
 - 動的ホスト構成プロトコル (DHCP)。
 - イーサネットケーブル、ファイアウォール、スイッチ、ハブなどのネットワークハードウェア。
 - リモートユーザーが Always On VPN 接続を介してアクセスできる、アプリケーションやファイルサーバーなどの追加のネットワークリソース。
-- インターネット接続、または Azure AD を使用したインターネット接続のための条件付きアクセス。 詳細については、「 [Azure Active Directory での条件付きアクセス](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal)」を参照してください。
+- インターネット接続、または Azure AD を使用したインターネット接続のための条件付きアクセス。 詳細については、「 [Azure Active Directory での条件付きアクセス](/azure/active-directory/active-directory-conditional-access-azure-portal)」を参照してください。
 
-## <a name="next-steps"></a>次のステップ:
+## <a name="next-steps"></a>次のステップ
 
 - [Always On VPN の機能についての詳細情報](../../vpn-map-da.md)
 
@@ -75,6 +75,6 @@ Always On VPN は、リモートアクセスのための単一の統合された
 
 - [いくつかの高度な Always On VPN 機能について説明します。](always-on-vpn-adv-options.md)
 
-- [Always On VPN テクノロジについての詳細情報](../always-on-vpn-technology-overview.md)
+- [Always On VPN テクノロジの詳細の確認](../always-on-vpn-technology-overview.md)
 
 - [Always On VPN 展開の計画を開始する](always-on-vpn-deploy-deployment.md)
