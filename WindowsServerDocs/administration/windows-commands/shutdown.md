@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 64bfd5ceed29bff5d9ae39e03a99aba2f7a2f39e
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 2f31e5b0ee1252bf015c964fa76dd2852df3515b
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936386"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956124"
 ---
 # <a name="shutdown"></a>shutdown
 
@@ -50,9 +50,9 @@ shutdown [/i | /l | /s | /r | /a | /p | /h | /e] [/f] [/m \\<ComputerName>] [/t 
 ## <a name="remarks"></a>注釈
 
 -   ユーザーを割り当てる必要がある、 **システムをシャット ダウン** シャット ダウン、ローカルまたはリモートにユーザー権限を使用しているコンピューターの管理、 **シャット ダウン** コマンドです。
--   ユーザーは、Administrators グループのメンバーは、ローカルまたはリモートで管理されるコンピューターの予期しないシャット ダウンに注釈を付けるである必要があります。 ターゲット コンピューターがドメインに参加している場合、Domain Admins グループのメンバーはこの手順を実行できる可能性があります。 詳細については次を参照してください:
-    -   [既定のローカル グループ](https://technet.microsoft.com/library/cc785098(v=ws.10).aspx)
-    -   [既定のグループ](https://technet.microsoft.com/library/cc756898(v=ws.10).aspx)
+-   ユーザーは、Administrators グループのメンバーは、ローカルまたはリモートで管理されるコンピューターの予期しないシャット ダウンに注釈を付けるである必要があります。 ターゲット コンピューターがドメインに参加している場合、Domain Admins グループのメンバーはこの手順を実行できる可能性があります。 詳細については、次を参照してください。
+    -   [既定のローカル グループ](/previous-versions/windows/it-pro/windows-server-2003/cc785098(v=ws.10))
+    -   [既定のグループ](/previous-versions/windows/it-pro/windows-server-2003/cc756898(v=ws.10))
 -   一度に複数のコンピューターをシャットダウンする場合は、スクリプトを使用して各コンピューターの**shutdown**を呼び出すか、または**shutdown** **/i**を使用して [リモートシャットダウン] ダイアログボックスを表示することができます。
 -   メジャーおよびマイナーの理由コードを指定する場合は、理由を使用する場合、各コンピューターでこれらの理由コードを定義する必要があります。 理由コードがターゲット コンピューターで定義されていない場合、シャット ダウン イベントの追跡ツールは、適切な理由のテキストをログオンできません。
 -   使用して、シャット ダウンが予定されていることを示すために注意してください、 **p:** パラメーター。 省略すると **p:** 、シャット ダウンが計画的なであることを示します。 入力した場合 **p:** 計画外のシャット ダウンの理由コードを続けて、コマンドに含まれる、シャット ダウンします。 逆に、省略すると **p:** し、コマンドを予定されたシャット ダウンの理由コードの種類は、シャット ダウンを実行しません。
@@ -68,6 +68,6 @@ shutdown /r /t 60 /c Reconfiguring myapp.exe /f /d p:4:1
 shutdown /r /m \\servername /t 60 /c Reconfiguring myapp.exe /f /d p:4:1
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

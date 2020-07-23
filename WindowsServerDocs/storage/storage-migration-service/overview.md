@@ -8,12 +8,12 @@ ms.date: 03/26/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 6ec1093a77b036cada9e54c82234d653362ce4d3
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 1403e0ecd12c4c15924781d75bd9127874018451
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85930099"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86953894"
 ---
 # <a name="storage-migration-service-overview"></a>記憶域移行サービスの概要
 
@@ -51,14 +51,14 @@ Storage Migration Service を使用すると、Windows Server または Azure �
 
 > [!VIDEO https://www.youtube.com/embed/h-Xc9j1w144]
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 Storage Migration Service を使用するには、次のものが必要です。
 
 - ファイルとデータを移行する**ソースサーバー**または**フェールオーバークラスター**
 - に移行する Windows Server 2019 (クラスター化またはスタンドアロン) を実行している**移行先サーバー** 。 Windows Server 2016 と Windows Server 2012 R2 も同様に動作しますが、約50% 低速です。
 - 移行を管理するために Windows Server 2019 を実行する**orchestrator サーバー**  <br>少数のサーバーのみを移行していて、いずれかのサーバーで Windows Server 2019 を実行している場合は、そのサーバーを orchestrator として使用できます。 より多くのサーバーを移行する場合は、別の orchestrator サーバーを使用することをお勧めします。
-- 記憶域移行サービスのユーザーインターフェイスを実行する**PC またはサーバー [Windows Admin Center](../../manage/windows-admin-center/understand/windows-admin-center.md) ** 。 PowerShell を使用して移行を管理する場合を除きます。 Windows 管理センターと Windows Server 2019 のバージョンの両方が、バージョン1809以降である必要があります。
+- 記憶域移行サービスのユーザーインターフェイスを実行する**PC またはサーバー [Windows Admin Center](../../manage/windows-admin-center/overview.md) ** 。 PowerShell を使用して移行を管理する場合を除きます。 Windows 管理センターと Windows Server 2019 のバージョンの両方が、バージョン1809以降である必要があります。
 
 Orchestrator とセットアップ先のコンピューターには、少なくとも2つのコアまたは2つの vCPUs と、少なくとも 2 GB のメモリがあることを強くお勧めします。 プロセッサとメモリが増えると、インベントリおよび転送操作の速度が大幅に向上します。
 
@@ -151,7 +151,7 @@ Windows Server バージョン1903以降、または[KB4512534](https://support.
 - Azure File Sync を使用した Azure へ移行された共有のより簡単な同期
 - Azure などの新しいネットワークへの移行
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [記憶域移行サービスを使用してファイルサーバーを移行する](migrate-data.md)
 - [記憶域移行サービスに関してよく寄せられる質問 (FAQ)](faq.md)
