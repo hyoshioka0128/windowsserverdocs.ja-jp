@@ -10,18 +10,18 @@ ms.date: 08/20/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 53626c4cfac17cb11402ada9ce3397c487cd0720
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3ad6658c504cc90eedef2c1cb6688c6f12233b3c
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71389853"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959874"
 ---
 # <a name="winlogon-automatic-restart-sign-on-arso"></a>Winlogon 自動再起動サインオン (ARSO)
 
 Windows Update 中に、更新を完了するために必要なユーザー固有のプロセスがあります。 これらのプロセスでは、ユーザーがデバイスにログインする必要があります。 更新が開始された後の最初のログインでは、ユーザーは、デバイスの使用を開始する前に、これらのユーザー固有のプロセスが完了するまで待つ必要があります。
 
-## <a name="how-does-it-work"></a>その場合、どのように処理されますか?
+## <a name="how-does-it-work"></a>それはどのように機能しますか?
 
 Windows Update が自動再起動を開始すると、現在ログインしているユーザーの派生した資格情報を抽出してディスクに保存し、ユーザーの自動ログオンを構成します。 TCB 特権を持つシステムとして実行されている Windows Update でこれを行う RPC 呼び出しを開始します。
 
@@ -33,13 +33,13 @@ ARSO は、管理されていないデバイスと管理対象のデバイスを
 
 |   | Windows Update| shutdown-g-t 0  | ユーザーが開始した再起動 | SHUTDOWN_ARSO/EWX_ARSO フラグを持つ Api |
 | --- | :---: | :---: | :---: | :---: |
-| 管理されたデバイス | :heavy_check_mark:  | :heavy_check_mark: |   | :heavy_check_mark: |
+| マネージド デバイス | :heavy_check_mark:  | :heavy_check_mark: |   | :heavy_check_mark: |
 | 管理されていないデバイス | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 
 > [!NOTE]
 > Windows Update が再起動されると、最後の対話ユーザーが自動的にログインし、セッションがロックされます。 これにより、Windows Update の再起動にかかわらず、ユーザーのロック画面アプリを引き続き実行できます。
 
-![［設定］ページ](media/Winlogon-Automatic-Restart-Sign-On--ARSO-/gtr-adds-lockscreenapp.png)
+![[設定] ページ](media/Winlogon-Automatic-Restart-Sign-On--ARSO-/gtr-adds-lockscreenapp.png)
 
 ## <a name="policy-1"></a>ポリシー #1
 
@@ -51,13 +51,13 @@ Windows 10 では、サーバーの Sku に対して ARSO が無効になって�
 
 **Intune ポリシー:**
 
-- プラットフォームWindows 10 以降
-- プロファイルの種類:管理用テンプレート
+- プラットフォーム:Windows 10 以降
+- プロファイルの種類: 管理用テンプレート
 - パス: \Windows \Windows ログオンオプション
 
 **サポート対象:** Windows 10 バージョン1903以降
 
-**説明 :**
+**説明:**
 
 このポリシー設定は、システムの再起動後、またはシャットダウンとコールドブート後に、デバイスが自動的にサインインして、最後の対話ユーザーをロックするかどうかを制御します。
 
@@ -73,14 +73,14 @@ Windows 10 では、サーバーの Sku に対して ARSO が無効になって�
 
 **レジストリエディター:**
 
-| ［値の名前］ | 種類 | data |
+| 値名 | 種類 | データ |
 | --- | --- | --- |
 | DisableAutomaticRestartSignOn | DWORD | 0 (ARSO を有効にする) |
 |   |   | 1 (ARSO を無効にする) |
 
 **ポリシーのレジストリの場所:** HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System
 
-**種類:** DWORD
+**型:** DWORD
 
 ![winlogon](media/Winlogon-Automatic-Restart-Sign-On--ARSO-/gtr-adds-signinpolicy.png)
 
@@ -92,13 +92,13 @@ Windows 10 では、サーバーの Sku に対して ARSO が無効になって�
 
 **Intune ポリシー:**
 
-- プラットフォームWindows 10 以降
-- プロファイルの種類:管理用テンプレート
+- プラットフォーム:Windows 10 以降
+- プロファイルの種類: 管理用テンプレート
 - パス: \Windows \Windows ログオンオプション
 
 **サポート対象:** Windows 10 バージョン1903以降
 
-**説明 :**
+**説明:**
 
 このポリシー設定では、再起動またはコールドブート後に自動再起動とサインオンおよびロックが行われる構成を制御します。 "再起動後に最後の対話型ユーザーを自動的にサインインしてロックする" ポリシーで [無効] を選択した場合、自動サインオンは実行されず、このポリシーを構成する必要はありません。
 
@@ -112,16 +112,16 @@ Windows 10 では、サーバーの Sku に対して ARSO が無効になって�
 
 この設定を無効にした場合、または構成しなかった場合、自動サインオンは既定で [BitLocker が有効で、中断されていない場合に有効] 動作になります。
 
-**レジストリエディター**
+**レジストリ エディター**
 
-| ［値の名前］ | 種類 | data |
+| 値名 | 種類 | データ |
 | --- | --- | --- |
 | AutomaticRestartSignOnConfig | DWORD | 0 (セキュリティで保護されている場合は ARSO を有効にする) |
 |   |   | 1 (常に ARSO を有効にする) |
 
 **ポリシーのレジストリの場所:** HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System
 
-**種類:** DWORD
+**型:** DWORD
 
 ![winlogon](media/Winlogon-Automatic-Restart-Sign-On--ARSO-/arso-policy-setting.png)
 
@@ -143,7 +143,7 @@ WinLogon が自動的にロックしたときに WinLogon の状態のトレー�
 
 ユーザーの自動ログインを実現できないいくつかのケースもあります。  このセクションでは、既知のシナリオが発生する可能性がこれをキャプチャします。
 
-### <a name="user-must-change-password-at-next-login"></a>ユーザーは次回ログイン時にパスワードを変更する必要があります
+### <a name="user-must-change-password-at-next-login"></a>[ユーザーは次回ログイン時にパスワードを変更する]
 
 ユーザーのログインは、次回のログイン時のパスワードの変更が必要な場合、ブロックされた状態を入力できます。  ほとんどの場合、再起動の前に検出されたすべてではなく使用できます (パスワードの有効期限の到達、シャット ダウンし、次回のログインの間です。
 
@@ -161,7 +161,7 @@ WinLogon が自動的にロックしたときに WinLogon の状態のトレー�
 
 |   | パスワードハッシュ | 資格情報キー | チケット保証チケット | プライマリ更新トークン |
 | --- | :---: | :---: | :---: | :---: |
-| ローカルアカウント | :heavy_check_mark: | :heavy_check_mark: |   |   |
+| ローカル アカウント | :heavy_check_mark: | :heavy_check_mark: |   |   |
 | MSA アカウント | :heavy_check_mark: | :heavy_check_mark: |   |   |
 | Azure AD の参加アカウント | :heavy_check_mark: | :heavy_check_mark: | : heavy_check_mark: (ハイブリッドの場合) | :heavy_check_mark: |
 | ドメインに参加しているアカウント | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | : heavy_check_mark: (ハイブリッドの場合) |
@@ -170,6 +170,6 @@ WinLogon が自動的にロックしたときに WinLogon の状態のトレー�
 
 デバイスで Credential Guard が有効になっている場合、ユーザーの派生シークレットは、現在のブートセッションに固有のキーを使用して暗号化されます。 そのため、Credential Guard が有効になっているデバイスでは、現在、ARSO はサポートされていません。
 
-## <a name="additional-resources"></a>その他の技術情報
+## <a name="additional-resources"></a>その他のリソース
 
-自動ログオンは、いくつかのリリースの Windows に存在した機能です。 これは、windows [http:/technet. microsoft .com/sysinternals/bb963905](https://technet.microsoft.com/sysinternals/bb963905.aspx)の自動ログオンなどのツールを含む、windows のドキュメント化された機能です。 デバイスの 1 人のユーザーの資格情報を入力しなくても自動的にサインインできます。 資格情報が構成され、暗号化された LSA シークレットとしてレジストリに格納します。 特に、メンテナンス期間がこの期間中に一般がある場合はベッドの時間とウェイク アップのアカウントのロックダウンが発生する、多くの子の例では問題にできます。
+自動ログオンは、いくつかのリリースの Windows に存在した機能です。 これは、windows [http:/technet. microsoft .com/sysinternals/bb963905](/sysinternals/downloads/autologon)の自動ログオンなどのツールを含む、windows のドキュメント化された機能です。 デバイスの 1 人のユーザーの資格情報を入力しなくても自動的にサインインできます。 資格情報が構成され、暗号化された LSA シークレットとしてレジストリに格納します。 特に、メンテナンス期間がこの期間中に一般がある場合はベッドの時間とウェイク アップのアカウントのロックダウンが発生する、多くの子の例では問題にできます。

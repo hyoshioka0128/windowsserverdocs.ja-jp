@@ -10,12 +10,12 @@ author: cosmosdarwin
 description: Windows Server で記憶域スペース ダイレクト クラスターからサーバーを削除する方法。
 ms.date: 2/5/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0dd888048edc96d6001492e92ba6d519c751bdaa
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 4fa3fe64cb5d7448a7e71eb344309ecb9990ebcd
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474569"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86960024"
 ---
 # <a name="removing-servers-in-storage-spaces-direct"></a>記憶域スペース ダイレクトでのサーバーの削除
 
@@ -27,7 +27,7 @@ ms.locfileid: "85474569"
 
 サーバーをすぐにクラスターに戻す場合や、そのドライブを別のサーバーに移動して保持する場合、ドライブを記憶域プールから削除*せずに*サーバーをクラスターから削除できます。 フェールオーバー クラスター マネージャーを使ってサーバーを削除する場合、これは既定の動作です。
 
-PowerShell で [Remove-ClusterNode](https://technet.microsoft.com/library/hh847251.aspx) コマンドレットを使います。
+PowerShell で [Remove-ClusterNode](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831694(v=ws.11)) コマンドレットを使います。
 
 ```PowerShell
 Remove-ClusterNode <Name>

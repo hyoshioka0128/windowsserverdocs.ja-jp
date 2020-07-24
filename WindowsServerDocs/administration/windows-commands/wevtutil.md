@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f87ab51c0e24f9df421d7540e85d05a534635947
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 0f76f04e54f1b502f3e816e4f547873d2ac6e1b4
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936643"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958724"
 ---
 # <a name="wevtutil"></a>wevtutil
 
@@ -45,8 +45,8 @@ wevtutil [{el | enum-logs}] [{gl | get-log} <Logname> [/f:<Format>]]
 |{sl \| 設定-ログ} \<Logname>[/e: \<Enabled> ][/i: \<Isolation> ][/lfn: \<Logpath> ][/rt: \<Retention> ][/ab: \<Auto> ][/ミリ秒: \<MaxSize> ][/l: \<Level> ][/k: \<Keywords> ][/ca: \<Channel> ][/c: \<Config> ]|指定されたログの構成を変更します。|
 |{ep \| 列挙型-パブリッシャー}|ローカルコンピューター上のイベント発行元を表示します。|
 |{gp \| 取得-パブリッシャー} \<Publishername>[/ge: \<Metadata> ][/gm: \<Message> ][/f: \<Format> ]]|指定したイベント発行元の構成情報を表示します。|
-|{im \| インストールマニフェスト}\<Manifest>|マニフェストからイベントパブリッシャーとログをインストールします。 イベントマニフェストとこのパラメーターの使用の詳細については、Microsoft 開発者ネットワーク (MSDN) の Web サイト () にある Windows イベントログ SDK を参照してください [https://msdn.microsoft.com](https://msdn.microsoft.com) 。|
-|{um \| アンインストールマニフェスト}\<Manifest>|マニフェストからすべての発行元とログをアンインストールします。 イベントマニフェストとこのパラメーターの使用の詳細については、Microsoft 開発者ネットワーク (MSDN) の Web サイト () にある Windows イベントログ SDK を参照してください [https://msdn.microsoft.com](https://msdn.microsoft.com) 。|
+|{im \| インストールマニフェスト}\<Manifest>|マニフェストからイベントパブリッシャーとログをインストールします。 イベントマニフェストとこのパラメーターの使用の詳細については、Microsoft 開発者ネットワーク (MSDN) の Web サイト () にある Windows イベントログ SDK を参照してください [https://msdn.microsoft.com](../../index.yml) 。|
+|{um \| アンインストールマニフェスト}\<Manifest>|マニフェストからすべての発行元とログをアンインストールします。 イベントマニフェストとこのパラメーターの使用の詳細については、Microsoft 開発者ネットワーク (MSDN) の Web サイト () にある Windows イベントログ SDK を参照してください [https://msdn.microsoft.com](../../index.yml) 。|
 |{qe \| } \<Path>[/lf: \<Logfile> ][/sq: \<Structquery> ][/q: \<Query> ][/bm: \<Bookmark> ][/sbm: \<Savebm> ][/rd: \<Direction> ][/f: \<Format> ][/l: \<Locale> ][/c: \<Count> ][/e: \<Element> ]|イベントログ、ログファイル、または構造化されたクエリを使用して、イベントを読み取ります。 既定では、のログ名を指定し \<Path> ます。 ただし、 **/lf**オプションを使用する場合、は \<Path> ログファイルへのパスである必要があります。 **/Sq**パラメーターを使用する場合、は \<Path> 構造化クエリを含むファイルへのパスである必要があります。|
 |{gli \| get-loginfo} \<Logname>[/lf: \<Logfile> ]|イベントログまたはログファイルに関するステータス情報を表示します。 **/Lf**オプションが使用されている場合、 \<Logname> はログファイルへのパスです。 **Wevtutil el**を実行すると、ログ名の一覧を取得できます。|
 |{epl \| export-log} \<Path> \<Exportfile>[/lf: \<Logfile> ][/sq: \<Structquery> ][/q: \<Query> ][/ow: \<Overwrite> ]|イベントログ、ログファイル、または構造化されたクエリを使用して、指定したファイルにイベントをエクスポートします。 既定では、のログ名を指定し \<Path> ます。 ただし、 **/lf**オプションを使用する場合、は \<Path> ログファイルへのパスである必要があります。 **/Sq**オプションを使用する場合、は \<Path> 構造化クエリを含むファイルへのパスである必要があります。 \<Exportfile>エクスポートされたイベントを格納するファイルへのパスを指定します。|
@@ -66,7 +66,7 @@ wevtutil [{el | enum-logs}] [{gl | get-log} <Logname> [/f:<Format>]]
 |   orm\<MaxSize>   |                                                                                                                                                                        ログの最大サイズをバイト単位で設定します。 最小ログサイズは1048576バイト (1024 KB) であり、ログファイルは常に 64 KB の倍数であるため、入力した値はそれに応じて丸められます。                                                                                                                                                                         |
 |    /l:\<Level>     |                                                                                                                                                                     ログのレベルフィルターを定義します。 \<Level>任意の有効なレベル値を指定できます。 このオプションは、専用セッションを使用するログにのみ適用できます。 レベルフィルターを削除するには、 <Level> を0に設定します。                                                                                                                                                                      |
 |   /k\<Keywords>   |                                                                                                                                                                                         ログのキーワードフィルターを指定します。 \<Keywords>有効な64ビットキーワードマスクを指定できます。 このオプションは、専用セッションを使用するログにのみ適用できます。                                                                                                                                                                                         |
-|   /ca\<Channel>   |                                                                                                                   イベントログのアクセス許可を設定します。 \<Channel>は、セキュリティ記述子定義言語 (SDDL) を使用するセキュリティ記述子です。 SDDL 形式の詳細については、Microsoft 開発者ネットワーク (MSDN) の Web サイト () を参照してください [https://msdn.microsoft.com](https://msdn.microsoft.com) 。                                                                                                                    |
+|   /ca\<Channel>   |                                                                                                                   イベントログのアクセス許可を設定します。 \<Channel>は、セキュリティ記述子定義言語 (SDDL) を使用するセキュリティ記述子です。 SDDL 形式の詳細については、Microsoft 開発者ネットワーク (MSDN) の Web サイト () を参照してください [https://msdn.microsoft.com](../../index.yml) 。                                                                                                                    |
 |    スイッチ\<Config>    |                                                                                                                                  構成ファイルへのパスを指定します。 このオプションを選択すると、で定義されている構成ファイルからログのプロパティが読み取られ \<Config> ます。 このオプションを使用する場合は、パラメーターを指定しないでください <Logname> 。 ログ名は構成ファイルから読み取られます。                                                                                                                                   |
 |  /ge\<Metadata>   |                                                                                                                                                                                                                 このパブリッシャーによって発生する可能性のあるイベントのメタデータ情報を取得します。 \<Metadata>true または false を指定できます。                                                                                                                                                                                                                 |
 |   /gm\<Message>   |                                                                                                                                                                                                                       数値メッセージ ID ではなく、実際のメッセージを表示します。 \<Message>true または false を指定できます。                                                                                                                                                                                                                        |
@@ -149,6 +149,6 @@ C:\admin\backups\a10306.evtx に保存した後、アプリケーションログ
 wevtutil cl Application /bu:C:\admin\backups\a10306.evtx
 ```
 
-#### <a name="additional-references"></a>その他の参照情報
+#### <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

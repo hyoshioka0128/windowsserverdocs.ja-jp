@@ -8,12 +8,12 @@ ms.topic: get-started-article
 author: nedpyle
 ms.date: 06/25/2019
 ms.assetid: ceddb0fa-e800-42b6-b4c6-c06eb1d4bc55
-ms.openlocfilehash: 1ab4c0946c1081019747420448a0217359282bf1
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: b00eb8a4c282cc8bafa9459b319c5c47f2d8c460
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85469727"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86960344"
 ---
 # <a name="known-issues-with-storage-replica"></a>記憶域レプリカに関する既知の問題
 
@@ -356,7 +356,7 @@ Get-Cluster | fl * を各ノードで実行します。
 ClusterFunctionalLevel が 9 である場合、それは記憶域レプリカをこのノードに実装するために必要な Windows 2016 ClusterFunctionalLevel のバージョンです。
 ClusterFunctionalLevel が 9でない場合、このノードで記憶域レプリカを実装するためには、ClusterFunctionalLevel を更新する必要があります。
 
-この問題を解決するには、PowerShell コマンドレット[ClusterFunctionalLevel](https://docs.microsoft.com/powershell/module/failoverclusters/update-clusterfunctionallevel)を実行して、クラスターの機能レベルを上げます。
+この問題を解決するには、PowerShell コマンドレット[ClusterFunctionalLevel](/powershell/module/failoverclusters/update-clusterfunctionallevel)を実行して、クラスターの機能レベルを上げます。
 
 ## <a name="small-unknown-partition-listed-in-diskmgmt-for-each-replicated-volume"></a>レプリケートされた各ボリュームに対し、DISKMGMT に小さな不明パーティションが表示される
 
@@ -384,7 +384,7 @@ NVME または SSD キャッシュで記憶域スペースダイレクトを使�
 
 Hdd で記憶域スペースダイレクトを使用する場合、キャッシュを無効にしたり回避したりすることはできません。 回避策として、SSD と NVME のみを使用する場合は、パフォーマンスレベルと容量レベルのみを構成できます。 この構成を使用していて、そのサービスがキャパシティレベルのみにあるデータボリュームに対してのみ、パフォーマンスレベルに SR ログを配置した場合は、前述の高待機時間の問題を回避できます。 これは、高速で低速な Ssd と NVME が混在している場合にも実行できます。
 
-この回避策はもちろん理想的ではなく、一部のお客様はそれを利用できない可能性があります。 ストレージレプリカチームは、今後、これらの人為的なボトルネックを減らすために、最適化および更新されたログメカニズムに取り組んでいます。 この v2.0 ログは、Windows Server 2019 で最初に利用可能になり、パフォーマンスが向上したことが、 [Server Storage のブログ](https://blogs.technet.microsoft.com/filecab/2018/12/13/chelsio-rdma-and-storage-replica-perf-on-windows-server-2019-are-💯/)で説明されています。
+この回避策はもちろん理想的ではなく、一部のお客様はそれを利用できない可能性があります。 ストレージレプリカチームは、今後、これらの人為的なボトルネックを減らすために、最適化および更新されたログメカニズムに取り組んでいます。 この v2.0 ログは、Windows Server 2019 で最初に利用可能になり、パフォーマンスが向上したことが、 [Server Storage のブログ](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)で説明されています。
 
 ## <a name="error-could-not-find-file-when-running-test-srtopology-between-two-clusters"></a>2つのクラスター間で Test-srtopology を実行すると、"ファイルが見つかりませんでした" というエラーが発生する
 

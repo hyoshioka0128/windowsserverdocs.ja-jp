@@ -9,12 +9,12 @@ manager: dongill
 ms.author: jgerend
 ms.date: 4/5/2017
 description: システム要件を含めたワーク フォルダーの展開を計画する方法およびネットワーク環境を準備する方法です。
-ms.openlocfilehash: 1453ff54c2213445f6f443d34d21747eb875412b
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 603711676aa5f35047b0623694f3a16922a2b240
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475599"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86960004"
 ---
 # <a name="planning-a-work-folders-deployment"></a>ワーク フォルダーの展開の計画
 
@@ -105,7 +105,7 @@ ms.locfileid: "85475599"
 ### <a name="hosted-deployment"></a>ホスト型展開
  ホスト型展開では、同期サーバーは Windows Azure VM と同様の IAAS (サービスとしてのインフラストラクチャ) ソリューションとして展開されます。 この展開方法には、ファイル サーバーの可用性が、ユーザーの企業内の WAN 接続に依存する度合いを小さくできるという利点があります。 デバイスがインターネットに接続できる場合、同期サーバーにアクセスできます。 ただし、ホスト型環境に展開されたサーバーでも、ユーザーを認証するために組織の Active Directory ドメインに到達できる必要があり、ユーザーがオンプレミスのインフラストラクチャの要件を満たすには、接続のメンテナンスにおける複雑さが増大します。
 
-## <a name="deployment-technologies"></a>展開のテクノロジ
+## <a name="deployment-technologies"></a>デプロイ テクノロジ
  ワーク フォルダーの展開は、内部ネットワークと外部ネットワークの両方で、連携してデバイスにサービスを提供する複数のテクノロジから構成されます。 ワーク フォルダーの展開を設計する前に、ユーザーは次の各テクノロジの要件について理解している必要があります。
 
 ### <a name="active-directory-domain-services"></a>Active Directory ドメイン サービス
@@ -139,9 +139,9 @@ ms.locfileid: "85475599"
 
 ワーク フォルダーは、Web アプリケーション プロキシ、Azure AD アプリケーション プロキシ、またはサード パーティのリバース プロキシ ソリューションの使用をサポートします。
 
--  Web アプリケーション プロキシは、オンプレミスのリバース プロキシ ソリューションです。 詳細については、「[Windows Server 2016 の Web アプリケーション プロキシ](https://technet.microsoft.com/windows-server-docs/identity/web-application-proxy/web-application-proxy-windows-server)」を参照してください。
+-  Web アプリケーション プロキシは、オンプレミスのリバース プロキシ ソリューションです。 詳細については、「[Windows Server 2016 の Web アプリケーション プロキシ](../../remote/remote-access/web-application-proxy/web-application-proxy-windows-server.md)」を参照してください。
 
--  Azure AD アプリケーション プロキシは、クラウドのリバース プロキシ ソリューションです。 詳細については、[オンプレミス アプリケーションへの安全なリモート アクセスを実現する方法](https://docs.microsoft.com/azure/active-directory/active-directory-application-proxy-get-started)」を参照してください
+-  Azure AD アプリケーション プロキシは、クラウドのリバース プロキシ ソリューションです。 詳細については、[オンプレミス アプリケーションへの安全なリモート アクセスを実現する方法](/azure/active-directory/active-directory-application-proxy-get-started)」を参照してください
 
 ## <a name="additional-design-considerations"></a>その他の設計の考慮事項
  これまでに説明した各コンポーネントの理解に加えて、ユーザーは設計する際に、運用する同期サーバーと共有の数、およびフェールオーバー クラスタリングを利用してこれらの同期サーバーでフォールト トレランスを提供するかどうかを時間をかけて考慮する必要があります。
@@ -155,7 +155,7 @@ ms.locfileid: "85475599"
 
 - 負荷分散: 大規模な環境では、複数のサーバーでユーザー データを格納すると、サーバーのパフォーマンスや稼働時間が向上する場合があります。
 
-  ワーク フォルダーのサーバーのスケーリングとパフォーマンスについては、 [ワーク フォルダーの展開のパフォーマンスに関する考慮事項に関するページ](https://blogs.technet.com/b/filecab/archive/2013/11/01/performance-considerations-for-large-scale-work-folders-deployments.aspx)を参照してください。
+  ワーク フォルダーのサーバーのスケーリングとパフォーマンスについては、 [ワーク フォルダーの展開のパフォーマンスに関する考慮事項に関するページ](../../remote/remote-access/web-application-proxy/web-application-proxy-windows-server.md)を参照してください。
 
 > [!NOTE]
 >  複数の同期サーバーを使用する場合、ユーザーの自動サーバー検出を設定することをお勧めします。 このプロセスは、AD DS でユーザー アカウントごとに属性の構成を使用します。 この属性は **msDS-SyncServerURL** という名前で、Windows Server 2012 R2 のドメイン コントローラーがドメインに追加されるか、または Active Directory スキーマの更新が適用された後、ユーザー アカウントで利用できるようになります。 この属性は、ユーザーが適切な同期サーバーに接続できるように、各ユーザーについて設定してください。 自動サーバー検出を使用すると、 *https://workfolders.contoso.com* 操作中の同期サーバーの数に関係なく、組織は、などの "わかりやすい" URL の背後にワークフォルダーを公開できます。
@@ -255,5 +255,5 @@ ms.locfileid: "85475599"
 
 |コンテンツ タイプ|参考資料|
 |------------------|----------------|
-|**製品評価**|-   [ワークフォルダー](work-folders-overview.md)<br />-   [Windows 7 のワークフォルダー](https://blogs.technet.com/b/filecab/archive/2014/04/24/work-folders-for-windows-7.aspx) (ブログの投稿)|
-|**展開**|-   [ワークフォルダーの実装の設計](plan-work-folders.md)<br />-   [ワークフォルダーの展開](deploy-work-folders.md)<br />-   [AD FS と Web アプリケーションプロキシ (WAP) を使用したワークフォルダーの展開](deploy-work-folders-adfs-overview.md)<br />- [Azure AD アプリケーション プロキシを使ったワーク フォルダーの展開](https://blogs.technet.microsoft.com/filecab/2017/05/31/enable-remote-access-to-work-folders-using-azure-active-directory-application-proxy/)<br />-   [ワークフォルダーの展開のパフォーマンスに関する考慮事項](https://blogs.technet.com/b/filecab/archive/2013/11/01/performance-considerations-for-large-scale-work-folders-deployments.aspx)<br />-   [Windows 7 のワークフォルダー (64 ビットダウンロード)](https://www.microsoft.com/download/details.aspx?id=42558)<br />-   [Windows 7 のワークフォルダー (32 ビットダウンロード)](https://www.microsoft.com/download/details.aspx?id=42559)<br />-   [ワークフォルダーのテストラボの展開](https://blogs.technet.com/b/filecab/archive/2013/07/10/work-folders-test-lab-deployment.aspx)(ブログの投稿)|
+|**製品評価**|-   [ワークフォルダー](work-folders-overview.md)<br />-   [Windows 7 のワークフォルダー](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB) (ブログの投稿)|
+|**デプロイ**|-   [ワークフォルダーの実装の設計](plan-work-folders.md)<br />-   [ワークフォルダーの展開](deploy-work-folders.md)<br />-   [AD FS と Web アプリケーションプロキシ (WAP) を使用したワークフォルダーの展開](deploy-work-folders-adfs-overview.md)<br />- [Azure AD アプリケーション プロキシを使ったワーク フォルダーの展開](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)<br />-   [ワークフォルダーの展開のパフォーマンスに関する考慮事項](../../remote/remote-access/web-application-proxy/web-application-proxy-windows-server.md)<br />-   [Windows 7 のワークフォルダー (64 ビットダウンロード)](https://www.microsoft.com/download/details.aspx?id=42558)<br />-   [Windows 7 のワークフォルダー (32 ビットダウンロード)](https://www.microsoft.com/download/details.aspx?id=42559)<br />-   [ワークフォルダーのテストラボの展開](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)(ブログの投稿)|

@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ad88594d534c64c0651fcc4e094fef669a02f16c
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 968c3debfafd552f295591199366c5f6c10fde47
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932334"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956774"
 ---
 # <a name="nfsadmin"></a>nfsadmin
 
@@ -22,7 +22,7 @@ ms.locfileid: "85932334"
 
 Nfs サーバーまたは nfs クライアントを、Microsoft Services for Network File System (NFS) を実行しているローカルコンピューターまたはリモートコンピューター上で管理するコマンドラインユーティリティ。 パラメーターを指定せずに使用します。 nfsadmin server には、NFS 構成設定の現在のサーバーが表示され、nfsadmin client には、NFS 構成設定の現在のクライアントが表示されます。
 
-## <a name="syntax"></a>Syntax
+## <a name="syntax"></a>構文
 
 ```
 nfsadmin server [computername] [-u Username [-p Password]] -l
@@ -108,8 +108,8 @@ nfsadmin server config
 nfsadmin client config
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 
-- [NFS コマンドレットリファレンス](https://docs.microsoft.com/powershell/module/nfs)
+- [NFS コマンドレットリファレンス](/powershell/module/nfs)

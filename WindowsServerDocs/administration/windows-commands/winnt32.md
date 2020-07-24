@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b5cf20abc8322f610106d65c76c3431b9332444a
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: e1b5844ee9cbdb11629e488e6506ef85b23b537b
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936153"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958944"
 ---
 # <a name="winnt32"></a>winnt32
 
@@ -62,14 +62,13 @@ winnt32 [/checkupgradeonly] [/cmd: <CommandLine>] [/cmdcons] [/copydir:{i386|ia6
 |        /?         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              コマンド プロンプトにヘルプを表示します。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 
 ## <a name="remarks"></a>注釈
-クライアントコンピューターに Windows XP を展開する場合は、Windows XP に付属しているバージョンの winnt32.exe を使用できます。 Windows XP を展開するもう1つの方法として、winnt32.msi を使用します。これは、IntelliMirror のテクノロジセットの一部である Windows インストーラーを通じて機能します。 クライアントの展開の詳細については、「Windows Server 2003 導入ガイドを参照してください。 [Windows 導入ガイドとリソース キットを使用して](https://technet.microsoft.com/library/cc779317(v=ws.10).aspx)します。
+クライアントコンピューターに Windows XP を展開する場合は、Windows XP に付属しているバージョンの winnt32.exe を使用できます。 Windows XP を展開するもう1つの方法として、winnt32.msi を使用します。これは、IntelliMirror のテクノロジセットの一部である Windows インストーラーを通じて機能します。 クライアントの展開の詳細については、「Windows Server 2003 導入ガイドを参照してください。 [Windows 導入ガイドとリソース キットを使用して](/previous-versions/windows/it-pro/windows-server-2003/cc779317(v=ws.10))します。
 
 Itanium ベースのコンピューターの場合は、 **winnt32** から拡張ファームウェア インターフェイス (EFI) または Windows Server 2003 Enterprise、Windows Server 2003 R2 Enterprise、Windows Server 2003 R2 Datacenter、または Windows Server 2003 Datacenter から実行できます。 Itanium アーキテクチャ ベースのコンピューターにも、 **/cmdcons** と **/syspart** が表示されていないとアップグレードに関連するオプションは使用できません。
-ハードウェアの互換性の詳細については、「[ハードウェアの互換性](https://technet.microsoft.com/library/cc757927(v=ws.10).aspx)」を参照してください。
-動的更新を使用して複数のクライアントをインストールする方法の詳細については、「windows[展開およびリソースキットの使用](https://technet.microsoft.com/library/cc779317(v=ws.10).aspx)」で説明されている windows Server 2003 Deployment Kit を参照してください。
-ブート設定の変更の詳細については、「windows Server 2003 用の Windows 展開とリソースキット」を参照してください。 詳細については、次を参照してください。 [Windows 導入ガイドとリソース キットを使用して](https://technet.microsoft.com/library/cc779317(v=ws.10).aspx)します。
+ハードウェアの互換性の詳細については、「[ハードウェアの互換性](/previous-versions/windows/it-pro/windows-server-2003/cc757927(v=ws.10))」を参照してください。
+動的更新を使用して複数のクライアントをインストールする方法の詳細については、「windows[展開およびリソースキットの使用](/previous-versions/windows/it-pro/windows-server-2003/cc779317(v=ws.10))」で説明されている windows Server 2003 Deployment Kit を参照してください。
+ブート設定の変更の詳細については、「windows Server 2003 用の Windows 展開とリソースキット」を参照してください。 詳細については、次を参照してください。 [Windows 導入ガイドとリソース キットを使用して](/previous-versions/windows/it-pro/windows-server-2003/cc779317(v=ws.10))します。
 使用して、 **/unattend** コマンド ライン オプションの設定を自動化するものが読み取りを Microsoft ライセンス契約の Windows Server 2003 とみなされます。 このコマンド ライン オプションを使用して、組織の Windows Server 2003 をインストールする、前に、ことを確認する必要がありますエンド ユーザー (個人、または 1 つのエンティティ) かどうかが受信した、読み取り、およびその製品の Microsoft ライセンス契約の条件に同意します。  Oem は、エンドユーザーが使用しているコンピューター上のこのキーを指定できない場合があります。
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
-

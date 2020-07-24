@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c952ff78147d3b4c6097aaf9dd87e55ecc7911ad
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 65c1d22bd45734a667bfc46840fe652e3f2f5314
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85928791"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958434"
 ---
 # <a name="defrag"></a>defrag
 
@@ -131,7 +131,7 @@ defrag /c /h /v
 
     - コンピューターがバックアップを開始しました (アイドル状態から再開されました)。
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 
@@ -141,4 +141,4 @@ defrag /c /h /v
 
 - [fsutil dirty](fsutil-dirty.md)
 
-- [最適化-ボリューム Powershell](https://docs.microsoft.com/powershell/module/storage/optimize-volume?view=win10-ps)
+- [最適化-ボリューム Powershell](/powershell/module/storage/optimize-volume?view=win10-ps)

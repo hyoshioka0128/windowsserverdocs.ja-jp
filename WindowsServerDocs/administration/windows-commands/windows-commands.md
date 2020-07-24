@@ -9,12 +9,12 @@ ms.author: jgerend
 manager: dongill
 ms.date: 06/29/2020
 ms.prod: windows-server
-ms.openlocfilehash: 8984f20bbd5690abf914a932925218f961212e7c
-ms.sourcegitcommit: 457e88e5aa6be13a2bffdb8e434a8efc3698678f
+ms.openlocfilehash: bd2d1f9baa17581cb43ae383c260c938f302a73c
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/30/2020
-ms.locfileid: "85548725"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958984"
 ---
 # <a name="windows-commands"></a>Windows のコマンド
 
@@ -67,14 +67,14 @@ ms.locfileid: "85548725"
 
 コマンドシェルは、ユーザーアカウント管理や夜間バックアップなどの日常的なタスクをバッチ (.bat) ファイルで自動化するために Windows に組み込まれた最初のシェルでした。 Windows スクリプトホストを使用すると、コマンドシェルでより高度なスクリプトを実行できます。 詳細については、「 [cscript](cscript.md)または[wscript](wscript.md)」を参照してください。 ユーザーインターフェイスを使用する場合よりも、スクリプトを使用すると操作をより効率的に実行できます。 スクリプトは、コマンドラインで使用可能なすべてのコマンドを受け入れます。
 
-Windows には、コマンドシェルと[PowerShell](https://docs.microsoft.com/powershell/scripting/powershell-scripting?view=powershell-6)という2つのコマンドシェルがあります。 各シェルは、ユーザーとオペレーティングシステムまたはアプリケーションとの直接通信を提供するソフトウェアプログラムであり、IT 運用を自動化するための環境を提供します。
+Windows には、コマンドシェルと[PowerShell](/powershell/scripting/powershell-scripting?view=powershell-6)という2つのコマンドシェルがあります。 各シェルは、ユーザーとオペレーティングシステムまたはアプリケーションとの直接通信を提供するソフトウェアプログラムであり、IT 運用を自動化するための環境を提供します。
 
 PowerShell は、コマンドシェルの機能を拡張して、コマンドレットと呼ばれる PowerShell コマンドを実行するように設計されています。 コマンドレットは Windows コマンドに似ていますが、より拡張可能なスクリプト言語を提供します。 Powershell では Windows コマンドと PowerShell コマンドレットを実行できますが、コマンドシェルで実行できるのは PowerShell コマンドレットではなく Windows コマンドだけです。
 
 最も堅牢で最新の Windows オートメーションの場合は、windows コマンドや windows スクリプトホストの代わりに PowerShell を使用することをお勧めします。
 
 > [!NOTE]
->Powershell のオープンソースバージョンである[Powershell Core](https://docs.microsoft.com/powershell/scripting/whats-new/what-s-new-in-powershell-core-60?view=powershell-6)をダウンロードしてインストールすることもできます。
+>Powershell のオープンソースバージョンである[Powershell Core](/powershell/scripting/whats-new/what-s-new-in-powershell-core-60?view=powershell-6)をダウンロードしてインストールすることもできます。
 
 > [!CAUTION]
 > レジストリを正しく編集しないと、システムが正常に動作しなくなる場合があります。 レジストリに次の変更を加える前に、コンピューター上の重要なデータをバックアップする必要があります。
@@ -598,7 +598,7 @@ PowerShell は、コマンドシェルの機能を拡張して、コマンドレ
 - [msinfo32](msinfo32.md)
 - [mstsc](mstsc.md)
 
-### <a name="n"></a>×
+### <a name="n"></a>N
 
 - [nbtstat](nbtstat.md)
 - [netcfg](netcfg.md)

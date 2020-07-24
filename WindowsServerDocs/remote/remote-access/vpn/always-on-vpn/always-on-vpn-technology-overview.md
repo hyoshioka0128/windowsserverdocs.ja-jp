@@ -8,12 +8,12 @@ ms.date: 11/05/2018
 ms.author: v-tea
 author: Teresa-MOTIV
 ms.localizationpriority: medium
-ms.openlocfilehash: 570b96d07f414442a00d5f7ec48de80f270f0a76
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: e1291b377c408c23493ce5a7a946a343f5e28ead
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80861315"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958734"
 ---
 # <a name="always-on-vpn-technology-overview"></a>Always On VPN テクノロジの概要
 
@@ -78,13 +78,13 @@ NPS では、接続要求の認証と承認を行うために、組織全体の�
 
 また、NPS が接続要求を承認するために使用するネットワーク ポリシーを構成して、NPS がアカウンティング情報をローカル ハード ディスク上のログ ファイルまたは Microsoft SQL Server データベースに記録するように RADIUS アカウンティングを構成できます。
 
-詳細については、「[ネットワークポリシーサーバー (NPS)](../../../../networking/technologies/nps/nps-top.md)」を参照してください。
+詳細については、「[Network Policy Server (NPS) (ネットワーク ポリシー サーバー (NPS))](../../../../networking/technologies/nps/nps-top.md)」をご覧ください。
 
 ## <a name="active-directory-certificate-services"></a>Active Directory 証明書サービス
 
 証明機関 (CA) サーバーは、Active Directory 証明書サービスを実行している証明機関です。 VPN 構成には、Active Directory ベースの公開キー基盤 (PKI) が必要です。
 
-組織は、AD CS を使用して、個人、デバイス、またはサービスの id を対応する公開キーにバインドすることにより、セキュリティを強化することができます。 AD CS には、さまざまなスケーラブルな環境で証明書の登録と失効を管理できる機能も含まれています。 詳細については、「 [Active Directory 証明書サービスの概要](https://technet.microsoft.com/library/hh831740.aspx)」および「[公開キー基盤の設計ガイダンス](https://social.technet.microsoft.com/wiki/contents/articles/2901.public-key-infrastructure-design-guidance.aspx)」を参照してください。
+組織は、AD CS を使用して、個人、デバイス、またはサービスの id を対応する公開キーにバインドすることにより、セキュリティを強化することができます。 AD CS には、さまざまなスケーラブルな環境で証明書の登録と失効を管理できる機能も含まれています。 詳細については、「 [Active Directory 証明書サービスの概要](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831740(v=ws.11))」および「[公開キー基盤の設計ガイダンス](https://social.technet.microsoft.com/wiki/contents/articles/2901.public-key-infrastructure-design-guidance.aspx)」を参照してください。
 
 展開が完了したら、CA で次の証明書テンプレートを構成します。
 
@@ -108,7 +108,7 @@ NPS では、接続要求の認証と承認を行うために、組織全体の�
 
 証明書テンプレートは、エンタープライズ証明機関 (CA) に不可欠な要素です。 証明書テンプレートは、特定の環境における証明書ポリシーの重要な要素であり、証明書の登録、使用、および管理に必要な規則と形式のセットです。
 
-詳細については、「[証明書テンプレート](https://technet.microsoft.com/library/cc730705.aspx)」を参照してください。
+詳細については、「[証明書テンプレート](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc730705(v=ws.11))」を参照してください。
 
 ### <a name="digital-server-certificates"></a>デジタルサーバー証明書
 
@@ -140,7 +140,7 @@ AD DS には、保護された拡張認証プロトコル (PEAP) がユーザー
 
 - NPS サーバーグループを作成する
 
-### <a name="active-directory-users-and-computers"></a>Active Directory ユーザーとコンピューター
+### <a name="active-directory-users-and-computers"></a>Active Directory ユーザーとコンピューティング
 
 Active Directory ユーザーとコンピューターは AD DS のコンポーネントであり、コンピューター、個人、セキュリティグループなどの物理的なエンティティを表すアカウントが含まれています。 セキュリティグループは、管理者が1つの単位として管理できるユーザーアカウントまたはコンピューターアカウントのコレクションです。 特定のグループに属するユーザーとコンピューターのアカウントは、グループメンバーと呼ばれます。
 
@@ -161,7 +161,7 @@ Active Directory ユーザーとコンピューターのユーザーアカウン
 
 Windows 10 VPN クライアントは、高度な構成が可能であり、多くのオプションが用意されています。 このシナリオで使用される具体的な機能をわかりやすく説明するために、表1は、この展開が参照する VPN 機能のカテゴリと特定の構成を示しています。 これらの機能の個々の設定を構成するには、この展開で後ほど説明する VPNv2 構成サービスプロバイダー (CSP) を使用します。 
 
-テーブル 1。 この展開で説明されている VPN の機能と構成
+表 1 この展開で説明されている VPN の機能と構成
 
 | VPN 機能     |     展開シナリオの構成         |
 |-----------------|-----------------------------------------------|
@@ -182,9 +182,9 @@ Windows 10 VPN クライアントは、高度な構成が可能であり、多�
 
 ただし、Intune 管理コンソールのようなユーザーインターフェイス (UI) を使用して、一部の CSP ノードを直接構成することはできません。 このような場合は、Open Mobile アライアンス Uniform Resource Identifier (OMA-URI) 設定を手動で構成する必要があります。 Oma-uri は、最新の Apple、Android、および Windows デバイスでサポートされているユニバーサルデバイス管理仕様である oma-uri デバイス管理プロトコル (OMA-URI) を使用して構成します。 OMA-URI 仕様に準拠している限り、すべての MDM 製品は同じ方法でこれらのオペレーティングシステムと対話する必要があります。
 
-Windows 10 には多くの Csp が用意されていますが、この展開では、VPNv2 CSP を使用して VPN クライアントを構成することに重点を置いています。 VPNv2 CSP を使用すると、一意の CSP ノードを介して、Windows 10 の各 VPN プロファイル設定を構成できます。 VPNv2 CSP には、 *ProfileXML*と呼ばれるノードも含まれています。このノードを使用すると、個別にではなく、すべての設定を1つのノードで構成できます。 ProfileXML の詳細については、後の「ProfileXML の概要」を参照してください。 各 VPNv2 CSP ノードの詳細については、 [VPNV2 csp](https://msdn.microsoft.com/windows/hardware/commercialize/customize/mdm/vpnv2-csp)を参照してください。
+Windows 10 には多くの Csp が用意されていますが、この展開では、VPNv2 CSP を使用して VPN クライアントを構成することに重点を置いています。 VPNv2 CSP を使用すると、一意の CSP ノードを介して、Windows 10 の各 VPN プロファイル設定を構成できます。 VPNv2 CSP には、 *ProfileXML*と呼ばれるノードも含まれています。このノードを使用すると、個別にではなく、すべての設定を1つのノードで構成できます。 ProfileXML の詳細については、後の「ProfileXML の概要」を参照してください。 各 VPNv2 CSP ノードの詳細については、 [VPNV2 csp](/windows/client-management/mdm/vpnv2-csp)を参照してください。
 
-## <a name="next-steps"></a>次のステップ:
+## <a name="next-steps"></a>次のステップ
 
 - [いくつかの高度な Always On VPN 機能について説明します。](deploy/always-on-vpn-adv-options.md)
 
@@ -196,16 +196,16 @@ Windows 10 には多くの Csp が用意されていますが、この展開で�
 
 - [リモートアクセス](../../Remote-Access.md): このトピックでは、Windows server 2016 のリモートアクセスサーバーの役割の概要について説明します。
 
-- [Windows 10 VPN の技術ガイド](https://docs.microsoft.com/windows/access-protection/vpn/vpn-guide): このガイドでは、エンタープライズ VPN ソリューションで windows 10 クライアントに対して行うことの決定と、展開を構成する方法について説明します。 このガイドでは、VPNv2 構成サービスプロバイダー (CSP) を参照し、Microsoft Intune と Windows 10 用の VPN プロファイルテンプレートを使用して、モバイルデバイス管理 (MDM) の構成手順を説明します。
+- [Windows 10 VPN の技術ガイド](/windows/access-protection/vpn/vpn-guide): このガイドでは、エンタープライズ VPN ソリューションで windows 10 クライアントに対して行うことの決定と、展開を構成する方法について説明します。 このガイドでは、「VPNv2 Configuration Service Provider (CSP)」(VPNv2 構成サービス プロバイダー (CSP)) を参照しており、Microsoft Intune、および Windows 10 用の VPN プロファイル テンプレートを使用して、モバイル デバイス管理 (MDM) を構成する手順を示します。
 
 - [コアネットワークガイド](../../../../networking/core-network-guide/Core-Network-Guide.md): このガイドでは、新しいフォレストで、完全に機能するネットワークと新しい Active Directory ドメインに必要なコアコンポーネントを計画および展開する方法について説明します。
 
 - [ドメインネームシステム (dns)](../../../../networking/dns/dns-top.md): このトピックでは、ドメインネームシステム (dns) の概要について説明します。 Windows Server 2016 では、DNS はサーバーの役割であり、サーバーマネージャーまたは Windows PowerShell コマンドを使用してインストールできます。 新しい Active Directory フォレストとドメインをインストールする場合は、フォレストとドメインのグローバルカタログサーバーとして Active Directory と共に DNS が自動的にインストールされます。
 
-- [Active Directory 証明書サービスの概要](https://technet.microsoft.com/library/hh831740.aspx): このドキュメントでは、Windows Server&reg; 2012 の Active Directory 証明書サービス (AD CS) の概要について説明します。 AD CS は、公開キー基盤 (PKI) を構築し、公開キーの暗号化、デジタル証明書、およびデジタル署名機能を組織に提供するサーバーの役割です。
+- [Active Directory 証明書サービスの概要](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831740(v=ws.11)): このドキュメントでは、Windows Server 2012 の Active Directory 証明書サービス (AD CS) の概要について説明 &reg; します。 AD CS は、公開キー基盤 (PKI) を構築し、公開キーの暗号化、デジタル証明書、およびデジタル署名機能を組織に提供するサーバーの役割です。
 
 - [公開キー基盤の設計ガイダンス](https://social.technet.microsoft.com/wiki/contents/articles/2901.public-key-infrastructure-design-guidance.aspx): この wiki では、公開キー基盤 (pki) の設計に関するガイダンスを提供します。 PKI と証明機関 (CA) 階層を構成する前に、組織のセキュリティポリシーと証明書作成ステートメント (CPS) に注意する必要があります。
 
-- [AD Cs ステップバイステップガイド: 2 層 PKI 階層の展開](https://social.technet.microsoft.com/wiki/contents/articles/15037.ad-cs-step-by-step-guide-two-tier-pki-hierarchy-deployment.aspx): このステップバイステップガイドでは、ラボ環境で Active Directory&reg; 証明書サービス (AD CS) の基本的な構成をセットアップするために必要な手順について説明します。 Windows Server&reg; 2008 R2 の AD CS は、公開キーテクノロジを採用しているソフトウェアセキュリティシステムで使用される公開キー証明書を作成および管理するためのカスタマイズ可能なサービスを提供します。
+- [AD cs のステップバイステップガイド: 2 層 PKI 階層の展開](https://social.technet.microsoft.com/wiki/contents/articles/15037.ad-cs-step-by-step-guide-two-tier-pki-hierarchy-deployment.aspx): このステップバイステップガイドでは、 &reg; ラボ環境で Active Directory 証明書サービス (AD CS) の基本的な構成をセットアップするために必要な手順について説明します。 Windows Server 2008 R2 の AD CS &reg; は、公開キーテクノロジを採用しているソフトウェアセキュリティシステムで使用される公開キー証明書を作成および管理するためのカスタマイズ可能なサービスを提供します。
 
 - [ネットワークポリシーサーバー (NPS)](../../../../networking/technologies/nps/nps-top.md): このトピックでは、Windows server 2016 のネットワークポリシーサーバーの概要について説明します。 ネットワーク ポリシー サーバー (NPS) を使用すると、接続要求の認証と承認を行うための組織全体のネットワーク アクセス ポリシーを作成して適用できます。

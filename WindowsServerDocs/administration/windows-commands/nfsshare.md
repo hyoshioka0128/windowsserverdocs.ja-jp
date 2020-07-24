@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4901e0c9ee0701261dc6abb8cfd69cc02d4dd02e
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 9db04752ad7982f78dc72c02108fe706cdf2fa04
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932043"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956764"
 ---
 # <a name="nfsshare"></a>nfsshare
 
@@ -47,10 +47,10 @@ nfsshare {<sharename> | <drive>:<path> | * } /delete
 
 - *Sharename*とが使用されている場合 `<drive>:<path>` 、このコマンドはによって識別されるフォルダーを `<drive>:<path>` *sharename*としてエクスポートします。 **/Delete**オプションを使用すると、指定したフォルダーは NFS クライアントで使用できなくなります。
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 
 - [サービスがネットワーク ファイル システム コマンドのリファレンス](services-for-network-file-system-command-reference.md)
 
-- [NFS コマンドレットリファレンス](https://docs.microsoft.com/powershell/module/nfs)
+- [NFS コマンドレットリファレンス](/powershell/module/nfs)

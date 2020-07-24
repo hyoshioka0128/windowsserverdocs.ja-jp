@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2372476e153a6dc37b7d068201a40ba17c11fa54
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 6abc9e1e760502047c5c740c72b79e302dd19249
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85930826"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958314"
 ---
 # <a name="dir"></a>dir
 
 ディレクトリのファイルとサブディレクトリの一覧を表示します。 パラメーターを指定せずに使用した場合、ディスクのボリュームラベルとシリアル番号の後にディスク上のディレクトリとファイルの一覧が表示されます (それぞれの名前と最後に変更された日付と時刻を含む)。 ファイルの場合、このコマンドは、名前の拡張子とサイズをバイト単位で表示します。 このコマンドでは、表示されているファイルとディレクトリの総数、その累積サイズ、ディスクの空き領域 (バイト単位) も表示されます。
 
-**Dir**コマンドは、別のパラメーターを使用して Windows 回復コンソールから実行することもできます。 詳細については、「 [Windows 回復環境 (WinRE)](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference)」を参照してください。
+**Dir**コマンドは、別のパラメーターを使用して Windows 回復コンソールから実行することもできます。 詳細については、「 [Windows 回復環境 (WinRE)](/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference)」を参照してください。
 
 ## <a name="syntax"></a>構文
 
@@ -134,6 +134,6 @@ dir c:\*.txt /w/o/s/p
 
 **Dir**コマンドは、各ディレクトリ内の一致するファイル名のアルファベット順の一覧を、ワイド形式で表示し、任意のキーを押して続行するまで画面がいっぱいになるたびに一時停止します。
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

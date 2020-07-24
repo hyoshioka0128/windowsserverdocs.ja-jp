@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 40d3536f5a6be0bf520095e3ba61f75b7a2addc7
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 2357f9916aba2eaba6a226fc8addbb13bf5f2f37
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924616"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86957144"
 ---
 # <a name="gpt"></a>gpt
 
@@ -37,7 +37,7 @@ gpt attributes=<n>
 
 | パラメーター | 説明 |
 | --------- | ----------- |
-| 属性 =`<n>` | フォーカスのあるパーティションに適用する属性の値を指定します。 Gpt 属性フィールドは、2つのサブフィールドを含む64ビットフィールドです。 上位フィールドは、パーティション ID との関係でのみ解釈され、下位フィールドは、すべてのパーティション ID に共通です。 許容される値は次のとおりです。<ul><li>**0x0000000000000001** -コンピューターが正常に機能するためにパーティションが必要であることを指定します。</li><li>**0x8000000000000000** -ディスクが別のコンピューターに移動されたとき、またはディスクがコンピューターによって初めて検出されたときに、パーティションが既定でドライブ文字を受け取らないことを指定します。</li><li>**0x4000000000000000** -パーティションのボリュームを非表示にして、マウントマネージャーによって検出されないようにします。</li><li>**0x2000000000000000** -パーティションが別のパーティションのシャドウコピーであることを指定します。</li><li>**0x1000000000000000** -パーティションが読み取り専用であることを指定します。 この属性は、ボリュームが書き込まれないようにします。</li></ul><p>これらの属性の詳細については、「 [Create_PARTITION_PARAMETERS Structure](https://docs.microsoft.com/windows/win32/api/vds/ns-vds-create_partition_parameters)」の「attributes」セクションを参照してください。 |
+| 属性 =`<n>` | フォーカスのあるパーティションに適用する属性の値を指定します。 Gpt 属性フィールドは、2つのサブフィールドを含む64ビットフィールドです。 上位フィールドは、パーティション ID との関係でのみ解釈され、下位フィールドは、すべてのパーティション ID に共通です。 許容される値は次のとおりです。<ul><li>**0x0000000000000001** -コンピューターが正常に機能するためにパーティションが必要であることを指定します。</li><li>**0x8000000000000000** -ディスクが別のコンピューターに移動されたとき、またはディスクがコンピューターによって初めて検出されたときに、パーティションが既定でドライブ文字を受け取らないことを指定します。</li><li>**0x4000000000000000** -パーティションのボリュームを非表示にして、マウントマネージャーによって検出されないようにします。</li><li>**0x2000000000000000** -パーティションが別のパーティションのシャドウコピーであることを指定します。</li><li>**0x1000000000000000** -パーティションが読み取り専用であることを指定します。 この属性は、ボリュームが書き込まれないようにします。</li></ul><p>これらの属性の詳細については、「 [Create_PARTITION_PARAMETERS Structure](/windows/win32/api/vds/ns-vds-create_partition_parameters)」の「attributes」セクションを参照してください。 |
 
 #### <a name="remarks"></a>注釈
 
@@ -51,10 +51,10 @@ Gpt ディスクの移動中に、コンピューターがフォーカスのあ�
 gpt attributes=0x8000000000000000
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 
 - [パーティションの選択コマンド](select-partition.md)
 
-- [create_PARTITION_PARAMETERS 構造体](https://docs.microsoft.com/windows/win32/api/vds/ns-vds-create_partition_parameters)
+- [create_PARTITION_PARAMETERS 構造体](/windows/win32/api/vds/ns-vds-create_partition_parameters)

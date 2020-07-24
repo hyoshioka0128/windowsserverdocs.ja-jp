@@ -8,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: de5a38ff6f811046d06c52a1ca4598f9650b3cfe
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ae7106e0c0fc1d9caca58b3a9a435886fc56b6f7
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80823015"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959944"
 ---
 # <a name="tpm-key-attestation"></a>TPM キーの構成証明
 
->適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
 **Author**: Justin 書籍、シニアサポートエスカレーションエンジニア (Windows グループ)  
   
@@ -28,11 +28,11 @@ ms.locfileid: "80823015"
 TPM で保護されたキーのサポートは Windows 8 以降に存在していましたが、証明書の要求者の秘密キーがトラステッドプラットフォームモジュール (TPM) によって実際に保護されていることを Ca が暗号証明するメカニズムはありませんでした。 この更新により、CA はその構成証明を実行し、発行された証明書にその構成証明を反映させることができます。  
   
 > [!NOTE]  
-> この記事では、読者が証明書テンプレートの概念を理解していることを前提としています (詳細については、「[証明書テンプレート](https://technet.microsoft.com/library/cc730705.aspx)」を参照)。 また、証明書テンプレートに基づいて証明書を発行するようにエンタープライズ Ca を構成する方法についても理解していることを前提としています (詳細については、「[チェックリスト: 証明書を発行および管理するように ca を構成](https://technet.microsoft.com/library/cc771533.aspx)する」を参照)。  
+> この記事では、読者が証明書テンプレートの概念を理解していることを前提としています (詳細については、「[証明書テンプレート](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc730705(v=ws.11))」を参照)。 また、証明書テンプレートに基づいて証明書を発行するようにエンタープライズ Ca を構成する方法についても理解していることを前提としています (詳細については、「[チェックリスト: 証明書を発行および管理するように ca を構成](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771533(v=ws.11))する」を参照)。  
   
 ### <a name="terminology"></a>用語  
   
-|用語|Definition|  
+|期間|定義|  
 |--------|--------------|  
 |EK|保証キー。 これは、(製造時に挿入された) TPM 内に含まれる非対称キーです。 EK は、TPM ごとに一意であり、特定できます。 EK を変更または削除することはできません。|  
 |EKpub|EK の公開キーを参照します。|  
@@ -40,7 +40,7 @@ TPM で保護されたキーのサポートは Windows 8 以降に存在して�
 |EKCert|EK 証明書。 TPM 製造元によって発行された EKPub の証明書。 すべての Tpm が EKCert を持っているわけではありません。|  
 |TPM|トラステッド プラットフォーム モジュール。 TPM は、ハードウェアベースのセキュリティ関連機能を提供するように設計されています。 TPM チップは、暗号化操作を実行するように設計されたセキュアな暗号プロセッサです。 このチップには、改ざんに強い複数の物理セキュリティ メカニズムが搭載されており、悪意のあるソフトウェアが TPM のセキュリティ機能を破ることはできません。|  
   
-### <a name="background"></a>背景  
+### <a name="background"></a>バックグラウンド  
 Windows 8 以降では、トラステッドプラットフォームモジュール (TPM) を使用して、証明書の秘密キーをセキュリティで保護することができます。 Microsoft Platform Crypto Provider キーストレージプロバイダー (KSP) を使用すると、この機能が有効になります。 実装には次の2つの問題がありました。  
 
 -   キーが TPM によって実際に保護される保証はありませんでした (他のユーザーが、ローカル管理者の資格情報を持つ TPM KSP としてソフトウェア KSP を簡単に偽装できます)。
@@ -66,7 +66,7 @@ TPM キーの構成証明を使用すると、新しい管理パラダイムが�
   
 4.  CA は、キーが TPM によって保護されるように証明されたことを示すために、特別な発行ポリシー OID を持つ証明書を発行します。  
   
-## <a name="deployment-overview"></a><a name="BKMK_DeploymentOverview"></a>展開の概要  
+## <a name="deployment-overview"></a><a name="BKMK_DeploymentOverview"></a>デプロイの概要  
 この展開では、Windows Server 2012 R2 enterprise CA がセットアップされていることを前提としています。 また、クライアント (Windows 8.1) は、証明書テンプレートを使用して、そのエンタープライズ CA に対して登録するように構成されています。 
 
 TPM キーの構成証明を展開するには、次の3つの手順を実行します。  
@@ -83,7 +83,7 @@ TPM キーの構成証明を展開するには、次の3つの手順を実行し
   
     TPM 信頼モデルの組み合わせを選択できることに注意してください。 この場合、CA は任意の構成証明方法を受け入れ、発行ポリシー Oid は成功したすべての構成証明方法を反映します。  
   
-2.  **証明書テンプレートを構成します。** 証明書テンプレートの構成については、このトピックの「[展開の詳細](../../../ad-ds/manage/component-updates/TPM-Key-Attestation.md#BKMK_DeploymentDetails)」セクションを参照してください。 この記事では、この証明書テンプレートがエンタープライズ CA にどのように割り当てられるか、またはユーザーのグループに登録アクセスが付与される方法については説明しません。 詳細については、「[チェックリスト: 証明書を発行および管理するように ca を構成する](https://technet.microsoft.com/library/cc771533.aspx)」を参照してください。  
+2.  **証明書テンプレートを構成します。** 証明書テンプレートの構成については、このトピックの「[展開の詳細](../../../ad-ds/manage/component-updates/TPM-Key-Attestation.md#BKMK_DeploymentDetails)」セクションを参照してください。 この記事では、この証明書テンプレートがエンタープライズ CA にどのように割り当てられるか、またはユーザーのグループに登録アクセスが付与される方法については説明しません。 詳細については、「[チェックリスト: 証明書を発行および管理するように ca を構成する](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771533(v=ws.11))」を参照してください。  
   
 3.  **TPM 信頼モデル用に CA を構成する**  
   
@@ -98,16 +98,16 @@ TPM キーの構成証明を展開するには、次の3つの手順を実行し
     > -   サードパーティのスマートカード KSPs の TPM キーの構成証明はサポートされていません。 Microsoft プラットフォーム暗号化プロバイダー KSP を使用する必要があります。  
     > -   TPM キーの構成証明は、RSA キーに対してのみ機能します。  
     > -   スタンドアロン CA では、TPM キーの構成証明はサポートされていません。  
-    > -   TPM キーの構成証明は[、非永続的な証明書の処理](https://technet.microsoft.com/library/ff934598)をサポートしていません。  
+    > -   TPM キーの構成証明は[、非永続的な証明書の処理](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff934598(v=ws.10))をサポートしていません。  
   
-## <a name="deployment-details"></a><a name="BKMK_DeploymentDetails"></a>デプロイの詳細  
+## <a name="deployment-details"></a><a name="BKMK_DeploymentDetails"></a>展開の詳細  
   
 ### <a name="configure-a-certificate-template"></a><a name="BKMK_ConfigCertTemplate"></a>証明書テンプレートを構成する  
 TPM キーの構成証明用の証明書テンプレートを構成するには、次の構成手順を実行します。  
   
 1.  **[互換性]** タブ  
   
-    **[互換性の設定]** セクションで、次の手順を実行します。  
+    [**互換性の設定**] セクションで、次の手順を実行します。  
   
     -   **証明機関**に対して**Windows Server 2012 R2**が選択されていることを確認します。  
   
@@ -117,11 +117,11 @@ TPM キーの構成証明用の証明書テンプレートを構成するには�
   
 2.  **[暗号化]** タブ  
   
-    [**プロバイダー] カテゴリ**に **[キー記憶域プロバイダー]** が選択されていることと、**アルゴリズム名**に**RSA**が選択されていることを確認します。 **[プロバイダー]** で [**次のプロバイダーのいずれかを使用する必要があり** **ます] が**選択されていることを確認します。  
+    [**プロバイダー] カテゴリ**に [**キー記憶域プロバイダー** ] が選択されていることと、**アルゴリズム名**に**RSA**が選択されていることを確認します。 [**プロバイダー**] で [**次のプロバイダーのいずれかを使用する必要があり****ます] が**選択されていることを確認します。  
   
     ![TPM キーの構成証明](media/TPM-Key-Attestation/GTR_ADDS_CryptoTab.gif)  
   
-3.  **[キーの構成証明]** タブ  
+3.  [**キーの構成証明**] タブ  
   
     これは、Windows Server 2012 R2 の新しいタブです。  
   
@@ -154,7 +154,7 @@ TPM キーの構成証明用の証明書テンプレートを構成するには�
     |OID|キーの構成証明の種類|説明|保証レベル|  
     |-------|------------------------|---------------|-------------------|  
     |1.3.6.1.4.1.311.21.30|EK|"EK 検証済み": 管理者によって管理される EK のリスト|高|  
-    |1.3.6.1.4.1.311.21.31|保証証明書|"EK 証明書の検証済み": 証明書チェーンが検証されたとき|中|  
+    |1.3.6.1.4.1.311.21.31|保証証明書|"EK 証明書の検証済み": 証明書チェーンが検証されたとき|Medium|  
     |1.3.6.1.4.1.311.21.32|ユーザーの資格情報|"使用中に信頼されている EK": ユーザー証明 EK の場合|低|  
   
     [発行**ポリシーを含める**] が選択されている場合 (既定の構成)、oid は発行された証明書に挿入されます。  
@@ -168,7 +168,7 @@ TPM キーの構成証明用の証明書テンプレートを構成するには�
   
 1.  **発行元 CA での EKCA と EKROOT の証明書ストアのセットアップ**  
   
-    テンプレート設定に **[保証証明書]** を選択した場合は、次の構成手順を実行します。  
+    テンプレート設定に [**保証証明書**] を選択した場合は、次の構成手順を実行します。  
   
     1.  Windows PowerShell を使用して、TPM キーの構成証明を実行する証明機関 (CA) サーバーに2つの新しい証明書ストアを作成します。  
   
@@ -187,20 +187,20 @@ TPM キーの構成証明用の証明書テンプレートを構成するには�
   
 2.  **EK 構成証明の種類を使用している場合の EKPUB リストの設定**  
   
-    テンプレート設定で **[保証キー]** を選択した場合、次の構成手順では、発行元 CA にフォルダーを作成して構成します。これには、許可された EK の sha-1 ハッシュ用に名前が付けられた0バイトのファイルが含まれます。 このフォルダーは、TPM キー証明証明書の取得が許可されているデバイスの "許可リスト" として機能します。 証明証明書を必要とするすべてのデバイスの EKPUB を手動で追加する必要があるため、TPM キー証明証明書の取得が許可されているデバイスが企業に保証されます。 このモードの CA を構成するには、次の2つの手順が必要です。  
+    テンプレート設定で [**保証キー** ] を選択した場合、次の構成手順では、発行元 CA にフォルダーを作成して構成します。これには、許可された EK の sha-1 ハッシュ用に名前が付けられた0バイトのファイルが含まれます。 このフォルダーは、TPM キー証明証明書の取得が許可されているデバイスの "許可リスト" として機能します。 証明証明書を必要とするすべてのデバイスの EKPUB を手動で追加する必要があるため、TPM キー証明証明書の取得が許可されているデバイスが企業に保証されます。 このモードの CA を構成するには、次の2つの手順が必要です。  
   
     1.  **EndorsementKeyListDirectories レジストリエントリを作成します。** Certutil コマンドラインツールを使用して、次の表に示すように、trusted EKpubs が定義されているフォルダーの場所を構成します。  
   
         |操作|コマンド構文|  
         |-------------|------------------|  
-        |フォルダーの場所の追加|certutil-setreg CA\EndorsementKeyListDirectories + "<folder>"|  
-        |フォルダーの場所の削除|certutil-setreg CA\EndorsementKeyListDirectories-"<folder>"|  
+        |フォルダーの場所の追加|certutil.exe-setreg CA\EndorsementKeyListDirectories + " <folder> "|  
+        |フォルダーの場所の削除|certutil.exe-setreg CA\EndorsementKeyListDirectories-" <folder> "|  
   
         Certutil コマンドの EndorsementKeyListDirectories は、次の表に示すレジストリ設定です。  
   
-        |値の名前|種類|Data|  
+        |値の名前|種類|データ|  
         |--------------|--------|--------|  
-        |EndorsementKeyListDirectories|REG_MULTI_SZ|EKPUB 許可リストへのローカルパスまたは UNC パスを < ><p>例:<p>*\\\blueCA.contoso.com\ekpub*<p>*\\\bluecluster1.contoso.com\ekpub*<p>D:\ekpub|  
+        |EndorsementKeyListDirectories|REG_MULTI_SZ|EKPUB 許可リストへのローカルパスまたは UNC パスを <><p>例:<p>*\\\blueCA.contoso.com\ekpub*<p>*\\\bluecluster1.contoso.com\ekpub*<p>D:\ekpub|  
   
         HKLM\SYSTEM\CurrentControlSet\Services\CertSvc\Configuration\\<CA Sanitized Name>  
   
@@ -275,5 +275,5 @@ Windows PowerShell コマンドレット**CAEndorsementKeyInfo**を使用して�
         ```  
   
 ## <a name="see-also"></a>参照  
-[トラステッドプラットフォームモジュールテクノロジの概要](https://technet.microsoft.com/library/jj131725.aspx)  
+[トラステッド プラットフォーム モジュール テクノロジの概要](/previous-versions/windows/it-pro/windows-8.1-and-8/jj131725(v=ws.11))  
 [外部リソース: トラステッドプラットフォームモジュール](http://www.cs.unh.edu/~it666/reading_list/Hardware/tpm_fundamentals.pdf)  

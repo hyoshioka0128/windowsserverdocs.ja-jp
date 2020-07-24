@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 47be29e55c4626f5c05498074f10418730c6a6f3
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 8c8d865643c12377a3f4b14250f9d3dbead1e2ac
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931307"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958244"
 ---
 # <a name="dnscmd"></a>Dnscmd
 
@@ -68,7 +68,7 @@ dnscmd [<servername>] /ageallrecords <zonename>[<nodename>] | [/tree]|[/f]
 
 ### <a name="examples"></a>例
 
-[例 1: タイムスタンプの現在の時刻をリソースレコードに設定する](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-1-set-the-current-time-on-a-time-stamp-to-resource-records)
+[例 1: タイムスタンプの現在の時刻をリソースレコードに設定する](/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-1-set-the-current-time-on-a-time-stamp-to-resource-records)
 
 ## <a name="dnscmd-clearcache-command"></a>dnscmd/clearcache コマンド
 
@@ -349,9 +349,9 @@ dnscmd [<servername>] /enumzones [/primary | /secondary | /forwarder | /stub | /
 
 #### <a name="examples"></a>例
 
-- [例 2: DNS サーバーのゾーンの完全な一覧を表示する](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-2-display-a-complete-list-of-zones-on-a-dns-server)
+- [例 2: DNS サーバーのゾーンの完全な一覧を表示する](/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-2-display-a-complete-list-of-zones-on-a-dns-server)
 
-- [例 3: DNS サーバーでより自動作成ゾーンの一覧を表示する](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-3-display-a-list-of-autocreated-zones-on-a-dns-server)
+- [例 3: DNS サーバーでより自動作成ゾーンの一覧を表示する](/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-3-display-a-list-of-autocreated-zones-on-a-dns-server)
 
 ## <a name="dnscmd-exportsettings-command"></a>dnscmd/exportsettings コマンド
 
@@ -388,9 +388,9 @@ dnscmd [<servername>] /info [<settings>]
 
 #### <a name="example"></a>例
 
-- [例 4: DNS サーバーから IsSlave 設定を表示する](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-4-display-the-isslave-setting-from-a-dns-server)
+- [例 4: DNS サーバーから IsSlave 設定を表示する](/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-4-display-the-isslave-setting-from-a-dns-server)
 
-- [例 5: DNS サーバーから RecursionTimeout 設定を表示する](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-5-display-the-recursiontimeout-setting-from-a-dns-server)
+- [例 5: DNS サーバーから RecursionTimeout 設定を表示する](/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-5-display-the-recursiontimeout-setting-from-a-dns-server)
 
 ## <a name="dnscmd-ipvalidate-command"></a>dnscmd/ipvalidate コマンド
 
@@ -440,7 +440,7 @@ dnscmd [<servername>] /nodedelete <zonename> <nodename> [/tree] [/f]
 
 #### <a name="example"></a>例
 
-[例 6: ノードからレコードを削除する](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-6-delete-the-records-from-a-node)
+[例 6: ノードからレコードを削除する](/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-6-delete-the-records-from-a-node)
 
 ## <a name="dnscmd-recordadd-command"></a>dnscmd/recordadd コマンド
 
@@ -463,7 +463,7 @@ dnscmd [<servername>] /recordadd <zonename> <nodename> <rrtype> <rrdata>
 | `<rrdata>` | 予想されるデータの種類を指定します。 |
 
 > [!NOTE]
-> レコードを追加した後は、正しいデータ型とデータ形式を使用していることを確認してください。 リソースレコードの種類と適切なデータの種類の一覧については、「 [Dnscmd の例](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10))」を参照してください。
+> レコードを追加した後は、正しいデータ型とデータ形式を使用していることを確認してください。 リソースレコードの種類と適切なデータの種類の一覧については、「 [Dnscmd の例](/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10))」を参照してください。
 
 #### <a name="examples"></a>例
 
@@ -621,9 +621,9 @@ dnscmd [<servername>] /statistics [<statid>] [/clear]
 
 #### <a name="examples"></a>例
 
-- [例 7:](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-7-display-time-statistics-for-a-dns-server)
+- [例 7:](/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-7-display-time-statistics-for-a-dns-server)
 
-- [例 8: DNS サーバーの NbstatMem の統計情報を表示する](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-8-display-nbstatmem-statistics-for-a-dns-server)
+- [例 8: DNS サーバーの NbstatMem の統計情報を表示する](/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-8-display-nbstatmem-statistics-for-a-dns-server)
 
 ## <a name="dnscmd-unenlistdirectorypartition-command"></a>dnscmd/unenlistdirectorypartition コマンド
 
@@ -737,7 +737,7 @@ dnscmd [<servername>] /zonedelete <zonename> [/dsdel] [/f]
 
 #### <a name="examples"></a>例
 
-- [例 9: DNS サーバーからゾーンを削除する](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-9-delete-a-zone-from-a-dns-server)
+- [例 9: DNS サーバーからゾーンを削除する](/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-9-delete-a-zone-from-a-dns-server)
 
 ## <a name="dnscmd-zoneexport-command"></a>dnscmd/zoneexport コマンド
 
@@ -759,7 +759,7 @@ dnscmd [<servername>] /zoneexport <zonename> <zoneexportfile>
 
 #### <a name="examples"></a>例
 
-- [例 10: ゾーンリソースレコードの一覧をファイルにエクスポートする](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-10-export-zone-resource-records-list-to-a-file)
+- [例 10: ゾーンリソースレコードの一覧をファイルにエクスポートする](/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-10-export-zone-resource-records-list-to-a-file)
 
 ## <a name="dnscmd-zoneinfo"></a>dnscmd/zoneinfo
 
@@ -787,9 +787,9 @@ dnscmd [<servername>] /zoneinfo <zonename> [<setting>]
 
 #### <a name="examples"></a>例
 
-- [例 11: レジストリから RefreshInterval 設定を表示する](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-11-display-refreshinterval-setting-from-the-registry)
+- [例 11: レジストリから RefreshInterval 設定を表示する](/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-11-display-refreshinterval-setting-from-the-registry)
 
-- [例 12: レジストリからエージング設定を表示する](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-12-display-aging-setting-from-the-registry)
+- [例 12: レジストリからエージング設定を表示する](/previous-versions/windows/it-pro/windows-server-2003/cc784399(v=ws.10)#example-12-display-aging-setting-from-the-registry)
 
 ## <a name="dnscmd-zonepause-command"></a>dnscmd/zonepause コマンド
 
@@ -1112,6 +1112,6 @@ dnscmd [<servername>] /zonewriteback <zonename>
 dnscmd dnssvr1.contoso.com /zonewriteback test.contoso.com
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
