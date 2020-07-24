@@ -8,12 +8,12 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 817c6ca168e33df1a0c59e151a303c4259313743
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: 2afc6f87a321625ae693d1a49c56f260a7d8c305
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81624300"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962244"
 ---
 # <a name="dns-and-ad-ds"></a>DNS と AD DS
 
@@ -23,7 +23,7 @@ Active Directory Domain Services (AD DS) は、ドメインネームシステム
 
 AD DS により、Active Directory 名前空間を既存の DNS 名前空間に簡単に統合できます。 Active Directory 統合された DNS ゾーンなどの機能を使用すると、セカンダリゾーンを設定する必要がなくなり、ゾーン転送を構成しなくても、DNS を簡単に展開できるようになります。
 
-DNS が AD DS をサポートする方法の詳細については、「 [Active Directory テクニカルリファレンスの Dns サポート](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc781627(v=ws.10))」セクションを参照してください。
+DNS が AD DS をサポートする方法の詳細については、「 [Active Directory テクニカルリファレンスの Dns サポート](/previous-versions/windows/it-pro/windows-server-2003/cc781627(v=ws.10))」セクションを参照してください。
 
 > [!NOTE]
 > AD DS ドメイン名がクライアントが使用するプライマリ DNS サフィックスとは異なる名前空間を実装した場合、DNS との統合 AD DS より複雑になります。 詳細については、「[不整合な名前空間](Disjoint-Namespace.md)」を参照してください。

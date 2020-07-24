@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 0a7dea03934a085961a8662f77b2c041b3040e17
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: ad9ef670a2b5f0643be4bb94ad6b667a7f9b011d
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81624310"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964024"
 ---
 # <a name="deploying-ad-ds-in-a-windows-2000-organization"></a>Windows Server 2000 組織への AD DS の展開
 
@@ -21,7 +21,7 @@ ms.locfileid: "81624310"
 
 組織で現在 Windows 2000 Active Directory が実行されている場合、windows server 2008 Active Directory Domain Services (AD DS) を展開するには、ドメインコントローラーのオペレーティングシステムの一部またはすべてを Windows Server 2008 にインプレースアップグレードするか、Windows Server 2008 を実行するドメインコントローラーを環境に導入します。
 
-Windows Server 2008 を実行しているドメインコントローラーを既存の Windows 2000 Active Directory ドメインに追加するには、その前に、コマンドラインツール**adprep**を実行する必要があります。 Adprep は AD DS スキーマを拡張し、選択したオブジェクトの既定のセキュリティ記述子を更新し、一部のアプリケーションに必要な新しいディレクトリオブジェクトを追加します。 Adprep は、Windows Server 2008 インストールディスク (\sources\adprep\adprep.exe) で使用できます。 詳細については、「 [Adprep](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc731728(v=ws.11))」を参照してください。
+Windows Server 2008 を実行しているドメインコントローラーを既存の Windows 2000 Active Directory ドメインに追加するには、その前に、コマンドラインツール**adprep**を実行する必要があります。 Adprep は AD DS スキーマを拡張し、選択したオブジェクトの既定のセキュリティ記述子を更新し、一部のアプリケーションに必要な新しいディレクトリオブジェクトを追加します。 Adprep は、Windows Server 2008 インストールディスク (\sources\adprep\adprep.exe) で使用できます。 詳細については、「 [Adprep](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc731728(v=ws.11))」を参照してください。
 
 > [!NOTE]
 > 既存の Windows 2000 AD DS ドメインコントローラーを Windows Server 2008 にインプレースアップグレードする場合は、まずサーバーを Windows Server 2003 にアップグレードしてから、Windows Server 2008 にアップグレードする必要があります。
@@ -33,6 +33,6 @@ Windows Server 2008 を実行しているドメインコントローラーを既
 > [!NOTE]
 > ドメインまたはフォレストの機能レベルを Windows Server 2008 に設定する場合は、環境内のすべてのドメインコントローラーで Windows Server 2008 オペレーティングシステムを実行する必要があります。
 
-Windows Server 2008 AD DS の展開の一部として Windows 2000 環境からアップグレードされたリソースおよびアカウントドメインを統合するには、フォレスト間またはフォレスト内のドメイン再構築が必要になることがあります。 フォレスト間で AD DS ドメインを再構築すると、組織の複雑さと、関連する管理コストを削減することができます。 フォレスト内の AD DS ドメインを再構築すると、レプリケーショントラフィックを削減し、必要なユーザーとグループ管理の量を減らし、グループポリシーの管理を簡素化することで、組織の管理オーバーヘッドを減らすことができます。 詳細については、「 [ADMT Guide: Active Directory ドメインの移行と再構築](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc974332(v=ws.10))」を参照してください。
+Windows Server 2008 AD DS の展開の一部として Windows 2000 環境からアップグレードされたリソースおよびアカウントドメインを統合するには、フォレスト間またはフォレスト内のドメイン再構築が必要になることがあります。 フォレスト間で AD DS ドメインを再構築すると、組織の複雑さと、関連する管理コストを削減することができます。 フォレスト内の AD DS ドメインを再構築すると、レプリケーショントラフィックを削減し、必要なユーザーとグループ管理の量を減らし、グループポリシーの管理を簡素化することで、組織の管理オーバーヘッドを減らすことができます。 詳細については、「 [ADMT Guide: Active Directory ドメインの移行と再構築](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc974332(v=ws.10))」を参照してください。
 
-現在 Windows 2000 Active Directory を実行している組織で AD DS を計画および展開するために使用できる詳細なタスクの一覧については、「[チェックリスト: windows 2000 組織での AD DS の展開](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732737(v=ws.10))」を参照してください。
+現在 Windows 2000 Active Directory を実行している組織で AD DS を計画および展開するために使用できる詳細なタスクの一覧については、「[チェックリスト: windows 2000 組織での AD DS の展開](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc732737(v=ws.10))」を参照してください。

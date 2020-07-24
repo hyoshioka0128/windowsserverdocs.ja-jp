@@ -9,16 +9,16 @@ ms.topic: get-started-article
 author: nedpyle
 ms.date: 03/26/2020
 ms.assetid: 61881b52-ee6a-4c8e-85d3-702ab8a2bd8c
-ms.openlocfilehash: 9873378d62ccc7b53dcc6fc629651df2aa1c6708
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: b49c626bd5b8630d375c2984eac96a32b703cd2c
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80308111"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964104"
 ---
 # <a name="server-to-server-storage-replication-with-storage-replica"></a>記憶域レプリカを使用したサーバー間の記憶域レプリケーション
 
-> 適用対象: Windows Server 2019、Windows Server 2016、Windows Server (半期チャネル)
+> 適用先:Windows Server 2019、Windows Server 2016、Windows Server (半期チャネル)
 
 記憶域レプリカを使用すると、2 台のサーバーがそれぞれ同じボリュームの同じコピーを持つようにデータの同期を構成できます。 このトピックでは、このようなサーバー間のレプリケーション構成の背景、設定方法、環境の管理方法について説明します。
 
@@ -33,11 +33,11 @@ Windows 管理センターで記憶域レプリカを使用する場合の概要
 * Active Directory Domain Services フォレスト (Windows Server 2016 を実行する必要はありません)。  
 * Windows Server 2019 または Windows Server 2016, Datacenter Edition を実行する2台のサーバー。 Windows Server 2019 を実行している場合は、通常は Standard Edition を使用することができます。これにより、1つのボリュームのみを最大 2 TB までレプリケートできます。  
 * SAS JBOD、ファイバー チャネル SAN、iSCSI ターゲット、またはローカル SCSI/SATA ストレージを使用する 2 セットの記憶域。 記憶域では HDD メディアと SSD メディアを混在させる必要があります。 各記憶域セットは、共有アクセスなしで、各サーバーでのみ利用可能となるように設定します。  
-* 各記憶域セットでは、2 つ以上の仮想ディスク (レプリケートされたデータ用とログ用) を作成できる必要があります。 物理記憶域のセクター サイズは、すべてのデータ ディスクで同じである必要があります。 物理記憶域のセクター サイズは、すべてのログ ディスクで同じである必要があります。  
+* 記憶域の各セットでは、2 つ以上 (1 つはレプリケートされたデータ用、1 つはログ用) の仮想ディスクの作成が許可される必要があります。 物理記憶域のセクター サイズは、すべてのデータ ディスクで同じである必要があります。 物理記憶域のセクター サイズは、すべてのログ ディスクで同じである必要があります。  
 * 同期レプリケーションのために各サーバーで少なくとも 1 つのイーサネット/TCP 接続 (可能であれば RDMA)。   
-* すべてのノード間での ICMP、SMB (ポート 445 と、SMB ダイレクト用のポート 5445)、WS-MAN (ポート 5985) の双方向トラフィックを許可する適切なファイアウォール規則およびルーター規則。  
+* すべてのノード間で ICMP、SMB (ポート 445、SMB ダイレクト用に 5445)、WS-MAN (ポート 5985) の双方向トラフィックを許可する適切なファイアウォールおよびルーター ルール。  
 * 書き込みの IO 負荷に十分対応できる帯域幅を持ちラウンド トリップ遅延時間が平均 5 ミリ秒である、同期レプリケーション用のサーバー間ネットワーク。 非同期レプリケーションには待機時間の推奨事項はありません。<br>
-オンプレミスのサーバーと Azure Vm の間でレプリケートする場合は、オンプレミスのサーバーと Azure Vm の間にネットワークリンクを作成する必要があります。 これを行うには、 [expressroute](#add-azure-vm-expressroute)または[サイト間 vpn gateway 接続](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal)を使用するか、Azure vm に vpn ソフトウェアをインストールして、オンプレミスのネットワークに接続します。
+オンプレミスのサーバーと Azure Vm の間でレプリケートする場合は、オンプレミスのサーバーと Azure Vm の間にネットワークリンクを作成する必要があります。 これを行うには、 [expressroute](#add-azure-vm-expressroute)または[サイト間 vpn gateway 接続](/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal)を使用するか、Azure vm に vpn ソフトウェアをインストールして、オンプレミスのネットワークに接続します。
 * レプリケート対象の記憶域を、Windows オペレーティング システムのフォルダーが含まれるドライブに配置することはできません。
 
 > [!IMPORTANT]
@@ -50,7 +50,7 @@ Windows 管理センターで記憶域レプリカを使用する場合の概要
 
 記憶域レプリカと Windows 管理センターを一緒に使用するには、次のものが必要です。
 
-| System                        | オペレーティング システム                                            | このソフトウェアを必要とする機能     |
+| システム                        | オペレーティング システム                                            | 次のために必須:     |
 |-------------------------------|-------------------------------------------------------------|------------------|
 | 2 台のサーバー <br>(Azure Vm を含むオンプレミスのハードウェア、Vm、クラウド Vm の任意の組み合わせ)| Windows Server 2019、Windows Server 2016、または Windows Server (半期チャネル) | 記憶域レプリカ  |
 | 1台の PC                     | Windows 10                                                  | Windows Admin Center |
@@ -59,7 +59,7 @@ Windows 管理センターで記憶域レプリカを使用する場合の概要
 > 現時点では、サーバーで Windows 管理センターを使用して記憶域レプリカを管理することはできません。
 
 ## <a name="terms"></a>用語  
-このチュートリアルでは、例として、次の環境を使用します。  
+このチュートリアルでは、例として次の環境を使用します。  
 
 -   **SR-SRV05** および **SR-SRV06** という名前の 2 台のサーバー。  
 
@@ -75,7 +75,7 @@ Windows 管理センターを使用して記憶域レプリカを管理してい
 1. [Windows 管理センター](../../manage/windows-admin-center/overview.md)をダウンロードしてインストールします。
 2. [リモートサーバー管理ツール](https://www.microsoft.com/download/details.aspx?id=45520)をダウンロードしてインストールします。
     - Windows 10 バージョン1809以降を使用している場合は、オンデマンド機能から "RSAT: Storage Replica Module for Windows PowerShell" をインストールしてください。
-3. **[スタート]** ボタンを選択し、「 **powershell**」と入力して、[ **Windows powershell]** を右クリックし、 **[管理者として実行]** を選択して、powershell セッションを管理者として開きます。
+3. [**スタート**] ボタンを選択し、「 **powershell**」と入力して、[ **Windows powershell]** を右クリックし、[**管理者として実行**] を選択して、powershell セッションを管理者として開きます。
 4. 次のコマンドを入力して、ローカルコンピューターで WS-MANAGEMENT プロトコルを有効にし、クライアントでのリモート管理の既定の構成を設定します。
 
     ```PowerShell
@@ -96,7 +96,7 @@ Windows 管理センターを使用して記憶域レプリカを管理してい
 3.  ネットワーク情報を追加し、サーバーを Windows 10 管理 PC と同じドメインに参加させ (使用している場合)、サーバーを再起動します。  
 
     > [!NOTE]
-    > この時点以降、すべてのサーバーのビルトイン Administrator グループのメンバーであるドメイン ユーザーとして常にログオンします。 今後、グラフィカルなサーバーのインストールまたは Windows 10 コンピューターで実行するとき、PowerShell および CMD プロンプトを昇格してください。  
+    > この時点以降は、常に、すべてのサーバーでビルトイン Administrator グループのメンバーであるドメイン ユーザーとしてログオンします。 今後、グラフィカルなサーバーのインストールまたは Windows 10 コンピューターで実行するとき、PowerShell および CMD プロンプトを昇格してください。  
 
 3.  JBOD 記憶域エンクロージャ、iSCSI ターゲット、FC SAN、またはローカル固定ディスク (DAS) の最初のセットをサイト**Redmond**のサーバーに接続します。  
 
@@ -112,17 +112,17 @@ Windows 管理センターを使用して記憶域レプリカを管理してい
 7.  役割を次のように構成します。  
 
     -   **Windows 管理センターの方法**
-        1. Windows 管理センターで、サーバーマネージャーに移動し、いずれかのサーバーを選択します。
-        2. **[役割 & 機能]** に移動します。
-        3. [**機能** > **記憶域レプリカ**] を選択し、 **[インストール]** をクリックします。
+        1. Windows 管理センターで、[サーバーマネージャーに移動し、いずれかのサーバーを選択します。
+        2. [**役割 & 機能**] に移動します。
+        3. [**機能**] [  >  **記憶域レプリカ**] の順に選択し、[**インストール**] をクリックします。
         4. もう一方のサーバーでも繰り返します。
     -   **サーバーマネージャーメソッド**  
 
-        1.  **ServerManager.exe** を実行してサーバー グループを作成し、すべてのサーバー ノードを追加します。  
+        1.  **ServerManager.exe**を実行し、すべてのサーバーノードを追加してサーバーグループを作成します。  
 
-        2.  各ノードに**ファイル サーバー**と**記憶域レプリカ**の役割と機能をインストールし、再起動します。  
+        2.  **ファイル サーバー**と**記憶域レプリカ**の役割と機能を各ノードでインストールし、再起動します。  
 
-    -   **Windows PowerShell メソッド**  
+    -   **Windows PowerShell による方法**  
 
         SR-SRV06 またはリモート管理コンピューターの Windows PowerShell コンソールで、次のコマンドを実行して必要な機能と役割をインストールし、再起動します。  
 
@@ -132,14 +132,14 @@ Windows 管理センターを使用して記憶域レプリカを管理してい
         $Servers | ForEach { Install-WindowsFeature -ComputerName $_ -Name Storage-Replica,FS-FileServer -IncludeManagementTools -restart }  
         ```  
 
-        詳細については、「[役割、役割サービス、または機能のインストールまたはアンインストール](../../administration/server-manager/install-or-uninstall-roles-role-services-or-features.md)」を参照してください。  
+        これらの手順の詳細については、「[役割、役割サービス、または機能のインストールまたはアンインストール](../../administration/server-manager/install-or-uninstall-roles-role-services-or-features.md)」を参照してください。  
 
 8.  記憶域を次のように構成します。  
 
     > [!IMPORTANT]  
     > -   各格納装置で、データ用に 1 つとログ用に 1 つの 2 つのボリュームを作成する必要があります。  
     > -   ログ ディスクとデータ ディスクは、MBR ではなく GPT として初期化する必要があります。  
-    > -   2 つのデータ ボリュームは、同じサイズでなければなりません。  
+    > -   2 つのデータ ボリュームのサイズは同じでなければなりません。  
     > -   2 つのログ ボリュームのサイズは同じでなければなりません。  
     > -   すべてのレプリケートされたデータ ディスクには、同一のセクター サイズが必要です。  
     > -   すべてのログ ディスクのセクター サイズは、同じである必要があります。  
@@ -148,13 +148,13 @@ Windows 管理センターを使用して記憶域レプリカを管理してい
     > -   ログ ボリュームは既定で 9 GB 以上である必要があり、ログ要件に応じて拡大または縮小する可能性もあります。  
     > -   ファイル サーバーの役割は、テスト用に必須ファイアウォール ポートを開くため、Test-SRTopology の動作にのみ必要です。
     
-    - **JBOD エンクロージャの場合:**  
+    - **JBOD 格納装置の場合:**  
 
         1.  各サーバーがそのサイトのストレージ格納装置のみを参照できることと、SAS 接続が正しく構成されていることを確認します。  
 
-        2.  記憶域スペースを使用して記憶域をプロビジョニングします。これには、「**スタンドアロン サーバーに記憶域スペースを展開する**」の[手順 1 - 3](../storage-spaces/deploy-standalone-storage-spaces.md) に従い、Windows PowerShell またはサーバー マネージャーを使用します。  
+        2.  記憶域スペースを使用して記憶域をプロビジョニングします。これには、「[スタンドアロン サーバーに記憶域スペースを展開する](../storage-spaces/deploy-standalone-storage-spaces.md)」の**手順 1 - 3** に従い、Windows PowerShell またはサーバー マネージャーを使用します。  
 
-    - **ISCSI ストレージの場合:**  
+    - **iSCSI ストレージの場合:**  
 
         1.  各クラスターがそのサイトのストレージ格納装置のみを参照できることを確認します。 iSCSI を使用する場合は、複数の単一ネットワーク アダプターを使用する必要があります。    
 
@@ -183,11 +183,11 @@ Windows 管理センターを使用して記憶域レプリカを管理してい
     ```
 
     > [!IMPORTANT]
-      > 評価期間中に指定したソース ボリュームに対する書き込み IO 負荷のないテスト サーバーを使用している場合は、ワークロードの追加を検討してください。負荷がない場合、有用なレポートは生成されません。 実際の数値および推奨されるログのサイズを確認するには、実稼働環境と同様のワークロードでテストする必要があります。 または、単に、テスト中にソース ボリュームにいくつかのファイルをコピーするか、[DISKSPD](https://gallery.technet.microsoft.com/DiskSpd-a-robust-storage-6cd2f223) をダウンロードして実行することでも書き込み I/O を生成できます。 たとえば、D: ボリュームに対する 10 分間の低書き込み IO ワークロードによる例を次に示します。  
+      > 評価期間中に指定したソース ボリュームに対する書き込み IO 負荷のないテスト サーバーを使用している場合は、ワークロードの追加を検討してください。負荷がない場合、有用なレポートは生成されません。 実際の数値および推奨されるログのサイズを確認するには、実稼働環境と同様のワークロードでテストする必要があります。 または、テスト中にソースボリュームにいくつかのファイルをコピーするか、 [Diskspd](https://gallery.technet.microsoft.com/DiskSpd-a-robust-storage-6cd2f223)をダウンロードして実行し、書き込み io を生成します。 たとえば、D: ボリュームに対する 10 分間の低書き込み IO ワークロードによる例を次に示します。  
       >
       > `Diskspd.exe -c1g -d600 -W5 -C5 -b8k -t2 -o2 -r -w5 -i100 -j100 d:\test` 
 
-10. 図2に示す**TestSrTopologyReport**レポートを調べて、記憶域レプリカの要件を満たしていることを確認します。  
+10. 図2に示す**TestSrTopologyReport.html**レポートを調べて、記憶域レプリカの要件を満たしていることを確認します。  
 
     ![トポロジのレポートを表示している画面](media/Server-to-Server-Storage-Replication/SRTestSRTopologyReport.png)
 
@@ -197,30 +197,30 @@ Windows 管理センターを使用して記憶域レプリカを管理してい
 ### <a name="using-windows-admin-center"></a>Windows 管理センターを使用する
 
 1. 移行元サーバーを追加します。
-    1. **[追加]** ボタンを選択します。
-    2. **[サーバー接続の追加]** を選択します。
-    3. サーバーの名前を入力し、 **[送信]** を選択します。
-2. **[すべての接続]** ページで、移行元サーバーを選択します。
-3. ツール パネルから **記憶域レプリカ** を選択します。
-4. 新しいパートナーシップを作成するには、 **[新規]** を選択します。 パートナーシップの宛先として使用する新しい Azure VM を作成するには、次のようにします。
+    1. **[追加]** ボタンを選びます。
+    2. [**サーバー接続の追加**] を選択します。
+    3. サーバーの名前を入力し、[**送信**] を選択します。
+2. [**すべての接続**] ページで、移行元サーバーを選択します。
+3. [ツール] パネルから [**記憶域レプリカ**] を選択します。
+4. 新しいパートナーシップを作成するには、[**新規**] を選択します。 パートナーシップの宛先として使用する新しい Azure VM を作成するには、次のようにします。
    
-    1. **[別のサーバーとのレプリケーション]** で、 **[新しい Azure VM を使用する]** を選択し、 **[次へ]** を選択します。 このオプションが表示されない場合は、Windows 管理センターのバージョン1910以降のバージョンを使用していることを確認してください。
-    2. 移行元サーバーの情報とレプリケーショングループ名を指定し、 **[次へ]** を選択します。<br><br>これにより、移行元のターゲットとして Windows Server 2019 または Windows Server 2016 Azure VM が自動的に選択されるプロセスが開始されます。 Storage Migration Service では、ソースに一致する VM サイズが推奨されますが、 **[すべてのサイズを表示]** を選択してこれを上書きできます。 インベントリデータは、管理ディスクとそのファイルシステムを自動的に構成するため、および新しい Azure VM を Active Directory ドメインに参加させるために使用されます。
-    3. Windows 管理センターで Azure VM を作成した後、レプリケーショングループ名を入力し、 **[作成]** を選択します。 その後、Windows 管理センターは、データの保護を開始するための通常の記憶域レプリカ初期同期プロセスを開始します。
+    1. [**別のサーバーとのレプリケーション**] で、[**新しい Azure VM を使用する**] を選択し、[**次へ**] を選択します。 このオプションが表示されない場合は、Windows 管理センターのバージョン1910以降のバージョンを使用していることを確認してください。
+    2. 移行元サーバーの情報とレプリケーショングループ名を指定し、[**次へ**] を選択します。<br><br>これにより、移行元のターゲットとして Windows Server 2019 または Windows Server 2016 Azure VM が自動的に選択されるプロセスが開始されます。 Storage Migration Service では、ソースに一致する VM サイズが推奨されますが、[**すべてのサイズを表示**] を選択してこれを上書きできます。 インベントリデータは、管理ディスクとそのファイルシステムを自動的に構成するため、および新しい Azure VM を Active Directory ドメインに参加させるために使用されます。
+    3. Windows 管理センターで Azure VM を作成した後、レプリケーショングループ名を入力し、[**作成**] を選択します。 その後、Windows 管理センターは、データの保護を開始するための通常の記憶域レプリカ初期同期プロセスを開始します。
     
     ストレージレプリカを使用して Azure Vm に移行する方法を示すビデオを次に示します。
 
     > [!VIDEO https://www.youtube-nocookie.com/embed/_VqD7HjTewQ] 
 
-5. パートナーシップの詳細を指定し、図3に示すように **[作成]** を選択します。 <br>
-   [新しいパートナーシップ] 画面で、8 GB のログサイズなどのパートナーシップの詳細が表示されていることを ![ます。](media/Storage-Replica-UI/Honolulu_SR_Create_Partnership.png)
+5. パートナーシップの詳細を指定し、図3に示すように [**作成**] を選択します。 <br>
+   ![新しい [パートナーシップ] 画面には、8 GB のログサイズなどの、パートナーシップの詳細が表示されます。](media/Storage-Replica-UI/Honolulu_SR_Create_Partnership.png)
 
     **図 3: 新しいパートナーシップを作成する**
 
 > [!NOTE]
 > Windows 管理センターの記憶域レプリカからパートナーシップを削除しても、レプリケーショングループ名は削除されません。
 
-### <a name="using-windows-powershell"></a>Windows PowerShell の使用
+### <a name="using-windows-powershell"></a>Windows PowerShell を使用する
 
 次に、Windows PowerShell を使用してサーバー間のレプリケーションを構成します。 次のすべての手順は、ノード上で直接実行するか、Windows Server リモートサーバー管理ツールを含むリモート管理コンピューターから実行する必要があります。  
 
@@ -240,7 +240,7 @@ Windows 管理センターを使用して記憶域レプリカを管理してい
    ```
 
     > [!IMPORTANT]
-    > 既定のログのサイズは、8 GB です。 `Test-SRTopology` コマンドレットの結果に応じて、より大きい値または小さい値を指定して -LogSizeInBytes を使用することを検討してください。  
+    > 既定のログのサイズは 8 GB です。 `Test-SRTopology` コマンドレットの結果に応じて、より大きい値または小さい値を指定して -LogSizeInBytes を使用することを検討してください。  
 
 2.  レプリケーション元とレプリケーション先の状態の取得するために、`Get-SRGroup` と `Get-SRPartnership` を次のとおり使用します。  
 
@@ -279,7 +279,7 @@ Windows 管理センターを使用して記憶域レプリカを管理してい
         ```PowerShell  
         Get-WinEvent -ProviderName Microsoft-Windows-StorageReplica | Where-Object {$_.ID -eq "1215"} | fl  
         ```
-        次に出力の例を示します。
+        出力例を次に示します。
         ```
         TimeCreated  : 4/8/2016 4:12:37 PM  
         ProviderName : Microsoft-Windows-StorageReplica  
@@ -299,15 +299,15 @@ Windows 管理センターを使用して記憶域レプリカを管理してい
         ```  
 
         > [!NOTE]
-        > 記憶域レプリカは、宛先のボリュームとそのドライブ文字またはマウント ポイントをマウント解除します。 これは仕様です。  
+        > 記憶域レプリカによって、インストール先のボリュームとそのドライブ文字またはマウント ポイントがマウント解除されます。 これは仕様です。  
 
-    3.  または、レプリカのレプリケーション先サーバー グループでは、コピーの残りのバイト数が常時示されており、PowerShell を使って照会できます。 例 :  
+    3.  または、レプリカのレプリケーション先サーバー グループでは、コピーの残りのバイト数が常時示されており、PowerShell を使って照会できます。 次に例を示します。  
 
         ```PowerShell  
         (Get-SRGroup).Replicas | Select-Object numofbytesremaining  
         ```  
 
-        進行状況を確認するサンプルを次に示します (サンプルは終了されません)。  
+        進行状況サンプル (終了しません):  
 
         ```PowerShell  
         while($true) {  
@@ -384,7 +384,7 @@ Windows 管理センターを使用して記憶域レプリカを管理してい
 
     -   \Storage Replica Statistics(*)\Number of Messages Sent  
 
-    Windows PowerShell でのパフォーマンス カウンターの詳細については、「[Get-Counter](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Diagnostics/Get-Counter)」を参照してください。  
+    Windows PowerShell でのパフォーマンス カウンターの詳細については、「[Get-Counter](/powershell/module/microsoft.powershell.diagnostics/get-counter)」を参照してください。  
 
 3.  レプリケーションの方向を片方のサイトから移すには、`Set-SRPartnership` コマンドレットを使用します。  
 
@@ -442,19 +442,19 @@ Windows 管理センターを使用して記憶域レプリカを管理してい
 
 ## <a name="adding-an-azure-vm-connected-to-your-network-via-expressroute"></a><a name="add-azure-vm-expressroute"></a>ExpressRoute 経由でネットワークに接続されている Azure VM の追加
 
-1. [Azure portal に ExpressRoute を作成](https://docs.microsoft.com/azure/expressroute/expressroute-howto-circuit-portal-resource-manager)します。<br>ExpressRoute が承認されると、リソースグループがサブスクリプションに追加されます。この新しいグループを表示するには、 **[リソースグループ]** に移動します。 仮想ネットワーク名をメモしておきます。
-ExpressRoute](media/Server-to-Server-Storage-Replication/express-route-resource-group.png) に追加されたリソースグループを示す Azure portal ![
+1. [Azure portal に ExpressRoute を作成](/azure/expressroute/expressroute-howto-circuit-portal-resource-manager)します。<br>ExpressRoute が承認されると、リソースグループがサブスクリプションに追加されます。この新しいグループを表示するには、[**リソースグループ**] に移動します。 仮想ネットワーク名をメモしておきます。
+![ExpressRoute によって追加されたリソースグループを示す Azure portal](media/Server-to-Server-Storage-Replication/express-route-resource-group.png)
     
     **図 4: ExpressRoute に関連付けられているリソース (仮想ネットワーク名をメモする)**
-1. [新しいリソースグループを作成](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal)します。
-1. [ネットワークセキュリティグループを追加](https://docs.microsoft.com/azure/virtual-network/virtual-networks-create-nsg-arm-pportal)します。 作成時に、作成した ExpressRoute に関連付けられているサブスクリプション ID を選択し、作成したばかりのリソースグループを選択します。
+1. [新しいリソースグループを作成](/azure/azure-resource-manager/resource-group-portal)します。
+1. [ネットワークセキュリティグループを追加](/azure/virtual-network/virtual-networks-create-nsg-arm-pportal)します。 作成時に、作成した ExpressRoute に関連付けられているサブスクリプション ID を選択し、作成したばかりのリソースグループを選択します。
 <br><br>必要な受信および送信のセキュリティ規則をネットワークセキュリティグループに追加します。 たとえば、VM へのリモートデスクトップアクセスを許可することができます。
-1. 次の設定を使用して[AZURE VM を作成](https://docs.microsoft.com/azure/virtual-machines/windows/quick-create-portal)します (図5を参照)。
+1. 次の設定を使用して[AZURE VM を作成](/azure/virtual-machines/windows/quick-create-portal)します (図5を参照)。
     - **パブリック IP アドレス**: なし
-    - **[仮想ネットワーク]** : ExpressRoute に追加したリソースグループからメモした仮想ネットワークを選択します。
-    - **[ネットワークセキュリティグループ (ファイアウォール)]** : 以前に作成したネットワークセキュリティグループを選択します。
-    ExpressRoute のネットワーク設定を示す仮想マシンの作成 ![](media/Server-to-Server-Storage-Replication/azure-vm-express-route.png)
-    **図 5: expressroute のネットワーク設定を選択して VM を作成**する
+    - [**仮想ネットワーク**]: ExpressRoute に追加したリソースグループからメモした仮想ネットワークを選択します。
+    - [**ネットワークセキュリティグループ (ファイアウォール)**]: 以前に作成したネットワークセキュリティグループを選択します。
+    ![ExpressRoute ネットワーク設定を示す仮想マシン ](media/Server-to-Server-Storage-Replication/azure-vm-express-route.png)
+     **の作成図 5: expressroute ネットワーク設定を選択しているときに VM を作成する**
 1. VM が作成されたら、「[手順 2: オペレーティングシステム、機能、役割、記憶域、およびネットワークのプロビジョニング](#provision-os)」を参照してください。
 
 
@@ -463,5 +463,5 @@ ExpressRoute](media/Server-to-Server-Storage-Replication/express-route-resource-
 - [共有記憶域を使用した拡張クラスターレプリケーション](stretch-cluster-replication-using-shared-storage.md)  
 - [クラスターからクラスターへの記憶域のレプリケーション](cluster-to-cluster-storage-replication.md)
 - [記憶域レプリカ: 既知の問題](storage-replica-known-issues.md)  
-- [記憶域レプリカ: よく寄せられる質問](storage-replica-frequently-asked-questions.md)
-- [Windows Server 2016 の記憶域スペースダイレクト](../storage-spaces/storage-spaces-direct-overview.md)  
+- [記憶域レプリカ:よく寄せられる質問](storage-replica-frequently-asked-questions.md)
+- [Windows Server 2016 での記憶域スペース ダイレクト](../storage-spaces/storage-spaces-direct-overview.md)  

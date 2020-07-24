@@ -8,12 +8,12 @@ author: JasonGerend
 manager: dougkim
 ms.author: jgerend
 ms.date: 09/11/2018
-ms.openlocfilehash: 6799e0e3b47d6cc98cbb42407ffbed1a9578675a
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 7a6d23ebd82afc192a9c306420811860d74cf469
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473439"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961364"
 ---
 # <a name="iscsi-target-server-scalability-limits"></a>iSCSI ターゲットサーバーのスケーラビリティの制限
 
@@ -32,7 +32,7 @@ ms.locfileid: "85473439"
 </colgroup>
 <thead>
 <tr class="header">
-<th><p>項目</p></th>
+<th><p>Item</p></th>
 <th><p>サポートの制限</p></th>
 <th><p>リレーションシップ?</p></th>
 <th><p>解説</p></th>
@@ -89,7 +89,7 @@ ms.locfileid: "85473439"
 </colgroup>
 <thead>
 <tr class="header">
-<th><p>項目</p></th>
+<th><p>Item</p></th>
 <th><p>サポートの制限</p></th>
 <th><p>リレーションシップ?</p></th>
 <th><p>解説</p></th>
@@ -159,7 +159,7 @@ ms.locfileid: "85473439"
 </colgroup>
 <thead>
 <tr class="header">
-<th><p>項目</p></th>
+<th><p>Item</p></th>
 <th><p>サポートの制限</p></th>
 <th><p>リレーションシップ?</p></th>
 <th><p>解説</p></th>
@@ -240,7 +240,7 @@ ms.locfileid: "85473439"
 </colgroup>
 <thead>
 <tr class="header">
-<th><p>項目</p></th>
+<th><p>Item</p></th>
 <th><p>サポートの制限</p></th>
 <th><p>リレーションシップ?</p></th>
 <th><p>解説</p></th>
@@ -374,7 +374,7 @@ ms.locfileid: "85473439"
 </colgroup>
 <thead>
 <tr class="header">
-<th><p>項目</p></th>
+<th><p>Item</p></th>
 <th><p>サポートの制限</p></th>
 <th><p>解説</p></th>
 </tr>
@@ -444,7 +444,7 @@ ISCSI ターゲット記憶域プロバイダーは、Windows Server 2016、Wind
 
 ISCSI ターゲットサーバーが Windows Server 2012 R2 以降を実行しているサーバーでホストされていて、リモートサーバーから VSS または VDS を使用する場合は、リモートサーバーが同じバージョンの Windows Server を実行し、iSCSI ターゲット記憶域プロバイダーの役割サービスがインストールされていることに注意してください。 また、Windows のすべてのバージョンで、iSCSI ターゲット記憶域プロバイダーの役割サービスの1つのバージョンのみをインストールする必要があることに注意してください。
 
-ISCSI ターゲット記憶域プロバイダーの詳細については、「 [Iscsi ターゲット記憶域 (VDS/VSS) プロバイダー](https://blogs.technet.com/b/filecab/archive/2012/10/08/iscsi-target-storage-vds-vss-provider.aspx)」を参照してください。
+ISCSI ターゲット記憶域プロバイダーの詳細については、「 [Iscsi ターゲット記憶域 (VDS/VSS) プロバイダー](/powershell/module/iscsi/?view=win10-ps)」を参照してください。
 
 ## <a name="tested-compatibility-with-iscsi-initiators"></a>ISCSI イニシエーターとの互換性テスト
 
@@ -462,7 +462,7 @@ ISCSI ターゲット記憶域プロバイダーの詳細については、「 [
 <td><p>Initiator</p></td>
 <td><p>Windows Server 2012 R2</p></td>
 <td><p>Windows Server 2012</p></td>
-<td><p>コメント</p></td>
+<td><p>説明</p></td>
 </tr>
 <tr class="even">
 <td><p>Windows Server 2012 R2</p></td>
@@ -546,4 +546,3 @@ iSCSI ターゲット サーバーと関連テクノロジに関するその他�
 - [iSCSI Target Boot Overview](iscsi-boot-overview.md)
 
 - [Windows Server の記憶域](../storage.yml)
-

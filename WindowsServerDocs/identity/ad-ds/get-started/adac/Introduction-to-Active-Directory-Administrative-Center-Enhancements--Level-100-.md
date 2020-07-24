@@ -8,16 +8,16 @@ ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: f3f33673d254b66688aa6623837d990e17d7181a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: c6a18bc00d5269f30608ff8d511e8ee92b009133
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80824665"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86960994"
 ---
 # <a name="introduction-to-active-directory-administrative-center-enhancements-level-100"></a>Introduction to Active Directory Administrative Center Enhancements (Level 100)
 
->適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
 Windows Server の Active Directory 管理センターには、次の管理機能が含まれています。
 
@@ -35,7 +35,7 @@ Windows Server 2003 の Active Directory および Windows Server 2008 の AD DS
 
 Windows Server 2008 R2 から導入された Active Directory のごみ箱は、既存の廃棄済みオブジェクト (Tombstone) の復元インフラストラクチャを基にして作られており、誤って削除された Active Directory オブジェクトを保存して回復する機能が強化されています。
 
-Active Directory のごみ箱を有効にすると、削除された Active Directory オブジェクトのリンクされた値属性とリンクされていない値属性がすべて保持されます。このようなオブジェクトは、削除される直前と同じ、論理的に一貫性が保たれている状態に完全な形で復元されます。 たとえば、復元されたユーザー アカウントは、削除される直前に保持していた所属するドメイン内外のすべてのグループ メンバーシップと、それに対応するアクセス権を自動的に回復します。 Active Directory のごみ箱は、AD DS 環境でも AD LDS 環境でも動作します。 Active Directory のごみ箱の詳細については、次を参照してください。 [AD DS の新機能: Active Directory のごみ箱](https://technet.microsoft.com/library/dd391916(WS.10).aspx)します。
+Active Directory のごみ箱を有効にすると、削除された Active Directory オブジェクトのリンクされた値属性とリンクされていない値属性がすべて保持されます。このようなオブジェクトは、削除される直前と同じ、論理的に一貫性が保たれている状態に完全な形で復元されます。 たとえば、復元されたユーザー アカウントは、削除される直前に保持していた所属するドメイン内外のすべてのグループ メンバーシップと、それに対応するアクセス権を自動的に回復します。 Active Directory のごみ箱は、AD DS 環境でも AD LDS 環境でも動作します。 Active Directory のごみ箱の詳細については、「 [AD DS の新機能: Active Directory のごみ箱](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd391916(v=ws.10))」を参照してください。
 
 **新機能** Windows Server 2012 以降では、ユーザーが削除されたオブジェクトを管理および復元するための新しいグラフィカルユーザーインターフェイスを使用して、Active Directory のごみ箱機能が強化されています。 ユーザーは削除されたオブジェクトの一覧を視覚的に探して、オブジェクトを元の場所または望む場所に復元できます。
 
@@ -48,21 +48,21 @@ Windows Server で Active Directory のごみ箱を有効にする予定があ�
     > [!NOTE]
     > **サーバーマネージャー**を使用すると、リモートサーバー管理ツール (RSAT) をインストールして、正しいバージョンの Active Directory 管理センターを使用して、ユーザーインターフェイスからごみ箱を管理できます。
     >
-    > RSAT のインストールの詳細については、「[リモートサーバー管理ツール](https://docs.microsoft.com/windows-server/remote/remote-server-administration-tools)」を参照してください。
+    > RSAT のインストールの詳細については、「[リモートサーバー管理ツール](../../../../remote/remote-server-administration-tools.md)」を参照してください。
 
 ### <a name="active-directory-recycle-bin-step-by-step"></a>Active Directory のごみ箱の手順
 
 次の手順では、ADAC を使用して、Windows Server 2012 で、次の Active Directory のごみ箱のタスクを実行します。
 
-- [手順 1: フォレストの機能レベルを上げる](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#bkmk_raise_ffl)
-- [手順 2: ごみ箱を有効にする](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#bkmk_enable_recycle_bin)
-- [手順 3: テストユーザー、グループ、組織単位を作成する](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#bkmk_create_test_env)
-- [手順 4: 削除されたオブジェクトを復元する](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#bkmk_restore_del_obj)
+- [手順 1:フォレストの機能レベルを上げる](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#bkmk_raise_ffl)
+- [手順 2:ごみ箱の有効化](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#bkmk_enable_recycle_bin)
+- [手順 3:テスト用のユーザー、グループ、組織単位を作成する](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#bkmk_create_test_env)
+- [手順 4:削除されたオブジェクトを復元する](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#bkmk_restore_del_obj)
 
 > [!NOTE]
 > 以下の手順を実行するには、Enterprise Admins グループのメンバーシップ、またはそれと同等のアクセス許可が必要です。
 
-### <a name="step-1-raise-the-forest-functional-level"></a><a name="bkmk_raise_ffl"></a>手順 1: フォレストの機能レベルを上げる
+### <a name="step-1-raise-the-forest-functional-level"></a><a name="bkmk_raise_ffl"></a>手順 1:フォレストの機能レベルを上げる
 
 この手順では、フォレストの機能レベルを上げます。 Active Directory のごみ箱を有効にする前に、少なくとも Windows Server 2008 R2 であるターゲット フォレストの機能レベルを上げる必要があります。
 
@@ -70,13 +70,13 @@ Windows Server で Active Directory のごみ箱を有効にする予定があ�
 
 1. Windows PowerShell アイコンを右クリックして、クリックして **管理者として実行** と種類 **dsac.exe** ADAC を開きます。
 
-2. **[管理]** 、 **[ナビゲーション ノードの追加]** の順にクリックし、 **[ナビゲーション ノードの追加]** ダイアログ ボックスで適切なターゲット ドメインを選択して **[OK]** をクリックします。
+2. **[管理]**、**[ナビゲーション ノードの追加]** の順にクリックし、**[ナビゲーション ノードの追加]** ダイアログ ボックスで適切なターゲット ドメインを選択して **[OK]** をクリックします。
 
-3. 左側のナビゲーション ウィンドウでターゲット ドメインをクリックし、 **[タスク]** ウィンドウの **[フォレストの機能レベルの昇格]** をクリックします。 少なくとも、フォレストの機能レベルを選択して Windows Server 2008 R2 またはそれ以降順にクリック **OK**します。
+3. 左側のナビゲーション ウィンドウでターゲット ドメインをクリックし、**[タスク]** ウィンドウの **[フォレストの機能レベルの昇格]** をクリックします。 少なくとも、フォレストの機能レベルを選択して Windows Server 2008 R2 またはそれ以降順にクリック **OK**します。
 
-![AD 管理センターの](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>の概要***
+![AD 管理センター](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>の概要***
 
-次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 書式上の制約のため、複数行にわたって折り返される場合でも、各コマンドレットは 1 行に入力してください。
+次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 各コマンドレットを単一行に入力します。ただし、ここでは、書式上の制約があるために、複数行に改行されて表示される場合があります。
 
 ```powershell
 Set-ADForestMode -Identity contoso.com -ForestMode Windows2008R2Forest -Confirm:$false
@@ -84,7 +84,7 @@ Set-ADForestMode -Identity contoso.com -ForestMode Windows2008R2Forest -Confirm:
 
 **-Identity**引数には、完全修飾 DNS ドメイン名を指定します。
 
-### <a name="step-2-enable-recycle-bin"></a><a name="bkmk_enable_recycle_bin"></a>手順 2: ごみ箱を有効にする
+### <a name="step-2-enable-recycle-bin"></a><a name="bkmk_enable_recycle_bin"></a>手順 2:ごみ箱の有効化
 
 この手順では、削除された AD DS のオブジェクトを復元するためにごみ箱を有効にします。
 
@@ -92,21 +92,21 @@ Set-ADForestMode -Identity contoso.com -ForestMode Windows2008R2Forest -Confirm:
 
 1. Windows PowerShell アイコンを右クリックして、クリックして **管理者として実行** と種類 **dsac.exe** ADAC を開きます。
 
-2. **[管理]** 、 **[ナビゲーション ノードの追加]** の順にクリックし、 **[ナビゲーション ノードの追加]** ダイアログ ボックスで適切なターゲット ドメインを選択して **[OK]** をクリックします。
+2. **[管理]**、**[ナビゲーション ノードの追加]** の順にクリックし、**[ナビゲーション ノードの追加]** ダイアログ ボックスで適切なターゲット ドメインを選択して **[OK]** をクリックします。
 
-3. **[タスク]** ウィンドウで、 **[タスク]** ウィンドウの **[ごみ箱の有効化]** をクリックし、警告メッセージ ボックスで **[OK]** をクリックしてから **[OK]** をクリックすると、ADAC の更新メッセージが表示されます。
+3. **[タスク]** ウィンドウで、**[タスク]** ウィンドウの **[ごみ箱の有効化]** をクリックし、警告メッセージ ボックスで **[OK]** をクリックしてから **[OK]** をクリックすると、ADAC の更新メッセージが表示されます。
 
 4. F5 キーを押して ADAC を更新します。
 
-![AD 管理センターの](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>の概要***
+![AD 管理センター](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>の概要***
 
-次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 書式上の制約のため、複数行にわたって折り返される場合でも、各コマンドレットは 1 行に入力してください。
+次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 各コマンドレットを単一行に入力します。ただし、ここでは、書式上の制約があるために、複数行に改行されて表示される場合があります。
 
 ```powershell
 Enable-ADOptionalFeature -Identity 'CN=Recycle Bin Feature,CN=Optional Features,CN=Directory Service,CN=Windows NT,CN=Services,CN=Configuration,DC=contoso,DC=com' -Scope ForestOrConfigurationSet -Target 'contoso.com'
 ```
 
-### <a name="step-3-create-test-users-group-and-organizational-unit"></a><a name="bkmk_create_test_env"></a>手順 3: テストユーザー、グループ、組織単位を作成する
+### <a name="step-3-create-test-users-group-and-organizational-unit"></a><a name="bkmk_create_test_env"></a>手順 3:テスト用のユーザー、グループ、組織単位を作成する
 
 この手順では、テスト ユーザーを 2 つ作成します。 その後テスト グループを作成し、テスト ユーザーをこのグループに追加します。 さらに OU を作成します。
 
@@ -114,9 +114,9 @@ Enable-ADOptionalFeature -Identity 'CN=Recycle Bin Feature,CN=Optional Features,
 
 1. Windows PowerShell アイコンを右クリックして、クリックして **管理者として実行** と種類 **dsac.exe** ADAC を開きます。
 
-2. **[管理]** 、 **[ナビゲーション ノードの追加]** の順にクリックし、 **[ナビゲーション ノードの追加]** ダイアログ ボックスで適切なターゲット ドメインを選択して **[OK]** をクリックします。
+2. **[管理]**、**[ナビゲーション ノードの追加]** の順にクリックし、**[ナビゲーション ノードの追加]** ダイアログ ボックスで適切なターゲット ドメインを選択して **[OK]** をクリックします。
 
-3. **[タスク]** ウィンドウの **[新規]** をクリックし、 **[ユーザー]** をクリックします。
+3. **[タスク]** ウィンドウの **[新規]** をクリックし、**[ユーザー]** をクリックします。
 
     ![AD 管理センターの入門ページ](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/ADDS_ADACNewUser.gif)
 
@@ -125,25 +125,25 @@ Enable-ADOptionalFeature -Identity 'CN=Recycle Bin Feature,CN=Optional Features,
    - フル ネーム: test1
    - ユーザー SAM アカウント名ログオン: test1
    - パスワード: p@ssword1
-   - パスワードの確認入力: p@ssword1
+   - パスワードの確認入力:p@ssword1
 
 5. 前の手順を繰り返して 2 つ目のユーザー test2 を作成します。
 
 #### <a name="to-create-a-test-group-and-add-users-to-the-group"></a>テスト グループを作成してユーザーをグループに追加するには
 
 1. Windows PowerShell アイコンを右クリックして、クリックして **管理者として実行** と種類 **dsac.exe** ADAC を開きます。
-2. **[管理]** 、 **[ナビゲーション ノードの追加]** の順にクリックし、 **[ナビゲーション ノードの追加]** ダイアログ ボックスで適切なターゲット ドメインを選択して **[OK]** をクリックします。
-3. **[タスク]** ウィンドウの **[新規]** をクリックし、 **[グループ]** をクリックします。
+2. **[管理]**、**[ナビゲーション ノードの追加]** の順にクリックし、**[ナビゲーション ノードの追加]** ダイアログ ボックスで適切なターゲット ドメインを選択して **[OK]** をクリックします。
+3. **[タスク]** ウィンドウの **[新規]** をクリックし、**[グループ]** をクリックします。
 4. **[グループ]** に次の情報を入力して **[OK]** をクリックします。
 
     -   **グループ名: group1**
 
-5. **[group1]** をクリックし、 **[タスク]** ウィンドウの **[プロパティ]** をクリックします。
-6. **[メンバー]** 、 **[追加]** の順にクリックし、「**test1;test2**」と入力して、 **[OK]** をクリックします。
+5. **[group1]** をクリックし、**[タスク]** ウィンドウの **[プロパティ]** をクリックします。
+6. **[メンバー]**、**[追加]** の順にクリックし、「**test1;test2**」と入力して、**[OK]** をクリックします。
 
-![AD 管理センターの](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>の概要***
+![AD 管理センター](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>の概要***
 
-次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 書式上の制約のため、複数行にわたって折り返される場合でも、各コマンドレットは 1 行に入力してください。
+次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 各コマンドレットを単一行に入力します。ただし、ここでは、書式上の制約があるために、複数行に改行されて表示される場合があります。
 
 ```powershell
 Add-ADGroupMember -Identity group1 -Member test1
@@ -152,15 +152,15 @@ Add-ADGroupMember -Identity group1 -Member test1
 #### <a name="to-create-an-organizational-unit"></a>組織単位を作成するには
 
 1. Windows PowerShell アイコンを右クリックして、クリックして **管理者として実行** と種類 **dsac.exe** ADAC を開きます。
-2. **管理** をクリックし、**ナビゲーションノードの追加** をクリックして、**ナビゲーションノードの追加** ダイアログボックスで適切なターゲットドメインを選択し、OK をクリックします。
-3. **[タスク]** ウィンドウの **[新規]** をクリックし、 **[組織単位]** をクリックします。
+2. [**管理**] をクリックし、[**ナビゲーションノードの追加**] をクリックして、[**ナビゲーションノードの追加**] ダイアログボックスで適切なターゲットドメインを選択し、[OK] をクリックします。
+3. **[タスク]** ウィンドウの **[新規]** をクリックし、**[組織単位]** をクリックします。
 4. **[組織単位]** に次の情報を入力して **[OK]** をクリックします。
 
    - **NameOU1**
 
-![AD 管理センターの](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>の概要***
+![AD 管理センター](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>の概要***
 
-次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 書式上の制約のため、複数行にわたって折り返される場合でも、各コマンドレットは 1 行に入力してください。
+次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 各コマンドレットを単一行に入力します。ただし、ここでは、書式上の制約があるために、複数行に改行されて表示される場合があります。
 
 ```powershell
 1..2 | ForEach-Object {New-ADUser -SamAccountName test$_ -Name "test$_" -Path "DC=fabrikam,DC=com" -AccountPassword (ConvertTo-SecureString -AsPlainText "p@ssword1" -Force) -Enabled $true}
@@ -168,7 +168,7 @@ New-ADGroup -Name "group1" -SamAccountName group1 -GroupCategory Security -Group
 New-ADOrganizationalUnit -Name OU1 -Path "DC=fabrikam,DC=com"
 ```
 
-### <a name="step-4-restore-deleted-objects"></a><a name="bkmk_restore_del_obj"></a>手順 4: 削除されたオブジェクトを復元する
+### <a name="step-4-restore-deleted-objects"></a><a name="bkmk_restore_del_obj"></a>手順 4:削除されたオブジェクトを復元する
 
 この手順では、削除されたオブジェクトを **[Deleted Objects]** コンテナーから元の場所および別の場所に復元します。
 
@@ -176,28 +176,28 @@ New-ADOrganizationalUnit -Name OU1 -Path "DC=fabrikam,DC=com"
 
 1. Windows PowerShell アイコンを右クリックして、クリックして **管理者として実行** と種類 **dsac.exe** ADAC を開きます。
 
-2. **[管理]** 、 **[ナビゲーション ノードの追加]** の順にクリックし、 **[ナビゲーション ノードの追加]** ダイアログ ボックスで適切なターゲット ドメインを選択して **[OK]** をクリックします。
+2. **[管理]**、**[ナビゲーション ノードの追加]** の順にクリックし、**[ナビゲーション ノードの追加]** ダイアログ ボックスで適切なターゲット ドメインを選択して **[OK]** をクリックします。
 
-3. ユーザー **[test1]** および **[test2]** を選択し、 **[タスク]** ウィンドウの **[削除]** をクリックし、 **[はい]** をクリックして削除を確定します。
+3. ユーザー **[test1]** および **[test2]** を選択し、**[タスク]** ウィンドウの **[削除]** をクリックし、**[はい]** をクリックして削除を確定します。
 
-    ![AD 管理センターの](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>の概要***
+    ![AD 管理センター](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>の概要***
 
-    次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 書式上の制約のため、複数行にわたって折り返される場合でも、各コマンドレットは 1 行に入力してください。
+    次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 各コマンドレットを単一行に入力します。ただし、ここでは、書式上の制約があるために、複数行に改行されて表示される場合があります。
 
     ```powershell
     Get-ADUser -Filter 'Name -Like "*test*"'|Remove-ADUser -Confirm:$false
     ```
 
-4. **[Deleted Objects]** コンテナーに移動し、 **[test2]** および **[test1]** を選択し、 **[タスク]** ウィンドウの **[復元]** をクリックします。
+4. **[Deleted Objects]** コンテナーに移動し、**[test2]** および **[test1]** を選択し、**[タスク]** ウィンドウの **[復元]** をクリックします。
 
 5. オブジェクトが元の場所に復元されたことを確認するために、ターゲット ドメインに移動してユーザー アカウントが表示されていることを確認します。
 
     > [!NOTE]
     > ユーザー アカウント **[test1]** および **[test2]** の **[プロパティ]** に移動して **[所属するグループ]** をクリックすると、グループ メンバーシップも復元されていることを確認できます。
 
-次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 書式上の制約のため、複数行にわたって折り返される場合でも、各コマンドレットは 1 行に入力してください。
+次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 各コマンドレットを単一行に入力します。ただし、ここでは、書式上の制約があるために、複数行に改行されて表示される場合があります。
 
-![AD 管理センターの](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>の概要***
+![AD 管理センター](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>の概要***
 
 ```powershell
 Get-ADObject -Filter 'Name -Like "*test*"' -IncludeDeletedObjects | Restore-ADObject
@@ -207,19 +207,19 @@ Get-ADObject -Filter 'Name -Like "*test*"' -IncludeDeletedObjects | Restore-ADOb
 
 1. Windows PowerShell アイコンを右クリックして、クリックして **管理者として実行** と種類 **dsac.exe** ADAC を開きます。
 
-2. **[管理]** 、 **[ナビゲーション ノードの追加]** の順にクリックし、 **[ナビゲーション ノードの追加]** ダイアログ ボックスで適切なターゲット ドメインを選択して **[OK]** をクリックします。
+2. **[管理]**、**[ナビゲーション ノードの追加]** の順にクリックし、**[ナビゲーション ノードの追加]** ダイアログ ボックスで適切なターゲット ドメインを選択して **[OK]** をクリックします。
 
-3. ユーザー **[test1]** および **[test2]** を選択し、 **[タスク]** ウィンドウの **[削除]** をクリックし、 **[はい]** をクリックして削除を確定します。
+3. ユーザー **[test1]** および **[test2]** を選択し、**[タスク]** ウィンドウの **[削除]** をクリックし、**[はい]** をクリックして削除を確定します。
 
-4. **[Deleted Objects]** コンテナーに移動し、 **[test2]** および **[test1]** を選択し、 **[タスク]** ウィンドウの **[復元先]** をクリックします。
+4. **[Deleted Objects]** コンテナーに移動し、**[test2]** および **[test1]** を選択し、**[タスク]** ウィンドウの **[復元先]** をクリックします。
 
 5. **[OU1]** を選択して **[OK]** をクリックします。
 
 6. オブジェクトが **[OU1]** に復元されたことを確認するために、ターゲット ドメインに移動して **[OU1]** をダブルクリックし、ユーザー アカウントが表示されていることを確認します。
 
-![AD 管理センターの](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>の概要***
+![AD 管理センター](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>の概要***
 
-次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 書式上の制約のため、複数行にわたって折り返される場合でも、各コマンドレットは 1 行に入力してください。
+次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 各コマンドレットを単一行に入力します。ただし、ここでは、書式上の制約があるために、複数行に改行されて表示される場合があります。
 
 ```powershell
 Get-ADObject -Filter 'Name -Like "*test*"' -IncludeDeletedObjects | Restore-ADObject -TargetPath "OU=OU1,DC=contoso,DC=com"
@@ -229,7 +229,7 @@ Get-ADObject -Filter 'Name -Like "*test*"' -IncludeDeletedObjects | Restore-ADOb
 
 Windows Server 2008 オペレーティング システムでは、ドメイン内の異なるユーザー グループに対して個別にパスワード ポリシーやアカウント ロックアウト ポリシーを定義する手段を提供しています。 Windows Server 2008 より前の Active Directory ドメインでは、ドメイン内のすべてのユーザーに対して 1 つのパスワード ポリシーおよびアカウント ロックアウト ポリシーしか適用できませんでした。 これらのポリシーは、Default Domain Policy の中でドメインに対して指定していました。 この結果、異なるユーザー グループに対して個別にパスワードやアカウント ロックアウトを設定したい組織では、パスワード フィルターを作成するか複数ドメインを採用する必要がありました。 どちらもコストがかかる選択肢です。
 
-細かい設定が可能なパスワード ポリシーを使用すると、1 つのドメイン内に複数のパスワード ポリシーを指定したり、ドメイン内の異なるユーザー グループに対してパスワード ポリシーやアカウント ロックアウト ポリシーによる制限を個別に適用したりできます。 たとえば、特権アカウントにはより厳しい設定を適用し、他のユーザー アカウントにはあまり厳しくない設定を適用することができます。 別の例として、他のデータ ソースと同期するパスワードを持つアカウントには特別なパスワード ポリシーを適用することもできます。 細かいパスワード ポリシーの詳細については、次を参照してください [AD DS: 細かいパスワード ポリシー。](https://technet.microsoft.com/library/cc770394(WS.10).aspx)
+細かい設定が可能なパスワード ポリシーを使用すると、1 つのドメイン内に複数のパスワード ポリシーを指定したり、ドメイン内の異なるユーザー グループに対してパスワード ポリシーやアカウント ロックアウト ポリシーによる制限を個別に適用したりできます。 たとえば、特権アカウントにはより厳しい設定を適用し、他のユーザー アカウントにはあまり厳しくない設定を適用することができます。 別の例として、他のデータ ソースと同期するパスワードを持つアカウントには特別なパスワード ポリシーを適用することもできます。 細かい設定が可能なパスワード ポリシーの詳細については、「 [AD DS: 細かい設定が可能なパスワード ポリシー](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770394(v=ws.10))」を参照してください。
 
 **新機能**
 
@@ -244,23 +244,23 @@ Windows Server 2012 で細かいパスワードポリシーを使用する場合
     > [!NOTE]
     > **サーバーマネージャー**を使用すると、リモートサーバー管理ツール (RSAT) をインストールして、正しいバージョンの Active Directory 管理センターを使用して、ユーザーインターフェイスからごみ箱を管理できます。
     >
-    > RSAT のインストールの詳細については、「[リモートサーバー管理ツール](https://docs.microsoft.com/windows-server/remote/remote-server-administration-tools)」を参照してください。
+    > RSAT のインストールの詳細については、「[リモートサーバー管理ツール](../../../../remote/remote-server-administration-tools.md)」を参照してください。
 
 ### <a name="fine-grained-password-policy-step-by-step"></a>細かい設定が可能なパスワード ポリシーの手順
 
 以下のステップでは、ADAC を使用して細かい設定が可能なパスワード ポリシーのタスクを実行します。
 
-- [手順 1: ドメインの機能レベルを上げる](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#bkmk_raise_dfl)
-- [手順 2: テストユーザー、グループ、および組織単位を作成する](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#bkmk2_test_fgpp)
-- [手順 3: 新しい細かい細かいパスワードポリシーを作成する](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#bkmk_create_fgpp)
-- [手順 4: ユーザーのポリシーの結果セットを表示する](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#bkmk_view_resultant_fgpp)
-- [手順 5: 細かい変更が可能なパスワードポリシーを編集する](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#bkmk_edit_fgpp)
-- [手順 6: 細かい細かいパスワードポリシーを削除する](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#bkmk_delete_fgpp)
+- [手順 1:ドメインの機能レベルを上げる](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#bkmk_raise_dfl)
+- [手順 2:テスト用のユーザー、グループ、組織単位を作成する](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#bkmk2_test_fgpp)
+- [手順 3:新しい細かい設定が可能なパスワード ポリシーを作成する](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#bkmk_create_fgpp)
+- [手順 4:ユーザーのポリシーの結果セットを表示する](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#bkmk_view_resultant_fgpp)
+- [手順 5:細かい設定が可能なパスワード ポリシーを編集する](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#bkmk_edit_fgpp)
+- [手順 6:細かい設定が可能なパスワード ポリシーを削除する](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#bkmk_delete_fgpp)
 
 > [!NOTE]
 > 以下の手順を実行するには、Domain Admins グループのメンバーシップ、またはそれと同等のアクセス許可が必要です。
 
-#### <a name="step-1-raise-the-domain-functional-level"></a><a name="bkmk_raise_dfl"></a>手順 1: ドメインの機能レベルを上げる
+#### <a name="step-1-raise-the-domain-functional-level"></a><a name="bkmk_raise_dfl"></a>手順 1:ドメインの機能レベルを上げる
 
 次の手順では Windows Server 2008 またはそれ以降は、移行先ドメインのドメインの機能レベルが発生します。 詳細なパスワード ポリシーを有効にするには、Windows Server 2008 以降のドメイン機能レベルが必要です。
 
@@ -268,23 +268,23 @@ Windows Server 2012 で細かいパスワードポリシーを使用する場合
 
 1. Windows PowerShell アイコンを右クリックして、クリックして **管理者として実行** と種類 **dsac.exe** ADAC を開きます。
 
-2. **[管理]** 、 **[ナビゲーション ノードの追加]** の順にクリックし、 **[ナビゲーション ノードの追加]** ダイアログ ボックスで適切なターゲット ドメインを選択して **[OK]** をクリックします。
+2. **[管理]**、**[ナビゲーション ノードの追加]** の順にクリックし、**[ナビゲーション ノードの追加]** ダイアログ ボックスで適切なターゲット ドメインを選択して **[OK]** をクリックします。
 
-3. 左側のナビゲーション ウィンドウでターゲット ドメインをクリックし、 **[タスク]** ウィンドウの **[ドメインの機能レベルの昇格]** をクリックします。 少なくとも、フォレストの機能レベルを選択してクリックして Windows Server 2008 以降 **OK**します。
+3. 左側のナビゲーション ウィンドウでターゲット ドメインをクリックし、**[タスク]** ウィンドウの **[ドメインの機能レベルの昇格]** をクリックします。 少なくとも、フォレストの機能レベルを選択してクリックして Windows Server 2008 以降 **OK**します。
 
-![AD 管理センターの](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>の概要***
+![AD 管理センター](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>の概要***
 
-次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 書式上の制約のため、複数行にわたって折り返される場合でも、各コマンドレットは 1 行に入力してください。
+次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 各コマンドレットを単一行に入力します。ただし、ここでは、書式上の制約があるために、複数行に改行されて表示される場合があります。
 
 ```powershell
 Set-ADDomainMode -Identity contoso.com -DomainMode 3
 ```
 
-#### <a name="step-2-create-test-users-group-and-organizational-unit"></a><a name="bkmk2_test_fgpp"></a>手順 2: テストユーザー、グループ、および組織単位を作成する
+#### <a name="step-2-create-test-users-group-and-organizational-unit"></a><a name="bkmk2_test_fgpp"></a>手順 2:テスト用のユーザー、グループ、組織単位を作成する
 
 この手順に必要なテストユーザーとグループを作成するには、次の手順に従います。[手順 3: テストユーザー、グループ、組織単位を作成](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#bkmk_create_test_env)する (詳細なパスワードポリシーを示すために OU を作成する必要はありません)。
 
-#### <a name="step-3-create-a-new-fine-grained-password-policy"></a><a name="bkmk_create_fgpp"></a>手順 3: 新しい細かい細かいパスワードポリシーを作成する
+#### <a name="step-3-create-a-new-fine-grained-password-policy"></a><a name="bkmk_create_fgpp"></a>手順 3:新しい細かい設定が可能なパスワード ポリシーを作成する
 
 この手順では、ADAC の UI を使用して新しい細かい設定が可能なパスワード ポリシーを作成します。
 
@@ -292,11 +292,11 @@ Set-ADDomainMode -Identity contoso.com -DomainMode 3
 
 1. Windows PowerShell アイコンを右クリックして、クリックして **管理者として実行** と種類 **dsac.exe** ADAC を開きます。
 
-2. **[管理]** 、 **[ナビゲーション ノードの追加]** の順にクリックし、 **[ナビゲーション ノードの追加]** ダイアログ ボックスで適切なターゲット ドメインを選択して **[OK]** をクリックします。
+2. **[管理]**、**[ナビゲーション ノードの追加]** の順にクリックし、**[ナビゲーション ノードの追加]** ダイアログ ボックスで適切なターゲット ドメインを選択して **[OK]** をクリックします。
 
-3. ADAC のナビゲーション ウィンドウで、 **[System]** コンテナーを展開して **[Password Settings Container]** をクリックします。
+3. ADAC のナビゲーション ウィンドウで、**[System]** コンテナーを展開して **[Password Settings Container]** をクリックします。
 
-4. **[タスク]** ウィンドウの **[新規作成]** をクリックし、 **[パスワードの設定]** をクリックします。
+4. **[タスク]** ウィンドウの **[新規作成]** をクリックし、**[パスワードの設定]** をクリックします。
 
     [プロパティ] ページ内のフィールドに入力するかまたは編集して、新しい **[パスワードの設定]** オブジェクトを作成します。 **"名前"** と **"優先順位"** フィールドが必要です。
 
@@ -308,16 +308,16 @@ Set-ADDomainMode -Identity contoso.com -DomainMode 3
 
 6. **[OK]** をクリックして作成を送信します。
 
-![AD 管理センターの](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>の概要***
+![AD 管理センター](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>の概要***
 
-次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 書式上の制約のため、複数行にわたって折り返される場合でも、各コマンドレットは 1 行に入力してください。
+次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 各コマンドレットを単一行に入力します。ただし、ここでは、書式上の制約があるために、複数行に改行されて表示される場合があります。
 
 ```powershell
 New-ADFineGrainedPasswordPolicy TestPswd -ComplexityEnabled:$true -LockoutDuration:"00:30:00" -LockoutObservationWindow:"00:30:00" -LockoutThreshold:"0" -MaxPasswordAge:"42.00:00:00" -MinPasswordAge:"1.00:00:00" -MinPasswordLength:"7" -PasswordHistoryCount:"24" -Precedence:"1" -ReversibleEncryptionEnabled:$false -ProtectedFromAccidentalDeletion:$true
 Add-ADFineGrainedPasswordPolicySubject TestPswd -Subjects group1
 ```
 
-#### <a name="step-4-view-a-resultant-set-of-policies-for-a-user"></a><a name="bkmk_view_resultant_fgpp"></a>手順 4: ユーザーのポリシーの結果セットを表示する
+#### <a name="step-4-view-a-resultant-set-of-policies-for-a-user"></a><a name="bkmk_view_resultant_fgpp"></a>手順 4:ユーザーのポリシーの結果セットを表示する
 
 この手順では、「[手順 3: 新しい細かい設定が可能なパスワード ポリシーを作成する](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#bkmk_create_fgpp)」でポリシーを割り当てたグループのメンバーであるユーザーの、結果のパスワード設定を表示します。
 
@@ -325,7 +325,7 @@ Add-ADFineGrainedPasswordPolicySubject TestPswd -Subjects group1
 
 1. Windows PowerShell アイコンを右クリックして、クリックして **管理者として実行** と種類 **dsac.exe** ADAC を開きます。
 
-2. **[管理]** 、 **[ナビゲーション ノードの追加]** の順にクリックし、 **[ナビゲーション ノードの追加]** ダイアログ ボックスで適切なターゲット ドメインを選択して **[OK]** をクリックします。
+2. **[管理]**、**[ナビゲーション ノードの追加]** の順にクリックし、**[ナビゲーション ノードの追加]** ダイアログ ボックスで適切なターゲット ドメインを選択して **[OK]** をクリックします。
 
 3. 「**手順 3: 新しい細かい設定が可能なパスワード ポリシーを作成する**」でポリシーを関連付けたグループ **[group1]** に所属するユーザー [[test1]](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#bkmk_create_fgpp) を選択します。
 
@@ -333,15 +333,15 @@ Add-ADFineGrainedPasswordPolicySubject TestPswd -Subjects group1
 
 5. パスワード設定ポリシーを確認して **[キャンセル]** をクリックします。
 
-![AD 管理センターの](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>の概要***
+![AD 管理センター](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>の概要***
 
-次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 書式上の制約のため、複数行にわたって折り返される場合でも、各コマンドレットは 1 行に入力してください。
+次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 各コマンドレットを単一行に入力します。ただし、ここでは、書式上の制約があるために、複数行に改行されて表示される場合があります。
 
 ```powershell
 Get-ADUserResultantPasswordPolicy test1
 ```
 
-#### <a name="step-5-edit-a-fine-grained-password-policy"></a><a name="bkmk_edit_fgpp"></a>手順 5: 細かい変更が可能なパスワードポリシーを編集する
+#### <a name="step-5-edit-a-fine-grained-password-policy"></a><a name="bkmk_edit_fgpp"></a>手順 5:細かい設定が可能なパスワード ポリシーを編集する
 
 この手順では、「[手順 3: 新しい細かい設定が可能なパスワード ポリシーを作成する](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#bkmk_create_fgpp)」で作成した細かい設定が可能なパスワード ポリシーを編集します。
 
@@ -349,45 +349,45 @@ Get-ADUserResultantPasswordPolicy test1
 
 1. Windows PowerShell アイコンを右クリックして、クリックして **管理者として実行** と種類 **dsac.exe** ADAC を開きます。
 
-2. **[管理]** 、 **[ナビゲーション ノードの追加]** の順にクリックし、 **[ナビゲーション ノードの追加]** ダイアログ ボックスで適切なターゲット ドメインを選択して **[OK]** をクリックします。
+2. **[管理]**、**[ナビゲーション ノードの追加]** の順にクリックし、**[ナビゲーション ノードの追加]** ダイアログ ボックスで適切なターゲット ドメインを選択して **[OK]** をクリックします。
 
-3. ADAC の **[ナビゲーション ウィンドウ]** で、 **[System]** を展開して **[Password Settings Container]** をクリックします。
+3. ADAC の **[ナビゲーション ウィンドウ]** で、**[System]** を展開して **[Password Settings Container]** をクリックします。
 
-4. 「[手順 3: 新しい細かい設定が可能なパスワード ポリシーを作成する](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#bkmk_create_fgpp)」で作成した細かい設定が可能なパスワード ポリシーを選択し、 **[タスク]** ウィンドウの **[プロパティ]** をクリックします。
+4. 「[手順 3: 新しい細かい設定が可能なパスワード ポリシーを作成する](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#bkmk_create_fgpp)」で作成した細かい設定が可能なパスワード ポリシーを選択し、**[タスク]** ウィンドウの **[プロパティ]** をクリックします。
 
 5. **[パスワードの履歴を記録する]** の **[記録するパスワードの数]** の値を「**30**」に変更します。
 
-6. **[OK]** をクリックすると、
+6. **[OK]** をクリックします。
 
-![AD 管理センターの](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>の概要***
+![AD 管理センター](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>の概要***
 
-次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 書式上の制約のため、複数行にわたって折り返される場合でも、各コマンドレットは 1 行に入力してください。
+次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 各コマンドレットを単一行に入力します。ただし、ここでは、書式上の制約があるために、複数行に改行されて表示される場合があります。
 
 ```powershell
 Set-ADFineGrainedPasswordPolicy TestPswd -PasswordHistoryCount:"30"
 ```
 
-#### <a name="step-6-delete-a-fine-grained-password-policy"></a><a name="bkmk_delete_fgpp"></a>手順 6: 細かい細かいパスワードポリシーを削除する
+#### <a name="step-6-delete-a-fine-grained-password-policy"></a><a name="bkmk_delete_fgpp"></a>手順 6:細かい設定が可能なパスワード ポリシーを削除する
 
 ##### <a name="to-delete-a-fine-grained-password-policy"></a>細かい設定が可能なパスワード ポリシーを削除するには
 
 1. Windows PowerShell アイコンを右クリックして、クリックして **管理者として実行** と種類 **dsac.exe** ADAC を開きます。
 
-2. **[管理]** 、 **[ナビゲーション ノードの追加]** の順にクリックし、 **[ナビゲーション ノードの追加]** ダイアログ ボックスで適切なターゲット ドメインを選択して **[OK]** をクリックします。
+2. **[管理]**、**[ナビゲーション ノードの追加]** の順にクリックし、**[ナビゲーション ノードの追加]** ダイアログ ボックスで適切なターゲット ドメインを選択して **[OK]** をクリックします。
 
-3. ADAC の [ナビゲーション ウィンドウ] で、 **[System]** を展開して **[Password Settings Container]** をクリックします。
+3. ADAC の [ナビゲーション ウィンドウ] で、**[System]** を展開して **[Password Settings Container]** をクリックします。
 
-4. 「[手順 3: 新しい細かい設定が可能なパスワード ポリシーを作成する](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#bkmk_create_fgpp)」で作成した細かい設定が可能なパスワード ポリシーを選択し、 **[タスク]** ウィンドウの **[プロパティ]** をクリックします。
+4. 「[手順 3: 新しい細かい設定が可能なパスワード ポリシーを作成する](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md#bkmk_create_fgpp)」で作成した細かい設定が可能なパスワード ポリシーを選択し、**[タスク]** ウィンドウの **[プロパティ]** をクリックします。
 
-5. **[誤って削除されないように保護する]** チェック ボックスをオフにして、 **[OK]** をクリックします。
+5. **[誤って削除されないように保護する]** チェック ボックスをオフにして、**[OK]** をクリックします。
 
-6. 細かい設定が可能なパスワード ポリシーを選択し、 **[タスク]** ウィンドウの **[削除]** をクリックします。
+6. 細かい設定が可能なパスワード ポリシーを選択し、**[タスク]** ウィンドウの **[削除]** をクリックします。
 
-7. 確認のダイアログで、 **[OK]** をクリックします。
+7. 確認のダイアログで、**[OK]** をクリックします。
 
-![AD 管理センターの](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>の概要***
+![AD 管理センター](media/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>の概要***
 
-次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 書式上の制約のため、複数行にわたって折り返される場合でも、各コマンドレットは 1 行に入力してください。
+次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 各コマンドレットを単一行に入力します。ただし、ここでは、書式上の制約があるために、複数行に改行されて表示される場合があります。
 
 ```powershell
 Set-ADFineGrainedPasswordPolicy -Identity TestPswd -ProtectedFromAccidentalDeletion $False
@@ -405,9 +405,9 @@ Windows Server 2012 以降で Windows PowerShell 履歴ビューアーを使用�
     > [!NOTE]
     > **サーバーマネージャー**を使用すると、リモートサーバー管理ツール (RSAT) をインストールして、正しいバージョンの Active Directory 管理センターを使用して、ユーザーインターフェイスからごみ箱を管理できます。
     >
-    > RSAT のインストールの詳細については、「[リモートサーバー管理ツール](https://docs.microsoft.com/windows-server/remote/remote-server-administration-tools)」を参照してください。
+    > RSAT のインストールの詳細については、「[リモートサーバー管理ツール](../../../../remote/remote-server-administration-tools.md)」を参照してください。
 
-- Windows PowerShell についての基本的な知識があること。 たとえば、Windows PowerShell のパイプ処理についての知識が必要です。 Windows PowerShell のパイプ処理の詳細については、「 [Piping and the Pipeline in Windows PowerShell (Windows PowerShell のパイプ処理とパイプライン)](https://technet.microsoft.com/library/ee176927.aspx)」を参照してください。
+- Windows PowerShell についての基本的な知識があること。 たとえば、Windows PowerShell のパイプ処理についての知識が必要です。 Windows PowerShell のパイプ処理の詳細については、「 [Piping and the Pipeline in Windows PowerShell (Windows PowerShell のパイプ処理とパイプライン)](/previous-versions/windows/it-pro/windows-powershell-1.0/ee176927(v=technet.10))」を参照してください。
 
 ### <a name="windows-powershell-history-viewer-step-by-step"></a>Windows PowerShell 履歴ビューアーの手順
 
@@ -417,7 +417,7 @@ Windows Server 2012 以降で Windows PowerShell 履歴ビューアーを使用�
 
 1. Windows PowerShell アイコンを右クリックして、クリックして **管理者として実行** と種類 **dsac.exe** ADAC を開きます。
 
-2. **[管理]** 、 **[ナビゲーション ノードの追加]** の順にクリックし、 **[ナビゲーション ノードの追加]** ダイアログ ボックスで適切なターゲット ドメインを選択して **[OK]** をクリックします。
+2. **[管理]**、**[ナビゲーション ノードの追加]** の順にクリックし、**[ナビゲーション ノードの追加]** ダイアログ ボックスで適切なターゲット ドメインを選択して **[OK]** をクリックします。
 
 3. ADAC 画面の下にある **[Windows PowerShell 履歴]** ウィンドウを広げます。
 
@@ -431,7 +431,7 @@ Windows Server 2012 以降で Windows PowerShell 履歴ビューアーを使用�
 
 8. このコマンドをコピーし、スクリプトの作成に使用するエディターに貼り付けます。
 
-    このコマンドを変更して、たとえば別のユーザーを **[group1]** に追加したり、 **[test1]** を別のグループに追加したりできます。
+    このコマンドを変更して、たとえば別のユーザーを **[group1]** に追加したり、**[test1]** を別のグループに追加したりできます。
 
 ## <a name="see-also"></a>参照
 

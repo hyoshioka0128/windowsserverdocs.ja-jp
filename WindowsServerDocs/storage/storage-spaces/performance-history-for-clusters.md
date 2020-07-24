@@ -7,12 +7,12 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 02/02/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ee2e85723cc2449e8cb9c42ccb7d6b761482e3a
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: e013295364ae2951ffe8a963fb61a85d7863f5b6
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474869"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962054"
 ---
 # <a name="performance-history-for-clusters"></a>クラスターのパフォーマンス履歴
 
@@ -24,7 +24,7 @@ ms.locfileid: "85474869"
 
 ## <a name="usage-in-powershell"></a>PowerShell での使用法
 
-[Get クラスター](https://docs.microsoft.com/powershell/module/failoverclusters/get-cluster)コマンドレットを使用します。
+[Get クラスター](/powershell/module/failoverclusters/get-cluster)コマンドレットを使用します。
 
 ```PowerShell
 Get-Cluster | Get-ClusterPerf

@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: adae586c67a34912ea34dca5749d8c69856033d0
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 389d02ae7269ef48ef77d066db3064759d9253c1
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473509"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961964"
 ---
 # <a name="checklist-deploy-dfs-namespaces"></a>チェックリスト: DFS 名前空間を展開する
 
@@ -38,8 +38,6 @@ DFS 名前空間を展開するには、次のタスクを実行できます。
 
 ## <a name="additional-references"></a>その他のリファレンス
 
--   [名前空間](https://technet.microsoft.com/library/cc771914(v=ws.11).aspx)
+-   [名前空間](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771914(v=ws.11))
 -   [チェックリスト:DFS 名前空間を調整する](checklist-tune-a-dfs-namespace.md)
--   [レプリケーション](https://technet.microsoft.com/library/cc770278(v=ws.11).aspx)
-
-
+-   [レプリケーション](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770278(v=ws.11))

@@ -7,12 +7,12 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 05/15/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 53a5f2aa403c83d24acde1fc57e793141175d9b6
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 7f3274210ea6c08d63862551570096ab10aa878e
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474719"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961814"
 ---
 # <a name="scripting-with-powershell-and-storage-spaces-direct-performance-history"></a>PowerShell と記憶域スペースダイレクトパフォーマンス履歴を使用したスクリプト
 
@@ -485,10 +485,10 @@ $Output = Invoke-Command (Get-ClusterNode).Name {
 $Output | Sort-Object RawAvgMemoryUsage -Descending | Select-Object -First 10 | Format-Table PsComputerName, VM, AvgMemoryUsage
 ```
 
-これで終了です。 これらのサンプルを使用すると、作業を開始するのに役立ちます。 パフォーマンスの履歴と強力なスクリプト対応のコマンドレットを使用すると、回答を得る `Get-ClusterPerf` ことができます。また、その答えについては、「」を記憶域スペースダイレクト。 – Windows Server 2019 インフラストラクチャを管理および監視する際の複雑な質問。
+これで完了です。 これらのサンプルを使用すると、作業を開始するのに役立ちます。 パフォーマンスの履歴と強力なスクリプト対応のコマンドレットを使用すると、回答を得る `Get-ClusterPerf` ことができます。また、その答えについては、「」を記憶域スペースダイレクト。 – Windows Server 2019 インフラストラクチャを管理および監視する際の複雑な質問。
 
 ## <a name="additional-references"></a>その他のリファレンス
 
-- [Windows PowerShell の概要](https://docs.microsoft.com/powershell/scripting/getting-started/getting-started-with-windows-powershell)
+- [Windows PowerShell の概要](/powershell/scripting/getting-started/getting-started-with-windows-powershell)
 - [記憶域スペースダイレクトの概要](storage-spaces-direct-overview.md)
 - [パフォーマンス履歴](performance-history.md)

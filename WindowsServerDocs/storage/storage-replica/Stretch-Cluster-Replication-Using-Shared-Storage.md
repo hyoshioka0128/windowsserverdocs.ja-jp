@@ -8,16 +8,16 @@ ms.topic: get-started-article
 author: nedpyle
 ms.date: 04/26/2019
 ms.assetid: 6c5b9431-ede3-4438-8cf5-a0091a8633b0
-ms.openlocfilehash: e6dbe6ef618f989ed158382ef6c8bd063548d281
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 08b09c9a0684a2938645462875737556d0288c9e
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950075"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961044"
 ---
 # <a name="stretch-cluster-replication-using-shared-storage"></a>共有記憶域を使用したストレッチ クラスター レプリケーション
 
->適用対象: Windows Server 2019、Windows Server 2016、Windows Server (半期チャネル)
+>適用先:Windows Server 2019、Windows Server 2016、Windows Server (半期チャネル)
 
 この評価の例では、単一のストレッチ クラスター内にこれらのコンピューターとその記憶域を構成します。ここでは、2 つのノードがストレージの 1 つのセットを共有し、2 つのノードが別のストレージのセットを共有し、レプリケーションはクラスター内のミラー化された両方のストレージのセットを維持して、直ちにフェールオーバーできるようにします。 これらのノードとその記憶域は、個別の物理サイトにある必要がありますが、ただし必須ではありません。 サンプルのシナリオに示すように、Hyper-V とファイル サーバー クラスターで別々の作成手順があります。  
 
@@ -36,9 +36,9 @@ ms.locfileid: "75950075"
 
 ![Redmond の 2 つのノードと Bellevue サイトにある同一クラスターの 2 つのノードでのレプリケーションを示す図](./media/Stretch-Cluster-Replication-Using-Shared-Storage/Storage_SR_StretchClusterExample.png)  
 
-**図 1: ストレッチクラスターでの記憶域のレプリケーション**  
+**図 1: ストレッチ クラスターでの記憶域レプリケーション**  
 
-## <a name="prerequisites"></a>必要条件  
+## <a name="prerequisites"></a>前提条件  
 -   Active Directory Domain Services フォレスト (Windows Server 2016 を実行する必要はありません)。  
 -   2-64 Windows Server 2019 または Windows Server 2016、Datacenter Edition を実行しているサーバー。 Windows Server 2019 を実行している場合は、通常は Standard Edition を使用することができます。これにより、1つのボリュームのみを最大 2 TB までレプリケートできます。 
 -   SAS JBOD (記憶域スペースなどを搭載)、ファイバー チャネル SAN、共有 VHDX、または iSCSI ターゲットを使用する 2 セットの共有記憶域。 記憶域は、HDD と SSD メディアの混在を含み、永続的な予約をサポートしている必要があります。 各記憶域セットを 2 つのサーバーのみが使用できるようにすることができます (非対称)。  
@@ -47,15 +47,15 @@ ms.locfileid: "75950075"
 -   サーバーごとに 2 GB 以上の RAM と 2 つのコア。 仮想マシンを増やす場合は、追加のメモリとコアが必要です。  
 -   すべてのノード間で ICMP、SMB (ポート 445、SMB ダイレクト用に 5445)、WS-MAN (ポート 5985) の双方向トラフィックを許可する適切なファイアウォールおよびルーター ルール。  
 -   書き込みの IO 負荷に十分対応できる帯域幅を持ちラウンド トリップ遅延時間が平均 5 ミリ秒である、同期レプリケーション用のサーバー間ネットワーク。 非同期レプリケーションには、遅延時間に関する推奨事項はありません。  
--   レプリケートされた記憶域は、Windows オペレーティング システムのフォルダーを含むドライブに配置できません。
+-   レプリケート対象の記憶域を、Windows オペレーティング システムのフォルダーが含まれるドライブに配置することはできません。
 
-これらの要件の多くは、`Test-SRTopology` コマンドレットを使用して判別できます。 記憶域レプリカまたは記憶域レプリカ管理ツール機能を 1 つ以上のサーバーにインストールすると、このツールにアクセスできるようになります。 このツールを使用するために記憶域レプリカを構成する必要はありません。記憶域レプリカは、コマンドレットをインストールするためだけに構成します。 詳細は、以下の手順に記載されています。  
+これらの要件の多くは、`Test-SRTopology` コマンドレットを使用して判別できます。 記憶域レプリカまたは記憶域レプリカ管理ツール機能を 1 つ以上のサーバーにインストールすると、このツールにアクセスできるようになります。 このツールを使用するために、記憶域レプリカを構成する必要はありません。記憶域レプリカは、コマンドレットをインストールするためだけに構成します。 詳細は、以下の手順に記載されています。  
 
 ## <a name="provision-operating-system-features-roles-storage-and-network"></a>オペレーティング システム、機能、役割、記憶域、およびネットワークのプロビジョニング  
 
 1.  Server Core またはデスクトップエクスペリエンス搭載サーバーのインストールオプションを使用して、すべてのサーバーノードに Windows Server をインストールします。  
     > [!IMPORTANT]
-    > この時点以降は、常に、すべてのサーバーでビルトイン Administrator グループのメンバーであるドメイン ユーザーとしてログオンします。 今後、グラフィカルなサーバー インストールまたは Windows 10 コンピューターで実行するときは、必ず PowerShell プロンプトおよび CMD プロンプトで昇格を行ってください。
+    > この時点以降は、常に、すべてのサーバーでビルトイン Administrator グループのメンバーであるドメイン ユーザーとしてログオンします。 今後、グラフィカルなサーバーのインストールまたは Windows 10 コンピューターで実行するとき、PowerShell および CMD プロンプトを昇格してください。
 
 2.  ネットワークの情報を追加し、ノードをドメインに参加させてから再起動します。  
     > [!NOTE]
@@ -76,12 +76,12 @@ ms.locfileid: "75950075"
 
     -   **グラフィカルな方法**  
 
-        **ServerManager.exe** を実行し、 **[管理]** 、 **[サーバーの追加]** をクリックしてすべてのサーバー ノードを追加します。  
+        **ServerManager.exe** を実行し、**[管理]**、**[サーバーの追加]** をクリックしてすべてのサーバー ノードを追加します。  
 
         > [!IMPORTANT]
         > **フェールオーバー クラスタリング**と**記憶域レプリカ**の役割と機能を各ノードでインストールし、再起動します。 Hyper-V、ファイル サーバーなどの役割を使用する予定の場合は、この時点でそれらもインストールできます。  
 
-    -   **Windows PowerShell メソッドの使用**  
+    -   **Windows PowerShell を使用する方法**  
 
         **SR-SRV04** またはリモート管理コンピューター上で、Windows PowerShell コンソール内で次のコマンドを実行して、4 つのノード上でストレッチ クラスター用に必要な機能と役割をインストールし、ノードを再起動します。  
 
@@ -98,25 +98,25 @@ ms.locfileid: "75950075"
 8. 記憶域を次のように構成します。  
 
     > [!IMPORTANT]  
-    > -   各エンクロージャにデータ用に 1 つとログ用に 1 つの、2 つのボリュームを作成する必要があります。  
+    > -   各格納装置で、データ用に 1 つとログ用に 1 つの 2 つのボリュームを作成する必要があります。  
     > -   ログ ディスクとデータ ディスクは、MBR ではなく GPT として初期化する必要があります。  
     > -   2 つのデータ ボリュームのサイズは同じでなければなりません。  
     > -   2 つのログ ボリュームのサイズは同じでなければなりません。  
-    > -   すべてのレプリケート対象データ ディスクのセクター サイズは、同じである必要があります。  
+    > -   すべてのレプリケートされたデータ ディスクには、同一のセクター サイズが必要です。  
     > -   すべてのログ ディスクには、同一のセクター サイズが必要です。  
     > -   ログ ボリュームでは、フラッシュ ベースのストレージと、高いパフォーマンスの回復性の設定を使用する必要があります。 ログ ストレージには、データ ストレージよりも大きい速度を確保することをお勧めします。 ログ ボリュームは、絶対に他のワークロードに使用しないでください。 
-    > -   データ ディスクには、HDD、SSD、または階層型の組み合わせを使用でき、ミラーまたはパリティ スペースか、RAID 1 または 10、または RAID 5 または RAID 50 を使用できます。  
+    > -   データ ディスクには、HDD、SSD、または階層型の組み合わせを使用でき、ミラーまたはパリティ スペースか、RAID 1 または 10 もしくは RAID 5 または RAID 50 のいずれかを使用できます。  
     > -  既定ではログ ボリュームは 9 GB 以上である必要がありますが、ログ要件に応じて増減します。  
     > - NTFS または ReFS でフォーマットする必要があります。
-    > - ファイル サーバーの役割は、テスト用に必要なファイアウォール ポートを開くため、Test-SRTopology の動作にのみ必要です。  
+    > - ファイル サーバーの役割は、テスト用に必須ファイアウォール ポートを開くため、Test-SRTopology の動作にのみ必要です。  
 
-    -   **JBOD エンクロージャの場合:**  
+    -   **JBOD 格納装置の場合:**  
 
         1.  ペアリングされた各サーバー ノードのセットがそのサイトのストレージ格納装置 (つまり非対称記憶域) のみを参照できることと、SAS 接続が正しく構成されていることを確認します。  
 
-        2.  記憶域スペースを使用して記憶域をプロビジョニングします。これには、「[スタンドアロン サーバーに記憶域スペースを展開する](../storage-spaces/deploy-standalone-storage-spaces.md)」の**手順 1 ～ 3** に従い、Windows PowerShell またはサーバー マネージャーを使用します。  
+        2.  記憶域スペースを使用して記憶域をプロビジョニングします。これには、「[スタンドアロン サーバーに記憶域スペースを展開する](../storage-spaces/deploy-standalone-storage-spaces.md)」の**手順 1 - 3** に従い、Windows PowerShell またはサーバー マネージャーを使用します。  
 
-    -   **ISCSI ストレージの場合:**  
+    -   **iSCSI ストレージの場合:**  
 
         1.  ペアリングされた各サーバー ノードのセットがそのサイトのストレージ格納装置 (つまり非対称記憶域) のみを参照できることを確認します。 iSCSI を使用する場合は、複数の単一ネットワーク アダプターを使用する必要があります。  
 
@@ -131,10 +131,10 @@ ms.locfileid: "75950075"
 ## <a name="configure-a-hyper-v-failover-cluster-or-a-file-server-for-a-general-use-cluster"></a>Hyper-V フェールオーバー クラスターまたは汎用クラスター用のファイル サーバーを構成する
 
 サーバー ノードを設定したら、次の手順として、次のいずれかの種類のクラスターを作成します。  
-*  [Hyper-v フェールオーバークラスター](#BKMK_HyperV)  
-*  [汎用クラスター用のファイルサーバー](#BKMK_FileServer)  
+*  [Hyper-V フェールオーバー クラスター](#BKMK_HyperV)  
+*  [汎用クラスター用のファイル サーバー](#BKMK_FileServer)  
 
-### <a name="BKMK_HyperV"></a>Hyper-v フェールオーバークラスターの構成  
+### <a name="configure-a-hyper-v-failover-cluster"></a><a name="BKMK_HyperV"></a>Hyper-v フェールオーバークラスターの構成  
 
 >[!NOTE]
 > Hyper-V クラスターではなくファイル サーバー クラスターを作成する場合は、このセクションをスキップして、「[汎用クラスター用のファイル サーバーを構成する](#BKMK_FileServer)」セクションに進んでください。  
@@ -143,7 +143,7 @@ ms.locfileid: "75950075"
 
 #### <a name="graphical-method"></a>グラフィカルな方法  
 
-1. **cluadmin.msc** を実行します。  
+1. **Cluadmin.msc**を実行します。  
 
 2. 提案されたクラスターを検証し、結果を分析して、続行できることを確認します。  
 
@@ -158,13 +158,13 @@ ms.locfileid: "75950075"
    > WIndows Server には、クラウド (Azure) ベースの監視のオプションが追加されました。 ファイル共有監視に代えてこのクォーラム オプションを選択できます。  
 
    > [!WARNING]  
-   > クォーラム構成の詳細については、[「Windows Server 2012 フェールオーバー クラスターでクォーラムを構成および管理する」の「監視の構成」](https://technet.microsoft.com/library/jj612870.aspx)を参照してください。 `Set-ClusterQuorum` コマンドレットの詳細については、「[Set-ClusterQuorum](https://docs.microsoft.com/powershell/module/failoverclusters/set-clusterquorum)」を参照してください。  
+   > クォーラム構成の詳細については、[「Windows Server 2012 フェールオーバー クラスターでクォーラムを構成および管理する」の「監視の構成」](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj612870(v=ws.11))を参照してください。 `Set-ClusterQuorum` コマンドレットの詳細については、「[Set-ClusterQuorum](/powershell/module/failoverclusters/set-clusterquorum)」を参照してください。  
 
-5. 「[Windows Server 2012 の Hyper-V クラスターのネットワークの推奨事項](https://technet.microsoft.com/library/dn550728.aspx)」を確認し、クラスター ネットワークが最適に構成されていることを確認します。  
+5. 「[Windows Server 2012 の HYPER-V クラスターのネットワークの推奨事項](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn550728(v=ws.11))」を確認し、クラスター ネットワークが最適に構成されていることを確認します。  
 
-6. Redmond サイトでクラスター CSV に 1 台のディスクを追加します。 これを行うには、 **[記憶域]** セクションの **[ディスク]** ノードでソース ディスクを右クリックして、 **[クラスターの共有ボリュームへの追加]** をクリックします。  
+6. Redmond サイトでクラスター CSV に 1 台のディスクを追加します。 これを行うには、**[記憶域]** セクションの **[ディスク]** ノードでソース ディスクを右クリックして、**[クラスターの共有ボリュームへの追加]** をクリックします。  
 
-7. 「[Hyper-V クラスターを展開する](https://technet.microsoft.com/library/jj863389.aspx)」ガイドを使用し、**Redmond** サイトの手順 7 ～ 10 に従って、テスト仮想マシンを作成し、最初のテスト サイトでストレージを共有する 2 つのノード内で、クラスターが通常動作していることを確認します。  
+7. 「[Hyper-V クラスターを展開する](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj863389(v=ws.11))」ガイドを使用し、**Redmond** サイトの手順 7 ～ 10 に従って、テスト仮想マシンを作成し、最初のテスト サイトでストレージを共有する 2 つのノード内で、クラスターが通常動作していることを確認します。  
 
 8. 2 ノード ストレッチ クラスターを作成する場合は、作業を続行する前にすべての記憶域を追加する必要があります。 これを行うには、クラスター ノードで管理者アクセス許可を使用して PowerShell セッションを開き、コマンド `Get-ClusterAvailableDisk -All | Add-ClusterDisk` を実行します。
 
@@ -179,17 +179,17 @@ ms.locfileid: "75950075"
    4. すべての利用可能な記憶域を **SR-SRV03** に移動します。
    5. フェールオーバー クラスター マネージャーの **[役割]** セクションで **[空の役割の作成]** をクリックします。
    6. 空の **[新しい役割 (2)]** を **SR-SRV03** に移動します。
-   7. オンライン記憶域を「**新しい役割 (2)** 」という名前のこの空の役割に追加します。
+   7. オンライン記憶域をこの空の役割に追加し、「**新しい役割 (2)**」という名前を付けます。
    8. これで、ドライブ文字を付けてすべての記憶域をマウントしたため、`Test-SRTopology` を使用してクラスターを評価できます。
 
-       たとえば次のようになります。
+       次に例を示します。
 
            MD c:\temp  
 
            Test-SRTopology -SourceComputerName SR-SRV01 -SourceVolumeName D: -SourceLogVolumeName E: -DestinationComputerName SR-SRV03 -DestinationVolumeName D: -DestinationLogVolumeName E: -DurationInMinutes 30 -ResultPath c:\temp        
 
       > [!IMPORTANT]
-      > 評価期間中に指定したソース ボリュームに対する書き込み IO ワークロードのないテスト サーバーを使用している場合は、ワークロードの追加を検討してください。負荷がない場合、Test-SRTopology で有用なレポートは生成されません。 実際の数値および推奨されるログのサイズを得るには、実稼働環境と同様のワークロードでテストする必要があります。 または、単に、テスト中にソース ボリュームにいくつかのファイルをコピーするか、DISKSPD をダウンロードして実行することでも書き込み I/O を生成できます。 たとえば、D: ボリュームに対する 10 分間の低書き込み IO ワークロードによる例を次に示します。   
+      > 評価期間中に指定したソース ボリュームに対する書き込み IO ワークロードのないテスト サーバーを使用している場合は、ワークロードの追加を検討してください。負荷がない場合、Test-SRTopology で有用なレポートは生成されません。 実際の数値および推奨されるログのサイズを確認するには、実稼働環境と同様のワークロードでテストする必要があります。 または、単に、テスト中にソース ボリュームにいくつかのファイルをコピーするか、DISKSPD をダウンロードして実行することでも書き込み I/O を生成できます。 たとえば、D: ボリュームに対する 10 分間の低書き込み IO ワークロードによる例を次に示します。   
        `Diskspd.exe -c1g -d600 -W5 -C5 -b4k -t2 -o2 -r -w5 -i100 d:\test.dat`  
 
 10. **TestSrTopologyReport-< date >.html** レポートを調べて、記憶域レプリカの要件を満たしていることを確認し、初期同期時間の予想およびログの推奨事項をメモします。  
@@ -198,7 +198,7 @@ ms.locfileid: "75950075"
 
 11. ディスクを使用可能な記憶域に戻し、一時的な空の役割を削除します。
 
-12. 問題がなければ、テスト仮想マシンを削除します。 提案されたソース ノードにさらに評価に必要なすべての実際のテスト仮想マシンを追加します。  
+12. 満足したら、テスト仮想マシンを削除します。 提案されたソース ノードにさらに評価に必要なすべての実際のテスト仮想マシンを追加します。  
 
 13. ストレッチ クラスター サイトの認識を構成し、サーバー **SR SRV01** と **SR SRV02** がサイト **Redmond** に含まれ、**SR SRV03** と **SR SRV04** がサイト **Bellevue** に含まれ、**Redmond** がソース記憶域と仮想マシンのノードの所有権で優先されるようにします。  
 
@@ -218,9 +218,9 @@ ms.locfileid: "75950075"
     > [!NOTE]
     > Windows Server 2016 には、フェールオーバー クラスター マネージャーを使用してサイトの認識を構成するオプションはありません。  
 
-14. **(省略可能)** DNS サイトの高速フェール オーバーのためにクラスター ネットワークと Active Directory を構成します。 HYPER-V ソフトウェア定義ネットワークで拡大された VLAN、ネットワーク抽象化デバイス、短くした DNS の TTL、およびその他の一般的な手法を使用することができます。
+14. **(省略可能)** DNS サイトのフェールオーバーを高速化するために、クラスターのネットワークと Active Directory を構成します。 HYPER-V ソフトウェア定義ネットワークで拡大された VLAN、ネットワーク抽象化デバイス、短くした DNS の TTL、およびその他の一般的な手法を使用することができます。
 
-    詳細については、Microsoft Ignite セッション「[Stretching Failover Clusters and Using Storage Replica in Windows Server vNext](https://channel9.msdn.com/Events/Ignite/2015/BRK3487)」(Windows Server vNext でのフェールオーバー クラスターの拡大と記憶域レプリカの使用) およびブログ記事「[Enable Change Notifications between Sites - How and Why?](https://blogs.technet.com/b/qzaidi/archive/2010/09/23/enable-change-notifications-between-sites-how-and-why.aspx)」(サイト間での変更通知の有効化 - 方法とこれを行う理由) を参照してください。  
+    詳細については、Microsoft Ignite セッション「[Stretching Failover Clusters and Using Storage Replica in Windows Server vNext](https://channel9.msdn.com/Events/Ignite/2015/BRK3487)」(Windows Server vNext でのフェールオーバー クラスターの拡大と記憶域レプリカの使用) およびブログ記事「[Enable Change Notifications between Sites - How and Why?](/archive/blogs/qzaidi/enable-change-notifications-between-sites-how-and-why)」(サイト間での変更通知の有効化 - 方法とこれを行う理由) を参照してください。  
 
 15. **(省略可能)** ゲストがノード障害中に長時間一時停止しないように VM の回復性を構成します。 代わりに、10 秒以内に新しいレプリケーション ソース記憶域にフェールオーバーします。  
 
@@ -249,7 +249,7 @@ ms.locfileid: "75950075"
    Set-ClusterResourceDependency -Resource “Cluster Name” -Dependency “[Cluster IP Address] or [NewIPAddress]”
    ```  
 
-3. ドメイン コントローラーまたはその他のなんらかの独立したサーバーでホストされている共有を指す各クラスター内でファイル共有監視またはクラウド (Azure) 監視を構成します。 たとえば次のようになります。  
+3. ドメイン コントローラーまたはその他のなんらかの独立したサーバーでホストされている共有を指す各クラスター内でファイル共有監視またはクラウド (Azure) 監視を構成します。 次に例を示します。  
 
    ```PowerShell  
    Set-ClusterQuorum -FileShareWitness \\someserver\someshare  
@@ -258,15 +258,15 @@ ms.locfileid: "75950075"
    > [!NOTE]
    > WIndows Server には、クラウド (Azure) ベースの監視のオプションが追加されました。 ファイル共有監視に代えてこのクォーラム オプションを選択できます。  
     
-   クォーラム構成の詳細については、[「Windows Server 2012 フェールオーバー クラスターでクォーラムを構成および管理する」の「監視の構成」](https://technet.microsoft.com/library/jj612870.aspx)を参照してください。 `Set-ClusterQuorum` コマンドレットの詳細については、「[Set-ClusterQuorum](https://docs.microsoft.com/powershell/module/failoverclusters/set-clusterquorum)」を参照してください。  
+   クォーラム構成の詳細については、[「Windows Server 2012 フェールオーバー クラスターでクォーラムを構成および管理する」の「監視の構成」](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj612870(v=ws.11))を参照してください。 `Set-ClusterQuorum` コマンドレットの詳細については、「[Set-ClusterQuorum](/powershell/module/failoverclusters/set-clusterquorum)」を参照してください。  
 
-4. 「[Windows Server 2012 の Hyper-V クラスターのネットワークの推奨事項](https://technet.microsoft.com/library/dn550728.aspx)」を確認し、クラスター ネットワークが最適に構成されていることを確認します。  
+4. 「[Windows Server 2012 の HYPER-V クラスターのネットワークの推奨事項](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn550728(v=ws.11))」を確認し、クラスター ネットワークが最適に構成されていることを確認します。  
 
 5. 2 ノード ストレッチ クラスターを作成する場合は、作業を続行する前にすべての記憶域を追加する必要があります。 これを行うには、クラスター ノードで管理者アクセス許可を使用して PowerShell セッションを開き、コマンド `Get-ClusterAvailableDisk -All | Add-ClusterDisk` を実行します。
 
    この動作は、Windows Server 2016 の仕様です。
 
-6. 「[Hyper-V クラスターを展開する](https://technet.microsoft.com/library/jj863389.aspx)」ガイドを使用し、**Redmond** サイトの手順 7 ～ 10 に従って、テスト仮想マシンを作成し、最初のテスト サイトでストレージを共有する 2 つのノード内で、クラスターが通常動作していることを確認します。  
+6. 「[Hyper-V クラスターを展開する](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj863389(v=ws.11))」ガイドを使用し、**Redmond** サイトの手順 7 ～ 10 に従って、テスト仮想マシンを作成し、最初のテスト サイトでストレージを共有する 2 つのノード内で、クラスターが通常動作していることを確認します。  
 
 7. 満足したら、テスト VM を削除します。 提案されたソース ノードにさらに評価に必要なすべての実際のテスト仮想マシンを追加します。  
 
@@ -285,9 +285,9 @@ ms.locfileid: "75950075"
    (Get-Cluster).PreferredSite="Seattle"  
    ```  
 
-9. **(省略可能)** DNS サイトの高速フェール オーバーのためにクラスター ネットワークと Active Directory を構成します。 HYPER-V ソフトウェア定義ネットワークで拡大された VLAN、ネットワーク抽象化デバイス、短くした DNS の TTL、およびその他の一般的な手法を使用することができます。  
+9. **(省略可能)** DNS サイトのフェールオーバーを高速化するために、クラスターのネットワークと Active Directory を構成します。 HYPER-V ソフトウェア定義ネットワークで拡大された VLAN、ネットワーク抽象化デバイス、短くした DNS の TTL、およびその他の一般的な手法を使用することができます。  
 
-   詳細については、「[Stretching Failover Clusters and Using Storage Replica in Windows Server vNext](https://channel9.msdn.com/Events/Ignite/2015/BRK3487)」(Windows Server vNext でのフェールオーバー クラスターの拡大と記憶域レプリカの使用) Microsoft Ignite セッションおよび「[Enable Change Notifications between Sites - How and Why?](https://blogs.technet.com/b/qzaidi/archive/2010/09/23/enable-change-notifications-between-sites-how-and-why.aspx)」(サイト間での変更通知の有効化 - 方法とこれを行う理由) を参照してください。  
+   詳細については、「[Stretching Failover Clusters and Using Storage Replica in Windows Server vNext](https://channel9.msdn.com/Events/Ignite/2015/BRK3487)」(Windows Server vNext でのフェールオーバー クラスターの拡大と記憶域レプリカの使用) Microsoft Ignite セッションおよび「[Enable Change Notifications between Sites - How and Why?](/archive/blogs/qzaidi/enable-change-notifications-between-sites-how-and-why)」(サイト間での変更通知の有効化 - 方法とこれを行う理由) を参照してください。  
 
 10. **(省略可能)** ゲストがノード障害中に長時間一時停止しないように VM の回復性を構成します。 代わりに、10 秒以内に新しいレプリケーション ソース記憶域にフェールオーバーします。  
 
@@ -300,7 +300,7 @@ ms.locfileid: "75950075"
 
 
 
-### <a name="BKMK_FileServer"></a>汎用クラスター用のファイルサーバーを構成する  
+### <a name="configure-a-file-server-for-general-use-cluster"></a><a name="BKMK_FileServer"></a>汎用クラスター用のファイルサーバーを構成する  
 
 >[!NOTE]
 > 「[HYPER-V フェールオーバー クラスターを構成する](#BKMK_HyperV)」の説明に従って既に HYPER-V フェールオーバー クラスターを構成している場合は、このセクションをスキップしてください。  
@@ -320,7 +320,7 @@ ms.locfileid: "75950075"
    >[!NOTE]
    > WIndows Server には、クラウド (Azure) ベースの監視のオプションが追加されました。 ファイル共有監視に代えてこのクォーラム オプションを選択できます。                                                                                                                                                                             
    >[!NOTE]
-   >  クォーラム構成の詳細については、[「Windows Server 2012 フェールオーバー クラスターでクォーラムを構成および管理する」の「監視の構成」](https://technet.microsoft.com/library/jj612870.aspx)を参照してください。 Set-ClusterQuorum コマンドレットの詳細については、「[Set-ClusterQuorum](https://docs.microsoft.com/powershell/module/failoverclusters/set-clusterquorum)」を参照してください。 
+   >  クォーラム構成の詳細については、[「Windows Server 2012 フェールオーバー クラスターでクォーラムを構成および管理する」の「監視の構成」](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj612870(v=ws.11))を参照してください。 Set-ClusterQuorum コマンドレットの詳細については、「[Set-ClusterQuorum](/powershell/module/failoverclusters/set-clusterquorum)」を参照してください。 
 
 5. 2 ノード ストレッチ クラスターを作成する場合は、作業を続行する前にすべての記憶域を追加する必要があります。 これを行うには、クラスター ノードで管理者アクセス許可を使用して PowerShell セッションを開き、コマンド `Get-ClusterAvailableDisk -All | Add-ClusterDisk` を実行します。
 
@@ -330,19 +330,19 @@ ms.locfileid: "75950075"
     >[!NOTE]
     > 次の手順に進む前に、ファイル サーバーの役割をすべてのノードにインストールする必要があります。   |  
 
-7. **[役割]** で、 **[役割の構成]** をクリックします。 **[開始する前に]** を確認し、 **[次へ]** をクリックします。  
+7. **[役割]** で、**[役割の構成]** をクリックします。 **[開始する前に]** を確認し、**[次へ]** をクリックします。  
 
-8. **[ファイル サーバー]** を選択し、 **[次へ]** をクリックします。  
+8. **[ファイル サーバー]** を選択し、**[次へ]** をクリックします。  
 
-9. **[汎用ファイル サーバー]** が選択されたままにし、 **[次へ]** をクリックします。  
+9. **[汎用ファイル サーバー]** が選択されたままにし、**[次へ]** をクリックします。  
 
-10. **クライアント アクセス ポイント**名 (15 文字以下) を指定し、 **[次へ]** をクリックします。  
+10. **クライアント アクセス ポイント**名 (15 文字以下) を指定し、**[次へ]** をクリックします。  
 
 11. データ ボリュームにするディスクを選択して **[次へ]** をクリックします。  
 
-12. 設定を確認して、 **[次へ]** をクリックします。 **[Finish]** (完了) をクリックします。  
+12. 設定を確認して、**[次へ]** をクリックします。 **[完了]** をクリックします。  
 
-13. 新しいファイル サーバーの役割を右クリックし、 **[ファイル共有の追加]** をクリックします。 共有を構成するウィザードを実行します。  
+13. 新しいファイル サーバーの役割を右クリックし、**[ファイル共有の追加]** をクリックします。 共有を構成するウィザードを実行します。  
 
 14. 省略可能: このサイトの他のストレージを使用する別のファイル サーバーの役割を追加します。  
 
@@ -366,7 +366,7 @@ ms.locfileid: "75950075"
 
 16. (省略可能) DNS サイトの高速フェール オーバーのためにクラスター ネットワークと Active Directory を構成します。 拡大された VLAN、ネットワーク抽象化デバイス、短くした DNS の TTL、およびその他の一般的な手法を使用することができます。  
 
-詳細については、Microsoft Ignite セッション「[Stretching Failover Clusters and Using Storage Replica in Windows Server vNext](https://channel9.msdn.com/events/ignite/2015/brk3487)」(Windows Server vNext でのフェールオーバー クラスターの拡大と記憶域レプリカの使用) およびブログ記事「[Enable Change Notifications between Sites - How and Why?](https://blogs.technet.com/b/qzaidi/archive/2010/09/23/enable-change-notifications-between-sites-how-and-why.aspx)」(サイト間での変更通知の有効化 - 方法とこれを行う理由) を参照してください。    
+詳細については、Microsoft Ignite セッション「[Stretching Failover Clusters and Using Storage Replica in Windows Server vNext](https://channel9.msdn.com/events/ignite/2015/brk3487)」(Windows Server vNext でのフェールオーバー クラスターの拡大と記憶域レプリカの使用) およびブログ記事「[Enable Change Notifications between Sites - How and Why?](/archive/blogs/qzaidi/enable-change-notifications-between-sites-how-and-why)」(サイト間での変更通知の有効化 - 方法とこれを行う理由) を参照してください。    
 
 #### <a name="powershell-method"></a>PowerShell による方法
 
@@ -390,7 +390,7 @@ ms.locfileid: "75950075"
     ```
 
 
-3. ドメイン コントローラーまたはその他のなんらかの独立したサーバーでホストされている共有を指す各クラスター内でファイル共有監視またはクラウド (Azure) 監視を構成します。 たとえば次のようになります。  
+3. ドメイン コントローラーまたはその他のなんらかの独立したサーバーでホストされている共有を指す各クラスター内でファイル共有監視またはクラウド (Azure) 監視を構成します。 次に例を示します。  
 
     ```PowerShell
     Set-ClusterQuorum -FileShareWitness \\someserver\someshare
@@ -399,7 +399,7 @@ ms.locfileid: "75950075"
     >[!NOTE]
     > Windows Server には、Azure を使用したクラウド監視のオプションが追加されました。 ファイル共有監視に代えてこのクォーラム オプションを選択できます。  
 
-   クォーラム構成の詳細については、「[クラスターとプールのクォーラム](../storage-spaces/understand-quorum.md)について」を参照してください。 Set-ClusterQuorum コマンドレットの詳細については、「[Set-ClusterQuorum](https://docs.microsoft.com/powershell/module/failoverclusters/set-clusterquorum)」を参照してください。
+   クォーラム構成の詳細については、「[クラスターとプールのクォーラム](../storage-spaces/understand-quorum.md)について」を参照してください。 Set-ClusterQuorum コマンドレットの詳細については、「[Set-ClusterQuorum](/powershell/module/failoverclusters/set-clusterquorum)」を参照してください。
 
 4.  2 ノード ストレッチ クラスターを作成する場合は、作業を続行する前にすべての記憶域を追加する必要があります。 これを行うには、クラスター ノードで管理者アクセス許可を使用して PowerShell セッションを開き、コマンド `Get-ClusterAvailableDisk -All | Add-ClusterDisk` を実行します。
 
@@ -407,7 +407,7 @@ ms.locfileid: "75950075"
 
 5. クラスター ネットワークが最適に構成されていることを確認します。  
 
-6.  ファイル サーバーの役割を構成します。 たとえば次のようになります。
+6.  ファイル サーバーの役割を構成します。 次に例を示します。
 
     ```PowerShell  
     Get-ClusterResource  
@@ -435,7 +435,7 @@ ms.locfileid: "75950075"
 
 8.  (省略可能) DNS サイトの高速フェール オーバーのためにクラスター ネットワークと Active Directory を構成します。 拡大された VLAN、ネットワーク抽象化デバイス、短くした DNS の TTL、およびその他の一般的な手法を使用することができます。  
     
-    詳細については、Microsoft Ignite セッション「[Stretching Failover Clusters and Using Storage Replica in Windows Server vNext](https://channel9.msdn.com/events/ignite/2015/brk3487)」(Windows Server vNext でのフェールオーバー クラスターの拡大と記憶域レプリカの使用) およびブログ記事「[Enable Change Notifications between Sites - How and Why?](https://blogs.technet.com/b/qzaidi/archive/2010/09/23/enable-change-notifications-between-sites-how-and-why.aspx)」(サイト間での変更通知の有効化 - 方法とこれを行う理由) を参照してください。
+    詳細については、Microsoft Ignite セッション「[Stretching Failover Clusters and Using Storage Replica in Windows Server vNext](https://channel9.msdn.com/events/ignite/2015/brk3487)」(Windows Server vNext でのフェールオーバー クラスターの拡大と記憶域レプリカの使用) およびブログ記事「[Enable Change Notifications between Sites - How and Why?](/archive/blogs/qzaidi/enable-change-notifications-between-sites-how-and-why)」(サイト間での変更通知の有効化 - 方法とこれを行う理由) を参照してください。
 
 ### <a name="configure-a-stretch-cluster"></a>ストレッチ クラスターを構成する  
 ここでは、フェールオーバー クラスター マネージャーまたは Windows PowerShell を使用してストレッチ クラスターを構成します。 次のすべての手順は、クラスターノードで直接実行することも、Windows Server リモートサーバー管理ツールを含むリモート管理コンピューターから実行することもできます。  
@@ -447,20 +447,20 @@ ms.locfileid: "75950075"
 
     ![フェールオーバー クラスター マネージャーの表示画面](./media/Stretch-Cluster-Replication-Using-Shared-Storage/Storage_SR_OnlineDisks2.png)  
 
-2.  CSV ディスクまたは役割がアタッチされたディスクを右クリックし、 **[レプリケーション]** をクリックして **[有効]** をクリックします。  
+2.  CSV ディスクまたは役割がアタッチされたディスクを右クリックし、**[レプリケーション]** をクリックして **[有効]** をクリックします。  
 
-3.  適切なレプリケーション先のデータ ボリュームを選択し、 **[次へ]** をクリックします。 表示されるレプリケーション先ディスクには、選択したレプリケーション元ディスクと同じサイズのボリュームがあります。 これらのウィザードのダイアログ間を移動するときには、使用可能な記憶域が自動的に移動し、必要に応じてバックグラウンドでオンラインになります。  
+3.  適切なレプリケーション先のデータ ボリュームを選択し、**[次へ]** をクリックします。 表示されるレプリケーション先ディスクには、選択したレプリケーション元ディスクと同じサイズのボリュームがあります。 これらのウィザードのダイアログ間を移動するときには、使用可能な記憶域が自動的に移動し、必要に応じてバックグラウンドでオンラインになります。  
 
     ![記憶域レプリカの構成ウィザードの [レプリケーション先データ ディスクの選択] ページの表示画面](./media/Stretch-Cluster-Replication-Using-Shared-Storage/Storage_SR_SelectDestinationDataDisk2.png)  
 
-4.  適切なレプリケーション元のログ ディスクを選択し、 **[次へ]** をクリックします。 レプリケーション元ログ ボリュームは、回転ディスクではなく SSD または同様の高速なメディアを使用するディスク上に置かれている必要があります。  
+4.  適切なレプリケーション元のログ ディスクを選択し、**[次へ]** をクリックします。 レプリケーション元ログ ボリュームは、回転ディスクではなく SSD または同様の高速なメディアを使用するディスク上に置かれている必要があります。  
 
 5.  適切なレプリケーション先のログ ボリュームを選択し、[次へ] をクリックします。 表示されるレプリケーション先ログ ディスクには、選択したレプリケーション元ログ ディスクと同じサイズのボリュームがあります。  
 
-6.  レプリケーション先ボリュームに、レプリケーション元サーバーからのデータの以前のコピーが含まれていない場合は、 **[Overwrite Volume]** (ボリュームを上書き) の値を **[レプリケーション先ボリュームを上書き]** のままにします。 最近のバックアップまたは以前のレプリケーションからの類似したデータがレプリケーション先ボリュームに含まれている場合は、 **[シードされたレプリケーション先ディスク]** を選択し、 **[次へ]** をクリックします。  
+6.  レプリケーション先ボリュームに、レプリケーション元サーバーからのデータの以前のコピーが含まれていない場合は、**[Overwrite Volume]** (ボリュームを上書き) の値を **[レプリケーション先ボリュームを上書き]** のままにします。 最近のバックアップまたは以前のレプリケーションからの類似したデータがレプリケーション先ボリュームに含まれている場合は、**[シードされたレプリケーション先ディスク]** を選択し、**[次へ]** をクリックします。  
 
-7.  ゼロ PRO レプリケーションを使用する場合は、 **[レプリケーション モード]** の値を **[同期レプリケーション]** のままにします。 待機時間が長いネットワーク上でクラスターを拡大する場合やプライマリ サイト ノード上で IO 待機時間を短縮する必要がある場合は、 **[非同期レプリケーション]** に変更します。  
-8.  レプリケーション グループ内で追加のディスクペアを使用して書き込み順序指定を後で使用する場合は、 **[整合性グループ]** の値を **[最も高いパフォーマンス]** のままにします。 このレプリケーション グループにディスクを追加し、保証された書き込み順序指定が必要な場合は、 **[書き込み順序を有効にする]** を選択し、 **[次へ]** をクリックします。  
+7.  ゼロ PRO レプリケーションを使用する場合は、**[レプリケーション モード]** の値を **[同期レプリケーション]** のままにします。 待機時間が長いネットワーク上でクラスターを拡大する場合やプライマリ サイト ノード上で IO 待機時間を短縮する必要がある場合は、**[非同期レプリケーション]** に変更します。  
+8.  レプリケーション グループ内で追加のディスクペアを使用して書き込み順序指定を後で使用する場合は、**[整合性グループ]** の値を **[最も高いパフォーマンス]** のままにします。 このレプリケーション グループにディスクを追加し、保証された書き込み順序指定が必要な場合は、**[書き込み順序を有効にする]** を選択し、**[次へ]** をクリックします。  
 
 9.  **[次へ]** をクリックし、レプリケーションとストレッチ クラスターのフォーメーションを構成します。  
 
@@ -476,9 +476,9 @@ ms.locfileid: "75950075"
 
     2.  **eventvwr.exe** を起動します。  
 
-        1.  レプリケーション元サーバー上で、 **[アプリケーションとサービス]、[Microsoft]、[Windows]、[記憶域レプリカ]、[管理]** の順に移動し、イベント 5015、5002、5004、1237、5001、2200 を調べます。  
+        1.  レプリケーション元サーバー上で、**[アプリケーションとサービス]、[Microsoft]、[Windows]、[記憶域レプリカ]、[管理]** の順に移動し、イベント 5015、5002、5004、1237、5001、2200 を調べます。  
 
-        2.  レプリケーション先サーバー上で、 **[アプリケーションとサービス]、[Microsoft]、[Windows]、[記憶域レプリカ]、[操作可]** の順に移動し、イベント 1215 を待機します。 このイベントは、コピーされたバイト数およびかかった時間を示します。 次に例を示します。  
+        2.  レプリケーション先サーバー上で、**[アプリケーションとサービス]、[Microsoft]、[Windows]、[記憶域レプリカ]、[操作可]** の順に移動し、イベント 1215 を待機します。 このイベントでは、コピーされたバイト数およびかかった時間が示されます。 例:  
 
             ```  
             Log Name:      Microsoft-Windows-StorageReplica/Operational  
@@ -505,7 +505,7 @@ ms.locfileid: "75950075"
             Elapsed Time (ms): 140  
             ```  
 
-        3.  レプリケーション元サーバー上で、 **[アプリケーションとサービス]、[Microsoft]、[Windows]、[記憶域レプリカ]、[管理]** の順に移動し、イベント 5009、1237、5001、5015、5005、2200 を調べ、処理の進行状況を確認します。 このシーケンスではエラーの警告が存在しない必要があります。 イベント 1237 が多くあります。これは進行状況を示します。  
+        3.  レプリケーション元サーバー上で、**[アプリケーションとサービス]、[Microsoft]、[Windows]、[記憶域レプリカ]、[管理]** の順に移動し、イベント 5009、1237、5001、5015、5005、2200 を調べ、処理の進行状況を確認します。 このシーケンスではエラーの警告が存在しない必要があります。 イベント 1237 が多くあります。これは進行状況を示します。  
 
             > [!WARNING]
             > CPU とメモリ使用率は、初期同期が完了するまでは通常より高くなる可能性があります。  
@@ -578,7 +578,7 @@ ms.locfileid: "75950075"
         Get-WinEvent -ProviderName Microsoft-Windows-StorageReplica -max 20  
         ```  
 
-    2.  レプリケーション先サーバーで、次のコマンドを実行して、パートナーシップの作成を示す記憶域レプリカ イベントを参照します。 このイベントは、コピーされたバイト数およびかかった時間を示します。 次に例を示します。  
+    2.  レプリケーション先サーバーで、次のコマンドを実行して、パートナーシップの作成を示す記憶域レプリカ イベントを参照します。 このイベントでは、コピーされたバイト数およびかかった時間が示されます。 例:  
 
             Get-WinEvent -ProviderName Microsoft-Windows-StorageReplica | Where-Object {$_.ID -eq "1215"} | fl  
 
@@ -598,13 +598,13 @@ ms.locfileid: "75950075"
                Number of Bytes Recovered: 68583161856  
                Elapsed Time (ms): 140  
 
-    3.  レプリケーション先サーバーで次のコマンドを実行し、イベント 5009、1237、5001、5015、5005、2200 を調べて、処理の進行状況を把握します。 このシーケンスではエラーの警告が存在しない必要があります。 イベント 1237 が多くあります。これは進行状況を示します。  
+    3.  レプリケーション先サーバーで、次のコマンドを実行し、イベント 5009、1237、5001、5015、5005、2200 を調べて、処理の進行状況を把握します。 このシーケンスではエラーの警告が存在しない必要があります。 イベント 1237 が多くあります。これは進行状況を示します。  
 
         ```PowerShell  
         Get-WinEvent -ProviderName Microsoft-Windows-StorageReplica | FL  
         ```  
 
-    4.  または、レプリカの宛先サーバー グループでは、コピーの残りのバイト数が常時示されており、PowerShell を使って照会できます。 たとえば次のようになります。  
+    4.  または、レプリカのレプリケーション先サーバー グループでは、コピーの残りのバイト数が常時示されており、PowerShell を使って照会できます。 次に例を示します。  
 
         ```PowerShell  
         (Get-SRGroup).Replicas | Select-Object numofbytesremaining  
@@ -652,9 +652,9 @@ ms.locfileid: "75950075"
 
 3.  ストレッチ クラスター内のレプリケーションのソースと宛先を変更するには、次の方法を使用します。  
 
-    1.  同じサイト内のノード間でソースのレプリケーションを移動するには、ソース CSV を右クリックし、 **[Move Storage]** (記憶域の移動) をクリックして、 **[ノードの選択]** をクリックし、同じサイト内のノードを選択します。 ディスクに割り当てられた役割に対して CSV 以外の記憶域を使用している場合は、役割を移動する必要があります。  
+    1.  同じサイト内のノード間でソースのレプリケーションを移動するには、ソース CSV を右クリックし、**[Move Storage]** (記憶域の移動) をクリックして、**[ノードの選択]** をクリックし、同じサイト内のノードを選択します。 ディスクに割り当てられた役割に対して CSV 以外の記憶域を使用している場合は、役割を移動する必要があります。  
 
-    2.  ソースのレプリケーションを 1 つのサイトから別のサイトに移動するには、ソース CSV を右クリックし、 **[Move Storage]** (記憶域の移動) をクリックして、 **[ノードの選択]** をクリックし、別のサイト内のノードを選択します。 優先されるサイトを構成した場合は、使用可能な最善のノードを使用してレプリケーション元ストレージを優先サイト内のノードに常に移動することができます。 ディスクに割り当てられた役割に対して CSV 以外の記憶域を使用している場合は、役割を移動する必要があります。  
+    2.  ソースのレプリケーションを 1 つのサイトから別のサイトに移動するには、ソース CSV を右クリックし、**[Move Storage]** (記憶域の移動) をクリックして、**[ノードの選択]** をクリックし、別のサイト内のノードを選択します。 優先されるサイトを構成した場合は、使用可能な最善のノードを使用してレプリケーション元ストレージを優先サイト内のノードに常に移動することができます。 ディスクに割り当てられた役割に対して CSV 以外の記憶域を使用している場合は、役割を移動する必要があります。  
 
     3.  1 つのサイトから別のサイトへのレプリケーションの方向で予定されたフェールオーバーを実行するには、**ServerManager.exe** または **SConfig** を使用して 1 つのサイトで両方のノードをシャットダウンします。  
 
@@ -666,21 +666,21 @@ ms.locfileid: "75950075"
         > [!NOTE]
         > 記憶域レプリカは、宛先ボリュームをマウント解除します。 これは仕様です。  
 
-4.  ログサイズを既定の 8 GB から変更するには、コピー元とコピー先の両方のログディスクを右クリックし、 **[レプリケーションログ]** タブをクリックします。次に、両方のディスクのサイズを一致するように変更します。  
+4.  ログサイズを既定の 8 GB から変更するには、コピー元とコピー先の両方のログディスクを右クリックし、[**レプリケーションログ**] タブをクリックします。次に、両方のディスクのサイズを一致するように変更します。  
 
     > [!NOTE]  
     > 既定のログのサイズは 8 GB です。 `Test-SRTopology` コマンドレットの結果に応じて、より大きい値または小さい値を指定して `-LogSizeInBytes` を使用することを検討してください。  
 
-5.  別のレプリケーションされるディスクのペアを既存のレプリケーション グループに追加するには、使用可能な記憶域内に少なくとも 1 つの余分なディスクがあることを確認する必要があります。 その後で、ソース ディスクを右クリックし、 **[Add replication partnership]** (レプリケーション パートナーシップの追加) を選択します。  
+5.  別のレプリケーションされるディスクのペアを既存のレプリケーション グループに追加するには、使用可能な記憶域内に少なくとも 1 つの余分なディスクがあることを確認する必要があります。 その後で、ソース ディスクを右クリックし、**[Add replication partnership]** (レプリケーション パートナーシップの追加) を選択します。  
     > [!NOTE]  
-    > 使用可能記憶域でこのように "ダミー" ディスクを追加する必要があるのは、前のバージョンにはなかった不具合が原因であり、意図されたものではありません。 以前は、フェールオーバー クラスター マネージャーでは通常、ディスクの追加がサポートされており、今後のリリースでも再びサポートされるようになります。  
+    > 使用可能記憶域でこの追加の "ダミー" ディスクが必要なのは回帰のためであり、意図しているものではありません。 以前は、フェールオーバー クラスター マネージャーでは通常、ディスクの追加がサポートされており、今後のリリースでも再びサポートされるようになります。  
 
 
 6.  既存のレプリケーションを削除するには、次の手順を実行します。  
 
     1.  **cluadmin.msc** を起動します。  
 
-    2.  ソース CSV ディスクを右クリックし、 **[レプリケーション]** をクリックして、 **[削除]** をクリックします。 警告メッセージを受け入れます。  
+    2.  ソース CSV ディスクを右クリックし、**[レプリケーション]** をクリックして、**[削除]** をクリックします。 警告メッセージを受け入れます。  
 
     3.  必要に応じて、将来のテスト用に CSV から記憶域を削除し、使用可能な記憶域に戻します。  
 
@@ -691,7 +691,7 @@ ms.locfileid: "75950075"
 
 1.  **Get-SRGroup** と **(Get-SRGroup).Replicas** を使用して、レプリケーションの現在のソースと宛先およびそれらの状態を判別します。  
 
-2.  レプリケーションのパフォーマンスを測定するには、レプリケーション元とレプリケーション先の両方のノードで `Get-Counter` コマンドレットを使用します。 カウンター名は次のとおりです。  
+2.  レプリケーションのパフォーマンスを測定するには、ソースと宛先の両方のノードで `Get-Counter` コマンドレットを使用します。 カウンター名は次のとおりです。  
 
     -   \Storage Replica Partition I/O Statistics(*)\Number of times flush paused  
 
@@ -745,7 +745,7 @@ ms.locfileid: "75950075"
 
     -   \Storage Replica Statistics(*)\Number of Messages Sent  
 
-    Windows PowerShell でのパフォーマンス カウンターの詳細については、「[Get-Counter](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Diagnostics/Get-Counter)」を参照してください。  
+    Windows PowerShell でのパフォーマンス カウンターの詳細については、「[Get-Counter](/powershell/module/microsoft.powershell.diagnostics/get-counter)」を参照してください。  
 
 3.  ストレッチ クラスター内のレプリケーションのソースと宛先を変更するには、次の方法を使用します。  
 
@@ -779,7 +779,7 @@ ms.locfileid: "75950075"
 
 5.  別のレプリケーションされるディスクのペアを既存のレプリケーション グループに追加するには、使用可能な記憶域内に少なくとも 1 つの余分なディスクがあることを確認する必要があります。 その後で、ソース ディスクを右クリックし、[Add replication partnership] (レプリケーション パートナーシップの追加) を選択します。  
        >[!NOTE]
-       >使用可能記憶域でこのように "ダミー" ディスクを追加する必要があるのは、前のバージョンにはなかった不具合が原因であり、意図されたものではありません。 以前は、フェールオーバー クラスター マネージャーでは通常、ディスクの追加がサポートされており、今後のリリースでも再びサポートされるようになります。  
+       >使用可能記憶域でこの追加の "ダミー" ディスクが必要なのは回帰のためであり、意図しているものではありません。 以前は、フェールオーバー クラスター マネージャーでは通常、ディスクの追加がサポートされており、今後のリリースでも再びサポートされるようになります。  
 
     **Set-SRPartnership** コマンドレットを **-SourceAddVolumePartnership** および **-DestinationAddVolumePartnership** パラメーターと共に使用します。  
 6.  レプリケーションを削除するには、各ノードで `Get-SRGroup`、Get-`SRPartnership`、`Remove-SRGroup`、および `Remove-SRPartnership` を使用します。  
@@ -797,8 +797,8 @@ ms.locfileid: "75950075"
 - [サーバー間の記憶域レプリケーション](server-to-server-storage-replication.md)  
 - [クラスターからクラスターへの記憶域のレプリケーション](cluster-to-cluster-storage-replication.md)  
 - [記憶域レプリカ: 既知の問題](storage-replica-known-issues.md) 
-- [記憶域レプリカ: よく寄せられる質問](storage-replica-frequently-asked-questions.md)  
+- [記憶域レプリカ:よく寄せられる質問](storage-replica-frequently-asked-questions.md)  
 
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 - [Windows Server 2016](../../get-started/windows-server-2016.md)  
 - [Windows Server 2016 での記憶域スペース ダイレクト](../storage-spaces/storage-spaces-direct-overview.md)

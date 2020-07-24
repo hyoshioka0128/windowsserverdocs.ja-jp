@@ -8,12 +8,12 @@ ms.topic: article
 author: jasongerend
 ms.date: 5/14/2018
 description: ファイルサーバーリソースマネージャー (FSRM) は、Windows Server ファイルサーバー上のデータを管理および分類できるツールです。
-ms.openlocfilehash: af54f08f8acc491553a4d42c1aabe8ea7e26fadd
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 58b410e51dae3ea102bb1a15f5bb60f00ab702fa
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473939"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964564"
 ---
 # <a name="file-server-resource-manager-fsrm-overview"></a>ファイル サーバー リソース マネージャー (FSRM) の概要
 
@@ -23,7 +23,7 @@ ms.locfileid: "85473939"
 
 これは小さなポイントですが、Windows Server バージョン1803で[変更ジャーナルを無効にする機能も追加](#whats-new)しました。
 
-## <a name="features"></a>特徴
+## <a name="features"></a>機能
 
 ファイル サーバー リソース マネージャーには、以下の機能が含まれています。
 
@@ -57,7 +57,7 @@ ms.locfileid: "85473939"
 
 Windows Server バージョン1803以降では、サービスの開始時にファイルサーバーリソースマネージャーサービスがボリュームに変更ジャーナル (USN ジャーナルとも呼ばれます) を作成するのを防ぐことができるようになりました。 これにより、各ボリュームの領域が少し節約されますが、リアルタイムのファイル分類が無効になります。
 
-以前の新機能については、「[ファイルサーバーリソースマネージャーの新](https://technet.microsoft.com/library/dn383587.aspx)機能」を参照してください。
+以前の新機能については、「[ファイルサーバーリソースマネージャーの新](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn383587(v=ws.11))機能」を参照してください。
 
 サービスの開始時に、ファイルサーバーリソースマネージャーが一部またはすべてのボリュームに変更ジャーナルを作成できないようにするには、次の手順を実行します。
 
@@ -106,4 +106,4 @@ Windows Server バージョン1803以降では、サービスの開始時にフ�
 
 ## <a name="additional-references"></a>その他のリファレンス
 
-- [ダイナミック アクセス制御](https://technet.microsoft.com/library/dn408191(v=ws.11).aspx)
+- [ダイナミック アクセス制御](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn408191(v=ws.11))

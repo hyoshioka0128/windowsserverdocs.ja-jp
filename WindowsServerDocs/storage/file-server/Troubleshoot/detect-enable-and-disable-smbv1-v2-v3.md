@@ -6,12 +6,12 @@ manager: dcscontentpm
 ms.topic: article
 ms.author: delhan
 ms.date: 12/25/2019
-ms.openlocfilehash: dd2f4c6b6bb17231ac04b3344e9a39df2cad79d0
-ms.sourcegitcommit: fb808a6fc851a3e5c47e6a7654366145d2f19554
+ms.openlocfilehash: 40ab29a115735e6c37bb7c7449980b94090565f3
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84740645"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961074"
 ---
 # <a name="how-to-detect-enable-and-disable-smbv1-smbv2-and-smbv3-in-windows"></a>Windows で SMBv1、SMBv2、および SMBv3 を検出、有効化、および無効化する方法
 
@@ -53,9 +53,9 @@ SMBv3 プロトコルは、Windows 8 および Windows Server 2012 で導入さ�
 
 SMBv2 および SMBv3 機能の機能の詳細については、次の記事を参照してください。
 
-[サーバー メッセージ ブロックの概要](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831795(v=ws.11))
+[サーバー メッセージ ブロックの概要](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831795(v=ws.11))
 
-[SMB の新機能](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff625695(v=ws.10))  
+[SMB の新機能](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/ff625695(v=ws.10))  
 
 ## <a name="how-to-gracefully-remove-smb-v1-in-windows-81-windows-10-windows-2012-r2-windows-server-2016-and-windows-server-2019"></a>Windows 8.1、Windows 10、Windows 2012 R2、Windows Server 2016、および Windows Server 2019 で SMB v1 を適切に削除する方法
 
@@ -215,7 +215,7 @@ Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Par
 Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" SMB1 -Type DWORD -Value 1 –Force
 ```  
 
-**メモ**これらの変更を行った後、コンピューターを再起動する必要があります。 詳細については、「 [Microsoft でのサーバーストレージ](https://blogs.technet.microsoft.com/filecab/2016/09/16/stop-using-smb1/)」を参照してください。 
+**メモ**これらの変更を行った後、コンピューターを再起動する必要があります。 詳細については、「 [Microsoft でのサーバーストレージ](https://techcommunity.microsoft.com/t5/storage-at-microsoft/stop-using-smb1/ba-p/425858)」を参照してください。 
 ##### <a name="smb-v2v3-on-smb-server"></a>Smb サーバー上の SMB v2/v3
 
 識別  
@@ -298,7 +298,7 @@ Default: 1 = Enabled (No registry key is created)
   sc.exe config mrxsmb10 start= auto
   ```
 
-詳細については、「 [Microsoft でのサーバー記憶域](https://blogs.technet.microsoft.com/filecab/2016/09/16/stop-using-smb1/)」を参照してください。 
+詳細については、「 [Microsoft でのサーバー記憶域](https://techcommunity.microsoft.com/t5/storage-at-microsoft/stop-using-smb1/ba-p/425858)」を参照してください。 
 ##### <a name="smb-v2v3-on-smb-client"></a>Smb クライアント上の SMB v2/v3
 
 - 識別
@@ -359,7 +359,7 @@ Default: 1 = Enabled (No registry key is created)
 これにより、SMBv1 サーバーコンポーネントが無効になります。 このグループポリシーは、ドメイン内のすべての必要なワークステーション、サーバー、およびドメインコントローラーに適用する必要があります。
 
 > [!NOTE]
->また、サポートされていないオペレーティングシステムや、Windows XP などの選択した除外を除外するように、  [WMI フィルター](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc947846(v=ws.10))を設定することもできます。
+>また、サポートされていないオペレーティングシステムや、Windows XP などの選択した除外を除外するように、  [WMI フィルター](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc947846(v=ws.10))を設定することもできます。
 
 > [!IMPORTANT]
 > 以前のバージョンの Windows XP または以前の Linux およびサードパーティ製のシステム (SMBv2 または SMBv3 をサポートしていないシステム) に対してこれらの変更を行う場合は、SMB v1 が無効になっている SYSVOL または他のファイル共有にアクセスする必要があることに注意してください。     

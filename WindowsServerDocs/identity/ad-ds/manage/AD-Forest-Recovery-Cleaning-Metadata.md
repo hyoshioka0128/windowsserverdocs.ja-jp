@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: e7543381-4081-407f-adad-a9de792c6616
 ms.technology: identity-adds
-ms.openlocfilehash: b9ba00939ccb2ee747501733fb9654edb4c8132e
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 4bf3ec5cb9495e3603c3a5a385f0ff7b65e9d8b7
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80824255"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962945"
 ---
 # <a name="ad-forest-recovery---cleaning-metadata-of-removed-writable-domain-controllers"></a>AD フォレストの回復-削除された書き込み可能なドメインコントローラーのメタデータをクリーニングしています
 
@@ -31,17 +31,17 @@ Active Directory ユーザーとコンピューターのバージョン、また
 
 代わりに、RSAT の Active Directory サイトとサービスを使用して、DC オブジェクトを削除することもできます。 Active Directory サイトとサービスを使用する場合は、DC オブジェクトを削除する前に、関連付けられているサーバーオブジェクトと NTDS 設定オブジェクトを削除する必要があります。  
 
-RSAT のインストールの詳細については、「[リモートサーバー管理ツール](https://docs.microsoft.com/windows-server/remote/remote-server-administration-tools)」を参照してください。
+RSAT のインストールの詳細については、「[リモートサーバー管理ツール](../../../remote/remote-server-administration-tools.md)」を参照してください。
   
 次の手順は、Windows Server 2016、2012、2008 R2、または2008のいずれかを実行している Dc でも同じです。 メタデータクリーンアップ操作のターゲット DC は、任意のバージョンの Windows Server を実行できます。  
   
 ### <a name="to-delete-a-domain-controller-object-using-active-directory-users-and-computers-in-rsat"></a>RSAT で Active Directory ユーザーとコンピューターを使用してドメインコントローラーオブジェクトを削除するには  
   
-1. **[スタート]** 、 **[管理ツール]** の順にクリックし、 **[Active Directory ユーザーとコンピュータ]** をクリックします。  
+1. [**スタート**]、[**管理ツール**] の順にクリックし、[**Active Directory ユーザーとコンピュータ**] をクリックします。  
 2. コンソールツリーで、ドメインコンテナーをダブルクリックし、**ドメインコントローラー**の組織単位 (OU) をダブルクリックします。  
-3. 詳細ウィンドウで、削除する DC を右クリックし、 **[削除]** をクリックします。
+3. 詳細ウィンドウで、削除する DC を右クリックし、[**削除**] をクリックします。
    ![削除](media/AD-Forest-Recovery-Cleaning-Metadata/delete1.png) 
-4. **[はい]** をクリックして削除を確定します。 [**このドメインコントローラーは完全にオフラインになっており、Active Directory ドメインサービスインストールウィザード (DCPROMO)] チェックボックスを使用して降格できなく**なり、 **[削除]** をクリックします。  
+4. [はい **** ] をクリックして、削除を確定します。 [**このドメインコントローラーは完全にオフラインになっており、Active Directory ドメインサービスインストールウィザード (DCPROMO)] チェックボックスを使用して降格できなく**なり、[**削除**] をクリックします。  
 5. DC がグローバルカタログサーバーである場合は、[**はい]** をクリックします。削除されたことを確認します。  
 
 ## <a name="next-steps"></a>次の手順

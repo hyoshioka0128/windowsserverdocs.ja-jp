@@ -8,12 +8,12 @@ ms.date: 05/20/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 77e3b48874d2b8898b7510ff04ebb133b9358a73
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 5cb6246b00d891bd18f30b75b591dd4aaae021f5
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85935547"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962654"
 ---
 # <a name="ad-fs-extranet-lockout-and-extranet-smart-lockout"></a>AD FS エクストラネットのロックアウトおよびエクストラネットのスマート ロックアウト
 
@@ -81,7 +81,7 @@ AccountActivity テーブルは、"ログのみ" モードと "強制" モード
 1. **ファーム内のすべてのノードに更新プログラムをインストールする**
 
    最初に、Windows Server 2016 AD FS サーバーのうち、6月2018の Windows 更新プログラムが最新の状態であり、AD FS 2016 ファームが2016ファームの動作レベルで実行されていることを確認します。
-1. **アクセス許可を確認する**
+1. **アクセス許可の確認**
 
    エクストラネットのスマートロックアウトでは、すべての AD FS サーバーで Windows リモート管理を有効にする必要があります。
 3. **アーティファクトデータベースのアクセス許可の更新**
@@ -212,7 +212,7 @@ AD FS は、アカウントのアクティビティデータを管理する3つ�
 
 `Get-ADFSAccountActivity user@contoso.com`
 
-  ［プロパティ］:
+  プロパティ:
     - BadPwdCountFamiliar: 既知の場所から認証が成功したときにインクリメントされます。
     - BadPwdCountUnknown: 不明な場所からの認証が失敗した場合に増分されます。
     - Lastfail Auth親しん: 使い慣れた場所から認証に失敗した場合、Lastfail Authunknown は認証に失敗した時刻に設定されます。
@@ -236,7 +236,7 @@ AD FS は、アカウントのアクティビティデータを管理する3つ�
 ## <a name="event-logging--user-activity-information-for-ad-fs-extranet-lockout"></a>AD FS エクストラネットロックアウトに関するイベントログ & ユーザーアクティビティ情報
 
 ### <a name="connect-health"></a>Connect Health
-ユーザーアカウントの利用状況を監視するには、Connect Health を使用することをお勧めします。 Connect Health は、危険な Ip に関するダウンロード可能なレポートを生成し、不正なパスワードの試行を行います。 危険な IP のレポートの各項目は、指定されたしきい値を超える、失敗した AD FS サインイン アクティビティに関する集計情報を示します。 電子メール通知は、カスタマイズ可能な電子メール設定で発生するとすぐに、警告管理者に設定できます。 詳細とセットアップの手順については、 [Connect Health のドキュメント](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-health-adfs)を参照してください。
+ユーザーアカウントの利用状況を監視するには、Connect Health を使用することをお勧めします。 Connect Health は、危険な Ip に関するダウンロード可能なレポートを生成し、不正なパスワードの試行を行います。 危険な IP のレポートの各項目は、指定されたしきい値を超える、失敗した AD FS サインイン アクティビティに関する集計情報を示します。 電子メール通知は、カスタマイズ可能な電子メール設定で発生するとすぐに、警告管理者に設定できます。 詳細とセットアップの手順については、 [Connect Health のドキュメント](/azure/active-directory/hybrid/how-to-connect-health-adfs)を参照してください。
 
 ### <a name="ad-fs-extranet-smart-lockout-events"></a>エクストラネットのスマートロックアウトイベントを AD FS します。
 
@@ -293,6 +293,6 @@ A: ESL が有効になっている場合、AD FS は、ADFSArtifactStore デー�
 ## <a name="additional-references"></a>その他のリファレンス  
 [Active Directory フェデレーションサービス (AD FS) をセキュリティで保護するためのベストプラクティス](../../ad-fs/deployment/best-practices-securing-ad-fs.md)
 
-[Set-adfsproperties](https://technet.microsoft.com/itpro/powershell/windows/adfs/set-adfsproperties)
+[Set-adfsproperties](/powershell/module/adfs/set-adfsproperties?view=win10-ps)
 
-[AD FS の運用](../../ad-fs/AD-FS-2016-Operations.md)
+[AD FS の運用](../ad-fs-operations.md)

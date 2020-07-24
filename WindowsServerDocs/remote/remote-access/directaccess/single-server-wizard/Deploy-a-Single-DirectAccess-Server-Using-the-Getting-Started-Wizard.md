@@ -8,20 +8,20 @@ ms.topic: article
 ms.assetid: eb0cf464-0668-40f8-8222-feb6bae6d3d5
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 13b3fdea120a857cc0c8e890bba87c13823c3a38
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 141c8ad17bd1c58d2bbe729aeacc88f498c8c619
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80819565"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962874"
 ---
 # <a name="deploy-a-single-directaccess-server-using-the-getting-started-wizard"></a>作業の開始ウィザードを使用した単一の DirectAccess サーバーの展開
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016
+>適用先:Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックでは、単一の DirectAccess サーバーを使用し、短い簡単な手順で DirectAccess を展開できる、DirectAccess のシナリオについて説明します。  
   
-## <a name="before-you-begin-deploying-see-the-list-of-unsupported-configurations-known-issues-and-prerequisites"></a>展開を開始する前に、サポートされない構成、既知の問題、前提条件のリストを参照してください  
+## <a name="before-you-begin-deploying-see-the-list-of-unsupported-configurations-known-issues-and-prerequisites"></a>展開を開始する前に、サポートされない構成、既知の問題、前提条件の一覧を参照してください  
 DirectAccess を展開する前に、次のトピックを使用して、前提条件とその他の情報を確認できます。  
   
 -   [DirectAccess のサポートされない構成](../../../remote-access/directaccess/DirectAccess-Unsupported-Configurations.md)  
@@ -29,7 +29,7 @@ DirectAccess を展開する前に、次のトピックを使用して、前提�
 -   [DirectAccess の展開の前提条件](../../../remote-access/directaccess/Prerequisites-for-Deploying-DirectAccess.md)  
   
 ## <a name="scenario-description"></a><a name="BKMK_OVER"></a>シナリオの説明  
-このシナリオでは、Windows Server 2016、Windows Server 2012 R2、または Windows Server 2012 のいずれかを実行している1台のコンピューターを、ウィザードの簡単な手順で既定の設定を使用して DirectAccess サーバーとして構成します。たとえば、インフラストラクチャの設定を構成する必要はありません。証明機関 (CA) または Active Directory セキュリティグループとして。  
+このシナリオでは、Windows Server 2016、Windows Server 2012 R2、または Windows Server 2012 のいずれかを実行している1台のコンピューターを、簡単なウィザードの手順で既定の設定で DirectAccess サーバーとして構成します。これにより、証明機関 (CA) や Active Directory セキュリティグループなどのインフラストラクチャ設定を構成する必要がありません。  
   
 > [!NOTE]  
 > 設定をカスタマイズして高度な展開を構成する場合は、「 [Deploy a Single DirectAccess Server with Advanced Settings](../../../remote-access/directaccess/single-server-advanced/../../../remote-access/directaccess/single-server-advanced/../../../remote-access/directaccess/single-server-advanced/Deploy-a-Single-DirectAccess-Server-with-Advanced-Settings.md)」を参照してください。  
@@ -65,31 +65,31 @@ DirectAccess を展開する前に、次のトピックを使用して、前提�
 ### <a name="planning-steps"></a>計画の手順  
 計画は 2 つのフェーズに分かれています。  
   
-1.  DirectAccess インフラストラクチャの計画。 このフェーズでは、DirectAccess 展開を開始する前に設定する必要があるネットワーク インフラストラクチャの計画について説明します。 これには、ネットワークとサーバーのトポロジ、DirectAccess ネットワーク ロケーション サーバーの計画が含まれます。  
+1.  DirectAccess インフラストラクチャの計画: このフェーズでは、DirectAccess 展開を開始する前に設定する必要があるネットワーク インフラストラクチャの計画について説明します。 これには、ネットワークとサーバーのトポロジ、DirectAccess ネットワーク ロケーション サーバーの計画が含まれます。  
   
-2.  DirectAccess 展開の計画。 このフェーズでは、DirectAccess 展開の準備に必要な計画手順について説明します。 これには、DirectAccess クライアント コンピューター、サーバーとクライアントの認証要件、VPN の設定、インフラストラクチャ サーバー、管理サーバーとアプリケーション サーバーの計画が含まれます。  
+2.  DirectAccess 展開の計画: このフェーズでは、DirectAccess 展開の準備に必要な計画手順について説明します。 これには、DirectAccess クライアント コンピューター、サーバーとクライアントの認証要件、VPN の設定、インフラストラクチャ サーバー、管理サーバーとアプリケーション サーバーの計画が含まれます。  
   
 詳細な計画手順については、「[高度な DirectAccess 展開を計画する](../../../remote-access/directaccess/single-server-advanced/Plan-an-Advanced-DirectAccess-Deployment.md)」を参照してください。  
   
-### <a name="deployment-steps"></a>展開の手順  
+### <a name="deployment-steps"></a>デプロイメントの手順  
 展開は 3 つのフェーズに分かれています。  
   
-1.  DirectAccess インフラストラクチャの構成-このフェーズには、ネットワークとルーティングの構成、ファイアウォール設定の構成 (必要な場合)、証明書、DNS サーバー、Active Directory と GPO 設定、および DirectAccess ネットワークの場所の構成が含まれます。server.  
+1.  DirectAccess インフラストラクチャの構成-このフェーズでは、ネットワークとルーティングの構成、ファイアウォール設定の構成 (必要な場合)、証明書、DNS サーバー、Active Directory と GPO 設定、および DirectAccess ネットワークロケーションサーバーの構成を行います。  
   
-2.  DirectAccess サーバーの設定を構成しています。 このフェーズでは、DirectAccess クライアント コンピューター、DirectAccess サーバー、インフラストラクチャ サーバー、管理サーバーとアプリケーション サーバーの構成を行います。  
+2.  DirectAccess サーバー設定の構成: このフェーズでは、DirectAccess クライアント コンピューター、DirectAccess サーバー、インフラストラクチャ サーバー、管理サーバーとアプリケーション サーバーの構成を行います。  
   
 3.  デプロイを検証しています。 このフェーズには、展開が必要に応じて動作していることを確認するための手順が含まれています。  
   
 詳細な展開手順については、「 [Install and Configure Basic DirectAccess](../../../remote-access/directaccess/single-server-wizard/Install-and-Configure-Basic-DirectAccess.md)」を参照してください。  
   
-## <a name="practical-applications"></a><a name="BKMK_APP"></a>実用的なアプリケーション  
+## <a name="practical-applications"></a><a name="BKMK_APP"></a>実際の適用例  
 単一のリモート アクセス サーバーを展開すると、次のことが実現されます。  
   
 -   簡単にアクセスできます。 Windows 10、Windows 8.1、Windows 8、または Windows 7 を実行する管理されたクライアントコンピューターを DirectAccess クライアントとして構成できます。 そうしたクライアントは、インターネット上に存在しているときは、VPN 接続にログインしなくても、DirectAccess を経由して内部ネットワーク リソースにアクセスできます。 これらのオペレーティング システムを搭載していないクライアント コンピューターは、従来の VPN 接続を使用して内部ネットワークに接続できます。  
   
 -   簡単に管理できます。 リモート アクセス管理者は、クライアント コンピューターが企業内部ネットワーク上に存在しない場合でも、インターネット上に存在する DirectAccess クライアント コンピューターを DirectAccess 経由でリモート管理できます。 企業の要件を満たしていないクライアント コンピューターを管理サーバーによって自動的に修正できます。 DirectAccess と VPN は両方とも同じコンソールで管理され、同じウィザードを使用します。 さらに、単一のリモート アクセス管理コンソールから 1 台以上のリモート アクセス サーバーを管理できます。  
   
-## <a name="roles-and-features-included-in-this-scenario"></a><a name="BKMK_NEW"></a>このシナリオに含まれる役割と機能  
+## <a name="roles-and-features-included-in-this-scenario"></a><a name="BKMK_NEW"></a>このシナリオに含まれている役割と機能  
 次の表に、このシナリオに必要な役割と機能を示します。  
   
 |役割/機能|このシナリオのサポート方法|  
@@ -116,7 +116,7 @@ DirectAccess を展開する前に、次のトピックを使用して、前提�
         > 一部またはすべてのクライアントコンピューターで Windows 7 を実行している場合は、セットアップの詳細ウィザードを使用する必要があります。 このドキュメントに記載されているはじめにセットアップウィザードでは、Windows 7 を実行しているクライアントコンピューターはサポートされません。 DirectAccess で Windows 7 クライアントを使用する方法については[、詳細設定を使用した単一の Directaccess サーバーの展開](../../../remote-access/directaccess/single-server-advanced/../../../remote-access/directaccess/single-server-advanced/../../../remote-access/directaccess/single-server-advanced/Deploy-a-Single-DirectAccess-Server-with-Advanced-Settings.md)に関する説明を参照してください。  
   
         > [!NOTE]  
-        > DirectAccess クライアントとして使用できるオペレーティングシステムは、Windows 10 Enterprise、Windows 8.1 Enterprise、Windows Server 2016、Windows Server 2012 R2、windows Server 2012、Windows 8 Enterprise、Windows Server 2008 R2、Windows 7 Enterprise、およびの各オペレーティングシステムのみです。Windows 7 Ultimate。  
+        > DirectAccess クライアントとして使用できるオペレーティングシステムは、Windows 10 Enterprise、Windows 8.1 Enterprise、Windows Server 2016、Windows Server 2012 R2、windows Server 2012、Windows 8 Enterprise、Windows Server 2008 R2、Windows 7 Enterprise、および Windows 7 Ultimate だけです。  
   
 -   インフラストラクチャと管理サーバーの要件:  
   
@@ -144,12 +144,10 @@ DirectAccess を展開する前に、次のトピックを使用して、前提�
 ## <a name="see-also"></a><a name="BKMK_LINKS"></a>関連項目  
 次の表に、関連リソースへのリンクを示します。  
   
-|コンテンツの種類|参照|  
+|コンテンツ タイプ|参考資料|  
 |--------|-------|  
-|**TechNet のリモートアクセス**|[リモートアクセス TechCenter](https://technet.microsoft.com/network/bb545655.aspx)|  
-|**ツールと設定**|[リモートアクセスの PowerShell コマンドレット](https://technet.microsoft.com/library/hh918399.aspx)|  
-|**コミュニティ リソース**|[DirectAccess の Wiki エントリ](https://go.microsoft.com/fwlink/?LinkId=236871)|  
-|**関連テクノロジ**|[IPv6 のしくみ](https://technet.microsoft.com/library/cc781672(v=WS.10).aspx)|  
+|**TechNet 内のリモート アクセス**|[リモート アクセス TechCenter](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn756544(v=ws.11))|  
+|**ツールと設定**|[Remote Access PowerShell コマンドレット](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn756544(v=ws.11))|  
+|**コミュニティ リソース**|[Wiki の DirectAccess 項目](https://go.microsoft.com/fwlink/?LinkId=236871)|  
+|**関連テクノロジ**|[How IPv6 works (IPv6 の動作のしくみ)](/previous-versions/windows/it-pro/windows-server-2003/cc781672(v=ws.10))|  
   
-
-

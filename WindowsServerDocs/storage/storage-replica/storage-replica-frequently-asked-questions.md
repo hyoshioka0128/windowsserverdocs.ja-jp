@@ -8,12 +8,12 @@ ms.topic: get-started-article
 author: nedpyle
 ms.date: 04/15/2020
 ms.assetid: 12bc8e11-d63c-4aef-8129-f92324b2bf1b
-ms.openlocfilehash: 9978fd3e926ade4680ca6563d9d39b0851d893e9
-ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
+ms.openlocfilehash: d9e0a3855c324ca9b5c7de90d78535024a0a7a9d
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "85070494"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964054"
 ---
 # <a name="frequently-asked-questions-about-storage-replica"></a>記憶域レプリカについてよく寄せられる質問
 
@@ -31,11 +31,11 @@ ms.locfileid: "85070494"
 
 Azure でのゲストクラスタリングに関するその他の注意事項については[、「Microsoft Azure での IAAS VM ゲストクラスターのデプロイ」](https://techcommunity.microsoft.com/t5/Failover-Clustering/Deploying-IaaS-VM-Guest-Clusters-in-Microsoft-Azure/ba-p/372126)を参照してください。
 
-重要:
+重要なメモ:
 
 1. Azure では、共有 VHDX ゲストクラスタリングがサポートされていないため、Windows フェールオーバークラスターの仮想マシンでは、従来の共有記憶域の永続的なディスク予約クラスタリングまたは記憶域スペースダイレクトに iSCSI ターゲットを使用する必要があります。
 2. 記憶域スペースダイレクトベースの記憶域レプリカのクラスター化には Azure Resource Manager テンプレートがあります。「 [Create a 記憶域スペースダイレクト SOFS クラスターと Azure リージョン間でのディザスターリカバリーのための記憶域レプリカを作成する](https://aka.ms/azure-storage-replica-cluster)」をご覧ください。  
-3. クラスターからクラスターへの RPC 通信 (クラスター間のアクセスを許可するためにクラスター Api によって必要) では、CNO に対してネットワークアクセスを構成する必要があります。 Tcp ポート135と TCP ポート49152を超える動的範囲を許可する必要があります。 [AZURE IAAS VM での Windows Server フェールオーバークラスターの構築に関するリファレンス-第2部のネットワークと作成](https://blogs.technet.microsoft.com/askcore/2015/06/24/building-windows-server-failover-cluster-on-azure-iaas-vm-part-2-network-and-creation/)。  
+3. クラスターからクラスターへの RPC 通信 (クラスター間のアクセスを許可するためにクラスター Api によって必要) では、CNO に対してネットワークアクセスを構成する必要があります。 Tcp ポート135と TCP ポート49152を超える動的範囲を許可する必要があります。 [AZURE IAAS VM での Windows Server フェールオーバークラスターの構築に関するリファレンス-第2部のネットワークと作成](/archive/blogs/askcore/building-windows-server-failover-cluster-on-azure-iaas-vm-part-2-network-and-creation)。  
 4. 2ノードのゲストクラスターを使用できます。各ノードでは、記憶域レプリカによってレプリケートされた非対称クラスターにループバック iSCSI を使用します。 しかし、この方法はパフォーマンスが非常に低く、ワークロードやテストが非常に限られている場合にのみ使用してください。  
 
 ## <a name="how-do-i-see-the-progress-of-replication-during-initial-sync"></a><a name="FAQ2"></a>初期同期中にレプリケーションの進行状況を操作方法確認するには  

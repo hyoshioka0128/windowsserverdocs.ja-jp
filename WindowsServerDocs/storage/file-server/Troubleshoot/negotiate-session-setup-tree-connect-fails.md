@@ -1,19 +1,19 @@
 ---
-title: ネゴシエート、セッションのセットアップ、およびツリー接続の失敗
+title: ネゴシエーション、セッション設定、ツリー接続のエラー
 description: ネゴシエート、セッションのセットアップ、およびツリー接続のエラーのトラブルシューティングを行う方法について説明します。
 author: Deland-Han
 manager: dcscontentpm
 ms.topic: article
 ms.author: delhan
 ms.date: 12/25/2019
-ms.openlocfilehash: 13124176e530aa7b74d18a38c906bf5297be511e
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 2bad602f934d844074ee96df06bf9234fdbf943f
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80815385"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961164"
 ---
-# <a name="negotiate-session-setup-and-tree-connect-failures"></a>ネゴシエート、セッションのセットアップ、およびツリー接続の失敗
+# <a name="negotiate-session-setup-and-tree-connect-failures"></a>ネゴシエーション、セッション設定、ツリー接続のエラー
 
 この記事では、SMB ネゴシエート、セッションセットアップ、およびツリー接続要求中に発生したエラーのトラブルシューティング方法について説明します。
 
@@ -27,7 +27,7 @@ Windows Server 2008 R2 を使用している場合は、この問題の修正プ
 
 ## <a name="session-setup-fails"></a>セッションの設定が失敗する
 
-Smb サーバーは smb クライアントからセットアップ要求\_smb セッションを受信しましたが、応答できませんでした。
+Smb サーバーは smb クライアントから SMB セッションセットアップ要求を受信し \_ ましたが、応答できませんでした。
 
 サーバーの完全修飾ドメイン名 (FQDN) またはネットワーク基本入出力システム (NetBIOS) 名が、汎用名前付け規則 (UNC) パスに含まれる場合、Windows は認証に Kerberos を使用します。
 
@@ -38,7 +38,7 @@ Smb サーバーは smb クライアントからセットアップ要求\_smb �
 
 さらに、次のチェックを行います。
 
-- SMB セッション\_セットアップ要求のセキュリティ blob を調べて、正しい資格情報が送信されていることを確認します。
+- SMB セッションセットアップ要求のセキュリティ blob を調べ \_ て、正しい資格情報が送信されていることを確認してください。
 
 - SMB サーバー名のセキュリティ強化を無効にしてください (**SmbServerNameHardeningLevel = 0**)。
 
@@ -50,13 +50,13 @@ Smb サーバーは smb クライアントからセットアップ要求\_smb �
 
 ユーザーアカウントの資格情報に、共有フォルダーと NT ファイルシステム (NTFS) の両方のアクセス許可があることを確認します。
 
-一般的なツリー接続エラーの原因については、「3.3.5.7 to a [SMB2 Tree\_Connect Request](https://docs.microsoft.com/openspecs/windows_protocols/ms-smb2/652e0c14-5014-4470-999d-b174d7b2da87)」を参照してください。 2つの一般的なステータスコードの解決策を次に示します。
+一般的なツリー接続エラーの原因については、「 [3.3.5.7 受信 SMB2 Tree \_ connect Request](/openspecs/windows_protocols/ms-smb2/652e0c14-5014-4470-999d-b174d7b2da87)」を参照してください。 2つの一般的なステータスコードの解決策を次に示します。
 
-\[の状態\_無効な\_ネットワーク\_名\]
+\[状態 \_ 無効 \_ ネットワーク \_ 名\]
 
 サーバーに共有が存在し、SMB クライアント要求に正しく入力されていることを確認してください。
 
-\[ステータス\_アクセス\_拒否されました\]
+\[ステータス \_ へのアクセスが拒否され \_ ました\]
 
 共有によって使用されているディスクとフォルダーが存在し、アクセス可能であることを確認します。
 
@@ -86,12 +86,12 @@ SMBv3 以降を使用している場合は、サーバーと共有に暗号化�
 
 - Samba とサードパーティデバイスは、暗号化をサポートしていない可能性があります。 詳細については、製品ドキュメントを参照してください。
 
-## <a name="references"></a>参照
+## <a name="references"></a>リファレンス
 
 詳細については、次の記事を参照してください。
 
-[3.3.5.4 SMB2 NEGOTIATE 要求を受信しています](https://docs.microsoft.com/openspecs/windows_protocols/ms-smb2/b39f253e-4963-40df-8dff-2f9040ebbeb1)
+[3.3.5.4 SMB2 NEGOTIATE 要求を受信しています](/openspecs/windows_protocols/ms-smb2/b39f253e-4963-40df-8dff-2f9040ebbeb1)
 
-[3.3.5.5 セットアップ要求\_の SMB2 セッションの受信](https://docs.microsoft.com/openspecs/windows_protocols/ms-smb2/e545352b-9f2b-4c5e-9350-db46e4f6755e)
+[3.3.5.5 SMB2 SESSION セットアップ要求を受信しています \_](/openspecs/windows_protocols/ms-smb2/e545352b-9f2b-4c5e-9350-db46e4f6755e)
 
-[3.3.5.7 接続要求の SMB2 ツリー\_受信](https://docs.microsoft.com/openspecs/windows_protocols/ms-smb2/652e0c14-5014-4470-999d-b174d7b2da87?redirectedfrom=MSDN)
+[3.3.5.7 SMB2 TREE \_ CONNECT 要求の受信](/openspecs/windows_protocols/ms-smb2/652e0c14-5014-4470-999d-b174d7b2da87)

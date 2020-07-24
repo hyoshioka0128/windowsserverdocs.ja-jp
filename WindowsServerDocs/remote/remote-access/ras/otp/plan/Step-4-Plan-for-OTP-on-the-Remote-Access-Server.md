@@ -8,16 +8,16 @@ ms.topic: article
 ms.assetid: 4b97b2fd-767a-45c1-a64e-5b3edd0c8a47
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 789fd72e2f3fc1693bf4803f33dcc1e7f1b3acc3
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0f731dccc4c8dae720b3bf0c66cd601ec28be4ad
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80855775"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961034"
 ---
 # <a name="step-4-plan-for-otp-on-the-remote-access-server"></a>手順4リモートアクセスサーバーで OTP を計画する
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016
+>適用先:Windows Server (半期チャネル)、Windows Server 2016
 
 ワンタイムパスワード (OTP) の RADIUS サーバーと証明書の設定を計画した後、リモートアクセス OTP の展開を計画するための最後の手順は、リモートアクセスサーバーでのクライアント OTP 設定を計画することです。  
   
@@ -41,7 +41,5 @@ OTP 認証が有効になっている場合、追加の承認にスマートカ�
   
 ## <a name="see-also"></a><a name="BKMK_Links"></a>関連項目  
   
--   [OTP 認証を使用して DirectAccess を構成する](https://technet.microsoft.com/windows-server-docs/networking/remote-access/ras/otp/deploy-ra-otp)  
+-   [OTP 認証を使用して DirectAccess を構成する](../deploy-ra-otp.md)  
   
-
-

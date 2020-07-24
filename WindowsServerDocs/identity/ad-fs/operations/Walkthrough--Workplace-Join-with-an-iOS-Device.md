@@ -8,14 +8,14 @@ ms.date: 10/18/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 7b1d2a5f5c32d55e482f5f53a04668b34fc9aece
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 8c478e31c3a86203f6c5f249185659caf9881723
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80815995"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963474"
 ---
-# <a name="walkthrough-workplace-join-with-an-ios-device"></a>チュートリアル: iOS デバイスの Workplace Join
+# <a name="walkthrough-workplace-join-with-an-ios-device"></a>チュートリアル:職場への iOS デバイスの参加
 
 
 > [!IMPORTANT] 
@@ -36,33 +36,30 @@ ms.locfileid: "80815995"
 
 #### <a name="to-join-an-ios-device-to-a-workplace"></a>iOS デバイスを職場に参加させるには
 
-1. -   **Azure Active Directory Device Registration サービスが構成済みの DRS である場合:** Apple Safari を開き、iOS デバイスの Azure Active Directory Device Registration service Over Air Profile エンドポイントに移動します。 <`https://enterpriseregistration.windows.net/enrollmentserver/otaprofile/<yourdomainname` > <`yourdomainname`> で構成したドメイン名です。 たとえば、ドメイン名が contoso.com の場合、URL は次のようになります。`https://enterpriseregistration.windows.net/enrollmentserver/otaprofile/contoso.com`
+1. -   **Azure Active Directory Device Registration サービスが構成済みの DRS である場合:** Apple Safari を開き、iOS デバイスの Azure Active Directory Device Registration service Over Air Profile エンドポイントに移動し `https://enterpriseregistration.windows.net/enrollmentserver/otaprofile/<yourdomainname` ます。 <> <`yourdomainname`> は Azure Active Directory で構成したドメイン名です。 たとえば、ドメイン名が contoso.com の場合、URL は次のようになります。`https://enterpriseregistration.windows.net/enrollmentserver/otaprofile/contoso.com`
 
-   -   **オンプレミスの drs が構成済みの drs**である場合: Apple Safari を開いて、iOS デバイスのデバイス登録サービス (DRS) を介して無線プロファイルのエンドポイントに移動し `https://adf1s.contoso.com/enrollmentserver/otaprofile`
+   -   **オンプレミスの drs が構成済みの drs**である場合: Apple Safari を開き、iOS デバイス用のデバイス登録サービス (DRS) を介して通信プロファイルのエンドポイントに移動します。`https://adf1s.contoso.com/enrollmentserver/otaprofile`
 
-   ユーザーにこの URL を伝えるには多くの方法があります。 推奨される方法の 1 つは、AD FS のカスタム アプリケーション アクセス拒否メッセージでこの URL を発行するというものです。 これについては、「 [アプリケーション アクセス ポリシーと、カスタム アクセス拒否メッセージを作成します](https://docs.microsoft.com/azure/active-directory/active-directory-device-registration-on-premises-setup#create-an-application-access-policy-and-custom-access-denied-message)」セクションを参照してください。
+   ユーザーにこの URL を伝えるには多くの方法があります。 その 1 つとして、AD FS 内のカスタム アプリケーション アクセス拒否メッセージで、この URL を発行する方法が推奨されます。 これについては、後の「[アプリケーションアクセスポリシーとカスタムアクセス拒否メッセージを作成する](/azure/active-directory/active-directory-device-registration-on-premises-setup#create-an-application-access-policy-and-custom-access-denied-message)」セクションで説明します。
 
-2. 会社のドメインアカウント ( <strong>roberth@contoso.com</strong>とパスワード: <strong>P@ssword</strong>) を使用して、web ページにログオンします。
+2. 会社のドメインアカウントとパスワードを使用して、web ページにログオンします。 <strong>roberth@contoso.com</strong> <strong>P@ssword</strong>
 
-3. プロファイルのインストールを求められます。 **[プロファイルのインストール]** 画面で、 **[インストール]** をクリックします。
+3. プロファイルのインストールを求められます。 **[プロファイルのインストール]** 画面で、**[インストール]** をクリックします。
 
-4. プロファイルのインストール確認メッセージが表示されたら、 **[今すぐインストール]** をクリックします。
+4. プロファイルのインストール確認メッセージが表示されたら、**[今すぐインストール]** をクリックします。
 
 5. デバイスのロック解除にパスコードが必要な場合は、パスコードの入力を求められます。
 
-6. プロファイルのインストールが完了すると、 **[インストール完了]** 画面が表示されます。 **[完了]** をクリックします。
+6. プロファイルのインストールが完了すると、**[インストール完了]** 画面が表示されます。 **[Done]** をクリックします。
 
    Safari に戻ります。 Safari を閉じることができる旨のメッセージが表示されます。
 
 > [!TIP]
-> ワークプレース ジョイン プロファイルを表示または削除するには、iOS デバイスで **[設定]** アイコンをクリックし、 **[一般]** 、 **[プロファイル]** の順にクリックします。
+> ワークプレース ジョイン プロファイルを表示または削除するには、iOS デバイスで **[設定]** アイコンをクリックし、**[一般]**、**[プロファイル]** の順にクリックします。
 
 ## <a name="see-also"></a>参照
 
 
 - [任意のデバイスからの職場への参加による業務用アプリケーション間の SSO とシームレスな 2 要素認証](Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)
 - [Windows Server 2012 R2 で AD FS 用のラボ環境をセットアップする](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)
-- [チュートリアル: Windows デバイスでの Workplace Join](Walkthrough--Workplace-Join-with-a-Windows-Device.md)
-
-
-
+- [チュートリアル: Workplace Join で Windows デバイスをワークプレースに参加させる](Walkthrough--Workplace-Join-with-a-Windows-Device.md)

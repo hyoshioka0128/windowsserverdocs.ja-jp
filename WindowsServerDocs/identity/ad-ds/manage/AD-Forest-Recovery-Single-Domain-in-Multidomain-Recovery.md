@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: 267541be-2ea7-4af6-ab34-8b5a3fedee2d
 ms.technology: identity-adds
-ms.openlocfilehash: 13153358f50302de722109bfe101911e3bac4708
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 84ce874ea85cce7ea562fcd5169902086732b4c4
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80823445"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86960844"
 ---
 # <a name="ad-forest-recovery---recovering-a-single-domain-in-a-multidomain-forest"></a>AD フォレストの回復-マルチドメインフォレスト内の単一ドメインの回復
 
@@ -45,7 +45,7 @@ ms.locfileid: "80823445"
 
 残留オブジェクトの削除は、他のオプションに関連するダウンタイムのリスクがない大規模な組織にとっては便利です。  
 
-詳細については、「 [Repadmin を使用して残留オブジェクトを削除する](https://technet.microsoft.com/library/cc785298.aspx)」を参照してください。
+詳細については、「 [Repadmin を使用して残留オブジェクトを削除する](/previous-versions/windows/it-pro/windows-server-2003/cc785298(v=ws.10))」を参照してください。
 
 ## <a name="next-steps"></a>次の手順
 

@@ -1,24 +1,24 @@
 ---
-title: カスタムポートで証明書キーに基づく更新の証明書の登録 Web サービスを構成する
+title: カスタム ポート上で証明書キーベースの書き換え用の証明書の登録 Web サービスを構成する
 author: Deland-Han
 ms.author: delhan
 manager: dcscontentpm
 ms.date: 11/12/2019
 ms.topic: article
 ms.prod: windows-server
-ms.openlocfilehash: a21a34448248658d2ceffcad07d2a4e6e17b9348
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 5b2da1858a7f0a3669accfdb2dda88a23f64edc0
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856345"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964254"
 ---
-# <a name="configuring-certificate-enrollment-web-service-for-certificate-key-based-renewal-on-a-custom-port"></a>カスタムポートで証明書キーに基づく更新の証明書の登録 Web サービスを構成する
+# <a name="configuring-certificate-enrollment-web-service-for-certificate-key-based-renewal-on-a-custom-port"></a>カスタム ポート上で証明書キーベースの書き換え用の証明書の登録 Web サービスを構成する
 
 > 執筆者: Windows グループを使用した Jitesh Thakur、Meera Mohideen、Technical advisor。
 Windows グループを使用した ankit Tyagi サポートエンジニア
 
-## <a name="summary"></a>要約
+## <a name="summary"></a>まとめ
 
 この記事では、CEP および CES の自動更新機能を利用するための証明書キーベースの更新に443以外のカスタムポートに証明書の登録ポリシー Web サービス (CEP) と証明書の登録 Web サービス (CES) を実装する手順について説明します。
 
@@ -43,7 +43,7 @@ Windows グループを使用した ankit Tyagi サポートエンジニア
 
 - 証明書の有効期間が終了すると、コンピューターは証明書ベースの CES キーベースの書き換えを使用して、同じチャネルで証明書を更新します。
 
-![配置](media/certificate-enrollment-certificate-key-based-renewal-1.png)
+![deployment](media/certificate-enrollment-certificate-key-based-renewal-1.png)
 
 ## <a name="configuration-instructions"></a>構成の手順
 
@@ -74,9 +74,9 @@ Windows グループを使用した ankit Tyagi サポートエンジニア
 既存のコンピューターテンプレートを複製し、テンプレートの次の設定を構成することができます。
 
 1. 証明書テンプレートの [サブジェクト名] タブで、[**自動登録更新要求に対して既存の証明書のサブジェクト情報**を**要求**して使用する] オプションが選択されていることを確認します。
-   新しいテンプレートの ![](media/certificate-enrollment-certificate-key-based-renewal-2.png) 
+   ![新しいテンプレート](media/certificate-enrollment-certificate-key-based-renewal-2.png) 
 
-2. 発行の **[要件]** タブに切り替えて、 **[CA 証明書マネージャーの承認]** チェックボックスをオンにします。
+2. [発行の**要件**] タブに切り替えて、[ **CA 証明書マネージャーの承認**] チェックボックスをオンにします。
    ![発行の要件](media/certificate-enrollment-certificate-key-based-renewal-3.png) 
 
 3. **読み取り**と**登録**のアクセス許可を、このテンプレートの**cepの vc**サービスアカウントに割り当てます。
@@ -93,18 +93,18 @@ Windows グループを使用した ankit Tyagi サポートエンジニア
 
 CEPCES01 インスタンスをインストールするには、次のいずれかの方法を使用します。
 
-**方法1**
+**方法 1**
 
 ユーザー名とパスワードの認証に CEP と CES を有効にするための詳細な手順については、次の記事を参照してください。
 
-[証明書の登録ポリシー Web サービスガイダンス](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831625(v=ws.11))
+[証明書の登録ポリシー Web サービスガイダンス](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831625(v=ws.11))
 
-[証明書の登録 Web サービスガイダンス](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831822(v=ws.11)#configure-a-ca-for-the-certificate-enrollment-web-service)
+[証明書の登録 Web サービスガイダンス](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831822(v=ws.11)#configure-a-ca-for-the-certificate-enrollment-web-service)
 
 > [!Note]
 > CEP と CES の両方のインスタンスのユーザー名とパスワードの認証を構成する場合は、[キーベースの書き換えを有効にする] オプションを選択しないようにしてください。
 
-**方法2**
+**方法 2**
 
 次の PowerShell コマンドレットを使用して、CEP インスタンスと CES インスタンスをインストールできます。
 
@@ -121,7 +121,7 @@ Install-AdcsEnrollmentPolicyWebService -AuthenticationType Username -SSLCertThum
 このコマンドは、ユーザー名とパスワードを認証に使用することを指定することによって、証明書の登録ポリシー Web サービス (CEP) をインストールします。 
 
 > [!Note]
-> このコマンドでは、\<**Sslcertthumbprint**\> は、IIS のバインドに使用される証明書の拇印です。
+> このコマンドで \<**SSLCertThumbPrint**\> は、は IIS のバインドに使用される証明書の拇印です。
 
 ```PowerShell
 Install-AdcsEnrollmentWebService -ApplicationPoolIdentity -CAConfig "CA1.contoso.com\contoso-CA1-CA" -SSLCertThumbprint "sslCertThumbPrint" -AuthenticationType Username
@@ -134,7 +134,7 @@ Install-AdcsEnrollmentWebService -ApplicationPoolIdentity -CAConfig "CA1.contoso
 インストールが正常に完了すると、インターネットインフォメーションサービス (IIS) マネージャーコンソールに次の表示が表示されます。
 ![IIS マネージャー](media/certificate-enrollment-certificate-key-based-renewal-4.png) 
 
-**[既定の Web サイト]** で、 **[ADPolicyProvider_CEP_UsernamePassword]** を選択し、 **[アプリケーションの設定]** を開きます。 **ID**と**URI**をメモしておきます。
+[**既定の Web サイト**] で、[ **ADPolicyProvider_CEP_UsernamePassword**] を選択し、[**アプリケーションの設定**] を開きます。 **ID**と**URI**をメモしておきます。
 
 管理用の**フレンドリ名**を追加できます。
 
@@ -151,7 +151,7 @@ Install-AdcsEnrollmentPolicyWebService -AuthenticationType Certificate -SSLCertT
 このコマンドは、証明書の登録ポリシー Web サービス (CEP) をインストールし、認証に証明書を使用することを指定します。 
 
 > [!Note]
-> このコマンドでは、\<SSLCertThumbPrint\> は、IIS のバインドに使用される証明書の拇印です。 
+> このコマンドで \<SSLCertThumbPrint\> は、は IIS のバインドに使用される証明書の拇印です。 
 
 キーベースの更新により、証明書クライアントは既存の証明書のキーを使用して認証を行うことで、証明書を更新できます。 キーベースの書き換えモードでは、サービスはキーベースの更新に設定されている証明書テンプレートのみを返します。
 
@@ -173,7 +173,7 @@ Install-AdcsEnrollmentWebService -CAConfig "CA1.contoso.com\contoso-CA1-CA" -SSL
 インストールが正常に完了すると、IIS マネージャーコンソールに次の表示が表示されます。
 ![IIS マネージャー](media/certificate-enrollment-certificate-key-based-renewal-5.png) 
 
-既定の **[Web サイト]** の **[KeyBasedRenewal_ADPolicyProvider_CEP_Certificate]** を選択し、 **[アプリケーションの設定]** を開きます。 **ID**と**URI**をメモしておきます。 管理用の**フレンドリ名**を追加できます。
+[既定の**Web サイト**] の [ **KeyBasedRenewal_ADPolicyProvider_CEP_Certificate** ] を選択し、[**アプリケーションの設定**] を開きます。 **ID**と**URI**をメモしておきます。 管理用の**フレンドリ名**を追加できます。
 
 > [!Note]
 > インスタンスが新しいサーバーにインストールされている場合は、id を確認して、CEPCES01 インスタンスで生成されたものと同じ ID であることを確認してください。 値が異なる場合は、値を直接コピーして貼り付けることができます。
@@ -201,7 +201,7 @@ Set-ADUser -Identity cepcessvc -Add @{'msDS-AllowedToDelegateTo'=@('HOST/CA1.con
 ```
 
 > [!Note]
-> このコマンドでは、\<cepの vc\> がサービスアカウントであり、< CA1 > が証明機関です。
+> このコマンドで \<cepcessvc\> は、はサービスアカウントであり、<CA1.contoso.com >は証明機関です。
 
 > [!Important]
 > 同じジョブを実行するために制約付き委任を使用しているため、この構成では CA の RENEWALONBEHALOF フラグを有効にしません。 これにより、CA のセキュリティにサービスアカウントのアクセス許可が追加されないようにすることができます。
@@ -213,57 +213,57 @@ Set-ADUser -Identity cepcessvc -Add @{'msDS-AllowedToDelegateTo'=@('HOST/CA1.con
 2. [操作] ウィンドウで、[サイトバインドの編集] を選択します。 
 
 3. 既定のポート設定を443からカスタムポートに変更します。 例のスクリーンショットは、ポートの設定が49999であることを示しています。
-   ポートの変更 ![](media/certificate-enrollment-certificate-key-based-renewal-7.png) 
+   ![ポートの変更](media/certificate-enrollment-certificate-key-based-renewal-7.png) 
 
 ##### <a name="step-4-edit-the-ca-enrollment-services-object-on-active-directory"></a>手順 4: Active Directory で CA 登録サービスオブジェクトを編集する
 
 1. ドメインコントローラーで、adsiedit を開きます。
 
-2. [構成パーティションに接続](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/ff730188(v=ws.10))し、CA 登録サービスオブジェクトに移動します。
+2. [構成パーティションに接続](/previous-versions/windows/it-pro/windows-server-2003/ff730188(v=ws.10))し、CA 登録サービスオブジェクトに移動します。
    
    CN = ENTCA、CN = Enrollment Services、CN = Public Key Services、CN = Services、CN = Configuration、DC = contoso、DC = com
 
-3. CA オブジェクトを右クリックして編集します。 アプリケーション設定で見つかった CEP および CES サーバー Uri でカスタムポートを使用して、 **mspki-site-name**属性を変更します。 例 :
+3. CA オブジェクトを右クリックして編集します。 アプリケーション設定で見つかった CEP および CES サーバー Uri でカスタムポートを使用して、 **mspki-site-name**属性を変更します。 次に例を示します。
 
    ```
    140https://cepces.contoso.com:49999/ENTCA_CES_UsernamePassword/service.svc/CES0   
    181https://cepces.contoso.com:49999/ENTCA_CES_Certificate/service.svc/CES1
    ```
    
-   ![ADSI Edit](media/certificate-enrollment-certificate-key-based-renewal-8.png) 
+   ![ADSI エディター](media/certificate-enrollment-certificate-key-based-renewal-8.png) 
 
-#### <a name="configure-the-client-computer"></a>クライアントコンピューターを構成する
+#### <a name="configure-the-client-computer"></a>クライアント コンピューターの構成
 
-クライアントコンピューターで、登録ポリシーと自動登録ポリシーを設定します。 これを行うには、次の手順に従います。
+クライアントコンピューターで、登録ポリシーと自動登録ポリシーを設定します。 その手順は次のとおりです。
 
-1. [**開始** > **実行**] を選択し、「 **gpedit.msc**」と入力します。
+1. [実行の**開始**] を選択し、「  >  **Run** **gpedit.msc**」と入力します。
 
-2. **[コンピューターの構成]** の **[Windows の設定]**  > セキュリティの **[設定]** の順に選択し、 **[公開キーのポリシー]** をクリックし > ます。
+2. [**コンピューターの構成**] [  >  **Windows の設定**  >  ] [**セキュリティ設定**] の順に選択し、[**公開キーのポリシー**] をクリックします。
 
 3. 次のスクリーンショットの設定と一致するように、[**証明書サービスクライアント-自動登録] ポリシー**を有効にします。
    ![証明書グループポリシー](media/certificate-enrollment-certificate-key-based-renewal-9.png)
  
 4. **証明書サービスクライアント証明書の登録ポリシー**を有効にします。
 
-   a. **[追加]** をクリックして登録ポリシーを追加し、ADSI で編集した**USERNAMEPASSWORD**で CEP URI を入力します。
+   a. [**追加**] をクリックして登録ポリシーを追加し、ADSI で編集した**USERNAMEPASSWORD**で CEP URI を入力します。
    
-   b. **[認証の種類]** で、 **[ユーザー名/パスワード]** を選択します。
+   b. [**認証の種類**] で、[**ユーザー名/パスワード**] を選択します。
    
    c. 優先順位を**10**に設定し、ポリシーサーバーを検証します。
-      ![の登録ポリシー](media/certificate-enrollment-certificate-key-based-renewal-10.png)
+      ![登録ポリシー](media/certificate-enrollment-certificate-key-based-renewal-10.png)
 
    > [!Note]
    > ポート番号が URI に追加されていること、およびファイアウォールで許可されていることを確認してください。
 
 5. コンピューターの最初の証明書を certlm .msc で登録します。
-   ![の登録ポリシー](media/certificate-enrollment-certificate-key-based-renewal-11.png)
+   ![登録ポリシー](media/certificate-enrollment-certificate-key-based-renewal-11.png)
 
    KBR テンプレートを選択し、証明書を登録します。
-   ![の登録ポリシー](media/certificate-enrollment-certificate-key-based-renewal-12.png)
+   ![登録ポリシー](media/certificate-enrollment-certificate-key-based-renewal-12.png)
 
-6. **Gpedit.msc を**再度開きます。 **[証明書サービスクライアント-証明書の登録ポリシー]** を編集し、キーに基づく更新登録ポリシーを追加します。
+6. **Gpedit.msc を**再度開きます。 [**証明書サービスクライアント-証明書の登録ポリシー**] を編集し、キーに基づく更新登録ポリシーを追加します。
 
-   a. **[追加]** をクリックし、ADSI で編集した**証明書**を含む CEP URI を入力します。 
+   a. [**追加**] をクリックし、ADSI で編集した**証明書**を含む CEP URI を入力します。 
    
    b. 優先度を**1**に設定し、ポリシーサーバーを検証します。 最初に登録した証明書を認証して選択するよう求められます。
 
@@ -276,9 +276,9 @@ Set-ADUser -Identity cepcessvc -Add @{'msDS-AllowedToDelegateTo'=@('HOST/CA1.con
 
 自動更新が機能していることを確認するには、mmc を使用して同じキーを使用して証明書を更新することで、手動更新が機能することを確認します。 また、更新中に証明書を選択するように求めるメッセージが表示されます。 先ほど登録した証明書を選択できます。 プロンプトが必要です。
 
-コンピューターの個人証明書ストアを開き、[アーカイブ済み証明書] ビューを追加します。 これを行うには、ローカルコンピューターアカウントスナップインを mmc.exe に追加し、 **[証明書 (ローカルコンピューター)]** をクリックして強調表示します。 mmc の右側または上部にある [**操作] タブ**で **[表示]** をクリックし、 **[オプションの表示]** をクリックして、アーカイブされた **[証明書]** をクリックし、[ **OK]** を
+コンピューターの個人証明書ストアを開き、[アーカイブ済み証明書] ビューを追加します。 これを行うには、ローカルコンピューターアカウントスナップインを mmc.exe に追加し、[**証明書 (ローカルコンピューター)** ] をクリックして強調表示します。 mmc の右側または上部にある [**操作] タブ**で [**表示**] をクリックし **、[** アーカイブされた**証明書**] をクリックして、[ **OK**] をクリックします。
 
-### <a name="method-1"></a>方法 1 : 
+### <a name="method-1"></a>方法 1 
 
 次のコマンドを実行します。
 
@@ -286,7 +286,7 @@ Set-ADUser -Identity cepcessvc -Add @{'msDS-AllowedToDelegateTo'=@('HOST/CA1.con
 certreq -machine -q -enroll -cert <thumbprint> renew
 ```
 
-![コマンド](media/certificate-enrollment-certificate-key-based-renewal-14.png)
+![コマンドを使用します](media/certificate-enrollment-certificate-key-based-renewal-14.png)
 
 ### <a name="method-2"></a>方法 2
 
@@ -296,31 +296,31 @@ certreq -machine -q -enroll -cert <thumbprint> renew
 
 したがって、時刻を午後8:10 時に進める場合は、 19日に、更新ウィンドウがテンプレートで8時間に設定されていたため、Certutil-pulse (AE エンジンをトリガーする) を実行すると、証明書が登録されます。
 
-![コマンド](media/certificate-enrollment-certificate-key-based-renewal-15.png)
+![コマンドを使用します](media/certificate-enrollment-certificate-key-based-renewal-15.png)
  
 テストが完了したら、時刻の設定を元の値に戻してから、クライアントコンピューターを再起動します。
 
 > [!Note]
 > 前のスクリーンショットは、CA の日付が18に設定されているため、自動登録エンジンが想定どおりに動作することを示す例です。 そのため、証明書の発行は続行されます。 実際の状況では、この大量の更新は行われません。
 
-## <a name="references"></a>参照
+## <a name="references"></a>リファレンス
 
-[テストラボガイド: 証明書キーベースの書き換えのデモンストレーション](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj590165(v%3Dws.11))
+[Test Lab Guide: Demonstrating Certificate Key-Based Renewal](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj590165(v%3dws.11))
 
 [証明書の登録 Web サービス](https://techcommunity.microsoft.com/t5/Ask-the-Directory-Services-Team/Certificate-Enrollment-Web-Services/ba-p/397385)
 
-[AdcsEnrollmentPolicyWebService](https://docs.microsoft.com/powershell/module/adcsdeployment/install-adcsenrollmentpolicywebservice?view=win10-ps)
+[AdcsEnrollmentPolicyWebService](/powershell/module/adcsdeployment/install-adcsenrollmentpolicywebservice?view=win10-ps)
 
-[AdcsEnrollmentWebService](https://docs.microsoft.com/powershell/module/adcsdeployment/install-adcsenrollmentwebservice?view=win10-ps)
+[AdcsEnrollmentWebService](/powershell/module/adcsdeployment/install-adcsenrollmentwebservice?view=win10-ps)
 
-参照
+関連項目
 
-[Windows Server セキュリティフォーラム](https://aka.ms/adcsforum)
+[Windows Server セキュリティ フォーラム](https://aka.ms/adcsforum)
 
-[Active Directory 証明書サービス (AD CS) 公開キー基盤 (PKI) に関してよく寄せられる質問 (FAQ)](https://aka.ms/adcsfaq)
+[Active Directory 証明書サービス (AD CS) と公開キー基盤 (PKI) についてよく寄せられる質問 (FAQ) のページ](https://aka.ms/adcsfaq)
 
-[Windows PKI ドキュメントリファレンスおよびライブラリ](https://social.technet.microsoft.com/wiki/contents/articles/987.windows-pki-documentation-reference-and-library.aspx)
+[Windows PKI のドキュメント リファレンスおよびライブラリに関するページ](https://social.technet.microsoft.com/wiki/contents/articles/987.windows-pki-documentation-reference-and-library.aspx)
 
-[Windows PKI ブログ](https://blogs.technet.com/b/pki/)
+[Windows PKI ブログ](/archive/blogs/pki/)
 
 [Web 登録プロキシページのカスタムサービスアカウントで Kerberos の制約付き委任 (S4U2Proxy または Kerberos のみ) を構成する方法](https://support.microsoft.com/help/4494313/configuring-web-enrollment-proxy-for-s4u2proxy-constrained-delegation)

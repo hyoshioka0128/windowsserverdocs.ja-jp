@@ -1,6 +1,6 @@
 ---
 ms.assetid: b146f47e-3081-4c8e-bf68-d0f993564db2
-title: 仮想化ドメイン コントローラーの展開と構成
+title: 仮想化ドメイン コントローラーのデプロイと構成
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -8,28 +8,28 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 97d726f8bfbbe664dfdfd6b7000988f009174631
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 88f4f501e0bfd173d91a55ee60f226482139b6b2
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80824695"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963214"
 ---
-# <a name="virtualized-domain-controller-deployment-and-configuration"></a>仮想化ドメイン コントローラーの展開と構成
+# <a name="virtualized-domain-controller-deployment-and-configuration"></a>仮想化ドメイン コントローラーのデプロイと構成
 
->適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
-このトピックでは、次の内容について説明します。  
+このトピックの内容は次のとおりです。  
   
 -   [インストールに関する考慮事項](../../../ad-ds/get-started/virtual-dc/Virtualized-Domain-Controller-Deployment-and-Configuration.md#BKMK_InstallConsiderations)  
   
     プラットフォームの要件およびその他の重要な制約について説明します。  
   
--   [仮想化ドメインコントローラーの複製](../../../ad-ds/get-started/virtual-dc/Virtualized-Domain-Controller-Deployment-and-Configuration.md#BKMK_VDCCloning)  
+-   [仮想化ドメイン コントローラーの複製](../../../ad-ds/get-started/virtual-dc/Virtualized-Domain-Controller-Deployment-and-Configuration.md#BKMK_VDCCloning)  
   
     仮想化ドメイン コントローラーの複製プロセスについて詳しく説明します。  
   
--   [仮想化ドメインコントローラーの安全な復元](../../../ad-ds/get-started/virtual-dc/Virtualized-Domain-Controller-Deployment-and-Configuration.md#BKMK_VDCSafeRestore)  
+-   [仮想化ドメイン コントローラーの安全な復元](../../../ad-ds/get-started/virtual-dc/Virtualized-Domain-Controller-Deployment-and-Configuration.md#BKMK_VDCSafeRestore)  
   
     仮想化ドメイン コントローラーの安全な復元中に行われる検証について詳しく説明します。  
   
@@ -60,10 +60,10 @@ Windows Server 2012 ドメイン コントローラーを使用するには、Wi
   
 |||  
 |-|-|  
-|**仮想化製品**|**仮想化ドメインコントローラーと Vの ID をサポートします。**|  
-|**Hyper-v 機能を備えた Microsoft Windows Server 2012 server**|はい|  
-|**Microsoft Windows Server 2012 Hyper-v Server**|はい|  
-|**Hyper-v クライアント機能を備えた Microsoft Windows 8**|はい|  
+|**仮想化製品**|**仮想化ドメイン コントローラーおよび VMGID のサポート**|  
+|**Hyper-V 機能を備えた Microsoft Windows Server 2012 サーバー**|はい|  
+|**Microsoft Windows Server 2012 Hyper-V Server**|はい|  
+|**Hyper-V クライアント機能を備えた Microsoft Windows 8**|はい|  
 |**Windows Server 2008 R2 および Windows Server 2008**|いいえ|  
 |**Microsoft 以外の仮想化ソリューション**|ベンダーにお問い合わせください|  
   
@@ -74,7 +74,7 @@ Microsoft では Windows 7 Virtual PC、Virtual PC 2007、Virtual PC 2004、お�
 詳細については、「 [マイクロソフト以外のハードウェア仮想化ソフトウェアでマイクロソフトのソフトウェアを実行する場合のサポート ポリシー](https://support.microsoft.com/kb/897615)」を参照してください。  
   
 ### <a name="critical-caveats"></a>重要な注意事項  
-仮想化ドメイン コントローラーでは、次の安全な復元をサポートしていません。  
+仮想化ドメイン コントローラーでは、次の安全な復元をサポートしていません。**  
   
 -   既存の VHD ファイルに手動で上書きコピーされた VHD および VHDX ファイル  
   
@@ -88,20 +88,20 @@ Microsoft では Windows 7 Virtual PC、Virtual PC 2007、Virtual PC 2004、お�
 > [!WARNING]  
 > 仮想化ドメイン コントローラーの安全な復元は、システム状態バックアップおよび AD DS のごみ箱の代わりにはなりません。  
 >   
-> スナップショットの復元後、スナップショット後のドメイン コントローラーから発信された、レプリケートされていない変更のデルタは完全に失われます。 安全な復元では、ドメイン コントローラーのみが誤って検疫されるのを防ぐために、権限のない自動復元が実装されています。  
+> スナップショットの復元後、スナップショット後のドメイン コントローラーから発信された、レプリケートされていない変更のデルタは完全に失われます。 安全な復元では、ドメイン コントローラーのみが誤って検疫されるのを防ぐために、権限のない自動復元が実装されています。 **  
   
 USN バブルおよび残留オブジェクトの詳細については、「 [エラー 8606: "オブジェクトの作成に必要な属性が足りません" で失敗する Active Directory 操作のトラブルシューティング](https://support.microsoft.com/kb/2028495)」を参照してください。  
   
-## <a name="virtualized-domain-controller-cloning"></a><a name="BKMK_VDCCloning"></a>仮想化ドメインコントローラーの複製  
+## <a name="virtualized-domain-controller-cloning"></a><a name="BKMK_VDCCloning"></a>仮想化ドメイン コントローラーの複製  
 グラフィカル ツールまたは Windows PowerShell のいずれを使用しても、仮想化ドメイン コントローラーを複製は、複数の段階および手順に従って行います。 大きく分けると 3 つの段階があります。  
   
-**環境を準備する**  
+**環境の準備**  
   
 -   手順 1: ハイパーバイザーで VM-Generation ID、ひいては複製をサポートしているかを検証します。  
   
 -   手順 2: は、PDC エミュレーターの役割は複製中に、ドメイン コント ローラーによって Windows Server 2012 を実行して、それがオンラインであり、到達可能な複製されたドメイン コント ローラーによってホストされていることを確認します。  
   
-**ソースドメインコントローラーを準備する**  
+**ソース ドメイン コントローラーの準備**  
   
 -   手順 3: ソース ドメイン コントローラーを複製対象として許可します。  
   
@@ -111,7 +111,7 @@ USN バブルおよび残留オブジェクトの詳細については、「 [�
   
 -   手順 6: ソース ドメイン コントローラーをオフラインにします  
   
-**複製されたドメインコントローラーを作成する**  
+**複製されたドメイン コントローラーの作成**  
   
 -   手順 7: ソース VM をコピーまたはエクスポートし、その XML を追加します (まだコピーされていない場合)  
   
@@ -152,18 +152,18 @@ DC の複製を試みる前に、プライマリ ドメイン コントローラ
     >   
     > この RPC メソッドは新しいため、ネットワーク分析ソフトウェアには、新しい Opnum 28 のフィールドを既存の UUID E3514235-4B06-11D1-AB04-00C04FC2DCD2 に追加するための最新のパーサーが必要です。 これがないと、このトラフィックを解析できません。  
     >   
-    > 詳細については、「 [4.1.29 IDL_DRSAddCloneDC (Opnum 28)](https://msdn.microsoft.com/library/hh554213(v=prot.13).aspx)」をご覧ください。  
+    > 詳細については、「 [4.1.29 IDL_DRSAddCloneDC (Opnum 28)](/openspecs/windows_protocols/ms-drsr/ef0bfb1d-037b-4626-a6d9-cc7589bc5786)」をご覧ください。  
   
-***これもルーティングが完全でないネットワークの使用時に仮想化ドメイン コント ローラーの複製が必要になります、PDCE へのアクセスを持つネットワーク セグメント***します。 複製後、物理ドメイン コントローラーのように、複製されたドメイン コントローラーを別のネットワークに移動してもかまいません。ただし、AD DS 論理サイト情報は必ず更新するようにしてください。  
+***また、完全なルーティング ネットワーク以外を使用している場合、仮想化ドメイン コントローラーの複製には、PDCE へのアクセス権を持つネットワーク セグメントが必要です***。 複製後、物理ドメイン コントローラーのように、複製されたドメイン コントローラーを別のネットワークに移動してもかまいません。ただし、AD DS 論理サイト情報は必ず更新するようにしてください。  
   
 > [!IMPORTANT]  
 > 単一のドメイン コントローラーしか含まれないドメインを複製するときは、複製のコピーを開始する前に必ずソース DC をオンラインに戻す必要があります。 運用ドメインには、必ず 2 台以上のドメイン コントローラーが必要です。  
   
 #### <a name="active-directory-users-and-computers-method"></a>Active Directory ユーザーとコンピューターによる方法  
   
-1.  Dsa.msc スナップインを使用して、ドメインを右クリックし、 **[操作マスター]** をクリックします。 PDC で指定されたドメイン コントローラーを書き留めて、ダイアログを閉じます。  
+1.  Dsa.msc スナップインを使用して、ドメインを右クリックし、**[操作マスター]** をクリックします。 PDC で指定されたドメイン コントローラーを書き留めて、ダイアログを閉じます。  
   
-2.  DC のコンピューター オブジェクトを右クリックし、 **[プロパティ]** をクリックして、オペレーティング システム情報を検証します。  
+2.  DC のコンピューター オブジェクトを右クリックし、**[プロパティ]** をクリックして、オペレーティング システム情報を検証します。  
   
 #### <a name="windows-powershell-method"></a>Windows PowerShell による方法  
 次の Active Directory Windows PowerShell モジュール コマンドレットを組み合わせると、PDC エミュレーターのバージョンを返すことができます。  
@@ -186,7 +186,7 @@ get-adcomputer(Get-ADDomainController -Discover -Service "PrimaryDC").name -prop
 ![仮想化 DC の展開](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_PDCOSInfo.png)  
   
 ### <a name="step-3---authorize-a-source-dc"></a>手順 3 - ソース DC を承認する  
-ソース ドメイン コントローラーには、ドメイン NC の一番上でアクセス権の制御 (CAR) " **DC にそれ自身の複製の作成を許可する** " が必要です。 既定では、既知の **複製可能なドメイン コントローラー** グループにこのアクセス許可が付与されており、メンバーがいません。 このグループは、FSMO 役割が Windows Server 2012 ドメイン コントローラーに転送されるときに PDCE によって作成されます。  
+ソース ドメイン コントローラーには、ドメイン NC の一番上でアクセス権の制御 (CAR) "**DC にそれ自身の複製の作成を許可する**" が必要です。 既定では、既知の**複製可能なドメイン コントローラー** グループにこのアクセス許可が付与されており、メンバーがいません。 このグループは、FSMO 役割が Windows Server 2012 ドメイン コントローラーに転送されるときに PDCE によって作成されます。  
   
 #### <a name="active-directory-administrative-center-method"></a>Active Directory 管理センターによる方法  
   
@@ -210,11 +210,11 @@ Get-adcomputer <dc name> | %{add-adgroupmember "cloneable domain controllers" $_
   
 ##### <a name="active-directory-administrative-center-method"></a>Active Directory 管理センターによる方法  
   
-1.  **Active Directory 管理センター**を開いて、ドメインの一番上を右クリックし、 **[プロパティ]** 、 **[拡張機能]** タブ、 **[セキュリティ]** 、 **[詳細設定]** の順にクリックします。 **[このオブジェクトのみ]** をクリックします。  
+1.  **Active Directory 管理センター**を開いて、ドメインの一番上を右クリックし、**[プロパティ]**、**[拡張機能]** タブ、**[セキュリティ]**、**[詳細設定]** の順にクリックします。 **[このオブジェクトのみ]** をクリックします。  
   
-2.  **[追加]** をクリックし、 **[選択するオブジェクト名を入力してください]** にグループ名「**複製可能なドメイン コントローラー**」を入力します。  
+2.  **[追加]** をクリックし、**[選択するオブジェクト名を入力してください]** にグループ名「**複製可能なドメイン コントローラー**」を入力します。  
   
-3.  [アクセス許可] で、 **[DC にそれ自身の複製の作成を許可する]** をクリックし、 **[OK]** をクリックします。  
+3.  [アクセス許可] で、**[DC にそれ自身の複製の作成を許可する]** をクリックし、**[OK]** をクリックします。  
   
 > [!NOTE]  
 > 既定のアクセス許可を削除して、個別のドメイン コントローラーを追加することもできます。 ただし、これを行うと、現在行っているメンテナンスに問題が発生する可能性があります。つまり、新しい管理者はこのカスタマイズに気が付きません。 既定の設定を変更してもセキュリティが向上することはないため、これはお勧めできません。  
@@ -239,12 +239,12 @@ cd c:
 または、サンプル [FixVDCPermissions.ps1](../../../ad-ds/reference/virtual-dc/Virtualized-Domain-Controller-Technical-Reference-Appendix.md#BKMK_FixPDCPerms) を Windows PowerShell コンソールで実行します。コンソールは、影響を受けるドメインのドメイン コントローラーで管理者特権を持つ管理者として起動します。 アクセス許可は自動的に設定されます。 サンプルは、このモジュールの付録にあります。  
   
 ### <a name="step-4---remove-incompatible-applications-or-services-if-not-using-customdccloneallowlistxml"></a>手順 4 - 互換性のないアプリケーションまたはサービスを削除する (CustomDCCloneAllowList.xml を使用していない場合)  
-Get-ADDCCloningExcludedApplicationList によって以前返され、CustomDCCloneAllowList.xml に追加されていないすべてのプログラムまたはサービスを、複製前に削除する必要があります。 アプリケーションまたはサービスはアンインストールすることをお勧めします。  
+Get-ADDCCloningExcludedApplicationList によって以前返され、CustomDCCloneAllowList.xml に追加されていないすべての** プログラムまたはサービスを、複製前に削除する必要があります。 アプリケーションまたはサービスはアンインストールすることをお勧めします。  
   
 > [!WARNING]  
 > 互換性のないプログラムまたはサービスがアンインストールされていない場合、または CustomDCCloneAllowList.xml に追加されていない場合、複製は行われません。  
   
-Get-AdComputerServiceAccount コマンドレットを使用して、ドメインにあるスタンドアロンの管理されたサービス アカウント (MSA) を探し、このコンピューターがそのアカウントのいずれかを使用しているかどうかを確認します。 MSA がインストールされている場合は、Uninstall-ADServiceAccount コマンドレットを使用して、ローカルにインストールされたサービス アカウントを削除します。 手順 6. でソース ドメイン コントローラーをオフラインにしたら、サーバーが再度オンラインになったときに Install-ADServiceAccount を使用して MSA を再度追加できます。 詳細については、「 [Uninstall-ADServiceAccount](https://technet.microsoft.com/library/hh852310)」をご覧ください。  
+Get-AdComputerServiceAccount コマンドレットを使用して、ドメインにあるスタンドアロンの管理されたサービス アカウント (MSA) を探し、このコンピューターがそのアカウントのいずれかを使用しているかどうかを確認します。 MSA がインストールされている場合は、Uninstall-ADServiceAccount コマンドレットを使用して、ローカルにインストールされたサービス アカウントを削除します。 手順 6. でソース ドメイン コントローラーをオフラインにしたら、サーバーが再度オンラインになったときに Install-ADServiceAccount を使用して MSA を再度追加できます。 詳細については、「 [Uninstall-ADServiceAccount](/openspecs/windows_protocols/ms-drsr/ef0bfb1d-037b-4626-a6d9-cc7589bc5786)」をご覧ください。  
   
 > [!IMPORTANT]  
 > Windows Server 2008 R2 で初めてリリースされたスタンドアロンの MSA は、Windows Server 2012 ではグループ MSA で置き換えられました。 グループ MSA では複製がサポートされています。  
@@ -267,17 +267,17 @@ New-ADDCCloneConfigFile
   
 ||||  
 |-|-|-|  
-|**ActiveDirectory**<p>**コマンドレット**|**数値**|**詳しい**|  
-|**New-addccloneconfigfile**|*<no argument specified>*|ブランクの DcCloneConfig.xml ファイルを DSA 作業ディレクトリ (既定: %systemroot%\ntds)|  
-||-CloneComputerName|複製 DC コンピューター名を指定します。 文字列データ型|  
-||-Path|DcCloneConfig.xml を作成するフォルダーを指定します。 指定されていない場合は、DSA 作業ディレクトリ (既定: %systemroot%\ntds)。 文字列データ型|  
-||-SiteName|複製されたコンピューター アカウントの作成中に参加させる AD 論理サイト名を指定します。 文字列データ型|  
-||-IPv4Address|複製されたコンピューターの静的な IPv4 アドレスを指定します。 文字列データ型|  
-||-IPv4SubnetMask|複製されたコンピューターの静的な IPv4 サブネット マスクを指定します。 文字列データ型|  
-||-IPv4DefaultGateway|複製されたコンピューターの静的な IPv4 のデフォルト ゲートウェイ アドレスを指定します。 文字列データ型|  
+|**ActiveDirectory**<p>**コマンドレット**|**引数**|**説明**|  
+|**New-ADDCCloneConfigFile**|*<no argument specified>*|ブランクの DcCloneConfig.xml ファイルを DSA 作業ディレクトリ (既定: %systemroot%\ntds)|  
+||-CloneComputerName|複製 DC コンピューター名を指定します。 文字列データ型。|  
+||-Path|DcCloneConfig.xml を作成するフォルダーを指定します。 指定されていない場合は、DSA 作業ディレクトリ (既定: %systemroot%\ntds)。 文字列データ型。|  
+||-SiteName|複製されたコンピューター アカウントの作成中に参加させる AD 論理サイト名を指定します。 文字列データ型。|  
+||-IPv4Address|複製されたコンピューターの静的な IPv4 アドレスを指定します。 文字列データ型。|  
+||-IPv4SubnetMask|複製されたコンピューターの静的な IPv4 サブネット マスクを指定します。 文字列データ型。|  
+||-IPv4DefaultGateway|複製されたコンピューターの静的な IPv4 のデフォルト ゲートウェイ アドレスを指定します。 文字列データ型。|  
 ||-IPv4DNSResolver|コンマ区切りの一覧で複製されたコンピューターの静的な IPv4 DNS エントリを指定します。 配列データ型。 最大 4 つのエントリを指定できます。|  
-||-PreferredWINSServer|プライマリ WINS サーバーの静的な IPv4 アドレスを指定します。 文字列データ型|  
-||-AlternateWINSServer|セカンダリ WINS サーバーの静的な IPv4 アドレスを指定します。 文字列データ型|  
+||-PreferredWINSServer|プライマリ WINS サーバーの静的な IPv4 アドレスを指定します。 文字列データ型。|  
+||-AlternateWINSServer|セカンダリ WINS サーバーの静的な IPv4 アドレスを指定します。 文字列データ型。|  
 ||-IPv6DNSResolver|コンマ区切りの一覧で複製されたコンピューターの静的な IPv6 DNS エントリを指定します。 仮想化ドメイン コントローラーの複製で静的な Ipv6 情報を設定することはできません。 配列データ型。|  
 ||-Offline|検証テストを行わず、既存の dccloneconfig.xml を上書きします。 パラメーターがありません。|  
 ||*-Static*|静的な IP 引数 IPv4SubnetMask、IPv4SubnetMask、または IPv4DefaultGateway を指定する場合に必須です。 パラメーターがありません。|  
@@ -329,7 +329,7 @@ Stop-computer は、仮想化に関係なくコンピューターのシャット
   
 システム ドライブだけでなく、仮想マシンのすべてのディスクをコピーする必要があります。 ソース ドメイン コントローラーが差分ディスクを使用しており、複製されたドメイン コントローラーを他の Hyper-V ホストに移動する場合は、エクスポートの必要があります。  
   
-ソース ドメイン コントローラーにドライブが "1" つしかない場合は、手動でディスクをコピーすることをお勧めします。 "複数" のドライブがある VM、または複数 NIC のように複雑な仮想化ハードウェア カスタマイズが行われた VM については、エクスポート/インポートをお勧めします。  
+ソース ドメイン コントローラーにドライブが "1"** つしかない場合は、手動でディスクをコピーすることをお勧めします。 "複数"** のドライブがある VM、または複数 NIC のように複雑な仮想化ハードウェア カスタマイズが行われた VM については、エクスポート/インポートをお勧めします。  
   
 ファイルを手動でコピーする場合は、コピー前にすべてのスナップショットを削除します。 VM をエクスポートする場合、スナップショットは、エクスポート前に削除するか、インポート後に新しい VM から削除します。  
   
@@ -362,7 +362,7 @@ Get-vmfibrechannelhba
 Get-vmharddiskdrive  
 ```  
   
-たとえば、次の例に示すように、 **DC2** という名前の VM にあるすべての IDE ハード ドライブを返すことができます。  
+たとえば、次の例に示すように、**DC2** という名前の VM にあるすべての IDE ハード ドライブを返すことができます。  
   
 ![仮想化 DC の展開](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_ReturnIDE.png)  
   
@@ -395,7 +395,7 @@ Get-VMIdeController dc2-sourceclone | Get-VMHardDiskDrive | select-Object {copy-
 > 複製でパススルー ディスクを使用することはできません。このパススルー ディスクは、仮想ディスク ファイルではなく、実際のハード ディスクを使用するからです。  
   
 > [!NOTE]  
-> パイプラインを使用した Windows PowerShell 操作の詳細については、 [Windows PowerShell のパイプ処理とパイプラインに関するページ](https://technet.microsoft.com/library/ee176927.aspx)を参照してください。  
+> パイプラインを使用した Windows PowerShell 操作の詳細については、 [Windows PowerShell のパイプ処理とパイプラインに関するページ](/previous-versions/windows/it-pro/windows-powershell-1.0/ee176927(v=technet.10))を参照してください。  
   
 #### <a name="exporting-the-vm"></a>VM のエクスポート  
 ディスクをコピーする代わりに、Hyper-V VM 全体をコピーとしてエクスポートできます。 エクスポートすると、VM の名前が付いたフォルダーが自動的に作成され、このフォルダーには、すべてのディスクと構成情報が含まれています。  
@@ -405,7 +405,7 @@ Get-VMIdeController dc2-sourceclone | Get-VMHardDiskDrive | select-Object {copy-
 ##### <a name="hyper-v-manager-method"></a>Hyper-V マネージャーによる方法  
 Hyper-V マネージャーで VM をエクスポートするには:  
   
-1.  ソース ドメイン コントローラーを右クリックし、 **[エクスポート]** をクリックします。  
+1.  ソース ドメイン コントローラーを右クリックし、**[エクスポート]** をクリックします。  
   
 2.  エクスポート コンテナーとして既存のフォルダーを選択します。  
   
@@ -431,7 +431,7 @@ Export-vm
 ##### <a name="hyper-v-manager-method"></a>Hyper-V マネージャーによる方法  
 Hyper-V マネージャーを使用して、結合ディスクを作成するには:  
   
-1.  クリックして **ディスクの編集**します。  
+1.  [**ディスクの編集**] をクリックします。  
   
 2.  最下位の子ディスクを参照します。 たとえば、差分ディスクを使用している場合は、子ディスクが最下位の子です。 仮想マシンにスナップショットが 1 つ (または複数) ある場合は、現在選択されているスナップショットが最下位の子ディスクです。  
   
@@ -450,7 +450,7 @@ Convert-vm
   
 ![仮想化 DC の展開](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_PSConvertVhd.png)  
   
-#### <a name="adding-xml-to-the-offline-system-disk"></a><a name="BKMK_Offline"></a>オフラインシステムディスクへの XML の追加  
+#### <a name="adding-xml-to-the-offline-system-disk"></a><a name="BKMK_Offline"></a>オフライン システム ディスクへの XML の追加  
 Dccloneconfig.xml を実行中のソース DC にコピーした場合は、すぐに最新の dccloneconfig.xml ファイルを、コピー/エクスポートされたオフライン システム ディスクにコピーする必要があります。 Get-ADDCCloningExcludedApplicationList で前に検出されたインストール済みアプリケーションによっては、CustomDCCloneAllowList.xml ファイルをディスクにコピーしなければならない場合もあります。  
   
 DcCloneConfig.xml ファイルが含まれている可能性がある場所は次のとおりです。  
@@ -511,11 +511,11 @@ New-ADDCCloneConfigFile -Offline -IPv4DNSResolver "10.0.0.1" -IPv6DNSResolver "2
 ##### <a name="windows-explorer-method"></a>エクスプローラーによる方法  
 Windows Server 2012 では、グラフィカル オプションを使用して、VHD および VHDX ファイルをマウントできるようになりました。 それには、Windows Server 2012 にデスクトップ エクスペリエンス機能をインストールする必要があります。  
   
-1.  ソース DC のシステム ドライブまたは DSA 作業ディレクトリの場所フォルダーが含まれる、新しくコピーされた VHD/VHDX ファイルをクリックし、 **[ディスク イメージ ツール]** メニューの **[マウント]** をクリックします。  
+1.  ソース DC のシステム ドライブまたは DSA 作業ディレクトリの場所フォルダーが含まれる、新しくコピーされた VHD/VHDX ファイルをクリックし、**[ディスク イメージ ツール]** メニューの **[マウント]** をクリックします。  
   
 2.  今マウントされたドライブで、XML ファイルを有効な場所にコピーします。 フォルダーへのアクセス許可が求められる場合があります。  
   
-3.  マウントされたドライブをクリックし、 **[ディスク ツール]** メニューの **[取り出し]** をクリックします。  
+3.  マウントされたドライブをクリックし、**[ディスク ツール]** メニューの **[取り出し]** をクリックします。  
   
 ![仮想化 DC の展開](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_HyperVClickMountedDrive.png)  
   
@@ -545,7 +545,7 @@ copy-item <xml file path><destination path>\dccloneconfig.xml
 dismount-vhd <disk path>  
 ```  
   
-例 :  
+次に例を示します。  
   
 ![仮想化 DC の展開](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_PSMountVHD.png)  
   
@@ -603,7 +603,7 @@ Hyper-V マネージャー スナップインを使用してインポートす�
   
 3.  **[仮想マシンの選択]** ページで、ソース コンピューターをクリックします。  
   
-4.  **[インポートの種類の選択]** ページで、 **[仮想マシンをコピーする (新しい一意な ID を作成する)]** 、[**完了]** の順にクリックします。  
+4.  **[インポートの種類の選択]** ページで、**[仮想マシンをコピーする (新しい一意な ID を作成する)]**、[**完了]** の順にクリックします。  
   
 5.  同じ Hyper-V ホストでインポートしている場合は、インポートされた VM の名前を変更します。これは、エクスポートされたソース ドメイン コントローラーと同じ名前になります。  
   
@@ -639,7 +639,7 @@ Get-VMSnapshot
 Remove-VMSnapshot  
 ```  
   
-例 :  
+次に例を示します。  
   
 ![仮想化 DC の展開](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_PSGetVMSnap.png)  
   
@@ -647,7 +647,7 @@ Remove-VMSnapshot
 > コンピューターをインポートするときに、静的 MAC アドレスがソース ドメイン コントローラーに割り当てられていないことを確認します。 静的 MAC を持つソース コンピューターが複製されると、そのコピーされたコンピューターではネットワーク トラフィックが正しく送受信されません。 この場合は、一意の静的または動的 MAC アドレスを新しく設定します。 VM で静的 MAC アドレスが使用されているかどうかを確認するには、次のコマンドを使用します。  
 > 
 > **VMName**   
->  ***test-vm* |VMNetworkAdapter |fl \\** *  
+>  ***test-vm* |VMNetworkAdapter |fl\\***  
   
 ### <a name="step-9---clone-the-new-virtual-machine"></a>手順 9 - 新しい仮想マシンを複製する  
 複製を開始する前に、オプションで、オフラインの複製ソース ドメイン コントローラーを再起動します。 ただし、PDC エミュレーターはオンラインであることを確認します。  
@@ -663,7 +663,7 @@ Windows PowerShell を使用して VM を起動する場合、新しい Hyper-V 
 Start-VM  
 ```  
   
-例 :  
+次に例を示します。  
   
 ![仮想化 DC の展開](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_PSStartVM.png)  
   
@@ -711,9 +711,9 @@ VM をソース ハイパーバイザーから別のターゲット ハイパー
 > [!IMPORTANT]  
 > すべてのドメイン コントローラーが一度に復元された場合は、次の記事を使用して、1 台のドメイン コントローラー (通常は PDC エミュレーター) を権限のあるドメイン コントローラーとして設定して、他のドメイン コントローラーが通常の操作に戻れるようにします。  
 >   
-> [BurFlags レジストリキーを使用してファイルレプリケーションサービスのレプリカセットを再初期化する](https://support.microsoft.com/kb/290762)  
+> [BurFlags レジストリ キーを使用してファイル レプリケーション サービスのレプリカ セットを再初期化する](https://support.microsoft.com/kb/290762)  
 >   
-> [DFSR によってレプリケートされた SYSVOL の権限のある同期と権限のない同期を強制的に実行する方法 (FRS の "D4/D2" など)](https://support.microsoft.com/kb/2218556)  
+> [DFS でレプリケートされた SYSVOL の権限のある同期と権限のない同期を強制的に実行する方法 (FRS の "D4/D2" など)](https://support.microsoft.com/kb/2218556)  
   
 > [!WARNING]  
 > 同じハイパーバイザー ホストでは、フォレストまたはドメインのすべてのドメイン コントローラーを実行しないでください。 これにより、ハイパーバイザーがオフラインになるたびに AD DS、Exchange、SQL、およびその他のエンタープライズ操作に不具合をもたらす単一障害点が発生します。 これはドメインまたはフォレスト全体に対して 1 つのドメイン コントローラーのみを使用することと何ら変わりはありません。 複数のプラットフォームに複数のドメイン コントローラーがあると、冗長性とフォールト トレランスの実現に役立ちます。  
@@ -780,7 +780,7 @@ Objects returned: 1
   
 また、もう一方のパートナーをテストして、そのパートナーがまだレプリケートされていないことを確認します。  
   
-あるいは、レプリケートされなかったオブジェクトではなく、未処理のオブジェクトのみが必要な場合は、 **/statistics** オプションを使用できます。  
+あるいは、レプリケートされなかったオブジェクトではなく、未処理のオブジェクトのみが必要な場合は、**/statistics** オプションを使用できます。  
   
 ```  
 C:\>repadmin /showchanges dc2.corp.contoso.com 5d083398-4bd3-48a4-a80d-fb2ebafb984f dc=corp,dc=contoso,dc=com /statistics  
@@ -808,5 +808,3 @@ Rename-VMSnapshot
 Restore-VMSnapshot  
 ```  
   
-
-

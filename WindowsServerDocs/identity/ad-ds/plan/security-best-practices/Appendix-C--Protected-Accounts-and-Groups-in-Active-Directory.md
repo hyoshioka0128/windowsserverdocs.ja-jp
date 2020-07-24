@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 18a293f4ec7d96516bd89396c13562ba68dc471f
-ms.sourcegitcommit: a1641b80c88205c0253f354f2d427d77bb879643
+ms.openlocfilehash: cfee6eedd1582c3df960cca1c32fce27c74f82cb
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85345436"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963234"
 ---
 # <a name="appendix-c-protected-accounts-and-groups-in-active-directory"></a>付録 C: Active Directory の保護されたアカウントとグループ
 
@@ -70,7 +70,7 @@ SDProp は、ドメインの PDC エミュレーター (PDCE) を保持してい
 
 AdminSDHolder の変更をテストするには、手動で SDProp を実行します。これにより、タスクは直ちに実行されますが、スケジュールされた実行には影響しません。 Windows server 2008 以前を実行しているドメインコントローラーと windows server 2012 または Windows Server 2008 R2 を実行しているドメインコントローラーでは、SDProp を手動で実行する方法が少し異なります。  
 
-以前のオペレーティングシステムで SDProp を手動で実行する手順については[Microsoft サポートの記事 251343](https://support.microsoft.com/kb/251343)で説明しています。また、古いオペレーティングシステムと新しいオペレーティングシステムの詳細な手順については、以下を参照してください。 どちらの場合も、Active Directory で rootDSE オブジェクトに接続し、rootDSE オブジェクトに対して null の DN を指定して変更操作を実行し、変更する属性として操作の名前を指定する必要があります。 RootDSE オブジェクトでの変更可能な操作の詳細については、MSDN web サイトの「 [rootdse の変更操作](https://msdn.microsoft.com/library/cc223297.aspx)」を参照してください。  
+以前のオペレーティングシステムで SDProp を手動で実行する手順については[Microsoft サポートの記事 251343](https://support.microsoft.com/kb/251343)で説明しています。また、古いオペレーティングシステムと新しいオペレーティングシステムの詳細な手順については、以下を参照してください。 どちらの場合も、Active Directory で rootDSE オブジェクトに接続し、rootDSE オブジェクトに対して null の DN を指定して変更操作を実行し、変更する属性として操作の名前を指定する必要があります。 RootDSE オブジェクトでの変更可能な操作の詳細については、MSDN web サイトの「 [rootdse の変更操作](/openspecs/windows_protocols/ms-adts/fc74972f-b267-4c1a-8716-0f5b48cf52b9)」を参照してください。  
 
 ###### <a name="running-sdprop-manually-in-windows-server-2008-or-earlier"></a>Windows Server 2008 以前での SDProp の手動実行
 

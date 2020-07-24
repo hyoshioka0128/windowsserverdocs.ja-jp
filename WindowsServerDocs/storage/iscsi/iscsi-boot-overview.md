@@ -8,12 +8,12 @@ author: JasonGerend
 manager: dougkim
 ms.author: jgerend
 ms.date: 09/11/2018
-ms.openlocfilehash: e0d92448774b277cff60d9b494cf388458ea32d3
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 68f5af7f8fc4cd0214b872d96602cabe1aa32628
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475109"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961374"
 ---
 # <a name="iscsi-target-boot-overview"></a>iSCSI Target ブートの概要
 
@@ -48,6 +48,6 @@ iSCSI ターゲット サーバーは、サーバー マネージャーのファ
 > iSCSI からは、Windows iSCSI ターゲット サーバーとサード パーティによるターゲット実装のどちらであっても、Nano Server を起動することはできません。
 
 ## <a name="additional-references"></a>その他のリファレンス
-* [iSCSI ターゲット サーバー](https://technet.microsoft.com/library/hh848272(v=ws.11).aspx)
-* [iSCSI イニシエーターのコマンドレットに関する記事](https://technet.microsoft.com/library/hh826099(v=wps.640).aspx)
-* [iSCSI ターゲット サーバーのコマンドレットに関する記事](https://technet.microsoft.com/library/jj612803(v=wps.630).aspx)
+* [iSCSI ターゲット サーバー](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh848272(v=ws.11))
+* [iSCSI イニシエーターのコマンドレットに関する記事](/powershell/module/iscsi/?view=win10-ps)
+* [iSCSI ターゲット サーバーのコマンドレットに関する記事](/powershell/module/iscsi/?view=win10-ps)

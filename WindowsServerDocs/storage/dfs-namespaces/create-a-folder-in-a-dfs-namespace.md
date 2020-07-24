@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 18e0f1ad19e8c6ce2b6dbffe0d25c940c4f8f985
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 4034c3b40a6b409f295875e424668e68bce24cdb
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474279"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962864"
 ---
 # <a name="create-a-folder-in-a-dfs-namespace"></a>DFS 名前空間でフォルダーを作成する
 
@@ -35,12 +35,10 @@ DFS 管理を使って名前空間でフォルダーを作成するには、次�
 
 
 > [!TIP]
-> Windows PowerShell を使って名前空間でフォルダーを作成するには、[New-DfsnFolder](https://docs.microsoft.com/powershell/module/dfsn/new-dfsnfolder) コマンドレットを使います。 DFSN Windows PowerShell モジュールは、Windows Server 2012 で導入されました。
+> Windows PowerShell を使って名前空間でフォルダーを作成するには、[New-DfsnFolder](/powershell/module/dfsn/new-dfsnfolder) コマンドレットを使います。 DFSN Windows PowerShell モジュールは、Windows Server 2012 で導入されました。
 
 
 ## <a name="additional-references"></a>その他のリファレンス
 
 -   [DFS 名前空間を展開する](deploying-dfs-namespaces.md)
 -   [DFS 名前空間の管理アクセス許可を委任する](delegate-management-permissions-for-dfs-namespaces.md)
-
-

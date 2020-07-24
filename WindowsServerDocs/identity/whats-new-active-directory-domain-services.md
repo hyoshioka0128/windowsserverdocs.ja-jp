@@ -8,26 +8,26 @@ ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: a82f45772e5e35afffc632de2b40c02c75b5e5e4
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b4a896772c477c0d93e5b987a7cbff9a89e07882
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856285"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963464"
 ---
 # <a name="whats-new-in-active-directory-domain-services-for-windows-server-2016"></a>Windows Server 2016 の Active Directory Domain Services の新機能
 
->適用対象: Windows Server 2016
+>適用先:Windows Server 2016
 
-Active Directory Domain Services (AD DS) の次の新機能により、組織は Active Directory 環境を保護し、クラウドのみのデプロイとハイブリッドデプロイに移行できるようになります。一部のアプリケーションとサービスはクラウドでホストされ、他のアプリケーションとサービスはオンプレミスでホストされます。 強化された機能は次のとおりです。  
+Active Directory Domain Services (AD DS) の次の新機能により、組織は Active Directory 環境を保護し、クラウドのみのデプロイとハイブリッドデプロイに移行できるようになります。一部のアプリケーションとサービスはクラウドでホストされ、他のアプリケーションとサービスはオンプレミスでホストされます。 WebJobs からの改善点は、以下のとおりです。  
   
-- [Privileged access management](https://docs.microsoft.com/microsoft-identity-manager/pam/privileged-identity-management-for-active-directory-domain-services)  
+- [Privileged access management](/microsoft-identity-manager/pam/privileged-identity-management-for-active-directory-domain-services)  
   
-- [Azure Active Directory Join を使用したクラウド機能の Windows 10 デバイスへの拡張](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-overview/)
+- [Azure Active Directory 参加を使用したクラウド機能の Windows 10 デバイスへの拡張](/azure/active-directory/devices/overview)
   
-- [Windows 10 エクスペリエンスのためにドメイン参加済みデバイスを Azure AD に接続する](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-devices-group-policy/)
+- [Windows 10 エクスペリエンスのためにドメイン参加済みデバイスを Azure AD に接続する](/azure/active-directory/devices/hybrid-azuread-join-plan)
   
-- [組織内の Microsoft Passport for Work を有効にする](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-passport-deployment/)
+- [組織での Microsoft Passport for Work の有効化](/windows/security/identity-protection/hello-for-business/hello-identity-verification)
   
 - [ファイルレプリケーションサービス (FRS) と Windows Server 2003 の機能レベルの廃止](ad-ds/active-directory-functional-levels.md)  
   
@@ -56,13 +56,13 @@ Privileged access management (PAM) は、ハッシュ、スピアーフィッシ
   
 - Active Directory Windows Server 2012 R2 以降のフォレストの機能レベル。  
   
-## <a name="azure-ad-join"></a>Azure AD への参加
+## <a name="azure-ad-join"></a>Azure AD Join
 
 Azure Active Directory Join を使用すると、企業や個人のデバイスの機能が向上し、enterprise、business、EDU の各顧客の id エクスペリエンスが向上します。  
   
 利点:  
   
-- 企業所有の Windows デバイスで**最新の設定を利用**できます。 酸素 Services は、個人の Microsoft アカウントを必要としなくなりました。コンプライアンスを確保するために、ユーザーの既存の職場アカウントを使用して実行されるようになりました。 酸素 Services は、オンプレミスの Windows ドメインに参加している Pc と、Azure AD テナント ("クラウドドメイン") に "参加" している Pc とデバイスで動作します。 これらの設定には次のものが含まれます。  
+- 企業所有の Windows デバイスで**最新の設定を利用**できます。 酸素 Services は、個人の Microsoft アカウントを必要としなくなりました。コンプライアンスを確保するために、ユーザーの既存の職場アカウントを使用して実行されるようになりました。 酸素 Services は、オンプレミスの Windows ドメインに参加している Pc と、Azure AD テナント ("クラウドドメイン") に "参加" している Pc とデバイスで動作します。 これらの設定には、以下が含まれます。  
 
    - ローミングまたは個人用設定、ユーザー補助の設定および資格情報  
    - バックアップと復元  
@@ -77,24 +77,24 @@ Azure Active Directory Join を使用すると、企業や個人のデバイス�
 - **開発者エクスペリエンス**を使用すると、共有されたプログラミングスタックで企業と個人の両方のコンテキストに対応するアプリを構築できます。  
 - **イメージング**オプションを使用すると、イメージングを選択し、ユーザーが最初の実行時に企業所有のデバイスを直接構成できるようにすることができます。  
   
-詳細については、「 [Azure Active Directory でのデバイス管理の概要](https://docs.microsoft.com/azure/active-directory/devices/overview)」を参照してください。  
+詳細については、「 [Azure Active Directory でのデバイス管理の概要](/azure/active-directory/devices/overview)」を参照してください。  
   
 ## <a name="windows-hello-for-business"></a>Windows Hello for Business
 
-Windows Hello for Business は、キー ベースの認証方法、組織とコンシューマーは、パスワードを超えます。 この形式の認証では、侵害、盗難、phish のある資格情報に依存しています。  
+Windows Hello for Business は、パスワード以外のキーベースの認証方法である組織とコンシューマーです。 この形式の認証では、侵害、盗難、phish のある資格情報に依存しています。  
   
 ユーザーは、証明書または非対称キーペアにリンクされている情報を使用して、生体認証または PIN のログを使用してデバイスにログオンします。 Id プロバイダー (IDPs) は、ユーザーの公開キーを Idps にマップし、ワンタイムパスワード (OTP)、電話、または別の通知メカニズムを使用してログオン情報を提供することによって、ユーザーを検証します。  
   
-詳細については、「 [Windows Hello For Business](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-identity-verification) 」を参照してください。  
+詳細については、「 [Windows Hello For Business](/windows/security/identity-protection/hello-for-business/hello-identity-verification) 」を参照してください。  
   
 ## <a name="deprecation-of-file-replication-service-frs-and-windows-server-2003-functional-levels"></a>ファイルレプリケーションサービス (FRS) と Windows Server 2003 の機能レベルの廃止
 
 ファイルレプリケーションサービス (FRS) と Windows Server 2003 の機能レベルは、以前のバージョンの Windows Server では非推奨とされていましたが、Windows Server 2003 オペレーティングシステムのサポートは終了しています。 その結果として、Windows Server 2003 を実行するすべてのドメイン コントローラーを、ドメインから削除する必要があります。 以前のバージョンの Windows Server を実行しているドメインコントローラーが環境に追加されないようにするには、ドメインとフォレストの機能レベルを少なくとも Windows Server 2008 に上げる必要があります。
 
-Windows Server 2008 以上のドメイン機能レベルでは、分散ファイル サービス (DFS) レプリケーションを使用して、ドメイン コントローラー間で SYSVOL フォルダーの内容をレプリケートします。 Windows Server 2008 ドメイン機能レベル以上で新しいドメインを作成した場合、SYSVOL のレプリケートには DFS レプリケーションが自動的に使用されます。 それより低い低い機能レベルでドメイン作成した場合は、SYSVOL のレプリケーションを FRS から DFS に移行する必要があります。 移行手順については、[次の手順](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd640019\(v=ws.10\))に従うか、[ストレージチームのファイルキャビネットのブログで合理化](https://blogs.technet.com/b/filecab/archive/2014/06/25/streamlined-migration-of-frs-to-dfsr-sysvol.aspx)された一連の手順を参照することができます。  
+Windows Server 2008 以上のドメイン機能レベルでは、分散ファイル サービス (DFS) レプリケーションを使用して、ドメイン コントローラー間で SYSVOL フォルダーの内容をレプリケートします。 Windows Server 2008 ドメイン機能レベル以上で新しいドメインを作成した場合、SYSVOL のレプリケートには DFS レプリケーションが自動的に使用されます。 それより低い低い機能レベルでドメイン作成した場合は、SYSVOL のレプリケーションを FRS から DFS に移行する必要があります。 移行手順については、[次の手順](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd640019\(v=ws.10\))に従うか、[ストレージチームのファイルキャビネットのブログで合理化](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)された一連の手順を参照することができます。  
   
 Windows Server 2003 のドメインとフォレストの機能レベルは引き続きサポートされますが、SYSVOL レプリケーションの互換性とサポートを将来的に保証するために、機能レベルを Windows Server 2008 (またはそれ以上) に引き上げる必要があります。 さらに、より高い機能レベルで利用可能な他の多くの利点と機能もあります。 詳細については、次のリソースを参照してください。  
 
-- [Active Directory Domain Services (AD DS) の機能レベルについて](ad-ds/active-directory-functional-levels.md)  
-- [ドメインの機能レベルを上げる](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753104\(v=ws.11\))  
-- [フォレストの機能レベルを上げる](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc730985\(v=ws.11\))  
+- [Active Directory Domain Services (AD DS) の機能レベルとは](ad-ds/active-directory-functional-levels.md)  
+- [ドメインの機能レベルを上げる](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc753104\(v=ws.11\))  
+- [フォレストの機能レベルを上げる](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc730985\(v=ws.11\))  

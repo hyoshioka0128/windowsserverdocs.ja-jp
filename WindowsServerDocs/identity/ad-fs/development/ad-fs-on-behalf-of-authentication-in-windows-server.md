@@ -8,12 +8,12 @@ ms.date: 02/22/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: ed8bb6300360553e0809f4a30cec38bc37777ae9
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: febd79ea6feb0ef3d4e6f6d5659f2eb13e403a4b
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858845"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962194"
 ---
 # <a name="build-a-multi-tiered-application-using-on-behalf-of-obo-using-oauth-with-ad-fs-2016-or-later"></a>AD FS 2016 以降で OAuth を使用して、の代理 (OBO) を使用して多層アプリケーションを構築する
 
@@ -54,11 +54,11 @@ WebAPIOBO | ユーザーが ToDoItem を追加したときに必要な操作を�
 
 ## <a name="setting-up-the-development-box"></a>開発ボックスの設定
 
-このチュートリアルでは、Visual Studio 2015 を使用します。 プロジェクトは、Active Directory 認証ライブラリ (ADAL) を頻繁に使用します。 ADAL の詳細については[Active Directory 認証ライブラリ .net](https://msdn.microsoft.com/library/azure/mt417579.aspx)をご覧ください
+このチュートリアルでは、Visual Studio 2015 を使用します。 プロジェクトは、Active Directory 認証ライブラリ (ADAL) を頻繁に使用します。 ADAL の詳細については[Active Directory 認証ライブラリ .net](/dotnet/api/microsoft.identitymodel.clients.activedirectory?view=azure-dotnet)をご覧ください
 
 このサンプルでは、SQL LocalDB v1.0 も使用されています。 サンプルで作業する前に、SQL LocalDB をインストールします。
 
-## <a name="setting-up-the-environment"></a>環境の設定
+## <a name="setting-up-the-environment"></a>環境のセットアップ
 次の基本的なセットアップを使用します。
 
 1. **DC**: AD FS がホストされるドメインのドメインコントローラー
@@ -74,9 +74,9 @@ WebAPIOBO | ユーザーが ToDoItem を追加したときに必要な操作を�
 
 このサンプルは、Vittorio によって作成された Azure に対する既存の OBO サンプルに基づいており、[ここ](https://github.com/Azure-Samples/active-directory-dotnet-webapi-onbehalfof)で入手できます。 指示に従って、開発用コンピューター上のプロジェクトを複製し、サンプルのコピーを作成して作業を開始します。
 
-## <a name="clone-or-download-this-repository"></a>このリポジトリを複製またはダウンロードする
+## <a name="clone-or-download-this-repository"></a>このリポジトリをクローンまたはダウンロードする
 
-シェルまたはコマンドラインから:
+シェルまたはコマンド ラインから:
 
     git clone https://github.com/Azure-Samples/active-directory-dotnet-webapi-onbehalfof.git
 
@@ -167,7 +167,7 @@ WebAPI-DotNet ソリューションの ToDoListClient プロジェクトにア�
 * Ida: ToDoListBaseAddress の場合、ToDoListServiceWebApi のリソース ID を入力します。 これは、ToDoList WebAPI の呼び出し中に使用されます。
 * キー ida: Authority を追加し、AD FS の URI として値を指定します。
 
-App.config の**appSettings**は次のようになります。
+App.Config の**appSettings**は次のようになります。
 
     <appSettings>
     <!--<add key="ida:Tenant" value="[Enter tenant name, e.g. contoso.onmicrosoft.com]" />-->
@@ -212,7 +212,7 @@ ToDoListResourceId と ToDoListBaseAddress の正しい値を読み取るよう�
 
 * 次のプロンプトで、[認証の変更] をクリックします。
 * [職場と学校のアカウント] を選択し、右側のドロップダウンリストで [オンプレミス] を選択します。
-* AD FS デプロイの federationmetadata.xml パスを入力し、アプリの URI を指定します (ここでは URI を指定し、後で変更します)。次に、[Ok] をクリックしてプロジェクトをソリューションに追加します。
+* AD FS デプロイの federationmetadata.xml パスを入力し、アプリの URI を指定します (ここでは URI を指定し、後で変更します)。その後、[Ok] をクリックしてプロジェクトをソリューションに追加します。
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO9.PNG)
 
@@ -275,19 +275,19 @@ ToDoListService WebAPI を構成したときと同じように、ウィザード
 
 | Key                      | 値                                                                                                                                                                                                                   |
 |:-------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ida: 対象ユーザー             | ToDoListService WebAPI を構成するときに AD FS に指定された ToDoListService の ID (例: https://localhost:44321/)。                                                                                         |
-| ida: ClientID             | ToDoListService WebAPI を構成するときに AD FS に指定された ToDoListService の ID (例: <https://localhost:44321/>)。 </br>**Ida: Audience と ida: ClientID が相互に一致することが非常に重要です。** |
-| ida: ClientSecret         | これは、で ToDoListService クライアントを構成したときに生成されたシークレット AD FS AD FS                                                                                                                   |
-| ida: AdfsMetadataEndpoint | これは AD FS メタデータの URL です (例: https://fs.anandmsft.com/federationmetadata/2007-06/federationmetadata.xml                                                                                             |
-| ida: OBOWebAPIBase        | これは、バックエンド API の呼び出しに使用するベースアドレスです (例: https://localhost:44300                                                                                                                     |
-| ida: Authority            | これは、AD FS サービスの URL、例 https://fs.anandmsft.com/adfs/                                                                                                                                          |
+| ida: 対象ユーザー             | ToDoListService WebAPI の構成中に AD FS に指定された ToDoListService の ID (例:)https://localhost:44321/                                                                                         |
+| ida: ClientID             | ToDoListService WebAPI の構成中に AD FS に指定された ToDoListService の ID (例:)<https://localhost:44321/> </br>**Ida: Audience と ida: ClientID が相互に一致することが非常に重要です。** |
+| ida:ClientSecret         | これは、で ToDoListService クライアントを構成したときに生成されたシークレット AD FS AD FS                                                                                                                   |
+| ida: AdfsMetadataEndpoint | これは AD FS メタデータの URL です。例:https://fs.anandmsft.com/federationmetadata/2007-06/federationmetadata.xml                                                                                             |
+| ida: OBOWebAPIBase        | これは、バックエンド API の呼び出しに使用するベースアドレスです。たとえば、https://localhost:44300                                                                                                                     |
+| ida:Authority            | これは、AD FS サービスの URL です。例を次に示します。https://fs.anandmsft.com/adfs/                                                                                                                                          |
 
 **Appsettings**ノード内の他のすべての IDA: XXXXXXX キーをコメントアウトまたは削除できます。
 
 #### <a name="change-authentication-from-azure-ad-to-ad-fs"></a>認証を Azure AD から AD FS に変更する
 
 * Startup.Auth.cs ファイルを開きます。
-* 次のコードを削除します。
+* 次のコードを削除します
 
         app.UseWindowsAzureActiveDirectoryBearerAuthentication(
             new WindowsAzureActiveDirectoryBearerAuthenticationOptions
@@ -297,7 +297,7 @@ ToDoListService WebAPI を構成したときと同じように、ウィザード
                 TokenValidationParameters = new TokenValidationParameters{ SaveSigninToken = true }
             });
 
-を、次のように置き換えます。
+with
 
         app.UseActiveDirectoryFederationServicesBearerAuthentication(
             new ActiveDirectoryFederationServicesBearerAuthenticationOptions
@@ -334,7 +334,7 @@ System.web 拡張子への参照を追加します。 次のコードを置き�
     private static string graphUserUrl = ConfigurationManager.AppSettings["ida:GraphUserUrl"];
     private const string TenantIdClaimType = "https://schemas.microsoft.com/identity/claims/tenantid";
 
-を、次のように置き換えます。
+with
 
     //
     // The Client ID is used by the application to uniquely identify itself to Azure AD.
@@ -493,9 +493,9 @@ F5 キーを押してソリューションを実行します
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO27.PNG)
 
 Fiddler で詳細なトレースを確認することもできます。 Fiddler を起動し、HTTPS の暗号化解除を有効にします。 /Adfs/oautincludes エンドポイントに対して2つの要求が実行されていることがわかります。
-最初の相互作用では、アクセスコードをトークンエンドポイントに提示し、 https://localhost:44321/ ![AD FS OBO のアクセストークンを取得](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO22.PNG)
+最初の相互作用では、アクセスコードをトークンエンドポイントに提示し、 https://localhost:44321/ AD FS OBO のアクセストークンを取得します。 ![](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO22.PNG)
 
-トークンエンドポイントとの2つ目のやり取りでは、 **requested_token_use**が**on_behalf_of**として設定されていて、中間層 web サービス用に取得したアクセストークンを使用していることを確認できます。つまり、の代わりにトークンを取得するアサーションとして https://localhost:44321/ ます。
+トークンエンドポイントとの2つ目のやり取りでは、 **on_behalf_of**として設定されている**requested_token_use** 、中間層 web サービス用に取得したアクセストークンを使用していることがわかり https://localhost:44321/ ます。
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO23.PNG)
 
 ## <a name="next-steps"></a>次の手順

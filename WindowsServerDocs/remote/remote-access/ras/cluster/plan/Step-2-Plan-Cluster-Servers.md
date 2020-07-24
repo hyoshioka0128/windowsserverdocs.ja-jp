@@ -8,16 +8,16 @@ ms.topic: article
 ms.assetid: 673c5bfb-b590-4932-8e54-ca0a466d90cc
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 7ac00278e501115d81d80f55c1ceae33a379cc4a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 8b940ea3fc7aa031a780eaea029b6b86ba5509a5
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80855245"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964394"
 ---
 # <a name="step-2-plan-cluster-servers"></a>手順 2. クラスターサーバーを計画する
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016
+>適用先:Windows Server (半期チャネル)、Windows Server 2016
 
 単一のリモートアクセスサーバーを展開した後、クラスターにサーバーを追加することを計画します。  
   
@@ -27,10 +27,10 @@ ms.locfileid: "80855245"
 |[2.2 サーバー設定を構成する](#BKMK_Config)|クラスターに追加する各サーバーの設定を構成します。 仮想マシンを使用して、負荷分散されたサーバーのクラスターを構成できることに注意してください。 ルーティングと接続が正しく機能するためには、MAC アドレスのスプーフィングを使用するようにバーチャルマシンを構成する必要があります。|  
   
 ## <a name="21-installing-roles-and-features"></a><a name="BKMK_Install"></a>2.1 役割と機能のインストール  
-クラスターに参加する各サーバーについて、リモートアクセスの役割のインストールを計画します。 また、Windows NLB を使用してクラスターへのトラフィックを負荷分散する場合は、ネットワーク負荷分散 (NLB) 機能をインストールする計画を立てます。 詳細については、「[ネットワーク負荷分散](https://technet.microsoft.com/windows-server-docs/networking/technologies/network-load-balancing)」を参照してください。  
+クラスターに参加する各サーバーについて、リモートアクセスの役割のインストールを計画します。 また、Windows NLB を使用してクラスターへのトラフィックを負荷分散する場合は、ネットワーク負荷分散 (NLB) 機能をインストールする計画を立てます。 詳細については、「[ネットワーク負荷分散](../../../../../networking/technologies/network-load-balancing.md)」を参照してください。  
   
 ## <a name="22-configure-server-settings"></a><a name="BKMK_Config"></a>2.2 サーバー設定を構成する  
-クラスターに追加する各サーバーについて、IP アドレスとドメインの設定を計画します。 次の点に注意してください。  
+クラスターに追加する各サーバーについて、IP アドレスとドメインの設定を計画します。 次のことを考慮してください。  
   
 1.  クラスター内のサーバーはすべて同じドメインに属している必要があります。  
   
@@ -49,4 +49,3 @@ Windows NLB を使用してクラスターの負荷を分散すると、次の W
 4.  Affinity-単一アフィニティが定義されます。  
   
 5.  プロトコル-両方  
-

@@ -8,12 +8,12 @@ ms.author: v-tea
 author: Teresa-MOTIV
 ms.date: 11/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 53538466358256a8cd0955033503092f157eb562
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3aad4eeac3ba81def5a6a5c231745e8ac97cd9ca
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80853635"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964244"
 ---
 # <a name="always-on-vpn-enhancements"></a>Always On VPN の機能強化
 
@@ -26,7 +26,7 @@ Always On VPN には、過去の Windows VPN ソリューションよりも多�
 
 - **プラットフォーム統合:** Always On VPN は、Windows オペレーティングシステムとサードパーティソリューションとの統合が強化され、高度な接続シナリオに強力なプラットフォームを提供しています。
 
-- **セキュリティ:** Always On VPN には、トラフィックの種類、VPN 接続を使用できるアプリケーション、および接続を開始するために使用できる認証方法を制限する新しい高度なセキュリティ機能が用意されています。 ほとんどの場合、接続がアクティブになると、接続をセキュリティで保護することが重要になります。 詳細については、「 [VPN 認証オプション](https://docs.microsoft.com/windows/security/identity-protection/vpn/vpn-authentication)」を参照してください。
+- **セキュリティ:** Always On VPN には、トラフィックの種類、VPN 接続を使用できるアプリケーション、および接続を開始するために使用できる認証方法を制限する新しい高度なセキュリティ機能が用意されています。 ほとんどの場合、接続がアクティブになると、接続をセキュリティで保護することが重要になります。 詳細については、「 [VPN 認証オプション](/windows/security/identity-protection/vpn/vpn-authentication)」を参照してください。
 
 - **VPN 接続:** Always On VPN では、デバイストンネルの有無にかかわらず、自動トリガー機能が提供されます。 VPN を Always On する前に、ユーザーまたはデバイスのいずれかの認証を使用して自動接続をトリガーする機能は使用できませんでした。  
 
@@ -44,9 +44,9 @@ Microsoft は、Always On VPN で次の統合機能を導入または強化し�
 
 | 重要強化   |  説明  |
 |----------------|---|
-| **[Windows Information Protection (WIP)](https://docs.microsoft.com/windows/threat-protection/windows-information-protection/protect-enterprise-data-using-wip)** | WIP との統合により、ネットワークポリシーの適用によって、トラフィックが VPN 経由で許可されているかどうかを判断できます。 ユーザープロファイルがアクティブで WIP ポリシーが適用されている場合は、接続するために Always On VPN が自動的にトリガーされます。 また、WIP を使用する場合は、WIP ポリシーとアプリケーションの一覧が自動的に有効になるため、VPN プロファイルに個別に AppTriggerList と用 trafficfilterlist ルールを指定する必要はありません (より高度な構成が必要な場合を除きます)。 |
-|**[Windows Hello for Business](https://docs.microsoft.com/windows/access-protection/hello-for-business/hello-overview)** |Always On VPN では、Windows Hello for Business (証明書ベースの認証モード) がネイティブにサポートされており、コンピューターへのサインインと VPN への接続の両方にシームレスなシングルサインオンエクスペリエンスを提供します。 そのため、VPN 接続にはセカンダリ認証 (ユーザー資格情報) は必要ないため、Windows Hello for Business 認証での Always On 接続を使用できます。 |
-| **[条件付きアクセスの Microsoft Azure](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-controls)**  |Always On VPN クライアントは、Azure の条件付きアクセスプラットフォームと統合して、多要素認証 (MFA)、デバイスのコンプライアンス、または2つの組み合わせを適用できます。 条件付きアクセスポリシーに準拠している場合、Azure Active Directory (Azure AD) は、VPN ゲートウェイへの認証に使用できる有効期間 (既定では60分) の IP セキュリティ (IPsec) 認証証明書を発行します。 デバイスコンプライアンスは Configuration Manager/Intune コンプライアンスポリシーを使用します。これには、接続のコンプライアンスチェックの一環として、デバイス正常性構成証明の状態を含めることができます。|
+| **[Windows 情報保護 (WIP)](/windows/threat-protection/windows-information-protection/protect-enterprise-data-using-wip)** | WIP との統合により、ネットワークポリシーの適用によって、トラフィックが VPN 経由で許可されているかどうかを判断できます。 ユーザープロファイルがアクティブで WIP ポリシーが適用されている場合は、接続するために Always On VPN が自動的にトリガーされます。 また、WIP を使用する場合は、WIP ポリシーとアプリケーションの一覧が自動的に有効になるため、VPN プロファイルに個別に AppTriggerList と用 trafficfilterlist ルールを指定する必要はありません (より高度な構成が必要な場合を除きます)。 |
+|**[Windows Hello for Business](/windows/access-protection/hello-for-business/hello-overview)** |Always On VPN では、Windows Hello for Business (証明書ベースの認証モード) がネイティブにサポートされており、コンピューターへのサインインと VPN への接続の両方にシームレスなシングルサインオンエクスペリエンスを提供します。 そのため、VPN 接続にはセカンダリ認証 (ユーザー資格情報) は必要ないため、Windows Hello for Business 認証での Always On 接続を使用できます。 |
+| **[条件付きアクセスの Microsoft Azure](/azure/active-directory/active-directory-conditional-access-controls)**  |Always On VPN クライアントは、Azure の条件付きアクセスプラットフォームと統合して、多要素認証 (MFA)、デバイスのコンプライアンス、または2つの組み合わせを適用できます。 条件付きアクセスポリシーに準拠している場合、Azure Active Directory (Azure AD) は、VPN ゲートウェイへの認証に使用できる有効期間 (既定では60分) の IP セキュリティ (IPsec) 認証証明書を発行します。 デバイスコンプライアンスは Configuration Manager/Intune コンプライアンスポリシーを使用します。これには、接続のコンプライアンスチェックの一環として、デバイス正常性構成証明の状態を含めることができます。|
 |  **Azure MFA** |リモート認証ダイヤルインユーザーサービス (RADIUS) サービスと、Azure MFA のネットワークポリシーサーバー (NPS) 拡張機能と組み合わせることで、VPN 認証で強力な MFA を使用できます。 | **サードパーティ VPN プラグイン**  | ユニバーサル Windows プラットフォーム (UWP) を使用すると、サードパーティの VPN プロバイダーは、すべての Windows 10 デバイスに対して1つのアプリケーションを作成できます。 UWP は、デバイス間で保証されたコア API レイヤーを提供します。これにより、カーネルレベルのドライバーの作成に関連する多くの複雑な問題を回避できます。 現時点では、Windows 10 UWP VPN プラグインは、 [Pulse Secure](https://www.microsoft.com/p/pulse-secure/9nblggh3b0bp)、 [F5 アクセス](https://www.microsoft.com/p/f5-access/9wzdncrdsfn0)、 [Check Point カプセル Vpn](https://www.microsoft.com/p/check-point-capsule-vpn/9wzdncrdjxtj)、 [FortiClient](https://www.microsoft.com/p/forticlient/9wzdncrdh6mc)、 [SonicWall Mobile Connect](https://www.microsoft.com/p/sonicwall-mobile-connect/9wzdncrdsfkz)、および[globalprotect](https://www.microsoft.com/p/globalprotect/9nblggh6bzl3)用に存在します。それ以外の場合は、今後表示される可能性があります。 |
 
 ## <a name="security"></a>セキュリティ
@@ -55,7 +55,7 @@ Microsoft は、Always On VPN で次の統合機能を導入または強化し�
 
 | 重要強化 | 説明  |
 |---|---|
-| **トラフィックフィルター** | トラフィックフィルターを使用すると、企業ネットワークへのトラフィックを許可するクライアント側のポリシーを指定できます。 このようにして、管理者は VPN インターフェイスにアプリまたはトラフィックの制限を適用し、その使用を特定のソース、宛先ポート、および IP アドレスに制限することができます。 次の2種類のフィルター規則を使用できます。<ul><li>**アプリベースの規則。** アプリベースのファイアウォール規則は、指定されたアプリケーションの一覧に基づいており、これらのアプリからのトラフィックのみが VPN インターフェイス経由でアクセスできるようにします。</li><li>**トラフィックベースの規則。** トラフィックベースのファイアウォール規則は、ポート、アドレス、プロトコルなどのネットワーク要件に基づいています。 これらの規則を使用するのは、これらの特定の条件に一致するトラフィックに対してのみ、VPN インターフェイスを経由することが許可されている場合のみです。<p><p>***注:***<br>これらの規則は、デバイスから送信されるトラフィックにのみ適用されます。 トラフィックフィルターを使用すると、企業ネットワークからクライアントへの受信トラフィックがブロックされます。 </li></ul> |**アプリごとの VPN**|アプリごとの VPN は、アプリベースのトラフィックフィルターに似ていますが、アプリケーショントリガーとアプリベースのトラフィックフィルターを組み合わせて、vpn 接続が VPN クライアント上のすべてのアプリケーションではなく特定のアプリケーションに制限されるようにします。 この機能は、アプリの開始時に自動的に開始されます。|
+| **トラフィック フィルター** | トラフィックフィルターを使用すると、企業ネットワークへのトラフィックを許可するクライアント側のポリシーを指定できます。 このようにして、管理者は VPN インターフェイスにアプリまたはトラフィックの制限を適用し、その使用を特定のソース、宛先ポート、および IP アドレスに制限することができます。 次の2種類のフィルター規則を使用できます。<ul><li>**アプリベースの規則。** アプリベースのファイアウォール規則は、指定されたアプリケーションの一覧に基づいており、これらのアプリからのトラフィックのみが VPN インターフェイス経由でアクセスできるようにします。</li><li>**              トラフィック ベースの規則。** トラフィックベースのファイアウォール規則は、ポート、アドレス、プロトコルなどのネットワーク要件に基づいています。 これらの規則を使用するのは、これらの特定の条件に一致するトラフィックに対してのみ、VPN インターフェイスを経由することが許可されている場合のみです。<p><p>***注:***<br>これらの規則は、デバイスから送信されるトラフィックにのみ適用されます。 トラフィックフィルターを使用すると、企業ネットワークからクライアントへの受信トラフィックがブロックされます。 </li></ul> |**アプリごとの VPN**|アプリごとの VPN は、アプリベースのトラフィックフィルターに似ていますが、アプリケーショントリガーとアプリベースのトラフィックフィルターを組み合わせて、vpn 接続が VPN クライアント上のすべてのアプリケーションではなく特定のアプリケーションに制限されるようにします。 この機能は、アプリの開始時に自動的に開始されます。|
 |  **カスタマイズされた IPsec 暗号化アルゴリズムのサポート**   |  Always On VPN では、厳格な政府機関または組織のセキュリティポリシーを満たすために、RSA と楕円曲線の両方の暗号化アルゴリズムを使用することがサポートされています。|
 | **ネイティブ拡張認証プロトコル (EAP) のサポート** |Always On VPN は、EAP をネイティブでサポートしています。これにより、認証ワークフローの一部として、さまざまな Microsoft およびサードパーティの EAP の種類を使用できます。 EAP は、次の認証の種類に基づいて、セキュリティで保護された認証を提供します。<ul><li>ユーザー名とパスワード</li><li>スマートカード (物理と仮想の両方)</li><li>ユーザー証明書</li><li>Windows Hello for Business</li><li>EAP RADIUS 統合による MFA のサポート</li></ul>アプリケーションベンダーは、サードパーティ製の UWP VPN プラグインの認証方法を制御しますが、カスタムの資格情報の種類や OTP のサポートなど、使用可能なオプションの配列があります。|
 
@@ -95,10 +95,10 @@ Always On VPN の構成と互換性の強化点を次に示します。
 | **さまざまな管理および展開のメカニズム** |                                                                                                                                 Windows PowerShell、Microsoft Endpoint Configuration Manager、Intune またはサードパーティのモバイルデバイス管理 (MDM) ツール、Windows 構成デザイナーなど、さまざまな管理および展開メカニズムを使用して、VPN 設定 ( *vpn プロファイル*と呼ばれる) を管理できます。 これらのオプションは、使用するクライアント管理ツールに関係なく、Always On VPN の構成を簡略化します。                                                                                                                                 |
 |     **標準化された VPN プロファイルの定義**      |                                                                                                                                                                                                                                  Always On VPN では、標準の XML プロファイル (ProfileXML) を使用した構成がサポートされており、ほとんどの管理ツールセットと配置ツールセットで使用される標準の構成テンプレート形式が提供されます。                                                                                                                                                                                                                                   |
 
-## <a name="next-steps"></a>次のステップ:
+## <a name="next-steps"></a>次のステップ
 
 - [いくつかの高度な Always On VPN 機能について説明します。](deploy/always-on-vpn-adv-options.md)
 
-- [Always On VPN テクノロジについての詳細情報](always-on-vpn-technology-overview.md)
+- [Always On VPN テクノロジの詳細の確認](always-on-vpn-technology-overview.md)
 
 - [Always On VPN 展開の計画を開始する](deploy/always-on-vpn-deploy-deployment.md)

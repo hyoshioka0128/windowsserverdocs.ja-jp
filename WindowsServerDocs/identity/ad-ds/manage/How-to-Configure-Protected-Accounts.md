@@ -8,20 +8,20 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 6410936e50f4fad34b18fb8f287d9df710347863
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 555d309ca5de27b241eff00a0fed6dd253a34208
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80823455"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961264"
 ---
 # <a name="how-to-configure-protected-accounts"></a>保護されるアカウントの構成方法
 
->適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
-Pass-the-hash (PtH) 攻撃では、攻撃者はユーザーのパスワード (または他の資格情報の派生物) の基盤となる NTLM ハッシュを使用して、リモートのサーバーまたはサービスに対する認証を行うことができます。 マイクロソフトは以前に、Pass-the-Hash 攻撃を軽減させるための [ガイダンスを公開](https://www.microsoft.com/download/details.aspx?id=36036) しています。  Windows Server 2012 R2 には、さらに、このような攻撃を軽減するために新しい機能が含まれています。 資格情報の盗用を防ぐのに役立つ、その他のセキュリティ機能の詳細については、「 [資格情報の保護と管理](https://technet.microsoft.com/library/dn408190.aspx)」を参照してください。 このトピックでは、次の新機能を構成する方法を説明します。
+Pass-the-hash (PtH) 攻撃では、攻撃者はユーザーのパスワード (または他の資格情報の派生物) の基盤となる NTLM ハッシュを使用して、リモートのサーバーまたはサービスに対する認証を行うことができます。 マイクロソフトは以前に、Pass-the-Hash 攻撃を軽減させるための [ガイダンスを公開](https://www.microsoft.com/download/details.aspx?id=36036) しています。  Windows Server 2012 R2 には、さらに、このような攻撃を軽減するために新しい機能が含まれています。 資格情報の盗用を防ぐのに役立つ、その他のセキュリティ機能の詳細については、「 [資格情報の保護と管理](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn408190(v=ws.11))」を参照してください。 このトピックでは、次の新機能を構成する方法を説明します。
 
--   [保護されたユーザー](../../ad-ds/manage/How-to-Configure-Protected-Accounts.md#BKMK_AddtoProtectedUsers)
+-   [Protected Users](../../ad-ds/manage/How-to-Configure-Protected-Accounts.md#BKMK_AddtoProtectedUsers)
 
 -   [認証ポリシー](../../ad-ds/manage/How-to-Configure-Protected-Accounts.md#BKMK_CreateAuthNPolicies)
 
@@ -29,16 +29,16 @@ Pass-the-hash (PtH) 攻撃では、攻撃者はユーザーのパスワード (�
 
 Windows 8.1 および Windows Server 2012 R2 には、資格情報の盗用を防ぐために役立つ追加の軽減機能が内蔵されています。これらの機能については、以下のトピックで説明しています。
 
--   [リモートデスクトップの制限付き管理モード](https://blogs.technet.com/b/kfalde/archive/2013/08/14/restricted-admin-mode-for-rdp-in-windows-8-1-2012-r2.aspx)
+-   [リモート デスクトップのための制限付き管理モード](/archive/blogs/kfalde/restricted-admin-mode-for-rdp-in-windows-8-1-2012-r2)
 
--   [LSA の保護](https://technet.microsoft.com/library/dn408187)
+-   [LSA の保護](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn408187(v=ws.11))
 
-## <a name="protected-users"></a><a name="BKMK_AddtoProtectedUsers"></a>保護されたユーザー
+## <a name="protected-users"></a><a name="BKMK_AddtoProtectedUsers"></a>Protected Users
 Protected Users は、新しいユーザーや既存のユーザーを追加できる新しいグローバル セキュリティ グループです。 Windows 8.1 デバイスおよび Windows Server 2012 R2 ホストの資格情報の盗用に対する保護を強化するには、このグループのメンバーを持つ特別な動作があります。 グループのメンバー、または Windows Server 2012 R2 ホストの Windows 8.1 デバイスをキャッシュしません Protected Users に対するサポートされていない資格情報。 このグループのメンバーの場合、追加の保護があるいない Windows 8.1 より前のバージョンの Windows を実行しているデバイスにログオンしている場合。
 
 ユーザーがサインオンした Windows 8.1 デバイスに Protected Users のメンバーをグループ化し、Windows Server 2012 R2 ホストできる *不要になった* を使用します。
 
--   既定の資格情報の委任 (CredSSP) - プレーンテキストの資格情報は、 **[既定の資格情報の委任を許可する]** ポリシーが有効な場合でもキャッシュされません
+-   既定の資格情報の委任 (CredSSP) - プレーンテキストの資格情報は、**[既定の資格情報の委任を許可する]** ポリシーが有効な場合でもキャッシュされません
 
 -   Windows ダイジェスト - プレーンテキストの資格情報はそれらが有効な場合でもキャッシュされません
 
@@ -58,7 +58,7 @@ Protected Users は、新しいユーザーや既存のユーザーを追加で�
 
 -   最初の 4 時間の有効期間後のユーザー チケット (TGT) の更新
 
-使用できるグループにユーザーを追加する [UI ツール](https://technet.microsoft.com/library/cc753515.aspx) Active Directory 管理センター (ADAC) または Active Directory ユーザーとコンピューター、またはなどのコマンド ライン ツールなど [Dsmod グループ](https://technet.microsoft.com/library/cc732423.aspx), 、または Windows PowerShell[Add-adgroupmember](https://technet.microsoft.com/library/ee617210.aspx) コマンドレットです。 サービスとコンピューターのアカウントは、Protected Users グループのメンバーに*しないでください*。 これらのアカウントのメンバーシップでは、パスワードまたは証明書が常にホストで利用できるため、ローカル保護が提供されません。
+使用できるグループにユーザーを追加する [UI ツール](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753515(v=ws.11)) Active Directory 管理センター (ADAC) または Active Directory ユーザーとコンピューター、またはなどのコマンド ライン ツールなど [Dsmod グループ](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc732423(v=ws.11)), 、または Windows PowerShell[Add-adgroupmember](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee617210(v=technet.10)) コマンドレットです。 サービスとコンピューターのアカウントは、Protected Users グループのメンバーに*しないでください*。 これらのアカウントのメンバーシップでは、パスワードまたは証明書が常にホストで利用できるため、ローカル保護が提供されません。
 
 > [!WARNING]
 > 認証の制限には回避策はありません。つまり、Enterprise Admins グループや Domain Admins グループのように高い権限を持つグループのメンバーであっても、Protected Users グループの他のメンバーと同じ制限が適用されます。 このようなグループのすべてのメンバーが Protected Users グループに追加されると、それらのすべてのアカウントがロックアウトされる可能性があります。潜在的な影響を十分にテストするまでは、高い特権を持つアカウントを Protected Users グループに追加しないでください。
@@ -74,7 +74,7 @@ Protected Users グループのメンバーは、Kerberos で高度暗号化標�
 ### <a name="requirements-for-using-protected-accounts"></a><a name="BKMK_Prereq"></a>保護されたアカウントを使用するための要件
 保護されたアカウントを展開するには、次の要件があります。
 
--   Protected Users に対するクライアント側の制限を提供するには、ホストは Windows 8.1 または Windows Server 2012 R2 を実行する必要があります。 ユーザーは、Protected Users グループのメンバーであるアカウントのみを使用してサインオンする必要があります。 Protected Users グループを作成してこの場合、 [プライマリ ドメイン コント ローラー (PDC) エミュレーターの役割を転送する](https://technet.microsoft.com/library/cc816944(v=ws.10).aspx) Windows Server 2012 R2 を実行しているドメイン コント ローラーにします。 そのグループのオブジェクトが他のドメイン コントローラーにレプリケートされた後に、以前のバージョンの Windows Server が実行されているドメイン コントローラーで PDC エミュレーターの役割をホストできます。
+-   Protected Users に対するクライアント側の制限を提供するには、ホストは Windows 8.1 または Windows Server 2012 R2 を実行する必要があります。 ユーザーは、Protected Users グループのメンバーであるアカウントのみを使用してサインオンする必要があります。 Protected Users グループを作成してこの場合、 [プライマリ ドメイン コント ローラー (PDC) エミュレーターの役割を転送する](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc816944(v=ws.10)) Windows Server 2012 R2 を実行しているドメイン コント ローラーにします。 そのグループのオブジェクトが他のドメイン コントローラーにレプリケートされた後に、以前のバージョンの Windows Server が実行されているドメイン コントローラーで PDC エミュレーターの役割をホストできます。
 
 -   NTLM 認証の使用を制限するのには、Protected Users に対するドメイン コント ローラー側の制限とその他の制限を提供するには、Windows Server 2012 R2 がドメインの機能レベルにあります。 機能レベルの詳細については、「 [AD DS の機能レベルとは](../active-directory-functional-levels.md)」をご覧ください。
 
@@ -83,9 +83,9 @@ Protected Users グループのメンバーは、Kerberos で高度暗号化標�
 
 #### <a name="new-logs-for-protected-users"></a>Protected Users 向けの新しいログ
 
-Protected Users に関連するイベントのトラブルシューティングに役立つ 2 つの新しい運用管理ログがある: 保護されたユーザー - クライアントのログと保護されているユーザー エラー - ドメイン コント ローラーのログ。 これらの新しいログはイベント ビューアーにありますが、既定では無効になっています。 ログを有効化するには、 **[アプリケーションとサービス ログ]** 、 **[Microsoft]** 、 **[Windows]** 、 **[Authentication]** の順にクリックし、ログの名前をクリックして **[操作]** をクリックし (またはログを右クリック)、 **[ログの有効化]** をクリックします。
+Protected Users に関連するイベントのトラブルシューティングに役立つ 2 つの新しい運用管理ログがある: 保護されたユーザー - クライアントのログと保護されているユーザー エラー - ドメイン コント ローラーのログ。 これらの新しいログはイベント ビューアーにありますが、既定では無効になっています。 ログを有効化するには、**[アプリケーションとサービス ログ]**、**[Microsoft]**、**[Windows]**、**[Authentication]** の順にクリックし、ログの名前をクリックして **[操作]** をクリックし (またはログを右クリック)、**[ログの有効化]** をクリックします。
 
-これらのログのイベント詳細については、「 [認証ポリシーと認証ポリシー サイロ](https://technet.microsoft.com/library/dn486813.aspx)」をご覧ください。
+これらのログのイベント詳細については、「 [認証ポリシーと認証ポリシー サイロ](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn486813(v=ws.11))」をご覧ください。
 
 #### <a name="troubleshoot-tgt-expiration"></a>TGT の有効期限のトラブルシューティング
 通常、ドメイン コントローラーは、次の [グループ ポリシー管理エディター] ウィンドウに表示されるドメイン ポリシーに基づいて、TGT の有効期間と更新を設定します。
@@ -104,12 +104,12 @@ Protected Users に関連するイベントのトラブルシューティング�
 ![保護されたアカウント](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_TshootDelegation.gif)
 
 ### <a name="audit-authentication-attempts"></a><a name="BKMK_AuditAuthNattempts"></a>認証試行の監査
-**Protected Users** グループのメンバーの認証試行を明示的に監査するには、セキュリティ ログの監査イベントを引き続き収集するか、または新しい運用管理ログのデータを収集します。 これらのイベント詳細については、「 [認証ポリシーと認証ポリシー サイロ](https://technet.microsoft.com/library/dn486813.aspx)」をご覧ください。
+**Protected Users** グループのメンバーの認証試行を明示的に監査するには、セキュリティ ログの監査イベントを引き続き収集するか、または新しい運用管理ログのデータを収集します。 これらのイベントの詳細については、「[認証ポリシーと認証ポリシーサイロ](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn486813(v=ws.11))」を参照してください。
 
 ### <a name="provide-dc-side-protections-for-services-and-computers"></a><a name="BKMK_ProvidePUdcProtections"></a>サービスとコンピューターに対して DC 側の保護を提供する
 サービスおよびコンピューター用のアカウントは、**Protected Users** のメンバーにすることはできません。 このセクションでは、これらのアカウントに提供できるドメイン コントローラー ベースの保護について説明します。
 
--   NTLM 認証の拒否: [NTLM ブロック ポリシー](https://technet.microsoft.com/library/jj865674(v=ws.10).aspx)を通じてのみ構成できます
+-   NTLM 認証の拒否: [NTLM ブロック ポリシー](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/jj865674(v=ws.10))を通じてのみ構成できます
 
 -   Kerberos 事前認証でのデータ暗号化標準 (DES) の拒否: Kerberos と共にリリースされた Windows のすべてのバージョンには、RC4 もサポートしているという理由だけ DES を構成していないコンピュータのアカウントの Windows Server 2012 R2 のドメイン コント ローラーは DES を受け入れません。
 
@@ -129,9 +129,9 @@ Protected Users に関連するイベントのトラブルシューティング�
 
 Windows Server 2012 では、ダイナミック アクセス制御には、組織全体でファイル サーバーを構成する簡単な方法を提供する集約型アクセス ポリシーと呼ばれる Active Directory フォレスト スコープ オブジェクトのクラスが導入されました。 Windows Server 2012 r2、Windows Server 2012 R2 のドメイン内のアカウント クラスに認証の構成を適用する認証ポリシー (objectClass Msds-authnpolicies) と呼ばれる新しいオブジェクト クラスを使用できます。 次の Active Directory アカウント クラスがあります。
 
--   ユーザー
+-   User
 
--   コンピューター
+-   Computer
 
 -   管理されたサービス アカウントおよびグループの管理されたサービス アカウント (GMSA)
 
@@ -152,7 +152,7 @@ TGS 交換では、サービス チケットを要求する認証子を作成す
 
 AP 交換は通常、アプリケーション プロトコル内部のデータとして発生し、認証ポリシーの影響を受けません。
 
-詳細については、「 [Kerberos バージョン 5 認証プロトコルの動作](https://technet.microsoft.com/library/cc772815(v=WS.10).aspx)」をご覧ください。
+詳細についてを参照してください。 [「Kerberos バージョン 5 認証プロトコルの動作](/previous-versions/windows/it-pro/windows-server-2003/cc772815(v=ws.10))します。
 
 ### <a name="overview"></a>概要
 認証ポリシーは、アカウントに対して構成可能な制限を適用する方法を提供し、サービスおよびコンピューター用のアカウントにも制限を提供することで、Protected Users を補完します。 認証ポリシーは、AS 交換または TGS 交換の間に適用されます。
@@ -171,7 +171,7 @@ AP 交換は通常、アプリケーション プロトコル内部のデータ�
 
 ### <a name="requirements-for-using-authentication-policies"></a><a name="BKMK_ReqForAuthnPolicies"></a>認証ポリシーを使用するための要件
 
-|ポリシー|要件|
+|ポリシー|必要条件|
 |----------|----------------|
 |TGT の有効期間のカスタマイズ| Windows Server 2012 R2 のドメイン機能レベルのアカウント ドメイン|
 |ユーザー サインオンの制限|-ダイナミック アクセス制御のサポート Windows Server 2012 R2 のドメイン機能レベルのアカウント ドメイン<br />Windows 8、Windows 8.1、Windows Server 2012 またはダイナミック アクセス制御を持つデバイスの Windows Server 2012 R2 のサポートします。|
@@ -183,15 +183,15 @@ AP 交換は通常、アプリケーション プロトコル内部のデータ�
 
 #### <a name="configure-domain-controller-support"></a>ドメイン コントローラーのサポートを構成する
 
-ユーザーのアカウント ドメインは、Windows Server 2012 R2 のドメイン機能レベル (DFL) にする必要があります。 すべてのドメイン コント ローラーは、Active Directory ドメインと信頼関係を使用して、Windows Server 2012 R2 では、ように [dfl](https://technet.microsoft.com/library/cc753104.aspx) Windows Server 2012 R2 にします。
+ユーザーのアカウント ドメインは、Windows Server 2012 R2 のドメイン機能レベル (DFL) にする必要があります。 すべてのドメイン コント ローラーは、Active Directory ドメインと信頼関係を使用して、Windows Server 2012 R2 では、ように [dfl](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753104(v=ws.11)) Windows Server 2012 R2 にします。
 
-**動的 Access Control のサポートを構成するには**
+**ダイナミック アクセス制御のサポートを構成するには**
 
-1.  既定のドメイン コントローラー ポリシーで、[コンピューターの構成]、[管理用テンプレート]、[システム]、[KDC] の順に展開し、 **[有効]** をクリックして **[要求、複合認証、および Kerberos 防御のキー配布センター (KDC) クライアント サポート]** を有効化します。
+1.  既定のドメイン コントローラー ポリシーで、[コンピューターの構成]、[管理用テンプレート]、[システム]、[KDC] の順に展開し、**[有効]** をクリックして **[要求、複合認証、および Kerberos 防御のキー配布センター (KDC) クライアント サポート]** を有効化します。
 
     ![保護されたアカウント](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_EnableKDCClaims.gif)
 
-2.  **[オプション]** のドロップダウン リスト ボックスで、 **[常に信頼性情報を提供する]** を選択します。
+2.  **[オプション]** のドロップダウン リスト ボックスで、**[常に信頼性情報を提供する]** を選択します。
 
     > [!NOTE]
     > **サポートされている** も構成することができますが、ドメインは Dc を常にも、Windows Server 2012 R2 DFL にあるためクレームを使用するユーザー クレームに基づくアクセス確認を要求に非対応するデバイスを使用する場合に行うし、要求対応のサービスに接続するホストを提供します。
@@ -210,27 +210,27 @@ AP 交換は通常、アプリケーション プロトコル内部のデータ�
     > [!NOTE]
     > 選択した **認証** ノードがドメインに Windows Server 2012 R2 DFL で表示します。 ノードが表示されない場合、もう一度やり直して Windows Server 2012 R2 DFL にあるドメインからドメイン管理者アカウントを使用しています。
 
-2.  **[認証ポリシー]** をクリックし、 **[新規]** をクリックして新しいポリシーを作成します。
+2.  **[認証ポリシー]** をクリックし、**[新規]** をクリックして新しいポリシーを作成します。
 
     ![保護されたアカウント](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_NewAuthNPolicy.gif)
 
     認証ポリシーには、既定で適用される表示名が必要です。
 
-3.  監査のみのポリシーを作成するには、 **[監査ポリシーの制限のみ]** をクリックします。
+3.  監査のみのポリシーを作成するには、**[監査ポリシーの制限のみ]** をクリックします。
 
     ![保護されたアカウント](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_NewAuthNPolicyAuditOnly.gif)
 
     認証ポリシーは、Active Directory のアカウントの種類に基づいて適用されます。 それぞれの種類に対する設定を構成することで、1 つのポリシーを 3 つのアカウントの種類すべてに適用できます。 次のアカウントの種類があります。
 
-    -   ユーザー
+    -   User
 
-    -   コンピューター
+    -   Computer
 
     -   管理されたサービス アカウントおよびグループの管理されたサービス アカウント
 
     キー配布センター (KDC) で使用できる新しいプリンシパルでスキーマを拡張した場合、新しいアカウントの種類は、最も近い派生アカウントの種類から分類されます。
 
-4.  ユーザー アカウントの TGT の有効期間を構成するには、 **[ユーザー アカウントのチケット保証チケットの有効期間を指定します]** チェック ボックスをオンにして、時間を分単位で入力します。
+4.  ユーザー アカウントの TGT の有効期間を構成するには、**[ユーザー アカウントのチケット保証チケットの有効期間を指定します]** チェック ボックスをオンにして、時間を分単位で入力します。
 
     ![保護されたアカウント](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_TGTLifetime.gif)
 
@@ -238,17 +238,17 @@ AP 交換は通常、アプリケーション プロトコル内部のデータ�
 
     ![保護されたアカウント](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_TGTExpiration.png)
 
-5.  ユーザー アカウントを選択したデバイスに制限するには、 **[編集]** をクリックし、デバイスで必要な条件を定義します。
+5.  ユーザー アカウントを選択したデバイスに制限するには、**[編集]** をクリックし、デバイスで必要な条件を定義します。
 
     ![保護されたアカウント](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_EditAuthNPolicy.gif)
 
-6.  **[アクセス制御条件の編集]** ウィンドウで、 **[条件の追加]** をクリックします。
+6.  **[アクセス制御条件の編集]** ウィンドウで、**[条件の追加]** をクリックします。
 
     ![保護されたアカウント](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_AddCondition.png)
 
 ##### <a name="add-computer-account-or-group-conditions"></a>コンピューター アカウントまたはグループの条件を追加する
 
-1.  コンピューター アカウントまたはグループを構成するには、ドロップダウン リストで **[次のそれぞれに所属する]** を選択し、 **[次のいずれかに所属する]** に変更します。
+1.  コンピューター アカウントまたはグループを構成するには、ドロップダウン リストで **[次のそれぞれに所属する]** を選択し、**[次のいずれかに所属する]** に変更します。
 
     ![保護されたアカウント](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_AddCompMember.png)
 
@@ -259,15 +259,15 @@ AP 交換は通常、アプリケーション プロトコル内部のデータ�
 
     ![保護されたアカウント](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_AddCompAddItems.png)
 
-3.  オブジェクトの種類を変更するには、 **[オブジェクトの種類]** をクリックします。
+3.  オブジェクトの種類を変更するには、**[オブジェクトの種類]** をクリックします。
 
     ![保護されたアカウント](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_ChangeObjects.gif)
 
-4.  Active Directory 内のコンピューター オブジェクトを選択するには、 **[コンピューター]** をクリックし、 **[OK]** をクリックします。
+4.  Active Directory 内のコンピューター オブジェクトを選択するには、**[コンピューター]** をクリックし、**[OK]** をクリックします。
 
     ![保護されたアカウント](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_ChangeObjectsComputers.gif)
 
-5.  ユーザーを制限するコンピューターの名前を入力し、 **[名前の確認]** をクリックします。
+5.  ユーザーを制限するコンピューターの名前を入力し、**[名前の確認]** をクリックします。
 
     ![保護されたアカウント](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_ChangeObjectsCompName.gif)
 
@@ -275,7 +275,7 @@ AP 交換は通常、アプリケーション プロトコル内部のデータ�
 
     ![保護されたアカウント](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_AddCompAddConditions.png)
 
-7.  完了したら、 **[OK]** をクリックすると、コンピューター アカウントに対する定義済みの条件が表示されます。
+7.  完了したら、**[OK]** をクリックすると、コンピューター アカウントに対する定義済みの条件が表示されます。
 
     ![保護されたアカウント](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_AddCompDone.png)
 
@@ -296,19 +296,19 @@ AP 交換は通常、アプリケーション プロトコル内部のデータ�
     ![保護されたアカウント](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_CompClaimComplete.gif)
 
 ##### <a name="troubleshoot-missing-computer-claims"></a>コンピューターの要求が見つからない場合のトラブルシューティング
-プロビジョニング済みの要求を使用できない場合、 **[コンピューター]** クラスに対してのみ構成されている可能性があります。
+プロビジョニング済みの要求を使用できない場合、**[コンピューター]** クラスに対してのみ構成されている可能性があります。
 
-たとえばを組織単位 (OU) に基づく認証を制限したいが限り、構成されているコンピューターの **コンピューター** クラスです。
+コンピューターの組織単位 (OU) に基づいて認証を制限するとします。これは既に構成されていますが、**コンピューター**クラスに対してのみ使用できます。
 
 ![保護されたアカウント](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_RestrictComputers.gif)
 
-要求を使用してユーザーのデバイスへのサインオンを制限できるようにするには、 **[ユーザー]** チェック ボックスをオンにします。
+要求を使用してユーザーのデバイスへのサインオンを制限できるようにするには、**[ユーザー]** チェック ボックスをオンにします。
 
 ![保護されたアカウント](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_RestrictUsersComputers.gif)
 
 #### <a name="provision-a-user-account-with-an-authentication-policy-with-adac"></a>ADAC で認証ポリシーをユーザー アカウントにプロビジョニングする
 
-1.  **[ユーザー]** アカウントで、 **[ポリシー]** をクリックします。
+1.  **[ユーザー]** アカウントで、**[ポリシー]** をクリックします。
 
     ![保護されたアカウント](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_UserPolicy.gif)
 
@@ -323,7 +323,7 @@ AP 交換は通常、アプリケーション プロトコル内部のデータ�
 #### <a name="configure-dynamic-access-control-support-on-devices-and-hosts"></a>デバイスおよびホストでダイナミック アクセス制御のサポートを構成する
 ダイナミック アクセス制御 (DAC) を構成しなくても、TGT の有効期間を構成することができます。 DAC が必要となるのは、AllowedToAuthenticateFrom および AllowedToAuthenticateTo を確認する場合のみです。
 
-グループ ポリシー エディターまたはローカル グループ ポリシー エディターを使用して、[コンピューターの構成]、[管理用テンプレート]、[システム]、[Kerberos] の順に展開し、 **[要求、複合認証、および Kerberos 防御の Kerberos クライアント サポート]** を有効化します。
+グループ ポリシー エディターまたはローカル グループ ポリシー エディターを使用して、[コンピューターの構成]、[管理用テンプレート]、[システム]、[Kerberos] の順に展開し、**[要求、複合認証、および Kerberos 防御の Kerberos クライアント サポート]** を有効化します。
 
 ![保護されたアカウント](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_KerbClientDACSupport.gif)
 
@@ -335,7 +335,7 @@ AP 交換は通常、アプリケーション プロトコル内部のデータ�
 ![保護されたアカウント](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_AccountsAssigned.gif)
 
 #### <a name="use-the-authentication-policy-failures---domain-controller-administrative-log"></a>Authentication Policy Failures - Domain Controller 管理ログの使用します。
-新しい **Authentication Policy Failures - ドメイン コント ローラー** 下にある管理ログ **アプリケーションとサービス ログ** > **Microsoft** > **Windows** > **認証** 、により、認証ポリシーのエラーを検出する容易に作成されました。 このログは、既定では無効になっています。 有効にするには、ログの名前を右クリックし、 **[ログの有効化]** をクリックします。 新しいイベントは、既存の Kerberos TGT やサービス チケットの監査イベントの内容とよく似ています。 これらのイベント詳細については、「 [認証ポリシーと認証ポリシー サイロ](https://technet.microsoft.com/library/dn486813.aspx)」をご覧ください。
+新しい **Authentication Policy Failures - ドメイン コント ローラー** 下にある管理ログ **アプリケーションとサービス ログ** > **Microsoft** > **Windows** > **認証** 、により、認証ポリシーのエラーを検出する容易に作成されました。 このログは、既定では無効になっています。 有効にするには、ログの名前を右クリックし、**[ログの有効化]** をクリックします。 新しいイベントは、既存の Kerberos TGT やサービス チケットの監査イベントの内容とよく似ています。 これらのイベント詳細については、「 [認証ポリシーと認証ポリシー サイロ](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn486813(v=ws.11))」をご覧ください。
 
 ### <a name="manage-authentication-policies-by-using-windows-powershell"></a><a name="BKMK_ManageAuthnPoliciesUsingPSH"></a>Windows PowerShell を使用した認証ポリシーの管理
 次のコマンドは、**TestAuthenticationPolicy** という名前の認証ポリシーを作成します。 **UserAllowedToAuthenticateFrom** パラメーターは、ユーザーが someFile.txt という名前のファイルに含まれる SDDL 文字列によって認証できるデバイスを指定します。
@@ -419,15 +419,15 @@ PS C:\> Get-ADAuthenticationPolicy -Filter 'Enforce -eq $false' | Remove-ADAuthe
 
 #### <a name="to-create-an-authentication-policy-silo-by-using-active-directory-administrative-center"></a>Active Directory 管理センターを使用して認証ポリシー サイロを作成するには
 
-1.  **Active Directory 管理センター**を開き、 **[認証]** をクリックして **[認証ポリシー サイロ]** を右クリックし、 **[新規]** 、 **[認証ポリシー サイロ]** の順にクリックします。
+1.  **Active Directory 管理センター**を開き、**[認証]** をクリックして **[認証ポリシー サイロ]** を右クリックし、**[新規]**、**[認証ポリシー サイロ]** の順にクリックします。
 
     ![保護されたアカウント](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_CreateNewAuthNPolicySilo.gif)
 
-2.  **[表示名]** にサイロの名前を入力します。 **[許可されたアカウント]** で **[追加]** をクリックし、アカウントの名前を入力して、 **[OK]** をクリックします。 ユーザー、コンピューター、またはサービス アカウントを指定できます。 次に、すべてのプリンシパルに 1 つのポリシーを使用するか、またはそれぞれのプリンシパルの種類に個別のポリシーを使用するかを指定して、ポリシーの名前を指定します。
+2.  **[表示名]** にサイロの名前を入力します。 **[許可されたアカウント]** で **[追加]** をクリックし、アカウントの名前を入力して、**[OK]** をクリックします。 ユーザー、コンピューター、またはサービス アカウントを指定できます。 次に、すべてのプリンシパルに 1 つのポリシーを使用するか、またはそれぞれのプリンシパルの種類に個別のポリシーを使用するかを指定して、ポリシーの名前を指定します。
 
     ![保護されたアカウント](media/How-to-Configure-Protected-Accounts/ADDS_ProtectAcct_NewAuthNPolicySiloDisplayName.gif)
 
-### <a name="manage-authentication-policy-silos-by-using-windows-powershell"></a><a name="BKMK_ManageAuthnSilosUsingPSH"></a>Windows PowerShell を使用した認証ポリシーサイロの管理
+### <a name="manage-authentication-policy-silos-by-using-windows-powershell"></a><a name="BKMK_ManageAuthnSilosUsingPSH"></a>Windows PowerShell を使用した認証ポリシー サイロの管理
 次のコマンドは、認証ポリシー サイロ オブジェクトを作成して適用します。
 
 ```
@@ -469,6 +469,3 @@ PS C:\>Revoke-ADAuthenticationPolicySiloAccess -Identity Silo -Account User01 -C
 ```
 PS C:\>Get-ADComputer -Filter 'Name -like "newComputer*"' | Set-ADAccountAuthenticationPolicySilo -AuthenticationPolicySilo Silo -AuthenticationPolicy AuthenticationPolicy02
 ```
-
-
-

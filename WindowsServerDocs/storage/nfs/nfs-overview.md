@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 2589e21c54fa864629f81b5889d0442c6f0de254
-ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
+ms.openlocfilehash: f18c880dd673b17f53815a57fa2fcc66558dad71
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "85070564"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961324"
 ---
 # <a name="network-file-system-overview"></a>ネットワーク ファイル システムの概要
 
@@ -33,7 +33,7 @@ Windows では、オペレーティングシステムのバージョンとファ
 
 | オペレーティング システム | NFS サーバーのバージョン |NFS クライアントのバージョン|
 | ----------------- | ------------------- | ----------------- |
-| Windows 7、Windows 8.1、Windows 10 | N/A | NFSv2、NFSv3 |
+| Windows 7、Windows 8.1、Windows 10 | 該当なし | NFSv2、NFSv3 |
 | Windows Server 2008、Windows Server 2008 R2 | NFSv2、NFSv3 | NFSv2、NFSv3 |
 | Windows Server 2012、Windows Server 2012 R2、Windows Server 2016、Windows Server 2019 | NFSv2、NFSv3、NFSv 4.1  | NFSv2、NFSv3 |
 
@@ -51,10 +51,10 @@ Network File System の新機能と変更された機能には、NFS バージ�
 
 |機能|新規/更新|説明|
 |---|---|---|
-|[NFS バージョン4.1](#nfs-version-41)|新規|NFS バージョン3と比較して、セキュリティ、パフォーマンス、および相互運用性が向上しました。|
-|[NFS インフラストラクチャ](#nfs-infrastructure)|更新済み|は、展開と管理性を向上させ、セキュリティを強化します。|
-|[NFS バージョン3の継続的可用性](#nfs-version-3-continuous-availability)|更新済み|NFS バージョン3クライアントの継続的な可用性を向上させます。|
-|[展開と管理の容易性の向上](#deployment-and-manageability-improvements)|更新済み|新しい Windows PowerShell コマンドレットと新しい WMI プロバイダーを使用して NFS を簡単に展開および管理できます。|
+|[NFS バージョン4.1](#nfs-version-41)|新規作成|NFS バージョン3と比較して、セキュリティ、パフォーマンス、および相互運用性が向上しました。|
+|[NFS インフラストラクチャ](#nfs-infrastructure)|[更新]|は、展開と管理性を向上させ、セキュリティを強化します。|
+|[NFS バージョン3の継続的可用性](#nfs-version-3-continuous-availability)|[更新]|NFS バージョン3クライアントの継続的な可用性を向上させます。|
+|[展開と管理の容易性の向上](#deployment-and-manageability-improvements)|[更新]|新しい Windows PowerShell コマンドレットと新しい WMI プロバイダーを使用して NFS を簡単に展開および管理できます。|
 
 ## <a name="nfs-version-41"></a>NFS バージョン4.1
 
@@ -91,7 +91,7 @@ NFS サーバーは、通常は計画的なメンテナンスの間に、手動�
 
 NFS の展開と管理は、次の点で改善されています。
 
-- 40を超える新しい Windows PowerShell コマンドレットを使用すると、NFS ファイル共有の構成と管理が簡単になります。 詳細については、「 [Windows PowerShell の NFS コマンドレット](https://docs.microsoft.com/powershell/module/nfs/?view=win10-ps)」を参照してください。
+- 40を超える新しい Windows PowerShell コマンドレットを使用すると、NFS ファイル共有の構成と管理が簡単になります。 詳細については、「 [Windows PowerShell の NFS コマンドレット](/powershell/module/nfs/?view=win10-ps)」を参照してください。
 - Id マッピングは、ローカルのフラットファイルマッピングストアと、id マッピングを構成するための新しい Windows PowerShell コマンドレットによって強化されています。
 - サーバーマネージャーのグラフィカルユーザーインターフェイスは使いやすくなっています。
 - 新しい WMI バージョン2プロバイダーは、管理を容易にするために使用できます。
@@ -99,7 +99,7 @@ NFS の展開と管理は、次の点で改善されています。
 
 ## <a name="server-manager-information"></a>サーバー マネージャー情報
 
-サーバーマネージャーまたはそれ以降の[Windows 管理センター](../../manage/windows-admin-center/understand/windows-admin-center.md)では、役割と機能の追加ウィザードを使用して、NFS サーバーの役割サービス (ファイルと iSCSI サービスの役割の下) を追加します。 機能のインストールに関する全般的な情報については、「 [役割、役割サービス、または機能のインストールまたはアンインストール](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831809(v=ws.11)>)」を参照してください。 NFS サーバーツールには、NFS サーバーと NFS クライアントコンポーネントを管理するための、Network File System MMC スナップイン用のサービスが含まれています。 スナップインを使用すると、コンピューターにインストールされている NFS サーバーコンポーネントを管理できます。 NFS サーバーには、Windows のコマンドライン管理ツールもいくつか含まれています。
+サーバーマネージャーまたはそれ以降の[Windows 管理センター](../../manage/windows-admin-center/overview.md)では、役割と機能の追加ウィザードを使用して、NFS サーバーの役割サービス (ファイルと iSCSI サービスの役割の下) を追加します。 機能のインストールに関する全般的な情報については、「 [役割、役割サービス、または機能のインストールまたはアンインストール](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831809(v=ws.11)>)」を参照してください。 NFS サーバーツールには、NFS サーバーと NFS クライアントコンポーネントを管理するための、Network File System MMC スナップイン用のサービスが含まれています。 スナップインを使用すると、コンピューターにインストールされている NFS サーバーコンポーネントを管理できます。 NFS サーバーには、Windows のコマンドライン管理ツールもいくつか含まれています。
 
 - **Mount**は、リモート NFS 共有 (エクスポートとも呼ばれます) をローカルにマウントし、Windows クライアントコンピューター上のローカルドライブ文字にマップします。
 - **Nfsadmin**は、nfs サーバーと nfs クライアントコンポーネントの構成設定を管理します。
@@ -108,7 +108,7 @@ NFS の展開と管理は、次の点で改善されています。
 - **Showmount**は、NFS サーバーによってエクスポートされたマウント済みのファイルシステムを表示します。
 - **マウント解除さ**れた NFS ドライブを削除します。
 
-Windows Server 2012 の NFS では、nfs 用に nfs モジュールが導入されています。これには、NFS 専用の新しいコマンドレットがいくつかあります。 これらのコマンドレットは、NFS 管理タスクを自動化する簡単な方法を提供します。 詳細については、「 [Windows PowerShell の NFS コマンドレット](https://docs.microsoft.com/powershell/module/nfs/?view=win10-ps)」を参照してください。
+Windows Server 2012 の NFS では、nfs 用に nfs モジュールが導入されています。これには、NFS 専用の新しいコマンドレットがいくつかあります。 これらのコマンドレットは、NFS 管理タスクを自動化する簡単な方法を提供します。 詳細については、「 [Windows PowerShell の NFS コマンドレット](/powershell/module/nfs/?view=win10-ps)」を参照してください。
 
 ## <a name="additional-information"></a>関連情報
 
@@ -117,5 +117,5 @@ Windows Server 2012 の NFS では、nfs 用に nfs モジュールが導入さ�
 |コンテンツ タイプ|参考資料|
 |---|---|
 |デプロイ|[ネットワーク ファイル システムの展開](deploy-nfs.md)|
-|操作|[Windows PowerShell の NFS コマンドレット](https://docs.microsoft.com/powershell/module/nfs/?view=win10-ps)|
+|操作|[Windows PowerShell の NFS コマンドレット](/powershell/module/nfs/?view=win10-ps)|
 |関連テクノロジ|[Windows Server の記憶域](../storage.yml)|

@@ -8,12 +8,12 @@ ms.date: 10/17/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage-file-systems
-ms.openlocfilehash: c74e8744c22e2be174c1f1297e0472e5f32e1fe8
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: cd74468029ff973846ddfd10cce8ba0e26a607e9
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475409"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961394"
 ---
 # <a name="block-cloning-on-refs"></a>ReFS でのブロックの複製
 
@@ -53,12 +53,12 @@ ReFS のブロックの複製では、ファイル データの操作ではな�
 - コピー元とコピー先の領域は、クラスターの境界で始まり、クラスターの境界で終了する必要があります。
 - 複製される領域は、4 GB 未満の長さにする必要があります。
 - 同じ物理領域にマップできるファイル領域の最大数は、8175 個です。
-- コピー先の領域は、ファイルの終わりを超えて拡張しないでしてください。 アプリケーションで複製されるデータのコピー先を拡張する必要がある場合は、最初に [SetEndOfFile](https://msdn.microsoft.com/library/windows/desktop/aa365531(v=vs.85).aspx) を呼び出す必要があります。
+- コピー先の領域は、ファイルの終わりを超えて拡張しないでしてください。 アプリケーションで複製されるデータのコピー先を拡張する必要がある場合は、最初に [SetEndOfFile](/windows/win32/api/fileapi/nf-fileapi-setendoffile) を呼び出す必要があります。
 - コピー元とコピー先の領域が同じファイルに含まれている場合、それらの領域は重複してコピーされません  (場合によっては、ブロックの複製操作を、重複を回避する複数のブロックの複製に分割することによって、アプリケーションを続行することができます)。
 - コピー元とコピー先のファイルは、同じ ReFS ボリューム上にある必要があります。
-- コピー元とコピー先のファイルは、[整合性ストリーム](https://msdn.microsoft.com/library/windows/desktop/gg258117(v=vs.85).aspx)の設定が同じになっている必要があります。
+- コピー元とコピー先のファイルは、[整合性ストリーム](/windows/win32/fileio/file-attribute-constants)の設定が同じになっている必要があります。
 - コピー元のファイルがスパース ファイルである場合は、コピー先のファイルもスパース ファイルであることが必要です。
-- ブロックの複製操作では、共有されている便宜的ロック ([レベル 2 の便宜的ロック](https://msdn.microsoft.com/library/windows/desktop/aa365713(v=vs.85).aspx)とも呼ばれています) が動作しなくなります。
+- ブロックの複製操作では、共有されている便宜的ロック ([レベル 2 の便宜的ロック](/windows/win32/fileio/types-of-opportunistic-locks)とも呼ばれています) が動作しなくなります。
 - ReFS ボリュームは、Windows Server 2016 でフォーマットされている必要があります。フェールオーバー クラスタリングを使用している場合は、フォーマット時にクラスタリングの機能レベルが Windows Server 2016 以降になっている必要があります。
 
 ## <a name="additional-references"></a>その他のリファレンス
@@ -66,5 +66,5 @@ ReFS のブロックの複製では、ファイル データの操作ではな�
 -   [ReFS の概要](refs-overview.md)
 -   [ReFS 整合性ストリーム](integrity-streams.md)
 -   [記憶域スペースダイレクトの概要](../storage-spaces/storage-spaces-direct-overview.md)
--   [DUPLICATE_EXTENTS_DATA](https://msdn.microsoft.com/library/windows/desktop/mt590821(v=vs.85).aspx)
--   [FSCTL_DUPLICATE_EXTENTS_TO_FILE](https://msdn.microsoft.com/library/windows/desktop/mt590823(v=vs.85).aspx)
+-   [DUPLICATE_EXTENTS_DATA](/windows/win32/api/winioctl/ns-winioctl-duplicate_extents_data)
+-   [FSCTL_DUPLICATE_EXTENTS_TO_FILE](/windows/win32/api/winioctl/ni-winioctl-fsctl_duplicate_extents_to_file)

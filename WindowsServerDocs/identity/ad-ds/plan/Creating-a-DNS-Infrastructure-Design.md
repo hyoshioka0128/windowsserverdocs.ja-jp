@@ -8,12 +8,12 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: f3a9fbb36b1146dca49d62ae05bbf2c9f5d81ab1
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: c48996945e648a8ad698b1746e722702371521f1
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81624370"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962354"
 ---
 # <a name="creating-a-dns-infrastructure-design"></a>DNS インフラストラクチャの設計を作成する
 
@@ -24,14 +24,14 @@ Active Directory フォレストとドメインの設計を作成した後、Act
 AD DS をサポートするように DNS を設計するプロセスは、既存の DNS サーバーサービスが組織に既に存在するか、または新しい DNS サーバーサービスを展開するかによって異なります。
 
 - 既存の DNS インフラストラクチャが既に存在する場合は、その環境に Active Directory 名前空間を統合する必要があります。 詳細については、「 [AD DS を既存の DNS インフラストラクチャに統合する](../../ad-ds/plan/Integrating-AD-DS-into-an-Existing-DNS-Infrastructure.md)」を参照してください。
-- DNS インフラストラクチャが配置されていない場合は、AD DS をサポートするために新しい DNS インフラストラクチャを設計および展開する必要があります。 詳細については、「[ドメインネームシステム (DNS) の展開](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc780661(v=ws.10))」を参照してください。
+- DNS インフラストラクチャが配置されていない場合は、AD DS をサポートするために新しい DNS インフラストラクチャを設計および展開する必要があります。 詳細については、「[ドメインネームシステム (DNS) の展開](/previous-versions/windows/it-pro/windows-server-2003/cc780661(v=ws.10))」を参照してください。
 
-組織に既存の DNS インフラストラクチャがある場合は、DNS インフラストラクチャが Active Directory 名前空間とどのように対話するかを理解しておく必要があります。 既存の DNS インフラストラクチャ設計を文書化するのに役立つワークシートについては、「 [Windows Server 2003 Deployment Kit のジョブエイド](https://microsoft.com/download/details.aspx?id=9608)」から Job_Aids_Designing_and_Deploying_Directory_and_Security_Services をダウンロードし、「dns インベントリ」 (DSSLOGI_8) を開いてください。
+組織に既存の DNS インフラストラクチャがある場合は、DNS インフラストラクチャが Active Directory 名前空間とどのように対話するかを理解しておく必要があります。 既存の DNS インフラストラクチャ設計を文書化するのに役立つワークシートについては、「 [Windows Server 2003 Deployment Kit のジョブエイド](https://microsoft.com/download/details.aspx?id=9608)」から Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip をダウンロードし、「dns インベントリ」 (DSSLOGI_8.doc) を開いてください。
 
 > [!NOTE]
 > Windows Server では、IP version 4 (IPv4) アドレスに加えて、IP version 6 (IPv6) アドレスもサポートしています。 現在の DNS 構造の再帰的な名前解決方法を文書化しながら、IPv6 アドレスの一覧を作成するためのワークシートについては、「[付録 a: Dns インベントリ](../../ad-ds/plan/Appendix-A--DNS-Inventory.md)」を参照してください。
 
-AD DS をサポートするように DNS インフラストラクチャを設計する前に、dns 階層、DNS 名前解決プロセス、および DNS が AD DS をサポートする方法について理解しておくことをお勧めします。 DNS 階層と名前解決プロセスの詳細については、「 [Dns テクニカルリファレンス](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc779926(v=ws.10))」を参照してください。 DNS が AD DS をサポートする方法の詳細については、「 [Active Directory テクニカルリファレンスの Dns サポート](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc781627(v=ws.10))」を参照してください。
+AD DS をサポートするように DNS インフラストラクチャを設計する前に、dns 階層、DNS 名前解決プロセス、および DNS が AD DS をサポートする方法について理解しておくことをお勧めします。 DNS 階層と名前解決プロセスの詳細については、「 [Dns テクニカルリファレンス](/previous-versions/windows/it-pro/windows-server-2003/cc779926(v=ws.10))」を参照してください。 DNS が AD DS をサポートする方法の詳細については、「 [Active Directory テクニカルリファレンスの Dns サポート](/previous-versions/windows/it-pro/windows-server-2003/cc781627(v=ws.10))」を参照してください。
 
 ## <a name="in-this-section"></a>このセクションの内容
 

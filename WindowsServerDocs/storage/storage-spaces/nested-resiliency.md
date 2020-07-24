@@ -7,12 +7,12 @@ ms.technology: storagespaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 03/15/2019
-ms.openlocfilehash: 4faf4ade53074677b34b037c5ba6d551beb8542e
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 6c3e16f0965be5fc7de4bdc7bd751fb1dd193556
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474909"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962204"
 ---
 # <a name="nested-resiliency-for-storage-spaces-direct"></a>記憶域スペースダイレクトのための入れ子になった回復性
 
@@ -56,7 +56,7 @@ Windows Server 2019 の記憶域スペースダイレクトには、ソフトウ
 
   ![入れ子になった双方向ミラー](media/nested-resiliency/nested-two-way-mirror.png)
 
-- **入れ子になったミラーアクセラレータパリティ。** 入れ子になった双方向ミラーリングを、上記の入れ子になったパリティと結合します。 各サーバー内では、ほとんどのデータのローカル回復性は、2方向ミラーリングを使用する新しい最近の書き込みを除き、単一の[ビットごとのパリティ演算](storage-spaces-fault-tolerance.md#parity)によって提供されます。 その後、すべてのデータの回復性をさらに向上させるには、サーバー間の双方向のミラーリングを使用します。 ミラーアクセラレータパリティの動作の詳細については、「[ミラーアクセラレータパリティ](https://docs.microsoft.com/windows-server/storage/refs/mirror-accelerated-parity)」を参照してください。
+- **入れ子になったミラーアクセラレータパリティ。** 入れ子になった双方向ミラーリングを、上記の入れ子になったパリティと結合します。 各サーバー内では、ほとんどのデータのローカル回復性は、2方向ミラーリングを使用する新しい最近の書き込みを除き、単一の[ビットごとのパリティ演算](storage-spaces-fault-tolerance.md#parity)によって提供されます。 その後、すべてのデータの回復性をさらに向上させるには、サーバー間の双方向のミラーリングを使用します。 ミラーアクセラレータパリティの動作の詳細については、「[ミラーアクセラレータパリティ](../refs/mirror-accelerated-parity.md)」を参照してください。
 
   ![入れ子になったミラーアクセラレータパリティ](media/nested-resiliency/nested-mirror-accelerated-parity.png)
 
@@ -127,7 +127,7 @@ New-Volume -StoragePoolFriendlyName S2D* -FriendlyName Volume02 -StorageTierFrie
 
 ### <a name="step-3-continue-in-windows-admin-center"></a>手順 3: Windows 管理センターで続行する
 
-入れ子になった回復性を使用するボリュームは、次のスクリーンショットのように、明確なラベル付きで[Windows 管理センター](https://docs.microsoft.com/windows-server/manage/windows-admin-center/understand/windows-admin-center)に表示されます。 作成されると、記憶域スペースダイレクトの他のボリュームと同じように、Windows 管理センターを使用してそれらを管理および監視できます。
+入れ子になった回復性を使用するボリュームは、次のスクリーンショットのように、明確なラベル付きで[Windows 管理センター](../../manage/windows-admin-center/overview.md)に表示されます。 作成されると、記憶域スペースダイレクトの他のボリュームと同じように、Windows 管理センターを使用してそれらを管理および監視できます。
 
 ![](media/nested-resiliency/windows-admin-center.png)
 

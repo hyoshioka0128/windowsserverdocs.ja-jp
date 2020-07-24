@@ -9,21 +9,21 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: a3a91034-a4da-4ad7-93f8-0cd2ec3e7824
 ms.technology: identity-adds
-ms.openlocfilehash: e7bacf4f238144fca26776a729a5e4d5bf3444ab
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0dfb108067bee1a5f276963116e2a72b99f6aec2
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71389949"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961124"
 ---
 # <a name="active-directory-domain-services-component-updates"></a>Active Directory Domain Services コンポーネントの更新
 
->適用先:Windows Server 2016、Windows Server 2012 R2
+>適用対象: Windows Server 2016 の場合は Windows Server 2012 R2
 
 このモジュールでは、マイナーな更新が行われたディレクトリ サービスと ID スペースのコンポーネントについて説明します。  
 
 
-| 作成者について |
+| 著者について |
 |------------------|
 |   **作成者:**    |
 |     **略歴:**     |
@@ -40,15 +40,15 @@ ms.locfileid: "71389949"
 
     -   [SPN と UPN の一意性](../../../ad-ds/manage/component-updates/SPN-and-UPN-uniqueness.md)  
 
-    -   [Winlogon 自動再起動サインオン&#40;arso&#41;](../../../ad-ds/manage/component-updates/Winlogon-Automatic-Restart-Sign-On--ARSO-.md)  
+    -   [Winlogon の自動再起動サインオン &#40;ARSO&#41;](../../../ad-ds/manage/component-updates/Winlogon-Automatic-Restart-Sign-On--ARSO-.md)  
 
     -   [TPM キーの構成証明](../../../ad-ds/manage/component-updates/TPM-Key-Attestation.md)  
 
     -   [CA のバックアップと復元の Windows PowerShell コマンドレット](../../../ad-ds/manage/component-updates/CA-Backup-and-Restore-Windows-PowerShell-cmdlets.md)  
 
-    -   [コマンド ライン プロセスの監査](../../../ad-ds/manage/component-updates/Command-line-process-auditing.md)  
+    -   [コマンド ライン プロセ](../../../ad-ds/manage/component-updates/Command-line-process-auditing.md)スの監査  
 
-    -   [資格情報の保護と管理](https://technet.microsoft.com/library/dn408190.aspx)  
+    -   [資格情報の保護と管理](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn408190(v=ws.11))  
 
     -   [ディレクトリ サービス コンポーネントの更新](../../../ad-ds/manage/component-updates/Directory-Services-component-updates.md)  
 
@@ -61,6 +61,3 @@ ms.locfileid: "71389949"
         -   [1644 イベントの改善](../../../ad-ds/manage/component-updates/Directory-Services-component-updates.md#BKMK_1644)  
 
         -   [Active Directory レプリケーション スループットの向上](../../../ad-ds/manage/component-updates/../../../ad-ds/manage/component-updates/Directory-Services-component-updates.md#BKMK_ADRepl)  
-
-
-

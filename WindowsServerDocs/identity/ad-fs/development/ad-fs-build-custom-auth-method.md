@@ -8,20 +8,20 @@ ms.date: 05/23/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 53bbc2bd30f7ede3fc9e4f3580a96514068a7d5f
-ms.sourcegitcommit: d669d4af166b9018bcf18dc79cb621a5fee80042
+ms.openlocfilehash: cde04573b9317a3e597ada3a87042d77e2336255
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82037161"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964504"
 ---
 # <a name="build-a-custom-authentication-method-for-ad-fs-in-windows-server"></a>Windows Server での AD FS のためのカスタム認証方法を構築する
 
-このチュートリアルでは、Windows Server 2012 R2 で AD FS 用のカスタム認証方法を実装する手順について説明します。 詳細については、「[その他の認証方法](https://msdn.microsoft.com/library/dn758113\(v=msdn.10\))」を参照してください。
+このチュートリアルでは、Windows Server 2012 R2 で AD FS 用のカスタム認証方法を実装する手順について説明します。 詳細については、「[その他の認証方法](/previous-versions/orphan-topics/ws.11/dn383648(v=ws.11))」を参照してください。
 
 
 > [!WARNING]
-> ここで作成できる例は&nbsp;、学習のみを目的としています。 &nbsp;これらの手順は、モデルの必須要素を公開するために使用できる、最も単純で最小の実装用です。&nbsp;認証バックエンド、エラー処理、または構成データはありません。 
+> ここで作成できる例は、 &nbsp; 学習のみを目的としています。 &nbsp;これらの手順は、モデルの必須要素を公開するために使用できる、最も単純で最小の実装用です。 &nbsp;認証バックエンド、エラー処理、または構成データはありません。 
 > <P></P>
 
 
@@ -44,7 +44,7 @@ ms.locfileid: "82037161"
 <td><p><strong>次のために必須:</strong></p></td>
 </tr>
 <tr class="even">
-<td><p>Microsoft サーバー. Web .dll</p></td>
+<td><p>Microsoft.IdentityServer.Web.dll</p></td>
 <td><p>この dll は、AD FS がインストールされている Windows Server 2012 R2 サーバーの%windir%\ADFS にあります。</p>
 <p></p>
 <p>この dll は、開発用コンピューターにコピーし、プロジェクトに明示的に作成する必要があります。</p></td>
@@ -56,17 +56,17 @@ ms.locfileid: "82037161"
 
 ## <a name="create-the-provider"></a>プロバイダーを作成する
 
-1.  Visual Studio 2012: [ファイル]、\>[新規\>作成]、[プロジェクト] の順に選択します。
+1.  Visual Studio 2012: [ファイル]、[ \> 新規作成]、[プロジェクト] の順に選択します。 \>
 
 2.  [クラスライブラリ] を選択し、.NET 4.5 を対象としていることを確認します。
 
     ![プロバイダーの作成](media/ad-fs-build-custom-auth-method/Dn783423.71a57ae1-d53d-462b-a846-5b3c02c7d3f2(MSDN.10).jpg "プロバイダーの作成")
 
-3.  AD FS がインストールさ**Microsoft.IdentityServer.Web.dll**れている Windows Server 2012 R2 サーバーの% windir%\\ADFS から、Microsoft のサービスをコピーして、開発用コンピューターのプロジェクトフォルダーに貼り付けます。
+3.  **Microsoft.IdentityServer.Web.dll** \\ AD FS がインストールされている Windows server 2012 R2 サーバーで、% windir% ADFS からMicrosoft.IdentityServer.Web.dllのコピーを作成し、開発用コンピューターのプロジェクトフォルダーに貼り付けます。
 
 4.  **ソリューションエクスプローラー**で、[**参照**] を右クリックし、[**参照の追加**] をクリックします。
 
-5.  **Microsoft サービス**のローカルコピーを参照し、 **... を追加し**ます。
+5.  **Microsoft.IdentityServer.Web.dll**のローカルコピーを参照し、[**追加.** ..]
 
 6.  [ **OK** ] をクリックして、新しい参照を確認します。
 
@@ -277,7 +277,7 @@ ms.locfileid: "82037161"
 
    1分以内に修正できますが、最初に、新しく実装された型に基づいて、最後に必要な return ステートメントを最初の MyAdapter クラスに追加してみましょう。  これを行うには、次の*斜体*の項目を既存の IAuthenticationAdapter 実装に追加します。
 
-       クラス MyAdapter: IAuthenticationAdapter {public IAuthenticationAdapterMetadata {/get {return new <instance of IAuthenticationAdapterMetadata derived class>;}    get {新しい MyMetadata ();} を返す    }
+       クラス MyAdapter: IAuthenticationAdapter {public IAuthenticationAdapterMetadata {/get {return new <instance of IAuthenticationAdapterMetadata derived class> ;}    get {新しい MyMetadata ();} を返す    }
 
         public IAdapterPresentation BeginAuthentication(Claim identityClaim, HttpListenerRequest request, IAuthenticationContext authContext)
         {
@@ -341,7 +341,7 @@ ms.locfileid: "82037161"
         //]]>
         </script></div>
 
-14. 次に、[**プロジェクト\>-コンポーネントの追加...] を選択します。リソース**ファイルにファイル**リソース**の名前を指定し、[追加] をクリックし**ます。**
+14. 次に、[**プロジェクト- \> コンポーネントの追加...] を選択します。リソース**ファイルにファイル**リソース**の名前を指定し、[追加] をクリックし**ます。**
 
    ![プロバイダーの作成](media/ad-fs-build-custom-auth-method/Dn783423.3369ad8f-f65f-4f36-a6d5-6a3edbc1911a(MSDN.10).jpg "プロバイダーの作成")
 
@@ -359,7 +359,7 @@ ms.locfileid: "82037161"
 
 1.  ソリューションエクスプローラーでプロジェクト名を右クリックし、[**プロパティ**] をクリックします。
 
-2.  [**署名**] タブで、[**アセンブリの署名**] チェックボックスをオンにし、[ ** \<新規作成] をクリックします。\> ** [**厳密な名前のキーファイルを選択**してください] で、キーファイル名とパスワードを入力し、[ **OK]** をクリックします。  次に **、[アセンブリの署名**がチェックされ、**遅延署名のみ**] がオフになっていることを確認します。  [プロパティ] [**署名**] ページは次のようになります。
+2.  [**署名**] タブで、[**アセンブリの署名**] をオンにし、 **\<New...\>** [厳密な**名前のキーファイルを選択**してください。キーファイル名とパスワードを入力してください] をクリックし、[ **OK]** をクリックします。  次に **、[アセンブリの署名**がチェックされ、**遅延署名のみ**] がオフになっていることを確認します。  [プロパティ] [**署名**] ページは次のようになります。
 
     ![プロバイダーの構築](media/ad-fs-build-custom-auth-method/Dn783423.0b1a1db2-d64e-4bb8-8c01-ef34296a2668(MSDN.10).jpg "プロバイダーの構築")
 
@@ -377,17 +377,17 @@ ms.locfileid: "82037161"
 
 2.  AD FS の役割サービスをインストールし、少なくとも1つのノードを含むファームを構成します。
 
-    ラボ環境でフェデレーションサーバーをセットアップする詳細な手順については、「 [Windows server 2012 R2 AD FS 展開ガイド](https://msdn.microsoft.com/library/dn486820\(v=msdn.10\))」を参照してください。
+    ラボ環境でフェデレーションサーバーをセットアップする詳細な手順については、「 [Windows server 2012 R2 AD FS 展開ガイド](/previous-versions/orphan-topics/ws.11/dn383648(v=ws.11))」を参照してください。
 
 3.  Gacutil.exe ツールをサーバーにコピーします。
 
-    Gacutil.exe は、 **% homedrive\\% Program Files (x86)\\Microsoft sdk\\windows\\v2.0 a\\bin\\NETFX 4.0 Tools\\ ** on windows 8 コンピューターにあります。  **Gacutil.exe**ファイル自体に加え、 **1033**、 **En-us**、および**NETFX 4.0 ツール**の場所の下にあるその他のローカライズされたリソースフォルダーが必要です。
+    Gacutil.exe は、Windows 8 コンピューター上の **% homedrive% \\ Program Files (x86) \\ Microsoft Sdk \\ windows v2.0 \\ a \\ bin \\ NETFX \\ 4.0 ツール**にあります。  **gacutil.exe**ファイル自体に加え、 **1033**、 **En-us**、および**NETFX 4.0 ツール**の場所の下にあるその他のローカライズされたリソースフォルダーが必要です。
 
-4.  プロバイダーファイル (1 つ以上の厳密な名前で署名された .dll ファイル) を gacutil.exe と同じフォルダーの場所にコピーし**ます**(場所は便宜上)
+4.  プロバイダーファイル (1 つまたは複数の厳密な名前の署名された .dll ファイル) を**gacutil.exe**と同じフォルダーの場所にコピーします (場所は便宜上)
 
 5.  ファーム内の各 AD FS フェデレーションサーバーの GAC に .dll ファイルを追加します。
 
-    例: コマンドラインツール Gacutil.exe を使用して、GAC に dll を追加します。`C:\>.\gacutil.exe /if .\<yourdllname>.dll`
+    例: コマンドラインツール GACutil.exe を使用して、GAC に dll を追加します。`C:\>.\gacutil.exe /if .\<yourdllname>.dll`
 
     GAC に結果のエントリを表示するには、次のようにします。`C:\>.\gacutil.exe /l <yourassemblyname>`
 
@@ -418,7 +418,7 @@ ms.locfileid: "82037161"
 
     AD FS 環境でデバイス登録サービスが有効になっている場合は、次の項目も実行します。`PS C:\>net start drs`
 
-    登録されているプロバイダーを確認するには`PS C:\>Get-AdfsAuthenticationProvider`、コマンドを使用します。
+    登録されているプロバイダーを確認するには、コマンドを使用 `PS C:\>Get-AdfsAuthenticationProvider` します。
 
     これにより、プロバイダーがシステムのプロバイダーの1つとして表示されます。
 
@@ -438,9 +438,9 @@ ms.locfileid: "82037161"
 
 6.  次のコマンドを使用して結果を確認します。
 
-    最初に`Get-AdfsGlobalAuthenticationPolicy`使用します。 プロバイダー名は、AdditionalAuthenticationProvider 値の1つとして表示されます。
+    最初に使用 `Get-AdfsGlobalAuthenticationPolicy` します。 プロバイダー名は、AdditionalAuthenticationProvider 値の1つとして表示されます。
 
-    次に`Get-AdfsAdditionalAuthenticationRule`、を使用します。 管理者 UI でポリシーを選択した結果として、エクストラネットとイントラネットのルールが構成されていることを確認します。
+    次に、を使用し `Get-AdfsAdditionalAuthenticationRule` ます。 管理者 UI でポリシーを選択した結果として、エクストラネットとイントラネットのルールが構成されていることを確認します。
 
 #### <a name="create-the-authentication-policy-using-windows-powershell"></a>Windows PowerShell を使用して認証ポリシーを作成する
 
@@ -479,7 +479,7 @@ Example:`PS C:\>Set-AdfsGlobalAuthenticationPolicy –AdditionalAuthenticationPr
 
 2.  エクストラネットとイントラネットの両方の認証方法で、**フォーム認証**が唯一のオプションとして選択されていることを確認します。  **[OK]** をクリックします。
 
-3.  IDP で開始されたサインオン html ページ (\<https://fsname\>/adfs/ls/idpinitiatedsignon.htm) を開き、テスト環境で有効な AD ユーザーとしてサインインします。
+3.  IDP で開始されたサインオン html ページ (https:// \<fsname\> /adfs/ls/idpinitiatedsignon.htm) を開き、テスト環境で有効な AD ユーザーとしてサインインします。
 
 4.  プライマリ認証の資格情報を入力してください。
 
@@ -623,7 +623,7 @@ TryEndAuthentication の実装を思い出してください。
 
 2.  **エクストラネット**と**イントラネット**の両方の認証方法で、**フォーム認証**が唯一のオプションとして選択されていることを確認します。  **[OK]** をクリックします。
 
-3.  IDP で開始されたサインオン html ページ (\<https://fsname\>/adfs/ls/idpinitiatedsignon.htm) を開き、テスト環境で有効な AD ユーザーとしてサインインします。
+3.  IDP で開始されたサインオン html ページ (https:// \<fsname\> /adfs/ls/idpinitiatedsignon.htm) を開き、テスト環境で有効な AD ユーザーとしてサインインします。
 
 4.  プライマリ認証の資格情報を入力します。
 
@@ -639,8 +639,7 @@ MFA 認証ページで「adfabric」と入力すると、成功したサイン�
 
 ## <a name="see-also"></a>参照
 
-#### <a name="other-resources"></a>その他のリソース
+#### <a name="other-resources"></a>その他の参照情報
 
-[追加の認証方法](https://msdn.microsoft.com/library/dn758113\(v=msdn.10\))  
-[追加の多要素認証による個人情報アプリケーションのリスク管理](https://msdn.microsoft.com/library/dn280949\(v=msdn.10\))
-
+[追加の認証方法](/previous-versions/orphan-topics/ws.11/dn383648(v=ws.11))  
+[追加の多要素認証による個人情報アプリケーションのリスク管理](/previous-versions/orphan-topics/ws.11/dn383648(v=ws.11))

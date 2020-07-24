@@ -8,20 +8,20 @@ ms.topic: article
 ms.assetid: cb84920e-7cf5-4266-b071-d09e3d5e1f10
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 2c2d044c02673d74d7aa8ec076aeac7e2f1aebdb
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 473d90c08e2183f32409630b698d20f79f567016
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858385"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964594"
 ---
 # <a name="configure-a-multisite-deployment"></a>マルチサイト展開を構成する
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016
+>適用先:Windows Server (半期チャネル)、Windows Server 2016
 
  Windows Server 2016 では、DirectAccess とリモートアクセスサービス (RAS) VPN が1つのリモートアクセスの役割に統合されています。 この概要では、単一の Windows Server 2016 または Windows Server 2012 リモートアクセスマルチサイト展開を展開するために必要な構成手順の概要を説明します。  
   
--   手順 1:[詳細設定を使用して単一の DirectAccess サーバーを展開](https://technet.microsoft.com/windows-server-docs/networking/remote-access/directaccess/single-server-advanced/deploy-a-single-directaccess-server-with-advanced-settings)します。 単一のリモートアクセスサーバーをインストールして構成します。 マルチサイト展開では、マルチサイト展開を構成する前に、単一のサーバーをインストールする必要があります。  
+-   手順 1:[詳細設定を使用して単一の DirectAccess サーバーを展開](../../../directaccess/single-server-advanced/deploy-a-single-directaccess-server-with-advanced-settings.md)します。 単一のリモートアクセスサーバーをインストールして構成します。 マルチサイト展開では、マルチサイト展開を構成する前に、単一のサーバーをインストールする必要があります。  
   
 -   [手順 2: マルチサイトインフラストラクチャを構成](Step-2-Configure-the-Multisite-Infrastructure.md)します。 マルチサイト展開の場合は、追加の Active Directory サイトおよびドメインコントローラーを構成する必要があります。 自動的に構成された Gpo を使用していない場合は、追加のセキュリティグループとグループポリシーオブジェクト (Gpo) も必要です。  
   
@@ -29,5 +29,3 @@ ms.locfileid: "80858385"
   
 -   [手順 4: マルチサイト展開を確認する](Step-4-Verify-the-Multisite-Deployment.md) 
   
-
-

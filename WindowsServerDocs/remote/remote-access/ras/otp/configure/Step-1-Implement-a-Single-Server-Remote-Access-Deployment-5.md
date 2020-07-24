@@ -8,25 +8,23 @@ ms.topic: article
 ms.assetid: c0f4d665-d44e-4348-a89f-5f9191bd96fd
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: b5142902d89887d12a1a200b797dcf2c5fe02353
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 98b25098e5af5612a288c3f6a7ad6dacd359ba9c
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858235"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961174"
 ---
 # <a name="step-1-implement-a-single-server-remote-access-deployment"></a>手順1単一サーバーのリモートアクセスの展開を実装する
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016
+>適用先:Windows Server (半期チャネル)、Windows Server 2016
 
 OTP を使用してリモートアクセスを展開する最初の構成手順は、高度な単一サーバー展開を実装し、RADIUS サーバーの追加を計画することです。  
   
 ## <a name="implement-a-single-server-deployment"></a>単一サーバー配置を実装する  
-OTP を使用したリモートアクセスを構成する前に、「[詳細設定を使用して単一の DirectAccess サーバーを展開](https://technet.microsoft.com/windows-server-docs/networking/remote-access/directaccess/single-server-advanced/deploy-a-single-directaccess-server-with-advanced-settings)する」の説明に従って、高度なシングルサーバーリモートアクセスの展開を構成する必要があります。  
+OTP を使用したリモートアクセスを構成する前に、「[詳細設定を使用して単一の DirectAccess サーバーを展開](../../../directaccess/single-server-advanced/deploy-a-single-directaccess-server-with-advanced-settings.md)する」の説明に従って、高度なシングルサーバーリモートアクセスの展開を構成する必要があります。  
   
 ## <a name="see-also"></a><a name="BKMK_Links"></a>関連項目  
   
 -   [手順 2: RADIUS サーバーを構成する](Step-2-Configure-the-RADIUS-Server.md)  
   
-
-

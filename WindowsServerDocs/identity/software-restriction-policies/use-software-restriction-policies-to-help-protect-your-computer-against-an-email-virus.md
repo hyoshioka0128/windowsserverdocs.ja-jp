@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 680d0435d77164e101f045b439be6ccb6601dfef
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3b9f727107ac9d392b52ab683aca510849fc534a
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80855735"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964694"
 ---
 # <a name="use-software-restriction-policies-to-help-protect-your-computer-against-an-email-virus"></a>ソフトウェアの制限のポリシーを使用した電子メール ウイルスからのコンピューターの保護
 
->適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
 このトピックでは、ソフトウェアの制限のポリシー (SRP) を使用してアプリケーション制御ポリシーを設定する方法について説明します。これは、Windows Server 2008 および Windows Vista 以降では、電子メールのウイルスからコンピューターを保護するのに役立ちます。
 
@@ -33,11 +33,11 @@ Windows Server 2008 R2 および Windows 7 以降では、アプリケーショ�
 
     -   [ベスト プラクティス](software-restriction-policies-technical-overview.md#BKMK_Best_Practices)
 
-    -   [ソフトウェアの制限のポリシーのしくみ](https://technet.microsoft.com/library/cc786941(v=WS.10).aspx)
+    -   [ソフトウェアの制限のポリシーのしくみ](/previous-versions/windows/it-pro/windows-server-2003/cc786941(v=ws.10))
 
 2.  [ソフトウェアの制限のポリシー] を開きます。
 
-    -   [ローカルコンピューターの場合](administer-software-restriction-policies.md#BKMK_1)
+    -   [ローカル コンピューターの場合](administer-software-restriction-policies.md#BKMK_1)
 
     -   [ドメイン、サイト、または組織単位の場合、メンバーサーバーまたはドメインに参加しているワークステーション上にある](administer-software-restriction-policies.md#BKMK_2)
 
@@ -62,5 +62,3 @@ Windows Server 2008 R2 および Windows 7 以降では、アプリケーショ�
         -   [ソフトウェアの制限のポリシーがローカルの管理者に適用されないようにするには](administer-software-restriction-policies.md#BKMK_Prevent_Admin)
 
 7.  ポリシーをテストします。
-
-

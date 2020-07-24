@@ -8,12 +8,12 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 37115e79044c9ddfd55e646fcde868ad6ac7048f
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: 244444cc773e3b69ba09a2050ebaefa11ea9edef
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81624340"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962284"
 ---
 # <a name="creating-a-site-link-bridge-design"></a>サイト リンク ブリッジ設計の作成
 
@@ -26,7 +26,7 @@ ms.locfileid: "81624340"
 - IP ネットワークが完全にルーティングされていません。 [すべての**サイトリンクをブリッジ**する] を無効にすると、すべてのサイトリンクが非推移性と見なされ、ネットワークの実際のルーティング動作をモデル化するためのサイトリンクブリッジオブジェクトを作成および構成できます。
 - Active Directory Domain Services (AD DS) で行われた変更のレプリケーションフローを制御する必要があります。 サイトリンク IP トランスポートの**すべてのサイトリンクのブリッジ**を無効にし、サイトリンクブリッジを構成することにより、サイトリンクブリッジは不整合なネットワークと同等のものになります。 サイトリンクブリッジ内のすべてのサイトリンクは推移的にルーティングできますが、サイトリンクブリッジの外部にはルーティングされません。
 
-Active Directory サイトとサービススナップインを使用して、[**すべてのサイトリンクをブリッジ**する] 設定を無効にする方法の詳細については、「[サイトリンクブリッジの有効化または無効化](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc738789(v=ws.10))」を参照してください。
+Active Directory サイトとサービススナップインを使用して、[**すべてのサイトリンクをブリッジ**する] 設定を無効にする方法の詳細については、「[サイトリンクブリッジの有効化または無効化](/previous-versions/windows/it-pro/windows-server-2003/cc738789(v=ws.10))」を参照してください。
 
 ## <a name="controlling-ad-ds-replication-flow"></a>AD DS レプリケーションフローの制御
 

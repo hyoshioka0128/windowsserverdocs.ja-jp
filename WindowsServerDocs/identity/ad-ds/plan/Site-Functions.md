@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 41fe13a5083a855a597a693f8cd707e3e211966a
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: 70dc69812ae6806c58affdd3961c3ec8f9afd0bc
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81623890"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963544"
 ---
 # <a name="site-functions"></a>サイトの機能
 
@@ -31,7 +31,7 @@ Active Directory Domain Services (AD DS) は、マルチマスター、ストア
 
 同じサイト内のドメインコントローラを見つけることにより、クライアントは WAN リンク経由の通信を回避します。 ドメインコントローラがクライアントサイトに存在しない場合は、他の接続されたサイトに対するコスト接続が最も低いドメインコントローラが自己アドバタイズします (DNS にサイト固有のサービス (SRV) リソースレコードを登録します)。 DNS で公開されているドメインコントローラーは、サイトトポロジによって定義されている最も近いサイトからのものです。 このプロセスにより、すべてのサイトで認証用の優先ドメインコントローラーが使用されるようになります。
 
-ドメインコントローラーを検索するプロセスの詳細については、「 [Active Directory Collection](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc780036(v=ws.10))」を参照してください。
+ドメインコントローラーを検索するプロセスの詳細については、「 [Active Directory Collection](/previous-versions/windows/it-pro/windows-server-2003/cc780036(v=ws.10))」を参照してください。
 
 ## <a name="sysvol-replication"></a>SYSVOL レプリケーション
 SYSVOL は、ドメイン内の各ドメインコントローラー上に存在する、ファイルシステム内のフォルダーのコレクションです。 SYSVOL フォルダーは、ドメイン全体にレプリケートする必要があるファイルの既定の Active Directory の場所を提供します。これには、グループポリシーオブジェクト (Gpo)、スタートアップとシャットダウンのスクリプト、およびログオンとログオフのスクリプトが含まれます。  Windows Server 2008 では、ファイルレプリケーションサービス (FRS) または分散ファイルシステムレプリケーション (DFSR) を使用して、SYSVOL フォルダーに加えられた変更を、あるドメインコントローラーから他のドメインコントローラーにレプリケートできます。 FRS および DFSR は、サイトトポロジの設計時に作成したスケジュールに従って、これらの変更をレプリケートします。
@@ -40,4 +40,4 @@ SYSVOL は、ドメイン内の各ドメインコントローラー上に存在�
 DFSN は、サイト情報を使用して、サイト内の要求されたデータをホストしているサーバーにクライアントを送信します。 DFSN がクライアントと同じサイト内にデータのコピーを見つけられない場合、DFSN は AD DS のサイト情報を使用して、クライアントに最も近い DFSN 共有データを持つファイルサーバーを特定します。
 
 ## <a name="service-location"></a>サービスの場所
-AD DS のファイルサービスや印刷サービスなどのサービスを公開することにより、Active Directory クライアントは、同じサイト内または最も近いサイト内で要求されたサービスを見つけることができます。 印刷サービスでは、AD DS に格納されている場所の属性を使用して、ユーザーが正確な場所を知らなくても場所でプリンターを参照できるようにします。 プリントサーバーの設計と展開の詳細については、「[プリントサーバーの設計と展開](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc785842(v=ws.10))」を参照してください。
+AD DS のファイルサービスや印刷サービスなどのサービスを公開することにより、Active Directory クライアントは、同じサイト内または最も近いサイト内で要求されたサービスを見つけることができます。 印刷サービスでは、AD DS に格納されている場所の属性を使用して、ユーザーが正確な場所を知らなくても場所でプリンターを参照できるようにします。 プリントサーバーの設計と展開の詳細については、「[プリントサーバーの設計と展開](/previous-versions/windows/it-pro/windows-server-2003/cc785842(v=ws.10))」を参照してください。

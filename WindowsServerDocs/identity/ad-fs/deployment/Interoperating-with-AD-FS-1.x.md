@@ -8,22 +8,22 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 800c7fc23c9b126a17e54311fc6df0d3dcf36b4c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 83d13386368ff1d6447231d465e01bcceae61d47
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80855365"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963764"
 ---
 # <a name="interoperating-with-ad-fs-1x"></a>AD FS 1.x との相互運用
 
-Active Directory フェデレーションサービス (AD FS) \(間の相互運用性のために、Windows Server&reg; 2012 および AD FS 1 で\) AD FS ます。*x*では、組織のニーズに応じて、次の1つ以上のタスクを実行します。  
+\( \) Windows Server 2012 の Active Directory フェデレーションサービス (AD FS) AD FS &reg; と AD FS 1 の間の相互運用性については、「」をご使用ください。*x*では、組織のニーズに応じて、次の1つ以上のタスクを実行します。  
   
--   Windows Server 2012 と以前のバージョンの AD FS の AD FS 間の相互運用性を計画し、Name ID 要求の種類の詳細について説明します。 詳細については、「 [AD FS 1.x との相互運用性の計画](https://technet.microsoft.com/library/ff678040.aspx)」を参照してください。  
+-   Windows Server 2012 と以前のバージョンの AD FS の AD FS 間の相互運用性を計画し、Name ID 要求の種類の詳細について説明します。 詳細については、「 [AD FS 1.x との相互運用性の計画](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/ff678040(v=ws.11))」を参照してください。  
   
 -   AD FS 1 で使用できる Windows Server 2012 の AD FS フェデレーションサービスから要求を送信する場合は。*x*フェデレーションサービス、「[チェックリスト: AD FS 1.X フェデレーションサービスに要求を送信するための AD FS の構成](Checklist--Configuring-AD-FS-to-Send-Claims-to-an-AD-FS-1.x-Federation-Service.md)」を参照してください。  
   
--   AD FS 1 を実行している Web サーバーでホストされているアプリケーションで使用できる Windows Server 2012 の AD FS フェデレーションサービスから要求を送信する場合。*x*要求\-対応 web エージェント、「[チェックリスト: AD FS 1.X 要求に対応する Web エージェントに要求を送信するための AD FS の構成](Checklist--Configuring-AD-FS-to-Send-Claims-to-an-AD-FS-1.x-Claims-Aware-Web-Agent.md)」を参照してください。  
+-   AD FS 1 を実行している Web サーバーでホストされているアプリケーションで使用できる Windows Server 2012 の AD FS フェデレーションサービスから要求を送信する場合。*x*要求に \- 対応する web エージェント、「[チェックリスト: AD FS 1. x 要求に対応する web エージェントに要求を送信するための AD FS の構成](Checklist--Configuring-AD-FS-to-Send-Claims-to-an-AD-FS-1.x-Claims-Aware-Web-Agent.md)」を参照してください。  
   
 -   AD FS 1 から要求を送信する場合は。*x*フェデレーションサービス Windows Server 2012 の AD FS フェデレーションサービスによって使用される場合は、「[チェックリスト: AD FS 1.X からの要求を使用するように AD FS を構成](Checklist--Configuring-AD-FS--to-Consume-Claims-from-AD-FS-1.x.md)する」を参照してください。  
   
@@ -33,14 +33,13 @@ Active Directory フェデレーションサービス (AD FS) \(間の相互運�
 |AD FS 1.x フェデレーションサービス設定|Windows Server 2012 の設定で AD FS フェデレーションサービスと同じです。  
 |----------------------------------------|---------------------------------------------------------------------------------------------------------- 
 |アカウントパートナー|要求プロバイダー信頼  
-|リソースパートナー|証明書利用者の信頼 
-|アプリケーション|証明書利用者の信頼  
-|アプリケーションのプロパティ|証明書利用者信頼のプロパティ  
-|アプリケーションの URL|証明書利用者識別子と WS\-フェデレーションパッシブエンドポイント URL  
+|リソースパートナー|証明書利用者信頼 
+|Application|証明書利用者信頼  
+|Application Properties|証明書利用者信頼のプロパティ  
+|アプリケーションの URL|証明書利用者識別子と WS \- フェデレーションパッシブエンドポイント URL  
 |フェデレーションサービス URI|フェデレーション サービスの識別子  
-|フェデレーションサービスエンドポイント URL|WS\-フェデレーションパッシブエンドポイント URL  
+|フェデレーションサービスエンドポイント URL|WS \- フェデレーションパッシブエンドポイント URL  
   
 ## <a name="see-also"></a>参照  
 [AD FS と AD FS 1. x 相互運用性](https://go.microsoft.com/fwlink/?LinkId=200776)  
   
-

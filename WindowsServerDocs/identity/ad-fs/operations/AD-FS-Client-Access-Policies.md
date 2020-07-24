@@ -7,12 +7,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: f9939662c22e9500235bae014b7fb9064afd911b
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 6d049175c7d89670f82bb45addc929d57b60b7b0
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858115"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86960744"
 ---
 # <a name="controlling-access-to-organizational-data-with-active-directory-federation-services"></a>Active Directory フェデレーションサービス (AD FS) を使用して組織のデータへのアクセスを制御する
 
@@ -26,7 +26,7 @@ Active Directory フェデレーションサービス (AD FS) が導入された
 
 ## <a name="ad-fs-and-conditional-access-in-a-hybrid-organization"></a>ハイブリッド組織での AD FS と条件付きアクセス  
 
-AD FS には、ハイブリッドシナリオでの条件付きアクセスポリシーのオンプレミスコンポーネントが用意されています。 AD FS ベースの承認規則は、AD FS に直接フェデレーションされるオンプレミスアプリケーションなど、Azure AD 以外のリソースに対して使用する必要があります。  クラウドコンポーネントは[Azure AD 条件付きアクセス](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access)によって提供されます。  Azure AD Connect は、2つのコントロールプレーンを接続します。
+AD FS には、ハイブリッドシナリオでの条件付きアクセスポリシーのオンプレミスコンポーネントが用意されています。 AD FS ベースの承認規則は、AD FS に直接フェデレーションされるオンプレミスアプリケーションなど、Azure AD 以外のリソースに対して使用する必要があります。  クラウドコンポーネントは[Azure AD 条件付きアクセス](/azure/active-directory/active-directory-conditional-access)によって提供されます。  Azure AD Connect は、2つのコントロールプレーンを接続します。
 
 たとえば、クラウドリソースへの条件付きアクセスのために Azure AD にデバイスを登録すると、Azure AD Connect デバイスの書き戻し機能によって、デバイスの登録情報がオンプレミスで使用可能になり AD FS ポリシーが使用および適用されます。  これにより、内部設置型の両方のアクセス制御ポリシーと、クラウド リソースを一貫した方法があります。  
 
@@ -48,12 +48,12 @@ AD FS には、ハイブリッドシナリオでの条件付きアクセスポ�
 
 これらの制限に対処し、ポリシーを使用して Office 365 またはその他の Azure AD ベースのリソースのビジネスデータへのアクセスを管理するためのより堅牢な方法を提供するために、Microsoft は Azure AD 条件付きアクセスを導入しました。  Azure AD 条件付きアクセスポリシーは、特定のリソース、または Azure AD の Office 365、SaaS、またはカスタムアプリケーション内の任意のリソースまたはすべてのリソースに対して構成できます。  これらのポリシーは、デバイスの信頼、場所、およびその他の要因をピボットします。
 
-Azure AD 条件付きアクセスの詳細については、「 [」の「条件付きアクセス](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access)」を参照してください Azure Active Directory
+Azure AD 条件付きアクセスの詳細については、「 [」の「条件付きアクセス](/azure/active-directory/active-directory-conditional-access)」を参照してください Azure Active Directory
 
 これらのシナリオを実現するための重要な変更は[先進認証](https://blogs.office.com/2015/11/19/updated-office-365-modern-authentication-public-preview/)で、Office クライアント、Skype、Outlook、およびブラウザーで同じように動作するユーザーとデバイスを認証する新しい方法です。
 
 ## <a name="next-steps"></a>次の手順
 クラウドとオンプレミスの間でアクセスを制御する方法の詳細については、以下を参照してください。
 
-- [Azure Active Directory での条件付きアクセス](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access)
+- [Azure Active Directory の条件付きアクセス](/azure/active-directory/active-directory-conditional-access)
 - [AD FS 2016 の Access Control ポリシー](Access-Control-Policies-in-AD-FS.md)

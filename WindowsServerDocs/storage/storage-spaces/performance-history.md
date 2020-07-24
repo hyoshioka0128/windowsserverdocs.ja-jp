@@ -7,12 +7,12 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 09/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c8adf5f5586bd9f86ed3c4cd42b6172ff3f91e7
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: ce984d3a88f46b77773c524e5b75135930e1bb03
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474699"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961794"
 ---
 # <a name="performance-history-for-storage-spaces-direct"></a>記憶域スペース ダイレクトのパフォーマンス履歴
 
@@ -23,11 +23,11 @@ ms.locfileid: "85474699"
    > [!IMPORTANT]
    > この機能は、Windows Server 2019 で新しく追加された機能です。 Windows Server 2016 では使用できません。
 
-## <a name="get-started"></a>開始
+## <a name="get-started"></a>はじめに
 
 パフォーマンス履歴は、Windows Server 2019 の記憶域スペースダイレクトと共に既定で収集されます。 すべてをインストール、構成、または開始する必要はありません。 インターネット接続は必要ありません。 System Center は必要ありません。また、外部データベースは必要ありません。
 
-クラスターのパフォーマンス履歴をグラフィカルに表示するには、 [Windows 管理センター](../../manage/windows-admin-center/understand/windows-admin-center.md)を使用します。
+クラスターのパフォーマンス履歴をグラフィカルに表示するには、 [Windows 管理センター](../../manage/windows-admin-center/overview.md)を使用します。
 
 ![Windows 管理センターのパフォーマンス履歴](media/performance-history/perf-history-in-wac.png)
 

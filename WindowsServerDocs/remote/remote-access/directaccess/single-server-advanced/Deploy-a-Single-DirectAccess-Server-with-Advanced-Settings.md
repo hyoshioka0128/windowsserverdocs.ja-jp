@@ -1,5 +1,5 @@
 ---
-title: 詳細設定を使用した単一の DirectAccess サーバーの展開
+title: Deploy a Single DirectAccess Server with Advanced Settings
 description: このトピックは、「Windows Server 2016 の詳細設定を使用して単一の DirectAccess サーバーを展開する」の一部です。
 manager: brianlic
 ms.prod: windows-server
@@ -8,20 +8,20 @@ ms.topic: article
 ms.assetid: b211a9ca-1208-4e1f-a0fe-26a610936c30
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 7f6a6724a2ab7bb6da48a11d31fb04461912e388
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 199d4ce3ebb3c9cbc6ec1b8574133104b8129312
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80859525"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964624"
 ---
-# <a name="deploy-a-single-directaccess-server-with-advanced-settings"></a>詳細設定を使用した単一の DirectAccess サーバーの展開
+# <a name="deploy-a-single-directaccess-server-with-advanced-settings"></a>Deploy a Single DirectAccess Server with Advanced Settings
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016
+>適用先:Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックでは、単一の DirectAccess サーバーを使用する DirectAccess シナリオの概要を説明し、詳細設定を使用して DirectAccess を展開できるようにします。  
   
-## <a name="before-you-begin-deploying-see-the-list-of-unsupported-configurations-known-issues-and-prerequisites"></a>展開を開始する前に、サポートされない構成、既知の問題、前提条件のリストを参照してください  
+## <a name="before-you-begin-deploying-see-the-list-of-unsupported-configurations-known-issues-and-prerequisites"></a>展開を開始する前に、サポートされない構成、既知の問題、前提条件の一覧を参照してください  
 DirectAccess を展開する前に、次のトピックを使用して、前提条件とその他の情報を確認できます。  
   
 -   [DirectAccess のサポートされない構成](../../../remote-access/directaccess/DirectAccess-Unsupported-Configurations.md)  
@@ -58,7 +58,7 @@ DirectAccess を展開する前に、次のトピックを使用して、前提�
   
 2.  **DirectAccess 展開の計画**: このフェーズでは、DirectAccess 展開の準備に必要な計画手順について説明します。 これには、DirectAccess クライアント コンピューター、サーバーとクライアントの認証要件、VPN の設定、インフラストラクチャ サーバー、管理サーバーとアプリケーション サーバーの計画が含まれます。  
   
-### <a name="deployment-steps"></a>展開の手順  
+### <a name="deployment-steps"></a>デプロイメントの手順  
 展開は 3 つのフェーズに分かれています。  
   
 1.  **DirectAccess インフラストラクチャの構成**: このフェーズでは、ネットワークとルーティングの構成、ファイアウォール設定の構成 (必要な場合)、証明書、DNS サーバー、Active Directory と GPO の設定、DirectAccess ネットワーク ロケーション サーバーの構成を行います。  
@@ -69,7 +69,7 @@ DirectAccess を展開する前に、次のトピックを使用して、前提�
   
 展開の手順の詳細については、「[高度な DirectAccess のインストールと構成](../../../remote-access/directaccess/single-server-advanced/Install-and-Configure-Advanced-DirectAccess.md)」を参照してください。  
   
-## <a name="practical-applications"></a><a name="BKMK_APP"></a>実用的なアプリケーション  
+## <a name="practical-applications"></a><a name="BKMK_APP"></a>実際の適用例  
 単一の DirectAccess サーバーを展開すると、次のことが実現されます。  
   
 -   **簡単操作**: Windows 10、Windows 8.1、Windows 8、および Windows 7 を実行する管理されたクライアントコンピューターを DirectAccess クライアントコンピューターとして構成できます。 そうしたクライアントは、インターネット上に存在しているときは、VPN 接続にログインしなくても、DirectAccess を経由して内部ネットワーク リソースにアクセスできます。 これらのオペレーティング システムが実行されていないクライアント コンピューターは、VPN 経由で内部ネットワークに接続できます。  
@@ -142,12 +142,10 @@ DirectAccess を展開する前に、次のトピックを使用して、前提�
 ## <a name="see-also"></a><a name="BKMK_LINKS"></a>関連項目  
 次の表に、関連リソースへのリンクを示します。  
   
-|コンテンツの種類|参照|  
+|コンテンツ タイプ|参考資料|  
 |--------|-------|  
-|**展開**|[Windows Server の DirectAccess 展開パス](../../../remote-access/directaccess/DirectAccess-Deployment-Paths-in-Windows-Server.md)<p>[はじめにウィザードを使用して単一の DirectAccess サーバーを展開する](../../../remote-access/directaccess/single-server-wizard/Deploy-a-Single-DirectAccess-Server-Using-the-Getting-Started-Wizard.md)|  
-|**ツールと設定**|[リモートアクセスの PowerShell コマンドレット](https://technet.microsoft.com/library/hh918399.aspx)|  
-|**コミュニティ リソース**|[DirectAccess のサバイバルガイド](https://social.technet.microsoft.com/wiki/contents/articles/23210.directaccess-survival-guide.aspx)<p>[DirectAccess の Wiki エントリ](https://go.microsoft.com/fwlink/?LinkId=236871)|  
-|**関連テクノロジ**|[IPv6 のしくみ](https://technet.microsoft.com/library/cc781672(v=WS.10).aspx)|  
+|**デプロイ**|[Windows Server の DirectAccess 展開パス](../../../remote-access/directaccess/DirectAccess-Deployment-Paths-in-Windows-Server.md)<p>[はじめにウィザードを使用して単一の DirectAccess サーバーを展開する](../../../remote-access/directaccess/single-server-wizard/Deploy-a-Single-DirectAccess-Server-Using-the-Getting-Started-Wizard.md)|  
+|**ツールと設定**|[Remote Access PowerShell コマンドレット](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831379(v=ws.11))|  
+|**コミュニティ リソース**|[DirectAccess Survival Guide (DirectAccess サバイバル ガイド)](https://social.technet.microsoft.com/wiki/contents/articles/23210.directaccess-survival-guide.aspx)<p>[Wiki の DirectAccess 項目](https://go.microsoft.com/fwlink/?LinkId=236871)|  
+|**関連テクノロジ**|[How IPv6 works (IPv6 の動作のしくみ)](/previous-versions/windows/it-pro/windows-server-2003/cc781672(v=ws.10))|  
   
-
-

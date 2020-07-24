@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 265dc24ccdaf261d6c58cb1fa77ea93d71b4007b
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: c8b332de4053aa64f3294c3cd68c37773742f9f5
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858085"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962724"
 ---
 # <a name="ad-fs-user-sign-in-customization"></a>AD FS のユーザー サインインのカスタマイズ
 
@@ -34,7 +34,7 @@ AD FS には、管理者が企業のニーズに合わせてエンドユーザ�
 
 トピック|説明|
 -----|-----|
-[Windows Server 2016 での AD FS のカスタマイズ](AD-FS-Customization-in-Windows-Server-2016.md)|Windows Server 2016 の AD FS で使用できる新しいカスタマイズオプション|
+[Windows Server 2016 での AD FS のカスタマイズ](./ad-fs-customization-in-windows-server.md)|Windows Server 2016 の AD FS で使用できる新しいカスタマイズオプション|
 [会社名を変更する](Change-the-company-name-on-the-AD-FS-sign-in-page.md)|サインインページに会社名を表示する手順|
 [会社のロゴを変更する](Change-the-company-logo-on-the-AD-FS-sign-in-page.md)|サインインページに表示されるロゴを変更する手順|
 [図を変更する](Change-the-illustration-on-the-AD-FS-sign-in-page.md)|サインインページに表示される図を変更する手順|
@@ -50,8 +50,4 @@ AD FS には、管理者が企業のニーズに合わせてエンドユーザ�
 [ローカライズのカスタマイズ](Customization-for-Localization.md)|ローカライズに関する考慮事項に関する情報
 [Microsoft 著作権情報の削除](Remove-the-Microsoft-copyright.md)|Microsoft 著作権情報を削除する手順
 [認証方法の表示名と説明のカスタマイズ](Customize-the-display-names-and-descriptions-for-authentication-methods.md)|認証方法の表示名と説明をカスタマイズする手順
-[高度なカスタマイズ](Advanced-Customization-of-AD-FS-Sign-in-Pages.md)|拡張ファイルを使用した高度なカスタマイズオプション。
-
-
-
-
+[高度なカスタマイズ](Advanced-Customization-of-AD-FS-Sign-in-Pages.md)|onload.js ファイルを使用した高度なカスタマイズオプション。

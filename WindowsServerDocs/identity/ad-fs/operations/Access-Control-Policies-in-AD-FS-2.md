@@ -7,12 +7,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 6ae1f34343e8574ce776fcc5761c078b12bc9977
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 110bc74d6b77c63fc6a9554049b5adb940f2641d
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80814825"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962674"
 ---
 # <a name="client-access-control-policies-in-ad-fs-20"></a>AD FS 2.0 のクライアント Access Control ポリシー
 Active Directory フェデレーションサービス (AD FS) 2.0 のクライアントアクセスポリシーでは、リソースへのアクセスを制限または許可することができます。  このドキュメントでは、AD FS 2.0 でクライアントアクセスポリシーを有効にする方法と、最も一般的なシナリオを構成する方法について説明します。
@@ -42,7 +42,7 @@ Active Directory 要求プロバイダー信頼で、新しい要求コンテキ
 4. [規則テンプレートの選択] ページの [要求規則テンプレート] で、[入力方向の要求をパススルーまたはフィルター処理する] を選択し、[次へ] をクリックします。
 5. [規則の構成] ページの [要求規則名] に、この規則の表示名を入力します。[入力方向の要求の種類] で、次の要求の種類の URL を入力し、[すべての要求値をパススルー] を選択します。</br>
         `https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip`</br>
-6. 規則を確認するには、一覧で規則を選択し、[規則の編集] をクリックして、[規則言語の表示] をクリックします。 要求規則言語は次のようになります。 `c:[Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip"] => issue(claim = c);`
+6. 規則を確認するには、一覧で規則を選択し、[規則の編集] をクリックして、[規則言語の表示] をクリックします。 要求規則言語は次のようになります。`c:[Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip"] => issue(claim = c);`
 7. [完了] をクリックします。
 8. [要求規則の編集] ダイアログボックスで、[OK] をクリックして規則を保存します。
 9. 手順 2. ~ 6. を繰り返して、5つのすべてのルールが作成されるまで、下に示す4つの要求の種類ごとに追加の要求規則を作成します。
@@ -77,7 +77,7 @@ Active Directory 要求プロバイダー信頼で、新しい要求コンテキ
 2. コンソールツリーの [AD FS 2.0 \ 信頼関係] で、[証明書利用者信頼] をクリックし、Microsoft Office 365 Id プラットフォーム信頼を右クリックして、[要求規則の編集] をクリックします。 
 3. [要求規則の編集] ダイアログボックスで、[発行承認規則] タブを選択し、[規則の追加] をクリックして、要求規則ウィザードを開始します。
 4. [規則テンプレートの選択] ページの [要求規則テンプレート] で、[カスタム規則を使用して要求を送信する] を選択し、[次へ] をクリックします。
-5. [規則の構成] ページの [要求規則名] に、この規則の表示名を入力します。 [カスタム規則] で、次の要求規則言語構文を入力するか貼り付けます: `exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy"]) &&
+5. [規則の構成] ページの [要求規則名] に、この規則の表示名を入力します。 [カスタム規則] で、次の要求規則言語構文を入力するか貼り付けます。`exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy"]) &&
     NOT exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip",
     Value=~"customer-provided public ip address regex"])
     => issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = "true");` 
@@ -90,7 +90,7 @@ Active Directory 要求プロバイダー信頼で、新しい要求コンテキ
 
 ### <a name="scenario-2-block-all-external-access-to-office-365-except-exchange-activesync"></a>シナリオ 2: Exchange ActiveSync 以外の Office 365 への外部アクセスをすべてブロックする
 
-次の例では、Outlook を含む社内クライアントから、Exchange Online を含むすべての Office 365 アプリケーションにアクセスできるようにします。 クライアントの IP アドレスで示されているように、企業ネットワークの外部に存在するクライアントからのアクセスをブロックします。ただし、スマートフォンなどの Exchange ActiveSync クライアントは除きます。 規則セットは、すべてのユーザーにアクセスを許可する "という名前の既定の発行承認規則に基づいて作成されます。 要求規則ウィザードを使用して、Office 365 証明書利用者信頼に発行承認規則を追加するには、次の手順を実行します。
+次の例では、Outlook を含む社内クライアントから、Exchange Online を含むすべての Office 365 アプリケーションにアクセスできるようにします。 クライアントの IP アドレスで示されているように、企業ネットワークの外部に存在するクライアントからのアクセスをブロックします。ただし、スマートフォンなどの Exchange ActiveSync クライアントは除きます。 規則セットは、[すべてのユーザーにアクセスを許可する "という名前の既定の発行承認規則に基づいて作成されます。 要求規則ウィザードを使用して、Office 365 証明書利用者信頼に発行承認規則を追加するには、次の手順を実行します。
 
 #### <a name="to-create-a-rule-to-block-all-external-access-to-office-365"></a>Office 365 への外部アクセスをすべてブロックするルールを作成するには
 
@@ -100,7 +100,7 @@ Active Directory 要求プロバイダー信頼で、新しい要求コンテキ
 2. コンソールツリーの [AD FS 2.0 \ 信頼関係] で、[証明書利用者信頼] をクリックし、Microsoft Office 365 Id プラットフォーム信頼を右クリックして、[要求規則の編集] をクリックします。 
 3. [要求規則の編集] ダイアログボックスで、[発行承認規則] タブを選択し、[規則の追加] をクリックして、要求規則ウィザードを開始します。
 4. [規則テンプレートの選択] ページの [要求規則テンプレート] で、[カスタム規則を使用して要求を送信する] を選択し、[次へ] をクリックします。
-5. [規則の構成] ページの [要求規則名] に、この規則の表示名を入力します。 [カスタム規則] で、次の要求規則言語構文を入力するか貼り付けます: `exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy"]) &&
+5. [規則の構成] ページの [要求規則名] に、この規則の表示名を入力します。 [カスタム規則] で、次の要求規則言語構文を入力するか貼り付けます。`exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy"]) &&
     NOT exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application",
     Value=="Microsoft.Exchange.Autodiscover"]) &&
     NOT exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application",
@@ -116,7 +116,7 @@ Active Directory 要求プロバイダー信頼で、新しい要求コンテキ
 
 ### <a name="scenario-3-block-all-external-access-to-office-365-except-browser-based-applications"></a>シナリオ 3: ブラウザーベースのアプリケーションを除く Office 365 への外部アクセスをすべてブロックする
 
-規則セットは、すべてのユーザーにアクセスを許可する "という名前の既定の発行承認規則に基づいて作成されます。 要求規則ウィザードを使用して、Microsoft Office 365 Id プラットフォーム証明書利用者信頼に発行承認規則を追加するには、次の手順を実行します。
+規則セットは、[すべてのユーザーにアクセスを許可する "という名前の既定の発行承認規則に基づいて作成されます。 要求規則ウィザードを使用して、Microsoft Office 365 Id プラットフォーム証明書利用者信頼に発行承認規則を追加するには、次の手順を実行します。
 
 >[!NOTE]
 >このシナリオは、サードパーティのプロキシではサポートされていません。これは、クライアントアクセスポリシーヘッダーに対するパッシブな (Web ベースの) 要求に制限があるためです。
@@ -129,7 +129,7 @@ Active Directory 要求プロバイダー信頼で、新しい要求コンテキ
 2. コンソールツリーの [AD FS 2.0 \ 信頼関係] で、[証明書利用者信頼] をクリックし、Microsoft Office 365 Id プラットフォーム信頼を右クリックして、[要求規則の編集] をクリックします。 
 3. [要求規則の編集] ダイアログボックスで、[発行承認規則] タブを選択し、[規則の追加] をクリックして、要求規則ウィザードを開始します。
 4. [規則テンプレートの選択] ページの [要求規則テンプレート] で、[カスタム規則を使用して要求を送信する] を選択し、[次へ] をクリックします。
-5. [規則の構成] ページの [要求規則名] に、この規則の表示名を入力します。 [カスタム規則] で、次の要求規則言語構文を入力するか貼り付けます: `exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy"]) &&
+5. [規則の構成] ページの [要求規則名] に、この規則の表示名を入力します。 [カスタム規則] で、次の要求規則言語構文を入力するか貼り付けます。`exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy"]) &&
     NOT exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip",
     Value=~"customer-provided public ip address regex"]) &&
     NOT exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path", Value == "/adfs/ls/"])
@@ -149,7 +149,7 @@ Active Directory 要求プロバイダー信頼で、新しい要求コンテキ
 2. コンソールツリーの [AD FS 2.0 \ 信頼関係] で、[証明書利用者信頼] をクリックし、Microsoft Office 365 Id プラットフォーム信頼を右クリックして、[要求規則の編集] をクリックします。 
 3. [要求規則の編集] ダイアログボックスで、[発行承認規則] タブを選択し、[規則の追加] をクリックして、要求規則ウィザードを開始します。
 4. [規則テンプレートの選択] ページの [要求規則テンプレート] で、[カスタム規則を使用して要求を送信する] を選択し、[次へ] をクリックします。
-5. [規則の構成] ページの [要求規則名] に、この規則の表示名を入力します。 [カスタム規則] で、次の要求規則言語構文を入力するか貼り付けます: `exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy"]) &&
+5. [規則の構成] ページの [要求規則名] に、この規則の表示名を入力します。 [カスタム規則] で、次の要求規則言語構文を入力するか貼り付けます。`exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy"]) &&
     exists([Type == "https://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid", Value =~ "Group SID value of allowed AD group"]) &&
     NOT exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip",
     Value=~"customer-provided public ip address regex"])
@@ -162,14 +162,14 @@ Active Directory 要求プロバイダー信頼で、新しい要求コンテキ
 
 |                                                                                                   説明                                                                                                   |                                                                     要求規則言語の構文                                                                     |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|              すべてのユーザーへのアクセスを許可する既定の AD FS 規則。 このルールは、Microsoft Office 365 Id プラットフォーム証明書利用者信頼の発行承認規則の一覧に既に存在している必要があります。              |                                  = > の問題 (Type = "<https://schemas.microsoft.com/authorization/claims/permit>", Value = "true");                                   |
+|              すべてのユーザーへのアクセスを許可する既定の AD FS 規則。 このルールは、Microsoft Office 365 Id プラットフォーム証明書利用者信頼の発行承認規則の一覧に既に存在している必要があります。              |                                  => の問題 (Type = " <https://schemas.microsoft.com/authorization/claims/permit> ", Value = "true");                                   |
 |                               この句を新しいカスタムルールに追加すると、要求がフェデレーションサーバープロキシから取得された (つまり、x.509 プロキシヘッダーがある) ことが指定されます。                                |                                                                                                                                                                    |
-|                                                                                 すべてのルールにこれを含めることをお勧めします。                                                                                  |                                    exists ([Type = = "<https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy>"])                                    |
-|                                                         定義された許容範囲内の IP を持つクライアントからの要求であることを確立するために使用されます。                                                         | 存在しません ([Type = = "<https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip>", Value = ~ "顧客が指定したパブリック ip アドレス regex"]) |
-|                                    この句を使用して、アクセスするアプリケーションが Microsoft. Exchange. ActiveSync でない場合に、要求を拒否する必要があることを指定します。                                     |       存在しません ([Type = = "<https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application>", Value = = "Microsoft. Exchange. ActiveSync"])        |
-|                                                      この規則を使用すると、呼び出しが Web ブラウザーを介して行われたかどうかを判断でき、拒否されません。                                                      |              存在しません ([Type = = "<https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path>", Value = = "/adfs/ls/"])               |
-| このルールは、(SID 値に基づいて) 特定の Active Directory グループ内のユーザーのみを拒否することを示します。 このステートメントを追加しないと、場所に関係なく、ユーザーのグループが許可されます。 |             exists ([Type = = "<https://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid>", Value = ~ "{Group SID Value of allowed AD group}"])              |
-|                                                                これは、上記の条件がすべて満たされたときに拒否を発行するために必要な句です。                                                                 |                                   = > の問題 (Type = "<https://schemas.microsoft.com/authorization/claims/deny>", Value = "true");                                    |
+|                                                                                 すべてのルールにこれを含めることをお勧めします。                                                                                  |                                    exists ([Type = = " <https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy> "])                                    |
+|                                                         定義された許容範囲内の IP を持つクライアントからの要求であることを確立するために使用されます。                                                         | 存在しません ([Type = = " <https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip> ", Value = ~ "顧客が指定したパブリック ip アドレス regex"]) |
+|                                    この句を使用して、アクセスするアプリケーションが Microsoft. Exchange. ActiveSync でない場合に、要求を拒否する必要があることを指定します。                                     |       存在しません ([Type = = " <https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application> ", Value = = "Microsoft. Exchange. ActiveSync"])        |
+|                                                      この規則を使用すると、呼び出しが Web ブラウザーを介して行われたかどうかを判断でき、拒否されません。                                                      |              存在しません ([Type = = " <https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path> ", Value = = "/adfs/ls/"])               |
+| このルールは、(SID 値に基づいて) 特定の Active Directory グループ内のユーザーのみを拒否することを示します。 このステートメントを追加しないと、場所に関係なく、ユーザーのグループが許可されます。 |             exists ([Type = = " <https://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid> ", Value = ~ "{許可された AD グループのグループ SID 値}"])              |
+|                                                                これは、上記の条件がすべて満たされたときに拒否を発行するために必要な句です。                                                                 |                                   => の問題 (Type = " <https://schemas.microsoft.com/authorization/claims/deny> ", Value = "true");                                    |
 
 ### <a name="building-the-ip-address-range-expression"></a>IP アドレス範囲の作成
 
@@ -193,7 +193,7 @@ VPN または Microsoft DirectAccess (DA) によって企業ネットワーク�
 Exchange Online インフラストラクチャに関連する IP アドレスは、一覧に表示されません。
 
 
-#### <a name="regular-expressions"></a>正規表現
+#### <a name="regular-expressions"></a>[正規表現]
 
 IP アドレスの範囲を一致させる必要がある場合は、比較を実行するために正規表現を作成する必要があります。 次の一連の手順では、次のアドレス範囲に一致するような式を作成する方法の例を示します (パブリック IP の範囲に合わせてこれらの例を変更する必要があります)。
 
@@ -201,19 +201,19 @@ IP アドレスの範囲を一致させる必要がある場合は、比較を�
 - 192.168.1.1 –192.168.1.25
 - 10.0.0.1 –10.0.0.14
 
-まず、1つの IP アドレスに一致する基本的なパターンは次のようになります。 \b # # #\.###\.###\.# # # \b
+まず、1つの IP アドレスに一致する基本的なパターンは次のようになります。 \b # # # # # # \. ### \. ### \. \b
 
-これを拡張すると、2つの異なる IP アドレスを OR 式と一致させることができます。 \b # # #\.###\.###\.# # # \b | \b # # #\.###\.###\.# # # \b
+これを拡張すると、2つの異なる IP アドレスを OR 式と照合して、次のようにすることができます。 \b # # # # # # \. ### \. ### \. \b | \b # \. ### \. ### \. # # # # # \b
 
-そのため、2つのアドレス (192.168.1.1、10.0.0.1 など) のみを照合する例は次のようになります: \b192\.168\.1\.1 \ b | \b10\.0\.0\.1 \ b
+そのため、2つのアドレス (192.168.1.1、10.0.0.1 など) のみを照合する例を次に示します。 \b192 \. 168 \. 1 \. 1 \ b | \b10 \. 0 \. 0 \. 1 \ b
 
-これにより、任意の数のアドレスを入力できるようになります。 アドレスの範囲を許可する必要がある場合 (例: 192.168.1.1 – 192.168.1.25)、\b192\.168\.1\.([1-9] | 1 [0-9] | 2 [0-5]) \b という文字で一致する必要があります。
+これにより、任意の数のアドレスを入力できるようになります。 アドレスの範囲を許可する必要がある場合 (例: 192.168.1.1 – 192.168.1.25)、文字によって照合が行われる必要があります: \b192 \. 168 \. 1 \. ([1-9] | 1 [0-9] | 2 [0-5]) \b
 
 >[!Note] 
 >IP アドレスは、数値ではなく文字列として扱われます。
 
 
-ルールは次のように分類されます: \b192\.168\.1\.
+ルールは次のように分類されます: \b192 \. 168 \. 1\.
 
 これは、192.168.1 から始まる任意の値と一致します。
 
@@ -227,9 +227,9 @@ IP アドレスの範囲を一致させる必要がある場合は、比較を�
 >[!Note]
 >かっこは、IP アドレスの他の部分との照合を開始しないように、正しく配置されている必要があります。
 
-192ブロックが一致すると、10個のブロックに対して同様の式を記述できます。 \b10\.0\.0\.([1-9] | 1 [0-4]) \b
+192ブロックが一致すると、10個のブロックに対して同様の式を記述できます。 \b10 \. 0 \. 0 \. ([1-9] | 1 [0-4]) \b
 
-次の式は、"192.168.1.1 ~ 25" および "10.0.0.1 ~ 14" のすべてのアドレスと一致します。 \b192\.168\.1\.([1-9] | 1 [0-9] | 2 [0-5]) \b | \b10\.0\.0\.([1-9] | 1 [0-4]) \b
+これらをまとめると、次の式は、"192.168.1.1 ~ 25" および "10.0.0.1 ~ 14" のすべてのアドレスと一致します: \b192 \. 168 \. 1 \. ([1-9] | 1 [0-9] | 2 [0-5]) \b | \b10 \. 0 \. 0 \. ([1-9] | 1 [0-4]) \b
 
 #### <a name="testing-the-expression"></a>式のテスト
 
@@ -261,14 +261,13 @@ AD FS サーバー上のセキュリティログへの監査イベントのロ�
 
 ### <a name="event-logging"></a>イベント ログ
 
-既定では、失敗した要求は、[アプリケーションとサービスログ] \ AD FS 2.0 \ Admin にあるアプリケーションイベントログに記録されます。 AD FS のイベントログの詳細については、「 [AD FS 2.0 イベントログの設定](https://technet.microsoft.com/library/adfs2-troubleshooting-configuring-computers.aspx)」を参照してください。
+既定では、失敗した要求は、[アプリケーションとサービスログ] \ AD FS 2.0 \ Admin にあるアプリケーションイベントログに記録されます。 AD FS のイベントログの詳細については、「 [AD FS 2.0 イベントログの設定](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff641696(v=ws.10))」を参照してください。
 
 ### <a name="configuring-verbose-ad-fs-tracing-logs"></a>詳細 AD FS トレースログの構成
 
-AD FS トレースイベントは、AD FS 2.0 デバッグログに記録されます。 トレースを有効にするには、「 [Configure debug tracing for AD FS 2.0](https://technet.microsoft.com/library/adfs2-troubleshooting-configuring-computers.aspx)」を参照してください。
+AD FS トレースイベントは、AD FS 2.0 デバッグログに記録されます。 トレースを有効にするには、「 [Configure debug tracing for AD FS 2.0](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff641696(v=ws.10))」を参照してください。
 
-トレースを有効にした後、次のコマンドライン構文を使用して詳細ログ記録レベルを有効にします。 wevtutil sl "AD FS 2.0 Tracing/Debug"/l: 5  
+トレースを有効にした後、次のコマンドライン構文を使用して、詳細なログ記録レベルを有効にします。 wevtutil.exe sl "AD FS 2.0 Tracing/Debug"/l: 5  
 
-## <a name="related"></a>の関係
+## <a name="related"></a>関連項目
 新しい要求の種類の詳細については、「 [AD FS 要求の種類](AD-FS-Claims-Types.md)」を参照してください。
-

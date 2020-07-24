@@ -8,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 2e63d177abd0a6880c1825b821d265c8fa233a22
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ca7ab368c9e15de15f733070a5bcb06584956500
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80823165"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961134"
 ---
 # <a name="replication-error-1753-there-are-no-more-endpoints-available-from-the-endpoint-mapper"></a>レプリケーション エラー 1753。エンドポイント マッパーから使用できるエンドポイントはこれ以上ありません
 
->適用対象: Windows Server
+>適用先:Windows Server
 
 この記事では、Win32 エラー1753で失敗する Active Directory 操作の現象、原因、および解決手順について説明します。「エンドポイントマッパーから使用できるエンドポイントはこれ以上ありません。」
 
@@ -85,19 +85,19 @@ There are no more endpoints available from the endpoint mapper.
 Last success @ <date> <time>.
 ```
 
-Active Directory サイトおよびサービスの **[レプリケーショントポロジの確認]** コマンドを実行すると、エンドポイントマッパーから使用できるエンドポイントはこれ以上ありません。
+Active Directory サイトおよびサービスの [**レプリケーショントポロジの確認**] コマンドを実行すると、エンドポイントマッパーから使用できるエンドポイントはこれ以上ありません。
 
-ソース DC からの接続オブジェクトを右クリックし、 **[レプリケーショントポロジの確認]** をクリックすると、"エンドポイントマッパーから使用できるエンドポイントはこれ以上ありません" というエラーが表示されます。 画面上のエラーメッセージは次のようになります。
+ソース DC からの接続オブジェクトを右クリックし、[**レプリケーショントポロジの確認**] をクリックすると、"エンドポイントマッパーから使用できるエンドポイントはこれ以上ありません" というエラーが表示されます。 画面上のエラーメッセージは次のようになります。
 
 ダイアログタイトルのテキスト: レプリケーショントポロジの確認ダイアログのメッセージテキスト: ドメインコントローラーに接続しようとしたときに、次のエラーが発生しました: エンドポイントマッパーから使用できるエンドポイントはこれ以上ありません。
 
-Active Directory サイトおよびサービスの **[今すぐレプリケート]** コマンドは、"エンドポイントマッパーから使用できるエンドポイントがありません" を返します。
-ソース DC からの接続オブジェクトを右クリックし、 **[今すぐレプリケート]** を選択すると、"エンドポイントマッパーから使用できるエンドポイントはこれ以上ありません" というエラーが表示されます。
+Active Directory サイトおよびサービスの [**今すぐレプリケート**] コマンドは、"エンドポイントマッパーから使用できるエンドポイントがありません" を返します。
+ソース DC からの接続オブジェクトを右クリックし、[**今すぐレプリケート**] を選択すると、"エンドポイントマッパーから使用できるエンドポイントはこれ以上ありません" というエラーが表示されます。
 画面上のエラーメッセージは次のようになります。
 
-ダイアログタイトルテキスト: [今すぐレプリケート] ダイアログメッセージテキスト: ドメインコントローラー \<ソース DC > からドメインコントローラー \<宛先 DC > への名前付けコンテキスト \<% directory パーティション名% > を同期しようとして、次のエラーが発生しました:
+ダイアログタイトルのテキスト: [今すぐレプリケート] ダイアログメッセージテキスト: \<%directory partition name%> ドメインコントローラーから \<Source DC> ドメインコントローラーに名前付けコンテキストを同期しようとしたときに、次のエラーが発生しました \<Destination DC> :
 
-エンドポイントマッパーから使用できるエンドポイントはこれ以上ありません。
+エンドポイント マッパーから使用できるエンドポイントはこれ以上ありません 
 操作は続行されません
 
 -2146893022 状態の NTDS KCC、NTDS General、または Microsoft-Windows-ActiveDirectory_DomainService イベントは、イベントビューアーのディレクトリサービスログに記録されます。
@@ -149,7 +149,7 @@ Active Directory サイトおよびサービスの **[今すぐレプリケー�
 
 RPC クライアント (接続先 DC) が目的の RPC サーバー (ソース DC) に接続されていることを確認します。
 
-共通 Active Directory フォレスト内のすべての Dc は、ドメインコントローラーの CNAME レコードを _msdcs に登録します。 フォレスト内に存在するドメインに関係なく、フォレストルートドメイン > DNS ゾーンを \<します。 DC CNAME レコードは、各ドメインコントローラーの NTDS 設定オブジェクトの objectGUID 属性から派生します。
+共通 Active Directory フォレスト内のすべての Dc は、ドメインコントローラーの CNAME レコードを _msdcs に登録します。 \<forest root domain>フォレスト内に存在するドメインに関係なく、DNS ゾーン。 DC CNAME レコードは、各ドメインコントローラーの NTDS 設定オブジェクトの objectGUID 属性から派生します。
 
 レプリケーションベースの操作を実行する場合、宛先 DC は、ソース Dc CNAME レコードの DNS を照会します。 CNAME レコードには、ソース DC の完全修飾コンピューター名が含まれています。これは、DNS クライアントキャッシュの参照、ホスト/LMHost ファイルの参照、DNS 内のホスト A/AAAA レコード、または WINS を使用してソース Dc の IP アドレスを派生させるために使用されます。
 
@@ -239,7 +239,7 @@ ncacn_http:CONTOSO-DC01[6004]
 * Rpc サービスおよび rpc ロケーターのスタートアップ値とサービスの状態が、rpc クライアント (接続先 DC) と RPC サーバー (ソース DC) の OS バージョンに対して正しいことを確認します。 サービスが現在停止されているか、既定のスタートアップ値を使用して構成されていない場合は、既定のスタートアップ値をリセットし、変更された DC を再起動してから、操作を再試行してください。
    * さらに、サービスコンテキストが次の表に示す既定の設定と一致していることを確認します。
 
-      | Service | Windows Server 2003 以降の既定の状態 (スタートアップの種類) | Windows Server 2000 の既定の状態 (スタートアップの種類) |
+      | サービス | Windows Server 2003 以降の既定の状態 (スタートアップの種類) | Windows Server 2000 の既定の状態 (スタートアップの種類) |
       | --- | --- | --- |
       | リモート プロシージャ コール | 開始 (自動) | 開始 (自動) |
       | リモートプロシージャコールロケーター | Null または停止 (手動) | 開始 (自動) |
@@ -265,11 +265,11 @@ ncacn_http:CONTOSO-DC01[6004]
    ncacn_ip_udp REG_SZ rpcrt4.dll
    ```
 
-## <a name="more-information"></a>詳細
+## <a name="more-information"></a>詳細情報
 
 RPC エラー1753と-2146893022: ターゲットプリンシパル名が正しくないことが原因で、IP マッピングへの不適切な名前が指定されている例
 
-Contoso.com ドメインは DC1 と DC2 で構成され、IP アドレスは x. x. x. x. 1.2 です。 DC2 のホスト "A"/"AAAA" レコードは、DC1 用に構成されたすべての DNS サーバーに正しく登録されています。 さらに、DC1 の HOSTS ファイルには、完全修飾ホスト名を IP アドレス DC2s にマッピングするエントリが含まれています。 その後、DC2's の IP アドレスの変更と、新しいメンバーコンピューターが、IP アドレスが x. x. 1.2 のドメインに参加するようになります。 Active Directory サイトとサービススナップインの **[今すぐレプリケート]** コマンドによってトリガーされた AD レプリケーションの試行は、次のトレースに示すように、エラー1753で失敗します。
+Contoso.com ドメインは DC1 と DC2 で構成され、IP アドレスは x. x. x. x. 1.2 です。 DC2 のホスト "A"/"AAAA" レコードは、DC1 用に構成されたすべての DNS サーバーに正しく登録されています。 さらに、DC1 の HOSTS ファイルには、完全修飾ホスト名を IP アドレス DC2s にマッピングするエントリが含まれています。 その後、DC2's の IP アドレスの変更と、新しいメンバーコンピューターが、IP アドレスが x. x. 1.2 のドメインに参加するようになります。 Active Directory サイトとサービススナップインの [**今すぐレプリケート**] コマンドによってトリガーされた AD レプリケーションの試行は、次のトレースに示すように、エラー1753で失敗します。
 
 ```
 F# SRC    DEST    Operation
@@ -290,7 +290,7 @@ F# SRC    DEST    Operation
 
 フレーム**11**では、ソース dc (この場合は、dc ロールをまだホストしていないため、E351...ローカル EPM を使用したレプリケーションサービスの UUID は、シンボリックエラー EP_S_NOT_REGISTERED を返します。このエラーは、10進数のエラー1753、16進数のエラー0x6d9、および "エンドポイントマッパーから使用できるエンドポイントがありません" にマップされます。
 
-その後、IP アドレスが x. x. 1.2 のメンバーコンピューターは、contoso.com ドメインのレプリカ "" に昇格します。 ここでも、 **[今すぐレプリケート]** コマンドを使用してレプリケーションを開始しますが、この時間は "ターゲットプリンシパル名が正しくありません" というエラーが表示されて失敗します。 ネットワークアダプターが割り当てられているコンピューターの IP アドレスは、ドメインコントローラーであり、現在通常モードで起動されていて、E351...レプリケーションサービスの UUID はローカルの EPM を使用しますが、DC2 の名前またはセキュリティ id を所有しておらず、DC1 から Kerberos 要求の暗号化を解除できないため、要求は "ターゲットプリンシパル名が正しくありません" というエラーで失敗するようになりました。 このエラーは、10進数のエラー-2146893022/16 進数のエラー0x80090322 にマップされます。
+その後、IP アドレスが x. x. 1.2 のメンバーコンピューターは、contoso.com ドメインのレプリカ "" に昇格します。 ここでも、[**今すぐレプリケート**] コマンドを使用してレプリケーションを開始しますが、この時間は "ターゲットプリンシパル名が正しくありません" というエラーが表示されて失敗します。 ネットワークアダプターが割り当てられているコンピューターの IP アドレスは、ドメインコントローラーであり、現在通常モードで起動されていて、E351...レプリケーションサービスの UUID はローカルの EPM を使用しますが、DC2 の名前またはセキュリティ id を所有しておらず、DC1 から Kerberos 要求の暗号化を解除できないため、要求は "ターゲットプリンシパル名が正しくありません" というエラーで失敗するようになりました。 このエラーは、10進数のエラー-2146893022/16 進数のエラー0x80090322 にマップされます。
 
 このような無効なホスト間マッピングは、ホスト/lmhost ファイルの古いエントリ、DNS 内のホスト A/AAAA 登録、または WINS によって発生する可能性があります。
 
@@ -303,13 +303,13 @@ F# SRC    DEST    Operation
 * [サポート技術情報の記事 832017 Windows Server システムのサービスの概要とネットワークポートの要件](https://support.microsoft.com/kb/832017/)
 * [サポート技術情報の記事 224196 Active Directory レプリケーショントラフィックとクライアント RPC トラフィックを特定のポートに制限する](https://support.microsoft.com/kb/224196/)
 * [サポート技術情報の記事 154596: ファイアウォールで動作するように RPC 動的ポート割り当てを構成する方法](https://support.microsoft.com/kb/154596)
-* [RPC のしくみ](https://msdn.microsoft.com/library/aa373935(VS.85).aspx)
-* [サーバーが接続を準備する方法](https://msdn.microsoft.com/library/aa373938(VS.85).aspx)
-* [クライアントが接続を確立する方法](https://msdn.microsoft.com/library/aa373937(VS.85).aspx)
-* [インターフェイスの登録](https://msdn.microsoft.com/library/aa375357(VS.85).aspx)
-* [ネットワーク上でサーバーを使用できるようにする](https://msdn.microsoft.com/library/aa373974(VS.85).aspx)
-* [登録 (エンドポイントを)](https://msdn.microsoft.com/library/aa375255(VS.85).aspx)
-* [リッスン (クライアント呼び出しを)](https://msdn.microsoft.com/library/aa373966(VS.85).aspx)
-* [クライアントが接続を確立する方法](https://msdn.microsoft.com/library/aa373937(VS.85).aspx)
+* [RPC のしくみ](/windows/win32/rpc/how-rpc-works)
+* [サーバーが接続を準備する方法](/windows/win32/rpc/how-the-server-prepares-for-a-connection)
+* [クライアントが接続を確立する方法](/windows/win32/rpc/how-the-client-establishes-a-connection)
+* [インターフェイスの登録](/windows/win32/rpc/registering-the-interface)
+* [ネットワーク上でサーバーを使用できるようにする](/windows/win32/rpc/making-the-server-available-on-the-network)
+* [登録 (エンドポイントを)](/windows/win32/rpc/registering-endpoints)
+* [リッスン (クライアント呼び出しを)](/windows/win32/rpc/listening-for-client-calls)
+* [クライアントが接続を確立する方法](/windows/win32/rpc/how-the-client-establishes-a-connection)
 * [特定のポートへの Active Directory レプリケーショントラフィックとクライアント RPC トラフィックを制限する](https://support.microsoft.com/kb/224196)
-* [AD DS 内のターゲット DC の SPN](https://msdn.microsoft.com/library/dd207688(PROT.13).aspx)
+* [AD DS 内のターゲット DC の SPN](/openspecs/windows_protocols/ms-drsr/41efc56e-0007-4e88-bafe-d7af61efd91f)

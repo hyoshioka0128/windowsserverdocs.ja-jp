@@ -8,16 +8,16 @@ ms.date: 08/09/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: b290b11487ce84b0c7cd962b272f52fea538769a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: d618b4df0e2274a2ffe48b52e17368719c536d1a
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80824945"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86960624"
 ---
 # <a name="whats-new-in-active-directory-domain-services-installation-and-removal"></a>Active Directory Domain Services のインストールと削除の新機能
 
->適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
 Windows Server 2012 の Active Directory Domain Services (AD DS) の展開は、Windows Server の以前のバージョンよりも簡単かつ高速に行うことができます。 AD DS のインストール処理は Windows PowerShell 上に構築され、サーバー マネージャーに統合されています。 これまで Active Directory 環境へのドメイン コントローラーの導入に必要だった多くの手順が削減されています。 このため、新しい Active Directory 環境を以前よりも簡単かつ効率的に作成することができます。 新しい AD DS 展開プロセスにより、インストールをブロックするようなエラーが発生する可能性が最小限に抑えられます。  
   
@@ -35,27 +35,27 @@ AD DS のインストールには、次の特長があります。
 - **GUI でのインストール時に指定されたすべてのオプションを含む Windows PowerShell スクリプトをエクスポート可能。** インストールまたは削除の終わりに、設定を Windows PowerShell スクリプトにエクスポートし、同じ操作を自動化するために使用することができます。  
 - **再起動の前に重要なレプリケーションのみが行われる。** 新しいスイッチによって、再起動の前に重要でないデータのレプリケーションを許可できます。 詳細については、「[ADDSDeployment コマンドレットの引数](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md#BKMK_Params)」を参照してください。  
 
-## <a name="the-active-directory-domain-services-configuration-wizard"></a><a name="BKMK_ADConfigurationWizard"></a>Active Directory Domain Services 構成ウィザード
+## <a name="the-active-directory-domain-services-configuration-wizard"></a><a name="BKMK_ADConfigurationWizard"></a>Active Directory ドメイン サービス構成ウィザード
 
 Windows Server 2012 以降では、ドメインコントローラーをインストールするときに設定を指定するために、Active Directory Domain Services 構成ウィザードによってレガシ Active Directory ドメインサービスインストールウィザードがユーザーインターフェイス (UI) オプションとして置き換えられます。 Active Directory ドメイン サービス構成ウィザードは、役割の追加ウィザードの完了後に開始されます。  
 
 > [!WARNING]  
 > レガシ Active Directory ドメインサービスインストールウィザード (dcpromo.exe) は、Windows Server 2012 以降では非推奨とされます。  
 
-「 [Active Directory Domain Services &#40;レベル 100&#41;のインストール](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md)」では、役割の追加ウィザードを起動して AD DS サーバーの役割バイナリをインストールし、Active Directory Domain Services 構成ウィザードを実行してドメインコントローラーのインストールを完了する方法について説明します。 Windows PowerShell の例では、AD DS 展開コマンドレットを使用して両方の手順を完了する方法を示しています。  
+[インストール Active Directory Domain Services &#40;レベル 100&#41;](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md)の場合、UI の手順に従って、役割の追加ウィザードを起動して AD DS サーバーの役割バイナリをインストールし、Active Directory Domain Services 構成ウィザードを実行してドメインコントローラーのインストールを完了する方法を説明します。 Windows PowerShell の例では、AD DS 展開コマンドレットを使用して両方の手順を完了する方法を示しています。  
   
 ## <a name="adprepexe-integration"></a><a name="BKMK_NewAdprep"></a>Adprep.exe の統合
 
-Windows Server 2012 以降では、Adprep.exe のバージョンは1つだけです (32 ビットバージョンの adprep32.exe はありません)。 Adprep コマンドは、Windows Server 2012 を実行するドメインコントローラーを既存の Active Directory ドメインまたはフォレストにインストールするときに、必要に応じて自動的に実行されます。  
+Windows Server 2012 以降、Adprep.exe のバージョンは1つだけです (32 ビットバージョンはありません adprep32.exe)。 Adprep コマンドは、Windows Server 2012 を実行するドメインコントローラーを既存の Active Directory ドメインまたはフォレストにインストールするときに、必要に応じて自動的に実行されます。  
   
-adprep 操作は自動的に実行されますが、Adprep.exe を別途実行することができます。 たとえば、AD DS をインストールするユーザーが、Adprep /forestprep を実行するための必要条件である Enterprise Admins グループのメンバーでない場合は、コマンドを別途実行する必要があります。 ただし、最初の Windows Server 2012 ドメインコントローラーをインプレースアップグレードする予定がある場合 (つまり、Windows Server 2012 を実行するドメインコントローラーのオペレーティングシステムをインプレースアップグレードする予定がある場合) は、adprep.exe を実行するだけで済みます。  
+adprep 操作は自動的に実行されますが、Adprep.exe を別途実行することができます。 たとえば、AD DS をインストールするユーザーが、Adprep /forestprep を実行するための必要条件である Enterprise Admins グループのメンバーでない場合は、コマンドを別途実行する必要があります。 ただし、最初の Windows Server 2012 ドメインコントローラーのインプレースアップグレードを計画している場合にのみ adprep.exe を実行する必要があります (つまり、Windows Server 2012 を実行するドメインコントローラーのオペレーティングシステムをインプレースアップグレードする予定がある場合)。  
   
 Adprep.exe は、Windows Server 2012 インストールディスクの \support\adprep フォルダーにあります。Windows Server 2012 バージョンの adprep は、リモートで実行できます。  
   
-Windows server 2012 バージョンの adprep.exe は、Windows Server 2008 以降の64ビットバージョンを実行している任意のサーバーで実行できます。 サーバーには、フォレストのスキーマ マスターと、ドメイン コントローラーを追加するドメインのインフラストラクチャ マスターへのネットワーク接続が必要です。 それらのいずれかの役割が Windows Server 2003 を実行するサーバーでホストされている場合は、adprep をリモートで実行する必要があります。 adprep を実行するサーバーはドメイン コントローラーである必要はありません。 このサーバーはドメインに参加するか、ワークグループに含めることができます。  
+Windows Server 2012 バージョンの adprep.exe は、Windows Server 2008 以降の64ビットバージョンを実行している任意のサーバーで実行できます。 サーバーには、フォレストのスキーマ マスターと、ドメイン コントローラーを追加するドメインのインフラストラクチャ マスターへのネットワーク接続が必要です。 それらのいずれかの役割が Windows Server 2003 を実行するサーバーでホストされている場合は、adprep をリモートで実行する必要があります。 adprep を実行するサーバーはドメイン コントローラーである必要はありません。 このサーバーはドメインに参加するか、ワークグループに含めることができます。  
 
 > [!NOTE]  
-> Windows Server 2003 を実行しているサーバーで Windows Server 2012 バージョンの adprep.exe を実行しようとすると、次のエラーが表示されます。  
+> Windows server 2003 を実行しているサーバーで Windows Server 2012 バージョンの adprep.exe を実行しようとすると、次のエラーが表示されます。  
 >   
 > Adprep.exe は有効な Win32 アプリケーションではありません。  
 
@@ -67,7 +67,7 @@ Adprep.exe で返される他のエラーの解決方法については、「[�
 
 Adprep では、コマンド (/forestprep、/domainprep、または /rodcprep) ごとに、グループ メンバーシップの確認を実行して、指定された資格情報が特定のグループのアカウントを表しているかどうか確認します。 この確認を実行するために、Adprep は操作マスターの役割の所有者にアクセスします。 操作マスターが Windows Server 2003 を実行しているときに、Adprep.exe を実行してグループ メンバーシップの確認がどのような場合でも実行されるようにするときは、/user および /userdomain コマンド ライン パラメーターを指定する必要があります。  
   
-/User と/userdomain は、Windows Server 2012 の Adprep.exe の新しいパラメーターです。 これらのパラメーターではぞれぞれ、adprep コマンドを実行するユーザーのユーザー アカウント名とユーザー ドメインを指定します。 Adprep.exe コマンドライン ユーティリティでは、/userdomain および /user のどちらかを指定して、もう一方を省略することはできません。  
+/User と/userdomain は、Windows Server 2012 の Adprep.exe 用の新しいパラメーターです。 これらのパラメーターではぞれぞれ、adprep コマンドを実行するユーザーのユーザー アカウント名とユーザー ドメインを指定します。 Adprep.exe コマンドライン ユーティリティでは、/userdomain および /user のどちらかを指定して、もう一方を省略することはできません。  
   
 ただし、Windows PowerShell またはサーバー マネージャーを使用して Adprep 操作を AD DS インストールの一部として実行することもできます。 これらのエクスペリエンスでは、adprep.exe と同じ基になる実装 (adprep.dll) を共有します。 Windows PowerShell およびサーバー マネージャーのエクスペリエンスでは、それぞれ個別に資格情報を入力しますが、adprep.exe と同じ要件は必要ありません。 Windows PowerShell またはサーバー マネージャーを使用して、/user の値を adprep.dll に渡すことはできますが、/userdomain の値を adprep.dll に渡すことはできません。 /User が指定されていて、/userdomain が指定されていない場合は、ローカルコンピューターのドメインがチェックの実行に使用されます。 コンピューターがドメインに参加していない場合、グループ メンバーシップは確認できません。  
   
@@ -79,7 +79,7 @@ Adprep was unable to check the specified user's group membership. This could hap
 
 /user パラメーターおよび /userdomain パラメーターを指定せずに Adprep.exe を実行し、操作マスターで Windows Server 2003 を実行している場合、Adprep.exe は現在のログオン ユーザーのドメイン内のドメイン コントローラーにアクセスします。 現在のログオン ユーザーがドメイン ユーザーではない場合、Adprep.exe ではグループ メンバーシップの確認を実行できません。 また、スマート カード資格情報が使用されている場合、/user と /userdomain の両方を指定しても、Adprep.exe ではグループ メンバーシップの確認を実行できません。  
   
-Adprep が正常に完了した場合、何も操作は必要ありません。 実行中にアクセス エラーで Adprep が失敗したら、正しいメンバーシップを持つアカウントを指定します。 詳細については、「 [Credential requirements to run Adprep.exe and install Active Directory Domain Services](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md#BKMK_Creds)」を参照してください。  
+Adprep が正常に完了した場合、何も操作は必要ありません。 実行中にアクセス エラーで Adprep が失敗したら、正しいメンバーシップを持つアカウントを指定します。 詳細については、「[Adprep.exe を実行して Active Directory Domain Services をインストールするための資格情報要件](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md#BKMK_Creds)」を参照してください。  
   
 ### <a name="syntax-for-adprep-in-windows-server-2012"></a>Windows Server 2012 の Adprep の構文
 
@@ -93,13 +93,13 @@ Adprep.exe /forestprep /forest <forest name> /userdomain <user domain name> /use
 
 ### <a name="running-adprep-using-smartcard"></a>スマート カードを使用した adprep の実行
 
-Windows Server 2012 バージョンの adprep.exe は、資格情報としてスマートカードを使用しますが、コマンドラインを使用してスマートカードの資格情報を簡単に指定することはできません。 これを行うためには、PowerShell コマンドレットの Get-Credential を使用してスマート カードの資格情報を取得する方法があります。 次に、 `@@...`として表示される、返された PSCredential オブジェクトのユーザー名を使用します。 パスワードは、スマート カードの PIN です。  
+Windows Server 2012 バージョンの adprep.exe は、スマートカードを使用して資格情報として機能しますが、コマンドラインからスマートカードの資格情報を指定する簡単な方法はありません。 これを行うためには、PowerShell コマンドレットの Get-Credential を使用してスマート カードの資格情報を取得する方法があります。 次に、`@@...` として表示される、返された PSCredential オブジェクトのユーザー名を使用します。 パスワードは、スマート カードの PIN です。  
 
 /user が指定されている場合、Adprep.exe には /userdomain が必要です。 スマート カード資格情報の場合、/userdomain はスマート カードで表されている、基になるユーザー アカウントのドメインにする必要があります。  
 
 ### <a name="adprep-domainprep-gpprep-command-is-not-run-automatically"></a>adprep /domainprep /gpprep コマンドは自動的に実行されません。
 
-adprep /domainprep /gpprep コマンドは、AD DS インストールの一部として実行されません。 このコマンドでは、ポリシーの結果セット (RSoP) 計画モード機能に必要なアクセス許可を設定します。 このコマンドの詳細については、 [Microsoft サポート技術情報の記事 324392](https://support.microsoft.com/kb/324392)を参照してください。 コマンドを Active Directory ドメインで実行する必要がある場合、AD DS インストールとは別にコマンドを実行できます。 Windows Server 2003 SP1 以降を実行するドメイン コントローラーの展開準備でコマンドが既に実行されている場合は、コマンドをもう一度実行する必要はありません。  
+adprep /domainprep /gpprep コマンドは、AD DS インストールの一部として実行されません。 このコマンドでは、ポリシーの結果セット (RSoP) 計画モード機能に必要なアクセス許可を設定します。 このコマンドの詳細については、[Microsoft サポート技術情報の記事 324392](https://support.microsoft.com/kb/324392) を参照してください。 コマンドを Active Directory ドメインで実行する必要がある場合、AD DS インストールとは別にコマンドを実行できます。 Windows Server 2003 SP1 以降を実行するドメイン コントローラーの展開準備でコマンドが既に実行されている場合は、コマンドをもう一度実行する必要はありません。  
 
 Adprep/domainprep/gpprep を実行しなくても、Windows Server 2012 を実行するドメインコントローラーを既存のドメインに安全に追加できますが、RSOP 計画モードは正しく機能しません。  
 
@@ -123,7 +123,7 @@ AD DS インストール ウィザードでは、インストールが開始さ�
 
 ## <a name="system-requirements"></a><a name="BKMK_SystemReqs"></a>システム要件
 
-Windows server 2012 のシステム要件は、Windows Server 2008 R2 から変更されていません。 詳細については、「 [Windows Server 2008 R2 SP1 のシステム要件](https://www.microsoft.com/windowsserver2008/en/us/system-requirements.aspx)」 (https://www.microsoft.com/windowsserver2008/en/us/system-requirements.aspx)を参照してください。  
+Windows server 2012 のシステム要件は、Windows Server 2008 R2 から変更されていません。 詳細については、「 [Windows Server 2008 R2 SP1 のシステム要件](https://www.microsoft.com/windowsserver2008/en/us/system-requirements.aspx)」 () を参照してください https://www.microsoft.com/windowsserver2008/en/us/system-requirements.aspx) 。  
 
 機能によっては、追加の要件がある場合があります。 たとえば、仮想ドメインコントローラーの複製機能を使用するには、PDC エミュレーターが Windows Server 2012 を実行し、Hyper-v の役割がインストールされた Windows Server 2012 を実行しているコンピューターが必要です。  
 
@@ -163,7 +163,7 @@ Windows server 2012 のシステム要件は、Windows Server 2008 R2 から変�
    ```
 
 - Ctrl キーを押しながら C キーを押して、Install-ADDSForest コマンドレットをキャンセルすることができます。 キャンセルによってインストールが停止し、サーバーの状態に対して行われたすべての変更が元に戻ります。 ただし、キャンセル コマンドが実行された後も、制御は Windows PowerShell に返されず、コマンドレットが無制限にハングする可能性があります。  
-- **インストール前にターゲットサーバーがドメインに参加していない場合、スマートカードの資格情報を使用した追加のドメインコントローラーのインストールは失敗します。**  
+- **インストール前にターゲット サーバーがドメインに参加していない場合、スマート カード資格情報を使用した追加のドメイン コントローラーのインストールは失敗します。**  
 
    この場合、次のエラー メッセージが返されます。  
 
@@ -171,11 +171,11 @@ Windows server 2012 のシステム要件は、Windows Server 2008 R2 から変�
 
    ターゲット サーバーをドメインに参加させ、スマート カードを使用してインストールを実行すると、インストールは成功します。  
   
-- **ADDSDeployment モジュールは 32 ビット プロセスで実行されません。** ADDSDeployment コマンドレットを含むスクリプトと、ネイティブ64ビットプロセスをサポートしていない他のコマンドレットを使用して、Windows Server 2012 の展開と構成を自動化する場合、スクリプトは ADDSDeployment を示すエラーで失敗することがあります。コマンドレットが見つかりません。  
+- **ADDSDeployment モジュールは 32 ビット プロセスで実行されません。** ADDSDeployment コマンドレットを含むスクリプトと、ネイティブ64ビットプロセスをサポートしない他のコマンドレットを使用して、Windows Server 2012 の展開と構成を自動化する場合、スクリプトは ADDSDeployment コマンドレットが見つからないことを示すエラーで失敗することがあります。  
 
    この場合は、ADDSDeployment コマンドレットを、ネイティブの 64 ビット プロセスをサポートしていないコマンドレットとは別に実行する必要があります。  
 
-- Windows Server 2012 には、回復力のあるファイルシステムという名前の新しいファイルシステムがあります。 Resilient File System (ReFS) でフォーマットされたデータ ボリュームに Active Directory データベース、ログ ファイル、または SYSVOL を格納しないでください。 ReFS の詳細については、「 [Windows の次世代ファイル システム ReFS の構築 (Building the next generation file system for Windows: ReFS)](https://blogs.msdn.com/b/b8/archive/2012/01/16/building-the-next-generation-file-system-for-windows-refs.aspx)」を参照してください。  
+- Windows Server 2012 には、回復力のあるファイルシステムという名前の新しいファイルシステムがあります。 Resilient File System (ReFS) でフォーマットされたデータ ボリュームに Active Directory データベース、ログ ファイル、または SYSVOL を格納しないでください。 ReFS の詳細については、「[Windows の次世代ファイル システム ReFS の構築 (Building the next generation file system for Windows: ReFS)](https://blogs.msdn.com/b/b8/archive/2012/01/16/building-the-next-generation-file-system-for-windows-refs.aspx)」を参照してください。  
 - サーバーマネージャーでは、Server Core インストール上で AD DS またはその他のサーバーの役割を実行していて、Windows Server 2012 にアップグレードされているサーバーでは、イベントと状態が想定どおりに収集されていても、サーバーの役割が赤の状態で表示されることがあります。 プレリリース版の Windows Server 2012 の Server Core インストールを実行するサーバーも影響を受ける可能性があります。  
 
 ### <a name="active-directory-domain-services-installation-hangs-if-an-error-prevents-critical-replication"></a>エラーが発生して重要なレプリケーションが実行されないと、Active Directory ドメイン サービスのインストールがハングする
@@ -227,11 +227,11 @@ Windows server 2012 のシステム要件は、Windows Server 2008 R2 から変�
    DC2.contoso.com  
    ```  
 
-   エラーの原因がローカルの Administrator アカウントおよびパスワードの指定である場合、エラーから回復するには、オペレーティング システムを再インストールし、インストールを完了できなかったドメイン コントローラーのアカウントの [メタデータ クリーンアップを実行](https://technet.microsoft.com/library/cc816907(WS.10).aspx) してから、Domain Admin 資格情報を使用して AD DS のインストールを再試行する必要があります。 インストールが正常に完了しなかった場合でも、サーバーでは AD DS がインストールされていると示されるので、サーバーを再起動してもこのエラー状態は解決されません。  
+   エラーの原因がローカルの Administrator アカウントおよびパスワードの指定である場合、エラーから回復するには、オペレーティング システムを再インストールし、インストールを完了できなかったドメイン コントローラーのアカウントの[メタデータ クリーンアップを実行](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc816907(v=ws.10))してから、Domain Admin 資格情報を使用して AD DS のインストールを再試行する必要があります。 インストールが正常に完了しなかった場合でも、サーバーでは AD DS がインストールされていると示されるので、サーバーを再起動してもこのエラー状態は解決されません。  
 
-### <a name="active-directory-domain-services-configuration-wizard-warns-when-a-non-normalized-dns-name-is-specified"></a><a name="BKMK_nonnormalDNSNameWarning"></a>正規化されていない DNS 名が指定されると Active Directory Domain Services 構成ウィザードによって警告が表示される
+### <a name="active-directory-domain-services-configuration-wizard-warns-when-a-non-normalized-dns-name-is-specified"></a><a name="BKMK_nonnormalDNSNameWarning"></a>正規化されていない DNS 名が指定されている場合、Active Directory ドメイン サービス構成ウィザードで警告が表示される
 
-新しいドメインまたはフォレストを作成するときに、正規化されていない国際化文字を含む DNS ドメイン名を指定すると、Active Directory Domain Services 構成ウィザードに、名前の DNS クエリが失敗する可能性があることを示す警告が表示されます。 [配置構成] ページで DNS ドメイン名が指定されている場合でも、ウィザードの [前提条件のチェック] ページに後で警告が表示されます。  
+新しいドメインまたはフォレストを作成するときに、正規化されていない国際化文字を含む DNS ドメイン名を指定すると、Active Directory ドメイン サービス構成ウィザードに、名前の DNS クエリが失敗する可能性があることを示す警告が表示されます。 [配置構成] ページで DNS ドメイン名が指定されている場合でも、ウィザードの [前提条件のチェック] ページに後で警告が表示されます。  
 
 DNS ドメイン名が、füßball や ' ΣΤ ' .com などの非正規化された名前を使用して指定されている場合 (正規化されたバージョンは füssball.com およびβστα.)、WinHTTP でアクセスしようとするクライアントアプリケーションは名前解決 Api を呼び出す前に名前を正規化します。 ユーザーが一部のダイアログで "' ΣΤ ' .com" と入力すると、DNS クエリは "βστα." として送信され、DNS サーバーは "' ΣΤ ' .com" のリソースレコードと一致しません。 ユーザーは名前を解決できません。  
 
@@ -246,4 +246,4 @@ DNS ドメイン名が、füßball や ' ΣΤ ' .com などの非正規化され
 
 Active Directory ドメイン サービス構成ウィザードの [前提条件のチェック] ページに警告が表示される場合は、[配置構成] ページに戻り、正規化された DNS ドメイン名を指定します。 Windows PowerShell を使用して新しいドメインをインストールしている場合は、-DomainName オプションで正規化された DNS 名を指定します。  
 
-IDN の詳細については、「 [Handling Internationalized Domain Names (IDNs) (国際化ドメイン名 (IDN) の処理)](https://msdn.microsoft.com/library/windows/desktop/dd318142(v=vs.85).aspx)」を参照してください。  
+IDN の詳細については、「[Handling Internationalized Domain Names (IDNs) (国際化ドメイン名 (IDN) の処理)](/windows/win32/intl/handling-internationalized-domain-names--idns)」を参照してください。  

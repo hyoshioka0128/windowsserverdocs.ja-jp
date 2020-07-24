@@ -8,26 +8,26 @@ ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 197f994bdd5dedced24aa390dc562530c41e951d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 63764ff94c10376c76eec493c618214a183bf528
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80824915"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961104"
 ---
 # <a name="advanced-ad-ds-management-using-active-directory-administrative-center-level-200"></a>Advanced AD DS Management Using Active Directory Administrative Center (Level 200)
 
->適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
-このトピックでは、更新された Active Directory 管理センターと、そこで使用できる新しい Active Directory のごみ箱、細かい設定が可能なパスワード ポリシー、および Windows PowerShell 履歴ビューアーについて詳しく説明します。これには、アーキテクチャ、一般的なタスクの例、トラブルシューティング情報などが含まれます。 概要については、「 [Active Directory 管理センターの&#40;拡張レベル&#41;100 の概要](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md)」を参照してください。  
+このトピックでは、更新された Active Directory 管理センターと、そこで使用できる新しい Active Directory のごみ箱、細かい設定が可能なパスワード ポリシー、および Windows PowerShell 履歴ビューアーについて詳しく説明します。これには、アーキテクチャ、一般的なタスクの例、トラブルシューティング情報などが含まれます。 概要については、「 [Active Directory 管理センターの機能強化の概要 &#40;レベル 100&#41;」を](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md)参照してください。  
   
-- [Active Directory 管理センターアーキテクチャ](../../../ad-ds/get-started/adac/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-.md#BKMK_Arch)  
-- [Active Directory 管理センターを使用した Active Directory のごみ箱の有効化と管理](../../../ad-ds/get-started/adac/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-.md#BKMK_EnableRecycleBin)  
-- [Active Directory 管理センターを使用した細かい設定が可能なパスワードポリシーの構成と管理](../../../ad-ds/get-started/adac/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-.md#BKMK_FGPP)  
-- [Active Directory 管理センター Windows PowerShell 履歴ビューアーの使用](../../../ad-ds/get-started/adac/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-.md#BKMK_HistoryViewer)  
+- [Active Directory 管理センターのアーキテクチャ](../../../ad-ds/get-started/adac/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-.md#BKMK_Arch)  
+- [Active Directory 管理センターを使用して Active Directory のごみ箱を有効化および管理する](../../../ad-ds/get-started/adac/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-.md#BKMK_EnableRecycleBin)  
+- [Active Directory 管理センターを使用して細かい設定が可能なパスワード ポリシーを構成および管理する](../../../ad-ds/get-started/adac/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-.md#BKMK_FGPP)  
+- [Active Directory 管理センターの Windows PowerShell 履歴ビューアーを使用する](../../../ad-ds/get-started/adac/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-.md#BKMK_HistoryViewer)  
 - [AD DS 管理のトラブルシューティング](../../../ad-ds/get-started/adac/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-.md#BKMK_Tshoot)  
   
-## <a name="active-directory-administrative-center-architecture"></a><a name="BKMK_Arch"></a>Active Directory 管理センターアーキテクチャ  
+## <a name="active-directory-administrative-center-architecture"></a><a name="BKMK_Arch"></a>Active Directory 管理センターのアーキテクチャ  
   
 ### <a name="active-directory-administrative-center-executables-dlls"></a>Active Directory 管理センター実行可能ファイル、Dll  
 
@@ -43,7 +43,7 @@ Active Directory 管理センターのモジュールと基盤となるアーキ
   
 ![高度な AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/adds_adrestore.png)  
   
-## <a name="enabling-and-managing-the-active-directory-recycle-bin-using-active-directory-administrative-center"></a><a name="BKMK_EnableRecycleBin"></a>Active Directory 管理センターを使用した Active Directory のごみ箱の有効化と管理  
+## <a name="enabling-and-managing-the-active-directory-recycle-bin-using-active-directory-administrative-center"></a><a name="BKMK_EnableRecycleBin"></a>Active Directory 管理センターを使用して Active Directory のごみ箱を有効化および管理する  
   
 ### <a name="capabilities"></a>機能  
   
@@ -52,7 +52,7 @@ Active Directory 管理センターのモジュールと基盤となるアーキ
   
 ### <a name="limitations"></a>制限事項  
   
-- Active Directory 管理センターが管理できるのはドメイン パーティションのみであるため、構成パーティション、ドメイン DNS パーティション、フォレスト DNS パーティションで削除されたオブジェクトは復元できません (スキーマ パーティションのオブジェクトは削除できません)。 ドメイン パーティション以外からオブジェクトを復元するには、 [Restore-ADObject](https://technet.microsoft.com/library/ee617262.aspx)を使用します。  
+- Active Directory 管理センターが管理できるのはドメイン パーティションのみであるため、構成パーティション、ドメイン DNS パーティション、フォレスト DNS パーティションで削除されたオブジェクトは復元できません (スキーマ パーティションのオブジェクトは削除できません)。 ドメイン パーティション以外からオブジェクトを復元するには、 [Restore-ADObject](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee617262(v=technet.10))を使用します。  
 
 - Active Directory 管理センターでは、オブジェクトのサブツリーを 1 回の操作で復元することはできません。 たとえば、入れ子になった OU、ユーザー、グループ、およびコンピューターを含む OU を削除した場合、ベース OU を復元しても、子オブジェクトは復元されません。  
   
@@ -63,7 +63,7 @@ Active Directory のごみ箱には、Windows Server 2008 R2 フォレストの�
   
 ### <a name="enabling-active-directory-recycle-bin-using-active-directory-administrative-center"></a>Active Directory 管理センターを使用して Active Directory のごみ箱を有効化する
 
-Active Directory のごみ箱を有効化するには、**Active Directory 管理センター**を開いて、ナビゲーション ウィンドウでフォレストの名前をクリックします。 **[タスク]** ウィンドウで、 **[ごみ箱の有効化]** をクリックします。  
+Active Directory のごみ箱を有効化するには、**Active Directory 管理センター**を開いて、ナビゲーション ウィンドウでフォレストの名前をクリックします。 **[タスク]** ウィンドウで、**[ごみ箱の有効化]** をクリックします。  
   
 ![高度な AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_EnableRecycleBin.png)  
   
@@ -81,7 +81,7 @@ Windows PowerShell コマンドレットと同等の Active Directory は次の�
 Enable-ADOptionalFeature  
 ```
 
-Windows PowerShell を使用して Active Directory のごみ箱を有効化する手順の詳細については、「 [Active Directory のごみ箱の手順ガイド](https://docs.microsoft.com/windows-server/identity/ad-ds/get-started/adac/introduction-to-active-directory-administrative-center-enhancements--level-100-#active-directory-recycle-bin-step-by-step)」を参照してください。  
+Windows PowerShell を使用して Active Directory のごみ箱を有効化する手順の詳細については、「 [Active Directory のごみ箱の手順ガイド](./introduction-to-active-directory-administrative-center-enhancements--level-100-.md#active-directory-recycle-bin-step-by-step)」を参照してください。  
   
 ### <a name="managing-active-directory-recycle-bin-using-active-directory-administrative-center"></a>Active Directory 管理センターを使用して Active Directory のごみ箱を管理する
 
@@ -91,13 +91,13 @@ Windows PowerShell を使用して Active Directory のごみ箱を有効化す�
   
 #### <a name="storage-and-filtering"></a>ストレージとフィルター
 
-Active Directory のごみ箱には、フォレストで削除されたすべてのオブジェクトが保存されます。 これらのオブジェクトは **msDS-deletedObjectLifetime** 属性に基づいて保存されます。既定では、この属性はフォレストの **tombstoneLifetime** 属性と同じ値に設定されています。 Windows Server 2003 SP1 以降を使用して作成されたフォレストでは、**tombstoneLifetime** の値は、既定では 180 日に設定されています。 Windows 2000 からアップグレードしたフォレスト、または Windows Server 2003 (Service Pack なし) がインストールされたフォレストでは、既定の tombstoneLifetime 属性は設定されていないため、Windows 内部の既定値である 60 日が使用されます。 これらの設定はすべて構成可能です。Active Directory 管理センターを使用して、フォレストのドメイン パーティションから削除された任意のオブジェクトを復元できます。 構成パーティションなど、他のパーティションで削除されたオブジェクトを復元するには、引き続き **Restore-ADObject** コマンドレットを使用する必要があります。Active Directory のごみ箱を有効化すると、Active Directory 管理センターのすべてのドメイン パーティションに、 **[削除済みオブジェクト]** コンテナーが表示されます。  
+Active Directory のごみ箱には、フォレストで削除されたすべてのオブジェクトが保存されます。 これらのオブジェクトは **msDS-deletedObjectLifetime** 属性に基づいて保存されます。既定では、この属性はフォレストの **tombstoneLifetime** 属性と同じ値に設定されています。 Windows Server 2003 SP1 以降を使用して作成されたフォレストでは、**tombstoneLifetime** の値は、既定では 180 日に設定されています。 Windows 2000 からアップグレードしたフォレスト、または Windows Server 2003 (Service Pack なし) がインストールされたフォレストでは、既定の tombstoneLifetime 属性は設定されていないため、Windows 内部の既定値である 60 日が使用されます。 これらの設定はすべて構成可能です。Active Directory 管理センターを使用して、フォレストのドメイン パーティションから削除された任意のオブジェクトを復元できます。 構成パーティションなど、他のパーティションで削除されたオブジェクトを復元するには、引き続き **Restore-ADObject** コマンドレットを使用する必要があります。Active Directory のごみ箱を有効化すると、Active Directory 管理センターのすべてのドメイン パーティションに、**[削除済みオブジェクト]** コンテナーが表示されます。  
   
 ![高度な AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_DeletedObjectsContainer.png)  
   
 **[削除済みオブジェクト]** コンテナーには、そのドメイン パーティションで復元可能なすべてのオブジェクトが表示されます。 **msDS-deletedObjectLifetime** で指定された期間より前に削除されたオブジェクトは、リサイクルされたオブジェクトと呼ばれます。 Active Directory 管理センターには、リサイクルされたオブジェクトは表示されないため、Active Directory 管理センターを使用してこれらのオブジェクトを復元することはできません。  
   
-ごみ箱のアーキテクチャと処理ルールに関する詳細については「 [The AD Recycle Bin:Understanding, Implementing, Best Practices, and Troubleshooting (AD のごみ箱: 理解、実装、ベスト プラクティス、およびトラブルシューティング)](https://blogs.technet.com/b/askds/archive/2009/08/27/the-ad-recycle-bin-understanding-implementing-best-practices-and-troubleshooting.aspx)」を参照してください。  
+ごみ箱のアーキテクチャと処理ルールに関する詳細については「 [The AD Recycle Bin:Understanding, Implementing, Best Practices, and Troubleshooting (AD のごみ箱: 理解、実装、ベスト プラクティス、およびトラブルシューティング)](/archive/blogs/askds/the-ad-recycle-bin-understanding-implementing-best-practices-and-troubleshooting)」を参照してください。  
   
 Active Directory 管理センターでは、コンテナーから返される既定のオブジェクト数を 20,000 に制限しています。 **[管理]** メニューの **[管理の一覧のオプション]** をクリックすると、この制限を 100,000 オブジェクトに増やすことができます。  
   
@@ -105,7 +105,7 @@ Active Directory 管理センターでは、コンテナーから返される既
   
 #### <a name="restoration"></a>復元  
   
-##### <a name="filtering"></a>フィルター
+##### <a name="filtering"></a>Filtering
 
 Active Directory 管理センターは、強力な条件およびフィルター オプションを備えています。実際の復元作業で使用する前に、これらのオプションについて理解しておく必要があります。 ドメインは、有効期間が過ぎたオブジェクトを削除します。有効期間が 180 日のオブジェクトが削除されると、問題が発生した場合にすべてのオブジェクトを簡単に復元することはできません。  
   
@@ -118,21 +118,21 @@ Active Directory 管理センターは、強力な条件およびフィルター
 - *ANR (あいまいな名前解決-メニューには表示されませんが、* * * * [フィルター] * * * * ボックスに入力すると使用されます)*  
 - 最後の変更が指定の期間内  
 - オブジェクトの種類が、ユーザー/inetOrgPerson/コンピューター/グループ/組織単位  
-- Name  
+- 名前  
 - 削除するとき  
 - 最後に確認された親  
 - 種類  
 - 説明  
-- 市  
+- City  
 - 国/地域  
 - 部署  
 - 従業員 ID  
-- ファースト ネーム  
-- [役職]  
+- 名  
+- 役職  
 - 姓  
 - SAM アカウント名  
-- [都道府県]  
-- [電話番号]  
+- 都道府県  
+- 電話番号  
 - UPN  
 - 郵便番号  
 
@@ -142,21 +142,21 @@ Active Directory 管理センターは、強力な条件およびフィルター
   
 ![高度な AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_ColumnHeaders.png)  
   
-あいまいな名前解決の詳細については、「 [ANR Attributes (ANR の属性)](https://msdn.microsoft.com/library/ms675092(VS.85).aspx)」を参照してください。  
+あいまいな名前解決の詳細については、「 [ANR Attributes (ANR の属性)](/windows/win32/adschema/attributes-anr)」を参照してください。  
   
 ##### <a name="single-object"></a>単一のオブジェクト
 
 削除済みオブジェクトの復旧は、常に 1 回の操作で行われていました。  Active Directory 管理センターでは、この操作がさらに簡単になります。 単一ユーザーなど、1 つの削除済みオブジェクトを復旧するには、次の手順を実行します。  
   
 1. Active Directory 管理センターのナビゲーション ウィンドウで、ドメイン名をクリックします。  
-2. 管理の一覧で、 **[削除済みオブジェクト]** をダブルクリックします。  
+2. 管理の一覧で、**[削除済みオブジェクト]** をダブルクリックします。  
 3. オブジェクトを右クリックして **[復元]** をクリックするか、または **[タスク]** ウィンドウの **[復元]** をクリックします。  
   
 オブジェクトが元の場所に復元されます。  
   
 ![高度な AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_RestoreSingle.gif)  
   
-復元の場所を変更するには、 **[復元先]** をクリックします。 これは、削除されたオブジェクトの親コンテナーも削除されたが、親を復元しない場合に便利です。  
+復元の場所を変更するには、[**復元先**] をクリックします。 これは、削除されたオブジェクトの親コンテナーも削除されたが、親を復元しない場合に便利です。  
   
 ![高度な AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_RestoreToSingle.gif)  
   
@@ -179,11 +179,11 @@ Active Directory 管理センターでは、削除済みオブジェクトの入
   
 **オブジェクトの親のインスタンスが作成されていないか削除されているため、操作は実行できませんでした。**  
   
-**[最後に確認された親]** 属性には、各オブジェクトの親との関係が表示されます。 親オブジェクトを復元した後に Active Directory 管理センターを更新すると、 **[最後に確認された親]** 属性の値が、削除された場所から復元された場所に変更されます。 そのため、親オブジェクトの場所に削除済みオブジェクトコンテナーの識別名が表示されなくなったときに、その子オブジェクトを復元できます。  
+**[最後に確認された親]** 属性には、各オブジェクトの親との関係が表示されます。 親オブジェクトを復元した後に Active Directory 管理センターを更新すると、**[最後に確認された親]** 属性の値が、削除された場所から復元された場所に変更されます。 そのため、親オブジェクトの場所に削除済みオブジェクトコンテナーの識別名が表示されなくなったときに、その子オブジェクトを復元できます。  
   
 管理者が誤って Sales OU を削除してしまった場合を考えてみましょう。Sales OU には、子 OU およびユーザーが含まれています。  
   
-最初に、削除されたすべてのユーザーの**最後の既知の親**属性の値と、その読み取り方法 **OU = Sales\0ADEL:* < guid + 削除済みオブジェクトコンテナーの識別名 > * * * を確認します。  
+最初に、削除されたすべてのユーザーの**最後の既知の親**属性の値と、その読み取り方法 **OU = Sales\0ADEL:*<guid + 削除済みオブジェクトコンテナーの識別名> * * * を確認します。  
   
 ![高度な AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_LastKnownParent.gif)  
   
@@ -201,7 +201,7 @@ Active Directory 管理センターを更新して、削除したユーザーオ
   
 **Sales** OU に子 OU が含まれていた場合は、最初に子 OU を復元してから、その子オブジェクトを復元します。さらに階層がある場合は、親から順次、復元していきます。  
   
-削除済みの親コンテナーを指定して、入れ子になっている削除済みオブジェクトをすべて復元するには、「 [付録 B:、複数の削除された Active Directory オブジェクトを復元する (サンプル スクリプト)](https://technet.microsoft.com/library/dd379504(WS.10).aspx)」を参照してください。  
+削除済みの親コンテナーを指定して、入れ子になっている削除済みオブジェクトをすべて復元するには、「 [付録 B:、複数の削除された Active Directory オブジェクトを復元する (サンプル スクリプト)](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd379504(v=ws.10))」を参照してください。  
   
 次の Active Directory Windows PowerShell コマンドレットは、削除済みオブジェクトを復元します。  
 
@@ -215,29 +215,29 @@ Restore-adobject
 
 中規模および大規模なエンタープライズ環境では、時間が経つと、[削除済みオブジェクト] コンテナーに 20,000 (場合によっては 100,000) を超えるオブジェクトが蓄積され、すべてのオブジェクトを表示することが困難になる可能性があります。 Active Directory 管理センターのフィルター メカニズムでは、クライアント側のフィルターを使用しているため、上限を超えたオブジェクトを表示することはできません。 この制限を回避するには、次の手順に従ってサーバー側の検索を実行します。  
   
-1. **[削除済みオブジェクト]** コンテナーを右クリックし、 **[このノード配下の検索]** をクリックします。  
-2. シェブロンをクリックして **[+条件の追加]** メニューを表示し、 **[最後の変更が指定の期間内]** を選択して追加します。 最終更新時刻 (**whenChanged** 属性) は、削除時間に非常に近い値であり、ほとんどの環境では同一になります。 このクエリでは、サーバー側の検索が実行されます。  
+1. **[削除済みオブジェクト]** コンテナーを右クリックし、**[このノード配下の検索]** をクリックします。  
+2. シェブロンをクリックして **[+条件の追加]** メニューを表示し、**[最後の変更が指定の期間内]** を選択して追加します。 最終更新時刻 (**whenChanged** 属性) は、削除時間に非常に近い値であり、ほとんどの環境では同一になります。 このクエリでは、サーバー側の検索が実行されます。  
 3. 結果に対し、さらに表示フィルターや並べ替えなどを使用して、復元する削除済みオブジェクトを特定し、通常の手順で復元を実行します。  
   
-## <a name="configuring-and-managing-fine-grained-password-policies-using-active-directory-administrative-center"></a><a name="BKMK_FGPP"></a>Active Directory 管理センターを使用した細かい設定が可能なパスワードポリシーの構成と管理  
+## <a name="configuring-and-managing-fine-grained-password-policies-using-active-directory-administrative-center"></a><a name="BKMK_FGPP"></a>Active Directory 管理センターを使用して細かい設定が可能なパスワード ポリシーを構成および管理する  
   
 ### <a name="configuring-fine-grained-password-policies"></a>細かい設定が可能なパスワード ポリシーを構成する
 
-Active Directory 管理センターを使用すると、細かい設定が可能なパスワード ポリシー (FGPP) オブジェクトを作成して管理できます。 FGPP 機能は Windows Server 2008 で導入されましたが、Windows Server 2012 で初めて FGPP のグラフィカル管理インターフェイスが使用できるようになりました。 細かい設定が可能なパスワード ポリシーをドメイン レベルで適用すると、Windows Server 2003 で必要な単一ドメイン パスワードを上書きできます。 複数の FGPP を異なる設定で作成すると、ドメイン内の個々のユーザーまたはグループに対して異なるパスワード ポリシーを適用できます。  
+Active Directory 管理センターを使用すると、細かい設定が可能なパスワード ポリシー (FGPP) オブジェクトを作成して管理できます。 FGPP 機能は Windows Server 2008 で導入されましたが、Windows Server 2012 で初めて FGPP のグラフィカル管理インターフェイスが使用できるようになりました。 細かい設定が可能なパスワード ポリシーをドメイン レベルで適用すると、Windows Server 2003 で必要な単一ドメイン パスワードをオーバーライドできます。 複数の FGPP を異なる設定で作成すると、ドメイン内の個々のユーザーまたはグループに対して異なるパスワード ポリシーを適用できます。  
   
-細かい設定が可能なパスワード ポリシーの詳細については、「 [ステップ バイ ステップ ガイド - 細かい設定が可能なパスワードおよびアカウント ロックアウトのポリシー設定 (Windows Server 2008 R2)](https://technet.microsoft.com/library/cc770842(WS.10).aspx)」を参照してください。  
+細かい設定が可能なパスワード ポリシーの詳細については、「[ステップ バイ ステップ ガイド - 細かい設定が可能なパスワードおよびアカウント ロックアウトのポリシー設定 (Windows Server 2008 R2)](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770842(v=ws.10))」を参照してください。  
   
-ナビゲーション ウィンドウで、ツリー ビューからドメインをクリックし、 **[システム]** 、 **[パスワード設定コンテナー]** を順にクリックします。次に、[タスク] ウィンドウで、 **[新規]** 、 **[パスワードの設定]** を順にクリックします。  
+ナビゲーション ウィンドウで、ツリー ビューからドメインをクリックし、**[システム]**、**[パスワード設定コンテナー]** を順にクリックします。次に、[タスク] ウィンドウで、**[新規]**、**[パスワードの設定]** を順にクリックします。  
   
 ![高度な AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_PasswordSettings.png)  
   
 ### <a name="managing-fine-grained-password-policies"></a>細かい設定が可能なパスワード ポリシーを管理する
 
-新しい FGPP を作成するか、または既存の FGPP の編集を選択すると、 **[パスワードの設定]** エディターが表示されます。 この画面で、必要なすべてのパスワード ポリシーを構成します。Windows Server 2008 や Windows Server 2008 R2 で行うのと同様の内容ですが、ここでは専用のエディターを使用するという点のみ異なります。  
+新しい FGPP を作成するか、または既存の FGPP の編集を選択すると、**[パスワードの設定]** エディターが表示されます。 この画面で、必要なすべてのパスワード ポリシーを構成します。Windows Server 2008 や Windows Server 2008 R2 で行うのと同様の内容ですが、ここでは専用のエディターを使用するという点のみ異なります。  
   
 ![高度な AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_CreatePasswordSettings.png)  
   
-すべての必須フィールド (赤いアスタリスク付き) と、必要に応じて省略可能なフィールドに入力します。次に、 **[追加]** をクリックし、このポリシーを適用するユーザーまたはグループを設定します。 FGPP は、指定されたセキュリティ プリンシパルの既定のドメイン ポリシー設定を上書きします。 上の画面では、セキュリティを保護するために、制限が非常に厳しいポリシーを組み込みの Administrator アカウントのみに適用しています。 このポリシーは、通常のユーザーに適用するには複雑すぎる内容ですが、IT プロフェッショナルのみが使用する危険度の高いアカウントには最適です。  
+すべての必須フィールド (赤いアスタリスク付き) と、必要に応じて省略可能なフィールドに入力します。次に、**[追加]** をクリックし、このポリシーを適用するユーザーまたはグループを設定します。 FGPP は、指定されたセキュリティ プリンシパルの既定のドメイン ポリシー設定をオーバーライドします。 上の画面では、セキュリティを保護するために、制限が非常に厳しいポリシーを組み込みの Administrator アカウントのみに適用しています。 このポリシーは、通常のユーザーに適用するには複雑すぎる内容ですが、IT プロフェッショナルのみが使用する危険度の高いアカウントには最適です。  
   
 また、優先順位を設定し、指定したドメイン内でポリシーを適用するユーザーおよびグループも設定します。  
   
@@ -259,17 +259,17 @@ Set-ADFineGrainedPasswordPolicy
   
 ![高度な AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_FGPP.gif)  
   
-Active Directory 管理センターを使用して、特定のユーザーに適用された FGPP の結果セットを参照することもできます。 任意のユーザーを右クリックし、 **[結果のパスワード設定の表示...]** をクリックして、暗黙的または明示的な割り当てを通じてそのユーザーに適用される [*パスワードの設定*] ページを開きます。  
+Active Directory 管理センターを使用して、特定のユーザーに適用された FGPP の結果セットを参照することもできます。 任意のユーザーを右クリックし、[**結果のパスワード設定の表示...** ] をクリックして、暗黙的または明示的な割り当てを通じてそのユーザーに適用される [*パスワードの設定*] ページを開きます。  
   
 ![高度な AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_RSOP.png)  
   
-任意のユーザーまたはグループの **[プロパティ]** を確認すると、 **[直接関連付けられたパスワードの設定]** が表示されます。これは、明示的に割り当てられた FGPP です。  
+任意のユーザーまたはグループの **[プロパティ]** を確認すると、**[直接関連付けられたパスワードの設定]** が表示されます。これは、明示的に割り当てられた FGPP です。  
   
 ![高度な AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_FGPPSettings.gif)  
   
 暗黙的な FGPP 割り当てはここには表示されません。そのためには、[**結果のパスワード設定の表示**...] オプションを使用する必要があります。  
   
-## <a name="using-the-active-directory-administrative-center-windows-powershell-history-viewer"></a><a name="BKMK_HistoryViewer"></a>Active Directory 管理センター Windows PowerShell 履歴ビューアーの使用
+## <a name="using-the-active-directory-administrative-center-windows-powershell-history-viewer"></a><a name="BKMK_HistoryViewer"></a>Active Directory 管理センターの Windows PowerShell 履歴ビューアーを使用する
 
 今後の Windows 管理で基盤となるのは、Windows PowerShell です。 タスク自動化フレームワークの上にグラフィカル ツールを重ねて配置することで、複雑な分散システムの管理作業を一貫して効率的に実行できるようになります。 管理能力を最大限に発揮し、コンピューティング環境への投資を最大限に活用するには、Windows PowerShell の動作について理解する必要があります。  
   
@@ -289,7 +289,7 @@ Active Directory 管理センターの Windows PowerShell 履歴ビューアー�
   
 ![高度な AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_ViewArgs.png)  
   
-Active Directory 管理センターを使用してオブジェクトを作成、変更、または削除する前に、 **[タスクの開始]** メニューをクリックして、手動で注釈を作成します。 実行する内容を入力します。  Active Directory 管理センターによる作業が完了したら、 **[タスクの終了]** を選択します。 このタスク メモを使用すると、実行されたすべての操作が折りたたみ可能なメモにグループ化され、実行した内容を理解しやすくなります。  
+Active Directory 管理センターを使用してオブジェクトを作成、変更、または削除する前に、**[タスクの開始]** メニューをクリックして、手動で注釈を作成します。 実行する内容を入力します。  Active Directory 管理センターによる作業が完了したら、**[タスクの終了]** を選択します。 このタスク メモを使用すると、実行されたすべての操作が折りたたみ可能なメモにグループ化され、実行した内容を理解しやすくなります。  
   
 たとえば、ユーザーのパスワードを変更し、そのユーザーをグループから削除するために使用された Windows PowerShell コマンドを、次のようなメモで確認できます。  
   
@@ -327,7 +327,7 @@ Active Directory 管理センターは、既存のカスタマー環境におい
 
 Active Directory 管理センターには、トレース構成ファイルの一部として組み込みのログ記録が含まれるようになりました。 dsac.exe と同じフォルダーに次のファイルを作成するか、ファイルが存在する場合は以下の手順に従って変更します。  
   
-**dsac .exe .config**
+**dsac.exe.config**
   
 次の内容を作成します。  
   
@@ -449,7 +449,7 @@ Active Directory Web Services インスタンスが使用できない場合は�
 |エラー|操作|
 | --- | --- |  
 |"どのドメインにも接続できません。 接続できるようになったら、更新するか、再試行してください"|Active Directory 管理センター アプリケーションの開始時に表示されます|
-|"Active Directory Web サービス (ADWS) を実行している *<NetBIOS domain name>* ドメインで利用可能なサーバーが見つかりません"|Active Directory 管理センター アプリケーションでドメイン ノードの選択を試行したときに表示されます|
+|" *<NetBIOS domain name>* Active Directory Web サービス (ADWS) を実行しているドメインで使用可能なサーバーが見つかりません"|Active Directory 管理センター アプリケーションでドメイン ノードの選択を試行したときに表示されます|
   
 この問題のトラブルシューティングを行うには、次の手順に従います。  
   

@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: e3764977e29413ea1e361fa78cadd040adabcf04
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3fd459ac469d052b2c183520cbf434c1ac351c0c
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858095"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962754"
 ---
 # <a name="ad-fs-support-for-alternate-hostname-binding-for-certificate-authentication"></a>AD FS での証明書認証のための代替ホスト名バインドのサポート
 
@@ -21,7 +21,7 @@ ms.locfileid: "80858095"
   
 Windows Server 2016 の AD FS を使用すると、これを実現できます。
   
-Windows Server 2016 の AD FS では、これが変更されました。 2つのモードがサポートされるようになりました。最初のモードでは、異なるポート (443、49443) を持つ同じホスト (つまり adfs.contoso.com) が使用されます。 2番目のホスト (adfs.contoso.com と certauth.adfs.contoso.com) が同じポート (443) で使用されています。 これには、"certauth. < adfs-service-name >" を代替サブジェクト名としてサポートするための SSL 証明書が必要です。 これは、ファームの作成時または後で PowerShell を使用して行うことができます。  
+Windows Server 2016 の AD FS では、これが変更されました。 2つのモードがサポートされるようになりました。最初のモードでは、異なるポート (443、49443) を持つ同じホスト (つまり adfs.contoso.com) が使用されます。 2番目のホスト (adfs.contoso.com と certauth.adfs.contoso.com) が同じポート (443) で使用されています。 これには、"certauth. <adfs-service-name>" を代替サブジェクト名としてサポートするための SSL 証明書が必要です。 これは、ファームの作成時または後で PowerShell を使用して行うことができます。  
   
 ## <a name="how-to-configure-alternate-host-name-binding-for-certificate-authentication"></a>証明書認証用の代替ホスト名バインドを構成する方法  
 証明書認証用の代替ホスト名のバインドを追加する方法は2つあります。 1つ目は、Windows Server 2016 用の AD FS を持つ新しい AD FS ファームを設定する場合です。証明書にサブジェクト代替名 (SAN) が含まれている場合は、前述の2番目の方法を使用するように自動的にセットアップされます。 つまり、2つの異なるホスト (sts.contoso.com と certauth.sts.contoso.com が同じポートで自動的に設定されます。 証明書に SAN が含まれていない場合は、証明書のサブジェクトの別名が certauth. * をサポートしていないことを示す警告が表示されます。 以下のスクリーンショットを参照してください。 最初の例では、証明書に SAN があり、2番目の証明書にはなかった証明書が表示されています。  
@@ -40,6 +40,6 @@ Set-AdfsAlternateTlsClientBinding -Member DC1.contoso.com -Thumbprint '<thumbpri
 
 ![代替ホスト名のバインド](media/AD-FS-support-for-alternate-hostname-binding-for-certificate-authentication/ADFS_CA_3.png)
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
-* [Windows Server 2016 での AD FS と WAP での SSL 証明書の管理](../operations/Manage-SSL-Certificates-AD-FS-WAP-2016.md)
+* [Windows Server 2016 の AD FS と WAP で SSL 証明書を管理する](./manage-ssl-certificates-ad-fs-wap.md)

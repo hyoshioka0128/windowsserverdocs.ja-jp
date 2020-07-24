@@ -9,12 +9,12 @@ ms.assetid: 834e8542-a67a-4ba0-9841-8a57727ef876
 author: nedpyle
 ms.date: 04/26/2019
 description: 記憶域レプリカを使用して、あるクラスターのボリュームを、Windows Server を実行している別のクラスターにレプリケートする方法について説明します。
-ms.openlocfilehash: 21e054d42d0264bb22fbd0e02382ee429958a597
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: d99a7ebf933427e8e065f72261816610e62a433d
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475669"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961244"
 ---
 # <a name="cluster-to-cluster-storage-replication"></a>クラスター間の記憶域のレプリケーション
 
@@ -140,7 +140,7 @@ ms.locfileid: "85475669"
 2. SR ログ ボリュームが常に最も高速なフラッシュ ストレージに配置され、データ ボリュームが低速な大容量ストレージに配置されることを確認します。
 
 3. Windows PowerShell を起動し、`Test-SRTopology` コマンドレットを使用して、記憶域レプリカのすべての要件を満たしているかどうかを判別します。 このコマンドレットは、簡単なテストのために要件のみモードで使用することも、実行時間の長いパフォーマンス評価モードで使用することもできます。
-   たとえば、オブジェクトに適用された
+   たとえば、次のように入力します。
 
    ```PowerShell
    MD c:\temp
@@ -172,11 +172,11 @@ ms.locfileid: "85475669"
     > WIndows Server には、クラウド (Azure) ベースの監視のオプションが追加されました。 ファイル共有監視に代えてこのクォーラム オプションを選択できます。
 
     > [!WARNING]
-    > クォーラム構成の詳細については、「[クォーラムの構成と管理](../../failover-clustering/manage-cluster-quorum.md)」の「**監視の構成**」セクションを参照してください。 `Set-ClusterQuorum` コマンドレットの詳細については、「[Set-ClusterQuorum](https://docs.microsoft.com/powershell/module/failoverclusters/set-clusterquorum)」を参照してください。
+    > クォーラム構成の詳細については、「[クォーラムの構成と管理](../../failover-clustering/manage-cluster-quorum.md)」の「**監視の構成**」セクションを参照してください。 `Set-ClusterQuorum` コマンドレットの詳細については、「[Set-ClusterQuorum](/powershell/module/failoverclusters/set-clusterquorum)」を参照してください。
 
 5.  **Redmond** サイトでクラスター CSV に 1 台のディスクを追加します。 これを行うには、**[記憶域]** セクションの **[ディスク]** ノードでソース ディスクを右クリックして、**[クラスターの共有ボリュームへの追加]** をクリックします。
 
-6.  [スケールアウト ファイル サーバーの構成](https://technet.microsoft.com/library/hh831718.aspx)の手順に従って、両方のクラスターにクラスター化されたスケールアウト ファイル サーバーを作成します。
+6.  [スケールアウト ファイル サーバーの構成](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831718(v=ws.11))の手順に従って、両方のクラスターにクラスター化されたスケールアウト ファイル サーバーを作成します。
 
 ### <a name="windows-powershell-method"></a>Windows PowerShell による方法
 
@@ -204,9 +204,9 @@ ms.locfileid: "85475669"
     > WIndows Server には、クラウド (Azure) ベースの監視のオプションが追加されました。 ファイル共有監視に代えてこのクォーラム オプションを選択できます。
 
     > [!WARNING]
-    > クォーラム構成の詳細については、「[クォーラムの構成と管理](../../failover-clustering/manage-cluster-quorum.md)」の「**監視の構成**」セクションを参照してください。 `Set-ClusterQuorum` コマンドレットの詳細については、「[Set-ClusterQuorum](https://docs.microsoft.com/powershell/module/failoverclusters/set-clusterquorum)」を参照してください。
+    > クォーラム構成の詳細については、「[クォーラムの構成と管理](../../failover-clustering/manage-cluster-quorum.md)」の「**監視の構成**」セクションを参照してください。 `Set-ClusterQuorum` コマンドレットの詳細については、「[Set-ClusterQuorum](/powershell/module/failoverclusters/set-clusterquorum)」を参照してください。
 
-4.  [スケールアウト ファイル サーバーの構成](https://technet.microsoft.com/library/hh831718.aspx)の手順に従って、両方のクラスターにクラスター化されたスケールアウト ファイル サーバーを作成します。
+4.  [スケールアウト ファイル サーバーの構成](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831718(v=ws.11))の手順に従って、両方のクラスターにクラスター化されたスケールアウト ファイル サーバーを作成します。
 
 ## <a name="step-3-set-up-cluster-to-cluster-replication-using-windows-powershell"></a>手順 3: Windows PowerShell を使用してクラスター間のレプリケーションを設定する
 次に、Windows PowerShell を使用してクラスター間のレプリケーションを設定します。 次のすべての手順は、ノード上で直接実行することも、Windows Server が含まれているリモート管理コンピューターから実行することもできリモートサーバー管理ツール
@@ -355,7 +355,7 @@ ms.locfileid: "85475669"
 
     -   \Storage Replica Statistics(*)\Number of Messages Sent
 
-    Windows PowerShell でのパフォーマンス カウンターの詳細については、「[Get-Counter](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Diagnostics/Get-Counter)」を参照してください。
+    Windows PowerShell でのパフォーマンス カウンターの詳細については、「[Get-Counter](/powershell/module/microsoft.powershell.diagnostics/get-counter)」を参照してください。
 
 3.  1 つのサイトからレプリケーションの方向を移動するには、**Set-SRPartnership** コマンドレットを使用します。
 
@@ -384,7 +384,7 @@ ms.locfileid: "85475669"
     ```
 
     > [!NOTE]
-    > 記憶域レプリカは、宛先ボリュームをマウント解除します。 これは仕様に基づく制限事項です。
+    > 記憶域レプリカは、宛先ボリュームをマウント解除します。 これは仕様です。
 
 ## <a name="additional-references"></a>その他のリファレンス
 
