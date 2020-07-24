@@ -6,12 +6,12 @@ ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 03/29/2018
-ms.openlocfilehash: ce3b32bdb0dfb51237f934f23207167a215a0024
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: ccce763b437b461d33dd72cb3d656b825746e6da
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475609"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86953845"
 ---
 # <a name="delimit-the-allocation-of-volumes-in-storage-spaces-direct"></a>記憶域スペースダイレクトのボリュームの割り当てを区切ります。
 > 適用対象:Windows Server 2019
@@ -37,7 +37,7 @@ Windows Server 2019 では、記憶域スペースダイレクトでボリュー
 
 ### <a name="review-regular-allocation"></a>レビュー: 通常の割り当て
 
-通常の3方向ミラーリングでは、ボリュームは多数の小さな "スラブ" に分割され、3回コピーされ、クラスター内のすべてのサーバーのすべてのドライブに均等に分散されます。 詳細については、この詳細な[ブログ](https://blogs.technet.microsoft.com/filecab/2016/11/21/deep-dive-pool-in-spaces-direct/)を参照してください。
+通常の3方向ミラーリングでは、ボリュームは多数の小さな "スラブ" に分割され、3回コピーされ、クラスター内のすべてのサーバーのすべてのドライブに均等に分散されます。 詳細については、この詳細な[ブログ](https://techcommunity.microsoft.com/t5/storage-at-microsoft/deep-dive-the-storage-pool-in-storage-spaces-direct/ba-p/425959)を参照してください。
 
 ![ボリュームがスラブの3つのスタックに分割され、すべてのサーバーで均等に分散されていることを示す図。](media/delimit-volume-allocation/regular-allocation.png)
 

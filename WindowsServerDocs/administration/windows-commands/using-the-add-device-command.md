@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e410132ea3d7ce151c47d4708f284a8e44448aaf
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 486cd3a567fe8742d680a77378d8f5a933b876ae
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85937247"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86954805"
 ---
 # <a name="add-device"></a>デバイスの追加
 
@@ -51,9 +51,9 @@ wdsutil /add-Device /Device:computer1 /ID:00-B0-56-88-2F-DC
 wdsutil /add-Device /Device:computer1 /ID:{E8A3EFAC-201F-4E69-953F-B2DAA1E8B1B6} /ReferralServer:WDSServer1 /BootProgram:boot\x86\pxeboot.com
 /WDSClientUnattend:WDSClientUnattend\unattend.xml /User:Domain\MyUser/JoinRights:Full /BootImagepath:boot\x86\images\boot.wim /OU:OU=MyOU,CN=Test,DC=Domain,DC=com
 ```
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 - [コマンドライン構文のキー](command-line-syntax-key.md) 
 [Get AllDevices コマンド](using-the-get-alldevices-command.md) 
  の使用[Get デバイスコマンド](using-the-get-device-command.md) 
  の使用[サブコマンド: デバイス](subcommand-set-device.md) 
- の設定[New-WdsClient](https://technet.microsoft.com/library/dn283430.aspx)
+ の設定[New-WdsClient](/previous-versions/windows/powershell-scripting/dn283430(v=wps.630))

@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2f7e23a82afba85ea8a670c636e0f700cb7def2e
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: a3d7be286e124af9e31c8607827a97f967b907ae
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85930925"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86954504"
 ---
 # <a name="wbadmin-start-sysrecovery"></a>wbadmin start sysrecovery
 
@@ -23,7 +23,7 @@ ms.locfileid: "85930925"
 指定されたパラメーターを使用して、システム回復 (ベアメタル回復) を実行します。
 
 > [!NOTE]
-> このサブコマンドは、Windows 回復環境からのみ実行でき、 **Wbadmin**の使用法テキストには既定では表示されません。 詳細については、「 [Windows 回復環境 (WINDOWS RE) の概要](https://technet.microsoft.com/library/hh825173.aspx)」を参照してください。
+> このサブコマンドは、Windows 回復環境からのみ実行でき、 **Wbadmin**の使用法テキストには既定では表示されません。 詳細については、「 [Windows 回復環境 (WINDOWS RE) の概要](/previous-versions/windows/it-pro/windows-8.1-and-8/hh825173(v=win.10))」を参照してください。
 
 このサブコマンドを使用してシステムの回復を実行するには、 **Backup Operators**グループまたは**Administrators**グループのメンバーであるか、適切なアクセス許可が委任されている必要があります。
 
@@ -65,8 +65,8 @@ wbadmin start sysrecovery -version:03/31/2013-09:00 -backupTarget:d:
 wbadmin start sysrecovery -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 -   [Wbadmin](wbadmin.md)
--   [WBBareMetalRecovery](https://technet.microsoft.com/library/jj902461.aspx)コマンドレット
+-   [WBBareMetalRecovery](/previous-versions/windows/it-pro/windows-8.1-and-8/hh825173(v=win.10))コマンドレット

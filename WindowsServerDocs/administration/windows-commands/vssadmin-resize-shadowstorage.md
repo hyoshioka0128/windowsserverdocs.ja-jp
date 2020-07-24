@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 03/05/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: e32fe419899c0f553f36976ecee95fb3a922f1a6
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 8b723fd3768561da7d636dd1724bd0c75ee2ee85
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436627"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86954704"
 ---
 # <a name="vssadmin-resize-shadowstorage"></a>Vssadmin resize shadowstorage
 
@@ -21,7 +21,7 @@ ms.locfileid: "83436627"
 
 シャドウコピーの記憶域に使用できる記憶域の最大容量のサイズを変更します。
 
-シャドウコピー記憶域に使用できる記憶域の最小容量は、 **Mindiffgram**のレジストリ値を使用して指定できます。 詳細については、「 [Mindiffgram](https://docs.microsoft.com/windows/win32/backup/registry-keys-for-backup-and-restore#mindiffareafilesize)」を参照してください。
+シャドウコピー記憶域に使用できる記憶域の最小容量は、 **Mindiffgram**のレジストリ値を使用して指定できます。 詳細については、「 [Mindiffgram](/windows/win32/backup/registry-keys-for-backup-and-restore#mindiffareafilesize)」を参照してください。
 
 > [!WARNING]
 > 記憶域の関連付けのサイズを変更すると、シャドウコピーが消失する可能性があります。
@@ -50,5 +50,5 @@ vssadmin Resize ShadowStorage /For=C: /On=C: /MaxSize=20%
 
 ## <a name="additional-references"></a>その他のリファレンス
 
-* [コマンドライン構文のキー](https://docs.microsoft.com/windows-server/administration/windows-commands/command-line-syntax-key)
+* [コマンドライン構文のキー](./command-line-syntax-key.md)
 * [Vssadmin](vssadmin.md)

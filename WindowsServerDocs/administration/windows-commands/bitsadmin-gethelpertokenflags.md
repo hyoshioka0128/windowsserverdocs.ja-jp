@@ -8,16 +8,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/01/2019
-ms.openlocfilehash: 62c5678c1af22b5970d1367aa514033ab7269148
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 1a3cd9e69c696dc00cb597ae1f60747518d8600f
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85928230"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955724"
 ---
 # <a name="bitsadmin-gethelpertokenflags"></a>bitsadmin gethelpertokenflags
 
-BITS 転送ジョブに関連付けられている [ヘルパートークン](https://docs.microsoft.com/windows/win32/bits/helper-tokens-for-bits-transfer-jobs)の使用フラグを返し   ます。
+BITS 転送ジョブに関連付けられている [ヘルパートークン](/windows/win32/bits/helper-tokens-for-bits-transfer-jobs)の使用フラグを返し   ます。
 
 > [!NOTE]
 > このコマンドは、BITS 3.0 以前ではサポートされていません。
@@ -50,7 +50,7 @@ bitsadmin /gethelpertokenflags <job>
 bitsadmin /gethelpertokenflags myDownloadJob
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/27/2018
-ms.openlocfilehash: 2e49ed45875b79dfc4d8bbbdad8a1221000bf2b5
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 59d6a4eafe2eb3383cfeed9e1cbcb9d3e10fe376
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85923514"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955814"
 ---
 # <a name="bcdedit"></a>bcdedit
 
@@ -104,10 +104,10 @@ bcdedit /command [<argument1>] [<argument2>] ...
 | /dbgsettings | システムのグローバル デバッガー設定を指定または表示します。 このコマンドは、enablepose 無効にします。 個々のグローバルデバッガー設定を設定するには、 **bcdedit/set**コマンドを使用し `<dbgsettings> <type> <value>` ます。 |
 | /debug | 指定されたブート エントリのカーネル デバッガーを有効または無効にします。 |
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
-BCDEdit の使用方法の例については、 [Bcdedit オプションのリファレンス](https://docs.microsoft.com/windows-hardware/drivers/devtest/bcd-boot-options-reference)記事を参照してください。
+BCDEdit の使用方法の例については、 [Bcdedit オプションのリファレンス](/windows-hardware/drivers/devtest/bcd-boot-options-reference)記事を参照してください。
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

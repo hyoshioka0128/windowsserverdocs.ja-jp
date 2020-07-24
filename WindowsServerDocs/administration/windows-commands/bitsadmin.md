@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e9fd70e4e74dc25c32ff3a74be2fc1c66d697367
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 51a64b059dd9d07dd6bd0ecccb1cd99382bdfaa5
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85926374"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955374"
 ---
 # <a name="bitsadmin"></a>bitsadmin
 
@@ -26,7 +26,7 @@ Bitsadmin は、ジョブの作成、ダウンロード、アップロード、�
 
 既定では、自分のジョブに関する情報にアクセスできます。 別のユーザーのジョブに関する情報にアクセスするには、管理者特権が必要です。 ジョブが管理者特権で作成された場合は、管理者特権のウィンドウから**bitsadmin**を実行する必要があります。それ以外の場合は、ジョブへの読み取り専用アクセス権が付与されます。
 
-スイッチの多くは、 [BITS インターフェイス](https://docs.microsoft.com/windows/win32/bits/bits-interfaces)のメソッドに対応しています。 スイッチの使用に関連する可能性のあるその他の詳細については、対応するメソッドを参照してください。
+スイッチの多くは、 [BITS インターフェイス](/windows/win32/bits/bits-interfaces)のメソッドに対応しています。 スイッチの使用に関連する可能性のあるその他の詳細については、対応するメソッドを参照してください。
 
 ジョブの作成、ジョブのプロパティの設定と取得、およびジョブの状態の監視を行うには、次のスイッチを使用します。 これらのスイッチのいくつかを使用してタスクを実行する方法を示す例については、「 [bitsadmin の例](bitsadmin-examples.md)」を参照してください。
 

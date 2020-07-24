@@ -10,12 +10,12 @@ author: stevenek
 ms.date: 06/07/2019
 description: 記憶域スペースダイレクトを使用して、Windows Server のソフトウェア定義記憶域を、ハイパー集約型インフラストラクチャまたは収束 (disaggregated とも呼ばれる) インフラストラクチャとして展開する手順を説明します。
 ms.localizationpriority: medium
-ms.openlocfilehash: 50bcdc175610d6e5c5264f9cb62c7d99d2990ac0
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: c18d3edc57ab04c9f9487bc39b52325fa1eb0ba9
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472829"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955114"
 ---
 # <a name="deploy-storage-spaces-direct"></a>記憶域スペース ダイレクトの展開
 
@@ -102,7 +102,7 @@ PS セッションを開始し、接続するノードのサーバー名また�
 Add-Computer -NewName "Server01" -DomainName "contoso.com" -Credential "CONTOSO\User" -Restart -Force
 ```
 
-ストレージ管理者アカウントが Domain Admins グループのメンバーでない場合は、各ノードのローカルの Administrators グループにストレージ管理者アカウントを追加します。または、さらに詳細には、記憶域管理者に使用するグループを追加します。 次のコマンドを使用できます (または Windows PowerShell 関数を記述して、詳細については、「 [powershell を使用してドメインユーザーをローカルグループに追加](https://blogs.technet.com/b/heyscriptingguy/archive/2010/08/19/use-powershell-to-add-domain-users-to-a-local-group.aspx)する」を参照してください)。
+ストレージ管理者アカウントが Domain Admins グループのメンバーでない場合は、各ノードのローカルの Administrators グループにストレージ管理者アカウントを追加します。または、さらに詳細には、記憶域管理者に使用するグループを追加します。 次のコマンドを使用できます (または Windows PowerShell 関数を記述して、詳細については、「 [powershell を使用してドメインユーザーをローカルグループに追加](https://devblogs.microsoft.com/scripting/use-powershell-to-add-domain-users-to-a-local-group/)する」を参照してください)。
 
 ```
 Net localgroup Administrators <Domain\Account> /add
@@ -119,7 +119,7 @@ Net localgroup Administrators <Domain\Account> /add
 - RSAT クラスタ リング PowerShell
 - Hyper V の PowerShell
 
-PowerShell を使用してインストールするには、 [install-add-windowsfeature](https://docs.microsoft.com/powershell/module/microsoft.windows.servermanager.migration/install-windowsfeature)コマンドレットを使用します。 これは、次のように1つのサーバーで使用できます。
+PowerShell を使用してインストールするには、 [install-add-windowsfeature](/powershell/module/microsoft.windows.servermanager.migration/install-windowsfeature)コマンドレットを使用します。 これは、次のように1つのサーバーで使用できます。
 
 ```PowerShell
 Install-WindowsFeature -Name "Hyper-V", "Failover-Clustering", "Data-Center-Bridging", "RSAT-Clustering-PowerShell", "Hyper-V-PowerShell", "FS-FileServer"
@@ -384,7 +384,7 @@ CD $ScriptFolder
 
 ## <a name="next-steps"></a>次のステップ
 
-クラスター化されたファイルサーバーをデプロイした後は、実際のワークロードを導入する前に、合成ワークロードを使用してソリューションのパフォーマンスをテストすることをお勧めします。 これにより、ソリューションが正常に実行されていることを確認し、残存している問題を解決してからワークロードの複雑さを増すことができます。 詳細については、「[合成ワークロードを使用した記憶域スペースのパフォーマンスのテスト](https://technet.microsoft.com/library/dn894707.aspx)」を参照してください。
+クラスター化されたファイルサーバーをデプロイした後は、実際のワークロードを導入する前に、合成ワークロードを使用してソリューションのパフォーマンスをテストすることをお勧めします。 これにより、ソリューションが正常に実行されていることを確認し、残存している問題を解決してからワークロードの複雑さを増すことができます。 詳細については、「[合成ワークロードを使用した記憶域スペースのパフォーマンスのテスト](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn894707(v=ws.11))」を参照してください。
 
 ## <a name="additional-references"></a>その他のリファレンス
 
@@ -392,5 +392,5 @@ CD $ScriptFolder
 -   [記憶域スペース ダイレクトのキャッシュについて](understand-the-cache.md)
 -   [記憶域スペース ダイレクトのボリュームの計画](plan-volumes.md)
 -   [記憶域スペースのフォールトトレランス](storage-spaces-fault-tolerance.md)
--   [記憶域スペース ダイレクトのハードウェア要件](Storage-Spaces-Direct-Hardware-Requirements.md)
--   [To RDMA, or not to RDMA – that is the question (RDMA すべきか、RDMA せざるべきか、それが問題だ)](https://blogs.technet.microsoft.com/filecab/2017/03/27/to-rdma-or-not-to-rdma-that-is-the-question/) (TechNet ブログ)
+-   [ハードウェア要件の記憶域スペースダイレクト](Storage-Spaces-Direct-Hardware-Requirements.md)
+-   [To RDMA, or not to RDMA – that is the question (RDMA すべきか、RDMA せざるべきか、それが問題だ)](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB) (TechNet ブログ)

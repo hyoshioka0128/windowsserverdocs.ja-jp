@@ -9,21 +9,21 @@ ms.author: v-tea
 author: Teresa-MOTIV
 ms.localizationpriority: medium
 ms.reviewer: deverette
-ms.openlocfilehash: b1316fe2feba674beb915b6ea22b1c0361ae1243
-ms.sourcegitcommit: 7116460855701eed4e09d615693efa4fffc40006
+ms.openlocfilehash: a98ed0d8436b057c63b08c1f1476b4392f7911fc
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83433156"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86953934"
 ---
 # <a name="step-75-create-oma-dm-based-vpnv2-profiles-to-windows-10-devices"></a>手順 7.5.  Windows 10 デバイスに OMA-URI ベースの VPNv2 プロファイルを作成する
 
 >適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows 10
 
 - [**前へ:** 手順 7.4.条件付きアクセスルート証明書をオンプレミスの AD にデプロイする](vpn-deploy-cond-access-root-cert-to-on-premise-ad.md)
-- [**次のようになります。** VPN の条件付きアクセスのしくみについて説明します。](https://docs.microsoft.com/windows/access-protection/vpn/vpn-conditional-access)
+- [**次のようになります。** VPN の条件付きアクセスのしくみについて説明します。](/windows/access-protection/vpn/vpn-conditional-access)
 
-この手順では、Intune を使用して OMA-URI ベースの VPNv2 プロファイルを作成し、VPN デバイス構成ポリシーを展開することができます。 VPNv2 プロファイルを作成するために Microsoft エンドポイント Configuration Manager または PowerShell スクリプトを使用する場合は、 [VPNV2 CSP の設定](https://docs.microsoft.com/windows/client-management/mdm/vpnv2-csp)に関する詳細を参照してください。 
+この手順では、Intune を使用して OMA-URI ベースの VPNv2 プロファイルを作成し、VPN デバイス構成ポリシーを展開することができます。 VPNv2 プロファイルを作成するために Microsoft エンドポイント Configuration Manager または PowerShell スクリプトを使用する場合は、 [VPNV2 CSP の設定](/windows/client-management/mdm/vpnv2-csp)に関する詳細を参照してください。 
 
 ## <a name="managed-deployment-using-intune"></a>Intune を使用した管理された展開
 
@@ -45,7 +45,7 @@ Windows 10 クライアントコンピューターは、Intune を使用して V
 
     ![Intune ポータル](../../media/Always-On-Vpn/intune-eap-xml.png)
 
-3. "/ ** \< Acceptservername>\< /eaptype>** で終わるセクションを見つけて、これら2つの値の間に次の文字列を挿入します。これにより、VPN クライアントに AAD 条件付きアクセス証明書を選択するためのロジックを提供します。
+3. で終わるセクションを見つけ、 **\</AcceptServerName>\</EapType>** これらの2つの値の間に次の文字列を挿入して、VPN クライアントに AAD 条件付きアクセス証明書を選択するためのロジックを提供します。
 
     ```XML
     <TLSExtensions xmlns="http://www.microsoft.com/provisioning/EapTlsConnectionPropertiesV2"><FilteringInfo xmlns="http://www.microsoft.com/provisioning/EapTlsConnectionPropertiesV3"><EKUMapping><EKUMap><EKUName>AAD Conditional Access</EKUName><EKUOID>1.3.6.1.4.1.311.87</EKUOID></EKUMap></EKUMapping><ClientAuthEKUList Enabled="true"><EKUMapInList><EKUName>AAD Conditional Access</EKUName></EKUMapInList></ClientAuthEKUList></FilteringInfo></TLSExtensions>
@@ -53,7 +53,7 @@ Windows 10 クライアントコンピューターは、Intune を使用して V
 
 4. [**条件付きアクセス**] ブレードを選択し、**この VPN 接続のトグル条件付きアクセス**を**有効**にします。
    
-   この設定を有効にすると、VPNv2 Profile XML で、 ** \< devicecompliance>\< enabled>true \< /enabled>** 設定が変更されます。
+   この設定を有効にすると、VPNv2 Profile XML の** \<DeviceCompliance> \<Enabled> 真 \</Enabled> **の設定が変更されます。
 
     ![Always On VPN の条件付きアクセス-プロパティ](../../media/Always-On-Vpn/vpn-conditional-access-azure-ad.png)
 
@@ -80,20 +80,20 @@ VPN プロファイルがクライアントデバイスに表示されない場�
 5. [**同期**] を選択し、[ \\ ネットワーク & インターネット vpn の設定] の下に vpn プロファイルが表示されていることを確認し \\ ます。
 
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 Azure AD 条件付きアクセスを使用するように VPN プロファイルを構成しました。 
 
 |目的  |参照先  |
 |---------|---------|
-|Vpn での条件付きアクセスのしくみについての詳細情報  |[Vpn と条件付きアクセス](https://docs.microsoft.com/windows/access-protection/vpn/vpn-conditional-access): このページでは、vpn での条件付きアクセスのしくみについて詳しく説明します。      |
+|Vpn での条件付きアクセスのしくみについての詳細情報  |[Vpn と条件付きアクセス](/windows/access-protection/vpn/vpn-conditional-access): このページでは、vpn での条件付きアクセスのしくみについて詳しく説明します。      |
 |高度な VPN 機能についての詳細情報  |[高度な Vpn 機能](always-on-vpn/deploy/always-on-vpn-adv-options.md#advanced-vpn-features): このページでは、Vpn トラフィックフィルターを有効にする方法、アプリトリガーを使用して自動 VPN 接続を構成する方法、Azure AD によって発行された証明書を使用するクライアントからの vpn 接続のみを許可するように NPS を構成する方法に関するガイダンスを提供します。        |
 
 
 ## <a name="related-topics"></a>関連トピック
 
-- [VPNV2 csp](https://msdn.microsoft.com/windows/hardware/commercialize/customize/mdm/vpnv2-csp): このトピックでは、VPNv2 csp の概要について説明します。 VPNv2 構成サービスプロバイダーを使用すると、モバイルデバイス管理 (MDM) サーバーでデバイスの VPN プロファイルを構成できます。
+- [VPNV2 csp](/windows/client-management/mdm/vpnv2-csp): このトピックでは、VPNv2 csp の概要について説明します。 VPNv2 構成サービスプロバイダーを使用すると、モバイルデバイス管理 (MDM) サーバーでデバイスの VPN プロファイルを構成できます。
 
-- [Windows 10 クライアント ALWAYS ON VPN 接続を構成](https://docs.microsoft.com/windows-server/remote/remote-access/vpn/always-on-vpn/deploy/vpn-deploy-client-vpn-connections)する: このトピックでは、ProfileXML のオプションとスキーマ、および ProfileXML VPN の作成方法について説明します。 サーバーインフラストラクチャを設定したら、VPN 接続を使用して、そのインフラストラクチャと通信するように Windows 10 クライアントコンピューターを構成する必要があります。 
+- [Windows 10 クライアント ALWAYS ON VPN 接続を構成](./always-on-vpn/deploy/vpn-deploy-client-vpn-connections.md)する: このトピックでは、ProfileXML のオプションとスキーマ、および ProfileXML VPN の作成方法について説明します。 サーバーインフラストラクチャを設定したら、VPN 接続を使用して、そのインフラストラクチャと通信するように Windows 10 クライアントコンピューターを構成する必要があります。 
 
-- [Intune を使用して vpn クライアントを構成](https://docs.microsoft.com/windows-server/remote/remote-access/vpn/always-on-vpn/deploy/vpn-deploy-client-vpn-connections#configure-the-vpn-client-by-using-intune)する: このトピックでは、Windows 10 リモートアクセス Always On vpn プロファイルに展開する方法について説明します。 Intune で Azure AD グループが使用されるようになりました。 VPN ユーザーグループをオンプレミスから Azure AD に同期 Azure AD Connect 場合、Intune を使用して VPN クライアントを構成する必要はありません。
+- [Intune を使用して vpn クライアントを構成](./always-on-vpn/deploy/vpn-deploy-client-vpn-connections.md#configure-the-vpn-client-by-using-intune)する: このトピックでは、Windows 10 リモートアクセス Always On vpn プロファイルに展開する方法について説明します。 Intune で Azure AD グループが使用されるようになりました。 VPN ユーザーグループをオンプレミスから Azure AD に同期 Azure AD Connect 場合、Intune を使用して VPN クライアントを構成する必要はありません。

@@ -7,12 +7,12 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 02/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: e8e8b6ce7a6ab676e1fca32f360370180b38eae2
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 7b12c4e2c23601d6948d4bd2c432cb2c63c605ae
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474649"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955164"
 ---
 # <a name="performance-history-for-volumes"></a>ボリュームのパフォーマンス履歴
 
@@ -88,7 +88,7 @@ ms.locfileid: "85474649"
 
 ## <a name="usage-in-powershell"></a>PowerShell での使用法
 
-[Get Volume](https://docs.microsoft.com/powershell/module/storage/get-volume)コマンドレットを使用します。
+[Get Volume](/powershell/module/storage/get-volume)コマンドレットを使用します。
 
 ```PowerShell
 Get-Volume -FriendlyName <FriendlyName> | Get-ClusterPerf

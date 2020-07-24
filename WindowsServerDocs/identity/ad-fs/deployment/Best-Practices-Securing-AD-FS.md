@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 8206ddc43eab7a220a9f0f988c294c627bc8c977
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: e49939615b02058e543974e3799b5c51b323353c
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80853025"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86953996"
 ---
 # <a name="best-practices-for-securing-active-directory-federation-services"></a>Active Directory フェデレーションサービス (AD FS) をセキュリティで保護するためのベストプラクティス
 
@@ -41,30 +41,30 @@ ms.locfileid: "80853025"
 > ポート 808 (Windows Server 2012R2) またはポート 1501 (Windows Server 2016 以降) は、ローカル WCF エンドポイントが構成データをサービスプロセスと Powershell に転送するために使用 AD FS Net.tcp ポートです。 このポートは、Set-adfsproperties | を実行すると表示されます。[NetTcpPort] を選択します。 これは、ファイアウォールで開く必要のないローカルポートですが、ポートスキャンで表示されます。 
 
 ### <a name="azure-ad-connect-and-federation-serverswap"></a>Azure AD Connect とフェデレーションサーバー/WAP
-次の表では、Azure AD Connect サーバーとフェデレーション/WAP サーバー間の通信に必要なポートとプロトコルについて説明します。  
+この表は、Azure AD Connect サーバーとフェデレーション/WAP サーバー間の通信に必要なポートとプロトコルについて説明しています。  
 
-[プロトコル] |[ポート] |説明
+Protocol |Port |説明
 --------- | --------- |---------
-HTTP|80 (TCP/UDP)|SSL 証明書を確認するために Crl (証明書失効リスト) をダウンロードするために使用します。
-HTTPS|443 (TCP/UDP)|Azure AD と同期するために使用します。
+HTTP|80 (TCP/UDP)|SSL 証明書を検証するための CRL (証明書失効リスト) をダウンロードするために使用されます。
+HTTPS|443 (TCP/UDP)|Azure AD と同期するために使用されます。
 WinRM|5985| WinRM リスナー
 
 ### <a name="wap-and-federation-servers"></a>WAP とフェデレーションサーバー
-次の表では、フェデレーションサーバーと WAP サーバー間の通信に必要なポートとプロトコルについて説明します。
+この表は、フェデレーション サーバーと WAP サーバー間の通信に必要なポートとプロトコルについて説明しています。
 
-[プロトコル] |[ポート] |説明
+Protocol |Port |説明
 --------- | --------- |---------
-HTTPS|443 (TCP/UDP)|認証に使用されます。
+HTTPS|443 (TCP/UDP)|認証で使用されます。
 
 ### <a name="wap-and-users"></a>WAP とユーザー
-次の表では、ユーザーと WAP サーバー間の通信に必要なポートとプロトコルについて説明します。
+この表は、ユーザーと WAP サーバー間の通信に必要なポートとプロトコルについて説明しています。
 
-[プロトコル] |[ポート] |説明
+Protocol |Port |説明
 --------- | --------- |--------- |
-HTTPS|443 (TCP/UDP)|デバイスの認証に使用されます。
-TCP|49443 (TCP)|証明書の認証に使用されます。
+HTTPS|443 (TCP/UDP)|デバイスの認証で使用されます。
+TCP|49443 (TCP)|証明書の認証で使用されます。
 
-ハイブリッド展開に必要なポートとプロトコルの詳細については、[こちら](https://docs.microsoft.com/azure/active-directory/hybrid/reference-connect-ports)のドキュメントを参照してください。
+ハイブリッド展開に必要なポートとプロトコルの詳細については、[こちら](/azure/active-directory/hybrid/reference-connect-ports)のドキュメントを参照してください。
 
 Azure AD と Office 365 の展開に必要なポートとプロトコルの詳細については、[こちら](https://support.office.com/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2?ui=en-US&rs=en-US&ad=US)のドキュメントを参照してください。
 
@@ -90,7 +90,7 @@ Azure AD と Office 365 のシナリオにのみ AD FS と WAP を展開する�
     
     PS:\>Set-AdfsEndpoint -TargetAddressPath <address path> -Proxy $false
 
-例 :
+次に例を示します。
     
     PS:\>Set-AdfsEndpoint -TargetAddressPath /adfs/services/trust/13/certificatemixed -Proxy $false
     
@@ -103,7 +103,7 @@ Azure AD と Office 365 のシナリオにのみ AD FS と WAP を展開する�
     
    `PS:\>Get-ADFSProperties`
 
-プロパティが `ExtendedProtectionTokenCheck`。  既定の設定は [許可] です。これにより、機能をサポートしていないブラウザーとの互換性の問題がなくても、セキュリティ上の利点を実現できます。  
+プロパティは `ExtendedProtectionTokenCheck` です。  既定の設定は [許可] です。これにより、機能をサポートしていないブラウザーとの互換性の問題がなくても、セキュリティ上の利点を実現できます。  
 
 ### <a name="congestion-control-to-protect-the-federation-service"></a>フェデレーションサービスを保護するための輻輳制御
 フェデレーションサービスプロキシ (WAP の一部) は、大量の要求から AD FS サービスを保護するための輻輳制御を提供します。  Web アプリケーションプロキシとフェデレーションサーバーの間の待機時間によって検出されたフェデレーションサーバーが過負荷になっている場合、Web アプリケーションプロキシは外部クライアントの認証要求を拒否します。  この機能は、既定で推奨される待機時間のしきい値レベルで構成されます。
@@ -111,10 +111,10 @@ Azure AD と Office 365 のシナリオにのみ AD FS と WAP を展開する�
 #### <a name="to-verify-the-settings-you-can-do-the-following"></a>設定を確認するには、次の操作を行います。
 1.    Web アプリケーション プロキシ コンピューターで、管理者特権のコマンド ウィンドウを起動します。
 2.    %WINDIR%\adfs\config. で、ADFS ディレクトリに移動します。
-3.    輻輳制御の設定を既定値から '<congestionControl latencyThresholdInMSec="8000" minCongestionWindowSize="64" enabled="true" />' に変更します。
-4.    ファイルを保存し、閉じます。
+3.    輻輳制御の設定を既定値から ' ' に変更し <congestionControl latencyThresholdInMSec="8000" minCongestionWindowSize="64" enabled="true" /> ます。
+4.    ファイルを保存して閉じます。
 5.    ' Net stop adfssrv ' を実行し、' net start adfssrv ' を実行して、AD FS サービスを再開します。
-この機能に関するガイダンスについては、[こちら](https://msdn.microsoft.com/library/azure/dn528859.aspx )を参照してください。
+この機能に関するガイダンスについては、[こちら](/previous-versions/azure/azure-services/dn528859(v=azure.100))を参照してください。
 
 ### <a name="standard-http-request-checks-at-the-proxy"></a>プロキシでの標準 HTTP 要求チェック
 また、プロキシは、すべてのトラフィックに対して次の標準チェックを実行します。
@@ -128,7 +128,7 @@ Azure AD と Office 365 のシナリオにのみ AD FS と WAP を展開する�
 
 Azure AD の顧客がインフラストラクチャを監視して最新の状態に保つには、Azure AD Premium の機能である AD FS の Azure AD Connect Health を使用することをお勧めします。  Azure AD Connect Health には、AD FS または WAP コンピューターに AD FS と WAP 専用の重要な更新プログラムのいずれかがない場合にトリガーされるモニターとアラートが含まれます。
 
-AD FS に Azure AD Connect Health をインストールする方法については、[こちら](https://azure.microsoft.com/documentation/articles/active-directory-aadconnect-health-agent-install/)を参照してください。
+AD FS に Azure AD Connect Health をインストールする方法については、[こちら](/azure/active-directory/hybrid/how-to-connect-health-agent-install)を参照してください。
 
 ## <a name="additional-security-configurations"></a>追加のセキュリティ構成
 次の追加機能をオプションで構成して、既定のデプロイで提供されているものに対して追加の保護を提供することもできます。
@@ -140,11 +140,11 @@ Windows Server 2012 R2 のエクストラネットロックアウト機能を使
 
     PS:\>Set-AdfsProperties -EnableExtranetLockout $true -ExtranetLockoutThreshold 15 -ExtranetObservationWindow ( new-timespan -Minutes 30 )
 
-参考までに、この機能のパブリックドキュメントは[こちら](https://technet.microsoft.com/library/dn486806.aspx )です。 
+参考までに、この機能のパブリックドキュメントは[こちら](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn486806(v=ws.11))です。 
 
 ### <a name="disable-ws-trust-windows-endpoints-on-the-proxy-ie-from-extranet"></a>プロキシの WS-TRUST Windows エンドポイント (エクストラネットから) を無効にします。
 
-WS-TRUST Windows エンドポイント ( */adfs/services/trust/2005/windowstransport*と */adfs/services/trust/13/windowstransport*) は、HTTPS で WIA バインドを使用する、イントラネットに接続するエンドポイントに限定されます。 それらをエクストラネットに公開すると、これらのエンドポイントに対する要求によってロックアウトの保護がバイパスされる可能性があります。 これらのエンドポイントは、次の PowerShell コマンドを使用して AD アカウントのロックアウトを保護するために、プロキシで無効にする (つまり、エクストラネットから無効にする) 必要があります。 プロキシでこれらのエンドポイントを無効にすることによって、エンドユーザーに対する既知の影響はありません。
+WS-TRUST Windows エンドポイント (*/adfs/services/trust/2005/windowstransport*と */adfs/services/trust/13/windowstransport*) は、HTTPS で WIA バインドを使用する、イントラネットに接続するエンドポイントに限定されます。 それらをエクストラネットに公開すると、これらのエンドポイントに対する要求によってロックアウトの保護がバイパスされる可能性があります。 これらのエンドポイントは、次の PowerShell コマンドを使用して AD アカウントのロックアウトを保護するために、プロキシで無効にする (つまり、エクストラネットから無効にする) 必要があります。 プロキシでこれらのエンドポイントを無効にすることによって、エンドユーザーに対する既知の影響はありません。
 
     PS:\>Set-AdfsEndpoint -TargetAddressPath /adfs/services/trust/2005/windowstransport -Proxy $false
     PS:\>Set-AdfsEndpoint -TargetAddressPath /adfs/services/trust/13/windowstransport -Proxy $false
@@ -155,19 +155,16 @@ AD FS には、ローカルの企業ネットワークで発信される要求�
 ### <a name="require-multi-factor-authentication-mfa"></a>Multi-factor authentication (MFA) を要求する
 AD FS は、プロキシ経由で受信する要求、個々のアプリケーション、および Azure AD/Office 365 とオンプレミスの両方のリソースへの条件付きアクセスに対して、強力な認証 (多要素認証など) を要求するように構成できます。  MFA のサポートされる方法には、Microsoft Azure MFA とサードパーティプロバイダーの両方が含まれます。  ユーザーは、追加情報 (1 回限りのコードを含む SMS テキストなど) を入力するように求められ、AD FS プロバイダー固有のプラグインを使用してアクセスできるようになります。  
 
-サポートされている外部 MFA プロバイダーには、[この](https://technet.microsoft.com/library/dn758113.aspx)ページに記載されているものと HDI グローバルが含まれます。
+サポートされている外部 MFA プロバイダーには、[この](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn758113(v=ws.11))ページに記載されているものと HDI グローバルが含まれます。
 
 ### <a name="hardware-security-module-hsm"></a>ハードウェア セキュリティ モジュール (HSM)
 既定の構成では、トークンの署名に使用 AD FS キーは、イントラネット上のフェデレーションサーバーを離れることはありません。  これらは、DMZ またはプロキシコンピューターには存在しません。  必要に応じて、追加の保護を提供するために、AD FS にアタッチされたハードウェアセキュリティモジュールでこれらのキーを保護することができます。  Microsoft は HSM 製品を生成しませんが、AD FS をサポートするいくつかの市場があります。  この推奨事項を実装するには、ベンダーのガイダンスに従って署名と暗号化のための X509 証明書を作成し、AD FS インストール powershell コマンドレットを使用して、次のようにカスタム証明書を指定します。
 
     PS:\>Install-AdfsFarm -CertificateThumbprint <String> -DecryptionCertificateThumbprint <String> -FederationServiceName <String> -ServiceAccountCredential <PSCredential> -SigningCertificateThumbprint <String>
 
-この場合
+それぞれの文字について以下に説明します。
 
 
-- SSL 証明書を `CertificateThumbprint`
-- `SigningCertificateThumbprint` は、(HSM で保護されたキーを持つ) 署名証明書です。
-- `DecryptionCertificateThumbprint` は暗号化証明書 (HSM で保護されたキーを含む) です。
-
-
-
+- `CertificateThumbprint`は SSL 証明書です
+- `SigningCertificateThumbprint`は、(HSM で保護されたキーを持つ) 署名証明書です。
+- `DecryptionCertificateThumbprint`は、(HSM で保護されたキーを持つ) 暗号化証明書です。

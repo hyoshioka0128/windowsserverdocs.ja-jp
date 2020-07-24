@@ -8,16 +8,16 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 75e31a435e8d8411fbe4db242e6d31fd7676fe4e
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: ce946fb0fe581a66f4a4e29cf8491f00294b5bcb
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81624250"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86953584"
 ---
 # <a name="enabling-clients-to-locate-the-next-closest-domain-controller"></a>クライアントが次の最も近いドメイン コントローラーを検索できるようにする
 
-> 適用対象: windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用先:Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 Windows Server 2008 以降を実行しているドメインコントローラーを使用している場合は、[**次に最も近いサイトを試す**] グループポリシー設定を有効にすることにより、windows Vista 以降または windows server 2008 以降を実行するクライアントコンピューターがドメインコントローラーをより効率的に検索できるようにすることができます。 この設定では、ネットワークトラフィックの合理化を支援することで、ドメインコントローラーロケーター (DC ロケーター) が改善されます。特に、多数のブランチオフィスやサイトを持つ大企業でも役立ちます。
 
@@ -31,7 +31,7 @@ Windows Server 2008 以降を実行しているドメインコントローラー
 - 同じサイト内に使用できるドメインコントローラがない場合は、ドメイン内のドメインコントローラを検索します。
 
 > [!NOTE]
-> これは、以前のバージョンの Active Directory で使用されていた DC ロケーターと同じアルゴリズムです。 詳細については、「 [Active Directory の DNS サポートのしくみ](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc759550(v=ws.10))」を参照してください。
+> これは、以前のバージョンの Active Directory で使用されていた DC ロケーターと同じアルゴリズムです。 詳細については、「 [Active Directory の DNS サポートのしくみ](/previous-versions/windows/it-pro/windows-server-2003/cc759550(v=ws.10))」を参照してください。
 
 **[次に最も近いサイトを試す**] 設定を有効にすると、DC ロケーターは次のアルゴリズムを使用してドメインコントローラーを検索します。
 
@@ -54,4 +54,4 @@ Windows Server 2008 以降を実行しているドメインコントローラー
 > [!NOTE]
 > **[次に最も近いサイトを試す**] 設定は、サイトの自動カバレッジと連携して機能します。 たとえば、次に最も近いサイトにドメインコントローラーがない場合、DC ロケーターはそのサイトのサイトの自動カバレッジを実行するドメインコントローラーの検索を試みます。
 
-**[次に最も近いサイトを試す**] 設定を適用するには、グループポリシーオブジェクト (GPO) を作成し、組織の適切なオブジェクトにリンクします。または、ドメイン内で windows Vista 以降および windows Server 2008 以降を実行しているすべてのクライアントに影響を与えるように既定のドメインポリシーを変更することもできます。 [**次に最も近いサイトを試す**] 設定を設定する方法の詳細については、[次の最も近いサイトでクライアントがドメインコントローラーを検索できるように](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc772592(v=ws.10))する方法に関するページを参照してください。
+**[次に最も近いサイトを試す**] 設定を適用するには、グループポリシーオブジェクト (GPO) を作成し、組織の適切なオブジェクトにリンクします。または、ドメイン内で windows Vista 以降および windows Server 2008 以降を実行しているすべてのクライアントに影響を与えるように既定のドメインポリシーを変更することもできます。 [**次に最も近いサイトを試す**] 設定を設定する方法の詳細については、[次の最も近いサイトでクライアントがドメインコントローラーを検索できるように](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc772592(v=ws.10))する方法に関するページを参照してください。

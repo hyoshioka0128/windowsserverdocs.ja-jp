@@ -7,12 +7,12 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 02/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ed910aba376ba7f78c628d7f47bdd21b366459d
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 15f6e68f613dea03631d1ce6be53f6cb9d854fc1
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474739"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86954104"
 ---
 # <a name="performance-history-for-servers"></a>サーバーのパフォーマンス履歴
 
@@ -86,7 +86,7 @@ Hyper-v が有効になっていない場合:
 
 ## <a name="usage-in-powershell"></a>PowerShell での使用法
 
-[Start-clusternode](https://docs.microsoft.com/powershell/module/failoverclusters/get-clusternode)コマンドレットを使用します。
+[Start-clusternode](/powershell/module/failoverclusters/get-clusternode)コマンドレットを使用します。
 
 ```PowerShell
 Get-ClusterNode <Name> | Get-ClusterPerf

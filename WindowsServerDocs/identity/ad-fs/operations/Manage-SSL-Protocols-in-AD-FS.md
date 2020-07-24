@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: e0c581a29db92cfb73e4225c72e7e1c2bad4ca68
-ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
+ms.openlocfilehash: b97a9cb50743972a85826d10aba89f9e6fffb5a6
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77465280"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86954464"
 ---
 # <a name="managing-ssltls-protocols-and-cipher-suites-for-ad-fs"></a>AD FS のための SSL/TLS プロトコルと暗号スイートの管理
 次のドキュメントでは、で使用される特定の TLS/SSL プロトコルおよび暗号スイートを無効にして有効にする方法について説明し AD FS
@@ -26,15 +26,15 @@ Schannel は、SSL、TLS、および DTLS という標準的なインターネ�
 
 暗号スイートは、暗号化アルゴリズムのセットです。 TLS/SSL プロトコルの schannel SSP 実装では、暗号スイートのアルゴリズムを使用してキーを作成し、情報を暗号化します。 暗号スイートでは、次のタスクごとに 1 つのアルゴリズムが指定されています。
 
-- キー交換
+- キーの交換
 - 一括暗号化
 - メッセージ認証
 
-AD FS は、Schannel を使用して、セキュリティで保護された通信操作を実行します。  現在 AD FS は、Schannel.dll でサポートされているすべてのプロトコルと暗号スイートをサポートしています。
+AD FS は Schannel.dll を使用して、セキュリティで保護された通信操作を実行します。  現在、AD FS Schannel.dll でサポートされているすべてのプロトコルと暗号スイートがサポートされています。
 
 ## <a name="managing-the-tlsssl-protocols-and-cipher-suites"></a>TLS/SSL プロトコルと暗号スイートの管理
 > [!IMPORTANT]
-> ここでは、レジストリの変更方法を説明する手順について説明します。 レジストリを誤って変更すると、深刻な問題が発生する可能性があります。 そのため、手順は確認の上、注意して行ってください。 
+> ここでは、レジストリの変更方法を説明する手順について説明します。 ただし、レジストリを正しく変更していない場合、重大な問題が発生する可能性があります。 そのため、手順は確認の上、注意して行ってください。 
 > 
 > SCHANNEL の既定のセキュリティ設定を変更すると、特定のクライアントとサーバー間の通信が中断または防止される可能性があることに注意してください。  これは、セキュリティで保護された通信が必要で、通信をネゴシエートするプロトコルがない場合に発生します。
 > 
@@ -87,7 +87,7 @@ SSL 3.0 を有効または無効にするには、次のレジストリキーと
 - [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 3.0 \ Client]"Enabled" = dword: 00000001
 - [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 3.0 \ Client]"DisabledByDefault" = dword: 00000000 
 
-### <a name="disable-ssl-30"></a>SSL 3.0 を無効にする
+### <a name="disable-ssl-30"></a>SSL 3.0 の無効化
 - [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 3.0 \ Server]"Enabled" = dword: 00000000
 - [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 3.0 \ Server]"DisabledByDefault" = dword: 00000001
 - [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 3.0 \ Client]"Enabled" = dword: 00000000
@@ -124,7 +124,7 @@ SSL 3.0 を有効または無効にするには、次のレジストリキーと
 - [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.0 \ Client]"Enabled" = dword: 00000001
 - [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.0 \ Client]"DisabledByDefault" = dword: 00000000 
 
-### <a name="disable-tls-10"></a>TLS 1.0 を無効にする
+### <a name="disable-tls-10"></a>TLS 1.0 の無効化
 - [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.0 \ Server]"Enabled" = dword: 00000000
 - [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.0 \ Server]"DisabledByDefault" = dword: 00000001
 - [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.0 \ Client]"Enabled" = dword: 00000000
@@ -184,17 +184,17 @@ SSL 3.0 を有効または無効にするには、次のレジストリキーと
 
 次のレジストリキーとその値を使用して、TLS 1.2 を有効または無効にします。
 
-### <a name="enable-tls-12"></a>TLS 1.2 を有効にする
-- [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2 \ Server]"Enabled" = dword: 00000001
-- [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2 \ Server]"DisabledByDefault" = dword: 00000000 
-- [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2 \ Client]"Enabled" = dword: 00000001
-- [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2 \ Client]"DisabledByDefault" = dword: 00000000
+### <a name="enable-tls-12"></a>TLS 1.2 の有効化
+- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Server] "Enabled"=dword:00000001
+- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Server] "DisabledByDefault"=dword:00000000 
+- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Client] "Enabled"=dword:00000001
+- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Client] "DisabledByDefault"=dword:00000000
 
 ### <a name="disable-tls-12"></a>TLS 1.2 を無効にする
-- [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2 \ Server]"Enabled" = dword: 00000000
-- [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2 \ Server]"DisabledByDefault" = dword: 00000001
-- [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2 \ Client]"Enabled" = dword: 00000000
-- [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2 \ Client]"DisabledByDefault" = dword: 00000001
+- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Server] "Enabled"=dword:00000000
+- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Server] "DisabledByDefault"=dword:00000001
+- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Client] "Enabled"=dword:00000000
+- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Client] "DisabledByDefault"=dword:00000001
 
 ### <a name="using-powershell-to-disable-tls-12"></a>PowerShell を使用した TLS 1.2 の無効化
 
@@ -229,7 +229,7 @@ RC4 を有効または無効にするには、次のレジストリキーとそ�
 - [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC4 40/128]"Enabled" = dword: 00000001
 - [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC4 56/128]"Enabled" = dword: 00000001 
 
-### <a name="disable-rc4"></a>RC4 を無効にする
+### <a name="disable-rc4"></a>RC4 の無効化
 
 - [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC4 128/128]"Enabled" = dword: 00000000
 - [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC4 40/128]"Enabled" = dword: 00000000
@@ -256,20 +256,20 @@ RC4 を有効または無効にするには、次のレジストリキーとそ�
 
 暗号スイートを有効にするには、関数のマルチ文字列値キーに文字列値を追加します。  たとえば、TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384_P521 を有効にする場合は、文字列に追加します。
 
-サポートされている暗号スイートの完全な一覧については、「 [TLS/SSL (SCHANNEL SSP) の暗号スイート](https://msdn.microsoft.com/library/windows/desktop/aa374757.aspx)」を参照してください。  このドキュメントでは、既定で有効になっているものの、既定ではサポートされていないスイートの一覧を示します。  暗号スイートに優先順位を付けるには、「 [Schannel 暗号スイートの優先順位付け](https://msdn.microsoft.com/library/windows/desktop/bb870930.aspx)」を参照してください。
+サポートされている暗号スイートの完全な一覧については、「 [TLS/SSL (SCHANNEL SSP) の暗号スイート](/windows/win32/secauthn/cipher-suites-in-schannel)」を参照してください。  このドキュメントでは、既定で有効になっているものの、既定ではサポートされていないスイートの一覧を示します。  暗号スイートに優先順位を付けるには、「 [Schannel 暗号スイートの優先順位付け](/windows/win32/secauthn/prioritizing-schannel-cipher-suites)」を参照してください。
 
 ## <a name="enabling-strong-authentication-for-net-applications"></a>.NET アプリケーションの強力な認証を有効にする
 .NET Framework 3.5/4.0/4.5 .x アプリケーションでは、SchUseStrongCrypto レジストリキーを有効にすることで、既定のプロトコルを TLS 1.2 に切り替えることができます。  このレジストリキーを使用すると、.NET アプリケーションで TLS 1.2 が強制的に使用されます。
 
 > [!IMPORTANT]
-> Windows Server 2016 および Windows Server 2012 R2 の AD FS については、.NET Framework 4.0/4.5. x キーを使用する必要があります: HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\\。NETFramework\v4.0.30319
+> Windows Server 2016 および Windows Server 2012 R2 の AD FS については、.NET Framework 4.0/4.5. x キーを使用する必要があります: HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft \\ 。NETFramework\v4.0.30319
 
 
 .NET Framework 3.5 では、次のレジストリキーを使用します。
 
-[HKEY_LOCAL_MACHINE \SOFTWARE\Wow6432Node\Microsoft\\です。NETFramework\v2.0.50727] "SchUseStrongCrypto" = dword: 00000001
+[HKEY_LOCAL_MACHINE \SOFTWARE\Wow6432Node\Microsoft \\ 。NETFramework\v2.0.50727] "SchUseStrongCrypto" = dword: 00000001
 
-.NET Framework 4.0/4.5. x では、次のレジストリキーを使用します: HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\\。NETFramework\v4.0.30319 "SchUseStrongCrypto" = dword: 00000001
+.NET Framework 4.0/4.5. x では、次のレジストリキーを使用します: HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft \\ 。NETFramework\v4.0.30319 "SchUseStrongCrypto" = dword: 00000001
 
 ![強力な認証](media/Managing-SSL-Protocols-in-AD-FS/strongauth.png)
 
@@ -280,7 +280,7 @@ RC4 を有効または無効にするには、次のレジストリキーとそ�
 
 ## <a name="additional-information"></a>追加情報
 
-- [TLS/SSL (Schannel SSP) の暗号スイート](https://msdn.microsoft.com/library/windows/desktop/aa374757.aspx)
-- [Windows 8.1 での TLS 暗号スイート](https://msdn.microsoft.com/library/windows/desktop/mt767781.aspx)
-- [Schannel 暗号スイートの優先順位付け](https://msdn.microsoft.com/library/windows/desktop/bb870930.aspx)
-- [暗号とその他の Enigmatic tongues で話す](https://blogs.technet.microsoft.com/askds/2015/12/08/speaking-in-ciphers-and-other-enigmatic-tonguesupdate/)
+- [TLS/SSL (Schannel SSP) の暗号スイート](/windows/win32/secauthn/cipher-suites-in-schannel)
+- [Windows 8.1 での TLS 暗号スイート](/windows/win32/secauthn/tls-cipher-suites-in-windows-8-1)
+- [Schannel 暗号スイートの優先順位付け](/windows/win32/secauthn/prioritizing-schannel-cipher-suites)
+- [暗号とその他の Enigmatic tongues で話す](/archive/blogs/askds/speaking-in-ciphers-and-other-enigmatic-tonguesupdate)

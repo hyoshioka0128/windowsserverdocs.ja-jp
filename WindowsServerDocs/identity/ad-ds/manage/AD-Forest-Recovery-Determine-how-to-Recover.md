@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: 5a291f65-794e-4fc3-996e-094c5845a383
 ms.technology: identity-adds
-ms.openlocfilehash: fea55dc5551198f7bc06afb2ec38077398b9cf77
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: fbb1f0f0f1b21c626f344bb01b793211586c7cf3
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80824055"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86953974"
 ---
 # <a name="determine-how-to-recover-the-forest"></a>フォレストを回復する方法を決定する
 
@@ -44,19 +44,19 @@ Active Directory を別のハードウェアに復元する必要がある場合
 > Windows Server 2008 以降では、新しいハードウェアまたは同じハードウェア上で Windows Server の新しいインストールにシステム状態のバックアップを復元することはサポートされていません。 Windows Server を同じハードウェアに再インストールする場合は、このガイドの後半で推奨されているように、ドメインコントローラーを次の順序で復元できます。
 >
 > 1. オペレーティングシステムとすべてのファイルとアプリケーションを復元するために、サーバーの完全復元を実行します。
-> 2. SYSVOL を権限のあるものとしてマークするために、wbadmin を使用してシステム状態の復元を実行します。
+> 2. SYSVOL を権限のあるものとしてマークするために wbadmin.exe を使用してシステム状態の復元を実行します。
 >
 > 詳細については、マイクロソフトサポート技術情報の記事[249694](https://support.microsoft.com/kb/249694)を参照してください。
 
 エラーが発生した時刻が不明な場合は、さらに調査して、フォレストの最後の安全な状態を保持しているバックアップを特定します。 この方法は、あまり好ましくありません。 したがって、AD DS の正常性状態に関する詳細なログを毎日保持しておくことを強くお勧めします。これにより、フォレスト全体で障害が発生した場合に、おおよその障害が特定されます。 また、迅速な回復を可能にするために、バックアップのローカルコピーも保持する必要があります。
 
-Active Directory のごみ箱が有効になっている場合、バックアップの有効期間は**msds-deletedobjectlifetime**値または**tombstoneLifetime**値のいずれか小さい方と等しくなります。 詳細については、「 [Active Directory ごみ箱のステップバイステップガイド](https://go.microsoft.com/fwlink/?LinkId=178657)」 (https://go.microsoft.com/fwlink/?LinkId=178657)を参照してください。
+Active Directory のごみ箱が有効になっている場合、バックアップの有効期間は**msds-deletedobjectlifetime**値または**tombstoneLifetime**値のいずれか小さい方と等しくなります。 詳細については、 [Active Directory ごみ箱のステップバイステップガイド](https://go.microsoft.com/fwlink/?LinkId=178657)() を参照してください https://go.microsoft.com/fwlink/?LinkId=178657) 。
 
-別の方法として、Active Directory データベースマウントツール (Dsamain) と、Ldp.exe や Active Directory ユーザーとコンピューターなどのライトウェイトディレクトリアクセスプロトコル (LDAP) ツールを使用して、どのバックアップに最後の安全な状態があるのかを特定することもできます。 Active Directory データベースマウントツールは、Windows server 2008 以降の Windows Server オペレーティングシステムに含まれており、LDAP サーバーとしてバックアップまたはスナップショットに格納されている Active Directory データを公開します。 次に、LDAP ツールを使用してデータを参照できます。 このアプローチには、ディレクトリサービス復元モード (DSRM) で DC を再起動して AD DS のバックアップの内容を確認する必要がないという利点があります。
+別の方法として、Active Directory データベースマウントツール (Dsamain.exe) とライトウェイトディレクトリアクセスプロトコル (LDAP) ツール (Ldp.exe または Active Directory ユーザーとコンピューターなど) を使用して、どのバックアップにどのバックアップが最後に安全な状態にあるかを特定することもできます。 Active Directory データベースマウントツールは、Windows server 2008 以降の Windows Server オペレーティングシステムに含まれており、LDAP サーバーとしてバックアップまたはスナップショットに格納されている Active Directory データを公開します。 次に、LDAP ツールを使用してデータを参照できます。 このアプローチには、ディレクトリサービス復元モード (DSRM) で DC を再起動して AD DS のバックアップの内容を確認する必要がないという利点があります。
 
-Active Directory データベースマウントツールの使用方法の詳細については、「 [Active Directory データベースマウントツールのステップバイステップガイド](https://technet.microsoft.com/library/cc753609\(WS.10\).aspx)」を参照してください。
+Active Directory データベースマウントツールの使用方法の詳細については、「 [Active Directory データベースマウントツールのステップバイステップガイド](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771232(v=ws.10))」を参照してください。
 
-また、 **ntdsutil snapshot**コマンドを使用して、Active Directory データベースのスナップショットを作成することもできます。 定期的にスナップショットを作成するようにタスクをスケジュールすることで、Active Directory データベースの追加のコピーを時間の経過と共に取得できます。 これらのコピーを使用して、フォレスト全体の障害が発生したことをより明確に識別し、復元する最適なバックアップを選択することができます。 スナップショットを作成するには、Windows Server 2008 に付属しているバージョンの**ntdsutil** 、または windows Vista 以降のリモートサーバー管理ツール (RSAT) を使用します。 ターゲット DC は、任意のバージョンの Windows Server を実行できます。 **Ntdsutil snapshot**コマンドの使用方法の詳細については、「 [snapshot](https://technet.microsoft.com/library/cc731620\(WS.10\).aspx)」を参照してください。
+また、 **ntdsutil snapshot**コマンドを使用して、Active Directory データベースのスナップショットを作成することもできます。 定期的にスナップショットを作成するようにタスクをスケジュールすることで、Active Directory データベースの追加のコピーを時間の経過と共に取得できます。 これらのコピーを使用して、フォレスト全体の障害が発生したことをより明確に識別し、復元する最適なバックアップを選択することができます。 スナップショットを作成するには、Windows Server 2008 に付属しているバージョンの**ntdsutil** 、または windows Vista 以降のリモートサーバー管理ツール (RSAT) を使用します。 ターゲット DC は、任意のバージョンの Windows Server を実行できます。 **Ntdsutil snapshot**コマンドの使用方法の詳細については、「 [snapshot](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771232(v=ws.10))」を参照してください。
 
 ## <a name="determining-which-domain-controllers-to-restore"></a>復元するドメインコントローラーを決定する
 
@@ -81,7 +81,7 @@ Active Directory データベースマウントツールの使用方法の詳細
 
    HKEY_LOCAL_MACHINESoftwarePoliciesMicrosoftSystemCertificatesFVE_NKP
 
-Active Directory を含むバックアップファイルを処理または復元するときに、セキュリティ手順を維持します。 フォレスト回復に付随する緊急度は、意図せずに見落としのセキュリティのベストプラクティスにつながる可能性があります。 詳細については、「 [Active Directory のインストールをセキュリティで保護するためのベストプラクティスガイド](https://technet.microsoft.com/library/bb727066.aspx)」の「ドメインコントローラーのバックアップと復元の戦略の確立」、および「パート II」を参照してください。
+Active Directory を含むバックアップファイルを処理または復元するときに、セキュリティ手順を維持します。 フォレスト回復に付随する緊急度は、意図せずに見落としのセキュリティのベストプラクティスにつながる可能性があります。 詳細については、「 [Active Directory のインストールをセキュリティで保護するためのベストプラクティスガイド](/previous-versions/windows/it-pro/windows-2000-server/bb727066(v=technet.10))」の「ドメインコントローラーのバックアップと復元の戦略の確立」、および「パート II」を参照してください。
 
 ## <a name="identify-the-current-forest-structure-and-dc-functions"></a>現在のフォレスト構造と DC 関数を識別する
 
@@ -89,15 +89,15 @@ Active Directory を含むバックアップファイルを処理または復元
 
 次の例に示すように、ドメイン内の各 DC の機能を表示するテーブルを準備します。 これにより、回復後にフォレストの障害前の構成に戻すことができます。
 
-|DC 名|オペレーティング システム|FSMO|GC|RODC|バックアップ|DNS|Server Core|VM|VM-GenID|  
+|DC 名|オペレーティング システム|FSMO|[GC]|RODC|Backup|DNS|Server Core|VM|VM-GenID|  
 |-------------|----------------------|----------|--------|----------|------------|---------|-----------------|--------|---------------|  
-|DC_1|Windows Server 2012|スキーママスタ、ドメイン名前付けマスタ|はい|いいえ|はい|いいえ|いいえ|はい|はい|  
-|DC_2|Windows Server 2012|なし|はい|いいえ|はい|はい|いいえ|はい|はい|  
-|DC_3|Windows Server 2012|インフラストラクチャ マスタ|いいえ|いいえ|いいえ|はい|はい|はい|はい|  
+|DC_1|Windows Server 2012|スキーママスタ、ドメイン名前付けマスタ|はい|いいえ|はい|いいえ|いいえ|○|はい|  
+|DC_2|Windows Server 2012|なし|はい|いいえ|○|はい|いいえ|○|はい|  
+|DC_3|Windows Server 2012|インフラストラクチャ マスタ|いいえ|いいえ|いいえ|○|はい|はい|はい|  
 |DC_4|Windows Server 2012|PDC エミュレーター、RID マスター|はい|いいえ|いいえ|いいえ|いいえ|はい|いいえ|  
-|DC_5|Windows Server 2012|なし|いいえ|いいえ|はい|はい|いいえ|はい|はい|  
+|DC_5|Windows Server 2012|なし|いいえ|いいえ|○|はい|いいえ|○|はい|  
 |RODC_1|Windows Server 2008 R2|なし|はい|はい|はい|はい|はい|はい|いいえ|  
-|RODC_2|Windows Server 2008|なし|はい|はい|いいえ|はい|はい|はい|いいえ|  
+|RODC_2|Windows Server 2008|なし|はい|はい|いいえ|○|はい|はい|いいえ|  
 
 フォレスト内のドメインごとに、そのドメインの Active Directory データベースの信頼されたバックアップを持つ、1つの書き込み可能 DC を識別します。 DC を復元するバックアップを選択するときは、注意してください。 障害の日と原因がほぼわかっている場合、一般的な推奨事項は、その日の前に数日前に作成されたバックアップを使用することです。
   

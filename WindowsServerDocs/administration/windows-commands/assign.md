@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8bfcb43b2e42ca65d767f0683bf13dc971073c27
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 41c6194b68414be65fcf6b93b662e25ae80e0309
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85923997"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955504"
 ---
 # <a name="assign"></a>assign
 
@@ -38,7 +38,7 @@ assign [{letter=<d> | mount=<path>}] [noerr]
 | パラメーター | 説明 |
 | --------- | ----------- |
 | `letter=<d>` | ボリュームに割り当てるドライブ文字です。 |
-| `mount=<path>` | ボリュームに割り当てるマウントポイントのパス。 このコマンドの使用方法については、「[ドライブにマウントポイントフォルダーパスを割り当てる](https://docs.microsoft.com/windows-server/storage/disk-management/assign-a-mount-point-folder-path-to-a-drive)」を参照してください。 |
+| `mount=<path>` | ボリュームに割り当てるマウントポイントのパス。 このコマンドの使用方法については、「[ドライブにマウントポイントフォルダーパスを割り当てる](../../storage/disk-management/assign-a-mount-point-folder-path-to-a-drive.md)」を参照してください。 |
 | noerr | スクリプト専用です。 エラーが発生しても、エラーが発生しなかったかのように DiskPart はコマンドの処理を続けます。 このパラメーターは、エラー発生すると、DiskPart はエラー コードを生成して終了します。 |
 
 ## <a name="examples"></a>例
@@ -49,7 +49,7 @@ assign [{letter=<d> | mount=<path>}] [noerr]
 assign letter=e
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

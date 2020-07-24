@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 57de6db53433d0da1a4efd8c212a23183edcbcf9
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 6b2d03fb379c879f445a30dd0f3daf762fed23c7
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85927423"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955434"
 ---
 # <a name="bitsadmin-transfer"></a>bitsadmin transfer
 
@@ -36,10 +36,10 @@ bitsadmin /transfer <name> [<type>] [/priority <job_priority>] [/ACLflags <flags
 | パラメーター | 説明 |
 | --------- | ----------- |
 | name | ジョブの名前。 このコマンドに GUID を指定することはできません。 |
-| 型 | 任意。 ジョブの種類を設定します。次に例を示します。<ul><li>**ダウンロード.** 既定値。 ダウンロードジョブにこの種類を選択します。</li><li>**5d.** アップロードジョブの場合は、この種類を選択します。</li></ul> |
+| type | 任意。 ジョブの種類を設定します。次に例を示します。<ul><li>**ダウンロード.** 既定値。 ダウンロードジョブにこの種類を選択します。</li><li>**5d.** アップロードジョブの場合は、この種類を選択します。</li></ul> |
 | priority | 任意。 ジョブの優先順位を設定します。次に例を示します。<ul><li>FOREGROUND</li><li>HIGH</li><li>NORMAL</li><li>LOW</li></ul> |
 | ACLflags | 任意。 ファイルをダウンロードするときに所有者と ACL の情報を保持することを示します。 次のように、1つまたは複数の値を指定します。<ul><li>**o** -所有者の情報をファイルにコピーします。</li><li>**g** -グループ情報をファイルと共にコピーします。</li><li>**d** -随意アクセス制御リスト (DACL) の情報をファイルと共にコピーします。</li><li>**s** -システムアクセス制御リスト (SACL) の情報をファイルにコピーします。</li></ul> |
-| /動的 | [**BITS_JOB_PROPERTY_DYNAMIC_CONTENT**](https://docs.microsoft.com/windows/win32/api/bits5_0/ne-bits5_0-bits_job_property_id)を使用してジョブを構成します。これにより、サーバー側の要件が緩和されます。 |
+| /動的 | [**BITS_JOB_PROPERTY_DYNAMIC_CONTENT**](/windows/win32/api/bits5_0/ne-bits5_0-bits_job_property_id)を使用してジョブを構成します。これにより、サーバー側の要件が緩和されます。 |
 | remotefilename | サーバーに転送された後のファイルの名前です。 |
 | localfilename | ローカルに存在するファイルの名前。 |
 
@@ -51,7 +51,7 @@ bitsadmin /transfer <name> [<type>] [/priority <job_priority>] [/ACLflags <flags
 bitsadmin /transfer myDownloadJob http://prodserver/audio.wma c:\downloads\audio.wma
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

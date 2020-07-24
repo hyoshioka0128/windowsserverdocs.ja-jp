@@ -8,16 +8,16 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: storage-replica
 manager: mchad
-ms.openlocfilehash: ee4f508cf0a65b59c3253d6865c649cc9652c569
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 8a1d98fd6c36876aebaf2f9abe4bed29f5485e8a
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856305"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955544"
 ---
 # <a name="cluster-to-cluster-storage-replica-cross-region-in-azure"></a>Azure リージョンを超えてクラスター間の記憶域レプリカを構成する
 
-> 適用対象: Windows Server 2019、Windows Server 2016、Windows Server (半期チャネル)
+> 適用先:Windows Server 2019、Windows Server 2016、Windows Server (半期チャネル)
 
 Azure でリージョンをまたがるアプリケーションのストレージレプリカをクラスター化するようにクラスターを構成できます。 次の例では、2ノードクラスターを使用していますが、クラスターへのクラスターの記憶域レプリカは2ノードクラスターに制限されていません。 次の図は、相互に通信できる2ノード記憶域スペースダイレクトクラスターであり、同じドメイン内にあり、リージョンが異なる場合があります。
 
@@ -37,7 +37,7 @@ Azure でリージョンをまたがるアプリケーションのストレー�
     - の可用性セット (**az2azAS1**) (**AZ2AZ**)
     - の可用性セット (**azcross**) (**sr-iov クロス**)
 
-3. 2つの仮想ネットワークを作成する
+3. 2 つの仮想ネットワークを作成する
    - 1つのサブネットと1つのゲートウェイサブネットを持つ、1つ目のリソースグループ (**az2az**) に[仮想ネットワーク](https://ms.portal.azure.com/#create/Microsoft.VirtualNetwork-ARM)(**az2az**) を作成します。
    - 2つ目のリソースグループ (**SR-IOV クロス**) に[仮想ネットワーク](https://ms.portal.azure.com/#create/Microsoft.VirtualNetwork-ARM)(**azcross VNET**) を作成し、1つのサブネットと1つのゲートウェイサブネットを作成します。
 
@@ -92,13 +92,13 @@ Azure でリージョンをまたがるアプリケーションのストレー�
 8. 各クラスター (**azlbr1**、 **azlbazcross**) の内部 Standard SKU [Load Balancer](https://ms.portal.azure.com/#create/Microsoft.LoadBalancer-ARM)を作成します。
 
    クラスター IP アドレスをロードバランサーの静的プライベート IP アドレスとして指定します。
-      - azlbr1 = > フロントエンド IP: 10.3.0.100 (仮想ネットワーク (**az2az**) サブネットから未使用の ip アドレスを取得する)
+      - azlbr1 => フロントエンド IP: 10.3.0.100 (仮想ネットワーク (**az2az**) サブネットから未使用の ip アドレスを取得する)
       - 各ロードバランサーのバックエンドプールを作成します。 関連付けられているクラスターノードを追加します。
       - 正常性プローブの作成: ポート59999
       - 負荷分散規則の作成: 有効な Floating IP を使用して HA ポートを許可します。
 
    クラスター IP アドレスをロードバランサーの静的プライベート IP アドレスとして指定します。 
-      - azlbazcross = > フロントエンド IP: 10.0.0.10 (仮想ネットワーク (**AZクロス VNET**) サブネットから未使用の ip アドレスを取得する)
+      - azlbazcross => フロントエンド IP: 10.0.0.10 (仮想ネットワーク (**AZクロス VNET**) サブネットから未使用の ip アドレスを取得する)
       - 各ロードバランサーのバックエンドプールを作成します。 関連付けられているクラスターノードを追加します。
       - 正常性プローブの作成: ポート59999
       - 負荷分散規則の作成: 有効な Floating IP を使用して HA ポートを許可します。 
@@ -127,7 +127,7 @@ Azure でリージョンをまたがるアプリケーションのストレー�
 
     クラスターの1つのノードからクラスターごとに1回実行します。 
     
-    この例では、構成値に応じて "ILBIP" を変更してください。 任意の1つのノード**az2az1**/**az2az2**から次のコマンドを実行します。
+    この例では、構成値に応じて "ILBIP" を変更してください。 任意の1つのノード**az2az1** / **az2az2**から次のコマンドを実行します。
 
     ```PowerShell
      $ClusterNetworkName = "Cluster Network 1" # Cluster network name (Use Get-ClusterNetwork on Windows Server 2012 or higher to find the name. And use Get-ClusterResource to find the IPResourceName).
@@ -137,7 +137,7 @@ Azure でリージョンをまたがるアプリケーションのストレー�
      Get-ClusterResource $IPResourceName | Set-ClusterParameter -Multiple @{"Address"="$ILBIP";"ProbePort"=$ProbePort;"SubnetMask"="255.255.255.255";"Network"="$ClusterNetworkName";"ProbeFailureThreshold"=5;"EnableDhcp"=0}  
     ```
 
-12. 任意の1つのノード**azcross1**/**azcross2**から次のコマンドを実行します。
+12. 任意の1つのノード**azcross1** / **azcross2**から次のコマンドを実行します。
     ```PowerShell
      $ClusterNetworkName = "Cluster Network 1" # Cluster network name (Use Get-ClusterNetwork on Windows Server 2012 or higher to find the name. And use Get-ClusterResource to find the IPResourceName).
      $IPResourceName = "Cluster IP Address" # IP Address cluster resource name.
@@ -165,7 +165,7 @@ Azure でリージョンをまたがるアプリケーションのストレー�
 
 14. 次の手順に進む前に、[クラスター検証テスト](../../failover-clustering/create-failover-cluster.md#validate-the-configuration)を実行してください
 
-15. Windows PowerShell を起動し、[Test-SRTopology](https://docs.microsoft.com/powershell/module/storagereplica/test-srtopology?view=win10-ps) コマンドレットを使用して、記憶域レプリカのすべての要件を満たしているかどうかを判別します。 このコマンドレットは、簡単なテストのために要件のみモードで使用することも、実行時間の長いパフォーマンス評価モードで使用することもできます。
+15. Windows PowerShell を起動し、[Test-SRTopology](/powershell/module/storagereplica/test-srtopology?view=win10-ps) コマンドレットを使用して、記憶域レプリカのすべての要件を満たしているかどうかを判別します。 このコマンドレットは、簡単なテストのために要件のみモードで使用することも、実行時間の長いパフォーマンス評価モードで使用することもできます。
  
 16. クラスター間の記憶域レプリカを構成します。
     あるクラスターから別のクラスターへのアクセスを双方向に許可します。

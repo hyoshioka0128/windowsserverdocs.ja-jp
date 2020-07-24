@@ -9,12 +9,12 @@ ms.date: 10/02/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b832756e123bee0223738ee804ac3a4db2371e84
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a982df8ce7d1f335a1c2242f277b1983573c9ee1
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80855295"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86954205"
 ---
 # <a name="managing-ssl-certificates-in-ad-fs-and-wap-in-windows-server-2016"></a>Windows Server 2016 の AD FS と WAP で SSL 証明書を管理する
 
@@ -23,18 +23,18 @@ ms.locfileid: "80855295"
 この記事では、AD FS と WAP サーバーに新しい SSL 証明書を展開する方法について説明します。
 
 >[!NOTE]
->AD FS ファームで今後使用する SSL 証明書を置き換えるには、Azure AD Connect を使用することをお勧めします。  詳細については[、「Active Directory フェデレーションサービス (AD FS) (AD FS) ファームの SSL 証明書を更新](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnectfed-ssl-update)する」を参照してください。
+>AD FS ファームで今後使用する SSL 証明書を置き換えるには、Azure AD Connect を使用することをお勧めします。  詳細については[、「Active Directory フェデレーションサービス (AD FS) (AD FS) ファームの SSL 証明書を更新](/azure/active-directory/connect/active-directory-aadconnectfed-ssl-update)する」を参照してください。
 
 ## <a name="obtaining-your-ssl-certificates"></a>SSL 証明書の取得
 運用 AD FS ファームの場合は、公的に信頼された SSL 証明書を使用することをお勧めします。 これは通常、サードパーティの公開証明書プロバイダーに証明書署名要求 (CSR) を送信することによって取得されます。 Windows 7 以降の PC から、CSR を生成するにはさまざまな方法があります。 このことについては、ベンダーにドキュメントが必要です。
 
-- 証明書が[AD FS と Web アプリケーションプロキシの SSL 証明書の要件](https://technet.microsoft.com/windows-server-docs/identity/ad-fs/overview/AD-FS-2016-Requirements#BKMK_1)を満たしていることを確認します。
+- 証明書が[AD FS と Web アプリケーションプロキシの SSL 証明書の要件](../overview/ad-fs-requirements.md#BKMK_1)を満たしていることを確認します。
 
 ### <a name="how-many-certificates-are-needed"></a>必要な証明書の数
-すべての AD FS および Web アプリケーションプロキシサーバーで共通の SSL 証明書を使用することをお勧めします。 要件の詳細については、「ドキュメント[AD FS」と「Web アプリケーションプロキシの SSL 証明書の要件](https://technet.microsoft.com/windows-server-docs/identity/ad-fs/overview/AD-FS-2016-Requirements#BKMK_1)」を参照してください。
+すべての AD FS および Web アプリケーションプロキシサーバーで共通の SSL 証明書を使用することをお勧めします。 要件の詳細については、「ドキュメント[AD FS」と「Web アプリケーションプロキシの SSL 証明書の要件](../overview/ad-fs-requirements.md#BKMK_1)」を参照してください。
 
 ### <a name="ssl-certificate-requirements"></a>SSL 証明書の要件
-名前付け、信頼のルート、および拡張機能を含む要件については、ドキュメント[AD FS と Web アプリケーションプロキシの SSL 証明書の要件](https://technet.microsoft.com/windows-server-docs/identity/ad-fs/overview/AD-FS-2016-Requirements#BKMK_1)を参照してください。
+名前付け、信頼のルート、および拡張機能を含む要件については、ドキュメント[AD FS と Web アプリケーションプロキシの SSL 証明書の要件](../overview/ad-fs-requirements.md#BKMK_1)を参照してください。
 
 ## <a name="replacing-the-ssl-certificate-for-ad-fs"></a>AD FS の SSL 証明書の置き換え
 > [!NOTE]
@@ -46,11 +46,11 @@ ms.locfileid: "80855295"
 AD FS 既定では、ポート443でのデバイス証明書の認証と、ポート 49443 (または443ではない構成可能なポート) でのユーザー証明書の認証が実行されます。
 このモードでは、powershell コマンドレット Set-adfssslcertificate を使用して SSL 証明書を管理します。
 
-下記の手順に従ってください。
+次の手順に従います。
 
 1. まず、新しい証明書を取得する必要があります。 これは通常、サードパーティの公開証明書プロバイダーに証明書署名要求 (CSR) を送信することによって行われます。 Windows 7 以降の PC から、CSR を生成するにはさまざまな方法があります。 このことについては、ベンダーにドキュメントが必要です。
 
-    * 証明書が[AD FS と Web アプリケーションプロキシの SSL 証明書の要件](https://technet.microsoft.com/windows-server-docs/identity/ad-fs/overview/AD-FS-2016-Requirements#BKMK_1)を満たしていることを確認します。
+    * 証明書が[AD FS と Web アプリケーションプロキシの SSL 証明書の要件](../overview/ad-fs-requirements.md#BKMK_1)を満たしていることを確認します。
 
 1. 証明書プロバイダーから応答を取得したら、各 AD FS および Web アプリケーションプロキシサーバーのローカルコンピューターストアにインポートします。
 
@@ -66,7 +66,7 @@ Set-AdfsSslCertificate -Thumbprint '<thumbprint of new cert>'
 dir Cert:\LocalMachine\My\
 ```
 
-#### <a name="additional-notes"></a>その他の注意事項
+#### <a name="additional-notes"></a>追加情報
 
 * Set-adfssslcertificate コマンドレットは、マルチノードコマンドレットです。これは、プライマリから実行するだけで、ファーム内のすべてのノードが更新されることを意味します。 これは、サーバー2016で新たに追加されたものです。 サーバー 2012 R2 では、各サーバーで Set-adfssslcertificate を実行する必要がありました。
 * Set-adfssslcertificate コマンドレットは、プライマリサーバーでのみ実行する必要があります。 プライマリサーバーはサーバー2016を実行している必要があり、ファームの動作レベルは2016に上げる必要があります。
@@ -77,11 +77,11 @@ dir Cert:\LocalMachine\My\
 代替クライアント TLS バインドモードで構成されている場合、AD FS はポート443でデバイス証明書認証を実行し、別のホスト名でポート443でもユーザー証明書認証を実行します。 ユーザー証明書のホスト名は、"certauth.fs.contoso.com" など、"certauth" で事前に付加された AD FS ホスト名です。
 このモードでは、powershell コマンドレット AdfsAlternateTlsClientBinding を使用して SSL 証明書を管理します。 これにより、代替のクライアント TLS バインドだけでなく、AD FS が SSL 証明書を設定するその他のすべてのバインドも管理されます。
 
-下記の手順に従ってください。
+次の手順に従います。
 
 1. まず、新しい証明書を取得する必要があります。 これは通常、サードパーティの公開証明書プロバイダーに証明書署名要求 (CSR) を送信することによって行われます。 Windows 7 以降の PC から、CSR を生成するにはさまざまな方法があります。 このことについては、ベンダーにドキュメントが必要です。
 
-    * 証明書が[AD FS と Web アプリケーションプロキシの SSL 証明書の要件](https://technet.microsoft.com/windows-server-docs/identity/ad-fs/overview/AD-FS-2016-Requirements#BKMK_1)を満たしていることを確認します。
+    * 証明書が[AD FS と Web アプリケーションプロキシの SSL 証明書の要件](../overview/ad-fs-requirements.md#BKMK_1)を満たしていることを確認します。
 
 1. 証明書プロバイダーから応答を取得したら、各 AD FS および Web アプリケーションプロキシサーバーのローカルコンピューターストアにインポートします。
 
@@ -97,7 +97,7 @@ Set-AdfsAlternateTlsClientBinding -Thumbprint '<thumbprint of new cert>'
 dir Cert:\LocalMachine\My\
 ```
 
-#### <a name="additional-notes"></a>その他の注意事項
+#### <a name="additional-notes"></a>追加情報
 
 * AdfsAlternateTlsClientBinding コマンドレットは、マルチノードコマンドレットです。これは、プライマリから実行するだけで、ファーム内のすべてのノードが更新されることを意味します。
 * AdfsAlternateTlsClientBinding コマンドレットは、プライマリサーバーでのみ実行する必要があります。 プライマリサーバーはサーバー2016を実行している必要があり、ファームの動作レベルは2016に上げる必要があります。
@@ -124,6 +124,6 @@ AD FS サーバーのローカル管理者であるドメインユーザーの�
 Install-WebApplicationProxy -FederationServiceTrustCredential $cred -CertificateThumbprint '<thumbprint of new cert>' -FederationServiceName 'fs.contoso.com'
 ```
 
-## <a name="additional-references"></a>その他の参照情報  
+## <a name="additional-references"></a>その他のリファレンス  
 * [AD FS での証明書認証のための代替ホスト名バインドのサポート](../operations/AD-FS-support-for-alternate-hostname-binding-for-certificate-authentication.md)
 * [AD FS と certificate KeySpec のプロパティ情報](../technical-reference/AD-FS-and-KeySpec-Property.md)

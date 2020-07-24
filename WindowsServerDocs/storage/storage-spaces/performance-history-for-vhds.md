@@ -7,12 +7,12 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 02/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 18694975e48d199f2f690aebe8af2a4613a4b1f0
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: d6ed65b07fd9155d0ded38ecec6ab25e51209c34
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474709"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955244"
 ---
 # <a name="performance-history-for-virtual-hard-disks"></a>バーチャルハードディスクのパフォーマンス履歴
 
@@ -72,7 +72,7 @@ ms.locfileid: "85474709"
 
 ## <a name="usage-in-powershell"></a>PowerShell での使用法
 
-[GET VHD](https://docs.microsoft.com/powershell/module/hyper-v/get-vhd)コマンドレットを使用します。
+[GET VHD](/powershell/module/hyper-v/get-vhd)コマンドレットを使用します。
 
 ```PowerShell
 Get-VHD <Path> | Get-ClusterPerf

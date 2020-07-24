@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0a2cea23d96c4cb438a2acac6d14c1bd37c67b56
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 159a3d2eb54d6a3040c4a22864a1c90e16bf2247
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85922645"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955334"
 ---
 # <a name="certutil"></a>certutil
 
@@ -1999,13 +1999,13 @@ certutil -? -v
 | -t タイムアウト | URL フェッチのタイムアウト (ミリ秒)。 |
 | -symkeyalg symmetrickeyalgorithm [, keylength] | オプションのキー長を持つ対称キーアルゴリズムの名前。 例: `AES,128` または `3DES` |
 
-### <a name="additional-references"></a>その他の参照情報
+### <a name="additional-references"></a>その他のリファレンス
 
 このコマンドの使用方法に関するその他の例については、「」を参照してください。
 
 - [コマンドラインから Active Directory 証明書サービス (AD CS) を管理するための Certutil の例](https://social.technet.microsoft.com/wiki/contents/articles/3063.certutil-examples-for-managing-active-directory-certificate-services-ad-cs-from-the-command-line.aspx)
 
-- [証明書を管理するための Certutil タスク](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc772898(v=ws.10))
+- [証明書を管理するための Certutil タスク](/previous-versions/orphan-topics/ws.10/cc772898(v=ws.10))
 
 - [certutil.exe コマンドラインツールのチュートリアルを使用したバイナリ要求のエクスポート](https://social.technet.microsoft.com/wiki/contents/articles/7573.active-directory-certificate-services-pki-key-archival-and-management.aspx)
 

@@ -9,12 +9,12 @@ manager: klaasl
 ms.author: wgries
 ms.date: 05/09/2017
 description: Windows Server でのデータ重複除去のインストール方法、ワークロードがデータ重複除去に適切であるかどうかを判断する、ボリュームでデータ重複除去を有効にする
-ms.openlocfilehash: 36c9894fd8916643340134698f36af3bd50c34d8
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 82c55c12e7b5d5f60be7569ee2d7885daa6b6339
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322424"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86953624"
 ---
 # <a name="install-and-enable-data-deduplication"></a>データ重複除去のインストールと有効化
 > 適用対象: Windows Server (半期チャネル)、Windows Server 2016
@@ -24,17 +24,17 @@ ms.locfileid: "79322424"
 > [!Note]  
 > フェールオーバー クラスター内でデータ重複除去を実行する場合は、クラスター内のすべてのノードに、データ重複除去のサーバーの役割がインストールされている必要があります。
 
-## <a id="install-dedup"></a>データ重複除去のインストール
+## <a name="install-data-deduplication"></a><a id="install-dedup"></a>データ重複除去のインストール
 > [!Important]  
 > [KB4025334](https://support.microsoft.com/kb/4025334) には、信頼性についての重要な修正データを含め、重複除去に関する修正のロールアップが含まれているため、Windows Server 2016 でデータ重複除去を使う場合はインストールすることを強くお勧めします。
 
-### <a id="install-dedup-via-server-manager"></a>サーバーマネージャーを使用したデータ重複除去のインストール
-1. 役割と機能の追加ウィザードで **[サーバーの役割]** を選択し、 **[データ重複除去]** をオンにします。  
-サーバーマネージャーを使用してデータ重複除去をインストール ![には、サーバーロールからデータ重複除去を選択](media/install-dedup-via-server-manager-1.png)
-2. **[インストール]** がアクティブになるまで **[次へ]** をクリックし、 **[インストール]** をクリックします。  
-サーバーマネージャーを使用してデータ重複除去をインストール ![には、[インストール] をクリックし](media/install-dedup-via-server-manager-2.png)
+### <a name="install-data-deduplication-by-using-server-manager"></a><a id="install-dedup-via-server-manager"></a>サーバー マネージャーを使用してデータ重複除去をインストールする
+1. 役割と機能の追加ウィザードで **[サーバーの役割]** を選択し、**[データ重複除去]** をオンにします。  
+![サーバーマネージャーを使用したデータ重複除去のインストール: サーバーの役割からのデータ重複除去の選択](media/install-dedup-via-server-manager-1.png)
+2. **[インストール]** がアクティブになるまで **[次へ]** をクリックし、**[インストール]** をクリックします。  
+![サーバーマネージャーを使用したデータ重複除去のインストール: [インストール] をクリックします。](media/install-dedup-via-server-manager-2.png)
 
-### <a id="install-dedup-via-powershell"></a>PowerShell を使用してデータ重複除去をインストールする
+### <a name="install-data-deduplication-by-using-powershell"></a><a id="install-dedup-via-powershell"></a>PowerShell を使用してデータ重複除去をインストールする
 データ重複除去をインストールするには、管理者として次の PowerShell コマンドを実行します。  
 `Install-WindowsFeature -Name FS-Data-Deduplication`
 
@@ -55,26 +55,26 @@ Nano Server のインストールにデータ重複除去をインストール�
     dism /online /enable-feature /featurename:dedup-core /all
     ```
 
-## <a id="enable-dedup"></a>データ重複除去を有効にする
-### <a id="enable-dedup-candidate-workloads"></a>データ重複除去の候補となるワークロードを特定する
+## <a name="enable-data-deduplication"></a><a id="enable-dedup"></a>データ重複除去を有効にする
+### <a name="determine-which-workloads-are-candidates-for-data-deduplication"></a><a id="enable-dedup-candidate-workloads"></a>データ重複除去の候補となるボリュームの決定
 データ重複除去を使用すると、重複データによって消費されるディスク領域を削減して、サーバー アプリケーションのデータ消費コストを効率よく最小限に抑えることができます。 重複除去を有効にする前に、記憶域のパフォーマンスを最大限に活かすことができるようにワークロードの特性を理解する必要があります。 考慮すべきの 2 つのクラスのワークロードがあります。
 
-* *"推奨ワークロード"* : 重複除去によって大きなメリットが得られるデータセットと、リソース消費パターンがデータ重複除去の処理後モデルに適合しているデータセットの両方が含まれることが実証されているワークロード。 次のワークロードに対しては、常に[データ重複除去を有効](install-enable.md#enable-dedup-lights-on)にすることをお勧めします。
+* *"推奨ワークロード"*: 重複除去によって大きなメリットが得られるデータセットと、リソース消費パターンがデータ重複除去の処理後モデルに適合しているデータセットの両方が含まれることが実証されているワークロード。 次のワークロードに対しては、常に[データ重複除去を有効](install-enable.md#enable-dedup-lights-on)にすることをお勧めします。
     * チーム共有、ユーザー ホーム フォルダー、ワーク フォルダー、ソフトウェア開発共有などの、共有のための汎用ファイル サーバー (GPFS)
     * 仮想デスクトップ インフラストラクチャ (VDI) サーバー
-    * [Microsoft Data Protection Manager (DPM)](https://technet.microsoft.com/library/hh758173.aspx) などの仮想化バックアップ アプリケーション
+    * [Microsoft Data Protection Manager (DPM)](/previous-versions/system-center/system-center-2012-R2/hh758173(v=sc.12))などの仮想化されたバックアップアプリケーション。
 * 重複除去によってメリットを得る可能性があるものの、常に重複除去に適しているとは限らないワークロード。 たとえば、以下のワークロードでは重複除去が有効な可能性はありますが、まず重複除去のメリットを評価する必要があります。
     * 汎用 Hyper-V ホスト
     * SQL Server
     * 基幹業務 (LOB) サーバー
 
-### <a id="enable-dedup-evaluating-sometimes-workloads"></a>データ重複除去のワークロードを評価する
+### <a name="evaluate-workloads-for-data-deduplication"></a><a id="enable-dedup-evaluating-sometimes-workloads"></a>データ重複除去のワークロードの評価
 > [!Important]  
 > 推奨ワークロードを実行している場合は、このセクションをスキップして、ワークロードの[データ重複除去の有効化](install-enable.md#enable-dedup-lights-on)に進むことができます。
 
 ワークロードで重複除去によるメリットが得られるかどうかを判定するには、次の質問に回答します。 よくわからないワークロードの場合は、ワークロードのテスト データセットにデータ重複除去をパイロット展開し、そのパフォーマンスを確認することを検討してください。
 
-1. **ワークロードのデータセットに重複除去を有効にすることによるメリットがありますか。**  
+1. **重複除去の有効化のメリットを得るのに十分な重複がワークロードのデータセットに含まれていますか。**  
     ワークロードのデータ重複除去を有効にする前に、Data Deduplication Savings Evaluation Tool (DDPEval) を使用して、ワークロードのデータセットに含まれている重複の量を調査します。 データ重複除去をインストールすると、このツールは `C:\Windows\System32\DDPEval.exe` にあります。 DDPEval では、直接接続されているボリューム (ローカル ドライブやクラスターの共有ボリュームなど) と、(マップの有無にかかわらず) ネットワーク共有の最適化の可能性を評価できます。  
     &nbsp;   
     DDPEval.exe を実行すると、以下のような出力が返されます。  
@@ -103,31 +103,31 @@ Nano Server のインストールにデータ重複除去をインストール�
     > [!Note]  
     > こうした懸念の主な対象は、従来の回転記憶域メディア (別名ハード ディスク ドライブ (HDD)) から成るボリュームの記憶域ワークロードです。 フラッシュ メディアの特徴の 1 つは、ディスクのどの場所へのアクセス時間も同じであることです。そのため、オールフラッシュ記憶域インフラストラクチャ (別名ソリッド ステート ドライブ (SSD)) では、ランダム IO パターンの影響が低くなります。 したがって、オールフラッシュ メディアに格納されているワークロードのデータセットの読み取りでは、重複除去によって従来の回転記憶域メディアと同じ長さの待機時間が発生することはありません。
 
-3. **サーバー上のワークロードのリソース要件は何ですか。**  
+3. **ワークロードは、サーバーのどのようなリソースを必要としますか。**  
     データ重複除去では処理後モデルが使用されることから、データ重複除去が[最適化ジョブと他のジョブ](understand.md#job-info)を完了するのに十分なシステム リソースが定期的に必要になります。 つまり、夜間や週末などにアイドル時間があるワークロードは重複除去に適していますが、一日中実行されるワークロードは適さない可能性があります。 アイドル時間がないワークロードでも、必要とするサーバー リソースが多くない場合は、重複除去に適している可能性があります。
 
-### <a id="enable-dedup-lights-on"></a>データ重複除去を有効にする
+### <a name="enable-data-deduplication"></a><a id="enable-dedup-lights-on"></a>データ重複除去を有効にする
 データ重複除去を有効にする前に、ワークロードに最もよく似た[使用法の種類](understand.md#usage-type)を選択する必要があります。 データ重複除去には 3 つの使用法の種類が含まれています。
 
 * [既定](understand.md#usage-type-default) - 汎用ファイル サーバー用
 * [Hyper-V](understand.md#usage-type-hyperv) - VDI サーバー専用
-* [バックアップ](understand.md#usage-type-backup) - 仮想化バックアップ アプリケーション ([Microsoft DPM](https://technet.microsoft.com/library/hh758173.aspx) など) 専用
+* [バックアップ](understand.md#usage-type-backup) - 仮想化バックアップ アプリケーション ([Microsoft DPM](/previous-versions/system-center/system-center-2012-R2/hh758173(v=sc.12)) など) 専用
 
-#### <a id="enable-dedup-via-server-manager"></a>サーバーマネージャーを使用したデータ重複除去の有効化
-1. サーバー マネージャーで **[ファイル サービスと記憶域サービス]** を選択します。  
-![[ファイルサービスおよび記憶域サービス] をクリックし](media/enable-dedup-via-server-manager-1.PNG)
+#### <a name="enable-data-deduplication-by-using-server-manager"></a><a id="enable-dedup-via-server-manager"></a>サーバー マネージャーを使用してデータ重複除去を有効にする
+1. サーバーマネージャーで [**ファイルサービスおよび記憶域サービス**] を選択します。  
+![[ファイル サービスと記憶域サービス] をクリック](media/enable-dedup-via-server-manager-1.PNG)
 2. **[ファイル サービスと記憶域サービス]** で **[ボリューム]** をクリックします。  
-[ボリューム] をクリック ![](media/enable-dedup-via-server-manager-2.png)
-3. 目的のボリュームを右クリックして、 **[データ重複除去の構成]** を選択します。  
-![[データ重複除去の構成] をクリックし](media/enable-dedup-via-server-manager-3.png)
-4. ドロップダウン ボックスから目的とする**使用法の種類**を選択して、 **[OK]** を選択します。  
-![ドロップダウンから目的の使用法の種類を選択し](media/enable-dedup-via-server-manager-4.png)
+![[ボリューム] をクリックする](media/enable-dedup-via-server-manager-2.png)
+3. 目的のボリュームを右クリックして、**[データ重複除去の構成]** を選択します。  
+![[データ重複除去の構成] をクリック](media/enable-dedup-via-server-manager-3.png)
+4. ドロップダウン ボックスから目的とする**使用法の種類**を選択して、**[OK]** を選択します。  
+![ドロップダウン ボックスからの目的とする使用法の種類の選択](media/enable-dedup-via-server-manager-4.png)
 5. 推奨ワークロードを実行している場合は、これで終了です。 他のワークロードの場合は、「[他の考慮事項](#enable-dedup-sometimes-considerations)」を参照してください。
 
 > [!Note]  
 > ファイル拡張子やフォルダーの除外、および重複除去スケジュールの選択 (これを実行する理由など) の詳細は、[データ重複除去の構成](advanced-settings.md)に関するページに記載されています。
 
-#### <a id="enable-dedup-via-powershell"></a>PowerShell を使用してデータ重複除去を有効にする
+#### <a name="enable-data-deduplication-by-using-powershell"></a><a id="enable-dedup-via-powershell"></a>PowerShell を使用してデータ重複除去を有効にする
 1. 管理者のコンテキストで、次の PowerShell コマンドを実行します。  
     ```PowerShell
     Enable-DedupVolume -Volume <Volume-Path> -UsageType <Selected-Usage-Type>
@@ -136,9 +136,9 @@ Nano Server のインストールにデータ重複除去をインストール�
 2. 推奨ワークロードを実行している場合は、これで終了です。 他のワークロードの場合は、「[他の考慮事項](#enable-dedup-sometimes-considerations)」を参照してください。
 
 > [!Note]  
-> データ重複除去の PowerShell コマンドレット ([`Enable-DedupVolume`](https://technet.microsoft.com/library/hh848441.aspx) など) は、`-CimSession` パラメーターで CIM セッションを指定するとリモートで実行できます。 これは、Nano Server インスタンスに対してデータ重複除去の PowerShell コマンドレットをリモートで実行するのに特に役立ちます。 新しい CIM セッションを作成するには、[`New-CimSession`](https://technet.microsoft.com/library/jj590760.aspx) を実行します。
+> を含むデータ重複除去の PowerShell コマンドレットを [`Enable-DedupVolume`](/previous-versions/system-center/system-center-2012-R2/hh758173(v=sc.12)) リモートで実行するには、パラメーターに CIM セッションを追加し `-CimSession` ます。 これは、Nano Server インスタンスに対してデータ重複除去の PowerShell コマンドレットをリモートで実行するのに特に役立ちます。 新しい CIM セッションを作成するには、を実行 [`New-CimSession`](/previous-versions/system-center/system-center-2012-R2/hh758173(v=sc.12)) します。
 
-#### <a id="enable-dedup-sometimes-considerations"></a>その他の考慮事項
+#### <a name="other-considerations"></a><a id="enable-dedup-sometimes-considerations"></a>その他の考慮事項
 > [!Important]  
 > 推奨ワークロードを実行している場合、このセクションはスキップできます。
 
@@ -146,20 +146,20 @@ Nano Server のインストールにデータ重複除去をインストール�
 * ワークロードに必要なサーバー リソースが多い場合は、データ重複除去ジョブが[そのワークロードがアイドルであると見込まれる時間中に実行されるようにスケジュールする必要があります](advanced-settings.md#modifying-job-schedules-change-schedule)。 業務が予定されている時間中にデータ重複除去を実行すると仮想メモリが不足する可能性があるため、ハイパーコンバージド ホストで重複除去を実行する場合には、これは特に重要です。
 * ワークロードに必要なリソースがそれほど多くない場合、またはワークロードの要求を満たすよりも最適化ジョブを完了する方が重要である場合は、[データ重複除去ジョブのメモリ、CPU、および優先順位を調整できます](advanced-settings.md#modifying-job-schedules)。
 
-## <a id="faq"></a>よく寄せられる質問 (FAQ)
+## <a name="frequently-asked-questions-faq"></a><a id="faq"></a>よく寄せられる質問 (FAQ)
 **X ワークロードのデータセットでデータ重複除去を実行します。これはサポートされていますか?**  
 [データ重複除去との同時使用に未対応であることが確認されている](interop.md)ワークロードを除いて、どんなワークロードであってもデータ重複除去のデータの整合性は完全にサポートされています。 推奨ワークロードについてはパフォーマンスもサポートされます。 他のワークロードのパフォーマンスは、サーバー上での操作に大きく左右されます。 お客様のワークロードにデータ重複除去が及ぼすパフォーマンス上の影響を確認して、そのワークロードに適しているかどうかを判断してください。
 
-**重複除去ボリュームのボリュームサイズの要件は何ですか。**  
+**重複除去されるボリュームには、どのようなボリューム サイズ設定が必要ですか。**  
 Windows Server 2012 および Windows Server 2012 R2 では、データ重複除去がボリュームのチャーンについていけるように、ボリュームのサイズを注意して設定する必要があります。 一般的には、高チャーンのワークロードで重複除去されるボリュームの平均最大サイズは 1 ～ 2 TB であり、推奨される絶対最大サイズは 10 TB です。 Windows Server 2016 では、これらの制約がなくなりました。 詳細については、「[データ重複除去の新機能](whats-new.md#large-volume-support)」を参照してください。
 
 **推奨されるワークロードのスケジュールまたはその他のデータ重複除去設定を変更する必要がありますか。**  
-いいえ。推奨ワークロードに適した既定値を設定するための[使用法の種類](understand.md#usage-type)が用意されています。
+いいえ。推奨されるワークロードに対して適切な既定値を提供するために、提供された[使用法の種類](understand.md#usage-type)が作成されまし
 
-**データ重複除去にはどのようなメモリ要件がありますか。**  
+**データ重複除去にはどれだけのメモリが必要ですか。**  
 最小でも、データ重複除去では 300 MB に加えて、1 TB の論理データにつき 50 MB が必要です。 たとえば、10 TB のボリュームを最適化する場合は、最小で 800 MB のメモリが重複除去に割り当てられている必要があります (`300 MB + 50 MB * 10 = 300 MB + 500 MB = 800 MB`)。 データ重複除去では、この少量のメモリでボリュームを最適化できますが、そのようなリソース制約があると、データ重複除去ジョブの速度が低下します。
 
 データ重複除去を最適に行うには、1 TB の論理データにつき 1 GB のメモリが必要です。 たとえば、10 TB のボリュームを最適化する場合、好ましい状況とするには、10 GB のメモリが重複除去に割り当てられている必要があります (`1 GB * 10`)。 この比率であれば、データ重複除去ジョブのパフォーマンスを最大化することができます。
 
-**データ重複除去にはどのようなストレージ要件がありますか。**  
+**データ重複除去にはどれだけの記憶域が必要ですか。**  
 Windows Server 2016 において、データ重複除去では 64 TB までのボリューム サイズをサポートできます。 詳細については、「[What's New in Data Deduplication (データ重複除去の新機能)](whats-new.md#large-volume-support)」を参照してください。

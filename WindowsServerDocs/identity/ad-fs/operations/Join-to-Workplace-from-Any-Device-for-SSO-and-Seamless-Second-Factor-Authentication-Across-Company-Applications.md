@@ -8,12 +8,12 @@ ms.date: 12/05/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 82c94adadb9241e2b7cd8d75ea1693957aaffc61
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ea421bb274ec7f6a6b1ba5be03391dd92fb10b33
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80816265"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955055"
 ---
 # <a name="join-to-workplace-from-any-device-for-sso-and-seamless-second-factor-authentication-across-company-applications"></a>任意のデバイスからの職場への参加による業務用アプリケーション間の SSO とシームレスな 2 要素認証
 
@@ -33,7 +33,7 @@ ms.locfileid: "80816265"
 ### <a name="azure-active-directory-device-registration-service"></a><a name="BKMK_DRS"></a>Azure Active Directory Device Registration サービス
 ワークプレース ジョインは、Azure Active Directory Device Registration サービスによって可能になります。 デバイスをワークプレース ジョインによって参加させると、このサービス は Azure Active Directory にデバイス オブジェクトをプロビジョニングし、デバイス ID を表すために使用されるキーをローカル デバイスに設定します。 このデバイス ID は、クラウドとオンプレミスでホストされているアプリケーションのアクセス制御規則と共に使用できます。
 
-詳細については、「 [Azure Active Directory でのデバイス管理の概要](https://docs.microsoft.com/azure/active-directory/device-management-introduction)」を参照してください。
+詳細については、「 [Azure Active Directory でのデバイス管理の概要](/azure/active-directory/device-management-introduction)」を参照してください。
 
 ### <a name="workplace-join-as-a-seamless-second-factor-authentication"></a>シームレスな 2 要素認証としてのワークプレース ジョイン
 会社は、コンシューマー デバイスに社内リソースへのアクセスを許可しつつ、情報へのアクセスに関連するリスクを管理して、ガバナンスとコンプライアンスを実施することができます。 デバイスのワークプレース ジョインでは、管理者は次の操作を実行できます。
@@ -49,18 +49,15 @@ ms.locfileid: "80816265"
 このソリューションの一部として、サポートされているデバイスでワークプレース ジョインを使用して、社内リソースへのシングル サインオンを有効にする方法を学習します。
 
 > [!NOTE]
-> Windows 8.1、iOS 6.0 以降、および Android 4.0 以降のデバイスをサポートするには、Azure Active Directory Device Registration をデバイス オブジェクトの書き戻しと一緒に構成する必要があります (「 [Azure Active Directory Device Registration を使用してオンプレミスの条件付きアクセスを設定する](https://msdn.microsoft.com/library/azure/dn788908.aspx)」を参照してください)
+> Windows 8.1、iOS 6.0 以降、および Android 4.0 以降のデバイスをサポートするには、Azure Active Directory Device Registration をデバイス オブジェクトの書き戻しと一緒に構成する必要があります (「[Azure Active Directory Device Registration を使用してオンプレミスの条件付きアクセスを設定する](/previous-versions/azure/dn788908(v=azure.100))」を参照してください)
 
 このソリューション ガイドでは、次のチュートリアル手順が用意されています。
 
-1.  [チュートリアル: Windows デバイスでの Workplace Join](../../ad-fs/operations/Walkthrough--Workplace-Join-with-a-Windows-Device.md)
+1.  [チュートリアル: Workplace Join で Windows デバイスをワークプレースに参加させる](../../ad-fs/operations/Walkthrough--Workplace-Join-with-a-Windows-Device.md)
 
-2.  [チュートリアル: iOS デバイスでの Workplace Join](../../ad-fs/operations/Walkthrough--Workplace-Join-with-an-iOS-Device.md)
+2.  [チュートリアル: Workplace Join で iOS デバイスをワークプレースに参加させる](../../ad-fs/operations/Walkthrough--Workplace-Join-with-an-iOS-Device.md)
 
-3.  [チュートリアル: Android デバイスでの Workplace Join](../../ad-fs/operations/walkthrough--workplace-join-to-an-android-device.md)
+3.  [チュートリアル: Workplace Join で Android デバイスをワークプレースに参加させる](../../ad-fs/operations/walkthrough--workplace-join-to-an-android-device.md)
 
 ## <a name="see-also"></a>参照
 [デバイス登録サービスを使用してフェデレーションサーバーを構成する](../deployment/configure-a-federation-server-with-device-registration-service.md)
-
-
-

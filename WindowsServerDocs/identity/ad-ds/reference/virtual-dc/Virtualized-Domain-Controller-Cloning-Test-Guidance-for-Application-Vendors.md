@@ -8,21 +8,21 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 7273c59022edf4b03276a9e26c8291849ef93b40
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 2823e761ead46dc5180c540ce6faef8ef604cd18
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80853995"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955084"
 ---
 # <a name="virtualized-domain-controller-cloning-test-guidance-for-application-vendors"></a>アプリケーション ベンダー向けの仮想化ドメイン コントローラー複製のテスト ガイダンス
 
->適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
 このトピックでは、仮想化ドメインコントローラー (DC) の複製プロセスが完了した後もアプリケーションが期待どおりに動作することを確認するために考慮する必要があるアプリケーションベンダーについて説明します。 この記事では、アプリケーションベンダーや、追加のテストが必要なシナリオに関連する複製プロセスの側面について説明します。 複製された仮想化ドメインコントローラー上でアプリケーションが動作することを検証したアプリケーションベンダーは、このトピックの下部にあるコミュニティコンテンツにアプリケーションの名前を一覧表示し、ユーザーが検証について詳しく知ることができる組織の web サイトへのリンクと共に使用することをお勧めします。
 
 ## <a name="overview-of-virtualized-dc-cloning"></a>仮想化 DC の複製の概要
-仮想化ドメインコントローラーの複製プロセスについて詳しくは、 [Active Directory Domain Services (AD DS) の仮想化 (レベル 100)](https://docs.microsoft.com/windows-server/identity/ad-ds/introduction-to-active-directory-domain-services-ad-ds-virtualization-level-100)と[仮想化ドメインコントローラーのテクニカルリファレンス (レベル 300) に関する](https://docs.microsoft.com/windows-server/identity/ad-ds/deploy/virtual-dc/virtualized-domain-controller-technical-reference--level-300-)ページをご覧ください。 アプリケーションベンダーの観点から見ると、アプリケーションへの複製の影響を評価する際に考慮する必要がある考慮事項がいくつかあります。
+仮想化ドメインコントローラーの複製プロセスについて詳しくは、 [Active Directory Domain Services (AD DS) の仮想化 (レベル 100)](../../introduction-to-active-directory-domain-services-ad-ds-virtualization-level-100.md)と[仮想化ドメインコントローラーのテクニカルリファレンス (レベル 300) に関する](../../deploy/virtual-dc/virtualized-domain-controller-technical-reference--level-300-.md)ページをご覧ください。 アプリケーションベンダーの観点から見ると、アプリケーションへの複製の影響を評価する際に考慮する必要がある考慮事項がいくつかあります。
 
 -   元のコンピューターは破棄されません。 ネットワーク上にとどまり、クライアントと対話します。 元のコンピューターの DNS レコードが削除された名前の変更とは異なり、ソースドメインコントローラーの元のレコードはそのまま残ります。
 
@@ -42,16 +42,16 @@ ms.locfileid: "80853995"
 
 ## <a name="what-is-interesting-for-application-vendors"></a>アプリケーションベンダーにとって興味深い点
 
-### <a name="customdccloneallowlistxml"></a>Customdccloneallowlist.xml
+### <a name="customdccloneallowlistxml"></a>CustomDCCloneAllowList.xml
 アプリケーションまたはサービスを実行するドメインコントローラーは、次のいずれかの方法で複製することはできません。
 
--   Get-addccloningexcludedapplicationlist Windows PowerShell コマンドレットを使用して Customdccloneallowlist.xml ファイルに追加されます。
+-   Get-addccloningexcludedapplicationlist Windows PowerShell コマンドレットを使用して CustomDCCloneAllowList.xml ファイルに追加されます。
 
-\- または -
+-または-
 
 -   ドメインコントローラーから削除されました
 
-ユーザーが最初に Get-addccloningexcludedapplicationlist コマンドレットを実行すると、ドメインコントローラーで実行されているサービスとアプリケーションの一覧が返されますが、複製がサポートされているサービスとアプリケーションの既定の一覧には含まれていません。 既定では、サービスまたはアプリケーションは表示されません。 安全に複製できるアプリケーションとサービスの一覧にサービスまたはアプリケーションを追加するには、ユーザーは-GenerateXML オプションを指定して Get-addccloningexcludedapplicationlist コマンドレットをもう一度実行し、Customdccloneallowlist.xml ファイルに追加します。 詳細については、「[手順 2: get-addccloningexcludedapplicationlist コマンドレットを実行](https://docs.microsoft.com/powershell/module/addsadministration/get-addccloningexcludedapplicationlist)する」を参照してください。
+ユーザーが最初に Get-addccloningexcludedapplicationlist コマンドレットを実行すると、ドメインコントローラーで実行されているサービスとアプリケーションの一覧が返されますが、複製がサポートされているサービスとアプリケーションの既定の一覧には含まれていません。 既定では、サービスまたはアプリケーションは表示されません。 安全に複製できるアプリケーションとサービスの一覧にサービスまたはアプリケーションを追加するには、ユーザーは-GenerateXML オプションを指定して Get-addccloningexcludedapplicationlist コマンドレットを再度実行し、それを CustomDCCloneAllowList.xml ファイルに追加します。 詳細については、「[手順 2: get-addccloningexcludedapplicationlist コマンドレットを実行](/powershell/module/addsadministration/get-addccloningexcludedapplicationlist)する」を参照してください。
 
 ### <a name="distributed-system-interactions"></a>分散システムの相互作用
 通常、ローカルコンピューターに分離されたサービスは、複製に参加するときに成功または失敗します。 分散サービスでは、ネットワーク上にホストコンピューターの2つのインスタンスを短時間に同時に配置することを考慮する必要があります。 これは、複製が id の新しいベンダーとして登録されているパートナーシステムから情報を取得しようとしているサービスインスタンスとしてマニフェストを作成することができます。 また、サービスの両方のインスタンスは、異なる結果を使用して AD DS データベースに情報をプッシュする場合があります。 たとえば、Windows テストテクノロジ (WTT) サービスがインストールされている2台のコンピューターがドメインコントローラーとネットワーク上にある場合、どのコンピューターに通信するかを決定することはできません。
@@ -71,7 +71,7 @@ ms.locfileid: "80853995"
 ### <a name="cloning-failure"></a>複製エラー
 複製に失敗すると、コンピューターがセーフモードの形式であるディレクトリサービス修復モード (DSRM) でブートされないため、サービスベンダーはこのシナリオをテストする必要があります。 この時点で、コンピューターは複製を完了していません。 一部の状態が変更された可能性があり、一部の状態が元のドメインコントローラーから残っている可能性があります。 アプリケーションに与える影響を理解するには、このシナリオをテストします。
 
-複製に失敗した場合は、複製するアクセス許可を付与せずに、ドメインコントローラーを複製してみてください。 この場合、コンピューターは IP アドレスを変更しただけで、元のドメインコントローラーからの状態の大半を保持します。 複製するドメインコントローラーのアクセス許可を付与する方法の詳細については、「[手順 1: ソース仮想ドメインコントローラーに複製するアクセス許可を付与する](https://docs.microsoft.com/windows-server/identity/ad-ds/get-started/virtual-dc/virtualized-domain-controller-deployment-and-configuration)」を参照してください。
+複製に失敗した場合は、複製するアクセス許可を付与せずに、ドメインコントローラーを複製してみてください。 この場合、コンピューターは IP アドレスを変更しただけで、元のドメインコントローラーからの状態の大半を保持します。 複製するドメインコントローラーのアクセス許可を付与する方法の詳細については、「[手順 1: ソース仮想ドメインコントローラーに複製するアクセス許可を付与する](../../get-started/virtual-dc/virtualized-domain-controller-deployment-and-configuration.md)」を参照してください。
 
 ### <a name="pdc-emulator-cloning"></a>PDC エミュレーターの複製
 サービスおよびアプリケーションベンダーは、PDC エミュレーターが複製されるときに追加の再起動があるため、このシナリオをテストする必要があります。 さらに、複製処理中に、新しい複製が PDC エミュレーターと対話できるように、一時的な id で複製が実行されます。

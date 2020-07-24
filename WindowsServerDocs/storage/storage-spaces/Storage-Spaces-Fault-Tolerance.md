@@ -10,12 +10,12 @@ ms.date: 10/11/2017
 ms.assetid: 5e1d7ecc-e22e-467f-8142-bad6d82fc5d0
 description: ミラーリングとパリティを含む記憶域スペース ダイレクトにおける回復性オプションの説明。
 ms.localizationpriority: medium
-ms.openlocfilehash: 540398e78b35d7cd61464e012d0f3ccfa85d7152
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 517b5484bc02e377f40df84422a1910014c9b830
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475489"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955394"
 ---
 # <a name="fault-tolerance-and-storage-efficiency-in-storage-spaces-direct"></a>記憶域スペース ダイレクトでのフォールト トレランスと記憶域の効率
 
@@ -33,7 +33,7 @@ RAID と同様に、記憶域スペースの実装方法には複数の方法が
 
 ## <a name="mirroring"></a>ミラーリング
 
-ミラーリングを使ってあらゆるデータのコピーを複数保持することによって、フォールト トレランスが実現します。 これは、RAID-1 に非常に類似しています。 データをストライピングして配置する方法は、重要ではありません (詳細については、こちらの[ブログ](https://blogs.technet.microsoft.com/filecab/2016/11/21/deep-dive-pool-in-spaces-direct/)を参照してください)。ただし、ミラーリングを使用して格納されているデータはすべて、複数回記述されます。 コピーはそれぞれ、障害の発生が個別にとどまることが想定される別々の物理ハードウェア (別のサーバーの別のドライブ) に書き込まれます。
+ミラーリングを使ってあらゆるデータのコピーを複数保持することによって、フォールト トレランスが実現します。 これは、RAID-1 に非常に類似しています。 データをストライピングして配置する方法は、重要ではありません (詳細については、こちらの[ブログ](https://techcommunity.microsoft.com/t5/storage-at-microsoft/deep-dive-the-storage-pool-in-storage-spaces-direct/ba-p/425959)を参照してください)。ただし、ミラーリングを使用して格納されているデータはすべて、複数回記述されます。 コピーはそれぞれ、障害の発生が個別にとどまることが想定される別々の物理ハードウェア (別のサーバーの別のドライブ) に書き込まれます。
 
 Windows Server 2016 では、記憶域スペース用に 2 種類のミラーリング ("双方向" と "3 方向") が用意されています。
 
@@ -89,11 +89,11 @@ Windows Server 2016 の記憶域スペースでは、Microsoft Research によ�
 
 ![ローカル再構築コード](media/Storage-Spaces-Fault-Tolerance/local-reconstruction-codes-180px.png)
 
-このチュートリアルでは、[ローカル再構築コードがさまざまな障害シナリオを処理する方法と](https://blogs.technet.microsoft.com/filecab/2016/09/06/volume-resiliency-and-efficiency-in-storage-spaces-direct/)、それが魅力的である理由を私たちの[Claus](https://twitter.com/clausjor)eminently によってどのように扱うかについて、さらに詳しく説明します。
+このチュートリアルでは、[ローカル再構築コードがさまざまな障害シナリオを処理する方法と](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)、それが魅力的である理由を私たちの[Claus](https://twitter.com/clausjor)eminently によってどのように扱うかについて、さらに詳しく説明します。
 
 ## <a name="mirror-accelerated-parity"></a>ミラーリングによって高速化されたパリティ
 
-Windows Server 2016 以降では、記憶域スペース ダイレクトの 1 つのボリュームに対して、一部ではミラーを使用し、一部ではパリティを使用することができます。 書き込みはまずミラーリングされた部分に行われ、徐々にパリティ部分に移行していきます。 実際には、これは[イレイジャー コーディングを高速化するためにミラーリングを使っています](https://blogs.technet.microsoft.com/filecab/2016/09/06/volume-resiliency-and-efficiency-in-storage-spaces-direct/)。
+Windows Server 2016 以降では、記憶域スペース ダイレクトの 1 つのボリュームに対して、一部ではミラーを使用し、一部ではパリティを使用することができます。 書き込みはまずミラーリングされた部分に行われ、徐々にパリティ部分に移行していきます。 実際には、これは[イレイジャー コーディングを高速化するためにミラーリングを使っています](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)。
 
 3 方向ミラーとデュアル パリティを混在させるには、少なくとも 4 つの障害ドメイン (4 台のサーバー) が必要になります。
 
@@ -131,7 +131,7 @@ Windows Server 2016 以降では、記憶域スペース ダイレクトの 1 �
 
 次の表は、ハード ディスク ドライブ (HDD) とソリッドステート ドライブ (SSD) の両方が含まれているハイブリッド展開の各スケールでの、デュアル パリティとローカル再構築コードの記憶域効率を示しています。
 
-|    障害ドメイン      |    レイアウト           |    効率性   |
+|    障害ドメイン      |    Layout           |    効率性   |
 |-----------------------|---------------------|-----------------|
 |    2                  |    –                |    –            |
 |    3                  |    –                |    –            |
@@ -153,7 +153,7 @@ Windows Server 2016 以降では、記憶域スペース ダイレクトの 1 �
 
 次の表は、ソリッドステート ドライブ (SSD) のみが含まれているオールフラッシュ展開の各スケールでの、デュアル パリティとローカル再構築コードの記憶域効率を示しています。 オールフラッシュ構成では、パリティ レイアウトで、より大きいグループ サイズを使用でき、記憶域効率の向上を実現できます。
 
-|    障害ドメイン      |    レイアウト           |    効率性   |
+|    障害ドメイン      |    Layout           |    効率性   |
 |-----------------------|---------------------|-----------------|
 |    2                  |    –                |    –            |
 |    3                  |    –                |    –            |
@@ -216,7 +216,7 @@ Windows Server 2016 以降では、記憶域スペース ダイレクトの 1 �
 - [Windows Server 2016 での記憶域スペース ダイレクト](storage-spaces-direct-overview.md)
 - [Windows Server 2016 での障害ドメインの認識](../../failover-clustering/fault-domains.md)
 - [Erasure Coding in Azure by Microsoft Research (Microsoft Research による Azure でのイレイジャー コーディング)](https://www.microsoft.com/research/publication/erasure-coding-in-windows-azure-storage/)
-- [Local Reconstruction Codes and Accelerating Parity Volumes (ローカル再構築コードとパリティ ボリュームの高速化)](https://blogs.technet.microsoft.com/filecab/2016/09/06/volume-resiliency-and-efficiency-in-storage-spaces-direct/)
-- [Volumes in the Storage Management API (Storage Management API でのボリューム)](https://blogs.technet.microsoft.com/filecab/2016/08/29/deep-dive-volumes-in-spaces-direct/)
+- [Local Reconstruction Codes and Accelerating Parity Volumes (ローカル再構築コードとパリティ ボリュームの高速化)](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)
+- [Volumes in the Storage Management API (Storage Management API でのボリューム)](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)
 - [Storage Efficiency Demo at Microsoft Ignite 2016 (Microsoft Ignite 2016 での記憶域の効率に関するデモ)](https://www.youtube.com/watch?v=-LK2ViRGbWs&t=36m55s)
 - [Capacity Calculator for Storage Spaces Direct (記憶域スペース ダイレクトの容量計算 (プレビュー版))](https://aka.ms/s2dcalc)

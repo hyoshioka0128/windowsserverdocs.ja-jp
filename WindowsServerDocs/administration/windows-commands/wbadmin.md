@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fab17e2d3f1806543eedd8a918ae679a32265742
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: d8320ddd7c806999730ae1f8fd47ea559406e0a7
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85930847"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86954424"
 ---
 # <a name="wbadmin"></a>wbadmin
 
@@ -46,7 +46,7 @@ ms.locfileid: "85930847"
 |[Wbadmin restore catalog](wbadmin-restore-catalog.md)|ローカルコンピューター上のバックアップカタログが破損している場合に、指定した記憶域の場所からバックアップカタログを回復します。|
 |[Wbadmin delete catalog](wbadmin-delete-catalog.md)|ローカル コンピューター上のバックアップ カタログを削除します。 このサブコマンドは、このコンピューター上のバックアップカタログが破損していて、カタログの復元に使用できる別の場所にバックアップが保存されていない場合にのみ使用してください。|
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 -   [バックアップと回復](https://go.microsoft.com/fwlink/?LinkID=195054)
--   [Windows PowerShell の Windows Server バックアップコマンドレット](https://technet.microsoft.com/library/jj902428.aspx)
+-   [Windows PowerShell の Windows Server バックアップコマンドレット](/powershell/module/windowserverbackup/?view=winserver2012r2-ps)

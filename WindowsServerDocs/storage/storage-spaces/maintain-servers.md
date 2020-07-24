@@ -9,12 +9,12 @@ author: eldenchristensen
 ms.date: 10/08/2018
 ms.assetid: 73dd8f9c-dcdb-4b25-8540-1d8707e9a148
 ms.localizationpriority: medium
-ms.openlocfilehash: a317f358c37f607475890efe773b57ee8efaeb14
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 8dba155f8b8d7312a823dedc72d23268d7d13fbf
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473479"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955914"
 ---
 # <a name="taking-a-storage-spaces-direct-server-offline-for-maintenance"></a>記憶域スペース ダイレクト サーバーをメンテナンスのためオフラインにする
 
@@ -27,7 +27,7 @@ ms.locfileid: "85473479"
 次の手順を使用して、記憶域スペース ダイレクトのクラスター内のサーバーを適切に一時停止してから、オフラインにします。
 
    > [!IMPORTANT]
-   > 記憶域スペース ダイレクトのクラスターに更新をインストールするには、クラスター対応更新 (CAU) を使用します。これによりこのトピックの手順が自動的に実行されるため、更新をインストールするときに手順を別途実行する必要がありません。 詳しくは、「[クラスター対応更新 (CAU)](https://technet.microsoft.com/library/hh831694.aspx)」をご覧ください。
+   > 記憶域スペース ダイレクトのクラスターに更新をインストールするには、クラスター対応更新 (CAU) を使用します。これによりこのトピックの手順が自動的に実行されるため、更新をインストールするときに手順を別途実行する必要がありません。 詳しくは、「[クラスター対応更新 (CAU)](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831694(v=ws.11))」をご覧ください。
 
 ## <a name="verifying-its-safe-to-take-the-server-offline"></a>サーバーを安全にオフラインにできることを確認する
 
@@ -186,4 +186,4 @@ MyVolume3    Mirror                OK                Healthy      True          
 ## <a name="additional-references"></a>その他のリファレンス
 
 - [記憶域スペースダイレクトの概要](storage-spaces-direct-overview.md)
-- [クラスター対応更新 (CAU)](https://technet.microsoft.com/library/hh831694.aspx)
+- [クラスター対応更新 (CAU)](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831694(v=ws.11))

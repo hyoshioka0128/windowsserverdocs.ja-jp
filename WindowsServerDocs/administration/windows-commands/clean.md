@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7a30e1f765959ed60efa662301f95defc21d6587
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 39029c82dffe004d65b1279e5baafc14fbcc8257
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929906"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955674"
 ---
 # <a name="clean"></a>clean
 
@@ -23,7 +23,7 @@ ms.locfileid: "85929906"
 フォーカスがあるディスクからすべてのパーティションまたはボリュームのフォーマットを削除します。
 
 >[!NOTE]
-> このコマンドの PowerShell バージョンについては、「 [clear-disk コマンド](https://docs.microsoft.com/powershell/module/storage/clear-disk)」を参照してください。
+> このコマンドの PowerShell バージョンについては、「 [clear-disk コマンド](/powershell/module/storage/clear-disk)」を参照してください。
 
 ## <a name="syntax"></a>構文
 
@@ -53,8 +53,8 @@ clean [all]
 clean
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
-- [ディスクの消去コマンド](https://docs.microsoft.com/powershell/module/storage/clear-disk)
+- [ディスクの消去コマンド](/powershell/module/storage/clear-disk)
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

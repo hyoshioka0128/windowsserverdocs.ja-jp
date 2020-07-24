@@ -8,12 +8,12 @@ ms.date: 06/13/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: active-directory-federation-services
-ms.openlocfilehash: 09b789937c9ff1dad90c3533616a4ed800204267
-ms.sourcegitcommit: 046123d4f2d24dc00b35ea99adee6f8d322c76bf
+ms.openlocfilehash: 1bd5d95739bc1c975f5f0c4d7efb8dc6f91e0412
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85416295"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86954404"
 ---
 # <a name="build-a-single-page-web-application-using-oauth-and-adaljs-with-ad-fs-2016-or-later"></a>OAuth を使用し、AD FS 2016 以降の ADAL.JS で単一ページ web アプリケーションを構築する
 
@@ -38,7 +38,7 @@ ms.locfileid: "85416295"
 ADAL が認証用のトリガーを確認すると、アプリケーションによって提供される情報が使用され、認証が AD FS STS に送られます。  AD FS にパブリッククライアントとして登録されているシングルページアプリケーションは、暗黙的な許可フローに対して自動的に構成されます。 承認要求は、#fragment を介してアプリケーションに返される ID トークンになります。 さらに、バックエンド WebAPI を呼び出すと、この ID トークンがヘッダーのベアラートークンとして処理され、WebAPI にアクセスできるようになります。
 
 ## <a name="setting-up-the-development-box"></a>開発ボックスの設定
-このチュートリアルでは、Visual Studio 2015 を使用します。 プロジェクトは ADAL JS ライブラリを使用します。 ADAL の詳細については[Active Directory 認証ライブラリ .net](https://msdn.microsoft.com/library/azure/mt417579.aspx)をご覧ください。
+このチュートリアルでは、Visual Studio 2015 を使用します。 プロジェクトは ADAL JS ライブラリを使用します。 ADAL の詳細については[Active Directory 認証ライブラリ .net](/dotnet/api/microsoft.identitymodel.clients.activedirectory?view=azure-dotnet)をご覧ください。
 
 ## <a name="setting-up-the-environment"></a>環境のセットアップ
 このチュートリアルでは、次の基本的なセットアップを使用します。
@@ -145,7 +145,7 @@ ADAL JS の構成
         }
     );
 
-|パラメーター|[説明]|
+|パラメーター|Description|
 |--------|--------|
 |ValidAudience|これにより、トークン内で照合される "audience" の値が構成されます。|
 |ValidIssuer|これにより、トークン内でチェックされる "issuer" の値が構成されます。|

@@ -8,12 +8,12 @@ ms.topic: get-started-article
 ms.date: 10/28/2018
 ms.subservice: hybrid
 ms.author: billmath
-ms.openlocfilehash: eaad015d0097d9b65a4aba8a5846c7782b6966d1
-ms.sourcegitcommit: 4af8ab2e5c199ecff0697e5331fa7f61f2556a8f
+ms.openlocfilehash: 5db03a2d275dc4a02295c588bd0789fa757b8503
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86866041"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956220"
 ---
 # <a name="deploying-active-directory-federation-services-in-azure"></a>Azure での Active Directory フェデレーション サービスのデプロイ
 AD FS は、単純かつ安全な ID フェデレーションと Web シングル サインオン (SSO) 機能を実現します。 Azure AD または O365 とのフェデレーションによって、ユーザーはオンプレミスの資格情報を認証に使用し、クラウド内のあらゆるリソースにアクセスすることができます。 そのため、オンプレミスとクラウドの両方のリソースに確実にアクセスできるよう、AD FS インフラストラクチャには、高い可用性を確保することが重要となります。 AD FS を Azure にデプロイすると、必要な高可用性を最小限の手間で確保できます。
@@ -232,7 +232,7 @@ Web アプリケーション プロキシ サーバーが ILB の内側にある
 **7.2.Web アプリケーション プロキシ ロールをインストールする**
 
 Web アプリケーション プロキシ サーバーから ILB の内側の AD FS サーバーに到達できる状態を確保したら、続けて Web アプリケーション プロキシ サーバーをインストールすることができます。 Web アプリケーション プロキシ サーバーは、ドメインに参加する必要はありません。 リモート アクセス ロールを選択して、2 つの Web アプリケーション プロキシ サーバーに Web アプリケーション プロキシ ロールをインストールします。 サーバー マネージャーの指示に従って、WAP のインストールを実行してください。
-WAP のデプロイ方法について詳しくは、「 [Web アプリケーション プロキシ サーバーをインストールし、構成する](https://technet.microsoft.com/library/dn383662.aspx)」をご覧ください。
+WAP のデプロイ方法について詳しくは、「 [Web アプリケーション プロキシ サーバーをインストールし、構成する](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn383662(v=ws.11))」をご覧ください。
 
 ### <a name="8--deploying-the-internet-facing-public-load-balancer"></a>8. インターネットに接続する (パブリック) Load Balancer を展開する
 **8.1. インターネットに接続された (パブリック) Load Balancer を作成する**
@@ -354,7 +354,7 @@ AD FS のテストは、IdpInitiatedSignon.aspx ページを使用して行う�
 | AdminUserName |仮想マシンのローカル管理者の名前 |
 | AdminPassword |仮想マシンのローカル管理者アカウントのパスワード |
 
-## <a name="additional-resources"></a>その他の技術情報
+## <a name="additional-resources"></a>その他のリソース
 * [可用性セット](https://aka.ms/Azure/Availability) 
 * [Azure Load Balancer](https://aka.ms/Azure/ILB)
 * [内部 Load Balancer](https://aka.ms/Azure/ILB/Internal)
@@ -364,6 +364,6 @@ AD FS のテストは、IdpInitiatedSignon.aspx ページを使用して行う�
 * [AD FS と Web アプリケーション プロキシについてのリンク](https://aka.ms/ADFSLinks) 
 
 ## <a name="next-steps"></a>次のステップ
-* [オンプレミス ID と Azure Active Directory の統合](https://docs.microsoft.com/azure/active-directory/hybrid/whatis-hybrid-identity)
+* [オンプレミス ID と Azure Active Directory の統合](/azure/active-directory/hybrid/whatis-hybrid-identity)
 * [Azure AD Connect を使用した AD FS の構成と管理](/azure/active-directory/hybrid/how-to-connect-fed-whatis)
 * [Azure Traffic Manager を使用した Azure への可用性に優れた地域間 AD FS デプロイ](active-directory-adfs-in-azure-with-azure-traffic-manager.md)

@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 22fc496eddc17f4e6a1a5f02321c921009f9fd95
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 5d51cc178ee5b689071336b0dabd1e8d3565bcd2
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924813"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955364"
 ---
 # <a name="certreq"></a>certreq
 
@@ -124,15 +124,15 @@ INF ファイルのこの領域は、新しい証明書要求テンプレート�
 | RenewalCert | 証明書の要求が生成されたシステム上に存在する証明書を更新する必要がある場合は、その証明書のハッシュをこのキーの値として指定する必要があります。 | 証明書要求が作成されたコンピューターで使用可能な証明書の証明書ハッシュ。 証明書のハッシュがわからない場合は、証明書 MMC スナップインを使用して、更新する必要がある証明書を確認します。 証明書のプロパティを開き、 `Thumbprint` 証明書の属性を確認します。 証明書の更新に `PKCS#7` は、またはのいずれかの要求形式が必要です `CMC` 。 | `RenewalCert = 4EDF274BD2919C6E9EC6A522F0F3B153E9B1582D` |
 | RequesterName | 別のユーザー要求の代理として登録するように要求を作成します。また、登録エージェント証明書を使用して要求に署名する必要があります。これを行わないと、CA は要求を拒否します。 オプションを使用して、 `-cert` 登録エージェントの証明書を指定します。 `RequestType`がまたはに設定されている場合、証明書の要求に対して要求者名を指定でき `PKCS#7` `CMC` ます。 がに設定されている場合 `RequestType` `PKCS#10` 、このキーは無視されます。 は、 `Requestername` 要求の一部としてのみ設定できます。 保留中の要求でを操作することはできません `Requestername` 。 | `Domain\User` | `Requestername = Contoso\BSmith` |
 | RequestType | 証明書要求を生成して送信するために使用される標準を決定します。 | <ul><li>`PKCS10 -- 1`</li><li>`PKCS7 -- 2`</li><li>`CMC -- 3`</li><li>`Cert -- 4`</li><li>`SCEP -- fd00 (64768)`</li></ul>**ヒント:** このオプションは、自己署名または自己発行の証明書を示します。 要求を生成するのではなく、新しい証明書を作成してから、証明書をインストールします。 "自己署名" は既定値です。 – Cert オプションを使用して署名証明書を指定し、自己署名されていない自己発行の証明書を作成します。 | `RequestType = CMC` |
-| SecurityDescriptor | セキュリティ保護可能なオブジェクトに関連付けられたセキュリティ情報を格納します。 ほとんどのセキュリティ保護可能なオブジェクトでは、オブジェクトを作成する関数呼び出しでオブジェクトのセキュリティ記述子を指定できます。[セキュリティ記述子定義言語](https://msdn.microsoft.com/library/aa379567(v=vs.85).aspx)に基づく文字列。<p>**ヒント:** これは、コンピューターコンテキストのスマートカード以外のキーにのみ関連します。 | `SecurityDescriptor = D:P(A;;GA;;;SY)(A;;GA;;;BA)` |
+| SecurityDescriptor | セキュリティ保護可能なオブジェクトに関連付けられたセキュリティ情報を格納します。 ほとんどのセキュリティ保護可能なオブジェクトでは、オブジェクトを作成する関数呼び出しでオブジェクトのセキュリティ記述子を指定できます。[セキュリティ記述子定義言語](/windows/win32/secauthz/security-descriptor-definition-language)に基づく文字列。<p>**ヒント:** これは、コンピューターコンテキストのスマートカード以外のキーにのみ関連します。 | `SecurityDescriptor = D:P(A;;GA;;;SY)(A;;GA;;;BA)` |
 | AlternateSignatureAlgorithm | PKCS # 10 要求または証明書署名の署名アルゴリズムオブジェクト識別子 (OID) が不連続であるか結合されているかを示すブール値を指定して取得します。 | `true | false` | `AlternateSignatureAlgorithm = false`<p>RSA 署名の場合、 `false` はを示しますが、は `Pkcs1 v1.5` `true` シグネチャを示し `v2.1` ます。 |
 | サイレント | 既定では、このオプションを使用すると、ユーザーの対話型デスクトップにアクセスしたり、スマートカードの PIN などの情報を要求したりすることができます。 このキーが TRUE に設定されている場合、CSP はデスクトップと対話する必要がなく、ユーザーインターフェイスの表示がブロックされます。 | `true | false` | `Silent = true` |
 | S | このパラメーターが TRUE に設定されている場合、オブジェクト識別子の値1.2.840.113549.1.9.15 を持つ拡張機能が要求に追加されます。 オブジェクト識別子の数は、インストールされているオペレーティングシステムのバージョンと CSP の機能によって異なります。これは、Outlook などの Secure Multipurpose Internet Mail Extensions (S/MIME) アプリケーションで使用される対称暗号化アルゴリズムを指します。 | `true | false` | `SMIME = true` |
 | UseExistingKeySet | このパラメーターは、既存のキーペアを証明書要求の作成に使用することを指定するために使用されます。 このキーが TRUE に設定されている場合は、RenewalCert キーまたは KeyContainer 名の値も指定する必要があります。 既存のキーのプロパティを変更することはできないため、エクスポート可能なキーは設定しないでください。 この場合、証明書の要求の作成時にキーマテリアルは生成されません。 | `true | false` | `UseExistingKeySet = true` |
 | KeyProtection | 秘密キーを使用する前に保護する方法を示す値を指定します。 | <ul><li>`XCN_NCRYPT_UI_NO_PROTCTION_FLAG -- 0`</li><li>`XCN_NCRYPT_UI_PROTECT_KEY_FLAG -- 1`</li><li>`XCN_NCRYPT_UI_FORCE_HIGH_PROTECTION_FLAG -- 2`</li></ul> | `KeyProtection = NCRYPT_UI_FORCE_HIGH_PROTECTION_FLAG` |
 | SuppressDefaults | 既定の拡張機能と属性が要求に含まれるかどうかを示すブール値を指定します。 既定値は、オブジェクト識別子 (Oid) によって表されます。 | `true | false` | `SuppressDefaults = true` |
-| FriendlyName | 新しい証明書のフレンドリ名。 | テキスト | `FriendlyName = Server1` |
-| ValidityPeriodUnits | ValidityPeriod で使用する単位の数を指定します。 注: これは、がの場合にのみ使用され `request type=cert` ます。 | 数字 | `ValidityPeriodUnits = 3` |
+| FriendlyName | 新しい証明書のフレンドリ名。 | Text | `FriendlyName = Server1` |
+| ValidityPeriodUnits | ValidityPeriod で使用する単位の数を指定します。 注: これは、がの場合にのみ使用され `request type=cert` ます。 | 数値 | `ValidityPeriodUnits = 3` |
 | ValidityPeriod | ValidityPeriod は米国英語の複数形の期間である必要があります。 注: これは、要求の種類が cert の場合にのみ使用されます。 | `Years |  Months | Weeks | Days | Hours | Minutes | Seconds` | `ValidityPeriod = Years` |
 
 <sup>1</sup>等号 (=) の左側のパラメーター
@@ -248,7 +248,7 @@ certreq -policy certsrv.req policy.inf newcertsrv.req
 
 #### <a name="examples"></a>例
 
-[Capolicy.inf 構文](https://docs.microsoft.com/windows-server/networking/core-network-guide/cncg/server-certs/prepare-the-capolicy-inf-file)でポリシーの .inf ファイルの例を見つけます。
+[Capolicy.inf 構文](../../networking/core-network-guide/cncg/server-certs/prepare-the-capolicy-inf-file.md)でポリシーの .inf ファイルの例を見つけます。
 
 ### <a name="certreq--sign"></a>certreq-sign
 
@@ -311,7 +311,7 @@ certreq –enroll -machine –cert 61 2d 3c fe 00 00 00 00 00 05 renew
 | -crl | によって指定された base64 エンコード PKCS #7 ファイルへの出力に証明書失効リスト (Crl) を含め `certchainfileout` ます。または、によって指定された base64 エンコードファイルにも含め `requestfileout` ます。 |
 | -rpc | 分散 COM ではなくリモートプロシージャコール (RPC) サーバー接続を使用するように Active Directory 証明書サービス (AD CS) に指示します。 |
 | -adminforcemachine | キーサービスまたは偽装を使用して、ローカルシステムコンテキストから要求を送信します。 このオプションを呼び出しているユーザーは、ローカル管理者のメンバーである必要があります。 |
-| -renewonbehalfof | 署名証明書で特定されたサブジェクトに代わって更新を送信します。 [ICertRequest:: Submit メソッド](https://docs.microsoft.com/windows/win32/api/certcli/nf-certcli-icertrequest-submit)を呼び出すと、CR_IN_ROBO が設定します。 |
+| -renewonbehalfof | 署名証明書で特定されたサブジェクトに代わって更新を送信します。 [ICertRequest:: Submit メソッド](/windows/win32/api/certcli/nf-certcli-icertrequest-submit)を呼び出すと、CR_IN_ROBO が設定します。 |
 | -f | 既存のファイルを強制的に上書きします。 これにより、テンプレートとポリシーのキャッシュも省略されます。 |
 | -Q | サイレントモードを使用します。すべての対話型プロンプトを非表示にします。 |
 | -unicode | 標準出力がリダイレクトされるか別のコマンドにパイプ処理されるときに、Unicode 出力を書き込みます。これは、Windows PowerShell スクリプトから呼び出すときに役立ちます。 |
@@ -335,9 +335,9 @@ certreq –enroll -machine –cert 61 2d 3c fe 00 00 00 00 00 05 renew
 
 - [セキュリティで保護された LDAP 証明書にサブジェクトの別名を追加する方法](https://support.microsoft.com/help/931351/how-to-add-a-subject-alternative-name-to-a-secure-ldap-certificate)
 
-- [Test Lab Guide: Deploying an AD CS Two-Tier PKI Hierarchy](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831348(v=ws.11))
+- [Test Lab Guide: Deploying an AD CS Two-Tier PKI Hierarchy](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831348(v=ws.11))
 
-- [付録 3: Certreq.exe 構文](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc736326(v=ws.10))
+- [付録 3: Certreq.exe 構文](/previous-versions/windows/it-pro/windows-server-2003/cc736326(v=ws.10))
 
 - [Web サーバーの SSL 証明書を手動で作成する方法](https://techcommunity.microsoft.com/t5/core-infrastructure-and-security/how-to-create-a-web-server-ssl-certificate-manually/ba-p/1128529)
 
