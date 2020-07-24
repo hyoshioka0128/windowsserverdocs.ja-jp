@@ -8,12 +8,12 @@ ms.date: 01/18/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: c443d596e8e35f7ccf4aa23b622323122a2778e9
-ms.sourcegitcommit: 76a3b5f66e47e08e8235e2d152185b304d03b68b
+ms.openlocfilehash: 6fa77276aa41dc59c3dd5a131b5d8fb8a3dd2e58
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84663185"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965454"
 ---
 # <a name="configuring-ad-fs-for-user-certificate-authentication"></a>ユーザー証明書認証の AD FS の構成
 
@@ -36,14 +36,14 @@ ms.locfileid: "84663185"
 
 AD FS 管理コンソールまたは PowerShell コマンドレットを使用して AD FS で、イントラネットまたはエクストラネットの認証方法としてユーザー証明書認証を有効にし `Set-AdfsGlobalAuthenticationPolicy` ます。
 
-Azure AD 証明書認証の AD FS を構成する場合は、証明書の発行者とシリアル番号に必要な[Azure AD 設定](https://docs.microsoft.com/azure/active-directory/active-directory-certificate-based-authentication-get-started#step-2-configure-the-certificate-authorities)と[AD FS 要求規則](https://docs.microsoft.com/azure/active-directory/active-directory-certificate-based-authentication-ios#requirements)を構成していることを確認します。
+Azure AD 証明書認証の AD FS を構成する場合は、証明書の発行者とシリアル番号に必要な[Azure AD 設定](/azure/active-directory/active-directory-certificate-based-authentication-get-started#step-2-configure-the-certificate-authorities)と[AD FS 要求規則](/azure/active-directory/active-directory-certificate-based-authentication-ios#requirements)を構成していることを確認します。
 
 また、いくつかのオプションの側面もあります。
 - EKU (要求の種類) に加えて、証明書のフィールドと拡張機能に基づく要求を使用する場合は、 https://schemas.microsoft.com/2012/12/certificatecontext/extension/eku) Active Directory 要求プロバイダー信頼の規則に従って追加の要求パスを構成します。  利用可能な証明書の要求の完全な一覧については、以下を参照してください。  
 - 証明書の種類に基づいてアクセスを制限する必要がある場合は、アプリケーションの発行承認規則 AD FS で、証明書の追加のプロパティを使用できます。 一般的なシナリオは、"MDM プロバイダーによってプロビジョニングされた証明書のみを許可する" または "スマートカード証明書のみを許可する" です。
 >[!IMPORTANT]
 > 認証にデバイスコードフローを使用し、Azure AD 以外の IDP (例: AD FS) を使用してデバイス認証を実行すると、デバイスベースのアクセスを強制することはできません (たとえば、サードパーティの MDM サービスを使用して管理されているデバイスのみが Azure AD リソースに対して許可されます)。 Azure AD で企業リソースへのアクセスを保護し、データの漏えいを防ぐには、Azure AD デバイスベースの条件付きアクセスを構成する必要があります (Azure AD 条件付きアクセスでデバイスが "準拠しているとマークされている必要があります")。
-- [この記事](https://technet.microsoft.com/library/dn786429(v=ws.11).aspx)の「クライアント認証の信頼された発行者の管理」にあるガイダンスを使用して、クライアント証明書に対して許可されている発行証明機関を構成します。
+- [この記事](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn786429(v=ws.11))の「クライアント認証の信頼された発行者の管理」にあるガイダンスを使用して、クライアント証明書に対して許可されている発行証明機関を構成します。
 - 証明書認証を行う場合は、エンドユーザーのニーズに合わせてサインインページを変更することをお勧めします。 一般的なケースとしては、(a) "X509 証明書によるサインイン" をエンドユーザーにとって使いやすいものに変更します。
 
 ## <a name="configure-seamless-certificate-authentication-for-chrome-browser-on-windows-desktops"></a>Windows デスクトップで Chrome ブラウザーのシームレスな証明書認証を構成する
@@ -76,7 +76,7 @@ AD FS は、AD FS と同じホスト名を持つポート49443で、既定でユ
 すべての AD FS および WAP サーバーは、提示された証明書がまだ有効であり、失効していないかどうかを検証するために、CRL エンドポイントに達している必要があります。 CRL 検証は、HTTPS、HTTP、LDAP、または OCSP (オンライン証明書状態プロトコル) 経由で実行できます。 AD FS/WAP サーバーがエンドポイントに接続できない場合、認証は失敗します。 トラブルシューティングを行うには、次の手順に従います。 
 1) Pki システムからユーザー証明書を失効させるために使用する CRL エンドポイントを確認するには、PKI エンジニアに問い合わせてください。 
 2)  各 AD FS/WAP サーバーで、使用されているプロトコル (通常は HTTPS または HTTP) を介して CRL エンドポイントに到達可能であることを確認します。
-3)  高度な検証を行うには、各 AD FS/WAP サーバーで[CAPI2 イベントログを有効に](https://blogs.msdn.microsoft.com/benjaminperkins/2013/09/30/enable-capi2-event-logging-to-troubleshoot-pki-and-ssl-certificate-issues/)します。
+3)  高度な検証を行うには、各 AD FS/WAP サーバーで[CAPI2 イベントログを有効に](/archive/blogs/benjaminperkins/enable-capi2-event-logging-to-troubleshoot-pki-and-ssl-certificate-issues)します。
 4) CAPI2 操作ログでイベント ID 41 (失効の確認) を確認します。
 5) 確認する対象`‘\<Result value="80092013"\>The revocation function was unable to check revocation because the revocation server was offline.\</Result\>'`
 
@@ -92,7 +92,7 @@ AD FS では、クライアントデバイス (またはブラウザー) とロ�
     *   入力`netsh http add sslcert ipport=0.0.0.0:{your_certauth_port} certhash={your_certhash} appid={your_applicaitonGUID}`
 
 ### <a name="check-if-the-client-device-has-been-provisioned-with-the-certificate-correctly"></a>クライアントデバイスに証明書が正しくプロビジョニングされているかどうかを確認する
-一部のデバイスは正常に機能していますが、他のデバイスは動作していません。 この場合、通常、クライアントデバイスにユーザー証明書が正しくプロビジョニングされていないことが原因です。 次の手順に従ってください。 
+一部のデバイスは正常に機能していますが、他のデバイスは動作していません。 この場合、通常、クライアントデバイスにユーザー証明書が正しくプロビジョニングされていないことが原因です。 以下の手順に従います。 
 1)  この問題が Android デバイスに固有のものである場合、最も一般的な問題は、証明書チェーンが Android デバイスで完全に信頼されていないことです。  MDM ベンダーに問い合わせて、証明書が正しくプロビジョニングされており、チェーン全体が Android デバイスで完全に信頼されていることを確認します。 
 2)  この問題が Windows デバイスに固有のものである場合は、ログインしているユーザーの Windows 証明書ストア (システム/コンピューターではありません) を確認して、証明書が正しくプロビジョニングされているかどうかを確認します。
 3)  クライアントユーザー証明書を .cer ファイルにエクスポートし、コマンド "certutil-f-urlfetch-verify certificatefilename .cer" を実行します。
@@ -138,4 +138,4 @@ AD FS では、クライアントデバイス (またはブラウザー) とロ�
 
 ## <a name="related-links"></a>関連リンク
 * [AD FS 証明書認証の代替ホスト名バインドを構成する](ad-fs-support-for-alternate-hostname-binding-for-certificate-authentication.md)
-* [Azure AD で証明機関を構成する](https://docs.microsoft.com/azure/active-directory/active-directory-certificate-based-authentication-get-started#step-2-configure-the-certificate-authorities)
+* [Azure AD で証明機関を構成する](/azure/active-directory/active-directory-certificate-based-authentication-get-started#step-2-configure-the-certificate-authorities)

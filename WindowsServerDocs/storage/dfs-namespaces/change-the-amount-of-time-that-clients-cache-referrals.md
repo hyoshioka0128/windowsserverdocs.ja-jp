@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: d421a14c2a6021d45cd16f30c526ff1670ae62e3
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: ddbb799cc46da040bfc2f62445cc2b41945d09f1
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475199"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966294"
 ---
 # <a name="change-the-amount-of-time-that-clients-cache-referrals"></a>クライアントが紹介をキャッシュする時間の長さを変更する
 
@@ -30,7 +30,7 @@ ms.locfileid: "85475199"
 3.  **[紹介]** タブの **[キャッシュ時間 (秒)]** ボックスに、クライアントが名前空間のルートの紹介をキャッシュする時間の長さを秒単位で入力します。 既定値は 300 秒 (5 分) です。
 
 > [!TIP]
-> Windows PowerShell を使ってクライアントが名前空間ルート紹介をキャッシュする時間の長さを変更するには、[Set-DfsnRoot TimeToLiveSec](https://technet.microsoft.com/library/jj884281.aspx) コマンドレットを使います。 これらのコマンドレットは、Windows Server 2012 で導入されました。
+> Windows PowerShell を使ってクライアントが名前空間ルート紹介をキャッシュする時間の長さを変更するには、[Set-DfsnRoot TimeToLiveSec](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753448(v=ws.11)) コマンドレットを使います。 これらのコマンドレットは、Windows Server 2012 で導入されました。
 
 ## <a name="to-change-the-amount-of-time-that-clients-cache-folder-referrals"></a>クライアントがフォルダーの紹介をキャッシュする時間の長さを変更するには
 
@@ -44,5 +44,3 @@ ms.locfileid: "85475199"
 
 -   [DFS 名前空間を調整する](tuning-dfs-namespaces.md)
 -   [DFS 名前空間の管理アクセス許可を委任する](delegate-management-permissions-for-dfs-namespaces.md)
-
-

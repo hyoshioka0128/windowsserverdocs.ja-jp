@@ -8,18 +8,18 @@ ms.date: 06/18/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 24e5290bcb34860a150c8bb015c3b383c00e34b4
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: 1b156701090acc79a63afab26653f42044a23741
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81623790"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966544"
 ---
 # <a name="securing-domain-controllers-against-attack"></a>攻撃に対してドメイン コントローラーをセキュリティで保護する
 
 > 適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
-*法 3: 悪意のあるユーザーがコンピューターに物理的にアクセスできない場合、それはコンピューターではなくなります。* - [セキュリティに関する10の不変法 (バージョン 2.0)](https://technet.microsoft.com/security/hh278941.aspx)
+*法 3: 悪意のあるユーザーがコンピューターに物理的にアクセスできない場合、それはコンピューターではなくなります。* - [セキュリティに関する10の不変法 (バージョン 2.0)](https://www.microsoft.com/en-us/msrc?rtc=1)
 
 ドメインコントローラーは、企業がサーバー、ワークステーション、ユーザー、およびアプリケーションを効率的に管理できるようにするサービスとデータを提供するだけでなく、AD DS データベースの物理ストレージを提供します。 ドメインコントローラーへの特権アクセスが悪意のあるユーザーによって取得された場合、そのユーザーは、Active Directory によって管理されているすべてのシステムとアカウントの変更、破損、または削除を行うことができます。また、拡張機能によって、AD DS ます。
 
@@ -53,7 +53,7 @@ ms.locfileid: "81623790"
 
 ### <a name="remote-locations-with-limited-space-and-security"></a>領域とセキュリティが制限されたリモートの場所
 
-1台の物理サーバーのみをインストールできる場所がインフラストラクチャに含まれている場合は、仮想化ワークロードを実行できるサーバーをリモートの場所にインストールし、サーバー内のすべてのボリュームを保護するように BitLocker ドライブ暗号化を構成する必要があります。 サーバー上の1台の仮想マシンで、ホスト上で別の仮想マシンとして実行されている他のサーバーを使用して、RODC を実行する必要があります。 RODC の展開の計画に関する情報については、 [「読み取り専用ドメインコントローラーの計画と展開ガイド](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771744(v=ws.10))」を参照してください。 仮想化ドメインコントローラーの展開とセキュリティ保護の詳細については、「 [hyper-v でのドメインコントローラーの実行](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd363553(v=ws.10))」を参照してください。 Hyper-v のセキュリティ強化、仮想マシンの管理の委任、および仮想マシンの保護に関する詳細なガイダンスについては、Microsoft web サイトの「 [Hyper-v セキュリティガイド](https://www.microsoft.com/download/details.aspx?id=16650)ソリューションアクセラレータ」を参照してください。
+1台の物理サーバーのみをインストールできる場所がインフラストラクチャに含まれている場合は、仮想化ワークロードを実行できるサーバーをリモートの場所にインストールし、サーバー内のすべてのボリュームを保護するように BitLocker ドライブ暗号化を構成する必要があります。 サーバー上の1台の仮想マシンで、ホスト上で別の仮想マシンとして実行されている他のサーバーを使用して、RODC を実行する必要があります。 RODC の展開の計画に関する情報については、 [「読み取り専用ドメインコントローラーの計画と展開ガイド](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc771744(v=ws.10))」を参照してください。 仮想化ドメインコントローラーの展開とセキュリティ保護の詳細については、「 [hyper-v でのドメインコントローラーの実行](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd363553(v=ws.10))」を参照してください。 Hyper-v のセキュリティ強化、仮想マシンの管理の委任、および仮想マシンの保護に関する詳細なガイダンスについては、Microsoft web サイトの「 [Hyper-v セキュリティガイド](https://www.microsoft.com/download/details.aspx?id=16650)ソリューションアクセラレータ」を参照してください。
 
 ## <a name="domain-controller-operating-systems"></a>ドメインコントローラーのオペレーティングシステム
 

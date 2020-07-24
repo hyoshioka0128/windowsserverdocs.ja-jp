@@ -9,16 +9,16 @@ ms.author: johnmar
 ms.date: 03/29/2018
 description: この記事では、Microsoft HCI (記憶域スペースダイレクト) のディザスターリカバリーのために現在利用できるシナリオについて説明します。
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f3159e0c215d898848df71c6488cd491b7ded38
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 5c9c36e90f9bfae053197b6a36201748cb7e88d7
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80859165"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966454"
 ---
 # <a name="disaster-recovery-with-storage-spaces-direct"></a>記憶域スペースダイレクトを使用したディザスターリカバリー
 
-> 適用対象: Windows Server 2019、Windows Server 2016
+> 適用先:Windows Server 2019、Windows Server 2016
 
 このトピックでは、ディザスターリカバリー用にハイパー集約インフラストラクチャ (HCI) を構成するシナリオについて説明します。
 
@@ -55,7 +55,7 @@ ms.locfileid: "80859165"
 
 ## <a name="hyper-v-replica"></a>Hyper-V レプリカ
 
-Hyper-v[レプリカ](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/set-up-hyper-v-replica)は、ハイパー集約型インフラストラクチャでのディザスターリカバリーのための仮想マシンレベルのレプリケーションを提供します。 Hyper-v レプリカでは、仮想マシンを取得して、セカンダリサイトまたは Azure (レプリカ) にレプリケートすることができます。 次に、セカンダリサイトから、Hyper-v レプリカが3番目の (拡張レプリカ) に仮想マシンをレプリケートできるようになります。
+Hyper-v[レプリカ](../../virtualization/hyper-v/manage/set-up-hyper-v-replica.md)は、ハイパー集約型インフラストラクチャでのディザスターリカバリーのための仮想マシンレベルのレプリケーションを提供します。 Hyper-v レプリカでは、仮想マシンを取得して、セカンダリサイトまたは Azure (レプリカ) にレプリケートすることができます。 次に、セカンダリサイトから、Hyper-v レプリカが3番目の (拡張レプリカ) に仮想マシンをレプリケートできるようになります。
 
 ![Hyper-v レプリケーションの図](media/storage-spaces-direct-disaster-recovery/Disaster-Recovery-Figure2.png)
 
@@ -77,7 +77,7 @@ Hyper-v レプリカを使用すると、レプリケーションは Hyper-v に
 - ボリュームシャドウコピーサービス (VSS) で増分シャドウコピーをレプリケートする頻度を設定します。
 - 変更がレプリケートされる頻度 (30 秒、5分、15分)。
 
-HCI が Hyper-v レプリカに参加する場合、各クラスターに[Hyper-v Replica Broker](https://blogs.technet.microsoft.com/virtualization/2012/03/27/why-is-the-hyper-v-replica-broker-required/)リソースが作成されている必要があります。 このリソースにはいくつかの処理があります。
+HCI が Hyper-v レプリカに参加する場合、各クラスターに[Hyper-v Replica Broker](https://techcommunity.microsoft.com/t5/virtualization/bg-p/Virtualization)リソースが作成されている必要があります。 このリソースにはいくつかの処理があります。
 
 1.    は、Hyper-v レプリカを接続するクラスターごとに1つの名前空間を提供します。
 2.    レプリカ (または拡張レプリカ) が最初にコピーを受信したときにそのクラスター内のどのノードが配置されるかを決定します。
@@ -91,7 +91,7 @@ HCI が Hyper-v レプリカに参加する場合、各クラスターに[Hyper-
 
 ### <a name="non-authoritative"></a>権限のない
 
-権限のない復元は、Windows NT バックアップを使用して行うことができ、クラスターノード自体の完全な復元に相当します。 クラスターノード (およびクラスターレジストリデータベース) と現在のすべてのクラスター情報を復元するだけでよい場合は、権限のないを使用して復元します。 権限のない復元は、Windows NT バックアップインターフェイスまたはコマンドライン WBADMIN を使用して実行できます。EXCEL.EXE.
+権限のない復元は、Windows NT バックアップを使用して行うことができ、クラスターノード自体の完全な復元に相当します。 クラスターノード (およびクラスターレジストリデータベース) と現在のすべてのクラスター情報を復元するだけでよい場合は、権限のないを使用して復元します。 権限のない復元を行うには、Windows NT バックアップインターフェイスまたはコマンドライン WBADMIN.EXE を使用します。
 
 ノードを復元したら、クラスターに参加させます。 実行されるのは、既存の実行中のクラスターに対して行われ、すべての情報が現在のもので更新されるからです。
 
@@ -103,7 +103,7 @@ HCI が Hyper-v レプリカに参加する場合、各クラスターに[Hyper-
 
 権限のある復元を実行するには、次の手順を実行します。
 
-1.    WBADMIN を実行します。管理コマンドプロンプトから EXE を実行して、インストールするバックアップの最新バージョンを取得し、システム状態が復元可能なコンポーネントの1つであることを確認します。
+1.    管理コマンドプロンプトから WBADMIN.EXE を実行して、インストールするバックアップの最新バージョンを取得し、システム状態が復元可能なコンポーネントの1つであることを確認します。
 
     ```powershell
     Wbadmin get versions
@@ -123,8 +123,6 @@ HCI が Hyper-v レプリカに参加する場合、各クラスターに[Hyper-
 
 復元が完了したら、このノードが最初にクラスターサービスを開始し、クラスターを形成する必要があります。 その他のすべてのノードを起動し、クラスターに参加させる必要があります。
 
-## <a name="summary"></a>要約 
+## <a name="summary"></a>まとめ 
 
 これを合計するために、ハイパー集約されたディザスターリカバリーは、慎重に計画する必要があるものです。 ニーズに最適なシナリオがいくつかあり、十分にテストする必要があります。 注意すべき1つの項目は、過去にフェールオーバークラスターを使い慣れている場合、ストレッチクラスターは長年にわたって非常に人気のあるオプションでした。 ハイパー集約型ソリューションでは、設計に多少の変更があり、回復性に基づいています。 ハイパー収束クラスター内の2つのノードが失われた場合、クラスター全体が停止します。 この場合、ハイパー収束環境では、ストレッチシナリオはサポートされていません。
-
-

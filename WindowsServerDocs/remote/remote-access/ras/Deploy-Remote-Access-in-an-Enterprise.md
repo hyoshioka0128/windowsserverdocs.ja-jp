@@ -8,16 +8,16 @@ ms.topic: article
 ms.assetid: 4781df0a-158b-4562-b8f5-32b27615a4f8
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 6d0a9248865dca4afb3db9609b284048155f9eef
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0cf216cb785d01ed08bb3a4490b25d4c4549b1c4
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80857435"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965594"
 ---
 # <a name="deploy-remote-access-in-an-enterprise"></a>企業でのリモート アクセスの展開
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016
+>適用先:Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックでは、企業向けの DirectAccess のシナリオについて説明します。  
   
@@ -25,19 +25,19 @@ ms.locfileid: "80857435"
 > [!IMPORTANT]  
 > このガイドを使用して DirectAccess を展開するには、Windows Server 2016、Windows Server 2012 R2、または Windows Server 2012 を実行している DirectAccess サーバーを使用する必要があります。  
   
-## <a name="before-you-begin-deploying-see-the-list-of-unsupported-configurations-known-issues-and-prerequisites"></a>展開を開始する前に、サポートされない構成、既知の問題、前提条件のリストを参照してください  
+## <a name="before-you-begin-deploying-see-the-list-of-unsupported-configurations-known-issues-and-prerequisites"></a>展開を開始する前に、サポートされない構成、既知の問題、前提条件の一覧を参照してください  
   
--   [DirectAccess のサポートされない構成](https://technet.microsoft.com/windows-server-docs/networking/remote-access/directaccess/directaccess-unsupported-configurations)  
+-   [DirectAccess のサポートされない構成](../directaccess/directaccess-unsupported-configurations.md)  
   
--   [DirectAccess の既知の問題](https://technet.microsoft.com/windows-server-docs/networking/remote-access/directaccess/directaccess-known-issues)  
+-   [DirectAccess の既知の問題](../directaccess/directaccess-known-issues.md)  
   
--   [DirectAccess を展開するための前提条件) の前提条件](https://technet.microsoft.com/windows-server-docs/networking/remote-access/directaccess/prerequisites-for-deploying-directaccess)  
+-   [DirectAccess を展開するための前提条件) の前提条件](../directaccess/prerequisites-for-deploying-directaccess.md)  
   
 ## <a name="scenario-description"></a><a name="BKMK_OVER"></a>シナリオの説明  
 リモート アクセスは、Windows ネットワーク負荷分散 (NLB) または外部のロード バランサーを使用して負荷分散するクラスターへの複数のリモート アクセス サーバーの展開、リモート アクセス サーバーが地理的に離れた場所に設置されているマルチサイト展開のセットアップ、ワンタイム パスワード (OTP) を使用してクライアントの 2 要素認証を行う DirectAccess の展開など、さまざまなエンタープライズ機能を備えています。  
   
 ## <a name="in-this-scenario"></a>このシナリオの内容  
-各エンタープライズ シナリオについては、計画と展開の手順を含むドキュメントで説明します。 詳しくは、次のトピックをご覧ください。  
+各エンタープライズ シナリオについては、計画と展開の手順を含むドキュメントで説明します。 詳細については、次を参照してください。  
   
 -   [クラスターへのリモートアクセスの展開](cluster/Deploy-Remote-Access-In-Cluster.md)  
   
@@ -47,7 +47,7 @@ ms.locfileid: "80857435"
   
 -   [マルチフォレスト環境でのリモートアクセスの展開](multi-forest/Deploy-Remote-Access-in-a-Multi-Forest-Environment.md)  
   
-## <a name="practical-applications"></a><a name="BKMK_APP"></a>実用的なアプリケーション  
+## <a name="practical-applications"></a><a name="BKMK_APP"></a>実際の適用例  
 リモート アクセスのエンタープライズ シナリオでは、次のことが実現されます。  
   
 -   **可用性の向上**。 クラスターに複数のリモートアクセスサーバーを展開すると、スケーラビリティが実現され、スループットとユーザー数の容量が増加します。 クラスターの負荷を分散することで、高可用性が実現されます。 クラスター内のサーバーで障害が発生しても、リモート ユーザーはクラスター内の別のサーバーを経由して企業内部ネットワークに引き続きアクセスすることができます。 クラスターは仮想 IP (VIP) アドレスを使用してクラスターに接続するため、フェールオーバーは透過的です。  
@@ -58,7 +58,7 @@ ms.locfileid: "80857435"
   
 -   **セキュリティ**。 標準 Active Directory パスワードの代わりにワンタイムパスワード (OTP) を使用して強力なクライアント認証を展開すると、セキュリティが強化されます。  
   
-## <a name="roles-and-features-included-in-this-scenario"></a><a name="BKMK_NEW"></a>このシナリオに含まれる役割と機能  
+## <a name="roles-and-features-included-in-this-scenario"></a><a name="BKMK_NEW"></a>このシナリオに含まれている役割と機能  
 次の表に、このエンタープライズ シナリオで使用する役割と機能を示します。  
   
 |役割/機能|このシナリオのサポート方法|  
@@ -69,5 +69,3 @@ ms.locfileid: "80857435"
   
 
   
-
-

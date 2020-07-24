@@ -8,12 +8,12 @@ ms.technology: storage-spaces
 ms.topic: article
 author: toklima
 ms.date: 10/04/2016
-ms.openlocfilehash: 55a4fc94440b763c48735ffe44099da702857489
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0e117b486fd628397bfe36aa897ff64cdd26f98b
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80820875"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965834"
 ---
 # <a name="updating-drive-firmware"></a>ドライブのファームウェアの更新
 >適用対象: Windows Server 2019、Windows Server 2016、Windows 10
@@ -30,11 +30,11 @@ Windows Server を使用してドライブのファームウェアを更新す�
 お使いのハードウェアが、Windows によるドライブのファームウェア更新をサポートしているかどうかについては、ソリューション ベンダーに問い合わせてください。
 次に、多様な要件のリンクを示します。
 
--   SATA: [Device.Storage.Hd.Sata](https://msdn.microsoft.com/windows/hardware/commercialize/design/compatibility/device-storage#devicestoragehdsata) - **[実装している場合\] 「Firmware Download & Activate**」(ファームウェアのダウンロードとアクティブ化) セクション
+-   SATA: [Device.Storage.Hd.Sata](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127250(v=ws.11)#devicestoragehdsata) - **[実装している場合\] 「Firmware Download & Activate**」(ファームウェアのダウンロードとアクティブ化) セクション
     
--   SAS: [Device.Storage.Hd.Sas](https://msdn.microsoft.com/windows/hardware/commercialize/design/compatibility/device-storage#devicestoragehdsas) - **[実装している場合\] 「Firmware Download & Activate**」(ファームウェアのダウンロードとアクティブ化) セクション
+-   SAS: [Device.Storage.Hd.Sas](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127250(v=ws.11)#devicestoragehdsas) - **[実装している場合\] 「Firmware Download & Activate**」(ファームウェアのダウンロードとアクティブ化) セクション
 
--   NVMe: [Device.Storage.ControllerDrive.NVMe](https://msdn.microsoft.com/windows/hardware/commercialize/design/compatibility/device-storage#devicestoragecontrollerdrivenvme) - セクション **5.7** と **5.8**。
+-   NVMe: [Device.Storage.ControllerDrive.NVMe](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127250(v=ws.11)#devicestoragecontrollerdrivenvme) - セクション **5.7** と **5.8**。
 
 ## <a name="powershell-cmdlets"></a>PowerShell コマンドレット
 
@@ -105,13 +105,13 @@ Measure-Command {$pd | Update-StorageFirmware -ImagePath C:\\Firmware\\J3E16101.
 
 1. ファームウェアのリリース ノートを読み、実際の環境に影響をもたらす可能性がある問題に更新プログラムが対処していること、実際の環境に悪影響を及ぼす可能性がある既知の問題がファームウェアに含まれていないことを確認します。
 
-2. ラボに同じドライブを搭載したサーバーにファームウェアをインストールし (そのドライブに複数のリビジョンがある場合はリビジョンも同じにします)、新しいファームウェアで負荷をかけてドライブをテストします。 合成負荷テストの実行については、「[Windows Server で合成ワークロードを使用した記憶域スペースのパフォーマンスのテスト](https://technet.microsoft.com/library/dn894707.aspx)」を参照してください。
+2. ラボに同じドライブを搭載したサーバーにファームウェアをインストールし (そのドライブに複数のリビジョンがある場合はリビジョンも同じにします)、新しいファームウェアで負荷をかけてドライブをテストします。 合成負荷テストの実行については、「[Windows Server で合成ワークロードを使用した記憶域スペースのパフォーマンスのテスト](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn894707(v=ws.11))」を参照してください。
 
 ## <a name="automated-firmware-updates-with-storage-spaces-direct"></a>記憶域スペース ダイレクトでの自動ファームウェア更新
 
 Windows Server 2016 には、記憶域スペース ダイレクト展開 (Microsoft Azure Stack ソリューションを含む) 向けのヘルス サービスが含まれています。 ヘルス サービスの主な目的は、ハードウェア展開の監視と管理を容易にすることです。 管理機能の一部として、ワークロードをオフラインにしたり、ダウンタイムを発生させたりせずに、ドライブのファームウェアをクラスター全体にロールアウトする機能があります。 この機能はポリシーに基づいて動作し、管理者が制御できます。
 
-ヘルス サービスを使用してクラスター全体にファームウェアをロールアウトする作業は、以下の手順で簡単に実行できます。
+ヘルス サービスを使用してクラスター全体にファームウェアをロールアウトする操作は単純で、必要な手順は次のとおりです。
 
 -   記憶域スペース ダイレクト クラスターに追加する HDD ドライブと SSD ドライブを決め、Windows によるファームウェアの更新をドライブがサポートしているかどうかを確認します
 -   サポートされるコンポーネントの XML ファイルに追加するドライブの一覧を作成します
@@ -120,7 +120,7 @@ Windows Server 2016 には、記憶域スペース ダイレクト展開 (Micros
 
 この時点で、ヘルス サービスは XML を検査して解析し、目的のファームウェア バージョンが展開されていないドライブを特定します。 次に、影響を受けるドライブから (ノードごとに) I/O をリダイレクトし、ドライブ上のファームウェアを更新します。 記憶域スペース ダイレクト クラスターは、複数のサーバー ノードにデータを分散させることで、回復性を実現します。ヘルス サービスによって、ドライブを更新する価値があるノード全体を分離できます。 ノードが更新されると、記憶域スペースの修復が開始され、すべてのデータのコピーが相互に同期を保った状態でクラスターに戻されてから、次のノードに進みます。 ファームウェアのロール アウト中に、記憶域スペースの処理が "デグレード" モードに移行することが予想されます。そしてそれは通常のことです。
 
-新しいファームウェア イメージの安定したロールアウトと十分な検証時間を確保するために、複数のサーバーを更新する間隔は長く設定されています。 ヘルス サービスの既定では、7 日間待ってから 2 つ目のサーバーが更新されます。 以降のサーバー (3 つ目、4 つ目、...) は 1 日の遅延で更新されます。 管理者がファームウェアを不安定、または望ましくないと判断した場合、いつでもヘルス サービスで以降のロールアウトを停止できます。 ファームウェアが検証済みで、迅速なロールアウトが望ましい場合、これらの既定値を日単位から時間単位や分単位に変更できます。
+新しいファームウェア イメージの安定したロールアウトと十分な検証時間を確保するために、複数のサーバーを更新する間隔は長く設定されています。 既定では、ヘルスサービスは 2<sup>nd</sup>サーバーを更新する前に7日間待機します。 後続のサーバー (3<sup>rd</sup>、4<sup>番目</sup>、...) は、1日の遅延で更新されます。 管理者がファームウェアを不安定、または望ましくないと判断した場合、いつでもヘルス サービスで以降のロールアウトを停止できます。 ファームウェアが検証済みで、迅速なロールアウトが望ましい場合、これらの既定値を日単位から時間単位や分単位に変更できます。
 
 次に、一般的な記憶域スペース ダイレクト クラスター向けのサポートされるコンポーネントの XML 例を示します。
 
@@ -164,7 +164,7 @@ $NewDoc = Get-Content <Path> | Out-String
 $SpacesDirect | Set-StorageHealthSetting -Name "System.Storage.SupportedComponents.Document" -Value $NewDoc
 ```
 
-ヘルスサービスの動作を確認し、そのロールアウト機構の詳細については、次のビデオを参照してください: https://channel9.msdn.com/Blogs/windowsserver/Update-Drive-Firmware-Without-Downtime-in-Storage-Spaces-Direct
+ヘルスサービスの動作を確認し、そのロールアウトメカニズムの詳細については、次のビデオを参照してください。https://channel9.msdn.com/Blogs/windowsserver/Update-Drive-Firmware-Without-Downtime-in-Storage-Spaces-Direct
 
 ## <a name="frequently-asked-questions"></a>よく寄せられる質問
 
@@ -203,7 +203,7 @@ $SpacesDirect | Set-StorageHealthSetting -Name "System.Storage.SupportedComponen
 
 ### <a name="how-do-i-stop-an-in-progress-firmware-roll-out"></a>進行中のファームウェアのロールアウトを停止するにはどうすればよいですか
 
-PowerShell の次のコマンドレットでロールアウトを無効にします。
+PowerShell で次のコマンドレットでロールアウトを無効にします。
 ```powershell
 Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name "System.Storage.PhysicalDisk.AutoFirmwareUpdate.RollOut.Enabled" -Value false
 ```

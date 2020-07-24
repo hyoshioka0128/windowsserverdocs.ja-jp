@@ -9,12 +9,12 @@ manager: brianlic
 ms.author: jgerend
 ms.date: 1/16/2019
 description: IT 担当者向け Windows Server 向けのオンプレミスストレージドキュメントの新しいトピックと更新されたトピック。
-ms.openlocfilehash: 0da79f48b31d299d30ec6f625e892b68abf23a25
-ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
+ms.openlocfilehash: 3d43166d8f5e931d2677ff394c1c4ad69b0f302f
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "85070496"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966264"
 ---
 # <a name="change-history-for-storage-topics-in-windows-server"></a>Windows Server のストレージ トピックの変更履歴
 
@@ -28,7 +28,7 @@ ms.locfileid: "85070496"
 
 | 新しいトピックまたは変更されたトピック | 説明 |
 | --- | --- |
-|[永続的なメモリの理解とデプロイ](storage-spaces/deploy-pmem.md) | 既知のハードウェアの問題が追加されました。 |
+|[永続メモリの理解と配置](storage-spaces/deploy-pmem.md) | 既知のハードウェアの問題が追加されました。 |
 
 ## <a name="december-2019"></a>2019 年 12 月
 
@@ -49,14 +49,14 @@ ms.locfileid: "85070496"
 
 | 新しいトピックまたは変更されたトピック                                        | 説明 |
 | ---                                                         | ---           |
-| [ディスク クリーンアップ](file-server/disk-cleanup.md)                                              | 新規 ([以前のバージョン](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770278(v%3dws.11))から移行)
+| [ディスク クリーンアップ](file-server/disk-cleanup.md)                                              | 新規 ([以前のバージョン](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc770278(v%3dws.11))から移行)
 | [記憶域移行サービスに関する FAQ](storage-migration-service/faq.md#can-i-consolidate-multiple-servers-into-one-server) | パフォーマンスの最適化情報を追加しました。 |
 
 ## <a name="may-2019"></a>2019 年 5 月
 
 |新しいトピックまたは変更されたトピック                                        |説明|
 |---                                                         |---           |
-|[ボリュームの削除](storage-spaces/delete-volumes.md)| 新規        |
+|[ボリュームの削除](storage-spaces/delete-volumes.md)| 新規作成        |
 |[ボリュームの作成](storage-spaces/create-volumes.md)| Windows 管理センターでボリュームを作成するための手順とビデオを追加しました。|
 |[ボリュームの拡張](storage-spaces/resize-volumes.md)| Windows 管理センターでボリュームのサイズを変更するための手順とビデオを追加しました。|
 
@@ -64,10 +64,10 @@ ms.locfileid: "85070496"
 
 |新しいトピックまたは変更されたトピック                                        |説明|
 |---                                                         |---           |
-| [Azure Monitor で監視する](storage-spaces/configure-azure-monitor.md) | 新規 |
-| [永続的なメモリの理解とデプロイ](storage-spaces/deploy-pmem.md) | 新規 |
-| [記憶域スペース ダイレクト クラスターを Windows Server 2019 にアップグレードする](storage-spaces/upgrade-storage-spaces-direct-to-windows-server-2019.md)| 新規        |
-| [DFS レプリケーション](dfs-replication/dfsr-overview.md)        | [以前のバージョン](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770278(v%3dws.11))のライブラリから移行済み|
+| [Azure Monitor で監視する](storage-spaces/configure-azure-monitor.md) | 新規作成 |
+| [永続メモリの理解と配置](storage-spaces/deploy-pmem.md) | 新規作成 |
+| [記憶域スペース ダイレクト クラスターを Windows Server 2019 にアップグレードする](storage-spaces/upgrade-storage-spaces-direct-to-windows-server-2019.md)| 新規作成        |
+| [DFS レプリケーション](dfs-replication/dfsr-overview.md)        | [以前のバージョン](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc770278(v%3dws.11))のライブラリから移行済み|
 
 ## <a name="february-2019"></a>2019 年 2 月
 
@@ -96,10 +96,10 @@ ms.locfileid: "85070496"
 |---                                                         |---           |
 |[入れ子の回復性](storage-spaces/nested-resiliency.md)    | 新しいトピックです。    |
 |[記憶域移行サービスの既知の問題](storage-migration-service/known-issues.md)   | 新しいトピックです。    |
-|[DFS レプリケーション:よく寄せられる質問 (FAQ)](dfs-replication/dfsr-faq.md)|[以前のバージョン](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/)のライブラリから移行済み|
-|[SYSVOL のレプリケーションを DFS レプリケーションに移行する](dfs-replication/migrate-sysvol-to-dfsr.md)|[以前のバージョン](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/)のライブラリから移行済み|
-|[SMB:ファイルとプリンターの共有ポートが開いていること](file-server/best-practices-analyzer/smb-open-file-sharing-ports.md)|[以前のバージョン](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/)のライブラリから移行済み|
-|[ボリューム シャドウ コピー サービス](file-server/volume-shadow-copy-service.md)|[以前のバージョン](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/)のライブラリから移行済み|
+|[DFS レプリケーション:よく寄せられる質問 (FAQ)](dfs-replication/dfsr-faq.md)|[以前のバージョン](/previous-versions/windows/it-pro/windows-server-2003/)のライブラリから移行済み|
+|[SYSVOL のレプリケーションを DFS レプリケーションに移行する](dfs-replication/migrate-sysvol-to-dfsr.md)|[以前のバージョン](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/)のライブラリから移行済み|
+|[SMB:ファイルとプリンターの共有ポートが開いていること](file-server/best-practices-analyzer/smb-open-file-sharing-ports.md)|[以前のバージョン](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/)のライブラリから移行済み|
+|[ボリューム シャドウ コピー サービス](file-server/volume-shadow-copy-service.md)|[以前のバージョン](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/)のライブラリから移行済み|
 
 ## <a name="october-2018"></a>2018 年 10 月
 
@@ -115,8 +115,8 @@ ms.locfileid: "85070496"
 |[記憶域移行サービスの概要](storage-migration-service/overview.md)| 新しいトピックです。 |
 |[Storage Migration Service を使用してサーバーを移行する](storage-migration-service/migrate-data.md)| 新しいトピックです。 |
 |[記憶域移行サービスに関してよく寄せられる質問 (FAQ)](storage-migration-service/faq.md)| 新しいトピックです。 |
-| [iSCSI ターゲット サーバー](iscsi/iscsi-target-server.md) | [以前のバージョン](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)のライブラリから移行されています。|
-| [iSCSI ターゲット サーバーのスケーラビリティ制限](iscsi/iscsi-target-server-limits.md) |[以前のバージョン](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)のライブラリから移行されています。|
+| [iSCSI ターゲット サーバー](iscsi/iscsi-target-server.md) | [以前のバージョン](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012)のライブラリから移行されています。|
+| [iSCSI ターゲット サーバーのスケーラビリティ制限](iscsi/iscsi-target-server-limits.md) |[以前のバージョン](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012)のライブラリから移行されています。|
 
 ## <a name="june-2018"></a>2018 年 6 月
 
@@ -129,12 +129,12 @@ ms.locfileid: "85070496"
 
 |新しいトピックまたは変更されたトピック|説明|
 |---|---|
-|[NFS の概要](nfs/nfs-overview.md)|[以前のバージョン](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)のライブラリから移行されています。|
-|[NFS を展開する](nfs/deploy-nfs.md)|[以前のバージョン](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)のライブラリから移行されています。|
-|[スタンドアロン サーバーに記憶域スペースを展開する](storage-spaces/deploy-standalone-storage-spaces.md)|[以前のバージョン](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)のライブラリから移行されています。|
-|[NTFS の概要](file-server/ntfs-overview.md)|[以前のバージョン](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)のライブラリから移行されています。|
-|[Robocopy を使用して DFS レプリケーション用にファイルをプリシードする](dfs-replication/preseed-dfsr-with-robocopy.md)|[以前のバージョン](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)のライブラリから移行されています。|
-|[Vssadmin-以前のバージョンのコマンドラインツール](../administration/windows-commands/vssadmin.md)|[以前のバージョン](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)のライブラリから移行されています。|
+|[NFS の概要](nfs/nfs-overview.md)|[以前のバージョン](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012)のライブラリから移行されています。|
+|[NFS を展開する](nfs/deploy-nfs.md)|[以前のバージョン](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012)のライブラリから移行されています。|
+|[スタンドアロン サーバーに記憶域スペースを展開する](storage-spaces/deploy-standalone-storage-spaces.md)|[以前のバージョン](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012)のライブラリから移行されています。|
+|[NTFS の概要](file-server/ntfs-overview.md)|[以前のバージョン](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012)のライブラリから移行されています。|
+|[Robocopy を使用して DFS レプリケーション用にファイルをプリシードする](dfs-replication/preseed-dfsr-with-robocopy.md)|[以前のバージョン](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012)のライブラリから移行されています。|
+|[Vssadmin-以前のバージョンのコマンドラインツール](../administration/windows-commands/vssadmin.md)|[以前のバージョン](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012)のライブラリから移行されています。|
 |[ファイルサーバーリソースマネージャーの概要](fsrm/fsrm-overview.md)| Windows Server 2016 version 1803 の新しいレジストリ設定に関する情報を追加しました。|
 |[サーバー間のストレージレプリケーション](storage-replica/server-to-server-storage-replication.md)|Windows 管理センターの使用に関する情報が追加されました。|
 |[記憶域レプリカに関する既知の問題](storage-replica/storage-replica-known-issues.md)|新しい情報を追加しました。|
@@ -145,10 +145,10 @@ ms.locfileid: "85070496"
 |---|---|
 |[記憶域スペースダイレクトでのデータの収集](storage-spaces/data-collection.md)| 新しいトピックです。|
 |[記憶域スペースの概要](storage-spaces/overview.md)|新しいトピックです。|
-|[フォルダー リダイレクト、オフライン ファイル、移動ユーザー プロファイルの概要](folder-redirection/folder-redirection-rup-overview.md)|[以前のバージョン](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)のライブラリから複数のトピックが移行されています。|
-|[SMB 3 プロトコルを使用したファイル共有](file-server/file-server-smb-overview.md)|[以前のバージョン](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)のライブラリから移行されています。|
-|[SMB ダイレクトを使用してファイルサーバーのパフォーマンスを向上させる](file-server/smb-direct.md)|[以前のバージョン](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)のライブラリから移行されています。|
-|[SMB セキュリティ拡張機能](file-server/smb-security.md)|[以前のバージョン](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)のライブラリから移行されています。|
+|[フォルダー リダイレクト、オフライン ファイル、移動ユーザー プロファイルの概要](folder-redirection/folder-redirection-rup-overview.md)|[以前のバージョン](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012)のライブラリから複数のトピックが移行されています。|
+|[SMB 3 プロトコルを使用したファイル共有](file-server/file-server-smb-overview.md)|[以前のバージョン](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012)のライブラリから移行されています。|
+|[SMB ダイレクトを使用してファイルサーバーのパフォーマンスを向上させる](file-server/smb-direct.md)|[以前のバージョン](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012)のライブラリから移行されています。|
+|[SMB セキュリティ拡張機能](file-server/smb-security.md)|[以前のバージョン](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012)のライブラリから移行されています。|
 
 ## <a name="march-2018"></a>2018 年 3 月
 
@@ -172,7 +172,7 @@ ms.locfileid: "85070496"
 |新しいトピックまたは変更されたトピック|説明|
 |---|---|
 |[記憶域スペースダイレクトにおける対称の考慮事項](storage-spaces/drive-symmetry-considerations.md)| 新しいトピックです。|
-|[プロジェクトホノルルでのストレージレプリカの使用](storage-replica/storage-replica-ui.md)|新しいトピックです。|
+|[プロジェクトホノルルでのストレージレプリカの使用](./storage-replica/server-to-server-storage-replication.md)|新しいトピックです。|
 
 ## <a name="december-2017"></a>2017 年 12 月
 
@@ -202,7 +202,7 @@ ms.locfileid: "85070496"
 |[記憶域レプリカの概要](storage-replica/storage-replica-overview.md)|Windows Server バージョン1709の新機能について説明しました。|
 |[記憶域レプリカに関する既知の問題](storage-replica/storage-replica-known-issues.md)|新しい情報を追加しました。|
 |[クラスター間の記憶域のレプリケーション](storage-replica/cluster-to-cluster-storage-replication.md)|記憶域スペースダイレクトに対してサポートされているクラスターノードの数を変更します。|
-|[ハードウェア要件の記憶域スペースダイレクト](storage-spaces/storage-spaces-direct-hardware-requirements.md)|NVMe デバイスの特定の行に関するメモを追加しました。|
+|[記憶域スペース ダイレクトのハードウェア要件](storage-spaces/storage-spaces-direct-hardware-requirements.md)|NVMe デバイスの特定の行に関するメモを追加しました。|
 
 ## <a name="july-2017"></a>2017 年 7 月
 
@@ -230,7 +230,7 @@ ms.locfileid: "85070496"
 |                                      [ワーク フォルダーの展開](work-folders/deploy-work-folders.md)                                       |         Azure AD アプリケーション プロキシのサポートと必要な手順についての情報を追加しました。          |
 |                            [記憶域スペース ダイレクトの展開](storage-spaces/deploy-storage-spaces-direct.md)                             | 手順 1.3 と必要な機能を追加し、Enable-NetAdapterQos の古いパラメータを修正しました。 |
 |               [記憶域レプリカに関してよく寄せられる質問](storage-replica/storage-replica-frequently-asked-questions.md)                |             さまざまなレプリケーション トポロジから選択する方法についての情報を追加しました。              |
-|               [ハードウェア要件の記憶域スペースダイレクト](storage-spaces/storage-spaces-direct-hardware-requirements.md)               |                    キャッシュ デバイスのドライブに関する耐久性の要件を変更しました。                     |
+|               [記憶域スペース ダイレクトのハードウェア要件](storage-spaces/storage-spaces-direct-hardware-requirements.md)               |                    キャッシュ デバイスのドライブに関する耐久性の要件を変更しました。                     |
 
 ## <a name="april-2017"></a>2017 年 4 月
 
@@ -256,7 +256,7 @@ ms.locfileid: "85070496"
 |---|---|
 |[記憶域スペース ダイレクトでのサーバーの削除](storage-spaces/remove-servers.md)|新しいトピックです。|
 |[サーバーまたはドライブを記憶域スペース ダイレクトに追加する](storage-spaces/add-nodes.md)|新しいイメージが追加されコンテンツが更新されました。|
-|[ハードウェア要件の記憶域スペースダイレクト](storage-spaces/storage-spaces-direct-hardware-requirements.md)|最新の要件で更新されました。|
+|[記憶域スペース ダイレクトのハードウェア要件](storage-spaces/storage-spaces-direct-hardware-requirements.md)|最新の要件で更新されました。|
 
 ## <a name="january-2017"></a>2017 年 1 月
 
@@ -266,10 +266,10 @@ ms.locfileid: "85070496"
 |[ボリュームの作成](storage-spaces/create-volumes.md)|新しいトピックです。|
 |[記憶域スペース ダイレクトのボリュームの拡張](storage-spaces/resize-volumes.md)|新しいトピックです。|
 |[ReFS の概要](refs/refs-overview.md)|新しいトピックです。|
-|[記憶域スペース ダイレクトについて](storage-spaces/understand-storage-spaces-direct.md)|新しいリンクの一覧です。|
-|[記憶域スペース ダイレクトの計画](storage-spaces/plan-storage-spaces-direct.md)|新しいリンクの一覧です。|
+|[記憶域スペース ダイレクトについて](./storage-spaces/understand-the-cache.md)|新しいリンクの一覧です。|
+|[記憶域スペース ダイレクトの計画](./storage-spaces/storage-spaces-direct-hardware-requirements.md)|新しいリンクの一覧です。|
 |[記憶域スペース ダイレクトの展開](storage-spaces/deploy-storage-spaces-direct.md)|新しいリンクの一覧です。|
-|[記憶域スペース ダイレクトの管理](storage-spaces/manage-storage-spaces-direct.md)|新しいトピックです。|
+|[記憶域スペース ダイレクトの管理](./storage-spaces/storage-spaces-direct-overview.md)|新しいトピックです。|
 |[記憶域レプリカに関してよく寄せられる質問](storage-replica/storage-replica-frequently-asked-questions.md)|ポートの要件を更新し、レプリケート ボリュームの拡大のしくみについて説明しました。|
 |[記憶域レプリカに関する既知の問題](storage-replica/storage-replica-known-issues.md)|2016 年 12 月 9 日の累積更新プログラムに関する情報を追加し、レプリケート ボリュームの拡大時のエラーを解決する情報を追加しました。|
 |[記憶域スペースダイレクトの概要](storage-spaces/storage-spaces-direct-overview.md)|トピックのラーニング マップを提供するため、ビジュアル指向の理解/計画/展開/管理のセクションを追加しました。|

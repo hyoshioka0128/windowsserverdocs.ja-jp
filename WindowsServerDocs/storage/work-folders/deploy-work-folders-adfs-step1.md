@@ -8,35 +8,35 @@ ms.author: jeffpatt
 author: JeffPatt24
 ms.date: 10/18/2018
 ms.assetid: 938cdda2-f17e-4964-9218-f5868fd96735
-ms.openlocfilehash: 0920d091d6e8b5f3db9bf945a966fdd577918179
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6b8e9d6885184e2b40a87cae0dc8b8b82f4983fb
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365788"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965804"
 ---
 # <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-1-set-up-ad-fs"></a>AD FS と Web アプリケーション プロキシを使ったワーク フォルダーの展開: 手順 1: AD FS のセットアップ
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016
+>適用先:Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックでは、Active Directory フェデレーション サービス (AD FS) と Web アプリケーション プロキシを使用して、ワーク フォルダーを展開する最初の手順について説明します。 このプロセスの他の手順は、次のトピックで確認できます。  
   
--   [AD FS と Web アプリケーションプロキシを使用してワークフォルダーを展開する: 概要](deploy-work-folders-adfs-overview.md)  
+-   [AD FS と Web アプリケーション プロキシを使ったワーク フォルダーの展開: 概要](deploy-work-folders-adfs-overview.md)  
   
--   [AD FS と Web アプリケーションプロキシを使用してワークフォルダーを展開する: 手順2、AD FS 構成後の作業](deploy-work-folders-adfs-step2.md)  
+-   [AD FS と Web アプリケーション プロキシを使ったワーク フォルダーの展開: 手順 2、AD FS の構成後の作業](deploy-work-folders-adfs-step2.md)  
   
--   [AD FS と Web アプリケーションプロキシを使用してワークフォルダーを展開する: 手順 3. ワークフォルダーを設定する](deploy-work-folders-adfs-step3.md)  
+-   [AD FS と Web アプリケーション プロキシを使ったワーク フォルダーの展開: 手順 3: ワーク フォルダーのセットアップ](deploy-work-folders-adfs-step3.md)  
   
--   [AD FS と Web アプリケーションプロキシを使用してワークフォルダーを展開する: 手順 4. Web アプリケーションプロキシを設定する](deploy-work-folders-adfs-step4.md)  
+-   [AD FS と Web アプリケーション プロキシを使ったワーク フォルダーの展開: 手順 4: Web アプリケーション プロキシのセットアップ](deploy-work-folders-adfs-step4.md)  
   
--   [AD FS と Web アプリケーションプロキシを使用してワークフォルダーを展開する: 手順5、クライアントをセットアップする](deploy-work-folders-adfs-step5.md)  
+-   [AD FS と Web アプリケーション プロキシを使ったワーク フォルダーの展開: 手順 5: クライアントのセットアップ](deploy-work-folders-adfs-step5.md)  
   
 > [!NOTE]
->   このセクションで説明する手順は、Windows Server 2019 または Windows Server 2016 環境向けです。 Windows Server 2012 R2 を使用している場合には、[Windows Server 2012 R2 の手順](https://technet.microsoft.com/library/dn747208(v=ws.11).aspx) に従います。
+>   このセクションで説明する手順は、Windows Server 2019 または Windows Server 2016 環境向けです。 Windows Server 2012 R2 を使用している場合には、[Windows Server 2012 R2 の手順](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn747208(v=ws.11)) に従います。
 
 ワーク フォルダーで使用するための AD FS を設定するには、次の手順を使用します。  
   
-## <a name="pre-installment-work"></a>インストール前の作業  
+## <a name="pre-installment-work"></a>事前 \- 分割作業  
 この手順を使って設定するテスト環境を、運用環境に変換する予定である場合には、開始する前に次の 2 点を行っておくことを推奨します。  
   
 -   AD FS サービスを実行するために使用する、Active Directory ドメイン管理者アカウントをセットアップします。
@@ -50,14 +50,14 @@ ms.locfileid: "71365788"
 テスト環境では、提供スクリプトの 1 つを使って作成する自己署名証明書を使用できます。  
   
 > [!NOTE]  
-> AD FS は Cryptography Next Generation (CNG) 証明書をサポートしません。つまり、Windows PowerShell のコマンドレット New-SelfSignedCertificate を使用して自己署名証明書を作成することはできません。 ただし、「[AD FS と Web アプリケーション プロキシを使ったワーク フォルダーの展開](https://blogs.technet.microsoft.com/filecab/2014/03/03/deploying-work-folders-with-ad-fs-and-web-application-proxy-wap)」のブログ記事に含まれている makecert.ps1 スクリプトを使用することができます。 このスクリプトは AD FS と機能する自己署名証明書を作成し、証明書の作成に必要な SAN の名前を入力するプロンプトが表示されます。  
+> AD FS は Cryptography Next Generation (CNG) 証明書をサポートしません。つまり、Windows PowerShell のコマンドレット New-SelfSignedCertificate を使用して自己署名証明書を作成することはできません。 ただし、「[AD FS と Web アプリケーション プロキシを使ったワーク フォルダーの展開](https://techcommunity.microsoft.com/t5/storage-at-microsoft/deploying-work-folders-with-ad-fs-and-web-application-proxy-wap/ba-p/425318)」のブログ記事に含まれている makecert.ps1 スクリプトを使用することができます。 このスクリプトは、 \- AD FS で動作する自己署名証明書を作成し、証明書の作成に必要な SAN 名の入力を求めます。  
   
 次に、以下のセクションで説明するインストール前の追加の作業を行います。  
   
-### <a name="create-an-ad-fs-self-signed-certificate"></a>AD FS 自己署名証明書の作成  
+### <a name="create-an-ad-fs-self-signed-certificate"></a>AD FS 自己 \- 署名証明書を作成する  
 AD FS 自己署名証明書を作成するには、次の手順に従います。  
   
-1.  「[AD FS と Web アプリケーション プロキシを使ったワーク フォルダーの展開](https://blogs.technet.microsoft.com/filecab/2014/03/03/deploying-work-folders-with-ad-fs-and-web-application-proxy-wap)」のブログ投稿で提供されているスクリプトをダウンロードし、ファイル makecert.ps1 を AD FS のコンピューターにコピーします。  
+1.  「[AD FS と Web アプリケーション プロキシを使ったワーク フォルダーの展開](https://techcommunity.microsoft.com/t5/storage-at-microsoft/deploying-work-folders-with-ad-fs-and-web-application-proxy-wap/ba-p/425318)」のブログ投稿で提供されているスクリプトをダウンロードし、ファイル makecert.ps1 を AD FS のコンピューターにコピーします。  
   
 2.  管理者特権で Windows PowerShell ウィンドウを開きます。  
   
@@ -111,7 +111,7 @@ AD FS をインストールするには、次の手順に従います。
   
 1.  AD FS をインストールする物理または仮想マシンにログオンして、**サーバー マネージャー**を開き、役割と機能の追加ウィザードを開始します。  
   
-2.  **[サーバーの役割]** ページで、 **[Active Directory フェデレーション サービス (AD FS)]** の役割を選択し、 **[次へ]** をクリックします。  
+2.  **[サーバーの役割]** ページで、**[Active Directory フェデレーション サービス (AD FS)]** の役割を選択し、**[次へ]** をクリックします。  
   
 3.  **[Active Directory フェデレーション サービス (AD FS)]** ページで、Web アプリケーション プロキシの役割は AD FS と同じコンピューターにはインストールできないことを示すメッセージが表示されます。 **[次へ]** をクリックします。  
   
@@ -134,7 +134,7 @@ Add-WindowsFeature ADFS-Federation –IncludeManagementTools
   
 2.  サーバー マネージャーのウィンドウの上部にある **[通知]** フラグをクリックし、次に **[このサーバーにフェデレーション サービスを構成します]** をクリックします。  
   
-3.  Active Directory フェデレーション サービス (AD FS) 構成ウィザードが起動します。 **[AD DS への接続]** ページで、AD FS アカウントとして使用するドメイン管理者アカウントを入力し、 **[次へ]** をクリックします。  
+3.  Active Directory フェデレーション サービス (AD FS) 構成ウィザードが起動します。 **[AD DS への接続]** ページで、AD FS アカウントとして使用するドメイン管理者アカウントを入力し、**[次へ]** をクリックします。  
   
 4.  **[サービスのプロパティの指定]** ページで、AD FS の通信に使用する SSL 証明書のサブジェクト名を入力します。 このテストの例では、**blueadfs.contoso.com** です。  
   
@@ -143,18 +143,18 @@ Add-WindowsFeature ADFS-Federation –IncludeManagementTools
     > [!NOTE]  
     > フェデレーション サービス名は、環境内の既存のサーバーの名前を使用しないでください。 既存のサーバーの名前を使う場合、AD FSのインストールは失敗し、再起動する必要があります。  
   
-6.  **[サービス アカウントの指定]** ページで、管理されたサービス アカウントとして使用する名前を入力します。 このテストの例では、 **[管理されたサービス アカウント グループを作成します]** を選択し、 **[アカウント名]** で **「ADFSService」** と入力します。 **[次へ]** をクリックします。  
+6.  **[サービス アカウントの指定]** ページで、管理されたサービス アカウントとして使用する名前を入力します。 このテストの例では、**[管理されたサービス アカウント グループを作成します]** を選択し、**[アカウント名]** で **「ADFSService」** と入力します。 **[次へ]** をクリックします。  
   
-7.  **[構成データベースの指定]** ページで、 **[Windows Internal Database を使用してサーバーにデータベースを作成します]** を選択し、 **[次へ]** をクリックします。  
+7.  [**構成データベースの指定**] ページで、[ **Windows Internal database を使用してこのサーバーにデータベースを作成する**] を選択し、[**次へ**] をクリックします。  
   
 8.  **[オプションの確認]** ページでは、選択したオプションの概要が表示されます。 **[次へ]** をクリックします。  
   
-9. **[前提条件の確認]** ページでは、すべての前提条件が確認されたかどうかを示します。 問題がない場合、 **[構成]** をクリックします。  
+9. **[前提条件の確認]** ページでは、すべての前提条件が確認されたかどうかを示します。 問題がない場合、**[構成]** をクリックします。  
   
     > [!NOTE]  
     > AD FS サーバーの名前または他の既存のコンピューターの名前をフェデレーション サービス名に使用した場合、エラー メッセージが表示されます。 イントールをやり直して、既存のコンピューターの名前以外の名前を選択する必要があります。  
   
-10. 構成が正常に完了したら、 **[結果]** ページで、AD FSが正常に構成されていることを確認します。  
+10. 構成が正常に完了したら、**[結果]** ページで、AD FSが正常に構成されていることを確認します。  
   
 ### <a name="configure-ad-fs-by-using-powershell"></a>PowerShell を使った AD FS の構成  
 Windows PowerShell を使って AD FS の同等の構成を行うためには、次のコマンドを使用します。  
@@ -185,6 +185,5 @@ Install-ADFSFarm -CertificateThumbprint $thumbprint -FederationServiceDisplayNam
 次の手順: [AD FS と Web アプリケーション プロキシを使ったワーク フォルダーの展開: 手順 2、AD FS の構成後の作業](deploy-work-folders-adfs-step2.md)  
   
 ## <a name="see-also"></a>参照  
-[ワークフォルダーの概要](Work-Folders-Overview.md)  
+[ワーク フォルダーの概要](Work-Folders-Overview.md)  
   
-

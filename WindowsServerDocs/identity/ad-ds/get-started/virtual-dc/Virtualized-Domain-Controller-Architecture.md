@@ -8,33 +8,33 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: fa8645198374d91911f8ec7dc15f04bea4865e38
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 864f6c8a103ce753e328426b4205c5e1c64e0bcb
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80824445"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966044"
 ---
 # <a name="virtualized-domain-controller-architecture"></a>仮想化ドメイン コントローラーのアーキテクチャ
 
->適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
 このトピックでは、仮想化ドメイン コントローラーの複製および安全な復元のアーキテクチャについて説明します。 複製と安全な復元のプロセスをフローチャートで示し、その後プロセスの各手順について詳しく取り上げます。  
   
--   [仮想化ドメインコントローラーの複製のアーキテクチャ](../../../ad-ds/get-started/virtual-dc/Virtualized-Domain-Controller-Architecture.md#BKMK_CloneArch)  
+-   [仮想化ドメイン コントローラーの複製のアーキテクチャ](../../../ad-ds/get-started/virtual-dc/Virtualized-Domain-Controller-Architecture.md#BKMK_CloneArch)  
   
--   [仮想化ドメインコントローラーの安全な復元のアーキテクチャ](../../../ad-ds/get-started/virtual-dc/Virtualized-Domain-Controller-Architecture.md#BKMK_SafeRestoreArch)  
+-   [仮想化ドメイン コントローラーの安全な復元のアーキテクチャ](../../../ad-ds/get-started/virtual-dc/Virtualized-Domain-Controller-Architecture.md#BKMK_SafeRestoreArch)  
   
-## <a name="virtualized-domain-controller-cloning-architecture"></a><a name="BKMK_CloneArch"></a>仮想化ドメインコントローラーの複製のアーキテクチャ  
+## <a name="virtualized-domain-controller-cloning-architecture"></a><a name="BKMK_CloneArch"></a>仮想化ドメイン コントローラーの複製のアーキテクチャ  
   
 ### <a name="overview"></a>概要  
 仮想化ドメイン コントローラーの複製は、ハイパーバイザー プラットフォームを使用して **VM-Generation ID** と呼ばれる識別子を公開し、仮想マシンの作成を検出します。 この識別子の値は、ドメイン コントローラーの昇格中に、AD DS によってデータベース (NTDS.DIT) に格納されます。 仮想マシンを起動すると、その仮想マシン内の VM-Generation ID の現在値は、データベース内の値と比較されます。 2 つの値が異なる場合は、ドメイン コントローラーにより起動 ID がリセットされ、RID プールが破棄されます。これにより、USN の再利用、またはセキュリティ プリンシパルが重複して作成されるのを防ぐことができます。 次に、「[複製プロセスの詳細](../../../ad-ds/get-started/virtual-dc/../../../ad-ds/get-started/virtual-dc/../../../ad-ds/get-started/virtual-dc/../../../ad-ds/get-started/virtual-dc/Virtualized-Domain-Controller-Architecture.md#BKMK_CloneProcessDetails)」の手順 3. で示されている場所で、DCCloneConfig.xml ファイルが検索されます。 DCCloneConfig.xml ファイルが見つかった場合は、複製としてデプロイされているものと判断します。したがって、ソース メディアからコピーされた既存の NTDS.DIT および SYSVOL の内容を使用して再昇格することで複製を開始して、自身を追加のドメイン コントローラーとしてプロビジョニングします。  
   
 VM-GenerationID をサポートするハイパーバイザーと、サポートしないハイパーバイザーが混在する環境では、VM-GenerationID をサポートしないハイパーバイザーに複製メディアが誤ってデプロイされる可能性があります。 DCCloneConfig.xml ファイルの存在は、DC の複製を管理しようとしていることを示します。 したがって、ブート時に DCCloneConfig.xml ファイルが見つかったのに、VM-GenerationID がホストから提供されていない場合は、環境のその他の部分が影響を受けないように、複製 DC はディレクトリ サービス復元モード (DSRM) でブートされます。 その後、VM-GenerationID をサポートするハイパーバイザーに複製メディアを移動し、複製を再試行できます。  
   
-VM-GenerationID をサポートするハイパーバイザーに複製メディアがデプロイされているにもかかわらず、DCCloneConfig.xml ファイルが提供されていない場合、その DIT と新しい VM の VM-GenerationID が異なることが DC によって検出され、USN の再利用と SID の重複を防ぐためにセーフガードがトリガーされます。 ただし、複製が開始されないため、セカンダリ DC は、ソース DC と同じ ID で引き続き実行されます。 このセカンダリ DC は、環境内での不整合を避けるためにできるだけ早くネットワークから削除する必要があります。 更新が出力方向にレプリケートされるようにしながら、このセカンダリ DC を再利用する方法の詳細については、Microsoft サポート技術情報の記事 [2742970](https://support.microsoft.com/kb/2742970)を参照してください。  
+VM-GenerationID をサポートするハイパーバイザーに複製メディアがデプロイされているにもかかわらず、DCCloneConfig.xml ファイルが提供されていない場合、その DIT と新しい VM の VM-GenerationID が異なることが DC によって検出され、USN の再利用と SID の重複を防ぐためにセーフガードがトリガーされます。 ただし、複製が開始されないため、セカンダリ DC は、ソース DC と同じ ID で引き続き実行されます。 このセカンダリ DC は、環境内での不整合を避けるためにできるだけ早くネットワークから削除する必要があります。 更新プログラムが送信時にレプリケートされることを確認しながら、このセカンダリ DC を再利用する方法の詳細については、マイクロソフトサポート技術情報の記事[2742970](https://support.microsoft.com/kb/2742970)を参照してください。  
   
-### <a name="cloning-detailed-processing"></a><a name="BKMK_CloneProcessDetails"></a>詳細な処理の複製  
+### <a name="cloning-detailed-processing"></a><a name="BKMK_CloneProcessDetails"></a>複製プロセスの詳細  
 次の図は、初期の複製操作および複製再試行操作のアーキテクチャを示しています。 これらのプロセスについては、このトピックでさらに詳しく後述します。  
   
 **初期複製操作**  
@@ -111,7 +111,7 @@ VM-GenerationID をサポートするハイパーバイザーに複製メディ�
   
 15. ゲストが、(既定の Windows タイム サービス階層内で、つまり、PDCE を使用して) 他のドメイン コントローラーとの NT5DS (Windows NTP) 時間同期を強制的に実行し、 PDCE に接続します。 既存の Kerberos チケットがフラッシュします。  
   
-16. ゲストが、DFSR または NTFRS サービスが自動的に実行されるように構成し、 ゲストは、すべての既存 DFSR と NTFRS データベース ファイルを削除 (既定: c:\windows\ntfrs と c:\system ボリューム information\dfsr\\ *< database_GUID >* )、サービスを開始することは、次に、権限のない SYSVOL 同期を強制するためにします。 SYSVOL のファイルの内容は、後で同期を開始するときに SYSVOL をプレシードできるように削除されません。  
+16. ゲストが、DFSR または NTFRS サービスが自動的に実行されるように構成し、 ゲストは、既存の DFSR および NTFRS データベースファイル (既定: c:\windows\ntfrs および c:\ システムボリュームの情報 \ DFSR \\ *<database_GUID>*) をすべて削除します。これにより、サービスが次に開始されたときに、権限のない SYSVOL 同期が強制的に実行されます。 SYSVOL のファイルの内容は、後で同期を開始するときに SYSVOL をプレシードできるように削除されません。  
   
 17. ゲストの名前が変更されます。 ゲスト上の DS 役割サーバー サービスは、既存の NTDS.DIT データベース ファイルを、通常の昇格のように c:\windows\system32 に含まれているテンプレート データベースとしてではなく、ソースとして使用して、AD DS 構成 (昇格) を開始します。  
   
@@ -141,7 +141,7 @@ VM-GenerationID をサポートするハイパーバイザーに複製メディ�
   
 26. ゲストが再起動されます。 これで、通常のアドバタイズ ドメイン コントローラーになりました。  
   
-## <a name="virtualized-domain-controller-safe-restore-architecture"></a><a name="BKMK_SafeRestoreArch"></a>仮想化ドメインコントローラーの安全な復元のアーキテクチャ  
+## <a name="virtualized-domain-controller-safe-restore-architecture"></a><a name="BKMK_SafeRestoreArch"></a>仮想化ドメイン コントローラーの安全な復元のアーキテクチャ  
   
 ### <a name="overview"></a>概要  
 AD DSは、ハイパーバイザー プラットフォームを使用して **VM-Generation ID** と呼ばれる識別子を公開し、仮想マシンのスナップショット復元を検出します。 この識別子の値は、ドメイン コントローラーの昇格中に、AD DS によってデータベース (NTDS.DIT) に格納されます。 管理者が以前のスナップショットから仮想マシンを復元するとき、仮想マシン内の VM-Generation ID の現在値がデータベース内の値と比較されます。 2 つの値が異なる場合は、ドメイン コントローラーにより起動 ID がリセットされ、RID プールが破棄されます。これにより、USN の再利用、またはセキュリティ プリンシパルが重複して作成されるのを防ぐことができます。 安全な復元が行われるシナリオは 2 つあります。  
@@ -179,9 +179,9 @@ AD DSは、ハイパーバイザー プラットフォームを使用して **VM
 > [!NOTE]  
 > このイラストは、概念を説明するために簡素化されています。  
   
-1.  Time T1 の時点で、ハイパーバイザー管理者は仮想 DC1 のスナップショットを取得します。 この段階の DC1 には、USN 値 (実際は**highestCommittedUsn** ) 100、InvocationId (この図では ID として示されています) A (実際は GUID) が設定されています。 savedVMGID 値は、DC の DIT ファイルの VM-GenerationID です ( **msDS-GenerationId**という名前の属性の DC のコンピューター オブジェクトに対して格納)。 VMGID は、仮想マシン ドライバーから使用できる VM-GenerationId の現在の値です。 この値は、ハイパーバイザーによって提供されます。  
+1.  Time T1 の時点で、ハイパーバイザー管理者は仮想 DC1 のスナップショットを取得します。 この段階の DC1 には、USN 値 (実際は **highestCommittedUsn**) 100、InvocationId (この図では ID として示されています) A (実際は GUID) が設定されています。 savedVMGID 値は、DC の DIT ファイルの VM-GenerationID です (**msDS-GenerationId** という名前の属性の DC のコンピューター オブジェクトに対して格納)。 VMGID は、仮想マシン ドライバーから使用できる VM-GenerationId の現在の値です。 この値は、ハイパーバイザーによって提供されます。  
   
-2.  次の Time T2 で、100 人のユーザーがこの DC に追加されています (ユーザーを、Time T1 と Time T2 の間にこの DC で実行された可能性のある更新の例と考えます。実際の更新では、ユーザーの作成、グループの作成、パスワードの更新、属性の更新などが混在しています)。 この例では、更新ごとに 1 つの一意の USN が使用されます (実際は、ユーザー作成により複数の USN が使用される可能性があります)。 DC1 は、これらの更新をコミットする前に、データベースの VM-GenerationID の値 (savedVMGID) が、ドライバーから使用できる現在の値 (VMGID) と同じかどうかを確認します。 同じ場合は、ロールバックがまだ行われていないため、更新はコミットされ、USN は 200 になります。これは次の更新では USN 201 が使用されることを意味します。 InvocationId、savedVMGID、または VMGID に変更はありません。 これらの更新は、次のレプリケーション サイクルで DC2 にレプリケートされます。 DC2 は、ここで表される高基準値 (および**UptoDatenessVector**) を、DC1 (A) @USN = 200 として単純に更新します。 つまり、DC2 は、USN 200 を介した nvocationId A のコンテキストでは、DC1 からのすべての更新を認識します。  
+2.  次の Time T2 で、100 人のユーザーがこの DC に追加されています (ユーザーを、Time T1 と Time T2 の間にこの DC で実行された可能性のある更新の例と考えます。実際の更新では、ユーザーの作成、グループの作成、パスワードの更新、属性の更新などが混在しています)。 この例では、更新ごとに 1 つの一意の USN が使用されます (実際は、ユーザー作成により複数の USN が使用される可能性があります)。 DC1 は、これらの更新をコミットする前に、データベースの VM-GenerationID の値 (savedVMGID) が、ドライバーから使用できる現在の値 (VMGID) と同じかどうかを確認します。 同じ場合は、ロールバックがまだ行われていないため、更新はコミットされ、USN は 200 になります。これは次の更新では USN 201 が使用されることを意味します。 InvocationId、savedVMGID、または VMGID に変更はありません。 これらの更新は、次のレプリケーション サイクルで DC2 にレプリケートされます。 DC2 は、ここで表現されている高基準値 (および**UptoDatenessVector**) を、DC1 (A) = 200 として単純に更新し @USN ます。 つまり、DC2 は、USN 200 を介した nvocationId A のコンテキストでは、DC1 からのすべての更新を認識します。  
   
 3.  Time T3 の時点で、Time T1 で取得されたスナップショットが DC1 に適用されます。 DC1 がロールバックされたため、その USN は 100 にロールバックされます。これは、DC1 が USN を 101 から使用して、以降の更新と関連付ける可能性があることを示しています。 ただし、この時点で、VMGID の値は、VM-GenerationID をサポートするハイパーバイザーによって異なります。  
   
@@ -191,10 +191,8 @@ AD DSは、ハイパーバイザー プラットフォームを使用して **VM
   
 -   FRS を使用している場合、ゲストは NTFRS サービスを停止し、D2 BURFLAGS レジストリ値を設定します。 その後、可能な場合は、変更されていない既存の SYSVOL データを再利用して、NTFRS サービスを開始し、権限のない入力方向のレプリケーションを行います。  
   
--   ゲストは DFSR サービスを停止し、DFSR データベース ファイルを削除 DFSR を使用する場合 (既定の場所: %systemroot%\system ボリューム information\dfsr\\ *<database GUID>* )。 その後、可能な場合は、変更されていない既存の SYSVOL データを再利用して、DFSR サービスを開始し、権限のない入力方向のレプリケーションを行います。  
+-   DFSR を使用している場合、ゲストは DFSR サービスを停止し、DFSR データベースファイルを削除します (既定の場所: 元のシステムボリューム情報 \\ *<database GUID>* 、dfsr)。 その後、可能な場合は、変更されていない既存の SYSVOL データを再利用して、DFSR サービスを開始し、権限のない入力方向のレプリケーションを行います。  
   
 > [!NOTE]  
-> -   ハイパーバイザーが比較のための VM-Generation ID を提供していない場合、そのハイパーバイザーでは仮想化セーフガードがサポートされていません。ゲストは、Windows Server 2008 R2 以前が実行されている仮想化ドメイン コントローラーのように動作します。 パートナー DC によって確認される最新の最大 USN を超えていない USN でレプリケーションを開始しようとすると、ゲストでは USN ロールバック検疫保護が実装されます。 USN ロールバック検疫保護の詳細については、「 [USN and USN Rollback (USN と USN ロールバック)](https://technet.microsoft.com/library/virtual_active_directory_domain_controller_virtualization_hyperv(WS.10).aspx)」を参照してください。  
+> -   ハイパーバイザーが比較のための VM-Generation ID を提供していない場合、そのハイパーバイザーでは仮想化セーフガードがサポートされていません。ゲストは、Windows Server 2008 R2 以前が実行されている仮想化ドメイン コントローラーのように動作します。 パートナー DC によって確認される最新の最大 USN を超えていない USN でレプリケーションを開始しようとすると、ゲストでは USN ロールバック検疫保護が実装されます。 USN ロールバック検疫保護の詳細については、次を参照してください [USN と USN ロールバック。](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd363553(v=ws.10))  
   
-
-

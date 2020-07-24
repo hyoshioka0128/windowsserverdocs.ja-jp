@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: efb240fabc4272a4dbef4cb7e86d7058cedb9584
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: 9fb864bcf74fb0fee921288165b1e042a34f027e
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81624170"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965534"
 ---
 # <a name="identifying-the-deployment-project-participants"></a>展開プロジェクトの参加者を識別する
 
@@ -201,7 +201,7 @@ Active Directory 設計チームは、Active Directory 論理構造の設計に�
 
 - 配置チームと連携してラボ環境で設計をテストし、発生した問題に対処するために必要に応じて設計を変更することを確認する
 
-- 使用可能な帯域幅の過負荷を回避しながら、フォレストのレプリケーション要件を満たすサイトトポロジの設計を作成する。 サイトトポロジの設計の詳細については、「 [Windows Server 2008 用のサイトトポロジの設計 AD DS](https://technet.microsoft.com/library/cc772013.aspx)」を参照してください。
+- 使用可能な帯域幅の過負荷を回避しながら、フォレストのレプリケーション要件を満たすサイトトポロジの設計を作成する。 サイトトポロジの設計の詳細については、「 [Windows Server 2008 用のサイトトポロジの設計 AD DS](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc772013(v=ws.10))」を参照してください。
 
 - 配置チームと連携して設計が正しく実装されていることを確認する
 
@@ -251,4 +251,4 @@ Active Directory 配置チームには、次のメンバーが含まれていま
 デプロイチームは、デプロイフェーズ中にサービス管理者とデータ管理者と連携して、運用チームのメンバーが新しい設計に習熟していることを確認します。 これにより、配置操作が完了したときに、所有権をスムーズに移行することができます。 デプロイプロセスが完了すると、新しい Active Directory 環境を維持する責任が運用チームに渡されます。
 
 ### <a name="documenting-the-design-and-deployment-teams"></a>設計チームと展開チームのドキュメント
-AD DS の設計と展開に参加するユーザーの名前と連絡先情報を文書化します。 設計チームと配置チームで、各ロールの責任者を特定します。 この一覧には、フォレストの所有者、プロジェクトマネージャー、およびプロジェクトアーキテクトが含まれています。 デプロイするフォレストの数を決定するときに、追加のフォレストに対して新しい設計チームを作成することが必要になる場合があります。 チームメンバーシップの変更に合わせてドキュメントを更新する必要があることに注意してください。設計プロセス中にさまざまな Active Directory 所有者を識別するためです。 各フォレストの設計チームと展開チームのドキュメントを作成するのに役立つワークシートについては、「 [Windows Server 2003 Deployment Kit のジョブエイド](https://microsoft.com/download/details.aspx?id=9608)」から Job_Aids_Designing_and_Deploying_Directory_and_Security_Services をダウンロードして、「設計と展開のチーム情報」 (DSSLOGI_1) を開きます。
+AD DS の設計と展開に参加するユーザーの名前と連絡先情報を文書化します。 設計チームと配置チームで、各ロールの責任者を特定します。 この一覧には、フォレストの所有者、プロジェクトマネージャー、およびプロジェクトアーキテクトが含まれています。 デプロイするフォレストの数を決定するときに、追加のフォレストに対して新しい設計チームを作成することが必要になる場合があります。 チームメンバーシップの変更に合わせてドキュメントを更新する必要があることに注意してください。設計プロセス中にさまざまな Active Directory 所有者を識別するためです。 各フォレストの設計チームと展開チームのドキュメントを作成するのに役立つワークシートについては、「 [Windows Server 2003 Deployment Kit のジョブエイド](https://microsoft.com/download/details.aspx?id=9608)」から Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip をダウンロードし、「設計と展開のチーム情報」 (DSSLOGI_1.doc) を参照してください。

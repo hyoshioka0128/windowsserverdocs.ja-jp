@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: c402e5519bc0e5c37cb6d3818c8def40d98d49e5
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: 6743a5fb902509d24f8f30d42b919e65fa40ccc0
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81624260"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965694"
 ---
 # <a name="disjoint-namespace"></a>名前空間の不整合
 
@@ -77,7 +77,7 @@ ms.locfileid: "81624260"
 - 名前解決を最適化するには、グループポリシーを変更して維持するための手動の手順を実行して、代替プライマリ DNS サフィックスを持つメンバーコンピューターを構成する必要があります。
 
 > [!NOTE]
-> Windows インターネットネームサービス (WINS) を使用して、単一ラベル名を解決することでこの欠点を相殺できます。 WINS の詳細については、「 [Wins テクニカルリファレンス](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc736411(v=ws.10))」を参照してください。
+> Windows インターネットネームサービス (WINS) を使用して、単一ラベル名を解決することでこの欠点を相殺できます。 WINS の詳細については、「 [Wins テクニカルリファレンス](/previous-versions/windows/it-pro/windows-server-2003/cc736411(v=ws.10))」を参照してください。
 
 - 環境に複数のプライマリ DNS サフィックスが必要な場合は、フォレスト内のすべての Active Directory ドメインの DNS サフィックス検索順序を適切に構成する必要があります。
 
@@ -85,7 +85,7 @@ ms.locfileid: "81624260"
 
 - すべてのアプリケーションの互換性の問題を注意深くテストする必要があります。
 
-これらの欠点に対処するために実行できる手順の詳細については、「[不整合な名前空間を作成](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc755926(v=ws.10))する」を参照してください。
+これらの欠点に対処するために実行できる手順の詳細については、「[不整合な名前空間を作成](/previous-versions/windows/it-pro/windows-server-2003/cc755926(v=ws.10))する」を参照してください。
 
 ### <a name="planning-a-namespace-transition"></a>名前空間の移行の計画
 
@@ -93,11 +93,11 @@ ms.locfileid: "81624260"
 
 - 名前空間を変更した後、手動で構成されたサービスプリンシパル名 (Spn) が DNS 名と一致しなくなる場合があります。 これにより、認証エラーが発生する可能性があります。
 
-    詳細については、「Spn が正しく設定されていない[ためにサービスログオンが失敗する](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc772897(v=ws.10))」を参照してください。
+    詳細については、「Spn が正しく設定されていない[ためにサービスログオンが失敗する](/previous-versions/windows/it-pro/windows-server-2003/cc772897(v=ws.10))」を参照してください。
 
     - 制約付き委任を使用する Windows Server 2003 ベースのコンピューターを使用する場合、これらのコンピューターで Spn を変更するには追加の構成が必要になることがあります。 詳細については、Microsoft サポート技術情報の記事936628を参照してください。 SPN は、Windows Server 2003 (404) を実行している[コンピューターで制約付き委任を構成しようとすると、アカウントに委任できるサービスの一覧に表示されません](https://support.microsoft.com/help/936628)。
 
-    - Spn を変更するアクセス許可を下位の管理者に委任する場合は、「 [spn を変更するため](https://technet.microsoft.com/library/cc772895(WS.10).aspx)の権限の委任」を参照してください。
+    - Spn を変更するアクセス許可を下位の管理者に委任する場合は、「 [spn を変更するため](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770439(v=ws.10))の権限の委任」を参照してください。
 
 - 不整合な名前空間に構成されているドメインコントローラーがある、展開内の CA と Secure Sockets Layer (LDAPS と呼ばれます) を介してライトウェイトディレクトリアクセスプロトコル (LDAP) を使用する場合は、LDAPS 証明書を構成するときに、適切な Active Directory ドメイン名とプライマリ DNS サフィックスを使用する必要があります。
 

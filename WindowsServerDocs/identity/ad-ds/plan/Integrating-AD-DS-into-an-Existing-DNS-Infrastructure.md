@@ -8,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: cf069102f409247832204546f3e1c15de7238bd3
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3aeac10b8c92c151fe57bcb935e685f7f1a2bfa2
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80822275"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965524"
 ---
 # <a name="integrating-ad-ds-into-an-existing-dns-infrastructure"></a>AD DS を既存の DNS インフラストラクチャに統合する
 
->適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
 組織に既存の DNS (ドメインネームシステム) サーバーサービスが既に存在する場合、AD DS を既存のインフラストラクチャに統合するには、Active Directory Domain Services (AD DS) 所有者が組織の DNS 所有者と連携している必要があります。 これには、DNS サーバーと DNS クライアント構成の作成が含まれます。  
   
@@ -33,7 +33,7 @@ ms.locfileid: "80822275"
 -   Active Directory フォレスト全体のロケーターレコードを含むゾーン (つまり、_msdcs を構成します。*forestname*ゾーン)。フォレスト全体の dns アプリケーションディレクトリパーティションを使用して、フォレスト内のすべての dns サーバーにレプリケートします。  
   
     > [!NOTE]  
-    > DNS サーバーサービスが Active Directory ドメインサービスインストールウィザードと共にインストールされると (このオプションをお勧めします)、前のすべてのタスクが自動的に実行されます。 詳細については、「 [Windows Server 2008 のフォレストルートドメインの展開](https://technet.microsoft.com/library/cc731174.aspx)」を参照してください。  
+    > DNS サーバーサービスが Active Directory ドメインサービスインストールウィザードと共にインストールされると (このオプションをお勧めします)、前のすべてのタスクが自動的に実行されます。 詳細については、「 [Windows Server 2008 のフォレストルートドメインの展開](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731174(v=ws.10))」を参照してください。  
   
     > [!NOTE]  
     > AD DS は、フォレスト全体のロケーターレコードを使用して、レプリケーションパートナーが互いを検索し、クライアントがグローバルカタログサーバーを検索できるようにします。 AD DS では、フォレスト全体のロケーターレコードが _msdcs に格納されます。*forestname*ゾーン。 ゾーン内の情報は広く使用可能である必要があるため、フォレスト全体の DNS アプリケーションディレクトリパーティションによって、このゾーンはフォレスト内のすべての DNS サーバーにレプリケートされます。  
@@ -61,5 +61,3 @@ ms.locfileid: "80822275"
   
 Windows 2000、Windows Server 2003、または Windows Server 2008 を実行しているサーバーに接続するときに Kerberos 認証を利用する場合は、クライアントがプライマリ名を使用してサーバーに接続していることを確認する必要があります。  
   
-
-

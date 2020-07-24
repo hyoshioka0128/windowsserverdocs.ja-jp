@@ -8,12 +8,12 @@ ms.date: 06/02/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 9ce9aa052290b82b2f085cb4637fcffbdf7b42ce
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: d7f1b5387d82d487e50b217b28367e82617a66ea
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473119"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966254"
 ---
 # <a name="storage-migration-service-frequently-asked-questions-faq"></a>記憶域移行サービスに関してよく寄せられる質問 (FAQ)
 
@@ -67,12 +67,12 @@ Storage Migration Service は、Windows の操作に干渉する可能性があ�
     - Id リモート処理
     - インフラストラクチャ
     - 名前
-    - パス
+    - Path
     - スコープ
     - スコープ名
     - セキュリティ記述子
     - シャドウコピー
-    - 特殊
+    - Special
     - 一時
 
 ## <a name="can-i-consolidate-multiple-servers-into-one-server"></a>複数のサーバーを1台のサーバーに統合することはできますか。
@@ -128,7 +128,7 @@ Storage Migration Service には、Storage Migration Service プロキシサー�
 
 - **高パフォーマンスの処理を有効にします。** サーバーの BIOS および UEFI の設定が、C 状態の無効化、QPI 速度の設定、NUMA の有効化、最大メモリ動作周波数の設定など、高パフォーマンスを有効にする設定であることを確認します。 Windows Server の電源管理が高パフォーマンスに設定されていることを確認します。 必要に応じて再起動します。 移行が完了したら、必ずこれらの状態を適切な状態に戻してください。
 
-- **ハードウェアの調整**Windows server 2019 と Windows Server 2016 を実行する orchestrator および対象コンピューターのチューニングについては、「 [Windows server 2016 のパフォーマンスチューニングガイドライン](https://docs.microsoft.com/windows-server/administration/performance-tuning/)」を参照してください。 [ネットワークサブシステムのパフォーマンスチューニング](https://docs.microsoft.com/windows-server/networking/technologies/network-subsystem/net-sub-performance-tuning-nics)に関するセクションには、特に重要な情報が含まれています。
+- **ハードウェアの調整**Windows server 2019 と Windows Server 2016 を実行する orchestrator および対象コンピューターのチューニングについては、「 [Windows server 2016 のパフォーマンスチューニングガイドライン](/windows-server/administration/performance-tuning/)」を参照してください。 [ネットワークサブシステムのパフォーマンスチューニング](../../networking/technologies/network-subsystem/net-sub-performance-tuning-nics.md)に関するセクションには、特に重要な情報が含まれています。
 
 - **より高速なストレージを使用します。** ソースコンピューターのストレージ速度をアップグレードするのは困難な場合がありますが、転送時に不要なボトルネックが発生しないようにするために、ソースが読み取り IO パフォーマンスであるため、宛先ストレージの書き込み IO パフォーマンスが少なくとも高速であることを確認する必要があります。 移行先が VM の場合は、少なくとも移行の目的で、少なくとも移行のために、フラッシュ層、ミラー化されたすべてのフラッシュまたはハイブリッドスペースを使用する記憶域スペースダイレクト HCI クラスターなどのハイパーバイザーホストの最速のストレージ層で実行されることを確認します。 SMS の移行が完了したら、低速の層またはホストに VM をライブマイグレーションできます。
 
@@ -164,7 +164,7 @@ Storage Migration Service では、hidden c:\programdata\microsoft\storagemigrat
 
 ## <a name="what-do-the-error-numbers-mean-in-the-transfer-csv"></a>CSV 転送でのエラー番号の意味
 
-転送 CSV ファイルで検出されたほとんどのエラーは、Windows システムエラーコードです。 各エラーの意味を確認するには、 [Win32 エラーコードのドキュメント](https://docs.microsoft.com/windows/win32/debug/system-error-codes)を参照してください。
+転送 CSV ファイルで検出されたほとんどのエラーは、Windows システムエラーコードです。 各エラーの意味を確認するには、 [Win32 エラーコードのドキュメント](/windows/win32/debug/system-error-codes)を参照してください。
 
 ## <a name="what-are-my-options-to-give-feedback-file-bugs-or-get-support"></a><a name="give-feedback"></a>フィードバックの提供、バグの報告、サポートを受けるためのオプションは何ですか?
 

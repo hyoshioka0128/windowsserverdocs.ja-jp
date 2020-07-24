@@ -8,12 +8,12 @@ ms.date: 03/25/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: e012706eeb9d483f19eff6f4ba2e1f57e0c0852d
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: cd8c41e67baf0ffa0399e62ad2a697e4efa1433f
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475329"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965184"
 ---
 # <a name="use-storage-migration-service-to-migrate-a-server"></a>Storage Migration Service を使用してサーバーを移行する
 
@@ -23,7 +23,7 @@ ms.locfileid: "85475329"
 
 作業を開始する前に、Storage Migration Service をインストールし、必要なファイアウォールポートが開いていることを確認してください。
 
-1. [ストレージ移行サービスの要件](overview.md#requirements)を確認し、PC または管理サーバーに[Windows 管理センター](../../manage/windows-admin-center/understand/windows-admin-center.md)をインストールします (まだインストールしていない場合)。 ドメインに参加しているソースコンピューターを移行する場合は、移行元コンピューターと同じドメインまたはフォレストに参加しているサーバーに、記憶域移行サービスをインストールして実行する必要があります。
+1. [ストレージ移行サービスの要件](overview.md#requirements)を確認し、PC または管理サーバーに[Windows 管理センター](../../manage/windows-admin-center/overview.md)をインストールします (まだインストールしていない場合)。 ドメインに参加しているソースコンピューターを移行する場合は、移行元コンピューターと同じドメインまたはフォレストに参加しているサーバーに、記憶域移行サービスをインストールして実行する必要があります。
 2. Windows 管理センターで、Windows Server 2019 を実行している orchestrator サーバーに接続します。 <br>これは、記憶域移行サービスをインストールし、移行の管理に使用するサーバーです。 1台のサーバーのみを移行する場合は、Windows Server 2019 を実行している限り、移行先サーバーを使用できます。 複数のサーバーを移行する場合は、別のオーケストレーションサーバーを使用することをお勧めします。
 3. (Windows 管理センターの)**サーバーマネージャー**に移動して、**記憶域移行サービス**> し、[**インストール**] を選択して、記憶域移行サービスとその必須コンポーネントをインストールします (図1を参照)。
     ![[インストール] ボタンが表示されている [記憶域移行サービス] ページのスクリーンショット ](media/migrate/install.png) **図 1: Storage migration Service のインストール**
@@ -95,7 +95,7 @@ ms.locfileid: "85475329"
 - 移行元サーバーの id を引き継がず**に移行を完了することを検討してください**。
 - **もう一度転送**し、最後の転送以降に更新されたファイルのみをコピーします。
 
-ファイルを Azure と同期することが目的である場合は、ファイルを転送した後、または移行先サーバーに移動した後に、Azure File Sync を使用して移行先サーバーを設定できます (「 [Azure File Sync の展開の計画](https://docs.microsoft.com/azure/storage/files/storage-sync-files-planning)」を参照してください)。
+ファイルを Azure と同期することが目的である場合は、ファイルを転送した後、または移行先サーバーに移動した後に、Azure File Sync を使用して移行先サーバーを設定できます (「 [Azure File Sync の展開の計画](/azure/storage/files/storage-sync-files-planning)」を参照してください)。
 
 ## <a name="step-3-cut-over-to-the-new-servers"></a>手順 3: 新しいサーバーにカットオーバーする
 
@@ -118,4 +118,4 @@ ms.locfileid: "85475329"
 
 - [記憶域移行サービスの概要](overview.md)
 - [記憶域移行サービスに関してよく寄せられる質問 (FAQ)](faq.md)
-- [Azure File Sync のデプロイの計画](https://docs.microsoft.com/azure/storage/files/storage-sync-files-planning)
+- [Azure File Sync のデプロイの計画](/azure/storage/files/storage-sync-files-planning)

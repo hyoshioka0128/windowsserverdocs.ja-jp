@@ -8,12 +8,12 @@ ms.date: 02/22/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: c36de1c3565be7f0f0e6c6203a21345f3d227e96
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 2162937498a5c16ce33b67ba5e478d2a6bb1a687
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80857325"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964984"
 ---
 # <a name="identity-delegation-scenario-with-ad-fs"></a>AD FS を使用した id 委任のシナリオ
 
@@ -57,7 +57,7 @@ ms.locfileid: "80857325"
 Fabrikam.com 管理者は、次の3つのオプションを使用できます。 Frank:
 
 
-1. Active Directory&reg; フェデレーションサービス (AD FS) などの STS 製品を購入してインストールします。
+1. Active Directory フェデレーションサービス (AD FS) などの STS 製品を購入してインストールし &reg; ます。
 2. LiveID STS などのクラウド STS 製品をサブスクライブします。
 3. WIF を使用してカスタム STS を構築します。
 
@@ -99,9 +99,9 @@ if ( claimsPrincipal != null )
     bootstrapToken = claimsIdentity.BootstrapToken;
 }
 ```
-WIF には、 [CreateChannelActingAs](https://msdn.microsoft.com/library/ee733863.aspx)というメソッドが用意されています。このメソッドは、指定されたセキュリティトークンを持つトークン発行要求を ActAs 要素として補強する、指定された種類のチャネルを作成します。 ブートストラップトークンをこのメソッドに渡し、返されたチャネルで必要なサービスメソッドを呼び出すことができます。 このサンプルシナリオでは、Frank の id で[Actor](https://msdn.microsoft.com/library/microsoft.identitymodel.claims.iclaimsidentity.actor.aspx)プロパティが web1's identity に設定されています。
+WIF には、 [CreateChannelActingAs](/previous-versions/windows-identity-foundation/ee733863(v=msdn.10))というメソッドが用意されています。このメソッドは、指定されたセキュリティトークンを持つトークン発行要求を ActAs 要素として補強する、指定された種類のチャネルを作成します。 ブートストラップトークンをこのメソッドに渡し、返されたチャネルで必要なサービスメソッドを呼び出すことができます。 このサンプルシナリオでは、Frank の id で[Actor](/previous-versions/windows-identity-foundation/ee766706(v=msdn.10))プロパティが web1's identity に設定されています。
 
-次のコードスニペットは、 [CreateChannelActingAs](https://msdn.microsoft.com/library/ee733863.aspx)を使用して Web サービスを呼び出し、返されたチャネルでサービスのメソッド ComputeResponse の1つを呼び出す方法を示しています。
+次のコードスニペットは、 [CreateChannelActingAs](/previous-versions/windows-identity-foundation/ee733863(v=msdn.10))を使用して Web サービスを呼び出し、返されたチャネルでサービスのメソッド ComputeResponse の1つを呼び出す方法を示しています。
 
 ```
 // Get the channel factory to the backend service from the application state

@@ -1,5 +1,5 @@
 ---
-title: ソフトウェア制限のポリシーの技術概要 (英語ページの可能性があります)
+title: ソフトウェアの制限のポリシーの技術概要
 description: Windows Server のセキュリティ
 ms.prod: windows-server
 ms.technology: security-software-restriction-policies
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 38625a8d416345a6a7ed40c021b55aa10d1fd92f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 9a9a44cd4ab1f4c8ee1c4dadf5cc09de2208b46a
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80855275"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966164"
 ---
-# <a name="software-restriction-policies-technical-overview"></a>ソフトウェア制限のポリシーの技術概要 (英語ページの可能性があります)
+# <a name="software-restriction-policies-technical-overview"></a>ソフトウェアの制限のポリシーの技術概要
 
->適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
 このトピックでは、ソフトウェアの制限のポリシーについて説明します。この機能を使用するタイミングと方法、過去のリリースで実装された変更点、および Windows Server 2008 および Windows Vista 以降でソフトウェアの制限のポリシーを作成および展開する際に役立つその他のリソースへのリンクを示します。
 
@@ -84,19 +84,19 @@ Windows Server 2012 および Windows 8 では、SRP の機能に変更はあり
 
 |アプリケーション制御機能|SRP|AppLocker|
 |----------------|----|-------|
-|スコープ|SRP ポリシーは、Windows XP および Windows Server 2003 以降のすべての Windows オペレーティング システムに適用できます。|AppLocker ポリシーは、Windows Server 2008 R2、Windows Server 2012、Windows 7、および Windows 8 にのみ適用されます。|
-|ポリシーの作成|SRP ポリシーはグループ ポリシーで管理され、GPO の管理者のみが SRP ポリシーを更新できます。 ローカル コンピューターの管理者は、ローカル GPO で定義された SRP ポリシーを変更できます。|AppLocker ポリシーはグループ ポリシーで管理され、GPO の管理者のみがポリシーを更新できます。 ローカル コンピューターの管理者は、ローカル GPO で定義された AppLocker ポリシーを変更できます。<p>エラー メッセージをカスタマイズして、ヘルプの Web ページをユーザーに表示できます。|
+|Scope|SRP ポリシーは、Windows XP および Windows Server 2003 以降のすべての Windows オペレーティング システムに適用できます。|AppLocker ポリシーは、Windows Server 2008 R2、Windows Server 2012、Windows 7、および Windows 8 にのみ適用されます。|
+|ポリシーの作成|SRP ポリシーはグループ ポリシーで管理され、GPO の管理者のみが SRP ポリシーを更新できます。 ローカル コンピューターの管理者は、ローカル GPO で定義された SRP ポリシーを変更できます。|AppLocker ポリシーはグループ ポリシーで管理され、GPO の管理者のみがポリシーを更新できます。 ローカル コンピューターの管理者は、ローカル GPO で定義された AppLocker ポリシーを変更できます。<p>AppLocker では、エラー メッセージをカスタマイズして、ヘルプを提供する Web ページにユーザーを誘導できます。|
 |ポリシーの保守|SRP ポリシーを更新するには、ローカル セキュリティ ポリシー スナップイン (ポリシーがローカルに作成されている場合) またはグループ ポリシー管理コンソール (GPMC) を使う必要があります。|AppLocker ポリシーは、ローカル セキュリティ ポリシー スナップイン (ポリシーがローカルに作成されている場合)、GPMC、または Windows PowerShell の AppLocker コマンドレットを使って更新できます。|
 |ポリシーの適用|SRP ポリシーは、グループ ポリシーを介して配布されます。|AppLocker ポリシーは、グループ ポリシーを介して配布されます。|
 |実施モード|SRP は、"拒否リストモード" で機能します。管理者は、このエンタープライズで許可しないファイルの規則を作成できます。ファイルの残りの部分は、既定で実行できます。<p>SRP は、"許可リストモード" で構成することもできます。これは、既定ですべてのファイルがブロックされ、管理者が許可するファイルに対して許可規則を作成する必要があることを示します。|AppLocker は、既定では、"許可リストモード" で機能します。このモードでは、一致する許可規則があるファイルのみを実行できます。|
 |制御できるファイルの種類|SRP では、次のファイルの種類を制御できます。<p>-実行可能ファイル<br />-Dll<br />-スクリプト<br />-Windows インストーラー<p>SRP では、ファイルの種類を個別に制御できません。 SRP の規則すべてが 1 つの規則のコレクションに含まれます。|AppLocker では、次のファイルの種類を制御できます。<p>-実行可能ファイル<br />-Dll<br />-スクリプト<br />-Windows インストーラー<br />-パッケージアプリとインストーラー (Windows Server 2012 および Windows 8)<p>AppLocker は、5 つのファイルの種類それぞれに対して、個別の規則のコレクションを保持します。|
 |指定されたファイルの種類|SRP では、実行可能なファイルの種類の一覧をサポートしています。この一覧は拡張できます。 管理者は、実行可能と見なす必要があるファイルの拡張子を追加できます。|AppLocker では、この機能はサポートされません。 AppLocker では、現在、次のファイル拡張子がサポートされます。<p>-実行可能ファイル (.exe、.com)<br />-Dll (.ocx、.dll)<br />-スクリプト (.vbs、.js、ps1、.cmd、.bat)<br />-Windows インストーラー (.msi、.mst、.msp)<br />-パッケージアプリインストーラー (.appx)|
-|規則の種類|SRP では、4 つの規則の種類がサポートされます。<p>-ハッシュ<br />-Path<br />-署名<br />-インターネットゾーン|AppLocker では、3 つの規則の種類がサポートされます。<p>-ハッシュ<br />-Path<br />-パブリッシャー|
+|ルールの種類|SRP では、4 つの規則の種類がサポートされます。<p>-ハッシュ<br />-Path<br />-署名<br />-インターネットゾーン|AppLocker では、3 つの規則の種類がサポートされます。<p>-ハッシュ<br />-Path<br />-パブリッシャー|
 |ハッシュ値の編集|SRP を使用すると、管理者はカスタムハッシュ値を指定できます。|AppLocker では、ハッシュ値自体が計算されます。 内部的には、ポータブル実行可能ファイル (Exe および Dll) と Windows インストーラーの SHA1 Authenticode ハッシュと、残りの場合は SHA1 フラットファイルハッシュを使用します。|
 |さまざまなセキュリティ レベルのサポート|SRP 管理者は、アプリを実行できるアクセス許可を指定できます。 そのため、管理者は、メモ帳が常に制限されたアクセス許可で実行され、管理者特権を使用せずに実行されるように規則を構成できます。<p>Windows Vista 以前の SRP では、複数のセキュリティ レベルがサポートされます。 Windows 7 では、この一覧は、[許可しない] と [無制限] の2つのレベルに制限されていました (基本ユーザーは許可されていません)。|AppLocker では、セキュリティ レベルがサポートされません。|
-|パッケージアプリとパッケージアプリのインストーラーを管理する|利用できません。|.appx は、AppLocker が管理できる有効なファイルの種類です。|
+|パッケージアプリとパッケージアプリのインストーラーを管理する|不可能|.appx は、AppLocker が管理できる有効なファイルの種類です。|
 |ユーザーまたはユーザー グループへの規則のターゲット設定|SRP の規則は、特定のコンピューター上のすべてのユーザーに適用されます。|AppLocker 規則は、特定のユーザーまたはユーザー グループを対象にできます。|
-|規則の例外のサポート|SRP では、規則の例外がサポートされません。|AppLocker の規則には例外を含めることができます。これにより、管理者は "Regedit.exe を除くすべてのウィンドウを許可する" などの規則を作成できます。|
+|規則の例外のサポート|SRP では、規則の例外がサポートされません。|AppLocker の規則には例外があり、管理者はこの例外を使用して、"Windows からのすべてを許可する" (Regedit.exe を除く) などの規則を作成できます。|
 |監査モードのサポート|SRP では、監査モードがサポートされません。 SRP ポリシーをテストする唯一の方法は、テスト環境をセットアップして、何回か試してみることです。|AppLocker では、監査モードがサポートされます。このモードでは、管理者はユーザー エクスペリエンスに影響を与えずに、実際の運用環境でポリシーの影響をテストできます。 結果に問題がなければ、ポリシーの実施を開始できます。|
 |ポリシーのエクスポートとインポートのサポート|SRP では、ポリシーのインポート/エクスポートがサポートされません。|AppLocker では、ポリシーのインポートとエクスポートがサポートされます。 これにより、サンプル コンピューターで AppLocker ポリシーを作成し、テストしてから、そのポリシーをエクスポートし、目的の GPO にインポートすることができます。|
 |規則の実施|内部的に、SRP の規則は、安全性の低いユーザー モードで実施されます。|内部的には、Exe および Dll の AppLocker 規則はカーネルモードで適用され、ユーザーモードでの適用よりも安全性が高くなります。|
@@ -123,9 +123,9 @@ Windows Server 2012 および Windows 8 では、SRP の機能に変更はあり
 
 -   ポリシーの結果セット (RSoP)。クライアントに適用される有効なポリシーの診断に役立ちます。
 
-SRP アーキテクチャの詳細、SRP がルール、プロセス、および相互作用を管理する方法の詳細については、Windows Server 2003 テクニカルライブラリの「[ソフトウェアの制限のポリシーのしくみ](https://technet.microsoft.com/library/cc786941(v=WS.10).aspx)」を参照してください。
+SRP アーキテクチャの詳細、SRP がルール、プロセス、および相互作用を管理する方法の詳細については、Windows Server 2003 テクニカルライブラリの「[ソフトウェアの制限のポリシーのしくみ](/previous-versions/windows/it-pro/windows-server-2003/cc786941(v=ws.10))」を参照してください。
 
-## <a name="best-practices"></a><a name="BKMK_Best_Practices"></a>ベストプラクティス
+## <a name="best-practices"></a><a name="BKMK_Best_Practices"></a>ベスト プラクティス
 
 ### <a name="do-not-modify-the-default-domain-policy"></a>既定のドメインポリシーを変更しないでください。
 
@@ -161,9 +161,9 @@ SRP アーキテクチャの詳細、SRP がルール、プロセス、および
 
 ### <a name="filter-user-policy-settings-based-on-membership-in-security-groups"></a>セキュリティグループのメンバーシップに基づいて、ユーザーポリシー設定をフィルター処理します。
 
--   ポリシー設定を適用しないユーザーまたはグループを指定するには、GPO の プロパティ ダイアログボックスの **セキュリティ** タブにある **グループポリシー**と**読み取り** チェックボックスをオフにします。
+-   ポリシー設定を適用しないユーザーまたはグループを指定するには、GPO の [プロパティ] ダイアログボックスの [**セキュリティ**] タブにある [**グループポリシー**と**読み取り**] チェックボックスをオフにします。
 
--   読み取りアクセス許可が拒否された場合、このポリシー設定はコンピューターによってダウンロードされません。 その結果、不要なポリシー設定をダウンロードすることで帯域幅が少なくなり、ネットワークをより迅速に機能させることができます。 読み取りアクセス許可を拒否するには、GPO の プロパティ ダイアログボックスの **セキュリティ** タブにある **読み取り** チェックボックス**をオンに**します。
+-   読み取りアクセス許可が拒否された場合、このポリシー設定はコンピューターによってダウンロードされません。 その結果、不要なポリシー設定をダウンロードすることで帯域幅が少なくなり、ネットワークをより迅速に機能させることができます。 読み取りアクセス許可を拒否するには、GPO の [プロパティ] ダイアログボックスの [**セキュリティ**] タブにある [**読み取り**] チェックボックス**をオンに**します。
 
 ### <a name="do-not-link-to-a-gpo-in-another-domain-or-site"></a>別のドメインまたはサイトの GPO にリンクしないでください。
 
@@ -171,13 +171,11 @@ SRP アーキテクチャの詳細、SRP がルール、プロセス、および
 
 ## <a name="additional-resources"></a>その他のリソース
 
-|コンテンツの種類|参照|
+|コンテンツ タイプ|参考資料|
 |--------|-------|
-|**計画**|[ソフトウェアの制限のポリシーに関するテクニカルリファレンス](https://technet.microsoft.com/library/cc728085(v=WS.10).aspx)|
-|**運用**|[ソフトウェア制限ポリシーの管理](administer-software-restriction-policies.md)|
-|**トラブルシューティング**|[ソフトウェアの制限のポリシーのトラブルシューティング (2003)](https://technet.microsoft.com/library/cc737011(v=WS.10).aspx)|
-|**セキュリティ**|[ソフトウェアの制限のポリシーに関する脅威と対策 (2008)](https://technet.microsoft.com/library/dd349795(v=WS.10).aspx)<p>[ソフトウェアの制限のポリシーに関する脅威と対策 (2008 R2)](https://technet.microsoft.com/library/hh125926(v=WS.10).aspx)|
-|**ツールと設定**|[ソフトウェアの制限のポリシーのツールと設定 (2003)](https://technet.microsoft.com/library/cc782454(v=WS.10).aspx)|
-|**コミュニティ リソース**|[ソフトウェアの制限のポリシーによるアプリケーションのロックダウン](https://technet.microsoft.com/magazine/2008.06.srp.aspx?pr=blog)|
-
-
+|**計画**|[ソフトウェアの制限のポリシーのテクニカル リファレンス](/previous-versions/windows/it-pro/windows-server-2003/cc728085(v=ws.10))|
+|**操作**|[ソフトウェア制限ポリシーの管理](administer-software-restriction-policies.md)|
+|**トラブルシューティング**|[ソフトウェアの制限のポリシーのトラブルシューティング (2003)](/previous-versions/windows/it-pro/windows-server-2003/cc737011(v=ws.10))|
+|**Security**|[ソフトウェアの制限のポリシーに関する脅威と対策 (2008)](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349795(v=ws.10))<p>[ソフトウェアの制限のポリシーに関する脅威と対策 (2008 R2)](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/hh125926(v=ws.10))|
+|**ツールと設定**|[ソフトウェアの制限ポリシーのツールおよび設定 (2003)](/previous-versions/windows/it-pro/windows-server-2003/cc782454(v=ws.10))|
+|**コミュニティ リソース**|[ソフトウェアの制限のポリシーによるアプリケーションのロックダウン](/previous-versions/technet-magazine/cc510322(v=msdn.10)?pr=blog)|

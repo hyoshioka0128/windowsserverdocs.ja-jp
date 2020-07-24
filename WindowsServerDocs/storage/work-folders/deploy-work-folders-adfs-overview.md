@@ -8,25 +8,25 @@ manager: klaasl
 ms.author: jeffpatt
 author: JeffPatt24
 ms.date: 4/5/2017
-ms.openlocfilehash: 40cc953ce7393781497d957fc8e6690c5c9abc0b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5eff8eab3f6e45b515d71e5043f0cd60be28a384
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365923"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965814"
 ---
 # <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-overview"></a>AD FS と Web アプリケーション プロキシを使ったワーク フォルダーの展開: 概要
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016
+>適用先:Windows Server (半期チャネル)、Windows Server 2016
 
 このセクションのトピックでは、Active Directory フェデレーション サービス (AD FS) と Web アプリケーション プロキシを使って、ワーク フォルダーを展開するための手順を提供します。 この手順は、完全に機能するワーク フォルダーの設定を作成し、オンプレミスでもインターネットを経由しても、ワーク フォルダーを使用できるクライアント コンピューターを設定するように、提供されています。  
   
-ワーク フォルダーは Windows Server 2012 R2 で導入されたコンポーネントです。ワーク フォルダーを使うと、インフォメーション ワーカーはデバイス間で仕事用のファイルを同期できます。 ワーク フォルダーについて詳しくは、「[ワーク フォルダーの概要](Work-Folders-Overview.md)」をご覧ください。  
+ワーク フォルダーは Windows Server 2012 R2 で導入されたコンポーネントです。ワーク フォルダーを使うと、インフォメーション ワーカーはデバイス間で仕事用のファイルを同期できます。 詳しくは、「[ワーク フォルダーの概要](Work-Folders-Overview.md)」をご覧ください。  
   
 ユーザーがインターネット経由でワーク フォルダーを同期できるようにするには、リバース プロキシによってワーク フォルダーを公開して、ワーク フォルダーを外部のインターネットから利用できるようにする必要があります。 AD FS に含まれる Web アプリケーション プロキシは、リバース プロキシ機能を提供するために使用できる 1 つのオプションです。 Web アプリケーション プロキシは、AD FS を使用して、ワーク フォルダー Web アプリケーションへのアクセスを事前認証し、ユーザーがすべてのデバイスで企業ネットワークの外部からワーク フォルダーにアクセスできるようにします。 
 
 > [!NOTE]
->   このセクションで説明する手順は、Windows Server 2016 環境を対象としています。 Windows Server 2012 R2 を使用している場合には、[Windows Server 2012 R2 の手順](https://technet.microsoft.com/library/dn747208(v=ws.11).aspx) に従います。
+>   このセクションで説明する手順は、Windows Server 2016 環境を対象としています。 Windows Server 2012 R2 を使用している場合には、[Windows Server 2012 R2 の手順](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn747208(v=ws.11)) に従います。
   
 これらのトピックでは、以下について説明します。  
   
@@ -53,12 +53,12 @@ ms.locfileid: "71365923"
   
 ![インターネット、DMZ、Contoso ネットワーク セグメントを示す図。 インターネットのセグメントに Client2、DMZ に WAP サーバー、Contoso セグメントにワーク フォルダー サーバー、ドメイン コントローラー、AD FS サーバー、および Client1 があります](media/deploy-work-folders-adfs/WF_ADFS_WAP_Diagram.png)
 
-## <a name="deployment-overview"></a>展開の概要  
+## <a name="deployment-overview"></a>デプロイの概要  
 この一連のトピックでは、テスト環境において AD FS の設定、Web アプリケーション プロキシの設定、ワーク フォルダーの設定を行う手順の例を詳しく説明します。 次の順序で、コンポーネントのセットアップを行います。  
   
 1.  AD FS  
   
-2.  ワーク フォルダー  
+2.  作業フォルダー  
   
 3.  Web アプリケーション プロキシ  
   
@@ -66,22 +66,21 @@ ms.locfileid: "71365923"
   
 Windows PowerShell スクリプトを使用して、自己署名証明書を作成することもできます。  
   
-## <a name="deployment-steps"></a>展開の手順  
+## <a name="deployment-steps"></a>デプロイメントの手順  
 Windows Server のユーザー インターフェイスを使用して展開を実行するには、これらのトピックの手順に従います。  
   
--   [AD FS と Web アプリケーションプロキシを使用してワークフォルダーを展開する: 手順 1. AD FS を設定する](deploy-work-folders-adfs-step1.md)  
+-   [AD FS と Web アプリケーション プロキシを使ったワーク フォルダーの展開: 手順 1: AD FS のセットアップ](deploy-work-folders-adfs-step1.md)  
   
--   [AD FS と Web アプリケーションプロキシを使用してワークフォルダーを展開する: 手順2、AD FS 構成後の作業](deploy-work-folders-adfs-step2.md)  
+-   [AD FS と Web アプリケーション プロキシを使ったワーク フォルダーの展開: 手順 2、AD FS の構成後の作業](deploy-work-folders-adfs-step2.md)  
   
--   [AD FS と Web アプリケーションプロキシを使用してワークフォルダーを展開する: 手順 3. ワークフォルダーを設定する](deploy-work-folders-adfs-step3.md)  
+-   [AD FS と Web アプリケーション プロキシを使ったワーク フォルダーの展開: 手順 3: ワーク フォルダーのセットアップ](deploy-work-folders-adfs-step3.md)  
   
--   [AD FS と Web アプリケーションプロキシを使用してワークフォルダーを展開する: 手順 4. Web アプリケーションプロキシを設定する](deploy-work-folders-adfs-step4.md)  
+-   [AD FS と Web アプリケーション プロキシを使ったワーク フォルダーの展開: 手順 4: Web アプリケーション プロキシのセットアップ](deploy-work-folders-adfs-step4.md)  
   
--   [AD FS と Web アプリケーションプロキシを使用してワークフォルダーを展開する: 手順5、クライアントをセットアップする](deploy-work-folders-adfs-step5.md)  
+-   [AD FS と Web アプリケーション プロキシを使ったワーク フォルダーの展開: 手順 5: クライアントのセットアップ](deploy-work-folders-adfs-step5.md)  
 
 ## <a name="see-also"></a>参照  
-[ワークフォルダーの概要](Work-Folders-Overview.md)  
+[ワーク フォルダーの概要](Work-Folders-Overview.md)  
 [ワーク フォルダーの実装の設計](Plan-Work-Folders.md)  
 [ワーク フォルダーの展開](Deploy-Work-Folders.md)  
   
-

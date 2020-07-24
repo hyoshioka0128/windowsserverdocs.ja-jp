@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 661f1b3f227a3e04c1328798a632b10b55df1c20
-ms.sourcegitcommit: 7200143aa787c7ac05ae0e012263b1c9a95b87ed
+ms.openlocfilehash: a7da23b592f495b45e337520179d414900183a1b
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84721750"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966614"
 ---
 # <a name="the-role-of-claims"></a>要求の役割
 
@@ -59,13 +59,13 @@ Active Directory フェデレーションサービス (AD FS) AD FS のフェデ
 |--------|---------------|-------|
 |電子 \- メールアドレス|\-ユーザーの電子メールアドレス|http: \/ \/schemas.xmlsoap.org \/ ws \/ 2005 \/ 05 \/ id \/ 要求 \/ emailaddress|
 |名|ユーザーの姓名の名|http: \/ \/schemas.xmlsoap.org \/ ws \/ 2005 \/ 05 \/ id \/ 要求 \/ givenname|
-|Name|ユーザーの一意の名前|http: \/ \/schemas.xmlsoap.org \/ ws \/ 2005 \/ 05 \/ id \/ 要求 \/ 名|
+|名前|ユーザーの一意の名前|http: \/ \/schemas.xmlsoap.org \/ ws \/ 2005 \/ 05 \/ id \/ 要求 \/ 名|
 |UPN|ユーザーのユーザープリンシパル名 \( UPN \)|http: \/ \/schemas.xmlsoap.org \/ ws \/ 2005 \/ 05 \/ id \/ 要求 \/ upn|
 |共通名|ユーザーの共通名|http: \/ \/schemas.xmlSoap.org \/ 要求 \/ commonname|
 |AD FS 1.x 電子 \- メールアドレス|\-AD FS 1.1 または ADFS 1.0 と相互運用するときのユーザーの電子メールアドレス|http: \/ \/schemas.xmlSoap.org \/ claim \/ EmailAddress|
 |グループ|ユーザーが属するグループ|http: \/ \/schemas.xmlSoap.org \/ 要求 \/ グループ|
 |AD FS 1.x UPN|AD FS 1.1 または AD FS 1.0 と相互運用するときのユーザーの UPN|http: \/ \/schemas.xmlSoap.org \/ 要求 \/ UPN|
-|ロール|ユーザーの役割|http: \/ \/ schemas.microsoft.com \/ ws \/ 2008 \/ 06 \/ id \/ 要求 \/ ロール|
+|Role|ユーザーの役割|http: \/ \/ schemas.microsoft.com \/ ws \/ 2008 \/ 06 \/ id \/ 要求 \/ ロール|
 |Surname|ユーザーの姓名の姓|http: \/ \/schemas.xmlsoap.org \/ ws \/ 2005 \/ 05 \/ id \/ 要求 \/ 姓|
 |PPID|ユーザーの個人識別子|http: \/ \/schemas.xmlsoap.org \/ ws \/ 2005 \/ 05 \/ id \/ 要求 \/ privatepersonalidentifier|
 |名前識別子|ユーザーの SAML 名前識別子|http: \/ \/schemas.xmlsoap.org \/ ws \/ 2005 \/ 05 \/ id \/ 要求 \/ nameidentifier|
@@ -90,7 +90,7 @@ Active Directory フェデレーションサービス (AD FS) AD FS のフェデ
 
 - この**フェデレーションサービスが送信できる要求の種類として、フェデレーションメタデータにこの要求を発行します** \(発行済みとして公開 \) —このフェデレーションサービスによって提供される要求の種類を示します。 これらは、フェデレーション サービスが送信できる要求として公開する要求の種類です。 要求プロバイダーによって送信される実際の要求の種類は、多くの場合、このリストのサブセットとなります。
 
-要求の種類の公開状態を設定する方法の詳細については、AD FS デプロイガイドの「[要求の説明を追加](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/add-a-claim-description)する」を参照してください。
+要求の種類の公開状態を設定する方法の詳細については、AD FS デプロイガイドの「[要求の説明を追加](../operations/add-a-claim-description.md)する」を参照してください。
 
 ### <a name="when-generating-federation-metadata"></a>フェデレーション メタデータの生成
 

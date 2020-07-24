@@ -8,18 +8,18 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 1d00ab702ab6b4ff4307f96f9e266a1cb3420197
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 2924b04e0853549f86934f0145f2cb46f07a4939
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80821145"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966584"
 ---
 # <a name="monitoring-active-directory-for-signs-of-compromise"></a>Active Directory の侵害の兆候を監視する
 
->適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
-*法 5: 永続的の警戒は、セキュリティの価格です。*[セキュリティ管理に関する10の不変法を](https://technet.microsoft.com/library/cc722488.aspx) -   
+*法 5: 永続的の警戒は、セキュリティの価格です。* - [セキュリティ管理に関する10の不変法](/previous-versions//cc722488(v=technet.10))  
   
 監視システム ソリッド イベント ログとは、どのようなセキュリティで保護された Active Directory 設計の重要な部分です。 多くのコンピューター セキュリティ侵害だった場合は、検出早期イベント被害者が該当するイベント ログ監視とアラートを施行します。 独立したレポートは、この結論を長い間サポートができます。 たとえば、 [2009 Verizon データ侵害レポート](http://www.verizonbusiness.com/resources/security/reports/2009_databreach_rp.pdf) 状態。  
   
@@ -31,15 +31,15 @@ ms.locfileid: "80821145"
 
 Microsoft 公式のエンタープライズ サポート ブログへのリンクを次に示します。 これらのブログのコンテンツは、アドバイス、ガイダンス、および監査に関する推奨事項について、Active Directory インフラストラクチャのセキュリティの強化に役立つし、貴重なリソースの設計には、監査ポリシーを提供します。  
   
-* [マジックは、グローバル オブジェクト アクセスの監査](https://blogs.technet.com/b/askds/archive/2011/03/10/global-object-access-auditing-is-magic.aspx) の構成と呼ばれる高度な監査ポリシーが容易に監査およびしないスクリプトや auditpol.exe を使い分ける必要データの種類を設定するには、Windows 7 および Windows Server 2008 R2 できるようにする追加されたコントロール メカニズムについて説明します。  
-* [Windows 2008 での変更の監査の概要](https://blogs.technet.com/b/askds/archive/2007/10/19/introducing-auditing-changes-in-windows-2008.aspx) -Windows Server 2008 で監査の変更が導入されています。  
-* [Vista および 2008 でのテクニックの監査を冷却](https://blogs.technet.com/b/askds/archive/2007/11/16/cool-auditing-tricks-in-vista-and-2008.aspx) -Windows Vista および Windows Server 2008 の問題のトラブルシューティングまたは環境内で何が起こっているかを確認に使用できるの興味深い監査機能について説明します。  
-* [Windows Server 2008 および Windows Vista の監査のワンストップ ショップ](https://blogs.technet.com/b/askds/archive/2008/03/27/one-stop-shop-for-auditing-in-windows-server-2008-and-windows-vista.aspx) -監査機能、および Windows Server 2008 および Windows Vista に含まれる情報のコンパイルが含まれています。  
+* [マジックは、グローバル オブジェクト アクセスの監査](/archive/blogs/askds/global-object-access-auditing-is-magic) の構成と呼ばれる高度な監査ポリシーが容易に監査およびしないスクリプトや auditpol.exe を使い分ける必要データの種類を設定するには、Windows 7 および Windows Server 2008 R2 できるようにする追加されたコントロール メカニズムについて説明します。  
+* [Windows 2008 での変更の監査の概要](/archive/blogs/askds/introducing-auditing-changes-in-windows-2008) -Windows Server 2008 で監査の変更が導入されています。  
+* [Vista および 2008 でのテクニックの監査を冷却](/archive/blogs/askds/cool-auditing-tricks-in-vista-and-2008) -Windows Vista および Windows Server 2008 の問題のトラブルシューティングまたは環境内で何が起こっているかを確認に使用できるの興味深い監査機能について説明します。  
+* [Windows Server 2008 および Windows Vista の監査のワンストップ ショップ](/archive/blogs/askds/one-stop-shop-for-auditing-in-windows-server-2008-and-windows-vista) -監査機能、および Windows Server 2008 および Windows Vista に含まれる情報のコンパイルが含まれています。  
   
 Windows Server 2008 での監査については、Windows の Windows 8 および Windows Server 2012 では、監査の強化点については、AD DS に関する情報、次のリンクが提供されます。  
   
-* [セキュリティ監査の新](https://technet.microsoft.com/library/hh849638.aspx) -新しいセキュリティ監査では、Windows 8 および Windows Server 2012 の機能の概要を説明します。  
-* [AD DS 監査ステップ バイ ステップ ガイド](https://technet.microsoft.com/library/a9c25483-89e2-4202-881c-ea8e02b4b2a5.aspx) -Windows Server 2008 の新しい Active Directory ドメイン サービス (AD DS) の監査機能について説明します。 また、この新しい機能を実装する手順を示します。  
+* [セキュリティ監査の新](/previous-versions/orphan-topics/ws.11/hh849638(v=ws.11)) -新しいセキュリティ監査では、Windows 8 および Windows Server 2012 の機能の概要を説明します。  
+* [AD DS 監査ステップ バイ ステップ ガイド](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731607(v=ws.10)) -Windows Server 2008 の新しい Active Directory ドメイン サービス (AD DS) の監査機能について説明します。 また、この新しい機能を実装する手順を示します。  
   
 ### <a name="windows-audit-categories"></a>Windows の監査カテゴリ
 
@@ -49,7 +49,7 @@ Windows Vista および Windows Server 2008 では、前に、Windows には、9
 * アカウント管理  
 * ディレクトリ サービスのアクセス  
 * ログオン イベント  
-* オブジェクトへのアクセス  
+* オブジェクト アクセス  
 * ポリシーの変更  
 * 特権の使用  
 * プロセスの追跡  
@@ -61,14 +61,14 @@ Windows Vista および Windows Server 2008 では、前に、Windows には、9
 監査ポリシーのカテゴリには、次の種類のイベント ログ メッセージが有効にします。  
   
 ##### <a name="audit-account-logon-events"></a>アカウント ログオン イベントの監査  
-ログオンするか、別のコンピューターが、アカウントの検証に使用されている 1 台のコンピューターからログオフするセキュリティ プリンシパル (ユーザー、コンピューター、またはサービス アカウントなど) の各インスタンスをレポートします。 ドメイン セキュリティ プリンシパルのアカウントがドメイン コント ローラーに対する認証は、アカウント ログオン イベントが生成されます。 ローカル コンピューター上のローカル ユーザーの認証は、ローカル セキュリティ ログに記録されるログオン イベントを生成します。 アカウント ログオフ イベントは記録されません。  
+ログオンするか、別のコンピューターが、アカウントの検証に使用されている 1 台のコンピューターからログオフするセキュリティ プリンシパル (ユーザー、コンピューター、またはサービス アカウントなど) の各インスタンスをレポートします。 ドメイン セキュリティ プリンシパルのアカウントがドメイン コント ローラーに対する認証は、[アカウント ログオン イベントが生成されます。 ローカル コンピューター上のローカル ユーザーの認証は、ローカル セキュリティ ログに記録されるログオン イベントを生成します。 アカウント ログオフ イベントは記録されません。  
   
 このカテゴリを生成「余分」なので、Windows が頻繁にログオンするアカウントを行わなくても、ローカルおよびリモート コンピューターから通常業務の過程でします。 それでも、セキュリティ計画には、成功とこのを監査するカテゴリの失敗を含める必要があります。  
   
 ##### <a name="audit-account-management"></a>アカウント管理の監査  
 この監査設定を使うと、ユーザーとグループの管理を追跡するかどうかを決定します。 たとえば、ユーザーとグループを追跡するユーザーまたはコンピューター アカウント、セキュリティ グループ、または配布グループが作成、変更、または削除します。ユーザーまたはコンピューター アカウントが名前変更、無効になっている、または有効である場合または、ユーザーまたはコンピューターのパスワードが変更されるとします。 ユーザーまたはグループを追加またはその他のグループから削除されるは、イベントを生成できます。  
   
-##### <a name="audit-directory-service-access"></a>ディレクトリ サービスのアクセスの監査  
+##### <a name="audit-directory-service-access"></a>ディレクトリ サービス アクセスを監査します。  
 
 このポリシー設定では、Active Directory オブジェクトにセキュリティ プリンシパルのアクセスを監査する独自の指定したシステム アクセス制御リスト (SACL) がいるかどうかを決定します。 一般に、このカテゴリは、ドメイン コント ローラーでのみ使用する必要があります。 この設定が多数の「ノイズ」を生成する有効な場合、  
   
@@ -76,7 +76,7 @@ Windows Vista および Windows Server 2008 では、前に、Windows には、9
 ローカル コンピューターに対するローカルのセキュリティ プリンシパルの認証は、ログオン イベントが生成されます。 ログオン イベントは、ローカル コンピューターで実行するドメイン ログオンを記録します。 アカウント ログオフ イベントは生成されません。 ログオン イベントの有効な場合、たくさんの「ノイズ」が生成されますが、セキュリティ監査計画の既定で有効する必要があります。  
   
 ##### <a name="audit-object-access"></a>オブジェクト アクセスの監査  
-オブジェクトへのアクセスには、監査を有効に、後で定義済みのオブジェクトにアクセスして (例、Opened、読み取り、Renamed、削除済み、または終了) ときにイベントを生成できます。 メインの監査カテゴリが有効にした後、管理者に個別に対象のオブジェクトが持つ監査を有効を定義する必要があります。 多くの Windows システム オブジェクトの監査が有効、管理者は、いずれかが定義する前にイベントを生成する通常開始はこのカテゴリを有効にするように搭載されています。  
+オブジェクトへのアクセスには、監査を有効に、後で定義済みのオブジェクトにアクセスして (例、Opened、読み取り、Renamed、削除済み]、または終了) ときにイベントを生成できます。 メインの監査カテゴリが有効にした後、管理者に個別に対象のオブジェクトが持つ監査を有効を定義する必要があります。 多くの Windows システム オブジェクトの監査が有効、管理者は、いずれかが定義する前にイベントを生成する通常開始はこのカテゴリを有効にするように搭載されています。  
   
 このカテゴリは、非常に「ノイズ」オブジェクト アクセスごとに 5 ~ 10 個のイベントが生成されます。 管理者を初めて使用すると、オブジェクトの監査役に立つ情報を取得することが困難とがあります。 また必要なときにのみ有効する必要があります。  
   
@@ -113,16 +113,16 @@ Windows Server 2012、Windows Server 2008 R2、または Windows 2008 を実行�
 ![AD の監視](media/Monitoring-Active-Directory-for-Signs-of-Compromise/SAD_5.gif)  
   
 > [!NOTE]  
-> グループ ポリシーは、すべての有効な監査ポリシーの状態が auditpol.exe は常に正確に報告していません。 参照してください [Windows 7 および 2008 R2 で効果的な監査ポリシーの取得](https://blogs.technet.com/b/askds/archive/2011/03/11/getting-the-effective-audit-policy-in-windows-7-and-2008-r2.aspx) 詳細です。  
+> グループ ポリシーは、すべての有効な監査ポリシーの状態が auditpol.exe は常に正確に報告していません。 参照してください [Windows 7 および 2008 R2 で効果的な監査ポリシーの取得](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731607(v=ws.10)) 詳細です。  
   
 各主なカテゴリには、複数のサブカテゴリがあります。 カテゴリ、サブカテゴリは、その機能の説明の一覧を以下に示します。  
   
 ### <a name="auditing-subcategories-descriptions"></a>監査サブカテゴリの説明  
 監査ポリシーのサブカテゴリには、次の種類のイベント ログ メッセージが有効にします。  
   
-#### <a name="account-logon"></a>アカウントのログオン  
+#### <a name="account-logon"></a>アカウント ログオン  
   
-##### <a name="credential-validation"></a>資格情報の検証  
+##### <a name="credential-validation"></a>資格情報の確認  
 このサブカテゴリは、ユーザー アカウントのログオン要求を送信する資格情報を検証テストの結果を報告します。 これらのイベントは資格情報の権限のあるコンピューターで発生します。 ドメイン アカウントのドメイン コント ローラーは、ローカル コンピューターでは権限を持つローカル アカウントの場合は、権限があるです。  
   
 ドメイン環境でアカウント ログオン イベントのほとんどは、ドメイン アカウントの権限を持つドメイン コント ローラーのセキュリティ ログに記録されます。 ただし、これらのイベントではローカル アカウントを使用してログオンする場合、組織内の他のコンピューターで発生します。  
@@ -136,11 +136,11 @@ Windows Server 2012、Windows Server 2008 R2、または Windows 2008 を実行�
 ##### <a name="other-account-logon-events"></a>その他のアカウント ログオン イベント  
 このサブカテゴリは、資格情報に、ユーザー アカウントのログオン要求を送信する資格情報の検証や Kerberos チケットに関係なく応答で発生するイベントを報告します。 これらのイベントは資格情報の権限のあるコンピューターで発生します。 ドメイン アカウントのドメイン コント ローラーは、ローカル コンピューターでは権限を持つローカル アカウントの場合は、権限があるです。  
   
-ドメイン環境でアカウント ログオン イベントのほとんどは、ドメイン アカウントの権限を持つドメイン コント ローラーのセキュリティ ログに記録されます。 ただし、これらのイベントではローカル アカウントを使用してログオンする場合、組織内の他のコンピューターで発生します。 次のような例があります。  
+ドメイン環境でアカウント ログオン イベントのほとんどは、ドメイン アカウントの権限を持つドメイン コント ローラーのセキュリティ ログに記録されます。 ただし、これらのイベントではローカル アカウントを使用してログオンする場合、組織内の他のコンピューターで発生します。 例を次に含めることができます。  
   
 * リモート デスクトップ サービス セッションの切断  
 * 新しいリモート デスクトップ サービス セッション  
-* ワークステーションのロックとロック解除  
+* ロックとワークステーションをロック解除  
 * スクリーン セーバーを呼び出す  
 * スクリーン セーバーを閉じる  
 * Kerberos の検出はリプレイ攻撃を Kerberos 要求と同じ情報を 2 回受信  
@@ -169,7 +169,7 @@ Windows Server 2012、Windows Server 2008 R2、または Windows 2008 を実行�
   
 #### <a name="detailed-process-tracking"></a>詳細なプロセスの追跡  
   
-##### <a name="process-creation"></a>プロセスの作成  
+##### <a name="process-creation"></a>プロセス作成  
 このサブカテゴリは、プロセスの作成と、ユーザーまたは作成時に使用するプログラムの名前を報告します。  
   
 ##### <a name="process-termination"></a>プロセスの終了  
@@ -187,7 +187,7 @@ Windows Server 2012、Windows Server 2008 R2、または Windows 2008 を実行�
 このサブカテゴリは、AD DS オブジェクトにアクセスする場合に報告します。 構成済みの Sacl のオブジェクトのみでは、SACL エントリに一致するようにアクセスすると生成、およびのみである監査イベントを発生します。 これらのイベントは、以前のバージョンの Windows Server ディレクトリ サービス アクセス イベントに似ています。 このサブカテゴリは、ドメイン コント ローラーにのみ適用されます。  
   
 ##### <a name="directory-service-changes"></a>ディレクトリ サービスを変更します。  
-このサブカテゴリは、AD DS 内のオブジェクトへの変更を報告します。 報告される変更の種類を作成、変更、移動、およびオブジェクトに対して実行される操作の削除を取り消します。 ディレクトリ サービスの変更の監査、必要に応じて、変更されたオブジェクトの変更されたプロパティの新旧の値を示します。 Sacl を持つオブジェクトだけでは、的に、生成された唯一の SACL エントリに一致するようにアクセスすると、監査イベントを発生します。 一部のオブジェクトとプロパティでは、スキーマ内のオブジェクト クラスの設定が原因で監査イベントが生成されません。 このサブカテゴリは、ドメイン コント ローラーにのみ適用されます。  
+このサブカテゴリは、AD DS 内のオブジェクトへの変更を報告します。 報告される変更の種類を作成、変更、移動、およびオブジェクトに対して実行される操作の削除を取り消します。 ディレクトリ サービスの変更の監査、必要に応じて、変更されたオブジェクトの変更されたプロパティの新旧の値を示します。 Sacl を持つオブジェクトだけでは、的に、生成された唯一の SACL エントリに一致するようにアクセスすると、監査イベントを発生します。 一部のオブジェクトとプロパティでは、スキーマ内のオブジェクト クラスに対する設定のために生成される監査イベントは発生しません。 このサブカテゴリは、ドメイン コント ローラーにのみ適用されます。  
   
 ##### <a name="directory-service-replication"></a>ディレクトリ サービスのレプリケーション  
 このサブカテゴリは、2 つのドメイン コント ローラー間のレプリケーションの開始し、終了を報告します。  
@@ -197,7 +197,7 @@ Windows Server 2012、Windows Server 2008 R2、または Windows 2008 を実行�
   
 #### <a name="logonlogoff"></a>ログオン/ログオフ  
   
-##### <a name="logon"></a>［ログオン］  
+##### <a name="logon"></a>ログオン  
 このサブカテゴリは、ユーザーがシステムにログオンしようとしたときに報告します。 これらのイベントは、アクセスされるコンピューターで発生します。 対話型ログオンにこれらのイベントの生成は、ログオンしているコンピューターで発生します。 ネットワーク ログオンでは、共有にアクセスする場所を受け取り、これらのイベントは、アクセスされるリソースをホストするコンピューターで生成します。 この設定が構成した場合、 **監査しない**, が困難またはどのユーザーがアクセスまたは組織のコンピューターにアクセスしようとしたのか判定できなくします。  
   
 ##### <a name="network-policy-server"></a>ネットワーク ポリシー サーバー  
@@ -212,7 +212,7 @@ Windows Server 2012、Windows Server 2008 R2、または Windows 2008 を実行�
 ##### <a name="other-logonlogoff-events"></a>その他のログオンとログオフ イベント  
 このサブカテゴリは、その他のログオンとログオフ関連のイベントをリモート デスクトップ サービス セッションの接続が切断し、再接続するには、RunAs を使用して、別のアカウントでプロセスを実行してロックとワークステーションをロック解除などを報告します。  
   
-##### <a name="logoff"></a>Logoff  
+##### <a name="logoff"></a>ログオフ  
 このサブカテゴリは、ユーザーが、システムをログオフするときに報告します。 これらのイベントは、アクセスされるコンピューターで発生します。 対話型ログオンにこれらのイベントの生成は、ログオンしているコンピューターで発生します。 ネットワーク ログオンでは、共有にアクセスする場所を受け取り、これらのイベントは、アクセスされるリソースをホストするコンピューターで生成します。 この設定が構成した場合、 **監査しない**, が困難またはどのユーザーがアクセスまたは組織のコンピューターにアクセスしようとしたのか判定できなくします。  
   
 ##### <a name="account-lockout"></a>アカウントのロックアウト  
@@ -255,14 +255,14 @@ Windows Server 2012、Windows Server 2008 R2、または Windows 2008 を実行�
 ##### <a name="other-privilege-use-events"></a>その他の特権の使用イベント  
 このセキュリティ ポリシーの設定は現在は使用されません。  
   
-#### <a name="object-access"></a>オブジェクトへのアクセス  
+#### <a name="object-access"></a>オブジェクト アクセス  
   
-##### <a name="file-system"></a>[ファイル システム]  
+##### <a name="file-system"></a>ファイル システム  
 このサブカテゴリは、ファイル システム オブジェクトがアクセスしたときに報告します。 Sacl でファイル システム オブジェクトのみ的に、生成された唯一の SACL エントリに一致するようにアクセスすると、監査イベントが発生します。 自体は、このポリシー設定のすべてのイベントの監査はされません。 指定したシステム アクセス制御リスト (SACL) をファイル システム オブジェクトにアクセスするユーザーのイベントを監査するかどうかを決定して効果的に監査の有効化を実行します。  
   
 オブジェクト アクセスの監査設定が構成した場合、 **成功**, 、監査エントリが生成するたびに、ユーザーは、独自の sacl が指定したオブジェクトを正常にアクセスします。 このポリシー設定が構成した場合、 **エラー**, 、監査エントリをユーザーが独自の sacl が指定したオブジェクトにアクセスするために失敗するたびに生成します。  
   
-##### <a name="registry"></a>［レジストリ］  
+##### <a name="registry"></a>Registry  
 このサブカテゴリは、レジストリ オブジェクトがアクセスしたときに報告します。 Sacl を持つレジストリ オブジェクトだけでは、SACL エントリに一致するようにアクセスすると生成、およびのみである監査イベントを発生します。 自体は、このポリシー設定のすべてのイベントの監査はされません。  
   
 ##### <a name="kernel-object"></a>カーネル オブジェクト  
@@ -292,7 +292,7 @@ Windows Server 2012、Windows Server 2008 R2、または Windows 2008 を実行�
 ##### <a name="other-object-access-events"></a>その他のオブジェクト アクセス イベント  
 このサブカテゴリは、他のタスク スケジューラ ジョブ、COM + オブジェクトなどのオブジェクトのアクセスに関連するイベントを報告します。  
   
-#### <a name="system"></a>System  
+#### <a name="system"></a>システム  
   
 ##### <a name="security-state-change"></a>セキュリティ状態の変更  
 このサブカテゴリは、セキュリティ サブシステムが開始および停止など、システムのセキュリティの状態の変更を報告します。  
@@ -310,7 +310,7 @@ IPsec ドライバー
 ##### <a name="other-system-events"></a>他のシステム イベント  
 このサブカテゴリは、他のシステム イベントを報告します。  
   
-詳細については、サブカテゴリの説明を参照してください、 [Microsoft セキュリティ コンプライアンス マネージャー ツール](https://technet.microsoft.com/library/cc677002.aspx)します。  
+詳細については、サブカテゴリの説明を参照してください、 [Microsoft セキュリティ コンプライアンス マネージャー ツール](/previous-versions/tn-archive/cc677002(v=technet.10))します。  
   
 各組織は、以前の管理対象のカテゴリとサブカテゴリを確認し、最適な環境に適合するものを有効にする必要があります。 監査ポリシーに対する変更は、実稼働環境で展開する前に常にテストする必要があります。  
   
@@ -327,7 +327,7 @@ Windows の監査ポリシーは、グループ ポリシー、auditpol.exe、Ap
   
 ![AD の監視](media/Monitoring-Active-Directory-for-Signs-of-Compromise/SAD_6.gif)  
   
-高度な監査ポリシーは、Active Directory またはローカル グループ ポリシーを使用して設定できます。 高度な監査ポリシーを設定する構成の下にある適切なサブカテゴリ **コンピューターの構成 \windows 設定 \ セキュリティ \ 監査ポリシー** (例から、ローカル グループ ポリシー エディター (gpedit.msc) については次のスクリーン ショットを参照してください)。 監査ポリシーのサブカテゴリごとに有効にできます **成功**, 、**エラー**, 、または **成功** と **エラー** イベントです。  
+高度な監査ポリシーは、Active Directory またはローカル グループ ポリシーを使用して設定できます。 高度な監査ポリシーを設定する構成の下にある適切なサブカテゴリ **コンピューターの構成 \windows 設定 \ セキュリティ \ 監査ポリシー** (例から、ローカル グループ ポリシー エディター (gpedit.msc) については次のスクリーン ショットを参照してください)。 各監査ポリシーサブカテゴリは、**成功**、**失敗**、または**成功**イベントと**失敗**イベントに対して有効にすることができます。  
   
 ![AD の監視](media/Monitoring-Active-Directory-for-Signs-of-Compromise/SAD_7.gif)  
   
@@ -354,28 +354,28 @@ Auditpol.exe 構文例:
 
 マイクロソフトが提供、 [サンプル スクリプト](https://support.microsoft.com/kb/921469) auditpol.exe コマンドごとに手動で入力する代わりにスクリプトを使用して高度な監査ポリシーを設定する管理者のためです。  
   
-**注** グループ ポリシーは常に正確に表示されないすべての有効な監査ポリシーの状態、auditpol.exe は実行されます。 参照してください [Windows 7 および Windows 2008 R2 で効果的な監査ポリシーの取得](https://blogs.technet.com/b/askds/archive/2011/03/11/getting-the-effective-audit-policy-in-windows-7-and-2008-r2.aspx) 詳細です。  
+**注** グループ ポリシーは常に正確に表示されないすべての有効な監査ポリシーの状態、auditpol.exe は実行されます。 参照してください [Windows 7 および Windows 2008 R2 で効果的な監査ポリシーの取得](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731607(v=ws.10)) 詳細です。  
   
 #### <a name="other-auditpol-commands"></a>その他の Auditpol コマンド
 
 保存し、ローカルの監査ポリシーを復元し、その他の監査関連のコマンドを表示するのには、Auditpol.exe を使用できます。 ここでは、その他の **auditpol** コマンドです。  
   
-`auditpol /clear`-ローカル監査ポリシーをクリアおよびリセットするために使用します。  
+`auditpol /clear`-ローカル監査ポリシーをクリアおよびリセットするために使用されます。  
   
 `auditpol /backup /file:<filename>`-現在のローカル監査ポリシーをバイナリファイルにバックアップするために使用されます。  
   
-`auditpol /restore /file:<filename>`-以前に保存した監査ポリシーファイルをローカル監査ポリシーにインポートするために使用します。  
+`auditpol /restore /file:<filename>`-以前に保存した監査ポリシーファイルをローカル監査ポリシーにインポートする場合に使用します。  
   
 `auditpol /<get/set> /option:<CrashOnAuditFail> /<enable/disable>`-この監査ポリシー設定が有効になっていると、何らかの理由でセキュリティ監査をログに記録できない場合に、システムがすぐに停止します (STOP: C0000244 {Audit Failed} メッセージが表示されます)。 セキュリティ監査ログがいっぱいとセキュリティ ログの指定された保有期間のメソッドは、ログに記録するイベントが通常は、失敗 **イベントを上書きしない** または **日数を過ぎたら**します。 通常、セキュリティ ログのログをより高い保証を必要とされる環境では有効のみです。 有効な場合、管理者必要があります詳細にセキュリティ ログのサイズを監視して必要に応じてログを回転します。 設定することもグループ ポリシーを使用してセキュリティ オプションを変更することによって **監査: セキュリティ監査を記録できない場合にすぐにシステムをシャット ダウン** (既定 = 無効)。  
   
 `auditpol /<get/set> /option:<AuditBaseObjects> /<enable/disable>`-この監査ポリシー設定は、グローバルシステムオブジェクトへのアクセスを監査するかどうかを決定します。 このポリシーが有効にすると、ミュー テックス、イベント、セマフォ、および既定のシステム アクセス制御リスト (SACL) で作成される DOS デバイスなどのシステム オブジェクト。 ほとんどの管理者がノイズが多すぎる"、"へのグローバル システム オブジェクトの監査を検討し、それらのみ行うことは悪意のあるハッキングが疑われる場合。 名前付きのオブジェクトには、SACL が与えられます。 監査オブジェクト アクセス監査ポリシー (またはカーネル オブジェクトの監査サブカテゴリ) も有効である場合は、これらのシステム オブジェクトへのアクセスが監査されます。 このセキュリティ設定を構成するときに変更は反映されませんするには、Windows を再起動します。 グローバル システム オブジェクトのセキュリティ オプション、アクセスの監査を変更することで、このポリシーのグループ ポリシーの設定することも (既定 = 無効)。  
   
-`auditpol /<get/set> /option:<AuditBaseDirectories> /<enable/disable>`-この監査ポリシー設定は、名前付きカーネルオブジェクト (ミューテックスやセマフォなど) を作成時に Sacl に指定することを指定します。 AuditBaseDirectories は AuditBaseObjects が他のオブジェクトを含むことができないオブジェクトを適用中にコンテナー オブジェクトに影響します。  
+`auditpol /<get/set> /option:<AuditBaseDirectories> /<enable/disable>`-この監査ポリシー設定は、名前付きカーネルオブジェクト (ミューテックスやセマフォなど) を作成時に Sacl として指定することを指定します。 AuditBaseDirectories は AuditBaseObjects が他のオブジェクトを含むことができないオブジェクトを適用中にコンテナー オブジェクトに影響します。  
   
-`auditpol /<get/set> /option:<FullPrivilegeAuditing> /<enable/disable>`-この監査ポリシー設定は、1つまたは複数の特権がユーザーのセキュリティトークンに割り当てられている場合に、クライアントがイベントを生成するかどうかを指定します: 割り当て Primarytokenprivilege、AuditPrivilege、BackupPrivilege、CreateTokenPrivilege、DebugPrivilege、EnableDelegationPrivilege、ImpersonatePrivilege、LoadDriverPrivilege、RestorePrivilege、SecurityPrivilege、System このオプションが有効になっていない場合 (既定 = 無効)、BackupPrivilege および RestorePrivilege の特権は記録されません。 このオプションを有効にすると、バックアップ操作中に (場合によって数百ものイベントを 2 回目)、セキュリティ ログを非常にノイズことができます。 セキュリティ オプションを変更することで、このポリシーのグループ ポリシーの設定することも **監査: バックアップと復元の特権の使用の監査**します。  
+`auditpol /<get/set> /option:<FullPrivilegeAuditing> /<enable/disable>`-この監査ポリシー設定は、1つまたは複数の特権がユーザーのセキュリティトークンに割り当てられたときに、クライアントがイベントを生成するかどうかを指定します: 割り当て Primarytokenprivilege、AuditPrivilege、BackupPrivilege、CreateTokenPrivilege、DebugPrivilege、EnableDelegationPrivilege、ImpersonatePrivilege、LoadDriverPrivilege、RestorePrivilege、SecurityPrivilege、SystemTakeOwnershipPrivilege このオプションが有効になっていない場合 (既定 = 無効)、BackupPrivilege および RestorePrivilege の特権は記録されません。 このオプションを有効にすると、バックアップ操作中に (場合によって数百ものイベントを 2 回目)、セキュリティ ログを非常にノイズことができます。 セキュリティ オプションを変更することで、このポリシーのグループ ポリシーの設定することも **監査: バックアップと復元の特権の使用の監査**します。  
   
 > [!NOTE]  
-> ここで指定したいくつかの情報を Microsoft から取得した [監査オプションの種類](https://msdn.microsoft.com/library/dd973862(prot.20).aspx) と Microsoft SCM ツールです。  
+> ここで指定したいくつかの情報を Microsoft から取得した [監査オプションの種類](/openspecs/windows_protocols/ms-gpac/262a2bed-93d4-4c04-abec-cf06e9ec72fd) と Microsoft SCM ツールです。  
   
 ## <a name="enforcing-traditional-auditing-or-advanced-auditing"></a>従来の監査または高度な監査を適用します。
 
@@ -383,16 +383,16 @@ Windows Server 2012、Windows Server 2008 R2、Windows Server 2008、Windows 8�
   
 レガシ従来カテゴリ ポリシーが監査ポリシーのサブカテゴリを上書きしないように、させる必要があります、 **監査ポリシーのサブカテゴリを強制 (Windows Vista またはそれ以降) をポリシー カテゴリの監査設定をオーバーライドする** の下にあるポリシー設定 **コンピューターの構成 \windows の設定 \ セキュリティ \ セキュリティ オプション**します。  
   
-サブカテゴリが有効になっているおよび 9 つの主なカテゴリではなく構成できることをお勧めします。 これには、監査ポリシーをサポートするさまざまなサブカテゴリを構成すると共に場合は、グループ ポリシーの設定 (サブカテゴリ監査カテゴリの上書きを許可する) に対応が必要です。  
+サブカテゴリが有効になっているおよび 9 つの主なカテゴリではなく構成できることをお勧めします。 これには、監査ポリシーをサポートするさまざまなサブカテゴリを構成すると共に場合は、グループ ポリシーの設定 (サブカテゴリ監査カテゴリのオーバーライドを許可する) に対応が必要です。  
   
 グループ ポリシーやコマンド ライン プログラム、auditpol.exe など、いくつかの方法では、サブカテゴリの監査を構成できます。  
   
-## <a name="next-steps"></a>次のステップ:
+## <a name="next-steps"></a>次のステップ
   
-* [Windows 7 および Windows Server 2008 R2 での高度なセキュリティ監査](https://social.technet.microsoft.com/wiki/contents/articles/advanced-security-auditing-in-windows-7-and-windows-server-2008-r2.aspx)  
+* [高度なセキュリティが windows 7 および Windows Server 2008 R2 の監査](https://social.technet.microsoft.com/wiki/contents/articles/advanced-security-auditing-in-windows-7-and-windows-server-2008-r2.aspx)  
   
-* [Windows Server 2008 での監査とコンプライアンス](https://technet.microsoft.com/magazine/2008.03.auditing.aspx)  
+* [監査と Windows Server 2008 でのコンプライアンス](/previous-versions/technet-magazine/cc194392(v=msdn.10))  
   
-* [グループポリシーを使用して、windows Server 2008 ドメイン、Windows Server 2003 ドメイン、または Windows 2000 ドメインの windows Vista ベースおよび Windows Server 2008 ベースのコンピューターについて、詳細なセキュリティ監査設定を構成する方法](https://support.microsoft.com/kb/921469)  
+* [グループ ポリシーを使用して、詳細なセキュリティが Windows Server 2008 ドメイン、Windows Server 2003 ドメイン、または Windows 2000 ドメインでは、Windows Vista および Windows Server 2008 ベースのコンピューターの監査設定を構成する方法](https://support.microsoft.com/kb/921469)  
   
-* [高度なセキュリティ監査ポリシーのステップバイステップガイド](https://technet.microsoft.com/library/dd408940(WS.10).aspx)  
+* [セキュリティ監査ポリシーのステップ バイ ステップ ガイドの詳細](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd408940(v=ws.10))  

@@ -7,12 +7,12 @@ ms.date: 06/28/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 1a1e8a9e668caa0c766f6fe3012d5ae6ecaddb50
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 9e38105bafc92efc4d9e62e4815cdb24c3c25512
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80859925"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965614"
 ---
 # <a name="ad-fs-and-banned-ip-addresses"></a>AD FS と禁止された IP アドレス
 
@@ -48,7 +48,7 @@ PS C:\ >Set-AdfsProperties -RemoveBannedIps "1.2.3.4"
 PS C:\ >Get-AdfsProperties 
 ```
 
-出力の例:
+出力例:
 
 ```
 BannedIpList                   : {1.2.3.4, ::3,1.2.3.4/16}
@@ -56,9 +56,9 @@ BannedIpList                   : {1.2.3.4, ::3,1.2.3.4/16}
 
 
 
-## <a name="additional-references"></a>その他の参照情報  
+## <a name="additional-references"></a>その他のリファレンス  
 [Active Directory フェデレーションサービス (AD FS) をセキュリティで保護するためのベストプラクティス](../../ad-fs/deployment/best-practices-securing-ad-fs.md)
 
-[Set-adfsproperties](https://technet.microsoft.com/itpro/powershell/windows/adfs/set-adfsproperties)
+[Set-adfsproperties](/powershell/module/adfs/set-adfsproperties?view=win10-ps)
 
-[AD FS の運用](../../ad-fs/AD-FS-2016-Operations.md)
+[AD FS の運用](../ad-fs-operations.md)

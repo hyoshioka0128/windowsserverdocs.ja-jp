@@ -8,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: f182f79b5bb97e45f1cfd34ad59cf52322f09063
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: bca2934b5b691f69fc70cd9d5230a2865b24ac94
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80823065"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966424"
 ---
 # <a name="spn-and-upn-uniqueness"></a>SPN と UPN の一意性
 
->適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
 **Author**: Justin 書籍、シニアサポートエスカレーションエンジニア (Windows グループ)  
   
@@ -27,33 +27,33 @@ ms.locfileid: "80823065"
 ## <a name="overview"></a>概要  
 Windows Server 2012 R2 のブロックの作成を実行しているドメイン コント ローラーには、サービス プリンシパル名 (SPN) とユーザー プリンシパル名 (UPN) が重複しています。 これには、復元または削除されたオブジェクトの復元またはオブジェクトの名前の変更の結果と重複してになる場合が含まれます。  
   
-### <a name="background"></a>背景  
+### <a name="background"></a>バックグラウンド  
 重複するサービス プリンシパル名 (SPN) がよく発生し認証エラーが発生し、LSASS の CPU 使用率が過剰につながる可能性があります。 重複する SPN または UPN の追加をブロックするインボックス メソッドはありません。 *  
   
 重複する UPN の値は、内部設置型の間で同期を中断 AD および Office 365 です。  
   
 *Setspn.exe では、一般的に新しい Spn を作成するために使用し、重複の確認を追加する Windows Server 2008 と共にリリースされたバージョンに組み込まれていた機能します。  
   
-**テーブル SEQ テーブル \\\* アラビア 1: UPN と SPN の一意性**  
+**テーブル SEQ テーブル \\ \* アラビア語 1: UPN と SPN の一意性**  
   
-|機能|コメント|  
+|機能|解説|  
 |-----------|-----------|  
 |UPN の一意性|重複する Upn 中断同期の内部設置型 Windows Azure AD ベースのサービスと Office 365 などの AD アカウントです。|  
 |SPN の一意性|Kerberos では、相互認証用の Spn が必要です。  Spn が重複すると、認証エラーが発生します。|  
   
-Upn と Spn の一意性の要件の詳細については、次を参照してください。 [一意性制約](https://msdn.microsoft.com/library/dn392337.aspx)します。  
+Upn と Spn の一意性の要件の詳細については、次を参照してください。 [一意性制約](/openspecs/windows_protocols/ms-adts/3c154285-454c-4353-9a99-fb586e806944)します。  
   
 ## <a name="symptoms"></a>現象  
 8467 または 8468 のエラー コードのシンボリック 16 進数、または同等の文字列に記録されます様々 な画面に表示されるダイアログ ボックスとディレクトリ サービス イベント ログでイベント ID 2974 にします。 次の状況でのみが、重複する UPN または SPN を作成しようとすると、ブロックされます。  
   
 -   書き込みは、Windows Server 2012 R2 の DC によって処理されます。  
   
-**テーブル SEQ テーブル \\\* アラビア 2: UPN と SPN の一意性のエラーコード**  
+**テーブル SEQ テーブル \\ \* アラビア語 2: UPN と SPN の一意性のエラーコード**  
   
-|10 進数|16 進数|シンボル|String|  
+|Decimal (10 進数型)|Hex|シンボル|String|  
 |-----------|-------|------------|----------|  
 |8467|21C 7|ERROR_DS_SPN_VALUE_NOT_UNIQUE_IN_FOREST|追加/変更するために提供される SPN 値が一意なフォレスト全体ではないため、操作が失敗しました。|  
-|8648|21C 8|ERROR_DS_UPN_VALUE_NOT_UNIQUE_IN_FOREST|追加/変更するための UPN 値が一意なフォレスト全体ではないため、操作が失敗しました。|  
+|8648|21C 8|ERROR_DS_UPN_VALUE_NOT_UNIQUE_IN_FOREST|追加/変更を行うために指定した UPN 値がフォレスト全体で一意ではないために、その操作が失敗しました。|  
   
 ## <a name="new-user-creation-fails-if-upn-is-not-unique"></a>UPN が一意でない場合、新しいユーザーの作成が失敗しました。  
   
@@ -73,18 +73,18 @@ Upn と Spn の一意性の要件の詳細については、次を参照して�
   
 ![SPN と UPN の一意性](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig03_DupUPNADAC.gif)  
   
-**図 SEQ 図 \\新しいユーザーの作成が UPN の重複によって失敗したときに、AD 管理センターに表示されるアラビア語1のエラー \***  
+**図 SEQ 図 \\ \* アラビア語の重複する UPN により新しいユーザーの作成が失敗したときに AD 管理センターに表示されるエラー**  
   
 ### <a name="event-2974-source-activedirectory_domainservice"></a>イベント 2974 ソース: ActiveDirectory_DomainService  
 ![SPN と UPN の一意性](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig04_Event2974.gif)  
   
-**図 SEQ 図 \\\* アラビア語2イベント ID 2974 とエラー8648**  
+**図 SEQ 図 \\ \* アラビア語2イベント ID 2974 (エラー 8648)**  
   
-イベント 2974 では、ブロックされていた値とその値がまだ含まれている (最大 10) 1 つまたは複数のオブジェクトの一覧を示します。  次の図では、他の4つのオブジェクトに **<em>dhunt@blue.contoso.com</em>** UPN 属性値が既に存在していることがわかります。  これが Windows Server 2012 R2 の新機能であるため、ダウンレベルのドメイン コント ローラーの書き込み試行の処理時に混在環境で重複する UPN と Spn の偶発的な作成がまだ発生します。  
+イベント 2974 では、ブロックされていた値とその値がまだ含まれている (最大 10) 1 つまたは複数のオブジェクトの一覧を示します。  次の図では、 **<em>dhunt@blue.contoso.com</em>** 他の4つのオブジェクトに UPN 属性値が既に存在していることがわかります。  これが Windows Server 2012 R2 の新機能であるため、ダウンレベルのドメイン コント ローラーの書き込み試行の処理時に混在環境で重複する UPN と Spn の偶発的な作成がまだ発生します。  
   
 ![SPN と UPN の一意性](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig05_Event2974ShowAllDups.gif)  
   
-**図 SEQ 図 \\\* アラビア語3イベント2974で重複する UPN を含むすべてのオブジェクトを表示する**  
+**図 SEQ 図 \\ \* アラビア語3イベント2974重複する UPN を含むすべてのオブジェクトを表示する**  
   
 > [!TIP]  
 > イベント ID 2974s を定期的に確認してください。  
@@ -107,7 +107,7 @@ The operation failed because UPN value provided for addition/modification is not
   
 ![SPN と UPN の一意性](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig06_ADSI21c8.gif)  
   
-**図 SEQ 図 \\\* 重複する UPN の追加がブロックされたときに ADSIEdit に表示されるアラビア語4のエラーメッセージ**  
+**図 SEQ 図 \\ \* アラビア語重複する UPN の追加がブロックされたときに ADSIEdit に表示されるエラーメッセージ**  
   
 ### <a name="windows-powershell"></a>Windows PowerShell  
 Windows Server 2012 R2  
@@ -122,11 +122,11 @@ Windows Server 2012 R2 の DC を対象とする Windows Server 2012 で実行�
   
 ![SPN と UPN の一意性](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig09_UserCreateError.gif)  
   
-**図 SEQ 図 \\Windows server 2012 R2 DC を対象としているときに、Windows Server 2012 R2 以外で \* アラビア語 5 DSAC ユーザー作成エラーが発生する**  
+**図 SEQ 図 \\ \* アラビア語 5 dsac ユーザー作成エラー (windows Server 2012 r2 DC を対象としている場合 2012)**  
   
 ![SPN と UPN の一意性](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig10_UserModError.gif)  
   
-**図 SEQ 図 \\Windows server 2012 R2 DC を対象としているときに、Windows Server 2012 R2 以外でアラビア語 6 DSAC ユーザー変更エラーが発生した \***  
+**図 SEQ 図 \\ \* アラビア語 6 dsac ユーザー変更エラー (windows Server 2012 r2 DC を対象としている場合 2012)**  
   
 ### <a name="restore-of-an-object-that-would-result-in-a-duplicate-upn-fails"></a>重複する UPN になるオブジェクトの復元が失敗します。  
 ![SPN と UPN の一意性](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig11_RestoreDupUPN.gif)  
@@ -185,11 +185,11 @@ DN: CN=Dianne Hunt2\0ADEL:dd3ab8a4-3005-4f2f-814f-d6fc54a1a1c0,CN=Deleted Object
   
     -   置換 ***ConflictingUPN*** 競合している実際の UPN を持つ  
   
--   選択 **適用**  
+-   **適用**を選択  
   
 ![SPN と UPN の一意性](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig13_GlobalSearch.gif)  
   
-### <a name="using-windows-powershell"></a>Windows PowerShell の使用  
+### <a name="using-windows-powershell"></a>Windows PowerShell を使用する  
   
 ```  
 Get-ADObject -LdapFilter "(userPrincipalName=dhunt@blue.contoso.com)" -IncludeDeletedObjects -SearchBase "DC=blue,DC=Contoso,DC=com" -SearchScope Subtree -Server winbluedc1.blue.contoso.com  
@@ -209,7 +209,7 @@ Windows PowerShell を使用する UserPrincipalName 属性を null。
 ### <a name="duplicate-spn"></a>重複する SPN  
 ![SPN と UPN の一意性](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig16_DupSPN.gif)  
   
-**図 SEQ 図 \\重複する SPN の追加がブロックされると、ADSIEdit に表示されるアラビア語8のエラーメッセージ \***  
+**シーケンス図 \\ \* アラビア語の重複する SPN の追加がブロックされたときに ADSIEdit に表示されるエラーメッセージ**  
   
 ディレクトリ サービス イベント ログに記録する **ActiveDirectory_DomainService** イベント ID **2974**します。  
   
@@ -223,7 +223,7 @@ servicePrincipalName Value=<SPN>
   
 ![SPN と UPN の一意性](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig17_DupSPN2974.gif)  
   
-**図 SEQ 図 \\\* 重複する SPN の作成がブロックされたときに、アラビア語9のエラーが記録される**  
+**図 SEQ 図 \\ \* アラビア語9エラーが重複する SPN の作成がブロックされたときにログに記録される**  
   
 ### <a name="workflow"></a>ワークフロー  
   
@@ -231,7 +231,7 @@ servicePrincipalName Value=<SPN>
   
     -   Offbox 呼び出しは必要ありません、クエリはローカルで満たすことができます。  
   
-    -   ***UPN ケース***  
+    -   ***Upn***  
   
         -   クエリ ローカル フォレスト全体の UPN インデックスの指定した UPN (*userPrincipalName はグローバル インデックス*)  
   
@@ -247,7 +247,7 @@ servicePrincipalName Value=<SPN>
   
                         *ERROR_DS_UPN_VALUE_NOT_UNIQUE_IN_FOREST*  
   
-    -   ***SPN のケース***  
+    -   ***SPN の場合***  
   
         -   クエリ ローカル フォレスト全体の SPN インデックス指定された SPN に (*サービス プリンシパル名はグローバル インデックス*)  
   
@@ -263,7 +263,7 @@ servicePrincipalName Value=<SPN>
   
                         **ERROR_DS_SPN_VALUE_NOT_UNIQUE_IN_FOREST**  
   
--   **If DC! = GC**  
+-   **場合 DC! = GC**  
   
     -   Offbox 呼び出し **望ましい** が、重要でない、つまりこれはベスト エフォート一意性の確認  
   
@@ -271,7 +271,7 @@ servicePrincipalName Value=<SPN>
   
         -   このようなを示すために記録されたイベント  
   
-    -   ***UPN ケース***  
+    -   ***Upn***  
   
         -   最も近い GC に対して LDAP クエリを送信するにはありますか。 指定した UPN のクエリの GC のフォレスト全体に関わる UPN インデックス (*userPrincipalName はグローバル インデックス*)  
   
@@ -287,7 +287,7 @@ servicePrincipalName Value=<SPN>
   
                         *ERROR_DS_UPN_VALUE_NOT_UNIQUE_IN_FOREST*  
   
-    -   ***SPN のケース***  
+    -   ***SPN の場合***  
   
         -   最も近い GC に対して LDAP クエリを送信するにはありますか。 指定された SPN にクエリ GC のフォレスト全体に関わる SPN インデックス (*サービス プリンシパル名はグローバル インデックス*)  
   
@@ -351,11 +351,11 @@ SPN と UPN の一意性をテストします。  これらの指示に従って
   
 **オプション**  
   
-1.  クラスルーム講師であることを確認を有効にしても問題ありません、 *[AD のごみ箱](https://technet.microsoft.com/library/jj574144.aspx#BKMK_EnableRecycleBin)* で Active Directory 管理センターです。  その場合は、次の手順に移動します。  
+1.  クラスルーム講師であることを確認を有効にしても問題ありません、 *[AD のごみ箱](../../get-started/adac/advanced-ad-ds-management-using-active-directory-administrative-center--level-200-.md#BKMK_EnableRecycleBin)* で Active Directory 管理センターです。  その場合は、次の手順に移動します。  
   
 2.  ユーザー アカウントの UPN を設定します。  
   
-3.  アカウントを削除します。  
+3.  アカウントを削除する  
   
 4.  削除されたアカウントとして同じ UPN を持つ別のアカウントを設定します。  
   
@@ -363,5 +363,3 @@ SPN と UPN の一意性をテストします。  これらの指示に従って
   
 6.  前の手順で表示するエラー メッセージに表示されるだけは想像してみてください。  (および実行するステップの履歴はありません)目標は、アカウントの復元を完了します。  ブックの例の手順を参照してください。  
   
-
-

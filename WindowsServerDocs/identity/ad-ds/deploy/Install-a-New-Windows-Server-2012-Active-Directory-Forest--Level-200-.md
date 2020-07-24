@@ -8,28 +8,28 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: b5dfb18917defa50df07ae747916b71539681312
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f8944fce04526a34df6909ed1631483573060836
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80825515"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965854"
 ---
 # <a name="install-a-new-windows-server-2012-active-directory-forest-level-200"></a>Windows Server 2012 の新しい Active Directory フォレストをインストールする (レベル 200)
 
->適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
 このトピックでは、新しい Windows Server 2012 Active Directory ドメイン サービスのドメイン コントローラーの昇格機能について、基本的なレベルでの説明を行います。 Windows Server 2012 において、AD DS は Dcpromo ツールに代えて、サーバー マネージャーおよび Windows PowerShell ベースの展開システムを使用します。  
   
--   [Active Directory Domain Services の簡略化された管理](../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-.md#BKMK_SimplifiedAdmin)  
+-   [Active Directory ドメイン サービスの簡略化された管理](../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-.md#BKMK_SimplifiedAdmin)  
   
 -   [技術概要](../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-.md#BKMK_TechOverview)  
   
--   [サーバーマネージャーを使用したフォレストの展開](../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-.md#BKMK_SMForest)  
+-   [サーバー マネージャーを使用してフォレストを展開する](../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-.md#BKMK_SMForest)  
   
 -   [Windows PowerShell を使用してフォレストを展開する](../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-.md#BKMK_PSForest)  
   
-## <a name="active-directory-domain-services-simplified-administration"></a><a name="BKMK_SimplifiedAdmin"></a>Active Directory Domain Services の簡略化された管理  
+## <a name="active-directory-domain-services-simplified-administration"></a><a name="BKMK_SimplifiedAdmin"></a>Active Directory ドメイン サービスの簡略化された管理  
 Windows Server 2012 では、次世代を見据えた Active Directory ドメイン サービスの簡略化された管理が導入され、Windows 2000 Server 以来、最も革新的なドメイン構想の見直しが行われています。 AD DS の簡略化された管理は、Active Directory の 12 年に及ぶ実績から学んだ教訓を活かし、アーキテクトや管理者にとってサポート性、柔軟性、直感性に優れた管理エクスペリエンスを提供します。 このことは、既存テクノロジの新しいバージョンを創出すると共に、Windows Server 2008 R2 でリリースされたコンポーネントの機能を拡張することを意味していました。  
   
 ### <a name="what-is-ad-ds-simplified-administration"></a>AD DS の簡略化された管理とは  
@@ -44,7 +44,7 @@ AD DS の簡略化された管理とは、ドメイン展開の再イメージ�
 -   Windows Server 2012 のフォレストの機能レベルでは新しい機能は実装されず、ドメインの機能レベルは Kerberos の新機能のサブセットについてのみ必要となるので、管理者は同種のドメイン コントローラー環境を頻繁に用意する必要性から解放されます。  
   
 ### <a name="purpose-and-benefits"></a>目的と利点  
-このような変更点は、簡略化されたというよりは、複雑になったように思えるかもしれません。 しかし、AD DS の展開プロセスを再設計することで、多くの手順とベスト プラクティスを、より少ない、より簡単な操作にまとめることができました。 たとえば、新しいレプリカ ドメイン コントローラーの GUI での構成は、以前は 12 個のダイアログが必要でしたが、今では 8 個のダイアログでできるようになりました。 新しい Active Directory フォレストを作成するときは、1 つの Windows PowerShell コマンドと、引数を 1 つだけ (ドメインの名前) 指定すれば済みます。  
+このような変更点は、簡略化されたというよりは、複雑になったように思えるかもしれません。 しかし、AD DS の展開プロセスを再設計することで、多くの手順とベスト プラクティスを、より少ない、より簡単な操作にまとめることができました。 たとえば、新しいレプリカ ドメイン コントローラーの GUI での構成は、以前は 12 個のダイアログが必要でしたが、今では 8 個のダイアログでできるようになりました。 新しい Active Directory フォレストを作成するときは、1 つの** Windows PowerShell コマンドと、** 引数を 1 つだけ (ドメインの名前) 指定すれば済みます。  
   
 Windows Server 2012 の Windows PowerShell がこれほどまでに重要視される理由は何でしょうか。 分散コンピューティングが進化するにつれて、Windows PowerShell は、グラフィカル インターフェイスとコマンドライン インターフェイスの両方から構成と保守を行える単一のエンジンとなりました。 多くの機能を駆使してあらゆるコンポーネントのスクリプト処理が可能で、その最上級の能力は IT 技術者にとって API と同等です。 クラウドベース コンピューティングのユビキタス化と歩調を合わせて、Windows PowerShell もいよいよサーバーをリモート管理する機能を備えるようになりました。グラフィカル インターフェイスを持たないコンピューターが、モニターやマウスのあるコンピューターと同じ管理機能を発揮できるのです。  
   
@@ -55,18 +55,18 @@ Windows Server 2012 の Windows PowerShell がこれほどまでに重要視さ�
 ### <a name="what-you-should-know-before-you-begin"></a>始めに知っておくべきこと  
 このトピックは、以前のリリースの Active Directory ドメイン サービスに関する知識があることを前提としており、その目的と機能といった基本事項については説明しません。 AD DS の詳細については、次にリンク設定された TechNet ポータルのページを参照してください。  
   
--   [Windows Server 2008 R2 の Active Directory Domain Services](https://technet.microsoft.com/library/dd378801(WS.10).aspx)  
+-   [Windows Server 2008 R2 の Active Directory ドメイン サービス](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd378801(v=ws.10))  
   
--   [Windows Server 2008 の Active Directory Domain Services](https://technet.microsoft.com/library/dd378891(WS.10).aspx)  
+-   [Windows Server 2008 向け Active Directory Domain Services](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd378891(v=ws.10))  
   
--   [Windows Server テクニカルリファレンス](https://technet.microsoft.com/library/cc739127(WS.10).aspx)  
+-   [A to Z Technologies List (テクノロジ一覧 A - Z)](/previous-versions/windows/it-pro/windows-server-2003/cc739127(v=ws.10))  
   
 ### <a name="functional-descriptions"></a>機能の説明  
   
 #### <a name="ad-ds-role-installation"></a>AD DS の役割のインストール  
 ![新しいフォレストをインストールする](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_SelectServerRoles.gif)  
   
-Active Directory Domain Services のインストールでは、Windows Server 2012 における他のすべてのサーバーの役割と機能と同様に、サーバー マネージャーと Windows PowerShell を使用します。 Dcpromo.exe プログラムによる GUI 構成オプションの提供は行われません。  
+Active Directory ドメイン サービスのインストールでは、Windows Server 2012 における他のすべてのサーバーの役割と機能と同様に、サーバー マネージャーと Windows PowerShell を使用します。 Dcpromo.exe プログラムによる GUI 構成オプションの提供は行われません。  
   
 ローカルとりモートの両方のインストールで、サーバー マネージャーの GUI によるウィザードまたは Windows PowerShell の ServerManager モジュールを使用します。 このようなウィザードやコマンドレットのインスタンスを複数実行し、さまざまなサーバーをターゲットにすることで、1 つのコンソールから複数のドメイン コントローラーに対して AD DS を同時展開できます。 これらの新しい機能は Windows Server 2008 R2 以前のオペレーティング システムとの下位互換性はないものの、従来のコマンドラインから実行するローカルの役割のインストールでは、Windows Server 2008 R2 で導入された Dism.exe アプリケーションもいまだに使用することができます。  
   
@@ -90,18 +90,18 @@ Dcpromo.exe はコマンドラインからの無人インストールのため�
 > [!IMPORTANT]
 > Dcpromo.exe は GUI によるウィザードを提供しなくなり、役割や機能のバイナリをインストールをしなくなりました。 Explorer シェルから Dcpromo.exe を実行すると、次のメッセージが返されます。  
 > 
-> "Active Directory ドメインサービスインストールウィザードはサーバーマネージャーで再配置されます。 詳細については、「<https://go.microsoft.com/fwlink/?LinkId=220921>」を参照してください。  
+> "Active Directory ドメインサービスインストールウィザードはサーバーマネージャーで再配置されます。 詳細については、「」を参照してください <https://go.microsoft.com/fwlink/?LinkId=220921> 。  
 > 
 > Dcpromo.exe /unattend を実行すると、以前のオペレーティング システムの場合と同様にバイナリがインストールされますが、次の警告が表示されます。  
 > 
-> "Dcpromo の無人操作は、Windows PowerShell の ADDSDeployment モジュールに置き換えられています。 詳細については、「<https://go.microsoft.com/fwlink/?LinkId=220924>」を参照してください。  
+> "Dcpromo の無人操作は、Windows PowerShell の ADDSDeployment モジュールに置き換えられています。 詳細については、「」を参照してください <https://go.microsoft.com/fwlink/?LinkId=220924> 。  
 > 
 > Windows Server 2012 では dcpromo.exe を非推奨としており、この実行可能ファイルは、Windows の将来のバージョンに含まれることもなければ、このオペレーティング システムで機能拡張されることもありません。 管理者はその使用を今後停止して、コマンドラインからドメイン コントローラーを作成したい場合は、サポートされている Windows PowerShell モジュールに切り替える必要があります。  
   
 #### <a name="prerequisite-checking"></a>前提条件のチェック  
 ドメイン コントローラーの構成には前提条件のチェック フェーズも実装されており、これによって、ドメイン コントローラーの昇格を続行する前のフォレストとドメインの評価が行われます。 前提条件には、FSMO 役割の可用性、ユーザー権限、拡張スキーマの互換性などの要件が含まれます。 この新しい設計によって、ドメイン コントローラーの昇格が開始された後、重大な構成エラーによって昇格が途中で停止される問題が軽減されます。 また、ドメイン コントローラーのメタデータがフォレスト内で孤立状態になる可能性や、サーバーが自身をドメイン コントローラーであると間違って認識する可能性が少なくなります。  
   
-## <a name="deploying-a-forest-with-server-manager"></a><a name="BKMK_SMForest"></a>サーバーマネージャーを使用したフォレストの展開  
+## <a name="deploying-a-forest-with-server-manager"></a><a name="BKMK_SMForest"></a>サーバー マネージャーを使用してフォレストを展開する  
 ここでは、GUI による Windows Server 2012 コンピューター上で、サーバー マネージャーを使って最初のドメイン コントローラーをフォレスト ルート ドメインにインストールする方法について説明します。  
   
 ### <a name="server-manager-ad-ds-role-installation-process"></a>サーバー マネージャーでの AD DS の役割のインストール プロセス  
@@ -114,11 +114,11 @@ Dcpromo.exe はコマンドラインからの無人インストールのため�
   
 サーバーを追加するには、次のいずれかを選択します。  
   
--   ダッシュボードのようこそタイルにある **[管理するサーバーの追加]** をクリックする  
+-   ダッシュボードのようこそタイルにある [**管理するサーバーの追加**] をクリックする  
   
--   **管理** メニューをクリックし、**サーバーの追加** をクリックする  
+-   [**管理** メニューをクリックし、[**サーバーの追加**] をクリックする  
   
--   **[すべてのサーバー]** を右クリックし、 **[サーバーの追加]** をクリックする  
+-   [**すべてのサーバー**] を右クリックし、[**サーバーの追加**] をクリックする  
   
 [サーバーの追加] ダイアログが表示されます。  
   
@@ -132,7 +132,7 @@ Dcpromo.exe はコマンドラインからの無人インストールのため�
   
 -   インポート (CR/LF で区切られたテキスト ファイルのサーバー リストを使用する)  
   
-**[検索開始]** をクリックすると、そのコンピューターが参加している同じ Active Directory ドメインからサーバーの一覧が返されます。その一覧で 1 つ以上のサーバー名をクリックします。 右矢印をクリックして **[選択済み]** の一覧に追加します。 **[サーバーの追加]** ダイアログを使って、選択したサーバーをダッシュボードの役割のグループに追加します。 または、 **[管理]** をクリックして **[サーバー グループの作成]** をクリックするか、ダッシュボードの **[サーバー マネージャーへようこそ]** タイル上にある **[サーバー グループの作成]** をクリックして、カスタム サーバー グループを作成します。  
+[**検索開始**] をクリックすると、そのコンピューターが参加している同じ Active Directory ドメインからサーバーの一覧が返されます。その一覧で 1 つ以上のサーバー名をクリックします。 右矢印をクリックして **[選択済み]** の一覧に追加します。 [**サーバーの追加**] ダイアログを使って、選択したサーバーをダッシュボードの役割のグループに追加します。 または、[**管理**] をクリックして [**サーバー グループの作成**] をクリックするか、ダッシュボードの [**サーバー マネージャーへようこそ**] タイル上にある [**サーバー グループの作成**] をクリックして、カスタム サーバー グループを作成します。  
   
 > [!NOTE]  
 > [サーバーの追加] の手順では、サーバーがオンライン (アクセス可能) かどうかは確認されません。 ただし、次回の更新時に、サーバー マネージャーの管理状態ビューで、到達できないサーバーすべてにフラグが設定されます。  
@@ -141,34 +141,34 @@ Dcpromo.exe はコマンドラインからの無人インストールのため�
   
 ![新しいフォレストをインストールする](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/tADDS_SMI_TR_AddRolesFeatures.png)  
   
-Windows Server 2012 より前のオペレーティング システムを搭載しているサーバーを完全に管理することはできません。 **[役割と機能の追加]** の選択によって、Windows PowerShell ServerManager モジュールの **Install-WindowsFeature** が実行されます。  
+Windows Server 2012 より前のオペレーティング システムを搭載しているサーバーを完全に管理することはできません。 [**役割と機能の追加**] の選択によって、Windows PowerShell ServerManager モジュールの **Install-WindowsFeature** が実行されます。  
   
 ![新しいフォレストをインストールする](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_AddADDSToAnotherServer.png)  
   
-既存のドメイン コントローラー上のサーバー マネージャー ダッシュボードを使って、役割が事前に選択されたリモート サーバー AD DS インストールを選択することもできます。それには、AD DS ダッシュボード タイルを右クリックし、**別のサーバーへの AD DS の追加** をクリックします。 これにより **Install-WindowsFeature AD-Domain-Services** が起動されます。  
+既存のドメイン コントローラー上のサーバー マネージャー ダッシュボードを使って、役割が事前に選択されたリモート サーバー AD DS インストールを選択することもできます。それには、[AD DS] ダッシュボード タイルを右クリックし、[**別のサーバーへの AD DS の追加**] をクリックします。 これにより **Install-WindowsFeature AD-Domain-Services** が起動されます。  
   
-サーバー マネージャーを実行しているコンピューターはそれ自身を自動的にプールします。 ここで AD DS の役割をインストールするには、単に、 **[管理]** メニューをクリックし、 **[役割と機能の追加]** をクリックします。  
+サーバー マネージャーを実行しているコンピューターはそれ自身を自動的にプールします。 ここで AD DS の役割をインストールするには、単に、[**管理**] メニューをクリックし、[**役割と機能の追加**] をクリックします。  
   
 ![新しいフォレストをインストールする](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_ManageAddRoles.png)  
   
 #### <a name="installation-type"></a>インストールの種類  
 ![新しいフォレストをインストールする](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_SelectInstallationType.png)  
   
-**[インストールの種類]** ダイアログには、Active Directory ドメイン サービスをサポートしないオプション、 **[リモート デスクトップ サービスのシナリオ ベースのインストール]** があります。 このオプションは、マルチサーバー分散ワークロードでのリモート デスクトップ サービスを許可するだけです。 これを選択した場合、AD DS をインストールすることはできません。  
+[**インストールの種類**] ダイアログには、Active Directory Domain Services をサポートしないオプション、[**リモート デスクトップ サービスのシナリオ ベースのインストール**] があります。 このオプションは、マルチサーバー分散ワークロードでのリモート デスクトップ サービスを許可するだけです。 これを選択した場合、AD DS をインストールすることはできません。  
   
-AD DS をインストールするときは、常に既定のオプション選択のままにしてください( **[役割ベースまたは機能ベースのインストール]** )。  
+AD DS をインストールするときは、常に既定のオプション選択のままにしてください([ **役割ベースまたは機能ベースのインストール**])。  
   
 #### <a name="server-selection"></a>サーバーの選択  
 ![新しいフォレストをインストールする](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_SelectDestinationServer.png)  
   
-**[サーバーの選択]** ダイアログでは、プールに追加済みのサーバーから 1 つ、アクセス可能なものに限り選択することができます。 サーバー マネージャーを実行しているローカル サーバーは自動的に利用可能になります。  
+[**サーバーの選択**] ダイアログでは、プールに追加済みのサーバーから 1 つ、アクセス可能なものに限り選択することができます。 サーバー マネージャーを実行しているローカル サーバーは自動的に利用可能になります。  
   
 また、Windows Server 2012 オペレーティング システムではオフラインの Hyper-V VHD ファイルを選択でき、サーバー マネージャーはコンポーネント サービスを直接介して、それらのファイルに役割を追加します。 このしくみにより、必要なコンポーネントを使って仮想サーバーをプロビジョニングしてから、それらをさらに構成できます。  
   
 #### <a name="server-roles-and-features"></a>サーバーの役割と機能  
 ![新しいフォレストをインストールする](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_SelectServerRoles.png)  
   
-ドメイン コントローラーの昇格を行う場合は、 **Active Directory ドメイン サービス** の役割を選択します。 Active Directory の管理機能と必須サービスはすべて自動的にインストールされます。表面上は別の役割の一部であったり、サーバー マネージャー インターフェイスに選択状態で表示されない場合であってもです。  
+ドメイン コントローラーの昇格を行う場合は、**Active Directory Domain Services**の役割を選択します。 Active Directory の管理機能と必須サービスはすべて自動的にインストールされます。表面上は別の役割の一部であったり、サーバー マネージャー インターフェイスに選択状態で表示されない場合であってもです。  
   
 サーバー マネージャーはまた、追加する役割によってどの管理機能が暗黙的にインストールされるかを示す情報のダイアログを表示します。この機能は **-IncludeManagementTools** 引数を指定するのと同じです。  
   
@@ -178,30 +178,30 @@ AD DS をインストールするときは、常に既定のオプション選�
   
 ここでは必要に応じて他の**機能**を追加できます。  
   
-#### <a name="active-directory-domain-services"></a>Active Directory Domain Services  
+#### <a name="active-directory-domain-services"></a>Active Directory ドメイン サービス  
 ![新しいフォレストをインストールする](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_ADDSIntro.png)  
   
-**[Active Directory ドメイン サービス]** ダイアログは、要件とベスト プラクティスに関する限定された情報を提供します。 主に、"この画面が表示されない場合は AD DS を選択していません" という AD DS の役割を選択したことを示す確認として機能します。  
+[**Active Directory Domain Services**] ダイアログは、要件とベスト プラクティスに関する限定された情報を提供します。 主に、"この画面が表示されない場合は AD DS を選択していません" という AD DS の役割を選択したことを示す確認として機能します。  
   
 #### <a name="confirmation"></a>確認  
 ![新しいフォレストをインストールする](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_Confirmation.png)  
   
-**[確認]** ダイアログは、役割のインストールを開始する前の最後のチェックポイントです。 役割のインストール後に必要に応じてコンピューターを再起動するオプションがありますが、AD DS のインストールでは再起動は必要ありません。  
+[**確認**] ダイアログは、役割のインストールを開始する前の最後のチェックポイントです。 役割のインストール後に必要に応じてコンピューターを再起動するオプションがありますが、AD DS のインストールでは再起動は必要ありません。  
   
-**[インストール]** をクリックすることで、役割のインストールを開始する準備が整っていることを確認します。 いったん開始されたインストールを取り消すことはできません。  
+[**インストール**] をクリックすることで、役割のインストールを開始する準備が整っていることを確認します。 いったん開始されたインストールを取り消すことはできません。  
   
 #### <a name="results"></a>結果  
 ![新しいフォレストをインストールする](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_Results.png)  
   
-**[結果]** ダイアログには、インストールの現在の進行状況と状態が表示されます。 サーバー マネージャーが閉じているかどうかにかかわらず、役割のインストールは続行されます。  
+[**結果**] ダイアログには、インストールの現在の進行状況と状態が表示されます。 サーバー マネージャーが閉じているかどうかにかかわらず、役割のインストールは続行されます。  
   
-それでも、インストールの結果を確認することをお勧めします。 インストールが完了する前に **[結果]** ダイアログを閉じた場合は、サーバー マネージャーの通知フラグを使って結果を確認できます。 サーバー マネージャーは、AD DS の役割がインストール済みであるものの、ドメイン コントローラーとしての追加構成が行われていないサーバーに対して警告のメッセージも表示します。  
+それでも、インストールの結果を確認することをお勧めします。 インストールが完了する前に [**結果**] ダイアログを閉じた場合は、サーバー マネージャーの通知フラグを使って結果を確認できます。 サーバー マネージャーは、AD DS の役割がインストール済みであるものの、ドメイン コントローラーとしての追加構成が行われていないサーバーに対して警告のメッセージも表示します。  
   
 **タスクの通知**  
   
 ![新しいフォレストをインストールする](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_TaskNotofications.png)  
   
-**AD DS の詳細**  
+**AD DS 詳細**  
   
 ![新しいフォレストをインストールする](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_ADDSDetails.png)  
   
@@ -212,14 +212,14 @@ AD DS をインストールするときは、常に既定のオプション選�
 #### <a name="promote-to-domain-controller"></a>ドメイン コントローラーに昇格する  
 ![新しいフォレストをインストールする](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_Promote.png)  
   
-AD DS の役割のインストール終了時、 **[このサーバーをドメイン コントローラーに昇格する]** リンクを使って構成を続行できます。 この作業はサーバーをドメイン コントローラーにするために必要ですが、すぐに構成ウィザードを実行する必要はありません。 たとえば、AD DS バイナリを使ってプロビジョニングだけ完了した状態のサーバーを、他のブランチ オフィスに送って、後で構成を行いたい場合があります。 出荷の前に AD DS の役割を追加しておけば、出荷先に着いたときに時間を節約できます。 また、ドメイン コントローラーを何日もまたは何週間もオフラインにしないことをお勧めします。 そうすることでドメイン コントローラーの昇格の前にコンポーネントを更新できるようになり、後の再起動を 1 回以上省略できます。  
+AD DS の役割のインストール終了時、[**このサーバーをドメイン コントローラーに昇格する**] リンクを使って構成を続行できます。 この作業はサーバーをドメイン コントローラーにするために必要ですが、すぐに構成ウィザードを実行する必要はありません。 たとえば、AD DS バイナリを使ってプロビジョニングだけ完了した状態のサーバーを、他のブランチ オフィスに送って、後で構成を行いたい場合があります。 出荷の前に AD DS の役割を追加しておけば、出荷先に着いたときに時間を節約できます。 また、ドメイン コントローラーを何日もまたは何週間もオフラインにしないことをお勧めします。 そうすることでドメイン コントローラーの昇格の前にコンポーネントを更新できるようになり、後の再起動を 1 回以上省略できます。  
   
 このリンクを後で選択すると、ADDSDeployment のコマンドレット (**install-addsforest**、**install-addsdomain**、または **install-addsdomaincontroller**) が呼び出されます。  
   
 ### <a name="uninstallingdisabling"></a>アンインストール/無効化  
 AD DS の役割は他のすべての役割と同様に削除します。サーバーをドメイン コントローラーに昇格したかどうかは関係ありません。 ただし、AD DS の役割を削除するときは、完了時に再起動が必要になります。  
   
-Active Directory ドメイン サービスの役割の削除は、作業完了の前にドメイン コントローラーの降格が必要になるという点で、インストールとは異なります。 メタデータのクリーンアップがフォレスト内で適切に行われることなく、ドメイン コントローラーがその役割のバイナリをアンインストールされてしまうことを防ぐために降格は必要です。 詳細については、「[ドメインコントローラーと&#40;ドメインレベル&#41;200 の降格](../../ad-ds/deploy/Demoting-Domain-Controllers-and-Domains--Level-200-.md)」を参照してください。  
+Active Directory ドメイン サービスの役割の削除は、作業完了の前にドメイン コントローラーの降格が必要になるという点で、インストールとは異なります。 メタデータのクリーンアップがフォレスト内で適切に行われることなく、ドメイン コントローラーがその役割のバイナリをアンインストールされてしまうことを防ぐために降格は必要です。 詳細については、「[ドメインコントローラーとドメインの降格 &#40;レベル 200&#41;](../../ad-ds/deploy/Demoting-Domain-Controllers-and-Domains--Level-200-.md)」を参照してください。  
   
 > [!WARNING]  
 > ドメイン コントローラーに昇格した後に Dism.exe または Windows PowerShell DISM モジュールを使用して AD DS 役割を削除することはサポートされておらず、サーバーの正常な起動を妨げます。  
@@ -227,21 +227,21 @@ Active Directory ドメイン サービスの役割の削除は、作業完了�
 > サーバー マネージャーまたは Windows PowerShell の AD DS 展開モジュールとは異なり、DISM はネイティブのサービス システムであり、AD DS またはその構成に関する知識を元々備えていません。 サーバーがドメイン コントローラーでなくなる場合を除き、AD DS の役割をアンインストールするのに Dism.exe または Windows PowerShell の DISM モジュールを使用しないでください。  
   
 ### <a name="create-an-ad-ds-forest-root-domain-with-server-manager"></a>サーバー マネージャーを使って AD DS フォレスト ルート ドメインを作成する  
-次の図は Active Directory ドメイン サービスの構成プロセスを示しています。ここでは、既にサーバー マネージャーを使って AD DS の役割をインストールし、 **Active Directory ドメイン サービス構成ウィザード** を開始しています。  
+次の図は Active Directory Domain Services の構成プロセスを示しています。ここでは、既にサーバー マネージャーを使って AD DS の役割をインストールし、**Active Directory Domain Services 構成ウィザード**を開始しています。  
   
 ![新しいフォレストをインストールする](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/adds_forestdeploy2.png)  
   
-#### <a name="deployment-configuration"></a>展開構成  
+#### <a name="deployment-configuration"></a>デプロイ構成  
 ![新しいフォレストをインストールする](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_AddNewForest.png)  
   
-サーバー マネージャーは各ドメイン コントローラーの昇格を **[配置構成]** ページで開始します。 このページおよび以降のページの他のオプションおよび必須フィールドは、選択した展開操作によって異なります。  
+サーバー マネージャーは各ドメイン コントローラーの昇格を [**配置構成**] ページで開始します。 このページおよび以降のページの他のオプションおよび必須フィールドは、選択した展開操作によって異なります。  
   
-新しい Active Directory フォレストを作成するには、 **[新しいフォレストを追加する]** をクリックします。 有効なルート ドメイン名を指定する必要があります。名前は単一ラベルであってはならず (たとえば、単に *contoso* ではなく、*contoso.com* のようにする必要があります)、許可されている DNS ドメイン名前付け要件に従う必要があります。  
+新しい Active Directory フォレストを作成するには、[**新しいフォレストを追加する**] をクリックします。 有効なルート ドメイン名を指定する必要があります。名前は単一ラベルであってはならず (たとえば、単に *contoso* ではなく、*contoso.com* のようにする必要があります)、許可されている DNS ドメイン名前付け要件に従う必要があります。  
   
 有効なドメイン名の詳細については、サポート技術情報の記事「 [Naming conventions in Active Directory for computers, domains, sites, and OUs (Active Directory 内のコンピューター、ドメイン、サイト、および OU の名前付け規則)](https://support.microsoft.com/kb/909264)」を参照してください。  
   
 > [!WARNING]  
-> 新しい Active Directory フォレストを、外部の DNS 名と同じ名前で作成しないでください。 たとえば、インターネット DNS URL が http://contoso.com場合は、今後の互換性の問題を回避するために、内部フォレストに別の名前を選択する必要があります。 その名前は、一意で、Web トラフィックにはありそうもないものにする必要があります。 たとえば、corp.contoso.com のようにします。  
+> 新しい Active Directory フォレストを、外部の DNS 名と同じ名前で作成しないでください。 たとえば、インターネット DNS URL がの場合は http://contoso.com 、今後の互換性の問題を回避するために、内部フォレストに別の名前を選択する必要があります。 その名前は、一意で、Web トラフィックにはありそうもないものにする必要があります。 たとえば、corp.contoso.com のようにします。  
   
 新しいフォレストには、ドメインの Administrator アカウントの新しい資格情報は必要ありません。 ドメイン コントローラーの昇格プロセスでは、フォレスト ルートの作成に使用した最初のドメイン コントローラーの組み込みの Administrator アカウントの資格情報を使用します。 組み込みの Administrator アカウントを、無効にしたり、ロックアウトしたりすることはできません (既定)。他のドメイン管理者アカウントを使用できない場合は、組み込みの Administrator アカウントがフォレストへの唯一のエントリ ポイントとなる場合があります。 新しいフォレストを展開する前に、そのパスワードを知っておくことが重要です。  
   
@@ -250,9 +250,9 @@ Active Directory ドメイン サービスの役割の削除は、作業完了�
 #### <a name="domain-controller-options"></a>ドメイン コントローラー オプション  
 ![新しいフォレストをインストールする](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_DCOptions_Forest.gif)  
   
-**[ドメイン コントローラー オプション]** では、新しいフォレスト ルート ドメインの**フォレストの機能レベル**と**ドメインの機能レベル**を構成できます。 既定では、これらの設定は、新しいフォレストルートドメインの Windows Server 2012 です。 Windows Server 2012 フォレストの機能レベルでは、Windows Server 2008 R2 フォレストの機能レベルよりも新しい機能は提供されません。 Windows Server 2012 ドメインの機能レベルは、新しい Kerberos 設定を実装するためにのみ必要です。 "常に信頼性情報を提供する" と "防御認証要求に失敗" します。 Windows Server 2012 の機能レベルの主な用途は、ドメインへの参加を、最小限のオペレーティングシステム要件を満たすドメインコントローラーに制限することです。 言い換えると、windows server 2012 を2012実行しているドメインコントローラーがドメインをホストできるドメイン機能レベルのみを指定できます。  Windows Server 2012 では、Windows Server 2012 ドメインコントローラーを排他的に特定する NetLogon の**DSGetDcName**関数で**DS_WIN8_REQUIRED**と呼ばれる新しいドメインコントローラーフラグが実装されています。 このフラグにより、ドメイン コントローラー上での実行を許可されるオペレーティング システムの種類という観点から、より同種のサーバーまたは同種のフォレストを柔軟に構成できるようになります。  
+[**ドメイン コントローラー オプション**] では、新しいフォレスト ルート ドメインの**フォレストの機能レベル**と**ドメインの機能レベル**を構成できます。 既定では、これらの設定は、新しいフォレストルートドメインの Windows Server 2012 です。 Windows Server 2012 フォレストの機能レベルでは、Windows Server 2008 R2 フォレストの機能レベルよりも新しい機能は提供されません。 Windows Server 2012 ドメインの機能レベルは、新しい Kerberos 設定を実装するためにのみ必要です。 "常に信頼性情報を提供する" と "防御認証要求に失敗" します。 Windows Server 2012 の機能レベルの主な用途は、ドメインへの参加を、最小限のオペレーティングシステム要件を満たすドメインコントローラーに制限することです。 言い換えると、windows server 2012 を2012実行しているドメインコントローラーがドメインをホストできるドメイン機能レベルのみを指定できます。  Windows Server 2012 では、Windows Server 2012 ドメインコントローラーを排他的に特定する NetLogon の**DSGetDcName**関数で**DS_WIN8_REQUIRED**と呼ばれる新しいドメインコントローラーフラグが実装されています。 このフラグにより、ドメイン コントローラー上での実行を許可されるオペレーティング システムの種類という観点から、より同種のサーバーまたは同種のフォレストを柔軟に構成できるようになります。  
   
-ドメイン コントローラー検出の詳細については、「 [Directory Service Functions (ディレクトリ サービスの関数)](https://msdn.microsoft.com/library/ms675900(VS.85).aspx)」を参照してください。  
+ドメイン コントローラー検出の詳細については、「 [Directory Service Functions (ディレクトリ サービスの関数)](/windows/win32/ad/directory-service-functions)」を参照してください。  
   
 唯一構成可能なドメイン コントローラーの機能は、DNS サーバー オプションです。 分散環境において高可用性を実現するため、すべてのドメイン コントローラーが DNS サービスを提供することをお勧めします。ドメイン コントローラーを、どのモードで、どのドメインにインストールするときでも、このオプションが既定で選択されるのはそのためです。 新しいフォレスト ルート ドメインを作成するとき、グローバル カタログと読み取り専用ドメイン コントローラーのオプションは使用できません。最初のドメイン コントローラーはグローバル カタログ (GC) である必要があり、読み取り専用ドメイン コントローラー (RODC) であってはいけません。  
   
@@ -261,16 +261,16 @@ Active Directory ドメイン サービスの役割の削除は、作業完了�
 #### <a name="dns-options-and-dns-delegation-credentials"></a>DNS オプションと DNS 委任資格情報  
 ![新しいフォレストをインストールする](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_ForestDNSOptions.png)  
   
-**[DNS オプション]** ページでは、DNS 委任を構成し、代替の DNS 管理者資格情報を指定できます。  
+[**DNS オプション**] ページでは、DNS 委任を構成し、代替の DNS 管理者資格情報を指定できます。  
   
-新しい Active Directory フォレスト ルート ドメインをインストールするとき、Active Directory ドメイン サービス構成ウィザードの **[ドメイン コントローラー オプション]** ページにある **[DNS サーバー]** を選択して、DNS のオプションや委任を構成することはできません。 既存の DNS サーバー インフラストラクチャ内に新しいフォレスト ルート DNS ゾーンを作成するときは、 **[DNS 委任の作成]** を使用できます。 このオプションを使用すると、DNS ゾーンを更新する権限を持つ、代替の DNS 管理者資格情報を指定できます。  
+新しい Active Directory フォレスト ルート ドメインをインストールするとき、Active Directory Domain Services 構成ウィザードの [**ドメイン コントローラー オプション**] ページにある [**DNS サーバー**] を選択して、DNS のオプションや委任を構成することはできません。 既存の DNS サーバー インフラストラクチャ内に新しいフォレスト ルート DNS ゾーンを作成するときは、[**DNS 委任の作成**] を使用できます。 このオプションを使用すると、DNS ゾーンを更新する権限を持つ、代替の DNS 管理者資格情報を指定できます。  
   
-DNS 委任を作成する必要があるかどうかの詳細については、「 [ゾーンの委任とは](https://technet.microsoft.com/library/cc771640.aspx)」を参照してください。  
+DNS 委任を作成する必要があるかどうかの詳細については、「[ゾーンの委任とは](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771640(v=ws.11))」を参照してください。  
   
 #### <a name="additional-options"></a>追加オプション  
 ![新しいフォレストをインストールする](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_ForestAdditionalOptions.png)  
   
-**[追加オプション]** ページには、ドメインの NetBIOS 名が表示されます。この名前は上書きできます。 既定では、NetBIOS ドメイン名は **[配置構成]** ページで指定された完全修飾ドメイン名の一番左のラベルに一致します。 たとえば、完全修飾ドメイン名として corp.contoso.com を指定した場合、既定の NetBIOS ドメイン名は CORP です。  
+**[追加オプション]** ページには、ドメインの NetBIOS 名が表示されます。この名前はオーバーライドできます。 既定では、NetBIOS ドメイン名は [**配置構成**] ページで指定された完全修飾ドメイン名の一番左のラベルに一致します。 たとえば、完全修飾ドメイン名として corp.contoso.com を指定した場合、既定の NetBIOS ドメイン名は CORP です。  
   
 15 文字以下で、他の NetBIOS 名と競合していない名前は、変更されません。 他の NetBIOS 名と競合している場合は、番号が付加されます。 15 文字を超えている場合は、一意の、もっと短い名前の候補がウィザードによって示されます。 ウィザードでは、いずれの場合も、WINS 参照および NetBIOS ブロードキャストを介して、名前が既に使用されていないかどうかが最初に検証されます。  
   
@@ -279,14 +279,14 @@ DNS 委任を作成する必要があるかどうかの詳細については、�
 #### <a name="paths"></a>パス  
 ![新しいフォレストをインストールする](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_ForestPaths.png)  
   
-**[パス]** ページでは、AD DS データベース、データベース トランザクション ログ、および SYSVOL 共有の既定のフォルダーの場所を上書きできます。 既定の場所は常に、%systemroot% (つまり C:\Windows) のサブディレクトリ内です。  
+**[パス]** ページでは、AD DS データベース、データベース トランザクション ログ、および SYSVOL 共有の既定のフォルダーの場所をオーバーライドできます。 既定の場所は常に、%systemroot% (つまり C:\Windows) のサブディレクトリ内です。  
   
 #### <a name="review-options-and-view-script"></a>オプションの確認とスクリプトの表示  
 ![新しいフォレストをインストールする](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_ForestReviewOptions.png)  
   
-**[オプションの確認]** ページでは、インストールを開始する前に、設定を確認し、それらが要件を満たしているかどうか確認することができます。 これがサーバー マネージャーの使用中においてインストールを中止する最後の機会ではありません。 構成を続行する前に設定を確認するためのオプションにすぎません。  
+[**オプションの確認**] ページでは、インストールを開始する前に、設定を確認し、それらが要件を満たしているかどうか確認することができます。 これがサーバー マネージャーの使用中においてインストールを中止する最後の機会ではありません。 構成を続行する前に設定を確認するためのオプションにすぎません。  
   
-サーバー マネージャーの **[オプションの確認]** ページにあるオプションの **[スクリプトの表示]** ボタンを使用すると、現在の ADDSDeployment モジュール構成を単一の Windows PowerShell スクリプトとして含む Unicode テキスト ファイルを作成することもできます。 これにより、サーバー マネージャーのグラフィカル インターフェイスを Windows PowerShell 展開スタジオとして使用できます。 Active Directory ドメイン サービス構成ウィザードを使用してオプションを構成し、構成をエクスポートした後、ウィザードをキャンセルします。 これによって有効で正しい構文のサンプルが作成されるので、それをさらに変更したり、直接使用したりできます。 例 :  
+サーバー マネージャーの **[オプションの確認]** ページにあるオプションの **[スクリプトの表示]** ボタンを使用すると、現在の ADDSDeployment モジュール構成を単一の Windows PowerShell スクリプトとして含む Unicode テキスト ファイルを作成することもできます。 これにより、サーバー マネージャーのグラフィカル インターフェイスを Windows PowerShell 展開スタジオとして使用できます。 Active Directory ドメイン サービス構成ウィザードを使用してオプションを構成し、構成をエクスポートした後、ウィザードをキャンセルします。 これによって有効で正しい構文のサンプルが作成されるので、それをさらに変更したり、直接使用したりできます。 次に例を示します。  
   
 ```powershell 
 #  
@@ -315,18 +315,18 @@ Install-ADDSForest `
 #### <a name="prerequisites-check"></a>前提条件のチェック  
 ![新しいフォレストをインストールする](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_ForestPrereqCheck.png)  
   
-**[前提条件のチェック]** は、AD DS ドメイン構成の新しい機能です。 この新しいフェーズでは、サーバー構成が新しい AD DS フォレストをサポートできるかどうかを検証します。  
+[**前提条件のチェック**] は、AD DS ドメイン構成の新しい機能です。 この新しいフェーズでは、サーバー構成が新しい AD DS フォレストをサポートできるかどうかを検証します。  
   
 新しいフォレスト ルート ドメインをインストールするときは、サーバー マネージャーの Active Directory ドメイン サービス構成ウィザードによって、一連のモジュール テストが実施されます。 これらのテストでは、警告と共に、候補となる修正オプションが提示されます。 テストは必要なだけ何度でも実行できます。 前提条件のテストにすべて合格するまで、ドメイン コントローラー プロセスを続行することはできません。  
   
-**[前提条件のチェック]** では、以前のオペレーティング システムに影響を与えるセキュリティの変更といった関連情報も明らかになります。  
+[**前提条件のチェック**] では、以前のオペレーティング システムに影響を与えるセキュリティの変更といった関連情報も明らかになります。  
   
 具体的な前提条件チェックの詳細については、「[前提条件のチェック](../../ad-ds/manage/AD-DS-Simplified-Administration.md#BKMK_PrereuisiteChecking)」を参照してください。  
   
 #### <a name="installation"></a>インストール  
 ![新しいフォレストをインストールする](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_ForestInstallation.png)  
   
-**[インストール]** ページが表示されると、ドメイン コントローラーの構成が開始され、停止やキャンセルは実行できません。 操作の詳しい内容がこのページに表示され、以下のログに書き込まれます。  
+[**インストール**] ページが表示されると、ドメイン コントローラーの構成が開始され、停止やキャンセルは実行できません。 操作の詳しい内容がこのページに表示され、以下のログに書き込まれます。  
   
 -   %systemroot%\debug\dcpromo.log  
   
@@ -338,7 +338,7 @@ Install-ADDSForest `
 #### <a name="results"></a>結果  
 ![新しいフォレストをインストールする](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_TR_ForestSignOff.png)  
   
-**[結果]** ページには、昇格の成功または失敗と、重要な管理情報が表示されます。 ドメイン コントローラーは、10 秒後に自動的に再起動します。  
+[**結果**] ページには、昇格の成功または失敗と、重要な管理情報が表示されます。 ドメイン コントローラーは、10 秒後に自動的に再起動します。  
   
 ## <a name="deploying-a-forest-with-windows-powershell"></a><a name="BKMK_PSForest"></a>Windows PowerShell を使用してフォレストを展開する  
 ここでは、コア Windows Server 2012 コンピューター上で、Windows PowerShell を使って最初のドメイン コントローラーをフォレスト ルート ドメインにインストールする方法について説明します。  
@@ -352,7 +352,7 @@ Install-ADDSForest `
   
 |||  
 |-|-|  
-|ServerManager コマンドレット|引数 (**太字** の引数は必須です。 *斜体*の引数は、Windows PowerShell または AD DS 構成ウィザードを使用して指定できます。)|  
+|ServerManager コマンドレット|引数 (**太字**の引数は必須です。 *斜体*の引数は、Windows PowerShell または AD DS 構成ウィザードを使用して指定できます。)|  
 |Install-WindowsFeature/Add-WindowsFeature|***-Name***<p>*-再起動*<p>*-IncludeAllSubFeature*<p>*-IncludeManagementTools*<p>-Source<p>*-ComputerName*<p>-Credential<p>-LogPath<p>*-Vhd*<p>*-ConfigurationFilePath*|  
   
 > [!NOTE]  
@@ -366,27 +366,27 @@ ServerManager 内のエイリアスとコマンドレットをエクスポート
 Get-Command -module ServerManager  
 ```  
   
-例 :  
+次に例を示します。  
   
 ![新しいフォレストをインストールする](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_PSGetCommand.png)  
   
-Active Directory ドメイン サービスの役割を追加するには、AD DS の役割の名前を引数として指定して **Install-WindowsFeature** を実行するだけです。 サーバー マネージャーと同様、AD DS の役割に暗黙的に必要とされるすべてのサービスは自動的にインストールされます。  
+Active Directory Domain Services の役割を追加するには、AD DS の役割の名前を引数として指定して **Install-WindowsFeature** を実行するだけです。 サーバー マネージャーと同様、AD DS の役割に暗黙的に必要とされるすべてのサービスは自動的にインストールされます。  
   
 ```powershell  
 Install-WindowsFeature -name AD-Domain-Services  
 ```  
   
-AD DS の管理ツールもインストールしたい場合は (強くお勧めします)、 **-IncludeManagementTools** 引数を指定します。  
+AD DS の管理ツールもインストールしたい場合は (強くお勧めします)、**-IncludeManagementTools** 引数を指定します。  
   
 ```powershell  
 Install-WindowsFeature -name AD-Domain-Services -IncludeManagementTools  
 ```  
   
-例 :  
+次に例を示します。  
   
 ![新しいフォレストをインストールする](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_PSInstallWinFeature.png)  
   
-すべての機能と役割をそのインストール状態と共に一覧表示するには、**Get-WindowsFeature** を引数なしで実行します。 リモート サーバーからインストール状態を確認する場合は、 **-ComputerName** 引数を指定します。  
+すべての機能と役割をそのインストール状態と共に一覧表示するには、**Get-WindowsFeature** を引数なしで実行します。 リモート サーバーからインストール状態を確認する場合は、**-ComputerName** 引数を指定します。  
   
 ```powershell  
 Get-WindowsFeature  
@@ -408,7 +408,7 @@ Get-WindowsFeature | where displayname -like "*active dir*"
   
 ![新しいフォレストをインストールする](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_PSGetWindowsFeature.png)  
   
-パイプラインと Where-Object を使った他の Windows PowerShell 操作の詳細については、「 [Piping and the Pipeline in Windows PowerShell (Windows PowerShell のパイプ処理とパイプライン)](https://technet.microsoft.com/library/ee176927.aspx)」を参照してください。  
+パイプラインと Where-Object を使った他の Windows PowerShell 操作の詳細については、「 [Piping and the Pipeline in Windows PowerShell (Windows PowerShell のパイプ処理とパイプライン)](/previous-versions/windows/it-pro/windows-powershell-1.0/ee176927(v=technet.10))」を参照してください。  
   
 また、Windows PowerShell 3.0 では、このパイプライン操作に必要なコマンドライン引数が大幅に簡素化されています。 Windows PowerShell 2.0 では次のように指定する必要がありました。  
   
@@ -416,7 +416,7 @@ Get-WindowsFeature | where displayname -like "*active dir*"
 Get-WindowsFeature | where {$_.displayname - like "*active dir*"}  
 ```  
   
-Windows PowerShell パイプラインを使用することで、判読しやすい結果が生成されます。 例 :  
+Windows PowerShell パイプラインを使用することで、判読しやすい結果が生成されます。 次に例を示します。  
   
 ```powershell  
 Install-WindowsFeature | Format-List  
@@ -433,7 +433,7 @@ Install-WindowsFeature | select-object | Format-List
 > [!NOTE]  
 > **Select-Object -expandproperty** 引数を指定すると、全体的なインストール パフォーマンスが多少遅くなります。  
   
-### <a name="create-an-ad-ds-forest-root-domain-with-windows-powershell"></a><a name="BKMK_PS"></a>Windows PowerShell を使用して AD DS フォレストのルートドメインを作成する  
+### <a name="create-an-ad-ds-forest-root-domain-with-windows-powershell"></a><a name="BKMK_PS"></a>Windows PowerShell を使って AD DS フォレスト ルート ドメインを作成する  
 ADDSDeployment モジュールを使って新しい Active Directory フォレストをインストールするには、次のコマンドレットを使用します。  
   
 ```powershell  
@@ -444,13 +444,13 @@ Install-addsforest
   
 |||  
 |-|-|  
-|ADDSDeployment コマンドレット|引数 (**太字** の引数は必須です。 *斜体*の引数は、Windows PowerShell または AD DS 構成ウィザードを使用して指定できます。)|  
+|ADDSDeployment コマンドレット|引数 (**太字**の引数は必須です。 *斜体*の引数は、Windows PowerShell または AD DS 構成ウィザードを使用して指定できます。)|  
 |install-addsforest|-Confirm<p>*-CreateDNSDelegation*<p>*-DatabasePath*<p>*-DomainMode*<p>***-DomainName***<p>***-DomainNetBIOSName***<p>*-DNSDelegationCredential*<p>*-ForestMode*<p>-Force<p>*-InstallDNS*<p>*-LogPath*<p>-NoDnsOnNetwork<p>-NoRebootOnCompletion<p>*-SafeModeAdministratorPassword*<p>-SkipAutoConfigureDNS<p>-SkipPreChecks<p>*-SYSVOLPath*<p>*-Whatif*|  
   
 > [!NOTE]  
 > **-DomainNetBIOSName** 引数は、DNS ドメイン名のプレフィックスに基づいて自動的に生成される 15 文字の名前を変更する場合と、名前が 15 文字を超えている場合に必須です。  
   
-サーバー マネージャーの **[配置構成]** と同等の ADDSDeployment コマンドレットと引数を次に示します。  
+サーバー マネージャーの [**配置構成**] と同等の ADDSDeployment コマンドレットと引数を次に示します。  
   
 ```powershell  
 Install-ADDSForest  
@@ -479,7 +479,7 @@ Install-ADDSForest
     Install-ADDSForest "DomainName corp.contoso.com  
     ```  
   
--   この引数を *値と共に*指定する場合は、セキュリティで保護された文字列を指定する必要があります。 これは、コマンドレットを対話的に実行する場合に推奨される使用方法ではありません。  
+-   この引数を*値と共に*指定する場合は、セキュリティで保護された文字列を指定する必要があります。 これは、コマンドレットを対話的に実行する場合に推奨される使用方法ではありません。  
   
 たとえば、**Read-Host** コマンドレットを使用してユーザーにセキュリティで保護された文字列の入力を求めることにより、手動でパスワードの入力を求めることができます。  
   
@@ -496,7 +496,7 @@ Install-ADDSForest
 -safemodeadministratorpassword (convertto-securestring "Password1" -asplaintext -force)  
 ```  
   
-最後に、暗号化したパスワードをファイルに保存して後で使用することができます。こうするとクリア テキストのパスワードを表示せずに済みます。 例 :  
+最後に、暗号化したパスワードをファイルに保存して後で使用することができます。こうするとクリア テキストのパスワードを表示せずに済みます。 次に例を示します。  
   
 ```powershell  
 $file = "c:\pw.txt"  
@@ -532,7 +532,7 @@ ADDSDeployment コマンドレットには、DNS クライアント設定、フ�
 -domainnetbiosname <string>  
 ```  
   
-サーバー マネージャーの **[パス]** と同等の ADDSDeployment コマンドレット引数を次に示します。  
+サーバー マネージャーの [**パス**] と同等の ADDSDeployment コマンドレット引数を次に示します。  
   
 ```powershell  
 -databasepath <string>  
@@ -543,11 +543,11 @@ ADDSDeployment コマンドレットには、DNS クライアント設定、フ�
   
 構成情報を確認するには、**Install-ADDSForest** コマンドレットと共にオプションの **Whatif** 引数を使用します。 これによって、コマンドレットの引数の明示的な値と暗黙的な値を確認できます。  
   
-例 :  
+次に例を示します。  
   
 ![新しいフォレストをインストールする](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_PSPaths.png)  
   
-サーバー マネージャーを使用する場合は **[前提条件のチェック]** を省略することはできませんが、AD DS 展開コマンドレットと以下の引数を使用すると省略できます。  
+サーバー マネージャーを使用する場合は [**前提条件のチェック**] を省略することはできませんが、AD DS 展開コマンドレットと以下の引数を使用すると省略できます。  
   
 ```powershell  
 -skipprechecks  
@@ -562,18 +562,17 @@ ADDSDeployment コマンドレットには、DNS クライアント設定、フ�
   
 ![新しいフォレストをインストールする](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_PSInstallProgress.png)  
   
-再起動プロンプトを自動的に受け入れるには、ADDSDeployment Windows PowerShell コマンドレットで **-force** または **-confirm:$false** 引数を使用します。 昇格の終了時にサーバーが自動的に再起動されないようにするには、 **-norebootoncompletion** 引数を使用します。  
+再起動プロンプトを自動的に受け入れるには、ADDSDeployment Windows PowerShell コマンドレットで **-force** または **-confirm:$false** 引数を使用します。 昇格の終了時にサーバーが自動的に再起動されないようにするには、**-norebootoncompletion** 引数を使用します。  
   
 > [!WARNING]  
-> 再起動の無効化は推奨されません。 ドメイン コントローラーを正常に機能させるには、再起動する必要があります。  
+> 再起動のオーバーライドは推奨されません。 ドメイン コントローラーを正常に機能させるには、再起動する必要があります。  
   
 ## <a name="see-also"></a>参照  
-[Active Directory Domain Services (TechNet ポータル)](https://technet.microsoft.com/library/cc770946(WS.10).aspx)  
-[Windows Server 2008 R2 の Active Directory Domain Services](https://technet.microsoft.com/library/dd378801(WS.10).aspx)  
-[Windows Server 2008 の Active Directory Domain Services](https://technet.microsoft.com/library/dd378891(WS.10).aspx)  
-[Windows Server テクニカルリファレンス (Windows Server 2003)](https://technet.microsoft.com/library/cc739127(WS.10).aspx)  
-[Active Directory 管理センター: はじめに (Windows Server 2008 R2)](https://technet.microsoft.com/library/dd560651(WS.10).aspx)  
-[Windows PowerShell を使用した Active Directory 管理 (Windows Server 2008 R2)](https://technet.microsoft.com/library/dd378937(WS.10).aspx)  
-[ディレクトリサービスチームに質問する (Microsoft の公式テクニカルサポートブログ)](https://blogs.technet.com/b/askds)  
+[Active Directory Domain Services (TechNet ポータル)](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770946(v=ws.10))  
+[Windows Server 2008 R2 の Active Directory ドメイン サービス](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd378801(v=ws.10))  
+[Windows Server 2008 向け Active Directory Domain Services](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd378891(v=ws.10))  
+[A to Z Technologies List (テクノロジ一覧 A - Z)](/previous-versions/windows/it-pro/windows-server-2003/cc739127(v=ws.10))  
+[Active Directory 管理センター: はじめに (Windows Server 2008 R2)](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd560651(v=ws.10))  
+[Active Directory Administration with Windows PowerShell (Windows PowerShell による Active Directory の管理) (Windows Server 2008 R2)](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd378937(v=ws.10))  
+[Ask the Directory Services Team (ディレクトリ サービス チームに質問) (Microsoft 公式ブログ (英語))](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd378937(v=ws.10))  
   
-

@@ -8,18 +8,18 @@ ms.topic: article
 ms.assetid: eca02eeb-d92d-463e-aae0-1f7038ba26fe
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 03ae91c0360153789658e0c31cb17980fad32bab
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a65ddec97bcdd911d0cf81bfd54e2ddbb286ed54
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80855765"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965264"
 ---
 # <a name="step-3-plan-otp-certificate-deployment"></a>手順 3 OTP 証明書の展開を計画する
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016
+>適用先:Windows Server (半期チャネル)、Windows Server 2016
 
-RADIUS サーバーを計画した後、ワンタイムパスワード (OTP) 証明書を発行する CA、OTP 証明書テンプレート、およびリモートで使用される登録機関証明書を含む証明機関 (CA) の要件を計画する必要があります。すべての DirectAccess クライアント OTP 証明書要求に署名するためのアクセスサーバー。 これらの証明書は次のように使用されます。  
+RADIUS サーバーを計画した後、1回限りのパスワード (OTP) 証明書を発行する CA、OTP 証明書テンプレート、およびリモートアクセスサーバーがすべての DirectAccess クライアント OTP 証明書要求に署名するために使用する登録機関の証明書を含む証明機関 (CA) の要件を計画する必要があります。 これらの証明書は次のように使用されます。  
   
 1.  DirectAccess クライアントは OTP 証明書を要求し、リモートアクセスサーバーは要求を受信します。  
   
@@ -54,7 +54,7 @@ RADIUS サーバーを計画した後、ワンタイムパスワード (OTP) 証
 -   有効期間は1時間に設定する必要があります。  
   
     > [!NOTE]  
-    > CA サーバーが Windows Server 2003 コンピューターの場合は、テンプレートを別のコンピューターで構成する必要があります。 これは、2008/Vista より前のバージョンの Windows を実行している場合は、**有効期間**を時間単位で設定することができないためです。 テンプレートの構成に使用するコンピューターに、証明書サービスの役割がインストールされていない場合、またはクライアントコンピューターである場合は、証明書テンプレートスナップインのインストールが必要になることがあります。 このトピックの詳細について[は、ここ](https://technet.microsoft.com/library/cc732445.aspx)をクリックしてください。  
+    > CA サーバーが Windows Server 2003 コンピューターの場合は、テンプレートを別のコンピューターで構成する必要があります。 これは、2008/Vista より前のバージョンの Windows を実行している場合は、**有効期間**を時間単位で設定することができないためです。 テンプレートの構成に使用するコンピューターに、証明書サービスの役割がインストールされていない場合、またはクライアントコンピューターである場合は、証明書テンプレートスナップインのインストールが必要になることがあります。 このトピックの詳細について[は、ここ](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732445(v=ws.11))をクリックしてください。  
   
 -   更新期間は0に設定する必要があります。  
   
@@ -73,5 +73,3 @@ DirectAccess クライアントが OTP 証明書を要求すると、リモー�
   
 -   [手順 4: リモートアクセスサーバーの OTP を計画する](Step-4-Plan-for-OTP-on-the-Remote-Access-Server.md)  
   
-
-

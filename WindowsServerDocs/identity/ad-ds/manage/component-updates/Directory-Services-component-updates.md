@@ -8,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: cde839feda47d55415b2b6cc1026a7a3e6515a44
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 54a2ef82d5eccabaf8be0971ca0324498e75bb78
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80823095"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966414"
 ---
 # <a name="directory-services-component-updates"></a>ディレクトリ サービス コンポーネントの更新
 
->適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
 **Author**: Justin 書籍、シニアサポートエスカレーションエンジニア (Windows グループ)  
   
@@ -67,7 +67,7 @@ ms.locfileid: "80823095"
   
     -   最初の 4 時間の有効期間を超えてユーザー チケット (TGT) を更新する  
   
-2.  認証ポリシー  
+2.  Authentication Policies  
   
     新しいフォレストベースの Active Directory ポリシーでは、Windows Server 2012 R2 ドメインのアカウントに適用して、アカウントがサインオンできるホストを制御し、アカウントとして実行されているサービスに認証のアクセス制御条件を適用することができます。  
   
@@ -138,13 +138,13 @@ Windows Server 2012 R2 を実行している DC を、2003 DFL を実行して�
   
 1.  Sch60  
   
-**認証ポリシーとサイロ**  
+**認証のポリシーとサイロ**  
   
 1.  Sch68  
   
 2.  Sch69  
   
-## <a name="deprecation-of-ntfrs"></a><a name="BKMK_NTFRS"></a>NTFRS の非推奨  
+## <a name="deprecation-of-ntfrs"></a><a name="BKMK_NTFRS"></a>NTFRS の廃止  
   
 ### <a name="overview"></a>概要  
 FRS は、Windows Server 2012 R2 で非推奨とされます。  FRS の廃止は、Windows Server 2008 の最小ドメイン機能レベル (DFL) を適用することで実現されます。  この強制は、サーバーマネージャーまたは Windows PowerShell を使用して新しいドメインが作成された場合にのみ存在します。  
@@ -171,7 +171,7 @@ LDAP クエリオプティマイザーアルゴリズムが再評価され、さ
 > -   AD のパフォーマンスの問題に関するサポート呼び出しが少ない  
 > -   Windows Server 2008 R2 に移植される (KB 2862304)  
   
-### <a name="background"></a>背景  
+### <a name="background"></a>バックグラウンド  
 Active Directory を検索する機能は、ドメインコントローラーによって提供されるコアサービスです。  その他のサービスや基幹業務アプリケーションは、Active Directory の検索に依存しています。  この機能が使用できない場合は、ビジネス操作が中止されることがあります。  コアと使用率の高いサービスとして、ドメインコントローラーは LDAP 検索トラフィックを効率的に処理することが不可欠です。  Ldap クエリオプティマイザーアルゴリズムでは、ldap 検索フィルターを、データベース内に既にインデックスが作成されているレコードを使用して満たすことのできる結果セットにマッピングすることにより、ldap 検索を可能な限り効率的にすることを試みます。  このアルゴリズムは再評価され、さらに最適化されました。  その結果、LDAP search の効率と複雑なクエリの LDAP 検索時間のパフォーマンスが向上します。  
   
 ### <a name="details-of-change"></a>変更の詳細  
@@ -269,26 +269,26 @@ Log Record Bytes Generated: 0
   
 ### <a name="to-enable-the-stats-control-in-ldp"></a><a name="BKMK_EnableStats"></a>LDP で Stats コントロールを有効にするには  
   
-1.  LDP.EXE を開き、ドメインコントローラーに接続してバインドします。  
+1.  LDP.exe を開き、ドメインコントローラーに接続してバインドします。  
   
-2.  **[オプション]** メニューの **[コントロール]** をクリックします。  
+2.  [**オプション**] メニューの [**コントロール**] をクリックします。  
   
-3.  コントロール ダイアログボックスで、**事前定義済み** プルダウンメニューを展開し、**検索統計** をクリックして、**OK** をクリックします。  
+3.  [コントロール] ダイアログボックスで、[**事前定義済み**] プルダウンメニューを展開し、[**検索統計**] をクリックして、[ **OK**] をクリックします。  
   
     ![ディレクトリサービスの更新](media/Directory-Services-component-updates/GTR_ADDS_Controls.gif)  
   
-4.  **[参照]** メニューの **[検索]** をクリックします。  
+4.  [**参照**] メニューの [**検索**] をクリックします。  
   
-5.  検索 ダイアログボックスで、**オプション** ボタンを選択します。  
+5.  [検索] ダイアログボックスで、[**オプション**] ボタンを選択します。  
   
-6.  検索オプション ダイアログボックスの **拡張** チェックボックスがオンになっていることを確認し、 **OK**を選択します。  
+6.  [検索オプション] ダイアログボックスの [**拡張**] チェックボックスがオンになっていることを確認し、[ **OK]** を選択します。  
   
     ![ディレクトリサービスの更新](media/Directory-Services-component-updates/GTR_ADDS_SearchOptions.gif)  
   
 ### <a name="try-this-use-ldp-to-return-query-statistics"></a>試してみる: LDP を使用してクエリの統計情報を返す  
 ドメインコントローラー、または AD DS ツールがインストールされているドメインに参加しているクライアントまたはサーバーで、次の操作を実行します。  Windows Server 2012 DC と Windows Server 2012 R2 DC を対象として、次の手順を繰り返します。  
   
-1.  [「より効率的な MICROSOFT AD 対応アプリケーションの作成」](https://msdn.microsoft.com/library/ms808539.aspx)の記事を確認し、必要に応じて参照してください。  
+1.  [「より効率的な MICROSOFT AD 対応アプリケーションの作成」](/previous-versions/ms808539(v=msdn.10))の記事を確認し、必要に応じて参照してください。  
   
 2.  LDP を使用して、検索統計を有効にします ( [ldp で Stats コントロールを有効にするに](../../../ad-ds/manage/component-updates/../../../ad-ds/manage/component-updates/../../../ad-ds/manage/component-updates/../../../ad-ds/manage/component-updates/../../../ad-ds/manage/component-updates/../../../ad-ds/manage/component-updates/Directory-Services-component-updates.md#BKMK_EnableStats)はこちらを参照してください)。  
   
@@ -296,18 +296,18 @@ Log Record Bytes Generated: 0
   
 4.  属性インデックスのためにクエリオプティマイザーで最適化できる LDAP 検索を実行する  
   
-5.  完了までに長い時間がかかる検索を作成しようとしています (検索がタイムアウトにならないように、 **[制限時間]** オプションを長くすることもできます)。  
+5.  完了までに長い時間がかかる検索を作成しようとしています (検索がタイムアウトにならないように、[**制限時間**] オプションを長くすることもできます)。  
   
-### <a name="additional-resources"></a>その他のリソース  
-[Active Directory 検索とは何ですか。](https://technet.microsoft.com/library/cc783845(v=ws.10).aspx)  
+### <a name="additional-resources"></a>その他の情報  
+[Active Directory 検索とは何ですか。](/previous-versions/windows/it-pro/windows-server-2003/cc783845(v=ws.10))  
   
-[Active Directory 検索のしくみ](https://technet.microsoft.com/library/cc755809(v=WS.10).aspx)  
+[Active Directory 検索のしくみ](/previous-versions/windows/it-pro/windows-server-2003/cc755809(v=ws.10))  
   
-[より効率的な Microsoft Active Directory 対応アプリケーションの作成](https://msdn.microsoft.com/library/ms808539.aspx)  
+[より効率的な Microsoft Active Directory 対応アプリケーションの作成](/previous-versions/ms808539(v=msdn.10))  
   
 [951581](https://support.microsoft.com/kb/951581) AD または LDS/ADAM ディレクトリサービスでの LDAP クエリの実行速度が予想よりも遅く、イベント ID 1644 がログに記録されることがある  
   
-## <a name="1644-event-improvements"></a><a name="BKMK_1644"></a>1644イベントの改善  
+## <a name="1644-event-improvements"></a><a name="BKMK_1644"></a>1644 イベントの改善  
   
 ### <a name="overview"></a>概要  
 この更新により、トラブルシューティングのために、LDAP 検索結果の統計がイベント ID 1644 に追加されます。  また、新しいレジストリ値を使用して、時間ベースのしきい値でログ記録を有効にすることもできます。  これらの機能強化は、Windows server 2012 および Windows Server 2008 R2 SP1 で、KB [2800945](https://support.microsoft.com/kb/2800945)を使用して提供され、windows SERVER 2008 SP2 で使用できるようになりました。  
@@ -316,7 +316,7 @@ Log Record Bytes Generated: 0
 > -   非効率的または高価な LDAP 検索のトラブルシューティングを支援するために、追加の LDAP 検索統計情報がイベント ID 1644 に追加されます。  
 > -   検索時間のしきい値を指定できるようになりました (例 高コストで非効率的な検索結果のしきい値を指定する代わりに、100ミリ秒よりも長い時間がかかっている検索のイベント1644をログに記録します。  
   
-### <a name="background"></a>背景  
+### <a name="background"></a>バックグラウンド  
 パフォーマンスの問題のトラブルシューティング Active Directory、LDAP 検索アクティビティが問題に寄与している可能性があることが明らかになります。  ドメインコントローラーによって処理される高価または非効率的な LDAP クエリを確認できるように、ログ記録を有効にすることを決定しました。  ログ記録を有効にするには、フィールドエンジニアリング診断の値を設定し、必要に応じて、高価または非効率的な検索結果のしきい値を指定できます。  フィールドエンジニアリングのログ記録レベルを5にすると、これらの条件を満たす検索は、イベント ID 1644 のディレクトリサービスイベントログに記録されます。  
   
 イベントには次のものが含まれます。  
@@ -327,7 +327,7 @@ Log Record Bytes Generated: 0
   
 -   フィルター  
   
--   ［検索範囲］  
+-   検索範囲  
   
 -   属性の選択  
   
@@ -367,7 +367,7 @@ Windows Registry Editor Version 5.00
 ```  
   
 #### <a name="comparison-of-the-old-and-new-event-id-1644"></a>新旧のイベント ID 1644 の比較  
-まで  
+OLD  
   
 ![ディレクトリサービスの更新](media/Directory-Services-component-updates/GTR_ADDS_Event1644_2012.gif)  
   
@@ -401,8 +401,6 @@ AD レプリケーションでは、レプリケーショントランスポー�
 > [!NOTE]  
 > この動作を変更するための構成可能な設定はありません。  
   
-### <a name="additional-resources"></a>その他のリソース  
-[Active Directory レプリケーションモデルのしくみ](https://technet.microsoft.com/library/cc772726(v=WS.10).aspx)  
+### <a name="additional-resources"></a>その他の情報  
+[Active Directory レプリケーションモデルのしくみ](/previous-versions/windows/it-pro/windows-server-2003/cc772726(v=ws.10))  
   
-
-

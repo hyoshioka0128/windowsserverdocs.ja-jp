@@ -9,14 +9,14 @@ ms.author: v-tea
 author: Teresa-MOTIV
 ms.localizationpriority: medium
 ms.reviewer: deverette
-ms.openlocfilehash: db85d71ed1b7d8d5b3c14ac8ea603789422ea2cb
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: e97556ab35471c1745c01b6ebd047cd1451ffb27
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80818885"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966754"
 ---
-# <a name="step-71-configure-eap-tls-to-ignore-certificate-revocation-list-crl-checking"></a>手順 7.1. 証明書失効リスト (CRL) が無視されるように EAP-TLS を構成する
+# <a name="step-71-configure-eap-tls-to-ignore-certificate-revocation-list-crl-checking"></a>手順 7.1.  証明書失効リスト (CRL) が無視されるように EAP-TLS を構成する
 
 >適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows 10
 
@@ -41,13 +41,13 @@ EAP-TLS クライアントは、NPS サーバーが証明書チェーン (ルー
 
 2. **HKEY_LOCAL_MACHINE \system\currentcontrolset\services\rasman\ppp\eap\13**に移動します。
 
-3. **[編集 > 新規作成]** を選択し、[ **DWORD (32 ビット)] 値**を選択して、「 **Ignorenorevocationcheck**」と入力します。
+3. [**編集 > 新規作成**] を選択し、[ **DWORD (32 ビット)] 値**を選択して、「 **Ignorenorevocationcheck**」と入力します。
 
-4. **[Ignorenorevocationcheck]** をダブルクリックし、[値のデータ] を**1**に設定します。
+4. [ **Ignorenorevocationcheck** ] をダブルクリックし、[値のデータ] を**1**に設定します。
 
 5. [ **OK]** を選択し、サーバーを再起動します。 RRAS と NPS サービスを再起動しても十分ではありません。
 
-詳細については、「[クライアントで証明書失効確認 (CRL) を有効または無効にする方法](https://technet.microsoft.com/library/bb680540.aspx)」を参照してください。
+詳細については、「[クライアントで証明書失効確認 (CRL) を有効または無効にする方法](/previous-versions/system-center/configuration-manager-2007/bb680540(v=technet.10))」を参照してください。
 
 
 |レジストリ パス  |EAP 拡張機能  |
@@ -56,6 +56,6 @@ EAP-TLS クライアントは、NPS サーバーが証明書チェーン (ルー
 |HKLM\SYSTEM\CurrentControlSet\Services\RasMan\PPP\EAP\25     |PEAP         |
 |HKLM\SYSTEM\CurrentControlSet\Services\RasMan\PPP\EAP\26     |EAP-MSCHAP v2         |
 
-## <a name="next-steps"></a>次のステップ:
+## <a name="next-steps"></a>次のステップ
 
 [手順 7.2.Azure AD を使用した VPN 認証用のルート証明書を作成](vpn-create-root-cert-for-vpn-auth-azure-ad.md)する: この手順では、Azure AD で vpn 認証用の条件付きアクセスルート証明書を構成します。これにより、テナントに Vpn サーバークラウドアプリが自動的に作成されます。

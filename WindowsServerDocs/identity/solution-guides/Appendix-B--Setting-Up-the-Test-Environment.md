@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 5f529e6b0176b7ad416a728163b4ae9671040bf8
-ms.sourcegitcommit: d1fc59d53055952f8e55aacebeb29547eef0bca7
+ms.openlocfilehash: 30667f68b25bda9ae86212be34466762d825ec0b
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "80861285"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966174"
 ---
 # <a name="appendix-b-setting-up-the-test-environment"></a>付録 B:テスト環境のセットアップ
 
@@ -163,7 +163,7 @@ Active Directory 管理センターを使用して、次のユーザーを作成
 4. 示されている属性を使用して次のユーザーを作成します。  
 
 
-   |       User       |  ユーザー名  |     電子メール アドレス      | Department |      グループ       | 国/リージョン |
+   |       User       |  ユーザー名  |     電子メール アドレス      | 部署 |      グループ       | 国/地域 |
    |------------------|------------|------------------------|------------|------------------|----------------|
    | Myriam Delesalle | MDelesalle | MDelesalle@contoso.com |  Finance   |                  |       US       |
    |    Miles Reid    |   MReid    |   MReid@contoso.com    |  Finance   |   FinanceAdmin   |       US       |
@@ -172,7 +172,7 @@ Active Directory 管理センターを使用して、次のユーザーを作成
    |     Jeff Low     |    JLow    |    JLow@contoso.com    |     HR     |                  |       US       |
    |    RMS Server    |    rms     |    rms@contoso.com     |            |                  |                |
 
-   セキュリティ グループの作成について詳しくは、Windows Server Web サイトにある「 [新しいグループを作成する](https://technet.microsoft.com/library/dd861305.aspx) 」を参照してください。  
+   セキュリティ グループの作成について詳しくは、Windows Server Web サイトにある「 [新しいグループを作成する](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd861305(v=ws.11)) 」を参照してください。  
 
 ##### <a name="to-create-a-group-policy-object"></a>グループ ポリシー オブジェクトを作成するには  
 
@@ -381,7 +381,7 @@ IFilters をダウンロードしてインストールするには、「 [Micros
 >     -   NLTEST /SC_RESET:contoso.com  
 > 2.  ドメイン コントローラー (DC1) で、Active Directory をレプリケートします。  
 >   
->     Active Directory のレプリケーションを強制する手順について詳しくは、「 [Active Directory Replication](https://technet.microsoft.com/library/cc794809(WS.10).aspx)」を参照してください。  
+>     Active Directory のレプリケーションを強制する手順について詳しくは、「 [Active Directory Replication](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc794809(v=ws.10))」を参照してください。  
 
 必要に応じて、サーバー マネージャーの役割と機能の追加ウィザードを使用する代わりに、次の手順に示すように、Windows PowerShell を使用して、AD RMS サーバーの役割をインストールして構成することができます。  
 
@@ -562,7 +562,7 @@ SRV1 は SMTP/POP3 メール サーバーです。 アクセス拒否アシス�
 -   仮想マシンを ID_AD_Network に接続します。  
 
 > [!IMPORTANT]  
-> 仮想マシンをドメインに参加させ、フォレスト全体で信頼性情報の種類を展開するには、仮想マシンは、関連ドメインの FQDN を解決できなければなりません。 これを実現するには、仮想マシンで DNS 設定を手動で構成する必要が生じることがあります。 詳細については、「 [Configuring a virtual network (仮想ネットワークの構成)](https://technet.microsoft.com/library/cc732470%28v=ws.10%29.aspx)」を参照してください。  
+> 仮想マシンをドメインに参加させ、フォレスト全体で信頼性情報の種類を展開するには、仮想マシンは、関連ドメインの FQDN を解決できなければなりません。 これを実現するには、仮想マシンで DNS 設定を手動で構成する必要が生じることがあります。 詳細については、「 [Configuring a virtual network (仮想ネットワークの構成)](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732470(v=ws.10))」を参照してください。  
 >   
 > 静的 IP バージョン 4 (IPv4) アドレスおよびドメイン ネーム システム (DNS) クライアント設定を使用するように、すべての仮想マシン イメージ (サーバーとクライアント) を再構成する必要があります。 詳細については、「 [静的 IP アドレスの DNS クライアントを構成する](https://go.microsoft.com/fwlink/?LinkId=150952)」を参照してください。  
 
@@ -835,6 +835,3 @@ FILE1 で新規 NTFS ボリュームを作成し、次のフォルダーを作�
 7. [**セキュリティ**] タブをクリックし、[**詳細設定**] をクリックして、[**集約型ポリシー** ] タブをクリックします。**Adatumemployeeaccessrule が**が表示されます。 この項目を展開して、Active Directory の規則を作成したときに設定したすべてのアクセス許可を表示できます。  
 
 8. [**OK**] をクリックしてエクスプローラーに戻ります。  
-
-
-

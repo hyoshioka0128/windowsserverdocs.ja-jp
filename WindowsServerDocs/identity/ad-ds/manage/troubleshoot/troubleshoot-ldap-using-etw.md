@@ -9,16 +9,16 @@ audience: Admin
 ms.author: v-tea
 ms.topic: article
 ms.date: 11/22/2019
-ms.openlocfilehash: f7b7df714dbd02b15555fa20c70c1e995e121a48
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 516304498206523a1ce618da6aa21640e38c9654
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80822935"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965654"
 ---
 # <a name="using-etw-to-troubleshoot-ldap-connections"></a>ETW を使用した LDAP 接続のトラブルシューティング
 
-[Windows イベントトレーシング (ETW)](https://docs.microsoft.com/windows/win32/etw/event-tracing-portal)は、Active Directory Domain Services (AD DS) のための重要なトラブルシューティングツールにすることができます。 ETW を使用して、Windows クライアントと LDAP サーバー (AD DS ドメインコントローラーを含む) との間の[ldap](https://docs.microsoft.com/previous-versions/windows/desktop/ldap/lightweight-directory-access-protocol-ldap-api)(ライトウェイトディレクトリアクセスプロトコル) 通信をトレースできます。
+[Windows イベントトレーシング (ETW)](/windows/win32/etw/event-tracing-portal)は、Active Directory Domain Services (AD DS) のための重要なトラブルシューティングツールにすることができます。 ETW を使用して、Windows クライアントと LDAP サーバー (AD DS ドメインコントローラーを含む) との間の[ldap](/previous-versions/windows/desktop/ldap/lightweight-directory-access-protocol-ldap-api)(ライトウェイトディレクトリアクセスプロトコル) 通信をトレースできます。
 
 ## <a name="how-to-turn-on-etw-and-start-a-trace"></a>ETW をオンにしてトレースを開始する方法
 
@@ -26,9 +26,9 @@ ms.locfileid: "80822935"
 
 1. レジストリエディターを開き、次のレジストリサブキーを作成します。
 
-   **HKEY\_ローカル\_マシン\\System\\CurrentControlSet\\Services\\ldap\\Tracing\\* ProcessName***
+   **HKEY \_ LOCAL \_ MACHINE \\ System \\ CurrentControlSet \\ Services \\ ldap \\ Tracing \\ * ProcessName***
 
-   このサブキーでは、 *ProcessName*は、トレースするプロセスの完全な名前 (たとえば、"svchost.exe") を示します。
+   このサブキーでは、 *ProcessName*は、トレースするプロセスの完全な名前です (たとえば、"Svchost.exe")。
 
 1. (**省略可能**)このサブキーの下に、 **PID**という名前の新しいエントリを作成します。 このエントリを使用するには、プロセス ID を DWORD 値として割り当てます。  
 
@@ -44,11 +44,11 @@ ms.locfileid: "80822935"
 
    このコマンドのプレースホルダーは、次の値を表します。
 
-  - \<*のセッション >* は、トレースセッションのラベル付けに使用される任意の識別子です。  
+  - \<*SessionName*>トレースセッションにラベルを付けるために使用される任意の識別子を示します。  
   > [!NOTE]  
   > このセッション名は、後でトレースセッションを停止するときに参照する必要があります。
-  - \<*FileName*> イベントが書き込まれるログファイルを指定します。
-  - \<*traceflags*> は、[トレースフラグテーブル](#values-for-trace-flags)に記載されている1つ以上の値である必要があります。
+  - \<*FileName*>イベントが書き込まれるログファイルを指定します。
+  - \<*TraceFlags*>[トレースフラグテーブル](#values-for-trace-flags)に記載されている1つ以上の値である必要があります。
 
 ## <a name="how-to-end-a-tracing-session-and-turn-off-event-tracing"></a>トレースセッションを終了し、イベントのトレースをオフにする方法
 
@@ -60,18 +60,18 @@ ms.locfileid: "80822935"
    tracelog.exe -stop <SessionName>
    ```
 
-   このコマンドでは、\<の*セッション*名 > は、 **tracelog .exe-start**コマンドで使用した名前と同じです。
+   このコマンドで \<*SessionName*> は、は**tracelog.exe 開始**コマンドで使用したのと同じ名前です。
 
 **ETW を無効にするには**
 
-- レジストリエディターで、 **HKEY\_LOCAL\_MACHINE\\System\\CurrentControlSet\\Services\\ldap\\Tracing\\* ProcessName*** サブキーを削除します。
+- レジストリエディターで、 **HKEY \_ LOCAL \_ MACHINE \\ System \\ CurrentControlSet \\ Services \\ ldap \\ Tracing \\ * ProcessName*** サブキーを削除します。
 
 ## <a name="values-for-trace-flags"></a>トレースフラグの値
 
-フラグを使用するには、 **traceflags .exe-start**コマンドの引数で、<*traceflags*> プレースホルダーのフラグ値を置き換えます。
+フラグを使用するには、 **tracelog.exe-start**コマンドの引数の <*traceflags*> プレースホルダーのフラグ値を置き換えます。
 
 > [!NOTE]  
-> 適切なフラグ値の合計を使用して、複数のフラグを指定できます。 たとえば、 **debug\_SEARCH** (0x00000001) と**debug\_CACHE** (0x00000010) フラグを指定する場合、適切な \<*traceflags*> 値は**0x00000011**になります。
+> 適切なフラグ値の合計を使用して、複数のフラグを指定できます。 たとえば、**デバッグ \_ 検索**(0X00000001) と**デバッグ \_ キャッシュ**(0x00000010) フラグを指定する場合、適切な \<*TraceFlags*> 値は**0x00000011**です。
 
 |フラグ名 |フラグ値 |フラグの説明 |
 | --- | --- | --- |
@@ -108,11 +108,11 @@ ms.locfileid: "80822935"
 
 ## <a name="example"></a>例
 
-ユーザーアカウントのパスワードを設定するアプリケーションを例に考えてみましょう。 たとえば、printbrm.exe が予期しないエラーを生成したとします。 ETW を使用してこの問題を診断するには、次の手順を実行します。
+ユーザーアカウントのパスワードを設定するアプリケーション (App1.exe) について考えてみましょう。 App1.exe が予期しないエラーを生成したとします。 ETW を使用してこの問題を診断するには、次の手順を実行します。
 
 1. レジストリエディターで、次のレジストリエントリを作成します。
 
-   **HKEY\_ローカル\_マシン\\System\\CurrentControlSet\\Services\\ldap\\Tracing\\**
+   **HKEY \_ LOCAL \_ MACHINE \\ System \\ CurrentControlSet \\ Services \\ ldap \\ トレース \\App1.exe**
 
 1. トレースセッションを開始するには、コマンドプロンプトウィンドウを開き、次のコマンドを実行します。
 
@@ -120,9 +120,9 @@ ms.locfileid: "80822935"
    tracelog.exe -start ldaptrace -guid \#099614a5-5dd7-4788-8bc9-e29f43db28fc -f .\ldap.etl -flag 0x80000
    ```
 
-   このコマンドが開始された後、**デバッグ\_バインド**により、ETW がトレースメッセージをに書き込むようにします。\\します。
+   このコマンドが開始されると、**デバッグ \_ バインド**によって、ETW がトレースメッセージをに書き込むことが確認されます。 \\.etl。
 
-1. Printbrm.exe を起動し、予期しないエラーを再現します。
+1. App1.exe を開始し、予期しないエラーを再現します。
 
 1. トレースセッションを停止するには、コマンドプロンプトで次のコマンドを実行します。
 
@@ -130,7 +130,7 @@ ms.locfileid: "80822935"
     tracelog.exe -stop ldaptrace
    ```
 
-1. 他のユーザーがアプリケーションをトレースできないようにするには、 **HKEY\_LOCAL\_MACHINE**\\**System**\\**CurrentControlSet**\\**Services**\\**ldap**\\**tracing**\\**のレジストリエントリ**を削除します。
+1. 他のユーザーがアプリケーションをトレースできないようにするには、 **HKEY \_ LOCAL \_ MACHINE** \\ **System** \\ **CurrentControlSet** \\ **Services** \\ **ldap** \\ **tracing** \\ **App1.exe**レジストリエントリを削除します。
 
 1. トレースログの情報を確認するには、コマンドプロンプトで次のコマンドを実行します。
 
@@ -139,4 +139,4 @@ ms.locfileid: "80822935"
     ```
 
    > [!NOTE]  
-   > このコマンドでは、 **tracerpt**は[トレースコンシューマー](https://go.microsoft.com/fwlink/p/?linkid=83876)ツールです。
+   > このコマンドでは、 **tracerpt.exe**は[トレースコンシューマー](https://go.microsoft.com/fwlink/p/?linkid=83876)ツールです。

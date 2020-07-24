@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: cdedcbd5b9491b57ee31170b781dc821853d058f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3442ada27e8e01b72561850f724d7e28d740f43b
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80815136"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964964"
 ---
 # <a name="ad-fs-operations"></a>AD FS の運用
 
@@ -21,8 +21,8 @@ ms.locfileid: "80815136"
 
 このドキュメントには、AD FS のすべてのドキュメント操作の一覧が含まれています。 
 
-## <a name="service-configuration"></a>サービスの構成
-- [AD FS と WAP 2016 で SSL 証明書を更新する](../ad-fs/operations/Manage-SSL-Certificates-AD-FS-WAP-2016.md)
+## <a name="service-configuration"></a>サービス構成
+- [AD FS と WAP 2016 で SSL 証明書を更新する](./operations/manage-ssl-certificates-ad-fs-wap.md)
 - [AD FS の迅速な復元ツール](../ad-fs/operations/AD-FS-Rapid-Restore-Tool.md)
 - [AD FS で証明書認証の代替ホスト名バインドを構成する](../ad-fs/operations/AD-FS-support-for-alternate-hostname-binding-for-certificate-authentication.md)
 - [属性ストアを追加する](../ad-fs/operations/Add-an-Attribute-Store.md)
@@ -35,7 +35,7 @@ ms.locfileid: "80815136"
 ## <a name="authentication-configuration"></a>認証の構成
 ### <a name="strong-authentication-mfa--password-less"></a>強力な認証 (MFA) & パスワードレス
 - [AD FS (2019 以降) で、外部認証プロバイダーをプライマリとして構成する](../ad-fs/operations/Additional-Authentication-Methods-AD-FS.md)
-- [AD FS (2016 以降) と Azure MFA を構成する](../ad-fs/operations/Configure-AD-FS-2016-and-Azure-MFA.md)
+- [AD FS (2016 以降) と Azure MFA を構成する](./operations/configure-ad-fs-and-azure-mfa.md)
 - [AD FS の追加の認証方法を構成する](../ad-fs/operations/Configure-Additional-Authentication-Methods-for-AD-FS.md)
 
 ### <a name="lockout-protection"></a>ロックアウトの保護
@@ -54,7 +54,7 @@ ms.locfileid: "80815136"
 - [AD FS で証明書認証の代替ホスト名バインドを構成する](../ad-fs/operations/AD-FS-support-for-alternate-hostname-binding-for-certificate-authentication.md)
 
 
-### <a name="device"></a>デバイス
+### <a name="device"></a>Device
 - [AD FS のデバイス認証コントロール](../ad-fs/operations/device-authentication-controls-in-AD-FS.md) 
 
 
@@ -71,7 +71,7 @@ ms.locfileid: "80815136"
 - [集計されたフェデレーションプロバイダーを使用するように AD FS を構成する (例: Common)](../ad-fs/operations/Improved-interoperability-with-SAML-2.0.md)
 
 ## <a name="sign-in-experience-configuration"></a>サインインエクスペリエンスの構成
-- [AD FS 2016 のシングルサインオン設定を構成する](../ad-fs/operations/AD-FS-2016-Single-Sign-On-Settings.md)
+- [AD FS 2016 のシングルサインオン設定を構成する](./operations/ad-fs-single-sign-on-settings.md)
 - [改ページ調整されたサインインの構成 AD FS](../ad-fs/operations/AD-FS-paginated-sign-in.md)
 - [AD FS ユーザーサインインのカスタマイズを構成する](../ad-fs/operations/AD-FS-user-sign-in-customization.md)
 - [パスワードの有効期限クレームを送信するように AD FS を構成する](../ad-fs/operations/Configure-AD-FS-to-Send-Password-Expiry-Claims.md)
@@ -83,10 +83,8 @@ ms.locfileid: "80815136"
 - [条件付きアクセス制御によってリスクを管理する](../ad-fs/operations/Manage-Risk-with-Conditional-Access-Control.md)
 - [AD FS ラボ環境を設定する](../ad-fs/operations/Set-up-an-AD-FS-lab-environment.md)
 - [チュートリアルガイド: 追加の Multi-Factor Authentication による機密アプリケーションのリスク管理](../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
-- [チュートリアルガイド: 条件付き Access Control によるリスク管理](../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md)
-- [チュートリアル: Windows デバイスでの Workplace Join](../ad-fs/operations/Walkthrough--Workplace-Join-with-a-Windows-Device.md)
-- [チュートリアル: iOS デバイスでの Workplace Join](../ad-fs/operations/Walkthrough--Workplace-Join-with-an-iOS-Device.md)
+- [チュートリアル ガイド: 条件付きアクセス制御によってリスクを管理する](../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md)
+- [チュートリアル: Workplace Join で Windows デバイスをワークプレースに参加させる](../ad-fs/operations/Walkthrough--Workplace-Join-with-a-Windows-Device.md)
+- [チュートリアル: Workplace Join で iOS デバイスをワークプレースに参加させる](../ad-fs/operations/Walkthrough--Workplace-Join-with-an-iOS-Device.md)
 
   
-
-

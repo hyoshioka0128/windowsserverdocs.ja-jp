@@ -8,16 +8,16 @@ ms.date: 08/09/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: e1989630cadd7d63f8ed041174135722d568484f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b0790ea13f18383666a090f5c846b2b20bee9aba
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80824425"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966274"
 ---
 # <a name="ad-ds-simplified-administration"></a>AD DS の簡略化された管理
 
->適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
 このトピックでは、Windows Server 2012 ドメインコントローラーの展開と管理の機能と利点、および以前のオペレーティングシステムの DC 展開と新しい Windows Server 2012 の実装の違いについて説明します。  
   
@@ -32,7 +32,7 @@ AD DS の簡略化された管理とは、ドメイン展開の再イメージ�
 - Windows PowerShell の Active Directory モジュールには、レプリケーション トポロジ管理、ダイナミック アクセス制御、およびその他の操作のためのコマンドレットが含まれるようになりました。  
 - Windows Server 2012 のフォレストの機能レベルでは新しい機能は実装されず、ドメインの機能レベルは Kerberos の新機能のサブセットについてのみ必要となるので、管理者は同種のドメイン コントローラー環境を頻繁に用意する必要性から解放されます。  
 - 自動展開とロールバック保護の機能を加えるため、仮想化ドメイン コントローラーに対する完全サポートを追加しました。  
-   - 仮想化ドメインコントローラーの詳細については、「 [ &#40;Active Directory Domain Services&#41; AD DS &#40;仮想化&#41;レベル100の概要](../../ad-ds/Introduction-to-Active-Directory-Domain-Services-AD-DS-Virtualization-Level-100.md)」を参照してください。
+   - 仮想化ドメインコントローラーの詳細については、「 [Active Directory Domain Services &#40;AD DS&#41; 仮想化 &#40;レベル 100&#41;の概要」を](../../ad-ds/Introduction-to-Active-Directory-Domain-Services-AD-DS-Virtualization-Level-100.md)参照してください。
 
 さらに、管理および保守に関する機能強化も多数あります。  
 
@@ -55,7 +55,7 @@ Active Directory フォレストのスキーマ拡張とドメインの準備は
   
 フォレストとドメインの別々の準備のために、Adprep.exe は DVD に収録されています。 Windows Server 2012 に付属するツールのバージョンは、Windows Server 2008 x64 および Windows Server 2008 R2 と下位互換性があります。 Adprep.exe は、ADDSDeployment ベースのドメイン コントローラー構成ツールと同様に、リモートでの forestprep と domainprep もサポートしています。  
   
-Adprep および以前のオペレーティング システムでのフォレストの準備については、「 [Adprep の実行 (Windows Server 2008 R2)](https://technet.microsoft.com/library/dd464018(WS.10).aspx)」を参照してください。  
+Adprep および以前のオペレーティング システムでのフォレストの準備については、「[Adprep の実行 (Windows Server 2008 R2)](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd464018(v=ws.10))」を参照してください。  
 
 ## <a name="server-manager-ad-ds-integration"></a>サーバー マネージャー AD DS の統合
 
@@ -65,7 +65,7 @@ Adprep および以前のオペレーティング システムでのフォレス
   
 Active Directory Domain Services は、これらのハブの役割の1つです。ドメインコントローラーまたは Windows 8 のリモートサーバー管理ツールでサーバーマネージャーを実行すると、フォレスト内のドメインコントローラーに関する最新の重要な問題が表示されます。  
   
-次の表示があります。  
+次のようなビューがあります。  
   
 - サーバーの可用性  
 - CPU とメモリの高い使用率に関するパフォーマンス モニターの警告  
@@ -81,7 +81,7 @@ Windows Server 2008 R2 では Active Directory のごみ箱が導入されまし
   
 Windows Server 2012 では、Active Directory 管理センターの新しいグラフィカル インターフェイスを使って、Windows PowerShell ベースの既存の復元機能を強化しています。 これにより管理者は、ごみ箱を有効にして、削除されたオブジェクトをフォレストのドメイン コンテキスト内で特定または復元できます。これらすべての操作を Windows PowerShell コマンドレットを直接実行せずに行うことができます。 Active Directory 管理センターと Active Directory のごみ箱はバックグラウンドで Windows PowerShell を使用します。したがって、以前のスクリプトや手順は今も有効です。  
   
-Active Directory のごみ箱については、「 [Active Directory のごみ箱の手順ガイド (Windows Server 2008 R2)](https://technet.microsoft.com/library/dd392261(WS.10).aspx)」を参照してください。  
+Active Directory のごみ箱については、「[Active Directory のごみ箱の手順ガイド (Windows Server 2008 R2)](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd392261(v=ws.10))」を参照してください。  
   
 ## <a name="active-directory-administrative-center-fine-grained-password-policy"></a>Active Directory 管理センターの細かい設定が可能なパスワード ポリシー
 
@@ -91,7 +91,7 @@ Windows Server 2008 では、細かい設定が可能なパスワード ポリ�
   
 Windows Server 2012 では、細かい設定が可能なパスワード ポリシーのためのグラフィカル インターフェイスが用意されています。 Active Directory 管理センターは、この新しいダイアログのホームであり、すべての管理者が簡素化された FGPP 管理を利用できます。  
   
-細かい設定が可能なパスワード ポリシーの詳細については、「 [ステップ バイ ステップ ガイド - 細かい設定が可能なパスワードおよびアカウント ロックアウトのポリシー設定 (Windows Server 2008 R2)](https://technet.microsoft.com/library/cc770842(WS.10).aspx)」を参照してください。  
+細かい設定が可能なパスワード ポリシーの詳細については、「[ステップ バイ ステップ ガイド - 細かい設定が可能なパスワードおよびアカウント ロックアウトのポリシー設定 (Windows Server 2008 R2)](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770842(v=ws.10))」を参照してください。  
   
 ## <a name="active-directory-administrative-center-windows-powershell-history-viewer"></a>Active Directory 管理センターの Windows PowerShell 履歴ビューアー
 
@@ -107,13 +107,13 @@ Active Directory モジュールには 100 を超えるコマンドレットが�
   
 Windows Server 2012 では、Windows PowerShell の Active Directory モジュールに Active Directory レプリケーション用のコマンドレットが追加されています。 これらのコマンドレットにより、新しい、または既存のサイト、サブネット、接続、サイト リンク、およびブリッジの構成ができるようになります。 また、Active Directory レプリケーションのメタデータ、レプリケーションの状態、キュー、および最新のベクター情報を返すこともできます。 新たに導入されたレプリケーションのコマンドレットと、展開のコマンドレットおよび他の既存の AD DS コマンドレットとが組み合わさったことによって、管理者は Windows PowerShell だけでフォレストを管理できるようになりました。 グラフィカル インターフェイスを使わずに Windows Server 2012 のプロビジョニングと管理を行いたいと考えている管理者にとっては新しい機会が生まれます。それによって、オペレーティング システムの攻撃の要件とサービスの要件が低くなります。 このことは、Secret Internet Protocol Router (SIPR) や企業 DMZ など、セキュリティ レベルの高いネットワークにサーバーを展開するときに特に重要となります。  
   
-AD DS のサイト トポロジとレプリケーションの詳細については、「 [Windows Server テクニカル リファレンス](https://technet.microsoft.com/library/cc739127(WS.10).aspx)」を参照してください。  
+AD DS のサイト トポロジとレプリケーションの詳細については、「[Windows Server テクニカル リファレンス](/previous-versions/windows/it-pro/windows-server-2003/cc739127(v=ws.10))」を参照してください。  
 
 ## <a name="rid-management-and-issuance-improvements"></a>RID の管理と発行の機能強化
 
 Windows 2000 Active Directory では、RID マスターが導入されました。これは、ユーザー、グループ、コンピューターといったセキュリティ トラスティのセキュリティ識別子 (SID) を作成するために、相対識別子のプールをドメイン コントローラーに対して発行します。  既定では、このグローバル RID 空間は、ドメイン内で作成される合計 2<sup>30</sup> (つまり 1,073,741,823) 個の SID に制限されています。 SID をプールに戻したり、再発行したりすることはできません。 時間の経過と共に、大規模なドメインでは RID の残数が少なくなったり、何らかのアクシデントによって RID が無駄に減り、最終的に枯渇したりする場合があります。  
   
-Windows Server 2012 では、RID の発行と管理に関する多数の問題に対処しています。それらの問題は、1999 年に最初の Active Directory ドメインが作成されて以降、AD DS が進化を続ける過程で、お客様と Microsoft カスタマー サポートによって発見されたものです。 次のようなクラスがあります。  
+Windows Server 2012 では、RID の発行と管理に関する多数の問題に対処しています。それらの問題は、1999 年に最初の Active Directory ドメインが作成されて以降、AD DS が進化を続ける過程で、お客様と Microsoft カスタマー サポートによって発見されたものです。 これには以下が含まれます。  
 
 - RID 消費の警告が定期的にイベント ログに書き込まれます。  
 - 管理者が RID プールを無効にすると、イベントがログに記録されます。  
@@ -121,7 +121,7 @@ Windows Server 2012 では、RID の発行と管理に関する多数の問題�
 - グローバル ID 空間が少なくなると、RID の人為的シーリングが適用され、ログに記録されるようになりました。これによって管理者は、グローバル空間が枯渇する前に対策を講じることができます。
 - グローバル RID 空間は 1 ビット増加できるようになり、そのサイズは 2 倍の 2<sup>31</sup> (2,147,483,648 個の SID) になります。  
 
-RID および RID マスターの詳細については、「 [セキュリティ識別子のしくみ](https://technet.microsoft.com/library/cc778824(WS.10).aspx)」を参照してください。  
+RID および RID マスターの詳細については、「[セキュリティ識別子のしくみ](/previous-versions/windows/it-pro/windows-server-2003/cc778824(v=ws.10))」を参照してください。  
   
 ## <a name="ad-ds-role-deployment-and-management-architecture"></a>AD DS の役割の展開と管理のためのアーキテクチャ
 
@@ -172,11 +172,11 @@ Adprep をスキーマ マスター上で実行する必要はなくなりまし
 > [!IMPORTANT]  
 > Windows Server 2012 用の 32 ビット Adprep32.exe ツールはありません。 フォレストとドメインを準備するには、ドメイン コントローラーとして実行される、メンバー サーバーとして実行される、またはワークグループ内で実行される、1 台以上の Windows Server 2008 x64、Windows Server 2008 R2、または Windows Server 2012 コンピューターが必要です。 Adprep.exe は Windows Server 2003 x64 上では実行されません。  
   
-## <a name="prerequisite-checking"></a><a name="BKMK_PrereuisiteChecking"></a>前提条件の確認
+## <a name="prerequisite-checking"></a><a name="BKMK_PrereuisiteChecking"></a>前提条件のチェック
 
-Windows PowerShell の ADDSDeployment マネージ コードに組み込まれている前提条件チェック システムは、操作に基づいてさまざまなモードで動作します。 次の表に、各テストについて、それがいつ使用され、何がどのような方法で検証されるのかについて説明します。 検証が失敗し、エラー情報だけでは問題のトラブルシューティングを行えない場合に、この表が役立ちます。  
+Windows PowerShell の ADDSDeployment マネージド コードに組み込まれている前提条件チェック システムは、操作に基づいてさまざまなモードで動作します。 次の表に、各テストについて、それがいつ使用され、何がどのような方法で検証されるのかについて説明します。 検証が失敗し、エラー情報だけでは問題のトラブルシューティングを行えない場合に、この表が役立ちます。  
   
-これらのテストのログは、 **DirectoryServices-Deployment** 操作イベント ログ チャネルのタスク カテゴリ **Core**に、常にイベント ID **103**で記録されます。  
+これらのテストのログは、**DirectoryServices-Deployment** 操作イベント ログ チャネルのタスク カテゴリ **Core** に、常にイベント ID **103** で記録されます。  
   
 ### <a name="prerequisite-windows-powershell"></a>前提条件のための Windows PowerShell
 
@@ -190,7 +190,7 @@ Windows PowerShell の ADDSDeployment マネージ コードに組み込まれ�
 
 通常、これらのコマンドレットを実行する必要はありません。既定で、展開コマンドレットと一緒に自動的に実行されます。  
 
-#### <a name="prerequisite-tests"></a><a name="BKMK_ADDSInstallPrerequisiteTests"></a>前提条件テスト
+#### <a name="prerequisite-tests"></a><a name="BKMK_ADDSInstallPrerequisiteTests"></a>前提条件のテスト
 
 ||||  
 |-|-|-|  
@@ -198,15 +198,15 @@ Windows PowerShell の ADDSDeployment マネージ コードに組み込まれ�
 |VerifyAdminTrusted<p>ForDelegationProvider|LDAP|既存のパートナー ドメイン コントローラーに対する "コンピューターとユーザー アカウントに委任時の信頼を付与" (SeEnableDelegationPrivilege) 特権がユーザーにあることを検証します。 構成された tokenGroups 属性へのアクセスが必要になります。<p>Windows Server 2003 ドメイン コントローラーに接続するときは使用されません。 昇格の前にこの特権を手動で確認する必要があります。|  
 |VerifyADPrep<p>Prerequisites (フォレスト)|LDAP|rootDSE namingContexts 属性およびスキーマ名前付けコンテキストの fsmoRoleOwner 属性を使って、スキーマ マスターを検出して接続します。 AD DS のインストールにとってどの準備操作 (forestprep、domainprep、または rodcprep) が必要なのかを判断します。 スキーマ objectVersion が想定されていることと、それがさらに拡張を必要としているかどうかを検証します。|  
 |VerifyADPrep<p>Prerequisites (ドメインおよび RODC)|LDAP|rootDSE namingContexts 属性およびインフラストラクチャ コンテナーの fsmoRoleOwner 属性を使って、インフラストラクチャ マスターを検出して接続します。 RODC のインストールの場合、このテストはドメイン名前付けマスターを検出し、それがオンラインであることを確認します。|  
-|CheckGroup<p>[メンバーシップ]|LDAP、<p>SMB 経由の RPC (LSARPC)|操作に応じて、ユーザーが Domain Admins グループまたは Enterprise Admins グループのメンバーであることを検証します (ドメイン コントローラーの追加または降格の場合は DA、ドメインの追加または削除の場合は EA)。|  
+|CheckGroup<p>Membership|LDAP、<p>SMB 経由の RPC (LSARPC)|操作に応じて、ユーザーが Domain Admins グループまたは Enterprise Admins グループのメンバーであることを検証します (ドメイン コントローラーの追加または降格の場合は DA、ドメインの追加または削除の場合は EA)。|  
 |CheckForestPrep<p>GroupMembership|LDAP、<p>SMB 経由の RPC (LSARPC)|ユーザーが Schema Admins グループおよび Enterprise Admins グループのメンバーであることと、既存のドメイン コントローラーに対する "監査とセキュリティ ログの管理" (SeSecurityPrivilege) 特権を持っていることを検証します。|  
 |CheckDomainPrep<p>GroupMembership|LDAP、<p>SMB 経由の RPC (LSARPC)|ユーザーが Domain Admins グループのメンバーであることと、既存のドメイン コントローラーに対する "監査とセキュリティ ログの管理" (SeSecurityPrivilege) 特権を持っていることを検証します。|  
 |CheckRODCPrep<p>GroupMembership|LDAP、<p>SMB 経由の RPC (LSARPC)|ユーザーが Enterprise Admins グループのメンバーであることと、既存のドメイン コントローラーに対する "監査とセキュリティ ログの管理" (SeSecurityPrivilege) 特権を持っていることを検証します。|  
 |VerifyInitSync<p>AfterReboot|LDAP|スキーマ マスターが rootDSE 属性 becomeSchemaMaster に対してダミー値を設定して再起動してから 1 回以上レプリケートしていることを検証します。|  
-|VerifySFUHotFix<p>Applied|LDAP|既存のフォレスト スキーマに既知の問題、"OID が 1.2.840.113556.1.4.7000.187.102 の UID 属性に対する SFU2 拡張" が含まれていないことを検証します。<p>([https://support.microsoft.com/kb/821732](https://support.microsoft.com/kb/821732))|  
-|VerifyExchange<p>SchemaFixed|LDAP、WMI、DCOM、RPC|既存のフォレストスキーマにまだ2000問題が含まれていないことを検証する: Exch、Exch-Ms-exch-labeleduri、Exch ([https://support.microsoft.com/kb/314649](https://support.microsoft.com/kb/314649)) を使用します。|  
+|VerifySFUHotFix<p>適用済み|LDAP|既存のフォレスト スキーマに既知の問題、"OID が 1.2.840.113556.1.4.7000.187.102 の UID 属性に対する SFU2 拡張" が含まれていないことを検証します。<p>([https://support.microsoft.com/kb/821732](https://support.microsoft.com/kb/821732))|  
+|VerifyExchange<p>SchemaFixed|LDAP、WMI、DCOM、RPC|既存のフォレストスキーマに問題がまだ含まれていないことを検証する Exchange 2000 の拡張機能 Exch、Exch-Ms-exch-labeleduri、および Exch ( [https://support.microsoft.com/kb/314649](https://support.microsoft.com/kb/314649) )|  
 |VerifyWin2KSchema<p>一貫性|LDAP|既存のフォレスト スキーマに一貫性のある (サード パーティによって間違って変更されていない) コアの属性とクラスがあることを検証します。|  
 |DCPromo|RPC 経由の DRSR<p>LDAP、<p>DNS<p>SMB 経由の RPC (SAMR)|プロモーション コードに渡されるコマンド ライン構文を検証し、昇格をテストします。 フォレストまたはドメインを新規に作成する場合、既存のフォレストまたはドメインがないことを検証します。|  
 |VerifyOutbound<p>ReplicationEnabled|LDAP、SMB 経由の DRSR、SMB 経由の RPC (LSARPC)|レプリケーション パートナーとして指定された既存のドメイン コントローラーで出力方向のレプリケーションが有効であることを検証します。そのために、NTDS 設定オブジェクトの NTDSDSA_OPT_DISABLE_OUTBOUND_REPL (0x00000004) のオプション属性を確認します。|  
 |VerifyMachineAdmin<p>Password|RPC 経由の DRSR<p>LDAP、<p>DNS<p>SMB 経由の RPC (SAMR)|DSRM のセーフ モードのパスワード セットがドメインの複雑さの要件を満たしていることを検証します。|  
-|VerifySafeModePassword|*該当なし*|ローカルの Administrator パスワード セットが、コンピューター セキュリティ ポリシーの複雑さの要件を満たしていることを検証します。|  
+|VerifySafeModePassword|*N/A*|ローカルの Administrator パスワード セットが、コンピューター セキュリティ ポリシーの複雑さの要件を満たしていることを検証します。|  

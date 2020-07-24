@@ -8,12 +8,12 @@ ms.date: 08/09/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: f28e5feccb7544046104658585ab3f739f659957
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 700ba841dba8e022f47d906b719f57befafc093c
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949504"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966684"
 ---
 # <a name="scenario-web-app-server-app-calling-web-api"></a>シナリオ: web アプリ (サーバーアプリ) で Web API を呼び出す 
 >適用対象: AD FS 2019 以降 
@@ -26,7 +26,7 @@ AD FS 2019 によって認証される web アプリのサインインユーザ�
  
 ![Web アプリ呼び出し web api の概要](media/adfs-msal-web-app-web-api/webapp1.png)
 
-このフローでは、Web アプリ (サーバーアプリ) に認証を追加します。これにより、ユーザーはサインインして web API を呼び出すことができます。 Web アプリから Web API を呼び出すには、MSAL の[AcquireTokenByAuthorizationCode](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.acquiretokenbyauthorizationcodeparameterbuilder?view=azure-dotnet) token の取得方法を使用します。 承認コード フローを使用して、取得したトークンをトークン キャッシュに格納します。 次に、コントローラーでは、必要に応じてキャッシュからトークンが自動的に取得されます。 必要に応じて、MSAL によってトークンが更新されます。 
+このフローでは、Web アプリ (サーバーアプリ) に認証を追加します。これにより、ユーザーはサインインして web API を呼び出すことができます。 Web アプリから Web API を呼び出すには、MSAL の[AcquireTokenByAuthorizationCode](/dotnet/api/microsoft.identity.client.acquiretokenbyauthorizationcodeparameterbuilder?view=azure-dotnet) token の取得方法を使用します。 承認コード フローを使用して、取得したトークンをトークン キャッシュに格納します。 次に、コントローラーでは、必要に応じてキャッシュからトークンが自動的に取得されます。 必要に応じて、MSAL によってトークンが更新されます。 
 
 Web Api を呼び出す Web Apps: 
 
@@ -46,34 +46,34 @@ ADFS で Web アプリを登録する方法と、Web API を呼び出すトー�
 ## <a name="app-registration-in-ad-fs"></a>AD FS でのアプリの登録 
 このセクションでは、Web アプリを機密クライアントおよび Web API として AD FS で証明書利用者 (RP) として登録する方法について説明します。 
 
-  1. AD FS 管理 で、**アプリケーショングループ** を右クリックし、**アプリケーショングループの追加** を選択します。  
-  2. アプリケーショングループウィザードの **[名前]** に「 **WebAppToWebApi** 」と入力し、 **[クライアント-サーバーアプリケーション]** で、 **Web API テンプレートにアクセスするサーバーアプリケーション**を選択します。 **[次へ]** をクリックします。  
+  1. AD FS 管理] で、[**アプリケーショングループ**] を右クリックし、[**アプリケーショングループの追加**] を選択します。  
+  2. アプリケーショングループウィザードの [**名前**] に「 **WebAppToWebApi** 」と入力し、[**クライアント-サーバーアプリケーション**] で、 **Web API テンプレートにアクセスするサーバーアプリケーション**を選択します。 **[次へ]** をクリックします。  
   
       ![アプリケーショングループの追加](media/adfs-msal-web-app-web-api/webapp2.png)
   
-  3. **クライアント識別子**の値をコピーします。 この値は、アプリケーションの**web.config**ファイルの**ida: ClientId**の値として後で使用されます。 **リダイレクト URI:**  - https://localhost:44326 には、次のように入力します。 [追加] をクリックします。 **[次へ]** をクリックします。 
+  3. [**クライアント識別子**の値をコピーします。 この値は、アプリケーション**Web.config**ファイルの**ida: ClientId**の値として後で使用されます。 **リダイレクト URI**には、次のように入力し  -  https://localhost:44326 ます。 [追加] をクリックします。 **[次へ]** をクリックします。 
   
       ![アプリケーショングループの追加](media/adfs-msal-web-app-web-api/webapp3.png)
   
-  4. [アプリケーション資格情報の構成] 画面で、[**共有シークレットを生成**してシークレットをコピーする] チェックボックスをオンにします。 この値は、アプリケーションの**web.config**ファイルの**Ida: clientsecret**の値として後で使用されます。 **[次へ]** をクリックします。  
+  4. [アプリケーション資格情報の構成] 画面で、[**共有シークレットを生成**してシークレットをコピーする] チェックボックスをオンにします。 この値は、アプリケーション**Web.config**ファイルの**Ida: clientsecret**の値として後で使用されます。 **[次へ]** をクリックします。  
   
       ![アプリケーショングループの追加](media/adfs-msal-web-app-web-api/webapp4.png)
   
-  5. [Web API の構成] 画面で、**識別子**として「 https://webapi 」と入力します。 **[追加]** をクリックします。 **[次へ]** をクリックします。 この値は、アプリケーションの**web.config**ファイルの**Ida: graphresourceid**で後で使用されます。 
+  5. [Web API の構成] 画面で、**識別子**として「」を入力し https://webapi ます。 **[追加]** をクリックします。 **[次へ]** をクリックします。 この値は、アプリケーション**Web.config**ファイルの**Ida: graphresourceid**で後で使用されます。 
   
       ![アプリケーショングループの追加](media/adfs-msal-web-app-web-api/webapp5.png)
   
-  6. Access Control ポリシーの適用 画面で、すべてのユーザーを**許可**する を選択し、**次へ** をクリックします。 
+  6. [Access Control ポリシーの適用] 画面で、[すべてのユーザーを**許可**する] を選択し、[**次へ**] をクリックします。 
   
       ![アプリケーショングループの追加](media/adfs-msal-web-app-web-api/webapp6.png)
   
-  7. [アプリケーションのアクセス許可の構成] 画面で、 **openid**と**user_impersonation**が選択されていることを確認し、 **[次へ]** をクリックします。 
+  7. [アプリケーションのアクセス許可の構成] 画面で、 **openid**と**user_impersonation**が選択されていることを確認し、[**次へ**] をクリックします。 
   
       ![アプリケーショングループの追加](media/adfs-msal-web-app-web-api/webapp7.png)
   
-  8. 概要 画面で、**次へ** をクリックします。 
+  8. [概要] 画面で、[**次へ**] をクリックします。 
   
-  9. 完了 画面で、**閉じる** をクリックします。
+  9. [完了] 画面で、[**閉じる**] をクリックします。
 
 
 
@@ -85,11 +85,11 @@ ADFS で Web アプリを登録する方法と、Web API を呼び出すトー�
   
   2. Visual Studio を使用してサンプルを開く 
   
-  3. Web.config ファイルを開きます。 次のように変更します。 
+  3. web.config ファイルを開きます。 次のように変更します。 
        - ida: ClientId-上の AD FS セクションの [アプリの登録] で #3 から**クライアント識別子**の値を入力します。 
        - ida: ClientSecret-上の AD FS セクションの [アプリの登録] の #4 から**シークレット**の値を入力します。 
        - ida: RedirectUri-前の AD FS セクションの「アプリの登録」の #3 から**リダイレクト uri**の値を入力します。 
-       - ida: Authority- https://[your AD FS hostname]/adfs. を入力します 例: https://adfs.contoso.com/adfs 
+       - ida: Authority-https://[your AD FS hostname]/adfs. を入力します 例: https://adfs.contoso.com/adfs 
        - ida: リソース-上の AD FS セクションの [アプリの登録] の #5 から**識別子**の値を入力します。 
       
           ![アプリケーショングループの追加](media/adfs-msal-web-app-web-api/webapp8.png)
@@ -120,6 +120,6 @@ ADFS で Web アプリを登録する方法と、Web API を呼び出すトー�
   
       ![アプリケーショングループの追加](media/adfs-msal-web-app-web-api/webapp13.png)
  
- ## <a name="next-steps"></a>次のステップ
+ ## <a name="next-steps"></a>次の手順
 [AD FS OpenID 接続/OAuth フローとアプリケーション シナリオ](../../overview/ad-fs-openid-connect-oauth-flows-scenarios.md)
  

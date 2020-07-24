@@ -8,16 +8,16 @@ ms.topic: article
 ms.assetid: 1459819a-b1b6-4800-8770-4a85d02c7a2b
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 19798c5fb29d3b8aea68b29e5a42775970eeca46
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 8379818d22d51fe8c4cc983f32d017d3cdee52b6
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80857453"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965584"
 ---
 # <a name="manage-remote-access"></a>リモート アクセスの管理
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016
+>適用先:Windows Server (半期チャネル)、Windows Server 2016
 
 DirectAccess リモート クライアント管理の展開シナリオでは、DirectAccess を使用して、インターネット経由でクライアントを管理します。 このセクションでは、このシナリオのフェーズ、役割、機能、他のリソースへのリンクなどについて説明します。  
   
@@ -49,10 +49,10 @@ DirectAccess リモート クライアント管理の展開シナリオには、
   
 -   **DirectAccess ネットワーク ロケーション サーバー**:ネットワーク ロケーション サーバーは、内部ネットワークに配置されているかどうかを判断するために DirectAccess クライアントによって使用されます。 ネットワーク ロケーション サーバーは、DirectAccess サーバーまたは別のサーバーにインストールできます。  
   
--   **DirectAccess クライアント**:DirectAccess クライアントとして構成する管理対象のコンピューターを決定します。  
+-   **DirectAccess クライアント**:DirectAccess クライアントとして構成するマネージド コンピューターを決定します。  
   
 ### <a name="configure-the-deployment"></a>展開を構成する  
-展開の構成は、複数の手順で構成されます。 次のようなクラスがあります。  
+展開の構成は、複数の手順で構成されます。 これには以下が含まれます。  
   
 1.  **インフラストラクチャを構成する**:DNS 設定を構成し、必要に応じてサーバーおよびクライアント コンピューターをドメインに参加させ、Active Directory セキュリティ グループを構成します。  
   
@@ -70,19 +70,19 @@ DirectAccess リモート クライアント管理の展開シナリオには、
   
 7.  **展開を確認する**:クライアントをテストし、DirectAccess を使用して内部ネットワークおよびインターネットに接続できることを確認します。  
   
-## <a name="practical-applications"></a><a name="BKMK_APP"></a>実用的なアプリケーション  
+## <a name="practical-applications"></a><a name="BKMK_APP"></a>実際の適用例  
 DirectAccess クライアントを管理するために単一のリモート アクセス サーバーを展開すると、次のことが実現されます。  
   
 -   **簡単なアクセス**: windows 8 または windows 7 を実行する管理されたクライアントコンピューターを DirectAccess クライアントコンピューターとして構成できます。 このようなクライアントは、インターネットに接続しているときはいつでも、VPN 接続にサインインしなくても、DirectAccess を経由して内部ネットワーク リソースにアクセスできます。 これらのオペレーティング システムが実行されていないクライアント コンピューターは、VPN 経由で内部ネットワークに接続できます。 DirectAccess と VPN は、同じコンソールで、同じウィザード セットを使って管理されます。  
   
 -   **簡単な管理**:リモート アクセス管理者は、DirectAccess クライアント コンピューターが企業内部ネットワーク上に存在しない場合でも、インターネットに接続しているクライアント コンピューターであれば DirectAccess を使用してリモート管理できます。 企業の要件を満たしていないクライアント コンピューターを管理サーバーによって自動的に修正できます。 単一のリモート アクセス管理コンソールから 1 台以上のリモート アクセス サーバーを管理できます。  
   
-## <a name="roles-and-features-included-in-this-scenario"></a><a name="BKMK_NEW"></a>このシナリオに含まれる役割と機能  
+## <a name="roles-and-features-included-in-this-scenario"></a><a name="BKMK_NEW"></a>このシナリオに含まれている役割と機能  
 次の表に、このシナリオに必要な役割と機能を示します。  
   
 |役割または機能|このシナリオのサポート方法|  
 |----------|-----------------|  
-|*リモートアクセスの役割*|この役割をインストールまたはアンインストールするには、サーバー マネージャー コンソールまたは Windows PowerShell を使用します。 この役割には、以前は Windows Server 2008 R2 の機能であった DirectAccess と、以前はネットワーク ポリシーとアクセス サービス (NPAS) サーバーの役割の役割サービスであったリモート アクセス サービスが含まれています。 リモート アクセスの役割は、次の 2 つのコンポーネントで構成されています。<p>1. DirectAccess およびルーティングとリモートアクセスサービス (RRAS) VPN: DirectAccess と VPN は、リモートアクセス管理コンソールで管理されます。<br />2. RRAS: 機能は、ルーティングとリモートアクセスコンソールで管理されます。<p>リモート アクセス サーバーの役割は、次の機能に依存しています。<p>-Web サーバー (IIS): ネットワークロケーションサーバーと既定の Web プローブを構成するために必要です。<br />-Windows internal database: リモートアクセスサーバーのローカルアカウンティングに使用されます。|  
+|*リモート アクセスの役割*|この役割をインストールまたはアンインストールするには、サーバー マネージャー コンソールまたは Windows PowerShell を使用します。 この役割には、以前は Windows Server 2008 R2 の機能であった DirectAccess と、以前はネットワーク ポリシーとアクセス サービス (NPAS) サーバーの役割の役割サービスであったリモート アクセス サービスが含まれています。 リモート アクセスの役割は、次の 2 つのコンポーネントで構成されています。<p>1. DirectAccess およびルーティングとリモートアクセスサービス (RRAS) VPN: DirectAccess と VPN は、リモートアクセス管理コンソールで管理されます。<br />2. RRAS: 機能は、ルーティングとリモートアクセスコンソールで管理されます。<p>リモート アクセス サーバーの役割は、次の機能に依存しています。<p>-Web サーバー (IIS): ネットワークロケーションサーバーと既定の Web プローブを構成するために必要です。<br />-Windows internal database: リモートアクセスサーバーのローカルアカウンティングに使用されます。|  
 |リモート アクセス管理ツールの機能|この機能は、次のようにインストールされます。<p>-リモートアクセスの役割がインストールされていて、リモート管理コンソールのユーザーインターフェイスをサポートしている場合は、リモートアクセスサーバーに既定で設定されます。<br />-リモートアクセスサーバーの役割を実行していないサーバーのオプションとして。 この場合、リモート アクセス サーバーのリモート管理に使用されます。<p>この機能は、<p>-リモートアクセス GUI およびコマンドラインツール<br />-Windows PowerShell 用リモートアクセスモジュール<p>次の要素と依存関係があります。<p>-グループポリシー管理コンソール<br />-RAS 接続マネージャー管理キット (CMAK)<br />-Windows PowerShell 3.0<br />-グラフィカル管理ツールとインフラストラクチャ|  
   
 ## <a name="hardware-requirements"></a><a name="BKMK_HARD"></a>ハードウェア要件  
@@ -90,7 +90,7 @@ DirectAccess クライアントを管理するために単一のリモート ア
   
 ### <a name="server-requirements"></a>サーバーの要件  
   
--   Windows Server 2016 のハードウェア要件を満たしているコンピューター。 詳細については、「Windows Server 2016 の[システム要件](https://technet.microsoft.com/windows-server-docs/get-started/system-requirements-and-installation)」を参照してください。  
+-   Windows Server 2016 のハードウェア要件を満たしているコンピューター。 詳細については、「Windows Server 2016 の[システム要件](../directaccess/prerequisites-for-deploying-directaccess.md)」を参照してください。  
   
 -   サーバーには、少なくとも 1 つのネットワーク アダプターがあり、有効にされている必要があります。 企業内部ネットワークに接続されているアダプターと外部ネットワーク (インターネット) に接続されているアダプターがそれぞれ 1 つだけ必要です。  
   
@@ -129,4 +129,3 @@ DirectAccess クライアントを管理するために単一のリモート ア
   
 -   DirectAccess クライアントとして構成するコンピューターが属する Active Directory セキュリティ グループが必要です。 DirectAccess クライアントが含まれている複数のセキュリティ グループに、コンピューターを含めないようにする必要があります。 クライアントを複数のグループに含めると、クライアント要求の名前解決が期待どおりに動作しなくなります。  
   
-

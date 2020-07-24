@@ -8,12 +8,12 @@ ms.date: 03/20/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b0c64d90fcbeaf2aa03312b9707bcfa43379271f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 1bcd4268444f49489d3e7a04c55d10cddaf92e00
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80859935"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966534"
 ---
 # <a name="configure-browsers-to-use-windows-integrated-authentication-wia-with-ad-fs"></a>AD FS で Windows 統合認証 (WIA) を使用するようにブラウザーを構成する
 
@@ -59,7 +59,7 @@ Windows Server 2016 以降に AD FS がある場合は、次のようにしま�
 
 
 
-|ユーザーエージェント|使用事例|
+|ユーザーエージェント|ユース ケース|
 |-----|-----|
 |MSIE 6.0|IE 6.0|
 |MSIE 7.0;Windows NT|IE 7、イントラネットゾーンの IE。 "Windows NT" フラグメントは、デスクトップオペレーティングシステムによって送信されます。|
@@ -77,4 +77,4 @@ Windows Server 2016 以降に AD FS がある場合は、次のようにしま�
 
 ### <a name="additional-links"></a>その他のリンク
 
-[Microsoft Edge のドキュメント](https://docs.microsoft.com/microsoft-edge/web-platform/user-agent-string)
+[Microsoft Edge のドキュメント](/microsoft-edge/web-platform/user-agent-string)

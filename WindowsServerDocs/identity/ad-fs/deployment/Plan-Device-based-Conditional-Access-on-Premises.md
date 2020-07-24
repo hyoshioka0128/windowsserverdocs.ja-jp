@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: d22897111588393efc148e6f24affeb243ee9e88
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f3850454f9e2e426ce2d00112adf90f0d2530d8f
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80855335"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964744"
 ---
 # <a name="plan-device-based-conditional-access-on-premises"></a>オンプレミスのデバイス ベースの条件付きアクセスを計画する
 
@@ -29,28 +29,28 @@ AD FS では、ハイブリッド シナリオで条件付きアクセス ポリ
 ### <a name="types-of-registered-devices"></a>登録済みデバイスの種類  
 Azure AD でデバイス オブジェクトとして表されもオンプレミスの AD FS による条件付きアクセスのために使用するすべての登録済みのデバイスの 3 つの種類があります。  
 
-| |作業を追加または学校のアカウント  |Azure AD への参加  |Windows 10 ドメイン参加    
+| |作業を追加または学校のアカウント  |Azure AD Join  |Windows 10 ドメイン参加    
 | --- | --- |--- | --- |
 |説明    |  ユーザーは、作業内容を追加または学校のアカウントを BYOD デバイスを対話的にします。  **注:** 追加職場または学校アカウントは、ワークプ レース ジョイン Windows 8/8.1 で置換       | ユーザーは、その作業の Windows 10 デバイスを Azure AD に参加します。|Windows 10 ドメインに参加したデバイスは、Azure AD に自動的に登録します。|           
 |デバイスへのユーザーのログオン     |  職場または学校のアカウントとしての windows ログインはありません。  Microsoft アカウントを使用してログインします。       |   デバイスの登録 (職場または学校) のアカウントとして Windows にログインします。      |     AD のアカウントを使用してログインします。|      
 |デバイスの管理方法    |      MDM ポリシー (とその他の Intune 登録)   | MDM ポリシー (とその他の Intune 登録)        |   グループポリシー、Configuration Manager |
-|Azure AD の信頼の種類|社内参加済み|Azure AD 参加済み|オンプレミス ネットワークに  |     
+|Azure AD の信頼の種類|社内参加済み|Azure AD 参加済み|ドメインに参加する  |     
 |W10 設定の場所    | 設定 > アカウント > お客様のアカウント > 職場または学校のアカウントを追加        | 設定 > システム > に関する > Azure AD に参加       |   設定 > システム > に関する > ドメインに参加します。 |       
 |IOS および Android デバイスにも使用可能ですか。   |    はい     |       いいえ  |   いいえ   |   
 
   
 
 デバイスを登録するさまざまな方法の詳細についても参照してください。  
-* [職場での Windows 10 デバイスの使用](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-windows10-devices/)  
-* [作業用の Windows 10 デバイスのセットアップ](https://jairocadena.com/2016/01/18/setting-up-windows-10-devices-for-work-domain-join-azure-ad-join-and-add-work-or-school-account/)  
-[Windows 10 Mobile を Azure Active Directory に参加させる](https://technet.microsoft.com/itpro/windows/manage/join-windows-10-mobile-to-azure-active-directory)  
+* [職場での Windows 10 デバイスの使用](/azure/active-directory/devices/overview)  
+* [作業用の Windows 10 デバイスを設定します。](https://jairocadena.com/2016/01/18/setting-up-windows-10-devices-for-work-domain-join-azure-ad-join-and-add-work-or-school-account/)  
+[Windows 10 Mobile を Azure Active Directory に参加させる](/windows/client-management/join-windows-10-mobile-to-azure-active-directory)  
 
 ### <a name="how-windows-10-user-and-device-sign-on-is-different-from-previous-versions"></a>Windows 10 のユーザーとデバイスのサインオンが以前のバージョンから別の方法  
 Windows 10 およびデバイスの登録と認証の一部の新しい機能がある AD FS 2016 について知っておくべき (特になじみのデバイスの登録と「ワークプ レース ジョイン」以前のリリースである) 場合。  
 
 最初に、Windows 10 および Windows Server 2016 の AD FS でデバイスの登録と認証が不要になったのみに基づいて、X509 ユーザー証明書。  セキュリティを向上させるよりシームレスなユーザー エクスペリエンスを提供する新しいより堅牢なプロトコルがあります。  主な違いは、Windows 10 ドメインに参加すると、Azure AD 参加が、X509 コンピューター証明書と、新しい資格情報は、PRT と呼ばれます。  読み取ることができます [ここ](https://jairocadena.com/2016/01/18/how-domain-join-is-different-in-windows-10-with-azure-ad/) と [ここ](https://jairocadena.com/2016/02/01/azure-ad-join-what-happens-behind-the-scenes/)します。  
 
-Windows 10 および AD FS 2016 の作業について確認を Microsoft Passport を使用してユーザー認証をサポートする第 2 に、 [ここ](https://jairocadena.com/2016/03/09/azure-ad-and-microsoft-passport-for-work-in-windows-10/) と [ここ](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-passport-deployment/)します。  
+Windows 10 および AD FS 2016 の作業について確認を Microsoft Passport を使用してユーザー認証をサポートする第 2 に、 [ここ](https://jairocadena.com/2016/03/09/azure-ad-and-microsoft-passport-for-work-in-windows-10/) と [ここ](/windows/security/identity-protection/hello-for-business/hello-identity-verification)します。  
 
 AD FS 2016 では、シームレスなデバイスとユーザー両方 PRT と Passport の資格情報に基づく SSO を提供します。  このドキュメントで手順を使用して、これらの機能を有効にし、処理するを確認できます。  
 
@@ -74,11 +74,11 @@ AD FS の構成の詳細については、アクセス制御ポリシーは、�
 
 認証済みのデバイスがある、 **isManaged** AD FS 要求の値を持つ **FALSE**します。 (登録されていないデバイスは、この要求を一切受けません)。 認証されたデバイス (およびすべての登録済みデバイス) には、isKnown の AD FS 要求の値が**TRUE**になります。  
 
-#### <a name="managed-devices"></a>管理対象のデバイス:   
+#### <a name="managed-devices"></a>マネージド デバイス:   
 
-管理対象デバイスは、MDM. に登録されている登録済みのデバイス  
+マネージド デバイスは、MDM. に登録されている登録済みのデバイス  
 
-管理対象デバイスが isManaged AD FS クレームの値が **TRUE**します。  
+マネージド デバイスが isManaged AD FS クレームの値が **TRUE**します。  
 
 #### <a name="devices-compliant-with-mdm-or-group-policies"></a>(MDM またはグループ ポリシー) に準拠したデバイス  
 対応のデバイスはのみに登録されていない MDM が MDM ポリシーに準拠して、登録済みのデバイスです。 (対応情報は、MDM とおよび Azure AD に書き込まれます)。  
@@ -88,7 +88,7 @@ AD FS の構成の詳細については、アクセス制御ポリシーは、�
 AD FS 2016 デバイスと条件付きアクセスの信頼性情報の一覧については、次を参照してください。 [参照](#reference)します。  
 
 
-## <a name="reference"></a>参照  
+## <a name="reference"></a>リファレンス  
 #### <a name="complete-list-of-new-ad-fs-2016-and-device-claims"></a>新しい AD FS 2016 とデバイスの要求の完全なリスト  
 
 * https://schemas.microsoft.com/ws/2014/01/identity/claims/anchorclaimtype  

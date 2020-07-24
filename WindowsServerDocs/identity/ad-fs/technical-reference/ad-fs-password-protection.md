@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 68624e2307e5ddefc6e32160cabfcd140f609966
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8c1b3141b6afa375ad6029b89f55d99f1122e90d
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407246"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965494"
 ---
 # <a name="ad-fs-password-attack-protection"></a>AD FS パスワード攻撃による保護
 
@@ -27,7 +27,7 @@ ms.locfileid: "71407246"
 一般的なパスワード攻撃には2種類あります。 ブルートフォースパスワード攻撃 & パスワードスプレー攻撃。 
 
 ### <a name="password-spray-attack"></a>パスワードスプレー攻撃
-パスワードスプレー攻撃では、これらの悪意のあるアクターは、さまざまなアカウントやサービスで最も一般的なパスワードを試して、検出可能なパスワード保護された資産にアクセスします。 通常、これらは多くの異なる組織および id プロバイダーにまたがります。 たとえば、攻撃者は、一般的に利用可能なツールキットを使用して複数の組織のすべてのユーザーを列挙した後、これらのすべてのアカウントに対して "P @ $ $w 0rd" と "Password1" を試してみます。 アイデアを得るために、攻撃は次のようになります。
+パスワードスプレー攻撃では、これらの悪意のあるアクターは、さまざまなアカウントやサービスで最も一般的なパスワードを試して、検出可能なパスワード保護された資産にアクセスします。 通常、これらは多くの異なる組織および id プロバイダーにまたがります。 たとえば、攻撃者は、一般的に利用可能なツールキットを使用して複数の組織内のすべてのユーザーを列挙した後、これらのすべてのアカウントに対して "P@ $ $w 0rd" と "Password1" を試してみます。 アイデアを得るために、攻撃は次のようになります。
 
 
 |  ターゲットユーザー   | ターゲットパスワード |
@@ -37,10 +37,10 @@ ms.locfileid: "71407246"
 | User1@org2.com |    Password1    |
 | User2@org2.com |    Password1    |
 |       …        |        …        |
-| User1@org1.com |    P @ $ $w 0rd     |
-| User2@org1.com |    P @ $ $w 0rd     |
-| User1@org2.com |    P @ $ $w 0rd     |
-| User2@org2.com |    P @ $ $w 0rd     |
+| User1@org1.com |    P@$$w0rd     |
+| User2@org1.com |    P@$$w0rd     |
+| User1@org2.com |    P@$$w0rd     |
+| User2@org2.com |    P@$$w0rd     |
 
 この攻撃パターンは、個々のユーザーまたは企業の視点ポイントから、攻撃が失敗した分離されたログインのようなものであるため、ほとんどの検出手法を evades しています。
 
@@ -58,17 +58,17 @@ ms.locfileid: "71407246"
 ただし、AD FS とネットワークを正しく構成するためにいくつかの手順を実行することで、AD FS エンドポイントをこれらの種類の攻撃から保護することができます。 この記事では、これらの攻撃から保護するために適切に構成する必要がある3つの領域について説明します。 
 
 
-- レベル1、ベースライン:これらは、AD FS サーバーで構成して、悪意のあるアクターがフェデレーションユーザーに攻撃を仕掛けることができないようにするために必要な基本設定です。 
-- レベル2、エクストラネットの保護:これらは、セキュリティで保護されたプロトコル、認証ポリシー、および適切なアプリケーションを使用するようにエクストラネットアクセスが構成されていることを確認するために構成する必要がある設定です。 
-- レベル3、エクストラネットアクセス用にパスワードを使用しません。これらは、攻撃を受けやすいパスワードではなく、より安全な資格情報でフェデレーションリソースにアクセスできるようにするための高度な設定とガイドラインです。 
+- レベル1、ベースライン: これらは AD FS サーバーで構成する必要がある基本的な設定であり、悪意のあるアクターによるブルートフォース攻撃が、フェデレーションユーザーに強制されないようにする必要があります。 
+- レベル2、エクストラネットの保護: セキュリティで保護されたプロトコル、認証ポリシー、および適切なアプリケーションを使用するようにエクストラネットアクセスが構成されていることを保証するために、これらの設定を構成する必要があります。 
+- レベル3、エクストラネットアクセスの場合はパスワードを小さくします。これは、攻撃を受けやすいパスワードではなく、より安全な資格情報でフェデレーションリソースにアクセスできるようにするための高度な設定とガイドラインです。 
 
-## <a name="level-1-baseline"></a>レベル 1:Baseline
+## <a name="level-1-baseline"></a>レベル 1: ベースライン
 
 1. ADFS 2016 の場合、[エクストラネットのスマートロックアウト](../../ad-fs/operations/Configure-AD-FS-Extranet-Smart-Lockout-Protection.md)を実装すると、スマートロックアウトがよく知られている場所を追跡し、その場所から以前に正常にログインしたことがあれば、有効なユーザーを通過させることができます。 エクストラネットのスマートロックアウトを使用することにより、悪意のあるアクターがユーザーと同時にブルートフォース攻撃を受けることができないようにすることで、正当なユーザーの生産性を高めることができます。
     - AD FS 2016 を使用していない場合は、AD FS 2016 に[アップグレード](../../ad-fs/deployment/upgrading-to-ad-fs-in-windows-server.md)することを強くお勧めします。 AD FS 2012 R2 からの単純なアップグレードパスです。 AD FS 2012 R2 を使用している場合は、[エクストラネットロックアウト](../../ad-fs/operations/Configure-AD-FS-Extranet-Soft-Lockout-Protection.md)を実装します。 この方法の欠点の1つは、ブルートフォースパターンを使用している場合に、有効なユーザーがエクストラネットアクセスをブロックする可能性があることです。 サーバー2016の AD FS には、この欠点はありません。
 
 2. 疑わしい IP アドレスを監視 & ブロックする 
-    - Azure AD Premium がある場合は、ADFS の Connect Health を実装し、提供されている[危険な IP レポート](https://docs.microsoft.com/azure/active-directory/connect-health/active-directory-aadconnect-health-adfs#risky-ip-report-public-preview)通知を使用します。
+    - Azure AD Premium がある場合は、ADFS の Connect Health を実装し、提供されている[危険な IP レポート](/azure/active-directory/connect-health/active-directory-aadconnect-health-adfs#risky-ip-report-public-preview)通知を使用します。
 
         a. ライセンスはすべてのユーザーにとってではなく、25ライセンス/ADFS/WAP サーバーを必要とします。これは、お客様にとっては簡単です。
 
@@ -82,13 +82,13 @@ ms.locfileid: "71407246"
 
     b. AD FS 2012 R2 以降を使用している場合は、Exchange Online で IP アドレスを直接ブロックし、必要に応じてファイアウォールでブロックします。
 
-4. Azure AD Premium がある場合は、 [Azure AD パスワード保護](https://docs.microsoft.com/azure/active-directory/authentication/concept-password-ban-bad-on-premises)を使用して、推測パスワードを取得できないようにしてください Azure AD  
+4. Azure AD Premium がある場合は、 [Azure AD パスワード保護](/azure/active-directory/authentication/concept-password-ban-bad-on-premises)を使用して、推測パスワードを取得できないようにしてください Azure AD  
 
     a. 推測パスワードを使用している場合は、1-3 回だけ試行してしまうことに注意してください。 この機能により、これらの設定が行われなくなります。 
 
-    b. プレビューの統計からは、新しいパスワードの約 20-50% が設定されるのをブロックします。 これは、ユーザーの% がパスワードを推測しやすいという脆弱性を持つことを意味します。
+    b. プレビューの統計からは、新しいパスワードの約20-50% が設定されるのをブロックします。 これは、ユーザーの% がパスワードを推測しやすいという脆弱性を持つことを意味します。
 
-## <a name="level-2-protect-your-extranet"></a>レベル 2:エクストラネットを保護する
+## <a name="level-2-protect-your-extranet"></a>レベル 2: エクストラネットを保護する
 
 5. エクストラネットからアクセスするすべてのクライアントの最新の認証に移行します。 メールクライアントは、このような大きな役割を持ちます。 
 
@@ -98,13 +98,13 @@ ms.locfileid: "71407246"
 
 6. すべてのエクストラネットアクセスに対して MFA を有効にします。 これにより、すべてのエクストラネットアクセスの保護が追加されます。
 
-   a.  Premium Azure AD がある場合は、 [Azure AD 条件付きアクセスポリシー](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)を使用してこれを制御します。  これは、AD FS で規則を実装するよりも優れています。  これは、最新のクライアントアプリがより頻繁に適用されるためです。  これは、Azure AD 時に、更新トークンを使用して新しいアクセストークン (通常は1時間ごと) を要求したときに発生します。  
+   a.  Premium Azure AD がある場合は、 [Azure AD 条件付きアクセスポリシー](/azure/active-directory/conditional-access/overview)を使用してこれを制御します。  これは、AD FS で規則を実装するよりも優れています。  これは、最新のクライアントアプリがより頻繁に適用されるためです。  これは、Azure AD 時に、更新トークンを使用して新しいアクセストークン (通常は1時間ごと) を要求したときに発生します。  
 
    b.  Premium Azure AD がない場合、またはインターネットベースのアクセスを許可する AD FS に追加のアプリがある場合は、MFA を実装します (AD FS 2016 でも Azure MFA として使用できます)。また、すべてのエクストラネットアクセスに対して[グローバル MFA ポリシー](../../ad-fs/operations/configure-authentication-policies.md#to-configure-multi-factor-authentication-globally)を実行します。
 
-## <a name="level-3-move-to-password-less-for-extranet-access"></a>レベル 3:エクストラネットアクセス用にパスワードを小さくする
+## <a name="level-3-move-to-password-less-for-extranet-access"></a>レベル 3: エクストラネットアクセス用にパスワードを小さくする
 
-7. ウィンドウ10に移動し、 [Hello For business](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-identity-verification)を使用します。
+7. ウィンドウ10に移動し、 [Hello For business](/windows/security/identity-protection/hello-for-business/hello-identity-verification)を使用します。
 
 8. その他のデバイスの場合、AD FS 2016 では、第2要素として[AZURE MFA OTP](../../ad-fs/operations/configure-ad-fs-and-azure-mfa.md)を最初の要素として使用できます。 
 
@@ -118,9 +118,9 @@ AD FS 環境がアクティブな攻撃を受けている場合は、次の手�
  - 攻撃が EXO を通じてのみ行われる場合は、認証ポリシーを使用して Exchange プロトコル (POP、IMAP、SMTP、EWS など) の基本認証を無効にすることができます。これらのプロトコルと認証方法は、これらの攻撃の大部分で使用されています。 さらに、EXO およびメールボックスごとのプロトコルの有効化のクライアントアクセスルールは、認証後に評価され、攻撃の緩和には役立ちません。 
  - レベル 3 #1 3 を使用してエクストラネットアクセスを選択的に提供します。
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 - [AD FS server 2016 へのアップグレード](../../ad-fs/deployment/upgrading-to-ad-fs-in-windows-server.md) 
 - [AD FS 2016 でのエクストラネットのスマートロックアウト](../../ad-fs/operations/Configure-AD-FS-Extranet-Smart-Lockout-Protection.md)
-- [条件付きアクセスポリシーを構成する](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
-- [パスワード保護の Azure AD](https://docs.microsoft.com/azure/active-directory/authentication/howto-password-ban-bad-on-premises)
+- [条件付きアクセスポリシーを構成する](/azure/active-directory/conditional-access/overview)
+- [パスワード保護の Azure AD](/azure/active-directory/authentication/howto-password-ban-bad-on-premises)

@@ -8,12 +8,12 @@ ms.technology: storage
 ms.topic: article
 author: jasongerend
 ms.date: 05/29/2019
-ms.openlocfilehash: cae164de90738996a6c4663dfcbde794b6c2a18e
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 447c8fe33a0454179d8c9aacc9c324ac7bcf1f49
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473779"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965824"
 ---
 # <a name="whats-new-in-storage-in-windows-server"></a>Windows Server での記憶域の新機能
 
@@ -49,7 +49,7 @@ ms.locfileid: "85473779"
 
 ### <a name="windows-admin-center-enhancements"></a>Windows Admin Center の機能強化
 
-Windows Admin Center の新しいリリースがリリースされ、Windows Server に新機能が追加されました。 最新の機能の詳細については、[Windows Admin Center](../manage/windows-admin-center/understand/windows-admin-center.md)に関するページを参照してください。
+Windows Admin Center の新しいリリースがリリースされ、Windows Server に新機能が追加されました。 最新の機能の詳細については、[Windows Admin Center](../manage/windows-admin-center/overview.md)に関するページを参照してください。
 
 ## <a name="whats-new-in-storage-in-windows-server-2019-and-windows-server-version-1809"></a>Windows Server 2019 および Windows Server の記憶域の新機能、バージョン1809
 
@@ -83,7 +83,7 @@ Windows Server 2019 で記憶域スペースダイレクトには、次のよう
 
 - **監視として USB フラッシュ ドライブを使用した 2 つのサーバー クラスター**
 
-    ルーターに接続された低コストの USB フラッシュドライブを使用して、2台のサーバーから成るクラスターでミラーリング監視サーバーとして機能します。 サーバーがダウンしてバックアップされると、USB ドライブクラスターは最新のデータがあるサーバーを認識します。 詳細については、 [Microsoft ブログ](https://blogs.technet.microsoft.com/filecab/2018/06/27/windows-server-summit-recap/)の「Storage」を参照してください。
+    ルーターに接続された低コストの USB フラッシュドライブを使用して、2台のサーバーから成るクラスターでミラーリング監視サーバーとして機能します。 サーバーがダウンしてバックアップされると、USB ドライブクラスターは最新のデータがあるサーバーを認識します。 詳細については、 [Microsoft ブログ](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)の「Storage」を参照してください。
 
 - **Windows Admin Center**
 
@@ -95,7 +95,7 @@ Windows Server 2019 で記憶域スペースダイレクトには、次のよう
 
 - **クラスターごとに 4 PB まで拡張可能**
 
-    メディア、バックアップ、およびアーカイブのユース ケースに最適なマルチペタバイトの拡張性を実現します。 Windows Server 2019 の記憶域スペース ダイレクトでは、記憶域プールあたり最大 4 ペタバイト (PB) = 4,000 テラバイトの未加工容量がサポートされます。 関連する容量ガイドラインも引き上げられています。たとえば、作成できるボリューム数が 2 倍になり (32 から 64 に増加)、それぞれの大きさも従来の 2 倍になっています (32 TB から 64 TB に増加)。 複数のクラスターをまとめて1つの記憶域名前空間内でさらに大きなスケールを行う[クラスターセット](storage-spaces/cluster-sets.md)にします。 詳細については、 [Microsoft ブログ](https://blogs.technet.microsoft.com/filecab/2018/06/27/windows-server-summit-recap/)の「Storage」を参照してください。
+    メディア、バックアップ、およびアーカイブのユース ケースに最適なマルチペタバイトの拡張性を実現します。 Windows Server 2019 の記憶域スペース ダイレクトでは、記憶域プールあたり最大 4 ペタバイト (PB) = 4,000 テラバイトの未加工容量がサポートされます。 関連する容量ガイドラインも引き上げられています。たとえば、作成できるボリューム数が 2 倍になり (32 から 64 に増加)、それぞれの大きさも従来の 2 倍になっています (32 TB から 64 TB に増加)。 複数のクラスターをまとめて1つの記憶域名前空間内でさらに大きなスケールを行う[クラスターセット](storage-spaces/cluster-sets.md)にします。 詳細については、 [Microsoft ブログ](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)の「Storage」を参照してください。
 
 - **ミラーリングによって高速化されたパリティで 2 倍の速度を実現**
 
@@ -166,7 +166,7 @@ Windows Server バージョン1803には、サービスの開始時に、ファ�
 
 Windows Server バージョン1709は、半期チャネルの最初の Windows Server リリースです。 半期チャネルはソフトウェアアシュアランスの特典であり、実稼働環境では18か月ごとに完全にサポートされており、新しいバージョンは6か月ごとに使用できます。
 
-詳しくは、「[Windows Server の半期チャネルの概要](../get-started/semi-annual-channel-overview.md)」をご覧ください。
+詳しくは、「[Windows Server の半期チャネルの概要](../get-started-19/servicing-channels-19.md)」をご覧ください。
 
 ### <a name="storage-replica"></a>記憶域レプリカ
 
@@ -250,11 +250,11 @@ CSV クラスターで記憶域の QoS ポリシーを作成し、Hyper-V 仮想
 ### <a name="data-deduplication"></a><a name="dedup"></a>データ重複除去
 | 機能 | 新機能か更新された機能か | 説明 |
 |---------------|----------------|-------------|
-| [大容量ボリュームのサポート](data-deduplication/whats-new.md#large-volume-support) | 更新済み | Windows Server 2016 の前までは、予期される変更量に合わせてボリュームのサイズを具体的に設定する必要がありました。そして、10 TB 以上のサイズのボリュームは重複除去に適した候補ではありませんでした。 Windows Server 2016 では、データ重複除去は**最大 64 TB**のボリュームサイズをサポートしています。 |
-| [大きなファイルのサポート](data-deduplication/whats-new.md#large-file-support) | 更新済み | Windows Server 2016 の前では、1 TB に近いサイズのファイルは重複除去に適した候補ではありませんでした。 Windows Server 2016 では、 **1 TB まで**のファイルが完全にサポートされています。 |
-| [Nano Server のサポート](data-deduplication/whats-new.md#nano-server-support) | 新規 | Windows Server 2016 の新しい Nano Server 展開オプションでは、データ重複除去が利用可能で、完全にサポートされています。 |
-| [簡略化されたバックアップのサポート](data-deduplication/whats-new.md#simple-backup-support) | 新規 | Windows Server 2012 R2 では、Microsoft の [Data Protection Manager](https://technet.microsoft.com/library/hh758173.aspx) などの仮想化されたバックアップ アプリケーションは、一連の手動による構成手順を実行することでサポートされていました。 Windows Server 2016 では、仮想化されたバックアップ アプリケーション用にデータ重複除去をシームレスに展開するために、使用法の種類の新しい既定値として "バックアップ" が追加されました。 |
-| [クラスター OS のローリング アップグレードのサポート](data-deduplication/whats-new.md#cluster-upgrade-support) | 新規 | データ重複除去では、Windows Server 2016 の新機能である、[クラスター OS のローリング アップグレード](..//failover-clustering/cluster-operating-system-rolling-upgrade.md)が完全にサポートされています。 |
+| [大容量ボリュームのサポート](data-deduplication/whats-new.md#large-volume-support) | [更新] | Windows Server 2016 の前までは、予期される変更量に合わせてボリュームのサイズを具体的に設定する必要がありました。そして、10 TB 以上のサイズのボリュームは重複除去に適した候補ではありませんでした。 Windows Server 2016 では、データ重複除去は**最大 64 TB**のボリュームサイズをサポートしています。 |
+| [大きなファイルのサポート](data-deduplication/whats-new.md#large-file-support) | [更新] | Windows Server 2016 の前では、1 TB に近いサイズのファイルは重複除去に適した候補ではありませんでした。 Windows Server 2016 では、 **1 TB まで**のファイルが完全にサポートされています。 |
+| [Nano Server のサポート](data-deduplication/whats-new.md#nano-server-support) | 新規作成 | Windows Server 2016 の新しい Nano Server 展開オプションでは、データ重複除去が利用可能で、完全にサポートされています。 |
+| [簡略化されたバックアップのサポート](data-deduplication/whats-new.md#simple-backup-support) | 新規作成 | Windows Server 2012 R2 では、Microsoft の [Data Protection Manager](/previous-versions/system-center/system-center-2012-R2/hh758173(v=sc.12)) などの仮想化されたバックアップ アプリケーションは、一連の手動による構成手順を実行することでサポートされていました。 Windows Server 2016 では、仮想化されたバックアップ アプリケーション用にデータ重複除去をシームレスに展開するために、使用法の種類の新しい既定値として "バックアップ" が追加されました。 |
+| [クラスター OS のローリング アップグレードのサポート](data-deduplication/whats-new.md#cluster-upgrade-support) | 新規作成 | データ重複除去では、Windows Server 2016 の新機能である、[クラスター OS のローリング アップグレード](..//failover-clustering/cluster-operating-system-rolling-upgrade.md)が完全にサポートされています。 |
 
 ### <a name="smb-hardening-improvements-for-sysvol-and-netlogon-connections"></a><a name="smb-hardening-improvements"></a>SYSVOL と NETLOGON 接続に関する SMB セキュリティ強化の向上
 Active Directory ドメイン サービスへの Windows 10 および Windows Server 2016 のクライアント接続で、ドメイン コント ローラー上の既定の SYSVOL と NETLOGON 共有では、SMB 署名と相互認証 (Kerberos など) を必要とするようになりました。
@@ -268,7 +268,7 @@ SMB 署名と相互認証が使用できない場合、Windows 10 または Wind
 > [!NOTE]
 > これらの設定のレジストリ値は既定では存在しませんが、セキュリティ強化の規則は、グループ ポリシーまたはその他のレジストリ値でオーバーライドされるまで引き続き適用されます。
 
-UNC ハードニングとも呼ばれる、これらのセキュリティ機能強化の詳細については、マイクロソフト サポート技術情報の記事 [3000483](https://support.microsoft.com/kb/3000483) および「[MS15-011 & MS15-014: Hardening Group Policy (MS15-011 & MS15-014: グループ ポリシーのセキュリティ強化)](https://blogs.technet.microsoft.com/srd/2015/02/10/ms15-011-ms15-014-hardening-group-policy)」を参照してください。
+UNC ハードニングとも呼ばれる、これらのセキュリティ機能強化の詳細については、マイクロソフト サポート技術情報の記事 [3000483](https://support.microsoft.com/kb/3000483) および「[MS15-011 & MS15-014: Hardening Group Policy (MS15-011 & MS15-014: グループ ポリシーのセキュリティ強化)](https://msrc-blog.microsoft.com/2015/02/10/ms15-011-ms15-014-hardening-group-policy)」を参照してください。
 
 ### <a name="work-folders"></a>作業フォルダー
 ワークフォルダーサーバーが Windows Server 2016 を実行していて、ワークフォルダークライアントが Windows 10 の場合、変更通知が改善されました。
@@ -297,4 +297,4 @@ ReFS では、以下の点が強化されています。
 これらの機能は、Windows Server 2016 での新機能です。
 
 ## <a name="additional-references"></a>その他のリファレンス
-* [Windows Server 2016 の新機能](../get-started/what-s-new-in-windows-server-2016.md)
+* [Windows Server 2016 の新機能](../get-started/whats-new-in-windows-server-2016.md)

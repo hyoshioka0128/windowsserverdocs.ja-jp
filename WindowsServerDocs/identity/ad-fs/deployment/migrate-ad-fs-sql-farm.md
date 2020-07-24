@@ -8,12 +8,12 @@ ms.date: 06/28/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 3c43d26868f39896ec8632397dc0fce1dfe2dd2a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9882061aad5ec6620cda5a0a288790d34f25c3f3
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408286"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966674"
 ---
 # <a name="migrate-an-ad-fs-20-wid-farm"></a>AD FS 2.0 WID ファームの移行  
 このドキュメントでは、AD FS 2.0 SQL ファームを Windows Server 2012 に移行する方法の詳細について説明します。
@@ -26,7 +26,7 @@ ms.locfileid: "71408286"
   
 2.  SQL Server ファームのすべてのサーバーをロード バランサーから削除します。  
   
-3.  SQL Server ファーム内のこのサーバーのオペレーティングシステムを Windows Server 2008 R2 または Windows Server 2008 から Windows Server 2012 にアップグレードします。 詳細については、「[Windows Server 2012 のインストール](https://technet.microsoft.com/library/jj134246.aspx)」を参照してください。  
+3.  SQL Server ファーム内のこのサーバーのオペレーティングシステムを Windows Server 2008 R2 または Windows Server 2008 から Windows Server 2012 にアップグレードします。 詳細については、「[Windows Server 2012 のインストール](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj134246(v=ws.11))」を参照してください。  
   
 > [!IMPORTANT]
 >  オペレーティング システムをアップグレードすると、このサーバーの AD FS 構成が失われ、AD FS 2.0 サーバーの役割が削除されます。 代わりに、Windows Server 2012 AD FS サーバーロールがインストールされますが、構成されていません。 元の AD FS 構成を手動で作成し、その他の AD FS 設定を復元して、フェデレーション サーバーの移行を完了する必要があります。  
@@ -46,12 +46,9 @@ ms.locfileid: "71408286"
   
 7. SQL Server ファーム内のすべてのサーバーを Windows Server 2012 にアップグレードする場合は、カスタム属性ストアなど、その他の AD FS カスタマイズを復元します。  
 
-## <a name="next-steps"></a>次のステップ
- [AD FS 2.0 フェデレーションサーバー  の移行の準備](prepare-to-migrate-ad-fs-fed-server.md)  
+## <a name="next-steps"></a>次の手順
+ [AD FS 2.0 フェデレーションサーバーの移行の準備](prepare-to-migrate-ad-fs-fed-server.md)   
  [AD FS 2.0 フェデレーションサーバープロキシの移行の準備](prepare-to-migrate-ad-fs-fed-proxy.md)   
- [AD FS 2.0 フェデレーションサーバー  を移行します](migrate-the-ad-fs-fed-server.md)。  
- [AD FS 2.0 フェデレーションサーバープロキシ  を移行します](migrate-the-ad-fs-2-fed-server-proxy.md)。  
+ [AD FS 2.0 フェデレーションサーバーの移行](migrate-the-ad-fs-fed-server.md)   
+ [AD FS 2.0 フェデレーションサーバープロキシの移行](migrate-the-ad-fs-2-fed-server-proxy.md)   
  [AD FS 1.1 Web エージェントの移行](migrate-the-ad-fs-web-agent.md)
-
-
-

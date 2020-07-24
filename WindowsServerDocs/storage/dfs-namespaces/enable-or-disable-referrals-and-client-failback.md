@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 15c02897df0710653a6a3663ce6f8e87bfa416b6
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 3896b411ee8b02a0efde6b46484e043b27ffea77
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471807"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966514"
 ---
 # <a name="enable-or-disable-referrals-and-client-failback"></a>紹介とクライアント フェールバックを有効または無効にする
 
@@ -39,15 +39,15 @@ ms.locfileid: "85471807"
 
 
 > [!TIP]
-> Windows PowerShell を使って紹介を有効または無効にするには、Windows Server 2012 で導入された [Set-DfsnRootTarget –State](https://technet.microsoft.com/library/jj884266.aspx) または [Set-DfsnServerConfiguration](https://technet.microsoft.com/library/jj884277.aspx) コマンドレットを使います。
+> Windows PowerShell を使って紹介を有効または無効にするには、Windows Server 2012 で導入された [Set-DfsnRootTarget –State](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731089(v=ws.11)) または [Set-DfsnServerConfiguration](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731089(v=ws.11)) コマンドレットを使います。
 
 ## <a name="enable-client-failback"></a>クライアント フェールバックを有効にする
 
-ターゲットが使用不能になった場合は、そのターゲットの復元後にクライアントがそのターゲットにフェールバックするように構成できます。 フェールバックが機能するには、[DFS 名前空間クライアントの要件のまとめに関するページ](https://technet.microsoft.com/library/cc771913(v=ws.11).aspx)に示された要件をクライアント コンピューターが満たしている必要があります。
+ターゲットが使用不能になった場合は、そのターゲットの復元後にクライアントがそのターゲットにフェールバックするように構成できます。 フェールバックが機能するには、[DFS 名前空間クライアントの要件のまとめに関するページ](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771913(v=ws.11))に示された要件をクライアント コンピューターが満たしている必要があります。
 
 
 > [!NOTE]
-> Windows PowerShell を使うことで名前空間ルートでクライアント フェールバックを有効にするには、[Set-DfsnRoot](https://technet.microsoft.com/library/jj884281.aspx) コマンドレットを使います。 DFS フォルダーでクライアント フェールバックを有効にするには、[Set-DfsnFolder](https://technet.microsoft.com/library/jj884283.aspx) コマンドレットを使います。
+> Windows PowerShell を使うことで名前空間ルートでクライアント フェールバックを有効にするには、[Set-DfsnRoot](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771913(v=ws.11)) コマンドレットを使います。 DFS フォルダーでクライアント フェールバックを有効にするには、[Set-DfsnFolder](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771913(v=ws.11)) コマンドレットを使います。
 
 
 ## <a name="to-enable-client-failback-for-a-namespace-root"></a>名前空間のルートでクライアントのフェールバックを有効にするには
@@ -71,5 +71,5 @@ ms.locfileid: "85471807"
 ## <a name="additional-references"></a>その他のリファレンス
 
 -   [DFS 名前空間を調整する](tuning-dfs-namespaces.md)
--   [DFS 名前空間クライアントの要件を確認する](https://technet.microsoft.com/library/cc771913(v=ws.11).aspx)
+-   [DFS 名前空間クライアントの要件を確認する](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771913(v=ws.11))
 -   [DFS 名前空間の管理アクセス許可を委任する](delegate-management-permissions-for-dfs-namespaces.md)
