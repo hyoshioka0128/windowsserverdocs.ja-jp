@@ -9,19 +9,19 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6ea742ab8fce296a88c8c9e6a41262c7aef88813
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 3e15db58ab8fa8c3a0114b695cb85eec7684039e
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85928899"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958474"
 ---
 # <a name="copy"></a>copy
 
 ある場所から別の場所に1つ以上のファイルをコピーします。
 
 > [!NOTE]
-> また、回復コンソールから別のパラメーターを使用して、 **copy**コマンドを使用することもできます。 回復コンソールの詳細については、「 [Windows 回復環境 (WINDOWS RE)](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference)」を参照してください。
+> また、回復コンソールから別のパラメーターを使用して、 **copy**コマンドを使用することもできます。 回復コンソールの詳細については、「 [Windows 回復環境 (WINDOWS RE)](/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference)」を参照してください。
 
 ## <a name="syntax"></a>構文
 
@@ -41,8 +41,8 @@ copy [/d] [/v] [/n] [/y | /-y] [/z] [/a | /b] <source> [/a | /b] [+<source> [/a 
 | /z | 再起動可能モードでネットワークファイルをコピーします。 |
 | /a | ASCII テキストファイルを示します。 |
 | /b | バイナリファイルを示します。 |
-| `<source>` | 必須です。 ファイルまたはファイルのセットのコピー元となる場所を指定します。 *ソース*は、ドライブ文字とコロン、ディレクトリ名、ファイル名、またはこれらの組み合わせで構成されます。 |
-| `<destination>` | 必須です。 ファイルまたはファイルのセットをコピーする場所を指定します。 *宛先*には、ドライブ文字とコロン、ディレクトリ名、ファイル名、またはこれらの組み合わせを使用できます。 |
+| `<source>` | 必須。 ファイルまたはファイルのセットのコピー元となる場所を指定します。 *ソース*は、ドライブ文字とコロン、ディレクトリ名、ファイル名、またはこれらの組み合わせで構成されます。 |
+| `<destination>` | 必須。 ファイルまたはファイルのセットをコピーする場所を指定します。 *宛先*には、ドライブ文字とコロン、ディレクトリ名、ファイル名、またはこれらの組み合わせを使用できます。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
 #### <a name="remarks"></a>注釈
@@ -152,7 +152,7 @@ copy *.txt + *.ref *.doc
 copy *.txt + *.ref Combined.doc
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 
