@@ -12,12 +12,12 @@ appliesto:
 - Windows Server 2012 R2
 - Windows 10
 - Windows 8.1
-ms.openlocfilehash: c0d8019812144cc3e4bd33cfaf2ca2c0c1b7eefa
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 0de9d7496266afba4b76e5b837dc68e4f9745518
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473179"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962734"
 ---
 # <a name="slmgrvbs-options-for-obtaining-volume-activation-information"></a>ボリューム ライセンス認証情報を取得するための Slmgr.vbs オプション
 
@@ -35,7 +35,7 @@ slmgr.vbs [<ComputerName> [<User> <Password>]] [<Options>]
 
 ## <a name="using-slmgr-on-remote-computers"></a>リモート コンピューターでの Slmgr の使用
 
-リモート クライアントを管理するには、ボリューム ライセンス認証管理ツール (VAMT) バージョン 1.2 以降を使用するか、プラットフォームの違いに合わせた WMI スクリプトを独自に作成してください。 ボリューム ライセンス認証のための WMI のプロパティとメソッドの詳細については、「[ボリューム ライセンス認証のための WMI のプロパティとメソッド](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn502536(v=ws.11))」を参照してください。
+リモート クライアントを管理するには、ボリューム ライセンス認証管理ツール (VAMT) バージョン 1.2 以降を使用するか、プラットフォームの違いに合わせた WMI スクリプトを独自に作成してください。 ボリューム ライセンス認証のための WMI のプロパティとメソッドの詳細については、「[ボリューム ライセンス認証のための WMI のプロパティとメソッド](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn502536(v=ws.11))」を参照してください。
 
 > [!IMPORTANT]
 > Windows 7 と Windows Server 2008 R2 での WMI の変更が理由で、Slmgr.vbs スクリプトはどのプラットフォームでも動作するようには作られていません。 Slmgr.vbs を使用した Windows Vista&reg; オペレーティング システムからの Windows 7 または Windows Server 2008 R2 システムの管理はサポートされていません。 古いバージョンのシステムの管理を Windows 7 や Windows Server 2008 R2 から実行しようとすると、バージョン不一致エラーが発生します。 たとえば、**cscript slmgr.vbs \<vista\_machine\_name\> /dlv** を実行すると、出力は次のようになります。
@@ -69,7 +69,7 @@ slmgr.vbs [<ComputerName> [<User> <Password>]] [<Options>]
 |\/cpky |サービス操作の中には、Out-of-Box Experience (OOBE) 操作のときにプロダクト キーがレジストリに格納されていることを必要とするものがあります。 **/cpky** オプションを指定すると、プロダクト キーがレジストリから削除されるので、悪意のあるコードによってこのキーが盗まれるのを防止できます。<br />キーを展開するリテール インストールの場合は、このオプションを実行することをお勧めします。 このオプションは、MAK ホスト キーや KMS ホスト キーの場合は不要です。これらのキーでは、これが既定の動作であるからです。 このオプションが必要になるのは、他のタイプのキーの既定の動作でキーがレジストリから削除されない場合のみです。<br />この操作は、管理者特権でのコマンド プロンプト ウィンドウで実行する必要があります。 |
 |\/ilc&nbsp;&lt;license_file&gt; |必須パラメーターで指定したライセンス ファイルがインストールされます。 このようにしてライセンスをインストールする目的としては、トラブルシューティングや、トークン ベースのライセンス認証のサポートがあります。オンボード アプリケーションの手動インストールの一部として使用することもできます。<br />このプロセスの中で、ライセンスの検証は行われません。ライセンス検証は、Slmgr.vbs の機能には含まれていません。 代わりに、検証は実行時にソフトウェア保護サービスによって処理されます。<br />この操作は、管理者特権でのコマンド プロンプト ウィンドウから実行する必要があります。または、特権なしのユーザーが特別にソフトウェア保護サービスにアクセスできるように **Standard User Operations** レジストリ値が設定されている必要があります。 |
 |\/rilc |%SystemRoot%\system32\oem と %SystemRoot%\System32\spp\tokens に格納されているすべてのライセンスを再インストールします。 これらは、インストール時に格納された "既知の正常な" コピーです。<br />信頼されたストアにある、一致するライセンスはすべて置き換えられます。 その他のライセンス&mdash;たとえば、信頼された機関 (TA) 発行ライセンス (IL) やアプリケーション用のライセンス&mdash;は影響を受けません。<br />この操作は、管理者特権でのコマンド プロンプト ウィンドウで実行する必要があります。または、特権なしのユーザーが特別にソフトウェア保護サービスにアクセスできるように **Standard User Operations** レジストリ値が設定されている必要があります。 |
-|\/rearm |ライセンス認証タイマーをリセットします。 **/rearm** プロセスは、**sysprep /generalize** からも呼び出されます。<br />**HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SoftwareProtectionPlatform\SkipRearm** レジストリ エントリが **1** に設定されている場合は、この操作を行っても何も変化しません。 このレジストリ エントリの詳細については、「[ボリューム ライセンス認証のためのレジストリ設定](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn502532(v=ws.11))」を参照してください。<br />この操作は、管理者特権でのコマンド プロンプト ウィンドウで実行する必要があります。または、特権なしのユーザーが特別にソフトウェア保護サービスにアクセスできるように **Standard User Operations** レジストリ値が設定されている必要があります。 |
+|\/rearm |ライセンス認証タイマーをリセットします。 **/rearm** プロセスは、**sysprep /generalize** からも呼び出されます。<br />**HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SoftwareProtectionPlatform\SkipRearm** レジストリ エントリが **1** に設定されている場合は、この操作を行っても何も変化しません。 このレジストリ エントリの詳細については、「[ボリューム ライセンス認証のためのレジストリ設定](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn502532(v=ws.11))」を参照してください。<br />この操作は、管理者特権でのコマンド プロンプト ウィンドウで実行する必要があります。または、特権なしのユーザーが特別にソフトウェア保護サービスにアクセスできるように **Standard User Operations** レジストリ値が設定されている必要があります。 |
 |\/rearm-app &lt;Application&nbsp;ID&gt; |指定されたアプリのライセンス ステータスをリセットします。 |
 |\/rearm-sku &lt;Application&nbsp;ID&gt; |指定された SKU のライセンス ステータスをリセットします。 |
 |\/upk&nbsp;\[&lt;Application&nbsp;ID&gt;] |現在の Windows エディションのプロダクト キーをアンインストールします。 再起動後に、システムは "ライセンスなし" 状態になります。これを解除するには、新しいプロダクト キーをインストールする必要があります。<br />\<**Activation ID**\> パラメーターを使用して別のインストール済み製品を指定することもできます。<br />この操作は、管理者特権でのコマンド プロンプト ウィンドウから実行する必要があります。 |
@@ -123,6 +123,5 @@ slmgr.vbs [<ComputerName> [<User> <Password>]] [<Options>]
 
 ## <a name="additional-references"></a>その他の参照情報
 
-- [ボリューム ライセンス認証のテクニカル リファレンス](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn502529%28v%3dws.11%29)
-- [ボリューム ライセンス認証の概要](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831612%28v%3dws.11%29)
-
+- [ボリューム ライセンス認証のテクニカル リファレンス](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn502529%28v%3dws.11%29)
+- [ボリューム ライセンス認証の概要](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831612%28v%3dws.11%29)

@@ -10,12 +10,12 @@ author: jaimeo
 ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: cd4666f9ac0677ce8893041ae4e937cca41e8164
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: fe2d47622d776b722f0d2d91d027e5f3fd0163c5
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826495"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964224"
 ---
 # <a name="system-requirements"></a>システム要件
 
@@ -49,7 +49,7 @@ Windows Server 2016 のシステム要件の概要は次のとおりです。 �
 - CMPXCHG16b、LAHF/SAHF、および PrefetchW のサポート  
 - 第 2 レベルのアドレス変換 (EPT または NPT) のサポート  
 
-[Coreinfo](https://technet.microsoft.com/sysinternals/cc835722.aspx) は、お使いの CPU が備えている機能を確認するために使用できるツールです。
+[Coreinfo](/sysinternals/downloads/coreinfo) は、お使いの CPU が備えている機能を確認するために使用できるツールです。
 
 ## <a name="ram"></a>RAM  
 この製品で予想される RAM の要件を次に示します。  
@@ -121,7 +121,7 @@ Windows Server 2016 を実行するコンピューターでは、PCI Express ア
 Windows Server 2016 を Nano Server としてインストールする詳細な手順については、「[Install Nano Server](Getting-Started-with-Nano-Server.md)」 (Nano Server のインストール) を参照してください。
 
 ## <a name="additional-resources"></a>その他の情報
-- [Windows のプロセッサの要件](https://docs.microsoft.com/windows-hardware/design/minimum/windows-processor-requirements)
-- [Windows Server 2016 の Standard エディションと Datacenter エディションの比較](https://docs.microsoft.com/windows-server/get-started/2016-edition-comparison)
+- [Windows のプロセッサの要件](/windows-hardware/design/minimum/windows-processor-requirements)
+- [Windows Server 2016 の Standard エディションと Datacenter エディションの比較](./2016-edition-comparison.md)
 - [Windows 10 のシステム要件](https://www.microsoft.com/windows/windows-10-specifications#system-specifications)
 - [Windows Server 2016 ライセンス データシートのダウンロード](https://download.microsoft.com/download/7/2/9/7290EA05-DC56-4BED-9400-138C5701F174/WS2016LicensingDatasheet.pdf)

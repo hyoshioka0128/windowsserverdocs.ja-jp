@@ -9,12 +9,12 @@ ms.topic: article
 author: lizap
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: a424a28be835fa2a941187b110907fff76e6f220
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 7e08e4aa0cd1298502c59a1a8275293910345d6a
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "81650066"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966194"
 ---
 # <a name="use-performance-counters-to-diagnose-app-performance-problems-on-remote-desktop-session-hosts"></a>パフォーマンス カウンターを使用して、リモート デスクトップ セッション ホストでのアプリのパフォーマンス問題を診断する
 
@@ -33,7 +33,7 @@ ms.locfileid: "81650066"
 
 ![リモート デスクトップ - ユーザーのリモート デスクトップ クライアントからアプリケーションへのユーザー入力フロー](./media/rds-user-input.png)
 
-ユーザー入力遅延カウンターは、次のフロー図に示すように、入力がキューに入れられたときから、[従来のメッセージ ループ](https://docs.microsoft.com/windows/win32/winmsg/about-messages-and-message-queues#message-loop)内でアプリによって取得されたときとの最大デルタ (時間間隔内) を測定します。
+ユーザー入力遅延カウンターは、次のフロー図に示すように、入力がキューに入れられたときから、[従来のメッセージ ループ](/windows/win32/winmsg/about-messages-and-message-queues#message-loop)内でアプリによって取得されたときとの最大デルタ (時間間隔内) を測定します。
 
 ![リモート デスクトップ - ユーザー入力遅延のパフォーマンス カウンター フロー](./media/rds-user-input-delay.png)
 
@@ -68,7 +68,7 @@ reg add "HKLM\System\CurrentControlSet\Control\Terminal Server" /v "EnableLagCou
 
 **[User Input Delay per Process]** (プロセスあたりのユーザー入力遅延) を選択した場合、**選択したオブジェクトのインスタンス** (つまりプロセス) が ```SessionID:ProcessID <Process Image>``` の形式で表示されます。
 
-たとえば、電卓アプリが[セッション ID 1](https://docs.microsoft.com/previous-versions/iis/6.0-sdk/ms524326(v=vs.90)) で実行している場合、```1:4232 <Calculator.exe>``` と表示されます。
+たとえば、電卓アプリが[セッション ID 1](/previous-versions/iis/6.0-sdk/ms524326(v=vs.90)) で実行している場合、```1:4232 <Calculator.exe>``` と表示されます。
 
 > [!NOTE]
 > すべてのプロセスが含まれるわけではありません。 SYSTEM として実行しているプロセスは表示されません。
@@ -135,7 +135,7 @@ CPU 使用量の急増とユーザー入力遅延の間に相関関係がある�
 
 ## <a name="using-the-new-counters-with-non-microsoft-tools"></a>Microsoft 以外のツールでの新しいカウンターの使用
 
-監視ツールは、[パフォーマンス カウンターを使用](https://docs.microsoft.com/windows/win32/perfctrs/using-performance-counters)することで、このカウンターを使用できます。
+監視ツールは、[パフォーマンス カウンターを使用](/windows/win32/perfctrs/using-performance-counters)することで、このカウンターを使用できます。
 
 ## <a name="download-windows-server-insider-software"></a>Windows Server Insider ソフトウェアをダウンロードする
 

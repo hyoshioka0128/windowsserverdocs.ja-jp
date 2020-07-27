@@ -8,12 +8,12 @@ author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: high
 ms.date: 05/21/2019
-ms.openlocfilehash: 2bf56e69d1a28007c35c320d1d5cc73c2ba9fa53
-ms.sourcegitcommit: 643a9916efb95ad0bb5cc0a9b115ac29af4cb076
+ms.openlocfilehash: 1823816d2218c09c84e5eb61bf8af6bd3411a0d7
+ms.sourcegitcommit: 78b59522234825c43b00c271a04c35f3fd9d65e3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/30/2020
-ms.locfileid: "85586687"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86946596"
 ---
 # <a name="windows-server-servicing-channels-ltsc-and-sac"></a>Windows Server サービス チャネル: LTSC と SAC
 
@@ -91,7 +91,7 @@ IT 担当者が Windows Server を操作するためのツールは数多く存�
 - Visual Studio サブスクリプション: Visual Studio サブスクライバーが半期チャネルのリリースを入手するには、[Visual Studio サブスクライバー ダウンロード ページ](https://my.visualstudio.com/downloads?pid=2347)からダウンロードします。 まだサブスクライバーではない場合は、[Visual Studio サブスクリプション](https://www.visualstudio.com/subscriptions/)にサインアップしてから、上記のように [Visual Studio サブスクライバーのダウンロード ページ](https://my.visualstudio.com/downloads?pid=2347)にアクセスします。 Visual Studio サブスクリプション経由で入手したリリースは、開発とテストにのみ利用できます。
 
 - Windows Insider Program を通じてプレビュー リリースを入手します。Windows Server の初期ビルドのテストは、問題点をリリース前に発見できる可能性があるため、マイクロソフトとお客様の両方に役立ちます。 またお客様にとっては、製品の機能に直接影響を与える貴重な機会となります。
-ユーザーからのフィードバックは、全開発プロセスを通じて重要な役割を果たしており、マイクロソフトはこれによってできる限り迅速に製品を調整することができます。 事前テストとフィードバックは、迅速なリリース モデルに不可欠です。 Windows Insider Program に参加する場合は、「[Windows Insider Program for Server docs](https://docs.microsoft.com/windows-insider/at-work/)」 (Windows Insider Program for Server のドキュメント) をご覧ください。
+ユーザーからのフィードバックは、全開発プロセスを通じて重要な役割を果たしており、マイクロソフトはこれによってできる限り迅速に製品を調整することができます。 事前テストとフィードバックは、迅速なリリース モデルに不可欠です。 Windows Insider Program に参加する場合は、「[Windows Insider Program for Server docs](/windows-insider/at-work/)」 (Windows Insider Program for Server のドキュメント) をご覧ください。
 
 ## <a name="activating-semi-annual-channel-releases"></a>半期チャネルのリリースのライセンス認証
 
@@ -115,7 +115,7 @@ Nano Server は、半期チャネルでのコンテナー オペレーティン�
 一般的に言って、長期サービス チャネルのリリース (Windows Server 2019 など) は、半期チャネルの新しいバージョン (Windows Server バージョン 1809 など) と同時にリリースされます。 このため、半期チャネルのリリースがサーバーで実行されているかどうかを判断するのが少し面倒になる場合があります。 ビルド番号を調べるのでなく、製品名を調べる必要があります。半期チャネルのリリースでは Windows Server Standard または Windows Server Datacenter といった製品名がバージョン番号なしで使用されます。一方、長期サービス チャネルのリリースには Windows Server 2019 Datacenter のようにバージョン番号が含まれます。
 
 > [!Note]
-> 以下のガイダンスは、ライフサイクルと一般的なインベントリのみを目的として LTSC と SAC を見分け、区別するためのものです。  アプリケーションの互換性や、特定の API サーフェスを表現することは意図していません。  システムの使用期間中コンポーネント、API、機能が追加されることもあれば追加されないこともあるため、アプリ開発者は別のガイダンスを使って互換性を適切に確保してください。 アプリ開発者は[オペレーティング システムのバージョン](https://docs.microsoft.com/windows/desktop/SysInfo/operating-system-version)から開始することをお勧めします。
+> 以下のガイダンスは、ライフサイクルと一般的なインベントリのみを目的として LTSC と SAC を見分け、区別するためのものです。  アプリケーションの互換性や、特定の API サーフェスを表現することは意図していません。  システムの使用期間中コンポーネント、API、機能が追加されることもあれば追加されないこともあるため、アプリ開発者は別のガイダンスを使って互換性を適切に確保してください。 アプリ開発者は[オペレーティング システムのバージョン](/windows/desktop/sysinfo/operating-system-version)から開始することをお勧めします。
 
 PowerShell を開き、Get-ItemProperty コマンドレットまたは Get-ComputerInfo コマンドレットを使って、レジストリでこれらのプロパティを確認します。  ビルド番号と共にブランド年 (つまり 2019) があるかどうかによって、LTSC か SAC かがわかります。  LTSC にはこれがあり、SAC にはありません。  これは、ReleaseId または WindowsVersion (つまり 1809) によってリリースのタイミングと、インストールが Server Core であるかデスクトップ エクスペリエンス搭載サーバーであるかも返します。
 
@@ -165,7 +165,7 @@ OsVersion                     : 10.0.17763
 OsHardwareAbstractionLayer    : 10.0.17763.107
 ````
 
-新しい [Server Core アプリ互換性 FOD](https://docs.microsoft.com/windows-server/get-started-19/install-fod-19) がサーバーに存在するかどうかを照会するには、[Get-WindowsCapability](https://docs.microsoft.com/powershell/module/dism/get-windowscapability?view=win10-ps) コマンドレットを使って以下を調べます。
+新しい [Server Core アプリ互換性 FOD](./install-fod-19.md) がサーバーに存在するかどうかを照会するには、[Get-WindowsCapability](/powershell/module/dism/get-windowscapability?view=win10-ps) コマンドレットを使って以下を調べます。
 ````
 Name    :     ServerCore.AppCompatibility~~~~0.0.1.0
 State   :     Installed
@@ -177,8 +177,8 @@ State   :     Installed
 
 [Windows Server のサポート ライフサイクル](https://support.microsoft.com/lifecycle)
 
-[Server Core が実行されているかどうかを調べる](https://msdn.microsoft.com/library/hh846315%28v=vs.85%29.aspx?f=255&MSPPError=-2147217396)
+[Server Core が実行されているかどうかを調べる](/previous-versions/windows/desktop/legacy/hh846315(v=vs.85)?f=255&MSPPError=-2147217396)
 
-[GetProductInfo 関数](https://docs.microsoft.com/windows/desktop/api/sysinfoapi/nf-sysinfoapi-getproductinfo)
+[GetProductInfo 関数](/windows/desktop/api/sysinfoapi/nf-sysinfoapi-getproductinfo)
 
-[ソフトウェア インベントリ ログ コマンドレット](https://docs.microsoft.com/powershell/module/softwareinventorylogging/?view=winserver2012R2-ps)
+[ソフトウェア インベントリ ログ コマンドレット](/powershell/module/softwareinventorylogging/?view=winserver2012R2-ps)

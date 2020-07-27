@@ -9,12 +9,12 @@ manager: mtillman
 ms.date: 03/22/2019
 ms.technology: identity-adds
 ms.assetid: 7a3114c8-bda8-49bb-83a8-4e04340ab221
-ms.openlocfilehash: 25a5c2222f50b37bff2bcfe41184d6d9fa35995c
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: b9009e4688665e972531b1d38a5ecc92fa990556
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "77465506"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955624"
 ---
 # <a name="safely-virtualizing-active-directory-domain-services-ad-ds"></a>Active Directory Domain Services (AD DS) の安全な仮想化
 
@@ -32,7 +32,7 @@ AD DS レプリケーションは、各ドメイン コントローラー上の 
 
 ![USN ロールバックが検出されたときのイベントのシーケンス](../media/Introduction-to-Active-Directory-Domain-Services--AD-DS--Virtualization--Level-100-/ADDS_Exampleofhowreplicationcanbecomeinconsistent.png)
 
-仮想マシン (VM) を利用すると、ハイパーバイザー管理者はドメイン コントローラーの USN (その論理クロック) を簡単にロールバックできます。たとえば、ドメイン コントローラーに認識されないままスナップショットを適用するという方法でロールバックできます。 USN と USN ロールバックの詳細については、「 [USN and USN Rollback (USN と USN ロールバック)](https://technet.microsoft.com/library/virtual_active_directory_domain_controller_virtualization_hyperv(WS.10).aspx#usn_and_usn_rollback)」を参照してください (このページには検出されない USN ロールバック インスタンスを示した他の図もあります)。
+仮想マシン (VM) を利用すると、ハイパーバイザー管理者はドメイン コントローラーの USN (その論理クロック) を簡単にロールバックできます。たとえば、ドメイン コントローラーに認識されないままスナップショットを適用するという方法でロールバックできます。 USN と USN ロールバックの詳細については、「 [USN and USN Rollback (USN と USN ロールバック)](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd363553(v=ws.10)#usn_and_usn_rollback)」を参照してください (このページには検出されない USN ロールバック インスタンスを示した他の図もあります)。
 
 Windows Server 2012 以降、VM 生成 ID と呼ばれる識別子を公開するハイパーバイザー プラットフォーム上でホストされる AD DS 仮想ドメイン コントローラーは、VM スナップショットの適用によって仮想マシンが適時にロールバックされるかどうかを調べ、必要な安全対策を講じて AD DS 環境を保護します。 VM-GenerationID 設計では、ハイパーバイザー ベンダーに依存しないメカニズムを使用して、ゲスト仮想マシンのアドレス空間でこの識別子を公開します。このため、VM-GenerationID をサポートするあらゆるハイパーバイザーで、安全な仮想化が一貫して実現されます。 仮想マシン内で稼働しているサービスとアプリケーションでこの識別子を抽出することにより、仮想マシンが適時にロールバックされたかを調べることができます。
 
@@ -127,7 +127,7 @@ USN ロールバックから回復するアプローチには、次の 2 つが�
 
 このドメイン コントローラーに対して有効なシステム状態のバックアップが存在するかどうかを評価します。 ロールバックされたドメイン コントローラーが誤って復元される前に有効なシステム状態のバックアップが作成され、ドメイン コントローラーで上行われた最近の変更がそのバックアップに含まれている場合は、最新のバックアップからシステム状態を復元します。
 
-バックアップのソースとしてスナップショットを使用することもできます。 または、「[適切なシステム状態データのバックアップが使用できない場合の仮想ドメイン コントローラーの復元](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd363553%28v%3dws.10%29#restoring-a-virtual-domain-controller-when-an-appropriate-system-state-data-backup-is-not-available)」セクションの手順を使用して、データベース自体に新しい呼び出し ID を与えるように設定することもできます
+バックアップのソースとしてスナップショットを使用することもできます。 または、「[適切なシステム状態データのバックアップが使用できない場合の仮想ドメイン コントローラーの復元](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd363553%28v%3dws.10%29#restoring-a-virtual-domain-controller-when-an-appropriate-system-state-data-backup-is-not-available)」セクションの手順を使用して、データベース自体に新しい呼び出し ID を与えるように設定することもできます
 
 ## <a name="next-steps"></a>次の手順
 

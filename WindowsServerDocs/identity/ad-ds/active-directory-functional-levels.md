@@ -10,12 +10,12 @@ ms.prod: windows-server
 ms.custom: it-pro
 ms.reviewer: maheshu
 ms.technology: identity-adds
-ms.openlocfilehash: 5f7a8f08ff10102fbc04b6f8272320bd3b77785d
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: b6a9a5c08e24f5c7bb7ac50ac1c72386ef8a6d0f
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80825495"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963054"
 ---
 # <a name="forest-and-domain-functional-levels"></a>フォレストとドメインの機能レベル
 
@@ -27,7 +27,7 @@ AD DS を展開するときに、ドメインおよびフォレストの機能�
 
 Windows 2003 の有効期間が終了したら、Windows 2003 のドメイン コントローラー (DC) を、Windows Server 2008、2008R2、2012、2012R2、2016、または 2019 に更新する必要があります。 その結果として、Windows Server 2003 を実行するすべてのドメイン コントローラーを、ドメインから削除する必要があります。
 
-Windows Server 2008 以上のドメイン機能レベルでは、分散ファイル サービス (DFS) レプリケーションを使用して、ドメイン コントローラー間で SYSVOL フォルダーの内容をレプリケートします。 Windows Server 2008 ドメイン機能レベル以上で新しいドメインを作成した場合、SYSVOL のレプリケートには DFS レプリケーションが自動的に使用されます。 それより低い低い機能レベルでドメイン作成した場合は、SYSVOL のレプリケーションを FRS から DFS に移行する必要があります。 移行手順については、[TechNet の手順](https://technet.microsoft.com/library/dd640019(v=WS.10).aspx)に従うか、[ストレージ チームのファイル キャビネット ブログの合理化された一連の手順](https://blogs.technet.com/b/filecab/archive/2014/06/25/streamlined-migration-of-frs-to-dfsr-sysvol.aspx)を参照してください。
+Windows Server 2008 以上のドメイン機能レベルでは、分散ファイル サービス (DFS) レプリケーションを使用して、ドメイン コントローラー間で SYSVOL フォルダーの内容をレプリケートします。 Windows Server 2008 ドメイン機能レベル以上で新しいドメインを作成した場合、SYSVOL のレプリケートには DFS レプリケーションが自動的に使用されます。 それより低い低い機能レベルでドメイン作成した場合は、SYSVOL のレプリケーションを FRS から DFS に移行する必要があります。 移行手順については、[TechNet の手順](../../storage/dfs-replication/migrate-sysvol-to-dfsr.md)に従うか、[ストレージ チームのファイル キャビネット ブログの合理化された一連の手順](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)を参照してください。
 
 ## <a name="windows-server-2019"></a>Windows Server 2019
 
@@ -45,7 +45,7 @@ Windows Server 2019 ドメイン コントローラーを追加する最小要�
 ### <a name="windows-server-2016-forest-functional-level-features"></a>Windows Server 2016 フォレストの機能レベルの機能
 
 * Windows Server 2012R2 フォレストの機能レベルで使用できるすべての機能と以下の機能を使用できます。
-   * [Microsoft Identity Manager (MIM) を使用する Privileged access management (PAM)](https://docs.microsoft.com/windows-server/identity/whats-new-active-directory-domain-services#a-namebkmkpamaprivileged-access-management)
+   * [Microsoft Identity Manager (MIM) を使用する Privileged access management (PAM)](../whats-new-active-directory-domain-services.md#privileged-access-management)
 
 ### <a name="windows-server-2016-domain-functional-level-features"></a>Windows Server 2016 ドメインの機能レベルの機能
 
@@ -54,7 +54,7 @@ Windows Server 2019 ドメイン コントローラーを追加する最小要�
    * DC を使うと、ユーザーが特定のドメイン参加済みデバイスに制限されているときのネットワーク NTLM の許可をサポートできます。
    * Kerberos クライアントが PKInit Freshness Extension で正常に認証されると、新しい公開キー ID SID を取得します。
 
-    詳細については、「[Kerberos 認証の新機能](https://docs.microsoft.com/windows-server/security/kerberos/whats-new-in-kerberos-authentication)」および「[Credential Protection の新機能](https://docs.microsoft.com/windows-server/security/credentials-protection-and-management/whats-new-in-credential-protection)」を参照してください
+    詳細については、「[Kerberos 認証の新機能](../../security/kerberos/whats-new-in-kerberos-authentication.md)」および「[Credential Protection の新機能](../../security/credentials-protection-and-management/whats-new-in-credential-protection.md)」を参照してください
 
 ## <a name="windows-server-2012r2"></a>Windows Server 2012R2
 
@@ -97,7 +97,7 @@ Windows Server 2019 ドメイン コントローラーを追加する最小要�
 ### <a name="windows-server-2012-domain-functional-level-features"></a>Windows Server 2012 ドメインの機能レベルの機能
 
 * Active Directory のすべての既定機能、Windows Server 2008R2 ドメイン機能レベルのすべての機能、それに加えて以下の機能:
-   * [KDC で信頼性情報、複合認証、および Kerberos 防御をサポートする] KDC 管理テンプレート ポリシーには、Windows Server 2012 ドメイン機能レベルを必要とする 2 つの設定 ([常に信頼性情報を提供する] および [防御されていない要求を失敗とする]) があります。 詳細については、「[Kerberos 認証の新機能](https://technet.microsoft.com/library/hh831747.aspx)」を参照してください
+   * [KDC で信頼性情報、複合認証、および Kerberos 防御をサポートする] KDC 管理テンプレート ポリシーには、Windows Server 2012 ドメイン機能レベルを必要とする 2 つの設定 ([常に信頼性情報を提供する] および [防御されていない要求を失敗とする]) があります。 詳細については、「[Kerberos 認証の新機能](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831747(v=ws.11))」を参照してください
 
 ## <a name="windows-server-2008r2"></a>Windows Server 2008R2
 
@@ -146,7 +146,7 @@ Windows Server 2019 ドメイン コントローラーを追加する最小要�
 
   * Windows Server 2008 モードで実行されているドメイン ベースの DFS 名前空間。これには、アクセスベースの列挙とスケーラビリティの向上のサポートが含まれます。 Windows Server 2008 モードでのドメイン ベースの名前空間を使うと、フォレストで Windows Server 2003 フォレスト機能レベルを使用する必要もあります。 詳しくは、「[名前空間の種類を選択する](https://go.microsoft.com/fwlink/?LinkId=180400)」をご覧ください。
   * Kerberos プロトコルに対する Advanced Encryption Standard (AES 128 および AES 256) のサポート。 AES を使用して TGT を発行するには、ドメイン機能レベルを Windows Server 2008 以上にし、ドメイン パスワードを変更する必要があります。 
-    * 詳しくは、「[Kerberos の強化](https://technet.microsoft.com/library/cc749438(ws.10).aspx)」をご覧ください。
+    * 詳しくは、「[Kerberos の強化](/previous-versions/windows/it-pro/windows-vista/cc749438(v=ws.10))」をご覧ください。
 
       > [!NOTE]
       >ドメイン コントローラーで DFL の変更が既にレプリケートされていても、まだ krbtgt パスワードが更新されていない場合、ドメインの機能レベルを Windows Server 2008 以上に上げた後、ドメイン コントローラーで認証エラーが発生することがあります。 この場合、ドメイン コントローラーで KDC サービスを再起動すると、新しい krbtgt パスワードのメモリ内更新がトリガーされ、関連する認証エラーが解決されます。
@@ -226,5 +226,5 @@ Windows Server 2019 ドメイン コントローラーを追加する最小要�
 
 ## <a name="next-steps"></a>次の手順
 
-* [ドメインの機能レベルを上げる](https://technet.microsoft.com/library/cc753104.aspx)  
-* [フォレストの機能レベルを上げる](https://technet.microsoft.com/library/cc730985.aspx)
+* [ドメインの機能レベルを上げる](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753104(v=ws.11))  
+* [フォレストの機能レベルを上げる](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc730985(v=ws.11))

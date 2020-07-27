@@ -10,12 +10,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 06/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 0596dbd847ae8e64e1f4c780f142f28e34656ae8
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 27f6a361ffd3bc5082cea57f6e09264520110d40
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80855905"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959134"
 ---
 # <a name="remote-desktop---allow-access-to-your-pc"></a>リモート デスクトップ - PC へのアクセスを許可する
 
@@ -61,6 +61,6 @@ PC にアクセスできるすべてのアカウントが、強力なパスワ�
 
 ## <a name="why-allow-connections-only-with-network-level-authentication"></a>ネットワーク レベル認証でのみ接続を許可する理由 
 
-PC にアクセスできるユーザーを制限する場合は、ネットワーク レベル認証 (NLA) でのみアクセスを許可することを選択します。 このオプションを有効にすると、ユーザーは PC に接続する前に、ネットワークに対して自分自身を認証する必要があります。 NLA を使用してリモート デスクトップを実行しているコンピューターからの接続のみを許可することは、悪意のあるユーザーやソフトウェアからコンピューターを保護することに役立つ、より安全な認証方法です。 NLA とリモート デスクトップの詳細については、[RDS 接続のための NLA の構成](https://technet.microsoft.com/library/cc732713(v=ws.11).aspx)に関するページを参照してください。
+PC にアクセスできるユーザーを制限する場合は、ネットワーク レベル認証 (NLA) でのみアクセスを許可することを選択します。 このオプションを有効にすると、ユーザーは PC に接続する前に、ネットワークに対して自分自身を認証する必要があります。 NLA を使用してリモート デスクトップを実行しているコンピューターからの接続のみを許可することは、悪意のあるユーザーやソフトウェアからコンピューターを保護することに役立つ、より安全な認証方法です。 NLA とリモート デスクトップの詳細については、[RDS 接続のための NLA の構成](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732713(v=ws.11))に関するページを参照してください。
 
 自宅ネットワーク上の PC に、そのネットワークの外部からリモート接続しようとしている場合は、このオプションを選択しないでください。

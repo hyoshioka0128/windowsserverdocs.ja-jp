@@ -11,12 +11,12 @@ ms.custom:
 - CI ID 116803
 - CSSTroubleshoot
 manager: dcscontentpm
-ms.openlocfilehash: fe07636908dffc6bb59c544d512b132e7640bf51
-ms.sourcegitcommit: 75b4cf49dd918ff98258dcae6e6e8d7825c9adec
+ms.openlocfilehash: 6a38dad3362b2fa6c95c48cf613577941ffcc82c
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84269224"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963580"
 ---
 # <a name="resolve-windows-activation-error-codes"></a>Windows ライセンス認証のエラー コードの解決
 
@@ -25,7 +25,7 @@ ms.locfileid: "84269224"
 
 この記事では、マルチ ライセンス認証キー (MAK) またはキー管理サービス (KMS) を使用して、1 台以上の Windows ベースのコンピューターでボリューム ライセンス認証を実行しようとしたときに発生する可能性があるエラー メッセージに対処するためのトラブルシューティング情報を提供します。 次の表に示すエラー コードを探し、リンクを選択すると、そのエラー コードと解決方法に関する詳細情報が表示されます。
 
-ボリューム ライセンス認証の詳細については、[ボリューム ライセンス認証の計画](https://docs.microsoft.com/windows/deployment/volume-activation/plan-for-volume-activation-client)のページを参照してください。
+ボリューム ライセンス認証の詳細については、[ボリューム ライセンス認証の計画](/windows/deployment/volume-activation/plan-for-volume-activation-client)のページを参照してください。
 
 Windows の現在のバージョンと最新バージョンのボリューム ライセンス認証の詳細については、[ボリュームライセンス認証 [クライアント]](https://docs.microsoft.com/windows/deployment/volume-activation/volume-activation-windows-10) のページを参照してください。
 

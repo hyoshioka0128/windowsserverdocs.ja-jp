@@ -9,21 +9,21 @@ ms.topic: get-started-article
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f8bbe4dcf9161686367f7807d522b79bcf99e32
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 4b8a674d61379c0a645cc379ab9f9eafa3cc19b1
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826405"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86960694"
 ---
 # <a name="updating-nano-server"></a>Nano Server の更新
 
 > [!IMPORTANT]
 > Windows Server バージョン 1709 以降では、Nano Server は[コンテナーの基本 OS イメージ](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image)としてのみ提供されます。 その意味については、[Nano Server に加えられる変更](nano-in-semi-annual-channel.md)に関する記事をご覧ください。 
 
-Nano Server を最新の状態に保つには、さまざまな方法が用意されています。 Windows Server の他のインストール オプションに比べて、Nano Server では、Windows 10 に近いよりアクティブなサービス モデルが採用されています。 このような定期的なリリースは、**Current Branch for Business (CBB)** リリースと呼ばれます。 このアプローチは、もっとすばやく改革を取り入れ、クラウド上での短期間の開発ライフサイクルに対応する必要のあるお客様をサポートするものです。 CBB の詳細については、[Windows Server ブログの記事](https://blogs.technet.microsoft.com/windowsserver/2016/07/12/windows-server-2016-new-current-branch-for-business-servicing-option/)をご覧ください。
+Nano Server を最新の状態に保つには、さまざまな方法が用意されています。 Windows Server の他のインストール オプションに比べて、Nano Server では、Windows 10 に近いよりアクティブなサービス モデルが採用されています。 このような定期的なリリースは、**Current Branch for Business (CBB)** リリースと呼ばれます。 このアプローチは、もっとすばやく改革を取り入れ、クラウド上での短期間の開発ライフサイクルに対応する必要のあるお客様をサポートするものです。 CBB の詳細については、[Windows Server ブログの記事](https://cloudblogs.microsoft.com/windowsserver/2016/07/12/windows-server-2016-new-current-branch-for-business-servicing-option/)をご覧ください。
 
-**これらの CBB リリースの合間**には、Nano Server は一連の "*累積的な更新プログラム*" によって最新の状態に維持されます。 たとえば、Nano Server の最初の累積的な更新プログラムは、2016 年 9 月 26 日に [KB4093120](https://support.microsoft.com/help/4093120/windows-10-update-kb4093120) でリリースされました。 これ以降の累積的な更新プログラムでは、これらの更新プログラムを Nano Server にインストールするためのさまざまな方法を用意しています。 この記事では、KB3192366 の更新プログラムを例として使い、Nano Server の累積的な更新プログラムを取得して適用する方法を説明します。 累積的な更新プログラムのモデルの詳細については、[Microsoft Update ブログの記事](https://blogs.technet.microsoft.com/mu/2016/10/25/patching-with-windows-server-2016/)を参照してください。
+**これらの CBB リリースの合間**には、Nano Server は一連の "*累積的な更新プログラム*" によって最新の状態に維持されます。 たとえば、Nano Server の最初の累積的な更新プログラムは、2016 年 9 月 26 日に [KB4093120](https://support.microsoft.com/help/4093120/windows-10-update-kb4093120) でリリースされました。 これ以降の累積的な更新プログラムでは、これらの更新プログラムを Nano Server にインストールするためのさまざまな方法を用意しています。 この記事では、KB3192366 の更新プログラムを例として使い、Nano Server の累積的な更新プログラムを取得して適用する方法を説明します。 累積的な更新プログラムのモデルの詳細については、[Microsoft Update ブログの記事](/archive/blogs/mu/patching-with-windows-server-2016)を参照してください。
 
 > [!NOTE]
 > オプションの Nano Server パッケージをメディアやオンライン リポジトリからインストールした場合、最近のセキュリティ修正プログラムは含まれていません。 オプションのパッケージとベースのオペレーティング システムの間のバージョンの不一致を避けるためには、オプションのパッケージをインストールした直後に必ず、サーバーを再起動する**前に**、最新の累積的な更新プログラムをインストールする必要があります。
@@ -154,10 +154,10 @@ Enter-PSSession -ComputerName (Read-Host "Enter Nano Server IP address") -Creden
    
 ## <a name="additional-options"></a>追加オプション
 Nano Server のその他の更新方法には、上記の方法と一部が共通していたり、上記の方法を補完したりするものがあります。 このようなオプションとして、Windows Server Update Services (WSUS)、System Center Virtual Machine Manager (VMM)、タスク スケジューラ、または Microsoft 以外のソリューションを使う方法があります。
-- 次のレジストリ キーを設定して、[WSUS 用に Windows Update を構成](https://msdn.microsoft.com/library/dd939844(v=ws.10).aspx)します。
+- 次のレジストリ キーを設定して、[WSUS 用に Windows Update を構成](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd939844(v=ws.10))します。
   - WUServer
   - WUStatusServer (通常は WUServer と同じ値を使います)
   - UseWUServer
   - AUOptions
-- [VMM でファブリックの更新を管理する](https://technet.microsoft.com/library/gg675084(v=sc.12).aspx)
-- [スケジュールされたタスクを登録する](https://technet.microsoft.com/library/jj649811.aspx)
+- [VMM でファブリックの更新を管理する](/previous-versions/system-center/system-center-2012-R2/gg675084(v=sc.12))
+- [スケジュールされたタスクを登録する](/previous-versions/system-center/system-center-2012-R2/gg675084(v=sc.12))

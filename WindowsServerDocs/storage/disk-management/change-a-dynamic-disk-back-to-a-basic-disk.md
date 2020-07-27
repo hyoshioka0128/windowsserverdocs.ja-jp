@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: f8ad7ca8fedfa3493a7f5369f8f603913879b50d
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: f866127bc43df307ac1a6a1fa44daac91ada5dcd
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475429"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966084"
 ---
 # <a name="change-a-dynamic-disk-back-to-a-basic-disk"></a>ダイナミック ディスクからベーシック ディスクへの再変換
 
@@ -70,4 +70,4 @@ ms.locfileid: "85475429"
 
 ## <a name="additional-references"></a>その他の参照情報
 
--   [コマンド ライン構文の表記規則](https://technet.microsoft.com/library/cc742449(v=ws.11).aspx)
+-   [コマンド ライン構文の表記規則](/previous-versions/orphan-topics/ws.11/cc742449(v=ws.11))

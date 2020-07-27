@@ -9,12 +9,12 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.date: 02/19/2020
-ms.openlocfilehash: 44aa465773674625fa392a644ffb188140138bde
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 4598c0f60fac98cd14a6f7d920b9c6f31704bd06
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "77519597"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963374"
 ---
 # <a name="optimizing-windows-10-version-1909-for-a-virtual-desktop-infrastructure-vdi-role"></a>仮想デスクトップ インフラストラクチャ (VDI) ロール用の Windows 10 バージョン 1909 の最適化
 
@@ -101,23 +101,23 @@ VDI VM の VDI のアーキテクチャによっては、PreFetch や SuperFetch
 
 ### <a name="to-sysprep-or-not-sysprep"></a>Sysprep の可否
 
-Windows 10 には、[システム準備ツール](https://docs.microsoft.com/windows-hardware/manufacture/desktop/sysprep--system-preparation--overview) (多くの場合、"Sysprep" と略されます) と呼ばれる組み込み機能があります。 Sysprep ツールは、複製用にカスタマイズされた Windows 10 イメージを準備するために使用されます。 Sysprep プロセスは、最終的なオペレーティング システムが実稼働環境で実行するために適切に一意になっているようにします。
+Windows 10 には、[システム準備ツール](/windows-hardware/manufacture/desktop/sysprep--system-preparation--overview) (多くの場合、"Sysprep" と略されます) と呼ばれる組み込み機能があります。 Sysprep ツールは、複製用にカスタマイズされた Windows 10 イメージを準備するために使用されます。 Sysprep プロセスは、最終的なオペレーティング システムが実稼働環境で実行するために適切に一意になっているようにします。
 
 Sysprep を実行したほうがよい理由としないほうがよい理由があります。 VDI の場合、このイメージを使用してログオンする以降のユーザーにとってのプロファイル テンプレートとして使用される既定のユーザー プロファイルをカスタマイズする機能が必要になることがあります。 必要なアプリがインストールされているが、アプリごとの設定を制御できる場合もあります。
 
-代替方法はインストール元の標準の .ISO を使用するというもので、おそらく無人インストール応答ファイルやタスク シーケンスを使用してアプリケーションをインストールしたりアプリケーションを削除したりします。 また、タスク シーケンスを使用して、イメージのローカル ポリシー設定を指定することもできます (たとえば、[ローカル グループ ポリシー オブジェクト ユーティリティ (LGPO) ツール](https://docs.microsoft.com/archive/blogs/secguide/lgpo-exe-local-group-policy-object-utility-v1-0)を使用)。
+代替方法はインストール元の標準の .ISO を使用するというもので、おそらく無人インストール応答ファイルやタスク シーケンスを使用してアプリケーションをインストールしたりアプリケーションを削除したりします。 また、タスク シーケンスを使用して、イメージのローカル ポリシー設定を指定することもできます (たとえば、[ローカル グループ ポリシー オブジェクト ユーティリティ (LGPO) ツール](/archive/blogs/secguide/lgpo-exe-local-group-policy-object-utility-v1-0)を使用)。
 
 ### <a name="supportability"></a>サポート
 
 Windows の既定値が変更されるたびに、サポート性に関する疑問点が生じます。 VDI イメージ (VM またはセッション) をカスタマイズしたら、イメージに加えられたすべての変更を変更ログで追跡する必要があります。 トラブルシューティングでは、多くの場合、イメージをプール内で分離し、問題分析用に構成できます。 問題が根本原因まで追跡されると、その変更を最初にテスト環境に展開し、最終的には実稼働ワークロードに展開できます。
 
-このドキュメントでは、セキュリティに影響を与えるシステム サービス、ポリシー、またはタスクに言及することを意図的に避けています。 続いては、Windows サービスです。 メンテナンス期間以外で VDI イメージにサービスを提供する機能は削除されました。これは、"*セキュリティ ソフトウェア更新を除き*"、VDI 環境におけるほとんどのサービス イベントの発生時にメンテナンス期間が存在するためです。 Microsoft では、VDI 環境における Windows セキュリティのガイダンスを公開しています。 詳細については、「[仮想デスクトップ インフラストラクチャ (VDI) 環境への Windows Defender ウイルス対策の展開ガイド](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-antivirus/deployment-vdi-windows-defender-antivirus)」を参照してください。
+このドキュメントでは、セキュリティに影響を与えるシステム サービス、ポリシー、またはタスクに言及することを意図的に避けています。 続いては、Windows サービスです。 メンテナンス期間以外で VDI イメージにサービスを提供する機能は削除されました。これは、"*セキュリティ ソフトウェア更新を除き*"、VDI 環境におけるほとんどのサービス イベントの発生時にメンテナンス期間が存在するためです。 Microsoft では、VDI 環境における Windows セキュリティのガイダンスを公開しています。 詳細については、「[仮想デスクトップ インフラストラクチャ (VDI) 環境への Windows Defender ウイルス対策の展開ガイド](/windows/security/threat-protection/windows-defender-antivirus/deployment-vdi-windows-defender-antivirus)」を参照してください。
 
 既定の Windows 設定を変更する場合は、サポート性を考慮してください。 ハードニング、"ライトニング" などの名のもとに、システム サービス、ポリシー、またはスケジュールされたタスクを変更すると、困難な問題が発生する可能性があります。既定の設定の変更に関する最新の既知の問題については、Microsoft サポート技術情報を参照してください。 このドキュメントのガイダンスと GitHub 上の関連スクリプトは、既知の問題が発生した場合に備えて維持されます。 また、いくつかの方法で Microsoft に問題を報告していただくこともできます。
 
 任意の検索エンジンで “"開始値" site:support.microsoft.com” という語句を検索すると、サービスの既定の開始値に関する既知の問題を表示できます。
 
-このドキュメントと GitHub 上の関連するスクリプトでは、既定のアクセス許可が変更されないことに留意してください。 セキュリティ設定の強化を望まれる場合は、**AaronLocker** として知られているプロジェクトで開始してください。 詳細については、「[発表:"AaronLocker" を使用したアプリケーションのホワイトリスト登録](https://docs.microsoft.com/archive/blogs/aaron_margosis/announcing-application-whitelisting-with-aaronlocker)」を参照してください。
+このドキュメントと GitHub 上の関連するスクリプトでは、既定のアクセス許可が変更されないことに留意してください。 セキュリティ設定の強化を望まれる場合は、**AaronLocker** として知られているプロジェクトで開始してください。 詳細については、「[発表:"AaronLocker" を使用したアプリケーションのホワイトリスト登録](/archive/blogs/aaron_margosis/announcing-application-whitelisting-with-aaronlocker)」を参照してください。
 
 #### <a name="vdi-optimization-categories"></a>VDI 最適化のカテゴリ
 
@@ -176,13 +176,13 @@ PowerShell からのこの切り詰められた出力例に示すように、次
 
 システムにプロビジョニングされている UWP アプリは、タスク シーケンスの一環としてオペレーティング システムのインストール中に、またはオペレーティング システムのインストール後に後から削除することができます。 これは、イメージ モジュラーを作成または維持するプロセス全体を構成するので、推奨の方法になる可能性があります。 スクリプトを開発した後は、以降のビルドで何かが変更された場合に、プロセスを最初から繰り返すのではなく、既存のスクリプトを編集します。 このトピックの情報へのリンクを次に示します。
 
-[タスク シーケンス中の Windows 10 インボックス アプリの削除](https://blogs.technet.microsoft.com/mniehaus/2015/11/11/removing-windows-10-in-box-apps-during-a-task-sequence/)
+[タスク シーケンス中の Windows 10 インボックス アプリの削除](/archive/blogs/mniehaus/removing-windows-10-in-box-apps-during-a-task-sequence)
 
 [PowerShell バージョン 1.3 を使用した Windows 10 WIM ファイルからの組み込みアプリの削除](https://gallery.technet.microsoft.com/Removing-Built-in-apps-65dc387b)
 
-[Windows 10 1607:機能更新プログラムの展開時でのアプリの復帰の防止](https://blogs.technet.microsoft.com/mniehaus/2016/08/23/windows-10-1607-keeping-apps-from-coming-back-when-deploying-the-feature-update/)
+[Windows 10 1607:機能更新プログラムの展開時でのアプリの復帰の防止](/archive/blogs/mniehaus/windows-10-1607-keeping-apps-from-coming-back-when-deploying-the-feature-update)
 
-続いて [Remove-AppxProvisionedPackage](https://docs.microsoft.com/powershell/module/dism/remove-appxprovisionedpackage?view=win10-ps) PowerShell コマンドを実行して、UWP アプリ ペイロードを削除します。
+続いて [Remove-AppxProvisionedPackage](/powershell/module/dism/remove-appxprovisionedpackage?view=win10-ps) PowerShell コマンドを実行して、UWP アプリ ペイロードを削除します。
 
 ```powershell
 Remove-AppxProvisionedPackage -Online -PackageName
@@ -253,7 +253,7 @@ Windows Media Player パッケージを削除する場合 (約 60 MB のディ�
 
 #### <a name="enable-or-disable-windows-features-using-dism"></a>DISM を使用して Windows の機能を有効または無効にする
 
-組み込みの Dism.exe ツールを使用して、Windows オプション機能を列挙および制御できます。 Dism.exe スクリプトは、オペレーティング システムのインストール タスク シーケンス中に開発および実行できます。 関連する Windows テクノロジは、[オンデマンド機能](https://docs.microsoft.com/windows-hardware/manufacture/desktop/features-on-demand-v2--capabilities)と呼ばれます。
+組み込みの Dism.exe ツールを使用して、Windows オプション機能を列挙および制御できます。 Dism.exe スクリプトは、オペレーティング システムのインストール タスク シーケンス中に開発および実行できます。 関連する Windows テクノロジは、[オンデマンド機能](/windows-hardware/manufacture/desktop/features-on-demand-v2--capabilities)と呼ばれます。
 
 #### <a name="default-user-settings"></a>既定のユーザー設定
 
@@ -536,13 +536,13 @@ VDI 環境での Windows 10 の多数の最適化は、Windows ポリシーを�
 | ローカル コンピューター ポリシー\\ユーザーの構成\\管理用テンプレート |  |  |  |
 | タスク バーと [スタート] メニュー | ネットワーク アイコンを削除する |  | 有効にします。 システム通知領域にネットワーク アイコンが表示されません。 |
 
-ネットワーク接続状態インジケーター (NCSI) の詳細については、[「Windows 10 Enterprise Version 1903 の接続エンドポイントの管理](https://docs.microsoft.com/windows/privacy/manage-windows-1903-endpoints)」および[「Windows 10 オペレーティング システムのコンポーネントから Microsoft サービスへの接続を管理する」](https://docs.microsoft.com/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services)をご覧ください。
+ネットワーク接続状態インジケーター (NCSI) の詳細については、[「Windows 10 Enterprise Version 1903 の接続エンドポイントの管理](/windows/privacy/manage-windows-1903-endpoints)」および[「Windows 10 オペレーティング システムのコンポーネントから Microsoft サービスへの接続を管理する」](/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services)をご覧ください。
 
 ### <a name="system-services"></a>システム サービス
 
 リソースを節約するためにシステム サービスの無効化を検討している場合は、検討しているサービスが他のサービスのコンポーネントになっていないことに十分注意してください。 一部のサービスは、サポートされている方法で無効にできないため、一覧に含まれていないことに注意してください。
 
-これらの推奨事項のほとんどは、「[デスクトップ エクスペリエンス搭載 Windows Server 2016 上のシステム サービスを無効にする場合のガイダンス](https://docs.microsoft.com/windows-server/security/windows-services/security-guidelines-for-disabling-system-services-in-windows-server)」にある、デスクトップ エクスペリエンスとともにインストールされた Windows Server 2016 の推奨事項を反映しています。
+これらの推奨事項のほとんどは、「[デスクトップ エクスペリエンス搭載 Windows Server 2016 上のシステム サービスを無効にする場合のガイダンス](../../security/windows-services/security-guidelines-for-disabling-system-services-in-windows-server.md)」にある、デスクトップ エクスペリエンスとともにインストールされた Windows Server 2016 の推奨事項を反映しています。
 
 無効にする候補として適しているように思われるサービスの多くは、手動サービス開始の種類に設定されています。 つまり、プロセスまたはイベントが、無効化を検討しているサービスへの要求をトリガーしない限り、サービスは自動的に開始することも、開始されることもありません。 既に手動開始の種類に設定されているサービスは通常、ここには表示されません。
 
@@ -575,9 +575,9 @@ VDI 環境での Windows 10 の多数の最適化は、Windows ポリシーを�
 
 ユーザーごとのサービスは、ユーザーが Windows または Windows Server にサインインするときに作成され、ユーザーがサインアウトすると停止され削除されるサービスです。これらのサービスは、ユーザー アカウントのセキュリティ コンテキストで実行します。これにより、事前構成されたアカウントに関連付けられたり、タスクとして、エクスプローラーでこれらの種類のサービスを実行していた以前のアプローチよりも適切なリソース管理が得られます。
 
-[Windows 10 および Windows Server のユーザーごとのサービス](https://docs.microsoft.com/windows/application-management/per-user-services-in-windows)
+[Windows 10 および Windows Server のユーザーごとのサービス](/windows/application-management/per-user-services-in-windows)
 
-サービス開始値を変更する場合は、管理者特権での .cmd プロンプトを開き、サービス コントロール マネージャー ツール "Sc.exe" を実行する方法をお勧めします。 "Sc.exe" の使用方法の詳細については、「[Sc](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc754599(v=ws.11))」を参照してください。
+サービス開始値を変更する場合は、管理者特権での .cmd プロンプトを開き、サービス コントロール マネージャー ツール "Sc.exe" を実行する方法をお勧めします。 "Sc.exe" の使用方法の詳細については、「[Sc](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc754599(v=ws.11))」を参照してください。
 
 ### <a name="scheduled-tasks"></a>スケジュールされたタスク
 
@@ -653,7 +653,7 @@ Windows での他の項目と同様に、項目を無効にすることを検討
 
 ### <a name="apply-windows-and-other-updates"></a>Windows と他の更新プログラムを適用する
 
-Microsoft Update からか、内部リソースからかにかかわらず、Windows Defender のシグネチャを含む使用可能な更新プログラムを適用します。 ここで、Microsoft Office (インストールされている場合) やその他のソフトウェア更新プログラムなど、利用可能なその他の更新プログラムを適用することをお勧めします。 PowerShell がイメージに残る場合は、コマンド [Update-Help](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/update-help?view=powershell-7) を実行して、PowerShell で使用可能な最新のヘルプをダウンロードできます。
+Microsoft Update からか、内部リソースからかにかかわらず、Windows Defender のシグネチャを含む使用可能な更新プログラムを適用します。 ここで、Microsoft Office (インストールされている場合) やその他のソフトウェア更新プログラムなど、利用可能なその他の更新プログラムを適用することをお勧めします。 PowerShell がイメージに残る場合は、コマンド [Update-Help](/powershell/module/microsoft.powershell.core/update-help?view=powershell-7) を実行して、PowerShell で使用可能な最新のヘルプをダウンロードできます。
 
 #### <a name="servicing-the-operating-system-and-apps"></a>オペレーティング システムやアプリへのサービス提供
 
@@ -704,7 +704,7 @@ VDI の使用を無効にすることを検討する必要があるシステム 
 
 ### <a name="windows-defender-optimization-with-vdi"></a>VDI を使用した Windows Defender の最適化
 
-Microsoft は、VDI 環境での Windows Defender に関する説明書を最近公開しました。 詳細については、「[仮想デスクトップ インフラストラクチャ (VDI) 環境への Windows Defender ウイルス対策の展開ガイド](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-antivirus/deployment-vdi-windows-defender-antivirus)」を参照してください。
+Microsoft は、VDI 環境での Windows Defender に関する説明書を最近公開しました。 詳細については、「[仮想デスクトップ インフラストラクチャ (VDI) 環境への Windows Defender ウイルス対策の展開ガイド](/windows/security/threat-protection/windows-defender-antivirus/deployment-vdi-windows-defender-antivirus)」を参照してください。
 
 上記の記事には、"ゴールド" の VDI イメージを提供する手順と、実行している状態に VDI クライアントを維持する方法が含まれています。 VDI コンピューターが Windows Defender シグネチャを更新する必要があるときにネットワーク帯域幅を減らすには、再起動の時間をずらし、可能な場合は業務時間外に再起動をスケジュールします。 Windows Defender シグネチャ更新プログラムは、ファイル共有の内部に収容でき、可能であれば、VDI 仮想マシンと同じまたは近接したネットワーク セグメントにこれらのファイル共有を持つことができます。
 
@@ -715,7 +715,7 @@ Microsoft は、VDI 環境での Windows Defender に関する説明書を最近
 >[!NOTE]
 > このセクションの一部の設定はレジストリのみに基づいており、実稼働環境での使用のためにイメージを展開する前に基本イメージに組み込む必要があります。
 
-次の設定は、Windows Product Group により Microsoft.com で公開された「[Windows Server 2016 のパフォーマンス チューニング ガイドライン](https://docs.microsoft.com/windows-server/administration/performance-tuning/)」に記載されています。
+次の設定は、Windows Product Group により Microsoft.com で公開された「[Windows Server 2016 のパフォーマンス チューニング ガイドライン](/windows-server/administration/performance-tuning/)」に記載されています。
 
 #### <a name="disablebandwidththrottling"></a>DisableBandwidthThrottling
 
@@ -745,15 +745,15 @@ Windows 10 に適用されます。 既定値は **128** であり、有効範�
 
 Windows 10 に適用されます。 既定値は **1023** です。 このパラメーターでは、アプリケーションがファイルを閉じた後に共有リソース上で開いたままにする必要があるファイルの最大数を指定します。 数千ものクライアントが SMB サーバーに接続している場合、この値を **256** に減らすことを検討してください。
 
-Windows PowerShell コマンドレットの [Set-SmbClientConfiguration](https://docs.microsoft.com/powershell/module/smbshare/set-smbclientconfiguration?view=win10-ps) および [Set-SmbServerConfiguration](https://docs.microsoft.com/powershell/module/smbshare/set-smbserverconfiguration?view=win10-ps) を使用して、これらの SMB 設定の多くを構成できます。 レジストリのみの設定は、次の例のように Windows PowerShell を使用して構成することもできます。
+Windows PowerShell コマンドレットの [Set-SmbClientConfiguration](/powershell/module/smbshare/set-smbclientconfiguration?view=win10-ps) および [Set-SmbServerConfiguration](/powershell/module/smbshare/set-smbserverconfiguration?view=win10-ps) を使用して、これらの SMB 設定の多くを構成できます。 レジストリのみの設定は、次の例のように Windows PowerShell を使用して構成することもできます。
 
 ```powershell
 Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanWorkstation\Parameters" RequireSecuritySignature -Value 0 -Force
 ```
 
-Windows Restricted Traffic Limited Functionality Baseline ガイダンスからの追加設定。Microsoft は、インターネットに直接接続していないか、Microsoft や他のサービスに送信されるデータを軽減したい環境に対して、[Windows セキュリティ ベースライン](https://docs.microsoft.com/powershell/module/smbshare/set-smbserverconfiguration?view=win10-ps)と同じ手順を使用して作成されたベースラインをリリースしました。
+Windows Restricted Traffic Limited Functionality Baseline ガイダンスからの追加設定。Microsoft は、インターネットに直接接続していないか、Microsoft や他のサービスに送信されるデータを軽減したい環境に対して、[Windows セキュリティ ベースライン](/powershell/module/smbshare/set-smbserverconfiguration?view=win10-ps)と同じ手順を使用して作成されたベースラインをリリースしました。
 
-[Windows Restricted Traffic Limited Functionality Baseline](https://docs.microsoft.com/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services) 設定は、グループ ポリシーの表でアスタリスクのマーク付きで示されます。
+[Windows Restricted Traffic Limited Functionality Baseline](/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services) 設定は、グループ ポリシーの表でアスタリスクのマーク付きで示されます。
 
 #### <a name="disk-cleanup-including-using-the-disk-cleanup-wizard"></a>ディスク クリーンアップ (ディスク クリーンアップ ウィザードの使用を含む)
 

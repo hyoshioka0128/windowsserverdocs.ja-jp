@@ -10,12 +10,12 @@ manager: lizross
 ms.author: helohr
 ms.date: 06/01/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: aadb115c68108125abdaf980c12eac951d798bba
-ms.sourcegitcommit: df94dac422d13566c32e1cdb8c6e7a4e82747947
+ms.openlocfilehash: 50eb7aaa9b8d4d8826f74f2a5338c93dee5d1053
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84205613"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86954074"
 ---
 # <a name="remote-desktop-uri-scheme"></a>リモート デスクトップの URI のスキーマ
 
@@ -80,30 +80,30 @@ rdp://full%20address=s:mypc:3389&audiomode=i:2&disable%20themes=i:1
 | allow desktop composition=i:&lt;0 または 1&gt;              | x       | x   | x   |
 | allow font smoothing=i:<0 または 1&gt;                      | x       | x   | x   |
 | alternate shell=s:&lt;文字列&gt;                        | x       | x   | x   |
-| [audiomode=i:&lt;0、1、または 2&gt;](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff393707(v=ws.10)) | x       | x   | x   |
-| [authentication level=i:&lt;0 または 1&gt;](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff393709(v=ws.10)) | x       | x   | x   |
+| [audiomode=i:&lt;0、1、または 2&gt;](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/ff393707(v=ws.10)) | x       | x   | x   |
+| [authentication level=i:&lt;0 または 1&gt;](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/ff393709(v=ws.10)) | x       | x   | x   |
 | connect to console=i:&lt;0 または 1&gt;                     | x       | x   | x   |
 | disable cursor settings=i:&lt;0 または 1&gt;                | x       | x   | x   |
 | disable full window drag=i:&lt;0 または 1&gt;               | x       | x   | x   |
 | disable menu anims=i:&lt;0 または 1&gt;                     | x       | x   | x   |
 | disable themes=i:&lt;0 または 1&gt;                         | x       | x   | x   |
 | disable wallpaper=i:&lt;0 または 1&gt;                      | x       | x   | x   |
-| [drivestoredirect = s: *](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff393728(v=ws.10)) (これは、唯一サポートされる値です) | x       | x   |     |
-| [desktopheight=i:&lt;ピクセル単位の値&gt;](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff393702(v=ws.10)) |         | x   |     |
-| [desktopwidth=i:&lt;ピクセル単位の値&gt;](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff393697(v=ws.10))  |         | x   |     |
-| [domain=s:&lt;文字列&gt;](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff393673(v=ws.10))                 | x | x | x |
-| [full address=s:&lt;文字列&gt;](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff393661(v=ws.10))           | x | x | x |
+| [drivestoredirect = s: *](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/ff393728(v=ws.10)) (これは、唯一サポートされる値です) | x       | x   |     |
+| [desktopheight=i:&lt;ピクセル単位の値&gt;](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/ff393702(v=ws.10)) |         | x   |     |
+| [desktopwidth=i:&lt;ピクセル単位の値&gt;](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/ff393697(v=ws.10))  |         | x   |     |
+| [domain=s:&lt;文字列&gt;](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/ff393673(v=ws.10))                 | x | x | x |
+| [full address=s:&lt;文字列&gt;](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/ff393661(v=ws.10))           | x | x | x |
 | gatewayhostname=s:&lt;文字列&gt;                  | x | x | x |
-| [gatewayusagemethod=i:&lt;1 または 2&gt;](https://docs.microsoft.com/windows/win32/termserv/imsrdpclienttransportsettings-gatewayusagemethod)                | x | x | x |
-| [prompt for credentials on client=i:&lt;0 または 1&gt;](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff393660(v=ws.10)) |   | x |   |
-| [loadbalanceinfo=s:&lt;文字列&gt;](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff393684(v=ws.10))                  | x | x | x |
-| [redirectprinters=i:&lt;0 または 1&gt;](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff393671(v=ws.10))                 |   | x |   |
+| [gatewayusagemethod=i:&lt;1 または 2&gt;](/windows/win32/termserv/imsrdpclienttransportsettings-gatewayusagemethod)                | x | x | x |
+| [prompt for credentials on client=i:&lt;0 または 1&gt;](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/ff393660(v=ws.10)) |   | x |   |
+| [loadbalanceinfo=s:&lt;文字列&gt;](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/ff393684(v=ws.10))                  | x | x | x |
+| [redirectprinters=i:&lt;0 または 1&gt;](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/ff393671(v=ws.10))                 |   | x |   |
 | remoteapplicationcmdline=s:&lt;文字列&gt;         | x | x | x |
 | remoteapplicationmode=i:&lt;0 または 1&gt;            | x | x | x |
 | remoteapplicationprogram=s:&lt;文字列&gt;         | x | x | x |
 | shell working directory=s:&lt;文字列&gt;          | x | x | x |
 | Use redirection server name=i:&lt;0 または 1&gt;      | x | x | x |
-| [username=s:&lt;文字列&gt;](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff393678(v=ws.10))                  | x | x | x |
-| [screen mode id=i:&lt;1 または 2&gt;](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff393692(v=ws.10))            |   | x |   |
-| [session bpp=i:&lt;8、15、16、24、または 32&gt;](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff393680(v=ws.10)) |   | x |   |
-| [use multimon=i:&lt;0 または 1&gt;](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff393695(v=ws.10))              |   | x |   |
+| [username=s:&lt;文字列&gt;](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/ff393678(v=ws.10))                  | x | x | x |
+| [screen mode id=i:&lt;1 または 2&gt;](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/ff393692(v=ws.10))            |   | x |   |
+| [session bpp=i:&lt;8、15、16、24、または 32&gt;](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/ff393680(v=ws.10)) |   | x |   |
+| [use multimon=i:&lt;0 または 1&gt;](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/ff393695(v=ws.10))              |   | x |   |

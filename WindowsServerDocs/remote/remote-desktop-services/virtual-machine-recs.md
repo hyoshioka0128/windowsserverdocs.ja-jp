@@ -8,12 +8,12 @@ ms.date: 12/02/2019
 ms.topic: article
 author: Heidilohr
 manager: lizross
-ms.openlocfilehash: beacd246639b5586c071a24bdd7b09c6aceeadab
-ms.sourcegitcommit: 32f810c5429804c384d788c680afac427976e351
+ms.openlocfilehash: 644799ba9c6ebde4943b678199c678da376e05ae
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83203384"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963144"
 ---
 # <a name="virtual-machine-sizing-guidelines"></a>仮想マシンのサイズ設定のガイドライン
 
@@ -40,9 +40,9 @@ ms.locfileid: "83203384"
 
 サービス レベル アグリーメント (SLA) が必要な運用環境のワークロードには、OS ディスクで Premium SSD ストレージを使用することをお勧めします。 詳細については、「[Virtual Machines の SLA](https://azure.microsoft.com/support/legal/sla/virtual-machines/v1_8/)」を参照してください。
 
-ビデオ レンダリング、3D デザイン、シミュレーションのためにグラフィック集中型のプログラムを定期的に使用するユーザーには、多くの場合、グラフィックス プロセッシング ユニット (GPU) が適しています。 グラフィックス アクセラレーションの詳細については、[グラフィックス レンダリング テクノロジの選択](rds-graphics-virtualization.md)に関する記事を参照してください。 Azure には、いくつかのグラフィックス アクセラレーション展開オプションと、使用可能な複数の GPU VM サイズがあります。 詳細については、「[GPU 最適化済み仮想マシンのサイズ](https://docs.microsoft.com/azure/virtual-machines/windows/sizes-gpu)」を参照してください。
+ビデオ レンダリング、3D デザイン、シミュレーションのためにグラフィック集中型のプログラムを定期的に使用するユーザーには、多くの場合、グラフィックス プロセッシング ユニット (GPU) が適しています。 グラフィックス アクセラレーションの詳細については、[グラフィックス レンダリング テクノロジの選択](rds-graphics-virtualization.md)に関する記事を参照してください。 Azure には、いくつかのグラフィックス アクセラレーション展開オプションと、使用可能な複数の GPU VM サイズがあります。 詳細については、「[GPU 最適化済み仮想マシンのサイズ](/azure/virtual-machines/windows/sizes-gpu)」を参照してください。
 
-[負荷の急増に対応できる B シリーズ VM](https://docs.microsoft.com/azure/virtual-machines/windows/b-series-burstable) は、最大 CPU パフォーマンスを常に必要としないユーザーに適しています。 VM の種類とサイズの詳細については、「[Azure の Windows 仮想マシンのサイズ](https://docs.microsoft.com/azure/virtual-machines/windows/sizes)」、価格情報については、[Microsoft の Virtual Machines シリーズのページ](https://azure.microsoft.com/pricing/details/virtual-machines/series/)を参照してください。
+[負荷の急増に対応できる B シリーズ VM](/azure/virtual-machines/windows/b-series-burstable) は、最大 CPU パフォーマンスを常に必要としないユーザーに適しています。 VM の種類とサイズの詳細については、「[Azure の Windows 仮想マシンのサイズ](/azure/virtual-machines/windows/sizes)」、価格情報については、[Microsoft の Virtual Machines シリーズのページ](https://azure.microsoft.com/pricing/details/virtual-machines/series/)を参照してください。
 
 ## <a name="test-your-workload"></a>ワークロードをテストする
 

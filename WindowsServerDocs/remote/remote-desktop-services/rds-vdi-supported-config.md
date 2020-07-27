@@ -9,12 +9,12 @@ ms.topic: article
 ms.assetid: 8f164f5d-a498-4f91-a12f-3e01d554f810
 author: lizap
 manager: dongill
-ms.openlocfilehash: 914e6f4507e0fd997a31866b10e3c48e0cd4cbd7
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 4ecd290a910ddbb1aba85b26764fb86e30731172
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80857265"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963354"
 ---
 # <a name="supported-windows-10-security-configurations-for-remote-desktop-services-vdi"></a>リモート デスクトップ サービス VDI でサポートされる Windows 10 のセキュリティ構成
 
@@ -29,9 +29,9 @@ Windows 10 と Windows Server 2016 には、オペレーティング システ�
 
 |  VDI のコレクションの種類               |  管理対象のプール型 |  管理対象の個人用 |  非管理対象のプール型                                     |  非管理対象の個人用                                    |
 |-------------------------------------|------------------|--------------------|--------------------------------------------------------|--------------------------------------------------------|
-| [Credential Guard](https://technet.microsoft.com/itpro/windows/keep-secure/credential-guard)                    | はい              | はい                | はい                                                    | はい                                                    |
-| [Device Guard](https://technet.microsoft.com/itpro/windows/keep-secure/device-guard-deployment-guide)                        | はい              | はい                | はい                                                    | はい                                                    |
-| [Remote Credential Guard](https://technet.microsoft.com/itpro/windows/keep-secure/remote-credential-guard)             | いいえ               | いいえ                 | いいえ                                                     | いいえ                                                     |
+| [Credential Guard](/windows/security/identity-protection/credential-guard/credential-guard)                    | はい              | はい                | はい                                                    | はい                                                    |
+| [Device Guard](/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control-deployment-guide)                        | はい              | はい                | はい                                                    | はい                                                    |
+| [Remote Credential Guard](/windows/security/identity-protection/remote-credential-guard)             | いいえ               | いいえ                 | いいえ                                                     | いいえ                                                     |
 | [シールド型で暗号化がサポートされる VM](../../security/guarded-fabric-shielded-vm/guarded-fabric-and-shielded-vms.md) | いいえ               | いいえ                 | 追加の構成によって暗号化がサポートされる VM | 追加の構成によって暗号化がサポートされる VM |
 
 ## <a name="remote-credential-guard"></a>Remote Credential Guard:
@@ -47,4 +47,3 @@ Remote Credential Guard がサポートされるのは、ターゲット マシ�
 暗号化がサポートされる VM を活用するには:
 - 非管理対象コレクションと、リモート デスクトップ サービスのコレクション作成プロセスの外部にあるプロビジョニング テクノロジを使用して仮想マシンをプロビジョニングします。 
 - ユーザー プロファイル ディスクは、差分ディスクに依存しているためサポートされません 
-

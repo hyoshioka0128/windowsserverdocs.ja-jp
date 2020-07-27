@@ -9,12 +9,12 @@ ms.topic: article
 ms.assetid: c925c7eb-6880-411f-8e59-bd0f57cc5fc3
 author: lizap
 manager: dongill
-ms.openlocfilehash: 406112eae884b1e34d54eb18700c3ad28c3f52c6
-ms.sourcegitcommit: f81aa22739d818382d314561dece59a9341dfb6f
+ms.openlocfilehash: 1285a63b3b283914a439817886cd84c4b93b59c8
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2020
-ms.locfileid: "86390079"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965684"
 ---
 # <a name="supported-configurations-for-remote-desktop-services"></a>リモート デスクトップ サービスにおいてサポートされる構成
 
@@ -137,4 +137,4 @@ Windows 上でインボックス リモート デスクトップ接続クライ�
 
 ## <a name="using-remote-desktop-services-with-application-proxy-services"></a>アプリケーション プロキシ サービスによってリモート デスクトップ サービスを使用する
 
-Web クライアント以外では、[Azure AD のアプリケーション プロキシ](https://docs.microsoft.com/azure/active-directory/application-proxy-publish-remote-desktop)を利用して、リモート デスクトップ サービスを使用できます。 リモート デスクトップ サービスでは、Windows Server 2016 および以前のバージョンに含まれる [Web アプリケーション プロキシ](https://docs.microsoft.com/windows-server/remote/remote-access/web-application-proxy/web-application-proxy-windows-server)の使用は、サポートされません。
+Web クライアント以外では、[Azure AD のアプリケーション プロキシ](/azure/active-directory/application-proxy-publish-remote-desktop)を利用して、リモート デスクトップ サービスを使用できます。 リモート デスクトップ サービスでは、Windows Server 2016 および以前のバージョンに含まれる [Web アプリケーション プロキシ](../remote-access/web-application-proxy/web-application-proxy-windows-server.md)の使用は、サポートされません。

@@ -6,12 +6,12 @@ ms.technology: server-general
 author: Teresa-Motiv
 ms.author: v-tea
 ms.localizationpriority: medium
-ms.openlocfilehash: f6e600b41e4a485084bd0622c2be0753d0b11c0c
-ms.sourcegitcommit: 6d7a394edefba684f7b6983c65026679c1b7a485
+ms.openlocfilehash: 0ab2a0eb7c9d29f8d42bd004aad27f9084e38641
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84776714"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962484"
 ---
 # <a name="guidelines-for-troubleshooting-dns-related-activation-issues"></a>DNS に関連するライセンス認証の問題のトラブルシューティングに関するガイドライン
 
@@ -64,7 +64,7 @@ KMS ホストをインストールできない場合、または何らかの理�
 
 KMS ライセンス認証を使用するには、ライセンス認証するクライアントに合わせて KMS ホストを構成する必要があります。 環境に KMS ホストが構成されていない場合は、KMS ホストをインストールし、適切な KMS ホスト キーを使用してライセンス認証します。 KMS ソフトウェアをホストするようにネットワーク上のコンピューターを構成した後、ドメイン ネーム システム (DNS) の設定を公開します。
 
-KMS ホストの構成プロセスの詳細については、「[キー管理サービスによるライセンス認証](https://docs.microsoft.com/windows/deployment/volume-activation/activate-using-key-management-service-vamt)」と「[VAMT のインストールと構成](https://docs.microsoft.com/windows/deployment/volume-activation/install-configure-vamt)」を参照してください。
+KMS ホストの構成プロセスの詳細については、「[キー管理サービスによるライセンス認証](/windows/deployment/volume-activation/activate-using-key-management-service-vamt)」と「[VAMT のインストールと構成](/windows/deployment/volume-activation/install-configure-vamt)」を参照してください。
 
 [手順の一覧に戻ります。](#list)
 
@@ -78,7 +78,7 @@ ping コマンドを使用して、DNS サーバーへの基本的な IP 接続�
    ping <DNS_Server_IP_address>
    ```
    > [!NOTE]
-   > このコマンドからの出力に "Reply from" という語句が含まれていない場合は、この記事の他の手順を実行する前に解決する必要があるネットワークの問題または DNS の問題があります。 DNS サーバーに対して ping が失敗した場合の TCP/IP の問題のトラブルシューティング方法については、「[TCP/IP の問題に関する高度なトラブルシューティング](https://docs.microsoft.com/windows/client-management/troubleshoot-tcpip)」を参照してください。
+   > このコマンドからの出力に "Reply from" という語句が含まれていない場合は、この記事の他の手順を実行する前に解決する必要があるネットワークの問題または DNS の問題があります。 DNS サーバーに対して ping が失敗した場合の TCP/IP の問題のトラブルシューティング方法については、「[TCP/IP の問題に関する高度なトラブルシューティング](/windows/client-management/troubleshoot-tcpip)」を参照してください。
 
 [手順の一覧に戻ります。](#list)
 
@@ -159,7 +159,7 @@ KMS ホスト サーバーのレジストリを調べて、DNS に登録され�
       1. KMS ホストの IP アドレス、ホスト名、ポート、およびドメインを確認します。
       1. これらの **_vlmcs** エントリが存在し、必要な KMS ホスト名が含まれている場合は、「[KMS クライアントに KMS ホストを手動で割り当てる](#manually-assign-a-kms-host-to-a-kms-client)」に進みます。
       > [!NOTE]
-      > [**nslookup**](https://docs.microsoft.com/windows-server/administration/windows-commands/nslookup) コマンドで KMS ホストが検出されても、DNS クライアントで KMS ホストを検出できるとは限りません。 **nslookup** コマンドで KMS ホストが検出されても KMS ホストを使用してライセンス認証できない場合は、プライマリ DNS サフィックスや DNS サフィックスの検索一覧など、他の DNS 設定を確認します。
+      > [**nslookup**](../administration/windows-commands/nslookup.md) コマンドで KMS ホストが検出されても、DNS クライアントで KMS ホストを検出できるとは限りません。 **nslookup** コマンドで KMS ホストが検出されても KMS ホストを使用してライセンス認証できない場合は、プライマリ DNS サフィックスや DNS サフィックスの検索一覧など、他の DNS 設定を確認します。
 1. プライマリ DNS サフィックスの検索一覧に、KMS ホストに関連付けられた DNS ドメイン サフィックスが含まれていることを確認します。 検索一覧にこの情報が含まれていない場合は、「[複数の DNS ドメインに公開するように KMS ホストを構成する](#configure-the-kms-host-to-publish-in-multiple-dns-domains)」の手順に進みます。
 
 [手順の一覧に戻ります。](#list)

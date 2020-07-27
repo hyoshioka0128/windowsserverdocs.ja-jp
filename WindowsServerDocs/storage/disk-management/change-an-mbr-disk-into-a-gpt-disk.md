@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 6bd97802fbef342520e92a857a1a53acf3e8d7a3
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 3aedb8ed1edb8476642b86ec66d306187d4badf0
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71385936"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966064"
 ---
 # <a name="convert-an-mbr-disk-into-a-gpt-disk"></a>MBR ディスクを GPT ディスクに変換する
 
@@ -39,7 +39,7 @@ ms.locfileid: "71385936"
 
 ## <a name="converting-using-a-command-line"></a>コマンド ラインを使用して変換する
 
-次の手順を使用して、空の MBR ディスクを GPT ディスクに変換します。 MBR2GPT.EXE ツールを使用することもできますが、やや複雑です。詳細については、「[MBR パーティションを GPT に変換する](https://docs.microsoft.com/windows/deployment/mbr-to-gpt)」を参照してください。
+次の手順を使用して、空の MBR ディスクを GPT ディスクに変換します。 MBR2GPT.EXE ツールを使用することもできますが、やや複雑です。詳細については、「[MBR パーティションを GPT に変換する](/windows/deployment/mbr-to-gpt)」を参照してください。
 
 1.  GPT ディスクに変換するベーシック MBR ディスク上のデータをバックアップまたは移動します。
 
@@ -67,4 +67,4 @@ ms.locfileid: "71385936"
 
 ## <a name="see-also"></a>参照
 
--   [コマンド ライン構文の表記規則](https://technet.microsoft.com/library/cc742449(v=ws.11).aspx)
+-   [コマンド ライン構文の表記規則](/previous-versions/orphan-topics/ws.11/cc742449(v=ws.11))

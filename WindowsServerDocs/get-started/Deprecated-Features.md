@@ -10,12 +10,12 @@ author: jasongerend
 ms.author: jgerend
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e13886395040619a7509c3cf896112288c48115
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: d2a1627a0a941f12da4731291a032e4b2e1ad887
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "74945207"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962024"
 ---
 # <a name="features-removed-or-deprecated-in--windows-server-2016"></a>Windows Server 2016 で削除された機能または非推奨とされた機能
 
@@ -31,7 +31,7 @@ ms.locfileid: "74945207"
 以下の機能は、このリリースの Windows Server 2016 で削除されました。 このリリースでは、別の方法を使用しない限り、これらの機能に依存するアプリケーション、コード、使用法は機能しません。  
 
 > [!NOTE]  
-> Windows Server 2016 を Windows Server 2012 R2 または Windows Server 2012 より前のサーバー リリースから移行する場合は、「[Windows Server 2012 R2 で削除された機能または非推奨となった機能](https://technet.microsoft.com/library/dn303411.aspx)」および「[Windows Server 2012 で削除された機能または推奨されなくなった機能](https://technet.microsoft.com/library/hh831568.aspx)」も確認してください。  
+> Windows Server 2016 を Windows Server 2012 R2 または Windows Server 2012 より前のサーバー リリースから移行する場合は、「[Windows Server 2012 R2 で削除された機能または非推奨となった機能](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn303411(v=ws.11))」および「[Windows Server 2012 で削除された機能または推奨されなくなった機能](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831568(v=ws.11))」も確認してください。  
 
 ### <a name="share-and-storage-management"></a>共有と記憶域の管理
 
@@ -49,7 +49,7 @@ Journal.dll は Windows Server 2016 から削除されました。 これに置�
 
 ### <a name="security-configuration-wizard"></a>セキュリティの構成ウィザード
 
-セキュリティの構成ウィザードは削除されました。 代わりに、機能は既定でセキュリティ保護されています。 特定のセキュリティ設定を制御する必要がある場合は、グループ ポリシーまたは [Microsoft Security Compliance Manager](https://technet.microsoft.com/solutionaccelerators/cc835245.aspx) を使用できます。  
+セキュリティの構成ウィザードは削除されました。 代わりに、機能は既定でセキュリティ保護されています。 特定のセキュリティ設定を制御する必要がある場合は、グループ ポリシーまたは [Microsoft Security Compliance Manager](/previous-versions/tn-archive/cc936627(v=technet.10)) を使用できます。  
 
 ### <a name="sqm"></a>SQM
 
@@ -79,7 +79,7 @@ Journal.dll は Windows Server 2016 から削除されました。 これに置�
 
 -   **Scregedit.exe** は非推奨となりました。 Scregedit.exe に依存するスクリプトを使っている場合は、Reg.exe または Windows PowerShell のメソッドを使用するように調整してください。  
 
--   **Sconfig.exe** は非推奨となりました。 代わりに [Sconfig.cmd](https://docs.microsoft.com/windows-server/get-started/sconfig-on-ws2016) を使用してください。 
+-   **Sconfig.exe** は非推奨となりました。 代わりに [Sconfig.cmd](./sconfig-on-ws2016.md) を使用してください。 
 
 ### <a name="netcfg-custom-apis"></a>NetCfg のカスタム API
 

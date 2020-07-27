@@ -9,12 +9,12 @@ ms.topic: article
 ms.assetid: b0f62d6f-0915-44ca-afef-be44a922e20e
 author: lizap
 manager: dongill
-ms.openlocfilehash: fa17c472e3311e4e34ac7b2176d0045886463274
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 9eba68e3dfce817208763ed11c4a7af68bb60be3
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80818465"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966524"
 ---
 # <a name="create-virtual-machines-for-remote-desktop"></a>リモート デスクトップの仮想マシンを作成する
 
@@ -24,9 +24,9 @@ ms.locfileid: "80818465"
   
 この基本的な展開の例では、最低 3 つの仮想マシンが作成されます。 1 つ目の仮想マシンは、リモート デスクトップ (RD) 接続ブローカー、ライセンス サーバーの役割サービス、および展開用のファイル共有をホストします。 2 つ目の仮想マシンは、RD ゲートウェイと Web アクセス役割サービスをホストします。  3 つ目の仮想マシンは、RD セッション ホスト役割サービスをホストします。 非常に小規模の展開では、AAD アプリ プロキシを使用して、展開からすべてのパブリック エンドポイントを排除して、1 つの VM 上にすべての役割サービスを組み合わせることによって VM コストを削減できます。 大規模な展開では、個々の仮想マシンにさまざまな役割サービスをインストールしてスケーリングを向上させることができます。  
   
-このセクションでは、[Microsoft Azure Marketplace](https://azure.microsoft.com/marketplace/) 内の Windows Server イメージに基づいて、それぞれの役割用の仮想マシンを展開するための手順を示します。 カスタム イメージから仮想マシンを作成する必要がある場合は (PowerShell が必要)、[Resource Manager および PowerShell を使用した Windows VM の作成](https://azure.microsoft.com/documentation/articles/virtual-machines-windows-ps-create/)に関するページを参照してください。 その後、ここに戻り、ファイル共有用の Azure データ ディスクをアタッチし、展開用の外部 URL を入力します。  
+このセクションでは、[Microsoft Azure Marketplace](https://azure.microsoft.com/marketplace/) 内の Windows Server イメージに基づいて、それぞれの役割用の仮想マシンを展開するための手順を示します。 カスタム イメージから仮想マシンを作成する必要がある場合は (PowerShell が必要)、[Resource Manager および PowerShell を使用した Windows VM の作成](/azure/virtual-machines/windows/quick-create-powershell)に関するページを参照してください。 その後、ここに戻り、ファイル共有用の Azure データ ディスクをアタッチし、展開用の外部 URL を入力します。  
   
-1. RD 接続ブローカー、RD ライセンス サーバー、およびファイル サーバーをホストする [Windows 仮想マシンを作成](https://azure.microsoft.com/documentation/articles/virtual-machines-windows-hero-tutorial/)します。  
+1. RD 接続ブローカー、RD ライセンス サーバー、およびファイル サーバーをホストする [Windows 仮想マシンを作成](/azure/virtual-machines/windows/quick-create-portal)します。  
   
    便宜上、次の命名規則を使用しました。  
    - RD 接続ブローカー、ライセンス サーバー、およびファイル サーバー:   
@@ -79,4 +79,3 @@ ms.locfileid: "80818465"
 5. 展開に外部アクセスできるように、展開の外部 URL および DNS 名を入力します。  
    1.  Azure portal で、 **[参照] > [リソース グループ]** をクリックし、展開用のリソース グループをクリックしてから、RD Web アクセスおよび RG ゲートウェイ用に作成されたパブリック IP アドレスをクリックします。  
    2.  **[構成]** をクリックし、DNS 名ラベル (contoso など) を入力し、 **[保存]** をクリックします。 この DNS 名ラベル (contoso.westus.cloudapp.azure.com) は、RD Web アクセスおよび RD ゲートウェイ サーバーへの接続に使用する DNS 名です。  
-

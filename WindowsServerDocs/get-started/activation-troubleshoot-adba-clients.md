@@ -8,19 +8,19 @@ author: Teresa-Motiv
 ms.author: v-tea
 manager: dcscontentpm
 ms.localizationpriority: medium
-ms.openlocfilehash: b4e31cfa892019e4f3bbcd3b67dbb42751cc58dd
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: d56b2d002b0403971dc50fab639f77bddf1f8809
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71963038"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959884"
 ---
 # <a name="example-troubleshooting-active-directory-based-activation-adba-clients-that-do-not-activate"></a>例:ライセンス認証が行われない Active Directory によるライセンス認証 (ADBA) クライアントのトラブルシューティング
 
 > [!NOTE]
 > この記事は、2018 年 3 月 26 日に TechNet ブログとして最初に公開されたのもです。
 
-こんにちは。 私の名前は Mike Kammer です。2 年以上にわたって Microsoft のプラットフォーム PFE を担当しています。 最近、あるお客様の環境への Windows Server 2016 の展開を支援しました。 この機会に、ライセンス認証方法も KMS サーバーから [Active Directory によるライセンス認証](https://docs.microsoft.com/previous-versions/windows/hh852637(v=win.10))へと移行することにしました。
+こんにちは。 私の名前は Mike Kammer です。2 年以上にわたって Microsoft のプラットフォーム PFE を担当しています。 最近、あるお客様の環境への Windows Server 2016 の展開を支援しました。 この機会に、ライセンス認証方法も KMS サーバーから [Active Directory によるライセンス認証](/previous-versions/windows/hh852637(v=win.10))へと移行することにしました。
 
 すべての変更を行うための適切な手順として、移行をお客様のテスト環境で開始しました。 展開を開始するために、Charity Shelbourne 氏による、[Active Directory によるライセンス認証とキー管理サービスの比較](https://techcommunity.microsoft.com/t5/Core-Infrastructure-and-Security/Active-Directory-Based-Activation-vs-Key-Management-Services/ba-p/256016)に関するこの素晴らしいブログ記事に記載された手順を行いました。 テスト環境のドメイン コントローラーすべてで Windows Server 2012 R2 が実行されているので、フォレストを準備する必要はありませんでした。 Windows Server 2012 R2 ドメイン コントローラーにロールをインストールし、ボリューム ライセンス認証方法として Active Directory ベースのライセンス認証を選択しました。 KMS キーをインストールし、「KMS AD Activation (* * LAB)」という名前を付けました。 ブログ記事にある手順にほぼ従いました。
 
@@ -70,7 +70,7 @@ ms.locfileid: "71963038"
 
 これで、DNS に問題がないことがわかりました。 Active Directory は、KMS ライセンス認証ソースとして適切に構成されています。 物理サーバーは正常にライセンス認証されています。 これは VM だけの問題になるのでしょうか? ここで興味深いことに、お客様が私に、別の部門の誰かも 10 数台以上の仮想 Windows Server 2016 マシンを構築することにした、と話してくれました。 そのため私は、ライセンス認証されないサーバーが 10 数台増え、対処しなくてはならないだろうと思いました。 しかし、そうではありませんでした。 それらのサーバーは正常にライセンス認証されたのです。
 
-ここで私はまた **slmgr** コマンドを実行して、問題のマシンをどうしたらライセンス認証できるか解明しようとしました。 今回は、 **/ipk** スイッチを使用します。これによりプロダクト キーをインストールできます。 [このサイト](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj612867(v=ws.11))にアクセスして、Windows Server 2016 の Standard バージョンに適したキーを取得しました。 一部のサーバーは Datacenter ですが、最初にこれを修正する必要がありました。
+ここで私はまた **slmgr** コマンドを実行して、問題のマシンをどうしたらライセンス認証できるか解明しようとしました。 今回は、 **/ipk** スイッチを使用します。これによりプロダクト キーをインストールできます。 [このサイト](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj612867(v=ws.11))にアクセスして、Windows Server 2016 の Standard バージョンに適したキーを取得しました。 一部のサーバーは Datacenter ですが、最初にこれを修正する必要がありました。
 
 ![KMS クライアント セットアップ キーの一覧を示す画像](./media/032618_1700_Troubleshoo9.png)
 

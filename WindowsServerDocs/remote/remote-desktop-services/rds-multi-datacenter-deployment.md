@@ -9,12 +9,12 @@ author: haley-rowland
 ms.author: elizapo
 ms.date: 06/14/2017
 manager: dongill
-ms.openlocfilehash: 5c0f5d6937a79f36df264597400fe71af3f3779b
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 18ed49472a00790a1c713016c4da9a056066a88a
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80855595"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86953714"
 ---
 # <a name="create-a-geo-redundant-multi-data-center-rds-deployment-for-disaster-recovery"></a>ディザスター リカバリー用の地理冗長型複数データ センター RDS 展開の作成
 
@@ -52,7 +52,7 @@ RDS 展開全体は、地理冗長型の展開を作成するために、2 つ�
 2. RG A にある高可用性の Active Directory 展開。[2 つのドメイン コント ローラーを含む新しい AD ドメインのテンプレート](https://azure.microsoft.com/resources/templates/active-directory-new-domain-ha-2-dc/)を使用して、展開を作成できます。
 3. RG A にある高可用性 RDS 展開。[既存の Active Directory を使用した RDS ファーム展開](https://azure.microsoft.com/resources/templates/rds-deployment-existing-ad/)のテンプレートを使用して基本的な RDS 展開を作成します。次に、[リモート デスクトップ サービス - 高可用性](rds-plan-high-availability.md)に関する記事の情報に従って、高可用性のためにその他の RDS コンポーネントを構成します。
 4. RG B 内の VNet - RG A にある展開と重複しないアドレス空間を使用するようにしてください。
-5. 2 つのリソース グループ間の [VNet 間接続](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-vnet-vnet-rm-ps)。
+5. 2 つのリソース グループ間の [VNet 間接続](/azure/vpn-gateway/vpn-gateway-vnet-vnet-rm-ps)。
 6. RG B 内の可用性セットにある 2 つの AD 仮想マシン - それらの VM 名が RG A 内の AD VM と異なることを確認します。1 つの可用性セットに 2 つの Windows Server 2016 VM を展開し、Active Directory Domain Services の役割をインストールしてから、手順 1 で作成したドメインのドメイン コントローラーにそれらを昇格させます。
 7. RG B 内の 2 つ目の高可用性 RDS 展開。 
    1. [既存の Active Directory を使用した RDS ファーム展開](https://azure.microsoft.com/resources/templates/rds-deployment-existing-ad/)のテンプレートをもう一度使用しますが、今度は次の変更を行います (テンプレートをカスタマイズするには、ギャラリーでそれを選択し、 **[Azure に配置する]** をクリックしてから、 **[テンプレートの編集]** をクリックします)。
@@ -81,7 +81,7 @@ RDS 展開全体は、地理冗長型の展開を作成するために、2 つ�
 
 両方の展開で UPD を有効にするには、次の手順を実行します。
 
-1. [Set-RDSessionCollectionConfiguration コマンドレット](https://docs.microsoft.com/powershell/module/remotedesktop/set-rdsessioncollectionconfiguration)を実行して、プライマリ (アクティブ) 展開のユーザー プロファイル ディスクを有効にします。(「展開の手順」の手順 7 で作成した) ソース ボリューム上のファイル共有のパスを指定します。
+1. [Set-RDSessionCollectionConfiguration コマンドレット](/powershell/module/remotedesktop/set-rdsessioncollectionconfiguration)を実行して、プライマリ (アクティブ) 展開のユーザー プロファイル ディスクを有効にします。(「展開の手順」の手順 7 で作成した) ソース ボリューム上のファイル共有のパスを指定します。
 2. 宛先ボリュームがソース ボリュームになるように、記憶域レプリカの方向を反転します (これにより、そのボリュームがマウントされ、セカンダリ展開がアクセスできるようになります) 。 これを行うには、**Set-SRPartnership** コマンドレットを実行します。 たとえば、次のように入力します。
 
    ```powershell
@@ -160,4 +160,4 @@ Azure Traffic Manager は、プライマリ展開で障害が発生したこと�
 
 オンプレミスのエンドポイントで Azure Traffic Manager を使用できますが、Azure サブスクリプションが必要です。 または、エンドユーザーに提供される DNS については、ユーザーを単純にプライマリ展開に誘導する CNAME レコードをエンドユーザーに提供します。 フェールオーバーの場合は、DNS CNAME レコードを変更して、セカンダリ展開にリダイレクトするようにしてください。 このようにして、エンドユーザーは、Azure Traffic Manager を使用するときと同じように、1 つの URL を使用してユーザーを適切な展開に誘導します。 
 
-on-premises-to-Azure-site モデルの作成に関心がある場合は、[Azure Site Recovery](https://docs.microsoft.com/azure/site-recovery/site-recovery-overview) の使用を検討してください。
+on-premises-to-Azure-site モデルの作成に関心がある場合は、[Azure Site Recovery](/azure/site-recovery/site-recovery-overview) の使用を検討してください。

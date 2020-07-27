@@ -9,12 +9,12 @@ author: lizap
 ms.author: elizapo
 ms.date: 11/21/2016
 manager: dongill
-ms.openlocfilehash: 934aab380f9e58f4fe9567921623279a1893af4b
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: e233497f298989fd31428095e5a146c8c9f5c08e
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80860295"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86953864"
 ---
 # <a name="remote-desktop-services---secure-data-storage-with-upds"></a>リモート デスクトップ サービス - UPD を使用してセキュリティで保護されたデータ ストレージ
 
@@ -26,6 +26,6 @@ ms.locfileid: "80860295"
 
 ユーザー側から見ると、UPD は慣れ親しんだエクスペリエンスをもたらします。ユーザーは (ローカル ドライブと思われるものの上にある) ドキュメント フォルダーにドキュメントを保存し、アプリ設定を通常どおり変更し、Windows 環境に対するカスタマイズを行います。 このレジストリ ハイブを含むこのすべてのデータは、UPD に格納され、中央のネットワーク共有場所で保持されます。 UDP は、ユーザーが実際にデスクトップまたは RemoteApp に接続しているときに、ユーザーだけが利用できます。 ユーザーの `C:\Users\<username\>` ディレクトリ全体 (AppData\Local を含む) が UPD に格納されるため、UPD はコレクション内でのみローミングできます。
 
-[PowerShell コマンドレット](https://technet.microsoft.com/library/jj215443.aspx)を使用して、中央の共有場所へのパス、各 UPD のサイズ、および UPD に保存されるユーザー プロファイルに対して含めるフォルダーと除外するフォルダーを指定できます。 または、 **[リモート デスクトップ サービス]**  >  **[コレクション]**  >  **[Desktop Collection] (デスクトップ コレクション)**  >  **[Desktop Collection Properties] (デスクトップ コレクションのプロパティ)**  >  **[ユーザー プロファイル ディスク]** の順に移動し、サーバー マネージャーから UPD を有効にできます。 UPD は、コレクション内の特定のユーザーに対してではなく、そのコレクション全体のすべてのユーザーに対して有効または無効にすることに注意してください。 UPD は、コレクション内のサーバーがフル コントロール アクセス許可を持つ中央のファイル共有場所に格納する必要があります。 
+[PowerShell コマンドレット](/archive/blogs/mniehaus/windows-10-1607-keeping-apps-from-coming-back-when-deploying-the-feature-update)を使用して、中央の共有場所へのパス、各 UPD のサイズ、および UPD に保存されるユーザー プロファイルに対して含めるフォルダーと除外するフォルダーを指定できます。 または、 **[リモート デスクトップ サービス]**  >  **[コレクション]**  >  **[Desktop Collection] (デスクトップ コレクション)**  >  **[Desktop Collection Properties] (デスクトップ コレクションのプロパティ)**  >  **[ユーザー プロファイル ディスク]** の順に移動し、サーバー マネージャーから UPD を有効にできます。 UPD は、コレクション内の特定のユーザーに対してではなく、そのコレクション全体のすべてのユーザーに対して有効または無効にすることに注意してください。 UPD は、コレクション内のサーバーがフル コントロール アクセス許可を持つ中央のファイル共有場所に格納する必要があります。 
 
 [記憶域スペース ダイレクト](rds-storage-spaces-direct-deployment.md)を使用して Azure に格納することにより、UPD の高可用性を実現できます。 

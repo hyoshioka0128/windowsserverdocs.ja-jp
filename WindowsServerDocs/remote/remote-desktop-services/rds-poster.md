@@ -10,18 +10,18 @@ ms.date: 11/06/2018
 ms.topic: article
 ms.assetid: a8c6d5fa-399b-4823-8f10-affec1bbfe65
 ms.localizationpriority: medium
-ms.openlocfilehash: 068599b63a000566db86f29a93bfa91a4b4cd72e
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 0e6700cd02d040caaee0588106b27185e5427ee5
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80858165"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959524"
 ---
 # <a name="remote-desktop-services---planning-poster"></a>リモート デスクトップ サービスの計画ポスター
 
 ## <a name="windows-virtual-desktop"></a>Windows 仮想デスクトップ
 
-リモート デスクトップの新しい "モダン インフラストラクチャ" について聞いたことがあるかもしれません。 "RDmi" という句を使用しているところを耳にしたことがあるかもしれません。 知っておく必要のある句は、"Windows 仮想デスクトップ" です。 詳しくは、「[Windows Virtual Desktop のドキュメント](https://docs.microsoft.com/azure/virtual-desktop/)」をご覧ください。
+リモート デスクトップの新しい "モダン インフラストラクチャ" について聞いたことがあるかもしれません。 "RDmi" という句を使用しているところを耳にしたことがあるかもしれません。 知っておく必要のある句は、"Windows 仮想デスクトップ" です。 詳しくは、「[Windows Virtual Desktop のドキュメント](/azure/virtual-desktop/)」をご覧ください。
 
 リモート デスクトップ サービス チームは、Windows Virtual Desktop 環境の計画、構築、および実行を支援するポスターを作成しました。
 

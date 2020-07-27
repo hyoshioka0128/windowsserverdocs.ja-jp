@@ -8,16 +8,16 @@ author: Teresa-Motiv
 ms.author: v-tea
 manager: dcscontentpm
 ms.localizationpriority: medium
-ms.openlocfilehash: dc84edaebda64d3ae359e17b683411ac479c9397
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: a089e0efb54af86f97595d8863926525a8416fea
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473219"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86960464"
 ---
 # <a name="guidelines-for-troubleshooting-the-key-management-service-kms"></a>キー管理サービス (KMS) のトラブルシューティングに関するガイドライン
 
-多くの企業のお客様は、展開プロセスの一環として、キー管理サービス (KMS) を設定し、環境内での Windows のライセンス認証を有効にすることができます。 KMS ホストの設定プロセスは簡単であり、それが済むと、KMS クライアントによってホストが検出され、自動的にライセンス認証が試みられるようになります。 しかし、そのプロセスが機能しない場合はどうなるでしょうか。 次に何をすればよいのでしょうか。 この記事では、問題のトラブルシューティングに必要なリソースについて説明します。 イベント ログのエントリと Slmgr.vbs スクリプトの詳細については、「[ボリューム ライセンス認証テクニカル リファレンス](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn502529(v=ws.11))」を参照してください。
+多くの企業のお客様は、展開プロセスの一環として、キー管理サービス (KMS) を設定し、環境内での Windows のライセンス認証を有効にすることができます。 KMS ホストの設定プロセスは簡単であり、それが済むと、KMS クライアントによってホストが検出され、自動的にライセンス認証が試みられるようになります。 しかし、そのプロセスが機能しない場合はどうなるでしょうか。 次に何をすればよいのでしょうか。 この記事では、問題のトラブルシューティングに必要なリソースについて説明します。 イベント ログのエントリと Slmgr.vbs スクリプトの詳細については、「[ボリューム ライセンス認証テクニカル リファレンス](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn502529(v=ws.11))」を参照してください。
 
 ## <a name="kms-overview"></a>KMS の概要
 
@@ -50,7 +50,7 @@ KMS ホストでは、2 つの点を調べる必要があります。 最初に�
 
   環境内に存在する有効なシステムの数に関係なく、この数が **50** より大きくなることはありません。 これは、これらのカウントが、KMS クライアントによって返される最大ライセンス ポリシーの 2 倍だけをキャッシュするように設定されているためです。 現時点では、最大ポリシーは Windows クライアント OS によって設定され、それ自体のライセンス認証のために KMS ホストから **25** 以上のカウントが必要です。 そのため、KMS ホストでの最大数は、2 x 25 つまり 50 です。 Windows Server KMS クライアントのみが含まれている環境では、KMS ホストの最大数は **10** になることに注意してください。 これは、Windows Server のエディションのしきい値が **5** (2 x 5 つまり 10) であるためです。
 
-  カウントに関してよくある問題は、環境にライセンス認証された KMS ホストと十分なクライアントがあるのに、カウントが 1 より大きくならない場合です。 主な問題は、展開されたクライアント イメージが正しく構成されておらず (**sysprep /generalize**)、システムに一意のクライアント コンピューター ID (CMID) がないことです。 詳細については、「[KMS クライアント](#kms-client)」と「[Windows Vista または Windows 7 ベースの新しいクライアント コンピューターをネットワークに追加しても、KMS の現在の数が増加しない](https://support.microsoft.com/help/929829/the-kms-current-count-does-not-increase-when-you-add-new-windows-vista)」を参照してください。 サポート エスカレーション エンジニアの 1 人によるこの問題についてのブログ投稿「[重複する CMID のために KMS ホスト クライアント数が増加しない](https://blogs.technet.microsoft.com/askcore/2009/10/16/kms-host-client-count-not-increasing-due-to-duplicate-cmids/)」も参照してください。
+  カウントに関してよくある問題は、環境にライセンス認証された KMS ホストと十分なクライアントがあるのに、カウントが 1 より大きくならない場合です。 主な問題は、展開されたクライアント イメージが正しく構成されておらず (**sysprep /generalize**)、システムに一意のクライアント コンピューター ID (CMID) がないことです。 詳細については、「[KMS クライアント](#kms-client)」と「[Windows Vista または Windows 7 ベースの新しいクライアント コンピューターをネットワークに追加しても、KMS の現在の数が増加しない](https://support.microsoft.com/help/929829/the-kms-current-count-does-not-increase-when-you-add-new-windows-vista)」を参照してください。 サポート エスカレーション エンジニアの 1 人によるこの問題についてのブログ投稿「[重複する CMID のために KMS ホスト クライアント数が増加しない](/archive/blogs/askcore/kms-host-client-count-not-increasing-due-to-duplicate-cmids)」も参照してください。
 
   カウントが増加しない可能性があるもう 1 つの理由は、環境内の KMS ホストの数が多すぎて、カウントがすべてのホストに分散されている場合です。
 - **Listening on Port (リッスン先のポート)** 。 KMS との通信には匿名 RPC が使用されます。 既定では、クライアントによる KMS ホストへの接続には TCP ポート 1688 が使用されます。 KMS クライアントと KMS ホストの間で、このポートが開かれていることを確認します。 KMS ホストでポートを変更または構成することができます。 通信の間に、KMS ホストによって KMS クライアントにポートの指定が送信されます。 KMS クライアントでポートを変更すると、そのクライアントがホストに接続するときに、ポートの指定が上書きされます。
@@ -98,7 +98,7 @@ KMS ホストで検索するもう 1 つの関連イベントは、イベント 
 次の一覧では、トラブルシューティングのために最も重要なフィールドを示します。 何を探すかは、解決する問題によって異なる場合があります。
 
 - **[名前]** 。 この値は、KMS クライアント システムにインストールされている Windows のエディションです。 ライセンス認証しようとしている Windows のバージョンで KMS を使用できることを確認するには、これを使用します。 たとえば、Windows Vista Ultimate などのボリューム ライセンス認証が使用されない Windows のエディションで、ユーザーが KMS クライアント セットアップ キーをインストールしようとしたというインシデントが、弊社のヘルプ デスクで発生しています。
-- **[説明]** 。 この値では、インストールされているキーが示されます。 VOLUME_KMSCLIENT は、KMS クライアント セットアップ キー (または GVLK) がインストールされていること (ボリューム ライセンス メディアでの既定の構成)、およびこのシステムで KMS ホストを使用したライセンス認証が自動的に試みられることを示します。 MAK などの別のものがここに表示される場合は、GVLK を再インストールし、このシステムを KMS クライアントとして構成する必要があります。 **slmgr.vbs /ipk &lt;*GVLK*&gt;** を使用して手動でキーをインストールするか (「[KMS クライアント セットアップ キー](kmsclientkeys.md)」を参照)、ボリューム ライセンス認証管理ツール (VAMT) を使用することができます。 VAMT の入手と使用については、「[ボリューム ライセンス認証管理ツール (VAMT) のテクニカル リファレンス](https://docs.microsoft.com/windows/deployment/volume-activation/volume-activation-management-tool)」を参照してください。
+- **[説明]** 。 この値では、インストールされているキーが示されます。 VOLUME_KMSCLIENT は、KMS クライアント セットアップ キー (または GVLK) がインストールされていること (ボリューム ライセンス メディアでの既定の構成)、およびこのシステムで KMS ホストを使用したライセンス認証が自動的に試みられることを示します。 MAK などの別のものがここに表示される場合は、GVLK を再インストールし、このシステムを KMS クライアントとして構成する必要があります。 **slmgr.vbs /ipk &lt;*GVLK*&gt;** を使用して手動でキーをインストールするか (「[KMS クライアント セットアップ キー](kmsclientkeys.md)」を参照)、ボリューム ライセンス認証管理ツール (VAMT) を使用することができます。 VAMT の入手と使用については、「[ボリューム ライセンス認証管理ツール (VAMT) のテクニカル リファレンス](/windows/deployment/volume-activation/volume-activation-management-tool)」を参照してください。
 - **Partial Product Key (プロダクト キーの一部)** 。 **Name (名前)** フィールドと同じように、この情報を使用して、正しい KMS クライアント セットアップ キーがこのコンピューターにインストールされているかどうかを判断できます (つまり、キーは KMS クライアントにインストールされているオペレーティング システムと一致します)。 既定では、ボリューム ライセンス サービス センター (VLSC) ポータルのメディアを使用して構築されたシステムには、正しいキーが存在します。 場合によっては、KMS ライセンス認証をサポートするために十分なシステムが環境に存在するようになるまで、顧客が複数ライセンス認証キー (MAK) ライセンス認証を使用することがあります。 MAK から KMS に移行するには、KMS クライアント セットアップ キーをこれらのシステムにインストールする必要があります。 VAMT を使用してこのキーをインストールし、正しいキーが適用されていることを確認します。
 - **License Status (ライセンスの状態)** 。 この値では、KMS クライアント システムの状態が示されます。 KMS を使用してライセンス認証されたシステムの場合、この値は **Licensed (ライセンス済み)** になっている必要があります。 それ以外の値は、問題があることを示している可能性があります。 たとえば、KMS ホストが正常に機能していて、KMS クライアントがライセンス認証されない場合 (たとえば、**Grace (猶予)** 状態のままになっている)、何らかの理由でクライアントがホスト システムに到達できない可能性があります (ファイアウォールの問題、ネットワークの停止など)。
 - **Client Machine ID (CMID) (クライアント コンピューター ID (CMID))** 。 各 KMS クライアントには、一意の CMID が必要です。 「[KMS ホスト](#kms-host)」セクションで説明したように、カウントに関してよくある問題は、環境にライセンス認証された KMS ホストと十分なクライアントがあるのに、カウントが **1** より大きくならない場合です。 詳細については、「[Windows Vista または Windows 7 ベースの新しいクライアント コンピューターをネットワークに追加しても、KMS の現在の数が増加しない](https://support.microsoft.com/help/929829/the-kms-current-count-does-not-increase-when-you-add-new-windows-vista)」を参照してください。
@@ -134,6 +134,4 @@ KMS クライアントのライセンス認証または再ライセンス認証�
 - KMS ホスト (キー管理サービス ログ) と KMS クライアント システム (アプリケーション ログ) の両方からのイベント ログ
 
 ## <a name="additional-references"></a>その他の参照情報
-- [コア チームにたずねる: #Activation](https://blogs.technet.microsoft.com/askcore/tag/Activation/)
-
-
+- [コア チームにたずねる: #Activation](/archive/blogs/askcore/kms-host-client-count-not-increasing-due-to-duplicate-cmids)

@@ -9,12 +9,12 @@ ms.topic: article
 ms.assetid: 176ae424-96e9-4c78-88f5-da418e76c3d7
 author: lizap
 manager: dongill
-ms.openlocfilehash: ce8c6e2089c3130d078513287b661a42e5754690
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: c0a2676cc5e7043cd1f96d6c1d393d7b0e443fe8
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80857605"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961214"
 ---
 # <a name="build-and-deploy-your-remote-desktop-services-deployment"></a>構築し、デプロイのリモート デスクトップ サービス展開
 
@@ -27,7 +27,7 @@ ms.locfileid: "80857605"
 以前のバージョンの Windows Server 上に構築された既存のリモート デスクトップ展開をお持ちの場合は、 Windows Server 2016 に移行すると、パフォーマンスとスケール関連の新機能や機能向上を利用できます。次の移行オプションをご確認ください。
 
 - [RDS の展開を Windows Server 2016 に移行する](migrate-rds-role-services.md)
-- [RDS の展開を Windows Server 2016 にアップグレードする](upgrade-to-rds-2016.md)
+- [RDS の展開を Windows Server 2016 にアップグレードする](./upgrade-to-rds.md)
 
 新しいリモート デスクトップ展開を作成する場合は、 次の情報を使用して、Windows Server 2016 にリモート デスクトップを展開します。
 

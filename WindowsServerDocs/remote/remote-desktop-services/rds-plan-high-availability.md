@@ -9,12 +9,12 @@ author: lizap
 ms.author: elizapo
 ms.date: 09/07/2016
 manager: dongill
-ms.openlocfilehash: 86c5f59fcd403e838a316174840b93608d7f06ec
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 36996d7f69c33198587dbe5297650c16ffeb1da2
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80858145"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959324"
 ---
 # <a name="remote-desktop-services---high-availability"></a>リモート デスクトップ サービス - 高可用性
 
@@ -23,10 +23,10 @@ ms.locfileid: "80858145"
 失敗と調整は、大規模なシステムでは避けられません。 高可用性をサポートし、エンド ユーザーがいつでもシームレスに接続できるようにするように、リモート デスクトップ インフラストラクチャのロールを簡単に設定できます。
 
 リモート デスクトップ サービスでは、次の項目はリモート デスクトップ インフラストラクチャのロールを表し、高可用性を確立するためのそれぞれのガイダンスが付けられています。
-- [リモート デスクトップ接続ブローカー](Deploy-a-Remote-Desktop-Connection-Broker-cluster.md)
-- [リモート デスクトップ ゲートウェイ](Deploy-a-RD-Web-Access-and-Gateway-farm.md)
+- [リモート デスクトップ接続ブローカー](./rds-connection-broker-cluster.md)
+- [リモート デスクトップ ゲートウェイ](./rds-rdweb-gateway-ha.md)
 - リモート デスクトップ ライセンス
-- [リモート デスクトップ Web アクセス](Deploy-a-RD-Web-Access-and-Gateway-farm.md)
+- [リモート デスクトップ Web アクセス](./rds-rdweb-gateway-ha.md)
 
 高可用性を確立するには、それぞれのロール サービスの複製を 2 台目のコンピューター上に作成します。 Azure では、2 つの仮想マシンのセット (同じロールをホスト) を、可用性セットに配置することによって、保証された稼働時間が受けられます。
 

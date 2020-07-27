@@ -9,12 +9,12 @@ ms.topic: article
 ms.assetid: 2a44dc9f-c221-4bf7-89c3-fb4c86a90f8c
 author: jaimeo
 manager: dougkim
-ms.openlocfilehash: 2ab78ccbc4e49bd95a74fe1e17d5ea14891eb1b8
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 4d666abea6ab79ee29bd5bf93255426289c8deee
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80857275"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963364"
 ---
 # <a name="recommended-settings-for-vdi-desktops"></a>VDI デスクトップで推奨される設定
 
@@ -31,7 +31,7 @@ Windows 10 オペレーティング システムはすぐに使用できるよ�
 > [!NOTE]
 > このトピックで特に説明されていない設定は、既定値のままにしても VDI 機能に大きな影響はありません (またはお客様の要件とポリシーに従って設定できます)。
 
-VDI 展開の基盤となるイメージを作成するときは、必ず **Current Branch** を使用してください。 Current Branch の詳細については、「[Windows 10 リリース情報](https://technet.microsoft.com/windows/release-info.aspx)」を参照してください。
+VDI 展開の基盤となるイメージを作成するときは、必ず **Current Branch** を使用してください。 Current Branch の詳細については、「[Windows 10 リリース情報](/archive/blogs/mniehaus/windows-10-1607-keeping-apps-from-coming-back-when-deploying-the-feature-update)」を参照してください。
 
 ## <a name="creating-the-windows-10-image"></a>Windows 10 イメージの作成
 最初の手順は、物理マシンまたは仮想マシンに Windows 10 1607 (バージョン 10.0.1393) の参照イメージをインストールすることです。 仮想マシンへのインストールは簡単であり、以前のバージョンにロールバックする場合に備えて、仮想ハード ディスク (VHD) ファイルのバージョンを保存できます。

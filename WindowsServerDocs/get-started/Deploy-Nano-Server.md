@@ -10,12 +10,12 @@ ms.assetid: 9f109c91-7c2e-4065-856c-ce9e2e9ce558
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 938c881a92b15c0cab760ed1a81050fb3363c328
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: e3d710a8c701b52bda62c5cd0616a44f37fe2e7b
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472969"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962034"
 ---
 # <a name="deploy-nano-server"></a>Nano Server を展開します。
 
@@ -72,18 +72,18 @@ Windows Server 2016 の場合、Nano Server は物理メディアで配布され
 | 既定の署名ファイルを含む Windows Defender | -Defender |
 | Ruby、Node.js などの一般的なアプリケーション フレームワークのアプリケーションの互換性を保つための Reverse Forwarder | 既定で含まれるようになりました |
 | DNS サーバーの役割 | -Package Microsoft-NanoServer-DNS-Package |
-| PowerShell Desired State Configuration (DSC) | -Package Microsoft-NanoServer-DSC-Package<p>**注:** 詳細については、「[DSC on Nano Server の使用](https://msdn.microsoft.com/powershell/dsc/nanoDsc)」を参照してください。 |
+| PowerShell Desired State Configuration (DSC) | -Package Microsoft-NanoServer-DSC-Package<p>**注:** 詳細については、「[DSC on Nano Server の使用](/archive/blogs/askcore/kms-host-client-count-not-increasing-due-to-duplicate-cmids)」を参照してください。 |
 | Internet Information Server (IIS) | -Package Microsoft-NanoServer-IIS-Package<p>**注:** IIS の操作の詳細については、「[Nano Server の IIS](IIS-on-Nano-Server.md)」を参照してください。 |
 | Windows コンテナーのホストのサポート | -Containers |
-| System Center Virtual Machine Manager エージェント | -Package Microsoft-NanoServer-SCVMM-Package<p>-Package Microsoft-NanoServer-SCVMM-Compute-Package<p>**注:** Hyper-V を監視する場合にのみ SCVMM Compute パッケージを使用します。 VMM でのハイパーコンバージドの展開には、-Storage パラメーターも指定してください。 詳しくは、[VMM のマニュアル](https://technet.microsoft.com/system-center-docs/vmm/manage/manage-compute-add-nano-hyper-v)をご覧ください。 |
+| System Center Virtual Machine Manager エージェント | -Package Microsoft-NanoServer-SCVMM-Package<p>-Package Microsoft-NanoServer-SCVMM-Compute-Package<p>**注:** Hyper-V を監視する場合にのみ SCVMM Compute パッケージを使用します。 VMM でのハイパーコンバージドの展開には、-Storage パラメーターも指定してください。 詳しくは、[VMM のマニュアル](/system-center/vmm/hyper-v-nano?view=sc-vmm-2016&viewFallbackFrom=sc-vmm-2019)をご覧ください。 |
 | System Center Operations Manager エージェント | 個別にインストールされます。 詳細については、 https://technet.microsoft.com/system-center-docs/om/manage/install-agent-on-nano-server の System Center Operations Manager のドキュメントをご覧ください。 |
 | データ センター ブリッジング (DCBQoS を含む) | -Package Microsoft-NanoServer-DCB-Package |
 | 仮想マシンでの展開 | -Package Microsoft-NanoServer-Guest-Package |
 | 物理マシンでの展開 | - Package Microsoft-NanoServer-Host-Package |
 | BitLocker、トラステッド プラットフォーム モジュール (TPM)、ボリュームの暗号化、プラットフォームの識別、暗号化プロバイダー、およびセキュア スタートアップに関連するその他の機能 | -Package Microsoft-NanoServer-SecureStartup-Package |
 | Hyper-V によるシールドされた VM のサポート | -Package Microsoft-NanoServer-ShieldedVM-Package<p>**注:** このパッケージは、Nano Server の Datacenter Edition でのみ利用できます。 |
-| 簡易ネットワーク管理プロトコル (SNMP) エージェント | -Package Microsoft-NanoServer-SNMP-Agent-Package.cab<p>**注:** Windows Server 2016 インストール メディアには含まれていません。 オンラインでのみ入手できます。 詳しくは、「[オンラインでの役割と機能のインストール](https://technet.microsoft.com/windows-server-docs/get-started/deploy-nano-server#a-namebkmkonlineainstalling-roles-and-features-online)」をご覧ください。 |
-| IPv6 移行テクノロジ (6to4、ISATAP、Port Proxy、Teredo) を使用してトンネル接続を提供する IPHelper サービスと、IP-HTTPS | -Package Microsoft-NanoServer-IPHelper-Service-Package.cab<p>**注:** Windows Server 2016 インストール メディアには含まれていません。 オンラインでのみ入手できます。 詳しくは、「[オンラインでの役割と機能のインストール](https://technet.microsoft.com/windows-server-docs/get-started/deploy-nano-server#a-namebkmkonlineainstalling-roles-and-features-online)」をご覧ください。 ||
+| 簡易ネットワーク管理プロトコル (SNMP) エージェント | -Package Microsoft-NanoServer-SNMP-Agent-Package.cab<p>**注:** Windows Server 2016 インストール メディアには含まれていません。 オンラインでのみ入手できます。 詳しくは、「[オンラインでの役割と機能のインストール](#BKMK_online)」をご覧ください。 |
+| IPv6 移行テクノロジ (6to4、ISATAP、Port Proxy、Teredo) を使用してトンネル接続を提供する IPHelper サービスと、IP-HTTPS | -Package Microsoft-NanoServer-IPHelper-Service-Package.cab<p>**注:** Windows Server 2016 インストール メディアには含まれていません。 オンラインでのみ入手できます。 詳しくは、「[オンラインでの役割と機能のインストール](#BKMK_online)」をご覧ください。 ||
 
 > [!NOTE]
 > これらのオプションを使ってパッケージをインストールすると、選択したサーバー メディアのロケールに基づいて対応する言語パックもインストールされます。 利用可能な言語パックとそのロケールの省略形は、インストール メディア内のイメージのロケールの名前が付いたサブフォルダーを見るとわかります。
@@ -216,7 +216,7 @@ Nano Server に接続した後は、psEdit コマンドにファイルの相対�
 ## <a name="installing-roles-and-features-online"></a><a name=BKMK_online></a>オンラインでの役割と機能のインストール
 
 > [!NOTE]
-> オプションの Nano Server パッケージをメディアやオンライン リポジトリからインストールした場合、最近のセキュリティ修正プログラムは含まれていません。 オプションのパッケージとベースとなるオペレーティング システム間のバージョンの不一致を避けるためには、オプションのパッケージをインストールした直後かつサーバーを再起動する**前に**、[最新の累積的な更新プログラム](https://technet.microsoft.com/windows-server-docs/get-started/update-nano-server)をインストールする必要があります。
+> オプションの Nano Server パッケージをメディアやオンライン リポジトリからインストールした場合、最近のセキュリティ修正プログラムは含まれていません。 オプションのパッケージとベースとなるオペレーティング システム間のバージョンの不一致を避けるためには、オプションのパッケージをインストールした直後かつサーバーを再起動する**前に**、[最新の累積的な更新プログラム](./update-nano-server.md)をインストールする必要があります。
 
 ### <a name="installing-roles-and-features-from-a-package-repository"></a>パッケージ リポジトリからの役割と機能のインストール
 
@@ -228,7 +228,7 @@ Import-PackageProvider NanoServerPackage
 ```
 
 >[!NOTE]
->Install-PackageProvider の実行時にエラーが発生した場合、[最新の累積的な更新プログラム](https://technet.microsoft.com/windows-server-docs/get-started/update-nano-server) ([KB3206632](https://support.microsoft.com/kb/3206632) 以降) をインストールしたことを確認するか、次のように Save-Module を使います。
+>Install-PackageProvider の実行時にエラーが発生した場合、[最新の累積的な更新プログラム](./update-nano-server.md) ([KB3206632](https://support.microsoft.com/kb/3206632) 以降) をインストールしたことを確認するか、次のように Save-Module を使います。
 
 ```powershell
 Save-Module -Path $Env:ProgramFiles\WindowsPowerShell\Modules\ -Name NanoServerPackage -MinimumVersion 1.0.1.0
@@ -493,23 +493,23 @@ Nano Server で WSA パッケージを作成してインストールするには
 パッケージの発行者は、次の手順を実行する必要があります。
 
 1. [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk) をインストールします。これには、WSA パッケージを作成するために必要なツールであるMakeAppx、MakeCert、Pvk2Pfx、SignTool が含まれています。
-2. マニフェストを宣言します。[WSA マニフェスト拡張スキーマ](https://msdn.microsoft.com/library/windows/apps/mt670653.aspx)に従って、AppxManifest.xml マニフェスト ファイルを作成します。
+2. マニフェストを宣言します。[WSA マニフェスト拡張スキーマ](/uwp/schemas/appxpackage/uapmanifestschema/element-serverpreview-extension-manual)に従って、AppxManifest.xml マニフェスト ファイルを作成します。
 3. **MakeAppx** ツールを使用して WSA パッケージを作成します。
 4. **MakeCert** ツールと **Pvk2Pfx** ツールを使用して証明書を作成し、**Signtool** ツールを使用してパッケージに署名します。
 
 次に、パッケージのコンシューマーは、次の手順を実行する必要があります。
 
-1. certStoreLocation に Cert:\LocalMachine\TrustedPeople を指定して [*Import-Certificate*](https://technet.microsoft.com/library/hh848630) PowerShell コマンドレットを実行して、発行者が上記の手順 4. で作成した証明書を Nano Server にインポートします。 たとえば次のようになります。`Import-Certificate -FilePath .\xyz.cer -CertStoreLocation Cert:\LocalMachine\TrustedPeople`
-2. [**Add-AppxPackage**](https://technet.microsoft.com/library/mt575516(v=wps.620).aspx) PowerShell コマンドレットを実行して、WSA パッケージを Nano Server にインストールすることで、アプリを Nano Server にインストールします。 たとえば次のようになります。`Add-AppxPackage wsaSample.appx`
+1. certStoreLocation に Cert:\LocalMachine\TrustedPeople を指定して [*Import-Certificate*](/uwp/schemas/appxpackage/uapmanifestschema/element-serverpreview-extension-manual) PowerShell コマンドレットを実行して、発行者が上記の手順 4. で作成した証明書を Nano Server にインポートします。 たとえば次のようになります。`Import-Certificate -FilePath .\xyz.cer -CertStoreLocation Cert:\LocalMachine\TrustedPeople`
+2. [**Add-AppxPackage**](/uwp/schemas/appxpackage/uapmanifestschema/element-serverpreview-extension-manual) PowerShell コマンドレットを実行して、WSA パッケージを Nano Server にインストールすることで、アプリを Nano Server にインストールします。 たとえば次のようになります。`Add-AppxPackage wsaSample.appx`
 
 #### <a name="additional-resources-for-creating-apps"></a>アプリの作成に関連するその他のリソース
 
 WSA は、Windows アプリ パッケージ テクノロジのサーバー拡張機能です (ただし、Microsoft Store ではホストされません)。 WSA を使用したアプリを発行する場合は、アプリ パッケージのパイプラインについて理解するうえで、次のトピックが役に立ちます。
 
-- [基本的なパッケージ マニフェストを作成する方法](https://msdn.microsoft.com/library/windows/desktop/br211475.aspx)
-- [アプリ パッケージ ツール (MakeAppx.exe)](https://msdn.microsoft.com/library/windows/desktop/hh446767(v=vs.85).aspx)
-- [アプリ パッケージの署名証明書を作成する方法](https://msdn.microsoft.com/library/windows/desktop/jj835832(v=vs.85).aspx)
-- [SignTool](https://msdn.microsoft.com/library/windows/desktop/aa387764(v=vs.85).aspx)
+- [基本的なパッケージ マニフェストを作成する方法](/uwp/schemas/appxpackage/how-to-create-a-basic-package-manifest)
+- [アプリ パッケージ ツール (MakeAppx.exe)](/windows/win32/appxpkg/make-appx-package--makeappx-exe-)
+- [アプリ パッケージの署名証明書を作成する方法](/windows/win32/appxpkg/how-to-create-a-package-signing-certificate)
+- [SignTool](/windows/win32/seccrypto/signtool)
 
 ### <a name="installing-drivers-on-nano-server"></a>Nano Server へのドライバーのインストール
 
@@ -517,15 +517,15 @@ Microsoft 以外のドライバーは、INF ドライバー パッケージを�
 
 PnP ドライバー パッケージとファイル システム フィルター ドライバー パッケージのどちらも、署名などの一般的なドライバー パッケージ ガイドラインだけでなく、ユニバーサル ドライバーの要件とインストール プロセスに従う必要があります。 これについては、次のトピックで説明されています。
 
-- [ドライバーの署名](https://msdn.microsoft.com/windows/hardware/drivers/install/driver-signing)
-- [ユニバーサル INF ファイルの使用](https://msdn.microsoft.com/windows/hardware/drivers/install/using-a-configurable-inf-file)
+- [ドライバーの署名](/windows-hardware/drivers/install/driver-signing)
+- [ユニバーサル INF ファイルの使用](/windows-hardware/drivers/install/using-a-universal-inf-file)
 
 #### <a name="installing-driver-packages-offline"></a>オフラインでのドライバー パッケージのインストール
 
-サポートされているドライバー パッケージは、[DISM.exe](https://msdn.microsoft.com/windows/hardware/commercialize/manufacture/desktop/dism-driver-servicing-command-line-options-s14) または [DISM PowerShell](https://technet.microsoft.com/library/dn376497.aspx) コマンドレットを使用してオフラインで Nano Server にインストールできます。
+サポートされているドライバー パッケージは、[DISM.exe](/windows-hardware/manufacture/desktop/dism-driver-servicing-command-line-options-s14) または [DISM PowerShell](/powershell/module/dism/add-windowsdriver?view=win10-ps) コマンドレットを使用してオフラインで Nano Server にインストールできます。
 
 #### <a name="installing-driver-packages-online"></a>オンラインでのドライバー パッケージのインストール
-PnP ドライバー パッケージは、[PnpUtil](https://msdn.microsoft.com/library/windows/hardware/ff550419(v=vs.85).aspx) を使用してオンラインで Nano Server にインストールできます。 Nano Server では、現在、非 PnP ドライバー パッケージのオンラインでのドライバーのインストールはサポートされていません。
+PnP ドライバー パッケージは、[PnpUtil](/windows-hardware/drivers/devtest/pnputil) を使用してオンラインで Nano Server にインストールできます。 Nano Server では、現在、非 PnP ドライバー パッケージのオンラインでのドライバーのインストールはサポートされていません。
 
 ## <a name="joining-nano-server-to-a-domain"></a><a name=BKMK_JoinDomain></a>Nano Server のドメインへの参加
 
@@ -679,7 +679,7 @@ Hyper-V 用の Windows PowerShell コマンドレットでは CimSession また�
 
 `Add-ClusterScaleoutFileServerRole -name <sofsname> -cluster <clustername>` を実行して、スケールアウト ファイル サーバーを作成します
 
-フェールオーバー クラスタリング向けの他のコマンドレットについては、「[Microsoft.FailoverClusters.PowerShell](https://technet.microsoft.com/library/ee461009.aspx)」を参照してください。
+フェールオーバー クラスタリング向けの他のコマンドレットについては、「[Microsoft.FailoverClusters.PowerShell](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee461009(v=technet.10))」を参照してください。
 
 ### <a name="using-dns-server-on-nano-server"></a><a name=BKMK_DNS></a>Nano Server での DNS サーバーの使用
 

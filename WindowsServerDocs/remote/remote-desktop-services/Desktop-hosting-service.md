@@ -8,12 +8,12 @@ ms.date: 07/06/2018
 ms.topic: article
 author: heidilohr
 manager: lizross
-ms.openlocfilehash: 2ee11e40d5fb69141ad5dd5342f8574b22232bbd
-ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
+ms.openlocfilehash: 57e9e25881d948ec705dc51d8e61377e0beb78a8
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "85070476"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86960394"
 ---
 # <a name="desktop-hosting-service"></a>デスクトップ ホスティング サービス
 
@@ -41,9 +41,9 @@ AD DS の展開には複数の方法があります。
 
 詳細については、以下の記事を参照してください。
 
-* [Active Directory Domain Services のドキュメント](https://docs.microsoft.com/azure/active-directory-domain-services/)
-* [Windows Server 2012 R2 用のデスクトップ ホスティングの参照アーキテクチャ ガイド](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal)
-* [Azure portal でサイト間接続を作成する](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal)
+* [Active Directory Domain Services のドキュメント](/azure/active-directory-domain-services/)
+* [Windows Server 2012 R2 用のデスクトップ ホスティングの参照アーキテクチャ ガイド](/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal)
+* [Azure portal でサイト間接続を作成する](/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal)
 
 ## <a name="sql-database"></a>SQL データベース
 
@@ -56,8 +56,8 @@ SQL データベースの展開方法は複数あります。
 
 高可用性の SQL データベースのインフラストラクチャを設定する方法の詳細については、次の記事をご覧ください。
 
-* [Azure SQL Database サービスとは](https://docs.microsoft.com/azure/sql-database/sql-database-technical-overview)
-* [可用性グループの作成と構成 (SQL Server)](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/creation-and-configuration-of-availability-groups-sql-server?view=sql-server-2017)。
+* [Azure SQL Database サービスとは](/azure/sql-database/sql-database-technical-overview)
+* [可用性グループの作成と構成 (SQL Server)](/sql/database-engine/availability-groups/windows/creation-and-configuration-of-availability-groups-sql-server?view=sql-server-2017)。
 * [RD 接続ブローカー サーバーを展開に追加し、高可用性を構成する](rds-connection-broker-cluster.md)。
 
 ## <a name="file-server"></a>ファイル サーバー
@@ -71,7 +71,7 @@ SQL データベースの展開方法は複数あります。
 詳細については、以下の記事を参照してください。
 
 * [Windows Server の記憶域](../../storage/storage.yml)
-* [Azure portal で Windows VM にマネージド データ ディスクをアタッチする方法](https://docs.microsoft.com/azure/virtual-machines/windows/attach-managed-disk-portal?toc=%2Fazure%2Fvirtual-machines%2Fwindows%2Fclassic%2Ftoc.json)
+* [Azure portal で Windows VM にマネージド データ ディスクをアタッチする方法](/azure/virtual-machines/windows/attach-managed-disk-portal?toc=/azure/virtual-machines/windows/classic/toc.json)
 
 ### <a name="user-profile-disks"></a>ユーザー プロファイル ディスク
 

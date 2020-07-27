@@ -8,12 +8,12 @@ author: JasonGerend
 manager: brianlic
 ms.date: 06/07/2019
 ms.author: jgerend
-ms.openlocfilehash: 8feed2adb606edfb6068d7fe10c18baf142077ac
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 514dd9be3f7f634cf021a8a154f4b64c9018743e
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "76822345"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961634"
 ---
 # <a name="deploying-roaming-user-profiles"></a>移動ユーザー プロファイルの展開
 
@@ -54,7 +54,7 @@ ms.locfileid: "76822345"
     - ファイル共有で DFS レプリケーションを使用して、コンテンツを別のサーバーにレプリケートする場合、ユーザーのさまざまなサーバーへの編集の競合を防ぐため、ユーザーはソース サーバーにのみアクセスできる必要があります。
     - ファイル共有がクラスター化されている場合は、パフォーマンスの問題を回避するため、ファイル共有での継続的可用性を無効にします。
 - 移動ユーザー プロファイル内でプライマリ コンピューター サポートを使用するには、クライアント コンピューターと Active Directory スキーマの追加の要件があります。 詳細については、「[フォルダー リダイレクトと移動ユーザー プロファイル用のプライマリ コンピューターを展開する](deploy-primary-computers.md)」を参照してください。
-- ユーザーが複数の PC、リモート デスクトップ セッション ホスト、または仮想デスクトップ インフラストラクチャ (VDI) サーバーを使用している場合、Windows 10、Windows Server 2019、または Windows Server 2016 上ではそのユーザーのスタート メニューのレイアウトが移動されません。 回避策として、このトピックで説明するように、スタート画面のレイアウトを指定できます。 または、ユーザー プロファイル ディスクを使用できます。これにより、リモート デスクトップ セッション ホスト サーバーまたは VDI サーバーと共に使用するときにスタート メニューの設定が適切に移動されます。 詳細については、「[Windows Server 2012 でユーザー プロファイル ディスクを使用してユーザー データ管理を簡単にする](https://blogs.technet.microsoft.com/enterprisemobility/2012/11/13/easier-user-data-management-with-user-profile-disks-in-windows-server-2012/)」を参照してください。
+- ユーザーが複数の PC、リモート デスクトップ セッション ホスト、または仮想デスクトップ インフラストラクチャ (VDI) サーバーを使用している場合、Windows 10、Windows Server 2019、または Windows Server 2016 上ではそのユーザーのスタート メニューのレイアウトが移動されません。 回避策として、このトピックで説明するように、スタート画面のレイアウトを指定できます。 または、ユーザー プロファイル ディスクを使用できます。これにより、リモート デスクトップ セッション ホスト サーバーまたは VDI サーバーと共に使用するときにスタート メニューの設定が適切に移動されます。 詳細については、「[Windows Server 2012 でユーザー プロファイル ディスクを使用してユーザー データ管理を簡単にする](https://techcommunity.microsoft.com/t5/microsoft-security-and/easier-user-data-management-with-user-profile-disks-in-windows/ba-p/247555)」を参照してください。
 
 ### <a name="considerations-when-using-roaming-user-profiles-on-multiple-versions-of-windows"></a>複数の Windows のバージョンで移動ユーザー プロファイルを使用する場合の考慮事項
 
@@ -168,7 +168,7 @@ Windows Server 上でファイル共有を作成する方法を次に示しま�
     この手順が必要なのは、[MS16-072](https://support.microsoft.com/help/3163622/ms16-072-security-update-for-group-policy-june-14%2c-2016) でセキュリティが変更されたためです。
 
 >[!IMPORTANT]
->[MS16-072A](https://support.microsoft.com/help/3163622/ms16-072-security-update-for-group-policy-june-14%2c-2016) で行われたセキュリティの変更により、現在は「Authenticated Users」グループに GPO への読み取りアクセス許可を委任する必要があります。そうしないと、GPO がユーザーに適用されないか、GPO が既に適用されている場合はその GPO が削除され、ユーザー プロファイルがローカル PC にリダイレクトされます。 詳細については、「[グループ ポリシーのセキュリティの更新 MS16-072 の展開](https://blogs.technet.microsoft.com/askds/2016/06/22/deploying-group-policy-security-update-ms16-072-kb3163622/)」を参照してください。
+>[MS16-072A](https://support.microsoft.com/help/3163622/ms16-072-security-update-for-group-policy-june-14%2c-2016) で行われたセキュリティの変更により、現在は「Authenticated Users」グループに GPO への読み取りアクセス許可を委任する必要があります。そうしないと、GPO がユーザーに適用されないか、GPO が既に適用されている場合はその GPO が削除され、ユーザー プロファイルがローカル PC にリダイレクトされます。 詳細については、「[グループ ポリシーのセキュリティの更新 MS16-072 の展開](/archive/blogs/askds/deploying-group-policy-security-update-ms16-072-kb3163622)」を参照してください。
 
 ## <a name="step-5-optionally-set-up-roaming-user-profiles-on-user-accounts"></a>手順 5:オプションでユーザー アカウントに移動ユーザー プロファイルを設定する
 
@@ -185,12 +185,12 @@ Windows Server 上でファイル共有を作成する方法を次に示しま�
     
     `\\fs1.corp.contoso.com\User Profiles$\%username%`
     
-    固定移動ユーザー プロファイルを指定するには、以前に作成した NTuser.man ファイルのパスを指定します。たとえば、`fs1.corp.contoso.comUser Profiles$default` のようになります。 詳細については、「[固定ユーザー プロファイルの作成](https://docs.microsoft.com/windows/client-management/mandatory-user-profile)」を参照してください。
+    固定移動ユーザー プロファイルを指定するには、以前に作成した NTuser.man ファイルのパスを指定します。たとえば、`fs1.corp.contoso.comUser Profiles$default` のようになります。 詳細については、「[固定ユーザー プロファイルの作成](/windows/client-management/mandatory-user-profile)」を参照してください。
 4. **[OK]** を選択します。
 
 > [!NOTE]
 > 既定で、移動ユーザー プロファイルを使用する場合、すべての Windows® ランタイムベース (Windows ストア) アプリの展開が許可されます。 ただし、特殊なプロファイルを使用する場合、アプリは既定で展開されません。 特殊なプロファイルは、ユーザーがサインアウトした後に変更が破棄されるユーザー プロファイルです。
-> <br><br>特殊なプロファイルのアプリの展開の制限を削除するには、 **Allow deployment operations in special profiles** ポリシー設定 (コンピューターの構成\ポリシー\管理用テンプレート\Windows コンポーネント\アプリ パッケージの展開にある) をオンにします。 ただし、このシナリオで展開されたアプリでは、コンピューターに一部のデータが保存されたままになり、単一のコンピューターに数百のユーザーがいる場合に、蓄積される可能性があります。 アプリをクリーンアップするには、コンピューターにプロファイルがなくなったユーザーのために [CleanupPackageForUserAsync](https://msdn.microsoft.com/library/windows/apps/windows.management.deployment.packagemanager.cleanuppackageforuserasync.aspx) API を使用してアプリ パッケージをクリーンアップするツールを探すか開発します。
+> <br><br>特殊なプロファイルのアプリの展開の制限を削除するには、 **Allow deployment operations in special profiles** ポリシー設定 (コンピューターの構成\ポリシー\管理用テンプレート\Windows コンポーネント\アプリ パッケージの展開にある) をオンにします。 ただし、このシナリオで展開されたアプリでは、コンピューターに一部のデータが保存されたままになり、単一のコンピューターに数百のユーザーがいる場合に、蓄積される可能性があります。 アプリをクリーンアップするには、コンピューターにプロファイルがなくなったユーザーのために [CleanupPackageForUserAsync](/uwp/api/Windows.Management.Deployment.PackageManager?view=winrt-19041#windows_management_deployment_packagemanager_cleanuppackageforuserasync_system_string_system_string_) API を使用してアプリ パッケージをクリーンアップするツールを探すか開発します。
 > <br><br>Windows ストア アプリの追加の背景情報については、「 [Windows ストアへのクライアント アクセスの管理](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh832040(v=ws.11)>)」を参照してください。
 
 ## <a name="step-6-optionally-set-up-roaming-user-profiles-on-computers"></a>手順 6:オプションでコンピューターに移動ユーザー プロファイルを設定する
@@ -216,7 +216,7 @@ Windows Server 上でファイル共有を作成する方法を次に示しま�
 
     `\\fs1.corp.contoso.com\User Profiles$\%username%`
 
-    ユーザーが完全には変更することができない (変更はユーザーのサインアウト時にリセットされる) 事前構成済みのプロファイルである固定移動ユーザー プロファイルを指定するには、以前に作成した NTuser.man ファイルのパスを指定します。たとえば `\\fs1.corp.contoso.com\User Profiles$\default` のようになります。 詳細については、「 [Creating a Mandatory User Profile (固定ユーザー プロファイルの作成)](https://docs.microsoft.com/windows/client-management/mandatory-user-profile)」を参照してください。
+    ユーザーが完全には変更することができない (変更はユーザーのサインアウト時にリセットされる) 事前構成済みのプロファイルである固定移動ユーザー プロファイルを指定するには、以前に作成した NTuser.man ファイルのパスを指定します。たとえば `\\fs1.corp.contoso.com\User Profiles$\default` のようになります。 詳細については、「 [Creating a Mandatory User Profile (固定ユーザー プロファイルの作成)](/windows/client-management/mandatory-user-profile)」を参照してください。
 8. **[OK]** を選択します。
 
 ## <a name="step-7-optionally-specify-a-start-layout-for-windows-10-pcs"></a>手順 7:必要に応じて Windows 10 PC のスタート画面のレイアウトを指定する
@@ -226,9 +226,9 @@ Windows Server 上でファイル共有を作成する方法を次に示しま�
 スタート画面のレイアウトを指定するには、以下を行います。
 
 1. Windows 10 PC を Windows 10 バージョン 1607 (Anniversary Update とも呼ばれます) 以降に更新し、2017 年 3 月 14 日の累積的な更新プログラム ([KB4013429](https://support.microsoft.com/kb/4013429)) 以降をインストールします。
-2. 完全または部分的なスタート メニューのレイアウトの XML ファイルを作成します。 これを行うには、「[スタート画面のレイアウトのカスタマイズとエクスポート](https://docs.microsoft.com/windows/configuration/customize-and-export-start-layout)」を参照してください。
+2. 完全または部分的なスタート メニューのレイアウトの XML ファイルを作成します。 これを行うには、「[スタート画面のレイアウトのカスタマイズとエクスポート](/windows/configuration/customize-and-export-start-layout)」を参照してください。
     * "*完全*" なスタート画面のレイアウトを指定した場合、ユーザーはスタート メニューのどの部分もカスタマイズできません。 "*部分的*" なスタート画面のレイアウトを指定した場合、ユーザーは、指定したタイルのロックされたグループ以外のすべてのものをカスタマイズできます。 ただし、部分的なスタート画面のレイアウトでは、スタート メニューに対するユーザーのカスタマイズは、他の PC に移動されません。
-3. グループ ポリシーを使用して、カスタマイズされたスタート画面のレイアウトを、移動ユーザー プロファイル用に作成した GPO に適用します。 これを行うには、「[グループ ポリシーを使ってカスタマイズしたスタート画面のレイアウトをドメインに適用する](https://docs.microsoft.com/windows/configuration/customize-windows-10-start-screens-by-using-group-policy#bkmk-domaingpodeployment)」を参照してください。
+3. グループ ポリシーを使用して、カスタマイズされたスタート画面のレイアウトを、移動ユーザー プロファイル用に作成した GPO に適用します。 これを行うには、「[グループ ポリシーを使ってカスタマイズしたスタート画面のレイアウトをドメインに適用する](/windows/configuration/customize-windows-10-start-screens-by-using-group-policy#bkmk-domaingpodeployment)」を参照してください。
 4. グループ ポリシーを使用して、Windows 10 PC 上で次のレジストリ値を設定します。 これを行うには、「[[レジストリ] 項目を構成する](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753092(v=ws.11)>)」を参照してください。
 
 | **操作**   | **Update**                  |
@@ -240,9 +240,9 @@ Windows Server 上でファイル共有を作成する方法を次に示しま�
 | [値] に   | **1** (無効にするには **0**) |
 | ベース         | **10 進数**                 |
 
-5. (オプション) 初回ログオンの最適化を有効にすると、ユーザーによるサインインが高速になります。 これを行うには、「[ポリシーを適用してサインイン時間を改善する](https://docs.microsoft.com/windows/client-management/mandatory-user-profile#apply-policies-to-improve-sign-in-time)」を参照してください。
+5. (オプション) 初回ログオンの最適化を有効にすると、ユーザーによるサインインが高速になります。 これを行うには、「[ポリシーを適用してサインイン時間を改善する](/windows/client-management/mandatory-user-profile#apply-policies-to-improve-sign-in-time)」を参照してください。
 6. (オプション) クライアント PC の展開に使用する Windows 10 基本イメージから不要なアプリを削除することで、サインイン時間をさらに短縮します。 Windows Server 2019 および Windows Server 2016 には事前にプロビジョニングされたアプリがないため、サーバー イメージ上でこの手順をスキップできます。
-    - アプリを削除するには、Windows PowerShell で [Remove-AppxProvisionedPackage](https://docs.microsoft.com/powershell/module/dism/remove-appxprovisionedpackage?view=win10-ps) コマンドレットを使用して、次のアプリケーションをアンインストールします。 PC が既に展開されている場合は、[Remove-AppxPackage](https://docs.microsoft.com/powershell/module/appx/remove-appxpackage?view=win10-ps) を使用して、これらのアプリの削除をスクリプト化できます。
+    - アプリを削除するには、Windows PowerShell で [Remove-AppxProvisionedPackage](/powershell/module/dism/remove-appxprovisionedpackage?view=win10-ps) コマンドレットを使用して、次のアプリケーションをアンインストールします。 PC が既に展開されている場合は、[Remove-AppxPackage](/powershell/module/appx/remove-appxpackage?view=win10-ps) を使用して、これらのアプリの削除をスクリプト化できます。
     
       - Microsoft.windowscommunicationsapps\_8wekyb3d8bbwe
       - Microsoft.BingWeather\_8wekyb3d8bbwe
@@ -328,7 +328,7 @@ Windows Server 上でファイル共有を作成する方法を次に示しま�
      > [!NOTE] 
      > StartLayout をインポートすると、既定のユーザー プロファイルが変更されます。 インポート後に作成されたすべてのユーザー プロファイルでは、インポートされた Start-Layout が取得されます。
  
-- IT 管理者は、グループ ポリシーを使用してスタート画面のレイアウトを管理することを選択できます。 グループ ポリシーを使用すると、標準化されたスタート画面のレイアウトをユーザーに適用するための一元的な管理ソリューションが提供されます。 スタート画面の管理にグループ ポリシーを使用するモードには、2 つのモードがあります。 完全ロックダウンと部分ロックダウンです。 完全ロックダウンのシナリオでは、ユーザーは、スタート画面のレイアウトを変更できません。 部分ロックダウンのシナリオでは、ユーザーがスタート画面の特定の領域に変更を加えることができます。 詳細については、「[スタート画面のレイアウトのカスタマイズとエクスポート](https://docs.microsoft.com/windows/configuration/customize-and-export-start-layout)」を参照してください。
+- IT 管理者は、グループ ポリシーを使用してスタート画面のレイアウトを管理することを選択できます。 グループ ポリシーを使用すると、標準化されたスタート画面のレイアウトをユーザーに適用するための一元的な管理ソリューションが提供されます。 スタート画面の管理にグループ ポリシーを使用するモードには、2 つのモードがあります。 完全ロックダウンと部分ロックダウンです。 完全ロックダウンのシナリオでは、ユーザーは、スタート画面のレイアウトを変更できません。 部分ロックダウンのシナリオでは、ユーザーがスタート画面の特定の領域に変更を加えることができます。 詳細については、「[スタート画面のレイアウトのカスタマイズとエクスポート](/windows/configuration/customize-and-export-start-layout)」を参照してください。
         
    > [!NOTE]
    > 部分ロックダウン シナリオでユーザーが行った変更も、アップグレード時に失われます。
@@ -359,6 +359,6 @@ Windows Server 上でファイル共有を作成する方法を次に示しま�
 - [フォルダー リダイレクト、オフライン ファイルおよび移動ユーザー プロファイルを展開する](deploy-folder-redirection.md)
 - [フォルダー リダイレクトと移動ユーザー プロファイル用のプライマリ コンピューターを展開する](deploy-primary-computers.md)
 - [ユーザー状態管理の実装](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc784645(v=ws.10)>)
-- [レプリケートされたユーザー プロファイル データに関する Microsoft のサポート表明](https://blogs.technet.microsoft.com/askds/2010/09/01/microsofts-support-statement-around-replicated-user-profile-data/)
+- [レプリケートされたユーザー プロファイル データに関する Microsoft のサポート表明](/archive/blogs/askds/microsofts-support-statement-around-replicated-user-profile-data)
 - [DISM を使用したアプリのサイドローディング](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh852635(v=win.10)>)
-- [Windows ランタイムベース アプリのパッケージ化、展開、クエリのトラブルシューティング](https://msdn.microsoft.com/library/windows/desktop/hh973484.aspx)
+- [Windows ランタイムベース アプリのパッケージ化、展開、クエリのトラブルシューティング](/windows/win32/appxpkg/troubleshooting)

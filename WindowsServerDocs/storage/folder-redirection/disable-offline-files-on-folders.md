@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 09/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: c2614c0180b32a0215454f2d725d6a962986ef1f
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 0219c669a52d961cc98d6b0ee16bcbcfbbb78417
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71394396"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961574"
 ---
 # <a name="disable-offline-files-on-individual-redirected-folders"></a>リダイレクトされた個々のフォルダーのオフライン ファイルを無効にする
 
@@ -22,7 +22,7 @@ ms.locfileid: "71394396"
 このトピックでは、フォルダーリダイレクトを使用してネットワーク共有にリダイレクトされた個々のフォルダーでオフライン ファイル キャッシュを無効にする方法について説明します。 これにより、ローカル キャッシュに保存しないフォルダーを指定できるようになり、オフライン ファイル キャッシュのサイズを縮小し、オフライン ファイルの同期に必要な時間を短縮できます。
 
 >[!NOTE]
->このトピックでは、説明した手順の一部を自動化するのに使用できる Windows PowerShell コマンドレットのサンプルを示します。 詳細については、「[Windows PowerShell の基礎](https://docs.microsoft.com/powershell/scripting/getting-started/fundamental/windows-powershell-basics?view=powershell-6)」を参照してください。
+>このトピックでは、説明した手順の一部を自動化するのに使用できる Windows PowerShell コマンドレットのサンプルを示します。 詳細については、「[Windows PowerShell の基礎](/powershell/scripting/getting-started/fundamental/windows-powershell-basics?view=powershell-6)」を参照してください。
 
 ## <a name="prerequisites"></a>前提条件
 

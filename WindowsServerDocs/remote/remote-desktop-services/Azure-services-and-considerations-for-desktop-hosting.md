@@ -9,12 +9,12 @@ ms.topic: article
 ms.assetid: 0f402ae3-5391-4c7d-afea-2c5c9044de46
 author: heidilohr
 manager: lizross
-ms.openlocfilehash: f73f28500c136ec8bdd32084cc5949f5e9804699
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 434d4910e8718747c07fc7378eb37d9ff4e85710
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80818525"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966704"
 ---
 # <a name="azure-services-and-considerations-for-desktop-hosting"></a>デスクトップ ホスティングの Azure サービスと考慮事項
 
@@ -32,7 +32,7 @@ ms.locfileid: "80818525"
 
 テナントのコンポーネントは、分離されたネットワーク上で相互通信する仮想マシン上で実行されます。 展開プロセス中は、リモート デスクトップ プロトコル エンドポイントまたはリモート PowerShell エンドポイントを使用して Azure Load Balancer を介してこれらの仮想マシンに外部的にアクセスできます。 通常、展開が完了すると、これらのエンドポイントは攻撃の危険性を縮小するために削除されます。 エンドポイントは、RD Web と RD ゲートウェイ コンポーネントを実行する仮想マシンのために作成された HTTPS および UDP エンドポイントだけになります。 これにより、インターネット上のクライアントはテナントのデスクトップ ホスティング サービスで実行されているセッションに接続できます。 Web ブラウザーなどのインターネットに接続するアプリケーションをユーザーが開いた場合、接続は Azure Load Balancer 経由で渡されます。  
   
-詳しくは、「[Azure Load Balancer の概要](https://azure.microsoft.com/documentation/articles/virtual-machines-linux-load-balance/)」を参照してください。
+詳しくは、「[Azure Load Balancer の概要](/azure/load-balancer/load-balancer-overview)」を参照してください。
   
 ## <a name="security-considerations"></a>セキュリティに関する考慮事項
 
@@ -45,9 +45,9 @@ ms.locfileid: "80818525"
   
 詳細については、以下の記事を参照してください。
 
-- [セキュリティと保護](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831778(v=ws.11))  
-- [IIS 8 について推奨するセキュリティ運用方法](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj635855(v=ws.11))  
-- [Windows Server 2012 R2 のセキュリティ](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831360(v=ws.11))  
+- [セキュリティと保護](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831778(v=ws.11))  
+- [IIS 8 について推奨するセキュリティ運用方法](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj635855(v=ws.11))  
+- [Windows Server 2012 R2 のセキュリティ](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831360(v=ws.11))  
   
 ## <a name="design-considerations"></a>設計時の考慮事項
 
@@ -61,13 +61,13 @@ ms.locfileid: "80818525"
   
 詳細については、以下の記事を参照してください。
 
-- [Cloud Services のサイズ](https://docs.microsoft.com/azure/cloud-services/cloud-services-sizes-specs)  
+- [Cloud Services のサイズ](/azure/cloud-services/cloud-services-sizes-specs)  
 - [Microsoft Azure 仮想マシンの料金の詳細](https://azure.microsoft.com/pricing/details/virtual-machines/)  
-- [Hyper-V の概要](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831531(v=ws.11))  
-- [Azure Storage のスケーラビリティとパフォーマンスのターゲット](https://docs.microsoft.com/azure/storage/common/storage-scalability-targets)  
+- [Hyper-V の概要](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831531(v=ws.11))  
+- [Azure Storage のスケーラビリティとパフォーマンスのターゲット](/azure/storage/common/storage-scalability-targets)  
 
 ## <a name="azure-active-directory-application-proxy"></a>Azure Active Directory アプリケーション プロキシ
 
 Azure Active Directory (AD) アプリケーション プロキシは、ユーザーが Azure 独自のリバース プロキシ サービス経由で内部アプリケーションに接続できるようにする、Azure AD の有料 SKU で提供されるサービスです。 これにより、RD Web と RD ゲートウェイ エンドポイントを仮想ネットワーク内に隠し、パブリック IP アドレスによってインターネットに公開する必要性をなくすことができます。 ホスト側は Azure AD アプリケーション プロキシを使用して、完全な展開を維持しながら、テナントの環境内の仮想マシンの数を減らすことができます。 また、Azure AD アプリケーション プロキシでは、条件付きアクセスや多要素認証など、Azure AD が提供する多くの利点を得ることもできます。
 
-詳細については、[アプリケーション プロキシの概要とコネクタのインストール](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-enable)に関するページを参照してください。
+詳細については、[アプリケーション プロキシの概要とコネクタのインストール](/azure/active-directory/manage-apps/application-proxy-enable)に関するページを参照してください。

@@ -8,12 +8,12 @@ ms.date: 04/10/2017
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: dc6a9fa0d6834f63c9935518e4b2c26320a04082
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 6e7e70b8adfcba78e50757be671d38f4d62c99db
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80852965"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958704"
 ---
 # <a name="add-the-rd-connection-broker-server-to-the-deployment-and-configure-high-availability"></a>RD 接続ブローカー サーバーを展開に追加し、高可用性を構成する
 
@@ -25,7 +25,7 @@ ms.locfileid: "80852965"
 
 2 つ目の RD 接続ブローカーとして機能するサーバーをセットアップします。これは物理サーバーまたは VM のどちらでもかまいません。
 
-接続ブローカー用のデータベースをセットアップします。 [Azure SQL Database](https://azure.microsoft.com/documentation/articles/sql-database-get-started/#create-a-new-aure-sql-database) インスタンスまたはローカル環境の SQL Server を使用できます。 以下では Azure SQL を使用する方法について説明しますが、手順は SQL Server にも当てはまります。 データベースの接続文字列を見つけて、正しい ODBC ドライバーを用意していることを確認する必要があります。
+接続ブローカー用のデータベースをセットアップします。 [Azure SQL Database](/azure/azure-sql/database/single-database-create-quickstart#create-a-new-aure-sql-database) インスタンスまたはローカル環境の SQL Server を使用できます。 以下では Azure SQL を使用する方法について説明しますが、手順は SQL Server にも当てはまります。 データベースの接続文字列を見つけて、正しい ODBC ドライバーを用意していることを確認する必要があります。
 
 ## <a name="step-1-configure-the-database-for-the-connection-broker"></a>手順 1:接続ブローカー用のデータベースを構成する
 
@@ -70,7 +70,7 @@ Azure インフラストラクチャを使用する予定の場合は、[Azure �
       4. **[IP アドレスの割り当て]** には **[静的]** を選択し、現在使用中でない**プライベート IP アドレス** (たとえば、10.0.0.32) を入力します。   
       5. 適切な**サブスクリプション**、すべてのリソースを含む**リソース グループ**、および適切な**場所**を選択します。   
       6. **[作成]** を選択します。   
-2. どのサーバーがアクティブであるかを監視するために[プローブ](https://azure.microsoft.com/documentation/articles/load-balancer-custom-probe-overview/)を作成します。   
+2. どのサーバーがアクティブであるかを監視するために[プローブ](/azure/load-balancer/load-balancer-custom-probe-overview)を作成します。   
       1. Azure portal で、 **[参照] > [ロード バランサー]** の順にクリックし、作成したばかりのロード バランサー (たとえば CBLB) をクリックします。 **[設定]** をクリックします。   
       2. **[プローブ] > [追加]** の順にクリックします。   
       3. プローブの名前 (たとえば **RDP**) を入力し、 **[プロトコル]** としては **[TCP]** を選択します。 **[ポート]** には「**3389**」と入力し、 **[OK]** をクリックします。   
@@ -83,7 +83,7 @@ Azure インフラストラクチャを使用する予定の場合は、[Azure �
       1. **[設定]** で、 **[負荷分散規則]** をクリックして、 **[追加]** をクリックします。   
       2. 名前 (たとえば RDP) を入力し、 **[プロトコル]** には **[TCP]** を選択します。 **[ポート]** と **[バックエンド ポート]** の両方に「**3389**」と入力し、 **[OK]** をクリックします。   
 5. ロード バランサーの DNS レコードを追加します。   
-      1. RDMS サーバーの仮想マシン (たとえば Contoso-CB1) に接続します。 VM に接続する方法の手順については、[RD 接続ブローカーの VM の準備](Prepare-the-RD-Connection-Broker-VM-for-Remote-Desktop.md)に関するページを参照してください。   
+      1. RDMS サーバーの仮想マシン (たとえば Contoso-CB1) に接続します。 VM に接続する方法の手順については、[RD 接続ブローカーの VM の準備](./rds-prepare-vms.md)に関するページを参照してください。   
       2. サーバー マネージャーで、 **[ツール] > [DNS]** とクリックします。   
       3. 左側のウィンドウで **[DNS]** を展開し、DNS マシンをクリックします。 **[前方参照ゾーン]** をクリックしてから、ドメイン名 (たとえば Contoso.com) をクリックします。 (情報のために DNS サーバーに対するクエリを処理するのに数秒かかることがあります。)  
       4. **[アクション] > [新しいホスト (A または AAAA)]** とクリックします。   
@@ -124,4 +124,3 @@ Azure インフラストラクチャを使用する予定の場合は、[Azure �
    3. [サーバーの選択] が表示されるまでウィザードのページを進めてから、新しく作成された RD 接続ブローカー サーバー (たとえば Contoso-CB2) を選択します。
    4. 既定値をそのまま使用してウィザードを完了します。
 4. RD 接続ブローカーのサーバーおよびクライアントで、信頼できる証明書を構成します。
-

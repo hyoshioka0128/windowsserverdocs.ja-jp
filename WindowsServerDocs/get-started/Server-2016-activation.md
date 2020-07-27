@@ -10,16 +10,16 @@ author: jaimeo
 ms.author: jaimeo
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: fd9ea63785e8de313d2177113a466fa67c17410b
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: d95d02dc9aa4adb2f64e88d2307efd0143225bba
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826645"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959044"
 ---
 # <a name="windows-server-2016-activation"></a>Windows Server 2016 のライセンス認証
 
-ここでは、Windows Server 2016 が関係するキー管理サービス (KMS) ライセンス認証を計画する場合の最初の考慮事項について説明します。 ここに挙げられたものより古いオペレーティング システムが関係する KMS ライセンス認証については、「[手順 1: ライセンス認証方法の確認と選択](https://technet.microsoft.com/library/jj134256(WS.11).aspx)」をご覧ください。
+ここでは、Windows Server 2016 が関係するキー管理サービス (KMS) ライセンス認証を計画する場合の最初の考慮事項について説明します。 ここに挙げられたものより古いオペレーティング システムが関係する KMS ライセンス認証については、「[手順 1: ライセンス認証方法の確認と選択](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj134256(v=ws.11))」をご覧ください。
 
 KMS では、クライアント/サーバー モデルを使用してクライアントのライセンス認証を行います。 KMS クライアントは、ライセンス認証を行うために、KMS ホストと呼ばれる KMS サーバーに接続します。 KMS ホストは、ローカル ネットワーク上に存在する必要があります。
 

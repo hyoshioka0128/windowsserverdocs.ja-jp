@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: c2cb88d5b30be28a8ab7709e3a3908ce82ae8408
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 68e51cff5b70ed0b11488e44cebba057e7432d99
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "75352356"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965274"
 ---
 # <a name="initialize-new-disks"></a>新しいディスクの初期化
 
@@ -26,7 +26,7 @@ ms.locfileid: "75352356"
 
 ## <a name="to-initialize-new-disks"></a>新しいディスクを初期化するには
 
-ディスクの管理を使用して新しいディスクを初期化する方法を次に示します。 PowerShell を使用する場合、[initialize-disk](https://docs.microsoft.com/powershell/module/storage/initialize-disk) コマンドレットを代わりに使用します。
+ディスクの管理を使用して新しいディスクを初期化する方法を次に示します。 PowerShell を使用する場合、[initialize-disk](/powershell/module/storage/initialize-disk) コマンドレットを代わりに使用します。
 
 1. 管理者のアクセス許可でディスクの管理を開きます。
  

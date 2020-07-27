@@ -9,12 +9,12 @@ author: jasongerend
 ms.author: jgerend
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: a74f3c6ec629df7d1cc40199091e84989606a50e
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 98632ee7147c3041b0f13d0a0e90bf8115268d36
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826685"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959474"
 ---
 # <a name="features-removed-or-planned-for-replacement-starting-with-windows-server-version-1709"></a>Windows Server バージョン 1709 以降で削除された機能と置換が計画されている機能
 
@@ -55,14 +55,13 @@ IIS 6 メタベース互換 (IIS 6 ベースのメタベース スクリプト�
 
 
 ### <a name="iis-digest-authentication"></a>IIS のダイジェスト認証
-この認証方法は置き換えられる予定です。 代わりに、クライアント証明書マッピング ([1 対 1 のクライアント証明書マッピングの構成に関するトピック](https://docs.microsoft.com/iis/manage/configuring-security/configuring-one-to-one-client-certificate-mappings)を参照) や Windows 認証 ([アプリケーションの設定に関するトピック](https://docs.microsoft.com/iis-administration/configuration/appsettings.json)を参照) など、他の認証方法を使用する必要があります。
+この認証方法は置き換えられる予定です。 代わりに、クライアント証明書マッピング ([1 対 1 のクライアント証明書マッピングの構成に関するトピック](/iis/manage/configuring-security/configuring-one-to-one-client-certificate-mappings)を参照) や Windows 認証 ([アプリケーションの設定に関するトピック](/iis-administration/configuration/appsettings.json)を参照) など、他の認証方法を使用する必要があります。
 
 ### <a name="internet-storage-name-service-isns"></a>インターネット記憶域ネーム サービス (iSNS)
-iSNS は置き換えが検討されています。 サーバー メッセージ ブロック (SMB) 機能は、基本的に同じ機能と追加機能を提供しています。 この機能の背景情報については、「[サーバー メッセージ ブロックの概要](https://technet.microsoft.com/library/hh831795(v=ws.11).aspx)」を参照してください。
+iSNS は置き換えが検討されています。 サーバー メッセージ ブロック (SMB) 機能は、基本的に同じ機能と追加機能を提供しています。 この機能の背景情報については、「[サーバー メッセージ ブロックの概要](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831795(v=ws.11))」を参照してください。
 
 ### <a name="rsaaes-encryption-for-iis"></a>IIS 用の RSA/AES 暗号化 
-この暗号化方法は置き換えが検討されています。より優れた Cryptography API:Next Generation (CNG) による方法が既に利用できるためです。 CNG 暗号化について詳しくは、[CNG の概要に関するトピック](https://msdn.microsoft.com/library/windows/desktop/aa375276(v=vs.85).aspx)をご覧ください。
+この暗号化方法は置き換えが検討されています。より優れた Cryptography API:Next Generation (CNG) による方法が既に利用できるためです。 CNG 暗号化について詳しくは、[CNG の概要に関するトピック](/windows/win32/seccng/about-cng)をご覧ください。
 
 ### <a name="windows-powershell-20"></a>Windows PowerShell 2.0
-この初期バージョンの Windows PowerShell は、いくつかのより新しいバージョンで置き換えられています。 最適な機能とパフォーマンスを実現するには、Windows PowerShell 5.0 以降に移行してください。 詳細については、[PowerShell ドキュメント](https://docs.microsoft.com/powershell/index?view=powershell-5.1)をご覧ください。
-
+この初期バージョンの Windows PowerShell は、いくつかのより新しいバージョンで置き換えられています。 最適な機能とパフォーマンスを実現するには、Windows PowerShell 5.0 以降に移行してください。 詳細については、[PowerShell ドキュメント](/powershell/index?view=powershell-5.1)をご覧ください。

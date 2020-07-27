@@ -8,12 +8,12 @@ author: Teresa-Motiv
 ms.author: v-tea
 manager: dcscontentpm
 ms.localizationpriority: medium
-ms.openlocfilehash: 09206b90dc8b829aaa70d0cca34bd05a9e0eb693
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: cdd597e77d35b154385cf9de35f3d51a3d9c4e8b
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71963048"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961343"
 ---
 # <a name="troubleshooting-windows-volume-activation"></a>Windows ボリューム ライセンス認証のトラブルシューティング
 
@@ -29,30 +29,30 @@ ms.locfileid: "71963048"
 
 ### <a name="key-management-service-kms"></a>キー管理サービス (KMS)
 
-- [ボリューム ライセンス認証の計画](https://docs.microsoft.com/windows/deployment/volume-activation/plan-for-volume-activation-client)
-- [KMS について](https://docs.microsoft.com/previous-versions/tn-archive/ff793434(v=technet.10))
-- [KMS ライセンス認証の展開](https://docs.microsoft.com/previous-versions/tn-archive/ff793409%28v=technet.10%29)
-- [KMS ホストの構成](https://docs.microsoft.com/previous-versions/tn-archive/ff793407%28v%3dtechnet.10%29)
-- [DNS の構成](https://docs.microsoft.com/previous-versions/tn-archive/ff793405%28v%3dtechnet.10%29)
-- [キー管理サービスによるライセンス認証](https://docs.microsoft.com/windows/deployment/volume-activation/activate-using-key-management-service-vamt)
+- [ボリューム ライセンス認証の計画](/windows/deployment/volume-activation/plan-for-volume-activation-client)
+- [KMS について](/previous-versions/tn-archive/ff793434(v=technet.10))
+- [KMS ライセンス認証の展開](/previous-versions/tn-archive/ff793409%28v=technet.10%29)
+- [KMS ホストの構成](/previous-versions/tn-archive/ff793407%28v%3dtechnet.10%29)
+- [DNS の構成](/previous-versions/tn-archive/ff793405%28v%3dtechnet.10%29)
+- [キー管理サービスによるライセンス認証](/windows/deployment/volume-activation/activate-using-key-management-service-vamt)
 
 ### <a name="active-directory-based-activation-adba"></a>Active Directory によるライセンス認証 (ADBA)
 
-- [Active Directory によるライセンス認証の展開](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn502534%28v%3Dws.11%29)
-- [Active Directory によるライセンス認証を使用したライセンス認証](https://docs.microsoft.com/windows/deployment/volume-activation/activate-using-active-directory-based-activation-client)
-- [Active Directory ベースのライセンス認証の概要](https://docs.microsoft.com/windows/deployment/volume-activation/active-directory-based-activation-overview)
+- [Active Directory によるライセンス認証の展開](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn502534%28v%3dws.11%29)
+- [Active Directory によるライセンス認証を使用したライセンス認証](/windows/deployment/volume-activation/activate-using-active-directory-based-activation-client)
+- [Active Directory ベースのライセンス認証の概要](/windows/deployment/volume-activation/active-directory-based-activation-overview)
 
 ### <a name="multiple-activation-key-mak-activation"></a>マルチ ライセンス認証キー (MAK) ライセンス認証
 
-- [MAK ライセンス認証の使用](https://docs.microsoft.com/previous-versions/tn-archive/ff793438%28v=technet.10%29)
-- [MAK ライセンス認証について](https://docs.microsoft.com/previous-versions/tn-archive/ff793435%28v%3dtechnet.10%29)
-- [MAK クライアントのライセンス認証](https://docs.microsoft.com/previous-versions/tn-archive/ff793398%28v%3dtechnet.10%29)
+- [MAK ライセンス認証の使用](/previous-versions/tn-archive/ff793438%28v=technet.10%29)
+- [MAK ライセンス認証について](/previous-versions/tn-archive/ff793435%28v%3dtechnet.10%29)
+- [MAK クライアントのライセンス認証](/previous-versions/tn-archive/ff793398%28v%3dtechnet.10%29)
 
 ### <a name="subscription-activation"></a>サブスクリプションのライセンス認証
 
-- [Windows 10 サブスクリプションのライセンス認証](https://docs.microsoft.com/windows/deployment/windows-10-subscription-activation)
-- [Windows 10 Enterprise のライセンスの展開](https://docs.microsoft.com/windows/deployment/deploy-enterprise-licenses)
-- [Windows 10 Enterprise E3 in CSP](https://docs.microsoft.com/windows/deployment/windows-10-enterprise-e3-overview)
+- [Windows 10 サブスクリプションのライセンス認証](/windows/deployment/windows-10-subscription-activation)
+- [Windows 10 Enterprise のライセンスの展開](/windows/deployment/deploy-enterprise-licenses)
+- [Windows 10 Enterprise E3 in CSP](/windows/deployment/windows-10-enterprise-e3-overview)
 
 ## <a name="resources-for-troubleshooting-activation-issues"></a>ライセンス認証の問題のトラブルシューティングに関するリソース
 

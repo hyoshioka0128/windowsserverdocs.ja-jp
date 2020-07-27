@@ -8,12 +8,12 @@ ms.date: 07/06/2018
 ms.topic: article
 author: heidilohr
 manager: lizross
-ms.openlocfilehash: 44b98b485b69720a1459f052b68d15617954bffe
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 42116323dce36b071b2af20ff46330a8d39c13ed
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "75949824"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963064"
 ---
 # <a name="remote-desktop-services-roles"></a>リモート デスクトップ サービス ロール
 
@@ -38,7 +38,7 @@ RD セッション ホスト サーバーの仮想マシンをコレクション
 詳細については、以下の記事を参照してください。
 
 * [リモート デスクトップ サービス - セキュリティで保護されたデータ ストレージ](rds-plan-secure-data-storage.md)
-* [汎用化した VHD をアップロードして Azure で新しい VM を作成する](https://docs.microsoft.com/azure/virtual-machines/windows/upload-generalized-managed?toc=%2Fazure%2Fvirtual-machines%2Fwindows%2Ftoc.json)
+* [汎用化した VHD をアップロードして Azure で新しい VM を作成する](/azure/virtual-machines/windows/upload-generalized-managed?toc=/azure/virtual-machines/windows/toc.json)
 * [RDSH コレクションの更新 (ARM テンプレート)](https://azure.microsoft.com/resources/templates/rds-update-rdsh-collection/)
 
 ## <a name="remote-desktop-connection-broker"></a>リモート デスクトップ接続ブローカー

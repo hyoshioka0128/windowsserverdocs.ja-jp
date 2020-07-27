@@ -9,12 +9,12 @@ ms.author: mikeblodge
 ms.date: 07/12/2018
 ms.topic: get-started-article
 ms.localizationpriority: high
-ms.openlocfilehash: 3d2c55430a78eaabfe55b764275c6e61fa80368a
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 271c571229f18d596a67616a1b0dd93743928002
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826215"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961336"
 ---
 # <a name="upgrade-windows-server-2008-and-windows-server-2008-r2"></a>Windows Server 2008 と Windows Server 2008 R2 のアップグレード
 
@@ -28,7 +28,7 @@ Windows Server 2008 と Windows Server 2008 R2 の延長サポートは、2020 �
 
 オンプレミスのアップグレード オプションについて詳しくは、「[Upgrading from Windows Server 2008 R2 or Windows Server 2008 (Windows Server 2008 R2 または Windows Server 2008 からのアップグレード)](installation-and-upgrade.md#upgrading-from-windows-server-2008-r2-or-windows-server-2008)」をご覧ください。
 
-Windows Server 2003 を実行している場合は、[Windows Server 2008 にアップグレードする](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff972408(v%3dws.10))必要があります。 オンプレミスのアップグレード オプションについて詳しくは、「[upgrade paths for Windows Server 2008 (Windows Server 2008 のアップグレード パス)](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd979563(v=ws.10))」をご覧ください。
+Windows Server 2003 を実行している場合は、[Windows Server 2008 にアップグレードする](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/ff972408(v%3dws.10))必要があります。 オンプレミスのアップグレード オプションについて詳しくは、「[upgrade paths for Windows Server 2008 (Windows Server 2008 のアップグレード パス)](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd979563(v=ws.10))」をご覧ください。
 
 
 ## <a name="migrate-to-azure"></a>Azure への移行
@@ -51,8 +51,8 @@ Windows Server 2003 を実行している場合は、[Windows Server 2008 にア
 
 ![SQL Server のロゴ](media/sqlr2.jpg)
 
-SQL Server 2008/2008 R2 を実行している場合は、SQL Server [2016](https://docs.microsoft.com/sql/sql-server/sql-server-technical-documentation?view=sql-server-2016) または [2017](https://docs.microsoft.com/sql/sql-server/sql-server-technical-documentation?view=sql-server-2017) にアップグレードすることができます。
+SQL Server 2008/2008 R2 を実行している場合は、SQL Server [2016](/sql/sql-server/sql-server-technical-documentation?view=sql-server-2016) または [2017](/sql/sql-server/sql-server-technical-documentation?view=sql-server-2017) にアップグレードすることができます。
 
 
 ## <a name="additional-resources"></a>その他の資料
-[Microsoft Azure](https://docs.microsoft.com/azure/#pivot=products)
+[Microsoft Azure](/azure/#pivot=products)

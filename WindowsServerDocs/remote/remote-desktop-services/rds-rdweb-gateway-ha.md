@@ -8,12 +8,12 @@ author: lizap
 ms.author: elizapo
 ms.date: 11/08/2016
 manager: dongill
-ms.openlocfilehash: e98bbda5460311dd379eab6f5a5bde0ec3845d5c
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: c34d0bd2654d36e447053348392b4b9a6957e60f
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80860285"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86960194"
 ---
 # <a name="add-high-availability-to-the-rd-web-and-gateway-web-front"></a>RD Web およびゲートウェイ Web フロントに高可用性を追加する
 
@@ -96,7 +96,7 @@ Azure インフラストラクチャを使用している場合は、外部の A
     4.  **[パブリック IP アドレス]** で **[パブリック IP アドレスの選択]** を選択し、既存のパブリック IP アドレスを選択するか、新しいパブリック IP アドレスを作成します。
     5.  適切な **[サブスクリプション]** 、 **[リソース グループ]** 、および **[場所]** を選択します。
     6.  **[作成]** をクリックします。  
-2. どのサーバーが有効化を監視するために[プローブ](https://azure.microsoft.com/documentation/articles/load-balancer-custom-probe-overview/)を作成します。  
+2. どのサーバーが有効化を監視するために[プローブ](/azure/load-balancer/load-balancer-custom-probe-overview)を作成します。  
     1.  Azure portal で **[参照]**  >  **[ロード バランサー]** を選択し、前のステップで作成したロード バランサーを選択します。
     2.  **[すべての設定]**  >  **[プローブ]**  >  **[追加]** を選択します。  
     3.  プローブの名前を入力します (例: **HTTPS** など)。 **[プロトコル]** として **[TCP]** を選択し、 **[ポート]** に **443** を入力し、 **[OK]** をクリックします。   

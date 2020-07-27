@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.date: 06/07/2019
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 7b42db8c0be5e1a447ad0a3b794b07672c164514
-ms.sourcegitcommit: 7116460855701eed4e09d615693efa4fffc40006
+ms.openlocfilehash: a37c7e8765ba6f83fc1ebe20aaba3dfb8bc29a3d
+ms.sourcegitcommit: b35fbd2a67d7a3395b50b2a3acd0817ba4e36b26
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83433146"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86891347"
 ---
 # <a name="prepare-your-environment-for-windows-admin-center"></a>Windows Admin Center のための環境の準備
 
@@ -63,7 +63,7 @@ Hyper-V Server でリモート管理を有効にするには:
 1. **[ツール]** メニューで **[役割と機能]** をクリックします。
 2. **[役割と機能]** で、 **[ファイルおよび記憶域サービス]** を見つけて、 **[ファイルおよび iSCSI サービス]** と **[ファイル サーバー]** をオンにします。
 
-![ファイルと iSCSI サービスの役割が選択されている [役割と機能] のスクリーンショット](../media/prepare-environment/c6c30b812d96afcc1edcdb6f52f0e13c.png)
+![ファイルと iSCSI サービスの役割が選択されている [役割と機能] のスクリーンショット](../media/prepare-environment/prepare-your-environment-image-1.png)
 
 ### <a name="step-3-enable-hyper-v-module-for-powershell"></a>**手順 3:** PowerShell の Hyper-V モジュールの有効化
 
@@ -72,7 +72,7 @@ PowerShell 機能の Hyper-V モジュールを有効にするには:
 1. **[ツール]** メニューで **[役割と機能]** をクリックします。
 2. **[役割と機能]** で、 **[リモート サーバー管理ツール]** を見つけて **[役割管理ツール]** と **[PowerShell 用 Hyper-V モジュール]** をオンにします。
 
-![Hyper-V の役割が選択されている [役割と機能] のスクリーンショット](../media/prepare-environment/7ab0999602b7083733525bd0c1ba2747.png)
+![Hyper-V の役割が選択されている [役割と機能] のスクリーンショット](../media/prepare-environment/prepare-your-environment-image-2.png)
 
 これで、Microsoft Hyper-V Server 2016 は、Windows Admin Center で管理するための準備が整いました。
 
@@ -111,7 +111,7 @@ Hyper-V Server のリモート管理を有効にするには:
 1. **[ツール]** メニューで **[役割と機能]** をクリックします。
 2. **[役割と機能]** で、 **[ファイルおよび記憶域サービス]** を見つけて、 **[ファイルおよび iSCSI サービス]** と **[ファイル サーバー]** をオンにします。
 
-![ファイルと iSCSI サービスの役割が選択されている [役割と機能] のスクリーンショット](../media/prepare-environment/c6c30b812d96afcc1edcdb6f52f0e13c.png)
+![ファイルと iSCSI サービスの役割が選択されている [役割と機能] のスクリーンショット](../media/prepare-environment/prepare-your-environment-image-1.png)
 
 ### <a name="step-4-enable-hyper-v-module-for-powershell"></a>手順 4:PowerShell の Hyper-V モジュールの有効化
 
@@ -120,7 +120,7 @@ PowerShell 機能の Hyper-V モジュールを有効にするには:
 1. **[ツール]** メニューで **[役割と機能]** をクリックします。
 2. **[役割と機能]** で、 **[リモート サーバー管理ツール]** を見つけて **[役割管理ツール]** と **[PowerShell 用 Hyper-V モジュール]** をオンにします。
 
-![Hyper-V リモート サーバー管理ツールが選択されている [役割と機能] のスクリーンショット](../media/prepare-environment/7ab0999602b7083733525bd0c1ba2747.png)
+![Hyper-V リモート サーバー管理ツールが選択されている [役割と機能] のスクリーンショット](../media/prepare-environment/prepare-your-environment-image-2.png)
 
 これで、Microsoft Hyper-V Server 2012 R2 は、Windows Admin Center で管理するための準備が整いました。
 

@@ -9,18 +9,18 @@ author: lizap
 ms.author: elizapo
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: a511c9888f27fe97fdeaf65cde022e5c2aa999d4
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 7dc63afba827e2a58ba28d2c4398f1ba80d7e7b5
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826085"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962494"
 ---
 # <a name="release-notes-important-issues-in-windows-server-version-1803"></a>リリース ノート:Windows Server バージョン 1803 に関する重要な問題
 
 >適用先:Windows Server 半期チャネル
 
-これらのリリース ノートは、Windows Server オペレーティング システムの最も重大な問題と既知の問題の回避策についてまとめます。 このリリースの最新機能については、「[Windows Server バージョン 1803 の新機能](whats-new-in-windows-server-1803.md)」を参照してください。 Windows Server バージョン 1803 のコンテナーの実行に関心がある場合は、「[Windows コンテナーについて](https://docs.microsoft.com/virtualization/windowscontainers/about/)」を確認してください。 
+これらのリリース ノートは、Windows Server オペレーティング システムの最も重大な問題と既知の問題の回避策についてまとめます。 このリリースの最新機能については、「[Windows Server バージョン 1803 の新機能](whats-new-in-windows-server-1803.md)」を参照してください。 Windows Server バージョン 1803 のコンテナーの実行に関心がある場合は、「[Windows コンテナーについて](/virtualization/windowscontainers/about/)」を確認してください。 
 
 特に指定がない限り、レポートされる問題はそれぞれ、Windows Server バージョン 1803 のすべてのエディションおよびインストール オプションに適用されます。  
 
@@ -33,4 +33,4 @@ ms.locfileid: "80826085"
 
 インフラストラクチャ ロールが必要な場合は、長期的なサービス チャネル リリースを使用してください。Windows Server 2016 (現在の利用可能) または[Windows Server 2019](https://cloudblogs.microsoft.com/windowsserver/2018/03/20/introducing-windows-server-2019-now-available-in-preview) (今年の後半に登場)。
 
-ハイパーコンバージド インフラストラクチャの最適なプラットフォームの構築に取り組んでおり、新しい機能の開発や、お客様のフィードバックに基づいた既存の機能の改善を継続しています。 [記憶域スペース ダイレクトのクラスターが 10,000 を超え](https://blogs.technet.microsoft.com/filecab/2018/03/27/storage-spaces-direct-momentum)、ご協力いただきありがとうございます。 今年の後半ではさらに多くを共有できることを楽しみにしています。
+ハイパーコンバージド インフラストラクチャの最適なプラットフォームの構築に取り組んでおり、新しい機能の開発や、お客様のフィードバックに基づいた既存の機能の改善を継続しています。 [記憶域スペース ダイレクトのクラスターが 10,000 を超え](https://techcommunity.microsoft.com/t5/storage-at-microsoft/storage-spaces-direct-10-000-clusters-and-counting/ba-p/428185)、ご協力いただきありがとうございます。 今年の後半ではさらに多くを共有できることを楽しみにしています。

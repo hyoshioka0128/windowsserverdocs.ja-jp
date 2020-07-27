@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 7eeb462d31391a228ec0e89afb09673ef14b51cf
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 359b4bed3090463bfb92431e06e325d981568248
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "79323444"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961024"
 ---
 # <a name="troubleshooting-disk-management"></a>ディスクの管理のトラブルシューティング
 
@@ -119,7 +119,7 @@ ms.locfileid: "79323444"
 **[オフライン] であるが、名前がまだ [ディスク \#] である ([不明] ではない) ディスクを再びオンラインにするには、以下の 1 つ以上の手順を試してください。**
 
 1. ディスクの管理で、ディスクを長押しし (または右クリックし)、 **[ディスクの再アクティブ化]** をクリックして、ディスクをオンラインに戻します。 ディスクの状態が **[オフライン]** のままである場合は、ケーブルとディスク コントローラーを確認し、物理ディスクが正常であることを確認します。 問題を解決してから、ディスクの再アクティブ化をもう一度実行します。 ディスクの再アクティブ化に成功すると、ディスク上のボリュームは自動的に **[正常]** 状態に戻ります。
-2. イベント ビューアーで、「No good config copies」などのディスクに関連するエラー イベント ログを確認します。 イベント ログにこのエラーが記録されている場合は、[マイクロソフト製品サポート サービス](https://msdn.microsoft.com/library/aa263468(v=vs.60).aspx)にお問い合わせください。
+2. イベント ビューアーで、「No good config copies」などのディスクに関連するエラー イベント ログを確認します。 イベント ログにこのエラーが記録されている場合は、[マイクロソフト製品サポート サービス](/previous-versions/visualstudio/visual-basic-6/aa263468(v=vs.60))にお問い合わせください。
 
 3. 別のコンピューターにディスクを移動してみます。 別のコンピューターでディスクを **[オンライン]** にすることができる場合、問題の原因は、ディスクを **[オンライン]** にすることができないコンピューター上の構成にある可能性が高くなります。
 

@@ -10,12 +10,12 @@ author: jasongerend
 ms.author: jgerend
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 01b06c2869469ee65e23df2b1f5ca35fb266d234
-ms.sourcegitcommit: 457e88e5aa6be13a2bffdb8e434a8efc3698678f
+ms.openlocfilehash: a0a6cefcfb69050721a8b82b5f0f770fa518a551
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/30/2020
-ms.locfileid: "85548735"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961764"
 ---
 # <a name="whats-new-in-windows-server-2016"></a>Windows Server 2016 の新機能
 
@@ -33,7 +33,7 @@ ms.locfileid: "85548735"
 ### <a name="hyper-v"></a>Hyper-V  
 -   [Windows Server 2016 の Hyper-V の新機能](../virtualization/hyper-v/What-s-new-in-Hyper-V-on-Windows.md)。 このトピックでは、Windows Server 2016 の Hyper-V の役割、Windows 10 で実行されているクライアント Hyper-V、および Microsoft Hyper-V Server 2016 で追加および変更された機能について説明します。  
 
--   [Windows コンテナー](https://msdn.microsoft.com/virtualization/windowscontainers/containers_welcome): Windows Server 2016 コンテナーのサポートによって、Windows 10 でパフォーマンスの向上、ネットワーク管理の簡素化、および Windows コンテナーのサポートが実現しています。 コンテナーの詳細については、「[Containers: Docker, Windows and Trends](https://azure.microsoft.com/blog/2015/08/17/containers-docker-windows-and-trends/)」(コンテナー: Docker、Windows、および傾向) を参照してください。  
+-   [Windows コンテナー](/virtualization/windowscontainers/): Windows Server 2016 コンテナーのサポートによって、Windows 10 でパフォーマンスの向上、ネットワーク管理の簡素化、および Windows コンテナーのサポートが実現しています。 コンテナーの詳細については、「[Containers: Docker, Windows and Trends](https://azure.microsoft.com/blog/2015/08/17/containers-docker-windows-and-trends/)」(コンテナー: Docker、Windows、および傾向) を参照してください。  
 
 ### <a name="nano-server"></a>Nano Server  
 [Nano Server](getting-started-with-nano-server.md) の新機能。 Nano Server には、物理ホストとゲスト仮想マシンの機能の分離の強化と、Windows Server のさまざまなエディションのサポートなど、Nano Server イメージを構築するための更新されたモジュールがあります。   
@@ -77,7 +77,7 @@ Web アプリケーション プロキシの最新バージョンでは、より
 ##  <a name="administration"></a>[管理](../administration/manage-windows-server.yml)  
 管理と自動化の領域では、Windows PowerShell など Windows Server 2016 を実行および管理する IT プロフェッショナル向けのツールとリファレンス情報に力を入れています。
 
-Windows PowerShell 5.1 に追加された重要な新機能には、クラスを使った開発のサポートや新しいセキュリティ機能があります。それらの機能により、用途が広がり、使いやすさが向上し、Windows ベースの環境をより簡単かつ包括的に制御して管理できます。 詳細については、「[WMF 5.1 の新しいシナリオと機能](https://docs.microsoft.com/powershell/wmf/5.1/scenarios-features)」を参照してください。
+Windows PowerShell 5.1 に追加された重要な新機能には、クラスを使った開発のサポートや新しいセキュリティ機能があります。それらの機能により、用途が広がり、使いやすさが向上し、Windows ベースの環境をより簡単かつ包括的に制御して管理できます。 詳細については、「[WMF 5.1 の新しいシナリオと機能](/powershell/wmf/5.1/scenarios-features)」を参照してください。
 
 Windows Server 2016 には、Nano Server で PowerShell.exe を実行する機能 (リモートのみではなくなりました)、GUI に代わる新しいローカル ユーザーとグループのコマンドレット、PowerShell デバッグのサポートの追加、セキュリティ ログとトランスクリプションおよび JEA に対するサポートの Nano Server への追加など、新しい追加機能があります。
 
@@ -86,7 +86,7 @@ Windows Server 2016 には、Nano Server で PowerShell.exe を実行する機�
 ### <a name="powershell-desired-state-configuration-dsc-in-windows-management-framework-wmf-5"></a>Windows Management Framework (WMF) 5 の PowerShell Desired State Configuration (DSC)
 Windows Management Framework 5 には、Windows PowerShell Desired State Configuration (DSC)、Windows リモート管理 (WinRM)、および Windows Management Instrumentation (WMI) に対する更新が含まれています。
 
-Windows Management Framework 5 の DSC 機能のテストに関する詳細については、[PowerShell DSC の機能の検証](https://blogs.msdn.microsoft.com/powershell/2015/07/06/validate-features-of-powershell-dsc/)に関する一連のブログ記事を参照してください。 ダウンロードするには、[Windows Management Framework 5.1](https://docs.microsoft.com/powershell/scripting/wmf/setup/install-configure) に関するページを参照してください。
+Windows Management Framework 5 の DSC 機能のテストに関する詳細については、[PowerShell DSC の機能の検証](https://devblogs.microsoft.com/powershell/validate-features-of-powershell-dsc/)に関する一連のブログ記事を参照してください。 ダウンロードするには、[Windows Management Framework 5.1](/powershell/scripting/wmf/setup/install-configure) に関するページを参照してください。
 
 ### <a name="packagemanagement-unified-package-management-for-software-discovery-installation-and-inventory"></a>PackageManagement 統合パッケージ管理によるソフトウェアの検出、インストール、およびインベントリ
 Windows Server 2016 および Windows 10 には、新しい PackageManagement 機能 (旧称 OneGet) が含まれています。この機能により、IT 技術者や DevOps は、インストーラーのテクノロジやソフトウェアの配置場所にかかわらず、ソフトウェアの検出、インストール、およびインベントリ (SDII) をローカルまたはリモートで自動化できます。 
@@ -96,7 +96,7 @@ Windows Server 2016 および Windows 10 には、新しい PackageManagement �
 ### <a name="powershell-enhancements-to-assist-digital-forensics-and-help-reduce-security-breaches"></a>デジタル法科学を支援し、セキュリティ侵害の減少に役立つ PowerShell の機能強化
 セキュリティが侵害されたシステムの調査を担当するチーム ("ブルー チーム" とも呼ばれます) を支援するために、PowerShell にログおよびその他の法科学機能が追加されたほか、スクリプトの脆弱性を減らし (制約付きの PowerShell など)、CodeGeneration API をセキュリティで保護するのに役立つ機能が追加されました。
 
-詳しくは、「[PowerShell とブルー チーム](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/)」を参照してください。
+詳しくは、「[PowerShell とブルー チーム](https://devblogs.microsoft.com/powershell/powershell-the-blue-team/)」を参照してください。
 
 ## <a name="networking"></a>[ネットワーク](../networking/index.yml)  
 この領域には、IT プロフェッショナルが Windows Server 2016 を設計、展開、保守するためのネットワーク製品と機能が含まれています。  
@@ -116,20 +116,20 @@ IT プロフェッショナルがデータ センターとクラウド環境に�
 Windows Server 2016 の Just Enough Administration は、Windows PowerShell で管理可能なすべての対象について代理管理を実現するセキュリティ テクノロジです。 機能には、ネットワーク ID での実行、PowerShell ダイレクト経由での接続、JEA エンドポイントとの間での安全なファイル コピー、既定で JEA コンテキストで起動する PowerShell コンソールの構成のサポートが含まれます。 詳細については、[GitHub での JEA](https://aka.ms/JEA) に関する記事を参照してください。
 
 ### <a name="credential-guard"></a>Credential Guard
-Credential Guard は、特権を持つシステム ソフトウェアだけがシークレットにアクセスできるように、仮想化ベースのセキュリティを使用してシークレットを分離します。 「[Credential Guard によるドメインの派生資格情報の保護](https://technet.microsoft.com/itpro/windows/keep-secure/credential-guard)」を参照してください。
+Credential Guard は、特権を持つシステム ソフトウェアだけがシークレットにアクセスできるように、仮想化ベースのセキュリティを使用してシークレットを分離します。 「[Credential Guard によるドメインの派生資格情報の保護](/windows/security/identity-protection/credential-guard/credential-guard)」を参照してください。
 
 ###  <a name="remote-credential-guard"></a>Remote Credential Guard
-Credential Guard では RDP セッションがサポートされるため、ユーザーの資格情報はクライアント側に保持されたままで、サーバー側では公開されません。 また、リモート デスクトップにシングル サインオンも提供します。 「[Windows Defender Credential Guard によるドメインの派生資格情報の保護](https://docs.microsoft.com/windows/access-protection/credential-guard/credential-guard)」を参照してください。   
+Credential Guard では RDP セッションがサポートされるため、ユーザーの資格情報はクライアント側に保持されたままで、サーバー側では公開されません。 また、リモート デスクトップにシングル サインオンも提供します。 「[Windows Defender Credential Guard によるドメインの派生資格情報の保護](/windows/access-protection/credential-guard/credential-guard)」を参照してください。   
 
 ### <a name="device-guard-code-integrity"></a>Device Guard (コードの整合性)
-Device Guard は、サーバーで実行できるコードを指定するポリシーを作成することで、カーネル モードのコードの整合性 (KMCI) とユーザー モードのコードの整合性 (UMCI) を提供します。 「[Windows Defender Device Guard の概要: 仮想化ベースのセキュリティとコードの整合性ポリシー](https://docs.microsoft.com/windows/device-security/device-guard/introduction-to-device-guard-virtualization-based-security-and-code-integrity-policies)」を参照してください。
+Device Guard は、サーバーで実行できるコードを指定するポリシーを作成することで、カーネル モードのコードの整合性 (KMCI) とユーザー モードのコードの整合性 (UMCI) を提供します。 「[Windows Defender Device Guard の概要: 仮想化ベースのセキュリティとコードの整合性ポリシー](/windows/device-security/device-guard/introduction-to-device-guard-virtualization-based-security-and-code-integrity-policies)」を参照してください。
 
 
 ### <a name="windows-defender"></a>Windows Defender  
 [Windows Server 2016 用 Windows Defender の概要](../security/windows-defender/windows-defender-overview-windows-server.md)。 Windows Server 2016 では既定で Windows Server Antimalware がインストールされ、有効になりますが、Windows Server Antimalware のユーザー インターフェイスはインストールされません。 ただし、ユーザー インターフェイスがなくても、Windows Server Antimalware により、マルウェア対策の定義が更新され、コンピューターが保護されます。 Windows Server Antimalware のユーザー インターフェイスが必要な場合は、オペレーティング システムのインストール後に役割と機能の削除ウィザードを使ってインストールできます。
 
 ### <a name="control-flow-guard"></a>制御フロー ガード
-制御フロー ガード (CFG) は、メモリ破損の脆弱性に対処するために作成されたプラットフォームのセキュリティ機能です。 詳細については、「[Control Flow Guard (制御フロー ガード)](https://msdn.microsoft.com/library/windows/desktop/mt637065(v=vs.85).aspx)」を参照してください。
+制御フロー ガード (CFG) は、メモリ破損の脆弱性に対処するために作成されたプラットフォームのセキュリティ機能です。 詳細については、「[Control Flow Guard (制御フロー ガード)](/windows/win32/secbp/control-flow-guard)」を参照してください。
 
 
 ## <a name="storage"></a>[ストレージ](../storage/storage.yml)
@@ -191,9 +191,9 @@ Windows Server 2016 の IIS 10.0 Web サーバーにより提供される新機�
 ### <a name="distributed-transaction-coordinator-msdtc"></a>分散トランザクション コーディネーター (MSDTC)
 Microsoft Windows 10 と Windows Server 2016 に 3 つの新機能が追加されました。
 
-- Resource Manager Rejoin の新しいインターフェイスは、データベースがエラーのために再起動された後に未確定トランザクションの結果を調べるために、リソース マネージャーによって使されます。 詳細については、「[IResourceManagerRejoinable::Rejoin](https://msdn.microsoft.com/library/mt203799(v=vs.85).aspx)」を参照してください。
+- Resource Manager Rejoin の新しいインターフェイスは、データベースがエラーのために再起動された後に未確定トランザクションの結果を調べるために、リソース マネージャーによって使されます。 詳細については、「[IResourceManagerRejoinable::Rejoin](/previous-versions/windows/desktop/mt203799(v=vs.85))」を参照してください。
 
-- DSN 名の制限が 256 バイトから 3072 バイトに拡張されました。 詳細については、「[IDtcToXaHelperFactory::Create](https://msdn.microsoft.com/library/ms686861(v=vs.85).aspx)」、「[IDtcToXaHelperSinglePipe::XARMCreate](https://msdn.microsoft.com/library/ms679248(v=vs.85).aspx)」、または「[IDtcToXaMapper::RequestNewResourceManager](https://msdn.microsoft.com/library/ms680310(v=vs.85).aspx)」を参照してください。
+- DSN 名の制限が 256 バイトから 3072 バイトに拡張されました。 詳細については、「[IDtcToXaHelperFactory::Create](/previous-versions/windows/desktop/ms686861(v=vs.85))」、「[IDtcToXaHelperSinglePipe::XARMCreate](/previous-versions/windows/desktop/ms679248(v=vs.85))」、または「[IDtcToXaMapper::RequestNewResourceManager](/previous-versions/windows/desktop/ms680310(v=vs.85))」を参照してください。
 
 - トレースが機能強化され、トレース ログ ファイル名にイメージ ファイルのパスが含まれるようにレジストリ キーを設定して、確認するトレース ログ ファイルを指定できるようになりました。 MSDTC のトレースの構成に関する詳細については、「[Windows ベースのコンピューター上の MS DTC の診断トレースを有効にする方法 ](https://support.microsoft.com/kb/926099)」を参照してください。
 

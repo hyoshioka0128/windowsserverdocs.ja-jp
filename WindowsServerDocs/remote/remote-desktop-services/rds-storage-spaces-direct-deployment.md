@@ -9,12 +9,12 @@ author: haley-rowland
 ms.author: harowl
 ms.date: 07/17/2018
 manager: scottman
-ms.openlocfilehash: 2386a231edf80fa611daf71c171bc0de3a7b497e
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 14e63969d64a25ca0c7fb9b3efd5e966b64fa376
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80855545"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961204"
 ---
 # <a name="deploy-a-two-node-storage-spaces-direct-scale-out-file-server-for-upd-storage-in-azure"></a>Azure での UPD 記憶域用に 2 ノードの記憶域スペース ダイレクト スケールアウト ファイル サーバーを展開する
 
@@ -47,7 +47,7 @@ DS シリーズ Vm と premium storage データ ディスクと、SOFS を展�
 
 1. 作成、 [Microsoft Azure サブスクリプション](https://azure.microsoft.com)します。
 2. サインイン、 [Azure ポータル](https://ms.portal.azure.com)します。
-3. 作成、 [Azure ストレージ アカウント](https://azure.microsoft.com/documentation/articles/storage-create-storage-account/#create-a-storage-account) Azure リソース マネージャーでします。 新しいリソース グループに作成し、次の構成を使用します。
+3. 作成、 [Azure ストレージ アカウント](/azure/storage/common/storage-account-create#create-a-storage-account) Azure リソース マネージャーでします。 新しいリソース グループに作成し、次の構成を使用します。
    - 展開モデル:リソース マネージャー
    - ストレージ アカウントの種類:全般的な目的
    - パフォーマンス階層:Premium
@@ -56,7 +56,7 @@ DS シリーズ Vm と premium storage データ ディスクと、SOFS を展�
    - Azure のクイック スタート テンプレートを使用して展開します。
       - [新しい AD フォレストと Azure VM を作成する](https://azure.microsoft.com/documentation/templates/active-directory-new-domain/)
       - [2 つのドメイン コント ローラーで新しい AD ドメインを作成](https://azure.microsoft.com/documentation/templates/active-directory-new-domain-ha-2-dc/) (の高可用性)
-   - 手動で [フォレストを展開](https://azure.microsoft.com/documentation/articles/active-directory-new-forest-virtual-machine/) 以下の構成。
+   - 手動で [フォレストを展開](../../identity/ad-ds/introduction-to-active-directory-domain-services-ad-ds-virtualization-level-100.md) 以下の構成。
       - ストレージ アカウントと同じリソース グループ内の仮想ネットワークを作成します。
       - 推奨サイズ:DS2 (ドメイン コントローラーが複数のドメイン オブジェクトをホストする場合は、サイズを増やす)
       - 自動的に生成された VNet を使用します。
@@ -76,12 +76,12 @@ DS シリーズ Vm と premium storage データ ディスクと、SOFS を展�
    2. 2 番目のノードを作成します。 次の変更では、上記の手順を繰り返します。
       - -Fsn2 名: マイ
       - 高可用性: 上記で作成した可用性セットを選択します。  
-7. [データ ディスクをアタッチ](https://azure.microsoft.com/documentation/articles/virtual-machines-windows-attach-disk-portal/) に従って、ユーザーは、クラスター ノードの Vm (上記の表で説明) と必要があります。 データ ディスクを作成し、VM にアタッチした後、**ホスト キャッシュ**を **[なし]** に設定します。
+7. [データ ディスクをアタッチ](/azure/virtual-machines/windows/attach-managed-disk-portal) に従って、ユーザーは、クラスター ノードの Vm (上記の表で説明) と必要があります。 データ ディスクを作成し、VM にアタッチした後、**ホスト キャッシュ**を **[なし]** に設定します。
 8. すべての VM の IP アドレスを **[静的]** に設定します。 
    1. リソース グループで、仮想マシンを選択し、 **ネットワーク インターフェイス** (下にある **設定**)。 表示されているネットワーク インターフェイスを選択し、クリックして **IP 構成**します。 指定の IP 構成を選択して、選択 **静的**, 、 をクリックし、 **保存**します。
    2. ドメイン コント ローラー (マイ dc の例) プライベート IP アドレス (10.x.x.x) に注意してください。
 9. クラスター ノードの Vm の Nic で、dc サーバーにプライマリ DNS サーバー アドレスを設定します。 VM を選択し、 **ネットワーク インターフェイス > DNS サーバー > カスタム DNS**します。 上記でメモしたプライベート IP アドレスを入力し、 **[保存]** をクリックします。
-10. 作成、 [Azure ストレージ アカウントをクラウドのミラーリング監視サーバーを設定する](https://docs.microsoft.com/windows-server/failover-clustering/deploy-cloud-witness)です。 (リンクの手順を使用する場合停止"を構成するクラウド ミラーリング監視サーバーをフェールオーバー クラスター マネージャーの GUI"を取得する - その手順を実行します。)
+10. 作成、 [Azure ストレージ アカウントをクラウドのミラーリング監視サーバーを設定する](../../failover-clustering/deploy-cloud-witness.md)です。 (リンクの手順を使用する場合停止"を構成するクラウド ミラーリング監視サーバーをフェールオーバー クラスター マネージャーの GUI"を取得する - その手順を実行します。)
 11. 記憶域スペース ダイレクト ファイル サーバーを設定します。 ノード VM に接続し、次の Windows PowerShell コマンドレットを実行します。
     1. 2 つのファイル サーバー クラスター ノードの Vm では、フェールオーバー クラスタ リング機能とファイル サーバーの機能をインストールします。
 

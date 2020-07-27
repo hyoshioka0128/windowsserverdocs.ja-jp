@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 9757f5f5f68eea0fc1d468a8d8e6fd341e2ecc6a
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 82b12edd9cb680eee567e5dc014615e3d042cd18
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475439"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966094"
 ---
 # <a name="mount-a-drive-in-a-folder"></a>ドライブをフォルダーにマウントする
 
@@ -66,4 +66,4 @@ ms.locfileid: "85475439"
 -   [mountvol](https://go.microsoft.com/fwlink/?linkid=64111) コマンドを使用して、マウントされたドライブを作成することもできます。
 
 ## <a name="additional-references"></a>その他の参照情報
--   [コマンド ライン構文の表記規則](https://technet.microsoft.com/library/cc742449(v=ws.11).aspx)
+-   [コマンド ライン構文の表記規則](/previous-versions/orphan-topics/ws.11/cc742449(v=ws.11))

@@ -10,12 +10,12 @@ author: jaimeo
 ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: e6c218b08cc39edd9b3d93ae78b0b5c7aa293858
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: db1a4fe48460a957369c2ca3ced24e0ccb54fef7
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826675"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959124"
 ---
 # <a name="configure-a-server-core-installation-of-windows-server-2016-or-windows-server-version-1709-with-sconfigcmd"></a>Sconfig.cmd を使用して Windows Server 2016 または Windows Server バージョン 1709 の Server Core インストールを構成する
 
@@ -58,7 +58,7 @@ Server Core のインストールやデスクトップ エクスペリエンス�
 IP アドレスが DHCP サーバーによって自動的に割り当てられるように構成することも、静的 IP アドレスを手動で割り当てることもできます。 このオプションでは、サーバーの DNS サーバー設定も構成できます。
 
 > [!NOTE]
-> これらのオプションとその他の多数のオプションは現在、ネットワーキング Windows PowerShell コマンドレットで使用できます。 詳細については、Windows Server ライブラリの [ネットワーク アダプター コマンドレットに関するページ](https://docs.microsoft.com/powershell/module/netadapter/?view=win10-ps) をご覧ください。
+> これらのオプションとその他の多数のオプションは現在、ネットワーキング Windows PowerShell コマンドレットで使用できます。 詳細については、Windows Server ライブラリの [ネットワーク アダプター コマンドレットに関するページ](/powershell/module/netadapter/?view=win10-ps) をご覧ください。
 
 ## <a name="windows-update-settings"></a>Windows Update の設定
 

@@ -10,12 +10,12 @@ ms.assetid: fbef4d91-e18c-4f1b-952f-a9a7ad46cd74
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: fb38976ca6b2297562e74d9ea29510308ad23ff6
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 97a255935b052b0fc2b67863bdb1066ed4e654dc
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826835"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963704"
 ---
 # <a name="mpio-on-nano-server"></a>Nano Server の MPIO
 
@@ -24,7 +24,7 @@ ms.locfileid: "80826835"
 > [!IMPORTANT]
 > Windows Server バージョン 1709 以降では、Nano Server は[コンテナーの基本 OS イメージ](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image)としてのみ提供されます。 その意味については、[Nano Server に加えられる変更](nano-in-semi-annual-channel.md)に関する記事をご覧ください。 
 
-このトピックでは、Windows Server 2016 の Nano Server インストールにおける MPIO の使用について説明します。 Windows Server の MPIO の詳細については、「[マルチパス I/O の概要](https://technet.microsoft.com/library/cc725907.aspx)」を参照してください。  
+このトピックでは、Windows Server 2016 の Nano Server インストールにおける MPIO の使用について説明します。 Windows Server の MPIO の詳細については、「[マルチパス I/O の概要](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc725907(v=ws.11))」を参照してください。  
 
 ## <a name="using-mpio-on-nano-server"></a>Nano Server での MPIO の使用  
 Nano Server で MPIO を使用できますが、次の点が異なります。  
@@ -371,5 +371,3 @@ if ($changed -eq 'true')
 }  
 ```  
   
-
-

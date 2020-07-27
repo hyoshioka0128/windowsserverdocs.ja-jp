@@ -8,12 +8,12 @@ author: greg-lindsay
 ms.author: greg-lindsay
 ms.localizationpriority: high
 ms.date: 05/07/2018
-ms.openlocfilehash: c4676ee720780ac7f347d98048c920bd4ce68e59
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 73d0d62aac3771c4150a133950085170f7f51cb5
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473189"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961144"
 ---
 # <a name="whats-new-in-windows-server-version-1803"></a>Windows Server バージョン 1803 の新機能
 
@@ -27,7 +27,7 @@ Project Honolulu は、**Windows Admin Center** になりました。
 <br>&nbsp;
 > [!video https://www.youtube.com/embed/WCWxAp27ERk?autoplay=false]
 
-[Windows Admin Center](https://docs.microsoft.com/windows-server/manage/windows-admin-center/overview) は、ローカルとリモート サーバー管理のすべての側面を統合します。 Windows Admin Center は、インターネット接続を必要としない、ローカルに展開されたブラウザー ベースの管理エクスペリエンスです。これにより、Windows Server 展開のあらゆる側面を完全に管理できます。
+[Windows Admin Center](../manage/windows-admin-center/overview.md) は、ローカルとリモート サーバー管理のすべての側面を統合します。 Windows Admin Center は、インターネット接続を必要としない、ローカルに展開されたブラウザー ベースの管理エクスペリエンスです。これにより、Windows Server 展開のあらゆる側面を完全に管理できます。
 
 ## <a name="windows-server-release-strategy"></a>Windows Server リリース戦略
 
@@ -59,7 +59,7 @@ Windows Server バージョン 1709 は、半期チャネルの最初のリリ�
 
 ### <a name="server-core-container-image"></a>Server Core コンテナー イメージ
 
-アプリケーションの互換性がより優れた小さい Server Core コンテナーが利用できるようになりました。 詳細情報は、[こちら](https://blogs.technet.microsoft.com/virtualization/2018/01/22/a-smaller-windows-server-core-container-with-better-application-compatibility/)で確認できます。
+アプリケーションの互換性がより優れた小さい Server Core コンテナーが利用できるようになりました。 詳細情報は、[こちら](https://techcommunity.microsoft.com/t5/virtualization/bg-p/Virtualization)で確認できます。
 
 - 使用されていないオプションの機能と役割が削除されました。 詳細については、[Server Core コンテナーにない役割、役割サービス、および機能](../administration/server-core/server-core-container-removed-roles.md)に関するページを参照してください。
     - ダウンロード サイズが 1.58 GB に縮小されました。これは Windows Server バージョン 1709 から 30% の削減です。
@@ -68,7 +68,7 @@ Windows Server バージョン 1709 は、半期チャネルの最初のリリ�
 
 ### <a name="windows-subsystem-for-linux-wsl"></a>Windows Subsystem for Linux (WSL)
 
-WSL によって、サーバーの管理者は Windows Server の Linux から既存のツールとスクリプトを使用することができます。 [コマンド ラインに関するブログ](https://blogs.msdn.microsoft.com/commandline/tag/wsl/)で紹介された、バックグラウンド タスク、DriveFS、WSLPath などの多くの機能強化は、Windows Server の一部として含まれるようになりました。
+WSL によって、サーバーの管理者は Windows Server の Linux から既存のツールとスクリプトを使用することができます。 [コマンド ラインに関するブログ](https://devblogs.microsoft.com/commandline/tag/wsl/)で紹介された、バックグラウンド タスク、DriveFS、WSLPath などの多くの機能強化は、Windows Server の一部として含まれるようになりました。
 
 ### <a name="kubernetes"></a>Kubernetes
 
@@ -94,7 +94,7 @@ Windows Server バージョン 1803 のリリースに伴い、次の Kubernetes
 
 ## <a name="storage"></a>記憶域
 
-このリリースでは、File Server Resource Manager サービスが、起動時にすべてのボリュームで変更ジャーナル (USN ジャーナルとも呼ばれます) を作成しないようにすることが可能です これにより、各ボリューム上の領域を節約できますが、リアルタイムのファイル分類は無効になります。 詳細については、「[ファイル サーバー リソース マネージャーの概要](https://docs.microsoft.com/windows-server/storage/fsrm/fsrm-overview)」を参照してください。
+このリリースでは、File Server Resource Manager サービスが、起動時にすべてのボリュームで変更ジャーナル (USN ジャーナルとも呼ばれます) を作成しないようにすることが可能です これにより、各ボリューム上の領域を節約できますが、リアルタイムのファイル分類は無効になります。 詳細については、「[ファイル サーバー リソース マネージャーの概要](../storage/fsrm/fsrm-overview.md)」を参照してください。
 
 ## <a name="features-added-to-server-core"></a>Server Core に追加された機能
 
@@ -110,5 +110,5 @@ Install-WindowsFeature -Name WDS
 
 ## <a name="additional-references"></a>その他の参照情報
 
-[Windows Server のリリース情報](https://docs.microsoft.com/windows-server/get-started/windows-server-release-info)<br>
-[Windows 10 バージョン 1803 の新機能 (IT 技術者向けコンテンツ)](https://docs.microsoft.com/windows/whats-new/whats-new-windows-10-version-1803)
+[Windows Server のリリース情報](./windows-server-release-info.md)<br>
+[Windows 10 バージョン 1803 の新機能 (IT 技術者向けコンテンツ)](/windows/whats-new/whats-new-windows-10-version-1803)

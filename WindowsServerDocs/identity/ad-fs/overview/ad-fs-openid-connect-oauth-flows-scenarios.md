@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 3804cfdf49d97f9b889129802e0d2c51730e3c86
-ms.sourcegitcommit: 67116322915066b85decb4261d47cedec2cfe12f
+ms.openlocfilehash: d65701010620127c4d98bdc176be1e7ce401e0a7
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82903470"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965994"
 ---
 # <a name="ad-fs-openid-connectoauth-flows-and-application-scenarios"></a>AD FS OpenID 接続/OAuth フローとアプリケーション シナリオ
 AD FS 2016 以降に適用されます
@@ -230,7 +230,7 @@ access_token は有効期間が短く、有効期限が切れた後もリソー�
  
 更新トークンには、指定された有効期間はありません。 通常、更新トークンの有効期間は比較的長くなります。 ただし、更新トークンが期限切れになったり失効したりする場合や、必要な操作を行うための十分な特権がない場合があります。 アプリケーションでは、トークン発行エンドポイントから返されるエラーを正しく予想して処理する必要があります。  
  
-新しいアクセス トークンを取得するために使用されたときに、更新トークンが失効していないにもかかわらず、古い更新トークンを破棄することを求められます。 OAuth 2.0 仕様によると、次のとおりです。"承認サーバーで新しい更新トークンが発行される場合があります。この場合、クライアントは古い更新トークンを破棄し、新しい更新トークンに置き換える必要があります。 承認サーバーは新しい更新トークンをクライアントに発行した後に、古い更新トークンを取り消す場合があります。" 新しい更新トークンの有効期間が、以前の更新トークンの有効期間より長い場合に、AD FS によって更新トークンが発行されます。  AD FS 更新トークンの有効期間に関する追加情報を表示するには、「[AD FS シングル サインオンの設定](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/ad-fs-single-sign-on-settings)」を参照してください。
+新しいアクセス トークンを取得するために使用されたときに、更新トークンが失効していないにもかかわらず、古い更新トークンを破棄することを求められます。 OAuth 2.0 仕様によると、次のとおりです。"承認サーバーで新しい更新トークンが発行される場合があります。この場合、クライアントは古い更新トークンを破棄し、新しい更新トークンに置き換える必要があります。 承認サーバーは新しい更新トークンをクライアントに発行した後に、古い更新トークンを取り消す場合があります。" 新しい更新トークンの有効期間が、以前の更新トークンの有効期間より長い場合に、AD FS によって更新トークンが発行されます。  AD FS 更新トークンの有効期間に関する追加情報を表示するには、「[AD FS シングル サインオンの設定](../operations/ad-fs-single-sign-on-settings.md)」を参照してください。
  
 ```
 // Line breaks for legibility only 

@@ -8,12 +8,12 @@ author: jasongerend
 ms.author: jgerend
 ms.date: 05/21/2019
 ms.localizationpriority: high
-ms.openlocfilehash: ba1d6156ad3ba20e5f166a3c0eb9a36aa1ffe516
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: e94bb064b94c657d5e931363e2dc0a1c54ecf5e1
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80825955"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956074"
 ---
 # <a name="whats-new-in-windows-server-version-1809"></a>Windows Server Version 1809 の新機能
 
@@ -23,7 +23,7 @@ Windows の最新の機能については、「[Windows Server の新機能](wha
 
 ## <a name="container-networking-with-kubernetes"></a>Kubernetes を使用したコンテナー ネットワーク
 
-Windows Server 2019 の [Kubernetes を使用したコンテナー ネットワーク](https://docs.microsoft.com/windows-server/networking/sdn/technologies/containers/container-networking-overview)機能により、プラットフォームのネットワーク回復性とコンテナー ネットワーク プラグインのサポートが強化され、Windows での Kubernetes の使いやすさが大幅に向上します。 さらに、ワークロードを Kubernetes に展開すると、ネットワーク セキュリティを使用して、埋め込みツールにより Linux と Windows の両方のサービスを保護できます。
+Windows Server 2019 の [Kubernetes を使用したコンテナー ネットワーク](../networking/sdn/technologies/containers/container-networking-overview.md)機能により、プラットフォームのネットワーク回復性とコンテナー ネットワーク プラグインのサポートが強化され、Windows での Kubernetes の使いやすさが大幅に向上します。 さらに、ワークロードを Kubernetes に展開すると、ネットワーク セキュリティを使用して、埋め込みツールにより Linux と Windows の両方のサービスを保護できます。
 
 ## <a name="group-managed-service-accounts-for-containers"></a>コンテナー用グループ管理サービス アカウント
 
@@ -40,13 +40,12 @@ Windows Server Version 1809 の新機能のほか、[Windows Server 2019](../get
 * HTTP/2
 * Kubernetes サポート
 * Windows 上の Linux コンテナー
-* [Low Extra Delay Background Transport (LEDBAT)](https://blogs.technet.microsoft.com/networking/2018/07/25/ledbat/)
+* [Low Extra Delay Background Transport (LEDBAT)](https://techcommunity.microsoft.com/t5/networking-blog/bg-p/NetworkingBlog)
 * 仮想ワークロードに関するネットワーク パフォーマンスの向上
-* [Server Core アプリ互換性オンデマンド機能 (FOD)](https://docs.microsoft.com/windows-server/get-started-19/install-fod-19)
+* [Server Core アプリ互換性オンデマンド機能 (FOD)](../get-started-19/install-fod-19.md)
 * [ストレージ移行サービス (SMS)](../storage/whats-new-in-storage.md#storage-spaces-direct)
 * 記憶域レプリカ
 * システム インサイト 
 * Windows Defender Advanced Threat Protection (ATP)
 * Windows Defender ATP Exploit Guard
-* [Windows タイム サービス](https://docs.microsoft.com/windows-server/networking/windows-time-service/insider-preview)
-
+* [Windows タイム サービス](../networking/windows-time-service/insider-preview.md)

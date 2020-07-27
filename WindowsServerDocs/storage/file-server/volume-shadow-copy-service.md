@@ -6,12 +6,12 @@ ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: d90030fe183e5cfcb94866e87793c0419b636433
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 9948fab77ab4869c27fd63e623315bd1b3e9ff47
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475449"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966694"
 ---
 # <a name="volume-shadow-copy-service"></a>ボリューム シャドウ コピー サービス
 
@@ -247,7 +247,7 @@ Windows オペレーティング システムには、さまざまな Windows �
 
 これらのライターの詳細については、以下の Microsoft Docs Web ページを参照してください。
 
-- [インボックス VSS ライター](https://docs.microsoft.com/windows/win32/vss/in-box-vss-writers) (https://docs.microsoft.com/windows/win32/vss/in-box-vss-writers)
+- [インボックス VSS ライター](/windows/win32/vss/in-box-vss-writers) (https://docs.microsoft.com/windows/win32/vss/in-box-vss-writers)
 
 
 ## <a name="how-shadow-copies-are-used"></a>シャドウ コピーの使用方法
@@ -375,7 +375,7 @@ VSS は、ボリューム全体のシャドウ コピーを作成するように
 > <UL>
 > <LI>以前のバージョンの機能を使用して、Windows Server 上で作成されたシャドウ コピーからファイルを削除することはできません。<BR><BR>
 > <LI>共有フォルダーのシャドウ コピーからファイルを削除することはできません。<BR><BR>
-> <LI><a href="https://docs.microsoft.com/windows-server/administration/windows-commands/diskshadow" data-raw-source="[Diskshadow](https://docs.microsoft.com/windows-server/administration/windows-commands/diskshadow)">Diskshadow</a> ユーティリティを使用して作成されたシャドウ コピーからファイルを削除することはできますが、<a href="https://docs.microsoft.com/windows-server/administration/windows-commands/vssadmin" data-raw-source="[Vssadmin](https://docs.microsoft.com/windows-server/administration/windows-commands/vssadmin)">Vssadmin</a> ユーティリティを使用して作成されたシャドウ コピーからファイルを削除することはできません。<BR><BR>
+> <LI><a href="https://docs.microsoft.com/windows-server/administration/windows-commands/diskshadow" data-raw-source="[Diskshadow](../../administration/windows-commands/diskshadow.md)">Diskshadow</a> ユーティリティを使用して作成されたシャドウ コピーからファイルを削除することはできますが、<a href="https://docs.microsoft.com/windows-server/administration/windows-commands/vssadmin" data-raw-source="[Vssadmin](../../administration/windows-commands/vssadmin.md)">Vssadmin</a> ユーティリティを使用して作成されたシャドウ コピーからファイルを削除することはできません。<BR><BR>
 > <LI>ファイルは、ベストエフォート方式でシャドウ コピーから削除されます。 つまり、削除されることは保証されていません。<BR><BR></LI></UL>
 
 
@@ -622,4 +622,4 @@ VSS では、次のレジストリ キーを使用できます。
 
 ## <a name="additional-references"></a>その他の参照情報
 
-[Windows デベロッパー センターのボリューム シャドウ コピー サービス](https://docs.microsoft.com/windows/desktop/vss/volume-shadow-copy-service-overview)
+[Windows デベロッパー センターのボリューム シャドウ コピー サービス](/windows/desktop/vss/volume-shadow-copy-service-overview)

@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 01/10/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c64914e840c4e8a84603144fd499e091f0cb46c
-ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
+ms.openlocfilehash: 9e9aecc439235d9396d764420711109552d89f32
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "85070541"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965164"
 ---
 # <a name="overview-of-file-sharing-using-the-smb-3-protocol-in-windows-server"></a>Windows Server の SMB 3 プロトコルを使用したファイル共有の概要
 
@@ -57,13 +57,13 @@ ms.locfileid: "85070541"
 | --------- | --------- | --------- |
 | SMB 暗号化     |   更新済み      | Advanced Encryption Standard-Galois/Counter Mode (AES-GCM) による SMB 3.1.1 暗号化は、SMB 署名または AES-CCM を使用した以前の SMB 暗号化よりも高速です。   |
 | ディレクトリ キャッシュ | 新規 | SMB 3.1.1 には、ディレクトリ キャッシュの機能強化が含まれています。 Windows クライアントを使って、大量のディレクトリ (約 500,000 エントリ) をキャッシュできるようになりました。 Windows クライアントでは 1 MB のバッファーでディレクトリ クエリが試行されるようになり、ラウンドトリップが減り、パフォーマンスが改善します。 |
-| 事前認証の整合性 | 新規 |  SMB 3.1.1 では、事前認証の整合性によって、SMB の接続確立と認証メッセージを改ざんする man-in-the-middle 攻撃からの保護が強化されています。 詳細については、「[Windows 10 での SMB 3.1.1 の事前認証の整合性](https://docs.microsoft.com/archive/blogs/openspecification/smb-3-1-1-pre-authentication-integrity-in-windows-10)」を参照してください。 |
+| 事前認証の整合性 | 新規 |  SMB 3.1.1 では、事前認証の整合性によって、SMB の接続確立と認証メッセージを改ざんする man-in-the-middle 攻撃からの保護が強化されています。 詳細については、「[Windows 10 での SMB 3.1.1 の事前認証の整合性](/archive/blogs/openspecification/smb-3-1-1-pre-authentication-integrity-in-windows-10)」を参照してください。 |
 | SMB 暗号化の機能強化 | 新規 | SMB 3.1.1 には、接続ごとに暗号アルゴリズムをネゴシエートするメカニズムが用意されており、AES-128-CCM と AES-128-GCM のオプションがあります。 AES-128-GCM は新しいバージョンの Windows では既定値ですが、以前のバージョンでは引き続き AES-128-CCM が使用されます。 |
 | クラスターのローリング アップグレードのサポート | 新規 | アップグレードの過程で、SMB がクラスターに対して異なる最大バージョンの SMB をサポートしているように見せることにより、[クラスターのローリング アップグレード](../../failover-clustering/cluster-operating-system-rolling-upgrade.md)を実現します。 SMB が異なるバージョンのプロトコル (言語) を使用して通信できるようにする方法の詳細については、ブログ投稿「[SMB 言語の制御](https://techcommunity.microsoft.com/t5/storage-at-microsoft/controlling-smb-dialects/ba-p/860024)」を参照してください。 |
 | Windows 10 での SMB ダイレクト クライアントのサポート | 新規 | Windows 10 Enterprise、Windows 10 Education、Windows 10 Pro for Workstations には、SMB ダイレクト クライアントのサポートが追加されました。 |
-| FileNormalizedNameInformation API 呼び出しのネイティブ サポート | 新規 | ファイルの正規化された名前を照会するためのネイティブ サポートを追加します。 詳細については、「[FileNormalizedNameInformation](https://docs.microsoft.com/openspecs/windows_protocols/ms-fscc/20bcadba-808c-4880-b757-4af93e41edf6)」を参照してください。 |
+| FileNormalizedNameInformation API 呼び出しのネイティブ サポート | 新規 | ファイルの正規化された名前を照会するためのネイティブ サポートを追加します。 詳細については、「[FileNormalizedNameInformation](/openspecs/windows_protocols/ms-fscc/20bcadba-808c-4880-b757-4af93e41edf6)」を参照してください。 |
 
-詳細については、ブログ投稿「[Windows Server 2016 Technical Preview 2 の SMB 3.1.1 の新機能](https://docs.microsoft.com/archive/blogs/josebda/whats-new-in-smb-3-1-1-in-the-windows-server-2016-technical-preview-2)」を参照してください。
+詳細については、ブログ投稿「[Windows Server 2016 Technical Preview 2 の SMB 3.1.1 の新機能](/archive/blogs/josebda/whats-new-in-smb-3-1-1-in-the-windows-server-2016-technical-preview-2)」を参照してください。
 
 ## <a name="features-added-in-smb-302-with-windows-server-2012-r2-and-windows-81"></a>Windows Server 2012 R2 および Windows 8.1 で SMB 3.02 に追加された機能
 
@@ -72,7 +72,7 @@ ms.locfileid: "85070541"
 | スケールアウト ファイル サーバー クライアントの自動再分配     |   新規      | スケールアウト ファイル サーバーのスケーラビリティと管理容易性が向上しています。 SMB クライアント接続は (サーバーごとではなく) ファイル共有ごとに追跡され、クライアントは、ファイル共有で使用されるボリュームへのアクセスに優れたクラスター ノードにリダイレクトされます。 これにより、ファイル サーバー ノード間のリダイレクト トラフィックが減少し、効率性が向上します。 クライアントがリダイレクトされるのは、初期接続の後、クラスター記憶域が再構成された場合です。    |
 | WAN 経由のパフォーマンス   | 更新済み  | Windows 8.1 および Windows 10 では、リモート マシン上のある場所から同じサーバー上の別のコピーへのリモート コピーにエクスプローラーを使用する場合、SMB を介した CopyFile SRV_COPYCHUNK のサポートが向上しています。 ネットワーク経由でコピーするのは少量のメタデータのみです (16 MiB のファイル データあたり 1/2 KiB が送信されます)。 その結果、パフォーマンスが大幅に向上します。 これは、SMB の OS レベルとエクスプローラーレベルの違いです。 |
 | SMB ダイレクト     |   更新済み      | 小規模な I/O (仮想マシンのオンライン トランザクション処理 (OLTP) データベースなど) でのワークロードをホストするときの効率を高めることによって、小規模な I/O ワークロードのパフォーマンスを向上させます。 このようなパフォーマンスの向上は、より高速なネットワーク インターフェイス (40 Gbps イーサネットや 56 Gbps InfiniBand など) を使用したときに明確になります。  |
-| SMB 帯域幅の制限 | 新規 | [Set-SmbBandwidthLimit](https://docs.microsoft.com/powershell/module/smbshare/set-smbbandwidthlimit) を使用して、3 つのカテゴリの帯域幅制限を設定できるようになりました。VirtualMachine (SMB 経由の Hyper-V トラフィック)、LiveMigration (SMB 経由の Hyper-V Live Migration トラフィック)、または既定値 (他のすべての種類の SMB トラフィック) です。
+| SMB 帯域幅の制限 | 新規 | [Set-SmbBandwidthLimit](/powershell/module/smbshare/set-smbbandwidthlimit) を使用して、3 つのカテゴリの帯域幅制限を設定できるようになりました。VirtualMachine (SMB 経由の Hyper-V トラフィック)、LiveMigration (SMB 経由の Hyper-V Live Migration トラフィック)、または既定値 (他のすべての種類の SMB トラフィック) です。
 
 Windows Server 2012 R2 での SMB の新機能と変更された機能の詳細については、「[Windows Server での SMB の新機能](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831474(v%3dws.11)>)」を参照してください。
 
@@ -90,7 +90,7 @@ Windows Server 2012 R2 での SMB の新機能と変更された機能の詳細�
 | SMB 暗号化     |   新規      | SMB データをエンド ツー エンドで暗号化し、信頼できないネットワークで発生する傍受からデータを保護できます。 新たに展開コストが発生することはなく、インターネット プロトコル セキュリティ (IPsec)、専用ハードウェア、WAN アクセラレーターも不要です。 SMB 暗号化は共有ごとでも、ファイル サーバー全体でも構成できます。また、信頼できないネットワークをデータが通過するさまざまな場面で有効にできます。 |
 | SMB ディレクトリ リース     |  新規 | ブランチ オフィスのアプリケーションの応答時間を改善します。 ディレクトリ リースを使うと、保存期間の長いディレクトリ キャッシュからメタデータを取得するため、クライアントからサーバーへのラウンドトリップが減少します。 サーバーにあるディレクトリ情報に変更があるとクライアントに通知されるので、キャッシュの一貫性を維持できます。 ディレクトリ リースは、HomeFolder (読み込み/書き込み可、共有なし) と Publication (読み取り専用、共有あり) のどちらのシナリオにも対応しています。    |
 | WAN 経由のパフォーマンス   | 新規   | SMB 3.0 では、ディレクトリの便宜的ロック (oplock) と oplock リースが導入されました。 一般的なオフィスおよびクライアントのワークロードでは、oplocks およびリースによってネットワーク ラウンドトリップが約 15% 削減されることが示されています。<br><br>SMB 3 では、SMB の Windows 実装が改良され、クライアントでのキャッシュ動作が改善され、スループットが向上しました。<br><br>SMB 3 では、CopyFile() API に加えて、Robocopy などの関連ツールが改善され、ネットワーク経由でプッシュできるデータの量が大幅に増えました。 |
-| セキュリティで保護された言語ネゴシエーション | 新規 | 言語のネゴシエーションのダウングレードを試みる man-in-the-middle を防止するために利用できます。 その目的は、クライアントとサーバーの間で最初にネゴシエートされた言語と機能を盗聴者がダウングレードできないようにすることです。 詳細については、「[SMB3 のセキュリティで保護された言語ネゴシエーション](https://docs.microsoft.com/archive/blogs/openspecification/smb3-secure-dialect-negotiation)」を参照してください。 これは、SMB 3.1.1 の「[Windows 10 での SMB 3.1.1 の事前認証の整合性](https://docs.microsoft.com/archive/blogs/openspecification/smb-3-1-1-pre-authentication-integrity-in-windows-10)」で置き換えられていることに注意してください。 |
+| セキュリティで保護された言語ネゴシエーション | 新規 | 言語のネゴシエーションのダウングレードを試みる man-in-the-middle を防止するために利用できます。 その目的は、クライアントとサーバーの間で最初にネゴシエートされた言語と機能を盗聴者がダウングレードできないようにすることです。 詳細については、「[SMB3 のセキュリティで保護された言語ネゴシエーション](/archive/blogs/openspecification/smb3-secure-dialect-negotiation)」を参照してください。 これは、SMB 3.1.1 の「[Windows 10 での SMB 3.1.1 の事前認証の整合性](/archive/blogs/openspecification/smb-3-1-1-pre-authentication-integrity-in-windows-10)」で置き換えられていることに注意してください。 |
 
 
 ## <a name="hardware-requirements"></a>ハードウェア要件

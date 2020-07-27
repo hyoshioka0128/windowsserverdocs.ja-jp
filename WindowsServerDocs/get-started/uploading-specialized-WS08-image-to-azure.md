@@ -9,12 +9,12 @@ ms.author: mikeblodge
 ms.date: 07/11/2018
 ms.topic: get-started-article
 ms.localizationpriority: high
-ms.openlocfilehash: de9233e31c5530abd207a1bbba0e1e16a07d1561
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: f8f8cc63740c6823a01e0c86b387d57b54a06419
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826125"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86960294"
 ---
 # <a name="upload-a-windows-server-20082008-r2-specialized-image-to-azure"></a>Windows Server 2008/2008 R2 に特化されたイメージの Azure へのアップロード 
 
@@ -85,12 +85,12 @@ Login-AzureRmAccount
 > [!IMPORTANT]
 > Azure で定義済みのユーザー イメージを使用しないでください。
 
-1.    新しい[リソース グループ](https://docs.microsoft.com/rest/api/resources/resourcegroups/createorupdate)を作成します。 
-2.    リソース グループ内に新しい[ストレージ BLOB](https://docs.microsoft.com/rest/api/storageservices/put-blob) を作成します。
-3.    ストレージ BLOB 内に[コンテナー](https://docs.microsoft.com/rest/api/storageservices/create-container)を作成します。
+1.    新しい[リソース グループ](/rest/api/resources/resourcegroups/createorupdate)を作成します。 
+2.    リソース グループ内に新しい[ストレージ BLOB](/rest/api/storageservices/put-blob) を作成します。
+3.    ストレージ BLOB 内に[コンテナー](/rest/api/storageservices/create-container)を作成します。
 4.    プロパティから BLOB ストレージの URL をコピーします。
 5.    上で指定されたスクリプトを使用して新しいストレージ BLOB にイメージをアップロードします。
-6.    VHD の[ディスク](https://docs.microsoft.com/azure/virtual-machines/windows/prepare-for-upload-vhd-image)を作成します。   
+6.    VHD の[ディスク](/azure/virtual-machines/windows/prepare-for-upload-vhd-image)を作成します。   
      a。    [ディスク] に移動し、 **[追加]** をクリックします。  
      b.    ディスクの名前を入力します。 使用するサブスクリプションを選択し、地域を設定して、アカウントの種類を選択します。   
      c. [ソースの種類] で、ストレージを選択します。 スクリプトを使用して作成した BLOB VHD の場所を参照します。  
@@ -105,7 +105,3 @@ Login-AzureRmAccount
  
         ポート: 3389 プロトコル:TCP アクション:許可 優先度:1000 名前:'RDP-Rule'。   
      e.    **[作成]** をクリックします。
-
-
-
-

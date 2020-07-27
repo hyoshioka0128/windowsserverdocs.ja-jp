@@ -10,12 +10,12 @@ author: jaimeo
 ms.author: jaimeo
 ms.date: 09/06/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3965e453483b3515e4957ecfaba39cf9a0b8104f
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: b792b6734da2fe643862529c0de41e8763117c83
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80827075"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961984"
 ---
 # <a name="developing-powershell-cmdlets-for-nano-server"></a>Nano Server 用の PowerShell コマンドレットを開発する
 
@@ -123,7 +123,7 @@ PowerShell では、コマンドレットに対していくつかの実装の種
 * %windir%\system32\WindowsPowerShell\v1.0\Modules   
 * %ProgramFiles%\WindowsPowerShell\Modules   
 * %UserProfile%\Documents\WindowsPowerShell\Modules   
-* \<製品のインストール場所>   
+* \<your product installation location>   
     
   次のことを理解したうえでこれらの場所を確認します。  
   * CIM コマンドレットは、拡張子が .cdxml ファイルです。  
@@ -136,7 +136,7 @@ PowerShell では、コマンドレットに対していくつかの実装の種
 ### <a name="building-c-for-nano-server"></a>Nano Server 向けの C++ のビルド  
 C++ の DLL を Nano Server で実行するには、特定のエディションではなく Nano Server を対象にコンパイルします。  
   
-Nano Server 上の C++ の開発に関する前提条件とチュートリアルについては、「[Developing Native Apps on Nano Server (Nano Server でのネイティブ アプリの開発)](https://blogs.technet.com/b/nanoserver/archive/2016/04/27/developing-native-apps-on-nano-server.aspx)」を参照してください。  
+Nano Server 上の C++ の開発に関する前提条件とチュートリアルについては、「[Developing Native Apps on Nano Server (Nano Server でのネイティブ アプリの開発)](/archive/blogs/nanoserver/developing-native-apps-on-nano-server)」を参照してください。  
   
   
 ## <a name="porting-net-cmdlets"></a>.NET コマンドレットの移植  
@@ -176,7 +176,7 @@ API カタログ内で .NET Core を検索したり、Core CLR 参照アセン�
 ### <a name="pinvoke"></a>PInvoke  
 Nano Server で使用される Core CLR では、kernel32.dll、advapi32.dll などのいくつかの基本的な DLL が多数の API セットに分割されました。そのため、PInvoke が正しい API を参照していることを確認する必要があります。 互換性がない場合は、実行時エラーが発生します。  
   
-Nano Server でサポートされているネイティブ API の一覧については、「[Nano Server APIs (Nano Server の API)](https://msdn.microsoft.com/library/mt588480(v=vs.85).aspx)」を参照してください。  
+Nano Server でサポートされているネイティブ API の一覧については、「[Nano Server APIs (Nano Server の API)](/previous-versions/windows/desktop/legacy/mt588480(v=vs.85))」を参照してください。  
   
 ### <a name="building-c-for-nano-server"></a>Nano Server 向けの C# のビルド  
   
@@ -240,7 +240,7 @@ $result.RemoteAddress = 1.1.1.1
   
 ### <a name="migrating-from-wmi-net-to-mi-net"></a>WMI .NET から MI .NET への移行  
   
-[WMI .NET](https://msdn.microsoft.com/library/mt481551(v=vs.110).aspx) はサポートされないため、古い API を使用しているすべてコマンドレットを、サポートされている WMI API:[MI.NET](https://msdn.microsoft.com/library/dn387184(v=vs.85).aspx)) に移行する必要があります。 MI .NET には、C# から直接、または CimCmdlets モジュールのコマンドレットを通じてアクセスできます。   
+[WMI .NET](/dotnet/api/?view=netframework-4.7.1) はサポートされないため、古い API を使用しているすべてコマンドレットを、サポートされている WMI API:[MI.NET](/previous-versions//dn387184(v=vs.85))) に移行する必要があります。 MI .NET には、C# から直接、または CimCmdlets モジュールのコマンドレットを通じてアクセスできます。   
   
 ### <a name="cimcmdlets-module"></a>CimCmdlets モジュール  
   
@@ -251,5 +251,3 @@ Nano Server では、WMI v1 コマンドレット (たとえば、Get-WmiObject)
 WMI .NET は WMIv1 インターフェイスをラップします。これに対し、MI .NET は WMIv2 (CIM) インターフェイスをラップします。 公開されるクラスは異なる場合がありますが、基になる操作はよく似ています。 オブジェクトのインスタンスを列挙または取得し、それに対する操作を呼び出してタスクを実行します。   
   
   
-
-

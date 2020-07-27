@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 658875f132712d34a2c59967ebd316e8c5edca7c
-ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
+ms.openlocfilehash: 9052e9e6a1327b67fd75b07ab2ee6fc56b1190ac
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "85070551"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962136"
 ---
 # <a name="smb-security-enhancements"></a>SMB セキュリティ拡張機能
 
@@ -76,7 +76,7 @@ Set-SmbServerConfiguration –RejectUnencryptedAccess $false
 次のセクションで説明されている、セキュリティで保護された言語ネゴシエーション機能では、man-in-the-middle によって接続が SMB 3.0 から SMB 2.0 (暗号化されていないアクセスを使用する) にダウングレードされることを防ぎます。 ただし、SMB 1.0 へのダウングレードを防ぐことはできず、これによって暗号化されていないアクセスが発生します。 SMB 3.0 クライアントが常に SMB 暗号化を使用して、暗号化された共有にアクセスすることを保証するには、SMB 1.0 サーバーを無効にする必要があります。 (手順については、「[SMB 1.0 の無効化](#disabling-smb-10)」セクションを参照してください。) **–RejectUnencryptedAccess** 設定が既定の設定の **$true** のままになっている場合は、暗号化対応の SMB 3.0 クライアントのみがファイル共有にアクセスできます (SMB 1.0 クライアントも拒否されます)。
 
 >[!NOTE]
->* SMB 暗号化は Advanced Encryption Standard (AES) CCM アルゴリズムを使用して、データを暗号化および復号化します。 さらに AES-CCM は SMB 署名の設定に関係なく、暗号化されたファイル共有に対してデータ整合性の検証 (署名) を行います。 暗号化せずに SMB 署名を有効にする場合は、この操作を引き続き行うことができます。 詳細については、[SMB 署名の基本](https://blogs.technet.microsoft.com/josebda/2010/12/01/the-basics-of-smb-signing-covering-both-smb1-and-smb2/)に関する記事をご覧ください。
+>* SMB 暗号化は Advanced Encryption Standard (AES) CCM アルゴリズムを使用して、データを暗号化および復号化します。 さらに AES-CCM は SMB 署名の設定に関係なく、暗号化されたファイル共有に対してデータ整合性の検証 (署名) を行います。 暗号化せずに SMB 署名を有効にする場合は、この操作を引き続き行うことができます。 詳細については、[SMB 署名の基本](/archive/blogs/josebda/the-basics-of-smb-signing-covering-both-smb1-and-smb2)に関する記事をご覧ください。
 >* 組織でワイド エリア ネットワーク (WAN) アクセラレーション アプライアンスを使用している場合は、ファイル共有またはサーバーにアクセスしようとすると問題が発生することがあります。
 >* 既定の構成 (暗号化されたファイル共有に対して暗号化されていないアクセスは許可されない) では、SMB 3.0 をサポートしていないクライアントが暗号化されたファイル共有にアクセスしようとすると、イベント ID 1003 が Microsoft-Windows-SmbServer/Operational イベント ログに記録され、クライアントは "**アクセスが拒否されました**" というエラー メッセージを受け取ります。
 >* SMB 暗号化と NTFS ファイル システム内の暗号化ファイル システム (EFS) には関連がなく、SMB 暗号化は EFS を必要とせず、その使用に依存していません。
@@ -90,7 +90,7 @@ SMB 3.0 は、SMB 2.0 または SMB 3.0 プロトコルや、クライアント�
 
 ## <a name="new-signing-algorithm"></a>新しい署名アルゴリズム
 
-SMB 3.0 では、署名のための新しい暗号化アルゴリズムである、Advanced Encryption Standard (AES) 暗号ベースのメッセージ認証コード (CMAC) を使用します。 SMB 2.0 では、古い HMAC-SHA256 暗号化アルゴリズムが使用されていました。 AES-CMAC と AES-CCM を使用すると、AES 命令をサポートするほとんどすべての最新の CPU のデータ暗号化を大幅に高速化できます。 詳細については、[SMB 署名の基本](https://blogs.technet.microsoft.com/josebda/2010/12/01/the-basics-of-smb-signing-covering-both-smb1-and-smb2/)に関する記事をご覧ください。
+SMB 3.0 では、署名のための新しい暗号化アルゴリズムである、Advanced Encryption Standard (AES) 暗号ベースのメッセージ認証コード (CMAC) を使用します。 SMB 2.0 では、古い HMAC-SHA256 暗号化アルゴリズムが使用されていました。 AES-CMAC と AES-CCM を使用すると、AES 命令をサポートするほとんどすべての最新の CPU のデータ暗号化を大幅に高速化できます。 詳細については、[SMB 署名の基本](/archive/blogs/josebda/the-basics-of-smb-signing-covering-both-smb1-and-smb2)に関する記事をご覧ください。
 
 ## <a name="disabling-smb-10"></a>SMB 1.0 の無効化
 

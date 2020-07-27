@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: c72b242437c4c308da77a25e06f3d76e4c65f480
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 19b48bd74dad4e20780b41852afbee15f5ec1ade
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "75351896"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966104"
 ---
 # <a name="extend-a-basic-volume"></a>ベーシック ボリュームを拡張する
 
@@ -61,5 +61,5 @@ ms.locfileid: "75351896"
 
 ## <a name="see-slso"></a>関連項目
 
-- [パーティションのサイズ変更](https://docs.microsoft.com/powershell/module/storage/resize-partition)
-- [DiskPart による拡張](https://docs.microsoft.com/windows-server/administration/windows-commands/extend)
+- [パーティションのサイズ変更](/powershell/module/storage/resize-partition)
+- [DiskPart による拡張](../../administration/windows-commands/extend.md)

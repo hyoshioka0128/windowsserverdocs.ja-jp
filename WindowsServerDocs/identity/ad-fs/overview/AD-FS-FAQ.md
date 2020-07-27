@@ -9,12 +9,12 @@ ms.date: 04/29/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 947c34e6c3a3b9a26a225221bbf29e46343b25df
-ms.sourcegitcommit: f22e4d67dd2a153816acf8355e50319dbffc5acf
+ms.openlocfilehash: 2fce4c5669ff78a6d97cd65580db1a68bfe3a390
+ms.sourcegitcommit: f305bc5f1c5a44dac62f4288450af19f351f9576
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "83546565"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87118586"
 ---
 # <a name="ad-fs-frequently-asked-questions-faq"></a>AD FS についてよく寄せられる質問 (FAQ)
 
@@ -28,14 +28,14 @@ ms.locfileid: "83546565"
 
 
 - Windows Server 2012 R2 AD FS から Windows Server 2016 AD FS 以降。 方法は、Windows Server 2016 AD FS から Windows Server 2019 AD FS にアップグレードする場合と同じであることに注意してください。 
-    - [WID データベースを使用した、Windows Server 2016 での AD FS へのアップグレード](../deployment/Upgrading-to-AD-FS-in-Windows-Server-2016.md)
-    - [SQL データベースを使用した、Windows Server 2016 での AD FS へのアップグレード](../deployment/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL.md)
+    - [WID データベースを使用した、Windows Server 2016 での AD FS へのアップグレード](../deployment/upgrading-to-ad-fs-in-windows-server.md)
+    - [SQL データベースを使用した、Windows Server 2016 での AD FS へのアップグレード](../deployment/upgrading-to-ad-fs-in-windows-server-sql.md)
 - Windows Server 2012 AD FS から Windows Server 2012 R2 AD FS
-    - [Windows Server 2012 R2 の AD FS に移行する](https://technet.microsoft.com/library/dn486815.aspx)
+    - [Windows Server 2012 R2 の AD FS に移行する](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn486815(v=ws.11))
 - AD FS 2.0 から Windows Server 2012 AD FS
-    - [Windows Server 2012 の AD FS に移行する](https://technet.microsoft.com/library/jj647765.aspx)
+    - [Windows Server 2012 の AD FS に移行する](../deployment/migrate-ad-fs-role-services-to-windows-server-2012.md)
 - AD FS 1.x から AD FS 2.0
-    - [AD FS 1.x から AD FS 2.0 にアップグレードする](https://technet.microsoft.com/library/ff678035.aspx)
+    - [AD FS 1.x から AD FS 2.0 にアップグレードする](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff678035(v=ws.10))
 
 AD FS 2.0 または 2.1 (Windows Server 2008 R2 または Windows Server 2012) からアップグレードする必要がある場合は、(C:\Windows\ADFS にある) インボックス スクリプトを使用する必要があります。
 
@@ -49,7 +49,7 @@ HTTP/2 のサポートは Windows Server 2016 で追加されましたが、ク�
 ### <a name="is-it-possible-to-deploy-ad-fs-for-office-365-without-publishing-a-proxy-to-office-365"></a>Office 365 にプロキシを発行せずに、Office 365 用に AD FS を展開することはできますか?
 はい、これはサポートされています。 ただし、次のような副作用があります
 
-1. Azure AD ではフェデレーション メタデータにアクセスできないため、更新トークン署名証明書を手動で管理する必要があります。 トークン署名証明書の手動更新について詳しくは、「[Office 365 および Azure Active Directory 用のフェデレーション証明書の更新](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-o365-certs)」をご覧ください
+1. Azure AD ではフェデレーション メタデータにアクセスできないため、更新トークン署名証明書を手動で管理する必要があります。 トークン署名証明書の手動更新について詳しくは、「[Office 365 および Azure Active Directory 用のフェデレーション証明書の更新](/azure/active-directory/connect/active-directory-aadconnect-o365-certs)」をご覧ください
 2. 従来の認証フロー (たとえば、ExO プロキシ認証フロー) を利用することはできません
 
 ### <a name="what-are-load-balancing-requirements-for-ad-fs-and-wap-servers"></a>AD FS と WAP サーバーにはどのような負荷分散要件がありますか?
@@ -85,7 +85,7 @@ AD FS では、サードパーティの MFA プロバイダーを統合するた
 Microsoft に通知したベンダーの一覧は、[AD FS 対応 MFA プロバイダー](../operations/Configure-Additional-Authentication-Methods-for-AD-FS.md)で公開されています。  Microsoft が把握していない利用可能なプロバイダーは常に存在する可能性があり、わかったら一覧を更新します。
 
 ### <a name="are-third-party-proxies-supported-with-ad-fs"></a>AD FS ではサードパーティのプロキシはサポートされていますか?
-はい。サードパーティのプロキシを AD FS の前面に配置できますが、サードパーティのプロキシでは、Web アプリケーション プロキシの代わりに使用する [MS-ADFSPIP プロトコル](https://msdn.microsoft.com/library/dn392811.aspx)がサポートされている必要があります。
+はい。サードパーティのプロキシを AD FS の前面に配置できますが、サードパーティのプロキシでは、Web アプリケーション プロキシの代わりに使用する [MS-ADFSPIP プロトコル](/openspecs/windows_protocols/ms-adfspip/76deccb1-1429-4c80-8349-d38e61da5cbb)がサポートされている必要があります。
 
 Microsoft が把握しているサードパーティ プロバイダーの一覧を次に示します。  Microsoft が把握していない利用可能なプロバイダーは常に存在する可能性があり、わかったら一覧を更新します。
 
@@ -93,7 +93,7 @@ Microsoft が把握しているサードパーティ プロバイダーの一覧
 
 
 ### <a name="where-is-the-capacity-planning-sizing-spreadsheet-for-ad-fs-2016"></a>AD FS 2016 用のキャパシティ プランニング サイズ決定スプレッドシートはどこにありますか?
-AD FS 2016 バージョンのスプレッドシートは、[こちらから](http://adfsdocs.blob.core.windows.net/adfs/ADFSCapacity2016.xlsx)ダウンロードできます。
+AD FS 2016 バージョンのスプレッドシートは、[こちらから](https://adfsdocs.blob.core.windows.net/adfs/ADFSCapacity2016.xlsx)ダウンロードできます。
 これは、Windows Server 2012 R2 の AD FS にも使用できます。
 
 ### <a name="how-can-i-ensure-my-ad-fs-and-wap-servers-support-apples-atp-requirements"></a>AD FS と WAP サーバーで Apple の ATP 要件をサポートするにはどうすればよいですか?
@@ -103,7 +103,7 @@ Apple からは App Transport Security (ATS) と呼ばれる一連の要件が�
 
 [AD FS での SSL プロトコルの管理](../operations/Manage-SSL-Protocols-in-AD-FS.md)に関する記事に従って、SSL 2.0 と 3.0 および TLS バージョン 1.0、1.1、1.2 を有効または無効にできます。
 
-ATP をサポートする TLS 暗号スイートのみが AD FS と WAP サーバーでネゴシエートされるようにするには、[ATP に準拠する暗号スイートの一覧](https://developer.apple.com/library/prerelease/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW57)に含まれていないすべての暗号スイートを無効にします。  これを行うには、[Windows TLS PowerShell コマンドレット](https://technet.microsoft.com/itpro/powershell/windows/tls/index)を使用します。
+ATP をサポートする TLS 暗号スイートのみが AD FS と WAP サーバーでネゴシエートされるようにするには、[ATP に準拠する暗号スイートの一覧](https://developer.apple.com/library/prerelease/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW57)に含まれていないすべての暗号スイートを無効にします。  これを行うには、[Windows TLS PowerShell コマンドレット](/powershell/module/tls/?view=win10-ps)を使用します。
 
 ## <a name="developer"></a>Developer
 
@@ -135,9 +135,9 @@ Server 2019 の AD FS では、リソース値をスコープ パラメーター
 Server 2019 の AD FS では、OAuth 認証コード付与フロー用の Proof Key for Code Exchange (PKCE) がサポートされています
 
 ### <a name="what-permitted-scopes-are-supported-by-ad-fs"></a>AD FS でサポートされている許可されたスコープは何ですか?
-- aza - [ブローカー クライアント用 OAuth 2.0 プロトコル拡張](https://docs.microsoft.com/openspecs/windows_protocols/ms-oapxbc/2f7d8875-0383-4058-956d-2fb216b44706)を使用していて、スコープ パラメーターにスコープ "aza" が含まれている場合、サーバーでは、新しいプライマリ更新トークンが発行されて、応答の refresh_token フィールドに設定され、新しいプライマリ更新トークンに有効期間が適用される場合は refresh_token_expires_in フィールドに設定されます。
+- aza - [ブローカー クライアント用 OAuth 2.0 プロトコル拡張](/openspecs/windows_protocols/ms-oapxbc/2f7d8875-0383-4058-956d-2fb216b44706)を使用していて、スコープ パラメーターにスコープ "aza" が含まれている場合、サーバーでは、新しいプライマリ更新トークンが発行されて、応答の refresh_token フィールドに設定され、新しいプライマリ更新トークンに有効期間が適用される場合は refresh_token_expires_in フィールドに設定されます。
 - openid - アプリケーションで OpenID Connect 承認プロトコルの使用を要求できるようにします。
-- logon_cert - logon_cert スコープを使用すると、アプリケーションでログオン証明書を要求できます。この証明書を使用して、認証されたユーザーを対話的にログオンさせることができます。 AD FS サーバーでは、応答から access_token パラメーターが除去され、代わりに base64 でエンコードされた CMS 証明書チェーンまたは CMC 完全 PKI 応答が提供されます。 詳しくは、[こちら](https://docs.microsoft.com/openspecs/windows_protocols/ms-oapx/32ce8878-7d33-4c02-818b-6c9164cc731e)をご覧ください。 
+- logon_cert - logon_cert スコープを使用すると、アプリケーションでログオン証明書を要求できます。この証明書を使用して、認証されたユーザーを対話的にログオンさせることができます。 AD FS サーバーでは、応答から access_token パラメーターが除去され、代わりに base64 でエンコードされた CMS 証明書チェーンまたは CMC 完全 PKI 応答が提供されます。 詳しくは、[こちら](/openspecs/windows_protocols/ms-oapx/32ce8878-7d33-4c02-818b-6c9164cc731e)をご覧ください。 
 - user_impersonation - AD FS に On-Behalf-Of アクセス トークンを正常に要求するには、user_impersonation スコープが必要です。 このスコープを使用する方法について詳しくは、「[AD FS 2016 以降で OAuth を使用して、の代理 (OBO) を使用して多層アプリケーションを構築する](../../ad-fs/development/ad-fs-on-behalf-of-authentication-in-windows-server.md)」をご覧ください。
 - vpn_cert - vpn_cert スコープを使用すると、アプリケーションで VPN 証明書を要求できます。VPN 証明書を使用すると、EAP-TLS 認証を使用して VPN 接続を確立できます。 これはサポートされなくなっています。
 - email - アプリケーションで、サインインしたユーザーの電子メール要求を要求できます。 これはサポートされなくなっています。 
@@ -149,7 +149,7 @@ Server 2019 の AD FS では、OAuth 認証コード付与フロー用の Proof 
 ### <a name="how-do-i-replace-the-ssl-certificate-for-ad-fs"></a>AD FS 用の SSL 証明書を置き換えるにはどうすればよいですか?
 AD FS SSL 証明書は、AD FS 管理スナップインで見つかる AD FS サービス通信証明書と同じものではありません。  AD FS SSL 証明書を変更するには、PowerShell を使用する必要があります。 次の記事のガイダンスに従ってください。
 
-[AD FS と WAP 2016で SSL 証明書を管理する](../operations/Manage-SSL-Certificates-AD-FS-WAP-2016.md)
+[AD FS と WAP 2016で SSL 証明書を管理する](../operations/manage-ssl-certificates-ad-fs-wap.md)
 
 ### <a name="how-can-i-enable-or-disable-tlsssl-settings-for-ad-fs"></a>AD FS の TLS/SSL の設定を有効または無効にするにはどうすればよいですか?
 SSL プロトコルと暗号スイートを無効または有効にするには、次のようにします。
@@ -162,7 +162,7 @@ SSL プロトコルと暗号スイートを無効または有効にするには�
 
 - プロキシを使用して Windows 統合認証を使用する AD FS 要求をプロキシする場合、プロキシ SSL 証明書はフェデレーション サーバーの SSL 証明書と同じである (同じキーを使用している) 必要があります
 - AD FS プロパティ "ExtendedProtectionTokenCheck" が有効な場合 (AD FS の既定の設定)、プロキシ SSL 証明書はフェデレーション サーバーの SSL 証明書と同じである (同じキーを使用している) 必要があります
-- それ以外の場合、プロキシ SSL 証明書は AD FS SSL 証明書とは異なるキーを持つことができますが、同じ[要件](../overview/AD-FS-2016-Requirements.md)を満たす必要があります。
+- それ以外の場合、プロキシ SSL 証明書は AD FS SSL 証明書とは異なるキーを持つことができますが、同じ[要件](./ad-fs-requirements.md)を満たす必要があります。
 
 ### <a name="why-do-i-only-see-a-password-login-on-ad-fs-and-not-my-other-authentication-methods-that-i-have-configured"></a>AD FS のパスワード ログインのみが表示され、構成した他の認証方法が表示されないのはなぜですか? 
 アプリケーションで明示的に要求されている特定の認証 URI が構成済みで有効な認証方法にマップされる場合、AD FS のログイン画面には 1 つの認証方法のみが表示されます。 これは、WS-Federation 要求の "wauth" パラメーターと、SAML プロトコル要求の "RequestedAuthnCtxRef" パラメーターで伝達されます。 その結果、要求された認証方法 (パスワード ログインなど) のみが表示されます。
@@ -183,7 +183,7 @@ AD FS 上のデバイス、または AD FS を使用する Windows Hello for Bus
 
 ### <a name="how-long-are-ad-fs-tokens-valid"></a>AD FS トークンの期間有効はどのくらいですか?
 
-多くの場合、この質問は、"ユーザーが新しい資格情報を入力しないでシングル サインオン (SSO) を利用できる期間、および管理者がそれを管理する方法" を意味します。  この動作、およびそれを制御する構成設定については、「[AD FS のシングル サインオンの設定](https://technet.microsoft.com/windows-server-docs/identity/ad-fs/operations/ad-fs-2016-single-sign-on-settings)」をご覧ください。
+多くの場合、この質問は、"ユーザーが新しい資格情報を入力しないでシングル サインオン (SSO) を利用できる期間、および管理者がそれを管理する方法" を意味します。  この動作、およびそれを制御する構成設定については、「[AD FS のシングル サインオンの設定](../operations/ad-fs-single-sign-on-settings.md)」をご覧ください。
 
 さまざまな Cookie とトークンの既定の有効期間 (および有効期間を制御するパラメーター) を以下に示します。
 
@@ -301,7 +301,7 @@ WAP サーバーでは、Set-WebApplicationProxySslCertificate を引き続き�
 同じ方法で、残りの AD FS サーバーと WAP サーバーを更新します。
 
 ### <a name="is-adfs-supported-when-web-application-proxy-wap-servers-are-behind-azure-web-application-firewallwaf"></a>Web アプリケーション プロキシ (WAP) サーバーが Azure Web アプリケーション ファイアウォール (WAF) の内側にある場合、AD FS はサポートされますか?
-AD FS と Web アプリケーション サーバーでは、エンドポイントで SSL 終了を実行しないすべてのファイアウォールがサポートされます。 さらに、AD FS サーバーと WAP サーバーには、クロスサイト スクリプティングや AD FS プロキシなどの一般的な Web 攻撃を防止し、[MS-ADFSPIP プロトコル](https://msdn.microsoft.com/library/dn392811.aspx)で定義されているすべての要件を満たすためのメカニズムが組み込まれています。
+AD FS と Web アプリケーション サーバーでは、エンドポイントで SSL 終了を実行しないすべてのファイアウォールがサポートされます。 さらに、AD FS サーバーと WAP サーバーには、クロスサイト スクリプティングや AD FS プロキシなどの一般的な Web 攻撃を防止し、[MS-ADFSPIP プロトコル](/openspecs/windows_protocols/ms-adfspip/76deccb1-1429-4c80-8349-d38e61da5cbb)で定義されているすべての要件を満たすためのメカニズムが組み込まれています。
 
 ### <a name="i-am-seeing-an-event-441-a-token-with-a-bad-token-binding-key-was-found-what-should-i-do-to-resolve-this"></a>"イベント 441: 誤ったトークンのバインド キーを持つトークンが見つかりました" と表示されます。 これを解決するにはどうすればよいですか?
 AD FS 2016 では、トークンのバインドが自動的に有効になり、プロキシとフェデレーションのシナリオでの複数の既知の問題のため、このエラーが発生します。 これを解決するには、次の PowerShell コマンドを実行して、トークンのバインドのサポートを削除します。

@@ -9,19 +9,19 @@ ms.topic: article
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 094e4ffdee8480886700a4967ef2281008aad965
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: bc38c21435ba3340f5ffb1aab9d274ec9da1620c
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826545"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964064"
 ---
 # <a name="get-started-with-windows-server-2016"></a>Windows Server 2016 を使ってみる
 
 >適用先:Windows Server 2016
 
 > [!TIP]
-> 以前のバージョンの Windows Server に関する情報をお探しの場合は、 docs.microsoft.com の他の [Windows Server ライブラリ](/previous-versions/windows/)を参照してください。 また、[このサイトで検索して](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions)、具体的な情報を確認することもできます。
+> 以前のバージョンの Windows Server に関する情報をお探しの場合は、 docs.microsoft.com の他の [Windows Server ライブラリ](/previous-versions/windows/)を参照してください。 また、[このサイトで検索して](/search/index?dataSource=previousVersions&search=Windows Server)、具体的な情報を確認することもできます。
 
 ![チェックマーク付きのボックスを表示するアイコン](../media/landing-icons/getstarted.png) このコレクション記事に記載されている詳細情報は、Windows Server 2016 にすぐに移行できるかどうかを判断する際に役立ちます。 Windows Server 2016 への移行に関するシステム要件、アップグレード オプション、およびその他の情報を確認したら、[Windows Server 2016](Windows-Server-2016.md) のメイン ページに戻り、ニーズに最も適したエディションとインストール オプションをインストールするための手順に進みます。 
 
@@ -52,5 +52,3 @@ SQL は Windows Server 2016 上で動作するか? Exchange を動作させる�
 
 ## <a name="server-activation-guide"></a>[サーバーのライセンス認証ガイド](Server-2016-activation.md)
 Windows Server 2016 を使った Windows Server 2016 自体と他のオペレーティング システムのライセンス認証に関する基本的な情報。
-
-

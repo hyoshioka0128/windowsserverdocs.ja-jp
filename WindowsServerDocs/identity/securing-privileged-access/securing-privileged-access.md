@@ -9,12 +9,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: mas
-ms.openlocfilehash: 806a2aced95421bd469ba885d4a81c219ae1b651
-ms.sourcegitcommit: 457e88e5aa6be13a2bffdb8e434a8efc3698678f
+ms.openlocfilehash: 4165561524dcb8572dbafc3904638fcb4513d06d
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/30/2020
-ms.locfileid: "85548836"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964725"
 ---
 # <a name="securing-privileged-access"></a>特権アクセスの保護
 
@@ -62,11 +62,11 @@ Active Directory Domain Services の管理者のような特権アカウント�
 
 Microsoft が推奨するロードマップは、次の 3 つのフェーズに分かれています。
 
-* [フェーズ 1: 最初の 30 日間](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/securing-privileged-access#phase-1-quick-wins-with-minimal-operational-complexity)
+* [フェーズ 1: 最初の 30 日間](#phase-1-quick-wins-with-minimal-operational-complexity)
    * 有意義なプラスの影響を伴う迅速な勝利。
-* [フェーズ 2: 90 日間](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/securing-privileged-access#phase-2-significant-incremental-improvements)
+* [フェーズ 2: 90 日間](#phase-2-significant-incremental-improvements)
    * 大幅な漸進的な改善。
-* [フェーズ 3: 継続](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/securing-privileged-access#phase-3-security-improvement-and-sustainment)
+* [フェーズ 3: 継続](#phase-3-security-improvement-and-sustainment)
    * セキュリティの向上と維持。
 
 このロードマップは、これらの攻撃と解決方法の実装に関する経験に基づいて、最も効果的で最も迅速な実装をスケジュールするように、優先順位が設定されています。 
