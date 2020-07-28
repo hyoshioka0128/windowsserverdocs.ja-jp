@@ -10,12 +10,12 @@ author: jasongerend
 ms.author: jgerend
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: 538ea2d6e0f038a98b64a197bd49ed5719fe15ac
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 99a684cc90d47e1e80dc84ef9c3705a2ed79728b
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959574"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182028"
 ---
 # <a name="migrating-roles-and-features-in-windows-server"></a>Windows Server の役割と機能を移行する
 
@@ -27,7 +27,7 @@ ms.locfileid: "86959574"
 
 ## <a name="before-you-begin"></a>開始する前に
 
-役割と機能の移行を開始する前に、移行元と移行先の両方のサーバーが、それぞれのオペレーティング システムで利用可能な最新のサービス パックを実行していることを確認します。 
+役割と機能の移行を開始する前に、移行元と移行先の両方のサーバーが、それぞれのオペレーティング システムで利用可能な最新のサービス パックを実行していることを確認します。
 
 > [!NOTE]
 > Windows Server のどのバージョンに移行またはアップグレードする場合も、[サポート ライフサイクル ポリシー](https://support.microsoft.com/lifecycle)および対象バージョンのサポート期間を確認し把握したうえで、それに応じて計画を立てる必要があります。 特定の Windows Server リリースのライフサイクルについては、[こちらでご検索ください](https://support.microsoft.com/lifecycle)。
@@ -63,7 +63,7 @@ Windows Server 2003、Windows Server 2008、Windows Server 2008 R2、Windows Ser
 - [Windows Server 2012 R2 へのクラスターの役割の移行](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn530779(v=ws.11))
 - [Windows Server 2012 R2 への DHCP サーバーの移行](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn495425(v=ws.11))
 
-Windows Server 2012 R2 と Windows Server 2012 の移行ガイドは、電子書籍版が提供されています。 詳細および電子書籍のダウンロードについては、「[E-Book Gallery for Microsoft Technologies (マイクロソフト テクノロジ電子書籍ギャラリー)](https://social.technet.microsoft.com/wiki/contents/articles/11608.e-book-gallery-for-microsoft-technologies.aspx#MigrateRoles)をご覧ください。
+Windows Server 2012 R2 と Windows Server 2012 の移行ガイドは、電子書籍版が提供されています。 詳細および電子書籍のダウンロードについては、「[E-Book Gallery for Microsoft Technologies (マイクロソフト テクノロジ電子書籍ギャラリー)](https://download.microsoft.com/download/8/D/3/8D33661A-7E21-4FEE-9AAA-C17C3004B5AA/Windows-Migration-and-Upgrade-Guide.pdf)をご覧ください。
 
 ## <a name="windows-server-2012"></a>Windows Server 2012
 
@@ -80,7 +80,7 @@ Windows Server 2003、Windows Server 2008、Windows Server 2008 R2、Windows Ser
 - [Windows Server 2012 への Windows Server Update Services の移行](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh852339(v=ws.11))
 - [Active Directory ドメイン コントローラーを Windows Server 2012 にアップグレードする](../identity/ad-ds/deploy/upgrade-domain-controllers-to-windows-server-2012-r2-and-windows-server-2012.md)
 - [クラスター化されたサービスとアプリケーションの Windows Server 2012 への移行](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn486790(v=ws.11))
- 
+
 
 移行に関するその他の資料については、「[Windows Server への役割と機能の移行](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj134039(v=ws.11))」をご覧ください。
 
@@ -104,5 +104,5 @@ Windows Server 2003、Windows Server 2008、Windows Server 2008 R2 のいずれ�
 - [RRAS 移行ガイド](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee822825(v=ws.10))
 - [Windows Server の移行に関する一般的なタスクと情報](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff400258(v=ws.10))
 - [Windows Server Update Services 3.0 SP2 移行ガイド](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee822826(v=ws.10))
- 
+
 移行に関するその他の資料については、「[Migrate Roles and Features to Windows Server 2008 R2 (Windows Server 2008 R2 への役割と機能の移行)](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd365353(v=ws.10))」をご覧ください。

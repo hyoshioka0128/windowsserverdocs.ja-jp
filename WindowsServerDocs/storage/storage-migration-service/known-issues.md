@@ -8,12 +8,12 @@ ms.date: 06/02/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: a6ee550a0652f5b357a966e4074afdf499fcea34
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: d7c76413fbc64ce200ca4c442a30e6f804927f68
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86953914"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182058"
 ---
 # <a name="storage-migration-service-known-issues"></a>記憶域移行サービスの既知の問題
 
@@ -534,11 +534,23 @@ Storage Migration Service は、削除プロセスの一環として、一時的
 
 ## <a name="inventory-or-transfer-fail-when-using-credentials-from-a-different-domain"></a>別のドメインの資格情報を使用すると、インベントリまたは転送が失敗する
 
-ターゲットサーバーとは異なるドメインの移行資格情報を使用しているときに、ストレージ移行サービスでインベントリを実行したり、Windows Server を対象にしたりしようとすると、次のエラーが表示されます。
+ターゲットサーバーとは異なるドメインからの移行資格情報を使用しているときに、ストレージ移行サービスでインベントリを実行したり、Windows Server をターゲットにしたりしようとすると、次のエラーが1つ以上発生します。
+
+    Exception from HRESULT:0x80131505
 
     The server was unable to process the request due to an internal error
 
-    04/28/2020-11:31:01.169 [Erro] Failed device discovery stage SystemInfo with error: (0x490) Could not find computer object 'myserver' in Active Directory    [d:\os\src\base\dms\proxy\discovery\discoveryproxy\DeviceDiscoveryOperation.cs::TryStage::1042]
+    04/28/2020-11:31:01.169 [Error] Failed device discovery stage SystemInfo with error: (0x490) Could not find computer object 'myserver' in Active Directory    [d:\os\src\base\dms\proxy\discovery\discoveryproxy\DeviceDiscoveryOperation.cs::TryStage::1042]
+
+ログを調べると、移行アカウントと、または2つまたは2から移行されたサーバーが異なるドメインにあることがわかります。
+
+    ```
+    06/25/2020-10:11:16.543 [Info] Creating new job=NedJob user=**CONTOSO**\ned    
+    [d:\os\src\base\dms\service\StorageMigrationService.IInventory.cs::CreateJob::133]
+    ```
+    
+    GetOsVersion(fileserver75.**corp**.contoso.com)    [d:\os\src\base\dms\proxy\common\proxycommon\CimSessionHelper.cs::GetOsVersion::66]
+06/25/2020-10:20: 45.368 [Info] コンピューター ' fileserver75.corp.contoso.com ': OS バージョン 
 
 この問題は、Storage Migration Service のコード障害が原因で発生します。 この問題を回避するには、移行元と移行先のコンピューターが属しているのと同じドメインからの移行資格情報を使用します。 たとえば、移行元と移行先のコンピューターが "contoso.com" フォレストの "corp.contoso.com" ドメインに属している場合は、' corp\myaccount ' を使用して、' contoso\myaccount ' 資格情報ではなく、移行を実行します。
 

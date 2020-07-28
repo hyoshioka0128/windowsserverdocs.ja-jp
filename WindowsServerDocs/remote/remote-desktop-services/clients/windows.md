@@ -10,12 +10,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 06/01/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 49c1d5a378d6e0be224e02fdd80346ee172ca45b
-ms.sourcegitcommit: 75b4cf49dd918ff98258dcae6e6e8d7825c9adec
+ms.openlocfilehash: 6ed87f2d03ef725c3efdfc2453b53201017e66e0
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84269245"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181948"
 ---
 # <a name="get-started-with-the-windows-store-client"></a>Microsoft Store クライアントの概要
 
@@ -95,14 +95,14 @@ Windows 10 デバイスでリモート デスクトップの使用を開始す�
 
 1. 接続センターで、 **[設定]** をタップします。
 2. ゲートウェイの横で **+** をタップして新しいゲートウェイを追加します。
-      
+
       >[!NOTE]
       >新しい接続を追加するときに、ゲートウェイを追加することもできます。
 
 3. 次の情報を入力します。
    - **サーバー名** – ゲートウェイとして使用するコンピューターの名前。 サーバー名には、Windows コンピューター名、インターネット ドメイン名、または IP アドレスを指定できます。 サーバー名に、ポート情報を追加することもできます (例:**RDGateway:443** または **10.0.0.1:443**)。
    - **ユーザー アカウント** - 接続しているリモート デスクトップ ゲートウェイで使用する使用するユーザー アカウントを選択するか追加します。 **[Use desktop user account]\(デスクトップのユーザー アカウントを使用\)** を選択して、リモート デスクトップ接続に使用したものと同じ資格情報を使用することもできます。
-4. タップ **保存**します。  
+4. タップ **保存**します。
 
 ## <a name="global-app-settings"></a>グローバル アプリ設定
 
@@ -203,4 +203,4 @@ Windows 10 デバイスでリモート デスクトップの使用を開始す�
 | マウス ポインター | ズーム                 | 2 本の指を使用し、ピンチして拡大し、指を開いて縮小する |
 
 > [!TIP]
-> 意見やご質問はへようこそ は常にします。 ただし、この記事のコメント セクションにサポート リクエストや製品フィードバックを投稿していただいた場合、Microsoft ではお客様のフィードバックに対応することはできません。 ヘルプが必要な場合や、クライアントのトラブルシューティングが必要な場合は、[リモート デスクトップ クライアント フォーラム](https://social.technet.microsoft.com/forums/windowsserver/home?forum=winrdc)にアクセスして、新しいスレッドを開始することを強くお勧めします。 機能に関するご提案がある場合は、[フィードバック Hub](feedback-hub://?tabid=2&contextid=605) を使用してお知らせください。
+> 意見やご質問はへようこそ は常にします。 ただし、この記事のコメント セクションにサポート リクエストや製品フィードバックを投稿していただいた場合、Microsoft ではお客様のフィードバックに対応することはできません。 ヘルプが必要な場合や、クライアントのトラブルシューティングが必要な場合は、[リモート デスクトップ クライアント フォーラム](https://docs.microsoft.com/answers/topics/windows-remote-desktop-client.html)にアクセスして、新しいスレッドを開始することを強くお勧めします。 機能に関するご提案がある場合は、[フィードバック Hub](feedback-hub://?tabid=2&contextid=605) を使用してお知らせください。

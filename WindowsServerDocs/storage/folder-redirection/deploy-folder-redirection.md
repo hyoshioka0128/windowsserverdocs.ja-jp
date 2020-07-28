@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 06/06/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 55421cb1f01d654c4c424e8534f4c678ac38e6f5
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 21af2aae837b7a570638c2eb3f3c96cb8997fa84
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959334"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182068"
 ---
 # <a name="deploy-folder-redirection-with-offline-files"></a>フォルダー リダイレクトとオフライン ファイルを展開する
 
@@ -128,7 +128,7 @@ Windows Server 2019、Windows Server 2016、および Windows Server 2012 でフ
 
 > [!NOTE]
 > ユーザーが変更しない限り、オフライン ファイルは Windows クライアント コンピューター上のリダイレクトされたフォルダーに対しては既定で有効になり、Windows Server を実行しているコンピューターでは無効になります。 グループ ポリシーを使用してオフライン ファイルを有効にするかどうかを制御するには、 **[オフライン ファイルの機能の使用を許可または禁止する]** ポリシー設定を使用します。
-> その他のオフライン ファイル グループ ポリシー設定の詳細については、「[オフライン ファイルの高度な機能を有効にする](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn270369(v%3dws.11)>)」および「[オフライン ファイルのグループ ポリシーの構成](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc759721(v%3dws.10)>)」を参照してください。
+> その他のオフライン ファイル グループ ポリシー設定の詳細については、「[オフライン ファイルの高度な機能を有効にする](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn270369(v%3dws.11)>)」および「[オフライン ファイルのグループ ポリシーの構成](</previous-versions/windows/it-pro/windows-server-2003/cc759721(v%3dws.10)>)」を参照してください。
 
 グループ ポリシーでフォルダー リダイレクトを構成する手順は次のとおりです。
 
@@ -199,5 +199,5 @@ Windows Server 2019、Windows Server 2016、および Windows Server 2012 でフ
 * [フォルダー リダイレクトと移動ユーザー プロファイル用のプライマリ コンピューターを展開する](deploy-primary-computers.md)
 * [オフライン ファイルの高度な機能を有効にする](enable-always-offline.md)
 * [レプリケートされたユーザー プロファイル データに関する Microsoft のサポート表明](/archive/blogs/askds/microsofts-support-statement-around-replicated-user-profile-data)
-* [DISM を使用したアプリのサイドローディング](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh852635(v=win.10)>)
+* [DISM を使用したアプリのサイドローディング](</previous-versions/windows/it-pro/windows-8.1-and-8/hh852635(v=win.10)>)
 * [Windows ランタイムベース アプリのパッケージ化、展開、クエリのトラブルシューティング](/windows/win32/appxpkg/troubleshooting)

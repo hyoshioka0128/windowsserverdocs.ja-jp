@@ -9,12 +9,12 @@ ms.author: jgerend
 ms.technology: storage-failover-clustering
 ms.date: 08/06/2018
 description: クラスター対応更新を使用して、Windows Server を実行しているクラスターに更新プログラムをインストールするための要件。
-ms.openlocfilehash: 066aca3adb2ceec19663653a7bc2f0f8cd42da16
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: a3f00d6f0118b536745be0afdac8b4a7084a6721
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473309"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87178359"
 ---
 # <a name="cluster-aware-updating-requirements-and-best-practices"></a>クラスター対応更新の要件とベスト プラクティス
 
@@ -72,9 +72,9 @@ CAU 機能を使用するには、次の管理者要件が必要です。
 |要件|既定の状態|自己 \- 更新モード|リモート \- 更新モード|
 |---------------|---|-----------------------|-------------------------|
 |[自動再起動を許可するファイアウォール規則の有効化](#BKMK_FW)|無効|ファイアウォールが使用される場合にすべてのクラスター ノードで必要|ファイアウォールが使用される場合にすべてのクラスター ノードで必要|
-|[Windows Management Instrumentation の有効化](#BKMK_WMI)|有効|すべてのクラスター ノードで必要|すべてのクラスター ノードで必要|
-|[Windows PowerShell 3.0 または 4.0 と Windows PowerShell リモート処理の有効化](#BKMK_PS)|有効|すべてのクラスター ノードで必要|次を実行するすべてのクラスター ノードで必要:<p>- [Save-caudebugtrace](https://docs.microsoft.com/powershell/module/clusterawareupdating/Save-CauDebugTrace?view=win10-ps)コマンドレット<br />-更新実行中の PowerShell の \- 更新前 \- スクリプトと更新後スクリプト<br />-クラスター対応更新ウィンドウまたは[Test \- Test-causetup](https://docs.microsoft.com/powershell/module/clusterawareupdating/Test-CauSetup?view=win10-ps) Windows PowerShell コマンドレットを使用して、クラスター更新の準備のテストを行います。|
-|[.NET Framework 4.6 または4.5 のインストール](#BKMK_NET)|有効|すべてのクラスター ノードで必要|次を実行するすべてのクラスター ノードで必要:<p>- [Save-caudebugtrace](https://docs.microsoft.com/powershell/module/clusterawareupdating/Save-CauDebugTrace?view=win10-ps)コマンドレット<br />-更新実行中の PowerShell の \- 更新前 \- スクリプトと更新後スクリプト<br />-クラスター対応更新ウィンドウまたは[Test \- Test-causetup](https://docs.microsoft.com/powershell/module/clusterawareupdating/Test-CauSetup?view=win10-ps) Windows PowerShell コマンドレットを使用して、クラスター更新の準備のテストを行います。|
+|[Windows Management Instrumentation の有効化](#BKMK_WMI)|Enabled|すべてのクラスター ノードで必要|すべてのクラスター ノードで必要|
+|[Windows PowerShell 3.0 または 4.0 と Windows PowerShell リモート処理の有効化](#BKMK_PS)|Enabled|すべてのクラスター ノードで必要|次を実行するすべてのクラスター ノードで必要:<p>- [Save-caudebugtrace](https://docs.microsoft.com/powershell/module/clusterawareupdating/Save-CauDebugTrace?view=win10-ps)コマンドレット<br />-更新実行中の PowerShell の \- 更新前 \- スクリプトと更新後スクリプト<br />-クラスター対応更新ウィンドウまたは[Test \- Test-causetup](https://docs.microsoft.com/powershell/module/clusterawareupdating/Test-CauSetup?view=win10-ps) Windows PowerShell コマンドレットを使用して、クラスター更新の準備のテストを行います。|
+|[.NET Framework 4.6 または4.5 のインストール](#BKMK_NET)|Enabled|すべてのクラスター ノードで必要|次を実行するすべてのクラスター ノードで必要:<p>- [Save-caudebugtrace](https://docs.microsoft.com/powershell/module/clusterawareupdating/Save-CauDebugTrace?view=win10-ps)コマンドレット<br />-更新実行中の PowerShell の \- 更新前 \- スクリプトと更新後スクリプト<br />-クラスター対応更新ウィンドウまたは[Test \- Test-causetup](https://docs.microsoft.com/powershell/module/clusterawareupdating/Test-CauSetup?view=win10-ps) Windows PowerShell コマンドレットを使用して、クラスター更新の準備のテストを行います。|
 
 ### <a name="enable-a-firewall-rule-to-allow-automatic-restarts"></a><a name="BKMK_FW"></a>自動再起動を許可するファイアウォール規則の有効化
 更新プログラムのインストール時に再起動を許可するには \( \) 、Windows ファイアウォールまたは Microsoft 以外の \- ファイアウォールがクラスターノードで使用されている場合は、次のトラフィックを許可する各ノードでファイアウォール規則を有効にする必要があります。
@@ -200,7 +200,7 @@ netsh winhttp set proxy MyProxy.CONTOSO.com:443 "<local>"
 
 -   承認されていない \- ユーザーがこれらの \- ファイルを改ざんしないように、ネットワーク共有フォルダーに保存される更新前スクリプトと更新後スクリプトに適切なアクセス許可を設定する必要があります。
 
--   自己更新モードで CAU を構成するには \- 、cau のクラスター化された役割の仮想コンピューターオブジェクトの \( VCO を \) Active Directory で作成する必要があります。 CAU は、フェールオーバー クラスターに十分なアクセス許可があれば、CAU のクラスター化された役割が追加された時点でこのオブジェクトを自動的に作成できます。 ただし、一部の組織ではセキュリティ ポリシーにより、Active Directory にオブジェクトを事前登録する必要があります。 この手順については、「 [クラスター化された役割のアカウントを事前登録するための手順](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731002\(v=ws.10\)#steps-for-prestaging-the-cluster-name-account)」をご覧ください。
+-   自己更新モードで CAU を構成するには \- 、cau のクラスター化された役割の仮想コンピューターオブジェクトの \( VCO を \) Active Directory で作成する必要があります。 CAU は、フェールオーバー クラスターに十分なアクセス許可があれば、CAU のクラスター化された役割が追加された時点でこのオブジェクトを自動的に作成できます。 ただし、一部の組織ではセキュリティ ポリシーにより、Active Directory にオブジェクトを事前登録する必要があります。 この手順については、「 [クラスター化された役割のアカウントを事前登録するための手順](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731002\(v=ws.10\)#steps-for-prestaging-the-cluster-name-account)」をご覧ください。
 
 -   IT 組織内で同様に更新する必要があるフェールオーバー クラスター全体に更新実行設定を保存し、再利用するために、更新実行プロファイルを作成できます。 また、更新モードにもよりますが、すべてのリモート Update Coordinator コンピューターまたはフェールオーバー クラスターにアクセスできるファイル共有に更新実行プロファイルを保存し、管理できます。 詳細については、「 [CAU の詳細オプションと更新実行プロファイル](cluster-aware-updating-options.md)」を参照してください。
 

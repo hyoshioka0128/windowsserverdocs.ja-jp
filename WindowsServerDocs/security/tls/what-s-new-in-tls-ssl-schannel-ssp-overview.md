@@ -9,12 +9,12 @@ author: justinha
 ms.author: justinha
 manager: brianlic
 ms.date: 05/16/2018
-ms.openlocfilehash: fac7e780fc584f0ce4dde8bb87ce37035840a40a
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: b70a8fefc05723b78dbf5e652bf35f7b8b5cff4d
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474879"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182318"
 ---
 # <a name="overview-of-tls---ssl-schannel-ssp"></a>TLS SSL (Schannel SSP) の概要
 
@@ -104,7 +104,7 @@ Schannel の資格情報について定義されるデータ (アプリケーシ
 
 Schannel プロバイダーでは、3 種類のクライアント認証信頼モードがサポートされます。 信頼モードは、クライアントの証明書チェーンの検証を実行する方法を制御し、HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\Schannel. の下の "ClientAuthTrustMode" REG_DWORD によって制御されるシステム全体の設定です。
 
-|[値]|信頼モード|説明|
+|値|信頼モード|説明|
 |-----|-------|--------|
 |0|コンピューター信頼 (既定値)|信頼された発行者の一覧内の証明書によってクライアント証明書が発行される必要があります。|
 |1|排他的ルート信頼|呼び出し元によって指定された信頼された発行者ストアに含まれているルート証明書にクライアント証明書をチェーンする必要があります。 さらに、信頼された発行者の一覧内の発行者から証明書を発行する必要があります。|
@@ -148,6 +148,4 @@ DTLS over UDP を使用するアプリケーションでは、Windows Server 201
 Windows Server 2012 および Windows 8 の Schannel SSP では、非推奨の機能はありません。
 
 ## <a name="additional-references"></a>その他のリファレンス
--   [プライベート クラウド セキュリティ モデル: ラッパー機能](https://social.technet.microsoft.com/wiki/contents/articles/6756.private-cloud-security-model-wrapper-functionality.aspx)
-
-
+-   [プライベート クラウド セキュリティ モデル: ラッパー機能](https://docs.microsoft.com/archive/blogs/cloudsolutions/cloud-services-foundation-reference-architecture-overview)

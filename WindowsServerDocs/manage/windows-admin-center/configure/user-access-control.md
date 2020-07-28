@@ -8,12 +8,12 @@ ms.author: harowl
 ms.date: 06/07/2019
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 39af45506ff7023cebe437992e90f6d4ec051333
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 0de38560301d4d793214846036850a05a5d5a326
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "79323594"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182208"
 ---
 # <a name="configure-user-access-control-and-permissions"></a>ユーザー アクセス制御とアクセス許可を構成する
 
@@ -60,7 +60,7 @@ Windows Admin Center ゲートウェイ サービスへのアクセスには、�
 > [!NOTE]
 > Windows アカウントにゲートウェイ マシン上で**管理者アクセス権**があるユーザーには、Azure AD 認証のプロンプトは表示されません。
 
-### <a name="configuring-azure-active-directory-authentication-for-windows-admin-center-preview"></a>Windows Admin Center Preview の Azure Active Directory 認証の構成
+### <a name="configuring-azure-active-directory-authentication-for-windows-admin-center-preview"></a>Windows Admin Center プレビューの Azure Active Directory 認証の構成
 
 Windows Admin Center の **[設定]**  >  **[アクセス]** に移動し、トグル スイッチを使用して [Use Azure Active Directory to add a layer of security to the gateway]\(Azure Active Directory を使用してセキュリティの層をゲートウェイに追加する\) をオンにします。 Azure にゲートウェイを登録していない場合は、この時点で行うように指示されます。
 
@@ -68,7 +68,7 @@ Windows Admin Center の **[設定]**  >  **[アクセス]** に移動し、ト�
 
 特定の Azure AD ユーザーまたはグループ ゲートウェイ ユーザーまたはゲートウェイ管理者に Windows Admin Center サービスへのアクセスを許可する場合は、次の操作を行う必要があります。
 
-1.  Azure portal で [アクセス設定] に表示されるハイパーリンクを使用して、Windows Admin Center Azure AD アプリケーションにアクセスします。 このハイパーリンクは、Azure Active Directory 認証が有効な場合にのみ使用できることに注意してください。 
+1.  Azure portal で [アクセス設定] に表示されるハイパーリンクを使用して、Windows Admin Center Azure AD アプリケーションにアクセスします。 このハイパーリンクは、Azure Active Directory 認証が有効な場合にのみ使用できることに注意してください。
     -   また、Azure portal で **[Azure Active Directory]**  >  **[エンタープライズ アプリケーション]**  >  **[すべてのアプリケーション]** にアクセスして **WindowsAdminCenter** を検索してアプリケーションを見つけることもできます (Azure AD アプリの名前は WindowsAdminCenter-<gateway name> になります)。 検索結果が表示されない場合は、 **[表示]** が **[すべてのアプリケーション]** に設定されていること、 **[アプリケーションの状態]** が **[すべて]** に設定されていることを確認し、[適用] をクリックしてから、検索を試してください。 アプリケーションが見つかったら、 **[ユーザーとグループ]** にアクセスします。
 2.  [プロパティ] タブで、 **[ユーザーの割り当てが必要]** を [はい] に設定します。
     この操作を完了すると、 **[ユーザーとグループ]** タブに表示されているメンバーのみが Windows Admin Center ゲートウェイにアクセスできるようになります。
@@ -86,22 +86,22 @@ Azure AD 認証を有効にした後は、ゲートウェイ サービスが再�
 
 特定の Azure AD ユーザーまたはグループ ゲートウェイ ユーザーまたはゲートウェイ管理者に Windows Admin Center サービスへのアクセスを許可する場合は、次の操作を行う必要があります。
 
-1.  Azure portal で SME Azure AD アプリケーションにアクセスします。 
+1.  Azure portal で SME Azure AD アプリケーションにアクセスします。
     -   **[Change access control]\(アクセス制御の変更\)** をクリックし、Windows Admin Center の [アクセスの設定] から **[Azure Active Directory]** を選択すると、UI に表示されるハイパーリンクを使用して Azure portal の Azure AD アプリケーションにアクセスできます。 このハイパーリンクは、[アクセスの設定] で [保存] をクリックし、アクセス制御 ID プロバイダーとして Azure AD を選択した後も使用できます。
     -   また、Azure portal で **[Azure Active Directory]**  >  **[エンタープライズ アプリケーション]**  >  **[すべてのアプリケーション]** にアクセスし、**SME** を検索してアプリケーションを見つけることもできます (Azure AD アプリの名前は SME-<gateway> になります)。 検索結果が表示されない場合は、 **[表示]** が **[すべてのアプリケーション]** に設定されていること、 **[アプリケーションの状態]** が **[すべて]** に設定されていることを確認し、[適用] をクリックしてから、検索を試してください。 アプリケーションが見つかったら、 **[ユーザーとグループ]** にアクセスします。
 2.  [プロパティ] タブで、 **[ユーザーの割り当てが必要]** を [はい] に設定します。
     この操作を完了すると、 **[ユーザーとグループ]** タブに表示されているメンバーのみが Windows Admin Center ゲートウェイにアクセスできるようになります。
 3.  [ユーザーとグループ] タブで、 **[ユーザーの追加]** を選択します。 追加したユーザーまたはグループごとに、ゲートウェイ ユーザーまたはゲートウェイ管理者のロールを割り当てる必要があります。
 
-**[Change access control]\(アクセス制御の変更\)** ペインで Azure AD のアクセス制御を保存した後は、ゲートウェイ サービスが再起動します。また、ブラウザーを更新する必要があります。 Azure portal では、Windows Admin Center Azure AD アプリケーションのユーザー アクセスをいつでも更新できます。 
+**[Change access control]\(アクセス制御の変更\)** ペインで Azure AD のアクセス制御を保存した後は、ゲートウェイ サービスが再起動します。また、ブラウザーを更新する必要があります。 Azure portal では、Windows Admin Center Azure AD アプリケーションのユーザー アクセスをいつでも更新できます。
 
-ユーザーが Windows Admin Center ゲートウェイ URL にアクセスしようとすると、Azure Active Directory ID を使用してサインインするように求められます。 ユーザーが Windows Admin Center にアクセスするには、ゲートウェイ サーバーのローカル ユーザーのメンバーでもある必要があることに注意してください。 
+ユーザーが Windows Admin Center ゲートウェイ URL にアクセスしようとすると、Azure Active Directory ID を使用してサインインするように求められます。 ユーザーが Windows Admin Center にアクセスするには、ゲートウェイ サーバーのローカル ユーザーのメンバーでもある必要があることに注意してください。
 
 ユーザーと管理者は、Windows Admin Center の全般設定の **[Azure]** タブを使用して、現在ログインしているアカウントを表示できるだけでなく、Azure AD アカウントからサインアウトすることもできます。
 
 ### <a name="conditional-access-and-multi-factor-authentication"></a>条件付きアクセスと多要素認証
 
-Windows Admin Center ゲートウェイへのアクセスを制御するために Azure AD を追加のセキュリティ層として使用する利点の 1 つは、条件付きアクセスや多要素認証などの Azure AD の強力なセキュリティ機能を利用できることです。 
+Windows Admin Center ゲートウェイへのアクセスを制御するために Azure AD を追加のセキュリティ層として使用する利点の 1 つは、条件付きアクセスや多要素認証などの Azure AD の強力なセキュリティ機能を利用できることです。
 
 [Azure Active Directory を使用した条件付きアクセスの構成の詳細については、こちらを参照してください。](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal-get-started)
 
@@ -109,7 +109,7 @@ Windows Admin Center ゲートウェイへのアクセスを制御するため�
 
 **Windows Server にサービスとしてデプロイされた場合のシングル サインオン**
 
-Windows 10 に Windows Admin Center をインストールすると、シングル サインオンを使用できるようになります。 ただし、Windows Server 上で Windows Admin Center を使用する場合は、シングル サインオンを使用する前に、環境内に何らかの形式の Kerberos 委任を設定する必要があります。 委任によってゲートウェイ マシンが信頼済みとして構成され、ターゲット ノードに委任されます。 
+Windows 10 に Windows Admin Center をインストールすると、シングル サインオンを使用できるようになります。 ただし、Windows Server 上で Windows Admin Center を使用する場合は、シングル サインオンを使用する前に、環境内に何らかの形式の Kerberos 委任を設定する必要があります。 委任によってゲートウェイ マシンが信頼済みとして構成され、ターゲット ノードに委任されます。
 
 環境内で[リソースベースの制約付き委任](https://docs.microsoft.com/windows-server/security/kerberos/kerberos-constrained-delegation-overview)を構成するには、次の PowerShell の例を使用します。 この例は、contoso.com ドメインの Windows Admin Center ゲートウェイ [wac.contoso.com] からの委任を受け入れるように Windows サーバー [node01.contoso.com] を構成する方法を示しています。
 
@@ -159,7 +159,7 @@ RBAC の設定は、ターゲット コンピューターでサポートを有�
 3.  下部にある *[詳細]* ペインで、 **[ユーザーの追加]** をクリックし、Windows Admin Center を使用してサーバーへの読み取り専用アクセス権を持つユーザーまたはセキュリティ グループの名前を入力します。 ローカル コンピューターまたは Active Directory ドメインのユーザーとグループを使用できます。
 4.  **Windows Admin Center Hyper-V 管理者**と **Windows Admin Center 管理者**グループについて、手順 2 から 3 を繰り返します。
 
-[[Restricted Groups Policy Setting]\(制限されたグループ ポリシー設定\)](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc756802%28v=ws.10%29) でグループ ポリシー オブジェクトを構成することで、ドメイン全体でこれらのグループを一貫した方法で入力することもできます。
+[[Restricted Groups Policy Setting]\(制限されたグループ ポリシー設定\)](/previous-versions/windows/it-pro/windows-server-2003/cc756802%28v=ws.10%29) でグループ ポリシー オブジェクトを構成することで、ドメイン全体でこれらのグループを一貫した方法で入力することもできます。
 
 ### <a name="apply-role-based-access-control-to-multiple-machines"></a>複数のマシンにロールベースのアクセス制御を適用する
 

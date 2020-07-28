@@ -2,18 +2,17 @@
 title: Windows Server Essentials から Windows Server 2012 R2 Standard への移行
 description: Windows Server Essentials の使用方法について説明します。
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: a14689e3-2310-4229-bd3e-dafc0e739e02
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 3902fa53f59b99475f0ae117fd5ac193afeff8a3
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: a460bfa4f802160be4e4842c91793c8568ed0272
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470237"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180378"
 ---
 # <a name="transition-from-windows-server-essentials-to-windows-server-2012-r2-standard"></a>Windows Server Essentials から Windows Server 2012 R2 Standard への移行
 

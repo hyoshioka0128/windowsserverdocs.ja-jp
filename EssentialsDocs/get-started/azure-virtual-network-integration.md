@@ -2,18 +2,17 @@
 title: Azure Virtual network の統合
 description: Windows Server Essentials の使用方法について説明します。
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: d7d38505-cff5-4f15-9fd5-ae6dba15ce88
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: d79530b2c4bfb71b23fa984731d624f30e9a3ef6
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 5ff685960c5690e1bdda47742d81ec44a38aeb8b
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80815215"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181678"
 ---
 # <a name="azure-virtual-network-integration"></a>Azure Virtual network の統合
 
@@ -21,13 +20,13 @@ ms.locfileid: "80815215"
 
 組織がクラウドコンピューティングを行う方法を採用するのは、ほとんどの場合、すべてのリソースを一度に100% 移動するだけでなく、一部のリソースがクラウド内にあり、一部がオンプレミスにある場合もあります。 このハイブリッドアプローチにより、組織はコンピューティングリソースをクラウドに簡単に移行できるだけでなく、新しいハードウェアを購入しなくても IT インフラストラクチャを拡張することができます。
 
-このハイブリッドアプローチをコンピューティングに実装する場合は、両方の場所にあるリソースが相互に通信するためのシームレスな方法が必要です。 Azure 仮想ネットワークは、azure で実行されているリソース (仮想マシンやストレージなど) が、次のように表示されるポイントツーポイント (P2P) またはサイト間 (S2S) 仮想プライベートネットワークを作成できるようにする Azure サービスです。アプリケーションとリソースへのシームレスなアクセスを可能にするローカルネットワーク。
+このハイブリッドアプローチをコンピューティングに実装する場合は、両方の場所にあるリソースが相互に通信するためのシームレスな方法が必要です。 Azure 仮想ネットワークは、azure で実行されているリソース (仮想マシンやストレージなど) がローカルネットワーク上にあり、シームレスなアプリケーションとリソースへのアクセスを実現する、ポイントツーポイント (P2P) またはサイト間 (S2S) の仮想プライベートネットワークを作成するための Azure サービスです。
 
-Azure 仮想ネットワークの構成は複雑になる可能性があります。 Windows Server Essentials 2016 では、簡単なウィザードを使用して Azure 仮想ネットワークを簡単に構成できます。このウィザードを使用すると、ネットワーク環境に最適な既定値を選択できます。 次のスクリーンショットに示すように、Azure virtual network を導入し、統合を開始するためのクイックリンクを提供するために、Windows Essentials ダッシュボードの [Microsoft Cloud Services] セクションに新しい Azure 仮想ネットワーク統合タスクが追加されました.
+Azure 仮想ネットワークの構成は複雑になる可能性があります。 Windows Server Essentials 2016 では、簡単なウィザードを使用して Azure 仮想ネットワークを簡単に構成できます。このウィザードを使用すると、ネットワーク環境に最適な既定値を選択できます。 次のスクリーンショットに示すように、新しい Azure 仮想ネットワーク統合タスクが Windows Essentials ダッシュボードの [Microsoft Cloud Services] セクションに追加され、Azure 仮想ネットワークが導入されました。また、統合を開始するためのクイックリンクも提供しています。
 
 ![Windows Server Essentials ダッシュボードのホームページにある [作業の開始] タブを示すスクリーンショット。 [作業の開始] タブの [サービス] セクションが選択されています。ダッシュボードは、Azure 仮想ネットワークが現在無効になっている Microsoft Cloud Services 統合の下に表示されます。](media/azure-virtual-network-1.PNG)
 
-上のスクリーンショットの Azure 仮想ネットワークの **[今すぐ統合]** リンクをクリックすると、Microsoft Azure アカウントにログインするよう求めるダイアログボックスが表示されます。 Microsoft Azure アカウントを持っていない場合は、この画面でサインアップするオプションが表示されます。これにより、Azure アカウントのサインアップポータルにリダイレクトされます。
+上のスクリーンショットの Azure 仮想ネットワークの [**今すぐ統合**] リンクをクリックすると、Microsoft Azure アカウントにログインするよう求めるダイアログボックスが表示されます。 Microsoft Azure アカウントを持っていない場合は、この画面でサインアップするオプションが表示されます。これにより、Azure アカウントのサインアップポータルにリダイレクトされます。
 
 ![Azure 仮想ネットワークとの統合ウィザードの [Microsoft Azure へのサインイン] ページを示すスクリーンショット。](media/azure-virtual-network-2.PNG)
 
@@ -39,7 +38,7 @@ Azure 仮想ネットワークに使用する Azure サブスクリプション�
 
 ![Azure 仮想ネットワークとの統合ウィザードの [Azure 仮想ネットワークの設定] ページを示すスクリーンショット。](media/azure-virtual-network-4.PNG)
 
-統合プロセスの最後の手順では、S2S VPN 接続に使用される VPN デバイスを設定します。 ほとんどの小規模企業は環境内に少数のサーバーしかなく、Microsoft Azure に接続するように VPN ルーターを適切に構成する IT スタッフがいないため、既定の選択では、Windows Server Essentials サーバーを、リソースとして使用される VPN サーバーとしてセットアップします。では、Azure 仮想ネットワーク内のリソースにアクセスするために、ローカルネットワークのに接続されます。 ただし、環境内の別のサーバーを VPN サーバーとして使用する場合、または VPN ルーターを使用する場合は、これらのオプションを選択できます。
+統合プロセスの最後の手順では、S2S VPN 接続に使用される VPN デバイスを設定します。 ほとんどの小規模企業では環境に少数のサーバーしかないため、Microsoft Azure に接続するように VPN ルーターを適切に構成することはできません。既定では、Azure 仮想ネットワーク内のリソースにアクセスするために、ローカルネットワーク内のリソースが接続する VPN サーバーとして Windows Server Essentials サーバーをセットアップします。 ただし、環境内の別のサーバーを VPN サーバーとして使用する場合、または VPN ルーターを使用する場合は、これらのオプションを選択できます。
 
 ルーターの種類とモデルのバリエーションにより、Windows Server Essentials は VPN ルーターの自動構成を試行しません。 この統合ウィザードで VPN ルーターを選択すると、デバイスの種類の Azure 仮想ネットワークに対してのみ、Azure で接続のために必要な適切なルーティング構成が通知されます。
 
@@ -65,8 +64,8 @@ Azure 仮想ネットワークの構成が完了すると、状態が [接続済
 
 -   **Azure VNET 統合を無効にする**Azure VNET を切断し、Windows Server Essentials ダッシュボードから統合を削除します。 Azure VNET は削除されませんが、後で Azure VNET をダッシュボードに再度統合する場合は、azure に設定が保持されます。
 
--   **AZURE VNET** [https://azure.microsoft.com/services/virtual-network/](https://azure.microsoft.com/services/virtual-network/)の詳細については、こちらをご覧ください。
+-   **AZURE VNET の詳細についてはこちら** [https://azure.microsoft.com/services/virtual-network/](https://azure.microsoft.com/services/virtual-network/) をご覧ください。
 
-<a name="see-also"></a>参照
+<a name="see-also"></a>関連項目
 --------
 [Windows Server Essentials の概要](get-started.md)

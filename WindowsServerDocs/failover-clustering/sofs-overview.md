@@ -9,12 +9,12 @@ manager: lizross
 ms.technology: storage-failover-clustering
 ms.date: 04/26/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 78f95f25d365b1b30a9e4e2d311128b8c7cb13b6
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 8bcfb53b04a03a259c712dd4b3003f8c4a66d8ff
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80827415"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181718"
 ---
 # <a name="scale-out-file-server-for-application-data-overview"></a>アプリケーション データ用のスケールアウト ファイル サーバーの概要
 
@@ -25,7 +25,7 @@ ms.locfileid: "80827415"
 クラスター化されたファイル サーバーを展開および構成するには、次のいずれかの方法を使用します。
 
 - **アプリケーションデータのスケールアウトファイルサーバー**このクラスター化されたファイルサーバー機能は、Windows Server 2012 で導入されました。 Hyper-v 仮想マシンファイルなどのサーバーアプリケーションデータをファイル共有に格納し、記憶域ネットワークと同等の信頼性、可用性、管理容易性、高パフォーマンスを実現することができます。 すべてのファイル共有が、すべてのノードで同時にオンラインになります。 このタイプのクラスター化されたファイル サーバーに関連付けられたファイル共有はスケールアウト ファイル共有と呼ばれます。 これはアクティブ - アクティブと呼ばれることもあります。 Hyper-V over SMV (サーバー メッセージ ブロック) または Microsoft SQL Server over SMB を展開する場合は、このファイル サーバーの種類を使用することをお勧めします。
-- **汎用ファイル サーバー** これはフェールオーバー クラスタリングの導入以来、Windows Server でサポートされているクラスター化されたファイル サーバーの後続です。 このタイプのクラスター化されたファイル サーバーと、そのクラスター化されたファイル サーバーに関連付けられたすべての共有は、一度に 1 つのノードでオンラインになります。 これはアクティブ - パッシブまたはデュアル アクティブと呼ばれることもあります。 このタイプのクラスター化されたファイル サーバーに関連付けられたファイル共有はクラスター化されたファイル共有と呼ばれます。 情報ワーカーのシナリオを展開する場合は、このファイル サーバーの種類を使用することをお勧めします。
+- **一般的な使用のためのファイルサーバー**これは、フェールオーバークラスタリングの導入以降、Windows Server でサポートされていたクラスター化されたファイルサーバーの継続です。 このタイプのクラスター化されたファイル サーバーと、そのクラスター化されたファイル サーバーに関連付けられたすべての共有は、一度に 1 つのノードでオンラインになります。 これはアクティブ - パッシブまたはデュアル アクティブと呼ばれることもあります。 このタイプのクラスター化されたファイル サーバーに関連付けられたファイル共有はクラスター化されたファイル共有と呼ばれます。 情報ワーカーのシナリオを展開する場合は、このファイル サーバーの種類を使用することをお勧めします。
 
 ## <a name="scenario-description"></a>シナリオの説明
 
@@ -44,17 +44,17 @@ ms.locfileid: "80827415"
 
 スケールアウト ファイル サーバーの展開に役立つ次のトピックを紹介します。
 
-- [スケールアウトファイルサーバーの計画](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134258(v%3dws.11)>)
+- [スケールアウト ファイル サーバーの計画](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134258(v%3dws.11)>)
 
-  - [手順 1: スケールアウトファイルサーバーで記憶域を計画する](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134181%28v%3dws.11%29>)
-  - [手順 2: スケールアウトファイルサーバーでネットワークを計画する](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134253%28v%3dws.11%29>)
+  - [手順 1:スケールアウト ファイル サーバーの記憶域の計画](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134181%28v%3dws.11%29>)
+  - [Step 2: Plan for Networking in Scale-Out File Server](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134253%28v%3dws.11%29>)
 
-- [スケールアウトファイルサーバーのデプロイ](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831359%28v%3dws.11%29>)
+- [Deploy Scale-Out File Server](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831359%28v%3dws.11%29>)
 
-  - [手順 1: スケールアウトファイルサーバーの必須コンポーネントをインストールする](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831478%28v%3dws.11%29>)
-  - [手順 2: スケールアウトファイルサーバーを構成する](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831718%28v%3dws.11%29>)
-  - [手順 3: スケールアウトファイルサーバーを使用するように Hyper-v を構成する](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831463%28v%3dws.11%29>)
-  - [手順 4: スケールアウトファイルサーバーを使用するように Microsoft SQL Server を構成する](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831815%28v%3dws.11%29>)
+  - [手順 1:スケールアウト ファイル サーバーの前提条件のインストール](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831478%28v%3dws.11%29>)
+  - [手順 2:スケールアウト ファイル サーバーの構成](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831718%28v%3dws.11%29>)
+  - [手順 3:スケールアウト ファイル サーバーを使用する Hyper-V の構成](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831463%28v%3dws.11%29>)
+  - [手順 4:スケールアウト ファイル サーバーを使用する Microsoft SQL Server の構成](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831815%28v%3dws.11%29>)
 
 ## <a name="when-to-use-scale-out-file-server"></a>スケールアウト ファイル サーバーを使用する場合
 
@@ -65,8 +65,8 @@ ms.locfileid: "80827415"
 <table>
 <thead>
 <tr class="header">
-<th>テクノロジの分野</th>
-<th>機能</th>
+<th>テクノロジ領域</th>
+<th>特徴量</th>
 <th>汎用のファイル サーバー クラスター</th>
 <th>スケールアウト ファイル サーバー</th>
 </tr>
@@ -75,26 +75,26 @@ ms.locfileid: "80827415"
 <tr class="odd">
 <td>SMB</td>
 <td>継続的な SMB 可用性</td>
-<td>はい</td>
-<td>はい</td>
+<td>○</td>
+<td>○</td>
 </tr>
 <tr class="even">
 <td>SMB</td>
 <td>SMB マルチチャネル</td>
-<td>はい</td>
-<td>はい</td>
+<td>○</td>
+<td>○</td>
 </tr>
 <tr class="odd">
 <td>SMB</td>
 <td>SMB ダイレクト</td>
-<td>はい</td>
-<td>はい</td>
+<td>○</td>
+<td>○</td>
 </tr>
 <tr class="even">
 <td>SMB</td>
 <td>SMB 暗号化</td>
-<td>はい</td>
-<td>はい</td>
+<td>○</td>
+<td>○</td>
 </tr>
 <tr class="odd">
 <td>SMB</td>
@@ -103,21 +103,21 @@ ms.locfileid: "80827415"
 <td>はい</td>
 </tr>
 <tr class="even">
-<td>[ファイル システム]</td>
+<td>ファイル システム</td>
 <td>NTFS</td>
 <td>はい</td>
-<td>該当なし</td>
+<td>NA</td>
 </tr>
 <tr class="odd">
-<td>[ファイル システム]</td>
+<td>ファイル システム</td>
 <td>弾性ファイルシステム (<a href="https://docs.microsoft.com/windows-server/storage/refs/refs-overview">ReFS</a>)</td>
 <td>記憶域スペースダイレクトで推奨</td>
 <td>記憶域スペースダイレクトで推奨</td>
 </tr>
 <tr class="even">
-<td>[ファイル システム]</td>
+<td>ファイル システム</td>
 <td>クラスターの共有ボリューム ファイル システム (CSV)</td>
-<td>該当なし</td>
+<td>NA</td>
 <td>はい</td>
 </tr>
 <tr class="odd">
@@ -148,7 +148,7 @@ ms.locfileid: "80827415"
 <td>ファイル管理</td>
 <td>DFS 名前空間 (DFSN) フォルダー ターゲット サーバー</td>
 <td>はい</td>
-<td>はい</td>
+<td>○</td>
 </tr>
 <tr class="even">
 <td>ファイル管理</td>
@@ -176,31 +176,31 @@ ms.locfileid: "80827415"
 </tr>
 <tr class="even">
 <td>ファイル管理</td>
-<td>フォルダ リダイレクト</td>
+<td>フォルダー リダイレクト</td>
 <td>はい</td>
-<td>推奨されない<em></td>
+<td>推奨されません<em></td>
 </tr>
 <tr class="odd">
 <td>ファイル管理</td>
 <td>オフライン ファイル (クライアント側キャッシュ)</td>
 <td>はい</td>
-<td>非推奨</em></td>
+<td>推奨されません</em></td>
 </tr>
 <tr class="even">
 <td>ファイル管理</td>
 <td>移動ユーザー プロファイル</td>
 <td>はい</td>
-<td>推奨されない<em></td>
+<td>推奨されません<em></td>
 </tr>
 <tr class="odd">
 <td>ファイル管理</td>
 <td>ホーム ディレクトリ</td>
 <td>はい</td>
-<td>非推奨</em></td>
+<td>推奨されません</em></td>
 </tr>
 <tr class="even">
 <td>ファイル管理</td>
-<td>ワーク フォルダー</td>
+<td>作業フォルダー</td>
 <td>はい</td>
 <td>いいえ</td>
 </tr>
@@ -213,32 +213,32 @@ ms.locfileid: "80827415"
 <tr class="even">
 <td>アプリケーション</td>
 <td>Hyper-V</td>
-<td>非推奨</td>
+<td>推奨されません</td>
 <td>はい</td>
 </tr>
 <tr class="odd">
 <td>アプリケーション</td>
-<td>[Microsoft SQL Server]</td>
-<td>非推奨</td>
+<td>Microsoft SQL Server</td>
+<td>推奨されません</td>
 <td>はい</td>
 </tr>
 </tbody>
 </table>
 
-\* フォルダーリダイレクト、オフラインファイル、移動ユーザープロファイル、またはホームディレクトリでは、継続的に使用可能なファイル共有を使用する場合に、ディスクにすぐに書き込む必要がある (バッファリングなしで) 大量の書き込みが生成されるため、汎用のファイル共有と比較してパフォーマンスが低下します。 また、継続的に使用可能なファイル共有にもファイル サーバー リソース マネージャー、および Windows XP を実行している PC との互換性がありません。 また、ユーザーが共有へのアクセスを失った後、オフラインファイルがオフライン3-6 モードに移行しないことがあります。これにより、オフラインファイルの Always Offline モードをまだ使用していないユーザーに不満が生じる可能性があります。
+\*フォルダーリダイレクト、オフラインファイル、移動ユーザープロファイル、またはホームディレクトリによって、継続的に使用可能なファイル共有を使用する場合に、ディスクにすぐに書き込む必要がある (バッファリングなしで) 大量の書き込みが生成されます。汎用のファイル共有と比較すると、パフォーマンスが低下します。 また、継続的に使用可能なファイル共有にもファイル サーバー リソース マネージャー、および Windows XP を実行している PC との互換性がありません。 また、ユーザーが共有へのアクセスを失った後、オフラインファイルがオフライン3-6 モードに移行しないことがあります。これにより、オフラインファイルの Always Offline モードをまだ使用していないユーザーに不満が生じる可能性があります。
 
 ## <a name="practical-applications"></a>実際の適用例
 
 スケールアウト ファイル サーバーは、サーバー アプリケーション記憶域に最適です。 スケールアウト ファイル共有にデータを格納できるサーバー アプリケーションの例をいくつか次に示します。
 
-- インターネット インフォメーション サービス (IIS) Web サーバーは、Web サイトの構成とデータをスケールアウト ファイル共有に格納できます。 詳細については、 [共有構成](https://www.iis.net/learn/manage/managing-your-configuration-settings/shared-configuration_264)に関するページを参照してください。
-- Hyper-V は、構成およびライブの仮想ディスクをスケールアウト ファイル共有に格納できます。 詳細については、「[Hyper-V over SMB の展開](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134187(v%3dws.11)>)」を参照してください。
-- SQL Server は、ライブ データベース ファイルをスケールアウト ファイル共有に格納できます。 詳細については、「 [SQL Server をストレージ オプションとして SMB ファイル共有にインストールする](https://docs.microsoft.com/sql/database-engine/install-windows/install-sql-server-with-smb-fileshare-as-a-storage-option)」を参照してください。
+- インターネット インフォメーション サービス (IIS) Web サーバーは、Web サイトの構成とデータをスケールアウト ファイル共有に格納できます。 詳細については、[共有構成](https://www.iis.net/learn/manage/managing-your-configuration-settings/shared-configuration_264)に関するページを参照してください。
+- Hyper-V は、構成およびライブの仮想ディスクをスケールアウト ファイル共有に格納できます。 詳細については、「[Hyper-V over SMB の展開](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134187(v%3dws.11)>)」を参照してください。
+- SQL Server は、ライブ データベース ファイルをスケールアウト ファイル共有に格納できます。 詳細については、「[SQL Server をストレージ オプションとして SMB ファイル共有にインストールする](https://docs.microsoft.com/sql/database-engine/install-windows/install-sql-server-with-smb-fileshare-as-a-storage-option)」を参照してください。
 - Virtual Machine Manager (VMM) は、ライブラリ共有 (仮想マシン テンプレートと関連ファイルを含む) をスケールアウト ファイル共有に格納できます。 ただし、ライブラリサーバー自体をスケールアウトファイルサーバーにすることはできません。スタンドアロンサーバーまたはスケールアウトファイルサーバークラスターの役割を使用しないフェールオーバークラスター上にある必要があります。
 
 スケールアウト ファイル共有をライブラリ共有として使用する場合は、スケールアウト ファイル サーバーと互換性があるテクノロジのみを使用できます。 たとえば、スケールアウトファイル共有でホストされているライブラリ共有をレプリケートするために DFS レプリケーションを使用することはできません。 また、スケールアウト ファイル サーバーに最新のソフトウェア更新プログラムがインストールされていることも重要です。
 
-スケールアウト ファイル共有をライブラリ共有として使用するには、最初に、ローカル共有を備えた、または共有なしのライブラリ サーバー (おそらく仮想マシン) を追加します。 次に、ライブラリ共有を追加するときに、スケールアウトファイルサーバーでホストされているファイル共有を選択します。 この共有は、VMM で管理する必要があります。また、ライブラリ サーバー専用として作成されていなければなりません。 さらに、スケールアウト ファイル サーバーには必ず最新の更新プログラムをインストールします。 VMM ライブラリサーバーおよびライブラリ共有の追加の詳細については、「 [vmm ライブラリへのプロファイルの追加](https://docs.microsoft.com/system-center/vmm/library-profiles?view=sc-vmm-1801)」を参照してください。 ファイル サービスおよび記憶域サービスの現在使用可能な修正プログラムの一覧については、 [マイクロソフト サポート技術情報の記事 2899011](https://support.microsoft.com/help/2899011/list-of-currently-available-hotfixes-for-the-file-services-technologie)を参照してください。
+スケールアウト ファイル共有をライブラリ共有として使用するには、最初に、ローカル共有を備えた、または共有なしのライブラリ サーバー (おそらく仮想マシン) を追加します。 次に、ライブラリ共有を追加するときに、スケールアウトファイルサーバーでホストされているファイル共有を選択します。 この共有は、VMM で管理する必要があります。また、ライブラリ サーバー専用として作成されていなければなりません。 さらに、スケールアウト ファイル サーバーには必ず最新の更新プログラムをインストールします。 VMM ライブラリサーバーおよびライブラリ共有の追加の詳細については、「 [vmm ライブラリへのプロファイルの追加](https://docs.microsoft.com/system-center/vmm/library-profiles?view=sc-vmm-1801)」を参照してください。 ファイル サービスおよび記憶域サービスの現在使用可能な修正プログラムの一覧については、[マイクロソフト サポート技術情報の記事 2899011](https://support.microsoft.com/help/2899011/list-of-currently-available-hotfixes-for-the-file-services-technologie) を参照してください。
 
 >[!NOTE]
 >インフォメーション ワーカーなど、一部のユーザーに対する負荷は、パフォーマンスにより大きな影響を与えます。 たとえば、ファイルを開く、閉じる、新しいファイルを作成する、既存のファイルの名前を変更するなどの操作を複数のユーザーが行うと、パフォーマンスに影響を及ぼします。 継続的な可用性によってファイル共有が有効になっている場合は、データの整合性が確保されますが、パフォーマンス全体にも影響します。 継続的な可用性では、スケールアウト ファイル サーバーのクラスター ノードでの障害発生時に整合性を確保するために、ディスクに対するデータの書き込みが必要です。 このため、ファイル サーバーに大きなファイルを複数コピーすると、継続的に使用可能なファイル共有のパフォーマンスが大幅に低下する場合があります。
@@ -250,29 +250,29 @@ ms.locfileid: "80827415"
 <table>
 <thead>
 <tr class="header">
-<th>機能</th>
+<th>特徴量</th>
 <th>このシナリオのサポート方法</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><a href="failover-clustering.md">フェールオーバー クラスタリング</a></td>
-<td>スケールアウトファイルサーバーをサポートするために、フェールオーバークラスターによって Windows Server 2012 には、分散ネットワーク名、スケールアウトファイルサーバーリソースの種類、クラスターの共有ボリューム (CSV) 2、およびスケールアウトファイルサーバー高可用性の役割の機能が追加されました。 これらの機能の詳細については、「 <a href="https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265972(v%3dws.11)">Windows Server 2012 でのフェールオーバークラスタリングの新機能 [リダイレクト]&#39;</a>」を参照してください。</td>
+<td>スケールアウトファイルサーバーをサポートするために、フェールオーバークラスターによって Windows Server 2012 には、分散ネットワーク名、スケールアウトファイルサーバーリソースの種類、クラスターの共有ボリューム (CSV) 2、およびスケールアウトファイルサーバー高可用性の役割の機能が追加されました。 これらの機能の詳細については、「 <a href="/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265972(v%3dws.11)">Windows Server 2012 でのフェールオーバークラスタリングの新機能 [リダイレクト]</a>」を参照してください&#39;。</td>
 </tr>
 <tr class="even">
-<td><a href="https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831795(v%3dws.11)">サーバー メッセージ ブロック</a></td>
+<td><a href="/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831795(v%3dws.11)">サーバー メッセージ ブロック</a></td>
 <td>SMB 3.0 では、スケールアウトファイルサーバーをサポートするために、SMB 透過フェールオーバー、SMB マルチチャネル、および SMB ダイレクトの、Windows Server 2012 に次の機能が追加されました。<br />
 <br />
-Windows Server 2012 R2 での SMB の新機能および変更された機能の詳細については、「 <a href="https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831474(v%3dws.11)">Windows server の smb の新&#39;</a>機能」を参照してください。</td>
+Windows Server 2012 R2 での SMB の新機能と変更された機能の詳細については、「 <a href="/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831474(v%3dws.11)">Windows server の smb</a>の新機能と変更された&#39;」を参照してください。</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="more-information"></a>詳細
+## <a name="more-information"></a>詳細情報
 
-- [ソフトウェアで定義された記憶域の設計に関する考慮事項ガイド](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/mt243829(v%3dws.11)>)
-- [サーバー、記憶域、およびネットワークの可用性の向上](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831437(v%3dws.11)>)
-- [Hyper-V over SMB の展開](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134187(v%3dws.11)>)
-- [サーバー アプリケーション用に高速で効率性に優れたファイル サーバーを展開する](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831723(v%3dws.11)>)
+- [Software-Defined Storage (SDS) の設計に関する考慮事項のガイド](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/mt243829(v%3dws.11)>)
+- [Increasing Server, Storage, and Network Availability](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831437(v%3dws.11)>)
+- [Hyper-V over SMB の展開](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134187(v%3dws.11)>)
+- [サーバー アプリケーション用に高速で効率性に優れたファイル サーバーを展開する](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831723(v%3dws.11)>)
 - [スケールアウトすべきか、スケールアウトせざるべきか、それが問題だ](https://blogs.technet.com/b/filecab/archive/2013/12/05/to-scale-out-or-not-to-scale-out-that-is-the-question.aspx) (ブログ記事)
-- [フォルダー リダイレクト、オフライン ファイル、移動ユーザー プロファイル](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh848267(v%3dws.11)>)
+- [フォルダー リダイレクト、オフライン ファイル、移動ユーザー プロファイル](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh848267(v%3dws.11)>)

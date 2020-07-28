@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: delhan
 ms.date: 8/8/2019
 author: Deland-Han
-ms.openlocfilehash: ffc772bafa0027d516194b2741e7680065c0db4b
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 2a9b44807ae6bc9f4c446d4af2150caf09955899
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80860065"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182338"
 ---
 # <a name="troubleshooting-dns-clients"></a>DNS クライアントのトラブルシューティング
 
@@ -36,7 +36,7 @@ ms.locfileid: "80860065"
 
 クライアントに有効な TCP/IP 構成がない場合は、次のいずれかの方法を使用します。
 
-* 動的に構成されたクライアントの場合は、`ipconfig /renew` コマンドを使用して、クライアントが DHCP サーバーを使用して IP アドレスの構成を手動で更新するように強制します。
+* 動的に構成されたクライアントの場合は、コマンドを使用して `ipconfig /renew` 手動でクライアントに対して、DHCP サーバーによる IP アドレス構成の更新を強制します。
 
 * 静的に構成されたクライアントの場合は、クライアントの TCP/IP プロパティを変更して、有効な構成設定を使用するようにするか、またはネットワークに対する DNS 構成を行います。
 
@@ -56,26 +56,26 @@ ping 10.0.0.1
 
 ### <a name="dns-query-tests"></a>DNS クエリテスト
 
-Dns クライアントが DNS サーバーコンピューターに対して ping を実行できる場合は、次の `nslookup` コマンドを使用して、サーバーが DNS クライアントに応答できるかどうかをテストします。 Nslookup ではクライアントの DNS キャッシュを使用しないため、名前解決では、クライアントの構成済みの DNS サーバーが使用されます。
+Dns クライアントが DNS サーバーコンピューターに対して ping を実行できる場合は、次のコマンドを使用して、 `nslookup` サーバーが dns クライアントに応答できるかどうかをテストします。 Nslookup ではクライアントの DNS キャッシュを使用しないため、名前解決では、クライアントの構成済みの DNS サーバーが使用されます。
 
 #### <a name="test-a-client"></a>クライアントをテストする
 
 ```cmd
 nslookup <client>
 ```
-  
+
 たとえば、クライアントコンピューターに**client1**という名前が付けられている場合は、次のコマンドを実行します。
-  
+
 ```cmd
 nslookup client1
 ```
-  
+
 正常な応答が返されない場合は、次のコマンドを実行してみてください。
-  
+
 ```cmd
 nslookup <fqdn of client>
 ```
-  
+
 たとえば、FQDN が**client1.corp.contoso.com**の場合は、次のコマンドを実行します。
 
 ```cmd
@@ -85,7 +85,7 @@ nslookup client1.corp.contoso.com.
 > [!NOTE]
 > このテストを実行するときは、末尾のピリオドを含める必要があります。
 
-FQDN が正常に検出されても、短い名前が見つからない場合は、NIC の [TCP/IP の詳細設定] の [DNS] タブで DNS サフィックスの構成を確認します。 詳細については、「 [DNS 解決の構成](https://docs.microsoft.com/previous-versions/tn-archive/dd163570(v=technet.10)#configuring-dns-resolution)」を参照してください。
+FQDN が正常に検出されても、短い名前が見つからない場合は、NIC の [TCP/IP の詳細設定] の [DNS] タブで DNS サフィックスの構成を確認します。 詳細については、「 [DNS 解決の構成](/previous-versions/tn-archive/dd163570(v=technet.10)#configuring-dns-resolution)」を参照してください。
 
 #### <a name="test-the-dns-server"></a>DNS サーバーをテストする
 
@@ -118,15 +118,15 @@ nslookup app1.corp.contoso.com
 nslookup <external name>
 ```
 
-例 : 
+次に例を示します。
 ```cmd
 nslookup bing.com
 ```
 
-これらの4つのテストがすべて成功した場合は、`ipconfig /displaydns` を実行し、失敗した名前の出力を確認します。 失敗した名前の下に "名前が存在しません" と表示される場合は、否定応答が DNS サーバーから返され、クライアントにキャッシュされていました。 
+これらの4つのテストがすべて成功した場合は、を実行して、失敗した `ipconfig /displaydns` 名前の出力を確認します。 失敗した名前の下に "名前が存在しません" と表示される場合は、否定応答が DNS サーバーから返され、クライアントにキャッシュされていました。
 
-この問題を解決するには、`ipconfig /flushdns`を実行してキャッシュをクリアします。
+この問題を解決するには、を実行してキャッシュをクリアし `ipconfig /flushdns` ます。
 
-## <a name="next-step"></a>次の手順
+## <a name="next-step"></a>次のステップ
 
 名前解決がまだ失敗する場合は、「 [DNS サーバーのトラブルシューティング](troubleshoot-dns-server.md)」セクションを参照してください。

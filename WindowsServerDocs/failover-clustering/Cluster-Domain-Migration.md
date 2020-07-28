@@ -9,16 +9,16 @@ author: johnmarlin-msft
 ms.author: johnmar
 ms.date: 01/18/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: ba556b5a00f3932e2049135b177a7ad8bbceec9c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 6062dd987a136bc2be67c09efbe399bb8fae24f6
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80828295"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87178528"
 ---
 # <a name="failover-cluster-domain-migration"></a>フェールオーバークラスタードメインの移行
 
-> 適用対象: Windows Server 2019、Windows Server 2016
+> 適用先:Windows Server 2019、Windows Server 2016
 
 このトピックでは、Windows Server フェールオーバークラスターをあるドメインから別のドメインに移動する方法の概要について説明します。
 
@@ -39,7 +39,7 @@ ms.locfileid: "80828295"
 
 ## <a name="windows-server-2016-and-earlier"></a>Windows Server 2016 以前
 
-Windows Server 2016 以前では、クラスターサービスにドメイン間を移動する機能はありませんでした。  これは、Active Directory Domain Services と作成された仮想名への依存関係が増加したためです。   
+Windows Server 2016 以前では、クラスターサービスにドメイン間を移動する機能はありませんでした。  これは、Active Directory Domain Services と作成された仮想名への依存関係が増加したためです。
 
 ## <a name="options"></a>オプション
 
@@ -62,14 +62,14 @@ Windows Server 2016 以前では、クラスターサービスにドメイン間
 アニメーションに示されているように、このオプションは破壊的ではありませんが、別のハードウェアまたは既存のクラスターのノードが削除されている必要があります。
 
 1. 新しいドメインに新しい clusterin 作成し、以前のクラスターを使用できるようにします。
-2. クラスターの[移行ウィザード](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754481(v=ws.10))を使用して、すべてのリソースを新しいクラスターに移行します。 リマインダーはデータをコピーしないため、別途行う必要があります。
+2. クラスターの[移行ウィザード](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754481(v=ws.10))を使用して、すべてのリソースを新しいクラスターに移行します。 リマインダーはデータをコピーしないため、別途行う必要があります。
 3. 以前のクラスターを使用停止または破棄します。
 
 どちらのオプションでも、新しいクラスターはすべての[クラスター対応アプリケーション](https://technet.microsoft.com/aa369082(v=vs.90))をインストールし、ドライバーをすべて最新の状態にして、すべてが正常に動作することを確認するためにテストすることが必要になる場合があります。  データも移動する必要がある場合は、この処理に時間がかかります。
 
 ## <a name="windows-server-2019"></a>Windows Server 2019
 
-Windows Server 2019 では、クロスクラスタードメイン移行機能が導入されました。  ここで、上記のシナリオは簡単に実行でき、再構築の必要性は不要になりました。  
+Windows Server 2019 では、クロスクラスタードメイン移行機能が導入されました。  ここで、上記のシナリオは簡単に実行でき、再構築の必要性は不要になりました。
 
 1つのドメインからのクラスターの移動は、単純なプロセスです。 これを実現するには、2つの新しい PowerShell コマンドレットを使用します。
 
@@ -90,7 +90,7 @@ Windows Server 2019 では、クロスクラスタードメイン移行機能が
    ```PowerShell
    Remove-ClusterNameAccount -Cluster CLUSCLUS -DeleteComputerObjects
    ```
-4. Active Directory ユーザーとコンピューター を使用して、すべてのクラスター化された名前に関連付けられている CNO および VCO コンピューターオブジェクトが削除されていることを確認します。
+4. Active Directory ユーザーとコンピューター] を使用して、すべてのクラスター化された名前に関連付けられている CNO および VCO コンピューターオブジェクトが削除されていることを確認します。
 
    > [!NOTE]
    > クラスター内のすべてのサーバーでクラスターサービスを停止し、サービスのスタートアップの種類を手動に設定することをお勧めします。これにより、ドメインの変更中にサーバーを再起動してもクラスターサービスが開始されないようにすることができます。
@@ -125,7 +125,7 @@ Windows Server 2019 では、クロスクラスタードメイン移行機能が
 
     注: ネットワーク名を持つ追加のグループ (つまり、仮想マシンのみを持つ Hyper-v クラスター) がない場合は、-UpgradeVCOs パラメータースイッチは必要ありません。
 
-9. Active Directory ユーザーとコンピューター を使用して新しいドメインを確認し、関連付けられているコンピューターオブジェクトが作成されたことを確認します。 存在する場合は、グループ内の残りのリソースをオンラインにします。
+9. Active Directory ユーザーとコンピューター] を使用して新しいドメインを確認し、関連付けられているコンピューターオブジェクトが作成されたことを確認します。 存在する場合は、グループ内の残りのリソースをオンラインにします。
 
    ```PowerShell
    Start-ClusterGroup -Name "Cluster Group"

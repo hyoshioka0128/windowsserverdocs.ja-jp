@@ -9,12 +9,12 @@ ms.date: 5/26/2020
 ms.topic: article
 author: Deland-Han
 ms.author: delhan
-ms.openlocfilehash: ad70b03fcb6d703a0b99435ee8715319d09af941
-ms.sourcegitcommit: ef089864980a1d4793a35cbf4cbdd02ce1962054
+ms.openlocfilehash: 5ec2ef358cfaf7841b093843848f2ea5ee42433e
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84150200"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181898"
 ---
 # <a name="troubleshoot-problems-on-the-dhcp-server"></a>DHCP サーバーでの問題のトラブルシューティング
 
@@ -46,38 +46,37 @@ ms.locfileid: "84150200"
 
 ## <a name="event-logs"></a>イベント ログ
 
-監視対象の問題に関連する報告された問題については、システムおよび DHCP サーバーサービスのイベントログ (**Applications and Services logs** \> **Microsoft** \> **Windows** \> **DHCP-Server**) を確認してください。  
-イベントは、問題の種類に応じて、次のいずれかのイベントチャネルに記録されます。  
-[DHCP サーバーの操作イベント](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn800668\(v=ws.11\))  
-[DHCP サーバー管理イベント](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn800668\(v=ws.11\))  
-[DHCP サーバーシステムイベント](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn800668\(v=ws.11\))  
-[DHCP サーバーフィルター通知イベント](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn800668\(v=ws.11\))  
-[DHCP サーバー監査イベント](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn800668\(v=ws.11\))
+監視対象の問題に関連する報告された問題については、システムおよび DHCP サーバーサービスのイベントログ (**Applications and Services logs** \> **Microsoft** \> **Windows** \> **DHCP-Server**) を確認してください。
+問題の種類に応じて、イベントは次のいずれかのイベントチャネルに記録されます。 [dhcp サーバーの操作イベント](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn800668\(v=ws.11\)) 
+ [dhcp サーバーの管理イベント](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn800668\(v=ws.11\)) 
+ [dhcp サーバーシステムイベント](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn800668\(v=ws.11\)) 
+ [dhcp サーバーのフィルター通知イベント](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn800668\(v=ws.11\))dhcp サーバー 
+ [監査イベント](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn800668\(v=ws.11\))
 
 ## <a name="data-collection"></a>データ コレクション
 
 ### <a name="dhcp-server-log"></a>DHCP サーバーログ
 
-DHCP サーバーサービスのデバッグログには、DHCP サーバーによって実行される IP アドレスのリース割り当てと DNS 動的更新に関する詳細情報が記載されています。 既定では、これらのログは% windir% \\ System32 Dhcp にあり \\ ます。  
-詳細については、「 [DHCP サーバーのログファイルの分析](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd183591\(v=ws.10\))」を参照してください。
+DHCP サーバーサービスのデバッグログには、DHCP サーバーによって実行される IP アドレスのリース割り当てと DNS 動的更新に関する詳細情報が記載されています。 既定では、これらのログは% windir% \\ System32 Dhcp にあり \\ ます。
+詳細については、「 [DHCP サーバーのログファイルの分析](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd183591\(v=ws.10\))」を参照してください。
 
 ### <a name="network-trace"></a>ネットワーク トレース
 
 関連付けられているネットワークトレースは、イベントがログに記録されたときに DHCP サーバーが何を行っていたかを示す場合があります。 このようなトレースを作成するには、次の手順を実行します。
 
-1.  [GitHub](https://github.com/CSS-Windows/WindowsDiag/tree/master/ALL/TSS)にアクセスし、 [tss \_ tools .zip](https://github.com/CSS-Windows/WindowsDiag/blob/master/ALL/TSS/tss_tools.zip)ファイルをダウンロードします。
+1.  [GitHub](https://github.com/CSS-Windows/WindowsDiag/tree/master/ALL/TSS)にアクセスし、 [tss \_tools.zip](https://github.com/CSS-Windows/WindowsDiag/blob/master/ALL/TSS/tss_tools.zip)ファイルをダウンロードします。
 
-2.  Tss \_ tools .zip ファイルをコピーし、C: tools フォルダーなどのローカルディスク上の場所に展開します。 \\
+2.  Tss \_tools.zip ファイルをコピーし、C: tools フォルダーなどのローカルディスク上の場所に展開し \\ ます。
 
-3.  \\管理者特権でのコマンドプロンプトウィンドウで、C: tools から次のコマンドを実行します。  
+3.  \\管理者特権でのコマンドプロンプトウィンドウで、C: tools から次のコマンドを実行します。
     ```console
     TSS Ron Trace <Stop:Evt:>20321:<Other:>DhcpAdminEvents NoSDP NoPSR NoProcmon NoGPresult
     ```
-      
-    >[!Note]
-    >このコマンドで、とを、 \<*Stop:Evt:*\> \<*Other:*\> トレースセッションでフォーカスを移動するイベント ID とイベントチャネルに置き換えます。  
-    >\_ \_ Tss ファイルに含まれている Tss ReadMe のヘルプ .docx ファイルは、 \_ 使用可能なすべての設定に関する詳細情報を提供します。
 
-4.  イベントがトリガーされると、このツールは C: MS DATA という名前のフォルダーを作成し \\ \_ ます。 このフォルダーには、コンピューターのネットワークとドメインの構成に関する一般的な情報を提供する便利な出力ファイルがいくつか含まれています。  
+    >[!Note]
+    >このコマンドで、とを、 \<*Stop:Evt:*\> \<*Other:*\> トレースセッションでフォーカスを移動するイベント ID とイベントチャネルに置き換えます。
+    >\_ \_ Tsstools.zip ファイルに含まれている Tss ReadMeHelp.docx ファイルは、 \_ 使用可能なすべての設定に関する詳細情報を提供します。
+
+4.  イベントがトリガーされると、このツールは C: MS DATA という名前のフォルダーを作成し \\ \_ ます。 このフォルダーには、コンピューターのネットワークとドメインの構成に関する一般的な情報を提供する便利な出力ファイルがいくつか含まれています。
     このフォルダー内の最も興味深いファイルは、% Computername% \_ date \_ time \_ packetcapture \_ internetclient \_ dbg. etl です。
     [ネットワークモニター](https://www.microsoft.com/download/4865)アプリケーションを使用すると、ファイルを読み込み、"DHCP または DNS" プロトコルの表示フィルターを設定して、バックグラウンドで何が起こっているかを調べることができます。

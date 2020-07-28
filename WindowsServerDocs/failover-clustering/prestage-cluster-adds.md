@@ -9,12 +9,12 @@ manager: lizross
 ms.technology: storage-failover-clustering
 ms.date: 05/09/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: eb9077f40c33d615c0bbe18f1c02b29ce27165a2
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: c0d8efc1bdb5a2c3a653afbe61b211f94658101d
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720521"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181728"
 ---
 # <a name="prestage-cluster-computer-objects-in-active-directory-domain-services"></a>Active Directory Domain Services でクラスター コンピューター アカウントを事前設定する
 
@@ -25,7 +25,7 @@ ms.locfileid: "82720521"
 クラスターの作成ウィザードまたは Windows PowerShell を使用してフェールオーバー クラスターを作成する場合は、クラスターの名前を指定する必要があります。 クラスターを作成する場合に十分な権限を持っている場合は、クラスターの作成プロセスによって、クラスターの名前と一致するコンピューター オブジェクトが AD DS 内に自動的に作成されます。 このオブジェクトは、"クラスター名オブジェクト" (CNO) とも呼ばれます。** クライアント アクセス ポイントを使用するクラスター化された役割を構成するときに、CNO を通じて、仮想コンピューター オブジェクト (VCO) が自動的に作成されます。 たとえば、 *FileServer1*という名前のクライアント アクセス ポイントを持つ高可用性ファイル サーバーを作成すると、CNO は対応する VCO を AD DS 内に作成します。
 
 >[!NOTE]
->AD DS で CNO または Vco が作成されていない Active Directory デタッチされたクラスターを作成するオプションがあります。 これは、特定の種類のクラスター展開を目的としたオプションです。 詳細については、「[Active Directory からデタッチされたクラスターを展開する](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265970(v%3dws.11)>)」を参照してください。
+>AD DS で CNO または Vco が作成されていない Active Directory デタッチされたクラスターを作成するオプションがあります。 これは、特定の種類のクラスター展開を目的としたオプションです。 詳細については、「[Active Directory からデタッチされたクラスターを展開する](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265970(v%3dws.11)>)」を参照してください。
 
 CNO が自動的に作成されるようにするには、フェールオーバー クラスターを作成するユーザーが、組織単位 (OU) に対して、またはクラスターを形成するサーバーが存在しているコンテナーに対して、**コンピューター オブジェクトを作成する**権限を持っている必要があります。 この権限を持っていないユーザーまたはグループがクラスターを作成できるようにするには、AD DS で適切な権限を持つユーザー (通常はドメイン管理者) が AD DS 内に CNO をプレステージします。 このようにすると、ドメイン管理者はクラスターで使用される命名規則をより細かく制御し、クラスター オブジェクトがどの OU 内に作成されるかを制御できるようになります。
 
@@ -74,9 +74,9 @@ CNO が自動的に作成されるようにするには、フェールオーバ�
 3. **[Security (セキュリティ)]** タブで **[Add (追加)]** を選択します。
 4. **[ユーザー、コンピューター、またはグループの選択**] ダイアログボックスで、アクセス許可を付与するユーザーアカウントまたはグループを指定し、[ **OK]** を選択します。
 5. 追加したユーザー アカウントまたはグループを選択し、**[フル コントロール]** の横にある **[許可]** チェック ボックスをオンにします。
-  
+
    ![クラスターを作成するユーザーまたはグループへのフル コントロールの許可](media/prestage-cluster-adds/granting-full-control-to-the-user-create-the-cluster.png)
-  
+
    **図 2.クラスターを作成するユーザーまたはグループにフルコントロールを付与する**
 6. **[OK]** を選択します。
 
@@ -136,7 +136,7 @@ AD DS で CNO をプレステージした場合、VCO を作成するには、�
 
 フェールオーバー クラスターの管理者は、プレステージされた VCO 名と一致するクライアント アクセス ポイントを持つクラスター化された役割を作成し、リソースをオンラインにできるようになりました。
 
-## <a name="more-information"></a>説明
+## <a name="more-information"></a>詳細情報
 
 - [フェールオーバー クラスタリング](failover-clustering.md)
 - [Active Directory でクラスターのアカウントを構成する](configure-ad-accounts.md)

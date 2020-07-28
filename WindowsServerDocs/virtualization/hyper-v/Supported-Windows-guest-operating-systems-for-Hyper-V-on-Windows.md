@@ -9,12 +9,12 @@ ms.assetid: 06b35897-2192-48b7-8c2d-125c520b0786
 author: lizap
 ms.author: elizapo
 ms.date: 01/08/2019
-ms.openlocfilehash: 514f43447f808aabfe2a20ea01b2d8fd65d628ea
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: ddcb4f080183b6a1c8ae0ed0d705597c1a0dd4a5
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474369"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181798"
 ---
 # <a name="supported-windows-guest-operating-systems-for-hyper-v-on-windows-server"></a>Windows Server 上の Hyper-v でサポートされている Windows ゲストオペレーティングシステム
 
@@ -28,7 +28,7 @@ Hyper-v では、ゲストオペレーティングシステムとして仮想マ
 
 Windows server 2016 および Windows Server 2019 で Hyper-v のゲストオペレーティングシステムとしてサポートされている Windows Server のバージョンを次に示します。
 
-|ゲスト オペレーティング システム (サーバー)|仮想プロセッサの最大数|Integration Services|メモ|
+|ゲスト オペレーティング システム (サーバー)|仮想プロセッサの最大数|Integration Services|Notes|
 |-------------------------------------|----------------------------------------|------------------------|---------|
 |Windows Server バージョン 1909 |ジェネレーション 2 の 240<br>64 (第1世代)|組み込み|240より大きい仮想プロセッサのサポートには、Windows Server、バージョン1903、またはそれ以降のゲストオペレーティングシステムが必要です。|
 |Windows Server バージョン 1903 |ジェネレーション 2 の 240<br>64 (第1世代)|組み込み||
@@ -45,7 +45,7 @@ Windows server 2016 および Windows Server 2019 で Hyper-v のゲストオペ
 
 Windows Server 2016 および Windows Server 2019 で Hyper-v のゲストオペレーティングシステムとしてサポートされている Windows クライアントのバージョンを次に示します。
 
-|ゲスト オペレーティング システム (クライアント)|仮想プロセッサの最大数|Integration Services|メモ|
+|ゲスト オペレーティング システム (クライアント)|仮想プロセッサの最大数|Integration Services|Notes|
 |-------------------------------------|----------------------------------------|------------------------|---------|
 |Windows 10|32|組み込み||
 |Windows 8.1|32|組み込み||
@@ -58,9 +58,9 @@ Windows Server 2016 および Windows Server 2019 で Hyper-v のゲストオペ
 |ホストのオペレーティング システム|トピック|
 |-------------------------|---------|
 |Windows 10|[クライアント HYPER-V で Windows 10 でサポートされるゲスト オペレーティング システム](https://docs.microsoft.com/virtualization/hyper-v-on-windows/about/supported-guest-os)|
-|Windows Server 2012 R2 および Windows 8.1|-   [Windows Server 2012 R2 および Windows 8.1 の Hyper-v でサポートされている Windows ゲストオペレーティングシステム](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn792027(v=ws.11))<br />-   [Hyper-v 上の Linux および FreeBSD Virtual Machines](Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)|
-|Windows Server 2012 および Windows 8|[Windows Server 2012 と Windows 8 の Hyper-V でサポートされている Windows ゲスト オペレーティング システム](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn792028(v=ws.11))|
-|Windows Server 2008 および Windows Server 2008 R2|[仮想マシンとゲスト オペレーティング システムについて](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc794868(v=ws.10))|
+|Windows Server 2012 R2 および Windows 8.1|-   [Windows Server 2012 R2 および Windows 8.1 の Hyper-v でサポートされている Windows ゲストオペレーティングシステム](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn792027(v=ws.11))<br />-   [Hyper-v 上の Linux および FreeBSD Virtual Machines](Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)|
+|Windows Server 2012 および Windows 8|[Windows Server 2012 と Windows 8 の Hyper-V でサポートされている Windows ゲスト オペレーティング システム](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn792028(v=ws.11))|
+|Windows Server 2008 および Windows Server 2008 R2|[仮想マシンとゲスト オペレーティング システムについて](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc794868(v=ws.10))|
 
 ## <a name="how-microsoft-provides-support-for-guest-operating-systems"></a>マイクロソフトがゲスト オペレーティング システムのサポートを提供する方法
 

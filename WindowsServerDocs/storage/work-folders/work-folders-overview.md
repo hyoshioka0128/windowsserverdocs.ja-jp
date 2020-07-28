@@ -9,12 +9,12 @@ manager: dougkim
 ms.author: jgerend
 ms.date: 06/15/2020
 description: ワーク フォルダーの概要 - PC やデバイスから作業ファイルにアクセスするための一貫した方法をユーザーに提供する、Windows Server のサーバーの役割です。
-ms.openlocfilehash: a6c1f8a30e3e83a0e7a6bac622982f4f43c44258
-ms.sourcegitcommit: f305bc5f1c5a44dac62f4288450af19f351f9576
+ms.openlocfilehash: 4759584773698dded934d435e601da4e05ff9ee6
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87118604"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181908"
 ---
 # <a name="work-folders-overview"></a>ワーク フォルダーの概要
 
@@ -169,8 +169,8 @@ Windows Azure 仮想マシンを使い始める方法については、[Windows 
 | コンテンツ タイプ | 参考資料 |
 | ------------------ | ---------------- |
 | **製品評価** | -   [Android のワークフォルダー – リリース済み](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB) (ブログ記事)<br />-   [IOS 用ワークフォルダー– IPad アプリリリース](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)(ブログの投稿)<br />-   [Windows Server 2012 R2 のワーク フォルダーの導入](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB) (ブログ記事)<br />-   [ワーク フォルダーの概要](https://channel9.msdn.com/posts/Introduction-to-Work-Folders) (Channel 9 ビデオ)<br />-   [ワークフォルダーのテストラボの展開](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)(ブログの投稿)<br />-   [Windows 7 のワークフォルダー](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB) (ブログの投稿) |
-| **デプロイ** | -   [ワークフォルダーの実装の設計](plan-work-folders.md)<br />-   [ワークフォルダーの展開](deploy-work-folders.md)<br />-   [AD FS と Web アプリケーションプロキシ (WAP) を使用したワークフォルダーの展開](deploy-work-folders-adfs-overview.md)<br />-   [Azure AD アプリケーション プロキシを使ったワーク フォルダーの展開](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)<br />- [オフラインファイル (CSC) からワークフォルダーへの移行ガイド](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)<br />-   [ワークフォルダーの展開のパフォーマンスに関する考慮事項](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)<br />-   [Windows 7 のワークフォルダー (64 ビットダウンロード)](https://www.microsoft.com/download/details.aspx?id=42558)<br />-   [Windows 7 のワークフォルダー (32 ビットダウンロード)](https://www.microsoft.com/download/details.aspx?id=42559) |
+| **配置** | -   [ワークフォルダーの実装の設計](plan-work-folders.md)<br />-   [ワークフォルダーの展開](deploy-work-folders.md)<br />-   [AD FS と Web アプリケーションプロキシ (WAP) を使用したワークフォルダーの展開](deploy-work-folders-adfs-overview.md)<br />-   [Azure AD アプリケーション プロキシを使ったワーク フォルダーの展開](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)<br />- [オフラインファイル (CSC) からワークフォルダーへの移行ガイド](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)<br />-   [ワークフォルダーの展開のパフォーマンスに関する考慮事項](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)<br />-   [Windows 7 のワークフォルダー (64 ビットダウンロード)](https://www.microsoft.com/download/details.aspx?id=42558)<br />-   [Windows 7 のワークフォルダー (32 ビットダウンロード)](https://www.microsoft.com/download/details.aspx?id=42559) |
 | **操作** | -   [ワークフォルダー iPad アプリ: FAQ](https://windows.microsoft.com/windows/work-folders-ipad-faq) (ユーザー向け)<br />-   [ワークフォルダーの証明書の管理](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)(ブログの投稿)<br />-   [Windows Server 2012 R2 ワークフォルダーの展開の監視](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)(ブログの投稿)<br />-   [Windows PowerShell の SyncShare コマンドレット (ワーク フォルダー)](/powershell/module/syncshare/?view=win10-ps)<br />-   [Windows Server 2012 R2 Preview Edition のストレージとファイルサービスの PowerShell コマンドレットのクイックリファレンスカード](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB) |
-| **トラブルシューティング** | -   [Windows Server 2012 R2 – IIS Web サイトとワーク フォルダーのポート競合の解決](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB) (ブログ記事)<br />-   [ワークフォルダー内の一般的なエラー](https://social.technet.microsoft.com/wiki/contents/articles/30578.common-errors-in-work-folders.aspx) |
-| **コミュニティ リソース** | -   [ファイルサービスとストレージフォーラム](https://social.technet.microsoft.com/Forums/windowsserver/home?forum=winserverfiles)<br />-   [マイクロソフトのストレージ チーム - ファイル キャビネット ブログ](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)<br />-   [ディレクトリサービスチームのブログを確認する](/archive/blogs/askds/) |
+| **トラブルシューティング** | -   [Windows Server 2012 R2 – IIS Web サイトとワーク フォルダーのポート競合の解決](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB) (ブログ記事)<br />-   [ワークフォルダー内の一般的なエラー](https://techcommunity.microsoft.com/t5/storage-at-microsoft/troubleshooting-work-folders-on-windows-client/ba-p/425627) |
+| **コミュニティ リソース** | -   [ファイルサービスとストレージフォーラム](https://docs.microsoft.com/answers/topics/windows-server-storage.html)<br />-   [マイクロソフトのストレージ チーム - ファイル キャビネット ブログ](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)<br />-   [ディレクトリサービスチームのブログを確認する](/archive/blogs/askds/) |
 | **関連テクノロジ** | -   [Windows Server 2016 の記憶域](../storage.yml)<br>-   [ファイルサービスおよび記憶域サービス](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831487(v=ws.11))<br />-   [ファイルサーバーリソースマネージャー](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831701(v=ws.11))<br />-   [フォルダーリダイレクト、オフラインファイル、移動ユーザープロファイル](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh848267(v=ws.11))<br />-   [BranchCache](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831696(v=ws.11))<br />-   [DFS 名前空間と DFS レプリケーション](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127250(v=ws.11)) |

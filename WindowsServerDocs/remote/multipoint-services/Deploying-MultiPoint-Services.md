@@ -9,14 +9,15 @@ ms.assetid: 594bc09e-5d2d-4984-a9de-79d40b1308d6
 author: evaseydl
 ms.author: evas
 manager: scottman
-ms.openlocfilehash: 94a7a199bf19179217fff00453ac5542e133bba0
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 0e24fadf1914c43bf6270e1d84c5a5535518d9bd
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473649"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182038"
 ---
 # <a name="deploying-multipoint-services"></a>MultiPoint Services を展開する
+
 このガイドでは、MultiPoint Services を実行するサーバーを展開する方法、MultiPoint ステーションをセットアップする方法、システムをインストールして構成する方法、ユーザーアカウントを設定する方法、およびディスク保護の有効化やバックアップのセットアップなど、基本的な管理タスクを実行してからシステムの使用を開始する方法について説明します。
 
 > [!NOTE]
@@ -42,5 +43,3 @@ ms.locfileid: "85473649"
 ## <a name="additional-references"></a>その他のリファレンス
 
 - [MultiPoint Services](MultiPoint-Services.md)
--   [MultiPoint Services フォーラム](https://social.technet.microsoft.com/Forums/windowsserver/home?forum=windowsmultipointserver&filter=alltypes&sort=lastpostdesc)
-

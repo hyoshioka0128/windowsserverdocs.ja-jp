@@ -7,12 +7,12 @@ ms.topic: upgrade
 author: RobHindman
 ms.author: robhind
 ms.date: 09/16/2019
-ms.openlocfilehash: 5e4436bb6e4db19e015056b67730619a93396f9e
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 7598826bee4abd869dff82c3891fdbe126db35fb
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80854265"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182178"
 ---
 # <a name="upgrade-windows-server-2008-r2-to-windows-server-2012-r2"></a>Windows Server 2008 R2 から Windows Server 2012 R2 へのアップグレード
 
@@ -94,4 +94,4 @@ Windows Server 2012 R2 から Windows Server 2019 に移行するもう 1 つの
 
 ## <a name="related-articles"></a>関連記事
 
-- Windows Server 2012 R2 に関する情報と詳細については、「[Windows Server 2012 R2 および Windows Server 2012](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh801901(v=ws.11))」を参照してください。
+- Windows Server 2012 R2 に関する情報と詳細については、「[Windows Server 2012 R2 および Windows Server 2012](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh801901(v=ws.11))」を参照してください。

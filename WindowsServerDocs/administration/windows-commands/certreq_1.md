@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5d51cc178ee5b689071336b0dabd1e8d3565bcd2
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 4610db6755f5177306dfcf4feec005eab6efabfd
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955364"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87178678"
 ---
 # <a name="certreq"></a>certreq
 
@@ -65,7 +65,7 @@ certreq –enroll –cert certId [options] renew [reusekeys]
 certreq –submit certrequest.req certnew.cer certnew.pfx
 ```
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>解説
 
 - これは、既定の certreq.exe パラメーターです。 コマンドラインプロンプトでオプションが指定されていない場合、certreq.exe は証明機関に証明書要求を送信しようとします。 **– Submit**オプションを使用する場合は、証明書の要求ファイルを指定する必要があります。 このパラメーターを省略すると、一般的な [**ファイルを開く**] ウィンドウが表示され、適切な証明書要求ファイルを選択できます。
 
@@ -79,7 +79,7 @@ certreq –submit certrequest.req certnew.cer certnew.pfx
 certreq -retrieve 20 MyCertificate.cer
 ```
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>解説
 
 - 証明機関によって発行された証明書を取得するには、certreq- *requestid*を使用します。 *Requestid* pkc は、0x プレフィックスを持つ10進数または16進数にすることができ、プレフィックスなしの証明書のシリアル番号にすることができます。 また、証明書の要求が保留中であるかどうかにかかわらず、証明機関によって発行された証明書 (失効または期限切れの証明書を含む) を取得するために使用することもできます。
 
@@ -131,8 +131,8 @@ INF ファイルのこの領域は、新しい証明書要求テンプレート�
 | UseExistingKeySet | このパラメーターは、既存のキーペアを証明書要求の作成に使用することを指定するために使用されます。 このキーが TRUE に設定されている場合は、RenewalCert キーまたは KeyContainer 名の値も指定する必要があります。 既存のキーのプロパティを変更することはできないため、エクスポート可能なキーは設定しないでください。 この場合、証明書の要求の作成時にキーマテリアルは生成されません。 | `true | false` | `UseExistingKeySet = true` |
 | KeyProtection | 秘密キーを使用する前に保護する方法を示す値を指定します。 | <ul><li>`XCN_NCRYPT_UI_NO_PROTCTION_FLAG -- 0`</li><li>`XCN_NCRYPT_UI_PROTECT_KEY_FLAG -- 1`</li><li>`XCN_NCRYPT_UI_FORCE_HIGH_PROTECTION_FLAG -- 2`</li></ul> | `KeyProtection = NCRYPT_UI_FORCE_HIGH_PROTECTION_FLAG` |
 | SuppressDefaults | 既定の拡張機能と属性が要求に含まれるかどうかを示すブール値を指定します。 既定値は、オブジェクト識別子 (Oid) によって表されます。 | `true | false` | `SuppressDefaults = true` |
-| FriendlyName | 新しい証明書のフレンドリ名。 | Text | `FriendlyName = Server1` |
-| ValidityPeriodUnits | ValidityPeriod で使用する単位の数を指定します。 注: これは、がの場合にのみ使用され `request type=cert` ます。 | 数値 | `ValidityPeriodUnits = 3` |
+| FriendlyName | 新しい証明書のフレンドリ名。 | テキスト | `FriendlyName = Server1` |
+| ValidityPeriodUnits | ValidityPeriod で使用する単位の数を指定します。 注: これは、がの場合にのみ使用され `request type=cert` ます。 | Numeric | `ValidityPeriodUnits = 3` |
 | ValidityPeriod | ValidityPeriod は米国英語の複数形の期間である必要があります。 注: これは、要求の種類が cert の場合にのみ使用されます。 | `Years |  Months | Weeks | Days | Hours | Minutes | Seconds` | `ValidityPeriod = Years` |
 
 <sup>1</sup>等号 (=) の左側のパラメーター
@@ -260,7 +260,7 @@ certreq -sign myrequest.req myrequest.req
 certreq -submit myrequest_sign.req myrequest_cert.cer
 ```
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>解説
 
 - パラメーターを追加せずにを使用すると、 `certreq -sign` ダイアログウィンドウが開き、要求されたファイル (req、cmc、txt、der、cer、または crt) を選択できます。
 
@@ -341,10 +341,8 @@ certreq –enroll -machine –cert 61 2d 3c fe 00 00 00 00 00 05 renew
 
 - [Web サーバーの SSL 証明書を手動で作成する方法](https://techcommunity.microsoft.com/t5/core-infrastructure-and-security/how-to-create-a-web-server-ssl-certificate-manually/ba-p/1128529)
 
-- [Windows Server 2008 CA を使用して AMT プロビジョニング証明書を要求する](https://social.technet.microsoft.com/wiki/contents/articles/548.request-an-amt-provisioning-certificate-using-a-windows-server-2008-ca.aspx)
+- [System Center Operations Manager エージェントの証明書の登録](https://docs.microsoft.com/system-center/scom/plan-planning-agent-deployment?view=sc-om-2019)
 
-- [System Center Operations Manager エージェントの証明書の登録](https://social.technet.microsoft.com/wiki/contents/articles/2017.certificate-enrollment-for-system-center-operations-manager-agent.aspx)
-
-- [AD CS のステップバイステップガイド: 2 層 PKI 階層の展開](https://social.technet.microsoft.com/wiki/contents/articles/15037.ad-cs-step-by-step-guide-two-tier-pki-hierarchy-deployment.aspx)
+- [Active Directory 証明書サービスの概要](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831740(v=ws.11))
 
 - [サードパーティの証明機関を使用して SSL 経由で LDAP を有効にする方法](https://support.microsoft.com/help/321051/how-to-enable-ldap-over-ssl-with-a-third-party-certification-authority)

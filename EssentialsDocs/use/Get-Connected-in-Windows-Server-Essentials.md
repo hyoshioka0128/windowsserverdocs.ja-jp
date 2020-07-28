@@ -2,18 +2,17 @@
 title: Windows Server Essentials の接続
 description: Windows Server Essentials の使用方法について説明します。
 ms.date: 05/07/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 149a5d34-43b7-4b9e-99e7-9f2294ab9ddb
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 3e8c50b94b441f75a5b80d3a46f42a87450496a1
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: c1dafb9fb89109a16f2f28662464494691a2f2f0
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470066"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87179948"
 ---
 # <a name="get-connected-in-windows-server-essentials"></a>Windows Server Essentials の接続
 

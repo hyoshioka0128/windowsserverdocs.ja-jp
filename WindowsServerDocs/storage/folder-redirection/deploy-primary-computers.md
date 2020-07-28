@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 06/06/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 935d3ccf7de777a71d7c75179629b448dbb73a08
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 7af3d5c64216f60cca41aa9fb0c3d2c38c74e6c4
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966284"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182248"
 ---
 # <a name="deploy-primary-computers-for-folder-redirection-and-roaming-user-profiles"></a>フォルダー リダイレクトと移動ユーザー プロファイル用のプライマリ コンピューターを展開する
 
@@ -30,7 +30,7 @@ ms.locfileid: "86966284"
 
 プライマリ コンピューターのサポートには、次の要件があります。
 
-- Windows Server 2012 スキーマを追加できるように、Active Directory Domain Services (AD DS) スキーマを更新する必要があります (このスキーマは、Windows Server 2012 ドメイン コントローラーをインストールすると自動的に更新されます)。 AD DS スキーマの更新については、「[Adprep.exe の統合](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh472161(v=ws.11)#adprepexe-integration>)」と「[Adprep.exe の実行](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd464018(v=ws.10)>)」を参照してください。
+- Windows Server 2012 スキーマを追加できるように、Active Directory Domain Services (AD DS) スキーマを更新する必要があります (このスキーマは、Windows Server 2012 ドメイン コントローラーをインストールすると自動的に更新されます)。 AD DS スキーマの更新については、「[Adprep.exe の統合](</previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh472161(v=ws.11)#adprepexe-integration>)」と「[Adprep.exe の実行](</previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd464018(v=ws.10)>)」を参照してください。
 - クライアント コンピューターでは、Windows 10、Windows 8.1、Windows 8、Windows Server 2019、Windows Server 2016、Wndows Server 2012 R2、または Windows Server 2012 を実行している必要があります。
 
 > [!TIP]

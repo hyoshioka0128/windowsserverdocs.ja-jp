@@ -8,12 +8,12 @@ ms.date: 11/05/2018
 ms.author: v-tea
 author: Teresa-MOTIV
 ms.localizationpriority: medium
-ms.openlocfilehash: e1291b377c408c23493ce5a7a946a343f5e28ead
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 12c80e7e266ac3a8c788781a4d98f0a856164084
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86958734"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182018"
 ---
 # <a name="always-on-vpn-technology-overview"></a>Always On VPN テクノロジの概要
 
@@ -84,7 +84,7 @@ NPS では、接続要求の認証と承認を行うために、組織全体の�
 
 証明機関 (CA) サーバーは、Active Directory 証明書サービスを実行している証明機関です。 VPN 構成には、Active Directory ベースの公開キー基盤 (PKI) が必要です。
 
-組織は、AD CS を使用して、個人、デバイス、またはサービスの id を対応する公開キーにバインドすることにより、セキュリティを強化することができます。 AD CS には、さまざまなスケーラブルな環境で証明書の登録と失効を管理できる機能も含まれています。 詳細については、「 [Active Directory 証明書サービスの概要](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831740(v=ws.11))」および「[公開キー基盤の設計ガイダンス](https://social.technet.microsoft.com/wiki/contents/articles/2901.public-key-infrastructure-design-guidance.aspx)」を参照してください。
+組織は、AD CS を使用して、個人、デバイス、またはサービスの id を対応する公開キーにバインドすることにより、セキュリティを強化することができます。 AD CS には、さまざまなスケーラブルな環境で証明書の登録と失効を管理できる機能も含まれています。 詳細については、「 [Active Directory 証明書サービスの概要](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831740(v=ws.11))」および「[公開キー基盤の設計ガイダンス](https://techcommunity.microsoft.com/t5/ask-the-directory-services-team/designing-and-implementing-a-pki-part-i-design-and-planning/ba-p/396953)」を参照してください。
 
 展開が完了したら、CA で次の証明書テンプレートを構成します。
 
@@ -122,7 +122,7 @@ NPS では、接続要求の認証と承認を行うために、組織全体の�
 
 3. コンピューターネットワーク上のコンピューター、ユーザー、またはデバイスアカウントに証明書キーを関連付けることによる認証。
 
-詳細については、「 [AD CS ステップバイステップガイド: 2 層 PKI 階層の展開](https://social.technet.microsoft.com/wiki/contents/articles/15037.ad-cs-step-by-step-guide-two-tier-pki-hierarchy-deployment.aspx)」を参照してください。
+詳細については、「 [Active Directory 証明書サービスの概要](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831740(v=ws.11))」を参照してください。
 
 ## <a name="active-directory-domain-services-ad-ds"></a>Active Directory Domain Services (AD DS)
 
@@ -159,7 +159,7 @@ Active Directory ユーザーとコンピューターのユーザーアカウン
 サーバーコンポーネントに加えて、VPN を使用するように構成するクライアントコンピューターで、Windows 10 周年更新プログラム (バージョン 1607) が実行されていることを確認します。 Windows 10 VPN クライアントは、Active Directory ドメインに参加している必要があります。
 
 
-Windows 10 VPN クライアントは、高度な構成が可能であり、多くのオプションが用意されています。 このシナリオで使用される具体的な機能をわかりやすく説明するために、表1は、この展開が参照する VPN 機能のカテゴリと特定の構成を示しています。 これらの機能の個々の設定を構成するには、この展開で後ほど説明する VPNv2 構成サービスプロバイダー (CSP) を使用します。 
+Windows 10 VPN クライアントは、高度な構成が可能であり、多くのオプションが用意されています。 このシナリオで使用される具体的な機能をわかりやすく説明するために、表1は、この展開が参照する VPN 機能のカテゴリと特定の構成を示しています。 これらの機能の個々の設定を構成するには、この展開で後ほど説明する VPNv2 構成サービスプロバイダー (CSP) を使用します。
 
 表 1 この展開で説明されている VPN の機能と構成
 
@@ -204,8 +204,8 @@ Windows 10 には多くの Csp が用意されていますが、この展開で�
 
 - [Active Directory 証明書サービスの概要](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831740(v=ws.11)): このドキュメントでは、Windows Server 2012 の Active Directory 証明書サービス (AD CS) の概要について説明 &reg; します。 AD CS は、公開キー基盤 (PKI) を構築し、公開キーの暗号化、デジタル証明書、およびデジタル署名機能を組織に提供するサーバーの役割です。
 
-- [公開キー基盤の設計ガイダンス](https://social.technet.microsoft.com/wiki/contents/articles/2901.public-key-infrastructure-design-guidance.aspx): この wiki では、公開キー基盤 (pki) の設計に関するガイダンスを提供します。 PKI と証明機関 (CA) 階層を構成する前に、組織のセキュリティポリシーと証明書作成ステートメント (CPS) に注意する必要があります。
+- [公開キー基盤の設計ガイダンス](https://techcommunity.microsoft.com/t5/ask-the-directory-services-team/designing-and-implementing-a-pki-part-i-design-and-planning/ba-p/396953): このフォーラムでは、公開キー基盤 (pki) の設計に関するガイダンスを提供します。 PKI と証明機関 (CA) 階層を構成する前に、組織のセキュリティポリシーと証明書作成ステートメント (CPS) に注意する必要があります。
 
-- [AD cs のステップバイステップガイド: 2 層 PKI 階層の展開](https://social.technet.microsoft.com/wiki/contents/articles/15037.ad-cs-step-by-step-guide-two-tier-pki-hierarchy-deployment.aspx): このステップバイステップガイドでは、 &reg; ラボ環境で Active Directory 証明書サービス (AD CS) の基本的な構成をセットアップするために必要な手順について説明します。 Windows Server 2008 R2 の AD CS &reg; は、公開キーテクノロジを採用しているソフトウェアセキュリティシステムで使用される公開キー証明書を作成および管理するためのカスタマイズ可能なサービスを提供します。
+- [Active Directory 証明書サービスの概要](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831740(v=ws.11)): このステップバイステップガイドでは、 &reg; ラボ環境で Active Directory 証明書サービス (AD CS) の基本構成を設定するために必要な手順について説明します。 Windows Server 2008 R2 の AD CS &reg; は、公開キーテクノロジを採用しているソフトウェアセキュリティシステムで使用される公開キー証明書を作成および管理するためのカスタマイズ可能なサービスを提供します。
 
 - [ネットワークポリシーサーバー (NPS)](../../../../networking/technologies/nps/nps-top.md): このトピックでは、Windows server 2016 のネットワークポリシーサーバーの概要について説明します。 ネットワーク ポリシー サーバー (NPS) を使用すると、接続要求の認証と承認を行うための組織全体のネットワーク アクセス ポリシーを作成して適用できます。

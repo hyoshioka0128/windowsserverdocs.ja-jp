@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: f18c880dd673b17f53815a57fa2fcc66558dad71
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: aff9fbdfa6dc97cb644e207efdae9c44533c320b
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961324"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181748"
 ---
 # <a name="network-file-system-overview"></a>ネットワーク ファイル システムの概要
 
@@ -29,11 +29,11 @@ Windows Server の NFS には、NFS サーバーと NFS クライアントが含
 
 ## <a name="windows-and-windows-server-versions"></a>Windows および Windows Server のバージョン
 
-Windows では、オペレーティングシステムのバージョンとファミリに応じて、複数のバージョンの NFS クライアントおよびサーバーがサポートされています。 
+Windows では、オペレーティングシステムのバージョンとファミリに応じて、複数のバージョンの NFS クライアントおよびサーバーがサポートされています。
 
 | オペレーティング システム | NFS サーバーのバージョン |NFS クライアントのバージョン|
 | ----------------- | ------------------- | ----------------- |
-| Windows 7、Windows 8.1、Windows 10 | 該当なし | NFSv2、NFSv3 |
+| Windows 7、Windows 8.1、Windows 10 | なし | NFSv2、NFSv3 |
 | Windows Server 2008、Windows Server 2008 R2 | NFSv2、NFSv3 | NFSv2、NFSv3 |
 | Windows Server 2012、Windows Server 2012 R2、Windows Server 2016、Windows Server 2019 | NFSv2、NFSv3、NFSv 4.1  | NFSv2、NFSv3 |
 
@@ -51,7 +51,7 @@ Network File System の新機能と変更された機能には、NFS バージ�
 
 |機能|新規/更新|説明|
 |---|---|---|
-|[NFS バージョン4.1](#nfs-version-41)|新規作成|NFS バージョン3と比較して、セキュリティ、パフォーマンス、および相互運用性が向上しました。|
+|[NFS バージョン4.1](#nfs-version-41)|新規|NFS バージョン3と比較して、セキュリティ、パフォーマンス、および相互運用性が向上しました。|
 |[NFS インフラストラクチャ](#nfs-infrastructure)|[更新]|は、展開と管理性を向上させ、セキュリティを強化します。|
 |[NFS バージョン3の継続的可用性](#nfs-version-3-continuous-availability)|[更新]|NFS バージョン3クライアントの継続的な可用性を向上させます。|
 |[展開と管理の容易性の向上](#deployment-and-manageability-improvements)|[更新]|新しい Windows PowerShell コマンドレットと新しい WMI プロバイダーを使用して NFS を簡単に展開および管理できます。|
@@ -99,7 +99,7 @@ NFS の展開と管理は、次の点で改善されています。
 
 ## <a name="server-manager-information"></a>サーバー マネージャー情報
 
-サーバーマネージャーまたはそれ以降の[Windows 管理センター](../../manage/windows-admin-center/overview.md)では、役割と機能の追加ウィザードを使用して、NFS サーバーの役割サービス (ファイルと iSCSI サービスの役割の下) を追加します。 機能のインストールに関する全般的な情報については、「 [役割、役割サービス、または機能のインストールまたはアンインストール](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831809(v=ws.11)>)」を参照してください。 NFS サーバーツールには、NFS サーバーと NFS クライアントコンポーネントを管理するための、Network File System MMC スナップイン用のサービスが含まれています。 スナップインを使用すると、コンピューターにインストールされている NFS サーバーコンポーネントを管理できます。 NFS サーバーには、Windows のコマンドライン管理ツールもいくつか含まれています。
+サーバーマネージャーまたはそれ以降の[Windows 管理センター](../../manage/windows-admin-center/overview.md)では、役割と機能の追加ウィザードを使用して、NFS サーバーの役割サービス (ファイルと iSCSI サービスの役割の下) を追加します。 機能のインストールに関する全般的な情報については、「 [役割、役割サービス、または機能のインストールまたはアンインストール](</previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831809(v=ws.11)>)」を参照してください。 NFS サーバーツールには、NFS サーバーと NFS クライアントコンポーネントを管理するための、Network File System MMC スナップイン用のサービスが含まれています。 スナップインを使用すると、コンピューターにインストールされている NFS サーバーコンポーネントを管理できます。 NFS サーバーには、Windows のコマンドライン管理ツールもいくつか含まれています。
 
 - **Mount**は、リモート NFS 共有 (エクスポートとも呼ばれます) をローカルにマウントし、Windows クライアントコンピューター上のローカルドライブ文字にマップします。
 - **Nfsadmin**は、nfs サーバーと nfs クライアントコンポーネントの構成設定を管理します。

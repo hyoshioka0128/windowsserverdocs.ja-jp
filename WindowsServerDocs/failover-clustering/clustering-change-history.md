@@ -9,22 +9,22 @@ author: JasonGerend
 manager: lizross
 ms.author: jgerend
 ms.date: 01/07/2020
-ms.openlocfilehash: 73767eb8411523a93f3a4fe2e04106c81cc39f9b
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 2bc64479c5615e356158b83ee41402f425f4ea3b
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80827905"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87177898"
 ---
 # <a name="change-history-for-failover-clustering-topics"></a>フェールオーバー クラスタリングの変更履歴のトピック
 
->適用対象: Windows Server 2019、Windows Server 2016
+>適用先:Windows Server 2019、Windows Server 2016
 
 このトピックでは、Windows Server の[フェールオーバークラスタリング](failover-clustering-overview.md)に関するドキュメントの新しいトピックと更新されたトピックを示します。
 
 > Windows Server 2016 の更新履歴は、「[Windows 10 および Windows Server 2016 の更新履歴](https://support.microsoft.com/help/4000825/windows-10-and-windows-server-2016-update-history)」をご覧ください。
 
-## <a name="january-2020"></a>2020年1月
+## <a name="january-2020"></a>2020 年 1 月
 
 |新しいトピックまたは変更されたトピック                                    |説明 |
 |--------------------------------------------------------|------------|
@@ -54,7 +54,7 @@ ms.locfileid: "80827905"
 
 |新しいトピックまたは変更されたトピック|説明|
 |---|---|
-|[Active Directory でクラスターのアカウントを構成する](configure-ad-accounts.md)|[以前のバージョン](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/)のライブラリから移行済み|
+|[Active Directory でクラスターのアカウントを構成する](configure-ad-accounts.md)|[以前のバージョン](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/)のライブラリから移行済み|
 
 ## <a name="october-2018"></a>2018 年 10 月
 
@@ -72,19 +72,19 @@ ms.locfileid: "80827905"
 
 |新しいトピックまたは変更されたトピック|説明|
 |---|---|
-|[クォーラムを構成および管理する](manage-cluster-quorum.md) | [以前のバージョン](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)のライブラリから移行されています。 |
+|[クォーラムを構成および管理する](manage-cluster-quorum.md) | [以前のバージョン](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)のライブラリから移行されています。 |
 
 ## <a name="april-2018"></a>2018 年 4 月
 
 |新しいトピックまたは変更されたトピック|説明|
 |---|---|
 |[Windows エラー報告を使用したフェールオーバー クラスターのトラブルシューティング](troubleshooting-using-WER-reports.md)| 新しいトピックです。 |
-|[アプリケーション データ用のスケールアウト ファイル サーバー](sofs-overview.md)|[以前のバージョン](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)のライブラリから移行されています。|
-|[ハードウェア要件](clustering-requirements.md)|[以前のバージョン](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)のライブラリから移行されています。|
-|[クラスター共有ボリューム (CSV) の使用](failover-cluster-csvs.md)|[以前のバージョン](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)のライブラリから移行されています。|
-|[フェールオーバー クラスターを作成する](create-failover-cluster.md)|[以前のバージョン](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)のライブラリから移行されています。|
-|[AD DS でクラスターのプレステージを行う](prestage-cluster-adds.md)|[以前のバージョン](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)のライブラリから移行されています。|
-|[フェールオーバークラスターのクラウド監視をデプロイする](deploy-cloud-witness.md)|[以前のバージョン](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)のライブラリから移行されています。|
+|[アプリケーション データ用のスケールアウト ファイル サーバー](sofs-overview.md)|[以前のバージョン](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)のライブラリから移行されています。|
+|[ハードウェア要件](clustering-requirements.md)|[以前のバージョン](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)のライブラリから移行されています。|
+|[クラスター共有ボリューム (CSV) の使用](failover-cluster-csvs.md)|[以前のバージョン](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)のライブラリから移行されています。|
+|[フェールオーバー クラスターを作成する](create-failover-cluster.md)|[以前のバージョン](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)のライブラリから移行されています。|
+|[AD DS でクラスターのプレステージを行う](prestage-cluster-adds.md)|[以前のバージョン](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)のライブラリから移行されています。|
+|[フェールオーバー クラスターのクラウド監視を展開する](deploy-cloud-witness.md)|[以前のバージョン](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)のライブラリから移行されています。|
 
 ## <a name="june-2017"></a>2017 年 6 月
 

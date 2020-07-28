@@ -2,18 +2,17 @@
 title: Windows Server Essentials 内のサーバーにコンピューターを接続する場合のトラブルシューティング
 description: Windows Server Essentials の使用方法について説明します。
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: e45b3d89-c057-4c70-a627-86fb06dd22aa
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 7b679ae9d3a3d5f4526edced78d720ca83d3e008
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: c05888f52f3fe60d0dde22a70ceb5a3eee94e0ef
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470046"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180238"
 ---
 # <a name="troubleshoot-connecting-computers-to-the-server-in-windows-server-essentials"></a>Windows Server Essentials 内のサーバーにコンピューターを接続する場合のトラブルシューティング
 
@@ -22,7 +21,7 @@ ms.locfileid: "85470046"
  このトピックでは、Windows Server Essentials または Windows Server Essentials を実行しているサーバーにコンピューターを接続するときに発生する可能性がある問題のトラブルシューティングのガイダンスを示します。
 
 > [!NOTE]
->  Windows Server Essentials および Windows Server Essentials コミュニティの最新のトラブルシューティング情報については、 [Windows Server Essentials フォーラム](https://social.technet.microsoft.com/Forums/windowsserver/home?forum=winserveressentials)を参照することをお勧めします。 Windows Server Essentials フォーラムは、ヘルプを検索したり、質問したりするために最適な場所です。
+>  Windows Server Essentials および Windows Server Essentials コミュニティの最新のトラブルシューティング情報については、 [Windows Server Essentials フォーラム](https://docs.microsoft.com/answers/topics/windows-server-essentials.html)を参照することをお勧めします。 Windows Server Essentials フォーラムは、ヘルプを検索したり、質問したりするために最適な場所です。
 
  このトピックでは、次の問題に関する解決策を取り上げます。
 
@@ -59,7 +58,7 @@ ms.locfileid: "85470046"
 
  この問題は、Windows Server Essentials を実行しているサーバーにコンピューターを接続しているときに、他の Windows 更新プログラムまたはアプリケーションのインストールが保留中で、コネクタのインストールがキャンセルされた場合に発生する可能性があります。
 
- **解決方法**
+ **ソリューション**
 
  他のすべての更新プログラムまたはアプリケーション インストールを完了します。 ダイアログが表示されたら、コンピューターを再起動します。
 
@@ -72,7 +71,7 @@ ms.locfileid: "85470046"
 
  コンピューター名に ASCII 以外の文字が含まれているコンピューターを Windows Server Essentials に参加させることはできません。 コンピューター名に ASCII 以外の文字が含まれている場合、「予期しないエラーが発生しました」というエラー メッセージが表示されます。
 
- **解決方法**
+ **ソリューション**
 
  クライアントコンピューターの名前を ASCII 文字のみが含まれる名前に変更してから、コンピューターを Windows Server Essentials にもう一度追加してみてください。
 
@@ -85,7 +84,7 @@ ms.locfileid: "85470046"
 
  コンピューターをサーバーに接続できるようにするには、SYSTEM アカウントに、Windows Server Essentials ダッシュボードに表示されるサーバーフォルダーに対するフルコントロールのアクセス許可が必要です。 必要なアクセス許可が付与されていない場合、「コネクター ソフトウェアのインストールが取り消されます」というエラー メッセージが表示されます。
 
- **解決方法**
+ **ソリューション**
 
  SYSTEM アカウントに、各サーバー フォルダーに対する **[フル コントロール]** アクセス許可を付与します。
 
@@ -116,7 +115,7 @@ ms.locfileid: "85470046"
 
  Windows Server Essentials または Windows Server Essentials を実行しているサーバーにコンピューターを接続すると、ウィザードは .NET Framework バージョン4.5.50709 をコンピューターにインストールしようとします。 ただし、以前のリリースの .NET Framework バージョン4.5 が存在する場合、更新されたリリースをインストールすることはできません。また、このアプリケーションを実行するには、次のいずれかのバージョンの .NET Framework: V 4.5.50709 をインストールする必要があります。 適切なバージョンの .NET Framework を取得する方法については、割り当て発行者に問い合わせてください。
 
- **解決方法**
+ **ソリューション**
 
  .NET Framework 4.5 をコンピューターからアンインストールしてから、コンピューターをサーバーに接続します。
 
@@ -143,7 +142,7 @@ ms.locfileid: "85470046"
 
  Windows Essentials Server に対する VPN 接続が既に確立されていて、ドメイン アドレスを使用して内部設置型のコネクター ソフトウェアを設定しようとすると発生する可能性があります。
 
- **解決方法**
+ **ソリューション**
 
 1.  クライアント コンピューターの日時をサーバー上の日時と同期します。 次に、サーバーとコンピューターを接続します。
 
@@ -191,7 +190,7 @@ ms.locfileid: "85470046"
 
  このエラー メッセージが表示された場合は、WSS Certificate Web Service が実行されていない可能性があります。
 
- **解決方法**
+ **ソリューション**
 
  WSS Certificate Web Service を開始します。
 
@@ -225,7 +224,7 @@ ms.locfileid: "85470046"
 
  ネットワーク上のルーターでマルチキャストが有効になっている場合、Windows 7 Home Basic または Windows 7 Home Premium が実行されているクライアント コンピューターとサーバー間の通信が正しく行えません。
 
- **解決方法**
+ **ソリューション**
 
  ルーターでマルチキャストを無効にします。 一部のルーターでは、RIP-2M ルーティング プロトコルの無効化もそれに含まれる場合があります。 詳細については、ルーターの製造元によって提供されているドキュメントを参照してください。
 
@@ -273,7 +272,7 @@ ms.locfileid: "85470046"
 
  コネクター ソフトウェアのインストール中に、クライアントのオペレーティング システムに対して、クライアントがコネクターの前提条件すべてを満たしていることを確認するための各種チェックが実行されます。 コネクター ソフトウェアのインストール後にクライアントのオペレーティング システムをアップグレードすると、一部の前提条件が満たされず、クライアント コネクターで障害が発生する可能性があります。
 
- **解決方法**
+ **ソリューション**
 
  クライアントのオペレーティング システムを別のバージョンにアップグレードするには (たとえば、Windows XP を Windows Vista へ、または Windows Vista を Windows 7 へアップグレードする場合)、コネクター ソフトウェアをアンインストールする必要があります。 [コントロール パネル] の **[プログラムの追加と削除]** を使用します。 クライアントのオペレーティングシステムのアップグレードが完了したら、クライアントコネクタを再インストールできます。そのためには、Web ブラウザーで http://<*server*> を開き、<*Server*> を Windows server Essentials サーバーの名前にします。
 
@@ -281,6 +280,6 @@ ms.locfileid: "85470046"
 
 ## <a name="additional-references"></a>その他のリファレンス
 
--   [Windows Server Essentials の管理](../manage/Manage-Windows-Server-Essentials.md)
+- [Windows Server Essentials の管理](../manage/Manage-Windows-Server-Essentials.md)
 
--   [Windows 2012 Server Essentials ConnectComputer トラブルシューティング (TechNet Wiki)](https://social.technet.microsoft.com/wiki/contents/articles/14370.windows-2012-server-essentials-connectcomputer-troubleshooting.aspx)
+- [Windows 2012 Server Essentials ConnectComputer のトラブルシューティング](https://docs.microsoft.com/windows-server-essentials/support/troubleshoot-connecting-computers-to-the-server-in-windows-server-essentials)

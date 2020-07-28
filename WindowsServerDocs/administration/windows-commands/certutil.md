@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 159a3d2eb54d6a3040c4a22864a1c90e16bf2247
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 12ef5e7fa5ff305b1670c2f88645f57500c4fb5b
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955334"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87178588"
 ---
 # <a name="certutil"></a>certutil
 
@@ -130,7 +130,7 @@ certutil [options] -setattributes RequestID attributestring
 [-config Machine\CAName]
 ```
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>解説
 
 - 名前と値はコロンで区切る必要がありますが、複数の名前と値のペアは改行で区切る必要があります。 たとえば `CertificateTemplate:User\nEMail:User@Domain.com` 、 `\n` シーケンスが改行区切り記号に変換されます。
 
@@ -154,7 +154,7 @@ certutil [options] -setextension requestID extensionname flags {long | date | st
 [-config Machine\CAName]
 ```
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>解説
 
 - 最後のパラメーターが数値の場合は、 **Long**として取得されます。
 
@@ -519,7 +519,7 @@ certutil [options] -view [queue | log | logfail | revoked | ext | attrib | crl] 
 [-silent] [-split] [-config Machine\CAName] [-restrict RestrictionList] [-out ColumnList]
 ```
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>解説
 
 - すべてのエントリの**StatusCode**列を表示するには、「」と入力します。`-out StatusCode`
 
@@ -721,7 +721,7 @@ certutil [options] -importpfx [certificatestorename] pfxfile [modifiers]
 [-f] [-user] [-p password] [-csp provider]
 ```
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>解説
 
 - 既定値はパーソナルコンピューターストアです。
 
@@ -1096,14 +1096,14 @@ certutil [options] -setcasites delete
 [-f] [-config Machine\CAName] [-dc DCName]
 ```
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>解説
 
 - この `-config` オプションは、単一の証明機関を対象とします (既定値はすべての ca です)。
 
 - オプションを使用すると、 `-f` 指定した**sitename**の検証エラーを上書きしたり、すべての CA sitenames 削除したりできます。
 
 > [!NOTE]
-> Active Directory Domain Services (AD DS) サイト認識用に Ca を構成する方法の詳細については、「 [AD CS および PKI クライアントのサイト認識の AD DS](https://social.technet.microsoft.com/wiki/contents/articles/14106.ad-ds-site-awareness-for-ad-cs-and-pki-clients.aspx)」を参照してください。
+> Active Directory Domain Services (AD DS) サイト認識用に Ca を構成する方法の詳細については、「 [AD CS および PKI クライアントのサイト認識の AD DS](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831740(v=ws.11))」を参照してください。
 
 ### <a name="-enrollmentserverurl"></a>-enrollmentserverURL
 
@@ -1360,7 +1360,7 @@ certutil [options] -verifykeys [keycontainername cacertfile]
 [-f] [-user] [-silent] [-config Machine\CAName]
 ```
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>解説
 
 - 引数を指定しない場合は、各署名 CA 証明書がその秘密キーに対して検証されます。
 
@@ -1399,7 +1399,7 @@ certutil [options] -verify CRLfile cacertfile [deltaCRLfile]
 [-f] [-enterprise] [-user] [-silent] [-split] [-urlfetch] [-t timeout]
 ```
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>解説
 
 - **Applicationpolicylist**を使用すると、チェーンの構築が、指定されたアプリケーションポリシーに対して有効なチェーンのみに制限されます。
 
@@ -1493,7 +1493,7 @@ certutil [options] -sign infilelist | serialnumber | CRL outfilelist [#hashalgor
 [-nullsign] [-f] [-silent] [-cert certID]
 ```
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>解説
 
 - 負符号 (-) を使用すると、シリアル番号と拡張機能が削除されます。
 
@@ -1685,7 +1685,7 @@ certutil [options] -getreg [{ca | restore | policy | exit | template | enroll |c
 [-f] [-user] [-grouppolicy] [-config Machine\CAName]
 ```
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>解説
 
 - 文字列値がまたはで始まり、 `+` `-` 既存の値が値の場合は、 `REG_MULTI_SZ` 既存のレジストリ値に対して文字列が追加または削除されます。 値を強制的に作成するには `REG_MULTI_SZ` 、 `\n` 文字列値の末尾にを追加します。
 
@@ -1729,7 +1729,7 @@ certutil [options] -setreg [{ca | restore | policy | exit | template | enroll |c
 [-f] [-user] [-grouppolicy] [-config Machine\CAName]
 ```
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>解説
 
 - 文字列値がまたはで始まり、 `+` `-` 既存の値が値の場合は、 `REG_MULTI_SZ` 既存のレジストリ値に対して文字列が追加または削除されます。 値を強制的に作成するには `REG_MULTI_SZ` 、 `\n` 文字列値の末尾にを追加します。
 
@@ -1773,7 +1773,7 @@ certutil [options] -delreg [{ca | restore | policy | exit | template | enroll |c
 [-f] [-user] [-grouppolicy] [-config Machine\CAName]
 ```
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>解説
 
 - 文字列値がまたはで始まり、 `+` `-` 既存の値が値の場合は、 `REG_MULTI_SZ` 既存のレジストリ値に対して文字列が追加または削除されます。 値を強制的に作成するには `REG_MULTI_SZ` 、 `\n` 文字列値の末尾にを追加します。
 
@@ -1823,7 +1823,7 @@ certutil [options] -importcert certfile [existingrow]
 [-f] [-config Machine\CAName]
 ```
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>解説
 
 また、外部証明書をサポートするように証明機関を構成する必要がある場合もあります。 これを行うには、「」と入力 `import - certutil -setreg ca\KRAFlags +KRAF_ENABLEFOREIGN` します。
 
@@ -1901,7 +1901,7 @@ certutil [options] -mergePFX PFXinfilelist PFXoutfile [extendedproperties]
 [-f] [-user] [-split] [-p password] [-protectto SAMnameAndSIDlist] [-csp provider]
 ```
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>解説
 
 - コマンドラインで指定するパスワードは、コンマ区切りのパスワードリストである必要があります。
 
@@ -1936,7 +1936,7 @@ certutil [options] -convertEPF PFXinfilelist PFXoutfile [cast | cast-] [V3CAcert
 [-f] [-silent] [-split] [-dc DCName] [-p password] [-csp provider]
 ```
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>解説
 
 - コマンドラインで指定するパスワードは、コンマ区切りのパスワードリストである必要があります。
 
@@ -2003,12 +2003,8 @@ certutil -? -v
 
 このコマンドの使用方法に関するその他の例については、「」を参照してください。
 
-- [コマンドラインから Active Directory 証明書サービス (AD CS) を管理するための Certutil の例](https://social.technet.microsoft.com/wiki/contents/articles/3063.certutil-examples-for-managing-active-directory-certificate-services-ad-cs-from-the-command-line.aspx)
+- [Active Directory 証明書サービス (AD CS)](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831740(v=ws.11))
 
 - [証明書を管理するための Certutil タスク](/previous-versions/orphan-topics/ws.10/cc772898(v=ws.10))
-
-- [certutil.exe コマンドラインツールのチュートリアルを使用したバイナリ要求のエクスポート](https://social.technet.microsoft.com/wiki/contents/articles/7573.active-directory-certificate-services-pki-key-archival-and-management.aspx)
-
-- [ルート CA 証明書の書き換え](https://social.technet.microsoft.com/wiki/contents/articles/2016.root-ca-certificate-renewal.aspx)
 
 - [certutil コマンド](certutil.md)

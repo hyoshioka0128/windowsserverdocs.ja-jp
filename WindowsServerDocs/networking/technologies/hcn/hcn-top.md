@@ -5,12 +5,12 @@ ms.author: jmesser
 author: jmesser81
 ms.prod: windows-server
 ms.date: 11/05/2018
-ms.openlocfilehash: 4afde574802bd63db8ea8ca8db9f5daf1a53dc93
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 6e4d665ba431331fbf1f41a0ac4774e58693a5e2
+ms.sourcegitcommit: 717222e9efceb5964872dbf97034cad60f3c48df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80859845"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87295039"
 ---
 # <a name="host-compute-network-hcn-service-api-for-vms-and-containers"></a>Vm とコンテナーのホストコンピューティングネットワーク (HCN) サービス API
 
@@ -59,8 +59,6 @@ HCN Api のドキュメントの一部として、microsoft は、JSON ドキュ
 ### <a name="example"></a>例 
 
 次に、VM の構成ドキュメントに含まれる SCSI コントローラーを表すオブジェクトのワークフローの例を示します。 
-
-Windows ソースコードでは、次のように、mars ファイルを使用してスキーマを定義します。 onecore/vm/dv/net/hns/schema/mars/Schema/HCN. Schema. Network. mars
 
 ```
 enum IpamType
@@ -224,9 +222,9 @@ class Route
 } 
 ```
 
-[Swagger](https://swagger.io/)などのツールを使用すると、クライアントによって使用されるスキーマプログラミング言語の言語固有の表現を生成できます。 Swagger は、、、、Javascript、 C#Python などのさまざまな言語をサポートしています。
+[Swagger](https://swagger.io/)などのツールを使用すると、クライアントによって使用されるスキーマプログラミング言語の言語固有の表現を生成できます。 Swagger は、C#、ゴー、Javascript、Python などのさまざまな言語をサポートしています。
 
-- 最上位の IPAM & サブネットオブジェクト用に[生成されたC#コードの例](example-c-sharp.md)。
+- 最上位の IPAM & サブネットオブジェクト用に[生成された C# コードの例](example-c-sharp.md)。
 
 - 最上位の IPAM & サブネットオブジェクトの[生成されたジャンプコードの例](example-go.md)。 ゴーは、ホストコンピューティングネットワークサービス Api の2つのコンシューマーである Docker と Kubernetes によって使用されます。 外出先には、JSON ドキュメントとの間での入力型のマーシャリングのサポートが組み込まれています。
 
@@ -278,7 +276,7 @@ class HostComputeLoadBalancer : HCN.Schema.Common.Base
 };
 ```
 
-## <a name="next-steps"></a>次のステップ:
+## <a name="next-steps"></a>次のステップ
 
 - [一般的な HCN シナリオ](hcn-scenarios.md)の詳細については、こちらを参照してください。
 

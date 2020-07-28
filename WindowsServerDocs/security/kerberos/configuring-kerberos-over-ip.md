@@ -3,12 +3,12 @@ title: IP アドレスの Kerberos を構成しています
 description: IP ベースの Spn に対する Kerberos のサポート
 author: daveba
 ms.author: daveba
-ms.openlocfilehash: 1061364528100fe005e80f64c6315f9fca69ad98
-ms.sourcegitcommit: 2082335e1260826fcbc3dccc208870d2d9be9306
+ms.openlocfilehash: 16feb7045508a854657834fcbb4ab850f9b8ac3b
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69980299"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181918"
 ---
 # <a name="kerberos-clients-allow-ipv4-and-ipv6-address-hostnames-in-service-principal-names-spns"></a>Kerberos クライアントは、サービスプリンシパル名 (Spn) で IPv4 および IPv6 アドレスのホスト名を許可します。
 
@@ -28,14 +28,14 @@ Spn で IP アドレスのホスト名のサポートを構成するには、Try
 
 ## <a name="configuring-a-service-principal-name-as-ip-address"></a>IP アドレスとしてのサービスプリンシパル名の構成
 
-サービスプリンシパル名は、Kerberos 認証時にネットワーク上のサービスを識別するために使用される一意の識別子です。 SPN は、サービス、ホスト名、およびオプションで、などの`service/hostname[:port]` `host/fs.contoso.com`形式のポートで構成されます。 コンピューターが Active Directory に参加している場合、Windows は複数の Spn をコンピューターオブジェクトに登録します。
+サービスプリンシパル名は、Kerberos 認証時にネットワーク上のサービスを識別するために使用される一意の識別子です。 SPN は、サービス、ホスト名、およびオプションで、などの形式のポートで構成され `service/hostname[:port]` `host/fs.contoso.com` ます。 コンピューターが Active Directory に参加している場合、Windows は複数の Spn をコンピューターオブジェクトに登録します。
 
 通常、ip アドレスは一時的なものであるため、ホスト名の代わりに IP アドレスを使用することはできません。 アドレスリースの有効期限が切れ、更新されると、競合と認証エラーが発生する可能性があります。 したがって、IP アドレスベースの SPN の登録は手動で行う必要があるため、DNS ベースのホスト名に切り替えることができない場合にのみ使用してください。
 
-[Setspn](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc731241(v=ws.11))ツールを使用する方法をお勧めします。 SPN は一度に Active Directory の1つのアカウントにしか登録できないことに注意してください。 DHCP を使用する場合は、IP アドレスに静的リースを使用することをお勧めします。
+[Setspn.exe](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc731241(v=ws.11))ツールを使用することをお勧めします。 SPN は一度に Active Directory の1つのアカウントにしか登録できないことに注意してください。 DHCP を使用する場合は、IP アドレスに静的リースを使用することをお勧めします。
 
 ```
-Setspn -s <service>/ip.address> <domain-user-account>  
+Setspn -s <service>/ip.address> <domain-user-account>
 ```
 
 例:

@@ -8,12 +8,12 @@ ms.date: 11/26/2018
 ms.assetid: b886b2fd-3567-4f0a-8aa3-4ba7923d2d21
 author: nirb
 ms.author: nirb
-ms.openlocfilehash: 71687bc7090eabfaf690dc526cce013798413fdb
-ms.sourcegitcommit: 643a9916efb95ad0bb5cc0a9b115ac29af4cb076
+ms.openlocfilehash: c9968150f4d064e1fa1298f53e22d0b23324a957
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/30/2020
-ms.locfileid: "85586724"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182288"
 ---
 # <a name="guidance-on-disabling-system-services-on-windows-server-2016-with-desktop-experience"></a>デスクトップ エクスペリエンス搭載 Windows Server 2016 上のシステム サービスを無効にする場合のガイダンス
 
@@ -244,7 +244,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 | **インストール**   | デスクトップ エクスペリエンス搭載のみ
 | **スタートアップの種類**   | 手動
 | **推奨** | 無効にしてもよい
-| **コメント**       | 使用しない場合は無効にしても問題ありません。 もう 1 つの無効にするメカニズム:[Bluetooth と赤外線を無効にする](https://docs.microsoft.com/previous-versions/tn-archive/dd252791(v=technet.10))
+| **コメント**       | 使用しない場合は無効にしても問題ありません。 もう 1 つの無効にするメカニズム:[Bluetooth と赤外線を無効にする](/previous-versions/tn-archive/dd252791(v=technet.10))
 |||
 
 

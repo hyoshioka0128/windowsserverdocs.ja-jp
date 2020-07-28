@@ -9,12 +9,12 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 609e9dc94ce30d0fee0fb2a3ec0fdf9b89dcb773
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 4e7d959c69ed748ef5a6a9821c53691c9fa718c9
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475129"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181938"
 ---
 # <a name="managing-multipoint-services"></a>MultiPoint Services の管理
 MultiPoint &trade; Services を使用すると、複数のユーザーが独自の独立した Windows エクスペリエンスを持つことで、1台のコンピューターを同時に共有できます。 モニター、キーボード、マウスで構成されるユーザー ステーションが、USB、ビデオ ケーブル、またはネットワークを介してホスト コンピューターに直接接続されます。
@@ -34,4 +34,4 @@ Multipoint マネージャーと MultiPoint ダッシュボードで実行でき
 
 ## <a name="additional-references"></a>その他のリファレンス
 
--   [MultiPoint Services フォーラム](https://social.technet.microsoft.com/Forums/windowsserver/home?forum=windowsmultipointserver&filter=alltypes&sort=lastpostdesc)
+- [MultiPoint Services](https://docs.microsoft.com/windows-server/remote/multipoint-services/introducing-multipoint-services)

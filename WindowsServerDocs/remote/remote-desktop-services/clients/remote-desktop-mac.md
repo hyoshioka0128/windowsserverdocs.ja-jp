@@ -10,12 +10,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 07/16/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 7be6b7542ca77c80a638df6404aefe77d8d7d19c
-ms.sourcegitcommit: b363d8ceed863c8fd5a464bc8afdc4ef1af9a6f8
+ms.openlocfilehash: 57072fe5a92bcc59a1ccd46b1c0db7a6828a165d
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "86445706"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181958"
 ---
 # <a name="get-started-with-the-macos-client"></a>macOS クライアントの概要
 
@@ -40,7 +40,7 @@ Mac 用のリモート デスクトップ クライアントを使用して、Ma
 
 AppCenter 上のプレビュー チャネルで新機能をテストしています。 チェック アウトするか? [Mac 用 Microsoft リモート デスクトップ](https://aka.ms/rdmacbeta)に移動して、 **[ダウンロード]** を選択します。 ベータ版のクライアントをダウンロードするために、アカウントを作成したり AppCenter にサインインしたりする必要はありません。
 
-既にクライアントがある場合は、最新のバージョンがあることを確認する更新を確認することができます。 ベータ版クライアントで、上部の **[Microsoft リモート デスクトップ Beta]** を選択して、 **[更新プログラムの確認]** を選択します。 
+既にクライアントがある場合は、最新のバージョンがあることを確認する更新を確認することができます。 ベータ版クライアントで、上部の **[Microsoft リモート デスクトップ Beta]** を選択して、 **[更新プログラムの確認]** を選択します。
 
 ## <a name="add-a-workspace"></a>ワークスペースの追加
 
@@ -102,7 +102,7 @@ RDP ファイルのインポート方法:
 
 基本設定で新しいゲートウェイを設定するには:
 
-1. 接続センターで、 **[基本設定] > [ゲートウェイ]** の順に選択します。 
+1. 接続センターで、 **[基本設定] > [ゲートウェイ]** の順に選択します。
 2. 表の下部にある **[+]** ボタンを選択し、次の情報を入力します。
    - **サーバー名** – ゲートウェイとして使用するコンピューターの名前。 Windows コンピューター名、インターネット ドメイン名、または IP アドレスを指定できます。 サーバー名に、ポート情報を追加することもできます (例:**RDGateway:443** または **10.0.0.1:443**)。
    - **ユーザー名** -ユーザー名とは、接続先のリモート デスクトップ ゲートウェイに使用するパスワード。 選択することも **接続の資格情報を使用して** 、リモート デスクトップ接続に使用されるものと同じユーザー名とパスワードを使用します。
@@ -164,4 +164,4 @@ Windows Server 2012 R2 には、新しい認証方法、リモート デスク�
 この機能の詳細については、[https://aka.ms/paa-sample](https://aka.ms/paa-sample) を確認してください。
 
 > [!TIP]
-> 意見やご質問はへようこそ は常にします。 ただし、投稿しないでくださいコメント機能を使用して、この記事の最後に、トラブルシューティングのヘルプを要求します。 代わりに移動、 [リモート デスクトップ クライアントのフォーラム](https://social.technet.microsoft.com/forums/windowsserver/en-us/home?forum=winrdc) し、新しいスレッドを開始します。 機能の候補があるか。 内の指定、 [クライアント ユーザーの声フォーラム](https://remotedesktop.uservoice.com/forums/272085-remote-desktop-for-android)します。
+> 意見やご質問はへようこそ は常にします。 ただし、投稿しないでくださいコメント機能を使用して、この記事の最後に、トラブルシューティングのヘルプを要求します。 代わりに移動、 [リモート デスクトップ クライアントのフォーラム](https://docs.microsoft.com/answers/topics/windows-remote-desktop-client.html) し、新しいスレッドを開始します。 機能の候補があるか。 内の指定、 [クライアント ユーザーの声フォーラム](https://remotedesktop.uservoice.com/forums/272085-remote-desktop-for-android)します。

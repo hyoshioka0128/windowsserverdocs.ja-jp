@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 405d0b6e814212df858cadb615f3251fd2168632
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: db6e8c600276f62fd260c18d680dd2b5112d4bc3
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86965034"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182048"
 ---
 # <a name="ad-fs-technical-reference"></a>AD FS テクニカル リファレンス
 
@@ -26,7 +26,8 @@ ms.locfileid: "86965034"
 -   [ユーザー プライバシーと AD FS](../ad-fs/technical-reference/GDPR-and-AD-FS-Compliance.md)
 
 > [!TIP]
-> その他の AD FS 2.0 設計コンテンツについては、Microsoft TechNet Wiki の [AD FS 2.0 コンテンツに関するページ](https://social.technet.microsoft.com/wiki/contents/articles/2735.ad-fs-2-0-content-map.aspx)を参照してください。 このページは、AD FS 2.0 コミュニティのメンバーによって管理され、AD FS 製品チームによって定期的にモニターされています。
+> [ [AD FS 2.0 コンテンツマップ](https://support.microsoft.com/help/974408/availability-and-description-of-active-directory-federation-services-2)] ページでは、AD FS 2.0 の設計に関するその他のコンテンツを見つけることができます。
 
 ## <a name="see-also"></a>参照
+
 [Active Directory フェデレーション サービスの概要に関するページ](./ad-fs-overview.md)

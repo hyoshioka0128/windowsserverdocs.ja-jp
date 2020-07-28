@@ -9,12 +9,12 @@ ms.author: iainfou
 ms.topic: get-started-article
 ms.localizationpriority: high
 ms.date: 02/21/2020
-ms.openlocfilehash: 6c9d732b6ec3d8ceb65c691ab143f09dd8f10f23
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 19a65f2a254fe14f7cddfbda2a84e9d00f47da56
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "77552525"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181848"
 ---
 # <a name="how-to-use-windows-server-2008-and-2008-r2-extended-security-updates-esu"></a>Windows Server 2008 および 2008 R2 の拡張セキュリティ更新プログラム (ESU) を使用する方法
 
@@ -87,7 +87,7 @@ Azure 以外の VM で拡張セキュリティ更新プログラムを使用す�
 5. "登録してマルチ ライセンス認証キーを取得する" と示されたページが表示される場合は、拡張セキュリティ更新プログラムを使用する前に、プライベート プレビューへのアクセスを要求する必要があります。 このページが表示されない場合は、手順 6 に進んでください。
 
    アクセスを要求するには、 **[join the private preview]\(プライベート プレビューに参加\)** を選択します。 メール メッセージ ウィンドウが開きます。 このメールは、製品チームへのアクセス要求です。
-  
+
     要求に次の情報を含めます。
 
     * 顧客名
@@ -101,7 +101,7 @@ Azure 以外の VM で拡張セキュリティ更新プログラムを使用す�
 
     チームにより要求が承認されない場合は、次のエラーが表示されます。
 
-    [名前空間 'Microsoft.WindowsESU' でリソースの種類が見つかりませんでした。](https://social.msdn.microsoft.com/Forums/office/94b16a89-3149-43da-865d-abf7dba7b977/the-resource-type-could-not-be-found-in-the-namespace-microsoftwindowsesu-for-api-version)
+    [名前空間 'Microsoft.WindowsESU' でリソースの種類が見つかりませんでした。](https://docs.microsoft.com/windows-server/get-started/extended-security-updates)
 
 6. **[Azure の詳細]** で、Azure サブスクリプション、リソース グループ、およびキーの場所を選択します。
 

@@ -2,18 +2,17 @@
 title: Windows Server Essentials から Windows Server 2012 Standard への移行
 description: Windows Server Essentials の使用方法について説明します。
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 51bcf124-c215-4e9d-9fa8-a90fa2c2fa22
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 2477cac206af4e70d10e28d7b1da637b7b7accff
-ms.sourcegitcommit: 457e88e5aa6be13a2bffdb8e434a8efc3698678f
+ms.openlocfilehash: 4cc616c0e23c58ab1298526784574f6bc8f65f23
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/30/2020
-ms.locfileid: "85548816"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180388"
 ---
 # <a name="transition-from-windows-server-essentials-to-windows-server-2012-standard"></a>Windows Server Essentials から Windows Server 2012 Standard への移行
 
@@ -76,7 +75,7 @@ ms.locfileid: "85548816"
  サーバーを管理するために Windows Server Essentials ダッシュボードまたはその他の付加価値機能が不要になった場合は、機能を無効にしてサーバーから削除することができます。
 
  **Windows Server Essentials 機能の無効化ウィザード:**
- 
+
 - 機能をアンインストールするのに役立ちます。 また、Windows Server Essentials サーバーソフトウェアによって作成されたファイルのサーバーもクリーンアップします。  クリーンアップ操作の一部はすぐに実行されますが、サーバーの再起動後に開始される操作もあります。
 
 - では、ウィザードを完了する前に、すべてのアドインを手動でアンインストールする必要があります。 インストールされているアドインの一覧を表示するには、ダッシュボードの [アプリケーション] ページを開きます。 インストールされているアドインがウィザードによって検出されると、警告が表示され、アンインストールを求めるメッセージが表示されます。
@@ -103,7 +102,7 @@ ms.locfileid: "85548816"
 
    **%systemdrive%\Program Files\Windows Server\Bin\TurnOffFeaturesWizard.exe**
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 
 -   [Windows Server 2012 R2 Standard への移行](Transition-from-Windows-Server-2012-R2-Essentials-to-Windows-Server-2012-R2-Standard.md)

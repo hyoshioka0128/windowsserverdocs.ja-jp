@@ -9,22 +9,22 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 7a19230e0fc1fb96700785fd83e70d501d59b76a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: bd4aa60c977b09958aebc0087c981efd02f36fed
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80861695"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182298"
 ---
 # <a name="windows-authentication-technical-overview"></a>Windows 認証の技術概要
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016
+>適用先:Windows Server (半期チャネル)、Windows Server 2016
 
 IT 担当者向けのこのトピックでは、Windows 認証の技術概要に関するトピックへのリンクを提供します。 Windows 認証は、Windows へのアクセスを試みているユーザーまたはサービスの信頼性を証明するためのプロセスです。
 
 この一連のトピックでは、Windows 認証アーキテクチャとそのコンポーネントについて説明します。
 
-このライブラリからページをデジタル保存または印刷するには、 **[エクスポート]** (ページの右上隅にある) をクリックして、表示される指示に従います。
+このライブラリからページをデジタル保存または印刷するには、[**エクスポート**] (ページの右上隅にある) をクリックして、表示される指示に従います。
 
 -   [Windows オペレーティングシステム間での Windows 認証の相違点](https://technet.microsoft.com/library/dn169017.aspx)
 
@@ -54,14 +54,14 @@ IT 担当者向けのこのトピックでは、Windows 認証の技術概要に
 
     認証プロセスにおけるグループポリシーの使用および影響について説明します。
 
-## <a name="what-is-not-covered"></a>カバーされていないもの
+## <a name="what-is-not-covered"></a>本記事の対象外
 この一連のトピックでは、Windows 環境内で認証テクノロジを設計、実装、または監視する手順については説明しません。
 
 -   Windows の承認方法の設計については、「[リソースの承認方法の設計](https://technet.microsoft.com/library/cc783368.aspx)」を参照してください。
 
 -   Windows 認証方法の設計については、「[認証方法の設計](https://technet.microsoft.com/library/cc758124.aspx)」を参照してください。
 
--   Windows 公開キー基盤の実装戦略の設計情報については、「[公開キー基盤の設計](https://technet.microsoft.com/library/cc773138.aspx)」を参照してください。
+-   Windows 公開キー基盤の実装戦略の設計情報については、「[公開キー基盤の設計](/previous-versions/windows/it-pro/windows-server-2003/cc773138(v=ws.10))」を参照してください。
 
 -   Windows 環境での認証を含むセキュリティの構成と監視については、以下を参照してください。
 

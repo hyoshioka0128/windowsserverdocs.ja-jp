@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 41126aa0d054607449d57928c1777679e5087e73
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 406623a86c92fca842fa1056126bb88025cedecb
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71394460"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182078"
 ---
 # <a name="smb-direct"></a>SMB ダイレクト
 
@@ -124,5 +124,5 @@ SMB ダイレクトのフェールオーバー機能を確認する方法を次�
 ## <a name="more-information"></a>説明を見る
 
 - [サーバー メッセージ ブロックの概要](file-server-smb-overview.md)
-- [サーバー、記憶域、およびネットワークの可用性の向上: シナリオの概要](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831437(v%3dws.11)>)
-- [Hyper-V over SMB の展開](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134187(v%3dws.11)>)
+- [サーバー、記憶域、およびネットワークの可用性の向上: シナリオの概要](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831437(v%3dws.11)>)
+- [Hyper-V over SMB の展開](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134187(v%3dws.11)>)

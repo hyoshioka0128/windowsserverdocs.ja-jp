@@ -8,12 +8,12 @@ ms.date: 06/02/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: d7f1b5387d82d487e50b217b28367e82617a66ea
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: efe16dd9bdc971b97bc401cf10e14439c46069de
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966254"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181738"
 ---
 # <a name="storage-migration-service-frequently-asked-questions-faq"></a>記憶域移行サービスに関してよく寄せられる質問 (FAQ)
 
@@ -182,7 +182,7 @@ Storage Migration Service では、hidden c:\programdata\microsoft\storagemigrat
 サポートを受けるには:
 
  - [Windows Server Tech Community](https://techcommunity.microsoft.com/t5/Windows-Server/ct-p/Windows-Server)に質問を投稿する
- - [Windows Server 2019 Technet フォーラム](https://social.technet.microsoft.com/Forums/en-US/home?forum=ws2019&filter=alltypes&sort=lastpostdesc)の投稿
+ - [Windows Server 2019 フォーラム](https://docs.microsoft.com/answers/topics/windows-server-2019.html)での投稿
  - [Microsoft サポート](https://support.microsoft.com)を使用してサポートケースを開く
 
 ## <a name="additional-references"></a>その他のリファレンス

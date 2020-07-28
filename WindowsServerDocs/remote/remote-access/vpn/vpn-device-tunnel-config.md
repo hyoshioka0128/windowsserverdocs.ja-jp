@@ -9,18 +9,18 @@ ms.assetid: 158b7a62-2c52-448b-9467-c00d5018f65b
 ms.author: v-tea
 author: Teresa-MOTIV
 ms.localizationpriority: medium
-ms.openlocfilehash: 095e40528d27be4509e3235a0ab4c03e59759f99
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 636c0c56c52f501a54679a569213bcd4e4646b72
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966764"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181988"
 ---
 # <a name="configure-vpn-device-tunnels-in-windows-10"></a>Windows 10 で VPN デバイストンネルを構成する
 
 >適用対象: Windows 10 バージョン1709
 
-Always On VPN を使用すると、デバイスまたはコンピューター用の専用 VPN プロファイルを作成できます。 Always On VPN 接続には、次の 2 種類のトンネルが含まれます。 
+Always On VPN を使用すると、デバイスまたはコンピューター用の専用 VPN プロファイルを作成できます。 Always On VPN 接続には、次の 2 種類のトンネルが含まれます。
 
 - _デバイストンネル_は、ユーザーがデバイスにログオンする前に、指定された VPN サーバーに接続します。 デバイス トンネルは、ログイン前の接続シナリオとデバイス管理の目的で使用されます。
 
@@ -34,7 +34,7 @@ Always On VPN を使用すると、デバイスまたはコンピューター用
 
 
 ## <a name="device-tunnel-requirements-and-features"></a>デバイストンネルの要件と機能
-VPN 接続に対してコンピューター証明書認証を有効にし、受信 VPN 接続を認証するためのルート証明機関を定義する必要があります。 
+VPN 接続に対してコンピューター証明書認証を有効にし、受信 VPN 接続を認証するためのルート証明機関を定義する必要があります。
 
 ```PowerShell
 $VPNRootCertAuthority = "Common Name of trusted root certification authority"
@@ -46,7 +46,7 @@ Set-VpnAuthProtocol -UserAuthProtocolAccepted Certificate, EAP -RootCertificateN
 
 ## <a name="vpn-device-tunnel-configuration"></a>VPN デバイストンネルの構成
 
-次のサンプルプロファイル XML は、デバイストンネル経由でクライアントが開始したプルのみが必要なシナリオに適したガイダンスを提供します。  トラフィックフィルターは、デバイスのトンネルを管理トラフィックのみに制限するために利用されます。  この構成は、Windows Update、一般的なグループポリシー (GP) と Microsoft エンドポイント Configuration Manager の更新シナリオ、および、キャッシュされた資格情報を使用しない最初のログオンの VPN 接続、またはパスワードリセットのシナリオに適しています。 
+次のサンプルプロファイル XML は、デバイストンネル経由でクライアントが開始したプルのみが必要なシナリオに適したガイダンスを提供します。  トラフィックフィルターは、デバイスのトンネルを管理トラフィックのみに制限するために利用されます。  この構成は、Windows Update、一般的なグループポリシー (GP) と Microsoft エンドポイント Configuration Manager の更新シナリオ、および、キャッシュされた資格情報を使用しない最初のログオンの VPN 接続、またはパスワードリセットのシナリオに適しています。
 
 Windows リモート管理 (WinRM)、リモート GPUpdate、リモート Configuration Manager の更新シナリオなど、サーバーによって開始されるプッシュケースの場合は、トラフィックフィルターを使用できないように、デバイストンネルで受信トラフィックを許可する必要があります。  デバイストンネルプロファイルでトラフィックフィルターをオンにすると、デバイストンネルは受信トラフィックを拒否します。  この制限は、今後のリリースでは削除される予定です。
 
@@ -56,40 +56,40 @@ Windows リモート管理 (WinRM)、リモート GPUpdate、リモート Config
 VPN profileXML の例を次に示します。
 
 ``` xml
-<VPNProfile>  
-  <NativeProfile>  
-<Servers>vpn.contoso.com</Servers>  
-<NativeProtocolType>IKEv2</NativeProtocolType>  
-<Authentication>  
-  <MachineMethod>Certificate</MachineMethod>  
-</Authentication>  
-<RoutingPolicyType>SplitTunnel</RoutingPolicyType>  
+<VPNProfile>
+  <NativeProfile>
+<Servers>vpn.contoso.com</Servers>
+<NativeProtocolType>IKEv2</NativeProtocolType>
+<Authentication>
+  <MachineMethod>Certificate</MachineMethod>
+</Authentication>
+<RoutingPolicyType>SplitTunnel</RoutingPolicyType>
  <!-- disable the addition of a class based route for the assigned IP address on the VPN interface -->
-<DisableClassBasedDefaultRoute>true</DisableClassBasedDefaultRoute>  
-  </NativeProfile> 
-  <!-- use host routes(/32) to prevent routing conflicts -->  
-  <Route>  
-<Address>10.10.0.2</Address>  
-<PrefixSize>32</PrefixSize>  
-  </Route>  
-  <Route>  
-<Address>10.10.0.3</Address>  
-<PrefixSize>32</PrefixSize>  
-  </Route>  
-<!-- traffic filters for the routes specified above so that only this traffic can go over the device tunnel --> 
-  <TrafficFilter>  
-<RemoteAddressRanges>10.10.0.2, 10.10.0.3</RemoteAddressRanges>  
+<DisableClassBasedDefaultRoute>true</DisableClassBasedDefaultRoute>
+  </NativeProfile>
+  <!-- use host routes(/32) to prevent routing conflicts -->
+  <Route>
+<Address>10.10.0.2</Address>
+<PrefixSize>32</PrefixSize>
+  </Route>
+  <Route>
+<Address>10.10.0.3</Address>
+<PrefixSize>32</PrefixSize>
+  </Route>
+<!-- traffic filters for the routes specified above so that only this traffic can go over the device tunnel -->
+  <TrafficFilter>
+<RemoteAddressRanges>10.10.0.2, 10.10.0.3</RemoteAddressRanges>
   </TrafficFilter>
-<!-- need to specify always on = true --> 
-  <AlwaysOn>true</AlwaysOn> 
-<!-- new node to specify that this is a device tunnel -->  
+<!-- need to specify always on = true -->
+  <AlwaysOn>true</AlwaysOn>
+<!-- new node to specify that this is a device tunnel -->
  <DeviceTunnel>true</DeviceTunnel>
 <!--new node to register client IP address in DNS to enable manage out -->
 <RegisterDNS>true</RegisterDNS>
 </VPNProfile>
 ```
 
-特定の展開シナリオのニーズに応じて、デバイストンネルを使用して構成できる別の VPN 機能は、信頼された[ネットワーク検出](https://social.technet.microsoft.com/wiki/contents/articles/38546.new-features-for-vpn-in-windows-10-and-windows-server-2016.aspx#Trusted_Network_Detection)です。
+特定の展開シナリオのニーズに応じて、デバイストンネルを使用して構成できる別の VPN 機能は、信頼された[ネットワーク検出](https://docs.microsoft.com/answers/topics/windows-server-infrastructure.html)です。
 
 ```
  <!-- inside/outside detection -->

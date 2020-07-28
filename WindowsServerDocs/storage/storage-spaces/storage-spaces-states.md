@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: storage-spaces
 manager: brianlic
-ms.openlocfilehash: 95ccfec436ba4143ea7ec70120878a29289d14f7
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: d7bbef54d0ec554c6a3cf184dcb0414f7456547c
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966794"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182158"
 ---
 # <a name="troubleshoot-storage-spaces-and-storage-spaces-direct-health-and-operational-states"></a>記憶域スペースのトラブルシューティングと、正常性と動作状態の記憶域スペースダイレクト
 
@@ -73,7 +73,7 @@ S2D on StorageSpacesDirect1 Read-only         Unknown      False        True
 ||ポリシー|管理者が記憶域プールを読み取り専用に設定している。<br><br>**アクション:** クラスター化された記憶域プールをフェールオーバークラスターマネージャーの読み取り/書き込みアクセスに設定するには、[**プール**] に移動し、プールを右クリックして、[**オンライン**にする] を選択します。<br><br>その他のサーバーと Pc については、管理アクセス許可を使用して PowerShell セッションを開き、次のように入力します。<br><br><code>Get-StoragePool <PoolName> \| Set-StoragePool -IsReadOnly $false</code><br><br> |
 ||開始中|記憶域スペースは、プール内でのドライブの接続を開始または待機しています。 これは一時的な状態である必要があります。 完全に開始されると、プールは別の動作状態に移行する必要があります。<br><br>**アクション:** プールが*開始*状態のままである場合は、プール内のすべてのドライブが正常に接続されていることを確認します。|
 
-「[読み取り専用構成を持つ記憶域プールの変更](https://social.technet.microsoft.com/wiki/contents/articles/14861.modifying-a-storage-pool-that-has-a-read-only-configuration.aspx)」も参照してください。
+「 [Windows Server ストレージフォーラム](https://docs.microsoft.com/answers/topics/windows-server-storage.html)」も参照してください。
 
 ## <a name="virtual-disk-states"></a>仮想ディスクの状態
 

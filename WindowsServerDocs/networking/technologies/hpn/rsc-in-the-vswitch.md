@@ -1,6 +1,6 @@
 ---
 title: vSwitch の Receive Segment Coalescing (RSC)
-description: VSwitch 内の受信セグメント合体 (RSC) は、Windows Server 2019 および Windows 10 10 月2018更新プログラムの機能です。これにより、ホストの CPU 使用率を削減し、複数の TCP セグメントを少数に結合して、仮想ワークロードのスループットを向上させることができます。楕円. 処理を減らす、大きなセグメント (結合) は、多数の小さなセグメントを処理するよりも効率的です。
+description: VSwitch 内の受信セグメント合体 (RSC) は、Windows Server 2019 および Windows 10 10 月2018更新プログラムの機能です。これにより、複数の TCP セグメントを少数のセグメントに結合することによって、仮想ワークロードのスループットを向上させることができます。 処理を減らす、大きなセグメント (結合) は、多数の小さなセグメントを処理するよりも効率的です。
 manager: dougkim
 ms.prod: windows-server
 ms.technology: networking
@@ -8,29 +8,29 @@ ms.topic: article
 ms.author: dacuo
 author: dcuomo
 ms.date: 09/07/2018
-ms.openlocfilehash: 0ffb417728bbdb73d8fb462ff7783b17b511bcd3
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: e7db6656bd9331e5cc6c2deaee143b3602ef1239
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80814775"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181818"
 ---
 # <a name="rsc-in-the-vswitch"></a>VSwitch 内の RSC
->適用対象: Windows Server 2019
+>適用対象:Windows Server 2019
 
-VSwitch 内の受信セグメント合体 (RSC) は、Windows Server 2019 および Windows 10 10 月2018更新プログラムの機能です。これにより、ホストの CPU 使用率を削減し、複数の TCP セグメントを少数に結合して、仮想ワークロードのスループットを向上させることができます。楕円. 処理を減らす、大きなセグメント (結合) は、多数の小さなセグメントを処理するよりも効率的です。
+VSwitch 内の受信セグメント合体 (RSC) は、Windows Server 2019 および Windows 10 10 月2018更新プログラムの機能です。これにより、複数の TCP セグメントを少数のセグメントに結合することによって、仮想ワークロードのスループットを向上させることができます。 処理を減らす、大きなセグメント (結合) は、多数の小さなセグメントを処理するよりも効率的です。
 
-Windows Server 2012 以降には、受信セグメントの結合とも呼ばれる、ハードウェアのみのオフロードバージョン (物理ネットワークアダプターに実装) が含まれていました。 このオフロードバージョンの RSC は、今後のバージョンの Windows でも使用できます。 ただし、仮想ワークロードと互換性がなく、物理ネットワークアダプターが vSwitch に接続されると無効になりました。 RSC のハードウェア専用バージョンの詳細については、「 [Receive Segment 合体 (rsc)](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh997024(v=ws.11))」を参照してください。
+Windows Server 2012 以降には、受信セグメントの結合とも呼ばれる、ハードウェアのみのオフロードバージョン (物理ネットワークアダプターに実装) が含まれていました。 このオフロードバージョンの RSC は、今後のバージョンの Windows でも使用できます。 ただし、仮想ワークロードと互換性がなく、物理ネットワークアダプターが vSwitch に接続されると無効になりました。 RSC のハードウェア専用バージョンの詳細については、「 [Receive Segment 合体 (rsc)](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh997024(v=ws.11))」を参照してください。
 
 ## <a name="scenarios-that-benefit-from-rsc-in-the-vswitch"></a>VSwitch で RSC を利用するシナリオ
 
 データパスが仮想スイッチを通過するワークロードでは、この機能を活用できます。
 
-例 :
+次に例を示します。
 
 -   以下を含む仮想 Nic をホストします。
 
-    -   ソフトウェア定義ネットワーク
+    -   ソフトウェアによるネットワーク
 
     -   Hyper-V ホスト
 
@@ -40,7 +40,7 @@ Windows Server 2012 以降には、受信セグメントの結合とも呼ばれ
 
 -   ソフトウェア定義ネットワーク GRE ゲートウェイ
 
--   Container
+-   コンテナー
 
 この機能と互換性のないワークロードは次のとおりです。
 

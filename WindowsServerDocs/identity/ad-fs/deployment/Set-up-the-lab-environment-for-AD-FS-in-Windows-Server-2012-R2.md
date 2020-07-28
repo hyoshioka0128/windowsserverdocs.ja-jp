@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 09adec98f4db1e5354d00cf6ebfd9e9ef17f8575
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: b9ba6ca7900f33880fda6d77398ffa819cf1038c
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86963664"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87177798"
 ---
 # <a name="set-up-the-lab-environment-for-ad-fs-in-windows-server-2012-r2"></a>Windows Server 2012 R2 の AD FS 用のラボ環境をセットアップする
 
@@ -87,7 +87,7 @@ ADFS1 サーバーのサーバー SSL (Secure Socket Layer) 証明書を、ロ�
 
 -   サブジェクト代替名 (DNS): enterpriseregistration.contoso.com
 
-SSL 証明書のセットアップに関する詳細については、「 [エンタープライズ CA を使用してドメイン内の Web サイトで SSL/TLS を構成する](https://social.technet.microsoft.com/wiki/contents/articles/12485.configure-ssltls-on-a-web-site-in-the-domain-with-an-enterprise-ca.aspx)」を参照してください。
+SSL 証明書のセットアップに関する詳細については、「 [エンタープライズ CA を使用してドメイン内の Web サイトで SSL/TLS を構成する](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831822(v=ws.11))」を参照してください。
 
 「[Active Directory フェデレーション サービスの使い方ビデオ シリーズ: 証明書の更新](https://channel9.msdn.com/Search?term=Active%20Directory%20Federation%20Services#pubDate=year&ch9Search)」。
 
@@ -173,7 +173,7 @@ SSL 証明書のセットアップに関する詳細については、「 [エ�
 ### <a name="add-host-a-and-alias-cname-resource-records-to-dns"></a>ホスト (A) およびエイリアス (CNAME) リソース レコードの DNS への追加
 DC1 では、デバイス登録サービス用に次のドメイン ネーム システム (DNS) レコードを作成する必要があります。
 
-|入力|種類|Address|
+|入力|Type|Address|
 |---------|--------|-----------|
 |adfs1|ホスト (A)|AD FS サーバーの IP アドレス|
 |enterpriseregistration|エイリアス (CNAME)|adfs1.contoso.com|
@@ -256,7 +256,7 @@ Windows Server 2012 R2 オペレーティングシステムをインストール
 
 2.  C:\Program Files (x86)\Windows Identity Foundation SDK\v3.5\Samples\Quick Start\Web Application\PassiveRedirectBasedClaimsAwareWebApp の内容を C:\Inetpub\Claimapp にコピーします。
 
-3.  **Default.aspx.cs** ファイルを編集して、要求のフィルタリングを無効にします。 この手順を実行することで、フェデレーション サーバーが発行するすべての要求がサンプル アプリケーションに表示されます。 次の手順を実行します。
+3.  **Default.aspx.cs** ファイルを編集して、要求のフィルタリングを無効にします。 この手順を実行することで、フェデレーション サーバーが発行するすべての要求がサンプル アプリケーションに表示されます。 次の手順で行います。
 
     1.  **Default.aspx.cs** をテキスト エディターで開きます。
 

@@ -2,18 +2,17 @@
 title: Windows Server Essentials におけるリモート Web アクセス接続のトラブルシューティング
 description: Windows Server Essentials の使用方法について説明します。
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: d3642575-b3ee-4488-b654-5bf9d3b8c935
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 02563f56cad211d5aa842d7607fa9f6005f18026
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: ebb256876114c9c3260311fa09eb30f3067905b8
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470167"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180318"
 ---
 # <a name="troubleshoot-remote-web-access-connectivity-in-windows-server-essentials"></a>Windows Server Essentials におけるリモート Web アクセス接続のトラブルシューティング
 
@@ -67,8 +66,8 @@ ms.locfileid: "85470167"
 
   |IP アドレス|プロトコル (TCP/UDP)|スケジュール|受信フィルター|
   |----------------|---------------------------|--------------|--------------------|
-  |192.168.0.100|TCP 80|Always|すべて許可する|
-  |192.168.0.100|TCP 443|Always|すべて許可する|
+  |192.168.0.100|TCP 80|Always (常に)|すべて許可|
+  |192.168.0.100|TCP 443|Always (常に)|すべて許可|
 
    ルーターを手動で構成した後、[リモート Web アクセスを有効にする] ウィザードを実行して、 **[はじめに] ページで**[**ルーターのセットアップをスキップ**する] オプションが選択されていることを確認します。
 

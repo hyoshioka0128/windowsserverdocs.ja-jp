@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 01/10/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e9aecc439235d9396d764420711109552d89f32
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 055538bc52e11b7fb24f15db51af52e5cf8376d1
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86965164"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182088"
 ---
 # <a name="overview-of-file-sharing-using-the-smb-3-protocol-in-windows-server"></a>Windows Server の SMB 3 プロトコルを使用したファイル共有の概要
 
@@ -47,7 +47,7 @@ ms.locfileid: "86965164"
 
 | 機能  | 新規/更新  | 要約  |
 | --------- | --------- | --------- |
-| ファイル共有へのゲスト アクセスが無効になりました | 新規 | SMB クライアントでは、次の操作が許可されなくなりました。リモート サーバーに対するゲスト アカウントでのアクセス。無効な資格情報が指定されると、ゲスト アカウントにフォールバックします。 詳細については、「[Windows の既定で無効になっている SMB2 のゲスト アクセス](https://support.microsoft.com/help/4046019/guest-access-in-smb2-disabled-by-default-in-windows-10-and-windows-ser)」を参照してください。 | 
+| ファイル共有へのゲスト アクセスが無効になりました | 新規 | SMB クライアントでは、次の操作が許可されなくなりました。リモート サーバーに対するゲスト アカウントでのアクセス。無効な資格情報が指定されると、ゲスト アカウントにフォールバックします。 詳細については、「[Windows の既定で無効になっている SMB2 のゲスト アクセス](https://support.microsoft.com/help/4046019/guest-access-in-smb2-disabled-by-default-in-windows-10-and-windows-ser)」を参照してください。 |
 | SMB グローバル マッピング | 新規 | リモート SMB 共有を、(コンテナーを含む) ローカル ホスト上のすべてのユーザーがアクセスできるドライブ文字にマップします。 これは、データ ボリューム上のコンテナーの I/O がリモートのマウント ポイントを走査できるようにするために必要です。 コンテナー用に SMB グローバル マッピングを使用している場合、コンテナー ホストのユーザーはすべて、リモート共有にアクセスできることに注意してください。 コンテナー ホストで実行されているすべてのアプリケーションにも、マッピングされたリモート共有へのアクセス権があります。 詳細については、[クラスター共有ボリューム (CSV)、記憶域スペース ダイレクト、SMB グローバル マッピングによるコンテナーストレージのサポートに関するブログの記事](https://techcommunity.microsoft.com/t5/failover-clustering/container-storage-support-with-cluster-shared-volumes-csv/ba-p/372140)を参照してください。 |
 | SMB 言語制御 | 新規 | レジストリ値を設定して、使用される最小 SMB バージョン (言語) と最大 SMB バージョンを制御できるようになりました。 詳細については、「[SMB 言語の制御](https://techcommunity.microsoft.com/t5/storage-at-microsoft/controlling-smb-dialects/ba-p/860024)」を参照してください。 |
 
@@ -74,7 +74,7 @@ ms.locfileid: "86965164"
 | SMB ダイレクト     |   更新済み      | 小規模な I/O (仮想マシンのオンライン トランザクション処理 (OLTP) データベースなど) でのワークロードをホストするときの効率を高めることによって、小規模な I/O ワークロードのパフォーマンスを向上させます。 このようなパフォーマンスの向上は、より高速なネットワーク インターフェイス (40 Gbps イーサネットや 56 Gbps InfiniBand など) を使用したときに明確になります。  |
 | SMB 帯域幅の制限 | 新規 | [Set-SmbBandwidthLimit](/powershell/module/smbshare/set-smbbandwidthlimit) を使用して、3 つのカテゴリの帯域幅制限を設定できるようになりました。VirtualMachine (SMB 経由の Hyper-V トラフィック)、LiveMigration (SMB 経由の Hyper-V Live Migration トラフィック)、または既定値 (他のすべての種類の SMB トラフィック) です。
 
-Windows Server 2012 R2 での SMB の新機能と変更された機能の詳細については、「[Windows Server での SMB の新機能](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831474(v%3dws.11)>)」を参照してください。
+Windows Server 2012 R2 での SMB の新機能と変更された機能の詳細については、「[Windows Server での SMB の新機能](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831474(v%3dws.11)>)」を参照してください。
 
 ## <a name="features-added-in-smb-30-with-windows-server-2012-and-windows-8"></a>Windows Server 2012 と Windows 8 で SMB 3.0 に追加された機能
 
@@ -122,7 +122,7 @@ Windows Server 2012 R2、Windows Server 2012、および Windows Server 2016 の
 * [Windows Server の記憶域](../storage.yml)
 * [アプリケーション データ用のスケールアウト ファイル サーバー](../../failover-clustering/sofs-overview.md)
 * [SMB ダイレクトを使用してファイル サーバーのパフォーマンスを向上させる](smb-direct.md)
-* [Hyper-V over SMB の展開](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134187(v%3dws.11)>)
-* [SMB マルチチャネルの展開](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn610980(v%3dws.11)>)
-* [サーバー アプリケーション用に高速で効率性に優れたファイル サーバーを展開する](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831723(v%3dws.11)>)
-* [SMB:トラブルシューティング ガイド](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn659439(v%3dws.11)>)
+* [Hyper-V over SMB の展開](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134187(v%3dws.11)>)
+* [SMB マルチチャネルの展開](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn610980(v%3dws.11)>)
+* [サーバー アプリケーション用に高速で効率性に優れたファイル サーバーを展開する](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831723(v%3dws.11)>)
+* [SMB:トラブルシューティング ガイド](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn659439(v%3dws.11)>)
