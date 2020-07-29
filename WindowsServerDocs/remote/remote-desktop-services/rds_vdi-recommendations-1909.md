@@ -9,12 +9,12 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.date: 02/19/2020
-ms.openlocfilehash: 4598c0f60fac98cd14a6f7d920b9c6f31704bd06
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 7568db50f09273b398955c314491b903f627d1a9
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86963374"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182098"
 ---
 # <a name="optimizing-windows-10-version-1909-for-a-virtual-desktop-infrastructure-vdi-role"></a>仮想デスクトップ インフラストラクチャ (VDI) ロール用の Windows 10 バージョン 1909 の最適化
 
@@ -39,7 +39,7 @@ VDI には、リモート デスクトップ セッション (RDS) や最近リ�
 
 更新に関しては、Windows 10 は毎月の更新アルゴリズムを利用するため、クライアントが更新を試みる必要はありません。 ほとんどの場合、VDI 管理者は、"マスター" または "ゴールド" のイメージに基づいて VM をシャットダウンするプロセスを通じて更新プロセスを制御し、読み取り専用のイメージの保護を解除し、イメージに修正プログラムを適用した後、再シールして実稼働に戻します。 そのため、VDI VM で Windows Update をチェックする必要はありません。 永続的 VDI VM など、場合によっては、通常の修正プログラムの適用手順が実行されます。 Windows Update または Microsoft Intune を使用することもできます。 System Center Configuration Manager を使用して、更新プログラムおよびその他のパッケージ配信を処理できます。 VDI を更新するための最適な方法は、各組織が決定することになります。
 
-> [!TIP]  
+> [!TIP]
 > このトピックで説明する最適化を実装するスクリプトは、**LGPO.exe** でインポートできる GPO エクスポート ファイルと同様に、GitHub 上の [TheVDIGuys](https://github.com/TheVDIGuys) で利用できます。
 
 このスクリプトは、ご使用の環境と要件に合わせて設計されています。 メイン コードは PowerShell です。この作業は、入力ファイル (プレーン テキスト) とローカル グループ ポリシー オブジェクト (LGPO) ツールのエクスポート ファイルを使用して行われます。 これらのファイルには、削除するアプリと無効にするサービスの一覧が含まれています。 特定のアプリの削除や特定のサービスの無効化を行いたくない場合は、対応するテキスト ファイルを編集してその項目を削除します。 最後に、お使いのデバイスにインポートできるローカル ポリシー設定があります。 設定の一部は次回の再起動時またはコンポーネントが最初に使用されたときに有効になるため、グループ ポリシーを使用して設定を適用するよりも、基本イメージ内でいくつかの設定を使用することをお勧めします。
@@ -166,9 +166,9 @@ PowerShell からのこの切り詰められた出力例に示すように、次
     Get-AppxProvisionedPackage -Online
 
     DisplayName  : Microsoft.3DBuilder
-    Version      : 13.0.10349.0  
+    Version      : 13.0.10349.0
     Architecture : neutral
-    ResourceId   : \~ 
+    ResourceId   : \~
     PackageName  : Microsoft.3DBuilder_13.0.10349.0_neutral_\~_8wekyb3d8bbwe
     Regions      :
     ...
@@ -195,7 +195,7 @@ Remove-AppxProvisionedPackage -Online -PackageName
 
 ### <a name="manage-windows-optional-features-using-powershell"></a>PowerShell を使用して Windows のオプション機能を管理する
 
-PowerShell を使用して Windows のオプション機能を管理できます。 詳しくは、「[Windows 10:PowerShell を使用したオプションの機能の管理](https://social.technet.microsoft.com/wiki/contents/articles/39386.windows-10-managing-optional-features-with-powershell.aspx)」を参照してください。 現在インストールされている Windows の機能を列挙するには、次の PowerShell コマンドを実行します。
+PowerShell を使用して Windows のオプション機能を管理できます。 詳細については、[Windows Server の PowerShell のフォーラム](https://docs.microsoft.com/answers/topics/windows-server-powershell.html)をご覧ください。 現在インストールされている Windows の機能を列挙するには、次の PowerShell コマンドを実行します。
 
 ```powershell
 Get-WindowsOptionalFeature -Online
@@ -764,7 +764,7 @@ Windows Restricted Traffic Limited Functionality Baseline ガイダンスから�
 1. すべての更新プログラムを適用した後に、(管理者特権での) ディスク クリーンアップ ウィザードを実行します。 "配信の最適化" と "Windows 更新プログラムのクリーンアップ" のカテゴリを含めます。 このプロセスは、コマンド ライン `Cleanmgr.exe` を `/SAGESET:11` オプションとともに使用して自動化できます。 `/SAGESET` オプションは、ディスク クリーンアップ ウィザードで使用可能なすべてのオプションを使用する、ディスク クリーンアップを自動化するために後から使用できるレジストリ値を設定します。
 
     1. テスト VM で、クリーン インストールから、`Cleanmgr.exe /SAGESET:11` を実行すると、既定で有効になった自動ディスク クリーンアップ オプションが 2 つだけがあることがわかります。
-    
+
         - ダウンロードされたプログラム ファイル
 
         - インターネット一時ファイル
@@ -776,7 +776,7 @@ Windows Restricted Traffic Limited Functionality Baseline ガイダンスから�
 2. ボリューム シャドウ コピーの記憶域が使用されている場合は、それをクリーンアップします。
 
     - 管理者特権でのコマンド プロンプトを開き、`vssadmin list shadows` コマンドを実行してから、`vssadmin list shadowstorage` コマンドを実行します。
-    
+
         これらのコマンドからの出力が「**クエリを満たす項目が何もありませんでした**」である場合、使用中の VSS 記憶域はありません。
 
 3. 一時ファイルおよびログをクリーンアップします。 管理者特権でのコマンド プロンプトで、`Del C:\*.tmp /s` コマンド、`Del C:\Windows\Temp\.` コマンド、および `Del %temp%\.` コマンドを実行します。
@@ -790,7 +790,7 @@ OneDrive の削除では、パッケージの削除、アンインストール�
 ```azurecli
 
 Taskkill.exe /F /IM "OneDrive.exe"
-Taskkill.exe /F /IM "Explorer.exe"` 
+Taskkill.exe /F /IM "Explorer.exe"`
     if (Test-Path "C:\\Windows\\System32\\OneDriveSetup.exe")`
      { Start-Process "C:\\Windows\\System32\\OneDriveSetup.exe"`
          -ArgumentList "/uninstall"`

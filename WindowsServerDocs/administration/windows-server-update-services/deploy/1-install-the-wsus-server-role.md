@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 664e0233d10cbbc526635f1868ea1977c59fea63
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: a923b2da4583c32010e7e3104315957f3f05acaf
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80828905"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87178568"
 ---
 # <a name="step-1-install-the-wsus-server-role"></a>手順 1:WSUS サーバー ロールをインストールする
 
@@ -23,7 +23,7 @@ ms.locfileid: "80828905"
 WSUS サーバーの展開では、次に、WSUS サーバーの役割をインストールします。 次の手順では、サーバー マネージャーを使用して WSUS サーバーの役割をインストールする方法について説明します。
 
 > [!IMPORTANT]
-> このインストール手順では、Windows Internal Database (WID) を使用して WSUS をインストールする方法のみを説明します。 Microsoft SQL Server を使用して WSUS をインストールする方法については、 [こちらの記事](https://social.technet.microsoft.com/wiki/contents/articles/10020.installing-wsus-server-role-on-windows-server-2012-with-microsoft-sql-database.aspx)をご覧ください。
+> このインストール手順では、Windows Internal Database (WID) を使用して WSUS をインストールする方法のみを説明します。 Microsoft SQL Server を使用して WSUS をインストールする手順については、[WSUS のフォーラム](https://docs.microsoft.com/answers/topics/windows-server-update-services.html)をご覧ください。
 
 ### <a name="to-install-the-wsus-server-role"></a>WSUS サーバーの役割をインストールするには
 
