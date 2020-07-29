@@ -9,12 +9,12 @@ ms.date: 03/06/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: a2f4c9ac05e72083fab3e3a926dbdd2876214a7b
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 8f1af40f54536ca380db7fe810506c937bb2d478
+ms.sourcegitcommit: f305bc5f1c5a44dac62f4288450af19f351f9576
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "77517537"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87118610"
 ---
 # <a name="ad-fs-requirements"></a>AD FS の要件
 
@@ -53,7 +53,7 @@ AD FS をデプロイするための要件を次に示します。
 - 証明書にサーバー認証の拡張キー使用法 (EKU) の値が含まれています
 - サブジェクトまたはサブジェクトの別名 (SAN) に "fs.contoso.com" などのフェデレーション サービス名が証明書に含まれています
 - ポート 443 でのユーザー証明書認証の場合、証明書に SAN の "certauth.fs.contoso.com" などの "certauth.\<federation service name\>" が含まれています
-- デバイスの登録、または Windows 10 より前のクライアントを使用したオンプレミス リソースへの先進認証の場合、SAN には、組織で使用されている各 UPN サフィックスの "enterpriseregistration.\<upn suffix\>" が含まれている必要があります。
+- デバイスの登録または Windows 10 より前のクライアントを使用しているオンプレミス リソースへの先進認証の場合、SAN には、組織で使用されている各 UPN サフィックスの "enterpriseregistration.\<upn suffix\>" が 含まれている必要があります。
 
 Web アプリケーション プロキシの SSL 証明書は、次の要件を満たしている必要があります
 - プロキシを使用して Windows 統合認証を使用する AD FS 要求をプロキシする場合、プロキシ SSL 証明書はフェデレーション サーバーの SSL 証明書と同じである (同じキーを使用している) 必要があります
@@ -92,7 +92,7 @@ Web アプリケーション プロキシの SSL 証明書は、次の要件を�
 
 ## <a name="hardware-requirements"></a><a name="BKMK_2"></a>ハードウェア要件  
 AD FS および Web アプリケーション プロキシのハードウェア要件 (物理または仮想) は CPU に左右されいるため、処理能力に合わせてファームのサイズを調整する必要があります。  
-- [AD FS 2016 容量計画スプレッドシート](http://adfsdocs.blob.core.windows.net/adfs/ADFSCapacity2016.xlsx)を使用して、必要な AD FS および Web アプリケーション プロキシ サーバーの数を決定します。
+- [AD FS 2016 容量計画スプレッドシート](https://adfsdocs.blob.core.windows.net/adfs/ADFSCapacity2016.xlsx)を使用して、必要な AD FS および Web アプリケーション プロキシ サーバーの数を決定します。
 
 AD FS のメモリとディスクの要件はほとんど静的です。次の表を参照してください。
 
@@ -110,7 +110,7 @@ AD FS 構成データベースに SQL Server を使用している場合は、SQ
   
 -   エクストラネット アクセスの場合は、リモート アクセス サーバー ロールの一部である Web アプリケーション プロキシ ロール サービスをデプロイする必要があります。 
 
--   サード パーティのプロキシでは、AD FS プロキシとしてサポートされる [MS-ADFSPIP プロトコル](https://msdn.microsoft.com/library/dn392811.aspx)がサポートされている必要があります。  サード パーティ ベンダーの一覧については、[FAQ](AD-FS-FAQ.md) に関する記事を参照してください。
+-   サード パーティのプロキシでは、AD FS プロキシとしてサポートされる [MS-ADFSPIP プロトコル](/openspecs/windows_protocols/ms-adfspip/76deccb1-1429-4c80-8349-d38e61da5cbb)がサポートされている必要があります。  サード パーティ ベンダーの一覧については、[FAQ](AD-FS-FAQ.md) に関する記事を参照してください。
 
 -   AD FS 2016 には、Windows Server 2016 上の Web アプリケーション プロキシ サーバーが必要です。  2016 ファームの動作レベルで実行されている AD FS 2016 ファームには、ダウンレベル プロキシを構成できません。
   
@@ -208,7 +208,7 @@ Web アプリケーション プロキシとフェデレーション サーバ�
   
 さらに、クライアント ユーザー証明書認証 \(X509 ユーザー証明書を使用した clientTLS 認証\) が必要で、ポート 443 の certauth エンドポイントが有効ではない場合、AD FS 2016 ではクライアントと Web アプリケーション プロキシ間のファイアウォールで、受信方向の TCP ポート 49443 を有効にする必要があります。 これは、Web アプリケーション プロキシとフェデレーション サーバー間のファイアウォールでは必要ありません。 
 
-ハイブリッド ポートの要件の詳細については、[ハイブリッド ID のポートとプロトコル](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-ports)に関する記事を参照してください。 
+ハイブリッド ポートの要件の詳細については、[ハイブリッド ID のポートとプロトコル](/azure/active-directory/connect/active-directory-aadconnect-ports)に関する記事を参照してください。 
 
 詳細については、「[Active Directory フェデレーション サービス (AD FS) をセキュリティで保護するためのベストプラクティス](../deployment/Best-Practices-Securing-AD-FS.md)」を参照してください。
   
@@ -222,9 +222,9 @@ Web アプリケーション プロキシとフェデレーション サーバ�
   
 -   Windows 統合認証では、フェデレーション サービス名に \(CNAME ではなく\) DNS A レコードを使用する必要があります。  
 
--   ポート 443 でのユーザー証明書認証の場合、フェデレーション サーバーまたは Web アプリケーション プロキシに解決するするように "certauth.\<federation service name\>" を DNS で構成する必要があります。
+-   ポート 443 でのユーザー証明書認証の場合、"certauth.\<federation service name\>" を DNS に構成して、フェデレーション サーバーまたは Web アプリケーション プロキシに解決されるようにする必要があります。
 
--   Windows 10 より前のクライアントを使用したデバイス登録またはオンプレミス リソースへの先進認証の場合、フェデレーション サーバーまたは Web アプリケーション プロキシに解決するように、組織で使用されている各 UPN サフィックスの "enterpriseregistration.\<upn suffix\>" を構成する必要があります。
+-   デバイス登録または Windows 10 より前のクライアントを使用しているオンプレミス リソースへの先進認証の場合、組織で使用されている各 UPN サフィックスの "enterpriseregistration.\<upn suffix\>" を構成して、フェデレーション サーバーまたは Web アプリケーション プロキシに解決されるようにする必要があります。
 
 **ロード バランサーの要件**
 - ロード バランサーでは SSL を終了できません。 AD FS では、SSL を終了するときに中断する証明書認証を使用する複数のユース ケースがサポートされます。 ロード バランサーでの SSL の終了は、どのユース ケースでもサポートされていません。 
@@ -241,4 +241,3 @@ Web アプリケーション プロキシとフェデレーション サーバ�
 AD FS のインストールと初期構成を実行する管理者には、AD FS サーバーに対するローカル管理者のアクセス許可が必要です。  ローカル管理者が Active Directory にオブジェクトを作成するアクセス許可を持っていない場合、まずドメイン管理者が必要な AD オブジェクトを作成し、次に AdminConfiguration パラメーターを使用して AD FS ファームを構成する必要があります。  
   
   
-

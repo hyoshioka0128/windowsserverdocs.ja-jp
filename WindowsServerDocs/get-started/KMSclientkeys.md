@@ -9,12 +9,12 @@ ms.author: jgerend
 ms.localizationpriority: medium
 ms.date: 11/12/2019
 ms.topic: get-started-article
-ms.openlocfilehash: 1bbb8f06ab66ced50024f4ff17b73229d50ec5c6
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 1eeaa76af345d3f05effe2afe35c40d594adfc3a
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80391710"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959624"
 ---
 # <a name="kms-client-setup-keys"></a>KMS クライアント セットアップ キー
 
@@ -25,9 +25,9 @@ Windows Server、Windows 10、Windows 8.1、Windows Server 2012 R2、Windows 8�
 > [!NOTE]
 > 以下の表で使用されている "LTSC" は "長期サービス チャネル" を、"LTSB" は "長期サービス ブランチ" を意味しています。 
 
-**ここに記載されているキー (GVLK) を使用するには、お使いのデプロイ内で KMS ホストを先に実行しておく必要があります。** まだ KMS ホストを構成していない場合は、「[KMS ライセンス認証の展開](https://technet.microsoft.com/library/dn502531(v=ws.11).aspx)」でホストの設定手順を参照してください。
+**ここに記載されているキー (GVLK) を使用するには、お使いのデプロイ内で KMS ホストを先に実行しておく必要があります。** まだ KMS ホストを構成していない場合は、「[KMS ライセンス認証の展開](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn502531(v=ws.11))」でホストの設定手順を参照してください。
 
-コンピューターを KMS ホスト、MAK、または製品版の KMS クライアントから変換する場合は、次の表を参照して、該当するセットアップ キー (GVLK) をインストールしてください。 クライアント セットアップ キーをインストールするには、クライアントで管理コマンド プロンプトを開き、「**slmgr /ipk \<セットアップ キー\>** 」と入力し、**Enter** キーを押します。
+コンピューターを KMS ホスト、MAK、または製品版の KMS クライアントから変換する場合は、次の表を参照して、該当するセットアップ キー (GVLK) をインストールしてください。 クライアント セットアップ キーをインストールするには、クライアントで管理コマンド プロンプトを開き、「**slmgr /ipk \<setup key\>** 」と入力し、**Enter** キーを押します。
 
 | …する場合    | …これらのリソースを使用   |
 |--------------------|------------------------|
@@ -209,6 +209,4 @@ Windows Server、Windows 10、Windows 8.1、Windows Server 2012 R2、Windows 8�
 
 関連項目
 
-• [ボリューム ライセンス認証の計画](https://technet.microsoft.com/library/jj134042(v=ws.11).aspx)
-
-
+• [ボリューム ライセンス認証の計画](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj134042(v=ws.11))

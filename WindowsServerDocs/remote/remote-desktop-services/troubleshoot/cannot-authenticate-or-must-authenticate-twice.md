@@ -8,12 +8,12 @@ manager: dcscontentpm
 ms.author: delhan
 ms.date: 07/24/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 8fd7cfda8814347f8bab9dc7b3f7632e3b992ecb
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 65bf81d80d5cfd5566d66005728cd3677f131085
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80857235"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963224"
 ---
 # <a name="user-cant-authenticate-or-must-authenticate-twice"></a>ユーザーが認証できない、または 2 回認証する必要がある
 
@@ -168,4 +168,4 @@ This could be due to CredSSP encryption oracle remediation
 
 この問題は、Remote Credential Guard では認証に Kerberos が使われていて、NTLM が制限されるために発生します。 ただし、負荷分散されている高可用性構成の RD 接続ブローカーでは、Kerberos の操作をサポートできません。
 
-負荷分散された RD 接続ブローカーが含まれる高可用性構成を使う必要がある場合は、Remote Credential Guard を無効にすることで、この問題を回避できます。 Windows Defender Remote Credential Guard の管理方法について詳しくは、「[Windows Defender Remote Credential Guard を使用してリモート デスクトップの資格情報を保護する](https://docs.microsoft.com/windows/security/identity-protection/remote-credential-guard#enable-windows-defender-remote-credential-guard)」をご覧ください。
+負荷分散された RD 接続ブローカーが含まれる高可用性構成を使う必要がある場合は、Remote Credential Guard を無効にすることで、この問題を回避できます。 Windows Defender Remote Credential Guard の管理方法について詳しくは、「[Windows Defender Remote Credential Guard を使用してリモート デスクトップの資格情報を保護する](/windows/security/identity-protection/remote-credential-guard#enable-windows-defender-remote-credential-guard)」をご覧ください。

@@ -10,12 +10,12 @@ ms.assetid: 16984724-2d77-4d7b-9738-3dff375ed68c
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 3bcb669f64845aaa7a3b0498cd7f793891f6c274
-ms.sourcegitcommit: 9889f20270e8eb7508d06cbf844cba9159e39697
+ms.openlocfilehash: a64896a1efcafec878ea8fd5dda8077a1fdc9c42
+ms.sourcegitcommit: f305bc5f1c5a44dac62f4288450af19f351f9576
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "83551124"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87118582"
 ---
 # <a name="iis-on-nano-server"></a>Nano Server の IIS
 
@@ -63,7 +63,7 @@ Nano Server の今回のリリースでは、次の IIS 機能を使用できま
 |**管理ツール**||
 |Windows PowerShell 用 IISAdministration モジュール|x|
 
-IIS の他の構成 (ASP.NET、PHP、Java の使用など) に関する一連の記事と、その他の関連するコンテンツは、[http://iis.net/learn](https://iis.net/learn) で公開されています。
+IIS の他の構成 (ASP.NET、PHP、Java の使用など) に関する一連の記事と、その他の関連するコンテンツは、[https://iis.net/learn](https://iis.net/learn) で公開されています。
 
 ## <a name="installing-iis-on-nano-server"></a>Nano Server での IIS のインストール
 このサーバーの役割は、オフライン (Nano Server が停止した状態) でもオンライン (Nano Server が実行中) でもインストールできますが、オフライン インストールをお勧めします。
@@ -130,7 +130,7 @@ New-NanoServerImage -Edition Standard -DeploymentType Guest -MediaPath f:\ -Base
 6. **net start w3svc** を実行するか、Nano Server を再起動して、W3SVC サービスを開始します。
 
 ## <a name="starting-iis"></a>IIS の起動
-IIS がインストールされ実行された状態になると、Web 要求を処理できるようになります。 http://\<Nano Server の IP アドレス> で既定の IIS Web ページを参照することで、IIS が実行されていることを確認します。 物理コンピューターでは、回復コンソールを使用して IP アドレスを特定できます。 仮想マシンでは、Windows PowerShell プロンプトを使用して以下を実行することで、IP アドレスを取得できます。
+IIS がインストールされ実行された状態になると、Web 要求を処理できるようになります。 http://\<IP address of Nano Server> で既定の IIS Web ページを参照することで、IIS が実行されていることを確認します。 物理コンピューターでは、回復コンソールを使用して IP アドレスを特定できます。 仮想マシンでは、Windows PowerShell プロンプトを使用して以下を実行することで、IP アドレスを取得できます。
 
 ```PowerShell
 Get-VM -name <VM name> | Select -ExpandProperty networkadapters | select IPAddresses
@@ -291,7 +291,7 @@ IIS の各機能は、構成要素のセットとして存在します。 この
 |`<handlers>`|`<add name=StaticFile path=* verb=* modules=DefaultDocumentModule resourceType=EiSecther requireAccess=Read />`|
 |`<defaultDocument>`|`<defaultDocument enabled=true><br /><files><br /> <add value=Default.htm /><br />        <add value=Default.asp /><br />        <add value=index.htm /><br />        <add value=index.html /><br />        <add value=iisstart.htm /><br />    </files><br /></defaultDocument>`|
 
-`StaticFile <handlers>` エントリが既に存在する場合は、単に DefaultDocumentModule を \<modules> 属性にコンマで区切って追加します。
+`StaticFile <handlers>` エントリが既に存在することがあります。その場合は、単に DefaultDocumentModule を \<modules> 属性にコンマで区切って追加します。
 
 **ディレクトリの参照**
 
@@ -301,7 +301,7 @@ IIS の各機能は、構成要素のセットとして存在します。 この
 |`<modules>`|`<add name=DirectoryListingModule lockItem=true />`|
 |`<handlers>`|`<add name=StaticFile path=* verb=* modules=DirectoryListingModule resourceType=Either requireAccess=Read />`|
 
-`StaticFile <handlers>` エントリが既に存在する場合は、単に DirectoryListingModule を \<modules> 属性にコンマで区切って追加します。
+`StaticFile <handlers>` エントリが既に存在することがあります。その場合は、単に DirectoryListingModule を \<modules> 属性にコンマで区切って追加します。
 
 **HTTP エラー**
 
@@ -319,7 +319,7 @@ IIS の各機能は、構成要素のセットとして存在します。 この
 |`<modules>`|`<add name=StaticFileModule lockItem=true />`|
 |`<handlers>`|`<add name=StaticFile path=* verb=* modules=StaticFileModule resourceType=Either requireAccess=Read />`|
 
-`StaticFile \<handlers>` エントリが既に存在する場合は、単に StaticFileModule を \<modules> 属性にコンマで区切って追加します。
+`StaticFile \<handlers>` エントリが既に存在することがあります。その場合は、単に StaticFileModule を \<modules> 属性にコンマで区切って追加します。
 
 **HTTP リダイレクト**
 

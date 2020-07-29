@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 06/07/2019
-ms.openlocfilehash: cb4e3ab2bf98a0c2d51483642fe5388e468dbbb4
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 92d8a47c4ac214faeac83ba8ff5a1a746bc8bdb3
+ms.sourcegitcommit: b35fbd2a67d7a3395b50b2a3acd0817ba4e36b26
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "81269269"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86891387"
 ---
 # <a name="what-is-windows-admin-center"></a>Windows Admin Center とは?
 
@@ -27,7 +27,7 @@ Windows Admin Center は、サーバー マネージャーや MMC などの "イ
 
 ## <a name="how-does-windows-admin-center-work"></a>Windows Admin Center のしくみ
 
-Windows Admin Center は Web ブラウザーで実行され、Windows Server またはドメインに参加している Windows 10 にインストールされた **Windows Admin Center ゲートウェイ**を介して Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows 10 などを管理します。 ゲートウェイは、リモート PowerShell と WMI over WinRM を介してサーバーを管理します。 ゲートウェイは、[ダウンロード](https://aka.ms/windowsadmincenter)可能な単一の軽量な .msi パッケージとして Windows Admin Center に含まれています。
+Windows Admin Center は Web ブラウザーで実行され、Windows Server またはドメインに参加している Windows 10 にインストールされた **Windows Admin Center ゲートウェイ**を介して Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows 10、Azure Stack HCI などを管理します。 ゲートウェイは、リモート PowerShell と WMI over WinRM を介してサーバーを管理します。 ゲートウェイは、[ダウンロード](https://aka.ms/windowsadmincenter)可能な単一の軽量な .msi パッケージとして Windows Admin Center に含まれています。
 
 Windows Admin Center ゲートウェイは、DNS に発行され、対応する企業ファイアウォールによってアクセス権が与えられると、Microsoft Edge または Google Chrome によってユーザーがどこからでもサーバーに安全に接続し、管理できるようにします。
 
@@ -58,6 +58,10 @@ Windows Admin Center には、管理プラットフォームを[より安全](..
 ### <a name="azure-integration"></a>**Azure の統合**
 
 Windows Admin Center には、Azure Active Directory、Azure Backup、Azure Site Recovery など、多数の [Azure サービスとの統合](../plan/azure-integration-options.md)が含まれています。
+
+### <a name="deploy-hyper-converged-and-failover-clusters"></a>**ハイパーコンバージド クラスターとフェールオーバー クラスターを展開する**
+
+Windows Admin Center では、使いやすいウィザードを通して、[ハイパーコンバージド クラスターとフェールオーバー クラスターをシームレスに展開する](../use/deploy-hyperconverged-infrastructure.md)ことができます。 
 
 ### <a name="manage-hyper-converged-clusters"></a>**ハイパーコンバージド クラスターの管理**
 

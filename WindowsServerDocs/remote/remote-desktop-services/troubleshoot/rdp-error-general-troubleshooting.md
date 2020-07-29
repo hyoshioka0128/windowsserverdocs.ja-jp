@@ -8,12 +8,12 @@ manager: dcscontentpm
 ms.author: delhan
 ms.date: 07/24/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 03c3c8daa8dc4bea0e03ed285a98401f91cdf1cb
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 7d94b6a2211cd9fbaefb8318ebdcc4eb52ba9ba1
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80857215"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963304"
 ---
 # <a name="general-remote-desktop-connection-troubleshooting"></a>リモート デスクトップ接続の一般的なトラブルシューティング
 
@@ -23,7 +23,7 @@ ms.locfileid: "80857215"
 
 ### <a name="check-the-status-of-the-rdp-protocol-on-a-local-computer"></a>ローカル コンピューターで RDP プロトコルの状態を確認する
 
-ローカル コンピューターで RDP プロトコルの状態を確認および変更するには、「[リモート デスクトップを有効にする方法](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/clients/remote-desktop-allow-access#how-to-enable-remote-desktop)」をご覧ください。
+ローカル コンピューターで RDP プロトコルの状態を確認および変更するには、「[リモート デスクトップを有効にする方法](../clients/remote-desktop-allow-access.md#how-to-enable-remote-desktop)」をご覧ください。
 
 > [!NOTE]  
 > リモート デスクトップのオプションを利用できない場合は、「[ローカル コンピューターでグループ ポリシー オブジェクト (GPO) が RDP をブロックしているかどうかを確認する](#check-whether-a-group-policy-object-gpo-is-blocking-rdp-on-a-local-computer)」をご覧ください。
@@ -70,11 +70,11 @@ gpresult /H c:\gpresult.html
 gpresult /S <computer name> /H c:\gpresult-<computer name>.html
 ```
 
-このコマンドによって生成されるファイル (**gpresult-<\<コンピューター名\>>.html**) では、ローカル コンピューター バージョン (**gpresult.html**) と同じ情報の形式が使われます。
+このコマンドによって生成されるファイル (**gpresult-\<computer name\>.html**) では、ローカル コンピューター バージョン (**gpresult.html**) で使用されるのと同じ情報の形式が使われます。
 
 ### <a name="modifying-a-blocking-gpo"></a>ブロックしている GPO を変更する
 
-グループ ポリシー オブジェクト エディター (GPE) およびグループ ポリシー管理コンソール (GPM) で、これらの設定を変更することができます。 グループ ポリシーの使い方について詳しくは、「[Advanced Group Policy Management](https://docs.microsoft.com/microsoft-desktop-optimization-pack/agpm/)」(高度なグループ ポリシーの管理) をご覧ください。
+グループ ポリシー オブジェクト エディター (GPE) およびグループ ポリシー管理コンソール (GPM) で、これらの設定を変更することができます。 グループ ポリシーの使い方について詳しくは、「[Advanced Group Policy Management](/microsoft-desktop-optimization-pack/agpm/)」(高度なグループ ポリシーの管理) をご覧ください。
 
 ブロックしているポリシーを変更するには、次のいずれかの方法を使います。
 
@@ -144,7 +144,7 @@ gpresult /S <computer name> /H c:\gpresult-<computer name>.html
       Restart-Service TermService -Force  
       ```
       
-      \<filename\> は、エクスポートした .reg ファイルの名前に置き換えます。
+      \<filename\> を、エクスポートした .reg ファイルの名前に置き換えます。
 
 6. 再びリモート デスクトップ接続を試みて、構成をテストします。 まだ接続できない場合は、影響を受けるコンピューターを再起動します。
 7. それでも接続できない場合は、[RDP の自己署名証明書の状態を確認](#check-the-status-of-the-rdp-self-signed-certificate)します。
@@ -189,7 +189,7 @@ RDP ポートを確認または変更するには、レジストリ エディタ
 
 この手順では、管理者アクセス許可を持つ PowerShell インスタンスを使います。 ローカル コンピューターでは、管理者アクセス許可を持つコマンド プロンプトを使うこともできます。 ただし、この手順では、ローカルとリモートで同じコマンドレットが動作するため、PowerShell を使います。
 
-1. PowerShell ウィンドウを開きます。 リモート コンピューターに接続するには、「**Enter-PSSession -ComputerName <\<コンピューター名\>>** 」と入力します。
+1. PowerShell ウィンドウを開きます。 リモート コンピューターに接続するには、「**Enter-PSSession -ComputerName \<computer name\>** 」と入力します。
 2. 次のコマンドを入力します。  
    
      ```powershell  
@@ -225,7 +225,7 @@ RDP ポートを確認または変更するには、レジストリ エディタ
    ```
    
 3. **psping** コマンドの出力で次のような結果を確認します。  
-      - **\<コンピューター IP\>** へ接続しています: リモート コンピューターは到達可能です。
+      - **\<computer IP\> に接続しています**:リモート コンピューターは到達可能です。
       - **(0% 損失)** : すべての接続試行が成功しました。
       - **The remote computer refused the network connection (リモート コンピューターによりネットワーク接続が拒否されました)** : リモート コンピューターは到達不可能です。
       - **(100% 損失)** : すべての接続試行が失敗しました。

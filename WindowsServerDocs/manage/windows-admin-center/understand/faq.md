@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.localizationpriority: medium
 ms.date: 12/02/2019
 ms.prod: windows-server
-ms.openlocfilehash: 185902d332e2036eace5b0b332eabd2803b5eb00
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 4125a3f427bd19ae7461aaaef058a558722d1987
+ms.sourcegitcommit: b35fbd2a67d7a3395b50b2a3acd0817ba4e36b26
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "81650113"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86891377"
 ---
 # <a name="windows-admin-center-frequently-asked-questions"></a>Windows Admin Center についてよく寄せられる質問
 
@@ -86,7 +86,7 @@ Active Directory、DHCP、DNS、IIS などの役割には、Windows Admin Center
 
 ## <a name="are-there-any-plans-for-windows-admin-center-to-manage-windows-server-2008-r2-or-earlier"></a>Windows Admin Center が Windows Server 2008 R2 以前を管理できるようになる予定はありますか。
 
-Windows Admin Center は現在 Windows Server 2008 R2 を管理するための**制限された**機能をサポートしています。 Windows Admin Center は、Windows Server 2008 R2 以前には存在しない PowerShell 機能やプラットフォーム テクノロジを利用しているため、完全なサポートは実現不可能です。 Windows Server 2008/2008 R2 は 2020 年 1 月のサポート終了が近づいているため、[Azure に移行するか、最新バージョンの Windows Server にアップグレードする](https://www.microsoft.com/cloud-platform/windows-server-2008)ことをお勧めします。
+Windows Admin Center では、Windows Server 2008 R2 を管理するための機能は**サポートされなくなりました**。 Windows Admin Center は、Windows Server 2008 R2 以前には存在しない PowerShell 機能やプラットフォーム テクノロジを利用しているため、完全なサポートは実現不可能です。 まだお持ちでない場合は、[Azure に移行するか、最新バージョンの Windows Server にアップグレードする](https://www.microsoft.com/cloud-platform/windows-server-2008)ことをお勧めします。
 
 ## <a name="are-there-any-plans-for-windows-admin-center-to-manage-linux-connections"></a>Windows Admin Center が Linux 接続を管理できるようになる予定はありますか。
 
@@ -104,9 +104,7 @@ Microsoft Edge (Windows 10 バージョン 1709 以降)、Google Chrome、およ
 
 はい、一部のケースでは Windows Admin Center で CredSSP が必要です。 これは、管理対象の特定のサーバー以外のマシンに、認証のために資格情報を渡すために必要になります。 たとえば、**サーバー B** 上の仮想マシンを管理しているが、仮想マシンの vhdx ファイルを**サーバー C** によってホストされているファイル共有上に保存したい場合、ファイル共有にアクセスできるように Windows Admin Center で CredSSP を使用して**サーバー C** を認証する必要があります。
 
-Windows Admin Center は、ユーザーの同意を確認した後、自動的に CredSSP の構成を処理します。 Windows Admin Center は、CredSSP を構成する前に、システムに最近の CredSSP の[更新プログラム](https://support.microsoft.com/help/4093492/credssp-updates-for-cve-2018-0886-march-13-2018)が含まれているかどうかを確認します。 CredSSP が有効になっている間はサーバーの概要にバッジが表示されますが、これを無効にすることもできます。
-
-![サーバーの概要の CredSSP](../media/CredSSP-overview.png)
+Windows Admin Center は、ユーザーの同意を確認した後、自動的に CredSSP の構成を処理します。 Windows Admin Center は、CredSSP を構成する前に、システムに最近の CredSSP の[更新プログラム](https://support.microsoft.com/help/4093492/credssp-updates-for-cve-2018-0886-march-13-2018)が含まれているかどうかを確認します。 
 
 CredSSP は現在、次の領域で使用されています。
 

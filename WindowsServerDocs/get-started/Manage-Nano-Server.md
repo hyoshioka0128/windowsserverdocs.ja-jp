@@ -10,12 +10,12 @@ ms.assetid: 599d6438-a506-4d57-a0ea-1eb7ec19f46e
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b41113f302dad1c9917001bf137da28ef431d38
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: f07c6ffd96aabd4bac5a7e34c7bb612df33274f6
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826785"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961114"
 ---
 # <a name="manage-nano-server"></a>Nano Server の管理
 
@@ -99,7 +99,7 @@ chcp 65001
 winrs -r:<IP address of Nano Server> -u:Administrator -p:<Nano Server administrator password> ipconfig
 ```
   
-Windows リモート管理の詳細については、「[Windows リモート管理 (WinRM) の概要](https://technet.microsoft.com/library/dn265971.aspx)」を参照してください。  
+Windows リモート管理の詳細については、「[Windows リモート管理 (WinRM) の概要](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn265971(v=ws.11))」を参照してください。  
    
    
   
@@ -113,7 +113,7 @@ Add-NetEventPacketCaptureProvider -SessionName
 Start-NetEventSession [-Name]  
 Stop-NetEventSession [-Name]  
 ```  
-これらのコマンドレットの詳細については、「[Network Event Packet Capture Cmdlets in Windows PowerShell (Windows PowerShell のネットワーク イベント パケット キャプチャ コマンドレット)](https://technet.microsoft.com/library/dn268520(v=wps.630).aspx)」を参照してください。  
+これらのコマンドレットの詳細については、「[Network Event Packet Capture Cmdlets in Windows PowerShell (Windows PowerShell のネットワーク イベント パケット キャプチャ コマンドレット)](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn265971(v=ws.11))」を参照してください。  
 
 ## <a name="installing-servicing-packages"></a>サービス パッケージをインストールする  
 サービス パッケージをインストールする場合は、-ServicingPackagePath パラメーターを使用します (.cab ファイルへのパスの配列を渡すことができます)。  
@@ -134,7 +134,7 @@ Volume Serial Number is B05B-CC3D
       Directory of C:\KB3157663_expanded  
    
       04/19/2016  01:17 PM    \<DIR>          .  
-      04/19/2016  01:17 PM    \<DIR&gt;          .  
+      04/19/2016  01:17 PM    \<DIR>          ..  
         04/17/2016  12:31 AM               517 Windows10.0-KB3157663-x64-pkgProperties.txt  
 04/17/2016  12:30 AM        93,886,347 Windows10.0-KB3157663-x64.cab  
 04/17/2016  12:31 AM               454 Windows10.0-KB3157663-x64.xml  
@@ -212,7 +212,7 @@ Get-WindowsPackage -Online
 ---  
 上記のコマンドでは、インターネット上の Windows Update と Microsoft Update サービスを照会して、更新プログラムを検索およびダウンロードします。 WSUS を使用する場合は、代わりに WSUS サーバーを使用するように Nano Server のレジストリ キーを設定できます。  
   
-「[Active Directory 以外の環境で自動更新を構成する](https://technet.microsoft.com/library/cc708449(v=ws.10).aspx)」の「Windows Update エージェント環境のオプションのレジストリ キー」の表を参照してください。  
+「[Active Directory 以外の環境で自動更新を構成する](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc708449(v=ws.10))」の「Windows Update エージェント環境のオプションのレジストリ キー」の表を参照してください。  
   
 少なくとも **WUServer** レジストリ キーと **WUStatusServer** レジストリ キーを設定する必要があります。WSUS を実装する方法によっては、その他の値も設定が必要になることがあります。 これらの設定は、同じ環境内の他の Windows Server を確認することで、いつでも確認できます。  
 
@@ -227,7 +227,7 @@ Get-WindowsPackage -Online
 [comment]: # (Venkat Yalla より。)
 Nano Server では、[Windows イベント トレーシング](https://aka.ms/u2pa0i) (ETW) フレームワークを完全にサポートしています。しかし、トレースとパフォーマンス カウンターを管理するための使い慣れたツールには、Nano Server で現在使用できないものがあります。 ただし、Nano Server には、最も一般的なパフォーマンス分析シナリオを実現するツールとコマンドレットが用意されています。
 
-大まかなワークフローは、どの Window Server インストールでも同じです。オーバーヘッドの少ないトレースをターゲットの (Nano Server) コンピューターで実行し、生成されたトレース ファイルやログを別のコンピューターで [Windows Performance Analyzer](https://msdn.microsoft.com/library/windows/hardware/hh448170.aspx) や [Message Analyzer](https://www.microsoft.com/download/details.aspx?id=44226) などのツールを使用してオフラインで後処理します。
+大まかなワークフローは、どの Window Server インストールでも同じです。オーバーヘッドの少ないトレースをターゲットの (Nano Server) コンピューターで実行し、生成されたトレース ファイルやログを別のコンピューターで [Windows Performance Analyzer](/previous-versions/windows/it-pro/windows-8.1-and-8/hh448170(v=win.10)) や [Message Analyzer](https://www.microsoft.com/download/details.aspx?id=44226) などのツールを使用してオフラインで後処理します。
 
 > [!NOTE]
 > PowerShell リモート処理を使用してファイルを転送する方法については、「[How to copy files to and from Nano Server (Nano Server との間でファイルをコピーする方法)](https://aka.ms/nri9c8)」を参照してください。
@@ -235,7 +235,7 @@ Nano Server では、[Windows イベント トレーシング](https://aka.ms/u2
 次のセクションでは、最も一般的なパフォーマンス データ収集作業と、Nano Server でそれを実現するためのサポートされている方法の一覧を示します。
 
 ### <a name="query-available-event-providers"></a>使用可能なイベント プロバイダーの照会
-[Windows Performance Recorder](https://msdn.microsoft.com/library/hh448229.aspx) は、次のように使用可能なイベント プロバイダーを照会するツールです。
+[Windows Performance Recorder](/previous-versions/windows/it-pro/windows-8.1-and-8/hh448229(v=win.10)) は、次のように使用可能なイベント プロバイダーを照会するツールです。
 ```
 wpr.exe -providers
 ```
@@ -252,7 +252,7 @@ PS C:\> wpr.exe -providers | select-string Storage
 ```
 
 ### <a name="record-traces-from-a-single-etw-provider"></a>1 つの ETW プロバイダーからのトレースの記録
-これには、新しい[イベント トレース管理コマンドレット](https://technet.microsoft.com/library/dn919247.aspx)を使用できます。 次にワークフローの例を示します。
+これには、新しい[イベント トレース管理コマンドレット](/previous-versions/windows/it-pro/windows-8.1-and-8/hh448229(v=win.10))を使用できます。 次にワークフローの例を示します。
 
 イベントを格納するファイルの名前を指定して、トレースを作成し、開始します。
 ```
@@ -284,7 +284,7 @@ Mode                LastWriteTime         Length Name
 > この例では 1 つのトレース プロバイダーをセッションに追加する方法を示していますが、トレース セッションで異なるプロバイダー GUID を指定した ```Add-EtwTraceProvider``` コマンドレットを複数回使用して、複数のソースからのトレースを有効にすることもできます。 他には、以下で説明する ```wpr.exe``` プロファイルを使用する方法があります。
 
 ### <a name="record-traces-from-multiple-etw-providers"></a>複数の ETW プロバイダーからのトレースの記録
-[Windows Performance Recorder](https://msdn.microsoft.com/library/hh448229.aspx) の ```-profiles``` オプションを使用すると、同時に複数のプロバイダーからのトレースを有効にできます。 CPU、Network、DiskIO など、さまざまな組み込みのプロファイルから選択することができます。
+[Windows Performance Recorder](/previous-versions/windows/it-pro/windows-8.1-and-8/hh448229(v=win.10)) の ```-profiles``` オプションを使用すると、同時に複数のプロバイダーからのトレースを有効にできます。 CPU、Network、DiskIO など、さまざまな組み込みのプロファイルから選択することができます。
 ```
 PS C:\Users\Administrator\Documents> wpr.exe -profiles 
 
@@ -321,7 +321,7 @@ Copyright (c) 2015 Microsoft Corporation. All rights reserved.
         WdfTraceLoggingProvider     WDF Driver Activity
 ```
 
-カスタム プロファイルを作成する詳細なガイダンスについては、[WPR.exe のドキュメント](https://msdn.microsoft.com/library/windows/hardware/hh448223.aspx)を参照してください。
+カスタム プロファイルを作成する詳細なガイダンスについては、[WPR.exe のドキュメント](/previous-versions/windows/it-pro/windows-8.1-and-8/hh448223(v=win.10))を参照してください。
 
 ### <a name="record-etw-traces-during-operating-system-boot-time"></a>オペレーティング システム起動時の ETW トレースの記録
 システム起動時のイベントを収集するには、```New-AutologgerConfig``` コマンドレットを使用します。 使用方法は ```New-EtwTraceSession``` コマンドレットとよく似ていますが、自動ロガー構成に追加されたプロバイダーは次回起動時の初期にのみ有効になります。 全体的なワークフローは次のようになります。
@@ -376,13 +376,13 @@ Exiting, please wait...
 The command completed successfully.
 ```
 
-その他のコマンド ライン オプションを使用すると、構成ファイル内の関心のあるパフォーマンス カウンターの名前を指定することや、ログ ファイルに出力をリダイレクトすることなどができます。 詳細については、[typeperf.exe のドキュメント](https://technet.microsoft.com/library/bb490960.aspx)を参照してください。
+その他のコマンド ライン オプションを使用すると、構成ファイル内の関心のあるパフォーマンス カウンターの名前を指定することや、ログ ファイルに出力をリダイレクトすることなどができます。 詳細については、[typeperf.exe のドキュメント](/previous-versions/windows/it-pro/windows-xp/bb490960(v=technet.10))を参照してください。
 
 Nano Server ターゲットで Perfmon.exe のグラフィカル インターフェイスをリモートで使用することもできます。 パフォーマンス カウンターをビューに追加する場合、既定の *<Local computer>* の代わりに、コンピューター名で Nano Server ターゲットを指定します。
 
 ### <a name="interact-with-the-windows-event-log"></a>Windows イベント ログの操作
 
-Nano Server では、```Get-WinEvent``` コマンドレットをサポートしています。このコマンドレットでは、ローカルとリモート コンピューターの両方に対する Windows イベント ログのフィルター処理と照会機能が提供されます。 詳細なオプションと例については、[Get-WinEvent のドキュメント ページ](https://technet.microsoft.com/library/hh849682.aspx)を参照してください。 次の簡単な例では、*System* ログに記録されている過去 2 日間の "*エラー*" を取得します。
+Nano Server では、```Get-WinEvent``` コマンドレットをサポートしています。このコマンドレットでは、ローカルとリモート コンピューターの両方に対する Windows イベント ログのフィルター処理と照会機能が提供されます。 詳細なオプションと例については、[Get-WinEvent のドキュメント ページ](/powershell/module/microsoft.powershell.diagnostics/get-winevent?view=powershell-5.1)を参照してください。 次の簡単な例では、*System* ログに記録されている過去 2 日間の "*エラー*" を取得します。
 ```
 PS C:\> $StartTime = (Get-Date) - (New-TimeSpan -Day 2)
 PS C:\> Get-WinEvent -FilterHashTable @{LogName='System'; Level=2; StartTime=$StartTime} | select TimeCreated, Message
@@ -397,7 +397,7 @@ TimeCreated           Message
 Nano Server では、```wevtutil.exe``` もサポートしています。このコマンドレットを使用すると、イベント ログと発行元に関する情報を取得できます。 詳細については、[wevtutil.exe のドキュメント](https://aka.ms/qvod7p)を参照してください。 
 
 ### <a name="graphical-interface-tools"></a>グラフィカル インターフェイス ツール
-[Web ベースのサーバー管理ツール](https://blogs.technet.microsoft.com/servermanagement/2016/08/17/deploy-setup-server-management-tools/)を使用して、Nano Server ターゲットをリモートで管理し、Web ブラウザーで Nano Server のイベント ログを表示できます。 最後に、MMC スナップイン イベント ビューアー (eventvwr.msc) を使用して、ログを表示することもできます (コンピューターのデスクトップで開き、リモートの Nano Server を参照するだけです)。
+[Web ベースのサーバー管理ツール](https://techcommunity.microsoft.com/t5/windows-admin-center-blog/bg-p/Windows-Admin-Center-Blog)を使用して、Nano Server ターゲットをリモートで管理し、Web ブラウザーで Nano Server のイベント ログを表示できます。 最後に、MMC スナップイン イベント ビューアー (eventvwr.msc) を使用して、ログを表示することもできます (コンピューターのデスクトップで開き、リモートの Nano Server を参照するだけです)。
 
 
 
@@ -406,4 +406,4 @@ Nano Server では、```wevtutil.exe``` もサポートしています。この�
   
 Windows PowerShell Desired State Configuration (DSC) で Nano Server をターゲット ノードとして管理できます。 現在、DSC ではプッシュ モードでのみ Nano Server を実行しているノードを管理できます。 一部の DSC 機能は Nano Server に対して機能しません。  
   
-詳細については、「[DSC on Nano Server の使用](https://msdn.microsoft.com/powershell/dsc/nanoDsc)」を参照してください。  
+詳細については、「[DSC on Nano Server の使用](https://techcommunity.microsoft.com/t5/windows-admin-center-blog/bg-p/Windows-Admin-Center-Blog)」を参照してください。  

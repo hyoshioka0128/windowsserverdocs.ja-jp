@@ -8,12 +8,12 @@ ms.author: jaimeo, robsmi
 ms.topic: article
 author: jaimeo
 manager: dougkim
-ms.openlocfilehash: b96064f1c05e61223b84a2285535f02733160abe
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: d18f7ac1024adc26a965195619b4996864932160
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80857295"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963404"
 ---
 # <a name="optimizing-windows-10-version-1803-for-a-virtual-desktop-infrastructure-vdi-role"></a>仮想デスクトップ インフラストラクチャ (VDI) ロール用の Windows 10 バージョン 1803 の最適化
 
@@ -88,11 +88,11 @@ VDI VM の VDI のアーキテクチャによっては、PreFetch や SuperFetch
 
 ### <a name="to-sysprep-or-not-sysprep"></a>Sysprep の可否
 
-Windows 10 には、[システム準備ツール](https://docs.microsoft.com/windows-hardware/manufacture/desktop/sysprep--system-preparation--overview) (多くの場合、"Sysprep" と略されます) と呼ばれる組み込み機能があります。 Sysprep ツールは、複製用にカスタマイズされた Windows 10 イメージを準備するために使用されます。 Sysprep プロセスは、最終的なオペレーティング システムが実稼働環境で実行するために適切に一意になっているようにします。
+Windows 10 には、[システム準備ツール](/windows-hardware/manufacture/desktop/sysprep--system-preparation--overview) (多くの場合、"Sysprep" と略されます) と呼ばれる組み込み機能があります。 Sysprep ツールは、複製用にカスタマイズされた Windows 10 イメージを準備するために使用されます。 Sysprep プロセスは、最終的なオペレーティング システムが実稼働環境で実行するために適切に一意になっているようにします。
 
 Sysprep を実行したほうがよい理由としないほうがよい理由があります。 VDI の場合、このイメージを使用してログオンする以降のユーザーにとってのプロファイル テンプレートとして使用される既定のユーザー プロファイルをカスタマイズする機能が必要になることがあります。 必要なアプリがインストールされているが、アプリごとの設定を制御できる場合もあります。
 
-代替方法はインストール元の標準の .ISO を使用するというもので、おそらく無人インストール応答ファイルやタスク シーケンスを使用してアプリケーションをインストールしたりアプリケーションを削除したりします。 また、タスク シーケンスを使用して、イメージのローカル ポリシー設定を指定することもできます (おそらくは [ローカル グループ ポリシー オブジェクト ユーティリティ (LGPO)](https://blogs.technet.microsoft.com/secguide/2016/01/21/lgpo-exe-local-group-policy-object-utility-v1-0/) ツールを使用)。
+代替方法はインストール元の標準の .ISO を使用するというもので、おそらく無人インストール応答ファイルやタスク シーケンスを使用してアプリケーションをインストールしたりアプリケーションを削除したりします。 また、タスク シーケンスを使用して、イメージのローカル ポリシー設定を指定することもできます (おそらくは [ローカル グループ ポリシー オブジェクト ユーティリティ (LGPO)](/archive/blogs/secguide/lgpo-exe-local-group-policy-object-utility-v1-0) ツールを使用)。
 
 #### <a name="vdi-optimization-categories"></a>VDI 最適化のカテゴリ
 
@@ -179,13 +179,13 @@ VDI の適切な戦略は、基本イメージで必要なアプリをプロビ�
 
 システムにプロビジョニングされている UWP アプリは、タスク シーケンスの一環としてオペレーティング システムのインストール中に、またはオペレーティング システムのインストール後に後から削除することができます。 これは、イメージ モジュラーを作成または維持するプロセス全体を構成するので、推奨の方法になる可能性があります。 スクリプトを開発した後は、以降のビルドで何かが変更された場合に、プロセスを最初から繰り返すのではなく、既存のスクリプトを編集します。 このトピックの情報へのリンクを次に示します。
 
-[タスク シーケンス中の Windows 10 インボックス アプリの削除](https://blogs.technet.microsoft.com/mniehaus/2015/11/11/removing-windows-10-in-box-apps-during-a-task-sequence/)
+[タスク シーケンス中の Windows 10 インボックス アプリの削除](/archive/blogs/mniehaus/removing-windows-10-in-box-apps-during-a-task-sequence)
 
 [PowerShell バージョン 1.3 を使用した Windows 10 WIM ファイルからの組み込みアプリの削除](https://gallery.technet.microsoft.com/Removing-Built-in-apps-65dc387b)
 
-[Windows 10 1607:機能更新プログラムの展開時でのアプリの復帰の防止](https://blogs.technet.microsoft.com/mniehaus/2016/08/23/windows-10-1607-keeping-apps-from-coming-back-when-deploying-the-feature-update/)
+[Windows 10 1607:機能更新プログラムの展開時でのアプリの復帰の防止](/archive/blogs/mniehaus/windows-10-1607-keeping-apps-from-coming-back-when-deploying-the-feature-update)
 
-続いて [Remove-AppxProvisionedPackage](https://docs.microsoft.com/powershell/module/dism/remove-appxprovisionedpackage?view=win10-ps) PowerShell コマンドを実行して、UWP アプリ ペイロードを削除します。
+続いて [Remove-AppxProvisionedPackage](/powershell/module/dism/remove-appxprovisionedpackage?view=win10-ps) PowerShell コマンドを実行して、UWP アプリ ペイロードを削除します。
 
 ```powershell
 Remove-AppxProvisionedPackage -Online -PackageName 
@@ -372,7 +372,7 @@ VDI 環境での Windows 10 の多数の最適化は、Windows ポリシーを�
 |                                                         \***Microsoft Edge**                                                         |                                                          トラッキング拒否の構成                                                           |                                                                                                                               |                                                                                                                                                                                                                                                                                                                有効 (この設定を有効にした場合、トラッキング拒否要求はトラッキング情報を要求する Web サイトに常に送信されます)。                                                                                                                                                                                                                                                                                                                |
 |                                                         \***Microsoft Edge**                                                         |                                                        パスワード マネージャーの構成                                                         |                                                                                                                               |                                                                                                                                                                                                                                                                                                                  無効 (この設定を無効にした場合、従業員はパスワード マネージャーを使ってパスワードをローカルに保存できません)。                                                                                                                                                                                                                                                                                                                  |
 |                                                         \***Microsoft Edge**                                                         |                                                アドレス バーの検索候補の構成                                                |                                                                                                                               |                                                                                                                                                                                                                                                                                                                               無効 (ユーザーは Microsoft Edge のアドレス バーで検索候補を確認できません)。                                                                                                                                                                                                                                                                                                                               |
-|                                                         \***Microsoft Edge**                                                         |                                                           スタート ページを構成する                                                           |                                                                                                                               |                                                                                                                      有効 (この設定を有効にした場合、1 つまたは複数のスタート ページを構成できます)。 この設定を有効にした場合、ページの URL も含める必要があり、\<support.contoso.com\>\<support.microsoft.com\> の形式の山かっこを使って複数のページを区切ります。Windows 10 バージョン 1703 以降:Microsoft にトラフィックを送信しない場合は、\<about:blank\> 値を使用できます。これは、この URL が構成済みの唯一のものであるときに、ドメインに参加しているかどうかにかからずデバイスに対して受け入れられます。                                                                                                                       |
+|                                                         \***Microsoft Edge**                                                         |                                                           スタート ページを構成する                                                           |                                                                                                                               |                                                                                                                      有効 (この設定を有効にした場合、1 つまたは複数のスタート ページを構成できます)。 この設定を有効にした場合、ページの URL も含める必要があり、この形式の山かっこを使って複数のページを区切ります。\<support.contoso.com\>\<support.microsoft.com\> Windows 10 バージョン 1703 以降:Microsoft にトラフィックを送信したくない場合は、\<about:blank\> 値を使用できます。これは、構成されている URL が 1 つしかない場合に、ドメインに参加しているかどうかにかからずデバイスに対して有効になります。                                                                                                                       |
 |                                                         \***Microsoft Edge**                                                         |                                                  Windows Defender SmartScreen の構成                                                   |                                                                                                                               |                                                                                                                                                                                                                                                                                                                              無効 (Windows Defender SmartScreen が無効になります。従業員は Windows Defender SmartScreen を有効にすることはできません)。                                                                                                                                                                                                                                                                                                                              |
 |                                                                                                                                      |                                                                                                                                           |                                                                                                                               |                                                                                                                                                                                                                                                                             **注**:環境内でこの設定を検討してください。 インターネットに接続されていない場合、これにより、コンピューターは、SmartScreen の情報について Microsoft への問い合わせを試みることができなくなります。                                                                                                                                                                                                                                                                             |
 |                                                         \***Microsoft Edge**                                                         |                                       Prevent the First Run web page from opening on Microsoft Edge (Microsoft Edge で初回実行時の Web ページを開かない)                                       |                                                                                                                               |                                                                                                                                                                                                                                                                                                                        **有効** (ユーザーが最初に Microsoft Edge を開くときに、初回実行時のページは表示されません)。                                                                                                                                                                                                                                                                                                                         |
@@ -448,13 +448,13 @@ VDI 環境での Windows 10 の多数の最適化は、Windows ポリシーを�
 | **ローカル コンピューター ポリシー\\コンピューターの構成\\管理用テンプレート** |          |                         |                     |
 | **タスク バーと [スタート] メニュー**                  | ネットワーク アイコンを削除する               |                         | **有効** (システム通知領域にネットワーク アイコンが表示されません)。 |
 
-ネットワーク接続状態インジケーター (NCSI) の詳細については、[ ネットワーク接続状態アイコン ](https://blogs.technet.microsoft.com/networking/2012/12/20/the-network-connection-status-icon/) に関するページを参照してください
+ネットワーク接続状態インジケーター (NCSI) の詳細については、[ ネットワーク接続状態アイコン ](https://techcommunity.microsoft.com/t5/networking-blog/bg-p/NetworkingBlog) に関するページを参照してください
 
 ### <a name="system-services"></a>システム サービス
 
 リソースを節約するためにシステム サービスの無効化を検討している場合は、検討しているサービスが何らかの方法で他のサービスのコンポーネントになっていないことに細心の注意を払います。
 
-また、これらの推奨事項のほとんどは、デスクトップ エクスペリエンス付属の Windows Server 2016 の推奨事項を反映しています。詳細については、[デスクトップ エクスペリエンス付属の Windows Server 2016 でのシステム サービスの無効化に関するガイダンス](https://docs.microsoft.com/windows-server/security/windows-services/security-guidelines-for-disabling-system-services-in-windows-server)を参照してください。
+また、これらの推奨事項のほとんどは、デスクトップ エクスペリエンス付属の Windows Server 2016 の推奨事項を反映しています。詳細については、[デスクトップ エクスペリエンス付属の Windows Server 2016 でのシステム サービスの無効化に関するガイダンス](../../security/windows-services/security-guidelines-for-disabling-system-services-in-windows-server.md)を参照してください。
 
 無効にする候補として適しているように思われる多くのサービスが、手動サービス開始の種類に設定されていることに注意してください。 つまり、特定のアプリケーションまたはサービスが対象のサービスに無効の要求をトリガーしない限り、自動的にサービスは開始されないことを意味します。 既に手動開始の種類に設定されているサービスは通常、ここには表示されません。
 
@@ -478,7 +478,7 @@ VDI 環境での Windows 10 の多数の最適化は、Windows ポリシーを�
 
 #### <a name="per-user-services-in-windows"></a>Windows のユーザーごとのサービス
 
-[ユーザーごとのサービス](https://docs.microsoft.com/windows/application-management/per-user-services-in-windows)は、ユーザーが Windows または Windows Server にサインインするときに作成され、ユーザーがサインアウトすると停止され削除されるサービスです。これらのサービスは、ユーザー アカウントのセキュリティ コンテキストで実行します。これにより、事前構成されたアカウントに関連付けられたり、タスクとして、エクスプローラーでこれらの種類のサービスを実行していた以前のアプローチよりも適切なリソース管理が得られます。 
+[ユーザーごとのサービス](/windows/application-management/per-user-services-in-windows)は、ユーザーが Windows または Windows Server にサインインするときに作成され、ユーザーがサインアウトすると停止され削除されるサービスです。これらのサービスは、ユーザー アカウントのセキュリティ コンテキストで実行します。これにより、事前構成されたアカウントに関連付けられたり、タスクとして、エクスプローラーでこれらの種類のサービスを実行していた以前のアプローチよりも適切なリソース管理が得られます。 
 
 ### <a name="scheduled-tasks"></a>スケジュールされたタスク
 
@@ -597,7 +597,7 @@ Windows Defender の場合、非永続的 VDI でも更新プログラムを実�
 
 ### <a name="windows-defender-optimization-with-vdi"></a>VDI を使用した Windows Defender の最適化
 
-Microsoft は、VDI 環境での Windows Defender に関する説明書を最近公開しました。 詳細については、[仮想デスクトップ インフラストラクチャ (VDI) 環境への Windows Defender ウイルス対策の展開ガイド](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-antivirus/deployment-vdi-windows-defender-antivirus)を参照してください。
+Microsoft は、VDI 環境での Windows Defender に関する説明書を最近公開しました。 詳細については、[仮想デスクトップ インフラストラクチャ (VDI) 環境への Windows Defender ウイルス対策の展開ガイド](/windows/security/threat-protection/windows-defender-antivirus/deployment-vdi-windows-defender-antivirus)を参照してください。
 
 上記の記事には、ゴールドの VDI イメージを提供する手順と、実行している状態に VDI クライアントを維持する方法が含まれています。 VDI コンピューターが Windows Defender シグネチャを更新する必要があるときにネットワーク帯域幅を減らすには、再起動の時間をずらし、可能な場合は業務時間外に再起動をスケジュールします。 Windows Defender シグネチャ更新プログラムは、ファイル共有の内部に収容でき、可能であれば、VDI 仮想マシンと同じまたは近接したネットワーク セグメントにこれらのファイル共有を持つことができます。
 
@@ -609,7 +609,7 @@ VDI を使用した Windows Defender の最適化の詳細については、こ�
 
 このセクションの一部の設定は*レジストリ ベースのみ*であり、実稼働環境での使用のためにイメージを展開する前に、基本イメージに組み込む必要があります。
 
-次の設定は、Windows Product Group により Microsoft.com で公開された [Windows Server 2016 のパフォーマンス チューニング ガイドライン](https://docs.microsoft.com/windows-server/administration/performance-tuning/)の情報に記載されています。
+次の設定は、Windows Product Group により Microsoft.com で公開された [Windows Server 2016 のパフォーマンス チューニング ガイドライン](/windows-server/administration/performance-tuning/)の情報に記載されています。
 
 #### <a name="disablebandwidththrottling"></a>DisableBandwidthThrottling
 
@@ -641,15 +641,15 @@ HKLM\\System\\CurrentControlSet\\Services\\LanmanWorkstation\\Parameters\\Dorman
 
 Windows 10 に適用されます。 既定値は **1023** です。 このパラメーターでは、アプリケーションがファイルを閉じた後に共有リソース上で開いたままにする必要があるファイルの最大数を指定します。 数千ものクライアントが SMB サーバーに接続している場合、この値を **256** に減らすことを検討してください。
 
-Windows PowerShell コマンドレットの [Set-SmbClientConfiguration](https://docs.microsoft.com/powershell/module/smbshare/set-smbclientconfiguration) および [Set-SmbServerConfiguration](https://docs.microsoft.com/powershell/module/smbshare/set-smbserverconfiguration) を使用して、これらの SMB 設定の多くを構成できます。 次の例のように、Windows PowerShell も使用してレジストリ専用の設定を構成できます。
+Windows PowerShell コマンドレットの [Set-SmbClientConfiguration](/powershell/module/smbshare/set-smbclientconfiguration) および [Set-SmbServerConfiguration](/powershell/module/smbshare/set-smbserverconfiguration) を使用して、これらの SMB 設定の多くを構成できます。 次の例のように、Windows PowerShell も使用してレジストリ専用の設定を構成できます。
 
 `Set-ItemProperty -Path "HKLM:\\SYSTEM\\CurrentControlSet\\Services\\LanmanWorkstation\\Parameters" RequireSecuritySignature -Value 0 -Force`
 
 ### <a name="additional-settings-from-the-windows-restricted-traffic-limited-functionality-baseline-guidance"></a>Windows Restricted Traffic Limited Functionality Baseline ガイダンスからの追加設定
 
-Microsoft は、インターネットに直接接続していないか、Microsoft や他のサービスに送信されるデータを軽減する環境に対して、[Windows セキュリティ ベースライン](https://docs.microsoft.com/windows/device-security/windows-security-baselines)と同じ手順を使用して作成されたベースラインをリリースしました。
+Microsoft は、インターネットに直接接続していないか、Microsoft や他のサービスに送信されるデータを軽減する環境に対して、[Windows セキュリティ ベースライン](/windows/device-security/windows-security-baselines)と同じ手順を使用して作成されたベースラインをリリースしました。
 
-[Windows Restricted Traffic Limited Functionality Baseline](https://docs.microsoft.com/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services) 設定は、グループ ポリシーの表でアスタリスクのマークが付けられています。
+[Windows Restricted Traffic Limited Functionality Baseline](/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services) 設定は、グループ ポリシーの表でアスタリスクのマークが付けられています。
 
 ### <a name="disk-cleanup-including-using-the-disk-cleanup-wizard"></a>ディスク クリーンアップ (ディスク クリーンアップ ウィザードの使用を含む)
 
