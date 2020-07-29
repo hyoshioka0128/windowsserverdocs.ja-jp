@@ -2,18 +2,17 @@
 title: Windows Server Essentials でのバックアップと復元の管理
 description: Windows Server Essentials の使用方法について説明します。
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 41000915-f6ff-4dbb-b7be-629ef36386d4
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 1741d514728452a8fd9d1963811d4508ec158d78
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 2f42cd78bb5cc3198421edccd32c05e2eada7be0
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470817"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181038"
 ---
 # <a name="manage-backup-and-restore-in-windows-server-essentials"></a>Windows Server Essentials でのバックアップと復元の管理
 

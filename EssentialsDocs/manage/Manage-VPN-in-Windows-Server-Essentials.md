@@ -2,18 +2,17 @@
 title: Windows Server Essentials での VPN の管理
 description: Windows Server Essentials の使用方法について説明します。
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: cc2b264a-b9a8-4114-9f7b-8604f77096e5
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: ac6969522344165583bd21ac882fa7b4f6695145
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: bb221a0ef80388fa8b5bffbc38f7cbec56d3f61c
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470477"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180868"
 ---
 # <a name="manage-vpn-in-windows-server-essentials"></a>Windows Server Essentials での VPN の管理
 
@@ -38,7 +37,7 @@ ms.locfileid: "85470477"
 
 2.  **[設定]** をクリックし、**[Anywhere Access]** タブをクリックします。
 
-3.  **[構成]** をクリックします。 Anywhere Access のセットアップ ウィザードが表示されます。
+3.  **[Configure]\(構成\)** をクリックします。 Anywhere Access のセットアップ ウィザードが表示されます。
 
 4.  **[有効にする Anywhere Access の機能を選択します]** ページで、**[仮想プライベート ネットワーク]** チェック ボックスをオンにします。
 

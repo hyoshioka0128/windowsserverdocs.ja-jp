@@ -10,12 +10,12 @@ metadata:
   ms.topic: hub-page
   ms.date: 06/06/2019
   ms.author: lizross
-  ms.openlocfilehash: 91a9a648c5b51f098a94300ffb1dd3f7ce76bdd8
-  ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+  ms.openlocfilehash: f1d4865d5213d2889aad1fc114c7ea300b4bfe4e
+  ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 04/23/2020
-  ms.locfileid: "81123164"
+  ms.lasthandoff: 07/27/2020
+  ms.locfileid: "87177698"
 highlightedContent:
   items:
   - title: Windows Server 2019 の新着情報
@@ -192,7 +192,7 @@ additionalContent:
   - items:
     - title: Windows Server 2012 R2 および Windows Server 2012 (アーカイブ)
       summary: Windows Server 2012 R2 および Windows Server 2012 を管理する IT 担当者向けの技術コンテンツのアーカイブです。
-      url: https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh801901(v=ws.11)
+      url: /previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh801901(v=ws.11)
     - title: Windows Server Essentials
       summary: 最大 25 人のユーザーと 50 台のデバイスを備えた小規模企業向けに設計された、クラウドに接続された最初のサーバーである Windows Server Essentials を管理する IT プロフェッショナル向けの技術コンテンツです。
       url: https://docs.microsoft.com/en-us/windows-server-essentials/get-started/get-started
