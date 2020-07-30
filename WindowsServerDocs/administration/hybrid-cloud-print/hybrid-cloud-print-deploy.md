@@ -9,12 +9,12 @@ author: msjimwu
 ms.author: coreyp
 manager: dongill
 ms.date: 3/15/2018
-ms.openlocfilehash: fe1f2b11921950ea725cb996ce58e75033aaae4a
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 9cee8a279be2030d4b911a0a7f456c2b855ca15e
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470207"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409092"
 ---
 # <a name="deploy-windows-server-hybrid-cloud-print"></a>Windows Server のハイブリッド クラウド印刷をデプロイする
 
@@ -346,7 +346,8 @@ HCP サービスとの認証された通信を有効にするには、3つのア
     - CloudPrintResourceId = エンタープライズクラウド印刷アプリのアプリケーション ID URI。 これは Azure Active Directory > > アプリの登録の下にあります。 [エンタープライズクラウド印刷アプリ > 概要] を選択します。 この値は、**末尾が/の場合とまったく同じである必要があり**ます。
     - Discoverymaxプリンター Limit = \<a positive integer\> 。
 
-> 注: Microsoft Intune サービスを使用している場合は、[クラウドプリンター] カテゴリでこれらの設定を見つけることができます。
+> [!NOTE]
+> Microsoft Intune サービスを使用している場合は、[クラウドプリンター] カテゴリでこれらの設定を見つけることができます。
 
 |Intune の表示名                     |ポリシー                         |
 |----------------------------------------|-------------------------------|
@@ -357,21 +358,22 @@ HCP サービスとの認証された通信を有効にするには、3つのア
 |クエリする最大プリンター (モバイルのみ)  |Discoverymaxプリンターの制限       |
 |プリンター検出サービスのリソース URI  |Mo先読み Adiscoveryresourceid      |
 
-> 注: [クラウド印刷ポリシー] グループが使用できないが、MDM プロバイダーが OMA-URI 設定をサポートしている場合は、同じポリシーを設定できます。  詳細については、[こちらを参照](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-enterprisecloudprint#enterprisecloudprint-cloudprintoauthauthority)してください。
+> [!NOTE]
+> クラウド印刷ポリシーグループが使用できないが、MDM プロバイダーが OMA-URI 設定をサポートしている場合は、同じポリシーを設定できます。  詳細については、[こちらを参照](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-enterprisecloudprint#enterprisecloudprint-cloudprintoauthauthority)してください。
 
-    - OMA-URI の値
-        - CloudPrintOAuthAuthority =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrintOAuthAuthority
-            - 値 =https://login.microsoftonline.com/<Azure AD Directory ID>
-        - CloudPrintOAuthClientId =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrintOAuthClientId
-            - 値 = <Azure AD ネイティブアプリのアプリケーション ID>
-        - Cloudプリンター Discoveryendpoint =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrinterDiscoveryEndPoint
-            - 値 = 検出サービスアプリの外部 URL (完全に一致している必要がありますが、末尾にはがありません)
-        - Mo/Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/MopriaDiscoveryResourceId Adiscoveryresourceid =.
-            - 値 = 検出サービスアプリのアプリケーション ID の URI
-        - CloudPrintResourceId =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrintResourceId
-            - 値 = エンタープライズクラウド印刷アプリのアプリケーション ID URI
-        - Discoverymaxプリンター Limit =/Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/DiscoveryMaxPrinterLimit
-            - 値 = 正の整数
+- OMA-URI の値
+  - CloudPrintOAuthAuthority =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrintOAuthAuthority
+    - 値 =`https://login.microsoftonline.com/<Azure AD Directory ID>`
+  - CloudPrintOAuthClientId =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrintOAuthClientId
+    - 値 =`<Azure AD Native App's Application ID>`
+  - Cloudプリンター Discoveryendpoint =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrinterDiscoveryEndPoint
+    - 値 = 探索サービスアプリの外部 URL (完全に一致している必要がありますが、末尾が一致していない必要があります `/` )
+  - Mo/Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/MopriaDiscoveryResourceId Adiscoveryresourceid =.
+    - 値 = 検出サービスアプリのアプリケーション ID の URI
+  - CloudPrintResourceId =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrintResourceId
+    - 値 = エンタープライズクラウド印刷アプリのアプリケーション ID URI
+  - Discoverymaxプリンター Limit =/Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/DiscoveryMaxPrinterLimit
+    - 値 = 正の整数
 
 ### <a name="step-7---publish-the-shared-printer"></a>手順 7-共有プリンターを公開する
 

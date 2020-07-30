@@ -1,5 +1,5 @@
 ---
-title: remove
+title: '[削除] コマンドの使用'
 description: ドライバー関連のさまざまな情報を削除する、削除に関するリファレンス記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 42d429099c135c1376cc831bf59f3d1aaa27dcef
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: dc839eee2a5c1bcc21902b214632152b50175294
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932371"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409863"
 ---
-# <a name="remove"></a>remove
+# <a name="using-the-remove-command"></a>[削除] コマンドの使用
 
 > 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 

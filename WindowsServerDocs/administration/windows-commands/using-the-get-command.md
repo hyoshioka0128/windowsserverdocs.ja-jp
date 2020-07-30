@@ -1,5 +1,5 @@
 ---
-title: get
+title: Get コマンドの使用
 description: 指定されたオブジェクトに関するプロパティまたは属性を取得する get の参照記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6e61be9480065518cf053966a851458af39f5c5d
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: d6a943592d0c2443deb3bec4b5709f742e78f4ff
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85935027"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87408781"
 ---
-# <a name="get"></a>get
+# <a name="using-the-get-command"></a>Get コマンドの使用
 
 > 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 

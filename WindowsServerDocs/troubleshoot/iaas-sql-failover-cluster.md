@@ -1,17 +1,17 @@
 ---
-title: フェールオーバーベースラインネットワークのしきい値の調整
+title: フェールオーバー ベースライン ネットワークのしきい値の調整
 description: この記事では、フェールオーバークラスターネットワークのしきい値を調整するためのソリューションについて説明します。
 ms.prod: windows-server
 ms.technology: server-general
 ms.date: 05/28/2020
 author: Deland-Han
 ms.author: delhan
-ms.openlocfilehash: c0e2f0309049f0271a223c2a23012eb2efa8d843
-ms.sourcegitcommit: ef089864980a1d4793a35cbf4cbdd02ce1962054
+ms.openlocfilehash: 86a7023f6480e68f917cb8cdd9d0c69c417d3145
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84150170"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409793"
 ---
 # <a name="iaas-with-sql-alwayson---tuning-failover-cluster-network-thresholds"></a>IaaS と SQL AlwaysOn - フェールオーバー クラスター ネットワークのしきい値の調整
 
@@ -21,7 +21,7 @@ ms.locfileid: "84150170"
 
 SQL Server AlwaysOn を使用して IaaS で Windows フェールオーバークラスターノードを実行する場合は、クラスター設定をより緩やかな監視状態に変更することをお勧めします。 クラスター設定は制限がなく、不要な障害が発生する可能性があります。 既定の設定は、オンプレミスのネットワークを十分にチューニングするように設計されており、Windows Azure (IaaS) などのマルチテナント環境によって発生する待機時間を考慮しません。
 
-Windows Server フェールオーバークラスタリングは、Windows クラスター内のノードのネットワーク接続と正常性を絶えず監視します。  ネットワーク経由でノードに到着できない場合、クラスターの別のノードで、アプリケーションやサービスを復元し、オンラインに戻す回復措置が取られます。 クラスターノード間の通信で待機時間が発生すると、次のエラーが発生する可能性があります。  
+Windows Server フェールオーバークラスタリングは、Windows クラスター内のノードのネットワーク接続と正常性を絶えず監視します。  ネットワーク経由でノードに到着できない場合、クラスターの別のノードで、アプリケーションやサービスを復元し、オンラインに戻す回復措置が取られます。 クラスターノード間の通信で待機時間が発生すると、次のエラーが発生する可能性があります。
 
 > エラー 1135 (システムイベントログ)
 
@@ -77,7 +77,7 @@ Cluster .log の例:
 
 既定では、Windows Server 2016 は**SameSubnetThreshold**を10に、 **SameSubnetDelay**を1000ミリ秒に設定します。 たとえば、接続の監視が10秒間失敗した場合、フェールオーバーのしきい値に達すると、そのノードがクラスターメンバーシップから削除されます。 その結果、リソースがクラスター上の使用可能な別のノードに移動されます。 クラスターエラー 1135 (上の図を含む) が報告されます。
 
-## <a name="resolution"></a>解決策
+## <a name="resolution"></a>解決方法
 
 IaaS 環境では、クラスターのネットワーク構成設定を緩和します。
 
@@ -91,17 +91,16 @@ C:\Windows\system32> get-cluster | fl *subnet*
 
 各サポート OS の既定値、最小値、最大値、推奨値
 
-|   |OS|Min|Max|Default|推奨|
-|---|---|---|---|---|---|
-|CrossSubnetThreshold|2008 R2|3|20|5|20|
-|クロスサブネットのしきい値|2012|3|120|5|20|
-|クロスサブネットのしきい値|2012 R2|3|120|5|20|
-|クロスサブネットのしきい値|2016|3|120|20|20|
-|SameSubnet しきい値|2008 R2|3|10|5|10|
-|SameSubnet しきい値|2012|3|120|5|10
-|SameSubnet しきい値|2012 R2|3|120|5|10|
-|SameSubnetThreshold|2016|3|120|10|10|
-|||||||
+| 説明 | OS | Min | Max | Default | 推奨 |
+|--|--|--|--|--|--|
+| CrossSubnetThreshold | 2008 R2 | 3 | 20 | 5 | 20 |
+| クロスサブネットのしきい値 | 2012 | 3 | 120 | 5 | 20 |
+| クロスサブネットのしきい値 | 2012 R2 | 3 | 120 | 5 | 20 |
+| クロスサブネットのしきい値 | 2016 | 3 | 120 | 20 | 20 |
+| SameSubnet しきい値 | 2008 R2 | 3 | 10 | 5 | 10 |
+| SameSubnet しきい値 | 2012 | 3 | 120 | 5 | 10 |
+| SameSubnet しきい値 | 2012 R2 | 3 | 120 | 5 | 10 |
+| SameSubnetThreshold | 2016 | 3 | 120 | 10 | 10 |
 
 しきい値の値は、次の記事で説明されているように、デプロイのスコープに関する現在の推奨事項を反映しています。
 
@@ -137,8 +136,8 @@ C:\Windows\system32> get-cluster | fl *subnet*
 
     :::image type="content" source="media/iaas-sql-failover-cluster/cmd.png" alt-text="cmd" border="false":::
 
-## <a name="references"></a>リファレンス
+## <a name="references"></a>参考資料
 
 Windows クラスターのネットワーク構成設定の調整の詳細については、「[フェールオーバークラスターのネットワークしきい値の調整](https://techcommunity.microsoft.com/t5/failover-clustering/tuning-failover-cluster-network-thresholds/ba-p/371834)」を参照してください。
 
-Cluster.exe を使用して Windows クラスターのネットワーク構成設定を調整する方法については、「[フェールオーバークラスターのクラスターネットワークを構成する方法](/previous-versions/office/exchange-server-2007/bb690953(v=exchg.80)?redirectedfrom=MSDN)」を参照してください。
+cluster.exe を使用して Windows クラスターのネットワーク構成設定を調整する方法については、「[フェールオーバークラスターのクラスターネットワークを構成する方法](/previous-versions/office/exchange-server-2007/bb690953(v=exchg.80)?redirectedfrom=MSDN)」を参照してください。

@@ -5,20 +5,20 @@ author: laknight5
 ms.author: laknight
 ms.date: 6/29/2020
 ms.prod: windows-server
-ms.technology: storage-file-systems
+ms.technology: windows-commands
 ms.topic: article
-ms.openlocfilehash: c84aaed5b34c535221247dcdd6ab0a5462fd4aad
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 3afc96970bb0350a3c1168c520cc20ad4f2254af
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931100"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409723"
 ---
 # <a name="refsutil"></a>ReFSUtil
 
->適用先:Windows Server 2019、Windows 10
+> 適用先:Windows Server 2019、Windows 10
 
-ReFSUtil は、Windows および Windows Server に含まれているツールであり、大量の参照ボリュームを診断し、残りのファイルを特定し、それらのファイルを別のボリュームにコピーしようとします。 これは、フォルダー内の Windows 10 `%SystemRoot%\Windows\System32` またはフォルダー内の Windows Server に `%SystemRoot%\\System32` あります。
+ReFSUtil は、Windows および Windows Server に含まれているツールであり、大量の参照ボリュームを診断し、残りのファイルを特定し、それらのファイルを別のボリュームにコピーしようとします。 これは、フォルダー内の Windows 10 `%SystemRoot%\Windows\System32` またはフォルダー内の Windows Server に `%SystemRoot%\System32` あります。
 
 ReFS salvage は ReFSUtil の主な機能であり、ディスク管理で RAW と表示されるボリュームからデータを回復する場合に便利です。 ReFS Salvage には、スキャンフェーズとコピーフェーズという2つのフェーズがあります。 自動モードでは、スキャンフェーズとコピーフェーズが連続して実行されます。 手動モードでは、各フェーズを個別に実行できます。 進行状況とログは作業ディレクトリに保存されるため、フェーズを個別に実行できるだけでなく、スキャンフェーズを一時停止および再開することもできます。 ボリュームが未加工でない限り、ReFSutil ツールを使用する必要はありません。 読み取り専用の場合、データには引き続きアクセスできます。
 
@@ -31,7 +31,7 @@ ReFS salvage は ReFSUtil の主な機能であり、ディスク管理で RAW �
 | `<target directory>` | 識別されたファイルのコピー先の場所を指定します。 に配置さ**れていない**必要があり `<source volume>` ます。 |
 | \-m | 削除されたファイルも含めて、可能なすべてのファイルを回復します。<p>**警告:** このパラメーターによってプロセスの実行時間が長くなるだけでなく、予期しない結果が生じる可能性もあります。 |
 | \-画像 | 詳細モードを使用するように指定します。 |
-| \-閉じる | 必要に応じて、最初にボリュームを強制的にマウント解除します。 その後、ボリュームに対して開いているハンドルはすべて無効になります。 たとえば、`refsutil salvage -QA R: N:\\WORKING N:\\DATA -x` のようにします。 |
+| \-閉じる | 必要に応じて、最初にボリュームを強制的にマウント解除します。 その後、ボリュームに対して開いているハンドルはすべて無効になります。 たとえば、「 `refsutil salvage -QA R: N:\WORKING N:\DATA -x` 」のように入力します。 |
 
 ## <a name="usage-and-available-options"></a>使用法と使用可能なオプション
 
@@ -99,6 +99,6 @@ refsutil salvage -SL <source volume> <working directory> <target directory> <fil
 refsutil salvage -IC <source volume> <working directory> <options>
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

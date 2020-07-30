@@ -7,12 +7,12 @@ ms.assetid: 5f570492-ee21-471b-92c1-3fd9bfb84f55
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: bd14631917a9f0211e39bd44c9d01e11ad2a177f
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: c8f490f09f9623aa82b42f2103f2fd3e95537d7d
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87179888"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409512"
 ---
 # <a name="play-digital-media-in-windows-server-essentials"></a>Windows Server Essentials でのデジタル メディアの再生
 
@@ -65,11 +65,9 @@ ms.locfileid: "87179888"
 
  次の方法のいずれかを利用し、サーバーに保存されているデジタル メディア ファイルを検索できます。
 
-
 -   [ネットワーク上のコンピューターまたはデジタルメディアプレーヤーから Windows Server Essentials 上のメディアファイルを検索して再生する](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_2.1)
 
 -   [Windows Server Essentials のメディアファイルを Windows Media Player、Xbox 360、またはネットワーク内のネットワークに接続されたデジタルメディアプレーヤーに送信する](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_SendToDevice)
-
 
 
 ###  <a name="search-for-and-play-media-files-on-windows-server-essentials-from-a-computer-or-digital-media-player-on-the-network"></a><a name="BKMK_2.1"></a>ネットワーク上のコンピューターまたはデジタルメディアプレーヤーから Windows Server Essentials 上のメディアファイルを検索して再生する
@@ -87,7 +85,6 @@ ms.locfileid: "87179888"
 -   [スタート パッドの共有フォルダー機能を利用し、メディア ファイルを検索し、再生する](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_SharedFolders)
 
 -   [リモート Web アクセスを利用し、共有メディアを検索し、再生する](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_RWA2)
-
 
 
 ####  <a name="search-for-and-play-media-files-from-a-computer-that-is-running-windows-media-center"></a><a name="BKMK_WMC"></a>Windows Media Center を実行しているコンピューターからメディアファイルを検索して再生する
@@ -260,19 +257,8 @@ ms.locfileid: "87179888"
 
 -   [デジタル メディアの管理](../manage/Manage-Digital-Media-in-Windows-Server-Essentials.md)
 
-
 -   [接続の取得](Get-Connected-in-Windows-Server-Essentials.md)
 
 -   [共有フォルダーの使用](Use-Shared-Folders-in-Windows-Server-Essentials.md)
 
 -   [リモートで作業する](Work-Remotely-in-Windows-Server-Essentials.md)
-
-<<<<<<< HEAD
--   [接続の取得](../use/Get-Connected-in-Windows-Server-Essentials.md)
-
--   [共有フォルダーの使用](../use/Use-Shared-Folders-in-Windows-Server-Essentials.md)
-
--   [リモートで作業する](../use/Work-Remotely-in-Windows-Server-Essentials.md)
-
-=======
->>>>>>> 97724df67237ac603cf9eb996732230bdb7c0b88

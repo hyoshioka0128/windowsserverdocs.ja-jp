@@ -9,12 +9,12 @@ ms.author: jgerend
 author: JasonGerend
 ms.date: 04/28/2017
 ms.technology: storage-failover-clustering
-ms.openlocfilehash: 21585ab376830f37ca6432849dd8e9b3773af9ab
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: ac09163eb40045289a68287aa3eace20ff714d09
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473299"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409582"
 ---
 # <a name="how-cluster-aware-updating-plug-ins-work"></a>クラスター対応更新プラグインのしくみ
 
@@ -84,7 +84,7 @@ CAU プラグイン引数の構文は、次 \- の一般的な規則に従いま
 |コマンドレット|説明|
 |----------|---------------|
 |[Get-CauPlugin](https://docs.microsoft.com/powershell/module/clusterawareupdating/get-cauplugin)|ローカルコンピューターに登録されている1つまたは複数のソフトウェア更新プラグインに関する情報を取得 \- します。|
-|[Register-CauPlugin]((https://docs.microsoft.com/powershell/module/clusterawareupdating/register-cauplugin))|ローカルコンピューター上の CAU ソフトウェア更新プラグインを登録 \- します。|
+|[Register-CauPlugin](https://docs.microsoft.com/powershell/module/clusterawareupdating/register-cauplugin)|ローカルコンピューター上の CAU ソフトウェア更新プラグインを登録 \- します。|
 |[Unregister-CauPlugin](https://docs.microsoft.com/powershell/module/clusterawareupdating/unregister-cauplugin)|\-CAU で使用できるプラグインの一覧から、ソフトウェア更新プラグインを削除し \- ます。 **注:**\-CAU microsoft.windowsupdateplugin および microsoft.hotfixplugin と共にインストールされたプラグインの \( **Microsoft.WindowsUpdatePlugin** **Microsoft.HotfixPlugin** \) 登録を解除することはできません。|
 
 ## <a name="using-the-microsoftwindowsupdateplugin"></a><a name="BKMK_WUP"></a>Microsoft.windowsupdateplugin の使用

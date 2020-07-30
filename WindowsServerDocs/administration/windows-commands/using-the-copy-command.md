@@ -1,5 +1,5 @@
 ---
-title: copy
+title: Copy コマンドの使用
 description: イメージまたはドライバーグループをコピーするコピーの参照記事。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3ab26daa41ab1378105fb1787988093f8114ade2
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: cb227b269a57165f2480547d83febf757190a4a8
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85934109"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409653"
 ---
-# <a name="copy"></a>copy
+# <a name="using-the-copy-command"></a>Copy コマンドの使用
 
 > 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 

@@ -7,12 +7,12 @@ ms.assetid: 47ea21a0-5e05-4b4b-8fa4-338c82601276
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 276e39cc3e17ce74f7fee43c512cc726ff631a5a
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 341a7dd217045150e1f637d23378e49a86bb5fbf
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87179568"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409482"
 ---
 # <a name="use-remote-web-access-in-windows-server-essentials"></a>Windows Server Essentials でのリモート Web アクセスの使用
 
@@ -23,7 +23,6 @@ ms.locfileid: "87179568"
   リモート Web アクセスを利用すると、外出中も Windows Server Essentials ネットワークに接続された状態を維持できます。 リモート Web アクセスにログオンするときに、Windows Server Essentials ネットワーク上のコンピューターに接続し、ダッシュボードを開いて Windows Server Essentials ネットワークを管理し、サーバー上のすべての共有フォルダーとメディアファイルにアクセスすることができます。
 
  このトピックのセクションは次のとおりです。
-
 
 -   [リモート Web アクセスに接続する](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_Connect)
 
@@ -128,7 +127,7 @@ ms.locfileid: "87179568"
 
 #### <a name="upload-files"></a>ファイルをアップロードする
 
-###### <a name="to-upload-files"></a>ファイルをアップロードするには
+##### <a name="to-upload-files"></a>ファイルをアップロードするには
 
 1. リモート Web アクセスで、[**共有フォルダー**] タブをクリックし、共有フォルダーのリンクをクリックします。 その共有フォルダーのファイルとフォルダーの一覧が表示されます。
 
@@ -149,7 +148,7 @@ ms.locfileid: "87179568"
 > [!NOTE]
 >  HTML5 に対応している Web ブラウザーはもともと複数のファイルをアップロードできます。 このツールは、Web ブラウザーが HTML5 に対応していない場合にのみ必要です。
 
-###### <a name="to-upload-files-using-the-easy-file-upload-tool"></a>ファイルの簡単アップロード ツールを利用してファイルをアップロードするには
+##### <a name="to-upload-files-using-the-easy-file-upload-tool"></a>ファイルの簡単アップロード ツールを利用してファイルをアップロードするには
 
 1.  リモート Web アクセスで、[**共有フォルダー**] タブをクリックし、共有フォルダーのリンクをクリックします。 その共有フォルダーのファイルとフォルダーの一覧が表示されます。
 
@@ -167,7 +166,7 @@ ms.locfileid: "87179568"
 
 #### <a name="download-files-or-folders"></a>ファイルまたはフォルダーをダウンロードする
 
-###### <a name="to-download-a-single-file"></a>ファイルを 1 つダウンロードするには
+##### <a name="to-download-a-single-file"></a>ファイルを 1 つダウンロードするには
 
 1. リモート Web アクセスで、[**共有フォルダー**] タブをクリックし、共有フォルダーのリンクをクリックします。 その共有フォルダーのファイルとフォルダーの一覧が表示されます。
 
@@ -203,7 +202,7 @@ ms.locfileid: "87179568"
 
   実際のダウンロードが始まる前に、exe または zip ファイルが作成されます。 ダウンロードするファイルの数や合計サイズによっては、数分かかる場合があります。 ダウンロード ファイルが作成されると、バックグラウンドでファイルのダウンロードが始まります。 ダウンロードが完了するまで、作業を続けられます。
 
-###### <a name="to-download-multiple-files-or-folders"></a>複数のファイルまたはフォルダーをダウンロードするには
+##### <a name="to-download-multiple-files-or-folders"></a>複数のファイルまたはフォルダーをダウンロードするには
 
 1.  リモート Web アクセスで、[**共有フォルダー**] タブをクリックし、共有フォルダーのリンクをクリックします。 その共有フォルダーのファイルとフォルダーの一覧が表示されます。
 
@@ -224,13 +223,13 @@ ms.locfileid: "87179568"
 
  複数のファイルまたはフォルダーをダウンロードする場合、自己解凍実行ファイル (.exe) または圧縮ファイル (.zip) を取得できます。
 
-###### <a name="to-retrieve-a-file-from-the-compressed-exe-file"></a>圧縮ファイル (.exe) からファイルを取得するには
+##### <a name="to-retrieve-a-file-from-the-compressed-exe-file"></a>圧縮ファイル (.exe) からファイルを取得するには
 
 1.  コンピューターで、圧縮ファイルをダブルクリックして開きます。
 
 2.  指示に従い、コンピューターのフォルダーにファイルを解凍します。
 
-###### <a name="to-retrieve-a-file-from-the-compressed-zip-file"></a>圧縮ファイル (.zip) からファイルを取得するには
+##### <a name="to-retrieve-a-file-from-the-compressed-zip-file"></a>圧縮ファイル (.zip) からファイルを取得するには
 
 1.  コンピューターで、圧縮ファイルをダブルクリックして開きます。
 
@@ -243,9 +242,9 @@ ms.locfileid: "87179568"
  リモート Web アクセスを利用し、既存の共有フォルダーに新しいフォルダーを作成したり、ファイルとフォルダーの名前を変更したり、ファイルとフォルダーを移動またはコピーしたり、サーバーのファイルとフォルダーを削除したりできます。
 
 > [!NOTE]
-Windows Server Essentials を実行しているサーバーに新しい共有フォルダーを追加するには <<<<<<< ヘッドダッシュボードを使用する必要があります。 リモート Web アクセスからサーバー コンソールに接続するには、[**コンピューター**] タブで、サーバー名をクリックし、[**接続**] をクリックし、指示に従ってサーバーにログオンします。 共有フォルダーの作成方法に関する詳細については、「[サーバー フォルダーを追加または移動する](../manage/Manage-Server-Folders-in-Windows-Server-Essentials.md#BKMK_5)」を参照してください。
+> Windows Server Essentials を実行しているサーバーで新しい共有フォルダーを追加するには、ダッシュボードを使用する必要があります。 リモート Web アクセスからサーバー コンソールに接続するには、[**コンピューター**] タブで、サーバー名をクリックし、[**接続**] をクリックし、指示に従ってサーバーにログオンします。 共有フォルダーの作成方法に関する詳細については、「[サーバー フォルダーを追加または移動する](../manage/Manage-Server-Folders-in-Windows-Server-Essentials.md#BKMK_5)」を参照してください。
 
-##### <a name="to-create-a-new-folder"></a>新しいフォルダーを作成するには
+#### <a name="to-create-a-new-folder"></a>新しいフォルダーを作成するには
 
 1.  リモート Web アクセスで、[**共有フォルダー**] タブをクリックし、共有フォルダーのリンクをクリックします。 その共有フォルダーのファイルとフォルダーの一覧が表示されます。
 
@@ -261,7 +260,7 @@ Windows Server Essentials を実行しているサーバーに新しい共有フ
 
 3.  テキスト ボックスに新しい名前を入力し、[**OK**] をクリックします。
 
-##### <a name="to-move-files-or-folders"></a>ファイルまたはフォルダーを移動するには
+#### <a name="to-move-files-or-folders"></a>ファイルまたはフォルダーを移動するには
 
 1.  リモート Web アクセスで、[**共有フォルダー**] タブをクリックし、共有フォルダーのリンクをクリックします。 その共有フォルダーのファイルとフォルダーの一覧が表示されます。
 
@@ -355,108 +354,3 @@ Windows Server Essentials を実行しているサーバーに新しい共有フ
 
 -   [Windows Server Essentials の使用](../use/Use-Windows-Server-Essentials.md)
 
-=======
->  Windows Server Essentials を実行しているサーバーで新しい共有フォルダーを追加するには、ダッシュボードを使用する必要があります。 リモート Web アクセスからサーバー コンソールに接続するには、[**コンピューター**] タブで、サーバー名をクリックし、[**接続**] をクリックし、指示に従ってサーバーにログオンします。 共有フォルダーの作成方法に関する詳細については、「[サーバー フォルダーを追加または移動する](../manage/Manage-Server-Folders-in-Windows-Server-Essentials.md#BKMK_5)」を参照してください。
-
-##### <a name="to-create-a-new-folder"></a>新しいフォルダーを作成するには
-
-1.  リモート Web アクセスで、[**共有フォルダー**] タブをクリックし、共有フォルダーのリンクをクリックします。 その共有フォルダーのファイルとフォルダーの一覧が表示されます。
-
-2.  タスク バーで、[**新規フォルダー**] をクリックします。
-
-3.  フォルダーの名前を入力し、[**OK**] をクリックします。
-
-##### <a name="to-rename-a-file-or-folder"></a>ファイルまたはフォルダーの名前を変更するには
-
-1.  リモート Web アクセスで、[**共有フォルダー**] タブをクリックし、共有フォルダーのリンクをクリックします。 その共有フォルダーのファイルとフォルダーの一覧が表示されます。
-
-2.  名前を変更するファイルまたはフォルダーを右クリックし、[**名前変更**] をクリックします。
-
-3.  テキスト ボックスに新しい名前を入力し、[**OK**] をクリックします。
-
-##### <a name="to-move-files-or-folders"></a>ファイルまたはフォルダーを移動するには
-
-1.  リモート Web アクセスで、[**共有フォルダー**] タブをクリックし、共有フォルダーのリンクをクリックします。 その共有フォルダーのファイルとフォルダーの一覧が表示されます。
-
-2.  移動するファイルまたはフォルダーの隣にあるチェック ボックスを選択し、選択したファイルまたはフォルダーの 1 つを右クリックし、[**切り取り**] をクリックします。
-
-3.  ファイルまたはフォルダーの移動先となるフォルダーを右クリックし、[**貼り付け**] をクリックします。
-
-##### <a name="to-delete-a-file-or-folder"></a>ファイルまたはフォルダーを削除するには
-
-1.  リモート Web アクセスで、[**共有フォルダー**] タブをクリックし、共有フォルダーのリンクをクリックします。 その共有フォルダーのファイルとフォルダーの一覧が表示されます。
-
-2.  削除するファイルまたはフォルダーの隣にあるチェック ボックスを選択し、選択したファイルまたはフォルダーの 1 つを右クリックし、[**削除**] をクリックします。
-
-3.  選択したファイルとフォルダーを削除するには、[**はい**] をクリックします。
-
-##### <a name="to-copy-files-or-folders"></a>ファイルまたはフォルダーをコピーするには
-
-1.  リモート Web アクセスで、[**共有フォルダー**] タブをクリックし、共有フォルダーのリンクをクリックします。 その共有フォルダーのファイルとフォルダーの一覧が表示されます。
-
-2.  コピーするファイルまたはフォルダーの隣にあるチェック ボックスを選択し、選択したファイルまたはフォルダーの 1 つを右クリックし、[**コピー**] をクリックします。
-
-3.  ファイルまたはフォルダーのコピー先にするフォルダーを右クリックし、[**貼り付け**] をクリックします。
-
-##  <a name="connect-from-a-mobile-device"></a><a name="BKMK_ConnectMobile"></a>モバイルデバイスから接続する
-
-
--   [モバイル デバイスからリモート Web アクセスを使用する](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_8)
-
--   [モバイル デバイスでサポートされる Web ブラウザー](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_9)
-
-
-###  <a name="use-remote-web-access-from-a-mobile-device"></a><a name="BKMK_8"></a>モバイルデバイスからリモート Web アクセスを使用する
- スマートフォンからリモート Web アクセスにログオンし、サーバーの共有フォルダーのファイルとフォルダーを閲覧できます。
-
-> [!NOTE]
->  Windows Server Essentials の My Server アプリを [Windows Phone Marketplace](http://www.windowsphone.com/apps/6c2f98d5-6fcf-4e1d-b8b1-cde62ea1a94a) からダウンロードして使用し、サーバーに保存されている共有フォルダーとメディア ファイルにアクセスすることもできます。
-
-##### <a name="to-log-on-to-remote-web-access-from-a-mobile-device"></a>モバイル デバイスからリモート Web アクセスにログオンするには
-
-1.  Web ブラウザーを開き、アドレスバーに「 **https://** _<\> _**」と**入力します。  を https に含めるようにしてください。
-
-2.  [リモート Web アクセスログオン] ページで、テキストボックスにユーザー名とパスワードを入力し、矢印をクリックします。 リモート Web アクセスのモバイル バージョンにログオンされます。
-
-##### <a name="to-switch-to-the-desktop-version-of-remote-web-access"></a>リモート Web アクセスのデスクトップ バージョンに切り替えるには
-
-1.  Web ブラウザーを開き、アドレスバーに「 **https://** _<\> _**」と**入力します。  を https に含めるようにしてください。
-
-2.  [リモート Web アクセスログオン] ページで、テキストボックスにユーザー名とパスワードを入力し、[**デスクトップバージョンの表示**] をクリックして、矢印をクリックします。 リモート Web アクセスのデスクトップ バージョンにログオンされます。
-
-##### <a name="to-return-to-the-mobile-version-of-remote-web-access"></a>リモート Web アクセスのモバイル バージョンに戻るには
-
-1. ログオフします。
-
-2. Web ブラウザーを開き、アドレスバーに「 **https://** _<\> _**」と**入力します。 を https に含めるようにしてください。
-
-3. リモート Web アクセスのモバイルバージョンが表示されます。 [リモート Web アクセスログオン] ページで、テキストボックスにユーザー名とパスワードを入力し、矢印をクリックします。 リモート Web アクセスのモバイルバージョンにログオンしています。
-
-   サーバーの共有フォルダーのファイルとフォルダーを検索できます。
-
-###  <a name="supported-web-browsers-for-mobile-devices"></a><a name="BKMK_9"></a>モバイルデバイスでサポートされている Web ブラウザー
- サポートされるモバイル デバイス用 Web ブラウザー:
-
--   Internet Explorer Mobile 6.0 以降
-
--   Safari
-
--   Blackberry
-
--   Symbian 6.0 以降
-
--   Android
-
--   Google Chrome
-
--   Firefox
-
-## <a name="see-also"></a>関連項目
-
--   [リモート Web アクセスの管理](../manage/Manage-Remote-Web-Access-in-Windows-Server-Essentials.md)
-
--   [リモートで作業する](Work-Remotely-in-Windows-Server-Essentials.md)
-
--   [Windows Server Essentials の使用](Use-Windows-Server-Essentials.md)
-
->>>>>>> 97724df67237ac603cf9eb996732230bdb7c0b88

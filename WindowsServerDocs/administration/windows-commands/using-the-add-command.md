@@ -1,5 +1,5 @@
 ---
-title: add
+title: '[追加] コマンドを使用する'
 description: さまざまな add コマンドのリファレンス記事です。
 ms.prod: windows-server
 ms.technology: manage-windows-commands
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 23bcfa5d304839094151d8baa9a7ebd77334d469
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 4b70ec8ef9d80b8fc09af1283c5e108642c764b6
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85937252"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87408791"
 ---
-# <a name="add"></a>add
+# <a name="using-the-add-command"></a>[追加] コマンドを使用する
 
 > 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 

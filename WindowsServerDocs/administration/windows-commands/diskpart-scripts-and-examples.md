@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 64355bd452934909d0600fa791e7a4c2d2066b6f
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: ace5b081d9dd362bb1455f9992568f197c815fdf
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86958294"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409743"
 ---
 # <a name="diskpart-scripts-and-examples"></a>diskpart のスクリプトと例
 
@@ -24,30 +24,30 @@ ms.locfileid: "86958294"
 
 Diskpart スクリプトを作成するには、実行する Diskpart コマンドを含むテキストファイルを作成します。1行につき1つのコマンドを使用し、空の行を含めません。 を使用して行を開始し `rem` 、行にコメントを作成することができます。 たとえば、ディスクをワイプした後、Windows 回復環境用に 300 MB のパーティションを作成するスクリプトを次に示します。
 
-    ```
-    select disk 0
-    clean
-    convert gpt
-    create partition primary size=300
-    format quick fs=ntfs label=Windows RE tools
-    assign letter=T
-    ```
+```
+select disk 0
+clean
+convert gpt
+create partition primary size=300
+format quick fs=ntfs label=Windows RE tools
+assign letter=T
+```
 
 ## <a name="examples"></a>例
 
 - Diskpart スクリプトを実行するには、コマンドプロンプトで次のコマンドを入力します。ここで、 *scriptname*は、スクリプトが含まれているテキストファイルの名前です。
 
-    ```
-    diskpart /s scriptname.txt
-    ```
+```
+diskpart /s scriptname.txt
+```
 
 - Diskpart のスクリプト出力をファイルにリダイレクトするには、次のコマンドを入力します。ここで、 *logfile*は、diskpart によって出力が書き込まれるテキストファイルの名前です。
 
-    ```
-    diskpart /s scriptname.txt > logfile.txt
-    ```
+```
+diskpart /s scriptname.txt > logfile.txt
+```
 
-### <a name="remarks"></a>注釈
+### <a name="remarks"></a>解説
 
 - **Diskpart**コマンドをスクリプトの一部として使用する場合は、すべての diskpart 操作を1つの diskpart スクリプトの一部として実行することをお勧めします。 連続した diskpart スクリプトを実行できますが、その後のスクリプトで**diskpart**コマンドを実行する前に、前回の実行を完全にシャットダウンするには、各スクリプトの間に少なくとも15秒かかることが必要です。 このようにしないと、以降のスクリプトが失敗することがあります。 `timeout /t 15`Diskpart スクリプトと共にコマンドをバッチファイルに追加することで、連続する diskpart スクリプトの間に一時停止を追加できます。
 

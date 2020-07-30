@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: 4e40b57f-6917-43ef-92e0-030baa9d2b99
 author: nnamuhcs
 ms.author: daveba
-ms.openlocfilehash: 6b1e6d46013d98970e694176426be2ac1f57195d
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: a56211dc04a3f10623fd31f5bae174f03ae65022
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87179358"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409472"
 ---
 # <a name="use-the-my-server-app-to-connect-to-windows-server-essentials"></a>My Server アプリを利用した Windows Server Essentials への接続
 
@@ -151,29 +151,7 @@ Windows Server Essentials 用の My Server アプリを使用すると、ノー�
 7.  指示に従ってウィザードを完了します。
 
     > [!NOTE]
-証明書のインストールが完了したら <<<<<<< ヘッドを使用して Windows 8 または Windows 8.1 の My Server アプリにサインインし、サーバー名とネットワーク資格情報を使用することができます。
-
-## <a name="additional-references"></a>その他のリファレンス
-
--   [Windows Server Essentials のサービス統合の概要-パート1](https://blogs.technet.com/b/sbs/archive/2013/11/06/services-integration-overview-for-windows-server-2012-r2-essentials-part-1.aspx)
-
--   [Windows Server Essentials のサービス統合の概要-パート2](https://blogs.technet.com/b/sbs/archive/2013/11/06/services-integration-overview-for-windows-server-2012-r2-essentials-part-2.aspx)
-
--   [Anywhere Access の管理](../manage/Manage-Anywhere-Access-in-Windows-Server-Essentials.md)
-
--   [Windows Server Essentials の管理](../manage/Manage-Windows-Server-Essentials.md)
-
-
--   [リモートで作業する](Work-Remotely-in-Windows-Server-Essentials.md)
-
--   [Windows Server Essentials の使用](Use-Windows-Server-Essentials.md)
-
--   [リモートで作業する](../use/Work-Remotely-in-Windows-Server-Essentials.md)
-
--   [Windows Server Essentials の使用](../use/Use-Windows-Server-Essentials.md)
-
-=======
-    >  After the installation of the certificate is complete, you can sign in to the My Server app for Windows 8 or Windows 8.1 by using your server name and your network credentials.
+    >  証明書のインストールが完了したら、サーバー名とネットワーク資格情報を使用して Windows 8 または Windows 8.1 用の My Server アプリにサインインできるようになります。
 
 ## <a name="see-also"></a>関連項目
 
@@ -188,5 +166,3 @@ Windows Server Essentials 用の My Server アプリを使用すると、ノー�
 -   [リモートで作業する](Work-Remotely-in-Windows-Server-Essentials.md)
 
 -   [Windows Server Essentials の使用](Use-Windows-Server-Essentials.md)
-
->>>>>>> 97724df67237ac603cf9eb996732230bdb7c0b88

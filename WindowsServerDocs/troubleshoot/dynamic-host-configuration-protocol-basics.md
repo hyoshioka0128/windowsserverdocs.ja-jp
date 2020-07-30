@@ -1,21 +1,20 @@
 ---
 title: DHCP (動的ホスト構成プロトコル) の基本
 description: ''
-ms.date: 5/26/2020
 ms.prod: windows-server
-ms.service: na
 manager: dcscontentpm
 ms.technology: server-general
-ms.topic: article
+ms.date: 5/26/2020
+ms.topic: troubleshoot
 author: Deland-Han
 ms.author: delhan
 ms.reviewer: ''
-ms.openlocfilehash: c7e4f385472c9078c49fcfd7aeab28b1b70c5a13
-ms.sourcegitcommit: ef089864980a1d4793a35cbf4cbdd02ce1962054
+ms.openlocfilehash: 5a3247fad961f4b2d1cf6e354c29706708c8e330
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84150210"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409813"
 ---
 # <a name="dhcp-dynamic-host-configuration-protocol-basics"></a>DHCP (動的ホスト構成プロトコル) の基本
 
@@ -43,7 +42,7 @@ ms.locfileid: "84150210"
 
 - Microsoft TCP/IP-32 for Windows for Windows for Windows バージョン3.11、3.11 a、および 3.11 b
 
-Dhcp クライアントは、DHCP サーバーから受信できるさまざまなオプションをサポートしています。 
+Dhcp クライアントは、DHCP サーバーから受信できるさまざまなオプションをサポートしています。
 
 次の Microsoft サーバーオペレーティングシステムでは、DHCP サーバーの機能を提供しています。
 
@@ -450,6 +449,6 @@ DHCP サーバーからクライアントによって取得された DHCP 情報
 
 Windows または Windows のワークグループクライアントの IP 情報を表示するには、IPCONFIG ユーティリティを使用します。 クライアントが Windows 95 の場合は、WINIPCFG を使用します。
 
-## <a name="references"></a>リファレンス
+## <a name="references"></a>参考資料
 
 DHCP の詳細については、「RFC1541 and RFC2131」を参照してください。 Rfc は多くのサイトでインターネット経由で取得できます。たとえば、 [http://www.rfc-editor.org/](http://www.rfc-editor.org/) と[http://www.tech-nic.qc.ca/](http://www.tech-nic.qc.ca/)

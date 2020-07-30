@@ -7,12 +7,12 @@ ms.topic: landing-page
 ms.author: davso; ericam; yashi
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 5e001ef3a51c93e3b1c7e4bf3d1af0a014243e56
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 8617c285ae55521e4e301b5c6b74f389df6b32d2
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471217"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409452"
 ---
 # <a name="tuning-iis-100"></a>IIS 10.0 のチューニング
 
@@ -43,8 +43,6 @@ HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\Http\Parameters
 ```
 
 **メモ**  HTTP サービスが既に実行されている場合は、変更を有効にするために再起動する必要があります。
-
-Â 
 
 ## <a name="cache-management-settings"></a>キャッシュ管理の設定
 
@@ -142,12 +140,12 @@ HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\InetInfo\Parameters\ThreadP
 
 **System.webserver/キャッシュ**
 
-|属性|説明|Default|
-|--- |--- |--- |
-|有効|**False**に設定されている場合、ユーザーモードの IIS キャッシュを無効にします。 キャッシュヒット率が非常に小さい場合は、キャッシュコードパスに関連付けられているオーバーヘッドを回避するために、キャッシュを完全に無効にすることができます。 ユーザーモードのキャッシュを無効にしても、カーネルモードのキャッシュは無効になりません。|True|
-|Enableカーネルキャッシュ|**False**に設定されている場合、カーネルモードのキャッシュを無効にします。|True|
-|maxCacheSize|IIS ユーザーモードのキャッシュサイズを指定したサイズ (メガバイト単位) に制限します。 IIS では、使用可能なメモリに応じて既定値が調整されます。 頻繁にアクセスするファイルのセットのサイズと RAM の容量または IIS プロセスのアドレス空間に基づいて、値を慎重に選択します。|0|
-|maxResponseSize|指定されたサイズまでファイルをキャッシュします。 実際の値は、データセット内の最大ファイルの数とサイズ、および使用可能な RAM によって異なります。 頻繁に要求される大規模なファイルをキャッシュすることで、CPU の使用率、ディスクアクセス、および関連する待機時間を減らすことができます。|262144|
+| 属性 | 説明 | Default |
+|--|--|--|
+| Enabled | **False**に設定されている場合、ユーザーモードの IIS キャッシュを無効にします。 キャッシュヒット率が非常に小さい場合は、キャッシュコードパスに関連付けられているオーバーヘッドを回避するために、キャッシュを完全に無効にすることができます。 ユーザーモードのキャッシュを無効にしても、カーネルモードのキャッシュは無効になりません。 | True |
+| Enableカーネルキャッシュ | **False**に設定されている場合、カーネルモードのキャッシュを無効にします。 | True |
+| maxCacheSize | IIS ユーザーモードのキャッシュサイズを指定したサイズ (メガバイト単位) に制限します。 IIS では、使用可能なメモリに応じて既定値が調整されます。 頻繁にアクセスするファイルのセットのサイズと RAM の容量または IIS プロセスのアドレス空間に基づいて、値を慎重に選択します。 | 0 |
+| maxResponseSize | 指定されたサイズまでファイルをキャッシュします。 実際の値は、データセット内の最大ファイルの数とサイズ、および使用可能な RAM によって異なります。 頻繁に要求される大規模なファイルをキャッシュすることで、CPU の使用率、ディスクアクセス、および関連する待機時間を減らすことができます。 | 262144 |
 
 ## <a name="compression-behavior-settings"></a>圧縮動作の設定
 
@@ -157,22 +155,22 @@ HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\InetInfo\Parameters\ThreadP
 
 **System.webserver/httpCompression**
 
-|属性|説明|Default|
-|--- |--- |--- |
-|staticCompression-EnableCpuUsage<br><br>staticCompression-DisableCpuUsage<br><br>dynamicCompression-EnableCpuUsage<br><br>dynamicCompression-DisableCpuUsage|現在の CPU 使用率が、指定された制限を超えた場合、または下回った場合に、圧縮を有効または無効にします。<br><br>IIS 7.0 以降では、安定状態の CPU が無効しきい値を超えた場合、圧縮は自動的に無効になります。 CPU が有効しきい値を下回ると、圧縮が有効になります。|50、100、50、および90|
-|directory|圧縮されたバージョンの静的ファイルが一時的に格納およびキャッシュされるディレクトリを指定します。 頻繁にアクセスされる場合は、このディレクトリをシステムドライブから移動することを検討してください。|%SystemDrive%\inetpub\temp\IIS Temporary Compressed Files|
-|Dodiskspace の制限|圧縮されたすべてのファイルが占有できるディスク領域の制限が存在するかどうかを指定します。 圧縮されたファイルは、 **directory**属性によって指定された圧縮ディレクトリに格納されます。|True|
-|Maxdiskspace Usage|圧縮ファイルが圧縮ディレクトリに格納できるディスク領域のバイト数を指定します。<br><br>圧縮されたすべてのコンテンツの合計サイズが大きすぎる場合は、この設定を増やす必要があります。|100 MB|
+| 属性 | 説明 | Default |
+|--|--|--|
+| staticCompression-EnableCpuUsage<br><br>staticCompression-DisableCpuUsage<br><br>dynamicCompression-EnableCpuUsage<br><br>dynamicCompression-DisableCpuUsage | 現在の CPU 使用率が、指定された制限を超えた場合、または下回った場合に、圧縮を有効または無効にします。<br><br>IIS 7.0 以降では、安定状態の CPU が無効しきい値を超えた場合、圧縮は自動的に無効になります。 CPU が有効しきい値を下回ると、圧縮が有効になります。 | 50、100、50、および90 |
+| directory | 圧縮されたバージョンの静的ファイルが一時的に格納およびキャッシュされるディレクトリを指定します。 頻繁にアクセスされる場合は、このディレクトリをシステムドライブから移動することを検討してください。 | %SystemDrive%\inetpub\temp\IIS Temporary Compressed Files |
+| Dodiskspace の制限 | 圧縮されたすべてのファイルが占有できるディスク領域の制限が存在するかどうかを指定します。 圧縮されたファイルは、 **directory**属性によって指定された圧縮ディレクトリに格納されます。 | True |
+| Maxdiskspace Usage | 圧縮ファイルが圧縮ディレクトリに格納できるディスク領域のバイト数を指定します。<br><br>圧縮されたすべてのコンテンツの合計サイズが大きすぎる場合は、この設定を増やす必要があります。 | 100 MB |
 
 **System.webserver/urlCompression**
 
-|属性|説明|Default|
-|--- |--- |--- |
-|doStaticCompression|静的コンテンツを圧縮するかどうかを指定します。|True|
-|doDynamicCompression|動的コンテンツを圧縮するかどうかを指定します。|True|
+| 属性 | 説明 | Default |
+|--|--|--|
+| doStaticCompression | 静的コンテンツを圧縮するかどうかを指定します。 | True |
+| doDynamicCompression | 動的コンテンツを圧縮するかどうかを指定します。 | True |
 
-**メモ**平均 CPU 使用率が低い IIS 10.0 を実行しているサーバーの場合、特に応答が大きい場合は、動的コンテンツの圧縮を有効にすることを検討してください。 これは、ベースラインからの CPU 使用率の影響を評価するために、まずテスト環境で実行する必要があります。
-
+> [!NOTE]
+> 平均 CPU 使用率が低い IIS 10.0 を実行しているサーバーの場合、特に応答が大きい場合は、動的コンテンツの圧縮を有効にすることを検討してください。 これは、ベースラインからの CPU 使用率の影響を評価するために、まずテスト環境で実行する必要があります。
 
 ### <a name="tuning-the-default-document-list"></a>既定のドキュメントリストのチューニング
 
@@ -186,10 +184,10 @@ HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\InetInfo\Parameters\ThreadP
 
 **System.webserver/defaultDocument**
 
-|属性|説明|Default|
-|--- |--- |--- |
-|enabled|既定のドキュメントを有効にすることを指定します。|True|
-|&lt;files &gt; 要素|既定のドキュメントとして構成されているファイル名を指定します。|既定の一覧は Default.htm、default.asp、Index.htm、Index.html、Iisstart.htm、および default.aspx です。|
+| 属性 | 説明 | Default |
+|--|--|--|
+| enabled | 既定のドキュメントを有効にすることを指定します。 | True |
+| `<files>` 要素 | 既定のドキュメントとして構成されているファイル名を指定します。 | 既定の一覧は Default.htm、default.asp、Index.htm、Index.html、Iisstart.htm、および default.aspx です。 |
 
 ## <a name="central-binary-logging"></a>中央バイナリログ
 
@@ -199,17 +197,16 @@ CentralLogFileMode 属性を CentralBinary に設定し、 **enabled**属性を*
 
 **Applicationhost.config/log**
 
-|属性|説明|Default|
-|--- |--- |--- |
-|centralLogFileMode|サーバーのログモードを指定します。 中央バイナリログを有効にするには、この値を CentralBinary に変更します。|サイト|
+| 属性 | 説明 | Default |
+|--|--|--|
+| centralLogFileMode | サーバーのログモードを指定します。 中央バイナリログを有効にするには、この値を CentralBinary に変更します。 | サイト |
 
 **Applicationhost.config/log/centralBinaryLogFile**
 
-|属性|説明|Default|
-|--- |--- |--- |
-|enabled|中央バイナリログを有効にするかどうかを指定します。|False|
-|directory|ログエントリが書き込まれるディレクトリを指定します。|%SystemDrive%\inetpub\logs\LogFiles|
-
+| 属性 | 説明 | Default |
+|--|--|--|
+| enabled | 中央バイナリログを有効にするかどうかを指定します。 | False |
+| directory | ログエントリが書き込まれるディレクトリを指定します。 | %SystemDrive%\inetpub\logs\LogFiles |
 
 ## <a name="application-and-site-tunings"></a>アプリケーションとサイトチューニング
 
@@ -217,16 +214,16 @@ CentralLogFileMode 属性を CentralBinary に設定し、 **enabled**属性を*
 
 **Applicationhost.config/applicationPools/applicationPoolDefaults**
 
-|属性|説明|Default|
-|--- |--- |--- |
-|queueLength|今後の要求が拒否されるまでに、アプリケーションプールのキューに登録されている要求の数を HTTP.sys することを示します。 このプロパティの値を超えた場合、IIS は503エラーが発生した後続の要求を拒否します。<br><br>503エラーが検出された場合に、待機時間の長いバックエンドデータストアと通信するアプリケーションでは、これを増やすことを検討してください。|1000|
-|enable32BitAppOnWin64|True の場合、64ビットプロセッサを搭載したコンピューターで32ビットアプリケーションを実行できます。<br><br>メモリ使用量が問題になる場合は、32ビットモードを有効にすることを検討してください。 ポインターのサイズと命令のサイズが小さいため、32ビットアプリケーションでは、64ビットアプリケーションよりもメモリ使用量が少なくなります。 64ビットコンピューターで32ビットアプリケーションを実行する場合の欠点は、ユーザーモードのアドレス空間が 4 GB に制限されていることです。|False|
+| 属性 | 説明 | Default |
+|--|--|--|
+| queueLength | 今後の要求が拒否されるまでに、アプリケーションプールのキューに登録されている要求の数を HTTP.sys することを示します。 このプロパティの値を超えた場合、IIS は503エラーが発生した後続の要求を拒否します。<br><br>503エラーが検出された場合に、待機時間の長いバックエンドデータストアと通信するアプリケーションでは、これを増やすことを検討してください。 | 1000 |
+| enable32BitAppOnWin64 | True の場合、64ビットプロセッサを搭載したコンピューターで32ビットアプリケーションを実行できます。<br><br>メモリ使用量が問題になる場合は、32ビットモードを有効にすることを検討してください。 ポインターのサイズと命令のサイズが小さいため、32ビットアプリケーションでは、64ビットアプリケーションよりもメモリ使用量が少なくなります。 64ビットコンピューターで32ビットアプリケーションを実行する場合の欠点は、ユーザーモードのアドレス空間が 4 GB に制限されていることです。 | False |
 
 **Applicationhost.config/sites/VirtualDirectoryDefault**
 
-|属性|説明|Default|
-|--- |--- |--- |
-|で allowsubdirconfig|IIS が現在のレベルより低いコンテンツディレクトリ内の web.config ファイルを検索するか (True)、現在のレベルより低いコンテンツディレクトリ内の web.config ファイルを検索するか (False) を指定します。 単純な制限を適用することで、仮想ディレクトリでのみ構成できるようになるため、iisâでは、ファイル** / &lt; 名 &gt; .htm**が仮想ディレクトリでない限り、構成ファイルを検索しないことがわかります。 追加のファイル操作を省略すると、ランダムにアクセスされる静的コンテンツが非常に多い web サイトのパフォーマンスを大幅に向上させることができます。|True|
+| 属性 | 説明 | Default |
+|--|--|--|
+| で allowsubdirconfig | IIS が現在のレベルより低いコンテンツディレクトリ内の web.config ファイルを検索するか (True)、現在のレベルより低いコンテンツディレクトリ内の web.config ファイルを検索するか (False) を指定します。 単純な制限を適用することで、仮想ディレクトリでのみ構成できるようになるため、iisâでは、ファイル** / &lt; 名 &gt; .htm**が仮想ディレクトリでない限り、構成ファイルを検索しないことがわかります。 追加のファイル操作を省略すると、ランダムにアクセスされる静的コンテンツが非常に多い web サイトのパフォーマンスを大幅に向上させることができます。 | True |
 
 ## <a name="managing-iis-100-modules"></a>IIS 10.0 モジュールの管理
 
@@ -244,25 +241,24 @@ applicationHost.config からモジュールを削除するには、system.webse
 
 **System.webserver/asp/cache**
 
-|属性|説明|Default|
-|--- |--- |--- |
-|diskTemplateCacheDirectory|メモリ内キャッシュがオーバーフローした場合に ASP がコンパイル済みテンプレートを格納するために使用するディレクトリの名前。<br><br>推奨: オペレーティングシステム、IIS ログ、またはその他の頻繁にアクセスされるコンテンツと共有されていないドライブなど、あまり使用されていないディレクトリに設定します。|%SystemDrive%\inetpub\temp\ASP Compiled Templates|
-|maxDiskTemplateCacheFiles|ディスクにキャッシュできるコンパイル済み ASP テンプレートの最大数を指定します。<br><br>推奨: 0x7FFFFFFF の最大値に設定します。|2000|
-|scriptFileCacheSize|この属性は、メモリにキャッシュできるコンパイル済み ASP テンプレートの最大数を指定します。<br><br>推奨事項: アプリケーションプールによって提供される、頻繁に要求される ASP スクリプトの数以上に設定します。 可能であれば、メモリ制限で許可されている数の ASP テンプレートに設定します。|500|
-|scriptEngineCacheMax|メモリ内にキャッシュされるスクリプトエンジンの最大数を指定します。<br><br>推奨事項: アプリケーションプールによって提供される、頻繁に要求される ASP スクリプトの数以上に設定します。 可能であれば、メモリ制限で許可されている数のスクリプトエンジンをに設定します。|250|
+| 属性 | 説明 | Default |
+|--|--|--|
+| diskTemplateCacheDirectory | メモリ内キャッシュがオーバーフローした場合に ASP がコンパイル済みテンプレートを格納するために使用するディレクトリの名前。<br><br>推奨: オペレーティングシステム、IIS ログ、またはその他の頻繁にアクセスされるコンテンツと共有されていないドライブなど、あまり使用されていないディレクトリに設定します。 | %SystemDrive%\inetpub\temp\ASP Compiled Templates |
+| maxDiskTemplateCacheFiles | ディスクにキャッシュできるコンパイル済み ASP テンプレートの最大数を指定します。<br><br>推奨: 0x7FFFFFFF の最大値に設定します。 | 2000 |
+| scriptFileCacheSize | この属性は、メモリにキャッシュできるコンパイル済み ASP テンプレートの最大数を指定します。<br><br>推奨事項: アプリケーションプールによって提供される、頻繁に要求される ASP スクリプトの数以上に設定します。 可能であれば、メモリ制限で許可されている数の ASP テンプレートに設定します。 | 500 |
+| scriptEngineCacheMax | メモリ内にキャッシュされるスクリプトエンジンの最大数を指定します。<br><br>推奨事項: アプリケーションプールによって提供される、頻繁に要求される ASP スクリプトの数以上に設定します。 可能であれば、メモリ制限で許可されている数のスクリプトエンジンをに設定します。 | 250 |
 
 **System.webserver/asp/limits**
 
-|属性|説明|Default|
-|--- |--- |--- |
-|processorThreadMax|ASP が作成できる、プロセッサごとのワーカースレッドの最大数を指定します。 現在の設定が負荷を処理するのに十分ではない場合には増加します。これにより、要求の処理中、または CPU リソースの使用率が原因でエラーが発生する可能性があります。|25|
+| 属性 | 説明 | Default |
+|--|--|--|
+| processorThreadMax | ASP が作成できる、プロセッサごとのワーカースレッドの最大数を指定します。 現在の設定が負荷を処理するのに十分ではない場合には増加します。これにより、要求の処理中、または CPU リソースの使用率が原因でエラーが発生する可能性があります。 | 25 |
 
 **System.webserver/asp/comPlus**
 
-|属性|説明|Default|
-|--- |--- |--- |
-|executeInMta|IIS が ASP コンテンツを提供している間にエラーまたはエラーが検出された場合は、 **True**に設定します。 これは、たとえば、各サイトが独自のワーカープロセスで実行される複数の分離されたサイトをホストする場合に発生することがあります。 エラーは通常、イベントビューアーの COM + から報告されます。 この設定により、ASP でマルチスレッドアパートメントモデルが有効になります。|False|
-
+| 属性 | 説明 | Default |
+|--|--|--|
+| executeInMta | IIS が ASP コンテンツを提供している間にエラーまたはエラーが検出された場合は、 **True**に設定します。 これは、たとえば、各サイトが独自のワーカープロセスで実行される複数の分離されたサイトをホストする場合に発生することがあります。 エラーは通常、イベントビューアーの COM + から報告されます。 この設定により、ASP でマルチスレッドアパートメントモデルが有効になります。 | False |
 
 ## <a name="aspnet-concurrency-setting"></a>ASP.NET concurrency の設定
 
@@ -301,13 +297,12 @@ IIS ワーカープロセスをリサイクルするためのオプションを�
 
 **Applicationhost.config/applicationPools/ApplicationPoolDefaults/リサイクル/周期再開**
 
-|属性|説明|Default|
-|--- |--- |--- |
-|memory|仮想メモリの使用量が指定された制限 (kb 単位) を超える場合は、プロセスのリサイクルを有効にします。 これは、32ビットのコンピューターで、2 GB のアドレス空間が小さい場合に便利な設定です。 これは、メモリ不足エラーが原因で失敗した要求を回避するのに役立ちます。|0|
-|privateMemory|プライベートメモリの割り当てが指定された制限 (kb 単位) を超えた場合に、プロセスのリサイクルを有効にします。|0|
-|requests|特定の数の要求の後にプロセスのリサイクルを有効にします。|0|
-|時間|指定された期間後のプロセスのリサイクルを有効にします。|29:00:00|
-
+| 属性 | 説明 | Default |
+|--|--|--|
+| メモリ | 仮想メモリの使用量が指定された制限 (kb 単位) を超える場合は、プロセスのリサイクルを有効にします。 これは、32ビットのコンピューターで、2 GB のアドレス空間が小さい場合に便利な設定です。 これは、メモリ不足エラーが原因で失敗した要求を回避するのに役立ちます。 | 0 |
+| privateMemory | プライベートメモリの割り当てが指定された制限 (kb 単位) を超えた場合に、プロセスのリサイクルを有効にします。 | 0 |
+| requests | 特定の数の要求の後にプロセスのリサイクルを有効にします。 | 0 |
+| time | 指定された期間後のプロセスのリサイクルを有効にします。 | 29:00:00 |
 
 ## <a name="dynamic-worker-process-page-out-tuning"></a>動的なワーカープロセスのページアウトチューニング
 
@@ -317,9 +312,8 @@ Windows Server 2012 R2 以降、IIS では、しばらくの間アイドル状�
 
 詳細に進む前に、メモリの制約がない場合は、単に一時停止または終了しないようにサイトを設定することをお勧めします。 結局のところ、ワーカープロセスがコンピューター上に1つしかない場合は、thereâs の値を小さくします。
 
-**メモ**  メモリリークが発生しているコードや不安定なコードなど、サイトで不安定なコードが実行されている場合、アイドル時に終了するようにサイトを設定すると、コードのバグを修正するための代替手段になります。 これは推奨される方法ではありませんが、高速処理では、この機能をクリーンアップメカニズムとして使用する方が適切な場合があります。\]
-
-Â 
+> [!NOTE]
+> メモリリークが発生しているコードや不安定なコードなど、サイトで不安定なコードが実行されている場合、アイドル時に終了するようにサイトを設定すると、コードのバグを修正するための代替手段になります。 これは推奨される方法ではありませんが、高速処理では、この機能をクリーンアップメカニズムとして使用する方が適切な場合があります。\]
 
 考慮すべきもう1つの要因は、サイトで大量のメモリを使用している場合、コンピューターがワーカープロセスによって使用されるデータをディスクに書き込む必要があるため、中断プロセス自体は有料になります。 ワーカープロセスが大量のメモリを使用している場合、バックアップを開始するまで待機する必要があるコストよりも時間がかかることがあります。
 
@@ -329,20 +323,20 @@ Windows Server 2012 R2 以降、IIS では、しばらくの間アイドル状�
 
 特定のユーザーがサイトに接続すると、通常は少なくともしばらくの間はそのまま維持され、追加の要求が行われるため、1日あたりの要求数を数えるだけで実際のトラフィックパターンが正確に反映されないことに注意してください。 より正確な情報を取得するために、Microsoft Excel などのツールを使用して、要求間の平均時間を計算することもできます。 次に例を示します。
 
-||要求 URL|要求時間|差分|
-|--- |--- |--- |--- |
-|1|/Sourcesilver電球/grosource.html|10:01||
-|2|/Sourcesilverload/dns/sliverlight.js|10:10|0:09|
-|3|/SourceSilverLight/Geosource.web/clientbin/geo/1.aspx|10:11|0:01|
-|4|/lClientAccessPolicy.xml|10:12|0:01|
-|5|/SourceSilverLight/GeosourcewebService/Service .asmx|10:23|0:11|
-|6|/SourceSilverLight/Geosource. web/GeoSearchServer... ヲ。|11:50|1:27|
-|7|/rest/Services/CachedServices/Silverlight_load_la...?|12:50|1:00|
-|8|/rest/Services/CachedServices/Silverlight_basemap...?|12:51|0:01|
-|9|/rest/Services/DynamicService/Silverlight_basemap...?|12:59|0:08|
-|10|/rest/Services/CachedServices/Ortho_2004_cache...|13:40|0:41|
-|11|/rest/Services/CachedServices/Ortho_2005_cache.js|13:40|0:00|
-|12|/rest/Services/CachedServices/OrthoBaseEngine.aspx|13:41|0:01|
+| Number | 要求 URL | 要求時間 | 差分 |
+|--|--|--|--|
+| 1 | /Sourcesilver電球/grosource.html | 10:01 |  |
+| 2 | /Sourcesilverload/dns/sliverlight.js | 10:10 | 0:09 |
+| 3 | /SourceSilverLight/Geosource.web/clientbin/geo/1.aspx | 10:11 | 0:01 |
+| 4 | /lClientAccessPolicy.xml | 10:12 | 0:01 |
+| 5 | /SourceSilverLight/GeosourcewebService/Service .asmx | 10:23 | 0:11 |
+| 6 | /SourceSilverLight/Geosource. web/GeoSearchServer... ヲ。 | 11:50 | 1:27 |
+| 7 | /rest/Services/CachedServices/Silverlight_load_la...? | 12:50 | 1:00 |
+| 8 | /rest/Services/CachedServices/Silverlight_basemap...? | 12:51 | 0:01 |
+| 9 | /rest/Services/DynamicService/Silverlight_basemap...? | 12:59 | 0:08 |
+| 10 | /rest/Services/CachedServices/Ortho_2004_cache... | 13:40 | 0:41 |
+| 11 | /rest/Services/CachedServices/Ortho_2005_cache.js | 13:40 | 0:00 |
+| 12 | /rest/Services/CachedServices/OrthoBaseEngine.aspx | 13:41 | 0:01 |
 
 しかし、難しいのは、どのような設定を適用するかを理解することです。 この場合、サイトはユーザーから多数の要求を取得し、上の表は4時間の間に合計4つの一意のセッションが発生したことを示しています。 アプリケーションプールのワーカープロセスの中断に関する既定の設定では、サイトは既定のタイムアウトである20分の後に終了します。これは、これらの各ユーザーがサイトのスピンアップサイクルを経験することを意味します。 このため、ワーカープロセスの中断に最適な候補となります。ほとんどの場合、サイトはアイドル状態であるため、中断するとリソースが節約され、ユーザーはほぼ瞬時にサイトに接続できるようになります。
 
@@ -352,9 +346,9 @@ SSD を使用するかどうかにかかわらず、ファイルサイズ変更�
 
 事前に固定されたページファイルサイズを構成するには、中断するサイトの数と使用するメモリの量に応じて、理想的なサイズを計算する必要があります。 アクティブなワーカープロセスの平均が 200 MB で、中断するサーバーに500サイトがある場合は、ページファイル \* の基本サイズ (この例では base + 100 GB) に対して、ページファイルが (200 500) MB 以上である必要があります。
 
-**メモ**サイトが中断されると、それぞれ約 6 MB が消費されます。この場合、すべてのサイトが中断された場合のメモリ使用量は約 3 GB になります。 しかし、実際には、youâre がすべて同時に中断されることはありません。
+> [!NOTE]
+> サイトが中断されると、それぞれ約 6 MB が消費されます。この場合、すべてのサイトが中断された場合のメモリ使用量は約 3 GB になります。 しかし、実際には、youâre がすべて同時に中断されることはありません。
 
- 
 ## <a name="transport-layer-security-tuning-parameters"></a>トランスポート層のセキュリティチューニングパラメーター
 
 TLS (Transport Layer Security) を使用すると、追加の CPU コストがかかります。 TLS の最も負荷の高いコンポーネントは、完全なハンドシェイクを伴うため、セッションの確立を確立するコストです。 再接続、暗号化、および暗号化解除もコストに追加されます。 TLS のパフォーマンスを向上させるには、次の手順を実行します。
@@ -365,12 +359,10 @@ TLS (Transport Layer Security) を使用すると、追加の CPU コストが�
 
 -   サイト全体ではなく、必要なページまたはサイトの一部にのみ暗号化を選択的に適用します。
 
-**注:**
--   キーを大きくするとセキュリティが強化されますが、CPU 時間も長くなります。
+> [!NOTE]
+> - キーを大きくするとセキュリティが強化されますが、CPU 時間も長くなります。
+> - すべてのコンポーネントを暗号化する必要はありません。 ただし、plain HTTP と HTTPS を混在させると、ページ上のすべてのコンテンツがセキュリティで保護されているわけではないという警告が表示されることがあります。
 
--   すべてのコンポーネントを暗号化する必要はありません。 ただし、plain HTTP と HTTPS を混在させると、ページ上のすべてのコンテンツがセキュリティで保護されているわけではないという警告が表示されることがあります。
-
- 
 ## <a name="internet-server-application-programming-interface-isapi"></a>インターネットサーバーアプリケーションプログラミングインターフェイス (ISAPI)
 
 ISAPI アプリケーションでは、特別なチューニングパラメーターは必要ありません。 プライベート ISAPI 拡張機能を作成する場合は、パフォーマンスとリソースの使用のために作成されていることを確認してください。
@@ -389,7 +381,6 @@ IIS 10.0 の統合パイプラインモデルを使用すると、柔軟性と�
 
 分離モード (サイトごとに1つのアプリケーションプール) に ASP.NET スクリプトを含む複数のホストを実行する場合は、メモリ使用量を監視します。 サーバーに、予想される数のアプリケーションプールを同時に実行するのに十分な RAM があることを確認します。 複数の分離されたプロセスではなく、複数のアプリケーションドメインを使用することを検討してください。
 
-
 ## <a name="other-issues-that-affect-iis-performance"></a>IIS のパフォーマンスに影響するその他の問題
 
 IIS のパフォーマンスに影響する可能性がある問題を次に示します。
@@ -403,5 +394,6 @@ IIS のパフォーマンスに影響する可能性がある問題を次に示�
     パフォーマンス上の理由から、IIS では CGI アプリケーションを使用して要求を処理することはお勧めできません。 多くの場合、CGI プロセスの作成と削除には大きなオーバーヘッドが伴います。 代替手段として、FastCGI、ISAPI アプリケーションスクリプト、ASP スクリプト、ASP.NET スクリプトを使用する方法があります。 これらの各オプションで分離を使用できます。
 
 ## <a name="additional-references"></a>その他のリファレンス
+
 - [Web サーバーのパフォーマンスチューニング](index.md)
 - [HTTP 1.1/2 のチューニング](http-performance.md)

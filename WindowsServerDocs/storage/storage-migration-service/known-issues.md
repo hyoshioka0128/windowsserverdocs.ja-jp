@@ -4,16 +4,16 @@ description: 記憶域移行サービスの既知の問題とトラブルシュ�
 author: nedpyle
 ms.author: nedpyle
 manager: tiaascs
-ms.date: 06/02/2020
+ms.date: 07/29/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: d7c76413fbc64ce200ca4c442a30e6f804927f68
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 9050d3316ed86538a278dbdc9f2bd51e3dfca377
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182058"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409883"
 ---
 # <a name="storage-migration-service-known-issues"></a>記憶域移行サービスの既知の問題
 
@@ -549,10 +549,43 @@ Storage Migration Service は、削除プロセスの一環として、一時的
     [d:\os\src\base\dms\service\StorageMigrationService.IInventory.cs::CreateJob::133]
     ```
     
-    GetOsVersion(fileserver75.**corp**.contoso.com)    [d:\os\src\base\dms\proxy\common\proxycommon\CimSessionHelper.cs::GetOsVersion::66]
-06/25/2020-10:20: 45.368 [Info] コンピューター ' fileserver75.corp.contoso.com ': OS バージョン 
+    GetOsVersion(fileserver75.**corp**.contoso.com)    [d:\os\src\base\dms\proxy\common\proxycommon\CimSessionHelper.cs::GetOsVersion::66] 06/25/2020-10:20:45.368 [Info] Computer 'fileserver75.corp.contoso.com': OS version 
 
 この問題は、Storage Migration Service のコード障害が原因で発生します。 この問題を回避するには、移行元と移行先のコンピューターが属しているのと同じドメインからの移行資格情報を使用します。 たとえば、移行元と移行先のコンピューターが "contoso.com" フォレストの "corp.contoso.com" ドメインに属している場合は、' corp\myaccount ' を使用して、' contoso\myaccount ' 資格情報ではなく、移行を実行します。
+
+## <a name="inventory-fails-with-element-not-found"></a>"要素が見つかりません" でインベントリが失敗する 
+
+Conside は次のシナリオを実行します。
+
+DNS ホスト名を持つソースサーバーと、15文字以上の unicode 文字 ("iama超 longcomputernamefrom" など) を持つ Active Directory 名がある。 仕様により、Windows では、従来の NetBIOS 名をこの長さに設定することはできませんでした。サーバーにという名前が付けられ、NetBIOS 名が 15 unicode ワイド文字 (例: "iamaverylongcom") に切り捨てられると、警告が表示されました。 このコンピューターのインベントリを実行しようとすると、Windows 管理センターとイベントログに次のメッセージが表示されます。 
+
+```DOS
+    "Element not found"
+    
+    ========================
+
+    Log Name:      Microsoft-Windows-StorageMigrationService/Admin
+    Source:        Microsoft-Windows-StorageMigrationService
+    Date:          4/10/2020 10:49:19 AM
+    Event ID:      2509
+    Task Category: None
+    Level:         Error
+    Keywords:      
+    User:          NETWORK SERVICE
+    Computer:      WIN-6PJAG3DHPLF.corp.contoso.com
+    Description:
+    Couldn't inventory a computer.
+
+    Job: longnametest
+    Computer: iamaverylongcomputernamefromned.corp.contoso.com
+    State: Failed
+    Error: 1168
+    Error Message: 
+
+    Guidance: Check the detailed error and make sure the inventory requirements are met. The inventory couldn't determine any aspects of the specified source computer. This could be because of missing permissions or privileges on the source or a blocked firewall port.
+```
+
+この問題は、Storage Migration Service のコード障害が原因で発生します。 現時点で唯一の回避策は、コンピューターの名前を NetBIOS 名と同じ名前に変更してから、 [NETDOM COMPUTERNAME/add](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc835082(v=ws.11))を使用して、インベントリを開始する前に使用されていた長い名前を含む別のコンピューター名を追加します。 記憶域移行サービスは、別のコンピューター名の移行をサポートしています。   
 
 ## <a name="see-also"></a>関連項目
 

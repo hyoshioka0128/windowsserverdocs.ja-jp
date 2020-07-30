@@ -1,29 +1,28 @@
 ---
-title: DHCP サーバーなしで TCP/IP の自動アドレス指定を使用する方法
+title: DHCP サーバーなしで TCP/IP 自動アドレス指定を使用する方法
 description: DHCP サーバーなしで TCP/IP の自動アドレス指定を使用する方法について説明します。
-ms.date: 5/26/2020
 ms.prod: windows-server
-ms.service: na
 manager: dcscontentpm
 ms.technology: server-general
-ms.topic: article
+ms.date: 5/26/2020
+ms.topic: troubleshoot
 author: Deland-Han
 ms.author: delhan
 ms.reviewer: robsmi
-ms.openlocfilehash: 8fbde77381141b76959f70e824eac22ee2121fa3
-ms.sourcegitcommit: ef089864980a1d4793a35cbf4cbdd02ce1962054
+ms.openlocfilehash: fcd85c29975709053009ec4a2684df88b4bafd69
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84150190"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409803"
 ---
-# <a name="how-to-use-automatic-tcpip-addressing-without-a-dhcp-server"></a>DHCP サーバーなしで TCP/IP の自動アドレス指定を使用する方法
+# <a name="how-to-use-automatic-tcpip-addressing-without-a-dhcp-server"></a>DHCP サーバーなしで TCP/IP 自動アドレス指定を使用する方法
 
 この記事では、動的ホスト構成プロトコル (DHCP) サーバーがネットワーク上に存在しない状態で、自動伝送制御プロトコル/インターネットプロトコル (TCP/IP) アドレス指定を使用する方法について説明します。 この記事の「適用対象」セクションに記載されているオペレーティングシステムのバージョンには、自動プライベート IP アドレス指定 (APIPA) と呼ばれる機能があります。 この機能を使用すると、DHCP サーバーが使用できない場合、またはネットワーク上に存在しない場合に、Windows コンピューターがそれ自体をインターネットプロトコル (IP) アドレスとして割り当てることができます。 この機能により、TCP/IP を実行する小規模なローカルエリアネットワーク (LAN) の構成とサポートが困難になります。
 
 ## <a name="more-information"></a>詳細情報
 
-> [!IMPORTANT]  
+> [!IMPORTANT]
 > 慎重にこのセクションの手順に従います。 レジストリを正しく変更しないと、重大な問題が発生する可能性があります。 変更する前に、問題が発生した場合に[復元するためにレジストリをバックアップ](https://support.microsoft.com/help/322756)します。
 
 Dhcp を使用するように構成されている Windows ベースのコンピューターは、DHCP サーバーが使用できない場合は、インターネットプロトコル (IP) アドレスを自動的に割り当てることができます。 たとえば、DHCP サーバーを使用しないネットワークや、DHCP サーバーがメンテナンスのために一時的に停止しているネットワーク上で発生する可能性があります。
@@ -38,8 +37,7 @@ Dhcp を使用するように構成されている Windows ベースのコンピ
 
 - NAT またはプロキシサーバーを使用せずに、ネットワークがインターネットに接続されています。
 
-Dhcp 関連のメッセージを無効にしていない限り、dhcp のアドレス指定と自動プライベート IP アドレス指定の間で変更を行うと、通知が表示されます。 DHCP メッセージングが誤って無効になっている場合は、次のレジストリキーの PopupFlag 値を00から01に変更することで、DHCP メッセージを再び有効にすることができます。  
-`HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\VxD\DHCP` 
+Dhcp 関連のメッセージを無効にしていない限り、dhcp のアドレス指定と自動プライベート IP アドレス指定の間で変更を行うと、通知が表示されます。 DHCP メッセージングが誤って無効になっている場合は、次のレジストリキーの PopupFlag 値を00から01に変更することで、DHCP メッセージを再び有効にすることができます。`HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\VxD\DHCP`
 
 変更を有効にするには、コンピューターを再起動する必要があることに注意してください。 また、Windows Millennium Edition、Windows 98、または Windows 98 Second Edition の Winipcfg ツールを使用して、コンピューターで APIPA が使用されているかどうかを確認することもできます。
 
@@ -51,8 +49,7 @@ Windows 2000、Windows XP、または Windows Server 2003 では、コマンド�
 
 TCP/IP 情報を手動で構成して、DHCP を完全に無効にすることができます。 レジストリを編集することで、自動プライベート IP アドレス指定 (DHCP ではない) を無効にすることができます。 これを行うには、値0x0 を持つ "IPAutoconfigurationEnabled" DWORD レジストリエントリを、Windows Millennium Edition、Windows98、または Windows 98 Second Edition の次のレジストリキーに追加します。`HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\VxD\DHCP`
 
-Windows 2000、Windows XP、および Windows Server 2003 の場合、APIPA を無効にするには、次のレジストリキーに値0x0 を持つ "IPAutoconfigurationEnabled" DWORD レジストリエントリを追加します。  
-`HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\<Adapter GUID>`  
+Windows 2000、Windows XP、および Windows Server 2003 の場合、APIPA を無効にするには、次のレジストリキーに値0x0 を持つ "IPAutoconfigurationEnabled" DWORD レジストリエントリを追加します。`HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\<Adapter GUID>`
 > [!NOTE]
 > **アダプターの GUID**サブキーは、コンピューターの LAN アダプターのグローバル一意識別子 (guid) です。
 
