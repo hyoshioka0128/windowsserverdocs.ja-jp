@@ -2,69 +2,68 @@
 title: 新しい Windows Server Essentials ネットワークにコンピューターを参加させる
 description: Windows Server Essentials の使用方法について説明します。
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: d94de050-3300-4323-a5ea-c824cb9cecc9
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 29ea08ff981723a256606bbecdcb3b98fe9d8eec
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f6b4db262d3eda9f1497ffce9c604d7dd72290b3
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852575"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180758"
 ---
 # <a name="join-computers-to-the-new-windows-server-essentials-network1"></a>新しい Windows Server Essentials ネットワークにコンピューターを参加させる
 
 >適用対象: windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-##  <a name="BKMK_JoinComputers"></a>   
- 移行プロセスの次の手順では、クライアントコンピューターを新しい Windows Server Essentials ネットワークに参加させ、グループポリシーの設定を更新します。  
-  
-### <a name="domain-joined-client-computers"></a>ドメインに参加しているクライアント コンピューター  
- **http://** <em>移行先サーバー名</em> **/connect** を参照し、新しいコンピューターの場合と同じように Windows Server コネクタ ソフトウェアをインストールします。 インストール プロセスは、クライアント コンピューターがドメインに参加する場合でも参加しない場合でも同じです。  
-  
+##  <a name="BKMK_JoinComputers"></a>
+ 移行プロセスの次の手順では、クライアントコンピューターを新しい Windows Server Essentials ネットワークに参加させ、グループポリシーの設定を更新します。
+
+### <a name="domain-joined-client-computers"></a>ドメインに参加しているクライアント コンピューター
+ **http://**<em>移行先サーバー名</em>**/connect** を参照し、新しいコンピューターの場合と同じように Windows Server コネクタ ソフトウェアをインストールします。 インストール プロセスは、クライアント コンピューターがドメインに参加する場合でも参加しない場合でも同じです。
+
 > [!NOTE]
->  Windows Server コネクタ ソフトウェアは、Windows XP または Windows Vista を実行しているコンピューターはサポートしていません。 既にドメインに参加している Windows XP または Windows Vista を実行しているコンピューターがある場合は、この手順を省略できます。  
-  
-### <a name="non-domain-joined-client-computers"></a>ドメインに参加していないクライアント コンピューター  
- **http://** <em>移行先サーバー名</em> **/connect** を参照し、新しいコンピューターの場合と同じように Windows Server コネクタ ソフトウェアをインストールします。 インストール プロセスは、クライアント コンピューターがドメインに参加しているかどうかにかかわらず同じです。  
-  
+>  Windows Server コネクタ ソフトウェアは、Windows XP または Windows Vista を実行しているコンピューターはサポートしていません。 既にドメインに参加している Windows XP または Windows Vista を実行しているコンピューターがある場合は、この手順を省略できます。
+
+### <a name="non-domain-joined-client-computers"></a>ドメインに参加していないクライアント コンピューター
+ **http://**<em>移行先サーバー名</em>**/connect** を参照し、新しいコンピューターの場合と同じように Windows Server コネクタ ソフトウェアをインストールします。 インストール プロセスは、クライアント コンピューターがドメインに参加しているかどうかにかかわらず同じです。
+
 > [!NOTE]
->  Windows Server コネクタ ソフトウェアは、Windows XP または Windows Vista を実行しているコンピューターはサポートしていません。 既にドメインに参加している Windows XP または Windows Vista を実行しているコンピューターがある場合は、この手順を省略できます。  
-  
-### <a name="ensure-that-group-policy-has-updated"></a>グループ ポリシーが更新されたことを確認する  
-  
+>  Windows Server コネクタ ソフトウェアは、Windows XP または Windows Vista を実行しているコンピューターはサポートしていません。 既にドメインに参加している Windows XP または Windows Vista を実行しているコンピューターがある場合は、この手順を省略できます。
+
+### <a name="ensure-that-group-policy-has-updated"></a>グループ ポリシーが更新されたことを確認する
+
 > [!NOTE]
->  これはオプションの手順であり、移行元サーバーがフォルダー リダイレクトなどのカスタム グループ ポリシーの設定で構成されていた場合にのみ必要です。  
-  
- 移行元サーバーと移行先サーバーがまだオンラインの間に、グループ ポリシーの設定が移行先サーバーからクライアント コンピューターにレプリケートされたことを確認する必要があります。 各クライアント コンピューターで次の手順を実行します。  
-  
-1.  コマンド プロンプト ウィンドウを開きます。  
-  
-2.  コマンド プロンプトで「**GPRESULT /R**」と入力し、Enter キーを押します。  
-  
-3.  によって適用されたグループポリシーセクションの結果出力を確認し、宛先サーバーが一覧表示されていることを確認します (例: **Destinationsrv. Domain. local**)。 例 :  
-  
-    ```  
-    USER SETTINGS  
-    --------------  
-        CN=User,OU=Users,DC=DOMAIN,DC=Local  
-        Last time Group Policy was applied: 1/24/2011 at 1:26:27 PM  
-        Group Policy was applied from:      DestinationSrv.Domain.local  
-        Group Policy slow link threshold:   500 kbps  
-        Domain Name:                        Domain  
-        Domain Type:                        Windows 2008  
-  
-    ```  
-  
-4.  移行先サーバーが一覧に表示されない場合、コマンド プロンプトで「**gpupdate /force**」と入力して Enter キーを押し、グループ ポリシーの設定を更新します。 その後、前の手順を再度実行します。  
-  
-5.  移行先サーバーがまだ表示されない場合は、グループ ポリシーの設定またはこの特定のクライアント コンピューターへのポリシーの適用にエラーがある可能性があります。 移行先サーバーが表示されない場合は、次の手順を実行してください。  
-  
-    1.  **[スタート]** ボタンをクリックし、 **[ファイル名を指定して実行]** をクリックし、「**rsop.msc**」 (ポリシーの結果セット) と入力して、Enter キーを押します。  
-  
-    2.  ノードが表示されるまで、X 印の付いたツリーを展開します。  
-  
-    3.  ノードを右クリックし、 **[エラーの表示]** をクリックして、一覧のコンピューターでグループ ポリシーの設定が失敗する理由についての情報を確認します。
+>  これはオプションの手順であり、移行元サーバーがフォルダー リダイレクトなどのカスタム グループ ポリシーの設定で構成されていた場合にのみ必要です。
+
+ 移行元サーバーと移行先サーバーがまだオンラインの間に、グループ ポリシーの設定が移行先サーバーからクライアント コンピューターにレプリケートされたことを確認する必要があります。 各クライアント コンピューターで次の手順を実行します。
+
+1.  コマンド プロンプト ウィンドウを開きます。
+
+2.  コマンド プロンプトで「**GPRESULT /R**」と入力し、Enter キーを押します。
+
+3.  によって適用されたグループポリシーセクションの結果出力を確認し、宛先サーバーが一覧表示されていることを確認します (例: **Destinationsrv. Domain. local**)。 次に例を示します。
+
+    ```
+    USER SETTINGS
+    --------------
+        CN=User,OU=Users,DC=DOMAIN,DC=Local
+        Last time Group Policy was applied: 1/24/2011 at 1:26:27 PM
+        Group Policy was applied from:      DestinationSrv.Domain.local
+        Group Policy slow link threshold:   500 kbps
+        Domain Name:                        Domain
+        Domain Type:                        Windows 2008
+
+    ```
+
+4.  移行先サーバーが一覧に表示されない場合、コマンド プロンプトで「**gpupdate /force**」と入力して Enter キーを押し、グループ ポリシーの設定を更新します。 その後、前の手順を再度実行します。
+
+5.  移行先サーバーがまだ表示されない場合は、グループ ポリシーの設定またはこの特定のクライアント コンピューターへのポリシーの適用にエラーがある可能性があります。 移行先サーバーが表示されない場合は、次の手順を実行してください。
+
+    1.  [**スタート**] ボタンをクリックし、[**ファイル名を指定して実行**] をクリックし、「**rsop.msc**」 (ポリシーの結果セット) と入力して、Enter キーを押します。
+
+    2.  ノードが表示されるまで、X 印の付いたツリーを展開します。
+
+    3.  ノードを右クリックし、[**エラーの表示**] をクリックして、一覧のコンピューターでグループ ポリシーの設定が失敗する理由についての情報を確認します。

@@ -2,18 +2,17 @@
 title: サーバー データの Windows Server Essentials への移行
 description: Windows Server Essentials の使用方法について説明します。
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: dff2bf27-5d97-409b-81e8-286f7d933d90
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 2b88d1d8a50174ddfa5fc53f5a46a54ff6512079
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 3d031dacbe2eaf2a4928fc316eaacf1fcb1759e7
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470307"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180738"
 ---
 # <a name="migrate-server-data-to-windows-server-essentials"></a>サーバー データの Windows Server Essentials への移行
 

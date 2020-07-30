@@ -2,67 +2,66 @@
 title: サーバー バックアップのカスタマイズ
 description: Windows Server Essentials の使用方法について説明します。
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 19b2559c-6090-45af-9a08-2eefc28473c8
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: cf39aaedeb266d903e928a589132fff764fed60b
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a0992ed2858adbe713a25ec73f35c4b74a54ccd5
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80818135"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181328"
 ---
 # <a name="customize-server-backup"></a>サーバー バックアップのカスタマイズ
 
 >適用対象: windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-## <a name="turn-off-server-backup-by-default"></a>既定でのサーバー バックアップの無効化  
- サーバー バックアップを既定で無効にすることができます。 このオプションを有効にするには、**HKEY_LOCAL_MACHINE\Software\Microsoft\Windows Server\ServerBackup\ProviderDisabled** の値を 1 に設定する必要があります。  
-  
- このキーを設定すると、サーバー バックアップのユーザー インターフェイスは、ダッシュボードまたはスタート パッドを通じて公開されなくなります。 これにより、サーバー バックアップ用のサード パーティ アプリケーションを利用できます。  
-  
-#### <a name="to-add-serverbackupproviderdisabled-registry-key-and-set-the-value-to-1"></a>Serverbackupを追加するにはレジストリキーを指定し、値を1に設定します。  
-  
-1.  サーバー上で、 **[スタート]** ボタン、 **[ファイル名を指定して実行]** の順にクリックし、 **[名前]** ボックスに「**regedit**」と入力して、 **[OK]** をクリックします。  
-  
-2.  ナビゲーション ウィンドウで、 **[HKEY_LOCAL_MACHINE]** 、 **[SOFTWARE]** 、 **[Microsoft]** 、 **[Windows Server]** 、 **[ServerBackup]** の順に展開します。  
-  
-3.  **[ServerBackup]** を右クリックして、 **[新規]** をクリックし、 **[DWORD 値]** をクリックします。  
-  
-4.  名前には、「**ProviderDisabled**」と入力します。  
-  
-5.  名前を右クリックして **[変更]** を選択し、値データに「**1**」と入力して **[OK]** をクリックします。  
-  
-## <a name="turn-on-server-backup"></a>サーバー バックアップの有効化  
- このドキュメントで前述した説明に従って **ProviderDisabled** レジストリ キーを作成してサーバー バックアップをオフにしている場合は、サーバー バックアップをオンにできます。  
-  
- 既定のサーバー バックアップを有効にするには、キー **HKEY_LOCAL_MACHINE\Software\Microsoft\Windows Server\ServerBackup\ProviderDisabled** を削除し、Windows Server Server Backup Service のサービス開始の種類を変更してサーバーを再起動する必要があります。  
-  
-#### <a name="to-delete-serverbackupproviderdisabled-registry-key"></a>Serverbackup\ providerdisabled を削除しますか?レジストリキー  
-  
-1.  サーバーで、カーソルを画面の右上隅に移動して、 **[検索]** をクリックします。  
-  
-2.  検索ボックスに「**regedit**」と入力して、 **[Regedit]** アプリケーションをクリックします。  
-  
-3.  ナビゲーション ウィンドウで、 **[HKEY_LOCAL_MACHINE]** 、 **[SOFTWARE]** 、 **[Microsoft]** 、 **[Windows Server]** 、 **[ServerBackup]** の順に展開します。  
-  
-4.  **[ProviderDisabled]** を右クリックし、次に **[削除]** をクリックします。  
-  
-#### <a name="change-the-start-type-of-windows-server-server-backup-service"></a>Windows Server Server Backup Service の開始の種類の変更  
-  
-1.  サーバーで、カーソルを画面の右上隅に移動して、 **[検索]** をクリックします。  
-  
-2.  [検索] ボックスに「**services.msc**」と入力し、 **[サービス]** アプリケーションをクリックします。  
-  
-3.  サービス ウィンドウで、 **[Windows Server Server Backup Service]** を右クリックし、 **[プロパティ]** をクリックします。  
-  
-4.  **[全般]** タブで、 **[スタートアップの種類]** として **[自動]** を選択します。  
-  
-5.  **[OK]** をクリックしてダイアログ ボックスを閉じます。  
-  
-#### <a name="restart-the-server"></a>サーバーの再起動  
-  
-1.  サーバーで、カーソルを画面の右上隅に移動して、**設定**、**電源**、再起動 の順にクリックします。
+## <a name="turn-off-server-backup-by-default"></a>既定でのサーバー バックアップの無効化
+ サーバー バックアップを既定で無効にすることができます。 このオプションを有効にするには、**HKEY_LOCAL_MACHINE\Software\Microsoft\Windows Server\ServerBackup\ProviderDisabled** の値を 1 に設定する必要があります。
+
+ このキーを設定すると、サーバー バックアップのユーザー インターフェイスは、ダッシュボードまたはスタート パッドを通じて公開されなくなります。 これにより、サーバー バックアップ用のサード パーティ アプリケーションを利用できます。
+
+#### <a name="to-add-serverbackupproviderdisabled-registry-key-and-set-the-value-to-1"></a>Serverbackupを追加するにはレジストリキーを指定し、値を1に設定します。
+
+1.  サーバー上で、[**スタート**] ボタン、[**ファイル名を指定して実行**] の順にクリックし、[**名前**] ボックスに「**regedit**」と入力して、[**OK**] をクリックします。
+
+2.  ナビゲーション ウィンドウで、[**HKEY_LOCAL_MACHINE**]、[**SOFTWARE**]、[**Microsoft**]、[**Windows Server**]、[**ServerBackup**] の順に展開します。
+
+3.  [**ServerBackup**] を右クリックして、[**新規**] をクリックし、[**DWORD 値**] をクリックします。
+
+4.  名前に「**ProviderDisabled**」と入力します。
+
+5.  名前を右クリックして [**修正**] を選択し、値データに「**1**」と入力して [**OK**] をクリックします。
+
+## <a name="turn-on-server-backup"></a>サーバー バックアップの有効化
+ このドキュメントで前述した説明に従って **ProviderDisabled** レジストリ キーを作成してサーバー バックアップをオフにしている場合は、サーバー バックアップをオンにできます。
+
+ 既定のサーバー バックアップを有効にするには、キー **HKEY_LOCAL_MACHINE\Software\Microsoft\Windows Server\ServerBackup\ProviderDisabled** を削除し、Windows Server Server Backup Service のサービス開始の種類を変更してサーバーを再起動する必要があります。
+
+#### <a name="to-delete-serverbackupproviderdisabled-registry-key"></a>Serverbackup\ providerdisabled を削除しますか?レジストリキー
+
+1.  サーバーで、カーソルを画面の右上隅に移動して、[**検索**] をクリックします。
+
+2.  検索ボックスに「**regedit**」と入力して、[**Regedit**] アプリケーションをクリックします。
+
+3.  ナビゲーション ウィンドウで、[**HKEY_LOCAL_MACHINE**]、[**SOFTWARE**]、[**Microsoft**]、[**Windows Server**]、[**ServerBackup**] の順に展開します。
+
+4.  [**ProviderDisabled**] を右クリックし、次に [**削除**] をクリックします。
+
+#### <a name="change-the-start-type-of-windows-server-server-backup-service"></a>Windows Server Server Backup Service の開始の種類の変更
+
+1.  サーバーで、カーソルを画面の右上隅に移動して、[**検索**] をクリックします。
+
+2.  [検索] ボックスに「**services.msc**」と入力し、[**サービス**] アプリケーションをクリックします。
+
+3.  サービス ウィンドウで、[**Windows Server Server Backup Service**] を右クリックし、[**プロパティ**] をクリックします。
+
+4.  [**全般**] タブで、[**スタートアップの種類**] として [**自動**] を選択します。
+
+5.  [**OK**] をクリックしてダイアログ ボックスを閉じます。
+
+#### <a name="restart-the-server"></a>サーバーを再起動します
+
+1.  サーバーで、カーソルを画面の右上隅に移動して、[**設定**]、[**電源**]、[再起動] の順にクリックします。

@@ -2,18 +2,17 @@
 title: Windows Server Essentials のシステム要件
 description: Windows Server Essentials の使用方法について説明します。
 ms.date: 10/31/2013
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 0951a67d-492f-41ad-9ae5-8e4cd25e3041
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: ef68f4f34e7a543510dbde5dd0b3edbdf221aef9
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 295022c45a82d18781df27604d47d58af14b4b2d
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471077"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181638"
 ---
 # <a name="system-requirements-for-windows-server-essentials"></a>Windows Server Essentials のシステム要件
 
@@ -24,7 +23,7 @@ ms.locfileid: "85471077"
 
 ## <a name="table-1-system-requirements-for-windows-server-essentials"></a>表 1 Windows Server Essentials のシステム要件
 
-|コンポーネント|最小要件|推奨*|最大|
+|コンポーネント|最小値|推奨*|最大値|
 |---------------|-------------|-------------------|-------------|
 |CPU ソケット|1.4 GHz (64 ビット プロセッサ) 以上、シングル コア用<br /><br /> 1.3 GHz (64 ビット プロセッサ) 以上、マルチコア用|3.1 GHz (64 ビット プロセッサ) 以上、マルチコア用|2 つのソケット|
 |メモリ (RAM)|2 GB<br /><br /> Windows Server Essentials を仮想マシンとして展開する場合は 4 GB|16 GB|64 GB|

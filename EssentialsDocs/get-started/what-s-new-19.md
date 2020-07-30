@@ -1,18 +1,17 @@
 ---
 title: Windows Server 2019 Essentials の新機能
 description: Windows Server Essentials 2019 の変更点について説明します。
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: affff774-5fa6-4944-887a-9bfde05f6a3f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: jasgroce
-ms.openlocfilehash: 321ada3c046b7c78f141d2697191f48e225b93be
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 97b5d3df88f10aa55a345e5640a896a8cc25ff76
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80817735"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181628"
 ---
 # <a name="whats-new-in-windows-server-2019-essentials"></a>Windows Server 2019 Essentials の新機能
 
@@ -20,22 +19,22 @@ ms.locfileid: "80817735"
 
 ## <a name="windows-server-essentials-experience-role-has-been-deprecated"></a>Windows Server Essentials エクスペリエンスの役割は非推奨となりました
 
-Windows server Essentials Experience の役割は、Windows Server 2019 Essentials を含むすべてのサーバー Sku から削除されました。 これは、Essentials エクスペリエンスロールのコア機能として使用されていた[管理ダッシュボード](../manage/overview-of-the-dashboard-in-windows-server-essentials.md)にアクセスできなくなり、すべての管理と構成を手動で完了する必要があることを意味します。 
+Windows server Essentials Experience の役割は、Windows Server 2019 Essentials を含むすべてのサーバー Sku から削除されました。 これは、Essentials エクスペリエンスロールのコア機能として使用されていた[管理ダッシュボード](../manage/overview-of-the-dashboard-in-windows-server-essentials.md)にアクセスできなくなり、すべての管理と構成を手動で完了する必要があることを意味します。
 
 Server Essentials Experience の役割が廃止された場合、次の機能は使用できなくなります。
 
--    クライアントのバックアップ 
--    リモート web アクセス 
+-    クライアントのバックアップ
+-    リモート web アクセス
 
-## <a name="microsoft-365-business-the-modern-small-business-solution"></a>Microsoft 365 Business: 最新の小規模ビジネスソリューション 
+## <a name="microsoft-365-business-the-modern-small-business-solution"></a>Microsoft 365 Business: 最新の小規模ビジネスソリューション
 
-Windows Server 2016 Essentials がリリースされてから長年にわたって、大規模で小規模な企業のための次のソリューションでも、Microsoft 365 に取り組んでいます。 すべてのバージョンの Windows Server Essentials に代わるものとして、小規模ビジネスのお客様には Microsoft 365 することを強くお勧めします。 Microsoft 365 は、ファイル共有とコラボレーションのための最新のソリューションであり、Office 365、Windows 10、Enterprise Mobility + Security が含まれています。 
+Windows Server 2016 Essentials がリリースされてから長年にわたって、大規模で小規模な企業のための次のソリューションでも、Microsoft 365 に取り組んでいます。 すべてのバージョンの Windows Server Essentials に代わるものとして、小規模ビジネスのお客様には Microsoft 365 することを強くお勧めします。 Microsoft 365 は、ファイル共有とコラボレーションのための最新のソリューションであり、Office 365、Windows 10、Enterprise Mobility + Security が含まれています。
 
 電子メールや予定表作成、クラウドへのファイルストレージ、データ保護など、さらに多くの Office 機能を含む[Microsoft 365 Business](https://www.microsoft.com/microsoft-365/business)でビジネスをさらに発展させます。 Microsoft 365 Business は、小規模ビジネスで新しいレベルの生産性を実現するのに役立ちます。
 
 ## <a name="aad-connect-can-now-be-installed-on-windows-server-2019-essentials"></a>AAD Connect を Windows Server 2019 Essentials にインストールできるようになりました
 
-Windows Server 2019 Essentials には、 [AAD Connect](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-prerequisites)を使用した Azure Active Directory の新しいサポートが含まれています。 
+Windows Server 2019 Essentials には、 [AAD Connect](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-prerequisites)を使用した Azure Active Directory の新しいサポートが含まれています。
 
 ## <a name="ltsc-support-for-windows-server-2016-essentials"></a>LTSC support for Windows Server 2016 Essentials
 
