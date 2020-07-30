@@ -2,18 +2,17 @@
 title: Windows Server Essentials でのサーバー フォルダーの管理
 description: Windows Server Essentials の使用方法について説明します。
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 090cf1b8-7b9b-48b9-ae85-b98477b8d7cc
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 8dba2bb0b282751fbbe584b64dbc92bbe3702979
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: f748ca62062de616be7c6e2ee495a508d0e38646
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470567"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180918"
 ---
 # <a name="manage-server-folders-in-windows-server-essentials"></a>Windows Server Essentials でのサーバー フォルダーの管理
 
@@ -126,7 +125,7 @@ ms.locfileid: "85470567"
 
      このユーザーに対して、サーバー フォルダー内のファイルの作成、変更、および削除を許可する場合は、この設定を選択します。
 
--   **読み取り専用**
+-   **読み取り専用です。**
 
      このユーザーに対して、サーバー フォルダー内のファイルの読み取りのみを許可する場合は、この設定を選択します。 読み取り専用アクセス権を持つユーザーは、サーバー フォルダー内でファイルの作成、変更、または削除を実行できません。
 

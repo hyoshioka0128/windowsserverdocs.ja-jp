@@ -2,18 +2,17 @@
 title: '手順 1: Windows Server Essentials への移行に向けて移行元サーバーを準備する'
 description: Windows Server Essentials の使用方法について説明します。
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 244c8a06-04c6-4863-8b52-974786455373
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: f5696c473a8fcb04a60b9a4b6c51ac206a6ef0de
-ms.sourcegitcommit: 2f072c0c02e3e0deae331ca64b375d63b89d0522
+ms.openlocfilehash: 6666a0f68863913c0c0a5a1b1e903eaebf5470a4
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83404582"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180488"
 ---
 # <a name="step-1-prepare-your-source-server-for-windows-server-essentials-migration"></a>手順 1: Windows Server Essentials への移行に向けて移行元サーバーを準備する
 
@@ -43,7 +42,7 @@ ms.locfileid: "83404582"
 
 2. バックアップが正常に実行されたことを確認します。 バックアップの整合性をテストするには、バックアップからランダムにファイルを選択し、それらのファイルを別の場所に復元して、復元されたファイルが元のファイルと同じことを確認します。
 
-   |Product|リソース|
+   |製品|リソース|
    |---|---|
    |Windows Small Business Server 2003|[Windows Small Business Server 2003 のバックアップと復元](https://msdn.microsoft.com/library/cc875809.aspx)
    |Windows Small Business Server 2008|[Windows Small Business Server 2008 のデータのバックアップと復元](https://technet.microsoft.com/library/cc527505\(WS.10\).aspx)
@@ -70,7 +69,7 @@ ms.locfileid: "83404582"
 
 5.  [**これらのポリシー設定を定義する**] チェック ボックスをオフにします。
 
-6.  \\\Localhost\SYSVOL \\<domainname \> \ SBS_LOGIN_SCRIPT を削除します。
+6.  \\\Localhost\SYSVOL \\<domainname \>\scripts\SBS_LOGIN_SCRIPT.bat を削除します。
 
 ###  <a name="evaluate-the-health-of-the-source-server"></a><a name="BKMK_EvaluateHealth"></a>移行元サーバーの正常性を評価する
  移行を開始する前に、移行元サーバーの正常性を評価することが重要です。 以下の手順を使用して、更新プログラムが最新であることを確認し、システム正常性レポートを生成し、Windows Server Solutions ベスト プラクティス アナライザー (BPA) を実行します。
@@ -191,7 +190,7 @@ ms.locfileid: "83404582"
 > [!NOTE]
 >  移行元サーバーを更新し、移行の準備が完了したら、移行プロセスを続行する前に、更新したサーバーのバックアップを作成してください。
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
  Windows Server Essentials への移行のために移行元サーバーを準備しました。  [次に、「手順 2: Windows Server Essentials を新しいレプリカドメインコントローラーとしてインストール](Step-2--Install-Windows-Server-Essentials-as-a-new-replica-domain-controller.md)する」に進みます。
 
 すべての手順を表示するには、「 [Windows Server Essentials への移行](Migrate-from-Previous-Versions-to-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md)」を参照してください。

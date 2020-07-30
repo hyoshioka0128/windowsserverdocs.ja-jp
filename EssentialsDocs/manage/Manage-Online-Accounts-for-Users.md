@@ -2,17 +2,16 @@
 title: Windows Server Essentials ユーザーのオンライン アカウントの管理
 description: Windows Server Essentials の使用方法について説明します。
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: c09f4cf6-4d12-49fe-9ae4-e6cb14027b9d
 author: nnamuhcs
 ms.author: daveba
-ms.openlocfilehash: 893d22182b61dda4632550fab1c0a1ebf92c2d89
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 973e83fc02af12b63d48be98e985b2826551ce46
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470667"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180958"
 ---
 # <a name="manage-online-accounts-for-windows-server-essentials-users"></a>Windows Server Essentials ユーザーのオンライン アカウントの管理
 

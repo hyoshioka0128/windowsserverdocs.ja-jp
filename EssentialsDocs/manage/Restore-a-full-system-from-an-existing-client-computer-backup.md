@@ -2,18 +2,17 @@
 title: 既存のクライアント コンピューターのバックアップからシステム全体を復元する
 description: Windows Server Essentials の使用方法について説明します。
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 47e498a6-1b71-47de-88f6-8c13c221d108
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 9228092f91f4fe309d4841680cf3a78bd35f5b00
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 885a10ee9b5a684c385de9baa0ebcdfac61f2c0e
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470367"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180828"
 ---
 # <a name="restore-a-full-system-from-an-existing-client-computer-backup"></a>既存のクライアント コンピューターのバックアップからシステム全体を復元する
 

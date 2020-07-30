@@ -2,17 +2,16 @@
 title: Windows Server Essentials での Office 365 の管理
 description: Windows Server Essentials の使用方法について説明します。
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 3f8485e4-e10f-4f38-8a5e-d5227abd0d84
 author: nnamuhcs
 ms.author: daveba
-ms.openlocfilehash: e21f8b38c126f699fda8245ab620ce5cd210fa11
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 249ff5f77d525792d5bf53719fcf1ee93bc955a4
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470677"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180968"
 ---
 # <a name="manage-office-365-in-windows-server-essentials"></a>Windows Server Essentials での Office 365 の管理
 
@@ -264,7 +263,7 @@ Windows Server Essentials サーバーと Microsoft Office 365 を統合する�
 
  ダッシュボードから1つ以上の Microsoft Online Services アカウントを作成できませんでした。
 
- **解決方法**
+ **ソリューション**
 
 1.  ウィザードの完了ページにあるリンクをクリックして、正常終了しなかった各アカウント作成要求に関する詳細な情報が含まれる結果ファイルを開きます。 たとえば、要求したアカウント名を持つ Microsoft Online Services アカウントが既に存在するという結果が示される場合があります。
 
@@ -277,7 +276,7 @@ Windows Server Essentials サーバーと Microsoft Office 365 を統合する�
 
  Office 365 統合を無効にしようとしたときに不明なエラーが発生しました。
 
- **解決方法**
+ **ソリューション**
 
 1.  コンピューターがインターネットに接続されていることを確認してから、再試行してください。
 

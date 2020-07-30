@@ -2,18 +2,17 @@
 title: Windows Server Essentials または Windows Server Essentials エクスペリエンスのインストールと構成
 description: Windows Server Essentials の使用方法について説明します。
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 48ea6cd4-3955-4aaf-9236-2515a6c3e730
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 338fe421b4ba30afc1b2cd3ee983668b282f3a15
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 804a3ed902606e52f25977601e4edc2e2fc5e04f
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470957"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181188"
 ---
 # <a name="install-and-configure-windows-server-essentials-or-windows-server-essentials-experience"></a>Windows Server Essentials または Windows Server Essentials エクスペリエンスのインストールと構成
 
@@ -84,7 +83,7 @@ Windows Server Essentials または Essentials エクスペリエンスロール
        > [!NOTE]
        >  既定の **Administrator** アカウント名とパスワードは使用しないでください。
 
-   5.  **[構成]** をクリックします。
+   5.  **[Configure]\(構成\)** をクリックします。
 
 3. 構成プロセス中にサーバーが複数回再起動し、構成が完了するまで、ログオンが自動的に行われます。 このプロセスには約 20 分かかります。
 

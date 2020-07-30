@@ -2,18 +2,17 @@
 title: Windows Server Essentials での電子メール統合の管理
 description: Windows Server Essentials の使用方法について説明します。
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 4c35d230-02ec-4374-b4c5-2da19fe151ee
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: d7d1789291cb7911d6c0020fce3166a62b61e465
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: f78c211cc227b753af63c4e15884f3bb760a1c0a
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470707"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180988"
 ---
 # <a name="manage-email-service-integration-in-windows-server-essentials"></a>Windows Server Essentials での電子メール統合の管理
 

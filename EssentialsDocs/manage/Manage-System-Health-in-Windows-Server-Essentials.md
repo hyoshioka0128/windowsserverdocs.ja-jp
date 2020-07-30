@@ -2,18 +2,17 @@
 title: Windows Server Essentials でのシステム正常性の管理
 description: Windows Server Essentials の使用方法について説明します。
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 3043f83b-389c-4f37-a1ff-85afe99314fa
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 145f97ed2b5ac928e8d1988f3dfd47a62f5c1bf0
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 98a4b154a9b3cea9ebc92da1eb807bc73e98d5d2
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470517"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180888"
 ---
 # <a name="manage-system-health-in-windows-server-essentials"></a>Windows Server Essentials でのシステム正常性の管理
 
@@ -34,7 +33,7 @@ ms.locfileid: "85470517"
 
 -   [アラート ビューアーのアラートを整理する](Manage-System-Health-in-Windows-Server-Essentials.md#BKMK_Organize)
 
--   [アラートへの応答](Manage-System-Health-in-Windows-Server-Essentials.md#BKMK_Respond)
+-   [アラートに応答する](Manage-System-Health-in-Windows-Server-Essentials.md#BKMK_Respond)
 
 -   [アラートの電子メール通知を設定する](Manage-System-Health-in-Windows-Server-Essentials.md#BKMK_Email)
 
@@ -291,8 +290,8 @@ ms.locfileid: "85470517"
     |-----------------|------------------|-----------------------------|-----------------|------------------------------|
     |smtp.gmail.com|はい|はい|587|認証に必要なドメイン名とパスワードを完全電子メール アドレスに指定します。|
     |smtp.live.com|はい|はい|587|認証に必要なドメイン名とパスワードを完全電子メール アドレスに指定します。|
-    |smtp.comcast.net|はい|いいえ|587|認証に必要なドメイン名とパスワードを完全電子メール アドレスに指定します。|
-    |smtp.mail.yahoo.com|いいえ|はい|25|ユーザー名にドメイン名のない電子メール アドレスのみを指定します。|
+    |smtp.comcast.net|[はい]|いいえ|587|認証に必要なドメイン名とパスワードを完全電子メール アドレスに指定します。|
+    |smtp.mail.yahoo.com|いいえ|[はい]|25|ユーザー名にドメイン名のない電子メール アドレスのみを指定します。|
 
 5.  [**アラートの通知の設定**] で、[**電子メール受信者**] に、電子メールでアラート通知を受信する人の電子メール アドレスを入力します。 各電子メール アドレスはセミコロン (;) で区切ります。
 
@@ -341,8 +340,8 @@ ms.locfileid: "85470517"
     |-----------------|------------------|-----------------------------|-----------------|------------------------------|
     |smtp.gmail.com|はい|はい|587|認証に必要なドメイン名とパスワードを完全電子メール アドレスに指定します。|
     |smtp.live.com|はい|はい|587|認証に必要なドメイン名とパスワードを完全電子メール アドレスに指定します。|
-    |smtp.comcast.net|はい|いいえ|587|認証に必要なドメイン名とパスワードを完全電子メール アドレスに指定します。|
-    |smtp.mail.yahoo.com|いいえ|はい|25|ユーザー名にドメイン名のない電子メール アドレスのみを指定します。|
+    |smtp.comcast.net|[はい]|いいえ|587|認証に必要なドメイン名とパスワードを完全電子メール アドレスに指定します。|
+    |smtp.mail.yahoo.com|いいえ|[はい]|25|ユーザー名にドメイン名のない電子メール アドレスのみを指定します。|
 
 6.  [**状態レポートの設定のカスタマイズ**] の [**状態レポートを次の電子メール受信者に自動的に送信する:**] に、電子メールで状態レポートを受信する人の電子メール アドレスを入力します。 各電子メール アドレスはセミコロン (;) で区切ります。
 

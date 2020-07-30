@@ -2,18 +2,17 @@
 title: Windows Server Essentials のインストールと構成
 description: Windows Server Essentials の使用方法について説明します。
 ms.date: 06/17/2013
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: e95cf219-46a4-4041-bd81-0c4c2a0622cf
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 504ce971691d85c6d3727bacd6419f548673c88a
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: ce8f1dda49144a817f405d04f17046f701230446
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470897"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181178"
 ---
 # <a name="install-and-configure-windows-server-essentials"></a>Windows Server Essentials のインストールと構成
 
@@ -156,7 +155,7 @@ ms.locfileid: "85470897"
 |タスク|説明
 |----------|-----------------|
 |他のマイクロソフト製品の更新プログラムの入手|このタスクをクリックすると、Microsoft Update を使用して、Windows Server Essentials や Office などの他の Microsoft 製品の更新プログラムを自動的に取得するかどうかを指定できるツールを実行するリンクにアクセスできます。
-|ユーザー アカウントを追加する|このタスクをクリックすると、ユーザー アカウントの追加に関する簡単な情報が表示されます。 **ユーザー アカウントの追加ウィザード** を実行するためのリンクがあります。 詳細については、「[ユーザー アカウントの追加](../manage/Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Manage1)」を参照してください。
+|ユーザー アカウントの追加|このタスクをクリックすると、ユーザー アカウントの追加に関する簡単な情報が表示されます。 **ユーザー アカウントの追加ウィザード** を実行するためのリンクがあります。 詳細については、「[ユーザー アカウントの追加](../manage/Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Manage1)」を参照してください。
 |サーバー フォルダーの追加|このタスクをクリックすると、サーバー フォルダーの追加に関する簡単な情報が表示されます。 **フォルダーの追加ウィザード** を実行するためのリンクがあります。 サーバー フォルダーの使用に関するオンライン ヘルプ トピックへのリンクも提供されています。 詳細については、「[サーバー フォルダーの追加と移動](../manage/Manage-Server-Folders-in-Windows-Server-Essentials.md#BKMK_5)」を参照してください。
 |サーバー バックアップのセットアップ|このタスクをクリックすると、サーバー バックアップを使用したデータの保護に関する簡単な情報が表示されます。 **サーバー バックアップのセットアップ ウィザード** を実行するためのリンクがあります。 詳細については、「[サーバー バックアップのセットアップまたはカスタマイズ](../manage/Manage-Server-Backup-in-Windows-Server-Essentials.md#BKMK_1)」を参照してください。
 |Anywhere Access のセットアップ|このタスクをクリックすると、Windows Server Essentials の Anywhere Access 機能に関する簡単な情報が表示されます。 [**Anywhere Access の設定**] ページへのリンクがあります。 詳細については、「 [Anywhere Access の管理](../manage/Manage-Anywhere-Access-in-Windows-Server-Essentials.md)」を参照してください。

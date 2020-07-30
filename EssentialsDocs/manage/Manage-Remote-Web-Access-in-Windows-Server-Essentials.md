@@ -2,18 +2,17 @@
 title: Windows Server Essentials でのリモート Web アクセスの管理
 description: Windows Server Essentials の使用方法について説明します。
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: f3ea40fa-b6ba-4d66-b754-221ca6271387
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 2144f66e9c5a5e9384e49a0f5d77796dec9d7429
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 56bfd8d9860ad571265980e859a09914fb4f1b9c
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470627"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180938"
 ---
 # <a name="manage-remote-web-access-in-windows-server-essentials"></a>Windows Server Essentials でのリモート Web アクセスの管理
 
@@ -70,7 +69,7 @@ ms.locfileid: "85470627"
 
 2.  **[設定]** をクリックし、**[Anywhere Access]** タブをクリックします。
 
-3.  **[構成]** をクリックします。 Anywhere Access のセットアップ ウィザードが表示されます。
+3.  **[Configure]\(構成\)** をクリックします。 Anywhere Access のセットアップ ウィザードが表示されます。
 
 4.  **[有効にする Anywhere Access の機能を選択します]** ページで、**[リモート Web アクセス]** チェック ボックスを選択します。
 
@@ -150,9 +149,9 @@ ms.locfileid: "85470627"
  Windows Server Essentials は、この手順の間に UPnP コマンドを使用してルーターを自動的に構成しようと試みます。 このためには、ルーターが UPnP 標準をサポートしていて、ルーターで UPnP 設定が有効になっている必要があります。
 
 > [!NOTE]
->  ネットワーク構成は、Windows Server Essentials でサポートされるネットワーク要件に適合している必要があります。 ネットワーク上に存在するルーターは 1 つでなければなりません。
+> ネットワーク構成は、Windows Server Essentials でサポートされるネットワーク要件に適合している必要があります。 ネットワーク上に存在するルーターは 1 つでなければなりません。
 
- ルーターがドメイン名のセットアップ ウィザードによってセットアップされない場合は、手動でポート 443 を転送する必要があります。 ルーターでポート フォワーディングをセットアップする方法の詳細については、 [ルーターのセットアップに関するページ](https://social.technet.microsoft.com/wiki/contents/articles/windows-small-business-server-2011-essentials-router-setup.aspx)を参照してください。
+ ルーターがドメイン名のセットアップ ウィザードによってセットアップされない場合は、手動でポート 443 を転送する必要があります。 ルーターでポートフォワーディングを設定する方法については、 [Small Business Server フォーラム](https://docs.microsoft.com/answers/topics/windows-small-business-server.html)を参照してください。
 
 ###  <a name="replace-a-router"></a><a name="BKMK_ReplaceRouter"></a>ルーターを交換する
  製造元の指示に従ってルーターを交換し、ルーターのセットアップウィザードを実行して新しいルーターを構成します。
@@ -307,7 +306,7 @@ ms.locfileid: "85470627"
 
  **汎用トップレベル ドメインの例**
 
-|ドメイン拡張子|説明|
+|ドメイン拡張子|[説明]|
 |----------------------|-----------------|
 |.com|通常は商業組織によって使用されますが、だれでも使用できます。|
 |.net|ネットワーク インフラストラクチャ サービスを提供する企業向けです。|
@@ -319,7 +318,7 @@ ms.locfileid: "85470627"
 
  **国コード トップレベル ドメインの例**
 
-|ドメイン拡張子|説明|
+|ドメイン拡張子|[説明]|
 |----------------------|-----------------|
 |.ca|カナダの Web サイトで使用されます。|
 |.cn|中国の Web サイトで使用されます。|

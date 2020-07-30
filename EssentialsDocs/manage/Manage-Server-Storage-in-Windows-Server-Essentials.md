@@ -2,18 +2,17 @@
 title: Windows Server Essentials でのサーバー記憶域の管理
 description: Windows Server Essentials の使用方法について説明します。
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 1836682e-c7bb-4dd5-a2b5-6ff032693574
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: cb6503c05f0dfc621758acb6da26cc90e658836d
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 861404db4d6b5e0d4cfd4db95056f583f9068a0b
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470557"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180908"
 ---
 # <a name="manage-server-storage-in-windows-server-essentials"></a>Windows Server Essentials でのサーバー記憶域の管理
 
@@ -194,7 +193,7 @@ ms.locfileid: "85470557"
 > [!NOTE]
 >  Windows Server Essentials を実行しているサーバーで記憶域スペースを構成する場合、[**データのクリーン**] オプションを使用して出荷時の設定に戻すことはできません。 この問題を回避するには、まず記憶域スペースを削除してから、**データのクリーンアップ** オプションを指定した工場出荷時リセットを実行します。
 
- 記憶域スペースについての詳細は、 [記憶域スペースに関してよく寄せられる質問 (FAQ)](https://social.technet.microsoft.com/wiki/contents/articles/11382.storage-spaces-frequently-asked-questions-faq.aspx)を参照してください。
+ 記憶域スペースについての詳細は、 [記憶域スペースに関してよく寄せられる質問 (FAQ)](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-direct-faq)を参照してください。
 
 ##  <a name="create-a-storage-space"></a><a name="BKMK_6"></a>記憶域スペースの作成
  サーバー上の記憶域スペースの作業を開始するには、以下の最小要件が満たされていることが必要です。

@@ -2,18 +2,17 @@
 title: Windows Server Essentials の管理
 description: Windows Server Essentials の使用方法について説明します。
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 4f1902f1-a0e0-49a6-afa7-3c4b61a11b48
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 0a3036547c03b39a274610f12cd666f073c4d44a
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 1943c8cc1f4d000439e11dfc2ee74d8421add768
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470466"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180858"
 ---
 # <a name="manage-windows-server-essentials"></a>Windows Server Essentials の管理
 

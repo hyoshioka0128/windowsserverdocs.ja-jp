@@ -2,18 +2,17 @@
 title: Windows Server Essentials での DirectAccess の構成
 description: Windows Server Essentials の使用方法について説明します。
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: c959b6fc-c67e-46cd-a9cb-cee71a42fa4c
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: a9ebd7af7f748a1e2af4a47ca5b590137cd33b3d
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: a1f568d34fd0fbd94d09046b59a93d21feb60890
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470907"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181078"
 ---
 # <a name="configure-directaccess-in-windows-server-essentials"></a>Windows Server Essentials での DirectAccess の構成
 
@@ -121,7 +120,7 @@ ms.locfileid: "85470907"
 
 9. 代替 DNS サーバーがある場合は、**[代替 DNS サーバー]** ボックスにその IP アドレスを入力します。
 
-10. **[OK]** をクリックし、**[閉じる]** をクリックします。
+10. **[OK]** をクリックし、 **[閉じる]** をクリックします。
 
 > [!IMPORTANT]
 >  ルーターの構成で、ポート 80 および 443 をルーターの新しい静的 IP アドレスに転送していることを確認してください。
