@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e8b1cae87818d3f77474e4193b03836bf1c84990
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 7e6dba42610923e8b0cd9d7ea25a0e1ea6df507a
+ms.sourcegitcommit: 67d9c51e396c8f937f8704a25e66fea8c5fae81a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931654"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87441528"
 ---
 # <a name="lodctr"></a>lodctr
 
@@ -30,7 +30,7 @@ lodctr <filename> [/s:<filename>] [/r:<filename>] [/t:<servicename>]
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | 説明 |
+| パラメーター | Description |
 | --------- | ----------- |
 | `<filename>` | パフォーマンスカウンターの名前設定と説明文を登録する初期化ファイルの名前を指定します。 |
 | /s`<filename>` | パフォーマンスカウンターのレジストリ設定と説明テキストを保存するファイルの名前を指定します。 |
@@ -39,18 +39,18 @@ lodctr <filename> [/s:<filename>] [/r:<filename>] [/t:<servicename>]
 | /t: `<servicename>` | サービスが信頼されていることを示し `<servicename>` ます。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>Remarks
 
 - 入力した情報にスペースが含まれている場合は、テキストを引用符で囲みます ("ファイル名 1" など)。
 
-### <a name="examples"></a>例
+### <a name="examples"></a>使用例
 
-現在のパフォーマンスレジストリ設定と説明テキストをファイル*パフォーマンス backup1.txt*に保存するには、次のように入力します。
+現在のパフォーマンスレジストリ設定と説明テキストをファイル *"perf backup1.txt"* に保存するには、次のように入力します。
 
 ```
-lodctr /s:perf backup1.txt
+lodctr /s:"perf backup1.txt"
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

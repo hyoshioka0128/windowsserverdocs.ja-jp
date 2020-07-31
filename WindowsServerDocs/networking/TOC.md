@@ -229,7 +229,7 @@
 #### [QoS ポリシーのしくみ](technologies/qos/qos-policy-works.md)
 #### [QoS ポリシーのアーキテクチャ](technologies/qos/qos-policy-architecture.md)
 #### [QoS ポリシーのシナリオ](technologies/qos/qos-policy-scenarios.md)
-###[QoS ポリシーの管理](technologies/qos/qos-policy-manage.md)
+### [QoS ポリシーの管理](technologies/qos/qos-policy-manage.md)
 #### [QoS ポリシーのイベントとエラー](technologies/qos/qos-policy-errors.md)
 ### [QoS ポリシーについてよくあるご質問](technologies/qos/qos-policy-faq.md)
 

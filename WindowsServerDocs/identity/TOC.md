@@ -46,7 +46,7 @@
 ##### [アプリケーション ベンダー向けの仮想化ドメイン コントローラー複製のテスト ガイダンス](ad-ds/reference/virtual-dc/Virtualized-Domain-Controller-Cloning-Test-Guidance-for-Application-Vendors.md)
 ##### [仮想化ドメイン コントローラー用 Hyper-V レプリカの使用のサポート](ad-ds/get-started/virtual-dc/Support-for-using-Hyper-V-Replica-for-virtualized-domain-controllers.md)
 
-####[Windows タイム サービスと AD DS](../networking/windows-time-service/windows-time-service.md)
+#### [Windows タイム サービスと AD DS](../networking/windows-time-service/windows-time-service.md)
 
 ### [AD DS の設計と計画](ad-ds/plan/AD-DS-Design-and-Planning.md)
 
@@ -348,22 +348,22 @@
 #### [Azure AD Connect Health の展開](/azure/active-directory/hybrid/whatis-hybrid-identity)
 #### [Windows Server 2012 R2 への Active Directory フェデレーション サービス (AD FS) 役割サービスの移行](ad-fs/deployment/migrate-ad-fs-service-role-to-windows-server-r2.md)
 ##### [AD FS フェデレーション サーバーの移行準備](ad-fs/deployment/prepare-migrate-ad-fs-server-r2.md)
-#####[AD FS フェデレーション サーバーの移行](ad-fs/deployment/migrate-ad-fs-fed-server-r2.md)
-#####[AD FS フェデレーション サーバー プロキシの移行](ad-fs/deployment/migrate-fed-server-proxy-r2.md)
-#####[AD FS から Windows Server 2012 R2 への移行の確認](ad-fs/deployment/verify-ad-fs-migration.md)
+##### [AD FS フェデレーション サーバーの移行](ad-fs/deployment/migrate-ad-fs-fed-server-r2.md)
+##### [AD FS フェデレーション サーバー プロキシの移行](ad-fs/deployment/migrate-fed-server-proxy-r2.md)
+##### [AD FS から Windows Server 2012 R2 への移行の確認](ad-fs/deployment/verify-ad-fs-migration.md)
 
 #### [Windows Server 2012 への Active Directory フェデレーション サービス (AD FS) 役割サービスの移行](ad-fs/deployment/migrate-ad-fs-role-services-to-windows-server-2012.md)
 ##### [AD FS 2.0 フェデレーション サーバーの移行の準備](ad-fs/deployment/prepare-to-migrate-ad-fs-fed-server.md)
-######[AD FS 2.0 スタンドアロンまたは単一ノード ファーム サーバーの移行準備](ad-fs/deployment/prepare-to-migrate-a-stand-alone-ad-fs-federation-server.md)
-######[AD FS 2.0 WID ファームの移行準備](ad-fs/deployment/prepare-to-migrate-a-wid-farm.md)
-######[AD FS 2.0 SQL ファームの移行準備](ad-fs/deployment/prepare-to-migrate-a-sql-server-farm.md)
-#####[AD FS 2.0 フェデレーション サーバー プロキシの移行の準備](ad-fs/deployment/prepare-to-migrate-ad-fs-fed-proxy.md)
-#####[AD FS 2.0 フェデレーション サーバーの移行](ad-fs/deployment/migrate-the-ad-fs-fed-server.md)
-######[AD FS 2.0 スタンドアロンまたは単一ノード ファーム サーバーの移行](ad-fs/deployment/migrate-ad-fs-stand-alone-server.md)
-######[AD FS 2.0 WID ファームの移行](ad-fs/deployment/migrate-ad-fs-wid-farm.md)
-######[AD FS 2.0 SQL ファームの移行](ad-fs/deployment/migrate-ad-fs-sql-farm.md)
-#####[AD FS 2.0 フェデレーション サーバー プロキシの移行](ad-fs/deployment/migrate-the-ad-fs-2-fed-server-proxy.md)
-#####[AD FS 1.1 Web エージェントの移行](ad-fs/deployment/migrate-the-ad-fs-web-agent.md)
+###### [AD FS 2.0 スタンドアロンまたは単一ノード ファーム サーバーの移行準備](ad-fs/deployment/prepare-to-migrate-a-stand-alone-ad-fs-federation-server.md)
+###### [AD FS 2.0 WID ファームの移行準備](ad-fs/deployment/prepare-to-migrate-a-wid-farm.md)
+###### [AD FS 2.0 SQL ファームの移行準備](ad-fs/deployment/prepare-to-migrate-a-sql-server-farm.md)
+##### [AD FS 2.0 フェデレーション サーバー プロキシの移行の準備](ad-fs/deployment/prepare-to-migrate-ad-fs-fed-proxy.md)
+##### [AD FS 2.0 フェデレーション サーバーの移行](ad-fs/deployment/migrate-the-ad-fs-fed-server.md)
+###### [AD FS 2.0 スタンドアロンまたは単一ノード ファーム サーバーの移行](ad-fs/deployment/migrate-ad-fs-stand-alone-server.md)
+###### [AD FS 2.0 WID ファームの移行](ad-fs/deployment/migrate-ad-fs-wid-farm.md)
+###### [AD FS 2.0 SQL ファームの移行](ad-fs/deployment/migrate-ad-fs-sql-farm.md)
+##### [AD FS 2.0 フェデレーション サーバー プロキシの移行](ad-fs/deployment/migrate-the-ad-fs-2-fed-server-proxy.md)
+##### [AD FS 1.1 Web エージェントの移行](ad-fs/deployment/migrate-the-ad-fs-web-agent.md)
 
 
 
