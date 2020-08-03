@@ -8,23 +8,23 @@ ms.author: jeffrew
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 06/07/2019
-ms.openlocfilehash: 5df216d8c7b829a6c60db4e5d771824a7bacdb47
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 2ddcf101b6eae3be6f48c66de3c400c66ed53f2b
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322884"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87519651"
 ---
 # <a name="troubleshooting-windows-admin-center"></a>Windows Admin Center のトラブルシューティング
 
-> 適用対象: Windows 管理センター、Windows 管理センタープレビュー
+> 適用先:Windows Admin Center、Windows Admin Center Preview
 
 > [!Important]
 > このガイドは、Windows Admin Center を使用できない原因となっている問題を診断および解決するのに役立ちます。 特定のツールで問題が発生している場合は、[既知の問題](https://aka.ms/wacknownissues)が発生しているかどうかを確認してください。
 
 ## <a name="installer-fails-with-message-_the-module-microsoftpowershelllocalaccounts-could-not-be-loaded_"></a>インストーラーは次のメッセージで失敗します: **_モジュール ' Microsoft. PowerShell. localaccounts ' を読み込めませんでした。_**
 
-これは、既定の PowerShell モジュールパスが変更または削除された場合に発生する可能性があります。 この問題を解決するには、```%SystemRoot%\system32\WindowsPowerShell\v1.0\Modules``` が、PSModulePath 環境変数の**最初**の項目であることを確認します。 これは、次の PowerShell の行を使用して実現できます。
+これは、既定の PowerShell モジュールパスが変更または削除された場合に発生する可能性があります。 この問題を解決するには、 ```%SystemRoot%\system32\WindowsPowerShell\v1.0\Modules``` が PSModulePath 環境変数の**最初**の項目であることを確認します。 これは、次の PowerShell の行を使用して実現できます。
 
 ```powershell
 [Environment]::SetEnvironmentVariable("PSModulePath","%SystemRoot%\system32\WindowsPowerShell\v1.0\Modules;" + ([Environment]::GetEnvironmentVariable("PSModulePath","User")),"User")
@@ -34,12 +34,12 @@ ms.locfileid: "79322884"
 
 ### <a name="if-youve-installed-windows-admin-center-as-an-app-on-windows-10"></a>**Windows 10 のアプリ**として Windows Admin Center をインストールしている場合
 
-* Windows Admin Center が実行されていることを確認します。 タスクマネージャーのシステムトレイまたは**Windows 管理センターのデスクトップ/SmeDesktop**で、Windows 管理センターのアイコン ![](../media/trayIcon.PNG) を探します。 見つからない場合は、[スタート] メニューから **Windows Admin Center** を起動します。
+* Windows Admin Center が実行されていることを確認します。 ![ ](../media/trayIcon.PNG) タスクマネージャーのシステムトレイまたは**windows 管理センターのデスクトップ/SmeDesktop.exe**で、windows 管理センターのアイコン [windows 管理センター] アイコンを探します。 見つからない場合は、[スタート] メニューから **Windows Admin Center** を起動します。
 
-> [!NOTE] 
-> 再起動後、[スタート] メニューから Windows Admin Center を起動する必要があります。  
+> [!NOTE]
+> 再起動後、[スタート] メニューから Windows Admin Center を起動する必要があります。
 
-* [Windows のバージョンを確認する](#check-the-windows-version)
+* [Windows のバージョンを確認します。](#check-the-windows-version)
 
 * Web ブラウザーとして Microsoft Edge または Google Chrome のいずれかを使用していることを確認します。
 
@@ -58,9 +58,10 @@ ms.locfileid: "79322884"
 * Web ブラウザーとして Microsoft Edge または Google Chrome のいずれかを使用していることを確認します。
 
 * サーバーで、[タスクマネージャー > サービス] を開き、 **Servermanagementgateway/Windows 管理センター**が実行されていることを確認します。
-![](../media/Service-TaskMan.PNG)
 
-* ゲートウェイへのネットワーク接続をテストします (\<値 > を展開の情報に置き換えます)。
+    ![タスクマネージャー-[サービス] タブ](../media/Service-TaskMan.PNG)
+
+* ゲートウェイへのネットワーク接続をテストします (を \<values> デプロイの情報に置き換えます)。
 
     ```powershell
     Test-NetConnection -Port <port> -ComputerName <gateway> -InformationLevel Detailed
@@ -68,9 +69,9 @@ ms.locfileid: "79322884"
 
 ### <a name="if-you-have-installed-windows-admin-center-in-an-azure-windows-server-vm"></a>Windows 管理センターが Azure Windows Server VM にインストールされている場合
 
-* [Windows のバージョンを確認する](#check-the-windows-version)
-* HTTPS の受信ポート規則を追加しましたか 
-* [Azure VM への Windows 管理センターのインストールについての詳細情報](https://docs.microsoft.com/windows-server/manage/windows-admin-center/configure/azure-integration#use-a-windows-admin-center-gateway-deployed-in-azure)
+* [Windows のバージョンを確認します。](#check-the-windows-version)
+* HTTPS の受信ポート規則を追加しましたか
+* [Azure VM へのWindows Admin Center のインストールの詳細を確認してください](https://docs.microsoft.com/windows-server/manage/windows-admin-center/configure/azure-integration#use-a-windows-admin-center-gateway-deployed-in-azure)
 
 ### <a name="check-the-windows-version"></a>Windows のバージョンを確認します。
 
@@ -83,16 +84,16 @@ ms.locfileid: "79322884"
 ### <a name="make-sure-the-windows-remote-management-winrm-service-is-running-on-both-the-gateway-machine-and-managed-node"></a>ゲートウェイコンピューターと管理ノードの両方で Windows リモート管理 (WinRM) サービスが実行されていることを確認します。
 
 * WindowsKey + R を使用して [実行] ダイアログを開く
-* 「```services.msc```」と入力し、enter キーを押します。
+* 「 ```services.msc``` 」と入力し、enter キーを押します。
 * 開いたウィンドウで Windows リモート管理 (WinRM) を探し、それが実行中であり、自動的に開始するように設定されていることを確認します。
 
 ### <a name="did-you-upgrade-your-server-from-2016-to-2019"></a>サーバーを2016から2019にアップグレードしましたか?
 
-* これにより、信頼されたホストの設定がクリアされた可能性があります。 [信頼されたホストの設定を更新するには、次の手順に従います。](#configure-trustedhosts) 
+* これにより、信頼されたホストの設定がクリアされた可能性があります。 [信頼されたホストの設定を更新するには、次の手順に従います。](#configure-trustedhosts)
 
 ## <a name="i-get-the-message-cant-connect-securely-to-this-page-this-might-be-because-the-site-uses-outdated-or-unsafe-tls-security-settings"></a>"このページに安全に接続できません" というメッセージが表示されます。 これは、サイトで TLS セキュリティ設定が古くなっているか、安全でないことが原因である可能性があります。
 
-コンピューターは、HTTP/2 接続に制限されています。 Windows 管理センターでは、HTTP/2 でサポートされていない統合 Windows 認証が使用されます。 ブラウザーを実行して**いるコンピューター**の ```HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Http\Parameters``` キーの下に次の2つのレジストリ値を追加して、HTTP/2 の制限を削除します。
+コンピューターは、HTTP/2 接続に制限されています。 Windows 管理センターでは、HTTP/2 でサポートされていない統合 Windows 認証が使用されます。 ```HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Http\Parameters```**ブラウザーを実行しているコンピューター**のキーの下に次の2つのレジストリ値を追加して、HTTP/2 の制限を削除します。
 
 ```
 EnableHttp2Cleartext=dword:00000000
@@ -105,7 +106,7 @@ EnableHttp2Tls=dword:00000000
 
 ## <a name="i-can-connect-to-some-servers-but-not-others"></a>一部のサーバーに接続できるが、他のサーバーには接続できない
 
-* ゲートウェイコンピューターにローカルでログオンし、PowerShell で ```Enter-PSSession <machine name>``` を試して、\<マシン名 > を Windows 管理センターで管理しようとしているコンピューターの名前に置き換えます。 
+* ゲートウェイコンピューターにローカルでログオンし、PowerShell でを試行し ```Enter-PSSession <machine name>``` \<machine name> ます。は、Windows 管理センターで管理しようとしているコンピューターの名前に置き換えてください。
 
 * 環境でドメインの代わりにワークグループを使用している場合は、「[ワークグループでの Windows Admin Center の使用](#using-windows-admin-center-in-a-workgroup)」を参照してください。
 
@@ -123,7 +124,7 @@ EnableHttp2Tls=dword:00000000
 ```cmd
 REG ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v LocalAccountTokenFilterPolicy /t REG_DWORD /d 1
 ```
-### <a name="are-you-connecting-to-a-workgroup-machine-on-a-different-subnet"></a>異なるサブネットでワークグループ コンピューターに接続している場合
+### <a name="are-you-connecting-to-a-workgroup-machine-on-a-different-subnet"></a>別のサブネット上のワークグループ コンピューターに接続するか。
 
 ゲートウェイと同じサブネット上にないワークグループ コンピューターに接続するには、WinRM (TCP 5985) のファイアウォール ポートにより、ターゲット コンピューターで受信トラフィックが許可されていることを確認します。 PowerShell で、またはターゲット コンピューターで管理者としてコマンド プロンプトで次のコマンドを実行して、このファイアウォール規則を作成することができます。
 
@@ -154,7 +155,7 @@ Windows Admin Center のインストール時に、Windows Admin Center でゲ�
 
    > [!WARNING]
    > TrustedHosts の現在の設定が空でない場合は、次のコマンドにより設定が上書きされます。 必要に応じて復元できるように、次のコマンドを使用して現在の設定をテキスト ファイルに保存することをお勧めします。
-   > 
+   >
    > `Get-Item WSMan:localhost\Client\TrustedHosts | Out-File C:\OldTrustedHosts.txt`
 
 3. TrustedHosts を、管理するコンピューターの NetBIOS、IP、または FQDN に設定します。
@@ -193,23 +194,23 @@ netsh http delete urlacl url=https://+:443/
 
 ## <a name="azure-features-dont-work-properly-in-edge"></a>Azure の機能がエッジで適切に動作しない
 
-エッジには、Windows 管理センターでの Azure ログインに影響を与えるセキュリティゾーンに関連する[既知の問題](https://github.com/AzureAD/azure-activedirectory-library-for-js/wiki/Known-issues-on-Edge)があります。 Edge を使用しているときに Azure の機能を使用する際に問題が発生した場合は、 https://login.microsoftonline.com、 https://login.live.com、ゲートウェイの URL を信頼済みサイトとして追加し、クライアント側ブラウザーで Edge ポップアップブロックの設定を許可されたサイトに追加してみてください。 
+エッジには、Windows 管理センターでの Azure ログインに影響を与えるセキュリティゾーンに関連する[既知の問題](https://github.com/AzureAD/azure-activedirectory-library-for-js/wiki/Known-issues-on-Edge)があります。 Edge を使用しているときに Azure の機能を使用する際に問題が発生する場合は https://login.microsoftonline.com 、ゲートウェイの URL を信頼済みサイトとして追加し、 https://login.live.com クライアント側ブラウザーでエッジポップアップブロック設定の許可されたサイトに追加してみてください。
 
-これを行うには :
-1. Windows の スタート メニューの **インターネットオプション** を検索します。
-2. **[セキュリティ]** タブにアクセスします。
-3. **[信頼済みサイト]** オプションで、 **[サイト]** ボタンをクリックし、表示されるダイアログボックスに url を追加します。 ゲートウェイの URL だけでなく https://login.microsoftonline.com と https://login.live.comも追加する必要があります。
-4. **[プライバシー]** タブにアクセスします。
-5. **[ポップアップブロック]** セクションで、 **[設定]** ボタンをクリックし、表示されるダイアログボックスに url を追加します。 ゲートウェイの URL だけでなく https://login.microsoftonline.com と https://login.live.comも追加する必要があります。
+これを行うには、次の手順を実行します。
+1. Windows の [スタート] メニューの [**インターネットオプション**] を検索します。
+2. [**セキュリティ**] タブにアクセスします。
+3. **[信頼済みサイト]** オプションで、 **[サイト]** ボタンをクリックし、表示されたダイアログ ボックスに URL を追加します。 ゲートウェイの URL とおよびを追加する必要があり https://login.microsoftonline.com https://login.live.com ます。
+4. [**プライバシー** ] タブにアクセスします。
+5. [**ポップアップブロック**] セクションで、[**設定**] ボタンをクリックし、表示されるダイアログボックスに url を追加します。 ゲートウェイの URL とおよびを追加する必要があり https://login.microsoftonline.com https://login.live.com ます。
 
 ## <a name="having-an-issue-with-an-azure-related-feature"></a>Azure 関連の機能に問題がある場合は、
 
-wacFeedbackAzure@microsoft.com に次の情報を含む電子メールをお送りください。
+次の情報を含む電子メールをお送りください wacFeedbackAzure@microsoft.com 。
 * [以下に記載されている質問](#providing-feedback-on-issues)の一般的な問題情報。
-* 問題とその再現手順について説明します。 
-* New-AadApp ダウンロード可能なスクリプトを使用してゲートウェイを Azure に登録した後、バージョン1807にアップグレードしましたか? または、ゲートウェイ設定の UI を使用して azure > azure にゲートウェイを登録しましたか?
+* 問題とその再現手順について説明します。
+* New-AadApp.ps1 ダウンロード可能なスクリプトを使用してゲートウェイを Azure に登録した後、バージョン1807にアップグレードしましたか? または、ゲートウェイ設定の UI を使用して azure > azure にゲートウェイを登録しましたか?
 * Azure アカウントは複数のディレクトリ/テナントに関連付けられていますか?
-    * [はい] の場合: Windows 管理センターに Azure AD アプリケーションを登録するときに、Azure で既定のディレクトリを使用していたディレクトリになりましたか? 
+    * [はい] の場合: Windows 管理センターに Azure AD アプリケーションを登録するときに、Azure で既定のディレクトリを使用していたディレクトリになりましたか?
 * Azure アカウントは複数のサブスクリプションにアクセスできますか。
 * 使用していたサブスクリプションに課金が適用されていますか?
 * 問題が発生したときに複数の Azure アカウントにログインしましたか?
@@ -223,19 +224,19 @@ wacFeedbackAzure@microsoft.com に次の情報を含む電子メールをお送�
 
 問題について説明している [UserVoice](https://windowsserver.uservoice.com/forums/295071/category/319162?query=%5BBug%5D) で問題を登録します。
 
-イベント ログで見つけたエラーまたは警告、および次の情報を含めてください。 
+イベント ログで見つけたエラーまたは警告、および次の情報を含めてください。
 
 * Windows Admin Center が**インストールされている**プラットフォーム (Windows 10 または Windows Server):
-    * サーバーにインストールされている場合、Windows 管理センターにアクセスするには、**ブラウザーを実行**しているコンピューターの windows[バージョン](#check-the-windows-version)は次のようになります。 
+    * サーバーにインストールされている場合、Windows 管理センターにアクセスするには、**ブラウザーを実行**しているコンピューターの windows[バージョン](#check-the-windows-version)は次のようになります。
     * インストーラーによって作成された自己署名証明書を使用していますか?
     * 独自の証明書を使用している場合は、サブジェクト名とコンピューターが一致しますか。
     * 独自の証明書を使用している場合、別のサブジェクト名を指定していますか。
 * 既定のポートの設定でインストールしましたか。
     * そうでない場合、どのポートを指定しましたか。
 * Windows Admin Center が**インストールされている**コンピューターはドメインに参加していますか。
-* Windows Admin Center が[インストールされている](#check-the-windows-version) Windows **バージョン**:
+* Windows Admin Center が**インストールされている** Windows [バージョン](#check-the-windows-version):
 * **管理しようとしている**コンピューターはドメインに参加していますか。
-* [管理しようとしている](#check-the-windows-version)コンピューターの Windows **バージョン**:
-* どのブラウザーを使用していますか。
+* **管理しようとしている**コンピューターの Windows [バージョン](#check-the-windows-version):
+* どのブラウザーを使用していますか?
     * Google Chrome を使用している場合、バージョンは何ですか。 ([ヘルプ] > [Google Chromeについて])
 

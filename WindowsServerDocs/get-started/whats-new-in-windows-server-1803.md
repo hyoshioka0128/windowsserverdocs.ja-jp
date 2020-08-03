@@ -8,16 +8,16 @@ author: greg-lindsay
 ms.author: greg-lindsay
 ms.localizationpriority: high
 ms.date: 05/07/2018
-ms.openlocfilehash: 73d0d62aac3771c4150a133950085170f7f51cb5
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 32410c9b2645d96ee1190afdda6a2ce75f09feef
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961144"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409562"
 ---
 # <a name="whats-new-in-windows-server-version-1803"></a>Windows Server バージョン 1803 の新機能
 
->適用先:Windows Server (半期チャネル)
+> 適用先:Windows Server (半期チャネル)
 
 <img src=../media/landing-icons/new.png style='float:left; padding:.5em;' alt=Icon showing a newspaper>&nbsp;Windows の最新の機能については、「[Windows Server の新機能](whats-new-in-windows-server.md)」を参照してください。 このセクション内のコンテンツでは、Windows Server バージョン 1803 の新機能および変更された機能について説明します。 ここに記載されている新機能と変更された機能は、このリリースを使う際に影響が最も大きいと思われるものです。 [Windows Server 半期チャネルの更新プログラム](https://cloudblogs.microsoft.com/windowsserver/2018/03/29/windows-server-semi-annual-channel-update/)に関するページも参照してください。
 
@@ -39,14 +39,14 @@ Windows Server バージョン 1709 は、半期チャネルの最初のリリ�
 
 半期チャネルと長期サービス チャネルの特定のシナリオは次のとおりです。
 
-|   | Long Term Servicing チャネル |  半期チャネル |
-| ------------- | ------------- | ------------ |
-| 推奨されるシナリオ     | 汎用ファイル サーバー、ファースト パーティおよびサード パーティのワークロード、従来のアプリ、インフラストラクチャの役割、ソフトウェア定義データセンター、およびハイパーコンバージド インフラストラクチャ  | コンテナー化されたアプリケーション、コンテナー ホスト、および迅速なイノベーションを活用するアプリケーション シナリオ |
-| 新しいリリース  | 2 から 3 年ごと  | 6 か月ごと |
-| サポート  | 5 年間のメインストリーム サポート + 5 年間の延長サポート  | 18 か月 |
-| エディション  | 利用可能なすべての Windows Server エディション  | Standard エディションと Datacenter エディション |
-| 利用できるユーザー  | すべてのチャネルのすべてのユーザー | ソフトウェア アシュアランスとクラウドのユーザーのみ |
-| インストール オプション  | Server Core とデスクトップ エクスペリエンス搭載サーバー  | コンテナー ホストとコンテナー イメージ用の Server Core、および Nano Server コンテナー イメージ |
+| 説明 | Long Term Servicing チャネル | 半期チャネル |
+|--|--|--|
+| 推奨されるシナリオ | 汎用ファイル サーバー、ファースト パーティおよびサード パーティのワークロード、従来のアプリ、インフラストラクチャの役割、ソフトウェア定義データセンター、およびハイパーコンバージド インフラストラクチャ | コンテナー化されたアプリケーション、コンテナー ホスト、および迅速なイノベーションを活用するアプリケーション シナリオ |
+| 新しいリリース | 2 から 3 年ごと | 6 か月ごと |
+| サポート | 5 年間のメインストリーム サポート + 5 年間の延長サポート | 18 か月 |
+| エディション | 利用可能なすべての Windows Server エディション | Standard エディションと Datacenter エディション |
+| 利用できるユーザー | すべてのチャネルのすべてのユーザー | ソフトウェア アシュアランスとクラウドのユーザーのみ |
+| インストール オプション | Server Core とデスクトップ エクスペリエンス搭載サーバー | コンテナー ホストとコンテナー イメージ用の Server Core、および Nano Server コンテナー イメージ |
 
 ## <a name="application-platform-and-containers"></a>アプリケーション プラットフォームとコンテナー
 

@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2378b4cbc4f0624a0f1d65c62337d4c1a856648c
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: f8205c86fa89795d5ecf207e90ea22542c176f8c
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85933527"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87519641"
 ---
-# <a name="online-disk"></a>online disk
+# <a name="online-volume"></a>online volume
 
 オフラインボリュームをオンライン状態にします。 このコマンドは、障害が発生しているか、失敗したか、冗長状態になっているボリュームに対して機能します。
 
@@ -38,7 +38,7 @@ online volume [noerr]
 |--|--|
 | noerr | スクリプト専用です。 エラーが発生しても、エラーが発生しなかったかのように DiskPart はコマンドの処理を続けます。 このパラメーターは、エラー発生すると、DiskPart はエラー コードを生成して終了します。 |
 
-### <a name="examples"></a>例
+### <a name="examples"></a>使用例
 
 フォーカスがあるボリュームをオンラインにするには、次のように入力します。
 
@@ -46,6 +46,6 @@ online volume [noerr]
 online volume
 ```
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

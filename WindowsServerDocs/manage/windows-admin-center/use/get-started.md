@@ -1,6 +1,6 @@
 ---
-title: Windows 管理センターの使用を開始する
-description: Windows 管理センターの使用を開始する
+title: Windows 管理センターを使ってみる
+description: Windows 管理センターを使ってみる
 ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
@@ -8,16 +8,16 @@ ms.author: niwashbu
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 02/15/2019
-ms.openlocfilehash: fc8e6ffa39320cfc73bf3f5bd0a5bc765ded24b4
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 5c0094c9cecfb50304b0317ab11c60f0332ef3a7
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322874"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87518570"
 ---
 # <a name="get-started-with-windows-admin-center"></a>Windows 管理センターを使ってみる
 
->適用対象: Windows Admin Center、Windows Admin Center Preview
+>適用先:Windows Admin Center、Windows Admin Center Preview
 
 > [!Tip]
 > Windows Admin Center を初めて使用する場合
@@ -33,18 +33,18 @@ ms.locfileid: "79322874"
 Windows 10 で windows 管理センターを初めて開くときは、必ず*Windows 管理センタークライアント*証明書を選択してください (そうしないと、"このページにアクセスできません" という HTTP 403 エラーが表示されます)。
 
 Microsoft Edge で、このダイアログボックスが表示されたら、次のように入力します。
- 
+
 1. **その他の選択肢**をクリック
 
-    ![](../media/launch-cert-1.png)
+    ![その他の選択肢が強調表示されている証明書ボックスを選択します](../media/launch-cert-1.png)
 
 2. **Windows 管理センタークライアント**という名前の証明書を選択し、[ **OK]** をクリックします。
 
-    ![](../media/launch-cert-2.png)
+    ![使用可能な証明書が表示されている証明書ボックスを選択します](../media/launch-cert-2.png)
 
-3. **常にアクセスを許可する**ことを確認し、 **[許可]** をクリックします。
+3. **常にアクセスを許可する**ことを確認し、[**許可**] をクリックします。
 
-    ![](../media/launch-cert-3.png)
+    ![資格情報が必要] ダイアログボックス] (../media/launch-cert-3.png)
 
 ## <a name="connecting-to-managed-nodes-and-clusters"></a>管理対象ノードとクラスターへの接続
 
@@ -54,25 +54,25 @@ Windows 管理センターのインストールが完了したら、メインの
 
 1. **[すべての接続]** の下にある **[+ 追加]** をクリックします。
 
-   ![](../media/launch/addserver0.png)
+   ![Windows 管理センター-[すべての接続] ページ](../media/launch/addserver0.png)
 
 2. サーバー、クラスター、Windows PC、または Azure VM を追加することを選択します。
-    
-   ![](../media/launch/ChooseConnectionType.png)
 
-3. 管理するサーバーまたはクラスターの名前を入力し、 **[送信]** をクリックします。 サーバーまたはクラスターが [概要] ページの接続リストに追加されます。
+   ![Windows 管理センター-[リソースの追加] ページ](../media/launch/ChooseConnectionType.png)
 
-   ![](../media/launch/addserver2.png)
+3. 管理するサーバーまたはクラスターの名前を入力し、[**送信**] をクリックします。 サーバーまたはクラスターが [概要] ページの接続リストに追加されます。
+
+   ![Windows 管理センター-[サーバー] ページ](../media/launch/addserver2.png)
 
    **--または--**
 
 **複数のサーバーの一括インポート**
 
- 1. **[サーバー接続の追加]** ページで、 **[サーバーのインポート]** タブを選択します。
+ 1. [**サーバー接続の追加**] ページで、[**サーバーのインポート**] タブを選択します。
 
-    ![](../media/launch/import-servers.png)
+    ![Windows 管理センター-[サーバーのインポート] タブ](../media/launch/import-servers.png)
 
- 2. **[参照]** をクリックし、追加するサーバーの fqdn のコンマまたは改行を含むテキストファイルを選択します。
+ 2. [**参照**] をクリックし、追加するサーバーの fqdn のコンマまたは改行を含むテキストファイルを選択します。
 
 > [!Note]
 > [PowerShell を使用した接続のエクスポート](#use-powershell-to-import-or-export-your-connections-with-tags)によって作成される .csv ファイルには、サーバー名以外の追加情報が含まれており、このインポート方法との互換性がありません。
@@ -81,13 +81,13 @@ Windows 管理センターのインストールが完了したら、メインの
 
 **Active Directory を検索してサーバーを追加する**
 
- 1. **[サーバー接続の追加]** ページで、 **[検索 Active Directory]** タブを選択します。
+ 1. [**サーバー接続の追加**] ページで、[**検索 Active Directory** ] タブを選択します。
 
-    ![](../media/launch/search-ad.png)
+    ![Windows 管理センター-検索 Active Directory タブ](../media/launch/search-ad.png)
 
- 2. 検索条件を入力し、 **[検索]** をクリックします。 ワイルドカード (*) がサポートされています。
+ 2. 検索条件を入力し、[**検索**] をクリックします。 ワイルドカード (*) がサポートされています。
 
- 3. 検索が完了したら、1つまたは複数の結果を選択し、必要に応じてタグを追加して、 **[追加]** をクリックします。
+ 3. 検索が完了したら、1つまたは複数の結果を選択し、必要に応じてタグを追加して、[**追加**] をクリックします。
 
 ## <a name="authenticate-with-the-managed-node"></a>管理ノードで認証する ##
 
@@ -95,7 +95,7 @@ Windows 管理センターでは、管理対象ノードで認証を行うため
 
 **シングルサインオン**
 
-現在の Windows 資格情報を使用して、管理対象ノードで認証を行うことができます。 これは既定の設定であり、Windows 管理センターはサーバーを追加するときにサインオンを試行します。 
+現在の Windows 資格情報を使用して、管理対象ノードで認証を行うことができます。 これは既定の設定であり、Windows 管理センターはサーバーを追加するときにサインオンを試行します。
 
 **Windows Server にサービスとしてデプロイされた場合のシングル サインオン**
 
@@ -105,13 +105,13 @@ Windows Server に Windows 管理センターがインストールされてい�
 
 **管理アカウントを使用し*て*資格情報を指定する**
 
-**すべての接続** で、一覧からサーバーを選択し、管理に使用する資格情報 を選択し**て**、管理ノードへの認証に使用する資格情報を指定します。
+[**すべての接続**] で、一覧からサーバーを選択し、[管理に使用する資格情報] を選択し**て**、管理ノードへの認証に使用する資格情報を指定します。
 
-![](../media/launch-use-6.png)
+![すべての接続、オプションとして管理](../media/launch-use-6.png)
 
 Windows 管理センターが Windows Server でサービスモードで実行されているが、Kerberos 委任が構成されていない場合は、Windows 資格情報を再入力する必要があります。
 
-![](../media/launch-use-7.png)
+![[資格情報の指定] ページ](../media/launch-use-7.png)
 
 すべての接続に資格情報を適用することができます。これにより、その特定のブラウザーセッションに対して資格情報がキャッシュされます。 ブラウザーを再読み込みする場合は、**管理**者の資格情報を再入力する必要があります。
 
@@ -126,13 +126,13 @@ Windows 管理センターが Windows Server でサービスモードで実行�
 ### <a name="edit-tags"></a>タグの編集
 
 * [すべての接続] の一覧で1つまたは複数のサーバーを選択します。
-* **[すべての接続]** の **[タグの編集]** をクリックします。
+* [**すべての接続**] の [**タグの編集**] をクリックします。
 
-![](../media/launch/tags-5.png)
+![Windows 管理センター-[タグの編集] オプション](../media/launch/tags-5.png)
 
-**[接続タグの編集]** ウィンドウでは、選択した接続のタグを変更、追加、または削除できます。
+[**接続タグの編集**] ウィンドウでは、選択した接続のタグを変更、追加、または削除できます。
 
-* 選択した接続に新しいタグを追加するには、 **[タグの追加]** を選択し、使用するタグ名を入力します。
+* 選択した接続に新しいタグを追加するには、[**タグの追加**] を選択し、使用するタグ名を入力します。
 
 * 既存のタグ名を使用して選択した接続にタグを付けるには、適用するタグ名の横にあるチェックボックスをオンにします。
 
@@ -140,16 +140,19 @@ Windows 管理センターが Windows Server でサービスモードで実行�
 
 * 選択した接続のサブセットにタグが適用されている場合、このチェックボックスは中間状態として表示されます。 チェックボックスをオンにして確認し、選択したすべての接続にタグを適用するか、もう一度クリックして選択を解除し、選択したすべての接続からタグを削除することができます。
 
-![](../media/launch/tags-6.png)
+![Windows 管理センター-[接続タグの編集] ページ](../media/launch/tags-6.png)
 
 ### <a name="filter-connections-by-tag"></a>タグによる接続のフィルター
 
 1つまたは複数のサーバー接続にタグを追加すると、接続リストでタグを表示し、タグで接続リストをフィルター処理できます。
 
 * タグでフィルター処理するには、検索ボックスの横にあるフィルターアイコンを選択します。
-![](../media/launch/tags-7.png)
-* 選択したタグのフィルター動作を変更するには、"or"、"and"、または "not" を選択します。
-![](../media/launch/tags-8.png)
+
+   ![Windows 管理センター-検索ボックスを使用してフィルター処理する](../media/launch/tags-7.png)
+
+   * 選択したタグのフィルター動作を変更するには、"or"、"and"、または "not" を選択します。
+
+   ![Windows 管理センター-[接続のフィルター選択] ページ](../media/launch/tags-8.png)
 
 ## <a name="use-powershell-to-import-or-export-your-connections-with-tags"></a>PowerShell を使用して (タグを使って) 接続をインポートまたはエクスポートする
 
@@ -159,4 +162,4 @@ Windows 管理センターが Windows Server でサービスモードで実行�
 
 サーバー、クラスター、または PC に接続したら、Windows 管理センターで使用可能な UI 操作を強化する PowerShell スクリプトを確認できます。 ツール内から、上部のアプリケーションバーにある PowerShell アイコンをクリックします。 ドロップダウンから目的のコマンドを選択して、対応する PowerShell スクリプトに移動します。
 
-![](../media/launch/showscript.png)
+![[概要] ページの PowerShell スクリプトの表示](../media/launch/showscript.png)

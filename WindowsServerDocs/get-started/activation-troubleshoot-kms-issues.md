@@ -1,19 +1,19 @@
 ---
 title: KMS ライセンス認証の既知の問題
 description: KMS ライセンス認証プロセス中に発生する可能性のある一般的な問題について説明し、解決策とガイダンスを示します。
-ms.topic: article
+ms.topic: troubleshooting
 ms.date: 10/3/2019
 ms.technology: server-general
 author: Teresa-Motiv
 ms.author: v-tea
 manager: dcscontentpm
 ms.localizationpriority: medium
-ms.openlocfilehash: 3446ad0954510d8c96e9a2d361f24c90d325b782
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 14cdf24bc7a88acbfa226954e10274ee47a64b2a
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826255"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409983"
 ---
 # <a name="kms-activation-known-issues"></a>KMS ライセンス認証: 既知の問題
 
@@ -34,7 +34,7 @@ KMS クライアント コンピューターで、 **[システム]** コント�
 
 ## <a name="the-kms-client-computer-does-not-activate"></a>KMS クライアント コンピューターがライセンス認証されない
 
-KMS ライセンス認証のしきい値が満たされていることを確認します。 KMS ホスト コンピューターで、Slmgr.vbs を実行し、 **/dli** コマンド ライン オプションを使用してホストの現在のカウント ("現在の数") を確認します。 KMS ホストに示されたカウントが 25 になるまで、Windows 7 クライアント コンピューターをライセンス認証することはできません。 Windows Server 2008 R2 KMS クライアントでは、ライセンス認証に必要な KMS カウントは 5 です。 KMS の要件の詳細については、「[ボリューム ライセンス認証の計画ガイド](https://go.microsoft.com/fwlink/?linkid=155926)」を参照してください。 
+KMS ライセンス認証のしきい値が満たされていることを確認します。 KMS ホスト コンピューターで、Slmgr.vbs を実行し、 **/dli** コマンド ライン オプションを使用してホストの現在のカウント ("現在の数") を確認します。 KMS ホストに示されたカウントが 25 になるまで、Windows 7 クライアント コンピューターをライセンス認証することはできません。 Windows Server 2008 R2 KMS クライアントでは、ライセンス認証に必要な KMS カウントは 5 です。 KMS の要件の詳細については、「[ボリューム ライセンス認証の計画ガイド](https://go.microsoft.com/fwlink/?linkid=155926)」を参照してください。
 
 KMS クライアント コンピューター上のアプリケーション イベント ログで、イベント ID 12289 を調べます。 このイベントの次の情報を確認します。
 

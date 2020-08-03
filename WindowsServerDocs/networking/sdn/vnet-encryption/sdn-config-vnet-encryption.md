@@ -9,12 +9,12 @@ ms.assetid: 378213f5-2d59-4c9b-9607-1fc83f8072f1
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/08/2018
-ms.openlocfilehash: daca59ffbb428e4bdfa2a71c156653389275960f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 11ec399ab9c63b27711b19987c6e070b47545fdd
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80853595"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87520231"
 ---
 # <a name="configure-encryption-for-a-virtual-subnet"></a>仮想サブネットの暗号化の構成
 
@@ -37,11 +37,11 @@ ms.locfileid: "80853595"
 
 
 ## <a name="step-1-create-the-encryption-certificate"></a>手順 1. 暗号化証明書を作成する
-各ホストには、暗号化証明書がインストールされている必要があります。 すべてのテナントに同じ証明書を使用することも、テナントごとに一意の証明書を生成することもできます。 
+各ホストには、暗号化証明書がインストールされている必要があります。 すべてのテナントに同じ証明書を使用することも、テナントごとに一意の証明書を生成することもできます。
 
-1.  証明書を生成する  
+1.  証明書を生成する
 
-```
+    ```
     $subjectName = "EncryptedVirtualNetworks"
     $cryptographicProviderName = "Microsoft Base Cryptographic Provider v1.0";
     [int] $privateKeyLength = 1024;
@@ -58,7 +58,7 @@ ms.locfileid: "80853595"
     $key.KeySpec = 1 #X509KeySpec.XCN_AT_KEYEXCHANGE
     $key.Length = $privateKeyLength
     $key.MachineContext = 1
-    $key.ExportPolicy = 0x2 #X509PrivateKeyExportFlags.XCN_NCRYPT_ALLOW_EXPORT_FLAG 
+    $key.ExportPolicy = 0x2 #X509PrivateKeyExportFlags.XCN_NCRYPT_ALLOW_EXPORT_FLAG
     $key.Create()
 
     #Configure Eku
@@ -93,130 +93,127 @@ ms.locfileid: "80853595"
     $enrollment.InitializeFromRequest($cert)
     $certdata = $enrollment.CreateRequest(0)
     $enrollment.InstallResponse(2, $certdata, 0, "")
-```
+    ```
 
-スクリプトを実行すると、[マイストア] に新しい証明書が表示されます。
+    スクリプトを実行すると、[マイストア] に新しい証明書が表示されます。
 
+    ```
     PS D:\> dir cert:\\localmachine\my
-
-
     PSParentPath: Microsoft.PowerShell.Security\Certificate::localmachine\my
 
     Thumbprint                                Subject
     ----------                                -------
     84857CBBE7A1C851A80AE22391EB2C39BF820CE7  CN=MyNetwork
     5EFF2CE51EACA82408572A56AE1A9BCC7E0843C6  CN=EncryptedVirtualNetworks
+    ```
 
-2. 証明書をファイルにエクスポートします。<p>証明書には2つのコピーが必要です。1つは秘密キー、もう1つはありません。
+1. 証明書をファイルにエクスポートします。<p>証明書には2つのコピーが必要です。1つは秘密キー、もう1つはありません。
 
-```
+    ```
    $subjectName = "EncryptedVirtualNetworks"
    $cert = Get-ChildItem cert:\localmachine\my | ? {$_.Subject -eq "CN=$subjectName"}
    [System.io.file]::WriteAllBytes("c:\$subjectName.pfx", $cert.Export("PFX", "secret"))
    Export-Certificate -Type CERT -FilePath "c:\$subjectName.cer" -cert $cert
-```
+    ```
 
-3. 各 hyper-v ホストに証明書をインストールする 
+3. 各 hyper-v ホストに証明書をインストールする
 
-   PS C:\> dir c:\$subjectname. *
+    ```
+    PS C:\> dir c:\$subjectname.*
 
-
-~~~
     Directory: C:\
 
+    Mode                LastWriteTime         Length Name
+    ----                -------------         ------ ----
+    -a----        9/22/2017   4:54 PM            543 EncryptedVirtualNetworks.cer
+    -a----        9/22/2017   4:54 PM           1706 EncryptedVirtualNetworks.pfx
+    ```
 
-Mode                LastWriteTime         Length Name
-----                -------------         ------ ----
--a----        9/22/2017   4:54 PM            543 EncryptedVirtualNetworks.cer
--a----        9/22/2017   4:54 PM           1706 EncryptedVirtualNetworks.pfx
-~~~
+1. Hyper-v ホストへののインストール
 
-4. Hyper-v ホストへののインストール
+    ```
+    $server = "Server01"
 
-```
-   $server = "Server01"
+    $subjectname = "EncryptedVirtualNetworks"
+    copy c:\$SubjectName.* \\$server\c$
+    invoke-command -computername $server -ArgumentList $subjectname,"secret" {
+        param (
+            [string] $SubjectName,
+            [string] $Secret
+        )
+        $certFullPath = "c:\$SubjectName.cer"
 
-   $subjectname = "EncryptedVirtualNetworks"
-   copy c:\$SubjectName.* \\$server\c$
-   invoke-command -computername $server -ArgumentList $subjectname,"secret" {
-       param (
-           [string] $SubjectName,
-           [string] $Secret
-       )
-       $certFullPath = "c:\$SubjectName.cer"
+        # create a representation of the certificate file
+        $certificate = new-object System.Security.Cryptography.X509Certificates.X509Certificate2
+        $certificate.import($certFullPath)
 
-       # create a representation of the certificate file
-       $certificate = new-object System.Security.Cryptography.X509Certificates.X509Certificate2
-       $certificate.import($certFullPath)
+        # import into the store
+        $store = new-object System.Security.Cryptography.X509Certificates.X509Store("Root", "LocalMachine")
+        $store.open("MaxAllowed")
+        $store.add($certificate)
+        $store.close()
 
-       # import into the store
-       $store = new-object System.Security.Cryptography.X509Certificates.X509Store("Root", "LocalMachine")
-       $store.open("MaxAllowed")
-       $store.add($certificate)
-       $store.close()
+        $certFullPath = "c:\$SubjectName.pfx"
+        $certificate = new-object System.Security.Cryptography.X509Certificates.X509Certificate2
+        $certificate.import($certFullPath, $Secret, "MachineKeySet,PersistKeySet")
 
-       $certFullPath = "c:\$SubjectName.pfx"
-       $certificate = new-object System.Security.Cryptography.X509Certificates.X509Certificate2
-       $certificate.import($certFullPath, $Secret, "MachineKeySet,PersistKeySet")
+        # import into the store
+        $store = new-object System.Security.Cryptography.X509Certificates.X509Store("My", "LocalMachine")
+        $store.open("MaxAllowed")
+        $store.add($certificate)
+        $store.close()
 
-       # import into the store
-       $store = new-object System.Security.Cryptography.X509Certificates.X509Store("My", "LocalMachine")
-       $store.open("MaxAllowed")
-       $store.add($certificate)
-       $store.close()
+        # Important: Remove the certificate files when finished
+        remove-item C:\$SubjectName.cer
+        remove-item C:\$SubjectName.pfx
+    }
+    ```
 
-       # Important: Remove the certificate files when finished
-       remove-item C:\$SubjectName.cer
-       remove-item C:\$SubjectName.pfx
-   }
-```
-
-5. 環境内の各サーバーに対して、この手順を繰り返します。<p>各サーバーに対してを繰り返した後、各 Hyper-v ホストのルートとマイストアに証明書がインストールされている必要があります。 
+5. 環境内の各サーバーに対して、この手順を繰り返します。<p>各サーバーに対してを繰り返した後、各 Hyper-v ホストのルートとマイストアに証明書がインストールされている必要があります。
 
 6. 証明書がインストールされていることを確認します。<p>My および Root 証明書ストアの内容を確認して、証明書を確認します。
 
-   PS C:\> 入力 pssession Server1
+    ```
+    PS C:\> enter-pssession Server1
 
-~~~
-[Server1]: PS C:\> get-childitem cert://localmachine/my,cert://localmachine/root | ? {$_.Subject -eq "CN=EncryptedVirtualNetworks"}
+    [Server1]: PS C:\> get-childitem cert://localmachine/my,cert://localmachine/root | ? {$_.Subject -eq "CN=EncryptedVirtualNetworks"}
 
-PSParentPath: Microsoft.PowerShell.Security\Certificate::localmachine\my
+    PSParentPath: Microsoft.PowerShell.Security\Certificate::localmachine\my
 
-Thumbprint                                Subject
-----------                                -------
-5EFF2CE51EACA82408572A56AE1A9BCC7E0843C6  CN=EncryptedVirtualNetworks
+    Thumbprint                                Subject
+    ----------                                -------
+    5EFF2CE51EACA82408572A56AE1A9BCC7E0843C6  CN=EncryptedVirtualNetworks
 
+    PSParentPath: Microsoft.PowerShell.Security\Certificate::localmachine\root
 
-PSParentPath: Microsoft.PowerShell.Security\Certificate::localmachine\root
-
-Thumbprint                                Subject
-----------                                -------
-5EFF2CE51EACA82408572A56AE1A9BCC7E0843C6  CN=EncryptedVirtualNetworks
-~~~
+    Thumbprint                                Subject
+    ----------                                -------
+    5EFF2CE51EACA82408572A56AE1A9BCC7E0843C6  CN=EncryptedVirtualNetworks
+    ```
 
 7. サムプリントをメモしておきます。<p>ネットワークコントローラーに証明書資格情報オブジェクトを作成するために必要なため、拇印を書き留めておく必要があります。
 
 ## <a name="step-2-create-the-certificate-credential"></a>手順 2. 証明書の資格情報を作成する
 
-ネットワークコントローラーに接続されている各 Hyper-v ホストに証明書をインストールしたら、それを使用するようにネットワークコントローラーを構成する必要があります。  これを行うには、ネットワークコントローラーの PowerShell モジュールがインストールされているコンピューターから、証明書の拇印を含む資格情報オブジェクトを作成する必要があります。 
+ネットワークコントローラーに接続されている各 Hyper-v ホストに証明書をインストールしたら、それを使用するようにネットワークコントローラーを構成する必要があります。  これを行うには、ネットワークコントローラーの PowerShell モジュールがインストールされているコンピューターから、証明書の拇印を含む資格情報オブジェクトを作成する必要があります。
 
 ```
-    # Replace with thumbprint from your certificate
-    $thumbprint = "5EFF2CE51EACA82408572A56AE1A9BCC7E0843C6"  
+///Replace with the thumbprint from your certificate
+$thumbprint = "5EFF2CE51EACA82408572A56AE1A9BCC7E0843C6"
 
-    # Replace with your Network Controller URI
-    $uri = "https://nc.contoso.com"
+$uri = "https://nc.contoso.com"
 
-    Import-module networkcontroller
+///Replace with your Network Controller URI
+Import-module networkcontroller
 
-    $credproperties = new-object Microsoft.Windows.NetworkController.CredentialProperties
-    $credproperties.Type = "X509Certificate"
-    $credproperties.Value = $thumbprint
-    New-networkcontrollercredential -connectionuri $uri -resourceid "EncryptedNetworkCertificate" -properties $credproperties -force
+$credproperties = new-object Microsoft.Windows.NetworkController.CredentialProperties
+$credproperties.Type = "X509Certificate"
+$credproperties.Value = $thumbprint
+New-networkcontrollercredential -connectionuri $uri -resourceid "EncryptedNetworkCertificate" -properties $credproperties -force
 ```
->[!TIP]
->暗号化された仮想ネットワークごとにこの資格情報を再利用できます。また、テナントごとに一意の証明書を展開して使用することもできます。
 
+> [!TIP]
+> 暗号化された仮想ネットワークごとにこの資格情報を再利用できます。また、テナントごとに一意の証明書を展開して使用することもできます。
 
 ## <a name="step-3-configuring-a-virtual-network-for-encryption"></a>手順 3. 暗号化のための Virtual Network の構成
 
@@ -225,28 +222,27 @@ Thumbprint                                Subject
 >[!NOTE]
 >現在接続されているか接続されているかにかかわらず、同じサブネット上の別の VM と通信する場合、トラフィックは自動的に暗号化されます。
 
-1.  ネットワークコントローラーから Virtual Network および資格情報オブジェクトを取得する
-```
+1.  ネットワークコントローラーから Virtual Network および資格情報オブジェクトを取得します。
+
+    ```
     $vnet = Get-NetworkControllerVirtualNetwork -ConnectionUri $uri -ResourceId "MyNetwork"
     $certcred = Get-NetworkControllerCredential -ConnectionUri $uri -ResourceId "EncryptedNetworkCertificate"
-```
-2.  証明書資格情報への参照を追加し、個々のサブネットでの暗号化を有効にする
-```
+    ```
+
+2.  証明書資格情報への参照を追加し、個々のサブネットでの暗号化を有効にします。
+
+    ```
     $vnet.properties.EncryptionCredential = $certcred
 
-    # Replace the Subnets index with the value corresponding to the subnet you want encrypted.  
+    # Replace the Subnets index with the value corresponding to the subnet you want encrypted.
     # Repeat for each subnet where encryption is needed
     $vnet.properties.Subnets[0].properties.EncryptionEnabled = $true
-```
-3.  更新された Virtual Network オブジェクトをネットワークコントローラーに配置する
-```
+    ```
+
+3.  更新された Virtual Network オブジェクトをネットワークコントローラーに配置します。
+
+    ```
     New-NetworkControllerVirtualNetwork -ConnectionUri $uri -ResourceId $vnet.ResourceId -Properties $vnet.Properties -force
-```
+    ```
 
-_**おめでとう!**_ これらの手順が完了したら、次の手順を実行します。 
-
-
-## <a name="next-steps"></a>次のステップ:
-
-
-
+*おめでとうございました。** これらの手順を完了したら、次の手順を実行します。

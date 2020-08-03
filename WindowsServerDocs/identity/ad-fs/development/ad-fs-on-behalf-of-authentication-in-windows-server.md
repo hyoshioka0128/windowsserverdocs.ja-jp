@@ -8,25 +8,25 @@ ms.date: 02/22/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: febd79ea6feb0ef3d4e6f6d5659f2eb13e403a4b
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: d13cd27efc2387911f8c66bf083509e60e7e5b31
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86962194"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87519881"
 ---
 # <a name="build-a-multi-tiered-application-using-on-behalf-of-obo-using-oauth-with-ad-fs-2016-or-later"></a>AD FS 2016 以降で OAuth を使用して、の代理 (OBO) を使用して多層アプリケーションを構築する
 
-
 このチュートリアルでは、Windows Server 2016 TP5 以降の AD FS を使用して、の代理 (OBO) 認証を実装するための手順を示します。 OBO 認証の詳細については[AD FS OpenID connect/OAuth フローとアプリケーションシナリオ](../../ad-fs/overview/ad-fs-openid-connect-oauth-flows-scenarios.md)に関するページを参照してください。
 
->警告: ここで作成できる例は、学習のみを目的としています。 これらの手順は、モデルの必須要素を公開するために使用できる、最も単純で最小の実装用です。 この例には、エラー処理やその他の関連機能のすべての側面が含まれているわけではなく、OBO 認証を成功させるためだけに焦点を当てています。
+> [!WARNING]
+> ここで作成できる例は、学習のみを目的としています。 これらの手順は、モデルの必須要素を公開するために使用できる、最も単純で最小の実装用です。 この例には、エラー処理やその他の関連機能のすべての側面が含まれているわけではなく、OBO 認証を成功させるためだけに焦点を当てています。
 
 ## <a name="overview"></a>概要
 
 このサンプルでは、クライアントが中間層の Web サービスにアクセスする認証フローを作成します。 web サービスは、認証されたクライアントの代わりに動作し、アクセストークンを取得します。
 
-![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO28.png)
+![AD FS の代表図](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO28.png)
 
 次に、サンプルで実現する認証フローを示します。
 1. クライアントが認証エンドポイントを AD FS に認証し、認証コードを要求する
@@ -42,15 +42,11 @@ ms.locfileid: "86962194"
 
 サンプルは3つのモジュールで構成されます
 
-
 モジュール | 説明
 -------|------------
 ToDoClient | ユーザーが対話するネイティブクライアント
 ToDoService | バックエンド WebAPI のクライアントとして機能する中間層 web API
 WebAPIOBO | ユーザーが ToDoItem を追加したときに必要な操作を実行するために ToDoService によって使用されるバックエンド web api
-
-
-
 
 ## <a name="setting-up-the-development-box"></a>開発ボックスの設定
 
@@ -78,7 +74,9 @@ WebAPIOBO | ユーザーが ToDoItem を追加したときに必要な操作を�
 
 シェルまたはコマンド ラインから:
 
-    git clone https://github.com/Azure-Samples/active-directory-dotnet-webapi-onbehalfof.git
+```
+git clone https://github.com/Azure-Samples/active-directory-dotnet-webapi-onbehalfof.git
+```
 
 ## <a name="modifying-the-sample"></a>サンプルの変更
 
@@ -123,12 +121,14 @@ AD FS 管理 MMC を開き、新しいアプリケーショングループを追
 
 代理認証を有効にするには、AD FS がクライアントに対するスコープ user_impersonation のアクセストークンを返すことを確認する必要があります。 ToDoListServiceWebApi の要求発行を変更して、次の3つのカスタム規則を追加します。
 
-    @RuleName = "All claims"
-    c:[]
-    => issue(claim = c);
+```
+@RuleName = "All claims"
+c:[]
+=> issue(claim = c);
 
-    @RuleName = "Issue user_impersonation scope"
-    => issue(Type = "http://schemas.microsoft.com/identity/claims/scope", Value = "user_impersonation");
+@RuleName = "Issue user_impersonation scope"
+=> issue(Type = "http://schemas.microsoft.com/identity/claims/scope", Value = "user_impersonation");
+```
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO10.PNG)
 
@@ -147,7 +147,6 @@ AD FS 管理 MMC を開き、新しいアプリケーショングループを追
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO20.PNG)
 
 [次へ] をクリックすると、アプリケーションの資格情報を構成するためのページが表示されます。 [共有シークレットの生成] をクリックします。 自動的に生成されたシークレットが表示されます。 ToDoListService を visual studio で構成するときに必要になるので、シークレットをどこかにコピーします。
-
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO17.PNG)
 
@@ -169,7 +168,8 @@ WebAPI-DotNet ソリューションの ToDoListClient プロジェクトにア�
 
 App.Config の**appSettings**は次のようになります。
 
-    <appSettings>
+```
+<appSettings>
     <!--<add key="ida:Tenant" value="[Enter tenant name, e.g. contoso.onmicrosoft.com]" />-->
     <add key="ida:ClientId" value="c7f7b85c-497c-4589-877f-b17a0bd13398" />
     <add key="ida:RedirectUri" value="https://arbitraryuri.com/" />
@@ -177,7 +177,8 @@ App.Config の**appSettings**は次のようになります。
     <!--<add key="ida:AADInstance" value="https://login.microsoftonline.com/{0}" />-->
     <add key="ida:TodoListBaseAddress" value="https://localhost:44321" />
     <add key="ida:Authority" value="https://fs.anandmsft.com/adfs/"/>
-    </appSettings>
+</appSettings>
+```
 
 #### <a name="modifying-the-code"></a>コードの変更
 
@@ -185,21 +186,29 @@ App.Config の**appSettings**は次のようになります。
 
 アプリケーション構成からテナント情報を読み取る行をコメント化します
 
-    //private static string aadInstance = ConfigurationManager.AppSettings["ida:AADInstance"];
-    //private static string tenant = ConfigurationManager.AppSettings["ida:Tenant"];
+```
+//private static string aadInstance = ConfigurationManager.AppSettings["ida:AADInstance"];
+//private static string tenant = ConfigurationManager.AppSettings["ida:Tenant"];
+```
 
 String authority の値をに変更します。
 
-    private static string authority = ConfigurationManager.AppSettings["ida:Authority"];
+```
+private static string authority = ConfigurationManager.AppSettings["ida:Authority"];
+```
 
 ToDoListResourceId と ToDoListBaseAddress の正しい値を読み取るようにコードを変更します。
 
-    private static string todoListResourceId = ConfigurationManager.AppSettings["ida:TodoListResourceId"];
-    private static string todoListBaseAddress = ConfigurationManager.AppSettings["ida:TodoListBaseAddress"];
+```
+private static string todoListResourceId = ConfigurationManager.AppSettings["ida:TodoListResourceId"];
+private static string todoListBaseAddress = ConfigurationManager.AppSettings["ida:TodoListBaseAddress"];
+```
 
 関数 Mainwindow.xaml () で、authcontext の初期化を次のように変更します。
 
-    authContext = new AuthenticationContext(authority, false);
+```
+authContext = new AuthenticationContext(authority, false);
+```
 
 ### <a name="adding-the-backend-resource"></a>バックエンドリソースの追加
 
@@ -227,25 +236,25 @@ ToDoListResourceId と ToDoListBaseAddress の正しい値を読み取るよう�
 
 * コントローラーに次のコードを追加します。
 
-```cs
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Net;
-    using System.Net.Http;
-    using System.Web.Http;
-    namespace WebAPIOBO.Controllers
-    {
-        [Authorize]
-        public class WebAPIOBOController : ApiController
+    ```cs
+        using System;
+        using System.Collections.Generic;
+        using System.Linq;
+        using System.Net;
+        using System.Net.Http;
+        using System.Web.Http;
+        namespace WebAPIOBO.Controllers
         {
-            public IHttpActionResult Get()
+            [Authorize]
+            public class WebAPIOBOController : ApiController
             {
-                return Ok($"WebAPI via OBO (user: {User.Identity.Name}");
+                public IHttpActionResult Get()
+                {
+                    return Ok($"WebAPI via OBO (user: {User.Identity.Name}");
+                }
             }
         }
-    }
-```
+    ```
 
 このコードは、誰かが WebAPI WebAPIOBO に Get 要求を行ったときに、単に文字列を返します。
 
@@ -265,7 +274,6 @@ ToDoListService WebAPI を構成したときと同じように、ウィザード
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO5.PNG)
 
-
 ### <a name="modifying-the-todolistservice-code"></a>ToDoListService コードの変更
 
 #### <a name="modifying-the-application-config"></a>アプリケーション構成の変更
@@ -273,14 +281,14 @@ ToDoListService WebAPI を構成したときと同じように、ウィザード
 * Web.config ファイルを開きます。
 * 次のキーを変更する
 
-| Key                      | 値                                                                                                                                                                                                                   |
-|:-------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ida: 対象ユーザー             | ToDoListService WebAPI の構成中に AD FS に指定された ToDoListService の ID (例:)https://localhost:44321/                                                                                         |
-| ida: ClientID             | ToDoListService WebAPI の構成中に AD FS に指定された ToDoListService の ID (例:)<https://localhost:44321/> </br>**Ida: Audience と ida: ClientID が相互に一致することが非常に重要です。** |
-| ida:ClientSecret         | これは、で ToDoListService クライアントを構成したときに生成されたシークレット AD FS AD FS                                                                                                                   |
-| ida: AdfsMetadataEndpoint | これは AD FS メタデータの URL です。例:https://fs.anandmsft.com/federationmetadata/2007-06/federationmetadata.xml                                                                                             |
-| ida: OBOWebAPIBase        | これは、バックエンド API の呼び出しに使用するベースアドレスです。たとえば、https://localhost:44300                                                                                                                     |
-| ida:Authority            | これは、AD FS サービスの URL です。例を次に示します。https://fs.anandmsft.com/adfs/                                                                                                                                          |
+| Key | [値] |
+|:-|:-|
+| ida: 対象ユーザー | ToDoListService WebAPI の構成中に AD FS に指定された ToDoListService の ID (例:)https://localhost:44321/ |
+| ida: ClientID | ToDoListService WebAPI の構成中に AD FS に指定された ToDoListService の ID (例:)<https://localhost:44321/> </br>**Ida: Audience と ida: ClientID が相互に一致することが非常に重要です。** |
+| ida:ClientSecret | これは、で ToDoListService クライアントを構成したときに生成されたシークレット AD FS AD FS |
+| ida: AdfsMetadataEndpoint | これは AD FS メタデータの URL です。例:https://fs.anandmsft.com/federationmetadata/2007-06/federationmetadata.xml |
+| ida: OBOWebAPIBase | これは、バックエンド API の呼び出しに使用するベースアドレスです。たとえば、https://localhost:44300 |
+| ida:Authority | これは、AD FS サービスの URL です。例を次に示します。https://fs.anandmsft.com/adfs/ |
 
 **Appsettings**ノード内の他のすべての IDA: XXXXXXX キーをコメントアウトまたは削除できます。
 
@@ -289,63 +297,71 @@ ToDoListService WebAPI を構成したときと同じように、ウィザード
 * Startup.Auth.cs ファイルを開きます。
 * 次のコードを削除します
 
-        app.UseWindowsAzureActiveDirectoryBearerAuthentication(
-            new WindowsAzureActiveDirectoryBearerAuthenticationOptions
-            {
-                Audience = ConfigurationManager.AppSettings["ida:Audience"],
-                Tenant = ConfigurationManager.AppSettings["ida:Tenant"],
-                TokenValidationParameters = new TokenValidationParameters{ SaveSigninToken = true }
-            });
+    ```
+    app.UseWindowsAzureActiveDirectoryBearerAuthentication(
+    new WindowsAzureActiveDirectoryBearerAuthenticationOptions
+    {
+        Audience = ConfigurationManager.AppSettings["ida:Audience"],
+        Tenant = ConfigurationManager.AppSettings["ida:Tenant"],
+        TokenValidationParameters = new TokenValidationParameters{ SaveSigninToken = true }
+    });
+    ```
 
-with
+    with
 
-        app.UseActiveDirectoryFederationServicesBearerAuthentication(
-            new ActiveDirectoryFederationServicesBearerAuthenticationOptions
-            {
-                MetadataEndpoint = ConfigurationManager.AppSettings["ida:AdfsMetadataEndpoint"],
-                TokenValidationParameters = new TokenValidationParameters()
-                {
-                    SaveSigninToken = true,
-                    ValidAudience = ConfigurationManager.AppSettings["ida:Audience"]
-                }
-            });
+    ```
+    app.UseActiveDirectoryFederationServicesBearerAuthentication(
+    new ActiveDirectoryFederationServicesBearerAuthenticationOptions
+    {
+        MetadataEndpoint = ConfigurationManager.AppSettings["ida:AdfsMetadataEndpoint"],
+        TokenValidationParameters = new TokenValidationParameters()
+    {
+        SaveSigninToken = true,
+        ValidAudience = ConfigurationManager.AppSettings["ida:Audience"]
+    }
+    });
+    ```
 
 #### <a name="modifying-the-todolistcontroller"></a>Todolistcontroller.cs の変更
 
 System.web 拡張子への参照を追加します。 次のコードを置き換えて、クラスのメンバーを変更します。
 
-    //
-    // The Client ID is used by the application to uniquely identify itself to Azure AD.
-    // The App Key is a credential used by the application to authenticate to Azure AD.
-    // The Tenant is the name of the Azure AD tenant in which this application is registered.
-    // The AAD Instance is the instance of Azure, for example public Azure or Azure China.
-    // The Authority is the sign-in URL of the tenant.
-    //
-    private static string aadInstance = ConfigurationManager.AppSettings["ida:AADInstance"];
-    private static string tenant = ConfigurationManager.AppSettings["ida:Tenant"];
-    private static string clientId = ConfigurationManager.AppSettings["ida:ClientId"];
-    private static string appKey = ConfigurationManager.AppSettings["ida:AppKey"];
+```
+//
+// The Client ID is used by the application to uniquely identify itself to Azure AD.
+// The App Key is a credential used by the application to authenticate to Azure AD.
+// The Tenant is the name of the Azure AD tenant in which this application is registered.
+// The AAD Instance is the instance of Azure, for example public Azure or Azure China.
+// The Authority is the sign-in URL of the tenant.
+//
+private static string aadInstance = ConfigurationManager.AppSettings["ida:AADInstance"];
+private static string tenant = ConfigurationManager.AppSettings["ida:Tenant"];
+private static string clientId = ConfigurationManager.AppSettings["ida:ClientId"];
+private static string appKey = ConfigurationManager.AppSettings["ida:AppKey"];
 
-    //
-    // To authenticate to the Graph API, the app needs to know the Grah API's App ID URI.
-    // To contact the Me endpoint on the Graph API we need the URL as well.
-    //
-    private static string graphResourceId = ConfigurationManager.AppSettings["ida:GraphResourceId"];
-    private static string graphUserUrl = ConfigurationManager.AppSettings["ida:GraphUserUrl"];
-    private const string TenantIdClaimType = "https://schemas.microsoft.com/identity/claims/tenantid";
+//
+// To authenticate to the Graph API, the app needs to know the Grah API's App ID URI.
+// To contact the Me endpoint on the Graph API we need the URL as well.
+//
+private static string graphResourceId = ConfigurationManager.AppSettings["ida:GraphResourceId"];
+private static string graphUserUrl = ConfigurationManager.AppSettings["ida:GraphUserUrl"];
+private const string TenantIdClaimType = "https://schemas.microsoft.com/identity/claims/tenantid";
+```
 
 with
 
-    //
-    // The Client ID is used by the application to uniquely identify itself to Azure AD.
-    // The client secret is the credentials for the WebServer Client
+```
+//
+// The Client ID is used by the application to uniquely identify itself to Azure AD.
+// The client secret is the credentials for the WebServer Client
 
-    private static string clientId = ConfigurationManager.AppSettings["ida:ClientId"];
-    private static string clientSecret = ConfigurationManager.AppSettings["ida:ClientSecret"];
-    private static string authority = ConfigurationManager.AppSettings["ida:Authority"];
+private static string clientId = ConfigurationManager.AppSettings["ida:ClientId"];
+private static string clientSecret = ConfigurationManager.AppSettings["ida:ClientSecret"];
+private static string authority = ConfigurationManager.AppSettings["ida:Authority"];
 
-    // Base address of the WebAPI
-    private static string OBOWebAPIBase = ConfigurationManager.AppSettings["ida:OBOWebAPIBase"];
+// Base address of the WebAPI
+private static string OBOWebAPIBase = ConfigurationManager.AppSettings["ida:OBOWebAPIBase"];
+```
 
 **名前に使用される要求を変更する**
 
@@ -355,22 +371,23 @@ AD FS は、Nmae 要求を発行していますが、NameIdentifier 要求を発
 
 次のコードをコピーして ToDoListController.cs に貼り付け、Post と CallGraphAPIOnBehalfOfUser のコードを置き換えます。
 
-    // POST api/todolist
-    public async Task Post(TodoItem todo)
-    {
-      if (!ClaimsPrincipal.Current.FindFirst("https://schemas.microsoft.com/identity/claims/scope").Value.Contains("user_impersonation"))
+```
+// POST api/todolist
+public async Task Post(TodoItem todo)
+{
+    if (!ClaimsPrincipal.Current.FindFirst("https://schemas.microsoft.com/identity/claims/scope").Value.Contains("user_impersonation"))
         {
-            throw new HttpResponseException(new HttpResponseMessage { StatusCode = HttpStatusCode.Unauthorized, ReasonPhrase = "The Scope claim does not contain 'user_impersonation' or scope claim not found" });
+        throw new HttpResponseException(new HttpResponseMessage { StatusCode = HttpStatusCode.Unauthorized, ReasonPhrase = "The Scope claim does not contain 'user_impersonation' or scope claim not found" });
         }
 
-      //
-      // Call the WebAPIOBO On Behalf Of the user who called the To Do list web API.
-      //
+//
+// Call the WebAPIOBO On Behalf Of the user who called the To Do list web API.
+//
 
-      string augmentedTitle = null;
-      string custommessage = await CallGraphAPIOnBehalfOfUser();
+    string augmentedTitle = null;
+    string custommessage = await CallGraphAPIOnBehalfOfUser();
 
-      if (custommessage != null)
+    if (custommessage != null)
         {
             augmentedTitle = String.Format("{0}, Message: {1}", todo.Title, custommessage);
         }
@@ -394,13 +411,13 @@ AD FS は、Nmae 要求を発行していますが、NameIdentifier 要求を発
         HttpClient httpClient = new HttpClient();
         string custommessage = "";
 
-        //
-        // Use ADAL to get a token On Behalf Of the current user.  To do this we will need:
-        // The Resource ID of the service we want to call.
-        // The current user's access token, from the current request's authorization header.
-        // The credentials of this application.
-        // The username (UPN or email) of the user calling the API
-        //
+//
+// Use ADAL to get a token On Behalf Of the current user.  To do this we will need:
+// The Resource ID of the service we want to call.
+// The current user's access token, from the current request's authorization header.
+// The credentials of this application.
+// The username (UPN or email) of the user calling the API
+//
 
         ClientCredential clientCred = new ClientCredential(clientId, clientSecret);
         var bootstrapContext = ClaimsPrincipal.Current.Identities.First().BootstrapContext as System.IdentityModel.Tokens.BootstrapContext;
@@ -465,9 +482,9 @@ AD FS は、Nmae 要求を発行していますが、NameIdentifier 要求を発
         // An unexpected error occurred calling the Graph API.  Return a null profile.
         return (null);
     }
+```
 
 ## <a name="running-the-solution"></a>ソリューションの実行
-
 
 既定では、visual studio はデバッグにヒットしたときに1つのプロジェクトを実行するように構成されています。
 
@@ -499,4 +516,4 @@ Fiddler で詳細なトレースを確認することもできます。 Fiddler 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO23.PNG)
 
 ## <a name="next-steps"></a>次の手順
-[AD FS の開発](../../ad-fs/AD-FS-Development.md)  
+[AD FS の開発](../../ad-fs/AD-FS-Development.md)

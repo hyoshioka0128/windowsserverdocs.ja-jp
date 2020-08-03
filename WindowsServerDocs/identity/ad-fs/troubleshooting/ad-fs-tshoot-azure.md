@@ -8,41 +8,44 @@ ms.date: 03/01/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 5e90ad9fbd2ae9dbb08d2137ead0705556184858
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: b66d688052398ba76b6721e8bab0d0878be4959a
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966904"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87517707"
 ---
 # <a name="ad-fs-troubleshooting---azure-ad"></a>AD FS のトラブルシューティング-Azure AD
 クラウドの成長に伴って、多くの企業がさまざまなアプリやサービスのために Azure AD を使用するように移行してきました。  Azure AD とのフェデレーションは、多くの組織にとって標準的な手法になりました。  このドキュメントでは、このフェデレーションで発生する問題のトラブルシューティングに関するいくつかの側面について説明します。  一般的なトラブルシューティングドキュメントに記載されているいくつかのトピックは、引き続き Azure とのフェデレーションに関連しているため、このドキュメントでは Azure AD と AD FS の対話に関する詳細のみに焦点を当てています。
 
 ## <a name="redirection-to-ad-fs"></a>AD FS へのリダイレクト
+
 リダイレクトは、Office 365 などのアプリケーションにサインインし、組織 AD FS サーバーに "リダイレクト" してサインインすると発生します。
 
-![](media/ad-fs-tshoot-azure/azure1.png)
-
+![AD FS へのリダイレクト画面](media/ad-fs-tshoot-azure/azure1.png)
 
 ### <a name="first-things-to-check"></a>最初にチェックする項目
+
 リダイレクトが発生していない場合は、いくつかのことを確認する必要があります。
 
-   1. Azure portal にサインインし、[Azure AD Connect] をオンにして、Azure AD テナントがフェデレーションに対して有効になっていることを確認します。
+1. Azure portal にサインインし、[Azure AD Connect] をオンにして、Azure AD テナントがフェデレーションに対して有効になっていることを確認します。
 
-![](media/ad-fs-tshoot-azure/azure2.png)
+   ![Azure AD Connect のユーザーサインイン画面](media/ad-fs-tshoot-azure/azure2.png)
 
-1. Azure portal の [フェデレーション] の横にあるドメインをクリックして、カスタムドメインが検証されていることを確認します。
-   ![](media/ad-fs-tshoot-azure/azure3.png)
+2. Azure portal の [フェデレーション] の横にあるドメインをクリックして、カスタムドメインが検証されていることを確認します。
 
-2. 最後に、 [DNS](ad-fs-tshoot-dns.md)を確認し、AD FS サーバーまたは WAP サーバーがインターネットから解決していることを確認します。  これが解決されていることを確認し、それに移動できることを確認します。
-3. PowerShell コマンドレットを使用して `Get-AzureADDomain` この情報を取得することもできます。
+   ![ポータルでフェデレーションの横に表示されるドメイン](media/ad-fs-tshoot-azure/azure3.png)
 
-![](media/ad-fs-tshoot-azure/azure6.png)
+3. 最後に、 [DNS](ad-fs-tshoot-dns.md)を確認し、AD FS サーバーまたは WAP サーバーがインターネットから解決していることを確認します。  これが解決されていることを確認し、それに移動できることを確認します。
+
+4. PowerShell コマンドレットを使用して `Get-AzureADDomain` この情報を取得することもできます。
+
+   ![PowerShell コマンドレット画面](media/ad-fs-tshoot-azure/azure6.png)
 
 ### <a name="you-are-receiving-an-unknown-auth-method-error"></a>不明な認証方法のエラーを受信しています
-Azure からリダイレクトされた場合、AD FS または STS レベルで AuthnContext がサポートされていないことを示す "不明な認証方法" エラーが発生することがあります。 
+Azure からリダイレクトされた場合、AD FS または STS レベルで AuthnContext がサポートされていないことを示す "不明な認証方法" エラーが発生することがあります。
 
-これは、認証方法を適用するパラメーターを使用して Azure AD が AD FS または STS にリダイレクトされる場合に最も一般的です。 
+これは、認証方法を適用するパラメーターを使用して Azure AD が AD FS または STS にリダイレクトされる場合に最も一般的です。
 
 認証方法を適用するには、次のいずれかの方法を使用します。
 - WS-FEDERATION の場合は、WAUTH クエリ文字列を使用して、優先認証方法を強制します。
@@ -66,7 +69,7 @@ Azure からリダイレクトされた場合、AD FS または STS レベルで
 サポートされている SAML 認証コンテキストクラス
 
 |認証方法|認証コンテキストクラスの URI|
-|-----|-----| 
+|-----|-----|
 |ユーザー名とパスワード|urn:oasis:names:tc:SAML:2.0:ac:classes:Password|
 |パスワードで保護されたトランスポート|urn: oasis: names: tc: SAML: 2.0: ac: classes: PasswordProtectedTransport|
 |TLS (Transport Layer Security) クライアント|urn: oasis: names: tc: SAML: 2.0: ac: classes: TLSClient
@@ -76,7 +79,7 @@ Azure からリダイレクトされた場合、AD FS または STS レベルで
 
 認証方法が AD FS レベルでサポートされていることを確認するには、次のことを確認してください。
 
-#### <a name="ad-fs-20"></a>AD FS 2.0 
+#### <a name="ad-fs-20"></a>AD FS 2.0
 
 [ **/Adfs/ls/web.config**で、認証の種類のエントリが存在することを確認します。
 
@@ -98,7 +101,7 @@ Azure からリダイレクトされた場合、AD FS または STS レベルで
 
 [グローバル認証ポリシーの編集] ウィンドウの [プライマリ] タブで、グローバル認証ポリシーの一部として設定を構成できます。 たとえば、プライマリ認証の場合は、[エクストラネットとイントラネット] で利用可能な認証方法を選択できます。
 
-* * [必要な認証方法] チェックボックスがオンになっていることを確認します。 
+* * [必要な認証方法] チェックボックスがオンになっていることを確認します。
 
 #### <a name="ad-fs-2016"></a>AD FS 2016
 
@@ -108,7 +111,7 @@ Azure からリダイレクトされた場合、AD FS または STS レベルで
 
 [**認証方法の編集**] ウィンドウの [プライマリ] タブで、認証ポリシーの一部として設定を構成できます。
 
-![](media/ad-fs-tshoot-azure/azure4.png)
+![[認証方法の編集] ウィンドウ](media/ad-fs-tshoot-azure/azure4.png)
 
 ## <a name="tokens-issued-by-ad-fs"></a>AD FS によって発行されたトークン
 
@@ -116,13 +119,13 @@ Azure からリダイレクトされた場合、AD FS または STS レベルで
 AD FS によってトークンが発行されると、Azure AD によってエラーがスローされることがあります。 このような状況では、次の問題がないかどうかを確認します。
 - トークン内の AD FS によって発行される要求は、Azure AD 内のユーザーの各属性と一致する必要があります。
 - Azure AD のトークンには、次の必要な要求が含まれている必要があります。
-    - WSFED 
+    - WSFED
         - UPN: この要求の値は Azure AD のユーザーの UPN と一致している必要があります。
         - ImmutableID: この要求の値は、Azure AD のユーザーの sourceAnchor または ImmutableID と一致している必要があります。
 
 Azure AD でユーザー属性値を取得するには、次のコマンドラインを実行します。`Get-AzureADUser –UserPrincipalName <UPN>`
 
-![](media/ad-fs-tshoot-azure/azure5.png)
+![PowerShell コマンドレット画面](media/ad-fs-tshoot-azure/azure5.png)
 
    - SAML 2.0:
        - IDPEmail: この要求の値は Azure AD のユーザーのユーザープリンシパル名と一致している必要があります。

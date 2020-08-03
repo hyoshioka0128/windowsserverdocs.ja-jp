@@ -9,45 +9,18 @@ ms.author: jgerend
 manager: dongill
 ms.date: 06/29/2020
 ms.prod: windows-server
-ms.openlocfilehash: 33b19ba9c6f7d8f12d72876a04dbf8bdfda7ff30
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 3f1af3e2f352c8bbea1540c2d1964ad8536170fe
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409933"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87519581"
 ---
 # <a name="windows-commands"></a>Windows のコマンド
 
 サポートされているすべてのバージョンの Windows (サーバーとクライアント) には、に組み込まれている一連の Win32 コンソールコマンドがあります。
 
 この一連のドキュメントでは、スクリプトまたはスクリプトツールを使用してタスクを自動化するために使用できる Windows コマンドについて説明します。
-
-特定のコマンドに関する情報を検索するには、次の A-Z メニューで、コマンドの開始文字をクリックし、コマンド名をクリックします。
-
-[A](#a)  |
-[B](#b)  |
-[C](#c)  |
-[D](#d)  |
-[E](#e)  |
-[F](#f)  |
-[G](#g)  |
-[H](#h)  |
-[I](#i)  |
-[J](#j)  |
-[K](#k)  |
-[L](#l)  |
-[M](#m)  |
-[N](#n)  |
-[O](#o)  |
-[P](#p)  |
-[Q](#q)  |
-[R](#r)  |
-[S](#s)  |
-[T](#t)  |
-[U](#u)  |
-[V](#v)  |
-[W](#w)  |
-[X](#x) |Y |方向
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -88,32 +61,9 @@ PowerShell は、コマンドシェルの機能を拡張して、コマンドレ
 
 ## <a name="command-line-reference-a-z"></a>コマンドラインリファレンス A-z
 
-特定の Windows コマンドに関する情報を検索するには、次の A-Z メニューで、コマンドの開始文字をクリックし、コマンド名をクリックします。
+特定のコマンドに関する情報を検索するには、次の A-Z メニューで、コマンドの開始文字をクリックし、コマンド名をクリックします。
 
-[A](#a)  |
-[B](#b)  |
-[C](#c)  |
-[D](#d)  |
-[E](#e)  |
-[F](#f)  |
-[G](#g)  |
-[H](#h)  |
-[I](#i)  |
-[J](#j)  |
-[K](#k)  |
-[L](#l)  |
-[M](#m)  |
-[N](#n)  |
-[O](#o)  |
-[P](#p)  |
-[Q](#q)  |
-[R](#r)  |
-[S](#s)  |
-[T](#t)  |
-[U](#u)  |
-[V](#v)  |
-[W](#w)  |
-[X](#x) |Y |方向
+[A](#a)  | [B](#b)  | [C](#c)  | [D](#d)  | [E](#e)  | [F](#f)  | [G](#g)  | [H](#h)  | [I](#i)  | [J](#j)  | [K](#k)  | [L](#l)  | [M](#m)  | [N](#n)  | [O](#o)  | [P](#p)  | [Q](#q)  | [R](#r)  | [S](#s)  | [T](#t)  | [U](#u)  | [V](#v)  | [W](#w)  | [X](#x) |Y |方向
 
 ### <a name="a"></a>A
 
@@ -598,7 +548,7 @@ PowerShell は、コマンドシェルの機能を拡張して、コマンドレ
 - [msinfo32](msinfo32.md)
 - [mstsc](mstsc.md)
 
-### <a name="n"></a>N
+### <a name="n"></a>×
 
 - [nbtstat](nbtstat.md)
 - [netcfg](netcfg.md)

@@ -8,12 +8,12 @@ ms.date: 08/09/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: e9a7913f3639e464909d41a86c493774221ace28
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: f211acd5e93f3f4654983e2c61d6b1a460415655
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181888"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87519380"
 ---
 # <a name="upgrade-domain-controllers-to-windows-server-2012-r2-and-windows-server-2012"></a>ドメイン コントローラーを Windows Server 2012 R2 または Windows Server 2012 にアップグレードする
 
@@ -71,7 +71,7 @@ Windows Update は Windows 8 および Windows Server 2012 の自動メンテナ
 
 次の表は、Windows Server 2012 R2 のAD DS 関連の新機能をまとめたものです。詳細情報がある場合は、リンクも示しています。 一部の機能に関する詳細 (要件など) については、「 [Windows Server の Active Directory の新機能](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn268294(v=ws.11))」を参照してください。
 
-|特徴量|説明|
+|機能|説明|
 |-----------|---------------|
 |[社内参加](../../ad-fs/operations/join-to-workplace-from-any-device-for-sso-and-seamless-second-factor-authentication-across-company-applications.md)|インフォメーション ワーカーが企業のリソースとサービスにアクセスするために、個人のデバイスを社内コンピューターの一部として参加させることができるようにします。|
 |[Web アプリケーション プロキシ](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn280942(v=ws.11))|新しいリモート アクセス役割サービスを使って Web アプリケーションへのアクセスを提供します。|
@@ -90,10 +90,10 @@ Windows Update は Windows 8 および Windows Server 2012 の自動メンテナ
 
 次の表は、Windows Server 2012 のAD DS 関連の新機能をまとめたものです。詳細情報がある場合は、リンクも示しています。 一部の機能 (要件を含む) の詳細については、「 [Active Directory Domain Services の新機能」 (AD DS)](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831477(v=ws.11))を参照してください。
 
-|特徴量|説明|
+|機能|説明|
 |-----------|---------------|
 |Active Directory によるライセンス認証 (AD BA) (「 [ボリューム ライセンス認証の概要](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831612(v=ws.11))」を参照)|ボリューム ソフトウェア ライセンスの配布と管理を構成するタスクが簡略化されます。|
-|[Active Directory フェデレーションサービス (AD FS) (AD FS)](../../active-directory-federation-services.md)|サーバー マネージャー経由のサーバーの役割のインストール、信頼のセットアップの単純化、自動的な信頼管理、SAML プロトコルのサポートなどが追加されます。|
+|[Active Directory フェデレーション サービス (AD FS)](../../active-directory-federation-services.md)|サーバー マネージャー経由のサーバーの役割のインストール、信頼のセットアップの単純化、自動的な信頼管理、SAML プロトコルのサポートなどが追加されます。|
 |Active Directory の失われたページのフラッシュ イベント|Active Directory データベースに対して、失われたページのフラッシュ イベントを検出できるように、NTDS ISAM イベント 530 が Jet エラー -1119 と共にログ出力されます。|
 |[Active Directory のごみ箱のユーザー インターフェイス](../get-started/adac/introduction-to-active-directory-administrative-center-enhancements--level-100-.md#ad_recycle_bin_mgmt)|Active Directory 管理センター (ADAC) により、最初は Windows Server 2008 R2 で導入されたごみ箱の機能の GUI 管理が追加されます。|
 |[Windows PowerShell コマンドレットを使用した Active Directory レプリケーションおよびトポロジ管理](../manage/powershell/introduction-to-active-directory-replication-and-topology-management-using-windows-powershell--level-100-.md)|Windows PowerShell の使用による Active Directory サイト、サイト リンク、接続オブジェクトなどの作成と管理がサポートされます。|
@@ -154,25 +154,24 @@ AD DS に関連する変更がいくつかあります。
 
 Windows Server 2008 以降のドメインコントローラーでは、Windows Server 2003 または Windows 2000 を実行するドメインコントローラーと比較して、次のセキュリティで保護された既定の設定も使用できます。
 
-|||||
-|-|-|-|-|
-|暗号化の種類またはポリシー|Windows Server 2008 の既定値|Windows Server 2012 および Windows Server 2008 R2 の既定値|解説|
-|AllowNT4Crypto|無効|無効|サード パーティ製のサーバー メッセージ ブロック (SMB) クライアントは、ドメイン コントローラー上の既定のセキュリティ設定と互換性がない場合があります。 どのような場合でも、これらの設定を緩和して相互運用を可能にすることもできますが、その際はセキュリティが低下します。 詳細については、Microsoft サポート技術情報の[記事 942564](https://go.microsoft.com/fwlink/?LinkId=164558) () を参照してください https://go.microsoft.com/fwlink/?LinkId=164558) 。|
-|DES|Enabled|無効|Microsoft サポート技術情報の[記事 977321](https://go.microsoft.com/fwlink/?LinkId=177717) (https://go.microsoft.com/fwlink/?LinkId=177717)|
-|統合認証のための CBT/拡張保護|なし|Enabled|Microsoft[セキュリティアドバイザリ (937811)](https://go.microsoft.com/fwlink/?LinkId=164559) ( https://go.microsoft.com/fwlink/?LinkId=164559) および Microsoft サポート技術情報の[記事 976918](https://go.microsoft.com/fwlink/?LinkId=178251) () を参照してください https://go.microsoft.com/fwlink/?LinkId=178251) 。<p>必要に応じて、Microsoft サポート技術情報の[記事 977073](https://go.microsoft.com/fwlink/?LinkId=186394)の修正プログラムを確認してインストールし https://go.microsoft.com/fwlink/?LinkId=186394) ます。|
-|LMv2|Enabled|無効|Microsoft サポート技術情報の[記事 976918](https://go.microsoft.com/fwlink/?LinkId=178251) (https://go.microsoft.com/fwlink/?LinkId=178251)|
+| 暗号化の種類またはポリシー | Windows Server 2008 の既定値 | Windows Server 2012 および Windows Server 2008 R2 の既定値 | コメント |
+|--|--|--|--|
+| AllowNT4Crypto | 無効 | 無効 | サード パーティ製のサーバー メッセージ ブロック (SMB) クライアントは、ドメイン コントローラー上の既定のセキュリティ設定と互換性がない場合があります。 どのような場合でも、これらの設定を緩和して相互運用を可能にすることもできますが、その際はセキュリティが低下します。 詳細については、Microsoft サポート技術情報の[記事 942564](https://go.microsoft.com/fwlink/?LinkId=164558) () を参照してください https://go.microsoft.com/fwlink/?LinkId=164558) 。 |
+| DES | Enabled | 無効 | Microsoft サポート技術情報の[記事 977321](https://go.microsoft.com/fwlink/?LinkId=177717) (https://go.microsoft.com/fwlink/?LinkId=177717) |
+| 統合認証のための CBT/拡張保護 | N/A | Enabled | Microsoft[セキュリティアドバイザリ (937811)](https://go.microsoft.com/fwlink/?LinkId=164559) ( https://go.microsoft.com/fwlink/?LinkId=164559) および Microsoft サポート技術情報の[記事 976918](https://go.microsoft.com/fwlink/?LinkId=178251) () を参照してください https://go.microsoft.com/fwlink/?LinkId=178251) 。<p>必要に応じて、Microsoft サポート技術情報の[記事 977073](https://go.microsoft.com/fwlink/?LinkId=186394)の修正プログラムを確認してインストールし https://go.microsoft.com/fwlink/?LinkId=186394) ます。 |
+| LMv2 | Enabled | 無効 | Microsoft サポート技術情報の[記事 976918](https://go.microsoft.com/fwlink/?LinkId=178251) (https://go.microsoft.com/fwlink/?LinkId=178251) |
 
 ## <a name="operating-system-requirements"></a><a name="BKMK_SysReqs"></a>オペレーティング システムの要件
 
 次の表に、Windows Server 2012 の最小システム要件を示します。 システム要件とプレインストール情報の詳細については、「 [Windows Server 2012 のインストール](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj134246(v=ws.11))」を参照してください。 新しい Active Directory フォレストをインストールするための追加システム要件はありませんが、ドメイン コントローラー、LDAP クライアント要求、および Active Directory 対応アプリケーションのパフォーマンスを向上させるには、Active Directory データベースの内容をキャッシュするための十分なメモリを追加する必要があります。 既存のドメイン コントローラーをアップグレードするか、新しいドメイン コントローラーを既存のフォレストに追加する場合は、次のセクションを参照して、サーバーがディスク領域の要件を満たしていることを確認してください。
 
-|||
-|-|-|
-|プロセッサ|1.4 Ghz 64 ビット プロセッサ|
-|RAM|512 MB|
-|空きディスク領域の要件|32 GB|
-|画面解像度|800 x 600 以上|
-|その他|DVD ドライブ、キーボード、インターネット アクセス|
+| 要件 | [値] |
+|--|--|
+| プロセッサ | 1.4 Ghz 64 ビット プロセッサ |
+| RAM | 512 MB |
+| 空きディスク領域の要件 | 32 GB |
+| 画面解像度 | 800 x 600 以上 |
+| その他 | DVD ドライブ、キーボード、インターネット アクセス |
 
 ### <a name="disk-space-requirements-for-upgrading-domain-controllers"></a><a name="BKMK_DiskSpaceDCWin8"></a>ドメイン コントローラーをアップグレードするためのディスク領域の要件
 
@@ -201,14 +200,14 @@ AD DS 役割をサポートするエディションは、Standard と Datacenter
 
 Windows Server 2008 または Windows Server 2008 R2 の64ビットバージョンを実行するドメインコントローラーは、Windows Server 2012 にアップグレードできます。 Windows Server 2003 または 32 ビット バージョンの Windows Server 2008 を実行するドメイン コントローラーは、アップグレードできません。 このようなドメイン コントローラーを置き換えるには、以降のバージョンの Windows Server を実行するドメイン コントローラーをドメインにインストールし、Windows Server 2003 を実行するドメイン コントローラーを削除します。
 
-|使用しているエディション|アップグレード先のエディション|
-|-------------------------------------|-------------------------------------|
-|Windows Server 2008 Standard SP2<p>OR<p>Windows Server 2008 Enterprise SP2|Windows Server 2012 Standard<p>OR<p>Windows Server 2012 Datacenter|
-|Windows Server 2008 Datacenter SP2|Windows Server 2012 Datacenter|
-|Windows Web Server 2008|Windows Server 2012 Standard|
-|Windows Server 2008 R2 Standard SP1<p>OR<p>Windows Server 2008 R2 Enterprise SP1|Windows Server 2012 Standard<p>OR<p>Windows Server 2012 Datacenter|
-|Windows Server 2008 R2 Datacenter SP1|Windows Server 2012 Datacenter|
-|Windows Web Server 2008 R2|Windows Server 2012 Standard|
+| 使用しているエディション | アップグレード先のエディション |
+|--|--|
+| Windows Server 2008 Standard SP2<p>または<p>Windows Server 2008 Enterprise SP2 | Windows Server 2012 Standard<p>または<p>Windows Server 2012 Datacenter |
+| Windows Server 2008 Datacenter SP2 | Windows Server 2012 Datacenter |
+| Windows Web Server 2008 | Windows Server 2012 Standard |
+| Windows Server 2008 R2 Standard SP1<p>または<p>Windows Server 2008 R2 Enterprise SP1 | Windows Server 2012 Standard<p>または<p>Windows Server 2012 Datacenter |
+| Windows Server 2008 R2 Datacenter SP1 | Windows Server 2012 Datacenter |
+| Windows Web Server 2008 R2 | Windows Server 2012 Standard |
 
 サポートされるアップグレード パスの詳細については、「 [Windows Server 2012 の評価バージョンとアップグレード オプション](https://go.microsoft.com/fwlink/?LinkId=260917)」を参照してください。 Windows Server 2012 の評価版を実行するドメイン コントローラーを直接製品版に変換することはできません。 代わりに、まず製品版を実行するサーバーに追加のドメイン コントローラーをインストールし、評価版で実行されているドメイン コントローラーから AD DS を削除します。
 
@@ -276,7 +275,7 @@ Windows [8 のリモートサーバー管理ツール](https://www.microsoft.com
 
 次の表は、Active Directory が統合されている一般的な Microsoft アプリケーションの一覧です。 アプリケーションをインストールできる Windows Server のバージョンと、Windows Server 2012 DC の導入がアプリケーションの互換性に影響するかどうかが示されています。
 
-|Product|Notes|
+|Product|メモ|
 |-----------|---------|
 |[Microsoft SharePoint 2010](https://support.microsoft.com/kb/2724471)|をインストールして操作するには、SharePoint 2010 Service Pack 2 が必要です。 <br />Windows Server 2012 サーバー上の SharePoint 2010<p>SharePoint 2010 Foundation を Windows Server 2012 サーバーにインストールして操作するには、SharePoint 2010 Foundation Service Pack 2 が必要です。<p>SharePoint Server 2010 (Service Pack なし) を Windows Server 2012 にインストールするプロセスは失敗します。<p>SharePoint Server 2010 の前提条件インストーラー (PrerequisiteInstaller.exe) は、"このプログラムには互換性の問題があります" というエラーが発生して失敗します。 [ヘルプを表示せずにプログラムを実行する] をクリックすると、Windows Server 2012 に sharepoint Server 2010 (service pack がインストールされていない &#124;) をインストールできないことを確認するエラーが表示されます。|
 |[Microsoft SharePoint 2013](/SharePoint/install/hardware-and-software-requirements-0)|ファーム内のデータベース サーバーの最小要件:<p>64 ビット エディションの Windows Server 2008 R2 Service Pack 1 (SP1) Standard、Enterprise、または Datacenter、あるいは 64 ビット エディションの Windows Server 2012 Standard または Datacenter<p>組み込みデータベースを持つ単一サーバーの最小要件:<p>64 ビット エディションの Windows Server 2008 R2 Service Pack 1 (SP1) Standard、Enterprise、または Datacenter、あるいは 64 ビット エディションの Windows Server 2012 Standard または Datacenter<p>ファーム内のフロントエンド Web サーバーおよびアプリケーション サーバーの最小要件:<p>64 ビット エディションの Windows Server 2008 R2 Service Pack 1 (SP1) Standard、Enterprise、または Datacenter、あるいは 64 ビット エディションの Windows Server 2012 Standard または Datacenter|
@@ -300,42 +299,41 @@ Windows [8 のリモートサーバー管理ツール](https://www.microsoft.com
 
 AD DS のインストールに関する既知の問題を次の表に示します。
 
-||||
-|-|-|-|
-|サポート技術情報の記事番号とタイトル|影響を受けるテクノロジ エリア|問題点/説明|
-|[2830145](https://support.microsoft.com/kb/2830145):ドメイン環境の Windows 7 または Windows Server 2008 R2 ベースのコンピューター上で SID S-1-18-1 および SID S-1-18-2 をマップできない|AD DS の管理/アプリケーションの互換性|Windows Server 2012 の新機能である SID S-1-18-1 および SID S-1-18-2 をマップするアプリケーションは失敗する可能性があります。それらの SID を Windows 7 ベースまたは Windows Server 2008 R2 ベースのコンピューター上で解決できないためです。 この問題を解決するには、ドメイン内の Windows 7 ベースおよび Windows Server 2008 R2 ベースのコンピューターに修正プログラムをインストールしてください。|
-|[2737129](https://support.microsoft.com/kb/2737129):Windows Server 2012 の既存のドメインを自動的に準備した場合、グループ ポリシーの準備が実行されない|AD DS のインストール|Windows Server 2012 を実行するドメイン内の最初の DC をインストールする場合、adprep /domainprep /gpprep は、インストールの一部として自動的には実行されません。 ドメイン内でそれまでに実行したことがない場合は、手動で実行する必要があります。|
-|[2737416](https://support.microsoft.com/kb/2737416):Windows PowerShell ベースのドメイン コントローラーの展開で、警告が繰り返し表示される|AD DS のインストール|警告は、前提条件の確認時に表示され、インストール中に再度表示されることがあります。|
-|[2737424](https://support.microsoft.com/kb/2737424):ドメイン コントローラーから Active Directory ドメイン サービスを削除しようとすると、"指定されたドメイン名の形式は無効です" エラーが発生する|AD DS のインストール|事前作成された RODC アカウントがまだ存在する場合にドメイン内で最後の DC を削除しようとすると、このエラーが表示されます。 Windows Server 2012、Windows Server 2008 R2、および Windows Server 2008 に影響します。|
-|[2737463](https://support.microsoft.com/kb/2737463):ドメイン コントローラーが起動しない、c00002e2 エラーが発生する、または "オプションの選択" が表示される|AD DS のインストール|DC が起動しないのは、管理者が Dism.exe、Pkgmgr.exe、または Ocsetup.exe を使用して DirectoryServices-DomainController 役割を削除したためです。|
-|[2737516](https://support.microsoft.com/kb/2737516):Windows Server 2012 サーバー マネージャーでの IFM による検証の制限|AD DS のインストール|サポート技術情報の記事に記載されているように、IFM による検証には制限があります。|
-|[2737535](https://support.microsoft.com/kb/2737535):Install-AddsDomainController コマンドレットから、RODC のパラメーター セット エラーが返される|AD DS のインストール|事前作成済みの RODC アカウントに対して指定済みの引数を指定してサーバーを RODC アカウントに関連付けようとすると、エラーが発生することがあります。|
-|[2737560](https://support.microsoft.com/kb/2737560):"交換スキーマ競合チェックを実行できません" エラーが発生し、前提条件のチェックに失敗する|AD DS のインストール|既存のドメイン内で最初の Windows Server 2012 DC を構成する際に、前提条件のチェックに失敗します。これは、Network Service に対する SeServiceLogonRight が DC にないため、あるいは WMI または DCOM プロトコルがブロックされているためです。|
-|[2737797](https://support.microsoft.com/kb/2737797):AddsDeployment モジュールに -Whatif 引数が指定されている場合に表示される DNS 結果に誤りがある|AD DS のインストール|-WhatIf パラメーターを指定すると、DNS サーバーはインストールされませんが、のように表示されます。|
-|[2737807](https://support.microsoft.com/kb/2737807):[ドメイン コントローラー オプション] ページで [次へ] ボタンを使用できない|AD DS のインストール|[ドメイン コントローラー オプション] ページの [次へ] ボタンが無効になっているのは、ターゲット DC の IP アドレスが既存のサブネットまたはサイトにマップされていないためか、DSRM パスワードの入力と確認が正しく行われていないためです。|
-|[2737935](https://support.microsoft.com/kb/2737935):Active Directory のインストールが "NTDS 設定オブジェクトを作成しています" の段階で動作しなくなる|AD DS のインストール|インストールがハングするのは、ローカルの Administrator パスワードがドメインの Administrator パスワードと一致するためか、ネットワークの問題によって重要なレプリケーションが完了しないためです。|
-|[2738060](https://support.microsoft.com/kb/2738060):Install-AddsDomain を使用してリモートで子ドメインを作成すると、"アクセスが拒否されました" エラー メッセージが表示される|AD DS のインストール|Install-ADDSDomain を Invoke-Command コマンドレットと共に実行した場合に、DNSDelegationCredential に指定されたパスワードに問題があると、エラーが発生します。|
-|[2738697](https://support.microsoft.com/kb/2738697):サーバー マネージャーを使用してサーバーを構成すると、ドメイン コントローラーの構成エラー "サーバーは使用可能ではありません" が発生する|AD DS のインストール|ワークグループ コンピューターに AD DS をインストールしようとすると、このエラーが発生します。これは、NTLM 認証が無効になっているためです。|
-|[2738746](https://support.microsoft.com/kb/2738746):ローカル管理者ドメイン アカウントにログオンした後に、アクセス拒否エラーが発生する|AD DS のインストール|組み込みの Administrator アカウントではなくローカルの Administrator アカウントを使用してログオンし、新しいドメインを作成した場合、このアカウントは Domain Admins グループに追加されません。|
-|[2743345](https://support.microsoft.com/kb/2743345):adprep /gpprep エラー "指定されたファイルが見つかりません" が表示されるか、ツールがクラッシュする|AD DS のインストール|このエラーは、インフラストラクチャ マスターにより実装されている名前空間が不適切であるために、adprep /gpprep を実行したときに発生します。|
-|[2743367](https://support.microsoft.com/kb/2743367):64 ビット バージョンの Windows Server 2003 で、Adprep に対する "有効な Win32 アプリケーションではありません" エラーが発生する|AD DS のインストール|Windows Server 2012 Adprep は Windows Server 2003 で実行できないために、このエラーが発生します。|
-|[2753560](https://support.microsoft.com/kb/2753560):Windows Server 2012 で ADMT 3.2 と PES 3.1 のインストール エラーが発生する|ADMT|設計上、ADMT 3.2 は Windows Server 2012 にインストールできません。|
-|[2750857](https://support.microsoft.com/kb/2750857):Internet Explorer 10 で、DFS レプリケーション診断レポートが正しく表示されない|DFS レプリケーション|Internet Explorer 10 での変更のため、DFS レプリケーション診断レポートが正しく表示されません。|
-|[2741537](https://support.microsoft.com/kb/2741537):リモートでのグループ ポリシーの更新がユーザーに対して表示される|グループ ポリシー|この状況は、スケジュールされたタスクが、ログオンしている各ユーザーのコンテキストで実行されることが原因で発生します。 Windows タスク スケジューラの仕様により、このシナリオでは対話的なプロンプトが必要です。|
-|[2741591](https://support.microsoft.com/kb/2741591):GPMC のインフラストラクチャ状態オプションで、SYSVOL に ADM ファイルが存在しない|グループ ポリシー|GPMC インフラストラクチャの状態は、カスタマイズされたフィルター処理規則に従っていないため、GP レプリケーションは "レプリケーションが進行中です" を報告できます。|
-|[2737880](https://support.microsoft.com/kb/2737880):AD DS の構成操作中に "サービスを開始できません" エラーが発生する|仮想 DC の複製|このエラーは、DS 役割サーバー サービスが無効になっているために、AD DS のインストール、削除、または複製の実行中に発生します。|
-|[2742836](https://support.microsoft.com/kb/2742836):VDC 複製機能の使用時に、各ドメイン コントローラーに対して DHCP リースが 2 つ作成される|仮想 DC の複製|この状況は、複製されたドメイン コントローラーが、複製前にもクローンの完了時にもリースを受け取ることが原因で発生します。|
-|[2742844](https://support.microsoft.com/kb/2742844):Windows Server 2012 で、ドメイン コントローラーの複製に失敗し、サーバーが DSRM で再起動される|仮想 DC の複製|複製された DC が DSRM で再起動されるのは、サポート技術情報の記事に記載されているさまざまな理由のいずれかによって複製に失敗したためです。|
-|[2742874](https://support.microsoft.com/kb/2742874):ドメイン コントローラーの複製で、すべてのサービス プリンシパル名が再作成されない|仮想 DC の複製|複製された DC で 3 部構成の SPN のうち再作成されないものがあるのは、ドメイン名の変更プロセスの制限が原因です。|
-|[2742908](https://support.microsoft.com/kb/2742908):ドメイン コントローラーの複製後に、"使用可能なログオン サーバーがない" というエラーが発生する|仮想 DC の複製|このエラーは、仮想 DC の複製後にログオンしようとすると発生します。これは、複製に失敗し、DC が DSRM で起動されたことが原因です。 複製の失敗に対するトラブルシューティングを行うには、.\administrator としてログオンしてください。|
-|[2742916](https://support.microsoft.com/kb/2742916):ドメイン コントローラーの複製に失敗し、dcpromo.log 内にエラー 8610 が出力される|仮想 DC の複製|PDC エミュレーターがドメイン パーティションについて入力方向のレプリケーションを実行していない場合、複製が失敗します。原因としては、役割が転送されていないことが考えられます。|
-|[2742927](https://support.microsoft.com/kb/2742927):New-AdDcCloneConfig で "インデックスが範囲外です" エラーが発生する|仮想 DC の複製|このエラーは、仮想 DC の複製中、New-ADDCCloneConfigFile コマンドレットの実行後に発生します。コマンドレットが管理者特権のコマンド プロンプトで実行されていないか、アクセス トークンに Administrators グループが含まれていないことが原因です。|
-|[2742959](https://support.microsoft.com/kb/2742959):ドメイン コントローラーの複製に失敗し、エラー 8437 "このレプリケーション操作に対して、無効なパラメーターが指定されました" が発生する|仮想 DC の複製|無効な複製名または重複した NetBIOS 名が指定されたことが原因で、複製に失敗しています。|
-|[2742970](https://support.microsoft.com/kb/2742970):DC の複製に失敗し、DSRM は発生せず、ソース コンピューターと複製コンピューターの重複が発生する|仮想 DC の複製|複製された仮想 DC は、ソース DC の重複名を使用してディレクトリ サービス復元モード (DSRM) で起動されます。これは、DCCloneConfig.xml ファイルが正しい場所に作成されていないか、ソース DC が複製前に再起動されたことが原因です。|
-|[2743278](https://support.microsoft.com/kb/2743278):ドメイン コントローラーの複製エラー 0x80041005|仮想 DC の複製|WINS サーバーが 1 つしか指定されていないために、複製された DC が DSRM で起動されます。 WINS サーバーを指定する場合は、優先 WINS サーバーと代替 WINS サーバーの両方を指定する必要があります。|
-|[2745013](https://support.microsoft.com/kb/2745013):Windows Server 2012 で New-AdDcCloneConfigFile を実行すると、エラー メッセージ "サーバーは使用可能ではありません" が表示される|仮想 DC の複製|このエラーは、サーバーがグローバル カタログ サーバーに接続できない場合に、New-ADDCCloneConfigFile コマンドレットの実行後に表示されます。|
-|[2747974](https://support.microsoft.com/kb/2747974):ドメイン コントローラーの複製イベント 2224 で不適切なガイダンスが表示される|仮想 DC の複製|イベント ID 2224 で表示される、管理されたサービス アカウントは複製前に削除する必要があるというメッセージは不適切です。 スタンドアロンの MSA は削除する必要がありますが、グループの MSA は複製をブロックしません。|
-|[2748266](https://support.microsoft.com/kb/2748266):Windows 8 へのアップグレード後、BitLocker の暗号化されたドライブのロックを解除できない|BitLocker|Windows 7 からアップグレードされたコンピューターでドライブのロックを解除しようとすると、"アプリケーションが見つかりません" というエラーが表示されます。|
+| サポート技術情報の記事番号とタイトル | 影響を受けるテクノロジ エリア | 問題点/説明 |
+|--|--|--|
+| [2830145](https://support.microsoft.com/kb/2830145):ドメイン環境の Windows 7 または Windows Server 2008 R2 ベースのコンピューター上で SID S-1-18-1 および SID S-1-18-2 をマップできない | AD DS の管理/アプリケーションの互換性 | Windows Server 2012 の新機能である SID S-1-18-1 および SID S-1-18-2 をマップするアプリケーションは失敗する可能性があります。それらの SID を Windows 7 ベースまたは Windows Server 2008 R2 ベースのコンピューター上で解決できないためです。 この問題を解決するには、ドメイン内の Windows 7 ベースおよび Windows Server 2008 R2 ベースのコンピューターに修正プログラムをインストールしてください。 |
+| [2737129](https://support.microsoft.com/kb/2737129):Windows Server 2012 の既存のドメインを自動的に準備した場合、グループ ポリシーの準備が実行されない | AD DS のインストール | Windows Server 2012 を実行するドメイン内の最初の DC をインストールする場合、adprep /domainprep /gpprep は、インストールの一部として自動的には実行されません。 ドメイン内でそれまでに実行したことがない場合は、手動で実行する必要があります。 |
+| [2737416](https://support.microsoft.com/kb/2737416):Windows PowerShell ベースのドメイン コントローラーの展開で、警告が繰り返し表示される | AD DS のインストール | 警告は、前提条件の確認時に表示され、インストール中に再度表示されることがあります。 |
+| [2737424](https://support.microsoft.com/kb/2737424):ドメイン コントローラーから Active Directory ドメイン サービスを削除しようとすると、"指定されたドメイン名の形式は無効です" エラーが発生する | AD DS のインストール | 事前作成された RODC アカウントがまだ存在する場合にドメイン内で最後の DC を削除しようとすると、このエラーが表示されます。 Windows Server 2012、Windows Server 2008 R2、および Windows Server 2008 に影響します。 |
+| [2737463](https://support.microsoft.com/kb/2737463):ドメイン コントローラーが起動しない、c00002e2 エラーが発生する、または "オプションの選択" が表示される | AD DS のインストール | DC が起動しないのは、管理者が Dism.exe、Pkgmgr.exe、または Ocsetup.exe を使用して DirectoryServices-DomainController 役割を削除したためです。 |
+| [2737516](https://support.microsoft.com/kb/2737516):Windows Server 2012 サーバー マネージャーでの IFM による検証の制限 | AD DS のインストール | サポート技術情報の記事に記載されているように、IFM による検証には制限があります。 |
+| [2737535](https://support.microsoft.com/kb/2737535):Install-AddsDomainController コマンドレットから、RODC のパラメーター セット エラーが返される | AD DS のインストール | 事前作成済みの RODC アカウントに対して指定済みの引数を指定してサーバーを RODC アカウントに関連付けようとすると、エラーが発生することがあります。 |
+| [2737560](https://support.microsoft.com/kb/2737560):"交換スキーマ競合チェックを実行できません" エラーが発生し、前提条件のチェックに失敗する | AD DS のインストール | 既存のドメイン内で最初の Windows Server 2012 DC を構成する際に、前提条件のチェックに失敗します。これは、Network Service に対する SeServiceLogonRight が DC にないため、あるいは WMI または DCOM プロトコルがブロックされているためです。 |
+| [2737797](https://support.microsoft.com/kb/2737797):AddsDeployment モジュールに -Whatif 引数が指定されている場合に表示される DNS 結果に誤りがある | AD DS のインストール | -WhatIf パラメーターを指定すると、DNS サーバーはインストールされませんが、のように表示されます。 |
+| [2737807](https://support.microsoft.com/kb/2737807):[ドメイン コントローラー オプション] ページで [次へ] ボタンを使用できない | AD DS のインストール | [ドメイン コントローラー オプション] ページの [次へ] ボタンが無効になっているのは、ターゲット DC の IP アドレスが既存のサブネットまたはサイトにマップされていないためか、DSRM パスワードの入力と確認が正しく行われていないためです。 |
+| [2737935](https://support.microsoft.com/kb/2737935):Active Directory のインストールが "NTDS 設定オブジェクトを作成しています" の段階で動作しなくなる | AD DS のインストール | インストールがハングするのは、ローカルの Administrator パスワードがドメインの Administrator パスワードと一致するためか、ネットワークの問題によって重要なレプリケーションが完了しないためです。 |
+| [2738060](https://support.microsoft.com/kb/2738060):Install-AddsDomain を使用してリモートで子ドメインを作成すると、"アクセスが拒否されました" エラー メッセージが表示される | AD DS のインストール | Install-ADDSDomain を Invoke-Command コマンドレットと共に実行した場合に、DNSDelegationCredential に指定されたパスワードに問題があると、エラーが発生します。 |
+| [2738697](https://support.microsoft.com/kb/2738697):サーバー マネージャーを使用してサーバーを構成すると、ドメイン コントローラーの構成エラー "サーバーは使用可能ではありません" が発生する | AD DS のインストール | ワークグループ コンピューターに AD DS をインストールしようとすると、このエラーが発生します。これは、NTLM 認証が無効になっているためです。 |
+| [2738746](https://support.microsoft.com/kb/2738746):ローカル管理者ドメイン アカウントにログオンした後に、アクセス拒否エラーが発生する | AD DS のインストール | 組み込みの Administrator アカウントではなくローカルの Administrator アカウントを使用してログオンし、新しいドメインを作成した場合、このアカウントは Domain Admins グループに追加されません。 |
+| [2743345](https://support.microsoft.com/kb/2743345):adprep /gpprep エラー "指定されたファイルが見つかりません" が表示されるか、ツールがクラッシュする | AD DS のインストール | このエラーは、インフラストラクチャ マスターにより実装されている名前空間が不適切であるために、adprep /gpprep を実行したときに発生します。 |
+| [2743367](https://support.microsoft.com/kb/2743367):64 ビット バージョンの Windows Server 2003 で、Adprep に対する "有効な Win32 アプリケーションではありません" エラーが発生する | AD DS のインストール | Windows Server 2012 Adprep は Windows Server 2003 で実行できないために、このエラーが発生します。 |
+| [2753560](https://support.microsoft.com/kb/2753560):Windows Server 2012 で ADMT 3.2 と PES 3.1 のインストール エラーが発生する | ADMT | 設計上、ADMT 3.2 は Windows Server 2012 にインストールできません。 |
+| [2750857](https://support.microsoft.com/kb/2750857):Internet Explorer 10 で、DFS レプリケーション診断レポートが正しく表示されない | DFS レプリケーション | Internet Explorer 10 での変更のため、DFS レプリケーション診断レポートが正しく表示されません。 |
+| [2741537](https://support.microsoft.com/kb/2741537):リモートでのグループ ポリシーの更新がユーザーに対して表示される | グループ ポリシー | この状況は、スケジュールされたタスクが、ログオンしている各ユーザーのコンテキストで実行されることが原因で発生します。 Windows タスク スケジューラの仕様により、このシナリオでは対話的なプロンプトが必要です。 |
+| [2741591](https://support.microsoft.com/kb/2741591):GPMC のインフラストラクチャ状態オプションで、SYSVOL に ADM ファイルが存在しない | グループ ポリシー | GPMC インフラストラクチャの状態は、カスタマイズされたフィルター処理規則に従っていないため、GP レプリケーションは "レプリケーションが進行中です" を報告できます。 |
+| [2737880](https://support.microsoft.com/kb/2737880):AD DS の構成操作中に "サービスを開始できません" エラーが発生する | 仮想 DC の複製 | このエラーは、DS 役割サーバー サービスが無効になっているために、AD DS のインストール、削除、または複製の実行中に発生します。 |
+| [2742836](https://support.microsoft.com/kb/2742836):VDC 複製機能の使用時に、各ドメイン コントローラーに対して DHCP リースが 2 つ作成される | 仮想 DC の複製 | この状況は、複製されたドメイン コントローラーが、複製前にもクローンの完了時にもリースを受け取ることが原因で発生します。 |
+| [2742844](https://support.microsoft.com/kb/2742844):Windows Server 2012 で、ドメイン コントローラーの複製に失敗し、サーバーが DSRM で再起動される | 仮想 DC の複製 | 複製された DC が DSRM で再起動されるのは、サポート技術情報の記事に記載されているさまざまな理由のいずれかによって複製に失敗したためです。 |
+| [2742874](https://support.microsoft.com/kb/2742874):ドメイン コントローラーの複製で、すべてのサービス プリンシパル名が再作成されない | 仮想 DC の複製 | 複製された DC で 3 部構成の SPN のうち再作成されないものがあるのは、ドメイン名の変更プロセスの制限が原因です。 |
+| [2742908](https://support.microsoft.com/kb/2742908):ドメイン コントローラーの複製後に、"使用可能なログオン サーバーがない" というエラーが発生する | 仮想 DC の複製 | このエラーは、仮想 DC の複製後にログオンしようとすると発生します。これは、複製に失敗し、DC が DSRM で起動されたことが原因です。 複製の失敗に対するトラブルシューティングを行うには、.\administrator としてログオンしてください。 |
+| [2742916](https://support.microsoft.com/kb/2742916):ドメイン コントローラーの複製に失敗し、dcpromo.log 内にエラー 8610 が出力される | 仮想 DC の複製 | PDC エミュレーターがドメイン パーティションについて入力方向のレプリケーションを実行していない場合、複製が失敗します。原因としては、役割が転送されていないことが考えられます。 |
+| [2742927](https://support.microsoft.com/kb/2742927):New-AdDcCloneConfig で "インデックスが範囲外です" エラーが発生する | 仮想 DC の複製 | このエラーは、仮想 DC の複製中、New-ADDCCloneConfigFile コマンドレットの実行後に発生します。コマンドレットが管理者特権のコマンド プロンプトで実行されていないか、アクセス トークンに Administrators グループが含まれていないことが原因です。 |
+| [2742959](https://support.microsoft.com/kb/2742959):ドメイン コントローラーの複製に失敗し、エラー 8437 "このレプリケーション操作に対して、無効なパラメーターが指定されました" が発生する | 仮想 DC の複製 | 無効な複製名または重複した NetBIOS 名が指定されたことが原因で、複製に失敗しています。 |
+| [2742970](https://support.microsoft.com/kb/2742970):DC の複製に失敗し、DSRM は発生せず、ソース コンピューターと複製コンピューターの重複が発生する | 仮想 DC の複製 | 複製された仮想 DC は、ソース DC の重複名を使用してディレクトリ サービス復元モード (DSRM) で起動されます。これは、DCCloneConfig.xml ファイルが正しい場所に作成されていないか、ソース DC が複製前に再起動されたことが原因です。 |
+| [2743278](https://support.microsoft.com/kb/2743278):ドメイン コントローラーの複製エラー 0x80041005 | 仮想 DC の複製 | WINS サーバーが 1 つしか指定されていないために、複製された DC が DSRM で起動されます。 WINS サーバーを指定する場合は、優先 WINS サーバーと代替 WINS サーバーの両方を指定する必要があります。 |
+| [2745013](https://support.microsoft.com/kb/2745013):Windows Server 2012 で New-AdDcCloneConfigFile を実行すると、エラー メッセージ "サーバーは使用可能ではありません" が表示される | 仮想 DC の複製 | このエラーは、サーバーがグローバル カタログ サーバーに接続できない場合に、New-ADDCCloneConfigFile コマンドレットの実行後に表示されます。 |
+| [2747974](https://support.microsoft.com/kb/2747974):ドメイン コントローラーの複製イベント 2224 で不適切なガイダンスが表示される | 仮想 DC の複製 | イベント ID 2224 で表示される、管理されたサービス アカウントは複製前に削除する必要があるというメッセージは不適切です。 スタンドアロンの MSA は削除する必要がありますが、グループの MSA は複製をブロックしません。 |
+| [2748266](https://support.microsoft.com/kb/2748266):Windows 8 へのアップグレード後、BitLocker の暗号化されたドライブのロックを解除できない | BitLocker | Windows 7 からアップグレードされたコンピューターでドライブのロックを解除しようとすると、"アプリケーションが見つかりません" というエラーが表示されます。 |
 
 ## <a name="see-also"></a>参照
 

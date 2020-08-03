@@ -8,12 +8,12 @@ ms.date: 03/20/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 1bcd4268444f49489d3e7a04c55d10cddaf92e00
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: fff48467519e5bfb8121bf887a773bc75defbb4c
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966534"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87519801"
 ---
 # <a name="configure-browsers-to-use-windows-integrated-authentication-wia-with-ad-fs"></a>AD FS で Windows 統合認証 (WIA) を使用するようにブラウザーを構成する
 
@@ -21,21 +21,22 @@ ms.locfileid: "86966534"
 
 AD FS 2016 には、Edge ブラウザーが WIA を実行できるようにする、改善された既定の設定が用意されています。また、Windows Phone を正しくキャッチすることもありません。
 
-    =~Windows\s*NT.*Edge
+```
+=~Windows\s*NT.*Edge
+```
 
 上記の方法では、頻繁に更新される場合でも、一般的なエッジシナリオをサポートするように個々のユーザーエージェント文字列を構成する必要がなくなりました。
 
 他のブラウザーの場合は、AD FS プロパティ**Wiasupporteduseragents**を構成して、使用しているブラウザーに基づいて必要な値を追加します。  次の手順を使用できます。
 
-
-
 ### <a name="view-wiasupporteduseragent-settings"></a>WIASupportedUserAgent の設定を表示する
+
 **Wiasupporteduseragents**は、WIA をサポートするユーザーエージェントを定義します。 AD FS は、ブラウザーまたはブラウザーコントロールでログインを実行するときに、ユーザーエージェント文字列を分析します。
 
 現在の設定を表示するには、次の PowerShell の例を使用します。
 
 ```powershell
-    Get-AdfsProperties | select -ExpandProperty WiaSupportedUserAgents
+Get-AdfsProperties | select -ExpandProperty WiaSupportedUserAgents
 ```
 
 ![WIA サポート](../operations/media/Configure-AD-FS-Browser-WIA/wiasupport.png)
@@ -46,18 +47,16 @@ AD FS 2016 には、Edge ブラウザーが WIA を実行できるようにす�
 Windows Server 2012 R2 以前に AD FS がある場合は、次の手順を実行します。
 
 ```powershell
-   Set-AdfsProperties -WIASupportedUserAgents @("MSIE 6.0", "MSIE 7.0; Windows NT", "MSIE 8.0", "MSIE 9.0", "MSIE 10.0; Windows NT 6", "Windows NT 6.3; Trident/7.0", "Windows NT 6.3; Win64; x64; Trident/7.0", "Windows NT 6.3; WOW64; Trident/7.0", "Windows NT 6.2; Trident/7.0", "Windows NT 6.2; Win64; x64; Trident/7.0", "Windows NT 6.2; WOW64; Trident/7.0", "Windows NT 6.1; Trident/7.0", "Windows NT 6.1; Win64; x64; Trident/7.0", "Windows NT 6.1; WOW64; Trident/7.0", "MSIPC", "Windows Rights Management Client", "Edg/79.0.309.43")
+Set-AdfsProperties -WIASupportedUserAgents @("MSIE 6.0", "MSIE 7.0; Windows NT", "MSIE 8.0", "MSIE 9.0", "MSIE 10.0; Windows NT 6", "Windows NT 6.3; Trident/7.0", "Windows NT 6.3; Win64; x64; Trident/7.0", "Windows NT 6.3; WOW64; Trident/7.0", "Windows NT 6.2; Trident/7.0", "Windows NT 6.2; Win64; x64; Trident/7.0", "Windows NT 6.2; WOW64; Trident/7.0", "Windows NT 6.1; Trident/7.0", "Windows NT 6.1; Win64; x64; Trident/7.0", "Windows NT 6.1; WOW64; Trident/7.0", "MSIPC", "Windows Rights Management Client", "Edg/79.0.309.43")
 ```
 
 Windows Server 2016 以降に AD FS がある場合は、次のようにします。
 
 ```powershell
-   Set-AdfsProperties -WIASupportedUserAgents @("MSIE 6.0", "MSIE 7.0; Windows NT", "MSIE 8.0", "MSIE 9.0", "MSIE 10.0; Windows NT 6", "Windows NT 6.3; Trident/7.0", "Windows NT 6.3; Win64; x64; Trident/7.0", "Windows NT 6.3; WOW64; Trident/7.0", "Windows NT 6.2; Trident/7.0", "Windows NT 6.2; Win64; x64; Trident/7.0", "Windows NT 6.2; WOW64; Trident/7.0", "Windows NT 6.1; Trident/7.0", "Windows NT 6.1; Win64; x64; Trident/7.0", "Windows NT 6.1; WOW64; Trident/7.0", "MSIPC", "Windows Rights Management Client", "Edg/*")
+Set-AdfsProperties -WIASupportedUserAgents @("MSIE 6.0", "MSIE 7.0; Windows NT", "MSIE 8.0", "MSIE 9.0", "MSIE 10.0; Windows NT 6", "Windows NT 6.3; Trident/7.0", "Windows NT 6.3; Win64; x64; Trident/7.0", "Windows NT 6.3; WOW64; Trident/7.0", "Windows NT 6.2; Trident/7.0", "Windows NT 6.2; Win64; x64; Trident/7.0", "Windows NT 6.2; WOW64; Trident/7.0", "Windows NT 6.1; Trident/7.0", "Windows NT 6.1; Win64; x64; Trident/7.0", "Windows NT 6.1; WOW64; Trident/7.0", "MSIPC", "Windows Rights Management Client", "Edg/*")
 ```
 
 上のコマンドは、AD FS が WIA の次のユースケースのみをカバーするようにします。
-
-
 
 |ユーザーエージェント|ユース ケース|
 |-----|-----|
@@ -70,10 +69,9 @@ Windows Server 2016 以降に AD FS がある場合は、次のようにしま�
 |Windows NT 6.2;Trident/7.0</br></br>Windows NT 6.2;Win64x64Trident/7.0</br></br>Windows NT 6.2;WOW64Trident/7.0|Windows 8 デスクトップオペレーティングシステム、さまざまなプラットフォーム|
 |Windows NT 6.1;Trident/7.0</br></br>Windows NT 6.1;Win64x64Trident/7.0</br></br>Windows NT 6.1;WOW64Trident/7.0|Windows 7 デスクトップオペレーティングシステム、さまざまなプラットフォーム|
 |Edg/79.0.309.43 | Windows Server 2012 R2 以前の Microsoft Edge (Chromium) |
-|Edg/*| Windows Server 2016 以降用 Microsoft Edge (Chromium)|  
+|Edg/*| Windows Server 2016 以降用 Microsoft Edge (Chromium)|
 |MSIPC を右クリックし| Microsoft Information Protection and Control クライアント|
 |Windows Rights Management クライアント|Windows Rights Management クライアント|
-
 
 ### <a name="additional-links"></a>その他のリンク
 

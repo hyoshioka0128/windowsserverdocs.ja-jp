@@ -8,29 +8,31 @@ ms.date: 03/08/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: d12429b22265495cb8168ce3e5993a5cf3e74a0c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b61f7321dc75613a3450998284536673bd790f2b
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80859975"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87519821"
 ---
 # <a name="changing-the-company-logo-on-the-ad-fs-sign-in-page"></a>AD FS サインインページで会社のロゴを変更する
 
-#### <a name="change-company-logo"></a>会社ロゴの変更  
-[\-のサインイン] ページに表示される会社のロゴを変更するには、次の PowerShell Windows PowerShell コマンドレットと構文を使用します。  
+## <a name="change-company-logo"></a>会社ロゴの変更
+
+サインインページに表示される会社のロゴを変更するには \- 、次の Powershell Windows powershell コマンドレットと構文を使用します。
 
 ![ロゴの変更](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom2.png)
-  
-> [!IMPORTANT]  
-> ロゴの寸法は 260x35 ピクセル (96 DPI) に設定して、ファイル サイズは 10 KB 以下にすることをお勧めします。  
-  
-    
-    Set-AdfsWebTheme -TargetName default -Logo @{path="c:\Contoso\logo.png"}  
 
-  
-> [!NOTE]  
-> `TargetName` パラメーターは必須です。 AD FS と共にリリースされる既定のテーマには、 *default*という名前が付けられます。  
+> [!IMPORTANT]
+> ロゴの寸法は 260x35 ピクセル (96 DPI) に設定して、ファイル サイズは 10 KB 以下にすることをお勧めします。
 
-## <a name="additional-references"></a>その他の参照情報 
-[AD FS ユーザーサインインのカスタマイズ](AD-FS-user-sign-in-customization.md)  
+```powershell
+Set-AdfsWebTheme -TargetName default -Logo @{path="c:\Contoso\logo.png"}
+```
+
+> [!NOTE]
+> `TargetName` パラメーターは必須です。 AD FS と共にリリースされる既定のテーマには、 *default*という名前が付けられます。
+
+## <a name="additional-references"></a>その他のリファレンス
+
+[AD FS ユーザーサインインのカスタマイズ](AD-FS-user-sign-in-customization.md)

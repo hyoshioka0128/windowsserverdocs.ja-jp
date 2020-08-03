@@ -8,22 +8,22 @@ ms.date: 11/14/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 7fc5b8b2f29c0eee2f11f2b581e6ccdd56635236
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 431b751bceb9ccbb1a494da074b1dfe23f58f601
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86954294"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87519591"
 ---
 # <a name="demoting-domain-controllers-and-domains"></a>ドメインコントローラーとドメインの降格
 
->適用先:Windows Server
+> 適用先:Windows Server
 
 このトピックでは、サーバー マネージャーまたは Windows PowerShell を使用して AD DC を削除する方法について説明します。
-  
+
 ## <a name="ad-ds-removal-workflow"></a>AD DS 削除のワークフロー
 
-![AD DS 削除ワークフローのグラフ](media/Demoting-Domain-Controllers-and-Domains--Level-200-/adds_demotedomainforest.png)  
+![AD DS 削除ワークフローのグラフ](media/Demoting-Domain-Controllers-and-Domains--Level-200-/adds_demotedomainforest.png)
 
 > [!CAUTION]
 > ドメイン コントローラーに昇格した後に Dism.exe または Windows PowerShell DISM モジュールを使用して AD DS 役割を削除することはサポートされておらず、サーバーの正常な起動を妨げます。
@@ -32,105 +32,104 @@ ms.locfileid: "86954294"
 
 ## <a name="demotion-and-role-removal-with-powershell"></a>PowerShell を使用した降格とロールの削除
 
-|||  
-|-|-|  
-|**ADDSDeployment と ServerManager コマンドレット**|引数 (**太字**の引数は必須です。 *斜体*の引数は、Windows PowerShell または AD DS 構成ウィザードを使用して指定できます。)|  
-|Uninstall-addsdomaincontroller|-SkipPreChecks<p>*-LocalAdministratorPassword*<p>-Confirm<p>***-Credential***<p>-DemoteOperationMasterRole<p>*-DNSDelegationRemovalCredential*<p>-Force<p>*-ForceRemoval*<p>*-IgnoreLastDCInDomainMismatch*<p>*-IgnoreLastDNSServerForZone*<p>*-LastDomainControllerInDomain*<p>-Norebootoncompletion<p>*-RemoveApplicationPartitions*<p>*-RemoveDNSDelegation*<p>-RetainDCMetadata|  
-|Uninstall-WindowsFeature/Remove-WindowsFeature|***-Name***<p>***-IncludeManagementTools***<p>*-再起動*<p>-Remove<p>-Force<p>-ComputerName<p>-Credential<p>-LogPath<p>-Vhd|  
-  
-> [!NOTE]  
-> **-credential** 引数は、Enterprise Admins グループ (ドメイン内の最後の DC を降格) または Domain Admins グループ (レプリカ DC を降格) のメンバーとしてログインしていない場合のみ必須です。**-includemanagementtools** 引数は、すべての AD DC 管理ユーティリティーを削除する場合のみ必須です。  
-  
-## <a name="demote"></a>降格  
-  
+| ADDSDeployment と ServerManager コマンドレット | 引数 (**太字**の引数は必須です。 *斜体*の引数は、Windows PowerShell または AD DS 構成ウィザードを使用して指定できます。) |
+|--|--|
+| Uninstall-addsdomaincontroller | -SkipPreChecks<p>*-LocalAdministratorPassword*<p>-Confirm<p>***-Credential***<p>-DemoteOperationMasterRole<p>*-DNSDelegationRemovalCredential*<p>-Force<p>*-ForceRemoval*<p>*-IgnoreLastDCInDomainMismatch*<p>*-IgnoreLastDNSServerForZone*<p>*-LastDomainControllerInDomain*<p>-Norebootoncompletion<p>*-RemoveApplicationPartitions*<p>*-RemoveDNSDelegation*<p>-RetainDCMetadata |
+| Uninstall-WindowsFeature/Remove-WindowsFeature | ***-Name***<p>***-IncludeManagementTools***<p>*-再起動*<p>-Remove<p>-Force<p>-ComputerName<p>-Credential<p>-LogPath<p>-Vhd |
+
+> [!NOTE]
+> **-credential** 引数は、Enterprise Admins グループ (ドメイン内の最後の DC を降格) または Domain Admins グループ (レプリカ DC を降格) のメンバーとしてログインしていない場合のみ必須です。**-includemanagementtools** 引数は、すべての AD DC 管理ユーティリティーを削除する場合のみ必須です。
+
+## <a name="demote"></a>降格
+
 ### <a name="remove-roles-and-features"></a>役割と機能の削除
 
-サーバー マネージャーには、Active Directory ドメイン サービスの役割を削除するためのインターフェイスが 2 つあります。  
-  
-* メイン ダッシュボードの、[**管理**] メニューの [**役割と機能の削除**] を使用します。  
+サーバー マネージャーには、Active Directory ドメイン サービスの役割を削除するためのインターフェイスが 2 つあります。
 
-   ![サーバーマネージャー-役割と機能を削除する](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_Manage.png)  
+* メイン ダッシュボードの、[**管理**] メニューの [**役割と機能の削除**] を使用します。
 
-* ナビゲーション ウィンドウの [**AD DS**] または [**すべてのサーバー**] をクリックします。 [**役割と機能**] のセクションにスクロール ダウンします。 [**役割と機能**] リスト内で [**Active Directory ドメイン サービス**] を右クリックし、[**役割または機能の削除**] をクリックします。 このインターフェイスでは、[**サーバーの選択**] ページは使用しません。  
+   ![サーバーマネージャー-役割と機能を削除する](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_Manage.png)
 
-   ![サーバーマネージャー-すべてのサーバー-役割と機能を削除する](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_ServerSelection.png)  
+* ナビゲーション ウィンドウの [**AD DS**] または [**すべてのサーバー**] をクリックします。 [**役割と機能**] のセクションにスクロール ダウンします。 [**役割と機能**] リスト内で [**Active Directory ドメイン サービス**] を右クリックし、[**役割または機能の削除**] をクリックします。 このインターフェイスでは、[**サーバーの選択**] ページは使用しません。
+
+   ![サーバーマネージャー-すべてのサーバー-役割と機能を削除する](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_ServerSelection.png)
 
 ServerManager コマンドレット、および**add-windowsfeature**を使用すると、ドメインコントローラーを降格するまで AD DS の役割を削除できなく**なります。**
-  
+
 ### <a name="server-selection"></a>サーバーの選択
 
-![役割と機能の削除ウィザード移行先サーバーの選択](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_ServerSelection2.png)  
+![役割と機能の削除ウィザード移行先サーバーの選択](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_ServerSelection2.png)
 
-[**サーバーの選択**] ダイアログでは、プールに追加済みのサーバーから 1 つ、アクセス可能なものに限り選択することができます。 サーバー マネージャーを実行するローカル サーバーは常に、自動的にアクセス可能となります。  
+[**サーバーの選択**] ダイアログでは、プールに追加済みのサーバーから 1 つ、アクセス可能なものに限り選択することができます。 サーバー マネージャーを実行するローカル サーバーは常に、自動的にアクセス可能となります。
 
 ### <a name="server-roles-and-features"></a>サーバーの役割と機能
 
-![役割と機能の削除ウィザード-削除する役割を選択します。](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_ServerRoles.png)  
+![役割と機能の削除ウィザード-削除する役割を選択します。](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_ServerRoles.png)
 
-ドメイン コントローラーを降格するため、[**Active Directory ドメイン サービス**] チェック ボックスをオフにします。サーバーが現在ドメイン コントローラーである場合は、この操作では AD DS 役割は削除されません。代わりに [**検証結果**] ダイアログが開き、ここで降格を実行できます。 それ以外の場合は、他の役割機能と同様にバイナリを削除します。  
+ドメイン コントローラーを降格するため、[**Active Directory ドメイン サービス**] チェック ボックスをオフにします。サーバーが現在ドメイン コントローラーである場合は、この操作では AD DS 役割は削除されません。代わりに [**検証結果**] ダイアログが開き、ここで降格を実行できます。 それ以外の場合は、他の役割機能と同様にバイナリを削除します。
 
-* この後すぐにまたドメイン コントローラーを昇格する予定がある場合は、DNS、GPMC、RSAT ツールなどの、ほかの AD DS 関連の役割や機能を削除しないでください。 ほかの役割や機能を削除すると、役割を再インストールする際、サーバー マネージャーがそれらの機能を再インストールするため、再昇格に時間がかかります。  
-* ドメイン コントローラーを再昇格する予定がない場合は、不要な AD DS 役割と機能を削除しても問題ありません。 削除するには、それらの役割と機能のチェック ボックスをオフにします。  
+* この後すぐにまたドメイン コントローラーを昇格する予定がある場合は、DNS、GPMC、RSAT ツールなどの、ほかの AD DS 関連の役割や機能を削除しないでください。 ほかの役割や機能を削除すると、役割を再インストールする際、サーバー マネージャーがそれらの機能を再インストールするため、再昇格に時間がかかります。
+* ドメイン コントローラーを再昇格する予定がない場合は、不要な AD DS 役割と機能を削除しても問題ありません。 削除するには、それらの役割と機能のチェック ボックスをオフにします。
 
-   AD DS 関連の役割と機能には以下が含まれます  
-  
-   * Windows PowerShell 機能の Active Directory モジュール  
-   * AD DS および AD LDS ツールの機能  
-   * Active Directory 管理センター機能  
-   * AD DS スナップインとコマンドライン ツール機能  
-   * DNS サーバー  
-   * グループ ポリシー管理コンソール  
-  
-ADDSDeployment と ServerManager Windows PowerShell で同じことを実行するコマンドレットは以下のとおりです  
-  
+   AD DS 関連の役割と機能には以下が含まれます
+
+   * Windows PowerShell 機能の Active Directory モジュール
+   * AD DS および AD LDS ツールの機能
+   * Active Directory 管理センター機能
+   * AD DS スナップインとコマンドライン ツール機能
+   * DNS サーバー
+   * グループ ポリシー管理コンソール
+
+ADDSDeployment と ServerManager Windows PowerShell で同じことを実行するコマンドレットは以下のとおりです
+
 ```
-Uninstall-addsdomaincontroller  
-Uninstall-windowsfeature  
+Uninstall-addsdomaincontroller
+Uninstall-windowsfeature
 ```
 
-![役割と機能の削除ウィザード-確認ダイアログ](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_RemoveFeatures.png)  
+![役割と機能の削除ウィザード-確認ダイアログ](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_RemoveFeatures.png)
 
-![役割と機能の削除ウィザード-検証](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_Demote.png)  
+![役割と機能の削除ウィザード-検証](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_Demote.png)
 
 ### <a name="credentials"></a>資格情報
 
-![Active Directory Domain Services 構成ウィザード-資格情報の選択](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_Credentials.png)  
+![Active Directory Domain Services 構成ウィザード-資格情報の選択](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_Credentials.png)
 
-降格オプションは **[資格情報]** ページで構成します。 次の一覧から降格の実行に必要な資格情報を指定します。  
+降格オプションは **[資格情報]** ページで構成します。 次の一覧から降格の実行に必要な資格情報を指定します。
 
-* 追加ドメイン コントローラーの降格には、Domain Admin 資格情報が必要です。 [**このドメインコントローラーの削除を強制**する] を選択すると、Active Directory からドメインコントローラーオブジェクトのメタデータが削除されることなく、ドメインコントローラーが降格されます。  
+* 追加ドメイン コントローラーの降格には、Domain Admin 資格情報が必要です。 [**このドメインコントローラーの削除を強制**する] を選択すると、Active Directory からドメインコントローラーオブジェクトのメタデータが削除されることなく、ドメインコントローラーが降格されます。
 
-   > [!WARNING]  
-   > ドメイン コントローラーが他のドメイン コントローラーに接続できず、そのネットワークの問題を解決するために*他に有効な方法が*ない場合にのみ、このオプションを選択してください。 強制的に降格を行うと、フォレスト内の他のドメイン コントローラーの Active Directory に孤立したメタデータが残ります。 さらに、そのドメイン コントローラーで複製されていないすべての変更 (パスワードや新しいユーザー アカウントなど) が失われます。 孤立したメタデータは、AD DS、Exchange、SQL、他のソフトウェアに関する Microsoft カスタマー サポートへの問い合わせの根本原因として大きな割合を占めます。  
+   > [!WARNING]
+   > ドメイン コントローラーが他のドメイン コントローラーに接続できず、そのネットワークの問題を解決するために*他に有効な方法が*ない場合にのみ、このオプションを選択してください。 強制的に降格を行うと、フォレスト内の他のドメイン コントローラーの Active Directory に孤立したメタデータが残ります。 さらに、そのドメイン コントローラーで複製されていないすべての変更 (パスワードや新しいユーザー アカウントなど) が失われます。 孤立したメタデータは、AD DS、Exchange、SQL、他のソフトウェアに関する Microsoft カスタマー サポートへの問い合わせの根本原因として大きな割合を占めます。
    >
-   > ドメイン コントローラーを強制的に降格する場合は、手動でメタデータのクリーンアップをすぐに実行する*必要があります*。 手順については、「 [Clean Up Server Metadata (サーバー メタデータのクリーンアップ)](ad-ds-metadata-cleanup.md)」をご覧ください。  
+   > ドメイン コントローラーを強制的に降格する場合は、手動でメタデータのクリーンアップをすぐに実行する*必要があります*。 手順については、「 [Clean Up Server Metadata (サーバー メタデータのクリーンアップ)](ad-ds-metadata-cleanup.md)」をご覧ください。
 
-   ![Active Directory Domain Services 構成ウィザード-資格情報の強制削除](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_ForceDemote.png)  
-  
-* ドメインの最後のドメイン コントローラーを降格する場合は、ドメイン自体が削除されるので (フォレストの最後のドメインの場合は、フォレストも削除されます)、Enterprise Admins グループのメンバーシップが必要です。 現在のドメイン コントローラーがドメインにある最後のドメイン コントローラーである場合は、サーバー マネージャーからそのことが通知されます。 ドメイン コントローラーがドメインの最後のドメイン コントローラーであることを確認するには、**[ドメイン内の最後のドメイン コントローラー]** チェックボックスをオンにします。  
+   ![Active Directory Domain Services 構成ウィザード-資格情報の強制削除](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_ForceDemote.png)
 
-ADDSDeployment Windows PowerShell で同じことを実行する引数は以下のとおりです。  
+* ドメインの最後のドメイン コントローラーを降格する場合は、ドメイン自体が削除されるので (フォレストの最後のドメインの場合は、フォレストも削除されます)、Enterprise Admins グループのメンバーシップが必要です。 現在のドメイン コントローラーがドメインにある最後のドメイン コントローラーである場合は、サーバー マネージャーからそのことが通知されます。 ドメイン コントローラーがドメインの最後のドメイン コントローラーであることを確認するには、**[ドメイン内の最後のドメイン コントローラー]** チェックボックスをオンにします。
+
+ADDSDeployment Windows PowerShell で同じことを実行する引数は以下のとおりです。
 
 ```
--credential <pscredential>  
--forceremoval <{ $true | false }>  
--lastdomaincontrollerindomain <{ $true | false }>  
+-credential <pscredential>
+-forceremoval <{ $true | false }>
+-lastdomaincontrollerindomain <{ $true | false }>
 ```
 
 ### <a name="warnings"></a>警告
 
-![Active Directory Domain Services 構成ウィザード-資格情報 FSMO の役割への影響](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_Warnings.png)  
+![Active Directory Domain Services 構成ウィザード-資格情報 FSMO の役割への影響](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_Warnings.png)
 
 [**警告**] ページでは、このドメイン コントローラーを削除することで生じる可能性のある事態についてお知らせします。 続行するには、[**削除の続行**] を選択します。
 
-> [!WARNING]  
+> [!WARNING]
 > [**資格情報**] ページで [**このドメイン コントローラーの削除を強制**] を選択した場合、[**警告**] ページに、このドメイン コントローラーでホストされるすべてのフレキシブル シングル マスター操作役割が表示されます。 このサーバーを降格した後、*すぐに*別のドメイン コントローラーから役割を強制移動*しなければなりません*。 FSMO の役割の強制移動の詳細については、「 [Seize the Operations Master Role (操作マスター役割の強制移動)](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc816779(v=ws.10))」をご覧ください。
 
 このページと同じことを実行する ADDSDeployment Windows PowerShell 引数はありません。
 
 ### <a name="removal-options"></a>削除オプション
 
-![Active Directory Domain Services 構成ウィザード-[資格情報]、[DNS およびアプリケーションパーティションの削除]](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_ReviewOptions.png)  
+![Active Directory Domain Services 構成ウィザード-[資格情報]、[DNS およびアプリケーションパーティションの削除]](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_ReviewOptions.png)
 
 [**資格情報**] ページで以前選択した [**ドメイン内の最後のドメイン コントローラー**] に応じて、[**削除オプション**] ページが表示されます。 このページで、追加の削除オプションを構成することができます。 [**ゾーンの最後の DNS サーバーを無視**し、**アプリケーションパーティションを削除**し、 **DNS 委任を削除**する] を選択して [**次へ**] ボタンを有効にします。
 
@@ -138,18 +137,18 @@ ADDSDeployment Windows PowerShell で同じことを実行する引数は以下�
 
 [**変更**] をクリックして、別の DNS 管理者資格情報を指定します。 [**パーティションの表示**] をクリックすると、降格中にウィザードが削除する追加のパーティションを見ることができます。 既定では、追加のパーティションはドメイン DNS とフォレスト DNS ゾーンのみです。 ほかのすべてのパーティションは、Windows のパーティションではありません。
 
-ADDSDeployment コマンドレットで同じことを実行する引数は以下のとおりです  
+ADDSDeployment コマンドレットで同じことを実行する引数は以下のとおりです
 
 ```
--ignorelastdnsserverforzone <{ $true | false }>  
--removeapplicationpartitions <{ $true | false }>  
--removednsdelegation <{ $true | false }>  
--dnsdelegationremovalcredential <pscredential>  
+-ignorelastdnsserverforzone <{ $true | false }>
+-removeapplicationpartitions <{ $true | false }>
+-removednsdelegation <{ $true | false }>
+-dnsdelegationremovalcredential <pscredential>
 ```
 
 ### <a name="new-administrator-password"></a>新しい Administrator パスワード
 
-![Active Directory Domain Services 構成ウィザード-資格情報の新しい管理者パスワード](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_NewAdminPwd.png)  
+![Active Directory Domain Services 構成ウィザード-資格情報の新しい管理者パスワード](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_NewAdminPwd.png)
 
 降格が完了し、コンピューターがドメインメンバーサーバーまたはワークグループコンピューターになると、[**新しい管理者パスワード**] ページでビルトインローカルコンピューターの管理者アカウントのパスワードを入力する必要があります。
 
@@ -196,13 +195,13 @@ Uninstall-ADDSDomainController
 
 ![PowerShell Uninstall-addsdomaincontroller の例](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_PSUninstall.png)
 
-ADDSDeployment Windows PowerShell を使用している場合は、再開のプロンプトが、この操作をキャンセルする最後のチャンスです。 このプロンプトをオーバーライドするには、**-force** または **confirm:$false** 引数を使用します。  
+ADDSDeployment Windows PowerShell を使用している場合は、再開のプロンプトが、この操作をキャンセルする最後のチャンスです。 このプロンプトをオーバーライドするには、**-force** または **confirm:$false** 引数を使用します。
 
 ### <a name="demotion"></a>降格
 
-![Active Directory Domain Services 構成ウィザード-降格が進行中です](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_Demotion.png)  
+![Active Directory Domain Services 構成ウィザード-降格が進行中です](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_Demotion.png)
 
-[**降格**] ページが表示されると、ドメイン コントローラーの構成が開始され、停止やキャンセルは実行できません。 操作の詳しい内容がこのページに表示され、以下のログに書き込まれます  
+[**降格**] ページが表示されると、ドメイン コントローラーの構成が開始され、停止やキャンセルは実行できません。 操作の詳しい内容がこのページに表示され、以下のログに書き込まれます
 
 * %systemroot%\debug\dcpromo.log
 * %systemroot%\debug\dcpromoui.log

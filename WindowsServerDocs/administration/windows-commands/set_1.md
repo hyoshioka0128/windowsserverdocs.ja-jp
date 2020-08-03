@@ -9,18 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 002ac4624d9ed501fab7816a83c2a0c5fc6a2bce
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 34c8abf01e7dbde7a8f175ac8691e5731a04be45
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85922829"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87519661"
 ---
 # <a name="set"></a>set
 
 cmd.exe 環境変数を表示、設定、または削除します。 パラメーターを指定せずに使用する場合 **設定** 現在の環境変数の設定が表示されます。
-
-
 
 ## <a name="syntax"></a>構文
 
@@ -37,12 +35,12 @@ set /a <Variable>=<Expression>
 |\<Variable>|設定または変更するには、環境変数を指定します。|
 |\<String>|指定された環境変数に関連付ける文字列を指定します。|
 |/p|値を設定 *変数* の入力をユーザーが入力行にします。|
-|\<PromptString>|任意。 入力をユーザーに入力を求めるメッセージを指定します。 このパラメーターを併用、 **/p** コマンド ライン オプションです。|
+|\<PromptString>|省略可能。 入力をユーザーに入力を求めるメッセージを指定します。 このパラメーターを併用、 **/p** コマンド ライン オプションです。|
 |/a|セット *文字列* に評価される数値式です。|
 |\<Expression>|数値式を指定します。 使用できる有効な演算子の「解説」を参照してください *式*します。|
 |/?|コマンド プロンプトにヘルプを表示します。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>Remarks
 
 - 使用して **設定** コマンド拡張機能を有効になっています。
 
@@ -99,7 +97,7 @@ set /a <Variable>=<Expression>
 
   **設定** コマンドで他のパラメーターは、回復コンソールから利用できます。
 
-## <a name="examples"></a>例
+## <a name="examples"></a>使用例
 
 TEST という名前の環境変数を設定する ^1 の場合、型。
 ```
@@ -145,6 +143,6 @@ set p
 > [!NOTE]
 > このコマンドでは、既定で有効になっているコマンド拡張機能が必要です。
 
-## <a name="additional-references"></a>その他の参照情報
+## <a name="additional-references"></a>その他のリファレンス
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

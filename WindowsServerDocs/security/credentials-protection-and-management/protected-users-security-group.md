@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: c6883513fdc02f4f4d1b874995780639279cc178
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: cd849486e441c8315daa95db351bcd214b929759
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80857055"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87518008"
 ---
 # <a name="protected-users-security-group"></a>Protected Users セキュリティ グループ
 
-> 適用対象: Windows Server (半期チャネル)、Windows Server 2016
+> 適用先:Windows Server (半期チャネル)、Windows Server 2016
 
 ここでは、IT プロフェッショナル向けに、Active Directory のセキュリティ グループである Protected Users と、そのしくみについて説明します。 このグループは、Windows Server 2012 R2 ドメインコントローラーで導入されました。
 
@@ -27,7 +27,7 @@ ms.locfileid: "80857055"
 このセキュリティグループは、企業内の資格情報の公開を管理する戦略の一環として設計されています。 このグループのメンバーのアカウントには、構成可能ではない保護が自動的に適用されます。 Protected Users グループのメンバーであるということは、既定で制限的であり、予防的にセキュリティで保護されることを示します。 アカウントに関してこのような保護を変更する唯一の方法は、このセキュリティ グループからアカウントを削除することです。
 
 > [!WARNING]
-> サービスとコンピューターのアカウントは、Protected Users グループのメンバーにはなりません。 パスワードまたは証明書は常にホストで使用可能であるため、このグループは完全に保護されていない保護を提供します。 Protected Users グループに追加されたサービスまたはコンピューターのユーザー名またはパスワードが正しく\" ない \"、認証が失敗し、エラーが表示されます。
+> サービスとコンピューターのアカウントは、Protected Users グループのメンバーにはなりません。 パスワードまたは証明書は常にホストで使用可能であるため、このグループは完全に保護されていない保護を提供します。 \" \" Protected Users グループに追加されたサービスまたはコンピューターのユーザー名またはパスワードが間違っているというエラーが表示され、認証が失敗します。
 
 このドメイン関連のグローバルグループは、windows server 2012 R2 を実行しているプライマリドメインコントローラーを持つドメイン内のユーザーに対して、Windows Server 2012 R2 以降を実行 Windows 8.1 しているデバイスとホストコンピューターで、構成可能ではない保護をトリガーします。 これにより、ユーザーがこれらの保護を使用してコンピューターにサインインするときに、資格情報の既定のメモリフットプリントが大幅に削減されます。
 
@@ -47,10 +47,10 @@ Protected Users グループのメンバーにドメイン コントローラー
 
 ### <a name="adding-protected-user-global-security-group-to-down-level-domains"></a>下位ドメインに保護されたユーザーのグローバルセキュリティグループを追加しています
 
-Windows Server 2012 R2 より前のオペレーティングシステムを実行するドメインコントローラーでは、新しい保護されたユーザーセキュリティグループへのメンバーの追加をサポートできます。 これにより、ユーザーは、ドメインをアップグレードする前にデバイスの保護を利用できるようになります。 
+Windows Server 2012 R2 より前のオペレーティングシステムを実行するドメインコントローラーでは、新しい保護されたユーザーセキュリティグループへのメンバーの追加をサポートできます。 これにより、ユーザーは、ドメインをアップグレードする前にデバイスの保護を利用できるようになります。
 
 > [!Note]
-> ドメインコントローラーは、ドメインの保護をサポートしていません。 
+> ドメインコントローラーは、ドメインの保護をサポートしていません。
 
 Protected Users グループを作成するには、Windows Server 2012 R2 を実行するドメインコントローラーに[プライマリドメインコントローラー (PDC) エミュレーターの役割を転送](https://technet.microsoft.com/library/cc816944(v=ws.10).aspx)します。 そのグループのオブジェクトが他のドメイン コントローラーにレプリケートされた後に、以前のバージョンの Windows Server が実行されているドメイン コントローラーで PDC エミュレーターの役割をホストできます。
 
@@ -62,13 +62,13 @@ Protected Users グループを作成するには、Windows Server 2012 R2 を�
 |-------|-----|
 |既知の SID/RID|S-1-5-21-<domain>-525|
 |種類|ドメイン グローバル|
-|既定コンテナー|CN=Users、DC=<domain>、DC=|
-|既定のメンバー|なし|
-|～の既定のメンバー|なし|
+|既定のコンテナー|CN=Users、DC=<domain>、DC=|
+|既定メンバー|None|
+|～の既定のメンバー|None|
 |ADMINSDHOLDER で保護されているか|いいえ|
 |既定のコンテナーから移動することができるか|はい|
 |このグループの管理をサービス管理者以外に委任することができるか|いいえ|
-|既定のユーザー権利|既定のユーザー権利はありません。|
+|既定のユーザー権利|既定のユーザー権利はありません|
 
 ## <a name="how-protected-users-group-works"></a><a name="BKMK_HowItWorks"></a>Protected Users グループのしくみ
 ここでは、次の場合に Protected Users グループがどのように機能するかについて説明します。
@@ -106,9 +106,9 @@ Windows Server 2012 R2 ドメインに対して認証される Protected Users �
 
 - Kerberos TGT の最初の 4 時間の有効期間を延長する。
 
-Protected Users グループのアカウントごとに、TGT の期限切れに対する構成可能ではない設定が指定されます。 通常、ドメイン コントローラーは、ドメイン ポリシー、 **[チケットの最長有効期間]** 、および **[ユーザー チケットを更新できる最長有効期間]** に基づいて TGT の有効期間と更新を設定します。 Protected Users グループの場合、このようなドメイン ポリシーに 600 分が設定されます。
+Protected Users グループのアカウントごとに、TGT の期限切れに対する構成可能ではない設定が指定されます。 通常、ドメイン コントローラーは、ドメイン ポリシー、[**チケットの最長有効期間**]、および [**ユーザー チケットを更新できる最長有効期間**] に基づいて TGT の有効期間と更新を設定します。 Protected Users グループの場合、このようなドメイン ポリシーに 600 分が設定されます。
 
-詳細については、「[保護されるアカウントの構成方法](how-to-configure-protected-accounts.md)」をご覧ください。
+詳細については、「[保護されるアカウントの構成方法](https://docs.microsoft.com/windows-server/identity/ad-ds/manage/how-to-configure-protected-accounts)」をご覧ください。
 
 ## <a name="troubleshooting"></a>トラブルシューティング
 2 つの運用管理ログを使用して、Protected Users に関連するイベントを解決することができます。 これらの新しいログはイベントビューアーにあり、既定で無効になっており、[**アプリケーションとサービス] Logs\Microsoft\Windows\Authentication**にあります。
@@ -122,10 +122,10 @@ Protected Users グループのアカウントごとに、TGT の期限切れに
 |303<p>**ProtectedUserSuccesses-DomainController**|理由:Kerberos ticket-granting-ticket (TGT) は、Protected Users グループのメンバーに対して正常に発行されました。|
 
 
-## <a name="additional-resources"></a>その他のリソース
+## <a name="additional-resources"></a>その他の技術情報
 
 - [資格情報の保護と管理](credentials-protection-and-management.md)
 
 - [認証ポリシーと認証ポリシー サイロ](authentication-policies-and-authentication-policy-silos.md)
 
-- [保護されるアカウントの構成方法](how-to-configure-protected-accounts.md)
+- [保護されるアカウントの構成方法](https://docs.microsoft.com/windows-server/identity/ad-ds/manage/how-to-configure-protected-accounts)

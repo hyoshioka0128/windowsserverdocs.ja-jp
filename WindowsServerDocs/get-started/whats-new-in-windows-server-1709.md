@@ -8,22 +8,21 @@ author: coreyp-at-msft
 ms.author: coreyp
 ms.localizationpriority: medium
 ms.date: 06/03/2019
-ms.openlocfilehash: a2e4b17a0f8f38812366dc2913e6c2ee25d4d137
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: c814098aeb73ca186e0a0db668f477f9cc1f5cf9
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961154"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409572"
 ---
 # <a name="whats-new-in-windows-server-version-1709"></a>Windows Server バージョン 1709 の新機能
 
->適用先:Windows Server (半期チャネル)
+> 適用先:Windows Server (半期チャネル)
 
 <img src=../media/landing-icons/new.png style='float:left; padding:.5em;' alt=Icon showing a newspaper>&nbsp;Windows の最新の機能については、「[Windows Server の新機能](whats-new-in-windows-server.md)」を参照してください。 ここでは、Windows Server バージョン 1709 の新機能および変更された機能について説明します。 ここに記載されている新機能と変更された機能は、このリリースを使う際に影響が最も大きいと思われるものです。 [Windows Server バージョン 1709 に関するブログの記事](https://cloudblogs.microsoft.com/windowsserver/2017/08/24/sneak-peek-1-windows-server-version-1709/)もご覧ください。
 
 > [!IMPORTANT]
 > Windows Server バージョン 1709 は、2019 年 4 月 9 日時点でサポート対象外です。
-
 
 ## <a name="new-cadence-of-releases"></a>新しいリリースのペース
 
@@ -33,21 +32,21 @@ ms.locfileid: "86961154"
 
 リリース チャネルについては、以下の表で説明しています。
 
-|   | 半期チャネル | Long Term Servicing チャネル |
-| ------------- | ------------- | ------------ |
-| リリース サイクル  | 年に 2 回 (春と秋)  | 2 ～ 3 年ごと |
-| サポート スケジュール  | 18 か月間のメインストリームの運用サポート  | 5 年間のメインストリーム サポートと 5 年間の延長サポート |
-| 可用性  | ソフトウェア アシュアランスまたは Azure (クラウドでホストされている場合)  | すべてのチャンネル |
-| 名称に関する規則  | Windows Server バージョン YYMM  | Windows Server YYYY |
+| 説明 | 半期チャネル | Long Term Servicing チャネル |
+| ------------- |--| -- |
+| リリース サイクル | 年に 2 回 (春と秋) | 2 ～ 3 年ごと |
+| サポート スケジュール | 18 か月間のメインストリームの運用サポート | 5 年間のメインストリーム サポートと 5 年間の延長サポート |
+| 可用性 | ソフトウェア アシュアランスまたは Azure (クラウドでホストされている場合) | すべてのチャンネル |
+| 名称に関する規則 | Windows Server バージョン YYMM | Windows Server YYYY |
 
 詳細については、[サービス チャネルの比較](../get-started-19/servicing-channels-19.md)に関するページを参照してください。
 
 ## <a name="application-containers-and-micro-services"></a>アプリケーションのコンテナーとマイクロサービス
 
-- Server Core コンテナー イメージは、リフト アンド シフトのシナリオにさらに最適化されており、既存のコード ベースやアプリケーションを最小限の変更によりコンテナーに移行することができ、サイズも 60% 小さくなります。 
+- Server Core コンテナー イメージは、リフト アンド シフトのシナリオにさらに最適化されており、既存のコード ベースやアプリケーションを最小限の変更によりコンテナーに移行することができ、サイズも 60% 小さくなります。
 - Nano Server コンテナー イメージは、ほぼ 80% 小さくなっています。
     - Windows Server 半期チャネルでは、コンテナー ベース OS イメージとしての Nano Server が 390 MB から 80 MB に縮小されています。
-- Hyper-V の分離による Linux コンテナー 
+- Hyper-V の分離による Linux コンテナー
 
 詳細については、「[Windows Server の次期リリースで Nano Server に加えられる変更](./nano-in-semi-annual-channel.md)」と[開発者向けの Windows Server バージョン 1709 に関するブログの記事](https://cloudblogs.microsoft.com/windowsserver/2017/09/13/sneak-peek-3-windows-server-version-1709-for-developers/)をご覧ください。
 
@@ -58,7 +57,7 @@ Project Honolulu には、PC、Windows サーバー、フェールオーバー �
 
 ## <a name="compute"></a>計算
 
-**Nano コンテナーと Server Core コンテナー**: 何よりもまず、今回のリリースはアプリケーションの革新を推進しています。 Nano Server、つまりホストとしての Nano は推奨されなくなり、Nano コンテナー (コンテナー イメージとして実行される Nano) に置き換えられています。 
+**Nano コンテナーと Server Core コンテナー**: 何よりもまず、今回のリリースはアプリケーションの革新を推進しています。 Nano Server、つまりホストとしての Nano は推奨されなくなり、Nano コンテナー (コンテナー イメージとして実行される Nano) に置き換えられています。
 
 コンテナーの詳細については、[コンテナー ネットワークの概要に関するページ](../networking/sdn/technologies/containers/container-networking-overview.md)をご覧ください。
 
@@ -91,15 +90,15 @@ Project Honolulu には、PC、Windows サーバー、フェールオーバー �
 ## <a name="storage"></a>記憶域
 
 **記憶域レプリカ**: Windows Server 2016 の記憶域レプリカによって追加されたディザスター リカバリーによる保護が拡張され、以下の機能が含まれるようになりました。
-- **テスト フェールオーバー**: 宛先の記憶域をマウントするオプションが、テスト フェールオーバー機能によって可能になりました。 レプリケートされた記憶域のスナップショットを、宛先ノードで、テストやバックアップの目的で、一時的にマウントすることができます。  詳細については、「[記憶域レプリカについてよく寄せられる質問](https://aka.ms/srfaq)」をご覧ください。 
+- **テスト フェールオーバー**: 宛先の記憶域をマウントするオプションが、テスト フェールオーバー機能によって可能になりました。 レプリケートされた記憶域のスナップショットを、宛先ノードで、テストやバックアップの目的で、一時的にマウントすることができます。  詳細については、「[記憶域レプリカについてよく寄せられる質問](https://aka.ms/srfaq)」をご覧ください。
 - **Project Honolulu のサポート**: サーバー間のレプリケーションのグラフィカル管理が、Project Honolulu でサポートされるようになりました。 これによって、一般的な障害対策のワークロードを管理するために PowerShell を使用する必要がなくなります。
 
-**SMB**: 
-- **SMB1 とゲスト認証の削除**: Windows Server バージョン 1709 では、SMB1 クライアントとサーバーが既定でインストールされなくなりました。 さらに、SMB2 以降のゲストとして認証する機能は、既定で無効になっています。 詳細については、[Windows 10 バージョン 1709 および Windows Server 1709 のバージョンで、SMBv1 が 既定でインストールされない問題に関するページ](https://support.microsoft.com/help/4034314/smbv1-is-not-installed-by-default-in-windows-10-rs3-and-windows-server)をご覧ください。 
+**SMB**:
+- **SMB1 とゲスト認証の削除**: Windows Server バージョン 1709 では、SMB1 クライアントとサーバーが既定でインストールされなくなりました。 さらに、SMB2 以降のゲストとして認証する機能は、既定で無効になっています。 詳細については、[Windows 10 バージョン 1709 および Windows Server 1709 のバージョンで、SMBv1 が 既定でインストールされない問題に関するページ](https://support.microsoft.com/help/4034314/smbv1-is-not-installed-by-default-in-windows-10-rs3-and-windows-server)をご覧ください。
 
 - **SMB2/SMB3 のセキュリティと互換性**: レガシ アプリケーションについて SMB2+ の oplock を無効にする機能や、クライアントからの接続ごとに署名や暗号化を要求する機能など、セキュリティやアプリケーションの互換性のための新しいオプションが追加されました。 詳細については、SMBShare PowerShell モジュールのヘルプを確認してください。
 
-**データ重複除去**: 
+**データ重複除去**:
 - **データ重複除去で ReFS をサポート**: ReFS による最新ファイル システムの長所とデータ重複除去のいずれかを選択する必要がなくなりました。ReFS を有効にしているときにいつでもデータ重複除去を有効にできるようになりました。 ReFS によって記憶域の効率が 95% 以上向上します。
 - **重複除去されたボリュームへの最適化された送受信のための DataPort API**: 開発者は、データ重複除去によって効率的にデータを保存する方法に関する知識を活用して、ボリューム、サーバー、クラスター間で効率的にデータを移動することができます。
 
@@ -150,7 +149,7 @@ Project Honolulu には、PC、Windows サーバー、フェールオーバー �
 **ソフトウェア定義ネットワーク**
 
 - **仮想ネットワークの暗号化**は、"暗号化有効" とマークされているサブネット内で相互に通信する仮想マシン間で、仮想ネットワーク トラフィックを暗号化できるようにする新しい機能です。 この機能は、仮想サブネットのデータグラム トランスポート層セキュリティ (DTLS) を利用して、パケットを暗号化します。  DTLS は、物理ネットワークへのアクセスを持つユーザーによる盗聴、改ざん、偽造に対する保護を提供します。
- 
+
 **Windows 10 VPN**
 
 - **ログオン前のインフラストラクチャ トンネル**。 既定では、Windows 10 VPN は、ユーザーが自分のコンピューターまたはデバイスにログオンしていない場合、インフラストラクチャ トンネルを自動的に作成しません。 ログオン前のインフラストラクチャ トンネルを自動的に作成するように Windows 10 VPN を構成するには、VPN プロファイルのデバイス トンネル (ログオン前) 機能を使用します。

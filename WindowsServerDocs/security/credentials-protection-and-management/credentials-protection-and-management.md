@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 9eb93e46adb0e8a7c956bd8db2795fe06bc04724
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 649c070fe477a51ca764bd1ad83ed013feb1b60b
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472949"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87518018"
 ---
 # <a name="credentials-protection-and-management"></a>資格情報の保護と管理
 
@@ -56,7 +56,7 @@ Protected Users グループのメンバーは、以下の認証方法によっ�
 
 新しい Active Directory オブジェクトクラスである認証ポリシーを使用すると、Windows Server 2012 R2 ドメインの機能レベルを持つドメイン内のアカウントクラスに認証構成を適用できます。 認証ポリシーは、Kerberos AS または TGS の交換時に適用されます。 次の Active Directory アカウント クラスがあります。
 
--   ユーザー
+-   User
 
 -   Computer
 
@@ -66,7 +66,7 @@ Protected Users グループのメンバーは、以下の認証方法によっ�
 
 詳細については、「[認証ポリシーと認証ポリシー サイロ](authentication-policies-and-authentication-policy-silos.md)」を参照してください。
 
-保護されたアカウントの構成方法の詳細については、「[保護されるアカウントの構成方法](how-to-configure-protected-accounts.md)」を参照してください。
+保護されたアカウントの構成方法の詳細については、「[保護されるアカウントの構成方法](https://docs.microsoft.com/windows-server/identity/ad-ds/manage/how-to-configure-protected-accounts)」を参照してください。
 
 ## <a name="additional-references"></a>その他のリファレンス
 LSA と LSASS の詳細については、「 [Windows のログオンと認証の技術概要](https://technet.microsoft.com/library/dn169029(v=ws.10).aspx)」を参照してください。

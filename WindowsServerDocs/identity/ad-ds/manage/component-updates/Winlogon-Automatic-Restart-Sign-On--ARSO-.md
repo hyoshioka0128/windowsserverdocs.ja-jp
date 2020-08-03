@@ -10,18 +10,18 @@ ms.date: 08/20/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 3ad6658c504cc90eedef2c1cb6688c6f12233b3c
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 68232d0b8ab6f4b7330b746657fc63e30a3c2e74
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959874"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87518830"
 ---
 # <a name="winlogon-automatic-restart-sign-on-arso"></a>Winlogon 自動再起動サインオン (ARSO)
 
 Windows Update 中に、更新を完了するために必要なユーザー固有のプロセスがあります。 これらのプロセスでは、ユーザーがデバイスにログインする必要があります。 更新が開始された後の最初のログインでは、ユーザーは、デバイスの使用を開始する前に、これらのユーザー固有のプロセスが完了するまで待つ必要があります。
 
-## <a name="how-does-it-work"></a>それはどのように機能しますか?
+## <a name="how-does-it-work"></a>それはどのように機能するのでしょうか。
 
 Windows Update が自動再起動を開始すると、現在ログインしているユーザーの派生した資格情報を抽出してディスクに保存し、ユーザーの自動ログオンを構成します。 TCB 特権を持つシステムとして実行されている Windows Update でこれを行う RPC 呼び出しを開始します。
 
@@ -31,10 +31,9 @@ Windows Update が自動再起動を開始すると、現在ログインして�
 
 ARSO は、管理されていないデバイスと管理対象のデバイスを別々に扱います。 管理されていないデバイスの場合は、デバイスの暗号化が使用されますが、ユーザーがそれを取得するためには必要ありません。 管理対象デバイスについては、ARSO 構成には TPM 2.0、セキュアブート、BitLocker が必要です。 IT 管理者は、グループポリシーを使用してこの要件をオーバーライドできます。 管理対象デバイスの場合は、現在 Azure Active Directory に参加しているデバイスのみを使用できます。
 
-|   | Windows Update| shutdown-g-t 0  | ユーザーが開始した再起動 | SHUTDOWN_ARSO/EWX_ARSO フラグを持つ Api |
-| --- | :---: | :---: | :---: | :---: |
-| マネージド デバイス | :heavy_check_mark:  | :heavy_check_mark: |   | :heavy_check_mark: |
-| 管理されていないデバイス | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| Windows Update | shutdown-g-t 0 | ユーザーが開始した再起動 | SHUTDOWN_ARSO/EWX_ARSO フラグを持つ Api |
+|--|--|--|--|
+| 管理されているデバイス-はい<p>管理されていないデバイス-はい | 管理されているデバイス-はい<p>管理されていないデバイス-はい | 管理されているデバイス-いいえ<p>管理されていないデバイス-はい | 管理されているデバイス-はい<p>管理されていないデバイス-はい |
 
 > [!NOTE]
 > Windows Update が再起動されると、最後の対話ユーザーが自動的にログインし、セッションがロックされます。 これにより、Windows Update の再起動にかかわらず、ユーザーのロック画面アプリを引き続き実行できます。
@@ -159,17 +158,17 @@ WinLogon が自動的にロックしたときに WinLogon の状態のトレー�
 
 ### <a name="credentials-stored"></a>格納される資格情報
 
-|   | パスワードハッシュ | 資格情報キー | チケット保証チケット | プライマリ更新トークン |
-| --- | :---: | :---: | :---: | :---: |
-| ローカル アカウント | :heavy_check_mark: | :heavy_check_mark: |   |   |
-| MSA アカウント | :heavy_check_mark: | :heavy_check_mark: |   |   |
-| Azure AD の参加アカウント | :heavy_check_mark: | :heavy_check_mark: | : heavy_check_mark: (ハイブリッドの場合) | :heavy_check_mark: |
-| ドメインに参加しているアカウント | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | : heavy_check_mark: (ハイブリッドの場合) |
+| パスワードハッシュ | 資格情報キー | チケット保証チケット | プライマリ更新トークン |
+|--|--|--|--|
+| ローカルアカウント-はい | ローカルアカウント-はい | ローカルアカウント-いいえ | ローカルアカウント-いいえ |
+| MSA アカウント-はい | MSA アカウント-はい | MSA アカウント-いいえ | MSA アカウント-いいえ |
+| Azure AD の参加アカウント-はい | Azure AD の参加アカウント-はい | Azure AD の参加アカウント-はい (ハイブリッドの場合) | Azure AD の参加アカウント-はい |
+| ドメインに参加しているアカウント-はい | ドメインに参加しているアカウント-はい | ドメインに参加しているアカウント-はい | ドメインに参加しているアカウント-はい (ハイブリッドの場合) |
 
 ### <a name="credential-guard-interaction"></a>Credential Guard の相互作用
 
 デバイスで Credential Guard が有効になっている場合、ユーザーの派生シークレットは、現在のブートセッションに固有のキーを使用して暗号化されます。 そのため、Credential Guard が有効になっているデバイスでは、現在、ARSO はサポートされていません。
 
-## <a name="additional-resources"></a>その他のリソース
+## <a name="additional-resources"></a>その他の技術情報
 
 自動ログオンは、いくつかのリリースの Windows に存在した機能です。 これは、windows [http:/technet. microsoft .com/sysinternals/bb963905](/sysinternals/downloads/autologon)の自動ログオンなどのツールを含む、windows のドキュメント化された機能です。 デバイスの 1 人のユーザーの資格情報を入力しなくても自動的にサインインできます。 資格情報が構成され、暗号化された LSA シークレットとしてレジストリに格納します。 特に、メンテナンス期間がこの期間中に一般がある場合はベッドの時間とウェイク アップのアカウントのロックダウンが発生する、多くの子の例では問題にできます。

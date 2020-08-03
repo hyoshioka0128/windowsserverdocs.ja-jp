@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: d5268a5d95dd99bade89015863ea3eadf1b7913a
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 9cbf10e9ebce5bbe0865f28001d0c505b42c9742
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475509"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87517997"
 ---
 # <a name="group-policy-settings-used-in-windows-authentication"></a>Windows 認証で使用されるグループ ポリシー設定
 
@@ -25,7 +25,7 @@ IT プロフェッショナル向けのこのリファレンストピックで�
 Windows オペレーティングシステムで認証を管理するには、ユーザー、コンピューター、およびサービスアカウントをグループに追加してから、それらのグループに認証ポリシーを適用します。 これらのポリシーは、ローカルセキュリティポリシーとして定義され、管理用テンプレート (グループポリシー設定とも呼ばれます) として定義されます。 両方のセットは、グループポリシーを使用して、組織全体で構成および配布できます。
 
 > [!NOTE]
-> Windows Server 2012 R2 で導入された機能を使用すると、保護されたアカウントを使用して、対象となるサービスまたはアプリケーション (一般に認証サイロと呼ばれます) の認証ポリシーを構成できます。 Active Directory でこれを行う方法については、「[保護されたアカウントの構成方法](how-to-configure-protected-accounts.md)」を参照してください。
+> Windows Server 2012 R2 で導入された機能を使用すると、保護されたアカウントを使用して、対象となるサービスまたはアプリケーション (一般に認証サイロと呼ばれます) の認証ポリシーを構成できます。 Active Directory でこれを行う方法については、「[保護されたアカウントの構成方法](https://docs.microsoft.com/windows-server/identity/ad-ds/manage/how-to-configure-protected-accounts)」を参照してください。
 
 たとえば、組織内の機能に基づいて、次のポリシーをグループに適用することができます。
 
@@ -41,7 +41,7 @@ Windows オペレーティングシステムで認証を管理するには、ユ
 
 |ポリシーグループ|場所|説明|
 |--------|------|--------|
-|**パスワードポリシー**|Local Computer ポリシー \ の \Windows \ システムポリシー|パスワードポリシーは、パスワードの特性と動作に影響します。 パスワードポリシーは、ドメインアカウントまたはローカルユーザーアカウントに使用されます。 これらは、パスワードの設定 (適用や有効期間など) を決定します。<p>特定の設定の詳細については、「[パスワードポリシー](https://technet.microsoft.com/itpro/windows/keep-secure/password-policy)」を参照してください。|
+|**パスワード ポリシー**|Local Computer ポリシー \ の \Windows \ システムポリシー|パスワードポリシーは、パスワードの特性と動作に影響します。 パスワードポリシーは、ドメインアカウントまたはローカルユーザーアカウントに使用されます。 これらは、パスワードの設定 (適用や有効期間など) を決定します。<p>特定の設定の詳細については、「[パスワードポリシー](https://technet.microsoft.com/itpro/windows/keep-secure/password-policy)」を参照してください。|
 |**アカウントロックアウトのポリシー**|Local Computer ポリシー \ の \Windows \ システムポリシー|アカウントロックアウトのポリシーオプションでは、ログオンに失敗した回数を設定した後、アカウントを無効にします。 これらのオプションを使用すると、パスワードを中断する試行を検出してブロックするのに役立ちます。<p>アカウントロックアウトのポリシーオプションの詳細については、「[アカウントロックアウトポリシー](https://technet.microsoft.com/itpro/windows/keep-secure/account-lockout-policy)」を参照してください。|
 |**Kerberos ポリシー**|Local Computer ポリシー \ の \Windows \ システムポリシー|Kerberos 関連の設定には、チケットの有効期間と適用規則が含まれます。 Kerberos 認証プロトコルはローカルアカウントの認証には使用されないため、kerberos ポリシーはローカルアカウントデータベースには適用されません。 したがって、Kerberos ポリシー設定を構成できるのは、既定のドメイングループポリシーオブジェクト (GPO) を使用する方法のみです。この場合、ドメインログオンに影響します。<p>ドメインコントローラーの Kerberos ポリシーオプションの詳細については、「 [Kerberos ポリシー](https://technet.microsoft.com/itpro/windows/keep-secure/kerberos-policy)」を参照してください。|
 |**監査ポリシー**|Local Computer ポリシー \ \Windows \] 権利 Policies\Audit Policy|監査ポリシーを使用すると、ファイルやフォルダーなどのオブジェクトへのアクセスを制御および理解したり、ユーザーアカウントやグループアカウント、ユーザーのログオンとログオフを管理したりすることができます。 監査ポリシーでは、監査するイベントのカテゴリを指定したり、セキュリティログのサイズと動作を設定したり、アクセスを監視するオブジェクトと監視するアクセスの種類を決定したりできます。<p>|

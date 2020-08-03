@@ -8,16 +8,16 @@ ms.topic: article
 ms.assetid: f9c313ac-bb86-4e48-b9b9-de5004393e06
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 86ce83142cafe8ebe61aff2fb193e9b646172651
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 50ac17bafb09eddc6bb02df1d4decf3636f4db17
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80317884"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87518298"
 ---
 # <a name="use-dns-policy-for-application-load-balancing"></a>アプリケーションの負荷分散に DNS ポリシーを使用する
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016
+>適用先:Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックでは、アプリケーションの負荷分散を実行するように DNS ポリシーを構成する方法について説明します。
 
@@ -48,13 +48,13 @@ Contoso ギフトサービスの主要市場である北米では、Web サイ�
 
 ### <a name="how-application-load-balancing-works"></a>アプリケーションの負荷分散のしくみ
 
-このシナリオ例を使用して、アプリケーションの負荷分散に dns ポリシーを使用して dns サーバーを構成した後、DNS サーバーは、シアトルの Web サーバーアドレス、ダラス Web サーバーのアドレスの25%、およびの25% の時間について、50% の時間を返します。シカゴ Web サーバーのアドレス。
+このシナリオ例を使用して、アプリケーションの負荷分散の dns ポリシーを使用して DNS サーバーを構成した後、DNS サーバーは、シアトルの Web サーバーアドレス、ダラス Web サーバーのアドレスでは25%、シカゴの Web サーバーアドレスでは25% の時間のうち、50% の時間を返します。
 
 これにより、DNS サーバーが受信する4つのクエリごとに、シアトルの2つの応答と、ダラスとシカゴ用の2つの応答が返されます。
 
 DNS ポリシーを使用した負荷分散で考えられる1つの問題は、dns クライアントおよびリゾルバー/LDNS による DNS レコードのキャッシュです。これは、クライアントまたはリゾルバーがクエリを DNS サーバーに送信しないため、負荷分散に干渉する可能性があります。
 
-この動作の影響を軽減するには、負荷分散の対象となる DNS レコードのライブ \(TTL\) 値を\-して、時間を短く\-します。
+\- \- \( \) 負荷分散する必要がある DNS レコードに対して、[有効期限-有効期間の TTL 値を使用することによって、この動作の影響を軽減することができます。
 
 ### <a name="how-to-configure-application-load-balancing"></a>アプリケーションの負荷分散を構成する方法
 
@@ -70,49 +70,49 @@ DNS ポリシーを使用した負荷分散で考えられる1つの問題は、
 >既定では、ゾーンのスコープは、DNS ゾーンに存在します。 このゾーンのスコープでは、ゾーンと同じ名前と、従来の DNS の機能がこのスコープで動作します。
 
 次の Windows PowerShell コマンドを使用すると、ゾーンのスコープを作成します。
-    
-    Add-DnsServerZoneScope -ZoneName "contosogiftservices.com" -Name "SeattleZoneScope"
-    
-    Add-DnsServerZoneScope -ZoneName "contosogiftservices.com" -Name "DallasZoneScope"
-    
-    Add-DnsServerZoneScope -ZoneName "contosogiftservices.com" -Name "ChicagoZoneScope"
+
+```powershell
+Add-DnsServerZoneScope -ZoneName "contosogiftservices.com" -Name "SeattleZoneScope"
+Add-DnsServerZoneScope -ZoneName "contosogiftservices.com" -Name "DallasZoneScope"
+Add-DnsServerZoneScope -ZoneName "contosogiftservices.com" -Name "ChicagoZoneScope"
+```
 
 詳細については、次を参照してください [追加 DnsServerZoneScope。](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)
 
-#### <a name="add-records-to-the-zone-scopes"></a><a name="bkmk_records"></a>ゾーンのスコープにレコードを追加する
+#### <a name="add-records-to-the-zone-scopes"></a><a name="bkmk_records"></a>レコードをゾーンのスコープに追加します。
 
 次に、web サーバーホストを表すレコードをゾーンのスコープに追加する必要があります。
 
 **SeattleZoneScope**では、シアトルのデータセンターにある IP address 192.0.0.1 を使用して、レコード www.contosogiftservices.com を追加できます。
 
-**ChicagoZoneScope**では、シカゴのデータセンターに IP アドレス182.0.0.1 の www.contosogiftservices.com\) \(同じレコードを追加できます。
+**ChicagoZoneScope**では、 \( シカゴの \) データセンターに IP アドレス182.0.0.1 を持つ同じレコード www.contosogiftservices.com を追加できます。
 
-同様に、 **DallasZoneScope**では、シカゴのデータセンターに IP アドレス162.0.0.1 の www.contosogiftservices.com\) \(レコードを追加することができます。
+同様に、 **DallasZoneScope**では、シカゴの \( \) データセンターに IP アドレス162.0.0.1 のレコード www.contosogiftservices.com を追加できます。
 
 次の Windows PowerShell コマンドを使用して、レコードをゾーンのスコープに追加することができます。
-    
-    Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -IPv4Address "192.0.0.1" -ZoneScope "SeattleZoneScope
-    
-    Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -IPv4Address "182.0.0.1" -ZoneScope "ChicagoZoneScope"
-    
-    Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -IPv4Address "162.0.0.1" -ZoneScope "DallasZoneScope"
-    
+
+```powershell
+Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -IPv4Address "192.0.0.1" -ZoneScope "SeattleZoneScope"
+Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -IPv4Address "182.0.0.1" -ZoneScope "ChicagoZoneScope"
+Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -IPv4Address "162.0.0.1" -ZoneScope "DallasZoneScope"
+```
 
 詳細については、次を参照してください。 [追加 DnsServerResourceRecord](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps)します。
 
-#### <a name="create-the-dns-policies"></a><a name="bkmk_policies"></a>DNS ポリシーを作成する
+#### <a name="create-the-dns-policies"></a><a name="bkmk_policies"></a>DNS のポリシーを作成します。
 
-パーティション (ゾーンのスコープ) を作成し、レコードを追加した後、contosogiftservices.com に対するクエリの50% が Web の IP アドレスを使用してに応答するように、これらのスコープに対して受信クエリを分散する DNS ポリシーを作成する必要があります。シアトルのデータセンターのサーバーと残りの部分は、シカゴとダラスのデータセンター間で均等に分散されています。
+パーティション (ゾーンのスコープ) を作成し、レコードを追加したら、これらのスコープに対して受信クエリを分散する DNS ポリシーを作成する必要があります。これにより、contosogiftservices.com に対するクエリの50% がシアトルのデータセンターの Web サーバーの IP アドレスで応答するようになります
 
 次の Windows PowerShell コマンドを使用すると、これら3つのデータセンター間でアプリケーショントラフィックを分散する DNS ポリシーを作成できます。
 
 >[!NOTE]
->次の例のコマンドでは、式–ゾーン範囲ゾーン "SeattleZoneScope, 2;ChicagoZoneScope, 1;DallasZoneScope, 1 "は、パラメーターの組み合わせ \<ゾーン範囲ゾーン\>、\<weight\>を含む配列を使用して DNS サーバーを構成します。
-    
-    Add-DnsServerQueryResolutionPolicy -Name "AmericaPolicy" -Action ALLOW -ZoneScope "SeattleZoneScope,2;ChicagoZoneScope,1;DallasZoneScope,1" -ZoneName "contosogiftservices.com"
-    
+>次の例のコマンドでは、式–ゾーン範囲ゾーン "SeattleZoneScope, 2;ChicagoZoneScope, 1;DallasZoneScope, 1 "は、パラメーターの組み合わせを含む配列を使用して DNS サーバーを構成し `<ZoneScope>` `<weight>` ます。
 
-詳細については、次を参照してください。 [追加 DnsServerQueryResolutionPolicy](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)します。  
+```powershell
+Add-DnsServerQueryResolutionPolicy -Name "AmericaPolicy" -Action ALLOW -ZoneScope "SeattleZoneScope,2;ChicagoZoneScope,1;DallasZoneScope,1" -ZoneName "contosogiftservices.com"
+```
+
+詳細については、次を参照してください。 [追加 DnsServerQueryResolutionPolicy](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)します。
 
 これで、3つの異なるデータセンター内の Web サーバー間でのアプリケーションの負荷分散を実現する DNS ポリシーが作成されました。
 

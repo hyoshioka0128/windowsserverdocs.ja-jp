@@ -8,16 +8,16 @@ ms.topic: article
 ms.assetid: b6e679c6-4398-496c-88bc-115099f3a819
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: d4e005e65a3ff645ed91f488820435aff5173390
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: b66ae0ef1bf319b991efc01c062ec156bf277c31
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80317890"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87518397"
 ---
 # <a name="use-dns-policy-for-application-load-balancing-with-geo-location-awareness"></a>地理的な場所を認識するアプリケーションの負荷分散に DNS ポリシーを使用する
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016
+>適用先:Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックでは、geo ロケーションを認識するアプリケーションの負荷を分散するように DNS ポリシーを構成する方法について説明します。
 
@@ -32,7 +32,7 @@ ms.locfileid: "80317890"
 
 北米と同様に、会社はヨーロッパのデータセンターでホストされている web サーバーを持つようになりました。
 
-Contoso ギフトサービス DNS 管理者は、米国の DNS ポリシー実装と同様の方法で欧州データセンターのアプリケーション負荷分散を構成する必要があります。アプリケーショントラフィックは、にある Web サーバー間で分散されます。ダブリン、アイルランド、アムステルダム、Holland など。
+Contoso ギフトサービス DNS 管理者は、米国での DNS ポリシーの実装と同様の方法で欧州データセンターのアプリケーション負荷分散を構成し、ダブリン、アイルランド、アムステルダム、Holland、その他の場所に配置されている Web サーバー間でアプリケーショントラフィックを分散します。
 
 また、DNS 管理者は、世界中の他の場所からのすべてのクエリを、すべてのデータセンター間で均等に分散させる必要があります。
 
@@ -45,7 +45,7 @@ Contoso ギフトサービス DNS 管理者は、米国の DNS ポリシー実�
 >[!IMPORTANT]
 >以下のセクションには、多くのパラメーターの値の例を含む Windows PowerShell コマンドの例が含まれています。 これらのコマンドで値の例は、これらのコマンドを実行する前に、展開に対応する値を置き換えることを確認します。
 
-### <a name="create-the-dns-client-subnets"></a><a name="bkmk_clientsubnets"></a>DNS クライアントサブネットを作成する
+### <a name="create-the-dns-client-subnets"></a><a name="bkmk_clientsubnets"></a>DNS クライアントのサブネットを作成します。
 
 まず、北米とヨーロッパのリージョンのサブネットまたは IP アドレス空間を特定する必要があります。
 
@@ -53,15 +53,16 @@ Contoso ギフトサービス DNS 管理者は、米国の DNS ポリシー実�
 
 DNS クライアントのサブネットは、クエリが DNS サーバーに送信元 IPv4 または IPv6 サブネットの論理グループです。
 
-次の Windows PowerShell コマンドを使用すると、DNS クライアントのサブネットを作成します。 
+次の Windows PowerShell コマンドを使用すると、DNS クライアントのサブネットを作成します。
 
-    
-    Add-DnsServerClientSubnet -Name "AmericaSubnet" -IPv4Subnet 192.0.0.0/24,182.0.0.0/24
-    Add-DnsServerClientSubnet -Name "EuropeSubnet" -IPv4Subnet 141.1.0.0/24,151.1.0.0/24
-    
+```powershell
+Add-DnsServerClientSubnet -Name "AmericaSubnet" -IPv4Subnet 192.0.0.0/24,182.0.0.0/24
+Add-DnsServerClientSubnet -Name "EuropeSubnet" -IPv4Subnet 141.1.0.0/24,151.1.0.0/24
+```
+
 詳細については、次を参照してください。 [追加 DnsServerClientSubnet](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverclientsubnet?view=win10-ps)します。
 
-### <a name="create-the-zone-scopes"></a><a name="bkmk_zscopes2"></a>ゾーンのスコープを作成する
+### <a name="create-the-zone-scopes"></a><a name="bkmk_zscopes2"></a>ゾーンのスコープを作成します。
 
 クライアントサブネットが配置されたら、ゾーンの contosogiftservices.com をデータセンターごとに異なるゾーンスコープに分割する必要があります。
 
@@ -72,33 +73,33 @@ DNS クライアントのサブネットは、クエリが DNS サーバーに�
 
 アプリケーションの負荷分散に関する前のシナリオでは、北米のデータセンターに対して3つのゾーンのスコープを構成する方法を示します。
 
-次のコマンドを使用して、ダブリンとアムステルダムのデータセンター用にそれぞれ1つずつ、さらに2つのゾーンスコープを作成できます。 
+次のコマンドを使用して、ダブリンとアムステルダムのデータセンター用にそれぞれ1つずつ、さらに2つのゾーンスコープを作成できます。
 
 これらのゾーンスコープは、同じゾーン内の既存の3つの北米ゾーンスコープに変更を加えることなく追加できます。 また、これらのゾーンスコープを作成した後で、DNS サーバーを再起動する必要はありません。
 
 次の Windows PowerShell コマンドを使用すると、ゾーンのスコープを作成します。
 
-    
-    Add-DnsServerZoneScope -ZoneName "contosogiftservices.com" -Name "DublinZoneScope"
-    Add-DnsServerZoneScope -ZoneName "contosogiftservices.com" -Name "AmsterdamZoneScope"
-    
+```powershell
+Add-DnsServerZoneScope -ZoneName "contosogiftservices.com" -Name "DublinZoneScope"
+Add-DnsServerZoneScope -ZoneName "contosogiftservices.com" -Name "AmsterdamZoneScope"
+```
 
 詳細については、次を参照してください [追加 DnsServerZoneScope。](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)
 
-### <a name="add-records-to-the-zone-scopes"></a><a name="bkmk_records2"></a>ゾーンのスコープにレコードを追加する
+### <a name="add-records-to-the-zone-scopes"></a><a name="bkmk_records2"></a>レコードをゾーンのスコープに追加します。
 
 次に、web サーバーホストを表すレコードをゾーンのスコープに追加する必要があります。
 
 米国のデータセンターのレコードは、前のシナリオで追加されました。 次の Windows PowerShell コマンドを使用して、ヨーロッパのデータセンターのゾーンのスコープにレコードを追加できます。
- 
-    
-    Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -IPv4Address "151.1.0.1" -ZoneScope "DublinZoneScope”
-    Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -IPv4Address "141.1.0.1" -ZoneScope "AmsterdamZoneScope"
-    
+
+```powershell
+Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -IPv4Address "151.1.0.1" -ZoneScope "DublinZoneScope”
+Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -IPv4Address "141.1.0.1" -ZoneScope "AmsterdamZoneScope"
+```
 
 詳細については、次を参照してください。 [追加 DnsServerResourceRecord](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps)します。
 
-### <a name="create-the-dns-policies"></a><a name="bkmk_policies2"></a>DNS ポリシーを作成する
+### <a name="create-the-dns-policies"></a><a name="bkmk_policies2"></a>DNS のポリシーを作成します。
 
 パーティション (ゾーンスコープ) を作成し、レコードを追加したら、これらのスコープに対して受信クエリを分散する DNS ポリシーを作成する必要があります。
 
@@ -110,14 +111,11 @@ DNS クライアントのサブネットは、クエリが DNS サーバーに�
 
 これらの DNS ポリシーを実装するには、次の Windows PowerShell コマンドを使用します。
 
-    
-    Add-DnsServerQueryResolutionPolicy -Name "AmericaLBPolicy" -Action ALLOW -ClientSubnet "eq,AmericaSubnet" -ZoneScope "SeattleZoneScope,2;ChicagoZoneScope,1; TexasZoneScope,1" -ZoneName "contosogiftservices.com" –ProcessingOrder 1
-    
-    Add-DnsServerQueryResolutionPolicy -Name "EuropeLBPolicy" -Action ALLOW -ClientSubnet "eq,EuropeSubnet" -ZoneScope "DublinZoneScope,1;AmsterdamZoneScope,1" -ZoneName "contosogiftservices.com" -ProcessingOrder 2
-    
-    Add-DnsServerQueryResolutionPolicy -Name "WorldWidePolicy" -Action ALLOW -FQDN "eq,*.contoso.com" -ZoneScope "SeattleZoneScope,1;ChicagoZoneScope,1; TexasZoneScope,1;DublinZoneScope,1;AmsterdamZoneScope,1" -ZoneName "contosogiftservices.com" -ProcessingOrder 3
-    
-    
+```powershell
+Add-DnsServerQueryResolutionPolicy -Name "AmericaLBPolicy" -Action ALLOW -ClientSubnet "eq,AmericaSubnet" -ZoneScope "SeattleZoneScope,2;ChicagoZoneScope,1; TexasZoneScope,1" -ZoneName "contosogiftservices.com" –ProcessingOrder 1
+Add-DnsServerQueryResolutionPolicy -Name "EuropeLBPolicy" -Action ALLOW -ClientSubnet "eq,EuropeSubnet" -ZoneScope "DublinZoneScope,1;AmsterdamZoneScope,1" -ZoneName "contosogiftservices.com" -ProcessingOrder 2
+Add-DnsServerQueryResolutionPolicy -Name "WorldWidePolicy" -Action ALLOW -FQDN "eq,*.contoso.com" -ZoneScope "SeattleZoneScope,1;ChicagoZoneScope,1; TexasZoneScope,1;DublinZoneScope,1;AmsterdamZoneScope,1" -ZoneName "contosogiftservices.com" -ProcessingOrder 3
+```
 
 詳細については、次を参照してください。 [追加 DnsServerQueryResolutionPolicy](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)します。
 

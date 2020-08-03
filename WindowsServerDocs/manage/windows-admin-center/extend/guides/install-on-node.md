@@ -1,6 +1,6 @@
 ---
-title: ツール拡張機能の開発
-description: ツール拡張機能の開発 Windows 管理センター SDK (Project ホノルル)
+title: 管理対象ノードに拡張機能のペイロードをインストールする
+description: 管理対象ノードに拡張機能のペイロードをインストールする手順
 ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
@@ -8,31 +8,32 @@ ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 3a93a1105862ffbf4fcbd1d23b15d9bcaa6010dc
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 463280ba1d0a3fac84a12c0483946b01c0fefb75
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950500"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87518560"
 ---
 # <a name="install-extension-payload-on-a-managed-node"></a>管理対象ノードに拡張機能のペイロードをインストールする
 
->適用対象: Windows Admin Center、Windows Admin Center Preview
+>適用先:Windows Admin Center、Windows Admin Center Preview
 
-## <a name="setup"></a>[セットアップ]
+## <a name="setup"></a>セットアップ
+
 > [!NOTE]
 > このガイドに従うには、build 1.2.1904.02001 以降が必要です。 ビルド番号を確認するには、Windows 管理センターを開き、右上にある疑問符をクリックします。
 
 Windows 管理センター用の[ツール拡張機能](../develop-tool.md)をまだ作成していない場合は、作成します。 完了したら、拡張機能を作成するときに使用される値をメモしておきます。
 
-| Value | 説明 | 例 |
+| 値 | 説明 | 例 |
 | ----- | ----------- | ------- |
 | ```{!Company Name}``` | 会社名 (スペースを含む) | ```Contoso``` |
 | ```{!Tool Name}``` | (スペースを含む) ツール名 | ```InstallOnNode``` |
 
-ツール拡張フォルダー内で、```Node``` フォルダー (```{!Tool Name}\Node```) を作成します。 この API を使用すると、このフォルダーに格納されているすべてのものが、管理対象ノードにコピーされます。 ユースケースに必要なすべてのファイルを追加します。 
+ツール拡張フォルダー内にフォルダーを作成 ```Node``` ```{!Tool Name}\Node``` します ()。 この API を使用すると、このフォルダーに格納されているすべてのものが、管理対象ノードにコピーされます。 ユースケースに必要なすべてのファイルを追加します。
 
-また、```{!Tool Name}\Node\installNode.ps1``` スクリプトも作成します。 このスクリプトは、すべてのファイルが ```{!Tool Name}\Node``` フォルダーから管理対象ノードにコピーされると、管理ノードで実行されます。 ユースケースのロジックを追加します。 ```{!Tool Name}\Node\installNode.ps1``` ファイルの例を次に示します。
+また、スクリプトも作成 ```{!Tool Name}\Node\installNode.ps1``` します。 このスクリプトは、すべてのファイルが ```{!Tool Name}\Node``` フォルダーから管理対象ノードにコピーされると、管理ノードで実行されます。 ユースケースのロジックを追加します。 ファイルの例を ```{!Tool Name}\Node\installNode.ps1``` 次に示します。
 
 ``` ps1
 # Add logic for installing payload on managed node
@@ -40,12 +41,12 @@ echo 'Success'
 ```
 
 > [!NOTE]
-> ```{!Tool Name}\Node\installNode.ps1``` には、API が検索する特定の名前があります。 このファイルの名前を変更すると、エラーが発生します。
+> ```{!Tool Name}\Node\installNode.ps1```には、API が検索する特定の名前があります。 このファイルの名前を変更すると、エラーが発生します。
 
 
 ## <a name="integration-with-ui"></a>UI との統合
 
-```\src\app\default.component.ts``` を次のように更新します。
+```\src\app\default.component.ts```次のように更新します。
 
 ``` ts
 import { Component } from '@angular/core';
@@ -105,13 +106,13 @@ this.post('contoso.install-on-node', '1.0.0',
       );
 ```
 
-また、```\src\app\default.component.html``` を次のものに更新します。
+また ```\src\app\default.component.html``` 、次のものに更新します。
 ``` html
 <button (click)="installOnNode()">Click to install</button>
 <sme-loading-wheel *ngIf="loading" size="large"></sme-loading-wheel>
 <p *ngIf="response">{{response}}</p>
 ```
-最後に ```\src\app\default.module.ts```:
+最後 ```\src\app\default.module.ts``` は次のようになります。
 ``` ts
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
@@ -136,11 +137,11 @@ export class DefaultModule { }
 
 最後の手順では、追加したファイルを使用して NuGet パッケージをビルドし、そのパッケージを Windows 管理センターにインストールします。
 
-以前に拡張機能パッケージを作成していない場合は、「[発行拡張機能](../publish-extensions.md)ガイド」に従ってください。 
+以前に拡張機能パッケージを作成していない場合は、「[発行拡張機能](../publish-extensions.md)ガイド」に従ってください。
 > [!IMPORTANT]
-> この拡張機能の nuspec ファイルでは、```<id>``` 値がプロジェクトの ```manifest.json``` の名前と一致し、```<version>``` が ```\src\app\default.component.ts```に追加されたものと一致することが重要です。 また、```<files>```の下にエントリを追加します。 
-> 
-> ```<file src="Node\**\*.*" target="Node" />```」をご覧ください。
+> この拡張機能の nuspec ファイルでは、 ```<id>``` 値がプロジェクトの名前と一致し ```manifest.json``` 、 ```<version>``` に追加されたものと一致することが重要です ```\src\app\default.component.ts``` 。 また、の下にエントリを追加し ```<files>``` ます。
+>
+> ```<file src="Node\**\*.*" target="Node" />```.
 
 ``` xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -155,7 +156,7 @@ export class DefaultModule { }
     <licenseUrl>http://YourLicenseLink</licenseUrl>
     <iconUrl>http://YourLogoLink</iconUrl>
     <description>Install on node extension by Contoso</description>
-    <copyright>(c) Contoso. All rights reserved.</copyright> 
+    <copyright>(c) Contoso. All rights reserved.</copyright>
   </metadata>
     <files>
     <file src="bundle\**\*.*" target="ux" />
@@ -165,4 +166,4 @@ export class DefaultModule { }
 </package>
 ```
 
-このパッケージを作成したら、そのフィードへのパスを追加します。 Windows 管理センターで、[設定] [> 拡張機能 > フィード] に移動し、パッケージが存在する場所へのパスを追加します。 拡張機能のインストールが完了すると、[```install```] ボタンをクリックすると、API が呼び出されます。  
+このパッケージを作成したら、そのフィードへのパスを追加します。 Windows 管理センターで、[設定] [> 拡張機能 > フィード] に移動し、パッケージが存在する場所へのパスを追加します。 拡張機能のインストールが完了すると、ボタンをクリックすると、 ```install``` API が呼び出されます。

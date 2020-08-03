@@ -1,6 +1,6 @@
 ---
 ms.assetid: 70c99703-ff0d-4278-9629-b8493b43c833
-title: 保護されるアカウントの構成方法
+title: 保護されたアカウントの構成方法に関するガイダンス
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
@@ -8,14 +8,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 555d309ca5de27b241eff00a0fed6dd253a34208
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: e16e08517285bc80c6913d96781fdbb84c3bce14
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961264"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87518989"
 ---
-# <a name="how-to-configure-protected-accounts"></a>保護されるアカウントの構成方法
+# <a name="guidance-about-how-to-configure-protected-accounts"></a>保護されたアカウントの構成方法に関するガイダンス
 
 >適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 

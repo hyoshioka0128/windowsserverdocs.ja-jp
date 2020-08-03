@@ -1,6 +1,6 @@
 ---
 ms.assetid: e34622ff-b2d0-4f81-8d00-dacd5d6c215e
-title: Windows タイム サービスのテクニカル リファレンス
+title: Windows タイム サービス
 author: dcuomo
 ms.author: dacuo
 manager: dougkim
@@ -8,17 +8,16 @@ ms.date: 05/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: 52826d8425b5ac5e078a26b64fccd189298db12f
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 8428a86e6c0a437149e84689099d845a72035253
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182108"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87517797"
 ---
 # <a name="windows-time-service"></a>Windows タイム サービス
 
 >適用先:Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows 10 以降
-
 
 **このガイドの内容**
 

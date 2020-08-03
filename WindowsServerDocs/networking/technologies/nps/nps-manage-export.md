@@ -8,18 +8,18 @@ ms.topic: article
 ms.assetid: d268dc57-78f8-47ba-9a7a-a607e8b9225c
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 8c1aef88aec45ee63614b889658daceca3779e91
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: bbc4982057c306e6f4b94c3c4bf8e8a2761db12a
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80316001"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87517807"
 ---
 # <a name="export-an-nps-configuration-for-import-on-another-server"></a>別のサーバーにインポートするために NPS 構成をエクスポートする
 
-適用対象: Windows Server 2016
+適用先:Windows Server 2016
 
-Nps 構成全体 (RADIUS クライアントとサーバー、ネットワークポリシー、接続要求ポリシー、レジストリ、ログ構成など) を、別の nps にインポートするために1つの NPS からエクスポートできます。 
+Nps 構成全体 (RADIUS クライアントとサーバー、ネットワークポリシー、接続要求ポリシー、レジストリ、ログ構成など) を、別の nps にインポートするために1つの NPS からエクスポートできます。
 
 次のツールのいずれかを使用して、NPS の構成をエクスポートします。
 
@@ -38,9 +38,11 @@ NPS の構成はエクスポートされた XML ファイルで暗号化され�
 
 Windows Server 2012 以降のバージョンのオペレーティングシステムでは、Windows PowerShell を使用して NPS の構成をエクスポートできます。
 
-NPS 構成をエクスポートするためのコマンド構文は次のとおりです。 
+NPS 構成をエクスポートするためのコマンド構文は次のとおりです。
 
-    Export-NpsConfiguration -Path <filename>
+```powershell
+Export-NpsConfiguration -Path <filename>
+```
 
 次の表に、Windows PowerShell の**Export-NpsConfiguration**コマンドレットのパラメーターの一覧を示します。 太字のパラメーターが必要です。
 
@@ -48,15 +50,17 @@ NPS 構成をエクスポートするためのコマンド構文は次のとお�
 |---------|-----------|
 |Path|NPS 構成をエクスポートする XML ファイルの名前と場所を指定します。|
 
-**管理者の資格情報**
+**管理資格情報**
 
 この手順を完了するには、Administrators グループのメンバーである必要があります。
 
-### <a name="export-example"></a>エクスポートの例 
+### <a name="export-example"></a>エクスポートの例
 
 次の例では、NPS 構成がローカルドライブにある XML ファイルにエクスポートされます。 このコマンドを実行するには、移行元の NPS で管理者として Windows PowerShell を実行し、次のコマンドを入力して、Enter キーを押します。
 
-`Export-NpsConfiguration –Path c:\config.xml` 
+```powershell
+Export-NpsConfiguration –Path c:\config.xml
+```
 
 詳細については、「 [Export-NpsConfiguration](https://technet.microsoft.com/library/jj872749.aspx)」を参照してください。
 
@@ -64,26 +68,30 @@ NPS の構成をエクスポートした後、XML ファイルを移行先サー
 
 移行先サーバーに NPS 構成をインポートするためのコマンド構文は次のとおりです。
 
-    Import-NpsConfiguration [-Path] <String> [ <CommonParameters>]
+```powershell
+Import-NpsConfiguration [-Path] <String> [ <CommonParameters>]
+```
 
 ### <a name="import-example"></a>インポートの例
 
 次のコマンドは、C:\Npsconfig.xml という名前のファイルから NPS に設定をインポートします。 このコマンドを実行するには、移行先 NPS で管理者として Windows PowerShell を実行し、次のコマンドを入力して、Enter キーを押します。
 
-    PS C:\> Import-NpsConfiguration -Path "C:\Npsconfig.xml"
+```powershell
+Import-NpsConfiguration -Path "C:\Npsconfig.xml"
+```
 
 詳細については、「 [Import-NpsConfiguration](https://technet.microsoft.com/library/jj872750.aspx)」を参照してください。
 
 ## <a name="export-and-import-the-nps-configuration-by-using-netsh"></a>Netsh を使用して NPS 構成をエクスポートおよびインポートする
 
-Netsh\) \(ネットワークシェルを使用して、 **netsh nps export**コマンドを使用して nps 構成をエクスポートできます。
+Netsh **nps export**コマンドを使用して、nps 構成をエクスポートするには、ネットワークシェル (netsh) を使用します。
 
-**Netsh nps import**コマンドを実行すると、更新された構成設定を使用して nps が自動的に更新されます。 **Netsh nps import**コマンドを実行するために、セットアップ先のコンピューターで nps を停止する必要はありませんが、構成のインポート中に nps コンソールまたは nps MMC スナップインを開いている場合は、ビューを更新するまでサーバー構成への変更は表示されません。 
+**Netsh nps import**コマンドを実行すると、更新された構成設定を使用して nps が自動的に更新されます。 **Netsh nps import**コマンドを実行するために、セットアップ先のコンピューターで nps を停止する必要はありませんが、構成のインポート中に nps コンソールまたは nps MMC スナップインを開いている場合は、ビューを更新するまでサーバー構成への変更は表示されません。
 
 > [!NOTE]
 > **Netsh nps export**コマンドを使用する場合は、 **[はい]** の値を使用してコマンドパラメーター **exportpsk**を指定する必要があります。 このパラメーターと値は、NPS 構成をエクスポートすること、および RADIUS クライアントとリモート RADIUS サーバーグループのメンバーについて、エクスポートされた XML ファイルに暗号化されていない共有シークレットが含まれていることを理解していることを明示的に示します。
 
-**管理者の資格情報**
+**管理資格情報**
 
 この手順を完了するには、Administrators グループのメンバーである必要があります。
 
@@ -91,15 +99,16 @@ Netsh\) \(ネットワークシェルを使用して、 **netsh nps export**コ�
 
 1. 移行元の NPS で、**コマンドプロンプト**を開き、「 **netsh**」と入力して、enter キーを押します。
 
-2. **Netsh**プロンプトで、「 **nps**」と入力し、enter キーを押します。 
+2. **Netsh**プロンプトで、「 **nps**」と入力し、enter キーを押します。
 
-3. **Netsh nps**プロンプトで、「 **export filename =** "*PATH\FILE.XML*" **exportpsk = YES**」と入力します。ここで、 *path*は nps 構成ファイルを保存するフォルダーの場所、 *file*は保存する xml ファイルの名前です。 [Enter] キーを押します。 
+3. **Netsh nps**プロンプトで、「 **export filename =**"*path\file.xml*" **exportpsk = YES**」と入力します。ここで、 *path*は nps 構成ファイルを保存するフォルダーの場所、 *file*は保存する XML ファイルの名前です。 Enter キーを押します。
 
-これには、レジストリ\) 設定を含む \(構成設定が XML ファイルに格納されます。 相対パスまたは絶対パスを指定することも、UNC\) パス \(汎用名前付け規則を使用することもできます。 Enter キーを押すと、ファイルへのエクスポートが正常に完了したかどうかを示すメッセージが表示されます。
+    これにより、構成設定 (レジストリ設定を含む) が XML ファイルに格納されます。 相対パスまたは絶対パスを指定することも、汎用名前付け規則 (UNC) パスを指定することもできます。 Enter キーを押すと、ファイルへのエクスポートが正常に完了したかどうかを示すメッセージが表示されます。
 
 4. 作成したファイルを移行先 NPS にコピーします。
 
-5. 移行先 NPS のコマンドプロンプトで、「 **netsh nps import filename =** "*path\file.xml*"」と入力し、enter キーを押します。 XML ファイルからのインポートが正常に完了したかどうかを示すメッセージが表示されます。
+5. 移行先 NPS のコマンドプロンプトで、「 **netsh nps import filename =**"*path\file.xml*"」と入力し、enter キーを押します。 XML ファイルからのインポートが正常に完了したかどうかを示すメッセージが表示されます。
 
-Netsh の詳細については、「[ネットワークシェル (netsh)](../netsh/netsh.md)」を参照してください。
+## <a name="additional-references"></a>その他のリファレンス
 
+- [ネットワーク シェル (netsh)](../netsh/netsh.md)

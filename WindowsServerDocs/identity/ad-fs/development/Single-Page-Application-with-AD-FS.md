@@ -8,12 +8,12 @@ ms.date: 06/13/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: active-directory-federation-services
-ms.openlocfilehash: 1bd5d95739bc1c975f5f0c4d7efb8dc6f91e0412
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 934ef170f6cbd5a2bd4031d336907d6b925cff06
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86954404"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87519901"
 ---
 # <a name="build-a-single-page-web-application-using-oauth-and-adaljs-with-ad-fs-2016-or-later"></a>OAuth を使用し、AD FS 2016 以降の ADAL.JS で単一ページ web アプリケーションを構築する
 
@@ -25,11 +25,10 @@ ms.locfileid: "86954404"
 >ここで作成できる例は、学習のみを目的としています。 これらの手順は、モデルの必須要素を公開するために使用できる、最も単純で最小の実装用です。 この例には、エラー処理やその他の関連機能のすべての側面を含めることはできません。
 
 >[!NOTE]
->このチュートリアルは AD FS Server 2016 以降に**のみ**適用されます。 
+>このチュートリアルは AD FS Server 2016 以降に**のみ**適用されます。
 
 ## <a name="overview"></a>概要
 このサンプルでは、バックエンドの WebAPI リソースへのアクセスをセキュリティで保護するために、単一ページアプリケーションクライアントが AD FS に対して認証を行う認証フローを作成します。 全体の認証フローを次に示します。
-
 
 ![AD FS 承認](media/Single-Page-Application-with-AD-FS/authenticationflow.PNG)
 
@@ -54,14 +53,14 @@ ADAL が認証用のトリガーを確認すると、アプリケーションに
 - [AD DS 展開](../../ad-ds/deploy/AD-DS-Deployment.md)
 - [AD FS 展開](../AD-FS-Deployment.md)
 
-
-
 ## <a name="clone-or-download-this-repository"></a>このリポジトリをクローンまたはダウンロードする
 ここでは、Azure AD を AngularJS シングルページアプリに統合するために作成されたサンプルアプリケーションを使用し、AD FS を使用してバックエンドリソースをセキュリティで保護するように変更します。
 
 シェルまたはコマンド ラインから:
 
-    git clone https://github.com/Azure-Samples/active-directory-angularjs-singlepageapp.git
+```
+git clone https://github.com/Azure-Samples/active-directory-angularjs-singlepageapp.git
+```
 
 ## <a name="about-the-code"></a>コードについて
 認証ロジックを含むキーファイルは次のとおりです。
@@ -100,6 +99,7 @@ ADAL JS の構成
 
 **app.js**ファイルを開き、 **adalProvider.init**定義を次のように変更します。
 
+```
     adalProvider.init(
         {
             instance: 'https://fs.contoso.com/', // your STS URL
@@ -109,6 +109,7 @@ ADAL JS の構成
         },
         $httpProvider
     );
+```
 
 |構成|説明|
 |--------|--------|
@@ -119,9 +120,10 @@ ADAL JS の構成
 ## <a name="configure-webapi-to-use-ad-fs"></a>AD FS を使用するように WebAPI を構成する
 サンプルの**Startup.Auth.cs**ファイルを開き、先頭に次のコードを追加します。
 
+```
     using System.IdentityModel.Tokens;
 
-から
+remove:
 
     app.UseWindowsAzureActiveDirectoryBearerAuthentication(
         new WindowsAzureActiveDirectoryBearerAuthenticationOptions
@@ -131,7 +133,7 @@ ADAL JS の構成
         }
     );
 
-およびを追加します。
+and add:
 
     app.UseActiveDirectoryFederationServicesBearerAuthentication(
         new ActiveDirectoryFederationServicesBearerAuthenticationOptions
@@ -144,6 +146,7 @@ ADAL JS の構成
             }
         }
     );
+```
 
 |パラメーター|Description|
 |--------|--------|
@@ -153,6 +156,7 @@ ADAL JS の構成
 
 ## <a name="add-application-configuration-for-ad-fs"></a>AD FS のアプリケーション構成の追加
 Appsettings を次のように変更します。
+
 ```xml
 <appSettings>
     <add key="ida:Audience" value="https://localhost:44326/" />
@@ -181,4 +185,4 @@ Fiddler では、# fragment の URL の一部として返されるトークン�
 ![Fiddler](media/Single-Page-Application-with-AD-FS/singleapp6.PNG)
 
 ## <a name="next-steps"></a>次の手順
-[AD FS の開発](../../ad-fs/AD-FS-Development.md)  
+[AD FS の開発](../../ad-fs/AD-FS-Development.md)

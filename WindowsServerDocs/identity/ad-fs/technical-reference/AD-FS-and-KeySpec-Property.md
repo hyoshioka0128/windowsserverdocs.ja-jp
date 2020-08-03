@@ -8,15 +8,15 @@ ms.prod: windows-server
 ms.assetid: a5307da5-02ff-4c31-80f0-47cb17a87272
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: e3ddc427d84a79d831c61cad8087dbfa1d3fb564
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 36555336b158fdf7cfaa400f66b9deecbff49c1b
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80860245"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87519691"
 ---
 # <a name="ad-fs-and-certificate-keyspec-property-information"></a>AD FS と certificate KeySpec のプロパティ情報
-キー指定 ("KeySpec") は、証明書とキーに関連付けられているプロパティです。 証明書に関連付けられた秘密キーを署名、暗号化、またはその両方に使用できるかどうかを指定します。   
+キー指定 ("KeySpec") は、証明書とキーに関連付けられているプロパティです。 証明書に関連付けられた秘密キーを署名、暗号化、またはその両方に使用できるかどうかを指定します。
 
 KeySpec 値が正しくないと、次のような AD FS と Web アプリケーションプロキシエラーが発生する可能性があります。
 
@@ -26,31 +26,33 @@ KeySpec 値が正しくないと、次のような AD FS と Web アプリケー
 
 イベントログに次のように表示される場合があります。
 
-    Log Name:      AD FS Tracing/Debug
-    Source:        AD FS Tracing
-    Date:          2/12/2015 9:03:08 AM
-    Event ID:      67
-    Task Category: None
-    Level:         Error
-    Keywords:      ADFSProtocol
-    User:          S-1-5-21-3723329422-3858836549-556620232-1580884
-    Computer:      ADFS1.contoso.com
-    Description:
-    Ignore corrupted SSO cookie.
+```
+Log Name:   AD FS Tracing/Debug
+Source: AD FS Tracing
+Date:   2/12/2015 9:03:08 AM
+Event ID:   67
+Task Category: None
+Level:  Error
+Keywords:   ADFSProtocol
+User:   S-1-5-21-3723329422-3858836549-556620232-1580884
+Computer:   ADFS1.contoso.com
+Description:
+Ignore corrupted SSO cookie.
+```
 
 ## <a name="what-causes-the-problem"></a>問題の原因
 KeySpec プロパティは、microsoft CryptoAPI (CAPI) によって生成または取得されたキーを Microsoft レガシ暗号化ストレージプロバイダー (CSP) から使用できるようにする方法を指定します。
 
 KeySpec 値**1**または**AT_KEYEXCHANGE**は、署名と暗号化に使用できます。  値**2**、または**AT_SIGNATURE**は、署名にのみ使用されます。
 
-最も一般的な KeySpec mis 構成では、トークン署名証明書以外の証明書に対して値2を使用します。  
+最も一般的な KeySpec mis 構成では、トークン署名証明書以外の証明書に対して値2を使用します。
 
 Cryptography Next Generation (CNG) プロバイダーを使用してキーが生成された証明書の場合、キー指定の概念はなく、KeySpec 値は常に0になります。
 
-次の「有効な KeySpec 値を確認する方法」を参照してください。 
+次の「有効な KeySpec 値を確認する方法」を参照してください。
 
 ### <a name="example"></a>例
-従来の CSP の例として、Microsoft Enhanced Cryptographic Provider があります。 
+従来の CSP の例として、Microsoft Enhanced Cryptographic Provider があります。
 
 Microsoft RSA CSP キー blob 形式には、 <strong>AT_KEYEXCHANGE * * または * * AT_SIGNATURE</strong>キーの要求を処理するために、それぞれ**CALG_RSA_KEYX**または**CALG_RSA_SIGN**のいずれかのアルゴリズム識別子が含まれています。
 
@@ -71,7 +73,7 @@ CALG_RSA_SIGN: RSA 署名のみのキー |AT_SIGNATURE (または KeySpec = 2)|
 |2|従来の CAPI (CNG) 以外の証明書の場合、キーは署名にのみ使用できます。|推奨されません|
 
 ## <a name="how-to-check-the-keyspec-value-for-your-certificates--keys"></a>証明書/キーの KeySpec 値を確認する方法
-証明書の値を表示するには、 **certutil**コマンドラインツールを使用します。  
+証明書の値を表示するには、 **certutil**コマンドラインツールを使用します。
 
 次に例を示します。 **certutil – v – store my**.  これにより、証明書の情報が画面にダンプされます。
 
@@ -95,7 +97,7 @@ CALG_RSA_SIGN: RSA 署名のみのキー |AT_SIGNATURE (または KeySpec = 2)|
    CNG プロバイダー (ProviderType = 0):
 
    |AD FS 証明書の目的|有効な KeySpec 値|
-   | --- | --- |   
+   | --- | --- |
    |SSL|0|
 
 ## <a name="how-to-change-the-keyspec-for-your-certificate-to-a-supported-value"></a>証明書の keyspec をサポートされている値に変更する方法
@@ -107,7 +109,7 @@ KeySpec 値を変更しても、証明機関によって証明書が再生成ま
 3. AD FS と WAP サーバーごとに次の手順を実行します。
     1. (AD FS/WAP サーバーから) 証明書を削除します。
     2. 管理者特権の PowerShell コマンドプロンプトを開き、次のコマンドレット構文を使用して、各 AD FS および WAP サーバーで PFX ファイルをインポートします。このとき、AT_KEYEXCHANGE の値 (すべての AD FS 証明書の目的で機能します) を指定します。
-        1. C:\>certutil – importpfx certfile .pfx AT_KEYEXCHANGE
+        1. C: \> certutil – importpfx certfile .pfx AT_KEYEXCHANGE
         2. PFX パスワードを入力してください
     3. 上記の手順を完了したら、次の手順を実行します。
         1. 秘密キーのアクセス許可を確認する

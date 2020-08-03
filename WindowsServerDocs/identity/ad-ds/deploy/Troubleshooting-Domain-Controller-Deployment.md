@@ -8,12 +8,12 @@ ms.date: 03/20/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: ee22c55a3c786be4df8f06b2e3c5d33ea620b1e0
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: e3f215abaccbd1f95ee46eca93a573aa1db9e065
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409953"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87519410"
 ---
 # <a name="troubleshooting-domain-controller-deployment"></a>ドメイン コントローラーの展開のトラブルシューティング
 
@@ -29,13 +29,13 @@ ms.locfileid: "87409953"
 
 ドメイン コントローラーの昇格と降格に関する問題のトラブルシューティングでは、組み込みのログが最も重要な情報源となります。 できるだけ詳しい情報を得るため、すべての組み込みのログが既定で有効化され構成されています。
 
-| 段階 | ログ |  |
-|--|--|--|
-| サーバー マネージャーまたは ADDSDeployment Windows PowerShell の操作 | - %systemroot%\debug\dcpromoui.log<p>-%systemroot%\debug\dcpromoui * .log |  |
-| ドメイン コントローラーのインストールと昇格 | -%systemroot%\debug\dcpromo.log<p>-%systemroot%\debug\dcpromo * .log<p>イベント ビューアー \windows ログ \ システム<p>イベント ビューアー \windows ログ \ アプリケーション<p>イベント ビューアー \ アプリケーションとサービス ログ \ ディレクトリ サービス<p>イベント ビューアー \ アプリケーションとサービス ログ \ ファイル レプリケーション サービス<p>イベント ビューアー \ アプリケーションとサービス ログ \dfs レプリケーション |  |
-| フォレストまたはドメインのアップグレード | -%systemroot%\debug\adprep \\ <datetime> \adprep.log<p>-%systemroot%\debug\adprep \\ <datetime> \csv.log<p>-%systemroot%\debug\adprep \\ <datetime> \dspecup.log<p>-%systemroot%\debug\adprep \\ <datetime> \ldif.log * |  |
-| サーバー マネージャー ADDSDeployment Windows PowerShell 展開エンジン | -Event ビューアー \ アプリケーションと services logs\Microsoft\Windows\DirectoryServices-Deployment\Operational |  |
-| Windows サービシング | - %systemroot%\Logs\CBS\\*<p>-% systemroot% \servicing\sessions\sessions.xml<p>- %systemroot%\winsxs\poqexec.log<p>-% systemroot% \winsxs\pending.xml |  |
+| 段階 | ログ |
+|--|--|
+| サーバー マネージャーまたは ADDSDeployment Windows PowerShell の操作 | - %systemroot%\debug\dcpromoui.log<p>-%systemroot%\debug\dcpromoui * .log |
+| ドメイン コントローラーのインストールと昇格 | -%systemroot%\debug\dcpromo.log<p>-%systemroot%\debug\dcpromo * .log<p>イベント ビューアー \windows ログ \ システム<p>イベント ビューアー \windows ログ \ アプリケーション<p>イベント ビューアー \ アプリケーションとサービス ログ \ ディレクトリ サービス<p>イベント ビューアー \ アプリケーションとサービス ログ \ ファイル レプリケーション サービス<p>イベント ビューアー \ アプリケーションとサービス ログ \dfs レプリケーション |
+| フォレストまたはドメインのアップグレード | -%systemroot%\debug\adprep \\ <datetime> \adprep.log<p>-%systemroot%\debug\adprep \\ <datetime> \csv.log<p>-%systemroot%\debug\adprep \\ <datetime> \dspecup.log<p>-%systemroot%\debug\adprep \\ <datetime> \ldif.log * |
+| サーバー マネージャー ADDSDeployment Windows PowerShell 展開エンジン | -Event ビューアー \ アプリケーションと services logs\Microsoft\Windows\DirectoryServices-Deployment\Operational |
+| Windows サービシング | - %systemroot%\Logs\CBS\\*<p>-% systemroot% \servicing\sessions\sessions.xml<p>- %systemroot%\winsxs\poqexec.log<p>-% systemroot% \winsxs\pending.xml |
 
 ### <a name="tools-and-commands-for-troubleshooting-domain-controller-configuration"></a>ドメイン コントローラー構成のトラブルシューティングを行うためのツールとコマンド
 
@@ -112,7 +112,7 @@ ms.locfileid: "87409953"
 
 ### <a name="promotion-and-demotion-success-codes"></a>昇格と降格の成功コード
 
-| エラー コード | 説明 | 注意 |
+| エラー コード | 説明 | Note |
 |--|--|--|
 | 1 | 終了、成功 | 自動再起動フラグが削除されたことを示しているだけですので、再起動を実行する必要があります |
 | 2 | 終了、成功、再起動が必要 |  |
@@ -217,10 +217,10 @@ ms.locfileid: "87409953"
 
 Windows Server 2012 開発プロセス中に発生する一般的な問題を次に示します。 これらはすべて "設計上" の問題で、最初の段階で回避するための有効な回避策または適切な手段があります。 これらの多くは Windows Server 2008 R2 およびそれ以前のオペレーティング システムでも同じですが、AD DS の展開が変更されたことで、問題への感度が高まりました。
 
-| 問題 | ドメイン コントローラーを降格すると、DNS がゾーンなしで実行される |  |
-|--|--|--|
-| 現象 | サーバーは DNS 要求に応答しますが、ゾーン情報がありません |  |
-| 解決策と説明 | AD DS 役割を削除する際は、DNS サーバー役割も削除するか、DNS サーバー サービスを無効化してください。 DNS クライアントを、それ自体でなく別のサーバーにポイントしてください。 Windows PowerShell を使用している場合は、サーバーを降格した後に以下のコマンドを実行してください<p>コード-uninstall-add-windowsfeature dns<p>or<p>コードセット-サービス dns-starttype disabled<br />サービス dns の停止 |  |
+| 問題 | ドメイン コントローラーを降格すると、DNS がゾーンなしで実行される |
+|--|--|
+| 現象 | サーバーは DNS 要求に応答しますが、ゾーン情報がありません |
+| 解決策と説明 | AD DS 役割を削除する際は、DNS サーバー役割も削除するか、DNS サーバー サービスを無効化してください。 DNS クライアントを、それ自体でなく別のサーバーにポイントしてください。 Windows PowerShell を使用している場合は、サーバーを降格した後に以下のコマンドを実行してください<p>コード-uninstall-add-windowsfeature dns<p>or<p>コードセット-サービス dns-starttype disabled<br />サービス dns の停止 |
 
 | 問題 | Windows Server 2012 を既存の単一ラベル ドメインに昇格しても、updatetopleveldomain=1 or allowsinglelabeldnsdomain=1 が設定されない |
 |--|--|
@@ -280,7 +280,7 @@ Windows Server 2012 開発プロセス中に発生する一般的な問題を次
 | 問題 | 作成済みのコンピューター アカウントに RODC を昇格すると失敗する |
 |--|--|
 | 現象 | ADDSDeployment Windows PowerShell を使用して、段階的なコンピューター アカウントで新しい RODC を昇格すると、以下のエラーが表示されます。<p>指定された名前付きパラメーターを使用してコードパラメーターセットを解決することはできません。    <br />InvalidArgument: ParameterBindingException<br />    + FullyQualifiedErrorId: AmbiguousParameterSet の場合は、System.directoryservices をインストールします。 |
-| 解決策と説明 | 作成済みの RODC アカウント上で既に定義済みのパラメーターを指定しないでください。 これには以下が含まれます。<p>Code--readonlyreplica<br />-installdns<br />-donotconfigureglobalcatalog<br />-sitename<br />-installdns |
+| 解決策と説明 | 作成済みの RODC アカウント上で既に定義済みのパラメーターを指定しないでください。 次の設定があります。<p>Code--readonlyreplica<br />-installdns<br />-donotconfigureglobalcatalog<br />-sitename<br />-installdns |
 
 | 問題 | [必要に応じて対象サーバーを自動的に再起動する] を選択または選択解除しても何も変わらない |
 |--|--|
