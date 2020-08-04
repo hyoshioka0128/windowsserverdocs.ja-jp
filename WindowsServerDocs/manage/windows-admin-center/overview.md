@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.date: 01/07/2020
 ms.localizationpriority: high
 ms.prod: windows-server
-ms.openlocfilehash: cb91b884edfbd105bc9e88a9d11b3b96055247c9
-ms.sourcegitcommit: c40c29683d25ed75b439451d7fa8eda9d8d9e441
+ms.openlocfilehash: 2a3655c7efddbbe22f312bab4c9276e88e53481b
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85833335"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87410013"
 ---
 # <a name="windows-admin-center"></a>Windows Admin Center
 
@@ -35,19 +35,18 @@ Windows Admin Center の非プレビュー バージョンの更新は、Microso
 
 Windows 管理センターを使用して、次のことを行うことができます。
 
-|     |     |
-| --- | --- |
-| ![](media/simple-icon.png)| **サーバー管理の簡素化** <br/> サーバー マネージャーなどの使い慣れたツールの最新バージョンを使用して、サーバーとクラスターを管理できます。 5 分以内にインストールして、環境内ですぐにサーバーを管理できます。追加構成は必要ありません。 詳細については、「[Windows Admin Center とは](understand/what-is.md)」を参照してください。 |
-| ![](media/future-icon.png)| **ハイブリッド ソリューションとの連携** <br/> Azure との統合により、必要に応じてオンプレミスのサーバーを関連するクラウド サービスに接続することができます。 詳細については、[Azure ハイブリッドサービス](azure/index.md)に関する記事を参照してください |
-| ![](media/secure-icon.png)| **ハイパーコンバージド管理の効率化** <br/> Azure Stack HCI または Windows Server のハイパーコンバージド クラスターの管理が効率化します。 簡略化されたワークロードを使用して、VM、記憶域スペース ダイレクトのボリューム、ソフトウェア定義のネットワークなどを作成して管理することができます。 詳細については、「[Manage Hyper-Converged Infrastructure with Windows Admin Center](use/manage-hyper-converged.md)」(Windows Admin Center を使用したハイパーコンバージド インフラストラクチャの管理) を参照してください|
+- **サーバー管理の簡素化** サーバー マネージャーなどの使い慣れたツールの最新バージョンを使用して、サーバーとクラスターを管理できます。 5 分以内にインストールして、環境内ですぐにサーバーを管理できます。追加構成は必要ありません。 詳細については、「[Windows Admin Center とは](understand/what-is.md)」を参照してください。
+
+- **ハイブリッド ソリューションとの連携** Azure との統合により、必要に応じてオンプレミスのサーバーを関連するクラウド サービスに接続することができます。 詳細については、[Azure ハイブリッドサービス](azure/index.md)に関する記事を参照してください
+
+- **ハイパーコンバージド管理の効率化** Azure Stack HCI または Windows Server のハイパーコンバージド クラスターの管理を合理化します。 簡略化されたワークロードを使用して、VM、記憶域スペース ダイレクトのボリューム、ソフトウェア定義のネットワークなどを作成して管理することができます。 詳細については、「[Manage Hyper-Converged Infrastructure with Windows Admin Center](use/manage-hyper-converged.md)」(Windows Admin Center を使用したハイパーコンバージド インフラストラクチャの管理) を参照してください
 
 次に、概要を説明するビデオと、詳細を説明するポスターを示します。
->[!VIDEO https://www.youtube.com/embed/WCWxAp27ERk]
+> [!VIDEO https://www.youtube.com/embed/WCWxAp27ERk]
 
 [![Windows Admin Center のポスター](media/WAC1910Poster_thumb_small.PNG)](media/WAC1910Poster_thumb.png)
 
 [PDF をダウンロード](https://github.com/MicrosoftDocs/windowsserverdocs/raw/master/WindowsServerDocs/manage/windows-admin-center/media/WindowsAdminCenter1910Poster.pdf)
-
 
 ## <a name="contents-at-a-glance"></a>内容の一覧
 
@@ -184,6 +183,6 @@ Windows Admin Center は、1 つのサーバーまたはクラスターの管理
 
 ## <a name="stay-updated"></a>更新情報
 
-![](//img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/REOolR)[Twitter で Microsoft をフォローする](https://twitter.com/servermgmt)
+[Twitter でフォロー](https://twitter.com/servermgmt)
 
-![](//img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/REOtyw)[こちらのブログを読む](https://techcommunity.microsoft.com/t5/windows-admin-center-blog/bg-p/Windows-Admin-Center-Blog)
+[こちらのブログを読む](https://techcommunity.microsoft.com/t5/windows-admin-center-blog/bg-p/Windows-Admin-Center-Blog)
