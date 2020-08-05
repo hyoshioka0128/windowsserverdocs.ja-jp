@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 06/07/2019
-ms.openlocfilehash: 92d8a47c4ac214faeac83ba8ff5a1a746bc8bdb3
-ms.sourcegitcommit: b35fbd2a67d7a3395b50b2a3acd0817ba4e36b26
+ms.openlocfilehash: da2970a8777ddcc95e2e8af0d979341965cb70ad
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86891387"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87518530"
 ---
 # <a name="what-is-windows-admin-center"></a>Windows Admin Center とは?
 
@@ -23,7 +23,7 @@ Windows Admin Center は、Azure またはクラウドに依存せずに、Windo
 
 Windows Admin Center は、サーバー マネージャーや MMC などの "インボックス" 管理ツールの進化形です。 これは System Center の補完であり、置換する機能ではありません。
 
-![](../media/wac-complements.png)
+![Windows Admin Center とその他のソリューションとの連携の図](../media/wac-complements.png)
 
 ## <a name="how-does-windows-admin-center-work"></a>Windows Admin Center のしくみ
 
@@ -31,7 +31,7 @@ Windows Admin Center は Web ブラウザーで実行され、Windows Server ま
 
 Windows Admin Center ゲートウェイは、DNS に発行され、対応する企業ファイアウォールによってアクセス権が与えられると、Microsoft Edge または Google Chrome によってユーザーがどこからでもサーバーに安全に接続し、管理できるようにします。
 
-![](../media/architecture.png)
+![Windows Admin Center のアーキテクチャの図](../media/architecture.png)
 
 ## <a name="learn-how-windows-admin-center-improves-your-management-environment"></a>Windows Admin Center で管理環境が改善するしくみの詳細
 
@@ -61,7 +61,7 @@ Windows Admin Center には、Azure Active Directory、Azure Backup、Azure Site
 
 ### <a name="deploy-hyper-converged-and-failover-clusters"></a>**ハイパーコンバージド クラスターとフェールオーバー クラスターを展開する**
 
-Windows Admin Center では、使いやすいウィザードを通して、[ハイパーコンバージド クラスターとフェールオーバー クラスターをシームレスに展開する](../use/deploy-hyperconverged-infrastructure.md)ことができます。 
+Windows Admin Center では、使いやすいウィザードを通して、[ハイパーコンバージド クラスターとフェールオーバー クラスターをシームレスに展開する](../use/deploy-hyperconverged-infrastructure.md)ことができます。
 
 ### <a name="manage-hyper-converged-clusters"></a>**ハイパーコンバージド クラスターの管理**
 

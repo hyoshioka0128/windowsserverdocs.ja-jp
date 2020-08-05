@@ -10,12 +10,12 @@ ms.assetid: 9f109c91-7c2e-4065-856c-ce9e2e9ce558
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: e3d710a8c701b52bda62c5cd0616a44f37fe2e7b
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: f9de652a25dde8f21c934d7093af977198ae0646
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86962034"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409873"
 ---
 # <a name="deploy-nano-server"></a>Nano Server を展開します。
 
@@ -33,7 +33,6 @@ Nano Server Image Builder は、グラフィカル インターフェイスを�
 [ダウンロード センター](https://www.microsoft.com/download/details.aspx?id=54065)からツールを入手します。
 
 このツールを使用するには、[Windows アセスメント & デプロイメント キット (ADK)](https://developer.microsoft.comwindows/hardware/windows-assessment-deployment-kit) も必要になります。
-
 
 Nano Server Image Builder では、カスタマイズされた Nano Server イメージを VHD、VHDX、または ISO 形式で作成することや、Nano Server を展開したりサーバーのハードウェア構成を検出したりするための起動可能な USB メディアを作成することができます。 次の操作を行うこともできます。
 
@@ -57,13 +56,13 @@ Nano Server Image Builder では、カスタマイズされた Nano Server イ�
 
 ## <a name="creating-a-custom-nano-server-image"></a><a name=BKMK_CreateImage></a>カスタム Nano Server イメージの作成
 
-Windows Server 2016 の場合、Nano Server は物理メディアで配布されます。物理メディア内には、**NanoServer** フォルダーに .wim イメージと **Packages** という名前のサブフォルダーが含まれています。 これらのパッケージ ファイルを使用して、サーバーの役割や機能を VHD イメージに追加し、そのイメージから起動します。
+Windows Server 2016 の場合、Nano Server は物理メディアで配布されます。ここには、**NanoServer** フォルダーに .wim イメージと **Packages** という名前のサブフォルダーが含まれています。 これらのパッケージ ファイルを使用して、サーバーの役割や機能を VHD イメージに追加し、そのイメージから起動します。
 
 これらのパッケージは、PackageManagement (OneGet) PowerShell モジュールの NanoServerPackage プロバイダーを使って検索およびインストールすることもできます。 このトピックの「オンラインでの役割と機能のインストール」を参照してください。
 
 次の表に、Nano Server のこのリリースで利用できる役割と機能、およびそれに対応するパッケージをインストールするための Windows PowerShell オプションを示します。 一部のパッケージは、Windows PowerShell スイッチ (たとえば、-Compute) を指定することで直接インストールされます。その他のパッケージについては、-Package パラメーターにパッケージ名を渡してインストールします。この場合は、コンマ区切り形式で複数の名前を指定できます。 Get-NanoServerPackage コマンドレットを使用すると、利用可能なパッケージを動的に一覧表示できます。
 
-|| 役割または機能 | オプション |
+| 役割または機能 | オプション |
 |--|--|
 | Hyper-V の役割 (NetQoS を含む) | -Compute |
 | フェールオーバー クラスタリングとその他のコンポーネント (詳細はこの表の後に示す) | -Clustering |
@@ -83,7 +82,7 @@ Windows Server 2016 の場合、Nano Server は物理メディアで配布され
 | BitLocker、トラステッド プラットフォーム モジュール (TPM)、ボリュームの暗号化、プラットフォームの識別、暗号化プロバイダー、およびセキュア スタートアップに関連するその他の機能 | -Package Microsoft-NanoServer-SecureStartup-Package |
 | Hyper-V によるシールドされた VM のサポート | -Package Microsoft-NanoServer-ShieldedVM-Package<p>**注:** このパッケージは、Nano Server の Datacenter Edition でのみ利用できます。 |
 | 簡易ネットワーク管理プロトコル (SNMP) エージェント | -Package Microsoft-NanoServer-SNMP-Agent-Package.cab<p>**注:** Windows Server 2016 インストール メディアには含まれていません。 オンラインでのみ入手できます。 詳しくは、「[オンラインでの役割と機能のインストール](#BKMK_online)」をご覧ください。 |
-| IPv6 移行テクノロジ (6to4、ISATAP、Port Proxy、Teredo) を使用してトンネル接続を提供する IPHelper サービスと、IP-HTTPS | -Package Microsoft-NanoServer-IPHelper-Service-Package.cab<p>**注:** Windows Server 2016 インストール メディアには含まれていません。 オンラインでのみ入手できます。 詳しくは、「[オンラインでの役割と機能のインストール](#BKMK_online)」をご覧ください。 ||
+| IPv6 移行テクノロジ (6to4、ISATAP、Port Proxy、Teredo) を使用してトンネル接続を提供する IPHelper サービスと、IP-HTTPS | -Package Microsoft-NanoServer-IPHelper-Service-Package.cab<p>**注:** Windows Server 2016 インストール メディアには含まれていません。 オンラインでのみ入手できます。 詳しくは、「[オンラインでの役割と機能のインストール](#BKMK_online)」をご覧ください。 |
 
 > [!NOTE]
 > これらのオプションを使ってパッケージをインストールすると、選択したサーバー メディアのロケールに基づいて対応する言語パックもインストールされます。 利用可能な言語パックとそのロケールの省略形は、インストール メディア内のイメージのロケールの名前が付いたサブフォルダーを見るとわかります。
@@ -117,7 +116,9 @@ Windows Server 2016 の場合、Nano Server は物理メディアで配布され
 
 この例では、ネットワーク共有上の Nano Server インストール メディアから、Hyper-V ゲスト ドライバーを含む、指定したコンピューター名の GPT ベースの VHDX イメージを作成します。 管理者特権での Windows PowerShell プロンプトで、次のコマンドレットを入力します。
 
-`Import-Module <Server media location>\NanoServer\NanoServerImageGenerator; New-NanoServerImage -DeploymentType Guest -Edition Standard -MediaPath \\Path\To\Media\server_en-us -BasePath .\Base -TargetPath .\FirstStepsNano.vhdx -ComputerName FirstStepsNano`
+```powershell
+Import-Module <Server media location>\NanoServer\NanoServerImageGenerator; New-NanoServerImage -DeploymentType Guest -Edition Standard -MediaPath \\Path\To\Media\server_en-us -BasePath .\Base -TargetPath .\FirstStepsNano.vhdx -ComputerName FirstStepsNano
+```
 
 このコマンドレットは、次のすべてのタスクを実行します。
 
@@ -160,7 +161,9 @@ Windows Server 2016 の場合、Nano Server は物理メディアで配布され
 
 Hyper-V ホストとして機能する Nano Server イメージを作成するには、以下を実行します。
 
-`New-NanoServerImage -Edition Standard -DeploymentType Host -MediaPath <path to root of media> -BasePath .\Base -TargetPath .\NanoServerPhysical\NanoServer.wim -ComputerName <computer name> -OEMDrivers -Compute -Clustering`
+```powershell
+New-NanoServerImage -Edition Standard -DeploymentType Host -MediaPath <path to root of media> -BasePath .\Base -TargetPath .\NanoServerPhysical\NanoServer.wim -ComputerName <computer name> -OEMDrivers -Compute -Clustering`
+```
 
 [場所]
 - MediaPath は、Windows Server 2016 を含む DVD メディアまたは ISO イメージのルートです。

@@ -8,19 +8,19 @@ ms.date: 09/19/2019
 ms.topic: article
 author: Heidilohr
 ms.localizationpriority: medium
-ms.openlocfilehash: a8521eae302ade84904e3ba09c001eac21fffd6a
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 12ea9226a1656c6b3c800517818e5e950d142c64
+ms.sourcegitcommit: e86ea69254e2f63eaab10010ae3a43622156ab23
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "77125153"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87470695"
 ---
 # <a name="set-up-the-remote-desktop-web-client-for-your-users"></a>ユーザー用にリモート デスクトップ Web クライアントをセットアップする
 
 リモート デスクトップ Web クライアントにより、ユーザーは互換性のある Web ブラウザーを通して、組織のリモート デスクトップ インフラストラクチャにアクセスできます。 どこにいても、ローカル PC 使用時のようにリモート アプリやデスクトップを操作できるようになります。 リモート デスクトップ Web クライアントをセットアップしたら、ユーザーが利用し始めるために必要なのは、クライアント、自分の資格情報、およびサポートされている Web ブラウザーにアクセスできる URL だけです。
 
 >[!IMPORTANT]
->Web クライアントは現在、Azure アプリケーション プロキシの使用をサポートしておらず、Web アプリケーション プロキシはまったくサポートされません。 詳細については、[アプリケーション プロキシ サービスと共に RDS を使用すること](../rds-supported-config.md#using-remote-desktop-services-with-application-proxy-services)に関するページを参照してください。
+>Web クライアントでは、Azure AD アプリケーション プロキシの使用がサポートされていますが、Web アプリケーション プロキシはまったくサポートされていません。 詳細については、[アプリケーション プロキシ サービスと共に RDS を使用すること](../rds-supported-config.md#using-remote-desktop-services-with-application-proxy-services)に関するページを参照してください。
 
 ## <a name="what-youll-need-to-set-up-the-web-client"></a>Web クライアントをセットアップするために必要なこと
 
@@ -42,7 +42,7 @@ ms.locfileid: "77125153"
 >1. 管理者特権の PowerShell プロンプトを開きます。
 >2. **Uninstall-Module RDWebClientManagement** を実行して新しいモジュールをアンインストールします。
 >3. PowerShell プロンプトを閉じ、管理者特権で再度開きます。
->4. **Install-Module RDWebClientManagement -RequiredVersion \<古いバージョン> を実行して古いモジュールをインストールします。**
+>4. **Install-Module RDWebClientManagement -RequiredVersion \<old version> を実行して古いモジュールをインストールします。**
 >5. **Uninstall-RDWebClient** を実行して古い Web クライアントをアンインストールします。
 >6. **Uninstall-Module RDWebClientManagement** を実行して古いモジュールをアンインストールします。
 >7. PowerShell プロンプトを閉じ、管理者特権で再度開きます。

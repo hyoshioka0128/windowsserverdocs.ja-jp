@@ -1,17 +1,17 @@
 ---
-title: Windows 用 OpenSSH サーバー構成
-description: Windows ツールまたは PowerShell を使用して、Windows 用 OpenSSH サーバーを構成します。
+title: Windows 用 OpenSSH キーの管理
+description: Windows ツールまたは PowerShell を使用した Windows 用 OpenSSH Server キーの管理
 ms.date: 09/27/2018
 ms.topic: conceptual
 contributor: maertendMSFT
 author: maertendmsft
 ms.product: windows-server
-ms.openlocfilehash: 4acb7893f41207de045af7eeaea15efba8221f4a
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: c400d1071b3905b06bd6b6104a810194186ba4cc
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85469847"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87408871"
 ---
 # <a name="openssh-key-management"></a>OpenSSH キーの管理
 

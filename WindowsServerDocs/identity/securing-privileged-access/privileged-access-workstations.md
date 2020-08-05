@@ -9,12 +9,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: mas
-ms.openlocfilehash: 9bf484ab53790c453b0849b1bf8ca91553f82898
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: b51255a0ac0120847e3eb05a373535bc1b7f5d44
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86953724"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87520161"
 ---
 # <a name="privileged-access-workstations"></a>Privileged Access Workstations
 
@@ -29,7 +29,7 @@ Privileged Access Workstation (PAW) は、インターネットからの攻撃�
 > [!NOTE]
 > PAW アーキテクチャは、一般的な構成であるアカウントとワークステーションの 1:1 のマッピングを必要としません。 PAW は、1 つ以上のアカウントで使用できる信頼されたワークステーション環境を作成します。
 
-最大限のセキュリティを提供するために、PAW では常に最新のセキュリティ保護されたオペレーティング システムを実行する必要があります。Microsoft では Windows 10 Enterprise を強くお勧めします。この OS には、他のエディションでは利用できない追加のセキュリティ機能が含まれます (特に、[Credential Guard](/windows/security/identity-protection/credential-guard/credential-guard) と [Device Guard](/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control))。
+最大限のセキュリティを提供するために、PAW では常に最新のセキュリティ保護されたオペレーティング システムを実行する必要があります。Microsoft では Windows 10 Enterprise を強くお勧めします。これには、他のエディションでは利用できない追加のセキュリティ機能がいくつか含まれます (特に、[Credential Guard](/windows/security/identity-protection/credential-guard/credential-guard) と [Device Guard](/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control))。
 
 > [!NOTE]
 > Windows 10 Enterprise を利用できない組織は、Windows 10 Pro を使用することができます。この OS には、トラスト ブート、BitLocker、リモート デスクトップなどの PAW の多くの重要な基礎テクノロジが採用されています。  教育機関のお客様は、Windows 10 Education を使用できます。  Windows 10 Home を PAW に使用しないでください。
@@ -511,8 +511,10 @@ Domain Admin、Enterprise Admin、または階層 0 の同等のグループ (�
 このセクションでは、権限を持つ管理者アカウントによる下位階層のホストへのログオンを防ぐためのグループ ポリシーを構成します。
 
 1. 新しい **Restrict Workstation Logon** GPO を作成します。この設定は、階層 0 および階層 1 管理者アカウントが標準のワークステーションにログオンすることを制限します。  この GPO を "Workstations" 最上位レベル OU にリンクし、次のように設定する必要があります。
+
    * [コンピューターの構成] > [ポリシー] > [Windows の設定] > [セキュリティ設定] > [ローカル ポリシー] > [ユーザー権利の割り当て] > [バッチ ジョブとしてログオンを拒否する] の順に移動し、 **[これらのポリシーの設定を定義する]** を選択して、階層 0 と階層 1 のグループを追加します。
-     ```
+
+      ```
      Enterprise Admins
      Domain Admins
      Schema Admins
@@ -530,48 +532,50 @@ Domain Admin、Enterprise Admin、または階層 0 の同等のグループ (�
      > [!NOTE]
      > 階層 0 の組み込みのグループの詳細については、「階層 0 と同等のグループ」を参照してください。
 
-         Other Delegated Groups
+      その他の代理グループ
 
      > [!NOTE]
      > 有効な階層 0 のアクセス権を持つカスタム作成されたグループの詳細については、「階層 0 と同等のグループ」を参照してください。
 
-         Tier 1 Admins
+      階層 1 管理者
 
      > [!NOTE]
      > このグループは、フェーズ 1 で前に作成されました。
 
    * [コンピューターの構成] > [ポリシー] > [Windows の設定] > [セキュリティ設定] > [ローカル ポリシー] > [ユーザー権利の割り当て] > [サービスとしてログオンを拒否する] の順に移動し、 **[これらのポリシーの設定を定義する]** を選択して、階層 0 と階層 1 のグループを追加します。
-     ```
-     Enterprise Admins
-     Domain Admins
-     Schema Admins
-     BUILTIN\Administrators
-     Account Operators
-     Backup Operators
-     Print Operators
-     Server Operators
-     Domain Controllers
-     Read-Only Domain Controllers
-     Group Policy Creators Owners
-     Cryptographic Operators
-     ```
+      ```
+      Enterprise Admins
+      Domain Admins
+      Schema Admins
+      BUILTIN\Administrators
+      Account Operators
+      Backup Operators
+      Print Operators
+      Server Operators
+      Domain Controllers
+      Read-Only Domain Controllers
+      Group Policy Creators Owners
+      Cryptographic Operators
+      ```
 
      > [!NOTE]
      > 注: 階層 0 の組み込みのグループの詳細については、「階層 0 と同等のグループ」を参照してください。
 
-         Other Delegated Groups
+      その他の代理グループ
 
      > [!NOTE]
      > 注: 有効な階層 0 のアクセス権を持つカスタム作成されたグループの詳細については、「階層 0 と同等のグループ」を参照してください。
 
-         Tier 1 Admins
+      階層 1 管理者
 
      > [!NOTE]
      > 注: このグループは、フェーズ 1 で前に作成されました
 
 2. 新しい **Restrict Server Logon** GPO を作成します。この設定は、階層 0 管理者アカウントが階層 1 のサーバーにログオンすることを制限します。  この GPO を "Tier 1 Servers" 最上位レベル OU にリンクし、次のように設定する必要があります。
+
    * [コンピューターの構成] > [ポリシー] > [Windows の設定] > [セキュリティ設定] > [ローカル ポリシー] > [ユーザー権利の割り当て] > [バッチ ジョブとしてログオンを拒否する] の順に移動し、 **[これらのポリシーの設定を定義する]** を選択して、階層 0 のグループを追加します。
-     ```
+
+      ```
      Enterprise Admins
      Domain Admins
      Schema Admins
@@ -589,13 +593,14 @@ Domain Admin、Enterprise Admin、または階層 0 の同等のグループ (�
      > [!NOTE]
      > 階層 0 の組み込みのグループの詳細については、「階層 0 と同等のグループ」を参照してください。
 
-         Other Delegated Groups
+      その他の代理グループ
 
      > [!NOTE]
      > 有効な階層 0 のアクセス権を持つカスタム作成されたグループの詳細については、「階層 0 と同等のグループ」を参照してください。
 
    * [コンピューターの構成] > [ポリシー] > [Windows の設定] > [セキュリティ設定] > [ローカル ポリシー] > [ユーザー権利の割り当て] > [サービスとしてログオンを拒否する] の順に移動し、 **[これらのポリシーの設定を定義する]** を選択して、階層 0 のグループを追加します。
-     ```
+
+      ```
      Enterprise Admins
      Domain Admins
      Schema Admins
@@ -608,17 +613,18 @@ Domain Admin、Enterprise Admin、または階層 0 の同等のグループ (�
      Read-Only Domain Controllers
      Group Policy Creators Owners
      Cryptographic Operators
-     ```
+      ```
 
      > [!NOTE]
      > 階層 0 の組み込みのグループの詳細については、「階層 0 と同等のグループ」を参照してください。
 
-         Other Delegated Groups
+      その他の代理グループ
 
      > [!NOTE]
      > 有効な階層 0 のアクセス権を持つカスタム作成されたグループの詳細については、「階層 0 と同等のグループ」を参照してください。
 
    * [コンピューターの構成] > [ポリシー] > [Windows の設定] > [セキュリティ設定] > [ローカル ポリシー] > [ユーザー権利の割り当て] > [ローカルでログオンを拒否する] の順に移動し、 **[これらのポリシーの設定を定義する]** を選択して、階層 0 のグループを追加します。
+
      ```
      Enterprise Admins
      Domain Admins
@@ -637,7 +643,7 @@ Domain Admin、Enterprise Admin、または階層 0 の同等のグループ (�
      > [!NOTE]
      > 注: 階層 0 の組み込みのグループの詳細については、「階層 0 と同等のグループ」を参照してください。
 
-         Other Delegated Groups
+      その他の代理グループ
 
      > [!NOTE]
      > 注: 有効な階層 0 のアクセス権を持つカスタム作成されたグループの詳細については、「階層 0 と同等のグループ」を参照してください。
@@ -777,7 +783,7 @@ Domain Admin、Enterprise Admin、または階層 0 の同等のグループ (�
       2. PAW *proxy.pac* ファイルを [TechNet ギャラリー](https://aka.ms/pawmedia)からダウンロードし、内部の Web サイトで公開します。
 
          > [!NOTE]
-         > 確実に最新の完全な状態にするために、ダウンロード後に *proxy.pac* ファイルを更新する必要があります。  
+         > 確実に最新の完全な状態にするために、ダウンロード後に *proxy.pac* ファイルを更新する必要があります。
          > マイクロソフトでは、Office [サポート センター](https://support.office.com/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2?ui=en-US&rs=en-US&ad=US)ですべての最新の Office 365 と Azure の URL を開しています。 次の手順では、Office 365、Azure、および他のクラウドサービスの管理に Internet Explorer (または Microsoft Edge) を使用することを前提としています。 マイクロソフトは、管理が必要なすべてのサードパーティ ブラウザーに対して同様の制限を構成することをお勧めします。 PAW 上の Web ブラウザーは、クラウド サービスの管理にのみ使用し、一般的な Web の閲覧には使用しないでください。
          >
          > 他の IaaS プロバイダーに関する他のインターネット接続先をこの一覧に追加する必要がある場合がありますが、生産性機能、エンターテインメント、ニュース、検索サイトをこの一覧に追加しないでください。
@@ -818,36 +824,36 @@ Domain Admin、Enterprise Admin、または階層 0 の同等のグループ (�
 
          **ポリシー:**
 
-         |||
-         |-|-|
-         |CM Windows 10 - Domain Security|該当なし - ここではリンクしません。|
-         |SCM Windows 10 TH2 - Computer|Admin\Tier 0\Devices|
-         ||Admin\Tier 1\Devices|
-         ||Admin\Tier 2\Devices|
-         |SCM Windows 10 TH2- BitLocker|Admin\Tier 0\Devices|
-         ||Admin\Tier 1\Devices|
-         ||Admin\Tier 2\Devices|
-         |SCM Windows 10 - Credential Guard|Admin\Tier 0\Devices|
-         ||Admin\Tier 1\Devices|
-         ||Admin\Tier 2\Devices|
-         |SCM Internet Explorer - Computer|Admin\Tier 0\Devices|
-         ||Admin\Tier 1\Devices|
-         ||Admin\Tier 2\Devices|
-         |PAW Configuration - Computer|Admin\Tier 0\Devices (既存)|
-         ||Admin\Tier 1\Devices (新しいリンク)|
-         ||Admin\Tier 2\Devices (新しいリンク)|
-         |RestrictedAdmin Required - Computer|Admin\Tier 0\Devices|
-         ||Admin\Tier 1\Devices|
-         ||Admin\Tier 2\Devices|
-         |SCM Windows 10 - User|Admin\Tier 0\Devices|
-         ||Admin\Tier 1\Devices|
-         ||Admin\Tier 2\Devices|
-         |SCM Internet Explorer - User|Admin\Tier 0\Devices|
-         ||Admin\Tier 1\Devices|
-         ||Admin\Tier 2\Devices|
-         |PAW Configuration - User|Admin\Tier 0\Devices (既存)|
-         ||Admin\Tier 1\Devices (新しいリンク)|
-         ||Admin\Tier 2\Devices (新しいリンク)|
+         | [ポリシー名] | リンク |
+         |--|--|
+         | CM Windows 10 - Domain Security | 該当なし - ここではリンクしません。 |
+         | SCM Windows 10 TH2 - Computer | Admin\Tier 0\Devices |
+         |  | Admin\Tier 1\Devices |
+         |  | Admin\Tier 2\Devices |
+         | SCM Windows 10 TH2- BitLocker | Admin\Tier 0\Devices |
+         |  | Admin\Tier 1\Devices |
+         |  | Admin\Tier 2\Devices |
+         | SCM Windows 10 - Credential Guard | Admin\Tier 0\Devices |
+         |  | Admin\Tier 1\Devices |
+         |  | Admin\Tier 2\Devices |
+         | SCM Internet Explorer - Computer | Admin\Tier 0\Devices |
+         |  | Admin\Tier 1\Devices |
+         |  | Admin\Tier 2\Devices |
+         | PAW Configuration - Computer | Admin\Tier 0\Devices (既存) |
+         |  | Admin\Tier 1\Devices (新しいリンク) |
+         |  | Admin\Tier 2\Devices (新しいリンク) |
+         | RestrictedAdmin Required - Computer | Admin\Tier 0\Devices |
+         |  | Admin\Tier 1\Devices |
+         |  | Admin\Tier 2\Devices |
+         | SCM Windows 10 - User | Admin\Tier 0\Devices |
+         |  | Admin\Tier 1\Devices |
+         |  | Admin\Tier 2\Devices |
+         | SCM Internet Explorer - User | Admin\Tier 0\Devices |
+         |  | Admin\Tier 1\Devices |
+         |  | Admin\Tier 2\Devices |
+         | PAW Configuration - User | Admin\Tier 0\Devices (既存) |
+         |  | Admin\Tier 1\Devices (新しいリンク) |
+         |  | Admin\Tier 2\Devices (新しいリンク) |
 
          > [!NOTE]
          > "SCM Windows 10 - Domain Security" GPO は、PAW とは関係なくドメインにリンクされる場合がありますが、ドメイン全体に影響します。
@@ -1096,4 +1102,4 @@ New-ShieldingDataFile -Policy Shielded -BindToHostTpm [...]
 
 [Windows Server 2008 R2 での AD DS 用の認証メカニズム保証の手順ガイド](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd378897(v=ws.10))
 
-[トラステッド プラットフォーム モジュール](C:/sd/docs/p_ent_keep_secure/p_ent_keep_secure/trusted_platform_module_technology_overview.xml)
+[トラステッド プラットフォーム モジュール テクノロジの概要](/windows/device-security/tpm/trusted-platform-module-overview)

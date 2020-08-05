@@ -7,14 +7,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 07/14/2020
+ms.date: 07/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: e9449da93e52471d1f21c2b7079a8fed0415a03a
-ms.sourcegitcommit: e6becfd2266fd434b7994455c7782de36af4ff80
+ms.openlocfilehash: 41e4923d64ebacf606f01350a873f6dbce564b4c
+ms.sourcegitcommit: 42cd33c95645321d09d006ff2e7666d6370dfbc3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86377006"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87330818"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Windows デスクトップ クライアントの新機能
 
@@ -26,19 +26,20 @@ Windows デスクトップ クライアントの詳細については、「[Wind
 
 |ユーザー グループ |バージョン  |
 |-----------|---------|
-|パブリック     |1.2.1104 |
-|Insider    |1.2.1185 |
+|パブリック     |1.2.1186 |
+|Insider    |1.2.1186 |
 
-## <a name="updates-for-version-121185"></a>バージョン 1.2.1185 の更新内容
+## <a name="updates-for-version-121186"></a>バージョン 1.2.1186 の更新内容
 
-*公開日:2020 年 7 月 14 日*
+*公開日:2020 年 7 月 28 日*
 
-ダウンロード:[Windows 64 ビット](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4B1Hr)、[Windows 32 ビット](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4B1Hs)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4B1Hq)
+ダウンロード:[Windows 64 ビット](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4C7Qy)、[Windows 32 ビット](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4Ciex)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4C7Qx)
 
 - クライアントの上部にあるコマンド バーのオーバーフロー メニュー ( **...** ) オプションを使用して、複数のユーザー アカウントでワークスペースにサブスクライブできるようになりました。 ワークスペースを区別するために、ワークスペースのタイトルには、すべてのアプリのショートカットのタイトルと同様にユーザー名が含まれるようになりました。
 - トラブルシューティングを改善するため、サブスクリプション エラー メッセージに追加情報が追加されました。
 - ワークスペースの折りたたまれた状態または展開した状態は、更新中に維持されるようになりました。
 - **[接続情報]** ダイアログに **[Send Diagnostics and Close]\(診断を送信して閉じる\)** ボタンが追加されました。
+- リモート セッションでの Ctrl + Shift キーの問題を修正しました。
 
 ## <a name="updates-for-version-121104"></a>バージョン 1.2.1104 の更新内容
 

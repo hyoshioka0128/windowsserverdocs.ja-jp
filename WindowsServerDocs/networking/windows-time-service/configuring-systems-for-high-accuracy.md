@@ -8,12 +8,12 @@ ms.date: 05/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: 25472e4ba4837bd68c9b6914e22c2219c91d3ac0
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 71f15f9da1f477ec8632fd2eb900e650f83ef3de
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80861655"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409602"
 ---
 # <a name="configuring-systems-for-high-accuracy"></a>高精度を確保するためのシステム構成
 >適用先:Windows Server 2016、および Windows 10 バージョン 1607 以降
@@ -23,7 +23,7 @@ Windows 10 と Windows Server 2016 での時刻の同期が大幅に改善され
 高い精度を確保するようにシステムを構成するうえで、次のガイダンスが役立ちます。  この記事では、次の要件について説明します。
 
 - サポートされるオペレーティング システム
-- システム構成 
+- システム構成
 
 > [!WARNING]
 > **以前のオペレーティング システムの精度の目標**<br>
@@ -61,8 +61,7 @@ Windows 10 や Windows Server 2016 では最大で 1ms の精度を確保して�
 
 ![タイム トポロジ - 1607](../media/Windows-Time-Service/Configuring-Systems-for-High-Accuracy/Topology2016.png)
 
-
->[!TIP] 
+>[!TIP]
 >**Windows バージョンの特定**<br>
 > コマンド プロンプトでコマンド `winver` を実行すると、以下に示すように OS のバージョンが 1607 (またはそれ以降) で、OS のビルドが 14393 (またはそれ以降) であることを確認できます。
 >
@@ -93,78 +92,70 @@ Windows タイム サービス (W32Time) は連続的に実行する必要があ
 この測定値は、インボックスの w32tm.exe ツールを使用して取得できます。  そのためには、次の手順に従います。
 
 1. ターゲットとタイムサーバー B から計算を実行します。
-    
+
     `w32tm /stripchart /computer:TimeServerB /rdtsc /samples:450 > c:\temp\Target_TsB.csv`
 
 2. タイム サーバー B からタイム サーバー A に対して計算を実行します。
-    
+
     `w32tm /stripchart /computer:TimeServerA /rdtsc /samples:450 > c:\temp\Target_TsA.csv`
 
 3. タイム サーバー A からソースに対して計算を実行します。
- 
+
 4. 次に、前の手順で測定した RoundTripDelay の平均を追加し、2 で除算して、ターゲットとソース間の累積ネットワーク遅延を取得します。
 
-#### <a name="registry-settings"></a>レジストリの設定
+## <a name="registry-settings"></a>レジストリの設定
 
-# <a name="minpollinterval"></a>[MinPollInterval](#tab/MinPollInterval)
+### <a name="minpollinterval"></a>MinPollInterval
+
 システムのポーリングとして許容される最小間隔を log2 秒単位で構成します。
 
-|  |  | 
-|---------|---------|
-|キーの場所     | HKLM:\SYSTEM\CurrentControlSet\Services\W32Time\Config        |
-|設定    | 6        |
-|成果 | 最小ポーリング間隔が 64 秒になりました。 |
+| 説明 | 値 |
+|--|--|
+| キーの場所 | HKLM:\SYSTEM\CurrentControlSet\Services\W32Time\Config |
+| 設定 | 6 |
+| 成果 | 最小ポーリング間隔が 64 秒になりました。 |
 
-次のコマンドは、更新された設定を取得するよう、Windows タイムに通知します。
+次のコマンドは、更新された設定を取得するよう、Windows タイムに通知します: `w32tm /config /update`
 
-`w32tm /config /update`
+### <a name="maxpollinterval"></a>MaxPollInterval
 
-
-# <a name="maxpollinterval"></a>[MaxPollInterval](#tab/MaxPollInterval)
 システムのポーリングとして許容される最大間隔を log2 秒単位で構成します。
 
-|  |  |  
-|---------|---------|
-|キーの場所     | HKLM:\SYSTEM\CurrentControlSet\Services\W32Time\Config        |
-|設定    | 6        |
-|成果 | 最大ポーリング間隔が 64 秒になりました。  |
+| 説明 | 値 |
+|--|--|
+| キーの場所 | HKLM:\SYSTEM\CurrentControlSet\Services\W32Time\Config |
+| 設定 | 6 |
+| 成果 | 最大ポーリング間隔が 64 秒になりました。 |
 
-次のコマンドは、更新された設定を取得するよう、Windows タイムに通知します。
+次のコマンドは、更新された設定を取得するよう、Windows タイムに通知します: `w32tm /config /update`
 
-`w32tm /config /update`
+### <a name="updateinterval"></a>UpdateInterval
 
-# <a name="updateinterval"></a>[UpdateInterval](#tab/UpdateInterval)
 フェーズ修正の調整間のクロック ティック数。
 
-|  |  |  
-|---------|---------|
-|キーの場所     | HKLM:\SYSTEM\CurrentControlSet\Services\W32Time\Config       |
-|設定    | 100        |
-|成果 | フェーズ修正の調整間のクロック ティック数が 100 になりました。 |
+| 説明 | 値 |
+|--|--|
+| キーの場所 | HKLM:\SYSTEM\CurrentControlSet\Services\W32Time\Config |
+| 設定 | 100 |
+| 成果 | フェーズ修正の調整間のクロック ティック数が 100 になりました。 |
 
-次のコマンドは、更新された設定を取得するよう、Windows タイムに通知します。
+次のコマンドは、更新された設定を取得するよう、Windows タイムに通知します: `w32tm /config /update`
 
-`w32tm /config /update`
+### <a name="specialpollinterval"></a>SpecialPollInterval
 
-# <a name="specialpollinterval"></a>[SpecialPollInterval](#tab/SpecialPollInterval)
 SpecialInterval 0x1 フラグが有効になっているときのポーリング間隔を秒単位で構成します。
 
-|  |  |  
-|---------|---------|
-|キーの場所     | HKLM:\SYSTEM\CurrentControlSet\Services\W32Time\TimeProviders\NtpClient        |
-|設定    | 64        |
-|成果 | ポーリング間隔が 64 秒になりました。 |
+| 説明 | 値 |
+|--|--|
+| キーの場所 | HKLM:\SYSTEM\CurrentControlSet\Services\W32Time\TimeProviders\NtpClient |
+| 設定 | 64 |
+| 成果 | ポーリング間隔が 64 秒になりました。 |
 
-次のコマンドは、更新された設定を取得するために、Windows タイムを再起動します。
+次のコマンドを使うと、更新された設定を取得するために、Windows タイムが再起動されます: `net stop w32time && net start w32time`
 
-`net stop w32time && net start w32time`
+### <a name="frequencycorrectrate"></a>FrequencyCorrectRate
 
-# <a name="frequencycorrectrate"></a>[FrequencyCorrectRate](#tab/FrequencyCorrectRate)
-
-|  |  |  
-|---------|---------|
-|キーの場所     | HKLM:\SYSTEM\CurrentControlSet\Services\W32Time\Config      |
-|設定    | 2 で保護されたプロセスとして起動されました        |
-
-
----
+| 説明 | 値 |
+|--|--|
+| キーの場所 | HKLM:\SYSTEM\CurrentControlSet\Services\W32Time\Config |
+| 設定 | 2 で保護されたプロセスとして起動されました |
