@@ -9,10 +9,10 @@
 ## [Windows Server Essentials をインストールする前に](install/Before-You-Install-Windows-Server-Essentials.md)
 ## [Windows Server Essentials のインストール](install/Install-Windows-Server-Essentials.md)
 ### [Windows Server Essentials のインストールと構成](install/Install-and-Configure-Windows-Server-Essentials.md)
-### [Windows Server Essentials または Windows Server Essentials エクス](install/Install-and-Configure-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md)ペリエンスのインストールと構成
+### [Windows Server Essentials または Windows Server Essentials エクスペリエンスのインストールと構成](install/Install-and-Configure-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md)
 ### [Windows Server Essentials をメンバー サーバーとして追加](install/Add-Windows-Server-Essentials-as-a-Member-Server.md)
 ### [ホスト型 Windows Server Essentials](install/Hosted-Windows-Server-Essentials.md)
-#### [Windows Server Essentials Experience をホストされたサーバーとして配](install/Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md)置
+#### [Windows Server Essentials Experience をホストされたサーバーとして配置](install/Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md)
 ### [Windows Server での Windows Server Essentials のカスタマイズと展開](install/Customize-and-Deploy-Windows-Server-Essentials.md)
 ### [Windows Server Essentials 用のアセスメント & デプロイメント キット](install/Assessment-and-Deployment-Kit-for-Windows-Server-Essentials.md)
 #### [Windows Server Essentials ADK の概要](install/Getting-Started-with-the-Windows-Server-Essentials-ADK.md)
@@ -83,7 +83,7 @@
 ### [Windows Server Essentials への移行に向けて移行元サーバーを準備する](migrate/Prepare-your-Source-Server-for-Windows-Server-Essentials-migration.md)
 ### [Windows Server Essentials ベスト プラクティス アナライザー (BPA) ツールで使用される規則](migrate/Rules-used-by-the-Windows-Server-Essentials-Best-Practices-Analyzer--BPA--Tool.md)
 ### [Windows Server Essentials ベスト プラクティス アナライザーを実行する](migrate/Run-the-Windows-Server-Essentials-Best-Practices-Analyzer.md)
-### [手順 1: ](migrate/Step-1--Prepare-your-Source-Server-for-Windows-Server-Essentials-migration.md)Windows Server Essentials への移行に向けて移行元サーバーを準備する
+### [手順 1: Windows Server Essentials への移行に向けて移行元サーバーを準備する](migrate/Step-1--Prepare-your-Source-Server-for-Windows-Server-Essentials-migration.md)
 ### [手順 2:Windows Server Essentials を新しいレプリカ ドメイン コントローラーとしてインストールする](migrate/Step-2--Install-Windows-Server-Essentials-as-a-new-replica-domain-controller.md)
 ### [手順 3:新しい Windows Server Essentials サーバーにコンピューターを参加させる](migrate/Step-3--Join-computers-to-the-new-Windows-Server-Essentials-server.md)
 ### [手順 4:Windows Server Essentials への移行のために設定とデータを移行先サーバーに移動する](migrate/Step-4--Move-settings-and-data-to-the-Destination-Server-for-Windows-Server-Essentials-migration.md)
