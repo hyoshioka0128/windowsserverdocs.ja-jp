@@ -1,4 +1,4 @@
-# [ID およびアクセス](Identity-and-Access.yml)
+# [ID およびアクセス](Identity-and-Access.md)
 
 ## [ソリューションとシナリオ ガイド](solution-guides/Solutions-and-Scenario-Guides.md)
 ### [ダイナミック アクセス制御: シナリオの概要](solution-guides/Dynamic-Access-Control--Scenario-Overview.md)
@@ -46,7 +46,7 @@
 ##### [アプリケーション ベンダー向けの仮想化ドメイン コントローラー複製のテスト ガイダンス](ad-ds/reference/virtual-dc/Virtualized-Domain-Controller-Cloning-Test-Guidance-for-Application-Vendors.md)
 ##### [仮想化ドメイン コントローラー用 Hyper-V レプリカの使用のサポート](ad-ds/get-started/virtual-dc/Support-for-using-Hyper-V-Replica-for-virtualized-domain-controllers.md)
 
-#### [Windows タイム サービスと AD DS](../networking/windows-time-service/windows-time-service.md)
+####[Windows タイム サービスと AD DS](../networking/windows-time-service/windows-time-service.md)
 
 ### [AD DS の設計と計画](ad-ds/plan/AD-DS-Design-and-Planning.md)
 
@@ -190,7 +190,7 @@
 ###### [Winlogon 自動再起動サインオン (ARSO)](ad-ds/manage/component-updates/winlogon-automatic-restart-sign-on--arso-.md)
 ###### [TPM キーの構成証明](ad-ds/manage/component-updates/TPM-Key-attestation.md)
 ###### [CA のバックアップと復元の Windows PowerShell コマンドレット](ad-ds/manage/component-updates/CA-Backup-and-Restore-Windows-powershell-cmdlets.md)
-###### [コマンド ライン プロセ](ad-ds/manage/component-updates/Command-line-process-auditing.md)スの監査
+###### [コマンド ライン プロセスの監査](ad-ds/manage/component-updates/Command-line-process-auditing.md)
 ##### [ディレクトリ サービス コンポーネントの更新](ad-ds/manage/component-updates/directory-Services-component-updates.md)
 #### [保護されるアカウントの構成方法](ad-ds/manage/how-to-configure-protected-accounts.md)
 #### [LDAP サーバー Cookie の処理方法](ad-ds/manage/How-LDAP-Server-Cookies-Are-Handled.md)
@@ -275,7 +275,7 @@
 #### [Azure での AD FS の展開](ad-fs/deployment/how-to-connect-fed-azure-adfs.md)
 #### [Azure Traffic Manager による Azure での AD FS](ad-fs/deployment/active-directory-adfs-in-azure-with-azure-traffic-manager.md)  
 #### [SQL データベースを使用した、Windows Server 2016 での AD FS へのアップグレード](ad-fs/deployment/Upgrading-to-AD-FS-in-Windows-Server-SQL.md)
-#### [Azure AD Connect Health を展開してクラウドでオンプレミスの ID インフラストラクチャを監視する](/azure/active-directory/hybrid/whatis-hybrid-identity)
+#### [Azure AD Connect Health を展開してクラウドでオンプレミスの ID インフラストラクチャを監視する](https://azure.microsoft.com/documentation/articles/active-directory-aadconnect-health)
 
 
 #### [Windows Server 2016 と 2012 R2 の AD FS 展開ガイド](ad-fs/deployment/Windows-Server-2012-R2-AD-FS-Deployment-Guide.md)
@@ -330,8 +330,8 @@
 ##### [フェデレーション サーバー プロキシの展開](ad-fs/deployment/Deploying-Federation-Server-Proxies.md)
 ###### [チェックリスト:フェデレーション サーバー プロキシのセットアップ](ad-fs/deployment/Checklist--Setting-Up-a-Federation-Server-Proxy.md)
 ###### [コンピューターのドメインへの参加](ad-fs/deployment/Join-a-computer-to-a-Domain.md)
-###### [境界ネットワークのみを対象とする DNS ゾーンでフェデレーション サーバー プロキシの名前解決を構成する](./ad-fs/deployment/configure-name-resolution-for-federation-server-proxy-in-dns-zone-serving-only-perimeter-network.md)
-###### [境界ネットワークとインターネット クライアントの両方を対象とする DNS ゾーンでフェデレーション サーバー プロキシの名前解決を構成する](./ad-fs/deployment/configure-name-resolution-for-federation-server-proxy-in-dns-zone-serving-only-perimeter-network.md)
+###### [境界ネットワークのみを対象とする DNS ゾーンでフェデレーション サーバー プロキシの名前解決を構成する](ad-fs/deployment/Configure-Name-Resolution-for-a-Federation-Server-Proxy-in-a-DNS-Zone-That-Serves-Only-the-Perimeter-Network.md)
+###### [境界ネットワークとインターネット クライアントの両方を対象とする DNS ゾーンでフェデレーション サーバー プロキシの名前解決を構成する](ad-fs/deployment/Configure-Name-Resolution-for-a-Federation-Server-Proxy-in-a-DNS-Zone-That-Serves-Both-the-Perimeter-Network-and-Internet-Clients.md)
 ###### [サーバー認証証明書の秘密キーの部分をエクスポートする](ad-fs/deployment/Export-the-Private-Key-Portion-of-a-Server-Authentication-Certificate.md)
 ###### [サーバー認証証明書を既定の Web サイトにインポートする](ad-fs/deployment/import-a-Server-Authentication-Certificate-to-the-Default-Web-Site.md)
 ###### [フェデレーション サービス プロキシ役割サービスをインストールする](ad-fs/deployment/Install-the-Federation-Service-Proxy-Role-Service.md)
@@ -345,25 +345,25 @@
 ###### [証明書利用者信頼を手動で作成する](ad-fs/operations/create-a-Relying-Party-Trust.md)
 ###### [要求プロバイダー信頼の手動作成](ad-fs/operations/create-a-Claims-Provider-Trust.md)
 ###### [AD FS 1.x と互換性のある要求を送信する規則を作成する](ad-fs/operations/create-a-Rule-to-Send-an-AD-FS-1x-compatible-Claim.md)
-#### [Azure AD Connect Health の展開](/azure/active-directory/hybrid/whatis-hybrid-identity)
+#### [Azure AD Connect Health の展開](https://azure.microsoft.com/documentation/articles/active-directory-aadconnect-health/)
 #### [Windows Server 2012 R2 への Active Directory フェデレーション サービス (AD FS) 役割サービスの移行](ad-fs/deployment/migrate-ad-fs-service-role-to-windows-server-r2.md)
 ##### [AD FS フェデレーション サーバーの移行準備](ad-fs/deployment/prepare-migrate-ad-fs-server-r2.md)
-##### [AD FS フェデレーション サーバーの移行](ad-fs/deployment/migrate-ad-fs-fed-server-r2.md)
-##### [AD FS フェデレーション サーバー プロキシの移行](ad-fs/deployment/migrate-fed-server-proxy-r2.md)
-##### [AD FS から Windows Server 2012 R2 への移行の確認](ad-fs/deployment/verify-ad-fs-migration.md)
+#####[AD FS フェデレーション サーバーの移行](ad-fs/deployment/migrate-ad-fs-fed-server-r2.md)
+#####[AD FS フェデレーション サーバー プロキシの移行](ad-fs/deployment/migrate-fed-server-proxy-r2.md)
+#####[AD FS から Windows Server 2012 R2 への移行の確認](ad-fs/deployment/verify-ad-fs-migration.md)
 
 #### [Windows Server 2012 への Active Directory フェデレーション サービス (AD FS) 役割サービスの移行](ad-fs/deployment/migrate-ad-fs-role-services-to-windows-server-2012.md)
 ##### [AD FS 2.0 フェデレーション サーバーの移行の準備](ad-fs/deployment/prepare-to-migrate-ad-fs-fed-server.md)
-###### [AD FS 2.0 スタンドアロンまたは単一ノード ファーム サーバーの移行準備](ad-fs/deployment/prepare-to-migrate-a-stand-alone-ad-fs-federation-server.md)
-###### [AD FS 2.0 WID ファームの移行準備](ad-fs/deployment/prepare-to-migrate-a-wid-farm.md)
-###### [AD FS 2.0 SQL ファームの移行準備](ad-fs/deployment/prepare-to-migrate-a-sql-server-farm.md)
-##### [AD FS 2.0 フェデレーション サーバー プロキシの移行の準備](ad-fs/deployment/prepare-to-migrate-ad-fs-fed-proxy.md)
-##### [AD FS 2.0 フェデレーション サーバーの移行](ad-fs/deployment/migrate-the-ad-fs-fed-server.md)
-###### [AD FS 2.0 スタンドアロンまたは単一ノード ファーム サーバーの移行](ad-fs/deployment/migrate-ad-fs-stand-alone-server.md)
-###### [AD FS 2.0 WID ファームの移行](ad-fs/deployment/migrate-ad-fs-wid-farm.md)
-###### [AD FS 2.0 SQL ファームの移行](ad-fs/deployment/migrate-ad-fs-sql-farm.md)
-##### [AD FS 2.0 フェデレーション サーバー プロキシの移行](ad-fs/deployment/migrate-the-ad-fs-2-fed-server-proxy.md)
-##### [AD FS 1.1 Web エージェントの移行](ad-fs/deployment/migrate-the-ad-fs-web-agent.md)
+######[AD FS 2.0 スタンドアロンまたは単一ノード ファーム サーバーの移行準備](ad-fs/deployment/prepare-to-migrate-a-stand-alone-ad-fs-federation-server.md)
+######[AD FS 2.0 WID ファームの移行準備](ad-fs/deployment/prepare-to-migrate-a-wid-farm.md)
+######[AD FS 2.0 SQL ファームの移行準備](ad-fs/deployment/prepare-to-migrate-a-sql-server-farm.md)
+#####[AD FS 2.0 フェデレーション サーバー プロキシの移行の準備](ad-fs/deployment/prepare-to-migrate-ad-fs-fed-proxy.md)
+#####[AD FS 2.0 フェデレーション サーバーの移行](ad-fs/deployment/migrate-the-ad-fs-fed-server.md)
+######[AD FS 2.0 スタンドアロンまたは単一ノード ファーム サーバーの移行](ad-fs/deployment/migrate-ad-fs-stand-alone-server.md)
+######[AD FS 2.0 WID ファームの移行](ad-fs/deployment/migrate-ad-fs-wid-farm.md)
+######[AD FS 2.0 SQL ファームの移行](ad-fs/deployment/migrate-ad-fs-sql-farm.md)
+#####[AD FS 2.0 フェデレーション サーバー プロキシの移行](ad-fs/deployment/migrate-the-ad-fs-2-fed-server-proxy.md)
+#####[AD FS 1.1 Web エージェントの移行](ad-fs/deployment/migrate-the-ad-fs-web-agent.md)
 
 
 
