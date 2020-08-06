@@ -7,24 +7,24 @@ ms.technology: storage-spaces
 ms.topic: get-started-article
 ms.assetid: 20fee213-8ba5-4cd3-87a6-e77359e82bc0
 author: stevenek
-ms.date: 06/07/2019
-description: 記憶域スペースダイレクトを使用して、Windows Server のソフトウェア定義記憶域を、ハイパー集約型インフラストラクチャまたは収束 (disaggregated とも呼ばれる) インフラストラクチャとして展開する手順を説明します。
+ms.date: 07/24/2020
+description: Windows Server の記憶域スペースダイレクトを使用して、ハイパー集約型インフラストラクチャまたは収束 (disaggregated とも呼ばれます) インフラストラクチャとしてソフトウェア定義記憶域を展開する手順について説明します。
 ms.localizationpriority: medium
-ms.openlocfilehash: c18d3edc57ab04c9f9487bc39b52325fa1eb0ba9
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: ba9287cebe1cf35c151335e59476f63ae3e01a56
+ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955114"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87863939"
 ---
 # <a name="deploy-storage-spaces-direct"></a>記憶域スペース ダイレクトの展開
 
 > 適用先:Windows Server 2019、Windows Server 2016
 
-このトピックでは、[記憶域スペースダイレクト](storage-spaces-direct-overview.md)を展開する手順について説明します。
+このトピックでは、Windows Server に[記憶域スペースダイレクト](storage-spaces-direct-overview.md)を展開する手順について説明します。 Azure Stack HCI の一部として記憶域スペースダイレクトを展開する方法については、「 [AZURE STACK HCI の展開プロセス](/azure-stack/hci/deploy/deployment-overview)」を参照してください。
 
 > [!Tip]
-> ハイパー集約型インフラストラクチャの取得を検討していますか? Microsoft では、展開ツールと手順を含む、検証済みのハードウェア/ソフトウェアソリューションをパートナーから購入することをお勧めします。 これらのソリューションは、互換性と信頼性を確保するために、参照アーキテクチャに対して設計、組み立て、検証を行い、迅速に稼働させることができます。 Windows Server 2019 ソリューションについては、 [AZURE STACK HCI solutions の web サイト](https://azure.microsoft.com/overview/azure-stack/hci)を参照してください。 Windows Server 2016 ソリューションの詳細については、「 [Windows Server Software Defined](https://microsoft.com/wssd)」を参照してください。
+> ハイパー集約型インフラストラクチャの取得を検討していますか? Microsoft は、パートナーから検証済みのハードウェア/ソフトウェア Azure Stack HCI ソリューションを購入することをお勧めします。 これらのソリューションは、互換性と信頼性を確保するために、Microsoft の参照アーキテクチャに照らして設計、組み立て、検証されているため、迅速に稼働させることができます。 Azure Stack HCI で動作するハードウェア/ソフトウェアソリューションのカタログを参照するには、 [AZURE STACK HCI カタログ](https://azure.microsoft.com/products/azure-stack/hci/catalog/)を参照してください。
 
 > [!Tip]
 > Microsoft Azure に含まれる Hyper-v 仮想マシンを使用して、[ハードウェアなしで記憶域スペースダイレクトを評価](storage-spaces-direct-in-vm.md)することができます。 また、トレーニング目的で使用する[Windows Server の迅速なラボデプロイスクリプト](https://aka.ms/wslab)を確認することもできます。
@@ -37,13 +37,13 @@ ms.locfileid: "86955114"
 
 - **配置オプション。** 記憶域スペースダイレクトで[は、ハイパー収束と収束の2つのデプロイオプション](storage-spaces-direct-overview.md#deployment-options)がサポートされています。 それぞれの利点を理解して、どちらが適切かを判断してください。 次の手順1-3 は、両方の展開オプションに適用されます。 手順4は、収束デプロイの場合にのみ必要です。
 
-- **サーバー名。** コンピューター、ファイル、パス、およびその他のリソースに関する組織の名前付けポリシーについて理解を深めます。 複数のサーバーをプロビジョニングする必要があり、それぞれに一意の名前を付けます。
+- **サーバー名。** コンピューター、ファイル、パス、およびその他のリソースに関する組織の名前付けポリシーについて理解を深めます。 複数のサーバーをプロビジョニングする場合、それぞれに一意の名前を付ける必要があります。
 
-- **ドメイン名。** ドメイン名とドメイン参加に関する組織のポリシーについて理解を深めます。  サーバーをドメインに参加させるため、ドメイン名を指定する必要があります。
+- **ドメイン名。** ドメイン名とドメイン参加に関する組織のポリシーについて理解を深めます。  サーバーをドメインに参加させ、ドメイン名を指定する必要があります。
 
-- **RDMA ネットワーク。** RDMA プロトコルには、iWarp と RoCE の2種類があります。 ネットワークアダプターで使用されているものを確認し、RoCE の場合はバージョン (v1 または v2) にも注意してください。 RoCE の場合は、ラックの最上位スイッチのモデルにも注意してください。
+- **RDMA ネットワーク。** RDMA プロトコルには、iWarp と RoCE の2種類があります。 ネットワーク アダプターでどちらの種類が使用されているか確認し、RoCE の場合は、そのバージョン (v1 または v2) にも注意してください。 RoCE では、Top-of-Rack スイッチのモデルも確認してください。
 
-- **VLAN ID。** サーバー上の管理 OS ネットワークアダプターに使用される VLAN ID をメモしておきます (存在する場合)。 この情報はネットワーク管理者から入手できるはずです。
+- **VLAN ID。** サーバー上の管理 OS ネットワークアダプターに使用される VLAN ID をメモしておきます (存在する場合)。 これは、ネットワーク管理者から入手できるはずです。
 
 ## <a name="step-1-deploy-windows-server"></a>手順 1: Windows Server を展開する
 
@@ -86,9 +86,9 @@ PS セッションを開始し、接続するノードのサーバー名また�
 >
 > 注: 信頼されたホストの一覧では、のようなワイルドカードがサポートされて `Server*` います。
 >
-> 信頼されたホストの一覧を表示するには、「」と入力 `Get-Item WSMAN:\Localhost\Client\TrustedHosts` します。
+> 信頼されたホストの一覧を表示するには、「`Get-Item WSMAN:\Localhost\Client\TrustedHosts`」と入力します。
 >
-> リストを空にするには、「」と入力 `Clear-Item WSMAN:\Localhost\Client\TrustedHost` します。
+> 一覧を空にするには、「`Clear-Item WSMAN:\Localhost\Client\TrustedHost`」と入力します。
 
 ### <a name="step-13-join-the-domain-and-add-domain-accounts"></a>手順 1.3: ドメインに参加してドメインアカウントを追加する
 
@@ -110,7 +110,7 @@ Net localgroup Administrators <Domain\Account> /add
 
 ### <a name="step-14-install-roles-and-features"></a>手順 1.4: 役割と機能をインストールする
 
-次の手順では、すべてのサーバーにサーバーの役割をインストールします。 これを行うには、 [Windows 管理センター](../../manage/windows-admin-center/use/manage-servers.md)、[サーバーマネージャー](../../administration/server-manager/install-or-uninstall-roles-role-services-or-features.md))、または PowerShell を使用します。 インストールするロールを次に示します。
+次の手順では、すべてのサーバーにサーバーの役割をインストールします。 これを行うには、 [Windows 管理センター](../../manage/windows-admin-center/use/manage-servers.md)、[サーバーマネージャー](../../administration/server-manager/install-or-uninstall-roles-role-services-or-features.md))、または PowerShell を使用します。 インストールする役割は次のとおりです。
 
 - フェールオーバー クラスタリング
 - Hyper-V
@@ -233,7 +233,7 @@ Test-Cluster –Node <MachineName1, MachineName2, MachineName3, MachineName4> �
 
 詳細については、次のトピックを参照してください。
 
-- [クォーラムを構成および管理する](../../failover-clustering/manage-cluster-quorum.md)
+- [クォーラムを構成して管理する](../../failover-clustering/manage-cluster-quorum.md)
 - [フェールオーバー クラスターのクラウド監視を展開する](../../failover-clustering/deploy-cloud-witness.md)
 
 ### <a name="step-35-enable-storage-spaces-direct"></a>手順 3.5: 記憶域スペース ダイレクトを有効にする
@@ -244,7 +244,7 @@ Test-Cluster –Node <MachineName1, MachineName2, MachineName3, MachineName4> �
 
 -   **記憶域スペース ダイレクトのキャッシュを構成する:** 記憶域スペース ダイレクトで使用可能なメディア (ドライブ) の種類が複数ある場合は、最も高速なものがキャッシュ デバイスとして構成されます (ほとんどの場合、読み書き可能なもの)。
 
--   **レベル:** 既定のレベルとして2つの層を作成します。 1 つを "Capacity" と呼び、もう 1 つを "Performance" と呼びます。 コマンドレットではデバイスを分析し、デバイスの種類と回復性を組み合わせて各階層を構成します。
+-   **レベル:** 既定のレベルとして2つの層を作成します。 1 つは "Capacity" という名前で、もう 1 つは "Performance" という名前です。 コマンドレットにより、デバイスが分析されて、各階層がデバイスの種類と回復性を組み合わせて構成されます。
 
 管理システムから、管理者特権で開いた PowerShell コマンド ウィンドウで、次のコマンドを開始します。 クラスター名は、前の手順で作成したクラスターの名前です。 このコマンドをいずれかのノードのローカルで実行する場合、-CimSession パラメーターは必要ありません。
 
@@ -386,7 +386,7 @@ CD $ScriptFolder
 
 クラスター化されたファイルサーバーをデプロイした後は、実際のワークロードを導入する前に、合成ワークロードを使用してソリューションのパフォーマンスをテストすることをお勧めします。 これにより、ソリューションが正常に実行されていることを確認し、残存している問題を解決してからワークロードの複雑さを増すことができます。 詳細については、「[合成ワークロードを使用した記憶域スペースのパフォーマンスのテスト](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn894707(v=ws.11))」を参照してください。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 -   [Windows Server 2016 での記憶域スペース ダイレクト](storage-spaces-direct-overview.md)
 -   [記憶域スペース ダイレクトのキャッシュについて](understand-the-cache.md)

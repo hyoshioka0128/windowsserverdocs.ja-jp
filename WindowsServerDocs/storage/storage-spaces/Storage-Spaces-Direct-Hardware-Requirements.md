@@ -7,22 +7,22 @@ manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: eldenchristensen
-ms.date: 06/24/2020
+ms.date: 07/24/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 108e5a65b78370c40ba02da677e953eb2b122288
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 45ef438d58c9d36275f2e7a32ce93a383bd21a70
+ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86964584"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87864277"
 ---
 # <a name="storage-spaces-direct-hardware-requirements"></a>記憶域スペース ダイレクトのハードウェア要件
 
 > 適用先:Windows Server 2019、Windows Server 2016
 
-このトピックでは、記憶域スペース ダイレクトを使用するための最小ハードウェア要件について説明します。
+このトピックでは、Windows Server での記憶域スペースダイレクトの最小ハードウェア要件について説明します。 Azure Stack HCI のハードウェア要件については、クラウドへの接続を使用したハイパー集約型の展開向けに設計された、microsoft のオペレーティングシステム[AZURE STACK HCI: ハードウェア要件の決定](/azure-stack/hci/deploy/before-you-start#determine-hardware-requirements)」を参照してください。
 
-運用環境では、Microsoft のパートナーから検証済みのハードウェア/ソフトウェアソリューションを購入することをお勧めします。これには、展開ツールと手順が含まれます。 これらのソリューションは、互換性と信頼性を確保するために、参照アーキテクチャに対して設計、組み立て、検証を行い、迅速に稼働させることができます。 Windows Server 2019 ソリューションについては、 [AZURE STACK HCI solutions の web サイト](https://azure.microsoft.com/overview/azure-stack/hci)を参照してください。 Windows Server 2016 ソリューションの詳細については、「 [Windows Server Software Defined](https://microsoft.com/wssd)」を参照してください。
+運用環境では、Microsoft のパートナーから検証済みのハードウェア/ソフトウェアソリューションを購入することをお勧めします。これには、展開ツールと手順が含まれます。 これらのソリューションは、互換性と信頼性を確保するために、Microsoft の参照アーキテクチャに照らして設計、組み立て、検証されているため、迅速に稼働させることができます。 Windows Server 2019 ソリューションについては、 [AZURE STACK HCI solutions の web サイト](https://azure.microsoft.com/overview/azure-stack/hci)を参照してください。 Windows Server 2016 ソリューションの詳細については、「 [Windows Server Software Defined](https://microsoft.com/wssd)」を参照してください。
 
    > [!TIP]
    > 記憶域スペースダイレクト評価するが、ハードウェアがない場合は、 「[ゲスト仮想マシンクラスターでの記憶域スペースダイレクトの使用](storage-spaces-direct-in-vm.md)」の説明に従って、hyper-v または Azure の仮想マシンを使用します。
@@ -97,11 +97,11 @@ Small scale 2-3 ノードの最小相互接続
 - 直接接続されている NVMe ドライブ
 - Sas ドライブを使用する SAS ホストバスアダプター (HBA)
 - SATA ドライブを搭載した SAS ホストバスアダプター (HBA)
-- **サポートされていない:** RAID コントローラーカードまたは SAN (ファイバーチャネル、iSCSI、FCoE) ストレージ。 ホストバスアダプター (HBA) カードは、単純なパススルーモードを実装する必要があります。
+- **サポートされていない:** RAID コントローラーカードまたは SAN (ファイバーチャネル、iSCSI、FCoE) ストレージ。 ホスト バス アダプター (HBA) カードは、単純なパススルー モードを実装する必要があります。
 
 ![サポートされているドライブの相互接続の図](media/hardware-requirements/drive-interconnect-support-1.png)
 
-ドライブは、サーバーの内部、または1台のサーバーに接続されている外部エンクロージャに存在することができます。 スロットのマッピングと識別には SCSI エンクロージャサービス (SES) が必要です。 各外部エンクロージャは、一意の識別子 (一意の ID) を提示する必要があります。
+ドライブは、サーバーの内部、または 1 台のサーバーにのみ接続されている外部エンクロージャに配置できます。 スロットのマッピングと識別のために SCSI エンクロージャ ービス (SES) が必要になります。 各外部エンクロージャは、一意識別子 (一意の ID) を提示する必要があります。
 
 - サーバー内部のドライブ
 - 1つのサーバーに接続されている外部エンクロージャ ("JBOD") 内のドライブ

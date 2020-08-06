@@ -8,14 +8,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: bb8ad6a7325e56d9cc548b23fb0876c76ba9c113
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: a906876c25fea62e20abfebf2268af977e6b3ad3
+ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519931"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87864043"
 ---
-# <a name="federation-server-farm-using-wid-and-proxies"></a>WID とプロキシを使用するフェデレーション サーバー ファーム
+# <a name="legacy-ad-fs-federation-server-farm-using-wid-and-proxies"></a>WID とプロキシを使用する従来の AD FS フェデレーションサーバーファーム
 
 この Active Directory フェデレーションサービス (AD FS) の展開トポロジ (AD FS) は、Windows Internal Database (WID) トポロジを使用するフェデレーションサーバーファームと同じですが、外部ユーザーをサポートするために、プロキシコンピューターが境界ネットワークに追加されます。 これらのプロキシは、企業ネットワークの外部からのクライアント認証要求をフェデレーションサーバーファームにリダイレクトします。 以前のバージョンの AD FS では、これらのプロキシはフェデレーションサーバープロキシと呼ばれていました。
 
@@ -48,10 +48,10 @@ ms.locfileid: "87519931"
 
 - [WID トポロジを使用したフェデレーションサーバーファーム](Federation-Server-Farm-Using-WID.md)の一覧と同じ制限事項
 
-    | 1-100 RP 信頼 | 100を超える RP 信頼 |
+    | 1-100 個の RP 信頼 | 100 個を超える RP 信頼 |
     |--|--|
-    | **1-30 AD FS ノード:** WID がサポートされる | **1-30 AD FS ノード:** WID を使用する場合はサポートされません-SQL が必要 |
-    | **30 を超える AD FS ノード:** WID を使用する場合はサポートされません-SQL が必要 | **30 を超える AD FS ノード:** WID を使用する場合はサポートされません-SQL が必要 |
+    | **1-30 個の AD FS ノード:** WID サポート対象 | **1-30 個の AD FS ノード:** WID の使用はサポート対象外 - SQL が必要 |
+    | **30 個を超える AD FS ノード:** WID の使用はサポート対象外 - SQL が必要 | **30 個を超える AD FS ノード:** WID の使用はサポート対象外 - SQL が必要 |
 
 ## <a name="server-placement-and-network-layout-recommendations"></a>サーバーの配置とネットワークレイアウトに関する推奨事項
 このトポロジを展開するには、2つの web アプリケーションプロキシを追加するだけでなく、境界ネットワークがドメインネームシステム (DNS) サーバーおよび2番目のネットワーク負荷分散 (NLB) ホストにもアクセスできるようにする必要があります。 2番目の NLB ホストは、インターネットからアクセス可能なクラスター IP アドレスを使用する NLB クラスターを使用して構成する必要があります。また、企業ネットワーク (fs.fabrikam.com) で構成した前の NLB クラスターと同じクラスター DNS 名設定を使用する必要があります。 Web アプリケーションプロキシは、インターネットからアクセス可能な IP アドレスを使用して構成する必要もあります。

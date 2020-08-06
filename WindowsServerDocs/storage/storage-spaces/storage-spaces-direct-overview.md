@@ -6,24 +6,24 @@ manager: dongill
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
-ms.date: 06/26/2019
+ms.date: 07/24/2020
 ms.assetid: 8bd0d09a-0421-40a4-b752-40ecb5350ffd
-description: 記憶域スペースダイレクトの概要。内部記憶域を持つサーバーをソフトウェアで定義された記憶域ソリューションにクラスター化できるようにする Windows Server の機能です。
+description: 内部記憶域を持つサーバーをソフトウェアによって定義された記憶域ソリューションにクラスター化できるようにする、Windows Server および Azure Stack HCI の機能である記憶域スペースダイレクトの概要を説明します。
 ms.localizationpriority: medium
-ms.openlocfilehash: 4fb8700935306cbd007ab4afc61cf3eb54227130
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: 3fd86a8465d2fef59ccce73fc473790682f0d180
+ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87768947"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87864323"
 ---
 # <a name="storage-spaces-direct-overview"></a>記憶域スペース ダイレクトの概要
 
->適用先:Windows Server 2019、Windows Server 2016
+>適用対象: Azure Stack HCI、Windows Server 2019、Windows Server 2016
 
 記憶域スペース ダイレクトは、業界標準のサーバーとローカルで接続されているドライブを使用して、従来の SAN や NAS 配列の何分の 1 かのコストで、可用性と拡張性が高いソフトウェア定義の記憶域を作ります。 収束または集約型アーキテクチャは、調達とデプロイを大幅に簡素化します。一方、キャッシュ、記憶域階層、消去コーディングなどの機能は、RDMA ネットワークや NVMe ドライブなどの最新のハードウェアイノベーションと共に、優れたの効率とパフォーマンスを実現します。
 
-記憶域スペースダイレクトは、Windows Server 2019 Datacenter、Windows Server 2016 Datacenter、および[Windows Server Insider Preview ビルド](https://insider.windows.com/for-business-getting-started-server/)に含まれています。
+記憶域スペースダイレクトは、 [AZURE STACK HCI](/azure-stack/hci/)、windows Server 2019 Datacenter、windows Server 2016 datacenter、および[Windows Server Insider Preview ビルド](https://insider.windows.com/for-business-getting-started-server/)に含まれています。
 
 共有 SAS クラスターやスタンドアロンサーバーなど、記憶域スペースの他のアプリケーションについては、「[記憶域スペースの概要](overview.md)」を参照してください。 Windows 10 PC で記憶域スペースを使用する方法の詳細については、「 [windows 10 での記憶域スペース](https://support.microsoft.com/help/12438/windows-10-storage-spaces)」を参照してください。
 

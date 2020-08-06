@@ -8,12 +8,12 @@ ms.date: 07/29/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: c51394b96abbe451b57ab1388cf2d21126959a78
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: ddfcf45fa897fbed4a2475332b9706fc8d9fb634
+ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769710"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87864201"
 ---
 # <a name="storage-migration-service-known-issues"></a>記憶域移行サービスの既知の問題
 
@@ -30,7 +30,7 @@ Storage Migration Service には、Orchestrator サービスとプロキシサ�
 - アプリケーションとサービスログ \ Microsoft \ Windows \ StorageMigrationService
 - アプリケーションとサービスログ \ Microsoft \ Windows \ StorageMigrationService
 
-オフラインで表示したり Microsoft サポートに送信したりするためにこれらのログを収集する必要がある場合は、GitHub で入手できるオープンソースの PowerShell スクリプトがあります。
+オフラインで表示したり Microsoft サポートに送信したりするためにこれらのログを収集する必要がある場合は、GitHub で提供されているオープンソースの PowerShell スクリプトがあります。
 
  [記憶域移行サービスヘルパー](https://aka.ms/smslogs)
 
@@ -118,9 +118,9 @@ Warning: The destination proxy wasn't found.
 
 Windows Server 2019 の展開先コンピューターに Storage Migration Service Proxy サービスをインストールしていない場合、または対象コンピューターが Windows Server 2016 または Windows Server 2012 R2 の場合、この動作は仕様によるものです。 転送のパフォーマンスを大幅に向上させるために、プロキシがインストールされた Windows Server 2019 コンピューターに移行することをお勧めします。
 
-## <a name="certain-files-do-not-inventory-or-transfer-error-5-access-is-denied"></a>特定のファイルのインベントリや転送が行われず、エラー5の "アクセスが拒否されました"
+## <a name="certain-files-dont-inventory-or-transfer-error-5-access-is-denied"></a>特定のファイルのインベントリや転送が行われない、エラー 5 "アクセスが拒否されました"
 
-転送元コンピューターから移行先コンピューターにファイルをインベントリしたり転送したりするときに、管理者グループのアクセス許可が削除されたファイルは移行に失敗します。 記憶域移行サービスの確認-プロキシデバッグは次のように表示されます。
+転送元コンピューターから転送先コンピューターにファイルをインベントリしたり転送したりするときに、ユーザーが管理者グループのアクセス許可を削除したファイルは移行できません。 記憶域移行サービスの確認-プロキシデバッグは次のように表示されます。
 
 ```
 Log Name: Microsoft-Windows-StorageMigrationService-Proxy/Debug
@@ -152,39 +152,39 @@ at Microsoft.StorageMigration.Proxy.Service.Transfer.FileTransfer.TryTransfer()
 
 記憶域移行サービスを使用してファイルを新しい宛先に転送するときに、事前シードされたレプリケーションまたは DFS レプリケーションデータベースの複製を使用して既存のサーバーにそのデータをレプリケートするように DFS レプリケーションを構成すると、すべてのファイルでハッシュの不一致が発生し、再レプリケートされます。 データストリーム、セキュリティストリーム、サイズ、および属性はすべて、ストレージ移行サービスを使用して転送した後、完全に一致しているように見えます。 ICACLS または DFS レプリケーションデータベース複製デバッグログを使用してファイルを調べると、次のようになります。
 
+### <a name="source-file"></a>ソース ファイル
 ```
-Source file:
-
   icacls d:\test\Source:
 
-  icacls d:\test\thatcher.png /save out.txt /t
-  thatcher.png
+  icacls d:\test\thatcher.png /save out.txt /t thatcher.png
   D:AI(A;;FA;;;BA)(A;;0x1200a9;;;DD)(A;;0x1301bf;;;DU)(A;ID;FA;;;BA)(A;ID;FA;;;SY)(A;ID;0x1200a9;;;BU)
-
-Destination file:
-
-  icacls d:\test\thatcher.png /save out.txt /t
-  thatcher.png
-  D:AI(A;;FA;;;BA)(A;;0x1301bf;;;DU)(A;;0x1200a9;;;DD)(A;ID;FA;;;BA)(A;ID;FA;;;SY)(A;ID;0x1200a9;;;BU)**S:PAINO_ACCESS_CONTROL**
-
-DFSR Debug Log:
-
-    20190308 10:18:53.116 3948 DBCL  4045 [WARN] DBClone::IDTableImportUpdate Mismatch record was found.
-
-    Local ACL hash:1BCDFE03-A18BCE01-D1AE9859-23A0A5F6
-    LastWriteTime:20190308 18:09:44.876
-    FileSizeLow:1131654
-    FileSizeHigh:0
-    Attributes:32
-
-    Clone ACL hash:**DDC4FCE4-DDF329C4-977CED6D-F4D72A5B**
-    LastWriteTime:20190308 18:09:44.876
-    FileSizeLow:1131654
-    FileSizeHigh:0
-    Attributes:32
 ```
 
-この問題は[KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534) update によって修正されています
+### <a name="destination-file"></a>[送信先ファイル]
+
+```
+  icacls d:\test\thatcher.png /save out.txt /t thatcher.png
+  D:AI(A;;FA;;;BA)(A;;0x1301bf;;;DU)(A;;0x1200a9;;;DD)(A;ID;FA;;;BA)(A;ID;FA;;;SY)(A;ID;0x1200a9;;;BU)**S:PAINO_ACCESS_CONTROL**
+```
+### <a name="dfsr-debug-log"></a>DFSR デバッグログ
+
+```
+   20190308 10:18:53.116 3948 DBCL  4045 [WARN] DBClone::IDTableImportUpdate Mismatch record was found.
+
+   Local ACL hash:1BCDFE03-A18BCE01-D1AE9859-23A0A5F6
+   LastWriteTime:20190308 18:09:44.876
+   FileSizeLow:1131654
+   FileSizeHigh:0
+   Attributes:32
+
+   Clone ACL hash:**DDC4FCE4-DDF329C4-977CED6D-F4D72A5B**
+   LastWriteTime:20190308 18:09:44.876
+   FileSizeLow:1131654
+   FileSizeHigh:0
+   Attributes:32
+```
+
+この問題は、 [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534) update によって修正されています。
 
 ## <a name="error-couldnt-transfer-storage-on-any-of-the-endpoints-when-transferring-from-windows-server-2008-r2"></a>Windows Server 2008 R2 から転送するときに、"どのエンドポイントにもストレージを転送できませんでした" というエラーが発生する
 
@@ -195,11 +195,11 @@ Couldn't transfer storage on any of the endpoints.
 0x9044
 ```
 
-このエラーが発生するのは、Windows Server 2008 R2 コンピューターに、Windows Update からの重要な更新プログラムと重要な更新プログラムのすべてが完全にパッチされていない場合です。 記憶域移行サービスに関係なく、Windows Server 2008 R2 コンピューターをセキュリティ上の目的で修正することを常にお勧めします。これは、オペレーティングシステムに新しいバージョンの Windows Server のセキュリティ強化が含まれていないためです。
+このエラーが発生するのは、Windows Server 2008 R2 コンピューターに、Windows Update からの重要な更新プログラムと重要な更新プログラムのすべてが完全にパッチされていない場合です。 Windows server 2008 R2 コンピューターをセキュリティ上の目的で更新しておくことは特に重要です。これは、オペレーティングシステムには、新しいバージョンの Windows Server のセキュリティが強化されていないためです。
 
 ## <a name="error-couldnt-transfer-storage-on-any-of-the-endpoints-and-check-if-the-source-device-is-online---we-couldnt-access-it"></a>"どのエンドポイントにもストレージを転送できませんでした" というエラーが表示され、[ソースデバイスがオンラインであるかどうかを確認してください。] にアクセスできませんでした。
 
-ソースコンピューターからデータを転送しようとすると、一部またはすべての共有が転送されず、概要エラーが発生します。
+ソースコンピューターからデータを転送しようとすると、一部またはすべての共有が転送されず、次のエラーが発生します。
 
 ```
 Couldn't transfer storage on any of the endpoints.
@@ -316,7 +316,7 @@ ServiceError0x9006,Microsoft.StorageMigration.Commands.UnregisterSmsProxyCommand
 2. Orchestrator コンピューターで次の Storage Migration Service PowerShell コマンドを実行します。
 
    ```PowerShell
-   Register-SMSProxy -ComputerName *destination server* -Force
+   Register-SMSProxy -ComputerName <destination server> -Force
    ```
 ## <a name="error-dll-was-not-found-when-running-inventory-from-a-cluster-node"></a>クラスターノードからインベントリを実行しているときに、エラー "Dll が見つかりませんでした" が発生する
 
@@ -345,7 +345,7 @@ Windows Server の累積更新プログラムをアンインストールする�
 
 1. 管理者特権でのコマンドプロンプトを開きます。ここでは、Storage Migration Service orchestrator サーバーの管理者のメンバーで、次を実行します。
 
-     ```
+     ```DOS
      TAKEOWN /d y /a /r /f c:\ProgramData\Microsoft\StorageMigrationService
 
      MD c:\ProgramData\Microsoft\StorageMigrationService\backup
@@ -426,16 +426,14 @@ Guidance: Confirm that the Netlogon service on the computer is reachable through
 
 転送を完了し、その後同じデータの再転送を実行すると、移行元サーバー上でデータがほとんど変更されていない場合でも、転送時間が大幅に短縮されないことがあります。
 
-非常に多数のファイルと入れ子になったフォルダーを転送する場合は、この動作が想定されます。 データのサイズが関連していません。 まず、 [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)でこの動作を改善し、転送のパフォーマンスを最適化しています。 パフォーマンスをさらに調整するには、「[インベントリと転送のパフォーマンスの最適化](./faq.md#optimizing-inventory-and-transfer-performance)」を参照してください。
+非常に多数のファイルと入れ子になったフォルダーを転送する場合は、この動作が想定されます。 データのサイズが関連していません。 まず、 [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)でこの動作を改善し、転送のパフォーマンスを最適化しています。 パフォーマンスをさらに調整するには、「[インベントリと転送のパフォーマンスの最適化](https://docs.microsoft.com/windows-server/storage/storage-migration-service/faq#optimizing-inventory-and-transfer-performance)」を参照してください。
 
 ## <a name="data-does-not-transfer-user-renamed-when-migrating-to-or-from-a-domain-controller"></a>データが転送されず、ドメインコントローラーとの間で移行するときにユーザー名が変更される
 
 またはドメインコントローラーからの転送を開始した後、次のようにします。
 
  1. データは移行されず、コピー先に共有は作成されません。
-
- 2. エラーメッセージが表示されない Windows 管理センターに赤いエラー記号が表示される
-
+ 2. Windows 管理センターにはエラーメッセージが表示されない赤いエラー記号が表示されます。
  3. 1つ以上の AD ユーザーおよびドメインローカルグループの名前または Windows 2000 ログオン属性が変更されました
 
  4. Storage Migration Service orchestrator にイベント3509が表示されます。
@@ -586,8 +584,7 @@ Storage Migration Service は、削除プロセスの一環として、一時的
 
 ## <a name="inventory-or-transfer-fail-when-using-credentials-from-a-different-domain"></a>別のドメインの資格情報を使用すると、インベントリまたは転送が失敗する
 
-ターゲットサーバーとは異なるドメインからの移行資格情報を使用しているときに、ストレージ移行サービスでインベントリを実行したり、Windows Server をターゲットにしたりしようとすると、次のエラーが1つ以上発生します。
-
+ターゲットサーバーとは異なるドメインの移行資格情報を使用しているときに、ストレージ移行サービスでインベントリを実行したり、Windows Server を対象にしたりしようとすると、次のエラーが表示されます。
 ```
 Exception from HRESULT:0x80131505
 

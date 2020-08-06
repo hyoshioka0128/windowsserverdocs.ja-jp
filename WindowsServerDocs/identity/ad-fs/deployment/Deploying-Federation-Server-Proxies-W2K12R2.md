@@ -1,6 +1,6 @@
 ---
 ms.assetid: 222e9f93-7c41-4527-8a98-8f7fbc7a58af
-title: フェデレーション サーバー プロキシの展開
+title: Windows Server 2012 R2 の AD FS でのフェデレーションサーバープロキシの展開
 author: billmath
 ms.author: billmath
 manager: femila
@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 445f3b6fef526cb5dd308be8aafe49a3ecddd6a4
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: eaf33a1f5398adc1237eaed5c8b418ccbebed9fe
+ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86965974"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87864170"
 ---
 # <a name="deploying-federation-server-proxies"></a>フェデレーション サーバー プロキシの展開
 

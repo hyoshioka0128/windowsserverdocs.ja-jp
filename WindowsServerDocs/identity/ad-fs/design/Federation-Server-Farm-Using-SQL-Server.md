@@ -8,14 +8,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: f3dedd53d75120a6a3e8087c345cd7dfa04ca35d
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 4527b6787531b3a349534092e3597a91dbebf78f
+ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519941"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87864136"
 ---
-# <a name="federation-server-farm-using-sql-server"></a>SQL Server を使用するフェデレーション サーバー ファーム
+# <a name="legacy-ad-fs-federation-server-farm-using-sql-server"></a>SQL Server を使用した従来の AD FS フェデレーションサーバーファーム
 
 Active Directory フェデレーションサービス (AD FS) AD FS のこのトポロジは、 \( \) \( \) ファーム内の各フェデレーションサーバーにデータをレプリケートしないという点で、Windows Internal Database WID 展開トポロジを使用したフェデレーションサーバーファームとは異なります。 代わりに、ファーム内のすべてのフェデレーションサーバーは、企業ネットワーク内に配置されている Microsoft SQL Server を実行しているサーバーに格納されている共通のデータベースにデータの読み取りと書き込みを行うことができます。
 
@@ -85,10 +85,10 @@ Windows Server 2012 R2 では、SQL Server を使用して AD FS ファームで
 
 WID ファームの使用の概要を次の表に示します。
 
-| 1-100 RP 信頼 | 100を超える RP 信頼 |
+| 1-100 個の RP 信頼 | 100 個を超える RP 信頼 |
 |--|--|
-| **1-30 AD FS ノード:** WID がサポートされる | **1-30 AD FS ノード:** WID を使用する場合はサポートされません-SQL が必要 |
-| **30 を超える AD FS ノード:** WID を使用する場合はサポートされません-SQL が必要 | **30 を超える AD FS ノード:** WID を使用する場合はサポートされません-SQL が必要 |
+| **1-30 個の AD FS ノード:** WID サポート対象 | **1-30 個の AD FS ノード:** WID の使用はサポート対象外 - SQL が必要 |
+| **30 個を超える AD FS ノード:** WID の使用はサポート対象外 - SQL が必要 | **30 個を超える AD FS ノード:** WID の使用はサポート対象外 - SQL が必要 |
 
 ### <a name="alwayson-availability-groups"></a>AlwaysOn 可用性グループ
 **概要**

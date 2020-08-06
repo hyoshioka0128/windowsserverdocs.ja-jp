@@ -1,6 +1,6 @@
 ---
 ms.assetid: 8ce6e7c4-cf8e-4b55-980c-048fea28d50f
-title: SQL Server を使用するフェデレーション サーバー ファーム
+title: Windows Server の AD FS の要件
 author: billmath
 ms.author: billmath
 manager: femila
@@ -8,14 +8,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 434d630ea3e521abdcffac6b8ce6479659b68ebc
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 4f36b1808ff58b29cbd7be852617689bff8bb146
+ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519951"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87863785"
 ---
-# <a name="ad-fs-requirements"></a>AD FS の要件
+# <a name="ad-fs-requirements-for-windows-server"></a>Windows Server の AD FS の要件
 
 AD FS を展開するときに従う必要があるさまざまな要件を次に示します。
 
@@ -144,10 +144,10 @@ AD FS の機能のほとんどは、AD DS の機能レベルを変更しなく�
 
 WID ファームを使用する場合の概要を次の表に示します。  実装を計画するときに使用します。
 
-| 1-100 RP 信頼 | 100を超える RP 信頼 |
+| 1-100 個の RP 信頼 | 100 個を超える RP 信頼 |
 |--|--|
-| **1-30 AD FS ノード:** WID がサポートされる | **1-30 AD FS ノード:** WID を使用する場合はサポートされません-SQL が必要 |
-| **30 を超える AD FS ノード:** WID を使用する場合はサポートされません-SQL が必要 | **30 を超える AD FS ノード:** WID を使用する場合はサポートされません-SQL が必要 |
+| **1-30 個の AD FS ノード:** WID サポート対象 | **1-30 個の AD FS ノード:** WID の使用はサポート対象外 - SQL が必要 |
+| **30 個を超える AD FS ノード:** WID の使用はサポート対象外 - SQL が必要 | **30 個を超える AD FS ノード:** WID の使用はサポート対象外 - SQL が必要 |
 
 **SQL Server**
 
@@ -166,7 +166,7 @@ Windows Server 2012 R2 の AD FS については SQL Server 2008 以降を使用
 
 いくつかの主要なブラウザーとプラットフォームでは、レンダリングと機能の検証が行われています。詳細は次のとおりです。 この表に記載されていないブラウザーおよびデバイスは、上記の要件を満たしている場合は引き続きサポートされます。
 
-| **ブラウザー** | **・** |
+| **ブラウザー** | **プラットフォーム** |
 |--|--|
 | IE 10.0 | Windows 7、Windows 8.1、Windows Server 2008 R2、Windows Server 2012、Windows Server 2012 R2 |
 | IE 11.0 | Windows7、Windows 8.1、Windows Server 2008 R2、Windows Server 2012、Windows Server 2012 R2 |
@@ -340,9 +340,9 @@ AD FS は、エンドユーザーがデバイスに参加するときに、デ�
 |Aes192keywrap)[http://www.w3.org/2001/04/xmlenc#kw-aes192](http://www.w3.org/2001/04/xmlenc#kw-aes192)|192|セキュリティトークンを暗号化する対称キーを暗号化するためにサポートされているアルゴリズム。|
 |Aes256keywrap)[http://www.w3.org/2001/04/xmlenc#kw-aes256](http://www.w3.org/2001/04/xmlenc#kw-aes256)|256|セキュリティトークンを暗号化する対称キーを暗号化するためにサポートされているアルゴリズム。|
 |RsaV15KeyWrap -[http://www.w3.org/2001/04/xmlenc#rsa-1_5](http://www.w3.org/2001/04/xmlenc#rsa-1_5)|1024|セキュリティトークンを暗号化する対称キーを暗号化するためにサポートされているアルゴリズム。|
-|Rsaoaepkeywrap)[http://www.w3.org/2001/04/xmlenc#rsa-oaep-mgf1p](http://www.w3.org/2001/04/xmlenc#rsa-oaep-mgf1p)|1024|既定値。 セキュリティトークンを暗号化する対称キーを暗号化するためにサポートされているアルゴリズム。|
-|SHA1[http://www.w3.org/PICS/DSig/SHA1_1_0.html](http://www.w3.org/PICS/DSig/SHA1_1_0.html)|N/A|アーティファクト SourceId の生成時に AD FS サーバーによって使用されます。このシナリオでは、STS は (SAML 2.0 標準の推奨事項に従って) SHA1 を使用して、アーティファクトの sourceiD のための短い160ビット値を作成します。<p>また、ADFS web エージェント (WS2003 期間からのレガシコンポーネント) によって、"最終更新" 時刻値の変更を識別して、STS から情報を更新するタイミングが認識されるようにするためにも使用されます。|
-|SHA1withRSA<p>[http://www.w3.org/PICS/DSig/RSA-SHA1_1_0.html](http://www.w3.org/PICS/DSig/RSA-SHA1_1_0.html)|N/A|AD FS サーバーが SAML AuthenticationRequest の署名を検証する場合、アーティファクト解決要求または応答に署名する場合、トークン署名証明書を作成する場合に使用します。<p>このような場合、SHA256 は既定値であり、パートナー (証明書利用者) が SHA256 をサポートできず、SHA1 を使用する必要がある場合にのみ、SHA1 が使用されます。|
+|Rsaoaepkeywrap)[http://www.w3.org/2001/04/xmlenc#rsa-oaep-mgf1p](http://www.w3.org/2001/04/xmlenc#rsa-oaep-mgf1p)|1024|既定モード。 セキュリティトークンを暗号化する対称キーを暗号化するためにサポートされているアルゴリズム。|
+|SHA1[http://www.w3.org/PICS/DSig/SHA1_1_0.html](http://www.w3.org/PICS/DSig/SHA1_1_0.html)|該当なし|アーティファクト SourceId の生成時に AD FS サーバーによって使用されます。このシナリオでは、STS は (SAML 2.0 標準の推奨事項に従って) SHA1 を使用して、アーティファクトの sourceiD のための短い160ビット値を作成します。<p>また、ADFS web エージェント (WS2003 期間からのレガシコンポーネント) によって、"最終更新" 時刻値の変更を識別して、STS から情報を更新するタイミングが認識されるようにするためにも使用されます。|
+|SHA1withRSA<p>[http://www.w3.org/PICS/DSig/RSA-SHA1_1_0.html](http://www.w3.org/PICS/DSig/RSA-SHA1_1_0.html)|該当なし|AD FS サーバーが SAML AuthenticationRequest の署名を検証する場合、アーティファクト解決要求または応答に署名する場合、トークン署名証明書を作成する場合に使用します。<p>このような場合、SHA256 は既定値であり、パートナー (証明書利用者) が SHA256 をサポートできず、SHA1 を使用する必要がある場合にのみ、SHA1 が使用されます。|
 
 ## <a name="permissions-requirements"></a><a name="BKMK_13"></a>アクセス許可の要件
 AD FS のインストールと初期構成を実行する管理者は、ローカルドメイン (つまり、フェデレーションサーバーが参加しているドメイン) のドメイン管理者のアクセス許可を持っている必要があります。

@@ -1,6 +1,6 @@
 ---
 ms.assetid: 102eeeb1-6c55-42a2-b321-71a7dab46146
-title: AD FS のアクセス制御ポリシー
+title: AD FS Windows Server 2016 の Access Control ポリシー
 author: billmath
 ms.author: billmath
 manager: femila
@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 9b85e6e10f8df3ec4d2c70e9aff687f264e055a8
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 8c28d24484adf73b1a769a02b817ba48f591f194
+ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86962824"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87863829"
 ---
 # <a name="access-control-policies-in-windows-server-2016-ad-fs"></a>Windows Server 2016 AD FS のアクセス制御ポリシー
 

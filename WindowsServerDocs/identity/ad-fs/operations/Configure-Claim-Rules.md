@@ -8,14 +8,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 62671800d923e95c6bc3f9c7efb0660974c438e2
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: a7304402b4be1710fbff9e29e2dd0094ba621095
+ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86954284"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87864297"
 ---
-# <a name="configure-claim-rules"></a>要求規則を構成する
+# <a name="configure-claim-rules-in-ad-fs-for-windows-server"></a>Windows Server の AD FS で要求規則を構成する
 
 要求ベースの \- id モデルで \( \) は、フェデレーションサービスとして AD FS Active Directory フェデレーションサービス (AD FS) の機能は、一連の要求を含むトークンを発行することになります。 要求規則は、AD FS 問題が発生したクレームに関する決定を制御します。 要求規則とすべてのサーバー構成データは、AD FS 構成データベースに格納されます。  
   

@@ -8,14 +8,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: f542dfb228e5c32c2ff6c9d0b5e853c5aa66cf83
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 4cfdfbda3a1c7df19ded887cc748e7f69f2fad08
+ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519921"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87864064"
 ---
-# <a name="federation-server-farm-using-wid"></a>WID を使用するフェデレーション サーバー ファーム
+# <a name="legacy-ad-fs-federation-server-farm-using-wid"></a>WID を使用する従来の AD FS フェデレーションサーバーファーム
 
 Active Directory フェデレーションサービス (AD FS) AD FS の既定の \( トポロジ \) は、Windows Internal Database WID を使用するフェデレーションサーバーファームです \( \) 。 このトポロジでは、AD FS は、そのファームに参加しているすべてのフェデレーションサーバーの AD FS 構成データベースのストアとして WID を使用します。 ファームでは、構成データベースのフェデレーション サービス データがファーム内の各サーバー間で複製されて管理されます。 Windows Server 2012 R2 の AD FS では、100またはそれよりも小さい証明書利用者信頼を持つ組織は、最大30台のサーバーで WID を使用してフェデレーションサーバーファームを構成できます。
 
@@ -56,10 +56,10 @@ Active Directory フェデレーションサービス (AD FS) AD FS の既定の
 
 WID ファームを使用する場合の概要を次の表に示します。 実装を計画するときに使用します。
 
-| 1-100 RP 信頼 | 100を超える RP 信頼 |
+| 1-100 個の RP 信頼 | 100 個を超える RP 信頼 |
 |--|--|
-| **1-30 AD FS ノード:** WID がサポートされる | **1-30 AD FS ノード:** WID を使用する場合はサポートされません-SQL が必要 |
-| **30 を超える AD FS ノード:** WID を使用する場合はサポートされません-SQL が必要 | **30 を超える AD FS ノード:** WID を使用する場合はサポートされません-SQL が必要 |
+| **1-30 個の AD FS ノード:** WID サポート対象 | **1-30 個の AD FS ノード:** WID の使用はサポート対象外 - SQL が必要 |
+| **30 個を超える AD FS ノード:** WID の使用はサポート対象外 - SQL が必要 | **30 個を超える AD FS ノード:** WID の使用はサポート対象外 - SQL が必要 |
 
 
 ## <a name="server-placement-and-network-layout-recommendations"></a>サーバーの配置とネットワークレイアウトに関する推奨事項

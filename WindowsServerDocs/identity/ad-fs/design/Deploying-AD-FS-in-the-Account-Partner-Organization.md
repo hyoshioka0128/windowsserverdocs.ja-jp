@@ -1,6 +1,6 @@
 ---
 ms.assetid: 8c3536b7-d091-4ee6-ad04-24713f070862
-title: アカウント パートナー組織での AD FS の展開
+title: アカウントパートナー組織でのレガシ AD FS の展開
 author: billmath
 ms.author: billmath
 manager: femila
@@ -8,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 7a1d92a932638388ef50322078084c648c9dfdb9
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 46b22a2b76896844c08f937304575a250582ccc9
+ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80853195"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87863698"
 ---
-# <a name="deploying-ad-fs-in-the-account-partner-organization"></a>アカウント パートナー組織での AD FS の展開
+# <a name="deploying-legacy-ad-fs-in-the-account-partner-organization"></a>アカウントパートナー組織でのレガシ AD FS の展開
 
-Active Directory フェデレーションサービス (AD FS) \(AD FS\) のアカウントパートナーは、サポートされている属性ストアにユーザーアカウントを物理的に格納するフェデレーションの信頼関係にある組織を表します。 サポートされている属性ストアの詳細については、「[属性ストアの役割](../../ad-fs/technical-reference/The-Role-of-Attribute-Stores.md)」を参照してください。  
+Active Directory フェデレーションサービス (AD FS) AD FS のアカウントパートナーは、 \( \) サポートされている属性ストアにユーザーアカウントを物理的に格納する、フェデレーションの信頼関係にある組織を表します。 サポートされている属性ストアの詳細については、「[属性ストアの役割](../../ad-fs/technical-reference/The-Role-of-Attribute-Stores.md)」を参照してください。  
   
 アカウントパートナー組織のフェデレーションサーバーは、ローカルユーザーを認証し、リソースパートナーが承認の決定を行うときに使用するセキュリティトークンを作成します。 これにより、Web サイトや Web サービスなどの証明書利用者は、自身をフェデレーションサーバーに簡単に登録し、発行されたトークンを使用して認証とアクセス制御を行うことができます。  
   

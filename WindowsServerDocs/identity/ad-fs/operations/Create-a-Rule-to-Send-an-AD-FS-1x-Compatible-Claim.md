@@ -1,6 +1,6 @@
 ---
 ms.assetid: 0039fbbb-b981-4526-a550-f3456ff27635
-title: 入力方向の要求を変換する規則を作成する
+title: AD FS 1.x と互換性のある要求を送信するルールを作成する
 author: billmath
 ms.author: billmath
 manager: femila
@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b74d31ed6dd8775181465c42b6a9c8745f668615
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 7b85cfdd93787785b058f5dc83a779b4cd1f6a33
+ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966664"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87864265"
 ---
 # <a name="create-a-rule-to-send-an-ad-fs-1x-compatible-claim"></a>AD FS 1.x と互換性のある要求を送信するルールを作成する
 
@@ -321,7 +321,7 @@ Active Directory フェデレーションサービス (AD FS) AD FS を使用し
 
 11. [**完了**] をクリックし、[ **OK** ] をクリックして規則を保存します。  
 
-## <a name="additional-references"></a>その他のリファレンス 
+## <a name="additional-references"></a>その他の参照情報 
 [要求規則を構成する](Configure-Claim-Rules.md)  
  
 [チェックリスト:証明書利用者信頼の要求規則の作成](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/ee913578(v=ws.11))  

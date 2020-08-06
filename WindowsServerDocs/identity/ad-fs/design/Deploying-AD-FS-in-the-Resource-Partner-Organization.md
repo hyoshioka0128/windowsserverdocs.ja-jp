@@ -1,6 +1,6 @@
 ---
 ms.assetid: 41d6b897-1e72-4522-aad6-eece1154a154
-title: リソース パートナー組織での AD FS の展開
+title: リソースパートナー組織でのレガシ AD FS の展開
 author: billmath
 ms.author: billmath
 manager: femila
@@ -8,16 +8,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: d9afc19be9ee92c23198b7fd8a7716379eb0821d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 63afcbf825aadcc8207793e6e7ccb3cdc48cacbb
+ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80853165"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87863795"
 ---
-# <a name="deploying-ad-fs-in-the-resource-partner-organization"></a>リソース パートナー組織での AD FS の展開
+# <a name="deploying-legacy-ad-fs-in-the-resource-partner-organization"></a>リソースパートナー組織でのレガシ AD FS の展開
 
-Active Directory フェデレーションサービス (AD FS) \(AD FS\) のリソースパートナー組織は、Web サーバーがリソース\-側フェデレーションサーバーによって保護されている可能性のある組織を表します。 リソースパートナーのフェデレーションサーバーは、アカウントパートナーによって生成されたセキュリティトークンを使用して、リソースパートナーに配置されている Web サーバーに要求を提供します。  
+Active Directory フェデレーションサービス (AD FS) AD FS のリソースパートナー組織は、 \( \) Web サーバーがリソース側のフェデレーションサーバーによって保護されている可能性のある組織を表し \- ます。 リソースパートナーのフェデレーションサーバーは、アカウントパートナーによって生成されたセキュリティトークンを使用して、リソースパートナーに配置されている Web サーバーに要求を提供します。  
   
 フェデレーションサービスまたはアプリケーションへのアクセスを多数のユーザーに提供する必要があるシナリオでは、一部のユーザーが異なる組織に存在する場合、複数のアカウントパートナーをデプロイできるように、リソースフェデレーションサーバーを構成できます。  
   

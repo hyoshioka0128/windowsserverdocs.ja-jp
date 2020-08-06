@@ -1,6 +1,6 @@
 ---
 ms.assetid: 20d48afc-2623-43e9-8ed9-aeb9a0505630
-title: 要求規則の構成
+title: AD FS で要求規則を構成する
 author: billmath
 ms.author: billmath
 manager: femila
@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 332795128b992dd1026172efbc65c49c44e7f81f
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: b2c653aa7339815ce22c256cf2c6c931ca7c7fc9
+ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959694"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87863688"
 ---
 # <a name="configure-claim-rules"></a>要求規則を構成する
 

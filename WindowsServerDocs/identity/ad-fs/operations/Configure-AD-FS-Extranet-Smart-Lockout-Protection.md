@@ -1,6 +1,6 @@
 ---
 ms.assetid: 777aab65-c9c7-4dc9-a807-9ab73fac87b8
-title: AD FS エクストラネットロックアウト保護の構成
+title: AD FS エクストラネット スマート ロックアウト保護を構成する
 author: billmath
 ms.author: billmath
 manager: mtilman
@@ -8,12 +8,12 @@ ms.date: 05/20/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 5cb6246b00d891bd18f30b75b591dd4aaae021f5
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 2363e7cd696275de47c70c3ef3a2316d43b487db
+ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86962654"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87863993"
 ---
 # <a name="ad-fs-extranet-lockout-and-extranet-smart-lockout"></a>AD FS エクストラネットのロックアウトおよびエクストラネットのスマート ロックアウト
 
@@ -290,7 +290,7 @@ A: ESL は、Exchange Online やその他の従来の認証ブルートフォー
 A: ESL が有効になっている場合、AD FS は、ADFSArtifactStore データベース内のユーザーのアカウントの利用状況と既知の場所を追跡します。 このデータベースのサイズは、追跡されるユーザーと既知の場所の数に比例してスケーリングされます。 ESL の有効化を計画するとき、ADFSArtifactStore データベースのサイズは、10 万ユーザーあたり最大 1 GB の割合で増加すると見積もることができます。 AD FS ファームが Windows Internal Database (WID) を使用している場合、データベースファイルの既定の場所は C:\Windows\WID\Data\. です。 このドライブがいっぱいにならないよう、ESL を有効にする前に、少なくとも 5 GB の空き記憶域があることを確認してください。 ESL を有効にした後は、ディスク記憶域に加えて、プロセス メモリの総量も、50 万人以下のユーザーに対して、最大 1 GB の RAM が追加されるものとして計画します。
 
 
-## <a name="additional-references"></a>その他のリファレンス  
+## <a name="additional-references"></a>その他の参照情報  
 [Active Directory フェデレーションサービス (AD FS) をセキュリティで保護するためのベストプラクティス](../../ad-fs/deployment/best-practices-securing-ad-fs.md)
 
 [Set-adfsproperties](/powershell/module/adfs/set-adfsproperties?view=win10-ps)

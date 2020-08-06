@@ -9,15 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a17ed3595f0e1dd369e762150c8f45fe6f983822
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: ea6c2b2f367820db3f3611806d3aaecd9eca87e4
+ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85933710"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87863764"
 ---
 # <a name="wbadmin-delete-systemstatebackup"></a>wbadmin delete systemstatebackup
-
 
 
 指定したシステム状態のバックアップを削除します。 指定したボリュームがローカル サーバーのシステム状態バックアップ以外のバックアップを含んでいる場合、それらのバックアップは削除されません。
@@ -28,8 +27,7 @@ ms.locfileid: "85933710"
 このサブコマンドでシステム状態のバックアップを削除するには、メンバーである、 **Backup Operators** グループ、または **管理者** グループ、またはをされている必要が適切なアクセス許可を委任します。 さらに、実行する必要があります **wbadmin** 管理者特権でコマンド プロンプトからです。 (管理者特権でのコマンドプロンプトを開くには、[**コマンドプロンプト**] を右クリックし、[**管理者として実行**] をクリックします)。
 
 
-
-## <a name="syntax"></a>Syntax
+## <a name="syntax"></a>構文
 
 ```
 wbadmin delete systemstatebackup
@@ -63,12 +61,12 @@ wbadmin delete systemstatebackup -version:03/31/2013-10:00
 ```
 wbadmin delete systemstatebackup -keepVersions:3
 ```
-ディスク f に保存されている最も古いシステム状態のバックアップを削除するには、次のように入力します。
+ディスク f: に格納されている最も古いシステム状態のバックアップを削除するには、次のように入力します。
 ```
-wbadmin delete systemstatebackup -backupTarget:f -deleteOldest
+wbadmin delete systemstatebackup -backupTarget:f:\ -deleteOldest
 ```
 
 ## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
--   [Wbadmin](wbadmin.md)
+- [Wbadmin](wbadmin.md)
