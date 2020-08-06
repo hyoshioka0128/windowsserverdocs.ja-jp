@@ -5,22 +5,24 @@ author: allenma
 ms.date: 12/15/2017
 ms.topic: article
 ms.prod: windows-server
-ms.openlocfilehash: de621b3bfdc9792e61e6d21d9f3774da76c55df6
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 1e35595a0b5a0ab12187aae2cf714fc4d53901ee
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80860785"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87769630"
 ---
 # <a name="hyper-v-host-cpu-resource-management"></a>Hyper-v ホスト CPU リソース管理
 
-Windows Server 2016 以降で導入された hyper-v ホスト CPU リソース制御により、Hyper-v 管理者は、"ルート"、"管理パーティション"、および "ゲスト Vm" の間で、ホストサーバーの CPU リソースの管理と割り当てをより適切に行うことができます。 管理者は、これらのコントロールを使用して、ホストシステムのプロセッサのサブセットをルートパーティションに専用にすることができます。 これにより、ゲスト仮想マシンで実行されているワークロードを、システムプロセッサの別々のサブセットで実行することにより、Hyper-v ホストで実行された作業を分離できます。
+Windows Server 2016 以降で導入された hyper-v ホスト CPU リソース制御により、Hyper-v 管理者は、"ルート"、"管理パーティション"、および "ゲスト Vm" の間で、ホストサーバーの CPU リソースの管理と割り当てをより適切に行うことができます。
+管理者は、これらのコントロールを使用して、ホストシステムのプロセッサのサブセットをルートパーティションに専用にすることができます。
+これにより、ゲスト仮想マシンで実行されているワークロードを、システムプロセッサの別々のサブセットで実行することにより、Hyper-v ホストで実行された作業を分離できます。
 
 Hyper-v ホストのハードウェアの詳細については、「 [Windows 10 hyper-v のシステム要件](https://docs.microsoft.com/virtualization/hyper-v-on-windows/reference/hyper-v-requirements)」を参照してください。
 
-## <a name="background"></a>背景
+## <a name="background"></a>バックグラウンド
 
-Hyper-v ホストの CPU リソースの制御を設定する前に、Hyper-v アーキテクチャの基本を確認すると便利です。  
+Hyper-v ホストの CPU リソースの制御を設定する前に、Hyper-v アーキテクチャの基本を確認すると便利です。
 一般的な概要については、「 [Hyper-v アーキテクチャ](https://docs.microsoft.com/windows-server/administration/performance-tuning/role/hyper-v-server/architecture)」セクションを参照してください。
 この記事の重要な概念は次のとおりです。
 
@@ -28,7 +30,7 @@ Hyper-v ホストの CPU リソースの制御を設定する前に、Hyper-v �
 
 * ルートパーティション自体は仮想マシンパーティションですが、一意のプロパティと、ゲスト仮想マシンよりもはるかに高い特権があります。  ルートパーティションは、すべてのゲスト仮想マシンを制御し、ゲストの仮想デバイスのサポートを提供し、ゲスト仮想マシンのすべてのデバイス i/o を管理する管理サービスを提供します。  ホストパーティションでは、アプリケーションのワークロードを実行しないことを強くお勧めします。
 
-* ルートパーティションの各仮想プロセッサ (VP) は、1:1 を基になる論理プロセッサ (LP) にマップされます。  ホスト VP は常に同じ基になる LP で実行されます。ルートパーティションの VPs は移行されません。  
+* ルートパーティションの各仮想プロセッサ (VP) は、1:1 を基になる論理プロセッサ (LP) にマップされます。  ホスト VP は常に同じ基になる LP で実行されます。ルートパーティションの VPs は移行されません。
 
 * 既定では、ホスト VPs を実行する LPs でも、ゲスト VPs を実行できます。
 
@@ -50,7 +52,7 @@ Minroot 構成は、ハイパーバイザー BCD エントリを介して制御�
 ```
      bcdedit /set hypervisorrootproc n
 ```
-ここで、n はルート VPs の数です。 
+ここで、n はルート VPs の数です。
 
 システムを再起動する必要があります。また、OS ブートの有効期間中、新しいルートプロセッサの数が保持されます。  Minroot 構成は、実行時に動的に変更することはできません。
 
@@ -62,7 +64,6 @@ Minroot 構成は、ハイパーバイザー BCD エントリを介して制御�
 
 次に示すように、タスクマネージャーを使用してホストの minroot 構成を確認できます。
 
-![](./media/minroot-taskman.png)
+![タスクマネージャーに表示されるホストの minroot 構成](./media/minroot-taskman.png)
 
 Minroot がアクティブになると、タスクマネージャーには、システム内の論理プロセッサの合計数に加えて、ホストに現在割り当てられている論理プロセッサの数が表示されます。
- 

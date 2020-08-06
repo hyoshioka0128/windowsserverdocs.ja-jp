@@ -9,12 +9,12 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 07/01/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: bdd5264394c94748b7720842cf8ff7e01e1375e7
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: aae554c87b8a4ac6005ad359bc474026f5f1ed9e
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86965424"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87769410"
 ---
 # <a name="choosing-drives-for-storage-spaces-direct"></a>記憶域スペース ダイレクト用のドライブの選択
 
@@ -29,7 +29,7 @@ ms.locfileid: "86965424"
 <table>
     <tr style="border: 0;">
         <td style="padding: 10px; border: 0; width:70px">
-            <img src="media/understand-the-cache/pmem-100px.png">
+            <img src="media/understand-the-cache/pmem-100px.png" alt="Image of PMem (persistent memory)">
         </td>
         <td style="padding: 10px; border: 0;" valign="middle">
             <b>PMem</b> とは永続メモリを意味します。これは、低待機時間かつ高パフォーマンスの新しい種類の記憶域です。
@@ -37,7 +37,7 @@ ms.locfileid: "86965424"
     </tr>
     <tr style="border: 0;">
         <td style="padding: 10px; border: 0; width:70px">
-            <img src="media/understand-the-cache/NVMe-100px.png">
+            <img src="media/understand-the-cache/NVMe-100px.png" alt="Image of NVMe (Non-Volatile Memory Express)">
         </td>
         <td style="padding: 10px; border: 0;" valign="middle">
             <b>NVMe</b> (Non-Volatile Memory Express) とは、PCIe バスに直接接続されたソリッドステート ドライブを指します。 一般的なフォーム ファクターは、2.5 インチU.2、PCIe Add-In-Card (AIC)、および M.2 です。 NVMe は、永続メモリを除き、現在サポートされている他の種類のドライブよりも高い IOPS と IO スループットを提供します。
@@ -45,7 +45,7 @@ ms.locfileid: "86965424"
     </tr>
     <tr style="border: 0;">
         <td style="padding: 10px; border: 0; width:70px" >
-            <img src="media/understand-the-cache/SSD-100px.png">
+            <img src="media/understand-the-cache/SSD-100px.png" alt="Image of SSD drive">
         </td>
         <td style="padding: 10px; border: 0;" valign="middle">
             <b>SSD</b>は、従来の SATA または SAS 経由で接続するソリッドステートドライブを指します。
@@ -53,7 +53,7 @@ ms.locfileid: "86965424"
     </tr>
     <tr style="border: 0;">
         <td style="padding: 10px; border: 0; width:70px">
-            <img src="media/understand-the-cache/HDD-100px.png">
+            <img src="media/understand-the-cache/HDD-100px.png" alt="Image of HDD">
         </td>
         <td style="padding: 10px; border: 0;" valign="middle">
             <b>Hdd</b>は、大量の記憶域容量を提供する、磁気ハードディスクドライブの回転を指します。
@@ -124,9 +124,9 @@ ms.locfileid: "86965424"
 
 サーバーあたりの合計ストレージ容量は、約 400 テラバイト (TB) に制限することをお勧めします。 サーバーあたりのストレージ容量が大きいほど、ソフトウェア更新プログラムを適用する場合など、ダウンタイムや再起動後のデータの再同期に必要な時間が長くなります。 記憶域プールあたりの現在の最大サイズは、Windows Server 2019 の場合は4ペタバイト (PB) (4000 TB)、Windows Server 2016 の場合は1ペタバイトです。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
-- [記憶域スペースダイレクトの概要](storage-spaces-direct-overview.md)
+- [記憶域スペース ダイレクトの概要](storage-spaces-direct-overview.md)
 - [記憶域スペース ダイレクトのキャッシュについて](understand-the-cache.md)
 - [記憶域スペース ダイレクトのハードウェア要件](storage-spaces-direct-hardware-requirements.md)
 - [記憶域スペース ダイレクトのボリュームの計画](plan-volumes.md)

@@ -7,12 +7,12 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 10/08/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e7a4469a3f72737801a5110e322533df9764e20
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 2028d7b4ccb42d5da1426634541681f842c18972
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473589"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87768730"
 ---
 # <a name="drive-symmetry-considerations-for-storage-spaces-direct"></a>記憶域スペースダイレクトの対称に関する考慮事項
 
@@ -169,18 +169,18 @@ ms.locfileid: "85473589"
 
 これはサポートされていません。 各サーバーに接続されている2つ以上のキャッシュドライブ (NvME または SSD) を追加する必要があります。
 
-## <a name="summary"></a>要約
+## <a name="summary"></a>まとめ
 
 要約すると、クラスター内のすべてのサーバーは、同じ種類のドライブと、それぞれの種類の数が同じである必要があります。 上記の考慮事項により、必要に応じてドライブモデルとドライブサイズを組み合わせることができます。
 
-| 制約                               |               |
-|------------------------------------------|---------------|
-| すべてのサーバーで同じ種類のドライブ     | **必須**  |
-| すべてのサーバーで同じ数の種類 | **必須**  |
-| すべてのサーバーで同じドライブモデル        | 推奨   |
-| すべてのサーバーで同じドライブサイズ         | 推奨   |
+| 制約 | State |
+|--|--|
+| すべてのサーバーで同じ種類のドライブ | **必須** |
+| すべてのサーバーで同じ数の種類 | **必須** |
+| すべてのサーバーで同じドライブモデル | 推奨 |
+| すべてのサーバーで同じドライブサイズ | 推奨 |
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
-- [ハードウェア要件の記憶域スペースダイレクト](storage-spaces-direct-hardware-requirements.md)
-- [記憶域スペースダイレクトの概要](storage-spaces-direct-overview.md)
+- [記憶域スペース ダイレクトのハードウェア要件](storage-spaces-direct-hardware-requirements.md)
+- [記憶域スペース ダイレクトの概要](storage-spaces-direct-overview.md)

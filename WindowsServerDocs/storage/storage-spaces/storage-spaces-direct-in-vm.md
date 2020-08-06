@@ -9,12 +9,12 @@ ms.topic: article
 author: eldenchristensen
 ms.date: 07/15/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 50aba2d8edfe74bf6ca51d7c390f2cfc4ead0048
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: b930df382adfc9641175eb4ee3ce531d7eaf8bbc
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961224"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87769061"
 ---
 # <a name="using-storage-spaces-direct-in-guest-virtual-machine-clusters"></a>ゲスト仮想マシンクラスターでの記憶域スペースダイレクトの使用
 
@@ -24,7 +24,7 @@ ms.locfileid: "86961224"
 
 代わりに、ゲスト仮想マシンに Azure 共有ディスクを使用するには、「 [Azure 共有ディスク](/azure/virtual-machines/windows/disks-shared)」を参照してください。
 
-![](media/storage-spaces-direct-in-vm/storage-spaces-direct-in-vm.png)
+![記憶域スペース ダイレクトの図](media/storage-spaces-direct-in-vm/storage-spaces-direct-in-vm.png)
 
 ## <a name="deploying-in-azure-iaas-vm-guest-clusters"></a>Azure Iaas VM ゲストクラスターでのデプロイ
 
@@ -85,7 +85,7 @@ Azure[テンプレート](https://github.com/robotechredmond/301-storage-spaces-
 
     仮想マシンを介して公開される仮想ディスクは、同じサイズと特性を保持する必要があります。 記憶域プールに容量を追加するには、各仮想マシンに仮想ディスクを追加し、プールに追加します。 現在の仮想ディスクと同じサイズおよび特性の仮想ディスクを使用することを強くお勧めします。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [記憶域スペースダイレクト、ビデオ、ステップバイステップガイドをデプロイするための追加の Azure IAAS VM テンプレート](https://techcommunity.microsoft.com/t5/Failover-Clustering/Deploying-IaaS-VM-Guest-Clusters-in-Microsoft-Azure/ba-p/372126)。
 

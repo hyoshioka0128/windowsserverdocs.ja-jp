@@ -1,5 +1,5 @@
 ---
-title: ホストガーディアンサービスのトラブルシューティング
+title: 保護されたホストのトラブルシューティング
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: 80ea38f4-4de6-4f85-8188-33a63bb1cf81
@@ -8,12 +8,12 @@ author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 09/25/2019
-ms.openlocfilehash: 86627f6013592c95f517d77fed6ac5f57eb139b6
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 4c3a2361d7a8d3340d12402abe1ef6c1b3db256f
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856395"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87769640"
 ---
 # <a name="troubleshooting-guarded-hosts"></a>保護されたホストのトラブルシューティング
 
@@ -48,19 +48,19 @@ Install-WindowsFeature HostGuardian -Restart
 
 AttestationStatus         | 説明
 --------------------------|------------
-Expired                   | ホストは以前に構成証明を通過しましたが、発行された正常性証明書の有効期限が切れています。 ホストと HGS の時刻が同期されていることを確認してください。
+有効期限切れ                   | ホストは以前に構成証明を通過しましたが、発行された正常性証明書の有効期限が切れています。 ホストと HGS の時刻が同期されていることを確認してください。
 InsecureHostConfiguration | ホストは、HGS に構成されている構成証明ポリシーに準拠していなかったため、構成証明に合格しませんでした。 詳細については、AttestationSubStatus テーブルを参照してください。
 NotConfigured             | ホストは、構成証明およびキーの保護に HGS を使用するように構成されていません。 代わりに、ローカルモード用に構成されています。 このホストが保護されたファブリックにある場合は、 [get-hgsclientconfiguration](https://technet.microsoft.com/library/dn914494.aspx)を使用して HGS サーバーの url を指定します。
-成功                    | ホストが構成証明に合格しました。
+Passed                    | ホストが構成証明に合格しました。
 TransientError            | ネットワーク、サービス、またはその他の一時的なエラーが原因で、最後の構成証明の試行が失敗しました。 最後の操作を再試行してください。
 TpmError                  | TPM でエラーが発生したため、ホストは最後の構成証明を完了できませんでした。 詳細については、TPM ログを参照してください。
 UnauthorizedHost          | シールドされた Vm の実行が承認されていないため、ホストは構成証明を通過しませんでした。 シールドされた Vm を実行するために、ホストが HGS によって信頼されたセキュリティグループに属していることを確認します。
-不明                   | ホストは、まだ HGS で証明を試行していません。
+Unknown                   | ホストは、まだ HGS で証明を試行していません。
 
 **AttestationStatus**が**Insecurehostconfiguration**として報告されると、1つまたは複数の理由が**AttestationSubStatus**フィールドに入力されます。
 次の表では、AttestationSubStatus で使用できる値と、問題の解決方法に関するヒントについて説明します。
 
-AttestationSubStatus       | 意味と対処方法
+AttestationSubStatus       | 意味と対処法
 ---------------------------|-------------------------------
 BitLocker                  | ホストの OS ボリュームは、BitLocker によって暗号化されていません。 これを解決するには、OS ボリュームで[bitlocker を有効](https://technet.microsoft.com/itpro/windows/keep-secure/bitlocker-basic-deployment)にするか、 [HGS で bitlocker ポリシーを無効](guarded-fabric-manage-hgs.md#review-attestation-policies)にします。
 CodeIntegrityPolicy        | ホストがコード整合性ポリシーを使用するように構成されていないか、または HGS サーバーによって信頼されているポリシーを使用していません。 コード整合性ポリシーが構成されていること、ホストが再起動されたこと、およびポリシーが HGS サーバーに登録されていることを確認してください。 詳細については、「[コード整合性ポリシーの作成と適用](guarded-fabric-tpm-trusted-attestation-capturing-hardware.md#create-and-apply-a-code-integrity-policy)」を参照してください。
@@ -71,8 +71,8 @@ FullBoot                   | ホストがスリープ状態または休止状態
 HibernationEnabled         | このホストは、HGS ポリシーで許可されていない休止状態ファイルを暗号化せずに休止状態にするように構成されています。 休止状態を無効にし、ホストを再起動するか、 [dump encryption を構成](https://technet.microsoft.com/windows-server-docs/virtualization/hyper-v/manage/about-dump-encryption)します。
 HypervisorEnforcedCodeIntegrityPolicy | ホストは、ハイパーバイザーによって適用されるコード整合性ポリシーを使用するように構成されていません。 ハイパーバイザーによってコードの整合性が有効、構成、および適用されていることを確認します。 詳細については、「 [Device Guard 展開ガイド](https://technet.microsoft.com/itpro/windows/keep-secure/deploy-device-guard-deploy-code-integrity-policies)」を参照してください。
 Iommu                      | ホストの仮想化ベースのセキュリティ機能は、HGS ポリシーで必要とされる直接メモリアクセス攻撃からの保護のために、IOMMU デバイスを必要とするように構成されていません。 ホストに IOMMU があること、有効になっていること、および VBS を起動するときに、Device Guard が[DMA による保護を要求するように構成](https://technet.microsoft.com/itpro/windows/keep-secure/deploy-device-guard-enable-virtualization-based-security#enable-virtualization-based-security-vbs-and-device-guard)されていることを確認します。
-PagefileEncryption         | ページファイルの暗号化がホストで有効になっていません。 これを解決するには `fsutil behavior set encryptpagingfile 1` を実行して、ページファイルの暗号化を有効にします。 詳細については、「 [fsutil behavior](https://technet.microsoft.com/library/cc785435.aspx)」を参照してください。
-ブート                 | セキュアブートは、このホストで有効になっていないか、Microsoft セキュアブートテンプレートを使用していません。 この問題を解決するには、Microsoft セキュアブートテンプレートを使用して[セキュアブートを有効](https://msdn.microsoft.com/windows/hardware/commercialize/manufacture/desktop/disabling-secure-boot#enable_secure_boot)にします。
+PagefileEncryption         | ページファイルの暗号化がホストで有効になっていません。 これを解決するには、を実行して `fsutil behavior set encryptpagingfile 1` ページファイルの暗号化を有効にします。 詳細については、「 [fsutil behavior](https://technet.microsoft.com/library/cc785435.aspx)」を参照してください。
+SecureBoot                 | セキュアブートは、このホストで有効になっていないか、Microsoft セキュアブートテンプレートを使用していません。 この問題を解決するには、Microsoft セキュアブートテンプレートを使用して[セキュアブートを有効](https://msdn.microsoft.com/windows/hardware/commercialize/manufacture/desktop/disabling-secure-boot#enable_secure_boot)にします。
 SecureBootSettings         | このホストの TPM ベースラインが、HGS によって信頼されているものと一致しません。 これは、UEFI 起動機関、DBX 変数、デバッグフラグ、またはカスタムセキュアブートポリシーが新しいハードウェアまたはソフトウェアのインストールによって変更された場合に発生する可能性があります。 このコンピューターの現在のハードウェア、ファームウェア、およびソフトウェアの構成を信頼する場合は、[新しい TPM ベースラインをキャプチャ](guarded-fabric-tpm-trusted-attestation-capturing-hardware.md#capture-the-tpm-baseline-for-each-unique-class-of-hardware)して[HGS に登録](guarded-fabric-manage-hgs.md#authorizing-new-guarded-hosts)できます。
 TcgLogVerification         | TCG ログ (TPM ベースライン) を取得または検証できません。 これは、ホストのファームウェア、TPM、またはその他のハードウェアコンポーネントに問題があることを示している可能性があります。 Windows を起動する前に、ホストが PXE ブートを試行するように構成されている場合は、古い Net Boot Program (NBP) でもこのエラーが発生することがあります。 PXE ブートが有効になっている場合は、すべての NBPs が最新の状態であることを確認します。
 VirtualSecureMode          | 仮想化ベースのセキュリティ機能がホストで実行されていません。 VBS が有効になっていること、およびシステムが構成された[プラットフォームのセキュリティ機能](https://technet.microsoft.com/itpro/windows/keep-secure/deploy-device-guard-enable-virtualization-based-security#validate-enabled-device-guard-hardware-based-security-features)を満たしていることを確認してください。 VBS の要件の詳細については、 [Device Guard のドキュメント](https://technet.microsoft.com/itpro/windows/keep-secure/device-guard-deployment-guide)を参照してください。

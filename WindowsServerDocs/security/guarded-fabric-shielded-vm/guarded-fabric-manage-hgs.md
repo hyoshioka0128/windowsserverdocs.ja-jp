@@ -7,12 +7,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
-ms.openlocfilehash: 2eb9107427ff005c1b3c27e7064d677429d817ee
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 19bf253a4cd669020442ca80f77c141f19ab94fe
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856555"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87769460"
 ---
 # <a name="managing-the-host-guardian-service"></a>ホストガーディアンサービスの管理
 
@@ -50,8 +50,8 @@ HGS には、あらかじめ構成される2つの JEA ロールが付属して�
 - 既存のポリシーを監査する権限をユーザーにのみ許可する**HGS レビュー担当者**。 HGS の構成に変更を加えることはできません。
 
 JEA を使用するには、最初に新しい標準ユーザーを作成し、そのユーザーを HGS 管理者グループまたは HGS レビュー担当者グループのメンバーにする必要があります。
-`Install-HgsServer` を使用して HGS の新しいフォレストを設定した場合、これらのグループにはそれぞれ "*servicename*Administrators" と "*servicename*レビューアー" という名前が付けられます。ここで、 *servicename*は hgs クラスターのネットワーク名です。
-HGS を既存のドメインに参加させた場合は、`Initialize-HgsServer`で指定したグループ名を参照する必要があります。
+`Install-HgsServer`Hgs の新しいフォレストを設定する場合、これらのグループにはそれぞれ "*servicename*Administrators" と "*servicename*レビューアー" という名前が付けられます。ここで、 *servicename*は hgs クラスターのネットワーク名です。
+HGS を既存のドメインに参加させた場合は、「」で指定したグループ名を参照する必要があり `Initialize-HgsServer` ます。
 
 **HGS 管理者ロールとレビューアーロールの標準ユーザーを作成する**
 
@@ -76,7 +76,7 @@ HGS にネットワーク接続されているリモートコンピューター�
 Enter-PSSession -ComputerName <hgsnode> -Credential '<hgsdomain>\hgsreviewer01' -ConfigurationName 'microsoft.windows.hgs'
 ```
 
-その後、`Get-Command` でセッションで許可されているコマンドを確認し、許可されたコマンドを実行して構成を監査できます。
+次に、とのセッションで許可されているコマンドを確認し、許可された `Get-Command` コマンドを実行して構成を監査できます。
 次の例では、HGS で有効になっているポリシーを確認しています。
 
 ```powershell
@@ -85,7 +85,7 @@ Get-Command
 Get-HgsAttestationPolicy
 ```
 
-JEA セッションの操作が完了したら、コマンド `Exit-PSSession` またはそのエイリアスである `exit`を入力します。 
+`Exit-PSSession`JEA セッションの操作が完了したら、コマンドまたはそのエイリアスを入力し `exit` ます。
 
 **管理者ロールを使用して HGS に新しいポリシーを追加する**
 
@@ -130,7 +130,7 @@ System Center 2016-Operations Manager を使用して、HGS と保護された�
 付属の管理パックガイドでは、管理パックを構成し、そのモニタの範囲を理解する方法について説明しています。
 
 ## <a name="backing-up-and-restoring-hgs"></a>HGS のバックアップと復元
-### <a name="disaster-recovery-planning"></a>ディザスターリカバリーの計画
+### <a name="disaster-recovery-planning"></a>ディザスター リカバリー計画
 ディザスターリカバリー計画を作成するときは、保護されたファブリックのホストガーディアンサービスの固有の要件を考慮することが重要です。
 HGS ノードの一部またはすべてを紛失した場合、ユーザーがシールドされた Vm を起動できなくなる可能性がある、すぐに可用性の問題が発生する可能性があります。
 Hgs クラスター全体が失われるシナリオでは、hgs クラスターを復元して通常の操作を再開するために、HGS 構成の完全なバックアップが必要になります。
@@ -138,7 +138,7 @@ Hgs クラスター全体が失われるシナリオでは、hgs クラスター
 
 まず、HGS のバックアップが重要であることを理解しておくことが重要です。
 HGS では、シールドされた Vm の実行を承認されているホストを特定するのに役立ついくつかの情報が保持されます。
-たとえば、次のようなアニメーションや効果を作成できます。
+これには次のものが含まれます
 1. 信頼されたホストを含むグループのセキュリティ識別子を Active Directory します (Active Directory 構成証明を使用する場合)。
 2. 環境内の各ホストの一意の TPM 識別子。
 3. ホストの一意の構成ごとの TPM ポリシー。そして
@@ -201,7 +201,7 @@ Export-HgsServerState -Path C:\temp\HGSBackup.xml
 
 **証明書のバックアップ**
 
-`Export-HgsServerState` コマンドは、コマンドの実行時に HGS に追加された PFX ベースの証明書をバックアップします。
+コマンドは、 `Export-HgsServerState` コマンドの実行時に HGS に追加された PFX ベースの証明書をバックアップします。
 拇印を使用して証明書を HGS に追加した場合 (エクスポート可能な証明書とハードウェアベースの証明書の場合は通常)、証明書の秘密キーを手動でバックアップする必要があります。
 HGS に登録されていて、手動でバックアップする必要がある証明書を特定するには、任意の有効な HGS サーバーノードで次の PowerShell コマンドを実行します。
 
@@ -220,8 +220,8 @@ Get-HgsKeyProtectionCertificate | Where-Object { $_.CertificateData.GetType().Na
 バックアップされた HGS サーバーの状態には、HGS クラスターの名前、Active Directory の情報、または HGS Api との通信をセキュリティで保護するために使用される SSL 証明書は含まれません。
 これらの設定は整合性のために重要ですが、障害発生後に HGS クラスターをオンラインに戻すには重要ではありません。
 
-HGS サービスの名前を取得するには、`Get-HgsServer` を実行し、構成証明とキー保護の Url のフラット名をメモします。
-たとえば、構成証明 URL が "<http://hgs.contoso.com/Attestation>" の場合、"hgs" は HGS サービス名です。
+HGS サービスの名前を取得するには、を実行 `Get-HgsServer` し、構成証明とキー保護の url のフラット名をメモします。
+たとえば、構成証明 URL が "" の場合、 <http://hgs.contoso.com/Attestation> "hgs" は hgs サービス名です。
 
 HGS で使用される Active Directory ドメインは、他の Active Directory ドメインと同様に管理する必要があります。
 障害発生後に HGS を復元する場合、現在のドメインに存在するオブジェクトを正確に再作成する必要はありません。
@@ -243,7 +243,7 @@ HGS を復元する前に、構成を復元できる初期化済みの HGS ク�
 既存の (実行中の) クラスターに誤って削除された設定をインポートするだけの場合は、この手順を省略できます。
 HGS の完全な損失から回復する場合は、[展開ガイドのガイダンス](guarded-fabric-setting-up-the-host-guardian-service-hgs.md)に従って、少なくとも1つの hgs ノードをインストールし、初期化する必要があります。
 
-具体的には、次のことを行う必要があります。
+具体的には、次のようにする必要があります。
 1. [Hgs ドメインをセットアップ](guarded-fabric-choose-where-to-install-hgs.md)するか、既存のドメインに hgs を参加させます
 2. 既存のキー*または*一連の一時キーを使用して[、HGS サーバーを初期化](guarded-fabric-initialize-hgs.md)します。 HGS バックアップファイルから実際のキーをインポートした後[に、一時キーを削除](#renewing-or-replacing-keys)できます。
 3. バックアップから[HGS 設定をインポート](#import-settings-from-a-backup)して、信頼されたホストグループ、コード整合性ポリシー、tpm ベースライン、および tpm 識別子を復元します。
@@ -260,9 +260,9 @@ HGS の完全な損失から回復する場合は、[展開ガイドのガイダ
 Import-HgsServerState -Path C:\Temp\HGSBackup.xml
 ```
 
-管理者によって信頼された構成証明ポリシーまたは TPM によって信頼された構成証明ポリシーをインポートするだけの場合は、 [HgsServerState](https://technet.microsoft.com/library/mt652168.aspx)に `-ImportActiveDirectoryModeState` または `-ImportTpmModeState` フラグを指定することによってこれを行うことができます。
+管理者によって信頼された構成証明ポリシーまたは TPM によって信頼された構成証明ポリシーをインポートするだけの場合は、 `-ImportActiveDirectoryModeState` HgsServerState にまたはフラグを指定することによってこれを行うことができ `-ImportTpmModeState` ます。 [Import-HgsServerState](https://technet.microsoft.com/library/mt652168.aspx)
 
-`Import-HgsServerState`を実行する前に、Windows Server 2016 用の最新の累積的な更新プログラムがインストールされていることを確認します。
+実行する前に、Windows Server 2016 の最新の累積的な更新プログラムがインストールされていることを確認し `Import-HgsServerState` ます。
 これを行わないと、インポートエラーが発生する可能性があります。
 
 > [!NOTE]
@@ -280,7 +280,7 @@ Import-HgsServerState -Path C:\Temp\HGSBackup.xml
 復元した HGS クラスターに追加する各ノードについて、この手順を繰り返す必要があります。
 
 #### <a name="review-imported-attestation-policies"></a>インポートされた構成証明ポリシーを確認する
-バックアップから設定をインポートした後は、`Get-HgsAttestationPolicy` を使用してインポートされたすべてのポリシーを厳密に確認して、シールドされた Vm を実行するために信頼されているホストのみが正常に証明できるようにすることをお勧めします。
+バックアップから設定をインポートした後は、を使用してインポートされたすべてのポリシーを厳密に確認し、シールドされ `Get-HgsAttestationPolicy` た vm を実行するために信頼されているホストのみが正常に証明できるようにすることをお勧めします。
 セキュリティ体制に一致しなくなったポリシーが見つかった場合は、[無効に](#review-attestation-policies)することも削除することもできます。
 
 #### <a name="run-diagnostics-to-check-system-state"></a>診断を実行してシステム状態を確認する
@@ -334,7 +334,7 @@ HGS はいくつかの構成証明ポリシーを保持しており、ホスト�
 TPM 構成証明はより複雑であり、システムが正常かどうかを判断する前に、さまざまなポリシーによってシステムのコードと構成が測定されます。
 
 1つの HGS は Active Directory ポリシーと TPM ポリシーの両方で一度に構成できますが、サービスは、ホストが証明を試行したときに構成されている現在のモードのポリシーのみをチェックします。
-HGS サーバーのモードを確認するには、`Get-HgsServer`を実行します。
+HGS サーバーのモードを確認するには、を実行 `Get-HgsServer` します。
 
 ### <a name="default-policies"></a>既定のポリシー
 TPM によって信頼された構成証明の場合、HGS にはいくつかの組み込みポリシーが構成されています。
@@ -355,13 +355,13 @@ Hgs_BitLockerEnabled           | では、Hyper-v ホストで BitLocker を有�
 Hgs_IommuEnabled               | ダイレクトメモリアクセス攻撃を防ぐために、ホストに使用されている IOMMU デバイスが必要です。 このポリシーを無効にし、IOMMU が有効になっていないホストを使用すると、テナント VM シークレットを公開してメモリ攻撃を直接行うことができます。
 Hgs_NoHibernation              | Hyper-v ホストで休止状態を無効にする必要があります。 このポリシーを無効にすると、ホストは、シールドされた VM メモリを暗号化されていない休止ファイルに保存することができます。
 Hgs_NoDumps                    | では、Hyper-v ホストでメモリダンプを無効にする必要があります。 このポリシーを無効にした場合は、シールドされた VM メモリが暗号化されていないクラッシュダンプファイルに保存されないように、ダンプの暗号化を構成することをお勧めします。
-Hgs_DumpEncryption             | では、HGS によって信頼されている暗号化キーを使用して暗号化されるように、Hyper-v ホストで有効になっている場合、メモリダンプが必要です。 このポリシーは、ホストでダンプが有効になっていない場合は適用されません。 このポリシーと*Hgs\_nodumps*の両方が無効になっている場合は、シールドされた VM メモリを暗号化されていないダンプファイルに保存できます。
-Hgs_DumpEncryptionKey          | 否定ポリシー。メモリダンプを許可するように構成されたホストが、HGS に知られている管理者定義のダンプファイル暗号化キーを使用していることを確認します。 *Hgs\_DumpEncryption*が無効になっている場合、このポリシーは適用されません。
+Hgs_DumpEncryption             | では、HGS によって信頼されている暗号化キーを使用して暗号化されるように、Hyper-v ホストで有効になっている場合、メモリダンプが必要です。 このポリシーは、ホストでダンプが有効になっていない場合は適用されません。 このポリシーと*Hgs \_ nodumps*の両方が無効になっている場合は、シールドされた VM メモリを暗号化されていないダンプファイルに保存できます。
+Hgs_DumpEncryptionKey          | 否定ポリシー。メモリダンプを許可するように構成されたホストが、HGS に知られている管理者定義のダンプファイル暗号化キーを使用していることを確認します。 *Hgs \_ dumpencryption*が無効になっている場合、このポリシーは適用されません。
 
 ### <a name="authorizing-new-guarded-hosts"></a>新しい保護されたホストの承認
 新しいホストが保護されたホストになることを承認する (たとえば、正常に動作している) 場合、HGS はホストを信頼する必要があり、(TPM に信頼された構成証明を使用するように構成されている場合) そのホストで実行されているソフトウェアを信頼します
 新しいホストを承認する手順は、HGS が現在構成されている構成証明モードによって異なります。
-保護されたファブリックの構成証明モードを確認するには、任意の HGS ノードで `Get-HgsServer` を実行します。
+保護されたファブリックの構成証明モードを確認するには、 `Get-HgsServer` 任意の HGS ノードでを実行します。
 
 #### <a name="software-configuration"></a>ソフトウェアの構成
 新しい Hyper-v ホストで、Windows Server 2016 Datacenter edition がインストールされていることを確認します。
@@ -423,7 +423,7 @@ Get-HgsAttestationBaselinePolicy -Path 'C:\temp\hardwareConfig01.tcglog'
 > ホストが検証に失敗し、証明できないというエラーが表示される場合は、心配しないでください。
 > これは、ホストがシールドされた Vm を実行できることを確認するための前提条件のチェックです。また、コード整合性ポリシーやその他の必要な設定をまだ適用していないことを意味します。
 > エラーメッセージを読み取り、それによって提案された変更を加えてから、再試行してください。
-> または、`-SkipValidation` フラグをコマンドに追加して、この時点で検証をスキップすることもできます。
+> または、コマンドにフラグを追加して、この時点で検証をスキップすることもでき `-SkipValidation` ます。
 
 TPM ベースラインを HGS サーバーにコピーし、次のコマンドを使用して登録します。
 このクラスの Hyper-v ホストのハードウェアとファームウェアの構成を理解するのに役立つ名前付け規則を使用することをお勧めします。
@@ -433,7 +433,7 @@ Add-HgsAttestationTpmPolicy -Name 'HardwareConfig01' -Path 'C:\temp\hardwareConf
 ```
 
 **新しいコード整合性ポリシーを追加**するHyper-v ホストで実行されているコード整合性ポリシーを変更した場合は、そのホストが正常に証明できるように、新しいポリシーを HGS に登録する必要があります。
-環境内の信頼された Hyper-v コンピューターのマスターイメージとして機能する参照ホストで、`New-CIPolicy` コマンドを使用して新しい CI ポリシーをキャプチャします。
+環境内の信頼された Hyper-v コンピューターのマスターイメージとして機能する参照ホストでは、コマンドを使用して新しい CI ポリシーをキャプチャし `New-CIPolicy` ます。
 Hyper-v ホストの CI ポリシーには、 **Filepublisher**レベルと**ハッシュ**フォールバックを使用することをお勧めします。
 最初に監査モードで CI ポリシーを作成し、すべてが正常に動作していることを確認する必要があります。
 システムでサンプルワークロードを検証した後、ポリシーを適用し、強制バージョンを HGS にコピーできます。
@@ -468,10 +468,10 @@ Add-HgsAttestationCiPolicy -Name 'WS2016-Hardware01' -Path 'C:\temp\ws2016-hardw
 
 **メモリダンプの暗号化キーを追加しています**
 
-*Hgs\_NoDumps*ポリシーが無効になっていて、 *Hgs\_dumpencryption*ポリシーが有効になっている場合、保護されたホストは、これらのダンプが暗号化されている限り、メモリダンプ (クラッシュダンプを含む) を有効にすることができます。 保護されたホストは、メモリダンプが無効になっているか、または HGS に知られているキーでそれらを暗号化している場合にのみ、構成証明を渡します。 既定では、HGS にはダンプ暗号化キーが構成されていません。
+*Hgs \_ nodumps*ポリシーが無効になっていて、 *hgs \_ dumpencryption*ポリシーが有効になっている場合、保護されたホストは、これらのダンプが暗号化されている限り、メモリダンプ (クラッシュダンプを含む) を有効にすることができます。 保護されたホストは、メモリダンプが無効になっているか、または HGS に知られているキーでそれらを暗号化している場合にのみ、構成証明を渡します。 既定では、HGS にはダンプ暗号化キーが構成されていません。
 
-HGS にダンプ暗号化キーを追加するには、`Add-HgsAttestationDumpPolicy` コマンドレットを使用して、HGS にダンプ暗号化キーのハッシュを指定します。
-Dump encryption を使用して構成された Hyper-v ホスト上で TPM ベースラインをキャプチャする場合、ハッシュは tcglog に含まれており、`Add-HgsAttestationDumpPolicy` コマンドレットに提供できます。
+HGS にダンプ暗号化キーを追加するには、コマンドレットを使用して、 `Add-HgsAttestationDumpPolicy` hgs にダンプ暗号化キーのハッシュを指定します。
+Dump encryption を使用して構成された Hyper-v ホスト上で TPM ベースラインをキャプチャする場合、ハッシュは tcglog に含まれ、コマンドレットに提供でき `Add-HgsAttestationDumpPolicy` ます。
 
 ```powershell
 Add-HgsAttestationDumpPolicy -Name 'DumpEncryptionKey01' -Path 'C:\temp\TpmBaselineWithDumpEncryptionKey.tcglog'
@@ -490,8 +490,8 @@ HGS で認識されていないキーを使用してメモリダンプを暗号�
 
 #### <a name="check-if-the-system-passed-attestation"></a>システムが構成証明に合格したかどうかを確認する
 必要な情報を HGS に登録した後、ホストが構成証明に合格したかどうかを確認する必要があります。
-新しく追加された Hyper-v ホストで `Set-HgsClientConfiguration` を実行し、HGS クラスターの正しい Url を指定します。
-これらの Url を取得するには、任意の HGS ノードで `Get-HgsServer` を実行します。
+新しく追加された Hyper-v ホストで、を実行 `Set-HgsClientConfiguration` し、HGS クラスターの正しい url を指定します。
+これらの Url は、任意の HGS ノードでを実行することで取得でき `Get-HgsServer` ます。
 
 ```powershell
 Set-HgsClientConfiguration -KeyProtectionServerUrl 'http://hgs.bastion.local/KeyProtection' -AttestationServerUrl 'http://hgs.bastion.local/Attestation'
@@ -505,7 +505,7 @@ Get-HgsTrace -RunDiagnostics -Detailed
 ```
 
 > [!IMPORTANT]
-> Windows Server 2019 または Windows 10 バージョン1809を使用していて、コード整合性ポリシーを使用している場合、`Get-HgsTrace` によって**コード整合性ポリシーのアクティブ**な診断でエラーが返されることがあります。
+> Windows Server 2019 または Windows 10 バージョン1809を使用していて、コード整合性ポリシーを使用している場合、では、 `Get-HgsTrace` **コード整合性ポリシーのアクティブ**な診断でエラーが返されることがあります。
 > 失敗した診断が唯一の場合は、この結果を無視しても問題ありません。
 
 ### <a name="review-attestation-policies"></a>構成証明ポリシーを確認する
@@ -525,9 +525,9 @@ Get-HgsAttestationPolicy
 Disable-HgsAttestationPolicy -Name 'PolicyName'
 ```
 
-同様に、`Enable-HgsAttestationPolicy` を使用してポリシーを再度有効にすることもできます。
+同様に、を使用して `Enable-HgsAttestationPolicy` ポリシーを再度有効にすることもできます。
 
-ポリシーが不要になり、すべての HGS ノードから削除する場合は、`Remove-HgsAttestationPolicy -Name 'PolicyName'` を実行してポリシーを完全に削除します。
+ポリシーが不要になり、すべての HGS ノードから削除する場合は、を実行して `Remove-HgsAttestationPolicy -Name 'PolicyName'` ポリシーを完全に削除します。
 
 ## <a name="changing-attestation-modes"></a>構成証明モードの変更
 管理者によって信頼された構成証明を使用して保護されたファブリックを開始した場合、環境内で TPM 2.0 互換のホストが十分になるとすぐに、より強力な TPM 構成証明モードにアップグレードすることをお勧めします。
@@ -538,7 +538,7 @@ Disable-HgsAttestationPolicy -Name 'PolicyName'
 これは、HGS の現在の動作状態には影響しません。
 次のコマンドは、環境内のすべてのホストと1つ以上の HGS ノードにアクセスできるコンピューターで実行する必要があります。
 ファイアウォールまたはその他のセキュリティポリシーによってこれが妨げられる場合は、この手順を省略できます。
-可能であれば、統合構成証明を実行して、TPM モードに "切り替える" ことで Vm のダウンタイムが発生するかどうかを適切に示すことをお勧めします。 
+可能であれば、統合構成証明を実行して、TPM モードに "切り替える" ことで Vm のダウンタイムが発生するかどうかを適切に示すことをお勧めします。
 
 ```powershell
 # Get information for each host in your environment
@@ -551,7 +551,7 @@ $hgsCredential = Get-Credential -Message 'Enter an admin credential for HGS'
 $targets += New-HgsTraceTarget -Credential $hgsCredential -Role HostGuardianService -HostName 'HGS01.bastion.local'
 
 # Initiate the synthetic attestation attempt
-Get-HgsTrace -RunDiagnostics -Target $targets -Diagnostic GuardedFabricTpmMode 
+Get-HgsTrace -RunDiagnostics -Target $targets -Diagnostic GuardedFabricTpmMode
 ```
 
 診断が完了したら、出力された情報を確認して、どのホストも TPM モードで構成に失敗したかどうかを判断します。
@@ -564,12 +564,12 @@ Get-HgsTrace -RunDiagnostics -Target $targets -Diagnostic GuardedFabricTpmMode
 Set-HgsServer -TrustTpm
 ```
 
-問題が発生し、Active Directory モードに切り替える必要がある場合は、`Set-HgsServer -TrustActiveDirectory`を実行して実行できます。
+問題が発生し、Active Directory モードに切り替える必要がある場合は、を実行することで実行でき `Set-HgsServer -TrustActiveDirectory` ます。
 
 すべてが正常に動作していることを確認したら、すべての信頼された Active Directory ホストグループを HGS から削除し、HGS ドメインとファブリックドメイン間の信頼を削除する必要があります。
 Active Directory の信頼を設定したままにした場合は、他のユーザーが信頼を再度有効にし、HGS を Active Directory モードに切り替えるリスクがあります。これにより、保護されたホストで信頼されていないコードを実行できなくなる可能性があります。
 
-## <a name="key-management"></a>キーの管理
+## <a name="key-management"></a>キー管理
 保護されたファブリックソリューションでは、複数の公開キーと秘密キーのペアを使用して、ソリューション内のさまざまなコンポーネントの整合性を検証し、テナントシークレットを暗号化します。
 ホストガーディアンサービスは、シールドされた Vm を起動するために使用されるキーの署名と暗号化に使用される、少なくとも2つの証明書 (公開キーと秘密キー) を使用して構成されています。
 これらのキーは慎重に管理する必要があります。
@@ -599,7 +599,7 @@ Hsm は、データセンター内のセキュリティを重視するデバイ�
     1. HSM で**データ**暗号化キー使用法プロパティを使用して暗号化証明書を作成する
     2. HSM で**デジタル署名**キー使用法プロパティを使用して署名証明書を作成する
 3. HSM ベンダーのガイダンスに従って、各 HGS ノードのローカル証明書ストアに証明書をインストールします。
-4. HSM で詳細なアクセス許可を使用して、特定のアプリケーションまたはユーザーに秘密キーを使用するアクセス許可を付与する場合は、HGS グループの管理されたサービスアカウントに証明書へのアクセス権を付与する必要があります。 を実行すると、HGS gMSA アカウントの名前を確認でき `(Get-IISAppPool -Name KeyProtection).ProcessModel.UserName`
+4. HSM で詳細なアクセス許可を使用して、特定のアプリケーションまたはユーザーに秘密キーを使用するアクセス許可を付与する場合は、HGS グループの管理されたサービスアカウントに証明書へのアクセス権を付与する必要があります。 を実行して、HGS gMSA アカウントの名前を見つけることができます。`(Get-IISAppPool -Name KeyProtection).ProcessModel.UserName`
 5. 次のコマンドで、署名証明書と暗号化証明書を HGS に追加します。このとき、拇印を証明書のものに置き換えます。
 
     ```powershell
@@ -611,7 +611,7 @@ Hsm は、データセンター内のセキュリティを重視するデバイ�
 
 会社または公共の証明機関によって発行されたソフトウェアベースの証明書がある場合は、その拇印を使用して HGS に証明書を追加する必要があります。
 1. 証明機関の指示に従って、コンピューターに証明書をインストールします。
-2. HGS グループの管理されたサービスアカウントに、証明書の秘密キーへの読み取りアクセスを許可します。 を実行すると、HGS gMSA アカウントの名前を確認でき `(Get-IISAppPool -Name KeyProtection).ProcessModel.UserName`
+2. HGS グループの管理されたサービスアカウントに、証明書の秘密キーへの読み取りアクセスを許可します。 を実行して、HGS gMSA アカウントの名前を見つけることができます。`(Get-IISAppPool -Name KeyProtection).ProcessModel.UserName`
 3. 次のコマンドを使用して HGS に証明書を登録し、証明書の拇印に置き換えます (署名証明書の*署名*に*暗号化*を変更します)。
 
     ```powershell
@@ -667,14 +667,18 @@ HGS 証明書について心配する必要があるのは、秘密キーが盗�
 
 HGS ノードで、次の手順を実行して、新しい暗号化証明書と署名証明書のペアを登録します。
 新しいキーを HGS に追加するさまざまな方法の詳細については、[新しいキーの追加](#adding-new-keys)に関するセクションを参照してください。
+
 1. HGS サーバーの新しい暗号化証明書と署名証明書のペアを作成します。 これらは、ハードウェアセキュリティモジュールで作成するのが理想的です。
+
 2. **HgsKeyProtectionCertificate**を使用して新しい暗号化証明書と署名証明書を登録する
 
     ```powershell
     Add-HgsKeyProtectionCertificate -CertificateType Signing -Thumbprint <Thumbprint>
     Add-HgsKeyProtectionCertificate -CertificateType Encryption -Thumbprint <Thumbprint>
     ```
+
 3. 拇印を使用した場合は、クラスター内の各ノードにアクセスして秘密キーをインストールし、HGS gMSA にキーへのアクセスを許可する必要があります。
+
 4. 新しい証明書を HGS の既定の証明書にする
 
     ```powershell
@@ -683,14 +687,20 @@ HGS ノードで、次の手順を実行して、新しい暗号化証明書と�
     ```
 
 この時点で、HGS ノードから取得したメタデータで作成されたシールドデータは新しい証明書を使用しますが、古い証明書がまだ存在するため、既存の Vm は引き続き動作します。
+
 すべての既存の Vm が新しいキーで動作するようにするには、各 VM でキープロテクターを更新する必要があります。
-これは、関連する VM 所有者 ("所有者" ガーディアンを所有しているユーザーまたはエンティティ) を必要とするアクションです。
-シールドされた VM ごとに、次の手順を実行します。
-5. VM をシャットダウンします。 残りの手順が完了するまで VM を再び有効にすることはできません。それ以外の場合は、もう一度プロセスを開始する必要があります。
-6. 現在のキー保護機能をファイルに保存します。 `Get-VMKeyProtector -VMName 'VM001' | Out-File '.\VM001.kp'`
-7. KP を VM 所有者に転送する
-8. 所有者が更新されたガーディアン情報を HGS からダウンロードし、ローカルシステムにインポートする
-9. 現在の KP をメモリに読み取り、新しいガーディアンに KP へのアクセスを許可し、次のコマンドを実行して新しいファイルに保存します。
+
+これは、関連する VM 所有者 ("所有者" ガーディアンを所有しているユーザーまたはエンティティ) を必要とするアクションです。 シールドされた VM ごとに、次の手順を実行します。
+
+1. VM をシャット ダウンします。 残りの手順が完了するまで VM を再び有効にすることはできません。それ以外の場合は、もう一度プロセスを開始する必要があります。
+
+2. 現在のキープロテクターをファイルに保存します。`Get-VMKeyProtector -VMName 'VM001' | Out-File '.\VM001.kp'`
+
+3. KP を VM 所有者に転送する
+
+4. 所有者が更新されたガーディアン情報を HGS からダウンロードし、ローカルシステムにインポートする
+
+5. 現在の KP をメモリに読み取り、新しいガーディアンに KP へのアクセスを許可し、次のコマンドを実行して新しいファイルに保存します。
 
     ```powershell
     $kpraw = Get-Content -Path .\VM001.kp
@@ -699,36 +709,39 @@ HGS ノードで、次の手順を実行して、新しい暗号化証明書と�
     $updatedKP = Grant-HgsKeyProtectorAccess -KeyProtector $kp -Guardian $newGuardian
     $updatedKP.RawData | Out-File .\updatedVM001.kp
     ```
-10. 更新された KP をホストしているファブリックにコピーします。
-11. KP を元の VM に適用します。
+
+6. 更新された KP をホストしているファブリックにコピーします。
+
+7. KP を元の VM に適用します。
 
    ```powershell
    $updatedKP = Get-Content -Path .\updatedVM001.kp
    Set-VMKeyProtector -VMName VM001 -KeyProtector $updatedKP
    ```
-12.    最後に、VM を起動し、正常に動作することを確認します。
 
-> [!NOTE]
-> Vm の所有者が vm で正しくないキープロテクターを設定し、VM を実行するためにファブリックを承認していない場合、シールドされた VM を起動することはできません。
-> 前回正常起動時のキー保護機能に戻るには、を実行し `Set-VMKeyProtector -RestoreLastKnownGoodKeyProtector`
+8. 最後に、VM を起動し、正常に動作することを確認します。
 
-すべての Vm を更新して新しいガーディアンキーを承認したら、古いキーを無効にして削除することができます。
+    > [!NOTE]
+    > Vm の所有者が vm で正しくないキープロテクターを設定し、VM を実行するためにファブリックを承認していない場合、シールドされた VM を起動することはできません。
+    > 前回正常起動時のキー保護機能に戻るには、を実行します。`Set-VMKeyProtector -RestoreLastKnownGoodKeyProtector`
 
-13. 以前の証明書の拇印を取得 `Get-HgsKeyProtectionCertificate -IsPrimary $false`
+    すべての Vm を更新して新しいガーディアンキーを承認したら、古いキーを無効にして削除することができます。
 
-14. 次のコマンドを実行して、各証明書を無効にします。  
+9.  古い証明書の拇印を取得する`Get-HgsKeyProtectionCertificate -IsPrimary $false`
 
-   ```powershell
-   Set-HgsKeyProtectionCertificate -CertificateType Signing -Thumbprint <Thumbprint> -IsEnabled $false
-   Set-HgsKeyProtectionCertificate -CertificateType Encryption -Thumbprint <Thumbprint> -IsEnabled $false
-   ```
+10. 次のコマンドを実行して、各証明書を無効にします。
 
-15. 証明書を無効にして Vm が引き続き開始できることを確認した後、次のコマンドを実行して、HGS から証明書を削除します。
+    ```powershell
+    Set-HgsKeyProtectionCertificate -CertificateType Signing -Thumbprint <Thumbprint> -IsEnabled $false
+    Set-HgsKeyProtectionCertificate -CertificateType Encryption -Thumbprint <Thumbprint> -IsEnabled $false
+    ```
 
-   ```powershell
-   Remove-HgsKeyProtectionCertificate -CertificateType Signing -Thumbprint <Thumbprint>`
-   Remove-HgsKeyProtectionCertificate -CertificateType Encryption -Thumbprint <Thumbprint>`
-   ```
+11. 証明書を無効にして Vm が引き続き開始できることを確認した後、次のコマンドを実行して、HGS から証明書を削除します。
+
+    ```powershell
+    Remove-HgsKeyProtectionCertificate -CertificateType Signing -Thumbprint <Thumbprint>`
+    Remove-HgsKeyProtectionCertificate -CertificateType Encryption -Thumbprint <Thumbprint>`
+    ```
 
 > [!IMPORTANT]
 > VM のバックアップには、古い証明書を使用して VM を起動できるようにする古いキープロテクター情報が含まれます。

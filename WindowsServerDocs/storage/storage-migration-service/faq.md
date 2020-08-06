@@ -8,12 +8,12 @@ ms.date: 06/02/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: efe16dd9bdc971b97bc401cf10e14439c46069de
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: d5c0644c36d4476eb49797de2f828c4da0f53965
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181738"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87769160"
 ---
 # <a name="storage-migration-service-frequently-asked-questions-faq"></a>記憶域移行サービスに関してよく寄せられる質問 (FAQ)
 
@@ -52,28 +52,28 @@ Storage Migration Service は、Windows の操作に干渉する可能性があ�
 
 記憶域移行サービスは、すべてのフラグ、設定、および SMB 共有のセキュリティを移行します。 記憶域移行サービスによって移行されるフラグの一覧を次に示します。
 
-    - 状態の共有
-    - 可用性の種類
-    - 共有の種類
-    - フォルダー列挙モード *(アクセスベースの列挙型または ABE とも*呼ばれます)
-    - キャッシュモード
-    - リースモード
-    - Smb インスタンス
-    - CA タイムアウト
-    - 同時ユーザー数の制限
-    - 継続的に利用可能
-    - 説明
-    - [データの暗号化]
-    - Id リモート処理
-    - インフラストラクチャ
-    - 名前
-    - Path
-    - スコープ
-    - スコープ名
-    - セキュリティ記述子
-    - シャドウコピー
-    - Special
-    - 一時
+- 状態の共有
+- 可用性の種類
+- 共有の種類
+- フォルダー列挙モード *(アクセスベースの列挙型または ABE とも*呼ばれます)
+- キャッシュモード
+- リースモード
+- Smb インスタンス
+- CA タイムアウト
+- 同時ユーザー数の制限
+- 継続的に利用可能
+- 説明
+- [データの暗号化]
+- Id リモート処理
+- インフラストラクチャ
+- 名前
+- Path
+- スコープ
+- スコープ名
+- セキュリティ記述子
+- シャドウコピー
+- Special
+- 一時
 
 ## <a name="can-i-consolidate-multiple-servers-into-one-server"></a>複数のサーバーを1台のサーバーに統合することはできますか。
 
@@ -185,6 +185,6 @@ Storage Migration Service では、hidden c:\programdata\microsoft\storagemigrat
  - [Windows Server 2019 フォーラム](https://docs.microsoft.com/answers/topics/windows-server-2019.html)での投稿
  - [Microsoft サポート](https://support.microsoft.com)を使用してサポートケースを開く
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [記憶域移行サービスの概要](overview.md)

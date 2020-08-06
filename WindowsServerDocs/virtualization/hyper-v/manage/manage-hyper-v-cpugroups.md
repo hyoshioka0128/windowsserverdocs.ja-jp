@@ -7,12 +7,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.service: windows-10-hyperv
 ms.assetid: cc7bb88e-ae75-4a54-9fb4-fc7c14964d67
-ms.openlocfilehash: ebb5f9a0ca9c50a5e5357e3dd2c755095da98d11
-ms.sourcegitcommit: 32f810c5429804c384d788c680afac427976e351
+ms.openlocfilehash: bcae278caf088bc544fb6686450eacdfdf88237b
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83203537"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87769600"
 ---
 # <a name="virtual-machine-resource-controls"></a>仮想マシンのリソースコントロール
 
@@ -33,7 +33,7 @@ CPU グループは、Hyper-v ホストコンピューティングサービス (
 >[!NOTE]
 >CPU グループを作成および管理するために使用できるのは HCS だけです。Hyper-v マネージャーアプレット、WMI および PowerShell 管理インターフェイスは、CPU グループをサポートしていません。
 
-Microsoft では、HCS インターフェイスを使用して CPU グループを管理する、 [Microsoft ダウンロードセンター](https://go.microsoft.com/fwlink/?linkid=865968)にコマンドラインユーティリティ (cpu) を提供しています。  このユーティリティでは、ホストの CPU トポロジを表示することもできます。
+Microsoft では、HCS インターフェイスを使用して CPU グループを管理する、 [Microsoft ダウンロードセンター](https://go.microsoft.com/fwlink/?linkid=865968)で cpugroups.exe コマンドラインユーティリティを提供しています。  このユーティリティでは、ホストの CPU トポロジを表示することもできます。
 
 ## <a name="how-cpu-groups-work"></a>CPU グループのしくみ
 
@@ -41,15 +41,15 @@ CPU グループ間でのホストコンピューティングリソースの割�
 
 CPU グループの上限は、G = *n* x *C*として計算されます。
 
-    *G* is the amount of host LP we'd like to assign to the group
-    *n* is the total number of logical processors (LPs) in the group
-    *C* is the maximum CPU allocation — that is, the class of service desired for the group, expressed as a percentage of the system's total compute capacity
+- *G*は、グループに割り当てるホスト LP の量です。
+- *n*は、グループ内の論理プロセッサ (lps) の合計数です。
+- *C*は、最大 CPU 割り当て (グループに必要なサービスのクラス) です。これは、システムの合計コンピューティング容量に対する割合で表されます。
 
 たとえば、CPU グループが4つの論理プロセッサ (LPs) で構成され、キャップが50% であるとします。
 
-    G = n * C
-    G = 4 * 50%
-    G = 2 LP's worth of CPU time for the entire group
+- G = n * C
+- G = 4 * 50%
+- G = グループ全体に対して 2 LP の CPU 時間
 
 この例では、CPU グループ G に2世代の CPU 時間が割り当てられています。
 
@@ -70,9 +70,9 @@ CPU グループの上限は、G = *n* x *C*として計算されます。
 
 "B" 層を作成するために、ホストの管理は、グループの上限を50% に設定します。
 
-    G = n * C
-    G = 8 * 50%
-    G = 4 LP's worth of CPU time for the entire group
+- G = n * C
+- G = 8 * 50%
+- G = グループ全体に対して 4 LP の CPU 時間
 
 ホスト管理者は、1つの "B" 層の VM を追加します。
 この時点で、"B" 層の VM は、ホストの CPU のうち最大50% を使用できます。また、この例のシステムでは、4つの LPs に相当します。

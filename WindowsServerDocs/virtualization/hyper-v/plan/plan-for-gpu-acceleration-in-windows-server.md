@@ -8,12 +8,12 @@ ms.author: rickman
 manager: stevelee
 ms.topic: article
 ms.date: 07/14/2020
-ms.openlocfilehash: c8e0e8798da9cb4a2b3ca317d9632450ade82504
-ms.sourcegitcommit: f81aa22739d818382d314561dece59a9341dfb6f
+ms.openlocfilehash: 0177ce6346741998a0a9f97817e3811561bb02fb
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2020
-ms.locfileid: "86390099"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87768822"
 ---
 # <a name="plan-for-gpu-acceleration-in-windows-server"></a>Windows Server での GPU アクセラレーションの計画
 
@@ -49,12 +49,12 @@ DDA の展開では、仮想マシンの数を制限することができます�
 詳細については、以下のトピックを参照してください。
 
 - [個別のデバイス割り当ての展開の計画](plan-for-deploying-devices-using-discrete-device-assignment.md)
-- [個別のデバイスの割り当てを使用してグラフィックスデバイスをデプロイする](../deploy/Deploying-graphics-devices-using-dda.md)
+- [Discrete Device Assignment を使用したグラフィックス デバイスのデプロイ](../deploy/Deploying-graphics-devices-using-dda.md)
 
 ## <a name="remotefx-vgpu"></a>RemoteFX vGPU
 
 > [!NOTE]
-> セキュリティ上の問題のため、2020年7月14日以降のセキュリティ更新プログラムでは、RemoteFX vGPU は既定で無効になっています。 詳細については、 [KB 4570006](https://support.microsoft.com/help/4570006)を参照してください。
+> セキュリティ上の問題のため、2020 年 7 月 14 日以降のセキュリティ更新プログラムでは、すべてのバージョンの Windows において RemoteFX vGPU は既定で無効になっています。 詳しくは、[KB 4570006](https://support.microsoft.com/help/4570006) をご覧ください。
 
 RemoteFX vGPU は、1つの物理 GPU を複数の仮想マシン間で共有することを可能にするグラフィックス仮想化テクノロジです。 RemoteFX vGPU デプロイでは、仮想化されたワークロードは Microsoft の RemoteFX 3D アダプターで実行されます。これにより、ホストとゲスト間の GPU 処理要求が調整されます。 RemoteFX vGPU は、専用 GPU リソースを必要としない、ナレッジワーカーおよび高度なバーストワークロードに最適です。 RemoteFX vGPU では、Windows Vm への GPU アクセラレーションのみを行うことができます。
 
@@ -67,17 +67,17 @@ RemoteFX vGPU は、1つの物理 GPU を複数の仮想マシン間で共有す
 
 展開を計画する際には、次の機能を検討し、グラフィックス仮想化テクノロジ間の相違点をサポートします。
 
-|                       | RemoteFX vGPU                                                                       | 個別のデバイスの割り当て                                                          |
-|-----------------------|-------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------|
-| GPU リソースモデル    | 専用または共有                                                                 | 専用                                                                      |
-| VM 密度            | 高 (1 つ以上の Gpu から多数の Vm)                                                 | 低 (1 つの VM に1つ以上の Gpu)                                                    |
-| アプリの互換性     | DX 11.1、OpenGL 4.4、OpenCL 1.1                                                     | ベンダーから提供されるすべての GPU 機能 (DX 12、OpenGL、CUDA)                       |
-| AVC444                | 既定で有効                                                                  | 使用可能なグループポリシー                                                      |
-| GPU VRAM              | 最大 1 GB の専用 VRAM                                                           | GPU でサポートされている VRAM まで                                                     |
-| フレーム レート            | 最大 30 fps                                                                         | 最大 60 fps                                                                         |
-| ゲスト内の GPU ドライバー   | RemoteFX 3D アダプター ディスプレイ ドライバー (Microsoft)                                      | GPU ベンダードライバー (NVIDIA、AMD、Intel)                                              |
-| ホスト OS のサポート       | Windows Server 2016                                                                 | Windows Server 2016;Windows Server 2019                                            |
-| ゲスト OS のサポート      | Windows Server 2012 R2Windows Server 2016;Windows 7 SP1、Windows 8.1;Windows 10 | Windows Server 2012 R2Windows Server 2016;Windows Server 2019;Windows 10;マシン |
-| ハイパーバイザー            | Microsoft Hyper-V                                                                   | Microsoft Hyper-V                                                                   |
-| GPU ハードウェア          | エンタープライズ GPU (Nvidia Quadro/GRID または AMD FirePro)                         | エンタープライズ GPU (Nvidia Quadro/GRID または AMD FirePro)                         |
-| サーバー ハードウェア       | 特別な要件なし                                                             | 最新のサーバー、OS に IOMMU を公開 (通常は SR-IOV 準拠のハードウェア)              |
+| 説明 | RemoteFX vGPU | 個別のデバイスの割り当て |
+|--|--|--|
+| GPU リソースモデル | 専用または共有 | 専用 |
+| VM 密度 | 高 (1 つ以上の Gpu から多数の Vm) | 低 (1 つの VM に1つ以上の Gpu) |
+| アプリの互換性 | DX 11.1、OpenGL 4.4、OpenCL 1.1 | ベンダーから提供されるすべての GPU 機能 (DX 12、OpenGL、CUDA) |
+| AVC444 | 既定で有効 | 使用可能なグループポリシー |
+| GPU VRAM | 最大 1 GB の専用 VRAM | GPU でサポートされている VRAM まで |
+| フレーム レート | 最大 30 fps | 最大 60 fps |
+| ゲスト内の GPU ドライバー | RemoteFX 3D アダプター ディスプレイ ドライバー (Microsoft) | GPU ベンダードライバー (NVIDIA、AMD、Intel) |
+| ホスト OS のサポート | Windows Server 2016 | Windows Server 2016;Windows Server 2019 |
+| ゲスト OS のサポート | Windows Server 2012 R2Windows Server 2016;Windows 7 SP1、Windows 8.1;Windows 10 | Windows Server 2012 R2Windows Server 2016;Windows Server 2019;Windows 10;マシン |
+| ハイパーバイザー | Microsoft Hyper-V | Microsoft Hyper-V |
+| GPU ハードウェア | エンタープライズ GPU (Nvidia Quadro/GRID または AMD FirePro) | エンタープライズ GPU (Nvidia Quadro/GRID または AMD FirePro) |
+| サーバー ハードウェア | 特別な要件なし | 最新のサーバー、OS に IOMMU を公開 (通常は SR-IOV 準拠のハードウェア) |

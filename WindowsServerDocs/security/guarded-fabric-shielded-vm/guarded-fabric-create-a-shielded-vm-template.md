@@ -8,12 +8,12 @@ author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 01/29/2019
-ms.openlocfilehash: 82725e654fb4c7296b092019db111f9d3debad6d
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: d33714c9939593b4c877e76f77d390139771e3ff
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475389"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87769390"
 ---
 # <a name="create-a-windows-shielded-vm-template-disk"></a>Windows のシールドされた VM テンプレートディスクを作成する
 
@@ -57,7 +57,9 @@ Windows Server 2016、Windows 10 (リモートサーバー管理ツール、RSAT
 
 2. サーバーをローカルで管理するには、サーバーの**リモートサーバー管理ツール**からシールドされた**VM ツール**機能をインストールします。
 
-        Install-WindowsFeature RSAT-Shielded-VM-Tools -Restart
+    ```
+    Install-WindowsFeature RSAT-Shielded-VM-Tools -Restart
+    ```
 
     また、 [Windows 10 リモートサーバー管理ツール](https://www.microsoft.com/download/details.aspx?id=45520)がインストールされているクライアントコンピューターからサーバーを管理することもできます。
 
@@ -65,7 +67,9 @@ Windows Server 2016、Windows 10 (リモートサーバー管理ツール、RSAT
 
     テスト環境をセットアップし、自己署名証明書のみを使用してテンプレートディスクを準備する場合は、次のようなコマンドを実行します。
 
-        New-SelfSignedCertificate -DnsName publisher.fabrikam.com
+    ```
+    New-SelfSignedCertificate -DnsName publisher.fabrikam.com
+    ```
 
 4. [スタート] メニューの [**管理ツール**] フォルダーから**テンプレートディスクウィザード**を起動するか、コマンドプロンプトに「 **TemplateDiskWizard.exe** 」と入力します。
 
@@ -99,7 +103,7 @@ VMM を使用する場合は、テンプレートディスクを作成した後�
 
 3. 次に、テンプレートディスクにインストールされているオペレーティングシステムに関する情報を VMM に提供します。
 
-    a。 ライブラリサーバーの [**ライブラリ**] ワークスペースで、新しくインポートしたテンプレートディスクを見つけます。
+    a. ライブラリサーバーの [**ライブラリ**] ワークスペースで、新しくインポートしたテンプレートディスクを見つけます。
 
     b. ディスクを右クリックし、[**プロパティ**] をクリックします。
 
@@ -167,7 +171,7 @@ Save-VolumeSignatureCatalog -TemplateDiskPath 'C:\temp\MyLinuxTemplate.vhdx' -Vo
 > [!div class="nextstepaction"]
 > [シールドデータファイルを作成する](guarded-fabric-tenant-creates-shielding-data.md)
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [保護されたホストとシールドされた VM のためのホスティング サービス プロバイダーの構成手順](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
 - [保護されたファブリックとシールドされた VM](guarded-fabric-and-shielded-vms-top-node.md)
