@@ -7,12 +7,12 @@ ms.assetid: ac12e9a9-ba7a-480a-9249-6e216c70941b
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: b1d684b594d7ad0361c2859db4cf30bbb4239a30
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: d09b5a6425c2921bf2ad3cae57aecad9e4f35098
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180348"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838331"
 ---
 # <a name="support-windows-server-essentials"></a>Windows Server Essentials のサポート
 
@@ -80,13 +80,13 @@ ms.locfileid: "87180348"
 
 ## <a name="ask-a-question-in-the-forums"></a>フォーラムで質問をする
 
-- [Windows Server Essentials 全般](https://docs.microsoft.com/answers/topics/windows-server-essentials.html)
+- [Windows Server Essentials 全般](/answers/topics/windows-server-essentials.html)
 
-- [Windows SBS 2011 Essentials](https://docs.microsoft.com/answers/topics/windows-small-business-server.html)
+- [Windows SBS 2011 Essentials](/answers/topics/windows-small-business-server.html)
 
-- [Small Business Server](https://docs.microsoft.com/answers/topics/windows-small-business-server.html)
+- [Small Business Server](/answers/topics/windows-small-business-server.html)
 
-- [Windows Server フォーラム](https://docs.microsoft.com/answers/topics/windows-server.html)
+- [Windows Server フォーラム](/answers/topics/windows-server.html)
 
 ## <a name="get-additional-help"></a>追加のヘルプを取得する
 
@@ -110,7 +110,7 @@ ms.locfileid: "87180348"
 
 - [小規模企業向けのサポート](https://smallbusiness.support.microsoft.com/contact)
 
-- [Windows Server Essentials および Small Business Server のブログ](https://blogs.technet.com/b/sbs/)
+- [Windows Server Essentials および Small Business Server のブログ](/archive/blogs/sbs/)
 
 ## <a name="end-to-end-solution-guides"></a>エンド ツー エンド ソリューション ガイド
 
@@ -120,7 +120,7 @@ ms.locfileid: "87180348"
 
 - パートナーやベンダーと安全にコラボレーションする方法については、「[中小企業のコラボレーションの向上](/previous-versions/windows/it-pro/solutions-guidance/dn747893(v=ws.11))」を参照してください。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [Windows Server Essentials のインストール](../install/Install-Windows-Server-Essentials.md)
 

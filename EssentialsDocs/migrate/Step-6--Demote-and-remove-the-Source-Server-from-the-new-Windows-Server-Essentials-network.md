@@ -7,12 +7,12 @@ ms.assetid: 86244c66-2c5e-488d-adb8-112e1ca3e2e1
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: e78b3d50193cfd20df331d945fc549d3e3b35dbe
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 955da6c37bd57711529de02277d10f4627851715
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180418"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838341"
 ---
 # <a name="step-6-demote-and-remove-the-source-server-from-the-new-windows-server-essentials-network"></a>手順 6: 移行元サーバーを降格して新しい Windows Server Essentials ネットワークから削除する
 
@@ -79,7 +79,7 @@ Windows Server Essentials のインストールが完了し、移行が完了し
 
 4. 処理を終了するには、いったんログオフしてログオンし直すことが必要な場合があります。 [**はい**] をクリックして確認します。
 
-   Windows Server Essentials またはそれ以前のバージョンから移行する場合、サーバーを降格するには、「 [Active Directory Domain Services の削除](https://technet.microsoft.com/library/hh472163.aspx)」を参照してください。 移行元サーバーをワークグループのメンバーとして追加し、ネットワークから切断した後、移行先サーバーで AD DS から移行元サーバーを削除する必要があります。
+   Windows Server Essentials またはそれ以前のバージョンから移行する場合、サーバーを降格するには、「 [Active Directory Domain Services の削除](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh472163(v=ws.11))」を参照してください。 移行元サーバーをワークグループのメンバーとして追加し、ネットワークから切断した後、移行先サーバーで AD DS から移行元サーバーを削除する必要があります。
 
    Windows Server Essentials から移行する場合は、サーバーマネージャーを使用して Active Directory Domain Services の役割を削除し、その結果、次の手順に従って移行元サーバーのドメインコントローラーを降格します。
 
@@ -106,4 +106,3 @@ Windows Server Essentials のインストールが完了し、移行が完了し
 
 
 すべての手順を表示するには、「 [Windows Server Essentials への移行](Migrate-from-Previous-Versions-to-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md)」を参照してください。
-

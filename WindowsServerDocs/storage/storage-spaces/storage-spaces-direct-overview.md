@@ -125,7 +125,7 @@ ms.locfileid: "87768947"
 | Windows PowerShell                                                        | コマンド ライン | Included |
 | [System Center Virtual Machine Manager (SCVMM)](/system-center/vmm/s2d?view=sc-vmm-2019) <br>& [Operations Manager (SCOM)](https://www.microsoft.com/download/details.aspx?id=54700) | グラフィカル    | 支払い済み     |
 
-## <a name="get-started"></a>作業開始
+## <a name="get-started"></a>はじめに
 
 [Microsoft Azure で](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)記憶域スペース ダイレクトを試すか、「[Windows Server 評価版ソフトウェア](https://go.microsoft.com/fwlink/?linkid=842602)」から 180 日間ライセンスが有効な Windows Server の評価版をダウンロードします。
 

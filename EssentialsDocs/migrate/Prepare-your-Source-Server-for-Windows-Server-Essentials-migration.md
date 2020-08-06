@@ -7,12 +7,12 @@ ms.assetid: f5861ae9-77cb-4d37-b4c5-8f0757213385
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 1097520110f876a8c29e05547d4407a13f1c5057
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: bc672a3f2d9b74ff4ed283e826312f6661ba63f6
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180518"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838401"
 ---
 # <a name="prepare-your-source-server-for-windows-server-essentials-migration1"></a>Windows Server Essentials migration1 の移行元サーバーを準備する
 
@@ -39,7 +39,7 @@ ms.locfileid: "87180518"
 
 ##### <a name="to-back-up-the-source-server"></a>移行元サーバーをバックアップするには
 
-1.  移行元サーバーの完全バックアップを実行します。 Windows Small Business Server 2011 Essentials のバックアップの詳細については、[サーバー バックアップの詳細に関するページ](https://technet.microsoft.com/library/server-backup-support-1.aspx)を参照してください。
+1.  移行元サーバーの完全バックアップを実行します。 Windows Small Business Server 2011 Essentials のバックアップの詳細については、[サーバー バックアップの詳細に関するページ](/previous-versions/windows/it-pro/windows-server-essentials-sbs/ff402413(v=ws.11))を参照してください。
 
 2.  バックアップが正常に実行されたことを確認します。 バックアップの整合性をテストするには、バックアップからランダムにファイルを選択し、それらのファイルを別の場所に復元して、復元されたファイルが元のファイルと同じことを確認します。
 
@@ -192,4 +192,3 @@ ms.locfileid: "87180518"
 
 > [!NOTE]
 >  Windows Small Business Server 2011 Essentials SDK を使用して、カスタマイズされたシステム正常性アドインまたはアラートアドインを開発していて、引き続き Windows Server Essentials でアドインを使用する場合は、アドインを更新して移行先サーバーに展開する必要もあります。
-

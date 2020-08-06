@@ -7,12 +7,12 @@ ms.assetid: 244c8a06-04c6-4863-8b52-974786455373
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 6666a0f68863913c0c0a5a1b1e903eaebf5470a4
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: c2007160c294074287437bedb7e94b318432a9b4
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180488"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838351"
 ---
 # <a name="step-1-prepare-your-source-server-for-windows-server-essentials-migration"></a>手順 1: Windows Server Essentials への移行に向けて移行元サーバーを準備する
 
@@ -42,14 +42,14 @@ ms.locfileid: "87180488"
 
 2. バックアップが正常に実行されたことを確認します。 バックアップの整合性をテストするには、バックアップからランダムにファイルを選択し、それらのファイルを別の場所に復元して、復元されたファイルが元のファイルと同じことを確認します。
 
-   |製品|リソース|
+   |Product|リソース|
    |---|---|
-   |Windows Small Business Server 2003|[Windows Small Business Server 2003 のバックアップと復元](https://msdn.microsoft.com/library/cc875809.aspx)
+   |Windows Small Business Server 2003|[Windows Small Business Server 2003 のバックアップと復元](/previous-versions/tn-archive/cc875809(v=technet.10))
    |Windows Small Business Server 2008|[Windows Small Business Server 2008 のデータのバックアップと復元](https://technet.microsoft.com/library/cc527505\(WS.10\).aspx)
    |Windows Server 2008 Foundation|[バックアップと回復](https://technet.microsoft.com/library/cc754097\(WS.10\).aspx)
-   |Windows Small Business Server 2011 Essentials|[サーバー バックアップのセットアップに関する詳細情報](https://technet.microsoft.com/library/server-backup-support-1.aspx)
-   |Windows Small Business Server 2011 Standard|[サーバー バックアップの管理](https://technet.microsoft.com/library/cc527488.aspx)
-   |Windows Server Essentials|[Windows Server Essentials でのバックアップと復元の管理](https://technet.microsoft.com/library/jj713536.aspx)
+   |Windows Small Business Server 2011 Essentials|[サーバー バックアップのセットアップに関する詳細情報](/previous-versions/windows/it-pro/windows-server-essentials-sbs/ff402413(v=ws.11))
+   |Windows Small Business Server 2011 Standard|[サーバー バックアップの管理](/previous-versions/windows/it-pro/windows-server-essentials-sbs/cc527488(v=ws.11))
+   |Windows Server Essentials|[Windows Server Essentials でのバックアップと復元の管理](/previous-versions/windows/it-pro/windows-server-essentials-sbs/cc514417(v=msdn.10))
 
 ###  <a name="install-the-most-recent-service-packs"></a><a name="BKMK_InstallTheMostRecentServicePacksToPrepareForMigration"></a>最新のサービスパックをインストールする
  移行前に、最新の更新プログラムとサービス パックを移行元サーバーにインストールする必要があります。
@@ -172,17 +172,17 @@ ms.locfileid: "87180488"
  ドメインの電子メール ソリューションとして Microsoft Office 365 を利用することにした場合は、「 [Exchange のカットオーバー移行によるすべてのメールボックスのクラウドへの移行](https://help.outlook.com/140/ms.exch.ecp.emailmigrationwizardexchangelearnmore.aspx) 」に記載されているガイダンスに従って、Office 365 への電子メールの移行を開始します。 Windows Server Essentials をインストールする前に、電子メールの移行を完了することをお勧めします。
 
 > [!NOTE]
->  Windows Server Essentials と Office 365 を統合する場合は、移行元サーバーでオンプレミスの Exchange Server を削除する手順は必須です。 Office 365 に Exchange Server パブリック フォルダーを移行する方法については、ブログの投稿「 [Office 365 用 Microsoft Exchange 2013 パブリック フォルダー移行スクリプト](https://blogs.technet.com/b/fmustafa/archive/2013/04/11/microsoft-exchange-2013-public-folders-migration-scripts-for-office-365.aspx)」を参照してください。
+>  Windows Server Essentials と Office 365 を統合する場合は、移行元サーバーでオンプレミスの Exchange Server を削除する手順は必須です。 Office 365 に Exchange Server パブリック フォルダーを移行する方法については、ブログの投稿「 [Office 365 用 Microsoft Exchange 2013 パブリック フォルダー移行スクリプト](/archive/blogs/fmustafa/microsoft-exchange-2013-public-folders-migration-scripts-for-office-365)」を参照してください。
 >
 >  インストールが完了したら、 **Microsoft Office 365 との統合**タスクを実行して、Windows Server Essentials の Office 365 統合機能を有効にする必要があります。
 
 > [!IMPORTANT]
->  Office 365 移行ツールが移行元サーバーで実行している Exchange Server に接続できるようにするには、移行元サーバーで RPC over HTTP を有効にする必要があります。 RPC over HTTP を有効にする方法の詳細については、「 [Small Business Server 2003 に RPC over HTTP を初めて展開する方法 (標準またはプレミアム)](https://technet.microsoft.com/library/bb123622%28EXCHG.65%29.aspx)」を参照してください。 RPC over HTTP を有効にした後で Office 365 移行ツールを正常に実行できない場合は、レジストリの HKEY_LOCAL_MACHINE\Software\Microsoft\Rpc\RpcProxy にある [ **ValidPorts** ] の設定を表示し、移行元サーバーの完全修飾ドメイン名 (FQDN) が含まれていることを確認してください。 FQDN が表示されていない場合は、次の例に従って手動で追加します。
+>  Office 365 移行ツールが移行元サーバーで実行している Exchange Server に接続できるようにするには、移行元サーバーで RPC over HTTP を有効にする必要があります。 RPC over HTTP を有効にする方法の詳細については、「 [Small Business Server 2003 に RPC over HTTP を初めて展開する方法 (標準またはプレミアム)](/previous-versions/tn-archive/bb123622(v=exchg.65))」を参照してください。 RPC over HTTP を有効にした後で Office 365 移行ツールを正常に実行できない場合は、レジストリの HKEY_LOCAL_MACHINE\Software\Microsoft\Rpc\RpcProxy にある [ **ValidPorts** ] の設定を表示し、移行元サーバーの完全修飾ドメイン名 (FQDN) が含まれていることを確認してください。 FQDN が表示されていない場合は、次の例に従って手動で追加します。
 >
 >  remote. *contoso*.com:6001-6002;remote. *contoso*.com:6004 (*contoso* は実際のドメイン名で置き換えてください)。
 
 #### <a name="migrate-email-to-another-on-premises-exchange-server"></a>電子メールをオンプレミスの別の Exchange Server に移行する
- 電子メールを別のオンプレミスの Exchange Server に移行する方法については、「[オンプレミスの Exchange server と Windows Server Essentials の統合](https://technet.microsoft.com/library/jj200172.aspx)」を参照してください。 Windows Server Essentials をインストールした後で、新しいオンプレミスの Exchange Server をセットアップし、移行元サーバーを降格する前に電子メールの移行を完了することをお勧めします。
+ 電子メールを別のオンプレミスの Exchange Server に移行する方法については、「[オンプレミスの Exchange server と Windows Server Essentials の統合](/previous-versions/windows/it-pro/windows-server-essentials-sbs/jj200172(v=ws.11))」を参照してください。 Windows Server Essentials をインストールした後で、新しいオンプレミスの Exchange Server をセットアップし、移行元サーバーを降格する前に電子メールの移行を完了することをお勧めします。
 
 > [!NOTE]
 >  Windows Small Business Server POP3 コネクタは、Exchange Server には含まれていません。 電子メール データを別の Exchange Server に移行すると、POP3 コネクタの機能は使用できなくなります。
@@ -190,8 +190,7 @@ ms.locfileid: "87180488"
 > [!NOTE]
 >  移行元サーバーを更新し、移行の準備が完了したら、移行プロセスを続行する前に、更新したサーバーのバックアップを作成してください。
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
  Windows Server Essentials への移行のために移行元サーバーを準備しました。  [次に、「手順 2: Windows Server Essentials を新しいレプリカドメインコントローラーとしてインストール](Step-2--Install-Windows-Server-Essentials-as-a-new-replica-domain-controller.md)する」に進みます。
 
 すべての手順を表示するには、「 [Windows Server Essentials への移行](Migrate-from-Previous-Versions-to-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md)」を参照してください。
-

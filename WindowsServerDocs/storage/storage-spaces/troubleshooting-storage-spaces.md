@@ -334,17 +334,17 @@ IO パフォーマンスの低下が見られる場合は、記憶域スペー�
 
    |FriendlyName|  SerialNumber| MediaType| CanPool| OperationalStatus| HealthStatus| 使用法| サイズ|
    |-----------|------------|---------| -------| -----------------| ------------| -----| ----|
-   |NVMe INTEL SSDPE7KX02| PHLF733000372P0LGN| SSD| 誤り|   [OK]|                Healthy|      1.82 TB を自動選択|
-   |NVMe INTEL SSDPE7KX02 |PHLF7504008J2P0LGN| SSD|  誤り|    [OK]|                Healthy| 自動選択| 1.82 TB|
-   |NVMe INTEL SSDPE7KX02| PHLF7504005F2P0LGN| SSD|  誤り|  [OK]|                Healthy| 自動選択| 1.82 TB|
-   |NVMe INTEL SSDPE7KX02 |PHLF7504002A2P0LGN| SSD| 誤り| [OK]|    Healthy| 自動選択| 1.82 TB|
-   |NVMe INTEL SSDPE7KX02| PHLF7504004T2P0LGN |SSD| 誤り|[OK]|       Healthy| 自動選択| 1.82 TB|
-   |NVMe INTEL SSDPE7KX02 |PHLF7504002E2P0LGN| SSD| 誤り| [OK]|      Healthy| 自動選択| 1.82 TB|
-   |NVMe INTEL SSDPE7KX02 |PHLF7330002Z2P0LGN| SSD| 誤り| [OK]|      Healthy|自動選択| 1.82 TB|
-   |NVMe INTEL SSDPE7KX02 |PHLF733000272P0LGN |SSD| 誤り| [OK]|  Healthy| 自動選択| 1.82 TB|
-   |NVMe INTEL SSDPE7KX02 |PHLF7330001J2P0LGN |SSD| 誤り| [OK]| Healthy| 自動選択| 1.82 TB|
-   |NVMe INTEL SSDPE7KX02| PHLF733000302P0LGN |SSD| 誤り| [OK]|Healthy| 自動選択| 1.82 TB|
-   |NVMe INTEL SSDPE7KX02| PHLF7330004D2P0LGN |SSD| 誤り| [OK]| Healthy| 自動選択 |1.82 TB|
+   |NVMe INTEL SSDPE7KX02| PHLF733000372P0LGN| SSD| False|   [OK]|                Healthy|      1.82 TB を自動選択|
+   |NVMe INTEL SSDPE7KX02 |PHLF7504008J2P0LGN| SSD|  False|    [OK]|                Healthy| 自動選択| 1.82 TB|
+   |NVMe INTEL SSDPE7KX02| PHLF7504005F2P0LGN| SSD|  False|  [OK]|                Healthy| 自動選択| 1.82 TB|
+   |NVMe INTEL SSDPE7KX02 |PHLF7504002A2P0LGN| SSD| False| [OK]|    Healthy| 自動選択| 1.82 TB|
+   |NVMe INTEL SSDPE7KX02| PHLF7504004T2P0LGN |SSD| False|[OK]|       Healthy| 自動選択| 1.82 TB|
+   |NVMe INTEL SSDPE7KX02 |PHLF7504002E2P0LGN| SSD| False| [OK]|      Healthy| 自動選択| 1.82 TB|
+   |NVMe INTEL SSDPE7KX02 |PHLF7330002Z2P0LGN| SSD| False| [OK]|      Healthy|自動選択| 1.82 TB|
+   |NVMe INTEL SSDPE7KX02 |PHLF733000272P0LGN |SSD| False| [OK]|  Healthy| 自動選択| 1.82 TB|
+   |NVMe INTEL SSDPE7KX02 |PHLF7330001J2P0LGN |SSD| False| [OK]| Healthy| 自動選択| 1.82 TB|
+   |NVMe INTEL SSDPE7KX02| PHLF733000302P0LGN |SSD| False| [OK]|Healthy| 自動選択| 1.82 TB|
+   |NVMe INTEL SSDPE7KX02| PHLF7330004D2P0LGN |SSD| False| [OK]| Healthy| 自動選択 |1.82 TB|
 
 ## <a name="how-to-destroy-an-existing-cluster-so-you-can-use-the-same-disks-again"></a>同じディスクを再び使用できるように既存のクラスターを破棄する方法
 
@@ -399,7 +399,7 @@ Intel SSD DC P4600 シリーズデバイスが、次の例のように、0100000
 
 |               uniqueid               | deviceid | MediaType | BusType |               serialnumber               |      size      | canpool | フレンドリ | OperationalStatus |
 |--------------------------------------|----------|-----------|---------|------------------------------------------|----------------|---------|--------------|-------------------|
-|           5000CCA251D12E30           |    0     |    HDD    |   SAS   |                 7PKR197G                 | 10000831348736 |  誤り  |     HGST     |  HUH721010AL4200  |
+|           5000CCA251D12E30           |    0     |    HDD    |   SAS   |                 7PKR197G                 | 10000831348736 |  False  |     HGST     |  HUH721010AL4200  |
 | 0100000001000000E4D25C000014E214 |    4     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_0014_E214。 | 1600321314816  |  True   |    INTEL     |   SSDPE2KE016T7   |
 | 0100000001000000E4D25C000014E214 |    5     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_0014_E214。 | 1600321314816  |  True   |    INTEL     |   SSDPE2KE016T7   |
 | 0100000001000000E4D25C0000EEE214 |    6     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_00EE_E214。 | 1600321314816  |  True   |    INTEL     |   SSDPE2KE016T7   |

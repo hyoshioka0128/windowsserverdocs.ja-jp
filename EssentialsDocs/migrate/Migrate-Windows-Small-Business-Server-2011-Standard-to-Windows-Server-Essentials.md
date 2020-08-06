@@ -7,12 +7,12 @@ ms.assetid: c8325f87-fd79-471b-bf70-3f052692c383
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: c75f69a4c1479d2a377db66a2295df3de9c66503
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 6dbc809ebba6da361923136f6b74351baba06728
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180678"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838371"
 ---
 # <a name="migrate-windows-small-business-server-2011-standard-to-windows-server-essentials"></a>Windows Small Business Server 2011 Standard から Windows Server Essentials への移行
 
@@ -46,7 +46,7 @@ ms.locfileid: "87180678"
 
 3.  [新しい Windows Server Essentials サーバーにコンピューターを参加](Join-computers-to-the-new-Windows-Server-Essentials-server.md)させます。  このセクションでは、クライアントコンピューターを新しい Windows Server Essentials ネットワークに参加させ、グループポリシーの設定を更新する方法について説明します。
 
-4.  [SBS 2011 の設定とデータを移行先サーバーに移動](Move-Windows-SBS-2011-Standard-settings-and-data-to-the-Destination-Server-for-Windows-Server-Essentials-migration.md)します。  ここでは、移行元サーバーからのデータと設定の移行について説明します。
+4.  [SBS 2011 の設定とデータを移行先サーバーに移動](./move-windows-sbs-2011-standard-to-the-destination-server-for-migration.md)します。  ここでは、移行元サーバーからのデータと設定の移行について説明します。
 
 5.  [Windows Server Essentials の移行先サーバーでフォルダーリダイレクトを有効に](Enable-folder-redirection-on-the-Windows-Server-Essentials-Destination-Server.md)します。  移行元サーバーでフォルダー リダイレクトが有効になっている場合は、移行先サーバーでフォルダー リダイレクトを有効にしてから、以前のフォルダー リダイレクト グループ ポリシー設定を削除できます。
 

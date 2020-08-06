@@ -7,12 +7,12 @@ ms.assetid: 68f2b05c-09eb-4cba-8db4-a91353b513c6
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 3e79a4e7845298b013d99ff804c665e44cac4fbb
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 241e2225c9e1dfdea3189e938a04c4af4c033c3f
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180338"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838321"
 ---
 # <a name="troubleshoot-anywhere-access-in-windows-server-essentials"></a>Windows Server Essentials での Anywhere Access のトラブルシューティング
 
@@ -23,7 +23,7 @@ ms.locfileid: "87180338"
 Anywhere Access の修復ウィザードは、ネットワーク ユーザーがサーバー リソースにリモートでアクセスすることを妨げる、ルーター、ドメイン名、またはファイアウォールの問題を特定し、修復しようと試みます。
 
 > [!NOTE]
-> Windows Server Essentials コミュニティの最新のトラブルシューティング情報については、 [Windows Server Essentials フォーラム](https://docs.microsoft.com/answers/topics/windows-server-essentials.html)を参照することをお勧めします。 Windows Server Essentials フォーラムは、ヘルプを検索したり、質問したりするために最適な場所です。
+> Windows Server Essentials コミュニティの最新のトラブルシューティング情報については、 [Windows Server Essentials フォーラム](/answers/topics/windows-server-essentials.html)を参照することをお勧めします。 Windows Server Essentials フォーラムは、ヘルプを検索したり、質問したりするために最適な場所です。
 
 ## <a name="to-repair-anywhere-access"></a>Anywhere Access を修復するには
 
@@ -50,4 +50,4 @@ Anywhere Access の修復ウィザードは、ネットワーク ユーザーが
 
 - [ファイアウォールのトラブルシューティング](Troubleshoot-your-firewall-in-Windows-Server-Essentials.md)
 
-- Windows server essentials コミュニティによって報告された最新の問題については、 [Windows Server Essentials フォーラム](https://docs.microsoft.com/answers/topics/windows-server-essentials.html)をご覧ください。
+- Windows server essentials コミュニティによって報告された最新の問題については、 [Windows Server Essentials フォーラム](/answers/topics/windows-server-essentials.html)をご覧ください。

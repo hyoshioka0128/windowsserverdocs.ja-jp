@@ -67,7 +67,7 @@ Storage Migration Service は、Windows の操作に干渉する可能性があ�
 - Id リモート処理
 - インフラストラクチャ
 - 名前
-- Path
+- パス
 - スコープ
 - スコープ名
 - セキュリティ記述子

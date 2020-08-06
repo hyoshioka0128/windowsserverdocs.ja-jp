@@ -7,12 +7,12 @@ ms.assetid: f22fc0a4-cb82-4e60-afe6-2d03145745e7
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 1da24c4200cfbfeb5256cad51e72b0836d6af3c7
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 74b79e3306ee34708b079b09f445a00ddfc15fdb
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180728"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838381"
 ---
 # <a name="migrate-windows-server-2008-foundation-to-windows-server-essentials"></a>Windows Server 2008 Foundation から Windows Server Essentials への移行
 
@@ -41,7 +41,7 @@ ms.locfileid: "87180728"
 
 3.  [新しい Windows Server Essentials ネットワークにコンピューターを参加](Join-computers-to-the-new-Windows-Server-Essentials-network.md)させます。  このセクションでは、クライアントコンピューターを新しい Windows Server Essentials ネットワークに参加させ、グループポリシーの設定を更新する方法について説明します。
 
-4.  [Windows Server 2008 Foundation の設定とデータを移行先サーバーに移動](Move-Windows-Server-2008-Foundation-settings-and-data-to-the-Destination-Server-for-Windows-Server-Essentials-migration.md)します。  ここでは、移行元サーバーからのデータと設定の移行について説明します。
+4.  [Windows Server 2008 Foundation の設定とデータを移行先サーバーに移動](./move-windows-server-2008-foundation-to-the-destination-server-for-migration.md)します。  ここでは、移行元サーバーからのデータと設定の移行について説明します。
 
 5.  [新しい Windows Server Essentials ネットワークから移行元サーバーを降格し、削除](Demote-and-remove-the-Source-Server-from-the-new-Windows-Server-Essentials-network.md)します。  移行元サーバーをネットワークから削除する前に、グループ ポリシーの更新を強制し、移行元サーバーを降格する必要があります。
 
