@@ -7,12 +7,12 @@ ms.assetid: 9378bffa-487c-43ca-9ec3-7e7864d2dd9a
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: e4f3cf42cdf9343be106660b74041c059fdc7073
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: c59fd121fdf628fc0943214b699599f2f20625b3
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180998"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87837831"
 ---
 # <a name="manage-digital-media-in-windows-server-essentials"></a>Windows Server Essentials でのデジタル メディアの管理
 
@@ -130,7 +130,7 @@ ms.locfileid: "87180998"
  サーバー管理者は、サーバーに直接アクセスするか、リモートの Web アクセスサイトを使用してダッシュボードにサインインすることにより、メディアライブラリの共有フォルダーにデジタルメディアを追加できます。 他のユーザーは、スタートパッドの [**共有フォルダー** ] 接続を使用するか、リモート Web アクセスサイトを使用するか、Windows Phone 用の My server アプリを使用して、サーバーにメディアファイルを追加できます。 メディアの再生の詳細については、「[デジタルメディアを再生](../use/Play-Digital-Media-in-Windows-Server-Essentials.md)する」を参照してください。
 
 > [!NOTE]
->  Windows Phone の My Server アプリを利用し、サーバーにメディア ファイルをアップロードすることもできます。 [Windows Phone ストア](https://www.windowsphone.com/store/app/my-server/6c2f98d5-6fcf-4e1d-b8b1-cde62ea1a94a)から My Server アプリをダウンロードできます。 Windows phone 用の My Server アプリの詳細については、ブログ記事「 [Windows Server Essentials 用の My server phone アプリ](https://blogs.technet.com/b/sbs/archive/2012/09/18/my-server-phone-app-for-windows-server-2012-essentials.aspx)」を参照してください。
+>  Windows Phone の My Server アプリを利用し、サーバーにメディア ファイルをアップロードすることもできます。 [Windows Phone ストア](https://www.windowsphone.com/store/app/my-server/6c2f98d5-6fcf-4e1d-b8b1-cde62ea1a94a)から My Server アプリをダウンロードできます。 Windows phone 用の My Server アプリの詳細については、ブログ記事「 [Windows Server Essentials 用の My server phone アプリ](/archive/blogs/sbs/my-server-phone-app-for-windows-server-2012-essentials)」を参照してください。
 
 #### <a name="to-add-digital-media-files-to-shared-folders-on-the-server"></a>サーバー上の共有フォルダーにデジタル メディア ファイルを追加するには
 
@@ -243,7 +243,7 @@ ms.locfileid: "87180998"
 
  サポートされるファイル形式の詳細については、「 [Windows Media Player でサポートされるファイルの種類](https://go.microsoft.com/fwlink/p/?LinkID=196118) 」、および Silverlight の場合は、「 [サポートされるメディア形式、プロトコル、ログ フィールド](https://go.microsoft.com/fwlink/p/?LinkId=203339) 」を参照してください。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 -   [デジタル メディアの再生](../use/Play-Digital-Media-in-Windows-Server-Essentials.md)
 

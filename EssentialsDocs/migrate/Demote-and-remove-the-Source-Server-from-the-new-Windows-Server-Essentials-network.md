@@ -7,12 +7,12 @@ ms.assetid: d9f18b29-8e03-439e-bdf0-1dac5e4f70c5
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: d48c314e5dd1655d23e7423c473163befb3655b9
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: e55c717b1eeb5b8f75ebfb7b48abd656dd4ddaa3
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180788"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838430"
 ---
 # <a name="demote-and-remove-the-source-server-from-the-new-windows-server-essentials-network1"></a>移行元サーバーを降格して新しい Windows Server Essentials ネットワークから削除する
 
@@ -53,7 +53,7 @@ Windows Server Essentials のインストールを完了し、移行ウィザー
 
    > [!NOTE]
    >
-   >  Exchange Server によって、メールボックスまたはパブリック フォルダーがサーバー上にないことが確認されます。 データが残っている場合は、[**削除**] をクリックするとエラー メッセージが表示されます。 この問題を回避するには、トピック「 [SBS 2003 の設定とデータを移行先サーバーに移動](Move-Windows-SBS-2003-settings-and-data-to-the-Destination-Server-for-Windows-Server-Essentials-migration.md)する」のすべての手順を完了していることを確認してください。
+   >  Exchange Server によって、メールボックスまたはパブリック フォルダーがサーバー上にないことが確認されます。 データが残っている場合は、[**削除**] をクリックするとエラー メッセージが表示されます。 この問題を回避するには、トピック「 [SBS 2003 の設定とデータを移行先サーバーに移動](./move-windows-sbs-2003-to-the-destination-server-for-migration.md)する」のすべての手順を完了していることを確認してください。
 
 
 6. **[次へ]** をクリックします。

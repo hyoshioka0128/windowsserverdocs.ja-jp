@@ -7,12 +7,12 @@ ms.assetid: 5cc73aff-d2c0-4cf9-a23d-ef928ae5ddc9
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: cbc6fec843a55d99ba709953b56e01a55f317a62
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 933dab3e0471ef4b9d8e4f603a1c177ecc6fc70c
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409522"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838291"
 ---
 # <a name="troubleshoot-computer-backup-and-restore-errors-in-windows-server-essentials"></a>Windows Server Essentials でのコンピューター バックアップと復元エラーのトラブルシューティング
 
@@ -21,7 +21,7 @@ ms.locfileid: "87409522"
 以下の手順を使用して、バックアップ構成の問題、不完全または失敗したバックアップ、バックアップの正常性アラート、およびファイル、フォルダー、またはシステムの完全復元の問題などの Windows Server Essentials でのコンピューターのバックアップのトラブルシューティングを行います。
 
 > [!NOTE]
-> Windows Server Essentials コミュニティの最新のトラブルシューティング情報については、 [Windows Server Essentials フォーラム](https://docs.microsoft.com/answers/topics/windows-server-essentials.html)を参照してください。
+> Windows Server Essentials コミュニティの最新のトラブルシューティング情報については、 [Windows Server Essentials フォーラム](/answers/topics/windows-server-essentials.html)を参照してください。
 
 ## <a name="troubleshoot-backup-configuration-issues-for-a-connected-computer"></a>接続しているコンピューターのバックアップ構成の問題のトラブルシューティング
 
@@ -240,6 +240,6 @@ ms.locfileid: "87409522"
 
 4. コンピューターを再度サーバーに接続します。 詳細については、「[コンピューターをサーバーに接続する方法](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_9)」を参照してください。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [Windows Server Essentials のサポート](Support-Windows-Server-Essentials.md)

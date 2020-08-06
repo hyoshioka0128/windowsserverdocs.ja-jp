@@ -7,12 +7,12 @@ ms.assetid: 8b183f8f-1279-4fdf-a495-c7c801563cb0
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 873f37d154d36593279584035486212efe9da5c2
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: e2771abd6f59b81cd56a91bd2aeb7717c9093882
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87179318"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838182"
 ---
 # <a name="work-remotely-in-windows-server-essentials"></a>Windows Server Essentials でのリモート操作
 
@@ -74,7 +74,7 @@ ms.locfileid: "87179318"
 
 - [Windows Phone 用 My Server 2012 R2 のインストール](http://www.windowsphone.com/store/app/my-server-2012-r2/44f596b5-0477-4096-b96e-ddd6ef64ad6b)
 
-  My Server phone アプリの詳細については、ブログ記事「 [Windows Server Essentials 用の My server phone アプリ](https://blogs.technet.com/b/sbs/archive/2012/09/18/my-server-phone-app-for-windows-server-2012-essentials.aspx)」を参照してください。 My Server 2012 R2 Phone アプリの詳細については、ブログ エントリの「 [My Server 2012 R2 Windows および Windows Phone アプリ](https://blogs.technet.com/b/sbs/archive/2013/11/19/my-server-2012-r2-windows-and-windows-phone-apps.aspx)」を参照してください。
+  My Server phone アプリの詳細については、ブログ記事「 [Windows Server Essentials 用の My server phone アプリ](/archive/blogs/sbs/my-server-phone-app-for-windows-server-2012-essentials)」を参照してください。 My Server 2012 R2 Phone アプリの詳細については、ブログ エントリの「 [My Server 2012 R2 Windows および Windows Phone アプリ](/archive/blogs/sbs/my-server-2012-r2-windows-and-windows-phone-apps)」を参照してください。
 
 ##  <a name="use-microsoft-office-365-with-windows-server-essentials"></a><a name="BKMK_O365"></a>Windows Server Essentials での Microsoft Office 365 の使用
 
@@ -90,4 +90,3 @@ ms.locfileid: "87179318"
 -   [共有フォルダーの使用](Use-Shared-Folders-in-Windows-Server-Essentials.md)
 
 -   [デジタル メディアの再生](Play-Digital-Media-in-Windows-Server-Essentials.md)
-

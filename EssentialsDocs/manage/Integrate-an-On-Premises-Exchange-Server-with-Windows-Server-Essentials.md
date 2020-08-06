@@ -7,12 +7,12 @@ ms.assetid: b56a21e2-c9e3-4ba9-97d9-719ea6a0854b
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 343bfc1325a065f4c4903732eceba59c769f838f
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: cef547570c58c405ac563a1c2215feda120350f4
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181068"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87837881"
 ---
 # <a name="integrate-an-on-premises-exchange-server-with-windows-server-essentials"></a>社内 Exchange Server と Windows Server Essentials を統合する
 
@@ -270,9 +270,9 @@ New-SendConnector -Name "WSE Internet SendConnector" -Usage "Internet" -AddressS
 
  電子メール メッセージの発信/着信伝送のために、SMTP 送信コネクタと SMTP 受信コネクタを構成する必要があります。
 
- SMTP 送信コネクタを作成するには、Exchange Server の記事「 [SMTP 送信コネクタの作成](https://technet.microsoft.com/library/aa997285.aspx)」に記載されている手順に従います。
+ SMTP 送信コネクタを作成するには、Exchange Server の記事「 [SMTP 送信コネクタの作成](/previous-versions/office/exchange-server-2010/aa997285(v=exchg.141))」に記載されている手順に従います。
 
- SMTP 受信コネクタを作成するには、Exchange Server の記事「 [SMTP 受信コネクタの作成](https://technet.microsoft.com/library/bb125159.aspx)」に記載されている手順に従います。
+ SMTP 受信コネクタを作成するには、Exchange Server の記事「 [SMTP 受信コネクタの作成](/previous-versions/office/exchange-server-2010/bb125159(v=exchg.141))」に記載されている手順に従います。
 
  オプションとして、Exchange の PowerShell コマンドレットを使用して、このドキュメントで既に紹介したスクリプトで送信および受信コネクタを作成することもできます。
 
@@ -283,7 +283,7 @@ New-SendConnector -Name "WSE Internet SendConnector" -Usage "Internet" -AddressS
 
  ルーターでは、少なくとも次のポート設定を構成する必要があります。
 
-|ルーター ポート|宛先 IP|宛先ポート|注意|
+|ルーター ポート|宛先 IP|宛先ポート|メモ|
 |-----------------|--------------------|----------------------|----------|
 |25 (SMTP)|Exchange Server を実行している社内サーバーの内部 IP。|25||
 |80 (HTTP)|Windows Server Essentials を実行しているサーバーの内部 IP|80||
@@ -347,7 +347,7 @@ New-SendConnector -Name "WSE Internet SendConnector" -Usage "Internet" -AddressS
 6. Windows Server Essentials を実行しているサーバーに Exchange Server の SSL 証明書ファイルをコピーします。 この証明書ファイルは、秘密キーを含んだ PFX ファイル形式にする必要があります。
 
    > [!NOTE]
-   >  自己発行の証明書を使用する場合は、Exchange Server の記事「 [Exchange 証明書のエクスポート](https://technet.microsoft.com/library/dd351274.aspx) 」に記載されている手順に従って証明書をエクスポートしてください。
+   >  自己発行の証明書を使用する場合は、Exchange Server の記事「 [Exchange 証明書のエクスポート](/previous-versions/office/exchange-server-2010/dd351274(v=exchg.141)) 」に記載されている手順に従って証明書をエクスポートしてください。
 
 7. 実行している Windows Server Essentials のバージョンに応じて、次の手順を実行します。
 
@@ -441,7 +441,7 @@ New-SendConnector -Name "WSE Internet SendConnector" -Usage "Internet" -AddressS
 
  ダッシュボードで **[Exchange Server 統合をセットアップする]** タスクを実行すると、ユーザー アカウントの追加ウィザードにページが追加され、そのページで、メールボックス クォータを適用するかどうかを選択し、クォータ サイズを指定できます。 既定では、**[メールボックス クォータを適用する]** オプションが選択されていて (オン)、ユーザーのメールボックスに 2 GB の記憶域が割り当てられます。 Exchange 管理者は、会社のニーズに合わせてメールボックス クォータの設定をカスタマイズできます。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 -   [Windows Server Essentials のシステム要件](../get-started/system-requirements.md)
 

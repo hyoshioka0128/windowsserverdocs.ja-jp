@@ -7,12 +7,12 @@ ms.assetid: 95a9f593-fad7-4335-bd4d-c7bb8c033efb
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: b3a9ceca5de9971f77175052a604d3e22de07036
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: e5c8a274a8e012ffd24ce6c6c819fa240c9f1095
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180948"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87837891"
 ---
 # <a name="manage-online-backup-in-windows-server-essentials"></a>Windows Server Essentials でのオンライン バックアップの管理
 
@@ -84,7 +84,7 @@ ms.locfileid: "87180948"
    >  独自のパブリック証明書を使用することもできます。 必要な証明書を知るには、**[クイック スタート]** ページで、**[証明書を取得]** リンクをクリックします。
 
    > [!NOTE]
-   >   Azure には、公開キーを持つ x.509 v2 証明書が必要です。 詳細については、「 [資格情報コンテナー証明書を管理する](https://msdn.microsoft.com/library/azure/dn169036.aspx)」を参照してください。
+   >   Azure には、公開キーを持つ x.509 v2 証明書が必要です。 詳細については、「 [資格情報コンテナー証明書を管理する](/previous-versions/azure/dn169036(v=azure.100))」を参照してください。
 
 7. 証明書を選択した後に、**[OK]** (チェック マーク) をクリックします。
 
@@ -333,7 +333,7 @@ ms.locfileid: "87180948"
 
 1. ダッシュボードを開きます。
 
-2. 次のいずれかの操作を行います。
+2. 以下のいずれかを実行します。
 
      Windows Server Essentials: ナビゲーションウィンドウで、[アラート] アイコンが [ \( 重大]、[警告]、[情報] のいずれかになっている可能性があり \) ます。 アラート ビューアーが開きます。
 
@@ -452,7 +452,7 @@ ms.locfileid: "87180948"
 |**ごと**|最新の状態がログに記録された時刻です。|
 |**状態:**|[**成功**]、[**進行**中]、[**キャンセル**]、[**警告**]、および [**失敗**] の5種類の状態があります。|
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 -   [バックアップと復元の管理](Manage-Backup-and-Restore-in-Windows-Server-Essentials.md)
 

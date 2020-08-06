@@ -7,12 +7,12 @@ ms.assetid: 37e1dae7-586c-4dd7-bf83-7e14a9567c8f
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: b84372394204353d0410da63d74f785c0e8fd07e
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: eea437a5867a602a84483a41fe129d64425bcb88
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180508"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838441"
 ---
 # <a name="rules-used-by-the-windows-server-essentials-best-practices-analyzer-bpa-tool"></a>Windows Server Essentials ベスト プラクティス アナライザー (BPA) ツールで使用される規則
 
@@ -525,7 +525,7 @@ ms.locfileid: "87180508"
 
  **影響:** 管理者がアラートを作成し、管理者がログオンしていないときに実行するようにアラートを構成した場合、アラートはエラーコード2147943785で失敗します。
 
- **解決策:** 組み込みの Administrators グループにバッチジョブとしてログオンする権限を付与する方法については、「[ビルトイン Administrator グループにバッチジョブとしてログオンする権利を付与](https://technet.microsoft.com/library/jj635076)する」 (を参照してください https://technet.microsoft.com/library/jj635076) 。
+ **解決策:** 組み込みの Administrators グループにバッチジョブとしてログオンする権限を付与する方法については、「[ビルトイン Administrator グループにバッチジョブとしてログオンする権利を付与](/previous-versions/orphan-topics/ws.11/jj635076(v=ws.11))する」 (を参照してください https://technet.microsoft.com/library/jj635076) 。
 
 ### <a name="the-windows-firewall-is-turned-off"></a>Windows ファイアウォールが無効になっている
  **問題:** Windows ファイアウォールがオフになっています。 既定値は有効です。

@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: c7da0f6c-9732-4784-9c28-7dad72c4071d
 author: daveba
 ms.author: daveba
-ms.openlocfilehash: e00bf2db8216489787ba3a476a79d7567d4d0d78
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 3c415155734515af004e25a07c4e61afabaa3359
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181418"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838011"
 ---
 # <a name="create-a-server-recovery-dvd-for-multi-language-support"></a>複数言語サポート用のサーバー回復 DVD の作成
 
@@ -20,7 +20,7 @@ ms.locfileid: "87181418"
 ##  <a name="create-a-server-setup-and-server-recovery-dvd-for-multiple-language-support-on-locally-administered-servers"></a><a name="BKMK_MLHeadedRecovery"></a>ローカルで管理されているサーバーで複数の言語をサポートするためのサーバーセットアップとサーバー回復 DVD の作成
 
 > [!NOTE]
->  まず、「[チュートリアル:](https://technet.microsoft.com/library/jj126995) Windows Server Essentials install.wim pack をインストールする前に、多言語 windows イメージの作成」の説明に従って、多言語の windows イメージを作成する必要があります。
+>  まず、「[チュートリアル:](/previous-versions/windows/it-pro/windows-8.1-and-8/jj126995(v=win.10)) Windows Server Essentials install.wim pack をインストールする前に、多言語 windows イメージの作成」の説明に従って、多言語の windows イメージを作成する必要があります。
 
  セットアップには、Windows プレインストール環境 (Windows PE) と初期構成という 2 つのフェーズがあります。 既定では、初期構成には言語選択ページは表示されません。
 
@@ -63,7 +63,7 @@ ms.locfileid: "87181418"
  この手順では、Windows Server 2012 および Windows Server Essentials 言語パックをインストール .wim に追加します。
 
 > [!NOTE]
->  Windows Server 2012 の言語パックがインストールされていることを確認します。 これで適切なブランド化を取得できます。 Windows Server 2012 多言語ユーザーインターフェイス言語パックは、 [Microsoft.com](https://www.microsoft.com/OEM/en/installation/downloads/Pages/technical-downloads.aspx)で入手できます。 「[チュートリアル:](https://technet.microsoft.com/library/jj126995.aspx)多言語の windows イメージの作成」で説明されている手順に従って、Windows Server Essentials 言語パックをインストール .wim に追加します。
+>  Windows Server 2012 の言語パックがインストールされていることを確認します。 これで適切なブランド化を取得できます。 Windows Server 2012 多言語ユーザーインターフェイス言語パックは、 [Microsoft.com](https://www.microsoft.com/OEM/en/installation/downloads/Pages/technical-downloads.aspx)で入手できます。 「[チュートリアル:](/previous-versions/windows/it-pro/windows-8.1-and-8/jj126995(v=win.10))多言語の windows イメージの作成」で説明されている手順に従って、Windows Server Essentials 言語パックをインストール .wim に追加します。
 >
 >  Windows Server Essentials 言語パックは、言語パックメディア () の言語パックメディアで利用できます。この言語パックは、 \\<の選別 \> します。
 
@@ -104,4 +104,3 @@ ms.locfileid: "87181418"
 ## <a name="see-also"></a>参照
 
  [イメージの作成とカスタマイズ追加の](Creating-and-Customizing-the-Image.md)[カスタマイズ](Additional-Customizations.md)[展開のイメージの準備](Preparing-the-Image-for-Deployment.md)[カスタマーエクスペリエンスのテスト](Testing-the-Customer-Experience.md)
-

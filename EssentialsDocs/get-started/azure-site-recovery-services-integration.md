@@ -7,18 +7,18 @@ ms.assetid: 262701a6-8a97-4c4e-bfbf-9f8007c308d6
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: e17d60b4931f4858f915bd177f05e85eb1fc5f6a
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 7c30d99bd1a0019130f7e39f70b289effd6935c4
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181688"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838251"
 ---
 # <a name="azure-site-recovery-services-integration"></a>Azure Site Recovery サービスの統合
 
 >適用対象: Windows Server 2016 Essentials
 
-[Azure Site Recovery サービス](https://docs.microsoft.com/azure/site-recovery/)は、Azure のバックアップコンテナーへの仮想マシン (VM) のリアルタイムレプリケーションを可能にする Microsoft Azure によって提供されるサービスです。 ハードウェアやその他の障害によってサーバーまたはサイトがダウンしている場合は、Azure にフェールオーバーできます。この場合、バックアップコンテナーに格納されている VM イメージは、実行中の VM として Azure にプロビジョニングされます。 Azure へのフェールオーバーが発生した場合は、azure Virtual network と組み合わせることで、以前にオンプレミスサーバーに接続していたクライアント Pc は、Azure で実行されているサーバーに透過的に接続します。
+[Azure Site Recovery サービス](/azure/site-recovery/)は、Azure のバックアップコンテナーへの仮想マシン (VM) のリアルタイムレプリケーションを可能にする Microsoft Azure によって提供されるサービスです。 ハードウェアやその他の障害によってサーバーまたはサイトがダウンしている場合は、Azure にフェールオーバーできます。この場合、バックアップコンテナーに格納されている VM イメージは、実行中の VM として Azure にプロビジョニングされます。 Azure へのフェールオーバーが発生した場合は、azure Virtual network と組み合わせることで、以前にオンプレミスサーバーに接続していたクライアント Pc は、Azure で実行されているサーバーに透過的に接続します。
 
 Azure Site Recovery サービスと Windows Server Essentials の統合は、 [Azure Virtual network](azure-virtual-network-integration.md)の構成と同じ方法で開始されます。 ダッシュボードの [ **Microsoft Cloud Services 統合**] ページで、ダッシュボードの右側にある [ **Azure Site Recovery Services との統合**] をクリックします。
 

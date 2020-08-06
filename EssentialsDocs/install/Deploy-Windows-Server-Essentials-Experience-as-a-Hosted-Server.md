@@ -7,12 +7,12 @@ ms.assetid: a455c6b4-b29f-4f76-8c6b-1578b6537717
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 63f5a72cf070b1520815f8f8f59d9c6ecf386aa5
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 7dd1aa46786a3768127ba7934c8a8767d40e6654
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181258"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838021"
 ---
 # <a name="deploy-windows-server-essentials-experience-as-a-hosted-server"></a>Windows Server Essentials Experience をホストされたサーバーとして配置
 
@@ -140,7 +140,7 @@ Install-WssVpnServer -IPv4AddressRange ('192.168.0.160','192.168.0.240') -ApplyT
 >  お客様がサーバーの所有権を得る前に、VPN 接続を提供できない場合は、お客様がリモート デスクトップ プロトコルを使用して、サーバーに接続し、それを構成できるように、インターネット経由でサーバー ポート 3389 に到達できることを確認します。
 
 ##  <a name="customize-the-image-of-windows-server-essentials-experience-role"></a><a name="BKMK_CustomizeImage"></a>Windows Server Essentials エクスペリエンス役割のイメージのカスタマイズ
- Windows Server Essentials エクスペリエンス役割を構成する前に、イメージをカスタマイズできます。 標準 Windows Server Sysprep プロセスについては、「 [Windows アセスメント &amp; デプロイメント キット](https://msdn.microsoft.com/library/hh825420.aspx)」を参照してください。 Sysprep を使用してイメージを準備したら、それを使用したり、新しい展開用に Install.wim に再シールしたりすることができます。
+ Windows Server Essentials エクスペリエンス役割を構成する前に、イメージをカスタマイズできます。 標準 Windows Server Sysprep プロセスについては、「 [Windows アセスメント &amp; デプロイメント キット](/previous-versions/windows/hh825420(v=win.10))」を参照してください。 Sysprep を使用してイメージを準備したら、それを使用したり、新しい展開用に Install.wim に再シールしたりすることができます。
 
  Virtual Machine Manager を使用している場合、実行中のインスタンスを使用してテンプレートを作成できます。 このプロセスでは Sysprep を使用して、インスタンスを準備しますが、それによって、コンピューターがシャットダウンします。 テンプレートをライブラリに保存したら、ケースバイケースでそれを使用できます。
 
@@ -160,14 +160,14 @@ Install-WssVpnServer -IPv4AddressRange ('192.168.0.160','192.168.0.240') -ApplyT
 
 - **Anywhere Access**: Anywhere Access のセットアップ ウィザードを実行すると、既定でルーターと VPN の構成がスキップされます。
 
-  示されている各機能の動作を制御したい場合は、それぞれの対応するレジストリ キーを設定できます。 レジストリ キーを設定する方法については、「 [Windows Server 2012 R2 での Windows Server Essentials のカスタマイズと展開](https://technet.microsoft.com/library/dn293241.aspx)」を参照してください。
+  示されている各機能の動作を制御したい場合は、それぞれの対応するレジストリ キーを設定できます。 レジストリ キーを設定する方法については、「 [Windows Server 2012 R2 での Windows Server Essentials のカスタマイズと展開](/previous-versions/windows/it-pro/windows-8.1-and-8/dn293241(v=win.10))」を参照してください。
 
 ##  <a name="automate-the-deployment-of-windows-server-essentials-experience"></a><a name="BKMK_AutomateDeployment"></a>Windows Server Essentials エクスペリエンスの展開の自動化
  展開を自動化するには、まずオペレーティングシステムを展開してから、Windows Server Essentials Experience 役割をインストールする必要があります。
 
--   Windows Server 2012 R2 Standard または Windows Server 2012 R2 Datacenter を自動的に展開するには、「 [Windows アセスメント & amp; デプロイメントキット](https://msdn.microsoft.com/library/hh825420.aspx)」に記載されている手順に従ってください。
+-   Windows Server 2012 R2 Standard または Windows Server 2012 R2 Datacenter を自動的に展開するには、「 [Windows アセスメント & amp; デプロイメントキット](/previous-versions/windows/hh825420(v=win.10))」に記載されている手順に従ってください。
 
--   Windows PowerShell を使用して Windows Server Essentials エクスペリエンス役割をインストールする方法については、「 [Windows Server essentials のインストールと構成](https://technet.microsoft.com/library/dn281793.aspx)」を参照してください。
+-   Windows PowerShell を使用して Windows Server Essentials エクスペリエンス役割をインストールする方法については、「 [Windows Server essentials のインストールと構成](/previous-versions/windows/it-pro/windows-server-essentials-sbs/dn281793(v=ws.11))」を参照してください。
 
 > [!NOTE]
 >  ホスト仮想マシンと Windows Server Essentials エクスペリエンスのタイムゾーン設定が同じであることを確認してください。 同じでない場合、いくつかのエラーが発生する可能性があります。 たとえば、証明書関連のタスクで、サーバーの初期構成が正常に完了しない場合、Windows Server Essentials エクスペリエンスの役割がインストールされてから数時間後に証明書が機能しない可能性があり、デバイス情報が正しく更新されないことがあります。
@@ -192,7 +192,7 @@ New-ItemProperty "HKLM:\Software\Microsoft\Windows Server\Setup"Ã‚Â  -Name 
 > - 移行元サーバーと移行先サーバーは、互いに "され s 内部 DNS 名" にアクセスできます。
 >   -   すべての必要なポートが開いている。
 
- 移行後、ライセンスをアップグレードして、ロックと制限を削除することができます。 詳細については、「 [Windows Server Essentials から Windows server 2012 Standard への移行」を](https://technet.microsoft.com/library/jj247582.aspx)参照してください。
+ 移行後、ライセンスをアップグレードして、ロックと制限を削除することができます。 詳細については、「 [Windows Server Essentials から Windows server 2012 Standard への移行」を](/previous-versions/windows/it-pro/windows-server-essentials-sbs/jj247582(v=ws.11))参照してください。
 
 ##  <a name="perform-common-tasks-by-using-windows-powershell"></a><a name="BKMK_PowerShell"></a>Windows PowerShell を使用して一般的なタスクを実行する
  ここでは、Windows PowerShell を使用して実行できる一般的ないくつかのタスクについて説明します。
@@ -231,7 +231,7 @@ New-ItemProperty "HKLM:\Software\Microsoft\Windows Server\Setup"Ã‚Â  -Name 
  このコマンドを実行すると、指定した場所に MyTestFolder という名前のサーバーフォルダーが追加されます。
 
 ##  <a name="email-integration-with-windows-server-essentials"></a><a name="BKMK_EmailIntegration"></a>Windows Server Essentials との電子メールの統合
- Windows Server Essentials エクスペリエンスを Office 365 またはホスト型 Exchange Server と統合できます。 お客様がホスト型電子メールを使用する場合は、Windows Server Essentials エクスペリエンスをホスト型電子メール ソリューションと統合するためのアドインを開発する必要があります。 詳細については、 [Windows Server Essentials SDK](https://msdn.microsoft.com/library/gg513877.aspx)を参照してください。
+ Windows Server Essentials エクスペリエンスを Office 365 またはホスト型 Exchange Server と統合できます。 お客様がホスト型電子メールを使用する場合は、Windows Server Essentials エクスペリエンスをホスト型電子メール ソリューションと統合するためのアドインを開発する必要があります。 詳細については、 [Windows Server Essentials SDK](/previous-versions/windows/server-essentials/gg513877(v=msdn.10))を参照してください。
 
 ##  <a name="monitor-and-manage-by-using-native-tools"></a><a name="BKMK_Monitoring"></a>ネイティブツールを使用した監視と管理
  このセクションでは、Windows Server 2012 R2 でサーバーを監視および管理するために使用できるネイティブツールについて説明します。
@@ -254,7 +254,7 @@ New-ItemProperty "HKLM:\Software\Microsoft\Windows Server\Setup"Ã‚Â  -Name 
 -   **オンプレミス バックアップ** : 個別のディスクに定期的にブロックレベルの増分バックアップを実行できます。 ホストとして、Windows Server Essentials を実行している仮想マシンに仮想ハード ディスクを接続し、この仮想ハード ディスクへのサーバー バックアップを構成できます。 仮想ハード ディスクは、Windows Server Essentials を実行している仮想マシンと異なる物理ディスクに存在する必要があります。
 
     > [!NOTE]
-    >  仮想マシン用の他のバックアップ ソリューションがあり、ユーザーに、Windows Server Essentials のネイティブ サーバー バックアップ機能が表示されないようにする場合は、それをオフにし、ダッシュボードから関連ユーザー インターフェイスを削除することができます。 詳細については、「 [Windows Server 2012 R2 での Windows Server Essentials のカスタマイズと展開](https://technet.microsoft.com/library/dn293413.aspx) 」の「 [サーバー バックアップのカスタマイズ](https://technet.microsoft.com/library/dn293241.aspx)」セクションを参照してください。
+    >  仮想マシン用の他のバックアップ ソリューションがあり、ユーザーに、Windows Server Essentials のネイティブ サーバー バックアップ機能が表示されないようにする場合は、それをオフにし、ダッシュボードから関連ユーザー インターフェイスを削除することができます。 詳細については、「 [Windows Server 2012 R2 での Windows Server Essentials のカスタマイズと展開](/previous-versions/windows/it-pro/windows-8.1-and-8/dn293413(v=win.10)) 」の「 [サーバー バックアップのカスタマイズ](/previous-versions/windows/it-pro/windows-8.1-and-8/dn293241(v=win.10))」セクションを参照してください。
 
 -   **オフプレミス バックアップ** : サーバー データをクラウド サービスに定期的にバックアップできます。 Windows Server Essentials の Microsoft Azure Backup 統合モジュールをダウンロードしてインストールし、Microsoft が提供する Azure Backup を活用できます。
 
@@ -285,13 +285,13 @@ New-ItemProperty "HKLM:\Software\Microsoft\Windows Server\Setup"Ã‚Â  -Name 
 
     -   チェックポイントしきい値を変更するには、クライアントで、 **HKLM\Software\Microsoft\Windows Server\Backup\CheckPointThreshold** を既定値 (40 GB) から変更します。
 
--   **クライアント ベア メタル回復** : Windows プレインストール環境では VPN 接続をサポートしないため、クライアント ベア メタル回復はサポートされません。 「 [Windows Server 2012 R2 での Windows Server Essentials のカスタマイズと展開](https://technet.microsoft.com/library/dn293241.aspx)」の手順に従って、クライアント復元サービス タスクを非表示にする必要があります。
+-   **クライアント ベア メタル回復** : Windows プレインストール環境では VPN 接続をサポートしないため、クライアント ベア メタル回復はサポートされません。 「 [Windows Server 2012 R2 での Windows Server Essentials のカスタマイズと展開](/previous-versions/windows/it-pro/windows-8.1-and-8/dn293241(v=win.10))」の手順に従って、クライアント復元サービス タスクを非表示にする必要があります。
 
 ##### <a name="file-history"></a>ファイル履歴
- ファイル履歴は、プロファイル データ (ライブラリ、デスクトップ、連絡先、お気に入り) をネットワーク共有にバックアップするための Windows 8.1 および Windows 8 の機能です。 Windows Server Essentials ネットワークに参加している Windows 8.1 または Windows 8 を実行しているすべてのコンピューターのファイル履歴設定を一元的に管理できます。 バックアップ データは、Windows Server Essentials を実行しているサーバーに保存されます。 「 [Windows server 2012 R2 での Windows Server Essentials のカスタマイズと展開](https://technet.microsoft.com/library/dn293241.aspx)」の手順に従って、クライアント復元サービスタスクを非表示にする必要があります。
+ ファイル履歴は、プロファイル データ (ライブラリ、デスクトップ、連絡先、お気に入り) をネットワーク共有にバックアップするための Windows 8.1 および Windows 8 の機能です。 Windows Server Essentials ネットワークに参加している Windows 8.1 または Windows 8 を実行しているすべてのコンピューターのファイル履歴設定を一元的に管理できます。 バックアップ データは、Windows Server Essentials を実行しているサーバーに保存されます。 「 [Windows server 2012 R2 での Windows Server Essentials のカスタマイズと展開](/previous-versions/windows/it-pro/windows-8.1-and-8/dn293241(v=win.10))」の手順に従って、クライアント復元サービスタスクを非表示にする必要があります。
 
 ### <a name="storage-management"></a>記憶域の管理
- 記憶域により、異種ハード ドライブの物理記憶域容量の集計、ハード ドライブの動的な追加、復元レベルを指定したデータ ボリュームの作成が可能になります。 これは、ホストまたは仮想マシンで実行できます。 Windows Server Essentials を実行している仮想マシンでこの機能を非表示にする場合は「 [Windows Server 2012 R2 での Windows Server Essentials のカスタマイズと展開](https://technet.microsoft.com/library/dn293241.aspx)」の手順に従います。
+ 記憶域により、異種ハード ドライブの物理記憶域容量の集計、ハード ドライブの動的な追加、復元レベルを指定したデータ ボリュームの作成が可能になります。 これは、ホストまたは仮想マシンで実行できます。 Windows Server Essentials を実行している仮想マシンでこの機能を非表示にする場合は「 [Windows Server 2012 R2 での Windows Server Essentials のカスタマイズと展開](/previous-versions/windows/it-pro/windows-8.1-and-8/dn293241(v=win.10))」の手順に従います。
 
 ##  <a name="test-scenarios"></a><a name="BKMK_Scenarios"></a>テストシナリオ
  ホストのパースペクティブから、次のシナリオをテストすることをお勧めします。
@@ -369,11 +369,11 @@ New-ItemProperty "HKLM:\Software\Microsoft\Windows Server\Setup"Ã‚Â  -Name 
 ##  <a name="support-information"></a><a name="BKMK_Support"></a>サポート情報
  Windows Server Essentials Software Development Kit (SDK) と Windows Server Essentials アセスメント & amp; デプロイメントキット (ADK) をダウンロードできます。
 
--   [Windows Server Essentials ソフトウェア開発キット](https://msdn.microsoft.com/library/gg513877.aspx)』
+-   [Windows Server Essentials ソフトウェア開発キット](/previous-versions/windows/server-essentials/gg513877(v=msdn.10))』
 
--   [Windows Server 2012 R2 での Windows Server Essentials のカスタマイズと展開](https://technet.microsoft.com/library/dn293241.aspx)
+-   [Windows Server 2012 R2 での Windows Server Essentials のカスタマイズと展開](/previous-versions/windows/it-pro/windows-8.1-and-8/dn293241(v=win.10))
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 -   [Windows Server Essentials の新機能](../get-started/what-s-new.md)
 

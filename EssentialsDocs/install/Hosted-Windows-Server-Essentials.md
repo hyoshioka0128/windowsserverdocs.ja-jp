@@ -7,12 +7,12 @@ ms.assetid: fda5628c-ad23-49de-8d94-430a4f253802
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 55d4059361189a0117bfd197c030fb860a1b10bd
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 73ac5bb39280277a50af84f489e3a9c5ccb0db05
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181228"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838001"
 ---
 # <a name="hosted-windows-server-essentials"></a>ホスト型 Windows Server Essentials
 
@@ -25,7 +25,7 @@ ms.locfileid: "87181228"
 
  **サーバーのオペレーティングシステム:** Windows Server 2012 製品テクノロジは、Windows Server Essentials の中核を提供します。 詳しくは、 [Windows Server 2012 の Web サイト](https://www.microsoft.com/server-cloud/products/windows-server-2012-r2/default.aspx#fbid=ZH0GD_CRAWh)をご覧ください。
 
- **データ保護:** Windows Server Essentials では、Windows Server 2012 で利用できるいくつかの新機能を活用して、データ保護機能を大幅に向上させています。 [新しい記憶域機能](https://technet.microsoft.com/library/hh831739.aspx) により、異種ハード ドライブの物理記憶域容量の集計、ハード ドライブの動的な追加、復元レベルを指定したデータ ボリュームの作成が可能となりました。 Windows Server Essentials は、サーバー自体と、ネットワークに接続されているクライアントコンピューターの完全なシステムバックアップとベアメタル復元を実行できます。また、2 TB を超えるボリュームがサポートされるようになりました。 Windows Server 2012 の新機能として、 [Windows Azure Online Backup](https://technet.microsoft.com/library/hh831419.aspx) を使用して、Microsoft が管理しているクラウドベースの記憶域サービス内のファイルとフォルダーを保護できます。 また、Windows Server Essentials では、Windows 8.1 クライアントのファイル履歴機能も一元的に管理および構成されるため、ユーザーは管理者の支援を必要とせずに、誤って削除または上書きされたファイルから回復できます。
+ **データ保護:** Windows Server Essentials では、Windows Server 2012 で利用できるいくつかの新機能を活用して、データ保護機能を大幅に向上させています。 [新しい記憶域機能](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831739(v=ws.11)) により、異種ハード ドライブの物理記憶域容量の集計、ハード ドライブの動的な追加、復元レベルを指定したデータ ボリュームの作成が可能となりました。 Windows Server Essentials は、サーバー自体と、ネットワークに接続されているクライアントコンピューターの完全なシステムバックアップとベアメタル復元を実行できます。また、2 TB を超えるボリュームがサポートされるようになりました。 Windows Server 2012 の新機能として、 [Windows Azure Online Backup](/previous-versions/azure/hh831419(v=azure.100)) を使用して、Microsoft が管理しているクラウドベースの記憶域サービス内のファイルとフォルダーを保護できます。 また、Windows Server Essentials では、Windows 8.1 クライアントのファイル履歴機能も一元的に管理および構成されるため、ユーザーは管理者の支援を必要とせずに、誤って削除または上書きされたファイルから回復できます。
 
  **Anywhere Access:** リモート Web アクセスにより、簡単なタッチ操作に適したブラウザーを使用し、インターネット接続を介して事実上どこからでもアプリケーションやデータにアクセスし、任意のデバイスを使用することができます。 また、Windows Server Essentials は、更新された Windows Phone アプリと Windows 8.1 クライアントコンピューター用の新しいアプリも提供します。これにより、ユーザーは直感的に接続して、サーバー上のファイルやフォルダーにアクセスして、検索することができます。 また、オフライン アクセスの場合、ファイルが自動的にキャッシュされ、サーバーへの接続が可能になったときに同期されます。 Windows Server Essentials を使用すると、仮想プライベートネットワーク (VPN) のセットアップが、わずか数回のクリックでウィザードを使用して簡単に実行できるようになり、ユーザーに対する VPN アクセスの管理が容易になります。 クライアント コンピューターは、VPN 接続を利用して Windows SBS 環境にリモートで参加できるため、オフィスに通う必要がなくなります。
 
@@ -33,10 +33,10 @@ ms.locfileid: "87181228"
 
  **正常性の監視:** Windows Server Essentials は、独自の正常性状態と、Windows 8.1、Windows 7、Mac OS X バージョン10.5 以降を実行しているクライアントコンピューターの状態を監視します。 正常性状態では、コンピューターのバックアップ、サーバー記憶域、ディスク領域不足などに関連する案件または問題が通知されます。
 
- **拡張性:** Windows Server Essentials は、Windows SBS 2011 Essentials の拡張モデルに基づいて構築されています。これにより、他のソフトウェアベンダーがコア製品に機能を追加できるようになり、web サービス Api の新しいセットが追加されます。 既存の [ソフトウェア開発キット](https://msdn.microsoft.com/library/gg513958.aspx) (SDK) や Windows SBS 2011 Essentials 用に作成された [アドイン](https://pinpoint.microsoft.com/applications/search?fpt=300105&q=small+business+server+essentials) との互換性も保持されます。
+ **拡張性:** Windows Server Essentials は、Windows SBS 2011 Essentials の拡張モデルに基づいて構築されています。これにより、他のソフトウェアベンダーがコア製品に機能を追加できるようになり、web サービス Api の新しいセットが追加されます。 既存の [ソフトウェア開発キット](/previous-versions/windows/server-essentials/gg513958(v=msdn.10)) (SDK) や Windows SBS 2011 Essentials 用に作成された [アドイン](https://pinpoint.microsoft.com/applications/search?fpt=300105&q=small+business+server+essentials) との互換性も保持されます。
 
 ## <a name="how-can-i-customize-an-image"></a>イメージをカスタマイズする方法
- 「Windows server [essentials](https://go.microsoft.com/fwlink/p/?LinkID=249124)」を参照してください。これは、Windows server essentials のカスタマイズ手順が追加された標準の windows server sysprep プロセスです。 カスタマイズを完了するには、「 [単純なカスタマイズ イメージの作成](https://technet.microsoft.com/library/jj200117) 」と「 [イメージのカスタマイズ](https://technet.microsoft.com/library/jj200161)」の手順に従った後、「 [イメージの展開の準備](https://technet.microsoft.com/library/jj200142) 」の手順に従って、最終イメージをキャプチャします。
+ 「Windows server [essentials](https://go.microsoft.com/fwlink/p/?LinkID=249124)」を参照してください。これは、Windows server essentials のカスタマイズ手順が追加された標準の windows server sysprep プロセスです。 カスタマイズを完了するには、「 [単純なカスタマイズ イメージの作成](/previous-versions/windows/it-pro/windows-server-essentials-sbs/jj200117(v=ws.11)) 」と「 [イメージのカスタマイズ](/previous-versions/windows/it-pro/windows-server-essentials-sbs/cc514417(v=msdn.10))」の手順に従った後、「 [イメージの展開の準備](/previous-versions/windows/it-pro/windows-server-essentials-sbs/jj200142(v=ws.11)) 」の手順に従って、最終イメージをキャプチャします。
 
  次の点に注意を払う必要があります。
 
@@ -83,7 +83,7 @@ ms.locfileid: "87181228"
 
    1.  デプロイメントを WinPE セットアップから開始した場合、上で実行した方法で unattend.xml ファイルを指定します。
 
-   2.  cfg.ini を生成するには、Windows Server Essentials ADK のセクション「 [Cfg.ini ファイルを作成](https://technet.microsoft.com/library/jj200150)する」を参照してください。
+   2.  cfg.ini を生成するには、Windows Server Essentials ADK のセクション「 [Cfg.ini ファイルを作成](/previous-versions/windows/it-pro/windows-server-essentials-sbs/jj200150(v=ws.11))する」を参照してください。
 
    3.  [InitialConfiguration] に情報を指定します。
 
@@ -319,7 +319,7 @@ $Add-WssFolder -Name "MyTestFolder" -Path "C:\ServerFolders\MyTestFolder"
 > [!NOTE]
 >  クライアントのバックアップは、VPN 経由でデータをクライアントからサーバーに転送する必要があるため、パフォーマンスに影響する可能性があります。
 
- **完全なクライアントバックアップ**は、Windows Server Essentials ネットワークに接続されているすべてのクライアントデバイスに対して、既定でに設定されています。 フル クライアント (システムとデータ) の増分バックアップを実行し、データの重複除去をサポートします。 バックアップデータは、Windows Server Essentials を実行しているサーバー上にあります。 障害が発生したクライアントは、前のバックアップ ポイントまでのデータを取り戻すことができます。 この機能をオフにするには、 [ADK ドキュメント](https://technet.microsoft.com/library/jj200150)の「Cfg.ini ファイルを作成する」セクションの手順に従ってください。
+ **完全なクライアントバックアップ**は、Windows Server Essentials ネットワークに接続されているすべてのクライアントデバイスに対して、既定でに設定されています。 フル クライアント (システムとデータ) の増分バックアップを実行し、データの重複除去をサポートします。 バックアップデータは、Windows Server Essentials を実行しているサーバー上にあります。 障害が発生したクライアントは、前のバックアップ ポイントまでのデータを取り戻すことができます。 この機能をオフにするには、 [ADK ドキュメント](/previous-versions/windows/it-pro/windows-server-essentials-sbs/jj200150(v=ws.11))の「Cfg.ini ファイルを作成する」セクションの手順に従ってください。
 
  次に、フル クライアント バックアップの注意事項を示します。
 
@@ -333,10 +333,10 @@ $Add-WssFolder -Name "MyTestFolder" -Path "C:\ServerFolders\MyTestFolder"
 
 - クライアント ベア メタル回復: Windows プレインストール環境では VPN 接続をサポートしないため、クライアント ベア メタル回復はサポートされません。
 
-  **ファイル履歴**は、プロファイルデータ (ライブラリ、デスクトップ、連絡先、お気に入り) をネットワーク共有にバックアップするための Windows 8.1 の機能です。 Windows Server Essentials では、Windows Server Essentials に参加しているすべての Windows 8.1 クライアントのファイル履歴設定を一元的に管理できます。 バックアップ データは、Windows Server Essentials を実行しているサーバーに保存されます。 この機能をオフにするには、 [ADK ドキュメント](https://technet.microsoft.com/library/jj200150)の「Cfg.ini ファイルを作成する」セクションの手順に従ってください。
+  **ファイル履歴**は、プロファイルデータ (ライブラリ、デスクトップ、連絡先、お気に入り) をネットワーク共有にバックアップするための Windows 8.1 の機能です。 Windows Server Essentials では、Windows Server Essentials に参加しているすべての Windows 8.1 クライアントのファイル履歴設定を一元的に管理できます。 バックアップ データは、Windows Server Essentials を実行しているサーバーに保存されます。 この機能をオフにするには、 [ADK ドキュメント](/previous-versions/windows/it-pro/windows-server-essentials-sbs/jj200150(v=ws.11))の「Cfg.ini ファイルを作成する」セクションの手順に従ってください。
 
 ### <a name="storage-management"></a>記憶域の管理
- [新しい記憶域機能](https://technet.microsoft.com/library/hh831739.aspx) により、異種ハード ドライブの物理記憶域容量の集計、ハード ドライブの動的な追加、復元レベルを指定したデータ ボリュームの作成が可能となりました。 また、Windows Server Essentials に iSCSI ディスクを接続して、記憶域を拡張することもできます。
+ [新しい記憶域機能](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831739(v=ws.11)) により、異種ハード ドライブの物理記憶域容量の集計、ハード ドライブの動的な追加、復元レベルを指定したデータ ボリュームの作成が可能となりました。 また、Windows Server Essentials に iSCSI ディスクを接続して、記憶域を拡張することもできます。
 
 ## <a name="what-are-the-main-scenarios-i-should-test"></a>テストする必要があるメイン シナリオの詳細
  ホストのパースペクティブから、次のシナリオをテストすることをお勧めします。

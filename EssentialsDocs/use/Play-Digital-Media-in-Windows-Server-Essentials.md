@@ -7,12 +7,12 @@ ms.assetid: 5f570492-ee21-471b-92c1-3fd9bfb84f55
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: c8f490f09f9623aa82b42f2103f2fd3e95537d7d
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 1ce7359929cb1658cc84418231fb7d65efce8692
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409512"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838221"
 ---
 # <a name="play-digital-media-in-windows-server-essentials"></a>Windows Server Essentials でのデジタル メディアの再生
 
@@ -182,7 +182,7 @@ ms.locfileid: "87409512"
 
 
 > [!NOTE]
->  Windows Phone の My Server アプリを利用し、サーバーにメディア ファイルをアップロードすることもできます。 [Windows Phone ストア](http://www.windowsphone.com/store/app/my-server/6c2f98d5-6fcf-4e1d-b8b1-cde62ea1a94a)から My Server アプリをダウンロードできます。 Windows Phone 用の My Server アプリの詳細については、ブログ記事「 [Windows Server Essentials 用の My server Phone アプリ](https://blogs.technet.com/b/sbs/archive/2012/09/18/my-server-phone-app-for-windows-server-2012-essentials.aspx)」を参照してください。
+>  Windows Phone の My Server アプリを利用し、サーバーにメディア ファイルをアップロードすることもできます。 [Windows Phone ストア](http://www.windowsphone.com/store/app/my-server/6c2f98d5-6fcf-4e1d-b8b1-cde62ea1a94a)から My Server アプリをダウンロードできます。 Windows Phone 用の My Server アプリの詳細については、ブログ記事「 [Windows Server Essentials 用の My server Phone アプリ](/archive/blogs/sbs/my-server-phone-app-for-windows-server-2012-essentials)」を参照してください。
 
 #### <a name="to-add-digital-media-files-to-shared-folders-on-the-server"></a>サーバー上の共有フォルダーにデジタル メディア ファイルを追加するには
 
@@ -222,7 +222,7 @@ ms.locfileid: "87409512"
   実際のダウンロードが始まる前に、exe または zip ファイルが作成されます。 ダウンロードするファイルの数や合計サイズによっては、数分かかる場合があります。 ダウンロード ファイルが作成されると、バックグラウンドでファイルのダウンロードが始まります。 ダウンロードが完了するまで、作業を続けられます。
 
 ##  <a name="easy-file-upload-tool"></a><a name="BKMK_6"></a>ファイルの簡単アップロードツール
- ファイルの簡単アップロードツールを使用すると、Windows Server Essentials サーバーにファイルをアップロードするプロセスを効率化できます。 ファイルの簡単アップロードツールに任意の数のファイルを追加し、それを1つのバッチ内の Windows Server Essentials サーバー上の共有フォルダーにアップロードすることができます。 詳細については、ブログ投稿の「 [リモート Web アクセス ファイル共有に関する理解](https://blogs.technet.com/b/sbs/archive/2012/04/19/understanding-remote-web-access-file-sharing.aspx)」を参照してください。
+ ファイルの簡単アップロードツールを使用すると、Windows Server Essentials サーバーにファイルをアップロードするプロセスを効率化できます。 ファイルの簡単アップロードツールに任意の数のファイルを追加し、それを1つのバッチ内の Windows Server Essentials サーバー上の共有フォルダーにアップロードすることができます。 詳細については、ブログ投稿の「 [リモート Web アクセス ファイル共有に関する理解](/archive/blogs/sbs/understanding-remote-web-access-file-sharing)」を参照してください。
 
 ##  <a name="view-and-browse-shared-digital-media"></a><a name="BKMK_7"></a>共有デジタルメディアの表示と参照
  ダッシュボード、スタート パッド、リモート Web アクセスの Web サイト、Windows Phone の My Server のいずれかを利用し、リソースを表示または閲覧できます。
@@ -253,7 +253,7 @@ ms.locfileid: "87409512"
 
 3.  フォルダーをダブルクリックし、フォルダーの内容を表示します。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 -   [デジタル メディアの管理](../manage/Manage-Digital-Media-in-Windows-Server-Essentials.md)
 

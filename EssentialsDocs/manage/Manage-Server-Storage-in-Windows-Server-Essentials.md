@@ -7,12 +7,12 @@ ms.assetid: 1836682e-c7bb-4dd5-a2b5-6ff032693574
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 861404db4d6b5e0d4cfd4db95056f583f9068a0b
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 0ee5669fc9ae6e1ee4e38065792d3da7611900a4
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180908"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87837731"
 ---
 # <a name="manage-server-storage-in-windows-server-essentials"></a>Windows Server Essentials でのサーバー記憶域の管理
 
@@ -193,7 +193,7 @@ ms.locfileid: "87180908"
 > [!NOTE]
 >  Windows Server Essentials を実行しているサーバーで記憶域スペースを構成する場合、[**データのクリーン**] オプションを使用して出荷時の設定に戻すことはできません。 この問題を回避するには、まず記憶域スペースを削除してから、**データのクリーンアップ** オプションを指定した工場出荷時リセットを実行します。
 
- 記憶域スペースについての詳細は、 [記憶域スペースに関してよく寄せられる質問 (FAQ)](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-direct-faq)を参照してください。
+ 記憶域スペースについての詳細は、 [記憶域スペースに関してよく寄せられる質問 (FAQ)](/windows-server/storage/storage-spaces/storage-spaces-direct-faq)を参照してください。
 
 ##  <a name="create-a-storage-space"></a><a name="BKMK_6"></a>記憶域スペースの作成
  サーバー上の記憶域スペースの作業を開始するには、以下の最小要件が満たされていることが必要です。
@@ -231,7 +231,7 @@ ms.locfileid: "87180908"
 
    記憶域プール容量を増やす方法については、「 [Use the new hard drive to increase storage pool capacity](Manage-Server-Storage-in-Windows-Server-Essentials.md#BKMK_4c)」を参照してください。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 -   [サーバー フォルダーの管理](Manage-Server-Folders-in-Windows-Server-Essentials.md)
 

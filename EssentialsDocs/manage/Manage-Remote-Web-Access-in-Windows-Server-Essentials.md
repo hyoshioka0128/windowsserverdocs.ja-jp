@@ -7,12 +7,12 @@ ms.assetid: f3ea40fa-b6ba-4d66-b754-221ca6271387
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 56bfd8d9860ad571265980e859a09914fb4f1b9c
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 094e5914fee1c5d2a1b6f3c68621fa81b96f21c0
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180938"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87837781"
 ---
 # <a name="manage-remote-web-access-in-windows-server-essentials"></a>Windows Server Essentials でのリモート Web アクセスの管理
 
@@ -69,7 +69,7 @@ ms.locfileid: "87180938"
 
 2.  **[設定]** をクリックし、**[Anywhere Access]** タブをクリックします。
 
-3.  **[Configure]\(構成\)** をクリックします。 Anywhere Access のセットアップ ウィザードが表示されます。
+3.  **[構成]** をクリックします。 Anywhere Access のセットアップ ウィザードが表示されます。
 
 4.  **[有効にする Anywhere Access の機能を選択します]** ページで、**[リモート Web アクセス]** チェック ボックスを選択します。
 
@@ -151,7 +151,7 @@ ms.locfileid: "87180938"
 > [!NOTE]
 > ネットワーク構成は、Windows Server Essentials でサポートされるネットワーク要件に適合している必要があります。 ネットワーク上に存在するルーターは 1 つでなければなりません。
 
- ルーターがドメイン名のセットアップ ウィザードによってセットアップされない場合は、手動でポート 443 を転送する必要があります。 ルーターでポートフォワーディングを設定する方法については、 [Small Business Server フォーラム](https://docs.microsoft.com/answers/topics/windows-small-business-server.html)を参照してください。
+ ルーターがドメイン名のセットアップ ウィザードによってセットアップされない場合は、手動でポート 443 を転送する必要があります。 ルーターでポートフォワーディングを設定する方法については、 [Small Business Server フォーラム](/answers/topics/windows-small-business-server.html)を参照してください。
 
 ###  <a name="replace-a-router"></a><a name="BKMK_ReplaceRouter"></a>ルーターを交換する
  製造元の指示に従ってルーターを交換し、ルーターのセットアップウィザードを実行して新しいルーターを構成します。
@@ -243,7 +243,7 @@ ms.locfileid: "87180938"
 >  Windows Live では、Microsoft アカウントのパスワードにサーバーがサポートしていない特殊文字を使用できます。 Microsoft の個人用ドメインを使用する場合、Microsoft アカウントのパスワードに、サーバーがサポートする文字のみが含まれていることを確認してください。 サーバーでは、$、/、'、および % の使用をサポートしていません。
 
 ###  <a name="use-a-new-or-existing-domain-name"></a><a name="BKMK_UseNewName"></a>新規または既存のドメイン名を使用する
- Windows Server Essentials を実行するサーバーでドメイン名を自動的にセットアップするには、ドメイン名のセットアップ ウィザードに一覧表示されているドメイン ネーム サービス プロバイダーを使用する必要があります。 新しいドメイン名を取得するか、または既存のドメイン名を使用することもできます。 次のいずれかの操作を行います。
+ Windows Server Essentials を実行するサーバーでドメイン名を自動的にセットアップするには、ドメイン名のセットアップ ウィザードに一覧表示されているドメイン ネーム サービス プロバイダーを使用する必要があります。 新しいドメイン名を取得するか、または既存のドメイン名を使用することもできます。 以下のいずれかを実行します。
 
 -   ウィザードに一覧表示されているいずれかのドメイン ネーム サービス プロバイダーから新しいドメイン名を取得する場合は、**[新しいドメイン名をセットアップする]** をクリックします。
 
@@ -306,7 +306,7 @@ ms.locfileid: "87180938"
 
  **汎用トップレベル ドメインの例**
 
-|ドメイン拡張子|[説明]|
+|ドメイン拡張子|説明|
 |----------------------|-----------------|
 |.com|通常は商業組織によって使用されますが、だれでも使用できます。|
 |.net|ネットワーク インフラストラクチャ サービスを提供する企業向けです。|
@@ -318,7 +318,7 @@ ms.locfileid: "87180938"
 
  **国コード トップレベル ドメインの例**
 
-|ドメイン拡張子|[説明]|
+|ドメイン拡張子|説明|
 |----------------------|-----------------|
 |.ca|カナダの Web サイトで使用されます。|
 |.cn|中国の Web サイトで使用されます。|
@@ -453,7 +453,7 @@ ms.locfileid: "87180938"
 
 -   [Anywhere Access のトラブルシューティング](../support/Troubleshoot-Anywhere-Access-in-Windows-Server-Essentials.md)
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 -   [リモート デスクトップのオプション](Remote-desktop-options.md)
 

@@ -7,12 +7,12 @@ ms.assetid: f6e05aec-d07c-4e0b-94ab-f20279e9ffd1
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 9ef958a34caaffbdcc0b57e8cf63d677e6ab5623
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: aae5c0c8a3a98b25d13d7bf11f6fb14963714c24
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181028"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87837921"
 ---
 # <a name="manage-branchcache-in-windows-server-essentials"></a>Windows Server Essentials での BranchCache の管理
 
@@ -98,8 +98,8 @@ BranchCache は、Windows Server Essentials サーバーがオフィスから離
         Disable-WSSBranchCache
         ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
--   [BranchCache の概要](https://technet.microsoft.com/library/hh831696.aspx)
+-   [BranchCache の概要](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831696(v=ws.11))
 
 -   [Windows Server Essentials の管理](Manage-Windows-Server-Essentials.md)

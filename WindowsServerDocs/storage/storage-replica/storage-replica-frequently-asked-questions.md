@@ -8,12 +8,12 @@ ms.topic: get-started-article
 author: nedpyle
 ms.date: 04/15/2020
 ms.assetid: 12bc8e11-d63c-4aef-8129-f92324b2bf1b
-ms.openlocfilehash: 170d023f0548ca9f01ce9575b18563d4a55d2c78
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 04477ac9d7aa7905a4d5fc4dd58c7891c91f5baf
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182378"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87769700"
 ---
 # <a name="frequently-asked-questions-about-storage-replica"></a>記憶域レプリカについてよく寄せられる質問
 
@@ -22,6 +22,7 @@ ms.locfileid: "87182378"
 このトピックには、記憶域レプリカに関してよく寄せられる質問 (FAQ) に対する回答が含まれています。
 
 ## <a name="is-storage-replica-supported-on-azure"></a><a name="FAQ1"></a>ストレージレプリカは Azure でサポートされていますか?
+
 はい。 Azure では、次のシナリオを使用できます。
 
 1. Azure 内のサーバー間のレプリケーション (1 つまたは2つのデータセンターの障害ドメインにある IaaS Vm 間で同期的または非同期的に、または2つの異なるリージョン間で非同期的に)
@@ -77,7 +78,9 @@ Update-SmbMultichannelConnection
 
 ストレッチ クラスター上でネットワークの制約を構成するには、次のコマンドを実行します。
 
-    Set-SRNetworkConstraint -SourceComputerName sr-cluster01 -SourceRGName group1 -SourceNWInterface "Cluster Network 1","Cluster Network 2" -DestinationComputerName sr-cluster02 -DestinationRGName group2 -DestinationNWInterface "Cluster Network 1","Cluster Network 2"
+```
+Set-SRNetworkConstraint -SourceComputerName sr-cluster01 -SourceRGName group1 -SourceNWInterface "Cluster Network 1","Cluster Network 2" -DestinationComputerName sr-cluster02 -DestinationRGName group2 -DestinationNWInterface "Cluster Network 1","Cluster Network 2"
+```
 
 ## <a name="can-i-configure-one-to-many-replication-or-transitive-a-to-b-to-c-replication"></a><a name="FAQ4"></a>1対多のレプリケーションまたは推移的 (A から B から C) へのレプリケーションを構成できますか。
 いいえ。記憶域レプリカは、サーバー、クラスター、またはストレッチクラスターノードの1対1のレプリケーションのみをサポートします。 これは、今後のリリースで変更される可能性があります。 当然ながら、各種サーバーの特定のボリューム ペアを、方向を指定してレプリケーションするよう構成することはできます。 たとえば、サーバー 1 の D ボリュームをサーバー 2 に、E ボリュームをサーバー 3 からレプリケートできます。
@@ -127,6 +130,7 @@ Windows Server 2016 では構成できません。 記憶域レプリカは、�
 自動フェールオーバーを回避するには、PowerShell を使用して `Get-ClusterNode -Name "NodeName").NodeWeight=0` を構成します。 これにより、障害復旧サイト内の各ノードの票が削除されます。 その後、プライマリ サイト内のノードの `Start-ClusterNode -PreventQuorum` および障害サイト内のノードの `Start-ClusterNode -ForceQuorum` を使用して、フェールオーバーを強制することができます。 自動フェールオーバーを防止するためのグラフィカルなオプションはなく、自動フェールオーバーの防止は推奨されません。
 
 ## <a name="how-do-i-disable-virtual-machine-resiliency"></a><a name="FAQ11"></a>仮想マシンの回復性を無効にするにはどうすればよいですか。
+
 新しい Hyper-v 仮想マシンの回復性機能が実行されないようにして、障害復旧サイトにフェールオーバーするのではなく、仮想マシンを一時停止するには、を実行します。`(Get-Cluster).ResiliencyDefaultPeriod=0`
 
 ## <a name="how-can-i-reduce-time-for-initial-synchronization"></a><a name="FAQ12"></a>初期同期にかかる時間を短縮するにはどうすればよいですか。
@@ -143,53 +147,74 @@ Windows Server 2016 では構成できません。 記憶域レプリカは、�
 
 コマンドレットを使用でき `Grant-SRDelegation` ます。 これにより、サーバー間、クラスター間で特定のユーザーを設定して、クラスターのレプリケーション シナリオを、ローカルの管理者グループのメンバーにならずにレプリケーションを作成、変更、削除する権限が付与されているとして拡張することができます。 次に例を示します。
 
-    Grant-SRDelegation -UserName contso\tonywang
+```
+Grant-SRDelegation -UserName contso\tonywang
+```
 
 このコマンドレットは、変更が有効になるように、管理しようと計画しているサーバーからユーザーがログオフおよびログオンする必要があることを通知します。 `Get-SRDelegation` と `Revoke-SRDelegation` を使用して、さらにこれを制御できます。
 
 ## <a name="what-are-my-backup-and-restore-options-for-replicated-volumes"></a><a name="FAQ13"></a>レプリケートされたボリュームのバックアップと復元のオプションは何ですか。
+
 記憶域レプリカは、ソース ボリュームのバックアップと復元をサポートします。 さらに、ソース ボリュームのスナップショットの作成と復元もサポートします。 記憶域レプリカによって保護されている間はマウントもアクセスもできないため、レプリケーション先のボリュームをバックアップまたは復元することはできません。 ソース ボリュームが失われる障害が発生した場合、`Set-SRPartnership` を使用して以前のレプリケーション先ボリュームを昇格します。読み取りと書き込みが可能になったソースによって、失われたソース ボリュームをバックアップまたは復元できるようになります。 `Remove-SRPartnership` と `Remove-SRGroup` を使用して、このボリュームを読み取りと書き込みが可能なボリュームとして再マウントすることもできます。
+
 アプリケーション整合性のスナップショットを定期的に作成するために、ソース サーバーで VSSADMIN.EXE を使用して、レプリケートされたデータ ボリュームのスナップショットを作成できます。 たとえば、F: ボリュームを記憶域レプリカでレプリケートしている場合は次のようになります。
 
-    vssadmin create shadow /for=F:
+```
+vssadmin create shadow /for=F:
+```
+
 その後、レプリケーションの方向を切り替えた後、レプリケーションを削除した後、または同じソース ボリューム上にいる場合、任意のスナップショットをその時点に復元できます。 たとえば、依然として F: を使用している場合は次のようになります。
 
-    vssadmin list shadows
-     vssadmin revert shadow /shadow={shadown copy ID GUID listed previously}
+```
+vssadmin list shadows
+vssadmin revert shadow /shadow={shadown copy ID GUID listed previously}
+```
+
 スケジュールされたタスクを使用して、このツールが定期的に実行されるようにスケジュールすることもできます。 VSS の使用方法の詳細については、[Vssadmin](../../administration/windows-commands/vssadmin.md) を確認してください。 ログ ボリュームのバックアップは不要であり、行う価値もありません。 バックアップしようとすると、VSS によって無視されます。
+
 Windows Server バックアップ、Microsoft Azure Backup、Microsoft DPM、またはその他のスナップショット、VSS、仮想マシン、またはファイルベースのテクノロジの使用は、ボリューム層内で動作する限り、記憶域レプリカでサポートされます。 記憶域レプリカは、ブロックベースのバックアップと復元はサポートしません。
 
 ## <a name="can-i-configure-replication-to-restrict-bandwidth-usage"></a><a name="FAQ14"></a>帯域幅の使用を制限するようにレプリケーションを構成できますか。
+
 はい、SMB 帯域幅リミッターを介して構成できます。 これは記憶域レプリカのすべてのトラフィックのグローバル設定であるため、このサーバーからのすべてのレプリケーションに影響を与えます。 これは通常、すべてのデータを転送する必要がある、記憶域レプリカの初期同期のセットアップでのみ必要です。 初期同期後に必要な場合は、ネットワーク帯域幅が IO ワークロードに対して狭すぎます。IO を削減するか、帯域幅を拡大してください。
 
 これは非同期レプリケーションでのみ使用する必要があります (注: 初期同期は、同期を指定した場合でも常に非同期になります)。
 ネットワーク QoS ポリシーを使用して、記憶域レプリカのトラフィックを形成することもできます。 一致率の高いシード記憶域レプリカのレプリケーションを使用した場合も、全体的な初期同期の帯域幅使用が大幅に削減されます。
 
-
 帯域幅の制限を設定するには、次のコマンドを使用します。
 
-    Set-SmbBandwidthLimit  -Category StorageReplication -BytesPerSecond x
+```
+Set-SmbBandwidthLimit  -Category StorageReplication -BytesPerSecond x
+```
 
 帯域幅の制限を確認するには、次のコマンドを使用します。
 
-    Get-SmbBandwidthLimit -Category StorageReplication
+```
+Get-SmbBandwidthLimit -Category StorageReplication
+```
 
 帯域幅の制限を削除するには、次のコマンドを使用します。
 
-    Remove-SmbBandwidthLimit -Category StorageReplication
+```
+Remove-SmbBandwidthLimit -Category StorageReplication
+```
 
 ## <a name="what-network-ports-does-storage-replica-require"></a><a name="FAQ15"></a>記憶域レプリカに必要なネットワーク ポートを教えてください。
+
 記憶域レプリカは、レプリケーションと管理において SMB と WSMAN を利用します。 つまり、次のポートが必要です。
 
- 445 (SMB レプリケーショントランスポートプロトコル、クラスター RPC 管理プロトコル) 5445 (iwarp RDMA ネットワークを使用する場合にのみ必要) 5985 (WMI/CIM/PowerShell 用の WSManHTTP 管理プロトコル)
+- 445 (SMB レプリケーショントランスポートプロトコル、クラスター RPC 管理プロトコル)
+- 5445 (iWARP SMB-iWARP RDMA ネットワークを使用する場合にのみ必要)
+- 5985 (WMI/CIM/PowerShell の WSManHTTP 管理プロトコル)
 
-注: Test-SRTopology コマンドレットには ICMPv4/ICMPv6 が必要ですが、レプリケーションや管理には使うことができません。
+> !付箋Test-srtopology コマンドレットは、ICMPv4/ICMPv6 を必要としますが、レプリケーションまたは管理には必要ありません。
 
 ## <a name="what-are-the-log-volume-best-practices"></a><a name="FAQ15.5"></a>ログ ボリュームのベスト プラクティスについて教えてください。
+
 ログの最適なサイズは環境やワークロードごとに大きく異なり、ワークロードが実行する書き込み IO の量によって決まります。
 
-1.  ログのサイズを大きくしたり小さくしたりしても、高速または低速になることはありません。
-2.  たとえば、サイズの大きいログまたは小さいログには、10 GB のデータボリュームと 10 TB データボリュームに対する影響はありません。
+1. ログのサイズを大きくしたり小さくしたりしても、高速または低速になることはありません。
+2. たとえば、サイズの大きいログまたは小さいログには、10 GB のデータボリュームと 10 TB データボリュームに対する影響はありません。
 
 サイズの大きいログは、単純に、一杯になるまでに多くの書き込み IO を収集して保持できます。これにより、ログのソースと保存先コンピューターの間での、長時間にわたるサービス中断に対処できます (ネットワークの切断や保存先コンピューターのオフラインなど)。 ログが 10 時間分の書き込みを保持できる場合、ネットワークが 2 時間ダウンしても、ネットワークの復旧時にソース側から保存先に対して同期されていない変更の差分を素早く同期すれば、短時間で保護された状態に回復します。 しかし保持されるログが 10 時間分である場合に、ネットワークが 2 日間ダウンすると、ソース側はビットマップと呼ばれる別のログから再生する必要があるため、同期状態への回復に時間がかかります。同期された後は、元どおりログを使用できます。
 
@@ -202,6 +227,7 @@ Windows Server バックアップ、Microsoft Azure Backup、Microsoft DPM、ま
 ソースクラスターのデータディスクのみをバックアップする必要があります。 バックアップが記憶域レプリカの操作と競合する可能性があるため、記憶域レプリカのログディスクをバックアップしないでください。
 
 ## <a name="why-would-you-choose-a-stretch-cluster-versus-cluster-to-cluster-versus-server-to-server-topology"></a><a name="FAQ16"></a>ストレッチ クラスター トポロジ、クラスター間トポロジ、クラスター サーバー トポロジを使い分ける方法について教えてください。
+
 記憶域レプリカには、ストレッチクラスター、クラスターからクラスター、サーバー間の3つの主な構成があります。 それぞれの構成には、異なる利点があります。
 
 ストレッチ クラスター トポロジは、Hyper-V プライベート クラウド クラスターや SQL Server FCI など、オーケストレーションを使用した自動フェールオーバーを必要とするワークロードに最適です。 また、フェールオーバー クラスター マネージャーを使用したグラフィカル インターフェイスが組み込まれています。 このトポロジでは、永続的予約を介して、従来の非対称クラスター共有記憶域アーキテクチャである記憶域スペース、SAN、iSCSI、および RAID が使用されます。 これは、2 ノード以上の構成で実行できます。
@@ -227,9 +253,11 @@ Windows Server バックアップ、Microsoft Azure Backup、Microsoft DPM、ま
 ただし、Windows Server 2019 のレプリケーションパフォーマンスを向上させるには、パートナーシップのすべてのメンバーが Windows Server 2019 を実行している必要があります。また、既存のパートナーシップと関連するレプリケーショングループを削除してから、シードされたデータを使用してそれらを再作成する必要があります (Windows 管理センターでパートナーシップを作成する場合、また
 
 ## <a name="how-do-i-report-an-issue-with-storage-replica-or-this-guide"></a><a name="FAQ17"></a>記憶域レプリカまたはこのガイドに関する問題を操作方法報告しますか?
+
 記憶域レプリカの技術的なサポートについては、 [Microsoft フォーラム](https://docs.microsoft.com/answers/index.html)で投稿できます。 記憶域レプリカに関する質問や、このドキュメントに関する問題は、srfeed@microsoft.com に電子メールを送信することもできます。 [Windows Server の一般フィードバックサイト](https://windowsserver.uservoice.com/forums/295047-general-feedback)は、お客様がアイデアに関するサポートとフィードバックを提供できるようにするため、設計変更要求に適しています。
 
 ## <a name="can-storage-replica-be-configured-to-replicate-in-both-directions"></a><a name="FAQ18"></a>記憶域レプリカを双方向にレプリケートするように構成できますか。
+
 記憶域レプリカは、一方向のレプリケーションテクノロジです。  ソースから宛先へのレプリケートはボリュームごとに行われます。  この方向はいつでも元に戻すことができますが、常に一方向になります。  ただし、これは、一連のボリューム (コピー元と宛先) を一方向にレプリケートすることができず、別のドライブセット (ソースと宛先) が逆方向にレプリケートすることを意味するわけではありません。  たとえば、サーバー間のレプリケーションを構成する必要があるとします。  Server1 と Server2 は、それぞれドライブ文字 L:、M:、N:、および O を持ち、ドライブ M: を Server1 から Server2 にレプリケートしますが、ドライブ O: Server2 から Server1 にレプリケートします。  これは、グループごとに個別のログドライブがある限り実行できます。 つまり、
 
 - Server1 ソースドライブ M: コピー元のログドライブ L: Server2 宛先ドライブ M: 宛先ログドライブ L: を使用してレプリケートしています。

@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: 3f8485e4-e10f-4f38-8a5e-d5227abd0d84
 author: nnamuhcs
 ms.author: daveba
-ms.openlocfilehash: 249ff5f77d525792d5bf53719fcf1ee93bc955a4
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 8bae98123ee5c8365304243e9f2487218bb5230f
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180968"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87837811"
 ---
 # <a name="manage-office-365-in-windows-server-essentials"></a>Windows Server Essentials での Office 365 の管理
 
@@ -146,7 +146,7 @@ Windows Server Essentials サーバーと Microsoft Office 365 を統合する�
 
 1. **ドメイン名を購入します。** つまり、ドメイン名をドメイン レジストラーまたは DNS ホスティング プロバイダーに登録します。
 
-   -   Office 365 で動作するドメイン名を選択します。 第2レベルのドメイン名を使用できますか。たとえば、buycontoso.com? ではなく、3番目のレベルのドメイン名は使用できません。たとえば、marketing.contoso.com のように指定します。 Office 365 で使用するドメインの選択の詳細については、「 [Domains](https://technet.microsoft.com/library/office-365-domains.aspx)」を参照してください。
+   -   Office 365 で動作するドメイン名を選択します。 第2レベルのドメイン名を使用できますか。たとえば、buycontoso.com? ではなく、3番目のレベルのドメイン名は使用できません。たとえば、marketing.contoso.com のように指定します。 Office 365 で使用するドメインの選択の詳細については、「 [Domains](/office365/servicedescriptions/office-365-platform-service-description/domains)」を参照してください。
 
    -   Office 365 で必要なドメインネームサーバー (DNS) レコードを許可するドメインレジストラーから購入します。 どのドメイン レジストラーが、必要な DNS レコードを許可しているかを調べるには、「 [ドメイン名の購入方法](https://office.microsoft.com/office365-suite-help/how-to-buy-a-domain-name-HA102819883.aspx?CTT=5&origin=HA102818660)」を参照してください。 ドメインを別のレジストラーに既に登録している場合は、心配しないでください。ドメインを Office 365 にリンクするときに、ドメインを別のレジストラーに転送できます。
 
@@ -282,11 +282,11 @@ Windows Server Essentials サーバーと Microsoft Office 365 を統合する�
 
 2.  エラーが再び発生する場合は、サーバーを再起動し、もう一度試してください。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
--   [Windows Server Essentials のサービス統合の概要-パート1](https://blogs.technet.com/b/sbs/archive/2013/11/04/services-integration-overview-for-windows-server-2012-r2-essentials-part-1.aspx)
+-   [Windows Server Essentials のサービス統合の概要-パート1](/archive/blogs/sbs/services-integration-overview-for-windows-server-2012-r2-essentials-part-1)
 
--   [Windows Server Essentials のサービス統合の概要-パート2](https://blogs.technet.com/b/sbs/archive/2013/11/06/services-integration-overview-for-windows-server-2012-r2-essentials-part-2.aspx)
+-   [Windows Server Essentials のサービス統合の概要-パート2](/archive/blogs/sbs/services-integration-overview-for-windows-server-2012-r2-essentials-part-2)
 
 -   [クイック スタート ガイド: Microsoft Office 365 を使用する](../use/Quick-Start-Guide-to-Using-Microsoft-Office-365-with-Windows-Server-Essentials.md)
 

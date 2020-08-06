@@ -7,12 +7,12 @@ ms.assetid: c959b6fc-c67e-46cd-a9cb-cee71a42fa4c
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: a1f568d34fd0fbd94d09046b59a93d21feb60890
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: e24d6ce2e123deb741bcd39dc77f9a893a27df89
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181078"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87837911"
 ---
 # <a name="configure-directaccess-in-windows-server-essentials"></a>Windows Server Essentials での DirectAccess の構成
 
@@ -23,7 +23,7 @@ ms.locfileid: "87181078"
  Windows Server Essentials で、ドメインに複数の Windows Server Essentials サーバーが含まれている場合は、ドメインコントローラーで DirectAccess を構成する必要があります。
 
 > [!NOTE]
->  このトピックでは、Windows Server Essentials サーバーがドメインコントローラーである場合に DirectAccess を構成する手順について説明します。 Windows Server Essentials サーバーがドメインメンバーの場合は、「[既存のリモートアクセス (VPN) 展開に directaccess を追加](https://technet.microsoft.com/library/jj574220.aspx)する」のドメインメンバーで directaccess を構成する手順に従います。
+>  このトピックでは、Windows Server Essentials サーバーがドメインコントローラーである場合に DirectAccess を構成する手順について説明します。 Windows Server Essentials サーバーがドメインメンバーの場合は、「[既存のリモートアクセス (VPN) 展開に directaccess を追加](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj574220(v=ws.11))する」のドメインメンバーで directaccess を構成する手順に従います。
 
 ## <a name="process-overview"></a>プロセスの概要
  Windows Server Essentials で DirectAccess を構成するには、次の手順を実行します。
@@ -207,7 +207,7 @@ ms.locfileid: "87181078"
 1. サーバー マネージャー ダッシュボードで、[**ツール**] をクリックし、[**Active Directory ユーザーとコンピューター**] をクリックします。
 
    > [!NOTE]
-   >  [**ツール**] メニューに [**Active Directory ユーザーとコンピューター**] が表示されない場合は、この機能をインストールする必要があります。 Active Directory ユーザーとグループをインストールするには、管理者として次の Windows PowerShell コマンドレットを実行します。 `Install-WindowsFeature RSAT-ADDS-Tools` 詳細については、「 [リモート サーバー管理ツール パックのインストールまたは削除](https://technet.microsoft.com/library/cc730825.aspx)」を参照してください。
+   >  [**ツール**] メニューに [**Active Directory ユーザーとコンピューター**] が表示されない場合は、この機能をインストールする必要があります。 Active Directory ユーザーとグループをインストールするには、管理者として次の Windows PowerShell コマンドレットを実行します。 `Install-WindowsFeature RSAT-ADDS-Tools` 詳細については、「 [リモート サーバー管理ツール パックのインストールまたは削除](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc730825(v=ws.11))」を参照してください。
 
 2. コンソール ツリーで、サーバーを展開して、[**ユーザー**] を右クリックし、[**新規**] をクリックし、[**グループ**] をクリックします。
 
@@ -502,7 +502,7 @@ Set-NetNatTransitionConfiguration -IPv4AddressPortPool @("192.168.1.100, 10000-4
 Restart-Service winnat
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 -   [Anywhere Access の管理](Manage-Anywhere-Access-in-Windows-Server-Essentials.md)
 

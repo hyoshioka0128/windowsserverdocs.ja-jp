@@ -7,19 +7,19 @@ ms.assetid: 98f13f63-4480-40ba-a7ef-d1d9b7582e5f
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: fa167ec12122883fc0ccea914260407d13f0b992
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 9999b78b1b0a4b1823162158b95d175f9c159091
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181168"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87837931"
 ---
 # <a name="install-or-remove-language-packs"></a>言語パックのインストールまたは削除
 
 >適用対象: windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
 > [!NOTE]
->  まず、「[言語パックと展開](https://technet.microsoft.com/library/hh824829)」で説明されているように、Windows Server Essentials 言語パックを追加する前に、多言語の Windows イメージを作成する必要があります。
+>  まず、「[言語パックと展開](/previous-versions/windows/it-pro/windows-8.1-and-8/hh824829(v=win.10))」で説明されているように、Windows Server Essentials 言語パックを追加する前に、多言語の Windows イメージを作成する必要があります。
 
  言語パックは、多言語イメージを作成する場合にのみ使用できます。 このセクションの情報は、Windows Server Essentials での言語パックのインストールまたは削除に固有のものです。
 
@@ -52,4 +52,3 @@ ms.locfileid: "87181168"
 ## <a name="see-also"></a>参照
 
  [イメージの作成とカスタマイズ追加の](Creating-and-Customizing-the-Image.md)[カスタマイズ](Additional-Customizations.md)[展開のイメージの準備](Preparing-the-Image-for-Deployment.md)[カスタマーエクスペリエンスのテスト](Testing-the-Customer-Experience.md)
-

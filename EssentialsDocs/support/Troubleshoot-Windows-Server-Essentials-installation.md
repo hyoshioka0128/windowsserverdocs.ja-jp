@@ -7,12 +7,12 @@ ms.assetid: ecf19216-7aac-4aca-839a-342ac28f5329
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 755b00f9c2593a6923f65437c695dcd6a2de7532
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 4afba33d105f0348aaf7c130ccbe5a3b87fc1cb2
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180288"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838311"
 ---
 # <a name="troubleshoot-windows-server-essentials-installation"></a>Windows Server Essentials のインストールに関するトラブルシューティング
 
@@ -31,7 +31,7 @@ ms.locfileid: "87180288"
 
 
 > [!NOTE]
->  Windows Server Essentials コミュニティの最新のトラブルシューティング情報については、 [Windows Server Essentials フォーラム](https://docs.microsoft.com/answers/topics/windows-server-essentials.html/threads)を参照することをお勧めします。 Windows Server Essentials フォーラムは、ヘルプを検索したり、質問したりするために最適な場所です。
+>  Windows Server Essentials コミュニティの最新のトラブルシューティング情報については、 [Windows Server Essentials フォーラム](/answers/topics/windows-server-essentials.html/threads)を参照することをお勧めします。 Windows Server Essentials フォーラムは、ヘルプを検索したり、質問したりするために最適な場所です。
 
 ##  <a name="general-troubleshooting-steps"></a><a name="BKMK_GeneralTroubleshootingSteps"></a>一般的なトラブルシューティング手順
  Windows Server Essentials のインストールに失敗した場合は、次の手順を実行して、エラーの原因となった問題を特定してください。

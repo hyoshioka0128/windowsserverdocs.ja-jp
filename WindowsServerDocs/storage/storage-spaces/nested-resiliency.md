@@ -7,12 +7,12 @@ ms.technology: storagespaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 03/15/2019
-ms.openlocfilehash: 6c3e16f0965be5fc7de4bdc7bd751fb1dd193556
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 311edb38f4cdf1dac153d843811442d5eafbce05
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86962204"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87769750"
 ---
 # <a name="nested-resiliency-for-storage-spaces-direct"></a>記憶域スペースダイレクトのための入れ子になった回復性
 
@@ -58,9 +58,9 @@ Windows Server 2019 の記憶域スペースダイレクトには、ソフトウ
 
 - **入れ子になったミラーアクセラレータパリティ。** 入れ子になった双方向ミラーリングを、上記の入れ子になったパリティと結合します。 各サーバー内では、ほとんどのデータのローカル回復性は、2方向ミラーリングを使用する新しい最近の書き込みを除き、単一の[ビットごとのパリティ演算](storage-spaces-fault-tolerance.md#parity)によって提供されます。 その後、すべてのデータの回復性をさらに向上させるには、サーバー間の双方向のミラーリングを使用します。 ミラーアクセラレータパリティの動作の詳細については、「[ミラーアクセラレータパリティ](../refs/mirror-accelerated-parity.md)」を参照してください。
 
-  ![入れ子になったミラーアクセラレータパリティ](media/nested-resiliency/nested-mirror-accelerated-parity.png)
+  ![入れ子になったミラー加速パリティ](media/nested-resiliency/nested-mirror-accelerated-parity.png)
 
-### <a name="capacity-efficiency"></a>容量の効率
+### <a name="capacity-efficiency"></a>容量の効率性
 
 容量の効率は、[ボリュームフットプリント](plan-volumes.md#choosing-the-size-of-volumes)に使用できる領域の比率です。 回復性に起因する容量のオーバーヘッドについて説明し、選択した回復性オプションによって異なります。 単純な例として、回復性のないデータの格納は100% の容量効率に優れています (1 TB のデータは 1 tb の物理ストレージ容量を必要とします)。一方、双方向のミラーリングは50% の効率が高くなります (1 TB のデータでは物理ストレージ容量が 2 TB になります)。
 
@@ -117,7 +117,7 @@ New-StorageTier -StoragePoolFriendlyName S2D* -FriendlyName NestedParity -Resili
 New-Volume -StoragePoolFriendlyName S2D* -FriendlyName Volume01 -StorageTierFriendlyNames NestedMirror -StorageTierSizes 500GB
 ```
 
-#### <a name="nested-mirror-accelerated-parity"></a>入れ子になったミラーアクセラレータパリティ
+#### <a name="nested-mirror-accelerated-parity"></a>入れ子になったミラー加速パリティ
 
 入れ子になったミラーアクセラレータパリティを使用するには、層テンプレートと層テンプレートの両方を参照 `NestedMirror` `NestedParity` し、ボリュームの各部分に1つずつ、2つのサイズを指定します (ミラーの最初、パリティ 2)。 たとえば、20% の入れ子になった双方向ミラーと80% の入れ子になったパリティである 1 500 GB ボリュームを作成するには、次のように実行します。
 
@@ -129,7 +129,7 @@ New-Volume -StoragePoolFriendlyName S2D* -FriendlyName Volume02 -StorageTierFrie
 
 入れ子になった回復性を使用するボリュームは、次のスクリーンショットのように、明確なラベル付きで[Windows 管理センター](../../manage/windows-admin-center/overview.md)に表示されます。 作成されると、記憶域スペースダイレクトの他のボリュームと同じように、Windows 管理センターを使用してそれらを管理および監視できます。
 
-![](media/nested-resiliency/windows-admin-center.png)
+![Windows 管理センターでのボリューム管理](media/nested-resiliency/windows-admin-center.png)
 
 ### <a name="optional-extend-to-cache-drives"></a>省略可能: キャッシュドライブに拡張する
 
@@ -184,9 +184,9 @@ Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name "System.Storage.N
 
 詳細については、[サーバーの削除](remove-servers.md)に関するトピックを参照してください。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
-- [記憶域スペースダイレクトの概要](storage-spaces-direct-overview.md)
+- [記憶域スペース ダイレクトの概要](storage-spaces-direct-overview.md)
 - [記憶域スペースダイレクトのフォールトトレランスについて](storage-spaces-fault-tolerance.md)
 - [記憶域スペースダイレクトのボリュームを計画する](plan-volumes.md)
 - [記憶域スペース ダイレクトのボリュームの作成](create-volumes.md)

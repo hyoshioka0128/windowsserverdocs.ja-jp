@@ -6,12 +6,12 @@ ms.assetid: 2d0eb084-09dd-4d85-a41a-5d449cc3b504
 author: nnamuhcs
 ms.author: coreyp
 manager: jasgro
-ms.openlocfilehash: adaf10a96a945fddce16592da3d491be2b32aa3b
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: df3eb1b5a1704dcd5a1fc05fab4023c7faaeabe7
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181668"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838111"
 ---
 # <a name="get-started-with-windows-server-essentials"></a>Windows Server Essentials の概要
 
@@ -46,16 +46,16 @@ ms.locfileid: "87181668"
 
 ## <a name="end-to-end-solution-guides"></a>エンド ツー エンド ソリューション ガイド
 
--    データ記憶域の集中化、データ アクセス権限の制限、オンプレミスとクラウドのデータのバックアップの詳細については、「[中小企業のデータ保護の提供](https://technet.microsoft.com/library/dn582043.aspx)」を参照してください。
+-    データ記憶域の集中化、データ アクセス権限の制限、オンプレミスとクラウドのデータのバックアップの詳細については、「[中小企業のデータ保護の提供](/previous-versions/orphan-topics/ws.11/dn582043(v=ws.11))」を参照してください。
 
--    任意の場所からインターネットに接続されたデバイスのビジネス データに安全にアクセスする方法については、「[中小企業のリモート アクセスのセキュリティ保護](https://technet.microsoft.com/library/dn629457.aspx)」を参照してください。
+-    任意の場所からインターネットに接続されたデバイスのビジネス データに安全にアクセスする方法については、「[中小企業のリモート アクセスのセキュリティ保護](/previous-versions/windows/it-pro/solutions-guidance/dn629457(v=ws.11))」を参照してください。
 
--    パートナーやベンダーと安全にコラボレーションする方法については、「[中小企業のコラボレーションの向上](https://technet.microsoft.com/library/dn747893.aspx)」を参照してください。
+-    パートナーやベンダーと安全にコラボレーションする方法については、「[中小企業のコラボレーションの向上](/previous-versions/windows/it-pro/solutions-guidance/dn747893(v=ws.11))」を参照してください。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
--   [Windows Server TechNet ライブラリ](https://technet.microsoft.com/library/bb625087.aspx)
+-   [Windows Server TechNet ライブラリ](/windows-server/windows-server-versions)
 
--   [Windows Server Essentials および Windows Small Business Server のブログ](https://blogs.technet.com/b/sbs/)
+-   [Windows Server Essentials および Windows Small Business Server のブログ](/archive/blogs/sbs/)
 
--   [Windows Server Essentials (Small Business Server) TechNet ライブラリ](https://technet.microsoft.com/library/cc514417.aspx)
+-   [Windows Server Essentials (Small Business Server) TechNet ライブラリ](/previous-versions/windows/it-pro/windows-server-essentials-sbs/cc514417(v=msdn.10))

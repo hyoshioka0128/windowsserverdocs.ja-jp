@@ -6,32 +6,32 @@ manager: dcscontentpm
 ms.topic: article
 ms.author: delhan
 ms.date: 07/01/2020
-ms.openlocfilehash: 18c315a8b3562c25b5fe1c537a8922fc148e444b
-ms.sourcegitcommit: c40c29683d25ed75b439451d7fa8eda9d8d9e441
+ms.openlocfilehash: 19eb46483b8f1243d4371ecb6869b79daa0445ac
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85833288"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87769730"
 ---
 # <a name="smbv1-is-not-installed-by-default-in-windows-10-version-1709-windows-server-version-1709-and-later-versions"></a>SMBv1 は、Windows 10 バージョン1709、Windows Server バージョン1709以降のバージョンでは既定でインストールされません。
 
 ## <a name="summary"></a>まとめ
 
-Windows 10 秋の更新プログラムおよび Windows Server バージョン 1709 (RS3) 以降のバージョンでは、Server Message Block version 1 (SMBv1) のネットワークプロトコルは既定でインストールされなくなりました。 2007で始まる SMBv2 以降のプロトコルに置き換えられました。 Microsoft は、2014で SMBv1 プロトコルを一般に非推奨としました。 
+Windows 10 秋の更新プログラムおよび Windows Server バージョン 1709 (RS3) 以降のバージョンでは、Server Message Block version 1 (SMBv1) のネットワークプロトコルは既定でインストールされなくなりました。 2007で始まる SMBv2 以降のプロトコルに置き換えられました。 Microsoft は、2014で SMBv1 プロトコルを一般に非推奨としました。
 
-SMBv1 の Windows 10 と Windows Server では、バージョン 1709 (RS3) 以降の動作が次のようになっています。 
- 
-- SMBv1 には、個別にアンインストールできるクライアントとサーバーの両方のサブ機能が用意されました。    
-- Windows 10 Enterprise、Windows 10 の教育、および Windows 10 Pro のワークステーションでは、クリーンインストール後に既定で SMBv1 クライアントまたはサーバーが含まれなくなりました。    
-- Windows Server 2016 には、クリーンインストール後に既定で SMBv1 クライアントまたはサーバーが含まれなくなりました。    
-- Windows 10 Home と Windows 10 Pro では、クリーンインストール後に既定で SMBv1 サーバーが含まれなくなりました。    
-- Windows 10 Home と Windows 10 Pro には、クリーンインストール後も既定で SMBv1 クライアントが含まれています。 SMBv1 クライアントが合計で15日間使用されていない場合 (オフになっているコンピューターは除く)、自動的に自動的にアンインストールされます。    
-- Windows 10 Home と Windows 10 Pro のインプレースアップグレードと Insider 便では、最初に SMBv1 が自動的に削除されるわけではありません。 SMBv1 クライアントまたはサーバーが合計で15日間使用されていない (コンピューターがオフになっている時間を除く) 場合、それぞれが自動的にアンインストールされます。     
-- Windows 10 Enterprise、Windows 10 の教育、windows 10 Pro for Workstation の各エディションのインプレースアップグレードと Insider 便では、SMBv1 は自動的に削除されません。 管理者は、これらの管理された環境で SMBv1 をアンインストールすることを決定する必要があります。 
+SMBv1 の Windows 10 と Windows Server では、バージョン 1709 (RS3) 以降の動作が次のようになっています。
+
+- SMBv1 には、個別にアンインストールできるクライアントとサーバーの両方のサブ機能が用意されました。
+- Windows 10 Enterprise、Windows 10 の教育、および Windows 10 Pro のワークステーションでは、クリーンインストール後に既定で SMBv1 クライアントまたはサーバーが含まれなくなりました。
+- Windows Server 2016 には、クリーンインストール後に既定で SMBv1 クライアントまたはサーバーが含まれなくなりました。
+- Windows 10 Home と Windows 10 Pro では、クリーンインストール後に既定で SMBv1 サーバーが含まれなくなりました。
+- Windows 10 Home と Windows 10 Pro には、クリーンインストール後も既定で SMBv1 クライアントが含まれています。 SMBv1 クライアントが合計で15日間使用されていない場合 (オフになっているコンピューターは除く)、自動的に自動的にアンインストールされます。
+- Windows 10 Home と Windows 10 Pro のインプレースアップグレードと Insider 便では、最初に SMBv1 が自動的に削除されるわけではありません。 SMBv1 クライアントまたはサーバーが合計で15日間使用されていない (コンピューターがオフになっている時間を除く) 場合、それぞれが自動的にアンインストールされます。 
+- Windows 10 Enterprise、Windows 10 の教育、windows 10 Pro for Workstation の各エディションのインプレースアップグレードと Insider 便では、SMBv1 は自動的に削除されません。 管理者は、これらの管理された環境で SMBv1 をアンインストールすることを決定する必要があります。
 - 15日後の SMBv1 の自動削除は、1回限りの操作です。 管理者が SMBv1 を再インストールした場合、それ以上のアンインストールは試行されません。
-- SMB バージョン2.02、2.1、3.0、3.02、および3.1.1 の各機能はまだ完全にサポートされており、SMBv2 バイナリの一部として既定で含まれています。    
-- Computer Browser サービスは SMBv1 に依存しているため、SMBv1 クライアントまたはサーバーがアンインストールされると、サービスはアンインストールされます。 これは、従来の NetBIOS データグラムブラウズ方法を使用して、エクスプローラーネットワークが Windows コンピューターを表示できなくなることを意味します。    
-- SMBv1 は、Windows 10 および Windows Server 2016 のすべてのエディションでも再インストールできます。    
+- SMB バージョン2.02、2.1、3.0、3.02、および3.1.1 の各機能はまだ完全にサポートされており、SMBv2 バイナリの一部として既定で含まれています。
+- Computer Browser サービスは SMBv1 に依存しているため、SMBv1 クライアントまたはサーバーがアンインストールされると、サービスはアンインストールされます。 これは、従来の NetBIOS データグラムブラウズ方法を使用して、エクスプローラーネットワークが Windows コンピューターを表示できなくなることを意味します。
+- SMBv1 は、Windows 10 および Windows Server 2016 のすべてのエディションでも再インストールできます。
 
 SMBv1 の Windows 10 では、バージョン 1809 (RS5) 以降、次の動作が追加されています。 バージョン1709のその他すべての動作は引き続き適用されます。
 
@@ -39,16 +39,16 @@ SMBv1 の Windows 10 では、バージョン 1809 (RS5) 以降、次の動作�
 - Windows 10 Enterprise、Windows 10 の教育、および Windows 10 Pro のワークステーションでは、管理者は "SMB 1.0/CIFS 自動削除" 機能を有効にすることで、SMBv1 の自動削除を有効にすることができます。
 
   > [!NOTE]
-  > Windows 10 バージョン 1803 (RS4) Pro では、Windows 10、バージョン 1703 (RS2)、Windows 10、バージョン 1607 (RS1) と同じ方法で SMBv1 を処理します。 この問題は、Windows 10 バージョン 1809 (RS5) で修正されました。 SMBv1 は、手動でアンインストールすることもできます。 ただし、次のシナリオでは、Windows は15日後に SMBv1 を自動的にアンインストールしません。 
+  > Windows 10 バージョン 1803 (RS4) Pro では、Windows 10、バージョン 1703 (RS2)、Windows 10、バージョン 1607 (RS1) と同じ方法で SMBv1 を処理します。 この問題は、Windows 10 バージョン 1809 (RS5) で修正されました。 SMBv1 は、手動でアンインストールすることもできます。 ただし、次のシナリオでは、Windows は15日後に SMBv1 を自動的にアンインストールしません。
 
--  Windows 10 バージョン1803のクリーンインストールを実行します。     
--  Windows 10、バージョン1607、または Windows 10、バージョン1703を windows 10、バージョン1803に直接アップグレードする場合は、最初に Windows 10 バージョン1709にアップグレードする必要があります。     
- 
-SMBv1 のみをサポートしているデバイスに接続しようとした場合、またはこれらのデバイスが接続を試みた場合は、次のエラーメッセージのいずれかが表示されることがあります。     
+-  Windows 10 バージョン1803のクリーンインストールを実行します。
+-  Windows 10、バージョン1607、または Windows 10、バージョン1703を windows 10、バージョン1803に直接アップグレードする場合は、最初に Windows 10 バージョン1709にアップグレードする必要があります。
+
+SMBv1 のみをサポートしているデバイスに接続しようとした場合、またはこれらのデバイスが接続を試みた場合は、次のエラーメッセージのいずれかが表示されることがあります。
 
 ```
 You can't connect to the file share because it's not secure. This share requires the obsolete SMB1 protocol, which is unsafe and could expose your system to attack.
-Your system requires SMB2 or higher. For more info on resolving this issue, see: https://go.microsoft.com/fwlink/?linkid=852747  
+Your system requires SMB2 or higher. For more info on resolving this issue, see: https://go.microsoft.com/fwlink/?linkid=852747
 ```
 
 ```
@@ -69,7 +69,7 @@ The specified server cannot perform the requested operation.
 
 ```
 Error 58
-```    
+```
 
 次のイベントは、リモートサーバーがこのクライアントからの SMBv1 接続を必要としていますが、SMBv1 がアンインストールされているか、クライアントで無効になっている場合に表示されます。
 
@@ -84,13 +84,13 @@ Log Name:      Microsoft-Windows-SmbClient/Security
  User:          NETWORK SERVICE
  Computer:      junkle.contoso.com
  Description:
- The local computer received an SMB1 negotiate response. 
+ The local computer received an SMB1 negotiate response.
 
-Dialect: 
-SecurityMode 
-Server name: 
+Dialect:
+SecurityMode
+Server name:
 
-Guidance: 
+Guidance:
 SMB1 is deprecated and should not be installed nor enabled. For more information, see https://go.microsoft.com/fwlink/?linkid=852747.
 ```
 
@@ -104,25 +104,25 @@ Log Name:      Microsoft-Windows-SmbClient/Security
  Keywords:      (128)
  User:          NETWORK SERVICE
  Computer:      junkle.contoso.com
- Description: 
-SMB1 negotiate response received from remote device when SMB1 cannot be negotiated by the local computer. 
-Dialect: 
-Server name: 
+ Description:
+SMB1 negotiate response received from remote device when SMB1 cannot be negotiated by the local computer.
+Dialect:
+Server name:
 
-Guidance: 
-The client has SMB1 disabled or uninstalled. For more information: https://go.microsoft.com/fwlink/?linkid=852747.     
+Guidance:
+The client has SMB1 disabled or uninstalled. For more information: https://go.microsoft.com/fwlink/?linkid=852747.
 ```
 
-これらのデバイスは、Windows を実行している可能性があります。SMB サービスを提供するために、以前のバージョンの Linux や Samba などのサードパーティ製ソフトウェアが実行されている可能性が高くなります。 多くの場合、これらのバージョンの Linux および Samba はサポートされなくなりました。 
+これらのデバイスは、Windows を実行している可能性があります。SMB サービスを提供するために、以前のバージョンの Linux や Samba などのサードパーティ製ソフトウェアが実行されている可能性が高くなります。 多くの場合、これらのバージョンの Linux および Samba はサポートされなくなりました。
 
 > [!NOTE]
-> Windows 10 バージョン1709は、"作成者の更新" とも呼ばれます。   
+> Windows 10 バージョン1709は、"作成者の更新" とも呼ばれます。
 
-## <a name="more-information"></a>詳細情報
+## <a name="more-information"></a>説明
 
-この問題を回避するには、SMBv1 のみをサポートしている製品の製造元に連絡し、SMBv 2.02 以降のバージョンをサポートするソフトウェアまたはファームウェアの更新プログラムを要求します。 既知のベンダーとその SMBv1 の要件の最新の一覧については、次の Windows および Windows Server Storage エンジニアリングチームのブログ記事を参照してください。 
+この問題を回避するには、SMBv1 のみをサポートしている製品の製造元に連絡し、SMBv 2.02 以降のバージョンをサポートするソフトウェアまたはファームウェアの更新プログラムを要求します。 既知のベンダーとその SMBv1 の要件の最新の一覧については、次の Windows および Windows Server Storage エンジニアリングチームのブログ記事を参照してください。
 
-[SMBv1 製品クリアリングハウス](https://techcommunity.microsoft.com/t5/Storage-at-Microsoft/SMB1-Product-Clearinghouse/ba-p/426008) 
+[SMBv1 製品クリアリングハウス](https://techcommunity.microsoft.com/t5/Storage-at-Microsoft/SMB1-Product-Clearinghouse/ba-p/426008)
 #### <a name="leasing-mode"></a>リースモード
 
 Oplock を無効にする必要があるなど、レガシソフトウェアの動作に対してアプリケーションの互換性を提供するために SMBv1 が必要な場合、Windows はリースモードと呼ばれる新しい SMB 共有フラグを提供します。 このフラグは、リースや oplock などの最新の SMB セマンティクスを共有が無効にするかどうかを指定します。
@@ -136,12 +136,12 @@ Oplock またはリースを使用せずに共有を指定して、レガシア�
 
 Computer Browser サービスは、SMBv1 プロトコルを利用して、Windows Explorer ネットワークノード ("ネットワークコンピューター" とも呼ばれます) を設定します。 このレガシプロトコルは、非推奨であり、ルーティングされず、セキュリティが制限されています。 サービスは SMBv1 なしでは機能できないため、同時に削除されます。
 
-ただし、Windows ベースのコンピューターを検索するために、ネットワーク受信ホームと小規模のビジネスワークグループ環境を使用する必要がある場合は、SMBv1 を使用しなくなった Windows ベースのコンピューターで次の手順を実行できます。 
- 
+ただし、Windows ベースのコンピューターを検索するために、ネットワーク受信ホームと小規模のビジネスワークグループ環境を使用する必要がある場合は、SMBv1 を使用しなくなった Windows ベースのコンピューターで次の手順を実行できます。
+
 1. "Function Discovery Provider Host" および "Function Discovery Resource Publication" サービスを開始し、[**自動 (遅延開始)**] に設定します。
 
-2. エクスプローラーの [ネットワーク] を開くと、メッセージが表示されたらネットワーク探索を有効にします。    
- 
+2. エクスプローラーの [ネットワーク] を開くと、メッセージが表示されたらネットワーク探索を有効にします。
+
 これらの設定を持つサブネット内のすべての Windows デバイスが、参照用にネットワークに表示されるようになります。 これは、WS-ADDRESSING プロトコルを使用します。 Windows デバイスが表示された後も、この参照リストにデバイスが表示されない場合は、他のベンダーや製造元にお問い合わせください。 このプロトコルが無効になっているか、SMBv1 のみがサポートされている可能性があります。
 
 > [!NOTE]
@@ -150,22 +150,24 @@ Computer Browser サービスは、SMBv1 プロトコルを利用して、Window
 これらの回避策を使用できない場合、またはアプリケーションの製造元がサポートされているバージョンの SMB を提供できない場合は、「 [Windows の SMBv1、SMBv2、および SMBv3 を検出、有効化、および無効化する方法](detect-enable-and-disable-smbv1-v2-v3.md)」の手順に従って、手動で SMBv1 を再度有効にすることができます。
 
 > [!IMPORTANT]
-> SMBv1 を再インストールしないことを強くお勧めします。 これは、この古いプロトコルには、ランサムウェアやその他のマルウェアに関する既知のセキュリティ問題があるためです。  
+> SMBv1 を再インストールしないことを強くお勧めします。 これは、この古いプロトコルには、ランサムウェアやその他のマルウェアに関する既知のセキュリティ問題があるためです。
 
 #### <a name="windows-server-best-practices-analyzer-messaging"></a>Windows Server ベストプラクティスアナライザーメッセージング
 
 Windows Server 2012 以降のサーバー操作システムには、ファイルサーバー用のベストプラクティスアナライザー (BPA) が含まれています。 SMB1 をアンインストールするための正しいオンラインガイダンスに従っている場合、この BPA を実行すると、矛盾した警告メッセージが返されます。
 
-    Title: The SMB 1.0 file sharing protocol should be enabled
-    Severity: Warning
-    Date: 3/25/2020 12:38:47 PM
-    Category: Configuration
-    Problem: The Server Message Block 1.0 (SMB 1.0) file sharing protocol is disabled on this file server.
-    Impact: SMB not in a default configuration, which could lead to less than optimal behavior.
-    Resolution: Use Registry Editor to enable the SMB 1.0 protocol.
+```
+Title: The SMB 1.0 file sharing protocol should be enabled
+Severity: Warning
+Date: 3/25/2020 12:38:47 PM
+Category: Configuration
+Problem: The Server Message Block 1.0 (SMB 1.0) file sharing protocol is disabled on this file server.
+Impact: SMB not in a default configuration, which could lead to less than optimal behavior.
+Resolution: Use Registry Editor to enable the SMB 1.0 protocol.
+```
 
 この特定の BPA 規則のガイダンスは無視してください。非推奨とされます。 繰り返し: SMB 1.0 を有効にしないでください。
 
-## <a name="references"></a>リファレンス
+## <a name="additional-references"></a>その他の参照情報
 
-[SMB1 の使用を停止する](https://aka.ms/stopusingsmb1)
+- [SMB1 の使用を停止する](https://aka.ms/stopusingsmb1)

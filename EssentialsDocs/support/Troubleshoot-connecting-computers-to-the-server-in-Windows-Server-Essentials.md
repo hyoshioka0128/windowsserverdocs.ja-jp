@@ -7,12 +7,12 @@ ms.assetid: e45b3d89-c057-4c70-a627-86fb06dd22aa
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: c05888f52f3fe60d0dde22a70ceb5a3eee94e0ef
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: e832957a5d44851131cb622e4c3bf9d99d4e4a7f
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180238"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838271"
 ---
 # <a name="troubleshoot-connecting-computers-to-the-server-in-windows-server-essentials"></a>Windows Server Essentials 内のサーバーにコンピューターを接続する場合のトラブルシューティング
 
@@ -21,7 +21,7 @@ ms.locfileid: "87180238"
  このトピックでは、Windows Server Essentials または Windows Server Essentials を実行しているサーバーにコンピューターを接続するときに発生する可能性がある問題のトラブルシューティングのガイダンスを示します。
 
 > [!NOTE]
->  Windows Server Essentials および Windows Server Essentials コミュニティの最新のトラブルシューティング情報については、 [Windows Server Essentials フォーラム](https://docs.microsoft.com/answers/topics/windows-server-essentials.html)を参照することをお勧めします。 Windows Server Essentials フォーラムは、ヘルプを検索したり、質問したりするために最適な場所です。
+>  Windows Server Essentials および Windows Server Essentials コミュニティの最新のトラブルシューティング情報については、 [Windows Server Essentials フォーラム](/answers/topics/windows-server-essentials.html)を参照することをお勧めします。 Windows Server Essentials フォーラムは、ヘルプを検索したり、質問したりするために最適な場所です。
 
  このトピックでは、次の問題に関する解決策を取り上げます。
 
@@ -278,8 +278,8 @@ ms.locfileid: "87180238"
 
  コネクター ソフトウェアがインストールされているクライアントをアップグレードした場合には、**[プログラムの追加と削除]** または **[プログラムと機能]** を使用してコネクター ソフトウェアをアンインストールします。 その後、コネクター ソフトウェアを再びインストールします。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [Windows Server Essentials の管理](../manage/Manage-Windows-Server-Essentials.md)
 
-- [Windows 2012 Server Essentials ConnectComputer のトラブルシューティング](https://docs.microsoft.com/windows-server-essentials/support/troubleshoot-connecting-computers-to-the-server-in-windows-server-essentials)
+- [Windows 2012 Server Essentials ConnectComputer のトラブルシューティング]()

@@ -7,12 +7,12 @@ ms.assetid: 0951a67d-492f-41ad-9ae5-8e4cd25e3041
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 295022c45a82d18781df27604d47d58af14b4b2d
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: b82435dc9d0018d3ac3fa5c6855b18bcddbd2797
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181638"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838101"
 ---
 # <a name="system-requirements-for-windows-server-essentials"></a>Windows Server Essentials のシステム要件
 
@@ -36,7 +36,7 @@ ms.locfileid: "87181638"
 |コンポーネント|説明|
 |---------------|-----------------|
 |ネットワーク アダプター|Gigabit Ethernet アダプター (10/100/1000BaseT PHY/MAC)|
-|Test1|機能によっては、インターネット アクセス (有料の可能性があります) または Microsoft アカウントが必要となる場合があります|
+|インターネット|機能によっては、インターネット アクセス (有料の可能性があります) または Microsoft アカウントが必要となる場合があります|
 |サポートされるクライアント オペレーティング システム|Windows 8.1、Windows 8、Windows 7、Macintosh OS X バージョン 10.5 ～ 10.8<br /><br /> **注:** 一部の機能には、professional またはそれ以降のエディションが必要です。<br /><br /> 1 GB の利用可能なハード ドライブの容量 (このディスクの一部はインストール後に解放されます)|
 |ルーター|IPv4 または IPv6 ネットワーク アドレス変換 (NAT) をサポートするルーターまたはファイアウォール|
 |その他の要件|DVD-ROM ドライブ|
@@ -45,15 +45,13 @@ ms.locfileid: "87181638"
 
  ハードウェア要件の詳細については、「 [Windows Server カタログ](https://www.windowsservercatalog.com/)」を参照してください。
 
- すべてのサーバーハードウェアは、システム用の Windows Server 2012 R2 ロゴプログラム用に設定された要件を満たしている必要があります。 詳細については、「 [Windows ロゴ プログラム](https://msdn.microsoft.com/windows/hardware/gg487403.aspx)」を参照してください。
+ すべてのサーバーハードウェアは、システム用の Windows Server 2012 R2 ロゴプログラム用に設定された要件を満たしている必要があります。 詳細については、「 [Windows ロゴ プログラム](/previous-versions/windows/hardware/hck/dn641155(v=vs.85))」を参照してください。
 
 > [!IMPORTANT]
 > ダイナミックディスクは、Windows Server Essentials ではサポートされていません。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 -   [Windows Server Essentials のインストール](../install/Install-Windows-Server-Essentials.md)
 
 -   [Windows Server Essentials のシステム要件](system-requirements.md)
-
-
