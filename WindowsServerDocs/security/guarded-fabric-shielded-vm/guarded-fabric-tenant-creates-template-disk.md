@@ -8,12 +8,12 @@ author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: d5cdaf915de94e73374459c41b090f197b8f56ef
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 7e76cb5b41e7800ce8b2725003dcb5ea90e84116
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475079"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87769650"
 ---
 # <a name="shielded-vms-for-tenants---creating-a-template-disk-optional"></a>テナント用のシールドされた Vm-テンプレートディスクの作成 (省略可能)
 
@@ -64,13 +64,17 @@ Windows Server 2016 を実行しているコンピューターで、次の手順
 
 2. コンピューターの**リモートサーバー管理ツール**から、シールドされた**VM ツール**機能をインストールします。
 
-        Install-WindowsFeature RSAT-Shielded-VM-Tools -Restart
+    ```
+    Install-WindowsFeature RSAT-Shielded-VM-Tools -Restart
+    ```
 
 3. 新しいシールドされた Vm のテンプレートディスクとなる VHDX に署名するための証明書を取得または作成します。 この証明書の詳細は、信頼できるディスクとしてディスクを承認するシールドデータファイルに組み込まれます。 そのため、お客様とホスティングサービスプロバイダーが信頼している証明機関からこの証明書を取得することが重要です。 ホストとテナントの両方であるエンタープライズシナリオでは、PKI からこの証明書を発行することを検討できます。
 
     テスト環境を設定していて、自己署名証明書を使用してテンプレートディスクに署名する場合は、コンピューターで次のようなコマンドを実行します。
 
-        New-SelfSignedCertificate -DnsName publisher.fabrikam.com
+    ```
+    New-SelfSignedCertificate -DnsName publisher.fabrikam.com
+    ```
 
 4. [スタート] メニューの [**管理ツール**] フォルダーから**テンプレートディスクウィザード**を起動するか、コマンドプロンプトに「 **TemplateDiskWizard.exe** 」と入力します。
 
@@ -91,7 +95,7 @@ Windows Server 2016 を実行しているコンピューターで、次の手順
 
 シールドされたディスクテンプレートを、「シールドされた[VM を定義するシールドデータの作成](guarded-fabric-tenant-creates-shielding-data.md)」で説明されているように、作成するシールドデータファイルと共にホスティングサービスプロバイダーに提供します。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [シールドされた VMの展開](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
 - [保護されたファブリックとシールドされた VM](guarded-fabric-and-shielded-vms-top-node.md)

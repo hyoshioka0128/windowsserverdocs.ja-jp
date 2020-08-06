@@ -9,12 +9,12 @@ ms.topic: article
 author: JasonGerend
 ms.date: 06/25/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 12b2ed2a176167b79596ee398fc43c66d7196a54
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: cda974bf264c7e497c8d472338cf7b5f7d13a534
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966434"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87769051"
 ---
 # <a name="storage-class-memory-nvdimm-n-health-management-in-windows"></a>Windows での記憶域クラス メモリ (NVDIMM-N) の正常性管理
 
@@ -53,7 +53,7 @@ PS C:\> Get-PhysicalDisk | where BusType -eq "SCM" | select SerialNumber, Health
 
 | SerialNumber | HealthStatus | OperationalStatus | OperationalDetails |
 | --- | --- | --- | --- |
-| 802c-01-1602-117cb5fc | Healthy | OK | |
+| 802c-01-1602-117cb5fc | Healthy | [OK] | |
 | 802c-01-1602-117cb64f | 警告 | 予測される障害 | {Threshold Exceeded,NVDIMM\_N Error} |
 
 > [!NOTE]
@@ -67,12 +67,12 @@ PS C:\> Get-PhysicalDisk | where BusType -eq "SCM" | select SerialNumber, Health
 
 | SerialNumber | HealthStatus | OperationalStatus | OperationalDetails |
 | --- | --- | --- | --- |
-| 802c-01-1602-117cb5fc | Healthy | OK | |
+| 802c-01-1602-117cb5fc | Healthy | [OK] | |
 | 802c-01-1602-117cb64f | 警告 | 予測される障害 | {Threshold Exceeded,NVDIMM\_N Error} |
 
 次の表は、この状態についての情報を示しています。
 
-| | 説明 |
+| [Heading] (方向) | 説明 |
 | --- | --- |
 | 起こり得る状態 | NVDIMM-N 警告しきい値違反 |
 | 根本原因 | NVDIMM-N デバイスは、温度、NVM の有効期間、電源の有効期間など、さまざまなしきい値を追跡します。 これらのしきい値のいずれかを超えると、オペレーティング システムに通知されます。 |
@@ -87,12 +87,12 @@ PS C:\> Get-PhysicalDisk | where BusType -eq "SCM" | select SerialNumber, Health
 
 | SerialNumber | HealthStatus | OperationalStatus | OperationalDetails |
 | --- | --- | --- | --- |
-| 802c-01-1602-117cb5fc | Healthy | OK | |
+| 802c-01-1602-117cb5fc | Healthy | [OK] | |
 | 802c-01-1602-117cb64f | 異常 | {Stale Metadata, IO Error, Transient Error} | {Lost Data Persistence, Lost Data, NV...} |
 
 次の表は、この状態についての情報を示しています。
 
-| | 説明 |
+| [Heading] (方向) | 説明 |
 | --- | --- |
 | 起こり得る状態 | 永続性/バックアップ電力の喪失 |
 |根本原因|NVDIMM-N デバイスは、永続性のためにバックアップ電源 (通常ではバッテリやスーパー キャパシター) に依存しています。 このバックアップ電源を利用できない場合、またはデバイスが何らかの理由 (コントローラー/Flash エラー) でバックアップを実行できない場合は、データが危険にさらされており、Windows は影響を受けているデバイスへのさらなる書き込みを阻止します。 データを退避させるための読み取りは引き続き可能です。|
@@ -107,12 +107,12 @@ PS C:\> Get-PhysicalDisk | where BusType -eq "SCM" | select SerialNumber, Health
 
 | SerialNumber | HealthStatus | OperationalStatus | OperationalDetails |
 | --- | --- | --- | --- |
-|802c-01-1602-117cb5fc|Healthy|OK||
+|802c-01-1602-117cb5fc|Healthy|[OK]||
 ||警告|通信の切断||
 
 次の表は、この状態についての情報を示しています。
 
-||説明|
+|[Heading] (方向)|説明|
 |---|---|
 |起こり得る状態|BIOS が NVDIMM-N を OS に公開しなかった|
 |根本原因|NVDIMM-N デバイスは DRAM がベースとなっています。 破損している DRAM アドレスが参照されている場合、ほとんどの CPU はマシン チェックを開始して、サーバーを再起動します。 次に、一部のサーバー プラットフォームは、NVDIMM の割り当てを解除します。これにより、OS は NVDIMM にアクセスできなくなり、別のマシン チェックが実行される可能性があります。 NVDIMM-N が故障したために交換する必要があることを BIOS が検出した場合にも、これが発生する可能性があります。|
@@ -127,12 +127,12 @@ PS C:\> Get-PhysicalDisk | where BusType -eq "SCM" | select SerialNumber, Health
 
 | SerialNumber | HealthStatus | OperationalStatus | OperationalDetails |
 | --- | --- | --- | --- |
-|802c-01-1602-117cb5fc|Healthy|OK|{Unknown}|
+|802c-01-1602-117cb5fc|Healthy|[OK]|{Unknown}|
 |802c-01-1602-117cb64f|異常|{Unrecognized Metadata, Stale Metadata}|{Unknown}|
 
 次の表は、この状態についての情報を示しています。
 
-||説明|
+|[Heading] (方向)|説明|
 |---|---|
 |起こり得る状態|バックアップ/復元エラー|
 |根本原因|バックアップまたは復元手順のエラーによって、NVDIMM-N のすべてのデータが失われる可能性があります。 オペレーティング システムが読み込まれると、パーティションやファイル システムがない新しい NVDIMM-N として表示されて、RAW として表されます。すなわち、これにはファイル システムがありません。|

@@ -8,24 +8,24 @@ ms.topic: article
 ms.assetid: f9945c55-c2d0-448f-86dd-8c734e1b2987
 ms.author: anpaul
 author: AnirbanPaul
-ms.openlocfilehash: ed8041750f2b57526a173d7cacb5f221ce1f9722
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 45baf6966fc0bc703dcf354e557b9d4eeab8e9d9
+ms.sourcegitcommit: 0ccc7b2caa1781f0c67e1a3cc52c0b0f6a175ad4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80860745"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87819583"
 ---
 # <a name="contact-the-datacenter-and-cloud-networking-team"></a>データセンターおよびクラウド ネットワーク チームへのお問い合わせ
 
-> 適用対象: Windows Server 2016
+> 適用先:Windows Server 2016
 
-Microsoft の**ソフトウェア定義ネットワーク \(SDN\)** と**コンテナーネットワーク**ソリューションは、データセンターとクラウドネットワークチームによって作成されています。 このページを使用して、チームに連絡してください。質問をしたり、フィードバックを提供したり、バグを報告したり、機能の要求を行ったりすることができます。
+Microsoft の**ソフトウェア定義ネットワーク \( SDN \) **と**コンテナーネットワーク**ソリューションは、データセンターとクラウドネットワークチームによって作成されます。 このページを使用して、チームに連絡してください。質問をしたり、フィードバックを提供したり、バグを報告したり、機能の要求を行ったりすることができます。
 
 Microsoft teams に連絡するには多くの方法があります。 SDN チームでは、コミュニティで使用されるすべての手段に従うことをお勧めしますが、ここでは、最もアクティブになる傾向のあるフォーラムの一覧を示します。 *これらはユーザーにとって重要なリソースです。そのため、最も近いものを見ることができます。*
 
 ## <a name="twitter"></a>[Twitter](https://twitter.com/Microsoft_SDN)
 
-最近、Twitter での存在を[@Microsoft_SDN](https://twitter.com/Microsoft_SDN)として立ち上げました。 Twitter のハンドルを使用して、質問をしたり、フィードバックを提供したり、機能/ドキュメントの要求を行ったりすることができます。
+最近、Twitter での存在をとして立ち上げました [@Microsoft_SDN](https://twitter.com/Microsoft_SDN) 。 Twitter のハンドルを使用して、質問をしたり、フィードバックを提供したり、機能/ドキュメントの要求を行ったりすることができます。
 > 質問/フィードバック/要求にアクセスできる場所に加えて、Twitter と Windows コンテナーネットワーク関連のすべての情報を入手するための場所を検討してください。 Twitter は**ニュースを投稿**し、**新機能**を発表し、コミュニティに**最新のブログやリソース**を紹介します。
 
 ## <a name="github-microsoftsdn-repo"></a>GitHub ([Microsoft/SDN リポジトリ](https://github.com/Microsoft/SDN/issues))
@@ -36,7 +36,7 @@ GitHub リポジトリから SDN チームに問題を送信するに[は、こ�
 ## <a name="microsoft-docs"></a>[Microsoft Docs](https://docs.microsoft.com/)
 [コンテナーネットワークのドキュメント](https://docs.microsoft.com/virtualization/windowscontainers/manage-containers/container-networking)は[Microsoft Docs (docs.microsoft.com)](https://docs.microsoft.com/)にあります。これには、**コメント機能が組み込ま**れています。 サインインしたときにコメントに返信したり Microsoft Docs に返信したりするには、参照する Microsoft Docs ページの一番下までスクロールし、コメントを作成して送信します。
 
-> [Microsoft Docs](https://docs.microsoft.com/)は、Microsoft の新しい統合ドキュメントサイトです。 私たちのチームの[SDN ドキュメント](https://technet.microsoft.com/windows-server-docs/networking/sdn/software-defined-networking)のほとんどは TechNet に残されていますが、[コンテナーネットワークのドキュメント](https://docs.microsoft.com/virtualization/windowscontainers/manage-containers/container-networking)は Microsoft Docs にあります。
+> [Microsoft Docs](https://docs.microsoft.com/)は、Microsoft の新しい統合ドキュメントサイトです。 私たちのチームの[SDN ドキュメント](https://technet.microsoft.com/windows-server-docs/networking/sdn/software-defined-networking)のほとんどは TechNet に残されていますが、[コンテナーネットワークのドキュメント](https://docs.microsoft.com/virtualization/windowscontainers)は Microsoft Docs にあります。
 > 
 > *一般に、質問をわきしたり、さらに多くのことを希望したりする Microsoft Docs に関するトピックが表示される場合は、そのページにコメントを残して、お客様のフィードバックを Microsoft チームと共有してください。*
 
@@ -46,4 +46,4 @@ GitHub リポジトリから SDN チームに問題を送信するに[は、こ�
 - [Github (仮想化リポジトリ)](https://github.com/Microsoft/Virtualization-Documentation) -*トラブルシューティングのヘルプ*と*バグの報告*に最適です
 
 ### <a name="not-seeing-the-forum-for-you"></a>フォーラムが表示されない場合は、 
-可能な限り、マイクロソフトはパブリックフォーラムを使用することをお勧めします。これにより、より広範なコミュニティでは、お客様の質問やコメントにアクセスするメリットが得られます。 ただし、電子メールがお客様に連絡するために推奨される方法であるという状況も認識しています。 これらの状況のいずれかが発生した場合は、sdn_feedback@microsoft.com にメールをお送りください。お客様からのご意見をお待ちしております。
+可能な限り、マイクロソフトはパブリックフォーラムを使用することをお勧めします。これにより、より広範なコミュニティでは、お客様の質問やコメントにアクセスするメリットが得られます。 ただし、電子メールがお客様に連絡するために推奨される方法であるという状況も認識しています。 これらの状況のいずれかが発生した場合は、に電子メールをお送りください sdn_feedback@microsoft.com 。ご意見をお待ちしております。

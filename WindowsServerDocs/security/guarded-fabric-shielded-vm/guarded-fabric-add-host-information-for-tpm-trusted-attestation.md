@@ -8,12 +8,12 @@ author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 06/21/2019
-ms.openlocfilehash: f1c25cc88c577ccb1bc0e8cc690114471e86b6ba
-ms.sourcegitcommit: 32f810c5429804c384d788c680afac427976e351
+ms.openlocfilehash: cfc1d0d2b99a79e6c1deb013fab350e3abc6167c
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83203393"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87769670"
 ---
 # <a name="add-host-information-for-tpm-trusted-attestation"></a>TPM で信頼された構成証明のホスト情報を追加する
 
@@ -25,33 +25,33 @@ TPM モードでは、ファブリック管理者は3種類のホスト情報を
 - コード整合性ポリシー、Hyper-v ホストで許可されているバイナリのホワイトリスト
 - 同じクラスのハードウェア上で実行される一連の Hyper-v ホストを表す TPM ベースライン (ブート測定)
 
-Af ファブリック管理者は、次の手順に従って、情報をキャプチャし、HGS 構成に追加します。
+ファブリック管理者が情報をキャプチャしたら、次の手順に従って、その情報を HGS 構成に追加します。
 
 1. EKpub 情報を含む XML ファイルを取得し、それらを HGS サーバーにコピーします。 ホストごとに1つの XML ファイルがあります。 次に、HGS サーバーの管理者特権の Windows PowerShell コンソールで、次のコマンドを実行します。 各 XML ファイルに対してコマンドを繰り返します。
 
     ```powershell
     Add-HgsAttestationTpmHost -Path <Path><Filename>.xml -Name <HostName>
-       ```
+    ```
 
     > [!NOTE]
-    > If you encounter an error when adding a TPM identifier regarding an untrusted Endorsement Key Certificate (EKCert), ensure that the [trusted TPM root certificates have been added](guarded-fabric-install-trusted-tpm-root-certificates.md) to the HGS node.
-    > Additionally, some TPM vendors do not use EKCerts.
-    > You can check if an EKCert is missing by opening the XML file in an editor such as Notepad and checking for an error message indicating no EKCert was found.
-    > If this is the case, and you trust that the TPM in your machine is authentic, you can use the `-Force` flag to override this safety check and add the host identifier to HGS.
+    > 信頼されていない保証キー証明書 (EKCert) に関する TPM 識別子を追加するときにエラーが発生した場合は、[信頼された tpm ルート証明書が HGS ノードに追加され](guarded-fabric-install-trusted-tpm-root-certificates.md)ていることを確認します。
+    > また、一部の TPM ベンダーは EKCerts を使用しません。
+    > EKCert がないかどうかを確認するには、メモ帳などのエディターで XML ファイルを開き、EKCert が見つからなかったことを示すエラーメッセージがないかどうかを確認します。
+    > この場合、コンピューターの TPM が本物であることを信頼している場合は、フラグを使用して `-Force` この安全性チェックを無効にし、ホスト id を HGS に追加することができます。
 
-2. Obtain the code integrity policy that the fabric administrator created for the hosts, in binary format (\*.p7b). Copy it to an HGS server. Then run the following command.
+2. ホスト用にファブリック管理者が作成したコード整合性ポリシーをバイナリ形式 ( \* . p7b) で取得します。 それを HGS サーバーにコピーします。 その後、次のコマンドを実行します。
 
-    For `<PolicyName>`, specify a name for the CI polic" that describes the type of host it appl"es to. A be"t practice is to name it after the"make/model of your machine and any special software configuration running on it.<br>For `<Path>`, specify the path and filename of the code integrity policy.
+    `<PolicyName>`では、適用するホストの種類を示す CI ポリシーの名前を指定します。 ベストプラクティスとしては、コンピューターのメーカー/モデルの後に名前を指定し、それを実行する特別なソフトウェア構成を指定することをお勧めします。<br>`<Path>`では、コード整合性ポリシーのパスとファイル名を指定します。
 
     ```powershell
     Add-HgsAttestationCIPolicy -Path <Path> -Name '<PolicyName>'
-       ```
+    ```
 
     > [!NOTE]
-    > If you're using a signed code integrity policy, register an unsigned copy of the same policy with HGS.
-    > The signature on code integrity policies is used to control updates to the policy, but is not measured into the host TPM and therefore cannot be attested to by HGS.
+    > 署名済みのコード整合性ポリシーを使用している場合は、HGS と同じポリシーの署名されていないコピーを登録します。
+    > コード整合性ポリシーの署名は、ポリシーの更新を制御するために使用されますが、ホスト TPM には測定されないため、HGS で証明することはできません。
 
-3.    Obtain the TCGlog file that the fabric administrator captured from a reference host. Copy the file to an HGS server. Then run the following command. Typically, you will name the policy after the class of hardware it represents (for example, "Manufacturer Model Revision").
+3. ファブリック管理者が参照ホストからキャプチャした TCG ログファイルを取得します。 ファイルを HGS サーバーにコピーします。 その後、次のコマンドを実行します。 通常、ポリシーには、それが表すハードウェアのクラス (たとえば、"製造元のモデルのリビジョン") の後に名前を指定します。
 
     ```powershell
     Add-HgsAttestationTpmPolicy -Path <Filename>.tcglog -Name '<PolicyName>'
@@ -61,5 +61,4 @@ Af ファブリック管理者は、次の手順に従って、情報をキャ�
 
 ## <a name="next-step"></a>次のステップ
 
-> [!div class="nextstepaction"]
 > [構成証明を確認する](guarded-fabric-confirm-hosts-can-attest-successfully.md)
