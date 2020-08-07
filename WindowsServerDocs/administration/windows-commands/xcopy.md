@@ -1,20 +1,18 @@
 ---
 title: xcopy
 description: ファイルとディレクトリ (サブディレクトリを含む) をコピーする xcopy のリファレンス記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 76a310d7-9925-4571-a252-0e28960d5f89
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 01/05/2019
-ms.openlocfilehash: e33450cd330ac962c111b145d71c2595f926da2c
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 9d2ac59abbeb8caffb3b5d94bf514a7c6daca4e9
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936058"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896436"
 ---
 # <a name="xcopy"></a>xcopy
 
@@ -32,7 +30,7 @@ Xcopy <Source> [<Destination>] [/w] [/p] [/c] [/v] [/q] [/f] [/l] [/g] [/d [:MM-
 
 |パラメーター|説明|
 |---------|-----------|
-|\<Source>|必須です。 コピーするファイルの場所と名前を指定します。 このパラメーターには、ドライブまたはパスを含める必要があります。|
+|\<Source>|必須。 コピーするファイルの場所と名前を指定します。 このパラメーターには、ドライブまたはパスを含める必要があります。|
 |[\<Destination>]|コピーするファイルの保存先を指定します。 このパラメーターには、ドライブ文字とコロン、ディレクトリ名、ファイル名、またはこれらの組み合わせを含めることができます。|
 |/w|次のメッセージを表示し、応答を待機してから、ファイルのコピーを開始します。</br>**任意のキーを押して、ファイルのコピーを開始します**|
 |/p|各対象ファイルを作成するかどうかを確認するメッセージが表示されます。|
@@ -64,7 +62,7 @@ Xcopy <Source> [<Destination>] [/w] [/p] [/c] [/v] [/q] [/f] [/l] [/g] [/d [:MM-
 |/j|バッファリングせずにファイルをコピーします。 非常に大きなファイルに推奨されます。 このパラメーターは、Windows Server 2008 R2 で追加されました。|
 |/?|コマンド プロンプトにヘルプを表示します。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>Remarks
 
 - **/Z**の使用
 

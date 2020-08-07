@@ -1,18 +1,16 @@
 ---
 title: AD パフォーマンスチューニングにおけるハードウェアの考慮事項
 description: AD パフォーマンスチューニングにおけるハードウェアの考慮事項
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: timwi; chrisrob; herbertm; kenbrumf;  mleary; shawnrab
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 1fef257f860895b20c1ca1a24b6fa50e16f70c8c
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 0ec22e4c85dab5e76e61cea8a68d88d7fd37b14e
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471577"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896250"
 ---
 # <a name="hardware-considerations-in-adds-performance-tuning"></a>のハードウェアの考慮事項により、パフォーマンスチューニングが追加されます。
 
@@ -71,7 +69,7 @@ Active Directory は、メモリと同じくらいの量のデータベースを
 
 -   Compare NetworkInterface ( \* ) \\ Bytes Sent/Sec with NetworkInterface ( \* ) \\ Current 帯域幅パフォーマンスカウンタを使用します。 比率は、使用率が60% 未満である必要があります。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 - [Active Directory サーバーのパフォーマンス チューニング](index.md)
 - [LDAP に関する考慮事項](ldap-considerations.md)
 - [ドメイン コントローラーとサイトの適切な配置に関する考慮事項](site-definition-considerations.md)

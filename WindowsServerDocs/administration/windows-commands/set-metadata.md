@@ -1,20 +1,18 @@
 ---
 title: セットのメタデータ
 description: 設定メタデータの参照記事。シャドウコピーを別のコンピューターに転送するために使用するシャドウ作成メタデータファイルの名前と場所を設定します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 67e6f60a-b42a-451a-95cf-b22ace7d50c2
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 50c9ceebf072db2e7cefada1601accc97b5d0f7f
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 02af8f98cbea8ca32d61c474a804b7ba9c0e2e36
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85937094"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87882615"
 ---
 # <a name="set-metadata"></a>セットのメタデータ
 

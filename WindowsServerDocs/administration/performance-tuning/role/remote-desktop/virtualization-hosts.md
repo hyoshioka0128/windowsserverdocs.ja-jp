@@ -1,18 +1,16 @@
 ---
 title: リモートデスクトップ仮想化ホストのパフォーマンスチューニング
 description: リモートデスクトップ仮想化ホストのパフォーマンスチューニング
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: hammadbu; vladmis; denisgun
 author: phstee
 ms.date: 10/22/2019
-ms.openlocfilehash: 2a0db4d890a01df13c44a9bb7adfbd13bebbdde0
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 071321249db62c927ee5677a48c52a7f2cd9c20d
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851705"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896040"
 ---
 # <a name="performance-tuning-remote-desktop-virtualization-hosts"></a>リモートデスクトップ仮想化ホストのパフォーマンスチューニング
 
@@ -20,7 +18,7 @@ ms.locfileid: "80851705"
 
 Windows Server では、個人用仮想デスクトップとプールされた仮想デスクトップという2種類の仮想デスクトップがサポートされています。
 
-## <a name="general-considerations"></a>全般的な考慮事項
+## <a name="general-considerations"></a>一般的な考慮事項
 
 ### <a name="storage"></a>ストレージ
 
@@ -32,7 +30,7 @@ Windows Server では、個人用仮想デスクトップとプールされた�
 
 Windows Server 2012 R2 で導入されたデータ重複除去では、開いているファイルの最適化をサポートしています。 重複除去ボリュームで実行されている仮想マシンを使用するには、仮想マシンファイルを Hyper-v ホストとは別のホストに格納する必要があります。 Hyper-v と重複除去が同じコンピューター上で実行されている場合、2つの機能はシステムリソースに対して競合し、全体のパフォーマンスに悪影響を与えます。
 
-また、"仮想デスクトップインフラストラクチャ (VDI)" 重複除去の最適化の種類を使用するようにボリュームを構成する必要があります。 これを構成するには、サーバーマネージャー (**ファイルサービスおよび記憶域サービス** -&gt; -**ボリューム**&gt;**重複除去設定**) を使用するか、次の Windows PowerShell コマンドを使用します。
+また、"仮想デスクトップインフラストラクチャ (VDI)" 重複除去の最適化の種類を使用するようにボリュームを構成する必要があります。 これを構成するには、サーバーマネージャー (**ファイルサービスおよび記憶域サービス**  - &gt; **ボリューム**の  - &gt; **重複除去設定**) を使用するか、次の Windows PowerShell コマンドを使用します。
 
 ``` syntax
 Enable-DedupVolume <volume> -UsageType HyperV
@@ -63,7 +61,7 @@ RD 仮想化ホストサーバーのサーバー容量を計画する場合、�
 
 ## <a name="performance-optimizations"></a>パフォーマンスの最適化
 
-### <a name="dynamic-memory"></a>動的メモリ
+### <a name="dynamic-memory"></a>Dynamic Memory
 
 動的メモリを使用すると、実行中の仮想マシン間でメモリを分散する方法を分散することにより、Hyper-v を実行しているサーバーのメモリリソースをより効率的に使用できます。 変化するワークロードに応じて、仮想マシン間でメモリを動的に再割り当てできます。
 
@@ -93,7 +91,7 @@ Windows Server 2012 以降のフェールオーバークラスタリングでは
 
 各サービスは、広範なデプロイの前に適切に評価される必要があります。 次に、最初に考慮すべき点をいくつか示します。
 
-| Service                                      | その理由を教えてください。                                                                                                                                                                                                      |
+| サービス                                      | なぜですか?                                                                                                                                                                                                      |
 |----------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 自動更新                                  | プールされた仮想デスクトップは、仮想デスクトップテンプレートを再作成することによって更新されます。                                                                                                                          |
 | オフライン ファイル                                | 仮想デスクトップは常にオンラインであり、ネットワーク上の観点から接続されています。                                                                                                                         |

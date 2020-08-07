@@ -1,20 +1,18 @@
 ---
 title: shrink
 description: DiskPart 圧縮の参照記事。指定した量だけ選択したボリュームのサイズを縮小します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: ec87cc7c-9846-465e-a10d-4ee10db4f4e6
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 68848976b80dc2fe18ac57011c47a935db2d44e2
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: ccae64b5f54c197f8eb1cd684a74c44945b3d069
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86956164"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87882385"
 ---
 # <a name="shrink"></a>shrink
 
@@ -37,7 +35,7 @@ shrink querymax [noerr]
 |   nowait    |                                                       圧縮処理がまだ進行中のときに、直ちにコマンドを返します。                                                        |
 |    noerr    | スクリプトの場合のみ。 エラーが発生しても、エラーが発生しなかったかのように DiskPart はコマンドの処理を続けます。 このパラメーターは、エラー発生すると、DiskPart はエラー コードを生成して終了します。 |
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>Remarks
 - NTFS ファイル システムでフォーマットされている場合またはファイル システムがあるない場合にのみ、ボリュームのサイズを小さくことができます。
 - このコマンドは、ベーシック ボリュームとシンプル ボリュームまたはスパン ダイナミック ボリュームは機能します。
 - 目的の量が指定されていない場合、ボリュームは最小値 (指定されている場合) によって縮小されます。

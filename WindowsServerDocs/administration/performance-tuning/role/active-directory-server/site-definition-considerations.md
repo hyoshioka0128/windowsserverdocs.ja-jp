@@ -1,18 +1,16 @@
 ---
 title: のサイト定義とドメインコントローラーの配置によってパフォーマンスチューニングが追加される
 description: Active Directory パフォーマンスチューニングにおけるサイト定義とドメインコントローラーの配置に関する考慮事項。
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: timwi; chrisrob; herbertm; kenbrumf;  mleary; shawnrab
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 19574c859e038374a4cf3fe1e452adae0891e067
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 7502233cfd71fe2f3e7d25ff6ba246531233d1ff
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471487"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896201"
 ---
 # <a name="proper-placement-of-domain-controllers-and-site-considerations"></a>ドメイン コントローラーとサイトの適切な配置に関する考慮事項
 
@@ -76,7 +74,7 @@ Rodc が使用されているシナリオでは、読み取り/書き込み Dc �
 
 -   使用可能なすべての信頼に対して NULL ドメインが指定された認証要求を渡すことを無効にします。 [Active Directory ドメインコントローラーに多数の外部の信頼がある場合、Lsass.exe プロセスが応答を停止することがある](https://support.microsoft.com/kb/923241/EN-US)
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 - [Active Directory サーバーのパフォーマンス チューニング](index.md)
 - [ハードウェアに関する考慮事項](hardware-considerations.md)
 - [LDAP に関する考慮事項](ldap-considerations.md)

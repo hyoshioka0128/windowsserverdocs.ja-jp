@@ -1,20 +1,18 @@
 ---
 title: 管理-bde オン
 description: ドライブを暗号化し、BitLocker を有効にする manage-bde on コマンドのリファレンス記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: f6a12814-df74-416c-a04a-62ea8512263e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b06c8a37524544201bf9f37a446a8d227f878ee4
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: cb1f58cb5f9683e4f9c01343d86af3332c8c3e32
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85935449"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87886791"
 ---
 # <a name="manage-bde-on"></a>管理-bde オン
 

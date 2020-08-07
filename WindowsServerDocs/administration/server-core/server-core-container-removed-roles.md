@@ -1,27 +1,26 @@
 ---
 title: Server Core コンテナーに含まれていない役割、役割サービス、および機能-Windows Server、バージョン1803
 description: Windows Server の Server Core コンテナーイメージから削除した役割と機能について説明します。
-ms.prod: windows-server
 ms.mktglfcycl: manage
 ms.sitesec: library
 author: lizap
 ms.localizationpriority: medium
 ms.date: 05/07/2018
-ms.openlocfilehash: 41b5a9ac32066f1b2a41de84f66b9be79252c336
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f577ebd805e5373a10dd43a3d5054f92d4881c7d
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383410"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895920"
 ---
 # <a name="roles-role-services-and-features-not-in-server-core-containers---windows-server-version-1803"></a>Server Core コンテナーに含まれていない役割、役割サービス、および機能-Windows Server、バージョン1803
 
-> 適用対象:Windows Server Version 1803
+> 適用先:Windows Server バージョン 1803
 
-Windows Server バージョン1803では、 [Server Core コンテナーイメージ全体のサイズが**1.58 GB**に縮小](https://blogs.technet.microsoft.com/virtualization/2018/01/22/a-smaller-windows-server-core-container-with-better-application-compatibility/)されています。 これを行うには、アーキテクチャを最適化し、 [Server Core コンテナー](https://docs.microsoft.com/virtualization/windowscontainers/about/)で必要のないものを削除します。 コンテナーでは機能しなかったものもあれば、ロールや機能が使用されていないものもあります。 
+Windows Server バージョン1803では、 [Server Core コンテナーイメージ全体のサイズが**1.58 GB**に縮小](https://blogs.technet.microsoft.com/virtualization/2018/01/22/a-smaller-windows-server-core-container-with-better-application-compatibility/)されています。 これを行うには、アーキテクチャを最適化し、 [Server Core コンテナー](https://docs.microsoft.com/virtualization/windowscontainers/about/)で必要のないものを削除します。 コンテナーでは機能しなかったものもあれば、ロールや機能が使用されていないものもあります。
 
 > [!IMPORTANT]
-> Server Core**コンテナー**イメージから削除しました。[サーバーコア自体](server-core-roles-and-services.md)ではありません。 
+> Server Core**コンテナー**イメージから削除しました。[サーバーコア自体](server-core-roles-and-services.md)ではありません。
 
 Server Core コンテナーイメージから削除された機能とロールの完全な一覧を次に示します。
 
@@ -38,7 +37,7 @@ Server Core コンテナーイメージから削除された機能とロール�
 <br>CertificateEnrollmentServer
 <br>すべてのサービス
 <br>ClientForNFS-インフラストラクチャ
-<br>コンテナー
+<br>Containers
 <br>CoreFileServer 場合
 <br>DataCenterBridging-LLDP-Tools
 <br>DataCenterBridging
@@ -70,7 +69,7 @@ Server Core コンテナーイメージから削除された機能とロール�
 <br>Add-windowsfeature fs-iscsitargetserver
 <br>iSCSITargetStorageProviders
 <br>iSNS_Service
-<br>Licensing
+<br>ライセンス
 <br>LightweightServer
 <br>Microsoft-Hyper-v-管理-クライアント
 <br>Microsoft-hyper-v-Offline
@@ -110,7 +109,7 @@ Server Core コンテナーイメージから削除された機能とロール�
 <br>ServerForNFS-インフラストラクチャ
 <br>ServerManager---ツール
 <br>ServerMediaFoundation
-<br>Servermigration.log
+<br>ServerMigration
 <br>SessionDirectory
 <br>SetupAndBootEventCollection
 <br>ShieldedVMToolsAdminPack

@@ -1,20 +1,18 @@
 ---
 title: wbadmin get items
 description: 特定のバックアップに含まれる項目を一覧表示する wbadmin get 項目の参照記事。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 27d08ce3-6e06-4260-b264-fc1bde132d09
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 122fa2033ca553f50a7ddf380faa4a31dbb150cd
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 36f3ca0d114cd31b8211e63d9d9dc9c415c5b216
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86954644"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896323"
 ---
 # <a name="wbadmin-get-items"></a>wbadmin get items
 
@@ -52,7 +50,7 @@ wbadmin get items -version:03/31/2013-09:00
 wbadmin get items -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 -   [Wbadmin](wbadmin.md)

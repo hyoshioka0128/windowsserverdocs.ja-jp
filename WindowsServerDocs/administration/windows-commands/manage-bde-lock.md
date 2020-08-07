@@ -1,20 +1,18 @@
 ---
 title: manage-bde ロック
 description: Manage-bde ロックコマンドのリファレンス記事。ロック解除キーが指定されていない場合、BitLocker で保護されているドライブをロックして、アクセスを防止します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: b8858e61-3a7e-4d03-8c98-5c09853f35e8
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b67342579c827ad195ddf506e529fbfb370a6d94
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 2a1c7fd743832caaacec46ff2fdc7008983b8472
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931623"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87886853"
 ---
 # <a name="manage-bde-lock"></a>manage-bde ロック
 

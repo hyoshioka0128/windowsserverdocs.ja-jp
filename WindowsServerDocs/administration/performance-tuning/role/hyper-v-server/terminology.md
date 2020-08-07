@@ -1,23 +1,21 @@
 ---
 title: Hyper-V の用語
 description: Hyper-v のパフォーマンスチューニングに役立つ hyper-v の用語
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: bba2ef96be812c930fbf0c93d3c3c612fa9c9c5a
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 78552615dd67d79b8c0f4f700068fd302256a567
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471267"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896062"
 ---
 # <a name="hyper-v-terminology"></a>Hyper-v の用語
 このセクションでは、このパフォーマンスチューニングのトピック全体で使用される仮想マシンテクノロジに固有の主な用語をまとめます。
 
-| 用語        | 定義           |
+| 期間        | 定義           |
 | ------------- |:------------|
 |*子パーティション* | ルートパーティションによって作成された任意の仮想マシン。|
 |*デバイスの仮想化* | ハードウェアリソースを抽象化し、複数のコンシューマー間で共有できるようにするメカニズム。|
@@ -37,7 +35,7 @@ ms.locfileid: "85471267"
 | *仮想化スタック*|仮想マシンをサポートするために連携して動作する、ルートパーティション内のソフトウェアコンポーネントのコレクション。 仮想化スタックは、ハイパーバイザーを使用して動作します。 また、管理機能も提供します。|
 |*VMBus*|複数のアクティブな仮想化パーティションがあるシステムでのパーティション間通信とデバイス列挙に使用されるチャネルベースの通信機構。 VMBus は、Hyper-V 統合サービスと共にインストールされます。|
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 -   [Hyper-V のアーキテクチャ](architecture.md)
 

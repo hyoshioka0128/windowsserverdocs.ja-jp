@@ -1,20 +1,18 @@
 ---
 title: manage-bde 変更キーを管理します。
 description: オペレーティングシステムドライブのスタートアップキーを変更する manage-bde 変更キーコマンドのリファレンス記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 69463db9-7e03-47ff-b233-a95d5055725f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7f6b09dfdb73e019b909f43e14a82465573c1a6f
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 3b1ac3801fe78494d33ae57fd869986b55f886d0
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85934995"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87886949"
 ---
 # <a name="manage-bde-changekey"></a>manage-bde 変更キーを管理します。
 

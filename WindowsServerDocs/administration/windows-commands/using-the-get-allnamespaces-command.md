@@ -1,20 +1,18 @@
 ---
 title: get-AllNamespaces
 description: サーバー上のすべての名前空間に関する情報を表示する、get-AllNamespaces のリファレンス記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: e8fe896d-a69a-4180-923b-9f18185f5941
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: de44d659657a8d6df10c0f2ea7b7fb2a670b7f88
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 470aab904f9404b8dbe99409445b0533fa83fedd
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85935054"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896397"
 ---
 # <a name="get-allnamespaces"></a>get-AllNamespaces
 
@@ -22,7 +20,7 @@ ms.locfileid: "85935054"
 
 サーバー上のすべての名前空間についての情報を表示します。
 
-## <a name="syntax"></a>Syntax
+## <a name="syntax"></a>構文
 Windows Server 2008:
 ```
 wdsutil /Get-AllNamespaces [/Server:<Server name>] [/ContentProvider:<name>] [/Show:Clients] [/ExcludedeletePending]

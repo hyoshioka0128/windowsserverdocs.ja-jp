@@ -1,20 +1,18 @@
 ---
 title: where
 description: 指定された検索パターンに一致するファイルの場所を表示する、where の参照記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 0b3486a5-896b-4d92-84b8-e463a0b76487
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 019f38bb47b9aa479a53a824823aba548431e5d3
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: e8f54309035f017c193638d6d6c59ce6a337c04f
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936604"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896505"
 ---
 # <a name="where"></a>where
 
@@ -41,7 +39,7 @@ where [/r <Dir>] [/q] [/f] [/t] [$<ENV>:|<Path>:]<Pattern>[ ...]
 |[$\<ENV>:\|\<Path>:]\<Pattern>[ ...]|一致するファイルの検索パターンを指定します。 少なくとも1つのパターンが必要であり、パターンにはワイルドカード文字 (**&#42;** と **?**) を含めることができます。 既定では、は、現在のディレクトリと PATH 環境変数で指定されているパス**を検索し**ます。 別のパスを指定するには、$*env*:*pattern* ( *ENV*は1つ以上のパスを含む既存の環境変数) を使用するか、 *path*:*pattern*という形式を使用します (ここで、 *path*は検索するディレクトリパスです)。 これらの省略可能な形式は、 **/r**コマンドラインオプションと共に使用することはできません。|
 |/?|コマンド プロンプトにヘルプを表示します。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>Remarks
 
 -   ファイル名拡張子を指定しない場合、PATHEXT 環境変数に記載されている拡張子が既定でパターンに追加されます。
 -   では、再帰的な検索を実行したり、日付やサイズなどのファイル情報を表示したり、ローカルコンピューター上のパスの代わりに環境変数を使用し**たりできます**。

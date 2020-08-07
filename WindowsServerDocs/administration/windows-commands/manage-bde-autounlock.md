@@ -1,20 +1,18 @@
 ---
 title: manage-bde 自動ロック解除
 description: BitLocker で保護されたデータドライブの自動ロック解除を管理する manage-bde 自動ロック解除コマンドのリファレンス記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 063528bf-d235-4b44-887a-52a7d983e01a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a81d3e864a33efd5a6a1c81a5a193338d2c25bfa
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 976f7f4034c9c373d6d5cd347b0807c7a82ea97f
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931634"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87886960"
 ---
 # <a name="manage-bde-autounlock"></a>manage-bde 自動ロック解除
 

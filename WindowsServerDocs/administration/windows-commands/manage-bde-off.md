@@ -1,20 +1,18 @@
 ---
 title: manage-bde をオフにします
 description: ドライブの暗号化を解除し、BitLocker をオフにする manage-bde コマンドの参照記事。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 0a27c119-d385-45e5-89fe-e311d4429876
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 65749f31750b1f7467539b25b09061ea267636df
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 5eb554a77b07028f22707456f90d62422613fb08
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85935522"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87886824"
 ---
 # <a name="manage-bde-off"></a>manage-bde をオフにします
 

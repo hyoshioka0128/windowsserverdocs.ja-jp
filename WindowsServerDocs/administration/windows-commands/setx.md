@@ -1,20 +1,18 @@
 ---
 title: setx
 description: ユーザーまたはシステム環境で環境変数を作成または変更する setx の参照記事。プログラミングやスクリプトは必要ありません。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: ef37482f-f8a8-4765-951a-2518faac3f44
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 69dcbca54419acb9ede0924e3e835bdfaf0633c1
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 0edab4ce56d3e43e26c1d14b32403a2954cbbce6
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85935890"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87882523"
 ---
 # <a name="setx"></a>setx
 
@@ -48,7 +46,7 @@ setx [/s <Computer> [/u [<Domain>\]<User name> [/p [<Password>]]]] /f <FileName>
 |      d\<Delimiters>      |                    **などの**区切り記号を指定します。また、 **\\** 4 つの組み込みの区切り記号 (スペース、タブ、ENTER、およびラインフィード) に加えて使用することもできます。 有効な区切り記号には、ASCII 文字が含まれます。 区切り文字の最大数は、15、組み込みの区切り記号を含みます。                    |
 |             /?             |                                                                                                                                 コマンド プロンプトにヘルプを表示します。                                                                                                                                  |
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>Remarks
 
 -   **Setx** コマンドは、UNIX ユーティリティ SETENV に似ています。
 -   **Setx** は直接かつ永続的にシステムを設定する環境変数の値のみコマンドラインまたはプログラムによる方法を提供します。 システム環境変数を使用して手動で構成できます **コントロール パネルの [** またはレジストリ エディターを使用します。 **設定** コマンド インタープリター (Cmd.exe) の内部では、コマンドが現在のコンソール ウィンドウのみのユーザー環境変数を設定します。

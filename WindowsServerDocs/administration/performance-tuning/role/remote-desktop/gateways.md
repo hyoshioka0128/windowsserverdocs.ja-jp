@@ -1,18 +1,16 @@
 ---
 title: リモートデスクトップゲートウェイのパフォーマンスチューニング
 description: リモートデスクトップゲートウェイのパフォーマンスチューニングに関する推奨事項
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: hammadbu; vladmis
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 3794b47e7226a905944495dd7c31f3196a33d0d5
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 8aeaf524b3621c61cfdd6b0e4edd9d0f8f73ebae
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851735"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896041"
 ---
 # <a name="performance-tuning-remote-desktop-gateways"></a>リモートデスクトップゲートウェイのパフォーマンスチューニング
 
@@ -44,7 +42,7 @@ ms.locfileid: "80851735"
     HKLM\System\CurrentControlSet\Services\InetInfo\Parameters\MaxPoolThreads (REG_DWORD)
     ```
 
-    このパラメーターは、論理プロセッサごとに作成する IIS プールスレッドの数を指定します。 IIS プールのスレッドは、ネットワークで要求を監視し、すべての受信要求を処理します。 **Maxpoolthreads**カウントには RD ゲートウェイ使用するスレッドは含まれません。 既定値は 4 です。
+    このパラメーターは、論理プロセッサごとに作成する IIS プールスレッドの数を指定します。 IIS プールのスレッドは、ネットワークで要求を監視し、すべての受信要求を処理します。 **Maxpoolthreads**カウントには RD ゲートウェイ使用するスレッドは含まれません。 既定値は 4 ですが、
 
 **RD ゲートウェイのリモートプロシージャコールチューニング**
 
@@ -74,38 +72,38 @@ ms.locfileid: "80851735"
 
 -   \\RPC/HTTP プロキシ\\\*
 
--   サーバーごとに RPC/HTTP プロキシを \\\\\*
+-   \\サーバーごとの RPC/HTTP プロキシ\\\*
 
 -   \\Web サービス\\\*
 
--   \\W3SVC\_w3wp.exe\\\*
+-   \\W3SVC \_ w3wp.exe\\\*
 
--   \\IPv4\\\*
+-   \\Ipv4/ipv6\\\*
 
--   \\メモリ\\\*
+-   \\量\\\*
 
--   \\ネットワークインターフェイス (\*)\\\*
+-   \\ネットワークインターフェイス ( \* )\\\*
 
--   \\プロセス (\*)\\\*
+-   \\プロセス ( \* )\\\*
 
--   \\プロセッサ情報 (\*)\\\*
+-   \\プロセッサ情報 ( \* )\\\*
 
--   \\同期 (\*)\\\*
+-   \\同期 ( \* )\\\*
 
--   \\システム\\\*
+-   \\System\\\*
 
 -   \\TCPv4\\\*
 
 次のパフォーマンスカウンターは、レガシ RPC トランスポートにのみ適用されます。
 
--   rpc/HTTP プロキシ\\の \\\* RPC
+-   \\RPC/HTTP プロキシ \\ \* rpc
 
--   rpc/HTTP プロキシをサーバーごとに \\\\\* RPC
+-   \\サーバーごとの RPC/HTTP プロキシ ( \\ \* rpc)
 
--   \\Web サービス\\\* RPC
+-   \\Web サービス \\ \* RPC
 
--   \\W3SVC\_w3wp.exe\\\* RPC
+-   \\W3SVC \_ W3wp.exe \\ \* RPC
 
 > [!NOTE]
-> 該当する場合は、\\IPv6\\\* および \\TCPv6\\\* オブジェクトを追加します。ReplaceThisText
+> 該当する場合は、 \\ IPv6 \\ \* および \\ TCPv6 オブジェクトを追加し \\ \* ます。ReplaceThisText
 

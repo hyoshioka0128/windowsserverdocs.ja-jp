@@ -1,18 +1,17 @@
 ---
 title: Server Core とは
 description: Windows Server の Server Core インストールオプションについて説明します。
-ms.prod: windows-server
 ms.mktglfcycl: manage
 ms.sitesec: library
 author: lizap
 ms.localizationpriority: medium
 ms.date: 02/20/2018
-ms.openlocfilehash: 17bca691fef0ed9478c8ddb49e0511b0a16ac7b7
-ms.sourcegitcommit: 75e87fef264e30af3dfeb57923d5d82b0c51de5d
+ms.openlocfilehash: 01cf2568df3651e5f52649b04aa9d10b9690d597
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85279617"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895838"
 ---
 # <a name="what-is-the-server-core-installation-option-in-windows-server"></a>Windows Server の Server Core インストールオプションとは
 

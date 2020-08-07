@@ -1,18 +1,16 @@
 ---
 title: ソフトウェア定義ネットワークでの SLB ゲートウェイのパフォーマンスチューニング
 description: SDN ネットワークに関する SLB ゲートウェイのパフォーマンスチューニングガイドライン
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: grcusanz; anpaul
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: d1a497f24eba26b3b9b866772ae5171ea0fcbb24
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 64d045a270b8762d0d269055c8c65d1e40a71d63
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851585"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895937"
 ---
 # <a name="slb-gateway-performance-tuning-in-software-defined-networks"></a>ソフトウェア定義ネットワークでの SLB ゲートウェイのパフォーマンスチューニング
 
@@ -22,7 +20,7 @@ ms.locfileid: "80851585"
 
 ## <a name="slb-mux-vm-configuration"></a>SLB Mux VM 構成
 
-SLB Mux 仮想マシンは、アクティブ/アクティブ構成で展開されます。  これは、ネットワークコントローラーにデプロイされて追加されたすべての Mux VM が受信要求を処理できることを意味します。  このため、すべての接続の合計スループットは、デプロイした Mux Vm の数によってのみ制限されます。  
+SLB Mux 仮想マシンは、アクティブ/アクティブ構成で展開されます。  これは、ネットワークコントローラーにデプロイされて追加されたすべての Mux VM が受信要求を処理できることを意味します。  このため、すべての接続の合計スループットは、デプロイした Mux Vm の数によってのみ制限されます。
 
 仮想 IP (VIP) への個々の接続は、常に同じ Mux に送信されます。これは、muxes の数が一定のままであることを前提としています。その結果、スループットは単一の Mux VM のスループットに制限されます。  Muxes は、VIP 宛ての受信トラフィックのみを処理します。  応答パケットは、応答をクライアントに転送する物理スイッチに送信している VM から直接送られます。
 

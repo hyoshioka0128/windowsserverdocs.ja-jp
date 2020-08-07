@@ -1,20 +1,18 @@
 ---
 title: sort
 description: 並べ替えに関する参照記事。入力を読み取り、データを並べ替え、結果を画面、ファイル、または別のデバイスに書き込みます。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 77116469-4790-4442-8a21-9fa73b65ef9f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a3246745a2dceddec6cb1a66a4316ea7a8acb522
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: ec95133af8e9c2c617fedc3bf6a3085a6663b104
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85937064"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87882356"
 ---
 # <a name="sort"></a>sort
 
@@ -42,7 +40,7 @@ sort [/r] [/+<N>] [/m <Kilobytes>] [/l <Locale>] [/rec <Characters>] [[<Drive1>:
 |/o [ \<Drive3> :] [ \<Path3> ]\<FileName3>|並べ替えられた入力を格納するファイルを指定します。 指定しない場合、データは標準出力に書き込まれます。 出力ファイルの指定は、標準出力を同じファイルにリダイレクトするよりも高速です。|
 |/?|コマンド プロンプトにヘルプを表示します。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>Remarks
 
 -   **/+** コマンドラインオプションの使用
 

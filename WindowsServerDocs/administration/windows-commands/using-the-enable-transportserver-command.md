@@ -1,20 +1,18 @@
 ---
 title: 有効にする-TransportServer
 description: トランスポートサーバーのすべてのサービスを有効にする enable TransportServer のリファレンス記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 9d79dba1-4b57-4a00-8cba-877e6b8618e6
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d4cd87b78e7a84255593464fede553bc294138c7
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 3d49e8d39ea1e0de1a6f756ffa55e03f210100b4
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936271"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896412"
 ---
 # <a name="enable-transportserver"></a>有効にする-TransportServer
 

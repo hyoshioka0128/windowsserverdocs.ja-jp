@@ -1,19 +1,17 @@
 ---
 title: wecutil
 description: 「Wecutil のリファレンス記事。リモートコンピューターから転送されるイベントのサブスクリプションを作成および管理できます。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 0c82a6cb-d652-429c-9c3d-0f568c78d54b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dansimps
-ms.openlocfilehash: af9e987bb78e4ef326f01effec6f3d7b53145091
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: be3c05bcb8122db0dddd1eea8823222786d58008
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924789"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896527"
 ---
 # <a name="wecutil"></a>wecutil
 
@@ -37,12 +35,12 @@ wecutil  [{es | enum-subscription}]
 
 ### <a name="parameters"></a>パラメーター
 
-|パラメーター|Description|
+|パラメーター|説明|
 |---------|-----------|
 |{es \| 列挙型-サブスクリプション}|存在するすべてのリモートイベントサブスクリプションの名前が表示されます。|
 |{gs \| 取得-サブスクリプション} \<Subid>[/f: \<Format> ][/uni: \<Unicode> ]|リモートサブスクリプションの構成情報を表示します。 \<Subid>サブスクリプションを一意に識別する文字列です。 \<Subid>は、 \<SubscriptionId> サブスクリプションの作成に使用された XML 構成ファイルのタグで指定した文字列と同じです。|
 |{gr \| get-subscriptionruntimestatus} \<Subid>[ \<Eventsource> ...]|サブスクリプションのランタイムの状態を表示します。 \<Subid>サブスクリプションを一意に識別する文字列です。 \<Subid>は、 \<SubscriptionId> サブスクリプションの作成に使用された XML 構成ファイルのタグで指定した文字列と同じです。 \<Eventsource>は、イベントのソースとして機能するコンピューターを識別する文字列です。 \<Eventsource>には、完全修飾ドメイン名、NetBIOS 名、または IP アドレスを指定する必要があります。|
-|{ss \| 設定-サブスクリプション} \<Subid>[/e: [ \<Subenabled> ]] [/esa: \<Address> ] [/ese: [ \<Srcenabled> ]] [/aes] [/res] [/un: \<Username> ] [/up: \<Password> ] [/d:] [/ \<Desc> uri: \<Uri> ] [/cm: \<Configmode> ] [/ex:] [ \<Expires> /q: \<Query> ] [/dia:] \<Dialect> [/tn: \<Transportname> ] [/tp: \<Transportport> ] [/dm:] [ \<Deliverymode> /dmi: \<Deliverymax> ] [/dmlt:] [/hi:] [/cf:] [/l:] [//lf \<Deliverytime> \<Heartbeat> \<Content> \<Locale> : [ \<Readexist> ]] [: \<Logfile> ] \<Publishername> \<Enableport> \<Hostname> \<Type> [//////] [/] [/ct:]</br>または</br>{ss \| set-subscription/c: \<Configfile> [/cun: \<Comusername> /カップ: \<Compassword> ]|サブスクリプションの構成を変更します。 サブスクリプション ID と、サブスクリプションパラメーターを変更するための適切なオプションを指定できます。また、XML 構成ファイルを指定してサブスクリプションパラメーターを変更することもできます。|
+|{ss \| 設定-サブスクリプション} \<Subid>[/e: [ \<Subenabled> ]] [/esa: \<Address> ] [/ese: [ \<Srcenabled> ]] [/aes] [/res] [/un: \<Username> ] [/up: \<Password> ] [/d:] [/ \<Desc> uri: \<Uri> ] [/cm: \<Configmode> ] [/ex:] [ \<Expires> /q: \<Query> ] [/dia:] \<Dialect> [/tn: \<Transportname> ] [/tp: \<Transportport> ] [/dm:] [ \<Deliverymode> /dmi: \<Deliverymax> ] [/dmlt:] [/hi:] [/cf:] [/l:] [//lf \<Deliverytime> \<Heartbeat> \<Content> \<Locale> : [ \<Readexist> ]] [: \<Logfile> ] \<Publishername> \<Enableport> \<Hostname> \<Type> [//////] [/] [/ct:]</br>or</br>{ss \| set-subscription/c: \<Configfile> [/cun: \<Comusername> /カップ: \<Compassword> ]|サブスクリプションの構成を変更します。 サブスクリプション ID と、サブスクリプションパラメーターを変更するための適切なオプションを指定できます。また、XML 構成ファイルを指定してサブスクリプションパラメーターを変更することもできます。|
 |{cs \| 作成-サブスクリプション} \<Configfile>[/cun: \<Username> /カップ: \<Password> ]|リモートサブスクリプションを作成します。 \<Configfile>サブスクリプション構成を含む XML ファイルへのパスを指定します。 絶対パスまたは現在のディレクトリを基準とした相対パスを指定できます。|
 |{ds \| 削除-サブスクリプション}\<Subid>|サブスクリプションのイベントログにイベントを配信するすべてのイベントソースからサブスクリプションとアンサブスクライブを削除します。 既に受信してログに記録されているイベントは削除されません。 \<Subid>サブスクリプションを一意に識別する文字列です。 \<Subid>は、 \<SubscriptionId> サブスクリプションの作成に使用された XML 構成ファイルのタグで指定した文字列と同じです。|
 |{rs \| 再試行-サブスクリプション} \<Subid>[ \<Eventsource> ...]|接続の確立を再試行し、アクティブでないサブスクリプションにリモートサブスクリプション要求を送信します。 すべてのイベントソースまたは指定されたイベントソースの再アクティブ化を試みます。 無効なソースは再試行されません。 \<Subid>サブスクリプションを一意に識別する文字列です。 \<Subid>は、 \<SubscriptionId> サブスクリプションの作成に使用された XML 構成ファイルのタグで指定した文字列と同じです。 \<Eventsource>は、イベントのソースとして機能するコンピューターを識別する文字列です。 \<Eventsource>には、完全修飾ドメイン名、NetBIOS 名、または IP アドレスを指定する必要があります。|
@@ -85,7 +83,7 @@ wecutil  [{es | enum-subscription}]
 |カップ\<Compassword>|共有ユーザー資格情報のユーザーパスワードを設定します。 \<Compassword>が * (アスタリスク) に設定されている場合、パスワードはコンソールから読み込まれます。 このオプションは、 **/cun**オプションが指定されている場合にのみ有効です。|
 |/q: [ \<Quiet> ]|構成手順で確認を求めるメッセージを表示するかどうかを指定します。 \<Quiet>true または false を指定できます。 <Quiet>が true の場合、構成手順によって確認メッセージが表示されません。 このオプションの既定値は false です。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>Remarks
 
 > [!IMPORTANT]
 > "RPC サーバーは使用できませんか?" というメッセージが表示された場合は、「wecutil を実行しようとすると、Windows イベントコレクターサービス (wecsvc) を開始する必要があります。 Wecsvc を起動するには、管理者特権のコマンドプロンプトで「net start wecsvc」と入力します。

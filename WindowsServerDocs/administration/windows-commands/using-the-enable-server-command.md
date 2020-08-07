@@ -1,20 +1,18 @@
 ---
 title: サーバーを有効にする
 description: Windows 展開サービスのすべてのサービスを有効にする、enable サーバーのリファレンス記事。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 939ffbfb-cf3c-4310-9627-6e7e0c0644d6
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a0c82614049540e658061bd55bf40f0d0b3beb16
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 04884c4f4648db4ff78446048f34ea1ec609d154
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936819"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896545"
 ---
 # <a name="enable-server"></a>サーバーを有効にする
 

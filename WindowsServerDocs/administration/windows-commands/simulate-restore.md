@@ -1,20 +1,18 @@
 ---
 title: simulate restore
 description: 復元前または PostRestore イベントをライターに発行せずに、コンピューター上の復元セッションでライターが関与することをテストするシミュレートされた復元のリファレンス記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: d883d94c-3cb1-4848-9d74-1b4378044b31
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7cc247848ef4fac1e3a6537247f640f3533c2bcd
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: ec2c49f0dfcb68f6b3b6ef0567778a4317e7dc24
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936354"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87882344"
 ---
 # <a name="simulate-restore"></a>復元をシミュレートします。
 

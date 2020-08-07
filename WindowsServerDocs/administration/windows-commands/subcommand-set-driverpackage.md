@@ -1,20 +1,18 @@
 ---
 title: サブコマンドの設定-DriverPackage
 description: サブコマンド set DriverPackage のリファレンス記事。サーバー上のドライバーパッケージの名前を変更するか、有効または無効にします。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 11804bb6-ca29-4461-8c63-5131748cd742
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4c29d6de46d59ce4d30622c048c8cebc33b1d496
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 2b34802a0328a6e73469d8493f1453663740a243
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85937172"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87882181"
 ---
 # <a name="subcommand-set-driverpackage"></a>サブコマンド: セット DriverPackage
 

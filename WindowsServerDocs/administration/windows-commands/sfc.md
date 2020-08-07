@@ -1,20 +1,18 @@
 ---
 title: sfc
 description: すべての保護されたシステムファイルの整合性をスキャンおよび検証し、不適切なバージョンを正しいバージョンに置き換える sfc のリファレンス記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: c58c25da-e028-42a6-9e10-973484a4b953
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8f4b0798f9c0e3e1c70ca701de1ea2246bddf7b9
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 56aa6a1f07b75e37111d265fc15253ba1d3a7f1d
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931608"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87882475"
 ---
 # <a name="sfc"></a>sfc
 
@@ -40,7 +38,7 @@ sfc [/scannow] [/verifyonly] [/scanfile=<file>] [/verifyfile=<file>] [/offwindir
 |/offbootdir|オフラインのオフライン ブート ディレクトリの場所を指定します|
 |/?|コマンド プロンプトにヘルプを表示します。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>Remarks
 -   実行する管理者グループのメンバーとしてログオンする必要があります **sfc.exe**します。
 -   **sfc**によって保護されたファイルが上書きされたことが検出されると、 **systemroot\system32\dllcache**フォルダーから正しいバージョンのファイルが取得され、正しくないファイルが置き換えられます。
 -   Windows Server 2003、windows server 2008、および Windows Server 2008 R2 の**sfc**には、機能上の違いがあります。

@@ -1,24 +1,22 @@
 ---
 title: サーバー マネージャーのキーボード ショートカット
 description: サーバー マネージャー
-ms.prod: windows-server
-ms.technology: manage-server-manager
 ms.topic: article
 ms.assetid: 96a2a8be-cbeb-4799-9034-284ea057915c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8135f453f633f8193fa56d80ae05cd9601435c87
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 182a99ff3c20ff8a62b36714967b25603ff055b3
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851515"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895768"
 ---
 # <a name="keyboard-shortcuts-for-server-manager"></a>サーバー マネージャーのキーボード ショートカット
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 サーバーマネージャーは Windows Server 2012 以降で完全に再設計されているため、Windows Server 2008 R2 または Windows Server 2008 のサーバーマネージャーコンソールで作業していたキーボードショートカットは必ずしも同じコマンドであるとは限りません。 このトピックでは、Windows Server 2012 および windows Server の新しいリリースでのサーバーマネージャーの新しいキーボードショートカットとアクセスキーについて説明します。
 
@@ -51,11 +49,11 @@ ms.locfileid: "80851515"
 |更新|**F5**|
 |[通知] 領域で、[タスクの詳細] ダイアログボックスを開く|**Alt + N**|
 |[管理] メニュー|**Alt + M**|
-|[View (表示)] メニュー|**Alt + V**|
+|[表示] メニュー|**Alt + V**|
 |[ヘルプ] メニュー|**Alt + H**|
 |サーバーマネージャーヘルプを開く|**F1**|
-|拡大|**Ctrl + 正符号 (+)**|
-|縮小|**Ctrl + マイナス記号 (-)**|
+|拡大します|**Ctrl + 正符号 (+) キー**|
+|縮小します|**Ctrl + マイナス記号 (-) キー**|
 |コンソールを 100% で表示する|**Ctrl + 0**|
 
 **役割、グループ、またはローカルサーバーの各ページのタイル**
@@ -70,11 +68,11 @@ ms.locfileid: "80851515"
 |役割、グループ、またはローカル サーバーの各ページの [役割と機能] タイル|**Alt + A**|
 |[すべてのサーバー] ページの [サーバー] タイル|**Alt + A**|
 
-**ローカルサーバーのプロパティタイル内での移動**
+**[ローカル サーバーのプロパティ] タイル内でのナビゲート**
 
 |コントロール グループ|アクセス キー|
 |---------|-------|
-|コンピューター名|**Alt + C**|
+|コンピュータ名|**Alt + C**|
 |更新プログラムの最終インストール日時|**Alt + L**|
 |ドメインまたはワークグループ|**Alt + D**|
 |Windows Update|**Alt + W**|
@@ -89,7 +87,7 @@ ms.locfileid: "80851515"
 |IE セキュリティ強化の構成|**Alt + Y**|
 |タイムゾーン|**Alt + Z**|
 
-**[イベント]、[サービス]、[BPA]、[パフォーマンス]、[役割と機能] の各タイル内の移動**
+**[イベント]、[サービス]、[BPA]、[パフォーマンス]、[役割と機能] の各タイル内でのナビゲート**
 
 |コントロール グループ|アクセス キー|
 |---------|-------|

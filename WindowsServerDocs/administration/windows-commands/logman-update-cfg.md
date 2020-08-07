@@ -1,20 +1,18 @@
 ---
 title: logman update cfg
 description: 既存の構成データコレクターのプロパティを更新する logman update cfg コマンドの参照記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 9da4e8b4-3be5-42d3-b0b4-c429630c35c4
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6e2d50504d8d4b9a92d36e4279a10526ddbd7877
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: addd9b1dfc60acdd5fa093970f393d4ebe61b3fa
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85933891"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887192"
 ---
 # <a name="logman-update-cfg"></a>logman update cfg
 
@@ -33,11 +31,11 @@ logman update cfg <[-n] <name>> [options]
 
 | パラメーター | 説明 |
 | --------- | ----------- |
-| -s`<computer name>` | 指定されたリモートコンピューターでコマンドを実行します。 |
+| -s `<computer name>` | 指定されたリモートコンピューターでコマンドを実行します。 |
 | -config`<value>` | コマンドオプションを含む設定ファイルを指定します。 |
 | [-n]`<name>` | 対象オブジェクトの名前。 |
 | -[-] u`<user [password]>` | として実行するユーザーを指定します。 パスワードのを入力すると、パスワードの入力を \* 求めるメッセージが表示されます。 パスワードは、パスワード用プロンプトで入力した場合は表示されません。 |
-| -m`<[start] [stop] [[start] [stop] [...]]>` | スケジュールされた開始時刻または終了時刻ではなく、手動で開始または停止するように変更します。 |
+| -m `<[start] [stop] [[start] [stop] [...]]>` | スケジュールされた開始時刻または終了時刻ではなく、手動で開始または停止するように変更します。 |
 | -rf`<[[hh:]mm:]ss>` | 指定した期間だけデータコレクターを実行します。 |
 | -b`<M/d/yyyy h:mm:ss[AM|PM]>` | 指定された時間にデータの収集を開始します。 |
 | -e `<M/d/yyyy h:mm:ss[AM|PM]>` | 指定された時間にデータ収集を終了します。 |
@@ -57,7 +55,7 @@ logman update cfg <[-n] <name>> [options]
 | -ftc`<path [path [...]]>` | 収集するファイルの完全パスを指定します。 |
 | /? | 状況依存のヘルプを表示します。 |
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>Remarks
 
 - [-] が一覧表示されている場合は、余分なハイフン (-) を追加すると、オプションが無効になります。
 

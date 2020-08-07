@@ -1,20 +1,18 @@
 ---
 title: shutdown
 description: シャットダウンの参照記事。ローカルコンピューターまたはリモートコンピューターを1つずつシャットダウンまたは再起動することができます。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: c432f5cf-c5aa-4665-83af-0ec52c87112e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2f31e5b0ee1252bf015c964fa76dd2852df3515b
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 8dff8150cb6ccfea24238567581320a9b11650d3
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86956124"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87882363"
 ---
 # <a name="shutdown"></a>shutdown
 
@@ -47,10 +45,10 @@ shutdown [/i | /l | /s | /r | /a | /p | /h | /e] [/f] [/m \\<ComputerName>] [/t 
 |スイッチ\<Comment>|シャットダウンの理由について詳しいコメントを付けることができます。 使用して最初の理由を提供する必要があります、 **/d** オプション。 コメントは引用符で囲む必要があります。 文字数の上限は 511 文字です。|
 |/?|ローカル コンピューターで定義されているメジャーおよびマイナーな理由の一覧を含むコマンド プロンプトでヘルプを表示します。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>Remarks
 
 -   ユーザーを割り当てる必要がある、 **システムをシャット ダウン** シャット ダウン、ローカルまたはリモートにユーザー権限を使用しているコンピューターの管理、 **シャット ダウン** コマンドです。
--   ユーザーは、Administrators グループのメンバーは、ローカルまたはリモートで管理されるコンピューターの予期しないシャット ダウンに注釈を付けるである必要があります。 ターゲット コンピューターがドメインに参加している場合、Domain Admins グループのメンバーはこの手順を実行できる可能性があります。 詳細については、次を参照してください。
+-   ユーザーは、Administrators グループのメンバーは、ローカルまたはリモートで管理されるコンピューターの予期しないシャット ダウンに注釈を付けるである必要があります。 ターゲット コンピューターがドメインに参加している場合、Domain Admins グループのメンバーはこの手順を実行できる可能性があります。 詳細については次を参照してください:
     -   [既定のローカル グループ](/previous-versions/windows/it-pro/windows-server-2003/cc785098(v=ws.10))
     -   [既定のグループ](/previous-versions/windows/it-pro/windows-server-2003/cc756898(v=ws.10))
 -   一度に複数のコンピューターをシャットダウンする場合は、スクリプトを使用して各コンピューターの**shutdown**を呼び出すか、または**shutdown** **/i**を使用して [リモートシャットダウン] ダイアログボックスを表示することができます。
@@ -68,6 +66,6 @@ shutdown /r /t 60 /c Reconfiguring myapp.exe /f /d p:4:1
 shutdown /r /m \\servername /t 60 /c Reconfiguring myapp.exe /f /d p:4:1
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

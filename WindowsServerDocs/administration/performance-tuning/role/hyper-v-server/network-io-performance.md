@@ -1,18 +1,16 @@
 ---
 title: Hyper-v ネットワーク i/o パフォーマンス
 description: Hyper-v のパフォーマンスチューニングに関するネットワーク i/o のパフォーマンスに関する考慮事項
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: dcf43bf41edada0a2e3df6fde825ff128a119a8f
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: b21ed45b97b1bc657b8a77ac7731dd32f5090c3d
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471357"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896101"
 ---
 # <a name="hyper-v-network-io-performance"></a>Hyper-v ネットワーク i/o パフォーマンス
 
@@ -35,7 +33,7 @@ ms.locfileid: "85471357"
 
 Windows Server 2012 R2 では、ネットワーク経由で転送する前にメモリを圧縮したり、ハードウェアでサポートされている場合はリモートダイレクトメモリアクセス (RDMA) を使用して、ライブマイグレーションを高速化するオプションが導入されました。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 -   [Hyper-V の用語](terminology.md)
 

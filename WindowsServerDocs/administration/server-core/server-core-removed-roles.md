@@ -1,22 +1,21 @@
 ---
 title: Windows Server ではない役割、役割サービス、および機能-Server Core
 description: Windows Server の Server Core インストールオプションに含まれていない役割と機能について説明します。
-ms.prod: windows-server
 ms.mktglfcycl: manage
 ms.sitesec: library
 author: lizap
 ms.localizationpriority: medium
 ms.date: 02/23/2018
-ms.openlocfilehash: ce8fd0edc426b673f873717a27e6045e3476170f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b2dd8012048d2a055fc412676874170395c597cd
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383357"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895873"
 ---
 # <a name="roles-role-services-and-features-not-in-windows-server---server-core"></a>Windows Server ではない役割、役割サービス、および機能-Server Core
 
-> 適用対象:Windows Server 2019、Windows Server 2016、および Windows Server (半期チャネル)
+> 適用対象: Windows Server 2019、Windows Server 2016、および Windows Server (半期チャネル)
 
 Windows Server の Server Core インストールオプションから、次の役割、役割サービス、および機能が削除されました。 この情報は、お使いの環境で Server Core オプションが機能するかどうかを判断するのに役立ちます。
 
@@ -58,7 +57,7 @@ Windows Server の Server Core インストールオプションから、次の�
 - リモートサーバー管理ツール \ 機能管理ツール \ ネットワーク負荷分散ツール (**RSAT-NLB**)
 - リモートサーバー管理ツール \ 機能管理ツール \ SNMP ツール (**RSAT-SNMP**)
 - リモートサーバー管理ツール \ 機能管理ツール \ WINS サーバーツール (**RSAT-WINS**)
-- リモートサーバー管理ツール \ 役割管理ツール \ hyper-v 管理ツール \ hyper-v GUI 管理ツール (**hyper-v-ツール**)
+- リモートサーバー管理ツール] \ 役割管理ツール \ hyper-v 管理ツール \ hyper-v GUI 管理ツール (**hyper-v-ツール**)
 - リモートサーバー管理ツール \ 役割管理ツール \ リモートデスクトップサービスツール \ リモートデスクトップゲートウェイツール (**RSAT-RDS-ツール**)
 - リモートサーバー管理ツール \ 役割管理ツール \ リモートデスクトップサービスツール \ リモートデスクトップゲートウェイツール (**RSAT-ゲートウェイ**)
 - リモートサーバー管理ツールの役割管理ツール \ リモートデスクトップサービスツール \ リモートデスクトップライセンス診断ツール (**RSAT-RDS-Licensing-診断-UI**)

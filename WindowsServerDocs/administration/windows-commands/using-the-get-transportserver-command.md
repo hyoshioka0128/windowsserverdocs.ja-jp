@@ -1,20 +1,18 @@
 ---
 title: get TransportServer
 description: 指定されたトランスポートサーバーに関する情報を表示する、TransportServer のリファレンス記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: de634123-0179-41b2-9c6f-726508130ff5
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 115942290679decd8b8c660e4113576efb30123d
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: bebe03058544591d98dd827325b9740fb0fa65df
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932170"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896373"
 ---
 # <a name="get-transportserver"></a>get TransportServer
 

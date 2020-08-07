@@ -1,18 +1,17 @@
 ---
 title: Server Core への修正プログラムの適用
 description: Windows Server の Server Core インストールを更新する方法について説明します。
-ms.prod: windows-server
 ms.mktglfcycl: manage
 ms.sitesec: library
 author: lizap
 ms.localizationpriority: medium
 ms.date: 10/17/2017
-ms.openlocfilehash: d670add6e4b4fc7369c48905bb297642ae07ff20
-ms.sourcegitcommit: b7f55949f166554614f581c9ddcef5a82fa00625
+ms.openlocfilehash: eb444dd05359f033bec8b45aa9ed53a6ed5096c6
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72588063"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895856"
 ---
 # <a name="patch-a-server-core-installation"></a>Server Core インストールにパッチを適用する
 
@@ -29,9 +28,9 @@ Server Core に新しい更新プログラムを追加する前に、既にイ�
 
 Windows PowerShell を使用して更新プログラムを表示するには、 **get-help**を実行します。
 
-コマンドを実行して更新プログラムを表示するには、 **printbrm.exe**を実行します。 ツールがシステムを検査する間、しばらく時間がかかることがあります。
+コマンドを実行して更新プログラムを表示するには、 **systeminfo.exe**を実行します。 ツールがシステムを検査する間、しばらく時間がかかることがあります。
 
-また、コマンドラインから**wmic qfe リスト**を実行することもできます。 
+また、コマンドラインから**wmic qfe リスト**を実行することもできます。
 
 ## <a name="patch-server-core-automatically-with-windows-update"></a>Windows Update で自動的に Server Core にパッチを適用する
 
@@ -39,46 +38,46 @@ Windows PowerShell を使用して更新プログラムを表示するには、 
 
 1. 現在の Windows Update 設定を確認します。
    ```
-   %systemroot%\system32\Cscript %systemroot%\system32\scregedit.wsf /AU /v 
+   %systemroot%\system32\Cscript %systemroot%\system32\scregedit.wsf /AU /v
    ```
 
 2. 自動更新を有効にするには:
 
    ```
-   Net stop wuauserv 
-   %systemroot%\system32\Cscript %systemroot%\system32\scregedit.wsf /AU 4 
+   Net stop wuauserv
+   %systemroot%\system32\Cscript %systemroot%\system32\scregedit.wsf /AU 4
    Net start wuauserv
-   ```  
+   ```
 
 3. 自動更新を無効にするには、次のように実行します。
 
    ```
-   Net stop wuauserv 
-   %systemroot%\system32\Cscript %systemroot%\system32\scregedit.wsf /AU 1 
-   Net start wuauserv 
+   Net stop wuauserv
+   %systemroot%\system32\Cscript %systemroot%\system32\scregedit.wsf /AU 1
+   Net start wuauserv
    ```
 
-サーバーがドメインのメンバーである場合は、グループ ポリシーを使用して Windows Update を構成することもできます。 詳しくは、「 https://go.microsoft.com/fwlink/?LinkId=192470 」をご覧ください。 ただし、この方法を使用すると、グラフィカルインターフェイスがないため、Server Core インストールに関連するオプション 4 ("自動ダウンロードしてインストールをスケジュールする") のみが使用されます。 インストールする更新プログラムとインストールするタイミングをより詳細に制御するには、ほとんどの Windows Update グラフィカル インターフェイスと同等のコマンド ライン機能を提供するスクリプトを使用します。 スクリプトの詳細については、「 https://go.microsoft.com/fwlink/?LinkId=192471 」を参照してください。
+サーバーがドメインのメンバーである場合は、グループ ポリシーを使用して Windows Update を構成することもできます。 詳細については、「https://go.microsoft.com/fwlink/?LinkId=192470」を参照してください。 ただし、この方法を使用すると、グラフィカルインターフェイスがないため、Server Core インストールに関連するオプション 4 ("自動ダウンロードしてインストールをスケジュールする") のみが使用されます。 インストールする更新プログラムとインストールするタイミングをより詳細に制御するには、ほとんどの Windows Update グラフィカル インターフェイスと同等のコマンド ライン機能を提供するスクリプトを使用します。 スクリプトの詳細については、「」を参照してください https://go.microsoft.com/fwlink/?LinkId=192471 。
 
 Windows Update が使用可能なすべての更新プログラムを即座に検出してインストールするように強制するには、次のコマンドを実行します。
 
 ```
-Wuauclt /detectnow 
+Wuauclt /detectnow
 ```
 
 インストールされる更新プログラムによっては、コンピューターの再起動が必要になる場合があります。ただし、これはシステムから通知されません。 インストールプロセスが完了したかどうかを判断するには、タスクマネージャーを使用して、 **wuauclt.exe**または**信頼さ**れたインストーラプロセスがアクティブに実行されていないことを確認します。 「 [Server Core サーバーにインストールされている更新プログラムを表示](#view-the-updates-installed-on-your-server-core-server)する」の方法を使用して、インストールされている更新プログラムの一覧を確認することもできます。
 
-## <a name="patch-the-server-with-wsus"></a>WSUS を使用してサーバーに修正プログラムを適用する 
+## <a name="patch-the-server-with-wsus"></a>WSUS を使用してサーバーに修正プログラムを適用する
 
 Server Core サーバーがドメインのメンバーである場合は、WSUS サーバーとグループ ポリシーを使用するようにサーバーを構成できます。 詳細については、[グループポリシー参照情報](https://www.microsoft.com/download/details.aspx?id=25250)をダウンロードしてください。 また、[自動更新のグループポリシー設定の構成](../windows-server-update-services/deploy/4-configure-group-policy-settings-for-automatic-updates.md)を確認することもできます。
 
 ## <a name="patch-the-server-manually"></a>サーバーに手動で修正プログラムを適用する
 
 更新プログラムをダウンロードし、Server Core インストールで使用できるようにします。
-コマンドプロンプトで、次のコマンドを実行します。
+コマンド プロンプトで、次のコマンドを実行します。
 
 ```
-Wusa <update>.msu /quiet 
+Wusa <update>.msu /quiet
 ```
 
 インストールされる更新プログラムによっては、コンピューターの再起動が必要になる場合があります。ただし、これはシステムから通知されません。
@@ -86,6 +85,6 @@ Wusa <update>.msu /quiet
 更新プログラムを手動でアンインストールするには、次のコマンドを実行します。
 
 ```
-Wusa /uninstall <update>.msu /quiet 
+Wusa /uninstall <update>.msu /quiet
 ```
 

@@ -1,20 +1,18 @@
 ---
 title: wevtutil
 description: Wevtutil のリファレンス記事。イベントログとパブリッシャーに関する情報を取得できます。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: d4c791e0-7e59-45c5-aa55-0223b77a4822
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0f76f04e54f1b502f3e816e4f547873d2ac6e1b4
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 11eb4d3d2ab9c07ed9fe2cdd3ee03855731fb65b
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86958724"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896520"
 ---
 # <a name="wevtutil"></a>wevtutil
 
@@ -38,7 +36,7 @@ wevtutil [{el | enum-logs}] [{gl | get-log} <Logname> [/f:<Format>]]
 
 ### <a name="parameters"></a>パラメーター
 
-|パラメーター|Description|
+|パラメーター|説明|
 |---------|-----------|
 |{el \| 列挙-ログ}|すべてのログの名前を表示します。|
 |{gl \| 取得ログ} \<Logname>[/f: \<Format> ]|指定したログの構成情報を表示します。ログが有効になっているかどうか、ログの現在の最大サイズ制限、およびログが保存されているファイルへのパスが含まれます。|
@@ -87,7 +85,7 @@ wevtutil [{el | enum-logs}] [{gl | get-log} <Logname> [/f:<Format>]]
 |     /a\<Auth>     |                                                                                                                                                                                             リモートコンピューターに接続するための認証の種類を定義します。 \<Auth>既定値、Negotiate、Kerberos、NTLM のいずれかを指定できます。 既定値は Negotiate です。                                                                                                                                                                                              |
 |  方向\<Unicode>   |                                                                                                                                                                                                             Unicode で出力を表示します。 \<Unicode>true または false を指定できます。 <Unicode>が true の場合、出力は Unicode になります。                                                                                                                                                                                                             |
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>Remarks
 
 -   構成ファイルを sl パラメーターと共に使用する
 
@@ -149,6 +147,6 @@ C:\admin\backups\a10306.evtx に保存した後、アプリケーションログ
 wevtutil cl Application /bu:C:\admin\backups\a10306.evtx
 ```
 
-#### <a name="additional-references"></a>その他のリファレンス
+#### <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

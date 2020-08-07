@@ -1,20 +1,18 @@
 ---
 title: manage-bde keypackage
 description: ドライブのキーパッケージを生成する manage-bde keypackage コマンドのリファレンス記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: c631ef10-2a2f-4541-8578-292f2d4e9e80
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4bdbd9bb46b75e7dc87cae1cd6e9b3a101ff91ff
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 969b9fc85959d137ec8b6bfc6b377f48e02e5157
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85928566"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87886873"
 ---
 # <a name="manage-bde-keypackage"></a>manage-bde keypackage
 

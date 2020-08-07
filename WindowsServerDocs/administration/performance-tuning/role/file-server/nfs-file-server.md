@@ -1,18 +1,16 @@
 ---
 title: NFS ファイルサーバーのパフォーマンスチューニング
 description: NFS ファイルサーバーのパフォーマンスチューニング
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: article
 author: phstee
 ms.author: roopeshb, nedpyle
 ms.date: 10/16/2017
-ms.openlocfilehash: 9bee396532c3319e43d10012e098533495cf0b03
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 897e45a99ac4640c5fbae4287ac99a0bce6eae66
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851855"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896182"
 ---
 # <a name="performance-tuning-nfs-file-servers"></a>NFS ファイルサーバーのパフォーマンスチューニング
 
@@ -25,7 +23,7 @@ NFS version 4.1 プロトコルには、レジストリの調整は必要あり�
 
 ### <a name="service-for-nfs-model-overview"></a>NFS 用サービスモデルの概要
 
-Microsoft Services for NFS は、Windows および UNIX 環境が混在している企業向けのファイル共有ソリューションを提供します。 この通信モデルは、クライアントコンピューターとサーバーで構成されています。 クライアント上のアプリケーションは、リダイレクター (Rdbss) および NFS ミニリダイレクター () を介してサーバーにあるファイルを要求します。 ミニリダイレクターは、NFS プロトコルを使用して、TCP/IP 経由で要求を送信します。 サーバーは、TCP/IP を介してクライアントから複数の要求を受信し、ローカルファイルシステム (ntfs.sys) に要求をルーティングして、記憶域スタックにアクセスします。
+Microsoft Services for NFS は、Windows および UNIX 環境が混在している企業向けのファイル共有ソリューションを提供します。 この通信モデルは、クライアントコンピューターとサーバーで構成されています。 クライアント上のアプリケーションは、リダイレクター (Rdbss.sys) および NFS ミニリダイレクター (Nfsrdr.sys) を介してサーバーにあるファイルを要求します。 ミニリダイレクターは、NFS プロトコルを使用して、TCP/IP 経由で要求を送信します。 サーバーは、TCP/IP を介してクライアントから複数の要求を受信し、ローカルファイルシステム (Ntfs.sys) に要求をルーティングして、記憶域スタックにアクセスします。
 
 次の図は、NFS の通信モデルを示しています。
 
@@ -33,7 +31,7 @@ Microsoft Services for NFS は、Windows および UNIX 環境が混在してい
 
 ### <a name="tuning-parameters-for-nfs-file-servers"></a>NFS ファイルサーバーのチューニングパラメーター
 
-次の REG\_DWORD レジストリ設定は、NFS ファイルサーバーのパフォーマンスに影響を与える可能性があります。
+次の REG \_ DWORD レジストリ設定は、NFS ファイルサーバーのパフォーマンスに影響を与える可能性があります。
 
 -   **最適化した読み取り**
 
@@ -41,7 +39,7 @@ Microsoft Services for NFS は、Windows および UNIX 環境が混在してい
     HKLM\System\CurrentControlSet\Services\NfsServer\Parameters\OptimalReads
     ```
 
-    既定値は 0 です。 このパラメーターでは、ファイルを\_ランダム\_アクセス用に開くか、ファイル\_シーケンシャル\_に開くかを指定します。これは、ワークロードの i/o 特性によって異なります。 この値を1に設定すると、ファイル\_ランダム\_アクセスに対してファイルを強制的に開くことができます。 ファイル\_ランダム\_アクセスによって、ファイルシステムとキャッシュマネージャーがプリフェッチされないようにします。
+    既定値は 0 です。 このパラメーターは、ファイルがランダムアクセス用に開かれるか、またはファイルを順次に開くかを \_ \_ \_ \_ 、ワークロード i/o 特性に応じて決定します。 ファイルがランダムにアクセスできるようにファイルを強制的に開くには、この値を1に設定し \_ \_ ます。 ファイル \_ ランダム \_ アクセスを使用すると、ファイルシステムとキャッシュマネージャーがプリフェッチを実行できなくなります。
 
     >[!NOTE]
     > システムファイルキャッシュの増大に影響する可能性があるため、この設定は慎重に評価する必要があります。
@@ -85,7 +83,7 @@ Microsoft Services for NFS は、Windows および UNIX 環境が混在してい
     HKLM\System\CurrentControlSet\Services\NfsServer\Parameters\FileHandleCacheSizeinMB
     ```
 
-    既定は 4 です。 このパラメーターは、ファイルハンドルキャッシュエントリによって消費される最大メモリを指定します。 最小値は1、最大値は 1\*1024\*1024\*1024 (1073741824) です。
+    既定値は 4 です。 このパラメーターは、ファイルハンドルキャッシュエントリによって消費される最大メモリを指定します。 最小値は1、最大値は 1 \* 1024 \* 1024 \* 1024 (1073741824) です。
 
 -   **LockFileHandleCacheInMemory**
 
@@ -101,7 +99,7 @@ Microsoft Services for NFS は、Windows および UNIX 環境が混在してい
     HKLM\System\CurrentControlSet\Services\NfsServer\Parameters\MaxIcbNfsReadHandlesCacheSize
     ```
 
-    既定値は64です。 このパラメーターは、読み取りデータキャッシュのボリュームごとのハンドルの最大数を指定します。 読み取りキャッシュエントリは、メモリが 1 GB を超えるシステムでのみ作成されます。 最小値は0、最大値は0xFFFFFFFF です。
+    既定値は、64 です。 このパラメーターは、読み取りデータキャッシュのボリュームごとのハンドルの最大数を指定します。 読み取りキャッシュエントリは、メモリが 1 GB を超えるシステムでのみ作成されます。 最小値は0、最大値は0xFFFFFFFF です。
 
 -   **HandleSigningEnabled**
 

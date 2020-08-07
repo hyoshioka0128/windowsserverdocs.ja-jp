@@ -1,18 +1,16 @@
 ---
 title: での LDAP に関する考慮事項によるパフォーマンスチューニングの追加
 description: Active Directory ワークロードでの LDAP に関する考慮事項
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: timwi; chrisrob; herbertm; kenbrumf;  mleary; shawnrab
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 2ef32b379dcc5d1c2d8217564b639f44d024e5ee
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: b1678eadda1232da19c80e648c8b7ecb9c06f64b
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471548"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896211"
 ---
 # <a name="ldap-considerations-in-adds-performance-tuning"></a>での LDAP に関する考慮事項によるパフォーマンスチューニングの追加
 
@@ -98,7 +96,7 @@ Active Directory に対して使用するクエリを適切に記述、構築、
 
 -   [インデックス付き属性](https://msdn.microsoft.com/library/windows/desktop/ms677112.aspx)
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [Active Directory サーバーのパフォーマンス チューニング](index.md)
 - [ハードウェアに関する考慮事項](hardware-considerations.md)

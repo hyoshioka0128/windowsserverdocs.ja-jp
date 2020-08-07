@@ -1,18 +1,16 @@
 ---
 title: 仮想化環境のボトルネックの検出
 description: Hyper-v のパフォーマンスに関する潜在的なボトルネックを検出して解決する方法
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 11b2f596fc8c1f8c193100e4a9f1ee792d3d7502
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 049df52033d637409a73400616b596037f9d7976
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471417"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896136"
 ---
 # <a name="detecting-bottlenecks-in-a-virtualized-environment"></a>仮想化環境のボトルネックの検出
 
@@ -130,7 +128,7 @@ ms.locfileid: "85471417"
 
 -   VHDX を使用する
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 -   [Hyper-V の用語](terminology.md)
 

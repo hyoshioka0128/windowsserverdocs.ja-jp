@@ -1,20 +1,18 @@
 ---
 title: manage-bde ステータス
 description: BitLocker で保護されているかどうかに関係なく、コンピューター上のすべてのドライブに関する情報を提供する manage-bde status コマンドのリファレンス記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 1444a360-fabf-4dd3-b67f-188e6ea3fa5b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 20430899b8259207f228219cf0d2ac516866714a
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: cab8f552cd633e5e71a13993fd2223062125f02f
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85922217"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87886697"
 ---
 # <a name="manage-bde-status"></a>manage-bde ステータス
 

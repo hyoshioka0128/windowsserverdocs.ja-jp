@@ -1,20 +1,18 @@
 ---
 title: Servermanagercmd
 description: 参照記事 * * * *-
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 507c4b87-8e13-4872-8b34-0c7508eecbc1
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: d25210593cf9239d7cdb97172041e5d999257711
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 9026bd527108f8d04e13bc75458a97d27f148d90
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85937140"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87882747"
 ---
 # <a name="servermanagercmd"></a>Servermanagercmd
 
@@ -46,7 +44,7 @@ servermanagercmd -version
 |                     -help                      |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            コマンドプロンプトウィンドウにヘルプを表示します。 短い形式を使用することもできます。 **-?** します。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 |                    -version                    |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            サーバー マネージャーのバージョン番号を表示します。 短い形式を使用することもできます。 **-v**します。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>Remarks
 **Servermanagercmd** は非推奨とされ、および Windows の将来のリリースでサポートされるとは限りません。 Windows Server 2008 R2 を実行しているコンピューターでサーバー マネージャーを実行している場合、サーバー マネージャーの使用できる Windows PowerShell コマンドレットを使用することをお勧めします。 詳細については、次を参照してください。 [サーバー マネージャー コマンドレット](https://go.microsoft.com/fwlink/?LinkID=137653)します。
 Servermanagercmd は、サーバーのローカル ドライブ上の任意のディレクトリから実行できます。 インストールまたはソフトウェアを削除するサーバーの Administrators グループのメンバーである必要があります。
 

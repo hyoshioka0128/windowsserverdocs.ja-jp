@@ -1,20 +1,18 @@
 ---
 title: winsat mem
 description: この記事では、マルチメディア処理で使用されるように、大容量メモリをメモリバッファーコピーに反射する方法でシステムメモリ帯域幅をテストする、winsat メモリの参照記事を紹介します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 winms.topic: article
 ms.assetid: cda017bf-6193-43c1-b71f-e379c23e1152
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f7ddb18a923358997d2882cce0d3ae1e261061ef
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 928c0b7389af4c2417fe62af1aeae4f9a90856a4
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936099"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896481"
 ---
 # <a name="winsat-mem"></a>winsat mem
 
@@ -56,7 +54,7 @@ winsat mem <parameters>
   winsat mem -mint 4.0 -maxt 12.0 -buffersize 32MB -xml memtest.xml
   ```
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>Remarks
 
 -   **Winsat**を使用するには、ローカルの Administrators グループのメンバーシップ、またはそれと同等のメンバーシップが最低限必要です。 コマンドは、管理者特権でのコマンドプロンプトウィンドウから実行する必要があります。
 -   管理者特権でのコマンドプロンプトウィンドウを開くには、[**スタート**]、[**アクセサリ**] の順にクリックし、[**コマンドプロンプト**] を右クリックして、[**管理者として実行**] をクリックします。

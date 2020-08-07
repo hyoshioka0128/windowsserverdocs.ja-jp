@@ -1,20 +1,18 @@
 ---
 title: manage-bde プロテクターの管理
 description: BitLocker 暗号化キーに使用される保護方法を管理する manage-bde プロテクターコマンドのリファレンス記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 1f9b22c5-cc93-45df-9165-bedee94998da
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 08/06/2018
-ms.openlocfilehash: d277c070ff0cdee0d93d7a8be11dc13bea5adb95
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 445f87435a97173192976f195478f9c92e109032
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85922303"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87886755"
 ---
 # <a name="manage-bde-protectors"></a>manage-bde プロテクターの管理
 
@@ -99,7 +97,7 @@ manage-bde -protectors -delete <drive> [-type {recoverypassword|externalkey|cert
 | tpmandpin | ドライブに関連付けられている TPM および PIN ベースのキー保護機能を削除する必要があることを指定します。 |
 | tpmandpinandstartupkey | ドライブに関連付けられている TPM、PIN、およびスタートアップキーに基づくキープロテクターを削除する必要があることを指定します。 |
 | password | ドライブに関連付けられているパスワード キーの保護を削除するかを指定します。 |
-| identity | ドライブに関連付けられているすべての id キー プロテクターを削除するかを指定します。 |
+| ID | ドライブに関連付けられているすべての id キー プロテクターを削除するかを指定します。 |
 | -ID | キー識別子を使用して削除するキー保護機能を識別します。 このパラメーターは、代わりのオプションを **-型** パラメーター。 |
 | `<keyprotectorID>` | 個々 のキー保護機能、ドライブを削除するを識別します。 使用して、キー保護機能の Id を表示できる、 **から manage-bde-プロテクター-取得** コマンドです。 |
 | -computername | manage-bde.exe が別のコンピューターの BitLocker 保護を変更するために使用されることを指定します。 また、このコマンドの省略版として **-cn**を使用することもできます。 |

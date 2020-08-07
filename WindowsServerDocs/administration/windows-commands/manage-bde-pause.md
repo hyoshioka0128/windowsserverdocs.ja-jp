@@ -1,20 +1,18 @@
 ---
 title: manage-bde pause
 description: BitLocker の暗号化または暗号化解除を一時停止する manage-bde pause コマンドのリファレンス記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: efda0e08-b9ff-4e71-83d8-bb666b3032bd
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 244d18ff9763ccb12c9567fbab68e2fd72f0f076
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 24b9a4db5bb0c00e8efcd831dc72abb8f583e94f
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85935458"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87886782"
 ---
 # <a name="manage-bde-pause"></a>manage-bde pause
 

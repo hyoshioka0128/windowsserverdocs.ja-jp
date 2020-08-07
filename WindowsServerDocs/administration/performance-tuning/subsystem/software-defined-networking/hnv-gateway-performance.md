@@ -1,18 +1,16 @@
 ---
 title: ソフトウェア定義ネットワークでの HNV ゲートウェイのパフォーマンスチューニング
 description: ソフトウェア定義ネットワークに関する HNV ゲートウェイのパフォーマンスチューニングガイドライン
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: grcusanz; anpaul
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 98b8a50873cf69e96131f98d5d94c386cb30a13d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 4b367a8e35e6393a9560657fbd752859a6ddde7d
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851625"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895960"
 ---
 # <a name="hnv-gateway-performance-tuning-in-software-defined-networks"></a>ソフトウェア定義ネットワークでの HNV ゲートウェイのパフォーマンスチューニング
 
@@ -30,7 +28,7 @@ ms.locfileid: "80851625"
 |--------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 中央処理装置 (CPU)  | Non-uniform Memory Architecture (NUMA) ノード: 2 <br> ホスト上に複数の Windows Server ゲートウェイ Vm がある場合、最適なパフォーマンスを得るには、各ゲートウェイ VM に1つの NUMA ノードへのフルアクセス権を付与する必要があります。 ホストの物理アダプターによって使用される NUMA ノードとは別のものにする必要があります。 |
 | NUMA ノードごとのコア            | 2                                                                                                                                                                                                                                                                               |
-| ハイパースレッディング                | Disabled。 ハイパー スレッディングによって、Windows Server ゲートウェイのパフォーマンスは向上しません。                                                                                                                                                                                           |
+| ハイパースレッディング                | 無効にします。 ハイパー スレッディングによって、Windows Server ゲートウェイのパフォーマンスは向上しません。                                                                                                                                                                                           |
 | ランダム アクセス メモリ (RAM)     | 48 GB                                                                                                                                                                                                                                                                           |
 | ネットワーク インターフェイス カード (NIC) | 2 10 GB Nic の場合、ゲートウェイのパフォーマンスは回線速度によって異なります。 回線レートが10Gbps 未満の場合は、ゲートウェイトンネルスループットの数値も同じ要因によって停止されます。                                                                                          |
 
@@ -59,12 +57,12 @@ Windows Server 2016 と Hyper-v を実行し、ワークロードが Windows Ser
 >[!Note]
 > 以下の Windows PowerShelll コマンドを実行するには、Administrators グループのメンバーであることが必要です。
 
-| 構成アイテム                          | Windows Powershell の構成                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| 構成項目                          | Windows Powershell の構成                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 |---------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | スイッチ埋め込みチーミング                     | 複数のネットワークアダプターを含む vswitch を作成すると、それらのアダプターのスイッチ埋め込みチーミングが自動的に有効になります。 <br> ```New-VMSwitch -Name TeamedvSwitch -NetAdapterName "NIC 1","NIC 2"``` <br> LBFO による従来のチーム化は、Windows Server 2016 の SDN ではサポートされていません。 スイッチ埋め込みチーミングを使用すると、仮想トラフィックと RDMA トラフィックに同じセットの Nic を使用できます。 これは、LBFO に基づく NIC チーミングではサポートされませんでした。                                                        |
-| 物理 NIC での割り込み節度       | 既定の設定を使用します。 構成を確認するには、次の Windows PowerShell コマンドを使用します。 ```Get-NetAdapterAdvancedProperty```                                                                                                                                                                                                                                                                                                                                                                    |
-| 物理 NIC での受信バッファー サイズ       | コマンド ```Get-NetAdapterAdvancedProperty```を実行することで、物理 Nic がこのパラメーターの構成をサポートしているかどうかを確認できます。 このパラメーターがサポートされていない場合、コマンドからの出力には "受信バッファー" プロパティは含まれません。 NIC がこのパラメーターをサポートしている場合、次の Windows PowerShell コマンドを使用して受信バッファー サイズを設定できます。 <br>```Set-NetAdapterAdvancedProperty "NIC1" –DisplayName "Receive Buffers" –DisplayValue 3000``` <br>                          |
-| 物理 NIC での送信バッファー サイズ          | コマンド ```Get-NetAdapterAdvancedProperty```を実行することで、物理 Nic がこのパラメーターの構成をサポートしているかどうかを確認できます。 Nic がこのパラメーターをサポートしていない場合、コマンドの出力には "送信バッファー" プロパティは含まれません。 NIC がこのパラメーターをサポートしている場合、次の Windows PowerShell コマンドを使用して送信バッファー サイズを設定できます。 <br> ```Set-NetAdapterAdvancedProperty "NIC1" –DisplayName "Transmit Buffers" –DisplayValue 3000``` <br>                           |
+| 物理 NIC での割り込み節度       | 既定の設定を使用します。 構成を確認するには、次の Windows PowerShell コマンドを使用します。```Get-NetAdapterAdvancedProperty```                                                                                                                                                                                                                                                                                                                                                                    |
+| 物理 NIC での受信バッファー サイズ       | 物理 Nic がこのパラメーターの構成をサポートしているかどうかを確認するには、コマンドを実行し ```Get-NetAdapterAdvancedProperty``` ます。 このパラメーターがサポートされていない場合、コマンドからの出力には "受信バッファー" プロパティは含まれません。 NIC がこのパラメーターをサポートしている場合、次の Windows PowerShell コマンドを使用して受信バッファー サイズを設定できます。 <br>```Set-NetAdapterAdvancedProperty "NIC1" –DisplayName "Receive Buffers" –DisplayValue 3000``` <br>                          |
+| 物理 NIC での送信バッファー サイズ          | 物理 Nic がこのパラメーターの構成をサポートしているかどうかを確認するには、コマンドを実行し ```Get-NetAdapterAdvancedProperty``` ます。 Nic がこのパラメーターをサポートしていない場合、コマンドの出力には "送信バッファー" プロパティは含まれません。 NIC がこのパラメーターをサポートしている場合、次の Windows PowerShell コマンドを使用して送信バッファー サイズを設定できます。 <br> ```Set-NetAdapterAdvancedProperty "NIC1" –DisplayName "Transmit Buffers" –DisplayValue 3000``` <br>                           |
 | 物理 NIC での Receive Side Scaling (RSS) | Windows PowerShell コマンド Get-NetAdapterRss を実行することによって、物理 NIC で RSS が有効であるかどうかを確認できます。 次の Windows PowerShell コマンドを使用して、ネットワークアダプターで RSS を有効にし、構成することができます。 <br> ```Enable-NetAdapterRss "NIC1","NIC2"```<br> ```Set-NetAdapterRss "NIC1","NIC2" –NumberOfReceiveQueues 16 -MaxProcessors``` <br> 注: VMMQ または VMQ が有効になっている場合、物理ネットワークアダプターで RSS を有効にする必要はありません。 ホスト仮想ネットワークアダプターで有効にすることができます。 |
 | VMMQ                                        | VM の VMMQ を有効にするには、次のコマンドを実行します。 <br> ```Set-VmNetworkAdapter -VMName <gateway vm name>,-VrssEnabled $true -VmmqEnabled $true``` <br> 注: すべてのネットワークアダプターが VMMQ をサポートしているわけではありません。 現時点では、Chelsio T5 と T6、Mellanox CX-3 と CX-4、および QLogic 45xxx シリーズでサポートされています。                                                                                                                                                                                                                                      |
 | NIC チームでの仮想マシン キュー (VMQ) | 次の Windows PowerShell コマンドを使用して、セットチームで VMQ を有効にすることができます。 <br>```Enable-NetAdapterVmq``` <br> 注: これは、HW が VMMQ をサポートしていない場合にのみ有効にする必要があります。 サポートされている場合は、パフォーマンスを向上させるために VMMQ を有効にする必要があります。                                                                                                                                                                                                                                                               |
@@ -76,7 +74,7 @@ Windows Server 2016 と Hyper-v を実行し、ワークロードが Windows Ser
 両方の Hyper-v ホストで、Windows Server ゲートウェイを使用してゲートウェイとして構成されている複数の Vm を構成できます。 仮想スイッチ マネージャーを使用して、Hyper-V ホストの NIC チームにバインドされている Hyper-V 仮想スイッチを作成できます。 最適なパフォーマンスを得るには、1つのゲートウェイ VM を Hyper-v ホストに展開する必要があります。
 各 Windows Server ゲートウェイ VM の推奨構成を次に示します。
 
-| 構成アイテム                 | Windows Powershell の構成                                                                                                                                                                                                                                                                                                                                                               |
+| 構成項目                 | Windows Powershell の構成                                                                                                                                                                                                                                                                                                                                                               |
 |------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | メモリ                             | 8 GB                                                                                                                                                                                                                                                                                                                                                                                           |
 | 仮想ネットワーク アダプターの数 | 次の特定の用途を持つ3枚の Nic: 管理オペレーティングシステムによって使用される管理用に1つ、外部ネットワークへのアクセスを提供する1つの外部ネットワーク (内部ネットワークへのアクセスのみを提供する内部 1)。                                                                                                                                                            |

@@ -1,20 +1,18 @@
 ---
 title: wscript
 description: Wscript のリファレンス記事。ユーザーは、さまざまなオブジェクトモデルを使用してタスクを実行するさまざまな言語でスクリプトを実行できる環境を提供します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 2fbaf193-cdbd-414c-84c9-bb5720f84c29
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 08/21/2018
-ms.openlocfilehash: a07ad9b33000b17f5c6f41835a1a36531b3945af
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 4d3ab5d04423a093b280b8468c7e85aad3519dcb
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86958884"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896442"
 ---
 # <a name="wscript"></a>wscript
 
@@ -48,7 +46,7 @@ wscript [<scriptname>] [/b] [/d] [/e:<engine>] [{/h:cscript|/h:wscript}] [/i] [/
 |ScriptArguments|スクリプトに渡される引数を指定します。 各スクリプト引数の前にはスラッシュ (/) を付ける必要があります。|
 |/?|コマンド プロンプトでヘルプを表示します。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>Remarks
 
 -   このタスクを実行するときは、管理資格情報は必要ありません。 そのため、セキュリティ対策として、このタスクは管理資格情報のないユーザーとして実行することを検討してください。
 -   コマンド プロンプトを開くには、**スタート**画面で、「**cmd**」と入力し、**[コマンド プロンプト]** をクリックします。
@@ -59,6 +57,6 @@ wscript [<scriptname>] [/b] [/d] [/e:<engine>] [{/h:cscript|/h:wscript}] [/i] [/
 -   個々のスクリプトのプロパティを設定できます。 詳細については、「 [Windows スクリプトホストの概要](/previous-versions/windows/it-pro/windows-server-2003/cc738350(v=ws.10))」を参照してください。
 -   Windows スクリプトホストでは **、wsf**スクリプトファイルを使用できます。 各**wsf**ファイルは、複数のスクリプトエンジンを使用して複数のジョブを実行できます。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

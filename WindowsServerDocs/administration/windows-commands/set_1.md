@@ -1,20 +1,18 @@
 ---
 title: set
 description: cmd.exe 環境変数の表示、設定、または削除を行う set のリファレンス記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 5fdd60d6-addf-4574-8c92-8aa53fa73d76
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 34c8abf01e7dbde7a8f175ac8691e5731a04be45
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 64d9668e3ff0b0b366a2009cdaa4f2eaf52edfa0
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519661"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87882541"
 ---
 # <a name="set"></a>set
 
@@ -97,7 +95,7 @@ set /a <Variable>=<Expression>
 
   **設定** コマンドで他のパラメーターは、回復コンソールから利用できます。
 
-## <a name="examples"></a>使用例
+## <a name="examples"></a>例
 
 TEST という名前の環境変数を設定する ^1 の場合、型。
 ```
@@ -143,6 +141,6 @@ set p
 > [!NOTE]
 > このコマンドでは、既定で有効になっているコマンド拡張機能が必要です。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

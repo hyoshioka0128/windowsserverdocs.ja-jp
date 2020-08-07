@@ -1,18 +1,16 @@
 ---
 title: Hyper-v プロセッサのパフォーマンス
 description: Hyper-v のパフォーマンスチューニングにおけるプロセッサのパフォーマンスに関する考慮事項
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: d165413dfbf89b2debd77806110ca80e9b6af7c8
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: ab68975c84e1b299914e09045eddbc302ca9697f
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471297"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896075"
 ---
 # <a name="hyper-v-processor-performance"></a>Hyper-v プロセッサのパフォーマンス
 
@@ -69,7 +67,7 @@ Microsoft SQL Server は、NUMA 対応アプリケーションの例です。 �
 
 仮想 NUMA の詳細については、「 [Hyper-v 仮想 numa の概要](https://technet.microsoft.com/library/dn282282.aspx)」を参照してください。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 -   [Hyper-V の用語](terminology.md)
 

@@ -1,20 +1,18 @@
 ---
 title: ID の設定
 description: Diskpart の Set ID の参照記事。フォーカスのあるパーティションの [パーティションの種類] フィールドを変更します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 5793d7ad-827e-4285-b2c6-ae60eeb0e886
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ad0a4c6ac29e4226bbbe6ea2bde140ae21b68374
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: afcaa134cd9af11d37130e17012a7cf8a147afd4
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85937100"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87882625"
 ---
 # <a name="set-id"></a>ID の設定
 
@@ -42,7 +40,7 @@ set id={ <byte> | <GUID> } [override] [noerr]
 | override  |                                                                パーティションの種類を変更する前に、ボリューム上のファイルシステムのマウントを強制的に解除します。 実行すると、 **id** コマンドを DiskPart はロックし、ボリューム上のファイル システムをマウント解除を試みます。 場合 **オーバーライド** が指定されていないファイル システムをロックする呼び出しが失敗して \(などの開いているハンドルがあるため\), 、操作は失敗します。 **オーバーライド** が指定されている場合でも、ファイル システムのロックへの呼び出しが失敗すると、および、ボリュームに開いているハンドルが無効になり、DiskPart がマウントが解除を強制します。<p>このコマンドでは、Windows 7 および Windows Server 2008 R2 の使用のみです。                                                                 |
 |   noerr   |                                                                                                                                                                                                                                                                    スクリプト作成にのみ使用されます。 エラーが発生しても、エラーが発生しなかったかのように DiskPart はコマンドの処理を続けます。 このパラメーターは、エラー発生すると、DiskPart はエラー コードを生成して終了します。                                                                                                                                                                                                                                                                    |
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>Remarks
 
 -   前述の制限、以外 DiskPart 調べませんを指定する値の有効性 \(することを確認バイトの 16 進形式または GUID を除く\)します。
 

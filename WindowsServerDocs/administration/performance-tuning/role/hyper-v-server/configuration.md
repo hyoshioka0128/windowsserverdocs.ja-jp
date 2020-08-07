@@ -1,18 +1,16 @@
 ---
 title: Hyper-V の構成
 description: Hyper-v 構成のパフォーマンスチューニングに関する考慮事項
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 3fb1001c99e084ab69f37db9779e5d5ae7acf58e
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 02f2849b7259379ebf6beed927601b13966a7704
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471437"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896142"
 ---
 # <a name="hyper-v-configuration"></a>Hyper-V の構成
 
@@ -28,11 +26,11 @@ Hyper-v を実行するサーバーのハードウェアに関する考慮事項
 
     Hyper-v では、大きなプロセッサキャッシュを利用できます。特に、メモリ内のワーキングセットが大きく、仮想プロセッサと論理プロセッサの比率が高い負荷の場合に適しています。
 
--   **メモリ**
+-   **[メモリ]**
 
     物理サーバーには、ルートパーティションと子パーティションの両方に十分なメモリが必要です。 ルートパーティションには、仮想マシンの代わりに i/o を効率的に実行するためのメモリ、および仮想マシンのスナップショットなどの操作が必要です。 Hyper-v では、ルートパーティションに十分なメモリがあることを確認し、残りのメモリを子パーティションに割り当てることができます。 子パーティションは、各仮想マシンに予想される負荷のニーズに基づいてサイズを変更する必要があります。
 
--   **ストレージ**
+-   **Storage**
 
     記憶域ハードウェアには、物理サーバーがホストする仮想マシンの現在および将来のニーズを満たすのに十分な i/o 帯域幅と容量が必要です。 記憶域コントローラーとディスクを選択して RAID 構成を選択する場合は、次の要件を考慮してください。 ディスク集中型のワークロードが多い仮想マシンを異なる物理ディスクに配置すると、全体的なパフォーマンスが向上する可能性があります。 たとえば、4つの仮想マシンが1つのディスクを共有し、そのディスクをアクティブに使用している場合、各仮想マシンはそのディスクの帯域幅の25% しか生成できません。
 
@@ -87,7 +85,7 @@ Hyper-v では、仮想化サーバーの動作を特徴付けることができ
 - **Hyper-v ハイパーバイザー仮想プロセッサ ( \* ) \\ \\ *** は、ゲストパーティションの CPU 使用率を測定します。
 
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 -   [Hyper-V の用語](terminology.md)
 
