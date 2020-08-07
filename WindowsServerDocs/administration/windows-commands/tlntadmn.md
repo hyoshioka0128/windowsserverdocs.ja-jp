@@ -1,20 +1,18 @@
 ---
 title: tlntadmn
 description: ローカルコンピューターまたはリモートコンピューターを管理し、telnet サーバーサービスを実行している tlntの管理に関する参照記事。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 78b61e8d-b953-44bb-8d57-f3b42da9e7a8
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 995b2332f98906a1a5b9cb53f504a87fb831c3e0
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 4dee63c0233bab5341dae724ccd9779c3917054c
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86958804"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87897145"
 ---
 # <a name="tlntadmn"></a>tlntadmn
 
@@ -50,7 +48,7 @@ tlntadmn [<computerName>] [-u <UserName>] [-p <Password>] [{start | stop | pause
 |     config モード = {console &#124; stream}      |                                                                                                                                             操作のモードを指定します。                                                                                                                                             |
 |                       -?                       |                                                                                                                                           コマンド プロンプトにヘルプを表示します。                                                                                                                                           |
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>Remarks
 -   サーバーの設定を表示するには、パラメーターを指定せずに「 **tlntを**使用します。
 -   **Tlntて n**コマンドを使用するには、管理者の資格情報を使用してローカルコンピューターにログオンする必要があります。 リモートコンピューターを管理するには、リモートコンピューターの管理者資格情報も指定する必要があります。 これを行うには、ローカルコンピューターとリモートコンピューターの両方の管理者資格情報を持つアカウントを使用してローカルコンピューターにログオンします。 この方法を使用できない場合は、 **-u**パラメーターと **-p**パラメーターを使用して、リモートコンピューターの管理者資格情報を指定できます。
 
@@ -64,6 +62,6 @@ tlntadmn config timeout=0:30:0
 tlntadmn -s
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 -   [telnet 操作ガイド](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753164(v=ws.10))
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

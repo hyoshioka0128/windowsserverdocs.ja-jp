@@ -1,20 +1,18 @@
 ---
 title: Diskshadow (英語の可能性あり)
 description: ボリュームシャドウコピーサービス (VSS) によって提供される機能を公開するツールである、Diskshadow コマンドのリファレンス記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: e962537d-b759-4368-b6f1-e8391cf7b221
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 02e2836cd69b1fe85ea4f86da125c95c9ca1e4ea
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 3170cde50208eb54d1657ceee0c409d76ed3b806
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85922794"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890801"
 ---
 # <a name="diskshadow"></a>Diskshadow (英語の可能性あり)
 
@@ -25,7 +23,7 @@ Diskshadow.exe は、ボリュームシャドウコピーサービス (VSS) に�
 > [!NOTE]
 > Diskshadow を実行するには、ローカルの Administrators グループのメンバーシップ、またはそれと同等のメンバーシップが最低限必要です。
 
-## <a name="syntax"></a>Syntax
+## <a name="syntax"></a>構文
 
 対話モードの場合は、コマンドプロンプトで次のように入力して、Diskshadow コマンドインタープリターを開始します。
 
@@ -43,7 +41,7 @@ diskshadow -s script.txt
 
 Diskshadow コマンドインタープリターで、またはスクリプトファイルを使用して、次のコマンドを実行できます。 シャドウコピーを作成するには、少なくとも**追加**と**作成**のみが必要です。 ただし、これによってコンテキストとオプションの設定がなくなりされ、コピーバックアップが作成され、バックアップ実行スクリプトを使用せずにシャドウコピーが作成されます。
 
-| コマンド | 説明 |
+| command | 説明 |
 | --------- | ----------- |
 | [set コマンド](set_2.md) | シャドウコピーを作成するためのコンテキスト、オプション、詳細モード、およびメタデータファイルを設定します。 |
 | [メタデータの読み込みコマンド](load-metadata.md) | 転送可能なシャドウコピーをインポートする前に、または復元の場合にライターメタデータを読み込む前に、メタデータ .cab ファイルを読み込みます。 |

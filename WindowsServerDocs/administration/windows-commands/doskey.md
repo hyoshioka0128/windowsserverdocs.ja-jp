@@ -1,20 +1,18 @@
 ---
 title: doskey
 description: 以前に入力したコマンドラインコマンドを再呼び出しし、コマンドラインを編集し、マクロを作成する、doskey コマンドと Doskey.exe のリファレンス記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 4874fd43-d5ea-45f3-ae24-388ae925ed76
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4a92c9e1d6ffe1f8d7ace5500179697b2a00df1b
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: f945c0b73509e0a936bf4de1cae9bb721b77e5c3
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85930553"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890767"
 ---
 # <a name="doskey"></a>doskey
 
@@ -28,7 +26,7 @@ doskey [/reinstall] [/listsize=<size>] [/macros:[all | <exename>] [/history] [/i
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | Description |
+| パラメーター | 説明 |
 | --------- | ----------- |
 | /reinstall | Doskey.exe の新しいコピーをインストールし、コマンド履歴バッファーをクリアします。 |
 | /listsize =`<size>` | 履歴バッファー内のコマンドの最大数を指定します。 |
@@ -43,7 +41,7 @@ doskey [/reinstall] [/listsize=<size>] [/macros:[all | <exename>] [/history] [/i
 | `<macroname>`=[`<text>`] | *テキスト*で指定されたコマンドを実行するマクロを作成します。 *MacroName*マクロに割り当てる名前を指定します。 *Text*記録するコマンドを指定します。 *テキスト*を空白のままにした場合、割り当てられたコマンドの*MacroName*はクリアされます。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>Remarks
 
 - プログラムデバッガーやファイル転送プログラム (FTP) など、特定の文字ベースの対話型プログラムは、自動的に Doskey.exe を使用します。 Doskey.exe を使用するには、プログラムがコンソールプロセスであり、バッファーされた入力を使用する必要があります。 プログラムキーの割り当ては、 **doskey**キーの割り当てをオーバーライドします。 たとえば、プログラムが関数に対して F7 キーを使用している場合、ポップアップウィンドウで**doskey**コマンド履歴を取得することはできません。
 

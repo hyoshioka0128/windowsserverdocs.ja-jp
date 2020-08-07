@@ -1,20 +1,18 @@
 ---
 title: ファイル サーバーのパフォーマンス チューニング
 description: Windows Server を実行しているファイル サーバーのパフォーマンス チューニング
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: article
 author: phstee
 ms.author: nedpyle; danlo; dkruse; v-tea
 ms.date: 12/12/2019
 manager: dcscontentpm
 audience: Admin
-ms.openlocfilehash: 1236b961f77fe46f19b70a2c48d32f05585bd29c
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 951d59a1a0e1d58a064eb71bd073259c15fd46d4
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80851845"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896180"
 ---
 # <a name="performance-tuning-for-file-servers"></a>ファイル サーバーのパフォーマンス チューニング
 
@@ -95,24 +93,24 @@ ms.locfileid: "80851845"
 
     既定は 10 秒です。 これは、ディレクトリ キャッシュのタイムアウトです。
 
-    > [!NOTE]  
+    > [!NOTE]
     > このパラメーターは、ディレクトリのリースがない場合のディレクトリ メタデータのキャッシュを制御します。
-     
-     > [!NOTE]  
+
+     > [!NOTE]
      > Windows 10 バージョン 1803 の既知の問題は、Windows 10 が大規模なディレクトリをキャッシュする機能に影響します。 コンピューターを Windows 10 バージョン 1803 にアップグレードした後、ユーザーは何千ものファイルとフォルダーが含まれているネットワーク共有にアクセスし、その共有にあるドキュメントを開きます。 どちらの操作でも大幅な遅延が発生します。
-     >  
+     >
      > この問題を解決するには、Windows 10 バージョン 1809 以降のバージョンをインストールします。
-     >  
+     >
      > この問題を回避するには、**DirectoryCacheLifetime** を **0** に設定します。
-     >  
-     > この問題は、Windows 10 の次のエディションに影響します。  
+     >
+     > この問題は、Windows 10 の次のエディションに影響します。
      > - Windows 10 Enterprise バージョン 1803
      > - Windows 10 Pro for Workstations バージョン 1803
      > - Windows 10 Pro Education バージョン 1803
      > - Windows 10 Professional バージョン 1803
      > - Windows 10 Education バージョン 1803
      > - Windows 10 Home バージョン 1803
-   
+
 -   **DirectoryCacheEntrySizeMax**
 
     ```
@@ -171,8 +169,8 @@ ms.locfileid: "80851845"
 
     適用対象: Windows 10、Windows 8.1、Windows 8、Windows 7、Windows Vista、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
 
-    既定値は 0 であり、SMB 署名を無効にします。 この値を 1 に変更すると、すべての SMB 通信に対して SMB 署名が有効になり、SMB 署名が無効になっているコンピューターとの SMB 通信が防止されます。 SMB 署名は、CPU コストとネットワークのラウンド トリップを増やす可能性がありますが、man-in-the-middle 攻撃の阻止に役立ちます。 SMB 署名が不要な場合は、すべてのクライアントとサーバーでこのレジストリ値が 0 であることを確認してください。 
-    
+    既定値は 0 であり、SMB 署名を無効にします。 この値を 1 に変更すると、すべての SMB 通信に対して SMB 署名が有効になり、SMB 署名が無効になっているコンピューターとの SMB 通信が防止されます。 SMB 署名は、CPU コストとネットワークのラウンド トリップを増やす可能性がありますが、man-in-the-middle 攻撃の阻止に役立ちます。 SMB 署名が不要な場合は、すべてのクライアントとサーバーでこのレジストリ値が 0 であることを確認してください。
+
     詳細については、「[The Basics of SMB Signing](https://blogs.technet.microsoft.com/josebda/2010/12/01/the-basics-of-smb-signing-covering-both-smb1-and-smb2/)」(SMB 署名の基本) をご覧ください。
 
 -   **FileInfoCacheEntriesMax**
@@ -237,7 +235,7 @@ ms.locfileid: "80851845"
 | FileNotFoundCacheEntriesMax | 32768 | 128     |
 | MaxCmds                     | 32768 | 15      |
 
- 
+
 
 Windows 8 以降では、Windows PowerShell コマンドレットの **Set-SmbClientConfiguration** および **Set-SmbServerConfiguration** を使用して、これらの SMB 設定の多くを構成できます。 レジストリのみの設定は、Windows PowerShell を使用しても構成できます。
 

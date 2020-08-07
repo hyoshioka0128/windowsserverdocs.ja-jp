@@ -1,18 +1,16 @@
 ---
 title: Web サーバーのパフォーマンス チューニング
 description: Windows Server 16 上の Web サーバーに対するパフォーマンス チューニングの推奨事項
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: landing-page
 ms.author: davso; ericam; yashi
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 249500249921d21184dc8cd14993741392927586
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 8c0f2383291ee4f0abd74c58d50dc51549edfead
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471207"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896001"
 ---
 # <a name="performance-tuning-web-servers"></a>Web サーバーのパフォーマンス チューニング
 

@@ -1,20 +1,18 @@
 ---
 title: expose
 description: '[公開] コマンドの参照記事。ドライブ文字、共有、またはマウントポイントとして永続的なシャドウコピーを公開します。'
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 9b0a21cf-3bef-4ade-b8f1-ac42f9203947
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 816aad0ba57a30d9d3a05709941b1915d9a97d03
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: b4b9e45013c928e2a65e86b21c37f2f10b215056
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932403"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890407"
 ---
 # <a name="expose"></a>expose
 

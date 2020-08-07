@@ -1,20 +1,18 @@
 ---
 title: eventcreate
 description: Eventcreate コマンドの参照記事。管理者は、指定されたイベントログにカスタムイベントを作成できます。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: f2b1b26d-a70e-49a6-832b-91eb5a1a159a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 60ed97eeffc8ae2410fdd8f296a0e8348f376652
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: bf5cc7e1c36dc0af7325172325a55edb314664ab
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85925311"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890581"
 ---
 # <a name="eventcreate"></a>eventcreate
 

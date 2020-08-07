@@ -1,20 +1,18 @@
 ---
 title: erase
 description: 1つ以上のファイルを削除する erase コマンドの参照記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 024a4d0f-8679-4e06-b46f-61fdaf5464bc
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0a22c738215671096373a7077fc89ac87fe03597
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 144575c1886206ada0cbfd8edbe8571337b37ed9
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929318"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890600"
 ---
 # <a name="erase"></a>erase
 
@@ -43,7 +41,7 @@ del [/p] [/f] [/s] [/q] [/a[:]<attributes>] <names>
 | /a [:]`<attributes>` | 次のファイル属性に基づいてファイルを削除します。<ul><li>**r**読み取り専用ファイル</li><li>**h**隠しファイル</li><li>コンテンツにインデックスが**設定され**ていないファイル</li><li>**s**システムファイル</li><li>アーカイブの準備**が**できているファイル</li><li>**左**再解析ポイント</li><li>**-**' Not ' を意味するプレフィックスとして使用されます。</li></ul>. |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>Remarks
 
 - コマンドを使用すると、 `erase /p` 次のメッセージが表示されます。
 

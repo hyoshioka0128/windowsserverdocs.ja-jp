@@ -1,18 +1,16 @@
 ---
 title: Hyper-V サーバーのパフォーマンス チューニング
 description: Hyper-V のパフォーマンス チューニング ガイドライン
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 983481bb1f77e07df5fadd25ecb713d243cebd85
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: e9a81c2ea6e9d3eef7edc6c1742a0d9d8bc33ac0
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471397"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896122"
 ---
 # <a name="performance-tuning-hyper-v-servers"></a>Hyper-V サーバーのパフォーマンス チューニング
 

@@ -1,20 +1,18 @@
 ---
 title: diskcopy
 description: Diskcopy コマンドの参照記事。コピー先ドライブのフォーマット済みまたは未フォーマットのフロッピーディスクに、ソースドライブのフロッピーディスクの内容をコピーします。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 5fd21efa-52cc-4e70-a7fe-35125a435106
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/07/2018
-ms.openlocfilehash: 7b29e81dc1befff8cd90b460b1117207146fa191
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: b385d7fb371b0e33bcf16b240b051ce038a525a7
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929341"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890950"
 ---
 # <a name="diskcopy"></a>diskcopy
 
@@ -34,7 +32,7 @@ diskcopy [<drive1>: [<drive2>:]] [/v]
 | /v | 情報が正しくコピーされていることを確認します。 このオプションを選択すると、コピー処理が遅くなります。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>Remarks
 
 - **Diskcopy**は、同じ種類である必要があるフロッピーディスクなどのリムーバブルディスクでのみ機能します。 ハードディスクでは、 **diskcopy**を使用できません。 *Drive1*または*drive2*のハードディスクドライブを指定すると、次のエラーメッセージ**が表示さ**れます。
 

@@ -1,20 +1,18 @@
 ---
 title: bitsadmin cache および help
 description: '**キャッシュ**スイッチのコマンドラインの使用法を表示する bitsadmin cache および help コマンドのリファレンス記事です。'
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 0b14db49-84ac-4c2f-bf1f-f65e13cbfb35
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 36f8343704d0842497082e9d473250c6ba2cb1c1
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: a7290a8033d0e48df05991d506c5851cc0a04f05
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85923276"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87894756"
 ---
 # <a name="bitsadmin-cache-and-help"></a>bitsadmin cache および help
 

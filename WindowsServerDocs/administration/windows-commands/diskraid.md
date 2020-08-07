@@ -1,20 +1,18 @@
 ---
 title: Diskraid
 description: Diskraid コマンドラインツールのリファレンス記事。独立した (または安価な) ディスク (RAID) 記憶域サブシステムの冗長配列を構成および管理できます。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 20aef1e5-7641-47cf-b4eb-cda117f65b6e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d0745c708878fa9da6571666b5702b4408976164
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: d13b8f6a8ffb4f78312a804dd277839021dbd9e1
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924767"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890812"
 ---
 # <a name="diskraid"></a>Diskraid
 
@@ -244,7 +242,7 @@ detail {hbaport | iadapter | iportal | provider | subsystem | controller | port 
 
 現在選択されている LUN に対して、指定されたコントローラーポートの一覧を非アクティブとして設定します (他のコントローラーポートは影響を受けません)。または、現在選択されている LUN の iSCSI ターゲットの指定リストを解除します。
 
-#### <a name="syntax"></a>Syntax
+#### <a name="syntax"></a>構文
 
 ```
 dissociate controllers <n> [,<n> [,...]]
@@ -285,7 +283,7 @@ Controller port associations changed.
 
 Diskraid を終了します。
 
-#### <a name="syntax"></a>Syntax
+#### <a name="syntax"></a>構文
 
 ```
 exit
@@ -313,7 +311,7 @@ extend lun [size=<LUN_size>] [drives=<drive_number>, [<drive_number>, ...]] [noe
 
 現在選択されているコントローラーのキャッシュを消去します。
 
-#### <a name="syntax"></a>Syntax
+#### <a name="syntax"></a>構文
 
 ```
 flushcache controller
@@ -323,7 +321,7 @@ flushcache controller
 
 すべての Diskraid コマンドの一覧を表示します。
 
-#### <a name="syntax"></a>Syntax
+#### <a name="syntax"></a>構文
 
 ```
 help
@@ -333,7 +331,7 @@ help
 
 現在選択されているサブシステムに対して設定されている現在のボリュームシャドウコピーサービス (VSS) インポートターゲットを取得または設定します。
 
-#### <a name="syntax"></a>Syntax
+#### <a name="syntax"></a>構文
 
 ```
 importtarget subsystem [set target]
@@ -349,7 +347,7 @@ importtarget subsystem [set target]
 
 ローカル iSCSI イニシエーターに関する情報を取得します。
 
-#### <a name="syntax"></a>Syntax
+#### <a name="syntax"></a>構文
 
 ```
 initiator
@@ -359,7 +357,7 @@ initiator
 
 現在選択されているコントローラーのキャッシュを無効にします。
 
-#### <a name="syntax"></a>Syntax
+#### <a name="syntax"></a>構文
 
 ```
 invalidatecache controller
@@ -381,7 +379,7 @@ lbpolicy set lun paths=<path>-{primary | <weight>}[,<path>-{primary | <weight>}[
 | パラメーター | 説明 |
 | --------- | ----------- |
 | type | 負荷分散ポリシーを指定します。 型が指定されていない場合は、 **path**パラメーターを指定する必要があります。 Type は次のいずれかになります。<ul><li>**フェールオーバー** -バックアップパスとして、他のパスとの1つのプライマリパスを使用します。</li><li>[イン**ビンの丸め**]-ラウンドロビン方式のすべてのパスを使用して、各パスを順番に試行します。</li><li>**SUBSETROUNDROBIN** -すべてのプライマリパスをラウンドロビン方式で使用します。バックアップパスは、すべてのプライマリパスで障害が発生した場合にのみ使用されます。</li><li>**Dynlqd** -アクティブな要求の数が最も少ないパスを使用します。<li><li>**重み付け**-最も低い重みのパスを使用します (各パスに重み付けを割り当てる必要があります)。</li><li>最小**stblock** -ブロックが最も少ないパスを使用します。</li><li>**VENDORSPECIFIC** -ベンダー固有のポリシーを使用します。</li></ul> |
-| パス | パスが**プライマリ**であるか、または特定のを持つかを指定し `<weight>` ます。 指定されていないパスは、暗黙的にバックアップとして設定されます。 一覧に表示されているパスは、現在選択されている LUN のパスのいずれかである必要があります。 |
+| path | パスが**プライマリ**であるか、または特定のを持つかを指定し `<weight>` ます。 指定されていないパスは、暗黙的にバックアップとして設定されます。 一覧に表示されているパスは、現在選択されている LUN のパスのいずれかである必要があります。 |
 
 ### <a name="list"></a>list
 
@@ -470,7 +468,7 @@ maintenance <object operation> [count=<iteration>]
 
 現在選択されているサブシステム、LUN、または iSCSI ターゲットのフレンドリ名を指定した名前に設定します。
 
-#### <a name="syntax"></a>Syntax
+#### <a name="syntax"></a>構文
 
 ```
 name {subsystem | lun | target} [<name>]
@@ -486,7 +484,7 @@ name {subsystem | lun | target} [<name>]
 
 指定された種類の現在選択されているオブジェクトの状態を**オフライン**に設定します。
 
-#### <a name="syntax"></a>Syntax
+#### <a name="syntax"></a>構文
 
 ```
 offline <object>
@@ -502,7 +500,7 @@ offline <object>
 
 指定された種類の選択されたオブジェクトの状態を**オンライン**に設定します。 オブジェクトが**hbaport**の場合、は、現在選択されている HBA ポートへのパスの状態を**オンライン**に変更します。
 
-#### <a name="syntax"></a>Syntax
+#### <a name="syntax"></a>構文
 
 ```
 online <object>
@@ -518,7 +516,7 @@ online <object>
 
 現在選択されているフォールトトレラント LUN を修復するために必要な操作 (再同期やホットスペア処理など) を実行します。 たとえば、回復によって、障害が発生したディスクまたはその他のディスクエクステントの再割り当てがある RAID セットにホットスペアがバインドされる場合があります。
 
-#### <a name="syntax"></a>Syntax
+#### <a name="syntax"></a>構文
 
 ```
 recover <lun>
@@ -545,7 +543,7 @@ reenumerate {subsystems | drives}
 
 現在選択されているプロバイダーの内部データを更新します。
 
-#### <a name="syntax"></a>Syntax
+#### <a name="syntax"></a>構文
 
 ```
 refresh provider
@@ -555,7 +553,7 @@ refresh provider
 
 スクリプトのコメント化に使用します。
 
-#### <a name="syntax"></a>Syntax
+#### <a name="syntax"></a>構文
 
 ```
 Rem <comment>
@@ -565,7 +563,7 @@ Rem <comment>
 
 現在選択されているターゲットポータルグループから、指定された iSCSI ターゲットポータルを削除します。
 
-#### <a name="syntax"></a>Syntax
+#### <a name="syntax"></a>構文
 
 ```
 remove tpgroup tportal=<tportal> [noerr]
@@ -582,7 +580,7 @@ remove tpgroup tportal=<tportal> [noerr]
 
 指定されたドライブを現在選択されているドライブに置き換えます。 指定されたドライブは、現在選択されているドライブではない可能性があります。
 
-#### <a name="syntax"></a>Syntax
+#### <a name="syntax"></a>構文
 
 ```
 replace drive=<drive_number>

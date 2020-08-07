@@ -1,26 +1,24 @@
 ---
 title: tpmtool
 description: トラステッドプラットフォームモジュールに関する情報を取得する tpmtool のリファレンス記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 author: ashleytqy
 ms.author: ashleytqy
 manager: ronaldai
 ms.date: 05/07/2019
-ms.openlocfilehash: 843361a9b3844ecb29e2f9ac723d22e3fc14730f
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: f34e577a87acd79f343f06bb81486d50339cdb54
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955024"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87897138"
 ---
 # <a name="tpmtool"></a>tpmtool
 
 このユーティリティは、[トラステッドプラットフォームモジュール (TPM)](/windows/security/information-protection/tpm/trusted-platform-module-overview)に関する情報を取得するために使用できます。
 
 >[!IMPORTANT]
->一部の情報はリリース前の製品に関することであり、正式版がリリースされるまでに大幅に変更される可能性があります。 Microsoft は、ここで提供される情報に関して、明示または黙示を問わず、いかなる保証も行いません。
+>一部の情報はリリース前の製品に関することであり、正式版がリリースされるまでに大幅に変更される可能性があります。 Microsoft は、ここに記載されている情報について、明示または黙示を問わず、一切保証しません。
 
 このコマンドを使用する方法の例については、[例](#tpmtool_examples)を参照してください。
 

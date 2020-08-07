@@ -1,17 +1,15 @@
 ---
 title: diskpart
 description: Diskpart コマンドインタープリターのリファレンス記事。コンピューターのドライブを管理するのに役立ちます。
-ms.prod: windows-server
-ms.technology: storage
 author: jasongerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 1df6abc3ab3ef99139ca50701bd45feab1e28f42
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 627f9254606b1ed70b198f6dd0096ccbff424c45
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86958274"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890925"
 ---
 # <a name="diskpart"></a>diskpart
 
@@ -58,7 +56,7 @@ diskpart <parameter>
 
 Diskpart コマンドインタープリターから次のコマンドを実行できます。
 
-| コマンド | 説明 |
+| command | 説明 |
 | ------- | ----------- |
 | [active](active.md) | フォーカスがあるディスクのパーティションをアクティブとしてマークします。 |
 | [add](add.md) | フォーカスのあるシンプル ボリュームを、指定されたディスクにミラー化します。 |
@@ -99,7 +97,7 @@ Diskpart コマンドインタープリターから次のコマンドを実行�
 | [shrink](shrink.md) | 指定した量だけ、選択したボリュームのサイズが小さくなります。 |
 | [uniqueid](uniqueid.md) | フォーカスがあるディスクの GUID パーティションテーブル (GPT) 識別子またはマスターブートレコード (MBR) 署名を表示または設定します。 |
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

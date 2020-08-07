@@ -1,20 +1,18 @@
 ---
 title: driverquery
 description: Driverquery コマンドの参照記事。管理者は、インストールされているデバイスドライバーとそのプロパティの一覧を表示できます。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 92ca4b84-e4e2-405b-9f31-bf6db9f66839
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8ad0a028217e07d8c15b59dc96e31c8f236dd743
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: a996d48927215f8304e5a16f9da67419cbf7de65
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931462"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890760"
 ---
 # <a name="driverquery"></a>driverquery
 

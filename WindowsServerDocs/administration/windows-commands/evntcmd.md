@@ -1,20 +1,18 @@
 ---
 title: evntcmd
 description: Evntcmd コマンドの参照記事。構成ファイルの情報に基づいて、トラップへのイベントの変換、トラップの宛先、またはその両方を構成します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: c1aabb74-76e7-4304-95a6-50ad87e92fd9
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 291b13163f5c5a13442ed6dc80b769d0170df42e
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 9610608000ce106ec321f721a4181658453d6348
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85922781"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890544"
 ---
 # <a name="evntcmd"></a>evntcmd
 
@@ -38,7 +36,7 @@ evntcmd [/s <computername>] [/v <verbositylevel>] [/n] <filename>
 | `<filename>` | トラップするイベントと構成するトラップの送信先に関する情報を含む構成ファイルを名前で指定します。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>Remarks
 
 - トラップの送信先を構成せずにトラップを構成する場合は、イベントを使用して有効な構成ファイルを作成できます。このトランスレーターは、グラフィカルユーティリティです。 SNMP サービスがインストールされている場合は、コマンドプロンプトで「 **evntwin** 」と入力することによって、イベントのトラップトランスレーターを開始できます。 必要なトラップを定義したら、[**エクスポート**] をクリックして、 **evntcmd**での使用に適したファイルを作成します。 イベントを使用して、簡単に構成ファイルを作成し、コマンドプロンプトで**evntcmd**と共に構成ファイルを使用して、複数のコンピューターでトラップをすばやく構成することができます。
 

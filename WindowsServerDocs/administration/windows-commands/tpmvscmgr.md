@@ -1,26 +1,24 @@
 ---
 title: tpmvscmgr
 description: Tpmvscmgr のリファレンス記事。管理者の資格情報を持つユーザーがコンピューターで TPM 仮想スマートカードを作成および削除できるようにするコマンドラインツールです。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 8b2c8ff4-5c5d-446d-99e7-4daa1b36a163
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8741c947220ce2a3f6852c7374bf0817323bb632
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: d124fb0bee576b2058a7ecae02afaf9521baab30
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85935597"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87897122"
 ---
 # <a name="tpmvscmgr"></a>tpmvscmgr
 
 Tpmvscmgr コマンドラインツールを使用すると、管理者の資格情報を持つユーザーは、コンピューター上で TPM 仮想スマートカードを作成および削除できます。
 
-## <a name="syntax"></a>Syntax
+## <a name="syntax"></a>構文
 
 ```
 Tpmvscmgr create [/name] [/AdminKey DEFAULT | PROMPT | RANDOM] [/PIN DEFAULT | PROMPT] [/PUK DEFAULT | PROMPT] [/generate] [/machine] [/?]
@@ -35,7 +33,7 @@ Create コマンドは、ユーザーのシステムに新しい仮想スマー�
 
 |パラメーター|説明|
 |---------|-----------|
-|/name|必須です。 新しい仮想スマートカードの名前を示します。|
+|/name|必須。 新しい仮想スマートカードの名前を示します。|
 |/Adminkey|ユーザーが PIN を忘れた場合にカードの PIN をリセットするために使用できる、必要な管理者キーを示します。</br>**既定**010203040506070801020304050607080102030405060708の既定値を指定します。</br>**プロンプト**管理者キーの値を入力するようにユーザーに求めます。</br>**ランダム**結果として、ユーザーに返されないカードの管理者キーがランダムに設定されます。 これにより、スマートカード管理ツールを使用して管理できないカードが作成されます。 ランダムに生成された場合、管理者キーは48の16進数文字で入力する必要があります。|
 |/ピン|必要なユーザー PIN の値を示します。</br>**既定**12345678の既定の PIN を指定します。</br>**プロンプト**コマンドラインで PIN を入力するようにユーザーに求めます。 PIN は8文字以上にする必要があり、数字、文字、および特殊文字を含めることができます。|
 |/PUK|必要な PIN のロック解除キー (PUK) の値を示します。 PUK 値は、8文字以上で、数字、文字、および特殊文字を含めることができます。 パラメーターを省略した場合は、PUK を使用せずにカードが作成されます。</br>**既定**12345678の既定の PUK を指定します。</br>**プロンプト**コマンドラインで PUK を入力するようにユーザーに求めます。|
@@ -55,7 +53,7 @@ Create コマンドは、ユーザーのシステムに新しい仮想スマー�
 |/instance|削除する仮想スマートカードのインスタンス ID を指定します。 InstanceID は、カードが作成されたときに Tpmvscmgr.exe によって出力として生成されました。 /インスタンスパラメーターは、Destroy コマンドの必須フィールドです。|
 |/?|このコマンドのヘルプを表示します。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>Remarks
 
 このコマンドのすべてのパラメーターを実行するには、ターゲットコンピューター上の**Administrators**グループ (またはそれと同等) のメンバーシップが最低限必要です。
 

@@ -1,20 +1,18 @@
 ---
 title: 編集
 description: '[編集] コマンドの参照記事。これにより、MS-DOS エディターが起動され、ASCII テキストファイルを作成および変更できるようになります。'
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 4e0ff2e8-3518-47c1-8c69-5e93f895fa0e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a28af13c5f627010dce1321027b8a246560829f1
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 58d2819e9a96d30e1c4fc286679fbd807ad0caa1
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85930494"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890711"
 ---
 # <a name="edit"></a>編集
 
@@ -38,7 +36,7 @@ edit [/b] [/h] [/r] [/s] [/<nnn>] [[<drive>:][<path>]<filename> [<filename2> [..
 | `<nnn>` | バイナリファイルを読み込み、行を*nnn*文字幅に折り返します。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>Remarks
 
 - 追加のヘルプを表示するには、MS-DOS エディターを開き、F1 キーを押します。
 

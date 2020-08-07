@@ -1,18 +1,16 @@
 ---
 title: Active Directory サーバーのパフォーマンス チューニング
 description: Active Directory サーバーのパフォーマンス チューニング
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: landing-page
 ms.author: timwi; chrisrob; herbertm; kenbrumf;  mleary; shawnrab; v-tea
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 33dad41e01cab4c36ea55bcb84e8033bd358d617
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 8a50fb23a0567ec14b3b9a83b93253ba79ec02a9
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471567"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896240"
 ---
 # <a name="performance-tuning-active-directory-servers"></a>Active Directory サーバーのパフォーマンス チューニング
 

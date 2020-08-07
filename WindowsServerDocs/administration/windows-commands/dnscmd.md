@@ -1,20 +1,18 @@
 ---
 title: dnscmd
 description: Dnscmd コマンドのリファレンス記事。これは、DNS サーバーを管理するためのコマンドラインインターフェイスです。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: e7f31cb5-a426-4e25-b714-88712b8defd5
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8c8d865643c12377a3f4b14250f9d3dbead1e2ac
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: bc034b86cc095b8bd23a8c0fd71f9da515474068
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86958244"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890783"
 ---
 # <a name="dnscmd"></a>Dnscmd
 
@@ -30,7 +28,7 @@ dnscmd <servername> <command> [<command parameters>]
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | Description |
+| パラメーター | 説明 |
 | --------- | ----------- |
 | `<servername>` | リモートまたはローカルの DNS サーバーの IP アドレスまたはホスト名。 |
 
@@ -46,7 +44,7 @@ dnscmd [<servername>] /ageallrecords <zonename>[<nodename>] | [/tree]|[/f]
 
 #### <a name="parameters"></a>パラメーター
 
-| パラメーター | Description |
+| パラメーター | 説明 |
 | ---------- | ----------- |
 | `<servername>` | 管理者が管理を計画している DNS サーバーを指定します。これは、IP アドレス、完全修飾ドメイン名 (FQDN)、またはホスト名で表されます。 このパラメーターを省略した場合は、ローカルサーバーが使用されます。 |
 | `<zonename>` | ゾーンの FQDN を指定します。 |
@@ -54,7 +52,7 @@ dnscmd [<servername>] /ageallrecords <zonename>[<nodename>] | [/tree]|[/f]
 | /ツリー | すべての子ノードもタイムスタンプを受け取ることを指定します。 |
 | /f | 確認を求めずにコマンドを実行します。 |
 
-##### <a name="remarks"></a>注釈
+##### <a name="remarks"></a>Remarks
 
 - **Ageallrecords**コマンドは、現在のバージョンの dns と、エージングと清掃がサポートされていない以前のリリースとの下位互換性を維持するためのものです。 現在の時刻のタイムスタンプをタイムスタンプのないリソースレコードに追加し、タイムスタンプを持つリソースレコードに現在の時刻を設定します。
 
@@ -337,7 +335,7 @@ dnscmd [<servername>] /enumzones [/primary | /secondary | /forwarder | /stub | /
 | /stub | すべてのスタブゾーンを一覧表示します。 |
 | /cache | キャッシュに読み込まれているゾーンのみを一覧表示します。 |
 | /自動作成済み] | DNS サーバーのインストール中に自動的に作成されたゾーンを一覧表示します。 |
-| /転送 | 前方参照ゾーンの一覧を表示します。 |
+| /forward | 前方参照ゾーンの一覧を表示します。 |
 | /反転 | 逆引き参照ゾーンの一覧を表示します。 |
 | /ds | Active directory 統合ゾーンの一覧を表示します。 |
 | /file | ファイルによってバックアップされているゾーンを一覧表示します。 |
@@ -520,7 +518,7 @@ dnscmd [<servername>] /resetforwarders <IPaddress> [,<IPaddress>]...][/timeout <
 | /noslave | フォワーダーがクエリの解決に失敗した場合に、DNS サーバーが独自の反復クエリを実行できるようにします。 これが既定の設定です。 |
 | /f | 確認を求めずにコマンドを実行します。 ノードには複数のリソースレコードを含めることができるため、このコマンドでは、削除するリソースレコードの種類について非常に固有の情報を要求する必要があります。 データ型を指定し、リソースレコードデータの種類を指定しない場合、指定したデータ型のすべてのレコードが指定したノードで削除されます。 |
 
-##### <a name="remarks"></a>注釈
+##### <a name="remarks"></a>Remarks
 
 - 既定では、クエリを解決できない場合、DNS サーバーは反復クエリを実行します。
 
@@ -576,7 +574,7 @@ dnscmd [<servername>] /startscavenging
 | ---------- | ----------- |
 | `<servername>` | 管理する DNS サーバーを指定します。 IP アドレス、FQDN、またはホスト名で表されます。 このパラメーターを省略した場合は、ローカルサーバーが使用されます。 |
 
-##### <a name="remarks"></a>注釈
+##### <a name="remarks"></a>Remarks
 
 - このコマンドが正常に完了すると、すぐに清掃が開始されます。 清掃が失敗した場合、警告メッセージは表示されません。
 
@@ -779,7 +777,7 @@ dnscmd [<servername>] /zoneinfo <zonename> [<setting>]
 | `<zonename>` | ゾーンの名前を指定します。 |
 | `<setting>` | **ゾーン情報**コマンドによって返される設定は、個別に指定できます。 設定を指定しない場合は、すべての設定が返されます。 |
 
-##### <a name="remarks"></a>注釈
+##### <a name="remarks"></a>Remarks
 
 - サーバーレベルのレジストリ設定を表示するには、 **/info**コマンドを使用します。
 
@@ -808,7 +806,7 @@ dnscmd [<servername>] /zonepause <zonename>
 | `<servername>` | 管理する DNS サーバーを指定します。 IP アドレス、FQDN、またはホスト名で表されます。 このパラメーターを省略した場合は、ローカルサーバーが使用されます。 |
 | `<zonename>` | 一時停止するゾーンの名前を指定します。 |
 
-##### <a name="remarks"></a>注釈
+##### <a name="remarks"></a>Remarks
 
 - ゾーンを再開し、一時停止した後で使用できるようにするには、 **/zoneresume**コマンドを使用します。
 
@@ -858,7 +856,7 @@ dnscmd [<servername>] /zonerefresh <zonename>
 | `<servername>` | 管理する DNS サーバーを指定します。 IP アドレス、FQDN、またはホスト名で表されます。 このパラメーターを省略した場合は、ローカルサーバーが使用されます。 |
 | `<zonename>` | 更新するゾーンの名前を指定します。 |
 
-##### <a name="remarks"></a>注釈
+##### <a name="remarks"></a>Remarks
 
 - **Zonerefresh**コマンドを実行すると、マスターサーバーの SOA (start of authority) リソースレコードのバージョン番号が強制的にチェックされます。 マスターサーバーのバージョン番号がセカンダリサーバーのバージョン番号よりも大きい場合は、セカンダリサーバーを更新するゾーン転送が開始されます。 バージョン番号が同じである場合、ゾーン転送は行われません。
 
@@ -887,7 +885,7 @@ dnscmd [<servername>] /zonereload <zonename>
 | `<servername>` | 管理する DNS サーバーを指定します。 IP アドレス、FQDN、またはホスト名で表されます。 このパラメーターを省略した場合は、ローカルサーバーが使用されます。 |
 | `<zonename>` | 再読み込みするゾーンの名前を指定します。 |
 
-##### <a name="remarks"></a>注釈
+##### <a name="remarks"></a>Remarks
 
 - ゾーンが active directory と統合されている場合は、Active Directory Domain Services (AD DS) から再読み込みされます。
 
@@ -918,7 +916,7 @@ dnscmd [<servername>] /zoneresetmasters <zonename> [/local] [<IPaddress> [<IPadd
 | /local | ローカルのマスターリストを設定します。 このパラメーターは、active directory 統合ゾーンで使用されます。 |
 | `<IPaddress>` | セカンダリゾーンのマスタサーバーの IP アドレス。 |
 
-##### <a name="remarks"></a>注釈
+##### <a name="remarks"></a>Remarks
 
 - この値は、最初にセカンダリゾーンが作成されるときに設定されます。 セカンダリサーバーで、**ゾーンの eresetmasters**コマンドを使用します。 この値は、マスター DNS サーバーで設定されている場合は効果がありません。
 
@@ -948,7 +946,7 @@ dnscmd [<servername>] /zoneresetscavengeservers <zonename> [/local] [<IPaddress>
 | /local | ローカルのマスターリストを設定します。 このパラメーターは、active directory 統合ゾーンで使用されます。 |
 | `<IPaddress>` | 清掃を実行できるサーバーの IP アドレスが一覧表示されます。 このパラメーターを省略した場合、このゾーンをホストするすべてのサーバーで清掃を実行できます。 |
 
-##### <a name="remarks"></a>注釈
+##### <a name="remarks"></a>Remarks
 
 - 既定では、ゾーンをホストするすべてのサーバーがそのゾーンを清掃できます。
 
@@ -989,7 +987,7 @@ dnscmd [<servername>] /zoneresetsecondaries <zonename> {/noxfr | /nonsecure | /s
 | /notifylist | 変更通知をサーバーの一覧のみに送信することを指定します。 このコマンドの後には、マスターサーバーが使用する IP アドレスまたはアドレスを指定する必要があります。 |
 | `<notifyIPaddresses>` | 変更通知の送信先となるセカンダリサーバーの IP アドレスまたはアドレスを指定します。 この一覧は、 **/notifylist**パラメーターと共にのみ使用されます。 |
 
-##### <a name="remarks"></a>注釈
+##### <a name="remarks"></a>Remarks
 
 - マスターサーバーでゾーンの**eresetsecondary**コマンドを使用して、セカンダリサーバーからのゾーン転送要求にどのように応答するかを指定します。
 
@@ -1020,7 +1018,7 @@ dnscmd [<servername>] /zoneresettype <zonename> <zonetype> [/overwrite_mem | /ov
 | /overwrite_mem | AD DS のデータの DNS データを上書きします。 |
 | /overwrite_ds | AD DS 内の既存のデータを上書きします。 |
 
-##### <a name="remarks"></a>注釈
+##### <a name="remarks"></a>Remarks
 
 - ゾーンの種類を **/dsforwarder**として設定すると、条件付きの転送を実行するゾーンが作成されます。
 
@@ -1048,7 +1046,7 @@ dnscmd [<servername>] /zoneresume <zonename>
 | `<servername>` | 管理する DNS サーバーを指定します。 IP アドレス、FQDN、またはホスト名で表されます。 このパラメーターを省略した場合は、ローカルサーバーが使用されます。 |
 | `<zonename>` | 再開するゾーンの名前を指定します。 |
 
-##### <a name="remarks"></a>注釈
+##### <a name="remarks"></a>Remarks
 
 - この操作を使用すると、 **/zonepause**操作から再開できます。
 
@@ -1075,7 +1073,7 @@ dnscmd [<servername>] /zoneupdatefromds <zonename>
 | `<servername>` | 管理する DNS サーバーを指定します。 IP アドレス、FQDN、またはホスト名で表されます。 このパラメーターを省略した場合は、ローカルサーバーが使用されます。 |
 | `<zonename>` | 更新するゾーンの名前を指定します。 |
 
-##### <a name="remarks"></a>注釈
+##### <a name="remarks"></a>Remarks
 
 - Active directory 統合ゾーンは、既定で5分ごとにこの更新を実行します。 このパラメーターを変更するには、コマンドを使用し `dnscmd config dspollinginterval` ます。
 
@@ -1102,7 +1100,7 @@ dnscmd [<servername>] /zonewriteback <zonename>
 | `<servername>` | 管理する DNS サーバーを指定します。 IP アドレス、FQDN、またはホスト名で表されます。 このパラメーターを省略した場合は、ローカルサーバーが使用されます。 |
 | `<zonename>` | 更新するゾーンの名前を指定します。 |
 
-##### <a name="remarks"></a>注釈
+##### <a name="remarks"></a>Remarks
 
 - これはゾーンレベルの操作です。 **/Writebackfiles**操作を使用して、DNS サーバー上のすべてのゾーンを更新できます。
 
@@ -1112,6 +1110,6 @@ dnscmd [<servername>] /zonewriteback <zonename>
 dnscmd dnssvr1.contoso.com /zonewriteback test.contoso.com
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

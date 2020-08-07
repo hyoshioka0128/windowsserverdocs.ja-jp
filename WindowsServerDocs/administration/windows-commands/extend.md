@@ -1,20 +1,18 @@
 ---
 title: extend
 description: 拡張コマンドの参照記事。フォーカスのあるボリュームまたはパーティションとそのファイルシステムを、ディスク上の空き領域 (未割り当て) に拡張します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 2414e21d-fc0b-40e8-9e33-3e072f8ad76b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4749b2ddcd47aa5445d9d77ff86c3473ae37b355
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: a64de5c0215568827b5440a3720946a86c7a891e
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931442"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890385"
 ---
 # <a name="extend"></a>extend
 
@@ -38,7 +36,7 @@ extend filesystem [noerr]
 | filesystem | フォーカスのあるボリュームのファイルシステムを拡張します。 ボリュームでファイルシステムが拡張されていないディスクでのみ使用します。 |
 | noerr | スクリプト専用です。 エラーが発生しても、エラーが発生しなかったかのように DiskPart はコマンドの処理を続けます。 このパラメーターは、エラー発生すると、DiskPart はエラー コードを生成して終了します。 |
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>Remarks
 
 - ベーシックディスクの場合、空き領域は、フォーカスのあるボリュームまたはパーティションと同じディスク上にある必要があります。 また、フォーカスのあるボリュームまたはパーティションにすぐに従う必要があります (つまり、次のセクターオフセットから開始する必要があります)。
 

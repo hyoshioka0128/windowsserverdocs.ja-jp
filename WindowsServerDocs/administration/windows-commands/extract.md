@@ -1,20 +1,18 @@
 ---
 title: extract
 description: 抽出コマンドの参照記事。ソースの場所からファイルを抽出します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 20dab03e-f6e1-4eb8-b8a1-fd6f1d97ee83
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1de26d444f8c8fdc838fc2fe0c662afefe8c172c
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 130f9ee22e0603deaa50dfde267df1c39342e38c
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932378"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890374"
 ---
 # <a name="extract"></a>extract
 

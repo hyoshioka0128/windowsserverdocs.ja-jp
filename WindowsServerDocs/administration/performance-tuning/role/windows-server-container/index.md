@@ -1,23 +1,21 @@
 ---
 title: Windows Server コンテナーのパフォーマンス チューニング
 description: Windows Server 16 上のコンテナーに対するパフォーマンス チューニングに関する推奨事項
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: landing-page
 ms.author: davso; ericam; yashi
 author: akino
 ms.date: 10/16/2017
-ms.openlocfilehash: a4508e28e54562748422b198f703e23326d15720
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 53201ee17829ec82eb8d661b5f76689e00d22df8
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80851635"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895987"
 ---
 # <a name="performance-tuning-windows-server-containers"></a>Windows Server コンテナーのパフォーマンス チューニング
 
 ## <a name="introduction"></a>はじめに
-Windows Server 2016 は、オペレーティング システムに組み込まれているコンテナー テクノロジのサポートを提供する Windows の最初のバージョンです。 Server 2016 では、次の 2 種類のコンテナーを使用できます。Windows Server コンテナーと Hyper-V コンテナーです。 どちらの種類のコンテナーでも、Windows Server 2016 の Server Core または Nano Server SKU のいずれかがサポートされます。 
+Windows Server 2016 は、オペレーティング システムに組み込まれているコンテナー テクノロジのサポートを提供する Windows の最初のバージョンです。 Server 2016 では、次の 2 種類のコンテナーを使用できます。Windows Server コンテナーと Hyper-V コンテナーです。 どちらの種類のコンテナーでも、Windows Server 2016 の Server Core または Nano Server SKU のいずれかがサポートされます。
 
 これらの構成には、さまざまなパフォーマンス上の影響があります。これについては、お客様のシナリオにどちらが適しているかを知る上で役立つように、以下で詳細に説明します。 さらに、パフォーマンスに影響する構成について詳しく説明し、これらの各オプションのトレードオフについても説明します。
 
@@ -33,7 +31,7 @@ HYPER-V コンテナーによって提供される追加の分離は、主にコ
 
 ### <a name="nano-server-and-server-core"></a>Nano Server と Server Core
 
-Windows Server コンテナーと HYPER-V コンテナーは、Server Core のサポートと Windows Server 2016 で使用可能な次の新しいインストール オプションのサポートを提供します。[Nano Server](https://technet.microsoft.com/windows-server-docs/compute/nano-server/getting-started-with-nano-server)。 
+Windows Server コンテナーと HYPER-V コンテナーは、Server Core のサポートと Windows Server 2016 で使用可能な次の新しいインストール オプションのサポートを提供します。[Nano Server](https://technet.microsoft.com/windows-server-docs/compute/nano-server/getting-started-with-nano-server)。
 
 Nano Server は、プライベート クラウドとデータセンター向けに最適化されたリモート管理サーバー オペレーティング システムです。 Nano Server は Server Core モードの Windows Server に似ていますが、サイズが大幅に小さく、ローカル ログオン機能がありません。さらに、64 ビットのアプリケーション、ツール、およびエージェントのみがサポートされます。 これは、使用するディスク領域がはるかに少なく、起動が高速です。
 
@@ -71,7 +69,7 @@ Windows Server コンテナーと HYPER-V コンテナーには、さまざま�
 
 各コンテナーは、内部のプライベート IP プレフィックス (例: 172.16.0.0/12) から IP アドレスを取得します。 コンテナー ホストからコンテナー エンドポイントへのポート フォワーディングおよびマッピングがサポートされています。 Docker は、dockerd の初回実行時に、既定で NAT のネットワークを作成します。
 
-これら 3 つのモードのうち、NAT 構成は最も高価なネットワーク IO パスですが、必要な構成量は最も少なくなります。 
+これら 3 つのモードのうち、NAT 構成は最も高価なネットワーク IO パスですが、必要な構成量は最も少なくなります。
 
 Windows Server コンテナーでは、仮想スイッチへの接続に Host vNIC を使用します。 HYPER-V コンテナーでは、仮想スイッチへの接続に (ユーティリティ VM には公開されていない) 統合 VM NIC を使用します。 コンテナーが外部ネットワークと通信している場合、アドレス変換が適用された WinNAT を介してパケットがルーティングされるため、いくらかのオーバーヘッドが発生します。
 

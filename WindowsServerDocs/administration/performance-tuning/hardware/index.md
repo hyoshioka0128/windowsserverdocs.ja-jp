@@ -1,18 +1,16 @@
 ---
 title: サーバーのハードウェア パフォーマンスに関する考慮事項
 description: Windows Server 2016 のサーバーのハードウェア パフォーマンスに関する考慮事項
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: landing-page
 ms.author: phstee
 author: phstee
 ms.date: 01/08/2018
-ms.openlocfilehash: 9c012711dff3746587b4a04b31d9c23ebb7de4cd
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: bac2aa367cc9a8d736fd83f7aeed3e467aeddb54
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71370553"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896742"
 ---
 # <a name="server-hardware-performance-considerations"></a>サーバーのハードウェア パフォーマンスに関する考慮事項
 
@@ -40,8 +38,8 @@ Hyper-V の場合は、プロセッサが SLAT (第 2 レベルのアドレス�
 
 ## <a name="memory-ram-and-paging-storage-recommendations"></a>メモリ (RAM) とページング ストレージに関する推奨事項
 
->[!Note] 
-> Windows Server 2016 を新たにインストールして実行した場合、Windows Server 2012 R2 と比較して、一部のシステムではストレージのパフォーマンスが低下することがあります。 Windows Server 2016 の開発では、プラットフォームのセキュリティと信頼性を強化するために、複数の変更が行われました。 これらの中には、Windows Defender を既定で有効にするなど、I/O パスの延伸につながる変更が含まれているため、特定のワークロードとパターンで I/O パフォーマンスが低下する可能性があります。 Windows Defender はシステム保護のための重要な層であるため、Microsoft では無効にすることをお勧めしていません。 
+>[!Note]
+> Windows Server 2016 を新たにインストールして実行した場合、Windows Server 2012 R2 と比較して、一部のシステムではストレージのパフォーマンスが低下することがあります。 Windows Server 2016 の開発では、プラットフォームのセキュリティと信頼性を強化するために、複数の変更が行われました。 これらの中には、Windows Defender を既定で有効にするなど、I/O パスの延伸につながる変更が含まれているため、特定のワークロードとパターンで I/O パフォーマンスが低下する可能性があります。 Windows Defender はシステム保護のための重要な層であるため、Microsoft では無効にすることをお勧めしていません。
 
 メモリのニーズに合うように RAM を増やしてください。
 コンピューターのメモリが不足し、より多くのメモリがすぐに必要になる場合、Windows ではページングと呼ばれる処理によってハード ディスク領域を使用してシステム RAM を補完します。 ページングが過度になると、システム全体のパフォーマンスが低下します。

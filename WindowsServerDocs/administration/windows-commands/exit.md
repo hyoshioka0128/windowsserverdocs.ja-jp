@@ -1,20 +1,18 @@
 ---
 title: exit
 description: コマンドインタープリターを終了する終了の参照記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: d3cee4a2-6210-46f0-b8e4-7381c3c4e530
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d28f15ba1453b32d8e464fd768a3b7895819d11c
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 058e41d49ece470421fbd2b160037885b92c1bed
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931452"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890462"
 ---
 # <a name="exit"></a>exit
 

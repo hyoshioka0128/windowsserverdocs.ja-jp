@@ -1,32 +1,30 @@
 ---
 title: diskperf
 description: Windows を実行しているコンピューターで物理ディスクまたは論理ディスクのパフォーマンスカウンターをリモートで有効または無効にするために使用できる、diskperf コマンドの参照記事。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: f06916e8-069b-4ec8-a6eb-59f1d9f77111
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e1e33844849993c6d5a9f9330264f31e52af3b29
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 81cefe217abaa7b2d4ee843f3887076f66484422
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85922814"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890863"
 ---
 # <a name="diskperf"></a>diskperf
 
 **Diskperf**コマンドは、Windows を実行しているコンピューターの物理ディスクまたは論理ディスクのパフォーマンスカウンターをリモートで有効または無効にします。
 
-## <a name="syntax"></a>Syntax
+## <a name="syntax"></a>構文
 
 ```
 diskperf [-y[d|v] | -n[d|v]] [\\computername]
 ```
 
-## <a name="options"></a>オプション
+## <a name="options"></a>Options
 
 | オプション | 説明 |
 | ------ | ----------- |

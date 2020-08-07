@@ -1,20 +1,18 @@
 ---
 title: tsdiscon
 description: Tsdiscon のリファレンス記事。リモートデスクトップセッションホストサーバーからセッションを切断します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 13139674-7dee-4965-8cac-32f4928e8b9a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3016bb5a146bf7c1d55ab93325debb11b0f6a81c
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: e81a1c7f68af0bb1d16ce64bb4985e3ddb8d18f2
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86954934"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87897076"
 ---
 # <a name="tsdiscon"></a>tsdiscon
 
@@ -42,7 +40,7 @@ tsdiscon [<SessionID> | <SessionName>] [/server:<ServerName>] [/v]
 |/v|実行されているアクションに関する情報を表示します。|
 |/?|コマンド プロンプトにヘルプを表示します。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>Remarks
 -   別のユーザーをセッションから切断するには、フルコントロールアクセス許可を持っているか、特殊なアクセス許可を切断する必要があります。
 -   セッション ID またはセッション名が指定されていない場合、 **tsdiscon**は現在のセッションを切断します。
 -   セッションを切断したときに実行されていたアプリケーションは、データを失うことなくそのセッションに再接続すると、自動的に実行されます。 **リセットセッション**を使用して、切断されたセッションの実行中のアプリケーションを終了します。ただし、セッションでデータが失われる可能性があることに注意してください。
@@ -62,6 +60,6 @@ tsdiscon [<SessionID> | <SessionName>] [/server:<ServerName>] [/v]
   ```
   tsdiscon TERM04
   ```
-  ## <a name="additional-references"></a>その他のリファレンス
+  ## <a name="additional-references"></a>その他の参照情報
   - [コマンドライン構文のキー](command-line-syntax-key.md) 
   [リモートデスクトップサービス (ターミナルサービス) のコマンドリファレンス](remote-desktop-services-terminal-services-command-reference.md)
