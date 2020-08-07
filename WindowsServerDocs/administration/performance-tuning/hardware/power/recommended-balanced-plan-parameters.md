@@ -1,18 +1,16 @@
 ---
 title: 応答時間を短縮するための推奨されるバランス電源プランのパラメーター
 description: 応答時間を短縮するための推奨されるバランス電源プランのパラメーター
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: conceptual
 ms.author: qizha;tristanb
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 62dc6168e76bf3951443df0f06c47a8684d2df26
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 559f274bcfafdd6c89cf7aea69b3df14f68130c1
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471587"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896708"
 ---
 # <a name="recommended-balanced-power-plan-parameters-for-workloads-requiring-quick-response-times"></a>迅速な応答時間を必要とするワークロードの推奨されるバランスのある電源プランパラメーター
 
@@ -64,7 +62,7 @@ Powercfg -setactive scheme_balanced
 >[!Important]
 >Windows Server 2016 を実行している Intel [Broadwell] プロセッサ以降では、ワークロードの変更に対するより迅速な適応を実現するために、OS レベルではなくプロセッサでプロセッサの電源管理の決定が行われます。 OS によって使用される従来の PPM パラメーターは、実際の頻度の決定にほとんど影響を与えません。ただし、電力またはパフォーマンスを優先する必要がある場合や、最小周波数と最大周波数を上限する場合を除きます。 そのため、推奨される PPM のパラメーターの変更は、事前 Broadwell システムのみを対象としています。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 - [サーバーのハードウェア パフォーマンスに関する考慮事項](../index.md)
 - [サーバー ハードウェアの電源に関する考慮事項](../power.md)
 - [電源とパフォーマンスのチューニング](power-performance-tuning.md)

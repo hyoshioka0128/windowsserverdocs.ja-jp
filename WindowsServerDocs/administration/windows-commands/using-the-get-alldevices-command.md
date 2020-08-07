@@ -1,20 +1,18 @@
 ---
 title: 取得-AllDevices
 description: すべての事前設定されたコンピューターの Windows 展開サービスのプロパティを表示する、get AllDevices のリファレンス記事。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 5824b3d2-2df1-4ed6-a289-e6c47c13fea2
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b5eae53c2dcd39a7f3587f4c3c6bf96d4782ea05
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 1e527be333570838ecb675d78742bbf55918eff3
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85935219"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896973"
 ---
 # <a name="get-alldevices"></a>取得-AllDevices
 

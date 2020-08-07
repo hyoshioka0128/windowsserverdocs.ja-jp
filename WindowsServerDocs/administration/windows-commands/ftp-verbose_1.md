@@ -1,20 +1,18 @@
 ---
 title: ftp verbose
 description: 詳細モードを切り替える ftp 詳細コマンドの参照記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 59febc81-0b14-487e-8aa3-642f59d0b34f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b3f895770b0c6537ff7e7f82526a8b1513cb4f42
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 925f2a15dfd3040ae8a7c8c7fcb808dfe62791ee
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86957324"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87888800"
 ---
 # <a name="ftp-verbose"></a>ftp verbose
 
@@ -36,7 +34,7 @@ verbose
 verbose
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

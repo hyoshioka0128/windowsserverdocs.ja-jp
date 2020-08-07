@@ -1,20 +1,18 @@
 ---
 title: tsecimp
 description: 拡張マークアップ言語 (XML) ファイルから TAPI サーバーセキュリティファイル (Tsec.ini) に割り当て情報をインポートする tsecimp のリファレンス記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: d7488ec6-0eff-45ff-89ee-9cbe752416bf
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c5c3362571df5a3b22dda1b663fcbba749ee6df6
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 641e9724211034fa6e5bd76d0d3705b175a18b4c
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86954894"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896683"
 ---
 # <a name="tsecimp"></a>tsecimp
 
@@ -37,7 +35,7 @@ tsecimp /d
 |/d|インストールされているテレフォニー プロバイダーの一覧を表示します。 テレフォニー プロバイダーごとに、関連付けられた回線デバイスと、各回線デバイスに関連付けられたアドレスおよびユーザーが表示されます。|
 |/?|コマンド プロンプトにヘルプを表示します。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>Remarks
 
 -   割り当て情報のインポート元となる XML ファイルは、次に説明する構造に従っている必要があります。
     -   **UserList**要素
@@ -152,7 +150,7 @@ tsecimp /d
 
     ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

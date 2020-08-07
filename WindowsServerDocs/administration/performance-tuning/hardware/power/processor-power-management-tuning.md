@@ -1,18 +1,16 @@
 ---
 title: Windows Server のバランスの取れた電源プランのプロセッサ電源管理 (PPM) のチューニング
 description: Windows Server のバランスの取れた電源プランのプロセッサ電源管理 (PPM) のチューニング
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: conceptual
 ms.author: qizha;tristanb
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 25244ecb653f7a1b8461130bba40901b35945765
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 9b45ad16981667eff626278daadbe8b39f5cc5c8
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471617"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896717"
 ---
 # <a name="processor-power-management-ppm-tuning-for-the-windows-server-balanced-power-plan"></a>Windows Server のバランスの取れた電源プランのプロセッサ電源管理 (PPM) のチューニング
 
@@ -124,7 +122,7 @@ CPU の周波数を中程度の使用率レベルで増加させたい場合 (�
 
 このため、Windows では最初に**バランス**の取れた電源プランが提供されているので、多くの場合、特定のサーバー上の特定のワークロードに対して手動チューニングを行う必要はありません。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 - [サーバーのハードウェア パフォーマンスに関する考慮事項](../index.md)
 - [サーバー ハードウェアの電源に関する考慮事項](../power.md)
 - [電源とパフォーマンスのチューニング](power-performance-tuning.md)

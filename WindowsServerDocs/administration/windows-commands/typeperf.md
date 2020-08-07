@@ -1,20 +1,18 @@
 ---
 title: typeperf
 description: Typeperf のリファレンス記事。コマンドウィンドウまたはログファイルにパフォーマンスデータを書き込みます。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 0c7ca89a-03b3-4626-afcf-ef8565e90043
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 90a53224b733489464b7432c6f8c9304dd62df18
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 38a459fb1c52c627d05f3d19fb8f2e8055a89338
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85937317"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896646"
 ---
 # <a name="typeperf"></a>typeperf
 
@@ -31,7 +29,7 @@ typeperf -qx [object] [options]
 
 ### <a name="parameters"></a>パラメーター
 
-|パラメーター|Description|
+|パラメーター|説明|
 |---------|-----------|
 |\<counter [counter […]]>|監視するパフォーマンスカウンターを指定します。|
 
@@ -51,7 +49,7 @@ typeperf -qx [object] [options]
 |                -qx [オブジェクト]                |        インストールされているカウンターの一覧をインスタンスと共に表示します。 1つのオブジェクトのカウンターを一覧表示するには、オブジェクト名を含めます。        |
 |               -sc\<samples>               |             収集するサンプルの数を指定します。 既定では、CTRL + C キーが押されるまでデータが収集されます。              |
 |            -config\<filename>             |                                    コマンドオプションを含む設定ファイルを指定します。                                     |
-|            -s\<computer_name>             |                   カウンターパスにコンピューターが指定されていない場合に、監視するリモートコンピューターを指定します。                    |
+|            -s \<computer_name>             |                   カウンターパスにコンピューターが指定されていない場合に、監視するリモートコンピューターを指定します。                    |
 |                     -y                     |                                        確認を求めずにすべての質問に対して [はい] を回答します。                                        |
 
 ## <a name="examples"></a>例

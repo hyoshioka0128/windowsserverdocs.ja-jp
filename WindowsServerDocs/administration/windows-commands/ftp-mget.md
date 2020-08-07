@@ -1,20 +1,18 @@
 ---
 title: ftp mget
 description: 現在のファイル転送の種類を使用してリモートファイルをローカルコンピューターにコピーする、ftp mget コマンドの参照記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 6c85ae96-ec51-48a9-a227-7f02c7332c69
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d9b0cfe0b55074f94941dfde7b864a643e7eadd9
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 9074df66e70961c74ef1b479f31ac316e34ff051
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86957734"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87889339"
 ---
 # <a name="ftp-mget"></a>ftp mget
 
@@ -42,7 +40,7 @@ mget <remotefile>[ ]
 mget a.exe b.exe
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

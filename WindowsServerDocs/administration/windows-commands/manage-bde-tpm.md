@@ -1,20 +1,18 @@
 ---
 title: manage-bde tpm
 description: コンピューターのトラステッドプラットフォームモジュール (TPM) を構成する manage-bde tpm コマンドのリファレンス記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 11a8530d-edd7-4fe3-ae81-b943766760fe
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4eacf664a372d178a6391c8fa2359d2301484c36
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: d5a41ccff889fc729ce812523d64b9404378d32c
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86957034"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87886655"
 ---
 # <a name="manage-bde-tpm"></a>manage-bde tpm
 
@@ -54,7 +52,7 @@ TPM の所有権を取得し、所有者パスワードをに設定するには 
 manage-bde  tpm  takeownership 0wnerP@ss
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

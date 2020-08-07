@@ -1,20 +1,18 @@
 ---
 title: Scwcmd
 description: 参照記事 * * * *-
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 188ae881-c7d4-4a7a-b967-8fdc79f5f345
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bb651c2b527d332f70cd0686a7d57f089bc987ac
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 48348586c354ff8b387a036ecfd021262d31d974
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932615"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87883076"
 ---
 # <a name="scwcmd"></a>Scwcmd
 

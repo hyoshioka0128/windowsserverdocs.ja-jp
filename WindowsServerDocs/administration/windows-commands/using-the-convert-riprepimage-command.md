@@ -1,20 +1,18 @@
 ---
 title: RiprepImage
 description: 既存のリモートインストール準備 (RIPrep) イメージを Windows イメージ (.wim) 形式に変換する RiprepImage のリファレンス記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 88c2b96f-5947-4b64-9dcf-1946b3c013cf
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d0e360a23874ada4659819395db16de7527208b4
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 5e4a10c4013594c4b6ea19463cf41836f251127a
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85934115"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896572"
 ---
 # <a name="convert-riprepimage"></a>RiprepImage
 

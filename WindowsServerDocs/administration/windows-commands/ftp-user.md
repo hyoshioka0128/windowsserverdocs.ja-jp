@@ -1,20 +1,18 @@
 ---
 title: ftp user
 description: リモートコンピューターに対してユーザーを指定する、ftp ユーザーコマンドの参照記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 0a77bfeb-27a9-4f2f-a3c4-2fef529fb569
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9b1eea449765b58461d410f0e015d4978c3ad016
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: bd015b7f84a6f5a4f3ee10a3cbe351a5bfa4a563
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86957355"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87888822"
 ---
 # <a name="ftp-user"></a>ftp user
 
@@ -44,7 +42,7 @@ user <username> [<password>] [<account>]
 user User1 Password1
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

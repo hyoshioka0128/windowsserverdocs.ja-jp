@@ -1,20 +1,18 @@
 ---
 title: 追加 AllDriverPackages サブコマンドを使用します。
 description: フォルダーに格納されているすべてのドライバーパッケージをサーバーに追加する追加 AllDriverPackages のリファレンス記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: ba6641c1-d7e9-43a9-9819-702dad5484ed
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 277053d48ce8ed853ccd41659af0a8f2418400cf
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 301842cce5306c8f7922660f49c9475fbbf70cc3
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86954824"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87897034"
 ---
 # <a name="add-alldriverpackages"></a>追加-AllDriverPackages
 
@@ -45,7 +43,7 @@ WDSUTIL /verbose /Add-AllDriverPackages /FolderPath:C:\Temp\Drivers /Architectur
 WDSUTIL /Add-AllDriverPackages /FolderPath:C:\Temp\Drivers\Printers /DriverGroup:Printer Drivers
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

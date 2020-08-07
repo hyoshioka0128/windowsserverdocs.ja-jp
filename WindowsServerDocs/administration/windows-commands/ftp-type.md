@@ -1,20 +1,18 @@
 ---
 title: ftp type
 description: ファイル転送の種類を設定または表示する ftp type コマンドの参照記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 6e96dcd4-08f8-4e7b-90b7-1e1761fea4c7
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7bccbc7bc42c8250489de875bee960bbb65e41eb
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 2188c6114b708845486dd091ff222d2d46ece075
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86957344"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87888814"
 ---
 # <a name="ftp-type"></a>ftp type
 
@@ -52,7 +50,7 @@ type ascii
 type binary
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

@@ -1,20 +1,18 @@
 ---
 title: Initialize-サーバー
 description: サーバーの役割をインストールした後に最初に使用するために Windows 展開サービスサーバーを構成する、Initialize-Server のリファレンス記事。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 68a26ad9-5eb2-4490-b782-b7cd46b8000d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 22c93a07e4c2785e8cda497e9698b2031c764a42
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: ac0cf322818f433df4f5f0751656d9eb66bf2fd4
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932164"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896915"
 ---
 # <a name="initialize-server"></a>Initialize-サーバー
 

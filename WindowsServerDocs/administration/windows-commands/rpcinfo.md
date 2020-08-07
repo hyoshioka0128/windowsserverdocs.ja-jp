@@ -1,20 +1,18 @@
 ---
 title: rpcinfo
 description: リモートコンピューター上のプログラムを一覧表示する方法について説明します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 7c342232-a8f0-42ff-8f11-d18c4981f5ca
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: d25a806c63f959ec659a6dd692d9efd5b394a64c
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 642ed98ff762fd1151b459fdd96a6e00772a53dc
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820092"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87883449"
 ---
 # <a name="rpcinfo"></a>rpcinfo
 
@@ -30,10 +28,10 @@ rpcinfo [/p [<Node>]] [/b <Program version>] [/t <Node Program> [<version>]] [/u
 #### <a name="parameters"></a>パラメーター
 |パラメーター|説明|
 |-------|--------|
-|/p [ \< Node>]|指定したホストのポートマッパーに登録されているすべてのプログラムを一覧表示します。 ノード (コンピューター) 名を指定しない場合、プログラムは、ローカル ホスト上のポート マッパーを照会します。|
-|/b \< プログラムバージョン>|指定したプログラムとポート マッパーに登録されているバージョンを持つすべてのネットワーク ノードからの応答を要求します。 プログラムの名前または番号とバージョン番号を指定する必要があります。|
-|/t \< ノードプログラム> [ \< バージョン>]|TCP トランスポート プロトコルを使用して、指定したプログラムを呼び出します。 ノード (コンピューター) 名とプログラム名を指定する必要があります。 バージョンを指定しない場合、プログラムは、すべてのバージョンを呼び出します。|
-|/u \< Node プログラム> [ \< バージョン>]|UDP トランスポート プロトコルを使用して、指定したプログラムを呼び出します。 ノード (コンピューター) 名とプログラム名を指定する必要があります。 バージョンを指定しない場合、プログラムは、すべてのバージョンを呼び出します。|
+|/p [\<Node>]|指定したホストのポートマッパーに登録されているすべてのプログラムを一覧表示します。 ノード (コンピューター) 名を指定しない場合、プログラムは、ローカル ホスト上のポート マッパーを照会します。|
+|/b\<Program version>|指定したプログラムとポート マッパーに登録されているバージョンを持つすべてのネットワーク ノードからの応答を要求します。 プログラムの名前または番号とバージョン番号を指定する必要があります。|
+|/t \<Node Program> [\<version>]|TCP トランスポート プロトコルを使用して、指定したプログラムを呼び出します。 ノード (コンピューター) 名とプログラム名を指定する必要があります。 バージョンを指定しない場合、プログラムは、すべてのバージョンを呼び出します。|
+|/u \<Node Program> [\<version>]|UDP トランスポート プロトコルを使用して、指定したプログラムを呼び出します。 ノード (コンピューター) 名とプログラム名を指定する必要があります。 バージョンを指定しない場合、プログラムは、すべてのバージョンを呼び出します。|
 |/?|コマンド プロンプトにヘルプを表示します。|
 
 ## <a name="examples"></a>例
@@ -54,5 +52,5 @@ rpcinfo /t <Node Program> [<version>]
 rpcinfo /u <Node Program> [<version>]
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

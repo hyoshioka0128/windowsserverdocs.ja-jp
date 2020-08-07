@@ -1,20 +1,18 @@
 ---
 title: ftp hash
 description: Ftp ハッシュコマンドの参照記事。転送された各データブロックのシャープ記号 (#) の印刷を切り替えます。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 76bed9b3-3efd-4a3e-831f-460626d02c44
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8cd55576c033ec1e54a8db8c16a9f6825cfa59c0
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: daadc68bc52426164024c5c54c251d2aa0962765
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86957804"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87889407"
 ---
 # <a name="ftp-hash"></a>ftp hash
 
@@ -36,7 +34,7 @@ hash
 hash
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

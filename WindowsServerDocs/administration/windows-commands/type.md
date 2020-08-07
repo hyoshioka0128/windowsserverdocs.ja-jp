@@ -1,21 +1,19 @@
 ---
-title: 型
+title: type
 description: テキストファイルの内容を表示する型の参照記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: c44fe905-a865-4c97-8cc5-fb95fec7d4d5
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dansimp
-ms.openlocfilehash: 4b79cf89c1363ba35ba6567139e119e0afeec905
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 1cb4e28a079c39aaadd85267c004781cc9c84f3c
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86954859"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896656"
 ---
-# <a name="type"></a>型
+# <a name="type"></a>type
 
 Windows コマンドシェルの**type**は、テキストファイルの内容を表示する組み込みコマンドです。 **Type**コマンドを使用して、テキストファイルを変更せずに表示します。
 
@@ -34,7 +32,7 @@ type [<Drive>:][<Path>]<FileName>
 |[\<Drive>:][\<Path>]\<FileName>|表示するファイルの場所と名前を指定します。 複数のファイル名をスペースで区切ります。|
 |/?|コマンド プロンプトにヘルプを表示します。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>Remarks
 
 -   *FileName*にスペースが含まれている場合は、引用符で囲みます (たとえば、Spaces.txt を含むファイル名)。
 -   プログラムによって作成されたバイナリファイルまたはファイルを表示すると、フォームフィード文字やエスケープシーケンスのシンボルなど、画面に奇妙な文字が表示されることがあります。 これらの文字は、バイナリファイルで使用される制御コードを表します。 一般に、バイナリファイルの表示には**type**コマンドを使用しないでください。
@@ -50,6 +48,6 @@ type holiday.mar
 type holiday.mar | more
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

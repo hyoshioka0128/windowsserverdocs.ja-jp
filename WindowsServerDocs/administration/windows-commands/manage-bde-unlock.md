@@ -1,20 +1,18 @@
 ---
 title: manage-bde のロック解除
 description: 復元パスワードまたは回復キーを使用して BitLocker で保護されているドライブのロックを解除する manage-bde unlock コマンドのリファレンス記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 7852bf7d-9102-40be-adcb-71e8f4dfde72
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1be2bf029a378015cd20f21c236c0d519f2e072a
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: d9b13e4ac27ab77a522d223749cd84e3b1bb11a6
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85922206"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87886646"
 ---
 # <a name="manage-bde-unlock"></a>manage-bde のロック解除
 

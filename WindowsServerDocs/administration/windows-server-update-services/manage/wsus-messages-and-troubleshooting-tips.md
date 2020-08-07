@@ -1,24 +1,22 @@
 ---
 title: WSUS メッセージとトラブルシューティングのヒント
 description: Windows Server Update Service (WSUS) のトピック-WSUS メッセージを使用したトラブルシューティング
-ms.prod: windows-server
-ms.technology: manage-wsus
 ms.topic: article
 ms.assetid: 9f6317f7-bfe0-42d9-87ce-d8f038c728ca
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e4fe14eeaba3fc82e125288f8c47fb445f6e00b0
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 7ce07e38a3a8a07f97959e782fd22c1d5472d338
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80828315"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896775"
 ---
 # <a name="wsus-messages-and-troubleshooting-tips"></a>WSUS メッセージとトラブルシューティングのヒント
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 このトピックには、次の WSUS メッセージに関する情報が含まれています。
 
@@ -45,18 +43,18 @@ ms.locfileid: "80828315"
 
 ## <a name="message-id-6703---wsus-synchronization-failed"></a>メッセージ ID 6703-WSUS の同期に失敗しました
 > メッセージ: HTTP ステータス 503: サービスを利用できないため、要求は失敗しました。
-> 
+>
 > ソース: Microsoft. UpdateServices. 管理. Adminupdateserver
 
 WSUS サーバーで Update Services を開こうとすると、次のエラーが表示されます。
 
 > エラー: 接続エラー
-> 
+>
 > WSUS サーバーへの接続中にエラーが発生しました。 このエラーは、さまざまな理由で発生する可能性があります。 問題が解決しない場合は、ネットワーク管理者に問い合わせてください。 サーバーに再接続するには、[サーバーのリセット] ノードをクリックします。
 
-上記に加えて、WSUS 管理 web サイトの URL (つまり `http://CM12CAS:8530`) にアクセスしようとすると、次のエラーが表示されます。
+上記に加えて、WSUS 管理 web サイトの URL (つまり、) にアクセスしようとすると、 `http://CM12CAS:8530` 次のエラーで失敗します。
 
-> HTTP エラー503。 サービスを利用できません
+> HTTP エラー 503。 サービスを利用できません
 
 このような状況では、IIS の WsusPool アプリケーションプールが停止状態になっている可能性が最も高くなります。
 
@@ -73,20 +71,20 @@ WSUS セットアップでは、Microsoft SQL Server を使用してインスト
 
 - **Selfupdate:** Selfupdate サービスのトラブルシューティングについては、「[自動更新を更新する必要があり](https://technet.microsoft.com/library/cc708554(v=ws.10).aspx)ます」を参照してください。
 
-- **Wssuservice:** このサービスは同期を容易にします。 同期に問題がある場合は、 **[スタート]** ボタンをクリックし、 **[管理ツール]** 、 **[サービス]** の順にポイントし、サービスの一覧で **[Windows Server Update Service]** を見つけて、WSUSService にアクセスします。 次を実行します。
-    
-    -   このサービスが実行されていることを確認します。 停止している場合は **[開始]** をクリックし、サービスを更新する場合は **[再起動]** をクリックします。
-    
-    -   イベントビューアーを使用して**アプリケーション**を**確認し、** **システム**イベントログを確認して、問題を示すイベントがあるかどうかを確認します。
-    
+- **WSSUService.exe:** このサービスは同期を容易にします。 同期で問題が発生した場合は、[**スタート**] ボタンをクリックし、[**管理ツール**]、[**サービス**] の順にポイントし、サービスの一覧で [ **Windows Server Update Service** ] を見つけて、WSUSService.exe アクセスします。 次の操作を行います。
+
+    -   このサービスが実行されていることを確認します。 停止している場合は [**開始**] をクリックし、サービスを更新する場合は [**再起動**] をクリックします。
+
+    -   イベントビューアーを使用して**アプリケーション**を**確認し、****システム**イベントログを確認して、問題を示すイベントがあるかどうかを確認します。
+
     -   また、「ソフトウェアの配布」を参照して、問題を示すイベントがあるかどうかを確認することもできます。
 
 - **Web servicesSQL サービス:** Web サービスは IIS でホストされます。 実行されていない場合は、IIS が実行されている (または開始されている) ことを確認します。 また、コマンドプロンプトで「 **iisreset** 」と入力して、Web サービスをリセットすることもできます。
 
-- **SQL サービス:** Selfupdate サービスを除くすべてのサービスでは、SQL サービスが実行されている必要があります。 SQL 接続の問題を示すログファイルがある場合は、まず SQL サービスを確認してください。 SQL サービスにアクセスするには、 **[スタート]** をクリックし、 **[管理ツール]** をポイントします。次に、 **[サービス]** をクリックして、次のいずれかを探します。
-    
+- **SQL サービス:** Selfupdate サービスを除くすべてのサービスでは、SQL サービスが実行されている必要があります。 SQL 接続の問題を示すログファイルがある場合は、まず SQL サービスを確認してください。 SQL サービスにアクセスするには、[**スタート**] をクリックし、[**管理ツール**] をポイントします。次に、[**サービス**] をクリックして、次のいずれかを探します。
+
   - **MSSQLSERver** (WMSDE または MSDE を使用している場合、または SQL Server を使用していて、インスタンス名に既定のインスタンス名を使用している場合)
-    
+
   - **MSSQL $ wsus** (SQL Server データベースを使用していて、データベースインスタンス WSUS という名前が付いている場合)
-    
-    サービスを右クリックし、サービスが実行されていない場合は **[開始]** をクリックします。サービスが実行されている場合は、**再起動**してサービスを更新します。
+
+    サービスを右クリックし、サービスが実行されていない場合は [**開始**] をクリックします。サービスが実行されている場合は、**再起動**してサービスを更新します。

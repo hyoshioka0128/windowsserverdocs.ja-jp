@@ -1,20 +1,18 @@
 ---
 title: ftp quit
 description: リモートコンピューターとの ftp セッションを終了して終了する、ftp 終了コマンドの参照記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: f5de9a79-5177-4e3a-80d9-df8f4d7660b7
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7b31f4e7cbf8c549e33875e26ed8c87eaef87c8d
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 8f69ad8cfcc94e1c9d9a146a2f7a81f41d3feb22
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86957534"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87889091"
 ---
 # <a name="ftp-quit"></a>ftp quit
 
@@ -39,7 +37,7 @@ quit
 quit
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

@@ -1,20 +1,18 @@
 ---
 title: '[追加] コマンドを使用する'
 description: さまざまな add コマンドのリファレンス記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 6fcdd154-baaf-4288-a355-2a95a3028bce
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4b70ec8ef9d80b8fc09af1283c5e108642c764b6
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: c72a16c79e50ee69047a93e29d1e83e89299b5b8
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87408791"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87897028"
 ---
 # <a name="using-the-add-command"></a>[追加] コマンドを使用する
 

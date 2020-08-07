@@ -1,20 +1,18 @@
 ---
 title: ftp mput
 description: Ftp mput コマンドの参照記事。現在のファイル転送の種類を使用してローカルファイルをリモートコンピューターにコピーします。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 980f15e7-7cf1-4813-9946-a8cc4edfb198
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ca0b72fce2ce9408fa04e948c8116a0b9e153268
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: d2caf7e91341f470fc265d0d1dbf6a51b6fe99bb
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86957644"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87889233"
 ---
 # <a name="ftp-mput"></a>ftp mput
 
@@ -42,7 +40,7 @@ mput <localfile>[ ]
 mput Program1.exe Program2.exe
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

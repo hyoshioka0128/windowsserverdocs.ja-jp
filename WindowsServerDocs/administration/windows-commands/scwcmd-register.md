@@ -1,20 +1,18 @@
 ---
 title: Scwcmd レジスタ
 description: 参照記事 * * * *-
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: fe4d126a-9f27-4076-b7b1-fbefa45f378a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7917cfe8f71673ad45d8d3e32d29798757367c2a
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 227a59cd5a033f8bc6a30344a2c71afa435ab069
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932648"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87883174"
 ---
 # <a name="scwcmd-register"></a>Scwcmd: 登録
 
@@ -38,7 +36,7 @@ scwcmd register /kbname:<MyApp> [/kbfile:<kb.xml>] [/kb:<path>] [/d]
 |/d|セキュリティの構成データベースからセキュリティの構成データベースの拡張機能の登録を解除します。 登録を解除する拡張機能は、/kbname パラメーターを指定します。 ( **/Kb ファイル**パラメーターを指定しないでください)。拡張機能の登録を解除するセキュリティ構成データベースは、 **/kb**パラメーターによって指定されます。|
 |/?|コマンド プロンプトにヘルプを表示します。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>Remarks
 
 Scwcmd.exe は Windows Server 2008 R2、Windows Server 2008 または Windows Server 2003 を実行するコンピューターにできるだけです。
 

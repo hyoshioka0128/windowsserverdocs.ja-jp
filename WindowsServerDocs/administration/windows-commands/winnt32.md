@@ -1,20 +1,18 @@
 ---
 title: winnt32
 description: Windows Server 2003 で製品のインストールまたはアップグレードを実行する winnt32 のリファレンス記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 5a0a6fb3-ba4e-4ace-8984-7f6d3875560e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e1b5844ee9cbdb11629e488e6506ef85b23b537b
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: d8055c25829b1084a9326d31f9ccad125b0dc75e
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86958944"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896834"
 ---
 # <a name="winnt32"></a>winnt32
 
@@ -61,7 +59,7 @@ winnt32 [/checkupgradeonly] [/cmd: <CommandLine>] [/cmdcons] [/copydir:{i386|ia6
 |   \<AnswerFile>   |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         セットアップに、独自の仕様は、します。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 |        /?         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              コマンド プロンプトにヘルプを表示します。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>Remarks
 クライアントコンピューターに Windows XP を展開する場合は、Windows XP に付属しているバージョンの winnt32.exe を使用できます。 Windows XP を展開するもう1つの方法として、winnt32.msi を使用します。これは、IntelliMirror のテクノロジセットの一部である Windows インストーラーを通じて機能します。 クライアントの展開の詳細については、「Windows Server 2003 導入ガイドを参照してください。 [Windows 導入ガイドとリソース キットを使用して](/previous-versions/windows/it-pro/windows-server-2003/cc779317(v=ws.10))します。
 
 Itanium ベースのコンピューターの場合は、 **winnt32** から拡張ファームウェア インターフェイス (EFI) または Windows Server 2003 Enterprise、Windows Server 2003 R2 Enterprise、Windows Server 2003 R2 Datacenter、または Windows Server 2003 Datacenter から実行できます。 Itanium アーキテクチャ ベースのコンピューターにも、 **/cmdcons** と **/syspart** が表示されていないとアップグレードに関連するオプションは使用できません。
@@ -70,5 +68,5 @@ Itanium ベースのコンピューターの場合は、 **winnt32** から拡�
 ブート設定の変更の詳細については、「windows Server 2003 用の Windows 展開とリソースキット」を参照してください。 詳細については、次を参照してください。 [Windows 導入ガイドとリソース キットを使用して](/previous-versions/windows/it-pro/windows-server-2003/cc779317(v=ws.10))します。
 使用して、 **/unattend** コマンド ライン オプションの設定を自動化するものが読み取りを Microsoft ライセンス契約の Windows Server 2003 とみなされます。 このコマンド ライン オプションを使用して、組織の Windows Server 2003 をインストールする、前に、ことを確認する必要がありますエンド ユーザー (個人、または 1 つのエンティティ) かどうかが受信した、読み取り、およびその製品の Microsoft ライセンス契約の条件に同意します。  Oem は、エンドユーザーが使用しているコンピューター上のこのキーを指定できない場合があります。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

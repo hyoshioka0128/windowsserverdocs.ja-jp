@@ -1,20 +1,18 @@
 ---
 title: robocopy
 description: Windows および Windows Server で robocopy コマンドを使用してファイルをコピーする方法について説明します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: d4c6e8e9-fcb3-4a4a-9d04-2d8c367b6354
 author: jasongerend
 ms.author: jgerend
 manager: lizapo
 ms.date: 06/07/2020
-ms.openlocfilehash: 3ce409d0995449a4f5da98b69df6f436d75e04b7
-ms.sourcegitcommit: a538474d2c0a9520567f4e6ad0933f8660273098
+ms.openlocfilehash: fdf7eda5a17dccba0f43cca91cae122872dd5235
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84505794"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87883494"
 ---
 # <a name="robocopy"></a>robocopy
 
@@ -34,7 +32,7 @@ robocopy C:\reports '\\marketing\videos' yearly-report.mov /mt /z
 
 ### <a name="parameters"></a>パラメーター
 
-|   パラメーター    |                                                                                            Description                                                                                           |
+|   パラメーター    |                                                                                            説明                                                                                           |
 |----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |   \<Source>    |                                                                            コピー元ディレクトリのパスを指定します。                                                                           |
 | \<Destination> |                                                                          コピー先ディレクトリのパスを指定します。                                                                        |
@@ -160,7 +158,7 @@ robocopy C:\reports '\\marketing\videos' yearly-report.mov /mt /z
 
 ### <a name="exit-return-codes"></a>終了 (リターン) コード
 
-値 | [説明]
+値 | 説明
 -- | --
 0 | ファイルはコピーされませんでした。 エラーは発生しませんでした。  一致するファイルがありませんでした。 ファイルは、コピー先のディレクトリに既に存在します。そのため、コピー操作はスキップされました。
 1 | すべてのファイルが正常にコピーされました。
@@ -174,12 +172,12 @@ robocopy C:\reports '\\marketing\videos' yearly-report.mov /mt /z
 > [!NOTE]
 > 8より大きい値を指定すると、コピー操作中に少なくとも1つのエラーが発生したことを示します。
 
-### <a name="remarks"></a>注釈
+### <a name="remarks"></a>Remarks
 
--   **/Mir** オプションに相当、 **/e** plus **パージ/** 動作の小さな違いの 1 つのオプション。  
+-   **/Mir** オプションに相当、 **/e** plus **パージ/** 動作の小さな違いの 1 つのオプション。
     -   **/E** plus **パージ/** オプションでは、インストール先ディレクトリが存在する場合は、移行先ディレクトリのセキュリティ設定は、上書きができます。
     -   **/Mir** オプションでは、インストール先ディレクトリが存在する場合は、移行先のディレクトリのセキュリティ設定が上書きされます。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

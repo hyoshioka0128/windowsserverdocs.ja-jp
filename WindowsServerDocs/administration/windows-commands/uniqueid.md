@@ -1,20 +1,18 @@
 ---
 title: uniqueid
 description: フォーカスがあるディスクの GUID パーティションテーブル (GPT) 識別子またはマスターブートレコード (MBR) 署名を表示または設定する uniqueid の参照記事。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 64235a4a-b91c-46da-b9b0-68ee90571c2a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5acf29d9a7dfd505a5ecdad2a08dfdb1a9f4d975
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: ef76189e3377ecdb11605acf449ba68424d1588f
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85937284"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87897051"
 ---
 # <a name="uniqueid"></a>uniqueid
 
@@ -36,7 +34,7 @@ uniqueid disk [id={<dword> | <GUID>}] [noerr]
 | id = {\<dword> |                                                                                               <GUID>}                                                                                                |
 |    noerr     | スクリプト専用です。 エラーが発生しても、エラーが発生しなかったかのように DiskPart はコマンドの処理を続けます。 このパラメーターは、エラー発生すると、DiskPart はエラー コードを生成して終了します。 |
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>Remarks
 
 -   このコマンドは、ベーシックディスクとダイナミックディスクで機能します。
 -   このコマンドを成功させるには、ディスクを選択してください。 使用して、 **select ディスク** コマンド ディスクを選択し、それにフォーカスをします。

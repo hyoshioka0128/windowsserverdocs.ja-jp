@@ -1,20 +1,18 @@
 ---
 title: san
 description: 参照記事 * * * *-
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: d57c2df1-eb82-4b81-b8cd-e30564c6a929
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e020bc3327ccce5e80f4428078c87d1083c4a7df
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 8d47c3a58d0397db4262b4df5e7d2fc047d770d5
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932822"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87883314"
 ---
 # <a name="san"></a>san
 
@@ -35,7 +33,7 @@ san [policy={onlineAll | offlineAll | offlineShared}] [noerr]
 | ポリシー = {全オフライン &#124; offlineAll &#124; オフライン共有}] | 現在ブートされているオペレーティングシステムの san ポリシーを設定します。 San ポリシーは、新しく検出されたディスクをオンラインにするか、オフラインのままにするか、読み取り/書き込み可能または読み取り専用のままにするかを決定します。 ディスクがオフラインのときは、ディスク レイアウトを読み取るがからプラグ アンド プレイ デバイスのボリュームは発生しません。 これは、ディスク上のファイル システムがマウントしないことを意味します。 ディスクがオンラインのとき、ディスクの 1 つまたは複数のボリュームのデバイスがインストールされます。 各パラメーターの説明を次に示します。<p>-   **全オンライン**。 新しく検出されたすべてのディスクはオンラインで行われた読み取り/書き込みにするかを指定します。 **重要:**    ディスクを共有するサーバーで [オンラインにする (**すべて**) を指定すると、データが破損する可能性があります。 そのため、サーバーがクラスターの一部でない限り、ディスクがサーバー間で共有されている場合は、このポリシーを設定しないでください。<br />-   **Offlineall**。 新しく検出されたすべてのディスク起動ディスクがオフラインになる点を指定既定では andread 取り専用です。<br />-   **オフライン共有**。 共有バス (SCSI、iSCSI など) に常駐していないディスクがオンラインに戻るを検出し、読み取り/書き込みが行われたすべての新しくを指定します。 オフラインのまま、ディスクは、既定では読み取り専用になります。<p>詳細については、「 [VDS_san_POLICY 列挙型](https://go.microsoft.com/fwlink/?LinkId=203815)()」を参照してください <https://go.microsoft.com/fwlink/?LinkId=203815> 。 |
 |                            noerr                             |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            スクリプト作成にのみ使用されます。 エラーが発生しても、エラーが発生しなかったかのように DiskPart はコマンドの処理を続けます。 このパラメーターは、エラー発生すると、DiskPart はエラー コードを生成して終了します。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>Remarks
 - コマンドにパラメーターが指定されていない場合は、現在の san ポリシーが表示されます。
   ## <a name="examples"></a>例
   現在のポリシーを表示するには、次のように入力します。

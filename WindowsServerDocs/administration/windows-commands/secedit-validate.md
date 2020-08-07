@@ -1,20 +1,18 @@
 ---
 title: 'secedit: validate'
 description: 参照記事 * * * *-
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 9fb06354-f55a-4ca4-9fbc-9a872eb9b9cf
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7f2da0792768a6b6d6113842614bc6f93c258822
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 30bb02f0d7947aa77f7ac41d5f7b179ca8fd236b
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85935973"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87882938"
 ---
 # <a name="seceditvalidate"></a>secedit: validate
 
@@ -33,9 +31,9 @@ Secedit /validate <configuration file name>
 
 |パラメーター|説明|
 |---------|-----------|
-|[構成ファイル名]|必須です。</br>検証で適用するセキュリティ テンプレートのパスとファイル名を指定します。|
+|[構成ファイル名]|必須。</br>検証で適用するセキュリティ テンプレートのパスとファイル名を指定します。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>Remarks
 
 セキュリティ テンプレートを検証する場合に役立ちますが破損しているまたは不適切に設定します。
 

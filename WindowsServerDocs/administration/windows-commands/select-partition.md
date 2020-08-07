@@ -1,20 +1,18 @@
 ---
 title: select partition
 description: 参照記事 * * * *-
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 25f70083-b8f7-4a8e-9b34-4b3ffbe06670
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 44b11dbab081479b5e6eb9271cb5fbe557d59834
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 5c144bc3271fa4d10dfc006d8c08e1a737f763fe
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936458"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87882852"
 ---
 # <a name="select-partition"></a>select partition
 
@@ -36,7 +34,7 @@ select partition=<n>
 |----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | partition\=<n> | フォーカスを受け取るパーティションの数。 使用して現在選択されているディスク上のすべてのパーティションの番号を表示する、 **パーティションを一覧表示** diskpart コマンドです。 |
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>Remarks
 
 -   使用して、ディスクを選択するパーティションを選択する前にまず必要があります、 **select ディスク** コマンドです。
 

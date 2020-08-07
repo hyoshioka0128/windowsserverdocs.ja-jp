@@ -1,20 +1,18 @@
 ---
 title: ftp
 description: Ftp コマンドのリファレンス記事です。このコマンドは、ファイル転送プロトコル (ftp) サーバーサービスを実行しているコンピューターとの間でファイルを転送します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 758335e1-fd8d-448c-a654-993126239dd9
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 01d597bf4520fc41fa31f90c643c852ec9f77b2f
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 369a41cf6ad803a4fce939da58228997410cf177
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86957294"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87888795"
 ---
 # <a name="ftp"></a>ftp
 
@@ -47,7 +45,7 @@ ftp [-v] [-d] [-i] [-n] [-g] [-s:<filename>] [-a] [-A] [-x:<sendbuffer>] [-r:<re
 | `<host>` | 接続先の ftp サーバーのコンピューター名、IP アドレス、または IPv6 アドレスを指定します。 ホスト名またはアドレスを指定した場合は、行の最後のパラメーターになる可能性があります。 |
 | -? | コマンド プロンプトにヘルプを表示します。 |
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>Remarks
 
 - **Ftp**のコマンドラインパラメーターでは、大文字と小文字が区別されます。
 
@@ -71,7 +69,7 @@ ftp ftp.example.microsoft.com
 ftp -s:resync.txt ftp.example.microsoft.com
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

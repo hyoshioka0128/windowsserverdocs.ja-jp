@@ -1,18 +1,16 @@
 ---
 title: Windows Server ハードウェアの電源に関する考慮事項
 description: Windows Server ハードウェアの機能に関する考慮事項。
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: conceptual
 ms.author: qizha;tristanb
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 0e110fbb41f44a4c8ac6ab014eeae44e542ade41
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: ee380937e54faa77ec17f8ae47445089ba1eece8
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471687"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896721"
 ---
 # <a name="server-hardware-power-considerations"></a>サーバー ハードウェアの電源に関する考慮事項
 
@@ -69,7 +67,7 @@ Windows Server 2016 では、USB デバイスのセレクティブサスペン�
 
 ![プロセッサの用語](../media/perftune-guide-figure-1.png)
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [サーバーのハードウェア パフォーマンスに関する考慮事項](index.md)
 

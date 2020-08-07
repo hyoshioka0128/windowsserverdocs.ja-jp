@@ -1,20 +1,18 @@
 ---
 title: ImageGroup の追加
 description: Windows 展開サービスサーバーにイメージグループを追加する、ImageGroup の参照記事。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 6ca88671-51de-4924-b969-88f3dfd84270
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5898b9bccb9ab0581cadd1ed51f4059a4c7c2dcc
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 611425c7c3ff997009e16792fea1924a403f364e
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85934124"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896596"
 ---
 # <a name="add-imagegroup"></a>ImageGroup の追加
 

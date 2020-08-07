@@ -1,20 +1,18 @@
 ---
 title: Scwcmd 変換
 description: 参照記事 * * * *-
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 640dd892-0bb9-416d-8318-60a26605bcf4
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b70557b64a4cb68a0435bee9db033c893186dc0c
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 5af1f9d1f2ee5386da8b02f4142c156c3711852f
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932628"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87883095"
 ---
 # <a name="scwcmd-transform"></a>Scwcmd: 変換
 
@@ -43,7 +41,7 @@ scwcmd transform /p:<Policyfile.xml> /g:<GPODisplayName>
 |/g\<GPODisplayName>|GPO の表示名を指定します。 このパラメーターを指定する必要があります。|
 |/?|コマンド プロンプトにヘルプを表示します。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>Remarks
 
 Scwcmd.exe は Windows Server 2008 R2、Windows Server 2008 または Windows Server 2003 を実行するコンピューターにできるだけです。
 

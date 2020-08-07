@@ -1,20 +1,18 @@
 ---
 title: get-サーバー
 description: 指定された Windows 展開サービスサーバーから情報を取得する、get Server のリファレンス記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: bef60db4-d58d-4304-ab4b-be53dd3271c3
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f035462de8966756e4b47ca6ba04b7d30a9cb1c6
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: a2756fe6b5a7e7790d779b06fa7def9d16c4f775
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932179"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896921"
 ---
 # <a name="get-server"></a>get-サーバー
 

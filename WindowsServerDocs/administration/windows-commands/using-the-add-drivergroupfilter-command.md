@@ -1,20 +1,18 @@
 ---
 title: 追加 DriverGroupFilter
 description: 追加 DriverGroupFilter のリファレンス記事。サーバー上のドライバーグループにフィルターを追加します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: a66c5e68-99ea-4e47-b68d-8109633ae336
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c8061bbde188fca5dbdd5a97ddfd708aedf1c9be
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 20630b959d7a9e9a919d3531aa82fd5cf5ba8150
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85937222"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896615"
 ---
 # <a name="add-drivergroupfilter"></a>追加 DriverGroupFilter
 

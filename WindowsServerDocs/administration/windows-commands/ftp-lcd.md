@@ -1,20 +1,18 @@
 ---
 title: ftp lcd
 description: Ftp lcd コマンドの参照記事。ローカルコンピューター上の作業ディレクトリを変更します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 60a25808-6abb-408b-8373-0bbdcd0994b4
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d98b300de74ec537dedd3f43ccc2404c7350ac0c
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 5b2d555e0edb69ab11ef7ff9e7a233fb1c6fc0f2
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86957784"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87889362"
 ---
 # <a name="ftp-lcd"></a>ftp lcd
 
@@ -42,7 +40,7 @@ lcd [<directory>]
 lcd c:\dir1
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

@@ -1,25 +1,23 @@
 ---
 title: その他のサーバーパフォーマンスチューニングリソース
 description: その他のサーバーパフォーマンスチューニングリソース
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: phstee
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 3c011d3c6e75fb1d5212d9b1ec3c6e6c69fac5d6
-ms.sourcegitcommit: 3f9bcd188dda12dc5803defb47b2c3a907504255
+ms.openlocfilehash: 2b789fb3c5290c5f268c1e64f66fb25fd4856136
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "77001867"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896756"
 ---
 # <a name="additional-performance-tuning-resources"></a>その他のパフォーマンスチューニングリソース
 
 このチューニングガイドで説明されている概念の詳細については、このトピックのリンクを使用してください。
 
 ## <a name="microsoft-windows-server-websites"></a>Microsoft Windows Server Web サイト
--   [Windows Server カタログ](https://www.windowsservercatalog.com/)
+-   [Windows Server Catalog](https://www.windowsservercatalog.com/)
 
 -   [Windows Sysinternals](https://technet.microsoft.com/sysinternals/default.aspx)
 
@@ -33,13 +31,13 @@ ms.locfileid: "77001867"
 
 -   [PowerCfg を使用してシステムのエネルギー効率を評価する](https://technet.microsoft.com/library/cc748940.aspx)
 
--   [割り込みアフィニティポリシーツール](https://support.microsoft.com/kb/252867)
+-   [Interrupt-Affinity Policy ツール](https://support.microsoft.com/kb/252867)
 
 ## <a name="networking-subsystem-tuning-resources"></a>ネットワークサブシステムのチューニングに関するリソース
 
 -   [スケーラブルなネットワーク: 受信処理のボトルネックの排除-RSS の概要](https://download.microsoft.com/download/5/D/6/5D6EAF2B-7DDF-476B-93DC-7CF0072878E6/NDIS_RSS.doc)
 
--   [Windows フィルタリングプラットフォーム](https://msdn.microsoft.com/windows/hardware/gg463267.aspx)
+-   [Windows フィルタリング プラットフォーム](https://msdn.microsoft.com/windows/hardware/gg463267.aspx)
 
 -   [ネットワーク展開ガイド: 高速ネットワーク機能の展開](https://technet.microsoft.com/library/gg162681.aspx)
 
@@ -51,7 +49,7 @@ ms.locfileid: "77001867"
 
 -   [ネットワークファイルシステム用の Microsoft サービスのパフォーマンスチューニングガイドライン](https://technet.microsoft.com/library/bb463205.aspx)
 
--   [\[MS FSSO\]: ファイルアクセスサービスシステムの概要](https://download.microsoft.com/download/5/0/1/501ED102-E53F-4CE0-AA6B-B0F93629DDC6/Windows/%5bMS-FSSO%5d.pdf)
+-   [\[MS FSSO \] : ファイルアクセスサービスシステムの概要](https://download.microsoft.com/download/5/0/1/501ED102-E53F-4CE0-AA6B-B0F93629DDC6/Windows/%5bMS-FSSO%5d.pdf)
 
 -   [TCP チューニング診断ツールを無効にする方法](https://support.microsoft.com/kb/967475)
 
@@ -71,7 +69,7 @@ ms.locfileid: "77001867"
 
 -   [Hyper-v WMI クラス](https://msdn.microsoft.com/library/cc136986(VS.85).aspx)
 
--   [Virtual Machines とゲストオペレーティングシステムについて](https://technet.microsoft.com/library/cc794868(v=ws.10))
+-   [仮想マシンとゲスト オペレーティング システムについて](https://technet.microsoft.com/library/cc794868(v=ws.10))
 
 -   [Hyper-v 記憶域の最適化とトラブルシューティング](https://blogs.msdn.com/b/microsoft_press/archive/2013/07/24/new-book-optimizing-and-troubleshooting-hyper-v-storage.aspx)
 
@@ -79,7 +77,7 @@ ms.locfileid: "77001867"
 
 ## <a name="print-server-tuning-resources"></a>プリントサーバーのチューニングリソース
 
--   [プリントサーバーのスケーラビリティと容量計画](https://technet.microsoft.com/library/dn554243.aspx)
+-   [Print Server Scalability and Capacity Planning](https://technet.microsoft.com/library/dn554243.aspx)
 
 ## <a name="server-workload-tuning-resources"></a>サーバーのワークロードチューニングのリソース
 
@@ -99,9 +97,9 @@ ms.locfileid: "77001867"
 
 -   [方法: ソフト NUMA を使用するように SQL Server を構成する](https://go.microsoft.com/fwlink/?LinkId=98292)
 
--   [方法: NUMA ノードに TCP/IP ポートをマップする](https://go.microsoft.com/fwlink/?LinkId=98293)
+-   [NUMA ノードに TCP/IP ポートをマッピングする方法](https://go.microsoft.com/fwlink/?LinkId=98293)
 
--   [ALTER SERVER CONFIGURATION (Transact-sql)](https://msdn.microsoft.com/library/ee210585.aspx)
+-   [ALTER SERVER CONFIGURATION (Transact-SQL)](https://msdn.microsoft.com/library/ee210585.aspx)
 
 
 ## <a name="server-tuning-tools"></a>サーバーチューニングツール

@@ -1,20 +1,18 @@
 ---
 title: エクスポート-イメージ
 description: エクスポートイメージの参照記事。イメージストアから別の Windows イメージ (.wim) ファイルに既存のイメージをエクスポートします。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: a9b8b467-0f2d-4754-8998-55503a262778
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 04ac9d5a7e58fb2f22f5b034ea35dee08bf2a01a
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 1f06ded887cf7fcd134ffb8d5b9bfbe588a584e1
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85935234"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896985"
 ---
 # <a name="export-image"></a>エクスポート-イメージ
 
@@ -22,7 +20,7 @@ ms.locfileid: "85935234"
 
 既存のイメージをイメージ ストアから別の Windows イメージ (.wim) ファイルにエクスポートします。
 
-## <a name="syntax"></a>Syntax
+## <a name="syntax"></a>構文
 ブートイメージの場合:
 ```
 wdsutil [Options] /Export-Imagmedia:<Image name> [/Server:<Server name>]

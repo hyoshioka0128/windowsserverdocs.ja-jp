@@ -1,20 +1,18 @@
 ---
 title: tskill
 description: リモートデスクトップセッションホストサーバー上のセッションで実行されているプロセスを終了する tskill のリファレンス記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 08986e6a-6900-4ece-85a1-8f73b14db1b3 Lizap
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b5e4e32bada68b8c7d931b8603fbf09eba45791d
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 9fe3db1f218bc95fab4f3f2d917575679ab81931
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86954884"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896680"
 ---
 # <a name="tskill"></a>tskill
 
@@ -43,7 +41,7 @@ tskill {<ProcessID> | <ProcessName>} [/server:<ServerName>] [/id:<SessionID> | /
 |/v|実行されているアクションに関する情報を表示します。|
 |/?|コマンド プロンプトにヘルプを表示します。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>Remarks
 - **Tskill**を使用すると、管理者でない限り、自分に属しているプロセスのみを終了できます。 管理者は、すべての**tskill**関数にフルアクセスでき、他のユーザーセッションで実行されているプロセスを終了できます。
 - セッション内で動作しているすべてのプロセスが終了すると、セッションも終了します。
 - *ProcessName*パラメーターと **/server:**<em>ServerName</em>パラメーターを使用する場合は、 **/id:**<em>SessionID</em>または **/a**パラメーターも指定する必要があります。
@@ -57,6 +55,6 @@ tskill {<ProcessID> | <ProcessName>} [/server:<ServerName>] [/id:<SessionID> | /
   ```
   tskill explorer /id:5
   ```
-  ## <a name="additional-references"></a>その他のリファレンス
+  ## <a name="additional-references"></a>その他の参照情報
   - [コマンドライン構文のキー](command-line-syntax-key.md) 
   [リモートデスクトップサービス (ターミナルサービス) のコマンドリファレンス](remote-desktop-services-terminal-services-command-reference.md)

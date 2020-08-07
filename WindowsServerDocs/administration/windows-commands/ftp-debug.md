@@ -1,20 +1,18 @@
 ---
 title: ftp debug
 description: デバッグモードを切り替える ftp デバッグコマンドの参照記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 16293dbf-1b7f-4b62-be4d-876179563ad7
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: eebba15cf59c537825dc73c47be9a61b2a552f3c
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: adcf1a761d8c5549038dc37c5d18a606549b7325
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86957944"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87889550"
 ---
 # <a name="ftp-debug"></a>ftp debug
 
@@ -36,7 +34,7 @@ debug
 debug
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

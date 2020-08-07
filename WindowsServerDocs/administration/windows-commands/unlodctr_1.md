@@ -1,20 +1,18 @@
 ---
 title: unlodctr
 description: Unlodctr の参照記事。サービスまたはデバイスドライバーのパフォーマンスカウンター名と説明テキストをシステムレジストリから削除します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: fc8aa6f0-c1d9-47ea-937a-28152148e774
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a054673ada197c6b116abc7eda49c0e755f22af0
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 3c867a4634024527066c329f408a210e97718d1c
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85937270"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87897046"
 ---
 # <a name="unlodctr"></a>unlodctr
 
@@ -32,7 +30,7 @@ Unlodctr <DriverName>
 |\<DriverName>|Windows Server 2003 レジストリから、ドライバーまたはサービスのパフォーマンスカウンターの名前の設定と説明のテキストを削除し <DriverName> ます。|
 |/?|コマンド プロンプトにヘルプを表示します。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>Remarks
 > [!WARNING]
 > レジストリを正しく編集しないと、システムが正常に動作しなくなる場合があります。 レジストリを変更する前に、コンピューター上の重要なデータのバックアップを作成する必要があります。
 

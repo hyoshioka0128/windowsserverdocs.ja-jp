@@ -1,20 +1,18 @@
 ---
 title: ftp literal
 description: リモート ftp サーバーに逐語的引数を送信する ftp リテラルコマンドの参照記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: fb81aa2d-07fa-4e79-bf44-1fb5526fdf14
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c13458a80aa78b377f8859f7e81b8789bd014dc3
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: bafa2626481941b91d501e4fd6df52aa1f8f05d1
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86957754"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87889358"
 ---
 # <a name="ftp-literal"></a>ftp literal
 
@@ -45,7 +43,7 @@ literal <argument> [ ]
 literal quit
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

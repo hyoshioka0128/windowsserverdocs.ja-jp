@@ -1,20 +1,18 @@
 ---
 title: ftp status
 description: Ftp 状態コマンドの参照記事。 ftp 接続の現在の状態が表示されます。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: d78c5629-6f73-4587-af0b-bd3cc3af5225
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b70794212c9ec3ccd53063d3a2193701aca53dc3
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 070c68ab9ab0c557b32ed4d6064f4c4aa74256d1
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86957394"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87888901"
 ---
 # <a name="ftp-status"></a>ftp status
 
@@ -36,7 +34,7 @@ Ftp 接続の現在の状態を表示するには、次のように入力しま�
 status
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

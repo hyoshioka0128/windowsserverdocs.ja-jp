@@ -1,20 +1,18 @@
 ---
 title: schtasks
 description: 参照記事 * * * *-
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 2e713203-3dd8-491b-b9e1-9423618dc7e8
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7f631a0b156d78365f2c2038bec49062a5892214
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 77af62734aedb06e8481fab661b8f186f0d3c12d
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932810"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87883239"
 ---
 # <a name="schtasks"></a>schtasks
 
@@ -30,7 +28,7 @@ ms.locfileid: "85932810"
 -   [schtasks を削除します。](#BKMK_delete)
 -   [schtasks クエリ](#BKMK_query)
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>Remarks
 
 - **SchTasks.exe** と同じ操作を実行 **タスク** で **コントロール パネルの [** します。 まとめてと同じ意味では、これらのツールを使用できます。
 - **Schtasks** 置き換えます **At.exe**, 、以前のバージョンの Windows に付属のツールです。 **At.exe** 含まれていますが、Windows Server 2003 ファミリ **schtasks** は、推奨されるコマンド ライン タスク ツールをスケジュールします。
@@ -262,7 +260,7 @@ schtasks /create /sc <ScheduleType> /tn <TaskName> /tr <TaskRun> [/s <Computer> 
 schtasks /create /tn <TaskName> /tr <TaskRun> /sc minute [/mo {1 - 1439}] [/st <HH:MM>] [/sd <StartDate>] [/ed <EndDate>] [{/et <HH:MM> | /du <HHHH:MM>} [/k]] [/it] [/ru {[<Domain>\]<User> [/rp <Password>] | System}] [/s <Computer> [/u [<Domain>\]<User> [/p <Password>]]]
 ```
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>Remarks
 
 分単位のスケジュールで、 **/sc 分** パラメーターは必須です。 **/Mo** (修飾子) パラメーターを省略して、タスクのそれぞれの実行間隔を分単位の数を指定します。 既定値 **/mo** は 1 (1 分ごと)。 **/Et** (終了時刻) と **/du** (期間) パラメーターは省略可能ななしでも使用できる、 **/k** (タスクの終了) パラメーター。
 
@@ -292,7 +290,7 @@ schtasks /create /tn Security Script /tr sec.vbs /sc minute /mo 100 /st 17:00 /e
 schtasks /create /tn <TaskName> /tr <TaskRun> /sc hourly [/mo {1 - 23}] [/st <HH:MM>] [/sd <StartDate>] [/ed <EndDate>] [{/et <HH:MM> | /du <HHHH:MM>} [/k]] [/it] [/ru {[<Domain>\]<User> [/rp <Password>] | System}] [/s <Computer> [/u [<Domain>\]<User> [/p <Password>]]]
 ```
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>Remarks
 
 時間単位のスケジュールで、 **/sc 毎時** パラメーターは必須です。 **/Mo** (修飾子) パラメーターを省略して、タスクのそれぞれの実行間隔の時間数を指定します。 既定値 **/mo** は 1 (1 時間ごと)。 **/K** (タスクの終了) パラメーターは省略可能といずれかと併用して **/et** (指定された時間に終了) または **/du** (指定した間隔後の終了)。
 
@@ -332,7 +330,7 @@ schtasks /create /tn My App /tr myapp.exe /sc hourly /mo 3 /st 00:00 /du 0010:00
 schtasks /create /tn <TaskName> /tr <TaskRun> /sc daily [/mo {1 - 365}] [/st <HH:MM>] [/sd <StartDate>] [/ed <EndDate>] [/it] [/ru {[<Domain>\]<User> [/rp <Password>] | System}] [/s <Computer> [/u [<Domain>\]<User> [/p <Password>]]]
 ```
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>Remarks
 
 毎日のスケジュールで、 **/sc 毎日** パラメーターは必須です。 **/Mo** (修飾子) パラメーターを省略して、タスクのそれぞれの実行の間の日数を指定します。 既定値 **/mo** は 1 (毎日) です。
 
@@ -374,7 +372,7 @@ schtasks /create /tn Security Script /tr sec.vbs /sc daily /mo 70 /it
 schtasks /create /tn <TaskName> /tr <TaskRun> /sc weekly [/mo {1 - 52}] [/d {<MON - SUN>[,MON - SUN...] | *}] [/st <HH:MM>] [/sd <StartDate>] [/ed <EndDate>] [/it] [/ru {[<Domain>\]<User> [/rp <Password>] | System}] [/s <Computer> [/u [<Domain>\]<User> [/p <Password>]]]
 ```
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>Remarks
 
 毎週のスケジュールで、 **/sc 毎週** パラメーターは必須です。 **/Mo** (修飾子) パラメーターを省略して、タスクのそれぞれの実行までの週の数を指定します。 既定値 **/mo** は 1 (毎週) です。
 
@@ -445,7 +443,7 @@ schtasks /create /tn My App /tr c:\apps\myapp.exe /sc monthly /mo 2 /d 21 /st 00
 schtasks /create /tn <TaskName> /tr <TaskRun> /sc weekly [/d {<MON - SUN>[,MON - SUN...] | *}] [/mo {1 - 52}] [/st <HH:MM>] [/sd <StartDate>] [/ed <EndDate>] [/it] [/ru {[<Domain>\]<User> [/rp <Password>] | System}] [/s <Computer> [/u [<Domain>\]<User> [/p <Password>]]]
 ```
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>Remarks
 
 曜日のスケジュールは、週単位のスケジュールのバリエーションです。 毎週のスケジュールで、 **/sc 毎週** パラメーターは必須です。 **/Mo** (修飾子) パラメーターを省略して、タスクのそれぞれの実行までの週の数を指定します。 既定値 **/mo** は 1 (毎週) です。 **/D** は省略可能で、パラメーターが指定した曜日、またはすべての日に実行するタスクをスケジュール (\*)。 既定値は、MON (月曜日です)。 すべての日のオプション (**/d \***) は、毎日のタスクをスケジュール設定に相当します。
 
@@ -473,7 +471,7 @@ schtasks /create /tn My App /tr c:\apps\myapp.exe /sc weekly /mo 8 /d MON,FRI
 schtasks /create /tn <TaskName> /tr <TaskRun> /sc monthly /mo {FIRST | SECOND | THIRD | FOURTH | LAST} /d MON - SUN [/m {JAN - DEC[,JAN - DEC...] | *}] [/st <HH:MM>] [/sd <StartDate>] [/ed <EndDate>] [/it] [/ru {[<Domain>\]<User> [/rp <Password>] | System}] [/s <Computer> [/u [<Domain>\]<User> [/p <Password>]]]
 ```
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>Remarks
 
 このスケジュールの種類で、 **/sc 毎月** 、パラメーター、 **/mo** (修飾子) パラメーターと **/d** (日) のパラメーターが必要です。 **/Mo** (修飾子) パラメーターは、タスクを実行する曜日を指定します。 **/D** パラメーターは週の曜日を指定します。 (このスケジュールの種類に指定できる曜日は1つだけです)。また、このスケジュールには、特定の月または毎月 () にタスクをスケジュールすることができる省略可能な **/m** (month) パラメーターもあり \* ます。 **/M**パラメーターの既定値は、毎月 ( \* ) です。
 
@@ -501,7 +499,7 @@ schtasks /create /tn My App /tr c:\apps\myapp.exe /sc monthly /mo FIRST /d MON /
 schtasks /create /tn <TaskName> /tr <TaskRun> /sc monthly /d {1 - 31} [/m {JAN - DEC[,JAN - DEC...] | *}] [/st <HH:MM>] [/sd <StartDate>] [/ed <EndDate>] [/it] [/ru {[<Domain>\]<User> [/rp <Password>] | System}] [/s <Computer> [/u [<Domain>\]<User> [/p <Password>]]]
 ```
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>Remarks
 
 特定の日時のスケジュールの種類で、 **/sc 毎月** パラメーターおよび **/d** (日) のパラメーターが必要です。 **/D** 週の曜日ではない、月 (1 ~ 31) の日付を指定します。 スケジュールでは、1 日だけを指定できます。 **/Mo** (修飾子) のパラメーターがこのスケジュールの種類では無効です。
 
@@ -531,7 +529,7 @@ schtasks /create /tn My App /tr c:\apps\myapp.exe /sc monthly /d 15 /m MAY,JUN /
 schtasks /create /tn <TaskName> /tr <TaskRun> /sc monthly /mo LASTDAY /m {JAN - DEC[,JAN - DEC...] | *} [/st <HH:MM>] [/sd <StartDate>] [/ed <EndDate>] [/it] [/ru {[<Domain>\]<User> [/rp <Password>] | System}] [/s <Computer> [/u [<Domain>\]<User> [/p <Password>]]]
 ```
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>Remarks
 
 最後の日のスケジュールの種類で、 **/sc 毎月** パラメーター、 **/mo 月末を指定する** (修飾子) パラメーターと **/m** (月) のパラメーターが必要です。 **/D** (日) のパラメーターが無効です。
 
@@ -645,7 +643,7 @@ schtasks /create /tn My App /tr c:\apps\myapp.exe /sc onidle /i 10
 
 **Schtasks**には [今すぐ実行] オプションはありませんが、1回実行するタスクを作成して数分で開始することで、そのオプションをシミュレートできます。
 
-#### <a name="syntax"></a>Syntax
+#### <a name="syntax"></a>構文
 
 ```
 schtasks /create /tn <TaskName> /tr <TaskRun> /sc once [/st <HH:MM>] /sd <MM/DD/YYYY> [/it] [/ru {[<Domain>\]<User> [/rp <Password>] | System}] [/s <Computer> [/u [<Domain>\]<User> [/p <Password>]]]
@@ -709,7 +707,7 @@ SUCCESS: The scheduled task My App has successfully been created.
 ```
 schtasks /create /tn Check Admin /tr AdminCheck.exe /sc weekly /d FRI /st 04:00 /s Public /u Domain3\Admin06 /ru Public\Admin01 /it
 ```
-**注:**
+**注**
 -   対話型専用のタスクを識別するために (**/it**) プロパティには、詳細なクエリを使用して **(/v クエリ/**)。 タスクの詳細なクエリ画面上で **/it**, 、 **ログオン モード** フィールドの値を持つ **対話型のみ**します。
 
 ### <a name="to-schedule-a-task-that-runs-with-system-permissions"></a><a name=BKMK_sys_perms></a>システムのアクセス許可で実行するタスクのスケジュールを設定する
@@ -720,7 +718,7 @@ schtasks /create /tn Check Admin /tr AdminCheck.exe /sc weekly /d FRI /st 04:00 
 -   システム アカウントには、対話型ログオン権限がありません。 ユーザーできませんを参照してくださいプログラムとの対話またはシステム権限を持つタスクを実行します。
 -   **/Ru** パラメーターは、タスクが実行するタスクをスケジュールするためのアクセス許可しないアクセス許可を決定します。 管理者の値に関係なく、タスクをスケジュールしてのみ、 **/ru** パラメーター。
 
-**注:**
+**注**
 
 システムのアクセス許可で実行するタスクを特定するには、詳細クエリ (**/query** **/v**) を使用します。 システムの実行タスクの詳細なクエリ画面では、 **ユーザーとして実行** フィールドの値を持つ **NT authority \system** と **ログオン モード** フィールドの値を持つ **だけバック グラウンド**します。
 
@@ -861,7 +859,7 @@ Idle Time: Disabled
 Power Management: Disabled
 ```
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>Remarks
 
 -   実行する、 **/create** コマンドを使用して、別のユーザーのアクセス許可を持つ、 **/u** パラメーター。 **/U** パラメーターは、リモート コンピューター上のタスクのスケジューリングにのみ有効です。
 -   詳細を表示する **schtasks/create** 例として、型 **schtasks/create/でしょうか。** at a command prompt.
@@ -911,7 +909,7 @@ schtasks /change /tn <TaskName> [/s <Computer> [/u [<Domain>\]<User> [/p <Passwo
 |           /z            |                                                                                                                                                                                                                                                                                                          スケジュールの終了時のタスクを削除するよう指定します。                                                                                                                                                                                                                                                                                                          |
 |           /?            |                                                                                                                                                                                                                                                                                                                        コマンド プロンプトにヘルプを表示します。                                                                                                                                                                                                                                                                                                                         |
 
-### <a name="remarks"></a>注釈
+### <a name="remarks"></a>Remarks
 
 -   **/Tn** と **/s** パラメーターは、タスクを指定します。 **/Tr**, 、**/ru**, 、および **/rp** 変更可能なタスクのプロパティをパラメーターで指定します。
 -   **/Ru**, 、および **/rp** パラメーターは、タスクを実行するアクセス許可を指定します。 **/U** と **/p** パラメーターは、タスクを変更するためのアクセス許可を指定します。
@@ -1010,13 +1008,13 @@ schtasks /run /tn <TaskName> [/s <Computer> [/u [<Domain>\]<User> [/p <Password>
 
 |         用語          |                                                                                                                                                                 定義                                                                                                                                                                  |
 |-----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|    /tn\<TaskName>    |                                                                                                                                                       必須です。 タスクを識別します。                                                                                                                                                        |
+|    /tn\<TaskName>    |                                                                                                                                                       必須。 タスクを識別します。                                                                                                                                                        |
 |    /s\<Computer>     |                                                                                                           (または円記号なし) の名前またはリモート コンピューターの IP アドレスを指定します。 既定値はローカル コンピューターです。                                                                                                           |
 | u\<Domain>\]<User> | 指定したユーザー アカウントのアクセス許可を持つには、このコマンドを実行します。 既定では、コマンドは、ローカル コンピューターの現在のユーザーの権限で実行されます。</br>指定したユーザー アカウントは、リモート コンピューターの Administrators グループのメンバーである必要があります。 **/U** と **/p** パラメーターが有効に使用する場合のみ **/s**します。 |
 |    /p\<Password>     |                          指定されたユーザー アカウントのパスワードを指定、 **/u** パラメーター。 使用する場合、 **/u** パラメーターを省略すると、 **/p** パラメーターまたは password 引数 **schtasks** パスワードの入力を求めます。</br>**/U** と **/p** パラメーターが有効に使用する場合のみ **/s**します。                           |
 |          /?           |                                                                                                                                                    コマンド プロンプトにヘルプを表示します。                                                                                                                                                     |
 
-### <a name="remarks"></a>注釈
+### <a name="remarks"></a>Remarks
 
 -   この操作を使用すると、タスクをテストできます。 タスクが実行されない場合は、タスク スケジューラ サービスのトランザクション ログを確認 \<Systemroot>のエラーの \SchedLgU.txt します。
 -   タスクを実行するタスクのスケジュールは影響しないため、タスクのスケジュールされた次回の実行を変更することはできません。
@@ -1078,13 +1076,13 @@ schtasks /end /tn <TaskName> [/s <Computer> [/u [<Domain>\]<User> [/p <Password>
 
 |         用語          |                                                                                                                                                               定義                                                                                                                                                                |
 |-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|    /tn\<TaskName>    |                                                                                                                                         必須です。 プログラムを起動したタスクを識別します。                                                                                                                                         |
+|    /tn\<TaskName>    |                                                                                                                                         必須。 プログラムを起動したタスクを識別します。                                                                                                                                         |
 |    /s\<Computer>     |                                                                                                                        名前またはリモート コンピューターの IP アドレスを指定します。 既定値はローカル コンピューターです。                                                                                                                        |
 | u\<Domain>\]<User> | 指定したユーザー アカウントのアクセス許可を持つには、このコマンドを実行します。 既定では、コマンドは、ローカル コンピューターの現在のユーザーの権限で実行されます。 指定したユーザー アカウントは、リモート コンピューターの Administrators グループのメンバーである必要があります。 **/U** と **/p** パラメーターが有効に使用する場合のみ **/s**します。 |
 |    /p\<Password>     |                        指定されたユーザー アカウントのパスワードを指定、 **/u** パラメーター。 使用する場合、 **/u** パラメーターを省略すると、 **/p** パラメーターまたは password 引数 **schtasks** パスワードの入力を求めます。</br>**/U** と **/p** パラメーターが有効に使用する場合のみ **/s**します。                         |
 |          /?           |                                                                                                                                                             ヘルプを表示します。                                                                                                                                                              |
 
-### <a name="remarks"></a>注釈
+### <a name="remarks"></a>Remarks
 
 **SchTasks.exe** 、スケジュールされたタスクによって起動されたプログラムのインスタンスのみを終了します。 その他のプロセスを停止するには、TaskKill を使用します。 詳細については、次を参照してください。 [Taskkill](taskkill.md)します。
 
@@ -1133,7 +1131,7 @@ schtasks /delete /tn {<TaskName> | *} [/f] [/s <Computer> [/u [<Domain>\]<User> 
 |    /p\<Password>     |                          指定されたユーザー アカウントのパスワードを指定、 **/u** パラメーター。 使用する場合、 **/u** パラメーターを省略すると、 **/p** パラメーターまたは password 引数 **schtasks** パスワードの入力を求めます。</br>**/U** と **/p** パラメーターが有効に使用する場合のみ **/s**します。                           |
 |          /?           |                                                                                                                                                    コマンド プロンプトにヘルプを表示します。                                                                                                                                                     |
 
-### <a name="remarks"></a>注釈
+### <a name="remarks"></a>Remarks
 
 - **削除** 操作は、スケジュールからタスクを削除します。 いないタスクを実行するプログラムを削除したり、実行中のプログラムを中断しません。
 - **Delete \\ *** コマンドは、現在のユーザーによってスケジュールされたタスクだけでなく、そのコンピュータに対してスケジュールされているすべてのタスクを削除します。
@@ -1185,7 +1183,7 @@ schtasks [/query] [/fo {TABLE | LIST | CSV}] [/nh] [/v] [/s <Computer> [/u [<Dom
 |    /p\<Password>     |                                        指定されたユーザー アカウントのパスワードを指定、 **/u** パラメーター。 使用する場合 **/u**, を省略すると **/p** または password 引数 **schtasks** パスワードが求められます。</br>**/U** と **/p** パラメーターが有効に使用する場合のみ **/s**します。                                         |
 |          /?           |                                                                                                                                                    コマンド プロンプトにヘルプを表示します。                                                                                                                                                     |
 
-### <a name="remarks"></a>注釈
+### <a name="remarks"></a>Remarks
 
 **SchTasks.exe** 、スケジュールされたタスクによって起動されたプログラムのインスタンスのみを終了します。 その他のプロセスを停止するには、TaskKill を使用します。 詳細については、次を参照してください。 [Taskkill](taskkill.md)します。
 

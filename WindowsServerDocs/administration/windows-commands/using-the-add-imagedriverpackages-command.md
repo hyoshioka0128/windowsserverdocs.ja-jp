@@ -1,20 +1,18 @@
 ---
 title: ImageDriverPackages を追加します。
 description: ドライバーストアからブートイメージにドライバーパッケージを追加する ImageDriverPackages のリファレンス記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 9dc78909-a4d1-42a2-af8f-21ebcbfe8302
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 87d905ac73c7ba64cf908696f1255f8379af4d85
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: f34d2ed4b7d77fbc15c0865d161c25c070ff8664
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85934150"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896601"
 ---
 # <a name="add-imagedriverpackages"></a>ImageDriverPackages を追加します。
 

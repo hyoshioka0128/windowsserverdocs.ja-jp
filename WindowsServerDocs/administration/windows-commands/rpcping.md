@@ -1,20 +1,18 @@
 ---
 title: rpcping
 description: 参照記事 * * * *-
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 7382aa0d-90fc-47c0-84b3-15f52dd656d0
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: aa2284c087a19d4eb9484d367b1264a5a3eebde0
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 339a9b6ad90ca068f7c81b9cacbfe1e86f71b6a0
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932859"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87883433"
 ---
 # <a name="rpcping"></a>rpcping
 

@@ -1,20 +1,18 @@
 ---
 title: デバイスの追加
 description: Active directory ドメインサービスでコンピューターを事前にステージングする追加デバイスのリファレンス記事です。 プレステージしたコンピューターは、既知のコンピューターとも呼ばれます。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 1e599cc4-464a-421b-b6bb-c101af154131
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 486cd3a567fe8742d680a77378d8f5a933b876ae
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: d23e5a2bc69b782e635fa9a47158274796715edf
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86954805"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87897020"
 ---
 # <a name="add-device"></a>デバイスの追加
 
@@ -51,7 +49,7 @@ wdsutil /add-Device /Device:computer1 /ID:00-B0-56-88-2F-DC
 wdsutil /add-Device /Device:computer1 /ID:{E8A3EFAC-201F-4E69-953F-B2DAA1E8B1B6} /ReferralServer:WDSServer1 /BootProgram:boot\x86\pxeboot.com
 /WDSClientUnattend:WDSClientUnattend\unattend.xml /User:Domain\MyUser/JoinRights:Full /BootImagepath:boot\x86\images\boot.wim /OU:OU=MyOU,CN=Test,DC=Domain,DC=com
 ```
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 - [コマンドライン構文のキー](command-line-syntax-key.md) 
 [Get AllDevices コマンド](using-the-get-alldevices-command.md) 
  の使用[Get デバイスコマンド](using-the-get-device-command.md) 

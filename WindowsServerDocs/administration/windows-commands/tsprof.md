@@ -1,20 +1,18 @@
 ---
 title: tsprof
 description: リモートデスクトップサービスユーザーの構成情報をあるユーザーから別のユーザーにコピーする tsprof のリファレンス記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 27047868-b706-4208-b7e0-1437a2325dd3
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3abaf2413348edd723962ad99a19be5aa435a495
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 43a9c986a58a28b8de8110789be99f157be9fb66
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86954874"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896661"
 ---
 # <a name="tsprof"></a>tsprof
 
@@ -51,7 +49,7 @@ tsprof /q {/domain:<DomainName> | /local} <UserName>
 |/q|サーバープロファイルパスに対してクエリを実行するユーザーの現在のプロファイルパスを表示します。|
 |/?|コマンド プロンプトにヘルプを表示します。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>Remarks
 -   **Tsprof**コマンドを使用できるのは、windows server 2008 を実行しているコンピューターにターミナルサーバーの役割サービスをインストールした場合、または windows Server 2008 R2 を実行しているコンピューターに RD セッションホスト役割サービスをインストールした場合のみです。
 
 ## <a name="examples"></a>例
@@ -64,6 +62,6 @@ tsprof /q {/domain:<DomainName> | /local} <UserName>
     tsprof /update /local /profile:c:\profiles LocalUser1
     ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 - [コマンドライン構文のキー](command-line-syntax-key.md) 
 [リモートデスクトップサービス (ターミナルサービス) のコマンドリファレンス](remote-desktop-services-terminal-services-command-reference.md)

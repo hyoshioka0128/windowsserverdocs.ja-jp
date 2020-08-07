@@ -1,20 +1,18 @@
 ---
 title: winrs
 description: プログラムをリモートで管理および実行できるようにする、winrs のリファレンス記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: c370de31-5651-400a-872d-ef229aae2309
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d0213db0a808829ac87a6f79b4d68a3787e706bc
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 54accc21cbacc6471840d1bd83e3c05d9052a0eb
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936122"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896819"
 ---
 # <a name="winrs"></a>winrs
 
@@ -33,7 +31,7 @@ winrs [/<parameter>[:<value>]] <command>
 |          /非暗号化          | リモートシェルへのメッセージが暗号化されないことを指定します。 これは、トラブルシューティングや、 **ipsec**を使用してネットワークトラフィックが既に暗号化されている場合、または物理的なセキュリティが適用されている場合に便利です。<p>既定では、メッセージは Kerberos または NTLM キーを使用して暗号化されます。<p>このコマンドラインオプションは、HTTPS トランスポートが選択されている場合は無視されます。 |
 |     /username\<username>      |                                                                                コマンドラインのユーザー名を指定します。<p>指定しない場合、ツールはネゴシエート認証または名前のプロンプトを使用します。<p>場合 **/username**が指定されている場合、 **/password**も指定する必要があります。                                                                                 |
 |     /password\<password>      |                                                                           コマンドラインのパスワードを指定します。<p>**/password**が指定されておらず、 **/username**がの場合、ツールはパスワードの入力を求めます。<p>**/password**を指定する場合は、 **/username**も指定する必要があります。                                                                            |
-|      /timeout\<seconds>       |                                                                                                                                                                             このオプションは非推奨です。                                                                                                                                                                             |
+|      /timeout:\<seconds>       |                                                                                                                                                                             このオプションは非推奨です。                                                                                                                                                                             |
 |       /directory\<path>       |                                                                                            リモートシェルの開始ディレクトリを指定します。<p>指定しない場合、リモートシェルは、環境変数 **% USERPROFILE%** によって定義されたユーザーのホームディレクトリで開始されます。                                                                                             |
 | environment\<string>=<value> |                                                                          シェルの起動時に設定される単一の環境変数を指定します。これにより、シェルの既定の環境を変更できます。<p>複数の環境変数を指定するには、このスイッチを複数回使用する必要があります。                                                                          |
 |            /noecho             |                                                                                                    Echo を無効にすることを指定します。 これは、リモートプロンプトに対するユーザーの回答がローカルに表示されないようにするために必要な場合があります。<p>既定では、echo はオンになっています。                                                                                                    |
@@ -43,7 +41,7 @@ winrs [/<parameter>[:<value>]] <command>
 |            /usessl             |                                                                                                               リモートエンドポイントを使用する場合は、SSL 接続を使用します。  トランスポート**https**の代わりにこの値を指定すると、既定の**WinRM**既定ポートが使用されます。                                                                                                                |
 |               /?               |                                                                                                                                                                        コマンド プロンプトにヘルプを表示します。                                                                                                                                                                        |
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>Remarks
 -   すべてのコマンドラインオプションでは、短い形式または長い形式のいずれかを使用できます。 たとえば、 **/r**と//は両方**とも有効**です。
 -   このコマンドを終了するには、ユーザーが**Ctrl + C**キーまたは**Ctrl + break キー**を押して、リモートシェルに**送信します**。 2番目の**Ctrl + C キー**を押すと、 **winrs.exe**が強制的に終了します。
 -   アクティブなリモートシェルまたは winrs 構成を管理するには、WinRM ツールを使用します。  アクティブシェルを管理するための URI エイリアスは、 **shell/cmd**です。  Winrs 構成の URI エイリアスは、 **winrm/config/winrs**です。

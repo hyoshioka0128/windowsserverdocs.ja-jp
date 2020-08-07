@@ -1,20 +1,18 @@
 ---
 title: /Get-multicasttransmission
 description: 指定されたイメージのマルチキャスト転送に関する情報を表示する/Get-multicasttransmission のリファレンス記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: b733737b-1e81-43d4-a058-d6985a613bef
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a764aa0a975fe29daed54e50b7ab0284a12a399f
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 883bfb0d462ab87162d6e849947334eae010b0b1
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932201"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896950"
 ---
 # <a name="get-multicasttransmission"></a>/Get-multicasttransmission
 
@@ -22,7 +20,7 @@ ms.locfileid: "85932201"
 
 指定したイメージのマルチキャスト転送に関する情報を表示します。
 
-## <a name="syntax"></a>Syntax
+## <a name="syntax"></a>構文
 **Windows Server 2008**
 ```
 wdsutil [Options] /Get-MulticastTransmissiomedia:<Image name> [/Server:<Server name>mediatype:InstallmediaGroup:<Image group name>]
@@ -55,7 +53,7 @@ mediatype: インストール|イメージの種類を指定します。 この�
 |\mediaGroup:<Image group name>]|イメージを含むイメージ グループを指定します。 イメージ グループ名が指定されていないサーバーに 1 つだけのイメージ グループが存在する場合は、そのイメージ グループを使用します。 サーバーの 1 つ以上のイメージ グループが存在する場合は、イメージ グループを指定するこのオプションを使用する必要があります。|
 |/アーキテクチャ: {x86 & #124; ia64 & #124; x64}|転送に関連付けられているブート イメージのアーキテクチャを指定します。 さまざまなアーキテクチャでブート イメージで同じイメージの名前を指定することも可能であるために、適切なイメージが使用されるようにするアーキテクチャを指定してください。|
 |[/ファイル名:<File name>]|イメージを含むファイルを指定します。 イメージは、名前によって一意に識別できない場合、は、ファイル名を指定するこのオプションを使用する必要があります。|
-|[/ショー: クライアント]<p>または<p>[詳細: クライアント]|マルチキャスト転送に接続されているクライアント コンピューターに関する情報を表示します。|
+|[/ショー: クライアント]<p>or<p>[詳細: クライアント]|マルチキャスト転送に接続されているクライアント コンピューターに関する情報を表示します。|
 ## <a name="examples"></a>例
 **Windows Server 2008**"Vista with Office" という名前のイメージの転送に関する情報を表示するには、次のいずれかを入力します。
 ```

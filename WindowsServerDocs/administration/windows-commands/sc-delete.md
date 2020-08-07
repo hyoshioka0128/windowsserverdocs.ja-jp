@@ -1,20 +1,18 @@
 ---
 title: Sc.exe の削除
-description: Sc.exe ユーティリティを使用してサービスの登録を解除する方法について説明します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
+description: sc.exe ユーティリティを使用してサービスの登録を解除する方法について説明します
 ms.topic: article
 ms.assetid: 2fe94fb3-e4d1-47b5-b999-39995ecbb644
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 284012cf6799df52832e62c3eea1b2f0fcd84805
-ms.sourcegitcommit: 95b60384b0b070263465eaffb27b8e3bb052a4de
+ms.openlocfilehash: 5eb7bdd147d42c5b35106b65c512015526cb80cc
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82850113"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87883263"
 ---
 # <a name="scexe-delete"></a>Sc.exe の削除
 
@@ -32,13 +30,13 @@ sc.exe [<ServerName>] delete [<ServiceName>]
 
 |パラメーター|説明|
 |---------|-----------|
-|\<ServerName>|サービスが配置されているリモート サーバーの名前を指定します。 名前には、汎用名前付け規則 (UNC) 形式 (myserver など\\ \\) を使用する必要があります。 SC.exe をローカルで実行するには、このパラメーターを省略します。|
+|\<ServerName>|サービスが配置されているリモート サーバーの名前を指定します。 名前には、汎用名前付け規則 (UNC) 形式 (myserver など) を使用する必要があり \\ \\ ます。 SC.exe をローカルで実行するには、このパラメーターを省略します。|
 |\<ServiceName>|によって返されるサービスの名前を指定、 **られて** 操作します。|
 |?|コマンド プロンプトにヘルプを表示します。|
 
-## <a name="remarks"></a>解説
+## <a name="remarks"></a>Remarks
 
-Sc.exe を使用して、DHCP、DNS、インターネットインフォメーションサービスなどの組み込みのオペレーティングシステムサービスを削除することはお勧めしません。 オペレーティングシステムの役割、サービス、およびコンポーネントをインストール、削除、または再構成するには、「[役割、役割サービス、または機能のインストールまたはアンインストール](/WindowsServerDocs/administration/server-manager/install-or-uninstall-roles-role-services-or-features.md)」を参照してください。
+sc.exe を使用して、DHCP、DNS、インターネットインフォメーションサービスなどの組み込みのオペレーティングシステムサービスを削除することはお勧めしません。 オペレーティングシステムの役割、サービス、およびコンポーネントをインストール、削除、または再構成するには、「[役割、役割サービス、または機能のインストールまたはアンインストール](/WindowsServerDocs/administration/server-manager/install-or-uninstall-roles-role-services-or-features.md)」を参照してください。
 
 ## <a name="examples"></a>例
 
@@ -47,6 +45,6 @@ Sc.exe を使用して、DHCP、DNS、インターネットインフォメーシ
 sc.exe delete newserv
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
