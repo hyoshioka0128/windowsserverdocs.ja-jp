@@ -1,20 +1,18 @@
 ---
 title: logman create trace
 description: イベントトレースデータコレクターを作成する logman create trace コマンドの参照記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 1b4dfecd-6f56-4c51-b622-c2054b4aabd7
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2e4d824bbdba93f220b744c334381a2751f11476
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 3e1bb5f4252e5244f2d8a1f1add77ca6db061534
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85934289"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887400"
 ---
 # <a name="logman-create-trace"></a>logman create trace
 
@@ -32,13 +30,13 @@ logman create trace <[-n] <name>> [options]
 
 | パラメーター | 説明 |
 | --------- | ----------- |
-| -s`<computer name>` | 指定されたリモートコンピューターでコマンドを実行します。 |
+| -s `<computer name>` | 指定されたリモートコンピューターでコマンドを実行します。 |
 | -config`<value>` | コマンドオプションを含む設定ファイルを指定します。 |
 | -/ | イベントトレースセッションに直接コマンドを送信します。保存もスケジュールもされません。 |
 | [-n]`<name>` | 対象オブジェクトの名前。 |
 | -f`<bin|bincirc>` | データコレクターのログの形式を指定します。 |
 | -[-] u`<user [password]>` | として実行するユーザーを指定します。 パスワードのを入力すると、パスワードの入力を `*` 求めるメッセージが表示されます。 パスワードは、パスワード用プロンプトで入力した場合は表示されません。 |
-| -m`<[start] [stop] [[start] [stop] [...]]>` | スケジュールされた開始時刻または終了時刻ではなく、手動で開始または停止するように変更します。 |
+| -m `<[start] [stop] [[start] [stop] [...]]>` | スケジュールされた開始時刻または終了時刻ではなく、手動で開始または停止するように変更します。 |
 | -rf`<[[hh:]mm:]ss>` | 指定した期間だけデータコレクターを実行します。 |
 | -b`<M/d/yyyy h:mm:ss[AM|PM]>` | 指定された時間にデータの収集を開始します。 |
 | -e `<M/d/yyyy h:mm:ss[AM|PM]>` | 指定された時間にデータ収集を終了します。 |
@@ -63,7 +61,7 @@ logman create trace <[-n] <name>> [options]
 | -モード`<globalsequence|localsequence|pagedmemory>` | イベントトレースセッションロガーモードを次のように指定します。<ul><li>**Globalsequence** -イベントトレーサーは、イベントを受信したトレースセッションに関係なく、受信したすべてのイベントにシーケンス番号を追加します。</li><li>**Localsequence** -イベントトレーサーが特定のトレースセッションで受信したイベントのシーケンス番号を追加することを指定します。 このオプションを使用すると、すべてのセッションで重複するシーケンス番号が存在する可能性がありますが、各トレースセッション内で一意になります。</li><li>**Pagedmemory** -イベントトレーサーが、既定の非ページメモリプールではなく、ページングされたメモリを内部バッファー割り当てに使用することを指定します。</li></ul> |
 | /? | 状況依存のヘルプを表示します。 |
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>Remarks
 
 - [-] が一覧表示されている場合は、余分なハイフン (-) を追加すると、オプションが無効になります。
 

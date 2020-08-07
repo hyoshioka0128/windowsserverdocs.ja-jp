@@ -1,20 +1,18 @@
 ---
 title: bitsadmin util および repairservice
 description: Bitsadmin util と repairservice コマンドのリファレンス記事。さまざまなバージョンの BITS サービスの既知の問題を修正します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 2ac7baeb-4340-4186-bfcb-66478195378d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cf62a9410765914187b6a60ff5376e8ff5aabe03
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 4d90e6328376f52e60b598d8c2324b59877415db
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85927346"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880854"
 ---
 # <a name="bitsadmin-util-and-repairservice"></a>bitsadmin util および repairservice
 
@@ -33,7 +31,7 @@ bitsadmin /util /repairservice [/force]
 
 | パラメーター | 説明 |
 | --------- | ----------- |
-| /force | 任意。 サービスを削除してから再度作成します。|
+| /force | 省略可能。 サービスを削除してから再度作成します。|
 
 > [!NOTE]
 > BITS によってサービスが再度作成される場合、ローカライズされたシステムでもサービスの説明文字列が英語に設定されている可能性があります。

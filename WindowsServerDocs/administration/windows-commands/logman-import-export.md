@@ -1,20 +1,18 @@
 ---
 title: logman import および logman export
 description: Logman インポートおよび logman エクスポートに関するリファレンス記事。 XML ファイルからデータコレクターセットをインポートしたり、データコレクターセットを XML ファイルにエクスポートしたりします。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: c258daba-fb93-47c0-a53b-2fe83ed2c743
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d5fbe0139a1c320056e4ba80a845b43755fc0026
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 0d09d0e517acf19ba1cbb167eb24b16aea3ff2bc
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85934392"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887293"
 ---
 # <a name="logman-import-and-logman-export"></a>logman import および logman export
 
@@ -33,7 +31,7 @@ logman export <[-n] <name> <-xml <name> [options]
 
 | パラメーター | 説明 |
 | --------- | ----------- |
-| -s`<computer name>` | 指定したリモートコンピューターでコマンドを実行します。 |
+| -s `<computer name>` | 指定したリモートコンピューターでコマンドを実行します。 |
 | -config`<value>` | コマンドオプションを含む設定ファイルを指定します。 |
 | [-n]`<name>` | 対象オブジェクトの名前。 |
 | -xml`<name>` | インポートまたはエクスポートする XML ファイルの名前。 |

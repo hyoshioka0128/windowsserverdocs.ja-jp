@@ -1,20 +1,18 @@
 ---
 title: bitsadmin cache および getlimit
 description: キャッシュ制限を取得する bitsadmin cache と getlimit コマンドの参照記事。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 2f3e9912-928c-483b-9acb-55fa5fc975a0
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d72ee331e5924ef76eaec029ff44f14ebbd1d263
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 5cf8bb988cad7f6c29942167d0ccdbaf4e7b94b4
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85923289"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87894766"
 ---
 # <a name="bitsadmin-cache-and-getlimit"></a>bitsadmin cache および getlimit
 

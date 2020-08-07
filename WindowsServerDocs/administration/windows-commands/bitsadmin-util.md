@@ -1,20 +1,18 @@
 ---
 title: bitsadmin util
 description: Util スイッチの一覧を示す bitsadmin util コマンドのリファレンス記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: e8278a28-1ecc-42be-92e2-c93dee59751d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 96708544053c760153fbb18d813880564fd49bac
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 9ef79ffc523e34f1e09c083aac4e10b8e03e9773
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85927285"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880784"
 ---
 # <a name="bitsadmin-util"></a>bitsadmin util
 

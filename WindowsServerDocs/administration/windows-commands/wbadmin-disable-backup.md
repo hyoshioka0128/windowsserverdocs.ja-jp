@@ -1,20 +1,18 @@
 ---
 title: wbadmin disable backup
 description: 既存のスケジュールされた毎日のバックアップの実行を停止する wbadmin disable backup のリファレンス記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 5176cbd9-0696-4b3f-9c35-272dd84f7898
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 88383975aa3ae8d6821698159e6ee445198301c5
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 98f9e17ff4b1f2ed84af3e703291d02e87841707
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85933669"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87881218"
 ---
 # <a name="wbadmin-disable-backup"></a>wbadmin disable backup
 

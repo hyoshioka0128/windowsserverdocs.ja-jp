@@ -1,19 +1,17 @@
 ---
 title: Windows Server の管理
 description: Windows Server の管理に関するツール、推奨事項、ガイダンスについて説明します
-ms.prod: windows-server
-ms.technology: manage
 ms.topic: article
 author: lizap
 ms.author: elizapo
 ms.date: 03/16/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 60ef7ae8be2c8383dda2ef472a0bab6dd3bc9d85
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 2edfddb644a2c92a05be8d2d943c089bf6774d06
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409462"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87879320"
 ---
 # <a name="manage-windows-server"></a>Windows Server の管理
 
@@ -51,10 +49,10 @@ Windows Server インスタンスの管理に使用するツールは、展開�
 
 | 操作環境   | Windows Admin Center のインストールおよび管理 | Windows Server でのサーバー マネージャーの実行 | Windows 10 での RSAT を使用したサーバー マネージャーの実行 |
 |--------|----------------------|--------------------------------------|------------------------------------------|
-| Windows 10 PC で作業 | x  |                                      | x                                        |
-| デスクトップ エクスペリエンスを実行する Windows Server システムで作業 | x | x | x |
+| Windows 10 PC で作業 | X  |                                      | X                                        |
+| デスクトップ エクスペリエンスを実行する Windows Server システムで作業 | X | x | X |
 | Server Core を実行する Windows Server システムで作業 |X (Windows 10 上にインストールし、Server Core の管理に使用) | | X |
-| Windows Server システムから離れた場所で作業 |x | | x |
+| Windows Server システムから離れた場所で作業 |X | | X |
 | Windows Server システムから離れた場所で作業するが、デスクトップ エクスペリエンスは実行 |X | RDS を使用してサーバーにリモート接続し、サーバー マネージャーを使用 | X |
 
 以下で説明するツールに加え、[リモート デスクトップ サービス](../remote/remote-desktop-services/welcome-to-rds.md)を使用して、オンプレミス サーバー、リモート サーバー、仮想サーバーにアクセスすることもできます。 その後、サーバー マネージャーを使用して管理タスクを実行できます。

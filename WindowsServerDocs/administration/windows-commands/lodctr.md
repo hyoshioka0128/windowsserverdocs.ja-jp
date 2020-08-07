@@ -1,20 +1,18 @@
 ---
 title: lodctr
 description: Lodctr コマンドのリファレンス記事。これにより、パフォーマンスカウンターの名前とレジストリ設定をファイルに登録または保存し、信頼されたサービスを指定することができます。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 5a849abd-6b31-4833-bc8a-306c05eca29a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7e6dba42610923e8b0cd9d7ea25a0e1ea6df507a
-ms.sourcegitcommit: 67d9c51e396c8f937f8704a25e66fea8c5fae81a
+ms.openlocfilehash: 428830b06796914e66434c90f7624cc7c64eec5b
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87441528"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887474"
 ---
 # <a name="lodctr"></a>lodctr
 
@@ -30,7 +28,7 @@ lodctr <filename> [/s:<filename>] [/r:<filename>] [/t:<servicename>]
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | Description |
+| パラメーター | 説明 |
 | --------- | ----------- |
 | `<filename>` | パフォーマンスカウンターの名前設定と説明文を登録する初期化ファイルの名前を指定します。 |
 | /s`<filename>` | パフォーマンスカウンターのレジストリ設定と説明テキストを保存するファイルの名前を指定します。 |
@@ -43,7 +41,7 @@ lodctr <filename> [/s:<filename>] [/r:<filename>] [/t:<servicename>]
 
 - 入力した情報にスペースが含まれている場合は、テキストを引用符で囲みます ("ファイル名 1" など)。
 
-### <a name="examples"></a>使用例
+### <a name="examples"></a>例
 
 現在のパフォーマンスレジストリ設定と説明テキストをファイル *"perf backup1.txt"* に保存するには、次のように入力します。
 
@@ -51,6 +49,6 @@ lodctr <filename> [/s:<filename>] [/r:<filename>] [/t:<servicename>]
 lodctr /s:"perf backup1.txt"
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

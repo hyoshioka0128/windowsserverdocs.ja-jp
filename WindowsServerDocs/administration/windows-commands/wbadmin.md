@@ -1,20 +1,18 @@
 ---
 title: wbadmin
 description: コマンドプロンプトからオペレーティングシステム、ボリューム、ファイル、フォルダー、およびアプリケーションをバックアップして復元できる wbadmin のリファレンス記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 4b0b3f32-d21f-4861-84bb-b2eadbf1e7b8
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d8320ddd7c806999730ae1f8fd47ea559406e0a7
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 3739695a805534d47500380a76951405af7c7f1b
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86954424"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87879544"
 ---
 # <a name="wbadmin"></a>wbadmin
 
@@ -46,7 +44,7 @@ ms.locfileid: "86954424"
 |[Wbadmin restore catalog](wbadmin-restore-catalog.md)|ローカルコンピューター上のバックアップカタログが破損している場合に、指定した記憶域の場所からバックアップカタログを回復します。|
 |[Wbadmin delete catalog](wbadmin-delete-catalog.md)|ローカル コンピューター上のバックアップ カタログを削除します。 このサブコマンドは、このコンピューター上のバックアップカタログが破損していて、カタログの復元に使用できる別の場所にバックアップが保存されていない場合にのみ使用してください。|
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 -   [バックアップと回復](https://go.microsoft.com/fwlink/?LinkID=195054)
 -   [Windows PowerShell の Windows Server バックアップコマンドレット](/powershell/module/windowserverbackup/?view=winserver2012r2-ps)

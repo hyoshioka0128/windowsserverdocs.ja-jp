@@ -1,20 +1,18 @@
 ---
 title: tftp
 description: リモートコンピューターとの間でファイルを転送します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 772f19a8-dafe-45cd-878a-f5691f6568ef
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8b3674cbfdbc01811ece57e2f9cbbea3aa31251d
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: e085d86ea8dff5261f77505df4d5d7c2c6adb675
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84223044"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87881617"
 ---
 # <a name="tftp"></a>tftp
 
@@ -37,7 +35,7 @@ tftp [-i] [<Host>] [{get | put}] <Source> [<Destination>]
 |\<Source\>|転送するファイルを指定します。|
 |\<Destination\>|ファイルを転送する場所を指定します。|
 
-## <a name="remarks"></a>解説
+## <a name="remarks"></a>Remarks
 -   Tftp クライアントは、機能の追加ウィザードを使用してインストールできます。
 -   Tftp プロトコルでは、認証または暗号化のメカニズムはサポートされていないため、セキュリティ上のリスクが生じる可能性があります。 インターネットに接続されているシステムには、tftp クライアントをインストールすることはお勧めしません。
 -   Tftp クライアントはオプションのソフトウェアで、Windows Vista 以降のバージョンの Windows オペレーティングシステムでは非推奨としてマークされています。 Tftp サーバーサービスは、セキュリティ上の理由からマイクロソフトによって提供されなくなりました。
@@ -48,5 +46,5 @@ tftp [-i] [<Host>] [{get | put}] <Source> [<Destination>]
 tftp  -i Host1 get boot.img
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

@@ -1,20 +1,18 @@
 ---
 title: bitsadmin wrap
 description: Bitsadmin wrap コマンドの参照記事。コマンドウィンドウの右端から次の行まで拡張する出力テキストの行をラップします。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 14e57522-539d-4621-ad15-09f7a44ccab7
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e47f5e38555eb2464d3febf5f958ce5a6af20452
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 5d17678ec735f9e7d6319368b0b35a67b47ea576
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85927250"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880763"
 ---
 # <a name="bitsadmin-wrap"></a>bitsadmin wrap
 

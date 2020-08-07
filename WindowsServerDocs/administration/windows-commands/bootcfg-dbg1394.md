@@ -1,20 +1,18 @@
 ---
 title: bootcfg dbg1394
 description: 指定されたオペレーティングシステムエントリに対して1394ポートのデバッグを構成する、bootcfg dbg1394 コマンドの参照記事
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 35724697-90dd-4dbe-85b0-337fbd369dcc
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f1f71edbabbf85c301bec24138a805523975d3f6
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 334a6f280c3e9de529ed7cbf8d1430177ca09f33
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85926345"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880714"
 ---
 # <a name="bootcfg-dbg1394"></a>bootcfg dbg1394
 

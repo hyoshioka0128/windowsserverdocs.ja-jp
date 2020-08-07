@@ -1,20 +1,18 @@
 ---
 title: list providers
 description: '[リストプロバイダー] コマンドの参照記事。システムに現在登録されているシャドウコピープロバイダーが一覧表示されます。'
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 844b4036-c0b9-449d-8347-7d58ef9bf16d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 64996c7a85fa7ad20a5ffbb1c22ae3396820b676
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 81ca0a90276eeab824846f441ea9aa2a7396a009
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931799"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887619"
 ---
 # <a name="list-providers"></a>list providers
 

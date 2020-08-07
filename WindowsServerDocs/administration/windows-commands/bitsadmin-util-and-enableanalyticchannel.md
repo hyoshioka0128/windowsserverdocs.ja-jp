@@ -1,26 +1,24 @@
 ---
 title: bitsadmin util および enableanalyticchannel
 description: BITS クライアント分析チャネルを有効または無効にする bitsadmin util および enableanalytics のチャネルコマンドのリファレンス記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 0d7645aa-b91b-4ed7-b630-a1e1be6f6ae9
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 515402f42dee54baa662f37718841f70b1cd2882
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 2c4577f635444c1830e232e1baeb12fac8c75476
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85927416"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880958"
 ---
 # <a name="bitsadmin-util-and-enableanalyticchannel"></a>bitsadmin util および enableanalyticchannel
 
 BITS クライアント分析チャネルを有効または無効にします。
 
-## <a name="syntax"></a>Syntax
+## <a name="syntax"></a>構文
 
 ```
 bitsadmin /util /enableanalyticchannel TRUE|FALSE

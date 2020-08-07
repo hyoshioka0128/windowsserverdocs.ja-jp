@@ -1,20 +1,18 @@
 ---
 title: logman create api
 description: Logman create api コマンドのリファレンス記事。 API トレースデータコレクターを作成します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 2ecc0a75-2613-464a-8616-c5dc404bb736
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2294cb7ba7ab962dbba33b0e2612b8dee2d72004
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: a2e3e9291bcd113ced9c27eb7cc3449f715f9893
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85925435"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887455"
 ---
 # <a name="logman-create-api"></a>logman create api
 
@@ -32,12 +30,12 @@ logman create api <[-n] <name>> [options]
 
 | パラメーター | 説明 |
 | --------- | ----------- |
-| -s`<computer name>` | 指定されたリモートコンピューターでコマンドを実行します。 |
+| -s `<computer name>` | 指定されたリモートコンピューターでコマンドを実行します。 |
 | -config`<value>` | コマンドオプションを含む設定ファイルを指定します。 |
 | [-n]`<name>` | 対象オブジェクトの名前。 |
 | -f`<bin|bincirc>` | データコレクターのログの形式を指定します。 |
 | -[-] u`<user [password]>` | として実行するユーザーを指定します。 パスワードのを入力すると、パスワードの入力を `*` 求めるメッセージが表示されます。 パスワードは、パスワード用プロンプトで入力した場合は表示されません。 |
-| -m`<[start] [stop] [[start] [stop] [...]]>` | スケジュールされた開始時刻または終了時刻ではなく、手動の開始または停止に変更されました。 |
+| -m `<[start] [stop] [[start] [stop] [...]]>` | スケジュールされた開始時刻または終了時刻ではなく、手動の開始または停止に変更されました。 |
 | -rf`<[[hh:]mm:]ss>` | 指定された期間、データコレクターを実行します。 |
 | -b`<M/d/yyyy h:mm:ss[AM|PM]>` | 指定された時間にデータの収集を開始します。 |
 | -e `<M/d/yyyy h:mm:ss[AM|PM]>` | 指定された時刻にデータ収集を終了します。 |
@@ -59,7 +57,7 @@ logman create api <[-n] <name>> [options]
 | -exe`<value>` | API トレースの実行可能ファイルへの完全パスを指定します。 |
 | /? | 状況依存のヘルプを表示します。 |
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>Remarks
 
 - [-] が一覧表示されている場合は、余分なハイフン (-) を追加すると、オプションが無効になります。
 

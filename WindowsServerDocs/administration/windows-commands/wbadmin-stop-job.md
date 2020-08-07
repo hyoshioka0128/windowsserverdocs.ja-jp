@@ -1,20 +1,18 @@
 ---
 title: wbadmin stop job
 description: 現在実行中のバックアップまたは回復操作をキャンセルする wbadmin stop ジョブの参照記事。 取り消された操作は再開できません。最初から取り消されたバックアップまたは回復操作を再実行する必要があります。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 3b83b398-39c7-4410-bf17-5c1fb1a4f46d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2c6961b1fae425d06577fce3a93dca6262dd7127
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: e28a59620888a14e170f293ef2b08ffa9053e515
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85930887"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87879555"
 ---
 # <a name="wbadmin-stop-job"></a>wbadmin stop job
 

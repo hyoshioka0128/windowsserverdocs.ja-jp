@@ -1,20 +1,18 @@
 ---
 title: wdsutil
 description: Windows 展開サービスサーバーの管理に使用されるコマンドラインユーティリティである wdsutil のリファレンス記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 3a1965a0-8677-40cc-9495-30ae806808d1
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 14fa0d962d1104279211696c7ff8b80d0f1b6fbf
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 1ff4ca30ff0e762cc1a51538088bd0bba376f0d6
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85930833"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87881203"
 ---
 # <a name="wdsutil"></a>wdsutil
 
@@ -22,7 +20,7 @@ ms.locfileid: "85930833"
 
 wdsutil は、Windows 展開サービスサーバーの管理に使用するコマンドラインユーティリティです。 これらのコマンドを実行するには、[**スタート**] ボタンをクリックし、[**コマンドプロンプト**] を右クリックして、[**管理者として実行**] をクリックします。
 ## <a name="commands"></a>コマンド
-|コマンド|説明|
+|command|説明|
 |------|--------|
 |[[追加] コマンドを使用する](using-the-add-command.md)|オブジェクトまたはプレステージコンピューターを追加します。|
 |[承認-AutoaddDevices コマンドの使用](using-the-approve-autoadddevices-command.md)|管理者の承認待ちのコンピューターを承認します。|

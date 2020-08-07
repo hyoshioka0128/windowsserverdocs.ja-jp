@@ -1,20 +1,18 @@
 ---
 title: logman create
 description: Logman create コマンドのリファレンス記事。カウンター、トレース、構成データコレクター、または API を作成します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 972f0126-7bc4-4b14-9265-062864f3ffd4
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 695a101a0aa6a720b64ffee6617085d13b6e83d1
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: bd236b7ad78921c9f32094b5e595b4125fe2ec74
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85922323"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887342"
 ---
 # <a name="logman-create"></a>logman create
 

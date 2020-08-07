@@ -1,20 +1,18 @@
 ---
 title: get-help-イメージ
 description: Windows イメージ (.wim) ファイルに格納されているイメージに関する情報を取得する、ファイルイメージの参照記事。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: e1e296fb-20cf-4a60-9db4-4cbac7d4dab5
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 127b5282b74020f002c7ccc55663fc2571584582
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 10b86929366cc8734a5ff155200fb3078f0cd5d4
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932222"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87879378"
 ---
 # <a name="get-imagefile"></a>get-help-イメージ
 

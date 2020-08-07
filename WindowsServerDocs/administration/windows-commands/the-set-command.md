@@ -1,20 +1,18 @@
 ---
 title: Set コマンドの使用
 description: Windows 展開サービスサーバー、事前設定されたコンピューター、イメージ、イメージグループ、およびトランスポートサーバーのプロパティと属性を設定する「set」の参照記事。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 5def6be0-83b9-4133-bc1b-bbe6d407eca7
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4d292dfb7c069cbdb0fe80afe5cfd426735eaf7c
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: c454a07ba0ccc0b3a78432ab0cff701e5f7ea1b8
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519621"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87881508"
 ---
 # <a name="using-the-set-command"></a>Set コマンドの使用
 

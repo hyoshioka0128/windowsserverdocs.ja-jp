@@ -1,20 +1,18 @@
 ---
 title: label
 description: ディスクのボリュームラベル (つまり名前) を作成、変更、または削除する、ラベルコマンドの参照記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: bbae8bdd-97d4-4566-9118-7c95aa07645f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f8c13285c5dc5030e96d7d334bb65d15f04dff86
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: e7656078b87a74db789ed85c10be9f30cabfd971
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931815"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887636"
 ---
 # <a name="label"></a>label
 
@@ -35,7 +33,7 @@ label [/mp] [<volume>] [<label>]
 | `<label>` | ボリュームのラベルを指定します。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>Remarks
 
 - Windows では、ディレクトリの一覧の一部としてボリュームラベルとシリアル番号 (ある場合) が表示されます。
 

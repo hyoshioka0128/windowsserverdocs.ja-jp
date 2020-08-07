@@ -1,20 +1,18 @@
 ---
 title: load metadata
 description: "\"メタデータの読み込み\" コマンドの参照記事。このコマンドは、転送可能なシャドウコピーをインポートする前にメタデータ .cab ファイルを読み込み、または復元の場合にライターメタデータを読み込みます。"
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 2c535487-668b-44fc-babb-ff59cf7d190e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 01e782d0214da70f831b81120aff3c5097895036
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 4b0f5412ee189814fcdf1f020f238e19dc308b7d
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931687"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887481"
 ---
 # <a name="load-metadata"></a>メタデータの読み込み
 
@@ -33,7 +31,7 @@ load metadata [<drive>:][<path>]<metadata.cab>
 | `[<drive>:][<path>]` | メタデータファイルの場所を指定します。 |
 | metadata.cab | 読み込むメタデータ .cab ファイルを指定します。 |
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>Remarks
 
 - **Import**コマンドを使用すると、**読み込みメタ**データによって指定されたメタデータに基づいて、転送可能なシャドウコピーをインポートできます。
 

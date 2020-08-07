@@ -1,20 +1,18 @@
 ---
 title: 取得-ImageGroup
 description: イメージグループとその中のイメージに関する情報を取得する、get ImageGroup の参照記事。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 0fc25aca-a529-44ee-bc8e-96bc8affb458
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 32ca965981b02bd951a0cc84160a2c5ea0643ae0
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: bfe2c804d24914b500703476d28e5281fdaef8c0
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932208"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87879300"
 ---
 # <a name="get-imagegroup"></a>取得-ImageGroup
 

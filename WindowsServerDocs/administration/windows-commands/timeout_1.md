@@ -1,20 +1,18 @@
 ---
 title: timeout
 description: タイムアウトの参照記事。指定された秒数のコマンドプロセッサを一時停止します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: e26b4a84-0e30-46e1-aa10-0667b7d3cb4c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 62ead9473a9034c02fab18f2318ecb5162511922
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 90ba2da52f97ee603ce7992e4df135c1284c4070
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85930091"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87881399"
 ---
 # <a name="timeout"></a>timeout
 
@@ -36,7 +34,7 @@ timeout /t <TimeoutInSeconds> [/nobreak]
 |/nobreak|ユーザー キー ストロークを無視するように指定します。|
 |/?|コマンド プロンプトにヘルプを表示します。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>Remarks
 
 -   **タイムアウト** コマンドは、通常、バッチ ファイルで使用します。
 -   ユーザーのキー入力は、タイムアウト期間の有効期限が切れていない場合でも、すぐに、コマンド プロセッサの実行を再開します。

@@ -1,20 +1,18 @@
 ---
 title: 削除 DriverPackage
 description: ドライバーパッケージをサーバーから削除する削除 DriverPackage のリファレンス記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 6b201e91-0d44-4e4a-8252-8b0235df1002
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c39f34d1556e6ad0f61f3f1cc3cf0aac36b18ee5
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: d6f391ed7a5e2a991c0d38e35ac3d08565b32765
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85933453"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87881225"
 ---
 # <a name="remove-driverpackage"></a>削除 DriverPackage
 

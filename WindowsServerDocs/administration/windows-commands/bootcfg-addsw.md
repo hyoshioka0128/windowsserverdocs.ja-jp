@@ -1,20 +1,18 @@
 ---
 title: bootcfg addsw
 description: 指定されたオペレーティングシステムエントリのオペレーティングシステムの読み込みオプションを追加する、bootcfg addsw コマンドの参照記事。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: d8389293-ecd9-42f0-b84b-b9ead4cf52e6
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f9d54c2cfdf898e1162d804220ae6dbb4a446fc5
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 549bfec84cb45baec309d8ae7043be39f5d31a3a
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85926354"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880741"
 ---
 # <a name="bootcfg-addsw"></a>bootcfg addsw
 

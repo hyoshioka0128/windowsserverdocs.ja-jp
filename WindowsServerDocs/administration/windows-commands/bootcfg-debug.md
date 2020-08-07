@@ -1,20 +1,18 @@
 ---
 title: bootcfg debug
 description: 指定されたオペレーティングシステムエントリのデバッグ設定を追加または変更する、bootcfg debug コマンドの参照記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 28afa5fb-a236-46e2-b1a4-a3c43a49c437
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: da4179d85d4e84918e75fb4c8490e229230412eb
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 8b3cbde64da67196a1067791e5dad3c2b02756d4
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85926315"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880694"
 ---
 # <a name="bootcfg-debug"></a>bootcfg debug
 

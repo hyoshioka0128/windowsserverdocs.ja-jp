@@ -1,20 +1,18 @@
 ---
 title: bdehdcfg quiet
 description: Bdehdcfg quiet コマンドのリファレンス記事。すべてのアクションとエラーを表示しないように bdehdcfg に指示します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 7f75b702-890b-4ff9-805c-edf5cadd8822
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5b6a62314109d1c299187d87fba23b8e59669d66
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 7ddd6e2cb63b6af0ea0c50b5260436c184ee6aa6
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85923456"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895088"
 ---
 # <a name="bdehdcfg-quiet"></a>bdehdcfg: quiet
 

@@ -1,20 +1,18 @@
 ---
 title: ktpass
 description: Ktpass コマンドの参照記事。このコマンドは、AD DS でホストまたはサービスのサーバープリンシパル名を構成し、サービスの共有シークレットキーを含む... キーを生成します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 47087676-311e-41f1-8414-199740d01444
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fbf7b47f4f21a2c964d14dd1200b15ad635d7471
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 3bb523d35a1bbf2d15895201855a58e96ebb7772
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931826"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887642"
 ---
 # <a name="ktpass"></a>ktpass
 
@@ -67,7 +65,7 @@ ktpass
 | `{-|+}setpass <password>` | 指定されたときにユーザーのパスワードを設定します。 Rndpass が使用されている場合は、ランダムなパスワードが代わりに生成されます。 |
 | /? | このコマンドのヘルプを表示します。 |
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>Remarks
 
 - Windows オペレーティングシステムを実行していないシステムで実行されているサービスは、AD DS のサービスインスタンスアカウントを使用して構成できます。 これにより、任意の Kerberos クライアントが windows Kdc を使用して、Windows オペレーティングシステムを実行していないサービスに対して認証を行うことができます。
 

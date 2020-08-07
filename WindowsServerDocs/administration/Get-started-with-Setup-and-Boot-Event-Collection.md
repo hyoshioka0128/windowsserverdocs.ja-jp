@@ -1,21 +1,19 @@
 ---
 title: セットアップおよび起動イベント コレクションの使用
 description: セットアップおよびブート イベント収集のコレクターとターゲットの設定
-ms.prod: windows-server
 manager: DonGill
-ms.technology: server-sbec
 ms.localizationpriority: medium
 ms.date: 10/16/2017
 ms.topic: get-started-article
 ms.assetid: fc239aec-e719-47ea-92fc-d82a7247b3f8
 author: jaimeo
 ms.author: jaimeo
-ms.openlocfilehash: bb70f25ca4564f1bdf76940c9d2fcb840db5afa2
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: e5e18ed5f5cc4cba319042f1a5da84acae8e5fd5
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87408891"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87879534"
 ---
 # <a name="get-started-with-setup-and-boot-event-collection"></a>セットアップおよび起動イベント コレクションの使用
 
@@ -42,10 +40,10 @@ ms.locfileid: "87408891"
 
 |仮想化ホスト|コレクター仮想マシン|ターゲット仮想マシン|
 |-----------------------|-----------------------------|--------------------------|
-|Windows 8.1|○|はい|
-|Windows 10|○|はい|
-|Windows Server 2016|○|はい|
-|Windows Server 2012 R2|はい|no|
+|Windows 8.1|はい|はい|
+|Windows 10|はい|はい|
+|Windows Server 2016|はい|はい|
+|Windows Server 2012 R2|はい|Ｘ|
 
 ## <a name="installing-the-collector-service"></a>コレクター サービスのインストール
 Windows Server 2016 以降、イベント コレクター サービスがオプションの機能として利用可能です。 このリリースでは、管理者特権の Windows PowerShell プロンプトで次のコマンドを指定し、DISM.exe を使用してこの機能をインストールすることができます。
@@ -274,7 +272,7 @@ ETW 形式ではターゲットコンピューター名を指定することが�
 
 ## <a name="configuring-nano-server-as-a-target-computer"></a>対象のコンピューターとしての Nano Server の構成
 
-Nano Server で提供される最小限のインターフェイスを使用すると、問題を診断することが困難になる場合があります。 セットアップおよびブート イベント収集に自動的に参加し、手動による操作を行うことなくコレクター コンピューターに診断データを送信するように Nano Server イメージを構成することができます。 これを行うには、次の手順に従います。
+Nano Server で提供される最小限のインターフェイスを使用すると、問題を診断することが困難になる場合があります。 セットアップおよびブート イベント収集に自動的に参加し、手動による操作を行うことなくコレクター コンピューターに診断データを送信するように Nano Server イメージを構成することができます。 そのためには、次の手順に従います。
 
 ### <a name="to-configure-nano-server-as-a-target-computer"></a>Nano Server をターゲットコンピューターとして構成するには
 

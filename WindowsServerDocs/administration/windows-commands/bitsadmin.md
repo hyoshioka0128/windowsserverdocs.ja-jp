@@ -1,20 +1,18 @@
 ---
 title: bitsadmin
 description: Bitsadmin コマンドのリファレンス記事。ジョブの作成、ダウンロード、アップロード、およびジョブの進行状況の監視に使用されるコマンドラインツールです。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 4853036e-1df8-45ad-8be6-cfb097b8dd27
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 51a64b059dd9d07dd6bd0ecccb1cd99382bdfaa5
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 4bfaa79720dafdbed62a704b20940143b82390ac
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955374"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880753"
 ---
 # <a name="bitsadmin"></a>bitsadmin
 
