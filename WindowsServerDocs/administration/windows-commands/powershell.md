@@ -1,20 +1,18 @@
 ---
 title: PowerShell
 description: Powershell コマンドのリファレンス記事。コマンドプロンプトから PowerShell コンソールを開きます。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 694fc970-0b6c-4046-b1b5-7eb1a0d26609
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 765504ef9e21aedc367c55629a96501d8e8bd810
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 8608f10ae96d6137ce2dd7983d78236775af0df0
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86956584"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884884"
 ---
 # <a name="powershell"></a>PowerShell
 
@@ -54,7 +52,7 @@ Windows PowerShell は、特にシステム管理用に設計された、タス�
 
 - コマンド プロンプト ウィンドウで、Windows PowerShell セッションを終了するには、入力 `exit`します。 一般的なコマンド プロンプトに戻ります。
 
-### <a name="remarks"></a>注釈
+### <a name="remarks"></a>Remarks
 
 - 完全な一覧については、 **PowerShell.exe** コマンド ライン パラメーターを参照して [about_PowerShell.Exe](/powershell/module/microsoft.powershell.core/about/about_powershell_exe)します。
 
@@ -62,7 +60,7 @@ Windows PowerShell は、特にシステム管理用に設計された、タス�
 
 - Windows PowerShell は、Windows Server オペレーティング システムの Server Core インストール オプションで実行されます。 ただし、 [Windows PowerShell Integrated Scripting Environment (ISE)](/previous-versions//hh849182(v=technet.10))などのグラフィックユーザーインターフェイスを必要とする機能や、 [Out GridView](/powershell/module/microsoft.powershell.utility/out-gridview)および[Show Command コマンド](/powershell/module/microsoft.powershell.utility/show-command)レットは、Server Core インストールでは実行されません。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [about_PowerShell.Exe](/powershell/module/microsoft.powershell.core/about/about_powershell_exe)
 

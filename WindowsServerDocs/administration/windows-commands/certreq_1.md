@@ -1,20 +1,18 @@
 ---
 title: certreq
 description: Certreq コマンドの参照記事。証明機関 (CA) から証明書を要求し、CA からの以前の要求への応答を取得し、.inf ファイルから新しい要求を作成し、要求に対する応答を受け入れてインストールし、既存の CA 証明書または要求からのクロス証明または限定従属の要求を作成し、クロス証明または限定従属の要求
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 7a04e51f-f395-4bff-b57a-0e9efcadf973
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4610db6755f5177306dfcf4feec005eab6efabfd
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 4e9276acbad0f9e9d403d3e172b4935f1de43475
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87178678"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880357"
 ---
 # <a name="certreq"></a>certreq
 
@@ -65,7 +63,7 @@ certreq –enroll –cert certId [options] renew [reusekeys]
 certreq –submit certrequest.req certnew.cer certnew.pfx
 ```
 
-#### <a name="remarks"></a>解説
+#### <a name="remarks"></a>Remarks
 
 - これは、既定の certreq.exe パラメーターです。 コマンドラインプロンプトでオプションが指定されていない場合、certreq.exe は証明機関に証明書要求を送信しようとします。 **– Submit**オプションを使用する場合は、証明書の要求ファイルを指定する必要があります。 このパラメーターを省略すると、一般的な [**ファイルを開く**] ウィンドウが表示され、適切な証明書要求ファイルを選択できます。
 
@@ -79,7 +77,7 @@ certreq –submit certrequest.req certnew.cer certnew.pfx
 certreq -retrieve 20 MyCertificate.cer
 ```
 
-#### <a name="remarks"></a>解説
+#### <a name="remarks"></a>Remarks
 
 - 証明機関によって発行された証明書を取得するには、certreq- *requestid*を使用します。 *Requestid* pkc は、0x プレフィックスを持つ10進数または16進数にすることができ、プレフィックスなしの証明書のシリアル番号にすることができます。 また、証明書の要求が保留中であるかどうかにかかわらず、証明機関によって発行された証明書 (失効または期限切れの証明書を含む) を取得するために使用することもできます。
 
@@ -111,7 +109,7 @@ INF ファイルのこの領域は、新しい証明書要求テンプレート�
 | KeyContainer | 新しいキーマテリアルが生成される新しい要求に対しては、このパラメーターを設定しないことをお勧めします。 キーコンテナーは、システムによって自動的に生成され、維持されます。<p>既存のキーマテリアルを使用する必要がある要求の場合、この値は既存のキーのキーコンテナー名に設定できます。 コマンドを使用して、 `certutil –key` マシンコンテキストで使用可能なキーコンテナーの一覧を表示します。 現在の `certutil –key –user` ユーザーのコンテキストに対してコマンドを使用します。| ランダムな文字列値<p>**ヒント:** Inf 解析の問題の可能性を回避するには、空白または特殊文字を含む INF キー値を二重引用符で囲んでください。 | `KeyContainer = {C347BD28-7F69-4090-AA16-BC58CF4D749C}` |
 | Keylength | 公開キーと秘密キーの長さを定義します。 キーの長さは、証明書のセキュリティレベルに影響します。 キーの長さが多いほど、通常は高いセキュリティレベルになります。ただし、一部のアプリケーションでは、キーの長さに関する制限が適用される場合があります。 | 暗号化サービスプロバイダーでサポートされている任意の有効なキーの長さ。 | `KeyLength = 2048` |
 | KeySpec | キーを署名、Exchange (暗号化)、またはその両方に使用できるかどうかを決定します。 | `AT_NONE, AT_SIGNATURE, AT_KEYEXCHANGE` | `KeySpec = AT_KEYEXCHANGE` |
-| KeyUsage | 証明書キーを使用する必要があるかどうかを定義します。 | <ul><li>`CERT_DIGITAL_SIGNATURE_KEY_USAGE -- 80 (128)`</li><li>`CERT_NON_REPUDIATION_KEY_USAGE -- 40 (64)`</li><li>`CERT_KEY_ENCIPHERMENT_KEY_USAGE -- 20 (32)`</li><li>`CERT_DATA_ENCIPHERMENT_KEY_USAGE -- 10 (16)`</li><li>`CERT_KEY_AGREEMENT_KEY_USAGE -- 8`</li><li>`CERT_KEY_CERT_SIGN_KEY_USAGE -- 4`</li><li>`CERT_OFFLINE_CRL_SIGN_KEY_USAGE -- 2`</li><li>`CERT_CRL_SIGN_KEY_USAGE -- 2`</li><li>`CERT_ENCIPHER_ONLY_KEY_USAGE -- 1`</li><li>`CERT_DECIPHER_ONLY_KEY_USAGE -- 8000 (32768)`</li></ul> | `KeyUsage = CERT_DIGITAL_SIGNATURE_KEY_USAGE | CERT_KEY_ENCIPHERMENT_KEY_USAGE`<p>**ヒント:** 複数の値がパイプを使用しています (|) 記号の区切り記号。 複数の値を使用する場合は、INF 解析の問題を回避するために二重引用符を使用してください。 表示される値は、各ビット定義の16進数 (10 進数) 値です。 以前の構文も使用できます。シンボリック表現ではなく、複数のビットが設定された単一の16進値です。 たとえば、「 `KeyUsage = 0xa0` 」のように入力します。 |
+| KeyUsage | 証明書キーを使用する必要があるかどうかを定義します。 | <ul><li>`CERT_DIGITAL_SIGNATURE_KEY_USAGE -- 80 (128)`</li><li>`CERT_NON_REPUDIATION_KEY_USAGE -- 40 (64)`</li><li>`CERT_KEY_ENCIPHERMENT_KEY_USAGE -- 20 (32)`</li><li>`CERT_DATA_ENCIPHERMENT_KEY_USAGE -- 10 (16)`</li><li>`CERT_KEY_AGREEMENT_KEY_USAGE -- 8`</li><li>`CERT_KEY_CERT_SIGN_KEY_USAGE -- 4`</li><li>`CERT_OFFLINE_CRL_SIGN_KEY_USAGE -- 2`</li><li>`CERT_CRL_SIGN_KEY_USAGE -- 2`</li><li>`CERT_ENCIPHER_ONLY_KEY_USAGE -- 1`</li><li>`CERT_DECIPHER_ONLY_KEY_USAGE -- 8000 (32768)`</li></ul> | `KeyUsage = CERT_DIGITAL_SIGNATURE_KEY_USAGE | CERT_KEY_ENCIPHERMENT_KEY_USAGE`<p>**ヒント:** 複数の値がパイプを使用しています (|) 記号の区切り記号。 複数の値を使用する場合は、INF 解析の問題を回避するために二重引用符を使用してください。 表示される値は、各ビット定義の16進数 (10 進数) 値です。 以前の構文も使用できます。シンボリック表現ではなく、複数のビットが設定された単一の16進値です。 たとえば、`KeyUsage = 0xa0` のようにします。 |
 | Keyのプロパティ | 秘密キーを使用できる特定の目的を識別する値を取得します。 | <ul><li>`NCRYPT_ALLOW_DECRYPT_FLAG -- 1`</li><li>`NCRYPT_ALLOW_SIGNING_FLAG -- 2`</li><li>`NCRYPT_ALLOW_KEY_AGREEMENT_FLAG -- 4`</li><li>`NCRYPT_ALLOW_ALL_USAGES -- ffffff (16777215)`</li></ul> | `KeyUsageProperty = NCRYPT_ALLOW_DECRYPT_FLAG | NCRYPT_ALLOW_SIGNING_FLAG` |
 | MachineKeySet | このキーは、ユーザーではなく、コンピューターによって所有されている証明書を作成する必要がある場合に重要です。 生成されるキーマテリアルは、要求を作成したセキュリティプリンシパル (ユーザーまたはコンピューターアカウント) のセキュリティコンテキストで保持されます。 管理者がコンピューターの代わりに証明書要求を作成する場合、キーマテリアルは、管理者のセキュリティコンテキストではなく、コンピューターのセキュリティコンテキストで作成する必要があります。 そうしないと、管理者のセキュリティコンテキストにあるため、コンピューターは秘密キーにアクセスできませんでした。 | `true | false`. 既定値は false です。 | `MachineKeySet = true` |
 | NotBefore | 要求を発行できない日付または日付と時刻を指定します。 `NotBefore`およびと共に使用でき `ValidityPeriod` `ValidityPeriodUnits` ます。 | 日付または日付と時刻 | `NotBefore = 7/24/2012 10:31 AM`<p>**ヒント:** `NotBefore`および `NotAfter` は R `equestType=cert` 専用です。 日付の解析は、ロケールを区別するように試行されます。 月の名前を使用すると、すべてのロケールで明確になり、機能します。 |
@@ -131,8 +129,8 @@ INF ファイルのこの領域は、新しい証明書要求テンプレート�
 | UseExistingKeySet | このパラメーターは、既存のキーペアを証明書要求の作成に使用することを指定するために使用されます。 このキーが TRUE に設定されている場合は、RenewalCert キーまたは KeyContainer 名の値も指定する必要があります。 既存のキーのプロパティを変更することはできないため、エクスポート可能なキーは設定しないでください。 この場合、証明書の要求の作成時にキーマテリアルは生成されません。 | `true | false` | `UseExistingKeySet = true` |
 | KeyProtection | 秘密キーを使用する前に保護する方法を示す値を指定します。 | <ul><li>`XCN_NCRYPT_UI_NO_PROTCTION_FLAG -- 0`</li><li>`XCN_NCRYPT_UI_PROTECT_KEY_FLAG -- 1`</li><li>`XCN_NCRYPT_UI_FORCE_HIGH_PROTECTION_FLAG -- 2`</li></ul> | `KeyProtection = NCRYPT_UI_FORCE_HIGH_PROTECTION_FLAG` |
 | SuppressDefaults | 既定の拡張機能と属性が要求に含まれるかどうかを示すブール値を指定します。 既定値は、オブジェクト識別子 (Oid) によって表されます。 | `true | false` | `SuppressDefaults = true` |
-| FriendlyName | 新しい証明書のフレンドリ名。 | テキスト | `FriendlyName = Server1` |
-| ValidityPeriodUnits | ValidityPeriod で使用する単位の数を指定します。 注: これは、がの場合にのみ使用され `request type=cert` ます。 | Numeric | `ValidityPeriodUnits = 3` |
+| FriendlyName | 新しい証明書のフレンドリ名。 | Text | `FriendlyName = Server1` |
+| ValidityPeriodUnits | ValidityPeriod で使用する単位の数を指定します。 注: これは、がの場合にのみ使用され `request type=cert` ます。 | 数値 | `ValidityPeriodUnits = 3` |
 | ValidityPeriod | ValidityPeriod は米国英語の複数形の期間である必要があります。 注: これは、要求の種類が cert の場合にのみ使用されます。 | `Years |  Months | Weeks | Days | Hours | Minutes | Seconds` | `ValidityPeriod = Years` |
 
 <sup>1</sup>等号 (=) の左側のパラメーター
@@ -162,7 +160,7 @@ INF ファイルのこの領域は、新しい証明書要求テンプレート�
 | *continue* | | `continue = 1.3.6.1.5.5.7` |
 | *continue* | | `continue = 1.3.6.1.5.5.7.3.1` |
 | 2.5.29.19 | | `{text}ca=0pathlength=3` |
-| 重要 | | `Critical=2.5.29.19` |
+| 重大 | | `Critical=2.5.29.19` |
 | KeySpec | | <ul><li>`AT_NONE -- 0`</li><li>`AT_SIGNATURE -- 2`</li><li>`AT_KEYEXCHANGE -- 1`</ul></li> |
 | RequestType | | <ul><li>`PKCS10 -- 1`</li><li>`PKCS7 -- 2`</li><li>`CMC -- 3`</li><li>`Cert -- 4`</li><li>`SCEP -- fd00 (64768)`</li></ul> |
 | KeyUsage | | <ul><li>`CERT_DIGITAL_SIGNATURE_KEY_USAGE -- 80 (128)`</li><li>`CERT_NON_REPUDIATION_KEY_USAGE -- 40 (64)`</li><li>`CERT_KEY_ENCIPHERMENT_KEY_USAGE -- 20 (32)`</li><li>`CERT_DATA_ENCIPHERMENT_KEY_USAGE -- 10 (16)`</li><li>`CERT_KEY_AGREEMENT_KEY_USAGE -- 8`</li><li>`CERT_KEY_CERT_SIGN_KEY_USAGE -- 4`</li><li>`CERT_OFFLINE_CRL_SIGN_KEY_USAGE -- 2`</li><li>`CERT_CRL_SIGN_KEY_USAGE -- 2`</li><li>`CERT_ENCIPHER_ONLY_KEY_USAGE -- 1`</li><li>`CERT_DECIPHER_ONLY_KEY_USAGE -- 8000 (32768)`</li></ul> |
@@ -260,7 +258,7 @@ certreq -sign myrequest.req myrequest.req
 certreq -submit myrequest_sign.req myrequest_cert.cer
 ```
 
-#### <a name="remarks"></a>解説
+#### <a name="remarks"></a>Remarks
 
 - パラメーターを追加せずにを使用すると、 `certreq -sign` ダイアログウィンドウが開き、要求されたファイル (req、cmc、txt、der、cer、または crt) を選択できます。
 

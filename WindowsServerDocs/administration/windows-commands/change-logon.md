@@ -1,20 +1,18 @@
 ---
 title: change logon
 description: '[ログオンの変更] コマンドの参照記事。クライアントセッションからのログオンを有効または無効にしたり、現在のログオンステータスを表示したりします。'
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 41466260-aee9-4333-bcb6-178112c22afd
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3604082a909986a5b89efb9feca2c5f6c8abbb53
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: f1196ec063ce6ab6d2ede64d58d22608e2e76c48
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955324"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880269"
 ---
 # <a name="change-logon"></a>change logon
 
@@ -42,7 +40,7 @@ change logon {/query | /enable | /disable | /drain | /drainuntilrestart}
 | 再起動する (& a) | コンピューターが再起動されるまで新しいクライアントセッションからのログオンを無効にしますが、既存のセッションへの再実行を許可します。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>Remarks
 
 - システムを再起動すると、ログオンが再度有効になります。
 
@@ -68,7 +66,7 @@ change logon {/query | /enable | /disable | /drain | /drainuntilrestart}
   change logon /disable
   ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

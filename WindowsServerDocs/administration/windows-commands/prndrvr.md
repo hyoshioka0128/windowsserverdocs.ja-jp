@@ -1,26 +1,24 @@
 ---
 title: prndrvr
 description: Prndrvr.vbs コマンドの参照記事。プリンタードライバーを追加、削除、および一覧表示します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 82b09e3e-bd38-4df1-9953-b0e9ee2565a3
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4f256d003ac0884b100aedb24bbb55e663444911
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 2be35ef44b7c54a5b8390120cef65054c06008d2
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924200"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884758"
 ---
 # <a name="prndrvr"></a>prndrvr
 
 > 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-追加、削除、およびプリンター ドライバーの一覧を表示します。 このコマンドは、ディレクトリにある Visual Basic スクリプトです `%WINdir%\System32\printing_Admin_Scripts\<language>` 。 コマンドプロンプトでこのコマンドを使用するには、「 **cscript** 」に続けて prndrvr.vbs ファイルの完全なパスを入力するか、ディレクトリを適切なフォルダーに変更します。 例: `cscript %WINdir%\System32\printing_Admin_Scripts\en-US\prndrvr`。
+追加、削除、およびプリンター ドライバーの一覧を表示します。 このコマンドは、ディレクトリにある Visual Basic スクリプトです `%WINdir%\System32\printing_Admin_Scripts\<language>` 。 コマンドプロンプトでこのコマンドを使用するには、「 **cscript** 」に続けて prndrvr.vbs ファイルの完全なパスを入力するか、ディレクトリを適切なフォルダーに変更します。 (例: `cscript %WINdir%\System32\printing_Admin_Scripts\en-US\prndrvr`)。
 
 パラメーターを指定せずに使用します。 **prndrvr.vbs**はコマンドラインヘルプを表示します。
 
@@ -38,16 +36,16 @@ cscript prndrvr {-a | -d | -l | -x | -?} [-m <model>] [-v {0|1|2|3}] [-e <enviro
 | -d | ドライバーを削除します。 |
 | -l | 指定されたサーバーにインストールされているすべてのプリンター ドライバー一覧、 **-s** パラメーター。 サーバーを指定しない場合は、ローカルコンピューターにインストールされているプリンタードライバーが Windows によって一覧表示されます。 |
 | -X | 指定されたサーバー上の論理プリンタしてすべてのプリンター ドライバーと使用中でない追加のプリンター ドライバーを削除、 **-s** パラメーター。 一覧から削除するサーバーを指定しない場合、Windows は、ローカルコンピューター上の未使用のプリンタードライバーをすべて削除します。 |
-| -m`<model_name>` | インストールするドライバーを (名) を指定します。 ドライバーは、サポートするプリンターのモデルの名前は多くの場合です。 詳細については、プリンターのマニュアルを参照してください。 |
+| -m `<model_name>` | インストールするドライバーを (名) を指定します。 ドライバーは、サポートするプリンターのモデルの名前は多くの場合です。 詳細については、プリンターのマニュアルを参照してください。 |
 | `-v {0|1|2|3}` | インストールするドライバーのバージョンを指定します。 説明を参照して、 **-e**についてのバージョンは現在の環境で使用可能なパラメーターです。 バージョンを指定しない場合は、ドライバーをインストールするコンピューターで実行されている Windows のバージョンに適したバージョンのドライバーがインストールされます。 |
 | -e `<environment>` | インストールするドライバーの環境を指定します。 環境を指定しない場合は、ドライバーをインストールするコンピューターの環境が使用されます。 サポートされている環境パラメーターは、 **WINDOWS NT x86**、 **windows x64** 、または**windows IA64**です。 |
-| -s`<Servername>` | 管理するプリンターをホストするリモート コンピューターの名前を指定します。 コンピューターを指定しない場合は、ローカルコンピューターが使用されます。 |
+| -s `<Servername>` | 管理するプリンターをホストするリモート コンピューターの名前を指定します。 コンピューターを指定しない場合は、ローカルコンピューターが使用されます。 |
 | -u `<Username>` -w`<password>` | 管理するプリンターをホストするコンピューターに接続するアクセス許可を持つアカウントを指定します。 ターゲット コンピューターのローカル Administrators グループのすべてのメンバーはこれらのアクセス許可を持っていますが、アクセス許可を他のユーザーに与えることもできます。 アカウントを指定しない場合は、コマンドが機能するように、これらのアクセス許可を持つアカウントでログオンする必要があります。 |
 | -h`<path>` | ドライバー ファイルへのパスを指定します。 パスを指定しない場合は、Windows がインストールされている場所へのパスが使用されます。 |
 | -i`<filename.inf>` | インストールするドライバーの完全なパスとファイル名を指定します。 ファイル名を指定しない場合、スクリプトでは、Windows ディレクトリの inf サブディレクトリにある受信トレイの .inf ファイルの1つを使用します。<p>ドライバーパスが指定されていない場合、スクリプトは driver.cab ファイル内のドライバーファイルを検索します。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>Remarks
 
 - 入力した情報にスペースが含まれている場合は、テキストを引用符で囲みます (例、"コンピューター名")。
 

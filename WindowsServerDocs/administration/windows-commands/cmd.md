@@ -1,20 +1,18 @@
 ---
 title: cmd
 description: コマンドインタープリターの新しいインスタンスを開始する cmd コマンドの参照記事 Cmd.exe。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 6ec588db-31a9-4a73-a970-65a2c6f4abbe
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 69176c69434813745f6039b607f2992675df879c
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 0c4e651a4f88ffa1d85d5be225b3ae6e5d1676dd
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929864"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880091"
 ---
 # <a name="cmd"></a>cmd
 
@@ -49,13 +47,13 @@ cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<b><f> | <f>}] [/e:{on | off}] [/f:{on |
 
 次の表に、およびの値として使用できる有効な16進数の数字を示し `<b>` `<f>` ます。
 
-| 値 | 色 |
+| 値 | Color |
 | ----- | ----- |
 | 0 | Black |
 | 1 | 青 |
 | 2 | [緑] |
 | 3 | Aqua |
-| 4 | 赤 |
+| 4 | [赤] |
 | 5 | パープル |
 | 6 | 黄 |
 | 7 | White |
@@ -68,7 +66,7 @@ cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<b><f> | <f>}] [/e:{on | off}] [/f:{on |
 | e | 薄い黄色 |
 | f | 明るい白 |
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>Remarks
 
 - に複数のコマンドを使用するには、コマンド区切り記号で区切り、それらを `<string>` **&&** 引用符で囲みます。 次に例を示します。
 

@@ -1,20 +1,18 @@
 ---
 title: nslookup set srchlist
 description: Nslookup set srchlist コマンドの参照記事。既定のドメインネームシステム (DNS) のドメイン名と検索リストが変更されます。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 8486266d-22ac-4ce5-aad6-1cd0c08110a2
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5d43107ed2c777349a8cac1a0411c035371bc0f7
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: de02663ce43b9f3f24f1addd739438a0796be0ea
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85930417"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87885490"
 ---
 # <a name="nslookup-set-srchlist"></a>nslookup set srchlist
 
@@ -36,7 +34,7 @@ set srchlist=<domainname>[/...]
 | /? | コマンド プロンプトにヘルプを表示します。 |
 | /help | コマンド プロンプトにヘルプを表示します。 |
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>Remarks
 
 - [Nslookup set all](nslookup-set-all.md)コマンドを使用して一覧を表示します。
 

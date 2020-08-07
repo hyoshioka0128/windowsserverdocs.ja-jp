@@ -1,20 +1,18 @@
 ---
 title: verifier
 description: Driver verifier マネージャーを実行する検証ツールのリファレンス記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 782173d6-f196-4bc4-a547-76109829453c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a7c8ee51a5a085b97093c417a143ee36cffbc979
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 1f19840d6a9dffe32a1febb8a313500b49f625e8
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931333"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87891868"
 ---
 # <a name="verifier"></a>verifier
 

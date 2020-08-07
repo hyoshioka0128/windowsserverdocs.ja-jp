@@ -1,20 +1,18 @@
 ---
 title: online disk
 description: オンラインディスクコマンドの参照記事。オフラインディスクがオンライン状態になります。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: bc44a783-eaa4-40ca-be01-5703b5bf4eb3
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b8b5dc2ec454cd98eb4b03952a400815f4e7ea3b
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 81bfd2dfc8e32656602066d702e8c1af5f4d1c82
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86956704"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87885240"
 ---
 # <a name="online-disk"></a>online disk
 
@@ -50,6 +48,6 @@ online disk [noerr]
 online disk
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

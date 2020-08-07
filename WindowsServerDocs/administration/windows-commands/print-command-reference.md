@@ -1,20 +1,18 @@
 ---
 title: 印刷コマンドラインツールのリファレンス
 description: 印刷コマンドラインツールを使用するための参照記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 88d8fa87-6fa8-4774-9294-080b0157ea8d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: aca9b6fd7763c5c9d07a8a741e80bc20131f2297
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 5f5d093393908cfcd81909d0a522f2ee423bcbad
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85926049"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884855"
 ---
 # <a name="print-command-line-tool-reference"></a>印刷コマンドラインツールのリファレンス
 
@@ -22,7 +20,7 @@ ms.locfileid: "85926049"
 
 関連する各印刷コマンドラインツールへの情報とリンク。
 
-| コマンド | 説明 |
+| command | 説明 |
 |--|--|
 | [lpq](lpq.md) | ラインプリンターデーモン (LPD) を実行しているコンピューター上の印刷キューの状態を表示します。 |
 | [lpr](lpr.md) | 印刷の準備として、ラインプリンタデーモン (LPD) サービスを実行しているコンピューターまたはプリンターの共有デバイスにファイルを送信します。 |

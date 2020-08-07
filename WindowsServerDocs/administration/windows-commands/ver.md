@@ -1,20 +1,18 @@
 ---
 title: ver
 description: オペレーティングシステムのバージョン番号を表示する ver のリファレンス記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 5a9c6cd4-b67d-4b30-8c56-5f9798eafd2a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bd9b40fa526c2917b6cdcbc8d54da510eb40bc53
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: de080395c2e26f03371e0b27609238b66d7317f5
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931340"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87891884"
 ---
 # <a name="ver"></a>ver
 

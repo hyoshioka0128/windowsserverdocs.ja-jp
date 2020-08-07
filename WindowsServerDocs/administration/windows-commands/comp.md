@@ -1,20 +1,18 @@
 ---
 title: comp
 description: Comp コマンドの参照記事。2つのファイルまたはファイルのセットの内容をバイト単位で比較します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 40319d23-704d-4da1-be93-8259547275d0
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 65008945e2994b9040fcac663185d0526910b8bc
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 18bd39483957959c746913a4ee18014be40c9eaa
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929710"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880036"
 ---
 # <a name="comp"></a>comp
 
@@ -40,7 +38,7 @@ comp [<data1>] [<data2>] [/d] [/a] [/l] [/n=<number>] [/c]
 | /off [行] | オフライン属性が設定されたファイルを処理します。 |
 | /? | コマンド プロンプトでヘルプを表示します。 |
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>Remarks
 
 - 比較中、 **comp**では、ファイル間の異なる情報の場所を識別するメッセージが表示されます。 各メッセージは、等しくないバイトのオフセットメモリアドレスとバイトの内容 ( **/a**または **/d**コマンドラインパラメーターが指定されていない場合は16進表記) を示します。 メッセージは次の形式で表示されます。
 

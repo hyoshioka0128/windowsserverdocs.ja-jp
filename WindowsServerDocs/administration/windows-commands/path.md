@@ -1,22 +1,20 @@
 ---
-title: パス
+title: path
 description: PATH 環境変数でコマンドパスを設定するための参照記事。実行可能ファイル (.exe) を検索するために使用されるディレクトリのセットを指定します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 1bfa1349-e79a-472b-a9e6-d7a91149ae8f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f324c2b0fc84d2df05f7df93d83799b3ac463d5d
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 4c81dfef09b4c9a411db9469ec851d4f92180f1d
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932022"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87885108"
 ---
-# <a name="path"></a>パス
+# <a name="path"></a>path
 
 PATH 環境変数でコマンドパスを設定し、実行可能 (.exe) ファイルの検索に使用するディレクトリのセットを指定します。 パラメーターを指定せずに使用した場合、このコマンドは現在のコマンドパスを表示します。
 
@@ -36,7 +34,7 @@ path ;
 | `%PATH%` | コマンド パスを PATH 環境変数で指定されているディレクトリの既存のセットに追加します。 このパラメーターを指定すると、Cmd.exe によって PATH 環境変数内のコマンドパス値に置き換えられ、コマンドプロンプトでこれらの値を手動で入力する必要がなくなります。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>Remarks
 
 
 - Windows オペレーティングシステムでは、既定のファイル名拡張子を使用して、.exe、.com、.bat、.cmd の順に検索します。 つまり、acct.bat という名前のバッチファイルを探していても、同じディレクトリ内に acct.exe という名前のアプリがある場合は、コマンドプロンプトで .bat 拡張子を含める必要があります。

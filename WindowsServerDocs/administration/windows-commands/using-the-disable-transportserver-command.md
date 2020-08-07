@@ -1,20 +1,18 @@
 ---
 title: 無効にする-TransportServer
 description: トランスポートサーバーのすべてのサービスを無効にする、無効にする TransportServer のリファレンス記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: a009706b-8e89-486b-8e3d-512cd9f4de74
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e9d25159cb81408b5a8085fb830eec4479d953f4
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 48909ffb5a452d4bac1058acc5ddc48ed69b371f
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85933930"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87892116"
 ---
 # <a name="disable-transportserver"></a>無効にする-TransportServer
 

@@ -1,20 +1,18 @@
 ---
 title: 確認
 description: 検証の参照記事。ファイルがディスクに正しく書き込まれたことを確認するかどうかを**cmd**に指示します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: dfe8bc91-d948-4e47-84ad-a79a60506ffa
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1455705d409e0273e85135a183279835e7238d7a
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 7b190e1b872cf0bf1dead9884a88d246e63a9dd8
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931309"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87891842"
 ---
 # <a name="verify"></a>確認
 

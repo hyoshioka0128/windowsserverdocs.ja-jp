@@ -1,20 +1,18 @@
 ---
 title: wbadmin get versions
 description: Wbadmin get バージョンの参照記事。ローカルコンピューターまたは別のコンピューターに格納されている利用可能なバックアップの詳細が表示されます。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: b986acc4-d083-4d32-9434-862314ed5e97
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6d122176e37d7c49f9193477e348e44e039e9ac9
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 209244f18758a13838a27ffd2f44e871cf5971c1
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86954614"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87891727"
 ---
 # <a name="wbadmin-get-versions"></a>wbadmin get versions
 
@@ -39,7 +37,7 @@ wbadmin get versions
 |-backuptarget|詳細を表示するバックアップが格納されている場所を指定します。 対象の場所に格納されているバックアップを一覧表示するには、を使用します。 バックアップターゲットの場所は、ローカルに接続されたディスクドライブ、ボリューム、リモート共有フォルダー、リムーバブルメディア (DVD ドライブなど)、またはその他の光学メディアにすることができます。 **Wbadmin get バージョン**が、バックアップが作成された同じコンピューターで実行されている場合、このパラメーターは必要ありません。 ただし、別のコンピューターから作成されたバックアップに関する情報を取得するには、このパラメーターが必要です。|
 |-コンピューター|バックアップの詳細を表示するコンピューターを指定します。 複数のコンピューターのバックアップが同じ場所に格納されている場合に使用します。 **-BackupTarget**が指定されている場合は、を使用する必要があります。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>Remarks
 
 特定のバックアップからの回復に使用できる項目を一覧表示するには、 **wbadmin get items**を使用します。
 
@@ -54,7 +52,7 @@ wbadmin get versions -backupTarget:h:
 wbadmin get versions -backupTarget:\\servername\share -machine:server01
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 -   [Wbadmin](wbadmin.md)

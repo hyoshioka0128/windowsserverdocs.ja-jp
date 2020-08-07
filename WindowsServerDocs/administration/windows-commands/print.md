@@ -1,20 +1,18 @@
 ---
 title: print
 description: プリンターにテキストファイルを送信する print コマンドの参照記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: aa2325d5-a993-4ed3-b996-255165452db8
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a8e8cf07ca19af1cf0a0445b9feed06916be10c0
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: be955faa38af6a81ce5f61c255828470d906528c
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85926038"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884833"
 ---
 # <a name="print"></a>print
 
@@ -36,7 +34,7 @@ print [/d:<printername>] [<drive>:][<path>]<filename>[ ...]
 | d`<printername>` | ジョブを印刷するプリンターを指定します。 ローカルに接続されたプリンターに印刷するには、プリンターが接続されているコンピューターで、ポートを指定します。 パラレルポートの有効な値は、 **LPT1**、 **LPT2**、および**LPT3**です。 シリアルポートの有効な値は、 **COM1**、 **COM2**、 **COM3**、および**COM4**です。 また、キュー名 () を使用して、ネットワークプリンターを指定することもでき `\\server_name\printer_name` ます。 プリンターを指定しない場合、既定で印刷ジョブは**LPT1**に送信されます。 |
 | `<drive>`: | 印刷するファイルの場所の論理的または物理的なドライブを指定します。 印刷するファイルが現在のドライブにある場合、このパラメーターは必要ありません。 |
 | `<path>` | 印刷するファイルの場所を指定します。 印刷するファイルが現在のディレクトリにある場合、このパラメーターは必要ありません。 |
-| `<filename>[ ...]` | 必須です。 印刷するファイルを指定します。 1 つのコマンドでは、複数のファイルを含めることができます。 |
+| `<filename>[ ...]` | 必須。 印刷するファイルを指定します。 1 つのコマンドでは、複数のファイルを含めることができます。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
 ### <a name="examples"></a>例

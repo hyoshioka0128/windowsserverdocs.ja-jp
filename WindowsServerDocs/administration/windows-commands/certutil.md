@@ -1,20 +1,18 @@
 ---
 title: certutil
 description: Certutil コマンドのリファレンス記事。これは、証明機関 (CA) の構成情報のダンプと表示、証明書サービスの構成、CA コンポーネントのバックアップと復元、証明書、キーペア、証明書チェーンの検証を行うコマンドラインプログラムです。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: c264ccf0-ba1e-412b-9dd3-d77dd9345ad9
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 12ef5e7fa5ff305b1670c2f88645f57500c4fb5b
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 9f66bfb724a40a21bfaf323a54749f1d99c25e86
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87178588"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880344"
 ---
 # <a name="certutil"></a>certutil
 
@@ -120,7 +118,7 @@ certutil [options] -resubmit requestId
 certutil [options] -setattributes RequestID attributestring
 ```
 
-各値の説明:
+この場合、
 
 - **requestID**は、保留中の要求の数値要求 ID です。
 
@@ -130,7 +128,7 @@ certutil [options] -setattributes RequestID attributestring
 [-config Machine\CAName]
 ```
 
-#### <a name="remarks"></a>解説
+#### <a name="remarks"></a>Remarks
 
 - 名前と値はコロンで区切る必要がありますが、複数の名前と値のペアは改行で区切る必要があります。 たとえば `CertificateTemplate:User\nEMail:User@Domain.com` 、 `\n` シーケンスが改行区切り記号に変換されます。
 
@@ -142,7 +140,7 @@ certutil [options] -setattributes RequestID attributestring
 certutil [options] -setextension requestID extensionname flags {long | date | string | \@infile}
 ```
 
-各値の説明:
+この場合、
 
 - **requestID**は、保留中の要求の数値要求 ID です。
 
@@ -154,7 +152,7 @@ certutil [options] -setextension requestID extensionname flags {long | date | st
 [-config Machine\CAName]
 ```
 
-#### <a name="remarks"></a>解説
+#### <a name="remarks"></a>Remarks
 
 - 最後のパラメーターが数値の場合は、 **Long**として取得されます。
 
@@ -172,7 +170,7 @@ certutil [options] -setextension requestID extensionname flags {long | date | st
 certutil [options] -revoke serialnumber [reason]
 ```
 
-各値の説明:
+この場合、
 
 - **シリアル化は、** 失効する証明書のシリアル番号のコンマ区切りの一覧です。
 
@@ -232,7 +230,7 @@ Active Directory 証明書サービスの要求インターフェイスに接続
 certutil [options] -ping [maxsecondstowait | camachinelist]
 ```
 
-各値の説明:
+この場合、
 
 - **camachinelist**は、CA コンピューター名のコンマ区切りの一覧です。 1台のコンピューターの場合は、終了コンマを使用します。 このオプションでは、各 CA コンピューターのサイトコストも表示されます。
 
@@ -248,7 +246,7 @@ certutil [options] -ping [maxsecondstowait | camachinelist]
 certutil [options] -cainfo [infoname [index | errorcode]]
 ```
 
-各値の説明:
+この場合、
 
 - **infoname**は、次の infoname 引数構文に基づいて、表示する CA プロパティを示します。
 
@@ -366,7 +364,7 @@ certutil [options] -cainfo [infoname [index | errorcode]]
 certutil [options] -ca.cert outcacertfile [index]
 ```
 
-各値の説明:
+この場合、
 
 - **outcacertfile**は出力ファイルです。
 
@@ -384,7 +382,7 @@ certutil [options] -ca.cert outcacertfile [index]
 certutil [options] -ca.chain outcacertchainfile [index]
 ```
 
-各値の説明:
+この場合、
 
 - **outcacertchainfile**は出力ファイルです。
 
@@ -400,7 +398,7 @@ certutil [options] -ca.chain outcacertchainfile [index]
 
 certutil [オプション]-getcrl 出力 [インデックス] [差分]
 
-各値の説明:
+この場合、
 
 - **index**は crl インデックスまたはキーインデックスです (最新のキーの既定値は crl です)。
 
@@ -418,7 +416,7 @@ certutil [オプション]-getcrl 出力 [インデックス] [差分]
 certutil [options] -crl [dd:hh | republish] [delta]
 ```
 
-各値の説明:
+この場合、
 
 - **dd: hh**は、新しい CRL の有効期間 (日数と時間) です。
 
@@ -475,7 +473,7 @@ certutil [options] -renewcert [reusekeys] [Machine\ParentCAName]
 ```
 certutil [options] -schema [ext | attrib | cRL]
 ```
-各値の説明:
+この場合、
 
 - コマンドの既定値は、要求テーブルと証明書テーブルです。
 
@@ -497,7 +495,7 @@ certutil [options] -schema [ext | attrib | cRL]
 certutil [options] -view [queue | log | logfail | revoked | ext | attrib | crl] [csv]
 ```
 
-各値の説明:
+この場合、
 
 - **キュー**は特定の要求キューをダンプします。
 
@@ -519,7 +517,7 @@ certutil [options] -view [queue | log | logfail | revoked | ext | attrib | crl] 
 [-silent] [-split] [-config Machine\CAName] [-restrict RestrictionList] [-out ColumnList]
 ```
 
-#### <a name="remarks"></a>解説
+#### <a name="remarks"></a>Remarks
 
 - すべてのエントリの**StatusCode**列を表示するには、「」と入力します。`-out StatusCode`
 
@@ -557,7 +555,7 @@ certutil [options] -db
 certutil [options] -deleterow rowID | date [request | cert | ext | attrib | crl]
 ```
 
-各値の説明:
+この場合、
 
 - **要求**は、送信日に基づいて、失敗した要求と保留中の要求を削除します。
 
@@ -591,7 +589,7 @@ Active Directory 証明書サービスをバックアップします。
 certutil [options] -backup backupdirectory [incremental] [keeplog]
 ```
 
-各値の説明:
+この場合、
 
 - **backupdirectory**は、バックアップされたデータを格納するディレクトリです。
 
@@ -611,7 +609,7 @@ Active Directory 証明書サービスデータベースをバックアップし
 certutil [options] -backupdb backupdirectory [incremental] [keeplog]
 ```
 
-各値の説明:
+この場合、
 
 - **backupdirectory**は、バックアップされたデータベースファイルを格納するディレクトリです。
 
@@ -631,7 +629,7 @@ Active Directory 証明書サービスの証明書と秘密キーをバックア
 certutil [options] -backupkey backupdirectory
 ```
 
-各値の説明:
+この場合、
 
 - **backupdirectory**は、バックアップされた PFX ファイルを格納するディレクトリです。
 
@@ -647,7 +645,7 @@ Active Directory 証明書サービスを復元します。
 certutil [options] -restore backupdirectory
 ```
 
-各値の説明:
+この場合、
 
 - **backupdirectory**は、復元するデータが格納されているディレクトリです。
 
@@ -663,7 +661,7 @@ Active Directory 証明書サービスデータベースを復元します。
 certutil [options] -restoredb backupdirectory
 ```
 
-各値の説明:
+この場合、
 
 - **backupdirectory**は、復元するデータベースファイルが格納されているディレクトリです。
 
@@ -679,7 +677,7 @@ Active Directory 証明書サービス証明書と秘密キーを復元します
 certutil [options] -restorekey backupdirectory | pfxfile
 ```
 
-各値の説明:
+この場合、
 
 - **backupdirectory**は、復元する PFX ファイルが格納されているディレクトリです。
 
@@ -695,7 +693,7 @@ certutil [options] -restorekey backupdirectory | pfxfile
 certutil [options] -importpfx [certificatestorename] pfxfile [modifiers]
 ```
 
-各値の説明:
+この場合、
 
 - **証明**証明書ストアの名前を指定します。
 
@@ -721,7 +719,7 @@ certutil [options] -importpfx [certificatestorename] pfxfile [modifiers]
 [-f] [-user] [-p password] [-csp provider]
 ```
 
-#### <a name="remarks"></a>解説
+#### <a name="remarks"></a>Remarks
 
 - 既定値はパーソナルコンピューターストアです。
 
@@ -765,7 +763,7 @@ certutil [options] -hashfile infile [hashalgorithm]
 certutil [options] -store [certificatestorename [certID [outputfile]]]
 ```
 
-各値の説明:
+この場合、
 
 - **証明**は、証明書ストアの名前です。 次に例を示します。
 
@@ -819,7 +817,7 @@ certutil [options] -store [certificatestorename [certID [outputfile]]]
 certutil [options] -addstore certificatestorename infile
 ```
 
-各値の説明:
+この場合、
 
 - **証明**は、証明書ストアの名前です。
 
@@ -837,7 +835,7 @@ certutil [options] -addstore certificatestorename infile
 certutil [options] -delstore certificatestorename certID
 ```
 
-各値の説明:
+この場合、
 
 - **証明**は、証明書ストアの名前です。
 
@@ -855,7 +853,7 @@ certutil [options] -delstore certificatestorename certID
 certutil [options] -verifystore certificatestorename [certID]
 ```
 
-各値の説明:
+この場合、
 
 - **証明**は、証明書ストアの名前です。
 
@@ -873,7 +871,7 @@ certutil [options] -verifystore certificatestorename [certID]
 certutil [options] -repairstore certificatestorename certIDlist [propertyinffile | SDDLsecuritydescriptor]
 ```
 
-各値の説明:
+この場合、
 
 - **証明**は、証明書ストアの名前です。
 
@@ -916,7 +914,7 @@ certutil [options] -repairstore certificatestorename certIDlist [propertyinffile
 certutil [options] -viewstore [certificatestorename [certID [outputfile]]]
 ```
 
-各値の説明:
+この場合、
 
 - **証明**は、証明書ストアの名前です。
 
@@ -956,7 +954,7 @@ certutil [options] -viewstore [certificatestorename [certID [outputfile]]]
 certutil [options] -viewdelstore [certificatestorename [certID [outputfile]]]
 ```
 
-各値の説明:
+この場合、
 
 - **証明**は、証明書ストアの名前です。
 
@@ -1000,7 +998,7 @@ certutil [options] -dspublish certfile [NTAuthCA | RootCA | SubCA | CrossCA | KR
 certutil [options] -dspublish CRLfile [DSCDPContainer [DSCDPCN]]
 ```
 
-各値の説明:
+この場合、
 
 - **certfile**は、発行する証明書ファイルの名前です。
 
@@ -1088,7 +1086,7 @@ certutil [options] -setcasites verify [sitename]
 certutil [options] -setcasites delete
 ```
 
-各値の説明:
+この場合、
 
 - **sitename**は、1つの証明機関を対象とする場合にのみ使用できます。
 
@@ -1096,7 +1094,7 @@ certutil [options] -setcasites delete
 [-f] [-config Machine\CAName] [-dc DCName]
 ```
 
-#### <a name="remarks"></a>解説
+#### <a name="remarks"></a>Remarks
 
 - この `-config` オプションは、単一の証明機関を対象とします (既定値はすべての ca です)。
 
@@ -1114,7 +1112,7 @@ certutil [options] -enrollmentServerURL [URL authenticationtype [priority] [modi
 certutil [options] -enrollmentserverURL URL delete
 ```
 
-各値の説明:
+この場合、
 
 - **authenticationtype**は、URL を追加するときに、次のいずれかのクライアント認証方法を指定します。
 
@@ -1180,7 +1178,7 @@ certutil [options] -CA [CAName | templatename]
 certutil [options] -policycache [delete]
 ```
 
-各値の説明:
+この場合、
 
 - **delete**は、ポリシーサーバーのキャッシュエントリを削除します。
 
@@ -1200,7 +1198,7 @@ certutil [options] -credstore URL add
 certutil [options] -credstore URL delete
 ```
 
-各値の説明:
+この場合、
 
 - **Url**はターゲット url です。 また、を使用して `*` 、すべてのエントリを一致させたり `https://machine*` 、URL プレフィックスを一致させたりすることもできます。
 
@@ -1234,7 +1232,7 @@ URL キャッシュエントリを表示または削除します。
 certutil [options] -URLcache [URL | CRL | * [delete]]
 ```
 
-各値の説明:
+この場合、
 
 - **Url**はキャッシュされた url です。
 
@@ -1319,7 +1317,7 @@ certutil [options] -tcainfo [domainDN | -]
 certutil [options] -scinfo [readername [CRYPT_DELETEKEYSET]]
 ```
 
-各値の説明:
+この場合、
 
 - **CRYPT_DELETEKEYSET**スマートカードのすべてのキーを削除します。
 
@@ -1350,7 +1348,7 @@ certutil [options] -scroots delete [readername]
 certutil [options] -verifykeys [keycontainername cacertfile]
 ```
 
-各値の説明:
+この場合、
 
 - **cspparameters.keycontainername**は、検証するキーのキーコンテナーの名前です。 このオプションの既定値は [マシンキー] です。 ユーザーキーに切り替えるには、を使用 `-user` します。
 
@@ -1360,7 +1358,7 @@ certutil [options] -verifykeys [keycontainername cacertfile]
 [-f] [-user] [-silent] [-config Machine\CAName]
 ```
 
-#### <a name="remarks"></a>解説
+#### <a name="remarks"></a>Remarks
 
 - 引数を指定しない場合は、各署名 CA 証明書がその秘密キーに対して検証されます。
 
@@ -1377,7 +1375,7 @@ certutil [options] -verify CRLfile cacertfile [issuedcertfile]
 certutil [options] -verify CRLfile cacertfile [deltaCRLfile]
 ```
 
-各値の説明:
+この場合、
 
 - **certfile**検証する証明書の名前を指定します。
 
@@ -1399,7 +1397,7 @@ certutil [options] -verify CRLfile cacertfile [deltaCRLfile]
 [-f] [-enterprise] [-user] [-silent] [-split] [-urlfetch] [-t timeout]
 ```
 
-#### <a name="remarks"></a>解説
+#### <a name="remarks"></a>Remarks
 
 - **Applicationpolicylist**を使用すると、チェーンの構築が、指定されたアプリケーションポリシーに対して有効なチェーンのみに制限されます。
 
@@ -1423,7 +1421,7 @@ AuthRoot または許可されていない証明書の CTL を確認します。
 certutil [options] -verifyCTL CTLobject [certdir] [certfile]
 ```
 
-各値の説明:
+この場合、
 
 - **Ctlobject**は、確認する CTL を次のように識別します。
 
@@ -1454,7 +1452,7 @@ certutil [options] -sign infilelist | serialnumber | CRL outfilelist [startdate+
 certutil [options] -sign infilelist | serialnumber | CRL outfilelist [#hashalgorithm] [+alternatesignaturealgorithm | -alternatesignaturealgorithm]
 ```
 
-各値の説明:
+この場合、
 
 - **infilelist**は、変更して再署名する証明書または CRL ファイルのコンマ区切りの一覧です。
 
@@ -1493,7 +1491,7 @@ certutil [options] -sign infilelist | serialnumber | CRL outfilelist [#hashalgor
 [-nullsign] [-f] [-silent] [-cert certID]
 ```
 
-#### <a name="remarks"></a>解説
+#### <a name="remarks"></a>Remarks
 
 - 負符号 (-) を使用すると、シリアル番号と拡張機能が削除されます。
 
@@ -1527,7 +1525,7 @@ certutil [options] -vocsproot [delete]
 certutil [options] -addenrollmentserver kerberos | username | clientcertificate [allowrenewalsonly] [allowkeybasedrenewal]
 ```
 
-各値の説明:
+この場合、
 
 - **addenrollmentserver**では、次のような証明書登録サーバーへのクライアント接続に認証方法を使用する必要があります。
 
@@ -1553,7 +1551,7 @@ certutil [options] -addenrollmentserver kerberos | username | clientcertificate 
 certutil [options] -deleteenrollmentserver kerberos | username | clientcertificate
 ```
 
-各値の説明:
+この場合、
 
 - **deleteenrollmentserver**では、次のような証明書登録サーバーへのクライアント接続に認証方法を使用する必要があります。
 
@@ -1575,7 +1573,7 @@ certutil [options] -deleteenrollmentserver kerberos | username | clientcertifica
 certutil [options] -addpolicyserver kerberos | username | clientcertificate [keybasedrenewal]
 ```
 
-各値の説明:
+この場合、
 
 - **addpolicyserver**では、次のような証明書ポリシーサーバーへのクライアント接続に認証方法を使用する必要があります。
 
@@ -1593,7 +1591,7 @@ certutil [options] -addpolicyserver kerberos | username | clientcertificate [key
 
 certutil [オプション]-deletePolicyServer kerberos |username |clientcertificate [キーベースの更新]
 
-各値の説明:
+この場合、
 
 - **deletepolicyserver**では、次のような証明書ポリシーサーバーへのクライアント接続に認証方法を使用する必要があります。
 
@@ -1615,7 +1613,7 @@ certutil [options] -oid groupID
 certutil [options] -oid agID | algorithmname [groupID]
 ```
 
-各値の説明:
+この場合、
 
 - **objectID**には、表示名を追加するためのまたはが表示されます。
 
@@ -1657,7 +1655,7 @@ certutil [options] -error errorcode
 certutil [options] -getreg [{ca | restore | policy | exit | template | enroll |chain | policyservers}\[progID\]][registryvaluename]
 ```
 
-各値の説明:
+この場合、
 
 - **ca**は、証明機関のレジストリキーを使用します。
 
@@ -1685,7 +1683,7 @@ certutil [options] -getreg [{ca | restore | policy | exit | template | enroll |c
 [-f] [-user] [-grouppolicy] [-config Machine\CAName]
 ```
 
-#### <a name="remarks"></a>解説
+#### <a name="remarks"></a>Remarks
 
 - 文字列値がまたはで始まり、 `+` `-` 既存の値が値の場合は、 `REG_MULTI_SZ` 既存のレジストリ値に対して文字列が追加または削除されます。 値を強制的に作成するには `REG_MULTI_SZ` 、 `\n` 文字列値の末尾にを追加します。
 
@@ -1701,7 +1699,7 @@ certutil [options] -getreg [{ca | restore | policy | exit | template | enroll |c
 certutil [options] -setreg [{ca | restore | policy | exit | template | enroll |chain | policyservers}\[progID\]]registryvaluename value
 ```
 
-各値の説明:
+この場合、
 
 - **ca**は、証明機関のレジストリキーを使用します。
 
@@ -1729,7 +1727,7 @@ certutil [options] -setreg [{ca | restore | policy | exit | template | enroll |c
 [-f] [-user] [-grouppolicy] [-config Machine\CAName]
 ```
 
-#### <a name="remarks"></a>解説
+#### <a name="remarks"></a>Remarks
 
 - 文字列値がまたはで始まり、 `+` `-` 既存の値が値の場合は、 `REG_MULTI_SZ` 既存のレジストリ値に対して文字列が追加または削除されます。 値を強制的に作成するには `REG_MULTI_SZ` 、 `\n` 文字列値の末尾にを追加します。
 
@@ -1745,7 +1743,7 @@ certutil [options] -setreg [{ca | restore | policy | exit | template | enroll |c
 certutil [options] -delreg [{ca | restore | policy | exit | template | enroll |chain | policyservers}\[progID\]][registryvaluename]
 ```
 
-各値の説明:
+この場合、
 
 - **ca**は、証明機関のレジストリキーを使用します。
 
@@ -1773,7 +1771,7 @@ certutil [options] -delreg [{ca | restore | policy | exit | template | enroll |c
 [-f] [-user] [-grouppolicy] [-config Machine\CAName]
 ```
 
-#### <a name="remarks"></a>解説
+#### <a name="remarks"></a>Remarks
 
 - 文字列値がまたはで始まり、 `+` `-` 既存の値が値の場合は、 `REG_MULTI_SZ` 既存のレジストリ値に対して文字列が追加または削除されます。 値を強制的に作成するには `REG_MULTI_SZ` 、 `\n` 文字列値の末尾にを追加します。
 
@@ -1789,7 +1787,7 @@ certutil [options] -delreg [{ca | restore | policy | exit | template | enroll |c
 certutil [options] -importKMS userkeyandcertfile [certID]
 ```
 
-各値の説明:
+この場合、
 
 - **userkeyandcertfile**は、ユーザーの秘密キーとアーカイブされる証明書を含むデータファイルです。 このファイルは次のようになります。
 
@@ -1813,7 +1811,7 @@ certutil [options] -importKMS userkeyandcertfile [certID]
 certutil [options] -importcert certfile [existingrow]
 ```
 
-各値の説明:
+この場合、
 
 - **existingrow**は、同じキーに対して保留中の要求の代わりに証明書をインポートします。
 
@@ -1823,7 +1821,7 @@ certutil [options] -importcert certfile [existingrow]
 [-f] [-config Machine\CAName]
 ```
 
-#### <a name="remarks"></a>解説
+#### <a name="remarks"></a>Remarks
 
 また、外部証明書をサポートするように証明機関を構成する必要がある場合もあります。 これを行うには、「」と入力 `import - certutil -setreg ca\KRAFlags +KRAF_ENABLEFOREIGN` します。
 
@@ -1837,7 +1835,7 @@ certutil [options] -getkey searchtoken script outputscriptfile
 certutil [options] -getkey searchtoken retrieve | recover outputfilebasename
 ```
 
-各値の説明:
+この場合、
 
 - **スクリプト**は、キーを取得および回復するスクリプトを生成します (複数の一致する回復候補が検出された場合、または出力ファイルが指定されていない場合は既定の動作です)。
 
@@ -1889,7 +1887,7 @@ PFX ファイルをマージします。
 certutil [options] -mergePFX PFXinfilelist PFXoutfile [extendedproperties]
 ```
 
-各値の説明:
+この場合、
 
 - **PFXinfilelist**は、PFX 入力ファイルのコンマ区切りの一覧です。
 
@@ -1901,7 +1899,7 @@ certutil [options] -mergePFX PFXinfilelist PFXoutfile [extendedproperties]
 [-f] [-user] [-split] [-p password] [-protectto SAMnameAndSIDlist] [-csp provider]
 ```
 
-#### <a name="remarks"></a>解説
+#### <a name="remarks"></a>Remarks
 
 - コマンドラインで指定するパスワードは、コンマ区切りのパスワードリストである必要があります。
 
@@ -1915,7 +1913,7 @@ PFX ファイルを EPF ファイルに変換します。
 certutil [options] -convertEPF PFXinfilelist PFXoutfile [cast | cast-] [V3CAcertID][,salt]
 ```
 
-各値の説明:
+この場合、
 
 
 - **PFXinfilelist**は、PFX 入力ファイルのコンマ区切りの一覧です。
@@ -1936,7 +1934,7 @@ certutil [options] -convertEPF PFXinfilelist PFXoutfile [cast | cast-] [V3CAcert
 [-f] [-silent] [-split] [-dc DCName] [-p password] [-csp provider]
 ```
 
-#### <a name="remarks"></a>解説
+#### <a name="remarks"></a>Remarks
 
 - コマンドラインで指定するパスワードは、コンマ区切りのパスワードリストである必要があります。
 
@@ -1952,7 +1950,7 @@ certutil <name_of_parameter> -?
 certutil -? -v
 ```
 
-各値の説明:
+この場合、
 
 - **-?** パラメーターの完全な一覧を表示します。
 
@@ -1999,7 +1997,7 @@ certutil -? -v
 | -t タイムアウト | URL フェッチのタイムアウト (ミリ秒)。 |
 | -symkeyalg symmetrickeyalgorithm [, keylength] | オプションのキー長を持つ対称キーアルゴリズムの名前。 例: `AES,128` または `3DES` |
 
-### <a name="additional-references"></a>その他のリファレンス
+### <a name="additional-references"></a>その他の参照情報
 
 このコマンドの使用方法に関するその他の例については、「」を参照してください。
 

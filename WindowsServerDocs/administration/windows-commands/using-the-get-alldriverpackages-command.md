@@ -1,20 +1,18 @@
 ---
 title: get AllDriverPackages
 description: 指定された検索条件に一致するサーバー上のすべてのドライバーパッケージに関する情報を表示する、get AllDriverPackages のリファレンス記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 9eb8fcb7-ef46-4c8d-9623-8969a3c8b8a4
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bad9193de2643915371b1fd10757bd873ad55262
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 645e363d26017915abd4fc66862ff4b48c3a7cad
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85935204"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87892044"
 ---
 # <a name="get-alldriverpackages"></a>get AllDriverPackages
 

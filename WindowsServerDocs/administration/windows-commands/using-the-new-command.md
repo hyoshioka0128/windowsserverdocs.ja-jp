@@ -1,20 +1,18 @@
 ---
 title: 新しいコマンドを使用する
 description: キャプチャと検出イメージ、マルチキャスト転送、および名前空間を作成する新しいのリファレンス記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 0f06f310-c585-42f4-9d15-4680b4a3355d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e766586b6fcd2a0155b6742b34557bcccf1ebbf1
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 0f20bfdd726c655ed3ddc616f404d9958449a1ed
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409633"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87891995"
 ---
 # <a name="using-the-new-command"></a>新しいコマンドを使用する
 

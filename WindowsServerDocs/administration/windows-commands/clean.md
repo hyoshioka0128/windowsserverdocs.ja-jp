@@ -1,20 +1,18 @@
 ---
 title: clean
 description: Diskpart の clean コマンドの参照記事。フォーカスがあるディスクからすべてのパーティションまたはボリュームのフォーマットを削除します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 9bbe6fd3-e07e-487b-9035-910957a1d326
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 39029c82dffe004d65b1279e5baafc14fbcc8257
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 9a8ab6d0b245862fbb935945b76f380b7163d2a3
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955674"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880213"
 ---
 # <a name="clean"></a>clean
 
@@ -37,7 +35,7 @@ clean [all]
 | --------- | ----------- |
 | all | ディスク上のすべてのセクターをゼロに設定し、ディスクに含まれるすべてのデータを完全に削除することを指定します。 |
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>Remarks
 
 - マスターブートレコード (MBR) ディスクでは、MBR パーティション情報と隠しセクター情報のみが上書きされます。
 
@@ -53,7 +51,7 @@ clean [all]
 clean
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [ディスクの消去コマンド](/powershell/module/storage/clear-disk)
 

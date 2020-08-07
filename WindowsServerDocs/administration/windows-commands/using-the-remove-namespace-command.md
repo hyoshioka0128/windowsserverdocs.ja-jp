@@ -1,20 +1,18 @@
 ---
 title: 名前空間の削除
 description: カスタム名前空間を削除する、名前空間の削除に関するリファレンス記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 4eb758b6-8519-4e26-9fe0-2e19bb0e8702
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a4b0920e5f42f40b1f0cdce0ffcc3a09bf19b0d2
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: a85552109f85e0c4de5f3d09c9c0335dccc5af1f
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85935403"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87891907"
 ---
 # <a name="using-the-remove-namespace-command"></a>名前空間の削除] コマンドを使用してください。
 

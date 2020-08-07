@@ -1,20 +1,18 @@
 ---
 title: popd
 description: Pnputil コマンドの参照記事。現在のディレクトリを、pushd コマンドによって最後に格納されたディレクトリに変更します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 8a4c52d5-9fd1-4eac-9c0c-5767b25728ed
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 002a0d84770738db2b00bedcd1e01df3b1b61b76
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: d78566cf53d7618d0fb5b7fc57ca02b8ee82484c
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936998"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884910"
 ---
 # <a name="popd"></a>popd
 

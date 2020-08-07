@@ -1,20 +1,18 @@
 ---
 title: ping
 description: Ping コマンドの参照記事。ネットワーク接続を確認します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 49272671-2eec-4fa5-881f-65c24cfbef52
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: b995edf4943cfbaac8bd96cf098d62687c32396f
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 999e8e80c85a85e2bbc2f933e1985c732ae85328
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924271"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884997"
 ---
 # <a name="ping"></a>ping
 

@@ -1,20 +1,18 @@
 ---
 title: Windows Server のハイブリッド クラウド印刷をデプロイする
 description: Microsoft ハイブリッドクラウド印刷をセットアップする方法
-ms.prod: windows-server
-ms.technology: windows server 2016
 ms.assetid: fc239aec-e719-47ea-92fc-d82a7247c5e9
 ms.topic: how-to
 author: msjimwu
 ms.author: coreyp
 manager: dongill
 ms.date: 3/15/2018
-ms.openlocfilehash: 9cee8a279be2030d4b911a0a7f456c2b855ca15e
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 3e5b732beb502bb0bf365136947ff380caf71545
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409092"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87879914"
 ---
 # <a name="deploy-windows-server-hybrid-cloud-print"></a>Windows Server のハイブリッド クラウド印刷をデプロイする
 
@@ -409,7 +407,7 @@ HCP サービスとの認証された通信を有効にするには、3つのア
         - AzureTenantGuid = Azure AD テナントのディレクトリ ID。
         - DiscoveryResourceId = アプリケーション ID URI は、検出サービスアプリケーションの URI です。
 
-    - 必要なすべてのパラメーター値をコマンドラインに入力することもできます。 の構文は次のとおりです。
+    - 必要なすべてのパラメーター値をコマンドラインに入力することもできます。 構文は次のとおりです。
 
         `Publish-CloudPrinter -Printer <string> -Manufacturer <string> -Model <string> -OrgLocation <string> -Sddl <string> -DiscoveryEndpoint <string> -PrintServerEndpoint <string> -AzureClientId <string> -AzureTenantGuid <string> -DiscoveryResourceId <string>`
 

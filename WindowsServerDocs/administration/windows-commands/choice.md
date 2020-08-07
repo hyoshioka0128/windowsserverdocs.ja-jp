@@ -1,20 +1,18 @@
 ---
 title: choice
 description: 選択コマンドの参照記事。バッチプログラムで1つの項目を選択して、選択した項目のインデックスを返すようにユーザーに要求します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: c65a9119-410b-4dcf-9fa7-4e07d2a7238b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 745321c6388e6faa9de1ce1a8a24afe66514d259
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 6aec3af1966d0b7952f0bbb5880e373356117e42
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929983"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880254"
 ---
 # <a name="choice"></a>choice
 
@@ -38,7 +36,7 @@ choice [/c [<choice1><choice2><…>]] [/n] [/cs] [/t <timeout> /d <choice>] [/m 
 | /m`<text>` | 選択肢の一覧の前に表示するメッセージを指定します。 **/M**が指定されていない場合は、choice プロンプトだけが表示されます。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>Remarks
 
 - **ERRORLEVEL**環境変数は、ユーザーが選択肢の一覧から選択するキーのインデックスに設定されます。 リスト内の最初の選択肢は、値、 `1` 2 番目の値、 `2` などを返します。 ユーザーが無効なキーを押すと、警告ビープ音が**鳴ります**。
 

@@ -1,19 +1,17 @@
 ---
 title: cleanmgr
 description: 特定のファイルを自動的にクリーンアップするように、ディスククリーンアップツール (Cleanmgr.exe) を構成します。
-ms.prod: windows-server
 ms.reviewer: cosmosdarwin
 author: iangpgh
 ms.author: jgerend
 manager: daveba
-ms.technology: storage-spaces
 ms.date: 06/20/2019
-ms.openlocfilehash: 49d85fe0c8ec1bbba810a502724fd7aac0c2f55d
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: c0b1cb2ff31bbf3fa25d5ac5e4be0e4b35260019
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82712847"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880202"
 ---
 # <a name="cleanmgr"></a>cleanmgr
 
@@ -29,17 +27,17 @@ cleanmgr [/d <driveletter>] [/sageset:n]  [/sagerun:n] [/TUNEUP:n] [/LOWDISK] [/
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | [説明] |
+| パラメーター | 説明 |
 | --------- | ----------- |
-| d`<driveletter>` | ディスククリーンアップをクリーニングするドライブを指定します。<p>**注:****/D**オプションは、で`/sagerun:n`は使用されません。 |
-| /sageset: n | [**ディスククリーンアップの設定**] ダイアログボックスが表示されます。また、選択した設定を保存するためのレジストリキーも作成されます。 レジストリ`n`に格納されている値を使用すると、ディスククリーンアップを実行するタスクを指定できます。 `n` 0 ~ 65535 の任意の整数値を指定できます。 |
+| d`<driveletter>` | ディスククリーンアップをクリーニングするドライブを指定します。<p>**注:****/D**オプションは、では使用されません `/sagerun:n` 。 |
+| /sageset: n | [**ディスククリーンアップの設定**] ダイアログボックスが表示されます。また、選択した設定を保存するためのレジストリキーも作成されます。 `n`レジストリに格納されている値を使用すると、ディスククリーンアップを実行するタスクを指定できます。 `n`0 ~ 65535 の任意の整数値を指定できます。 |
 | /sagerun: n | **\Sageset**オプションを使用する場合、n 値に割り当てられている指定されたタスクを実行します。 コンピューター上のすべてのドライブが列挙され、選択したプロファイルが各ドライブに対して実行されます。 |
-| /チューンアップ: n | **/Sageset**と **/sagerun**を同じ`n`に対して実行します。 |
+| /チューンアップ: n | **/Sageset**と **/sagerun**を同じに対して実行し `n` ます。 |
 | /lowdisk | 既定の設定を使用してを実行します。 |
 | /非常に低ディスク | 既定の設定を使用してを実行します。ユーザープロンプトは表示されません。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-#### <a name="options"></a>Options
+#### <a name="options"></a>オプション
 
 **/Sageset**と **/sagerun**を使用してディスククリーンアップに指定できるファイルのオプションは次のとおりです。
 
@@ -61,7 +59,7 @@ cleanmgr [/d <driveletter>] [/sageset:n]  [/sagerun:n] [/TUNEUP:n] [/LOWDISK] [/
 
 - **古いファイルを圧縮**する-最近使用したことがないファイルは Windows で圧縮できます。 ファイルを圧縮するとディスク領域が節約されますが、ファイルを使用することもできます。 ファイルは削除されません。 ファイルは異なるレートで圧縮されるので、表示されるディスク領域の量は概算です。 [オプション] ボタンを使用すると、ディスククリーンアップによって未使用ファイルが圧縮されるまでの待機日数を指定できます。
 
-- **コンテンツインデクサーのカタログファイル**-インデックスサービスは、ディスク上のファイルのインデックスを保持することにより、ファイル検索を高速化し、改善します。 これらのカタログファイルは以前のインデックス作成操作のままであり、安全に削除できます。<p>**注:** カタログファイルは、で`%SystemRoot%`はなく、複数のドライブに表示されることがあります。
+- **コンテンツインデクサーのカタログファイル**-インデックスサービスは、ディスク上のファイルのインデックスを保持することにより、ファイル検索を高速化し、改善します。 これらのカタログファイルは以前のインデックス作成操作のままであり、安全に削除できます。<p>**注:** カタログファイルは、ではなく、複数のドライブに表示されることがあり `%SystemRoot%` ます。
 
 >[!NOTE]
 > Windows のインストールが含まれているドライブのクリーンアップを指定すると、これらのオプションはすべて [**ディスククリーンアップ**] タブに表示されます。他のドライブを指定する場合は、[**ディスククリーンアップ**] タブで、[ごみ箱] および [カタログファイルのコンテンツインデックス] オプションのみを使用できます。
@@ -80,13 +78,13 @@ cleanmgr /sageset:1
 cleanmgr /sagerun:1
 ```
 
-と`cleanmgr /sagerun:1`を`cleanmgr /sageset:1`一緒に実行するには、次のように入力します。
+とを一緒に実行するには `cleanmgr /sageset:1` `cleanmgr /sagerun:1` 、次のように入力します。
 
 ```
 cleanmgr /tuneup:1
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [Windows 10 のドライブの空き領域を増やす](https://support.microsoft.com/help/12425/windows-10-free-up-drive-space)」も参照してください
 

@@ -1,20 +1,18 @@
 ---
 title: nslookup
 description: Nslookup コマンドの参照記事。ドメインネームシステム (DNS) インフラストラクチャの診断に使用できる情報が表示されます。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 41516932-7833-434a-aa92-b4cf0f9a7ef7
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 87f973349426016b6d62bd1f018f268d4e873c51
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 7d01f167a198803db269e97e806a6d2867074d60
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85925380"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87885321"
 ---
 # <a name="nslookup"></a>nslookup
 
@@ -42,7 +40,7 @@ nslookup [exit | finger | help | ls | lserver | root | server | set | view] [opt
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | Description |
+| パラメーター | 説明 |
 | --------- | ----------- |
 | [nslookup 終了](nslookup-exit-command.md) | Nslookup コマンドラインツールを終了します。 |
 | [nslookup 指](nslookup-finger-command.md) | 現在のコンピューター上の finger サーバーに接続します。 |
@@ -69,7 +67,7 @@ nslookup [exit | finger | help | ls | lserver | root | server | set | view] [opt
 | [nslookup set vc](nslookup-set-vc.md) | サーバーに要求を送信するときに、仮想回線を使用するかどうかを指定します。 |
 | [nslookup view](nslookup-view.md) | 前の**ls**サブコマンドの出力を並べ替えて一覧表示します。 |
 
-### <a name="remarks"></a>注釈
+### <a name="remarks"></a>Remarks
 
 - *ComputerTofind*が IP アドレスであり、クエリが**A**または**PTR**リソースレコードの種類の場合は、コンピューターの名前が返されます。
 

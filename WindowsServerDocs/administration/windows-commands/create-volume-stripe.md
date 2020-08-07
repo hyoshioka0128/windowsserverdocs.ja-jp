@@ -1,20 +1,18 @@
 ---
 title: create volume stripe
 description: ボリュームストライプの作成コマンドの参照記事。2つ以上の指定されたダイナミックディスクを使用してストライプボリュームを作成します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 20dce735-5f7c-4f83-a580-d087e2913a00
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8cb20a7741d49201b88345374ba1c435e81a77f6
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: e9f0133783178002e35b32b665dc64dfb3144a19
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929525"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87891619"
 ---
 # <a name="create-volume-stripe"></a>create volume stripe
 

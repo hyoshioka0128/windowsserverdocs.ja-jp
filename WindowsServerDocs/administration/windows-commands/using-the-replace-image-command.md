@@ -1,27 +1,25 @@
 ---
 title: 置換-イメージ
 description: 置換イメージの参照記事。既存のイメージをそのイメージの新しいバージョンに置き換えます。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 68ded3df-e309-420f-9f5d-caeb609385a5
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b98bf14b944ce75a21efbbb38a211e60ca952d39
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 599b1141d857d1fe5e70eab879af0f456dc13bea
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931357"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87891898"
 ---
 # <a name="using-the-replace-image-command"></a>置換イメージのコマンドを使用してください。
 
 > 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 既存のイメージをそのイメージの新しいバージョンに置き換えます。
-## <a name="syntax"></a>Syntax
+## <a name="syntax"></a>構文
 ブートイメージの場合:
 ```
 wdsutil [Options] /replace-Imagmedia:<Image name> [/Server:<Server name>]

@@ -1,20 +1,18 @@
 ---
 title: nslookup set type
 description: Nslookup set type コマンドの参照記事。クエリのリソースレコードの種類を変更します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 5248e314-fac1-413e-81dc-bbe0a0873ba5
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 93ef4d6c607c3edc1bcf1209237ba726e27852d0
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: b339f5dc809df1ad9f3301108169c65b02e63309
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85930311"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87885459"
 ---
 # <a name="nslookup-set-type"></a>nslookup set type
 

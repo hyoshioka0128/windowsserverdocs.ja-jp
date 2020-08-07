@@ -1,20 +1,18 @@
 ---
 title: ntfrsutl
 description: Ntfrsutl コマンドの参照記事。これにより、NT ファイルレプリケーションサービス (NTFRS) の内部テーブル、スレッド、およびメモリ情報がダンプされます。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: d7721a19-5a87-4ab6-b816-65d2da2c811f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 56aefc1277f67dc6a06ba4686c26f81592afc2f3
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 2676e4cc4d920d766f9cc122f127d3d5e8c9548a
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85925334"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87885293"
 ---
 # <a name="ntfrsutl"></a>ntfrsutl
 
@@ -42,7 +40,7 @@ ntfrsutl poll[/quickly[=[<n>]]][/slowly[=[<n>]]][/now][<computer>]
 | inlog | 受信ログを指定します。 |
 | outlog | 送信ログを指定します。 |
 | `<computer>` | コンピューターを指定します。 |
-| memory | メモリ使用量を指定します。 |
+| メモリ | メモリ使用量を指定します。 |
 | スレッド | メモリ使用量を指定します。 |
 | 準備 | メモリ使用量を指定します。 |
 | ds | NTFRS サービスの DS のビューを一覧表示します。 |

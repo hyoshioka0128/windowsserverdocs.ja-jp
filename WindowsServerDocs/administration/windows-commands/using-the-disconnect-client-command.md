@@ -1,20 +1,18 @@
 ---
 title: 切断-クライアント
 description: マルチキャスト転送または名前空間からクライアントを切断する、クライアントの切断に関するリファレンス記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 876bbe6c-76ab-4de5-879b-d2066e700326
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 387f9b1e476371a6aee1487f418241afa1464d02
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 612cc83477e77de575e8a567c07aef18ea7fddad
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936855"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87892071"
 ---
 # <a name="disconnect-client"></a>切断-クライアント
 

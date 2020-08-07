@@ -1,20 +1,18 @@
 ---
 title: ntbackup
 description: Wbadmin コマンドの参照記事です。これは、wbadmin コマンドで置き換えられています。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 6bce6b0d-646b-46b6-b833-0ff1d6f082c2
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 78ed6980b171616d81a1f1c0589a7e7beeb858fc
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 61b0502d4fa31ae2cf5308ff21f499ffdca63018
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85925372"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87885314"
 ---
 # <a name="ntbackup"></a>ntbackup
 

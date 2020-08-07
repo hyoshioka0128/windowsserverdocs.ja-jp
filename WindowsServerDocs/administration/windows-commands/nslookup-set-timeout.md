@@ -1,20 +1,18 @@
 ---
 title: nslookup set timeout
 description: Nslookup set timeout コマンドの参照記事。これにより、検索要求への応答を待機する秒数の初期値が変更されます。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 07afdaf4-ffec-496f-a188-4e91cf1a28f8
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6df8d1229dd57a84cb0dced3829bb328e41f092c
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: ae0d23296e05519eef02384ebb90b8aa16d8c499
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85930350"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87885473"
 ---
 # <a name="nslookup-set-timeout"></a>nslookup set timeout
 
