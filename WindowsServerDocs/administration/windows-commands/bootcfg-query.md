@@ -1,20 +1,18 @@
 ---
 title: bootcfg query
 description: Boot.ini からブートローダーとオペレーティングシステムのセクションエントリを照会して表示する、bootcfg query コマンドのリファレンス記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: a4cacfd1-10a6-4a11-b0c5-f8abde72bfc8
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8c99ba9bfbe910c65b3686c6070a7a76f27407f5
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: bb4ff06e8c0e5f31c0132f7fbc4fad49be53dd62
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85925015"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880568"
 ---
 # <a name="bootcfg-query"></a>bootcfg query
 
@@ -37,7 +35,7 @@ bootcfg /query [/s <computer> [/u <domain>\<user> /p <password>]]
 | `/p <password>` | 指定されているユーザー アカウントのパスワードを指定します、 **/u** パラメーター。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-#### <a name="sample-output"></a>サンプル出力
+#### <a name="sample-output"></a>出力例
 
 **Bootcfg/query**コマンドのサンプル出力を次に示します。
 

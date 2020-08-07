@@ -1,20 +1,18 @@
 ---
 title: cacls
 description: Cacls コマンドの参照記事です。 このコマンドは非推奨とされており、Windows の将来のリリースでサポートされるとは限りません。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: b5bdbaaa-4557-48b8-80df-e75ee0d2f27d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7719728f2c1cb7ce629e199a51ee211ea5781401
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 0a6033d6631fd3269f00f52df14fd5e94994b278
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924845"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880420"
 ---
 # <a name="cacls"></a>cacls
 
@@ -33,7 +31,7 @@ cacls <filename> [/t] [/m] [/l] [/s[:sddl]] [/e] [/c] [/g user:<perm>] [/r user 
 
 | パラメーター | 説明 |
 | --------- | ----------- |
-| `<filename>` | 必須です。 指定されたファイルの Acl を表示します。 |
+| `<filename>` | 必須。 指定されたファイルの Acl を表示します。 |
 | /t | 現在のディレクトリとすべてのサブディレクトリ内の指定されたファイルの Acl を変更します。 |
 | /m | ディレクトリにマウントされているボリュームの Acl を変更します。 |
 | /l | ターゲットではなく、シンボリックリンク自体に対して機能します。 |
@@ -46,7 +44,7 @@ cacls <filename> [/t] [/m] [/l] [/s[:sddl]] [/e] [/c] [/g user:<perm>] [/r user 
 | [/d ユーザー [...] | 指定されたユーザーアクセスを拒否します。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-#### <a name="sample-output"></a>サンプル出力
+#### <a name="sample-output"></a>出力例
 
 | 出力 | アクセス制御エントリ (ACE) はに適用されます |
 -------- | ------------------------------------- |
@@ -59,7 +57,7 @@ cacls <filename> [/t] [/m] [/l] [/s[:sddl]] [/e] [/c] [/g user:<perm>] [/r user 
 | 項目IO | サブフォルダーのみです。 |
 | OIIO | ファイルのみ。 |
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>Remarks
 
 - ワイルドカード (**?** と **&#42;**) を指定して、複数のファイルを指定します。
 

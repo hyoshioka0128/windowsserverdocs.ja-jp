@@ -1,20 +1,18 @@
 ---
 title: pwlauncher
 description: Pwlauncher コマンドの参照記事。 Windows To 進むスタートアップオプション (pwlauncher) を有効または無効にします。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 0917bb7b-408a-40f7-a1c5-20e94c10d38b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 29e7434731bc89dff9bddbaedb8a6179f266fa28
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 28c19ebd52c083963fa951972a1c2af39410078a
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936704"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884566"
 ---
 # <a name="pwlauncher"></a>pwlauncher
 

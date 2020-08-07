@@ -1,20 +1,18 @@
 ---
 title: bootcfg raw
 description: Bootcfg raw コマンドのリファレンス記事。文字列として指定されたオペレーティングシステムの読み込みオプションを、Boot.ini ファイルのオペレーティングシステムセクションのオペレーティングシステムエントリに追加します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: e3458749-b0a0-460f-a022-3ff199a71f27
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 74ab3c957623178e54b8a5debcf4aebffc942070
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 9cba66ccebeacd21d337e04c97d935bd2c260b24
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85926223"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880558"
 ---
 # <a name="bootcfg-raw"></a>bootcfg raw
 

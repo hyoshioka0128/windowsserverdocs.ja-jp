@@ -1,20 +1,18 @@
 ---
 title: takeown
 description: ファイルの所有者になることによってファイルにアクセスする方法について説明します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 0683cd65-a6db-4cab-962b-45a0ff61f43c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: da43b13f0333f3a12a8763db4cad31e12283bb8b
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: c0d3e64032f792e0ad2ff3a0a1156e9b7c1b1efa
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436197"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87881895"
 ---
 # <a name="takeown"></a>takeown
 
@@ -32,16 +30,16 @@ takeown [/s <Computer> [/u [<Domain>\]<User name> [/p [<Password>]]]] /f <File n
 
 |パラメーター|説明|
 |---------|-----------|
-|/s \< コンピューター>|名前またはリモート コンピューターの IP アドレスを指定します (円記号を使用しない)。 既定値はローカル コンピューターです。 このパラメーターは、すべてのファイルと、コマンドで指定されたフォルダーに適用されます。|
-|/u [ \< ドメイン>\]<User name>|指定したユーザー アカウントのアクセス許可を持つ、スクリプトを実行します。 既定値は、システムのアクセス許可です。|
-|/p [ \< パスワード>]|指定されているユーザー アカウントのパスワードを指定します、 **/u** パラメーター。|
-|/f \< ファイル名>|ファイル名またはディレクトリの名前を指定のパターン。 パターンを指定するときは、ワイルドカード文字 * を使用できます。 また、構文*ShareName*FileName * を使用することもでき \* ます。|
+|/s\<Computer>|名前またはリモート コンピューターの IP アドレスを指定します (円記号を使用しない)。 既定値はローカル コンピューターです。 このパラメーターは、すべてのファイルと、コマンドで指定されたフォルダーに適用されます。|
+|u\<Domain>\]<User name>|指定したユーザー アカウントのアクセス許可を持つ、スクリプトを実行します。 既定値は、システムのアクセス許可です。|
+|/p [\<Password>]|指定されているユーザー アカウントのパスワードを指定します、 **/u** パラメーター。|
+|/f \<File name>|ファイル名またはディレクトリの名前を指定のパターン。 パターンを指定するときは、ワイルドカード文字 * を使用できます。 また、構文*ShareName*FileName * を使用することもでき \* ます。|
 |/a|現在のユーザーの代わりに、Administrators グループに所有権を示します。|
 |/r|指定したディレクトリとサブディレクトリ内のすべてのファイルに対して再帰的な操作を実行します。|
 |/d {Y \| N}|現在のユーザーが指定したディレクトリに対するフォルダー一覧表示"アクセス許可がないし、指定された既定値を代わりに使用するときに表示される確認のプロンプトを表示しません。 有効な値、 **/d** オプションは次のようにします。</br>に「y」は、ディレクトリ所有権を取得します。</br>ディレクトリをスキップします。</br>と共にこのオプションを使用する必要がありますに注意してください、 **/r** オプション。|
 |/?|コマンド プロンプトにヘルプを表示します。|
 
-## <a name="remarks"></a>解説
+## <a name="remarks"></a>Remarks
 
 -   このコマンドは通常、バッチ ファイルで使用されます。
 -   場合、 **/a** パラメーターが指定されていない、現在コンピューターにログオンしているユーザーにファイルの所有権が与えられます。
@@ -55,6 +53,6 @@ Lostfile という名前のファイルの所有権を取得するには、次�
 takeown /f lostfile
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

@@ -4,15 +4,13 @@ description: ReFSUtil ツールの参照記事。大量の ReFS ボリューム�
 author: laknight5
 ms.author: laknight
 ms.date: 6/29/2020
-ms.prod: windows-server
-ms.technology: windows-commands
 ms.topic: article
-ms.openlocfilehash: 3afc96970bb0350a3c1168c520cc20ad4f2254af
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: d40faa165666a5836dc6e87589d27f8eb643479e
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409723"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884215"
 ---
 # <a name="refsutil"></a>ReFSUtil
 
@@ -31,7 +29,7 @@ ReFS salvage は ReFSUtil の主な機能であり、ディスク管理で RAW �
 | `<target directory>` | 識別されたファイルのコピー先の場所を指定します。 に配置さ**れていない**必要があり `<source volume>` ます。 |
 | \-m | 削除されたファイルも含めて、可能なすべてのファイルを回復します。<p>**警告:** このパラメーターによってプロセスの実行時間が長くなるだけでなく、予期しない結果が生じる可能性もあります。 |
 | \-画像 | 詳細モードを使用するように指定します。 |
-| \-閉じる | 必要に応じて、最初にボリュームを強制的にマウント解除します。 その後、ボリュームに対して開いているハンドルはすべて無効になります。 たとえば、「 `refsutil salvage -QA R: N:\WORKING N:\DATA -x` 」のように入力します。 |
+| \-閉じる | 必要に応じて、最初にボリュームを強制的にマウント解除します。 その後、ボリュームに対して開いているハンドルはすべて無効になります。 たとえば、`refsutil salvage -QA R: N:\WORKING N:\DATA -x` のようにします。 |
 
 ## <a name="usage-and-available-options"></a>使用法と使用可能なオプション
 
@@ -99,6 +97,6 @@ refsutil salvage -SL <source volume> <working directory> <target directory> <fil
 refsutil salvage -IC <source volume> <working directory> <options>
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

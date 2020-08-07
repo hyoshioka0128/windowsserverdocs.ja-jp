@@ -1,20 +1,18 @@
 ---
 title: reg export
 description: Reg export コマンドの参照記事。これにより、ローカルコンピューターの指定したサブキー、エントリ、および値が、他のサーバーに転送するためにファイルにコピーされます。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 0ad9526f-1e29-4fa5-9d2d-feaa92f12d7c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4c0cad839569651823e1c1a2bcca3c17c5550c8a
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 31f59aca51b74150682a5ba3085b7ffcef058d29
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85934638"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884137"
 ---
 # <a name="reg-export"></a>reg export
 
@@ -35,11 +33,11 @@ reg export <keyname> <filename> [/y]
 | /y | 確認を求めるメッセージを表示せずに、名前*filename*を持つ既存のファイルを上書きします。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>Remarks
 
 - **Reg エクスポート**操作の戻り値は次のとおりです。
 
-    | 値 | [説明] |
+    | 値 | 説明 |
     |--|--|
     | 0 | 成功 |
     | 1 | 障害 |

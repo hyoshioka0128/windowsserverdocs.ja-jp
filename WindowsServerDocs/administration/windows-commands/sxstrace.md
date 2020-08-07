@@ -1,20 +1,18 @@
 ---
 title: sxstrace
 description: サイドバイサイドの問題を診断する方法について説明します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: fcd26eeb-fbd9-4a86-b6a9-dfa5e9c6e4fc
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 88ea6ba9d7a8f9744997eb78be2309693a6267b5
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: d1ed136e72569c2dfbe59cd2132e13c23f94da02
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83821152"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87881934"
 ---
 # <a name="sxstrace"></a>sxstrace
 
@@ -32,7 +30,7 @@ sxstrace [{[trace -logfile:<FileName> [-nostop]|[parse -logfile:<FileName> -outf
 |-------|--------|
 |trace|Sxs (サイド バイ サイド) のトレースを有効に|
 |-logfile|未処理のログ ファイルを指定します。|
-|\<ファイル名>|トレース ログが保存 *FileName*します。|
+|\<FileName>|トレース ログが保存 *FileName*します。|
 |-nostop|トレースを停止するように求めるメッセージは指定されません。|
 |parse|生のトレース ファイルに変換します。|
 |-出力|出力ファイル名を指定します。|
@@ -52,6 +50,6 @@ sxstrace trace -logfile:sxstrace.etl
 sxstrace parse -logfile:sxstrace.etl -outfile:sxstrace.txt
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

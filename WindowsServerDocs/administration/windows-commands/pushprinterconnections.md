@@ -1,20 +1,18 @@
 ---
 title: pushprinterconnections
 description: Pushprinter connections コマンドの参照記事。このコマンドは、展開されたプリンター接続設定をグループポリシーから読み取り、必要に応じてプリンター接続を展開または削除します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: c30afb97-b149-478f-a4b9-2cbc25361818
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7b22fd5143a9477b40a515df44c9a0b5663dfd7a
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 07d792b31b6ff8ead9e027c711fb91d87ba54ebd
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931387"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884576"
 ---
 # <a name="pushprinterconnections"></a>pushprinterconnections
 

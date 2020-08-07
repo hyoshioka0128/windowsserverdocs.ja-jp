@@ -1,20 +1,18 @@
 ---
 title: netstat
 description: Netstat コマンドの参照記事。アクティブな TCP 接続、コンピューターがリッスンしているポート、イーサネット統計、IP ルーティングテーブル、IPv4 統計情報、および IPv6 統計が表示されます。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 60e2718f-93cc-4ceb-bf0e-58a6a6e4fc8b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c53ac83c1037d5f4998bb6efa43d66b418119df8
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 9fe7fc15e86df884fb9610ba5d6e72ab52e2d129
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85934800"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87886018"
 ---
 # <a name="netstat"></a>netstat
 
@@ -46,7 +44,7 @@ netstat [-a] [-b] [-e] [-n] [-o] [-p <Protocol>] [-r] [-s] [<interval>]
 | `<interval>` | *間隔*(秒単位) ごとに、選択した情報を再指定します。 再表示を停止するには、CTRL + C キーを押します。 このパラメーターを省略した場合、このコマンドは選択した情報を1回だけ印刷します。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>Remarks
 
 - **Netstat**コマンドは、次の統計情報を提供します。
 

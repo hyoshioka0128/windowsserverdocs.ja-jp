@@ -1,20 +1,18 @@
 ---
 title: bitsadmin getproxybypasslist
 description: Bitsadmin getproxybypasslist コマンドの参照記事。指定されたジョブのプロキシバイパスリストを取得します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 50959be3-7014-4bc9-9a7b-68f1ff94a94a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 67e6e4a54bb8c4929acbbaa47c78e33bab95a283
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 16cca14a47f086be65764da5441d915d2d28d2db
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85926834"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87894005"
 ---
 # <a name="bitsadmin-getproxybypasslist"></a>bitsadmin getproxybypasslist
 
@@ -32,7 +30,7 @@ bitsadmin /getproxybypasslist <job>
 | -------------- | -------------- |
 | ジョブ (job) | ジョブの表示名または GUID。 |
 
-### <a name="remarks"></a>注釈
+### <a name="remarks"></a>Remarks
 
 バイパスリストには、プロキシ経由でルーティングされないホスト名または IP アドレス (またはその両方) が含まれます。 この一覧には、 `<local>` 同じ LAN 上のすべてのサーバーを参照するを含めることができます。 リストはセミコロン (;)またはスペースで区切られます。
 

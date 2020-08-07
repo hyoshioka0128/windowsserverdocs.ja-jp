@@ -1,20 +1,18 @@
 ---
 title: reg load
 description: レジストリの別のサブキーに保存されたサブキーとエントリを書き込む reg load コマンドのリファレンス記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 3b0b2b1b-f510-4108-9e9d-7057e924aa6e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ba298ec5743022034f9576b50ff75e20b6f2d3e3
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: bc44a6d992312f67abb29a91da848cc17787d507
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931093"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884095"
 ---
 # <a name="reg-load"></a>reg load
 
@@ -34,11 +32,11 @@ reg load <keyname> <filename>
 | `<filename>` | 読み込むファイルのパスと名前を指定します。 このファイルは、事前に**reg save**コマンドを使用して作成する必要があり、.hiv 拡張子を持つ必要があります。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>Remarks
 
 - **Reg 読み込み**操作の戻り値は次のとおりです。
 
-    | 値 | [説明] |
+    | 値 | 説明 |
     |--|--|
     | 0 | 成功 |
     | 1 | 障害 |

@@ -1,20 +1,18 @@
 ---
 title: query user
 description: クエリユーザーコマンドの参照記事。リモートデスクトップセッションホストサーバー上のユーザーセッションに関する情報を表示します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: a670fb78-c055-464a-b61d-3a85632c52c5
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6929f7828f82c50723ae0a8c658ee2c79e1f1499
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: ea760c32cc7955c96a363c994c2cb49227bceb2e
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86956454"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884403"
 ---
 # <a name="query-user"></a>query user
 
@@ -53,7 +51,7 @@ query user [<username> | <sessionname> | <sessionID>] [/server:<servername>]
 | /server:`<servername>` | クエリを実行するリモートデスクトップセッションホストサーバーを指定します。 それ以外の場合は、現在のリモートデスクトップセッションホストサーバーが使用されます。 このパラメーターは、リモートサーバーからこのコマンドを使用している場合にのみ必要です。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>Remarks
 
 - このコマンドを使用するには、フルコントロールアクセス許可または特殊なアクセス許可が必要です。
 
@@ -75,7 +73,7 @@ query user
 query user USER1 /server:Server1
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

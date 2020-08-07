@@ -1,20 +1,18 @@
 ---
 title: bitsadmin peercaching および getconfigurationflags
 description: Bitsadmin ピアリングと getconfigurationflags コマンドの参照記事。コンピューターがピアにコンテンツを提供するかどうか、およびピアからコンテンツをダウンロードできるかどうかを決定する構成フラグを取得します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 124ddc15-3444-4bd5-96e5-c6bfabe4f9c2
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1c6834e57ebccca94c6fdc7c6cff503e2d58378a
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 383387b135f38663a84999e041a4f6864d40a01d
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85922999"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87893627"
 ---
 # <a name="bitsadmin-peercaching-and-getconfigurationflags"></a>bitsadmin peercaching および getconfigurationflags
 

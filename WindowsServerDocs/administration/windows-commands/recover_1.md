@@ -1,20 +1,18 @@
 ---
 title: 回復 (DiskPart)
 description: DiskPart の回復コマンドの参照記事。ディスクグループ内のすべてのディスクの状態を更新し、無効なディスクグループのディスクを回復し、ミラーボリュームと古いデータを含む RAID-5 ボリュームを再同期します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 8cc3a73d-9456-41a0-b375-2b4cc37c3992
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 03b996db5d8c6d270a35bf1273570e3757258658
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: d768ae658d7ab25e27cd657e9bdf66ff4b754a9b
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519681"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884223"
 ---
 # <a name="recover-diskpart"></a>回復 (DiskPart)
 
@@ -37,7 +35,7 @@ recover [noerr]
 |--|--|
 | noerr | スクリプト専用です。 エラーが発生しても、エラーが発生しなかったかのように DiskPart はコマンドの処理を続けます。 このパラメーターは、エラー発生すると、DiskPart はエラー コードを生成して終了します。 |
 
-## <a name="examples"></a>使用例
+## <a name="examples"></a>例
 
 フォーカスのあるディスクが含まれるディスク グループを回復するには、次のように入力します。
 
@@ -45,6 +43,6 @@ recover [noerr]
 recover
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

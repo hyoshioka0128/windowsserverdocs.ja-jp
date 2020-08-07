@@ -1,20 +1,18 @@
 ---
 title: qprocess
 description: Qprocess コマンドの参照記事。リモートデスクトップセッションホストサーバーで実行されているプロセスに関する情報が表示されます。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 9825cb01-11e0-4cd1-8142-57910e2f4056
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0adc884e0bdbfac253d94f29d3543ae138c5f857
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 940b366ff11c1572849b9fef018aff805daf3a6b
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86956534"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884546"
 ---
 # <a name="qprocess"></a>qprocess
 
@@ -25,7 +23,7 @@ ms.locfileid: "86956534"
 > [!NOTE]
 > このコマンドは、 [query process コマンド](query-process.md)と同じです。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

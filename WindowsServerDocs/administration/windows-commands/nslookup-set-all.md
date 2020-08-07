@@ -1,20 +1,18 @@
 ---
 title: nslookup set all
 description: Nslookup set all コマンドのリファレンス記事。現在の構成設定値を出力します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 04b695cb-38b2-4adf-aa55-9d1b628eb8ac
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1844e2254a694e39dc12e66bf65182df512601e8
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: ad77c21134228403afaa1dcb30e29ee1b36071da
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936547"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87885771"
 ---
 # <a name="nslookup-set-all"></a>nslookup set all
 

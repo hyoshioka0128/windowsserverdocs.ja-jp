@@ -1,20 +1,18 @@
 ---
 title: call
 description: 呼び出しコマンドの参照記事。親バッチプログラムを停止せずに、別のバッチプログラムから1つのバッチプログラムを呼び出します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: d34a41dc-e6c7-4467-bf6a-15cec704833e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 06/05/2018
-ms.openlocfilehash: e73199b9d5633d5b3f1f7b8afd2bd35eb826bfd7
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 7ff402f159dc69d683ad5c568ca2d31d753eb77c
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924835"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880390"
 ---
 # <a name="call"></a>call
 
@@ -72,7 +70,7 @@ call [drive:][path]<filename> [<batchparameters>] [:<label> [<arguments>]]
 
 上記の例では、 **%1**と PATH を他の有効な値に置き換えることができます。 **%~** 構文が有効な引数番号で終了しています。 **%~** 修飾子を **% &#42;** と共に使用することはできません。
 
-### <a name="remarks"></a>注釈
+### <a name="remarks"></a>Remarks
 
 - バッチパラメーターの使用:
 

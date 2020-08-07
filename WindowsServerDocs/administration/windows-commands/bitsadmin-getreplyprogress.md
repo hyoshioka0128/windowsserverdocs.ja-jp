@@ -1,20 +1,18 @@
 ---
 title: bitsadmin getreplyprogress
 description: Bitsadmin getreplyprogress コマンドの参照記事。サーバーのアップロード/応答のサイズと進行状況を取得します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 7f7cb0b4-ad95-44fd-a35d-0ddf5fc0b0d0
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 728a6ba9c63f31403da59dc392cff581ec0e5c83
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 29a5f5f0023f6241ee70271de865ed14e379aa4c
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85926711"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87893878"
 ---
 # <a name="bitsadmin-getreplyprogress"></a>bitsadmin getreplyprogress
 

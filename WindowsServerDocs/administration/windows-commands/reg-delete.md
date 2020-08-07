@@ -1,20 +1,18 @@
 ---
 title: reg delete
 description: レジストリからサブキーまたはエントリを削除する reg delete コマンドの参照記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: cee05071-1607-4ab1-b8ab-65caebeb85c3
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c8f90578cdd291f5788fc53223d9dc471f7a1458
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: da541f55117e287df81b53a45c923ed2ed3ae028
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85934657"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884158"
 ---
 # <a name="reg-delete"></a>reg delete
 
@@ -37,11 +35,11 @@ reg delete <keyname> [{/v Valuename | /ve | /va}] [/f]
 | /f | 確認を求めずに、既存のレジストリ サブキーまたはエントリを削除します。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>Remarks
 
 - **Reg の削除**操作の戻り値は次のとおりです。
 
-    | 値 | [説明] |
+    | 値 | 説明 |
     |--|--|
     | 0 | 成功 |
     | 1 | 障害 |

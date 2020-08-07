@@ -1,20 +1,18 @@
 ---
 title: nfsadmin
 description: NFS サーバーと NFS クライアントの両方を管理する nfsadmin コマンドの参照記事。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 7375b2cf-c6b8-45b5-abf6-6c10e462defd
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 968c3debfafd552f295591199366c5f6c10fde47
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 797096fd7ca17c04b28f1b7490f5a8b4a58b31f6
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86956774"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87885993"
 ---
 # <a name="nfsadmin"></a>nfsadmin
 
@@ -108,7 +106,7 @@ nfsadmin server config
 nfsadmin client config
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

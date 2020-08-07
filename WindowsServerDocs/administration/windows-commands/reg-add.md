@@ -1,20 +1,18 @@
 ---
 title: reg add
 description: レジストリに新しいサブキーまたはエントリを追加する reg add コマンドの参照記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: d9ad143e-dc10-4e2e-a229-408393c40079
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: db968e8fb55a4de73f5221f8149f794600f6884e
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 549c9e4ff0eb09e051debdee12003031a8443e18
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85933517"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884200"
 ---
 # <a name="reg-add"></a>reg add
 
@@ -39,13 +37,13 @@ reg add <keyname> [{/v Valuename | /ve}] [/t datatype] [/s Separator] [/d Data] 
 | /f | 確認を求めずに、レジストリ エントリを追加します。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>Remarks
 
 - この操作でサブツリーを追加することはできません。 このバージョンの**reg**は、サブキーを追加するときに確認を求めません。
 
 - **Reg add**操作の戻り値は次のとおりです。
 
-| 値 | [説明] |
+| 値 | 説明 |
 |--|--|
 | 0 | 成功 |
 | 1 | 障害 |

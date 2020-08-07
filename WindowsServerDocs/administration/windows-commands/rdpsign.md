@@ -1,20 +1,18 @@
 ---
 title: rdpsign
 description: Rdpsign コマンドの参照記事。これにより、リモートデスクトッププロトコル (.rdp) ファイルにデジタル署名することができます。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 4a6fa8ce-3d32-49a5-b056-bcc1a23391f5
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 5769e568d6cee062b354b4d8c7284808968a2b02
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: f937cd0bebd2c57c4eef44c9dbf803176f285c2f
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86956314"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884324"
 ---
 # <a name="rdpsign"></a>rdpsign
 
@@ -43,7 +41,7 @@ rdpsign /sha1 <hash> [/q | /v |] [/l] <file_name.rdp>
 | `<file_name.rdp>` | .Rdp ファイルの名前。 完全なファイル名を使用して署名する .rdp ファイル (複数可) を指定する必要があります。 ワイルドカード文字は使用できません。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>Remarks
 
 - SHA1 または SHA256 証明書の拇印は、信頼された .rdp ファイルの発行元を表す必要があります。 証明書の拇印を取得するには、**証明**書スナップインを開き、使用する証明書をダブルクリックします (ローカルコンピューターの証明書ストアまたは個人証明書ストアのいずれか)。次に、[**詳細**] タブをクリックし、**フィールド**の一覧で [**拇印**] をクリックします。
 

@@ -1,20 +1,18 @@
 ---
 title: query termserver
 description: Query termserver コマンドのリファレンス記事。ネットワーク上のすべてのリモートデスクトップセッションホストサーバーの一覧を表示します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 3b89d3b4-236f-4376-90b6-939a0ec4b288
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e751ad4c229faf2e4dbd74ab216ee855023c858a
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 755220fc5c105b97ae7d210857b662095fd306da
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86956484"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884409"
 ---
 # <a name="query-termserver"></a>query termserver
 
@@ -71,7 +69,7 @@ query termserver /domain:CONTOSO
 query termserver Server3 /address
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

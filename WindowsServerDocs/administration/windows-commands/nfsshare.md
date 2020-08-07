@@ -1,20 +1,18 @@
 ---
 title: nfsshare
 description: NFS (Network File System) 共有を制御する nfsshare コマンドの参照記事。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 437a2615-335a-442f-9713-d50d5f3983a3
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9db04752ad7982f78dc72c02108fe706cdf2fa04
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 492b405468987f91f72019c710b8ae4eae4ff6fa
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86956764"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87885979"
 ---
 # <a name="nfsshare"></a>nfsshare
 
@@ -41,13 +39,13 @@ nfsshare {<sharename> | <drive>:<path> | * } /delete
 | /delete | *Sharename*または `<drive>:<path>` が指定されている場合、このパラメーターは指定された共有を削除します。 ワイルドカード (*) が指定されている場合、このパラメーターはすべての NFS 共有を削除します。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>Remarks
 
 - 唯一のパラメーターとして*sharename*が指定されている場合、このコマンドは*sharename*によって識別される NFS 共有のプロパティを一覧表示します。
 
 - *Sharename*とが使用されている場合 `<drive>:<path>` 、このコマンドはによって識別されるフォルダーを `<drive>:<path>` *sharename*としてエクスポートします。 **/Delete**オプションを使用すると、指定したフォルダーは NFS クライアントで使用できなくなります。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

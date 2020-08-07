@@ -1,20 +1,18 @@
 ---
 title: netcfg
 description: Netcfg コマンドのリファレンス記事。ワークステーションの展開に使用される簡易版の Windows で Windows プレインストール環境 (WinPE) をインストールします。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: e2daaab7-12db-4e36-b70c-db8906d084f7
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0f9ed2dde5d85be5432fb7b3af8279b2e71e9db0
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 17556285f7e9de2c70d446cb0fa317f1cbe89aab
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85934812"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87886059"
 ---
 # <a name="netcfg"></a>netcfg
 

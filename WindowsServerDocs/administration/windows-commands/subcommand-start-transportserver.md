@@ -1,20 +1,18 @@
 ---
 title: サブコマンドの開始 TransportServer
 description: サブコマンドの参照記事、トランスポートサーバーのすべてのサービスを開始する、サブコマンドの開始 TransportServer です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 0e93bc84-5b9e-4f9d-8cf0-1634417da0f6
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2d70b070d11424b31a615cf1a3fd00f3c80b0069
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 8236079d895a5ec94cab03009c2f31ddd7ef66d5
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936925"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87882035"
 ---
 # <a name="subcommand-start-transportserver"></a>サブコマンド: 開始 TransportServer
 

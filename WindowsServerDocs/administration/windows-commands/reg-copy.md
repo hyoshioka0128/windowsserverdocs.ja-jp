@@ -1,20 +1,18 @@
 ---
 title: reg copy
 description: レジストリエントリをローカルコンピューターまたはリモートコンピューター上の指定された場所にコピーする reg copy コマンドの参照記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 3fe74213-39ec-4b2d-ba3d-086243eac997
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e98faa37f1d123c584a3e12ae013c35688c37680
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: cc1141ddd8082ee6302886a5ce49b9805a19cede
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85937047"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884188"
 ---
 # <a name="reg-copy"></a>reg copy
 
@@ -36,13 +34,13 @@ reg copy <keyname1> <keyname2> [/s] [/f]
 | /f | 確認を求めずに、サブキーをコピーします。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>Remarks
 
 - このコマンドは、サブキーのコピー時に確認を求めません。
 
 - **Reg compare**操作の戻り値は次のとおりです。
 
-    | 値 | [説明] |
+    | 値 | 説明 |
     |--|--|
     | 0 | 成功 |
     | 1 | 障害 |

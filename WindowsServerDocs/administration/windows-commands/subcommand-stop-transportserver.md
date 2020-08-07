@@ -1,20 +1,18 @@
 ---
 title: サブコマンドの停止 TransportServer
 description: 停止 TransportServer のリファレンス記事
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: dc1b1eec-6893-445e-81dc-16b3fae287fa
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ea749b9ff2f19b4b7c9e70e0a58024d4dd9e37f9
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 49e7c0c61a110fc7a7aa687ff30d60eb8f51a543
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85933738"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87881967"
 ---
 # <a name="subcommand-stop-transportserver"></a>サブコマンド: 停止 TransportServer
 

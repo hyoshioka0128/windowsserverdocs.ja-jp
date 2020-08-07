@@ -1,20 +1,18 @@
 ---
 title: bitsadmin nowrap
 description: Bitsadmin nowrap コマンドの参照記事。コマンドウィンドウの右端からはみ出た出力テキストの行をすべて切り捨てます。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 85a47b90-783a-41e4-96f2-81f26ae8ca93
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f8f55faeea79e5f2cf02fde0732ed82ae13e902f
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 72c50bdf7d19ea4603fc232dcf54acdfd97d3f17
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85923024"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87893643"
 ---
 # <a name="bitsadmin-nowrap"></a>bitsadmin nowrap
 

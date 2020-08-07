@@ -1,20 +1,18 @@
 ---
 title: query process
 description: クエリ処理コマンドの参照記事。リモートデスクトップセッションホストサーバーで実行されているプロセスに関する情報を表示します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 36ce3ffc-0092-4eb1-a374-28e6616ca946
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 548be2874bf79aab88abd53f0303096a82486fd0
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 204782437d9fb144a9738038e82cdbbbcdc9078f
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86956524"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884538"
 ---
 # <a name="query-process"></a>query process
 
@@ -54,7 +52,7 @@ query process [*|<processID>|<username>|<sessionname>|/id:<nn>|<programname>] [/
 | /server:`<servername>` | プロセスを一覧表示するリモートデスクトップセッションホストサーバーを指定します。 指定しない場合は、現在ログオンしているサーバーが使用されます。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>Remarks
 
 - 管理者は、すべての**クエリ処理**機能にフルアクセスできます。
 
@@ -76,7 +74,7 @@ query process *
 query process /ID:2
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

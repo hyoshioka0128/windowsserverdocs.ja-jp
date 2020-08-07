@@ -1,19 +1,17 @@
 ---
 title: bitsadmin gethelpertokenflags
 description: BITS 転送ジョブに関連付けられているヘルパートークンの使用フラグを返す、bitsadmin geの pertokenflags コマンドの参照記事。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/01/2019
-ms.openlocfilehash: 1a3cd9e69c696dc00cb597ae1f60747518d8600f
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: d49a2aef829b3e443ad5e1fd3e70d8c260f59ec8
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955724"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87894241"
 ---
 # <a name="bitsadmin-gethelpertokenflags"></a>bitsadmin gethelpertokenflags
 
@@ -34,7 +32,7 @@ bitsadmin /gethelpertokenflags <job>
 | -------------- | -------------- |
 | ジョブ (job) | ジョブの表示名または GUID。 |
 
-### <a name="remarks"></a>注釈
+### <a name="remarks"></a>Remarks
 
 次のような戻り値が返される可能性があります。
 
@@ -50,7 +48,7 @@ bitsadmin /gethelpertokenflags <job>
 bitsadmin /gethelpertokenflags myDownloadJob
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

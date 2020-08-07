@@ -1,20 +1,18 @@
 ---
 title: サブコマンドの開始-名前空間
 description: サブコマンドの開始名前空間の参照記事。スケジュールされたキャストの名前空間を開始します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 2dd1c11e-6ab7-4129-9e3a-3f80e0ba59c0
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d2d9bcd58a0a99d98d8679b84c223cfa42a67778
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 7a80664fb4a4f90f58823b87f278b344561422ef
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931520"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87882081"
 ---
 # <a name="subcommand-start-namespace"></a>サブコマンド: 開始-名前空間
 

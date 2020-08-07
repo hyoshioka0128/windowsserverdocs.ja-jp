@@ -1,20 +1,18 @@
 ---
 title: bitsadmin getreplydata
 description: Bitsadmin getreplydata コマンドの参照記事。このコマンドは、サーバーのアップロード/応答データをジョブの16進形式で取得します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 819f97d5-b255-4b2d-9f63-0daa73915434
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 86c8a57664d6f90980212766e8e2bd2df6d95181
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: ab9f774c7b31576e18de3ec5db9b5a72427ecdaa
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85926744"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87893893"
 ---
 # <a name="bitsadmin-getreplydata"></a>bitsadmin getreplydata
 

@@ -1,20 +1,18 @@
 ---
 title: sysocmgr
 description: Sysocmgr のリファレンス記事。非推奨とされており、Windows の将来のリリースでサポートされるとは限りません。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 9ab50021-7433-4fac-92be-f164b2c7453a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 72f799e8f763b59d460a81f271bf9dabd49d3ebf
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 9716fd5d8e12ec0cbd8931e1bddfb70a9208dd67
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955044"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87881911"
 ---
 # <a name="sysocmgr"></a>sysocmgr
 

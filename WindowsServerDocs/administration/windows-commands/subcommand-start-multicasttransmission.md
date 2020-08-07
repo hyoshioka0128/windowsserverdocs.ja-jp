@@ -1,20 +1,18 @@
 ---
 title: サブコマンド/Get-multicasttransmission
 description: サブコマンド/Get-multicasttransmission の参照記事。イメージのスケジュールされたキャスト転送を開始します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: a1b2d459-1ece-49d4-997c-9d206c463b61
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: adb09457e2bf26242da9f6d31ee5e71882d7c10a
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 34d55e233926a3e5c8a07a6a31d985f1955f814e
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936965"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87882089"
 ---
 # <a name="subcommand-start-multicasttransmission"></a>サブコマンド:/start-multicasttransmission
 
@@ -22,7 +20,7 @@ ms.locfileid: "85936965"
 
 イメージのスケジュールされたキャスト転送を開始します。
 
-## <a name="syntax"></a>Syntax
+## <a name="syntax"></a>構文
 **Windows Server 2008**
 ```
 wdsutil /start-MulticastTransmissiomedia:<Image name> [/Server:<Server namemediatype:InstallmediaGroup:<Image group name>] [/Filename:<File name>]

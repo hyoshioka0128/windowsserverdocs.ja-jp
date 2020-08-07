@@ -1,20 +1,18 @@
 ---
 title: nslookup lserver
 description: Nslookup lserver コマンドの参照記事。最初のサーバーを指定したドメインネームシステム (DNS) ドメインに変更します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: aee5ea0b-bb17-4c14-bde7-2f7a91f2f22b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1f8d40a39abb6f96e900aee6dc029963ed7c0486
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: ab7c478b6c9f3ae299559a556629e53f9eb852ee
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931268"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87885791"
 ---
 # <a name="nslookup-lserver"></a>nslookup lserver
 

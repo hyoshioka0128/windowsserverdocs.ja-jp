@@ -1,20 +1,18 @@
 ---
 title: 中断 (シャドウコピーボリューム)
 description: 中断コマンドの参照記事。 VSS からシャドウコピーボリュームの関連付けを解除し、通常のボリュームとしてアクセスできるようにします。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: de2b6c95-1c2e-4a43-bec5-341a9014371b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6eb97ff1c539d8c372b4ae0837c41479c5a0f214
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 125f986152d10844bbab5a7b57a1a2ea4080aa3e
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409753"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880463"
 ---
 # <a name="break-shadow-copy-volume"></a>中断 (シャドウコピーボリューム)
 
@@ -46,6 +44,6 @@ break [writable] <setid>
 break writable %Alias1%
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

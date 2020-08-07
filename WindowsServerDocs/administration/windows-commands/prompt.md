@@ -1,20 +1,18 @@
 ---
 title: prompt
 description: プロンプトコマンドの参照記事。 Cmd.exe コマンドプロンプトをカスタマイズします。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 3d98e965-02eb-46ad-9d0a-5dc44830373e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 72ed82c316faddba9486649497c8c48f88e6da81
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: df849e70da973276360da6e81390466f0484f4b5
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931142"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884625"
 ---
 # <a name="prompt"></a>prompt
 
@@ -28,12 +26,12 @@ prompt [<text>]
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | Description |
+| パラメーター | 説明 |
 |--|--|
 | `<text>` | テキストと、コマンド プロンプトに追加する情報を指定します。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>Remarks
 
 - *Text*パラメーター内の1つ以上の文字列の代わりに、またはその他に含めることができる文字の組み合わせ。
 

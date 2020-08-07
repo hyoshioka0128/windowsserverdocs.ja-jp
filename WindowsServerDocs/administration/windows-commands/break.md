@@ -1,20 +1,18 @@
 ---
 title: break
 description: Break コマンドの参照記事。ミラー化されたボリュームを2つのシンプルボリュームに分割します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: ffc4901c-457b-46a6-a671-3052355f8a3c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c5de6bb682e5094f555b6310d5c712c0739f9454
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 427aa9d360e98cc21393e431aecfd5a73dc32700
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409763"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880478"
 ---
 # <a name="break"></a>break
 
@@ -31,7 +29,7 @@ MS-DOS システムの拡張された CTRL + C チェックを設定または解
 break=[on|off]
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 
