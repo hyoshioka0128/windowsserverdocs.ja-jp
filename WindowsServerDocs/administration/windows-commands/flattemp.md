@@ -1,20 +1,18 @@
 ---
 title: flattemp
 description: Flattemp コマンドの参照記事。フラット一時フォルダーを有効または無効にします。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 059a0960-1fd9-4382-87fe-a85d5dccdaea
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1ec253182ce3071f03ce47e368c6fa87fe58fed0
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: b90bfdf06fad151ab92ea82782a4171877e6d0ad
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932105"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890196"
 ---
 # <a name="flattemp"></a>flattemp
 
@@ -40,7 +38,7 @@ flattemp {/query | /enable | /disable}
 | /disable | フラット一時フォルダーを無効にします。 各ユーザーの一時フォルダーは、(ユーザーのセッション ID によって決定される) 別のフォルダーに格納されます。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>Remarks
 
 - 各ユーザーが一意の一時フォルダーを持つようになったら、を使用して `flattemp /enable` フラット一時フォルダーを有効にします。
 

@@ -1,20 +1,18 @@
 ---
 title: dfsdiag testdcs
 description: 指定されたドメイン内のドメインコントローラーの構成をチェックする、dfs diag testdcs コマンドの参照記事。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: abb915ab-23eb-45d7-9a2e-b6b9a5756a70
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1eca75d233661d51a36b52b79230ad36b704e203
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 762692e24231e04fe28e4fd9c1ac084b557653b1
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85930660"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87891187"
 ---
 # <a name="dfsdiag-testdcs"></a>dfsdiag testdcs
 

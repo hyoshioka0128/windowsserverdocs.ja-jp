@@ -1,20 +1,18 @@
 ---
 title: fsutil usn
 description: Update Sequence Number (USN) 変更ジャーナルを管理する fsutil usn コマンドのリファレンス記事です。
-ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
 author: toklima
-ms.technology: storage
 ms.assetid: faad34aa-4ba1-4129-bc1f-08088399e2fa
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: b3f71588c7221f0ba8e3659d9a1a1dd133971ce9
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: c2bbd130902812f9a44d2d762a074b67de5e8dac
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85930475"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87889778"
 ---
 # <a name="fsutil-usn"></a>fsutil usn
 
@@ -60,7 +58,7 @@ fsutil usn [readjournal] [c= <chunk-size> s=<file-size-threshold>] <volumepath>
 | maxver =`<number>` | 返す USN_RECORD の最大メジャーバージョン。 既定値は4です。 |
 | startusn =`<USN number>` | USN ジャーナルの読み取りを開始する USN。 既定値は 0 です。 |
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>Remarks
 
 - プログラムは USN 変更ジャーナルを参照して、一連のファイルに加えられたすべての変更を確認できます。 USN 変更ジャーナルは、タイムスタンプをチェックしたり、ファイル通知を登録したりするよりもはるかに効率的です。 USN 変更ジャーナルは、インデックスサービス、ファイルレプリケーションサービス (FRS)、リモートインストールサービス (RIS)、およびリモートストレージによって有効にされ、使用されます。
 

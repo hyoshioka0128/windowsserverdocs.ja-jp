@@ -1,20 +1,18 @@
 ---
 title: bitsadmin の例
 description: Bitsadmin ツールを使用して最も一般的なタスクを実行する方法を示す例。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: cb8f8374-ba6e-4a68-85a1-9a95b8215354
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/31/2018
-ms.openlocfilehash: 1db9dd387d7b9cc39c582ce79e5163c83579b613
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 5cf827ebc96c2caf114a9605482a33636689dc25
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83819632"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87894587"
 ---
 # <a name="bitsadmin-examples"></a>bitsadmin の例
 
@@ -38,7 +36,7 @@ bitsadmin /create myDownloadJob
 
 BITSAdmin は、ジョブを一意に識別する GUID を返します。 その後の呼び出しでは、GUID またはジョブ名を使用します。 次のテキストはサンプル出力です。
 
-### <a name="sample-output"></a>サンプル出力
+### <a name="sample-output"></a>出力例
 
 `created job {C775D194-090F-431F-B5FB-8334D00D1CB6}`
 
@@ -92,7 +90,7 @@ bitsadmin /complete myDownloadJob
 bitsadmin /list
 ```
 
-### <a name="sample-output"></a>サンプル出力
+### <a name="sample-output"></a>出力例
 
 ```
 {6AF46E48-41D3-453F-B7AF-A694BBC823F7} job1 SUSPENDED 0 / 0 0 / 0
@@ -112,7 +110,7 @@ bitsadmin /monitor
 > [!NOTE]
 > 更新を停止するには、CTRL + C キーを押します。
 
-### <a name="sample-output"></a>サンプル出力
+### <a name="sample-output"></a>出力例
 
 ```
 MONITORING BACKGROUND COPY MANAGER(5 second refresh)
@@ -129,7 +127,7 @@ MONITORING BACKGROUND COPY MANAGER(5 second refresh)
 bitsadmin /info
 ```
 
-### <a name="sample-output"></a>サンプル出力
+### <a name="sample-output"></a>出力例
 
 ```
 GUID: {482FCAF0-74BF-469B-8929-5CCD028C9499} DISPLAY: myDownloadJob
@@ -158,7 +156,7 @@ NOTIFICATION COMMAND LINE: none
 bitsadmin /reset
 ```
 
-### <a name="sample-output"></a>サンプル出力
+### <a name="sample-output"></a>出力例
 
 ```
 {DC61A20C-44AB-4768-B175-8000D02545B9} canceled.
@@ -166,7 +164,7 @@ bitsadmin /reset
 2 out of 2 jobs canceled.
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

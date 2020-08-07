@@ -1,20 +1,18 @@
 ---
 title: detach vdisk
 description: Detach vdisk コマンドの参照記事。選択した仮想ハードディスク (VHD) がホストコンピューター上のローカルハードディスクドライブとして表示されなくなります。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 5f01dcb8-9237-4564-ad94-8a8dd0fd0cca
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bce18dcf55940ca8529e4bee21af2f09282d0e00
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 1efe62064a25d72eacf7175be287a32b7670e917
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85928700"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87891324"
 ---
 # <a name="detach-vdisk"></a>detach vdisk
 

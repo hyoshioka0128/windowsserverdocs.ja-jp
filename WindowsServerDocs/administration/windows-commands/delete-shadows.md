@@ -1,20 +1,18 @@
 ---
 title: delete shadows
 description: シャドウコピーを削除するシャドウコピーコマンドの参照記事。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: e29a84d2-04d1-4eb1-910a-5a47bddbc24d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6d541b50a78d738034204d14441352fff6c5d9fc
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 29d1679b2d05265aa1fb5a089fab9cf99f840cd9
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929502"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87891377"
 ---
 # <a name="delete-shadows"></a>delete shadows
 

@@ -1,20 +1,18 @@
 ---
 title: bitsadmin peercaching
 description: Bitsadmin ピアキャッシュコマンドの参照記事。このコマンドには、/ピアキャッシュスイッチが表示されます。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: c2eaa3c7-9d30-4731-8a78-4b6e6041d29a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 57c0ab442c65494bbaf5c0ab6b6668dfa67b48ac
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: aa92e41579e95a24b7e2dfd83935aa07a531cf6e
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85928110"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87893540"
 ---
 # <a name="bitsadmin-peercaching"></a>bitsadmin peercaching
 

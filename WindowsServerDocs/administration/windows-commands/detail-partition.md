@@ -1,20 +1,18 @@
 ---
 title: detail partition
 description: '[詳細パーティション] コマンドの参照記事。選択したパーティションのプロパティが表示されます。'
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 672a2c7a-1721-4845-9c23-7af50367170e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2df0a5fe9af0c7856298786a6783d6af715766be
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 60a73b50b019cac6dc03629ad1657f1808782e8d
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929399"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87891279"
 ---
 # <a name="detail-partition"></a>detail partition
 

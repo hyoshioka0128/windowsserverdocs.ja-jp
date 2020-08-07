@@ -1,20 +1,18 @@
 ---
 title: mapadmin
 description: Mapadmin コマンドの参照記事。ネットワークファイルシステム用の Microsoft サービスのユーザー名マッピングを管理します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: b17332c7-8622-4223-9c43-2fb9cf4d992d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b2ebe5626057bd7f7ddac238360d171c87fd15c6
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 3334ae31b3abb85dcc3df046d8199c9b72ea3944
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85922181"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87886578"
 ---
 # <a name="mapadmin"></a>mapadmin
 
@@ -59,7 +57,7 @@ mapadmin [<computer>] [-u <user> [-p <password>]] listdomainmaps
 | removedomainmap | Windows ドメインと NIS ドメインとの間の単純なマップを削除します。 このパラメーターでは、次のオプションと引数を使用できます。<ul><li>**-d `<windowsdomain>` :** 削除するマップの Windows ドメインを指定します。</li><li>**-y `<NISdomain>` :** 削除するマップの NIS ドメインを指定します。</li><li>**-すべて:** Windows および NIS ドメイン間のすべての単純なマップを削除することを指定します。 これにより、Windows ドメインとパスワードおよびグループファイル間の単純なマップも削除されます。</li></ul> |
 | listdomainmaps | NIS ドメイン、パスワード、およびグループファイルにマップされている Windows ドメインを一覧表示します。 |
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>Remarks
 
 - パラメーターを指定しない場合、 **mapadmin**コマンドはユーザー名マッピングの現在の設定を表示します。
 

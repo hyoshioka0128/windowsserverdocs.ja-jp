@@ -1,20 +1,18 @@
 ---
 title: create
 description: Create コマンドの参照記事。ディスク上のパーティションまたはシャドウパーティション、1つまたは複数のディスク上のボリューム、または仮想ハードディスク (VHD) を作成します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: b45acde1-8f4f-4ec3-b905-d8188f884af8
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0b5b31f43e58b9e2eddb18f624c1054c9d028f4c
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: cdf23152e6ddeced126d163fce7721f9978263ed
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929530"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87891566"
 ---
 # <a name="create"></a>create
 

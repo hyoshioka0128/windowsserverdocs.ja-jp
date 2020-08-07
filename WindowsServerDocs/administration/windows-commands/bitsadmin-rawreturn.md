@@ -1,20 +1,18 @@
 ---
 title: bitsadmin rawreturn
 description: Bitsadmin rawreturn コマンドの参照記事。解析に適したデータを返します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: bbe97130-26f6-4cdd-84f1-baf530ce38b7
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1b537b21678c100364406d4c59eaa02efd143e21
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 88b1e45d7fad2820a77d9f445065ae0ca182abb6
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85926461"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87893428"
 ---
 # <a name="bitsadmin-rawreturn"></a>bitsadmin rawreturn
 

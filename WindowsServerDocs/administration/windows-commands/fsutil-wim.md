@@ -1,20 +1,18 @@
 ---
 title: fsutil wim
 description: Windows イメージ (WIM) でサポートされているファイルを検出および管理するための機能を提供する、fsutil wim コマンドのリファレンス記事です。
-ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
 author: toklima
-ms.technology: storage
 ms.assetid: 6c6ff819-f349-4aea-b0be-1f637f631736
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 791eb80942187b0a0309097b2b785fb3dcea88ec
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: f709ec86924f24e7321e4de14d3e21615f207903
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931415"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87889747"
 ---
 # <a name="fsutil-wim"></a>fsutil wim
 

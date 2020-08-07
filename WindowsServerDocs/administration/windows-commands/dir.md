@@ -1,20 +1,18 @@
 ---
 title: dir
 description: ディレクトリのファイルとサブディレクトリの一覧を表示する dir コマンドの参照記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: edcbf69b-eaa4-466e-b210-3dd8892f4d93
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6abc9e1e760502047c5c740c72b79e302dd19249
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 51d36f0f5498c5c853df2d6663f52411037c13d4
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86958314"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890986"
 ---
 # <a name="dir"></a>dir
 
@@ -51,7 +49,7 @@ dir [<drive>:][<path>][<filename>] [...] [/p] [/q] [/w] [/d] [/a[[:]<attributes>
 | /r | ファイルの代替データストリームを表示します。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>Remarks
 
 - 複数の*filename*パラメーターを使用するには、各ファイル名をスペース、コンマ、またはセミコロンで区切ります。
 
@@ -134,6 +132,6 @@ dir c:\*.txt /w/o/s/p
 
 **Dir**コマンドは、各ディレクトリ内の一致するファイル名のアルファベット順の一覧を、ワイド形式で表示し、任意のキーを押して続行するまで画面がいっぱいになるたびに一時停止します。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

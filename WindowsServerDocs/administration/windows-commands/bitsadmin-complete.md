@@ -1,20 +1,18 @@
 ---
 title: bitsadmin complete
 description: ジョブを完了する bitsadmin complete コマンドのリファレンス記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: a5e86677-8f7b-43b3-929e-97706c57e7f1
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 08fb74690f5a8f70611bb6ca52a291bec89d81e8
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 43c3296520b5843643c10d204d89f4f2f2bf98d8
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85928351"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87894607"
 ---
 # <a name="bitsadmin-complete"></a>bitsadmin complete
 

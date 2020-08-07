@@ -1,20 +1,18 @@
 ---
 title: defrag
 description: デフラグコマンドの参照記事。ローカルボリューム上の断片化されたファイルを特定して統合し、システムのパフォーマンスを向上させます。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: aaf1d1ac-996a-4282-9b4d-1e8245ff162c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 65c1d22bd45734a667bfc46840fe652e3f2f5314
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: c68edbb4511df12912adbc666201d5a381c06fe3
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86958434"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87891487"
 ---
 # <a name="defrag"></a>defrag
 
@@ -55,7 +53,7 @@ defrag <volume> [<parameters>]
 | /x | 指定されたボリュームで空き領域の統合を実行します。 |
 | /? | このヘルプ情報を表示します。 |
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>Remarks
 
 - 次のような特定のファイルシステムのボリュームまたはドライブを最適化することはできません。
 
@@ -131,7 +129,7 @@ defrag /c /h /v
 
     - コンピューターがバックアップを開始しました (アイドル状態から再開されました)。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

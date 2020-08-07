@@ -1,20 +1,18 @@
 ---
 title: bitsadmin geterrorcount
 description: Bitsadmin geterrorcount コマンドの参照記事。指定されたジョブが一時的なエラーを生成した回数のカウントを取得します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 8840ae78-52b0-4c7e-b592-0547359a237e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 90eaa150f2decba4bbee693ac117cd269d5a7c97
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: a8cfe0065ca9cec6d903466428b78cb8c103de5e
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85923051"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87894347"
 ---
 # <a name="bitsadmin-geterrorcount"></a>bitsadmin geterrorcount
 

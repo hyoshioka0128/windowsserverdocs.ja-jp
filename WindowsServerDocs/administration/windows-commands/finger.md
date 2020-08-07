@@ -1,20 +1,18 @@
 ---
 title: finger
 description: 指のサービスまたはデーモンを実行している指定されたリモートコンピューター上のユーザーに関する情報を表示する、finger コマンドの参照記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 907ea637-5c6c-4752-84c2-46bbf2a68a33
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fd629374b601686e91e5238ae8db060e0b6bf0f8
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 503b431905d764d371bff0c69eef9032fb0c8644
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85922424"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890206"
 ---
 # <a name="finger"></a>finger
 
@@ -40,7 +38,7 @@ finger [-l] [<user>] [@<host>] [...]
 | `@<host>` | ユーザー情報を探している finger サービスを実行しているリモートコンピューターを指定します。 コンピューター名または IP アドレスを指定できます。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>Remarks
 
 - **指**パラメーターの前には、スラッシュ (/) ではなくハイフン (-) を付ける必要があります。
 

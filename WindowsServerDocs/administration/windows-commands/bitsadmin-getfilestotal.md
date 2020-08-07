@@ -1,20 +1,18 @@
 ---
 title: bitsadmin getfilestotal
 description: Bitsadmin getfilestotal コマンドの参照記事。指定されたジョブ内のファイルの数を取得します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: c5de113e-f29c-4cd3-9392-0e300018d516
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7592f783d17e31fe8a1e7fbf82cb41e20171c9fd
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 09867e5ed8b060f7a9cbfe573c6e98bfbac831df
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85928284"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87894331"
 ---
 # <a name="bitsadmin-getfilestotal"></a>bitsadmin getfilestotal
 
@@ -40,7 +38,7 @@ bitsadmin /getfilestotal <job>
 bitsadmin /getfilestotal myDownloadJob
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

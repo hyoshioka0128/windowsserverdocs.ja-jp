@@ -1,20 +1,18 @@
 ---
 title: delete
 description: 削除コマンドの参照記事。パーティションまたはボリュームを削除します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 021799a3-11a2-4e7f-8fdc-fba24ca2ba21
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c3ebd26438836d19f0bcae51a26ba09ebe4fa723
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: ee2449fec8d02b52ce9b5761dbb26ec08791700a
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929487"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87891348"
 ---
 # <a name="delete"></a>delete
 

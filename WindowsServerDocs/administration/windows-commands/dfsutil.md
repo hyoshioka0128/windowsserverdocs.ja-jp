@@ -1,20 +1,18 @@
 ---
 title: dfsutil
 description: DFS 名前空間、サーバー、およびクライアントを管理する dfsutil コマンドのリファレンス記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: ef5093a4-0d24-4b21-9d04-59933ad98e2c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cfb3d221e275a688f5c18a960681257077fb4f7f
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: f31af9f557271182980a367ebf5e2233788fcc31
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86958374"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87891026"
 ---
 # <a name="dfsutil"></a>dfsutil
 
@@ -47,6 +45,6 @@ Dfsutil コマンドは、DFS 名前空間、サーバー、およびクライ�
 
 これらの各コマンドの詳細については、DFS 名前空間の管理ツールがインストールされているサーバーでコマンドプロンプトを開き、「」、「」、または「」と入力し `dfsutil client /?` `dfsutil diag /?` `dfsutil cache /?` ます。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

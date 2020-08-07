@@ -1,20 +1,18 @@
 ---
 title: dfsdiag testreferral
 description: 分散ファイルシステム (DFS) の参照を確認する、dfsdiag testreferral コマンドのリファレンス記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 877c60dc-e993-4bd5-87dd-e892e3f98a1a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8ee88e6f9d75dc32bd7fd5dac4c14c72f3bbac02
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 21ed7a6dd56fda0a6185f3f5aaa2a15d9d6fb565
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85928696"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87891128"
 ---
 # <a name="dfsdiag-testreferral"></a>dfsdiag testreferral
 
@@ -42,7 +40,7 @@ dfsdiag /testreferral /DFSpath:<DFS path to get referrals> [/full]
 
 | パラメーター | 説明 |
 | --------- | ----------- |
-| /DFSpath:`<path to get referrals>` | 次のいずれかの値を指定します。<ul><li>**空白:** 信頼されたドメインのみをテストします。</li><li>`\\Domain:`ドメインコントローラーの参照のみをテストします。</li><li>`\\Domain\SYSvol:`SYSvol 参照のみをテストします。</li><li>`\\Domain\NETLOGON:`NETLOGON 参照のみをテストします。</li><li>`\\<domain or server>\<namespace root>:`名前空間のルート参照のみをテストします。</li><li>`\\<domain or server>\<namespace root>\<DFS folder>:`DFS フォルダー (リンク) の参照のみをテストします。</li></ul> |
+| /DFSpath:`<path to get referrals>` | 以下のいずれかを指定できます。<ul><li>**空白:** 信頼されたドメインのみをテストします。</li><li>`\\Domain:`ドメインコントローラーの参照のみをテストします。</li><li>`\\Domain\SYSvol:`SYSvol 参照のみをテストします。</li><li>`\\Domain\NETLOGON:`NETLOGON 参照のみをテストします。</li><li>`\\<domain or server>\<namespace root>:`名前空間のルート参照のみをテストします。</li><li>`\\<domain or server>\<namespace root>\<DFS folder>:`DFS フォルダー (リンク) の参照のみをテストします。</li></ul> |
 | /full | ドメインおよびルートの参照にのみ適用されます。 レジストリと active directory ドメインサービス (AD DS) 間のサイトの関連付け情報の整合性を確認します。 |
 
 ## <a name="examples"></a>例

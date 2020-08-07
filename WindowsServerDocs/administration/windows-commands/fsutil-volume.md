@@ -1,20 +1,18 @@
 ---
 title: fsutil volume
 description: ボリュームのマウントを解除する、またはハードディスクドライブに照会して、ハードディスクドライブ上で現在使用可能な空き領域の容量や特定のクラスターを使用しているファイルを確認するには、fsutil volume コマンドの参照記事。
-ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
 author: toklima
-ms.technology: storage
 ms.assetid: 0397c204-b3f8-4fd8-b71d-b7efb117766d
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 6c486e47bde08ad002e39cec81e72ace90946cd7
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: b6bcd763643eba8c82fbd1ebd82199aa46f8f0dd
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86958114"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87889752"
 ---
 # <a name="fsutil-volume"></a>fsutil volume
 
@@ -87,7 +85,7 @@ fsutil volume list
 fsutil volume querycluster C: 50 0x2000
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

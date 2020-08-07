@@ -1,20 +1,18 @@
 ---
 title: findstr
 description: Findstr コマンドの参照記事。ファイル内のテキストのパターンを検索します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: c2d803fb-4cd2-46a1-a1b7-6f5e0249c418
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f0cf30f19ef23c1b3275b6b7632b03f0dd8e433a
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 1b1ef8139208397361a8c787686d2bc4c3b5ab43
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931429"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890237"
 ---
 # <a name="findstr"></a>findstr
 
@@ -48,11 +46,11 @@ findstr [/b] [/e] [/l | /r] [/s] [/i] [/x] [/v] [/n] [/m] [/o] [/p] [/f:<file>] 
 | /g`<file>` | 指定されたファイルから検索文字列を取得します。 |
 | d`<dirlist>` | 指定されたディレクトリのリストを検索します。 各ディレクトリは、セミコロン (;) など) で区切る必要があり `dir1;dir2;dir3` ます。 |
 | /a`<colorattribute>` | 2桁の16進数を持つ色属性を指定します。 詳細 `color /?` については、「」と入力してください。 |
-| `<strings>` | *Filename*で検索するテキストを指定します。 必須です。 |
+| `<strings>` | *Filename*で検索するテキストを指定します。 必須。 |
 | `[\<drive>:][<path>]<filename>[ ...]` | 検索する場所とファイルを指定します。 少なくとも1つのファイル名が必要です。 |
 | /? | コマンド プロンプトでヘルプを表示します。 |
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>Remarks
 
 - すべての**findstr**コマンドラインオプションは、コマンド文字列の*文字列*と*ファイル名*の前に記述する必要があります。
 

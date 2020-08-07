@@ -1,20 +1,18 @@
 ---
 title: bitsadmin peers および help
 description: Bitsadmin ピアとヘルプコマンドのリファレンス記事。/ピアスイッチのコマンドラインの使用法を表示します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 49016dcb-e3be-44d9-b00a-1a42eb5984ff
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fe6026acc8b3695dd63309e21716ffd54066fc77
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 14ef93879c99868755ae555e0ec414e9d89b377a
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85928054"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87893471"
 ---
 # <a name="bitsadmin-peers-and-help"></a>bitsadmin peers および help
 

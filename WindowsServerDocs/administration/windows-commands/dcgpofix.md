@@ -1,20 +1,18 @@
 ---
 title: dcgpofix
 description: ドメインの既定のグループポリシーオブジェクト (Gpo) を再作成する、dcgpofix コマンドの参照記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 81d5fa65-2aea-49d3-b353-357441846c00
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cf9e3c37c054c34d602e472a2c5f83e9a8b284b9
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: b4e2da750883dbffaa45fe1800249543cd8b9209
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85928806"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87891510"
 ---
 # <a name="dcgpofix"></a>dcgpofix
 

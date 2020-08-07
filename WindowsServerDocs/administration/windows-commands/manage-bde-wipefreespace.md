@@ -1,20 +1,18 @@
 ---
 title: manage-bde wipefreespace 領域
 description: Manage-bde wipefreespace 領域の参照記事。このコマンドは、領域内に存在していた可能性のあるデータフラグメントを削除して、ボリューム上の空き領域を消去します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: b8d83a2a-c5c8-4019-9041-23d1d6abf282
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 872c3722028af1612fb80e3b98650ee0a39261ce
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: ca4737eae6c152ac01e674efb3e674c88f5d1538
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85922176"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87886588"
 ---
 # <a name="manage-bde-wipefreespace"></a>manage-bde wipefreespace 領域
 

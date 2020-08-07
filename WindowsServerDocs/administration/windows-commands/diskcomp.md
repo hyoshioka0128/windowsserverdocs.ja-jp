@@ -1,20 +1,18 @@
 ---
 title: diskcomp
 description: 2つのフロッピーディスクの内容を比較する、コマンドの参照記事。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 4f56f534-a356-4daa-8b4f-38e089341e42
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: efd935d4630d9397d97863d6d373db3801a97b17
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 71401942f25d3f503639b2931f2f0ee49229e15b
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929358"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890974"
 ---
 # <a name="diskcomp"></a>diskcomp
 
@@ -33,7 +31,7 @@ diskcomp [<drive1>: [<drive2>:]]
 | `<drive1>` | フロッピーディスクの1つを含むドライブを指定します。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>Remarks
 
 - この**コマンドは**、フロッピーディスクでのみ機能します。 ハードディスクで**は使用でき**ません。 ドライブ1または*drive2*のハードディスクドライブを指定*すると、* **次のエラーメッセージが表示さ**れます。
 

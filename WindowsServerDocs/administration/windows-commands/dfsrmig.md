@@ -1,20 +1,18 @@
 ---
 title: dfsrmig
 description: Dfsrmig コマンドの参照記事。 FRS から DFS レプリケーションに SYSvol レプリケーションを移行し、移行の進行状況に関する情報を提供し、移行をサポートする AD DS オブジェクトを変更します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: e1b6a464-6a93-4e66-9969-04f175226d8d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 87882ebe0beb687f704c5573091f56c067c278ee
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 83e4d039b0c7c36960ab8dadfa4740d0c01daa33
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85928642"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87891048"
 ---
 # <a name="dfsrmig"></a>dfsrmig
 
@@ -41,7 +39,7 @@ dfsrmig [/setglobalstate <state> | /getglobalstate | /getmigrationstate | /creat
 | `/deleterodfsrmember [<read_only_domain_controller_name>]` | 指定した読み取り専用ドメインコントローラーに対応する DFS レプリケーションのグローバル AD DS 設定を削除するか、に値が指定されていない場合は、すべての読み取り専用ドメインコントローラーのグローバル AD DS DFS レプリケーション設定を削除し `<read_only_domain_controller_name>` ます。<p>このオプションを使用すると、読み取り専用ドメインコントローラーで自動削除が失敗し、準備状態から開始状態に移行をロールバックするときに、読み取り専用ドメインコントローラーが長時間停止した場合にのみ、手動で AD DS 設定を削除できます。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>Remarks
 
 - コマンドを使用して、 `/setglobalstate <state>` PDC エミュレーター上の AD DS のグローバル移行状態を設定し、移行プロセスを開始および制御します。 PDC エミュレーターが使用できない場合、このコマンドは失敗します。
 

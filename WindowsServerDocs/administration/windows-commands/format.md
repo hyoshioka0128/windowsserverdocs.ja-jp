@@ -1,20 +1,18 @@
 ---
 title: format
 description: Format コマンドの参照記事。 Windows ファイルを受け入れるようにディスクをフォーマットします。
-ms.prod: windows-server
 manager: dongill
 ms.author: jgerend
-ms.technology: storage
 ms.topic: article
 ms.assetid: 51ec7423-9a01-4219-868a-25d69cdcc832
 author: jasongerend
 ms.date: 10/16/2017
-ms.openlocfilehash: 73f83a07cb1537af66d59977099b251b6dd12f47
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: a923706252e6094cf12dcdf2632366ee7b2401f8
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86958224"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890129"
 ---
 # <a name="format"></a>Format
 
@@ -52,7 +50,7 @@ format <volume> [/q]
 | /x | フォーマットされる前に、必要に応じてボリュームのマウントを解除します。 ボリュームに対して開いているハンドルは、無効になります。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>Remarks
 
 - **Format**コマンドを実行すると、新しいルートディレクトリとディスクのファイルシステムが作成されます。 また、ディスク上の不良領域を確認し、ディスク上のすべてのデータを削除することもできます。 新しいディスクを使用できるようにするには、まず、このコマンドを使用してディスクをフォーマットする必要があります。
 
@@ -116,6 +114,6 @@ format a: /q
 format a: /v:DATA
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc771080(v=ws.11))

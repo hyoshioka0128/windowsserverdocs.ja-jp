@@ -1,20 +1,18 @@
 ---
 title: mask
 description: Mask コマンドの参照記事。 import コマンドを使用してインポートされたハードウェアシャドウコピーを削除します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: bf301474-d74a-44e7-9fad-c8a11e7ca3bd
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2839fce0a64f187c1445a5f6a4af6c5f0ebc9fb8
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: a893d32dca90169d51a04db66b3dc796cbc69a46
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85922109"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87886528"
 ---
 # <a name="mask"></a>mask
 
@@ -32,7 +30,7 @@ mask <shadowsetID>
 | --------- | ----------- |
 | shadowsetID | 指定されたシャドウコピーセット ID に属するシャドウコピーを削除します。 |
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>Remarks
 
 - *ShadowSetID*の代わりに、既存のエイリアスまたは環境変数を使用できます。 既存のエイリアスを表示するには、パラメーターを指定せずに**add**を使用します。
 

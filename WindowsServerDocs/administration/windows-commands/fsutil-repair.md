@@ -1,20 +1,18 @@
 ---
 title: fsutil repair
 description: Fsutil repair コマンドの参照記事。これは、NTFS 自己修復修復操作を管理および監視します。
-ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
 author: toklima
-ms.technology: storage
 ms.assetid: 62d77150-1d9e-4069-ab4a-299f33024912
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 664415f7952add6ae4a52f6550d78c11fa2a2978
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 17deb2d592ba9b5532d33a71dd8687708c8bd0bf
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86958194"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87889915"
 ---
 # <a name="fsutil-repair"></a>fsutil repair
 
@@ -68,7 +66,7 @@ fsutil repair set c: 1
 fsutil repair set c: 0
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

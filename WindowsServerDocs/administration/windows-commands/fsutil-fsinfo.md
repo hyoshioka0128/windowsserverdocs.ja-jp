@@ -1,20 +1,18 @@
 ---
 title: Fsutil fsinfo
 description: すべてのドライブを一覧表示する、ドライブの種類を照会する、ボリューム情報を照会する、NTFS 固有のボリューム情報を照会する、ファイルシステムの統計情報を照会する、fsutil fsinfo コマンドの参照記事。
-ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
 author: toklima
-ms.technology: storage
 ms.assetid: 7787a72e-a26b-415f-b700-a32806803478
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 0cb4e5b747e07c9409c7dbb80ac9950e765617bc
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 5642355769225fada014a98cce8d4533e72f7410
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924735"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87889989"
 ---
 # <a name="fsutil-fsinfo"></a>fsutil fsinfo
 

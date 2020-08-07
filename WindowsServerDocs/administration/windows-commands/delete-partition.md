@@ -1,20 +1,18 @@
 ---
 title: delete partition
 description: '[パーティションの削除] コマンドの参照記事。フォーカスのあるパーティションを削除します。'
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 65752312-cb16-46f6-870f-1b95c507b101
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b45cb060a5d82e254fe371269dbdbcb9d46fee92
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 5a783a7d94b48f088eeb868ac64ca355d8829c25
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85928720"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87891436"
 ---
 # <a name="delete-partition"></a>delete partition
 
@@ -38,7 +36,7 @@ delete partition [noerr] [override]
 | noerr | スクリプト専用です。 エラーが発生しても、エラーが発生しなかったかのように DiskPart はコマンドの処理を続けます。 このパラメーターは、エラー発生すると、DiskPart はエラー コードを生成して終了します。 |
 | override | パーティションの種類にかかわらず、DiskPart ですべてのパーティションを削除できるようにします。 通常、DiskPart では既知のデータパーティションのみを削除できます。 |
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>Remarks
 
 - ダイナミックボリュームを削除するには、代わりに [[ボリュームの削除](delete-volume.md)] コマンドを常に使用します。
 

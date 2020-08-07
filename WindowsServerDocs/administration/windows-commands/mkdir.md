@@ -1,20 +1,18 @@
 ---
 title: mkdir
 description: ディレクトリまたはサブディレクトリを作成する mkdir コマンドの参照記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 033a57a2-5deb-4c98-aa78-61ce8df2a330
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c7c1569e82143443de861216e40b904de4481a03
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: afff7a7985c5934a8566162da7307ad8676a50f9
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931284"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87886456"
 ---
 # <a name="mkdir"></a>mkdir
 

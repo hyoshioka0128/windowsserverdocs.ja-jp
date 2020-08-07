@@ -1,20 +1,18 @@
 ---
 title: fsutil
 description: ファイルアロケーションテーブル (FAT) および NTFS ファイルシステムに関連するタスクを実行する、fsutil コマンドの参照記事です。
-ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
 author: toklima
-ms.technology: storage
 ms.assetid: 2e748187-6a10-4bb0-aed5-34f886a250d2
 ms.topic: article
 ms.date: 08/21/2018
-ms.openlocfilehash: 330f614dd404f89e922854a21d121d4a4e165723
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: d96f63cae0d22279eb1ed2b303e53e49cd386481
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85930762"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87889715"
 ---
 # <a name="fsutil"></a>fsutil
 

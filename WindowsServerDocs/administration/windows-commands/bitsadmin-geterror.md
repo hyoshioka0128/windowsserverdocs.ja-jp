@@ -1,20 +1,18 @@
 ---
 title: bitsadmin geterror
 description: Bitsadmin geterror コマンドの参照記事。指定されたジョブの詳細なエラー情報を取得します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: cbe5bca1-d2dd-4ce6-903f-f85de4a2ec6a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1d729b946df4af33da3a55ff8051c59fbb5d7efe
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: ae0b2391267ddc1508d8343b909b9739a0e01ffb
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85928300"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87894351"
 ---
 # <a name="bitsadmin-geterror"></a>bitsadmin geterror
 

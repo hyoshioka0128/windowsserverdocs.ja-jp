@@ -1,20 +1,18 @@
 ---
 title: del
 description: Del コマンドの参照記事。1つ以上のファイルを削除します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 346eede2-2085-44f5-9936-6877b5d5a833
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fe1ae558da0a4cb19159c68c67e1e72970e3b502
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: f909a212284f29fff15de0d02995b08b713cd889
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86958414"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87891498"
 ---
 # <a name="del"></a>del
 
@@ -44,7 +42,7 @@ erase [/p] [/f] [/s] [/q] [/a[:]<attributes>] <names>
 | /a [:]`<attributes>` | 次のファイル属性に基づいてファイルを削除します。<ul><li>**r**読み取り専用ファイル</li><li>**h**隠しファイル</li><li>コンテンツにインデックスが**設定され**ていないファイル</li><li>**s**システムファイル</li><li>アーカイブの準備**が**できているファイル</li><li>**左**再解析ポイント</li><li>**-**' Not ' を意味するプレフィックスとして使用されます。</li></ul>. |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>Remarks
 
 - コマンドを使用すると、 `del /p` 次のメッセージが表示されます。
 
@@ -96,7 +94,7 @@ del *.bat
 del /a:r *.*
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

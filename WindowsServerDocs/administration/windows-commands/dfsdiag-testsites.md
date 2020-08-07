@@ -1,20 +1,18 @@
 ---
 title: dfsdiag testsites
 description: Dfs diag testsites の参照記事。名前空間サーバーまたはフォルダー (リンク) のターゲットとして機能するサーバーがすべてのドメインコントローラー上で同じサイトの関連付けを持つことを確認することで、active directory ドメインサービス (AD DS) サイトの構成を確認します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 39a0d415-7eb7-4a26-861b-7ff00c45dcda
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7942b1535957366af9485580d75c9eec17120f4d
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: d40d7833cabb9e03875660c7d4ebbc129eff0255
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85928685"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87891111"
 ---
 # <a name="dfsdiag-testsites"></a>dfsdiag testsites
 
