@@ -18,7 +18,7 @@ ms.locfileid: "87884732"
 
 > 適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-追加、削除、およびプリンターまたは設定し、既定のプリンターを表示するだけでなく、プリンター接続を一覧表示します。 このコマンドは、ディレクトリにある Visual Basic スクリプトです `%WINdir%\System32\printing_Admin_Scripts\<language>` 。 コマンドプロンプトでこのコマンドを使用するには、「 **cscript** 」に続けて prnmngr ファイルの完全なパスを入力するか、ディレクトリを適切なフォルダーに変更します。 (例: `cscript %WINdir%\System32\printing_Admin_Scripts\en-US\prnmngr`)。
+追加、削除、およびプリンターまたは設定し、既定のプリンターを表示するだけでなく、プリンター接続を一覧表示します。 このコマンドは、ディレクトリにある Visual Basic スクリプトです `%WINdir%\System32\printing_Admin_Scripts\<language>` 。 コマンドプロンプトでこのコマンドを使用するには、「 **cscript** 」に続けて prnmngr ファイルの完全なパスを入力するか、ディレクトリを適切なフォルダーに変更します。 たとえば、`cscript %WINdir%\System32\printing_Admin_Scripts\en-US\prnmngr` です。
 
 ## <a name="syntax"></a>構文
 
