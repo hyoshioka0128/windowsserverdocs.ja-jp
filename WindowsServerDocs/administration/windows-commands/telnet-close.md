@@ -1,20 +1,18 @@
 ---
 title: telnet close
 description: 現在の telnet 接続を閉じる telnet の参照記事。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 9330a5e0-bdb5-446b-8c25-c2c460df8b6b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ec185f29f428e760e5cee9514e522723214a65ec
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 8952a846bd757406f4242de1f3d0813e606c651e
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85922582"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87881733"
 ---
 # <a name="telnet-close"></a>telnet: 閉じる
 

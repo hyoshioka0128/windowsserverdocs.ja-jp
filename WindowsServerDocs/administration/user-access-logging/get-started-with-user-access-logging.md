@@ -1,20 +1,18 @@
 ---
 title: ユーザーアクセスログを使ってみる
 desctription: Describes the User Access Logging feature and how to start using it.
-ms.prod: windows-server
-ms.technology: manage-user-access-logging
 ms.topic: article
 ms.assetid: 5c395b8b-3b35-4042-b9cc-07e438f86d50
 author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 44bcdd3d89946558934b8309634061f6b8e7ffda
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 6b5e8ae365fbf8130d134ab2f9fa555e952d012a
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471167"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895636"
 ---
 # <a name="get-started-with-user-access-logging"></a>ユーザーアクセスログを使ってみる
 
@@ -91,7 +89,7 @@ UAL では、次のタスクを実行できます。
 ## <a name="important-functionality"></a><a name="BKMK_NEW"></a>重要な機能
 次の表は、UAL の主な機能とその値についてまとめたものです。
 
-|機能|[値]|
+|機能|値|
 |-----------------|---------|
 |ほぼリアルタイムでクライアント要求イベント データを収集し、集計します。|最大 3 年分のデータを保存できます。 **重要:** 管理者は、組織のプライバシーポリシーとローカル規制に従って、収集されたデータとデータ保有期間のコンプライアンスを強制する必要があります。|
 |WMI または Windows PowerShell インターフェイスを利用して UAL に問い合わせ、ローカルまたはリモート サーバーのクライアント要求データを取得します。|UAL では、1 つのビューで進行中の使用状況データを参照できます。 サーバー管理者とエンタープライズ管理者は、このデータを取得し、ビジネス管理者と連携し、ボリューム ソフトウェア ライセンスを最適な方法で利用できます。|
@@ -102,7 +100,7 @@ UAL では次のユーザー関連データが記録されます。
 
 |Data|説明|
 |--------|---------------|
-|**ユーザー名**|インストールされている役割と製品からの UAL エントリを伴うクライアントでのユーザー名 (該当する場合)。|
+|**UserName**|インストールされている役割と製品からの UAL エントリを伴うクライアントでのユーザー名 (該当する場合)。|
 |**ActivityCount**|特定のユーザーが役割またはサービスにアクセスした回数。|
 |**FirstSeen**|ユーザーが役割またはサービスに最初にアクセスした日時。|
 |**LastSeen**|ユーザーが役割またはサービスに最後にアクセスした日時。|
@@ -127,7 +125,7 @@ UAL では次のデバイス関連データが記録されます。
 ## <a name="software-requirements"></a><a name="BKMK_SOFT"></a>ソフトウェア要件
 UAL は、Windows Server 2012 以降のバージョンの Windows Server を実行しているすべてのコンピューターで使用できます。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 [User Access Logging (ユーザー アクセス ログ)](https://msdn.microsoft.com/library/windows/desktop/hh437528(v=vs.85).aspx) (MSDN)
 [ユーザー アクセス ログの管理](Manage-User-Access-Logging.md)
 

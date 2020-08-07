@@ -1,20 +1,18 @@
 ---
 title: wbadmin start recovery
 description: 指定したパラメーターに基づいて回復操作を実行する wbadmin start recovery のリファレンス記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 52381316-a0fa-459f-b6a6-01e31fb21612
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f7eb408ae8b57279d2620e8971a6e5833e3a044d
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: d7d04e32eeae71593daf995e790b6dcbae05464b
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519601"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87879690"
 ---
 # <a name="wbadmin-start-recovery"></a>wbadmin start recovery
 
@@ -65,7 +63,7 @@ wbadmin start recovery
 -   特定のバックアップバージョンから回復可能な項目の一覧を表示するには、 **wbadmin get items**を使用します。 バックアップ時にボリュームにマウントポイントまたはドライブ文字がない場合、このサブコマンドは、ボリュームの回復に使用する GUID ベースのボリューム名を返します。
 -   **-Itemtype**が**App**の場合は、値を使用して、[メディア**からのインストール**]**操作を実行し、** Active Directory Domain Services に必要なすべての関連データを回復することができます。 次に、Active Directory データベース、レジストリ、および SYSVOL の状態のコピー**を作成し**、この情報を **-recoverytarget**で指定した場所に保存します。 このパラメーターは **、-recoverytarget**が指定されている場合にのみ使用してください。
 
-## <a name="examples"></a>使用例
+## <a name="examples"></a>例
 
 2013年3月31日の午前9:00 に撮影されたバックアップの回復を実行するには、次のように入力します。
 ```
@@ -89,7 +87,7 @@ wbadmin start recovery -version:03/31/2013-09:00 -itemType:Volume
 wbadmin start recovery -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 - [Wbadmin](wbadmin.md)

@@ -1,20 +1,18 @@
 ---
 title: fveupdate
 description: Fveupdate ツールの参照記事。コンピューターのアップグレード時にセットアッププログラムによって使用される内部ツールです。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: f2603607-9421-4e8d-b9bf-c5519814b39f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d6fa6ab7a69ee6ab7943e6018e862f453b431843
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: d0a1b5f96fbabe1ed4d8b09e448d3d9b60067fd2
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932354"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87888648"
 ---
 # <a name="fveupdate"></a>fveupdate
 

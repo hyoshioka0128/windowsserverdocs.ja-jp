@@ -1,20 +1,18 @@
 ---
 title: ksetup changepassword
 description: Ksetup changepassword コマンドのリファレンス記事。これは、ログオンしているユーザーのパスワードを変更するために、キー配布センター (KDC) パスワード (kpasswd) 値を使用します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 283078e7-a88f-4875-90e6-f8605e6b7ea7
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e49a9c0a796357c89efd3c86373c77468670176c
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 69f92dc7b3f37e08e035d635a46c9fc5fc57e1a7
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85925501"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87888049"
 ---
 # <a name="ksetup-changepassword"></a>ksetup changepassword
 
@@ -36,7 +34,7 @@ ksetup /changepassword <oldpassword> <newpassword>
 | `<oldpassword>` | ログオンしているユーザーの既存のパスワードを指定します。 |
 | `<newpassword>` | ログオンしているユーザーの新しいパスワードを指定します。 このパスワードは、このコンピューターで設定されているすべてのパスワード要件を満たしている必要があります。 |
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>Remarks
 
 - ユーザーアカウントが現在のドメインに見つからない場合は、ユーザーアカウントが存在するドメイン名を入力するように求められます。
 

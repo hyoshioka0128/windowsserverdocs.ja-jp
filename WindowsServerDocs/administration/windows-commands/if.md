@@ -1,26 +1,24 @@
 ---
 title: if
 description: If コマンドのリファレンス記事。バッチプログラムで条件付き処理を実行します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 698b3fb9-532b-4c2b-af7f-179f8dc57131
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: dd55ebb6ae3562906efdc710f7a067a7e7514e59
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 3644c64d4159d9232ec58e747efc542dd903791e
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924474"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87888370"
 ---
 # <a name="if"></a>if
 
 バッチプログラムで条件付き処理を実行します。
 
-## <a name="syntax"></a>Syntax
+## <a name="syntax"></a>構文
 
 ```
 if [not] ERRORLEVEL <number> <command> [else <expression>]
@@ -52,7 +50,7 @@ if defined <variable> <command> [else <expression>]
 | `<expression>` | コマンドラインコマンドと、 **else**句でコマンドに渡すパラメーターを指定します。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>Remarks
 
 - **If**句に指定された条件が true の場合、条件に従ったコマンドが実行されます。条件が false の場合、 **if**句のコマンドは無視され、コマンドは**else**句で指定されているすべてのコマンドを実行します。
 

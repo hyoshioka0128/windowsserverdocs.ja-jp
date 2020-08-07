@@ -1,20 +1,18 @@
 ---
 title: auditpol remove
 description: Auditpol remove コマンドの参照記事。指定されたアカウントまたはすべてのアカウントのユーザーごとの監査ポリシーを削除します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: be42ec55-235c-44f7-9abd-ed1cf3f5b1f5
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: aada45bdc128c3122f459813d6f015f58532de18
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 8560f1c9d951f7c2c0cfd93638a85d9e43880da5
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85923729"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895380"
 ---
 # <a name="auditpol-remove"></a>auditpol remove
 

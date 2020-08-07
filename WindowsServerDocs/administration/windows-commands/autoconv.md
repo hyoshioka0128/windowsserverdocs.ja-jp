@@ -1,20 +1,18 @@
 ---
 title: autoconv
 description: ファイルアロケーションテーブル (Fat) および Fat32 ボリュームを NTFS ファイルシステムに変換する autoconv コマンドのリファレンス記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 17281e54-0b18-4e84-94ac-24586c82df4e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c6d54f413ab9d4f680f59294a3f01c1de02db222
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 9f4c7ed1a2c370de46e02130fd06e1b9326207e9
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85923569"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895264"
 ---
 # <a name="autoconv"></a>autoconv
 

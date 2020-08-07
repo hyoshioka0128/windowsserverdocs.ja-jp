@@ -1,20 +1,18 @@
 ---
 title: helpctr
 description: Helpctr.exe コマンドの参照記事。 このコマンドは非推奨とされており、Windows の将来のリリースでサポートされるとは限りません。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: d19ff7dc-57fb-49b2-aad7-b6b040f3fb49
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8954e726227e193d442240a5a875274654f25dc3
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 832d7880e53c14f211d545679dd56dc73ec30392
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86957124"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87888433"
 ---
 # <a name="helpctr"></a>helpctr
 

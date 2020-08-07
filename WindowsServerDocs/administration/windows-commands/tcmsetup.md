@@ -1,20 +1,18 @@
 ---
 title: tcmsetup
 description: TAPI クライアントを設定および無効にする方法について説明します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 15e0c10f-996f-4301-92e5-943f7ee8212d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0e453ef94aedb8920c0310123ff6033fafbaddab
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: e078439fcb9889f075efd364ea9530bdfb8db26a
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86958624"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87881799"
 ---
 # <a name="tcmsetup"></a>tcmsetup
 
@@ -25,7 +23,7 @@ ms.locfileid: "86958624"
 ## <a name="syntax"></a>構文
 
 ```
-tcmsetup [/q] [/x] /c <Server1> [<Server2> …] 
+tcmsetup [/q] [/x] /c <Server1> [<Server2> …]
 tcmsetup  [/q] /c /d
 ```
 
@@ -41,14 +39,14 @@ tcmsetup  [/q] /c /d
 |/d|リモート サーバーの一覧をクリアします。 リモート サーバー上にある TAPI サービス プロバイダーを使用できなくなり、TAPI クライアントを無効にします。|
 |/?|コマンド プロンプトにヘルプを表示します。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>Remarks
 
 -   この手順を実行するには、ローカル コンピューターの Administrators グループのメンバーであるか、適切な権限が委任されている必要があります。 コンピューターがドメインに追加されると、Domain Admins グループのメンバーは、この手順を実行できる場合があります。 セキュリティの点から、[**別のユーザーとして実行**] を使用してこの手順を実行することを検討してください。
 -   TAPI が正しく機能するためには、実行する必要があります **tcmsetup** TAPI クライアントによって使用されるリモート サーバーを指定します。
 -   クライアント ユーザーは、TAPI サーバー上、電話または回線を使用できるように、テレフォニー サーバーの管理者は、電話または回線にユーザーを割り当てる必要があります。
 -   このコマンドによって作成されるテレフォニー サーバーの一覧には、クライアントで利用できるテレフォニー サーバーの既存の一覧が置き換えられます。 このコマンドを使用、既存のリストに追加することはできません。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

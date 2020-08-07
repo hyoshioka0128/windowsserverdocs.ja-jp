@@ -1,20 +1,18 @@
 ---
 title: gpupdate
 description: グループポリシー設定を更新する gpupdate コマンドのリファレンス記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 2fd4e567-2ce1-4637-b611-c2f0895e5708
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 78ff3f50a53cfa8f2dd2e1050e6b904896b51cfd
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: bc17be77c17ad45dfa1ce8d8d112f86a46f67262
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924600"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87888531"
 ---
 # <a name="gpupdate"></a>gpupdate
 

@@ -1,20 +1,18 @@
 ---
 title: ftp mdir
 description: Ftp mdir コマンドの参照記事。リモートディレクトリ内のファイルとサブディレクトリのディレクトリ一覧を表示します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 90eec45b-558b-4b8d-bbe4-b56d98e1ca70
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0dc8e5d3eb7ab6f8f2034be03b5fdd65122921ec
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: ddd4a5adb282464d2b5a202ea8ed2838be7a4676
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86957204"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87888724"
 ---
 # <a name="ftp-mdir"></a>ftp mdir
 
@@ -49,7 +47,7 @@ mdir dir1 dir2 -
 mdir dir1 dir2 dirlist.txt
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

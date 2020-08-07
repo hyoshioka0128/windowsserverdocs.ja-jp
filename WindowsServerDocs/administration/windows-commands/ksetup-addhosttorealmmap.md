@@ -1,20 +1,18 @@
 ---
 title: ksetup addhosttorealmmap
 description: Ksetup addhost almmap コマンドの参照記事。このコマンドは、指定されたホストと領域の間にサービスプリンシパル名 (SPN) マッピングを追加します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 237742d5-fa68-466c-b97e-636f489248ea
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 830db84e210b94088e74fd08909f7c47ff84df98
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 9722560a9ddebd01120dd60661ec895771ff9c6b
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85925575"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87888141"
 ---
 # <a name="ksetup-addhosttorealmmap"></a>ksetup addhosttorealmmap
 

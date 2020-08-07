@@ -1,20 +1,18 @@
 ---
 title: auditpol resourceSACL
 description: リソースシステムアクセス制御リスト (Sacl) を構成する auditpol resourceSACL コマンドの参照記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 28771ba7-967a-45e9-9bf0-b2a2673070f0
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4558d18b065cd668294952131b494342d600aee0
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: b20c97fce42bb57613ac421eabc5ac7acf7a921d
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955494"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895357"
 ---
 # <a name="auditpol-resourcesacl"></a>auditpol resourceSACL
 
@@ -92,7 +90,7 @@ auditpol /resourceSACL /type:File /view
 auditpol /resourceSACL /type:File /view /user:MYDOMAIN\myuser
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

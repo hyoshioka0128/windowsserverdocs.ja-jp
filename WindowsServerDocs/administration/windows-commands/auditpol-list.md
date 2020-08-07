@@ -1,20 +1,18 @@
 ---
 title: auditpol list
 description: '[Auditpol リスト] コマンドの参照記事。監査ポリシーのカテゴリとサブカテゴリを一覧表示したり、ユーザーごとの監査ポリシーが定義されているユーザーの一覧を表示したりします。'
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 45502abe-3d6e-4e13-94f0-8e6fcb6db860
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a0ce67b9907fa4c5207d75422dc972d70f5e6eea
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 5047708056e4e926dc917b80b4b0a41ce5f9d773
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85923715"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895425"
 ---
 # <a name="auditpol-list"></a>auditpol list
 

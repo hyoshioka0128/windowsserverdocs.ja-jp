@@ -1,20 +1,18 @@
 ---
 title: graftabl
 description: Graftabl コマンドのリファレンス記事。 Windows オペレーティングシステムで、拡張文字セットをグラフィックモードで表示できるようにします。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: b08351d4-3d24-490c-86f6-1252da11d923
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9259833856ec5c6de402b0db0a4de4636a66f508
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: cd20baaca94c13e725cf3121ba7a9f4f9f5524b1
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924591"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87888508"
 ---
 # <a name="graftabl"></a>graftabl
 
@@ -35,7 +33,7 @@ graftabl /status
 | /status | このコマンドによって使用されている現在のコードページを表示します。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>Remarks
 
 - **Graftabl**コマンドは、指定したコードページの拡張文字のモニター表示にのみ影響します。 コンソールの実際の入力コードページは変更されません。 コンソールの入力コードページを変更するには、 [mode](mode.md)または[chcp](chcp.md)コマンドを使用します。
 

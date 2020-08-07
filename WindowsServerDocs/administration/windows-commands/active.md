@@ -1,20 +1,18 @@
 ---
 title: active
 description: ベーシックディスク上のアクティブなコマンドの参照記事は、パーティションをアクティブとしてマークします。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 1f25da2e-87fc-4392-a7ee-f38d09b7873c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a5df2f67c087be31190c512be0f6b20d8a1d72cb
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 60bc5d3034d576d959322d419bfe7c1937da015d
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924145"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895613"
 ---
 # <a name="active"></a>active
 

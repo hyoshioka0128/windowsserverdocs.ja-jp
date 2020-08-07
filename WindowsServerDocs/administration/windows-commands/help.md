@@ -1,20 +1,18 @@
 ---
 title: help
 description: 使用可能なコマンドの一覧または指定されたコマンドの詳細なヘルプ情報を表示する、ヘルプコマンドの参照記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: c65b5ac3-711a-4368-95b8-ba82e2d00713
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 562bb725998cb58eb9a4a9ce9078a833bc0e7781
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: b91b93b5ef8964cb73e9bb122f4e53d9d8343086
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924571"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87888495"
 ---
 # <a name="help"></a>help
 

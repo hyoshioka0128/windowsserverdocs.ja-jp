@@ -1,20 +1,18 @@
 ---
 title: 属性
 description: '[属性] コマンドの参照記事。ディスクまたはボリュームの属性を表示、設定、またはクリアします。'
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: da67c481-b3b1-4aa9-840a-10828ef1b6e5
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d0d078100188455e737eccedb6955e9634d2c8a6
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 7f887c69329cc572d25205161df3928dcf769200
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85923822"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895475"
 ---
 # <a name="attributes"></a>属性
 

@@ -1,20 +1,18 @@
 ---
 title: get DriverPackageFile
 description: ドライバーパッケージについての情報を表示する get DriverPackageFile の参照記事。ドライバーパッケージに含まれるドライバーとファイルを含みます。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: f01a2c67-7e9c-4aad-b625-383f5a1fca25
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1daa93cb8976229c4c847390416f9332769c5ff5
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 6c80267f90608dca36ef9460eb23b66689022517
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932245"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87879750"
 ---
 # <a name="get-driverpackagefile"></a>get DriverPackageFile
 
@@ -32,7 +30,7 @@ WDSUTIL /Get-DriverPackageFile /InfFile:<Inf File path> [/Architecture:{x86 | ia
 |---------------------------|------------------------------------------------------------------------|
 | /InfFile:\<Inf File path> | ドライバー パッケージの .inf ファイルの完全パスとファイル名を指定します。 |
 |    [/アーキテクチャ: {x86    |                                  ia64                                  |
-|     [/Show: {Drivers      |                                 Files                                  |
+|     [/Show: {Drivers      |                                 ファイル                                  |
 
 ## <a name="examples"></a>例
 

@@ -1,20 +1,18 @@
 ---
 title: taskkill
 description: 1つ以上のタスクまたはプロセスを終了する taskkill のリファレンス記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 2b71e792-08b6-46d4-95a5-cb6336a79524
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 061fd33e44f207b835987d35a812426899e6dd35
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: a89aa5a3014168aa9d2bd69b9197c899e02a186d
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936685"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87881835"
 ---
 # <a name="taskkill"></a>taskkill
 
@@ -58,7 +56,7 @@ taskkill [/s <computer> [/u [<Domain>\]<UserName> [/p [<Password>]]]] {[/fi <Fil
 | WINDOWTITLE |         eq、ne         |                                                                 ウィンドウのタイトル                                                                 |
 |   モジュール   |         eq、ne         |                                                                   DLL 名                                                                   |
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>Remarks
 * リモート システムが指定されているときに、WINDOWTITLE と状態のフィルターはサポートされていません。
 * ワイルドカード文字 ( **\\** ) は、フィルターが適用されている場合にのみ<em>、**/im</em>オプションに受け入れられ*ます。
 * リモート プロセスの終了は常に実行が強制的に、かどうかに関係なく、 **/f** オプションを指定します。

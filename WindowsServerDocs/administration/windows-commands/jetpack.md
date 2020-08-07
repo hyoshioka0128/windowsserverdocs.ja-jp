@@ -1,20 +1,18 @@
 ---
 title: jetpack
 description: Windows インターネットネームサービス (WINS) または動的ホスト構成プロトコル (DHCP) データベースを圧縮する、jetpack コマンドのリファレンス記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 82a2b7ef-0db5-4575-a028-8acb0bf6c7ba
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b0aa52bad06865641da5fabf25c27ceb8c7a0bbd
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 6850c7d00f11278bbc904f7ad7d2e7edaf30d229
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924329"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87888194"
 ---
 # <a name="jetpack"></a>jetpack
 

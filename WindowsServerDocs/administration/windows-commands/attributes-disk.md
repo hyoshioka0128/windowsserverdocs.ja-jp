@@ -1,20 +1,18 @@
 ---
 title: attributes disk
 description: ディスクの属性を表示、設定、または消去する disk コマンドの属性に関するリファレンス記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: eed57071-c1c6-4394-9542-62b52a878c92
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 02ad39b84afb2487b388d046d6409a682b58615b
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: d6ebdd831a9ddfe1224c641a979ed972672a3ba3
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85923897"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895492"
 ---
 # <a name="attributes-disk"></a>attributes disk
 

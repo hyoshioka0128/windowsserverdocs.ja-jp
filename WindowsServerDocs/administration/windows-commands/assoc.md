@@ -1,20 +1,18 @@
 ---
 title: assoc
 description: ファイル名拡張子の関連付けを表示または変更する assoc コマンドの参照記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 237bedda-b24c-4fec-a39c-9b7eacf96417
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6e6d72dce2a3e820b52a33bf11dbf38890278fb8
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: e802756bc1d70e077126170a94a8b8ac6f72dc96
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924040"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895537"
 ---
 # <a name="assoc"></a>assoc
 
@@ -37,7 +35,7 @@ assoc [<.ext>[=[<filetype>]]]
 | `<filetype>` | 指定したファイル名拡張子に関連付けるファイルの種類を指定します。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-### <a name="remarks"></a>注釈
+### <a name="remarks"></a>Remarks
 
 - ファイル名拡張子のファイルの種類の関連付けを削除するには、SPACE キーを押して等号の後に空白を追加します。
 

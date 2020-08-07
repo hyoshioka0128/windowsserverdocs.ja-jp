@@ -1,20 +1,18 @@
 ---
 title: gpfixup
 description: Gpfixup コマンドの参照記事。ドメイン名変更操作後のグループポリシーオブジェクトおよびグループポリシーリンク内のドメイン名の依存関係を修正します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 2b145410-fc75-4526-932d-f16b7ee3aaef
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 15bef10afa49fafebfad485836bd6f9cdd5f496e
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 9379efe545544028980cf570de30bc6d3d816c81
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86957174"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87888563"
 ---
 # <a name="gpfixup"></a>gpfixup
 
@@ -61,7 +59,7 @@ gpfixup /olddns: MyOldDnsName /newdns:MyNewDnsName /oldnb:MyOldNetBIOSName /newn
 gpfixup /olddns: MyOldDnsName /newdns:MyNewDnsName /dc:MyDcDnsName 2>&1 >gpfixup.log
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

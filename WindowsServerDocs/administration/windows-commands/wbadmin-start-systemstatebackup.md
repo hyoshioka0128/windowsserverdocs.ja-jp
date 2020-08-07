@@ -1,20 +1,18 @@
 ---
 title: wbadmin start systemstatebackup
 description: Wbadmin start systemstatebackup のリファレンス記事。ローカルコンピューターのシステム状態のバックアップを作成し、指定された場所に保存します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 998366c1-0a64-45e6-9ed3-4c3f5b8406f0
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 355dcff0f2b5ef3adc4f064651f0cea23a92d48f
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 386f5053dd547c4b5285a2b9a09cea76238dcf5b
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86954474"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87879649"
 ---
 # <a name="wbadmin-start-systemstatebackup"></a>wbadmin start systemstatebackup
 
@@ -42,7 +40,7 @@ wbadmin start systemstatebackup
 | -backuptarget | バックアップを保存する場所を指定します。 記憶域の場所には、次の形式のドライブ文字または GUID ベースのボリュームが必要です: \\ \\ ? \ volume{*guid*}。</br>Windows Server 2008 を実行しているコンピューターでは、共有ネットワークフォルダーへのシステム状態のバックアップはサポートされていません。 サーバーで Windows Server 2008 R2 以降が実行されている場合は、 **backuptarget: \\ \\ \\ servername\sharedFolder**コマンドを使用してシステム状態のバックアップを保存できます。 |
 |    -quiet     |                                                                                                                                                                                                   ユーザーにプロンプトを表示せずにサブコマンドを実行します。                                                                                                                                                                                                    |
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>Remarks
 
 システム状態のバックアップをボリュームに保存する方法の詳細については、Microsoft サポート技術情報の記事 944530 () を参照してください [https://go.microsoft.com/fwlink/?LinkId=110439](https://go.microsoft.com/fwlink/?LinkId=110439) 。
 
@@ -53,7 +51,7 @@ wbadmin start systemstatebackup
 wbadmin start systemstatebackup -backupTarget:f:
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 -   [Wbadmin](wbadmin.md)

@@ -1,20 +1,18 @@
 ---
 title: attrib
 description: ファイルまたはディレクトリに割り当てられた属性を表示、設定、または削除する、attrib コマンドの参照記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 5e763ca5-21a2-45d2-b26d-a9c44c99091a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bc5d780ffd32976df306e2221987f24ec8553854
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 73651c85ac1cc35c54845ffe207cea3f0887cd8f
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85923906"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895507"
 ---
 # <a name="attrib"></a>attrib
 

@@ -1,20 +1,18 @@
 ---
 title: ksetup delenctypeattr
 description: Ksetup delenctypeattr の参照記事。ドメインの暗号化の種類の属性が削除されます。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 4fc25ef3-e271-4229-a712-72c507df55aa
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5aabbb99f40d8d22189d6abccc188161b7ee2f5c
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 7901cdb53c051885e5e4040cbc28b7cae0ed2a4d
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85925482"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87888038"
 ---
 # <a name="ksetup-delenctypeattr"></a>ksetup delenctypeattr
 

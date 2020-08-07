@@ -1,20 +1,18 @@
 ---
 title: auditpol backup
 description: Auditpol backup コマンドの参照記事。このコマンドは、システム監査ポリシー設定、すべてのユーザーのユーザーごとの監査ポリシー設定、およびすべての監査オプションをコンマ区切り値 (CSV) テキストファイルにバックアップします。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: dc84e581-aa0f-4c91-b13b-1d970bad5517
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8678dbc80b664e3ab667f197f708fbbdbbe40dc7
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 6f1ddca1dc141e4905ae4b1cd6e9041d9c8c1ce0
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85923811"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895461"
 ---
 # <a name="auditpol-backup"></a>auditpol backup
 

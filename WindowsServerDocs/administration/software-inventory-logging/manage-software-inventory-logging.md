@@ -1,20 +1,18 @@
 ---
 title: ソフトウェア インベントリ ログの管理
 description: ソフトウェアインベントリログの管理方法について説明します。
-ms.prod: windows-server
-ms.technology: manage-software-inventory-logging
 ms.topic: article
 ms.assetid: 812173d1-2904-42f4-a9e2-de19effec201
 author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 263a0fdfa5207924e170ebd198ce53749431e49d
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 1df4ffbb0cdc79527bef0fd2e3400d78995d5474
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87408821"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895666"
 ---
 # <a name="manage-software-inventory-logging"></a>ソフトウェア インベントリ ログの管理
 
@@ -242,7 +240,7 @@ Windows Server 上にローカルに保存されているすべてのデータ (
 
 これらの用途をサポートするため、ソフトウェア インベントリ ログにはそれぞれの構成オプションに関連したレジストリ エントリがあります。  これらのレジストリ値は、\ HKEY_LOCAL_MACHINE SOFTWARE\Microsoft\Windows\SoftwareInventoryLogging. にあります。 \\
 
-| 機能 | 値名 | Data | 対応するコマンドレット (実行中の OS でのみ使用可能) |
+| 機能 | 値名 | データ | 対応するコマンドレット (実行中の OS でのみ使用可能) |
 | --- | --- | --- | --- |
 |機能の開始と停止|CollectionState|1 または 0|[Start-SilLogging](https://technet.microsoft.com/library/dn283391.aspx)、 [Stop-SilLogging](https://technet.microsoft.com/library/dn283394.aspx)|
 |ネットワーク上のターゲット集計ポイントの指定|TargetUri|string|[Set-SilLogging](https://technet.microsoft.com/library/dn283387.aspx) -TargetURI|

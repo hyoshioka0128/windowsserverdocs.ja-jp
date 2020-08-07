@@ -1,20 +1,18 @@
 ---
 title: add
 description: '[追加] コマンドの参照記事。シャドウコピーするボリュームのセットにボリュームを追加するか、エイリアス環境にエイリアスを追加します。'
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 47efce7a-86d2-4872-ae31-baa108757afd
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7b409b0355f4e112773c3f847466586fe3c84654
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 8ba5f425617fe48d10a900c82fbfcf9c174214f5
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924075"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895581"
 ---
 # <a name="add"></a>add
 

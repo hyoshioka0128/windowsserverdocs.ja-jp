@@ -1,20 +1,18 @@
 ---
 title: irftp
 description: Irftp コマンドの参照記事。赤外線リンク経由でファイルを送信します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: e15c60a7-546d-4e9f-9871-43aaa1b569d6
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 92bb484650245555597121c8b6f6378d3c09209c
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: bd1ecf6b1fafcf9070edb717d5c4ce5aa861fabd
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924350"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87888227"
 ---
 # <a name="irftp"></a>irftp
 

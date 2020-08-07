@@ -1,20 +1,18 @@
 ---
 title: automount
 description: Automount コマンドの参照記事。自動マウント機能を有効または無効にします。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 4635fc91-a477-4f17-8dcc-aa08854bfe45
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 297a6592dad6a70aae218b5f1e8426fe0c855e63
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: a31e1569f1db4f47c63aae2e859587f5088dcbc4
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955864"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895200"
 ---
 # <a name="automount"></a>automount
 
@@ -58,7 +56,7 @@ automount enable
 automount disable
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

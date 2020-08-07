@@ -1,20 +1,18 @@
 ---
 title: タスクの詳細と通知の表示
 description: サーバー マネージャー
-ms.prod: windows-server
-ms.technology: manage-server-manager
 ms.topic: article
 ms.assetid: 95117407-2dd3-4f9a-841f-4331be3544c3
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 726b2701e5b84dd17e157283b0ca06c51c7ad2e0
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: b347f5cf3a3d752c500e602b84889afa9c580ab0
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87178688"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895700"
 ---
 # <a name="view-task-details-and-notifications"></a>タスクの詳細と通知の表示
 

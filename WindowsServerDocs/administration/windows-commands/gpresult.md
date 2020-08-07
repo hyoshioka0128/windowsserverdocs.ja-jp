@@ -1,20 +1,18 @@
 ---
 title: gpresult
 description: リモートユーザーとコンピューターのポリシーの結果セット (RSoP) 情報を表示する、gpresult コマンドのリファレンス記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: dfaa3adf-2c83-486c-86d6-23f93c5c883c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b55db74c0c8f9c527ade8412f50ef83ea675a5c6
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 5c65dd4799441dca44db24f532be66349b1249a5
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924639"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87888569"
 ---
 # <a name="gpresult"></a>gpresult
 
@@ -22,7 +20,7 @@ ms.locfileid: "85924639"
 
 リモートユーザーとコンピューターのポリシーの結果セット (RSoP) 情報を表示します。 ファイアウォール経由でリモートターゲットコンピューターの RSoP レポートを使用するには、ポートで受信ネットワークトラフィックを有効にするファイアウォール規則が必要です。
 
-## <a name="syntax"></a>Syntax
+## <a name="syntax"></a>構文
 
 ```
 gpresult [/s <system> [/u <username> [/p [<password>]]]] [/user [<targetdomain>\]<targetuser>] [/scope {user | computer}] {/r | /v | /z | [/x | /h] <filename> [/f] | /?}
@@ -47,7 +45,7 @@ gpresult [/s <system> [/u <username> [/p [<password>]]]] [/user [<targetdomain>\
 | /z | グループポリシーに関する利用可能なすべての情報を表示します。 これには、1以上の優先順位で適用された詳細設定が含まれます。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>Remarks
 
 - グループポリシーは、組織内のユーザーとコンピューターに対してプログラム、ネットワークリソース、およびオペレーティングシステムがどのように動作するかを定義および制御するための主要な管理ツールです。 Active directory 環境では、グループポリシーは、サイト、ドメイン、または組織単位のメンバーシップに基づいてユーザーまたはコンピューターに適用されます。
 

@@ -1,20 +1,18 @@
 ---
 title: icacls
 description: Icacls コマンドの参照記事。指定されたファイルの随意アクセス制御リスト (DACL) を表示または変更し、格納されている Dacl を指定したディレクトリ内のファイルに適用します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 403edfcc-328a-479d-b641-80c290ccf73e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 08/21/2018
-ms.openlocfilehash: 386e008ef7095cbef8d84b33682b494d8d6c9c52
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 5bb8842cdc91823a83d1b8ccfa305c6393433901
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924524"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87888404"
 ---
 # <a name="icacls"></a>icacls
 
@@ -53,7 +51,7 @@ icacls <directory> [/substitute <sidold> <sidnew> [...]] [/restore <aclfile> [/c
 | /restore `<ACLfile>` [/c] [/l] [/q] | 格納されている Dacl をから `<ACLfile>` 指定されたディレクトリ内のファイルに適用します。 パラメーターを指定してを使用する必要があり `<directory>` ます。 |
 | /inheritancelevel:`[e | d | r]` | 継承レベルを設定します。次のような場合があります。<ul><li>**e** -継承を有効にする</li><li>**d** -継承を無効にして ace をコピーする</li><li>**r** -継承されたすべての ace を削除します。</li></ul> |
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>Remarks
 
 - Sid は、数字またはフレンドリ名の形式で指定できます。 数値形式を使用する場合は、 **&#42;** ワイルドカード文字を SID の先頭に接辞します。
 

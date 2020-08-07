@@ -1,20 +1,18 @@
 ---
 title: ksetup getenctypeattr
 description: Ksetup getenctypeattr コマンドの参照記事。ドメインの暗号化の種類の属性を取得します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 6c7ec002-355e-474d-bc27-27215049f1a8
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1fa86e8f9a9f2a2e552c7b968c447707b09e7e86
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 27dfd66e5108aa4704b999671397cb90049d1a15
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929143"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887918"
 ---
 # <a name="ksetup-getenctypeattr"></a>ksetup getenctypeattr
 

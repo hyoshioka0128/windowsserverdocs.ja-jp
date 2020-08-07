@@ -1,20 +1,18 @@
 ---
 title: DriverPackages を削除します。
 description: 4emove-DriverPackages のリファレンス記事。サーバーからドライバーパッケージを削除します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: a527084b-305e-4d3d-95c3-4f5a5ea0637b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 26eab12b13c6a2d82787901d5ca482c5e4b3c72a
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 740b0f59967a14b3cabbd83630fd1ef7568ac696
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85933350"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87879700"
 ---
 # <a name="remove-driverpackages"></a>DriverPackages を削除します。
 

@@ -1,20 +1,18 @@
 ---
 title: ksetup addkdc
 description: Ksetup addkdc コマンドの参照記事。指定された Kerberos 領域のキー配布センター (KDC) アドレスを広告します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 98bfc23a-14c4-401c-bcb3-9903c5cdde64
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 32839c0f8c1e408cfa6ab1e067c250551ee7b490
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 13f3a2e2343ae8161968d6968babc2cafd78e053
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85925568"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87888133"
 ---
 # <a name="ksetup-addkdc"></a>ksetup addkdc
 

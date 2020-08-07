@@ -1,20 +1,18 @@
 ---
 title: ソフトウェア インベントリ ログ アグリゲーター
-description: ソフトウェアインベントリログアグリゲーターをインストールして管理する方法について説明します。
-ms.prod: windows-server
-ms.technology: manage-software-inventory-logging
+description: ソフトウェアインベントリログアグリゲーターのインストールと管理の方法について説明します。
 ms.topic: article
 ms.assetid: e4230a75-6bcd-47d9-ba92-a052a90a6abc
 author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 350187c0ad7490a0698e4a3b99ef710b632f6c6c
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 697ca5e27db6a937c31b4dad072eef19a6f3df06
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87408841"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895675"
 ---
 # <a name="software-inventory-logging-aggregator"></a>ソフトウェア インベントリ ログ アグリゲーター
 
@@ -67,7 +65,7 @@ SILA は Windows Server 上にインストールされるソフトウェアで�
 
 -   **Cio および Finance コントローラー**。組織の IT 展開における Microsoft エンタープライズソフトウェアの使用状況を報告する必要があります。
 
-## <a name="getting-started"></a>作業の開始
+## <a name="getting-started"></a>はじめに
 **前提条件**
 
 集計またはレポートの対象となる少なくとも 1 つのサーバー上の VM または物理ハードウェアにソフトウェア インベントリ ログ アグリゲーター (SIL アグリゲーター) が存在する
@@ -160,7 +158,7 @@ SIL アグリゲーターを Windows Server にインストールする前に次
 
 -   Windows 認証が必要な場合、**SQL Server に対して sysadmin 特権を有するアカウントでサーバーにログオンしています**。
 
-    OR
+    または
 
     SQL 認証が必要な場合、**SQL 管理者特権を有するアカウントに対するパスワードがあります**。
 

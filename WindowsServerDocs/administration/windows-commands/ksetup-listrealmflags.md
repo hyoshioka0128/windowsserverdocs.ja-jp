@@ -1,20 +1,18 @@
 ---
 title: ksetup listrealmflags
 description: Ksetup listrealmflags コマンドの参照記事。 ksetup によって報告される使用可能な領域フラグを一覧表示します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: aa96e4da-6b98-4c05-bccf-73cbf33258c2
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d094b7d627885d25313b73bb51a1bbeeec2832d6
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 5e69b91c8fe5ca7bddecb12a72a1e8ef31bec3dd
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85933684"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887853"
 ---
 # <a name="ksetup-listrealmflags"></a>ksetup listrealmflags
 
@@ -33,7 +31,7 @@ ksetup /listrealmflags
 | 値 | 領域フラグ | 説明 |
 | ----- | ---------- | ----------- |
 | 0xF | All | すべての領域フラグが設定されます。 |
-| 0x00 | None | 領域フラグが設定されておらず、追加の機能は有効になっていません。 |
+| 0x00 | なし | 領域フラグが設定されておらず、追加の機能は有効になっていません。 |
 | 0x01 | sendaddress | この IP アドレスは、チケット保証チケット内に含まれます。 |
 | 0x02 | tcpsupported | この領域では、伝送制御プロトコル (TCP) とユーザーデータグラムプロトコル (UDP) の両方がサポートされています。 |
 | 0x04 | delegate | この領域のすべてのユーザーが委任に対して信頼されています。 |

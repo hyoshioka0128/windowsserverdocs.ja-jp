@@ -1,20 +1,18 @@
 ---
 title: wbadmin start sysrecovery
 description: Wbadmin start sysrecovery の参照記事。指定したパラメーターを使用してシステム回復 (ベアメタル回復) を実行します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 95b8232f-7c42-452b-838e-15b0cf6faebe
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a3d7be286e124af9e31c8607827a97f967b907ae
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 66f302d07a5776757d9094299c8961161f2d6a15
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86954504"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87879685"
 ---
 # <a name="wbadmin-start-sysrecovery"></a>wbadmin start sysrecovery
 
@@ -65,7 +63,7 @@ wbadmin start sysrecovery -version:03/31/2013-09:00 -backupTarget:d:
 wbadmin start sysrecovery -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 -   [Wbadmin](wbadmin.md)
