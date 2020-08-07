@@ -1,20 +1,18 @@
 ---
 title: 修復
 description: 参照記事 * * * *-
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 9f84f661-f3cd-48c8-bf08-87819cf626fe
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3e9afb6c418558078496871b71bfaff706753b0a
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: d646318b41881783e12b07da1c72d2a9cc31f853
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936763"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87883777"
 ---
 # <a name="repair"></a>修復
 
@@ -38,7 +36,7 @@ repair disk=<n> [align=<n>] [noerr]
 | 位置\=<n> |          すべてのボリュームまたはパーティションエクステントを最も近いアラインメント境界に配置します。 *n*は、 \( \) ディスクの先頭から最も近いアラインメント境界までのキロバイト kb 数です。           |
 |   noerr    | スクリプトの場合のみ。 エラーが発生しても、エラーが発生しなかったかのように DiskPart はコマンドの処理を続けます。 このパラメーターは、エラー発生すると、DiskPart はエラー コードを生成して終了します。 |
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>Remarks
 
 -   指定されたダイナミックディスクには、RAID 5 ボリューム内の障害が発生したディスク領域の合計サイズ以上の空き領域が必要 \- です。
 

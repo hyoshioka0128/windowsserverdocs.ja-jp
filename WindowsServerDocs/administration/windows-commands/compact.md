@@ -1,20 +1,18 @@
 ---
 title: compact
 description: Compact コマンドの参照記事。 NTFS パーティション上のファイルまたはディレクトリの圧縮を表示または変更します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 429b3752-df0a-43a4-a210-df2f3ad03c3b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c17f7c934ecd4b6988b3ab606059a2acd31b852b
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: a211d6839229ac22af10dd4c8fcf69b1d222a4fb
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929001"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87892613"
 ---
 # <a name="compact"></a>compact
 
@@ -40,7 +38,7 @@ compact [/c | /u] [/s[:<dir>]] [/a] [/i] [/f] [/q] [<filename>[...]]
 | `<filename>` | ファイルまたはディレクトリを指定します。 複数のファイル名を使用できます。また、 **&#42;** と **?** ワイルドカード文字。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>Remarks
 
 - このコマンドは、NTFS ファイルシステムの圧縮機能のコマンドラインバージョンです。 ディレクトリの圧縮状態は、ファイルがディレクトリに追加されたときに自動的に圧縮されるかどうかを示します。 ディレクトリの圧縮状態を設定しても、必ずしもディレクトリに既に存在するファイルの圧縮状態が変更されるわけではありません。
 

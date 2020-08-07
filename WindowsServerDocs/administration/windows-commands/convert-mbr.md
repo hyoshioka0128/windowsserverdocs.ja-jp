@@ -1,20 +1,18 @@
 ---
 title: convert mbr
 description: Mbr の変換コマンドの参照記事。 GUID パーティションテーブル (GPT) パーティションスタイルを持つ空のベーシックディスクを、マスターブートレコード (MBR) パーティションスタイルを持つベーシックディスクに変換します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: a635a4c0-af73-4330-b021-51d483424537
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 784521c99e3fc0cf8d372f95424af785636a0687
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 61f387d55f310d2ea610aa3033464c66addfc353
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86958514"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87892552"
 ---
 # <a name="convert-mbr"></a>convert mbr
 
@@ -46,7 +44,7 @@ convert mbr [noerr]
 convert mbr
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

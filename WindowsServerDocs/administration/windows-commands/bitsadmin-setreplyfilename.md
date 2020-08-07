@@ -1,20 +1,18 @@
 ---
 title: bitsadmin setreplyfilename
 description: Bitsadmin setreplyfilename コマンドの参照記事。サーバーのアップロード-応答を含むファイルのパスを指定します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: c26d3342-0533-40b1-a13e-e09678232b25
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 45582035ed986e50129e894fbabaffde5b219548
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: dd6254d0d3d642796930cbaaa95aa668e3886f3c
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85927560"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87892945"
 ---
 # <a name="bitsadmin-setreplyfilename"></a>bitsadmin setreplyfilename
 

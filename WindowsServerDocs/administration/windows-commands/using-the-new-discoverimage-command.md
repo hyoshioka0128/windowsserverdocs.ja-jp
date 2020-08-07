@@ -1,20 +1,18 @@
 ---
 title: 検出イメージ
 description: 既存のブートイメージから新しい検出イメージを作成する検出イメージのリファレンス記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: ede9fbbb-0bba-4309-8c21-3cc13e1dc3cd
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d6730dd2b5ffd7cbec2ed7ec9706747072b36fab
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: b6c84735b868af92c6a3f2f16dc872e12c9f38c1
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932442"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87892408"
 ---
 # <a name="new-discoverimage"></a>検出イメージ
 

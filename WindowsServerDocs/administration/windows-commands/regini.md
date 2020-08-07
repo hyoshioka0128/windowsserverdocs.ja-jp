@@ -1,20 +1,18 @@
 ---
 title: regini
 description: Regini.exe コマンドの参照記事。コマンドラインまたはスクリプトからレジストリを変更し、1つまたは複数のテキストファイルで事前設定された変更を適用します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 5ff18dc3-5bd8-400a-b311-fd73a3267e8c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 56e2d4505db56248b6e4ce9c11caaae1df9a4f08
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: d0653ca97ca4401cb24250bbce1c627b6c683982
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931014"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87883964"
 ---
 # <a name="regini"></a>regini
 
@@ -32,14 +30,14 @@ regini [-m \\machinename | -h hivefile hiveroot][-i n] [-o outputwidth][-b] text
 
 | パラメーター | 説明 |
 |--|--|
-| -m`<\\computername>` | レジストリを変更すると、リモート コンピューターの名前を指定します。 ** \\ ComputerName**という形式を使用します。 |
+| -m `<\\computername>` | レジストリを変更すると、リモート コンピューターの名前を指定します。 ** \\ ComputerName**という形式を使用します。 |
 | -h`<hivefile hiveroot>` | 変更をローカル レジストリ ハイブを指定します。 形式でハイブ ファイルの名前と、hive のルートを指定する必要があります **hivefile hiveroot**します。 |
 | -i`<n>` | コマンドの出力のレジストリ キーのツリー構造を示すために使用するインデント レベルを指定します。 **regdmp.exe**ツール (レジストリキーの現在のアクセス許可をバイナリ形式で取得) では、4の倍数でインデントが使用されるため、既定値は**4**です。 |
 | -o`<outputwidth>` | 文字で、コマンドの出力の幅を指定します。 出力がコマンド ウィンドウに表示され、既定値はウィンドウの幅です。 既定値は、出力をファイルに出力すると場合、 **240** 文字です。 |
 | -b | **regini.exe**の出力が以前のバージョンの**regini.exe**と下位互換性があることを指定します。 |
 | textfiles | レジストリ データを含む 1 つ以上のテキスト ファイルの名前を指定します。 ANSI または Unicode テキスト ファイルの任意の数を指定できます。 |
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>Remarks
 
 次のガイドラインは、主に、 **regini.exe**を使用して適用するレジストリデータを含むテキストファイルの内容に適用されます。
 

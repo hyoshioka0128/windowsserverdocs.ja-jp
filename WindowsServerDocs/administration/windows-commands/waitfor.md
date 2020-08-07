@@ -1,20 +1,18 @@
 ---
 title: waitfor
 description: システムでシグナルを送信または待機する waitfor のリファレンス記事です。 **Waitfor** をネットワーク経由でコンピューターを同期するために使用します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: a48ef70d-4d28-4035-b6b0-7d7b46ac2157
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9a80b606fc91ec146a6808bde97a8d7f0081d0ff
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: e061c36f7cdf949ea76d548a4ed804a0e12169bf
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85937012"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87892241"
 ---
 # <a name="waitfor"></a>waitfor
 
@@ -43,7 +41,7 @@ waitfor [/t <Timeout>] <SignalName>
 |     \<SignalName>     |                                                信号を指定する **waitfor** まで待機するか、または送信します。 *信号名* 小文字は区別されません。                                                 |
 |          /?           |                                                                             コマンド プロンプトにヘルプを表示します。                                                                             |
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>Remarks
 
 -   シグナル名には、225 文字を超えることはできません。 有効な文字には、a ~ z、A ~ Z、0 ~ 9、および拡張文字セット (128 ~ 255) ASCII が含まれます。
 -   使用しない場合 **/s**, 、信号は、ドメイン内のすべてのシステムにブロードキャストされます。 使用する場合 **/s**, 、信号が、指定したシステムにのみ送信します。

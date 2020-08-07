@@ -1,20 +1,18 @@
 ---
 title: mqbkup
 description: Mqbkup コマンドの参照記事。これは、MSMQ メッセージファイルとレジストリ設定をストレージデバイスにバックアップし、以前に保存されたメッセージと設定を復元します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 7bdd41c4-75ef-455f-b241-1d64a4c7acf5
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 00518ab36f1886ccb3a1221a065715668fb02f47
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 7eecb016efd039d87774c3fd869e746df1e60178
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86956924"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87886303"
 ---
 # <a name="mqbkup"></a>mqbkup
 
@@ -41,7 +39,7 @@ mqbkup {/b | /r} <folder path_to_storage_device>
 | `<folder path_to_storage_device>` | MSMQ メッセージファイルとレジストリ設定が格納されるパスを指定します。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>Remarks
 
 - バックアップ操作または復元操作の実行中に指定されたフォルダーが存在しない場合、そのフォルダーはユーティリティによって自動的に作成されます。
 
@@ -69,7 +67,7 @@ MSMQ メッセージとレジストリ設定を復元するには、次のよう
 mqbkup /r c:\msmqbkup
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

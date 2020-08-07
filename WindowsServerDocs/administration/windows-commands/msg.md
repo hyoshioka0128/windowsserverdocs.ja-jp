@@ -1,20 +1,18 @@
 ---
 title: msg
 description: リモートデスクトップセッションホストサーバー上のユーザーにメッセージを送信する msg コマンドのリファレンス記事
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 9501cf3e-568e-4982-9987-8daecc6c17ff
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6eff557b1fb7eb2c5f67b2902762786bbfc839c1
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 044d6c7e6dbf7c92cb0c947fcb60eb79ab1db05b
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85934973"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87886195"
 ---
 # <a name="msg"></a>msg
 

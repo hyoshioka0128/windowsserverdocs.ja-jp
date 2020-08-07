@@ -1,20 +1,18 @@
 ---
 title: reg restore
 description: レジストリに保存されたサブキーとエントリを書き込む reg restore コマンドの参照記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: a51f1c0c-969b-4b76-930a-c8bb14dea26e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1483fc6998d7b286a81dc3cb1df021afb7e66650
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 9642c0973968b3092f6f988017e8c4ad1ef16b09
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931039"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884028"
 ---
 # <a name="reg-restore"></a>reg restore
 
@@ -34,13 +32,13 @@ reg restore <keyname> <filename>
 | `<filename>` | レジストリに書き込まれるコンテンツを含むファイルのパスと名前を指定します。 このファイルは、事前に**reg save**コマンドを使用して作成する必要があり、.hiv 拡張子を持つ必要があります。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>Remarks
 
 - レジストリエントリを編集する前に、 **reg save**コマンドを使用して親サブキーを保存する必要があります。 編集に失敗した場合は、 **reg 復元**操作を使用して元のサブキーを復元できます。
 
 - **Reg 復元**操作の戻り値は次のとおりです。
 
-    | 値 | [説明] |
+    | 値 | 説明 |
     |--|--|
     | 0 | 成功 |
     | 1 | 障害 |

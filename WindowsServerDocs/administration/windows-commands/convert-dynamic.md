@@ -1,20 +1,18 @@
 ---
 title: convert dynamic
 description: ベーシックディスクをダイナミックディスクに変換する [動的変換] コマンドの参照記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 7b8fa4b1-850f-4e48-b05f-871c883ea33c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8c57986bf46dc7d22eeecfb6d7ad085f5e3f7e8c
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 6a0967cc53d0d5f01035be7edcefd8e9f70c1e59
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86958544"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87892586"
 ---
 # <a name="convert-dynamic"></a>convert dynamic
 
@@ -35,7 +33,7 @@ convert dynamic [noerr]
 | --------- | ----------- |
 | noerr | スクリプト専用です。 エラーが発生しても、エラーが発生しなかったかのように DiskPart はコマンドの処理を続けます。 このパラメーターは、エラー発生すると、DiskPart はエラー コードを生成して終了します。 |
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>Remarks
 
 - ベーシックディスク上の既存のパーティションは、単純ボリュームになります。
 
@@ -47,7 +45,7 @@ convert dynamic [noerr]
 convert dynamic
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

@@ -1,20 +1,18 @@
 ---
 title: mstsc
 description: Mstsc コマンドのリファレンス記事。リモートデスクトップセッションホストサーバーまたはその他のリモートコンピューターへの接続を作成し、既存のリモートデスクトップ接続 (.rdp) 構成ファイルを編集して、クライアント接続マネージャーで作成された従来の接続ファイルを新しい .rdp 接続ファイルに移行します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 59801227-1e7e-4dbd-96e6-f54102a3ce92
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cec9ef281c886964163c233022466d8478d65c79
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: abf4824c50b931944c96307f6c9df42e6924b638
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85934847"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87886157"
 ---
 # <a name="mstsc"></a>mstsc
 
@@ -46,7 +44,7 @@ mstsc.exe /migrate
 | /migrate | クライアント接続マネージャーで作成された従来の接続ファイルを新しい .rdp 接続ファイルに移行します。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>Remarks
 
 - 既定の .rdp は、ユーザーごとに隠しファイルとしてユーザーの**Documents**フォルダーに格納されます。
 

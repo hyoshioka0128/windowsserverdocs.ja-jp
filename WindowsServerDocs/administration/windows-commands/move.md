@@ -1,20 +1,18 @@
 ---
 title: 移動
 description: Move コマンドの参照記事。1つ以上のファイルを1つのディレクトリから別のディレクトリに移動します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: fde290a8-d385-450f-8987-ee837fed667d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4cc1f7c04a54b78da7b24dbedad225a7326766cd
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 5ceeced7e734775138cc47cba9d36981a4433750
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936309"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87886320"
 ---
 # <a name="move"></a>移動
 

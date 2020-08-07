@@ -1,20 +1,18 @@
 ---
 title: reset session
 description: 参照記事 * * * *-
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 4f029ecc-874e-415a-95a8-8b731bae35f9
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 14ef7bdcb8490787b3fadff0cb842070f7a71446
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 2f910dfc1c13b0e8555078acfb4e7ad830049592
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86956235"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87883668"
 ---
 # <a name="reset-session"></a>reset session
 
@@ -41,7 +39,7 @@ reset session {<SessionName> | <SessionID>} [/server:<ServerName>] [/v]
 |/v|実行されているアクションに関する情報を表示します。|
 |/?|コマンド プロンプトにヘルプを表示します。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>Remarks
 -   常に自身のセッションをリセットすることができますが、別のユーザーのセッションをリセットするフル コントロール アクセス許可を持つ必要があります。
 -   セッションでデータが失われると、ユーザーに警告せずにユーザーのセッションをリセットすることができますを注意してください。
 -   セッションをリセットする必要がありますのみが正しく動作しないか、または場合に、応答を停止しています。
@@ -57,6 +55,6 @@ reset session {<SessionName> | <SessionID>} [/server:<ServerName>] [/v]
   reset session 3
   ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 - [コマンドライン構文のキー](command-line-syntax-key.md) 
 [リモートデスクトップサービス (ターミナルサービス) のコマンドリファレンス](remote-desktop-services-terminal-services-command-reference.md)

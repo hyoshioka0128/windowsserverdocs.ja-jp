@@ -1,20 +1,18 @@
 ---
 title: bitsadmin setaclflag
 description: Bitsadmin setaclflag コマンドの参照記事。アクセス制御リスト (ACL) の伝達フラグを設定します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 6e3bcda0-827d-4dfd-8384-d1da018f3e10
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: dcf07f944813c0c8d7a4ff4c4f52c598c0f3bf47
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 14f7268ec1ea8b3c55d4aa8dfe3af45bc6c488f9
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85927955"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87893296"
 ---
 # <a name="bitsadmin-setaclflag"></a>bitsadmin setaclflag
 

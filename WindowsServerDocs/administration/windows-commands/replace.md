@@ -1,20 +1,18 @@
 ---
 title: replace
 description: Replace コマンドを使用してファイルを置換する方法について説明します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 6143661e-d90f-4812-b265-6669b567dd1f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 4ac424154968b4f4c55664d0d20f524345b87986
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 34d1adfc6a92dce33a6a9bbac308d3338db3934e
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722380"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87883686"
 ---
 # <a name="replace"></a>replace
 
@@ -27,15 +25,15 @@ ms.locfileid: "82722380"
 ## <a name="syntax"></a>構文
 
 ```
-replace [<Drive1>:][<Path1>]<FileName> [<Drive2>:][<Path2>] [/a] [/p] [/r] [/w] 
-replace [<Drive1>:][<Path1>]<FileName> [<Drive2>:][<Path2>] [/p] [/r] [/s] [/w] [/u] 
+replace [<Drive1>:][<Path1>]<FileName> [<Drive2>:][<Path2>] [/a] [/p] [/r] [/w]
+replace [<Drive1>:][<Path1>]<FileName> [<Drive2>:][<Path2>] [/p] [/r] [/s] [/w] [/u]
 ```
 
 ### <a name="parameters"></a>パラメーター
 
-|パラメーター|[説明]|
+|パラメーター|説明|
 |---------|-----------|
-|[\<Drive1>:][\<Path1>]\<ファイル名>|ソースファイルまたはファイルのセットの場所と名前を指定します。 *ファイル名*は必須で、ワイルドカード文字 (**&#42;** と **?**) を含めることができます。|
+|[\<Drive1>:][\<Path1>]\<FileName>|ソースファイルまたはファイルのセットの場所と名前を指定します。 *ファイル名*は必須で、ワイルドカード文字 (**&#42;** と **?**) を含めることができます。|
 |[\<Drive2>:][\<Path2>]|コピー先ファイルの場所を指定します。 置換するファイルのファイル名を指定することはできません。 ドライブまたはパスを指定しない場合、 **replace**は現在のドライブとディレクトリをコピー先として使用します。|
 |/a|既存のファイルを置き換える代わりに、新しいファイルをコピー先のディレクトリに追加します。 このコマンドラインオプションは、 **/s**または **/u**コマンドラインオプションと共に使用することはできません。|
 |/p|コピー先ファイルを置き換える前、またはソースファイルを追加する前に、確認を求めるメッセージが表示されます。|
@@ -47,17 +45,17 @@ replace [<Drive1>:][<Path1>]<FileName> [<Drive2>:][<Path2>] [/p] [/r] [/s] [/w] 
 
 ## <a name="remarks"></a>Remarks
 
-- [**置換**] では、ファイルが追加または置換され、ファイル名が画面に表示されます。 **置換**が完了すると、概要行は次のいずれかの形式で表示されます。  
+- [**置換**] では、ファイルが追加または置換され、ファイル名が画面に表示されます。 **置換**が完了すると、概要行は次のいずれかの形式で表示されます。
   ```
   nnn files added
   nnn files replaced
   no file added
   no file replaced
-  ```  
+  ```
 - フロッピーディスクを使用していて、**置換**操作中にディスクを切り替える必要がある場合は、 **/w**コマンドラインオプションを指定して、**交換**によってディスクの切り替えが待機されるようにすることができます。
 - **置換**を使用して、隠しファイルやシステムファイルを更新することはできません。
-- 次の表に、各終了コードとその意味の簡単な説明を示します。  
-  |終了コード|[説明]|
+- 次の表に、各終了コードとその意味の簡単な説明を示します。
+  |終了コード|説明|
   |---------|-----------|
   |0|**Replace**コマンドにより、ファイルが正常に置換または追加されました。|
   |1|**Replace**コマンドで、正しくないバージョンの MS-DOS が検出されました。|
@@ -76,6 +74,6 @@ Phone. cli という名前のファイルのすべてのバージョン (C ド�
 
 `replace a:\phones.cli c:\ /s`
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

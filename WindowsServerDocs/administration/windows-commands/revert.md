@@ -1,20 +1,18 @@
 ---
 title: revert
 description: 参照記事 * * * *-
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 75ad40e4-502a-401e-b11e-8b31e00424b5
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8d2d8bfbfa10df9776e849b1450c2fce47c097b7
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 719d1be30fd1d2874231e50b5cecb1604712c8b2
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85933038"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87883610"
 ---
 # <a name="revert"></a>revert
 

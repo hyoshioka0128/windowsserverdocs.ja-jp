@@ -1,20 +1,18 @@
 ---
 title: リモートデスクトップサービス (ターミナルサービス) コマンドラインツールのリファレンス
 description: リモートデスクトップサービス (RDS) コマンドラインツールのリファレンス記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 2f371848-5c48-470c-908c-afbc95d3a805
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 36204940c339b937817457aa993ead6ed6644891
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: ae8156298c9b5108748afa114e1e3cabc0180441
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409693"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87883840"
 ---
 # <a name="remote-desktop-services-terminal-services-command-line-tools-reference"></a>リモートデスクトップサービス (ターミナルサービス) コマンドラインツールのリファレンス
 
@@ -25,7 +23,7 @@ ms.locfileid: "87409693"
 > [!NOTE]
 > Windows Server 2008 R2 で、「ターミナル サービス」は「リモート デスクトップ サービス」に名前変更されました。 最新バージョンの新機能については、「 [Windows Server でのリモートデスクトップサービスの新](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn283323(v=ws.11))機能」を参照してください。
 
-| コマンド | 説明 |
+| command | 説明 |
 |--|--|--|
 | [change](change.md) | サインイン、COM ポートのマッピング、およびインストールモードのリモートデスクトップセッションホストサーバーの設定を変更します。 |
 | [change logon](change-logon.md) | リモートデスクトップセッションホストサーバー上のクライアントセッションからのログオンを有効または無効にします。または、現在のログオン状態を表示します。 |
@@ -56,6 +54,6 @@ ms.locfileid: "87409693"
 | [tskill](tskill.md) | リモートデスクトップセッションホストサーバー上のセッションで実行されているプロセスを終了します。 |
 | [tsprof](tsprof.md) | 1 人のユーザーから別のリモート デスクトップ サービス ユーザーの構成情報をコピーします。 |
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

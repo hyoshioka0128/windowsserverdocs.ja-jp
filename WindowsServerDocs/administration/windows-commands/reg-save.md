@@ -1,20 +1,18 @@
 ---
 title: reg save
 description: 指定したファイルにレジストリの指定したサブキー、エントリ、および値のコピーを保存する reg save コマンドの参照記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: b326482b-c8af-467d-a20c-0481eeda3d5c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4051d69819cfd3550d094de8e9d4bc73f77c4e4b
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 187811b277ca109ac3f3e1517aeb169bd8baca15
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931031"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884016"
 ---
 # <a name="reg-save"></a>reg save
 
@@ -35,13 +33,13 @@ reg save <keyname> <filename> [/y]
 | /y | 確認を求めるメッセージを表示せずに、既存のファイルを*filename*という名前で上書きします。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>Remarks
 
 - レジストリエントリを編集する前に、 **reg save**コマンドを使用して親サブキーを保存する必要があります。 編集に失敗した場合は、 **reg 復元**操作を使用して元のサブキーを復元できます。
 
 - **Reg 保存**操作の戻り値は次のとおりです。
 
-    | 値 | [説明] |
+    | 値 | 説明 |
     |--|--|
     | 0 | 成功 |
     | 1 | 障害 |

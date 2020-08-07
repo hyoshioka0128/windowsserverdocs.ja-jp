@@ -1,20 +1,18 @@
 ---
 title: bitsadmin setcredentials
 description: Bitsadmin setcredentials コマンドの参照記事。資格情報をジョブに追加します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 3cd099a4-9e85-46d8-8527-edb6dfab7f97
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e28bf17812335e55db0ae8c5ddd54c418dcb2d66
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: c13c2bd544c485bef59858e7262169a66d1fc94d
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85927865"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87893205"
 ---
 # <a name="bitsadmin-setcredentials"></a>bitsadmin setcredentials
 

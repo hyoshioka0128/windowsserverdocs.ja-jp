@@ -1,20 +1,18 @@
 ---
 title: bitsadmin setnotifyflags
 description: Bitsadmin setnotifyflags コマンドの参照記事。指定されたジョブのイベント通知フラグを設定します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: d5763d95-94a6-45ca-9e03-891c20047e06
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b4054788bb8c14e4bd9be38296f5c0f933de9462
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: e47326fc93648fa2319f34c556596f04ccd6c240
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85927613"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87892996"
 ---
 # <a name="bitsadmin-setnotifyflags"></a>bitsadmin setnotifyflags
 

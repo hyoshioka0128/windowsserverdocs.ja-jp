@@ -1,20 +1,18 @@
 ---
 title: bitsadmin reset
 description: Bitsadmin reset コマンドの参照記事。現在のユーザーが所有している転送キュー内のすべてのジョブを取り消します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 0e4f9d1d-072c-493f-8d7a-f6d713c3ef29
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bc8faf10f991f06609d653c8cb7a1dc89de2fa8a
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: b28ad601a40a9646ad64268aaca0320ea5165efd
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85926395"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87893336"
 ---
 # <a name="bitsadmin-reset"></a>bitsadmin reset
 
@@ -33,7 +31,7 @@ bitsadmin /reset [/allusers]
 
 | パラメーター | 説明 |
 | -------------- | -------------- |
-| /allusers | 任意。 現在のユーザーが所有しているキュー内のすべてのジョブをキャンセルします。 このパラメーターを使用するには、管理者特権が必要です。 |
+| /allusers | 省略可能。 現在のユーザーが所有しているキュー内のすべてのジョブをキャンセルします。 このパラメーターを使用するには、管理者特権が必要です。 |
 
 ## <a name="examples"></a>例
 

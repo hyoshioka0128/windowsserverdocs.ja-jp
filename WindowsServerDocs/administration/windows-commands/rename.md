@@ -1,20 +1,18 @@
 ---
 title: rename
 description: '[名前の変更] コマンドの参照記事。ファイルまたはディレクトリの名前を変更します。'
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 7f2ea658-0fa9-4015-8031-22c2b0089231
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cf7a962a83b7cf8f00ea4963e358c0329ae28c3b
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: a2ab634be010f470314658b25daac92c00d4706c
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409663"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87883794"
 ---
 # <a name="rename"></a>rename
 
@@ -39,7 +37,7 @@ rename [<drive>:][<path>]<filename1> <filename2>
 | `<filename2>` | ファイルの新しい名前を指定します。 ワイルドカード文字を使用すると、複数のファイルに新しい名前を指定できます。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-#### <a name="remarks"></a>解説
+#### <a name="remarks"></a>Remarks
 
 - ファイルの名前を変更するときに、新しいドライブまたはパスを指定することはできません。 また、このコマンドを使用して、ドライブ間でファイルの名前を変更したり、ファイルを別のディレクトリに移動したりすることはできません。
 
@@ -61,7 +59,7 @@ rename *.txt *.doc
 rename chap10 part10
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

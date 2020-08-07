@@ -1,20 +1,18 @@
 ---
 title: マウント
 description: Network File System (NFS) ネットワーク共有をマウントする mount コマンドのリファレンス記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: dd9d7ecb-ef00-4aaa-bcd0-423fa636e34a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a81e5d6583eeb6859d5c82065b5bab5fff7c6c9f
-ms.sourcegitcommit: 102a929be3523dbd6523079f0a5738844cef81b4
+ms.openlocfilehash: 4e6f501668faa47286145f1fdbf43c0c7d86fd09
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86384642"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87886353"
 ---
 # <a name="mount"></a>マウント
 

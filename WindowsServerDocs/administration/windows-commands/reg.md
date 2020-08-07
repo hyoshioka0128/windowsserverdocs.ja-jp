@@ -1,20 +1,18 @@
 ---
 title: reg
 description: レジストリエントリのレジストリサブキーの情報と値に対する操作を実行する reg コマンドのリファレンス記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: c97496b2-d1ff-4887-b5d2-6e1524be465a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 47ceea315b3d172c766e749e3447f56907eab945
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 18a9f243001758393597f6cc5803dd42cdc32dae
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931025"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87883970"
 ---
 # <a name="reg"></a>reg
 

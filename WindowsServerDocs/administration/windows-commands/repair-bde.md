@@ -1,20 +1,18 @@
 ---
 title: repair-bde
 description: 参照記事 * * * *-
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 534dca1a-05f7-4ea8-ac24-4fe5f14f988a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5aaa915ef416130dd2017b8f0f35cd255d207678
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: c1ba55b5a1689ecfc6ebe8fb6ab3d02b717e7d38
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86956284"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87883759"
 ---
 # <a name="repair-bde"></a>repair-bde
 
@@ -51,7 +49,7 @@ repair-bde <InputVolume> <OutputVolumeorImage> [-rk] [–rp] [-pw] [–kp] [–l
 |-f|ボリュームをロックできない場合でも、強制的にマウントを解除します。 このコマンドは **、-force**として指定することもできます。|
 |-? または /?|コマンド プロンプトでヘルプを表示します。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>Remarks
 
 キーパッケージへのパスが指定されていない場合、**修復-bde**はドライブでキーパッケージを検索します。 ただし、ハードドライブが破損している場合は、**修復-bde**でパッケージを見つけることができず、パスを入力するように求められます。
 
@@ -74,6 +72,6 @@ repair-bde C: D: -kp F:\RecoveryKeyPackage -rk F:\RecoveryKey.bek -f
 repair-bde C: D: -pw
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

@@ -1,20 +1,18 @@
 ---
 title: chdir
 description: Cd コマンドと同じ操作を実行する、chdir コマンドの参照記事。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 8d78901e-4f6e-4cb6-9ff8-ccf5a9d04fac
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 942aa9c3be71a40b2bc08856e4cb39550635d20d
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: a2996b6a2059777de1326aa79600d42c1ade88f2
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929114"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87892808"
 ---
 # <a name="chdir"></a>chdir
 

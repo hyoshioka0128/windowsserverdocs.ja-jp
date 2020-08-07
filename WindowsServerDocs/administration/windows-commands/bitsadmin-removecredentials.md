@@ -1,20 +1,18 @@
 ---
 title: bitsadmin removecredentials
 description: Bitsadmin removecredentials コマンドの参照記事。ジョブから資格情報が削除されます。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 4a78ce9a-1feb-4811-a000-cce81287b22b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cebfac50504a02cd98ea94d9f0611f804148feac
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 2e2d9d045af51b273f7b64a8513daf3f8adb3895
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85926430"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87893356"
 ---
 # <a name="bitsadmin-removecredentials"></a>bitsadmin removecredentials
 

@@ -1,20 +1,18 @@
 ---
 title: bitsadmin setminretrydelay
 description: Bitsadmin setminretrydelay コマンドの参照記事。このコマンドは、ファイルの転送を試行する前に、一時的なエラーが発生した後に BITS が待機する最小時間を秒単位で設定します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: ce8674ca-6cc5-4bb2-8dda-7dfbb1cd6830
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a28bdcc90fdeee4d5173272c8670f9d0bff3c0a0
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 448e03805f30af50abffa28365e456028598ae1a
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85927685"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87893073"
 ---
 # <a name="bitsadmin-setminretrydelay"></a>bitsadmin setminretrydelay
 

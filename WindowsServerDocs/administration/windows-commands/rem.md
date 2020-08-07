@@ -1,20 +1,18 @@
 ---
 title: rem
 description: Rem コマンドの参照記事。スクリプト、バッチ、または config.sys ファイルにコメントを記録します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 1a45b585-a83c-4ff6-badd-ff40f34cec23
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fe0bfce3f9f72d0a32ef5b3bb540e5a297df24a1
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 6593e7700853af3658206b741817a86933fa66d1
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409703"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87883856"
 ---
 # <a name="rem"></a>rem
 
@@ -33,7 +31,7 @@ rem [<comment>]
 | `<comment>` | コメントとして追加する文字の文字列を指定します。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-#### <a name="remarks"></a>解説
+#### <a name="remarks"></a>Remarks
 
 - **Rem**コマンドを実行しても、画面にコメントは表示されません。 画面にコメントを表示するには、ファイルに**echo on**コマンドを含める必要があります。
 
@@ -79,6 +77,6 @@ create partition logical
 assign f:
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

@@ -1,20 +1,18 @@
 ---
 title: キャプチャイメージ
 description: 既存のブートイメージから新しいキャプチャイメージを作成するキャプチャイメージのリファレンス記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 2dfd08f0-be59-4715-96e6-c498305873f4
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ec9da39ccef5efcea1792556ef8335bbf63c5fd6
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 25e0fe9b11984fe7814b577de4ac8b18d5b62ccb
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932153"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87892423"
 ---
 # <a name="new-captureimage"></a>キャプチャイメージ
 

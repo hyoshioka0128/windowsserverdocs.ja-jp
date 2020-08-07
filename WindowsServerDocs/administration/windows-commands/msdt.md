@@ -1,20 +1,18 @@
 ---
 title: msdt
 description: Msdt コマンドの参照記事。コマンドラインでトラブルシューティングパックを起動するか、自動スクリプトの一部として、ユーザー入力なしで追加のオプションを有効にします。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: ead1b672-a120-4e16-94aa-a8e13602c1d0
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b5f00f34da20e9e151f093b919244fe3b49a85d6
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: e8ef856cd54b93c77d4e260a5e433c67407d9611
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86956894"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87886199"
 ---
 # <a name="msdt"></a>msdt
 
@@ -28,7 +26,7 @@ msdt </id <name> | /path <name> | /cab < name>> <</parameter> [options] … <par
 
 ### <a name="parameters"></a>パラメーター
 
-| パラメーター | Description |
+| パラメーター | 説明 |
 | --------- | ----------- |
 | /id`<packagename>` | 実行する診断パッケージを指定します。 利用可能なパッケージの一覧については、「[使用可能なトラブルシューティングパック](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/ee424379(v=ws.11)#available-troubleshooting-packs)」を参照してください。 |
 | /path`<directory|.diagpkg file|.diagcfg file>` | 診断パッケージへの完全パスを指定します。 ディレクトリを指定する場合は、ディレクトリに診断パッケージが含まれている必要があります。 * */Id * *、 **/dci**、/ **cab**の各パラメーターと共に、 **/path**パラメーターを使用することはできません。 |                                                                                   |
@@ -52,7 +50,7 @@ msdt </id <name> | /path <name> | /cab < name>> <</parameter> [options] … <par
 | 1 | **存在しますが、修正されていません。** トラブルシューティングツールによって、固定されていない状態の1つ以上の根本原因が特定されました。 このコードは、別の根本原因が修正された場合でも返されます。 |
 | 2 | **見つかりませんでした:** トラブルシューティングツールは、根本的な原因を特定できませんでした。 |
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

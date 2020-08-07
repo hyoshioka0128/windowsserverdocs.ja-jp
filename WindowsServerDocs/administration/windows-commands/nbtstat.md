@@ -1,20 +1,18 @@
 ---
 title: nbtstat
 description: Nbtstat コマンドのリファレンス記事。 NetBIOS over TCP/IP (NetBT) プロトコルの統計情報、ローカルコンピューターとリモートコンピューターの両方の NetBIOS 名テーブル、および NetBIOS 名のキャッシュを表示します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 1d2ea99e-72f1-471f-9525-d2c49bf3be82
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e663559686d95a4aaa123e2d43731a6b613de080
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 3367190fb751a0cb5081724c6ea8ad2b7f2c95ff
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85934855"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87886115"
 ---
 # <a name="nbtstat"></a>nbtstat
 
@@ -32,7 +30,7 @@ nbtstat [/a <remotename>] [/A <IPaddress>] [/c] [/n] [/r] [/R] [/RR] [/s] [/S] [
 
 #### <a name="parameters"></a>パラメーター
 
-| パラメーター | Description |
+| パラメーター | 説明 |
 | --------- | ----------- |
 | /a`<remotename>` | リモートコンピューターの NetBIOS 名のテーブルを表示します。ここで、 *remotename*はリモートコンピューターの netbios コンピューター名です。 NetBIOS 名前テーブルでは、そのコンピューターで実行されている NetBIOS アプリケーションに対応する NetBIOS 名の一覧を示します。 |
 | /A`<IPaddress>` | IP アドレス (ドット形式 10 進表記)、リモート コンピューターの指定されたリモート コンピューターの NetBIOS 名のテーブルを表示します。 |
@@ -46,13 +44,13 @@ nbtstat [/a <remotename>] [/A <IPaddress>] [/c] [/n] [/r] [/R] [/RR] [/s] [/S] [
 | `<interval>` | 選択された統計情報を表示し、各ディスプレイの*間隔*に指定された秒数を一時停止します。 CTRL + C キーを押して、統計の表示を停止します。 このパラメーターを省略すると、 **nbtstat** 、現在の構成情報を 1 回だけ印刷します。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>Remarks
 
 - **Nbtstat**コマンドラインパラメーターでは、大文字と小文字が区別されます。
 
 - **Nbtstat**コマンドによって生成される列見出しには、次のものが含まれます。
 
-    | 見出し | 説明 |
+    | [Heading] (方向) | 説明 |
     | ------- | ----------- |
     | 入力 | 受信されたバイト数。 |
     | 出力 | 送信されたバイト数。 |
@@ -61,7 +59,7 @@ nbtstat [/a <remotename>] [/A <IPaddress>] [/c] [/n] [/r] [/R] [/RR] [/s] [/S] [
     | ローカル名 | 接続に関連付けられているローカルの NetBIOS 名。 |
     | リモート ホスト | 名前または IP アドレスが、リモート コンピューターに関連付けられています。 |
     | `<03>` | NetBIOS 名の最後のバイトは、16 進数に変換されます。 すべての NetBIOS 名には、16 文字です。 この最後のバイトは、同じ名前が何回かコンピューターでは、最後のバイトのみが異なって表示されているために多くの場合、特別な意味を持ちます。 たとえば、 `<20>` は ASCII テキストのスペースです。 |
-    | 型 | 名前の型です。 名前は一意の名前またはグループ名にするかできます。 |
+    | type | 名前の型です。 名前は一意の名前またはグループ名にするかできます。 |
     | Status | リモートコンピューター上の NetBIOS サービスが実行中 (登録済み) であるか、または重複するコンピューター名によって同じサービス (競合) が登録されているかどうか。 |
     | State | NetBIOS の接続の状態。 |
 
@@ -76,7 +74,7 @@ nbtstat [/a <remotename>] [/A <IPaddress>] [/c] [/n] [/r] [/R] [/RR] [/s] [/S] [
     | 受け入れ | 受信セッションは受け入れられている現在し、後で接続されています。 |
     | 再接続します。 | セッションが再接続 (最初の試行で接続に失敗しました) しようとしています。 |
     | 送信 | セッションが接続の段階であると、TCP 接続は現在作成中です。 |
-    | 着信 | 受信セッションは接続の段階です。 |
+    | 受信 | 受信セッションは接続の段階です。 |
     | 切断します。 | セッションでは、接続を切断中です。 |
     | [Disconnected]\(切断済み\) | ローカル コンピューターが接続が切断を実行し、リモート システムから送信される確認を待っています。 |
 

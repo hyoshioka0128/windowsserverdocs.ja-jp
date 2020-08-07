@@ -1,20 +1,18 @@
 ---
 title: chgport
 description: Chgport コマンドの参照記事。 MS-DOS アプリケーションと互換性のある COM ポートマッピングを一覧表示または変更します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 8adb145f-6c53-4549-9253-9a966794a4f3
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5eb2172d607433be922f04e54955d0d636b59355
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: d3baa17633b126b5c61ba090b5b3bf4a0fb8cd38
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929071"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87892773"
 ---
 # <a name="chgport"></a>chgport
 

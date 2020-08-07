@@ -1,20 +1,18 @@
 ---
 title: color
 description: 現在のセッションのコマンドプロンプトウィンドウで、前景色と背景色を変更する color コマンドの参照記事。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: f5b67131-d196-45ec-a3f9-b5d9f091fd86
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 93c51fdbf1909adfda06730c3a517f602f8024b8
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 2534273eebe7f8596b0e8f2ab3c90cfdcf824d00
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929805"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87892674"
 ---
 # <a name="color"></a>color
 
@@ -34,17 +32,17 @@ color [[<b>]<f>]
 | `<f>` | 前景色を指定します。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-各値の説明:
+この場合、
 
 次の表に、およびの値として使用できる有効な16進数の数字を示し `<b>` `<f>` ます。
 
-| 値 | 色 |
+| 値 | Color |
 | ----- | ----- |
 | 0 | Black |
 | 1 | 青 |
 | 2 | [緑] |
 | 3 | Aqua |
-| 4 | 赤 |
+| 4 | [赤] |
 | 5 | パープル |
 | 6 | 黄 |
 | 7 | White |
@@ -57,7 +55,7 @@ color [[<b>]<f>]
 | e | 薄い黄色 |
 | f | 明るい白 |
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>Remarks
 
 - との間には空白文字を使用しないで `<b>` `<f>` ください。
 

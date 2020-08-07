@@ -1,20 +1,18 @@
 ---
 title: 削除 DriverGroupPackage
 description: 削除 DriverGroupPackage に関するリファレンス記事。サーバー上のドライバーグループからドライバーパッケージを削除します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 2e48616d-d6a4-45f0-a5c6-efe62bf6a0ed
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a8f4177a9e4a3abfa41eb3db094dc5d6e481678f
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: a677204f593c5c9b791d0e68f726cc75c6f94764
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85933479"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87892400"
 ---
 # <a name="remove-drivergrouppackage"></a>削除 DriverGroupPackage
 

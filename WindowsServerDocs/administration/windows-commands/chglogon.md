@@ -1,20 +1,18 @@
 ---
 title: chglogon
 description: Chglogon コマンドの参照記事。リモートデスクトップセッションホストサーバー上のクライアントセッションからのログオンを有効または無効にしたり、現在のログオンステータスを表示したりします。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 8280c5b3-ac10-48ae-87ca-678594837f03
 ms.date: 10/16/2017
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 582dc84e54b491f7deb92c249a258d7f321b3f9c
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: db2fdcced28cbf3be2a05338209d3e0b16a84cbc
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929095"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87892800"
 ---
 # <a name="chglogon"></a>chglogon
 

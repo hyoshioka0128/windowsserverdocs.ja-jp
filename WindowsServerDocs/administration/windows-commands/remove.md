@@ -1,20 +1,18 @@
 ---
 title: remove
 description: 削除コマンドの参照記事。ボリュームからドライブ文字またはマウントポイントを削除します。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: b0886140-da8b-4231-8cb2-f280874d99c0
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7fba062945effd49efa9987d2c7d23fc90552fd4
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 469b3ac1783dfff5228778d11532448bee49346c
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409683"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87883833"
 ---
 # <a name="remove"></a>remove
 
@@ -48,6 +46,6 @@ D! を削除するにはドライブ、次のように入力します。
 remove letter=d
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)

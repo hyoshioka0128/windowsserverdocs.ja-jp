@@ -1,20 +1,18 @@
 ---
 title: 削除-AutoaddDevices
 description: 自動追加データベースから保留中、拒否、または承認されたコンピューターを削除する、AutoaddDevices の参照記事。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 8dcaca6a-212e-4c36-98e3-00938eef6b9c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 60acfbb5ec1bc3f9268044eb0dbcc9ea19ff8ab9
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 6ccde56c5a0d3edd252048f9cf1e2a4b1fd28a35
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85933976"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87892176"
 ---
 # <a name="delete-autoadddevices"></a>削除-AutoaddDevices
 

@@ -1,20 +1,18 @@
 ---
 title: change user
 description: '[ユーザーの変更] コマンドの参照記事。リモートデスクトップセッションホストサーバーのインストールモードを変更します。'
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 6202f024-8cf5-411e-89b1-ee37ff46499d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5b17ba6f6245176f09eca301a7b2f44a8f439def
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: ca78126095b11ca7bf900d10c253cd7ad19fcc12
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955284"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87892896"
 ---
 # <a name="change-user"></a>change user
 
@@ -40,7 +38,7 @@ change user {/execute | /install | /query}
 | /query | .Ini ファイルマッピングの現在の設定を表示します。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>Remarks
 
 - アプリケーションをインストールする前に、 **change user/install**を使用して、アプリケーションの .ini ファイルをシステムディレクトリに作成します。 これらのファイルは、ユーザー固有の .ini ファイルが作成されるときにソースとして使用されます。 アプリケーションをインストールしたら、 **change user/execute**を使用して、標準 .ini ファイルマッピングに戻します。
 
@@ -74,7 +72,7 @@ change user {/execute | /install | /query}
   change user /query
   ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

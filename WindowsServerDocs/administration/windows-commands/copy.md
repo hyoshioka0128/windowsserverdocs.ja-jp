@@ -1,20 +1,18 @@
 ---
 title: copy
 description: コピーコマンドの参照記事。1つ以上のファイルを別の場所にコピーします。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 9624d4a1-349a-4693-ad00-1d1d4e59e9ac
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3e15db58ab8fa8c3a0114b695cb85eec7684039e
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: cb48cbc4ccc9a0d68bfc6f5cdda8ac5e7f1a6c87
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86958474"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87892504"
 ---
 # <a name="copy"></a>copy
 
@@ -45,7 +43,7 @@ copy [/d] [/v] [/n] [/y | /-y] [/z] [/a | /b] <source> [/a | /b] [+<source> [/a 
 | `<destination>` | 必須。 ファイルまたはファイルのセットをコピーする場所を指定します。 *宛先*には、ドライブ文字とコロン、ディレクトリ名、ファイル名、またはこれらの組み合わせを使用できます。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-#### <a name="remarks"></a>注釈
+#### <a name="remarks"></a>Remarks
 
 - ファイルの終端文字 (CTRL + Z) を使用する ASCII テキストファイルをコピーして、ファイルの末尾を示すことができます。
 
@@ -152,7 +150,7 @@ copy *.txt + *.ref *.doc
 copy *.txt + *.ref Combined.doc
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
 

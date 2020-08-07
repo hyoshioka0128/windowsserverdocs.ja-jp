@@ -1,20 +1,18 @@
 ---
 title: convert
 description: ディスクの種類をディスクから別のディスクに変換する convert コマンドの参照記事です。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: ae151297-af21-4701-bd69-21d775518e03
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f93f2b16838a6f54af3f28b7e0883808a6cd013a
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 76990eb33f58b871771e00c9fdef19d5d29c30e8
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85928901"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87892548"
 ---
 # <a name="convert"></a>convert
 

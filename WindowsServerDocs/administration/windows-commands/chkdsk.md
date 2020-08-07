@@ -1,20 +1,18 @@
 ---
 title: chkdsk
 description: ボリュームのファイルシステムおよびファイルシステムメタデータで論理エラーと物理エラーをチェックする、chkdsk コマンドの参照記事。
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 62912a3c-d2cc-4ef6-9679-43709a286035
 author: jasongerend
 ms.author: jgerend
 manager: lizapo
 ms.date: 10/09/2019
-ms.openlocfilehash: b98699b7e0925b43c15a602b9c193be9301a14ce
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 34a32e22224168e92386408901571850973e6503
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929999"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87892746"
 ---
 # <a name="chkdsk"></a>chkdsk
 
@@ -59,7 +57,7 @@ chkdsk [<volume>[[<path>]<filename>]] [/f] [/v] [/r] [/x] [/i] [/c] [/l[:<size>]
 | /markclean | FAT/FAT32/exFAT でのみ使用してください。 **/F**が指定されていない場合でも、破損が検出されなかった場合は、ボリュームのクリーンをマークします。 |
 | /? | コマンド プロンプトにヘルプを表示します。 |
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>Remarks
 
 - **/I**または **/c**スイッチを指定すると、特定のボリュームチェックをスキップすることで、 **chkdsk**の実行に必要な時間を短縮できます。
 

@@ -1,20 +1,18 @@
 ---
 title: rexec
 description: 参照記事 * * * *-
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 7c637fb3-c92f-40bf-ad06-6330daaa3b5f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9a7dae593c70596c482af11007a725248990b3a5
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 1cddd1d1b8f1a9b891004c66caae378cd172451a
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86956243"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87883598"
 ---
 # <a name="rexec"></a>rexec
 
