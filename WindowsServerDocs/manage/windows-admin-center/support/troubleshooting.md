@@ -1,19 +1,17 @@
 ---
 title: Windows Admin Center の一般的なトラブルシューティングの手順
 description: Windows Admin Center の一般的なトラブルシューティングの手順 (Project Honolulu)
-ms.technology: manage
 ms.topic: article
 author: jwwool
 ms.author: jeffrew
 ms.localizationpriority: medium
-ms.prod: windows-server
 ms.date: 06/07/2019
-ms.openlocfilehash: 2ddcf101b6eae3be6f48c66de3c400c66ed53f2b
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: a7ef7eb2acf9a641babf5690119c61f452aaabbc
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519651"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87937621"
 ---
 # <a name="troubleshooting-windows-admin-center"></a>Windows Admin Center のトラブルシューティング
 

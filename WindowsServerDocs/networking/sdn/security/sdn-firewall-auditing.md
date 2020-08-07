@@ -2,23 +2,21 @@
 title: SDN ファイアウォール監査
 description: ファイアウォール監査は、Windows Server 2019 の SDN ファイアウォールの新機能です。 SDN ファイアウォールを有効にすると、ログが有効になっている SDN ファイアウォール規則 (Acl) によって処理されるすべてのフローが記録されます。
 manager: grcusanz
-ms.prod: windows-server
-ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: c4e2f6c7-0364-4bf8-bb66-9af59c0bbd74
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/22/2018
-ms.openlocfilehash: d834c78d393fdbaeaa65900f16f4d1e32f2e5131
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: e37fc548db0a1043b2b78d95f97e8b4ef01214c8
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80854385"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87962056"
 ---
 # <a name="sdn-firewall-auditing"></a>SDN ファイアウォール監査
 
->適用対象: Windows Server 2019
+>適用対象:Windows Server 2019
 
 ファイアウォール監査は、Windows Server 2019 の SDN ファイアウォールの新機能です。 SDN ファイアウォールを有効にすると、ログが有効になっている SDN ファイアウォール規則 (Acl) によって処理されるすべてのフローが記録されます。 ログファイルは、 [Azure Network Watcher フローログ](https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-overview)と一貫性のある構文である必要があります。 これらのログは、診断に使用したり、後で分析するためにアーカイブしたりすることができます。 
 
@@ -26,7 +24,7 @@ ms.locfileid: "80854385"
 
 _**試してみて、フィードバックをお寄せください。**_
 
-Hyper-v ホストでファイアウォールの監査を有効にするサンプルスクリプトを次に示します。 最初の変数を更新し、NetworkController 機能がインストールされている Windows Server 2019 コンピューターでこれを実行します。
+Hyper-v ホストでファイアウォールの監査を有効にするサンプルスクリプトを次に示します。最初の変数を更新し、NetworkController 機能がインストールされている Windows Server 2019 コンピューターでこれを実行します。
 
 ```PowerShell
 $logpath = "C:\test\log1"
@@ -54,7 +52,7 @@ foreach ($s in $servers) {
 }
 ```
 
-有効にすると、各ホストの指定したディレクトリに新しいファイルが1時間ごとに1回表示されます。  これらのファイルを定期的に処理し、ホストから削除する必要があります。  現在のファイルは長さが0で、次の1時間マークでフラッシュされるまでロックされています:
+有効にすると、各ホストの指定したディレクトリに新しいファイルが1時間ごとに1回表示されます。これらのファイルを定期的に処理し、ホストから削除する必要があります。現在のファイルは長さが0で、次の1時間マークでフラッシュされるまでロックされています:
 
 ```syntax
 PS C:\test\log1> dir
@@ -73,7 +71,7 @@ Mode                LastWriteTime         Length Name
 これらのファイルには、フローイベントのシーケンスが含まれています。次に例を示します。
 
 ```syntax
-{ 
+{
     "records": [
         {
             "properties":{

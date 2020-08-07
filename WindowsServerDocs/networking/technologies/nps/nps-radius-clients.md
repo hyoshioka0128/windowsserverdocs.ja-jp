@@ -1,28 +1,26 @@
 ---
-title: RADIUS Clients
+title: RADIUS クライアント
 description: このトピックでは、Windows Server 2016 のネットワークポリシーサーバーの RADIUS クライアントの概要について説明します。
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: d3a09ac9-75f8-4f57-aab4-b0fdfe110118
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 6ae3a221c1889facc8b7696dea0bcd6cbd8df926
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: c8a3fbb1845bf6faf14688019a3c27169d293151
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80315633"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953878"
 ---
-# <a name="radius-clients"></a>RADIUS Clients
+# <a name="radius-clients"></a>RADIUS クライアント
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016
+>適用先:Windows Server (半期チャネル)、Windows Server 2016
 
-ネットワークアクセスサーバー \(NAS\) は、より大規模なネットワークに何らかのレベルのアクセスを提供するデバイスです。 RADIUS インフラストラクチャを使用した NAS は、認証、承認、およびアカウンティングのために、接続要求とアカウンティング メッセージを RADIUS サーバーに送信する RADIUS クライアントでもあります。
+ネットワークアクセスサーバー \( (NAS) \) は、大規模なネットワークに対して何らかのレベルのアクセスを提供するデバイスです。 RADIUS インフラストラクチャを使用した NAS は、認証、承認、およびアカウンティングのために、接続要求とアカウンティング メッセージを RADIUS サーバーに送信する RADIUS クライアントでもあります。
 
 >[!NOTE]
->クライアントコンピューター (ラップトップコンピューターやクライアントオペレーティングシステムを実行しているその他のコンピューターなど) は、RADIUS クライアントではありません。 RADIUS クライアントは、ネットワークアクセスサーバー (ワイヤレスアクセスポイント、802.1 X 認証スイッチ、仮想プライベートネットワーク \(VPN\) サーバー、ダイヤルアップサーバーなど) です。これは、radius プロトコルを使用してネットワークポリシーサーバー \(NPS\) サーバーなどの RADIUS サーバーと通信するためです。
+>クライアントコンピューター (ラップトップコンピューターやクライアントオペレーティングシステムを実行しているその他のコンピューターなど) は、RADIUS クライアントではありません。 RADIUS クライアントは、ネットワークアクセスサーバー (ワイヤレスアクセスポイント、802.1 X 認証スイッチ、仮想プライベートネットワーク VPN サーバー、ダイヤルアップサーバーなど) です。これは、radius プロトコルを使用して \( \) ネットワークポリシーサーバー NPS サーバーなどの radius サーバーと通信するため \( \) です。
 
 NPS を RADIUS サーバーまたは RADIUS プロキシとして展開するには、NPS で RADIUS クライアントを構成する必要があります。
 
@@ -55,7 +53,7 @@ NPS は、他の RADIUS サーバーで処理されるようアクセス要求�
 
 ## <a name="radius-client-properties"></a>RADIUS クライアントのプロパティ
 
-Nps コンソールまたは Windows PowerShell コマンドの netsh コマンドを使用して RADIUS クライアントを NPS 構成に追加する場合、ネットワークアクセスサーバーまたはから RADIUS アクセス要求メッセージを受信するように NPS を構成します。RADIUS プロキシ。
+Nps コンソールまたは Windows PowerShell コマンドの netsh コマンドを使用して nps 構成に RADIUS クライアントを追加する場合、ネットワークアクセスサーバーまたは RADIUS プロキシから RADIUS アクセス要求メッセージを受信するように NPS を構成します。
 
 RADIUS クライアントを NPS に構成するときは、次のプロパティを指定できます。
 
@@ -63,9 +61,9 @@ RADIUS クライアントを NPS に構成するときは、次のプロパテ�
 
  RADIUS クライアントのフレンドリ名。NPS スナップインまたは NPS の netsh コマンドを使用するときにクライアントを特定しやすくなります。
 
-### <a name="ip-address"></a>[IP アドレス]
+### <a name="ip-address"></a>IP アドレス
 
-インターネットプロトコルバージョン 4 \(IPv4\) アドレスまたはドメインネームシステム \(RADIUS クライアントの DNS\) 名。
+RADIUS クライアントのインターネットプロトコルバージョン 4 \( IPv4 \) アドレスまたはドメインネームシステム \( DNS \) 名。
 
 ### <a name="client-vendor"></a>クライアント-ベンダ
 
@@ -77,10 +75,10 @@ RADIUS クライアント、RADIUS サーバー、および RADIUS プロキシ�
 
 ### <a name="message-authenticator-attribute"></a>メッセージ認証属性
 
-RFC 2869 の「RADIUS 拡張」で説明されているように、メッセージダイジェスト 5 \(MD5\) RADIUS メッセージ全体のハッシュです。 RADIUS メッセージ認証属性が指定されている場合、これが確認されます。 確認が失敗した場合、RADIUS メッセージは破棄されます。 クライアントの設定でメッセージ認証属性が必要とされていて、認証属性が指定されていない場合も、RADIUS メッセージは破棄されます。 メッセージ認証属性は使用することが推奨されます。
+RFC 2869 の「RADIUS 拡張」で説明さ \( \) れています。これは、radius メッセージ全体のメッセージダイジェスト 5 MD5 ハッシュです。 RADIUS メッセージ認証属性が指定されている場合、これが確認されます。 確認が失敗した場合、RADIUS メッセージは破棄されます。 クライアントの設定でメッセージ認証属性が必要とされていて、認証属性が指定されていない場合も、RADIUS メッセージは破棄されます。 メッセージ認証属性は使用することが推奨されます。
 
 >[!NOTE]
->拡張認証プロトコル \(EAP\) 認証を使用する場合、メッセージ認証属性は必須であり、既定で有効になります。 
+>拡張認証プロトコル EAP 認証を使用する場合、メッセージ認証属性は必須であり、既定で有効になり \( \) ます。
 
 NPS の詳細については、「[ネットワークポリシーサーバー (nps)](nps-top.md)」を参照してください。
 

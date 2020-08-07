@@ -1,23 +1,21 @@
 ---
 title: Windows 管理センターを使用してサーバーを管理する
 description: Windows 管理センターを使用したサーバーの管理 (Project ホノルル)
-ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 11/21/2019
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: cbcb5c2357a60d6d12551a7d08055cacecd515b7
-ms.sourcegitcommit: 20d07170c7f3094c2fb4455f54b13ec4b102f2d7
+ms.openlocfilehash: 69f8f20aa9e1b222ff112f91df8d6b3d7767fc84
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81269239"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87962386"
 ---
 # <a name="manage-servers-with-windows-admin-center"></a>Windows 管理センターを使用してサーバーを管理する
 
->適用対象: Windows Admin Center、Windows Admin Center Preview
+>適用先:Windows Admin Center、Windows Admin Center Preview
 
 > [!Tip]
 > Windows Admin Center を初めて使用する場合
@@ -33,10 +31,10 @@ Windows Server 2012 以降を実行している個々のサーバーを Windows 
 
 Windows 管理センターにサーバーを追加するには:
 
-1. すべての接続 の下にある  **+ 追加** をクリックします。
+1. [すべての接続] の下にある [ **+ 追加**] をクリックします。
 2. **サーバー接続**を追加することを選択します。
 3. サーバーの名前を入力し、メッセージが表示されたら、使用する資格情報を入力します。
-4. **[送信]** をクリックして完了します。
+4. [**送信**] をクリックして完了します。
 
 サーバーが [概要] ページの接続リストに追加されます。 サーバーに接続するには、これをクリックします。
 
@@ -51,34 +49,34 @@ Windows 管理センターにサーバーを追加するには:
 | ---- | ----------- |
 | [概要](#overview) | サーバーの詳細を表示し、サーバーの状態を制御する |
 | [Active Directory](#active-directory-preview) | Active Directory の管理 |
-| [Backup](#backup) | Azure Backup の表示と構成 |  
+| [Backup](#backup) | Azure Backup の表示と構成 |
 | [証明書](#certificates) | 証明書の表示と変更 |
-| [コンテナー](#containers) | コンテナー表示 |
+| [Containers](#containers) | コンテナーの表示 |
 | [デバイス](#devices) | デバイスの表示と変更 |
-| [列挙](#dhcp) | DHCP サーバー構成の表示と管理 |
+| [[DHCP]](#dhcp) | DHCP サーバー構成の表示と管理 |
 | [DNS](#dns) | DNS サーバー構成の表示と管理 |
-| [記録](#events) | イベントの表示 |
-| [ファイル](#files) | ファイルとフォルダーの参照 |
-| [Firewall](#firewall) | ファイアウォール規則の表示と変更 |
+| [イベント](#events) | イベントの表示 |
+| [ファイル](#files) | ファイルとフォルダーを参照する |
+| [ファイアウォール](#firewall) | ファイアウォール規則の表示と変更 |
 | [インストール済みアプリ](#installed-apps) | インストールされているアプリを表示および削除する |
-| [ローカルユーザーとグループ](#local-users-and-groups) | ローカルユーザーとグループを表示および変更する |
+| [ローカル ユーザーとグループ](#local-users-and-groups) | ローカルユーザーとグループを表示および変更する |
 | [ネットワーク](#network) | ネットワークデバイスの表示と変更 |
 | [パケットの監視](https://aka.ms/wac1908) | ネットワークパケットを監視する |
 | [パフォーマンスモニター](https://aka.ms/perfmon-blog) | パフォーマンスカウンターとレポートの表示 |
 | [PowerShell](#powershell) | PowerShell を使用したサーバーとの対話 |
-| [プロセス](#processes) | 実行中のプロセスの表示と変更 |
-| [登録](#registry) | レジストリエントリの表示と変更 |
-| [リモートデスクトップ](#remote-desktop) | リモートデスクトップを使用したサーバーとの対話 |
+| [処理](#processes) | 実行中のプロセスの表示と変更 |
+| [レジストリ](#registry) | レジストリエントリの表示と変更 |
+| [リモート デスクトップ](#remote-desktop) | リモートデスクトップを使用したサーバーとの対話 |
 | [役割と機能](#roles-and-features) | 役割と機能を表示および変更する |
 | [スケジュールされたタスク](#scheduled-tasks) | スケジュールされたタスクの表示と変更 |
 | [サービス](#services) | サービスの表示と変更 |
 | [設定](#settings) | サービスの表示と変更 |
-| [ストレージ](#storage) | 記憶装置の表示と変更 |
+| [Storage](#storage) | 記憶装置の表示と変更 |
 | [記憶域移行サービス](#storage-migration-service) | サーバーとファイル共有を Azure または Windows Server 2019 に移行する |
 | [記憶域レプリカ](#storage-replica) | 記憶域レプリカを使用してサーバー間の記憶域レプリケーションを管理する |
 | [システム インサイト](#system-insights) | System Insights を使用すると、サーバーの機能についての洞察を高めることができます。 |
-| [更新内容](#updates) | インストールされていることを確認し、新しい更新プログラムを確認します |
-| [仮想マシン](manage-virtual-machines.md) | バーチャルマシンの表示と管理 |
+| [更新プログラム](#updates) | インストールされていることを確認し、新しい更新プログラムを確認します |
+| [Virtual Machines](manage-virtual-machines.md) | バーチャルマシンの表示と管理 |
 | [仮想スイッチ](#virtual-switches) | 仮想スイッチの表示と管理 |
 
 ## <a name="overview"></a>概要
@@ -110,14 +108,14 @@ Windows 管理センターにサーバーを追加するには:
 次の Active Directory 管理を使用できます。
 
 - ユーザーの作成
-- グループの作成
+- グループを作成する
 - ユーザー、コンピューター、およびグループを検索する
 - グリッドで選択した場合のユーザー、コンピューター、およびグループの詳細ウィンドウ
 - グローバルグリッドアクションのユーザー、コンピューター、およびグループ (無効化/有効化、削除)
 - ユーザー パスワードのリセット
 - ユーザーオブジェクト: グループメンバーシップ & 基本プロパティを構成する
 - コンピューターオブジェクト: 1 台のコンピューターへの委任を構成する
-- グループオブジェクト: メンバーシップを管理する (一度に1ユーザーを追加/削除する)  
+- グループオブジェクト: メンバーシップを管理する (一度に1ユーザーを追加/削除する)
 
 [**Active Directory のフィードバックと提案された機能を表示**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BActive%20Directory%5D)します。
 
@@ -137,7 +135,7 @@ Windows 管理センターにサーバーを追加するには:
 - バックアップジョブの開始または停止
 - バックアップジョブの履歴と状態の表示
 - 回復ポイントの表示とデータの回復
-- バックアップデータの削除
+- バックアップ データの削除
 
 ## <a name="certificates"></a>証明書
 
@@ -150,13 +148,13 @@ Windows 管理センターにサーバーを追加するには:
 - 既存の証明書を参照して検索する
 - 証明書の詳細の表示
 - 証明書のエクスポート
-- 証明書の書き換え
+- 証明書の更新
 - 新しい証明書を要求する
 - 証明書の削除
 
 [**証明書のフィードバックと提案された機能を表示**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BCertificates%5D)します。
 
-## <a name="containers"></a>コンテナー
+## <a name="containers"></a>Containers
 
 **コンテナーを使用する**と、Windows Server コンテナーホスト上のコンテナーを表示できます。 Windows Server Core コンテナーが実行されている場合は、イベントログを表示し、コンテナーの CLI にアクセスできます。
 
@@ -177,7 +175,7 @@ Windows 管理センターにサーバーを追加するには:
 
 [**デバイスのフィードバックと提案された機能を表示**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BDevices%5D)します。
 
-## <a name="dhcp"></a>DHCP
+## <a name="dhcp"></a>[DHCP]
 
 **DHCP**を使用すると、コンピューターまたはサーバー上の接続されているデバイスを管理できます。
 
@@ -227,12 +225,12 @@ Windows 管理センターにサーバーを追加するには:
 
 ファイルでは、次の機能がサポートされています。
 
-- ファイルとフォルダーの参照
+- ファイルとフォルダーを参照する
 - ファイルやフォルダーを検索する
 - 新しいフォルダーを作成する
 - ファイルまたはフォルダーを削除する
 - ファイルまたはフォルダーをダウンロードする
-- ファイルまたはフォルダーをアップロードする
+- ファイルまたはフォルダーをアップロード
 - ファイルまたはフォルダーの名前を変更する
 - Zip ファイルを抽出する
 - ファイルとフォルダーのコピーと移動
@@ -268,7 +266,7 @@ Windows 管理センターにサーバーを追加するには:
 
 [**インストールされているアプリのフィードバックと提案された機能を表示**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BInstalled%20Apps%5D)します。
 
-## <a name="local-users-and-groups"></a>[ローカル ユーザーとグループ]
+## <a name="local-users-and-groups"></a>ローカル ユーザーとグループ
 
 **ローカルユーザーとグループ**を使用すると、コンピューターまたはサーバーのローカルに存在するセキュリティグループとユーザーを管理できます。
 
@@ -313,7 +311,7 @@ PowerShell では、次の機能がサポートされています。
 
 [**PowerShell のフィードバックと提案された機能を表示する**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BPowerShell%5D)
 
-## <a name="processes"></a>プロセス
+## <a name="processes"></a>処理
 
 **プロセス**を使用すると、コンピューターまたはサーバー上で実行中のプロセスを管理できます。
 
@@ -330,7 +328,7 @@ PowerShell では、次の機能がサポートされています。
 
 [**フィードバックとプロセスの提案された機能を表示**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BProcesses%5D)します。
 
-## <a name="registry"></a>［レジストリ］
+## <a name="registry"></a>Registry
 
 **レジストリ**を使用して、コンピューターまたはサーバー上のレジストリキーと値を管理できます。
 
@@ -340,7 +338,7 @@ PowerShell では、次の機能がサポートされています。
 
 - レジストリキーと値の参照
 - レジストリ値を追加または変更する
-- レジストリ値の削除
+- レジストリ値を削除する
 
 [**フィードバックと、レジストリの提案された機能を表示**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BRegistry%5D)します。
 
@@ -399,14 +397,14 @@ PowerShell では、次の機能がサポートされています。
 
 - サーバー上のサービスを参照および検索する
 - サービスの詳細を表示する
-- サービスの開始
+- サービスを開始する
 - サービスを一時停止する
 - サービスの再起動
 - サービスのプロパティを編集する
 
 [**サービスのフィードバックと提案された機能を表示**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BServices%5D)します。
 
-## <a name="settings"></a>設定
+## <a name="settings"></a>Settings
 
 **設定**は、コンピューターまたはサーバーの設定を管理するための一元的な場所です。
 
@@ -419,7 +417,7 @@ PowerShell では、次の機能がサポートされています。
 - ロールベースのアクセス制御設定を表示および変更する
 - Hyper-v ホストの設定を表示および変更する (該当する場合)
 
-## <a name="storage"></a>ストレージ
+## <a name="storage"></a>記憶域
 
 **記憶域**を使用すると、コンピューターまたはサーバー上の記憶装置を管理できます。
 
@@ -434,15 +432,15 @@ PowerShell では、次の機能がサポートされています。
 - バーチャルハードディスク (VHD) の作成、アタッチ、および切断
 - ディスクをオフラインにする
 - ボリュームのフォーマット
-- ボリュームのサイズを変更する
+- ボリュームをサイズ変更する
 - ボリュームのプロパティの編集
-- ボリュームの削除
+- ボリュームを削除する
 - クォータ管理のインストール
-- ファイルサーバーリソースマネージャーのクォータ[の記憶域の管理-> のクォータの作成と更新](https://docs.microsoft.com/windows-server/storage/fsrm/quota-management)
+- ファイルサーバーリソースマネージャーのクォータ[の記憶域の管理->のクォータの作成と更新](https://docs.microsoft.com/windows-server/storage/fsrm/quota-management)
 
 [**ストレージのフィードバックと提案された機能を表示する**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BStorage%5D)
 
-## <a name="storage-migration-service"></a>ストレージ移行サービス
+## <a name="storage-migration-service"></a>記憶域移行サービス
 
 **Storage Migration Service**を使用すると、アプリケーションやユーザーによる変更を必要とせずに、サーバーとファイル共有を Azure または Windows Server 2019 に移行することができます。
 [Storage Migration Service の概要を見る](https://go.microsoft.com/fwlink/?linkid=2016155)
@@ -453,7 +451,7 @@ PowerShell では、次の機能がサポートされています。
 ## <a name="storage-replica"></a>記憶域レプリカ
 
 **記憶域レプリカ**を使用して、サーバー間の記憶域レプリケーションを管理します。
-[記憶域レプリカの詳細情報](https://docs.microsoft.com/windows-server/storage/storage-replica/storage-replica-ui)
+ [記憶域レプリカの詳細](https://docs.microsoft.com/windows-server/storage/storage-replica/storage-replica-ui)
 
 ## <a name="system-insights"></a>システム インサイト
 
@@ -473,13 +471,13 @@ PowerShell では、次の機能がサポートされています。
 
 - 使用可能な Windows または Microsoft 更新プログラムの表示
 - 更新履歴の一覧を表示する
-- 更新のインストール
+- 更新プログラムをインストールする
 - オンラインで Microsoft Update からの更新プログラムを確認する
 - [Azure Update Management](https://docs.microsoft.com/azure/automation/automation-update-management)統合の管理
 
 [**更新プログラムのフィードバックと提案された機能を表示する**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BUpdates%5D)
 
-## <a name="virtual-machines"></a>仮想マシン
+## <a name="virtual-machines"></a>Virtual Machines
 
 「 [Windows 管理センターでの Virtual Machines の管理」を](manage-virtual-machines.md)参照してください。
 

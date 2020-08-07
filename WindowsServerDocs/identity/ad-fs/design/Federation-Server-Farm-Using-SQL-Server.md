@@ -6,14 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 4527b6787531b3a349534092e3597a91dbebf78f
-ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
+ms.openlocfilehash: 2ae5c2f389c4fb32503dbd28ab4a3667a17f7466
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87864136"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87945508"
 ---
 # <a name="legacy-ad-fs-federation-server-farm-using-sql-server"></a>SQL Server を使用した従来の AD FS フェデレーションサーバーファーム
 

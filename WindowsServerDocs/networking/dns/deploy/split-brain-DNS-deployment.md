@@ -2,18 +2,16 @@
 title: スプリット ブレイン DNS の展開に DNS ポリシーを使用する
 description: このトピックは、Windows Server 2016 の DNS ポリシーシナリオガイドに含まれています。
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-dns
 ms.topic: article
 ms.assetid: a255a4a5-c1a0-4edc-b41a-211bae397e3c
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 466a9e940a8211335abbfab43e933a5dcbbffebf
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: f0274eddba5aa81a0910ca2f22841029c699bb3e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518258"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87962306"
 ---
 # <a name="use-dns-policy-for-split-brain-dns-deployment"></a>Split ブレイン DNS 展開に DNS ポリシーを使用する \-
 

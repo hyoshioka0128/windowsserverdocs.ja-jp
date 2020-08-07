@@ -1,20 +1,18 @@
 ---
 title: DHCP のトラブルシューティングに関する一般的なガイダンス
 description: この artilce では、DHCP のトラブルシューティングに関する一般的なガイダンスについて説明します。
-ms.prod: windows-server
 ms.service: na
 manager: dcscontentpm
-ms.technology: server-general
 ms.date: 5/26/2020
 ms.topic: article
 author: Deland-Han
 ms.author: delhan
-ms.openlocfilehash: c0460791fef2451722af09e8bbe08b51a605f01b
-ms.sourcegitcommit: ef089864980a1d4793a35cbf4cbdd02ce1962054
+ms.openlocfilehash: 92b76748153f19419733c32c08a24d48e53d5647
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84150160"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87970049"
 ---
 # <a name="general-guidance-to-troubleshoot-dhcp"></a>DHCP のトラブルシューティングに関する一般的なガイダンス
 
@@ -26,7 +24,7 @@ ms.locfileid: "84150160"
 
   - エラーメッセージはありますか。
 
-  - DHCP サーバーが以前に動作していたか、または動作していないか。  
+  - DHCP サーバーが以前に動作していたか、または動作していないか。
     以前に動作していた場合、問題が開始される前に何か変更が行われました。 たとえば、更新プログラムがインストールされているとします。 インフラストラクチャに変更が加えられたか。
 
   - 問題は永続的か断続的か。 断続的な場合、最後に発生したのはいつですか。

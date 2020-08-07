@@ -1,19 +1,17 @@
 ---
 title: Windows Admin Center の既知の問題
 description: Windows Admin Center の既知の問題 (Project Honolulu)
-ms.technology: manage
 ms.topic: article
 author: jwwool
 ms.author: jeffrew
 ms.localizationpriority: medium
-ms.prod: windows-server
 ms.date: 06/07/2019
-ms.openlocfilehash: f7e62f05a340a2186a012d7ed99e3ecc46654256
-ms.sourcegitcommit: b35fbd2a67d7a3395b50b2a3acd0817ba4e36b26
+ms.openlocfilehash: bb416a45e18ea34628994b589e452f25d2d7744e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86891409"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87937671"
 ---
 # <a name="windows-admin-center-known-issues"></a>Windows Admin Center の既知の問題
 
@@ -29,7 +27,7 @@ ms.locfileid: "86891409"
 
 ## <a name="general"></a>全般
 
-- Windows 管理センターの1910.2 リリースでは、特定のハードウェア上の Hyper-v サーバーに接続できない場合があります。 この問題でブロックされている場合は、[以前のビルドをダウンロードしてください](https://aka.ms/wacprevious)。 
+- Windows 管理センターの1910.2 リリースでは、特定のハードウェア上の Hyper-v サーバーに接続できない場合があります。 この問題でブロックされている場合は、[以前のビルドをダウンロードしてください](https://aka.ms/wacprevious)。
 
 - Windows **Server 2016**にゲートウェイとしてインストールされている Windows 管理センターを使用している場合、サービスがとを含むイベントログのエラーでクラッシュすることがあり ```Faulting application name: sme.exe``` ```Faulting module name: WsmSvc.dll``` ます。 これは、Windows Server 2019 で修正されたバグが原因です。 Windows Server 2016 の修正プログラムには、2019の累積的な更新プログラム[KB4480977](https://www.catalog.update.microsoft.com/Search.aspx?q=4480977)が含まれています。
 
@@ -73,7 +71,7 @@ Windows Admin Center は、Mozilla Firefox でテストされていませんが�
 
 ## <a name="websocket-compatibility-when-using-a-proxy-service"></a>プロキシ サービスを使用する場合の WebSocket の互換性
 
-Windows Admin Center のリモート デスクトップ、PowerShell、およびイベント モジュールでは、WebSocket プロトコルを利用します。多くの場合、このプロトコルはプロキシ サービスを使用するときにサポートされていません。 
+Windows Admin Center のリモート デスクトップ、PowerShell、およびイベント モジュールでは、WebSocket プロトコルを利用します。多くの場合、このプロトコルはプロキシ サービスを使用するときにサポートされていません。
 
 ## <a name="support-for-windows-server-versions-before-2016-2012-r2-2012-2008-r2"></a>2016より前の Windows Server バージョンのサポート (2012 R2、2012、2008 R2)
 
@@ -98,7 +96,7 @@ PowerShell で `$PSVersiontable` を入力して、WMF がインストールさ�
 
 - .PFX の暗号化された証明書を現在のユーザー ストアにインポートすることはできません。 [11818622]
 
-### <a name="events"></a>[イベント]
+### <a name="events"></a>イベント
 
 - イベントは、[プロキシ サービスを使用する場合に WebSocket の互換性](#websocket-compatibility-when-using-a-proxy-service)に影響を受けます。
 
@@ -106,7 +104,7 @@ PowerShell で `$PSVersiontable` を入力して、WMF がインストールさ�
 
   - これを解決するには、ゲートウェイコンピューターで管理者特権のコマンドプロンプトで次のコマンドを使用します。```winrm set winrm/config @{MaxEnvelopeSizekb="8192"}```
 
-### <a name="files"></a>Files
+### <a name="files"></a>ファイル
 
 - 大きいファイルのアップロードまたはダウンロードはまだサポートされていません。 ( \~ 100mb の制限) [12524234]
 
@@ -154,7 +152,7 @@ PowerShell で `$PSVersiontable` を入力して、WMF がインストールさ�
 
 - 自動的に再起動するように選択した場合、状態が 100% に更新される前に、再起動が行われます。 [13098852]
 
-### <a name="storage"></a>ストレージ
+### <a name="storage"></a>記憶域
 
 - ダウンレベル: DVD/CD/フロッピー ドライブは、ダウンレベルのボリュームとして表示されません。
 
@@ -194,7 +192,7 @@ PowerShell で `$PSVersiontable` を入力して、WMF がインストールさ�
 - ローカル ホストを管理しようとすると、ゲートウェイ プロセスを昇格するように求められます。 次のユーザーアカウント制御ポップアップで [**いいえ**] をクリックすると、接続試行を取り消してからやり直す必要があります。
 
 - 既定では、Windows 10 では WinRM と PowerShell のリモート処理が行われません。
-  
+
   - Windows 10 クライアントの管理を有効にするには、管理者特権の PowerShell プロンプトから ```Enable-PSRemoting``` コマンドを実行する必要があります。
 
   - また、```Set-NetFirewallRule -Name WINRM-HTTP-In-TCP -RemoteAddress Any``` を使用して、ローカル サブネットの外部から接続を許可できるようにファイアウォールを更新する必要があります。 より制限の厳しいネットワーク シナリオでは、[このドキュメント](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enable-psremoting?view=powershell-5.1)を参照してください。
@@ -205,35 +203,35 @@ PowerShell で `$PSVersiontable` を入力して、WMF がインストールさ�
 サーバーを追加する場合、ワークグループコンピューターが混在していることは現在サポートされていません。 クラスタリングに使用されるすべてのコンピューターは、同じワークグループに属している必要があります。 そうでない場合、[次へ] ボタンは無効になり、"異なる Active Directory ドメインにサーバーを持つクラスターを作成することはできません" というエラーが表示されます。 サーバー名が正しいことを確認します。 すべてのサーバーを同じドメインに移動して、もう一度やり直してください。 "
 
 ### <a name="step-14"></a>手順1.4
-Hyper-v は、Azure Stack HCI OS を実行する仮想マシンにインストールする必要があります。 これらの仮想マシンに対して Hyper-v 機能を有効にしようとすると、次のエラーが発生して失敗します。 
+Hyper-v は、Azure Stack HCI OS を実行する仮想マシンにインストールする必要があります。 これらの仮想マシンに対して Hyper-v 機能を有効にしようとすると、次のエラーが発生して失敗します。
 
 ![Hyper-v の有効化エラーのスクリーンショット](../media/cluster-create-install-hyperv.png)
 
-Azure Stack HCI OS を実行している仮想マシンに Hyper-v をインストールするには、次のコマンドを実行します。 
+Azure Stack HCI OS を実行している仮想マシンに Hyper-v をインストールするには、次のコマンドを実行します。
 
 ```PowerShell
-Enable-windowsoptionalfeature -online -featurename Microsoft-hyper-v 
+Enable-windowsoptionalfeature -online -featurename Microsoft-hyper-v
 ```
 
 ### <a name="step-17"></a>手順1.7
-更新プログラムのインストール後に、サーバーの再起動に予想以上に時間がかかることがあります。 Windows 管理センターのクラスター展開ウィザードは、サーバーが正常に再起動されたかどうかを確認するために、サーバーの再起動状態を定期的に確認します。 ただし、ユーザーがウィザードの外部でサーバーを手動で再起動した場合、ウィザードに適切な方法でサーバーの状態をキャプチャする方法はありません。 
+更新プログラムのインストール後に、サーバーの再起動に予想以上に時間がかかることがあります。 Windows 管理センターのクラスター展開ウィザードは、サーバーが正常に再起動されたかどうかを確認するために、サーバーの再起動状態を定期的に確認します。 ただし、ユーザーがウィザードの外部でサーバーを手動で再起動した場合、ウィザードに適切な方法でサーバーの状態をキャプチャする方法はありません。
 
-サーバーを手動で再起動する場合は、現在のウィザードセッションを終了します。 サーバーを再起動した後、ウィザードを再起動することができます。 
+サーバーを手動で再起動する場合は、現在のウィザードセッションを終了します。 サーバーを再起動した後、ウィザードを再起動することができます。
 
 ### <a name="stretch-cluster-creation"></a>ストレッチクラスターの作成
 ストレッチクラスターを作成するときは、ドメインに参加しているサーバーを使用することをお勧めします。 WinRM の制限により、ストレッチクラスターの展開にワークグループコンピューターを使用しようとすると、ネットワークセグメント化の問題が発生します。
 
 ### <a name="undo-and-start-over"></a>元に戻すとやり直す
-クラスターのデプロイに同じマシンを繰り返し使用する場合、以前のクラスターエンティティのクリーンアップは、同じマシンセットでクラスターのデプロイを成功させるために重要です。 クラスターをクリーンアップする方法については、[ハイパー集約型インフラストラクチャの展開](https://docs.microsoft.com/windows-server/manage/windows-admin-center/use/deploy-hyperconverged-infrastructure#undo-and-start-over)に関するページを参照してください。 
+クラスターのデプロイに同じマシンを繰り返し使用する場合、以前のクラスターエンティティのクリーンアップは、同じマシンセットでクラスターのデプロイを成功させるために重要です。 クラスターをクリーンアップする方法については、[ハイパー集約型インフラストラクチャの展開](https://docs.microsoft.com/windows-server/manage/windows-admin-center/use/deploy-hyperconverged-infrastructure#undo-and-start-over)に関するページを参照してください。
 
 ### <a name="credssp"></a>CredSSP
 Windows 管理センターのクラスター展開ウィザードでは、いくつかの場所で CredSSP が使用されます。 ウィザードの実行中にこのエラーメッセージが表示されます (これは、クラスターの検証手順で最も頻繁に発生します)。
 
 ![クラスター作成 CredSSP エラーのスクリーンショット](../media/cluster-create-credssp-error.jpg)
 
-次の手順を使用して、トラブルシューティングを行うことができます。 
+次の手順を使用して、トラブルシューティングを行うことができます。
 
-1. すべてのノードと Windows 管理センターゲートウェイコンピューターの CredSSP 設定を無効にします。 ゲートウェイコンピューターで最初のコマンドを実行し、クラスター内のすべてのノードで2番目のコマンドを実行します。 
+1. すべてのノードと Windows 管理センターゲートウェイコンピューターの CredSSP 設定を無効にします。 ゲートウェイコンピューターで最初のコマンドを実行し、クラスター内のすべてのノードで2番目のコマンドを実行します。
 
 ```PowerShell
 Disable-WsmanCredSSP -Role Client
@@ -241,7 +239,7 @@ Disable-WsmanCredSSP -Role Client
 ```PowerShell
 Disable-WsmanCredSSP -Role Server
 ```
-2. すべてのノードで信頼を修復してください。 すべてのノードで次のコマンドを実行します。 
+2. すべてのノードで信頼を修復してください。 すべてのノードで次のコマンドを実行します。
 ```PowerShell
 Test-ComputerSecureChannel -Verbose -Repair -Credential <account name>
 ```
@@ -251,7 +249,7 @@ Test-ComputerSecureChannel -Verbose -Repair -Credential <account name>
 gpupdate /force
 ```
 
-4. ノードを再起動します。 再起動後、次のコマンドを使用して、ゲートウェイコンピューターとターゲットノードの間の接続と、ノード間の接続をテストします。 
+4. ノードを再起動します。 再起動後、次のコマンドを使用して、ゲートウェイコンピューターとターゲットノードの間の接続と、ノード間の接続をテストします。
 ```PowerShell
 Enter-PSSession -computername <node fqdn>
 ```
@@ -260,20 +258,20 @@ Enter-PSSession -computername <node fqdn>
 仮想マシン上で Azure Stack HCI OS クラスターの展開を検証するときは、次の powershell コマンドを使用して、役割/機能が有効になる前に、入れ子になった仮想化を有効にする必要があります。
 
 ```PowerShell
-Set-VMProcessor -VMName <VMName> -ExposeVirtualizationExtensions $true 
+Set-VMProcessor -VMName <VMName> -ExposeVirtualizationExtensions $true
 ```
 
   > [!Note]
-  > 仮想マシン環境で仮想スイッチのチーミングを成功させるには、仮想マシンの作成後すぐに、次のコマンドを PowerShell で実行する必要があります。% {VMNetworkAdapter-VMName $ _.Name-MacAddressSpoofing On-AllowTeaming on} 
+  > 仮想マシン環境で仮想スイッチのチーミングを成功させるには、仮想マシンの作成後すぐに、次のコマンドを PowerShell で実行する必要があります。% {VMNetworkAdapter-VMName $ _.Name-MacAddressSpoofing On-AllowTeaming on}
 
-Azure Stack HCI OS を使用してクラスターをデプロイする場合は、追加の要件があります。 VM ブート仮想ハードドライブは、Hyper-v 機能と共にプレインストールされている必要があります。 これを行うには、仮想マシンを作成する前に次のコマンドを実行します。 
+Azure Stack HCI OS を使用してクラスターをデプロイする場合は、追加の要件があります。 VM ブート仮想ハードドライブは、Hyper-v 機能と共にプレインストールされている必要があります。 これを行うには、仮想マシンを作成する前に次のコマンドを実行します。
 
 ```PowerShell
 Install-WindowsFeature –VHD <Path to the VHD> -Name Hyper-V, RSAT-Hyper-V-Tools, Hyper-V-PowerShell
 ```
 
 ### <a name="support-for-rdma"></a>RDMA のサポート
-Windows 管理センターバージョン2007のクラスター展開ウィザードでは、RDMA の構成はサポートされていません。   
+Windows 管理センターバージョン2007のクラスター展開ウィザードでは、RDMA の構成はサポートされていません。
 
 ## <a name="failover-cluster-manager-solution"></a>フェールオーバー クラスター マネージャー ソリューション
 
@@ -296,7 +294,7 @@ Windows 管理センターバージョン2007のクラスター展開ウィザ�
 Azure File Sync には、Windows 管理センターがバージョン1910より前に提供していない Azure のアクセス許可が必要です。 Windows 管理センターのバージョン1910より前のバージョンを使用して Windows 管理センターゲートウェイを Azure に登録した場合は、Azure Active Directory アプリケーションを更新して、最新バージョンの Windows 管理センターで Azure File Sync を使用するための正しいアクセス許可を取得する必要があります。 追加のアクセス許可により、この記事の説明に従って、ストレージアカウントへのアクセスの自動構成を実行 Azure File Sync ことができます。 [Azure File Sync にストレージアカウントへのアクセス権があることを確認](https://docs.microsoft.com/azure/storage/files/storage-sync-files-troubleshoot?tabs=portal1%2Cazure-portal#tabpanel_CeZOj-G++Q-5_azure-portal)してください。
 
 Azure Active Directory アプリを更新するには、次の2つのいずれかを実行します。
-1. [**設定**] [  >  **azure**の  >  **登録解除**] の順に選択し、もう一度 Windows 管理センターを Azure に登録して、新しい Azure Active Directory アプリケーションを作成することを確認します。 
+1. [**設定**] [  >  **azure**の  >  **登録解除**] の順に選択し、もう一度 Windows 管理センターを Azure に登録して、新しい Azure Active Directory アプリケーションを作成することを確認します。
 2. Azure Active Directory アプリケーションにアクセスし、Windows 管理センターに登録されている既存の Azure Active Directory アプリに必要なアクセス許可を手動で追加します。 これを行うには、 **Settings**  >  **Azure**  >  **azure での azure ビューの**設定に関するページを参照してください。 Azure の [**アプリの登録**] ブレードで、[API の**アクセス許可**] にアクセスし、[**アクセス許可の追加**] を選択します。 下にスクロールして**Azure Active Directory グラフ**を選択し、[委任された**アクセス許可**]、[**ディレクトリ**] の順に展開して、[ **AccessAsUser**] を選択します。 [**アクセス許可の追加**] をクリックして、アプリに更新プログラムを保存します。
 
 ### <a name="options-for-setting-up-azure-management-services"></a>Azure 管理サービスを設定するためのオプション

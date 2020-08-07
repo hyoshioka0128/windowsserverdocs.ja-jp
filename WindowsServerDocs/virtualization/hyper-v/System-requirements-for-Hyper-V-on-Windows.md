@@ -1,24 +1,22 @@
 ---
 title: Windows Server 上の Hyper-v のシステム要件
 description: Windows Server の Hyper-v のハードウェア要件とファームウェア要件の一覧を示します。
-ms.prod: windows-server
 manager: dongill
-ms.technology: compute-hyper-v
 ms.topic: article
 ms.assetid: bc4a4971-f727-40cd-91f5-2ee6d24b54cb
 author: kbdazure
 ms.author: kathydav
 ms.date: 9/30/2016
-ms.openlocfilehash: 9bb50448f1ee819b3b886536424ee1556775b78d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 56d9f862d4bd31ac8fba08837e59c94b865f7b1a
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80857985"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87970029"
 ---
 # <a name="system-requirements-for-hyper-v-on-windows-server"></a>Windows Server 上の Hyper-v のシステム要件
 
->適用対象: Windows Server 2016、Microsoft Hyper-V Server 2016、Windows Server 2019、Microsoft Hyper-V Server 2019
+>適用先:Windows Server 2016、Microsoft Hyper-V Server 2016、Windows Server 2019、Microsoft Hyper-V Server 2019
 
 HYPER-V では、特定のハードウェア要件を持ち、一部の HYPER-V 機能の追加要件があります。 この記事で詳細情報を使用すると、どのような要件を計画する方法は、HYPER-V を使用できるように、システムが満たしている必要がありますを決定できます。 その後、確認、 [Windows Server カタログ](https://www.windowsservercatalog.com/)します。 HYPER-V の要件では、仮想化環境には、多くのコンピューティング リソースが必要とするために、Windows Server 2016 の一般的な最小要件が超えていることに留意してください。
 
@@ -40,7 +38,7 @@ HYPER-V の機能を使用する場合に関係なく必要があります。
 
   - ハードウェア補助による仮想化。 これは、仮想化オプションの Intel Virtualization Technology (Intel VT) または AMD Virtualization (AMD-V) テクノロジとプロセッサ、特にプロセッサで使用できます。
 
-  - ハードウェアによるデータ実行防止 (DEP) が利用でき、有効にされていることが必要です。 Intel システムでは、これは、XD ビット (execute disable bit)。 AMD のシステムでは、これは、NX ビット (no execute bit) です。
+  - ハードウェアによるデータ実行防止 (DEP) が使用可能で、有効になっている必要があります。 Intel システムの場合、これは XD ビット (execute disable bit) です。 AMD システムの場合、これは NX ビット (no execute bit) です。
 
 ## <a name="how-to-check-for-hyper-v-requirements"></a>HYPER-V の要件を確認する方法
 
@@ -50,7 +48,7 @@ Windows PowerShell またはコマンド プロンプトと種類を開きます
 Systeminfo.exe
 ```
 
-レポートを確認する HYPER-V の要件 セクションまでスクロールします。
+レポートを確認する HYPER-V の要件] セクションまでスクロールします。
 
 ## <a name="requirements-for-specific-features"></a>特定の機能の要件
 
@@ -89,6 +87,6 @@ Systeminfo.exe
 
 **仮想マシン** の要件。
 
-- 世代 2
+- 第 2 世代
 - ゲストオペレーティングシステムとしての Windows Server 2012 以降
 

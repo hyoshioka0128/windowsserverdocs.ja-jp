@@ -1,18 +1,16 @@
 ---
 title: ゲートウェイ帯域幅の割り当て
 manager: grcusanz
-ms.prod: windows-server
-ms.technology: networking-hv-switch
 ms.topic: get-started-article
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/22/2018
-ms.openlocfilehash: a5e4e6b280c30eedc230da99cbf798e5560a0ca5
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 48a24586c356650ee0e625770dcdd55ce505951c
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80855715"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87962286"
 ---
 # <a name="gateway-bandwidth-allocation"></a>ゲートウェイ帯域幅の割り当て
 
@@ -20,7 +18,7 @@ ms.locfileid: "80855715"
 
 Windows Server 2016 では、IPsec、GRE、L3 の個々のトンネル帯域幅は、ゲートウェイの合計容量の比率でした。 そのため、ゲートウェイ VM の使用を想定している標準の TCP 帯域幅に基づいて、ゲートウェイの容量を提供します。
 
-また、ゲートウェイの最大 IPsec トンネル帯域幅は、お客様が提供する\*ゲートウェイの容量3/20 に制限されていました。 たとえば、ゲートウェイの容量を 100 Mbps に設定した場合、IPsec トンネルの容量は 150 Mbps になります。 GRE トンネルと L3 トンネルの同等の比率は、それぞれ1/5 と1/2 です。
+また、ゲートウェイの最大 IPsec トンネル帯域幅は、 \* 顧客によって提供されるゲートウェイの容量 (3/20) に制限されていました。 たとえば、ゲートウェイの容量を 100 Mbps に設定した場合、IPsec トンネルの容量は 150 Mbps になります。 GRE トンネルと L3 トンネルの同等の比率は、それぞれ1/5 と1/2 です。
 
 これはほとんどのデプロイでは機能していましたが、固定比率モデルは高スループット環境には適していませんでした。 データ転送率が高い (たとえば、40 Gbps を超える) 場合でも、SDN ゲートウェイトンネルの最大スループットは内部的な要因によって上限になります。
 
@@ -58,13 +56,13 @@ IPsec と GRE 接続の両方にゲートウェイを使用している場合は
 
 ゲートウェイで使用可能な残りの容量 = ゲートウェイの合計容量– IPsec スループット比 * IPsec スループット割り当て (使用済み容量)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;25-5 * 2 = 15 Gbps
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;25 ~ 5 * 2 = 15 Gbps
 
-ゲートウェイに割り当てることができる残りの IPsec スループット 
+ゲートウェイに割り当てることができる残りの IPsec スループット
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5-2 = 3 Gbps
 
-ゲートウェイで割り当てることができる残りの GRE スループット = ゲートウェイ/GRE スループット比の残りの容量 
+ゲートウェイで割り当てることができる残りの GRE スループット = ゲートウェイ/GRE スループット比の残りの容量
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;15 * 3/5 = 9 Gbps
 
@@ -74,13 +72,13 @@ IPsec と GRE 接続の両方にゲートウェイを使用している場合は
 
 ## <a name="windows-server-2016-behavior"></a>Windows Server 2016 の動作
 
-Windows Server 2016 のゲートウェイの容量計算アルゴリズムは変更されません。 Windows Server 2016 では、最大 IPsec トンネル帯域幅は、ゲートウェイの\*ゲートウェイの容量3/20 に制限されていました。 GRE トンネルと L3 トンネルの同等の比率はそれぞれ1/5 と1/2 でした。
+Windows Server 2016 のゲートウェイの容量計算アルゴリズムは変更されません。 Windows Server 2016 では、最大 IPsec トンネル帯域幅はゲートウェイのゲートウェイ容量 (3/20) に制限され \* ていました。 GRE トンネルと L3 トンネルの同等の比率はそれぞれ1/5 と1/2 でした。
 
 Windows Server 2016 から Windows Server 2019 にアップグレードする場合は、次のようにします。
 
 1.  **GRE トンネルと L3 トンネル:** Windows Server 2019 の割り当てロジックは、ネットワークコントローラーノードが Windows Server 2019 に更新された後に有効になります。
 
-2.  **IPSec トンネル:** ゲートウェイプール内のすべてのゲートウェイが Windows Server 2019 にアップグレードされるまで、Windows Server 2016 ゲートウェイの割り当てロジックは引き続き機能します。 ゲートウェイプール内のすべてのゲートウェイについて、Azure ゲートウェイサービスを **[自動]** に設定する必要があります。
+2.  **IPSec トンネル:** ゲートウェイプール内のすべてのゲートウェイが Windows Server 2019 にアップグレードされるまで、Windows Server 2016 ゲートウェイの割り当てロジックは引き続き機能します。 ゲートウェイプール内のすべてのゲートウェイについて、Azure ゲートウェイサービスを [**自動**] に設定する必要があります。
 
 >[!NOTE]
 >Windows Server 2019 にアップグレードすると、ゲートウェイが過剰にプロビジョニングされる可能性があります (割り当てロジックが Windows Server 2016 から Windows Server 2019 に変更されるため)。 この場合、ゲートウェイ上の既存の接続は引き続き存在します。 ゲートウェイの REST リソースは、ゲートウェイが過剰にプロビジョニングされていることを示す警告をスローします。 この場合は、別のゲートウェイに接続を移動する必要があります。

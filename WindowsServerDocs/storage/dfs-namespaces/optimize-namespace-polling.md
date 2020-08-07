@@ -2,18 +2,16 @@
 title: 名前空間のポーリングを最適化する
 description: この記事では、名前空間のポーリングを最適化して、名前空間サーバー間で一貫性のあるドメイン ベースの名前空間を維持する方法について説明します。
 ms.date: 6/5/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 4ffcf974bd809d1692e16d632153c213081041c4
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: cc14dd4f8d6cd833642b87caa32353d4f8940b05
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961234"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87936137"
 ---
 # <a name="optimize-namespace-polling"></a>名前空間のポーリングを最適化する
 
@@ -37,7 +35,7 @@ ms.locfileid: "86961234"
 > [!NOTE]
 > Windows PowerShell を使って名前空間ポーリング モードを設定するには、Windows Server 2012 で導入された [Set-DfsnRoot EnableRootScalability](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771913(v=ws.11)) コマンドレットを使います。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 -   [DFS 名前空間を調整する](tuning-dfs-namespaces.md)
 -   [DFS 名前空間の管理アクセス許可を委任する](delegate-management-permissions-for-dfs-namespaces.md)

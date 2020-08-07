@@ -1,136 +1,134 @@
 ---
 title: ネットワーク関連のパフォーマンス カウンター
 description: このトピックは、Windows Server 2016 のネットワークサブシステムのパフォーマンスチューニングガイドに含まれています。
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: 7ebaa271-2557-4c24-a679-c3d863e6bf9e
 manager: dcscontentpm
 ms.author: v-tea
 author: Teresa-Motiv
-ms.openlocfilehash: e3350d476b9bfe8ef38cab610a225dcffe0bd02a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: e9c4bc76e737c70d3d973e6fa77c57adefc7d5b1
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80862195"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953928"
 ---
 # <a name="network-related-performance-counters"></a>ネットワーク関連のパフォーマンス カウンター
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016
+>適用先:Windows Server (半期チャネル)、Windows Server 2016
 
-このトピックでは、ネットワークパフォーマンスの管理に関連するカウンターの一覧を示し、次のセクションについて説明します。  
-  
--   [リソース使用率](#bkmk_ru)  
-  
--   [潜在的なネットワークの問題](#bkmk_np)  
-  
--   [受信側結合 (RSC) のパフォーマンス](#bkmk_rsc)  
-  
-##  <a name="resource-utilization"></a><a name="bkmk_ru"></a>リソース使用率  
+このトピックでは、ネットワークパフォーマンスの管理に関連するカウンターの一覧を示し、次のセクションについて説明します。
 
-次のパフォーマンスカウンターは、ネットワークリソースの使用率に関連しています。  
-  
-- IPv4、IPv6  
-  
-  -   受信したデータグラム/秒  
-  
-  -   送信されたデータグラム/秒  
-  
-- TCPv4、TCPv6  
-  
-  -   1秒あたりの受信セグメント数  
-  
-  -   送信されたセグメント/秒  
-  
-  -   1秒あたりの再送信セグメント数  
-  
-- ネットワークインターフェイス (*)、ネットワークアダプター (\*)  
-  
-  - Bytes Received/sec  
-  
-  - 送信バイト数/秒  
-  
-  - 1秒あたりの受信パケット数  
-  
-  - 1秒あたりの送信パケット数  
-  
-  - 出力キューの長さ  
-  
-    このカウンターは、パケット\)で \(出力パケットキューの長さです。 この値が2より長い場合は、遅延が発生します。 可能であれば、ボトルネックを見つけて削除する必要があります。 NDIS は要求をキューに配置するため、この長さは常に0にする必要があります。  
-  
-- プロセッサ情報  
-  
-  - % Processor Time  
-  
-  - 割り込み回数/秒  
-  
-  - Dpc キュー/秒  
-  
-    このカウンターは、Dpc が論理プロセッサの DPC キューに追加された平均速度です。 各論理プロセッサには、独自の DPC キューがあります。 このカウンターは、キュー内の Dpc の数ではなく、Dpc がキューに追加される速度を計測します。 最後の2つのサンプルで観測された値の差を、サンプリング間隔の時間で割った値が表示されます。  
-  
-##  <a name="potential-network-problems"></a><a name="bkmk_np"></a>潜在的なネットワークの問題  
+-   [リソース使用率](#bkmk_ru)
 
-次のパフォーマンスカウンターは、潜在的なネットワークの問題に関連しています。  
-  
--   ネットワークインターフェイス (*)、ネットワークアダプター (\*)  
-  
-    -   破棄されたパケットが破棄されました  
-  
-    -   パケット受信エラー数  
-  
-    -   送信パケット破棄数  
-  
-    -   パケット送信エラー  
-  
--   WFPv4, WFPv6  
-  
+-   [潜在的なネットワークの問題](#bkmk_np)
+
+-   [受信側結合 (RSC) のパフォーマンス](#bkmk_rsc)
+
+##  <a name="resource-utilization"></a><a name="bkmk_ru"></a>リソース使用率
+
+次のパフォーマンスカウンターは、ネットワークリソースの使用率に関連しています。
+
+- IPv4、IPv6
+
+  -   受信したデータグラム/秒
+
+  -   送信されたデータグラム/秒
+
+- TCPv4、TCPv6
+
+  -   1秒あたりの受信セグメント数
+
+  -   Segments Sent/sec
+
+  -   1秒あたりの再送信セグメント数
+
+- ネットワークインターフェイス (*)、ネットワークアダプター ( \* )
+
+  - Bytes Received/sec
+
+  - Bytes Sent/sec
+
+  - 受信パケット/秒
+
+  - 送信パケット/秒
+
+  - Output Queue Length
+
+    このカウンターは、パケット内の出力パケットキューの長さです \( \) 。 この値が2より長い場合は、遅延が発生します。 可能であれば、ボトルネックを見つけて削除する必要があります。 NDIS は要求をキューに配置するため、この長さは常に0にする必要があります。
+
+- プロセッサ情報
+
+  - % Processor Time
+
+  - 割り込み回数/秒
+
+  - Dpc キュー/秒
+
+    このカウンターは、Dpc が論理プロセッサの DPC キューに追加された平均速度です。 各論理プロセッサには、独自の DPC キューがあります。 このカウンターは、キュー内の Dpc の数ではなく、Dpc がキューに追加される速度を計測します。 最後の2つのサンプルで観測された値の差を、サンプリング間隔の時間で割った値が表示されます。
+
+##  <a name="potential-network-problems"></a><a name="bkmk_np"></a>潜在的なネットワークの問題
+
+次のパフォーマンスカウンターは、潜在的なネットワークの問題に関連しています。
+
+-   ネットワークインターフェイス (*)、ネットワークアダプター ( \* )
+
+    -   Packets Received Discarded
+
+    -   Packets Received Errors
+
+    -   Packets Outbound Discarded
+
+    -   Packets Outbound Errors
+
+-   WFPv4, WFPv6
+
     -   1秒あたりの破棄されたパケット数
 
 -   UDPv4、UDPv6
 
-    -   データグラム受信エラー  
-  
--   TCPv4、TCPv6  
-  
-    -   接続エラー  
-  
-    -   接続のリセット  
-  
--   ネットワーク QoS ポリシー  
-  
-    -   破棄されたパケット数  
-  
-    -   1秒あたりの破棄されたパケット数  
-  
--   プロセッサごとのネットワークインターフェイスカードのアクティビティ  
-  
-    -   低リソース受信通知数/秒  
-  
-    -   低リソース受信パケット/秒  
-  
--   Microsoft Winsock BSP  
-  
-    -   削除されたデータグラム  
-  
-    -   破棄されたデータグラム/秒  
-  
-    -   Rejected Connections  
-  
-    -   拒否された接続数/秒  
-  
-##  <a name="receive-side-coalescing-rsc-performance"></a><a name="bkmk_rsc"></a>受信側結合 (RSC) のパフォーマンス  
+    -   データグラム受信エラー
 
-次のパフォーマンスカウンターは、RSC のパフォーマンスに関連しています。  
-  
--   ネットワークアダプター (*)  
-  
-    -   TCP アクティブ RSC 接続  
-  
-    -   TCP RSC の平均パケットサイズ  
-  
-    -   TCP RSC の結合パケット数/秒  
-  
+-   TCPv4、TCPv6
+
+    -   接続に関するエラー
+
+    -   Connections Reset
+
+-   ネットワーク QoS ポリシー
+
+    -   破棄されたパケット数
+
+    -   1秒あたりの破棄されたパケット数
+
+-   プロセッサごとのネットワークインターフェイスカードのアクティビティ
+
+    -   低リソース受信通知数/秒
+
+    -   低リソース受信パケット/秒
+
+-   Microsoft Winsock BSP
+
+    -   削除されたデータグラム
+
+    -   破棄されたデータグラム/秒
+
+    -   Rejected Connections
+
+    -   拒否された接続数/秒
+
+##  <a name="receive-side-coalescing-rsc-performance"></a><a name="bkmk_rsc"></a>受信側結合 (RSC) のパフォーマンス
+
+次のパフォーマンスカウンターは、RSC のパフォーマンスに関連しています。
+
+-   ネットワークアダプター (*)
+
+    -   TCP アクティブ RSC 接続
+
+    -   TCP RSC の平均パケットサイズ
+
+    -   TCP RSC の結合パケット数/秒
+
     -   TCP RSC 例外数/秒
 
 このガイドのすべてのトピックへのリンクについては、「[ネットワークサブシステムのパフォーマンスチューニング](net-sub-performance-top.md)」を参照してください。

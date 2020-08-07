@@ -7,14 +7,12 @@ ms.author: billmath
 manager: samueld
 ms.date: 10/02/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: a982df8ce7d1f335a1c2242f277b1983573c9ee1
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: cc48e3efc783665921519272443e86620dcd4d4a
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86954205"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87962476"
 ---
 # <a name="managing-ssl-certificates-in-ad-fs-and-wap-in-windows-server-2016"></a>Windows Server 2016 の AD FS と WAP で SSL 証明書を管理する
 
@@ -46,7 +44,7 @@ ms.locfileid: "86954205"
 AD FS 既定では、ポート443でのデバイス証明書の認証と、ポート 49443 (または443ではない構成可能なポート) でのユーザー証明書の認証が実行されます。
 このモードでは、powershell コマンドレット Set-adfssslcertificate を使用して SSL 証明書を管理します。
 
-次の手順に従います。
+次の手順に従ってください。
 
 1. まず、新しい証明書を取得する必要があります。 これは通常、サードパーティの公開証明書プロバイダーに証明書署名要求 (CSR) を送信することによって行われます。 Windows 7 以降の PC から、CSR を生成するにはさまざまな方法があります。 このことについては、ベンダーにドキュメントが必要です。
 
@@ -77,7 +75,7 @@ dir Cert:\LocalMachine\My\
 代替クライアント TLS バインドモードで構成されている場合、AD FS はポート443でデバイス証明書認証を実行し、別のホスト名でポート443でもユーザー証明書認証を実行します。 ユーザー証明書のホスト名は、"certauth.fs.contoso.com" など、"certauth" で事前に付加された AD FS ホスト名です。
 このモードでは、powershell コマンドレット AdfsAlternateTlsClientBinding を使用して SSL 証明書を管理します。 これにより、代替のクライアント TLS バインドだけでなく、AD FS が SSL 証明書を設定するその他のすべてのバインドも管理されます。
 
-次の手順に従います。
+次の手順に従ってください。
 
 1. まず、新しい証明書を取得する必要があります。 これは通常、サードパーティの公開証明書プロバイダーに証明書署名要求 (CSR) を送信することによって行われます。 Windows 7 以降の PC から、CSR を生成するにはさまざまな方法があります。 このことについては、ベンダーにドキュメントが必要です。
 
@@ -124,6 +122,6 @@ AD FS サーバーのローカル管理者であるドメインユーザーの�
 Install-WebApplicationProxy -FederationServiceTrustCredential $cred -CertificateThumbprint '<thumbprint of new cert>' -FederationServiceName 'fs.contoso.com'
 ```
 
-## <a name="additional-references"></a>その他のリファレンス  
+## <a name="additional-references"></a>その他の参照情報
 * [AD FS での証明書認証のための代替ホスト名バインドのサポート](../operations/AD-FS-support-for-alternate-hostname-binding-for-certificate-authentication.md)
 * [AD FS と certificate KeySpec のプロパティ情報](../technical-reference/AD-FS-and-KeySpec-Property.md)

@@ -1,24 +1,22 @@
 ---
 title: Windows ログオンのシナリオ
 description: Windows Server のセキュリティ
-ms.prod: windows-server
-ms.technology: security-windows-auth
 ms.topic: article
 ms.assetid: 66b7c568-67b7-4ac9-a479-a5a3b8a66142
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 9a953b22b39a20557103fa84a5d6d5e42e753444
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3e3876680031cdb31f2fa3e6ce200efdf6fb5185
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80861705"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87936452"
 ---
 # <a name="windows-logon-scenarios"></a>Windows ログオンのシナリオ
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016
+>適用先:Windows Server (半期チャネル)、Windows Server 2016
 
 IT 担当者向けのこのリファレンストピックでは、一般的な Windows ログオンとサインインのシナリオについて概要を説明します。
 
@@ -36,7 +34,7 @@ Windows オペレーティングシステムでは、すべてのユーザーが
 
 -   [ネットワークログオン](#BKMK_NetworkLogon)
 
--   [スマートカードログオン](#BKMK_SmartCardLogon)
+-   [スマート カード ログオン](#BKMK_SmartCardLogon)
 
 -   [生体認証ログオン](#BKMK_BioLogon)
 
@@ -47,7 +45,7 @@ Windows オペレーティングシステムでは、すべてのユーザーが
 
 ![対話型ログオン要素とログオンプロセスを示す図](../media/windows-logon-scenarios/AuthN_LSA_Architecture_Client.gif)
 
-**Windows クライアント認証のアーキテクチャ**
+**Windows クライアント認証アーキテクチャ**
 
 ### <a name="local-and-domain-logon"></a><a name="BKMK_LocaDomainLogon"></a>ローカルログオンとドメインログオン
 ドメインログオンに対してユーザーに提示される資格情報には、アカウント名、パスワード、証明書などのローカルログオンに必要なすべての要素と、ドメイン情報の Active Directory が含まれます。 このプロセスでは、ユーザーのローカルコンピューターまたは Active Directory ドメインのセキュリティデータベースに対するユーザー id が確認されます。 ドメイン内のユーザーに対して、この必須ログオンプロセスを無効にすることはできません。
@@ -86,13 +84,13 @@ RDP は、ユーザーがリモートデスクトップクライアントを使�
 
 -   Secure Sockets Layer/トランスポート層セキュリティ (SSL/TLS)
 
--   Digest
+-   ダイジェスト
 
 -   NTLM (Microsoft Windows NT 4.0 ベースのシステムとの互換性のため)
 
 要素とプロセスの詳細については、上の対話型ログオン図を参照してください。
 
-## <a name="smart-card-logon"></a><a name="BKMK_SmartCardLogon"></a>スマートカードログオン
+## <a name="smart-card-logon"></a><a name="BKMK_SmartCardLogon"></a>スマート カード ログオン
 スマートカードは、ローカルアカウントではなく、ドメインアカウントにのみログオンするために使用できます。 スマートカード認証では、Kerberos 認証プロトコルを使用する必要があります。 Windows 2000 Server で導入された Windows ベースのオペレーティングシステムでは、Kerberos プロトコルの初期認証要求に対する公開キーの拡張機能が実装されています。 共有秘密キーの暗号化とは異なり、公開キーの暗号化は非対称です。つまり、暗号化するキーと復号化するキーの2つの異なるキーが必要です。 また、両方の操作を実行するために必要なキーによって、秘密キーと公開キーのペアが構成されます。
 
 一般的なログオンセッションを開始するには、ユーザーがユーザーおよび基になる Kerberos プロトコルインフラストラクチャにのみ知られている情報を提供することによって、ユーザーの身元を証明する必要があります。 シークレット情報は、ユーザーのパスワードから派生した暗号化共有キーです。 共有シークレットキーは対称であり、同じキーが暗号化と復号化の両方に使用されることを意味します。
@@ -101,7 +99,7 @@ RDP は、ユーザーがリモートデスクトップクライアントを使�
 
 ![スマートカードログオンに必要な要素とプロセスを示す図](../media/windows-logon-scenarios/SmartCardCredArchitecture.gif)
 
-**スマートカードの資格情報プロバイダーのアーキテクチャ**
+**スマート カード資格情報プロバイダーのアーキテクチャ**
 
 パスワードの代わりにスマートカードを使用すると、ユーザーのスマートカードに格納されている秘密キーと公開キーのペアが、ユーザーのパスワードから派生した共有シークレットキーに置き換えられます。 秘密キーは、スマートカードにのみ保存されます。 公開キーは、所有者が機密情報の交換を希望するすべてのユーザーが利用できるようにすることができます。
 

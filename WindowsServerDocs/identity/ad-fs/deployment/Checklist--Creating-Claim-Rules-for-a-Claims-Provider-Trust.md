@@ -5,15 +5,13 @@ author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 71ed68beb43f533f91d1840d2df38f010040ebcb
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 02cfddbe018b470000eca5331d53b3f0e38197ae
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87520061"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87945633"
 ---
 # <a name="checklist-creating-claim-rules-for-a-claims-provider-trust"></a>チェックリスト: 要求プロバイダー信頼の要求規則の作成
 

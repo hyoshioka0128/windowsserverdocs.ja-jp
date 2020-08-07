@@ -5,15 +5,13 @@ author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 9e626dab87cc4b0e1e35d61746943af9ca6354d3
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: cfb17c6f239270c7ab528d2ba815390e5f2dc512
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87520071"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87945644"
 ---
 # <a name="checklist-configuring-the-resource-partner-organization"></a>チェックリスト: リソースパートナー組織の構成
 

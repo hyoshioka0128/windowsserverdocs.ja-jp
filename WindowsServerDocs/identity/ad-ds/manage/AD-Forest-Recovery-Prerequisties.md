@@ -5,15 +5,13 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/09/2018
 ms.topic: article
-ms.prod: windows-server
 ms.assetid: c49b40b2-598d-49aa-85b4-766bce960e0d
-ms.technology: identity-adds
-ms.openlocfilehash: 6dcd1185ba4d4c847cfe212f78ccc9661fd2aead
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 827a983e49d9e20aafe2e7361f87e9f00ec117b0
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80823785"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87969869"
 ---
 # <a name="active-directory-forest-recovery-prerequisites"></a>Active Directory フォレスト回復の前提条件
 
@@ -25,23 +23,23 @@ ms.locfileid: "80823785"
 
 1. Microsoft サポート professional とを使用して作業しました。
    - フォレスト全体の障害の原因を特定しました。 このガイドでは、エラーの原因については説明しません。また、エラーを回避するための手順を推奨しません。
-   - 考えられる解決策を評価します。  
+   - 考えられる解決策を評価します。
    - 最後に、Microsoft サポートを使用して、エラーが発生する前の状態にフォレスト全体を復元することが、障害から復旧するための最善の方法です。 多くの場合、フォレストの回復は最後のオプションである必要があります。
 
 1. Active Directory 統合されたドメインネームシステム (DNS) を使用するための Microsoft のベストプラクティスの推奨事項に従っていること。 具体的には、Active Directory ドメインごとに Active Directory 統合 DNS ゾーンが必要です。
    - そうでない場合でも、このガイドの基本原則を使用してフォレストの回復を実行できます。 ただし、独自の環境に基づいて DNS 回復を行うには、特定の対策を講じる必要があります。 Active Directory 統合 DNS の使用方法の詳細については、「 [Dns インフラストラクチャ設計の作成](../../ad-ds/plan/Creating-a-DNS-Infrastructure-Design.md)」を参照してください。
 
-1. このガイドはフォレストの回復に関する一般的なガイドとして使用されていますが、すべてのシナリオについては説明しません。 たとえば、Windows Server 2008 以降では、Windows Server の完全なバージョンである Server Core バージョンがありますが、完全な GUI はありません。 Server Core を実行する Dc だけで構成されるフォレストを回復することは確かですが、このガイドには詳細な手順がありません。 ただし、ここで説明されているガイダンスに基づき、必要なコマンドラインアクションを自分で設計できます。  
+1. このガイドはフォレストの回復に関する一般的なガイドとして使用されていますが、すべてのシナリオについては説明しません。 たとえば、Windows Server 2008 以降では、Windows Server の完全なバージョンである Server Core バージョンがありますが、完全な GUI はありません。 Server Core を実行する Dc だけで構成されるフォレストを回復することは確かですが、このガイドには詳細な手順がありません。 ただし、ここで説明されているガイダンスに基づき、必要なコマンドラインアクションを自分で設計できます。
 
 > [!NOTE]
-> このガイドの目的はフォレストを回復し、完全な DNS 機能を維持または復元することですが、回復によって、障害が発生する前に構成から変更された DNS 構成が復元される可能性があります。 フォレストが回復した後は、元の DNS 構成に戻すことができます。 このガイドの推奨事項では、AD DS に格納されていない DNS ゾーンがある企業名前空間の他の部分の名前解決を実行するように DNS サーバーを構成する方法については説明しません。  
+> このガイドの目的はフォレストを回復し、完全な DNS 機能を維持または復元することですが、回復によって、障害が発生する前に構成から変更された DNS 構成が復元される可能性があります。 フォレストが回復した後は、元の DNS 構成に戻すことができます。 このガイドの推奨事項では、AD DS に格納されていない DNS ゾーンがある企業名前空間の他の部分の名前解決を実行するように DNS サーバーを構成する方法については説明しません。
 
 ## <a name="concepts-for-using-this-guide"></a>このガイドを使用するための概念
 
-Active Directory フォレストの回復計画を開始する前に、次のことを理解しておく必要があります。  
-  
-- 基本的な Active Directory の概念  
-- 操作マスターの役割 (フレキシブルシングルマスター操作または FSMO とも呼ばれます) の重要性。 これらのロールには、次のものがあります。  
+Active Directory フォレストの回復計画を開始する前に、次のことを理解しておく必要があります。
+
+- 基本的な Active Directory の概念
+- 操作マスターの役割 (フレキシブルシングルマスター操作または FSMO とも呼ばれます) の重要性。 これらのロールには、次が含まれます。
   - スキーママスタ
   - ドメイン名前付けマスタ
   - 相対 ID (RID) マスター

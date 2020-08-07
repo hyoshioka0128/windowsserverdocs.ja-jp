@@ -6,14 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 4cfdfbda3a1c7df19ded887cc748e7f69f2fad08
-ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
+ms.openlocfilehash: c91b24313f3bb11592da1dcd25e8e9330fcfd250
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87864064"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87945359"
 ---
 # <a name="legacy-ad-fs-federation-server-farm-using-wid"></a>WID を使用する従来の AD FS フェデレーションサーバーファーム
 

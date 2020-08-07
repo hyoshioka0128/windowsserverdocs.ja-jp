@@ -1,19 +1,17 @@
 ---
 ms.assetid: f15c02d7-1cbd-4eba-a571-0ea34ab93ef4
 title: データ重複除去の実行
-ms.technology: storage-deduplication
-ms.prod: windows-server
 ms.topic: article
 author: wmgries
 manager: klaasl
 ms.author: wgries
 ms.date: 09/15/2016
-ms.openlocfilehash: f75a20a8b69a863209f6e782bd34e48d8c12fe91
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: f382d229458f27795c09e0377e0f0b23ef7b395b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86962164"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87936233"
 ---
 # <a name="running-data-deduplication"></a>データ重複除去の実行
 
@@ -42,7 +40,7 @@ Start-DedupJob -Type Optimization -Volume <Your-Volume-Here> -Memory 100 -Cores 
 * [ガベージ コレクション ジョブ](understand.md#job-info-gc)の場合は、`LastGarbageCollectionResult`(0 = 成功)、`LastGarbageCollectionResultMessage`、および `LastGarbageCollectionTime` (最近である必要があります) を確認します。
 * [整合性スクラブ ジョブ](understand.md#job-info-scrubbing)の場合は、`LastScrubbingResult` (0 = 成功)、`LastScrubbingResultMessage`、および `LastScrubbingTime` (最近である必要があります) を確認します。
 
-> [!Note]  
+> [!Note]
 > ジョブの成功と失敗の詳細は、Windows イベント ビューアーの `\Applications and Services Logs\Windows\Deduplication\Operational` に示されます。
 
 ### <a name="optimization-rates"></a><a id="monitoring-dedup-optimization-rates"></a>最適化率
@@ -61,9 +59,9 @@ Start-DedupJob -Type Optimization -Volume <Your-Volume-Here> -Memory 100 -Cores 
 Start-DedupJob -Type Unoptimization -Volume <Desired-Volume>
 ```
 
-> [!Important]  
+> [!Important]
 > 非最適化されたデータを保持するのに十分なボリューム領域がない場合、非最適化ジョブは失敗します。
 
 ## <a name="frequently-asked-questions"></a><a id="faq"></a>よく寄せられる質問
-**System Center Operations Manager 管理パックを使用して、データ重複除去を監視できますか。**  
+**System Center Operations Manager 管理パックを使用して、データ重複除去を監視できますか。**
 はい。 ファイル サーバーの System Center 管理パックでは、データ重複除去を監視できます。 詳細については、『[Guide for System Center Management Pack for File Server 2012 R2](https://download.microsoft.com/download/6/F/7/6F7A33B9-9383-48ED-9252-23C2C8AD1BDA/MPGuide_FileServer2012R2.doc)』(ファイル サーバー 2012 R2 向け System Center 管理パック ガイド) を参照してください。

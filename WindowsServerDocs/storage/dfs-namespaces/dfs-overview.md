@@ -1,19 +1,17 @@
 ---
 title: DFS 名前空間の概要
-ms.prod: windows-server
 ms.author: jgerend
 manager: daveba
-ms.technology: storage
 ms.topic: article
 author: jasongerend
 ms.date: 06/07/2019
 description: このトピックでは、DFS 名前空間について説明します。DFS 名前空間は、複数のサーバー上に配置されている共有フォルダーを、論理的に構造化された 1 つ以上の名前空間にグループ化できる Windows Server の役割サービスです。
-ms.openlocfilehash: 71c7f4e90a6a224586c90890a456fdf6f061ddf2
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 54f26a605c15ab683dbe51f768e82bce2c00a290
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182278"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87936192"
 ---
 # <a name="dfs-namespaces-overview"></a>DFS 名前空間の概要
 
@@ -116,14 +114,14 @@ Microsoft Azure 内の仮想マシンにおける DFS 名前空間の使用は�
 
 Azure 仮想マシンを使い始める方法については、[Azure 仮想マシンのドキュメント](/azure/virtual-machines/)を参照してください。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 その他の関連情報については、次の情報を参照してください。
 
 | コンテンツ タイプ        | 参考資料 |
 | ------------------  | ----------------|
 | **製品評価** | [Windows Server での DFS 名前空間と DFS レプリケーションの新機能](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn281957(v=ws.11)) |
-| **配置**    | [DFS 名前空間のスケーラビリティに関する考慮事項](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB) |
+| **デプロイ**    | [DFS 名前空間のスケーラビリティに関する考慮事項](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB) |
 | **操作**    | [DFS 名前空間: よく寄せられる質問](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee404780(v=ws.10)) |
 | **コミュニティ リソース** | [ファイル サービスとストレージに関する TechNet フォーラム](https://docs.microsoft.com/answers/topics/windows-server-storage.html) |
 | **プロトコル**        | [Windows Server のファイルサービスプロトコル](/openspecs/windows_protocols/MS-WINPROTLP/df36f95e-6a6b-48d6-a3ae-35a17674f546)(非推奨) |

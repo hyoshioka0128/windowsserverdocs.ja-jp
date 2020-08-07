@@ -2,18 +2,16 @@
 title: コア ネットワークのコンポーネント
 description: このガイドでは、完全に機能するネットワークに必要なコアコンポーネントを計画および展開する方法、および Windows Server 2016 を使用して新しいフォレストに新しい Active Directory ドメインを展開する方法について説明します。
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: b3cd60f7-d380-4712-9a78-0a8f551e1121
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 0e44de005bd7b110e89b514071667c62a81d386b
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 2c41fde041183ff7e039bd2fed877aad8ff0f234
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518540"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87962326"
 ---
 # <a name="core-network-components"></a>コア ネットワークのコンポーネント
 
@@ -283,7 +281,7 @@ AD DS の構成項目の例を次の表に示します。
 
 |構成項目:|値の例:|
 |------------------------|-------------------|
-|完全 DNS 名|例 :<p>-corp.contoso.com<br />-example.com|
+|完全 DNS 名|例:<p>-corp.contoso.com<br />-example.com|
 |フォレストの機能レベル|-Windows Server 2008 <br />-Windows Server 2008 R2 <br />-Windows Server 2012 <br />-Windows Server 2012 R2 <br />-Windows Server 2016|
 |Active Directory Domain Services データベース フォルダーの場所|E:\Configuration\\<p>または既定の場所を受け入れる。|
 |Active Directory Domain Services ログ ファイル フォルダーの場所|E:\Configuration\\<p>または既定の場所を受け入れる。|
@@ -565,7 +563,7 @@ Install-WindowsFeature AD-Domain-Services -IncludeManagementTools`
 
 | Success | 再起動が必要 | 終了コード |  機能の結果 |
 |--|--|--|--|
-| はい | いいえ | Success | {Active Directory Domain Services、グループ P... |
+| True | いいえ | Success | {Active Directory Domain Services、グループ P... |
 
 - Windows PowerShell で次のコマンドを入力し、 **corp.contoso.com**テキストを実際のドメイン名に置き換えて、enter キーを押します。
 
@@ -1425,7 +1423,7 @@ Windows Server 2008 R2、Windows 7、Windows Server 2008、および Windows Vis
 
 - [コンピューターの名前を変更する](#BKMK_rename)
 
-|構成項目|値の例|[値]|
+|構成項目|値の例|値|
 |----------------------|-----------------|---------|
 |コンピューター名|DC1||
 
@@ -1470,7 +1468,7 @@ Windows Server コア ネットワークの展開手順「[新しいフォレス
 
 - [コンピューターの名前を変更する](#BKMK_rename)
 
-|構成項目|値の例|[値]|
+|構成項目|値の例|値|
 |----------------------|-----------------|---------|
 |コンピューター名|DHCP1||
 
@@ -1537,7 +1535,7 @@ Windows Server コア ネットワークの展開手順「[新しい DHCP スコ
 
 - [コンピューターの名前を変更する](#BKMK_rename)
 
-|構成項目|値の例|[値]|
+|構成項目|値の例|値|
 |----------------------|-----------------|---------|
 |コンピューター名|NPS1||
 

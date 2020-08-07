@@ -1,28 +1,26 @@
 ---
 ms.assetid: 60fca6b2-f1c0-451f-858f-2f6ab350d220
 title: データ重複除去の相互運用性
-ms.technology: storage-deduplication
-ms.prod: windows-server
 ms.topic: article
 author: wmgries
 manager: klaasl
 ms.author: wgries
 ms.date: 09/16/2016
-ms.openlocfilehash: fb3c9842f1d698151bffebbe5f77618c8b19b366
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7f99b4d12821e505a229ac02d0198a9ac2ed31fa
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403193"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87936307"
 ---
 # <a name="data-deduplication-interoperability"></a>データ重複除去の相互運用性
 
-> 適用対象:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2019
+> 適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2019
 
-## <a name="supported"></a>Supported
+## <a name="supported"></a>サポートされています
 
 ### <a name="refs"></a>ReFS
-データ重複除去は、Windows Server 2019 でサポートされています。 
+データ重複除去は、Windows Server 2019 でサポートされています。
 
 ### <a name="failover-clustering"></a>フェールオーバー クラスタリング
 
@@ -42,19 +40,19 @@ ms.locfileid: "71403193"
 ### <a name="dfs-replication"></a>DFS レプリケーション
 データ重複除去は、分散ファイル システム (DFS) レプリケーションと併用できます。 ファイルを最適化または非最適化しても、ファイルは変化しないのでレプリケーションはトリガーされません。 DFS レプリケーションは、ネットワークを節約するため、チャンク ストアのチャンクではなく、Remote Differential Compression (RDC) を使用します。 レプリカがデータ重複除去を使用している場合は、レプリカ上のファイルも重複除去を使用して最適化できます。
 
-### <a name="quotas"></a>クォータ
-データ重複除去では、重複除去が有効になっているボリューム ルート フォルダーにハード クォータを作成することはできません。 ボリューム ルートにハード クォータが設定されていると、ボリュームの実際の空き領域とクォータで制限された領域が同じになりません。 その結果、重複除去最適化ジョブが失敗する可能性があります。 ただし、重複除去が有効になっているボリューム ルートにソフト クォータを作成することはできます。 
+### <a name="quotas"></a>Quotas (クォータ)
+データ重複除去では、重複除去が有効になっているボリューム ルート フォルダーにハード クォータを作成することはできません。 ボリューム ルートにハード クォータが設定されていると、ボリュームの実際の空き領域とクォータで制限された領域が同じになりません。 その結果、重複除去最適化ジョブが失敗する可能性があります。 ただし、重複除去が有効になっているボリューム ルートにソフト クォータを作成することはできます。
 
 重複除去対象のボリュームでクォータを有効にした場合、クォータではファイルの物理サイズではなく論理サイズが使用されます。 ファイルが重複除去されていてもクォータの使用率 (クォータのしきい値を含む) は変わりません。 ボリューム ルートのソフト クォータやサブフォルダーのクォータなど、クォータのその他の機能は重複除去が使用されていても通常どおりに機能します。
 
 ### <a name="windows-server-backup"></a>Windows Server バックアップ
 Windows Server バックアップでは、最適化されたボリュームをそのまま (つまり、重複除去の対象データを削除せずに) バックアップすることができます。 次の手順で、ボリュームのバックアップ方法と、ボリュームまたはボリュームから選択したファイルの復元方法を示します。
-1. Windows Server バックアップをインストールします。  
+1. Windows Server バックアップをインストールします。
     ```PowerShell
     Install-WindowsFeature -Name Windows-Server-Backup
     ```
 
-2. 次のコマンドを実行して E: ボリュームを別のボリュームにバックアップします。ボリューム名は状況に合った適切なものに置き換えてください。  
+2. 次のコマンドを実行して E: ボリュームを別のボリュームにバックアップします。ボリューム名は状況に合った適切なものに置き換えてください。
     ```PowerShell
     wbadmin start backup –include:E: -backuptarget:F: -quiet
     ```
@@ -64,14 +62,14 @@ Windows Server バックアップでは、最適化されたボリュームを�
     wbadmin get versions
     ```
 
-    この出力バージョン ID は日付と時刻の文字列になります。次に例を示します。08/18/2016-06:22。
+    この出力バージョン ID は、たとえば 08/18/2016-06:22 のような日付と時刻の文字列になります。
 
 4. ボリューム全体を復元します。
     ```PowerShell
     wbadmin start recovery –version:02/16/2012-06:22 -itemtype:Volume  -items:E: -recoveryTarget:E:
     ```
 
-    **--または--**  
+    **--または--**
 
     特定のフォルダー (この場合は、E:\Docs フォルダー) を復元します。
     ```PowerShell

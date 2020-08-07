@@ -1,28 +1,26 @@
 ---
 title: Windows Server 2019 でファイル共有監視を展開する
 description: ファイル共有監視サーバーを使用すると、ファイル共有を使用してクラスタークォーラムでの投票を行うことができます。 このトピックでは、ファイル共有の監視サーバーと新機能について説明します。これには、ファイル共有監視としてルーターに接続された USB ドライブの使用が含まれます。
-ms.prod: windows-server
 manager: eldenc
-ms.technology: failover-clustering
 ms.topic: article
 author: johnmarlin-msft
 ms.author: johnmar
 ms.date: 01/24/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 63e016b8e00482529e69aaa12727f854afd51e41
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ea9dd3f79576048a57c85e879daf86567d325046
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80827675"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87945835"
 ---
 # <a name="deploy-a-file-share-witness"></a>ファイル共有監視を展開する
 
-> 適用対象: windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用先:Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 ファイル共有監視は、フェールオーバークラスターがクラスタークォーラムの投票として使用する SMB 共有です。 このトピックでは、ファイル共有監視としてルーターに接続されている USB ドライブを使用するなど、Windows Server 2019 のテクノロジと新機能の概要について説明します。
 
-ファイル共有監視サーバーは、次のような場合に便利です。  
+ファイル共有監視サーバーは、次のような場合に便利です。
 
 - クラスター内のすべてのサーバーに信頼性の高いインターネット接続があるわけではないため、クラウド監視を使用できません
 - ディスク監視に使用する共有ドライブがないため、ディスク監視を使用できません。 これには、記憶域スペースダイレクトクラスター、SQL Server Always On 可用性グループ (AG)、Exchange データベース可用性グループ (DAG) などがあります。 これらの種類のクラスターでは共有ディスクを使用しません。

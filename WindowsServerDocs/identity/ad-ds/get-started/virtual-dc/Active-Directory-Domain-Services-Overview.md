@@ -6,14 +6,12 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 84d28ffec35bdc5dce22d797cb830f8b75068013
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 14c82049171c25d24836ec3cbed35dfe592885f6
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966054"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87969939"
 ---
 # <a name="active-directory-domain-services-overview"></a>Active Directory Domain Services の概要
 
@@ -42,14 +40,14 @@ Active Directory には次のものも含まれます。
 
 ## <a name="understanding-active-directory"></a>Active Directory について
  このセクションでは、コア Active Directory の概念へのリンクを示します。
- 
-* [Active Directory 構造およびストレージテクノロジ](/previous-versions/windows/it-pro/windows-server-2003/cc759186(v=ws.10))
-* [ドメインコントローラーの役割](/previous-versions/windows/it-pro/windows-server-2003/cc786438(v=ws.10)) 
-* [Active Directory スキーマ](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc771796(v=ws.10))
-* [信頼とは](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc771568(v=ws.10)) 
-* [Active Directory レプリケーションテクノロジ](/previous-versions/windows/it-pro/windows-server-2003/cc776877(v=ws.10)) 
-* [Active Directory 検索と発行のテクノロジ](/previous-versions/windows/it-pro/windows-server-2003/cc775686(v=ws.10)) 
-* [DNS とグループポリシーとの相互運用](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd197486(v=ws.10))
-* [スキーマについて](/previous-versions/windows/it-pro/windows-server-2003/cc759402(v=ws.10)) 
 
-Active Directory の概念の詳細な一覧については、「 [Active Directory につい](/previous-versions/windows/it-pro/windows-server-2003/cc781408(v=ws.10))て」を参照してください。 
+* [Active Directory 構造およびストレージテクノロジ](/previous-versions/windows/it-pro/windows-server-2003/cc759186(v=ws.10))
+* [ドメインコントローラーの役割](/previous-versions/windows/it-pro/windows-server-2003/cc786438(v=ws.10))
+* [Active Directory スキーマ](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc771796(v=ws.10))
+* [信頼とは](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc771568(v=ws.10))
+* [Active Directory レプリケーションテクノロジ](/previous-versions/windows/it-pro/windows-server-2003/cc776877(v=ws.10))
+* [Active Directory 検索と発行のテクノロジ](/previous-versions/windows/it-pro/windows-server-2003/cc775686(v=ws.10))
+* [DNS とグループポリシーとの相互運用](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd197486(v=ws.10))
+* [スキーマについて](/previous-versions/windows/it-pro/windows-server-2003/cc759402(v=ws.10))
+
+Active Directory の概念の詳細な一覧については、「 [Active Directory につい](/previous-versions/windows/it-pro/windows-server-2003/cc781408(v=ws.10))て」を参照してください。

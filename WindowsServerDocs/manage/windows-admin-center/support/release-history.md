@@ -1,18 +1,16 @@
 ---
 title: Windows 管理センターリリース履歴
 description: ダウンロードするためのリンクを含む、Windows 管理センターリリースの履歴の概要。
-ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 01/06/2020
-ms.prod: windows-server
-ms.openlocfilehash: a047965c260198336d3a34386cb5dc72094e7a16
-ms.sourcegitcommit: b35fbd2a67d7a3395b50b2a3acd0817ba4e36b26
+ms.openlocfilehash: b78a8de53e315a3a2f9f546ed49c06b4bccfc682
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86891337"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87937591"
 ---
 # <a name="windows-admin-center-release-history"></a>Windows 管理センターリリース履歴
 

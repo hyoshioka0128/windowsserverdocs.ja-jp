@@ -6,14 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 6d445cca81e2b583d0078e5fc34a219769748400
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 7f331aac7b58cc22f696130647a7f5e95ea808c9
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519971"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87945478"
 ---
 # <a name="plan-device-based-conditional-access-on-premises"></a>オンプレミスのデバイス ベースの条件付きアクセスを計画する
 

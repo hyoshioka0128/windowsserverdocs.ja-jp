@@ -1,21 +1,19 @@
 ---
 title: 記憶域スペース ダイレクトの概要
-ms.prod: windows-server
 ms.author: cosdar
 manager: dongill
-ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 07/24/2020
 ms.assetid: 8bd0d09a-0421-40a4-b752-40ecb5350ffd
 description: 内部記憶域を持つサーバーをソフトウェアによって定義された記憶域ソリューションにクラスター化できるようにする、Windows Server および Azure Stack HCI の機能である記憶域スペースダイレクトの概要を説明します。
 ms.localizationpriority: medium
-ms.openlocfilehash: 3fd86a8465d2fef59ccce73fc473790682f0d180
-ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
+ms.openlocfilehash: 2a6839ddfd6015707f79a7e8f3036be4bc893b2e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87864323"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87970129"
 ---
 # <a name="storage-spaces-direct-overview"></a>記憶域スペース ダイレクトの概要
 

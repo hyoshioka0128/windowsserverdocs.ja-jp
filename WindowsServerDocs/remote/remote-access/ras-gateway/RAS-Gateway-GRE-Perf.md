@@ -2,18 +2,16 @@
 title: RAS ゲートウェイ GRE トンネルのスループットとパフォーマンス
 description: このトピックは、情報技術 (IT) の専門家を対象としており、RAS ゲートウェイの汎用ルーティングカプセル化 (GRE) トンネルに関するスループットパフォーマンス情報を提供します。
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-ras
 ms.topic: article
 ms.assetid: c051b2ec-de0f-49d1-82b9-5742b259cd7c
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: b20f26673cc5f56632717f9889bfd03b81173661
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 3cf4b74a6aa6d8f64b917842cc0806cd463716e8
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961874"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953668"
 ---
 # <a name="ras-gateway-gre-tunnel-throughput-and-performance"></a>RAS ゲートウェイ GRE トンネルのスループットとパフォーマンス
 
@@ -33,7 +31,7 @@ RAS ゲートウェイは、シングルテナントモードまたはマルチ�
 
 GRE は、インターネットプロトコルのインターネット接続を介して、仮想ポイント \- からポイントへのリンク内のさまざまなネットワークレイヤープロトコルをカプセル化できる軽量なトンネリングプロトコルです \- 。 Microsoft GRE 実装では、IPv4 と IPv6 の両方がカプセル化されています。
 
-詳細については[、ras ゲートウェイに関するトピックの](./ras-gateway.md#bkmk_deploy)「 **Ras ゲートウェイの展開シナリオ**」セクションを参照してください。 
+詳細については[、ras ゲートウェイに関するトピックの](./ras-gateway.md#bkmk_deploy)「 **Ras ゲートウェイの展開シナリオ**」セクションを参照してください。
 
 次の図に示すように、このテストシナリオでは、測定されたトラフィックフローが組織のイントラネット2から組織のイントラネット1に移動します。 テナントワークロード Vm は、RAS ゲートウェイを使用して、イントラネット2からイントラネット1にネットワークトラフィックを送信します。
 
@@ -47,14 +45,14 @@ GRE は、インターネットプロトコルのインターネット接続を�
 
 ### <a name="hyper-v-host-configuration"></a>Hyper-v \- ホストの構成
 
-2つの Hyper-v \- ホストは、次の方法でテストシナリオをサポートするように構成されています。 
+2つの Hyper-v \- ホストは、次の方法でテストシナリオをサポートするように構成されています。
 
 - 2台のデュアル \- ホーム物理コンピューターが Windows Server バージョン1709で構成されています。
 - 2台のサーバーそれぞれに2つの物理ネットワークアダプターが接続されています。これらはどちらも、組織のイントラネットのサブネットを表しています。 ネットワークとサポートするハードウェアの両方に 10 GBps の容量があります。
 - 物理サーバー上のハイパースレッディングが無効になっています。 これにより、物理 Nic からの最大スループットが得られます。
 - Hyper-v \- サーバーの役割は両方のサーバーにインストールされ、2つの外部 Hyper-v \- 仮想スイッチ (物理ネットワークアダプターごとに1つ) を使用して構成されます。
 - 両方のサーバーが同じイントラネットに接続されているため、サーバーは相互に通信できます。
-- Hyper-v ホストは、 \- イントラネットネットワーク経由でフェールオーバークラスターに構成されます。 
+- Hyper-v ホストは、 \- イントラネットネットワーク経由でフェールオーバークラスターに構成されます。
 
 >[!NOTE]
 >詳しくは、「[Hyper-V 仮想スイッチの概要](../../../virtualization/hyper-v-virtual-switch/hyper-v-virtual-switch.md)」を参照してください。

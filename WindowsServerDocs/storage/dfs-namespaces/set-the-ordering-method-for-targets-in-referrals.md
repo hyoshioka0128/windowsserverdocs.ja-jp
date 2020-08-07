@@ -2,18 +2,16 @@
 title: 紹介におけるターゲットの順序指定方法を設定する
 description: この記事では、紹介におけるターゲットの順序指定方法を設定する方法について説明します。
 ms.date: 6/5/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: a993d53611382dcd0007bfecae95da6221cf6016
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: e448a12659ca7aa9fbc4230dce51df4fbcd7bcf0
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966804"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87936105"
 ---
 # <a name="set-the-ordering-method-for-targets-in-referrals"></a>紹介におけるターゲットの順序指定方法を設定する
 
@@ -89,7 +87,7 @@ DFSN Windows PowerShell モジュールは、Windows Server 2012 で導入され
 > [!NOTE]
 > 順序指定方法が **[クライアント サイト外のターゲットを除外する]** に設定されている場合でも、ターゲット優先順位が [すべてのターゲットのうち最初のターゲット] または [すべてのターゲットのうち最後のターゲット] に設定されたターゲットは紹介にリストされます。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 -   [DFS 名前空間を調整する](tuning-dfs-namespaces.md)
 -   [DFS 名前空間の管理アクセス許可を委任する](delegate-management-permissions-for-dfs-namespaces.md)

@@ -1,23 +1,21 @@
 ---
-title: ネットワーク サブシステムのパフォーマンスの調整
+title: ネットワークのサブシステムのパフォーマンス チューニング
 description: このトピックは、Windows Server 2016 のネットワークサブシステムのパフォーマンスチューニングガイドに含まれています。
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: 45217fce-bfb9-47e8-9814-88ffdb3c7b7d
 manager: dcscontentpm
 ms.author: v-tea
 author: Teresa-Motiv
-ms.openlocfilehash: 66f4401235e8eccfe0ab6e10f86cddb15386621c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 40819f850788192f9057f8fd73c6c63f9d61dc0c
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80854755"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953908"
 ---
-# <a name="network-subsystem-performance-tuning"></a>ネットワーク サブシステムのパフォーマンスの調整
+# <a name="network-subsystem-performance-tuning"></a>ネットワークのサブシステムのパフォーマンス チューニング
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016
+>適用先:Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックでは、ネットワークサブシステムの概要と、このガイドの他のトピックへのリンクについて説明します。
 
@@ -33,15 +31,15 @@ ms.locfileid: "80854755"
 
 1. **ネットワークインターフェイス**。 これはネットワークスタックの最下位層であり、ネットワークアダプターと直接通信するネットワークドライバーが含まれています。
 
-2. **Network Driver Interface Specification (NDIS)** 。 NDIS は、その下にあるドライバーのインターフェイスと、プロトコルスタックなどの上位層のインターフェイスを公開します。
-  
+2. **Network Driver Interface Specification (NDIS)**。 NDIS は、その下にあるドライバーのインターフェイスと、プロトコルスタックなどの上位層のインターフェイスを公開します。
+
 3. **プロトコルスタック**。 プロトコルスタックは、TCP/IP や UDP/IP などのプロトコルを実装します。 これらのレイヤーは、その上にあるレイヤーのトランスポート層インターフェイスを公開します。
-  
-4. **システムドライバー**。 これらは通常、トランスポートデータ拡張機能 (TDX) または Winsock カーネル (WSK) インターフェイスを使用して、インターフェイスをユーザーモードアプリケーションに公開するクライアントです。 WSK インターフェイスは、Windows Server 2008 と Windows&reg; Vista で導入され、AFD.SYS によって公開されています。 インターフェイスにより、ユーザーモードとカーネルモードの切り替えが不要になるため、パフォーマンスが向上します。
-  
+
+4. **システムドライバー**。 これらは通常、トランスポートデータ拡張機能 (TDX) または Winsock カーネル (WSK) インターフェイスを使用して、インターフェイスをユーザーモードアプリケーションに公開するクライアントです。 WSK インターフェイスは、Windows Server 2008 および Windows Vista で導入され、 &reg; AFD.sys によって公開されています。 インターフェイスにより、ユーザーモードとカーネルモードの切り替えが不要になるため、パフォーマンスが向上します。
+
 5. **ユーザーモードアプリケーション**。 これらは通常、Microsoft ソリューションまたはカスタムアプリケーションです。
 
-次の表は、各レイヤーで実行される項目の例を含む、ネットワークスタックのレイヤーを示しています。  
+次の表は、各レイヤーで実行される項目の例を含む、ネットワークスタックのレイヤーを示しています。
 
 ![ネットワークスタックレイヤー](../../media/Network-Subsystem/network-layers.jpg)
 
