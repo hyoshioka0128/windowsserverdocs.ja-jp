@@ -1,20 +1,18 @@
 ---
 title: Windows 認証の概念
 description: Windows Server のセキュリティ
-ms.prod: windows-server
-ms.technology: security-windows-auth
 ms.topic: article
 ms.assetid: 29d1db15-cae0-4e3d-9d8e-241ac206bb8b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 0b26dca42d64338adeb8d818629e6a5f8b037f30
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: ee204320696ac10eaf341df06d7c458198b3ec28
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475239"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87936536"
 ---
 # <a name="windows-authentication-concepts"></a>Windows 認証の概念
 
@@ -103,7 +101,7 @@ Windows では、アクションを開始できるすべてのユーザー、サ
 
 制約付き委任の詳細については、「 [Kerberos の制約付き委任の概要](../kerberos/kerberos-constrained-delegation-overview.md)」を参照してください。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 [Windows のログオンと認証の技術概要](https://technet.microsoft.com/library/dn269029.aspx)
 
 

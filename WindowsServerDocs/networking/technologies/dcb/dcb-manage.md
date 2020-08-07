@@ -1,19 +1,17 @@
 ---
 title: データセンターブリッジング (DCB) の管理
 description: このトピックでは、windows Server 2016 で Windows PowerShell コマンドを使用してデータセンターブリッジングを管理する方法について説明します。
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: 1575cc7c-62a7-4add-8f78-e5d93effe93f
 manager: brianlic
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 3df00e013d61ad3004f2a2c001c0c40ae9cad109
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: bc012fd6a685b005b9f7f2b055d49050ef3c009a
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87520191"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971779"
 ---
 # <a name="manage-data-center-bridging-dcb"></a>データセンターブリッジング (DCB) の管理
 
@@ -81,7 +79,7 @@ DCB の構成には、次の手順が含まれます。
 
 1.  システムレベルで DCB 設定を構成します。これには次のものが含まれます。
 
-    a。 Traffic クラスの管理
+    a. Traffic クラスの管理
 
     b. 優先順位フロー制御 (PFC) の設定
 

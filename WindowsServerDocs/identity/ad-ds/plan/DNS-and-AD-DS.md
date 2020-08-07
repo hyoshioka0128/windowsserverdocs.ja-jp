@@ -6,14 +6,12 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/08/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 2afc6f87a321625ae693d1a49c56f260a7d8c305
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: f531ffc8226fae9f515882e99da4620badc08611
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86962244"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87947711"
 ---
 # <a name="dns-and-ad-ds"></a>DNS と AD DS
 

@@ -1,20 +1,18 @@
 ---
 title: Getting Started with Group Managed Service Accounts
 description: Windows Server のセキュリティ
-ms.prod: windows-server
-ms.technology: security-gmsa
 ms.topic: article
 ms.assetid: 7130ad73-9688-4f64-aca1-46a9187a46cf
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 70bdbc49bc1e173b488d5934bae0a5b4837c76f5
-ms.sourcegitcommit: 599162b515c50106fd910f5c180e1a30bbc389b9
+ms.openlocfilehash: 728da4f2061156352045439a55cba7fa9e98ced9
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83775299"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971469"
 ---
 # <a name="getting-started-with-group-managed-service-accounts"></a>Getting Started with Group Managed Service Accounts
 
@@ -54,12 +52,12 @@ ms.locfileid: "83775299"
 
 |プリンシパル|Scope|サポートされるサービス|パスワード管理|
 |-------|-----|-----------|------------|
-|Windows システムのコンピューター アカウント|ドメイン|ドメインに参加している 1 つのサーバーに限定|コンピューターによる管理|
-|Windows システムなしのコンピューター アカウント|ドメイン|ドメインに参加している任意のサーバー|なし|
+|Windows システムのコンピューター アカウント|Domain|ドメインに参加している 1 つのサーバーに限定|コンピューターによる管理|
+|Windows システムなしのコンピューター アカウント|Domain|ドメインに参加している任意のサーバー|None|
 |仮想アカウント|ローカル|1 つのサーバーに限定|コンピューターによる管理|
-|Windows 7 スタンドアロンの管理されたサービス アカウント|ドメイン|ドメインに参加している 1 つのサーバーに限定|コンピューターによる管理|
-|ユーザー アカウント|ドメイン|ドメインに参加している任意のサーバー|なし|
-|グループの管理されたサービス アカウント|ドメイン|任意の Windows Server 2012 ドメインに参加しているサーバー|ドメイン コントローラーによる管理、ホストによる取得|
+|Windows 7 スタンドアロンの管理されたサービス アカウント|Domain|ドメインに参加している 1 つのサーバーに限定|コンピューターによる管理|
+|ユーザー アカウント|Domain|ドメインに参加している任意のサーバー|None|
+|グループの管理されたサービス アカウント|Domain|任意の Windows Server 2012 ドメインに参加しているサーバー|ドメイン コントローラーによる管理、ホストによる取得|
 
 Windows コンピューター アカウント、Windows 7 スタンドアロンの管理されたサービス アカウント (sMSA)、または仮想アカウントを複数のシステムで共有することはできません。 1 つのアカウントをサーバー ファームのサービスで共有するように構成する場合は、Windows システムとは別にユーザー アカウントまたはコンピューター アカウントを選択する必要があります。 いずれにしても、これらのアカウントには、シングルポイントコントロールでパスワードを管理する機能はありません。 このため問題が生じます。各組織は Active Directory のサービスのキーを更新してそのキーを該当するすべてのサービスのインスタンスに配布するために、コストの高いソリューションを作成する必要があります。
 
@@ -78,7 +76,7 @@ Windows Server 2012 では、サービスまたはサービス管理者は、グ
 
 グループの管理されたサービス アカウントを管理するために使用する Windows PowerShell コマンドレットを実行するには 64 ビット アーキテクチャが必要です。
 
-**オペレーティング システムの要件**
+**オペレーティングシステムの要件**
 
 |要素|要件|オペレーティング システム|
 |------|--------|----------|
@@ -107,7 +105,7 @@ Windows Server 2012 では、サービスまたはサービス管理者は、グ
 
 キーを作成する方法については、「 [create The Key Distribution SERVICES KDS Root key](create-the-key-distribution-services-kds-root-key.md)」を参照してください。 Microsoft キー配布サービス (kdssvc.dll)、AD のルート キー。
 
-**・**
+**ライフサイクル**
 
 gMSA 機能を使用するサーバー ファームのライフサイクルは、通常、次のタスクを必要とします。
 
@@ -144,7 +142,7 @@ GMSA を作成できるのは、フォレストのスキーマが Windows Server
 次の手順を完了するには、[**Domain Admins**] または [**Account Operators**] のメンバーシップ、あるいは msDS-GroupManagedServiceAccount オブジェクトを作成する機能が最低限必要です。
 
 > [!NOTE]
-> -Name パラメーターの値は常に必須です (-Name を指定するかどうかにかかわらず)。-DNSHostName、-RestrictToSingleComputer、および-RestrictToOutboundAuthentication は、3つの展開シナリオでセカンダリ要件となります。    
+> -Name パラメーターの値は常に必須です (-Name を指定するかどうかにかかわらず)。-DNSHostName、-RestrictToSingleComputer、および-RestrictToOutboundAuthentication は、3つの展開シナリオでセカンダリ要件となります。
 
 
 #### <a name="to-create-a-gmsa-using-the-new-adserviceaccount-cmdlet"></a><a name="BKMK_CreateGMSA"></a>New-ADServiceAccount コマンドレットを使用して gMSA を作成するには
@@ -167,7 +165,7 @@ GMSA を作成できるのは、フォレストのスキーマが Windows Server
 
     > [!IMPORTANT]
     > パスワード変更間隔は作成時にしか設定できません。 パスワード変更間隔を変更する必要がある場合は、新しい gMSA を作成し、作成時にその間隔を設定してください。
-   
+
     **例**
 
     コマンドレットを単一行に入力します。ただし、書式上の制約から複数行に改行されて表示される場合があります。
@@ -194,7 +192,7 @@ GMSA を作成できるのは、フォレストのスキーマが Windows Server
 
     > [!IMPORTANT]
     > パスワード変更間隔は作成時にしか設定できません。 パスワード変更間隔を変更する必要がある場合は、新しい gMSA を作成し、作成時にその間隔を設定してください。
-    
+
   **例**
 
 ```PowerShell
@@ -212,7 +210,7 @@ Windows Server 2012 でサービスを構成するには、次の機能に関す
 
     詳細については、「 [サービス](https://technet.microsoft.com/library/cc772408.aspx)」を参照してください。
 
--   タスク
+-   [タスク]
 
     詳細については、「 [タスク スケジューラの概要](https://technet.microsoft.com/library/cc721871.aspx)」を参照してください。
 
@@ -353,4 +351,4 @@ Uninstall-ADServiceAccount コマンドレットの詳細については、Windo
 
 ## <a name="see-also"></a><a name="BKMK_Links"></a>関連項目
 
--   [グループの管理されたサービス アカウントの概要](group-managed-service-accounts-overview.md)
+-   [グループの管理されたサービスアカウントの概要](group-managed-service-accounts-overview.md)

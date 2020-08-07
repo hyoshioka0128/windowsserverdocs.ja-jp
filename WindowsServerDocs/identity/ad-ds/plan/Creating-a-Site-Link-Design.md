@@ -6,14 +6,12 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/08/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: ae68cf05f9631df0f942cb65ccf29971f7bc17c8
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: f10fea4e6e94ecc6636fe13588fea2bb94ad4407
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81624330"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87947764"
 ---
 # <a name="creating-a-site-link-design"></a>サイト リンク設計の作成
 
@@ -29,7 +27,7 @@ ms.locfileid: "81624330"
 
 新しく作成したサイトリンクにサイトを追加するたびに、追加するサイトが他のサイトリンクのメンバーであるかどうかを確認し、必要に応じてサイトのサイトリンクのメンバーシップを変更します。 たとえば、サイトを最初に作成するときに、サイトを既定-ファーストサイトリンクのメンバーにする場合は、サイトを新しいサイトリンクに追加した後で、サイトを既定の優先サイトリンクから削除するようにしてください。 サイトを既定の最初のサイトリンクから削除しない場合は、知識整合性チェッカー (KCC) によって、両方のサイトリンクのメンバーシップに基づいてルーティングが決定されるため、ルーティングが正しく行われない可能性があります。
 
-サイトリンクに接続するメンバーサイトを特定するには、[地理的な場所と通信リンク] (DSSTOPO_1 .doc) ワークシートに記録した場所とリンク先の一覧を使用します。 複数のサイトが相互に同一の接続性と可用性を備えている場合は、同じサイトリンクを使用して接続できます。
+サイトリンクに接続するメンバーサイトを特定するには、[地理的な場所と通信リンク] (DSSTOPO_1.doc) ワークシートに記録した場所とリンク先の一覧を使用します。 複数のサイトが相互に同一の接続性と可用性を備えている場合は、同じサイトリンクを使用して接続できます。
 
 サイト間トランスポートコンテナーは、リンクが使用するトランスポートにサイトリンクをマッピングするための手段を提供します。 サイトリンクオブジェクトを作成するときに、IP コンテナーで作成します。これにより、サイトリンクが IP トランスポート経由のリモートプロシージャコール (RPC) に関連付けられるか、簡易メール転送プロトコル (SMTP) コンテナーがサイトリンクと SMTP トランスポートに関連付けられます。
 
@@ -40,7 +38,7 @@ ms.locfileid: "81624330"
 
 直接 IP 接続を使用できない場合は、SMTP を使用するようにサイト間のレプリケーションを構成できます。 ただし、SMTP レプリケーション機能は制限されており、エンタープライズ証明機関 (CA) が必要です。 SMTP は、構成、スキーマ、およびアプリケーションディレクトリパーティションのみをレプリケートでき、ドメインディレクトリパーティションのレプリケーションをサポートしていません。
 
-サイトリンクに名前を付けるには、name_of_site1 name_of_site2 などの一貫した名前付けスキームを使用します。 サイト、リンクされたサイト、およびこれらのサイトをワークシートに接続するサイトリンクの名前の一覧を記録します。 サイト名と関連付けられているサイトリンク名を記録するためのワークシートについては、「 [Windows Server 2003 展開キット用のジョブエイド](https://microsoft.com/download/details.aspx?id=9608)」を参照し、Job_Aids_Designing_and_Deploying_Directory_and_Security_Services をダウンロードして、「サイトと関連付けられているサイトリンク」 (DSSTOPO_5) を開きます。
+サイトリンクに名前を付けるには、name_of_site1 name_of_site2 などの一貫した名前付けスキームを使用します。 サイト、リンクされたサイト、およびこれらのサイトをワークシートに接続するサイトリンクの名前の一覧を記録します。 サイト名と関連付けられているサイトリンク名を記録するためのワークシートについては、「 [Windows Server 2003 展開キット用のジョブエイド](https://microsoft.com/download/details.aspx?id=9608)」、「ダウンロード Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip」、および「サイトと関連付けられているサイトリンク」 (DSSTOPO_5.doc) を参照してください。
 
 ## <a name="in-this-guide"></a>このガイドの内容
 

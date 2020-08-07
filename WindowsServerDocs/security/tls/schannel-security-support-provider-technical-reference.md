@@ -1,20 +1,18 @@
 ---
 title: Schannel セキュリティ サポート プロバイダーのテクニカル リファレンス
 description: Windows Server のセキュリティ
-ms.prod: windows-server
-ms.technology: security-tls-ssl
 ms.topic: article
 ms.assetid: 5bf9c4a5-cdc1-49eb-bf9a-8bf987410b63
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 08/08/2018
-ms.openlocfilehash: 6152a4e743e13b42081e4c69ceb92f8e740024b6
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: be67621ca1fa96e79eb9302b8abfac08902abdc2
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475289"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87936616"
 ---
 # <a name="schannel-security-support-provider-technical-reference"></a>Schannel セキュリティ サポート プロバイダーのテクニカル リファレンス
 
@@ -27,7 +25,7 @@ IT プロフェッショナル向けのこのリファレンスには、Schannel
 - [トランスポート層セキュリティ プロトコル](transport-layer-security-protocol.md)
 - [データグラム トランスポート層セキュリティ プロトコル](datagram-transport-layer-security-protocol.md)
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 [Windows 認証](../windows-authentication/windows-authentication-overview.md) 
 [Kerberos 認証](../kerberos/kerberos-authentication-overview.md)
 

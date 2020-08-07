@@ -6,14 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: a7da23b592f495b45e337520179d414900183a1b
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: eb41b8168024a231282716e5edd0bc59554d7da6
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966614"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87937825"
 ---
 # <a name="the-role-of-claims"></a>要求の役割
 

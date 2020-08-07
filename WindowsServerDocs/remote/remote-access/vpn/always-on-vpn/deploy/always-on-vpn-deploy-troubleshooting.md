@@ -1,26 +1,24 @@
 ---
 title: Always On VPN のトラブルシューティング
 description: このトピックでは、Windows Server 2016 で Always On VPN 展開を確認およびトラブルシューティングする手順について説明します。
-ms.prod: windows-server
-ms.technology: networking-ras
 ms.topic: article
 ms.assetid: 4d08164e-3cc8-44e5-a319-9671e1ac294a
 ms.localizationpriority: medium
 ms.date: 06/11/2018
 ms.author: v-tea
 author: Teresa-MOTIV
-ms.openlocfilehash: bbb614886099bf2adc1239a699ef8d904e71be7b
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: f1e4713e6d658e6a51955e321e39cb7f90e261a9
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961784"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87963808"
 ---
-# <a name="troubleshoot-always-on-vpn"></a>Always On VPN のトラブルシューティング 
+# <a name="troubleshoot-always-on-vpn"></a>Always On VPN のトラブルシューティング
 
 >適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows 10
 
-Always On VPN セットアップがクライアントを内部ネットワークに接続できない場合、原因として、無効な VPN 証明書、間違った NPS ポリシー、またはクライアント展開スクリプトまたはルーティングとリモートアクセスに関する問題が考えられます。 VPN 接続のトラブルシューティングとテストの最初の手順では、Always On VPN インフラストラクチャのコアコンポーネントについて説明します。 
+Always On VPN セットアップがクライアントを内部ネットワークに接続できない場合、原因として、無効な VPN 証明書、間違った NPS ポリシー、またはクライアント展開スクリプトまたはルーティングとリモートアクセスに関する問題が考えられます。 VPN 接続のトラブルシューティングとテストの最初の手順では、Always On VPN インフラストラクチャのコアコンポーネントについて説明します。
 
 接続の問題をトラブルシューティングするには、いくつかの方法があります。 クライアント側の問題と一般的なトラブルシューティングについては、クライアントコンピューターのアプリケーションログが非常に重要です。 認証固有の問題については、NPS サーバー上の NPS ログを使用して、問題の原因を特定することができます。
 
@@ -170,15 +168,15 @@ VPN_ Profile.ps1 スクリプトを手動で実行するときの最も一般的
 
   - ユーザーは、Azure AD によって発行されていない、有効なクライアント認証証明書を個人用証明書ストアに持っています。
 
-  - VPN プロファイル \<TLSExtensions\> セクションが見つからないか、 ** \<EKUName\> Aad の条件付きアクセス \</EKUName\> \<EKUOID\> 1.3.6.1.4.1.311.87</ekuoid \> \<EKUName> aad 条件付きアクセス</ekuname \> \<EKUOID\> 1.3.6.1.4.1.311.87</ekuoid \> **エントリが含まれていません。 とエントリは、vpn \<EKUName> \<EKUOID> サーバーに証明書を渡すときに、ユーザーの証明書ストアから取得する証明書を vpn クライアントに指示します。 これを行わないと、VPN クライアントは、ユーザーの証明書ストアにある有効なクライアント認証証明書を使用し、認証に成功します。 
+  - VPN プロファイル \<TLSExtensions\> セクションが見つからないか、 ** \<EKUName\> Aad の条件付きアクセス \</EKUName\> \<EKUOID\> 1.3.6.1.4.1.311.87</ekuoid \> \<EKUName> aad 条件付きアクセス</ekuname \> \<EKUOID\> 1.3.6.1.4.1.311.87</ekuoid \> **エントリが含まれていません。 とエントリは、vpn \<EKUName> \<EKUOID> サーバーに証明書を渡すときに、ユーザーの証明書ストアから取得する証明書を vpn クライアントに指示します。 これを行わないと、VPN クライアントは、ユーザーの証明書ストアにある有効なクライアント認証証明書を使用し、認証に成功します。
 
   - RADIUS サーバー (NPS) は、 **AAD 条件付きアクセス**OID を含むクライアント証明書のみを受け入れるように構成されていません。
 
 - **考えられる解決策。** このループをエスケープするには、次の手順を実行します。
 
-  1. Windows PowerShell で**get-wmiobject**コマンドレットを実行して、VPN プロファイルの構成をダンプします。 
+  1. Windows PowerShell で**get-wmiobject**コマンドレットを実行して、VPN プロファイルの構成をダンプします。
   2. **\<TLSExtensions>**、 **\<EKUName>** 、およびの **\<EKUOID>** 各セクションが存在し、正しい名前と OID が表示されていることを確認します。
-      
+
       ```powershell
       PS C:\> Get-WmiObject -Class MDM_VPNv2_01 -Namespace root\cimv2\mdm\dmmap
 
@@ -261,7 +259,7 @@ VPN_ Profile.ps1 スクリプトを手動で実行するときの最も一般的
         Simple container name: te-User-c7bcc4bd-0498-4411-af44-da2257f54387
         Provider = Microsoft Enhanced Cryptographic Provider v1.0
       Encryption test passed
-        
+
       ================ Certificate 1 ================
       Serial Number: 367fbdd7e6e4103dec9b91f93959ac56
       Issuer: CN=Microsoft VPN root CA gen 1
@@ -280,7 +278,7 @@ VPN_ Profile.ps1 スクリプトを手動で実行するときの最も一般的
      >発行者**CN = MICROSOFT VPN ルート CA gen 1**の証明書がユーザーの個人用ストアに存在するが、ユーザーが [ **X** ] を選択してそのメッセージを閉じることでアクセスを取得した場合は、CAPI2 イベントログを収集して、Microsoft VPN ルート CA から発行されていない有効なクライアント認証証明書であることを確認します。
 
   4. ユーザーの個人用ストアに有効なクライアント認証証明書が存在する場合、ユーザーが**X**を選択し、 **\<TLSExtensions>** 、 **\<EKUName>** 、の **\<EKUOID>** 各セクションが存在し、正しい情報が含まれている場合、接続は失敗します。
-   
+
      "拡張認証プロトコルと共に使用できる証明書が見つかりませんでした" というエラーメッセージが表示されます。
 
 ### <a name="unable-to-delete-the-certificate-from-the-vpn-connectivity-blade"></a>VPN 接続ブレードから証明書を削除できません

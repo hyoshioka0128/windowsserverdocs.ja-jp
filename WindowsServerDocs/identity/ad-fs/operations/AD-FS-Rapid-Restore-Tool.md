@@ -6,20 +6,18 @@ ms.author: billmath
 manager: femila
 ms.date: 04/24/2019
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: dde9d60278a32ae4e6ba0baf35bc11ce631d4e02
-ms.sourcegitcommit: 371e59315db0cca5bdb713264a62b215ab43fd0f
+ms.openlocfilehash: 3b27d0e887cded0f6ced2935439f95c4de8b712a
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82192604"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87947408"
 ---
 # <a name="ad-fs-rapid-restore-tool"></a>AD FS の迅速な復元ツール
 
 ## <a name="overview"></a>概要
 現在 AD FS は、AD FS ファームを設定することによって高可用性になっています。 組織によっては、1台のサーバー AD FS 展開する方法が必要になることがあります。これにより、複数の AD FS サーバーおよびネットワーク負荷分散インフラストラクチャが不要になり、問題が発生した場合でもサービスを迅速に復元できることが保証されます。
-新しい AD FS 迅速な復元ツールを使用すると、オペレーティングシステムまたはシステム状態の完全バックアップと復元を必要とすることなく、AD FS データを復元することができます。 新しいツールを使用して、AD FS 構成を Azure またはオンプレミスの場所にエクスポートできます。  その後、エクスポートしたデータを新しい AD FS インストールに適用し、AD FS 環境の再作成または複製を行うことができます。 
+新しい AD FS 迅速な復元ツールを使用すると、オペレーティングシステムまたはシステム状態の完全バックアップと復元を必要とすることなく、AD FS データを復元することができます。 新しいツールを使用して、AD FS 構成を Azure またはオンプレミスの場所にエクスポートできます。  その後、エクスポートしたデータを新しい AD FS インストールに適用し、AD FS 環境の再作成または複製を行うことができます。
 
 ## <a name="scenarios"></a>シナリオ
 AD FS 高速復元ツールは、次のシナリオで使用できます。
@@ -29,15 +27,15 @@ AD FS 高速復元ツールは、次のシナリオで使用できます。
 2. 同一のテスト環境と運用環境をデプロイする
     - ツールを使用すると、テスト環境で実稼働 AD FS の正確なコピーをすばやく作成したり、検証済みのテスト構成を運用環境にすばやく配置したりすることが可能です。
 3. SQL ベースの構成から WID への移行またはその逆の移行
-    - このツールを使用して、SQL ベースのファーム構成から WID へ、またはその逆方向に移動します。 
+    - このツールを使用して、SQL ベースのファーム構成から WID へ、またはその逆方向に移動します。
 
 
->[!NOTE] 
+>[!NOTE]
 >SQL マージレプリケーションまたは Always on 可用性グループを使用している場合、高速復元ツールはサポートされていません。 代替手段として、SQL ベースのバックアップと SSL 証明書のバックアップを使用することをお勧めします。
 
 ## <a name="what-is-backed-up"></a>バックアップ対象
 ツールは、次の AD FS 構成をバックアップします。
-    
+
 - 構成データベースの AD FS (SQL または WID)
 - 構成ファイル (AD FS フォルダーにあります)
 - 証明書と秘密キーの署名と暗号化解除を自動的に生成したトークン (Active Directory DKM コンテナーから)
@@ -45,7 +43,7 @@ AD FS 高速復元ツールは、次のシナリオで使用できます。
 - インストールされているカスタム認証プロバイダー、属性ストア、およびローカル要求プロバイダー信頼の一覧。
 
 ## <a name="how-to-use-the-tool"></a>ツールの使用方法
-まず、AD FS サーバーに MSI を[ダウンロード](https://go.microsoft.com/fwlink/?LinkId=825646)してインストールします。  
+まず、AD FS サーバーに MSI を[ダウンロード](https://go.microsoft.com/fwlink/?LinkId=825646)してインストールします。
 
 PowerShell プロンプトから次のコマンドを実行します。
 
@@ -53,23 +51,24 @@ PowerShell プロンプトから次のコマンドを実行します。
 import-module 'C:\Program Files (x86)\ADFS Rapid Recreation Tool\ADFSRapidRecreationTool.dll'
 ```
 
->[!NOTE] 
->Windows 統合データベース (WID) を使用している場合は、プライマリ AD FS サーバーでこのツールを実行する必要があります。  `Get-AdfsSyncProperties` PowerShell コマンドレットを使用して、オンになっているサーバーがプライマリサーバーかどうかを判断できます。
+>[!NOTE]
+>Windows 統合データベース (WID) を使用している場合は、プライマリ AD FS サーバーでこのツールを実行する必要があります。  PowerShell コマンドレットを使用して、 `Get-AdfsSyncProperties` オンになっているサーバーがプライマリサーバーかどうかを判断できます。
 
 ### <a name="system-requirements"></a>システム要件
 
-- このツールは、Windows Server 2012 R2 以降の AD FS に使用できます。 
-- 必要な .NET framework は、少なくとも4.0 です。 
+- このツールは、Windows Server 2012 R2 以降の AD FS に使用できます。
+- 必要な .NET framework は、少なくとも4.0 です。
 - 復元は、バックアップと同じバージョンの AD FS サーバーで実行する必要があり、AD FS サービスアカウントと同じ Active Directory アカウントを使用します。
 
 ## <a name="create-a-backup"></a>バックアップの作成
-バックアップを作成するには、バックアップ-ADFS コマンドレットを使用します。 このコマンドレットは、AD FS の構成、データベース、SSL 証明書などをバックアップします。 
+バックアップを作成するには、バックアップ-ADFS コマンドレットを使用します。 このコマンドレットは、AD FS の構成、データベース、SSL 証明書などをバックアップします。
 
-このコマンドレットを実行するには、ユーザーは少なくともローカル管理者である必要があります。 Active Directory DKM コンテナー (既定の AD FS 構成で必要) をバックアップするには、ユーザーがドメイン管理者であるか、AD FS サービスアカウントの資格情報を渡す必要があります。または、DKM コンテナーへのアクセス権を持っている必要があります。  GMSA アカウントを使用している場合は、ユーザーがドメイン管理者であるか、コンテナーに対するアクセス許可を持っている必要があります。gMSA 資格情報を指定することはできません。 
+このコマンドレットを実行するには、ユーザーは少なくともローカル管理者である必要があります。
+Active Directory DKM コンテナー (既定の AD FS 構成で必要) をバックアップするには、ユーザーがドメイン管理者であるか、AD FS サービスアカウントの資格情報を渡す必要があります。または、DKM コンテナーへのアクセス権を持っている必要があります。  GMSA アカウントを使用している場合は、ユーザーがドメイン管理者であるか、コンテナーに対するアクセス許可を持っている必要があります。gMSA 資格情報を指定することはできません。
 
 バックアップは、"adfsBackup_ID_Date" のパターンに従って名前が付けられます。 これには、バックアップが実行された日付と時刻のバージョン番号が含まれます。
 コマンドレットは、次のパラメーターを受け取ります。
-    
+
 パラメーターセット
 
 ![AD FS の迅速な復元ツール](media/AD-FS-Rapid-Restore-Tool/parameter1.png)
@@ -78,21 +77,24 @@ import-module 'C:\Program Files (x86)\ADFS Rapid Recreation Tool\ADFSRapidRecrea
 
 - **Backupdkm** -既定の構成で AD FS キーを含む Active Directory DKM コンテナーをバックアップします (自動的に生成されたトークンの署名と暗号化解除の証明書)。 Ad ツールの "ldifde" を使用して、AD コンテナーとそのすべてのサブツリーをエクスポートします。
 
-- -**Storagetype &lt;文字列&gt; ** -ユーザーが使用するストレージの種類。 "FileSystem" は、ユーザーがバックアップを実行したときに、ユーザーがバックアップの場所 (ファイルシステムまたはクラウド) を選択したときに、ローカルまたはネットワーク "Azure Azure Storage" 内のフォルダーに保存することを示します。 Azure を使用するには、Azure Storage 資格情報をコマンドレットに渡す必要があります。 ストレージ資格情報には、アカウント名とキーが含まれています。 さらに、コンテナー名も渡す必要があります。 コンテナーが存在しない場合は、バックアップ中に作成されます。 ファイルシステムを使用するには、ストレージパスを指定する必要があります。 そのディレクトリでは、バックアップごとに新しいディレクトリが作成されます。 作成される各ディレクトリには、バックアップされたファイルが含まれます。 
+- -**Storagetype &lt; 文字列 &gt; ** -ユーザーが使用するストレージの種類。
+"FileSystem" は、ユーザーがバックアップを実行したときに、ユーザーがバックアップの場所 (ファイルシステムまたはクラウド) を選択したときに、ローカルまたはネットワーク "Azure Azure Storage" 内のフォルダーに保存することを示します。
+Azure を使用するには、Azure Storage 資格情報をコマンドレットに渡す必要があります。 ストレージ資格情報には、アカウント名とキーが含まれています。 さらに、コンテナー名も渡す必要があります。 コンテナーが存在しない場合は、バックアップ中に作成されます。
+ファイルシステムを使用するには、ストレージパスを指定する必要があります。 そのディレクトリでは、バックアップごとに新しいディレクトリが作成されます。 作成される各ディレクトリには、バックアップされたファイルが含まれます。
 
-- **Encryptionpassword &lt;文字列&gt; ** -保存する前にすべてのバックアップファイルを暗号化するために使用されるパスワード
+- **Encryptionpassword &lt; 文字列 &gt; ** -保存する前にすべてのバックアップファイルを暗号化するために使用されるパスワード
 
-- **Azureconnectioncredentials &lt;pscredential&gt; ** -Azure ストレージアカウントのアカウント名とキー
+- **Azureconnectioncredentials &lt; Pscredential &gt; ** -Azure ストレージアカウントのアカウント名とキー
 
-- **Azurestoragecontainer &lt;文字列&gt; ** -バックアップが Azure に格納されるストレージコンテナー
+- **Azurestoragecontainer &lt; 文字列 &gt; ** -バックアップが Azure に格納されるストレージコンテナー
 
-- **Storagepath &lt;string&gt; ** -バックアップが格納される場所
+- **Storagepath &lt; string &gt; ** -バックアップが格納される場所
 
-- **Serviceaccountcredential &lt;pscredential&gt; ** -現在実行中の AD FS サービスに使用されているサービスアカウントを指定します。 このパラメーターは、ユーザーが DKM をバックアップする必要があり、ドメイン管理者ではない場合、またはコンテナーの内容にアクセスできない場合にのみ必要です。 
+- **Serviceaccountcredential &lt; pscredential &gt; ** -現在実行中の AD FS サービスに使用されているサービスアカウントを指定します。 このパラメーターは、ユーザーが DKM をバックアップする必要があり、ドメイン管理者ではない場合、またはコンテナーの内容にアクセスできない場合にのみ必要です。
 
-- **Backupcomment &lt;string []&gt; ** -復元中に表示されるバックアップに関する情報文字列。 hyper-v チェックポイントの名前付けの概念と似ています。 既定値は空の文字列です。
+- **Backupcomment &lt; string [] &gt; ** -復元中に表示されるバックアップに関する情報文字列。 hyper-v チェックポイントの名前付けの概念と似ています。 既定値は空の文字列です。
 
- 
+
 ## <a name="backup-examples"></a>バックアップの例
 AD FS 迅速な復元ツールを使用するためのバックアップ例を次に示します。
 
@@ -101,7 +103,7 @@ AD FS 迅速な復元ツールを使用するためのバックアップ例を�
 ```powershell
 Backup-ADFS -StorageType "FileSystem" -StoragePath "C:\Users\administrator\testExport\" -EncryptionPassword "password" -BackupComment "Clean Install of ADFS (FS)" -BackupDKM
 ```
- 
+
 ### <a name="backup-the-ad-fs-configuration-with-the-dkm-to-the-file-system-with-the-service-account-credential-running-as-local-admin"></a>ローカル管理者として実行されているサービスアカウントの資格情報を使用して、DKM を使用して AD FS 構成をファイルシステムにバックアップします。
 
 ```powershell
@@ -116,48 +118,48 @@ Backup-ADFS -StorageType "Azure" -AzureConnectionCredentials $cred -AzureStorage
 
 ### <a name="backup-the-ad-fs-configuration-without-the-dkm-to-the-file-system"></a>ファイルシステムに DKM を指定せずに AD FS 構成をバックアップする
 
-```powershell     
+```powershell
 Backup-ADFS -StorageType "FileSystem" -StoragePath "C:\Users\administrator\testExport\" -EncryptionPassword "password" -BackupComment "Clean Install of ADFS (FS)"
 ```
 
 ## <a name="restore-from-backup"></a>バックアップからの復元
 バックアップ-ADFS を使用して作成された構成を新しい AD FS インストールに適用するには、Restore-ADFS コマンドレットを使用します。
 
-このコマンドレットは、コマンドレット`Install-AdfsFarm`を使用して新しい AD FS ファームを作成し、AD FS の構成、データベース、証明書などを復元します。 AD FS の役割がサーバーにインストールされていない場合は、コマンドレットによってインストールされます。  コマンドレットは、既存のバックアップの復元場所を確認し、実行された日時と、ユーザーがバックアップにアタッチした可能性のあるバックアップコメントに基づいて、適切なバックアップを選択するようユーザーに指示します。 フェデレーションサービス名が異なる複数の AD FS 構成がある場合、ユーザーは最初に適切な AD FS 構成を選択するように求められます。
+このコマンドレットは、コマンドレットを使用して新しい AD FS ファームを作成 `Install-AdfsFarm` し、AD FS の構成、データベース、証明書などを復元します。 AD FS の役割がサーバーにインストールされていない場合は、コマンドレットによってインストールされます。  コマンドレットは、既存のバックアップの復元場所を確認し、実行された日時と、ユーザーがバックアップにアタッチした可能性のあるバックアップコメントに基づいて、適切なバックアップを選択するようユーザーに指示します。 フェデレーションサービス名が異なる複数の AD FS 構成がある場合、ユーザーは最初に適切な AD FS 構成を選択するように求められます。
 このコマンドレットを実行するには、ユーザーがローカルとドメインの両方の管理者である必要があります。
 
 
->[!NOTE] 
->AD FS 迅速な回復ツールを使用する前に、バックアップを復元する前に、サーバーがドメインに参加していることを確認してください。 
+>[!NOTE]
+>AD FS 迅速な回復ツールを使用する前に、バックアップを復元する前に、サーバーがドメインに参加していることを確認してください。
 
-コマンドレットは、次のパラメーターを受け取ります。 
+コマンドレットは、次のパラメーターを受け取ります。
 
 ![AD FS の迅速な復元ツール](media/AD-FS-Rapid-Restore-Tool/parameter2.png)
 
 ### <a name="detailed-description"></a>詳しい説明
 
-- **Storagetype &lt;文字列&gt; ** -ユーザーが使用するストレージの種類。
+- **Storagetype &lt; 文字列 &gt; ** -ユーザーが使用するストレージの種類。
  "FileSystem" は、ユーザーがローカルまたはネットワーク "Azure" 内のフォルダーに保存することを示します。これは、ユーザーが Azure Storage コンテナーに保存することを示します。
 
-- **DecryptionPassword &lt;string&gt; ** -バックアップされたすべてのファイルを暗号化するために使用されたパスワード 
+- **DecryptionPassword &lt; string &gt; ** -バックアップされたすべてのファイルを暗号化するために使用されたパスワード
 
-- **Azureconnectioncredentials &lt;pscredential&gt; ** -Azure ストレージアカウントのアカウント名とキー
+- **Azureconnectioncredentials &lt; Pscredential &gt; ** -Azure ストレージアカウントのアカウント名とキー
 
-- **Azurestoragecontainer &lt;文字列&gt; ** -バックアップが Azure に格納されるストレージコンテナー
+- **Azurestoragecontainer &lt; 文字列 &gt; ** -バックアップが Azure に格納されるストレージコンテナー
 
-- **Storagepath &lt;string&gt; ** -バックアップが格納される場所
+- **Storagepath &lt; string &gt; ** -バックアップが格納される場所
 
 - **ADFSName &lt; string &gt; ** -バックアップされ、復元されるフェデレーションの名前。 これが指定されておらず、フェデレーションサービス名が1つしかない場合は、その名前が使用されます。 複数のフェデレーションサービスがその場所にバックアップされている場合、ユーザーはバックアップされたフェデレーションサービスの1つを選択するように求められます。
 
-- **Serviceaccountcredential &lt; pscredential &gt; ** -復元する新しい AD FS サービスに使用するサービスアカウントを指定します。 
+- **Serviceaccountcredential &lt; pscredential &gt; ** -復元する新しい AD FS サービスに使用するサービスアカウントを指定します。
 
-- **GroupServiceAccountIdentifier &lt;string&gt; ** -復元する新しい AD FS サービスにユーザーが使用する GMSA。 既定では、どちらも指定されていない場合は、バックアップされたアカウント名が使用されます (GMSA の場合)。それ以外の場合は、ユーザーはサービスアカウントを入力するように求められます。
+- **GroupServiceAccountIdentifier &lt; string &gt; ** -復元する新しい AD FS サービスにユーザーが使用する GMSA。 既定では、どちらも指定されていない場合は、バックアップされたアカウント名が使用されます (GMSA の場合)。それ以外の場合は、ユーザーはサービスアカウントを入力するように求められます。
 
-- **Dbconnectionstring &lt;文字列&gt; ** -ユーザーが復元に別の DB を使用する場合は、wid の SQL 接続文字列または wid の種類を渡す必要があります。
+- **Dbconnectionstring &lt; 文字列 &gt; ** -ユーザーが復元に別の DB を使用する場合は、Wid の SQL 接続文字列または wid の種類を渡す必要があります。
 
-- **Force &lt;bool&gt; ** -バックアップを選択した後に、ツールが持つ可能性のあるプロンプトをスキップします。
+- **Force &lt; bool &gt; ** -バックアップを選択した後に、ツールが持つ可能性のあるプロンプトをスキップします。
 
-- **Restoredkm &lt;bool&gt; ** -新しい ad に移動し、dkm が最初にバックアップされた場合は、dkm コンテナーを AD に復元します。
+- **Restoredkm &lt; bool &gt; ** -新しい ad に移動し、dkm が最初にバックアップされた場合は、dkm コンテナーを AD に復元します。
 
 ## <a name="restore-examples"></a>復元の例
 
@@ -168,13 +170,13 @@ Restore-ADFS -StorageType "Azure" -AzureConnectionCredential $cred -DecryptionPa
 ```
 
 ### <a name="restore-the-ad-fs-configuration-without-the-dkm-from-the-file-system"></a>ファイルシステムから DKM を使用せずに AD FS 構成を復元する
- 
+
 ```powershell
 Restore-ADFS -StorageType "FileSystem" -StoragePath "C:\Users\administrator\testExport\" -DecryptionPassword "password"
 ```
 
-### <a name="restore-the-ad-fs-configuration-with-the-dkm-to-the-file-system"></a>DKM を使用して AD FS 構成をファイルシステムに復元する 
- 
+### <a name="restore-the-ad-fs-configuration-with-the-dkm-to-the-file-system"></a>DKM を使用して AD FS 構成をファイルシステムに復元する
+
 ```powershell
 Restore-ADFS -StorageType "FileSystem" -StoragePath "C:\Users\administrator\testExport\" -DecryptionPassword "password" -RestoreDKM
 ```
@@ -183,7 +185,7 @@ Restore-ADFS -StorageType "FileSystem" -StoragePath "C:\Users\administrator\test
 
 ```powershell
 Restore-ADFS -StorageType "FileSystem" -StoragePath "C:\Users\administrator\testExport\" -DecryptionPassword "password" -DBConnectionString "WID"
-``` 
+```
 
 ### <a name="restore-the-ad-fs-configuration-to-sql"></a>AD FS 構成を SQL に復元する
 
@@ -203,11 +205,11 @@ Restore-ADFS -StorageType "FileSystem" -StoragePath "C:\Users\administrator\test
 ```
 
 ## <a name="encryption-information"></a>暗号化情報
-すべてのバックアップデータは、クラウドにプッシュされる前、またはファイルシステムに格納される前に暗号化されます。  
+すべてのバックアップデータは、クラウドにプッシュされる前、またはファイルシステムに格納される前に暗号化されます。
 
-バックアップの一部として作成された各ドキュメントは、AES-256 を使用して暗号化されます。 ツールに渡されるパスワードは、Rfc2898DeriveBytes クラスを使用して新しいパスワードを生成するためのパスフレーズとして使用されます。 
+バックアップの一部として作成された各ドキュメントは、AES-256 を使用して暗号化されます。 ツールに渡されるパスワードは、Rfc2898DeriveBytes クラスを使用して新しいパスワードを生成するためのパスフレーズとして使用されます。
 
-RngCryptoServiceProvider は、AES と Rfc2898DeriveBytes クラスで使用される salt を生成するために使用されます。 
+RngCryptoServiceProvider は、AES と Rfc2898DeriveBytes クラスで使用される salt を生成するために使用されます。
 
 ## <a name="log-files"></a>ログ ファイル
 バックアップまたは復元が実行されるたびに、ログファイルが作成されます。 これらは次の場所にあります。
@@ -222,7 +224,7 @@ RngCryptoServiceProvider は、AES と Rfc2898DeriveBytes クラスで使用さ�
 ### <a name="version-10823"></a>バージョン1.0.82.3
 リリース: 2020 年4月
 
-**修正済みの問題:**
+**修正された問題:**
 
 
 - CNG ベースの証明書のサポートを追加しました
@@ -231,7 +233,7 @@ RngCryptoServiceProvider は、AES と Rfc2898DeriveBytes クラスで使用さ�
 ### <a name="version-10820"></a>バージョン1.0.82.0
 リリース: 2019 年7月
 
-**修正済みの問題:**
+**修正された問題:**
 
 
 - LDAP エスケープ文字を含む AD FS サービスアカウント名のバグ修正
@@ -240,7 +242,7 @@ RngCryptoServiceProvider は、AES と Rfc2898DeriveBytes クラスで使用さ�
 ### <a name="version-10810"></a>バージョン: 1.0.81.0
 リリース: 2019 年4月
 
-**修正済みの問題:**
+**修正された問題:**
 
 
 - 証明書のバックアップと復元のバグ修正
@@ -250,34 +252,34 @@ RngCryptoServiceProvider は、AES と Rfc2898DeriveBytes クラスで使用さ�
 ### <a name="version-10750"></a>バージョン: 1.0.75.0
 リリース: 2018 年8月
 
-**修正済みの問題:**
+**修正された問題:**
 * バックアップの更新-BackupDKM スイッチを使用する場合の ADFS。  ツールは、現在のコンテキストが DKM コンテナーにアクセスできるかどうかを判断します。  その場合は、ドメイン管理者特権またはサービスアカウント資格情報は必要ありません。  これにより、資格情報を明示的に指定したり、ドメイン管理者アカウントとして実行したりすることなく、自動バックアップを実行できます。
 
 ### <a name="version-10730"></a>バージョン: 1.0.73.0
 リリース: 2018 年8月
 
-**修正済みの問題:**
+**修正された問題:**
 * アプリケーションが FIPS に準拠するように暗号化アルゴリズムを更新する
-    
+
     >[!NOTE]
     > FIPS 準拠に従って暗号化アルゴリズムが変更されたため、古いバックアップは新しいバージョンで動作しません
-    
+
 * マージレプリケーションを使用する SQL クラスターのサポートを追加する
 
 ### <a name="version-10720"></a>バージョン: 1.0.72.0
 リリース: 2018 年7月
 
-**修正済みの問題:**
+**修正された問題:**
 
-   - バグの修正: を修正します。インプレースアップグレードをサポートするための MSI インストーラー 
+   - バグの修正: を修正します。インプレースアップグレードをサポートするための MSI インストーラー
 
 ### <a name="10180"></a>1.0.18.0
 リリース: 2018 年7月
 
-**修正済みの問題:**
+**修正された問題:**
 
    - バグの修正: 特殊文字が含まれているサービスアカウントのパスワードを処理する (ie、' & ')
-   - バグの修正: 別のプロセスによって使用されているため、復元は失敗します。
+   - バグの修正: Microsoft.IdentityServer.Servicehost.exe.config が別のプロセスによって使用されているため、復元に失敗します。
 
 
 ### <a name="1000"></a>1.0.0.0

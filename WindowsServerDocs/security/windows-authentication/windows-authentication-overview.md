@@ -1,20 +1,18 @@
 ---
 title: Windows 認証の概要
 description: Windows Server のセキュリティ
-ms.prod: windows-server
-ms.technology: security-windows-auth
 ms.topic: article
 ms.assetid: 485a0774-0785-457f-a964-0e9403c12bb1
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 4e3dbed9ebef441dab4a4583455e29df98a6ab24
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 10fb8e072e9dd810e64ace79c17f02290766ec6f
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182308"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87936495"
 ---
 # <a name="windows-authentication-overview"></a>Windows 認証の概要
 
@@ -52,7 +50,7 @@ Windows 認証の詳細には、次の内容も含まれます。
 ## <a name="practical-applications"></a>実際の適用例
 Windows 認証は、情報が信頼できるソース (人や別のコンピューターなどのコンピューター オブジェクト) から送信されていることを確認するために使用します。 Windows には、この操作を行うためのさまざまな方法が用意されています。次の表に、これらの方法について説明します。
 
-|宛先...|特徴量|説明|
+|宛先...|機能|説明|
 |----|------|--------|
 |Active Directory ドメイン内の認証|Kerberos|Microsoft Windows &nbsp; Server オペレーティングシステムには、公開キー認証用の Kerberos version 5 認証プロトコルと拡張機能が実装されています。 Kerberos 認証クライアントはセキュリティサポートプロバイダー SSP として実装され、 \( \) セキュリティサポートプロバイダーインターフェイス SSPI を使用してアクセスでき \( \) ます。 初期のユーザー認証は、Winlogon シングルサインオンアーキテクチャと統合されてい \- ます。 Kerberos キー配布センター \( KDC \) は、ドメインコントローラーで実行されている他の Windows Server セキュリティサービスと統合されています。 KDC は、そのセキュリティアカウントデータベースとしてドメインの Active Directory Directory サービスデータベースを使用します。 既定の Kerberos 実装には、Active Directory が必要です。<p>その他のリソースについては、「[Kerberos 認証の概要](../kerberos/kerberos-authentication-overview.md)」を参照してください。|
 |Web 上のセキュリティで保護された認証|\/Schannel セキュリティサポートプロバイダーに実装されている TLS SSL|トランスポート層セキュリティ \( TLS \) プロトコルバージョン1.0、1.1、1.2、Secure Sockets Layer \( SSL \) プロトコル、バージョン2.0 と3.0、データグラムトランスポート層セキュリティプロトコルバージョン1.0、およびプライベート通信トランスポートの \( PCT \) プロトコルのバージョン1.0 は、公開キーの暗号化に基づいています。 セキュリティで保護されたチャネル \( Schannel \) プロバイダー認証プロトコルスイートは、これらのプロトコルを提供します。 すべての Schannel プロトコルでは、クライアント/サーバー モデルが使用されています。<p>その他のリソースについては、「 [TLS-SSL &#40;SCHANNEL SSP&#41; の概要](../tls/tls-ssl-schannel-ssp-overview.md)」を参照してください。|
@@ -72,7 +70,7 @@ Windows 認証は、Windows オペレーティング システムの以前のバ
 
 |認証テクノロジ|リソース|
 |----------------|-------|
-|Windows 認証|[Windows 認証の技術概要](../windows-authentication/windows-authentication-technical-overview.md)<br />バージョン間の違い、一般的な認証の概念、ログオンのシナリオ、サポートされるバージョンのアーキテクチャ、適用可能な設定などのトピックが含まれます。|
+|[Windows 認証]|[Windows 認証の技術概要](../windows-authentication/windows-authentication-technical-overview.md)<br />バージョン間の違い、一般的な認証の概念、ログオンのシナリオ、サポートされるバージョンのアーキテクチャ、適用可能な設定などのトピックが含まれます。|
 |Kerberos|[Kerberos Authentication Overview](../kerberos/kerberos-authentication-overview.md)<p>[Kerberos の制約付き委任の概要](../kerberos/kerberos-constrained-delegation-overview.md)<p>[Kerberos 認証のテクニカルリファレンス](https://technet.microsoft.com/library/cc739058(v=ws.10).aspx) \(2003\)<p>[Kerberos フォーラム](https://docs.microsoft.com/answers/topics/windows-server-security.html)|
 |TLS \/ SSL および DTLS \( Schannel セキュリティサポートプロバイダー\)|[TLS-SSL &#40;Schannel SSP&#41; の概要](../tls/tls-ssl-schannel-ssp-overview.md)<p>[Schannel セキュリティ サポート プロバイダーのテクニカル リファレンス](../tls/schannel-security-support-provider-technical-reference.md)|
 |ダイジェスト認証|[ダイジェスト認証のテクニカルリファレンス](https://technet.microsoft.com/library/cc782794(v=ws.10).aspx) \(2003\)|

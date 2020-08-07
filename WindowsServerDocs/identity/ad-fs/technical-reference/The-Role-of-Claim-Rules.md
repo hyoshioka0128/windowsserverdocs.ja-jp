@@ -6,14 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 2152d6a242f829b56207632d214a1fc73e48515d
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 410e9ce5fbde7d84cbb4efbbde3515d0af537180
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959594"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87937889"
 ---
 # <a name="the-role-of-claim-rules"></a>要求規則の役割
 Active Directory フェデレーション サービスでフェデレーション サービスの全体的な関数 \(AD FS\) 、クレームのセットを含むトークンを発行します。 AD FS が許可して、発行は、どのようなクレームに関する決定は、要求規則が適用されます。

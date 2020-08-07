@@ -5,16 +5,14 @@ author: allenma
 ms.author: allenma
 ms.date: 08/14/2018
 ms.topic: article
-ms.prod: windows-server-hyper-v
-ms.technology: virtualization
 ms.localizationpriority: low
 ms.assetid: 6cb13f84-cb50-4e60-a685-54f67c9146be
-ms.openlocfilehash: f82aab1b3a3af61afa08a1849392297ca5def2ab
-ms.sourcegitcommit: 9889f20270e8eb7508d06cbf844cba9159e39697
+ms.openlocfilehash: 954efafe3185cadb347384c3c93a2eb8ef895143
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "83551105"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87963558"
 ---
 # <a name="managing-hyper-v-hypervisor-scheduler-types"></a>Hyper-v ハイパーバイザーのスケジューラの種類の管理
 
@@ -25,7 +23,7 @@ ms.locfileid: "83551105"
 > [!NOTE]
 > このドキュメントで説明されているハイパーバイザースケジューラ機能を使用するには、更新プログラムが必要です。 詳細については、「[必須の更新プログラム](#required-updates)」を参照してください。
 
-## <a name="background"></a>背景
+## <a name="background"></a>バックグラウンド
 
 Hyper-v 仮想プロセッサスケジュールの背後にあるロジックと制御について説明する前に、この記事で説明されている基本的な概念を確認することをお勧めします。
 
@@ -144,12 +142,12 @@ Windows Server 2016 Hyper-v では、従来のハイパーバイザースケジ�
 > [!NOTE]
 > このドキュメントで説明されているハイパーバイザースケジューラ機能を使用するには、次の更新プログラムが必要です。 これらの更新プログラムには、 `hypervisorschedulertype` ホストの構成に必要な新しい BCD オプションをサポートするための変更が含まれています。
 
-| バージョン | リリース  | 更新が必要 | KB Article |
+| Version | リリース  | 更新が必要 | KB Article |
 |--------------------|------|---------|-------------:|
 |Windows Server 2016 | 1607 | 2018.07 C | [KB4338822](https://support.microsoft.com/help/4338822/windows-10-update-kb4338822) |
 |Windows Server 2016 | 1703 | 2018.07 C | [KB4338827](https://support.microsoft.com/help/4338827/windows-10-update-kb4338827) |
 |Windows Server 2016 | 1709 | 2018.07 C | [KB4338817](https://support.microsoft.com/help/4338817/windows-10-update-kb4338817) |
-|Windows Server 2019 | 1804 | なし | なし |
+|Windows Server 2019 | 1804 | None | None |
 
 ## <a name="selecting-the-hypervisor-scheduler-type-on-windows-server"></a>Windows Server でのハイパーバイザースケジューラの種類の選択
 
@@ -163,7 +161,7 @@ bcdedit /set hypervisorschedulertype type
 
 `type`は次のいずれかです。
 
-* Classic (クラシック)
+* クラシック
 * コア
 * Root
 

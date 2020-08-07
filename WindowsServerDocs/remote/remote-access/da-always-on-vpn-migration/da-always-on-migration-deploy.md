@@ -2,19 +2,17 @@
 title: DirectAccess から Always On VPN への移行
 description: DirectAccess から Always On VPN に移行するには、クライアントを移行するための特定のプロセスが必要です。これにより、移行手順を順番に実行することによって発生する競合状態を最小限に抑えることができます。
 manager: dougkim
-ms.prod: windows-server
-ms.technology: networking-ras
 ms.topic: article
 ms.assetid: eeca4cf7-90f0-485d-843c-76c5885c54b0
 ms.author: lizross
 author: eross-msft
 ms.date: 06/07/2018
-ms.openlocfilehash: 68184fe43fd027ea24bd0e77623002ec88368e86
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: a452c9ab1a24304a9acfec8357bc98a3d058e03c
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87517697"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971749"
 ---
 # <a name="migrate-to-always-on-vpn-and-decommission-directaccess"></a>Always On VPN への移行と DirectAccess の使用停止
 
@@ -122,7 +120,7 @@ VPN クライアントが接続を試行しないように、証明書が発行�
 
 | ...  | 結果 |
 | ---- | ---- |
-| Configuratoin Manager | そのセキュリティグループのメンバーシップに基づいてユーザーコレクションを作成します。<br><br>![[条件のプロパティ] ダイアログボックス](../../media/DA-to-AlwaysOnVPN/b38723b3ffcfacd697b83dd41a177f66.png)|
+| Configuration Manager | そのセキュリティグループのメンバーシップに基づいてユーザーコレクションを作成します。<br><br>![[条件のプロパティ] ダイアログボックス](../../media/DA-to-AlwaysOnVPN/b38723b3ffcfacd697b83dd41a177f66.png)|
 | Intune | 同期するときに、セキュリティグループを直接ターゲットにするだけです。 |
 
 **GetUsersWithCert.ps1**構成スクリプトを実行するたびに、AD DS 検出ルールを実行して Configuration Manager のセキュリティグループメンバーシップを更新する必要もあります。 また、展開コレクションのメンバーシップの更新が頻繁に発生することを確認してください (スクリプトと検出ルールに合わせます)。

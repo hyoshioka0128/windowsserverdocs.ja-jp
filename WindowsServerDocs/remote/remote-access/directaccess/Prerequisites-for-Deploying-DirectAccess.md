@@ -2,18 +2,16 @@
 title: DirectAccess の展開の前提条件
 description: このトピックでは、Windows Server 2016 での DirectAccess 展開の前提条件について説明します。
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-da
 ms.topic: article
 ms.assetid: 57c7e039-42ef-4909-867a-b5f669c9e74e
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: f1fdae2625245675c2df7b5c5480fe5b08732b4a
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 92095fc85db349063d9f48a2f822be832268b0fd
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518248"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87955299"
 ---
 # <a name="prerequisites-for-deploying-directaccess"></a>DirectAccess の展開の前提条件
 

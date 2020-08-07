@@ -1,20 +1,18 @@
 ---
 title: Windows Server 上の Hyper-v でサポートされている Windows ゲストオペレーティングシステム
 description: 仮想マシンでゲストとして使用できるようにサポートされている Windows オペレーティングシステムの一覧を示します。 また、以前のバージョンの Hyper-v に関する同様の記事へのリンクも示します。
-ms.prod: windows-server
 manager: dongill
-ms.technology: compute-hyper-v
 ms.topic: article
 ms.assetid: 06b35897-2192-48b7-8c2d-125c520b0786
 author: lizap
 ms.author: elizapo
 ms.date: 01/08/2019
-ms.openlocfilehash: ddcb4f080183b6a1c8ae0ed0d705597c1a0dd4a5
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: a3c1f82d1c1f12c51a36a8285d28ccb9402f2817
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181798"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87963708"
 ---
 # <a name="supported-windows-guest-operating-systems-for-hyper-v-on-windows-server"></a>Windows Server 上の Hyper-v でサポートされている Windows ゲストオペレーティングシステム
 
@@ -28,13 +26,13 @@ Hyper-v では、ゲストオペレーティングシステムとして仮想マ
 
 Windows server 2016 および Windows Server 2019 で Hyper-v のゲストオペレーティングシステムとしてサポートされている Windows Server のバージョンを次に示します。
 
-|ゲスト オペレーティング システム (サーバー)|仮想プロセッサの最大数|Integration Services|Notes|
+|ゲスト オペレーティング システム (サーバー)|仮想プロセッサの最大数|Integration Services|メモ|
 |-------------------------------------|----------------------------------------|------------------------|---------|
 |Windows Server バージョン 1909 |ジェネレーション 2 の 240<br>64 (第1世代)|組み込み|240より大きい仮想プロセッサのサポートには、Windows Server、バージョン1903、またはそれ以降のゲストオペレーティングシステムが必要です。|
 |Windows Server バージョン 1903 |ジェネレーション 2 の 240<br>64 (第1世代)|組み込み||
 |Windows Server、バージョン 1809 |ジェネレーション 2 の 240<br>64 (第1世代)|組み込み||
 |Windows Server 2019 |ジェネレーション 2 の 240<br>64 (第1世代)|組み込み||
-|Windows Server、バージョン 1803 |ジェネレーション 2 の 240<br>64 (第1世代)|組み込み||
+|Windows Server バージョン 1803 |ジェネレーション 2 の 240<br>64 (第1世代)|組み込み||
 |Windows Server 2016 |ジェネレーション 2 の 240<br>64 (第1世代)|組み込み||
 |Windows Server 2012 R2 |64|組み込み||
 |Windows Server 2012 |64|組み込み||
@@ -45,7 +43,7 @@ Windows server 2016 および Windows Server 2019 で Hyper-v のゲストオペ
 
 Windows Server 2016 および Windows Server 2019 で Hyper-v のゲストオペレーティングシステムとしてサポートされている Windows クライアントのバージョンを次に示します。
 
-|ゲスト オペレーティング システム (クライアント)|仮想プロセッサの最大数|Integration Services|Notes|
+|ゲスト オペレーティング システム (クライアント)|仮想プロセッサの最大数|Integration Services|メモ|
 |-------------------------------------|----------------------------------------|------------------------|---------|
 |Windows 10|32|組み込み||
 |Windows 8.1|32|組み込み||
@@ -72,7 +70,7 @@ Windows Server 2016 および Windows Server 2019 で Hyper-v のゲストオペ
 
 -   他のオペレーティング システムで見つかった問題は、Microsoft は、マルチ ベンダー サポート コミュニティに問題を送信する [TSANet](https://www.tsanet.org/)します。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 -   [Hyper-V での Linux および FreeBSD の仮想マシン](Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)
 

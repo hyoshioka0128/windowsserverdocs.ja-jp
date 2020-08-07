@@ -2,18 +2,16 @@
 title: ワイヤレス アクセスの展開
 description: このトピックは、Windows Server 2016 ネットワークガイド「パスワードベースの 802.1 X 認証ワイヤレスアクセスの展開」に含まれています。
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: 4b66f517-b17d-408c-828f-a3793086bc1f
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 95d849d35cecb6db71207b655b243879520d9827
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 6ba9221707ffdea76236cd8f94c80a1220a750d5
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518427"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971829"
 ---
 # <a name="wireless-access-deployment"></a>ワイヤレス アクセスの展開
 
@@ -179,7 +177,7 @@ ms.locfileid: "87518427"
 
 3. 左側のウィンドウで、[ドメイン] をダブルクリックし、 \- **Domains** \- グループポリシーオブジェクトを管理するドメインをダブルクリックします。 たとえば、 \- [ **example.com**] をダブルクリックします。
 
-4. 次のいずれかの操作を行います。
+4. 以下のいずれかを実行します。
 
     - **既存 \- のドメインレベルの GPO を編集対象**として開くには、管理するグループポリシーオブジェクトが含まれているドメインをダブルクリックし、既定のドメインポリシーなど、管理するドメインポリシーを右クリックして、 \- [**編集**] をクリックします。 **グループポリシー管理エディター**が開きます。
 
@@ -291,7 +289,7 @@ ms.locfileid: "87518427"
 
 15. **[認証方法の選択**] の一覧で、[セキュリティで保護されたパスワード] [ ** \( EAP \- MS \- CHAP v2 \) **] を選択します。
 
-16. **[Configure]\(構成\)** をクリックします。 [ **EAP MSCHAPv2 のプロパティ**] ダイアログボックスで、[ **Windows のログオン名とパスワード \( と \) ドメインを自動的に使用する**] が選択されていることを確認し、[ **OK]** をクリックします。
+16. **[構成]** をクリックします。 [ **EAP MSCHAPv2 のプロパティ**] ダイアログボックスで、[ **Windows のログオン名とパスワード \( と \) ドメインを自動的に使用する**] が選択されていることを確認し、[ **OK]** をクリックします。
 
 17. PEAP の高速再接続を有効にするには、[**高速再接続を有効に**する] をオンにします。
 

@@ -5,36 +5,34 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 6d049175c7d89670f82bb45addc929d57b60b7b0
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 4d7d45b91e866b9df927620f2e214ced248b3361
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86960744"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87947488"
 ---
 # <a name="controlling-access-to-organizational-data-with-active-directory-federation-services"></a>Active Directory フェデレーションサービス (AD FS) を使用して組織のデータへのアクセスを制御する
 
-このドキュメントでは、オンプレミス、ハイブリッド、クラウドの各シナリオでの AD FS によるアクセス制御の概要について説明します。  
+このドキュメントでは、オンプレミス、ハイブリッド、クラウドの各シナリオでの AD FS によるアクセス制御の概要について説明します。
 
-## <a name="ad-fs-and-conditional-access-to-on-premises-resources"></a>オンプレミスのリソースへの AD FS と条件付きアクセス 
+## <a name="ad-fs-and-conditional-access-to-on-premises-resources"></a>オンプレミスのリソースへの AD FS と条件付きアクセス
 Active Directory フェデレーションサービス (AD FS) が導入されたため、承認ポリシーを使用して、要求とリソースの属性に基づいてリソースへのアクセスを制限または許可することができました。  AD FS がバージョンからバージョンに移行すると、これらのポリシーの実装方法が変更されました。  バージョン別のアクセス制御機能の詳細については、次を参照してください。
 - [Windows Server 2016 の AD FS の Access Control ポリシー](Access-Control-Policies-in-AD-FS.md)
 - [Windows Server 2012 R2 の AD FS でのアクセス制御](Manage-Risk-with-Conditional-Access-Control.md)
 
 
-## <a name="ad-fs-and-conditional-access-in-a-hybrid-organization"></a>ハイブリッド組織での AD FS と条件付きアクセス  
+## <a name="ad-fs-and-conditional-access-in-a-hybrid-organization"></a>ハイブリッド組織での AD FS と条件付きアクセス
 
 AD FS には、ハイブリッドシナリオでの条件付きアクセスポリシーのオンプレミスコンポーネントが用意されています。 AD FS ベースの承認規則は、AD FS に直接フェデレーションされるオンプレミスアプリケーションなど、Azure AD 以外のリソースに対して使用する必要があります。  クラウドコンポーネントは[Azure AD 条件付きアクセス](/azure/active-directory/active-directory-conditional-access)によって提供されます。  Azure AD Connect は、2つのコントロールプレーンを接続します。
 
-たとえば、クラウドリソースへの条件付きアクセスのために Azure AD にデバイスを登録すると、Azure AD Connect デバイスの書き戻し機能によって、デバイスの登録情報がオンプレミスで使用可能になり AD FS ポリシーが使用および適用されます。  これにより、内部設置型の両方のアクセス制御ポリシーと、クラウド リソースを一貫した方法があります。  
+たとえば、クラウドリソースへの条件付きアクセスのために Azure AD にデバイスを登録すると、Azure AD Connect デバイスの書き戻し機能によって、デバイスの登録情報がオンプレミスで使用可能になり AD FS ポリシーが使用および適用されます。  これにより、内部設置型の両方のアクセス制御ポリシーと、クラウド リソースを一貫した方法があります。
 
-![条件付きアクセス](../deployment/media/Plan-Device-based-Conditional-Access-on-Premises/ADFS_ITPRO4.png)  
+![条件付きアクセス](../deployment/media/Plan-Device-based-Conditional-Access-on-Premises/ADFS_ITPRO4.png)
 
 
 ### <a name="the-evolution-of-client-access-policies-for-office-365"></a>Office 365 用のクライアントアクセスポリシーの進化
-多くのユーザーは AD FS でクライアントアクセスポリシーを使用して、クライアントの場所や使用されているクライアントアプリケーションの種類などの要因に基づいて、Office 365 およびその他の Microsoft オンラインサービスへのアクセスを制限しています。  
+多くのユーザーは AD FS でクライアントアクセスポリシーを使用して、クライアントの場所や使用されているクライアントアプリケーションの種類などの要因に基づいて、Office 365 およびその他の Microsoft オンラインサービスへのアクセスを制限しています。
 - [Windows Server 2012 R2 のクライアントアクセスポリシー AD FS](Access-Control-Policies-W2K12.md)
 - [AD FS 2.0 のクライアントアクセスポリシー](Access-Control-Policies-in-AD-FS-2.md)
 

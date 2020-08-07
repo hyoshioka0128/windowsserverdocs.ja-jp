@@ -1,19 +1,17 @@
 ---
 title: Windows 管理センターの拡張機能の公開
 description: Windows 管理センター用の拡張機能の公開 (Project ホノルル)
-ms.technology: manage
 ms.topic: article
 author: daniellee-msft
 ms.author: jol
 ms.date: 09/18/2018
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 357c37ec395e5c51f3c3f946414f38ea5f95e9e4
-ms.sourcegitcommit: eaf3fb57517b9110082edad356b12daf3345bb2c
+ms.openlocfilehash: c817a28494104a1bfed1d7e19eaebaa04fd5138e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85593993"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971969"
 ---
 # <a name="publishing-extensions"></a>拡張機能の公開
 
@@ -93,7 +91,7 @@ Nuspec ファイルの例と、必須または推奨されるプロパティの�
     <licenseUrl>http://YourLicenseLink</licenseUrl>
     <iconUrl>http://YourLogoLink</iconUrl>
     <description>Hello World extension by Contoso</description>
-    <copyright>(c) Contoso. All rights reserved.</copyright> 
+    <copyright>(c) Contoso. All rights reserved.</copyright>
     <tags></tags>
   </metadata>
   <files>
@@ -116,7 +114,7 @@ Nuspec ファイルの例と、必須または推奨されるプロパティの�
 | iconUrl | Windows 管理センターフィードに発行するときに推奨 | 拡張機能マネージャーに表示するアイコンの URL。 |
 | projectUrl | Windows 管理センターフィードへの発行に必要 | 拡張機能の web サイトの URL。 別の web サイトがない場合は、NuGet フィードのパッケージ web ページの URL を使用します。 |
 | licenseUrl | Windows 管理センターフィードへの発行に必要 | 拡張機能の使用許諾契約書の URL。 |
-| files | 必須 | これら2つの設定は、Windows 管理センターが UI 拡張機能とゲートウェイプラグインに対して想定するフォルダー構造を設定します。 |
+| ファイル | 必須 | これら2つの設定は、Windows 管理センターが UI 拡張機能とゲートウェイプラグインに対して想定するフォルダー構造を設定します。 |
 
 ### <a name="3-build-the-extension-nuget-package"></a>3. 拡張機能の NuGet パッケージをビルドする
 

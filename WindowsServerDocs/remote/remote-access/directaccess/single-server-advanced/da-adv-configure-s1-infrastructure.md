@@ -2,18 +2,16 @@
 title: 手順 1. 詳細な DirectAccess インフラストラクチャの構成
 description: このトピックは、「Windows Server 2016 の詳細設定を使用して単一の DirectAccess サーバーを展開する」の一部です。
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-da
 ms.topic: article
 ms.assetid: 43abc30a-300d-4752-b845-10a6b9f32244
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 3404908b590f27ea14a588e8c2652e61d0ed05fc
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 74a38d16bba173fc91790fbdb03026c679929d56
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518148"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87955279"
 ---
 # <a name="step-1-configure-advanced-directaccess-infrastructure"></a>手順 1. 詳細な DirectAccess インフラストラクチャの構成
 

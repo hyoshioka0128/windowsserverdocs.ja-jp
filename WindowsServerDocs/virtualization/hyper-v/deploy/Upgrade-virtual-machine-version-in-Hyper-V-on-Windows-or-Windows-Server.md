@@ -1,20 +1,18 @@
 ---
 title: Windows 10 または Windows Server の Hyper-v で仮想マシンのバージョンをアップグレードする
 description: バーチャルマシンのバージョンをアップグレードするための手順と考慮事項を示します。
-ms.prod: windows-server
 manager: dongill
-ms.technology: compute-hyper-v
 ms.topic: article
 ms.assetid: 897f2454-5aee-445c-a63e-f386f514a0f6
 author: jasongerend
 ms.author: jgerend
 ms.date: 05/22/2019
-ms.openlocfilehash: e08d13e4d9b493b80cad59561c8088c7d3a12b57
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: e7c86cc15877c622cf3554a7ae69fe3d0aea1c50
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80860875"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87938926"
 ---
 # <a name="upgrade-virtual-machine-version-in-hyper-v-on-windows-10-or-windows-server"></a>Windows 10 または Windows Server の Hyper-v で仮想マシンのバージョンをアップグレードする
 
@@ -30,20 +28,20 @@ ms.locfileid: "80860875"
 
 ## <a name="step-1-check-the-virtual-machine-configuration-versions"></a>手順 1: 仮想マシンの構成バージョンを確認する
 
-1. Windows デスクトップ上で、[スタート] ボタンをクリックし、**Windows PowerShell** という名前の一部を入力します。
-2. Windows PowerShell を右クリックして **管理者として実行**します。
+1. Windows デスクトップで [スタート] ボタンをクリックし、名前の一部を入力 **Windows PowerShell**します。
+2. [Windows PowerShell] を右クリックし、[**管理者として実行**] を選択します。
 3. [GET VM](https://docs.microsoft.com/powershell/module/hyper-v/get-vm)コマンドレットを使用します。 次のコマンドを実行して、仮想マシンのバージョンを取得します。
 
 ```PowerShell
 Get-VM * | Format-Table Name, Version
 ```
 
-仮想マシンを選択して **[概要]** タブを表示することで、hyper-v マネージャーで構成バージョンを確認することもできます。
+仮想マシンを選択して [**概要**] タブを表示することで、hyper-v マネージャーで構成バージョンを確認することもできます。
 
 ## <a name="step-2-upgrade-the-virtual-machine-configuration-version"></a>手順 2: 仮想マシンの構成バージョンをアップグレードする
 
 1. Hyper-v マネージャーで仮想マシンをシャットダウンします。
-2. [アクション > アップグレード構成バージョン] を選択します。 このオプションが仮想マシンで使用できない場合は、Hyper-v ホストでサポートされている構成の最大バージョンに既に存在しています。
+2. [アクション > アップグレード構成バージョン] を選択します。 特定の仮想マシンについてこのオプションを選択できない場合、その仮想マシンは既に Hyper-V ホストでサポートされる最新の構成バージョンになっています。
 
 Windows PowerShell を使用して仮想マシンの構成バージョンをアップグレードするには、[更新プログラム VMVersion](https://docs.microsoft.com/powershell/module/hyper-v/update-vmversion)コマンドレットを使用します。 次のコマンドを実行します。ここで、vmname は仮想マシンの名前です。
 
@@ -91,12 +89,12 @@ New-VM -Name "WindowsCV5" -Version 5.0
 | Windows 10 5 月2019更新プログラム (バージョン 1903) |&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;| &#10004;|
 | Windows Server バージョン 1903 |&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;| &#10004;|
 |Windows Server、バージョン 1809|&#10006;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
-|Windows 10 10 月2018更新プログラム (バージョン 1809)|&#10006;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
-|Windows Server Version 1803|&#10006;|&#10006;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
-|Windows 10 April 2018 更新プログラム (バージョン 1803)|&#10006;|&#10006;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
-|Windows 10 の作成者の更新プログラム (バージョン 1709)|&#10006;|&#10006;|&#10006;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
-|Windows 10 の作成者の更新 (バージョン 1703)|&#10006;|&#10006;|&#10006;|&#10006;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
-|Windows 10 記念日更新プログラム (バージョン 1607)|&#10006;|&#10006;|&#10006;|&#10006;|&#10006;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
+|Windows 10 October 2018 Update (バージョン 1809)|&#10006;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
+|Windows Server バージョン 1803|&#10006;|&#10006;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
+|Windows 10 April 2018 Update (バージョン 1803)|&#10006;|&#10006;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
+|Windows 10 Fall Creators Update (バージョン 1709)|&#10006;|&#10006;|&#10006;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
+|Windows 10 Creators Update (バージョン 1703)|&#10006;|&#10006;|&#10006;|&#10006;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
+|Windows 10 Anniversary Update (バージョン 1607)|&#10006;|&#10006;|&#10006;|&#10006;|&#10006;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 
 ## <a name="why-should-i-upgrade-the-virtual-machine-configuration-version"></a>仮想マシンの構成バージョンをアップグレードする必要があるのはなぜですか。
 
@@ -110,9 +108,9 @@ Windows Server 2019、Windows Server 2016、または Windows 10 で Hyper-v を
  |---|---|
 |構成 |バイナリファイル形式で格納されている仮想マシンの構成情報。 <br /> ファイル名拡張子:. vmcx <br /> 既定の場所: C:\ProgramData\Microsoft\Windows\Hyper-V\Virtual Machines|
  |ランタイムの状態|バイナリファイル形式で格納されている仮想マシンのランタイム状態情報。 <br />ファイル名拡張子: vmrs と vmrs <br />既定の場所: C:\ProgramData\Microsoft\Windows\Hyper-V\Virtual Machines|
-|バーチャルハードディスク|バーチャルマシンのバーチャルハードディスクを保管します。 <br /> ファイル名拡張子: .vhd または .vhdx <br />既定の場所: C:\ProgramData\Microsoft\Windows\Hyper-V\Virtual ハードディスク|
+|仮想ハード ディスク|バーチャルマシンのバーチャルハードディスクを保管します。 <br /> ファイル名拡張子: .vhd または .vhdx <br />既定の場所: C:\ProgramData\Microsoft\Windows\Hyper-V\Virtual ハードディスク|
  |自動仮想ハードディスク |バーチャルマシンのチェックポイントに使用される差分ディスクファイル。 <br /> ファイル名拡張子:. .avhdx <br /> 既定の場所: C:\ProgramData\Microsoft\Windows\Hyper-V\Virtual ハードディスク|
- |チェックポイント|チェックポイントは、複数のチェックポイント ファイルに格納されます。 各チェックポイントで、構成ファイルとランタイム状態ファイルが作成されます。 <br /> ファイル名拡張子:. vmrs と. vmcx <br />既定の場所: C:\ProgramData\Microsoft\Windows\Snapshots|
+ |Checkpoint|チェックポイントは、複数のチェックポイント ファイルに格納されます。 各チェックポイントで、構成ファイルとランタイム状態ファイルが作成されます。 <br /> ファイル名拡張子:. vmrs と. vmcx <br />既定の場所: C:\ProgramData\Microsoft\Windows\Snapshots|
 
 ## <a name="what-happens-if-i-dont-upgrade-the-virtual-machine-configuration-version"></a>仮想マシンの構成バージョンをアップグレードしないとどうなりますか。
 
@@ -130,7 +128,7 @@ Windows Server 2019、Windows Server 2016、または Windows 10 で Hyper-v を
 |ホット アド/リムーブ メモリ|6.2|
 |Linux VM のセキュア ブート|6.2|
 |運用チェックポイント|6.2|
-|PowerShell Direct |6.2|
+|PowerShell ダイレクト |6.2|
 |仮想マシンのグループ化|6.2|
 |仮想トラステッド プラットフォーム モジュール (vTPM)|7.0|
 |仮想マシンの複数のキュー (VMMQ)|7.1|

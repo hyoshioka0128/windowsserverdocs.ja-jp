@@ -2,18 +2,16 @@
 title: Windows Server での DNS クライアントの新機能
 description: このトピックでは、Windows Server と Windows 10 の DNS クライアントの新機能の概要について説明します。
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-dns
 ms.topic: article
 ms.assetid: 6edaba84-4595-4fd8-95d7-64d4d975a38a
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: f94f4dc5c85ba4f80b45e3c406c1e11d2da05d65
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 772fedf497691834e6b894f61bd01c284ec24c16
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473929"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971809"
 ---
 # <a name="whats-new-in-dns-client-in-windows-server-2016"></a>Windows Server 2016 の DNS クライアントの新機能
 
@@ -34,7 +32,7 @@ ms.locfileid: "85473929"
 > [!NOTE]
 > Windows 10 の DNS クライアントサービスに加えられた変更は、Windows Server 2016 以降のバージョンを実行しているコンピューターにも存在します。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 -   [Windows Server 2016 の DNS サーバーの新機能](What-s-New-in-DNS-Server.md)
 

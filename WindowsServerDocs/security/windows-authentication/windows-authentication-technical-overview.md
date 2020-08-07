@@ -1,20 +1,18 @@
 ---
 title: Windows 認証の技術概要
 description: Windows Server のセキュリティ
-ms.prod: windows-server
-ms.technology: security-windows-auth
 ms.topic: article
 ms.assetid: 286d3e41-434f-4703-9320-706d06ebda51
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: bd4aa60c977b09958aebc0087c981efd02f36fed
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 8d5f800b759ae310913e8e62f269da1e45db0259
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182298"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87936472"
 ---
 # <a name="windows-authentication-technical-overview"></a>Windows 認証の技術概要
 

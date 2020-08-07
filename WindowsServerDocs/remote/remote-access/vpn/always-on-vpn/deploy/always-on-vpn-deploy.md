@@ -1,20 +1,18 @@
 ---
 title: Windows Server および Windows 10 のための Always On VPN 展開
 description: この展開を使用して、Windows Server 2016 以降のリモートアクセスを使用してリモート従業員用の仮想プライベートネットワーク (VPN) 接続 Always On を展開し、Windows 10 クライアントコンピューターの VPN プロファイルを Always On できます。
-ms.prod: windows-server
-ms.technology: networking-ras
 ms.topic: article
 ms.assetid: 5ae1a40b-4f10-4ace-8aaf-13f7ab581f4f
 ms.localizationpriority: medium
 ms.date: 12/20/2018
 ms.author: v-tea
 author: Teresa-MOTIV
-ms.openlocfilehash: bab89611932316d165e805e96f0a6d2d357c0780
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: bc7608d71dcb2bce19138fea18d6de23cda97d35
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959184"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87963788"
 ---
 # <a name="always-on-vpn-deployment-for-windows-server-and-windows-10"></a>Windows Server および Windows 10 のための Always On VPN 展開
 
@@ -34,7 +32,7 @@ Always On VPN は、リモートアクセスのための単一の統合された
 - ネットワークポリシーサーバー (NPS) をインストールするサーバー (仮想または物理、既存または新規)。 ネットワーク上に既に NPS サーバーがある場合は、新しいサーバーを追加するのではなく、既存の NPS サーバー構成を変更することができます。
 - IKEv2 VPN 接続と LAN ルーティングをサポートする機能の小さなサブセットを使用した RAS ゲートウェイ VPN サーバーとしてのリモートアクセス。
 - 2つのファイアウォールを含む境界ネットワーク。  VPN と RADIUS 通信の両方が正常に機能するために必要なトラフィックがファイアウォールによって許可されていることを確認します。 詳細については、「 [ALWAYS ON VPN テクノロジの概要](../always-on-vpn-technology-overview.md)」を参照してください。
-- 2つの物理イーサネットネットワークアダプターを使用する境界ネットワーク上の物理サーバーまたは仮想マシン (VM)。 RAS ゲートウェイ VPN サーバーとしてリモートアクセスをインストールします。 Vm には、ホストの仮想 LAN (VLAN) が必要です。 
+- 2つの物理イーサネットネットワークアダプターを使用する境界ネットワーク上の物理サーバーまたは仮想マシン (VM)。 RAS ゲートウェイ VPN サーバーとしてリモートアクセスをインストールします。 Vm には、ホストの仮想 LAN (VLAN) が必要です。
 - Administrators のメンバーシップ、またはそれと同等のメンバーシップが最低限必要です。
 - 展開を実行する前に、このガイドの「計画」セクションを読んで、この展開の準備ができていることを確認してください。
 - 使用する各テクノロジの設計と展開に関するガイドを確認します。 これらのガイドは、組織のネットワークに必要なサービスと構成が展開シナリオによって提供されるかどうかを判断するのに役立ちます。 詳細については、「 [ALWAYS ON VPN テクノロジの概要](../always-on-vpn-technology-overview.md)」を参照してください。
