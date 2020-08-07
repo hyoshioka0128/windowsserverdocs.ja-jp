@@ -1,17 +1,15 @@
 ---
 title: Active Directory でクラスターのアカウントを構成する
 ms.date: 11/12/2012
-ms.prod: windows-server
-ms.technology: storage-failover-clustering
 author: JasonGerend
 manager: lizross
 ms.author: jgerend
-ms.openlocfilehash: 8e1a19b0f1862ac047dc71c68c275a8380717217
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: a07b6971b342f41ce51b83e52ab7fa310f48cc2a
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409903"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87950176"
 ---
 # <a name="configuring-cluster-accounts-in-active-directory"></a>Active Directory でクラスターのアカウントを構成する
 

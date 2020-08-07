@@ -2,18 +2,16 @@
 title: 自動適用クォータを作成する
 description: この記事では、クォータ テンプレートに基づいて自動適用クォータを作成する方法について説明します。
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 38354a6c6e39f58574a64c752bb86800f3fc3039
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: b5ec19000e8fdb90fa413905dfd9ef4885347ed9
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474069"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87935871"
 ---
 # <a name="create-an-auto-apply-quota"></a>自動適用クォータを作成する
 
@@ -40,7 +38,7 @@ ms.locfileid: "85474069"
 > [!Note]
 > **[クォータ]** ノードを選択し、**[最新の情報に更新]** をクリックすると、自動的に生成されたすべてのクォータを確認できます。 各サブフォルダーの個々のクォータと、親ボリュームまたは親フォルダーの自動適用クォータ プロファイルが表示されます。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 -   [クォータの管理](quota-management.md)
 -   [自動適用クォータのプロパティを編集する](edit-auto-apply-quota-properties.md)

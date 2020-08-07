@@ -1,25 +1,23 @@
 ---
-title: MultiPoint Services のシステム管理
+title: MultiPoint Services でシステムの管理
 description: MultiPoint Services の管理情報に関するナビゲーショントピック
 ms.date: 07/22/2016
-ms.prod: windows-server
-ms.technology: multipoint-services
 ms.topic: article
 ms.assetid: 8fce1bcf-5459-43a2-957e-c1bc1749bca2
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: da27d56b8180949d911f17e334b2e377f004fc8f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f12a4e6241860906c7f593d1b51f11eddda857dd
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80853885"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87951567"
 ---
-# <a name="system-administration-in-multipoint-services"></a>MultiPoint Services のシステム管理
-MultiPoint Services システムの使用を開始する前に、基本的なシステム管理を行うことをお勧めします。  
-  
+# <a name="system-administration-in-multipoint-services"></a>MultiPoint Services でシステムの管理
+MultiPoint Services システムの使用を開始する前に、基本的なシステム管理を行うことをお勧めします。
+
 次の情報を使用します。
 
-[ディスク保護の構成](Configure-Disk-Protection-in-MultiPoint-services.md)  
-[MultiPoint Services コンピューターにサーバーバックアップをインストールする](Install-Server-Backup-on-your-MultiPoint-services-computer.md) 
+[ディスク保護](Configure-Disk-Protection-in-MultiPoint-services.md) 
+ の構成[MultiPoint Services コンピューターにサーバーバックアップをインストールする](Install-Server-Backup-on-your-MultiPoint-services-computer.md)

@@ -5,15 +5,13 @@ ms.author: jgerend
 manager: dmoss
 ms.date: 10/16/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: storage
 ms.assetid: 1f1215cd-404f-42f2-b55f-3888294d8a1f
-ms.openlocfilehash: 55611be13333c36201aad149be87207564d4ac97
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 15c4b7942be949af33e70d2a5f299af426040e7b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471147"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87950506"
 ---
 # <a name="refs-integrity-streams"></a>ReFS 整合性ストリーム
 >適用対象: Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server (半期チャネル)、Windows 10
@@ -92,8 +90,8 @@ PS C:\> Set-FileIntegrity H:\ -Enable $True
 PS C:\> Set-FileIntegrity H:\Docs -Enable $True
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 -   [ReFS の概要](refs-overview.md)
 -   [ReFS のブロックの複製](block-cloning.md)
--   [記憶域スペースダイレクトの概要](../storage-spaces/storage-spaces-direct-overview.md)
+-   [記憶域スペース ダイレクトの概要](../storage-spaces/storage-spaces-direct-overview.md)

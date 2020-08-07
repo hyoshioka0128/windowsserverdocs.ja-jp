@@ -2,18 +2,16 @@
 title: 通知の制限を構成する
 description: この記事では、さまざまな通知の種類ごとに時間制限を設定する方法を説明します。
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 5b9bda5ffb225cc05df7d45e8b611e0154f9e582
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 969c950d3a925afac400d128ac21ed0923f07ffa
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961534"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87950656"
 ---
 # <a name="configure-notification-limits"></a>通知の制限を構成する
 
@@ -23,7 +21,7 @@ ms.locfileid: "86961534"
 
 -   電子メール
 -   イベント ログ
--   コマンド
+-   command
 -   レポート
 
 これらの各制限により、構成対象の種類の通知は、最初の通知が生成された後、指定した時間が経過するまで同一の問題についての 2 回目の通知は生成されません。
@@ -41,7 +39,7 @@ ms.locfileid: "86961534"
 > [!Note]
 > 特定のクォータまたはファイル スクリーンの通知に関連付けられている時間制限をカスタマイズするには、[ファイル サーバー リソース マネージャー](/powershell/module/fileserverresourcemanager/?view=win10-ps)のコマンド ライン ツールである **Dirquota.exe** と **Filescrn.exe** を使用できます。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 -   [ファイル サーバー リソース マネージャーのオプションを設定する](setting-file-server-resource-manager-options.md)
 -   [コマンドライン ツール](command-line-tools.md)

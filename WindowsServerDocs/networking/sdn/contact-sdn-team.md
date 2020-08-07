@@ -2,18 +2,16 @@
 title: データセンターおよびクラウド ネットワーク チームへのお問い合わせ
 description: このページは、さまざまなコンテキストで SDN チームに最適な方法をお客様に通知することを目的としています。
 manager: grcusanz
-ms.prod: windows-server
-ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: f9945c55-c2d0-448f-86dd-8c734e1b2987
 ms.author: anpaul
 author: AnirbanPaul
-ms.openlocfilehash: 45baf6966fc0bc703dcf354e557b9d4eeab8e9d9
-ms.sourcegitcommit: 0ccc7b2caa1781f0c67e1a3cc52c0b0f6a175ad4
+ms.openlocfilehash: fe5b9bc8c8b3b888b3c11a72c39756374cde566c
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87819583"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87970829"
 ---
 # <a name="contact-the-datacenter-and-cloud-networking-team"></a>データセンターおよびクラウド ネットワーク チームへのお問い合わせ
 
@@ -37,7 +35,7 @@ GitHub リポジトリから SDN チームに問題を送信するに[は、こ�
 [コンテナーネットワークのドキュメント](https://docs.microsoft.com/virtualization/windowscontainers/manage-containers/container-networking)は[Microsoft Docs (docs.microsoft.com)](https://docs.microsoft.com/)にあります。これには、**コメント機能が組み込ま**れています。 サインインしたときにコメントに返信したり Microsoft Docs に返信したりするには、参照する Microsoft Docs ページの一番下までスクロールし、コメントを作成して送信します。
 
 > [Microsoft Docs](https://docs.microsoft.com/)は、Microsoft の新しい統合ドキュメントサイトです。 私たちのチームの[SDN ドキュメント](https://technet.microsoft.com/windows-server-docs/networking/sdn/software-defined-networking)のほとんどは TechNet に残されていますが、[コンテナーネットワークのドキュメント](https://docs.microsoft.com/virtualization/windowscontainers)は Microsoft Docs にあります。
-> 
+>
 > *一般に、質問をわきしたり、さらに多くのことを希望したりする Microsoft Docs に関するトピックが表示される場合は、そのページにコメントを残して、お客様のフィードバックを Microsoft チームと共有してください。*
 
 ## <a name="container-specific-forums"></a>コンテナー固有のフォーラム
@@ -45,5 +43,5 @@ GitHub リポジトリから SDN チームに問題を送信するに[は、こ�
 - [ユーザーの声](https://windowsserver.uservoice.com/forums/304624-containers)-機能に関する*要望*に最適
 - [Github (仮想化リポジトリ)](https://github.com/Microsoft/Virtualization-Documentation) -*トラブルシューティングのヘルプ*と*バグの報告*に最適です
 
-### <a name="not-seeing-the-forum-for-you"></a>フォーラムが表示されない場合は、 
+### <a name="not-seeing-the-forum-for-you"></a>フォーラムが表示されない場合は、
 可能な限り、マイクロソフトはパブリックフォーラムを使用することをお勧めします。これにより、より広範なコミュニティでは、お客様の質問やコメントにアクセスするメリットが得られます。 ただし、電子メールがお客様に連絡するために推奨される方法であるという状況も認識しています。 これらの状況のいずれかが発生した場合は、に電子メールをお送りください sdn_feedback@microsoft.com 。ご意見をお待ちしております。

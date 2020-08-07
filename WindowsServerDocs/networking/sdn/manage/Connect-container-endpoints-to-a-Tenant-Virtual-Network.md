@@ -2,31 +2,29 @@
 title: コンテナーのエンドポイントをテナントの仮想ネットワークに接続する
 description: このトピックでは、SDN を使用して作成された既存のテナント仮想ネットワークにコンテナーエンドポイントを接続する方法について説明します。 Docker 用の Windows libnetwork プラグインで利用できる l2bridge (および必要に応じて l2tunnel) ネットワークドライバーを使用して、テナント VM にコンテナーネットワークを作成します。
 manager: grcusanz
-ms.prod: windows-server
-ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: f7af1eb6-d035-4f74-a25b-d4b7e4ea9329
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/24/2018
-ms.openlocfilehash: 2b8927ec260b4f5a42aa59a25db1b18896ce91ef
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: fd05441ecc64c05778234dc00fa315bb406dfb40
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80854535"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87970809"
 ---
 # <a name="connect-container-endpoints-to-a-tenant-virtual-network"></a>コンテナーのエンドポイントをテナントの仮想ネットワークに接続する
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016
+>適用先:Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックでは、SDN を使用して作成された既存のテナント仮想ネットワークにコンテナーエンドポイントを接続する方法について説明します。 Docker 用の Windows libnetwork プラグインで利用できる*l2bridge* (および必要に応じて*l2tunnel*) ネットワークドライバーを使用して、テナント VM にコンテナーネットワークを作成します。
 
-[コンテナーネットワークドライバー](https://docs.microsoft.com/virtualization/windowscontainers/container-networking/network-drivers-topologies)に関するトピックでは、Windows 上の Docker を通じて複数のネットワークドライバーを使用できることについて説明しました。 SDN の場合は、 *l2bridge*ドライバーと*l2tunnel*ドライバーを使用します。 どちらのドライバーでも、各コンテナーエンドポイントは、コンテナーホスト (テナント) 仮想マシンと同じ仮想サブネット内にあります。 
+[コンテナーネットワークドライバー](https://docs.microsoft.com/virtualization/windowscontainers/container-networking/network-drivers-topologies)に関するトピックでは、Windows 上の Docker を通じて複数のネットワークドライバーを使用できることについて説明しました。 SDN の場合は、 *l2bridge*ドライバーと*l2tunnel*ドライバーを使用します。 どちらのドライバーでも、各コンテナーエンドポイントは、コンテナーホスト (テナント) 仮想マシンと同じ仮想サブネット内にあります。
 
-ホストネットワークサービス (HNS) は、プライベートクラウドプラグインを介して、コンテナーエンドポイントの IP アドレスを動的に割り当てます。 コンテナーエンドポイントには一意の IP アドレスがありますが、レイヤー2のアドレス変換によって、コンテナーホスト (テナント) 仮想マシンと同じ MAC アドレスが共有されます。 
+ホストネットワークサービス (HNS) は、プライベートクラウドプラグインを介して、コンテナーエンドポイントの IP アドレスを動的に割り当てます。 コンテナーエンドポイントには一意の IP アドレスがありますが、レイヤー2のアドレス変換によって、コンテナーホスト (テナント) 仮想マシンと同じ MAC アドレスが共有されます。
 
-これらのコンテナーエンドポイントのネットワークポリシー (Acl、カプセル化、QoS) は、ネットワークコントローラーによって受信され、上位層の管理システムで定義されている物理 Hyper-v ホストに適用されます。 
+これらのコンテナーエンドポイントのネットワークポリシー (Acl、カプセル化、QoS) は、ネットワークコントローラーによって受信され、上位層の管理システムで定義されている物理 Hyper-v ホストに適用されます。
 
 *L2bridge*ドライバーと*l2tunnel*ドライバーの違いは次のとおりです。
 
@@ -48,19 +46,19 @@ ms.locfileid: "80854535"
 
    ```powershell
    # To install HyperV feature without checks for nested virtualization
-   dism /Online /Enable-Feature /FeatureName:Microsoft-Hyper-V /All 
+   dism /Online /Enable-Feature /FeatureName:Microsoft-Hyper-V /All
    ```
 
 >[!Note]
->[入れ子になった仮想](https://msdn.microsoft.com/virtualization/hyperv_on_windows/user_guide/nesting)化と仮想化拡張機能の公開は、hyper-v コンテナーを使用する場合には必要ありません。 
+>[入れ子になった仮想](https://msdn.microsoft.com/virtualization/hyperv_on_windows/user_guide/nesting)化と仮想化拡張機能の公開は、hyper-v コンテナーを使用する場合には必要ありません。
 
 
 ## <a name="workflow"></a>ワークフロー
 
-[1. ネットワークコントローラー (Hyper-v ホスト)
-2 を介して、既存の VM NIC リソースに複数の IP 構成を追加](#1-add-multiple-ip-configurations)します。 [ホスト上のネットワークプロキシで、コンテナーエンドポイント (Hyper-v ホスト)
-3 の CA IP アドレスを割り当てることができるよう](#2-enable-the-network-proxy)にし[ます。プライベートクラウドプラグインをインストールして、CA IP アドレスをコンテナーエンドポイント (コンテナーホスト VM)
-4 に割り当て](#3-install-the-private-cloud-plug-in)[ます。Docker を使用して*l2bridge*または*l2tunnel*ネットワークを作成する (コンテナーホスト VM)](#4-create-an-l2bridge-container-network)
+[1. ネットワークコントローラー (Hyper-v ホスト) 2 を介して、既存の VM NIC リソースに複数の IP 構成を追加](#1-add-multiple-ip-configurations)します。 
+ [ホスト上のネットワークプロキシで、コンテナーエンドポイント (hyper-v ホスト) 3 の CA IP アドレスを割り当てることができるよう](#2-enable-the-network-proxy)にし 
+ [ます。プライベートクラウドプラグインをインストールして、CA IP アドレスをコンテナーエンドポイント (コンテナーホスト VM) 4 に割り当て](#3-install-the-private-cloud-plug-in) 
+ [ます。Docker を使用して*l2bridge*または*l2tunnel*ネットワークを作成する (コンテナーホスト VM)](#4-create-an-l2bridge-container-network)
 
 >[!NOTE]
 >System Center Virtual Machine Manager によって作成された VM NIC リソースでは、複数の IP 構成はサポートされていません。 これらの展開の種類では、ネットワークコントローラー PowerShell を使用して、帯域外で VM NIC リソースを作成することをお勧めします。
@@ -89,7 +87,7 @@ foreach ($i in 1..10)
     $props = new-object Microsoft.Windows.NetworkController.NetworkInterfaceIpConfigurationProperties
 
     $resourceid = "IP_192_168_1_1"
-    if ($i -eq 10) 
+    if ($i -eq 10)
     {
         $resourceid += "10"
         $ipstr = "192.168.1.110"
@@ -101,7 +99,7 @@ foreach ($i in 1..10)
     }
 
     $newipconfig.ResourceId = $resourceid
-    $props.PrivateIPAddress = $ipstr    
+    $props.PrivateIPAddress = $ipstr
 
     $props.PrivateIPAllocationMethod = "Static"
     $props.Subnet = new-object Microsoft.Windows.NetworkController.Subnet
@@ -117,9 +115,9 @@ New-NetworkControllerNetworkInterface -ResourceId $vmnic.ResourceId -Properties 
 ```
 
 ### <a name="2-enable-the-network-proxy"></a>2. ネットワークプロキシを有効にする
-このステップでは、ネットワークプロキシでコンテナーホスト仮想マシンに複数の IP アドレスを割り当てることができるようにします。 
+このステップでは、ネットワークプロキシでコンテナーホスト仮想マシンに複数の IP アドレスを割り当てることができるようにします。
 
-ネットワークプロキシを有効にするには、コンテナーホスト (テナント) 仮想マシンをホストする**Hyper-v ホスト**で[ConfigureMCNP](https://github.com/Microsoft/SDN/blob/master/Containers/ConfigureMCNP.ps1)スクリプトを実行します。
+ネットワークプロキシを有効にするには、コンテナーホスト (テナント) 仮想マシンをホストする**Hyper-v ホスト**で[ConfigureMCNP.ps1](https://github.com/Microsoft/SDN/blob/master/Containers/ConfigureMCNP.ps1)スクリプトを実行します。
 
 ```powershell
 PS C:\> ConfigureMCNP.ps1
@@ -128,7 +126,7 @@ PS C:\> ConfigureMCNP.ps1
 ### <a name="3-install-the-private-cloud-plug-in"></a>3. プライベートクラウドプラグインをインストールする
 この手順では、HNS が Hyper-v ホスト上のネットワークプロキシと通信できるように、プラグインをインストールします。
 
-プラグインをインストールするには、**コンテナーホスト (テナント) の仮想マシン**内で[InstallPrivateCloudPlugin](https://github.com/Microsoft/SDN/blob/master/Containers/InstallPrivateCloudPlugin.ps1)スクリプトを実行します。
+プラグインをインストールするには、**コンテナーホスト (テナント) 仮想マシン**内で[InstallPrivateCloudPlugin.ps1](https://github.com/Microsoft/SDN/blob/master/Containers/InstallPrivateCloudPlugin.ps1)スクリプトを実行します。
 
 
 ```powershell
@@ -136,19 +134,19 @@ PS C:\> InstallPrivateCloudPlugin.ps1
 ```
 
 ### <a name="4-create-an-l2bridge-container-network"></a>4. *l2bridge*コンテナーネットワークを作成する
-このステップでは、**コンテナーホスト (テナント) 仮想マシン**で `docker network create` コマンドを使用して、l2bridge ネットワークを作成します。 
+このステップでは、 `docker network create` **コンテナーホスト (テナント) 仮想マシン**でコマンドを使用して、l2bridge ネットワークを作成します。
 
 ```powershell
 # Create the container network
 C:\> docker network create -d l2bridge --subnet="192.168.1.0/24" --gateway="192.168.1.1" MyContainerOverlayNetwork
 
-# Attach a container to the MyContainerOverlayNetwork 
+# Attach a container to the MyContainerOverlayNetwork
 C:\> docker run -it --network=MyContainerOverlayNetwork <image> <cmd>
 ```
 
 >[!NOTE]
 >*L2bridge*または*l2tunnel* container network では、静的 IP の割り当ては、Microsoft SDN スタックではサポートされていません。
 
-## <a name="more-information"></a>詳細
+## <a name="more-information"></a>詳細情報
 SDN インフラストラクチャの展開の詳細については、「[ソフトウェア定義ネットワークインフラストラクチャを展開する](https://docs.microsoft.com/windows-server/networking/sdn/deploy/deploy-a-software-defined-network-infrastructure)」を参照してください。
 

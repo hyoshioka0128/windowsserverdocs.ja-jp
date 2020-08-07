@@ -2,17 +2,16 @@
 title: 記憶域スペースダイレクトパフォーマンス履歴を使用したスクリプト作成
 ms.author: cosdar
 manager: eldenc
-ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 05/15/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f3274210ea6c08d63862551570096ab10aa878e
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: a0e04034c79a82bb245b611eca291acca0e40f9f
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961814"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87935783"
 ---
 # <a name="scripting-with-powershell-and-storage-spaces-direct-performance-history"></a>PowerShell と記憶域スペースダイレクトパフォーマンス履歴を使用したスクリプト
 
@@ -487,8 +486,8 @@ $Output | Sort-Object RawAvgMemoryUsage -Descending | Select-Object -First 10 | 
 
 これで完了です。 これらのサンプルを使用すると、作業を開始するのに役立ちます。 パフォーマンスの履歴と強力なスクリプト対応のコマンドレットを使用すると、回答を得る `Get-ClusterPerf` ことができます。また、その答えについては、「」を記憶域スペースダイレクト。 – Windows Server 2019 インフラストラクチャを管理および監視する際の複雑な質問。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [Windows PowerShell の概要](/powershell/scripting/getting-started/getting-started-with-windows-powershell)
-- [記憶域スペースダイレクトの概要](storage-spaces-direct-overview.md)
+- [記憶域スペース ダイレクトの概要](storage-spaces-direct-overview.md)
 - [パフォーマンス履歴](performance-history.md)

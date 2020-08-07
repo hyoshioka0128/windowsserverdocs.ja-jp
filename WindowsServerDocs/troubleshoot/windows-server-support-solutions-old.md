@@ -1,19 +1,17 @@
 ---
 title: Windows Server 向けの上位のサポート ソリューション
 description: Windows Server の問題のソリューションへのリンクを示します。
-ms.prod: windows-server
 manager: alant
-ms.technology: server-general
 ms.date: 03/16/2018
 ms.topic: article
 author: kaushika-msft
 ms.author: elizapo
-ms.openlocfilehash: 6bd0d22c7df7344e6c4bfbf8360532ab0f36d117
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 6e76c54f0adf97e506dc7ce77ca103ba70d9c5c1
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80820755"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87935546"
 ---
 # <a name="top-support-solutions-for-windows-server-2016"></a>Windows Server 2016 向けの上位のサポート ソリューション
 
@@ -26,52 +24,52 @@ Microsoft では Windows Server 用の更新プログラムとソリューショ
 
 ## <a name="solutions-for-installing-or-upgrading-windows-server"></a>Windows Server のインストールとアップグレードに関連するソリューション
 
-- [Windows 10 のアップグレードエラーの解決: IT 担当者向け技術情報](https://docs.microsoft.com/windows/deployment/upgrade/resolve-windows-10-upgrade-errors)
-- [Windows 10 バージョン1607および Windows Server 2016 のサービススタック更新プログラム: 2017 年8月8日](https://support.microsoft.com/help/4035631)
-- [Windows 10 バージョン1607および Windows Server 2016 にアップグレードするための互換性更新プログラム: 2017 年8月3日](https://support.microsoft.com/help/4033524)
-- [Windows ベースの Azure Vm では、インプレースシステムアップグレードはサポートされていません](https://support.microsoft.com/help/4014997)
-- [Windows Server 2016 のアップグレードオプションと変換オプション](../get-started/supported-upgrade-paths.md)
-- [Windows Server 2016 のサーバーの役割のアップグレードと移行に関するマトリックス](../get-started/server-role-upgradeability-table.md)
+- [Windows 10 のアップグレード エラーの解決: IT 担当者向けの技術情報](https://docs.microsoft.com/windows/deployment/upgrade/resolve-windows-10-upgrade-errors)
+- [Windows 10 バージョン 1607 および Windows Server 2016 のサービス スタック更新プログラム: 2017 年 8 月 8 日](https://support.microsoft.com/help/4035631)
+- [Windows 10 バージョン 1607 および Windows Server 2016 アップグレード用互換性更新プログラム: 2017 年 8 月 3 日](https://support.microsoft.com/help/4033524)
+- [Windows ベースの Azure VM では、システムのインプレース アップグレードはサポートされていません](https://support.microsoft.com/help/4014997)
+- [Windows Server 2016 のアップグレード オプションと変換オプション](../get-started/supported-upgrade-paths.md)
+- [Windows Server 2016 向けのサーバーの役割のアップグレードと移行に関する一覧表](../get-started/server-role-upgradeability-table.md)
 - [Windows Server のインストールとアップグレード](../get-started/installation-and-upgrade.md)
-- [リリースノート: Windows Server 2016 に関する重要な問題](../get-started/windows-server-2016-ga-release-notes.md)
+- [リリース ノート:Windows Server 2016 に関する重要な問題](../get-started/windows-server-2016-ga-release-notes.md)
 - [Windows Server 2016 への移行に関する推奨事項](../get-started/recommendations-moving-to-server2016.md)
 
 ## <a name="solutions-for-volume-activation"></a>ボリューム ライセンス認証のソリューション
-- [Windows Server 2016 のアクティブ化](../get-started/server-2016-activation.md)
-- [ライセンス認証方法の確認と選択](https://technet.microsoft.com/library/jj134256(ws.11).aspx)
-- [ボリュームライセンス認証のライセンス認証エラーコード](https://technet.microsoft.com/library/dn502528.aspx)
-- [キー管理サービス (KMS) のトラブルシューティング方法](https://technet.microsoft.com/library/ee939272.aspx)
-- [ボリュームライセンス認証のトラブルシューティング](https://technet.microsoft.com/library/ff793439.aspx)
-- [アクティベーションエラーコード](https://technet.microsoft.com/library/ff793399.aspx)
+- [Windows Server 2016 のライセンス認証](../get-started/server-2016-activation.md)
+- [ライセンス認証の方法の確認と選択](https://technet.microsoft.com/library/jj134256(ws.11).aspx)
+- [ボリューム ライセンス認証のためのライセンス認証エラー コード](https://technet.microsoft.com/library/dn502528.aspx)
+- [キー管理サービス (KMS) をトラブルシューティングする方法](https://technet.microsoft.com/library/ee939272.aspx)
+- [ボリューム ライセンス認証のトラブルシューティング](https://technet.microsoft.com/library/ff793439.aspx)
+- [ライセンス認証エラー コード](https://technet.microsoft.com/library/ff793399.aspx)
 - [Windows のインストールが失敗し、"入力されたプロダクトキーは、インストール可能な Windows イメージのいずれとも一致しません。別のプロダクトキーを入力してください "](https://support.microsoft.com/help/2796988/windows-8-or-windows-server-2012-installation-may-fail-with-error-mess)
 
 ## <a name="solutions-related-to-dcpromo-and-installing-domain-controllers"></a>DCPromo とドメイン コントローラーのインストールに関連するソリューション
-- [Active Directory と Active Directory Domain Services ポートの要件](https://technet.microsoft.com/library/dd772723(v=ws.10).aspx)
+- [Active Directory および Active Directory Domain Services のポートの要件](https://technet.microsoft.com/library/dd772723(v=ws.10).aspx)
 - [Active Directory ファイアウォールのポート-単純にする](http://blogs.msmvps.com/acefekay/2011/11/01/active-directory-firewall-ports-let-s-try-to-make-this-simple/)
-- [Windows Server 2016 用 Exchange Server のサポート](https://technet.microsoft.com/library/ff728623(v=exchg.150).aspx)
-- [Ntdsutil.exe を使用してドメインコントローラーに FSMO の役割を転送または強制する](https://support.microsoft.com/kb/255504)
+- [Exchange Server による Windows Server 2016 のサポート](https://technet.microsoft.com/library/ff728623(v=exchg.150).aspx)
+- [Ntdsutil.exe を使用してドメイン コントローラーに FSMO の役割を転送または停止する](https://support.microsoft.com/kb/255504)
 - [ドメイン コントローラーの展開のトラブルシューティング](../identity/ad-ds/deploy/troubleshooting-domain-controller-deployment.md)
-- [Active Directory インストールウィザードに関する問題のトラブルシューティング](https://msdn.microsoft.com/library/bb727058.aspx)
-- [AD DS のインストールと削除に関する既知の問題](https://technet.microsoft.com/library/cc754463(v=ws.10).aspx)
+- [Active Directory インストール ウィザードの問題のトラブルシューティング](https://msdn.microsoft.com/library/bb727058.aspx)
+- [AD DS のインストールおよび削除に関する既知の問題](https://technet.microsoft.com/library/cc754463(v=ws.10).aspx)
 
 ## <a name="solutions-for-active-directory-federation-services-ad-fs"></a>Active Directory フェデレーション サービス (AD FS) のソリューション
-- [Azure Active Directory に Windows ドメイン参加済みデバイスの自動登録を構成する方法](/azure/active-directory/active-directory-conditional-access-automatic-device-registration-setup)
-- [要求の発行の設定](/azure/active-directory/device-management-hybrid-azuread-joined-devices-setup#step-2-setup-issuance-of-claims)
+- [Azure Active Directory への Windows ドメイン参加済みデバイスの自動登録の構成方法](/azure/active-directory/active-directory-conditional-access-automatic-device-registration-setup)
+- [要求の発行のセットアップ](/azure/active-directory/device-management-hybrid-azuread-joined-devices-setup#step-2-setup-issuance-of-claims)
 - [LDAP ディレクトリに保存されたユーザーを認証するように AD FS を構成する](../identity/ad-fs/operations/configure-ad-fs-to-authenticate-users-stored-in-ldap-directories.md)
 - [AD FS での証明書認証のための代替ホスト名バインドのサポート](../identity/ad-fs/operations/ad-fs-support-for-alternate-hostname-binding-for-certificate-authentication.md)
-- [パスワード攻撃から保護する](https://blogs.technet.microsoft.com/tspring/2017/01/20/federated-to-microsoft-cloud-and-account-lockouts/)
+- [パスワード攻撃に対する保護が実現](https://blogs.technet.microsoft.com/tspring/2017/01/20/federated-to-microsoft-cloud-and-account-lockouts/)
 - [WID データベースを使用した、Windows Server 2016 での AD FS へのアップグレード](../identity/ad-fs/deployment/upgrading-to-ad-fs-in-windows-server-2016.md)
-- [Windows 10 サインオン– AD FS を使用したデバイス認証の有効化](../identity/ad-fs/operations/configure-device-based-conditional-access-on-premises.md)
-- [Windows Server 2016 での AD FS と WAP での SSL 証明書の管理](../identity/ad-fs/operations/manage-ssl-certificates-ad-fs-wap-2016.md)
-- [Windows Server 2016 AD FS の Access Control ポリシー](../identity/ad-fs/operations/access-control-policies-in-ad-fs.md)
+- [Windows 10 のサインオン: AD FS でデバイス認証を有効にする](../identity/ad-fs/operations/configure-device-based-conditional-access-on-premises.md)
+- [Windows Server 2016 の AD FS と WAP で SSL 証明書を管理する](../identity/ad-fs/operations/manage-ssl-certificates-ad-fs-wap-2016.md)
+- [Windows Server 2016 AD FS のアクセス制御ポリシー](../identity/ad-fs/operations/access-control-policies-in-ad-fs.md)
 
 ## <a name="solutions-related-to-active-directory-replication"></a>Active Directory のレプリケーションに関連するソリューション
 
 - [Active Directory レプリケーションの問題のトラブルシューティングに関するページ](../identity/ad-ds/manage/troubleshoot/troubleshooting-active-directory-replication-problems.md)
-- [Microsoft ダウンロードセンターから Active Directory Replication Status ツールをダウンロードする](https://www.microsoft.com/en-in/download/details.aspx?id=30005)
-- [e2e: 一般的な Active Directory レプリケーションエラーをトラブルシューティングする方法](https://support.microsoft.com/kb/3108513)
-- [AD レプリケーションエラー8606のトラブルシューティング: オブジェクトを作成するための属性が不足しています](https://support.microsoft.com/kb/2028495)
-- [Windows 2000 サーバーと Windows Server 2003 の Active Directory の入力方向のレプリケーション中にイベント ID 2108 とイベント ID 1084 が発生する](https://support.microsoft.com/kb/837932)
-- [AD レプリケーションエラー8451のトラブルシューティング: レプリケーション操作でデータベースエラーが発生しました](https://support.microsoft.com/kb/2645996)
-- [AD レプリケーションエラー1127のトラブルシューティング: ハードディスクへのアクセス中に、再試行後もディスク操作が失敗する](https://support.microsoft.com/kb/2025726)
-- [サーバーメタデータのクリーンアップ](https://technet.microsoft.com/library/cc816907.aspx)
+- [Microsoft ダウンロード センターからの Active Directory Replication Status ツールのダウンロード](https://www.microsoft.com/en-in/download/details.aspx?id=30005)
+- [e2e: 一般的な Active Directory レプリケーション エラーをトラブルシューティングする方法](https://support.microsoft.com/kb/3108513)
+- [AD レプリケーション エラー 8606: "オブジェクトの作成に必要な属性が足りません" のトラブルシューティング](https://support.microsoft.com/kb/2028495)
+- [Windows 2000 Server および Windows Server 2003 で、Active Directory の入力方向のレプリケーション実行中にイベント ID 2108 およびイベント ID 1084 が発生する](https://support.microsoft.com/kb/837932)
+- [AD レプリケーション エラー 8451: "レプリケーション操作中に、データベースのエラーが発生しました" のトラブルシューティング](https://support.microsoft.com/kb/2645996)
+- [AD レプリケーション エラー 1127: "ハード ディスクにアクセスするときに、再試行の後もディスク操作を正しく実行できませんでした" のトラブルシューティング](https://support.microsoft.com/kb/2025726)
+- [サーバー メタデータのクリーンアップ](https://technet.microsoft.com/library/cc816907.aspx)

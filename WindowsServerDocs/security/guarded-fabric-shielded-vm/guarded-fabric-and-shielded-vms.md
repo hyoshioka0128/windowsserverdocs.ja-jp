@@ -1,18 +1,16 @@
 ---
 title: 保護されたファブリックとシールドされた VM の概要
-ms.prod: windows-server
 ms.topic: article
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: e331732bd958e3e403727709994cf9e2d4aef8f1
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: c508df5b23481a53ccc112d6c81b11fc9dcea790
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769310"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971389"
 ---
 # <a name="guarded-fabric-and-shielded-vms-overview"></a>保護されたファブリックとシールドされた VM の概要
 

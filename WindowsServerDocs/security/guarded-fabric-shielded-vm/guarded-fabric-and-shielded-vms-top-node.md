@@ -1,19 +1,17 @@
 ---
 title: 保護されたファブリックとシールドされた VM
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 5c7ada81-2d97-41d4-87cf-1a7ccf06cd20
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 9e76b3081438ae38c6b83b7cdd179d47b1e21a70
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 7a73bf1b677d09cc31783b58148c8ca7c581fbca
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856915"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971379"
 ---
 # <a name="guarded-fabric-and-shielded-vms"></a>保護されたファブリックとシールドされた VM
 
@@ -44,18 +42,18 @@ ms.locfileid: "80856915"
     - [クイック スタート](guarded-fabric-deployment-overview.md)
     - [HGS の展開](guarded-fabric-setting-up-the-host-guardian-service-hgs.md)
     - [保護されたホストの展開](guarded-fabric-configure-hgs-with-authorized-hyper-v-hosts.md)
-        - [保護されたホストになるホストのファブリック DNS を構成する](guarded-fabric-configuring-fabric-dns.md)
+        - [保護されたホストになるホスト用にファブリック DNS を構成する](guarded-fabric-configuring-fabric-dns.md)
         - [AD モードを使用して保護されたホストを展開する](guarded-fabric-admin-trusted-attestation-creating-a-security-group.md)
         - [TPM モードを使用して保護されたホストを展開する](guarded-fabric-tpm-trusted-attestation-capturing-hardware.md)
         - [保護されたホストが証明できることを確認する](guarded-fabric-confirm-hosts-can-attest-successfully.md)
-        - [シールドされた Vm-ホスティングサービスプロバイダーが VMM で保護されたホストを展開する](https://technet.microsoft.com/system-center-docs/vmm/scenario/guarded-hosts)
+        - [シールドされた VM - ホスティング サービス プロバイダーで VMM を使用して保護されたホストを展開する](https://technet.microsoft.com/system-center-docs/vmm/scenario/guarded-hosts)
     - [シールドされた VMの展開](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
         - [シールドされた VM テンプレートを作成する](guarded-fabric-create-a-shielded-vm-template.md)
         - [VM シールドヘルパー VHD を準備する](guarded-fabric-vm-shielding-helper-vhd.md)
         - [Windows Azure Pack の設定](guarded-fabric-hoster-sets-up-windows-azure-pack.md)
         - [シールドデータファイルを作成する](guarded-fabric-tenant-creates-shielding-data.md)
-        - [Windows Azure Pack を使用してシールドされた VM をデプロイする](guarded-fabric-shielded-vm-windows-azure-pack.md)
-        - [Virtual Machine Manager を使用してシールドされた VM をデプロイする](guarded-fabric-tenant-deploys-shielded-vm-using-vmm.md)
+        - [Windows Azure Pack を使用してシールドされた VM を展開する](guarded-fabric-shielded-vm-windows-azure-pack.md)
+        - [Virtual Machine Manager を使用してシールドされた VM を展開する](guarded-fabric-tenant-deploys-shielded-vm-using-vmm.md)
 
 ## <a name="operations-and-management-topic"></a>操作と管理に関するトピック
 

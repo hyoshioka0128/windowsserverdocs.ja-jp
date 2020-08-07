@@ -1,26 +1,24 @@
 ---
 title: DHCP サーバーなしで TCP/IP 自動アドレス指定を使用する方法
 description: DHCP サーバーなしで TCP/IP の自動アドレス指定を使用する方法について説明します。
-ms.prod: windows-server
 manager: dcscontentpm
-ms.technology: server-general
 ms.date: 5/26/2020
 ms.topic: troubleshoot
 author: Deland-Han
 ms.author: delhan
 ms.reviewer: robsmi
-ms.openlocfilehash: fcd85c29975709053009ec4a2684df88b4bafd69
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 46e7ae4a011c9a8d738dccd4fe103b49fee44c5b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409803"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87935560"
 ---
 # <a name="how-to-use-automatic-tcpip-addressing-without-a-dhcp-server"></a>DHCP サーバーなしで TCP/IP 自動アドレス指定を使用する方法
 
 この記事では、動的ホスト構成プロトコル (DHCP) サーバーがネットワーク上に存在しない状態で、自動伝送制御プロトコル/インターネットプロトコル (TCP/IP) アドレス指定を使用する方法について説明します。 この記事の「適用対象」セクションに記載されているオペレーティングシステムのバージョンには、自動プライベート IP アドレス指定 (APIPA) と呼ばれる機能があります。 この機能を使用すると、DHCP サーバーが使用できない場合、またはネットワーク上に存在しない場合に、Windows コンピューターがそれ自体をインターネットプロトコル (IP) アドレスとして割り当てることができます。 この機能により、TCP/IP を実行する小規模なローカルエリアネットワーク (LAN) の構成とサポートが困難になります。
 
-## <a name="more-information"></a>詳細情報
+## <a name="more-information"></a>説明
 
 > [!IMPORTANT]
 > 慎重にこのセクションの手順に従います。 レジストリを正しく変更しないと、重大な問題が発生する可能性があります。 変更する前に、問題が発生した場合に[復元するためにレジストリをバックアップ](https://support.microsoft.com/help/322756)します。

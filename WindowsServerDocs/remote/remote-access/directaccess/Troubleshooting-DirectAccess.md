@@ -2,18 +2,16 @@
 title: DirectAccess のトラブルシューティング
 description: このトピックでは、Windows Server 2016 での DirectAccess 展開のトラブルシューティングについて説明します。
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-da
 ms.topic: article
 ms.assetid: 61040e19-5960-4eb0-b612-d710627988f7
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 73549a03d1e2417604618ea79c2bdb03d56aba72
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: 265924bb8993f8dd71c9509be4eacb38501d8180
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769290"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87951263"
 ---
 # <a name="troubleshooting-directaccess"></a>DirectAccess のトラブルシューティング
 

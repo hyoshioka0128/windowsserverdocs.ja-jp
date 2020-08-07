@@ -1,20 +1,18 @@
 ---
 title: スクリプトを使用してソフトウェアで定義されたネットワークインフラストラクチャを展開する
-description: このトピックでは、Windows Server 2016 のスクリプトを使用して、Microsoft ソフトウェア定義ネットワーク (SDN) インフラストラクチャを展開する方法について説明します。 '
+description: このトピックでは、Windows Server 2016 のスクリプトを使用して、Microsoft ソフトウェア定義ネットワーク (SDN) インフラストラクチャを展開する方法について説明します。
 manager: grcusanz
-ms.prod: windows-server
-ms.technology: networking-sdn
 ms.topic: get-started-article
 ms.assetid: 5ba5bb37-ece0-45cb-971b-f7149f658d19
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/23/2018
-ms.openlocfilehash: 22cb35f2cc39b997fef7b26a8a8db08a4c2c5698
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: e671421225e9fa2d5e7461c795a9f7c9789efd88
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87517937"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87970819"
 ---
 # <a name="deploy-a-software-defined-network-infrastructure-using-scripts"></a>スクリプトを使用してソフトウェア定義ネットワーク インフラストラクチャを展開する
 
@@ -66,7 +64,7 @@ Virtual Machine Manager (VMM) を使用して SDN インフラストラクチャ
 
 5. Optionalバーチャルマシンをホスト Active Directory Domain Services に展開します ([Active Directory Domain Services (レベル 100)](https://technet.microsoft.com/library/hh472162.aspx)と DNS サーバーをインストールします。
 
-    a。 Active Directory/DNS サーバー仮想マシンを管理 VLAN に接続します。
+    a. Active Directory/DNS サーバー仮想マシンを管理 VLAN に接続します。
 
       ```PowerShell
       Set-VMNetworkAdapterIsolation -VMName "<VM Name>" -Access -VlanId <Management VLAN> -AllowUntaggedTraffic $True
@@ -83,7 +81,7 @@ Virtual Machine Manager (VMM) を使用して SDN インフラストラクチャ
    Set-DnsClientServerAddress -InterfaceAlias "vEthernet (<switch name>)" -ServerAddresses <DNS Server IP>
    ```
 
-   a。 [**スタート**] ボタンを右クリックし、[**システム**] をクリックして、[**設定の変更**] をクリックします。
+   a. [**スタート**] ボタンを右クリックし、[**システム**] をクリックして、[**設定の変更**] をクリックします。
    b. **[変更]** をクリックします。
    c. [**ドメイン**] をクリックし、ドメイン名を指定します。  "" "" d. **[OK]** をクリックします。
    e. プロンプトが表示されたら、ユーザー名とパスワードの資格情報を入力します。
@@ -184,11 +182,11 @@ SDN Express スクリプトがエラーを報告せずに完了するように�
 
 1.  << を変更して SDNExpress\scripts\TenantConfig.psd1 ファイルをカスタマイズします。 >>タグは特定の値に**置き換え**てください (たとえば、FabricConfig.psd1 ファイルで定義されているように、VHD イメージ名、ネットワークコントローラー REST 名、vSwitch 名など)。
 
-2.  スクリプトを実行します。 次に例を示します。
+2.  スクリプトを実行します。 例:
 
     ``SDNExpress\scripts\SDNExpressTenant.ps1 -ConfigurationDataFile TenantConfig.psd1 -Verbose``
 
-3.  構成を元に戻すには、 **undo**パラメーターを指定して同じスクリプトを実行します。 次に例を示します。
+3.  構成を元に戻すには、 **undo**パラメーターを指定して同じスクリプトを実行します。 例:
 
     ``SDNExpress\scripts\SDNExpressTenant.ps1 -Undo -ConfigurationDataFile TenantConfig.psd1 -Verbose``
 

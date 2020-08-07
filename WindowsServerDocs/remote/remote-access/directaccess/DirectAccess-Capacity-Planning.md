@@ -2,18 +2,16 @@
 title: DirectAccess の容量計画
 description: Windows server 2012 の DirectAccess サーバーのパフォーマンスに関するレポートについては、このトピックを使用して、Windows Server 2016 での DirectAccess の容量計画に役立てることができます。
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-da
 ms.topic: article
 ms.assetid: 456e5971-3aa7-4a24-bc5d-0c21fec7687e
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 85ac9d40ec0de0a896e99d56679b325cdfc387ff
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 6df4005112601aefb1e508087ec66e7af44e52fd
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87517687"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87951407"
 ---
 # <a name="directaccess-capacity-planning"></a>DirectAccess の容量計画
 
@@ -25,7 +23,7 @@ ms.locfileid: "87517687"
 
 これらのテスト結果は、Windows 8 では Teredo が IPHTTPS よりもパフォーマンスが高いことを示しています。ただし、Windows 7 と比べると、Teredo と IPHTTPS のいずれも帯域幅を使用効率が向上したことを示しています。
 
-![テスト結果](../../media/DirectAccess-Capacity-Planning/DACapacityPlanning1.gif)
+![Test results](../../media/DirectAccess-Capacity-Planning/DACapacityPlanning1.gif)
 
 ## <a name="high-end-hardware-test-environment"></a>ハイエンド ハードウェアのテスト環境
 次のグラフは、ハイエンド ハードウェアのパフォーマンス テスト環境の結果を示しています。 すべてのテスト結果と分析は、このドキュメントで詳しく説明します。

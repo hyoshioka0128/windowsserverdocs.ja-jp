@@ -2,19 +2,17 @@
 title: ステーション用の Windows 10 Enterprise の仮想デスクトップを作成する
 description: ステーション用の Windows Server 2016 デスクトップを作成する方法について説明します。
 ms.date: 07/22/2016
-ms.prod: windows-server
-ms.technology: multipoint-services
 ms.topic: article
 ms.assetid: 63f08b5b-c735-41f4-b6c8-411eff85a4ab
 author: evaseydl
 ms.author: evas
 manager: scottman
-ms.openlocfilehash: 6f6d7d3ef66e8943fbb39cfd96cff1b91ab413eb
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: fb36cb13f9a78ae028f1217dd667a106a81e5c94
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409823"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87937314"
 ---
 # <a name="create-windows-10-enterprise-virtual-desktops-for-stations"></a>ステーション用の Windows 10 Enterprise の仮想デスクトップを作成する
 MultiPoint Services でのこのオプションの構成は、主に、重要なアプリケーションがユーザーごとにクライアントオペレーティングシステムの独自のインスタンスを必要とする状況を想定しています。 たとえば、Windows Server にインストールできないアプリケーションや、同じホストコンピューターで複数のインスタンスを実行しないアプリケーションがこれに含まれます。
@@ -25,7 +23,7 @@ MultiPoint Services でのこのオプションの構成は、主に、重要な
 ## <a name="prerequisites"></a>前提条件
 ステーションの仮想デスクトップを作成する準備を行うには、MultiPoint Services システムが次の要件を満たしていることを確認します。
 
-| ハードウェア | 必要条件 |
+| ハードウェア | 要件 |
 |--|--|
 | CPU (マルチメディア) | 仮想マシンあたり1コアまたはスレッド |
 | ソリッドステートドライブ (SSD) | 容量 >= 1 ステーションあたり 20 gb + MultiPoint Services ホストオペレーティングシステム<p>ランダム読み取り/書き込み IOPS >ステーションあたり 3 k |

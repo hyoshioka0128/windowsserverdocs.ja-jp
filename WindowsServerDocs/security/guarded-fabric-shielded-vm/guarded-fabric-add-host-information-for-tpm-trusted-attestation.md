@@ -1,19 +1,17 @@
 ---
 title: TPM で信頼された構成証明のホスト情報を追加する
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: f0aa575b-b34e-4f6c-8416-ed3e398e0ad2
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
 ms.date: 06/21/2019
-ms.openlocfilehash: cfc1d0d2b99a79e6c1deb013fab350e3abc6167c
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: 7ec49467b3875ba552f5b92fb3776892a2d54c13
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769670"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971409"
 ---
 # <a name="add-host-information-for-tpm-trusted-attestation"></a>TPM で信頼された構成証明のホスト情報を追加する
 

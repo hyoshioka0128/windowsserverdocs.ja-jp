@@ -2,18 +2,16 @@
 title: リモート コンピューターに接続する
 description: この記事では、ファイル サーバー リソース マネージャーからリモート コンピューターに接続して、記憶域リソースを管理する方法について説明します。
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 562164b461b4cd5db939b116feeb1bf21f78bad4
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: a412fcc0e1979ed158f01f6fba17fb6a9c4a20c7
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474129"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87935881"
 ---
 # <a name="connect-to-a-remote-computer"></a>リモート コンピューターに接続する
 
@@ -45,6 +43,6 @@ ms.locfileid: "85474129"
 -   リモート コンピューターで Windows Server が実行され、ファイル サーバー リソース マネージャーがインストールされている必要があります。
 -   リモート コンピューターで、**[リモート ファイル サーバー リソース マネージャー管理]** 例外を有効にする必要があります。 この例外は、[コントロール パネル] の [Windows ファイアウォール] で有効にします。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 -   [リモートの記憶域リソースを管理する](managing-remote-storage-resources.md)

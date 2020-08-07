@@ -1,17 +1,15 @@
 ---
-title: アクティブなフェールオーバークラスターのメンバーシップからノードを削除する
+title: アクティブなフェールオーバー クラスターのメンバーシップからノードを削除する
 description: この記事では、アクティブなフェールオーバークラスターのメンバーシップから削除されたノードを検索する際の問題について説明します。
-ms.prod: windows-server
-ms.technology: server-general
 ms.date: 05/28/2020
 author: Deland-Han
 ms.author: delhan
-ms.openlocfilehash: 6613bf09c3588637cfe03cb7647e4fed358b760c
-ms.sourcegitcommit: ef089864980a1d4793a35cbf4cbdd02ce1962054
+ms.openlocfilehash: da46b39f853476676a06bcaaa20338dd1a178586
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84150330"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87935572"
 ---
 # <a name="nodes-being-removed-from-failover-cluster-membership-on-vmware-esx"></a>VMWare ESX のフェールオーバークラスターメンバーシップから削除されているノード
 
@@ -23,7 +21,7 @@ ms.locfileid: "84150330"
 
 ![イベント1135](media/nodes-failover-cluster-vmware/1135.png)
 
-## <a name="resolution"></a>解決策
+## <a name="resolution"></a>解決方法
 
 1つの問題として、受信バッファーが低すぎるために大量のトラフィックを処理するように設定されているため、VMXNET3 アダプターが受信ネットワークパケットを削除していることが挙げられます。 パフォーマンスモニターを使用して、"Network Interface\Packets Received が破棄されました" というカウンターを確認することで、この問題が発生しているかどうかを簡単に確認できます。
 

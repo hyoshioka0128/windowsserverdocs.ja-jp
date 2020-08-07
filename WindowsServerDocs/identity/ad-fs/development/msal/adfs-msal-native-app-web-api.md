@@ -6,14 +6,12 @@ ms.author: billmath
 manager: daveba
 ms.date: 08/09/2019
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: bb31a7e87b35ec52f176d50d2c92e717a3e4bca0
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: afe68493303ace2a9dd415964c41f8a635e3618b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519861"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87949996"
 ---
 # <a name="scenario-native-app-calling-web-api"></a>シナリオ: Web API を呼び出すネイティブアプリ
 >適用対象: AD FS 2019 以降

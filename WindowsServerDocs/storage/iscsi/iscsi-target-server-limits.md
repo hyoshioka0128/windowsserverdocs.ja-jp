@@ -1,19 +1,17 @@
 ---
 title: iSCSI ターゲットサーバーのスケーラビリティの制限
 TOCTitle: iSCSI Target Server Scalability Limits
-ms.prod: windows-server
-ms.technology: storage-iscsi
 ms.topic: article
 author: JasonGerend
 manager: dougkim
 ms.author: jgerend
 ms.date: 09/11/2018
-ms.openlocfilehash: 7a6d23ebd82afc192a9c306420811860d74cf469
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 3867df04c83fe536473c227e43700a4758c1294e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961364"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87935859"
 ---
 # <a name="iscsi-target-server-scalability-limits"></a>iSCSI ターゲットサーバーのスケーラビリティの制限
 
@@ -141,7 +139,7 @@ ms.locfileid: "86961364"
 </tr>
 <tr class="even">
 <td><p>スタンドアロン iSCSI ターゲットサーバーから、クラスター化された iSCSI ターゲットサーバーへの変換またはその逆の変換</p></td>
-<td><p>サポートされていません</p></td>
+<td><p>サポートなし</p></td>
 <td><p>いいえ</p></td>
 <td><p>ISCSI ターゲットインスタンスと仮想ディスク構成データ (スナップショットメタデータを含む) は、変換中に失われます。</p></td>
 </tr>
@@ -346,7 +344,7 @@ ms.locfileid: "86961364"
 <tr class="even">
 <td><p>仮想プロビジョニング</p></td>
 <td><p>いいえ</p></td>
-<td><p>N/A</p></td>
+<td><p>該当なし</p></td>
 <td><p>動的 Vhd はサポートされていますが、マップ解除はサポートされていません&#39;。</p></td>
 </tr>
 <tr class="odd">
@@ -392,32 +390,32 @@ ms.locfileid: "86961364"
 </tr>
 <tr class="odd">
 <td><p>書き込み可能なスナップショット</p></td>
-<td><p>サポートされていません</p></td>
+<td><p>サポートなし</p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>スナップショット–完全に変換</p></td>
-<td><p>サポートされていません</p></td>
+<td><p>サポートなし</p></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><p>スナップショット–オンラインロールバック</p></td>
-<td><p>サポートされていません</p></td>
+<td><p>サポートなし</p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>スナップショット–書き込み可能に変換</p></td>
-<td><p>サポートされていません</p></td>
+<td><p>サポートなし</p></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><p>スナップショット-リダイレクト</p></td>
-<td><p>サポートされていません</p></td>
+<td><p>サポートなし</p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>スナップショット-ピン留め</p></td>
-<td><p>サポートされていません</p></td>
+<td><p>サポートなし</p></td>
 <td></td>
 </tr>
 <tr class="odd">
@@ -462,7 +460,7 @@ ISCSI ターゲット記憶域プロバイダーの詳細については、「 [
 <td><p>Initiator</p></td>
 <td><p>Windows Server 2012 R2</p></td>
 <td><p>Windows Server 2012</p></td>
-<td><p>説明</p></td>
+<td><p>コメント</p></td>
 </tr>
 <tr class="even">
 <td><p>Windows Server 2012 R2</p></td>
@@ -537,7 +535,7 @@ ISCSI ターゲット記憶域プロバイダーの詳細については、「 [
 
   - IPXE を使用した CD または USB ディスク
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 iSCSI ターゲット サーバーと関連テクノロジに関するその他のリソースを次に示します。
 

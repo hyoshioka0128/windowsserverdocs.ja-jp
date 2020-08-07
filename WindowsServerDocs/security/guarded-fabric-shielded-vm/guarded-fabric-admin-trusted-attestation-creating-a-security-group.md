@@ -1,19 +1,17 @@
 ---
 title: 保護されたホストのセキュリティグループを作成し、そのグループを HGS に登録します
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: a12c8494-388c-4523-8d70-df9400bbc2c0
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 84bf134ac5224f224339cc1ec216bded8cbcc792
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: efcf148356910a250a06ee9165c544c96226e10e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475679"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971419"
 ---
 # <a name="create-a-security-group-for-guarded-hosts-and-register-the-group-with-hgs"></a>保護されたホストのセキュリティグループを作成し、そのグループを HGS に登録します
 
@@ -56,6 +54,6 @@ ms.locfileid: "85475679"
 > [構成証明を確認する](guarded-fabric-confirm-hosts-can-attest-successfully.md)
 
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [保護されたホストとシールドされた VM のためのホスト ガーディアン サービスの展開](guarded-fabric-deploying-hgs-overview.md)

@@ -1,20 +1,18 @@
 ---
 title: フェールオーバー クラスターを作成する
 description: Windows Server 2012 R2、Windows Server 2012、windows Server 2016、および Windows Server 2019 のフェールオーバークラスターを作成する方法について説明します。
-ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 manager: lizross
-ms.technology: storage-failover-clustering
 ms.date: 06/06/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 322eba03bb46a32191c46461c49eace4fcfda9e0
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: e96056eb26e200f360f92c4c6e2b94c2d77bf9ec
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87177838"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87950116"
 ---
 # <a name="create-a-failover-cluster"></a>フェールオーバー クラスターを作成する
 
@@ -30,7 +28,7 @@ Active Directory デタッチされたクラスターを展開することもで
 | ---    | ---  | ---       |
 | ☐    | 前提条件を確認する。 | [前提条件を確認する。](#verify-the-prerequisites) |
 | ☐    | クラスター ノードとして追加する各サーバーにフェールオーバー クラスタリング機能をインストールする | [フェールオーバー クラスター機能をインストールする](#install-the-failover-clustering-feature) |
-| ☐    | クラスター検証ウィザードを実行して構成を検証する | [構成の検証](#validate-the-configuration) |
+| ☐    | クラスター検証ウィザードを実行して構成を検証する | [構成を検証する](#validate-the-configuration) |
 | ☐ | クラスターの作成ウィザードを実行してフェールオーバー クラスターを作成する | [フェールオーバー クラスターを作成する](#create-the-failover-cluster) |
 | ☐ | クラスター化された役割を作成してクラスター ワークロードをホストする | [クラスターの役割を作成する](#create-clustered-roles) |
 
@@ -161,7 +159,7 @@ Active Directory デタッチされたクラスターを展開することもで
    | ---------       | ---------                    |
    | 名前空間サーバー     |   名前空間 (ファイルサーバーロールの一部)       |
    | DFS 名前空間サーバー     |  DHCP サーバーの役割       |
-   | 分散トランザクション コーディネーター (DTC)     | なし        |
+   | 分散トランザクション コーディネーター (DTC)     | None        |
    | ファイル サーバー     |  ファイル サーバーの管理       |
    | 汎用アプリケーション     |  適用なし       |
    | 汎用スクリプト     |   適用なし      |
@@ -170,7 +168,7 @@ Active Directory デタッチされたクラスターを展開することもで
    | iSCSI ターゲット サーバー     |    iSCSI ターゲット サーバー (ファイル サーバーの役割の一部)     |
    | iSNS サーバー     |  iSNS サーバー サービスの機能       |
    | メッセージ キューイング (Message Queuing)     |  メッセージ キュー サービスの機能       |
-   | 他のサーバー     |  なし       |
+   | 他のサーバー     |  None       |
    | 仮想マシン     |  Hyper-V の役割       |
    | WINS サーバー     |   WINS サーバーの機能      |
 

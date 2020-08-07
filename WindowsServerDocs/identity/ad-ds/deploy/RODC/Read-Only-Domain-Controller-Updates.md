@@ -6,14 +6,12 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: fcaf7066b256e362e28e3fc959234a9549fd3b2c
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: ac14769b548aba54da97fb23cc1fbd8a6b1f2db4
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519399"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87949946"
 ---
 # <a name="read-only-domain-controller-updates"></a>読み取り専用ドメイン コントローラーの最新情報
 

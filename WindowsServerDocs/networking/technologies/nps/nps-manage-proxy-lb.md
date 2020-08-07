@@ -1,31 +1,29 @@
 ---
 title: NPS プロキシサーバーの負荷分散
 description: このトピックでは、Windows Server 2016 と Windows 10 VPN の機能について説明します。
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: 528280e6-b47e-489f-b310-b257d434aa0d
 manager: brianlic
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 10a33494365f5a10923dd9ce46c3575675099b27
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 8710723c397744f3ba937ac863cf5ab45dc8a4f1
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80315974"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87952159"
 ---
 # <a name="nps-proxy-server-load-balancing"></a>NPS プロキシサーバーの負荷分散
 
-適用対象: Windows Server 2016
+適用先:Windows Server 2016
 
 仮想プライベートネットワーク (VPN) サーバーやワイヤレスアクセスポイントなどのネットワークアクセスサーバーであるリモート認証ダイヤルインユーザーサービス (RADIUS) クライアントは、接続要求を作成し、NPS などの RADIUS サーバーに送信します。 場合によっては、NPS が一度に受信する接続要求が多すぎると、パフォーマンスが低下したり、過負荷になったりすることがあります。 NPS が過負荷になっている場合は、ネットワークに NPSs を追加し、負荷分散を構成することをお勧めします。 着信接続要求を複数の NPSs に均等に分散して、1つ以上の NPSs の過負荷を回避する場合は、負荷分散と呼ばれます。
 
 負荷分散は、次の場合に特に便利です。
 
-- 拡張認証プロトコル-トランスポート層セキュリティ \(EAP-TLS\) または保護された拡張認証プロトコルを使用する組織は、認証に PEAP\)TLS を \(します。 これらの認証方法では、サーバー認証に証明書が使用され、ユーザーまたはクライアントコンピューターの認証には、パスワードベースの認証方法よりも負荷が高くなります。
+- 拡張認証プロトコル-トランスポート層セキュリティ (eap-tls \( \) または保護された拡張認証プロトコル) を使用して \( \) 認証を行う組織。 これらの認証方法では、サーバー認証に証明書が使用され、ユーザーまたはクライアントコンピューターの認証には、パスワードベースの認証方法よりも負荷が高くなります。
 - 継続的なサービスの可用性を維持する必要がある組織。
-- インターネットサービスプロバイダーは、他の組織の VPN アクセスをアウトソーシングする\) Isp を \(します。 外部 VPN サービスでは、大量の認証トラフィックが発生する可能性があります。
+- \( \) 他の組織の VPN アクセスをアウトソーシングするインターネットサービスプロバイダーの isp。 外部 VPN サービスでは、大量の認証トラフィックが発生する可能性があります。
 
 NPSs に送信される接続要求の負荷を分散するには、次の2つの方法を使用できます。
 
@@ -53,13 +51,13 @@ NPS プロキシの構成プロセス中に、リモート RADIUS サーバー�
 
 NPS をプロキシサーバーとして動作し、RADIUS クライアントからリモート RADIUS サーバーに接続要求を転送するように構成するには、次の操作を行う必要があります。
 
-1. RADIUS クライアント \(VPN サーバー、ダイヤルアップサーバー、ターミナルサービスゲートウェイサーバー、802.1 X 認証スイッチ、802.1 X ワイヤレスアクセス\) ポイントを展開し、NPS プロキシサーバーに接続要求を送信するように構成します。
+1. RADIUS クライアントの \( VPN サーバー、ダイヤルアップサーバー、ターミナルサービスゲートウェイサーバー、802.1 x 認証スイッチ、および 802.1 x ワイヤレスアクセスポイントを展開 \) し、NPS プロキシサーバーに接続要求を送信するように構成します。
 
 2. NPS プロキシで、ネットワークアクセスサーバーを RADIUS クライアントとして構成します。 詳細については、「 [CONFIGURE RADIUS Clients](https://docs.microsoft.com/windows-server/networking/technologies/nps/nps-radius-clients-configure)」を参照してください。
 
 3. NPS プロキシで、1つまたは複数のリモート RADIUS サーバーグループを作成します。 このプロセスでは、RADIUS サーバーをリモート RADIUS サーバーグループに追加します。 詳細については、「[リモート RADIUS サーバーグループの構成](https://docs.microsoft.com/windows-server/networking/technologies/nps/nps-crp-rrsg-configure)」を参照してください。
 
-4. NPS プロキシで、リモート RADIUS サーバーグループに追加する RADIUS サーバーごとに、RADIUS サーバーの **[負荷分散]** タブをクリックし、 **[優先順位]** 、 **[重み]** 、 **[詳細設定]** を構成します。
+4. NPS プロキシで、リモート RADIUS サーバーグループに追加する RADIUS サーバーごとに、[RADIUS サーバーの**負荷分散**] タブをクリックし、[**優先順位**]、[**重み**]、[**詳細設定**] を構成します。
 
 5. NPS プロキシで、リモート RADIUS サーバーグループに認証要求およびアカウンティング要求を転送するように接続要求ポリシーを構成します。 リモート RADIUS サーバーグループごとに1つの接続要求ポリシーを作成する必要があります。 詳細については、「[接続要求ポリシーの構成](https://docs.microsoft.com/windows-server/networking/technologies/nps/nps-crp-configure)」を参照してください。
 

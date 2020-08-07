@@ -1,19 +1,17 @@
 ---
 title: 共有記憶域を使用したストレッチ クラスター レプリケーション
-ms.prod: windows-server
 manager: eldenc
 ms.author: nedpyle
-ms.technology: storage-replica
 ms.topic: get-started-article
 author: nedpyle
 ms.date: 04/26/2019
 ms.assetid: 6c5b9431-ede3-4438-8cf5-a0091a8633b0
-ms.openlocfilehash: dcccbd1efa7fa6f287349deb910dbbbc4b6fd706
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: fa5246aad79b9441b973cf864233ca8cfe0da7fa
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769610"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87950546"
 ---
 # <a name="stretch-cluster-replication-using-shared-storage"></a>共有記憶域を使用したストレッチ クラスター レプリケーション
 
@@ -38,7 +36,7 @@ ms.locfileid: "87769610"
 
 **図 1: ストレッチ クラスターでの記憶域レプリケーション**
 
-## <a name="prerequisites"></a>必須コンポーネント
+## <a name="prerequisites"></a>前提条件
 -   Active Directory Domain Services フォレスト (Windows Server 2016 を実行する必要はありません)。
 -   2-64 Windows Server 2019 または Windows Server 2016、Datacenter Edition を実行しているサーバー。 Windows Server 2019 を実行している場合は、通常は Standard Edition を使用することができます。これにより、1つのボリュームのみを最大 2 TB までレプリケートできます。
 -   SAS JBOD (記憶域スペースなどを搭載)、ファイバー チャネル SAN、共有 VHDX、または iSCSI ターゲットを使用する 2 セットの共有記憶域。 記憶域は、HDD と SSD メディアの混在を含み、永続的な予約をサポートしている必要があります。 各記憶域セットを 2 つのサーバーのみが使用できるようにすることができます (非対称)。
@@ -182,7 +180,7 @@ ms.locfileid: "87769610"
    7. オンライン記憶域をこの空の役割に追加し、「**新しい役割 (2)**」という名前を付けます。
    8. これで、ドライブ文字を付けてすべての記憶域をマウントしたため、`Test-SRTopology` を使用してクラスターを評価できます。
 
-        次に例を示します。
+        例:
 
         ```
         MD c:\temp
@@ -250,7 +248,7 @@ ms.locfileid: "87769610"
    Set-ClusterResourceDependency -Resource “Cluster Name” -Dependency “[Cluster IP Address] or [NewIPAddress]”
    ```
 
-3. ドメイン コントローラーまたはその他のなんらかの独立したサーバーでホストされている共有を指す各クラスター内でファイル共有監視またはクラウド (Azure) 監視を構成します。 次に例を示します。
+3. ドメイン コントローラーまたはその他のなんらかの独立したサーバーでホストされている共有を指す各クラスター内でファイル共有監視またはクラウド (Azure) 監視を構成します。 例:
 
    ```PowerShell
    Set-ClusterQuorum -FileShareWitness \\someserver\someshare
@@ -391,7 +389,7 @@ ms.locfileid: "87769610"
     ```
 
 
-3. ドメイン コントローラーまたはその他のなんらかの独立したサーバーでホストされている共有を指す各クラスター内でファイル共有監視またはクラウド (Azure) 監視を構成します。 次に例を示します。
+3. ドメイン コントローラーまたはその他のなんらかの独立したサーバーでホストされている共有を指す各クラスター内でファイル共有監視またはクラウド (Azure) 監視を構成します。 例:
 
     ```PowerShell
     Set-ClusterQuorum -FileShareWitness \\someserver\someshare
@@ -408,7 +406,7 @@ ms.locfileid: "87769610"
 
 5. クラスター ネットワークが最適に構成されていることを確認します。
 
-6.  ファイル サーバーの役割を構成します。 次に例を示します。
+6.  ファイル サーバーの役割を構成します。 例:
 
     ```PowerShell
     Get-ClusterResource
@@ -607,7 +605,7 @@ ms.locfileid: "87769610"
         Get-WinEvent -ProviderName Microsoft-Windows-StorageReplica | FL
         ```
 
-    4.  または、レプリカのレプリケーション先サーバー グループでは、コピーの残りのバイト数が常時示されており、PowerShell を使って照会できます。 次に例を示します。
+    4.  または、レプリカのレプリケーション先サーバー グループでは、コピーの残りのバイト数が常時示されており、PowerShell を使って照会できます。 例:
 
         ```PowerShell
         (Get-SRGroup).Replicas | Select-Object numofbytesremaining

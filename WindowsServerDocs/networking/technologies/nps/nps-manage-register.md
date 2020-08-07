@@ -2,28 +2,26 @@
 title: Active Directory ドメインに NPS を登録する
 description: このトピックを使用して、Windows Server 2016 のネットワークポリシーサーバーを実行しているサーバーを NPS の既定のドメインまたは別のドメインに登録することができます。
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: 2de954fd-a7d8-4cc6-85b1-b0c3c06f788f
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 63d630250b0b24937a3dfc01bcba7ec63faa3c3e
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 871e1f2563564e1c85287393cd4b587692a44db6
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80315959"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87952149"
 ---
 # <a name="register-an-nps-in-an-active-directory-domain"></a>Active Directory ドメインに NPS を登録する
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016
+>適用先:Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックを使用して、Windows Server 2016 のネットワークポリシーサーバーを実行しているサーバーを NPS の既定のドメインまたは別のドメインに登録することができます。
 
 ## <a name="register-an-nps-in-its-default-domain"></a>NPS を既定のドメインに登録する
 
-この手順を使用して、サーバーがドメインメンバーとなっているドメインに NPS を登録できます。 
+この手順を使用して、サーバーがドメインメンバーとなっているドメインに NPS を登録できます。
 
 NPSs は、承認プロセス中にユーザーアカウントのダイヤルインプロパティを読み取るアクセス許可を持つように Active Directory に登録する必要があります。 NPS を登録すると、Active Directory の**RAS AND IAS Servers**グループにサーバーが追加されます。
 
@@ -32,9 +30,9 @@ NPSs は、承認プロセス中にユーザーアカウントのダイヤルイ
 ### <a name="to-register-an-nps-in-its-default-domain"></a>NPS を既定のドメインに登録するには
 
 
-1. NPS の サーバーマネージャーで、 **[ツール]** をクリックし、 **[ネットワークポリシーサーバー]** をクリックします。 ネットワークポリシーサーバーコンソールが開きます。
+1. NPS の [サーバーマネージャーで、[**ツール**] をクリックし、[**ネットワークポリシーサーバー**] をクリックします。 ネットワークポリシーサーバーコンソールが開きます。
 
-2. **[NPS (ローカル)]** を右クリックし、 **[Active Directory でサーバーを登録]** する をクリックします。 **[ネットワーク ポリシー サーバー]** ダイアログ ボックスが開きます。
+2. [ **NPS (ローカル)**] を右クリックし、[ **Active Directory でサーバーを登録**する] をクリックします。 **[ネットワーク ポリシー サーバー]** ダイアログ ボックスが開きます。
 
 3. **[ネットワーク ポリシー サーバー]** の **[OK]** をクリックし、もう一度 **[OK]** をクリックします。
 
@@ -48,20 +46,20 @@ Active Directory のユーザーアカウントのダイヤルインプロパテ
 
 ### <a name="to-register-an-nps-in-another-domain"></a>NPS を別のドメインに登録するには
 
-1. ドメインコントローラーの サーバーマネージャーで、 **[ツール]** をクリックし、 **[Active Directory ユーザーとコンピューター]** をクリックします。 Active Directory ユーザーとコンピューター コンソールが開きます。
+1. ドメインコントローラーの [サーバーマネージャーで、[**ツール**] をクリックし、[ **Active Directory ユーザーとコンピューター**] をクリックします。 Active Directory ユーザーとコンピューター] コンソールが開きます。
 
-2. コンソールツリーで、NPS がユーザーアカウント情報を読み取るドメインに移動し、 **[Users]** フォルダーをクリックします。 
+2. コンソールツリーで、NPS がユーザーアカウント情報を読み取るドメインに移動し、[ **Users** ] フォルダーをクリックします。
 
-3. 詳細ウィンドウで、 **[RAS および IAS サーバー]** を右クリックし、 **[プロパティ]** をクリックします。 **[RAS および IAS サーバーのプロパティ]** ダイアログボックスが表示されます。
+3. 詳細ウィンドウで、[ **RAS および IAS サーバー**] を右クリックし、[**プロパティ**] をクリックします。 [ **RAS および IAS サーバーのプロパティ**] ダイアログボックスが表示されます。
 
-4. **[RAS および IAS サーバーのプロパティ]** ダイアログボックスで、 **[メンバー]** タブをクリックし、ドメインに登録する各 npss を追加して、 **[OK]** をクリックします。
+4. [ **RAS および IAS サーバーのプロパティ**] ダイアログボックスで、[**メンバー** ] タブをクリックし、ドメインに登録する各 npss を追加して、[ **OK**] をクリックします。
 
 
 ### <a name="to-register-an-nps-in-another-domain-by-using-netsh-commands-for-nps"></a>NPS の Netsh コマンドを使用して NPS を別のドメインに登録するには
 
-1. コマンドプロンプトまたは windows PowerShell を開きます。 
+1. コマンドプロンプトまたは windows PowerShell を開きます。
 
-2. コマンドプロンプトで「 **netsh nps add registeredserver** &nbsp;*domain* &nbsp;*server*」と入力し、enter キーを押します。
+2. コマンドプロンプトで、「 **netsh nps add registeredserver** &nbsp; *domain* &nbsp; *server*」と入力し、enter キーを押します。
 
 >[!NOTE]
 >上記のコマンドでは、*ドメイン*は nps を登録するドメインの DNS ドメイン名であり、 *server*は nps コンピューターの名前です。

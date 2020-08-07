@@ -2,19 +2,17 @@
 title: MultiPoint Services システムのハードウェアを選択する
 description: MultiPoint サービスのハードウェアに関する考慮事項
 ms.date: 07/22/2016
-ms.prod: windows-server
-ms.technology: multipoint-services
 ms.topic: article
 ms.assetid: e74961a2-bd38-48ae-b1c0-4b3eff761b4a
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: bfe02570dcc1dd5d0b8e2b6a4f85254080617202
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 37fd4d30183d626caf0891fea2a41f79046030e9
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87517647"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87970469"
 ---
 # <a name="selecting-hardware-for-your-multipoint-services-system"></a>MultiPoint Services システムのハードウェアを選択する
 

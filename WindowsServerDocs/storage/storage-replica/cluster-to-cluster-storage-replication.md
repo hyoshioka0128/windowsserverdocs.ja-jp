@@ -1,20 +1,18 @@
 ---
 title: クラスター間の記憶域のレプリケーション
-ms.prod: windows-server
 manager: siroy
 ms.author: nedpyle
-ms.technology: storage-replica
 ms.topic: get-started-article
 ms.assetid: 834e8542-a67a-4ba0-9841-8a57727ef876
 author: nedpyle
 ms.date: 04/26/2019
 description: 記憶域レプリカを使用して、あるクラスターのボリュームを、Windows Server を実行している別のクラスターにレプリケートする方法について説明します。
-ms.openlocfilehash: d99a7ebf933427e8e065f72261816610e62a433d
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 5de25151f0b49ac9cbf9d6be793c2ba0c6efb165
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961244"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87950476"
 ---
 # <a name="cluster-to-cluster-storage-replication"></a>クラスター間の記憶域のレプリケーション
 
@@ -140,7 +138,7 @@ ms.locfileid: "86961244"
 2. SR ログ ボリュームが常に最も高速なフラッシュ ストレージに配置され、データ ボリュームが低速な大容量ストレージに配置されることを確認します。
 
 3. Windows PowerShell を起動し、`Test-SRTopology` コマンドレットを使用して、記憶域レプリカのすべての要件を満たしているかどうかを判別します。 このコマンドレットは、簡単なテストのために要件のみモードで使用することも、実行時間の長いパフォーマンス評価モードで使用することもできます。
-   たとえば、次のように入力します。
+   たとえば、
 
    ```PowerShell
    MD c:\temp
@@ -194,7 +192,7 @@ ms.locfileid: "86961244"
     New-Cluster -Name SR-SRVCLUSB -Node SR-SRV03,SR-SRV04 -StaticAddress <your IP here>
     ```
 
-3.  ドメイン コントローラーまたはその他のなんらかの独立したサーバーでホストされている共有を指す各クラスター内でファイル共有監視またはクラウド (Azure) 監視を構成します。 次に例を示します。
+3.  ドメイン コントローラーまたはその他のなんらかの独立したサーバーでホストされている共有を指す各クラスター内でファイル共有監視またはクラウド (Azure) 監視を構成します。 例:
 
     ```PowerShell
     Set-ClusterQuorum -FileShareWitness \\someserver\someshare
@@ -247,7 +245,7 @@ ms.locfileid: "86961244"
        ```PowerShell
        Get-WinEvent -ProviderName Microsoft-Windows-StorageReplica -max 20
        ```
-   2.  レプリケーション先サーバーで、次のコマンドを実行して、パートナーシップの作成を示す記憶域レプリカ イベントを参照します。 このイベントでは、コピーされたバイト数およびかかった時間が示されます。 例:
+   2.  レプリケーション先サーバーで、次のコマンドを実行して、パートナーシップの作成を示す記憶域レプリカ イベントを参照します。 このイベントでは、コピーされたバイト数と所要時間が示されます。 例:
 
        ```powershell
        Get-WinEvent -ProviderName Microsoft-Windows-StorageReplica | Where-Object {$_.ID -eq "1215"} | Format-List
@@ -271,7 +269,7 @@ ms.locfileid: "86961244"
            Number of Bytes Recovered: 68583161856
            Elapsed Time (seconds): 117
        ```
-   3. または、レプリカのレプリケーション先サーバー グループでは、コピーの残りのバイト数が常時示されており、PowerShell を使って照会できます。 次に例を示します。
+   3. または、レプリカのレプリケーション先サーバー グループでは、コピーの残りのバイト数が常時示されており、PowerShell を使って照会できます。 例:
 
       ```PowerShell
       (Get-SRGroup).Replicas | Select-Object numofbytesremaining
@@ -287,7 +285,7 @@ ms.locfileid: "86961244"
        }
        ```
 
-6. 宛先クラスターの宛先サーバーで、次のコマンドを実行し、イベント 5009、1237、5001、5015、5005、2200 を調べて、処理の進行状況を把握します。 このシーケンスではエラーの警告が存在しない必要があります。 イベント 1237 が多くあります。これは進行状況を示します。
+6. 宛先クラスターの宛先サーバーで、次のコマンドを実行し、イベント 5009、1237、5001、5015、5005、2200 を調べて、処理の進行状況を把握します。 このシーケンスでは、エラーの警告は発生しないはずです。 イベント 1237 が多くあります。これは進行状況を示します。
 
    ```PowerShell
    Get-WinEvent -ProviderName Microsoft-Windows-StorageReplica | FL
@@ -386,7 +384,7 @@ ms.locfileid: "86961244"
     > [!NOTE]
     > 記憶域レプリカは、宛先ボリュームをマウント解除します。 これは仕様です。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 -   [記憶域レプリカの概要](storage-replica-overview.md)
 -   [共有記憶域を使用した拡張クラスターレプリケーション](stretch-cluster-replication-using-shared-storage.md)

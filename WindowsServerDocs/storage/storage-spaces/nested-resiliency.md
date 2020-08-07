@@ -1,18 +1,16 @@
 ---
 title: 記憶域スペースダイレクトのための入れ子になった回復性
-ms.prod: windows-server
 ms.author: jgerend
-manager: dansimp
-ms.technology: storagespaces
+manager: dansimpspaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 03/15/2019
-ms.openlocfilehash: 311edb38f4cdf1dac153d843811442d5eafbce05
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: 91d8cce64088855d2e8a0c89c1084077a252e26a
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769750"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87935958"
 ---
 # <a name="nested-resiliency-for-storage-spaces-direct"></a>記憶域スペースダイレクトのための入れ子になった回復性
 
@@ -111,7 +109,7 @@ New-StorageTier -StoragePoolFriendlyName S2D* -FriendlyName NestedParity -Resili
 
 #### <a name="nested-two-way-mirror"></a>入れ子になった双方向ミラー
 
-入れ子になった双方向ミラーを使用するには、 `NestedMirror` 層テンプレートを参照し、サイズを指定します。 次に例を示します。
+入れ子になった双方向ミラーを使用するには、 `NestedMirror` 層テンプレートを参照し、サイズを指定します。 例:
 
 ```PowerShell
 New-Volume -StoragePoolFriendlyName S2D* -FriendlyName Volume01 -StorageTierFriendlyNames NestedMirror -StorageTierSizes 500GB

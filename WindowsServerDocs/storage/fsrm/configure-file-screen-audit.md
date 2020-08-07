@@ -2,18 +2,16 @@
 title: ファイル スクリーンの監査を構成する
 description: この記事では、ファイル スクリーン処理の監査レポートを生成するファイル スクリーンの監査を構成する方法を説明します。
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: cf1824e514c34ee89870daa6d15190bffd822a8b
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 822c483fc7f5f4518ca976b1f7d719b95730008f
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475319"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87950687"
 ---
 # <a name="configure-file-screen-audit"></a>ファイル スクリーンの監査を構成する
 
@@ -32,7 +30,7 @@ ms.locfileid: "85475319"
 
 3.  **[OK]** をクリックします。 これで、すべてのファイル スクリーン処理が監査データベースに保存され、ファイル スクリーン処理の監査レポートを実行することによって表示できます。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 -   [ファイル サーバー リソース マネージャーのオプションを設定する](setting-file-server-resource-manager-options.md)
 -   [記憶域レポートの管理](storage-reports-management.md)
