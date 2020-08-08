@@ -1,23 +1,21 @@
 ---
 title: 拡張機能の検出バナーを有効にする
 description: 拡張機能の検出バナーを有効にする
-ms.technology: manage
 ms.topic: article
 author: daniellee-msft
 ms.author: jol
 ms.date: 06/06/2019
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: f51070abfeed3a790055b12f733fc61be383472c
-ms.sourcegitcommit: 20d07170c7f3094c2fb4455f54b13ec4b102f2d7
+ms.openlocfilehash: ef08eec08b43f83121bc94abc46a5f657556db65
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81269259"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87945024"
 ---
 # <a name="enabling-the-extension-discovery-banner"></a>拡張機能の検出バナーを有効にする
 
->適用対象: Windows Admin Center、Windows Admin Center Preview
+>適用先:Windows Admin Center、Windows Admin Center Preview
 
 拡張機能の検出バナー機能は、Windows 管理センタープレビュー1903リリースで導入されました。 この機能を使用すると、拡張機能でサポートされているサーバーハードウェアの製造元とモデルを宣言できます。また、拡張機能が使用可能なサーバーまたはクラスターにユーザーが接続すると、拡張機能を簡単にインストールするための通知バナーが表示されます。 拡張機能の開発者は拡張機能の可視性を向上させることができ、ユーザーはサーバーの管理機能をさらに簡単に検出できます。
 
@@ -29,13 +27,13 @@ Windows 管理センターが起動されると、登録されている拡張機
 
 ## <a name="how-to-implement-the-extension-discovery-banner"></a>拡張機能の検出バナーを実装する方法
 
-Nuspec ファイルの "tags" メタデータは、拡張機能でサポートされているハードウェアの製造元やモデルを宣言するために使用されます。 タグはスペースで区切られ、製造元またはモデルタグのいずれか、またはその両方を追加して、サポートされている製造元やモデルを宣言できます。 タグの形式 ``"[value type]_[value condition]"`` は、[value type] が "Manufacturer" または "Model" (大文字と小文字が区別されます) のいずれかで、[値の条件] は、製造元またはモデル文字列を定義する[Javascript の正規表現](https://developer.mozilla.org/docs/Web/JavaScript/Guide/Regular_Expressions)であり、[値の種類] と [値の条件] はアンダースコアで区切られます。 この文字列は、URI エンコーディングを使用してエンコードされ、nuspec "tags" メタデータ文字列に追加されます。
+Nuspec ファイルの "tags" メタデータは、拡張機能でサポートされているハードウェアの製造元やモデルを宣言するために使用されます。 タグはスペースで区切られ、製造元またはモデルタグのいずれか、またはその両方を追加して、サポートされている製造元やモデルを宣言できます。 タグの形式は、 ``"[value type]_[value condition]"`` [value type] が "manufacturer" または "model" (大文字と小文字が区別されます) で、[値の条件] は、製造元またはモデル文字列を定義する[Javascript の正規表現](https://developer.mozilla.org/docs/Web/JavaScript/Guide/Regular_Expressions)であり、[値の型] と [値の条件] はアンダースコアで区切られます。 この文字列は、URI エンコーディングを使用してエンコードされ、nuspec "tags" メタデータ文字列に追加されます。
 
 ### <a name="example"></a>例
 
 たとえば、Contoso Inc. という名前の会社のサーバーをサポートする拡張機能を、モデル名 R3xx と R4xx を使用して開発したとします。
 
-1. 製造元のタグが ``"Manufacturer_/Contoso Inc./"``されます。 モデルのタグは ``"Model_/^R[34][0-9]{2}$/"``可能性があります。 一致条件をどの程度厳密に定義するかによって、正規表現を定義するためのさまざまな方法があります。 また、製造元またはモデルタグを複数のタグに分割することもできます。たとえば、モデルタグを ``"Model_/R3../ Model_/R4../"``することもできます。
+1. 製造元のタグはになり ``"Manufacturer_/Contoso Inc./"`` ます。 モデルのタグはにすることができ ``"Model_/^R[34][0-9]{2}$/"`` ます。 一致条件をどの程度厳密に定義するかによって、正規表現を定義するためのさまざまな方法があります。 製造元またはモデルタグを複数のタグに分割することもできます。たとえば、モデルタグもにすることができ ``"Model_/R3../ Model_/R4../"`` ます。
 2. 正規表現をテストするには、web ブラウザーの DevTools コンソールを使用します。 Edge または Chrome で、F12 キーを押して [DevTools] ウィンドウを開き、[コンソール] タブで次のように入力して、Enter キーを押します。
 
    ```javascript

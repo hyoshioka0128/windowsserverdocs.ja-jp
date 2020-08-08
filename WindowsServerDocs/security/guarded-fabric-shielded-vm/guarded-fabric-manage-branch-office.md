@@ -1,21 +1,19 @@
 ---
 title: ブランチオフィスに関する考慮事項
-ms.prod: windows-server
 ms.topic: article
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
-ms.openlocfilehash: a9893ecd76e142dd243a1d99e83a48d2edfd5872
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b56b2d4f74f18e68a3849b01e84b0aca5ca7412e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856565"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957910"
 ---
 # <a name="branch-office-considerations"></a>ブランチ オフィスに関する考慮事項
 
-> 適用対象: Windows Server 2019、Windows Server (半期チャネル)、 
+> 適用対象: Windows Server 2019、Windows Server (半期チャネル)、
 
 この記事では、ブランチオフィスでのシールドされたバーチャルマシンの実行に関するベストプラクティスと、Hyper-v ホストで HGS への接続が制限されている期間がある可能性がある他のリモートシナリオについて説明します。
 

@@ -5,14 +5,12 @@ ms.author: billmath
 manager: daveba
 ms.date: 01/20/2020
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 4f6822747902d02313b6aea5c5ca21d9d7ed8a04
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: c306f901aba2991a238fb994117789d4a9a81a67
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961884"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87967129"
 ---
 # <a name="setting-up-an-ad-fs-deployment-with-alwayson-availability-groups"></a>AlwaysOn 可用性グループを使用した AD FS 展開の設定
 高可用性の geo 分散トポロジでは、次のことが実現されます。
@@ -37,12 +35,12 @@ Always On 可用性グループ (AG) は、一緒にフェールオーバーす�
 フェールオーバーが発生した場合、共有物理リソースの所有権を別のノードに転送する代わりに、WSFC を利用して別の SQL Server インスタンスのセカンダリレプリカを再構成し、可用性グループのプライマリレプリカにします。 その後、可用性グループの仮想ネットワーク名リソースが、そのインスタンスに転送されます。
 任意の時点で、可用性グループのデータベースのプライマリレプリカをホストできるのは、1つの SQL Server インスタンスだけです。すべての関連付けられたセカンダリレプリカは別々のインスタンスに存在する必要があり、各インスタンスは別々の物理ノードに存在する必要があります。
 
-> [!NOTE] 
+> [!NOTE]
 > マシンが Azure 上で実行されている場合は、Azure 仮想マシンを設定して、リスナー構成が AlwaysOn 可用性グループと通信できるようにします。 詳細については、「 [Virtual Machines: SQL Always On リスナー](/azure/virtual-machines/windows/sql/virtual-machines-windows-portal-sql-alwayson-int-listener)」を参照してください。
 
 AlwaysOn 可用性グループの概要については、「 [Always On 可用性グループの概要 (SQL Server)](/sql/database-engine/availability-groups/windows/overview-of-always-on-availability-groups-sql-server?view=sql-server-ver15)」を参照してください。
 
-> [!NOTE] 
+> [!NOTE]
 > 組織が複数のデータセンターでフェールオーバーを必要とする場合は、各データセンターにアーティファクトデータベースを作成し、要求の処理中の待機時間を短縮するバックグラウンドキャッシュを有効にすることをお勧めします。 指示に従って[SQL を微調整し、待機時間を短縮](./adfs-sql-latency.md)します。
 
 ## <a name="deployment-guidance"></a>展開のガイダンス
@@ -83,7 +81,7 @@ SQL が配置の目標に適したデータベースの場合は、このデプ�
 
 ## <a name="deploy-ad-fs"></a>AD FS を展開する
 
-> [!NOTE] 
+> [!NOTE]
 > マシンが Azure 上で実行されている場合、リスナーが Always On 可用性グループと通信できるようにするには、Virtual Machines を特定の方法で構成する必要があります。 構成の詳細については、「 [Azure SQL Server vm での可用性グループのロードバランサーの構成](/azure/virtual-machines/windows/sql/virtual-machines-windows-portal-sql-alwayson-int-listener)」を参照してください。
 
 
@@ -113,7 +111,7 @@ AlwaysOn 可用性グループを使用して AD FS ファームを構成する�
 
 5.  AD FS ファームの構成とインストールを完了します。
 
-> [!NOTE] 
+> [!NOTE]
 > Always On 可用性グループをインストールするには、ドメインアカウントで SQL Server を実行する必要があります。 既定では、ローカルシステムとして実行されます。
 
 ## <a name="install-the-failover-clustering-role"></a>フェールオーバークラスタリングの役割のインストール
@@ -258,7 +256,7 @@ ADFS アーティファクトと構成データベースをバックアップし
 
 10. [概要] ページで、新しい可用性グループに対して選択した内容を確認します。 変更が必要な場合は、[戻る] をクリックして、該当するページに戻ります。 必要な変更を加えたら、[次へ] をクリックして、[概要] ページに戻ります。
 
-> [!NOTE] 
+> [!NOTE]
 > 新しい可用性レプリカをホストするサーバーインスタンスの SQL Server サービスアカウントがログインとしてまだ存在していない場合、新しい可用性グループウィザードでログインを作成する必要があります。 [概要] ページには、作成するログインの情報が表示されます。 [完了] をクリックすると、SQL Server サービス アカウントに対してこのログインが作成され、ログインに CONNECT 権限が付与されます。
 > 選択内容に問題がなければ、[スクリプト] をクリックして、ウィザードが実行する手順のスクリプトを作成することもできます。 新しい可用性グループを作成して構成するには、[完了] をクリックします。
 

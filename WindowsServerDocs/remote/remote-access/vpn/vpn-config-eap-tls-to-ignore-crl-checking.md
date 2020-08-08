@@ -1,20 +1,18 @@
 ---
 title: 証明書失効リスト (CRL) が無視されるように EAP-TLS を構成する
 description: EAP-TLS クライアントは、NPS サーバーがクライアントの証明書チェーン (ルート証明書を含む) の失効確認を完了し、証明書が失効していることを確認しない限り、接続できません。
-ms.prod: windows-server
-ms.technology: networking-ras
 ms.topic: article
 ms.date: 07/13/2018
 ms.author: v-tea
 author: Teresa-MOTIV
 ms.localizationpriority: medium
 ms.reviewer: deverette
-ms.openlocfilehash: e97556ab35471c1745c01b6ebd047cd1451ffb27
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 6ef6294863807b20558264a5b02069a64499ae55
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966754"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87958130"
 ---
 # <a name="step-71-configure-eap-tls-to-ignore-certificate-revocation-list-crl-checking"></a>手順 7.1.  証明書失効リスト (CRL) が無視されるように EAP-TLS を構成する
 
@@ -31,11 +29,11 @@ ms.locfileid: "86966754"
 >[!NOTE]
 >Windows ルーティングとリモートアクセスサーバー (RRAS) が NPS を使用して2番目の NPS への RADIUS 呼び出しをプロキシする場合、両方のサーバーで**Ignorenorevocationcheck = 1**を設定する必要があります。
 
-EAP-TLS クライアントは、NPS サーバーが証明書チェーン (ルート証明書を含む) の失効確認を完了しない限り、接続できません。 Azure AD によってユーザーに発行されたクラウド証明書には CRL がありません。有効期間が1時間の有効期間が短い証明書であるためです。 CRL の存在を無視するように NPS の EAP を構成する必要があります。 既定では、IgnoreNoRevocationCheck は 0 (無効) に設定されています。 IgnoreNoRevocationCheck を追加し、それを1に設定して、証明書に CRL 配布ポイントが含まれていない場合のクライアントの認証を許可します。 
+EAP-TLS クライアントは、NPS サーバーが証明書チェーン (ルート証明書を含む) の失効確認を完了しない限り、接続できません。 Azure AD によってユーザーに発行されたクラウド証明書には CRL がありません。有効期間が1時間の有効期間が短い証明書であるためです。 CRL の存在を無視するように NPS の EAP を構成する必要があります。 既定では、IgnoreNoRevocationCheck は 0 (無効) に設定されています。 IgnoreNoRevocationCheck を追加し、それを1に設定して、証明書に CRL 配布ポイントが含まれていない場合のクライアントの認証を許可します。
 
-認証方法は EAP-TLS であるため、このレジストリ値は EAP/13の下でのみ必要です。 他の EAP 認証方法が使用されている場合は、その下にレジストリ値も追加する必要があります。 
+認証方法は EAP-TLS であるため、このレジストリ値は EAP/13の下でのみ必要です。 他の EAP 認証方法が使用されている場合は、その下にレジストリ値も追加する必要があります。
 
-**作業**
+**手順**
 
 1. NPS サーバーで**regedit.exe**を開きます。
 

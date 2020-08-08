@@ -6,12 +6,12 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: dd08192558457a014b6884316de7a22900dded2f
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 55317bfb392fa9867b7fae1f4900b4ce6b83a141
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87941066"
+ms.locfileid: "87994427"
 ---
 # <a name="finding-additional-resources-for-windows-server-2008-active-directory-site-topology-design"></a>Windows Server 2008 の Active Directory サイト トポロジ設計に関するその他のリソースの検索
 
@@ -35,7 +35,7 @@ Active Directory Domain Services に関する次のドキュメント (AD DS) �
 
 - フォレストルートドメインの展開の詳細については、「 [Windows Server 2008 のフォレストルートドメインの展開](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc731174(v=ws.10))」を参照してください。
 
-- ドメインコントローラーのセキュリティ保護の詳細については、「 [AD DS の設計と計画](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/ad-ds-design-and-planning)」を参照してください。
+- ドメインコントローラーのセキュリティ保護の詳細については、「 [AD DS の設計と計画](./ad-ds-design-and-planning.md)」を参照してください。
 
 - 地域ドメインの展開に関する詳細については、次を参照してください。 [を展開する Windows Server 2008 地域ドメイン](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc755118(v=ws.10))します。
 

@@ -1,20 +1,18 @@
 ---
 title: 認証ポリシーと認証ポリシー サイロ
 description: Windows Server のセキュリティ
-ms.prod: windows-server
-ms.technology: security-credential-protection
 ms.topic: article
 ms.assetid: 7eb0e640-033d-49b5-ab44-3959395ad567
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 705cba94299572f02c12896e2dac0ec8c2d070c0
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 0bca5a7e78a663c535e1d727339c6dd9eb50704b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87520181"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957920"
 ---
 # <a name="authentication-policies-and-authentication-policy-silos"></a>認証ポリシーと認証ポリシー サイロ
 
@@ -236,7 +234,7 @@ Protected Users セキュリティグループは、Windows Server 2012 R2 お�
 |106<p>**AuthenticationPolicyFailures-DomainController**|理由: ユーザーまたはデバイスがサーバーへの認証を許可されていないため、Kerberos 制限エラーが発生します。<p>イベントがドメイン コントローラーのログに記録されます。これは、強制適用されているアクセス制御制限にユーザーとデバイスの一方または両方が適合していないことが理由で Kerberos サービス チケットが拒否されたことを示すものです。<p>デバイス、ポリシー、およびサイロの名前が表示されます。|
 |306<p>**AuthenticationPolicyFailures-DomainController**|理由: ユーザーまたはデバイスがサーバーへの認証を許可されていないため、Kerberos の制限エラーが発生する可能性があります。<p>監査モードでは、情報イベントがドメイン コントローラーのログに記録されます。これは、ユーザーとデバイスの一方または両方がアクセス制御制限に適合していないことが理由で Kerberos サービス チケットが拒否されることを示すものです。<p>デバイス、ポリシー、およびサイロの名前が表示されます。|
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 [保護されるアカウントの構成方法](https://docs.microsoft.com/windows-server/identity/ad-ds/manage/how-to-configure-protected-accounts)
 
 [資格情報の保護と管理](credentials-protection-and-management.md)

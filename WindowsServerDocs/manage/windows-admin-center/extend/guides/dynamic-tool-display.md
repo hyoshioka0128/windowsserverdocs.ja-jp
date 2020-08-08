@@ -1,25 +1,23 @@
 ---
 title: ソリューションでのツールの可視性の制御
 description: ソリューションでのツールの可視性の制御 Windows 管理センター SDK (Project ホノルル)
-ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 440ba3d11da671beedc2c2fb90caa3e176f83877
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: df939bb1a87c9ded77431661dcabd7faf607bb6e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385318"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87945005"
 ---
 # <a name="control-your-tools-visibility-in-a-solution"></a>ソリューションでのツールの可視性の制御 #
 
 >適用先:Windows Admin Center、Windows Admin Center Preview
 
-使用可能なツールの一覧から拡張機能またはツールを除外 (または非表示にする) が必要になる場合があります。 たとえば、ツールが Windows Server 2016 (古いバージョンではない) のみを対象としている場合は、Windows Server 2012 R2 サーバーに接続しているユーザーがまったくツールを表示しないようにする必要があります。 (ユーザーエクスペリエンスを想像してください。クリックすると、ツールが読み込まれるまで待機します。その機能が接続に使用できないというメッセージが表示されます)。ツールのマニフェストの json ファイルで機能を表示 (または非表示) するタイミングを定義できます。
+使用可能なツールの一覧から拡張機能またはツールを除外 (または非表示にする) が必要になる場合があります。 たとえば、ツールが Windows Server 2016 (古いバージョンではない) のみを対象としている場合は、Windows Server 2012 R2 サーバーに接続しているユーザーがまったくツールを表示しないようにする必要があります。 (ユーザーエクスペリエンスを想像してください。クリックすると、ツールが読み込まれるまで待機します。その機能が接続に使用できないというメッセージが表示されます)。ツールのファイル manifest.jsで機能を表示 (または非表示) するタイミングを定義できます。
 
 ## <a name="options-for-deciding-when-to-show-a-tool"></a>ツールを表示するタイミングを決定するためのオプション ##
 
@@ -27,7 +25,7 @@ ms.locfileid: "71385318"
 
 * localhost
 * インベントリ (プロパティの配列)
-* スクリプト (script)
+* script
 
 ### <a name="localhost"></a>LocalHost ###
 
@@ -87,7 +85,7 @@ SDK には、curated のインベントリプロパティのセットが含ま�
 | ------------- | ------------------- |
 | コンピューターの製造元 | string |
 | operatingSystemSKU | number |
-| operatingSystemVersion | version_string (例:"10.1. *") |
+| operatingSystemVersion | version_string (例: "10.1. *") |
 | productType | number |
 | clusterFqdn | string |
 | isHyperVRoleInstalled | boolean |
@@ -109,15 +107,15 @@ SDK には、curated のインベントリプロパティのセットが含ま�
 
 | 演算子 | 説明 |
 | -------- | ----------- |
-| gt | greater than (次の値より大きい) |
+| gt | より大きい |
 | ge | 以上 |
-| lt | less than (次の値より小さい) |
+| lt | 次の値未満 |
 | le | 以下 |
 | eq | 等しい |
-| ne | not equal to (次の値と等しくない) |
-| が | 値が true であるかどうかを確認しています |
-| 非 | 値が false かどうかを確認しています |
-| は | 項目が文字列内に存在します |
+| ne | 等しくない |
+| is | 値が true であるかどうかを確認しています |
+| not | 値が false かどうかを確認しています |
+| contains | 項目が文字列内に存在します |
 | notContains | 項目が文字列内に存在しません |
 
 #### <a name="data-types"></a>データ型 ####
@@ -126,7 +124,7 @@ SDK には、curated のインベントリプロパティのセットが含ま�
 
 | 種類 | 説明 |
 | ---- | ----------- |
-| version | バージョン番号 (例:10.1. *) |
+| version | バージョン番号 (例: 10.1. *) |
 | number | 数値 |
 | string | 文字列値 |
 | boolean | true または false |
@@ -135,8 +133,8 @@ SDK には、curated のインベントリプロパティのセットが含ま�
 
 ' Value ' プロパティは、次の型を受け取ります。
 
-* string
-* number
+* 文字列
+* 数値
 * boolean
 
 正しい形式のインベントリ条件セットは次のようになります。
@@ -193,11 +191,11 @@ SDK には、curated のインベントリプロパティのセットが含ま�
         @{Name='Prop2'; Value = 12345678; Type='number'; };
 }
 ```
-State プロパティは、[ツール] ボックスの一覧で拡張機能を表示または非表示にする決定を制御する重要な値です。  使用できる値は次のとおりです。
+State プロパティは、[ツール] ボックスの一覧で拡張機能を表示または非表示にする決定を制御する重要な値です。  使用できる値は、次のとおりです。
 
 | 値 | 説明 |
 | ---- | ----------- |
-| 使用できます。 | 拡張機能が [ツール] ボックスの一覧に表示されます。 |
+| 利用可能 | 拡張機能が [ツール] ボックスの一覧に表示されます。 |
 | NotSupported | 拡張機能は、[ツール] ボックスの一覧に表示されません。 |
 | NotConfigured | これは、ツールが使用可能になる前にユーザーに追加の構成を求めるプロンプトを表示する、今後の作業のためのプレースホルダー値です。  現在この値を指定すると、ツールが表示されます。これは、' Available ' と同等の機能です。 |
 
@@ -212,7 +210,7 @@ $response = @{
 }
 
 if (Get-Module -ListAvailable -Name servermanager) {
-    Import-module servermanager; 
+    Import-module servermanager;
     $isInstalled = (Get-WindowsFeature -name bitlocker).Installed;
     $isGood = $isInstalled;
 }

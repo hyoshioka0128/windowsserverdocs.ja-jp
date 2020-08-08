@@ -1,20 +1,18 @@
 ---
 title: Always On VPN 展開を計画する
 description: このトピックでは、Windows Server 2016 で Always On VPN を展開するための計画手順について説明します。
-ms.prod: windows-server
-ms.technology: networking-ras
 ms.topic: article
 ms.assetid: 3c9de3ec-4bbd-4db0-b47a-03507a315383
 ms.localizationpriority: medium
 ms.author: v-tea
 author: Teresa-MOTIV
 ms.date: 11/05/2018
-ms.openlocfilehash: c1e85f2ee44d241bdc04e63d20de36e5cdeafb1a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f1d89b21c62826ff593117edeb6dc82eb74610e7
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80814495"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87958140"
 ---
 # <a name="step-1-plan-the-always-on-vpn-deployment"></a>手順 1. Always On VPN 展開を計画する
 
@@ -45,11 +43,11 @@ VPN サーバーとして使用するコンピューターで、次の操作を�
 IKEv2 は、「[インターネット技術標準化委員会におけるコメント7296の要求](https://datatracker.ietf.org/doc/rfc7296/)」で説明されている VPN トンネリングプロトコルです。 IKEv2 の主な利点は、基になるネットワーク接続で許容が中断されることです。 たとえば、接続が一時的に失われた場合、またはユーザーがクライアントコンピューターをあるネットワークから別のネットワークに移動した場合、ネットワーク接続を再確立すると、IKEv2 によって VPN 接続が自動的に復元されます。ユーザーの介入は必要ありません。
 
 >[!TIP]
->IKEv2 接続をサポートするようにリモートアクセス VPN サーバーを構成し、使用されていないプロトコルも無効にすることができます。これにより、サーバーのセキュリティフットプリントが減少します。 
+>IKEv2 接続をサポートするようにリモートアクセス VPN サーバーを構成し、使用されていないプロトコルも無効にすることができます。これにより、サーバーのセキュリティフットプリントが減少します。
 
 ## <a name="plan-ip-addresses-for-remote-clients"></a>リモートクライアントの IP アドレスを計画する
 
-Vpn サーバーは、構成した静的アドレスプールまたは DHCP サーバーからの IP アドレスから、VPN クライアントにアドレスを割り当てるように構成できます。 
+Vpn サーバーは、構成した静的アドレスプールまたは DHCP サーバーからの IP アドレスから、VPN クライアントにアドレスを割り当てるように構成できます。
 
 ## <a name="prepare-the-environment"></a>環境を準備する
 
@@ -57,11 +55,11 @@ Vpn サーバーは、構成した静的アドレスプールまたは DHCP サ�
 
 - **VPN クライアントの静的 IP アドレスの範囲を選択**します。 サポートする同時 VPN クライアントの最大数を決定します。 また、その要件を満たすために、内部境界ネットワーク上の静的 IP アドレスの範囲を計画します。つまり、*静的アドレスプール*です。 DHCP を使用して内部 DMZ に IP アドレスを指定する場合は、DHCP でこれらの静的 IP アドレスの除外を作成することが必要になる場合もあります。
 
-- **パブリック DNS ゾーンを編集できる**ことを確認します。 VPN インフラストラクチャをサポートするために、パブリック DNS ドメインに DNS レコードを追加します。 
+- **パブリック DNS ゾーンを編集できる**ことを確認します。 VPN インフラストラクチャをサポートするために、パブリック DNS ドメインに DNS レコードを追加します。
 
 - **すべての VPN ユーザーが Active Directory ユーザー (AD DS) のユーザーアカウントを持っ**ていることを確認します。 ユーザーは、VPN 接続を使用してネットワークに接続する前に、AD DS のユーザーアカウントを持っている必要があります。
 
-## <a name="prepare-routing-and-firewall"></a>ルーティングとファイアウォールを準備する 
+## <a name="prepare-routing-and-firewall"></a>ルーティングとファイアウォールを準備する
 
 境界ネットワーク内に VPN サーバーをインストールします。これにより、境界ネットワークが内部および外部の境界ネットワークに分割されます。 ネットワーク環境によっては、複数のルーティング変更が必要になる場合があります。
 
@@ -71,6 +69,6 @@ Vpn サーバーは、構成した静的アドレスプールまたは DHCP サ�
 
 ほとんどの環境では、新しい内部境界ネットワークに接続するために、エッジファイアウォールと VPN サーバーで静的ルートを調整します。 ただし、複雑な環境では、内部ルーターに静的ルートを追加したり、vpn サーバーと VPN クライアントに関連付けられた IP アドレスのブロックの内部ファイアウォール規則を調整したりすることが必要になる場合があります。
 
-## <a name="next-steps"></a>次のステップ:
+## <a name="next-steps"></a>次のステップ
 
 [手順 2.サーバーインフラストラクチャの構成](vpn-deploy-server-infrastructure.md): この手順では、VPN をサポートするために必要なサーバー側コンポーネントをインストールして構成します。 サーバー側のコンポーネントには、ユーザー、VPN サーバー、および NPS サーバーによって使用される証明書を配布するように PKI を構成することが含まれます。

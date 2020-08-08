@@ -6,18 +6,18 @@ author: saurabhsensharma
 ms.author: saurse
 ms.date: 03/25/2019
 ms.localizationpriority: low
-ms.openlocfilehash: 796dfe509b1d24595dd3bc1aedd514789f4a378b
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 12b549daeb6cb5f1db53af2bc2cbc08dd6091eae
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87949636"
+ms.locfileid: "87994668"
 ---
 # <a name="backup-your-windows-servers-from-windows-admin-center-with-azure-backup"></a>Windows 管理センターから Azure Backup を使用して Windows サーバーをバックアップする
 
 >適用先:Windows Admin Center Preview、Windows Admin Center
 
-[Azure と Windows 管理センターとの統合の詳細については、こちらを参照してください。](../plan/azure-integration-options.md)
+[Azure と Windows 管理センターとの統合の詳細については、こちらを参照してください。](./index.md)
 
 Windows 管理センターでは、Windows サーバーを Azure にバックアップし、偶発的または悪意のある削除、破損、またはランサムウェアから保護するプロセスを効率化します。 セットアップを自動化するには、Windows Admin Center ゲートウェイを Azure に接続できます。
 
@@ -26,7 +26,7 @@ Windows 管理センターでは、Windows サーバーを Azure にバックア
 ## <a name="what-is-azure-backup-and-how-does-it-work-with-windows-admin-center"></a>Azure Backup とはどのようなものですか。また、Windows 管理センターではどのように動作しますか。
 
 **Azure Backup**は、Microsoft クラウド内のデータのバックアップ (または保護) と復元に使用できる Azure ベースのサービスです。 Azure Backup では、既存のオンプレミスまたはオフサイトのバックアップ ソリューションを、信頼性の高い、セキュリティで保護された、コスト競争力のあるクラウド ベースのソリューションに置き換えます。
-[詳細について](https://docs.microsoft.com/azure/backup/backup-overview)は、Azure Backup を参照してください。
+[詳細について](/azure/backup/backup-overview)は、Azure Backup を参照してください。
 
 Azure Backup には複数のコンポーネントが用意されており、これを適切なコンピューター、サーバー、またはクラウドにダウンロードしてデプロイします。 デプロイするコンポーネント (エージェント) は、何を保護するかによって決まります。 オンプレミスまたは Azure のどちらでデータを保護しているかにかかわらず、すべての Azure Backup コンポーネントを使用して、Azure の Recovery Services コンテナーにデータをバックアップできます。
 
@@ -75,7 +75,7 @@ Azure アカウントにサインインします。
 - 任意の**暗号化パスフレーズ**(16 文字以上) を入力します。  **Azure Backup**は、ユーザーが構成し、ユーザーが管理する暗号化パスフレーズを使用してバックアップデータを保護します。 Azure Backup からデータを回復するには、暗号化パスフレーズが必要です。
 
 > [!NOTE]
-> パスフレーズは、別のサーバーや[Azure Key Vault](https://docs.microsoft.com/azure/key-vault/quick-create-portal)など、安全なオフサイトの場所に格納する必要があります。 Microsoft はパスフレーズを保存しません。パスフレーズを紛失したり忘れたりした場合、パスフレーズを取得またはリセットすることはできません。
+> パスフレーズは、別のサーバーや[Azure Key Vault](/azure/key-vault/quick-create-portal)など、安全なオフサイトの場所に格納する必要があります。 Microsoft はパスフレーズを保存しません。パスフレーズを紛失したり忘れたりした場合、パスフレーズを取得またはリセットすることはできません。
 
 - すべての設定を確認し、[**適用**] をクリックします。
 
@@ -90,7 +90,7 @@ Windows 管理センターは次の操作を実行します
 
 Azure Backup が正常にセットアップされると、既存のサーバー接続のバックアップツールを開いたときに、**バックアップダッシュボード**が表示されます。 **バックアップダッシュボード**では、次のタスクを実行できます。
 
-- **Azure でのコンテナーへのアクセス:****バックアップダッシュボード**の [**概要**] タブにある [ **Recovery Services コンテナー** ] リンクをクリックすると、Azure のコンテナーに移動して、[豊富な管理操作](https://docs.microsoft.com/azure/backup/backup-azure-manage-windows-server)を実行することができます。
+- **Azure でのコンテナーへのアクセス:****バックアップダッシュボード**の [**概要**] タブにある [ **Recovery Services コンテナー** ] リンクをクリックすると、Azure のコンテナーに移動して、[豊富な管理操作](/azure/backup/backup-azure-manage-windows-server)を実行することができます。
 - アドホック**バックアップを実行する:**[**今すぐバックアップ**] をクリックして、アドホックバックアップを作成します。
-- **ジョブを監視し、アラート通知を構成します。** ダッシュボードの [**ジョブ**] タブに移動して、進行中または過去のジョブを監視し、失敗したジョブまたはその他のバックアップ関連のアラートの電子メールを受信するように[アラート通知を構成](https://docs.microsoft.com/azure/backup/backup-azure-manage-windows-server#configuring-notifications-for-alerts)します。
+- **ジョブを監視し、アラート通知を構成します。** ダッシュボードの [**ジョブ**] タブに移動して、進行中または過去のジョブを監視し、失敗したジョブまたはその他のバックアップ関連のアラートの電子メールを受信するように[アラート通知を構成](/azure/backup/backup-azure-manage-windows-server#configuring-notifications-for-alerts)します。
 - **回復ポイントの表示とデータの回復:** ダッシュボードの [**回復ポイント**] タブをクリックして回復ポイントを表示し、Azure からデータを回復する手順については、[**データの回復**] をクリックします。

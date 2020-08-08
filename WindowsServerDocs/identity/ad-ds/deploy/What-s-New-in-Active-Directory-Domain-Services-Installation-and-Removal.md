@@ -6,12 +6,12 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/09/2018
 ms.topic: article
-ms.openlocfilehash: 7444fcc6807e43192e68c006dcd49464a503976b
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 09863123a69eec72b3d8bfaaf138bb2d2562f687
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87953299"
+ms.locfileid: "87994508"
 ---
 # <a name="whats-new-in-active-directory-domain-services-installation-and-removal"></a>Active Directory Domain Services のインストールと削除の新機能
 
@@ -173,7 +173,7 @@ Windows server 2012 のシステム要件は、Windows Server 2008 R2 から変�
 
    この場合は、ADDSDeployment コマンドレットを、ネイティブの 64 ビット プロセスをサポートしていないコマンドレットとは別に実行する必要があります。
 
-- Windows Server 2012 には、回復力のあるファイルシステムという名前の新しいファイルシステムがあります。 Resilient File System (ReFS) でフォーマットされたデータ ボリュームに Active Directory データベース、ログ ファイル、または SYSVOL を格納しないでください。 ReFS の詳細については、「[Windows の次世代ファイル システム ReFS の構築 (Building the next generation file system for Windows: ReFS)](https://blogs.msdn.com/b/b8/archive/2012/01/16/building-the-next-generation-file-system-for-windows-refs.aspx)」を参照してください。
+- Windows Server 2012 には、回復力のあるファイルシステムという名前の新しいファイルシステムがあります。 Resilient File System (ReFS) でフォーマットされたデータ ボリュームに Active Directory データベース、ログ ファイル、または SYSVOL を格納しないでください。 ReFS の詳細については、「[Windows の次世代ファイル システム ReFS の構築 (Building the next generation file system for Windows: ReFS)](/archive/blogs/b8/building-the-next-generation-file-system-for-windows-refs)」を参照してください。
 - サーバーマネージャーでは、Server Core インストール上で AD DS またはその他のサーバーの役割を実行していて、Windows Server 2012 にアップグレードされているサーバーでは、イベントと状態が想定どおりに収集されていても、サーバーの役割が赤の状態で表示されることがあります。 プレリリース版の Windows Server 2012 の Server Core インストールを実行するサーバーも影響を受ける可能性があります。
 
 ### <a name="active-directory-domain-services-installation-hangs-if-an-error-prevents-critical-replication"></a>エラーが発生して重要なレプリケーションが実行されないと、Active Directory ドメイン サービスのインストールがハングする

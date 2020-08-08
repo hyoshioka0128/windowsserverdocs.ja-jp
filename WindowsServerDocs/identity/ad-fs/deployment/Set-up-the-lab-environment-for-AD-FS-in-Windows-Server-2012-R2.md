@@ -6,12 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 30dc33bec01cf4a9ab0b944464d4bbc60f6ca74e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 276c4d22c3df64debd696ae07fff996fdbf4ceea
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87938234"
+ms.locfileid: "87994273"
 ---
 # <a name="set-up-the-lab-environment-for-ad-fs-in-windows-server-2012-r2"></a>Windows Server 2012 R2 の AD FS 用のラボ環境をセットアップする
 
@@ -85,7 +85,7 @@ ADFS1 サーバーのサーバー SSL (Secure Socket Layer) 証明書を、ロ�
 
 -   サブジェクト代替名 (DNS): enterpriseregistration.contoso.com
 
-SSL 証明書のセットアップに関する詳細については、「 [エンタープライズ CA を使用してドメイン内の Web サイトで SSL/TLS を構成する](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831822(v=ws.11))」を参照してください。
+SSL 証明書のセットアップに関する詳細については、「 [エンタープライズ CA を使用してドメイン内の Web サイトで SSL/TLS を構成する](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831822(v=ws.11))」を参照してください。
 
 「[Active Directory フェデレーション サービスの使い方ビデオ シリーズ: 証明書の更新](https://channel9.msdn.com/Search?term=Active%20Directory%20Federation%20Services#pubDate=year&ch9Search)」。
 

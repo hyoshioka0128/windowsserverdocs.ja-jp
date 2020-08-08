@@ -1,20 +1,18 @@
 ---
 title: Azure AD を使用した VPN 接続への条件付きアクセス
 description: この省略可能な手順では、Azure Active Directory (Azure AD) 条件付きアクセスを使用して、承認された VPN ユーザーがリソースにアクセスする方法を微調整できます。
-ms.prod: windows-server
-ms.technology: networking-ras
 ms.topic: article
 ms.localizationpriority: medium
 ms.author: v-tea
 author: Teresa-MOTIV
 ms.date: 06/28/2019
 ms.reviewer: deverette
-ms.openlocfilehash: da32df185cb0c0c2370e60119dd9c2fbd510bd08
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 9c57d120106041692b920891b7d0c3341daec314
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86964264"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87958230"
 ---
 # <a name="step-7-optional-conditional-access-for-vpn-connectivity-using-azure-ad"></a>手順 7. OptionalAzure AD を使用した VPN 接続の条件付きアクセス
 
@@ -46,7 +44,7 @@ EAP-TLS クライアントは、NPS サーバーが証明書チェーン (ルー
 
 ## <a name="step-72-create-root-certificates-for-vpn-authentication-with-azure-ad"></a>[手順 7.2.Azure AD で VPN 認証のルート証明書を作成する](vpn-create-root-cert-for-vpn-auth-azure-ad.md)
 
-この手順では、Azure AD で VPN 認証用のルート証明書を構成します。これにより、VPN サーバークラウドアプリがテナントに自動的に作成されます。  
+この手順では、Azure AD で VPN 認証用のルート証明書を構成します。これにより、VPN サーバークラウドアプリがテナントに自動的に作成されます。
 
 VPN 接続用の条件付きアクセスを構成するには、以下の操作を行う必要があります。
 

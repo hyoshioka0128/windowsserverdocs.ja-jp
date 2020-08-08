@@ -6,12 +6,12 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/09/2018
 ms.topic: article
-ms.openlocfilehash: f4c4cfa0fe56acc19f1a78a5b1140d90b585cce5
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: ae0aa44dba50c467dd1bd2423e9eb67104387cd3
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87953311"
+ms.locfileid: "87994492"
 ---
 # <a name="upgrade-domain-controllers-to-windows-server-2012-r2-and-windows-server-2012"></a>ドメイン コントローラーを Windows Server 2012 R2 または Windows Server 2012 にアップグレードする
 
@@ -55,7 +55,7 @@ Windows PowerShell コマンドレットまたはサーバー マネージャー
 - [Windows Server 2012 のレプリカ ドメイン コントローラーを既存のドメインにインストールする (レベル 200)](./install-a-replica-windows-server-2012-domain-controller-in-an-existing-domain--level-200-.md)
 - [Windows Server 2012 の新しい Active Directory 子ドメインまたはツリー ドメインをインストールする (レベル 200)](./install-a-new-windows-server-2012-active-directory-child-or-tree-domain--level-200-.md)
 - [Windows Server 2012 の Active Directory 読み取り専用ドメイン コントローラー (RODC) をインストールする (レベル 200)](./rodc/install-a-windows-server-2012-active-directory-read-only-domain-controller--rodc---level-200-.md)
-- [ドメインコントローラーに関する Windows Server 2012 フォーラム](https://docs.microsoft.com/answers/topics/windows-server-2012.html)
+- [ドメインコントローラーに関する Windows Server 2012 フォーラム](/answers/topics/windows-server-2012.html)
 
 ## <a name="windows-update-considerations"></a>Windows Update に関する考慮事項
 
@@ -175,7 +175,7 @@ Windows Server 2008 以降のドメインコントローラーでは、Windows S
 
 このセクションでは、Windows Server 2008 または Windows Server 2008 R2 からドメインコントローラーをアップグレードする場合のみのディスク領域の要件について説明します。 ドメイン コントローラーを以前のバージョンの Windows Server にアップグレードする場合のディスク領域要件の詳細については、「 [Windows Server 2008 にアップグレードするためのディスク領域の要件](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754463(v=ws.10)#BKMK_2008) 」または「 [Windows Server 2008 R2 にアップグレードするためのディスク領域の要件](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754463(v=ws.10)#BKMK_2008R2)」を参照してください。
 
-Active Directory データベースおよびログ ファイルをホストするディスクの領域サイズは、カスタムおよびアプリケーション対応のスキーマ拡張や、アプリケーションおよび管理者によって開始されるインデックスのほか、ドメイン コントローラーの展開寿命 (一般的には 5 年から 8 年) の間にディレクトリに追加されるオブジェクトおよび属性が収まるように決定してください。 一般的に、展開時に適切なサイジングを行うことは、展開後にディスク領域を拡張する場合に必要となるコストの増加に比べると、有利な投資になります。 詳細については、 [Active Directory ドメイン サービスのキャパシティ プランニング](https://docs.microsoft.com/windows-server/administration/performance-tuning/role/active-directory-server/capacity-planning-for-active-directory-domain-services)に関するページを参照してください。
+Active Directory データベースおよびログ ファイルをホストするディスクの領域サイズは、カスタムおよびアプリケーション対応のスキーマ拡張や、アプリケーションおよび管理者によって開始されるインデックスのほか、ドメイン コントローラーの展開寿命 (一般的には 5 年から 8 年) の間にディレクトリに追加されるオブジェクトおよび属性が収まるように決定してください。 一般的に、展開時に適切なサイジングを行うことは、展開後にディスク領域を拡張する場合に必要となるコストの増加に比べると、有利な投資になります。 詳細については、 [Active Directory ドメイン サービスのキャパシティ プランニング](../../../administration/performance-tuning/role/active-directory-server/capacity-planning-for-active-directory-domain-services.md)に関するページを参照してください。
 
 アップグレードするドメイン コントローラーについては、オペレーティング システムのアップグレードを開始する前に、Active Directory データベース (NTDS.DIT) をホストするドライブに NTDS.DIT ファイルの 20% 以上に相当する空きディスク領域があることを確認します。 対象のボリュームに十分な空きディスク領域がない場合は、アップグレードが失敗することがあります。その際、アップグレード互換性レポートによって、空きディスク領域が不十分であることを示すエラーが返されます。
 

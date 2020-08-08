@@ -1,19 +1,17 @@
 ---
 title: ツール拡張機能にモジュールを追加する
 description: ツール拡張機能の開発 Windows 管理センター SDK (Project ホノルル)-ツール拡張機能へのモジュールの追加
-ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 9d30980ca404187ff1481242c1c0ef0a3d571416
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e7875f8aa2320d7292b314cb18f3e17894e76fa0
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357100"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87945045"
 ---
 # <a name="add-a-module-to-a-tool-extension"></a>ツール拡張機能にモジュールを追加する
 
@@ -21,19 +19,19 @@ ms.locfileid: "71357100"
 
 この記事では、Windows 管理センター CLI で作成したツール拡張機能に空のモジュールを追加します。
 
-## <a name="prepare-your-environment"></a>環境の準備
+## <a name="prepare-your-environment"></a>環境を準備する
 
 まだ行っていない場合は、「[ツール](../develop-tool.md)(または[ソリューション](../develop-solution.md)) の拡張機能の開発」の指示に従って、環境を準備し、新しい空のツール拡張を作成します。
 
 ## <a name="use-the-angular-cli-to-create-a-module-and-component"></a>角 CLI を使用してモジュール (およびコンポーネント) を作成する
 
-Angular を初めて使用する場合は、Angular.Io Web サイトのドキュメントを読み、Angular および NgModule の詳細を確認することを強くお勧めします。 NgModule の詳細については、 https://angular.io/guide/ngmodule を参照してください。
+Angular を初めて使用する場合は、Angular.Io Web サイトのドキュメントを読み、Angular および NgModule の詳細を確認することを強くお勧めします。 NgModule の詳細については、https://angular.io/guide/ngmodule を参照してください。
 
-* Angular CLI での新しいモジュールの生成の詳細については、 https://github.com/angular/angular-cli/wiki/generate-module を参照してください。
-* Angular CLI での新しいコンポーネントの生成の詳細については、 https://github.com/angular/angular-cli/wiki/generate-component を参照してください。
+* Angular CLI での新しいモジュールの生成の詳細については、https://github.com/angular/angular-cli/wiki/generate-module を参照してください。
+* Angular CLI での新しいコンポーネントの生成の詳細については、https://github.com/angular/angular-cli/wiki/generate-component を参照してください。
 
 
-コマンドプロンプトを開き、プロジェクトのディレクトリを-src\ app に変更し、次のコマンドを実行します。 ```{!ModuleName}``` は実際のモジュール名に置き換えます (スペースは削除します)。
+コマンドプロンプトを開き、プロジェクトのディレクトリを-src\ app に変更してから、次のコマンドを実行します ```{!ModuleName}``` 。をモジュール名 (スペースが削除されたもの) に置き換えます。
 
 ```
 cd \src\app
@@ -55,7 +53,7 @@ ng generate component ManageFooWorksPortal
 
 ## <a name="add-routing-information"></a>ルーティングの情報の追加
 
-Angular に慣れていない場合は、Angular のルーティングとナビゲーションの詳細を確認することを強くお勧めします。 次のセクションでは、Windows Admin Center で拡張機能に移動し、ユーザー アクティビティに応じて拡張機能のビュー間を移動できるようにするために必要なルーティング要素を定義します。 詳細については、 https://angular.io/guide/router を参照してください。
+Angular に慣れていない場合は、Angular のルーティングとナビゲーションの詳細を確認することを強くお勧めします。 次のセクションでは、Windows Admin Center で拡張機能に移動し、ユーザー アクティビティに応じて拡張機能のビュー間を移動できるようにするために必要なルーティング要素を定義します。 詳細については、https://angular.io/guide/router を参照してください。
 
 前の手順で使用したのと同じモジュール名を使用します。
 
@@ -83,7 +81,7 @@ Angular に慣れていない場合は、Angular のルーティングとナビ�
             // if the component has child components that need to be routed to, include them in the children array.
             children: [
                 {
-                    path: '', 
+                    path: '',
                     redirectTo: 'base',
                     pathMatch: 'full'
                 }
@@ -143,7 +141,7 @@ Angular に慣れていない場合は、Angular のルーティングとナビ�
 | 値 | 説明 | ファイル名の例 |
 | ----- | ----------- | ------- |
 | ```{!module-name}``` | モジュール名 (小文字、スペースをダッシュに置換) | ```manage-foo-works-portal.component.ts``` |
-    
+
 ファイル内のコンテンツを次に変更します。
 
 ``` ts
@@ -157,7 +155,7 @@ public ngOnInit() {
 ```
 ### <a name="update-app-routingmodulets"></a>App-v を更新します。
 
-ファイル ```app-routing.module.ts``` を開き、作成したばかりの新しいモジュールが読み込まれるように既定のパスを変更します。  @No__t-0 のエントリを探し、```loadChildren``` を更新して、既定のモジュールではなくモジュールを読み込みます。
+ファイル ```app-routing.module.ts``` を開き、作成した新しいモジュールが読み込まれるように、既定のパスを変更します。  のエントリを検索 ```path: ''``` し、を更新して、既定のモジュールで ```loadChildren``` はなくモジュールを読み込みます。
 
 | 値 | 説明 | 例 |
 | ----- | ----------- | ------- |
@@ -166,14 +164,14 @@ public ngOnInit() {
 
 ``` ts
     {
-        path: '', 
+        path: '',
         loadChildren: 'app/{!module-name}/{!module-name}.module#{!ModuleName}Module'
     },
 ```
 次に、更新された既定のパスの例を示します。
 ``` ts
     {
-        path: '', 
+        path: '',
         loadChildren: 'app/manage-foo-works-portal/manage-foo-works-portal.module#ManageFooWorksPortalModule'
     },
 ```

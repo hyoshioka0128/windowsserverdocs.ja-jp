@@ -1,19 +1,17 @@
 ---
 title: Always On VPN の機能強化
 description: Always On VPN には、過去の Windows VPN ソリューションよりも多くのメリットがあります。 統合、セキュリティ、接続性、ネットワーク制御、および互換性の強化における重要な改善点は、Microsoft のクラウドファーストのモバイルファースト構想との Always On VPN です。
-ms.prod: windows-server
-ms.technology: networking-ras
 ms.topic: article
 ms.author: v-tea
 author: Teresa-MOTIV
 ms.date: 11/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: e20d59311d8bc21052855acae9fc2eb356fdff23
-ms.sourcegitcommit: 717222e9efceb5964872dbf97034cad60f3c48df
+ms.openlocfilehash: db2d33f2452d7fddffef5458d0e80954b3603a48
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87295050"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87958240"
 ---
 # <a name="always-on-vpn-enhancements"></a>Always On VPN の機能強化
 
@@ -28,7 +26,7 @@ Always On VPN には、過去の Windows VPN ソリューションよりも多�
 
 - **セキュリティ:** Always On VPN には、トラフィックの種類、VPN 接続を使用できるアプリケーション、および接続を開始するために使用できる認証方法を制限する新しい高度なセキュリティ機能が用意されています。 ほとんどの場合、接続がアクティブになると、接続をセキュリティで保護することが重要になります。 詳細については、「 [VPN 認証オプション](/windows/security/identity-protection/vpn/vpn-authentication)」を参照してください。
 
-- **VPN 接続:** Always On VPN では、デバイストンネルの有無にかかわらず、自動トリガー機能が提供されます。 VPN を Always On する前に、ユーザーまたはデバイスのいずれかの認証を使用して自動接続をトリガーする機能は使用できませんでした。  
+- **VPN 接続:** Always On VPN では、デバイストンネルの有無にかかわらず、自動トリガー機能が提供されます。 VPN を Always On する前に、ユーザーまたはデバイスのいずれかの認証を使用して自動接続をトリガーする機能は使用できませんでした。
 
 - **ネットワーク制御:** Always On VPN を使用すると、管理者は、特別なリモートアクセスを必要とする基幹業務 (LOB) アプリに最適なレベルで、より詳細なレベルでルーティングポリシーを指定できます。  また、Always On VPN は、インターネットプロトコルバージョン 4 (IPv4) とバージョン 6 (IPv6) の両方と完全に互換性があります。 DirectAccess とは異なり、IPv6 に固有の依存関係はありません。
 
@@ -49,7 +47,7 @@ Microsoft は、Always On VPN で次の統合機能を導入または強化し�
 | **[条件付きアクセスの Microsoft Azure](/azure/active-directory/active-directory-conditional-access-controls)**  |Always On VPN クライアントは、Azure の条件付きアクセスプラットフォームと統合して、多要素認証 (MFA)、デバイスのコンプライアンス、または2つの組み合わせを適用できます。 条件付きアクセスポリシーに準拠している場合、Azure Active Directory (Azure AD) は、VPN ゲートウェイへの認証に使用できる有効期間 (既定では60分) の IP セキュリティ (IPsec) 認証証明書を発行します。 デバイスコンプライアンスは Configuration Manager/Intune コンプライアンスポリシーを使用します。これには、接続のコンプライアンスチェックの一環として、デバイス正常性構成証明の状態を含めることができます。|
 |  **Azure MFA** |リモート認証ダイヤルインユーザーサービス (RADIUS) サービスと、Azure MFA のネットワークポリシーサーバー (NPS) 拡張機能と組み合わせることで、VPN 認証で強力な MFA を使用できます。 | **サードパーティ VPN プラグイン**  | ユニバーサル Windows プラットフォーム (UWP) を使用すると、サードパーティの VPN プロバイダーは、すべての Windows 10 デバイスに対して1つのアプリケーションを作成できます。 UWP は、デバイス間で保証されたコア API レイヤーを提供します。これにより、カーネルレベルのドライバーの作成に関連する多くの複雑な問題を回避できます。 現時点では、Windows 10 UWP VPN プラグインは、 [Pulse Secure](https://www.microsoft.com/p/pulse-secure/9nblggh3b0bp)、 [F5 アクセス](https://www.microsoft.com/p/f5-access/9wzdncrdsfn0)、 [Check Point カプセル Vpn](https://www.microsoft.com/p/check-point-capsule-vpn/9wzdncrdjxtj)、 [FortiClient](https://www.microsoft.com/p/forticlient/9wzdncrdh6mc)、 [SonicWall Mobile Connect](https://www.microsoft.com/p/sonicwall-mobile-connect/9wzdncrdsfkz)、および[globalprotect](https://www.microsoft.com/p/globalprotect/9nblggh6bzl3)用に存在します。それ以外の場合は、今後表示される可能性があります。 |
 
-## <a name="security"></a>セキュリティ
+## <a name="security"></a>Security
 
 セキュリティの主な強化点は次のとおりです。
 
@@ -82,7 +80,7 @@ Always On VPN でのネットワークの機能強化の一部を次に示しま
 | **アプリケーション固有のルーティングポリシー** |                            インターネットとイントラネットのトラフィック分離のためのグローバル VPN 接続のルーティングポリシーを定義するだけでなく、ルーティングポリシーを追加して、アプリケーションごとに分割トンネルまたは強制トンネル構成の使用を制御することもできます。 このオプションを使用すると、VPN トンネルを介してどのアプリにどのリソースとの対話を許可するかをより細かく制御できます。                             |
 |           **除外ルート**            |                 Always On VPN では、ルーティングの動作を明示的に制御することで、VPN のみを通過するトラフィックを定義し、物理ネットワークインターフェイスを経由しないように指定することができます。<p><p>***注:***<br>-現在、除外ルートは、クライアントと同じサブネット内のトラフィック (LinkLocal など) に対して機能します。<br>-除外ルートは、分割トンネルのセットアップでのみ機能します。                  |
 
-## <a name="configuration-and-compatibility"></a>構成と互換性 
+## <a name="configuration-and-compatibility"></a>構成と互換性
 
 Always On VPN の構成と互換性の強化点を次に示します。
 

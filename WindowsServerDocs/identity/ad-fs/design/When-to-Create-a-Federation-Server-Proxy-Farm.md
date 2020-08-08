@@ -6,34 +6,32 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: d4b2b889159dee9f3b93a54a2b1924be286792f4
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a9413adf80fc3a3e8e86061c6adb6f30b3dec7dc
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858495"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87945132"
 ---
 # <a name="when-to-create-a-federation-server-proxy-farm"></a>フェデレーション サーバー プロキシ ファームを作成するのに適した状況
 
-大規模な Active Directory フェデレーションサービス (AD FS) \(AD FS\) 展開で、プロキシ展開のフォールトトレランス、負荷\-分散、スケーラビリティを提供する場合は、追加のフェデレーションサーバープロキシをインストールすることを検討してください。 同じ境界ネットワーク内に複数のフェデレーションサーバープロキシを作成し、それぞれを同じ AD FS を保護するように構成するとフェデレーションサービスフェデレーションサーバープロキシファームが作成されます。  
-  
-AD FS フェデレーションサーバープロキシ構成ウィザードを使用して、フェデレーションサーバープロキシファームを作成するか、既存のファームに追加のフェデレーションサーバープロキシをインストールすることができます。 詳細については、「 [When to Create a Federation Server Proxy](When-to-Create-a-Federation-Server-Proxy.md)」を参照してください。  
-  
-すべてのフェデレーションサーバープロキシをファームとして機能させるには、まず、1つの IP アドレスと1つのドメインネームシステム \(DNS\) 完全修飾ドメイン名 \(FQDN\)の下にクラスターをクラスター化する必要があります。 サーバーをクラスター化するには、Microsoft ネットワーク負荷分散 \(NLB\) を境界ネットワーク内に展開します。 次の表のタスクでは、ファーム内のフェデレーションサーバープロキシをクラスター化するために NLB が適切に構成されている必要があります。  
-  
-Microsoft NLB テクノロジを使用してクラスターの FQDN を構成する方法の詳細については、「[クラスターパラメーターの指定](https://go.microsoft.com/fwlink/?linkid=74651)」を参照してください。  
-  
-## <a name="configuring-federation-server-proxies-for-a-farm"></a>ファーム用のフェデレーション サーバー プロキシの構成  
-次の表では、各フェデレーションサーバープロキシがファームに参加できるようにするために完了する必要があるタスクについて説明します。  
-  
-|タスク|説明|  
-|--------|---------------|  
-|ファーム内のすべてのプロキシが同じ AD FS フェデレーションサービス名を指すようにする|フェデレーションサーバープロキシを作成する場合は、ファームに参加するすべてのフェデレーションサーバープロキシに対して、AD FS フェデレーションサーバープロキシ構成ウィザードで同じフェデレーションサービス名を入力する必要があります。 フェデレーションサーバープロキシは、この DNS ホスト名を構成する URL を使用して、接続先の AD FS フェデレーションサービスインスタンスを決定します。<p>詳細については、「 [Configure a Computer for the Federation Server Proxy Role](../../ad-fs/deployment/Configure-a-Computer-for-the-Federation-Server-Proxy-Role.md)」を参照してください。|  
-|証明書を取得して共有する|パブリック証明機関 \(CA\)(VeriSign など) からサーバー認証証明書を取得した後、すべてのフェデレーションサーバープロキシが、各フェデレーションサーバープロキシの既定の Web サイトで同じ証明書の同じ秘密キー部分を共有するように証明書を構成できます。 証明書を共有するには、各フェデレーションサーバープロキシの既定の Web サイトに同じサーバー認証証明書をインストールする必要があります。 詳細については、「[サーバー認証証明書を既定の Web サイトにインポートする](../../ad-fs/deployment/Import-a-Server-Authentication-Certificate-to-the-Default-Web-Site.md)」を参照してください。<p>詳細については、「 [Certificate Requirements for Federation Server Proxies](Certificate-Requirements-for-Federation-Server-Proxies.md)」を参照してください。|  
-  
-フェデレーションサーバープロキシファームを作成するために新しいフェデレーションサーバープロキシを追加する方法の詳細については、「[チェックリスト: フェデレーションサーバープロキシの](../../ad-fs/deployment/Checklist--Setting-Up-a-Federation-Server-Proxy.md)セットアップ」を参照してください。  
-  
+大規模な Active Directory フェデレーションサービス (AD FS) \( AD FS 展開で、 \) プロキシ展開のフォールトトレランス、負荷 \- 分散、およびスケーラビリティを提供する場合は、追加のフェデレーションサーバープロキシをインストールすることを検討してください。 同じ境界ネットワーク内に複数のフェデレーションサーバープロキシを作成し、それぞれを同じ AD FS を保護するように構成するとフェデレーションサービスフェデレーションサーバープロキシファームが作成されます。
+
+AD FS フェデレーションサーバープロキシ構成ウィザードを使用して、フェデレーションサーバープロキシファームを作成するか、既存のファームに追加のフェデレーションサーバープロキシをインストールすることができます。 詳細については、「 [When to Create a Federation Server Proxy](When-to-Create-a-Federation-Server-Proxy.md)」を参照してください。
+
+すべてのフェデレーションサーバープロキシをファームとして機能させるには、まず、1つの IP アドレスと1つのドメインネームシステム \( DNS \) 完全修飾ドメイン名の FQDN でクラスターをクラスター化する必要があり \( \) ます。 サーバーをクラスター化するには、 \( 境界ネットワーク内に Microsoft ネットワーク負荷分散 NLB を展開し \) ます。 次の表のタスクでは、ファーム内のフェデレーションサーバープロキシをクラスター化するために NLB が適切に構成されている必要があります。
+
+Microsoft NLB テクノロジを使用してクラスターの FQDN を構成する方法の詳細については、「[クラスターパラメーターの指定](https://go.microsoft.com/fwlink/?linkid=74651)」を参照してください。
+
+## <a name="configuring-federation-server-proxies-for-a-farm"></a>ファーム用のフェデレーション サーバー プロキシの構成
+次の表では、各フェデレーションサーバープロキシがファームに参加できるようにするために完了する必要があるタスクについて説明します。
+
+|タスク|説明|
+|--------|---------------|
+|ファーム内のすべてのプロキシが同じ AD FS フェデレーションサービス名を指すようにする|フェデレーションサーバープロキシを作成する場合は、ファームに参加するすべてのフェデレーションサーバープロキシに対して、AD FS フェデレーションサーバープロキシ構成ウィザードで同じフェデレーションサービス名を入力する必要があります。 フェデレーションサーバープロキシは、この DNS ホスト名を構成する URL を使用して、接続先の AD FS フェデレーションサービスインスタンスを決定します。<p>詳細については、「 [Configure a Computer for the Federation Server Proxy Role](../../ad-fs/deployment/Configure-a-Computer-for-the-Federation-Server-Proxy-Role.md)」を参照してください。|
+|証明書を取得して共有する|パブリック証明機関 (VeriSign など) からサーバー認証証明書を取得 \( \) し、すべてのフェデレーションサーバープロキシが各フェデレーションサーバープロキシの既定の Web サイトで同じ証明書の同じ秘密キー部分を共有するように証明書を構成することができます。 証明書を共有するには、各フェデレーションサーバープロキシの既定の Web サイトに同じサーバー認証証明書をインストールする必要があります。 詳細については、「[サーバー認証証明書を既定の Web サイトにインポートする](../../ad-fs/deployment/Import-a-Server-Authentication-Certificate-to-the-Default-Web-Site.md)」を参照してください。<p>詳細については、「 [Certificate Requirements for Federation Server Proxies](Certificate-Requirements-for-Federation-Server-Proxies.md)」を参照してください。|
+
+フェデレーションサーバープロキシファームを作成するために新しいフェデレーションサーバープロキシを追加する方法の詳細については、「[チェックリスト: フェデレーションサーバープロキシの](../../ad-fs/deployment/Checklist--Setting-Up-a-Federation-Server-Proxy.md)セットアップ」を参照してください。
+
 ## <a name="see-also"></a>参照
 [Windows Server 2012 での AD FS 設計ガイド](AD-FS-Design-Guide-in-Windows-Server-2012.md)

@@ -7,12 +7,12 @@ ms.topic: article
 ms.assetid: 501a9beb-c464-46c0-88c5-e3e7e3e70101
 author: kbdazure
 ms.date: 10/03/2016
-ms.openlocfilehash: c0e056d2e2b26180399d3fab3321c5e75bff8780
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: aa89f3735151b2dee795c1a325e22446e3770fa0
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87948119"
+ms.locfileid: "87994538"
 ---
 # <a name="windows-hypervisor-must-be-running"></a>Windows ハイパーバイザーが実行されている必要があります。
 
@@ -86,6 +86,4 @@ ms.locfileid: "87948119"
     2. 問題を報告するイベントを探します。 たとえば、イベント ID 41 は、BIOS 構成に問題があることを示しています。 "Hyper-v の起動に失敗しました。VMX が存在しないか、BIOS で有効になっていません。 "
 
 ### <a name="see-also"></a>参照
-コンピューターで Hyper-v を実行できるかどうかを確認する方法など、Windows 10 で Hyper-v を使用する方法の詳細については、「 [windows 10 hyper-v のシステム要件](https://msdn.microsoft.com/virtualization/hyperv_on_windows/quick_start/walkthrough_compatibility)」を参照してください。
-
-
+コンピューターで Hyper-v を実行できるかどうかを確認する方法など、Windows 10 で Hyper-v を使用する方法の詳細については、「 [windows 10 hyper-v のシステム要件](/virtualization/hyper-v-on-windows/reference/hyper-v-requirements)」を参照してください。

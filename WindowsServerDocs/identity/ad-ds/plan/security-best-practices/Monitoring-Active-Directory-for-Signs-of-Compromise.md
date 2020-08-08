@@ -6,20 +6,18 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: b4031ce1d9a5bce4f0dd8fe98dea304b2373c2ae
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 8b28d412411336062187a842912b6f4a41957eba
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181828"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87994344"
 ---
 # <a name="monitoring-active-directory-for-signs-of-compromise"></a>Active Directory の侵害の兆候を監視する
 
 >適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
-*法 5: 永続的の警戒は、セキュリティの価格です。* - [セキュリティ管理に関する10の不変法](/previous-versions//cc722488(v=technet.10))
+*法 5: 永続的の警戒は、セキュリティの価格です。* - [セキュリティ管理に関する10の不変法](/previous-versions/cc722488(v=technet.10))
 
 監視システム ソリッド イベント ログとは、どのようなセキュリティで保護された Active Directory 設計の重要な部分です。 多くのコンピューター セキュリティ侵害だった場合は、検出早期イベント被害者が該当するイベント ログ監視とアラートを施行します。 独立したレポートは、この結論を長い間サポートができます。 たとえば、 [2009 Verizon データ侵害レポート](http://www.verizonbusiness.com/resources/security/reports/2009_databreach_rp.pdf) 状態。
 

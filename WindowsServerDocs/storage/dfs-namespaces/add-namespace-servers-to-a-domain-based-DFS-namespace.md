@@ -2,18 +2,16 @@
 title: ドメインベースの DFS 名前空間に名前空間サーバーを追加する
 description: この記事では、DFS 管理を使って名前空間をホストする追加の名前空間サーバーを指定する方法について説明します。
 ms.date: 6/5/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: f00a6419bae1951a7c1597212d3c37676a4db90e
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: ada742f53435b8b3894fc1a19eee4dd69d3777d6
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961254"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957810"
 ---
 # <a name="add-namespace-servers-to-a-domain-based-dfs-namespace"></a>ドメインベースの DFS 名前空間に名前空間サーバーを追加する
 
@@ -38,7 +36,7 @@ DFS の管理を使ってドメイン ベース名前空間に名前空間サー
 > [!TIP]
 > Windows PowerShell を使って名前空間サーバーを追加するには、[New-DfsnRootTarget コマンドレット](/powershell/module/dfsn/new-dfsnroottarget)を使います。 DFSN Windows PowerShell モジュールは、Windows Server 2012 で導入されました。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 -   [DFS 名前空間を展開する](deploying-dfs-namespaces.md)
 -   [DFS 名前空間サーバーの要件を確認する](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753448(v=ws.11))
