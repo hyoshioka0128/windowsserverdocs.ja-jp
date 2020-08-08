@@ -7,12 +7,12 @@ ms.assetid: 3c62f533-1815-4f08-96b1-dc271f5a2b36
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/24/2018
-ms.openlocfilehash: 0b82128c703f5f3d1fe357beae90a15481232d5c
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 2ca1c308ee38726d02ef19ebdfa4c83086fef0a7
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970779"
+ms.locfileid: "87995151"
 ---
 # <a name="create-a-vm-and-connect-to-a-tenant-virtual-network-or-vlan"></a>VM を作成し、テナントの仮想ネットワークまたは VLAN に接続する
 
@@ -31,9 +31,9 @@ ms.locfileid: "87970779"
 
 2. VM が起動時にネットワークアクセスを必要とする場合は、vm ネットワークアダプターポートでインターフェイス ID を設定するまで VM を起動しないでください。 インターフェイス ID を設定する前に VM を起動し、ネットワークインターフェイスが存在しない場合、VM はネットワークコントローラーのネットワークと、すべてのポリシーが適用されていると通信できません。
 
-3. このネットワークインターフェイスにカスタム Acl が必要な場合は、トピック「 [Access Control リスト (acl) を使用してデータセンターのネットワークトラフィックフローを管理する](../../sdn/manage/Use-Access-Control-Lists--ACLs--to-Manage-Datacenter-Network-Traffic-Flow.md)」の手順に従って、acl を作成します。
+3. このネットワークインターフェイスにカスタム Acl が必要な場合は、トピック「 [Access Control リスト (acl) を使用してデータセンターのネットワークトラフィックフローを管理する](./use-acls-for-traffic-flow.md)」の手順に従って、acl を作成します。
 
-この例のコマンドを使用する前に、Virtual Network が既に作成されていることを確認してください。 詳細については、「[テナント仮想ネットワークの作成、削除、または更新](https://technet.microsoft.com/windows-server-docs/networking/sdn/manage/create%2c-delete%2c-or-update-tenant-virtual-networks)」を参照してください。
+この例のコマンドを使用する前に、Virtual Network が既に作成されていることを確認してください。 詳細については、「[テナント仮想ネットワークの作成、削除、または更新](./create,-delete,-or-update-tenant-virtual-networks.md)」を参照してください。
 
 ## <a name="create-a-vm-and-connect-to-a-virtual-network-by-using-the-windows-powershell-network-controller-cmdlets"></a>Windows PowerShell ネットワークコントローラーコマンドレットを使用して VM を作成し、Virtual Network に接続する
 
@@ -221,6 +221,3 @@ Vm を作成し、テナント Virtual Network に VM を接続して、テナ�
    ```
 
 Vm が正常に作成され、VM が VLAN に接続され、VM が開始され、テナントのワークロードを処理できるようになりました。
-
-
-

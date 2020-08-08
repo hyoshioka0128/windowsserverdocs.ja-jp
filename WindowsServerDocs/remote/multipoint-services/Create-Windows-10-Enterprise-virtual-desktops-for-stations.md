@@ -7,12 +7,12 @@ ms.assetid: 63f08b5b-c735-41f4-b6c8-411eff85a4ab
 author: evaseydl
 ms.author: evas
 manager: scottman
-ms.openlocfilehash: fb36cb13f9a78ae028f1217dd667a106a81e5c94
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 9f41b203ff14923c991f56b7166b37200bee6910
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87937314"
+ms.locfileid: "87994978"
 ---
 # <a name="create-windows-10-enterprise-virtual-desktops-for-stations"></a>ステーション用の Windows 10 Enterprise の仮想デスクトップを作成する
 MultiPoint Services でのこのオプションの構成は、主に、重要なアプリケーションがユーザーごとにクライアントオペレーティングシステムの独自のインスタンスを必要とする状況を想定しています。 たとえば、Windows Server にインストールできないアプリケーションや、同じホストコンピューターで複数のインスタンスを実行しないアプリケーションがこれに含まれます。
@@ -31,7 +31,7 @@ MultiPoint Services でのこのオプションの構成は、主に、重要な
 | グラフィックス | DX11 |
 | BIOS | 仮想化を有効にするように構成された BIOS CPU 設定–第2レベルのアドレス変換 (SLAT) |
 
--   **ステーション**-MultiPoint Services システムのステーションを設定します。 詳細については、「 [MultiPoint Services に追加のステーションをアタッチする](Attach-additional-stations-to-your-MultiPoint-services-computer.md)」を参照してください。
+-   **ステーション**-MultiPoint Services システムのステーションを設定します。 詳細については、「 [MultiPoint Services に追加のステーションをアタッチする](./multipoint-attach-additional-stations.md)」を参照してください。
 
 -   **ドメイン-ドメイン**環境では、Windows multipoint Server コンピューターがドメインに追加され、multipoint Services ホストオペレーティングシステムのローカルの Administrators グループにドメインユーザーが追加されています。
 

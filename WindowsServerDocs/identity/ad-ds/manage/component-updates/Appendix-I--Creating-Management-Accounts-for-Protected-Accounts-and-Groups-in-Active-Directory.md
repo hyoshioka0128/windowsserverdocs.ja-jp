@@ -6,12 +6,12 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 7f8624b23a746eed5df9ab55c7c01d0dfbd9cb0f
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 944e71b546f6e5a7484f533b5c6dc86840484e46
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87943861"
+ms.locfileid: "87994916"
 ---
 # <a name="appendix-i-creating-management-accounts-for-protected-accounts-and-groups-in-active-directory"></a>付録 I: Active Directory の保護されたアカウントとグループの管理アカウントを作成する
 
@@ -141,7 +141,7 @@ Active Directory のインストールで特権グループのメンバーシッ
    >
    > ホストに対してより安全な暗号化の種類を実装しても、資格情報の盗難攻撃を軽減することはできませんが、セキュリティで保護されたホストの適切な使用と構成が行われます。 特権アカウントによってのみ使用されるホストに対して、より強力な暗号化の種類を設定すると、コンピューターの攻撃対象領域が軽減されます。
    >
-   > システムおよびアカウントでの暗号化の種類の構成の詳細については、「 [Kerberos でサポートされる暗号化の種類の Windows 構成](https://blogs.msdn.com/b/openspecification/archive/2011/05/31/windows-configurations-for-kerberos-supported-encryption-type.aspx)」を参照してください。
+   > システムおよびアカウントでの暗号化の種類の構成の詳細については、「 [Kerberos でサポートされる暗号化の種類の Windows 構成](/archive/blogs/openspecification/windows-configurations-for-kerberos-supported-encryption-type)」を参照してください。
    >
    > これらの設定は、Windows Server 2012、Windows Server 2008 R2、Windows 8、または Windows 7 を実行しているコンピューターでのみサポートされます。
 

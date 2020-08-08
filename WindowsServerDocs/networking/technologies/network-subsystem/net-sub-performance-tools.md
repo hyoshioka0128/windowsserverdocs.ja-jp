@@ -7,12 +7,12 @@ manager: dcscontentpm
 ms.author: v-tea
 author: Teresa-Motiv
 ms.date: 07/16/2018
-ms.openlocfilehash: 3e08541b1bfd6dd07d134560c9d03306566b18db
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 4344357db92a65725a7bcdc749966d3889d20695
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87953918"
+ms.locfileid: "87995083"
 ---
 # <a name="performance-tools-for-network-workloads"></a>ネットワーク ワークロードに関するパフォーマンス ツール
 
@@ -42,6 +42,6 @@ Microsoft Server Performance Advisor \( SPA は、 \) IT 管理者が windows se
 
 SPA は、包括的な診断レポートとグラフを生成します。また、問題を迅速に分析し、是正措置を開発するために役立つ推奨事項を提供します。
 
- Advisor の詳細とダウンロードについては、Windows ハードウェアデベロッパーセンターの「 [Microsoft Server Performance advisor](https://msdn.microsoft.com/library/windows/hardware/dn481522.aspx) 」を参照してください。
+ Advisor の詳細とダウンロードについては、Windows ハードウェアデベロッパーセンターの「 [Microsoft Server Performance advisor](/previous-versions/dn481522(v=vs.85)) 」を参照してください。
 
 このガイドのすべてのトピックへのリンクについては、「[ネットワークサブシステムのパフォーマンスチューニング](net-sub-performance-top.md)」を参照してください。

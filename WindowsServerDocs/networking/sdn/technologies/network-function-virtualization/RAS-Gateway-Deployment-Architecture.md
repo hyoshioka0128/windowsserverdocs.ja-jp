@@ -6,12 +6,12 @@ ms.topic: get-started-article
 ms.assetid: d46e4e91-ece0-41da-a812-af8ab153edc4
 ms.author: anpaul
 author: AnirbanPaul
-ms.openlocfilehash: 0de90508ec3a7db2624047d23de47e79d9ea2a39
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: e15131291f14f8e7affc45d49f1b81e7c8b29ba7
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87952293"
+ms.locfileid: "87994757"
 ---
 # <a name="ras-gateway-deployment-architecture"></a>RAS ゲートウェイの展開アーキテクチャ
 
@@ -91,7 +91,7 @@ Windows Server 2016 では、さまざまな種類のゲートウェイプール
     > -   ネットワークコントローラーが、テナントに対して RAS ゲートウェイとルートリフレクターを構成した後、同じテナントが新しいサイト間 VPN 接続を必要とする場合、ネットワークコントローラーは、この RAS ゲートウェイ VM で使用可能な容量を確認します。 元のゲートウェイが必要な容量を処理できる場合は、同じ RAS ゲートウェイ VM で新しいネットワーク接続も構成されます。 RAS ゲートウェイ VM が追加の容量を処理できない場合、ネットワークコントローラーは使用可能な新しい RAS ゲートウェイ VM を選択し、新しい接続を構成します。 テナントに関連付けられているこの新しい RAS ゲートウェイ VM は、元のテナント RAS ゲートウェイルートリフレクターのルートリフレクタークライアントになります。
     > -   RAS ゲートウェイプールはソフトウェアロードバランサー (SLBs) の背後にあるため、テナントのサイト間 VPN はそれぞれ、仮想 IP アドレス (VIP) と呼ばれる単一のパブリック IP アドレスを使用します。これは、エンタープライズテナントのトラフィックをルーティングする RAS ゲートウェイのために、SLBs によって、動的 IP アドレス (DIP) と呼ばれるデータセンター内部 IP アドレス SLB によるこのパブリック IP アドレスのマッピングにより、エンタープライズサイトと CSP RAS ゲートウェイおよびルートリフレクターの間でサイト間 VPN トンネルが正しく確立されます。
     >
-    >     SLB、Vip、Dip の詳細については、「[ソフトウェア負荷分散の &#40;slb&#41; SDN](../../../sdn/technologies/network-function-virtualization/Software-Load-Balancing--SLB--for-SDN.md)」を参照してください。
+    >     SLB、Vip、Dip の詳細については、「[ソフトウェア負荷分散の &#40;slb&#41; SDN](./software-load-balancing-for-sdn.md)」を参照してください。
 
 5.  エンタープライズサイトと CSP datacenter RAS ゲートウェイの間のサイト間 VPN トンネルが新しいテナントに対して確立されると、トンネルに関連付けられている静的ルートは、トンネルのエンタープライズと CSP の両方の側で自動的にプロビジョニングされます。
 
@@ -154,8 +154,3 @@ Ras ゲートウェイプールに必要な数の RAS ゲートウェイ Vm を�
 **ゲートウェイエラーの迅速な修復**
 
 高速フェールオーバー応答を実現するには、エッジルートと制御ルーターの間の BGP Keepalive パラメーターの時間を短い時間間隔 (10 秒以下) に構成できます。 この短いキープアライブ間隔では、RAS ゲートウェイの BGP エッジルーターで障害が発生すると、エラーがすぐに検出され、ネットワークコントローラーは前のセクションで説明した手順に従います。 この利点により、双方向転送検出 (BFD) プロトコルなど、個別の障害検出プロトコルの必要性が軽減される可能性があります。
-
-
-
-
-

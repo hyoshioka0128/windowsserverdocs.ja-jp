@@ -1,18 +1,16 @@
 ---
 title: 個別のデバイスの割り当てを使用して NVMe 記憶装置を展開する
 description: DDA を使用して記憶装置を展開する方法について説明します。
-ms.prod: windows-server
-ms.technology: hyper-v
 ms.topic: article
 author: chrishuybregts
 ms.author: chrihu
 ms.assetid: 1c36107e-78c9-4ec0-a313-6ed557ac0ffc
-ms.openlocfilehash: 2b92b175a6e914b62b069f76f92255cb99d55d74
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: fdf6372d642a2e1413a2ed5029d9e9f25af4ce3f
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80860905"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87945945"
 ---
 # <a name="deploy-nvme-storage-devices-using-discrete-device-assignment"></a>個別のデバイスの割り当てを使用して NVMe 記憶装置を展開する
 
@@ -37,10 +35,10 @@ Set-VM -Name VMName -AutomaticStopAction TurnOff
 ## <a name="dismount-the-device-from-the-host-partition"></a>ホストパーティションからデバイスのマウントを解除する
 
 ### <a name="locating-the-devices-location-path"></a>デバイスの場所のパスを特定する
-ホストからデバイスをマウント解除してマウントするには、PCI ロケーションパスが必要です。  ロケーションパスの例は次のようになります: `"PCIROOT(20)#PCI(0300)#PCI(0000)#PCI(0800)#PCI(0000)"`。   場所のパスの詳細については、「[個別のデバイスの割り当てを使用したデバイスの展開の計画](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md)」を参照してください。
+ホストからデバイスをマウント解除してマウントするには、PCI ロケーションパスが必要です。  ロケーションパスの例は次のように `"PCIROOT(20)#PCI(0300)#PCI(0000)#PCI(0800)#PCI(0000)"` なります。   場所のパスの詳細については、「[個別のデバイスの割り当てを使用したデバイスの展開の計画](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md)」を参照してください。
 
 ### <a name="disable-the-device"></a>デバイスを無効にする
-デバイスマネージャーまたは PowerShell を使用して、デバイスが "無効" になっていることを確認します。  
+デバイスマネージャーまたは PowerShell を使用して、デバイスが "無効" になっていることを確認します。
 
 ### <a name="dismount-the-device"></a>デバイスのマウントを解除する
 ```
@@ -54,7 +52,7 @@ Dismount-VMHostAssignableDevice -LocationPath $locationPath
 Add-VMAssignableDevice -LocationPath $locationPath -VMName VMName
 ```
 
-## <a name="whats-next"></a>次の課題
+## <a name="whats-next"></a>次の内容
 デバイスが VM に正常にマウントされると、その VM を起動して、ベアメタルシステムで実行されていた場合と同じように、通常どおりにデバイスと対話できるようになります。  これを確認するには、ゲスト VM でデバイスマネージャーを開き、ハードウェアが表示されていることを確認します。
 
 ## <a name="removing-a-device-and-returning-it-to-the-host"></a>デバイスを削除してホストに戻す

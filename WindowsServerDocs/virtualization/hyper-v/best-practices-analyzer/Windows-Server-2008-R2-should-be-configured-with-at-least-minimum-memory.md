@@ -7,12 +7,12 @@ ms.topic: article
 ms.assetid: 12418668-52d3-4e70-b56f-85dcb144a8c0
 author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 3ae3e02eb8265d2c9c399fb58f37e6f33958ed9b
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 3bea37b7f9f0db47085b5200b0eae3b4c3b4f7b5
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87948275"
+ms.locfileid: "87994865"
 ---
 # <a name="windows-server-2008-r2-should-be-configured-with-at-least-the-minimum-amount-of-memory"></a>Windows Server 2008 R2 は、少なくとも最小メモリ容量で構成する必要があります
 
@@ -69,7 +69,4 @@ Set-VMMemory <MyVM> -StartupBytes 512MB
 ```
 
 ## <a name="see-also"></a>参照
-[設定-VMMemory](https://technet.microsoft.com/library/hh848572.aspx)
-
-
-
+[設定-VMMemory](/powershell/module/hyper-v/set-vmmemory?view=win10-ps)

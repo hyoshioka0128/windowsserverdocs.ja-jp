@@ -6,12 +6,12 @@ ms.topic: get-started-article
 ms.assetid: 8dcb8cf9-0e08-4fdd-9d7e-ec577ce8d8a0
 author: kumudd
 ms.date: 10/10/2016
-ms.openlocfilehash: 0fd557341d19725a57c52d3786420c8c3357ebdf
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: ced2fe051f0595e8333aa2704889cc88ec1304ac
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87963738"
+ms.locfileid: "87994724"
 ---
 # <a name="storage-quality-of-service"></a>記憶域のサービスの品質 (QoS)
 
@@ -884,6 +884,6 @@ IOPSNormalizationSize
 ```
 
 ## <a name="see-also"></a>参照
-- [Windows Server 2016](../../get-started/windows-server-2016.md)
+- [Windows Server 2016](../../index.yml)
 - [Windows Server 2016 の記憶域レプリカに関する記事](../storage-replica/storage-replica-overview.md)
 - [Windows Server 2016 での記憶域スペース ダイレクト](../storage-spaces/storage-spaces-direct-overview.md)

@@ -6,12 +6,12 @@ author: justinha
 ms.author: justinha
 manager: brianlic
 ms.date: 05/16/2018
-ms.openlocfilehash: 30ab0547fd538eec3f50120a5d536eb9a48de54b
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 8f5f18452c158b2e1c8d14173d80193465ead17f
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971289"
+ms.locfileid: "87994799"
 ---
 # <a name="manage-transport-layer-security-tls"></a>トランスポート層セキュリティ (TLS) を管理する
 
@@ -19,10 +19,10 @@ ms.locfileid: "87971289"
 
 ## <a name="configuring-tls-cipher-suite-order"></a>TLS 暗号スイートの順序の構成
 
-Windows のバージョンによって、さまざまな TLS 暗号スイートと優先順位がサポートされます。 さまざまな Windows バージョンの Microsoft Schannel プロバイダーでサポートされている既定の順序については、「 [TLS/SSL (SCHANNEL SSP) の暗号スイート](https://docs.microsoft.com/windows/win32/secauthn/cipher-suites-in-schannel)」を参照してください。
+Windows のバージョンによって、さまざまな TLS 暗号スイートと優先順位がサポートされます。 さまざまな Windows バージョンの Microsoft Schannel プロバイダーでサポートされている既定の順序については、「 [TLS/SSL (SCHANNEL SSP) の暗号スイート](/windows/win32/secauthn/cipher-suites-in-schannel)」を参照してください。
 
 > [!NOTE]
-> CNG 関数を使用して暗号スイートの一覧を変更することもできます。詳細については、「 [Schannel Cipher suite の優先順位付け](https://docs.microsoft.com/windows/win32/secauthn/prioritizing-schannel-cipher-suites)」を参照してください。
+> CNG 関数を使用して暗号スイートの一覧を変更することもできます。詳細については、「 [Schannel Cipher suite の優先順位付け](/windows/win32/secauthn/prioritizing-schannel-cipher-suites)」を参照してください。
 
 TLS 暗号スイートの順序の変更は、次回の起動時に有効になります。 再起動またはシャットダウンまでは、既存の順序が有効になります。
 
@@ -52,11 +52,11 @@ SSL 暗号スイートの順序グループポリシー設定を使用して、�
 
 ### <a name="configuring-tls-cipher-suite-order-by-using-mdm"></a>MDM を使用した TLS 暗号スイートの順序の構成
 
-Windows 10 ポリシー CSP は、TLS 暗号スイートの構成をサポートしています。 詳細については[、「Cryptography/TLSCipherSuites](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-cryptography#cryptography-tlsciphersuites) 」を参照してください。
+Windows 10 ポリシー CSP は、TLS 暗号スイートの構成をサポートしています。 詳細については[、「Cryptography/TLSCipherSuites](/windows/client-management/mdm/policy-csp-cryptography#cryptography-tlsciphersuites) 」を参照してください。
 
 ### <a name="configuring-tls-cipher-suite-order-by-using-tls-powershell-cmdlets"></a>Tls PowerShell コマンドレットを使用した TLS 暗号スイートの順序の構成
 
-TLS PowerShell モジュールでは、TLS 暗号スイートの順序付きリストの取得、暗号スイートの無効化、および暗号スイートの有効化をサポートしています。 詳細については、「 [TLS モジュール](https://docs.microsoft.com/powershell/module/tls/?view=win10-ps)」を参照してください。
+TLS PowerShell モジュールでは、TLS 暗号スイートの順序付きリストの取得、暗号スイートの無効化、および暗号スイートの有効化をサポートしています。 詳細については、「 [TLS モジュール](/powershell/module/tls/?view=win10-ps)」を参照してください。
 
 ## <a name="configuring-tls-ecc-curve-order"></a>TLS ECC 曲線の順序の構成
 
@@ -136,4 +136,3 @@ Windows 10 および Windows Server 2016 以降では、ECC 曲線の順序の�
 ![GPP 分散曲線](../media/Transport-Layer-Security-protocol/gp-managing-tls-curve-priority-order.png)
 
 *図4グループポリシーを使用した TLS 曲線の優先順位の管理*
-

@@ -2,32 +2,30 @@
 title: 仮想ネットワークでのゲスト クラスタリング
 description: 仮想ネットワークに接続されている仮想マシンは、ネットワークコントローラーが割り当てた IP アドレスのみを使用してネットワーク上の通信を行うことができます。  Microsoft フェールオーバークラスタリングなど、floating IP アドレスを必要とするクラスタリングテクノロジでは、いくつかの追加の手順を正しく機能させる必要があります。
 manager: grcusanz
-ms.prod: windows-server
-ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: 8e9e5c81-aa61-479e-abaf-64c5e95f90dc
 ms.author: grcusanz
 author: AnirbanPaul
 ms.date: 08/26/2018
-ms.openlocfilehash: 6889b58f5d49a4932ef8277b11e1002e85606f3f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 6d597d4ced923c751e54ed4678ffb2d956a7b471
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80854455"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87994768"
 ---
 # <a name="guest-clustering-in-a-virtual-network"></a>仮想ネットワークでのゲスト クラスタリング
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016
+>適用先:Windows Server (半期チャネル)、Windows Server 2016
 
 仮想ネットワークに接続されている仮想マシンは、ネットワークコントローラーが割り当てた IP アドレスのみを使用してネットワーク上の通信を行うことができます。  Microsoft フェールオーバークラスタリングなど、floating IP アドレスを必要とするクラスタリングテクノロジでは、いくつかの追加の手順を正しく機能させる必要があります。
 
-Floating IP を到達可能にする方法は、SLB\) 仮想 IP \(VIP\)\(ソフトウェア Load Balancer を使用することです。  ソフトウェアロードバランサーは、その IP 上のポートに対する正常性プローブを使用して構成する必要があります。これにより、SLB は、現在その IP を使用しているコンピューターにトラフィックを送信します。
+Floating IP を到達可能にする方法は、ソフトウェア Load Balancer \( SLB \) 仮想 IP VIP を使用することです \( \) 。  ソフトウェアロードバランサーは、その IP 上のポートに対する正常性プローブを使用して構成する必要があります。これにより、SLB は、現在その IP を使用しているコンピューターにトラフィックを送信します。
 
 
 ## <a name="example-load-balancer-configuration"></a>例: ロードバランサーの構成
 
-この例では、クラスターノードとなる Vm を既に作成し、それらを Virtual Network にアタッチしていることを前提としています。  ガイダンスについて[は、VM を作成し、テナント Virtual Network または VLAN に接続](https://technet.microsoft.com/windows-server-docs/networking/sdn/manage/create-a-tenant-vm)する方法に関する説明を参照してください。  
+この例では、クラスターノードとなる Vm を既に作成し、それらを Virtual Network にアタッチしていることを前提としています。  ガイダンスについて[は、VM を作成し、テナント Virtual Network または VLAN に接続](./create-a-tenant-vm.md)する方法に関する説明を参照してください。
 
 この例では、クラスターの floating IP アドレスを表す仮想 IP アドレス (192.168.2.100) を作成し、TCP ポート59999を監視する正常性プローブを構成して、アクティブなノードを特定します。
 
@@ -46,7 +44,7 @@ Floating IP を到達可能にする方法は、SLB\) 仮想 IP \(VIP\)\(ソフ�
    $LoadBalancerProperties = new-object Microsoft.Windows.NetworkController.LoadBalancerProperties
    ```
 
-3. フロント\-終了 IP アドレスを作成します。
+3. フロント \- エンド IP アドレスを作成します。
 
    ```PowerShell
    $LoadBalancerProperties.frontendipconfigurations += $FrontEnd = new-object Microsoft.Windows.NetworkController.LoadBalancerFrontendIpConfiguration
@@ -59,7 +57,7 @@ Floating IP を到達可能にする方法は、SLB\) 仮想 IP \(VIP\)\(ソフ�
    $FrontEnd.properties.privateIPAllocationMethod = "Static"
    ```
 
-4. クラスターノードを格納するバック\-のエンドプールを作成します。
+4. \-クラスターノードを格納するバックエンドプールを作成します。
 
    ```PowerShell
    $BackEnd = new-object Microsoft.Windows.NetworkController.LoadBalancerBackendAddressPool
@@ -69,10 +67,10 @@ Floating IP を到達可能にする方法は、SLB\) 仮想 IP \(VIP\)\(ソフ�
    $LoadBalancerProperties.backendAddressPools += $BackEnd
    ```
 
-5. フローティングアドレスが現在アクティブになっているクラスターノードを検出するプローブを追加します。 
+5. フローティングアドレスが現在アクティブになっているクラスターノードを検出するプローブを追加します。
 
    >[!NOTE]
-   >以下で定義されているポートでの VM の恒久アドレスに対するプローブクエリ。  ポートはアクティブノードでのみ応答する必要があります。 
+   >以下で定義されているポートでの VM の恒久アドレスに対するプローブクエリ。  ポートはアクティブノードでのみ応答する必要があります。
 
    ```PowerShell
    $LoadBalancerProperties.probes += $lbprobe = new-object Microsoft.Windows.NetworkController.LoadBalancerProbe
@@ -94,9 +92,9 @@ Floating IP を到達可能にする方法は、SLB\) 仮想 IP \(VIP\)\(ソフ�
    $lbrule.ResourceId = "Rules1"
 
    $lbrule.properties.frontendipconfigurations += $FrontEnd
-   $lbrule.properties.backendaddresspool = $BackEnd 
+   $lbrule.properties.backendaddresspool = $BackEnd
    $lbrule.properties.protocol = "TCP"
-   $lbrule.properties.frontendPort = $lbrule.properties.backendPort = 1433 
+   $lbrule.properties.frontendPort = $lbrule.properties.backendPort = 1433
    $lbrule.properties.IdleTimeoutInMinutes = 4
    $lbrule.properties.EnableFloatingIP = $true
    $lbrule.properties.Probe = $lbprobe
@@ -124,9 +122,9 @@ Floating IP を到達可能にする方法は、SLB\) 仮想 IP \(VIP\)\(ソフ�
    $nic = new-networkcontrollernetworkinterface  -connectionuri $uri -resourceid $nic.resourceid -properties $nic.properties -force
    ```
 
-   ロードバランサーを作成し、そのネットワークインターフェイスをバックエンドプールに追加したら、クラスターを構成することができます。  
+   ロードバランサーを作成し、そのネットワークインターフェイスをバックエンドプールに追加したら、クラスターを構成することができます。
 
-9. OptionalMicrosoft フェールオーバークラスターを使用している場合は、次の例に進んでください。 
+9. OptionalMicrosoft フェールオーバークラスターを使用している場合は、次の例に進んでください。
 
 ## <a name="example-2-configuring-a-microsoft-failover-cluster"></a>例 2: Microsoft フェールオーバークラスターの構成
 
@@ -139,10 +137,10 @@ Floating IP を到達可能にする方法は、SLB\) 仮想 IP \(VIP\)\(ソフ�
    Import-module failoverclusters
 
    $ClusterName = "MyCluster"
-   
+
    $ClusterNetworkName = "Cluster Network 1"
-   $IPResourceName =  
-   $ILBIP = "192.168.2.100" 
+   $IPResourceName =
+   $ILBIP = "192.168.2.100"
 
    $nodes = @("DB1", "DB2")
    ```

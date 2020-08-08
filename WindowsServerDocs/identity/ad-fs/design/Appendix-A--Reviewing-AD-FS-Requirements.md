@@ -6,19 +6,19 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: ad4275bf7b6231692171209b19c4c60190e30126
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: ad3184dbe43cfa108aa1b178421102880b3ef4d7
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87942978"
+ms.locfileid: "87994986"
 ---
 # <a name="appendix-a-reviewing-ad-fs-requirements"></a>付録 A:AD FS 要件の確認
 
 Active Directory フェデレーションサービス (AD FS) (AD FS) 展開の組織パートナーが正常に共同作業できるようにするには、まず、企業ネットワークインフラストラクチャが、アカウント、名前解決、および証明書の AD FS 要件をサポートするように構成されていることを確認する必要があります。 AD FS には次の種類の要件があります。
 
 > [!TIP]
-> その他の AD FS リソースリンクについては、「[重要な AD FS の概念](https://docs.microsoft.com/windows-server/identity/ad-fs/technical-reference/understanding-key-ad-fs-concepts)」を参照してください。
+> その他の AD FS リソースリンクについては、「[重要な AD FS の概念](../technical-reference/understanding-key-ad-fs-concepts.md)」を参照してください。
 
 ## <a name="hardware-requirements"></a>ハードウェア要件
 次の最小および推奨ハードウェア要件は、フェデレーションサーバーとフェデレーションサーバープロキシコンピューターに適用されます。

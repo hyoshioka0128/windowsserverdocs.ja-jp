@@ -8,12 +8,12 @@ ms.author: v-tea
 author: Teresa-MOTIV
 ms.localizationpriority: medium
 ms.reviewer: deverette
-ms.openlocfilehash: 8af6294ab604c0535040ba4aaa149d674854484c
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 60f79b7bb624f6e64c0c32033335ddcd2eea262e
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87958200"
+ms.locfileid: "87995080"
 ---
 # <a name="advanced-features-of-always-on-vpn"></a>Always On VPN の高度な機能
 
@@ -39,7 +39,7 @@ ms.locfileid: "87958200"
 
 |オプション  |説明  |
 |---------|---------|
-|Windows Hello for Business     |Windows 10 では、Pc とモバイルデバイスに強力な2要素認証を提供することで、Windows Hello for Business によってパスワードが置き換えられます。 この認証は、デバイスに関連付けられた新しい種類のユーザー資格情報で構成され、生体認証 Id または暗証番号 (PIN) を使用します。<p>Windows 10 VPN クライアントは Windows Hello for Business と互換性があります。 ユーザーがジェスチャを使用してログインすると、VPN 接続は Windows Hello for Business 証明書を使用して証明書ベースの認証を行います。<p>関連ドキュメント:<ul><li>[Windows Hello for Business](/windows/access-protection/hello-for-business/hello-identity-verification)</li><li>技術的なケーススタディ: windows [10 で Windows Hello For Business を使用したリモートアクセスの有効化](/previous-versions//mt728163(v=technet.10))</li></ul>         |
+|Windows Hello for Business     |Windows 10 では、Pc とモバイルデバイスに強力な2要素認証を提供することで、Windows Hello for Business によってパスワードが置き換えられます。 この認証は、デバイスに関連付けられた新しい種類のユーザー資格情報で構成され、生体認証 Id または暗証番号 (PIN) を使用します。<p>Windows 10 VPN クライアントは Windows Hello for Business と互換性があります。 ユーザーがジェスチャを使用してログインすると、VPN 接続は Windows Hello for Business 証明書を使用して証明書ベースの認証を行います。<p>関連ドキュメント:<ul><li>[Windows Hello for Business](/windows/access-protection/hello-for-business/hello-identity-verification)</li><li>技術的なケーススタディ: windows [10 で Windows Hello For Business を使用したリモートアクセスの有効化](/previous-versions/mt728163(v=technet.10))</li></ul>         |
 |Azure 多要素認証 (MFA)     |Azure MFA には、Windows VPN 認証メカニズムと統合できるクラウドおよびオンプレミスのバージョンがあります。<p>このメカニズムのしくみの詳細については、「 [Azure Multi-Factor Authentication Server と RADIUS 認証を統合](/azure/multi-factor-authentication/multi-factor-authentication-get-started-server-radius)する」を参照してください。         |
 
 ## <a name="advanced-vpn-features"></a>高度な VPN 機能
@@ -151,7 +151,7 @@ Windows 10 での TPM キーの構成証明の詳細については、「 [Tpm �
 
 - [Windows Hello For Business](/windows/access-protection/hello-for-business/hello-identity-verification): このトピックでは、クラウドのみのデプロイやハイブリッドデプロイなどの前提条件について説明します。  このトピックでは、Windows Hello for Business に関してよく寄せられる質問の一覧も示します。
 
-- [技術的なケーススタディ: windows 10 で Windows hello For business を使用したリモートアクセスの有効化](/previous-versions//mt728163(v=technet.10)): このテクニカルケーススタディでは、Microsoft が windows Hello for business を使用してリモートアクセスを実装する方法について説明します。  Windows Hello for Business は、組織とコンシューマー向けの、パスワードを超える秘密/公開キーまたは証明書ベースの認証方式です。 この認証方法で使用されるキー ペア資格情報は、パスワードの代わりに使用でき、侵害、盗難、フィッシングに対する耐性があります。
+- [技術的なケーススタディ: windows 10 で Windows hello For business を使用したリモートアクセスの有効化](/previous-versions/mt728163(v=technet.10)): このテクニカルケーススタディでは、Microsoft が windows Hello for business を使用してリモートアクセスを実装する方法について説明します。  Windows Hello for Business は、組織とコンシューマー向けの、パスワードを超える秘密/公開キーまたは証明書ベースの認証方式です。 この認証方法で使用されるキー ペア資格情報は、パスワードの代わりに使用でき、侵害、盗難、フィッシングに対する耐性があります。
 
 - [Radius 認証と azure Multi-Factor Authentication Server の統合](/azure/multi-factor-authentication/multi-factor-authentication-get-started-server-radius): このトピックでは、azure MULTI-FACTOR AUTHENTICATION SERVER で radius クライアント認証を追加して構成する手順について説明します。 RADIUS は、認証要求を承認してそれらの要求を処理する標準のプロトコルです。 Azure Multi-Factor Authentication Server は RADIUS サーバーとして機能します。
 

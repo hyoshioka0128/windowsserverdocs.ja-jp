@@ -6,12 +6,12 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 08065e153a7f0c09e305e87fc2d745b3daa0b3f0
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 7e69a808a48c3dedcc29d8876dc460559157f191
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87943871"
+ms.locfileid: "87994823"
 ---
 # <a name="guidance-about-how-to-configure-protected-accounts"></a>保護されたアカウントの構成方法に関するガイダンス
 
@@ -114,7 +114,7 @@ Protected Users に関連するイベントのトラブルシューティング�
 -   Kerberos 事前認証での RC4 の拒否: 構成できません。
 
     > [!NOTE]
-    > [サポートされている暗号化の種類の構成を変更する](https://blogs.msdn.com/b/openspecification/archive/2011/05/31/windows-configurations-for-kerberos-supported-encryption-type.aspx)ことはできますが、コンピューター アカウントでこれらの設定を変更する場合は、あらかじめターゲット環境でテストすることをお勧めします。
+    > [サポートされている暗号化の種類の構成を変更する](/archive/blogs/openspecification/windows-configurations-for-kerberos-supported-encryption-type)ことはできますが、コンピューター アカウントでこれらの設定を変更する場合は、あらかじめターゲット環境でテストすることをお勧めします。
 
 -   ユーザー チケット (TGT) を最初の 4 時間の有効期間に制限:認証ポリシーを使用します。
 
