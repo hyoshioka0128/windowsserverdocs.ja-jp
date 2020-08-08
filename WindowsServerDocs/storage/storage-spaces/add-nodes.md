@@ -1,21 +1,19 @@
 ---
 ms.assetid: 898d72f1-01e7-4b87-8eb3-a8e0e2e6e6da
 title: サーバーまたはドライブを記憶域スペース ダイレクトに追加する
-ms.prod: windows-server
 ms.author: cosdar
 manager: dongill
-ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 11/06/2017
 description: 記憶域スペースダイレクトクラスターにサーバーまたはドライブを追加する方法
 ms.localizationpriority: medium
-ms.openlocfilehash: 773bb3a55de27d049d26fa76659d3a4d8057f0fe
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: b9a26d3ac982cccf4471f3a3e03bfdae55b55eed
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966394"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961066"
 ---
 # <a name="adding-servers-or-drives-to-storage-spaces-direct"></a>サーバーまたはドライブを記憶域スペース ダイレクトに追加する
 
@@ -45,7 +43,7 @@ ms.locfileid: "86966394"
 2. クラスター上で次のコマンドレットを実行し、サーバーの追加を完了します。
 
 ```
-Add-ClusterNode -Name NewNode 
+Add-ClusterNode -Name NewNode
 ```
 
    >[!NOTE]
@@ -59,7 +57,7 @@ Add-ClusterNode -Name NewNode
 
 双方向ミラーリングを行うボリュームを、3 方向ミラーリングにインプレース アップグレードすることはできません。 代わりに、新しいボリュームを作成し、データをそのボリュームに移行して ([Storage Replica](../storage-replica/server-to-server-storage-replication.md) などを使用したコピー)、以前のボリュームを削除します。
 
-3 方向ミラーリングのボリュームの作成を開始する場合、適切な方法がいくつかあります。 これらの方法は必要に応じて使用してください。 
+3 方向ミラーリングのボリュームの作成を開始する場合、適切な方法がいくつかあります。 これらの方法は必要に応じて使用してください。
 
 #### <a name="option-1"></a>方法 1
 
@@ -84,7 +82,7 @@ New-Volume -FriendlyName <Name> -FileSystem CSVFS_ReFS -StoragePoolFriendlyName 
 *Capacity* と呼ばれる **StorageTier** テンプレートに対して **PhysicalDiskRedundancy = 2** を設定し、その階層を参照してボリュームを作成します。
 
 ```PowerShell
-Set-StorageTier -FriendlyName Capacity -PhysicalDiskRedundancy 2 
+Set-StorageTier -FriendlyName Capacity -PhysicalDiskRedundancy 2
 
 New-Volume -FriendlyName <Name> -FileSystem CSVFS_ReFS -StoragePoolFriendlyName S2D* -StorageTierFriendlyNames Capacity -StorageTierSizes <Size>
 ```
@@ -135,7 +133,7 @@ New-StorageTier -StoragePoolFriendlyName S2D* -MediaType HDD -PhysicalDiskRedund
 #### <a name="example"></a>例
 
 ```PowerShell
-New-Volume -FriendlyName "Sir-Mix-A-Lot" -FileSystem CSVFS_ReFS -StoragePoolFriendlyName S2D* -StorageTierFriendlyNames Performance, Capacity -StorageTierSizes <Size, Size> 
+New-Volume -FriendlyName "Sir-Mix-A-Lot" -FileSystem CSVFS_ReFS -StoragePoolFriendlyName S2D* -StorageTierFriendlyNames Performance, Capacity -StorageTierSizes <Size, Size>
 ```
 
 ### <a name="beyond-4-servers-greater-parity-efficiency"></a>サーバーが 4 台を超える場合: パリティの効率の向上
@@ -153,13 +151,13 @@ New-Volume -FriendlyName "Sir-Mix-A-Lot" -FileSystem CSVFS_ReFS -StoragePoolFrie
 1. 管理者特権の PowerShell セッションを開き、次のコマンドを使用して、ノードの一時的な障害ドメインを作成します。ここで、 *\<NewNode>* は新しいクラスターノードの名前です。
 
    ```PowerShell
-   New-ClusterFaultDomain -Type Node -Name <NewNode> 
+   New-ClusterFaultDomain -Type Node -Name <NewNode>
    ```
 
 2. 次のように指定されているように、この一時的な障害ドメインを、新しいサーバーが実際に配置されているシャーシまたはラックに移動し *\<ParentName>* ます。
 
    ```PowerShell
-   Set-ClusterFaultDomain -Name <NewNode> -Parent <ParentName> 
+   Set-ClusterFaultDomain -Name <NewNode> -Parent <ParentName>
    ```
 
    詳細については、「[Fault domain awareness in Windows Server 2016](../../failover-clustering/fault-domains.md)」(Windows Server 2016 での障害ドメインの認識) を参照してください。

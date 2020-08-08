@@ -5,15 +5,13 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
 ms.assetid: 08724d45-9be4-4c56-a5f1-2cf40864e136
-ms.technology: identity-adfs
-ms.openlocfilehash: c4c775ac330c1a5f81bf97f1f6aa29204efbf75c
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 47a03b43d8ac1a52453741974d4243f8aafc391c
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519731"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87949786"
 ---
 # <a name="multi-factor-authentication-and-external-authentication-providers-customization"></a>多要素認証と外部認証プロバイダーのカスタマイズ
 
@@ -47,5 +45,5 @@ Export-AdfsWebTheme -Name default -DirectoryPath C:\theme
 
 詳細については、「[ソリューションガイド: 多 \- 要素によるリスク管理 Access Control](./manage-risk-with-conditional-access-control.md) 」および「[ソリューションガイド: 追加の多要素認証による個人情報 \- アプリケーションのリスク管理](https://tnstage.redmond.corp.microsoft.com/library/dn280949.aspx)」を参照してください。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 [AD FS ユーザーサインインのカスタマイズ](AD-FS-user-sign-in-customization.md)

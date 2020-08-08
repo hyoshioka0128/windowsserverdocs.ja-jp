@@ -1,22 +1,20 @@
 ---
 title: 記憶域スペースダイレクトを使用した診断データの収集
 description: 記憶域スペースダイレクトのデータ収集ツールとその実行方法の具体的な例について説明します。
-ms.prod: windows-server
 ms.author: adagashe
-ms.technology: storage-spaces
 ms.topic: article
 author: adagashe
 ms.date: 10/24/2018
-ms.openlocfilehash: 75a74017f48b357dd029b062a7ce06775836bd0a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: fa71408dbb6a4757150ee896a760f37914aacc38
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858965"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87960975"
 ---
 # <a name="collect-diagnostic-data-with-storage-spaces-direct"></a>記憶域スペースダイレクトを使用した診断データの収集
 
-> 適用対象: Windows Server 2019、Windows Server 2016
+> 適用先:Windows Server 2019、Windows Server 2016
 
 記憶域スペースダイレクトとフェールオーバークラスターのトラブルシューティングに必要なデータを収集するために使用できるさまざまな診断ツールがあります。 この記事では、 **SDDCDiagnosticInfo** -クラスターの診断に役立つすべての関連情報を収集するワンタッチツールに注目します。
 
@@ -24,7 +22,7 @@ ms.locfileid: "80858965"
 
 ## <a name="installing-get-sddcdiagnosticinfo"></a>SDDCDiagnosticInfo をインストールしています
 
-**SDDCDiagnosticInfo** PowerShell コマンドレット ( **PCStorageDiagnosticInfo**(以前の**テスト-storagehealth**) を使用すると、フェールオーバークラスタリング (クラスター、リソース、ネットワーク、ノード)、記憶域スペース (物理ディスク、エンクロージャ、仮想ディスク)、クラスターの共有ボリューム、SMB ファイル共有、および重複除去のログを収集し、正常性チェックを実行できます。 
+**SDDCDiagnosticInfo** PowerShell コマンドレット ( **PCStorageDiagnosticInfo**(以前の**テスト-storagehealth**) を使用すると、フェールオーバークラスタリング (クラスター、リソース、ネットワーク、ノード)、記憶域スペース (物理ディスク、エンクロージャ、仮想ディスク)、クラスターの共有ボリューム、SMB ファイル共有、および重複除去のログを収集し、正常性チェックを実行できます。
 
 スクリプトをインストールする方法は2つあります。どちらも以下のようなものです。
 
@@ -51,7 +49,7 @@ Update-Module PrivateCloud.DiagnosticInfo
 
 ### <a name="github"></a>GitHub
 
-[GitHub リポジトリ](https://github.com/PowerShell/PrivateCloud.DiagnosticInfo/)は、このモジュールの最新バージョンです。ここでは繰り返し反復しているためです。 GitHub からモジュールをインストールするには、[アーカイブ](https://github.com/PowerShell/PrivateCloud.DiagnosticInfo/archive/master.zip)から最新のモジュールをダウンロードし、PrivateCloud ディレクトリを正しい PowerShell モジュールパスに抽出し ```$env:PSModulePath```
+[GitHub リポジトリ](https://github.com/PowerShell/PrivateCloud.DiagnosticInfo/)は、このモジュールの最新バージョンです。ここでは繰り返し反復しているためです。 GitHub からモジュールをインストールするには、[アーカイブ](https://github.com/PowerShell/PrivateCloud.DiagnosticInfo/archive/master.zip)から最新のモジュールをダウンロードし、PrivateCloud ディレクトリを、正しい PowerShell モジュールパスに抽出します。```$env:PSModulePath```
 
 ``` PowerShell
 # Allowing Tls12 and Tls11 -- e.g. github now requires Tls12
@@ -65,7 +63,7 @@ if (Test-Path $env:SystemRoot\System32\WindowsPowerShell\v1.0\Modules\$module) {
     Remove-Module $module -ErrorAction SilentlyContinue
 } else {
     Import-Module $module -ErrorAction SilentlyContinue
-} 
+}
 if (-not ($m = Get-Module $module -ErrorAction SilentlyContinue)) {
     $md = "$env:ProgramFiles\WindowsPowerShell\Modules"
 } else {
@@ -77,7 +75,7 @@ cp -Recurse $env:TEMP\$module-master\$module $md -Force -ErrorAction Stop
 rm -Recurse $env:TEMP\$module-master,$env:TEMP\master.zip
 Import-Module $module -Force
 
-``` 
+```
 
 オフラインクラスターでこのモジュールを入手する必要がある場合は、zip ファイルをダウンロードし、ターゲットサーバーノードに移動して、モジュールをインストールします。
 
@@ -106,7 +104,7 @@ Get-SDDCDiagnosticInfo
 指定したフォルダーに結果を保存するには:
 
 ``` PowerShell
-Get-SDDCDiagnosticInfo -WriteToPath D:\Folder 
+Get-SDDCDiagnosticInfo -WriteToPath D:\Folder
 ```
 
 実際のクラスターでは、次の例のようになります。
@@ -140,16 +138,16 @@ Get-SddcDiagnosticInfo -ClusterName S2D-Cluster -WriteToPath d:\SDDCDiagTemp
 #generate report and save to text file
     $report=Show-SddcDiagnosticReport -Path D:\SDDCDiagTemp
     $report | out-file d:\SDDCReport.txt
-    
+
 ```
 
 参考までに、[サンプルレポート](https://github.com/Microsoft/WSLab/blob/dev/Scenarios/S2D%20Tools/Get-SDDCDiagnosticInfo/SDDCReport.txt)と[サンプル zip](https://github.com/Microsoft/WSLab/blob/dev/Scenarios/S2D%20Tools/Get-SDDCDiagnosticInfo/HealthTest-S2D-Cluster-20180522-1546.ZIP)へのリンクを示します。
 
-Windows 管理センター (バージョン1812以降) でこれを表示するには、[*診断*] タブに移動します。次のスクリーンショットに示すように、次のようにします。 
+Windows 管理センター (バージョン1812以降) でこれを表示するには、[*診断*] タブに移動します。次のスクリーンショットに示すように、次のようにします。
 
 - 診断ツールのインストール
-- 更新 (最新ではない場合) 
-- 毎日の診断の実行をスケジュールします (これらはシステムに影響が少ないため、通常はバックグラウンドで5分 < かかり、クラスターで 500 mb を超えることはありません)。
+- 更新 (最新ではない場合)
+- 毎日の診断の実行をスケジュールします (これらはシステムに影響が少ないため、通常はバックグラウンドで5分 <かかり、クラスターで 500 mb を超えることはありません)。
 - 以前に収集した診断情報を自分でサポートまたは分析する必要がある場合は、それを表示します。
 
 ![wac diagnostics スクリーンショット](media/data-collection/Wac.png)
@@ -163,7 +161,7 @@ SDDCDiagnosticInfo の zip 形式の出力に含まれるファイルを次に�
 正常性の概要レポートは、次の形式で保存されます。
 - 0_CloudHealthSummary .log
 
-このファイルは収集されたすべてのデータを解析した後に生成され、システムの概要を簡単に示すために使用されます。 次のものが含まれます。
+このファイルは収集されたすべてのデータを解析した後に生成され、システムの概要を簡単に示すために使用されます。 その構成要素を次に示します。
 
 - システム情報
 - 記憶域の正常性の概要 (ノードの数の上限、リソースオンライン、クラスターの共有ボリュームオンライン、異常なコンポーネントなど)
@@ -179,13 +177,13 @@ SDDCDiagnosticInfo の zip 形式の出力に含まれるファイルを次に�
 このスクリプトは、さまざまなログ収集スクリプトを実行し、出力を xml ファイルとして保存します。 クラスターおよび正常性ログ、システム情報 (MSInfo32)、フィルター処理されていないイベントログ (フェールオーバークラスタリング、非診断、hyper-v、記憶域スペースなど)、および記憶域診断情報 (操作ログ) を収集します。 収集される情報の最新情報については、 [GitHub の README (収集内容)](https://github.com/PowerShell/PrivateCloud.DiagnosticInfo/blob/master/README.md#what-does-the-cmdlet-output-include)を参照してください。
 
 ## <a name="how-to-consume-the-xml-files-from-get-pcstoragediagnosticinfo"></a>PCStorageDiagnosticInfo から XML ファイルを使用する方法
-**PCStorageDiagnosticInfo**コマンドレットによって収集されたデータに含まれている XML ファイルのデータを使用できます。 これらのファイルには、仮想ディスク、物理ディスク、基本クラスター情報、およびその他の PowerShell 関連の出力に関する情報が含まれています。 
+**PCStorageDiagnosticInfo**コマンドレットによって収集されたデータに含まれている XML ファイルのデータを使用できます。 これらのファイルには、仮想ディスク、物理ディスク、基本クラスター情報、およびその他の PowerShell 関連の出力に関する情報が含まれています。
 
-これらの出力の結果を表示するには、PowerShell ウィンドウを開き、次の手順を実行します。 
+これらの出力の結果を表示するには、PowerShell ウィンドウを開き、次の手順を実行します。
 
 ```PowerShell
 ipmo storage
-$d = import-clixml <filename> 
+$d = import-clixml <filename>
 $d
 ```
 

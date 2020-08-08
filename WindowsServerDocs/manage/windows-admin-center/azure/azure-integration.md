@@ -6,18 +6,18 @@ author: haley-rowland
 ms.author: harowl
 ms.date: 09/19/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: b56960a531c8d7d8cf42cb0462d2fe4d422dfba7
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: c0a19e9bf00667e142c3aa6585c26b69c63e2aa7
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970899"
+ms.locfileid: "87997345"
 ---
 # <a name="configuring-azure-integration"></a>Azure 統合の構成
 
 >適用先:Windows Admin Center、Windows Admin Center Preview
 
-Windows 管理センターでは、Azure サービスと統合されるいくつかのオプション機能がサポートされています。 [Windows 管理センターで利用できる Azure 統合オプションについて説明します。](../plan/azure-integration-options.md)
+Windows 管理センターでは、Azure サービスと統合されるいくつかのオプション機能がサポートされています。 [Windows 管理センターで利用できる Azure 統合オプションについて説明します。](./index.md)
 
 Windows 管理センターゲートウェイが Azure と通信して、ゲートウェイアクセスの Azure Active Directory 認証を利用したり、Azure リソースをユーザーに代わって作成したりできるようにするには (たとえば、Azure Site Recovery を使用して Windows 管理センターで管理されている Vm を保護する場合)、まず Windows 管理センターゲートウェイを Azure に登録する必要があります。 これは、Windows 管理センターゲートウェイに対して1回だけ実行する必要があります。ゲートウェイを新しいバージョンに更新すると、設定が保持されます。
 

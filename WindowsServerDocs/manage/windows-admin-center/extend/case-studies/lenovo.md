@@ -1,25 +1,23 @@
 ---
 title: Windows 管理センター SDK ケーススタディ-Lenovo
 description: Windows 管理センター SDK ケーススタディ-Lenovo
-ms.technology: extend
 ms.topic: article
 author: daniellee-msft
 ms.author: jol
 ms.date: 1/7/2019
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: a51b4bb5f6dc7dcd002b8e7a8998ce731fa374ed
-ms.sourcegitcommit: fe89b8001ad664b3618708b013490de93501db05
+ms.openlocfilehash: 74afb81918512b45b39e3ba85649cd3edac1d3d7
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84942333"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87949716"
 ---
 # <a name="lenovo-xclarity-integrator-extension"></a>Lenovo XClarity インテグレーター拡張機能
 
 ## <a name="integrated-hardware-management-everywhere"></a>あらゆる場所で統合されたハードウェア管理
 
-Windows 管理センターの[Lenovo XClarity インテグレーター](https://www.lenovo.com/us/en/data-center/software/systems-management/XClarity-Integrator/p/WMD00000370)拡張機能を使用すると、管理者は Lenovo インフラストラクチャを Windows 管理センターから直接管理できます。 XClarity インテグレーター拡張機能には、スタンドアロンソリューション拡張機能が含まれています。また、シンプルなサーバー管理を可能にするために、既存のサーバーマネージャー、フェールオーバークラスターマネージャー、およびハイパー集約型のクラスターマネージャーソリューションを単一の統合された UI で拡張します。 
+Windows 管理センターの[Lenovo XClarity インテグレーター](https://www.lenovo.com/us/en/data-center/software/systems-management/XClarity-Integrator/p/WMD00000370)拡張機能を使用すると、管理者は Lenovo インフラストラクチャを Windows 管理センターから直接管理できます。 XClarity インテグレーター拡張機能には、スタンドアロンソリューション拡張機能が含まれています。また、シンプルなサーバー管理を可能にするために、既存のサーバーマネージャー、フェールオーバークラスターマネージャー、およびハイパー集約型のクラスターマネージャーソリューションを単一の統合された UI で拡張します。
 
 XClarity インテグレーター拡張機能に含まれているソリューション拡張機能を使用すると、Lenovo XClarity 性管理者、Lenovo ラック、タワーサーバー、またはシャーシ全体のすべてのサーバーに一度に接続できます。 サーバーを追加すると、追加されたすべてのノードの全体的な正常性状態を確認できます。
 

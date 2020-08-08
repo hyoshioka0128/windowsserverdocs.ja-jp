@@ -2,18 +2,16 @@
 title: ドメイン ベースの名前空間を Windows Server 2008 モードに移行する
 description: この記事では、ドメイン ベースの名前空間を Windows Server 2008 モードに移行する方法について説明します。
 ms.date: 6/5/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 3aa7743773a8a6e9ed22c0f626c2c6a0dbafce56
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: a7326584e2889fc0fd451b56ca4af065040f408d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475469"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87942276"
 ---
 # <a name="migrate-a-domain-based-namespace-to-windows-server-2008-mode"></a>ドメイン ベースの名前空間を Windows Server 2008 モードに移行する
 
@@ -53,6 +51,6 @@ ms.locfileid: "85475469"
     > [!NOTE]
     > 名前空間サーバーは名前空間をインポートする前に追加できますが、名前空間サーバーとして追加された後に名前空間全体をすぐにダウンロードするのではなく、名前空間サーバーが名前空間のメタデータを増加的にダウンロードすることになります。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 -   [DFS 名前空間を展開する](deploying-dfs-namespaces.md)
 -   [名前空間の種類を選択する](choose-a-namespace-type.md)

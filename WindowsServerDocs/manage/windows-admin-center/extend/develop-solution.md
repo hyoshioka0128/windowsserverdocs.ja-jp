@@ -1,19 +1,17 @@
 ---
 title: ソリューション拡張機能の開発
 description: ソリューション拡張機能の開発 Windows 管理センター SDK (Project ホノルル)
-ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 6ac9c6296fdf9159c9f50a1304dd345932052ac9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 27ded378a40537455423f79869dfd07dcd2ba625
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357147"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87949597"
 ---
 # <a name="develop-a-solution-extension"></a>ソリューション拡張機能の開発
 
@@ -33,7 +31,7 @@ Windows 管理センターの [接続] ページから接続を選択すると�
 > [!NOTE]
 > さまざまな拡張機能の種類に慣れていない場合は、 拡張[機能のアーキテクチャと拡張機能の種類](understand-extensions.md)の詳細については、こちらを参照してください。
 
-## <a name="prepare-your-environment"></a>環境の準備
+## <a name="prepare-your-environment"></a>環境を準備する
 
 まだインストールしていない場合は、すべてのプロジェクトに必要な依存関係とグローバルな前提条件をインストールして[環境を準備](prepare-development-environment.md)します。
 
@@ -57,7 +55,7 @@ wac create --company "{!Company Name}" --solution "{!Solution Name}" --tool "{!T
 wac create --company "Contoso Inc" --solution "Contoso Foo Works Suite" --tool "Manage Foo Works"
 ```
 
-これにより、ソリューションに指定した名前を使用して現在の作業ディレクトリ内に新しいフォルダーが作成され、必要なすべてのテンプレートファイルがプロジェクトにコピーされ、会社、ソリューション、およびツール名でファイルが構成されます。  
+これにより、ソリューションに指定した名前を使用して現在の作業ディレクトリ内に新しいフォルダーが作成され、必要なすべてのテンプレートファイルがプロジェクトにコピーされ、会社、ソリューション、およびツール名でファイルが構成されます。
 
 次に、作成したフォルダーにディレクトリを変更し、次のコマンドを実行して必要なローカルの依存関係をインストールします。
 
@@ -65,7 +63,7 @@ wac create --company "Contoso Inc" --solution "Contoso Foo Works Suite" --tool "
 npm install
 ```
 
-これが完了すると、Windows 管理センターに新しい拡張機能を読み込むために必要なすべての設定が完了します。 
+これが完了すると、Windows 管理センターに新しい拡張機能を読み込むために必要なすべての設定が完了します。
 
 ## <a name="add-content-to-your-extension"></a>拡張機能にコンテンツを追加する
 
@@ -75,7 +73,7 @@ Windows 管理センター CLI を使用して拡張機能を作成したので�
 - [IFrame](guides/add-iframe.md)を追加する
 - [カスタム接続プロバイダー](guides/create-connection-provider.md)を作成する
 - [ルートナビゲーション動作](guides/modify-root-navigation.md)の変更
- 
+
 その他の例については、 [GITHUB SDK サイト](https://aka.ms/wacsdk)を参照してください。
 -  [開発者ツール](https://github.com/Microsoft/windows-admin-center-sdk/tree/master/windows-admin-center-developer-tools)は、完全に機能する拡張機能であり、Windows 管理センターにサイドロードすることができます。また、独自の拡張機能で参照して使用できる、サンプル機能とツール例の豊富なコレクションが含まれています。
 

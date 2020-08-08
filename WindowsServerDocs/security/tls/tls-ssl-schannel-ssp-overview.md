@@ -1,20 +1,18 @@
 ---
 title: TLS/SSL の概要 (Schannel SSP)
 description: Windows Server のセキュリティ
-ms.prod: windows-server
-ms.technology: security-tls-ssl
 ms.topic: article
 ms.assetid: 1b7b0432-1bef-4912-8c9a-8989d47a4da9
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/16/2018
-ms.openlocfilehash: 0d963116fc9f22482398b38482f0c3c49f4be505
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 512dd20e658f610ac9de7247380eed5d2aed54f6
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475519"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87989476"
 ---
 # <a name="tlsssl-overview-schannel-ssp"></a>TLS/SSL の概要 (Schannel SSP)
 
@@ -29,7 +27,7 @@ Schannel は、インターネットで標準的に用いられている 2 種�
 
 TLS バージョン1.0、1.1、1.2、SSL バージョン2.0 および3.0、データグラムトランスポート層セキュリティ \( DTLS \) プロトコルバージョン1.0、プライベート通信トランスポートの \( PCT \) プロトコルは、公開キーの暗号化に基づいています。 Schannel 認証プロトコル スイートは、これらのプロトコルを備えています。 どの Schannel プロトコルでも、クライアント/サーバー モデルが使用されています。
 
-## <a name="applications"></a><a name="BKMK_APP"></a>プログラム
+## <a name="applications"></a><a name="BKMK_APP"></a>アプリケーション
 ネットワークを管理するうえでの課題の 1 つが、信頼されていないネットワークを介してアプリケーション間で送信されるデータを保護することです。 TLS と SSL を使用してサーバーとクライアントコンピューターを認証し、そのプロトコルを使用して認証されたパーティ間のメッセージを暗号化することができます。
 
 たとえば、TLS/SSL を使うと次のようなことができます。
@@ -40,14 +38,14 @@ TLS バージョン1.0、1.1、1.2、SSL バージョン2.0 および3.0、デ�
 -   SQL アクセス
 -   電子メール
 
-## <a name="requirements"></a><a name="BKMK_SOFT"></a>必要性
+## <a name="requirements"></a><a name="BKMK_SOFT"></a>要件
 TLS および SSL プロトコルは、クライアント/サーバーモデルを使用し、公開キー基盤を必要とする証明書認証に基づいています。
 
 ## <a name="server-manager-information"></a><a name="BKMK_INSTALL"></a>サーバー マネージャー情報
 TLS、SSL、または Schannel を実装するために必要な構成手順はありません。
 
-## <a name="additional-references"></a>その他のリファレンス ##
+## <a name="additional-references"></a>その他の参照情報 ##
 
--   [Schannel セキュリティ パッケージ](https://docs.microsoft.com/windows/desktop/com/schannel)
--   [セキュリティで保護されたチャネル](https://docs.microsoft.com/windows/desktop/SecAuthN/secure-channel)
--   [トランスポート層セキュリティプロトコル](https://docs.microsoft.com/windows/desktop/SecAuthN/transport-layer-security-protocol)
+-   [Schannel セキュリティ パッケージ](/windows/desktop/com/schannel)
+-   [セキュリティで保護されたチャネル](/windows/desktop/SecAuthN/secure-channel)
+-   [トランスポート層セキュリティプロトコル](/windows/desktop/SecAuthN/transport-layer-security-protocol)

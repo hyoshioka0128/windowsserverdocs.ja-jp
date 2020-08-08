@@ -1,19 +1,17 @@
 ---
 title: メモリ内読み取りキャッシュの記憶域スペースダイレクト
-ms.prod: windows-server
 ms.author: eldenc
 manager: siroy
-ms.technology: storage-spaces
 ms.topic: article
 author: eldenchristensen
 ms.date: 02/20/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: fff78ddc831ae9f6cba103d7630da3afec2c87d7
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: ce4546a3c3933700b7aec812027e2abc91f718f9
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474239"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87960915"
 ---
 # <a name="using-storage-spaces-direct-with-the-csv-in-memory-read-cache"></a>CSV インメモリ読み取りキャッシュでの記憶域スペースダイレクトの使用
 > 適用先:Windows Server 2019、Windows Server 2016
@@ -69,6 +67,6 @@ Get-ClusterSharedVolume | ForEach {
 }
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
-- [記憶域スペースダイレクトの概要](storage-spaces-direct-overview.md)
+- [記憶域スペース ダイレクトの概要](storage-spaces-direct-overview.md)

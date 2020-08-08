@@ -1,20 +1,18 @@
 ---
 ms.assetid: 1368bc83-9121-477a-af09-4ae73ac16789
 title: 記憶域スペース ダイレクト用のドライブの選択
-ms.prod: windows-server
 ms.author: cosdar
 manager: eldenc
-ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 07/01/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: aae554c87b8a4ac6005ad359bc474026f5f1ed9e
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: e01966d268968a5bdec3d704d32bcc84b2638b27
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769410"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961035"
 ---
 # <a name="choosing-drives-for-storage-spaces-direct"></a>記憶域スペース ダイレクト用のドライブの選択
 

@@ -6,12 +6,12 @@ ms.author: nedpyle
 manager: siroy
 ms.date: 06/02/2020
 ms.topic: article
-ms.openlocfilehash: ff7a276802a0bd6a61fc0ea5eb6148972ac6d674
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: e8e327fcf2f9173c7fb571580280ba4d5b7389fe
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87939309"
+ms.locfileid: "87997497"
 ---
 # <a name="storage-migration-service-frequently-asked-questions-faq"></a>記憶域移行サービスに関してよく寄せられる質問 (FAQ)
 
@@ -126,7 +126,7 @@ Storage Migration Service には、Storage Migration Service プロキシサー�
 
 - **高パフォーマンスの処理を有効にします。** サーバーの BIOS および UEFI の設定が、C 状態の無効化、QPI 速度の設定、NUMA の有効化、最大メモリ動作周波数の設定など、高パフォーマンスを有効にする設定であることを確認します。 Windows Server の電源管理が高パフォーマンスに設定されていることを確認します。 必要に応じて再起動します。 移行が完了したら、必ずこれらの状態を適切な状態に戻してください。
 
-- **ハードウェアの調整**Windows server 2019 と Windows Server 2016 を実行する orchestrator および対象コンピューターのチューニングについては、「 [Windows server 2016 のパフォーマンスチューニングガイドライン](/windows-server/administration/performance-tuning/)」を参照してください。 [ネットワークサブシステムのパフォーマンスチューニング](../../networking/technologies/network-subsystem/net-sub-performance-tuning-nics.md)に関するセクションには、特に重要な情報が含まれています。
+- **ハードウェアの調整**Windows server 2019 と Windows Server 2016 を実行する orchestrator および対象コンピューターのチューニングについては、「 [Windows server 2016 のパフォーマンスチューニングガイドライン](../../administration/performance-tuning/index.md)」を参照してください。 [ネットワークサブシステムのパフォーマンスチューニング](../../networking/technologies/network-subsystem/net-sub-performance-tuning-nics.md)に関するセクションには、特に重要な情報が含まれています。
 
 - **より高速なストレージを使用します。** ソースコンピューターのストレージ速度をアップグレードするのは困難な場合がありますが、転送時に不要なボトルネックが発生しないようにするために、ソースが読み取り IO パフォーマンスであるため、宛先ストレージの書き込み IO パフォーマンスが少なくとも高速であることを確認する必要があります。 移行先が VM の場合は、少なくとも移行の目的で、少なくとも移行のために、フラッシュ層、ミラー化されたすべてのフラッシュまたはハイブリッドスペースを使用する記憶域スペースダイレクト HCI クラスターなどのハイパーバイザーホストの最速のストレージ層で実行されることを確認します。 SMS の移行が完了したら、低速の層またはホストに VM をライブマイグレーションできます。
 
@@ -180,7 +180,7 @@ Storage Migration Service では、hidden c:\programdata\microsoft\storagemigrat
 サポートを受けるには:
 
  - [Windows Server Tech Community](https://techcommunity.microsoft.com/t5/Windows-Server/ct-p/Windows-Server)に質問を投稿する
- - [Windows Server 2019 フォーラム](https://docs.microsoft.com/answers/topics/windows-server-2019.html)での投稿
+ - [Windows Server 2019 フォーラム](/answers/topics/windows-server-2019.html)での投稿
  - [Microsoft サポート](https://support.microsoft.com)を使用してサポートケースを開く
 
 ## <a name="additional-references"></a>その他の参照情報

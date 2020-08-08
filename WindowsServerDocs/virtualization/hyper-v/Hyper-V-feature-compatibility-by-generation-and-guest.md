@@ -7,12 +7,12 @@ ms.assetid: 81c1f32d-7814-4992-8a66-dd4b77c939b4
 author: kbdazure
 ms.author: kathydav
 ms.date: 12/05/2016
-ms.openlocfilehash: 1ea9e0d86e61f574af45b85701bae941bb9f6ad5
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 5de7f55d9fead7b720991749dd1c83aa727636c4
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87960755"
+ms.locfileid: "87997029"
 ---
 # <a name="hyper-v-feature-compatibility-by-generation-and-guest"></a>生成とゲストでの HYPER-V 機能の互換性
 
@@ -32,13 +32,13 @@ ms.locfileid: "87960755"
 チェックポイント | 1 と 2 | 任意のサポートされているゲスト
 ゲスト クラスタ リング | 1 と 2 | クラスター対応アプリケーションを実行し、iSCSI ターゲット ソフトウェアがインストールされているゲスト
 レプリケーション | 1 と 2 | 任意のサポートされているゲスト
-ドメイン コントローラー | 1 と 2 | 運用チェックポイントのみを使用する、サポートされているすべての Windows Server ゲスト。 「[サポートされている Windows Server ゲストオペレーティングシステム](https://docs.microsoft.com/windows-server/virtualization/hyper-v/supported-windows-guest-operating-systems-for-hyper-v-on-windows#supported-windows-server-guest-operating-systems)」を参照してください。
+ドメイン コントローラー | 1 と 2 | 運用チェックポイントのみを使用する、サポートされているすべての Windows Server ゲスト。 「[サポートされている Windows Server ゲストオペレーティングシステム](./supported-windows-guest-operating-systems-for-hyper-v-on-windows.md#supported-windows-server-guest-operating-systems)」を参照してください。
 
 ## <a name="compute"></a>Compute
 
 機能  | Generation | ゲスト オペレーティング システム
 ------------- | ------------- | -----------
-動的メモリ | 1 と 2 | サポートされているゲストの特定のバージョン。 参照してください [HYPER-V 動的メモリの概要](https://technet.microsoft.com/library/hh831766.aspx) の Windows Server 2016 および Windows 10 より前のバージョン。
+動的メモリ | 1 と 2 | サポートされているゲストの特定のバージョン。 参照してください [HYPER-V 動的メモリの概要](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831766(v=ws.11)) の Windows Server 2016 および Windows 10 より前のバージョン。
 ホット追加/削除のメモリ | 1 と 2 | Windows Server 2016 の場合は Windows 10
 仮想 NUMA | 1 と 2 | 任意のサポートされているゲスト
 
@@ -87,10 +87,3 @@ SMB3 | 1 と 2 | SMB3 をサポートするものすべて
 記憶域スペース ダイレクト | 2 | Windows Server 2016
 仮想ファイバー チャネル | 1 と 2 | Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 VHDX 形式 | 1 と 2 | 任意のサポートされているゲスト
-
-
-
-
-
-
-

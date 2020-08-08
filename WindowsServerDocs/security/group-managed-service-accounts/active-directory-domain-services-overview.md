@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 86d65aac95dcb5fb33f650ae5e03f943b78f78f5
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 87f8aefb2645fa13ba1c9ac98e7970fc908e7bed
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971499"
+ms.locfileid: "87997054"
 ---
 # <a name="overview-of-active-directory-domain-services"></a>Active Directory Domain Services の概要
 
@@ -22,7 +22,7 @@ ms.locfileid: "87971499"
 
 Active Directory は、ネットワーク上のオブジェクトに関する情報を格納すると共に、管理者とユーザーがその情報を簡単に検索および利用できるようにします。 Active Directory は、構造化されたデータ ストアを、ディレクトリ情報の論理的で階層的な編成の基盤として使用します。
 
-このデータストアは、ディレクトリとも呼ばれ、Active Directory オブジェクトに関する情報を格納します。 これらのオブジェクトには、通常、サーバー、ボリューム、プリンターなどの共有リソース、およびネットワークユーザーとコンピューターアカウントが含まれます。 Active Directory データストアの詳細については、「[ディレクトリデータストア](https://technet.microsoft.com/library/cc736627(v=ws.10).aspx)」を参照してください。
+このデータストアは、ディレクトリとも呼ばれ、Active Directory オブジェクトに関する情報を格納します。 これらのオブジェクトには、通常、サーバー、ボリューム、プリンターなどの共有リソース、およびネットワークユーザーとコンピューターアカウントが含まれます。 Active Directory データストアの詳細については、「[ディレクトリデータストア](/previous-versions/windows/it-pro/windows-server-2003/cc736627(v=ws.10))」を参照してください。
 
 セキュリティは、ログオン認証およびディレクトリ内のオブジェクトに対するアクセス制御によって、Active Directory に統合されます。 管理者は、シングル ネットワーク ログオンで、ネットワーク全体のディレクトリ データおよび組織を管理できます。また、承認されたネットワーク ユーザーは、ネットワーク上の任意の場所にあるリソースにアクセスできます。 ポリシー ベースの管理により、複雑なネットワークの管理を容易に行うことができます。 Active Directory セキュリティの詳細については、「セキュリティの概要」を参照してください。
 
@@ -41,14 +41,13 @@ Active Directory には次のものも含まれます。
 ## <a name="understanding-active-directory"></a>Active Directory について
  このセクションでは、コア Active Directory の概念へのリンクを示します。
 
-* [Active Directory 構造およびストレージテクノロジ](https://technet.microsoft.com/library/cc759186(v=ws.10).aspx)
-* [ドメインコントローラーの役割](https://technet.microsoft.com/library/cc786438(v=ws.10).aspx)
+* [Active Directory 構造およびストレージテクノロジ](/previous-versions/windows/it-pro/windows-server-2003/cc759186(v=ws.10))
+* [ドメインコントローラーの役割](/previous-versions/windows/it-pro/windows-server-2003/cc786438(v=ws.10))
 * Active Directory スキーマ
-* [信頼とは](https://technet.microsoft.com/library/cc771294(v=ws.10).aspx)
-* [Active Directory レプリケーションテクノロジ](https://technet.microsoft.com/library/cc786438(v=ws.10).aspx)
-* [Active Directory 検索と発行のテクノロジ](https://technet.microsoft.com/library/cc775686(v=ws.10).aspx)
+* [信頼とは](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771294(v=ws.10))
+* [Active Directory レプリケーションテクノロジ](/previous-versions/windows/it-pro/windows-server-2003/cc786438(v=ws.10))
+* [Active Directory 検索と発行のテクノロジ](/previous-versions/windows/it-pro/windows-server-2003/cc775686(v=ws.10))
 * DNS とグループポリシーとの相互運用
-* [スキーマについて](https://technet.microsoft.com/library/cc759402(v=ws.10).aspx)
+* [スキーマについて](/previous-versions/windows/it-pro/windows-server-2003/cc759402(v=ws.10))
 
-Active Directory の概念の詳細な一覧については、「 [Active Directory につい](https://technet.microsoft.com/library/cc781408(v=ws.10).aspx)て」を参照してください。
-
+Active Directory の概念の詳細な一覧については、「 [Active Directory につい](/previous-versions/windows/it-pro/windows-server-2003/cc781408(v=ws.10))て」を参照してください。

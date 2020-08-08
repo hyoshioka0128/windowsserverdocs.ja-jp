@@ -1,20 +1,18 @@
 ---
 title: HYPER-V で仮想マシンを作成します。
 description: Hyper-v マネージャーまたは Windows PowerShell を使用して仮想マシンを作成する手順について説明します。
-ms.prod: windows-server
 manager: dongill
-ms.technology: compute-hyper-v
 ms.topic: get-started-article
 ms.assetid: 59297022-a898-456c-b299-d79cd5860238
 author: kbdazure
 ms.author: kathydav
 ms.date: 10/04/2016
-ms.openlocfilehash: 703c3f739200fafa4934681c300a61d8039d660c
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 5f4e07919503f283add8da1c8dd522f3d2b7f222
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475659"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87942018"
 ---
 # <a name="create-a-virtual-machine-in-hyper-v"></a>HYPER-V で仮想マシンを作成します。
 
@@ -42,9 +40,9 @@ Hyper-v マネージャーと Windows PowerShell を使用して仮想マシン�
 
 1. Windows デスクトップで [スタート] ボタンをクリックし、名前の一部を入力 **Windows PowerShell**します。
 
-2. [ **Windows PowerShell** ] を右クリックし、[**管理者として実行**] を選択します。
+2. **[Windows PowerShell]** を右クリックして **[管理者として実行]** を選択します。
 
-3. [Get VMSwitch](https://technet.microsoft.com/library/hh848499.aspx)を使用して、仮想マシンで使用する仮想スイッチの名前を取得します。  たとえば、オブジェクトに適用された
+3. [Get VMSwitch](https://technet.microsoft.com/library/hh848499.aspx)を使用して、仮想マシンで使用する仮想スイッチの名前を取得します。  たとえば、
 
    ```
    Get-VMSwitch  * | Format-Table Name
@@ -68,7 +66,7 @@ Hyper-v マネージャーと Windows PowerShell を使用して仮想マシン�
        New-VM -Name <Name> -MemoryStartupBytes <Memory> -BootDevice <BootDevice> -VHDPath <VHDPath> -Path <Path> -Generation <Generation> -Switch <SwitchName>
        ```
 
-       次に例を示します。
+       例:
 
        ```
        New-VM -Name Win10VM -MemoryStartupBytes 4GB -BootDevice VHD -VHDPath .\VMs\Win10.vhdx -Path .\VMData -Generation 2 -Switch ExternalSwitch
@@ -76,7 +74,7 @@ Hyper-v マネージャーと Windows PowerShell を使用して仮想マシン�
 
        これにより、4 GB のメモリを備えた Win10VM という名前の第2世代の仮想マシンが作成されます。 これは、現在のディレクトリの VMs\Win10.vhdx フォルダーから起動し、ExternalSwitch という名前の仮想スイッチを使用します。 仮想マシンの構成ファイルは、VMData フォルダーに格納されます。
 
-   - **新しいバーチャルハードディスク**-新しいバーチャルハードディスクを含むバーチャルマシンを作成するには、前の例の **-VHDPath**パラメーターを **-NewVHDPath**に置き換え、 **-NewVHDSizeBytes**パラメーターを追加します。 たとえば、オブジェクトに適用された
+   - **新しいバーチャルハードディスク**-新しいバーチャルハードディスクを含むバーチャルマシンを作成するには、前の例の **-VHDPath**パラメーターを **-NewVHDPath**に置き換え、 **-NewVHDSizeBytes**パラメーターを追加します。 たとえば、
 
      ```
      New-VM -Name Win10VM -MemoryStartupBytes 4GB -BootDevice VHD -NewVHDPath .\VMs\Win10.vhdx -Path .\VMData -NewVHDSizeBytes 20GB -Generation 2 -Switch ExternalSwitch
@@ -90,7 +88,7 @@ Hyper-v マネージャーと Windows PowerShell を使用して仮想マシン�
    Start-VM -Name <Name>
    ```
 
-   次に例を示します。
+   例:
 
    ```
    Start-VM -Name Win10VM
@@ -113,9 +111,9 @@ Hyper-v マネージャーと Windows PowerShell を使用して仮想マシン�
 |**ネットワークの構成**|[未接続]|既存の仮想スイッチの一覧から、使用する仮想マシンのネットワーク接続を選択できます。 「 [Hyper-v 仮想マシンの仮想スイッチを作成する」を](Create-a-virtual-switch-for-Hyper-V-virtual-machines.md)参照してください。|
 |**仮想ハード ディスクの接続**|仮想ハード_ディスクを作成します。<p>名前: <*vmname*> .vhdx<p>**場所**: **C:\Users\Public\Documents\Hyper-V\Virtual ハードディスク \\ **<p>**サイズ**: 127gb|また、既存のバーチャルハードディスクを使用するか、後でバーチャルハードディスクを待機して接続するかを選択することもできます。|
 |**インストール オプション**|後でオペレーティングシステムをインストールする|これらのオプションを使用すると、バーチャルマシンのブート順序が変更され、.iso ファイル、起動可能なフロッピーディスク、または Windows 展開サービス (WDS) などのネットワークインストールサービスからインストールできるようになります。|
-|**まとめ**|選択したオプションが表示され、それらが正しいことを確認できます。<p>-   Name<br />-生成<br />-   メモリ<br />-ネットワーク<br />-ハードディスク<br />-オペレーティングシステム|**ヒント:** ページから概要をコピーし、電子メールまたはその他の場所に貼り付けて、仮想マシンを追跡しやすくすることができます。|
+|**要約**|選択したオプションが表示され、それらが正しいことを確認できます。<p>-   Name<br />-生成<br />-   メモリ<br />-ネットワーク<br />-ハードディスク<br />-オペレーティングシステム|**ヒント:** ページから概要をコピーし、電子メールまたはその他の場所に貼り付けて、仮想マシンを追跡しやすくすることができます。|
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [New-VM](https://technet.microsoft.com/library/hh848537.aspx)
 

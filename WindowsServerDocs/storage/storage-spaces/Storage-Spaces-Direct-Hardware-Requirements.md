@@ -1,20 +1,18 @@
 ---
 title: 記憶域スペース ダイレクトのハードウェア要件
-ms.prod: windows-server
 description: 記憶域スペース ダイレクトをテストするための最小ハードウェア要件です。
 ms.author: eldenc
 manager: eldenc
-ms.technology: storage-spaces
 ms.topic: article
 author: eldenchristensen
 ms.date: 07/24/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 45ef438d58c9d36275f2e7a32ce93a383bd21a70
-ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
+ms.openlocfilehash: 8c53179f32f0e6837297859413fa0cb88d66a0d2
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87864277"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961126"
 ---
 # <a name="storage-spaces-direct-hardware-requirements"></a>記憶域スペース ダイレクトのハードウェア要件
 
@@ -60,19 +58,19 @@ ms.locfileid: "87864277"
 
 ## <a name="networking"></a>ネットワーク
 
-記憶域スペースダイレクトには、信頼性の高い高帯域幅、低待機時間の各ノード間のネットワーク接続が必要です。  
+記憶域スペースダイレクトには、信頼性の高い高帯域幅、低待機時間の各ノード間のネットワーク接続が必要です。
 
 Small scale 2-3 ノードの最小相互接続
 - 10 Gbps ネットワークインターフェイスカード (NIC)、またはより高速
 - 冗長性とパフォーマンスのために推奨される各ノードからの2つ以上のネットワーク接続
 
-4 + の高パフォーマンス、大規模、またはデプロイのために推奨される相互接続 
+4 + の高パフォーマンス、大規模、またはデプロイのために推奨される相互接続
 - リモートダイレクトメモリアクセス (RDMA) 対応の Nic、iWARP (推奨) または RoCE
 - 冗長性とパフォーマンスのために推奨される各ノードからの2つ以上のネットワーク接続
 - 25 Gbps NIC 以上
 
 スイッチまたは switchless ノードの相互接続
-- スイッチ: ネットワークスイッチが帯域幅とネットワークの種類を処理するように適切に構成されている必要があります。  RoCE プロトコルを実装する RDMA を使用している場合は、ネットワークデバイスとスイッチの構成がさらに重要になります。 
+- スイッチ: ネットワークスイッチが帯域幅とネットワークの種類を処理するように適切に構成されている必要があります。  RoCE プロトコルを実装する RDMA を使用している場合は、ネットワークデバイスとスイッチの構成がさらに重要になります。
 - Switchless: ノードは、直接接続を使用して相互接続できます。スイッチの使用は避けてください。  すべてのノードがクラスターの他のすべてのノードと直接接続している必要があります。
 
 

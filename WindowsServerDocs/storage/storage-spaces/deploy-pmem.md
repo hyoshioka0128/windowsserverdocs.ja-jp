@@ -1,27 +1,25 @@
 ---
-title: 永続的なメモリの理解とデプロイ
+title: 永続メモリの理解と配置
 description: 永続メモリの概要と、Windows Server 2019 で記憶域スペースダイレクトを使用して設定する方法の詳細について説明します。
-ms.prod: windows-server
 ms.author: adagashe
-ms.technology: storage-spaces
 ms.topic: article
 author: adagashe
 ms.date: 1/27/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f5f88ac2ec728e176735ad58d9d67112583c527
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 512b53be7af89fe9e0fd017af14425264062ed29
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85469647"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87960905"
 ---
-# <a name="understand-and-deploy-persistent-memory"></a>永続的なメモリの理解とデプロイ
+# <a name="understand-and-deploy-persistent-memory"></a>永続メモリの理解と配置
 
 > 適用対象:Windows Server 2019
 
 永続メモリ (または PMem) は、手頃な価格の大きな容量と永続性を備えた一意の組み合わせを提供する新しい種類のメモリテクノロジです。 この記事では、記憶域スペースダイレクトを使用して、PMem の背景と、Windows Server 2019 に展開する手順について説明します。
 
-## <a name="background"></a>背景
+## <a name="background"></a>バックグラウンド
 
 PMem は、電力サイクルを通じてコンテンツを保持する非揮発性 RAM (NVDIMM) の一種です。 システムの電源が切れた場合でも、予期しない停電、ユーザーによるシャットダウン、システムクラッシュなどが発生した場合でも、メモリの内容は維持されます。 この一意の特性は、ストレージとして PMem を使用することもできることを意味します。 これは、"ストレージクラスメモリ" として、PMem を参照しているユーザーを聞いてくる可能性があります。
 
@@ -309,8 +307,8 @@ Initializing the physical persistent memory device. This may take a few moments.
 > [!IMPORTANT]
 > **Initialize-PmemPhysicalDevice は、** 永続メモリ内のデータ損失を発生させます。 これは、永続メモリ関連の問題を修正するための最後の手段として使用します。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
-- [記憶域スペースダイレクトの概要](storage-spaces-direct-overview.md)
+- [記憶域スペース ダイレクトの概要](storage-spaces-direct-overview.md)
 - [Windows での記憶域クラス メモリ (NVDIMM-N) の正常性管理](storage-class-memory-health.md)
 - [キャッシュについて](understand-the-cache.md)

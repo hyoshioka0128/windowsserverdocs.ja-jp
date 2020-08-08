@@ -1,19 +1,17 @@
 ---
 title: 記憶域レプリカの概要
-ms.prod: windows-server
 manager: siroy
 ms.author: nedpyle
-ms.technology: storage-replica
 ms.topic: get-started-article
 author: nedpyle
 ms.date: 4/26/2019
 ms.assetid: e9b18e14-e692-458a-a39f-d5b569ae76c5
-ms.openlocfilehash: 400af7c4fb5db6e6740b1140688602c55d8ca0a9
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 1d8997edf1354a49b9b67e417906eeaa307fdee6
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85469807"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961226"
 ---
 # <a name="storage-replica-overview"></a>記憶域レプリカの概要
 
@@ -24,7 +22,7 @@ ms.locfileid: "85469807"
 記憶域レプリカでは、以下の同期および非同期レプリケーションをサポートしています。
 
 * **同期レプリケーション**は、クラッシュ前後の整合性が維持されるボリュームを使用して待機時間の短いネットワーク サイト内のデータをミラーリングし、障害時のファイル システム レベルでのデータ損失をゼロにします。
-* **非同期レプリケーション**は、大都市圏外のサイト間で待機時間の長いネットワーク リンクを通じてデータをミラーリングしますが、障害時に両方のサイトでデータが一致する保証はありません。
+* **非同期レプリケーション**では、大規模なサイト間のデータが、待機時間の長いネットワークリンクを介してミラーリングされますが、障害発生時に両方のサイトのデータのコピーが同一であることは保証されません。
 
 ## <a name="why-use-storage-replica"></a>記憶域レプリカを使用する理由
 
@@ -87,8 +85,8 @@ ms.locfileid: "85469807"
 
 | 機能 | 詳細 |
 | ----------- | ----------- |
-| Type | ホスト ベース |
-| 同期 | はい |
+| 種類 | ホスト ベース |
+| Synchronous | はい |
 | 非同期 | はい |
 | 記憶域ハードウェア非依存 | はい |
 | レプリケーション単位 | ボリューム (パーティション) |
@@ -140,7 +138,7 @@ ms.locfileid: "85469807"
 
 | モード | ダイアグラム | 手順 |
 | -------- | ----------- | --------- |
-| **同期**<p>データの損失なし<p>RPO | ![同期レプリケーションにおいて記憶域レプリカがデータを書き込む方法を示している図](./media/Storage-Replica-Overview/Storage_SR_SynchronousV2.png) | 1.アプリケーションがデータを書き込みます<br />2.ログ データが書き込まれ、データがリモート サイトにレプリケートされます<br />3.リモート サイトにログ データが書き込まれます<br />4.リモート サイトから確認が返されます<br />5.アプリケーションの書き込みが確認されます<p>t & t1 :データはボリュームにフラッシュされ、ログは常にライトスルーされます |
+| **Synchronous**<p>データの損失なし<p>RPO | ![同期レプリケーションにおいて記憶域レプリカがデータを書き込む方法を示している図](./media/Storage-Replica-Overview/Storage_SR_SynchronousV2.png) | 1.アプリケーションがデータを書き込みます<br />2.ログ データが書き込まれ、データがリモート サイトにレプリケートされます<br />3.リモート サイトにログ データが書き込まれます<br />4.リモート サイトから確認が返されます<br />5.アプリケーションの書き込みが確認されます<p>t & t1 :データはボリュームにフラッシュされ、ログは常にライトスルーされます |
 
 ### <a name="asynchronous-replication"></a>非同期レプリケーション
 
@@ -188,7 +186,7 @@ Windows Server バージョン1709の**テストフェールオーバー**コマ
 
 Windows Server 2019 の記憶域レプリカの新機能の一覧については、「 [storage の新](../whats-new-in-storage.md#storage-replica2019)機能」を参照してください。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [共有記憶域を使用した拡張クラスターレプリケーション](stretch-cluster-replication-using-shared-storage.md)
 - [サーバー間の記憶域レプリケーション](server-to-server-storage-replication.md)

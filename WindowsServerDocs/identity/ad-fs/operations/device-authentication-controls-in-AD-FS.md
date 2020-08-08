@@ -6,14 +6,12 @@ ms.author: billmath
 manager: mtillman
 ms.date: 11/09/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: f9cc811c6a78e58ff3550343e89c19806b9914fb
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 976a8db89d8ffdb08f5f453619b7a341fb4dcdb4
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966874"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87949696"
 ---
 # <a name="device-authentication-controls-in-ad-fs"></a>AD FS でのデバイス認証の制御
 次のドキュメントは、Windows Server 2016 および 2012 R2 でデバイス認証コントロールを有効にする方法を示しています。
@@ -33,11 +31,11 @@ PS:\>Set-AdfsGlobalAuthenticationPolicy –DeviceAuthenticationEnabled $true
 デバイス認証を無効にするには、同じコマンドレットを使用して、値を $false に設定します。
 
 ## <a name="device-authentication-controls-in-ad-fs-2016"></a>AD FS 2016 のデバイス認証の制御
-2012 R2 でサポートされているデバイス認証の種類は、clientTLS のみでした。  AD FS 2016 では、clientTLS に加えて、最新のデバイス認証用に2つの新しい種類のデバイス認証があります。  具体的には次のとおりです。
+2012 R2 でサポートされているデバイス認証の種類は、clientTLS のみでした。  AD FS 2016 では、clientTLS に加えて、最新のデバイス認証用に2つの新しい種類のデバイス認証があります。  これらのボタンの役割は、次のとおりです。
 - PKeyAuth
 - PRT
 
-新しい動作を制御するために、 `DeviceAuthenticationEnabled` プロパティはという新しいプロパティと組み合わせて使用され `DeviceAuthenticationMethod` ます。  
+新しい動作を制御するために、 `DeviceAuthenticationEnabled` プロパティはという新しいプロパティと組み合わせて使用され `DeviceAuthenticationMethod` ます。
 
 デバイスの認証方法によって、実行されるデバイス認証の種類 (PRT、PKeyAuth、clientTLS、またはその一部) が決まります。
 次の値があります。
@@ -78,11 +76,11 @@ PS:\>Set-AdfsGlobalAuthenticationPolicy –DeviceAuthenticationMethod All
 | ----- | ----- | ----- |
 |2016 RTM|SignedToken|PRT + PkeyAuth|
 ||用 clienttls|用 clienttls|
-||All|PRT + PkeyAuth + clientTLS|
+||すべて|PRT + PkeyAuth + clientTLS|
 |2016 RTM + 最新の Windows Update|SignedToken (変更された意味)|PRT (のみ)|
 ||PkeyAuth (新規)|PRT + PkeyAuth|
 ||用 clienttls|PRT + clientTLS|
-||All|PRT + PkeyAuth + clientTLS|
+||すべて|PRT + PkeyAuth + clientTLS|
 
 ## <a name="see-also"></a>参照
 [AD FS の運用](../ad-fs-operations.md)

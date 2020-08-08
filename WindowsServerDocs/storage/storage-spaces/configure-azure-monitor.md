@@ -1,18 +1,16 @@
 ---
 title: Azure Monitor の理解と構成
 description: Azure Monitor とは何か、および Windows Server 2016 および2019で記憶域スペースダイレクトクラスターの電子メールと sms アラートを構成する方法に関する詳細な設定情報。
-ms.prod: windows-server
 ms.author: adagashe
-ms.technology: storage-spaces
 ms.topic: article
 author: adagashe
 ms.date: 01/10/2020
-ms.openlocfilehash: 72d08b3e4461eeea07e161de1073f5320830028c
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 40ee23fa8c1fa88c54e5c8ee1e2c3ebd3453bfff
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86953986"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961136"
 ---
 # <a name="use-azure-monitor-to-send-emails-for-health-service-faults"></a>Azure Monitor を使用してヘルス サービスのエラーの電子メールを送信する
 
@@ -206,7 +204,7 @@ Event
 Event | where (EventLevelName == "Error")
 ```
 
-![フィルター](media/configure-azure-monitor/log-analytics-portal-eventlist-02.png)
+![Assert](media/configure-azure-monitor/log-analytics-portal-eventlist-02.png)
 
 注意が必要なイベントに対して approriate クエリを作成したら、次の手順のために保存します。
 
@@ -246,8 +244,8 @@ Azure Monitor によって送信される電子メールの例を次に示しま
 
 ![アラートの電子メールの例](media/configure-azure-monitor/warning.png)
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
-- [記憶域スペースダイレクトの概要](storage-spaces-direct-overview.md)
+- [記憶域スペース ダイレクトの概要](storage-spaces-direct-overview.md)
 - 詳細については、 [Azure Monitor のドキュメント](/azure/azure-monitor/learn/tutorial-viewdata)を参照してください。
 - [他の Azure ハイブリッドサービスに接続](../../manage/windows-admin-center/azure/index.md)する方法の概要については、こちらをご覧ください。

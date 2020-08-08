@@ -2,16 +2,15 @@
 title: 記憶域スペースダイレクトのボリュームの割り当てを区切ります。
 ms.author: cosmosdarwin
 manager: eldenc
-ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 03/29/2018
-ms.openlocfilehash: ccce763b437b461d33dd72cb3d656b825746e6da
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 6dac775d3e92a0f7a076800d5c07af2776720c1d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86953845"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87960955"
 ---
 # <a name="delimit-the-allocation-of-volumes-in-storage-spaces-direct"></a>記憶域スペースダイレクトのボリュームの割り当てを区切ります。
 > 適用対象:Windows Server 2019
@@ -33,7 +32,7 @@ Windows Server 2019 では、記憶域スペースダイレクトでボリュー
 - クラスターのサーバー数が6台未満です。もしくは
 - クラスターが[パリティ](storage-spaces-fault-tolerance.md#parity)または[ミラーアクセラレータによるパリティ](storage-spaces-fault-tolerance.md#mirror-accelerated-parity)回復性を使用する
 
-## <a name="understand"></a>概要
+## <a name="understand"></a>理解
 
 ### <a name="review-regular-allocation"></a>レビュー: 通常の割り当て
 
@@ -200,9 +199,9 @@ Server1 には*Myvolume*のスラブがなく、代わりに Server5 が使用�
 
 いいえ。通常の割り当てと同じです。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
-- [記憶域スペースダイレクトの概要](storage-spaces-direct-overview.md)
+- [記憶域スペース ダイレクトの概要](storage-spaces-direct-overview.md)
 - [記憶域スペースダイレクトのフォールトトレランス](storage-spaces-fault-tolerance.md)
 
 ## <a name="appendix"></a>付録

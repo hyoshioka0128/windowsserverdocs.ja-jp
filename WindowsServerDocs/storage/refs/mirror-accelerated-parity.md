@@ -1,21 +1,19 @@
 ---
-title: ミラーリングによって高速化されたパリティ
-ms.prod: windows-server
+title: ミラー高速パリティ
 ms.author: gawatu
 manager: masriniv
-ms.technology: storage-file-systems
 ms.topic: article
 author: gawatu
 ms.date: 10/17/2018
 ms.assetid: ''
-ms.openlocfilehash: 3efbc6ae29ddaa4f3a4a4f2a2409bbeb87fec2ed
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: f54eb8db2a71fe8576913d7d2123e822661b0732
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475169"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87942171"
 ---
-# <a name="mirror-accelerated-parity"></a>ミラーリングによって高速化されたパリティ
+# <a name="mirror-accelerated-parity"></a>ミラー高速パリティ
 
 >適用先:Windows Server 2019、Windows Server 2016
 
@@ -23,7 +21,7 @@ ms.locfileid: "85475169"
 
 ![ミラーリングによって高速化されたパリティ ボリューム](media/mirror-accelerated-parity/Mirror-Accelerated-Parity-Volume.png)
 
-## <a name="background"></a>背景
+## <a name="background"></a>バックグラウンド
 
 ミラーとパリティの回復性スキームは、ストレージおよびパフォーマンス特性が根本的に異なっています。
 - ミラーの回復性を使用すると、ユーザーは高速な書き込みパフォーマンスを得ることができますが、各コピーのデータをレプリケートするのは領域の効率が悪くなります。
@@ -153,9 +151,9 @@ Resize-StorageTier -InputObject (Get-StorageTier -FriendlyName “Performance”
 New-Volume – FriendlyName “TestVolume” -FileSystem CSVFS_ReFS -StoragePoolFriendlyName “StoragePoolName” -StorageTierFriendlyNames Performance, Capacity -StorageTierSizes 200GB, 800GB
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 -   [ReFS の概要](refs-overview.md)
 -   [ReFS のブロックの複製](block-cloning.md)
 -   [ReFS 整合性ストリーム](integrity-streams.md)
--   [記憶域スペースダイレクトの概要](../storage-spaces/storage-spaces-direct-overview.md)
+-   [記憶域スペース ダイレクトの概要](../storage-spaces/storage-spaces-direct-overview.md)

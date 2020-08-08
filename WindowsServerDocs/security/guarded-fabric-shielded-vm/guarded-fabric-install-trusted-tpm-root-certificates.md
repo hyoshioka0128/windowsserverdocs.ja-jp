@@ -1,18 +1,16 @@
 ---
 title: 信頼された TPM ルート証明書をインストールする
-ms.prod: windows-server
 ms.topic: article
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
 ms.date: 06/27/2019
-ms.openlocfilehash: 096a40f422f308a036b8062e4515ebe698c31f08
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 04beb3f517df090393690a871a12015cf0bed163
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856575"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971319"
 ---
 # <a name="install-trusted-tpm-root-certificates"></a>信頼された TPM ルート証明書をインストールする
 
@@ -20,7 +18,7 @@ ms.locfileid: "80856575"
 
 TPM 構成証明を使用するように HGS を構成する場合は、サーバーの Tpm のベンダーを信頼するように HGS を構成する必要もあります。
 この追加の検証プロセスにより、認証された信頼できる Tpm だけが HGS で証明できるようになります。
-信頼されていない TPM を `Add-HgsAttestationTpmHost`に登録しようとすると、TPM ベンダが信頼されていないことを示すエラーが表示されます。
+信頼されていない TPM をに登録しようとすると `Add-HgsAttestationTpmHost` 、tpm ベンダが信頼されていないことを示すエラーが表示されます。
 
 Tpm を信頼するには、サーバーの Tpm で保証キーの署名に使用されるルート証明書と中間署名証明書を HGS にインストールする必要があります。
 データセンターで複数の TPM モデルを使用する場合は、モデルごとに異なる証明書をインストールすることが必要になる場合があります。
@@ -35,19 +33,19 @@ TPM 証明書が以下のパッケージに含まれていない場合は、TPM 
 
 **すべての HGS サーバー**で、次の手順を繰り返します。
 
-1.  [https://go.microsoft.com/fwlink/?linkid=2097925](https://go.microsoft.com/fwlink/?linkid=2097925)から最新のパッケージをダウンロードします。
+1.  から最新のパッケージをダウンロードし [https://go.microsoft.com/fwlink/?linkid=2097925](https://go.microsoft.com/fwlink/?linkid=2097925) ます。
 
 2.  Cab ファイルの信頼性を確認するために、その署名を確認します。 署名が有効でない場合は、続行しないでください。
 
     ```powershell
     Get-AuthenticodeSignature .\TrustedTpm.cab
     ```
-    
-    次に出力の例を示します。
-    
+
+    出力例を次に示します。
+
     ```
     Directory: C:\Users\Administrator\Downloads
-        
+
     SignerCertificate                         Status                                 Path
     -----------------                         ------                                 ----
     0DD6D4D4F46C0C7C2671962C4D361D607E370940  Valid                                  TrustedTpm.cab
@@ -72,7 +70,7 @@ TPM 証明書が以下のパッケージに含まれていない場合は、TPM 
 以前のインストール時に、新しい証明書または意図的にスキップされた証明書を追加するには、HGS クラスター内のすべてのノードで上記の手順を繰り返します。
 既存の証明書は信頼されたままですが、拡張された cab ファイルで見つかった新しい証明書は、信頼された TPM ストアに追加されます。
 
-## <a name="next-step"></a>次の手順
+## <a name="next-step"></a>次のステップ
 
 > [!div class="nextstepaction"]
 > [ファブリック DNS の構成](guarded-fabric-configuring-fabric-dns-tpm.md)

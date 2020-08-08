@@ -5,15 +5,13 @@ author: jasongerend
 ms.author: jgerend
 ms.date: 12/06/2019
 ms.topic: article
-ms.prod: windows-server
-ms.technology: storage-spaces
 manager: brianlic
-ms.openlocfilehash: d7bbef54d0ec554c6a3cf184dcb0414f7456547c
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 81480c413c2d9775ee81374534fc54af4fdcfced
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182158"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87997487"
 ---
 # <a name="troubleshoot-storage-spaces-and-storage-spaces-direct-health-and-operational-states"></a>記憶域スペースのトラブルシューティングと、正常性と動作状態の記憶域スペースダイレクト
 
@@ -73,7 +71,7 @@ S2D on StorageSpacesDirect1 Read-only         Unknown      False        True
 ||ポリシー|管理者が記憶域プールを読み取り専用に設定している。<br><br>**アクション:** クラスター化された記憶域プールをフェールオーバークラスターマネージャーの読み取り/書き込みアクセスに設定するには、[**プール**] に移動し、プールを右クリックして、[**オンライン**にする] を選択します。<br><br>その他のサーバーと Pc については、管理アクセス許可を使用して PowerShell セッションを開き、次のように入力します。<br><br><code>Get-StoragePool <PoolName> \| Set-StoragePool -IsReadOnly $false</code><br><br> |
 ||開始中|記憶域スペースは、プール内でのドライブの接続を開始または待機しています。 これは一時的な状態である必要があります。 完全に開始されると、プールは別の動作状態に移行する必要があります。<br><br>**アクション:** プールが*開始*状態のままである場合は、プール内のすべてのドライブが正常に接続されていることを確認します。|
 
-「 [Windows Server ストレージフォーラム](https://docs.microsoft.com/answers/topics/windows-server-storage.html)」も参照してください。
+「 [Windows Server ストレージフォーラム](/answers/topics/windows-server-storage.html)」も参照してください。
 
 ## <a name="virtual-disk-states"></a>仮想ディスクの状態
 
@@ -203,11 +201,11 @@ Generic Physical Disk SSD        119990648832   False In a Pool
 |オフライン|ドライブがオフラインになっています。 <br><br>すべてのオフラインドライブをオンラインにして、を読み取り/書き込みに設定するには、PowerShell セッションを管理者として開き、次のスクリプトを使用します。<br><br><code>Get-Disk \| Where-Object -Property OperationalStatus -EQ "Offline" \| Set-Disk -IsOffline $false</code><br><br><code>Get-Disk \| Where-Object -Property IsReadOnly -EQ $true \| Set-Disk -IsReadOnly $false</code>|
 |Insufficient capacity (容量の不足)|これは通常、ドライブの空き領域を占有しているパーティションがある場合に発生します。 <br><br>**操作**: ドライブ上のすべてのデータを消去して、ドライブ上のすべてのボリュームを削除します。 これを行う1つの方法は、[ディスクの消去](/powershell/module/storage/clear-disk?view=win10-ps)PowerShell コマンドレットを使用することです。|
 |Verification in progress (検証中)|[ヘルスサービス](../../failover-clustering/health-service-overview.md#supported-components-document)は、ドライブ上のドライブまたはファームウェアがサーバー管理者による使用が承認されているかどうかを確認しています。|
-|検証できませんでした|[ヘルスサービス](../../failover-clustering/health-service-overview.md#supported-components-document)は、ドライブ上のドライブまたはファームウェアがサーバー管理者による使用が承認されているかどうかを確認できませんでした。|
+|確認に失敗しました|[ヘルスサービス](../../failover-clustering/health-service-overview.md#supported-components-document)は、ドライブ上のドライブまたはファームウェアがサーバー管理者による使用が承認されているかどうかを確認できませんでした。|
 |Firmware not compliant (非準拠ファームウェア)|[ヘルスサービス](../../failover-clustering/health-service-overview.md#supported-components-document)を使用して、物理ドライブのファームウェアが、サーバー管理者によって指定された承認済みファームウェアのリビジョンの一覧にありません。 |
 |Hardware not compliant (非準拠ハードウェア)|このドライブは、[ヘルスサービス](../../failover-clustering/health-service-overview.md#supported-components-document)を使用して、サーバー管理者によって指定された承認済みストレージモデルの一覧に含まれていません。|
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [記憶域スペース ダイレクト](storage-spaces-direct-overview.md)
 - [記憶域スペース ダイレクトのハードウェア要件](storage-spaces-direct-hardware-requirements.md)

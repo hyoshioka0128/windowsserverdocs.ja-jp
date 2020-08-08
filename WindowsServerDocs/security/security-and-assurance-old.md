@@ -7,19 +7,19 @@ ms.assetid: b886b2fd-3567-4f0a-8aa3-4ba7923d2d21
 author: coreyp-at-msft
 ms.author: coreyp
 ms.localizationpriority: medium
-ms.openlocfilehash: f973d83c53fb4667163d950a169611721f53f78e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: e6bb0df12ba193cb5b335af3bf05bdca538e148b
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87939479"
+ms.locfileid: "87997309"
 ---
 # <a name="security-and-assurance-in-windows-server"></a>Windows Server のセキュリティおよび保証
 
 >適用先:Windows Server (半期チャネル)、Windows Server 2016
 
 >[!TIP]
-> 以前のバージョンの Windows Server に関する情報をお探しの場合は、 docs.microsoft.com の他の [Windows Server ライブラリ](/previous-versions/windows/)を参照してください。 また、[このサイトで検索して](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions)、具体的な情報を確認することもできます。
+> 以前のバージョンの Windows Server に関する情報をお探しの場合は、 docs.microsoft.com の他の [Windows Server ライブラリ](/previous-versions/windows/)を参照してください。 また、[このサイトで検索して](/search/index?dataSource=previousVersions&search=Windows+Server)、具体的な情報を確認することもできます。
 
 <img src="../media/landing-icons/security.png" style='float:left; padding:.5em;' alt="Icon representing a lock"> オペレーティング システムに組み込まれている保護の新しい層を使用して、セキュリティ違反に対する防御を強化することができます。 悪意のある攻撃をブロックし、仮想マシン、アプリケーション、およびデータのセキュリティを強化するのを支援します。
 
@@ -27,7 +27,7 @@ ms.locfileid: "87939479"
 ### <a name="windows-server-security-blog-post"></a>[Windows Server のセキュリティについてのブログ記事](https://blogs.technet.microsoft.com/windowsserver/2016/04/25/ten-reasons-youll-love-windows-server-2016-8-security/)
 Windows Server セキュリティ チームによるこのブログ記事では、ホスティングおよびハイブリッド クラウド環境のセキュリティを強化する数多くの Windows Servers の改良点が明らかにされています。
 
-### <a name="datacenter-and-private-cloud-security-blog"></a>[Datacenter and Private Cloud Security Blog (データ センターおよびプライベート クラウドのセキュリティについてのブログ)](https://blogs.technet.microsoft.com/datacentersecurity/)
+### <a name="datacenter-and-private-cloud-security-blog"></a>[Datacenter and Private Cloud Security Blog (データ センターおよびプライベート クラウドのセキュリティについてのブログ)](/archive/blogs/datacentersecurity/)
 これは、Microsoft のデータ センターおよびプライベート クラウドのセキュリティ チームによる、技術コンテンツに関する中心的なブログ サイトです。
 
 ### <a name="addressing-emerging-threats-and-landscape-shifts"></a>[Addressing emerging threats and landscape shifts (新たな脅威とランドスケープの変化への対応)](https://www.youtube.com/watch?v=B5JMYxYWx1k&feature=youtu.be)
@@ -54,23 +54,23 @@ Windows Server セキュリティ チームによるこのブログ記事では�
 
 この Ignite プレゼンテーションでは、Hyper-V および Virtual Machine Manager の機能強化と、シールドされた VM を有効にするための新しいホスト ガーディアン サーバーの役割が説明されています。
 
-### <a name="guarded-fabric-deployment-guide"></a>[保護されたファブリックの展開ガイド](https://docs.microsoft.com/windows-server/virtualization/guarded-fabric-shielded-vm/guarded-fabric-deploying-hgs-overview)
+### <a name="guarded-fabric-deployment-guide"></a>[保護されたファブリックの展開ガイド](./guarded-fabric-shielded-vm/guarded-fabric-deploying-hgs-overview.md)
 このガイドには、保護されたファブリック ホストとシールドされた VM のための Windows Server と System Center Virtual Machine Manager のインストールおよび検証に関する情報が記載されています。
 
-### <a name="shielded-vm-and-guarded-fabric-in-branch-offices"></a>[ブランチ オフィス内のシールドされた VM および保護されたファブリック](https://docs.microsoft.com/windows-server/virtualization/guarded-fabric-shielded-vm/guarded-fabric-manage-branch-office)
+### <a name="shielded-vm-and-guarded-fabric-in-branch-offices"></a>[ブランチ オフィス内のシールドされた VM および保護されたファブリック](./guarded-fabric-shielded-vm/guarded-fabric-manage-branch-office.md)
 このガイドでは、ブランチ オフィス内でシールドされた仮想マシンを実行するためのベスト プラクティス、および Hyper-V ホストで HGS への接続が限定される時間がある可能性のあるその他のリモート シナリオについて説明します。
 
-### <a name="shielded-vm-and-guarded-fabric-troubleshooting-guide"></a>[シールドされた VM と保護されたファブリックのトラブルシューティング ガイド](https://docs.microsoft.com/windows-server/virtualization/guarded-fabric-shielded-vm/guarded-fabric-troubleshoot-overview)
+### <a name="shielded-vm-and-guarded-fabric-troubleshooting-guide"></a>[シールドされた VM と保護されたファブリックのトラブルシューティング ガイド](./guarded-fabric-shielded-vm/guarded-fabric-troubleshoot-overview.md)
 このガイドには、シールドされた VM の環境内で発生する可能性がある問題の解決方法についての情報が記載されています。
 
 ### <a name="shielded-vm-article"></a>[シールドされた VM についての記事](http://windowsitpro.com/hyper-v/super-secure-hyper-v-environments-shielded-vms-2016)
 このホワイト ペーパーには、シールドされた VM によって全体的なセキュリティが改ざん防止のためにどのように強化されるのかについての概要が説明されています。
 
 ## <a name="privileged-access-management"></a>特権アクセスの管理
-### <a name="securing-privileged-access"></a>[特権アクセスの保護](https://technet.microsoft.com/windows-server-docs/security/securing-privileged-access/securing-privileged-access)
+### <a name="securing-privileged-access"></a>[特権アクセスの保護](../identity/securing-privileged-access/securing-privileged-access.md)
 特権アクセスをセキュリティで保護する方法についてのロードマップ このロードマップは、サーバー セキュリティ チーム、Microsoft IT、Azure チーム、および Microsoft Consulting Services が有する知見を結集して作成されています。
 
-### <a name="just-in-time-administration-with-microsoft-identity-manager"></a>[Microsoft Identity Manager による Just in Time 管理](https://technet.microsoft.com/library/mt150258.aspx)
+### <a name="just-in-time-administration-with-microsoft-identity-manager"></a>[Microsoft Identity Manager による Just in Time 管理](/microsoft-identity-manager/pam/privileged-identity-management-for-active-directory-domain-services)
 この記事では、Just-In-Time (JIT) 特権アクセス管理のサポートなど、Microsoft Identity Manager に含まれている機能が説明されています。
 
 ### <a name="protecting-windows-and-microsoft-azure-active-directory-with-privileged-access-management"></a>[特権アクセス管理による Windows と Microsoft Azure Active Directory の保護](https://channel9.msdn.com/events/ignite/2015/brk3873)
@@ -83,28 +83,28 @@ Windows Server セキュリティ チームによるこのブログ記事では�
 Just Enough Administration のデモ チュートリアルです。
 ## <a name="credential-protection"></a>資格情報の保護
 
-### <a name="protect-derived-domain-credentials-with-credential-guard"></a>[Credential Guard によるドメインの派生資格情報の保護](https://docs.microsoft.com/windows/security/identity-protection/credential-guard/credential-guard)
+### <a name="protect-derived-domain-credentials-with-credential-guard"></a>[Credential Guard によるドメインの派生資格情報の保護](/windows/security/identity-protection/credential-guard/credential-guard)
 Credential Guard は、特権を持つシステム ソフトウェアだけがシークレットにアクセスできるように、仮想化ベースのセキュリティを使用してシークレットを分離します。 これらのシークレットへの不正アクセスは、Pass-the-Hash や Pass-The-Ticket などの資格情報の盗難攻撃につながる可能性があります。 Credential Guard は、NTLM パスワード ハッシュと Kerberos の Ticket Granting Ticket を保護することで、これらの攻撃を防ぎます。
 
-### <a name="protect-remote-desktop-credentials-with-remote-credential-guard"></a>[Remote Credential Guard によるリモート デスクトップ資格情報の保護](https://docs.microsoft.com/windows/security/identity-protection/remote-credential-guard)
+### <a name="protect-remote-desktop-credentials-with-remote-credential-guard"></a>[Remote Credential Guard によるリモート デスクトップ資格情報の保護](/windows/security/identity-protection/remote-credential-guard)
 Remote Credential Guard は、接続を要求しているデバイスに Kerberos 要求をリダイレクトすることにより、リモート デスクトップ接続での資格情報を保護するのに役立ちます。 リモート デスクトップ セッションでシングル サインオンのエクスペリエンスも提供します。                                                                                                        |
 ### <a name="credential-guard-demo-video"></a>[Credential Guard のデモ ビデオ](https://www.youtube.com/watch?v=eUpKOGSl7yk)
 この 5 分間のビデオでは、Credential Guard と Remote Credential Guard のデモを行っています。
 
 ## <a name="hardening-the-os-and-applications"></a>OS とアプリケーションのセキュリティ強化
-### <a name="windows-defender-application-control-wdac-deployment-guide"></a>[Windows Defender アプリケーション制御 (WDAC) 展開ガイド](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control)
+### <a name="windows-defender-application-control-wdac-deployment-guide"></a>[Windows Defender アプリケーション制御 (WDAC) 展開ガイド](/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control)
 WDAC は、企業が環境内で実行するアプリケーションを制御し、Windows 10 を実行する以外に特別なハードウェアまたはソフトウェア要件を必要としない構成可能なコードの整合性 (CI) ポリシーです。
 
 ### <a name="device-guard-demo-video"></a>[Device Guard のデモ ビデオ](https://www.youtube.com/watch?v=F-pTkesjkhI)
 Device Guard は、WDAC とハイパーバイザーで保護されているコード整合性 (HVCI) を組み合わせたものです。 この 7 分間のビデオでは、Device Guard と、Windows Server 上での使い方を紹介します。
 
-### <a name="transport-layer-security-registry-settings"></a>[トランスポート層セキュリティ レジストリ設定](https://docs.microsoft.com/windows-server/security/tls/tls-registry-settings)
+### <a name="transport-layer-security-registry-settings"></a>[トランスポート層セキュリティ レジストリ設定](./tls/tls-registry-settings.md)
 トランスポート層セキュリティ (TLS) プロトコルと Secure Sockets Layer (SSL) プロトコルの Windows 実装に関するサポートされたレジストリ設定の情報です。
 
-### <a name="control-flow-guard"></a>[制御フロー ガード](https://docs.microsoft.com/windows/desktop/SecBP/control-flow-guard)
+### <a name="control-flow-guard"></a>[制御フロー ガード](/windows/desktop/SecBP/control-flow-guard)
 制御フロー ガードは、一部のクラスのメモリ破損攻撃に対する組み込みの保護を提供します。
 
-### <a name="windows-defender"></a>[Windows Defender](https://technet.microsoft.com/windows-server-docs/security/windows-defender/windows-defender-overview-windows-server)
+### <a name="windows-defender"></a>[Windows Defender](./windows-defender/windows-defender-overview-windows-server.md)
 Windows Defender は、アクティブな検出機能を提供して既知のマルウェアをブロックします。 Windows Server では、Windows Defender が既定でオンになっており、さまざまなサーバーの役割をサポートするために最適化されています。
 
 ## <a name="detecting-and-responding-to-threats"></a>脅威の検出と対応
@@ -125,10 +125,10 @@ Microsoft Operations Management Suite (OMS) セキュリティおよび監査ソ
 
 ## <a name="network-security"></a>ネットワーク セキュリティ
 
-### <a name="datacenter-firewall-overview"></a>[Datacenter Firewall の概要](https://technet.microsoft.com/library/dn920240.aspx)
+### <a name="datacenter-firewall-overview"></a>[Datacenter Firewall の概要](/previous-versions/windows/server/dn920240(v=ws.12))
 この概要では、ネットワーク層で 5 組 (プロトコル、発信元と宛先のポート番号、送信元と送信先の IP アドレス) を使用して動作するステートフルなマルチテナント ファイアウォールである Datacenter Firewall について説明されています。
 
-### <a name="whats-new-in-dns-in-windows-server"></a>[Windows Server での DNS の新機能](https://technet.microsoft.com/windows-server-docs/networking/dns/what-s-new-in-dns-server)
+### <a name="whats-new-in-dns-in-windows-server"></a>[Windows Server での DNS の新機能](../networking/dns/what-s-new-in-dns-server.md)
 この概要トピックには、DNS の新機能についての簡単な説明、および詳細情報へのリンクが記載されています。
 
 ## <a name="mapping-security-features-to-compliance-regulations"></a>コンプライアンスに関する規制へのセキュリティ機能のマッピング

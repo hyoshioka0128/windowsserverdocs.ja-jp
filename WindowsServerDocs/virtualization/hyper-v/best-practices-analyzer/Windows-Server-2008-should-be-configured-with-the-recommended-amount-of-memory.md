@@ -7,12 +7,12 @@ ms.topic: article
 ms.assetid: a98a8594-603b-487a-8739-78887c568e57
 author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 0f8472bac05945b240c6b9602b4a7f836536253e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 6ff1915b789e28d0bc05fb2313e1c7e95b7dc12a
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87948234"
+ms.locfileid: "87997272"
 ---
 # <a name="windows-server-2008-should-be-configured-with-the-recommended-amount-of-memory"></a>Windows Server 2008 は、推奨されるメモリ量で構成する必要があります。
 
@@ -68,7 +68,4 @@ Set-VMMemory <MyVM> -StartupBytes 2GB
 ```
 
 ## <a name="see-also"></a>参照
-[設定-VMMemory](https://technet.microsoft.com/library/hh848572.aspx)
-
-
-
+[設定-VMMemory](/powershell/module/hyper-v/set-vmmemory?view=win10-ps)

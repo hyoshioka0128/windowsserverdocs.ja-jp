@@ -2,18 +2,16 @@
 title: ファイル スクリーンの例外を作成する
 description: この記事では、ファイル スクリーンの例外を作成する方法について説明します。
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: c496151ed1f38cd1f2c604bd227627a586e582c6
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 9d8f0e4a8bc89312b846421c64b14518a9246aaa
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473699"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87942141"
 ---
 # <a name="create-a-file-screen-exception"></a>ファイル スクリーンの例外を作成する
 
@@ -45,7 +43,7 @@ ms.locfileid: "85473699"
 
 5.  **[OK]** をクリックします。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 -   [ファイルスクリーン処理の管理](file-screening-management.md)
 -   [スクリーン処理のためにファイル グループを定義する](define-file-groups-for-screening.md)

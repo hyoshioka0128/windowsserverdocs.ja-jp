@@ -1,8 +1,6 @@
 ---
 title: ネットワーク
 description: このトピックでは、Windows Server 2016 で利用できるソフトウェア定義ネットワークおよびネットワーク プラットフォーム テクノロジの概要について説明します。
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.date: 05/08/2018
 ms.assetid: daaf6b61-5953-4c2d-b6b8-7c885b552646
@@ -10,19 +8,19 @@ manager: dougkim
 ms.author: anpaul
 author: AnirbanPaul
 ms.localizationpriority: medium
-ms.openlocfilehash: 39bda1ac3a8b3cbac61435b65baf538f2d71e20e
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 30939a702f0856461e7b8a08af2dfd40b4a4456d
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87408911"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87997358"
 ---
 # <a name="networking"></a>ネットワーク
 
 > 適用先:Windows Server (半期チャネル)、Windows Server 2016
 
 > [!TIP]
-> 以前のバージョンの Windows Server に関する情報をお探しの場合は、 docs.microsoft.com の他の [Windows Server ライブラリ](/previous-versions/windows/)を参照してください。 また、[このサイトで検索して](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions)、具体的な情報を確認することもできます。
+> 以前のバージョンの Windows Server に関する情報をお探しの場合は、 docs.microsoft.com の他の [Windows Server ライブラリ](/previous-versions/windows/)を参照してください。 また、[このサイトで検索して](/search/index?dataSource=previousVersions&search=Windows+Server)、具体的な情報を確認することもできます。
 
 <img src="../media/landing-icons/network.png" style='float:left; padding:.5em;' alt="Icon depicting two networked computers"> ネットワークは、ソフトウェアによって定義されたデータセンターのデータセンター \( (sddc) プラットフォームの基本部分で \) あり、Windows Server 2016 では、 \( \) 組織で完全に実現された SDDC ソリューションへの移行を支援するために、ソフトウェア定義のネットワーク SDN テクノロジが新たに強化されています。
 
@@ -95,7 +93,7 @@ BranchCache は、ワイド エリア ネットワーク \(WAN\) 帯域幅最適
 
 DirectAccess は、リモート ユーザーが組織のネットワーク リソースに接続するための機能です。
 
-DirectAccess のドキュメントは、Windows Server 2016 の目次で、「[リモート アクセスとサーバー管理](https://docs.microsoft.com/windows-server/remote/)」セクションの「[リモート アクセス](https://docs.microsoft.com/windows-server/remote/remote-access/remote-access)」を参照してください。 詳しくは、「[DirectAccess](../remote/remote-access/directaccess/DirectAccess.md)」を参照してください。
+DirectAccess のドキュメントは、Windows Server 2016 の目次で、「[リモート アクセスとサーバー管理](../remote/index.yml)」セクションの「[リモート アクセス](../remote/remote-access/remote-access.md)」を参照してください。 詳しくは、「[DirectAccess](../remote/remote-access/directaccess/DirectAccess.md)」を参照してください。
 
 ### <a name="domain-name-system-40dns41"></a>[ドメインネームシステム &#40;DNS&#41;](dns/dns-top.md)
 
@@ -158,9 +156,9 @@ QoS プロファイルを作成し、その設定をグループポリシーと�
 
 DirectAccess や仮想プライベートネットワーク VPN などのリモートアクセステクノロジを使用して、 \( \) リモートワーカーが内部ネットワークリソースに接続できるようにすることができます。 さらに、ローカルエリアネットワークの \( LAN \) ルーティングおよび Web アプリケーションプロキシに対してリモートアクセスを使用できます。 Web アプリケーション プロキシには、企業ネットワーク内部の Web アプリケーション用のリバース プロキシ機能があり、ユーザーは任意のデバイスで企業ネットワーク外部から Web アプリケーションにアクセスできます。
 
-リモート アクセスのドキュメントは、Windows Server 2016 の目次で、「[リモート アクセスとサーバー管理](https://docs.microsoft.com/windows-server/remote/)」セクションを参照してください。 詳細については、「[リモート アクセス](../remote/remote-access/remote-access.md)」を参照してください。
+リモート アクセスのドキュメントは、Windows Server 2016 の目次で、「[リモート アクセスとサーバー管理](../remote/index.yml)」セクションを参照してください。 詳細については、「[リモート アクセス](../remote/remote-access/remote-access.md)」を参照してください。
 
-Web アプリケーション プロキシ (リモート アクセス サーバー ロールのロール サービス) の詳細については、「[Windows Server 2016 の Web アプリケーション プロキシ](https://docs.microsoft.com/windows-server/remote/remote-access/web-application-proxy/web-application-proxy-windows-server)」を参照してください。
+Web アプリケーション プロキシ (リモート アクセス サーバー ロールのロール サービス) の詳細については、「[Windows Server 2016 の Web アプリケーション プロキシ](../remote/remote-access/web-application-proxy/web-application-proxy-windows-server.md)」を参照してください。
 
 ### <a name="virtual-private-networking-vpn"></a>[仮想プライベート ネットワーク (VPN)](../remote/remote-access/vpn/vpn-top.md)
 
@@ -170,14 +168,14 @@ Windows Server 2016 において、**DirectAccess と VPN** は、**リモート
 
 Windows Server 2016 のリモート アクセス VPN と Windows 10 クライアント コンピューターを使用することにより、Always On VPN を展開できるようになりました。 Always On VPN では、常時接続のリモート VPN クライアントを管理できます。また、リモート ワーカーは、組織ネットワークへの VPN に手動で接続、切断する必要がなくなり、利便性が向上します。
 
-詳細については、「[Windows Server 2016 および Windows 10 のためのリモート アクセス Always On VPN 展開ガイド](https://docs.microsoft.com/windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy)」を参照してください。
+詳細については、「[Windows Server 2016 および Windows 10 のためのリモート アクセス Always On VPN 展開ガイド](../remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy.md)」を参照してください。
 
 >[!NOTE]
->VPN のドキュメントは、Windows Server 2016 の目次で、「[リモート アクセスとサーバー管理](https://docs.microsoft.com/windows-server/remote/)」セクションの「[リモート アクセス](https://docs.microsoft.com/windows-server/remote/remote-access/remote-access)」を参照してください。
+>VPN のドキュメントは、Windows Server 2016 の目次で、「[リモート アクセスとサーバー管理](../remote/index.yml)」セクションの「[リモート アクセス](../remote/remote-access/remote-access.md)」を参照してください。
 
-VPN の詳細については、「[仮想プライベート ネットワーク (VPN)](https://docs.microsoft.com/windows-server/remote/remote-access/vpn/vpn-top)」を参照してください。
+VPN の詳細については、「[仮想プライベート ネットワーク (VPN)](../remote/remote-access/vpn/vpn-top.md)」を参照してください。
 
-### <a name="windows-container-networking"></a>[Windows コンテナー ネットワーク](https://docs.microsoft.com/virtualization/windowscontainers/manage-containers/container-networking)
+### <a name="windows-container-networking"></a>[Windows コンテナー ネットワーク](/virtualization/windowscontainers/manage-containers/container-networking)
 
 Windows コンテナーのネットワークでは、業界の標準的なツールとワークフローを使用して、Windows 10 と Windows Server ホストの両方のコンテナー エンドポイントを接続するネットワークを作成および管理できます。 Windows コンテナーのネットワークは、プライベート、フラット L2、ルーティング L3 などの、複数のトポロジをサポートします。
 
@@ -187,10 +185,10 @@ Windows コンテナーのネットワークでは、業界の標準的なツー
 
 Windows インターネット ネーム サービス (WINS) は、コンピューターの NetBIOS 名と IP アドレスを対応付け、コンピューター名の登録と解決を行う従来型サービスです。 WINS よりも DNS の使用をお勧めします。
 
-## <a name="additional-resources"></a>その他のリソース
+## <a name="additional-resources"></a>その他の情報
 
 Windows Server 2016 は、次の場所で使用可能な以前のオペレーティング システムのリソースをネットワークです。
 
-- Windows Server 2012 および Windows Server 2012 R2 [ネットワークの概要](https://technet.microsoft.com/library/hh831357.aspx)
-- Windows Server 2008 および Windows Server 2008 R2 [ネットワーク](https://technet.microsoft.com/library/cc753940)
+- Windows Server 2012 および Windows Server 2012 R2 [ネットワークの概要](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831357(v=ws.11))
+- Windows Server 2008 および Windows Server 2008 R2 [ネットワーク](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753940(v=ws.10))
 - Windows Server 2003 [Windows server 2003/2003 R2](https://www.microsoft.com/download/details.aspx?id=53314)の提供終了コンテンツ

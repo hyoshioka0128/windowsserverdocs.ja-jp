@@ -5,12 +5,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 08/29/2018
-ms.openlocfilehash: 46dc032527bf918211aa55c5b69c1dcbf4766c86
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: e1b4c015aa9b4f504d4cdf79bb2f38686588cfdd
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971369"
+ms.locfileid: "87989533"
 ---
 # <a name="choose-whether-to-install-hgs-in-its-own-dedicated-forest-or-in-an-existing-bastion-forest"></a>HGS を独自の専用フォレストまたは既存の要塞フォレストのどちらにインストールするかを選択します。
 
@@ -22,7 +22,7 @@ HGS の Active Directory フォレストは、管理者がシールドされた 
 このオプションは、環境が自己完結型であり、作成時に安全であることがわかっている場合に推奨されます。
 
 既存のフォレストに HGS をインストールするための技術的な要件は、ルートドメインに追加されることだけです。ルート以外のドメインはサポートされていません。 ただし、既存のフォレストを使用するための運用上の要件とセキュリティ関連のベストプラクティスもあります。
-適切なフォレストは、AD DS または強化された[セキュリティ管理環境 (ESAE) フォレスト](https://technet.microsoft.com/windows-server-docs/security/securing-privileged-access/securing-privileged-access-reference-material#ESAE_BM)[の Privileged Access Management](https://docs.microsoft.com/microsoft-identity-manager/pam/privileged-identity-management-for-active-directory-domain-services)によって使用されるフォレストなど、1つの重要な機能を提供するように意図的に構築されています。
+適切なフォレストは、AD DS または強化された[セキュリティ管理環境 (ESAE) フォレスト](../../identity/securing-privileged-access/securing-privileged-access-reference-material.md#esae-administrative-forest-design-approach)[の Privileged Access Management](/microsoft-identity-manager/pam/privileged-identity-management-for-active-directory-domain-services)によって使用されるフォレストなど、1つの重要な機能を提供するように意図的に構築されています。
 通常、このようなフォレストには次の特性があります。
 
 - 管理者が少ない (ファブリック管理者とは別の)
@@ -38,5 +38,3 @@ HGS の Active Directory フォレストは、管理者がシールドされた 
 
 - [独自の専用フォレストに HGS をインストールする](guarded-fabric-install-hgs-default.md)
 - [既存の要塞フォレストに HGS をインストールする](guarded-fabric-install-hgs-in-a-bastion-forest.md)
-
-

@@ -1,19 +1,17 @@
 ---
 title: トランスポート層セキュリティ (TLS) を管理する
 description: Windows Server のセキュリティ
-ms.prod: windows-server
-ms.technology: security-tls-ssl
 ms.topic: article
 author: justinha
 ms.author: justinha
 manager: brianlic
 ms.date: 05/16/2018
-ms.openlocfilehash: a11c41ad386618f85421ec46c6111791f468fa92
-ms.sourcegitcommit: 95b60384b0b070263465eaffb27b8e3bb052a4de
+ms.openlocfilehash: 30ab0547fd538eec3f50120a5d536eb9a48de54b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82850123"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971289"
 ---
 # <a name="manage-transport-layer-security-tls"></a>トランスポート層セキュリティ (TLS) を管理する
 
@@ -35,7 +33,7 @@ TLS 暗号スイートの順序の変更は、次回の起動時に有効にな�
 
 SSL 暗号スイートの順序グループポリシー設定を使用して、既定の TLS 暗号スイートの順序を構成できます。
 
-1. グループポリシー管理コンソールから、[コンピューターの**構成** > **管理用テンプレート** > [**ネットワーク** > ] [**SSL 構成の設定**] の各ページにアクセスします。
+1. グループポリシー管理コンソールから、[コンピューターの**構成**] 管理用テンプレート [ネットワーク] [SSL 構成の設定] の各ページにアクセス  >  **Administrative Templates**  >  **Network**  >  **SSL Configuration Settings**します。
 2. [ **SSL 暗号スイートの順序**] をダブルクリックし、[**有効**] オプションをクリックします。
 3. [ **SSL 暗号スイート**] を右クリックし、ポップアップメニューから [**すべて選択**] を選択します。
 
@@ -69,13 +67,13 @@ Windows 10 & Windows Server 2016 以降では、ECC 曲線の順序は、暗号�
 
 ### <a name="managing-windows-ecc-curves-using-certutil"></a>CertUtil を使用した Windows ECC 曲線の管理
 
-Windows 10 および windows Server 2016 以降では、コマンドラインユーティリティ certutil を使用して、楕円曲線パラメーターを管理できます。
-楕円曲線パラメーターは、bcryptprimitives dll に格納されます。 Certutil を使用すると、管理者はそれぞれ Windows との間で曲線パラメーターを追加および削除できます。 Certutil は、曲線パラメーターをレジストリに安全に格納します。
+Windows 10 および windows Server 2016 以降では、コマンドラインユーティリティ certutil.exe を使用して、楕円曲線パラメーターを管理できます。
+楕円曲線のパラメーターは bcryptprimitives.dll に格納されます。 certutil.exe を使用すると、管理者は Windows との間で曲線パラメーターをそれぞれ追加および削除できます。 Certutil.exe は、曲線パラメーターをレジストリに安全に格納します。
 曲線に関連付けられている名前によって、曲線パラメーターの使用を開始できます。
 
 #### <a name="displaying-registered-curves"></a>登録された曲線の表示
 
-次の certutil コマンドを使用して、現在のコンピューターに登録されている曲線の一覧を表示します。
+次の certutil.exe コマンドを使用して、現在のコンピューターに登録されている曲線の一覧を表示します。
 
 ```powershell
 certutil.exe –displayEccCurve
@@ -83,13 +81,13 @@ certutil.exe –displayEccCurve
 
 ![Certutil の表示曲線](../media/Transport-Layer-Security-protocol/certutil-display-curves.png)
 
-*図 1 Certutil 出力して、登録されている曲線の一覧を表示します。*
+*図 1 Certutil.exe、登録済みの曲線の一覧を表示するための出力です。*
 
 #### <a name="adding-a-new-curve"></a>新しい曲線の追加
 
 組織は、他の信頼されたエンティティによって調査された曲線パラメーターを作成して使用できます。
 Windows でこれらの新しい曲線を使用する場合、管理者は曲線を追加する必要があります。
-次の certutil コマンドを使用して、現在のコンピューターに曲線を追加します。
+現在のコンピューターに曲線を追加するには、次の certutil.exe コマンドを使用します。
 
 ```powershell
 Certutil —addEccCurue curveName curveParameters [curveOID] [curveType]
@@ -102,11 +100,11 @@ Certutil —addEccCurue curveName curveParameters [curveOID] [curveType]
 
 ![Certutil 曲線の追加](../media/Transport-Layer-Security-protocol/certutil-add-curves.png)
 
-*図 2 certutil を使用して曲線を追加する*
+*図 2 certutil.exe を使用して曲線を追加する*
 
 #### <a name="removing-a-previously-added-curve"></a>以前に追加した曲線の削除
 
-管理者は、次の certutil コマンドを使用して、以前に追加された曲線を削除できます。
+管理者は、次の certutil.exe コマンドを使用して、以前に追加した曲線を削除できます。
 
 ```powershell
 Certutil.exe –deleteEccCurve curveName
@@ -119,10 +117,10 @@ Certutil.exe –deleteEccCurve curveName
 組織は、グループポリシーとグループポリシー設定のレジストリ拡張を使用して、企業、ドメインに参加しているコンピューター、およびユーザー設定のレジストリ拡張を使用して、曲線パラメーターを配布できます。
 曲線を分散するプロセスは次のとおりです。
 
-1. Windows 10 および Windows Server 2016 では、 **certutil**を使用して、登録されている新しい名前付き曲線を windows に追加します。
+1. Windows 10 および Windows Server 2016 では、 **certutil.exe**を使用して、登録されている新しい名前付き曲線を windows に追加します。
 2. 同じコンピューターから、グループポリシー管理コンソール (GPMC) を開き、新しいグループポリシーオブジェクトを作成して編集します。
 3. [コンピューターの構成] に移動します。 **基本設定 |Windows の設定 |レジストリ**。  [**レジストリ**] を右クリックします。 [**新規**] をポイントし、[**コレクションアイテム**] を選択します。 曲線の名前に一致するように、コレクションアイテムの名前を変更します。 *HKEY_LOCAL_MACHINE \currentcontrolset\control\cryptography\eccparameters*の下にあるレジストリキーごとに1つのレジストリコレクション項目を作成します。
-4. *HKEY_LOCAL_MACHINE \Currentcontrolset\control\cryptography\eccparameters cur\[ame]* の下に一覧表示されている各レジストリ値に新しい**レジストリ項目**を追加して、新しく作成されたグループポリシー基本設定レジストリコレクションを構成します。
+4. *HKEY_LOCAL_MACHINE \Currentcontrolset\control\cryptography\eccparameters \[ cur ame]* の下に一覧表示されている各レジストリ値に新しい**レジストリ項目**を追加して、新しく作成されたグループポリシー基本設定レジストリコレクションを構成します。
 5. グループポリシーレジストリコレクション項目を含むグループポリシーオブジェクトを、新しい名前付き曲線を受け取る必要がある Windows 10 および Windows Server 2016 コンピューターに展開します。
 
     ![GPP 分散曲線](../media/Transport-Layer-Security-protocol/gpp-distribute-curves.png)

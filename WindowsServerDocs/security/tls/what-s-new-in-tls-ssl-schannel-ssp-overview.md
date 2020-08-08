@@ -1,20 +1,18 @@
 ---
 title: TLS-SSL (Schannel SSP) の概要
 description: Windows Server のセキュリティ
-ms.prod: windows-server
-ms.technology: security-tls-ssl
 ms.topic: article
 ms.assetid: c8836345-16bb-4dcc-8d2b-2b9b687456a3
 author: justinha
 ms.author: justinha
 manager: brianlic
 ms.date: 05/16/2018
-ms.openlocfilehash: b70a8fefc05723b78dbf5e652bf35f7b8b5cff4d
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: a60ed0b1228780ebb6e8d1e75541dc3089f7665c
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182318"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87989450"
 ---
 # <a name="overview-of-tls---ssl-schannel-ssp"></a>TLS SSL (Schannel SSP) の概要
 
@@ -24,7 +22,7 @@ IT 担当者向けのこのトピックでは、Schannel セキュリティサ�
 
 Schannel は、SSL、TLS、および DTLS という標準的なインターネット認証プロトコルを実装するセキュリティ サポート プロバイダー (SSP) です。 セキュリティ サポート プロバイダー インターフェイス (SSPI) は、認証など、セキュリティ関係の機能を実行するために Windows システムで用いられる API の 1 種です。 SSPI は、Schannel SSP をはじめとする数種類のセキュリティ サポート プロバイダー (SSP) に共通のインターフェイスとして機能します。
 
-Microsoft による Schannel SSP での TLS と SSL の実装の詳細については、「 [tls/Ssl テクニカルリファレンス (2003)](https://technet.microsoft.com/library/cc784149(v=ws.10).aspx)」を参照してください。
+Microsoft による Schannel SSP での TLS と SSL の実装の詳細については、「 [tls/Ssl テクニカルリファレンス (2003)](/previous-versions/windows/it-pro/windows-server-2003/cc784149(v=ws.10))」を参照してください。
 
 
 ## <a name="tlsssl-schannel-ssp-features"></a>TLS/SSL (Schannel SSP) の機能
@@ -94,11 +92,11 @@ Windows Server 2012 では、信頼された発行者の一覧は証明書スト
 
 既定では、Windows Server 2012 の Schannel SSP アーキテクチャは、上記のようにストアを使用して、信頼された発行者の一覧を管理します。 従来と同様、Certutil などのコマンド ライン ツールだけでなく、PowerShell プロバイダーの既存の証明書管理コマンドレットを使用して、証明書を管理することができます。
 
-PowerShell プロバイダーを使用して証明書を管理する方法の詳細については、[Windows での AD CS 管理コマンドレット](https://technet.microsoft.com/library/hh848365(v=wps.620).aspx)に関するページを参照してください。
+PowerShell プロバイダーを使用して証明書を管理する方法の詳細については、[Windows での AD CS 管理コマンドレット](/powershell/module/adcsadministration/?view=winserver2012-ps)に関するページを参照してください。
 
-証明書ユーティリティを使用して証明書を管理する方法の詳細については、[certutil.exe](https://technet.microsoft.com/library/cc732443.aspx) に関するページを参照してください。
+証明書ユーティリティを使用して証明書を管理する方法の詳細については、[certutil.exe](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc732443(v=ws.11)) に関するページを参照してください。
 
-Schannel の資格情報について定義されるデータ (アプリケーションによって定義されるストアを含む) の詳細については、[SCHANNEL_CRED 構造 (Windows)](https://msdn.microsoft.com/library/windows/desktop/aa379810(v=vs.85).aspx) に関するページを参照してください。
+Schannel の資格情報について定義されるデータ (アプリケーションによって定義されるストアを含む) の詳細については、[SCHANNEL_CRED 構造 (Windows)](/windows/win32/api/schannel/ns-schannel-schannel_cred) に関するページを参照してください。
 
 **信頼モードの既定値**
 
@@ -147,5 +145,5 @@ DTLS over UDP を使用するアプリケーションでは、Windows Server 201
 ### <a name="deprecated-functionality"></a><a name="BKMK_Deprecated"></a>非推奨の機能
 Windows Server 2012 および Windows 8 の Schannel SSP では、非推奨の機能はありません。
 
-## <a name="additional-references"></a>その他のリファレンス
--   [プライベート クラウド セキュリティ モデル: ラッパー機能](https://docs.microsoft.com/archive/blogs/cloudsolutions/cloud-services-foundation-reference-architecture-overview)
+## <a name="additional-references"></a>その他の参照情報
+-   [プライベート クラウド セキュリティ モデル: ラッパー機能](/archive/blogs/cloudsolutions/cloud-services-foundation-reference-architecture-overview)

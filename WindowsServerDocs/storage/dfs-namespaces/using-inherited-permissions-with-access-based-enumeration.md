@@ -2,18 +2,16 @@
 title: 継承されたアクセス許可とアクセス ベースの列挙を使う
 description: この記事では、継承されたアクセス許可とアクセス ベースの列挙を使う方法について説明します。
 ms.date: 6/5/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 112ec4363177ac6dd560493843c8937bdfbac4de
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 96b6280b8f69325a9f5c819430dd7a5249247302
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475149"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971209"
 ---
 # <a name="using-inherited-permissions-with-access-based-enumeration"></a>継承されたアクセス許可とアクセス ベースの列挙を使う
 
@@ -58,6 +56,6 @@ DFS フォルダーを表示できるユーザーを制限するには、次の�
 
 4.  DFS 名前空間のフォルダーや名前空間ルートの継承されたアクセス許可を変更するには、エクスプローラーまたは **ICacls** コマンドを使います。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 -   [DFS 名前空間を作成する](create-a-dfs-namespace.md)

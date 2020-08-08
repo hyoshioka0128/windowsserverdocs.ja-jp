@@ -1,19 +1,17 @@
 ---
 title: 記憶域レプリカに関する既知の問題
-ms.prod: windows-server
 manager: siroy
 ms.author: nedpyle
-ms.technology: storage-replica
 ms.topic: get-started-article
 author: nedpyle
 ms.date: 06/25/2019
 ms.assetid: ceddb0fa-e800-42b6-b4c6-c06eb1d4bc55
-ms.openlocfilehash: 665d137673c3229f2b06283965c085ae25a2287c
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: ed566e5db46cb147925799b055e8bde8ead57b25
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769620"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961176"
 ---
 # <a name="known-issues-with-storage-replica"></a>記憶域レプリカに関する既知の問題
 
@@ -257,7 +255,7 @@ Get-ClusterAvailableDisk -All | Add-ClusterDisk
 
 ## <a name="the-smb-bandwidth-limiter-fails-to-throttle-storage-replica-bandwidth"></a>記憶域レプリカの帯域幅を調整する SMB 帯域幅リミッタが失敗する
 
-記憶域レプリカに帯域幅の制限を指定する場合、制限は無視され、帯域幅全体を使用します。 次に例を示します。
+記憶域レプリカに帯域幅の制限を指定する場合、制限は無視され、帯域幅全体を使用します。 例:
 
 ```
 Set-SmbBandwidthLimit  -Category StorageReplication -BytesPerSecond 32MB
@@ -267,7 +265,7 @@ Set-SmbBandwidthLimit  -Category StorageReplication -BytesPerSecond 32MB
 
 ## <a name="event-1241-warning-repeated-during-initial-sync"></a>初期同期中に イベント 1241 警告が繰り返される
 
-レプリケーション パートナーシップを非同期に指定すると、ソース コンピューターで警告イベント 1241 が記憶域レプリカの管理者チャネルで繰り返し記録されます。 次に例を示します。
+レプリケーション パートナーシップを非同期に指定すると、ソース コンピューターで警告イベント 1241 が記憶域レプリカの管理者チャネルで繰り返し記録されます。 例:
 
 ```
 Log Name:      Microsoft-Windows-StorageReplica/Admin
@@ -334,7 +332,7 @@ Guidance: Possible causes include network failures, share creation failures for 
 
 ## <a name="error-failed-to-bring-the-resource-cluster-disk-x-online-with-a-stretch-cluster"></a>ストレッチ クラスターで「リソース 'クラスター ディスク x' をオンラインにできませんでした」エラーが発生する ストレッチクラスターを使用する
 
-正常なフェールオーバー後にクラスター ディスクをオンラインにしようとするとき、元のソース サイトを再度プライマリにしようとすると、フェールオーバー クラスター マネージャーでエラーが発生します。 次に例を示します。
+正常なフェールオーバー後にクラスター ディスクをオンラインにしようとするとき、元のソース サイトを再度プライマリにしようとすると、フェールオーバー クラスター マネージャーでエラーが発生します。 例:
 
 ```
 Error
@@ -345,7 +343,7 @@ Error Code: 0x80071397
 The operation failed because either the specified cluster node is not the owner of the resource, or the node is not a possible owner of the resource.
 ```
 
-ディスクまたは CSV を手動で移動しようとすると、さらにエラーが表示されます。 次に例を示します。
+ディスクまたは CSV を手動で移動しようとすると、さらにエラーが表示されます。 例:
 
 ```
 Error

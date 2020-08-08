@@ -7,12 +7,12 @@ ms.assetid: ac069fed-7bf5-4cc3-aff5-25a2766040b8
 author: kbdazure
 ms.author: kathydav
 ms.date: 11/29/2016
-ms.openlocfilehash: 5fd4c0199cea04d6697b593ad70b4f31b55afad0
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 2d69a16dc49c34872d3787338a1fd130aaf7241d
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87960765"
+ms.locfileid: "87997042"
 ---
 # <a name="hyper-v-technology-overview"></a>HYPER-V テクノロジの概要
 
@@ -58,11 +58,11 @@ Hyper-v には、多くの機能が用意されています。 これは、機�
 
 **セキュリティ**-セキュアブートとシールドされた仮想マシンは、仮想マシンとそのデータへのマルウェアやその他の承認されていないアクセスから保護するのに役立ちます。
 
-このバージョンで導入された機能の概要については、「 [Windows Server の hyper-v の新](What-s-new-in-Hyper-V-on-Windows.md)機能」を参照してください。 一部の機能やパーツには、構成できる数に制限があります。 詳細については、「 [Windows Server 2016 での hyper-v のスケーラビリティの計画](plan/Plan-for-Hyper-V-scalability-in-Windows-Server-2016.md)」を参照してください。
+このバージョンで導入された機能の概要については、「 [Windows Server の hyper-v の新](What-s-new-in-Hyper-V-on-Windows.md)機能」を参照してください。 一部の機能やパーツには、構成できる数に制限があります。 詳細については、「 [Windows Server 2016 での hyper-v のスケーラビリティの計画](./plan/plan-hyper-v-scalability-in-windows-server.md)」を参照してください。
 
 ## <a name="how-to-get-hyper-v"></a>Hyper-v を取得する方法
 
-Hyper-v は、windows server および Windows では、x64 バージョンの Windows Server で使用できるサーバーの役割として使用できます。 サーバーの手順については、「 [Windows server に hyper-v の役割をインストールする](get-started/Install-the-Hyper-V-role-on-Windows-Server.md)」を参照してください。 Windows では、一部の64ビットバージョンの Windows で[機能](https://docs.microsoft.com/virtualization/hyper-v-on-windows/index)として使用できます。 また、ダウンロード可能なスタンドアロンサーバー製品である[Microsoft Hyper-V サーバー](https://www.microsoft.com/evalcenter/evaluate-hyper-v-server-2019)としても利用できます。
+Hyper-v は、windows server および Windows では、x64 バージョンの Windows Server で使用できるサーバーの役割として使用できます。 サーバーの手順については、「 [Windows server に hyper-v の役割をインストールする](get-started/Install-the-Hyper-V-role-on-Windows-Server.md)」を参照してください。 Windows では、一部の64ビットバージョンの Windows で[機能](/virtualization/hyper-v-on-windows/index)として使用できます。 また、ダウンロード可能なスタンドアロンサーバー製品である[Microsoft Hyper-V サーバー](https://www.microsoft.com/evalcenter/evaluate-hyper-v-server-2019)としても利用できます。
 
 ## <a name="supported-operating-systems"></a>サポートされるオペレーティング システム
 
@@ -85,8 +85,8 @@ Hyper-v には、仮想マシンを作成して実行できるようにするた
 Hyper-v には、管理と接続のためのツールも用意されています。 これらは、Hyper-v の役割がインストールされているのと同じコンピューター、および Hyper-v の役割がインストールされていないコンピューターにインストールできます。 これらのツールは次のとおりです。
 
 - Hyper-V マネージャーは
-- [Windows PowerShell 用 Hyper-V モジュール](https://docs.microsoft.com/powershell/module/hyper-v/index)
-- [仮想マシン接続](https://docs.microsoft.com/windows-server/virtualization/hyper-v/learn-more/hyper-v-virtual-machine-connect) \(VMConnect と呼ばれることもあります。\)
+- [Windows PowerShell 用 Hyper-V モジュール](/powershell/module/hyper-v/index)
+- [仮想マシン接続](./learn-more/hyper-v-virtual-machine-connect.md) \(VMConnect と呼ばれることもあります。\)
 - [Windows PowerShell ダイレクト](manage/Manage-Windows-virtual-machines-with-PowerShell-Direct.md)
 
 ## <a name="related-technologies"></a>関連テクノロジ
@@ -94,9 +94,9 @@ Hyper-v には、管理と接続のためのツールも用意されています
 次に、Hyper-v でよく使用される Microsoft のテクノロジをいくつか示します。
 
 - [フェールオーバー クラスタリング](../../failover-clustering/whats-new-in-failover-clustering.md)
-- [リモート デスクトップ サービス](../../remote/remote-desktop-services/Host-desktops-and-apps-in-Remote-Desktop-Services.md)
-- [System Center Virtual Machine Manager](https://docs.microsoft.com/system-center/vmm/overview)
+- [リモート デスクトップ サービス](../../remote/remote-desktop-services/welcome-to-rds.md)
+- [System Center Virtual Machine Manager](/system-center/vmm/overview)
 
 さまざまな記憶域テクノロジ: クラスターの共有ボリューム、SMB 3.0、記憶域スペースダイレクト
 
-Windows コンテナーは、仮想化にもう1つのアプローチを提供します。 MSDN の[Windows コンテナー](https://docs.microsoft.com/virtualization/windowscontainers/index)ライブラリを参照してください。
+Windows コンテナーは、仮想化にもう1つのアプローチを提供します。 MSDN の[Windows コンテナー](/virtualization/windowscontainers/index)ライブラリを参照してください。

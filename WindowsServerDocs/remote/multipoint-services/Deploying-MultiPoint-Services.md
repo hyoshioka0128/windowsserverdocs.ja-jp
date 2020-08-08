@@ -2,19 +2,17 @@
 title: MultiPoint Services を展開する
 description: MultiPoint Services の展開プロセスの概要
 ms.date: 07/22/2016
-ms.prod: windows-server
-ms.technology: multipoint-services
 ms.topic: article
 ms.assetid: 594bc09e-5d2d-4984-a9de-79d40b1308d6
 author: evaseydl
 ms.author: evas
 manager: scottman
-ms.openlocfilehash: 0e24fadf1914c43bf6270e1d84c5a5535518d9bd
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 7188e6db4d3b0f6c7846f1e8e4d8847980f2605a
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182038"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87942451"
 ---
 # <a name="deploying-multipoint-services"></a>MultiPoint Services を展開する
 
@@ -40,6 +38,6 @@ ms.locfileid: "87182038"
 
     サーバーの使用を開始する前に、いくつかの基本的なサーバー管理タスクを実行します。 ディスクの保護を有効にします。サーバーバックアップをインストールします。電力を節約するには、スリープ設定を構成します。ドメイン展開のグループポリシーとレジストリを構成します。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [MultiPoint Services](MultiPoint-Services.md)

@@ -1,24 +1,23 @@
 ---
 title: PowerShell を使用してシールドされた VM を作成する
-ms.prod: windows-server
 ms.topic: article
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
 ms.date: 09/25/2019
-ms.openlocfilehash: abc1a2af7353bd85e0ae7ac55debc36d63d1782f
-ms.sourcegitcommit: fe89b8001ad664b3618708b013490de93501db05
+ms.openlocfilehash: 3272f1dd75f3e8df506341d49c1c32346bb5dbce
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84942291"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971329"
 ---
 # <a name="create-a-shielded-vm-using-powershell"></a>PowerShell を使用してシールドされた VM を作成する
 
 >適用対象: windows server 2019、Windows Server (半期チャネル)、Windows Server 2016
 
-運用環境では、通常、ファブリックマネージャー (VMM など) を使用してシールドされた Vm をデプロイします。 ただし、次の手順を実行すると、ファブリックマネージャーを使用せずにシナリオ全体を展開および検証することができます。
+運用環境では、通常、ファブリックマネージャー (VMM など) を使用してシールドされた Vm をデプロイします。
+ただし、次の手順を実行すると、ファブリックマネージャーを使用せずにシナリオ全体を展開および検証することができます。
 
 簡単に言うと、テンプレートディスク、シールドデータファイル、無人インストール応答ファイル、およびその他のセキュリティアーティファクトを任意のコンピューターに作成し、これらのファイルを保護されたホストにコピーして、シールドされた VM をプロビジョニングします。
 
@@ -56,21 +55,21 @@ Save-VolumeSignatureCatalog -TemplateDiskPath "C:\temp\MyTemplateDisk.vhdx" -Vol
 シールドされた Vm のリモートサーバー管理ツールがインストールされているコンピューターで、次のコマンドレットを実行します。
 Linux VM 用の PDK を作成する場合は、Windows Server バージョン1709以降を実行しているサーバーでこれを行う必要があります。
 
- 
+
 ```powershell
 # Create owner certificate, don't lose this!
 # The certificate is stored at Cert:\LocalMachine\Shielded VM Local Certificates
 $Owner = New-HgsGuardian –Name 'Owner' –GenerateCertificates
- 
+
 # Import the HGS guardian for each fabric you want to run your shielded VM
 $Guardian = Import-HgsGuardian -Path C:\HGSGuardian.xml -Name 'TestFabric'
- 
+
 # Create the PDK file
 # The "Policy" parameter describes whether the admin can see the VM's console or not
 # Use "EncryptionSupported" if you are testing out shielded VMs and want to debug any issues during the specialization process
 New-ShieldingDataFile -ShieldingDataFilePath 'C:\temp\Contoso.pdk' -Owner $Owner –Guardian $guardian –VolumeIDQualifier (New-VolumeIDQualifier -VolumeSignatureCatalogFilePath 'C:\temp\MyTemplateDiskCatalog.vsc' -VersionRule Equals) -WindowsUnattendFile 'C:\unattend.xml' -Policy Shielded
 ```
-    
+
 ## <a name="provision-shielded-vm-on-a-guarded-host"></a>保護されたホストでのシールドされた VM のプロビジョニング
 Windows Server 2016 を実行しているホストでは、プロビジョニングタスクが完了したことを通知するために VM をシャットダウンすることを監視できます。プロビジョニングが失敗した場合は、Hyper-v イベントログでエラー情報を確認してください。
 
