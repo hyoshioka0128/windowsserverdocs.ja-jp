@@ -5,15 +5,13 @@ author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 7ed7caad187181b4ad52cf4032d6343a3353c9f7
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 5aee90e28ae233cf7c96013537d82cc77bc9ba2e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519981"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87972159"
 ---
 # <a name="install-the-federation-service-role-service"></a>フェデレーション サービス役割サービスをインストールする
 

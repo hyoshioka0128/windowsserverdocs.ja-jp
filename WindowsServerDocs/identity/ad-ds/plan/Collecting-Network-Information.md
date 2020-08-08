@@ -6,14 +6,12 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/08/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 1aa9b135a29956086db405d0c77c079bcc6491a3
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 5593d416500e53956bcc176fa07eced4ca1dcc77
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86962374"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87947885"
 ---
 # <a name="collecting-network-information"></a>ネットワーク情報の収集
 

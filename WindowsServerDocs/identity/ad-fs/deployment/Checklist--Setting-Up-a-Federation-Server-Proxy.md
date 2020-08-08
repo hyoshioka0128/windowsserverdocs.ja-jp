@@ -5,15 +5,13 @@ author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 0ffb9a33fa5c06c9fa79846c21937ffddb2776cd
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 1c204288bb826dc87330a5471e5988284105635e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87520021"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87972249"
 ---
 # <a name="checklist-setting-up-a-federation-server-proxy"></a>チェックリスト: フェデレーション サーバー プロキシのセットアップ
 

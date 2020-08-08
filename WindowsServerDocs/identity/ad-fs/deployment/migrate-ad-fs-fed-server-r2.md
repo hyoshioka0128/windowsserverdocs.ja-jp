@@ -6,14 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 07/10/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 568fdb25bedda48327c7fd147a980b21cda3d5c8
-ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
+ms.openlocfilehash: 3b26687e4c20d4295682ffe81e27317c38efce53
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87863959"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87938245"
 ---
 # <a name="migrate-the-ad-fs-20-federation-server-to-ad-fs-on-windows-server-2012-r2"></a>Windows Server 2012 R2 の AD FS に AD FS 2.0 フェデレーションサーバーを移行する
 

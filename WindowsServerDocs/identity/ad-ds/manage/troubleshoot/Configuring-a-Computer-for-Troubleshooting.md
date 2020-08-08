@@ -6,14 +6,12 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/07/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: a71e1b92962ae9904262367f2c2697ecaa206ed8
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 05aa12b16d67a8f91ed82064c8464927546bfee8
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86965934"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87947906"
 ---
 # <a name="configuring-a-computer-for-troubleshooting"></a>トラブルシューティング用コンピューターを構成する
 

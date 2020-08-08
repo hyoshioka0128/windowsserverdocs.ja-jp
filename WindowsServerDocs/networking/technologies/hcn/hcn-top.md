@@ -3,39 +3,38 @@ title: Vm とコンテナーのホストコンピューティングネットワ�
 description: ホストコンピューティングネットワーク (HCN) サービス API は、仮想ネットワーク、仮想ネットワークエンドポイント、および関連付けられているポリシーを管理するためのプラットフォームレベルのアクセスを提供する公開された Win32 API です。 これにより、Windows ホストで実行されている仮想マシン (Vm) とコンテナーの接続性とセキュリティが提供されます。
 ms.author: jmesser
 author: jmesser81
-ms.prod: windows-server
 ms.date: 11/05/2018
-ms.openlocfilehash: 6e4d665ba431331fbf1f41a0ac4774e58693a5e2
-ms.sourcegitcommit: 717222e9efceb5964872dbf97034cad60f3c48df
+ms.openlocfilehash: 8e83af4ea54d2fcc75ff8ff054f4ad253a5422ea
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87295039"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87955661"
 ---
 # <a name="host-compute-network-hcn-service-api-for-vms-and-containers"></a>Vm とコンテナーのホストコンピューティングネットワーク (HCN) サービス API
 
 >適用対象: Windows Server (半期チャネル)、Windows Server 2019
 
-ホストコンピューティングネットワーク (HCN) サービス API は、仮想ネットワーク、仮想ネットワークエンドポイント、および関連付けられているポリシーを管理するためのプラットフォームレベルのアクセスを提供する公開された Win32 API です。 これにより、Windows ホストで実行されている仮想マシン (Vm) とコンテナーの接続性とセキュリティが提供されます。 
+ホストコンピューティングネットワーク (HCN) サービス API は、仮想ネットワーク、仮想ネットワークエンドポイント、および関連付けられているポリシーを管理するためのプラットフォームレベルのアクセスを提供する公開された Win32 API です。 これにより、Windows ホストで実行されている仮想マシン (Vm) とコンテナーの接続性とセキュリティが提供されます。
 
-開発者は HCN サービス API を使用して、アプリケーションワークフロー内の Vm とコンテナーのネットワークを管理します。 HCN API は、開発者に最適なエクスペリエンスを提供するように設計されています。 エンドユーザーは、これらの Api を直接操作することはありません。  
+開発者は HCN サービス API を使用して、アプリケーションワークフロー内の Vm とコンテナーのネットワークを管理します。 HCN API は、開発者に最適なエクスペリエンスを提供するように設計されています。 エンドユーザーは、これらの Api を直接操作することはありません。
 
 ## <a name="features-of-the-hcn-service-api"></a>HCN サービス API の機能
 -    OnCore/VM 上のホストネットワークサービス (HNS) によってホストされる C API として実装されます。
 
 -    ネットワーク、エンドポイント、名前空間、ポリシーなどの HCN オブジェクトを作成、変更、削除、および列挙する機能を提供します。 操作は、オブジェクト (ネットワークハンドルなど) へのハンドルに対して実行され、内部的には RPC コンテキストハンドルを使用してこれらのハンドルを実装します。
 
--    スキーマベース。 API のほとんどの関数は、JSON ドキュメントとして関数呼び出しの引数を含む文字列として、入力パラメーターと出力パラメーターを定義します。 JSON ドキュメントは、厳密に型指定されたバージョン管理されたスキーマに基づいています。これらのスキーマは、パブリックドキュメントに含まれています。 
+-    スキーマベース。 API のほとんどの関数は、JSON ドキュメントとして関数呼び出しの引数を含む文字列として、入力パラメーターと出力パラメーターを定義します。 JSON ドキュメントは、厳密に型指定されたバージョン管理されたスキーマに基づいています。これらのスキーマは、パブリックドキュメントに含まれています。
 
 -    サービス全体のイベント (ネットワークの作成や削除など) の通知にクライアントが登録できるようにするために、サブスクリプション/コールバック API が用意されています。
 
 -    HCN API はデスクトップブリッジで動作します (別名、 Centennial) システムサービスで実行されているアプリ。 API は、呼び出し元からユーザートークンを取得して ACL をチェックします。
 
 >[!TIP]
->HCN サービス API は、バックグラウンドタスクとフォアグラウンド以外のウィンドウでサポートされています。 
+>HCN サービス API は、バックグラウンドタスクとフォアグラウンド以外のウィンドウでサポートされています。
 
 ## <a name="terminology-host-vs-compute"></a>用語: ホストとコンピューティング
-ホストコンピューティングサービスを使用すると、呼び出し元は、1台の物理コンピューター上に仮想マシンとコンテナーの両方を作成して管理することができます。 業界の用語に従うために名前が付けられています。 
+ホストコンピューティングサービスを使用すると、呼び出し元は、1台の物理コンピューター上に仮想マシンとコンテナーの両方を作成して管理することができます。 業界の用語に従うために名前が付けられています。
 
 - **ホスト**は、仮想化業界で広く使用されており、仮想化されたリソースを提供するオペレーティングシステムを指します。
 
@@ -47,18 +46,18 @@ ms.locfileid: "87295039"
 構成ドキュメントの作成に使用される言語は[JSON](https://tools.ietf.org/html/rfc8259)で、次のものと組み合わせて使用します。
 -    ドキュメントのオブジェクトモデルを定義するスキーマ定義
 -    JSON ドキュメントがスキーマに準拠しているかどうかの検証
--    Api の呼び出し元によって使用されるプログラミング言語における、これらのスキーマのネイティブ表現との間での JSON ドキュメントの自動変換 
+-    Api の呼び出し元によって使用されるプログラミング言語における、これらのスキーマのネイティブ表現との間での JSON ドキュメントの自動変換
 
 頻繁に使用されるスキーマ定義は[Openapi](https://www.openapis.org/)と[JSON スキーマ](http://json-schema.org/)で、ドキュメント内のプロパティの詳細な定義を指定できます。次に例を示します。
 -    プロパティの有効な値のセット (パーセントを表すプロパティの場合は0-100 など)。
 -    列挙型の定義。これは、プロパティに対して有効な文字列のセットとして表されます。
--    文字列の予期される書式の正規表現。 
+-    文字列の予期される書式の正規表現。
 
-HCN Api のドキュメントの一部として、microsoft は、JSON ドキュメントのスキーマを OpenAPI 仕様として公開することを計画しています。 この仕様に基づき、スキーマの言語固有の表現によって、クライアントで使用されるプログラミング言語でスキーマオブジェクトをタイプセーフに使用できるようになります。 
+HCN Api のドキュメントの一部として、microsoft は、JSON ドキュメントのスキーマを OpenAPI 仕様として公開することを計画しています。 この仕様に基づき、スキーマの言語固有の表現によって、クライアントで使用されるプログラミング言語でスキーマオブジェクトをタイプセーフに使用できるようになります。
 
-### <a name="example"></a>例 
+### <a name="example"></a>例
 
-次に、VM の構成ドキュメントに含まれる SCSI コントローラーを表すオブジェクトのワークフローの例を示します。 
+次に、VM の構成ドキュメントに含まれる SCSI コントローラーを表すオブジェクトのワークフローの例を示します。
 
 ```
 enum IpamType
@@ -98,12 +97,12 @@ class PolicySettings
     [NewIn("2.0"),OmitEmpty]  string      Name;
 };
 
-class VlanPolicy : HCN.Schema.Common.PolicySettings 
+class VlanPolicy : HCN.Schema.Common.PolicySettings
 {
     [NewIn("2.0")] uint32 IsolationId;
 };
 
-class Route 
+class Route
 {
     [NewIn("2.0"),OmitEmpty] string NextHop;
     [NewIn("2.0"),OmitEmpty] string DestinationPrefix;
@@ -118,13 +117,13 @@ class Route
 この内部定義から、スキーマの OpenAPI 仕様を生成します。
 
 ```
-{ 
-    "swagger" : "2.0", 
-    "info" : { 
-       "version" : "2.1", 
-       "title" : "HCN API" 
+{
+    "swagger" : "2.0",
+    "info" : {
+       "version" : "2.1",
+       "title" : "HCN API"
     },
-    "definitions": {        
+    "definitions": {
         "Ipam": {
             "type": "object",
             "properties": {
@@ -150,7 +149,7 @@ class Route
                 "ID": {
                     "type": "string",
                     "pattern": "^[0-9A-Fa-f]{8}-([0-9A-Fa-f]{4}-){3}[0-9A-Fa-f]{12}$"
-                },                
+                },
                 "IpAddressPrefix": {
                     "type": "string"
                 },
@@ -190,7 +189,7 @@ class Route
                     "type": "string"
                 }
             }
-        },                      
+        },
         "VlanPolicy": {
             "type": "object",
             "properties": {
@@ -217,9 +216,9 @@ class Route
                     "format": "uint16"
                 }
             }
-        }        
+        }
     }
-} 
+}
 ```
 
 [Swagger](https://swagger.io/)などのツールを使用すると、クライアントによって使用されるスキーマプログラミング言語の言語固有の表現を生成できます。 Swagger は、C#、ゴー、Javascript、Python などのさまざまな言語をサポートしています。
@@ -269,9 +268,9 @@ class HostComputeNamespace : HCN.Schema.Common.Base
 
 class HostComputeLoadBalancer : HCN.Schema.Common.Base
 {
-    [NewIn("2.0"), OmitEmpty] string                                               HostComputeEndpoints[]; 
-    [NewIn("2.0"), OmitEmpty] string                                               VirtualIPs[]; 
-    [NewIn("2.0"), OmitEmpty] HCN.Schema.Network.Endpoint.Policy.PortMappingPolicy PortMappings[]; 
+    [NewIn("2.0"), OmitEmpty] string                                               HostComputeEndpoints[];
+    [NewIn("2.0"), OmitEmpty] string                                               VirtualIPs[];
+    [NewIn("2.0"), OmitEmpty] HCN.Schema.Network.Endpoint.Policy.PortMappingPolicy PortMappings[];
     [NewIn("2.0"), OmitEmpty] HCN.Schema.LoadBalancer.LoadBalancerPolicy           Policies[];
 };
 ```

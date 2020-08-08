@@ -1,19 +1,17 @@
 ---
 title: 機能の追加と開発
 description: System Insights を使用すると、OS の更新を必要とせずに、新しい予測機能を System Insights に追加できます。 これにより、Microsoft やサードパーティを含む開発者は、お客様の関心のあるシナリオに対処するための新機能を作成および提供することができます。 新しい機能では、収集および分析するカスタムデータを指定し、既存の System Insights 管理プレーンと統合することもできます。
-ms.prod: windows-server
-ms.technology: system-insights
 ms.topic: article
 author: gawatu
 ms.author: gawatu
 manager: mallikarjun.chadalapaka
 ms.date: 7/31/2018
-ms.openlocfilehash: 891edb108bc2c298c70b29c596fb8d0ca0e06b7e
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: b28621b24b321cdc22f07c03e9c04f0dde22759b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475189"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87972019"
 ---
 # <a name="adding-and-developing-new-capabilities"></a>新機能の追加と開発
 
@@ -39,7 +37,7 @@ System Insights を使用すると、OS の更新を必要とせずに、新し�
 >[!NOTE]
 >これはプレリリース機能です。 新しい機能を追加してフィードバックを組み込むため、変更される可能性があります。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 System Insights の詳細については、次のリソースを参照してください。
 
 - [システム インサイトの概要](overview.md)

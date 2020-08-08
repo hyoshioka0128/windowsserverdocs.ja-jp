@@ -6,14 +6,12 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: ec66353802b31432d182c1538c0d2f5322f457af
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: 2b25f714913df4c8453194dbc2b691c5cca0db80
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81624400"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87947916"
 ---
 # <a name="assigning-domain-names"></a>ドメイン名を割り当てる
 
@@ -36,4 +34,4 @@ ms.locfileid: "81624400"
 
 デプロイする新しいドメインごとに、プレフィックスの名前付け規則を満たす、リージョンに適したプレフィックスを選択します。 ドメインの NetBIOS 名は、DNS プレフィックスと同じにすることをお勧めします。
 
-フォレスト内の各ドメインに対して選択した DNS プレフィックスと NetBIOS 名を文書化します。 DNS と NetBIOS 名の情報は、新しく作成したドメインの計画を文書化するために作成した "ドメイン計画" ワークシートに追加できます。 このファイルを開くには、 [Windows Server 2003 Deployment Kit のジョブエイド](https://microsoft.com/download/details.aspx?id=9608)から Job_Aids_Designing_and_Deploying_Directory_and_Security_Services をダウンロードして、"ドメインの計画" (DSSLOGI_5) を開きます。
+フォレスト内の各ドメインに対して選択した DNS プレフィックスと NetBIOS 名を文書化します。 DNS と NetBIOS 名の情報は、新しく作成したドメインの計画を文書化するために作成した "ドメイン計画" ワークシートに追加できます。 これを開くには、 [Windows Server 2003 Deployment Kit のジョブエイド](https://microsoft.com/download/details.aspx?id=9608)から Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip をダウンロードして、"ドメイン計画" (DSSLOGI_5.doc) を開きます。

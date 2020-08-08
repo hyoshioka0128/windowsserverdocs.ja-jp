@@ -2,26 +2,24 @@
 title: Windows Server 2016 の MultiPoint Services への移行
 description: 以前のバージョンの MultiPoint Services から移行する方法について説明します。
 ms.date: 07/29/2016
-ms.prod: windows-server
-ms.technology: multipoint-services
 ms.topic: article
 ms.assetid: 16c217ad-700a-48a3-8398-4a7f7e9edb52
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.openlocfilehash: 1609ff02c8e1b1480d004104bdc7e37f1240729a
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: ce5fb28f92808d736f66f1f900228aac09d98bf5
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959274"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87955339"
 ---
 # <a name="multipoint-services-migration-in-windows-server-2016"></a>Windows Server 2016 での MultiPoint サービスの移行
 >適用先:Windows Server 2016
 
 以前のリリースの Windows Server 2016 MultiPoint Services から、最新バージョンの MultiPoint services に移行できます。 次の情報は、準備情報と移行および検証の手順を示しています。
 
-移行ドキュメントと移行ツールにより、既存のサーバーから Windows Server 2016 を実行している移行先サーバーへのサーバーの役割設定とデータの移行が容易になります。 このガイドで説明されている手順を使用すると、移行プロセスを簡素化すること、移行時間を短縮すること、移行プロセスの精度を高めること、および移行プロセス中に発生する可能性のある競合を取り除くことができます。 
+移行ドキュメントと移行ツールにより、既存のサーバーから Windows Server 2016 を実行している移行先サーバーへのサーバーの役割設定とデータの移行が容易になります。 このガイドで説明されている手順を使用すると、移行プロセスを簡素化すること、移行時間を短縮すること、移行プロセスの精度を高めること、および移行プロセス中に発生する可能性のある競合を取り除くことができます。
 
 ## <a name="what-to-know-before-you-begin"></a>開始する前に理解しておくべきこと
 移行プロセスを開始する前に、次の点に注意してください。

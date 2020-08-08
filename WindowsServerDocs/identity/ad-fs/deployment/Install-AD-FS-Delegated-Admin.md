@@ -7,14 +7,12 @@ ms.author: billmath
 manager: daveba
 ms.date: 04/01/2020
 ms.topic: article
-ms.prod: windows-server-threshold
-ms.technology: identity-adfs
-ms.openlocfilehash: 1716c1e3684ed09d051970a2ab3b43938b5eeb5e
-ms.sourcegitcommit: 20d07170c7f3094c2fb4455f54b13ec4b102f2d7
+ms.openlocfilehash: 7dff0b19b4d8783dcd43344c6152be9d2c36441d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81269443"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87972189"
 ---
 # <a name="creating-an-ad-fs-farm-without-domain-admin-privileges"></a>ドメイン管理者特権を使用せずに AD FS ファームを作成する
 
@@ -165,7 +163,7 @@ if ($pscmdlet.ShouldProcess("$ou", "Creating DKM container and assinging access"
     }
     else
     {
-        write-verbose "ADFS administrator account is a standard AD user"    
+        write-verbose "ADFS administrator account is a standard AD user"
         $objUser = New-Object System.Security.Principal.NTAccount($AdfsAdministratorAccount)
         $strSID = $objUser.Translate([System.Security.Principal.SecurityIdentifier])
     }

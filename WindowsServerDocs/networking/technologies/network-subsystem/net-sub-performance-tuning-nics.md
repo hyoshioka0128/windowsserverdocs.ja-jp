@@ -2,20 +2,18 @@
 title: ネットワーク アダプターのパフォーマンス チューニング
 description: このトピックは、Windows Server 2016 のネットワークサブシステムのパフォーマンスチューニングガイドに含まれています。
 audience: Admin - CI ID 111485 - CSSTroubleshoot
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: 0b9b0f80-415c-4f5e-8377-c09b51d9c5dd
 manager: dcscontentpm
 ms.author: v-tea
 author: Teresa-Motiv
 ms.date: 12/23/2019
-ms.openlocfilehash: eb402c9cd7bb4f9ae472859fcd45fcc050d1df85
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: a29830fe5f6f23138b5872b95926ae7dc8834ae4
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182138"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87955589"
 ---
 # <a name="performance-tuning-network-adapters"></a>ネットワーク アダプターのパフォーマンス チューニング
 
@@ -228,7 +226,7 @@ Set-NetTCPSetting -AutoTuningLevelLocal <Value>
 
 受信ウィンドウの自動チューニングは、5つのレベルのいずれかに設定できます。 既定のレベルは**Normal**です。 次の表では、これらのレベルについて説明します。
 
-|Level |16 進数値 |説明 |
+|Level |16 進数値 |コメント |
 | --- | --- | --- |
 |[標準] (既定) |0x8 (スケールファクターは 8) |ほとんどすべてのシナリオに対応できるように、TCP 受信ウィンドウを拡張するように設定します。 |
 |無効 |使用できるスケールファクターがありません |TCP 受信ウィンドウを既定値で設定します。 |

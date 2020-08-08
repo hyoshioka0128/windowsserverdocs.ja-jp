@@ -2,19 +2,17 @@
 title: ネットワークコントローラーを展開するための要件
 description: ネットワークコントローラーを展開するために、1台以上のコンピューターまたは Vm、1台のコンピューターまたは VM を必要とするデータセンターを準備します。 ネットワークコントローラーを展開する前に、セキュリティグループ、ログファイルの場所 (必要な場合)、および動的 DNS の登録を構成する必要があります。
 manager: grcusanz
-ms.prod: windows-server
-ms.technology: networking-sdn
 ms.topic: get-started-article
 ms.assetid: 7f899e62-6e5b-4fca-9a59-130d4766ee2f
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/10/2018
-ms.openlocfilehash: f5a7ec331c9d70214cbd0a772de6e2b2c7f4f58e
-ms.sourcegitcommit: 7116460855701eed4e09d615693efa4fffc40006
+ms.openlocfilehash: 060194959f80c9d2a6d174910b0264c58214373b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83433176"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87964088"
 ---
 # <a name="requirements-for-deploying-network-controller"></a>ネットワークコントローラーを展開するための要件
 
@@ -25,11 +23,11 @@ ms.locfileid: "83433176"
 
 ## <a name="network-controller-requirements"></a>ネットワークコントローラーの要件
 
-ネットワークコントローラーの展開には、ネットワークコントローラーとして機能する1つ以上のコンピューターまたは Vm、およびネットワークコントローラーの管理クライアントとして機能する1台のコンピューターまたは VM が必要です。 
+ネットワークコントローラーの展開には、ネットワークコントローラーとして機能する1つ以上のコンピューターまたは Vm、およびネットワークコントローラーの管理クライアントとして機能する1台のコンピューターまたは VM が必要です。
 
-- ネットワークコントローラーノードとして計画されているすべての Vm とコンピューターは、Windows Server 2016 Datacenter edition を実行している必要があります。 
-- ネットワークコントローラーをインストールするすべてのコンピューターまたは仮想マシン (VM) で、Windows Server 2016 の Datacenter edition が実行されている必要があります。 
-- 管理クライアントコンピューターまたはネットワークコントローラーの VM は、Windows 10 を実行している必要があります。 
+- ネットワークコントローラーノードとして計画されているすべての Vm とコンピューターは、Windows Server 2016 Datacenter edition を実行している必要があります。
+- ネットワークコントローラーをインストールするすべてのコンピューターまたは仮想マシン (VM) で、Windows Server 2016 の Datacenter edition が実行されている必要があります。
+- 管理クライアントコンピューターまたはネットワークコントローラーの VM は、Windows 10 を実行している必要があります。
 
 
 ## <a name="configuration-requirements"></a>構成要件
@@ -38,11 +36,11 @@ ms.locfileid: "83433176"
 
 ### <a name="step-1-configure-your-security-groups"></a>手順 1. セキュリティグループを構成する
 
-まず、Kerberos 認証用に2つのセキュリティグループを作成します。 
+まず、Kerberos 認証用に2つのセキュリティグループを作成します。
 
-次の権限を持つユーザーのグループを作成します。 
+次の権限を持つユーザーのグループを作成します。
 
-1. ネットワークコントローラーの構成<p>このグループには、たとえばネットワークコントローラーの管理者という名前を指定できます。 
+1. ネットワークコントローラーの構成<p>このグループには、たとえばネットワークコントローラーの管理者という名前を指定できます。
 2.  ネットワークコントローラーを使用してネットワークを構成および管理する<p>このグループには、ネットワークコントローラーのユーザーなどの名前を指定できます。 ネットワークコントローラーを構成および管理するには、表現を使用します。
 
 >[!NOTE]
@@ -50,7 +48,7 @@ ms.locfileid: "83433176"
 
 ### <a name="step-2-configure-log-file-locations-if-needed"></a>手順 2. 必要に応じてログファイルの場所を構成する
 
-次に行う必要があるのは、ネットワークコントローラーのデバッグログをネットワークコントローラーコンピューターまたは VM、またはリモートファイル共有に保存するようにファイルの場所を構成することです。 
+次に行う必要があるのは、ネットワークコントローラーのデバッグログをネットワークコントローラーコンピューターまたは VM、またはリモートファイル共有に保存するようにファイルの場所を構成することです。
 
 >[!NOTE]
 >リモートファイル共有にログを保存する場合は、ネットワークコントローラーから共有にアクセスできることを確認してください。
@@ -58,7 +56,7 @@ ms.locfileid: "83433176"
 
 ### <a name="step-3-configure-dynamic-dns-registration-for-network-controller"></a>手順 3. ネットワークコントローラーの動的 DNS 登録を構成する
 
-最後に、同じサブネットまたは異なるサブネットにネットワークコントローラークラスターノードを展開します。 
+最後に、同じサブネットまたは異なるサブネットにネットワークコントローラークラスターノードを展開します。
 
 
 |         条件         |                                                                                                                                                         結果                                                                                                                                                         |
@@ -73,7 +71,7 @@ ms.locfileid: "83433176"
 
 1. ゾーンの DNS 動的更新を許可します。
 
-   a. DNS マネージャーを開き、コンソールツリーで該当するゾーンを右クリックし、[**プロパティ**] をクリックします。 
+   a. DNS マネージャーを開き、コンソールツリーで該当するゾーンを右クリックし、[**プロパティ**] をクリックします。
 
    b. [**全般**] タブで、ゾーンの種類が [**プライマリ**] または [ **Active Directory 統合**] であることを確認します。
 
@@ -81,13 +79,13 @@ ms.locfileid: "83433176"
 
 2. ネットワークコントローラーノードの DNS ゾーンセキュリティアクセス許可を構成する
 
-   a.  [**セキュリティ**] タブをクリックし、[**詳細設定**] をクリックします。 
+   a.  [**セキュリティ**] タブをクリックし、[**詳細設定**] をクリックします。
 
-   b. [**セキュリティの詳細設定**] で、[**追加**] をクリックします。 
+   b. [**セキュリティの詳細設定**] で、[**追加**] をクリックします。
 
-   c. **[プリンシパルの選択]** をクリックします。 
+   c. **[プリンシパルの選択]** をクリックします。
 
-   d. [**ユーザー、コンピューター、サービスアカウントまたはグループの選択**] ダイアログボックスで、[**オブジェクトの種類**] をクリックします。 
+   d. [**ユーザー、コンピューター、サービスアカウントまたはグループの選択**] ダイアログボックスで、[**オブジェクトの種類**] をクリックします。
 
    e. [**オブジェクトの種類**] で、[**コンピューター**] を選択し、[ **OK**] をクリックします。
 
@@ -110,7 +108,7 @@ ms.locfileid: "83433176"
 
 ### <a name="network-controller-deployment"></a>ネットワークコントローラーの展開
 
-このセットアップは、仮想マシン上に3つのネットワークコントローラーノードが構成されている場合に高可用性を実現します。 また、web 層とデータベース層をシミュレートするために、2つの仮想サブネットに分類されたテナント2の仮想ネットワークを持つ2つのテナントも示しています。  
+このセットアップは、仮想マシン上に3つのネットワークコントローラーノードが構成されている場合に高可用性を実現します。 また、web 層とデータベース層をシミュレートするために、2つの仮想サブネットに分類されたテナント2の仮想ネットワークを持つ2つのテナントも示しています。
 
 ![SDN NC 計画](../../media/Plan-a-Software-Defined-Network-Infrastructure/SDN-NC-Planning.png)
 
@@ -124,17 +122,17 @@ ms.locfileid: "83433176"
 
 ゲートウェイ仮想マシンは3つあります。2つはアクティブで、1つは冗長です。
 
-![SDN NC 計画](../../media/Plan-a-Software-Defined-Network-Infrastructure/SDN-GW-Deployment.png)  
+![SDN NC 計画](../../media/Plan-a-Software-Defined-Network-Infrastructure/SDN-GW-Deployment.png)
 
->[!IMPORTANT] 
->VMM を使用して展開する場合は、インフラストラクチャの仮想マシン (VMM サーバー、AD/DNS、SQL Server など) が、図に示されている4つのホストのいずれかでホストされていないことを確認してください。  
+>[!IMPORTANT]
+>VMM を使用して展開する場合は、インフラストラクチャの仮想マシン (VMM サーバー、AD/DNS、SQL Server など) が、図に示されている4つのホストのいずれかでホストされていないことを確認してください。
 
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 [ソフトウェアで定義されたネットワークインフラストラクチャを計画](https://technet.microsoft.com/windows-server-docs/networking/sdn/plan/plan-a-software-defined-network-infrastructure)します。
 
 ## <a name="related-topics"></a>関連トピック
-- [ネットワーク コントローラー](../technologies/network-controller/Network-Controller.md) 
-- [ネットワークコントローラーの高可用性](../technologies/network-controller/network-controller-high-availability.md) 
-- [Windows PowerShell を使用してネットワーク コントローラーを展開する](../deploy/Deploy-Network-Controller-using-Windows-PowerShell.md)   
-- [サーバー マネージャーを使用してネットワーク コントローラー サーバーの役割をインストールする](../technologies/network-controller/Install-the-Network-Controller-server-role-using-Server-Manager.md)   
+- [ネットワーク コントローラー](../technologies/network-controller/Network-Controller.md)
+- [ネットワークコントローラーの高可用性](../technologies/network-controller/network-controller-high-availability.md)
+- [Windows PowerShell を使用してネットワーク コントローラーを展開する](../deploy/Deploy-Network-Controller-using-Windows-PowerShell.md)
+- [サーバー マネージャーを使用してネットワーク コントローラー サーバーの役割をインストールする](../technologies/network-controller/Install-the-Network-Controller-server-role-using-Server-Manager.md)

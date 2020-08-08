@@ -6,14 +6,12 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: d9fb0503bfdf51ebaf3ff22d487777fd55f408c8
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 5b5ce5e7b53c7b82732613022c8309efe044143f
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87520141"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87972229"
 ---
 # <a name="audit-policy-recommendations"></a>監査ポリシーの推奨事項
 

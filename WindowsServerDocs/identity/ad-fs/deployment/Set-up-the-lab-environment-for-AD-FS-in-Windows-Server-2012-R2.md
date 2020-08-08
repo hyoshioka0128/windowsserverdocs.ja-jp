@@ -6,14 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: b9ba6ca7900f33880fda6d77398ffa819cf1038c
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 30dc33bec01cf4a9ab0b944464d4bbc60f6ca74e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87177798"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87938234"
 ---
 # <a name="set-up-the-lab-environment-for-ad-fs-in-windows-server-2012-r2"></a>Windows Server 2012 R2 の AD FS 用のラボ環境をセットアップする
 
@@ -173,7 +171,7 @@ SSL 証明書のセットアップに関する詳細については、「 [エ�
 ### <a name="add-host-a-and-alias-cname-resource-records-to-dns"></a>ホスト (A) およびエイリアス (CNAME) リソース レコードの DNS への追加
 DC1 では、デバイス登録サービス用に次のドメイン ネーム システム (DNS) レコードを作成する必要があります。
 
-|入力|Type|Address|
+|入力|種類|Address|
 |---------|--------|-----------|
 |adfs1|ホスト (A)|AD FS サーバーの IP アドレス|
 |enterpriseregistration|エイリアス (CNAME)|adfs1.contoso.com|
@@ -256,7 +254,7 @@ Windows Server 2012 R2 オペレーティングシステムをインストール
 
 2.  C:\Program Files (x86)\Windows Identity Foundation SDK\v3.5\Samples\Quick Start\Web Application\PassiveRedirectBasedClaimsAwareWebApp の内容を C:\Inetpub\Claimapp にコピーします。
 
-3.  **Default.aspx.cs** ファイルを編集して、要求のフィルタリングを無効にします。 この手順を実行することで、フェデレーション サーバーが発行するすべての要求がサンプル アプリケーションに表示されます。 次の手順で行います。
+3.  **Default.aspx.cs** ファイルを編集して、要求のフィルタリングを無効にします。 この手順を実行することで、フェデレーション サーバーが発行するすべての要求がサンプル アプリケーションに表示されます。 次の操作を行います。
 
     1.  **Default.aspx.cs** をテキスト エディターで開きます。
 

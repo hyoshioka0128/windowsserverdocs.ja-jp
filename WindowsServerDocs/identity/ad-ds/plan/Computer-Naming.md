@@ -6,14 +6,12 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 2b396778b458976604e527fad0c4649d03239fa6
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: 37f877b3165f5de31c8a26ae4000b8064362fa17
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81624380"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87947850"
 ---
 # <a name="computer-naming"></a>コンピューターの名前付け
 

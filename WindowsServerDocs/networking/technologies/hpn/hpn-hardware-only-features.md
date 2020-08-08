@@ -1,20 +1,18 @@
 ---
 title: 高パフォーマンスネットワーク
 description: このトピックでは、Windows Server 2016 のオフロードおよび最適化テクノロジの概要について説明し、これらのテクノロジに関するその他のガイダンスへのリンクを示します。
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: 0cafb1cc-5798-42f5-89b6-3ffe7ac024ba
 manager: dougkim
 ms.author: lizross
 author: eross-msft
 ms.date: 09/12/2018
-ms.openlocfilehash: 7b2030535e65a94e285a3db00779dddb85411c95
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: b2cbb47262033d5149e47704e3f232b7662f69e6
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80316994"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87955668"
 ---
 # <a name="hardware-only-ho-features-and-technologies"></a>ハードウェアのみ (HO) の機能とテクノロジ
 
@@ -31,7 +29,7 @@ ms.locfileid: "80316994"
 
 送信パスでは、チェックサムオフロードが計算され、必要に応じて、IP、TCP、または UDP ヘッダーにチェックサムが挿入されます。
 
-送信パスでチェックサムのオフロードを無効にしても、Large Send Offload (LSO) 機能を使用してミニポートドライバーに送信されたパケットに対してチェックサムの計算と挿入が無効になることはありません。  すべてのチェックサムオフロード計算を無効にするには、ユーザーは LSO も無効にする必要があります。
+送信パスでチェックサムのオフロードを無効にしても、Large Send Offload (LSO) 機能を使用してミニポートドライバーに送信されたパケットに対してチェックサムの計算と挿入が無効になることはありません。すべてのチェックサムオフロード計算を無効にするには、ユーザーは LSO も無効にする必要があります。
 
 _**アドレスチェックサムのオフロードの管理**_
 
@@ -61,7 +59,7 @@ _**アドレスチェックサムのオフロードの使用に関するヒン�
 
 ## <a name="interrupt-moderation-im"></a>割り込みモデレーション (IM)
 
-IM は、オペレーティングシステムを中断する前に、複数の受信パケットをバッファーします。 NIC は、パケットを受信するとタイマーを開始します。 バッファーがいっぱいになった場合、またはタイマーの有効期限が切れた場合は、NIC によってオペレーティングシステムが中断されます。 
+IM は、オペレーティングシステムを中断する前に、複数の受信パケットをバッファーします。 NIC は、パケットを受信するとタイマーを開始します。 バッファーがいっぱいになった場合、またはタイマーの有効期限が切れた場合は、NIC によってオペレーティングシステムが中断されます。
 
 多くの Nic は、割り込みのモデレーションのために、単にオン/オフをサポートしています。 ほとんどの Nic は、IM の低、中、高レートの概念をサポートしています。 異なるレートは、短いタイマーと、待機時間を短縮するための適切なバッファーサイズの調整を表します。
 

@@ -1,8 +1,6 @@
 ---
 title: RSS および vRSS 用の Windows PowerShell コマンド
 description: このトピックでは、Receive Side Scaling (RSS) と仮想 RSS (vRSS) 用の Windows PowerShell コマンドに関するテクニカルリファレンス情報をすばやく見つける方法について説明します。
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: 49e93b9f-46d9-4cee-bcda-1c4634893ddd
 ms.localizationpriority: medium
@@ -10,20 +8,20 @@ manager: dougkim
 ms.author: lizross
 author: eross-msft
 ms.date: 09/05/2018
-ms.openlocfilehash: d049f5c66c70fbdc7c95823e9377c570480c9ada
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 6b44cdfec4778cf7f36f541021f23a073cb17806
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80315229"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87964008"
 ---
 # <a name="windows-powershell-commands-for-rss-and-vrss"></a>RSS および vRSS 用の Windows PowerShell コマンド
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016
+>適用先:Windows Server (半期チャネル)、Windows Server 2016
 
-このトピックでは、Receive Side Scaling \(RSS\) および仮想 RSS \(vRSS\)の Windows PowerShell コマンドに関するテクニカルリファレンス情報をすばやく見つける方法について説明します。
+このトピックでは、Receive Side Scaling \( RSS \) および virtual RSS vRSS 用の Windows PowerShell コマンドに関するテクニカルリファレンス情報をすばやく見つける方法について説明し \( \) ます。
 
-複数のプロセッサまたは複数のコアを持つ物理コンピューターで RSS を構成するには、次の RSS コマンドを使用します。 同じコマンドを使用して、サポートされているオペレーティングシステムを実行している仮想マシン \(VM\) で vRSS を構成できます。 詳細については、「 [Windows PowerShell のネットワークアダプターコマンドレット](https://docs.microsoft.com/powershell/module/netadapter/?view=win10-ps)」を参照してください。
+複数のプロセッサまたは複数のコアを持つ物理コンピューターで RSS を構成するには、次の RSS コマンドを使用します。 \( \) サポートされているオペレーティングシステムを実行している仮想マシン VM で、同じコマンドを使用して vRSS を構成できます。 詳細については、「 [Windows PowerShell のネットワークアダプターコマンドレット](https://docs.microsoft.com/powershell/module/netadapter/?view=win10-ps)」を参照してください。
 
 ## <a name="configure-vmq"></a>VMQ の構成
 
@@ -36,7 +34,7 @@ vRSS を使用するには、VMQ が有効で構成されている必要があ�
 
 ## <a name="enable-and-configure-rss-on-a-native-host"></a>ネイティブホストで RSS を有効にして構成する
 
-次の PowerShell コマンドを使用して、ネイティブホストで RSS を構成し、VM またはホスト仮想 NIC (vNIC) で RSS を管理します。 これらのコマンドのパラメーターの一部は、Hyper-v ホストの仮想マシンキュー \(VMQ\) にも影響することがあります。  
+次の PowerShell コマンドを使用して、ネイティブホストで RSS を構成し、VM またはホスト仮想 NIC (vNIC) で RSS を管理します。 これらのコマンドのパラメーターの一部は、Hyper-v ホストの仮想マシンキュー VMQ にも影響を与える可能性があり \( \) ます。
 
 >[!IMPORTANT]
 >VRSS を有効にして使用するには、VM またはホスト vNIC で RSS を有効にする必要があります。
@@ -46,20 +44,20 @@ vRSS を使用するには、VMQ が有効で構成されている必要があ�
 - [Set-netadapterrss](https://docs.microsoft.com/powershell/module/netadapter/get-netadapterrss?view=win10-ps)
 - [Set-netadapterrss](https://docs.microsoft.com/powershell/module/netadapter/Set-NetAdapterRss?view=win10-ps)
 
-## <a name="enable-vrss-on-the-hyper-v-virtual-switch-port"></a>\-Hyper-v 仮想スイッチポートでの vRSS の有効化
+## <a name="enable-vrss-on-the-hyper-v-virtual-switch-port"></a>Hyper-v 仮想スイッチポートでの vRSS の有効化 \-
 
-VRSS では、VM で RSS を有効にするだけでなく、\-Hyper-v 仮想スイッチポートで vRSS を有効にする必要があります。 
+VRSS では、VM で RSS を有効にするだけでなく、Hyper-v 仮想スイッチポートで vRSS を有効にする必要があり \- ます。
 
 VRSS の現在の設定を確認し、VM の機能を有効または無効にします。
 
-   **現在の設定を表示します。** 
+   **現在の設定を表示します。**
 
    ```PowerShell
    Get-VMNetworkAdapter <vm-name> | fl
    ```
 
    **機能を有効にします。**
-   
+
    ```PowerShell
    Set-VMNetworkAdapter <vm-name> -VrssEnabled [$True|$False]
    ```
@@ -68,26 +66,26 @@ VRSS の現在の設定を確認し、VM の機能を有効または無効にし
 
 VRSS の現在の設定を確認し、ホスト vNIC の機能を有効または無効にします。
 
-   **現在の設定を表示します。** 
+   **現在の設定を表示します。**
 
    ```PowerShell
    Get-VMNetworkAdapter -ManagementOS | fl
    ```
 
-   **機能を有効または無効にします。** 
+   **機能を有効または無効にします。**
 
    ```PowerShell
    Set-VMNetworkAdapter -ManagementOS -VrssEnabled [$True|$False]
    ```
 
-## <a name="configure-the-scheduling-mode-on-the-hyper-v-virtual-switch-port"></a>Hyper-v 仮想スイッチポートでスケジュールモードを構成する 
->適用対象: Windows Server 2019
+## <a name="configure-the-scheduling-mode-on-the-hyper-v-virtual-switch-port"></a>Hyper-v 仮想スイッチポートでスケジュールモードを構成する
+>適用対象:Windows Server 2019
 
-Windows Server 2019 では、vRSS はネットワークトラフィックを動的に処理するために使用する論理プロセッサを更新できます。  ドライバーがサポートされているデバイスでは、このスケジュールモードが既定で有効になっています。 
+Windows Server 2019 では、vRSS はネットワークトラフィックを動的に処理するために使用する論理プロセッサを更新できます。  ドライバーがサポートされているデバイスでは、このスケジュールモードが既定で有効になっています。
 
 システムの現在のスケジューリングモードを確認するか、VM のスケジュールモードを変更します。
 
-   **現在の設定を表示します。** 
+   **現在の設定を表示します。**
 
    ```PowerShell
    Get-VMNetworkAdapter <vm-name> | Select 'VRSSQueue'
@@ -100,27 +98,27 @@ Windows Server 2019 では、vRSS はネットワークトラフィックを動�
    ```
 
 ## <a name="configure-the-scheduling-mode-on-a-host-vnic"></a>ホスト vNIC でスケジュールモードを構成する
->適用対象: Windows Server 2019
+>適用対象:Windows Server 2019
 
 現在のスケジュールモードを確認したり、ホスト vNIC のスケジュールモードを変更したりするには、次の Windows PowerShell コマンドを使用します。
 
-   **現在の設定を表示します。** 
+   **現在の設定を表示します。**
 
    ```PowerShell
    Get-VMNetworkAdapter -ManagementOS | Select 'VRSSQueue'
    ```
 
-   **スケジュールモードを設定または変更します。** 
+   **スケジュールモードを設定または変更します。**
 
    ```PowerShell
    Set-VMNetworkAdapter -ManagementOS -VrssQueueSchedulingMode -VrssQueueSchedulingMode [Dynamic|$StaticVrss|StaticVMQ]
    ```
 
 
-## <a name="related-topics"></a>関連トピック 
+## <a name="related-topics"></a>関連トピック
 詳細については、次の参照トピックを参照してください。
 
 - [VMNetworkAdapter](https://technet.microsoft.com/itpro/powershell/windows/hyper-v/get-vmnetworkadapter)
-- [VMNetworkAdapter](https://technet.microsoft.com/itpro/powershell/windows/hyper-v/set-vmnetworkadapter)
+- [Set-VMNetworkAdapter](https://technet.microsoft.com/itpro/powershell/windows/hyper-v/set-vmnetworkadapter)
 
 詳細については、「[仮想 Receive Side Scaling (vRSS)](vrss-top.md)」を参照してください。

@@ -6,14 +6,12 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/08/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: c48996945e648a8ad698b1746e722702371521f1
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: b96f0b5fd47fc4a7d4d1fe6d68fcfa1543108d3f
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86962354"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87947860"
 ---
 # <a name="creating-a-dns-infrastructure-design"></a>DNS インフラストラクチャの設計を作成する
 

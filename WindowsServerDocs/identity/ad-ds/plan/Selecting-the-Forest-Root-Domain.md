@@ -6,14 +6,12 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/08/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 451a0b46cd45d0dd28ceb3634da9d847864bd519
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: c0a814932bfb5a232e55857e3cc10af4068d14c9
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86953774"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87972239"
 ---
 # <a name="selecting-the-forest-root-domain"></a>フォレスト ルート ドメインを選択する
 

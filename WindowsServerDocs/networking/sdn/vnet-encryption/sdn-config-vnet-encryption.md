@@ -2,19 +2,17 @@
 title: Virtual Network の暗号化を構成する
 description: 仮想ネットワーク暗号化を使用すると、"暗号化が有効になっている" とマークされているサブネット内で相互に通信する仮想マシン間で仮想ネットワークトラフィックを暗号化できます。
 manager: grcusanz
-ms.prod: windows-server
-ms.technology: networking-hv-switch
 ms.topic: get-started-article
 ms.assetid: 378213f5-2d59-4c9b-9607-1fc83f8072f1
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/08/2018
-ms.openlocfilehash: 11ec399ab9c63b27711b19987c6e070b47545fdd
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 24b716283eeab929f09db3c4e9cf3ec577211d32
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87520231"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87955859"
 ---
 # <a name="configure-encryption-for-a-virtual-subnet"></a>仮想サブネットの暗号化の構成
 

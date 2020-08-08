@@ -4,16 +4,14 @@ author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
 ms.assetid: a5307da5-02ff-4c31-80f0-47cb17a87272
-ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 36555336b158fdf7cfaa400f66b9deecbff49c1b
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: a78f989230450bcf59f86add66bdcfe91fa23c77
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519691"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87938120"
 ---
 # <a name="ad-fs-and-certificate-keyspec-property-information"></a>AD FS と certificate KeySpec のプロパティ情報
 キー指定 ("KeySpec") は、証明書とキーに関連付けられているプロパティです。 証明書に関連付けられた秘密キーを署名、暗号化、またはその両方に使用できるかどうかを指定します。

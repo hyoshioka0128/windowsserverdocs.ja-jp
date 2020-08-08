@@ -2,20 +2,19 @@
 title: ホストコンピューティングネットワーク (HCN) のシナリオ
 ms.author: jmesser
 author: jmesser81
-ms.prod: windows-server
 ms.date: 11/05/2018
-ms.openlocfilehash: 2fdf0d13a0a362681a27106356fbe295532ed970
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: c6b09ec65bd76fb63c2bb5c4eb5da1187f62ca75
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80859835"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87955679"
 ---
 # <a name="common-scenarios"></a>一般的なシナリオ
 
 >適用対象: Windows Server (半期チャネル)、Windows Server 2019
 
-## <a name="scenario-hcn"></a>シナリオ: HCN 
+## <a name="scenario-hcn"></a>シナリオ: HCN
 
 
 ### <a name="create-an-hcn"></a>HCN を作成する
@@ -23,25 +22,25 @@ ms.locfileid: "80859835"
 このサンプルでは、ホストコンピューティングネットワークサービス API を使用して、仮想 NIC を Virtual Machines またはコンテナーに接続するために使用できるホストコンピューティングネットワークをホスト上に作成する方法を示します。
 
 ```C++
-using unique_hcn_network = wil::unique_any< 
-    HCN_NETWORK, 
-    decltype(&HcnCloseNetwork), 
-    HcnCloseNetwork>; 
+using unique_hcn_network = wil::unique_any<
+    HCN_NETWORK,
+    decltype(&HcnCloseNetwork),
+    HcnCloseNetwork>;
 
 
 /// Creates a simple HCN Network, waiting synchronously to finish the task
-void CreateHcnNetwork() 
+void CreateHcnNetwork()
 {
 
     unique_hcn_network hcnnetwork;
     wil::unique_cotaskmem_string result;
-    std::wstring settings = LR"( 
-    { 
-        "SchemaVersion": { 
-            "Major": 2, 
-            "Minor": 0 
-        }, 
-        "Owner" : "WDAGNetwork", 
+    std::wstring settings = LR"(
+    {
+        "SchemaVersion": {
+            "Major": 2,
+            "Minor": 0
+        },
+        "Owner" : "WDAGNetwork",
         "Flags" : 0,
         "Type"  : 0,
         "Ipams" : [
@@ -80,19 +79,19 @@ void CreateHcnNetwork()
             "ServerList" : ["10.0.0.10"],
         }
     }
-    })";    
-    
-    GUID networkGuid;  
+    })";
+
+    GUID networkGuid;
     HRESULT result = CoCreateGuid(&networkGuid);
 
     result = HcnCreateNetwork(
-        networkGuid,              // Unique ID 
-        settings.c_str(),      // Compute system settings document 
+        networkGuid,              // Unique ID
+        settings.c_str(),      // Compute system settings document
         &hcnnetwork,
-        &result 
+        &result
         );
-    if (FAILED(result)) 
-    { 
+    if (FAILED(result))
+    {
                     // UnMarshal  the result Json
      // ErrorSchema
         //   {
@@ -102,28 +101,28 @@ void CreateHcnNetwork()
        //   }
 
         // Failed to create network
-        THROW_HR(result); 
-    }  
+        THROW_HR(result);
+    }
 
     // Close the Handle
     result = HcnCloseNetwork(hcnnetwork.get());
 
-    if (FAILED(result)) 
+    if (FAILED(result))
     {
         // UnMarshal  the result Json
         THROW_HR(result);
     }
-        
+
 }
 ```
 
 ### <a name="delete-an-hcn"></a>HCN の削除
 
-このサンプルでは、ホストコンピューティングネットワークサービス API を使用して、ホストコンピューティングネットワークを開い & 削除する方法を示します。 
+このサンプルでは、ホストコンピューティングネットワークサービス API を使用して、ホストコンピューティングネットワークを開い & 削除する方法を示します。
 
 ```C++
     wil::unique_cotaskmem_string errorRecord;
-    GUID networkGuid; // Initialize it to appropriate network guid value 
+    GUID networkGuid; // Initialize it to appropriate network guid value
     HRESULT hr = HcnDeleteNetwork(networkGuid, &errorRecord);
 
     if (FAILED(hr))
@@ -144,7 +143,7 @@ void CreateHcnNetwork()
 
      // Filter to select Networks based on properties
      std::wstring filter [] = LR"(
-     { 
+     {
          "Name"  : "WDAG",
      })";
      HRESULT result = HcnEnumerateNetworks(filter.c_str(), &resultNetworks, &errorRecord);
@@ -166,7 +165,7 @@ void CreateHcnNetwork()
     wil::unique_cotaskmem_string errorRecord;
     wil::unique_cotaskmem_string properties;
     std:wstring query = LR"(
-    { 
+    {
         // Future
     })";
     GUID networkGuid; // Initialize it to appropriate network guid value
@@ -196,12 +195,12 @@ void CreateHcnNetwork()
 このサンプルでは、ホストコンピューティングネットワークサービス API を使用してホストコンピューティングネットワークエンドポイントを作成し、仮想マシンまたはコンテナーにホットアドする方法を示します。
 
 ```C++
-using unique_hcn_endpoint = wil::unique_any< 
-    HCN_ENDPOINT, 
-    decltype(&HcnCloseEndpoint), 
-    HcnCloseEndpoint>; 
+using unique_hcn_endpoint = wil::unique_any<
+    HCN_ENDPOINT,
+    decltype(&HcnCloseEndpoint),
+    HcnCloseEndpoint>;
 
-void CreateAndHotAddEndpoint() 
+void CreateAndHotAddEndpoint()
 {
     unique_hcn_endpoint hcnendpoint;
     unique_hcn_network hcnnetwork;
@@ -209,13 +208,13 @@ void CreateAndHotAddEndpoint()
     wil::unique_cotaskmem_string errorRecord;
 
 
-    std::wstring settings[] = LR"( 
-    { 
-        "SchemaVersion": { 
-            "Major": 2, 
-            "Minor": 0 
-        }, 
-        "Owner" : "Sample", 
+    std::wstring settings[] = LR"(
+    {
+        "SchemaVersion": {
+            "Major": 2,
+            "Minor": 0
+        },
+        "Owner" : "Sample",
                    "Flags" : 0,
         "HostComputeNetwork" : "87fdcf16-d210-426e-959d-2a1d4f41d6d3",
         "DNS" : {
@@ -223,36 +222,36 @@ void CreateAndHotAddEndpoint()
             "ServerList" : "10.0.0.10",
         }
     })";
-    GUID endpointGuid;  
+    GUID endpointGuid;
     HRESULT result = CoCreateGuid(&endpointGuid);
 
     result = HcnOpenNetwork(
-        networkGuid,              // Unique ID 
+        networkGuid,              // Unique ID
         &hcnnetwork,
         &errorRecord
         );
-    if (FAILED(result)) 
-    { 
+    if (FAILED(result))
+    {
         // Failed to find network
-        THROW_HR(result); 
-    }                
+        THROW_HR(result);
+    }
 
     result = HcnCreateEndpoint(
         hcnnetwork.get(),
-        endpointGuid,              // Unique ID 
-        settings.c_str(),      // Compute system settings document 
+        endpointGuid,              // Unique ID
+        settings.c_str(),      // Compute system settings document
         &hcnendpoint,
         &errorRecord
         );
 
-    if (FAILED(result)) 
-    { 
+    if (FAILED(result))
+    {
         // Failed to create endpoint
-        THROW_HR(result); 
+        THROW_HR(result);
     }
 
-    // Can use the sample from HCS API Spec on how to attach this endpoint 
-    // to the VM using AddNetworkAdapterToVm   
+    // Can use the sample from HCS API Spec on how to attach this endpoint
+    // to the VM using AddNetworkAdapterToVm
 
     result = HcnCloseEndpoint(hcnendpoint.get());
 
@@ -261,7 +260,7 @@ void CreateAndHotAddEndpoint()
         // UnMarshal  the result Json
         THROW_HR(result);
     }
-             
+
 }
 ```
 
@@ -290,7 +289,7 @@ void CreateAndHotAddEndpoint()
 ```C++
     unique_hcn_endpoint hcnendpoint;
     GUID endpointGuid; // Initialize it to appropriate endpoint guid value
-    
+
     HRESULT hr = HcnOpenEndpoint(endpointGuid, &hcnendpoint, &errorRecord);
 
     if (FAILED(hr))
@@ -335,7 +334,7 @@ void CreateAndHotAddEndpoint()
 
     // Filter to select Endpoint based on properties
     std::wstring filter [] = LR"(
-    { 
+    {
         "Name"  : "sampleNetwork",
     })";
     result = HcnEnumerateEndpoints(filter.c_str(), &resultEndpoints, &errorRecord);
@@ -367,7 +366,7 @@ void CreateAndHotAddEndpoint()
 
     wil::unique_cotaskmem_string properties;
     std:wstring query = LR"(
-    { 
+    {
         // Future
     })";
 
@@ -388,39 +387,39 @@ void CreateAndHotAddEndpoint()
 このサンプルでは、ホストコンピューティングネットワークサービス API を使用して、エンドポイントとコンテナーを接続するために使用できるホストコンピューティングネットワーク名前空間をホストに作成する方法を示します。
 
 ```C++
-using unique_hcn_namespace = wil::unique_any< 
-    HCN_NAMESPACE, 
-    decltype(&HcnCloseNamespace), 
-    HcnCloseNamespace>; 
+using unique_hcn_namespace = wil::unique_any<
+    HCN_NAMESPACE,
+    decltype(&HcnCloseNamespace),
+    HcnCloseNamespace>;
 
 /// Creates a simple HCN Network, waiting synchronously to finish the task
-void CreateHcnNamespace() 
+void CreateHcnNamespace()
 {
 
     unique_hcn_namespace handle;
     wil::unique_cotaskmem_string errorRecord;
-    std::wstring settings = LR"( 
-    { 
-        "SchemaVersion": { 
-            "Major": 2, 
-            "Minor": 0 
-        }, 
-        "Owner" : "Sample", 
+    std::wstring settings = LR"(
+    {
+        "SchemaVersion": {
+            "Major": 2,
+            "Minor": 0
+        },
+        "Owner" : "Sample",
         "Flags" : 0,
         "Type" : 0,
-    })";    
-   
-    GUID namespaceGuid;  
+    })";
+
+    GUID namespaceGuid;
     HRESULT result = CoCreateGuid(&namespaceGuid);
 
     result = HcnCreateNamespace(
-        namespaceGuid,              // Unique ID 
-        settings.c_str(),      // Compute system settings document 
+        namespaceGuid,              // Unique ID
+        settings.c_str(),      // Compute system settings document
         &handle,
         &errorRecord
         );
-    if (FAILED(result)) 
-    { 
+    if (FAILED(result))
+    {
                     // UnMarshal  the result Json
      // ErrorSchema
         //   {
@@ -430,8 +429,8 @@ void CreateHcnNamespace()
        //   }
 
         // Failed to create network
-        THROW_HR(result); 
-    } 
+        THROW_HR(result);
+    }
 
     result = HcnCloseNamespace(handle.get());
 
@@ -440,7 +439,7 @@ void CreateHcnNamespace()
         // UnMarshal  the result Json
         THROW_HR(result);
     }
-         
+
 }
 ```
 
@@ -489,7 +488,7 @@ void CreateHcnNamespace()
     }
     )";
 
-    
+
     hr = HcnModifyNamespace(handle.get(), ModifySettingAddEndpointJson.c_str(), &errorRecord);
 
     if (FAILED(hr))
@@ -504,7 +503,7 @@ void CreateHcnNamespace()
         // UnMarshal  the result Json
         THROW_HR(hr);
     }
-    
+
 ```
 
 
@@ -517,8 +516,8 @@ void CreateHcnNamespace()
     wil::unique_cotaskmem_string errorRecord;
 
     std::wstring filter [] = LR"(
-    { 
-            // Future       
+    {
+            // Future
     })";
     HRESULT hr = HcnEnumerateNamespace(filter.c_str(), &resultNamespaces, &errorRecord);
     if (FAILED(hr))
@@ -549,7 +548,7 @@ void CreateHcnNamespace()
     wil::unique_cotaskmem_string errorRecord;
     wil::unique_cotaskmem_string properties;
     std:wstring query = LR"(
-    { 
+    {
         // Future
     })";
 
@@ -571,24 +570,24 @@ void CreateHcnNamespace()
 このサンプルでは、ホストコンピューティングネットワークサービス API を使用して、コンピューティング間でエンドポイントを負荷分散するために使用できるホストコンピューティングネットワーク Load Balancer をホスト上に作成する方法を示します。
 
 ```C++
-using unique_hcn_loadbalancer = wil::unique_any< 
-    HCN_LOADBALANCER, 
-    decltype(&HcnCloseLoadBalancer), 
-    HcnCloseLoadBalancer>; 
+using unique_hcn_loadbalancer = wil::unique_any<
+    HCN_LOADBALANCER,
+    decltype(&HcnCloseLoadBalancer),
+    HcnCloseLoadBalancer>;
 
 /// Creates a simple HCN LoadBalancer, waiting synchronously to finish the task
-void CreateHcnLoadBalancer() 
+void CreateHcnLoadBalancer()
 {
 
     unique_hcn_loadbalancer handle;
     wil::unique_cotaskmem_string errorRecord;
-    std::wstring settings = LR"( 
-     { 
-        "SchemaVersion": { 
-            "Major": 2, 
-            "Minor": 0 
-        }, 
-        "Owner" : "Sample", 
+    std::wstring settings = LR"(
+     {
+        "SchemaVersion": {
+            "Major": 2,
+            "Minor": 0
+        },
+        "Owner" : "Sample",
         "HostComputeEndpoints" : [
             "87fdcf16-d210-426e-959d-2a1d4f41d6d1"
         ],
@@ -603,20 +602,20 @@ void CreateHcnLoadBalancer()
         "EnableDirectServerReturn" : true,
         "InternalLoadBalancer" : false,
     }
-     )";    
-   
-    GUID lbGuid;  
+     )";
+
+    GUID lbGuid;
     HRESULT result = CoCreateGuid(&lbGuid);
 
 
     HRESULT hr = HcnCreateLoadBalancer(
-        lbGuid,              // Unique ID 
-        settings.c_str(),      // LoadBalancer settings document 
+        lbGuid,              // Unique ID
+        settings.c_str(),      // LoadBalancer settings document
         &handle,
         &errorRecord
         );
-    if (FAILED(hr)) 
-    { 
+    if (FAILED(hr))
+    {
                     // UnMarshal  the result Json
      // ErrorSchema
         //   {
@@ -626,7 +625,7 @@ void CreateHcnLoadBalancer()
        //   }
 
         // Failed to create network
-        THROW_HR(hr); 
+        THROW_HR(hr);
     }
 
     hr = HcnCloseLoadBalancer(handle.get());
@@ -636,7 +635,7 @@ void CreateHcnLoadBalancer()
         // UnMarshal  the result Json
         THROW_HR(hr);
     }
-          
+
 }
 ```
 
@@ -685,7 +684,7 @@ void CreateHcnLoadBalancer()
     }
     )";
 
-    
+
     hr = HcnModifyLoadBalancer(handle.get(), ModifySettingAddEndpointJson.c_str(), &errorRecord);
 
     if (FAILED(hr))
@@ -712,7 +711,7 @@ void CreateHcnLoadBalancer()
     wil::unique_cotaskmem_string errorRecord;
 
     std::wstring filter [] = LR"(
-    { 
+    {
          // Future
 
     })";
@@ -746,7 +745,7 @@ void CreateHcnLoadBalancer()
     wil::unique_cotaskmem_string errorRecord;
     wil::unique_cotaskmem_string properties;
     std:wstring query = LR"(
-    { 
+    {
         "ID"  : "",
         "Type" : 0,
     })";
@@ -768,12 +767,12 @@ void CreateHcnLoadBalancer()
 このサンプルでは、ホストコンピューティングネットワークサービス API を使用して、サービス全体の通知の登録と登録解除を行う方法を示します。 これにより、新しいネットワーク作成イベントなどのサービス全体の操作が発生したときに、呼び出し元は (登録時に指定されたコールバック関数を使用して) 通知を受け取ることができます。
 
 ```C++
-using unique_hcn_callback = wil::unique_any< 
-    HCN_CALLBACK, 
-    decltype(&HcnUnregisterServiceCallback), 
-    HcnUnregisterServiceCallback>; 
+using unique_hcn_callback = wil::unique_any<
+    HCN_CALLBACK,
+    decltype(&HcnUnregisterServiceCallback),
+    HcnUnregisterServiceCallback>;
 
-// Callback handle returned by registration api. Kept at 
+// Callback handle returned by registration api. Kept at
 // global or module scope as it will automatically be
 // unregistered when it goes out of scope.
 unique_hcn_callback g_Callback;
@@ -815,12 +814,12 @@ ServiceCallback(
 }
 
 /// Register for service-wide notifications
-void RegisterForServiceNotifications() 
+void RegisterForServiceNotifications()
 {
     THROW_IF_FAILED(HcnRegisterServiceCallback(
         ServiceCallback,
         nullptr,
-        &g_Callback));        
+        &g_Callback));
 }
 
 /// Unregister from service-wide notifications
@@ -832,7 +831,7 @@ void UnregisterForServiceNotifications()
 }
 ```
 
-## <a name="next-steps"></a>次のステップ:
+## <a name="next-steps"></a>次のステップ
 
 - [HCN の RPC コンテキストハンドル](hcn-declaration-handles.md)の詳細については、こちらを参照してください。
 

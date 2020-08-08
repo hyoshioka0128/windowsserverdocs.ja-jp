@@ -2,14 +2,13 @@
 title: HCN の RPC コンテキスト ハンドル
 ms.author: jmesser
 author: jmesser81
-ms.prod: windows-server
 ms.date: 11/05/2018
-ms.openlocfilehash: d55a990b2158f8dfbc61d8e75e9b0606edc9bf7c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b837b2003beaf192c8f01be9e6c6edb2465bbe66
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80859865"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87955699"
 ---
 # <a name="rpc-context-handles-for-hcn"></a>HCN の RPC コンテキスト ハンドル
 
@@ -146,7 +145,7 @@ HRESULT
 WINAPI
 HcnCloseNetwork(
     _In_ HCN_NETWORK Network
-    ); 
+    );
 ```
 
 ## <a name="hcn_endpoint"></a>HCN_Endpoint
@@ -280,7 +279,7 @@ WINAPI
 HcnCloseEndpoint(
     _In_ HCN_ENDPOINT Endpoint
     );
- 
+
 ```
 
 ## <a name="hcn_namespace"></a>HCN_Namespace

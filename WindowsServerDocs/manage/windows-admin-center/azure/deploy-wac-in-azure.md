@@ -1,33 +1,31 @@
 ---
 title: Azure で Windows 管理センターゲートウェイをデプロイする
 description: Azure で Windows 管理センターゲートウェイをデプロイする方法
-ms.technology: manage
 ms.topic: article
 author: jwwool
 ms.author: jeffrew
 ms.date: 04/12/2019
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 1da4df284febbf18b5796322868451c45ab247ab
-ms.sourcegitcommit: 7c7fc443ecd0a81bff6ed6dbeeaf4f24582ba339
+ms.openlocfilehash: b4ae232d47398800ecae8500cff6726128f22b83
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2019
-ms.locfileid: "74903934"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971989"
 ---
-# <a name="deploy-windows-admin-center-in-azure"></a>Windows 管理センターを Azure にデプロイする
+# <a name="deploy-windows-admin-center-in-azure"></a>Windows Admin Center を Azure に展開する
 
 ## <a name="deploy-using-script"></a>スクリプトを使用したデプロイ
 
-[Azure Cloud Shell](https://shell.azure.com)から実行する[Deploy-WACAzVM](https://aka.ms/deploy-wacazvm)をダウンロードして、Azure で Windows 管理センターゲートウェイを設定できます。 このスクリプトは、リソースグループを含む環境全体を作成できます。
+[Azure Cloud Shell](https://shell.azure.com)から実行する[Deploy-WACAzVM.ps1](https://aka.ms/deploy-wacazvm)をダウンロードして、Azure で Windows 管理センターゲートウェイを設定できます。 このスクリプトは、リソースグループを含む環境全体を作成できます。
 
 [手動配置の手順に移動する](#deploy-manually-on-an-existing-azure-virtual-machine)
 
 ### <a name="prerequisites"></a>前提条件
 
 * [Azure Cloud Shell](https://shell.azure.com)でアカウントを設定します。 初めて Cloud Shell を使用する場合は、Cloud Shell を使用して Azure ストレージアカウントを関連付けるか、作成するかを確認するメッセージが表示されます。
-* **PowerShell** Cloud Shell で、ホームディレクトリに移動します。 ```PS Azure:\> cd ~```
-* ```Deploy-WACAzVM.ps1``` ファイルをアップロードするには、ローカルコンピューターから [Cloud Shell] ウィンドウの任意の場所にドラッグアンドドロップします。
+* **PowerShell** Cloud Shell で、ホームディレクトリに移動します。```PS Azure:\> cd ~```
+* ファイルをアップロードするには、 ```Deploy-WACAzVM.ps1``` ローカルコンピューターから [Cloud Shell] ウィンドウの任意の場所にファイルをドラッグアンドドロップします。
 
 独自の証明書を指定する場合:
 
@@ -41,7 +39,7 @@ ms.locfileid: "74903934"
 
 * **Credential** -[PSCREDENTIAL] VM の資格情報を指定します。
 
-* **Msipath** -[文字列] 既存の VM に Windows 管理センターを展開するときに、Windows 管理センターの MSI のローカルパスを指定します。 省略した場合、既定値は https://aka.ms/WACDownload からのバージョンになります。
+* **Msipath** -[文字列] 既存の VM に Windows 管理センターを展開するときに、Windows 管理センターの MSI のローカルパスを指定します。 省略した場合、既定値はからのバージョンに https://aka.ms/WACDownload なります。
 
 * **VaultName** -[String] 証明書を含むキーコンテナーの名前を指定します。
 
@@ -76,7 +74,7 @@ MSI には2つの異なるオプションがあり、MSI のインストール�
 まず、スクリプトのパラメーターに必要な共通の変数を定義します。
 
 ```PowerShell
-$ResourceGroupName = "wac-rg1" 
+$ResourceGroupName = "wac-rg1"
 $VirtualNetworkName = "wac-vnet"
 $SecurityGroupName = "wac-nsg"
 $SubnetName = "wac-subnet"
@@ -147,7 +145,7 @@ Set-AzNetworkSecurityGroup -NetworkSecurityGroup $newNSG
 ### <a name="requirements-for-managed-azure-vms"></a>管理対象の Azure VM の要件
 
 ポート 5985 (WinRM over HTTP) は開いている必要があり、アクティブなリスナーを持っている必要があります。
-Azure Cloud Shell の次のコードを使用して、管理対象ノードを更新できます。 ```$ResourceGroupName``` と ```$Name``` は、デプロイスクリプトと同じ変数を使用しますが、管理対象の VM に固有の ```$Credential``` を使用する必要があります。
+Azure Cloud Shell の次のコードを使用して、管理対象ノードを更新できます。 ```$ResourceGroupName```とは ```$Name``` 配置スクリプトと同じ変数を使用しますが、管理対象の VM に固有のを使用する必要があり ```$Credential``` ます。
 
 ```powershell
 Enable-AzVMPSRemoting -ResourceGroupName $ResourceGroupName -Name $Name
@@ -160,7 +158,7 @@ Invoke-AzVMCommand -ResourceGroupName $ResourceGroupName -Name $Name -ScriptBloc
 必要なゲートウェイ VM に Windows 管理センターをインストールする前に、HTTPS 通信に使用する SSL 証明書をインストールするか、Windows 管理センターによって生成された自己署名証明書を使用するかを選択できます。 ただし、後者のオプションを選択した場合は、ブラウザーから接続しようとすると警告が表示されます。 Edge でこの警告を回避するには、[> 詳細] をクリックして**web ページにアクセス**するか、Chrome で [詳細] を選択し **> [web ページ] に進み**ます。 テスト環境では自己署名証明書のみを使用することをお勧めします。
 
 > [!NOTE]
-> これらの手順は、Server Core インストールではなく、デスクトップエクスペリエンスで Windows Server にをインストールするためのものです。 
+> これらの手順は、Server Core インストールではなく、デスクトップエクスペリエンスで Windows Server にをインストールするためのものです。
 
 1. [Windows 管理センター](https://aka.ms/windowsadmincenter)をローカルコンピューターにダウンロードします。
 
@@ -168,32 +166,32 @@ Invoke-AzVMCommand -ResourceGroupName $ResourceGroupName -Name $Name -ScriptBloc
 
 3. MSI をダブルクリックしてインストールを開始し、ウィザードの指示に従います。 次の点に注意してください。
 
-   - 既定では、インストーラーは推奨されるポート 443 (HTTPS) を使用します。 別のポートを選択する場合は、ファイアウォールでそのポートも開く必要があることに注意してください。 
+   - 既定では、インストーラーは推奨されるポート 443 (HTTPS) を使用します。 別のポートを選択する場合は、ファイアウォールでそのポートも開く必要があることに注意してください。
 
    - VM に SSL 証明書が既にインストールされている場合は、そのオプションを選択し、拇印を入力してください。
 
-4. Windows 管理センターサービスを開始する (C:/Program Files/Windows 管理センター/sme を実行する)
+4. Windows 管理センターサービスを開始する (C:/Program Files/Windows 管理センターを実行する/sme.exe)
 
 [Windows 管理センターの展開の詳細については、こちらを参照してください。](../deploy/install.md)
 
-### <a name="configure-the-gateway-vm-to-enable-https-port-access"></a>HTTPS ポートアクセスを有効にするゲートウェイ VM を構成します。 
+### <a name="configure-the-gateway-vm-to-enable-https-port-access"></a>HTTPS ポートアクセスを有効にするゲートウェイ VM を構成します。
 
-1. Azure portal で VM に移動し、 **[ネットワーク]** を選択します。 
+1. Azure portal で VM に移動し、[**ネットワーク**] を選択します。
 
-2. **[受信ポートの規則の追加]** を選択し、 **[サービス]** で **[HTTPS]** を選択します。 
+2. [**受信ポートの規則の追加**] を選択し、[**サービス**] で [ **HTTPS** ] を選択します。
 
 > [!NOTE]
-> 既定の443以外のポートを選択した場合は、サービス で **カスタム** を選択し、**ポートの範囲** の手順3で選択したポートを入力します。 
+> 既定の443以外のポートを選択した場合は、[サービス] で [**カスタム**] を選択し、[**ポートの範囲**] の手順3で選択したポートを入力します。
 
 ### <a name="accessing-a-windows-admin-center-gateway-installed-on-an-azure-vm"></a>Azure VM にインストールされている Windows 管理センターゲートウェイへのアクセス
 
-この時点で、ゲートウェイ VM の DNS 名に移動することで、ローカルコンピューター上の最新のブラウザー (Edge または Chrome) から Windows 管理センターにアクセスできるようになります。 
+この時点で、ゲートウェイ VM の DNS 名に移動することで、ローカルコンピューター上の最新のブラウザー (Edge または Chrome) から Windows 管理センターにアクセスできるようになります。
 
 > [!NOTE]
-> 443以外のポートを選択した場合は、Windows 管理センターにアクセスするには、VM の https://\<DNS 名\>:\<カスタムポートに移動し\>
+> 443以外のポートを選択した場合は、https://に移動して Windows 管理センターにアクセスでき \<DNS name of your VM\> ます。\<custom port\>
 
-Windows 管理センターにアクセスしようとすると、Windows 管理センターがインストールされている仮想マシンにアクセスするための資格情報を要求するプロンプトが表示されます。 ここでは、仮想マシンのローカルユーザーまたはローカルの administrators グループにある資格情報を入力する必要があります。 
+Windows 管理センターにアクセスしようとすると、Windows 管理センターがインストールされている仮想マシンにアクセスするための資格情報を要求するプロンプトが表示されます。 ここでは、仮想マシンのローカルユーザーまたはローカルの administrators グループにある資格情報を入力する必要があります。
 
-VNet 内に他の Vm を追加するには、PowerShell で次のコマンドを実行するか、ターゲット VM でコマンドプロンプトを実行して、ターゲット Vm で WinRM が実行されていることを確認します。 `winrm quickconfig`
+VNet 内の他の Vm を追加するには、PowerShell で次のコマンドを実行するか、ターゲット VM でコマンドプロンプトを実行して、ターゲット Vm で WinRM が実行されていることを確認します。`winrm quickconfig`
 
 Azure VM にドメイン参加していない場合、VM はワークグループ内のサーバーのように動作するため、[ワークグループで Windows 管理センターを使用](../support/troubleshooting.md#using-windows-admin-center-in-a-workgroup)することを確認する必要があります。

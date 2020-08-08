@@ -2,19 +2,17 @@
 title: Windows Server ソフトウェア定義ネットワーク スタックのトラブルシューティング
 description: この Windows Server ガイドでは、ソフトウェアによるネットワーク制御 (SDN) に関する一般的なエラーとエラーのシナリオについて説明し、使用可能な診断ツールを活用するトラブルシューティングワークフローの概要を示します。
 manager: grcusanz
-ms.prod: windows-server
-ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: 9be83ed2-9e62-49e8-88e7-f52d3449aac5
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/14/2018
-ms.openlocfilehash: 3c6ac190b721492a03c7dcb9ab367df4174e55ff
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 87972f9a0d83a4b7f192e2fe0f751ee66c599044
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87520241"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87955919"
 ---
 # <a name="troubleshoot-the-windows-server-software-defined-networking-stack"></a>Windows Server ソフトウェア定義ネットワーク スタックのトラブルシューティング
 
@@ -116,7 +114,7 @@ Message:          Host is not Connected.
 
 次の表には、監視構成の状態に基づいて実行するには、エラー コード、メッセージ、およびフォロー アップのアクションの一覧が表示されます。
 
-| **コード** | **Message** | **操作** |
+| "**コード**" | **Message** | **操作** |
 |--|--|--|
 | Unknown | 不明なエラー |  |
 | HostUnreachable | ホスト コンピューターが到達可能ではありません。 | ネットワーク コント ローラーとホスト間での管理ネットワーク接続を確認します。 |

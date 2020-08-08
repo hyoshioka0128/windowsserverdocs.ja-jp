@@ -1,19 +1,17 @@
 ---
 title: System Insights データソース
 description: System Insights で新しい機能を作成するときに、ローカルで収集して分析する既存のデータソースまたは新しいデータソースを指定できます。 このトピックでは、新しい機能を登録するときに選択できるデータソースについて説明します。
-ms.prod: windows-server
-ms.technology: system-insights
 ms.topic: article
 author: gawatu
 ms.author: gawatu
 manager: mallikarjun.chadalapaka
 ms.date: 7/31/2018
-ms.openlocfilehash: 5dc44d9309c25ca1475e512a11d9868d7fa49e97
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 23150a741c9ec218077f63ca65e6948b1c48f8bf
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473669"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87972009"
 ---
 # <a name="system-insights-data-sources"></a>System Insights データソース
 
@@ -71,8 +69,8 @@ System Insights には、拡張可能なデータ収集機能が導入されて�
 | システム イベント | Count |
 | ディスクの既知のシリーズ | 最後 (収集間隔の最後の値) |
 | ボリュームの既知のシリーズ | 最後 (収集間隔の最後の値) |
-| CPU の既知のシリーズ | Average |
-| ネットワークの既知のシリーズ | Average |
+| CPU の既知のシリーズ | 平均 |
+| ネットワークの既知のシリーズ | 平均 |
 
 ## <a name="data-footprint"></a>データフットプリント
 
@@ -90,7 +88,7 @@ System Insights では、C ドライブ (C:) のすべてのデータがロー�
 >[!NOTE]
 >**既定の予測機能では、ほとんどのスタンドアロンコンピューターで最大フットプリントが 10 MB 未満である必要があります。**
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 System Insights の詳細については、次のリソースを参照してください。
 
 - [システム インサイトの概要](overview.md)
