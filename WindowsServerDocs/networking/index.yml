@@ -13,12 +13,12 @@ metadata:
   ms.date: 06/11/2020
   ms.assetid: daaf6b61-5953-4c2d-b6b8-7c885b552646
   ms.localizationpriority: medium
-  ms.openlocfilehash: 9b419210689e0ca11bfc2c285cd6669d3a883679
-  ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
+  ms.openlocfilehash: 7303f4b0a5bc14b9d751be333ae845dc26bf1098
+  ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 06/18/2020
-  ms.locfileid: "85071003"
+  ms.lasthandoff: 08/07/2020
+  ms.locfileid: "87994653"
 landingContent:
 - title: ネットワークについて
   linkLists:
@@ -65,7 +65,7 @@ landingContent:
     - text: コア ネットワーク ガイド
       url: core-network-guide/core-network-guide-windows-server.md
     - text: DirectAccess
-      url: ../remote/remote-access/da-stub.md
+      url: ../remote/remote-access/directaccess/directaccess.md
     - text: ドメイン ネーム システム (DNS)
       url: dns/dns-top.md
     - text: 動的ホスト構成プロトコル (DHCP)
@@ -103,9 +103,9 @@ landingContent:
   - linkListType: reference
     links:
     - text: Windows Server 2016 における Web アプリケーション プロキシ
-      url: /windows-server/remote/remote-access/web-application-proxy/web-application-proxy-windows-server
+      url: ../remote/remote-access/web-application-proxy/web-application-proxy-windows-server.md
     - text: リモート アクセスの Always On VPN 展開ガイド
-      url: /windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy
+      url: ../remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy.md
 - title: ハイパフォーマンス ネットワーク
   linkLists:
   - linkListType: overview

@@ -1,19 +1,17 @@
 ---
 title: Azure ハイブリッド サービスへの Windows Server の接続
 description: Azure ハイブリッド サービスを使用して、Windows Server のオンプレミス展開をクラウドに拡張できます。
-ms.technology: manage
 ms.topic: article
 author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: medium
-ms.prod: windows-server
 ms.date: 05/31/2019
-ms.openlocfilehash: 49b07845003208dc9c0bd3aaab4082a3e7d6a83a
-ms.sourcegitcommit: b35fbd2a67d7a3395b50b2a3acd0817ba4e36b26
+ms.openlocfilehash: 5dcba9b92d9c0d85f99a1d54d50bef187fd51f10
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86891357"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87997474"
 ---
 # <a name="connecting-windows-server-to-azure-hybrid-services"></a>Azure ハイブリッド サービスへの Windows Server の接続
 
@@ -46,21 +44,21 @@ Azure ハイブリッド サービス ツールから、次の操作を実行で
 - [Azure File Sync](azure-file-sync.md) を使用して、ファイル サーバーをクラウドと同期する
 - [Azure Update Management](azure-update-management.md) を使用して、オンプレミスとクラウド両方のすべての Windows サーバーについてオペレーティング システムの更新プログラムを管理する
 - [Azure Monitor](azure-monitor.md) を使用して、オンプレミスとクラウドの両方でサーバーを監視し、アラートを構成する
-- [サーバー向け Azure Arc](https://docs.microsoft.com/azure/azure-arc/servers/overview) を使用して Azure Policy を通じてオンプレミスのサーバーにガバナンス ポリシーを適用する
-- [Azure Security Center](https://docs.microsoft.com/azure/security-center/windows-admin-center-integration) を使用して、サーバーをセキュリティで保護し、高度な脅威防止を利用する
+- [サーバー向け Azure Arc](/azure/azure-arc/servers/overview) を使用して Azure Policy を通じてオンプレミスのサーバーにガバナンス ポリシーを適用する
+- [Azure Security Center](/azure/security-center/windows-admin-center-integration) を使用して、サーバーをセキュリティで保護し、高度な脅威防止を利用する
 - [Azure ネットワーク アダプター](https://aka.ms/WACNetworkAdapter)を使用してオンプレミス サーバーを Azure Virtual Network に接続する
 - [Azure の拡張されたネットワーク](https://go.microsoft.com/fwlink/?linkid=2109517&clcid=0x409)を使用して、Azure VM をお使いのオンプレミス ネットワークのようにする
 
 ## <a name="back-up-and-protect-your-on-premises-servers-and-vms"></a>オンプレミスのサーバーと VM のバックアップと保護
 
-- **[Azure Backup](https://docs.microsoft.com/azure/backup/backup-overview) を使用して Windows サーバーをバックアップする** Windows サーバーを Azure にバックアップして、偶発的または悪意のある削除、破損、およびランサムウェアからの保護に役立てることができます。
+- **[Azure Backup](/azure/backup/backup-overview) を使用して Windows サーバーをバックアップする** Windows サーバーを Azure にバックアップして、偶発的または悪意のある削除、破損、およびランサムウェアからの保護に役立てることができます。
 詳細については、[Azure Backup を使用したサーバーのバックアップ](azure-backup.md)に関するページを参照してください。
 
-- **[Azure Site Recovery](https://docs.microsoft.com/azure/site-recovery/site-recovery-overview) を使用して Hyper-V 仮想マシンを保護する** ビジネスに不可欠なインフラストラクチャが障害発生時に保護されるように VM で実行されているワークロードをレプリケートできます。 Windows Admin Center は、セットアップと、Hyper-V サーバーまたはクラスターへの仮想マシンのレプリケーションのプロセスを効率化し、Azure Site Recovery のディザスター リカバリー サービスによって環境の回復性を簡単に高められるようにします。
+- **[Azure Site Recovery](/azure/site-recovery/site-recovery-overview) を使用して Hyper-V 仮想マシンを保護する** ビジネスに不可欠なインフラストラクチャが障害発生時に保護されるように VM で実行されているワークロードをレプリケートできます。 Windows Admin Center は、セットアップと、Hyper-V サーバーまたはクラスターへの仮想マシンのレプリケーションのプロセスを効率化し、Azure Site Recovery のディザスター リカバリー サービスによって環境の回復性を簡単に高められるようにします。
 詳細については、[Azure Site Recovery と Windows Admin Center を使用した VM の保護](azure-site-recovery.md)に関するページを参照してください。
 
-- **[記憶域レプリカ](https://docs.microsoft.com/windows-server/storage/storage-replica/storage-replica-overview)を使用して Azure で VM への同期または非同期のブロックベースのレプリケーションを使用する** セカンダリ サーバーまたは VM への記憶域レプリカを使用して、サーバー間レベルでブロックベースまたはボリュームベースのレプリケーションを構成できます。 Windows Admin Center を使用すると、レプリケーション ターゲット専用の Azure VM を作成できます。これにより、新しい Azure VM 上でストレージを適切にサイズ設定し、構成することができます。
-詳細については、[記憶域レプリカを使用したサーバー間のレプリケーション](https://docs.microsoft.com/windows-server/storage/storage-replica/storage-replica-ui)に関する記事を参照してください。
+- **[記憶域レプリカ](../../../storage/storage-replica/storage-replica-overview.md)を使用して Azure で VM への同期または非同期のブロックベースのレプリケーションを使用する** セカンダリ サーバーまたは VM への記憶域レプリカを使用して、サーバー間レベルでブロックベースまたはボリュームベースのレプリケーションを構成できます。 Windows Admin Center を使用すると、レプリケーション ターゲット専用の Azure VM を作成できます。これにより、新しい Azure VM 上でストレージを適切にサイズ設定し、構成することができます。
+詳細については、[記憶域レプリカを使用したサーバー間のレプリケーション](../../../storage/storage-replica/server-to-server-storage-replication.md)に関する記事を参照してください。
 
 ## <a name="extend-on-premises-capacity-with-azure"></a>Azure によるオンプレミス容量の拡張
 
@@ -69,15 +67,15 @@ Azure ハイブリッド サービス ツールから、次の操作を実行で
 - **[Azure File Sync](https://aka.ms/afs) を使用してファイル サーバーとクラウドを同期する** このサーバー上のファイルを Azure ファイル共有と同期します。 すべてのファイルをローカルに保持するか、クラウド階層化を使用して空き領域を増やし、最も頻繁に使用されるファイルのみをサーバー上にキャッシュし、コールド データをクラウドに階層化します。 クラウド内のデータはバックアップ可能なため、オンプレミス サーバーのバックアップについて心配する必要はありません。 さらに、複数サイト同期により、複数のサーバー間で一連のファイルの同期を保つことができます。
 詳しくは、「[Azure File Sync を使用してファイル サーバーをクラウドと同期する](azure-file-sync.md)」をご覧ください。
 
-- **[ストレージ移行サービス](https://docs.microsoft.com/windows-server/storage/storage-migration-service/overview)を使用して Azure でストレージを VM に移行する** ステップバイステップ ツールを使用して、Windows および Linux サーバー上のデータのインベントリを作成し、新しい Azure VM にデータを転送します。 Windows Admin Center では、転送元からデータを受信するように適切にサイズ設定され、構成されたジョブ用に新しい Azure VM を作成できます。
-詳細については、「[ストレージ移行サービスを使用してサーバーを移行する](https://docs.microsoft.com/windows-server/storage/storage-migration-service/migrate-data)」を参照してください。
+- **[ストレージ移行サービス](../../../storage/storage-migration-service/overview.md)を使用して Azure でストレージを VM に移行する** ステップバイステップ ツールを使用して、Windows および Linux サーバー上のデータのインベントリを作成し、新しい Azure VM にデータを転送します。 Windows Admin Center では、転送元からデータを受信するように適切にサイズ設定され、構成されたジョブ用に新しい Azure VM を作成できます。
+詳細については、「[ストレージ移行サービスを使用してサーバーを移行する](../../../storage/storage-migration-service/migrate-data.md)」を参照してください。
 
 ### <a name="extend-compute-capacity"></a>計算容量の拡張
 
 - **Windows Admin Center を離れずに新しい Azure 仮想マシンを作成する** Windows Admin Center 内の *[すべての接続]* ページから **[追加]** を選択し、 **[Azure VM]** で **[新規作成]** を選択します。 さらに、Azure VM をドメイン参加させて、このステップバイステップの作成ツール内からストレージを構成することもできます。
 
-- **[クラウド監視](https://docs.microsoft.com/windows-server/failover-clustering/deploy-cloud-witness)を使用してフェールオーバー クラスター上で Azure を活用してクォーラムを形成する** 2 ノード クラスター上でクォーラムを形成するために追加のハードウェアに投資する代わりに、Azure ストレージ アカウントを Azure Stack HCI クラスターまたはその他のフェールオーバー クラスターのクラスター監視機能として機能させることができます。
-詳細については、「[フェールオーバー クラスターのクラウド監視を展開する](https://docs.microsoft.com/windows-server/failover-clustering/deploy-cloud-witness)」を参照してください。
+- **[クラウド監視](../../../failover-clustering/deploy-cloud-witness.md)を使用してフェールオーバー クラスター上で Azure を活用してクォーラムを形成する** 2 ノード クラスター上でクォーラムを形成するために追加のハードウェアに投資する代わりに、Azure ストレージ アカウントを Azure Stack HCI クラスターまたはその他のフェールオーバー クラスターのクラスター監視機能として機能させることができます。
+詳細については、「[フェールオーバー クラスターのクラウド監視を展開する](../../../failover-clustering/deploy-cloud-witness.md)」を参照してください。
 
 ### <a name="simplify-network-connectivity-between-your-on-premises-and-azure-networks"></a>オンプレミスのネットワークと Azure ネットワーク間のネットワーク接続の簡略化
 
@@ -87,23 +85,23 @@ Azure ハイブリッド サービス ツールから、次の操作を実行で
 
 ## <a name="centrally-manage-your-hybrid-environment-from-azure"></a>Azure からのハイブリッド環境の一元的管理
 
-- **[Azure Monitor for Virtual Machines](https://docs.microsoft.com/azure/azure-monitor/insights/vminsights-overview) を使用して、環境内のすべてのサーバーの電子メール アラートを監視および取得する** Virtual Machines Insights とも呼ばれる Azure Monitor を使用して、サーバーの正常性とイベントを監視したり、電子メール アラートを作成したり、環境全体のサーバー パフォーマンスの統合ビューを提供したり、特定のサーバーに接続しているアプリ、システム、サービスを視覚化したりできます。 また、Windows Admin Center では、サーバーの正常性パフォーマンスやクラスターの正常性イベント用に既定の電子メール アラートを設定することもできます。
+- **[Azure Monitor for Virtual Machines](/azure/azure-monitor/insights/vminsights-overview) を使用して、環境内のすべてのサーバーの電子メール アラートを監視および取得する** Virtual Machines Insights とも呼ばれる Azure Monitor を使用して、サーバーの正常性とイベントを監視したり、電子メール アラートを作成したり、環境全体のサーバー パフォーマンスの統合ビューを提供したり、特定のサーバーに接続しているアプリ、システム、サービスを視覚化したりできます。 また、Windows Admin Center では、サーバーの正常性パフォーマンスやクラスターの正常性イベント用に既定の電子メール アラートを設定することもできます。
 詳細については、[Azure Monitor へのサーバーの接続と電子メール通知の構成](azure-monitor.md)に関するページを参照してください。
 
-- **[Azure Update Management](https://docs.microsoft.com/azure/automation/automation-update-management) を使用して、すべての Windows Server のオペレーティング システム更新プログラムを集中管理する** 複数のサーバーや VM の更新プログラムやパッチをサーバー単位ではなく、1 か所から管理できます。 Azure Update Management では、利用可能な更新プログラムの状態を迅速に評価したり、必要な更新プログラムのインストールをスケジュールしたり、展開結果を確認して更新プログラムの正常適用を検証したりできます。 これは、サーバーが Azure VM か、他のクラウド プロバイダーによってホストされているか、それともオンプレミスかにかかわらず可能です。
+- **[Azure Update Management](/azure/automation/automation-update-management) を使用して、すべての Windows Server のオペレーティング システム更新プログラムを集中管理する** 複数のサーバーや VM の更新プログラムやパッチをサーバー単位ではなく、1 か所から管理できます。 Azure Update Management では、利用可能な更新プログラムの状態を迅速に評価したり、必要な更新プログラムのインストールをスケジュールしたり、展開結果を確認して更新プログラムの正常適用を検証したりできます。 これは、サーバーが Azure VM か、他のクラウド プロバイダーによってホストされているか、それともオンプレミスかにかかわらず可能です。
 詳細については、[Azure Update Management 用のサーバーの構成](azure-update-management.md)に関するページを参照してください。
 
-- **[Azure Security Center](https://docs.microsoft.com/azure/security-center/security-center-intro) を使用してセキュリティの状態を高め、高度な脅威防止を利用する** 一元化されたインフラストラクチャ セキュリティ管理システムである Azure Security Center を使用すると、データ センターのセキュリティの状態を強化し、Azure 内であるかどうかやオンプレミスであるかどうかにかかわらず、クラウド内のハイブリッド ワークロード全体で高度な脅威防止を使用できます。 Windows Admin Center を使用すると、サーバーを簡単にセットアップして Azure Security Center に簡単に接続できます。
-詳細については、「[Azure Security Center と Windows Admin Center (プレビュー) の統合](https://docs.microsoft.com/azure/security-center/windows-admin-center-integration)」を参照してください。
+- **[Azure Security Center](/azure/security-center/security-center-intro) を使用してセキュリティの状態を高め、高度な脅威防止を利用する** 一元化されたインフラストラクチャ セキュリティ管理システムである Azure Security Center を使用すると、データ センターのセキュリティの状態を強化し、Azure 内であるかどうかやオンプレミスであるかどうかにかかわらず、クラウド内のハイブリッド ワークロード全体で高度な脅威防止を使用できます。 Windows Admin Center を使用すると、サーバーを簡単にセットアップして Azure Security Center に簡単に接続できます。
+詳細については、「[Azure Security Center と Windows Admin Center (プレビュー) の統合](/azure/security-center/windows-admin-center-integration)」を参照してください。
 
-- **[サーバー向け Azure Arc](https://docs.microsoft.com/azure/azure-arc/servers/overview) と [Azure Policy](https://docs.microsoft.com/azure/governance/policy/overview) を使用してハイブリッド環境全体にポリシーを適用してコンプライアンスを順守する** Azure からオンプレミスのサーバーのインベントリを作成し、サーバーを整理、管理します。 Azure Policy を使用してサーバーを管理し、RBAC を使用してアクセスを制御し、Azure から追加の管理サービスを有効にすることができます。
+- **[サーバー向け Azure Arc](/azure/azure-arc/servers/overview) と [Azure Policy](/azure/governance/policy/overview) を使用してハイブリッド環境全体にポリシーを適用してコンプライアンスを順守する** Azure からオンプレミスのサーバーのインベントリを作成し、サーバーを整理、管理します。 Azure Policy を使用してサーバーを管理し、RBAC を使用してアクセスを制御し、Azure から追加の管理サービスを有効にすることができます。
 
 ## <a name="clusters-versus-stand-alone-servers-and-vms"></a>クラスター対スタンドアロン サーバーおよび VM
 
 Azure ハイブリッド サービスは、次の構成で Windows サーバーと連携します。
 
 - スタンドアロン物理サーバーと仮想マシン (VM)
-- [Azure Stack HCI](../../../azure-stack-hci/index.md) の認定を受けたハイパーコンバージド クラスターや、[Windows Server ソフトウェア定義 (WSSD)](https://www.microsoft.com/cloud-platform/software-defined-datacenter) プログラムを含むクラスター
+- [Azure Stack HCI](/azure-stack/hci/overview?view=azs-2002) の認定を受けたハイパーコンバージド クラスターや、[Windows Server ソフトウェア定義 (WSSD)](https://www.microsoft.com/cloud-platform/software-defined-datacenter) プログラムを含むクラスター
 
 ### <a name="services-for-stand-alone-servers-and-vms"></a>スタンドアロン サーバーおよび VM 向けのサービス
 
@@ -114,8 +112,8 @@ Azure ハイブリッド サービスは、次の構成で Windows サーバー�
 - [Azure File Sync](azure-file-sync.md) を使用して、ファイル サーバーをクラウドと同期する
 - [Azure Update Management](azure-update-management.md) を使用して、オンプレミスとクラウド両方のすべての Windows サーバーについてオペレーティング システムの更新プログラムを管理する
 - [Azure Monitor](azure-monitor.md) を使用して、オンプレミスとクラウドの両方でサーバーを監視し、アラートを構成する
-- [サーバー向け Azure Arc](https://docs.microsoft.com/azure/azure-arc/servers/overview) を使用して Azure Policy を通じてオンプレミスのサーバーにガバナンス ポリシーを適用する
-- [Azure Security Center](https://docs.microsoft.com/azure/security-center/windows-admin-center-integration) を使用して、サーバーをセキュリティで保護し、高度な脅威防止を利用する
+- [サーバー向け Azure Arc](/azure/azure-arc/servers/overview) を使用して Azure Policy を通じてオンプレミスのサーバーにガバナンス ポリシーを適用する
+- [Azure Security Center](/azure/security-center/windows-admin-center-integration) を使用して、サーバーをセキュリティで保護し、高度な脅威防止を利用する
 - [Azure ネットワーク アダプター](https://aka.ms/WACNetworkAdapter)を使用してオンプレミス サーバーを Azure Virtual Network に接続する
 - [Azure の拡張されたネットワーク](https://go.microsoft.com/fwlink/?linkid=2109517&clcid=0x409)を使用して、Azure VM をお使いのオンプレミス ネットワークのようにする
 
@@ -135,8 +133,8 @@ Azure ハイブリッド サービスは、次の構成で Windows サーバー�
 - **[Azure Active Directory (Azure AD)](https://azure.microsoft.com/services/active-directory/) 認証を追加することによって Windows Admin Center にセキュリティ レイヤーを追加する** ゲートウェイへのアクセス時に Azure Active Directory (Azure AD) ID を使用して認証を行うようユーザーに要求することによって、さらにセキュリティ レイヤーを Windows Admin Center に追加できます。 Azure AD 認証では、条件付きアクセスや多要素認証など、Azure AD のセキュリティ機能も利用できます。
 詳細については、[Windows Admin Center 用の Azure AD 認証の構成](../configure/user-access-control.md#azure-active-directory)に関するページを参照してください。
 
-- **Windows Admin Center に埋め込まれた [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview) から直接 Azure リソースを管理する** Azure Cloud Shell を利用し Windows Admin Center 内で Bash または PowerShell を取得して、Azure 管理タスクに簡単にアクセスできます。
-詳しくは、「[Azure Cloud Shell の概要](https://docs.microsoft.com/azure/cloud-shell/overview)」をご覧ください。
+- **Windows Admin Center に埋め込まれた [Azure Cloud Shell](/azure/cloud-shell/overview) から直接 Azure リソースを管理する** Azure Cloud Shell を利用し Windows Admin Center 内で Bash または PowerShell を取得して、Azure 管理タスクに簡単にアクセスできます。
+詳しくは、「[Azure Cloud Shell の概要](/azure/cloud-shell/overview)」をご覧ください。
 
 
 ## <a name="additional-references"></a>その他の参照情報

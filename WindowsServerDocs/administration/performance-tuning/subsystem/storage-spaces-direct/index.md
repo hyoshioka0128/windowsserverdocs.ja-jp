@@ -6,12 +6,12 @@ ms.assetid: 15a519fa-37cc-4d84-a9fe-097d33bb71ea
 author: phstee
 ms.author: vshankar; danlo; clausjor; stevenek
 ms.date: 4/14/2017
-ms.openlocfilehash: 9430e9e71d9e39533d5bdacd72af4593fe34c59a
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 18dca2080a311a337e0d41055e95e7a7f0f42a80
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895927"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991986"
 ---
 # <a name="performance-tuning-for-storage-spaces-direct"></a>記憶域スペース ダイレクトのパフォーマンス チューニング
 
@@ -36,7 +36,7 @@ SSD または NVMe デバイスを介したキャッシュの既定は書き込�
 
 ## <a name="additional-references"></a>その他の参照情報
 
-- [記憶域スペース ダイレクトについて](../../../../storage/storage-spaces/understand-storage-spaces-direct.md)
-- [記憶域スペース ダイレクトの計画](../../../../storage/storage-spaces/plan-storage-spaces-direct.md)
+- [記憶域スペース ダイレクトについて](../../../../storage/storage-spaces/understand-the-cache.md)
+- [記憶域スペース ダイレクトの計画](../../../../storage/storage-spaces/storage-spaces-direct-hardware-requirements.md)
 - [ファイル サーバーのパフォーマンス チューニング](../../role/file-server/index.md)
-- [ソフトウェア定義記憶域の設計に関する考慮事項ガイド](https://technet.microsoft.com/library/mt243829.aspx) (Windows Server 2012 R2 および共有 SAS 記憶域用)
+- [ソフトウェア定義記憶域の設計に関する考慮事項ガイド](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/mt243829(v=ws.11)) (Windows Server 2012 R2 および共有 SAS 記憶域用)

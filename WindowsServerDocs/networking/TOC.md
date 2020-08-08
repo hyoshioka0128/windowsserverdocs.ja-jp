@@ -67,7 +67,7 @@
 ####### [BranchCache トラフィックを許可するように非ドメイン メンバーのファイアウォール規則を構成する](branchcache/deploy/Configure-Firewall-Rules-for-Non-Domain-Members-to-Allow-BranchCache-Traffic.md)
 ###### [クライアント コンピューターの設定を確認する](branchcache/deploy/verify-Client-computer-Settings.md)
 
-## [DirectAccess](../remote/remote-access/da-stub.md) 
+## [DirectAccess](../remote/remote-access/directaccess/directaccess.md) 
 
 ## [ドメイン ネーム システム (DNS)](dns/dns-top.md)
 ### [Windows Server の DNS クライアントの新機能](dns/What-s-New-in-DNS-Client.md)
@@ -135,7 +135,7 @@
 ### [C# で生成されたコードの例](technologies/hcn/example-c-sharp.md)
 ### [Go で生成されたコードの例](technologies/hcn/example-go.md)
 
-## [Hyper-V 仮想スイッチ](technologies/vswitch-stub.md)
+## [Hyper-V 仮想スイッチ](../virtualization/hyper-v-virtual-switch/hyper-v-virtual-switch.md)
 
 ## [IP アドレス管理 (IPAM)](technologies/ipam/ipam-top.md)
 ### [IPAM の新機能](technologies/ipam/What-s-New-in-IPAM.md)
@@ -304,7 +304,7 @@
 ### [Microsoft Azure と SDN](sdn/Azure_and_Sdn.md)
 ### [データセンターおよびクラウド ネットワーク チームへのお問い合わせ](sdn/contact-sdn-team.md)
 
-## [仮想プライベート ネットワーク (VPN)](technologies/vpn-stub.md)
+## [仮想プライベート ネットワーク (VPN)](../remote/remote-access/vpn/vpn-top.md)
 
 ## [Windows インターネット ネーム サービス (WINS)](technologies/wins/wins-top.md)
 
@@ -317,4 +317,3 @@
 ### [Windows タイム サービスのテクニカル リファレンス](windows-time-service/windows-time-service-tech-ref.md)
 #### [Windows タイム サービスのしくみ](windows-time-service/How-the-Windows-Time-Service-Works.md)
 #### [Windows タイム サービスのツールと設定](windows-time-service/Windows-Time-Service-Tools-and-Settings.md)
-

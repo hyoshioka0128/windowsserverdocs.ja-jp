@@ -7,12 +7,12 @@ ms.author: nedpyle; danlo; dkruse; v-tea
 ms.date: 12/12/2019
 manager: dcscontentpm
 audience: Admin
-ms.openlocfilehash: 951d59a1a0e1d58a064eb71bd073259c15fd46d4
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: ecbd1bc751f133b80cf1d9cb264cf70a4ac4f47c
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896180"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992194"
 ---
 # <a name="performance-tuning-for-file-servers"></a>ファイル サーバーのパフォーマンス チューニング
 
@@ -171,7 +171,7 @@ ms.locfileid: "87896180"
 
     既定値は 0 であり、SMB 署名を無効にします。 この値を 1 に変更すると、すべての SMB 通信に対して SMB 署名が有効になり、SMB 署名が無効になっているコンピューターとの SMB 通信が防止されます。 SMB 署名は、CPU コストとネットワークのラウンド トリップを増やす可能性がありますが、man-in-the-middle 攻撃の阻止に役立ちます。 SMB 署名が不要な場合は、すべてのクライアントとサーバーでこのレジストリ値が 0 であることを確認してください。
 
-    詳細については、「[The Basics of SMB Signing](https://blogs.technet.microsoft.com/josebda/2010/12/01/the-basics-of-smb-signing-covering-both-smb1-and-smb2/)」(SMB 署名の基本) をご覧ください。
+    詳細については、「[The Basics of SMB Signing](/archive/blogs/josebda/the-basics-of-smb-signing-covering-both-smb1-and-smb2)」(SMB 署名の基本) をご覧ください。
 
 -   **FileInfoCacheEntriesMax**
 
