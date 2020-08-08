@@ -2,18 +2,16 @@
 title: リモート ダイレクト メモリ アクセス (RDMA) とスイッチ埋め込みチーミング (SET)
 description: このトピックでは、スイッチ埋め込みチーミング (SET) に関する情報に加え、Windows Server 2016 の Hyper-v を使用したリモートダイレクトメモリアクセス (RDMA) インターフェイスの構成について説明します。
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-hv-switch
 ms.topic: get-started-article
 ms.assetid: 68c35b64-4d24-42be-90c9-184f2b5f19be
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: b0f11e67467521a8cfa98f4035435bbed537eda2
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: 54d3ecbf752ce806a14d16088476bbb270e28271
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769570"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87989133"
 ---
 # <a name="remote-direct-memory-access-rdma-and-switch-embedded-teaming-set"></a>リモートダイレクトメモリアクセス \( RDMA \) およびスイッチ埋め込みチーミング \( セット\)
 
@@ -190,7 +188,7 @@ SET は、Hyper-v を含む環境で使用できる代替 NIC チーミングソ
 
 セットは、HYPER-V 仮想スイッチに統合されているので、仮想マシン (VM) の内部セットを使用することはできません。 Vm 内の NIC チーミングを使用すること、ただしします。
 
-詳細については、次を参照してください。 [仮想マシン (Vm) での NIC チーミング](https://docs.microsoft.com/windows-server/networking/technologies/nic-teaming/nict-vms)します。
+詳細については、次を参照してください。 [仮想マシン (Vm) での NIC チーミング](../../networking/technologies/nic-teaming/nic-teaming.md)します。
 
 さらに、一連のアーキテクチャは、チームのインターフェイスを公開しません。 代わりに、HYPER-V 仮想スイッチ ポートを構成する必要があります。
 
@@ -342,7 +340,7 @@ VMQ 設定の一部では、RSS のキューの設定に見えますが、どの
 
 System Center Virtual Machine Manager VMM を使用してセットチームを管理することをお勧めし \( \) ますが、Windows PowerShell を使用して設定を管理することもできます。 次のセクションでは、Windows PowerShell コマンド セットの管理に使用できるを提供します。
 
-VMM を使用してセットチームを作成する方法の詳細については、「System Center VMM ライブラリ」トピックの「[論理スイッチの](https://docs.microsoft.com/system-center/vmm/network-switch)セットアップ」セクションを参照してください。
+VMM を使用してセットチームを作成する方法の詳細については、「System Center VMM ライブラリ」トピックの「[論理スイッチの](/system-center/vmm/network-switch)セットアップ」セクションを参照してください。
 
 ### <a name="create-a-set-team"></a>セットチームを作成する
 
@@ -376,7 +374,7 @@ Set-VMSwitchTeam -Name TeamedvSwitch -NetAdapterName "NIC 1","NIC 3"
 
 ### <a name="removing-a-set-team"></a>セットのチームを削除します。
 
-セットチームを削除できるのは、セットチームを含む Hyper-v 仮想スイッチを削除することだけです。  Hyper-v 仮想スイッチを削除する方法については、「 [remove-VMSwitch](https://technet.microsoft.com/itpro/powershell/windows/hyper-v/remove-vmswitch) 」を参照してください。 次の例では、 **Setvswitch**という名前の仮想スイッチを削除します。
+セットチームを削除できるのは、セットチームを含む Hyper-v 仮想スイッチを削除することだけです。  Hyper-v 仮想スイッチを削除する方法については、「 [remove-VMSwitch](/powershell/module/hyper-v/remove-vmswitch?view=win10-ps) 」を参照してください。 次の例では、 **Setvswitch**という名前の仮想スイッチを削除します。
 
 ```
 Remove-VMSwitch "SETvSwitch"

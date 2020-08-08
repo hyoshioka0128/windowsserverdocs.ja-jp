@@ -1,19 +1,17 @@
 ---
 title: Windows 管理センターを使ってみる
 description: Windows 管理センターを使ってみる
-ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.localizationpriority: medium
-ms.prod: windows-server
 ms.date: 02/15/2019
-ms.openlocfilehash: 5c0094c9cecfb50304b0317ab11c60f0332ef3a7
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: f03e97cb4c318a65b0daf4034f0f0cfd6fe053bf
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518570"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87964608"
 ---
 # <a name="get-started-with-windows-admin-center"></a>Windows 管理センターを使ってみる
 
@@ -54,7 +52,7 @@ Windows 管理センターのインストールが完了したら、メインの
 
 1. **[すべての接続]** の下にある **[+ 追加]** をクリックします。
 
-   ![Windows 管理センター-[すべての接続] ページ](../media/launch/addserver0.png)
+   ![Windows Admin Center - すべての接続のページ](../media/launch/addserver0.png)
 
 2. サーバー、クラスター、Windows PC、または Azure VM を追加することを選択します。
 

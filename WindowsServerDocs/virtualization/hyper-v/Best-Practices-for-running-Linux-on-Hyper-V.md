@@ -1,20 +1,18 @@
 ---
 title: HYPER-V で Linux を実行するためのベスト プラクティス
 description: 仮想マシンで Linux を実行するための推奨事項を提供します。
-ms.prod: windows-server
 manager: dongill
-ms.technology: compute-hyper-v
 ms.topic: article
 ms.assetid: a08648eb-eea0-4e2b-87fb-52bfe8953491
 author: shirgall
 ms.author: kathydav
 ms.date: 04/15/2020
-ms.openlocfilehash: 75b471d4083ef1597d5edcc775ea6fc847992483
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: b9a03ec24adf0b77ff4a6e477f550c63760c9d85
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474469"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87989107"
 ---
 # <a name="best-practices-for-running-linux-on-hyper-v"></a>HYPER-V で Linux を実行するためのベスト プラクティス
 
@@ -82,7 +80,7 @@ Linux カーネルには、要求の順序を変更するための2セットの�
 
 ## <a name="numa"></a>NUMA
 
-2\.6.37 未満の Linux カーネル バージョンは、HYPER-V で大きい VM サイズの NUMA をサポートできません。 この問題は、主に、アップストリームの Red Hat 2.6.32 カーネルを使用した古いディストリビューションに影響し、Red Hat Enterprise Linux (RHEL) 6.6 (kernel-2.6.32-504) で修正されました。 2.6.37 より古いカスタム カーネルまたは2.6.32-504 より古い RHEL ベースのカーネルを実行しているシステムでは、grub.conf のカーネル コマンドラインで、ブート パラメーター `numa=off` を設定する必要があります。 詳細については、[Red Hat KB 436883](https://access.redhat.com/solutions/436883) を参照してください。
+2\.6.37 未満の Linux カーネル バージョンは、HYPER-V で大きい VM サイズの NUMA をサポートできません。 この問題は、主に、アップストリームの Red Hat 2.6.32 カーネルを使用した古いディストリビューションに影響し、Red Hat Enterprise Linux (RHEL) 6.6 (kernel-2.6.32-504) で修正されました。 2\.6.37 より古いカスタム カーネルまたは2.6.32-504 より古い RHEL ベースのカーネルを実行しているシステムでは、grub.conf のカーネル コマンドラインで、ブート パラメーター `numa=off` を設定する必要があります。 詳細については、[Red Hat KB 436883](https://access.redhat.com/solutions/436883) を参照してください。
 
 ## <a name="reserve-more-memory-for-kdump"></a>Kdump 用に追加のメモリを予約する
 
@@ -94,14 +92,14 @@ Hyper-v では、ディスク上に存在する可能性のあるパーティシ
 
 VHD または VHDX のサイズを変更した後、管理者は、fdisk や parted などのユーティリティを使用して、パーティション、ボリューム、ファイルシステムの構造を更新し、ディスクのサイズの変化を反映する必要があります。 GUID パーティションテーブル (GPT) を持つ VHD または VHDX のサイズを縮小または拡大すると、パーティション管理ツールを使用してパーティションのレイアウトを確認したときに警告が表示され、管理者は1つ目と2番目の GPT ヘッダーを修正するように警告されます。 この手動の手順は、データ損失なしでも安全に実行できます。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 * [Windows にインストールされた Hyper-v の Linux および FreeBSD 仮想マシンがサポートされています。](Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)
 
 * [HYPER-V での FreeBSD の実行に関するベスト プラクティス](Best-practices-for-running-FreeBSD-on-Hyper-V.md)
 
-* [Hyper-V クラスターを展開する](https://technet.microsoft.com/library/jj863389.aspx)
+* [Hyper-V クラスターを展開する](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj863389(v=ws.11))
 
-* [Azure の Linux イメージを作成する](https://docs.microsoft.com/azure/virtual-machines/linux/create-upload-generic)
+* [Azure の Linux イメージを作成する](/azure/virtual-machines/linux/create-upload-generic)
 
-* [Azure での Linux VM の最適化](https://docs.microsoft.com/azure/virtual-machines/linux/optimization)
+* [Azure での Linux VM の最適化](/azure/virtual-machines/linux/optimization)

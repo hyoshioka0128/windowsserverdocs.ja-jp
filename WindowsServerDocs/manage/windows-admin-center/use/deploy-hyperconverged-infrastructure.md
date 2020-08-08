@@ -3,15 +3,13 @@ title: Windows 管理センターを使用してハイパー集約インフラ�
 ms.topic: article
 author: cosmosdarwin
 ms.author: cosdar
-ms.prod: windows-server
-ms.technology: manage
 ms.date: 11/04/2019
-ms.openlocfilehash: f0f3e313124dd10cd508bf11853969cc67de6368
-ms.sourcegitcommit: b35fbd2a67d7a3395b50b2a3acd0817ba4e36b26
+ms.openlocfilehash: a7c15bd07754d48b7fbffe2cd95edaa871c9bde3
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86891367"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87964448"
 ---
 # <a name="deploy-hyperconverged-infrastructure-with-windows-admin-center"></a>Windows 管理センターを使用してハイパー集約インフラストラクチャを展開する
 
@@ -19,7 +17,7 @@ ms.locfileid: "86891367"
 
 Windows 管理センター[バージョン 1910](https://docs.microsoft.com/windows-server/manage/windows-admin-center/understand/windows-admin-center)以降を使用して、2つ以上の適切な windows サーバーを使用してハイパー集約インフラストラクチャを展開することができます。 この新しい機能では、機能のインストール、ネットワークの構成、クラスターの作成、記憶域スペースダイレクトまたはソフトウェアによるネットワーク制御 (SDN) の展開など、選択した場合に役立つマルチステージワークフローの形式を使用します。
 
-Windows 管理センターバージョン2007以降では、Windows 管理センターでは Azure Stack HCI OS がサポートされています。 [Windows 管理センターでクラスターを展開する方法については、AZURE STACK HCI のドキュメント](https://docs.microsoft.com/azure-stack/hci/getting-started)を参照してください。このドキュメントでは Azure Stack HCI に焦点を合わせています。この手順は、Windows Server の展開にも適しています。 
+Windows 管理センターバージョン2007以降では、Windows 管理センターでは Azure Stack HCI OS がサポートされています。 [Windows 管理センターでクラスターを展開する方法については、AZURE STACK HCI のドキュメント](https://docs.microsoft.com/azure-stack/hci/getting-started)を参照してください。このドキュメントでは Azure Stack HCI に焦点を合わせています。この手順は、Windows Server の展開にも適しています。
 
 ## <a name="undo-and-start-over"></a>元に戻すとやり直す
 
@@ -88,7 +86,7 @@ Get-NetAdapter | Where Name -Ne "Management" | Set-NetAdapter -VlanID 0
 
 これで、ワークフローを開始する準備ができました。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [Hello, Windows 管理センター](https://docs.microsoft.com/windows-server/manage/windows-admin-center/understand/windows-admin-center)
 - [記憶域スペース ダイレクトの展開](https://docs.microsoft.com/windows-server/storage/storage-spaces/deploy-storage-spaces-direct)

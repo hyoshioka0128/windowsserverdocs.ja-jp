@@ -1,19 +1,17 @@
 ---
 title: Windows のシールドされた VM テンプレートディスクを作成する
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 9c8b84e8-1f5a-47a1-83ca-b1dbd801cb0b
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
 ms.date: 01/29/2019
-ms.openlocfilehash: d33714c9939593b4c877e76f77d390139771e3ff
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: fedfce4980cd36a904ef4f2c49a68fa3016a4359
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769390"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87939653"
 ---
 # <a name="create-a-windows-shielded-vm-template-disk"></a>Windows のシールドされた VM テンプレートディスクを作成する
 

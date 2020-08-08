@@ -5,14 +5,12 @@ ms.author: kgremban
 author: eross-msft
 ms.date: 07/13/2016
 ms.topic: article
-ms.prod: windows-server
-ms.technology: web-app-proxy
-ms.openlocfilehash: 34d817940ace61fb41263949089a424ed8725e38
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: e90b1995e5322bb0e1632df6b5947da0fc1b0244
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769720"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87939823"
 ---
 # <a name="publishing-applications-using-ad-fs-preauthentication"></a>AD FS 事前認証を使用してアプリケーションを公開する
 

@@ -6,14 +6,12 @@ ms.author: jgerend
 manager: elizapo
 ms.date: 03/25/2020
 ms.topic: article
-ms.prod: windows-server
-ms.technology: storage
-ms.openlocfilehash: cd8c41e67baf0ffa0399e62ad2a697e4efa1433f
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 6a6fa412ec4a4472c0651332187515f7f4988641
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86965184"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87939350"
 ---
 # <a name="use-storage-migration-service-to-migrate-a-server"></a>Storage Migration Service を使用してサーバーを移行する
 
@@ -114,7 +112,7 @@ ms.locfileid: "86965184"
 7. [**ソースとターゲットのデバイスの検証**] ページで [**検証**] を選択し、[**次へ**] を選択します。
 8. カットオーバーを実行する準備ができたら、[**カットオーバーの開始**] を選択します。 <br>ユーザーとアプリは、アドレスと名前を移動し、サーバーをそれぞれ数回再起動しても、移行の影響を受けないように、中断が発生する可能性があります。 カットオーバーの所要時間は、サーバーの再起動の速度と、Active Directory および DNS のレプリケーション時間によって異なります。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [記憶域移行サービスの概要](overview.md)
 - [記憶域移行サービスに関してよく寄せられる質問 (FAQ)](faq.md)

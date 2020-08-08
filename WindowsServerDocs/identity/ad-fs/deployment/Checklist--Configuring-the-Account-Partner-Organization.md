@@ -5,15 +5,13 @@ author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: be3f30c4f7e0981f222f2f3ac713865e01462d93
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: e1fc3dea0d25cc428081964372dc2269d78c9d6d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87520081"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87938581"
 ---
 # <a name="checklist-configuring-the-account-partner-organization"></a>チェックリスト: アカウントパートナー組織の構成
 

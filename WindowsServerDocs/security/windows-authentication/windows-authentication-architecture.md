@@ -1,20 +1,18 @@
 ---
 title: Windows 認証のアーキテクチャ
 description: Windows Server のセキュリティ
-ms.prod: windows-server
-ms.technology: security-windows-auth
 ms.topic: article
 ms.assetid: 07c9d6bb-9b03-407d-89b6-97c7551b256b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: da4f173a5d91f73c73d3f537f58228890f90b136
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 9f9d5241d033303a8a32c7bf870fd7c935b40b0f
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471677"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87989123"
 ---
 # <a name="windows-authentication-architecture"></a>Windows 認証のアーキテクチャ
 
@@ -40,12 +38,10 @@ Windows Server オペレーティングシステムには、Windows セキュリ
 
 SSPI は、Generic Security Service API (GSSAPI) の実装です。 SSPI は、分散アプリケーションが複数のセキュリティプロバイダーのいずれかを呼び出して、セキュリティプロトコルの詳細情報を知らずに認証済み接続を取得できるメカニズムを提供します。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 -   [セキュリティ サポート プロバイダー インターフェイスのアーキテクチャ](security-support-provider-interface-architecture.md)
 
 -   [Windows 認証での資格情報の処理](credentials-processes-in-windows-authentication.md)
 
--   [Windows 認証の技術概要](https://technet.microsoft.com/library/dn169029.aspx)
-
-
+-   [Windows 認証の技術概要](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dn169029(v=ws.10))

@@ -1,18 +1,16 @@
 ---
 title: TPM の信頼された構成証明を使用して HGS を初期化する
-ms.prod: windows-server
 ms.topic: article
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: b8ceebe63a586ec95b502dfea12f99d174549448
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f8d9f2f8df0a69d8faf7d6c87200b379b55749b3
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856615"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87939613"
 ---
 # <a name="initialize-hgs-using-tpm-trusted-attestation"></a>TPM の信頼された構成証明を使用して HGS を初期化する
 
@@ -22,10 +20,10 @@ ms.locfileid: "80856615"
 
 1. [新しいフォレストで HGS クラスターを初期化する (既定)](guarded-fabric-initialize-hgs-tpm-mode-default.md)
 
-   \- または -
+   または
 
    [既存の要塞フォレストの HGS クラスターを初期化する](guarded-fabric-initialize-hgs-tpm-mode-bastion.md)
 
-2. [信頼された TPM ルート証明書をインストールする](guarded-fabric-install-trusted-tpm-root-certificates.md)   
-3. [ファブリック DNS を構成する](guarded-fabric-configuring-fabric-dns.md)
+2. [信頼された TPM ルート証明書をインストールする](guarded-fabric-install-trusted-tpm-root-certificates.md)
+3. [ファブリック DNSの構成](guarded-fabric-configuring-fabric-dns.md)
 

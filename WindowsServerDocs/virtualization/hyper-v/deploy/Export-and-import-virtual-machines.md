@@ -1,20 +1,18 @@
 ---
 title: 仮想マシンをエクスポートおよびインポートする
 description: Hyper-v マネージャーまたは Windows PowerShell を使用して仮想マシンをエクスポートおよびインポートする方法について説明します。
-ms.prod: windows-server
 author: kbdazure
 ms.author: kathydav
 manager: dongill
-ms.technology: compute-hyper-v
 ms.date: 12/13/2016
 ms.topic: article
 ms.assetid: 7fd996f5-1ea9-4b16-9776-85fb39a3aa34
-ms.openlocfilehash: f1b321c04ad0b7541f21b444499b13fd2b4e4a6d
-ms.sourcegitcommit: 32f810c5429804c384d788c680afac427976e351
+ms.openlocfilehash: 674c1640ced07df731b8667658fdbf3e5500e28d
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83203556"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87988939"
 ---
 # <a name="export-and-import-virtual-machines"></a>仮想マシンのエクスポートとインポート
 
@@ -38,13 +36,13 @@ ms.locfileid: "83203556"
 
 ### <a name="using-powershell"></a>PowerShell の使用
 
-管理者としてセッションを開き、vm の名前とパスを置き換えた後、次のようなコマンドを実行し \< \> \< \> ます。
+管理者としてセッションを開き、とを置き換えた後、次のようなコマンドを実行し \<vm name\> \<path\> ます。
 
 ```powershell
 Export-VM -Name \<vm name\> -Path \<path\>
 ```
 
-詳細については、「 [Export-VM](https://docs.microsoft.com/powershell/module/hyper-v/export-vm)」を参照してください。
+詳細については、「 [Export-VM](/powershell/module/hyper-v/export-vm)」を参照してください。
 
 ## <a name="import-a-virtual-machine"></a>仮想マシンのインポート
 
@@ -96,7 +94,7 @@ Import-VM -Path 'C:\<vm export path>\2B91FEB3-F1E0-4FFF-B8BE-29CED892A95A.vmcx' 
 Import-VM -Path 'C:\<vm export path>\2B91FEB3-F1E0-4FFF-B8BE-29CED892A95A.vmcx' -Copy -GenerateNewId
 ```
 
-詳細については、「[インポート-VM](https://docs.microsoft.com/powershell/module/hyper-v/import-vm)」を参照してください。
+詳細については、「[インポート-VM](/powershell/module/hyper-v/import-vm)」を参照してください。
 
 ### <a name="import-types"></a>インポートの種類
 
@@ -107,4 +105,3 @@ Hyper-v には、次の3種類のインポートが用意されています。
 - **仮想マシンを復元**する–選択した場所に仮想マシンを復元するか、既定の [hyper-v] を使用します。 このインポートの種類では、エクスポートされたファイルのコピーを作成し、選択した場所に移動します。 インポートすると、仮想マシンはエクスポート時と同じ ID を持ちます。 このため、仮想マシンが既に Hyper-v で実行されている場合、インポートを完了するには、その仮想マシンを削除する必要があります。 インポートが完了すると、エクスポートされたファイルはそのまま残り、削除または再度インポートできます。
 
 - **仮想マシンをコピー**します。これは、ファイルの場所を選択するという復元の種類に似ています。 違いは、インポートされた仮想マシンには新しい一意の ID があることです。つまり、仮想マシンを同じホストに複数回インポートできます。
-

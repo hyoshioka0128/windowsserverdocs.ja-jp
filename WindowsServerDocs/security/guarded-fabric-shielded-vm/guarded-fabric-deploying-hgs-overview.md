@@ -1,19 +1,17 @@
 ---
 title: ホストガーディアンサービスの展開
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 310b63d9-5ac7-4961-98ef-103af45d706a
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
 ms.date: 01/14/2020
-ms.openlocfilehash: c1eea8c7f6da1140480d0a8deaafb2edb73528de
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: e8077655717db3f6700b0e0a3d12792465b41299
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769150"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87939773"
 ---
 # <a name="deploying-the-host-guardian-service"></a>ホストガーディアンサービスの展開
 

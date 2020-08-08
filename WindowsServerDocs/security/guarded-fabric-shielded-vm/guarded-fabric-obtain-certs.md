@@ -1,19 +1,17 @@
 ---
 title: HGS の証明書を取得する
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: f4b4d1a8-bf6d-4881-9150-ddeca8b48038
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
 ms.date: 09/25/2019
-ms.openlocfilehash: da1ae4bacd5a6b2e38b22930aacf06f65b16bb29
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 995a115b9e611500732e4674880ee4ca4b204e14
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856535"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87989115"
 ---
 # <a name="obtain-certificates-for-hgs"></a>HGS の証明書を取得する
 
@@ -33,14 +31,14 @@ HGS を展開するときに、シールドされた VM を起動するために
 
 署名証明書と暗号化証明書は、どちらも次の certificiate プロパティを使用して発行する必要があります ("推奨" とマークされていない場合)。
 
-証明書テンプレートのプロパティ | 必須の値 
+証明書テンプレートのプロパティ | 必須値
 ------------------------------|----------------
 暗号化プロバイダー               | 任意のキー格納プロバイダー (KSP)。 従来の暗号化サービスプロバイダー (Csp) はサポートされて**いません**。
 キーアルゴリズム                 | RSA
 最小キー サイズ              | 2048 ビット
 署名アルゴリズム           | 推奨: SHA256
 キー使用法                     | デジタル署名*とデータの*暗号化
-拡張キー使用法            | サーバーの認証
+拡張キー使用法            | サーバー認証
 キー更新ポリシー            | 同じキーで更新します。 異なるキーを使用して HGS 証明書を更新すると、シールドされた Vm を起動できなくなります。
 サブジェクト名                  | 推奨: 会社の名前または web アドレス。 この情報は、シールドデータファイルウィザードで VM の所有者に表示されます。
 
@@ -79,15 +77,15 @@ Hyper-v ホストと HGS の間で送信されるすべてのキーと機密情�
 
 Hyper-v ホストと HGS ノードはどちらも、指定した SSL 証明書を信頼する必要があるため、エンタープライズ証明機関から SSL 証明書を要求することをお勧めします。 証明書を要求するときは、次のものを指定してください。
 
-SSL 証明書のプロパティ | 必須の値
+SSL 証明書のプロパティ | 必須値
 -------------------------|---------------
-サブジェクト名             | HGS クラスターの名前 (分散ネットワーク名または仮想コンピューターオブジェクトの FQDN と呼ばれます)。 これは `Initialize-HgsServer` に提供される HGS サービス名と HGS ドメイン名を連結したものになります。
-サブジェクトの別名 | 別の DNS 名を使用して HGS クラスターに接続する場合は (たとえば、ロードバランサーの背後にある場合)、証明書要求の SAN フィールドにこれらの DNS 名を含めてください。
+サブジェクト名             | HGS クラスターの名前 (分散ネットワーク名または仮想コンピューターオブジェクトの FQDN と呼ばれます)。 これは、に指定された HGS サービス名と HGS ドメイン名を連結したものになり `Initialize-HgsServer` ます。
+サブジェクト代替名 | 別の DNS 名を使用して HGS クラスターに接続する場合は (たとえば、ロードバランサーの背後にある場合)、証明書要求の SAN フィールドにこれらの DNS 名を含めてください。
 
 HGS サーバーを初期化するときにこの証明書を指定するためのオプションについては、「[最初の hgs ノードの構成](guarded-fabric-initialize-hgs.md)」を対象としています。
-また、 [HgsServer](https://docs.microsoft.com/powershell/module/hgsserver/set-hgsserver?view=win10-ps)コマンドレットを使用して、後で SSL 証明書を追加または変更することもできます。
+また、 [HgsServer](/powershell/module/hgsserver/set-hgsserver?view=win10-ps)コマンドレットを使用して、後で SSL 証明書を追加または変更することもできます。
 
-## <a name="next-step"></a>次の手順
+## <a name="next-step"></a>次のステップ
 
 > [!div class="nextstepaction"]
 > [HGS のインストール](guarded-fabric-choose-where-to-install-hgs.md)

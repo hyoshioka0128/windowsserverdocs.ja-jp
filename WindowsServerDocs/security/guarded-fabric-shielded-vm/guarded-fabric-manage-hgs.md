@@ -1,18 +1,16 @@
 ---
 title: ホストガーディアンサービスの管理
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: eecb002e-6ae5-4075-9a83-2bbcee2a891c
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
-ms.openlocfilehash: 19bf253a4cd669020442ca80f77c141f19ab94fe
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: 851ea4a57068c1544f290c48f370e04b96857cf6
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769460"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87989159"
 ---
 # <a name="managing-the-host-guardian-service"></a>ホストガーディアンサービスの管理
 
@@ -120,7 +118,7 @@ HGS からのイベントは、次の2つのソースの Windows イベントロ
 これらのイベントを表示するには、イベントビューアーを開き、HostGuardianService と HostGuardianService の順に移動します。
 
 大規模な環境では、イベントを簡単に分析できるように、中央の Windows イベントコレクターにイベントを転送することをお勧めします。
-詳細については、 [Windows イベント転送](https://msdn.microsoft.com/library/windows/desktop/bb427443.aspx)に関するドキュメントを参照してください。
+詳細については、 [Windows イベント転送](/windows/win32/wec/windows-event-collector)に関するドキュメントを参照してください。
 
 ### <a name="using-system-center-operations-manager"></a>System Center Operations Manager の使用
 System Center 2016-Operations Manager を使用して、HGS と保護されたホストを監視することもできます。
@@ -486,7 +484,7 @@ Add-HgsAttestationDumpPolicy -Name 'DumpEncryptionKey02' -PublicKeyHash '<paste 
 保護されたファブリックで異なるキーを使用する場合は、必ず一意のダンプ暗号化キーをそれぞれ HGS に追加してください。
 HGS で認識されていないキーを使用してメモリダンプを暗号化しているホストは、構成証明に合格しません。
 
-[ホストでのダンプ暗号化の構成](https://technet.microsoft.com/windows-server-docs/virtualization/hyper-v/manage/about-dump-encryption)の詳細については、hyper-v のドキュメントを参照してください。
+[ホストでのダンプ暗号化の構成](../../virtualization/hyper-v/manage/about-dump-encryption.md)の詳細については、hyper-v のドキュメントを参照してください。
 
 #### <a name="check-if-the-system-passed-attestation"></a>システムが構成証明に合格したかどうかを確認する
 必要な情報を HGS に登録した後、ホストが構成証明に合格したかどうかを確認する必要があります。

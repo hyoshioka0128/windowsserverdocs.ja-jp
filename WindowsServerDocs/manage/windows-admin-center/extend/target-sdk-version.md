@@ -1,19 +1,17 @@
 ---
 title: 別のバージョンの Windows 管理センター SDK をターゲットにする
 description: 別のバージョンの Windows 管理センター SDK (プロジェクトホノルル) をターゲットにする
-ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 0d3b7af5229f7b8487aa9f04eaf0d1756d8c02f4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 96e17326bc289b4ad018da59b01344956586a198
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356972"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87964558"
 ---
 # <a name="target-a-different-version-of-the-windows-admin-center-sdk"></a>別のバージョンの Windows 管理センター SDK をターゲットにする
 
@@ -25,14 +23,14 @@ SDK の変更とプラットフォームの変更によって拡張機能を最�
 
 * ```latest```-この SDK パッケージは、Windows 管理センターの現在の GA リリースと整合しています
 * ```insider```-この SDK パッケージは、Windows 管理センターの現在のプレビューリリース (Windows Server Insider Preview で利用可能) と整合しています。
-* ```next```-この SDK パッケージには最新の機能が含まれています
+* ```next```–この SDK パッケージには、最新の機能が含まれています
 
 > [!NOTE]
 > ダウンロードできる Windows 管理センターのさまざまな[バージョン](https://aka.ms/WACDownloadPage)については、こちらを参照してください。
 
 ## <a name="targeting-sdk-version-on-a-new-project"></a>新しいプロジェクトでの SDK バージョンのターゲット設定
 
-新しい拡張機能を作成するときに、別のバージョンの SDK を対象とするように ```--version``` パラメーターを含めることができます。
+新しい拡張機能を作成するときに、パラメーターを追加して、 ```--version``` 別のバージョンの SDK を対象にすることができます。
 
 ```
 wac create --company "{!Company Name}" --tool "{!Tool Name}" --version {!version}
@@ -42,9 +40,9 @@ wac create --company "{!Company Name}" --tool "{!Tool Name}" --version {!version
 | ----- | ----------- | ------- |
 | ```{!Company Name}``` | 会社名 (スペースを含む) | ```Contoso Inc``` |
 | ```{!Tool Name}``` | (スペースを含む) ツール名 | ```Manage Foo Works``` |
-| ```{!version}``` | SDK のバージョン | ```latest``` |
+| ```{!version}``` | SDK バージョン | ```latest``` |
 
-次に示すのは、新しい拡張機能を作成して ```insider``` にする例です。
+次に、新しい拡張機能をターゲットにする例を示し ```insider``` ます。
 
 ```
 wac create --company "Contoso Inc" --tool "Manage Foo Works" --version insider
@@ -52,15 +50,15 @@ wac create --company "Contoso Inc" --tool "Manage Foo Works" --version insider
 
 ## <a name="targeting-sdk-version-on-an-existing-project"></a>既存のプロジェクトでの SDK バージョンのターゲット設定
 
-既存のプロジェクトを変更して別の SDK バージョンを対象にするには、```package.json``` の次の行を変更します。
+別の SDK バージョンを対象とするように既存のプロジェクトを変更するには、の次の行を変更し ```package.json``` ます。
 
 ```
 "@microsoft/windows-admin-center-sdk": "latest",
 ```
-この例では、```latest``` を目的の SDK バージョン (```insider```) に置き換えます。
+この例では、を ```latest``` 必要な SDK のバージョン (つまり、) に置き換えます。 ```insider```
 
 ```
 "@microsoft/windows-admin-center-sdk": "insider",
 ```
 
-次に、```npm install``` を実行して、プロジェクト全体の参照を更新します。
+次に、を実行し ```npm install``` て、プロジェクト全体で参照を更新します。

@@ -1,20 +1,18 @@
 ---
 title: Hyper-v ホストのリモート管理
 description: Hyper-v ホストと Hyper-v マネージャーの間のバージョンの互換性について説明します。また、クロスドメインやスタンドアロンを含むさまざまな環境でリモートホストに接続する方法についても説明します。
-ms.prod: windows-server
 manager: dongill
-ms.technology: compute-hyper-v
 ms.topic: article
 ms.assetid: 2d34e98c-6134-479b-8000-3eb360b8b8a3
 author: kbdazure
 ms.author: kathydav
 ms.date: 12/06/2016
-ms.openlocfilehash: bbd96e35cbab94f3e10a4f62f785db7724308a0f
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 86e8ca55dbd61dca98054e15c06394f03190122e
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471107"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87989739"
 ---
 # <a name="remotely-manage-hyper-v-hosts-with-hyper-v-manager"></a>Hyper-V マネージャーを使用した Hyper-V ホストのリモート管理
 
@@ -122,7 +120,7 @@ Windows Server 2016 と Windows 10 の hyper-v マネージャーでは、以前
    Enable-WSManCredSSP -Role server
    ```
 
-    詳細については、 [enable-psremoting](https://technet.microsoft.com/library/hh849694.aspx)と[enable-wsmancredssp](https://technet.microsoft.com/library/hh849872.aspx)を参照してください。
+    詳細については、 [enable-psremoting](/powershell/module/microsoft.powershell.core/enable-psremoting?view=powershell-7)と[enable-wsmancredssp](/powershell/module/microsoft.wsman.management/enable-wsmancredssp?view=powershell-7)を参照してください。
 
 次に、Hyper-v ホストの管理に使用するコンピューターを構成します。
 
@@ -145,7 +143,7 @@ Windows Server 2016 と Windows 10 の hyper-v マネージャーでは、以前
 >[!NOTE]
 > これは、Windows Server 2016 または Windows 10**リモート**ホストに対してのみ機能します。
 
-コマンドレットの詳細については、「 [Set-Item](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.management/set-item) and [enable-wsmancredssp](https://technet.microsoft.com/library/hh849872.aspx)」を参照してください。
+コマンドレットの詳細については、「 [Set-Item](/powershell/module/microsoft.powershell.management/set-item?view=powershell-7) and [enable-wsmancredssp](/powershell/module/microsoft.wsman.management/enable-wsmancredssp?view=powershell-7)」を参照してください。
 
 ## <a name="install-hyper-v-manager"></a>Hyper-v マネージャーをインストールする
 
@@ -153,7 +151,7 @@ UI ツールを使用するには、Hyper-v マネージャーを実行するコ
 
 Windows Server で、[ \> **Manage** \> **役割と機能の追加**サーバーマネージャー管理] を開きます。 [**機能**] ページに移動し、[**リモートサーバー管理ツール**]、[ \> **役割管理ツール**] [ \> **hyper-v 管理ツール**] の順に展開します。
 
-Windows では、hyper-v マネージャーは、 [hyper-v を含むすべての windows オペレーティングシステム](https://msdn.microsoft.com/virtualization/hyperv_on_windows/quick_start/walkthrough_compatibility)で使用できます。
+Windows では、hyper-v マネージャーは、 [hyper-v を含むすべての windows オペレーティングシステム](/virtualization/hyper-v-on-windows/reference/hyper-v-requirements)で使用できます。
 
 1. Windows デスクトップで [スタート] ボタンをクリックし、[**プログラムと機能**] の入力を開始します。
 1. [検索結果] で、[**プログラムと機能**] をクリックします。
@@ -167,7 +165,6 @@ Windows PowerShell を使用するには、管理者として次のコマンド�
 add-windowsfeature rsat-hyper-v-tools
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 [Hyper-V をインストールする](../get-started/Install-the-Hyper-V-role-on-Windows-Server.md)
-

@@ -6,14 +6,12 @@ manager: mtillman
 ms.author: billmath
 ms.date: 04/30/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: web-app-proxy
-ms.openlocfilehash: 3bfb94a841265695b1a95cff8cc3cc87ee8088bf
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 115a55ab9ddfde42027a991d172f92c3d62c4613
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961504"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87939793"
 ---
 # <a name="publishing-applications-with-sharepoint-exchange-and-rdg"></a>SharePoint、Exchange、および RDG によるアプリケーションの発行
 

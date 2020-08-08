@@ -2,24 +2,22 @@
 title: DNS クエリへのフィルターの適用に DNS ポリシーを使用する
 description: このトピックは、Windows Server 2016 の DNS ポリシーシナリオガイドに含まれています。
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-dns
 ms.topic: article
 ms.assetid: b86beeac-b0bb-4373-b462-ad6fa6cbedfa
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 45dad1eb40caba7ac304fc640e3d56044254f08c
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 81afa40adc51a89a12e096000de1f11f13730df6
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80317829"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87964178"
 ---
 # <a name="use-dns-policy-for-applying-filters-on-dns-queries"></a>DNS クエリへのフィルターの適用に DNS ポリシーを使用する
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016
+>適用先:Windows Server (半期チャネル)、Windows Server 2016
 
-このトピックでは、Windows Server&reg; 2016 で DNS ポリシーを構成して、指定した条件に基づいたクエリフィルターを作成する方法について説明します。 
+このトピックでは、 &reg; 指定した条件に基づいたクエリフィルターを作成するために、Windows Server 2016 で DNS ポリシーを構成する方法について説明します。
 
 Dns ポリシーのクエリフィルターを使用すると、dns クエリを送信する dns クエリと dns クライアントに基づいて、カスタムの方法で応答するように DNS サーバーを構成できます。
 
@@ -30,20 +28,20 @@ Dns ポリシーのクエリフィルターを使用すると、dns クエリを
 ## <a name="query-filter-criteria"></a><a name="bkmk_criteria"></a>クエリのフィルター条件
 次の条件の論理的な組み合わせ (またはその両方) を使用して、クエリフィルターを作成できます。
 
-|Name|説明|
+|名前|説明|
 |-----------------|---------------------|
 |クライアントサブネット|定義済みのクライアントのサブネットの名前です。 クエリの送信元となるサブネットを確認するために使用します。|
-|トランスポートプロトコル|トランスポート プロトコル クエリで使用をします。 指定できる値は、UDP と TCP です。|
-|インターネットプロトコル|クエリで使用されるネットワーク プロトコルです。 指定できる値は、IPv4 と IPv6 です。|
+|トランスポート プロトコル|トランスポート プロトコル クエリで使用をします。 指定できる値は、UDP と TCP です。|
+|インターネット プロトコル|クエリで使用されるネットワーク プロトコルです。 指定できる値は、IPv4 と IPv6 です。|
 |サーバーインターフェイスの IP アドレス|DNS 要求を受信した DNS サーバーのネットワークインターフェイスの IP アドレス。|
 |FQDN|ワイルドカードを使用する可能性がある、クエリ内のレコードの完全修飾ドメイン名。|
-|クエリの種類|クエリ対象のレコードの種類 \(、SRV、TXT など\)。|
+|クエリの型|クエリ対象のレコードの種類、 \( SRV、TXT など \) 。|
 |時刻|クエリが受信した時刻。|
 
 次の例は、dns 名前解決のクエリをブロックまたは許可する DNS ポリシーのフィルターを作成する方法を示しています。
 
 >[!NOTE]
->このトピックのコマンド例では、Windows PowerShell コマンド**DnsServerQueryResolutionPolicy**を使用します。 詳細については、次を参照してください。 [追加 DnsServerQueryResolutionPolicy](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)します。 
+>このトピックのコマンド例では、Windows PowerShell コマンド**DnsServerQueryResolutionPolicy**を使用します。 詳細については、次を参照してください。 [追加 DnsServerQueryResolutionPolicy](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)します。
 
 ## <a name="block-queries-from-a-domain"></a><a name="bkmk_block1"></a>ドメインからのクエリをブロックする
 
@@ -54,14 +52,14 @@ Dns ポリシーのクエリフィルターを使用すると、dns クエリを
 次のコマンド例では、ドメイン**サフィックス contosomalicious.com**を使用してクエリをブロックするようにサーバーレベルポリシーを構成します。
 
 `
-Add-DnsServerQueryResolutionPolicy -Name "BlockListPolicy" -Action IGNORE -FQDN "EQ,*.contosomalicious.com" -PassThru 
+Add-DnsServerQueryResolutionPolicy -Name "BlockListPolicy" -Action IGNORE -FQDN "EQ,*.contosomalicious.com" -PassThru
 `
 
 >[!NOTE]
 >**Action**パラメーターの値を**IGNORE**に設定すると、DNS サーバーは応答なしのクエリを削除するように構成されます。 これにより、悪意のあるドメインの DNS クライアントがタイムアウトします。
 
 ## <a name="block-queries-from-a-subnet"></a><a name="bkmk_block2"></a>サブネットからのクエリをブロックする
-この例では、一部のマルウェアに感染していて、DNS サーバーを使用して悪意のあるサイトに接続しようとしていることが検出された場合、サブネットからのクエリをブロックできます。 
+この例では、一部のマルウェアに感染していて、DNS サーバーを使用して悪意のあるサイトに接続しようとしていることが検出された場合、サブネットからのクエリをブロックできます。
 
 ' DnsServerClientSubnet-Name "MaliciousSubnet06"-IPv4Subnet 172.0.33.0/24-PassThru
 
@@ -86,7 +84,7 @@ DNS ポリシーを使用してクエリをブロックすることはできま�
 次のコマンド例では、contoso.com ドメインと子ドメイン内のコンピューターとデバイスのみが DNS サーバーを照会できます。
 
 `
-Add-DnsServerQueryResolutionPolicy -Name "AllowListPolicyDomain" -Action IGNORE -FQDN "NE,*.contoso.com" -PassThru 
+Add-DnsServerQueryResolutionPolicy -Name "AllowListPolicyDomain" -Action IGNORE -FQDN "NE,*.contoso.com" -PassThru
 `
 
 ## <a name="allow-queries-only-from-a-subnet"></a><a name="bkmk_allow2"></a>サブネットからのクエリのみを許可する
@@ -100,7 +98,7 @@ Add-DnsServerQueryResolutionPolicy -Name "AllowListPolicySubnet” -Action IGNOR
 `
 
 ## <a name="allow-only-certain-qtypes"></a><a name="bkmk_allow3"></a>特定の QTypes のみを許可する
-QTYPEs には許可リストを適用できます。 
+QTYPEs には許可リストを適用できます。
 
 たとえば、外部の顧客が DNS サーバーインターフェイス164.8.1.1 に対してクエリを実行している場合は、特定の QTYPEs のみに対してクエリを実行できます。一方、内部サーバーが名前解決または監視のために使用する SRV レコードや TXT レコードなどの他の QTYPEs もあります。
 
@@ -108,4 +106,4 @@ QTYPEs には許可リストを適用できます。
 Add-DnsServerQueryResolutionPolicy -Name "AllowListQType" -Action IGNORE -QType "NE,A,AAAA,MX,NS,SOA" –ServerInterface “EQ,164.8.1.1” -PassThru
 `
 
-何千もの DNS のポリシーに合わせて作成できます、トラフィック管理の要件、DNS サーバーを再起動しなくても - 受信したクエリで、すべての新しいポリシーが動的 - 適用されます。 
+何千もの DNS のポリシーに合わせて作成できます、トラフィック管理の要件、DNS サーバーを再起動しなくても - 受信したクエリで、すべての新しいポリシーが動的 - 適用されます。

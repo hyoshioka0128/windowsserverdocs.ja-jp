@@ -2,18 +2,16 @@
 title: DFS 名前空間を作成する
 description: この記事では、DFS 名前空間を作成する方法について説明します。
 ms.date: 6/5/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 60b31b90ed54137898043e79c3c6504afb3f4b7f
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 6999dec3681a765ac64fdedd2e695c8a3f7dbcfa
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86953364"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87939427"
 ---
 # <a name="create-a-dfs-namespace"></a>DFS 名前空間を作成する
 
@@ -38,7 +36,7 @@ DFSN Windows PowerShell モジュールは、Windows Server 2012 で導入され
 > [!IMPORTANT]
 > フォレスト機能レベルが Windows Server 2003 以上でない場合、Windows Server 2008 モードを使ってドメイン ベースの名前空間を作成しようとしないでください。 これを行うと、名前空間から DFS フォルダーを削除できなくなり、"フォルダーを削除できません。 このファンクションを完了できません" というエラー メッセージが生成される可能性があります。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 -   [DFS 名前空間を展開する](deploying-dfs-namespaces.md)
 -   [名前空間の種類を選択する](choose-a-namespace-type.md)

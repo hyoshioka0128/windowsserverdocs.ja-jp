@@ -7,12 +7,12 @@ ms.topic: article
 ms.assetid: 91b7f50f-a071-4ab6-beb1-1b29f92f52b6
 author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 26b925861eada96bae11b66278955e648e197f65
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: d6227829f73cdccefecd0758a69a25a299665557
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87935451"
+ms.locfileid: "87988958"
 ---
 # <a name="dynamic-memory-is-enabled-but-not-responding-on-some-virtual-machines"></a>動的メモリは有効になっていますが、一部の仮想マシンでは応答しません
 
@@ -42,7 +42,4 @@ ms.locfileid: "87935451"
 
 Windows Server 2016 の場合、integration services は Windows Update を通じて配信されます。 最新バージョンの integration services を取得するための更新プログラムを受信するように仮想マシンが構成されていることを確認します。
 
-動的メモリは、サポートされているゲストの特定のバージョンで動作します。 参照してください [HYPER-V 動的メモリの概要](https://technet.microsoft.com/library/hh831766.aspx) の Windows Server 2016 および Windows 10 より前のバージョン。
-
-
-
+動的メモリは、サポートされているゲストの特定のバージョンで動作します。 参照してください [HYPER-V 動的メモリの概要](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831766(v=ws.11)) の Windows Server 2016 および Windows 10 より前のバージョン。

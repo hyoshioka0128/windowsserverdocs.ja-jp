@@ -2,18 +2,16 @@
 title: 手順1リモートアクセスインフラストラクチャを計画する
 description: このトピックは、「Windows Server 2016 で DirectAccess クライアントをリモート管理する」ガイドの一部です。
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-ras
 ms.topic: article
 ms.assetid: a1ce7af5-f3fe-4fc9-82e8-926800e37bc1
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 567097d69db8f0de3f93e315af06c18525ad3735
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: 88bc666b516d00b4c132b5b67ed702f071847fb0
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769590"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87989754"
 ---
 # <a name="step-1-plan-the-remote-access-infrastructure"></a>手順1リモートアクセスインフラストラクチャを計画する
 
@@ -52,9 +50,9 @@ ms.locfileid: "87769590"
 
     DirectAccess は、IPv6 と IPsec を組み合わせて、DirectAccess クライアント コンピューターと企業内部ネットワークとの間にセキュリティで保護された接続を確立します。 ただし、DirectAccess は、IPv6 インターネットへの接続または内部ネットワーク上でのネイティブ IPv6 サポートを必ずしも必要とはしません。 代わりに、IPv6 移行テクノロジを自動的に構成して使用し、IPv4 インターネット (6to4、Teredo、または IP-HTTPS) 経由および IPv4 専用イントラネット (NAT64 または ISATAP) 全体で IPv6 トラフィックをトンネリングします。 このような移行テクノロジの概要については、次のリソースを参照してください。
 
-    -   [IPv6 移行テクノロジ](/previous-versions//bb726951(v=technet.10))
+    -   [IPv6 移行テクノロジ](/previous-versions/bb726951(v=technet.10))
 
-    -   [IP-HTTPS Tunneling Protocol Specification (IP-HTTPS トンネリング プロトコルの仕様)](/previous-versions//bb726951(v=technet.10))
+    -   [IP-HTTPS Tunneling Protocol Specification (IP-HTTPS トンネリング プロトコルの仕様)](/previous-versions/bb726951(v=technet.10))
 
 3.  次の表に従って、必要なアダプターとアドレス指定を構成します。 1つのネットワークアダプターを使用して NAT デバイスの背後にある展開の場合は、[**内部ネットワークアダプター** ] 列のみを使用して IP アドレスを構成します。
 
@@ -73,7 +71,7 @@ ms.locfileid: "87769590"
 ### <a name="plan-isatap-requirements"></a>ISATAP 要件を計画する
 DirectAccess 管理サーバーがインターネット上にある DirectAccess クライアントに接続できるように、DirectAccessclients をリモート管理するには ISATAP が必要です。 ISATAP は、DirectAccess クライアントコンピューターによって開始される接続を、企業ネットワーク上の IPv4 リソースに対してサポートする必要はありません。 この目的には、NAT64/DNS64 が使用されます。 デプロイで ISATAP が必要な場合は、次の表を使用して要件を特定します。
 
-|ISATAP 展開シナリオ|必要条件|
+|ISATAP 展開シナリオ|要件|
 |---------------|--------|
 |既存のネイティブ IPv6 イントラネット (ISATAP は不要)|既存のネイティブ IPv6 インフラストラクチャでは、リモートアクセスの展開時に組織のプレフィックスを指定します。リモートアクセスサーバーは、それ自体を ISATAP ルーターとして構成しません。 次の操作を行います。<br/><br/>1. イントラネットから DirectAccess クライアントにアクセスできるようにするには、既定のルートトラフィックがリモートアクセスサーバーに転送されるように、IPv6 ルーティングを変更する必要があります。 イントラネットの IPv6 アドレス空間が、1つの48ビット IPv6 アドレスプレフィックス以外のアドレスを使用している場合は、展開時に関連する組織の IPv6 プレフィックスを指定する必要があります。<br/>2. 現在 IPv6 インターネットに接続している場合は、既定のルートトラフィックをリモートアクセスサーバーに転送されるように構成してから、リモートアクセスサーバー上に適切な接続とルートを構成して、既定のルートトラフィックが IPv6 インターネットに接続されているデバイスに転送されるようにする必要があります。|
 |既存の ISATAP 展開|既存の ISATAP インフラストラクチャがある場合は、展開時に組織の48ビットプレフィックスの入力を求められ、リモートアクセスサーバーは ISATAP ルーターとして構成されません。 イントラネットから DirectAccess クライアントにアクセスできるようにするには、既定のルートトラフィックがリモートアクセスサーバーに転送されるように、IPv6 ルーティングインフラストラクチャを変更する必要があります。 この変更は、イントラネットクライアントが既に既定のトラフィックを転送する必要のある既存の ISATAP ルーターで行う必要があります。|

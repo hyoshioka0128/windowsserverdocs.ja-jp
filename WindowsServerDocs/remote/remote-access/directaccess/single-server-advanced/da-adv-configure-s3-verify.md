@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: ae8bbff0-c981-4bc6-8df1-861621d0627f
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: a7d931339e5a23a59d9f8d93c23c42f98f35c366
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 3d5b189d70497ead26f24f43bba9dcfe2d443ce0
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87955239"
+ms.locfileid: "87989762"
 ---
 # <a name="step-3-verify-the-advanced-directaccess-deployment"></a>手順 3-高度な DirectAccess 展開を確認する
 
@@ -33,7 +33,4 @@ ms.locfileid: "87955239"
 
 ## <a name="previous-step"></a><a name="BKMK_Links"></a>前の手順
 
--   [手順 2: DirectAccess サーバーの構成](Step-2-Configuring-DirectAccess-Servers.md)
-
-
-
+-   [手順 2: DirectAccess サーバーの構成](./da-adv-configure-s2-servers.md)

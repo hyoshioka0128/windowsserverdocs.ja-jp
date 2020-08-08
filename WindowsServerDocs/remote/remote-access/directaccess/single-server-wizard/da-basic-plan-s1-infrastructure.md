@@ -2,17 +2,15 @@
 title: 手順1基本的な DirectAccess インフラストラクチャを計画する
 description: このトピックは、「Windows Server 2016 用はじめにウィザードを使用して単一の DirectAccess サーバーを展開する」の一部です。
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-da
 ms.topic: article
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 4a7d784c38db692110559d9e2ce1f1f7c760313a
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: f1878944b0f72e22a94b9153b735571ef5b5f5f0
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769740"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990013"
 ---
 # <a name="step-1-plan-the-basic-directaccess-infrastructure"></a>手順1基本的な DirectAccess インフラストラクチャを計画する
 1台のサーバーでの基本的な DirectAccess 展開の最初の手順は、展開に必要なインフラストラクチャを計画することです。 このトピックでは、インフラストラクチャの計画手順を説明します。
@@ -42,9 +40,9 @@ ms.locfileid: "87769740"
 
     DirectAccess は、IPv6 と IPsec を組み合わせて、DirectAccess クライアント コンピューターと企業内部ネットワークとの間にセキュリティで保護された接続を確立します。 ただし、DirectAccess は、IPv6 インターネットへの接続または内部ネットワーク上でのネイティブ IPv6 サポートを必ずしも必要とはしません。 その代わりに、IPv6 移行テクノロジを自動的に構成、使用して、IPv4 インターネット上 (6to4、Teredo、IP-HTTPS) および IPv4 専用イントラネット上 (NAT64 または ISATAP) で IPv6 トラフィックをトンネリングします。 このような移行テクノロジの概要については、次のリソースを参照してください。
 
-    -   [IPv6 移行テクノロジ](/previous-versions//bb726951(v=technet.10))
+    -   [IPv6 移行テクノロジ](/previous-versions/bb726951(v=technet.10))
 
-    -   [IP-HTTPS Tunneling Protocol Specification (IP-HTTPS トンネリング プロトコルの仕様)](/previous-versions//bb726951(v=technet.10))
+    -   [IP-HTTPS Tunneling Protocol Specification (IP-HTTPS トンネリング プロトコルの仕様)](/previous-versions/bb726951(v=technet.10))
 
 3.  次の表に従って、必要なアダプターとアドレス指定を構成します。 1つのネットワークアダプターを使用して NAT デバイスの背後に配置する場合は、[**内部ネットワークアダプター** ] 列のみを使用して IP アドレスを構成します。
 

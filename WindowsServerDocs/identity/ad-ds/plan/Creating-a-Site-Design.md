@@ -6,14 +6,12 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: fb37fe72c69fb0055632e09b7a6c51ce9f5cb561
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: b66ffcb88e2f8093cb896f81fb61f815d15d6dea
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86962314"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87938502"
 ---
 # <a name="creating-a-site-design"></a>サイト設計の作成
 

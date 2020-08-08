@@ -6,14 +6,12 @@ ms.author: gawatu
 manager: gawatu
 ms.date: 10/17/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: storage-file-systems
-ms.openlocfilehash: cd74468029ff973846ddfd10cce8ba0e26a607e9
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 01177b24646f7f1213378f08c930cdaae8f591de
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961394"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87939437"
 ---
 # <a name="block-cloning-on-refs"></a>ReFS でのブロックの複製
 
@@ -61,10 +59,10 @@ ReFS のブロックの複製では、ファイル データの操作ではな�
 - ブロックの複製操作では、共有されている便宜的ロック ([レベル 2 の便宜的ロック](/windows/win32/fileio/types-of-opportunistic-locks)とも呼ばれています) が動作しなくなります。
 - ReFS ボリュームは、Windows Server 2016 でフォーマットされている必要があります。フェールオーバー クラスタリングを使用している場合は、フォーマット時にクラスタリングの機能レベルが Windows Server 2016 以降になっている必要があります。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 -   [ReFS の概要](refs-overview.md)
 -   [ReFS 整合性ストリーム](integrity-streams.md)
--   [記憶域スペースダイレクトの概要](../storage-spaces/storage-spaces-direct-overview.md)
+-   [記憶域スペース ダイレクトの概要](../storage-spaces/storage-spaces-direct-overview.md)
 -   [DUPLICATE_EXTENTS_DATA](/windows/win32/api/winioctl/ns-winioctl-duplicate_extents_data)
 -   [FSCTL_DUPLICATE_EXTENTS_TO_FILE](/windows/win32/api/winioctl/ni-winioctl-fsctl_duplicate_extents_to_file)

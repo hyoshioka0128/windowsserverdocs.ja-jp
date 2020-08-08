@@ -5,15 +5,13 @@ author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: c23287ea9823b7ecb94f469ba9857c524b26c485
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 929b868c1afa2dd21897526938611f881dfade37
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87520011"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87938558"
 ---
 # <a name="checklist-setting-up-a-federation-server"></a>チェックリスト: フェデレーション サーバーのセットアップ
 

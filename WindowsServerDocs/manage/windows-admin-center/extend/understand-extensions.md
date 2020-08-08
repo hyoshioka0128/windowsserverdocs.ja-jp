@@ -1,19 +1,17 @@
 ---
 title: Windows Admin Center 拡張機能について
 description: Windows Admin Center SDK 拡張機能 (Project Honolulu) について
-ms.technology: extend
 ms.topic: article
 author: daniellee-msft
 ms.author: jol
 ms.date: 06/18/2018
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 4bfabe4959fe16f5e240cbf1a972a902e37ffb52
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 44038185bb4f9cb61920033ce5edc67afb3de99b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385248"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87964578"
 ---
 # <a name="understanding-windows-admin-center-extensions"></a>Windows Admin Center 拡張機能について
 
@@ -50,6 +48,6 @@ Windows Admin Center のホーム画面で接続をクリックして接続す�
 
 ゲートウェイ サービスでは、呼び出す UI の REST API を公開し、ターゲットで実行するコマンドとスクリプトをリレーします。 ゲートウェイ サービスは、異なるプロトコルをサポートするゲートウェイ プラグインによって拡張できます。 Windows Admin Center には、PowerShell スクリプトの実行用と WMI コマンド用の 2 つのゲートウェイ プラグインが事前にパッケージ化されています。 REST など、PowerShell または WMI 以外のプロトコルによってターゲットと通信する必要がある場合は、そのためのゲートウェイ プラグインを構築できます。
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 Windows Admin Center で構築する機能に応じて、既存のサーバーまたはクラスター ソリューション向けの[ツール拡張機能を構築する](develop-tool.md)だけで十分であり、これが拡張機能を構築するための最も簡単な最初の手順です。 ただし、機能がサーバーやクラスターではなく、デバイス、サービス、または完全に新しいものを管理するためのものである場合は、1 つ以上のツールを使用して[ソリューション拡張機能を構築する](develop-solution.md)ことを考慮する必要があります。 最後に、WMI または PowerShell 以外のプロトコルを使用してターゲットと通信する必要がある場合は、[ゲートウェイプラグインを作成](develop-gateway-plugin.md)する必要があります。 [さらに読み進めて](developing-extensions.md)開発環境を設定する方法および最初の拡張機能の記述を開始する方法を確認してください。

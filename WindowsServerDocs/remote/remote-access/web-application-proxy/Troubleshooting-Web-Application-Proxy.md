@@ -4,15 +4,13 @@ ms.author: kgremban
 author: eross-msft
 ms.date: 07/13/2016
 ms.topic: article
-ms.prod: windows-server
 ms.assetid: a2fef55d-747b-4e20-8f21-5f8807e7ef87
-ms.technology: web-app-proxy
-ms.openlocfilehash: 063301e5403cb9f671054594dbccbeae3730ffc6
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: 7b7cbb22bbda690f957babcf56e97b6d846cc738
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769480"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87939813"
 ---
 # <a name="troubleshooting-web-application-proxy"></a>Web アプリケーション プロキシのトラブルシューティング
 

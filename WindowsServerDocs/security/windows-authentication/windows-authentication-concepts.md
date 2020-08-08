@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: ee204320696ac10eaf341df06d7c458198b3ec28
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 7ef3b9fde0ca9b9364a1fdcc99690b58f4f14f68
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87936536"
+ms.locfileid: "87990008"
 ---
 # <a name="windows-authentication-concepts"></a>Windows 認証の概念
 
@@ -55,7 +55,7 @@ Passport と関連する可能性のある visas は、旅行のために受け�
 旅行のための多要素認証の形式は、passport やカンファレンスの登録情報などの id を認証するために複数のドキュメントを提供し、提示する必要がある場合があります。 Windows では、スマートカード、仮想スマートカード、および生体認証テクノロジを使用して、このフォームまたは認証を実装しています。
 
 ## <a name="security-principals-and-accounts"></a>セキュリティプリンシパルとアカウント
-Windows では、アクションを開始できるすべてのユーザー、サービス、グループ、またはコンピューターは、セキュリティプリンシパルです。 セキュリティプリンシパルにはアカウントがあります。アカウントは、コンピューターに対してローカルにすることも、ドメインベースにすることもできます。 たとえば、Windows クライアントのドメインに参加しているコンピューターは、ユーザーがログオンしていない場合でも、ドメインコントローラーと通信することで、ネットワークドメインに参加できます。 通信を開始するには、コンピューターがドメイン内にアクティブなアカウントを持っている必要があります。 コンピューターからの通信を受け入れる前に、ドメインコントローラーのローカルセキュリティ機関がコンピューターの id を認証し、ユーザーのセキュリティプリンシパルの場合と同様に、コンピューターのセキュリティコンテキストを定義します。 このセキュリティコンテキストでは、ネットワーク上の特定のコンピューター、ユーザー、サービス、グループ、またはコンピューター上のユーザーまたはサービスの id と機能を定義します。 たとえば、アクセス可能なファイル共有やプリンターなどのリソースや、そのリソースのユーザー、サービス、またはコンピューターによって実行される読み取り、書き込み、変更などの操作を定義します。 詳細については、「[セキュリティプリンシパル](https://technet.microsoft.com/itpro/windows/keep-secure/security-principals)」を参照してください。
+Windows では、アクションを開始できるすべてのユーザー、サービス、グループ、またはコンピューターは、セキュリティプリンシパルです。 セキュリティプリンシパルにはアカウントがあります。アカウントは、コンピューターに対してローカルにすることも、ドメインベースにすることもできます。 たとえば、Windows クライアントのドメインに参加しているコンピューターは、ユーザーがログオンしていない場合でも、ドメインコントローラーと通信することで、ネットワークドメインに参加できます。 通信を開始するには、コンピューターがドメイン内にアクティブなアカウントを持っている必要があります。 コンピューターからの通信を受け入れる前に、ドメインコントローラーのローカルセキュリティ機関がコンピューターの id を認証し、ユーザーのセキュリティプリンシパルの場合と同様に、コンピューターのセキュリティコンテキストを定義します。 このセキュリティコンテキストでは、ネットワーク上の特定のコンピューター、ユーザー、サービス、グループ、またはコンピューター上のユーザーまたはサービスの id と機能を定義します。 たとえば、アクセス可能なファイル共有やプリンターなどのリソースや、そのリソースのユーザー、サービス、またはコンピューターによって実行される読み取り、書き込み、変更などの操作を定義します。 詳細については、「[セキュリティプリンシパル](/windows/security/identity-protection/access-control/security-principals)」を参照してください。
 
 アカウントは、claimant (人間のユーザーまたはサービス) を識別する手段であり、アクセスやリソースを要求します。 認証済みの passport を所有している旅行者は、ホストの国を持つアカウントを所有しています。 ユーザー、ユーザー、オブジェクト、およびサービスのグループはすべて、個別のアカウントまたは共有アカウントを持つことができます。 アカウントはグループのメンバーになることができ、特定の権限とアクセス許可を割り当てることができます。 アカウントは、ローカルコンピューター、ワークグループ、ネットワークに制限することも、ドメインのメンバーシップを割り当てられるようにすることもできます。
 
@@ -65,17 +65,17 @@ Windows では、アクションを開始できるすべてのユーザー、サ
 
 アカウントの詳細については、以下を参照してください。
 
--   [Active Directory アカウント](https://technet.microsoft.com/itpro/windows/keep-secure/active-directory-accounts)
+-   [Active Directory アカウント](/windows/security/identity-protection/access-control/active-directory-accounts)
 
--   [Active Directory セキュリティ グループ](https://technet.microsoft.com/itpro/windows/keep-secure/active-directory-security-groups)
+-   [Active Directory セキュリティ グループ](/windows/security/identity-protection/access-control/active-directory-security-groups)
 
 -   [ローカル アカウント](https://technet.microsoft.com/itpro/windows/keep-bastion.local-accounts)
 
--   [Microsoft アカウント](https://technet.microsoft.com/itpro/windows/keep-secure/microsoft-accounts)
+-   [Microsoft アカウント](/windows/security/identity-protection/access-control/microsoft-accounts)
 
--   [サービス アカウント](https://technet.microsoft.com/itpro/windows/keep-secure/service-accounts)
+-   [サービス アカウント](/windows/security/identity-protection/access-control/service-accounts)
 
--   [特別な Id](https://technet.microsoft.com/itpro/windows/keep-secure/special-identities)
+-   [特別な Id](/windows/security/identity-protection/access-control/special-identities)
 
 ## <a name="delegated-authentication"></a>委任された認証
 旅行の例えを使用するには、デリゲートがよく知られている限り、政府機関の正式な委任のすべてのメンバーに同じアクセス権を発行する可能性があります。 この委任により、1つのメンバーが別のメンバーの機関に対して動作するようになります。 Windows では、ネットワークサービスがユーザーからの認証要求を受け入れ、2番目のネットワークサービスへの新しい接続を開始するためにそのユーザーの id を前提としている場合に、委任された認証が行われます。 委任された認証をサポートするには、フロントエンドまたは第1層のサーバー (web サーバーなど) を確立する必要があります。これらのサーバーは、クライアント認証要求とバックエンドまたは n 層サーバー (大規模データベースなど) を処理し、情報の格納を担当します。 組織内のユーザーに委任された認証を設定する権限を委任して、管理者の管理負荷を軽減することができます。
@@ -89,12 +89,12 @@ Windows では、アクションを開始できるすべてのユーザー、サ
 
 特定の信頼が認証要求に渡す方法は、どのように構成されているかによって異なります。 信頼される側のドメインから信頼する側のドメインのリソースにアクセスできるようにすることで、信頼関係のあるドメインから他のドメインのリソースへのアクセスを提供することで、信頼関係を一方向にすることができます。 信頼も非推移的です。この場合の信頼関係は、2つの信頼関係パートナードメイン間にのみ信頼が存在するか、または推移的であり、パートナーのいずれかが信頼している他のすべてのドメインに対して信頼が自動的に拡張されます。
 
-信頼のしくみの詳細については、「[ドメインおよびフォレストの信頼](https://technet.microsoft.com/library/cc773178(v=ws.10).aspx)のしくみ」を参照してください。
+信頼のしくみの詳細については、「[ドメインおよびフォレストの信頼](/previous-versions/windows/it-pro/windows-server-2003/cc773178(v=ws.10))のしくみ」を参照してください。
 
 ### <a name="protocol-transition"></a>プロトコル遷移
 プロトコルの移行は、アプリケーションの設計を支援します。これにより、アプリケーションは、ユーザー認証層でさまざまな認証メカニズムをサポートし、2つ目のアプリケーション層で相互認証や制約付き委任などのセキュリティ機能に対して Kerberos プロトコルに切り替えることができます。
 
-プロトコル遷移の詳細については、「 [Kerberos プロトコル遷移と制約付き委任](https://technet.microsoft.com/library/cc758097(v=ws.10).aspx)」を参照してください。
+プロトコル遷移の詳細については、「 [Kerberos プロトコル遷移と制約付き委任](/previous-versions/windows/it-pro/windows-server-2003/cc758097(v=ws.10))」を参照してください。
 
 ### <a name="constrained-delegation"></a>制約付き委任
 制約付き委任を使用すると、管理者は、アプリケーションサービスがユーザーの代理として動作できる範囲を制限することで、アプリケーションの信頼境界を指定および適用することができます。 委任に対して信頼されているコンピューターからリソースを要求できる特定のサービスを指定できます。 サービスの承認権限を制限する柔軟性により、信頼されていないサービスによるセキュリティ侵害の機会を減らすことで、アプリケーションのセキュリティ設計を向上させることができます。
@@ -103,5 +103,3 @@ Windows では、アクションを開始できるすべてのユーザー、サ
 
 ## <a name="additional-references"></a>その他の参照情報
 [Windows のログオンと認証の技術概要](https://technet.microsoft.com/library/dn269029.aspx)
-
-

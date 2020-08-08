@@ -1,20 +1,18 @@
 ---
 title: アプリケーション データ用のスケールアウト ファイル サーバーの概要
 description: Windows Server 201 R2 および Windows Server 2012 のスケールアウトファイルサーバー機能の概要について説明します。
-ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 manager: lizross
-ms.technology: storage-failover-clustering
 ms.date: 04/26/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 8bcfb53b04a03a259c712dd4b3003f8c4a66d8ff
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: dfd39210b6db8516fafbe8b437c7d38cd7839bad
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181718"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87972389"
 ---
 # <a name="scale-out-file-server-for-application-data-overview"></a>アプリケーション データ用のスケールアウト ファイル サーバーの概要
 
@@ -66,7 +64,7 @@ ms.locfileid: "87181718"
 <thead>
 <tr class="header">
 <th>テクノロジ領域</th>
-<th>特徴量</th>
+<th>機能</th>
 <th>汎用のファイル サーバー クラスター</th>
 <th>スケールアウト ファイル サーバー</th>
 </tr>
@@ -75,26 +73,26 @@ ms.locfileid: "87181718"
 <tr class="odd">
 <td>SMB</td>
 <td>継続的な SMB 可用性</td>
-<td>○</td>
-<td>○</td>
+<td>はい</td>
+<td>はい</td>
 </tr>
 <tr class="even">
 <td>SMB</td>
 <td>SMB マルチチャネル</td>
-<td>○</td>
-<td>○</td>
+<td>はい</td>
+<td>はい</td>
 </tr>
 <tr class="odd">
 <td>SMB</td>
 <td>SMB ダイレクト</td>
-<td>○</td>
-<td>○</td>
+<td>はい</td>
+<td>はい</td>
 </tr>
 <tr class="even">
 <td>SMB</td>
 <td>SMB 暗号化</td>
-<td>○</td>
-<td>○</td>
+<td>はい</td>
+<td>はい</td>
 </tr>
 <tr class="odd">
 <td>SMB</td>
@@ -148,7 +146,7 @@ ms.locfileid: "87181718"
 <td>ファイル管理</td>
 <td>DFS 名前空間 (DFSN) フォルダー ターゲット サーバー</td>
 <td>はい</td>
-<td>○</td>
+<td>はい</td>
 </tr>
 <tr class="even">
 <td>ファイル管理</td>
@@ -250,7 +248,7 @@ ms.locfileid: "87181718"
 <table>
 <thead>
 <tr class="header">
-<th>特徴量</th>
+<th>機能</th>
 <th>このシナリオのサポート方法</th>
 </tr>
 </thead>

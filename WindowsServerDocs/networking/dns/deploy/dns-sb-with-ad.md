@@ -2,18 +2,16 @@
 title: Active Directory でスプリット ブレイン DNS に DNS ポリシーを使用する
 description: このトピックを使用して、Windows Server 2016 で Active Directory 統合 DNS ゾーンを使用して、スプリットブレイン展開の DNS ポリシーのトラフィック管理機能を活用できます。
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-dns
 ms.topic: article
 ms.assetid: f9533204-ad7e-4e49-81c1-559324a16aeb
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 444670b5098d0a6cd1f834ffbccee606e038bf70
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 1f6da8584f7a2b2221fb1a283b8ea4de842ddc58
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518288"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87964138"
 ---
 # <a name="use-dns-policy-for-split-brain-dns-in-active-directory"></a>Active Directory でスプリット ブレイン DNS に DNS ポリシーを使用する
 

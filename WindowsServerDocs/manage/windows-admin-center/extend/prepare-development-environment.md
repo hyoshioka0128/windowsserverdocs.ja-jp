@@ -1,23 +1,21 @@
 ---
-title: 開発環境の準備
+title: 開発環境を準備する
 description: 開発環境 Windows Admin Center SDK (Project Honolulu) の準備
-ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.localizationpriority: medium
 ms.date: 09/18/2018
-ms.prod: windows-server
-ms.openlocfilehash: 136107210d2a8a4b336c9e4eb809e2ca096bfba2
-ms.sourcegitcommit: 20d07170c7f3094c2fb4455f54b13ec4b102f2d7
+ms.openlocfilehash: 09d39aa027adf360c339da434b16038a3b8e5c90
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81269219"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87964598"
 ---
-# <a name="prepare-your-development-environment"></a>開発環境の準備
+# <a name="prepare-your-development-environment"></a>開発環境を準備する
 
->適用対象: Windows Admin Center、Windows Admin Center Preview
+>適用先:Windows Admin Center、Windows Admin Center Preview
 
 Windows 管理センター SDK を使用して拡張機能の開発を開始しましょう。  このドキュメントでは、Windows 管理センターの拡張機能をビルドしてテストするために、環境を稼働させるためのプロセスについて説明します。
 
@@ -26,7 +24,7 @@ Windows 管理センター SDK を使用して拡張機能の開発を開始し�
 
 開発環境を準備するには、次の手順を実行します。
 
-## <a name="install-prerequisites"></a>前提条件のインストール
+## <a name="install-prerequisites"></a>必須コンポーネントをインストールする
 
 SDK で開発を開始するには、次の前提条件をダウンロードしてインストールします。
 
@@ -37,7 +35,7 @@ SDK で開発を開始するには、次の前提条件をダウンロードし�
 * [Nuget](https://www.nuget.org/downloads) (拡張機能の公開用)
 
 > [!NOTE]
-> 開発者モードで Windows Admin Center をインストールして実行し、次の手順に従う必要があります。 開発者モードでは、Windows Admin Center で署名されていない拡張機能パッケージを読み込むことができます。 Windows 管理センターは、Windows 10 コンピューターの開発モードでのみインストールできます。 
+> 開発者モードで Windows Admin Center をインストールして実行し、次の手順に従う必要があります。 開発者モードでは、Windows Admin Center で署名されていない拡張機能パッケージを読み込むことができます。 Windows 管理センターは、Windows 10 コンピューターの開発モードでのみインストールできます。
 >
 >  開発者モードを有効にするには、パラメーター DEV_MODE=1 を指定して、コマンド ラインから Windows Admin Center をインストールします。 次の例では、```<version>``` を、インストールしているバージョンに置き換えます。(```WindowsAdminCenter1809.msi``` など)。
 >
@@ -59,9 +57,9 @@ npm install -g windows-admin-center-cli
 ```
 
 >[!NOTE]
->新しいバージョンの @angular/cliをインストールすることはできますが、7.1.2 よりも大きいバージョンをインストールすると、gulp のビルド手順で、ローカル cli のバージョンがインストールされているバージョンと一致しないという警告が表示されます。
+>新しいバージョンのをインストールすることはできますが @angular/cli 、7.1.2 よりも大きいバージョンをインストールすると、gulp のビルド手順で、ローカル cli のバージョンがインストールされているバージョンと一致しないという警告が表示されます。
 
-## <a name="next-steps"></a>次のステップ:
+## <a name="next-steps"></a>次のステップ
 
 環境が準備できたので、コンテンツの作成を開始する準備ができました。
 
