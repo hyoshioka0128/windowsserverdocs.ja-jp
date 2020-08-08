@@ -1,19 +1,17 @@
 ---
 title: 記憶域レプリカについてよく寄せられる質問
-ms.prod: windows-server
 manager: siroy
 ms.author: nedpyle
-ms.technology: storage-replica
 ms.topic: get-started-article
 author: nedpyle
 ms.date: 04/15/2020
 ms.assetid: 12bc8e11-d63c-4aef-8129-f92324b2bf1b
-ms.openlocfilehash: 04477ac9d7aa7905a4d5fc4dd58c7891c91f5baf
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: 01bda8c501ca1416ebc887a98a4369f99c60f0f2
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769700"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87989378"
 ---
 # <a name="frequently-asked-questions-about-storage-replica"></a>記憶域レプリカについてよく寄せられる質問
 
@@ -32,7 +30,7 @@ ms.locfileid: "87769700"
 
 Azure でのゲストクラスタリングに関するその他の注意事項については[、「Microsoft Azure での IAAS VM ゲストクラスターのデプロイ」](https://techcommunity.microsoft.com/t5/Failover-Clustering/Deploying-IaaS-VM-Guest-Clusters-in-Microsoft-Azure/ba-p/372126)を参照してください。
 
-重要なメモ:
+重要:
 
 1. Azure では、共有 VHDX ゲストクラスタリングがサポートされていないため、Windows フェールオーバークラスターの仮想マシンでは、従来の共有記憶域の永続的なディスク予約クラスタリングまたは記憶域スペースダイレクトに iSCSI ターゲットを使用する必要があります。
 2. 記憶域スペースダイレクトベースの記憶域レプリカのクラスター化には Azure Resource Manager テンプレートがあります。「 [Create a 記憶域スペースダイレクト SOFS クラスターと Azure リージョン間でのディザスターリカバリーのための記憶域レプリカを作成する](https://aka.ms/azure-storage-replica-cluster)」をご覧ください。
@@ -86,7 +84,7 @@ Set-SRNetworkConstraint -SourceComputerName sr-cluster01 -SourceRGName group1 -S
 いいえ。記憶域レプリカは、サーバー、クラスター、またはストレッチクラスターノードの1対1のレプリケーションのみをサポートします。 これは、今後のリリースで変更される可能性があります。 当然ながら、各種サーバーの特定のボリューム ペアを、方向を指定してレプリケーションするよう構成することはできます。 たとえば、サーバー 1 の D ボリュームをサーバー 2 に、E ボリュームをサーバー 3 からレプリケートできます。
 
 ## <a name="can-i-grow-or-shrink-replicated-volumes-replicated-by-storage-replica"></a><a name="FAQ5"></a> 記憶域レプリカによってレプリケートされたボリュームを拡大または圧縮することはできますか?
-ボリュームは、拡大 (拡張) できますが、圧縮できません。 既定では、記憶域レプリカを使うと管理者はレプリケートされたボリュームを拡張できません。サイズ変更前に、ソース グループで `Set-SRGroup -AllowVolumeResize $TRUE` オプションを使ってください。 次に例を示します。
+ボリュームは、拡大 (拡張) できますが、圧縮できません。 既定では、記憶域レプリカを使うと管理者はレプリケートされたボリュームを拡張できません。サイズ変更前に、ソース グループで `Set-SRGroup -AllowVolumeResize $TRUE` オプションを使ってください。 例:
 
 1. ソースコンピューターに対して使用する:`Set-SRGroup -Name YourRG -AllowVolumeResize $TRUE`
 2. 希望する方法を使ってボリュームを拡大する
@@ -145,7 +143,7 @@ Windows Server 2016 では構成できません。 記憶域レプリカは、�
 
 ## <a name="can-i-delegate-users-to-administer-replication"></a><a name="FAQ13"></a>レプリケーションを管理するユーザーを委任できますか。
 
-コマンドレットを使用でき `Grant-SRDelegation` ます。 これにより、サーバー間、クラスター間で特定のユーザーを設定して、クラスターのレプリケーション シナリオを、ローカルの管理者グループのメンバーにならずにレプリケーションを作成、変更、削除する権限が付与されているとして拡張することができます。 次に例を示します。
+コマンドレットを使用でき `Grant-SRDelegation` ます。 これにより、サーバー間、クラスター間で特定のユーザーを設定して、クラスターのレプリケーション シナリオを、ローカルの管理者グループのメンバーにならずにレプリケーションを作成、変更、削除する権限が付与されているとして拡張することができます。 例:
 
 ```
 Grant-SRDelegation -UserName contso\tonywang
@@ -254,7 +252,7 @@ Remove-SmbBandwidthLimit -Category StorageReplication
 
 ## <a name="how-do-i-report-an-issue-with-storage-replica-or-this-guide"></a><a name="FAQ17"></a>記憶域レプリカまたはこのガイドに関する問題を操作方法報告しますか?
 
-記憶域レプリカの技術的なサポートについては、 [Microsoft フォーラム](https://docs.microsoft.com/answers/index.html)で投稿できます。 記憶域レプリカに関する質問や、このドキュメントに関する問題は、srfeed@microsoft.com に電子メールを送信することもできます。 [Windows Server の一般フィードバックサイト](https://windowsserver.uservoice.com/forums/295047-general-feedback)は、お客様がアイデアに関するサポートとフィードバックを提供できるようにするため、設計変更要求に適しています。
+記憶域レプリカの技術的なサポートについては、 [Microsoft フォーラム](/answers/index.html)で投稿できます。 記憶域レプリカに関する質問や、このドキュメントに関する問題は、srfeed@microsoft.com に電子メールを送信することもできます。 [Windows Server の一般フィードバックサイト](https://windowsserver.uservoice.com/forums/295047-general-feedback)は、お客様がアイデアに関するサポートとフィードバックを提供できるようにするため、設計変更要求に適しています。
 
 ## <a name="can-storage-replica-be-configured-to-replicate-in-both-directions"></a><a name="FAQ18"></a>記憶域レプリカを双方向にレプリケートするように構成できますか。
 

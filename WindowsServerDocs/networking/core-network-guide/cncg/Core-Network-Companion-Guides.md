@@ -2,56 +2,54 @@
 title: コア ネットワーク必携ガイド
 description: このトピックでは、Windows Server 2016 コアネットワークガイドの概要について説明します。
 manager: brianlic
-ms.technology: networking
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: d57af0bd-9301-4f62-9888-f528cd10451d
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 5f3ae4f9c22e61a8428a257d9324fe164eeaa04b
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: e7595cc91f1bf3c4b2b631398bc97accba8930cc
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80319107"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87997121"
 ---
 # <a name="core-network-companion-guidance"></a>コア ネットワーク必携ガイド
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016
+>適用先:Windows Server (半期チャネル)、Windows Server 2016
 
-新しいルートドメインとサポートするネットワークインフラストラクチャを使用して新しい Active Directory&reg; フォレストを展開する方法については、「Windows Server 2016[コアネットワークガイド](https://technet.microsoft.com/windows-server-docs/networking/core-network-guide/core-network-guide)」で説明されているように、ネットワークに機能を追加することができます。
+Windows Server 2016[コアネットワークガイド](../core-network-guide.md)では、新しいルートドメインとサポートするネットワークインフラストラクチャを使用して新しい Active Directory フォレストを展開する方法について説明して &reg; いますが、必携ガイドでは、ネットワークに機能を追加する機能を提供しています。
 
 各必携ガイドにより、コア ネットワークの展開後に特定の目標を達成することができます。 場合によっては複数の必携ガイドが存在することもあります。これらを正しい順序で一緒に展開することで、非常に複雑な目標を、正確に定められた、コスト効果の高い合理的な方法で達成することができます。
 
 コア ネットワーク ガイドを入手する前に Active Directory ドメインとコア ネットワークを展開した場合でも、必携ガイドを使用してネットワークに機能を追加できます。 コア ネットワーク ガイドを単に前提条件の一覧として使用し、必携ガイドで追加機能を展開する場合、ネットワークがコア ネットワーク ガイドで指定されている前提条件を満たしている必要があります。
 
-## <a name="core-network-companion-guide-deploy-server-certificates-for-8021x-wired-and-wireless-deployments"></a>コアネットワーク必携ガイド: 802.1 X ワイヤードおよびワイヤレス展開用のサーバー証明書の展開 
+## <a name="core-network-companion-guide-deploy-server-certificates-for-8021x-wired-and-wireless-deployments"></a>コアネットワーク必携ガイド: 802.1 X ワイヤードおよびワイヤレス展開用のサーバー証明書の展開
 
-この必携ガイドでは、ネットワークポリシーサーバー \(NPS\)、リモートアクセスサービス \(RAS\)、またはその両方を実行しているコンピューターのサーバー証明書を展開することにより、コアネットワーク上で構築する方法について説明します。
+この必携ガイドでは、ネットワークポリシーサーバー \( NPS \) 、リモートアクセスサービス ( \( RAS \) )、またはその両方を実行しているコンピューターのサーバー証明書を展開することによって、コアネットワーク上で構築する方法について説明します。
 
-サーバー証明書は、ネットワークアクセス認証用の拡張認証プロトコル \(EAP\) および保護された EAP \(PEAP\) を使用して証明書ベースの認証方法を展開する場合に必要です。 EAP および PEAP 証明書ベースの認証方法に Active Directory 証明書サービス \(AD CS\) を使用してサーバー証明書を展開すると、次のような利点があります。
+サーバー証明書は、 \( \) \( \) ネットワークアクセス認証用に拡張認証プロトコル EAP と保護された eap PEAP を使用して証明書ベースの認証方法を展開する場合に必要です。 Active Directory 証明書サービス \( AD CS FOR EAP および PEAP 証明書ベースの認証方法を使用してサーバー証明書を展開 \) すると、次のような利点があります。
 
 - NPS または RAS サーバーの id を秘密キーにバインドする
 - ドメインメンバー NPS と RAS サーバーに証明書を自動的に登録するための、コスト効率に優れた安全な方法
 - 証明書および証明機関の効率的な管理
 - 証明書ベースの認証によるセキュリティ
 - 追加の目的のための、証明書の用途拡張
-  
-サーバー証明書を展開する方法の手順については、「 [802.1 x ワイヤード (有線) およびワイヤレス展開用のサーバー証明書の展開](server-certs/Deploy-Server-Certificates-for-802.1X-Wired-and-Wireless-Deployments.md)」を参照してください。  
+
+サーバー証明書を展開する方法の手順については、「 [802.1 x ワイヤード (有線) およびワイヤレス展開用のサーバー証明書の展開](server-certs/Deploy-Server-Certificates-for-802.1X-Wired-and-Wireless-Deployments.md)」を参照してください。
 ## <a name="core-network-companion-guide-deploy-password-based-8021x-authenticated-wireless-access"></a>コアネットワーク必携ガイド: パスワードベースの 802.1 X で認証されたワイヤレスアクセスの展開
 
-この必携ガイドでは、コアネットワーク上で構築する方法について説明します。これは、米国の電気技術者向けの技術情報 \(IEEE\) 802.1 X\-認証済みの IEEE 802.11 ワイヤレスアクセスを保護された拡張認証\-\(プロトコルを使用して構成する方法について説明します。\-\)
+この必携ガイドでは、コアネットワーク上で構築する方法について説明し \( \) \- ます。保護された拡張認証プロトコルを使用して ieee 802.1 x で認証された ieee 802.11 ワイヤレスアクセスを展開する方法について説明します (Microsoft チャレンジハンドシェイク認証プロトコルバージョン 2 \( PEAP \- MS \- CHAP v2) \) 。
 
-PEAP\-MS\-CHAP v2 の認証方法では、ネットワークポリシー \(サーバーを実行するサーバーを認証するために、NPS id をクライアントに証明するためにサーバー証明書を使用してワイヤレスクライアントを提示\) ます。ただし、ユーザー認証は証明書を使用して実行されません。代わりに、ユーザーはドメインユーザー名とパスワードを入力します。
+認証方法 PEAP \- MS CHAP v2 では、 \- ネットワークポリシーサーバー nps を実行するサーバーを認証 \( \) するために、クライアントに対して nps id を証明するためのサーバー証明書を持つワイヤレスクライアントが存在します。ただし、ユーザー認証は証明書を使用して実行されません。代わりに、ユーザーはドメインユーザー名とパスワードを入力します。
 
-PEAP\-MS\-CHAP v2 では、認証プロセス中にユーザーが証明書ではなくパスワードベースの資格情報を提供する必要があるため、通常、EAP\-TLS または PEAP\-TLS よりも簡単かつ低コストで展開できます。
+PEAP \- MS CHAP v2 では、 \- 認証プロセス中にユーザーが証明書ではなくパスワードベースの資格情報を提供する必要があるため、通常は、EAP \- TLS または PEAP tls よりも簡単かつ低コストで展開でき \- ます。
 
-このガイドを使用して、PEAP\-MS\-CHAP v2 の認証方法を使用してワイヤレスアクセスを展開する前に、次の操作を行う必要があります。
+このガイドを使用して、PEAP MS CHAP v2 の認証方法を使用してワイヤレスアクセスを展開する前に、 \- \- 次の操作を行う必要があります。
 
 1. コアネットワークガイドに記載されている手順に従って、コアネットワークインフラストラクチャを展開するか、またはそのガイドに示されているテクノロジをネットワーク上に展開します。
 2. コアネットワークコンパニオンガイドの手順に従って、802.1 X ワイヤードおよびワイヤレス展開用のサーバー証明書を展開します。または、このガイドに示されているテクノロジをネットワークに展開済みであることを示します。
 
-PEAP\-MS\-CHAP v2 を使用してワイヤレスアクセスを展開する方法については、「[パスワードベースの 802.1 x で認証](wireless/a-deploy-8021X-wireless-access.md)されたワイヤレスアクセスを展開する」を参照してください。
+PEAP MS CHAP v2 を使用してワイヤレスアクセスを展開する方法につい \- \- ては、「[パスワードベースの 802.1 x で認証](wireless/a-deploy-8021X-wireless-access.md)されたワイヤレスアクセスを展開する」を参照してください。
 
 ## <a name="core-network-companion-guide-deploy-branchcache-hosted-cache-mode"></a>コアネットワーク必携ガイド: BranchCache ホスト型キャッシュモードの展開
 

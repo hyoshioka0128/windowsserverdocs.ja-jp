@@ -1,35 +1,33 @@
 ---
 title: 単一のネットワークアダプターを使用した収束 NIC 構成
 description: このトピックでは、Hyper-v ホストで1つの NIC を使用して収束 NIC を構成する手順について説明します。
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: eed5c184-fa55-43a8-a879-b1610ebc70ca
 manager: dougkim
 ms.author: lizross
 author: eross-msft
 ms.date: 09/14/2018
-ms.openlocfilehash: 5a088df043190de9e7f1df4dccdc2fc832751093
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 7c936d12d1d3025c6b3f6fcd104658dcad1407b0
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80309622"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87949266"
 ---
 # <a name="converged-nic-configuration-with-a-single-network-adapter"></a>単一のネットワークアダプターを使用した収束 NIC 構成
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016
+>適用先:Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックでは、Hyper-v ホストで1つの NIC を使用して収束 NIC を構成する手順について説明します。
 
-このトピックの構成例では、2つの Hyper-v ホスト、 **Hyper-v ホスト A**、および**hyper-v ホスト B**について説明します。両方のホストに1つの物理 NIC (pNIC) が取り付けられており、Nic は \(ToR\) 物理スイッチの上位のラックに接続されています。 さらに、ホストは同じサブネット (192.168.1. x/24) に配置されます。
+このトピックの構成例では、2つの Hyper-v ホスト、 **Hyper-v ホスト A**、および**hyper-v ホスト B**について説明します。両方のホストに1つの物理 NIC (pNIC) が取り付けられており、Nic はラック ToR 物理スイッチの上に接続されてい \( \) ます。 さらに、ホストは同じサブネット (192.168.1. x/24) に配置されます。
 
 ![Hyper-V ホスト](../../media/Converged-NIC/1-single-test-conn.jpg)
 
 
 ## <a name="step-1-test-the-connectivity-between-source-and-destination"></a>手順 1. ソースとターゲットの間の接続をテストする
 
-物理 NIC が宛先ホストに接続できることを確認します。 このテストでは、レイヤー 3 \(L3\) または IP レイヤーと、レイヤー 2 \(L2\)を使用した接続を示します。
+物理 NIC が宛先ホストに接続できることを確認します。 このテストでは、レイヤー 3 L3 を使用した接続と \( \) 、レイヤー 2 L2 を使用した接続を示し \( \) ます。
 
 1. ネットワークアダプターのプロパティを表示します。
 
@@ -37,10 +35,10 @@ ms.locfileid: "80309622"
    Get-NetAdapter
    ```
 
-   _**生じ**_  
+   _**生じ**_
 
 
-   | Name |    InterfaceDescription     | ifIndex | 状態 |    Mac     | LinkSpeed |
+   | 名前 |    InterfaceDescription     | ifIndex | Status |    MacAddress     | LinkSpeed |
    |------|-----------------------------|---------|--------|-------------------|-----------|
    |  M1  | Mellanox/3 Pro... |    4    |   上へ   | 7C-FE-90-93-8F-A1 |  40 Gbps  |
 
@@ -54,7 +52,7 @@ ms.locfileid: "80309622"
 
    _**生じ**_
 
-   ```PowerShell   
+   ```PowerShell
     MacAddress   : 7C-FE-90-93-8F-A1
     Status   : Up
     LinkSpeed: 40 Gbps
@@ -96,11 +94,11 @@ ms.locfileid: "80309622"
     AdditionalAvailability   :
     Availability :
     CreationClassName: MSFT_NetAdapter
-   ``` 
+   ```
 
 ## <a name="step-2-ensure-that-source-and-destination-can-communicate"></a>手順 2. 転送元と転送先が通信できることを確認する
 
-このステップでは、 **Test NetConnection** Windows PowerShell コマンドを使用しますが、必要に応じて**ping**コマンドを使用することもできます。 
+このステップでは、 **Test NetConnection** Windows PowerShell コマンドを使用しますが、必要に応じて**ping**コマンドを使用することもできます。
 
 >[!TIP]
 >ホストが相互に通信できることがわかっている場合は、この手順を省略できます。
@@ -116,12 +114,12 @@ ms.locfileid: "80309622"
 
    |        パラメーター         |    値    |
    |--------------------------|-------------|
-   |       ComputerName       | 192.168.1.5 |
-   |      リモート アドレス       | 192.168.1.5 |
+   |       [ComputerName]       | 192.168.1.5 |
+   |      RemoteAddress       | 192.168.1.5 |
    |      InterfaceAlias      |     M1      |
    |      SourceAddress       | 192.168.1.3 |
    |      Ping 成功       |    True     |
-   | PingReplyDetails \(RTT\) |    0 ミリ秒     |
+   | PingReplyDetails \( RTT\) |    0 ミリ秒     |
 
    ---
 
@@ -133,7 +131,7 @@ ms.locfileid: "80309622"
    Set-NetFirewallProfile -All -Enabled False
    ```
 
-3. ファイアウォールプロファイルを無効にした後、接続をもう一度テストします。 
+3. ファイアウォールプロファイルを無効にした後、接続をもう一度テストします。
 
    ```PowerShell
    Test-NetConnection 192.168.1.5
@@ -144,12 +142,12 @@ ms.locfileid: "80309622"
 
    |        パラメーター         |    値    |
    |--------------------------|-------------|
-   |       ComputerName       | 192.168.1.5 |
-   |      リモート アドレス       | 192.168.1.5 |
+   |       [ComputerName]       | 192.168.1.5 |
+   |      RemoteAddress       | 192.168.1.5 |
    |      InterfaceAlias      | テスト-40G-1  |
    |      SourceAddress       | 192.168.1.3 |
    |      Ping 成功       |    False    |
-   | PingReplyDetails \(RTT\) |    0 ミリ秒     |
+   | PingReplyDetails \( RTT\) |    0 ミリ秒     |
 
    ---
 
@@ -159,9 +157,9 @@ ms.locfileid: "80309622"
 
 多くのネットワーク構成では、Vlan を利用しています。また、ネットワークで Vlan を使用する予定がある場合は、Vlan が構成されている前のテストを繰り返す必要があります。 また、RDMA サービスに RoCE を使用する予定がある場合は、Vlan を有効にする必要があります。
 
-この手順では、Nic は**アクセス**モードになっています。 ただし、このガイドの後半で Hyper-v 仮想スイッチ \(vSwitch\) を作成すると、vSwitch ポートレベルで VLAN プロパティが適用されます。 
+この手順では、Nic は**アクセス**モードになっています。 ただし、このガイドの後半で Hyper-v 仮想スイッチ vSwitch を作成する場合、 \( \) VLAN プロパティは vSwitch ポートレベルで適用されます。
 
-スイッチは複数の Vlan をホストできるため、ラックの上部 \(ToR\) 物理スイッチが、ホストが接続されているポートをトランクモードで構成する必要があります。
+スイッチは複数の Vlan をホストできるため、ラック ToR 物理スイッチの上部に、ホストが接続されている \( \) ポートをトランクモードで構成する必要があります。
 
 >[!NOTE]
 >スイッチでトランクモードを構成する方法については、ToR スイッチのドキュメントを参照してください。
@@ -182,13 +180,13 @@ ms.locfileid: "80309622"
 
    ```PowerShell
    Set-NetAdapterAdvancedProperty -Name M1 -RegistryKeyword VlanID -RegistryValue "101"
-   Get-NetAdapterAdvancedProperty -Name M1 | Where-Object {$_.RegistryKeyword -eq "VlanID"} 
+   Get-NetAdapterAdvancedProperty -Name M1 | Where-Object {$_.RegistryKeyword -eq "VlanID"}
    ```
 
    _**生じ**_
 
 
-   | Name | DisplayName | DisplayValue | RegistryKeyword | RegistryValue |
+   | 名前 | DisplayName | DisplayValue | RegistryKeyword | RegistryValue |
    |------|-------------|--------------|-----------------|---------------|
    |  M1  |   VLAN ID   |     101      |     VlanID      |     {101}     |
 
@@ -200,7 +198,7 @@ ms.locfileid: "80309622"
    Restart-NetAdapter -Name "M1"
    ```
 
-3. 状態が **稼働**中」になっていることを確認します。
+3. 状態が [**稼働**中」になっていることを確認します。
 
    ```PowerShell
    Get-NetAdapter -Name "M1"
@@ -209,30 +207,30 @@ ms.locfileid: "80309622"
    _**生じ**_
 
 
-   | Name |          InterfaceDescription           | ifIndex | 状態 |    Mac     | LinkSpeed |
+   | 名前 |          InterfaceDescription           | ifIndex | Status |    MacAddress     | LinkSpeed |
    |------|-----------------------------------------|---------|--------|-------------------|-----------|
    |  M1  | Mellanox: 3 Pro イーサネット Ada... |    4    |   上へ   | 7C-FE-90-93-8F-A1 |  40 Gbps  |
 
    ---
 
    >[!IMPORTANT]
-   >デバイスが再起動され、ネットワーク上で使用可能になるまで数秒かかることがあります。 
+   >デバイスが再起動され、ネットワーク上で使用可能になるまで数秒かかることがあります。
 
-4. 接続を確認します。<p>接続に失敗した場合は、スイッチ VLAN 構成または移行先が同じ VLAN に参加していることを確認します。 
+4. 接続を確認します。<p>接続に失敗した場合は、スイッチ VLAN 構成または移行先が同じ VLAN に参加していることを確認します。
 
    ```PowerShell
    Test-NetConnection 192.168.1.5
    ```
 
-## <a name="step-4-configure-quality-of-service-qos"></a>手順 4. QoS\) \(サービスの品質を構成する
+## <a name="step-4-configure-quality-of-service-qos"></a>手順 4. サービス品質 QoS の構成 \(\)
 
 >[!NOTE]
 >相互に通信することを目的としたすべてのホストで、次の DCB と QoS の構成手順をすべて実行する必要があります。
 
-1. 各 Hyper-v ホストにデータセンターブリッジング \(DCB\) をインストールします。
+1. \( \) 各 hyper-v ホストに Data Center ブリッジング DCB をインストールします。
 
    - RDMA サービスに iWarp を使用するネットワーク構成の場合は**省略可能**。
-   - RoCE \(RDMA サービスのすべてのバージョン\) を使用するネットワーク構成に**必要です**。
+   - RDMA サービスに RoCE any バージョンを使用するネットワーク構成に**必要です** \( \) 。
 
    ```PowerShell
    Install-WindowsFeature Data-Center-Bridging
@@ -254,10 +252,10 @@ ms.locfileid: "80309622"
 
    |   パラメーター    |          値           |
    |----------------|--------------------------|
-   |      Name      |           SMB            |
-   |     所有者      | グループポリシー \(マシン\) |
-   | NetworkProfile |           [すべて]            |
-   |   ［優先順位］   |           127            |
+   |      名前      |           SMB            |
+   |     所有者      | グループポリシー \( マシン\) |
+   | NetworkProfile |           すべて            |
+   |   優先順位   |           127            |
    |   JobObject    |          &nbsp;          |
    | NetDirectPort  |           445            |
    | PriorityValue  |            3             |
@@ -274,7 +272,7 @@ ms.locfileid: "80309622"
    _**生じ**_
 
 
-   | 優先順位 | 有効 | PolicySet | ifIndex | IfAlias |
+   | Priority | Enabled | PolicySet | IfIndex | IfAlias |
    |----------|---------|-----------|---------|---------|
    |    0     |  False  |  グローバル   | &nbsp;  | &nbsp;  |
    |    1     |  False  |  グローバル   | &nbsp;  | &nbsp;  |
@@ -299,47 +297,46 @@ ms.locfileid: "80309622"
 
    _**生じ**_
 
-   **名前**: M1  
-   **有効**: True  
+   **名前**: M1 **Enabled**: True
 
-   _**機能**_   
+   _**機能**_
 
 
-   |      パラメーター      |   ハードウェア   |   現在    |
+   |      パラメーター      |   ハードウェア   |   [現在]    |
    |---------------------|--------------|--------------|
    |    MacSecBypass     | NotSupported | NotSupported |
-   |     DcbxSupport     |     なし     |     なし     |
+   |     DcbxSupport     |     None     |     None     |
    | NumTCs (Max////PFC) |    8/8/8     |    8/8/8     |
 
    ---
 
-   _**OperationalTrafficClasses:**_ 
+   _**OperationalTrafficClasses:**_
 
 
-   | フィールド | TSA | 帯域幅 | 主 |
+   | TC | TSA | 帯域幅 | 優先順位 |
    |----|-----|-----------|------------|
    | 0  | ETS |    70%    |  0 ~ 2、4-7   |
    | 1  | ETS |    30%    |     3      |
 
    ---
 
-   _**OperationalFlowControl:**_  
+   _**OperationalFlowControl:**_
 
-   優先度3が有効  
+   優先度3が有効
 
-   _**OperationalClassifications:**_  
+   _**OperationalClassifications:**_
 
 
-   | [プロトコル]  | ポート/種類 | 優先順位 |
+   | Protocol  | ポート/種類 | Priority |
    |-----------|-----------|----------|
-   |  既定値  |  &nbsp;   |    0     |
+   |  Default  |  &nbsp;   |    0     |
    | NetDirect |    445    |    3     |
 
    ---
 
-5. SMB ダイレクト \(RDMA\)の帯域幅の割合を予約します。
+5. SMB ダイレクト RDMA の帯域幅の割合を予約し \( \) ます。
 
-    この例では、30% の帯域幅予約が使用されています。 ストレージトラフィックに必要なものを表す値を選択する必要があります。 
+    この例では、30% の帯域幅予約が使用されています。 ストレージトラフィックに必要なものを表す値を選択する必要があります。
 
    ```PowerShell
    New-NetQosTrafficClass "SMB" -Priority 3 -BandwidthPercentage 30 -Algorithm ETS
@@ -348,13 +345,13 @@ ms.locfileid: "80309622"
    _**生じ**_
 
 
-   | Name | アルゴリズム | 帯域幅 (%) | 優先順位 | PolicySet | ifIndex | IfAlias |
+   | 名前 | アルゴリズム | 帯域幅 (%) | Priority | PolicySet | IfIndex | IfAlias |
    |------|-----------|--------------|----------|-----------|---------|---------|
    | SMB  |    ETS    |      30      |    3     |  グローバル   | &nbsp;  | &nbsp;  |
 
-   ---                                      
+   ---
 
-6. 帯域幅予約の設定を表示します。  
+6. 帯域幅予約の設定を表示します。
 
    ```PowerShell
    Get-NetQosTrafficClass
@@ -363,24 +360,24 @@ ms.locfileid: "80309622"
    _**生じ**_
 
 
-   |   Name    | アルゴリズム | 帯域幅 (%) | 優先順位 | PolicySet | ifIndex | IfAlias |
+   |   名前    | アルゴリズム | 帯域幅 (%) | Priority | PolicySet | IfIndex | IfAlias |
    |-----------|-----------|--------------|----------|-----------|---------|---------|
    | [Default] |    ETS    |      70      | 0 ~ 2、4-7  |  グローバル   | &nbsp;  | &nbsp;  |
    |    SMB    |    ETS    |      30      |    3     |  グローバル   | &nbsp;  | &nbsp;  |
 
    ---
 
-## <a name="step-5-optional-resolve-the-mellanox-adapter-debugger-conflict"></a>手順 5. OptionalMellanox adapter デバッガーの競合を解決する 
+## <a name="step-5-optional-resolve-the-mellanox-adapter-debugger-conflict"></a>手順 5. OptionalMellanox adapter デバッガーの競合を解決する
 
 既定では、Mellanox アダプターを使用すると、アタッチされたデバッガーが NetQos をブロックします。これは既知の問題です。 このため、Mellanox からアダプターを使用し、デバッガーをアタッチする場合は、次のコマンドを使用してこの問題を解決します。 デバッガーをアタッチしない場合、または Mellanox アダプターを使用していない場合は、この手順は必要ありません。
 
-   ```PowerShell    
+   ```PowerShell
    Set-ItemProperty HKLM:"\SYSTEM\CurrentControlSet\Services\NDIS\Parameters" AllowFlowControlUnderDebugger -type DWORD -Value 1 –Force
-   ``` 
+   ```
 
 ## <a name="step-6-verify-the-rdma-configuration-native-host"></a>手順 6. RDMA 構成 (ネイティブホスト) を確認する
 
-VSwitch を作成し、RDMA (収束 NIC) に移行する前に、ファブリックが正しく構成されていることを確認する必要があります。 
+VSwitch を作成し、RDMA (収束 NIC) に移行する前に、ファブリックが正しく構成されていることを確認する必要があります。
 
 次の図は、Hyper-v ホストの現在の状態を示しています。
 
@@ -394,7 +391,7 @@ VSwitch を作成し、RDMA (収束 NIC) に移行する前に、ファブリッ
    _**生じ**_
 
 
-   | Name |           InterfaceDescription           | 有効 |
+   | 名前 |           InterfaceDescription           | Enabled |
    |------|------------------------------------------|---------|
    |  M1  | Mellanox/3 Pro イーサネットアダプター |  True   |
 
@@ -406,7 +403,7 @@ VSwitch を作成し、RDMA (収束 NIC) に移行する前に、ファブリッ
    Get-NetIPConfiguration -InterfaceAlias "M*" | ft InterfaceAlias,InterfaceIndex,IPv4Address
    ```
 
-   _**生じ**_ 
+   _**生じ**_
 
 
    | InterfaceAlias | InterfaceIndex |  IPv4Address  |
@@ -415,11 +412,11 @@ VSwitch を作成し、RDMA (収束 NIC) に移行する前に、ファブリッ
 
    ---
 
-3. [Diskspd .exe ユーティリティ](https://aka.ms/diskspd)をダウンロードし、C:\TEST に抽出し\.
+3. [DiskSpd.exe ユーティリティ](https://aka.ms/diskspd)をダウンロードし、C:\TEST に抽出する\.
 
-4. [テスト RDMA powershell スクリプト](https://github.com/Microsoft/SDN/blob/master/Diagnostics/Test-Rdma.ps1)をローカルドライブ上のテストフォルダーにダウンロードします (例: C:\TEST\.
+4. [テスト RDMA powershell スクリプト](https://github.com/Microsoft/SDN/blob/master/Diagnostics/Test-Rdma.ps1)をローカルドライブ上のテストフォルダー (C:\TEST など) にダウンロードします。\.
 
-5. **Test-Rdma** PowerShell スクリプトを実行して、ifIndex の値を、同じ VLAN 上のリモートアダプターの IP アドレスと共にスクリプトに渡します。<p>この例では、スクリプトはリモートネットワークアダプターの IP アドレス192.168.1.5 に**ifIndex**値14を渡します。
+5. **Test-Rdma.ps1** PowerShell スクリプトを実行して、ifIndex 値を同じ VLAN 上のリモートアダプターの IP アドレスと共にスクリプトに渡します。<p>この例では、スクリプトはリモートネットワークアダプターの IP アドレス192.168.1.5 に**ifIndex**値14を渡します。
 
    ```PowerShell
     C:\TEST\Test-RDMA.PS1 -IfIndex 14 -IsRoCE $true -RemoteIpAddress 192.168.1.5 -PathToDiskspd C:\TEST\Diskspd-v2.0.17\amd64fre\
@@ -448,19 +445,19 @@ VSwitch を作成し、RDMA (収束 NIC) に移行する前に、ファブリッ
 
 ## <a name="step-7-remove-the-access-vlan-setting"></a>手順 7. アクセス VLAN 設定を削除します。
 
-Hyper-v スイッチを作成するための準備として、上でインストールした VLAN 設定を削除する必要があります。  
+Hyper-v スイッチを作成するための準備として、上でインストールした VLAN 設定を削除する必要があります。
 
 1. NIC が間違った VLAN ID で送信トラフィックの自動タグ付けを行わないように、物理 NIC からアクセス VLAN 設定を削除します。<p>この設定を削除すると、アクセス VLAN ID と一致しない受信トラフィックをフィルターで除外することもできなくなります。
 
    ```PowerShell
    Set-NetAdapterAdvancedProperty -Name M1 -RegistryKeyword VlanID -RegistryValue "0"
-   ```    
+   ```
 
 2. **VlanID の設定**で、VLAN ID の値が0と表示されていることを確認します。
 
-   ```PowerShell    
-   Get-NetAdapterAdvancedProperty -name m1 | Where-Object {$_.RegistryKeyword -eq 'VlanID'} 
-   ```  
+   ```PowerShell
+   Get-NetAdapterAdvancedProperty -name m1 | Where-Object {$_.RegistryKeyword -eq 'VlanID'}
+   ```
 
 
 ## <a name="step-8-create-a-hyper-v-vswitch-on-your-hyper-v-hosts"></a>手順 8. Hyper-v ホストに Hyper-v vSwitch を作成する
@@ -478,9 +475,9 @@ Hyper-v スイッチを作成するための準備として、上でインスト
    _**生じ**_
 
 
-   |  Name   | SwitchType |      NetAdapterInterfaceDescription      |
+   |  名前   | SwitchType |      NetAdapterInterfaceDescription      |
    |---------|------------|------------------------------------------|
-   | VMSTEST |  外部リンク  | Mellanox/3 Pro イーサネットアダプター |
+   | VMSTEST |  外部  | Mellanox/3 Pro イーサネットアダプター |
 
    ---
 
@@ -493,16 +490,16 @@ Hyper-v スイッチを作成するための準備として、上でインスト
    _**生じ**_
 
 
-   |         Name          |        InterfaceDescription         | ifIndex | 状態 |    Mac     | LinkSpeed |
+   |         名前          |        InterfaceDescription         | ifIndex | Status |    MacAddress     | LinkSpeed |
    |-----------------------|-------------------------------------|---------|--------|-------------------|-----------|
    | VeVMSTEST Net \(\) | Hyper-v 仮想イーサネットアダプターの #2 |   27    |   上へ   | E4-1D-2D-07-40-71 |  40 Gbps  |
 
    ---
 
-3. 次の2つの方法のいずれかでホスト vNIC を管理します。 
+3. 次の2つの方法のいずれかでホスト vNIC を管理します。
 
-   - **Netadapter**ビューは、"VeVMSTEST NET \(\)" の名前に基づいて動作します。 すべてのネットワークアダプターのプロパティがこのビューに表示されるわけではありません。
-   - **VMNetworkAdapter** view は、"Veruncommand net" プレフィックスを削除し、単に vmswitch 名を使用します。 (推奨) 
+   - **Netadapter**ビューは、"VeVMSTEST net の名前" に基づいて動作 \( \) します。 すべてのネットワークアダプターのプロパティがこのビューに表示されるわけではありません。
+   - **VMNetworkAdapter** view は、"Veruncommand net" プレフィックスを削除し、単に vmswitch 名を使用します。 (推奨)
 
    ```PowerShell
    Get-VMNetworkAdapter –ManagementOS | ft -AutoSize
@@ -511,20 +508,20 @@ Hyper-v スイッチを作成するための準備として、上でインスト
    _**生じ**_
 
 
-   |         Name         | IsManagementOs |        VMName        |  SwitchName  | Mac | 状態 | IPAddresses |
+   |         名前         | IsManagementOs |        VMName        |  SwitchName  | MacAddress | Status | IPAddresses |
    |----------------------|----------------|----------------------|--------------|------------|--------|-------------|
-   | CORP-外部スイッチ |      True      | CORP-外部スイッチ | 001B785768AA |    Ok を    | &nbsp; |             |
-   |       VMSTEST        |      True      |       VMSTEST        | E41D2D074071 |    Ok を    | &nbsp; |             |
+   | CORP-外部スイッチ |      True      | CORP-外部スイッチ | 001B785768AA |    Ok] を    | &nbsp; |             |
+   |       VMSTEST        |      True      |       VMSTEST        | E41D2D074071 |    Ok] を    | &nbsp; |             |
 
    ---
 
 4. 接続をテストします。
 
-   ```Powershell    
+   ```Powershell
    Test-NetConnection 192.168.1.5
    ```
 
-   _**生じ**_ 
+   _**生じ**_
 
    ```
     ComputerName   : 192.168.1.5
@@ -540,20 +537,20 @@ Hyper-v スイッチを作成するための準備として、上でインスト
    ```PowerShell
    Set-VMNetworkAdapterVlan -VMNetworkAdapterName "VMSTEST" -VlanId "101" -Access -ManagementOS
    Get-VMNetworkAdapterVlan -ManagementOS -VMNetworkAdapterName "VMSTEST"
-   ```    
+   ```
 
    _**生じ**_
 
 
    | VMName | Vmnetworkadaptername は |  モード  | VlanList |
    |--------|----------------------|--------|----------|
-   | &nbsp; |       VMSTEST        | アクセス |   101    |
+   | &nbsp; |       VMSTEST        | Access |   101    |
 
-   ---  
+   ---
 
-6. 接続をテストします。<p>他のアダプターに対して正常に ping を実行するには、完了までに数秒かかることがあります。  
+6. 接続をテストします。<p>他のアダプターに対して正常に ping を実行するには、完了までに数秒かかることがあります。
 
-   ```PowerShell    
+   ```PowerShell
    Test-NetConnection 192.168.1.5
    ```
 
@@ -577,26 +574,26 @@ Hyper-v スイッチを作成するための準備として、上でインスト
 
 1. ホスト vNIC で優先順位のタグ付けを設定します。
 
-   ```PowerShell    
+   ```PowerShell
    Set-VMNetworkAdapter -ManagementOS -Name "VMSTEST" -IeeePriorityTag on
    Get-VMNetworkAdapter -ManagementOS -Name "VMSTEST" | fl Name,IeeePriorityTag
-   ```  
+   ```
 
    _**生じ**_
 
     名前: VMSTEST Ieeeの優先順位タグ: On
 
 
-2. ネットワークアダプターの RDMA 情報を表示します。 
+2. ネットワークアダプターの RDMA 情報を表示します。
 
    ```PowerShell
    Get-NetAdapterRdma
-   ```   
+   ```
 
    _**生じ**_
 
 
-   |         Name          |        InterfaceDescription         | 有効 |
+   |         名前          |        InterfaceDescription         | Enabled |
    |-----------------------|-------------------------------------|---------|
    | VeVMSTEST Net \(\) | Hyper-v 仮想イーサネットアダプターの #2 |  False  |
 
@@ -612,10 +609,10 @@ Hyper-v スイッチを作成するための準備として、上でインスト
    Get-NetAdapter
    ```
 
-   _**生じ**_   
+   _**生じ**_
 
 
-   |        Name         |        InterfaceDescription         | ifIndex | 状態 |    Mac     | LinkSpeed |
+   |        名前         |        InterfaceDescription         | ifIndex | Status |    MacAddress     | LinkSpeed |
    |---------------------|-------------------------------------|---------|--------|-------------------|-----------|
    | Veruncommand Net (VMSTEST) | Hyper-v 仮想イーサネットアダプターの #2 |   27    |   上へ   | E4-1D-2D-07-40-71 |  40 Gbps  |
 
@@ -632,7 +629,7 @@ Hyper-v スイッチを作成するための準備として、上でインスト
    _**生じ**_
 
 
-   |         Name          |        InterfaceDescription         | 有効 |
+   |         名前          |        InterfaceDescription         | Enabled |
    |-----------------------|-------------------------------------|---------|
    | VeVMSTEST Net \(\) | Hyper-v 仮想イーサネットアダプターの #2 |  True   |
 
@@ -643,7 +640,7 @@ Hyper-v スイッチを作成するための準備として、上でインスト
 
 5. RDMA トラフィックテストを実行します。
 
-   ```PowerShell    
+   ```PowerShell
     C:\TEST\Test-RDMA.PS1 -IfIndex 27 -IsRoCE $true -RemoteIpAddress 192.168.1.5 -PathToDiskspd C:\TEST\Diskspd-v2.0.17\amd64fre\
     VERBOSE: Diskspd.exe found at C:\TEST\Diskspd-v2.0.17\amd64fre\\diskspd.exe
     VERBOSE: The adapter vEthernet (VMSTEST) is a virtual adapter

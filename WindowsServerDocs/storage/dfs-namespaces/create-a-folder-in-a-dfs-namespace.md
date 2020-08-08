@@ -2,18 +2,16 @@
 title: DFS 名前空間でフォルダーを作成する
 description: この記事では、DFS 名前空間にフォルダーを作成する方法について説明します。
 ms.date: 6/5/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 4034c3b40a6b409f295875e424668e68bce24cdb
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: d854cfcb02288f6262ee380edc0614baf9e29878
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86962864"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957700"
 ---
 # <a name="create-a-folder-in-a-dfs-namespace"></a>DFS 名前空間でフォルダーを作成する
 
@@ -38,7 +36,7 @@ DFS 管理を使って名前空間でフォルダーを作成するには、次�
 > Windows PowerShell を使って名前空間でフォルダーを作成するには、[New-DfsnFolder](/powershell/module/dfsn/new-dfsnfolder) コマンドレットを使います。 DFSN Windows PowerShell モジュールは、Windows Server 2012 で導入されました。
 
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 -   [DFS 名前空間を展開する](deploying-dfs-namespaces.md)
 -   [DFS 名前空間の管理アクセス許可を委任する](delegate-management-permissions-for-dfs-namespaces.md)

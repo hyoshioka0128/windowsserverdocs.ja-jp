@@ -2,18 +2,16 @@
 title: 'チェックリスト: DFS 名前空間を展開する'
 description: この記事では、DFS 名前空間を構成して展開する方法について説明します。
 ms.date: 6/5/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 389d02ae7269ef48ef77d066db3064759d9253c1
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 43cb085eb8af627609371f37f61eab22be91d606
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961964"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957720"
 ---
 # <a name="checklist-deploy-dfs-namespaces"></a>チェックリスト: DFS 名前空間を展開する
 
@@ -36,7 +34,7 @@ DFS 名前空間を展開するには、次のタスクを実行できます。
 -   DFS レプリケーション (オプション) を使ってフォルダー ターゲット間でコンテンツをレプリケートします。 [DFS レプリケーションを使用してフォルダーターゲットをレプリケートする](replicate-folder-targets-using-dfs-replication.md)
 
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 -   [名前空間](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771914(v=ws.11))
 -   [チェックリスト:DFS 名前空間を調整する](checklist-tune-a-dfs-namespace.md)

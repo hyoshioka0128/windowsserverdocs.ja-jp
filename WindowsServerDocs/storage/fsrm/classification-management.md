@@ -2,18 +2,16 @@
 title: 分類の管理
 description: この記事では、分類プロパティに基づいてファイルを分類する方法について説明します。
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: e742b5f9f94da06d43127c437f6ce693d4bcfc16
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 53886eeace17c0e6611747031533a1480b493eaf
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472888"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957569"
 ---
 # <a name="classification-management"></a>分類の管理
 
@@ -33,6 +31,6 @@ ms.locfileid: "85472888"
 > 電子メール通知や特定のレポート機能を設定するには、まずファイル サーバー リソース マネージャーの全般的なオプションを設定する必要があります。
 
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 [ファイル サーバー リソース マネージャーのオプションを設定する](setting-file-server-resource-manager-options.md)

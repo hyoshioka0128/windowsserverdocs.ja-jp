@@ -1,20 +1,18 @@
 ---
 title: Windows にインストールされた Hyper-v の Linux および FreeBSD 仮想マシンがサポートされています。
 description: 各バージョンに含まれる Linux integration services と機能の一覧を示します。
-ms.prod: windows-server
 manager: dongill
-ms.technology: compute-hyper-v
 ms.topic: article
 ms.assetid: 990ff94a-30fb-434b-b4a2-3804a5245ba6
 author: shirgall
 ms.author: kathydav
 ms.date: 10/03/2016
-ms.openlocfilehash: dff7a0f829f11a92f2c87305da806b9be43f42fe
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3c971b3b802f1059454bc8935b638ddcc10c825c
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80855945"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87965629"
 ---
 # <a name="supported-linux-and-freebsd-virtual-machines-for-hyper-v-on-windows"></a>Windows にインストールされた Hyper-v の Linux および FreeBSD 仮想マシンがサポートされています。
 
@@ -43,24 +41,24 @@ LIS は Linux カーネルに追加されているされ、新しいリリース
 
 * LIS または BIS 機能ごとに機能の説明。
 
-**機能について提案する場合は、** 適切か何かはありますか。 [Windows Server User Voice](https://windowsserver.uservoice.com/forums/295062-linux-support)サイトを使用して、hyper-v 上の Linux および FreeBSD Virtual Machines の新機能を提案したり、他のユーザーの意見を確認したりすることができます。
+**特徴および機能に関する提案を送信する場合は、** 適切か何かはありますか。 [Windows Server User Voice](https://windowsserver.uservoice.com/forums/295062-linux-support)サイトを使用して、hyper-v 上の Linux および FreeBSD Virtual Machines の新機能を提案したり、他のユーザーの意見を確認したりすることができます。
 
 ## <a name="in-this-section"></a>このセクションの内容
 
-* [サポートされている CentOS と Hyper-v 上の仮想マシンの Red Hat Enterprise Linux](Supported-CentOS-and-Red-Hat-Enterprise-Linux-virtual-machines-on-Hyper-V.md)
+* [CentOS をサポートし、HYPER-V 上の Red Hat Enterprise Linux 仮想マシン](Supported-CentOS-and-Red-Hat-Enterprise-Linux-virtual-machines-on-Hyper-V.md)
 
-* [Hyper-V でサポートされている Debian 仮想マシン](Supported-Debian-virtual-machines-on-Hyper-V.md)
+* [Debian の仮想マシンを HYPER-V でサポートされています。](Supported-Debian-virtual-machines-on-Hyper-V.md)
 
-* [Hyper-v でサポートされている Oracle Linux の仮想マシン](Supported-Oracle-Linux-virtual-machines-on-Hyper-V.md)
+* [HYPER-V でサポートされている Oracle Linux 仮想マシン](Supported-Oracle-Linux-virtual-machines-on-Hyper-V.md)
 
-* [Hyper-v でサポートされている SUSE 仮想マシン](Supported-SUSE-virtual-machines-on-Hyper-V.md)
+* [HYPER-V でサポートされている SUSE 仮想マシン](Supported-SUSE-virtual-machines-on-Hyper-V.md)
 
-* [Hyper-v でサポートされている Ubuntu 仮想マシン](Supported-Ubuntu-virtual-machines-on-Hyper-V.md)
+* [HYPER-V でサポートされている Ubuntu 仮想マシン](Supported-Ubuntu-virtual-machines-on-Hyper-V.md)
 
-* [Hyper-v でサポートされている FreeBSD 仮想マシン](Supported-FreeBSD-virtual-machines-on-Hyper-V.md)
+* [HYPER-V でサポートされている FreeBSD 仮想マシン](Supported-FreeBSD-virtual-machines-on-Hyper-V.md)
 
 * [Hyper-v 上の Linux および FreeBSD 仮想マシンの機能の説明](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md)
 
-* [Hyper-v で Linux を実行するためのベストプラクティス](Best-Practices-for-running-Linux-on-Hyper-V.md)
+* [HYPER-V で Linux を実行するためのベスト プラクティス](Best-Practices-for-running-Linux-on-Hyper-V.md)
 
-* [Hyper-v で FreeBSD を実行するためのベストプラクティス](Best-practices-for-running-FreeBSD-on-Hyper-V.md)
+* [HYPER-V での FreeBSD の実行に関するベスト プラクティス](Best-practices-for-running-FreeBSD-on-Hyper-V.md)

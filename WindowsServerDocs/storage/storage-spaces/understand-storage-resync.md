@@ -1,19 +1,17 @@
 ---
 title: ストレージの再同期について理解する
 description: ストレージの再同期が行われるタイミングと、Windows Server 2019 でどのように表示されるかに関する詳細情報。
-ms.prod: windows-server
 ms.author: adagashe
-ms.technology: storage-spaces
 ms.topic: article
 author: adagashe
 ms.date: 01/14/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 79e5e1e9daba005a086c16dd1d8e3e3f9a28a8a2
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 2a8eb653de2d72177f3ce39f0b63fe53b50c0ae8
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473419"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957329"
 ---
 # <a name="understand-and-monitor-storage-resync"></a>記憶域の再同期を理解して管理する
 
@@ -111,7 +109,7 @@ Regeneration          00:01:19              Running               50            
 
 一覧表示されている記憶域ジョブはボリュームごとに表示されるため、このビューの方がはるかに細分化されています。実行中のジョブの一覧を確認したり、個々の進行状況を追跡したりすることができます。 このコマンドレットは、Windows Server 2016 と2019の両方で動作します。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [メンテナンスのためサーバーをオフラインにする](maintain-servers.md)
-- [記憶域スペースダイレクトの概要](storage-spaces-direct-overview.md)
+- [記憶域スペース ダイレクトの概要](storage-spaces-direct-overview.md)

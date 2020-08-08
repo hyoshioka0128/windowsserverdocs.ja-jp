@@ -2,18 +2,16 @@
 title: 名前空間の種類を選択する
 description: この記事では、名前空間の種類を選択する方法について説明します。
 ms.date: 6/5/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: ce991a628b63732f645e859a4855a18eacbacd77
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: c78e97148dffba920be5e65b19d97594c1b302d1
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86953734"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957680"
 ---
 # <a name="choose-a-namespace-type"></a>名前空間の種類を選択する
 
@@ -69,7 +67,7 @@ Windows Server 2008 モードへの名前空間の移行については、「[�
 |名前空間の可用性を確保するためのサポートされる方法|フェールオーバー クラスターにスタンドアロン名前空間を作成します。|複数の名前空間サーバーを使って名前空間をホストします。 (名前空間サーバーは同じドメイン内にある必要があります)。|複数の名前空間サーバーを使って名前空間をホストします。 (名前空間サーバーは同じドメイン内にある必要があります)。|
 |DFS レプリケーションを使ったフォルダー ターゲットのレプリケートのサポート|AD DS ドメインに参加しているときにサポート対象|サポートされています|サポートされています|
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 -   [DFS 名前空間を展開する](deploying-dfs-namespaces.md)
 -   [ドメインベースの名前空間を Windows Server 2008 モードに移行する](migrate-a-domain-based-namespace-to-windows-server-2008-mode.md)

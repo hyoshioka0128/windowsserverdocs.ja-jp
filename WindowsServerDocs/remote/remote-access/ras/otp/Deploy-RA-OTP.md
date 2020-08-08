@@ -2,18 +2,16 @@
 title: OTP 認証を使用するリモート アクセスの展開
 description: このトピックは、「Windows Server 2016 で OTP 認証を使用してリモートアクセスを展開する」の一部です。
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-ras
 ms.topic: article
 ms.assetid: b1b2fe70-7956-46e8-a3e3-43848868df09
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: d1b38f753e2e4d8333299c369042a72e0dc3a6e6
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 8cc47a3a94425b4f77e5ed430cffe86429bf9b23
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182008"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991287"
 ---
 # <a name="deploy-remote-access-with-otp-authentication"></a>OTP 認証を使用するリモート アクセスの展開
 
@@ -35,7 +33,7 @@ ms.locfileid: "87182008"
 
 -   公開キー基盤を展開する必要があります。
 
-    詳細については、次のトピックを参照してください。 [Test Lab Guide Mini-Module:Basic PKI for Windows Server 2012 (テスト ラボ ガイド ミニ モジュール: Windows Server 2012 の基本 PKI)](https://docs.microsoft.com/answers/topics/windows-server-2012.html)
+    詳細については、次のトピックを参照してください。 [Test Lab Guide Mini-Module:Basic PKI for Windows Server 2012 (テスト ラボ ガイド ミニ モジュール: Windows Server 2012 の基本 PKI)](/answers/topics/windows-server-2012.html)
 
 -   DirectAccess 管理コンソールまたは Windows PowerShell コマンドレットの外部でのポリシーの変更はサポートされていません。
 
@@ -115,7 +113,7 @@ OTP 認証シナリオには、いくつかの手順があります。
 
         7.  WEBDAV が有効な場合は、OTP を有効にしないでください。
 
-## <a name="known-issues"></a><a name="KnownIssues"></a>既知の問題
+## <a name="known-issues"></a><a name="KnownIssues"></a>の既知の問題
 OTP のシナリオを構成する際の既知の問題には、次のようなものがあります。
 
 -   リモートアクセスでは、プローブメカニズムを使用して、RADIUS ベースの OTP サーバーへの接続を検証し \- ます。 場合によっては、OTP サーバーでエラーが発生されます。 この問題を回避するには、OTP サーバーで次の手順を実行します。
@@ -129,4 +127,3 @@ OTP のシナリオを構成する際の既知の問題には、次のような�
         -   HKEY \_ ローカル \_ コンピューター \\ ソフトウェア \\ Microsoft \\ DirectAccess \\ OTP \\ RadiusProbePass
 
 -   構成済みおよび実行中の DirectAccess の展開にある IPsec ルート証明書を変更すると、OTP が動作を停止します。 この問題を解決するには、各 DirectAccess サーバーで、Windows PowerShell プロンプトで次のコマンドを実行します。`iisreset`
-

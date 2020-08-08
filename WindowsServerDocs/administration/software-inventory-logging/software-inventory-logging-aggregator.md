@@ -7,12 +7,12 @@ author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 697ca5e27db6a937c31b4dad072eef19a6f3df06
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 4f8e7743e51a5316df474ad97768cf01292db668
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895675"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991913"
 ---
 # <a name="software-inventory-logging-aggregator"></a>ソフトウェア インベントリ ログ アグリゲーター
 
@@ -178,7 +178,7 @@ SIL アグリゲーターを Windows Server にインストールする前に次
 
 6.  **[アカウントの種類を選択してください]** で、使用している設定に応じて **[ローカル ユーザー]** または **[gMSA]** のいずれかを選択します。
 
-    ローカル ユーザー アカウント オプションを選択すると、ローカル ユーザーが作成されると共に、強力なパスワードが自動的に生成されます。 このアカウントは、ローカル サーバーでのすべての SIL アグリゲーター サービスとタスク操作に使用されます。  アグリゲーターが Active Directory ドメインの一部である場合は、グループ管理サービス アカウント (gMSA) の使用が推奨されます (Windows Server 2012 以降)。 gMSA の詳細については、「 [グループの管理されたサービス アカウントの概要](https://technet.microsoft.com/library/hh831782.aspx)」を参照してください。
+    ローカル ユーザー アカウント オプションを選択すると、ローカル ユーザーが作成されると共に、強力なパスワードが自動的に生成されます。 このアカウントは、ローカル サーバーでのすべての SIL アグリゲーター サービスとタスク操作に使用されます。  アグリゲーターが Active Directory ドメインの一部である場合は、グループ管理サービス アカウント (gMSA) の使用が推奨されます (Windows Server 2012 以降)。 gMSA の詳細については、「 [グループの管理されたサービス アカウントの概要](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831782(v=ws.11))」を参照してください。
 
     -   SIL アグリゲーターから別のサーバーにある SQL Server データベースを実行する場合は、gMSA アカウント オプションを使用する必要があります。
 
@@ -233,11 +233,11 @@ SIL アグリゲーターを Windows Server にインストールする前に次
 
 -   SIL アグリゲーター上で以下の操作を行います。
 
-    -   `Start-SilAggregator` を実行します。
+    -   `Start-SilAggregator` を実行する
 
         この操作は、インベントリされるようにセットアップした (またはセットアップする) サーバーから HTTPS 経由でアグリゲーターに転送されるデータをアグリゲーターがアクティブに受信するために必要です。 このアグリゲーターに転送するサーバーを最初に有効にしたとしても、問題ありません。それらのサーバーはデータ ペイロードを最大で 30 日間、ローカルにキャッシュするからです。 アグリゲーターが "targeturi" を実行すると、キャッシュされたすべてのデータが一度にアグリゲーターに転送され、すべてのデータが処理されます。
 
-    -   `Add-SilVMHost` を実行します。
+    -   `Add-SilVMHost` を実行する
 
         例: `add-silvmhost –vmhostname contoso1 –hostcredential get-credential`
 
@@ -253,7 +253,7 @@ SIL アグリゲーターを Windows Server にインストールする前に次
 
 -   インベントリされる Windows Server 上で、管理者として PowerShell を開き、次のコマンドを実行します。
 
-    -   `Set-SilLogging –TargetUri "https://contososilaggregator" –CertificateThumbprint "your client certificate's thumbprint"` を実行します。
+    -   `Set-SilLogging –TargetUri "https://contososilaggregator" –CertificateThumbprint "your client certificate's thumbprint"` を実行する
 
         -   これにより、インベントリ データを送信する場所と認証で使用する証明書が Windows Server 内の SIL に指示されます。
 
@@ -265,11 +265,11 @@ SIL アグリゲーターを Windows Server にインストールする前に次
             > [!IMPORTANT]
             > これらの値が正しくない場合、または証明書が適切なストアにインストールされていない (または有効でない) 場合は、SIL ログを開始しても、ターゲットへの転送は失敗します。 データは、最大で 30 日間、ローカルにキャッシュされます。
 
-    -   `Start-SilLogging` を実行します。
+    -   `Start-SilLogging` を実行する
 
         これにより、SIL ログが開始します。 1 時間ごとに、時間内のランダムなポイントで、SIL は `–targeturi` パラメーターにより指定されたアグリゲーターにインベントリ データを転送します。 最初の転送は、完全なデータ セットになります。 後続の各転送は、何も変更されていないデータだけを識別する "ハートビート" になります。 データ セットに何らかの変更が加えられている場合は、別の完全なデータ セットが転送されます。
 
-    -   `Publish-SilData` を実行します。
+    -   `Publish-SilData` を実行する
 
         -   SIL でログを初めて有効にするとき、この手順は省略できます。
 
@@ -397,7 +397,7 @@ SIL アグリゲーターで作成される Excel ベースのレポートの **
 |ホストが最後に表示された日時|アグリゲータがこの Windows Server 物理ホストから HTTPS 経由でデータ インベントリを最後に受信した日時です。<p>Windows Server および HyperV を実行している物理ホストで、SIL を有効にし、インベントリ データを HTTPS 経由で SIL アグリゲーターに転送することがサポートされています。|
 
 ## <a name="sil-aggregator-cmdlets-detail"></a>SIL アグリゲーター コマンドレットの詳細
-SIL アグリゲーターのコマンドレットの詳細を次に示します。 コマンドレットの完全なドキュメントについては、「 [SIL アグリゲーターの PowerShell コマンドレット](https://technet.microsoft.com/library/mt548455.aspx)」を参照してください。
+SIL アグリゲーターのコマンドレットの詳細を次に示します。 コマンドレットの完全なドキュメントについては、「 [SIL アグリゲーターの PowerShell コマンドレット](/previous-versions/windows/powershell-scripting/mt548455(v=wps.640))」を参照してください。
 
 ### <a name="publish-silreport"></a>Publish-SilReport
 
@@ -591,8 +591,7 @@ SIL アグリゲーターのアンインストールおよび再インストー�
 
 ## <a name="see-also"></a>参照
 [Software Inventory Logging Aggregator 1.0 for Windows Server](https://www.microsoft.com/download/details.aspx?id=49046)<br>
-[SIL アグリゲーターの PowerShell コマンドレット](https://technet.microsoft.com/library/mt548455.aspx)<br>
-[SIL PowerShell コマンドレット](https://technet.microsoft.com/library/dn283390.aspx)<br>
-[SIL の概要](https://technet.microsoft.com/library/dn268301.aspx)<br>
-[SIL の管理](https://technet.microsoft.com/library/dn383584.aspx)
-
+[SIL アグリゲーターの PowerShell コマンドレット](/previous-versions/windows/powershell-scripting/mt548455(v=wps.640))<br>
+[SIL PowerShell コマンドレット](/powershell/module/softwareinventorylogging/?view=winserver2012R2-ps)<br>
+[SIL の概要](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn268301(v=ws.11))<br>
+[SIL の管理](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn383584(v=ws.11))

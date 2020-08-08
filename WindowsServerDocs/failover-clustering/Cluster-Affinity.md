@@ -1,19 +1,17 @@
 ---
 title: クラスターのアフィニティ
-ms.prod: windows-server
 manager: eldenc
-ms.technology: failover-clustering
 ms.topic: article
 author: johnmarlin-msft
 ms.author: johnmar
 ms.date: 03/07/2019
 description: この記事では、フェールオーバークラスターのアフィニティレベルと反対のアフィニティレベルについて説明します。
-ms.openlocfilehash: 5fdc40e31b61a74965bf60ac907a198c7ef92521
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 9e0c16b376201567552ef959e045027527c7c1d1
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409592"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87965559"
 ---
 # <a name="cluster-affinity"></a>クラスターのアフィニティ
 

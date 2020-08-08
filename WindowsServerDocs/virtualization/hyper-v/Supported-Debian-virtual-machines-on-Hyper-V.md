@@ -1,20 +1,18 @@
 ---
 title: Debian の仮想マシンを HYPER-V でサポートされています。
 description: 各バージョンに含まれる Linux integration services と機能の一覧を示します。
-ms.prod: windows-server
 manager: dongill
-ms.technology: compute-hyper-v
 ms.topic: article
 ms.assetid: 3cc62c10-02a3-4633-960c-23bf91a45bd5
 author: shirgall
 ms.author: kathydav
 ms.date: 04/07/2020
-ms.openlocfilehash: e5483b9547e67414bd66b3daad1a4b07c3cb7cfc
-ms.sourcegitcommit: 7b1ebc4934998af2472962ca8cce1c872f39946f
+ms.openlocfilehash: da96f78c9886ea392ccb2834f4b245a2422dc17e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80994512"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87965749"
 ---
 # <a name="supported-debian-virtual-machines-on-hyper-v"></a>Debian の仮想マシンを HYPER-V でサポートされています。
 
@@ -30,12 +28,12 @@ ms.locfileid: "80994512"
 
 * (*空白*) の機能は使用できません
 
-| **機能**                                                                                                                                  | **Windows Server オペレーティングシステムのバージョン** | **10.0-10.3 (buster)** | **9.0-9.12 (ストレッチ)** | **8.0-8.11 (jessie)** | **7.0-7.11 (wheezy)** |
+| **機能**                                                                                                                                  | **Windows Server オペレーティング システムのバージョン** | **10.0-10.3 (buster)** | **9.0-9.12 (ストレッチ)** | **8.0-8.11 (jessie)** | **7.0 7.11 (wheezy)** |
 |----------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------|-----------------------|-----------------------|-----------------------|-----------------------|
-| **可用性**                                                                                                                             |                                             | 組み込まれています。              | 組み込まれています。              | 組み込まれています。              | 組み込み (メモ 5)     |
-| **[Core](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**                                                   | 2019、2016、2012 R2          | &#10004;              | &#10004;              | &#10004;              | &#10004;              |
+| **可用性**                                                                                                                             |                                             | 組み込み              | 組み込み              | 組み込み              | 組み込み (メモ 5)     |
+| **[コア](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**                                                   | 2019、2016、2012 R2          | &#10004;              | &#10004;              | &#10004;              | &#10004;              |
 | Windows Server 2016 の正確な時刻                                                                                                            | 2019、2016                                  | & #10004 です。注 4       | & #10004 です。注 4       |                       |                       |
-| **[機能](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#networking)**                                       |                                             |                       |                       |                       |                       |
+| **[ネットワーク](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#networking)**                                       |                                             |                       |                       |                       |                       |
 | Jumbo Frame                                                                                                                                 | 2019、2016、2012 R2          | &#10004;              | &#10004;              | &#10004;              | &#10004;              |
 | VLAN のタグ付けとトランキング                                                                                                                    | 2019、2016、2012 R2          | &#10004;              | &#10004;              | &#10004;              | &#10004;              |
 | ライブ マイグレーション                                                                                                                               | 2019、2016、2012 R2          | &#10004;              | &#10004;              | &#10004;              | &#10004;              |
@@ -43,13 +41,13 @@ ms.locfileid: "80994512"
 | vRSS                                                                                                                                         | 2019、2016、2012 R2                         | & #10004 です。注 4       | & #10004 です。注 4       |                       |                       |
 | TCP セグメント化とチェックサムのオフロード                                                                                                       | 2019、2016、2012 R2          | & #10004 です。注 4       | & #10004 です。注 4       |                       |                       |
 | SR-IOV                                                                                                                                       | 2019、2016                                  | & #10004 です。注 4       | & #10004 です。注 4       |                       |                       |
-| **[・](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)**                                             |                                             |                       |                       |                       |                       |
+| **[Storage](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)**                                             |                                             |                       |                       |                       |                       |
 | VHDX のサイズ変更                                                                                                                                  | 2019、2016、2012 R2                         | & #10004 です。注 1       | & #10004 です。注 1       | & #10004 です。注 1       | & #10004 です。注 1       |
 | 仮想ファイバー チャネル                                                                                                                        | 2019、2016、2012 R2                         |                       |                       |                       |                       |
-| 仮想マシンのライブバックアップ                                                                                                                  | 2019、2016、2012 R2                         | &#10004;Note2 以降 | &#10004;Note2 以降 | &#10004;Note2 以降 | &#10004;Note2 以降 |
+| 仮想マシンのライブバックアップ                                                                                                                  | 2019、2016、2012 R2                         | &#10004; Note2 以降 | &#10004; Note2 以降 | &#10004; Note2 以降 | &#10004; Note2 以降 |
 | トリムのサポート                                                                                                                                 | 2019、2016、2012 R2                         | & #10004 です。注 4       | & #10004 です。注 4       |                       |                       |
 | SCSI WWN                                                                                                                                     | 2019、2016、2012 R2                         | & #10004 です。注 4       | & #10004 です。注 4       |                       |                       |
-| **[量](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)**                                               |                                             |                       |                       |                       |                       |
+| **[メモリ](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)**                                               |                                             |                       |                       |                       |                       |
 | PAE カーネルサポート                                                                                                                           | 2019、2016、2012 R2          | &#10004;              | &#10004;              | &#10004;              | &#10004;              |
 | MMIO ギャップの構成                                                                                                                    | 2019、2016、2012 R2                         | &#10004;              | &#10004;              | &#10004;              | &#10004;              |
 | 動的メモリでホット アド                                                                                                                     | 2019、2016、2012 R2                   | & #10004 です。注 4       | & #10004 です。注 4       |                       |                       |
@@ -57,25 +55,25 @@ ms.locfileid: "80994512"
 | ランタイムのメモリのサイズ変更                                                                                                                        | 2019、2016                                  | & #10004 です。注 4       | & #10004 です。注 4       |                       |                       |
 | **[Video](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)**                                                 |                                             |                       |                       |                       |                       |
 | Hyper-v 固有のビデオデバイス                                                                                                                | 2019、2016、2012 R2          | &#10004;              | &#10004;              | &#10004;              |                       |
-| **[な](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#miscellaneous)**                                 |                                             |                       |                       |                       |                       |
+| **[その他](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#miscellaneous)**                                 |                                             |                       |                       |                       |                       |
 | キーと値のペア                                                                                                                               | 2019、2016、2012 R2          | & #10004 です。注 2       | & #10004 です。注 2       | & #10004 です。注 2       |                       |
 | マスクなしの割り込み                                                                                                                       | 2019、2016、2012 R2                         | &#10004;              | &#10004;              | &#10004;              |                       |
 | ホストからゲストへのファイルのコピー                                                                                                                 | 2019、2016、2012 R2                         | & #10004 です。注 2       | & #10004 です。注 2       | & #10004 です。注 2       |                       |
 | lsvmbus コマンド                                                                                                                              | 2019、2016、2012 R2          |                       |                       |                       |                       |
 | Hyper V ソケット                                                                                                                              | 2019、2016                                  | & #10004 です。注 4       | & #10004 です。注 4       |                       |                       |
 | PCI パススルー/DDA                                                                                                                          | 2019、2016                                  | & #10004 です。注 4       | & #10004 です。注 4       |                       |                       |
-| **[第2世代仮想マシン](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#generation-2-virtual-machines)** |                                             |                       |                       |                       |                       |
+| **[第 2 世代仮想マシン](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#generation-2-virtual-machines)** |                                             |                       |                       |                       |                       |
 | UEFI を使用したブート                                                                                                                              | 2019、2016、2012 R2                         | & #10004 です。注 3       | & #10004 です。注 3       | & #10004 です。注 3       |                       |
 | セキュア ブート                                                                                                                                  | 2019、2016                                  | &#10004;              |                       |                       |                       |
 
 
-## <a name="notes"></a>説明
+## <a name="notes"></a>メモ
 
 1. Vhd 上のファイル システムを作成する 2 TB を超えることはできません。
 
 2. デーモンを開始する Debian 8.3 では、Debian パッケージを手動でインストールされた"hyperv-"、キーと値のペア、fcopy、および VSS デーモンが含まれています。 取得する必要 hyperv デーモン パッケージ Debian 7.x および 8.0 8.2 [Debian backports](https://wiki.debian.org/Backports)します。
 
-3. Windows Server 2012 R2 第2世代仮想マシンでは、セキュアブートオプションが無効になっていない限り、既定でセキュアブートが有効になっており、一部の Linux 仮想マシンは起動しません。 **Hyper-V マネージャー**で仮想マシンの設定の **[ファームウェア]** セクションか PowerShell を使用してセキュア ブートを無効にすることができます。
+3. Windows Server 2012 R2 第2世代仮想マシンでは、セキュアブートオプションが無効になっていない限り、既定でセキュアブートが有効になっており、一部の Linux 仮想マシンは起動しません。 **Hyper-v マネージャー**で仮想マシンの設定の [**ファームウェア**] セクションでセキュアブートを無効にするか、Powershell を使用して無効にすることができます。
 
    ```Powershell
    Set-VMFirmware -VMName "VMname" -EnableSecureBoot Off
@@ -86,16 +84,16 @@ ms.locfileid: "80994512"
 
 参照
 
-* [サポートされている CentOS と Hyper-v 上の仮想マシンの Red Hat Enterprise Linux](Supported-CentOS-and-Red-Hat-Enterprise-Linux-virtual-machines-on-Hyper-V.md)
+* [CentOS をサポートし、HYPER-V 上の Red Hat Enterprise Linux 仮想マシン](Supported-CentOS-and-Red-Hat-Enterprise-Linux-virtual-machines-on-Hyper-V.md)
 
-* [Hyper-v でサポートされている Oracle Linux の仮想マシン](Supported-Oracle-Linux-virtual-machines-on-Hyper-V.md)
+* [HYPER-V でサポートされている Oracle Linux 仮想マシン](Supported-Oracle-Linux-virtual-machines-on-Hyper-V.md)
 
-* [Hyper-v でサポートされている SUSE 仮想マシン](Supported-SUSE-virtual-machines-on-Hyper-V.md)
+* [HYPER-V でサポートされている SUSE 仮想マシン](Supported-SUSE-virtual-machines-on-Hyper-V.md)
 
-* [Hyper-v でサポートされている Ubuntu 仮想マシン](Supported-Ubuntu-virtual-machines-on-Hyper-V.md)
+* [HYPER-V でサポートされている Ubuntu 仮想マシン](Supported-Ubuntu-virtual-machines-on-Hyper-V.md)
 
-* [Hyper-v でサポートされている FreeBSD 仮想マシン](Supported-FreeBSD-virtual-machines-on-Hyper-V.md)
+* [HYPER-V でサポートされている FreeBSD 仮想マシン](Supported-FreeBSD-virtual-machines-on-Hyper-V.md)
 
 * [Hyper-v 上の Linux および FreeBSD 仮想マシンの機能の説明](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md)
 
-* [Hyper-v で Linux を実行するためのベストプラクティス](Best-Practices-for-running-Linux-on-Hyper-V.md)
+* [HYPER-V で Linux を実行するためのベスト プラクティス](Best-Practices-for-running-Linux-on-Hyper-V.md)

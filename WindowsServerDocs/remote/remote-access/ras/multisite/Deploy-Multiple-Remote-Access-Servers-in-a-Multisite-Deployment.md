@@ -2,18 +2,16 @@
 title: マルチサイト展開では、複数のリモート アクセス サーバーを展開します。
 description: このトピックは、「Windows Server 2016 のマルチサイト展開に複数のリモートアクセスサーバーを展開する」の一部です。
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-ras
 ms.topic: article
 ms.assetid: ac2f6015-50a5-4909-8f67-8565f9d332a2
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: d8f12839deb1279b9f6c095068a85f528dad4a72
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 8f0d8b4416c8480921d43fd4e705b837082152fb
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181758"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991350"
 ---
 # <a name="deploy-multiple-remote-access-servers-in-a-multisite-deployment"></a>マルチサイト展開では、複数のリモート アクセス サーバーを展開します。
 
@@ -45,7 +43,7 @@ Windows 7 を実行しているクライアントのサポートは、各エン�
 
 -   公開キー基盤を展開する必要があります。
 
-    詳細については、次のトピックを参照してください。 [Test Lab Guide Mini-Module:Basic PKI for Windows Server 2012 (テスト ラボ ガイド ミニ モジュール: Windows Server 2012 の基本 PKI)](https://docs.microsoft.com/answers/topics/windows-server-2012.html)
+    詳細については、次のトピックを参照してください。 [Test Lab Guide Mini-Module:Basic PKI for Windows Server 2012 (テスト ラボ ガイド ミニ モジュール: Windows Server 2012 の基本 PKI)](/answers/topics/windows-server-2012.html)
 
 -   企業ネットワークは IPv6 が有効になっている必要があります。 ISATAP を使用している場合は、これを削除し、ネイティブ IPv6 を使用する必要があります。
 
@@ -156,6 +154,3 @@ Windows 7 を実行しているクライアントのサポートは、各エン�
 -   既存の ISATAP インフラストラクチャが存在するときに DirectAccess を展開した場合、ISATAP ホストであったエントリポイントを削除すると、DNS64 サービスの IPv6 アドレスは、NRPT 内のすべての DNS サフィックスの DNS サーバーアドレスから削除されます。
 
     この問題を解決するには、**インフラストラクチャサーバーのセットアップ**ウィザードの [ **dns** ] ページで、変更された dns サフィックスを削除し、正しい dns サーバーアドレスを使用して再度追加します。そのためには、[ **dns サーバーアドレス**] ダイアログボックスの [**検出**] をクリックします。
-
-
-

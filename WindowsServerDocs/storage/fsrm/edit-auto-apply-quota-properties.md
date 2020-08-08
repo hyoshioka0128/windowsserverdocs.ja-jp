@@ -2,18 +2,16 @@
 title: 自動適用クォータのプロパティを編集する
 description: この記事では自動適用クォータのプロパティを編集する方法について説明します。
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 2d520d80dc06969f21211d461fc33e2e9336df12
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 558f6b094e97a6196177e728c238f5bb7a38e7a1
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474939"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957449"
 ---
 # <a name="edit-auto-apply-quota-properties"></a>自動適用クォータのプロパティを編集する
 
@@ -42,7 +40,7 @@ ms.locfileid: "85474939"
 
 6.  **[OK]** をクリックします。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 -   [クォータの管理](quota-management.md)
 -   [自動適用クォータを作成する](create-auto-apply-quota.md)

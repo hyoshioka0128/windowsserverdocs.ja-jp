@@ -2,18 +2,16 @@
 title: スクリーン処理のためにファイル グループを定義する
 description: この記事では、ファイル グループを定義する方法について説明します。ファイル グループは、ファイル スクリーン、ファイル スクリーンの例外、ファイル グループごとのファイル記憶域レポートの名前空間を作成するために使用されます。
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: e38dee0381b33bb9d11b038de715a4420906e131
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: cbcf96a4ab5c6516b87ebde57f6adaf1cf4df17f
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474329"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957479"
 ---
 # <a name="define-file-groups-for-screening"></a>スクリーン処理のためにファイル グループを定義する
 
@@ -45,7 +43,7 @@ ms.locfileid: "85474329"
 
 5.  **[OK]** をクリックします。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 -   [ファイルスクリーン処理の管理](file-screening-management.md)
 -   [ファイル スクリーンを作成する](create-file-screen.md)

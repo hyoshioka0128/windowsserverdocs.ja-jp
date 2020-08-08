@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 731d73c8aa7ea5ad7f7b2777b2694da232fae12a
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 480b03f49b806ca0096c64d824679473b02695c5
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895751"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991845"
 ---
 # <a name="manage-multiple-remote-servers-with-server-manager"></a>サーバーマネージャーを使用して複数のリモートサーバーを管理する
 
@@ -132,7 +132,7 @@ Windows 8 のリモートサーバー管理ツールを実行してリモート�
 
     -   Windows Server 2008 を実行しているサーバーでリモート管理を有効にするには、「 [Windows PowerShell でのリモートコマンドの有効化と使用](https://go.microsoft.com/fwlink/p/?LinkId=242565)」を参照してください。
 
-    -   Windows Server 2003 を実行しているサーバーでリモート管理を有効にするには、Windows ファイアウォールで WMI DCOM 例外を有効にします。 Windows Server 2003 を実行しているサーバーでの実行方法の詳細については、MSDN の「 [Connecting Through Windows Firewall (Windows ファイアウォールを通過する接続)](https://msdn.microsoft.com/library/aa389286.aspx) 」を参照してください。
+    -   Windows Server 2003 を実行しているサーバーでリモート管理を有効にするには、Windows ファイアウォールで WMI DCOM 例外を有効にします。 Windows Server 2003 を実行しているサーバーでの実行方法の詳細については、MSDN の「 [Connecting Through Windows Firewall (Windows ファイアウォールを通過する接続)](/windows/win32/wmisdk/connecting-to-wmi-remotely-with-vbscript) 」を参照してください。
 
 ## <a name="tasks-that-you-can-perform-in-server-manager"></a><a name=BKMK_tasks></a>サーバー マネージャーで実行できるタスク
 サーバーマネージャーを使用すると、管理者は次の表のタスクを1つのツールで実行できるようになり、サーバーの管理効率が向上します。 Windows Server 2012 R2 および Windows Server 2012 では、サーバーの標準ユーザーと Administrators グループのメンバーの両方がサーバーマネージャーで管理タスクを実行できますが、既定では、次の表に示すように、標準ユーザーは一部のタスクを実行できません。
@@ -237,5 +237,3 @@ Administrators グループのメンバーがサーバーにログオンする�
     -   %*appdata*% \Microsoft\Windows\ServerManager\Serverlist.xml
 
     -   %*localappdata*% \Microsoft_Corporation\ServerManager.exe_StrongName_*GUID*\6.2.0.0\user.config
-
-

@@ -2,22 +2,20 @@
 title: 動的ホスト構成プロトコル (DHCP)
 description: このトピックでは、Windows Server 2016 の動的ホスト構成プロトコル (DHCP) の概要について説明します。
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-dhcp
 ms.topic: article
 ms.assetid: 0ff29ef3-c458-4432-9065-e50a7de5b4b9
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 5fc44d0f58ed73ff48f530bad3206baa675d9ac9
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: ba932599b7d23a8504c146118489598e45cc9fd7
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80312526"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87949225"
 ---
 # <a name="dynamic-host-configuration-protocol-dhcp"></a>動的ホスト構成プロトコル (DHCP)
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016
+>適用先:Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックでは、Windows Server 2016 の DHCP の概要について簡単に説明します。
 
@@ -49,8 +47,8 @@ DHCP を使用すると、このプロセス全体が自動化され、一元的
 
 DHCP 対応クライアントは、リースオファーを受け入れると、次のものを受け取ります。
 
-- 接続先のサブネットの有効な IP アドレス。  
-  
+- 接続先のサブネットの有効な IP アドレス。
+
 - 要求された DHCP オプションは、DHCP サーバーがクライアントに割り当てるように構成されている追加のパラメーターです。 DHCP オプションの例としては、ルーター (デフォルトゲートウェイ)、DNS サーバー、DNS ドメイン名などがあります。
 
 ## <a name="benefits-of-dhcp"></a>DHCP の利点

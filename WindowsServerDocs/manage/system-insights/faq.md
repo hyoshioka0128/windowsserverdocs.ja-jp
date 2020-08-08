@@ -6,12 +6,12 @@ author: gawatu
 ms.author: gawatu
 manager: mallikarjun.chadalapaka
 ms.date: 5/23/2018
-ms.openlocfilehash: 9f746e71b64497835fc5f0f90e9b46c03b63fd15
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 2a97fdbc2e2a80c310cac2b770e18f34d53dd983
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971999"
+ms.locfileid: "87997147"
 ---
 # <a name="system-insights-faq"></a>System Insights の FAQ
 
@@ -19,15 +19,15 @@ ms.locfileid: "87971999"
 
 ## <a name="how-can-you-use-system-insights-with-azure-monitor-or-system-center-operations-manager"></a>Azure Monitor または System Center Operations Manager で System Insights を使用するにはどうすればよいですか。
 
-[Azure Monitor](https://azure.microsoft.com/services/monitor/)と[System Center Operations Manager](https://docs.microsoft.com/system-center/scom/welcome?view=sc-om-1807)により、インフラストラクチャの管理を支援するために、展開全体で運用情報を得ることができます。 これに対して、System Insights は、ローカルの予測分析機能を導入する Windows Server の機能です。 System Insights と Azure Monitor または SCOM を一緒に使用することで、デバイスの作成に関する予測を行うことができます。
+[Azure Monitor](https://azure.microsoft.com/services/monitor/)と[System Center Operations Manager](/system-center/scom/welcome?view=sc-om-1807)により、インフラストラクチャの管理を支援するために、展開全体で運用情報を得ることができます。 これに対して、System Insights は、ローカルの予測分析機能を導入する Windows Server の機能です。 System Insights と Azure Monitor または SCOM を一緒に使用することで、デバイスの作成に関する予測を行うことができます。
 
  System Insights では、各予測の結果がイベントログに出力されるため、Azure Monitor または SCOM では、System Insights によって作成されたイベントにキーを渡すことができます。 これらのコンピューターでは、これらのコンピューター固有の予測を Windows サーバーに分散させることができるため、サーバーインスタンスのグループ全体でこれらの予測を統合して表示することができます。
 
- 各予測のチャネル Id とイベント Id について[は、こちら](https://docs.microsoft.com/windows-server/manage/system-insights/managing-capabilities#retrieving-capability-results)を参照してください。
+ 各予測のチャネル Id とイベント Id について[は、こちら](./managing-capabilities.md#retrieving-capability-results)を参照してください。
 
 ## <a name="how-does-system-insights-relate-to-windows-ml"></a>System Insights は Windows ML とどのように関連していますか。
 
-[WINDOWS ML](https://docs.microsoft.com/windows/uwp/machine-learning/)は、開発者が windows デバイスで事前トレーニング済みの機械学習モデルをインポートしてスコア付けできるプラットフォームです。 これらのモデルは、ハードウェアアクセラレーションの恩恵を受け、ローカルでスコア付けすることができます。
+[WINDOWS ML](/windows/uwp/machine-learning/)は、開発者が windows デバイスで事前トレーニング済みの機械学習モデルをインポートしてスコア付けできるプラットフォームです。 これらのモデルは、ハードウェアアクセラレーションの恩恵を受け、ローカルでスコア付けすることができます。
 
 System Insights は、Windows Server 2019 の機能の1つで、PowerShell と Windows 管理センターの統合を含む完全な管理エクスペリエンスと共にローカルの予測機能を提供します。
 

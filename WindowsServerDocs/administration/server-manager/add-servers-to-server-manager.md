@@ -8,12 +8,12 @@ ms.author: coreyp
 manager: dongill
 ms.localizationpriority: medium
 ms.date: 02/01/2018
-ms.openlocfilehash: 2280dd901756c033a16e5203ad60bc0b6cad5ce4
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: b1c3e2f1c521615ff365642566745411db8aa612
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895828"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991933"
 ---
 # <a name="add-servers-to-server-manager"></a>Add Servers to Server Manager
 
@@ -157,7 +157,7 @@ Windows Server では、単一のサーバー マネージャー コンソール
 
 5.  サーバー マネージャーを実行しているコンピューターからログオフし、ビルトイン Administrator アカウントを使って再度ログオンします。 サーバー マネージャーを使ってリモート サーバーに接続でき、データを収集できることを確認するには、前に示した手順を繰り返します。
 
-このセクションの手順に従って、ワークグループコンピューターの管理やワークグループコンピューターからの他のコンピューターの管理に関する問題が解決しない場合は、Microsoft web サイトの「 [about_remote_Troubleshooting](https://technet.microsoft.com/library/dd347642.aspx) 」を参照してください。
+このセクションの手順に従って、ワークグループコンピューターの管理やワークグループコンピューターからの他のコンピューターの管理に関する問題が解決しない場合は、Microsoft web サイトの「 [about_remote_Troubleshooting](/previous-versions/dd347642(v=technet.10)) 」を参照してください。
 
 ### <a name="add-and-manage-servers-in-clusters"></a>クラスターのサーバーを追加して管理する
 サーバー マネージャーを使用して、フェールオーバー クラスター (サーバー クラスターまたは MSCS とも呼ばれます) 内にあるサーバーを管理できます。 フェールオーバー クラスターに含まれるサーバーには、クラスター ノードが物理か仮想かに関わらず、サーバー マネージャーではいくつかの固有の動作と管理の制限があります。

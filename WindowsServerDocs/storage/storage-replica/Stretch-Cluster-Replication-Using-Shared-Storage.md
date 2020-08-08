@@ -6,12 +6,12 @@ ms.topic: get-started-article
 author: nedpyle
 ms.date: 04/26/2019
 ms.assetid: 6c5b9431-ede3-4438-8cf5-a0091a8633b0
-ms.openlocfilehash: fa5246aad79b9441b973cf864233ca8cfe0da7fa
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: efc2727c913ac2bab5ea619101ebef12f40a69b2
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87950546"
+ms.locfileid: "87991513"
 ---
 # <a name="stretch-cluster-replication-using-shared-storage"></a>共有記憶域を使用したストレッチ クラスター レプリケーション
 
@@ -801,5 +801,5 @@ ms.locfileid: "87950546"
 - [記憶域レプリカ:よく寄せられる質問](storage-replica-frequently-asked-questions.md)
 
 ## <a name="see-also"></a>参照
-- [Windows Server 2016](../../get-started/windows-server-2016.md)
+- [Windows Server 2016](../../index.yml)
 - [Windows Server 2016 での記憶域スペース ダイレクト](../storage-spaces/storage-spaces-direct-overview.md)

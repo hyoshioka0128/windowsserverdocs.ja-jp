@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 51b9b0d7b912cfc2fbf123cf4c666f8653dc86a1
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 09405b940e9fd862372fe80c4a5194caa205e5ea
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971459"
+ms.locfileid: "87991497"
 ---
 # <a name="group-managed-service-accounts-overview"></a>Group Managed Service Accounts Overview
 
@@ -42,7 +42,7 @@ GMSA、サービス、またはサービス管理者は、サービスインス�
 管理されたサービス アカウントは、Kerberos でサポートされる暗号化の種類によって決まります。Kerberos を使用するサーバーに対してクライアント コンピューターが認証されると、DC とサーバーの両方でサポートされる暗号化で保護される Kerberos サービスが DC で作成されます。 DC は、 \- サーバーがサポートする暗号化の種類を決定するために、アカウントの種類を使用します。属性がない場合は、クライアントコンピューターがより強力な暗号化の種類をサポートしていないと想定しています。 ホストが RC4 をサポートしないように構成されている場合、認証は常に失敗します。 このため、AES は常に MSA 用に明示的に構成する必要があります。
 
 > [!NOTE]
-> Windows Server 2008 R2 以降、既定では、DES が無効になっています。 サポートされる暗号化の種類の詳細については、「 [Kerberos 認証の変更点](https://technet.microsoft.com/library/dd560670(WS.10).aspx)」を参照してください。
+> Windows Server 2008 R2 以降、既定では、DES が無効になっています。 サポートされる暗号化の種類の詳細については、「 [Kerberos 認証の変更点](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd560670(v=ws.10))」を参照してください。
 
 gMSAs は、windows Server 2012 より前の Windows オペレーティングシステムには適用されません。
 
@@ -54,14 +54,12 @@ gMSAs は、windows Server 2012 より前の Windows オペレーティングシ
 
 |コンテンツ タイプ|参考資料|
 |--------|-------|
-|**製品評価**|[What's New for Managed Service Accounts](what-s-new-for-managed-service-accounts.md)<p>[Windows 7 および Windows Server 2008 R2 向けの管理されたサービス アカウントのドキュメント](https://technet.microsoft.com/library/ff641731(v=ws.10).aspx)<p>[サービスアカウントのステップ \- バイ \- ステップガイド](https://technet.microsoft.com/library/dd548356(v=ws.10).aspx)|
+|**製品評価**|[What's New for Managed Service Accounts](what-s-new-for-managed-service-accounts.md)<p>[Windows 7 および Windows Server 2008 R2 向けの管理されたサービス アカウントのドキュメント](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff641731(v=ws.10))<p>[サービスアカウントのステップ \- バイ \- ステップガイド](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd548356(v=ws.10))|
 |**計画**|まだ使用できません|
 |**デプロイ**|まだ使用できません|
-|**操作**|[Active Directory における管理されたサービス アカウントに関するページ](https://technet.microsoft.com/library/dd378925(v=ws.10).aspx)|
+|**操作**|[Active Directory における管理されたサービス アカウントに関するページ](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd378925(v=ws.10))|
 |**トラブルシューティング**|まだ使用できません|
 |**評価**|[グループの管理されたサービスアカウントを使用したはじめに](getting-started-with-group-managed-service-accounts.md)|
-|**ツールと設定**|[Active Directory Domain Services における管理されたサービス アカウントに関するページ](https://technet.microsoft.com/library/dd378925(v=WS.10).aspx)|
-|**コミュニティ リソース**|[Managed Service Accounts:Understanding, Implementing, Best Practices, and Troubleshooting (管理されたサービス アカウント: 理解、実装、ベスト プラクティス、およびトラブルシューティング)](https://blogs.technet.com/b/askds/archive/2009/09/10/managed-service-accounts-understanding-implementing-best-practices-and-troubleshooting.aspx)|
+|**ツールと設定**|[Active Directory Domain Services における管理されたサービス アカウントに関するページ](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd378925(v=ws.10))|
+|**コミュニティ リソース**|[Managed Service Accounts:Understanding, Implementing, Best Practices, and Troubleshooting (管理されたサービス アカウント: 理解、実装、ベスト プラクティス、およびトラブルシューティング)](/archive/blogs/askds/managed-service-accounts-understanding-implementing-best-practices-and-troubleshooting)|
 |**関連テクノロジ**|[Active Directory Domain Services の概要](active-directory-domain-services-overview.md)|
-
-

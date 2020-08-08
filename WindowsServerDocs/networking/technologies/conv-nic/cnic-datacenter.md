@@ -1,20 +1,18 @@
 ---
 title: チーム化される NIC 構成 (datacenter) での収束 NIC
 description: このトピックでは、スイッチ埋め込みチーミング (SET) を使用して、チーム化された NIC 構成で収束 NIC を展開する手順について説明します。
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: f01546f8-c495-4055-8492-8806eee99862
 manager: dougkim
 ms.author: lizross
 author: eross-msft
 ms.date: 09/17/2018
-ms.openlocfilehash: d81e4013d7cc38a15dd8b0bcd48529a2d72d0b69
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 918b3d10c39c6f06330f9c0986bc08b5bc04a229
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87520201"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87949376"
 ---
 # <a name="converged-nic-in-a-teamed-nic-configuration-datacenter"></a>チーム化される NIC 構成 (datacenter) での収束 NIC
 
@@ -267,7 +265,7 @@ ms.locfileid: "87520201"
    |      RemoteAddress       | 192.168.1.5 |
    |      InterfaceAlias      | テスト-40G-1  |
    |      SourceAddress       | 192.168.1.5 |
-   |      Ping 成功       |    はい     |
+   |      Ping 成功       |    True     |
    | PingReplyDetails \( RTT\) |    0 ミリ秒     |
 
 8. 最初の NIC の接続を確認し、テスト-40G-2 を行います。<p>接続に失敗した場合は、スイッチ VLAN 構成または移行先が同じ VLAN に参加していることを確認します。
@@ -285,7 +283,7 @@ ms.locfileid: "87520201"
    |      RemoteAddress       | 192.168.2.5 |
    |      InterfaceAlias      | テスト-40G-2  |
    |      SourceAddress       | 192.168.2.3 |
-   |      Ping 成功       |    はい     |
+   |      Ping 成功       |    True     |
    | PingReplyDetails \( RTT\) |    0 ミリ秒     |
 
    >[!IMPORTANT]
@@ -318,7 +316,7 @@ ms.locfileid: "87520201"
 
    | Success | 再起動が必要 | 終了コード |     機能の結果     |
    |---------|----------------|-----------|------------------------|
-   |  はい   |       いいえ       |  Success  | {データセンターブリッジング} |
+   |  True   |       いいえ       |  Success  | {データセンターブリッジング} |
 
 2. SMB ダイレクトの QoS ポリシーを設定します。
 
@@ -359,7 +357,7 @@ ms.locfileid: "87520201"
    |     所有者      | グループポリシー \( マシン\) |
    | NetworkProfile |           すべて            |
    |   優先順位   |           127            |
-   |    Template    |         Default          |
+   |    Template    |         既定          |
    |   JobObject    |          &nbsp;          |
    | PriorityValue  |            0             |
 
@@ -373,7 +371,7 @@ ms.locfileid: "87520201"
    _**生じ**_
 
 
-   | 優先度 | Enabled | PolicySet | IfIndex | IfAlias |
+   | Priority | Enabled | PolicySet | IfIndex | IfAlias |
    |----------|---------|-----------|---------|---------|
    |    0     |  False  |  グローバル   | &nbsp;  | &nbsp;  |
    |    1     |  False  |  グローバル   | &nbsp;  | &nbsp;  |
@@ -426,7 +424,7 @@ ms.locfileid: "87520201"
    _**OperationalClassifications**:_
 
 
-   | プロトコル  | ポート/種類 | 優先度 |
+   | Protocol  | ポート/種類 | Priority |
    |-----------|-----------|----------|
    |  Default  |  &nbsp;   |    0     |
    | NetDirect |    445    |    3     |
@@ -464,7 +462,7 @@ ms.locfileid: "87520201"
    _**OperationalClassifications**:_
 
 
-   | プロトコル  | ポート/種類 | 優先度 |
+   | Protocol  | ポート/種類 | Priority |
    |-----------|-----------|----------|
    |  Default  |  &nbsp;   |    0     |
    | NetDirect |    445    |    3     |
@@ -479,7 +477,7 @@ ms.locfileid: "87520201"
    _**生じ**_
 
 
-   | 名前 | アルゴリズム | 帯域幅 (%) | 優先度 | PolicySet | IfIndex | IfAlias |
+   | 名前 | アルゴリズム | 帯域幅 (%) | Priority | PolicySet | IfIndex | IfAlias |
    |------|-----------|--------------|----------|-----------|---------|---------|
    | SMB  |    ETS    |      50      |    3     |  グローバル   | &nbsp;  | &nbsp;  |
 
@@ -491,7 +489,7 @@ ms.locfileid: "87520201"
 
    _**生じ**_
 
-   |   名前    | アルゴリズム | 帯域幅 (%) | 優先度 | PolicySet | IfIndex | IfAlias |
+   |   名前    | アルゴリズム | 帯域幅 (%) | Priority | PolicySet | IfIndex | IfAlias |
    |-----------|-----------|--------------|----------|-----------|---------|---------|
    | [Default] |    ETS    |      50      | 0 ~ 2、4-7  |  グローバル   | &nbsp;  | &nbsp;  |
    |    SMB    |    ETS    |      50      |    3     |  グローバル   | &nbsp;  | &nbsp;  |
@@ -507,7 +505,7 @@ ms.locfileid: "87520201"
 
    _**生じ**_
 
-   | 名前 | アルゴリズム | 帯域幅 (%) | 優先度 | PolicySet | IfIndex | IfAlias |
+   | 名前 | アルゴリズム | 帯域幅 (%) | Priority | PolicySet | IfIndex | IfAlias |
    |------|-----------|--------------|----------|-----------|---------|---------|
    | IP1  |    ETS    |      10      |    1     |  グローバル   | &nbsp;  | &nbsp;  |
 
@@ -518,7 +516,7 @@ ms.locfileid: "87520201"
    _**生じ**_
 
 
-   | 名前 | アルゴリズム | 帯域幅 (%) | 優先度 | PolicySet | IfIndex | IfAlias |
+   | 名前 | アルゴリズム | 帯域幅 (%) | Priority | PolicySet | IfIndex | IfAlias |
    |------|-----------|--------------|----------|-----------|---------|---------|
    | IP2  |    ETS    |      10      |    2     |  グローバル   | &nbsp;  | &nbsp;  |
 
@@ -531,7 +529,7 @@ ms.locfileid: "87520201"
     _**生じ**_
 
 
-    |   名前    | アルゴリズム | 帯域幅 (%) | 優先度 | PolicySet | IfIndex | IfAlias |
+    |   名前    | アルゴリズム | 帯域幅 (%) | Priority | PolicySet | IfIndex | IfAlias |
     |-----------|-----------|--------------|----------|-----------|---------|---------|
     | [Default] |    ETS    |      30      |  0、4-7   |  グローバル   | &nbsp;  | &nbsp;  |
     |    SMB    |    ETS    |      50      |    3     |  グローバル   | &nbsp;  | &nbsp;  |
@@ -575,8 +573,8 @@ VSwitch を作成して RDMA モード2に移行する前に、ファブリッ�
 
    |    名前    |        InterfaceDescription        | Enabled |
    |------------|------------------------------------|---------|
-   | テスト-40G-1 | Mellanox/4 VPI Adapter #2 |  はい   |
-   | テスト-40G-2 |  Mellanox の送信-4 VPI Adapter   |  はい   |
+   | テスト-40G-1 | Mellanox/4 VPI Adapter #2 |  True   |
+   | テスト-40G-2 |  Mellanox の送信-4 VPI Adapter   |  True   |
 
 2. ターゲットアダプターの**ifIndex**値を確認します。<p>この値は、ダウンロードしたスクリプトを実行するときに、後続の手順で使用します。
 
@@ -715,7 +713,7 @@ VSwitch を作成して RDMA モード2に移行する前に、ファブリッ�
 
    |  名前   | IsManagementOs | VMName  |  SwitchName  | MacAddress | Status | IPAddresses |
    |---------|----------------|---------|--------------|------------|--------|-------------|
-   | VMSTEST |      はい      | VMSTEST | E41D2D074071 |    Ok] を    | &nbsp; |             |
+   | VMSTEST |      True      | VMSTEST | E41D2D074071 |    Ok] を    | &nbsp; |             |
 
 
 5. リモート VLAN 101 アダプターへのネットワーク接続をテストします。
@@ -822,8 +820,8 @@ VSwitch を作成して RDMA モード2に移行する前に、ファブリッ�
 
    |         名前         | IsManagementOs | VMName |      SwitchName      |  MacAddress  | Status | IPAddresses |
    |----------------------|----------------|--------|----------------------|--------------|--------|-------------|
-   | CORP-外部スイッチ |      はい      | &nbsp; | CORP-外部スイッチ | 001B785768AA |  Ok] を  |   &nbsp;    |
-   |         管理          |      はい      | &nbsp; |       VMSTEST        | E41D2D074071 |  Ok] を  |   &nbsp;    |
+   | CORP-外部スイッチ |      True      | &nbsp; | CORP-外部スイッチ | 001B785768AA |  Ok] を  |   &nbsp;    |
+   |         管理          |      True      | &nbsp; |       VMSTEST        | E41D2D074071 |  Ok] を  |   &nbsp;    |
 
 5. 追加の NIC プロパティを表示します。
 
@@ -873,10 +871,10 @@ VSwitch を作成して RDMA モード2に移行する前に、ファブリッ�
 
    |         名前         | IsManagementOs |        VMName        |  SwitchName  | MacAddress | Status | IPAddresses |
    |----------------------|----------------|----------------------|--------------|------------|--------|-------------|
-   | CORP-外部スイッチ |      はい      | CORP-外部スイッチ | 001B785768AA |    Ok] を    | &nbsp; |             |
-   |         管理          |      はい      |       VMSTEST        | E41D2D074071 |    Ok] を    | &nbsp; |             |
-   |         SMB1         |      はい      |       VMSTEST        | 00155D30AA00 |    Ok] を    | &nbsp; |             |
-   |         SMB2         |      はい      |       VMSTEST        | 00155D30AA01 |    Ok] を    | &nbsp; |             |
+   | CORP-外部スイッチ |      True      | CORP-外部スイッチ | 001B785768AA |    Ok] を    | &nbsp; |             |
+   |         管理          |      True      |       VMSTEST        | E41D2D074071 |    Ok] を    | &nbsp; |             |
+   |         SMB1         |      True      |       VMSTEST        | 00155D30AA00 |    Ok] を    | &nbsp; |             |
+   |         SMB2         |      True      |       VMSTEST        | 00155D30AA01 |    Ok] を    | &nbsp; |             |
 
 ## <a name="step-9-assign-an-ip-address-to-the-smb-host-vnics-vethernet-smb1-and-vethernet-smb2"></a>手順 9. IP アドレスを SMB ホスト vNICs \( \) veSMB2 と veruncommand net に割り当てます。 \(\)
 

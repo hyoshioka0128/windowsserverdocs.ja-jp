@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7819bdfe1c5a65adc126ab902e6138d372982f20
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: ffe38a896e7913d03cc8f4ad62d1e520cec6a0c2
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895812"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991932"
 ---
 # <a name="configure-features-on-demand-in-windows-server"></a>Configure Features on Demand in Windows Server
 
@@ -71,7 +71,7 @@ ms.locfileid: "87895812"
 
 -   `remove`コマンドレットのパラメーターを使用すると、 `Uninstall-WindowsFeature` windows Server 2012 R2 または windows server 2012 を実行しているサーバーまたはオフラインの仮想ハードディスク (VHD) から機能ファイルを削除できます。 パラメーターの有効な値 `remove` は、ロール、ロールサービス、および機能の名前です。
 
--   展開イメージのサービスと管理 (DISM) コマンドを使用すると、不要な機能ファイルや他のリモート ソースから取得できる機能ファイルを省くことでディスク領域を節約できるカスタムの WIM ファイルを作成できます。 DISM を使用したカスタム イメージの準備の詳細については、「 [Windows の機能を有効または無効にする方法](https://technet.microsoft.com/library/hh824822.aspx)」を参照してください。
+-   展開イメージのサービスと管理 (DISM) コマンドを使用すると、不要な機能ファイルや他のリモート ソースから取得できる機能ファイルを省くことでディスク領域を節約できるカスタムの WIM ファイルを作成できます。 DISM を使用したカスタム イメージの準備の詳細については、「 [Windows の機能を有効または無効にする方法](/previous-versions/windows/it-pro/windows-8.1-and-8/hh824822(v=win.10))」を参照してください。
 
 ## <a name="remove-feature-files-by-using-uninstall-windowsfeature"></a><a name=BKMK_remove></a>Uninstall-WindowsFeature を使用して機能ファイルを削除する
 Windows Server 2012 R2 または Windows Server 2012 を実行しているサーバーおよびオフライン Vhd から役割、役割サービス、および機能をアンインストールしたり、機能ファイルを削除したりするには、Uninstall コマンドレットを使用します。 必要に応じて、同じコマンドで同じ役割、役割サービス、および機能をアンインストールおよび削除することができます。
@@ -117,8 +117,6 @@ Windows Server 2012 R2 または Windows Server 2012 を実行しているサー
 
 ## <a name="see-also"></a>参照
 [役割、役割サービス、または機能](install-or-uninstall-roles-role-services-or-features.md) 
- をインストールまたはアンインストールする[Windows Server インストールオプション](https://technet.microsoft.com/library/hh831786.aspx) 
-[Windows の機能](https://technet.microsoft.com/library/hh824822.aspx) 
- を有効または無効にする方法[展開イメージのサービスと管理 (DISM) の概要](https://technet.microsoft.com/library/hh825236.aspx)
-
-
+ をインストールまたはアンインストールする[Windows Server インストールオプション](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831786(v=ws.11)) 
+[Windows の機能](/previous-versions/windows/it-pro/windows-8.1-and-8/hh824822(v=win.10)) 
+ を有効または無効にする方法[展開イメージのサービスと管理 (DISM) の概要](/previous-versions/windows/it-pro/windows-8.1-and-8/hh825236(v=win.10))

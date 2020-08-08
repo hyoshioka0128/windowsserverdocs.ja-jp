@@ -7,12 +7,12 @@ ms.assetid: 4e83b126-ce9a-4cd7-a0bd-6627c9e0f81b
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: b18800e2c8c7feae30f3dbcfb8904f00ef40a396
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 97141a300156c74ef5a2a3b1c4d738b4e33834f1
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87955468"
+ms.locfileid: "87991470"
 ---
 # <a name="set-up-the-physical-computer-and-primary-station"></a>物理コンピューターとプライマリ ステーションを設定します。
 MultiPoint Services をインストールする前に、MultiPoint Services システムのプライマリステーションをセットアップする必要があります。 ローカルエリアネットワーク (LAN) を使用する場合は、コンピューターを LAN に接続します。
@@ -21,7 +21,7 @@ MultiPoint Services をインストールする前に、MultiPoint Services シ�
 
 プライマリ ステーションでは、直接ビデオ接続ステーションをする必要があります。 次の手順では、必要なハードウェアを MultiPoint Services コンピューターに接続する方法について説明します。
 
-ステーションの詳細については、「 [MultiPoint ステーション](multipoint-services-stations.md)」を参照してください。 ハードウェアの選択の詳細については、「 [MultiPoint Services システムのハードウェアの選択](Selecting-Hardware-for-Your-MultiPoint-services-System.md)」を参照してください。 他のステーションの種類を MultiPoint Services に接続する方法については、「[追加のステーションを Multipoint services コンピューターに接続する](Attach-additional-stations-to-your-MultiPoint-services-computer.md)」を参照してください。
+ステーションの詳細については、「 [MultiPoint ステーション](multipoint-services-stations.md)」を参照してください。 ハードウェアの選択の詳細については、「 [MultiPoint Services システムのハードウェアの選択](./select-hardware-mps.md)」を参照してください。 他のステーションの種類を MultiPoint Services に接続する方法については、「[追加のステーションを Multipoint services コンピューターに接続する](./multipoint-attach-additional-stations.md)」を参照してください。
 
 > [!NOTE]
 > ビデオ接続ステーションを作成するには、ラテン語キーボード (英語やスペイン語のキーボードなど) を使用する必要があります。

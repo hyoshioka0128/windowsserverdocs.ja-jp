@@ -2,18 +2,16 @@
 title: 分類プロパティを作成する
 description: この記事では、指定したフォルダーまたはボリューム内のファイルに値を割り当てるために使用される分類プロパティについて説明します。
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: f8e0ba45883385a2b2bf161b04f99f8077fdef28
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 8a5d044ae78ad45b59fa4cb97694c15aad3c4bbe
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473759"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957499"
 ---
 # <a name="create-a-classification-property"></a>分類プロパティを作成する
 
@@ -49,7 +47,7 @@ ms.locfileid: "85473759"
 
 6.  **[OK]** をクリックします。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 -   [自動分類規則を作成する](create-automatic-classification-rule.md)
 -   [分類の管理](classification-management.md)

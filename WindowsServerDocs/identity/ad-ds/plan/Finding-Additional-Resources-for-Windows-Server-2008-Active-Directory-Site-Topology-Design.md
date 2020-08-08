@@ -6,13 +6,12 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.openlocfilehash: 5682eb98854441b35719fc0c2048f07db76cbead
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: dd08192558457a014b6884316de7a22900dded2f
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181838"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87941066"
 ---
 # <a name="finding-additional-resources-for-windows-server-2008-active-directory-site-topology-design"></a>Windows Server 2008 の Active Directory サイト トポロジ設計に関するその他のリソースの検索
 

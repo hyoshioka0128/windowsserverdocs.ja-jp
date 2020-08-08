@@ -1,19 +1,17 @@
 ---
 title: 機能について
 description: このトピックでは、System Insights の機能の概念を定義し、Windows Server 2019 で使用できる既定の機能について説明します。
-ms.prod: windows-server
-ms.technology: system-insights
 ms.topic: article
 author: gawatu
 ms.author: gawatu
 manager: mallikarjun.chadalapaka
 ms.date: 6/05/2018
-ms.openlocfilehash: c6738e6e914d97c70aa31af2fe3b6987b0b9ea33
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 195ab01ded24742a26e1d7558529044c9883b8fc
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471747"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991703"
 ---
 # <a name="understanding-capabilities"></a>機能について
 
@@ -40,7 +38,7 @@ System Insights の機能は、システムデータを分析する機械学習�
 - **エラー** -不明な問題が発生したため、機能が失敗しました。
 - **None** -予測は行われませんでした。 これは、データが不足しているか、予測を作成しないためのその他の機能固有の理由が原因の可能性があります。
 
-さらに、結果に含まれる機能固有のデータは、ユーザーがアクセスできる JSON ファイルに配置され、 [PowerShell を使用してファイルパスを見つけることができ](https://docs.microsoft.com/windows-server/manage/system-insights/managing-capabilities#retrieving-capability-results)ます。
+さらに、結果に含まれる機能固有のデータは、ユーザーがアクセスできる JSON ファイルに配置され、 [PowerShell を使用してファイルパスを見つけることができ](./managing-capabilities.md#retrieving-capability-results)ます。
 
 ## <a name="default-capabilities"></a>既定の機能
 Windows Server 2019 では、容量の予測に重点を置いた4つの既定の機能が System Insights に導入されています。
@@ -94,7 +92,7 @@ Windows Server 2019 では、容量の予測に重点を置いた4つの既定�
 >複数のインスタンス (複数のボリュームやネットワークアダプターなど) に対する機能予測の場合、状態はすべてのインスタンスで最も重大な状態を反映します。 各ボリュームまたはネットワークアダプターの個別の状態は、Windows 管理センターまたは各機能の出力に含まれるデータ内に表示されます。 既定の機能の JSON 出力を解析する方法については、こちらの[ブログ](https://aka.ms/systeminsights-mitigationscripts)を参照してください。
 
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 System Insights の詳細については、次のリソースを参照してください。
 
 - [システム インサイトの概要](overview.md)

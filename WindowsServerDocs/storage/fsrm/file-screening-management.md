@@ -2,18 +2,16 @@
 title: ファイル スクリーンの管理
 description: この記事では、ファイル スクリーンの作成、通知の生成、ファイル スクリーン処理のテンプレートの定義、およびファイル スクリーンの例外の作成の方法について説明します。
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 43aed09aead02883f91c168e1cfaf6388aedfa85
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: c189386ac340e9362c8774340732f8689f17effe
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473979"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957439"
 ---
 # <a name="file-screening-management"></a>ファイル スクリーンの管理
 
@@ -41,7 +39,7 @@ ms.locfileid: "85473979"
 > [!Note]
 > 電子メール通知や特定のレポート機能を設定するには、まずファイル サーバー リソース マネージャーの全般的なオプションを設定する必要があります。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 -   [ファイル サーバー リソース マネージャーのオプションを設定する](setting-file-server-resource-manager-options.md)
 

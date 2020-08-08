@@ -6,12 +6,12 @@ ms.assetid: a6615411-83d9-495f-8a6a-1ebc8b12f164
 manager: dcscontentpm
 ms.author: v-tea
 author: Teresa-Motiv
-ms.openlocfilehash: 0ba4f52df35c3b78f948bdfdf40500965a9be278
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: c1095f3f5ea44b22c4cec4a871f6fc6210e92ab1
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87953958"
+ms.locfileid: "87991637"
 ---
 # <a name="choosing-a-network-adapter"></a>ネットワーク アダプターを選択する
 
@@ -22,7 +22,7 @@ ms.locfileid: "87953958"
 ネットワーク集中型のアプリケーションには、高パフォーマンスのネットワークアダプターが必要です。 ここでは、ネットワークアダプターを選択する際の考慮事項について説明します。また、ネットワークパフォーマンスを最大限に高めるために、さまざまなネットワークアダプター設定を構成する方法についても説明します。
 
 > [!TIP]
->  Windows PowerShell を使用して、ネットワークアダプターの設定を構成できます。 詳細については、「 [Windows PowerShell のネットワークアダプターコマンドレット](https://docs.microsoft.com/powershell/module/netadapter)」を参照してください。
+>  Windows PowerShell を使用して、ネットワークアダプターの設定を構成できます。 詳細については、「 [Windows PowerShell のネットワークアダプターコマンドレット](/powershell/module/netadapter)」を参照してください。
 
 ##  <a name="offload-capabilities"></a><a name="bkmk_offload"></a>オフロード機能
 
@@ -63,13 +63,13 @@ RSS プロファイルを定義するには、 **Set-netadapterrss** Windows Pow
 >[!NOTE]
 >各コマンドレットの構文とパラメーターを含む詳細なコマンドリファレンスについては、次のリンクをクリックしてください。 また、各コマンドの詳細については、Windows PowerShell プロンプトで**get-help**にコマンドレット名を渡すこともできます。
 
-- [Set-netadapterrss を無効に](https://docs.microsoft.com/powershell/module/netadapter/Disable-NetAdapterRss)します。 このコマンドは、指定したネットワークアダプターで RSS を無効にします。
+- [Set-netadapterrss を無効に](/powershell/module/netadapter/Disable-NetAdapterRss)します。 このコマンドは、指定したネットワークアダプターで RSS を無効にします。
 
-- [Set-netadapterrss を有効に](https://docs.microsoft.com/powershell/module/netadapter/Enable-NetAdapterRss)します。 このコマンドは、指定したネットワークアダプターで RSS を有効にします。
+- [Set-netadapterrss を有効に](/powershell/module/netadapter/Enable-NetAdapterRss)します。 このコマンドは、指定したネットワークアダプターで RSS を有効にします。
 
-- [Set-netadapterrss](https://docs.microsoft.com/powershell/module/netadapter/Get-NetAdapterRss)。 このコマンドは、指定したネットワークアダプターの RSS プロパティを取得します。
+- [Set-netadapterrss](/powershell/module/netadapter/Get-NetAdapterRss)。 このコマンドは、指定したネットワークアダプターの RSS プロパティを取得します。
 
-- [Set-netadapterrss](https://docs.microsoft.com/powershell/module/netadapter/Set-NetAdapterRss)。 このコマンドは、指定したネットワークアダプターの RSS プロパティを設定します。
+- [Set-netadapterrss](/powershell/module/netadapter/Set-NetAdapterRss)。 このコマンドは、指定したネットワークアダプターの RSS プロパティを設定します。
 
 #### <a name="rss-profiles"></a>RSS プロファイル
 
@@ -210,28 +210,28 @@ RSC は、ホストネットワークアダプターが Hyper-v 仮想スイッ�
 
 次の Windows PowerShell コマンドレットを使用すると、ネットワークアダプターのリソースの構成が簡単になります。
 
-- [NetAdapterAdvancedProperty](https://docs.microsoft.com/powershell/module/netadapter/Get-NetAdapterAdvancedProperty)
+- [NetAdapterAdvancedProperty](/powershell/module/netadapter/Get-NetAdapterAdvancedProperty)
 
-- [NetAdapterAdvancedProperty](https://docs.microsoft.com/powershell/module/netadapter/Set-NetAdapterAdvancedProperty)
+- [NetAdapterAdvancedProperty](/powershell/module/netadapter/Set-NetAdapterAdvancedProperty)
 
-- [有効にする-NetAdapter](https://docs.microsoft.com/powershell/module/netadapter/Enable-NetAdapte)
+- [有効にする-NetAdapter](/powershell/module/netadapter/Enable-NetAdapte)
 
-- [NetAdapterBinding](https://docs.microsoft.com/powershell/module/netadapter/Enable-NetAdapterBinding)
+- [NetAdapterBinding](/powershell/module/netadapter/Enable-NetAdapterBinding)
 
-- [NetAdapterChecksumOffload](https://docs.microsoft.com/powershell/module/netadapter/Enable-NetAdapterChecksumOffload)
+- [NetAdapterChecksumOffload](/powershell/module/netadapter/Enable-NetAdapterChecksumOffload)
 
-- [NetAdapterIPSecOffload](https://docs.microsoft.com/powershell/module/netadapter/Enable-NetAdapterChecksumOffload)
+- [NetAdapterIPSecOffload](/powershell/module/netadapter/Enable-NetAdapterChecksumOffload)
 
-- [NetAdapterLso](https://docs.microsoft.com/powershell/module/netadapter/Enable-NetAdapterLso)
+- [NetAdapterLso](/powershell/module/netadapter/Enable-NetAdapterLso)
 
-- [NetAdapterPowerManagement](https://docs.microsoft.com/powershell/module/netadapter/Enable-NetAdapterPowerManagement)
+- [NetAdapterPowerManagement](/powershell/module/netadapter/Enable-NetAdapterPowerManagement)
 
-- [Get-netadapterqos](https://docs.microsoft.com/powershell/module/netadapter/Enable-NetAdapterQos)
+- [Get-netadapterqos](/powershell/module/netadapter/Enable-NetAdapterQos)
 
-- [NetAdapterRDMA](https://docs.microsoft.com/powershell/module/netadapter/Enable-NetAdapterRDMA)
+- [NetAdapterRDMA](/powershell/module/netadapter/Enable-NetAdapterRDMA)
 
-- [Get-netadaptersriov](https://docs.microsoft.com/powershell/module/netadapter/Enable-NetAdapterSriov)
+- [Get-netadaptersriov](/powershell/module/netadapter/Enable-NetAdapterSriov)
 
-詳細については、「 [Windows PowerShell のネットワークアダプターコマンドレット](https://docs.microsoft.com/powershell/module/netadapter)」を参照してください。
+詳細については、「 [Windows PowerShell のネットワークアダプターコマンドレット](/powershell/module/netadapter)」を参照してください。
 
 このガイドのすべてのトピックへのリンクについては、「[ネットワークサブシステムのパフォーマンスチューニング](net-sub-performance-top.md)」を参照してください。

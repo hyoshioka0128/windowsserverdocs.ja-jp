@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: b3cd60f7-d380-4712-9a78-0a8f551e1121
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 2c41fde041183ff7e039bd2fed877aad8ff0f234
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 6db855343ef037fb1e55925620f1842c7fdff98a
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87962326"
+ms.locfileid: "87997134"
 ---
 # <a name="core-network-components"></a>コア ネットワークのコンポーネント
 
@@ -548,8 +548,8 @@ AD DS と DNS をインストールして構成するには、次のコマンド
 
 >[!NOTE]
 >これらの Windows PowerShell コマンドの詳細については、次の参照トピックを参照してください。
->- [Install-windowsfeature](https://docs.microsoft.com/powershell/module/servermanager/install-windowsfeature?view=win10-ps)
->- [Install-ADDSForest](https://docs.microsoft.com/powershell/module/addsdeployment/install-addsforest?view=win10-ps)
+>- [Install-windowsfeature](/powershell/module/servermanager/install-windowsfeature?view=win10-ps)
+>- [Install-ADDSForest](/powershell/module/addsdeployment/install-addsforest?view=win10-ps)
 
 この手順を実行するには、**Administrators** のメンバーシップが最低限必要です。
 
@@ -1157,19 +1157,19 @@ Web サーバー (IIS) サーバーの役割を実行するコンピューター
 
  Windows Server 2016、Windows Server 2012 R2、および Windows Server 2012 のテクニカルライブラリリソース
 
-- [Windows Server 2016 の Active Directory Domain Services (AD DS) の新機能](https://technet.microsoft.com/library/mt163897.aspx)
+- [Windows Server 2016 の Active Directory Domain Services (AD DS) の新機能](../../identity/whats-new-active-directory-domain-services.md)
 
-- [Active Directory Domain Services の概要」](https://technet.microsoft.com/library/hh831484.aspx) https://technet.microsoft.com/library/hh831484.aspx をご覧ください。
+- [Active Directory Domain Services の概要」](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831484(v=ws.11)) https://technet.microsoft.com/library/hh831484.aspx をご覧ください。
 
-- [ドメインネームシステム (DNS) の概要](https://technet.microsoft.com/library/hh831667.aspx)については、「」 https://technet.microsoft.com/library/hh831667.aspx をご覧ください。
+- [ドメインネームシステム (DNS) の概要](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831667(v=ws.11))については、「」 https://technet.microsoft.com/library/hh831667.aspx をご覧ください。
 
-- [DNS 管理者ロールの実装](https://technet.microsoft.com/library/cc756152(WS.10).aspx)
+- [DNS 管理者ロールの実装](/previous-versions/windows/it-pro/windows-server-2003/cc756152(v=ws.10))
 
-- [動的ホスト構成プロトコル (DHCP) の概要](https://technet.microsoft.com/library/hh831825.aspx)については、「」 https://technet.microsoft.com/library/hh831825.aspx をご覧ください。
+- [動的ホスト構成プロトコル (DHCP) の概要](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831825(v=ws.11))については、「」 https://technet.microsoft.com/library/hh831825.aspx をご覧ください。
 
-- [ネットワークポリシーとアクセスサービスの概要については、「」を](https://technet.microsoft.com/library/hh831683.aspx)ご覧 https://technet.microsoft.com/library/hh831683.aspx ください。
+- [ネットワークポリシーとアクセスサービスの概要については、「」を](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831683(v=ws.11))ご覧 https://technet.microsoft.com/library/hh831683.aspx ください。
 
-- [Web サーバー (IIS) の概要 ()](https://technet.microsoft.com/library/hh831725.aspx) https://technet.microsoft.com/library/hh831725.aspx
+- [Web サーバー (IIS) の概要 ()](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831725(v=ws.11)) https://technet.microsoft.com/library/hh831725.aspx
 
 ## <a name="appendices-a-through-e"></a><a name="BKMK_appendix"></a>付録 A から E
 次のセクションでは、Windows Server 2016、Windows 10、Windows Server 2012、および Windows 8 以外のオペレーティングシステムを実行しているコンピューターの追加の構成情報について説明します。 また、展開を支援するためのネットワーク準備ワークシートが用意されています。
@@ -1543,4 +1543,3 @@ Windows Server コア ネットワークの展開手順「[新しい DHCP スコ
 Windows Server Core ネットワーク NPS の展開手順の構成項目[ネットワークポリシーサーバー (nps) をインストール](#BKMK_installNPS)し、 [nps を既定のドメインに登録](#BKMK_registerNPS)します。
 
 - NPS のインストールおよび登録に必要な追加の構成項目はありません。
-

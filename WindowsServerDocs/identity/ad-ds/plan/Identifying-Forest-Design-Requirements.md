@@ -6,14 +6,12 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/07/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 2040bdb6d0dde9805c9bf6e6d59af025d23061a0
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: 79bd34c8a2beb38d60b972aec0f8a17f17e5a590
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81624210"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87941024"
 ---
 # <a name="identifying-forest-design-requirements"></a>フォレストの設計要件を特定する
 
@@ -41,7 +39,7 @@ Active Directory Domain Services (AD DS) を使用すると、特定の管理要
 
 設計チームは、AD DS を使用する組織内の各グループについて、サービスとデータ管理の分離と自律性の要件を文書化する必要があります。 また、AD DS の展開に影響する可能性がある、接続が制限されている領域についても注意する必要があります。
 
-設計チームは、AD DS を使用する組織内の各グループについて、サービスとデータ管理の分離と自律性の要件を文書化する必要があります。 また、AD DS の展開に影響する可能性がある、接続が制限されている領域についても注意する必要があります。 特定したリージョンを文書化するのに役立つワークシートについては、「 [Windows Server 2003 Deployment Kit のジョブエイド](https://microsoft.com/download/details.aspx?id=9608)」から Job_Aids_Designing_and_Deploying_Directory_and_Security_Services をダウンロードし、「フォレストの設計要件」 (DSSLOGI_2) を開きます。
+設計チームは、AD DS を使用する組織内の各グループについて、サービスとデータ管理の分離と自律性の要件を文書化する必要があります。 また、AD DS の展開に影響する可能性がある、接続が制限されている領域についても注意する必要があります。 特定したリージョンを文書化するのに役立つワークシートについては、「 [Windows Server 2003 Deployment Kit のジョブエイド](https://microsoft.com/download/details.aspx?id=9608)」から Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip をダウンロードし、「フォレストの設計要件」 (DSSLOGI_2.doc) を開いてください。
 
 ## <a name="in-this-section"></a>このセクションの内容
 

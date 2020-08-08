@@ -1,19 +1,17 @@
 ---
 title: 追加の HGS ノードを構成する
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 227f723b-acb2-42a7-bbe3-44e82f930e35
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
 ms.date: 01/14/2020
-ms.openlocfilehash: fb744d2be9cc0002158deb0d9665a354ef23851a
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: 16a8ada942f4fcae80085058c92a14bd33ed6e79
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769360"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87997195"
 ---
 # <a name="configure-additional-hgs-nodes"></a>追加の HGS ノードを構成する
 
@@ -117,7 +115,7 @@ SSL 証明書を使用して HGS エンドポイントをセキュリティで�
 SSL 証明書は HGS によってレプリケートさ*れず*、すべてのノードに同じキーを使用する必要はありません (つまり、ノードごとに異なる ssl 証明書を持つことができます)。
 
 SSL 証明書を要求するときは、クラスターの完全修飾ドメイン名 (の出力に示されているとおり `Get-HgsServer` ) が、証明書のサブジェクト共通名であるか、サブジェクト代替 DNS 名として含まれていることを確認します。
-証明機関から証明書を取得したら、 [HgsServer](https://technet.microsoft.com/itpro/powershell/windows/hgsserver/set-hgsserver)で使用するように HGS を構成できます。
+証明機関から証明書を取得したら、 [HgsServer](/powershell/module/hgsserver/set-hgsserver?view=win10-ps)で使用するように HGS を構成できます。
 
 ```powershell
 $sslPassword = Read-Host -AsSecureString -Prompt "SSL Certificate Password"

@@ -1,17 +1,15 @@
 ---
 title: フェールオーバー ベースライン ネットワークのしきい値の調整
 description: この記事では、フェールオーバークラスターネットワークのしきい値を調整するためのソリューションについて説明します。
-ms.prod: windows-server
-ms.technology: server-general
 ms.date: 05/28/2020
 author: Deland-Han
 ms.author: delhan
-ms.openlocfilehash: 86a7023f6480e68f917cb8cdd9d0c69c417d3145
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 9f28aa9c10fe64e0b86a405c1feb480396bcb76b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409793"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87965809"
 ---
 # <a name="iaas-with-sql-alwayson---tuning-failover-cluster-network-thresholds"></a>IaaS と SQL AlwaysOn - フェールオーバー クラスター ネットワークのしきい値の調整
 
@@ -91,7 +89,7 @@ C:\Windows\system32> get-cluster | fl *subnet*
 
 各サポート OS の既定値、最小値、最大値、推奨値
 
-| 説明 | OS | Min | Max | Default | 推奨 |
+| 説明 | OS | Min | Max | 既定 | 推奨 |
 |--|--|--|--|--|--|
 | CrossSubnetThreshold | 2008 R2 | 3 | 20 | 5 | 20 |
 | クロスサブネットのしきい値 | 2012 | 3 | 120 | 5 | 20 |
@@ -136,7 +134,7 @@ C:\Windows\system32> get-cluster | fl *subnet*
 
     :::image type="content" source="media/iaas-sql-failover-cluster/cmd.png" alt-text="cmd" border="false":::
 
-## <a name="references"></a>参考資料
+## <a name="references"></a>References
 
 Windows クラスターのネットワーク構成設定の調整の詳細については、「[フェールオーバークラスターのネットワークしきい値の調整](https://techcommunity.microsoft.com/t5/failover-clustering/tuning-failover-cluster-network-thresholds/ba-p/371834)」を参照してください。
 

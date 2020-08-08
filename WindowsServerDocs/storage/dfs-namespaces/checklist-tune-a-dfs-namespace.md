@@ -2,18 +2,16 @@
 title: 'チェックリスト: DFS 名前空間を調整する'
 description: この記事では、DFS 名前空間が紹介を処理し、AD DS から更新された名前空間データをポーリングする方法を最適化する方法について説明します。
 ms.date: 6/5/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 67e272657c23926adbbf9f0db5174d00f4852137
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 9e5759579b86c2ed7721a31aada5ddaa345fc256
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961754"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957690"
 ---
 # <a name="checklist-tune-a-dfs-namespace"></a>チェックリスト: DFS 名前空間を調整する
 
@@ -32,7 +30,7 @@ ms.locfileid: "86961754"
 -   ユーザーがフォルダー ターゲットに紹介される順序を指定します。 [紹介におけるターゲットの順序指定方法を設定する](set-the-ordering-method-for-targets-in-referrals.md)
 -   特定の名前空間サーバーまたはフォルダー ターゲットの紹介順序を上書きします。 [ターゲット優先順位を設定して紹介順序を上書きする](set-target-priority-to-override-referral-ordering.md)
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 -   [名前空間](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771914(v=ws.11))
 -   [チェックリスト:DFS 名前空間を展開する](checklist-deploy-dfs-namespaces.md)

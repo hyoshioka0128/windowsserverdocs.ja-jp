@@ -1,19 +1,17 @@
 ---
 ms.assetid: 0f2a7f7b-aca8-4e5d-ad67-4258e88bc52f
 title: Windows Server での記憶域の新機能
-ms.prod: windows-server
 ms.author: jgerend
 manager: dongill
-ms.technology: storage
 ms.topic: article
 author: jasongerend
 ms.date: 05/29/2019
-ms.openlocfilehash: 447c8fe33a0454179d8c9aacc9c324ac7bcf1f49
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 3b1a3fa120e27439c1ec55f68521b813588d330b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86965824"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87965949"
 ---
 # <a name="whats-new-in-storage-in-windows-server"></a>Windows Server での記憶域の新機能
 
@@ -252,9 +250,9 @@ CSV クラスターで記憶域の QoS ポリシーを作成し、Hyper-V 仮想
 |---------------|----------------|-------------|
 | [大容量ボリュームのサポート](data-deduplication/whats-new.md#large-volume-support) | [更新] | Windows Server 2016 の前までは、予期される変更量に合わせてボリュームのサイズを具体的に設定する必要がありました。そして、10 TB 以上のサイズのボリュームは重複除去に適した候補ではありませんでした。 Windows Server 2016 では、データ重複除去は**最大 64 TB**のボリュームサイズをサポートしています。 |
 | [大きなファイルのサポート](data-deduplication/whats-new.md#large-file-support) | [更新] | Windows Server 2016 の前では、1 TB に近いサイズのファイルは重複除去に適した候補ではありませんでした。 Windows Server 2016 では、 **1 TB まで**のファイルが完全にサポートされています。 |
-| [Nano Server のサポート](data-deduplication/whats-new.md#nano-server-support) | 新規作成 | Windows Server 2016 の新しい Nano Server 展開オプションでは、データ重複除去が利用可能で、完全にサポートされています。 |
-| [簡略化されたバックアップのサポート](data-deduplication/whats-new.md#simple-backup-support) | 新規作成 | Windows Server 2012 R2 では、Microsoft の [Data Protection Manager](/previous-versions/system-center/system-center-2012-R2/hh758173(v=sc.12)) などの仮想化されたバックアップ アプリケーションは、一連の手動による構成手順を実行することでサポートされていました。 Windows Server 2016 では、仮想化されたバックアップ アプリケーション用にデータ重複除去をシームレスに展開するために、使用法の種類の新しい既定値として "バックアップ" が追加されました。 |
-| [クラスター OS のローリング アップグレードのサポート](data-deduplication/whats-new.md#cluster-upgrade-support) | 新規作成 | データ重複除去では、Windows Server 2016 の新機能である、[クラスター OS のローリング アップグレード](..//failover-clustering/cluster-operating-system-rolling-upgrade.md)が完全にサポートされています。 |
+| [Nano Server のサポート](data-deduplication/whats-new.md#nano-server-support) | 新規 | Windows Server 2016 の新しい Nano Server 展開オプションでは、データ重複除去が利用可能で、完全にサポートされています。 |
+| [簡略化されたバックアップのサポート](data-deduplication/whats-new.md#simple-backup-support) | 新規 | Windows Server 2012 R2 では、Microsoft の [Data Protection Manager](/previous-versions/system-center/system-center-2012-R2/hh758173(v=sc.12)) などの仮想化されたバックアップ アプリケーションは、一連の手動による構成手順を実行することでサポートされていました。 Windows Server 2016 では、仮想化されたバックアップ アプリケーション用にデータ重複除去をシームレスに展開するために、使用法の種類の新しい既定値として "バックアップ" が追加されました。 |
+| [クラスター OS のローリング アップグレードのサポート](data-deduplication/whats-new.md#cluster-upgrade-support) | 新規 | データ重複除去では、Windows Server 2016 の新機能である、[クラスター OS のローリング アップグレード](..//failover-clustering/cluster-operating-system-rolling-upgrade.md)が完全にサポートされています。 |
 
 ### <a name="smb-hardening-improvements-for-sysvol-and-netlogon-connections"></a><a name="smb-hardening-improvements"></a>SYSVOL と NETLOGON 接続に関する SMB セキュリティ強化の向上
 Active Directory ドメイン サービスへの Windows 10 および Windows Server 2016 のクライアント接続で、ドメイン コント ローラー上の既定の SYSVOL と NETLOGON 共有では、SMB 署名と相互認証 (Kerberos など) を必要とするようになりました。
@@ -296,5 +294,5 @@ ReFS では、以下の点が強化されています。
 **動作の相違点**<br>
 これらの機能は、Windows Server 2016 での新機能です。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 * [Windows Server 2016 の新機能](../get-started/whats-new-in-windows-server-2016.md)

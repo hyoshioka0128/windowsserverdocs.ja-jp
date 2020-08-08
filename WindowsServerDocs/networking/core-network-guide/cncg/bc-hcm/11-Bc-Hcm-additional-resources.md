@@ -2,18 +2,16 @@
 title: BranchCache の追加リソース
 description: このガイドでは、Windows Server 2016 と Windows 10 を実行するコンピューターに、ホスト型キャッシュモードで BranchCache を展開する手順について説明します。
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-bc
 ms.topic: article
 ms.assetid: c7326f5b-87fb-4e57-9b77-72a5d0ab0444
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 204a82226961fe43f07b2a197e6e9db5ab64eb0a
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: a815300df13a809969ab232817055d6af9c3ca4a
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80319074"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87997085"
 ---
 # <a name="branchcache-additional-resources"></a>BranchCache の追加リソース
 
@@ -21,12 +19,12 @@ ms.locfileid: "80319074"
 
 このガイドで説明されているテクノロジの詳細については、次のリソースを参照してください。
 
-- Windows Server 2016 の[BranchCache](https://technet.microsoft.com/windows-server-docs/networking/branchcache/branchcache#a-namebkmkwhatawhat-is-branchcache)
+- Windows Server 2016 の[BranchCache](../../../branchcache/branchcache.md#bkmk_what)
 
-- [コンテンツサーバーをインストールして構成する](https://technet.microsoft.com/windows-server-docs/networking/branchcache/deploy/install-and-configure-content-servers)
+- [コンテンツサーバーをインストールして構成する](../../../branchcache/deploy/install-and-configure-content-servers.md)
 
-- [BranchCache ネットワークシェルと Windows PowerShell コマンド](https://technet.microsoft.com/windows-server-docs/networking/branchcache/branchcache-network-shell-and-windows-powershell-commands)
+- [BranchCache ネットワーク シェルと Windows PowerShell のコマンド](../../../branchcache/branchcache-network-shell-and-windows-powershell-commands.md)
 
-- Windows Server 2012 R2 の[グループポリシーの概要](https://technet.microsoft.com/library/hh831791.aspx)
+- Windows Server 2012 R2 の[グループポリシーの概要](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831791(v=ws.11))
 
-- Windows Server 2008 R2 [BranchCache 展開ガイド](https://technet.microsoft.com/library/ee649232.aspx)
+- Windows Server 2008 R2 [BranchCache 展開ガイド](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee649232(v=ws.10))

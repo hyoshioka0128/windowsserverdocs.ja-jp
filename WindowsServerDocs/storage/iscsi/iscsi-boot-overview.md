@@ -1,19 +1,17 @@
 ---
 ms.assetid: 134840f3-c416-4a10-ad73-ef7855b206f7
 title: iSCSI Target ブートの概要
-ms.prod: windows-server
-ms.technology: storage-iscsi
 ms.topic: article
 author: JasonGerend
 manager: dougkim
 ms.author: jgerend
 ms.date: 09/11/2018
-ms.openlocfilehash: 68f5af7f8fc4cd0214b872d96602cabe1aa32628
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: f3f2ce63afa3e75b6d2f55789866c1872504c8eb
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961374"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957419"
 ---
 # <a name="iscsi-target-boot-overview"></a>iSCSI Target ブートの概要
 
@@ -47,7 +45,7 @@ iSCSI ターゲット サーバーは、サーバー マネージャーのファ
 > [!NOTE]
 > iSCSI からは、Windows iSCSI ターゲット サーバーとサード パーティによるターゲット実装のどちらであっても、Nano Server を起動することはできません。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 * [iSCSI ターゲット サーバー](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh848272(v=ws.11))
 * [iSCSI イニシエーターのコマンドレットに関する記事](/powershell/module/iscsi/?view=win10-ps)
 * [iSCSI ターゲット サーバーのコマンドレットに関する記事](/powershell/module/iscsi/?view=win10-ps)

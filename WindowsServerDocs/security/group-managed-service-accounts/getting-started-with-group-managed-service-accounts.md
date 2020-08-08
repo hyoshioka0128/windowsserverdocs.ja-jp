@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 728da4f2061156352045439a55cba7fa9e98ced9
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 979a6cf1e0b5e2d68c05f6285a9d745eabe41fa4
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971469"
+ms.locfileid: "87991515"
 ---
 # <a name="getting-started-with-group-managed-service-accounts"></a>Getting Started with Group Managed Service Accounts
 
@@ -174,7 +174,7 @@ GMSA を作成できるのは、フォレストのスキーマが Windows Server
     New-ADServiceAccount ITFarm1 -DNSHostName ITFarm1.contoso.com -PrincipalsAllowedToRetrieveManagedPassword ITFarmHosts$ -KerberosEncryptionType RC4, AES128, AES256 -ServicePrincipalNames http/ITFarm1.contoso.com/contoso.com, http/ITFarm1.contoso.com/contoso, http/ITFarm1/contoso.com, http/ITFarm1/contoso
     ```
 
-この手順を完了するには、[**Domain Admins**] または [**Account Operators**] のメンバーシップ、あるいは msDS-GroupManagedServiceAccount オブジェクトを作成する機能が最低限必要です。 適切なアカウントおよびグループ メンバーシップの使用方法の詳細については、「[ローカルおよびドメインの既定のグループ](https://technet.microsoft.com/library/dd728026(WS.10).aspx)」を参照してください。
+この手順を完了するには、[**Domain Admins**] または [**Account Operators**] のメンバーシップ、あるいは msDS-GroupManagedServiceAccount オブジェクトを作成する機能が最低限必要です。 適切なアカウントおよびグループ メンバーシップの使用方法の詳細については、「[ローカルおよびドメインの既定のグループ](/previous-versions/orphan-topics/ws.10/dd728026(v=ws.10))」を参照してください。
 
 ##### <a name="to-create-a-gmsa-for-outbound-authentication-only-using-the-new-adserviceaccount-cmdlet"></a>New-ADServiceAccount コマンドレットを使用して、送信の認証のみに gMSA を作成するには
 
@@ -204,15 +204,15 @@ Windows Server 2012 でサービスを構成するには、次の機能に関す
 
 -   IIS アプリケーション プール
 
-    詳細については、「 [アプリケーション プールの ID を指定する (IIS 7)](https://technet.microsoft.com/library/cc771170(WS.10).aspx)」を参照してください。
+    詳細については、「 [アプリケーション プールの ID を指定する (IIS 7)](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771170(v=ws.10))」を参照してください。
 
 -   Windows サービス
 
-    詳細については、「 [サービス](https://technet.microsoft.com/library/cc772408.aspx)」を参照してください。
+    詳細については、「 [サービス](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc772408(v=ws.11))」を参照してください。
 
 -   [タスク]
 
-    詳細については、「 [タスク スケジューラの概要](https://technet.microsoft.com/library/cc721871.aspx)」を参照してください。
+    詳細については、「 [タスク スケジューラの概要](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc721871(v=ws.11))」を参照してください。
 
 gMSA をサポートするサービスが他に存在する場合があります。 それらのサービスを構成する方法の詳細については、適切な製品ドキュメントを参照してください。
 
@@ -223,15 +223,15 @@ gMSA をサポートするサービスが他に存在する場合があります
 
 -   方法 1:Active Directory ユーザーとコンピューター
 
-    この方法を使用する手順については、Windows インターフェイスを使用した「 [コンピューター アカウントをグループに追加する](https://technet.microsoft.com/library/cc733097.aspx) 」および「 [Active Directory 管理センターでさまざまなドメインを管理する](manage-different-domains-in-active-directory-administrative-center.md)」を参照してください。
+    この方法を使用する手順については、Windows インターフェイスを使用した「 [コンピューター アカウントをグループに追加する](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc733097(v=ws.11)) 」および「 [Active Directory 管理センターでさまざまなドメインを管理する](manage-different-domains-in-active-directory-administrative-center.md)」を参照してください。
 
 -   方法 2: dsmod
 
-    この方法を使用する手順については、コマンド ラインを使用した「 [コンピューター アカウントをグループに追加する](https://technet.microsoft.com/library/cc733097.aspx) 」を参照してください。
+    この方法を使用する手順については、コマンド ラインを使用した「 [コンピューター アカウントをグループに追加する](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc733097(v=ws.11)) 」を参照してください。
 
 -   方法 3:Windows PowerShell Active Directory コマンドレット Add-ADPrincipalGroupMembership
 
-    この方法を使用する手順については、「 [Add-ADPrincipalGroupMembership](https://technet.microsoft.com/library/ee617203.aspx)」を参照してください。
+    この方法を使用する手順については、「 [Add-ADPrincipalGroupMembership](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee617203(v=technet.10))」を参照してください。
 
 コンピューター アカウントを使用する場合は、既存のアカウントを検索し、新しいコンピューター アカウントを追加します。
 
@@ -271,7 +271,7 @@ Set-ADServiceAccount [-Identity] ITFarm1 -PrincipalsAllowedToRetrieveManagedPass
 
 Windows PowerShell 用の Active Directory モジュールを開き、Set-ADServiceAccount コマンドレットを使用してプロパティを設定します。
 
-これらのプロパティの設定方法の詳細については、TechNet ライブラリの「 [Set-ADServiceAccount](https://technet.microsoft.com/library/ee617252.aspx) 」を参照してください。または、Windows PowerShell の Active Directory モジュールのコマンド プロンプトに「 **Get-Help Set-ADServiceAccount** 」と入力し、ENTER キーを押してください。
+これらのプロパティの設定方法の詳細については、TechNet ライブラリの「 [Set-ADServiceAccount](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee617252(v=technet.10)) 」を参照してください。または、Windows PowerShell の Active Directory モジュールのコマンド プロンプトに「 **Get-Help Set-ADServiceAccount** 」と入力し、ENTER キーを押してください。
 
 ## <a name="decommissioning-member-hosts-from-an-existing-server-farm"></a><a name="BKMK_DecommMemberHosts"></a>既存のサーバー ファームからのメンバー ホストの使用停止
 これらの手順を完了するには、[**Domain Admins**] のメンバーシップか、またはセキュリティ グループ オブジェクトからメンバーを削除する権利が最低限必要です。
@@ -281,15 +281,15 @@ Windows PowerShell 用の Active Directory モジュールを開き、Set-ADServ
 
 -   方法 1:Active Directory ユーザーとコンピューター
 
-    この方法を使用する手順については、「 [Windows インターフェイスを使用してコンピューター アカウントを削除する](https://technet.microsoft.com/library/cc754624.aspx) 」および「 [Active Directory 管理センターでさまざまなドメインを管理する](manage-different-domains-in-active-directory-administrative-center.md)」を参照してください。
+    この方法を使用する手順については、「 [Windows インターフェイスを使用してコンピューター アカウントを削除する](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754624(v=ws.11)) 」および「 [Active Directory 管理センターでさまざまなドメインを管理する](manage-different-domains-in-active-directory-administrative-center.md)」を参照してください。
 
 -   方法 2: drsm
 
-    この方法を使用する手順については、「 [コマンド ラインを使用してコンピューター アカウントを削除する](https://technet.microsoft.com/library/cc754624.aspx) 」を参照してください。
+    この方法を使用する手順については、「 [コマンド ラインを使用してコンピューター アカウントを削除する](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754624(v=ws.11)) 」を参照してください。
 
 -   方法 3:Windows PowerShell Active Directory コマンドレット Remove-ADPrincipalGroupMembership
 
-    この方法の実行手順の詳細については、TechNet ライブラリの「  [Remove-ADPrincipalGroupMembership](https://technet.microsoft.com/library/ee617243.aspx) 」を参照してください。あるいは、Windows PowerShell の Active Directory モジュールのコマンド プロンプトに「 **Get-Help Remove-ADPrincipalGroupMembership** 」と入力し、ENTER キーを押してください。
+    この方法の実行手順の詳細については、TechNet ライブラリの「  [Remove-ADPrincipalGroupMembership](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee617243(v=technet.10)) 」を参照してください。あるいは、Windows PowerShell の Active Directory モジュールのコマンド プロンプトに「 **Get-Help Remove-ADPrincipalGroupMembership** 」と入力し、ENTER キーを押してください。
 
 コンピューター アカウントを一覧する場合は、既存のコンピューター アカウントを検索し、削除されたものを除くすべてのコンピューター アカウントを追加します。
 
@@ -345,7 +345,7 @@ Set-ADServiceAccount [-Identity] ITFarm1 -PrincipalsAllowedToRetrieveManagedPass
     Uninstall-ADServiceAccount ITFarm1
     ```
 
-Uninstall-ADServiceAccount コマンドレットの詳細については、Windows PowerShell の Active Directory モジュールのコマンド プロンプトで、「 **Get-Help Uninstall-ADServiceAccount**」と入力し、ENTER キーを押すか、または TechNet Web の「 [Uninstall-ADServiceAccount](https://technet.microsoft.com/library/ee617202.aspx)」に掲載された情報を参照してください。
+Uninstall-ADServiceAccount コマンドレットの詳細については、Windows PowerShell の Active Directory モジュールのコマンド プロンプトで、「 **Get-Help Uninstall-ADServiceAccount**」と入力し、ENTER キーを押すか、または TechNet Web の「 [Uninstall-ADServiceAccount](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee617202(v=technet.10))」に掲載された情報を参照してください。
 
 
 

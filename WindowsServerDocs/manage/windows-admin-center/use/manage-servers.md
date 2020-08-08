@@ -6,12 +6,12 @@ author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 11/21/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 69f8f20aa9e1b222ff112f91df8d6b3d7767fc84
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 25edd2851638fec99b6afda0415fdf8e8c8f1699
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87962386"
+ms.locfileid: "87997183"
 ---
 # <a name="manage-servers-with-windows-admin-center"></a>Windows 管理センターを使用してサーバーを管理する
 
@@ -411,7 +411,7 @@ PowerShell では、次の機能がサポートされています。
 ### <a name="features"></a>機能
 
 - ユーザーとシステムの環境変数を表示および変更する
-- アラートを監視するための構成を表示[Azure Monitor](azure-monitor.md)
+- アラートを監視するための構成を表示[Azure Monitor](../azure/azure-monitor.md)
 - 電源構成の表示と変更
 - リモートデスクトップの設定を表示および変更する
 - ロールベースのアクセス制御設定を表示および変更する
@@ -436,7 +436,7 @@ PowerShell では、次の機能がサポートされています。
 - ボリュームのプロパティの編集
 - ボリュームを削除する
 - クォータ管理のインストール
-- ファイルサーバーリソースマネージャーのクォータ[の記憶域の管理->のクォータの作成と更新](https://docs.microsoft.com/windows-server/storage/fsrm/quota-management)
+- ファイルサーバーリソースマネージャーのクォータ[の記憶域の管理->のクォータの作成と更新](../../../storage/fsrm/quota-management.md)
 
 [**ストレージのフィードバックと提案された機能を表示する**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BStorage%5D)
 
@@ -451,7 +451,7 @@ PowerShell では、次の機能がサポートされています。
 ## <a name="storage-replica"></a>記憶域レプリカ
 
 **記憶域レプリカ**を使用して、サーバー間の記憶域レプリケーションを管理します。
- [記憶域レプリカの詳細](https://docs.microsoft.com/windows-server/storage/storage-replica/storage-replica-ui)
+ [記憶域レプリカの詳細](../../../storage/storage-replica/server-to-server-storage-replication.md)
 
 ## <a name="system-insights"></a>システム インサイト
 
@@ -473,7 +473,7 @@ PowerShell では、次の機能がサポートされています。
 - 更新履歴の一覧を表示する
 - 更新プログラムをインストールする
 - オンラインで Microsoft Update からの更新プログラムを確認する
-- [Azure Update Management](https://docs.microsoft.com/azure/automation/automation-update-management)統合の管理
+- [Azure Update Management](/azure/automation/automation-update-management)統合の管理
 
 [**更新プログラムのフィードバックと提案された機能を表示する**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BUpdates%5D)
 

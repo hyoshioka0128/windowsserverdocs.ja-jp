@@ -7,12 +7,12 @@ author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fad4586b4d510fd22ecd90855b3afa1c8870c1bf
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 75f0395afbcbefcdc4ac3a9fc4dc4de3bf962428
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895626"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991749"
 ---
 # <a name="manage-user-access-logging"></a>ユーザー アクセス ログの管理
 
@@ -233,11 +233,11 @@ UAL で記録できるアクセスの最大数は 1 日に 65,535 個です。UA
 ## <a name="recovering-from-a-corrupt-state"></a>破損した状態からの回復
 このセクションでは、UAL が拡張可能ストレージエンジン (ESE) を高レベルで使用する方法と、UAL データが破損または回復不能な場合に管理者が実行できる操作について説明します。
 
-UAL ではシステム リソースの使用を最適化し、破損への耐性を確保するために ESE を使用します。  ESE の利点の詳細については、MSDN の「 [Extensible Storage Engine](https://msdn.microsoft.com/library/windows/desktop/gg269259(v=exchg.10).aspx) 」を参照してください。
+UAL ではシステム リソースの使用を最適化し、破損への耐性を確保するために ESE を使用します。  ESE の利点の詳細については、MSDN の「 [Extensible Storage Engine](/windows/win32/extensible-storage-engine/extensible-storage-engine) 」を参照してください。
 
-UAL サービスが開始されるたびに、ESE でソフト回復が実行されます。 詳細については、MSDN の「 [Extensible Storage Engine Files (Extensible Storage Engine ファイル)](https://msdn.microsoft.com/library/windows/desktop/gg294069(v=exchg.10).aspx) 」を参照してください。
+UAL サービスが開始されるたびに、ESE でソフト回復が実行されます。 詳細については、MSDN の「 [Extensible Storage Engine Files (Extensible Storage Engine ファイル)](/windows/win32/extensible-storage-engine/extensible-storage-engine-files) 」を参照してください。
 
-ソフト回復で問題が発生した場合は、ESE でクラッシュ回復が実行されます。 詳細については、MSDN の「 [JetInit Function (JetInit 関数)](https://msdn.microsoft.com/library/windows/desktop/gg294068(v=exchg.10).aspx) 」を参照してください。
+ソフト回復で問題が発生した場合は、ESE でクラッシュ回復が実行されます。 詳細については、MSDN の「 [JetInit Function (JetInit 関数)](/windows/win32/extensible-storage-engine/jetinit-function) 」を参照してください。
 
 UAL が ESE ファイルの既存のセットで開始できない場合は、\Windows\System32\LogFiles\SUM\ ディレクトリ内のすべてのファイルが削除されます。 これらのファイルが削除されると、User Access Logging Service が再開されて、新しいファイルが作成されます。 UAL サービスは、新たにインストールされたコンピューターの場合と同様に再開されます。
 
@@ -258,5 +258,3 @@ Reg add HKLM\Software\Microsoft\Windows\CurrentVersion\SyncShareSrv /v EnableWor
 ## <a name="see-also"></a><a name="BKMK_Links"></a>関連項目
 
 - [ユーザーアクセスログを使ってみる](get-started-with-user-access-logging.md)
-
-

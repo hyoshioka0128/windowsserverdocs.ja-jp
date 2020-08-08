@@ -2,18 +2,16 @@
 title: 記憶域レポートの管理
 description: この記事では、記憶域レポートを生成、スケジュール、および監視する方法について説明します。
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 5bdcada1b445298c8743bdb39491726b594d0a66
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: a43dbeac08c1cb851df48cb8412343928e07b1d0
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475479"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957349"
 ---
 # <a name="storage-reports-management"></a>記憶域レポートの管理
 
@@ -40,7 +38,7 @@ ms.locfileid: "85475479"
 > [!Note]
 > 電子メール通知や特定のレポート機能を設定するには、まずファイル サーバー リソース マネージャーの全般的なオプションを設定する必要があります。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 -   [ファイル サーバー リソース マネージャーのオプションを設定する](setting-file-server-resource-manager-options.md)
 

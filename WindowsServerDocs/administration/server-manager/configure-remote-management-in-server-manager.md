@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b0d2369bd42fc884b1a401fc1450dbe9d1e47663
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 0a39eaaff5497ee85cb823907cd8b57f1888dd08
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895807"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991877"
 ---
 # <a name="configure-remote-management-in-server-manager"></a>サーバーマネージャーでのリモート管理の構成
 
@@ -153,7 +153,7 @@ Windows Server 2016 では、サーバーマネージャーはリモート通信
 
 ### <a name="to-disable-remote-management-by-using-an-answer-file-during-unattended-installation"></a>応答ファイルを使用して無人インストール中にリモート管理を無効にするには
 
-1.  windows システムイメージマネージャー (Windows SIM) を使用して、Windows Server 2016 インストール用の無人インストール応答ファイルを作成します。 応答ファイルを作成する方法および Windows SIM を使用する方法の詳細については、「 [Windows システム イメージ マネージャーとは](https://technet.microsoft.com/library/cc766347.aspx) 」および「 [ステップ バイ ステップ ガイド: IT プロ用 Windows の基本展開](https://technet.microsoft.com/library/dd349348.aspx)」を参照してください。
+1.  windows システムイメージマネージャー (Windows SIM) を使用して、Windows Server 2016 インストール用の無人インストール応答ファイルを作成します。 応答ファイルを作成する方法および Windows SIM を使用する方法の詳細については、「 [Windows システム イメージ マネージャーとは](/previous-versions/windows/it-pro/windows-vista/cc766347(v=ws.10)) 」および「 [ステップ バイ ステップ ガイド: IT プロ用 Windows の基本展開](/previous-versions/windows/it-pro/windows-7/dd349348(v=ws.10))」を参照してください。
 
 2.  応答ファイルで、設定**Microsoft-Windows-Web-Services-for-Management-Core\EnableServerremoteManagement**を見つけます。
 
@@ -183,8 +183,5 @@ WinRM リスナー設定の構成方法の詳細については、コマンド�
 
 ## <a name="see-also"></a>参照
 サーバーマネージャーにサーバー[を追加する](add-servers-to-server-manager.md) 
-Windows [PowerShell: Windows Server TechCenter](https://technet.microsoft.com/library/dd347642.aspx) 
+Windows [PowerShell: Windows Server TechCenter](/previous-versions/dd347642(v=technet.10)) 
  の about_remote_Troubleshooting[ユーザーアカウント制御の説明](https://support.microsoft.com/kb/951016)
-
-
-

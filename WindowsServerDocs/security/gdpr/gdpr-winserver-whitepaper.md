@@ -5,12 +5,12 @@ ms.topic: article
 ms.date: 09/25/2017
 ms.author: nirb
 author: nirb-ms
-ms.openlocfilehash: 0a21adf3bafeb93f2f9fc18da785fae1a81260b3
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 1ddfbbda9ab0bdf4d04213069e192e471e4d1b98
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971529"
+ms.locfileid: "87991688"
 ---
 # <a name="beginning-your-general-data-protection-regulation-gdpr-journey-for-windows-server"></a>Windows Server 向けの一般データ保護規則 (GDPR) の旅を開始する
 
@@ -167,7 +167,7 @@ Windows Server 2016 は、id、オペレーティングシステム、および�
 
 - **ソーシャルエンジニアリングの研究。** ほとんどの資格情報の脅威は、まず組織を調査し、次にソーシャルエンジニアリングによって実施されます。 たとえば、攻撃者は、組織のネットワークへのアクセス権を持つ正当なアカウント (必ずしも昇格されたアカウントではありません) を侵害するために、電子メールフィッシング攻撃を実行する場合があります。 攻撃者は、これらの有効なアカウントを使用して、ネットワーク上で追加の調査を実行し、管理タスクを実行できる特権アカウントを特定します。
 
-- **高度な特権を持つアカウントを活用します。** ネットワークに通常の管理者特権ではないユーザーアカウントを使用している場合でも、攻撃者は昇格されたアクセス許可を持つアカウントにアクセスできます。 これを行うための一般的な方法の1つは、ハッシュのパススルー攻撃またはトークンのパススルー攻撃を使用することです。 ハッシュパスとその他の資格情報の盗難手法の詳細については、「Pass- [hash (PtH)」ページ](https://technet.microsoft.com/dn785092.aspx)のリソースを参照してください。
+- **高度な特権を持つアカウントを活用します。** ネットワークに通常の管理者特権ではないユーザーアカウントを使用している場合でも、攻撃者は昇格されたアクセス許可を持つアカウントにアクセスできます。 これを行うための一般的な方法の1つは、ハッシュのパススルー攻撃またはトークンのパススルー攻撃を使用することです。 ハッシュパスとその他の資格情報の盗難手法の詳細については、「Pass- [hash (PtH)」ページ](/previous-versions/dn785092(v=msdn.10))のリソースを参照してください。
 
 他にも、攻撃者が特権 id を特定して侵害するために使用できる他の方法がいくつかあります (新しい方法は毎日作成されます)。 したがって、特権のある id に攻撃者がアクセスする能力を減らすために、ユーザーが最小限の特権を持つアカウントでログオンするための方法を確立することが重要です。 以下のセクションでは、Windows Server がこれらのリスクを軽減できる機能の概要を説明します。
 
@@ -211,7 +211,7 @@ Windows Defender Credential Guard は次を使用します。
 
 - TPM 2.0、ディスクリートまたはファームウェアのいずれか (推奨 - ハードウェアへのバインドを提供)
 
-Windows Defender Credential Guard を使用して、Windows Server 2016 で資格情報と資格情報の派生物を保護することで、特権 id を保護することができます。 Windows Defender Credential Guard の要件の詳細については、「 [Windows Defender Credential guard による派生ドメイン資格情報の保護](https://docs.microsoft.com/windows/access-protection/credential-guard/credential-guard)」を参照してください。
+Windows Defender Credential Guard を使用して、Windows Server 2016 で資格情報と資格情報の派生物を保護することで、特権 id を保護することができます。 Windows Defender Credential Guard の要件の詳細については、「 [Windows Defender Credential guard による派生ドメイン資格情報の保護](/windows/access-protection/credential-guard/credential-guard)」を参照してください。
 
 #### <a name="windows-defender-remote-credential-guard"></a>Windows Defender リモート資格情報ガード
 Windows Server 2016 および Windows 10 記念日更新プログラムの windows Defender Remote Credential Guard は、リモートデスクトップ接続を使用してユーザーの資格情報を保護するのにも役立ちます。 以前は、リモートデスクトップサービスを使用するすべてのユーザーはローカルコンピューターにログオンする必要があり、その後、ターゲットコンピューターへのリモート接続を実行したときに再度ログオンする必要がありました。 この2回目のログインでは、ターゲットコンピューターに資格情報を渡して、ハッシュまたはチケットのパススルー攻撃を受けます。
@@ -226,7 +226,7 @@ Windows Defender Remote Credential Guard を使用すると、Windows Server 201
 
 - リモートデスクトップのクラシック Windows アプリが必要です。 リモートデスクトップユニバーサル Windows プラットフォームアプリでは、Windows Defender Remote Credential Guard はサポートされていません。
 
-リモートデスクトップサーバーのレジストリ設定を使用して Windows Defender Remote Credential Guard を有効にすることができます。また、リモートデスクトップクライアントでグループポリシーまたはリモートデスクトップ接続パラメーターを使用することもできます。 Windows Defender Remote Credential Guard を有効にする方法の詳細については、「 [Windows Defender Remote Credential guard によるリモートデスクトップ資格情報の保護](https://docs.microsoft.com/windows/access-protection/remote-credential-guard)」を参照してください。 Windows Defender Credential Guard と同様に、windows Defender Remote Credential Guard を使用して、Windows Server 2016 の特権 id を保護することができます。
+リモートデスクトップサーバーのレジストリ設定を使用して Windows Defender Remote Credential Guard を有効にすることができます。また、リモートデスクトップクライアントでグループポリシーまたはリモートデスクトップ接続パラメーターを使用することもできます。 Windows Defender Remote Credential Guard を有効にする方法の詳細については、「 [Windows Defender Remote Credential guard によるリモートデスクトップ資格情報の保護](/windows/access-protection/remote-credential-guard)」を参照してください。 Windows Defender Credential Guard と同様に、windows Defender Remote Credential Guard を使用して、Windows Server 2016 の特権 id を保護することができます。
 
 ### <a name="secure-the-operating-system-to-run-your-apps-and-infrastructure"></a>アプリとインフラストラクチャを実行するためのオペレーティングシステムのセキュリティ保護
 サイバーの脅威を防ぐには、インフラストラクチャの標準的な運用方法を利用して制御を受けるマルウェアや攻撃を検出してブロックする必要もあります。 攻撃者は、オペレーティングシステムまたはアプリケーションを、事前に定義されていない方法で実行できる場合、そのシステムを使用して悪意のあるアクションを実行する可能性があります。 Windows Server 2016 は、悪意のあるソフトウェアを実行しているか、脆弱性を悪用している外部攻撃者をブロックする保護レイヤーを提供します。 オペレーティングシステムは、システムが侵害されたことを示すアクティビティに管理者に警告することによって、インフラストラクチャとアプリケーションを保護するためのアクティブな役割を持ちます。
@@ -340,11 +340,11 @@ ATA は、組織内の id の侵害を検出するのに役立つオンプレミ
 
 |攻撃の種類 |説明 |
 |---------|---------|
-|悪意のある攻撃 |これらの攻撃は、次のような既知の攻撃の種類の一覧から攻撃を探すことによって検出されます。<ul><li>Pass-the-Ticket (PtT)</li><li>Pass-the-Hash (PtH)</li><li>Overpass-the-Hash</li><li>偽造 PAC (MS14 068)</li><li>ゴールデン チケット</li><li>悪意のあるレプリケーション</li><li>偵察</li><li>ブルート フォース</li><li>リモート実行</li></ul>検出可能な悪意のある攻撃とその説明の完全な一覧については、「 [ATA が検出できる疑わしいアクティビティ](https://docs.microsoft.com/advanced-threat-analytics/understand-explore/ata-threats)」を参照してください。|
+|悪意のある攻撃 |これらの攻撃は、次のような既知の攻撃の種類の一覧から攻撃を探すことによって検出されます。<ul><li>Pass-the-Ticket (PtT)</li><li>Pass-the-Hash (PtH)</li><li>Overpass-the-Hash</li><li>偽造 PAC (MS14 068)</li><li>ゴールデン チケット</li><li>悪意のあるレプリケーション</li><li>偵察</li><li>ブルート フォース</li><li>リモート実行</li></ul>検出可能な悪意のある攻撃とその説明の完全な一覧については、「 [ATA が検出できる疑わしいアクティビティ](/advanced-threat-analytics/understand-explore/ata-threats)」を参照してください。|
 |異常な動作 |これらの攻撃は、行動分析を使用して検出され、機械学習を使用して、次のような問題のあるアクティビティを識別します。<ul><li>異常なログイン</li><li>未知の脅威</li><li>パスワードの共有</li><li>侵入拡大</li></ul>|
 |セキュリティの問題とリスク |これらの攻撃は、次のような現在のネットワークとシステム構成を調べることによって検出されます。<ul><li>信頼関係の消失</li><li>脆弱なプロトコル</li><li>既知のプロトコルの脆弱性</li></ul>|
 
-ATA を使用して、特権 id を侵害しようとしている攻撃者を検出することができます。 ATA のデプロイの詳細については、 [Advanced Threat Analytics のドキュメント](https://docs.microsoft.com/advanced-threat-analytics/)の計画、設計、および展開に関するトピックを参照してください。
+ATA を使用して、特権 id を侵害しようとしている攻撃者を検出することができます。 ATA のデプロイの詳細については、 [Advanced Threat Analytics のドキュメント](/advanced-threat-analytics/)の計画、設計、および展開に関するトピックを参照してください。
 
 ## <a name="related-content-for-associated-windows-server-2016-solutions"></a>関連する Windows Server 2016 ソリューションの関連コンテンツ
 
@@ -372,5 +372,3 @@ ATA を使用して、特権 id を侵害しようとしている攻撃者を検
 2017 年 9 月発行<br>
 バージョン 1.0<br>
 © 2017 Microsoft. All rights reserved.
-
-

@@ -7,12 +7,12 @@ ms.assetid: e74961a2-bd38-48ae-b1c0-4b3eff761b4a
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 37fd4d30183d626caf0891fea2a41f79046030e9
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 4a38b26604ae6089acf6e9b64c20fd9115edcade
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970469"
+ms.locfileid: "87997208"
 ---
 # <a name="selecting-hardware-for-your-multipoint-services-system"></a>MultiPoint Services システムのハードウェアを選択する
 
@@ -51,7 +51,7 @@ MultiPoint サービスのシステムをビルドすると、Windows Server 201
 
 MultiPoint サービスのシステムは、複数\-、単一のホスト コンピューターに接続されているすべてのユーザーのユーザーの環境です。 これにより、すべてのユーザーが同じコンピューターを共有するため、CPU 使用率が増加します。 マルチ メディア プログラムなどの一部のタスク \(メディア プレーヤー、ビデオなど、\-編集ソフトウェア\), より大きな処理の要求があります。 したがって、ユーザー シナリオをサポートする必要があるのユーザーの数と種類の処理要件を処理できる CPU を選択することを確認してください。
 
-MultiPoint サービスは、x64 を必要と\-ベースの CPU、および」の説明に従って、コンピューターのシステム要件を満たす必要があります [ハードウェア要件とパフォーマンスの推奨事項](Hardware-Requirements-and-Performance-Recommendations.md)します。
+MultiPoint サービスは、x64 を必要と\-ベースの CPU、および」の説明に従って、コンピューターのシステム要件を満たす必要があります [ハードウェア要件とパフォーマンスの推奨事項](./hardware-and-performance-recommendations.md)します。
 
 次の種類のプロセッサが高い MultiPoint サービスのシステムで使用するテスト\-マルチ メディア プログラムなどの処理プログラムを要求します。
 

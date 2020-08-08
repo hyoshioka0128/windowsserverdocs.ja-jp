@@ -1,33 +1,31 @@
 ---
 title: 要塞フォレストでキーモードを使用して HGS クラスターを初期化する
-ms.prod: windows-server
 ms.topic: article
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 45f0f587c17e90251da2632f034fe03e2dc1c083
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b526895f9b9e819523ee459701c2f09988565544
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856655"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87965999"
 ---
 # <a name="initialize-the-hgs-cluster-using-key-mode-in-an-existing-bastion-forest"></a>既存の要塞フォレストでキーモードを使用して HGS クラスターを初期化する
 
-> 適用対象: Windows Server 2019
-> 
+> 適用対象:Windows Server 2019
+>
 > [!div class="step-by-step"]
-> [«新しいフォレストに HGS をインストール](guarded-fabric-install-hgs-in-a-bastion-forest.md)
-> [ホストキーの作成»](guarded-fabric-create-host-key.md)
+> [«新しいフォレスト](guarded-fabric-install-hgs-in-a-bastion-forest.md) 
+>  に HGS をインストールする[ホストキーの作成»](guarded-fabric-create-host-key.md)
 
 Active Directory Domain Services はコンピューターにインストールされますが、未構成のままにしておく必要があります。
 
-[!INCLUDE [Obtain certificates for HGS](../../../includes/guarded-fabric-initialize-hgs-default-step-two.md)] 
+[!INCLUDE [Obtain certificates for HGS](../../../includes/guarded-fabric-initialize-hgs-default-step-two.md)]
 
 続行する前に、ホストガーディアンサービスのクラスターオブジェクトを事前設定し、Active Directory の VCO および CNO オブジェクトに対して、ログインしているユーザーに**フルコントロール**を付与したことを確認してください。
-仮想コンピューターのオブジェクト名は `-HgsServiceName` パラメーターに、クラスター名を `-ClusterName` パラメーターに渡す必要があります。
+仮想コンピューターのオブジェクト名は、パラメーターに、クラスター名をパラメーターに渡す必要があり `-HgsServiceName` `-ClusterName` ます。
 
 > [!TIP]
 > 続行する前に、AD ドメインコントローラーを再確認して、クラスターオブジェクトがすべての Dc にレプリケートされていることを確認してください。
@@ -43,5 +41,5 @@ Install-ADServiceAccount -Identity 'HGSgMSA'
 Initialize-HgsServer -UseExistingDomain -ServiceAccount 'HGSgMSA' -JeaReviewersGroup 'HgsJeaReviewers' -JeaAdministratorsGroup 'HgsJeaAdmins' -HgsServiceName 'HgsService' -ClusterName 'HgsCluster' -SigningCertificatePath '.\signCert.pfx' -SigningCertificatePassword $signPass -EncryptionCertificatePath '.\encCert.pfx' -EncryptionCertificatePassword $encryptionCertPass -TrustHostKey
 ```
 
-ローカルコンピューターにインストールされている証明書 (HSM ベースの証明書やエクスポートされていない証明書など) を使用している場合は、代わりに `-SigningCertificateThumbprint` パラメーターと `-EncryptionCertificateThumbprint` パラメーターを使用します。
+ローカルコンピューターにインストールされている証明書 (HSM ベースの証明書やエクスポートできない証明書など) を使用している場合は、 `-SigningCertificateThumbprint` 代わりにパラメーターとパラメーターを使用し `-EncryptionCertificateThumbprint` ます。
 

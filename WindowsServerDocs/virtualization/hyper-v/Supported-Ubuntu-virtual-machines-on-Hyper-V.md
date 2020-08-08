@@ -1,20 +1,18 @@
 ---
 title: HYPER-V でサポートされている Ubuntu 仮想マシン
 description: 各バージョンに含まれる Linux integration services と機能の一覧を示します。
-ms.prod: windows-server
 manager: dongill
-ms.technology: compute-hyper-v
 ms.topic: article
 ms.assetid: 95ea5f7c-25c6-494b-8ffd-2a77f631ee94
 author: shirgall
 ms.author: shirgall
 ms.date: 04/08/2020
-ms.openlocfilehash: 541f34e11146715fc54017dc3fb0d831cb4e078e
-ms.sourcegitcommit: 7b1ebc4934998af2472962ca8cce1c872f39946f
+ms.openlocfilehash: 88d5659bb4732c82cc7ecc5e4a5e806f4b984739
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80994495"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87989314"
 ---
 # <a name="supported-ubuntu-virtual-machines-on-hyper-v"></a>HYPER-V でサポートされている Ubuntu 仮想マシン
 
@@ -30,12 +28,12 @@ ms.locfileid: "80994495"
 
 * (*空白*) の機能は使用できません
 
-|**機能**|**Windows Server オペレーティングシステムのバージョン**|**19.10**|**18.04 LTS**|**16.04 LTS**|**14.04 LTS**|
+|**機能**|**Windows Server オペレーティング システムのバージョン**|**19.10**|**18.04 LTS**|**16.04 LTS**|**14.04 LTS**|
 |-|-|-|-|-|-|
 |**可用性**||組み込み|組み込み|組み込み|組み込み|
-|**[Core](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
+|**[コア](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |Windows Server 2016 の正確な時刻|2019、2016|&#10004;|&#10004;|&#10004;||
-|**[機能](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#networking)**||||||
+|**[ネットワーク](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#networking)**||||||
 |Jumbo Frame|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |VLAN のタグ付けとトランキング|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |ライブ マイグレーション|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
@@ -43,13 +41,13 @@ ms.locfileid: "80994495"
 |vRSS|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |TCP セグメント化とチェックサムのオフロード|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |SR-IOV|2019、2016|&#10004;|&#10004;|&#10004;||
-|**[・](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)**|||||
+|**[Storage](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)**|||||
 |VHDX のサイズ変更|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |仮想ファイバー チャネル|2019、2016、2012 R2|& #10004 です。注 2|& #10004 です。注 2|& #10004 です。注 2|& #10004 です。注 2|
-|仮想マシンのライブバックアップ|2019、2016、2012 R2|&#10004;3、4、6 に注意してください。|& #10004 です。3, 4, 5 に注意してください。|& #10004 です。3, 4, 5 に注意してください。|& #10004 です。3, 4, 5 に注意してください。|
+|仮想マシンのライブバックアップ|2019、2016、2012 R2|&#10004; メモ3、4、6|& #10004 です。3, 4, 5 に注意してください。|& #10004 です。3, 4, 5 に注意してください。|& #10004 です。3, 4, 5 に注意してください。|
 |トリムのサポート|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |SCSI WWN|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
-|**[量](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)**|||||
+|**[メモリ](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)**|||||
 |PAE カーネルサポート|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |MMIO ギャップの構成|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |動的メモリでホット アド|2019、2016、2012 R2|& #10004 です。7, 8, 9 に注意してください。|& #10004 です。7, 8, 9 に注意してください。|& #10004 です。7, 8, 9 に注意してください。|& #10004 です。7, 8, 9 に注意してください。|
@@ -57,24 +55,24 @@ ms.locfileid: "80994495"
 |ランタイムのメモリのサイズ変更|2019、2016|&#10004;|&#10004;|&#10004;|&#10004;|
 |**[Video](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)**||||||
 |HYPER-V で特定のビデオ デバイス|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
-|**[な](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#miscellaneous)**|||||
-|キー/値ペア|2019、2016、2012 R2|&#10004;注 6「10|& #10004 です。注 5、10|& #10004 です。注 5、10|& #10004 です。注 5、10|
+|**[その他](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#miscellaneous)**|||||
+|キーと値のペア|2019、2016、2012 R2|&#10004; メモ6、10|& #10004 です。注 5、10|& #10004 です。注 5、10|& #10004 です。注 5、10|
 |マスクなしの割り込み|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |ホストからゲストへのファイルのコピー|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |lsvmbus コマンド|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |Hyper V ソケット|2019、2016|||||
 |PCI パススルー/DDA|2019、2016|&#10004;|&#10004;|&#10004;|&#10004;|
-|**[第2世代仮想マシン](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#generation-2-virtual-machines)**|||||
+|**[第 2 世代仮想マシン](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#generation-2-virtual-machines)**|||||
 |UEFI を使用したブート|2019、2016、2012 R2|& #10004 です。注 11、12|& #10004 です。注 11、12|& #10004 です。注 11、12|& #10004 です。注 11、12|
 |セキュア ブート|2019、2016|&#10004;|&#10004;|&#10004;|&#10004;|
 
-## <a name="notes"></a>説明
+## <a name="notes"></a>メモ
 
 1. 静的 IP インジェクションが機能しなくなる **ネットワーク マネージャー** が仮想マシン上の指定したハイパー V 固有ネットワーク アダプターに対して構成されています。 静的 IP の円滑に機能することを確認するインジェクションを確認してくださいネットワーク マネージャーが完全にオフや、オフになっているを使って特定のネットワーク アダプターにその **ifcfg ethX** ファイルです。
 
 2. 仮想ファイバー チャネル デバイスを使用している論理ユニット番号 (LUN 0) を 0 に設定されていることを確認します。 LUN 0 が設定されていません Linux 仮想マシンは、ファイバー チャネル デバイスをネイティブにマウントすることができません。
 
-3. 仮想マシンのライブ バックアップ操作中に開いているファイル ハンドルがある場合、例外的に、バックアップされる VHD で復元時にファイル システムの整合性チェック (`fsck`) を行わなければならないことがあります。
+3. 開いている場合に、仮想マシンのバックアップ操作中にファイルを処理し、いくつかのコーナー ケースでバックアップされる Vhd は、ファイル システムの整合性チェックを行う必要があります (`fsck`) のサイズに戻す。
 
 4. ライブ バックアップ操作がエラーに何も行わずに、仮想マシンに接続された iSCSI デバイスまたは直接接続ストレージ (パススルー ディスクとも呼ばれます) がある場合。
 
@@ -110,7 +108,7 @@ ms.locfileid: "80994495"
 
 10. Windows Server 2019、Windows Server 2016、または Windows Server 2012 R2 では、Linux ソフトウェア更新プログラムがないと、キー/値ペアのインフラストラクチャが正しく機能しない可能性があります。 この機能の問題が確認された場合に、ソフトウェア更新プログラムを取得するディストリビューションのベンダーに問い合わせてください。
 
-11. Windows Server 2012 R2 では、第 2 世代仮想マシンは、セキュア ブート オプションが無効にしない限り、仮想マシンは起動しません Linux 既定で有効になり、セキュア ブートがあります。 **Hyper-V マネージャー**で仮想マシンの設定の **[ファームウェア]** セクションか PowerShell を使用してセキュア ブートを無効にすることができます。
+11. Windows Server 2012 R2 では、[第 2 世代仮想マシンは、セキュア ブート オプションが無効にしない限り、仮想マシンは起動しません Linux 既定で有効になり、セキュア ブートがあります。 **Hyper-v マネージャー**で仮想マシンの設定の [**ファームウェア**] セクションでセキュアブートを無効にするか、Powershell を使用して無効にすることができます。
 
     ```Powershell
     Set-VMFirmware -VMName "VMname" -EnableSecureBoot Off
@@ -146,18 +144,18 @@ ms.locfileid: "80994495"
 
 ## <a name="see-also"></a>参照
 
-* [サポートされている CentOS と Hyper-v 上の仮想マシンの Red Hat Enterprise Linux](Supported-CentOS-and-Red-Hat-Enterprise-Linux-virtual-machines-on-Hyper-V.md)
+* [CentOS をサポートし、HYPER-V 上の Red Hat Enterprise Linux 仮想マシン](Supported-CentOS-and-Red-Hat-Enterprise-Linux-virtual-machines-on-Hyper-V.md)
 
-* [Hyper-V でサポートされている Debian 仮想マシン](Supported-Debian-virtual-machines-on-Hyper-V.md)
+* [Debian の仮想マシンを HYPER-V でサポートされています。](Supported-Debian-virtual-machines-on-Hyper-V.md)
 
-* [Hyper-v でサポートされている Oracle Linux の仮想マシン](Supported-Oracle-Linux-virtual-machines-on-Hyper-V.md)
+* [HYPER-V でサポートされている Oracle Linux 仮想マシン](Supported-Oracle-Linux-virtual-machines-on-Hyper-V.md)
 
-* [Hyper-v でサポートされている SUSE 仮想マシン](Supported-SUSE-virtual-machines-on-Hyper-V.md)
+* [HYPER-V でサポートされている SUSE 仮想マシン](Supported-SUSE-virtual-machines-on-Hyper-V.md)
 
 * [Hyper-v 上の Linux および FreeBSD 仮想マシンの機能の説明](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md)
 
-* [Hyper-v で Linux を実行するためのベストプラクティス](Best-Practices-for-running-Linux-on-Hyper-V.md)
+* [HYPER-V で Linux を実行するためのベスト プラクティス](Best-Practices-for-running-Linux-on-Hyper-V.md)
 
-* [Set-vmfirmware](https://technet.microsoft.com/library/dn464287.aspx)
+* [Set-vmfirmware](/powershell/module/hyper-v/set-vmfirmware?view=win10-ps)
 
-* [第2世代 VM の Ubuntu 14.04-Ben Armstrong の仮想化に関するブログ](https://blogs.msdn.com/b/virtual_pc_guy/archive/2014/06/09/ubuntu-14-04-in-a-generation-2-vm.aspx)
+* [ジェネレーション 2 の Ubuntu 14.04 VM - Ben Armstrong の仮想化のブログ](/archive/blogs/virtual_pc_guy/ubuntu-14-04-in-a-generation-2-vm)
