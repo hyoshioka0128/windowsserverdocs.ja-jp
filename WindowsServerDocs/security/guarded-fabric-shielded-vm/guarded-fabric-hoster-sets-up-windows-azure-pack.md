@@ -6,12 +6,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 08/29/2018
-ms.openlocfilehash: 7e62b5dab69676e15494ff531ffe0fce0e550c1a
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 3d6af6e6dea584485e2517d8e54c107c5cc2af90
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970089"
+ms.locfileid: "87996270"
 ---
 # <a name="shielded-vms---hosting-service-provider-sets-up-windows-azure-pack"></a>シールドされた VM - ホスティング サービス プロバイダーで Windows Azure Pack をセットアップする
 
@@ -25,7 +25,7 @@ ms.locfileid: "87970089"
 
 1. ホストしているファブリックの System Center 2016-Virtual Machine Manager (VMM) の構成を完了します。 これには、VM テンプレートと VM クラウドの設定が含まれます。これは Windows Azure Pack を通じて公開されます。
 
-    [シナリオ - VMM で保護されたホストとシールドされた仮想マシンを展開する](https://technet.microsoft.com/system-center-docs/vmm/scenario/guarded-overview)
+    [シナリオ - VMM で保護されたホストとシールドされた仮想マシンを展開する](/system-center/vmm/deploy-guarded-host-fabric?view=sc-vmm-2019)
 
 2. System Center 2016-Service Provider Foundation (SPF) をインストールして構成します。 このソフトウェアを使用すると、Windows Azure Pack が VMM サーバーと通信できるようになります。
 
@@ -44,7 +44,7 @@ ms.locfileid: "87970089"
 
 テナントの web ポータルをホストするコンピューターに Windows Azure Pack (WAP) をインストールして構成します。 このコンピューターは、SPF サーバーにアクセスし、テナントから到達できる必要があります。
 
-1.  [WAP のシステム要件](https://technet.microsoft.com/library/dn296442.aspx)を確認し、[前提条件](https://technet.microsoft.com/library/dn469335.aspx)となるソフトウェアをインストールします。
+1.  [WAP のシステム要件](/previous-versions/azure/windows-server-azure-pack/dn296442(v=technet.10))を確認し、[前提条件](/previous-versions/azure/windows-server-azure-pack/dn469335(v=technet.10))となるソフトウェアをインストールします。
 
 2.  [Web Platform Installer](https://www.microsoft.com/web/downloads/platform.aspx)をダウンロードしてインストールします。 コンピューターがインターネットに接続されていない場合は、[オフラインインストールの手順](https://www.iis.net/learn/install/web-platform-installer/web-platform-installer-v4-command-line-webpicmdexe-rtw-release)に従います。
 
@@ -52,7 +52,7 @@ ms.locfileid: "87970089"
 
 4.  インストールを続行します。 インストールが完了すると、構成サイト (*https:// &lt; wapserver &gt; : 30101/*) が web ブラウザーで開きます。 この web サイトで、SQL server に関する情報を提供し、WAP の構成を完了します。
 
-Windows Azure Pack の設定の詳細については、「 [Windows Azure Pack の高速展開のインストール](https://technet.microsoft.com/dn296439.aspx)」を参照してください。
+Windows Azure Pack の設定の詳細については、「 [Windows Azure Pack の高速展開のインストール](/previous-versions/azure/windows-server-azure-pack/dn296439(v=technet.10))」を参照してください。
 
 > [!NOTE]
 > 環境内で既に Windows Azure Pack を実行している場合は、既存のインストールを使用できます。 ただし、最新のシールドされた VM 機能を使用するには、インストールを少なくとも更新プログラムのロールアップ10にアップグレードする必要があります。

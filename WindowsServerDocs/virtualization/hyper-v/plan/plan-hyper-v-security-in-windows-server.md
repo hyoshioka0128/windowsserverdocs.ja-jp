@@ -7,12 +7,12 @@ manager: dongill
 author: larsiwer
 ms.author: kathydav
 ms.date: 08/03/2018
-ms.openlocfilehash: b9cb34a7d7c790bb7eee939f9247609e7cee6e3e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: af974edfb94ccf1a0a4844df43885198ab68d416
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87947978"
+ms.locfileid: "87996005"
 ---
 # <a name="plan-for-hyper-v-security-in-windows-server"></a>Windows Server での Hyper-v セキュリティの計画
 
@@ -22,18 +22,18 @@ HYPER-V ホストのオペレーティング システム、仮想マシン、�
 
 ## <a name="secure-the-hyper-v-host"></a>HYPER-V ホストのセキュリティ保護します。
 - **ホストの OS をセキュリティで保護してください。**
-    - 管理オペレーティング システムに必要な最低限の Windows Server インストール オプションを使用して、攻撃対象領域を最小限に抑えます。 詳細については、Windows Server テクニカルコンテンツライブラリの[インストールオプション](/windows-server/windows-server#installation-options)に関するセクションを参照してください。 Windows 10 では、HYPER-V では、実稼働ワークロードを実行することは推奨されません。
+    - 管理オペレーティング システムに必要な最低限の Windows Server インストール オプションを使用して、攻撃対象領域を最小限に抑えます。 詳細については、Windows Server テクニカルコンテンツライブラリの[インストールオプション](../../../get-started-19/install-upgrade-migrate-19.md)に関するセクションを参照してください。 Windows 10 では、HYPER-V では、実稼働ワークロードを実行することは推奨されません。
     - HYPER-V ホストのオペレーティング システム、ファームウェア、およびデバイス ドライバーは最新のセキュリティ更新プログラムを最新のしてください。 ファームウェアとドライバーを更新する、ベンダーの推奨事項を確認してください。
     - HYPER-V ホストをワークステーションとして使用したり、不要なソフトウェアをインストールしないでください。
-    - HYPER-V ホストをリモートで管理します。 ローカル HYPER-V ホストを管理する必要があります、資格情報の保護を使用します。 詳細については、次を参照してください。 [派生した資格情報 Guard でのドメイン資格情報を保護する](https://docs.microsoft.com/windows/access-protection/credential-guard/credential-guard)です。
-    - コード整合性ポリシーを有効にします。 仮想化ベースのセキュリティを使用するには、サービスのコードの整合性が保護されています。 詳細については、次を参照してください。 [デバイス ガード展開ガイド](https://docs.microsoft.com/windows/device-security/device-guard/device-guard-deployment-guide)します。
+    - HYPER-V ホストをリモートで管理します。 ローカル HYPER-V ホストを管理する必要があります、資格情報の保護を使用します。 詳細については、次を参照してください。 [派生した資格情報 Guard でのドメイン資格情報を保護する](/windows/access-protection/credential-guard/credential-guard)です。
+    - コード整合性ポリシーを有効にします。 仮想化ベースのセキュリティを使用するには、サービスのコードの整合性が保護されています。 詳細については、次を参照してください。 [デバイス ガード展開ガイド](/windows/device-security/device-guard/device-guard-deployment-guide)します。
 - **セキュリティで保護されたネットワークを使用します。**
     - 物理的な HYPER-V コンピューターの専用のネットワーク アダプターで別のネットワークを使用します。
     - VM のアクセスの構成および仮想ハード ディスク ファイルへのプライベートまたはセキュリティで保護されたネットワークを使用します。
     - ライブ マイグレーション トラフィック/専用のプライベート ネットワークを使用します。 暗号化を使用し、移行中にネットワーク経由で仮想マシンのデータをセキュリティで保護するには、このネットワーク上の IPSec を有効にしてください。 詳細については、次を参照してください。 [フェールオーバー クラスタ リングのないライブ マイグレーションのためのホスト設定](../deploy/set-up-hosts-for-live-migration-without-failover-clustering.md)します。
 - **記憶域の移行のトラフィックをセキュリティで保護します。**
 
-    SMB データとデータ保護の改ざんまたは信頼されていないネットワークの盗聴のエンド ツー エンドの暗号化の SMB 3.0 を使用します。 中間の攻撃を防ぐための SMB 共有の内容にアクセスするのにには、プライベート ネットワークを使用します。 詳細については、次を参照してください。 [SMB のセキュリティの強化](https://technet.microsoft.com/library/dn551363.aspx)します。
+    SMB データとデータ保護の改ざんまたは信頼されていないネットワークの盗聴のエンド ツー エンドの暗号化の SMB 3.0 を使用します。 中間の攻撃を防ぐための SMB 共有の内容にアクセスするのにには、プライベート ネットワークを使用します。 詳細については、次を参照してください。 [SMB のセキュリティの強化](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn551363(v=ws.11))します。
 - **保護されたファブリックの一部としてホストを構成します。**
 
     詳細については、次を参照してください。 [保護され、fabric](../../../security/guarded-fabric-shielded-vm/guarded-fabric-and-shielded-vms-top-node.md)します。
@@ -47,7 +47,7 @@ HYPER-V ホストのオペレーティング システム、仮想マシン、�
 
 - **HYPER-V ホストのオペレーティング システムを強化します。**
 
-    ベースライン セキュリティ設定の推奨事項を使用して、 [Windows サーバーのセキュリティ ベースライン](https://docs.microsoft.com/windows/device-security/windows-security-baselines)します。
+    ベースライン セキュリティ設定の推奨事項を使用して、 [Windows サーバーのセキュリティ ベースライン](/windows/device-security/windows-security-baselines)します。
 
 - **適切なアクセス許可を付与します。**
     - HYPER-V administrators グループに HYPER-V ホストを管理する必要があるユーザーを追加します。
@@ -55,7 +55,7 @@ HYPER-V ホストのオペレーティング システム、仮想マシン、�
 
 - **除外リストのウイルス対策と HYPER-V のオプションを構成します。**
 
-    Windows Defender は既に [自動除外](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-antivirus/configure-server-exclusions-windows-defender-antivirus) ように構成します。 除外リストの詳細については、次を参照してください。 [Hyper-v ホストでのウイルス対策の除外をお勧め](https://support.microsoft.com/kb/3105657)します。
+    Windows Defender は既に [自動除外](/windows/security/threat-protection/windows-defender-antivirus/configure-server-exclusions-windows-defender-antivirus) ように構成します。 除外リストの詳細については、次を参照してください。 [Hyper-v ホストでのウイルス対策の除外をお勧め](https://support.microsoft.com/kb/3105657)します。
 
 - **不明な Vhd をマウントしません。** これは、ファイル システム レベルの攻撃にホストを公開できます。
 
@@ -82,7 +82,7 @@ HYPER-V ホストのオペレーティング システム、仮想マシン、�
 
     - 運用環境で仮想マシンを有効にする前に、最新のセキュリティ更新プログラムをインストールします。
     - 統合サービスを必要とすることに保ちますサポートされるゲスト オペレーティング システムをインストールします。 サポートされているバージョンの Windows を実行しているゲストの統合サービスの更新プログラムは、Windows Update を通して利用できます。
-    - 実行する役割に基づく各仮想マシンで実行されているオペレーティング システムを強化します。 説明されているベースライン セキュリティ設定の推奨事項を使用して、 [Windows セキュリティ ベースライン](https://docs.microsoft.com/windows/device-security/windows-security-baselines)します。
+    - 実行する役割に基づく各仮想マシンで実行されているオペレーティング システムを強化します。 説明されているベースライン セキュリティ設定の推奨事項を使用して、 [Windows セキュリティ ベースライン](/windows/device-security/windows-security-baselines)します。
 
 - **セキュリティで保護されたネットワークを使用します。**
 
@@ -98,7 +98,7 @@ HYPER-V ホストのオペレーティング システム、仮想マシン、�
 
 - **Windows 10 または Windows Server 2016 以降を実行しているゲストの仮想化ベースのセキュリティを有効にします。**
 
-    詳細については、次を参照してください。、 [デバイス ガード展開ガイド](https://docs.microsoft.com/windows/device-security/device-guard/device-guard-deployment-guide)します。
+    詳細については、次を参照してください。、 [デバイス ガード展開ガイド](/windows/device-security/device-guard/device-guard-deployment-guide)します。
 
 - **特定のワークロードに必要な場合のみ個別のデバイスの割り当てを有効にする**です。
 

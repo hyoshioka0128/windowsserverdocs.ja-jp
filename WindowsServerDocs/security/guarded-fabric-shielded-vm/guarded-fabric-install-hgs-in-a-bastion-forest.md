@@ -5,12 +5,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 08/29/2018
-ms.openlocfilehash: cb2fe57963ac2786586d75df2a783945e2fb7d11
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 4e4bdf9c33d4511c470da50462469fadbd0641ce
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87963778"
+ms.locfileid: "87996242"
 ---
 # <a name="install-hgs-in-an-existing-bastion-forest"></a>既存の要塞フォレストに HGS をインストールする
 
@@ -41,7 +41,7 @@ HGS を初期化するアカウントにドメイン内のコンピューター�
 
 ## <a name="group-managed-service-account"></a>グループの管理されたサービス アカウント
 
-グループの管理されたサービスアカウント (gMSA) は、HGS が証明書を取得して使用するために使用する id です。 GMSA を作成するには、 [New-ADServiceAccount](https://technet.microsoft.com/itpro/powershell/windows/addsadministration/new-adserviceaccount)を使用します。
+グループの管理されたサービスアカウント (gMSA) は、HGS が証明書を取得して使用するために使用する id です。 GMSA を作成するには、 [New-ADServiceAccount](/powershell/module/addsadministration/new-adserviceaccount?view=win10-ps)を使用します。
 ドメイン内の最初の gMSA の場合は、キー配布サービスのルートキーを追加する必要があります。
 
 各 HGS ノードには、gMSA パスワードへのアクセスが許可されている必要があります。
@@ -72,7 +72,7 @@ GMSA は、各 HGS サーバーのセキュリティログにイベントを生�
 
 > [!NOTE]
 > グループの管理されたサービスアカウントは、Windows Server 2012 Active Directory スキーマから使用できます。
-> 詳細については、「グループの管理された[サービスアカウントの要件](https://technet.microsoft.com/library/jj128431.aspx)」を参照してください。
+> 詳細については、「グループの管理された[サービスアカウントの要件](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj128431(v=ws.11))」を参照してください。
 
 ## <a name="jea-security-groups"></a>JEA セキュリティグループ
 
@@ -81,7 +81,7 @@ HGS を管理するために JEA を使用する必要はありませんが、Hg
 JEA エンドポイントの構成は、HGS 管理者と HGS レビューアーを含む2つのセキュリティグループを指定することで構成されます。
 管理者グループに属するユーザーは、HGS でポリシーを追加、変更、または削除できます。レビュー担当者は、現在の構成のみを表示できます。
 
-Active Directory 管理ツールまたは[新しい-ADGroup](https://technet.microsoft.com/itpro/powershell/windows/addsadministration/new-adgroup)を使用して、これらの jea グループに2つのセキュリティグループを作成します。
+Active Directory 管理ツールまたは[新しい-ADGroup](/powershell/module/addsadministration/new-adgroup?view=win10-ps)を使用して、これらの jea グループに2つのセキュリティグループを作成します。
 
 ```powershell
 New-ADGroup -Name 'HgsJeaReviewers' -GroupScope DomainLocal
@@ -91,7 +91,7 @@ New-ADGroup -Name 'HgsJeaAdmins' -GroupScope DomainLocal
 ## <a name="cluster-objects"></a>クラスター オブジェクト
 
 HGS のセットアップに使用しているアカウントに、ドメインに新しいコンピューターオブジェクトを作成するためのアクセス許可がない場合は、クラスターオブジェクトを事前にステージングする必要があります。
-これらの手順については、「 [Active Directory Domain Services でクラスターコンピューターオブジェクトをプレステージ](https://technet.microsoft.com/library/dn466519(v=ws.11).aspx)する」をご説明します。
+これらの手順については、「 [Active Directory Domain Services でクラスターコンピューターオブジェクトをプレステージ](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn466519(v=ws.11))する」をご説明します。
 
 最初の HGS ノードを設定するには、1つのクラスター名オブジェクト (CNO) と1つの仮想コンピューターオブジェクト (VCO) を作成する必要があります。
 CNO はクラスターの名前を表し、主にフェールオーバークラスタリングによって内部的に使用されます。
@@ -140,7 +140,7 @@ HGS を高度にロックされた環境に展開する場合、特定のグル�
 
 **ポリシー名:** ネットワークセキュリティ: Kerberos で許可される暗号化の種類を構成する
 
-**アクション**: このポリシーが構成されている場合、このポリシーでサポートされている暗号化の種類のみを使用するように、gMSA アカウントを[adserviceaccount](https://docs.microsoft.com/powershell/module/addsadministration/set-adserviceaccount?view=win10-ps)に更新する必要があります。 たとえば、ポリシーで AES128 hmac sha1 と AES256 hmac sha1 のみが許可されている場合は、を \_ \_ 実行する \_ \_ 必要があり `Set-ADServiceAccount -Identity HGSgMSA -KerberosEncryptionType AES128,AES256` ます。
+**アクション**: このポリシーが構成されている場合、このポリシーでサポートされている暗号化の種類のみを使用するように、gMSA アカウントを[adserviceaccount](/powershell/module/addsadministration/set-adserviceaccount?view=win10-ps)に更新する必要があります。 たとえば、ポリシーで AES128 hmac sha1 と AES256 hmac sha1 のみが許可されている場合は、を \_ \_ 実行する \_ \_ 必要があり `Set-ADServiceAccount -Identity HGSgMSA -KerberosEncryptionType AES128,AES256` ます。
 
 
 
@@ -149,4 +149,3 @@ HGS を高度にロックされた環境に展開する場合、特定のグル�
 - TPM ベースの構成証明を設定する次の手順については、「[既存の要塞フォレストで tpm モードを使用して HGS クラスターを初期化](guarded-fabric-initialize-hgs-tpm-mode-bastion.md)する」を参照してください。
 - ホストキーの構成証明を設定する次の手順については、「[既存の要塞フォレストでキーモードを使用して HGS クラスターを初期化](guarded-fabric-initialize-hgs-key-mode-bastion.md)する」を参照してください。
 - 管理者ベースの2019構成証明を設定する次の手順については、「[既存の要塞フォレストの AD モードを使用して HGS クラスターを初期化](guarded-fabric-initialize-hgs-ad-mode-bastion.md)する」を参照してください。
-

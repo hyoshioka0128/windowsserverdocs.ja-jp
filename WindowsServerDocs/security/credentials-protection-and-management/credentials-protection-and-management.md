@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 3dc1d0ae3658e4379d3a358211471ac7f675651c
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: be120eda25b4d01da60faa2af241cd3ce243abfc
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87948705"
+ms.locfileid: "87995828"
 ---
 # <a name="credentials-protection-and-management"></a>資格情報の保護と管理
 
@@ -64,10 +64,7 @@ Protected Users グループのメンバーは、以下の認証方法によっ�
 
 詳細については、「[認証ポリシーと認証ポリシー サイロ](authentication-policies-and-authentication-policy-silos.md)」を参照してください。
 
-保護されたアカウントの構成方法の詳細については、「[保護されるアカウントの構成方法](https://docs.microsoft.com/windows-server/identity/ad-ds/manage/how-to-configure-protected-accounts)」を参照してください。
+保護されたアカウントの構成方法の詳細については、「[保護されるアカウントの構成方法](../../identity/ad-ds/manage/how-to-configure-protected-accounts.md)」を参照してください。
 
 ## <a name="additional-references"></a>その他の参照情報
-LSA と LSASS の詳細については、「 [Windows のログオンと認証の技術概要](https://technet.microsoft.com/library/dn169029(v=ws.10).aspx)」を参照してください。
-
-
-
+LSA と LSASS の詳細については、「 [Windows のログオンと認証の技術概要](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dn169029(v=ws.10))」を参照してください。

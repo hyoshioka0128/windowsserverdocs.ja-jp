@@ -7,12 +7,12 @@ ms.topic: article
 ms.assetid: 12d0b473-cf6a-4746-b03d-2ceeb701c5d0
 author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 50a1239b53b057e87252449eec8e89a1b54c223a
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 1d7a3d62a8a40aed40e096bfdd48d928c5b52f53
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87948182"
+ms.locfileid: "87995916"
 ---
 # <a name="windows-server-2012-should-be-configured-with-the-recommended-amount-of-memory"></a>Windows Server 2012 には推奨されるメモリ量を構成します。
 
@@ -65,7 +65,4 @@ Set-VMMemory <MyVM> -StartupBytes 2GB
 ```
 
 ## <a name="see-also"></a>参照
-[設定-VMMemory](https://technet.microsoft.com/library/hh848572.aspx)
-
-
-
+[設定-VMMemory](/powershell/module/hyper-v/set-vmmemory?view=win10-ps)

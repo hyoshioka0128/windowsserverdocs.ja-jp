@@ -2,18 +2,16 @@
 title: 領域名
 description: このトピックでは、Windows Server 2016 でのネットワークポリシーサーバーの接続要求処理での領域名の使用の概要について説明します。
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: d011eaad-f72a-4a83-8099-8589c4ee8994
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 7a855087647b86486eaf5358e0e713d6fab6dd02
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: e219169ba3132a18c0a76219fa8da96e30902090
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87517877"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87969399"
 ---
 # <a name="realm-names"></a>領域名
 

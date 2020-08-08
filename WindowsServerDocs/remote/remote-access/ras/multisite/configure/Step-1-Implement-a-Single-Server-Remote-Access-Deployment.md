@@ -2,18 +2,16 @@
 title: 手順1単一サーバーのリモートアクセスの展開を実装する
 description: このトピックは、「Windows Server 2016 のマルチサイト展開に複数のリモートアクセスサーバーを展開する」の一部です。
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-ras
 ms.topic: article
 ms.assetid: f9086c4f-f950-44a9-93f1-7d03aecdaa60
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 8068f48455d01cae5ee251784fd033ae5e8719ff
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: f16648ec6b39f6280b64b0f0ab0b2b79fdf27dc3
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769380"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87969139"
 ---
 # <a name="step-1-implement-a-single-server-remote-access-deployment"></a>手順1単一サーバーのリモートアクセスの展開を実装する
 

@@ -6,12 +6,12 @@ ms.topic: article
 author: kbdazure
 ms.author: kathydav
 ms.date: 10/04/2016
-ms.openlocfilehash: 638b4879d7980d817863ad0cd45397ac4a095569
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: b31d942e8d7890a8f699f743bcd24953d2a3e760
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87948009"
+ms.locfileid: "87996071"
 ---
 # <a name="plan-for-hyper-v-networking-in-windows-server"></a>Windows Server での Hyper-v ネットワークの計画
 
@@ -52,7 +52,7 @@ Hyper-v には、3種類の仮想スイッチと2種類の仮想ネットワー�
 
 一部の機能は、特定のネットワーク構成に依存しているか、特定の構成でより適切に機能します。 ネットワークインフラストラクチャを計画または更新するときに、これらを考慮してください。
 
-**フェールオーバークラスタリング**-クラスタートラフィックを分離し、仮想スイッチで Hyper-v のサービスの品質 (QoS) を使用することをお勧めします。 詳細については、「 [Hyper-v クラスターのネットワーク推奨事項](https://technet.microsoft.com/library/dn550728.aspx)」を参照してください。
+**フェールオーバークラスタリング**-クラスタートラフィックを分離し、仮想スイッチで Hyper-v のサービスの品質 (QoS) を使用することをお勧めします。 詳細については、「 [Hyper-v クラスターのネットワーク推奨事項](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn550728(v=ws.11))」を参照してください。
 
 **ライブマイグレーション**-パフォーマンスオプションを使用して、ネットワークと CPU の使用率を減らし、ライブマイグレーションを完了するのにかかる時間を短縮します。 手順については、「[フェールオーバークラスタリングを使用しないライブマイグレーションのホストの設定](../deploy/set-up-hosts-for-live-migration-without-failover-clustering.md)」を参照してください。
 

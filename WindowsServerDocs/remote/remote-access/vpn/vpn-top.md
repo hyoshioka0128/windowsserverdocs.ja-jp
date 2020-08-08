@@ -1,20 +1,18 @@
 ---
 title: 仮想プライベート ネットワーク (VPN)
 description: このトピックでは、Windows Server 2016 と Windows 10 VPN の機能について説明します。
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: cd4908f0-0d6f-4c02-8f98-4dc88c3dcb65
 ms.date: 11/05/2018
 ms.author: v-tea
 author: Teresa-MOTIV
 ms.localizationpriority: medium
-ms.openlocfilehash: 35293f98dd36fc48750a811981dafe37a06af7c9
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 30f08f02bf7a06619b9a32206863a9ddefc0fc2d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959174"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87968919"
 ---
 # <a name="virtual-private-networking-vpn"></a>仮想プライベート ネットワーク (VPN)
 
@@ -38,7 +36,7 @@ Windows Server 2016 では、リモートアクセスサーバーの役割は、
 >ソフトウェア定義ネットワーク (SDN) で使用するマルチテナント VPN サーバーとして、または DirectAccess サーバーとして RAS ゲートウェイを展開することもできます。 詳細については、「 [RAS ゲートウェイ](../ras-gateway/ras-gateway.md)、[ソフトウェア定義ネットワーク (SDN)](../../../networking/sdn/software-defined-networking.md)、および[DirectAccess](../directaccess/directaccess.md)」を参照してください。
 
 ## <a name="related-topics"></a>関連トピック
-- [Vpn の機能の Always On](vpn-map-da.md): このトピックでは Always On vpn の機能について説明します。 
+- [Vpn の機能の Always On](vpn-map-da.md): このトピックでは Always On vpn の機能について説明します。
 
 - [Windows 10 で Vpn デバイストンネルを構成](vpn-device-tunnel-config.md)する: Always On vpn では、デバイスまたはコンピューター用の専用 vpn プロファイルを作成できます。 Always On VPN 接続には、_デバイストンネル_と_ユーザートンネル_という2種類のトンネルがあります。 デバイストンネルは、ログオン前の接続シナリオとデバイス管理の目的で使用されます。 ユーザー トンネルを使用すると、ユーザーが VPN サーバーを通じて組織のリソースにアクセスすることができます。
 

@@ -6,19 +6,19 @@ manager: dongill
 author: justinha
 ms.author: justinha
 ms.date: 01/30/2019
-ms.openlocfilehash: 8ddd4699358a6725ed5e2f80683a363a1120caf7
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 35e95204e076c0e0c96eb1669ff267b87ba7242a
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87944252"
+ms.locfileid: "87996325"
 ---
 # <a name="quick-start-for-guarded-fabric-deployment"></a>保護されたファブリックの展開のクイックスタート
 
 >適用先:Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックでは、保護されたファブリックとは何か、その要件、および展開プロセスの概要について説明します。
-詳細な展開手順については、「保護され[たホストとシールドされた vm のホストガーディアンサービスの展開](https://technet.microsoft.com/windows-server-docs/security/guarded-fabric-shielded-vm/guarded-fabric-deploying-hgs-overview)」を参照してください。
+詳細な展開手順については、「保護され[たホストとシールドされた vm のホストガーディアンサービスの展開](./guarded-fabric-deploying-hgs-overview.md)」を参照してください。
 
 ビデオがお好みの場合は、 [Windows Server 2016 でシールドされた vm と保護されたファブリックをデプロイする](https://mva.microsoft.com/training-courses/deploying-shielded-vms-and-a-guarded-fabric-with-windows-server-2016-17131?l=WFLef7vUD_4604300474)Microsoft Virtual Academy コースを参照してください。
 
@@ -72,7 +72,7 @@ HGS を初期化する場合は、モードを選択する必要があります�
 
 ## <a name="step-1-deploy-the-hyper-v-hosts-running-windows-server-2016"></a>手順 1: Windows Server 2016 を実行する Hyper-v ホストを展開する
 
-Hyper-v ホストでは、Windows Server 2016 Datacenter edition 以降を実行する必要があります。 ホストをアップグレードする場合は、Standard edition から Datacenter edition に[アップグレード](https://technet.microsoft.com/windowsserver/dn527667.aspx)できます。
+Hyper-v ホストでは、Windows Server 2016 Datacenter edition 以降を実行する必要があります。 ホストをアップグレードする場合は、Standard edition から Datacenter edition に[アップグレード](../../get-started/installation-and-upgrade.md)できます。
 
 ![Hyper-v ホストのアップグレード](../../security/media/Guarded-Fabric-Shielded-VM/guarded-fabric-deployment-step-one-upgrade-hyper-v.png)
 
@@ -159,7 +159,7 @@ OS パーティションに何らかの変更が加えられると、署名も�
 
     ![新しい暗号化がサポートされている VM](../media/Guarded-Fabric-Shielded-VM/guarded-fabric-new-shielded-vm.png)
 
-VMM や Windows Azure Pack などのオプションの管理部分を追加できます。 これらのコンポーネントをインストールせずに VM を作成する場合は、「手順[: VMM なしでシールド](https://blogs.technet.microsoft.com/datacentersecurity/2016/06/06/step-by-step-creating-shielded-vms-without-vmm/)された Vm を作成する」を参照してください。
+VMM や Windows Azure Pack などのオプションの管理部分を追加できます。 これらのコンポーネントをインストールせずに VM を作成する場合は、「手順[: VMM なしでシールド](/archive/blogs/datacentersecurity/step-by-step-creating-shielded-vms-without-vmm)された Vm を作成する」を参照してください。
 
 ## <a name="step-6-create-a-shielded-vm"></a>手順 6: シールドされた VM を作成する
 

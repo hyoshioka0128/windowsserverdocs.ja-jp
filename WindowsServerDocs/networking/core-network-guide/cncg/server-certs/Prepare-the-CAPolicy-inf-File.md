@@ -4,19 +4,17 @@ description: Capolicy.inf には、Active Directory 証明書サービス (AD CS
 manager: alanth
 ms.topic: article
 ms.assetid: 65b36794-bb09-4c1b-a2e7-8fc780893d97
-ms.prod: windows-server
-ms.technology: networking
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 4df23cd64bcf3bf9c27190908fb5f2a48b30b833
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 83e2acbc9edfd9ca236f01b1fef3474ffe1bbb51
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80318293"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87949456"
 ---
 # <a name="capolicyinf-syntax"></a>Capolicy.inf 構文
->   適用対象: Windows Server (半期チャネル)、Windows Server 2016
+>   適用先:Windows Server (半期チャネル)、Windows Server 2016
 
 Capolicy.inf は、ルート CA 証明書およびルート CA によって発行されたすべての証明書に適用される拡張機能、制約、およびその他の構成設定を定義する構成ファイルです。 ルート CA のセットアップルーチンを開始する前に、Capolicy.inf ファイルをホストサーバーにインストールする必要があります。 ルート CA のセキュリティ制限を変更する場合は、ルート証明書を更新する必要があり、更新プロセスを開始する前に、更新された Capolicy.inf ファイルをサーバーにインストールする必要があります。
 
@@ -42,7 +40,7 @@ Capolicy.inf を使用すると、さまざまな CA 属性とオプションを
 
 -   _Value_ –パラメーターであり、等号の右側に表示されます。
 
-次の例では、 **[Version]** がセクション、 **Signature**がキー、および **"\$Windows NT\$"** が値です。
+次の例では、 **[Version]** がセクション、 **Signature**がキー、および **" \$ Windows NT \$ "** が値です。
 
 例:
 
@@ -51,7 +49,7 @@ Capolicy.inf を使用すると、さまざまな CA 属性とオプションを
 Signature="$Windows NT$"      #key=value
 ```
 
-###  <a name="version"></a>バージョン
+###  <a name="version"></a>Version
 
 ファイルを .inf ファイルとして識別します。 バージョンは唯一の必須セクションであり、Capolicy.inf ファイルの先頭にある必要があります。
 
@@ -97,7 +95,7 @@ Notice=”Legal policy statement text”
 
 ### <a name="crldistributionpoint"></a>CRLDistributionPoint
 
-Capolicy.inf で、ルート CA 証明書の CRL 配布ポイント (Cdp) を指定できます。  CA をインストールした後、発行された各証明書に CA に含まれる CDP Url を構成できます。 ルート CA 証明書は、Capolicy.inf ファイルのこのセクションで指定されている Url を示しています。 
+Capolicy.inf で、ルート CA 証明書の CRL 配布ポイント (Cdp) を指定できます。  CA をインストールした後、発行された各証明書に CA に含まれる CDP Url を構成できます。 ルート CA 証明書は、Capolicy.inf ファイルのこのセクションで指定されている Url を示しています。
 
 ```
 [CRLDistributionPoint]
@@ -105,12 +103,12 @@ URL=http://pki.wingtiptoys.com/cdp/WingtipToysRootCA.crl
 ```
 
 このセクションに関する追加情報を次に示します。
--   対応
-    - HTTP 
+-   サポートするものは次のとおりです。
+    - HTTP
     - ファイルの Url
-    - LDAP Url 
+    - LDAP Url
     - 複数の Url
-   
+
     >[!IMPORTANT]
     >では、HTTPS Url はサポートされていません。
 
@@ -121,7 +119,7 @@ URL=http://pki.wingtiptoys.com/cdp/WingtipToysRootCA.crl
 -    CA は、たとえば、クライアントが HTTP 経由で取得した web サイトのフォルダーを表す共有に、ファイル UNC に発行できます。
 
 -   ルート CA を設定する場合、またはルート CA 証明書を更新する場合にのみ、このセクションを使用します。 CA は、下位 CA CDP 拡張機能を決定します。
-   
+
 
 ### <a name="authorityinformationaccess"></a>AuthorityInformationAccess
 
@@ -136,7 +134,7 @@ URL=http://pki.wingtiptoys.com/Public/myCA.crt
 
 -   複数の Url がサポートされています。
 
--   HTTP、FTP、LDAP、およびファイルの Url がサポートされています。 HTTPS Url はサポートされていません。
+-   HTTP、FTP、LDAP、およびファイルの Url がサポートされています。 HTTPS URL はサポートされていません。
 
 -   このセクションは、ルート CA を設定する場合、またはルート CA 証明書を更新する場合にのみ使用されます。 下位 CA の AIA 拡張機能は、下位 CA の証明書を発行した CA によって決定されます。
 
@@ -193,7 +191,7 @@ CA の既定のインストールでは、既定の証明書テンプレート�
 
 CA がインストールされた直後に証明書を発行することはできません。そのため、LoadDefaultTemplates 設定を使用して、既定のテンプレートがエンタープライズ CA に追加されないようにすることができます。 CA にテンプレートが構成されていない場合、証明書を発行することはできません。
 
-**AlternateSignatureAlgorithm**は、ca 証明書と証明書要求の両方に対して PKCS\#1 version 2.1 署名形式をサポートするように ca を構成します。 ルート CA で1に設定すると、CA 証明書に PKCS\#1 Version 2.1 の署名形式が含められます。 下位 ca で設定されている場合、下位 CA は PKCS\#1 Version 2.1 署名形式を含む証明書要求を作成します。
+**AlternateSignatureAlgorithm**は \# 、ca 証明書と証明書要求の両方に対して PKCS 1 v1.0 署名形式をサポートするように ca を構成します。 ルート CA で1に設定すると、CA 証明書に PKCS \# 1 version 2.1 の署名形式が含められます。 下位 ca で設定されている場合、下位 CA は PKCS \# 1 version 2.1 署名形式を含む証明書要求を作成します。
 
 **ForceUTF8**は、件名と発行者の識別名の相対識別名 (RDNs) の既定のエンコードを utf-8 に変更します。 RFC によってディレクトリ文字列型として定義されているものなど、UTF-8 をサポートする RDNs のみが影響を受けます。 たとえば、ドメインコンポーネント (DC) の RDN は、IA5 または UTF-8 としてエンコーディングをサポートしていますが、Country RDN (C) では、エンコード可能な文字列としてエンコードのみがサポートされています。 したがって、ForceUTF8 ディレクティブは DC RDN に影響を与えますが、C RDN には影響しません。
 
@@ -207,34 +205,34 @@ AD CS をインストールする前に、固有の設定で、展開の CAPolic
 
 1. AD CS のインストールを計画しているコンピューターで、Windows PowerShell を開き、「 **notepad c:\** 」と入力して、enter キーを押します。
 
-2. 新しいファイルを作成するかどうかを確認するメッセージが表示されたら、 **[はい]** をクリックします。
+2. 新しいファイルを作成するかどうかを確認するメッセージが表示されたら、**[はい]** をクリックします。
 
 3. ファイルに次の内容を入力します。
    ```
-   [Version]  
-   Signature="$Windows NT$"  
-   [PolicyStatementExtension]  
-   Policies=InternalPolicy  
-   [InternalPolicy]  
-   OID=1.2.3.4.1455.67.89.5  
-   Notice="Legal Policy Statement"  
-   URL=https://pki.corp.contoso.com/pki/cps.txt  
-   [Certsrv_Server]  
-   RenewalKeyLength=2048  
-   RenewalValidityPeriod=Years  
-   RenewalValidityPeriodUnits=5  
-   CRLPeriod=weeks  
-   CRLPeriodUnits=1  
-   LoadDefaultTemplates=0  
-   AlternateSignatureAlgorithm=1  
-   [CRLDistributionPoint]  
+   [Version]
+   Signature="$Windows NT$"
+   [PolicyStatementExtension]
+   Policies=InternalPolicy
+   [InternalPolicy]
+   OID=1.2.3.4.1455.67.89.5
+   Notice="Legal Policy Statement"
+   URL=https://pki.corp.contoso.com/pki/cps.txt
+   [Certsrv_Server]
+   RenewalKeyLength=2048
+   RenewalValidityPeriod=Years
+   RenewalValidityPeriodUnits=5
+   CRLPeriod=weeks
+   CRLPeriodUnits=1
+   LoadDefaultTemplates=0
+   AlternateSignatureAlgorithm=1
+   [CRLDistributionPoint]
    [AuthorityInformationAccess]
    ```
-4. **[ファイル]** をクリックし、名前を付け **[て保存]** をクリックします。
+4. [**ファイル**] をクリックし、[名前を付け**て保存**] をクリックします。
 
 5. % Systemroot% フォルダーに移動します。
 
-6. 次の内容を確認します。
+6. 以下のことを確認してください。
 
    -   **[ファイル名]** が **CAPolicy.inf** に設定されている。
 
@@ -242,9 +240,9 @@ AD CS をインストールする前に、固有の設定で、展開の CAPolic
 
    -   **[文字コード]** が **[ANSI]** に設定されている。
 
-7. **[保存]** をクリックします。
+7. **[Save]** (保存) をクリックします。
 
-8. ファイルを上書きするかどうかをたずねるメッセージが表示されたら、 **[はい]** をクリックします。
+8. ファイルを上書きするかどうかをたずねるメッセージが表示されたら、**[はい]** をクリックします。
 
    ![Capolicy.inf ファイルの場所として保存します。](../../../media/Prepare-the-CAPolicy-inf-File/001-SaveCAPolicyORCA1.gif)
 
@@ -254,4 +252,4 @@ AD CS をインストールする前に、固有の設定で、展開の CAPolic
 9. メモ帳を閉じます。
 
 > [!IMPORTANT]
->   Capolicy.inf で、 https://pki.corp.contoso.com/pki/cps.txtURL を指定する行があることを確認できます。 この CAPolicy.inf の InternalPolicy セクションは、認証実施規定 (CPS) の場所を指定する方法の例として示されています。 このガイドでは、証明書作成ステートメント (CPS) を作成するように指示されていません。
+>   Capolicy.inf には、URL を指定する行があることがわかります https://pki.corp.contoso.com/pki/cps.txt 。 この CAPolicy.inf の InternalPolicy セクションは、認証実施規定 (CPS) の場所を指定する方法の例として示されています。 このガイドでは、証明書作成ステートメント (CPS) を作成するように指示されていません。

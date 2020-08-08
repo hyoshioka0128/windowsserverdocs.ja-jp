@@ -6,12 +6,12 @@ ms.topic: article
 author: kbdazure
 ms.author: kathydav
 ms.date: 09/28/2016
-ms.openlocfilehash: b22ac581a999161f796395140489ca699880e127
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: bf7ad4e90f5303041153bb4f651d2f09c613da84
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87947989"
+ms.locfileid: "87996062"
 ---
 # <a name="plan-for-hyper-v-scalability-in-windows-server-2016-and-windows-server-2019"></a>Windows Server 2016 および Windows Server 2019 での Hyper-v のスケーラビリティの計画
 
@@ -22,7 +22,7 @@ ms.locfileid: "87947989"
 メモリおよび論理プロセッサの最大値は、machine learning およびデータの分析などの新しいシナリオをサポートする要求に対する応答として Windows Server 2012 から最大の増加です。 Windows Server のブログと 5.5 数テラバイト メモリと 4 TB のメモリ内のデータベースを実行している 128 の仮想プロセッサの仮想マシンのパフォーマンスの結果が最近発行されました。 物理サーバーのパフォーマンスが95% を超えています。 詳細については、「 [メモリ内のトランザクション処理が大規模な VM パフォーマンスを Windows Server 2016 HYPER-V](https://blogs.technet.microsoft.com/windowsserver/2016/09/28/windows-server-2016-hyper-v-large-scale-vm-performance-for-in-memory-transaction-processing/)します。 その他の番号は、Windows Server 2012 に適用されるものと似ています。 \(Windows Server 2012 R2 の最大値は、Windows Server 2012 の場合と同じでした。\)
 
 > [!NOTE]
-> System Center Virtual Machine Manager (VMM) についての情報を参照してください。 [Virtual Machine Manager](https://technet.microsoft.com/system-center-docs/vmm/vmm)します。 VMM は仮想データ センターを管理するためのマイクロソフト製品であり、別途購入する必要があります。
+> System Center Virtual Machine Manager (VMM) についての情報を参照してください。 [Virtual Machine Manager](/system-center/vmm/overview?view=sc-vmm-2019)します。 VMM は仮想データ センターを管理するためのマイクロソフト製品であり、別途購入する必要があります。
 
 ## <a name="maximums-for-virtual-machines"></a>仮想マシンの最大値
 これらの最大値は、各仮想マシンに適用されます。 すべてのコンポーネントは、両方の世代の仮想マシンで使用できます。 世代の比較では、次を参照してください。 [Hyper-v にジェネレーション 1 または 2 仮想マシンを作成する必要がありますか。](should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v.md)
@@ -68,5 +68,3 @@ ms.locfileid: "87947989"
 |-------------|-----------|---------|
 |クラスターごとのノード|64|フェールオーバー用に予約するノード数と、更新の適用などの保守タスクを考慮してください。 1 つのノードをフェールオーバー用に予約するのに十分なリソースを計画することをお勧めします。別のノードからのフェールオーバーが実行されるまで、そのノードはアイドル状態になります。 (これはパッシブノードと呼ばれることもあります)。追加のノードを予約する場合は、この数を増やすことができます。 推奨される比率またはアクティブなノードの予約されたノードの乗数はありません。唯一の要件は、クラスター内のノードの合計数が最大 64 個を超えることはできません。|
 |クラスターごと、およびノードごとに実行する仮想マシン|クラスターごとに 8,000|いくつかの要因は、仮想マシンが終わったら、同時に 1 つのノードなどの実数に影響があります。<br />各仮想マシンで使用される物理メモリの量。<br />-ネットワークと記憶域の帯域幅。<br />-ディスク スピンドルの数、ディスク I/O パフォーマンスに影響します。|
-
-

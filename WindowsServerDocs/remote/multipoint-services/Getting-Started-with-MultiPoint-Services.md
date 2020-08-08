@@ -7,12 +7,12 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 342a374027abc3019b4fc01dbc91b676d63e922b
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 2469bbb35ce0e68801b28e221c05c285b4f1c464
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970679"
+ms.locfileid: "87996339"
 ---
 # <a name="getting-started-with-multipoint-services"></a>MultiPoint Services でのはじめに
 MultiPoint Services システムでは、多くのユーザーが、ステーションハブを使用して物理的に接続されている複数のステーションを1台のコンピューターにしか使用できません。 各ステーションは、通常、ステーションハブ、マウス、キーボード、およびビデオモニターで構成されています。 MultiPoint Services ステーションの各ユーザーには、MultiPoint Manager を使用して管理できる一意の Windows コンピューティングセッションがあります。
@@ -91,7 +91,7 @@ Multipoint services の使用を毎日開始するときに、multipoint service
 
 ## <a name="see-also"></a>参照
 [MultiPoint Server システム](managing-your-multipoint-services-system.md) 
- の管理[ソフトウェアライセンスのコンプライアンス](Important-Information-about-Software-License-Compliance.md) 
+ の管理[ソフトウェアライセンスのコンプライアンス](./multipoint-software-license-compliance.md) 
  に関する重要な情報[MultiPoint マネージャーを使用してシステムタスクを管理する](Manage-System-Tasks-Using-MultiPoint-Manager.md) 
 [ユーザーファイル](Manage-User-Files.md) 
  の管理[ユーザーデスクトップ](manage-user-desktops-using-multipoint-dashboard.md) 
@@ -104,4 +104,3 @@ Multipoint services の使用を毎日開始するときに、multipoint service
  を更新または削除する[MultiPoint ダッシュボードを使用してユーザーデスクトップを管理する](Manage-User-Desktops-Using-MultiPoint-Dashboard.md) 
 [Multipoint ダッシュボード](Manage-MultiPoint-Systems-Using-MultiPoint-Dashboard.md) 
  を使用した Multipoint システムの管理[トラブルシューティング](Troubleshooting.md)
-

@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: 398440ac-5988-41ce-b91e-eab343a255d3
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: e8722e5ff925bca1d99c39d7eb6bf360dc12c065
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 1e2db53f28ff5262778b36b8a5cb91e6062ca9c0
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87968699"
+ms.locfileid: "87995710"
 ---
 # <a name="hyper-v-virtual-switch"></a>Hyper-V 仮想スイッチ
 
@@ -26,13 +26,13 @@ ms.locfileid: "87968699"
 >
 > - [Hyper-V 仮想スイッチを管理する](Manage-Hyper-V-Virtual-Switch.md)
 > - [リモート ダイレクト メモリ アクセス (RDMA) とスイッチ埋め込みチーミング (SET)](RDMA-and-Switch-Embedded-Teaming.md)
-> - [Windows PowerShell のネットワーク スイッチ チームのコマンドレット](https://docs.microsoft.com/powershell/module/netswitchteam/new-netswitchteam?view=win10-ps)
-> - [VMM 2016 の新機能](https://docs.microsoft.com/system-center/vmm/whats-new#networking)
-> - [VMM ネットワーク ファブリックのセットアップ](https://docs.microsoft.com/system-center/vmm/manage-networks)
-> - [Hyper-V フォーラム](https://docs.microsoft.com/answers/topics/windows-server-hyper-v.html)
-> - [Hyper-V: サード パーティ製の拡張機能で必要とされている場合、WFP 仮想スイッチ拡張機能を有効にする必要がある](https://docs.microsoft.com/answers/topics/windows-server-hyper-v.html)
+> - [Windows PowerShell のネットワーク スイッチ チームのコマンドレット](/powershell/module/netswitchteam/new-netswitchteam?view=win10-ps)
+> - [VMM 2016 の新機能](/system-center/vmm/whats-new#networking)
+> - [VMM ネットワーク ファブリックのセットアップ](/system-center/vmm/manage-networks)
+> - [Hyper-V フォーラム](/answers/topics/windows-server-hyper-v.html)
+> - [Hyper-V: サード パーティ製の拡張機能で必要とされている場合、WFP 仮想スイッチ拡張機能を有効にする必要がある](/answers/topics/windows-server-hyper-v.html)
 >
-> その他のネットワークテクノロジの詳細については、「 [Windows Server 2016 のネットワーク](https://docs.microsoft.com/windows-server/networking/networking)」を参照してください。
+> その他のネットワークテクノロジの詳細については、「 [Windows Server 2016 のネットワーク](../../networking/index.yml)」を参照してください。
 
 Hyper-v \- 仮想スイッチは、hyper-v サーバーの役割をインストールするときに Hyper-v マネージャーで使用できる、ソフトウェアベースのレイヤー2イーサネットネットワークスイッチです \- \- 。
 

@@ -6,12 +6,12 @@ author: daniellee-msft
 ms.author: jol
 ms.date: 06/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: a0b9c0e43d1573a52f69454ce05dd7a1c281510e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: e181e52c2e461d6f1ef00f72684b8228cf9889d1
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87964418"
+ms.locfileid: "87995978"
 ---
 # <a name="manage-failover-clusters-with-windows-admin-center"></a>Windows 管理センターを使用してフェールオーバークラスターを管理する
 
@@ -22,7 +22,7 @@ ms.locfileid: "87964418"
 > [Windows 管理センターの詳細については、](../overview.md)こちらを参照してください。
 
 ## <a name="managing-failover-clusters"></a>フェールオーバークラスターの管理
-[フェールオーバークラスタリング](https://docs.microsoft.com/windows-server/failover-clustering/failover-clustering-overview)は、複数のサーバーを1つのフォールトトレラントクラスターにグループ化して、スケールアウトファイルサーバー、hyper-v、Microsoft SQL Server などのアプリケーションとサービスの可用性とスケーラビリティを向上させることができる Windows Server の機能です。
+[フェールオーバークラスタリング](../../../failover-clustering/failover-clustering-overview.md)は、複数のサーバーを1つのフォールトトレラントクラスターにグループ化して、スケールアウトファイルサーバー、hyper-v、Microsoft SQL Server などのアプリケーションとサービスの可用性とスケーラビリティを向上させることができる Windows Server の機能です。
 
 フェールオーバークラスターノードは、Windows 管理センターで[サーバー接続](manage-servers.md)として追加することで、個々のサーバーとして管理できますが、フェールオーバークラスターとして追加して、クラスターリソース、記憶域、ネットワーク、ノード、役割、仮想マシン、仮想スイッチを表示および管理することもできます。
 

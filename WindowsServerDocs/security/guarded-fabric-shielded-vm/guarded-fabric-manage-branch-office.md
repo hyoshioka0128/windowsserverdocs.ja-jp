@@ -4,12 +4,12 @@ ms.topic: article
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.openlocfilehash: b56b2d4f74f18e68a3849b01e84b0aca5ca7412e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 140888bdaa27d5040ff723b94df2e28f3bbab167
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87957910"
+ms.locfileid: "87996162"
 ---
 # <a name="branch-office-considerations"></a>ブランチ オフィスに関する考慮事項
 
@@ -39,7 +39,7 @@ Hyper-v ホストがプライマリサーバーとフォールバックサーバ
 さらに、仮想マシンの TPM の暗号化を解除するために使用する証明書は、両方の HGS クラスターで使用できる必要があります。
 各 HGS を異なる証明書で構成し、両方の VM が信頼するように構成するか、両方の HGS クラスターに証明書の共有セットを追加することができます。
 
-フォールバック Url を使用してブランチオフィスで HGS を構成する方法の詳細については、ブログ記事「 [Windows Server バージョン1709でのシールドされた vm のブランチオフィスサポートの向上](https://blogs.technet.microsoft.com/datacentersecurity/2017/11/15/improved-branch-office-support-for-shielded-vms-in-windows-server-version-1709/)」を参照してください。
+フォールバック Url を使用してブランチオフィスで HGS を構成する方法の詳細については、ブログ記事「 [Windows Server バージョン1709でのシールドされた vm のブランチオフィスサポートの向上](/archive/blogs/datacentersecurity/improved-branch-office-support-for-shielded-vms-in-windows-server-version-1709)」を参照してください。
 
 
 ## <a name="offline-mode"></a>オフラインモード

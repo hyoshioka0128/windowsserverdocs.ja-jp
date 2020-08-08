@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 450279f5af907e4643f8ee8c1ea0ff36edd9aea5
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: fb8fef4b954416e7ed284db9cf57b77f5a84c594
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87948695"
+ms.locfileid: "87995807"
 ---
 # <a name="protected-users-security-group"></a>Protected Users セキュリティ グループ
 
@@ -37,7 +37,7 @@ Protected Users グループのメンバーにデバイスの保護を提供す�
 
 - Protected Users グローバル セキュリティ グループは、アカウント ドメインのすべてのドメイン コントローラーにレプリケートされている。
 
-- Windows 8.1 と Windows Server 2012 R2 では、既定でサポートが追加されています。 [Microsoft セキュリティアドバイザリ 2871997](https://technet.microsoft.com/library/security/2871997)では、windows 7、windows Server 2008 R2、および windows server 2012 のサポートが追加されています。
+- Windows 8.1 と Windows Server 2012 R2 では、既定でサポートが追加されています。 [Microsoft セキュリティアドバイザリ 2871997](/security-updates/SecurityAdvisories/2016/2871997)では、windows 7、windows Server 2008 R2、および windows server 2012 のサポートが追加されています。
 
 Protected Users グループのメンバーにドメイン コントローラーの保護機能を提供するには、次の要件があります。
 
@@ -50,7 +50,7 @@ Windows Server 2012 R2 より前のオペレーティングシステムを実行
 > [!Note]
 > ドメインコントローラーは、ドメインの保護をサポートしていません。
 
-Protected Users グループを作成するには、Windows Server 2012 R2 を実行するドメインコントローラーに[プライマリドメインコントローラー (PDC) エミュレーターの役割を転送](https://technet.microsoft.com/library/cc816944(v=ws.10).aspx)します。 そのグループのオブジェクトが他のドメイン コントローラーにレプリケートされた後に、以前のバージョンの Windows Server が実行されているドメイン コントローラーで PDC エミュレーターの役割をホストできます。
+Protected Users グループを作成するには、Windows Server 2012 R2 を実行するドメインコントローラーに[プライマリドメインコントローラー (PDC) エミュレーターの役割を転送](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc816944(v=ws.10))します。 そのグループのオブジェクトが他のドメイン コントローラーにレプリケートされた後に、以前のバージョンの Windows Server が実行されているドメイン コントローラーで PDC エミュレーターの役割をホストできます。
 
 ### <a name="protected-users-group-ad-properties"></a><a name="BKMK_ADgroup"></a>Protected Users グループの AD プロパティ
 
@@ -83,7 +83,7 @@ Protected Users グループを作成するには、Windows Server 2012 R2 を�
 - Windows 8.1 と Windows Server 2012 R2 以降では、windows digest が有効になっている場合でも、ユーザーのプレーンテキストの資格情報はキャッシュされません。
 
 > [!Note]
-> [Microsoft セキュリティアドバイザリ 2871997](https://technet.microsoft.com/library/security/2871997)をインストールした後、レジストリキーが構成されるまで、Windows ダイジェストは引き続き資格情報をキャッシュします。 詳細については[、「マイクロソフトセキュリティアドバイザリ: 資格情報の保護と管理を向上させるための更新プログラム: 2014 年5月 13](https://support.microsoft.com/help/2871997/microsoft-security-advisory-update-to-improve-credentials-protection-a)日」を参照してください。
+> [Microsoft セキュリティアドバイザリ 2871997](/security-updates/SecurityAdvisories/2016/2871997)をインストールした後、レジストリキーが構成されるまで、Windows ダイジェストは引き続き資格情報をキャッシュします。 詳細については[、「マイクロソフトセキュリティアドバイザリ: 資格情報の保護と管理を向上させるための更新プログラム: 2014 年5月 13](https://support.microsoft.com/help/2871997/microsoft-security-advisory-update-to-improve-credentials-protection-a)日」を参照してください。
 
 - NTLM では、ユーザーのプレーンテキストの資格情報または NT の一方向の機能 (NTOWF) はキャッシュされません。
 
@@ -106,7 +106,7 @@ Windows Server 2012 R2 ドメインに対して認証される Protected Users �
 
 Protected Users グループのアカウントごとに、TGT の期限切れに対する構成可能ではない設定が指定されます。 通常、ドメイン コントローラーは、ドメイン ポリシー、[**チケットの最長有効期間**]、および [**ユーザー チケットを更新できる最長有効期間**] に基づいて TGT の有効期間と更新を設定します。 Protected Users グループの場合、このようなドメイン ポリシーに 600 分が設定されます。
 
-詳細については、「[保護されるアカウントの構成方法](https://docs.microsoft.com/windows-server/identity/ad-ds/manage/how-to-configure-protected-accounts)」をご覧ください。
+詳細については、「[保護されるアカウントの構成方法](../../identity/ad-ds/manage/how-to-configure-protected-accounts.md)」をご覧ください。
 
 ## <a name="troubleshooting"></a>トラブルシューティング
 2 つの運用管理ログを使用して、Protected Users に関連するイベントを解決することができます。 これらの新しいログはイベントビューアーにあり、既定で無効になっており、[**アプリケーションとサービス] Logs\Microsoft\Windows\Authentication**にあります。
@@ -126,4 +126,4 @@ Protected Users グループのアカウントごとに、TGT の期限切れに
 
 - [認証ポリシーと認証ポリシー サイロ](authentication-policies-and-authentication-policy-silos.md)
 
-- [保護されるアカウントの構成方法](https://docs.microsoft.com/windows-server/identity/ad-ds/manage/how-to-configure-protected-accounts)
+- [保護されるアカウントの構成方法](../../identity/ad-ds/manage/how-to-configure-protected-accounts.md)

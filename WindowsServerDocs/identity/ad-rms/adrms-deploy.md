@@ -4,23 +4,22 @@ title: AD RMS の Windows Server 2016 へのアップグレード
 author: msmbaldwin
 ms.author: esaggese
 ms.date: 05/30/2019
-ms.prod: windows-server
 ms.topic: article
-ms.openlocfilehash: cb27477f71dbded1f1171fde613f55f6267fc2cb
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 8a2d0ec94619f74260f1fbc934e8e3328201ffa9
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86965474"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87947212"
 ---
 # <a name="upgrading-ad-rms-to-windows-server-2016"></a>AD RMS の Windows Server 2016 へのアップグレード
 
 ## <a name="introduction"></a>はじめに
 
-Active Directory Rights Management サービス (AD RMS) は、機密性の高いドキュメントや電子メールを保護する Microsoft のサービスです。 ファイアウォールや Acl などの従来の保護方法とは異なり、AD RMS の暗号化と保護は、ファイルの場所や転送方法にかかわらず永続的です。 
+Active Directory Rights Management サービス (AD RMS) は、機密性の高いドキュメントや電子メールを保護する Microsoft のサービスです。 ファイアウォールや Acl などの従来の保護方法とは異なり、AD RMS の暗号化と保護は、ファイルの場所や転送方法にかかわらず永続的です。
 
 このドキュメントでは、Windows Server 2012 R2 SQL Server 2012 から Windows Server 2016 および SQL Server 2016 への移行に関するガイダンスを提供します。 同じプロセスを使用して、古いがサポートされているバージョンの AD RMS から移行できます。
-Active Directory Rights Management サービスは現在アクティブな開発ではなく、最新の機能については、 [Azure Information Protection](https://azure.microsoft.com/services/information-protection/)への移行を検討してください。これにより、より包括的なデバイスとアプリケーションのサポートにより包括的な機能セットが提供されます。 
+Active Directory Rights Management サービスは現在アクティブな開発ではなく、最新の機能については、 [Azure Information Protection](https://azure.microsoft.com/services/information-protection/)への移行を検討してください。これにより、より包括的なデバイスとアプリケーションのサポートにより包括的な機能セットが提供されます。
 
 コンテンツを再保護せずに AD RMS から Azure Information Protection に移行する方法の詳細について[は、Azure Information Protection の移行に関するドキュメントを](/azure/information-protection/migrate-from-ad-rms-to-azure-rms)参照してください。
 
@@ -28,7 +27,8 @@ Active Directory Rights Management サービスは現在アクティブな開発
 
 AD FS は、AD RMS インストールのオプションのコンポーネントです。 このガイドでは、ADFS の使用を前提としています。 AD RMS ユーザーをサポートするために ADFS が環境内で使用されていない場合は、ADFS を参照するすべての手順を省略できます。
 
-このガイドでは、並列インストールを実行し、データベースをバックアップ経由で移動することで、SQL Server を SQL Server 2016 にアップグレードします。 または、AD RMS と ADFS データベースサーバーを SQL Server 2016 にインプレースアップグレードできる場合は、このセクションの手順を実行しなくても、このドキュメントの次のセクションに進むことができます。  
+このガイドでは、並列インストールを実行し、データベースをバックアップ経由で移動することで、SQL Server を SQL Server 2016 にアップグレードします。
+または、AD RMS と ADFS データベースサーバーを SQL Server 2016 にインプレースアップグレードできる場合は、このセクションの手順を実行しなくても、このドキュメントの次のセクションに進むことができます。
 
 ## <a name="installation"></a>インストール
 
@@ -36,7 +36,7 @@ AD FS は、AD RMS インストールのオプションのコンポーネント�
 
 次のセクションでは、SQL Server 2016 構成に直接関連する実装タスクについて詳しく説明します。 このガイドでは、サーバーマネージャーと SQL Server Management Studio を使用してこれらのタスクを実行する方法について説明します。
 
-これらの手順は、SQL Server 2016 インストールで完了する必要があります。 組織の標準的なプラクティスやポリシーに従って、適切なハードウェアに SQL Server 2016 をインストールします。 
+これらの手順は、SQL Server 2016 インストールで完了する必要があります。 組織の標準的なプラクティスやポリシーに従って、適切なハードウェアに SQL Server 2016 をインストールします。
 
 #### <a name="preparing-the-sql-server"></a>SQL Server の準備
 
@@ -219,15 +219,15 @@ AD RMS の展開をサポートするために、追加の AD FS サーバーを
 
 以下のセクションでは、Windows server 2016 ベースの AD RMS サーバーを、現在の Windows Server 2012 R2 クラスターに追加する方法について説明します。 サーバーがクラスターに追加され、以前の AD RMS サーバーを非推奨にしてリソースを解放できるように、そのサーバーに情報がレプリケートされます。
 
-1つの Windows Server 2016 ベース AD RMS サーバーを AD RMS クラスターに追加すると、以前のバージョンの Windows に基づくすべてのノードが非アクティブになります。 この処理が完了すると、これらのサーバーのプロビジョニングを解除できます (たとえば、Windows Server 2016 でシャットダウン、転用、または再インストールして AD RMS クラスターに参加させることができます)。 
+1つの Windows Server 2016 ベース AD RMS サーバーを AD RMS クラスターに追加すると、以前のバージョンの Windows に基づくすべてのノードが非アクティブになります。 この処理が完了すると、これらのサーバーのプロビジョニングを解除できます (たとえば、Windows Server 2016 でシャットダウン、転用、または再インストールして AD RMS クラスターに参加させることができます)。
 
 クラスターに追加の AD RMS サーバーをデプロイして、AD RMS デプロイの負荷をサポートすることができます。 また、AD RMS サーバーへのトラフィックが増加した場合に、このアクションを実行することもできます。
 
-このガイドでは、非推奨しているサーバーを除外し、クラスターに追加するサーバーを含めるために、環境内で使用している負荷分散メカニズムを変更するために必要な手順については説明しません。 
+このガイドでは、非推奨しているサーバーを除外し、クラスターに追加するサーバーを含めるために、環境内で使用している負荷分散メカニズムを変更するために必要な手順については説明しません。
 
 #### <a name="adding-a-2016-ad-rms-server"></a>2016 AD RMS サーバーの追加
 
-AD RMS クラスターが、サーバーライセンサー証明書に対して一元的に管理されたキーではなくハードウェアセキュリティモジュールを使用している場合は、AD RMS をインストールする前に、ソフトウェアとその他の HSM アーティファクト (キーやファイルなど) をサーバーにインストールする必要があります。 また、物理的に、または関連するネットワーク構成を使用して、HSM をサーバーに接続する必要があります。 これらの手順については、HSM のガイダンスに従ってください。 
+AD RMS クラスターが、サーバーライセンサー証明書に対して一元的に管理されたキーではなくハードウェアセキュリティモジュールを使用している場合は、AD RMS をインストールする前に、ソフトウェアとその他の HSM アーティファクト (キーやファイルなど) をサーバーにインストールする必要があります。 また、物理的に、または関連するネットワーク構成を使用して、HSM をサーバーに接続する必要があります。 これらの手順については、HSM のガイダンスに従ってください。
 
 **2016 AD RMS サーバーを追加するには**
 
@@ -257,11 +257,12 @@ AD RMS クラスターが、サーバーライセンサー証明書に対して�
 
 13. 再度ログオンした後で、[**ツール**]**サーバーマネージャー**選択し、[ **Active Directory Rights Management**] をクリックします。 [管理] ウィンドウが表示され、クラスターにクラスター内の追加のサーバーがあることが示されます。
 
-14. AD RMS モバイルデバイス拡張機能が元の AD RMS クラスターにインストールされている場合は、更新されたクラスターノードに MDE もインストールする必要があります。 MDE ドキュメントに記載されている手順に従って、AD RMS クラスターに MDE を追加します。 この時点で、既存のすべてのノードを再利用するか、Windows Server 2016 にアップグレードして、上記と同じプロセスを使用して AD RMS クラスターに再度参加させることができます。 
+14. AD RMS モバイルデバイス拡張機能が元の AD RMS クラスターにインストールされている場合は、更新されたクラスターノードに MDE もインストールする必要があります。 MDE ドキュメントに記載されている手順に従って、AD RMS クラスターに MDE を追加します。
+この時点で、既存のすべてのノードを再利用するか、Windows Server 2016 にアップグレードして、上記と同じプロセスを使用して AD RMS クラスターに再度参加させることができます。
 
 ### <a name="configuring-windows-server-2016-web-application-proxy-wap"></a>Windows Server 2016 Web アプリケーションプロキシ (WAP) の構成
 
-以下のセクションでは、Web アプリケーションプロキシの展開で実行する必要のある運用タスクに関するガイダンスを提供します。 これは省略可能な手順であり、他のメカニズムを使用してインターネットに AD RMS を公開する場合は必要ありません。 
+以下のセクションでは、Web アプリケーションプロキシの展開で実行する必要のある運用タスクに関するガイダンスを提供します。 これは省略可能な手順であり、他のメカニズムを使用してインターネットに AD RMS を公開する場合は必要ありません。
 
 #### <a name="adding-a-windows-server-2016-wap-server"></a>Windows Server 2016 WAP サーバーの追加
 

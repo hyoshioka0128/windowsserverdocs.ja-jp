@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: bd34723d1f5223c2576237c768d9da55172eebc6
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: fb0c35d51c0aa2a0f63f61c0be48099bb6aa5269
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87943892"
+ms.locfileid: "87996174"
 ---
 # <a name="kerberos-constrained-delegation-overview"></a>Kerberos Constrained Delegation Overview
 
@@ -28,7 +28,7 @@ Kerberos の制約付き委任は、サービスで使用できる、より安�
 
 Windows Server 2012 R2 および Windows Server 2012 では、サービスの制約付き委任を構成する機能がドメイン管理者からサービス管理者に転送されました。 これにより、バックエンド サービス管理者はフロントエンド サービスを許可または拒否できます。
 
-Windows Server 2003 で導入された制約付き委任の詳細については、「 [Microsoft Windows Server 2003: Kerberos のプロトコル遷移と制約付き委任](https://technet.microsoft.com/library/cc739587(v=ws.10))」を参照してください。
+Windows Server 2003 で導入された制約付き委任の詳細については、「 [Microsoft Windows Server 2003: Kerberos のプロトコル遷移と制約付き委任](/previous-versions/windows/it-pro/windows-server-2003/cc739587(v=ws.10))」を参照してください。
 
 Windows Server 2012 R2 および Windows Server 2012 の Kerberos プロトコルの実装には、制約付き委任専用の拡張機能が含まれています。  Service for User to Proxy (S4U2Proxy) は、サービスがユーザー用の Kerberos サービス チケットを使用して、キー配布センター (KDC) からバックエンド サービスへのサービス チケットを取得できるようにします。 これらの拡張機能を使用すると、別のドメインにあるバックエンドサービスのアカウントで制約付き委任を構成できます。 これらの拡張機能の詳細については、MSDN ライブラリの「 [ \[ MS SFU \] : Kerberos プロトコル拡張機能: ユーザー向けのサービスと制約付き委任プロトコルの仕様](https://msdn.microsoft.com/library/cc246071(PROT.13).aspx)」を参照してください。
 
@@ -54,7 +54,7 @@ Windows Server 2012 R2 および Windows Server 2012 のドメイン間で制約
 
 これらの拡張機能の実装については、MSDN の「 [ \[ MS SFU \] : Kerberos プロトコル拡張機能: ユーザー向けのサービスと制約付き委任プロトコルの仕様](https://msdn.microsoft.com/library/cc246071(PROT.10).aspx)」を参照してください。
 
-Service for User (S4U) 拡張と比較した場合の、転送されたチケット保証チケット (TGT) を使用した Kerberos の委任での基本的なメッセージ シーケンスの詳細については、「[MS-SFU]:Kerberos Protocol Extensions:Service for User and Constrained Delegation Protocol Specification ([MS-SFU]: Kerberos プロトコル拡張: Service for User および制約付き委任プロトコルの仕様)」の、「 [1.3.3 Protocol Overview (1.3.3 プロトコルの概要)](https://msdn.microsoft.com/library/cc246080(v=prot.10).aspx) 」セクションを参照してください。
+Service for User (S4U) 拡張と比較した場合の、転送されたチケット保証チケット (TGT) を使用した Kerberos の委任での基本的なメッセージ シーケンスの詳細については、「[MS-SFU]:Kerberos Protocol Extensions:Service for User and Constrained Delegation Protocol Specification ([MS-SFU]: Kerberos プロトコル拡張: Service for User および制約付き委任プロトコルの仕様)」の、「 [1.3.3 Protocol Overview (1.3.3 プロトコルの概要)](/openspecs/windows_protocols/ms-sfu/1fb9caca-449f-4183-8f7a-1a5fc7e7290a) 」セクションを参照してください。
 
 **リソースベースの制約付き委任のセキュリティへの影響**
 
