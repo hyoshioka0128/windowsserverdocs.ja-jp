@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 10fb8e072e9dd810e64ace79c17f02290766ec6f
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: bb35516e16e4b7d27ab2a5b68c61fce69a0e7670
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87936495"
+ms.locfileid: "87989961"
 ---
 # <a name="windows-authentication-overview"></a>Windows 認証の概要
 
@@ -54,9 +54,9 @@ Windows 認証は、情報が信頼できるソース (人や別のコンピュ�
 |----|------|--------|
 |Active Directory ドメイン内の認証|Kerberos|Microsoft Windows &nbsp; Server オペレーティングシステムには、公開キー認証用の Kerberos version 5 認証プロトコルと拡張機能が実装されています。 Kerberos 認証クライアントはセキュリティサポートプロバイダー SSP として実装され、 \( \) セキュリティサポートプロバイダーインターフェイス SSPI を使用してアクセスでき \( \) ます。 初期のユーザー認証は、Winlogon シングルサインオンアーキテクチャと統合されてい \- ます。 Kerberos キー配布センター \( KDC \) は、ドメインコントローラーで実行されている他の Windows Server セキュリティサービスと統合されています。 KDC は、そのセキュリティアカウントデータベースとしてドメインの Active Directory Directory サービスデータベースを使用します。 既定の Kerberos 実装には、Active Directory が必要です。<p>その他のリソースについては、「[Kerberos 認証の概要](../kerberos/kerberos-authentication-overview.md)」を参照してください。|
 |Web 上のセキュリティで保護された認証|\/Schannel セキュリティサポートプロバイダーに実装されている TLS SSL|トランスポート層セキュリティ \( TLS \) プロトコルバージョン1.0、1.1、1.2、Secure Sockets Layer \( SSL \) プロトコル、バージョン2.0 と3.0、データグラムトランスポート層セキュリティプロトコルバージョン1.0、およびプライベート通信トランスポートの \( PCT \) プロトコルのバージョン1.0 は、公開キーの暗号化に基づいています。 セキュリティで保護されたチャネル \( Schannel \) プロバイダー認証プロトコルスイートは、これらのプロトコルを提供します。 すべての Schannel プロトコルでは、クライアント/サーバー モデルが使用されています。<p>その他のリソースについては、「 [TLS-SSL &#40;SCHANNEL SSP&#41; の概要](../tls/tls-ssl-schannel-ssp-overview.md)」を参照してください。|
-|Web サービスまたはアプリケーションの認証|統合 Windows 認証<p>ダイジェスト認証|その他のリソースについては、「[Integrated Windows Authentication (統合 Windows 認証)](https://technet.microsoft.com/library/cc758557(v=WS.10).aspx)」、「[Digest Authentication (ダイジェスト認証)](https://technet.microsoft.com/library/cc738318(v=ws.10).aspx)」、および「[Advanced Digest Authentication (高度なダイジェスト認証)](https://technet.microsoft.com/library/cc783131(v=ws.10).aspx)」を参照してください。|
+|Web サービスまたはアプリケーションの認証|統合 Windows 認証<p>ダイジェスト認証|その他のリソースについては、「[Integrated Windows Authentication (統合 Windows 認証)](/previous-versions/windows/it-pro/windows-server-2003/cc758557(v=ws.10))」、「[Digest Authentication (ダイジェスト認証)](/previous-versions/windows/it-pro/windows-server-2003/cc738318(v=ws.10))」、および「[Advanced Digest Authentication (高度なダイジェスト認証)](/previous-versions/windows/it-pro/windows-server-2003/cc783131(v=ws.10))」を参照してください。|
 |レガシ アプリケーションの認証|NTLM|NTLM はチャレンジ \- 応答スタイルの認証プロトコルです。NTLM プロトコルは、認証に加えて、必要に応じて、NTLM の署名機能と封印機能によって、セッションセキュリティ (特にメッセージの整合性と機密性) を提供します。<p>その他のリソースについては、「[NTLM の概要](../kerberos/ntlm-overview.md)」を参照してください。|
-|多要素認証の利用|スマート カードのサポート<p>生体認証のサポート|スマートカードは、 \- クライアント認証、ドメインへのログオン、コード署名、電子メールのセキュリティ保護などのタスクにセキュリティソリューションを提供するための、改ざんされにくく、ポータブルな方法です \- 。<p>生体認証は、一人一人異なる不変の身体的特徴を測定することによって個人を特定します。 生体認証に最も多く使われている身体的特徴の 1 つは指紋です。指紋を使って生体認証を行う数え切れないほどのデバイスが、パーソナル コンピューターや周辺機器に組み込まれています。<p>その他のリソースについては、「[スマートカードのテクニカルリファレンス](https://technet.microsoft.com/itpro/windows/keep-secure/smart-card-windows-smart-card-technical-reference)」を参照してください。 |
+|多要素認証の利用|スマート カードのサポート<p>生体認証のサポート|スマートカードは、 \- クライアント認証、ドメインへのログオン、コード署名、電子メールのセキュリティ保護などのタスクにセキュリティソリューションを提供するための、改ざんされにくく、ポータブルな方法です \- 。<p>生体認証は、一人一人異なる不変の身体的特徴を測定することによって個人を特定します。 生体認証に最も多く使われている身体的特徴の 1 つは指紋です。指紋を使って生体認証を行う数え切れないほどのデバイスが、パーソナル コンピューターや周辺機器に組み込まれています。<p>その他のリソースについては、「[スマートカードのテクニカルリファレンス](/windows/security/identity-protection/smart-cards/smart-card-windows-smart-card-technical-reference)」を参照してください。 |
 |資格情報のローカル管理、保管、再利用|資格情報の管理<p>ローカル セキュリティ機関<p>パスワード|Windows の資格情報管理を使うと、資格情報を安全に保管できます。 資格情報は、 \( \) リソースにアクセスするたびに正しい資格情報が提示されるように、アプリまたは web サイトを介して、セキュリティで保護されたデスクトップで収集されます。<p>
 |最新の認証保護によるレガシ システムの強化|認証の拡張保護 (Extended Protection for Authentication)|この機能は、統合 Windows 認証 iwa を使用してネットワーク接続を認証するときに、資格情報の保護と処理を強化し \( \) ます。|
 
@@ -71,12 +71,10 @@ Windows 認証は、Windows オペレーティング システムの以前のバ
 |認証テクノロジ|リソース|
 |----------------|-------|
 |[Windows 認証]|[Windows 認証の技術概要](../windows-authentication/windows-authentication-technical-overview.md)<br />バージョン間の違い、一般的な認証の概念、ログオンのシナリオ、サポートされるバージョンのアーキテクチャ、適用可能な設定などのトピックが含まれます。|
-|Kerberos|[Kerberos Authentication Overview](../kerberos/kerberos-authentication-overview.md)<p>[Kerberos の制約付き委任の概要](../kerberos/kerberos-constrained-delegation-overview.md)<p>[Kerberos 認証のテクニカルリファレンス](https://technet.microsoft.com/library/cc739058(v=ws.10).aspx) \(2003\)<p>[Kerberos フォーラム](https://docs.microsoft.com/answers/topics/windows-server-security.html)|
+|Kerberos|[Kerberos Authentication Overview](../kerberos/kerberos-authentication-overview.md)<p>[Kerberos の制約付き委任の概要](../kerberos/kerberos-constrained-delegation-overview.md)<p>[Kerberos 認証のテクニカルリファレンス](/previous-versions/windows/it-pro/windows-server-2003/cc739058(v=ws.10)) \(2003\)<p>[Kerberos フォーラム](/answers/topics/windows-server-security.html)|
 |TLS \/ SSL および DTLS \( Schannel セキュリティサポートプロバイダー\)|[TLS-SSL &#40;Schannel SSP&#41; の概要](../tls/tls-ssl-schannel-ssp-overview.md)<p>[Schannel セキュリティ サポート プロバイダーのテクニカル リファレンス](../tls/schannel-security-support-provider-technical-reference.md)|
-|ダイジェスト認証|[ダイジェスト認証のテクニカルリファレンス](https://technet.microsoft.com/library/cc782794(v=ws.10).aspx) \(2003\)|
+|ダイジェスト認証|[ダイジェスト認証のテクニカルリファレンス](/previous-versions/windows/it-pro/windows-server-2003/cc782794(v=ws.10)) \(2003\)|
 |NTLM|[NTLM Overview](../kerberos/ntlm-overview.md)<br />現在および過去のリソースへのリンクが含まれます|
-|PKU2U|[Windows の PKU2U の概要](https://technet.microsoft.com/library/dd560634(v=ws.10).aspx)|
-|スマート カード|[スマートカードのテクニカルリファレンス](https://technet.microsoft.com/itpro/windows/keep-secure/smart-card-windows-smart-card-technical-reference)<p>
+|PKU2U|[Windows の PKU2U の概要](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd560634(v=ws.10))|
+|スマート カード|[スマートカードのテクニカルリファレンス](/windows/security/identity-protection/smart-cards/smart-card-windows-smart-card-technical-reference)<p>
 |資格情報|[資格情報の保護と管理](../credentials-protection-and-management/credentials-protection-and-management.md)<br />現在および過去のリソースへのリンクが含まれます<p>[パスワードの概要](../kerberos/passwords-overview.md)<br />現在および過去のリソースへのリンクが含まれます|
-
-

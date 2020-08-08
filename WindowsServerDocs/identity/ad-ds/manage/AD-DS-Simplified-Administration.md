@@ -6,14 +6,12 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/09/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 4358f48b2373ee0c521c3970c4cb235a0d19dfca
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 61961acf9fc1c858fddb4da70b4899e229ec6a3d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519039"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87956979"
 ---
 # <a name="ad-ds-simplified-administration"></a>AD DS の簡略化された管理
 
@@ -113,7 +111,7 @@ AD DS のサイト トポロジとレプリケーションの詳細について�
 
 Windows 2000 Active Directory では、RID マスターが導入されました。これは、ユーザー、グループ、コンピューターといったセキュリティ トラスティのセキュリティ識別子 (SID) を作成するために、相対識別子のプールをドメイン コントローラーに対して発行します。  既定では、このグローバル RID 空間は、ドメイン内で作成される合計 2<sup>30</sup> (つまり 1,073,741,823) 個の SID に制限されています。 SID をプールに戻したり、再発行したりすることはできません。 時間の経過と共に、大規模なドメインでは RID の残数が少なくなったり、何らかのアクシデントによって RID が無駄に減り、最終的に枯渇したりする場合があります。
 
-Windows Server 2012 では、RID の発行と管理に関する多数の問題に対処しています。それらの問題は、1999 年に最初の Active Directory ドメインが作成されて以降、AD DS が進化を続ける過程で、お客様と Microsoft カスタマー サポートによって発見されたものです。 次の設定があります。
+Windows Server 2012 では、RID の発行と管理に関する多数の問題に対処しています。それらの問題は、1999 年に最初の Active Directory ドメインが作成されて以降、AD DS が進化を続ける過程で、お客様と Microsoft カスタマー サポートによって発見されたものです。 次のようなものが含まれます。
 
 - RID 消費の警告が定期的にイベント ログに書き込まれます。
 - 管理者が RID プールを無効にすると、イベントがログに記録されます。

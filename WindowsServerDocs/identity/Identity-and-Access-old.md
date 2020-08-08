@@ -6,15 +6,13 @@ ms.author: billmath
 manager: femila
 ms.date: 03/16/2018
 ms.topic: article
-ms.prod: windows-server
 ms.localizationpriority: medium
-ms.technology: identity-adds
-ms.openlocfilehash: 971622f0680d1a1b864a1f98332bc836dbdc3b00
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 92584ba048791df5de3e525ee7d5456e1a44f3e7
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86965664"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87965179"
 ---
 # <a name="identity-and-access-in-windows-server-2016"></a>Windows Server 2016 の ID およびアクセス
 
@@ -27,10 +25,10 @@ ms.locfileid: "86965664"
 
 
 ## <a name="whats-new-in-active-directory-federation-services-for-windows-server-2016"></a>[Windows Server 2016 の Active Directory フェデレーション サービス (AD FS) の新機能](ad-fs/overview/whats-new-active-directory-federation-services-windows-server.md)
-Windows Server 2016 の AD FS で使用できるすべての新機能の概要を説明します。  
+Windows Server 2016 の AD FS で使用できるすべての新機能の概要を説明します。
 
 ## <a name="whats-new-in-active-directory-domain-services-for-windows-server-2016"></a>[Windows Server 2016 の Active Directory Domain Services の新機能](whats-new-active-directory-domain-services.md)
-Windows Server 2016 の AD DS で使用できるすべての新機能の概要を説明します。  
+Windows Server 2016 の AD DS で使用できるすべての新機能の概要を説明します。
 
 ## <a name="privileged-access-management-for-active-directory-domain-services-40ad-ds41"></a>[Active Directory Domain Services &#40;AD DS の Privileged Access Management&#41;](/microsoft-identity-manager/pam/privileged-identity-management-for-active-directory-domain-services)
 Active Directory Domain Services (AD DS) の Privileged Access Management (PAM) は、Microsoft Identity Manager (MIM) および Windows Server 2012 R2 と Windows Server 2016 に基づくソリューションです。
@@ -42,10 +40,10 @@ Windows 10 では、Azure Active Directory を利用できます。 Windows 10 �
 Windows Server 2016 の AD DS で使用できるすべての機能を詳細に説明したドキュメントです。
 
 ## <a name="active-directory-federation-services"></a>[Active Directory フェデレーション サービス (AD FS)](Active-Directory-Federation-Services.md)
-Windows Server 2016 の AD FS で使用できるすべての機能を詳細に説明したドキュメントです。  
+Windows Server 2016 の AD FS で使用できるすべての機能を詳細に説明したドキュメントです。
 
-## <a name="solutions-and-scenario-guides"></a>ソリューションとシナリオ ガイド  
-* [任意の場所の任意のデバイスからの企業リソースへのセキュリティで保護されたアクセス](/previous-versions/windows/it-pro/solutions-guidance/dn550982(v=ws.11))  
-*  [任意のデバイスからの職場への参加による業務用アプリケーション間の SSO とシームレスな 2 要素認証](./ad-fs/operations/join-to-workplace-from-any-device-for-sso-and-seamless-second-factor-authentication-across-company-applications.md)  
-* [追加の多要素認証による個人情報アプリケーションのリスク管理](./ad-fs/operations/manage-risk-with-additional-multi-factor-authentication-for-sensitive-applications.md)  
+## <a name="solutions-and-scenario-guides"></a>ソリューションとシナリオ ガイド
+* [任意の場所の任意のデバイスからの企業リソースへのセキュリティで保護されたアクセス](/previous-versions/windows/it-pro/solutions-guidance/dn550982(v=ws.11))
+*  [任意のデバイスからの職場への参加による業務用アプリケーション間の SSO とシームレスな 2 要素認証](./ad-fs/operations/join-to-workplace-from-any-device-for-sso-and-seamless-second-factor-authentication-across-company-applications.md)
+* [追加の多要素認証による個人情報アプリケーションのリスク管理](./ad-fs/operations/manage-risk-with-additional-multi-factor-authentication-for-sensitive-applications.md)
 * [条件付きアクセス制御によってリスクを管理する](./ad-fs/operations/manage-risk-with-conditional-access-control.md)

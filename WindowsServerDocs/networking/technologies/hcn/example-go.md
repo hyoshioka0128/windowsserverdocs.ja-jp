@@ -2,16 +2,15 @@
 title: 最上位の IPAM & サブネットオブジェクトの生成されたジャンプコードの例
 ms.author: jmesser
 author: jmesser81
-ms.prod: windows-server
 ms.date: 11/05/2018
-ms.openlocfilehash: 1552be3e39eb952e0b7b4b33689cc43132cf68a0
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 72c838843b03120d622a08d25d7748efcc052326
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80859885"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87949175"
 ---
-# <a name="example-of-go-generated-code"></a>Go で生成されたコードの例 
+# <a name="example-of-go-generated-code"></a>Go で生成されたコードの例
 
 >適用対象: Windows Server (半期チャネル)、Windows Server 2019
 

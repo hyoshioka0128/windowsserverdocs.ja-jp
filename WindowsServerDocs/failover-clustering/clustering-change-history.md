@@ -2,19 +2,17 @@
 ms.assetid: 289cbd10-e7ec-4f2e-8dd1-eb5692565578
 title: フェールオーバー クラスタリングの変更履歴のトピック
 description: Windows Server 2016 のフェールオーバークラスタリングに関するドキュメントの新しいトピックと更新されたトピック
-ms.prod: windows-server
-ms.technology: storage-failover-clustering
 ms.topic: article
 author: JasonGerend
 manager: lizross
 ms.author: jgerend
 ms.date: 01/07/2020
-ms.openlocfilehash: 2bc64479c5615e356158b83ee41402f425f4ea3b
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 9305935046db6e4185e07c703eb9caa83d263b2a
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87177898"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87965299"
 ---
 # <a name="change-history-for-failover-clustering-topics"></a>フェールオーバー クラスタリングの変更履歴のトピック
 
@@ -72,7 +70,7 @@ ms.locfileid: "87177898"
 
 |新しいトピックまたは変更されたトピック|説明|
 |---|---|
-|[クォーラムを構成および管理する](manage-cluster-quorum.md) | [以前のバージョン](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)のライブラリから移行されています。 |
+|[クォーラムを構成して管理する](manage-cluster-quorum.md) | [以前のバージョン](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)のライブラリから移行されています。 |
 
 ## <a name="april-2018"></a>2018 年 4 月
 

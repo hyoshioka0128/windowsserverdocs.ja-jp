@@ -1,20 +1,18 @@
 ---
 title: HYPER-V でサポートされている Oracle Linux 仮想マシン
 description: 各バージョンに含まれる Linux integration services と機能の一覧を示します。
-ms.prod: windows-server
 manager: dongill
-ms.technology: compute-hyper-v
 ms.topic: article
 ms.assetid: c02fdb5b-62f3-43cb-a190-ab74b3ebcf77
 author: shirgall
 ms.author: kathydav
 ms.date: 06/05/2020
-ms.openlocfilehash: 67f38d11c032e9eb0b98da14c25e01a5f67cabae
-ms.sourcegitcommit: 76a3b5f66e47e08e8235e2d152185b304d03b68b
+ms.openlocfilehash: 0e9a11fbff5015037bffa1cad14e70d629fef94b
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84663175"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87989301"
 ---
 # <a name="supported-oracle-linux-virtual-machines-on-hyper-v"></a>HYPER-V でサポートされている Oracle Linux 仮想マシン
 
@@ -27,8 +25,8 @@ ms.locfileid: "84663175"
 * [Oracle Linux 2.x シリーズ](#oracle-linux-8x-series)
 * [Oracle Linux 2.x シリーズ](#oracle-linux-7x-series)
 * [Oracle Linux 6.x シリーズ](#oracle-linux-6x-series)
- 
-   
+
+
 ## <a name="table-legend"></a>表の凡例
 
 * **組み込まれている** に LIS がこの Linux ディストリビューションの一部として含まれています。 組み込みの LIS のカーネル モジュールのバージョン番号 (に示すように **lsmod**, 、たとえば) マイクロソフト提供の LIS のダウンロード パッケージにバージョン番号とは異なります。 組み込みの LIS の項目が古いことに不一致が示されません。
@@ -36,7 +34,7 @@ ms.locfileid: "84663175"
 * & #10004 です。の機能使用
 * (*空白*) の機能は使用できません
 * **RHCK** -Red Hat 互換性カーネル
-* **UEK** Enterprise KERNEL (UEK) 
+* **UEK** Enterprise KERNEL (UEK)
    * UEK4-アップストリームの Linux カーネルリリース4.1.12 に構築されています。
    * UEK5-アップストリームの Linux カーネルリリース4.14 で構築
    * UEK6-アップストリームの Linux カーネルリリース5.4 で構築
@@ -46,17 +44,17 @@ ms.locfileid: "84663175"
 |       **機能**     |       **Windows Server のバージョン**      |       **8.0-8.1 (RHCK)** |
 |-----------------------|---------------------------------------|-------------------|
 |       **可用性**        |   |
-|       **[コア](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**      | 2019、2016、2012 R2 | &#10004; | 
-|       Windows Server 2016 の正確な時刻       | 2019、2016 | &#10004; | 
-|       **[ネットワーク](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#networking)**      |   | 
-|       Jumbo Frame        | 2019、2016、2012 R2 | &#10004; | 
-|       VLAN のタグ付けとトランキング       | 2019、2016、2012 R2 | &#10004;  | 
+|       **[コア](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**      | 2019、2016、2012 R2 | &#10004; |
+|       Windows Server 2016 の正確な時刻       | 2019、2016 | &#10004; |
+|       **[ネットワーク](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#networking)**      |   |
+|       Jumbo Frame        | 2019、2016、2012 R2 | &#10004; |
+|       VLAN のタグ付けとトランキング       | 2019、2016、2012 R2 | &#10004;  |
 |       ライブ マイグレーション      | 2019、2016、2012 R2 | &#10004; |
-|       静的 IP インジェクション     |  2019、2016、2012 R2 | & #10004 です。注 2 | 
+|       静的 IP インジェクション     |  2019、2016、2012 R2 | & #10004 です。注 2 |
 |       vRSS     | 2019、2016、2012 R2 | &#10004; |
 |       TCP セグメント化とチェックサムのオフロード | 2019、2016、2012 R2 | &#10004;|
 |       SR-IOV  | 2019、2016 |  &#10004;   |
-|       **[Storage](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)** |  | 
+|       **[Storage](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)** |  |
 |       VHDX のサイズ変更  | 2019、2016、2012 R2 | &#10004; |
 |       仮想ファイバー チャネル | 2019、2016、2012 R2 | & #10004 です。注 3  |
 |       仮想マシンのライブバックアップ  | 2019、2016、2012 R2 | & #10004 です。注 5 |
@@ -64,22 +62,22 @@ ms.locfileid: "84663175"
 |       SCSI WWN | 2019、2016、2012 R2 | &#10004;  |
 |       **[メモリ](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)** | |
 |       PAE カーネルサポート  | 2019、2016、2012 R2 |  該当なし |
-|       MMIO ギャップの構成  | 2019、2016、2012 R2 | &#10004; | 
+|       MMIO ギャップの構成  | 2019、2016、2012 R2 | &#10004; |
 |       動的メモリでホット アド | 2019、2016、2012 R2  | & #10004 です。7, 8, 9 に注意してください。 |
 |       動的メモリ - バルーニング | 2019、2016、2012 R2 | & #10004 です。7, 8, 9 に注意してください。 |
 |       ランタイムのメモリのサイズ変更 | 2019、2016  | &#10004;  |
-|       **[ビデオ](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)** | |
-|       Hyper-v 固有のビデオデバイス | 2019、2016、2012 R2 | &#10004;   | 
+|       **[Video](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)** | |
+|       Hyper-v 固有のビデオデバイス | 2019、2016、2012 R2 | &#10004;   |
 |       **[その他](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#miscellaneous)** | |
-|       キーと値のペア  | 2019、2016、2012 R2 | &#10004;   | 
-|       マスクなしの割り込み | 2019、2016、2012 R2 | &#10004;  | 
-|       ホストからゲストへのファイルのコピー | 2019、2016、2012 R2 | &#10004;  | 
-|       lsvmbus コマンド | 2019、2016、2012 R2 | &#10004;  | 
-|       Hyper V ソケット | 2019、2016 | &#10004;  | 
-|       PCI パススルー/DDA | 2019、2016 | &#10004; | 
+|       キーと値のペア  | 2019、2016、2012 R2 | &#10004;   |
+|       マスクなしの割り込み | 2019、2016、2012 R2 | &#10004;  |
+|       ホストからゲストへのファイルのコピー | 2019、2016、2012 R2 | &#10004;  |
+|       lsvmbus コマンド | 2019、2016、2012 R2 | &#10004;  |
+|       Hyper V ソケット | 2019、2016 | &#10004;  |
+|       PCI パススルー/DDA | 2019、2016 | &#10004; |
 | **[第 2 世代仮想マシン](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#generation-2-virtual-machines)** | |  |
-|       UEFI を使用したブート | 2019、2016、2012 R2 |  & #10004 です。注 12  |   
-|       セキュア ブート | 2019、2016 |  &#10004; | 
+|       UEFI を使用したブート | 2019、2016、2012 R2 |  & #10004 です。注 12  |
+|       セキュア ブート | 2019、2016 |  &#10004; |
 
 ## <a name="oracle-linux-7x-series"></a>Oracle Linux 2.x シリーズ
 
@@ -223,7 +221,7 @@ Windows Server 2016 の正確な時刻
 <tr height="50px">
 <td width="20%">
 
- **[ネットワーク](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#networking)** 
+ **[ネットワーク](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#networking)**
 </td>
 <td width="20%">
 
@@ -879,7 +877,7 @@ MMIO ギャップの構成
 <tr height="50px">
 <td width="20%">
 
-**[ビデオ](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)**
+**[Video](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)**
 </td>
 <td width="20%">
 
@@ -1270,11 +1268,11 @@ UEFI を使用したブート
 
 このシリーズでは、64 ビットのカーネルのみができます。
 
-|       **機能**     |       **Windows Server のバージョン**      |       **6.8-6.10 (RHCK)** |       **6.8-6.10 (UEK4)**     | 
+|       **機能**     |       **Windows Server のバージョン**      |       **6.8-6.10 (RHCK)** |       **6.8-6.10 (UEK4)**     |
 |-----------------------|---------------------------------------|-------------------|-------------------|
 |       **可用性**     |   | LIS 4.3  | 組み込み  |
 |       **[コア](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**      | 2019、2016、2012 R2 | &#10004; | &#10004;
-|       Windows Server 2016 の正確な時刻       | 2019、2016 | | 
+|       Windows Server 2016 の正確な時刻       | 2019、2016 | |
 |       **[ネットワーク](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#networking)**      |   |  |
 |       Jumbo Frame        | 2019、2016、2012 R2 | &#10004; | &#10004;|
 |       VLAN のタグ付けとトランキング       | 2019、2016、2012 R2 | & #10004 です。注 1 | & #10004 です。注 1 |
@@ -1295,7 +1293,7 @@ UEFI を使用したブート
 |       動的メモリでホット アド | 2019、2016、2012 R2  | & #10004 です。6、8、9 に注意してください。 | & #10004 です。6、8、9 に注意してください。 |
 |       動的メモリ - バルーニング | 2019、2016、2012 R2 | & #10004 です。6、8、9 に注意してください。 | & #10004 です。6、8、9 に注意してください。 |
 |       ランタイムのメモリのサイズ変更 | 2019、2016  |  | |
-|       **[ビデオ](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)** | | |
+|       **[Video](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)** | | |
 |       Hyper-v 固有のビデオデバイス | 2019、2016、2012 R2 | &#10004;   | &#10004; |
 |       **[その他](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#miscellaneous)** | | |
 |       キーと値のペア  | 2019、2016、2012 R2 | &#10004; メモ10、11   | &#10004; メモ10、11  |
@@ -1305,7 +1303,7 @@ UEFI を使用したブート
 |       Hyper V ソケット | 2019、2016 | &#10004;  | &#10004; |
 |       PCI パススルー/DDA | 2019、2016 | &#10004; | &#10004; |
 | **[第 2 世代仮想マシン](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#generation-2-virtual-machines)** | |  |
-|       UEFI を使用したブート | 2019、2016、2012 R2 |  & #10004 です。注 12  | & #10004 です。注 12   
+|       UEFI を使用したブート | 2019、2016、2012 R2 |  & #10004 です。注 12  | & #10004 です。注 12
 |       セキュア ブート | 2019、2016 |  |  |
 
 
@@ -1357,7 +1355,7 @@ UEFI を使用したブート
 
 参照
 
-* [Set-vmfirmware](https://technet.microsoft.com/library/dn464287.aspx)
+* [Set-vmfirmware](/powershell/module/hyper-v/set-vmfirmware?view=win10-ps)
 
 * [CentOS をサポートし、HYPER-V 上の Red Hat Enterprise Linux 仮想マシン](Supported-CentOS-and-Red-Hat-Enterprise-Linux-virtual-machines-on-Hyper-V.md)
 

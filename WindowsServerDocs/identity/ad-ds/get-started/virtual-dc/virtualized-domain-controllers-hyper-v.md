@@ -5,13 +5,12 @@ author: MicrosoftGuyJFlo
 ms.author: joflore
 ms.date: 04/19/2018
 ms.topic: article
-ms.prod: windows-server
-ms.openlocfilehash: 99d470af623be7ccc7ad2a5fe0d63576a406ff57
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: ad40b5e5049c8b4f29dab4ffac8246a73e5b2fcd
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519049"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87956989"
 ---
 # <a name="virtualizing-domain-controllers-using-hyper-v"></a>Hyper-v を使用してドメインコントローラーを仮想化する
 
@@ -31,7 +30,7 @@ Hyper-v の役割をインストールして使用するには、次のものが
 
    - **X64 プロセッサ**
       - Hyper-v は、x64 ベースバージョンの Windows Server 2008 以降で使用できます。
-   - **ハードウェア依存の仮想化**
+   - **ハードウェア補助による仮想化**
       - この機能は、仮想化オプション、特に Intel Virtualization テクノロジ (Intel VT) または AMD Virtualization (AMD-V) を含むプロセッサで使用できます。
    - **ハードウェアデータ実行保護 (DEP)**
       - ハードウェア DEP が使用可能であり、有効になっている必要があります。 具体的には、Intel XD ビット (execute disable bit) または AMD NX ビット (no execute bit) を有効にする必要があります。
@@ -236,7 +235,7 @@ Hyper-v タイム同期プロバイダーを無効にするには、VM をシャ
 > [!NOTE]
 > このガイダンスは最近更新され、ドメイン階層のみからゲストドメインコントローラーの時刻を同期するための現在の推奨事項を反映するようになりました。これは、前の推奨事項ではなく、ホストシステムとゲストドメインコントローラー間の時間の同期を部分的に無効にすることです。
 
-## <a name="storage"></a>ストレージ
+## <a name="storage"></a>記憶域
 
 ドメインコントローラーの仮想マシンのパフォーマンスを最適化し、Active Directory 書き込みの持続性を確保するには、オペレーティングシステム、Active Directory、および VHD ファイルの格納に次の推奨事項を使用します。
 

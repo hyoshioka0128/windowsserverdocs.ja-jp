@@ -1,18 +1,16 @@
 ---
 title: Resilient File System (ReFS) の概要
-ms.prod: windows-server
 ms.author: gawatu
 manager: mchad
-ms.technology: storage-file-systems
 ms.topic: article
 author: gawatu
 ms.date: 06/29/2019
-ms.openlocfilehash: 5bcdbc76259d1dfecaaa5266bb952a21bcbc7825
-ms.sourcegitcommit: 457e88e5aa6be13a2bffdb8e434a8efc3698678f
+ms.openlocfilehash: 668ee7a0c9e948c12140d3e25309a68ad3b2148b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/30/2020
-ms.locfileid: "85548897"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957269"
 ---
 # <a name="resilient-file-system-refs-overview"></a>Resilient File System (ReFS) の概要
 
@@ -106,7 +104,7 @@ ReFS をバックアップターゲットとして展開することは、独自
 
 ### <a name="limits"></a>制限
 
-| 特徴量       | ReFS                                        | NTFS |
+| 機能       | ReFS                                        | NTFS |
 |----------------|------------------------------------------------|-----------------------|
 | ファイル名の最大長 | 255 Unicode 文字  | 255 Unicode 文字               |
 | パス名の最大長 |32 K Unicode 文字 | 32 K Unicode 文字                |
@@ -121,7 +119,7 @@ ReFS をバックアップターゲットとして展開することは、独自
 |---------------------------|------------------|-----------------------|
 | BitLocker 暗号化 | はい | はい |
 | データ重複除去 | 可<sup>1</sup> | はい |
-| クラスター共有ボリューム (CSV) のサポート | はい<sup>2</sup> | Yes |
+| クラスター共有ボリューム (CSV) のサポート | はい<sup>2</sup> | はい |
 | ソフト リンク | はい | はい |
 | フェールオーバー クラスターのサポート | はい | はい |
 | アクセス制御リスト | はい | はい |
@@ -135,8 +133,8 @@ ReFS をバックアップターゲットとして展開することは、独自
 | oplock | はい | はい |
 | スパース ファイル | はい | はい |
 | 名前付きストリーム | はい | はい |
-| 仮想プロビジョニング | ○<sup>3</sup> | Yes |
-| トリミング/マップ解除 | ○<sup>3</sup> | Yes |
+| 仮想プロビジョニング | ○<sup>3</sup> | はい |
+| トリミング/マップ解除 | ○<sup>3</sup> | はい |
 1. Windows Server バージョン1709以降で使用できます。
 2. Windows Server 2012 R2 以降で使用できます。
 3. 記憶域スペースのみ
@@ -147,7 +145,7 @@ ReFS をバックアップターゲットとして展開することは、独自
 |---------------------------|------------------|-----------------------|
 | ブロックの複製 | はい | いいえ |
 | スパース VDL | はい | いいえ |
-| ミラーリングによって高速化されたパリティ| 〇 (記憶域スペース ダイレクト上) | No |
+| ミラー高速パリティ| 〇 (記憶域スペース ダイレクト上) | いいえ |
 
 #### <a name="the-following-features-are-unavailable-on-refs-at-this-time"></a>現時点では、ReFS で次の機能は利用できません。
 
@@ -169,7 +167,7 @@ ReFS をバックアップターゲットとして展開することは、独自
 ## <a name="additional-references"></a>その他の参照情報
 
 - [ReFS および NTFS のクラスター サイズに関する推奨事項](https://techcommunity.microsoft.com/t5/Storage-at-Microsoft/Cluster-size-recommendations-for-ReFS-and-NTFS/ba-p/425960)
-- [記憶域スペースダイレクトの概要](../storage-spaces/storage-spaces-direct-overview.md)
+- [記憶域スペース ダイレクトの概要](../storage-spaces/storage-spaces-direct-overview.md)
 - [ReFS のブロックの複製](block-cloning.md)
 - [ReFS 整合性ストリーム](integrity-streams.md)
 - [ReFSUtil を使用した ReFS のトラブルシューティング](../../administration/windows-commands/refsutil.md)

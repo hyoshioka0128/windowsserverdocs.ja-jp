@@ -5,15 +5,13 @@ author: billmath
 manager: femila
 ms.date: 04/09/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: b6fc6c662630af5658e5f186c958f4ddaffccc42
-ms.sourcegitcommit: 4af8ab2e5c199ecff0697e5331fa7f61f2556a8f
+ms.openlocfilehash: cf8a12957621ce86492cc4216c56d9a159f1ee5c
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86866031"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87940568"
 ---
 # <a name="upgrading-to-ad-fs-in-windows-server-2016-using-a-wid-database"></a>WID データベースを使用した、Windows Server 2016 での AD FS へのアップグレード
 
@@ -156,8 +154,9 @@ Set-WebApplicationProxyConfiguration -UpgradeConfigurationVersion
 これにより、WAP サーバーのアップグレードが完了します。
 
 
-> [!NOTE] 
-> ハイブリッド証明書信頼を使用する Windows Hello for Business が実行されている場合、AD FS 2019 には既知の PRT の問題が存在します。 ADFS 管理者イベント ログで、次のエラーが発生することがあります。Received invalid Oauth request. \(無効な Oauth 要求を受信しました。\) The client 'NAME' is forbidden to access the resource with scope 'ugs'. \(クライアント 'NAME' はスコープ 'ugs' のリソースにアクセスすることが許可されていません。\) このエラーを修復するには、次のようにします。 
+> [!NOTE]
+> ハイブリッド証明書信頼を使用する Windows Hello for Business が実行されている場合、AD FS 2019 には既知の PRT の問題が存在します。 ADFS 管理者イベント ログで、次のエラーが発生することがあります。Received invalid Oauth request. \(無効な Oauth 要求を受信しました。\) The client 'NAME' is forbidden to access the resource with scope 'ugs'. \(クライアント 'NAME' はスコープ 'ugs' のリソースにアクセスすることが許可されていません。\)
+> このエラーを修復するには、次のようにします。
 > 1. AD FS 管理コンソールを起動します。 [Services]\(サービス\) > [Scope Descriptions]\(スコープ記述\) を参照します
 > 2. [Scope Descriptions]\(スコープ記述\) を右クリックし、[Add Scope Description]\(スコープ記述の追加\) を選択します
 > 3. 名前に「ugs」と入力し、[適用] > [OK] をクリックします

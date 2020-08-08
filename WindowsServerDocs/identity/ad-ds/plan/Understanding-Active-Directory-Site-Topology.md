@@ -6,28 +6,26 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 61e471acdea8efef211daf4b6e8c9b34c4389f98
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 799ef5a2f8911fe31ae54b828c7120b85468cf36
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80821715"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87965069"
 ---
 # <a name="understanding-active-directory-site-topology"></a>Active Directory サイト トポロジとは
 
->適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
-サイトトポロジは、ネットワークのパフォーマンスとユーザーがネットワークリソースにアクセスする能力に大きな影響を与えます。 サイトトポロジの設計を開始する前に、Windows Server 2008 のサイトの機能、組織が一般的に使用するさまざまなネットワークトポロジ、サイトトポロジ所有者の役割、およびいくつかの Active Directory レプリケーションの概念について理解しておいてください。  
-  
-## <a name="in-this-section"></a>このセクションの内容  
-  
--   [サイトの機能](../../ad-ds/plan/Site-Functions.md)  
-  
--   [サイト トポロジの所有者の役割](../../ad-ds/plan/Site-Topology-Owner-Role.md)  
-  
--   [Active Directory レプリケーションの概念](../../ad-ds/get-started/replication/Active-Directory-Replication-Concepts.md)  
-  
+サイトトポロジは、ネットワークのパフォーマンスとユーザーがネットワークリソースにアクセスする能力に大きな影響を与えます。 サイトトポロジの設計を開始する前に、Windows Server 2008 のサイトの機能、組織が一般的に使用するさまざまなネットワークトポロジ、サイトトポロジ所有者の役割、およびいくつかの Active Directory レプリケーションの概念について理解しておいてください。
+
+## <a name="in-this-section"></a>このセクションの内容
+
+-   [サイトの機能](../../ad-ds/plan/Site-Functions.md)
+
+-   [サイト トポロジの所有者の役割](../../ad-ds/plan/Site-Topology-Owner-Role.md)
+
+-   [Active Directory レプリケーションの概念](../../ad-ds/get-started/replication/Active-Directory-Replication-Concepts.md)
+
 
 

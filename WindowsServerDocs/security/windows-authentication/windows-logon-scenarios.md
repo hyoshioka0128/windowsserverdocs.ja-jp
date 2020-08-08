@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 3e3876680031cdb31f2fa3e6ce200efdf6fb5185
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: b1a7783e02746f53d818066eb20ceb3094bd2707
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87936452"
+ms.locfileid: "87990036"
 ---
 # <a name="windows-logon-scenarios"></a>Windows ログオンのシナリオ
 
@@ -103,14 +103,12 @@ RDP は、ユーザーがリモートデスクトップクライアントを使�
 
 パスワードの代わりにスマートカードを使用すると、ユーザーのスマートカードに格納されている秘密キーと公開キーのペアが、ユーザーのパスワードから派生した共有シークレットキーに置き換えられます。 秘密キーは、スマートカードにのみ保存されます。 公開キーは、所有者が機密情報の交換を希望するすべてのユーザーが利用できるようにすることができます。
 
-Windows でのスマートカードログオンプロセスの詳細については、「 [windows でのスマートカードのサインインのしくみ](https://technet.microsoft.com/library/ff404285.aspx)」を参照してください。
+Windows でのスマートカードログオンプロセスの詳細については、「 [windows でのスマートカードのサインインのしくみ](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff404285(v=ws.10))」を参照してください。
 
 ## <a name="biometric-logon"></a><a name="BKMK_BioLogon"></a>生体認証ログオン
 デバイスは、指紋などの成果物のデジタル特性をキャプチャして構築するために使用されます。 このデジタル表現は、同じ成果物のサンプルと比較され、2つが正常に比較されると、認証が発生する可能性があります。 このトピックの冒頭にある「**適用対象**」の一覧に指定されているオペレーティングシステムのいずれかを実行しているコンピューターで、この形式のログオンを受け入れるように構成できます。 ただし、生体認証ログオンがローカルログオン用に構成されている場合、ユーザーは Active Directory ドメインにアクセスするときにドメイン資格情報を提示する必要があります。
 
 ## <a name="additional-resources"></a>その他のリソース
-ログオンプロセス中に送信された資格情報を Windows が管理する方法の詳細については、「 [Windows 認証での資格情報の管理](https://technet.microsoft.com/library/dn169014.aspx)」を参照してください。
+ログオンプロセス中に送信された資格情報を Windows が管理する方法の詳細については、「 [Windows 認証での資格情報の管理](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dn169014(v=ws.10))」を参照してください。
 
-[Windows のログオンと認証の技術概要](https://technet.microsoft.com/library/dn169029.aspx)
-
-
+[Windows のログオンと認証の技術概要](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dn169029(v=ws.10))

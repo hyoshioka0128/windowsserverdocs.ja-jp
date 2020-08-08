@@ -2,17 +2,16 @@
 title: ネットワークアダプターのパフォーマンス履歴
 ms.author: cosdar
 manager: eldenc
-ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 02/02/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b4391812c89a193113fcd442d220e45fbb8c257
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: ee8204d14ff1d54d3a4a5b1760055fecdc952d05
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86964484"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957259"
 ---
 # <a name="performance-history-for-network-adapters"></a>ネットワークアダプターのパフォーマンス履歴
 
@@ -79,6 +78,6 @@ ms.locfileid: "86964484"
 Get-NetAdapter <Name> | Get-ClusterPerf
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [記憶域スペース ダイレクトのパフォーマンス履歴](performance-history.md)

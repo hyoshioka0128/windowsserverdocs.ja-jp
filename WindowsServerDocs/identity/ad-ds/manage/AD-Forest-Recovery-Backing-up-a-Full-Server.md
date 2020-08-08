@@ -5,15 +5,13 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/09/2018
 ms.topic: article
-ms.prod: windows-server
 ms.assetid: 398918dc-c8ab-41a6-a377-95681ec0b543
-ms.technology: identity-adds
-ms.openlocfilehash: 3792a1e9b5c8978fdc8db5201ff4d439dbfb98d6
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: cb7e6f7b8e8786ad816a9ec5e3211fa617723a9c
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519019"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87956939"
 ---
 # <a name="ad-forest-recovery---backing-up-a-full-server"></a>AD フォレストの回復-完全なサーバーのバックアップ
 

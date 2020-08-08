@@ -2,18 +2,16 @@
 title: 別のサーバーにインポートするために NPS 構成をエクスポートする
 description: このトピックでは、Windows Server 2016 でネットワークポリシーサーバーの構成をエクスポートする方法について説明します。
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: d268dc57-78f8-47ba-9a7a-a607e8b9225c
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: bbc4982057c306e6f4b94c3c4bf8e8a2761db12a
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 20b3f933565e8170e99f1eed2bfda24bd7705e1b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87517807"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87949115"
 ---
 # <a name="export-an-nps-configuration-for-import-on-another-server"></a>別のサーバーにインポートするために NPS 構成をエクスポートする
 
@@ -109,6 +107,6 @@ Netsh **nps export**コマンドを使用して、nps 構成をエクスポー�
 
 5. 移行先 NPS のコマンドプロンプトで、「 **netsh nps import filename =**"*path\file.xml*"」と入力し、enter キーを押します。 XML ファイルからのインポートが正常に完了したかどうかを示すメッセージが表示されます。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [ネットワーク シェル (netsh)](../netsh/netsh.md)

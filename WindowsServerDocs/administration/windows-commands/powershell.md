@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 8608f10ae96d6137ce2dd7983d78236775af0df0
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 29751bdb6f17c167ffa17170be24c302fda557fd
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87884884"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991148"
 ---
 # <a name="powershell"></a>PowerShell
 
@@ -58,7 +58,7 @@ Windows PowerShell は、特にシステム管理用に設計された、タス�
 
 - Windows PowerShell を起動するには、その他の方法については、次を参照してください。 [Windows PowerShell の開始](/powershell/scripting/windows-powershell/starting-windows-powershell)します。
 
-- Windows PowerShell は、Windows Server オペレーティング システムの Server Core インストール オプションで実行されます。 ただし、 [Windows PowerShell Integrated Scripting Environment (ISE)](/previous-versions//hh849182(v=technet.10))などのグラフィックユーザーインターフェイスを必要とする機能や、 [Out GridView](/powershell/module/microsoft.powershell.utility/out-gridview)および[Show Command コマンド](/powershell/module/microsoft.powershell.utility/show-command)レットは、Server Core インストールでは実行されません。
+- Windows PowerShell は、Windows Server オペレーティング システムの Server Core インストール オプションで実行されます。 ただし、 [Windows PowerShell Integrated Scripting Environment (ISE)](/previous-versions/hh849182(v=technet.10))などのグラフィックユーザーインターフェイスを必要とする機能や、 [Out GridView](/powershell/module/microsoft.powershell.utility/out-gridview)および[Show Command コマンド](/powershell/module/microsoft.powershell.utility/show-command)レットは、Server Core インストールでは実行されません。
 
 ## <a name="additional-references"></a>その他の参照情報
 

@@ -6,14 +6,12 @@ ms.author: billmath
 manager: mtillman
 ms.date: 02/22/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: d13cd27efc2387911f8c66bf083509e60e7e5b31
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: c313754b315b48982342fe2797d1ed766ce354a9
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519881"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87965169"
 ---
 # <a name="build-a-multi-tiered-application-using-on-behalf-of-obo-using-oauth-with-ad-fs-2016-or-later"></a>AD FS 2016 以降で OAuth を使用して、の代理 (OBO) を使用して多層アプリケーションを構築する
 
@@ -281,7 +279,7 @@ ToDoListService WebAPI を構成したときと同じように、ウィザード
 * Web.config ファイルを開きます。
 * 次のキーを変更する
 
-| Key | [値] |
+| キー | 値 |
 |:-|:-|
 | ida: 対象ユーザー | ToDoListService WebAPI の構成中に AD FS に指定された ToDoListService の ID (例:)https://localhost:44321/ |
 | ida: ClientID | ToDoListService WebAPI の構成中に AD FS に指定された ToDoListService の ID (例:)<https://localhost:44321/> </br>**Ida: Audience と ida: ClientID が相互に一致することが非常に重要です。** |

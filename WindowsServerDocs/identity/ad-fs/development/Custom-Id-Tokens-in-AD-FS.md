@@ -6,15 +6,13 @@ ms.author: billmath
 manager: mtillman
 ms.date: 04/29/2020
 ms.topic: article
-ms.prod: windows-server
 ms.reviewer: anandy
-ms.technology: identity-adfs
-ms.openlocfilehash: 9ffc8351c2c5033346f04e3cd4dc6f8ba4914149
-ms.sourcegitcommit: fea590c092d7abcb55be2b424458faa413795f5c
+ms.openlocfilehash: 9ab9a22e471a576a2632e3dbb054d21dd4534e46
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2020
-ms.locfileid: "85372209"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87940550"
 ---
 # <a name="customize-claims-to-be-emitted-in-id_token-when-using-openid-connect-or-oauth-with-ad-fs-2016-or-later"></a>OpenID Connect または OAuth を AD FS 2016 以降で使用する場合に id_token で出力される要求をカスタマイズする
 
@@ -60,41 +58,41 @@ Grant-AdfsApplicationPermission -ClientRoleIdentifier "https://my/privateclient"
 1. AD FS 管理] で、[アプリケーショングループ] を右クリックし、[**アプリケーショングループの追加**] を選択します。
 2. アプリケーショングループウィザードの [名前] に「 **ADFSSSO** 」と入力し、[クライアント-サーバーアプリケーション] で、 **web アプリケーションテンプレートにアクセスするネイティブアプリケーション**を選択します。 **[次へ]** をクリックします。
 
-   ![クライアント](media/Custom-Id-Tokens-in-AD-FS/clientsnap1.png)
+   ![Client](media/Custom-Id-Tokens-in-AD-FS/clientsnap1.png)
 
 3. [**クライアント識別子**の値をコピーします。  この値は、アプリケーション web.config ファイルの ida: ClientId の値として後で使用されます。
 4. **リダイレクト URI**には、次のように入力し  -  **https://localhost:44320/** ます。  **[追加]** をクリックします。 **[次へ]** をクリックします。
 
-   ![クライアント](media/Custom-Id-Tokens-in-AD-FS/clientsnap2.png)
+   ![Client](media/Custom-Id-Tokens-in-AD-FS/clientsnap2.png)
 
 5. [ **WEB API の構成**] 画面で、[**識別子**] に次のように入力し  -  **https://contoso.com/WebApp** ます。  **[追加]** をクリックします。 **[次へ]** をクリックします。  この値は、アプリケーション web.config ファイルの**ida: ResourceID**で後で使用されます。
 
-   ![クライアント](media/Custom-Id-Tokens-in-AD-FS/clientsnap3.png)
+   ![Client](media/Custom-Id-Tokens-in-AD-FS/clientsnap3.png)
 
 6. [ **Access Control ポリシーの選択**] 画面で、[**すべてのユーザーを許可**する] を選択し、[**次へ**] をクリックします。
 
-   ![クライアント](media/Custom-Id-Tokens-in-AD-FS/clientsnap4.png)
+   ![Client](media/Custom-Id-Tokens-in-AD-FS/clientsnap4.png)
 
 7. [**アプリケーションのアクセス許可の構成**] 画面で、 **openid**と**allatclaims**が選択されていることを確認し、[**次へ**] をクリックします。
 
-   ![クライアント](media/Custom-Id-Tokens-in-AD-FS/clientsnap5.PNG)
+   ![Client](media/Custom-Id-Tokens-in-AD-FS/clientsnap5.PNG)
 
 8. [**概要**] 画面で、[**次へ**] をクリックします。
 
-   ![クライアント](media/Custom-Id-Tokens-in-AD-FS/clientsnap6.PNG)
+   ![Client](media/Custom-Id-Tokens-in-AD-FS/clientsnap6.PNG)
 
 9. [**完了**] 画面で、[**閉じる**] をクリックします。
 10. AD FS 管理] で [アプリケーショングループ] をクリックして、すべてのアプリケーショングループの一覧を取得します。 **ADFSSSO**を右クリックし、[**プロパティ**] を選択します。 [ **ADFSSSO-WEB API** ] を選択し、[**編集...** ] をクリックします。
 
-    ![クライアント](media/Custom-Id-Tokens-in-AD-FS/clientsnap7.PNG)
+    ![Client](media/Custom-Id-Tokens-in-AD-FS/clientsnap7.PNG)
 
 11. [ **ADFSSSO-WEB API のプロパティ**] 画面で、[**発行変換規則**] タブを選択し、[**規則の追加...** ] をクリックします。
 
-    ![クライアント](media/Custom-Id-Tokens-in-AD-FS/clientsnap8.PNG)
+    ![Client](media/Custom-Id-Tokens-in-AD-FS/clientsnap8.PNG)
 
 12. **変換要求規則の追加ウィザード**画面で、ドロップダウンから [**カスタム規則を使用して要求を送信**する] を選択し、[**次へ**] をクリックします。
 
-    ![クライアント](media/Custom-Id-Tokens-in-AD-FS/clientsnap9.PNG)
+    ![Client](media/Custom-Id-Tokens-in-AD-FS/clientsnap9.PNG)
 
 13. **変換要求規則の追加ウィザード**画面で、[**要求規則名**] に「 **Forcustomidtoken** 」、**カスタム規則**に次の要求規則を入力します。 **[完了]** をクリックします。
 
@@ -103,7 +101,7 @@ Grant-AdfsApplicationPermission -ClientRoleIdentifier "https://my/privateclient"
     => issue(claim=x);
     ```
 
-    ![クライアント](media/Custom-Id-Tokens-in-AD-FS/clientsnap10.PNG)
+    ![Client](media/Custom-Id-Tokens-in-AD-FS/clientsnap10.PNG)
 
     > [!NOTE]
     > PowerShell を使用して、スコープとスコープを割り当てることもでき `allatclaims` `openid` ます。
@@ -219,6 +217,6 @@ AD FS サインインページにリダイレクトされます。 要求に従�
 
 ![AD FS OpenID](media/Custom-Id-Tokens-in-AD-FS/AD_FS_OpenID_9.png)
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 
 [AD FS の開発](../../ad-fs/AD-FS-Development.md)

@@ -6,14 +6,12 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 93b02f79753f4e861c141ced84b29efd078fd227
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 78e245767857111f71a6252094ef0e74fda7f714
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961054"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87965269"
 ---
 # <a name="upgrade-domain-controllers-to-windows-server-2016"></a>Windows Server 2016 へのドメイン コントローラーのアップグレード
 
@@ -171,4 +169,4 @@ Contoso フォレストを Windows Server 2012 R2 から Windows Server 2016 に
 
 - [Active Directory Domain Services のインストールと削除の新機能](../../ad-ds/deploy/What-s-New-in-Active-Directory-Domain-Services-Installation-and-Removal.md)
 - [Active Directory Domain Services &#40;レベル 100&#41;のインストール](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md)
-- [Windows Server 2016 の機能レベル](../active-directory-functional-levels.md)  
+- [Windows Server 2016 の機能レベル](../active-directory-functional-levels.md)

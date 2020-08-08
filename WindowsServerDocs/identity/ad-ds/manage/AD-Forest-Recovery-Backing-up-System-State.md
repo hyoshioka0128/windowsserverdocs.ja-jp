@@ -5,15 +5,13 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/09/2018
 ms.topic: article
-ms.prod: windows-server
 ms.assetid: 9238cb27-0020-42f7-90d6-fcebf7e3c0bc
-ms.technology: identity-adds
-ms.openlocfilehash: 5083e6987edc353b373b1048ceeaeb28b5790d23
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 675b8edd5425238b838df2c2bb7e09d0c0232c92
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519029"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87956889"
 ---
 # <a name="ad-forest-recovery---backing-up-the-system-state-data"></a>AD フォレストの回復-システム状態データのバックアップ
 

@@ -6,14 +6,12 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/07/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 72abc2b5b45ec1eefbff3ca82b619649ffd0fda9
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 73c3aacd34be72f59d5d54d9d657143f8db8d610
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959764"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87965109"
 ---
 # <a name="understanding-ad-ds-design"></a>AD DS の設計とは
 

@@ -7,14 +7,12 @@ author: MicrosoftGuyJFlo
 manager: dcscontentpm
 ms.date: 11/22/2019
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 0cd49e4eee2d68209fa016547cdd2d0626128204
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: e7ba33d7471dff72c102658262a2e41983c0a2e5
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961294"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87956922"
 ---
 # <a name="ad-ds-troubleshooting"></a>AD FS のトラブルシューティング
 
