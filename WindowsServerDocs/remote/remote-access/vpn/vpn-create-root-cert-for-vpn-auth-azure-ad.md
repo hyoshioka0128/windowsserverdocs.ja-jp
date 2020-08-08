@@ -1,20 +1,18 @@
 ---
 title: Azure AD で VPN 認証のルート証明書を作成する
 description: Azure AD では、VPN 接続用に Azure AD で認証するときに、VPN 証明書を使用して Windows 10 クライアントに対して発行された証明書に署名します。 プライマリとしてマークされている証明書は Azure AD が使用する発行者です。
-ms.prod: windows-server
-ms.technology: networking-ras
 ms.topic: article
 ms.date: 06/28/2019
 ms.author: v-tea
 author: Teresa-MOTIV
 ms.localizationpriority: medium
 ms.reviewer: deverette
-ms.openlocfilehash: 5058095fa4bd6f7ba769fd274f46bc8b96878158
-ms.sourcegitcommit: 430c6564c18f89eecb5bbc39cfee1a6f1d8ff85b
+ms.openlocfilehash: 098d2f2c17555c3e4375e4b54b676ef67a40dc4d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83855676"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87946575"
 ---
 # <a name="step-72-create-conditional-access-root-certificates-for-vpn-authentication-with-azure-ad"></a>手順 7.2.  Azure AD を使用した VPN 認証用の条件付きアクセスルート証明書の作成
 
@@ -32,9 +30,9 @@ ms.locfileid: "83855676"
 > [!IMPORTANT]
 > Azure portal に VPN 証明書が作成されると、Azure AD は短時間の証明書を VPN クライアントに発行するためにすぐに使用を開始します。 Vpn クライアントの資格情報の検証に関する問題を回避するために、vpn 証明書を VPN サーバーに直ちに展開することが重要です。
 
-ユーザーが VPN 接続を試行すると、VPN クライアントは Windows 10 クライアントで Web アカウントマネージャー (WAM) を呼び出します。 WAM は、VPN サーバークラウドアプリの呼び出しを行います。 条件付きアクセスポリシーの条件と制御が満たされると、Azure AD は、有効期間が短い (1 時間) 証明書の形式のトークンを WAM に発行します。 WAM は、ユーザーの証明書ストアに証明書を配置し、VPN クライアントに制御を渡します。  
+ユーザーが VPN 接続を試行すると、VPN クライアントは Windows 10 クライアントで Web アカウントマネージャー (WAM) を呼び出します。 WAM は、VPN サーバークラウドアプリの呼び出しを行います。 条件付きアクセスポリシーの条件と制御が満たされると、Azure AD は、有効期間が短い (1 時間) 証明書の形式のトークンを WAM に発行します。 WAM は、ユーザーの証明書ストアに証明書を配置し、VPN クライアントに制御を渡します。 
 
-VPN クライアントは、資格情報の検証のために Azure AD によって証明書の問題を VPN に送信します。  
+VPN クライアントは、資格情報の検証のために Azure AD によって証明書の問題を VPN に送信します。 
 
 > [!NOTE]
 > Azure AD は、最後に作成された証明書を、発行者として VPN 接続ブレードに使用します。

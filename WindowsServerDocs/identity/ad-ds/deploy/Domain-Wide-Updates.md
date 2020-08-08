@@ -7,14 +7,12 @@ ms.author: joflore
 manager: mtillman
 ms.date: 10/29/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: d32656963e52ab0f3a505c172aff3c2ebc8ce53d
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 606e48502587675b9a98e279f1b9047db8789021
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86954094"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87959100"
 ---
 # <a name="domain-wide-schema-updates"></a>ドメイン全体でのスキーマの更新
 

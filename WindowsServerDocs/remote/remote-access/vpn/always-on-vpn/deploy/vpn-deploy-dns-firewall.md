@@ -1,20 +1,18 @@
 ---
 title: DNS とファイアウォールの設定を構成する
 description: このトピックでは、Windows Server 2016 で Always On VPN を展開するための詳細な手順について説明します。
-ms.prod: windows-server
-ms.technology: networking-ras
 ms.topic: article
 ms.assetid: d8cf3bae-45bf-4ffa-9205-290d555c59da
 ms.localizationpriority: medium
 ms.author: v-tea
 author: Teresa-MOTIV
 ms.date: 06/11/2018
-ms.openlocfilehash: 0bdf2917a5f33b1e2ba5e3d216d8610887c79e8c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 99db65c2c5bd78154e14ab9e388eb709351afc11
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80860465"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87946685"
 ---
 # <a name="step-5-configure-dns-and-firewall-settings"></a>手順 5. DNS とファイアウォールの設定を構成する
 
@@ -35,14 +33,14 @@ ms.locfileid: "80860465"
 
 ### <a name="to-add-a-host-a-or-aaaa-resource-record-to-a-zone"></a>ホスト (A または AAAA) リソースレコードをゾーンに追加するには
 
-1. DNS サーバーの サーバーマネージャーで、 **[ツール]** を選択し、 **[dns]** を選択します。 DNS マネージャーが開きます。
+1. DNS サーバーの [サーバーマネージャーで、[**ツール**] を選択し、[ **dns**] を選択します。 DNS マネージャーが開きます。
 2. DNS マネージャーコンソールツリーで、管理するサーバーを選択します。
-3. 詳細ウィンドウの **[名前]** で、 **[前方参照ゾーン]** をダブルクリックして、ビューを展開します。
-4. **[前方参照ゾーン]** の詳細 で、レコードを追加する前方参照ゾーンを右クリックし、 **[新しいホスト (a または AAAA)]** を選択します。 **[新しいホスト]** ダイアログボックスが表示されます。
-5. **[新しいホスト]** の **[名前]** に、VPN サーバーの証明書のサブジェクト代替名を入力します。
+3. 詳細ウィンドウの [**名前**] で、[**前方参照ゾーン**] をダブルクリックして、ビューを展開します。
+4. [**前方参照ゾーン**の詳細] で、レコードを追加する前方参照ゾーンを右クリックし、[**新しいホスト (a または AAAA)**] を選択します。 [**新しいホスト**] ダイアログボックスが表示されます。
+5. [**新しいホスト**] の [**名前**] に、VPN サーバーの証明書のサブジェクト代替名を入力します。
 6. [IP アドレス] に、VPN サーバーの IP アドレスを入力します。 IP version 4 (IPv4) 形式でアドレスを入力して、ホスト (A) リソースレコードまたは IP バージョン 6 (IPv6) 形式を追加し、ホスト (AAAA) リソースレコードを追加することができます。
-7. 入力した IP アドレスを含め、IP アドレスの範囲に対して逆引き参照ゾーンを作成した場合は、[**関連付けられたポインター (PTR) レコードを作成**する] チェックボックスをオンにします。  このオプションを選択すると、 **[名前]** と **[IP アドレス]** に入力した情報に基づいて、このホストの逆引きゾーンに追加のポインター (PTR) リソースレコードが作成されます。
-8. **[ホストの追加]** を選択します。
+7. 入力した IP アドレスを含め、IP アドレスの範囲に対して逆引き参照ゾーンを作成した場合は、[**関連付けられたポインター (PTR) レコードを作成**する] チェックボックスをオンにします。  このオプションを選択すると、[**名前**] と [ **IP アドレス**] に入力した情報に基づいて、このホストの逆引きゾーンに追加のポインター (PTR) リソースレコードが作成されます。
+8. [**ホストの追加**] を選択します。
 
 ## <a name="configure-the-edge-firewall"></a>エッジファイアウォールを構成する
 
@@ -72,7 +70,7 @@ ms.locfileid: "80860465"
 既定では、NPS と VPN は、インストールされているすべてのネットワークアダプター上で、ポート1812、1813、1645、および1646の RADIUS トラフィックをリッスンします。 NPS をインストールするときに、セキュリティが強化された Windows ファイアウォールを有効にすると、これらのポートに対するファイアウォールの例外が、IPv6 トラフィックと IPv4 トラフィックの両方のインストールプロセス中に自動的に作成されます。
 
 >[!IMPORTANT]
->ネットワークアクセスサーバーが、これらの既定以外のポートを使用して RADIUS トラフィックを送信するように構成されている場合は、「セキュリティが強化された Windows ファイアウォール」で作成した例外を NPS のインストール時に削除し、に使用するポートに対して例外を作成します。RADIUS トラフィック。
+>ネットワークアクセスサーバーが、これらの既定以外のポートで RADIUS トラフィックを送信するように構成されている場合は、「セキュリティが強化された Windows ファイアウォール」で作成した例外を NPS のインストール時に削除し、RADIUS トラフィックに使用するポートに対して例外を作成します。
 
 ### <a name="use-the-same-radius-ports-for-the-internal-perimeter-network-firewall-configuration"></a>内部境界ネットワークファイアウォール構成に同じ RADIUS ポートを使用する
 
@@ -82,6 +80,6 @@ VPN サーバーと NPS サーバーで既定の RADIUS ポート構成を使用
 
 NPS の展開で既定の RADIUS ポートを使用していない場合は、使用しているポートで RADIUS トラフィックを許可するようにファイアウォールを構成する必要があります。 詳細については、「 [Configure firewall FOR RADIUS Traffic](../../../../../networking/technologies/nps/nps-firewalls-configure.md)」を参照してください。
 
-## <a name="next-steps"></a>次のステップ:
+## <a name="next-steps"></a>次のステップ
 
 [手順 6.Windows 10 クライアント Always On VPN 接続を構成](vpn-deploy-client-vpn-connections.md)する: この手順では、vpn 接続を使用して、そのインフラストラクチャと通信するように windows 10 クライアントコンピューターを構成します。 Windows PowerShell、Microsoft Endpoint Configuration Manager、Intune などの Windows 10 VPN クライアントを構成するには、いくつかのテクノロジを使用できます。 3つすべてに、適切な VPN 設定を構成するための XML VPN プロファイルが必要です。

@@ -6,14 +6,12 @@ ms.author: joflore
 manager: mtillman
 ms.date: 11/14/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 431b751bceb9ccbb1a494da074b1dfe23f58f601
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: d9be9555c3e72b13fb86509289ee7459f4d1b687
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519591"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87959390"
 ---
 # <a name="demoting-domain-controllers-and-domains"></a>ドメインコントローラーとドメインの降格
 
@@ -168,7 +166,7 @@ ADDSDeployment コマンドレットで同じことを実行する引数は以�
 > [!WARNING]
 > 前の2つのオプションではパスワードが確認されないため、細心の注意を払ってください。パスワードは表示されません。
 
-セキュリティで保護された文字列は、変換されるクリア テキストの変数として指定することもできますが、これはお勧めしません。 次に例を示します。
+セキュリティで保護された文字列は、変換されるクリア テキストの変数として指定することもできますが、これはお勧めしません。 例:
 
 ```
 -localadministratorpassword (convertto-securestring "Password1" -asplaintext -force)
@@ -191,7 +189,7 @@ Uninstall-ADDSDomainController
 
 オプションの **Whatif** 引数を **Uninstall-ADDSDomainController** とコマンドレットで使用すると、構成情報を確認することができます。 これによって、コマンドレットの引数の明示的な値と暗黙的な値を確認できます。
 
-次に例を示します。
+例:
 
 ![PowerShell Uninstall-addsdomaincontroller の例](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_PSUninstall.png)
 

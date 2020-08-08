@@ -7,12 +7,12 @@ ms.date: 08/14/2018
 ms.topic: article
 ms.localizationpriority: low
 ms.assetid: 6cb13f84-cb50-4e60-a685-54f67c9146be
-ms.openlocfilehash: 954efafe3185cadb347384c3c93a2eb8ef895143
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: a1f53dba659af7d5ac0efff2e72bd168523bde0c
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87963558"
+ms.locfileid: "87995632"
 ---
 # <a name="managing-hyper-v-hypervisor-scheduler-types"></a>Hyper-v ハイパーバイザーのスケジューラの種類の管理
 
@@ -40,7 +40,7 @@ SMT をサポートするプロセッサは、Intel と AMD の両方から使�
 
 ## <a name="understanding-how-hyper-v-virtualizes-processors"></a>Hyper-v がプロセッサを仮想化するしくみについて
 
-ハイパーバイザースケジューラの種類を検討する前に、Hyper-v アーキテクチャについて理解しておくことも役立ちます。 一般的な概要については、 [「Hyper-v テクノロジの概要](https://docs.microsoft.com/windows-server/virtualization/hyper-v/hyper-v-technology-overview)」を参照してください。 この記事の重要な概念は次のとおりです。
+ハイパーバイザースケジューラの種類を検討する前に、Hyper-v アーキテクチャについて理解しておくことも役立ちます。 一般的な概要については、 [「Hyper-v テクノロジの概要](../hyper-v-technology-overview.md)」を参照してください。 この記事の重要な概念は次のとおりです。
 
 * Hyper-v は、ハイパーバイザーの制御下で、コンピューティングリソースが割り当てられ共有される仮想マシンパーティションを作成して管理します。 パーティションは、すべてのゲスト仮想マシン間、およびゲスト Vm とルートパーティションの間に強力な分離境界を提供します。
 

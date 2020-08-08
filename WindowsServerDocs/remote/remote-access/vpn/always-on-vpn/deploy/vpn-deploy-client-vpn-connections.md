@@ -1,8 +1,6 @@
 ---
 title: Windows 10 クライアントの Always On VPN 接続を構成する
 description: この手順では、ProfileXML オプションとスキーマについて説明し、VPN 接続を使用してそのインフラストラクチャと通信するように Windows 10 クライアントコンピューターを構成します。
-ms.prod: windows-server
-ms.technology: networking-ras
 ms.topic: article
 ms.date: 05/29/2018
 ms.assetid: d165822d-b65c-40a2-b440-af495ad22f42
@@ -10,12 +8,12 @@ ms.localizationpriority: medium
 ms.author: v-tea
 author: Teresa-MOTIV
 ms.reviewer: deverette
-ms.openlocfilehash: fc8b2646019292576abb638c7abdba1882eeedaa
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: c1f97ae4ec0ef39db2f0924bf2b6c3884f6ea1a9
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86965444"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87946755"
 ---
 # <a name="step-6-configure-windows-10-client-always-on-vpn-connections"></a>手順 6. Windows 10 クライアントの Always On VPN 接続を構成する
 
@@ -160,7 +158,7 @@ XML マークアップを最初から作成する方法を説明する代わり�
 
 6.  [サーバー名またはアドレス] に、VPN サーバーの**外部**FQDN (たとえば、 **vpn.contoso.com**) を入力します。
 
-7.  **[保存]** をクリックします。
+7.  **[Save]** (保存) をクリックします。
 
 8.  [関連設定] の [**アダプターオプションの変更**] をクリックします。
 
@@ -452,9 +450,9 @@ Write-Host "$Message"
 
 ## <a name="makeprofileps1-full-script"></a>完全なスクリプトを MakeProfile.ps1
 
-ほとんどの例では、ProfileXML を MDM_VPNv2_01 WMI クラスの新しいインスタンスに挿入するために、Windows PowerShell コマンドレットの設定を使用しています。 
+ほとんどの例では、ProfileXML を MDM_VPNv2_01 WMI クラスの新しいインスタンスに挿入するために、Windows PowerShell コマンドレットの設定を使用しています。
 
-ただし、エンドユーザーのコンテキストでパッケージを実行することはできないため、Configuration Manager では機能しません。 そのため、このスクリプトでは、Common Information Model を使用してユーザーのコンテキストで WMI セッションを作成し、そのセッションで MDM_VPNv2_01 WMI クラスの新しいインスタンスを作成します。 この WMI クラスは、WMI から CSP へのブリッジを使用して、VPNv2 CSP を構成します。 したがって、クラスインスタンスを追加することで、CSP を構成します。 
+ただし、エンドユーザーのコンテキストでパッケージを実行することはできないため、Configuration Manager では機能しません。 そのため、このスクリプトでは、Common Information Model を使用してユーザーのコンテキストで WMI セッションを作成し、そのセッションで MDM_VPNv2_01 WMI クラスの新しいインスタンスを作成します。 この WMI クラスは、WMI から CSP へのブリッジを使用して、VPNv2 CSP を構成します。 したがって、クラスインスタンスを追加することで、CSP を構成します。
 
 >[!IMPORTANT]
 >WMI から CSP へのブリッジには、設計上、ローカルの管理者権限が必要です。 ユーザーごとの VPN プロファイルを展開するには、Configuration Manager または MDM を使用する必要があります。
@@ -463,7 +461,7 @@ Write-Host "$Message"
 >スクリプト VPN_Profile.ps1 は、現在のユーザーの SID を使用して、ユーザーのコンテキストを識別します。 リモートデスクトップセッションで使用できる SID がないため、スクリプトはリモートデスクトップセッションでは機能しません。 同様に、Hyper-v の拡張セッションでは機能しません。 仮想マシンでリモートアクセス Always On VPN をテストしている場合は、このスクリプトを実行する前に、クライアント Vm で拡張セッションを無効にしてください。
 
 次のサンプルスクリプトには、前のセクションのすべてのコード例が含まれています。 例の値を実際の環境に適した値に変更してください。
-    
+
    ```makeProfile.ps1
     $TemplateName = 'Template'
     $ProfileName = 'Contoso AlwaysOn VPN'
@@ -473,7 +471,7 @@ Write-Host "$Message"
     $DNSServers = '10.10.0.2,10.10.0.3'
     $TrustedNetwork = 'corp.contoso.com'
 
-    
+
     $Connection = Get-VpnConnection -Name $TemplateName
     if(!$Connection)
     {
@@ -482,7 +480,7 @@ Write-Host "$Message"
     exit
     }
     $EAPSettings= $Connection.EapConfigXmlStream.InnerXml
-    
+
     $ProfileXML = @("
     <VPNProfile>
       <DnsSuffix>$DnsSuffix</DnsSuffix>
@@ -508,23 +506,23 @@ Write-Host "$Message"
     </DomainNameInformation>
     </VPNProfile>
     ")
-    
+
     $ProfileXML | Out-File -FilePath ($env:USERPROFILE + '\desktop\VPN_Profile.xml')
-    
+
      $Script = @("
       `$ProfileName = '$ProfileName'
       `$ProfileNameEscaped = `$ProfileName -replace ' ', '%20'
- 
+
       `$ProfileXML = '$ProfileXML'
- 
+
       `$ProfileXML = `$ProfileXML -replace '<', '&lt;'
       `$ProfileXML = `$ProfileXML -replace '>', '&gt;'
       `$ProfileXML = `$ProfileXML -replace '`"', '&quot;'
- 
+
       `$nodeCSPURI = `"./Vendor/MSFT/VPNv2`"
       `$namespaceName = `"root\cimv2\mdm\dmmap`"
       `$className = `"MDM_VPNv2_01`"
- 
+
       try
       {
       `$username = Gwmi -Class Win32_ComputerSystem | select username
@@ -540,12 +538,12 @@ Write-Host "$Message"
       Write-Host `"`$Message`"
       exit
       }
- 
+
       `$session = New-CimSession
       `$options = New-Object Microsoft.Management.Infrastructure.Options.CimOperationOptions
       `$options.SetCustomOption(`"PolicyPlatformContext_PrincipalContext_Type`", `"PolicyPlatform_UserContext`", `$false)
       `$options.SetCustomOption(`"PolicyPlatformContext_PrincipalContext_Id`", `"`$SidValue`", `$false)
- 
+
       try
       {
      `$deleteInstances = `$session.EnumerateInstances(`$namespaceName, `$className, `$options)
@@ -569,7 +567,7 @@ Write-Host "$Message"
      Write-Host `"`$Message`"
      exit
       }
- 
+
       try
       {
      `$newInstance = New-Object Microsoft.Management.Infrastructure.CimInstance `$className, `$namespaceName
@@ -590,13 +588,13 @@ Write-Host "$Message"
      Write-Host `"`$Message`"
      exit
       }
- 
+
       `$Message = `"Script Complete`"
       Write-Host `"`$Message`"
       ")
- 
+
       $Script | Out-File -FilePath ($env:USERPROFILE + '\desktop\VPN_Profile.ps1')
-    
+
     $Message = "Successfully created VPN_Profile.xml and VPN_Profile.ps1 on the desktop."
     Write-Host "$Message"
    ```
@@ -842,7 +840,7 @@ ProfileXML 構成スクリプトが展開されたら、ユーザーコレクシ
 
 ### <a name="verify-the-configuration-of-the-vpn-client"></a>VPN クライアントの構成を確認する
 
-1.  コントロールパネルの [**システム \\ セキュリティ**] で、[ **Configuration Manager**] をクリックします。 
+1.  コントロールパネルの [**システム \\ セキュリティ**] で、[ **Configuration Manager**] をクリックします。
 
 2.  [Configuration Manager のプロパティ] ダイアログボックスの [**操作**] タブで、次の手順を実行します。
 
@@ -867,7 +865,7 @@ Intune を使用して Windows 10 リモートアクセス Always On VPN プロ�
 
 ### <a name="create-the-always-on-vpn-configuration-policy"></a>Always On VPN 構成ポリシーを作成する
 
-1.    [Azure Portal](https://portal.azure.com/) にサインインします。
+1.    [Azure Portal ](https://portal.azure.com/)にサインインします。
 
 2.    **Intune**  >  **デバイス構成**  >  **プロファイル**にアクセスします。
 
@@ -882,35 +880,35 @@ Intune を使用して Windows 10 リモートアクセス Always On VPN プロ�
 
 2. [**ベース VPN** ] タブで、次の設定を確認または設定します。
 
-    - **接続名:** クライアントコンピューターに表示される VPN 接続の名前を、[**設定**] の [ **vpn** ] タブ ( _Contoso autovpn_など) に入力します。  
-    
+    - **接続名:** クライアントコンピューターに表示される VPN 接続の名前を、[**設定**] の [ **vpn** ] タブ ( _Contoso autovpn_など) に入力します。
+
     - **サーバー:**[追加] をクリックして、1つまたは複数の VPN サーバーを追加**します。**
-    
-    - **説明**と**ip アドレスまたは fqdn:** VPN サーバーの説明と IP アドレスまたは fqdn を入力します。 これらの値は、VPN サーバーの認証証明書のサブジェクト名と一致する必要があります。 
-    
-    - **既定のサーバー:** これが既定の VPN サーバーである場合は、を**True**に設定します。 これにより、デバイスが接続を確立するために使用する既定のサーバーとしてこのサーバーが有効になります。 
-    
-    - **接続の種類:****IKEv2**に設定します。  
-    
+
+    - **説明**と**ip アドレスまたは fqdn:** VPN サーバーの説明と IP アドレスまたは fqdn を入力します。 これらの値は、VPN サーバーの認証証明書のサブジェクト名と一致する必要があります。
+
+    - **既定のサーバー:** これが既定の VPN サーバーである場合は、を**True**に設定します。 これにより、デバイスが接続を確立するために使用する既定のサーバーとしてこのサーバーが有効になります。
+
+    - **接続の種類:****IKEv2**に設定します。
+
     - **Always On:** サインイン時に自動的に VPN に接続し、ユーザーが手動で切断するまで接続を維持するには、[**有効**] に設定します。
-    
+
     - **ログオンするたびに資格情報を記憶**する: 資格情報をキャッシュするためのブール値 (true または false)。 True に設定すると、可能な場合は常に資格情報がキャッシュされます。
 
 3.  次の XML 文字列をテキストエディターにコピーします。
- 
+
     [!INCLUDE [important-lower-case-true-include](../../../includes/important-lower-case-true-include.md)]
-    
-    
+
+
     ```XML
     <EapHostConfig xmlns="https://www.microsoft.com/provisioning/EapHostConfig"><EapMethod><Type xmlns="https://www.microsoft.com/provisioning/EapCommon">25</Type><VendorId xmlns="https://www.microsoft.com/provisioning/EapCommon">0</VendorId><VendorType xmlns="https://www.microsoft.com/provisioning/EapCommon">0</VendorType><AuthorId xmlns="https://www.microsoft.com/provisioning/EapCommon">0</AuthorId></EapMethod><Config xmlns="https://www.microsoft.com/provisioning/EapHostConfig"><Eap xmlns="https://www.microsoft.com/provisioning/BaseEapConnectionPropertiesV1"><Type>25</Type><EapType xmlns="https://www.microsoft.com/provisioning/MsPeapConnectionPropertiesV1"><ServerValidation><DisableUserPromptForServerValidation>true</DisableUserPromptForServerValidation><ServerNames>NPS.contoso.com</ServerNames><TrustedRootCA>5a 89 fe cb 5b 49 a7 0b 1a 52 63 b7 35 ee d7 1c c2 68 be 4b </TrustedRootCA></ServerValidation><FastReconnect>true</FastReconnect><InnerEapOptional>false</InnerEapOptional><Eap xmlns="https://www.microsoft.com/provisioning/BaseEapConnectionPropertiesV1"><Type>13</Type><EapType xmlns="https://www.microsoft.com/provisioning/EapTlsConnectionPropertiesV1"><CredentialsSource><CertificateStore><SimpleCertSelection>true</SimpleCertSelection></CertificateStore></CredentialsSource><ServerValidation><DisableUserPromptForServerValidation>true</DisableUserPromptForServerValidation><ServerNames>NPS.contoso.com</ServerNames><TrustedRootCA>5a 89 fe cb 5b 49 a7 0b 1a 52 63 b7 35 ee d7 1c c2 68 be 4b </TrustedRootCA></ServerValidation><DifferentUsername>false</DifferentUsername><PerformServerValidation xmlns="https://www.microsoft.com/provisioning/EapTlsConnectionPropertiesV2">true</PerformServerValidation><AcceptServerName xmlns="https://www.microsoft.com/provisioning/EapTlsConnectionPropertiesV2">true</AcceptServerName></EapType></Eap><EnableQuarantineChecks>false</EnableQuarantineChecks><RequireCryptoBinding>false</RequireCryptoBinding><PeapExtensions><PerformServerValidation xmlns="https://www.microsoft.com/provisioning/MsPeapConnectionPropertiesV2">true</PerformServerValidation><AcceptServerName xmlns="https://www.microsoft.com/provisioning/MsPeapConnectionPropertiesV2">true</AcceptServerName></PeapExtensions></EapType></Eap></Config></EapHostConfig>
     ```
 
 4.  このサンプルでは、 ** \<TrustedRootCA> 5a 89 fe cb 5b 49 a7 0b 1a 52 63 68 35 b7 \/><trustedrootca**を、両方の場所にあるオンプレミスのルート証明機関の証明書の拇印に置き換えます。
-  
+
     >[!Important]
     >以下のセクションでは、サンプルのサムプリントを使用しないでください \<TrustedRootCA> \</TrustedRootCA> 。  TrustedRootCA は、RRAS および NPS サーバーのサーバー認証証明書を発行したオンプレミスのルート証明機関の証明書の拇印である必要があります。 **これは、クラウドのルート証明書ではなく、中間の発行元の CA 証明書の拇印でもありません**。
 
-5.  サンプル XML の** \<ServerNames> NPS.contoso.com \</ServerNames> **を、認証が行われるドメインに参加している NPS の FQDN に置き換えます。 
+5.  サンプル XML の** \<ServerNames> NPS.contoso.com \</ServerNames> **を、認証が行われるドメインに参加している NPS の FQDN に置き換えます。
 
 6.  変更後の XML 文字列をコピーし、[Base VPN] タブの [ **EAP XML** ] ボックスに貼り付けて、[ **OK**] をクリックします。
     EAP を使用した Always On VPN デバイス構成ポリシーは、Intune で作成されます。

@@ -7,12 +7,12 @@ ms.author: rickman
 manager: stevelee
 ms.topic: article
 ms.date: 07/14/2020
-ms.openlocfilehash: 9a060f1650d20a029d64739e1fc7f9be44d8355c
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 38d0ae70e0b6e70e87cc962ec5776d4ffb950fe5
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87953438"
+ms.locfileid: "87995610"
 ---
 # <a name="deploy-graphics-devices-using-remotefx-vgpu"></a>RemoteFX vGPU を使ったグラフィックス デバイスの展開
 
@@ -75,10 +75,10 @@ RemoteFX vGPU 3D グラフィックス アダプターを構成するには、Hy
 
 次の PowerShell コマンドレットを使用して、アダプターを追加、確認、および構成します。
 
-- [VMRemoteFx3dVideoAdapter](https://docs.microsoft.com/powershell/module/hyper-v/add-vmremotefx3dvideoadapter?view=win10-ps)
-- [VMRemoteFx3dVideoAdapter](https://docs.microsoft.com/powershell/module/hyper-v/get-vmremotefx3dvideoadapter?view=win10-ps)
-- [VMRemoteFx3dVideoAdapter](https://docs.microsoft.com/powershell/module/hyper-v/set-vmremotefx3dvideoadapter?view=win10-ps)
-- [取得-VMRemoteFXPhysicalVideoAdapter](https://docs.microsoft.com/powershell/module/hyper-v/get-vmremotefxphysicalvideoadapter?view=win10-ps)
+- [VMRemoteFx3dVideoAdapter](/powershell/module/hyper-v/add-vmremotefx3dvideoadapter?view=win10-ps)
+- [VMRemoteFx3dVideoAdapter](/powershell/module/hyper-v/get-vmremotefx3dvideoadapter?view=win10-ps)
+- [VMRemoteFx3dVideoAdapter](/powershell/module/hyper-v/set-vmremotefx3dvideoadapter?view=win10-ps)
+- [取得-VMRemoteFXPhysicalVideoAdapter](/powershell/module/hyper-v/get-vmremotefxphysicalvideoadapter?view=win10-ps)
 
 ## <a name="monitor-performance"></a>パフォーマンスの監視
 
@@ -108,4 +108,4 @@ VGPU が有効なすべての仮想デスクトップには、ホストサーバ
 
 GPU のリソースが不足している場合、読み取りと書き込みの操作が完了するまでに時間がかかります。 管理者は、パフォーマンスカウンターを使用して、リソースを調整してユーザーのダウンタイムを回避するタイミングを知ることができます。
 
-RemoteFX vGPU 動作を監視するためのパフォーマンスカウンターの詳細については、「[リモートデスクトップでのグラフィックスパフォーマンスの問題の診断」](https://docs.microsoft.com/azure/virtual-desktop/remotefx-graphics-performance-counters)を参照してください。
+RemoteFX vGPU 動作を監視するためのパフォーマンスカウンターの詳細については、「[リモートデスクトップでのグラフィックスパフォーマンスの問題の診断」](/azure/virtual-desktop/remotefx-graphics-performance-counters)を参照してください。

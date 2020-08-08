@@ -2,17 +2,16 @@
 title: サーバーのパフォーマンス履歴
 ms.author: cosdar
 manager: eldenc
-ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 02/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 15f6e68f613dea03631d1ce6be53f6cb9d854fc1
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 262c35e7d91fe43d2ade955d4606279f8d428f6a
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86954104"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87946335"
 ---
 # <a name="performance-history-for-servers"></a>サーバーのパフォーマンス履歴
 
@@ -92,6 +91,6 @@ Hyper-v が有効になっていない場合:
 Get-ClusterNode <Name> | Get-ClusterPerf
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [記憶域スペース ダイレクトのパフォーマンス履歴](performance-history.md)

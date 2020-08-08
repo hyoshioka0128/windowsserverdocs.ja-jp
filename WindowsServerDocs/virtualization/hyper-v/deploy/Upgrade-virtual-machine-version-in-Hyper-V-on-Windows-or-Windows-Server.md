@@ -7,12 +7,12 @@ ms.assetid: 897f2454-5aee-445c-a63e-f386f514a0f6
 author: jasongerend
 ms.author: jgerend
 ms.date: 05/22/2019
-ms.openlocfilehash: e7c86cc15877c622cf3554a7ae69fe3d0aea1c50
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 24e67bd88a644c44b65d5eb8ccd3d6190737b5db
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87938926"
+ms.locfileid: "87995640"
 ---
 # <a name="upgrade-virtual-machine-version-in-hyper-v-on-windows-10-or-windows-server"></a>Windows 10 または Windows Server の Hyper-v で仮想マシンのバージョンをアップグレードする
 
@@ -24,13 +24,13 @@ ms.locfileid: "87938926"
 - クラスターの機能レベルをアップグレードします。
 - 以前のバージョンの Windows または Windows Server を実行している Hyper-v ホストに仮想マシンを戻す必要がないことを確認します。
 
-詳細については、「[クラスターオペレーティングシステムのローリングアップグレード](../../../failover-clustering/Cluster-Operating-System-Rolling-Upgrade.md)」および「 [VMM で hyper-v ホストクラスターのローリングアップグレードを実行する](https://docs.microsoft.com/system-center/vmm/hyper-v-rolling-upgrade)」を参照してください。
+詳細については、「[クラスターオペレーティングシステムのローリングアップグレード](../../../failover-clustering/Cluster-Operating-System-Rolling-Upgrade.md)」および「 [VMM で hyper-v ホストクラスターのローリングアップグレードを実行する](/system-center/vmm/hyper-v-rolling-upgrade)」を参照してください。
 
 ## <a name="step-1-check-the-virtual-machine-configuration-versions"></a>手順 1: 仮想マシンの構成バージョンを確認する
 
 1. Windows デスクトップで [スタート] ボタンをクリックし、名前の一部を入力 **Windows PowerShell**します。
 2. [Windows PowerShell] を右クリックし、[**管理者として実行**] を選択します。
-3. [GET VM](https://docs.microsoft.com/powershell/module/hyper-v/get-vm)コマンドレットを使用します。 次のコマンドを実行して、仮想マシンのバージョンを取得します。
+3. [GET VM](/powershell/module/hyper-v/get-vm)コマンドレットを使用します。 次のコマンドを実行して、仮想マシンのバージョンを取得します。
 
 ```PowerShell
 Get-VM * | Format-Table Name, Version
@@ -43,7 +43,7 @@ Get-VM * | Format-Table Name, Version
 1. Hyper-v マネージャーで仮想マシンをシャットダウンします。
 2. [アクション > アップグレード構成バージョン] を選択します。 特定の仮想マシンについてこのオプションを選択できない場合、その仮想マシンは既に Hyper-V ホストでサポートされる最新の構成バージョンになっています。
 
-Windows PowerShell を使用して仮想マシンの構成バージョンをアップグレードするには、[更新プログラム VMVersion](https://docs.microsoft.com/powershell/module/hyper-v/update-vmversion)コマンドレットを使用します。 次のコマンドを実行します。ここで、vmname は仮想マシンの名前です。
+Windows PowerShell を使用して仮想マシンの構成バージョンをアップグレードするには、[更新プログラム VMVersion](/powershell/module/hyper-v/update-vmversion)コマンドレットを使用します。 次のコマンドを実行します。ここで、vmname は仮想マシンの名前です。
 
 ```PowerShell
 Update-VMVersion <vmname>
@@ -51,13 +51,13 @@ Update-VMVersion <vmname>
 
 ## <a name="supported-virtual-machine-configuration-versions"></a>サポートされている仮想マシンの構成バージョン
 
-PowerShell コマンドレット[VMHostSupportedVersion](https://docs.microsoft.com/powershell/module/hyper-v/get-vmhostsupportedversion)を実行して、hyper-v ホストでサポートされている仮想マシンの構成バージョンを確認します。 仮想マシンを作成すると、既定の構成バージョンで作成されます。 既定値を確認するには、次のコマンドを実行します。
+PowerShell コマンドレット[VMHostSupportedVersion](/powershell/module/hyper-v/get-vmhostsupportedversion)を実行して、hyper-v ホストでサポートされている仮想マシンの構成バージョンを確認します。 仮想マシンを作成すると、既定の構成バージョンで作成されます。 既定値を確認するには、次のコマンドを実行します。
 
 ```PowerShell
 Get-VMHostSupportedVersion -Default
 ```
 
-以前のバージョンの Windows を実行している Hyper-v ホストに移動できる仮想マシンを作成する必要がある場合は、-version パラメーターを指定して、[新しい VM](https://docs.microsoft.com/powershell/module/hyper-v/new-vm)コマンドレットを使用します。 たとえば、Windows Server 2012 R2 を実行している Hyper-v ホストに移動できる仮想マシンを作成するには、次のコマンドを実行します。 このコマンドは、"WindowsCV5" という名前の仮想マシンを、構成バージョン5.0 で作成します。
+以前のバージョンの Windows を実行している Hyper-v ホストに移動できる仮想マシンを作成する必要がある場合は、-version パラメーターを指定して、[新しい VM](/powershell/module/hyper-v/new-vm)コマンドレットを使用します。 たとえば、Windows Server 2012 R2 を実行している Hyper-v ホストに移動できる仮想マシンを作成するには、次のコマンドを実行します。 このコマンドは、"WindowsCV5" という名前の仮想マシンを、構成バージョン5.0 で作成します。
 
 ```PowerShell
 New-VM -Name "WindowsCV5" -Version 5.0
@@ -82,7 +82,7 @@ New-VM -Name "WindowsCV5" -Version 5.0
 
 ### <a name="supported-vm-configuration-versions-for-semi-annual-channel-hosts"></a>半期チャネルホストでサポートされている VM 構成バージョン
 
-次の表は、現在サポートされている半期チャネルバージョンの Windows を実行しているホストの VM 構成バージョンを示しています。 Windows の半期チャネルバージョンの詳細については、 [Windows Server](../../../get-started-19/servicing-channels-19.md)と[windows 10](https://docs.microsoft.com/windows/deployment/update/waas-overview#servicing-channels)の次のページを参照してください。
+次の表は、現在サポートされている半期チャネルバージョンの Windows を実行しているホストの VM 構成バージョンを示しています。 Windows の半期チャネルバージョンの詳細については、 [Windows Server](../../../get-started-19/servicing-channels-19.md)と[windows 10](/windows/deployment/update/waas-overview#servicing-channels)の次のページを参照してください。
 
 | Hyper-v ホストの Windows バージョン | 9.1 | 9.0 | 8.3 | 8.2 | 8.1 | 8.0 | 7.1 | 7.0 | 6.2 | 5.0 |
 | --- |---|---|---|---|---|---|---|---|---|---|
@@ -116,7 +116,7 @@ Windows Server 2019、Windows Server 2016、または Windows 10 で Hyper-v を
 
 以前のバージョンの Hyper-v で作成した仮想マシンがある場合は、構成バージョンを更新するまで、新しいホスト OS で使用できる一部の機能がこれらの仮想マシンで動作しない可能性があります。
 
-一般的なガイダンスとして、仮想化ホストを新しいバージョンの Windows に正常にアップグレードした後で、ロールバックする必要がないことを確認した後で、構成バージョンを更新することをお勧めします。 [クラスター OS のローリングアップグレード](https://docs.microsoft.com/windows-server/failover-clustering/Cluster-Operating-System-Rolling-Upgrade)機能を使用している場合、通常はクラスターの機能レベルを更新した後になります。 このようにして、新機能や内部的な変更と最適化にもメリットがあります。
+一般的なガイダンスとして、仮想化ホストを新しいバージョンの Windows に正常にアップグレードした後で、ロールバックする必要がないことを確認した後で、構成バージョンを更新することをお勧めします。 [クラスター OS のローリングアップグレード](../../../failover-clustering/cluster-operating-system-rolling-upgrade.md)機能を使用している場合、通常はクラスターの機能レベルを更新した後になります。 このようにして、新機能や内部的な変更と最適化にもメリットがあります。
 
 >[!NOTE]
 >VM 構成のバージョンが更新されると、更新された構成バージョンをサポートしていないホストで VM を起動することはできません。
@@ -140,8 +140,7 @@ Windows Server 2019、Windows Server 2016、または Windows 10 で Hyper-v を
 |大容量メモリ Vm|8.0|
 |仮想デバイスの既定の最大数をデバイスあたり64に増やします (ネットワークと割り当てられたデバイスなど)。|8.3|
 |Perfmon の追加プロセッサ機能を許可する|9.0|
-|[コアスケジューラ](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/manage-hyper-v-scheduler-types#windows-server-2019-hyper-v-defaults-to-using-the-core-scheduler)を使用してホスト上で実行されている vm の[同時マルチスレッド](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/manage-hyper-v-scheduler-types#background)構成を自動的に公開する|9.0|
+|[コアスケジューラ](../manage/manage-hyper-v-scheduler-types.md#windows-server-2019-hyper-v-defaults-to-using-the-core-scheduler)を使用してホスト上で実行されている vm の[同時マルチスレッド](../manage/manage-hyper-v-scheduler-types.md#background)構成を自動的に公開する|9.0|
 |休止状態のサポート|9.0|
 
 これらの機能の詳細については、「 [Windows Server の hyper-v の新](../What-s-new-in-Hyper-V-on-Windows.md)機能」を参照してください。
-

@@ -6,14 +6,12 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 6044c12744c29d5c13cef03c811349cfbb7d1ded
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 5016dc3d98bc56dd38b1e1c41f4ead5a37cc00cc
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87520131"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87958860"
 ---
 # <a name="reducing-the-active-directory-attack-surface"></a>Active Directory の攻撃を削減する
 
