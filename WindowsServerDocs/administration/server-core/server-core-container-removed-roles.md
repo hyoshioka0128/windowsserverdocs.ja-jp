@@ -6,18 +6,18 @@ ms.sitesec: library
 author: lizap
 ms.localizationpriority: medium
 ms.date: 05/07/2018
-ms.openlocfilehash: f577ebd805e5373a10dd43a3d5054f92d4881c7d
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 2092e330af479ae0cbdb1da88ba87cf233307b59
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895920"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87993258"
 ---
 # <a name="roles-role-services-and-features-not-in-server-core-containers---windows-server-version-1803"></a>Server Core コンテナーに含まれていない役割、役割サービス、および機能-Windows Server、バージョン1803
 
 > 適用先:Windows Server バージョン 1803
 
-Windows Server バージョン1803では、 [Server Core コンテナーイメージ全体のサイズが**1.58 GB**に縮小](https://blogs.technet.microsoft.com/virtualization/2018/01/22/a-smaller-windows-server-core-container-with-better-application-compatibility/)されています。 これを行うには、アーキテクチャを最適化し、 [Server Core コンテナー](https://docs.microsoft.com/virtualization/windowscontainers/about/)で必要のないものを削除します。 コンテナーでは機能しなかったものもあれば、ロールや機能が使用されていないものもあります。
+Windows Server バージョン1803では、 [Server Core コンテナーイメージ全体のサイズが**1.58 GB**に縮小](https://blogs.technet.microsoft.com/virtualization/2018/01/22/a-smaller-windows-server-core-container-with-better-application-compatibility/)されています。 これを行うには、アーキテクチャを最適化し、 [Server Core コンテナー](/virtualization/windowscontainers/about/)で必要のないものを削除します。 コンテナーでは機能しなかったものもあれば、ロールや機能が使用されていないものもあります。
 
 > [!IMPORTANT]
 > Server Core**コンテナー**イメージから削除しました。[サーバーコア自体](server-core-roles-and-services.md)ではありません。

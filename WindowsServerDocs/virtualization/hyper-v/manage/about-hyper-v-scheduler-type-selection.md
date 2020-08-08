@@ -5,16 +5,14 @@ author: allenma
 ms.author: allenma
 ms.date: 08/14/2018
 ms.topic: article
-ms.prod: windows-server-hyper-v
-ms.technology: virtualization
 ms.localizationpriority: low
 ms.assetid: 5fe163d4-2595-43b0-ba2f-7fad6e4ae069
-ms.openlocfilehash: 128f9d734311f8eaf0f06204e114171fa8b0f750
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: 332ec3a31d8a442fada7f01d30c5cb7d44965238
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87768430"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87994095"
 ---
 # <a name="about-hyper-v-hypervisor-scheduler-type-selection"></a>Hyper-v ハイパーバイザースケジューラの種類の選択について
 
@@ -32,7 +30,7 @@ ms.locfileid: "87768430"
 
 ## <a name="background"></a>バックグラウンド
 
-Windows Server 2016 以降、Hyper-v では、ハイパーバイザー scheduler の種類と呼ばれる仮想プロセッサのスケジュール設定と管理の方法がいくつかサポートされています。  すべてのハイパーバイザースケジューラの種類の詳細については、 [「hyper-v ハイパーバイザーのスケジューラの種類とその使用方法](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/manage-hyper-v-scheduler-types)」を参照してください。
+Windows Server 2016 以降、Hyper-v では、ハイパーバイザー scheduler の種類と呼ばれる仮想プロセッサのスケジュール設定と管理の方法がいくつかサポートされています。  すべてのハイパーバイザースケジューラの種類の詳細については、 [「hyper-v ハイパーバイザーのスケジューラの種類とその使用方法](./manage-hyper-v-scheduler-types.md)」を参照してください。
 
 >[!NOTE]
 >新しいハイパーバイザースケジューラの種類は、Windows Server 2016 で初めて導入されたものであり、以前のリリースでは利用できません。 Windows Server 2016 より前のすべてのバージョンの Hyper-v では、クラシックスケジューラのみがサポートされています。 コアスケジューラのサポートは最近公開されただけでした。
@@ -78,7 +76,7 @@ SMT が有効になっていない仮想マシンに対して VP がスケジュ
 最大のセキュリティ体制で Hyper-v ホストを展開するには、ハイパーバイザーのコアスケジューラの種類を使用する必要があります。 既定でお客様がセキュリティで保護されていることを確認するために、Microsoft では次の既定の設定と推奨設定を変更しています。
 
 >[!NOTE]
->Windows Server 2016、Windows Server 1709、および Windows Server 1803 の最初のリリースには、ハイパーバイザーによるスケジューラの内部サポートが含まれていましたが、ハイパーバイザースケジューラの種類を選択できる構成コントロールにアクセスするには、更新プログラムが必要です。  これらの更新の詳細については[、「hyper-v ハイパーバイザー scheduler の種類と使用](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/manage-hyper-v-scheduler-types)」を参照してください。
+>Windows Server 2016、Windows Server 1709、および Windows Server 1803 の最初のリリースには、ハイパーバイザーによるスケジューラの内部サポートが含まれていましたが、ハイパーバイザースケジューラの種類を選択できる構成コントロールにアクセスするには、更新プログラムが必要です。  これらの更新の詳細については[、「hyper-v ハイパーバイザー scheduler の種類と使用](./manage-hyper-v-scheduler-types.md)」を参照してください。
 
 ### <a name="virtualization-host-changes"></a>仮想化ホストの変更
 
@@ -168,7 +166,7 @@ Microsoft ハイパーバイザーでは、複数の enlightenments (ヒント) 
 
 ### <a name="nononarchitecturalcoresharing-enlightenment-details"></a>NoNonArchitecturalCoreSharing 啓蒙の詳細
 
-Windows Server 2016 以降では、ハイパーバイザーは、VP スケジューリングとゲスト OS への配置の処理を記述する新しい啓蒙を定義します。 この啓蒙は、[ハイパーバイザーのトップレベル機能仕様である 5.0 c](https://docs.microsoft.com/virtualization/hyper-v-on-windows/reference/tlfs)で定義されています。
+Windows Server 2016 以降では、ハイパーバイザーは、VP スケジューリングとゲスト OS への配置の処理を記述する新しい啓蒙を定義します。 この啓蒙は、[ハイパーバイザーのトップレベル機能仕様である 5.0 c](/virtualization/hyper-v-on-windows/reference/tlfs)で定義されています。
 
 ハイパーバイザー合成 CPUID リーフ CPUID. 0x40000004。 EAX:18 [NoNonArchitecturalCoreSharing = 1] は、兄弟 SMT スレッドとして報告される仮想プロセッサを除き、仮想プロセッサが物理コアを別の仮想プロセッサと共有しないことを示します。 たとえば、ゲスト VP は、同じプロセッサコア上の兄弟 SMT スレッドで同時に実行されたルート VP と共に、SMT スレッドで実行されることはありません。 この条件は、仮想化を実行している場合にのみ可能であり、セキュリティに深刻な影響を与えるアーキテクチャ以外の SMT 動作を表します。 ゲスト OS は、NoNonArchitecturalCoreSharing = 1 を使用して最適化を安全に行うことができることを示すことができます。これにより、同じように設定することにより、パフォーマンスのオーバーヘッドを回避できます。
 

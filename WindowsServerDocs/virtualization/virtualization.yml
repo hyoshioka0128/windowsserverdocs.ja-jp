@@ -12,12 +12,12 @@ metadata:
   ms.technology: compute
   ms.assetid: c248b41f-0de3-7136-9a25-b4b07e41ebf0
   ms.localizationpriority: high
-  ms.openlocfilehash: 65230ad9d35239a86f5c213807c5f8eed9edfa68
-  ms.sourcegitcommit: 457e88e5aa6be13a2bffdb8e434a8efc3698678f
+  ms.openlocfilehash: a7b740ebb040ad9787b41a46ed40ebd9ea277f6a
+  ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
   ms.translationtype: MT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 06/30/2020
-  ms.locfileid: "85549177"
+  ms.lasthandoff: 08/07/2020
+  ms.locfileid: "87994038"
 landingContent:
 - title: Windows コンテナー
   linkLists:
@@ -54,7 +54,7 @@ landingContent:
   - linkListType: reference
     links:
     - text: Microsoft Hyper-V Server 2016
-      url: /windows-server/virtualization/hyper-v/hyper-v-server-2016
+      url: ./hyper-v/hyper-v-server-2016.md
     - text: Windows Server 上の Hyper-v のシステム要件
       url: hyper-v/System-requirements-for-Hyper-V-on-Windows.md
 - title: Hyper-V 仮想スイッチ

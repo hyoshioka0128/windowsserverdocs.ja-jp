@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: trudyha
 ms.author: trudyha
 ms.date: 10/16/2017
-ms.openlocfilehash: fc76aef0f7fbc9f3c1dd73b94c6510c0ad37034c
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 49c5ee234a6983902e7eb2f68e64a058167a3182
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87879416"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87993419"
 ---
 # <a name="windows-server-hybrid-cloud-print-overview"></a>Windows Server ハイブリッドクラウド印刷の概要
 
@@ -31,7 +31,7 @@ IT 管理者にとって、**ハイブリッドクラウド印刷**では、Azur
 - IIS サービスで実行されている**探索**サービスエンドポイントは、クラウドでのプリンター検出のための業界標準をサポートしています。
 - 業界標準のインターネット印刷プロトコル (IPP) をサポートする IIS サービスで実行されている**Windows 印刷**サービスエンドポイント。これにより、広範なクライアント OS のサポートが実現します。
 
-## <a name="deployment"></a>配置
+## <a name="deployment"></a>デプロイ
 **ハイブリッドクラウド印刷**では、組織がユーザー認証を必要とする場所に応じて、いくつかの異なる展開オプションをサポートしています。 デプロイは次のようになります。
 
 ![ハイブリッドクラウド印刷ソリューションのグラフィックを示す図](../media/hybrid-cloud-print/wshcp-deployment-options.png)
@@ -56,7 +56,7 @@ IT 管理者にとって、**ハイブリッドクラウド印刷**では、Azur
 | BYOD デバイス/Windows プリントサーバーのスプーラ/プリンタ | これらはそのようなものです。 デプロイの機能に変更はありません。 |
 
 **ハイブリッドクラウド印刷**をインストールするには、次の2つの方法があります。
-- * * 必要に応じて、役割と機能のファイルの追加と削除の詳細については、「 [Windows Server でのオンデマンド機能の構成](https://docs.microsoft.com/windows-server/administration/server-manager/configure-features-on-demand-in-windows-server)」を参照してください。
+- * * 必要に応じて、役割と機能のファイルの追加と削除の詳細については、「 [Windows Server でのオンデマンド機能の構成](../server-manager/configure-features-on-demand-in-windows-server.md)」を参照してください。
 - * * Windows Server 2016 の設定、管理者は、[**設定**] [アプリ] [  ->  **Apps**  ->  **オプション機能の管理**] 機能を  ->  **追加**し、[オンデマンドで機能] パッケージを検索します。
 - PowerShell コマンド-PowerShell 管理者ウィンドウで、次のコマンドを実行します。
 

@@ -8,12 +8,12 @@ ms.localizationpriority: medium
 manager: dougkim
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 135008db9f8a5f6b1238c18df64e89ed8c71180c
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 86403af3cea6843905ca58437a3858b77351bc81
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87955529"
+ms.locfileid: "87993718"
 ---
 # <a name="virtual-receive-side-scaling-vrss"></a>仮想 Receive Side Scaling \( vRSS\)
 
@@ -45,7 +45,7 @@ RSS は、Windows Server 2016 を実行しているマルチプロセッサま�
 - Windows server 2012 R2 統合コンポーネントがインストールされている windows Server 2012。
 - Windows Server 2012 R2 統合コンポーネントがインストールされている windows 8。
 
-Hyper-v でゲストオペレーティングシステムとして FreeBSD または Linux を実行する Vm の vRSS サポートの詳細については、「 [Windows 上の hyper-v でサポートされている Linux および FreeBSD 仮想マシン](https://docs.microsoft.com/windows-server/virtualization/hyper-v/Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows)」を参照してください。
+Hyper-v でゲストオペレーティングシステムとして FreeBSD または Linux を実行する Vm の vRSS サポートの詳細については、「 [Windows 上の hyper-v でサポートされている Linux および FreeBSD 仮想マシン](../../../virtualization/hyper-v/supported-linux-and-freebsd-virtual-machines-for-hyper-v-on-windows.md)」を参照してください。
 
 ## <a name="hardware-requirements"></a>ハードウェア要件
 

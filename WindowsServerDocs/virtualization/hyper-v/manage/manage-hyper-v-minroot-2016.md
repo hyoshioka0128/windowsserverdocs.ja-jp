@@ -4,13 +4,12 @@ description: ホスト CPU リソース制御の構成
 author: allenma
 ms.date: 12/15/2017
 ms.topic: article
-ms.prod: windows-server
-ms.openlocfilehash: 1e35595a0b5a0ab12187aae2cf714fc4d53901ee
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: fc65159474f9b1cd8bf282acf00ff06f4727673b
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769630"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87994059"
 ---
 # <a name="hyper-v-host-cpu-resource-management"></a>Hyper-v ホスト CPU リソース管理
 
@@ -18,12 +17,12 @@ Windows Server 2016 以降で導入された hyper-v ホスト CPU リソース�
 管理者は、これらのコントロールを使用して、ホストシステムのプロセッサのサブセットをルートパーティションに専用にすることができます。
 これにより、ゲスト仮想マシンで実行されているワークロードを、システムプロセッサの別々のサブセットで実行することにより、Hyper-v ホストで実行された作業を分離できます。
 
-Hyper-v ホストのハードウェアの詳細については、「 [Windows 10 hyper-v のシステム要件](https://docs.microsoft.com/virtualization/hyper-v-on-windows/reference/hyper-v-requirements)」を参照してください。
+Hyper-v ホストのハードウェアの詳細については、「 [Windows 10 hyper-v のシステム要件](/virtualization/hyper-v-on-windows/reference/hyper-v-requirements)」を参照してください。
 
 ## <a name="background"></a>バックグラウンド
 
 Hyper-v ホストの CPU リソースの制御を設定する前に、Hyper-v アーキテクチャの基本を確認すると便利です。
-一般的な概要については、「 [Hyper-v アーキテクチャ](https://docs.microsoft.com/windows-server/administration/performance-tuning/role/hyper-v-server/architecture)」セクションを参照してください。
+一般的な概要については、「 [Hyper-v アーキテクチャ](../../../administration/performance-tuning/role/hyper-v-server/architecture.md)」セクションを参照してください。
 この記事の重要な概念は次のとおりです。
 
 * Hyper-v は、ハイパーバイザーの制御下で、コンピューティングリソースが割り当てられ共有される仮想マシンパーティションを作成して管理します。  パーティションは、すべてのゲスト仮想マシン間、およびゲスト Vm とルートパーティションの間に強力な分離境界を提供します。

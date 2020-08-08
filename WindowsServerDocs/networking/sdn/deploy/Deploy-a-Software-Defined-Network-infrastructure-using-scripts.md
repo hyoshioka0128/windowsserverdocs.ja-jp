@@ -7,12 +7,12 @@ ms.assetid: 5ba5bb37-ece0-45cb-971b-f7149f658d19
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/23/2018
-ms.openlocfilehash: e671421225e9fa2d5e7461c795a9f7c9789efd88
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 7fcf8b095479ec21c045a60244917b09883a6162
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970819"
+ms.locfileid: "87993765"
 ---
 # <a name="deploy-a-software-defined-network-infrastructure-using-scripts"></a>スクリプトを使用してソフトウェア定義ネットワーク インフラストラクチャを展開する
 
@@ -20,7 +20,7 @@ ms.locfileid: "87970819"
 
 テナントのワークロードが仮想ネットワークの外部で通信できるようにする場合は、SLB NAT 規則、サイト間ゲートウェイトンネル、またはレイヤー3転送を設定して、仮想ワークロードと物理ワークロード間をルーティングできます。
 
-Virtual Machine Manager (VMM) を使用して SDN インフラストラクチャを展開することもできます。 詳細については、「 [VMM ファブリックでのソフトウェア定義ネットワーク (SDN) インフラストラクチャのセットアップ](https://technet.microsoft.com/system-center-docs/vmm/scenario/sdn-overview)」を参照してください。
+Virtual Machine Manager (VMM) を使用して SDN インフラストラクチャを展開することもできます。 詳細については、「 [VMM ファブリックでのソフトウェア定義ネットワーク (SDN) インフラストラクチャのセットアップ](/system-center/vmm/deploy-sdn?view=sc-vmm-2019)」を参照してください。
 
 ## <a name="pre-deployment"></a>デプロイ前準備
 
@@ -35,7 +35,7 @@ Virtual Machine Manager (VMM) を使用して SDN インフラストラクチャ
 ### <a name="install-host-networking"></a>ホストネットワークのインストール
 
 1. NIC ハードウェアで使用可能な最新のネットワークドライバーをインストールします。
-2. Hyper-v の役割をすべてのホストにインストールします (詳細については、「 [Windows Server 2016 で hyper-v の使用を開始](https://docs.microsoft.com/windows-server/virtualization/hyper-v/get-started/Get-started-with-Hyper-V-on-Windows)する」を参照してください)。
+2. Hyper-v の役割をすべてのホストにインストールします (詳細については、「 [Windows Server 2016 で hyper-v の使用を開始](../../../virtualization/hyper-v/get-started/get-started-with-hyper-v-on-windows.md)する」を参照してください)。
 
    ```PowerShell
    Install-WindowsFeature -Name Hyper-V -ComputerName <computer_name> -IncludeManagementTools -Restart
@@ -62,7 +62,7 @@ Virtual Machine Manager (VMM) を使用して SDN インフラストラクチャ
    New-NetIPAddress -InterfaceAlias "vEthernet (<switch name>)" -IPAddress <IP> -DefaultGateway <Gateway IP> -AddressFamily IPv4 -PrefixLength <Length of Subnet Mask - for example: 24>
    ```
 
-5. Optionalバーチャルマシンをホスト Active Directory Domain Services に展開します ([Active Directory Domain Services (レベル 100)](https://technet.microsoft.com/library/hh472162.aspx)と DNS サーバーをインストールします。
+5. Optionalバーチャルマシンをホスト Active Directory Domain Services に展開します ([Active Directory Domain Services (レベル 100)](../../../identity/ad-ds/deploy/install-active-directory-domain-services--level-100-.md)と DNS サーバーをインストールします。
 
     a. Active Directory/DNS サーバー仮想マシンを管理 VLAN に接続します。
 
@@ -171,7 +171,7 @@ Nano を Hyper-v ホスト (物理サーバー) として展開に使用する�
 
 SDN Express スクリプトがエラーを報告せずに完了するようにした場合は、次の手順を実行して、ファブリックのリソースが正しくデプロイされ、テナントのデプロイに使用できるようにすることができます。
 
-[診断ツール](https://docs.microsoft.com/windows-server/networking/sdn/troubleshoot/troubleshoot-windows-server-software-defined-networking-stack)を使用して、ネットワークコントローラー内のファブリックリソースにエラーがないことを確認します。
+[診断ツール](../troubleshoot/troubleshoot-windows-server-software-defined-networking-stack.md)を使用して、ネットワークコントローラー内のファブリックリソースにエラーがないことを確認します。
 
    ``Debug-NetworkControllerConfigurationState -NetworkController <FQDN of Network Controller Rest Name>``
 

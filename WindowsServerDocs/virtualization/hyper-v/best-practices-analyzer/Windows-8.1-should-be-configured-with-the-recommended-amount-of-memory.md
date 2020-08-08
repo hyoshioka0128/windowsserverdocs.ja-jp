@@ -7,12 +7,12 @@ ms.topic: article
 ms.assetid: 4972101a-c266-4045-bdd6-4e75a9cd750e
 author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 6a8ec7839a8591f5cced463420c1545bbd702d2d
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: c827ab02889f4ffed847903d62e88450450ef2c7
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87948358"
+ms.locfileid: "87993627"
 ---
 # <a name="windows-81-should-be-configured-with-the-recommended-amount-of-memory"></a>Windows 8.1 は、推奨されるメモリ量を使用して構成する必要があります。
 
@@ -65,7 +65,4 @@ Set-VMMemory <MyVM> -StartupBytes 1GB
 ```
 
 ## <a name="see-also"></a>参照
-[設定-VMMemory](https://technet.microsoft.com/library/hh848572.aspx)
-
-
-
+[設定-VMMemory](/powershell/module/hyper-v/set-vmmemory?view=win10-ps)

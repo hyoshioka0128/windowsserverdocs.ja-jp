@@ -5,12 +5,12 @@ ms.topic: get-started-article
 ms.assetid: 08fb7563-d319-48a9-b181-ca0ca3032c18
 author: dcuomo
 ms.author: dacuo
-ms.openlocfilehash: 78741ae45a5f175d6be0e608adba5c6c6fcbf771
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 69e1fee1a8ae0ff1c878c64790650290b4804351
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87964398"
+ms.locfileid: "87993813"
 ---
 # <a name="whats-new-in-networking"></a>ネットワークの新機能
 
@@ -35,7 +35,7 @@ Upd このトピックの内容は次のとおりです。
 
 次に、新しい SDN インフラストラクチャテクノロジと強化された SDN インフラストラクチャテクノロジを示します。
 
--   **ネットワークコントローラー**。 Windows Server 2016 の新機能ネットワークコントローラーは、データセンター内の仮想および物理ネットワークインフラストラクチャの管理、構成、監視、およびトラブルシューティングを行うための、一元化されたプログラミング可能な自動化ポイントを提供します。 ネットワーク コントローラーを使用すると、ネットワーク インフラストラクチャの構成を自動化できます。ネットワーク デバイスとサービスを手動で構成する必要はありません。 詳細については、「[ネットワークコントローラー](sdn/technologies/network-controller/Network-Controller.md) 」と「[スクリプトを使用したソフトウェア定義ネットワークの展開](https://technet.microsoft.com/library/mt427380.aspx)」を参照してください。
+-   **ネットワークコントローラー**。 Windows Server 2016 の新機能ネットワークコントローラーは、データセンター内の仮想および物理ネットワークインフラストラクチャの管理、構成、監視、およびトラブルシューティングを行うための、一元化されたプログラミング可能な自動化ポイントを提供します。 ネットワーク コントローラーを使用すると、ネットワーク インフラストラクチャの構成を自動化できます。ネットワーク デバイスとサービスを手動で構成する必要はありません。 詳細については、「[ネットワークコントローラー](sdn/technologies/network-controller/Network-Controller.md) 」と「[スクリプトを使用したソフトウェア定義ネットワークの展開](/previous-versions/windows/server/mt427380(v=ws.12))」を参照してください。
 
 -   **Hyper-v 仮想スイッチ**。 Hyper-v 仮想スイッチは、Hyper-v ホスト上で実行され、分散型の切り替えとルーティング、および Microsoft Azure と整合し、互換性のあるポリシーの適用層を作成できます。 詳しくは、「[Hyper-V 仮想スイッチの概要](../virtualization/hyper-v-virtual-switch/Hyper-V-Virtual-Switch.md)」を参照してください。
 
@@ -50,7 +50,7 @@ Upd このトピックの内容は次のとおりです。
         詳細については、「 [Ras ゲートウェイの新機能](sdn/technologies/network-function-virtualization/What-s-New-in-RAS-Gateway.md)」および「 [SDN の ras ゲートウェイ](sdn/technologies/network-function-virtualization/RAS-Gateway-for-SDN.md)」を参照してください。
 
     - **ソフトウェア Load Balancer (SLB) とネットワークアドレス変換 (NAT)**。 北南部と東西部のレイヤー4のロードバランサーと NAT は、Direct Server Return をサポートすることでスループットを向上させます。この場合、ネットワークトラフィックの戻り値は、負荷分散マルチプレクサーをバイパスできます。
-       詳細については、次を参照してください。 [ソフトウェアによる負荷分散と #40 です。SLB & #41 です。SDN の](sdn/technologies/network-function-virtualization/Software-Load-Balancing--SLB--for-SDN.md)です。
+       詳細については、次を参照してください。 [ソフトウェアによる負荷分散と #40 です。SLB & #41 です。SDN の](./sdn/technologies/network-function-virtualization/software-load-balancing-for-sdn.md)です。
 
     詳細については、次を参照してください。 [ネットワーク機能の仮想化](sdn/technologies/network-function-virtualization/Network-Function-Virtualization.md)します。
 
@@ -145,5 +145,3 @@ IPAM は、組織のネットワーク上の IP アドレスと DNS インフラ
      Windows PowerShell を使用して、IPAM オブジェクトのアクセススコープを設定できます。
 
 詳細については、「 [ipam の新機能](technologies/ipam/What-s-New-in-IPAM.md)」および「 [ipam の管理](technologies/ipam/Manage-IPAM.md)」を参照してください。
-
-

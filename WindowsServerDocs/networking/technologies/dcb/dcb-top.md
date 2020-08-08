@@ -6,12 +6,12 @@ ms.assetid: da58f312-bd3b-4bb6-98ca-6177869dd6ad
 manager: brianlic
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 488171c2f42ede1ede8f1bbca2c473c72dbf833a
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 646660c1371b592670737b7d7d208b62208bfec9
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87966579"
+ms.locfileid: "87993942"
 ---
 # <a name="data-center-bridging-dcb"></a>データ センター ブリッジング\(DCB\)
 
@@ -64,8 +64,8 @@ DCB には、次のような機能があります。
 4. サーバー管理者またはネットワーク管理者が、アプリケーションで使われるウェルノウン プロトコル、ウェルノウン TCP/UDP ポート、または NetworkDirect ポートに基づいて、特定のトラフィック クラスまたは優先度をアプリケーションに割り当てることのできる機能。
 
 5. Windows Server 2016 Windows Management Instrumentation \( WMI \) および windows PowerShell を使用した DCB の管理を提供します。 詳細については、このトピックで後述する「 [Windows PowerShell Commands FOR DCB](#bkmk_wps) 」を参照してください。
-    - [システムが提供する DCB コンポーネント](https://msdn.microsoft.com/windows/hardware/drivers/network/system-provided-dcb-components)
-    - [NDIS のデータ センター ブリッジングの QoS 要件](https://msdn.microsoft.com/windows/hardware/drivers/network/ndis-qos-requirements-for-data-center-bridging)
+    - [システムが提供する DCB コンポーネント](/windows-hardware/drivers/network/system-provided-dcb-components)
+    - [NDIS のデータ センター ブリッジングの QoS 要件](/windows-hardware/drivers/network/ndis-qos-requirements-for-data-center-bridging)
 
 6. では、Windows Server 2016 グループポリシーによる DCB 管理が提供されます。
 
@@ -102,10 +102,10 @@ Windows Server 2016 と Windows Server 2012 R2 の両方に対応する DCB Wind
 
 Windows Server 2016 の次のトピックでは、Windows PowerShell コマンドレットの説明と構文を提供しており、すべてのデータセンターブリッジング \( DCB Quality Of Service QoS 固有のコマンドレットについて説明して \) \( \) \- います。 コマンドレットの先頭の動詞に基づいて、アルファベット順に記載しています。
 
-- [DcbQoS モジュール](https://technet.microsoft.com/itpro/powershell/windows/dcbqos/dcbqos)
+- [DcbQoS モジュール](/powershell/module/dcbqos/?view=win10-ps)
 
 ### <a name="windows-server-2012-r2-windows-powershell-commands-for-dcb"></a>DCB 用の windows Server 2012 R2 Windows PowerShell コマンド
 
 Windows Server 2012 R2 の次のトピックでは、Windows PowerShell コマンドレットの説明と構文を提供しており、すべてのデータセンターブリッジング \( DCB \) Quality of Service QoS 固有のコマンドレットについて説明し \( \) \- ます。 コマンドレットの先頭の動詞に基づいて、アルファベット順に記載しています。
 
-- [Windows PowerShell のデータ センター ブリッジング (DCB) サービス品質 (QoS) コマンドレット](https://technet.microsoft.com/library/hh967440.aspx)
+- [Windows PowerShell のデータ センター ブリッジング (DCB) サービス品質 (QoS) コマンドレット](/powershell/module/dcbqos/?view=win10-ps&viewFallbackFrom=winserverr2-ps)

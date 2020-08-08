@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: aa3174f3-42af-4511-ac2d-d8968b66da87
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 8f60a960d76e7c24ff3dc9afaf931792713f06af
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 9d00622ce5712a2f725f1c6f1b533387651bc903
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970409"
+ms.locfileid: "87993597"
 ---
 # <a name="step-1-plan-the-advanced-directaccess-infrastructure"></a>手順1高度な DirectAccess インフラストラクチャを計画する
 
@@ -52,9 +52,9 @@ ms.locfileid: "87970409"
 
     DirectAccess は、IPv6 と IPsec を組み合わせて、DirectAccess クライアント コンピューターと企業内部ネットワークとの間にセキュリティで保護された接続を確立します。 ただし、DirectAccess は、IPv6 インターネットへの接続または内部ネットワーク上でのネイティブ IPv6 サポートを必ずしも必要とはしません。 代わりに、IPv6 移行テクノロジを自動的に構成して使用し、IPv4 インターネット (6to4、Teredo、または IP-HTTPS を使用して)、IPv4 専用のイントラネットで (NAT64 または ISATAP を使用して) IPv6 トラフィックをトンネリングします。 このような移行テクノロジの概要については、次のリソースを参照してください。
 
-    - [IPv6 移行テクノロジ](/previous-versions//bb726951(v=technet.10))
+    - [IPv6 移行テクノロジ](/previous-versions/bb726951(v=technet.10))
 
-    - [IP-HTTPS Tunneling Protocol Specification (IP-HTTPS トンネリング プロトコルの仕様)](/previous-versions//bb726951(v=technet.10))
+    - [IP-HTTPS Tunneling Protocol Specification (IP-HTTPS トンネリング プロトコルの仕様)](/previous-versions/bb726951(v=technet.10))
 
 3. 次の表に従って、必要なアダプターとアドレスを構成します。 単一のネットワーク アダプターを使用し、NAT デバイスの内側に設定される展開については、「**内部ネットワーク アダプター**」の列のみを使用して IP アドレスを構成してください。
 

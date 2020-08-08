@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: a0726752-0a78-472b-9667-2f91636c1b3b
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 1ad284ac9a39b67bf7a3dd2b6a4a0c360a268e50
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 13c62fd1c21cce98e5de2f6cc16f0edb6ee06a99
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87964358"
+ms.locfileid: "87993797"
 ---
 # <a name="branchcache-network-shell-and-windows-powershell-commands"></a>BranchCache ネットワーク シェルと Windows PowerShell のコマンド
 
@@ -23,12 +23,9 @@ Windows の将来のバージョンでは、Microsoft は BranchCache の Netsh 
 
 Windows PowerShell と Netsh コマンドの参照は次の場所にあります。 どちらのコマンド参照も Windows Server 2016 より前のオペレーティングシステム用に公開されていましたが、これらの参照は、このオペレーティングシステムに対して正確です。
 
--   [Windows Server 2008 R2 の BranchCache の Netsh コマンド](https://technet.microsoft.com/library/dd979561(v=ws.10))
+-   [Windows Server 2008 R2 の BranchCache の Netsh コマンド](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd979561(v=ws.10))
 
--   [Windows PowerShell の BranchCache コマンドレット](https://docs.microsoft.com/powershell/module/branchcache/?view=win10-ps)
+-   [Windows PowerShell の BranchCache コマンドレット](/powershell/module/branchcache/?view=win10-ps)
 
 > [!TIP]
 > Windows PowerShell プロンプトで BranchCache の Windows PowerShell コマンドの一覧を参照するには、Windows PowerShell プロンプトで `Get-Command -Module BranchCache` を入力して、Enter キーを押します。
-
-
-

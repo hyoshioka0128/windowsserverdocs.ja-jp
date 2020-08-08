@@ -6,12 +6,12 @@ ms.date: 06/18/2018
 ms.topic: article
 ms.service: windows-10-hyperv
 ms.assetid: cc7bb88e-ae75-4a54-9fb4-fc7c14964d67
-ms.openlocfilehash: 1f902a37dd4df28b2591380e78fe86c271f4ed3e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 215521886418167fe6504c5f08b59dbfa7375432
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87963598"
+ms.locfileid: "87994050"
 ---
 # <a name="virtual-machine-resource-controls"></a>仮想マシンのリソースコントロール
 
@@ -113,7 +113,7 @@ Hyper-v ホスト管理者は、コンピューティングリソースを VM �
 仮想化ホストは、ホストパーティションを特定の LPs に制限するように構成できます。これは、残りの LPs に関連付けられた1つ以上の CPU グループで構成できます。
 この方法では、ルートパーティションとゲストパーティションは専用の CPU リソースで実行でき、CPU を共有せずに完全に分離されます。
 
-"Minroot" 構成の詳細については、「 [Hyper-v ホスト CPU リソース管理](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/manage-hyper-v-minroot-2016)」を参照してください。
+"Minroot" 構成の詳細については、「 [Hyper-v ホスト CPU リソース管理](./manage-hyper-v-minroot-2016.md)」を参照してください。
 
 ## <a name="using-the-cpugroups-tool"></a>Cpu 使用グループツールの使用
 

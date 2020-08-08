@@ -8,12 +8,12 @@ manager: dougkim
 ms.author: lizross
 author: eross-msft
 ms.date: 09/04/2018
-ms.openlocfilehash: 9457a1763f92e7f2571040c1c6e8e323d96ee598
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: ccfaa9fa02dd7324f1682592867b027cad4006a8
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87951941"
+ms.locfileid: "87993560"
 ---
 # <a name="plan-the-use-of-vrss"></a>VRSS の使用を計画する
 
@@ -40,7 +40,7 @@ VRSS の使用を計画および準備するときは、次のことを確認し
 
 3. **SR \- の欠如SR-IOV**。 単一のルート入力 \- 出力仮想化 \( SR \- \) 仮想関数 \( VF \) ドライバーが VM ネットワークインターフェイスに接続されていないことを確認してください。 これを確認するには、 **get-netadaptersriov**コマンドを使用します。 VF ドライバーが読み込まれると、RSS は、vRSS で構成されているものではなく、このドライバーからのスケーリング設定を使用します。 VF ドライバーが RSS をサポートしていない場合、vRSS は無効になります。
 
-4. **NIC チーミングの構成**。 NIC チーミングを使用している場合は、NIC チーミング設定と連動するように VMQ を正しく構成することが重要です。 NIC チーミングの展開と管理の詳細については、「 [Nic チーミング](https://docs.microsoft.com/windows-server/networking/technologies/nic-teaming/nic-teaming)」を参照してください。
+4. **NIC チーミングの構成**。 NIC チーミングを使用している場合は、NIC チーミング設定と連動するように VMQ を正しく構成することが重要です。 NIC チーミングの展開と管理の詳細については、「 [Nic チーミング](../nic-teaming/nic-teaming.md)」を参照してください。
 
 5. **LPs の数**。 VM に複数の論理プロセッサ LP があることを確認し \( \) ます。 vRSS は、VM または Hyper-v ホストの RSS に依存して、受信したトラフィックを並列処理のために複数の LPs に負荷分散します。 ホストで Windows PowerShell コマンドの**Get VMProcessor**を実行すると、VM で使用されている lps の数を確認できます。 コマンドを実行した後、LPs の数の Count 列のエントリを確認できます。
 

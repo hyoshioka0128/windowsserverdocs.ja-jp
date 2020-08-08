@@ -6,12 +6,12 @@ author: jasongerend
 ms.author: jgerend
 ms.date: 01/17/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: d77498b9d4c8573dfac82b7291b6d0676d0d8c1e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: a784bdfdfbfbbc4f91579d40cedb22230a70b13a
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971979"
+ms.locfileid: "87993592"
 ---
 # <a name="windows-admin-center-ui-text-and-design-style-guide"></a>Windows Admin Center の UI テキストおよびデザイン スタイル ガイド
 
@@ -19,7 +19,7 @@ ms.locfileid: "87971979"
 
 このトピックでは、Windows Admin Center のユーザー インターフェイス (UI) テキストを記述する一般的なアプローチに加え、特定の規則やアプローチについて説明します。
 
-Windows Admin Center およびすべての拡張機能は、エクスペリエンスが使いやすく、わかりやすくなるように [Microsoft のボイスの原則](https://docs.microsoft.com/style-guide/brand-voice-above-all-simple-human)に従う必要があります。 このスタイル ガイドは、これらのボイスの原則だけでなく [Microsoft 記述スタイルに関するガイド](https://docs.microsoft.com/style-guide/welcome/)に基づいているため、[アクセシビリティ](https://docs.microsoft.com/style-guide/accessibility/accessibility-guidelines-requirements)、[略語](https://docs.microsoft.com/style-guide/acronyms)、[言葉の選択](https://docs.microsoft.com/style-guide/word-choice/) ([please (してください)](https://docs.microsoft.com/style-guide/a-z-word-list-term-collections/p/please) や [sorry (申し訳ありません)](https://docs.microsoft.com/style-guide/a-z-word-list-term-collections/s/sorry) など) のような項目について、これらの両方のリソースを必ず確認してください。
+Windows Admin Center およびすべての拡張機能は、エクスペリエンスが使いやすく、わかりやすくなるように [Microsoft のボイスの原則](/style-guide/brand-voice-above-all-simple-human)に従う必要があります。 このスタイル ガイドは、これらのボイスの原則だけでなく [Microsoft 記述スタイルに関するガイド](/style-guide/welcome/)に基づいているため、[アクセシビリティ](/style-guide/accessibility/accessibility-guidelines-requirements)、[略語](/style-guide/acronyms)、[言葉の選択](/style-guide/word-choice/) ([please (してください)](/style-guide/a-z-word-list-term-collections/p/please) や [sorry (申し訳ありません)](/style-guide/a-z-word-list-term-collections/s/sorry) など) のような項目について、これらの両方のリソースを必ず確認してください。
 
 ## <a name="buttons"></a>ボタン
 
@@ -29,7 +29,7 @@ Windows Admin Center およびすべての拡張機能は、エクスペリエ�
 
 ## <a name="capitalization"></a>大文字化
 
-[大文字化](https://docs.microsoft.com/style-guide/capitalization) に関して Microsoft のスタイルに従っています - ほぼすべてに文スタイルの大文字表記を使用します。
+[大文字化](/style-guide/capitalization) に関して Microsoft のスタイルに従っています - ほぼすべてに文スタイルの大文字表記を使用します。
 
 | UI 要素              |大文字化|コメント|
 |-------------------------|--------------|--------|
@@ -215,7 +215,7 @@ Null 状態は、顧客データまたはコンテンツがアプリや機能に
 ## <a name="punctuation"></a>句読点
 
 - 見出しや不完全な文には終わりに句読点 (ピリオド、疑問符) を使用しません。 見出しが質問形式の確認ダイアログである場合は例外です。
-- [ピリオド](https://docs.microsoft.com/style-guide/punctuation/periods)と[疑問符](https://docs.microsoft.com/style-guide/punctuation/question-marks)に関して Microsoft スタイル ガイドのガイダンスを使用してください。
+- [ピリオド](/style-guide/punctuation/periods)と[疑問符](/style-guide/punctuation/question-marks)に関して Microsoft スタイル ガイドのガイダンスを使用してください。
 
 ## <a name="status-messages"></a>ステータス メッセージ
 

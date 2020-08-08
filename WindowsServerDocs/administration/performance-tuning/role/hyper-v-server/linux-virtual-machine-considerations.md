@@ -5,18 +5,18 @@ ms.topic: article
 ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 916239535b92e1248918c76897e5222fa1dc6451
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: b1616af3cfc1f14c534392c7f083b333b4744ef3
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896118"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87993347"
 ---
 # <a name="linux-virtual-machine-considerations"></a>Linux 仮想マシンに関する考慮事項
 
 Linux および BSD の仮想マシンには、Hyper-v の Windows 仮想マシンと比較して、追加の考慮事項があります。
 
-最初の考慮事項は、Integration Services が存在するか、または VM が、啓蒙されていないエミュレートされたハードウェア上でのみ実行されているかどうかです。 組み込みまたはダウンロード可能な Integration Services を持つ Linux および BSD リリースの表は、 [Windows 上の hyper-v のサポートされている linux および FreeBSD 仮想マシン](https://technet.microsoft.com/windows-server-docs/compute/hyper-v/supported-linux-and-freebsd-virtual-machines-for-hyper-v-on-windows)で利用できます。 これらのページには、Linux ディストリビューションリリースで利用できる使用可能な Hyper-v 機能のグリッドと、該当する場合はそれらの機能に関する注意事項があります。
+最初の考慮事項は、Integration Services が存在するか、または VM が、啓蒙されていないエミュレートされたハードウェア上でのみ実行されているかどうかです。 組み込みまたはダウンロード可能な Integration Services を持つ Linux および BSD リリースの表は、 [Windows 上の hyper-v のサポートされている linux および FreeBSD 仮想マシン](../../../../virtualization/hyper-v/supported-linux-and-freebsd-virtual-machines-for-hyper-v-on-windows.md)で利用できます。 これらのページには、Linux ディストリビューションリリースで利用できる使用可能な Hyper-v 機能のグリッドと、該当する場合はそれらの機能に関する注意事項があります。
 
 ゲストが Integration Services 実行されている場合でも、最適なパフォーマンスを発揮しないレガシハードウェアで構成できます。 たとえば、レガシネットワークアダプターを使用する代わりに、ゲストの仮想イーサネットアダプターを構成して使用します。 Windows Server 2016 では、sr-iov などの高度なネットワークも利用できます。
 
@@ -51,7 +51,7 @@ net.ipv4.tcp_abort_on_overflow = 1
 
 ## <a name="linux-storage-performance"></a>Linux ストレージのパフォーマンス
 
-次のようなベストプラクティスについては、「 [hyper-v で Linux を実行するためのベストプラクティス](https://technet.microsoft.com/windows-server-docs/compute/hyper-v/best-practices-for-running-linux-on-hyper-v)」に記載されています。 Linux カーネルには、さまざまなアルゴリズムで要求を並べ替えるための異なる i/o スケジューラがあります。 NOOP は、ハイパーバイザーによって実行されるスケジュールの決定を渡す先入れ先出しキューです。 Hyper-v で Linux 仮想マシンを実行する場合は、スケジューラとして NOOP を使用することをお勧めします。 特定のデバイスの scheduler を変更するには、ブートローダーの構成 (/etc/grub.conf など) で、を `elevator=noop` カーネルパラメーターに追加してから、を再起動します。
+次のようなベストプラクティスについては、「 [hyper-v で Linux を実行するためのベストプラクティス](../../../../virtualization/hyper-v/best-practices-for-running-linux-on-hyper-v.md)」に記載されています。 Linux カーネルには、さまざまなアルゴリズムで要求を並べ替えるための異なる i/o スケジューラがあります。 NOOP は、ハイパーバイザーによって実行されるスケジュールの決定を渡す先入れ先出しキューです。 Hyper-v で Linux 仮想マシンを実行する場合は、スケジューラとして NOOP を使用することをお勧めします。 特定のデバイスの scheduler を変更するには、ブートローダーの構成 (/etc/grub.conf など) で、を `elevator=noop` カーネルパラメーターに追加してから、を再起動します。
 
 ネットワークの場合と同様に、Linux ゲストのパフォーマンスは、記憶域を使用すると、ホストのビジー状態を維持するのに十分な深さのキューから最大限に活用できます。 Microbaio エンジンを使用した fio ベンチマークツールでは、マイクロベンチマークストレージのパフォーマンスが最も高くなります。
 

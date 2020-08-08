@@ -7,12 +7,12 @@ ms.topic: article
 ms.assetid: 8aa8a9a5-e3fa-4c9b-8331-ba5a3de22429
 author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 8a8ee1cae5f1eb64e11494d62bc31ebff295d284
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 628f58ef57e6a461791cd9641d043acfbfd79129
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87960475"
+ms.locfileid: "87993448"
 ---
 # <a name="the-wfp-virtual-switch-extension-should-be-enabled-if-it-is-required-by-third-party-extensions"></a>The WFP virtual switch extension should be enabled if it is required by third party extensions (Hyper-V: サード パーティ製の拡張機能で必要とされている場合、WFP 仮想スイッチ拡張機能を有効にする必要がある)
 
@@ -53,7 +53,4 @@ Enable-VMSwitchExtension -VMSwitchName External -Name Microsoft Windows Filterin
 ```
 
 ## <a name="see-also"></a>参照
-[有効にする VMSwitchExtension](https://technet.microsoft.com/library/hh848541.aspx)
-
-
-
+[有効にする VMSwitchExtension](/powershell/module/hyper-v/enable-vmswitchextension?view=win10-ps)
