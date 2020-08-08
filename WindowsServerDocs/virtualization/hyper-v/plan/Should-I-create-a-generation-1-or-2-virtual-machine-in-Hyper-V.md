@@ -7,23 +7,23 @@ ms.assetid: 02e31413-6140-4723-a8d6-46c7f667792d
 author: kbdazure
 ms.author: kathydav
 ms.date: 12/05/2016
-ms.openlocfilehash: 35023f1b6c217da45dc0c0f5a27d0ce26a298567
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: b41cefc34bce2a9d1e2e29e9d31353d4f9b8a669
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87938891"
+ms.locfileid: "87996973"
 ---
 # <a name="should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v"></a>HYPER-V でジェネレーション 1 または 2 の仮想マシンを作成するか。
 
 >適用対象: Windows 10、Windows Server 2016、Microsoft Hyper-V Server 2016、Windows Server 2019、Microsoft Hyper-V Server 2019
 
 > [!NOTE]
-> Windows 仮想マシン (Vm) をオンプレミスから Microsoft Azure にアップロードする予定がある場合、第1世代と第2世代の Vm を VHD ファイル形式でアップロードし、容量固定のディスクを使用することがサポートされています。 Azure でサポートされている第2世代の機能の詳細については、「 [azure での第2世代の vm](https://docs.microsoft.com/azure/virtual-machines/windows/generation-2) 」を参照してください。 Windows VHD または VHDX のアップロードの詳細については、「 [Azure にアップロードする WINDOWS vhd または vhdx を準備](https://docs.microsoft.com/azure/virtual-machines/windows/prepare-for-upload-vhd-image)する」を参照してください。
+> Windows 仮想マシン (Vm) をオンプレミスから Microsoft Azure にアップロードする予定がある場合、第1世代と第2世代の Vm を VHD ファイル形式でアップロードし、容量固定のディスクを使用することがサポートされています。 Azure でサポートされている第2世代の機能の詳細については、「 [azure での第2世代の vm](/azure/virtual-machines/windows/generation-2) 」を参照してください。 Windows VHD または VHDX のアップロードの詳細については、「 [Azure にアップロードする WINDOWS vhd または vhdx を準備](/azure/virtual-machines/windows/prepare-for-upload-vhd-image)する」を参照してください。
 
 第 1 世代または第 2 世代バーチャル マシンを作成するために選択を選んでいるゲスト オペレーティング システムのインストールと仮想マシンを展開に使用するブート方法です。 次のステートメントのいずれかが true でない限り、セキュア ブートのような機能を活用する第 2 世代仮想マシンを作成することをお勧めします。
 
-- ブートする VHD が存在しない [UEFI と互換性のある](https://technet.microsoft.com/library/hh824898.aspx)です。
+- ブートする VHD が存在しない [UEFI と互換性のある](/previous-versions/windows/it-pro/windows-8.1-and-8/hh824898(v=win.10))です。
 - 第 2 世代仮想マシンで実行するオペレーティング システムをサポートしていません。
 - 第 2 世代は、使用するブート方法をサポートしていません。
 
@@ -167,11 +167,11 @@ Debian のバージョンとして使用できます、ゲスト オペレーテ
 ## <a name="what-are-the-advantages-of-using-generation-2-virtual-machines"></a>第 2 世代仮想マシンを使用する利点とは
 
 第 2 世代仮想マシンを使用する場合のメリットの一部を次に示します。
-- **セキュアブート**これは、承認されていないファームウェア、オペレーティングシステム、または UEFI ドライバーが起動時に実行されないようにするために、ブートローダーが UEFI データベース内の信頼された機関によって署名されていることを確認する機能です。 セキュア ブートは、第 2 世代仮想マシンでは既定で有効になります。 セキュア ブートでサポートされていないゲスト オペレーティング システムを実行する必要がある場合に、仮想マシンの作成後に無効にできます。  詳細については、「[セキュア ブート](https://technet.microsoft.com/library/dn486875.aspx)」を参照してください。
+- **セキュアブート**これは、承認されていないファームウェア、オペレーティングシステム、または UEFI ドライバーが起動時に実行されないようにするために、ブートローダーが UEFI データベース内の信頼された機関によって署名されていることを確認する機能です。 セキュア ブートは、第 2 世代仮想マシンでは既定で有効になります。 セキュア ブートでサポートされていないゲスト オペレーティング システムを実行する必要がある場合に、仮想マシンの作成後に無効にできます。  詳細については、「[セキュア ブート](/previous-versions/windows/it-pro/windows-8.1-and-8/dn486875(v=ws.11))」を参照してください。
 
     セキュア ブートの第 2 世代の Linux 仮想マシン、仮想マシンを作成するときに、UEFI CA セキュア ブート テンプレートを選択する必要があります。
 
-- **大きなブートボリューム**第2世代仮想マシンの最大ブートボリュームは、64 TB です。 これは、最大ディスク サイズでサポートされているのです。VHDX します。 第 1 世代仮想マシンの最大のブート ボリュームは用に 2 TB をします。VHDX と 2040 gb 以上、します。VHD です。 詳細については、次を参照してください。 [Hyper-v 仮想ハード ディスク フォーマットに関するテクニカル プレビュー](https://technet.microsoft.com/library/hh831446.aspx)します。
+- **大きなブートボリューム**第2世代仮想マシンの最大ブートボリュームは、64 TB です。 これは、最大ディスク サイズでサポートされているのです。VHDX します。 第 1 世代仮想マシンの最大のブート ボリュームは用に 2 TB をします。VHDX と 2040 gb 以上、します。VHD です。 詳細については、次を参照してください。 [Hyper-v 仮想ハード ディスク フォーマットに関するテクニカル プレビュー](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831446(v=ws.11))します。
 
   第 2 世代仮想マシンで仮想マシンのブートとインストール時間にわずかな改善を表示することもあります。
 
@@ -202,7 +202,7 @@ Debian のバージョンとして使用できます、ゲスト オペレーテ
 
 ### <a name="attach-or-add-a-dvd-drive"></a>DVD ドライブの接続または追加
 
-- 物理 CD または DVD ドライブは、第 2 世代仮想マシンに接続できません。 第 2 世代仮想マシンの仮想 DVD ドライブは、ISO イメージ ファイルだけをサポートします。 Windows 環境の ISO イメージ ファイルは、Oscdimg コマンド ライン ツールを使用して作成できます。 詳細については、「[Oscdimg のコマンド ライン オプション](https://msdn.microsoft.com/library/hh824847.aspx)」を参照してください。
+- 物理 CD または DVD ドライブは、第 2 世代仮想マシンに接続できません。 第 2 世代仮想マシンの仮想 DVD ドライブは、ISO イメージ ファイルだけをサポートします。 Windows 環境の ISO イメージ ファイルは、Oscdimg コマンド ライン ツールを使用して作成できます。 詳細については、「[Oscdimg のコマンド ライン オプション](/previous-versions/windows/it-pro/windows-8.1-and-8/hh824847(v=win.10))」を参照してください。
 - NEW-VM Windows PowerShell コマンドレットで新しいバーチャル マシンを作成するときに、第 2 世代仮想マシンに DVD ドライブはありません。 仮想マシンの実行中には、DVD ドライブを追加できます。
 
 ### <a name="use-uefi-firmware"></a>UEFI ファームウェアを使用する
@@ -220,7 +220,7 @@ Debian のバージョンとして使用できます、ゲスト オペレーテ
 
 ### <a name="use-ipv6-instead-of-ipv4"></a>IPv4 ではなく IPv6 を使用する
 
-既定では、第 2 世代仮想マシンは IPv4 を使用します。 代わりに IPv6 を使用するには、 [Set-vmfirmware](https://technet.microsoft.com/library/dn464287.aspx) Windows PowerShell コマンドレットを実行します。 たとえば、次のコマンドは、TestVM という名前の仮想マシンの IPv6 に優先プロトコルを設定します。
+既定では、第 2 世代仮想マシンは IPv4 を使用します。 代わりに IPv6 を使用するには、 [Set-vmfirmware](/powershell/module/hyper-v/set-vmfirmware?view=win10-ps) Windows PowerShell コマンドレットを実行します。 たとえば、次のコマンドは、TestVM という名前の仮想マシンの IPv6 に優先プロトコルを設定します。
 
 ```powershell
 Set-VMFirmware -VMName TestVM -IPProtocolPreference IPv6
@@ -232,13 +232,13 @@ COM ポートは、追加するまで、第2世代仮想マシンでは使用で
 
 COM ポートを追加するには:
 
-1. セキュア ブートを無効にします。 カーネルデバッグはセキュアブートと互換性がありません。 バーチャルマシンがオフ状態であることを確認してから、 [set-vmfirmware](https://technet.microsoft.com/library/dn464287.aspx)コマンドレットを使用してください。 たとえば、次のコマンドでは、仮想マシン TestVM でセキュア ブートを無効にします。
+1. セキュア ブートを無効にします。 カーネルデバッグはセキュアブートと互換性がありません。 バーチャルマシンがオフ状態であることを確認してから、 [set-vmfirmware](/powershell/module/hyper-v/set-vmfirmware?view=win10-ps)コマンドレットを使用してください。 たとえば、次のコマンドでは、仮想マシン TestVM でセキュア ブートを無効にします。
 
     ```powershell
     Set-VMFirmware -Vmname TestVM -EnableSecureBoot Off
     ```
 
-2. COM ポートを追加します。 これを行うには、 [Set VMComPort](https://technet.microsoft.com/library/hh848616.aspx)コマンドレットを使用します。 たとえば、次のコマンドは、仮想マシンの名前付きパイプ TestPipe、ローカル コンピューター上に接続するための TestVM で最初の COM ポートを構成します。
+2. COM ポートを追加します。 これを行うには、 [Set VMComPort](/powershell/module/hyper-v/set-vmcomport?view=win10-ps)コマンドレットを使用します。 たとえば、次のコマンドは、仮想マシンの名前付きパイプ TestPipe、ローカル コンピューター上に接続するための TestVM で最初の COM ポートを構成します。
 
     ```powershell
     Set-VMComPort -VMName TestVM 1 \\.\pipe\TestPipe
@@ -251,4 +251,4 @@ COM ポートを追加するには:
 
 - [Hyper-V での Linux および FreeBSD の仮想マシン](../Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)
 - [VMConnect を使って Hyper-V 仮想マシン上でローカル リソースを使用する](../learn-more/Use-local-resources-on-Hyper-V-virtual-machine-with-VMConnect.md)
-- [Windows Server 2016 での HYPER-V のスケーラビリティの計画します。](Plan-for-Hyper-V-scalability-in-Windows-Server-2016.md)
+- [Windows Server 2016 での HYPER-V のスケーラビリティの計画します。](./plan-hyper-v-scalability-in-windows-server.md)

@@ -1,20 +1,18 @@
 ---
 title: 記憶域スペース ダイレクト サーバーをメンテナンスのためオフラインにする
-ms.prod: windows-server
 ms.author: eldenc
 manager: eldenc
-ms.technology: storage-spaces
 ms.topic: article
 author: eldenchristensen
 ms.date: 10/08/2018
 ms.assetid: 73dd8f9c-dcdb-4b25-8540-1d8707e9a148
 ms.localizationpriority: medium
-ms.openlocfilehash: 8dba155f8b8d7312a823dedc72d23268d7d13fbf
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: d3fd3e1c6ca9a7493ac0bcdc809f68fe22f8fa67
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955914"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971089"
 ---
 # <a name="taking-a-storage-spaces-direct-server-offline-for-maintenance"></a>記憶域スペース ダイレクト サーバーをメンテナンスのためオフラインにする
 
@@ -82,7 +80,7 @@ Suspend-ClusterNode -Drain
 
 サーバーのドレインが完了すると、フェールオーバー クラスター マネージャーと PowerShell で **[一時停止]** と表示されます。
 
-![Paused](media/maintain-servers/paused.png)
+![一時停止](media/maintain-servers/paused.png)
 
 これ通常どおり、安全に再起動したり、シャットダウンすることができます (たとえば、Restart-Computer や Stop-Computer PowerShell を使用できます)。
 
@@ -183,7 +181,7 @@ MyVolume3    Mirror                OK                Healthy      True          
 10. **Get Volume**および**VirtualDisk**コマンドレットを実行して、仮想ディスクの状態を監視します。
 
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
-- [記憶域スペースダイレクトの概要](storage-spaces-direct-overview.md)
+- [記憶域スペース ダイレクトの概要](storage-spaces-direct-overview.md)
 - [クラスター対応更新 (CAU)](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831694(v=ws.11))

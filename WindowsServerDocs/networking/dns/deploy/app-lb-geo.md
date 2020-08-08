@@ -2,18 +2,16 @@
 title: 地理的な場所を認識するアプリケーションの負荷分散に DNS ポリシーを使用する
 description: このトピックは、Windows Server 2016 の DNS ポリシーシナリオガイドに含まれています。
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-dns
 ms.topic: article
 ms.assetid: b6e679c6-4398-496c-88bc-115099f3a819
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: b66ae0ef1bf319b991efc01c062ec156bf277c31
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 00195c4993f3e5bef9688adbfd09f62f908b6276
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518397"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87996937"
 ---
 # <a name="use-dns-policy-for-application-load-balancing-with-geo-location-awareness"></a>地理的な場所を認識するアプリケーションの負荷分散に DNS ポリシーを使用する
 
@@ -21,10 +19,10 @@ ms.locfileid: "87518397"
 
 このトピックでは、geo ロケーションを認識するアプリケーションの負荷を分散するように DNS ポリシーを構成する方法について説明します。
 
-このガイドの前述の「[アプリケーションの負荷分散に DNS ポリシーを使用](https://technet.microsoft.com/windows-server-docs/networking/dns/deploy/app-lb)する」では、架空の会社である Contoso ギフトサービスの例を使用します。これは、オンライン贈答サービスを提供し、contosogiftservices.com という名前の Web サイトを持っています。 Contoso ギフト Services は、シアトル、ワシントン州、シカゴ、IL、およびダラス (テキサス州) にある北米データセンターのサーバー間で、オンライン Web アプリケーションの負荷を分散します。
+このガイドの前述の「[アプリケーションの負荷分散に DNS ポリシーを使用](./app-lb.md)する」では、架空の会社である Contoso ギフトサービスの例を使用します。これは、オンライン贈答サービスを提供し、contosogiftservices.com という名前の Web サイトを持っています。 Contoso ギフト Services は、シアトル、ワシントン州、シカゴ、IL、およびダラス (テキサス州) にある北米データセンターのサーバー間で、オンライン Web アプリケーションの負荷を分散します。
 
 >[!NOTE]
->このシナリオの手順を実行する前に、「[アプリケーションの負荷分散に DNS ポリシーを使用](https://technet.microsoft.com/windows-server-docs/networking/dns/deploy/app-lb)する」をよく理解しておくことをお勧めします。
+>このシナリオの手順を実行する前に、「[アプリケーションの負荷分散に DNS ポリシーを使用](./app-lb.md)する」をよく理解しておくことをお勧めします。
 
 このトピックでは、地理的な場所の認識を含む新しいサンプルデプロイの基礎として、架空の企業およびネットワークインフラストラクチャを使用します。
 
@@ -60,7 +58,7 @@ Add-DnsServerClientSubnet -Name "AmericaSubnet" -IPv4Subnet 192.0.0.0/24,182.0.0
 Add-DnsServerClientSubnet -Name "EuropeSubnet" -IPv4Subnet 141.1.0.0/24,151.1.0.0/24
 ```
 
-詳細については、次を参照してください。 [追加 DnsServerClientSubnet](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverclientsubnet?view=win10-ps)します。
+詳細については、次を参照してください。 [追加 DnsServerClientSubnet](/powershell/module/dnsserver/add-dnsserverclientsubnet?view=win10-ps)します。
 
 ### <a name="create-the-zone-scopes"></a><a name="bkmk_zscopes2"></a>ゾーンのスコープを作成します。
 
@@ -84,7 +82,7 @@ Add-DnsServerZoneScope -ZoneName "contosogiftservices.com" -Name "DublinZoneScop
 Add-DnsServerZoneScope -ZoneName "contosogiftservices.com" -Name "AmsterdamZoneScope"
 ```
 
-詳細については、次を参照してください [追加 DnsServerZoneScope。](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)
+詳細については、次を参照してください [追加 DnsServerZoneScope。](/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)
 
 ### <a name="add-records-to-the-zone-scopes"></a><a name="bkmk_records2"></a>レコードをゾーンのスコープに追加します。
 
@@ -97,7 +95,7 @@ Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -
 Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -IPv4Address "141.1.0.1" -ZoneScope "AmsterdamZoneScope"
 ```
 
-詳細については、次を参照してください。 [追加 DnsServerResourceRecord](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps)します。
+詳細については、次を参照してください。 [追加 DnsServerResourceRecord](/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps)します。
 
 ### <a name="create-the-dns-policies"></a><a name="bkmk_policies2"></a>DNS のポリシーを作成します。
 
@@ -117,7 +115,7 @@ Add-DnsServerQueryResolutionPolicy -Name "EuropeLBPolicy" -Action ALLOW -ClientS
 Add-DnsServerQueryResolutionPolicy -Name "WorldWidePolicy" -Action ALLOW -FQDN "eq,*.contoso.com" -ZoneScope "SeattleZoneScope,1;ChicagoZoneScope,1; TexasZoneScope,1;DublinZoneScope,1;AmsterdamZoneScope,1" -ZoneName "contosogiftservices.com" -ProcessingOrder 3
 ```
 
-詳細については、次を参照してください。 [追加 DnsServerQueryResolutionPolicy](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)します。
+詳細については、次を参照してください。 [追加 DnsServerQueryResolutionPolicy](/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)します。
 
 これで、5つの異なるデータセンターにある複数の大陸に配置されている Web サーバー全体で、アプリケーションの負荷分散を実現する DNS ポリシーが作成されました。
 

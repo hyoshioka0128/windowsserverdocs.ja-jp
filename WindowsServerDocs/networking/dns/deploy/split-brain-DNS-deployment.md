@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: a255a4a5-c1a0-4edc-b41a-211bae397e3c
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: f0274eddba5aa81a0910ca2f22841029c699bb3e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: bc1e63ff865a7eb6d4d83c75d6c2680dcf8ddb49
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87962306"
+ms.locfileid: "87996863"
 ---
 # <a name="use-dns-policy-for-split-brain-dns-deployment"></a>Split ブレイン DNS 展開に DNS ポリシーを使用する \-
 
@@ -121,7 +121,7 @@ DNS サーバーは、プライベート インターフェイスでクエリを
 
 `Add-DnsServerQueryResolutionPolicy -Name "SplitBrainZonePolicy" -Action ALLOW -ServerInterface "eq,10.0.0.56" -ZoneScope "internal,1" -ZoneName contoso.com`
 
-詳細については、次を参照してください。 [追加 DnsServerQueryResolutionPolicy](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)します。
+詳細については、次を参照してください。 [追加 DnsServerQueryResolutionPolicy](/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)します。
 
 ## <a name="example-of-dns-selective-recursion-control"></a><a name="bkmk_recursion"></a>DNS オプションを選択再帰コントロールの例
 
@@ -183,7 +183,7 @@ Set-DnsServerRecursionScope -Name . -EnableRecursion $False
 Add-DnsServerRecursionScope -Name "InternalClients" -EnableRecursion $True
 ```
 
-詳細については、次を参照してください [追加 DnsServerRecursionScope。](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverrecursionscope?view=win10-ps)
+詳細については、次を参照してください [追加 DnsServerRecursionScope。](/powershell/module/dnsserver/add-dnsserverrecursionscope?view=win10-ps)
 
 #### <a name="create-dns-recursion-policies"></a><a name="bkmk_recpolicy"></a>DNS の再帰ポリシーを作成します。
 
@@ -199,7 +199,7 @@ DNS サーバーがいくつかのクエリの権限を持っていない場合�
 Add-DnsServerQueryResolutionPolicy -Name "SplitBrainRecursionPolicy" -Action ALLOW -ApplyOnRecursion -RecursionScope "InternalClients" -ServerInterfaceIP "EQ,10.0.0.39"
 ```
 
-詳細については、次を参照してください。 [追加 DnsServerQueryResolutionPolicy](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)します。
+詳細については、次を参照してください。 [追加 DnsServerQueryResolutionPolicy](/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)します。
 
 今すぐ選択的な再帰制御の内部クライアントの有効化と、スプリット ブレイン ネーム サーバーまたは DNS サーバーのいずれかの必要な DNS ポリシーで、DNS サーバーを構成します。
 

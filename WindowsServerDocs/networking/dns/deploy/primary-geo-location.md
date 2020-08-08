@@ -2,18 +2,16 @@
 title: プライマリ サーバーでの地理的な場所ベースのトラフィック管理に DNS ポリシーを使用する
 description: このトピックは、Windows Server 2016 の DNS ポリシーシナリオガイドに含まれています。
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-dns
 ms.topic: article
 ms.assetid: ef9828f8-c0ad-431d-ae52-e2065532e68f
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 47124531c3e516efeceda57574bd6a648667f90f
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 9a1abc00bd8683c716563159aac889a98f364f87
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518278"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87996877"
 ---
 # <a name="use-dns-policy-for-geo-location-based-traffic-management-with-primary-servers"></a>プライマリ サーバーでの地理的な場所ベースのトラフィック管理に DNS ポリシーを使用する
 
@@ -98,7 +96,7 @@ Add-DnsServerClientSubnet -Name "USSubnet" -IPv4Subnet "192.0.0.0/24"
 Add-DnsServerClientSubnet -Name "EuropeSubnet" -IPv4Subnet "141.1.0.0/24"
 ```
 
-詳細については、次を参照してください。 [追加 DnsServerClientSubnet](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverclientsubnet?view=win10-ps)します。
+詳細については、次を参照してください。 [追加 DnsServerClientSubnet](/powershell/module/dnsserver/add-dnsserverclientsubnet?view=win10-ps)します。
 
 ### <a name="create-zone-scopes"></a><a name="bkmk_scopes"></a>ゾーンのスコープを作成します。
 クライアントのサブネットを構成した後は、2 つの異なるゾーン スコープにリダイレクトするトラフィックの 1 つのスコープに構成されている DNS クライアントのサブネットごとのゾーンをパーティション分割する必要があります。
@@ -117,7 +115,7 @@ Add-DnsServerZoneScope -ZoneName "woodgrove.com" -Name "USZoneScope"
 Add-DnsServerZoneScope -ZoneName "woodgrove.com" -Name "EuropeZoneScope"
 ```
 
-詳細については、「 [DnsServerZoneScope](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)」を参照してください。
+詳細については、「 [DnsServerZoneScope](/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)」を参照してください。
 
 ### <a name="add-records-to-the-zone-scopes"></a><a name="bkmk_records"></a>レコードをゾーンのスコープに追加します。
 2 つのゾーンのスコープに web サーバーのホストを表すレコードを追加する必要があります。
@@ -140,7 +138,7 @@ Add-DnsServerResourceRecord -ZoneName "woodgrove.com" -A -Name "www" -IPv4Addres
 
 **ゾーン範囲ゾーン** パラメーターは、既定のスコープでレコードを追加するときに含まれません。 これは、標準の DNS ゾーンにレコードを追加すると同じです。
 
-詳細については、次を参照してください。 [追加 DnsServerResourceRecord](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps)します。
+詳細については、次を参照してください。 [追加 DnsServerResourceRecord](/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps)します。
 
 ### <a name="create-the-policies"></a><a name="bkmk_policies"></a>ポリシーを作成します。
 サブネットを作成した後は、しパーティション (ゾーン スコープ) には、レコードを追加した、サブネット、およびパーティションに接続しているポリシーは、DNS クライアントのサブネットのいずれかのソースから、クエリの結果が、クエリの応答が、ゾーンの正しい範囲から返されます。 を作成する必要があります。 ポリシーの既定のゾーンのスコープをマッピングするため必要はありません。
@@ -152,7 +150,7 @@ Add-DnsServerQueryResolutionPolicy -Name "USPolicy" -Action ALLOW -ClientSubnet 
 Add-DnsServerQueryResolutionPolicy -Name "EuropePolicy" -Action ALLOW -ClientSubnet "eq,EuropeSubnet" -ZoneScope "EuropeZoneScope,1" -ZoneName "woodgrove.com"
 ```
 
-詳細については、次を参照してください。 [追加 DnsServerQueryResolutionPolicy](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)します。
+詳細については、次を参照してください。 [追加 DnsServerQueryResolutionPolicy](/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)します。
 
 DNS サーバーが、必要な DNS のポリシーに地理的な場所に基づいて、トラフィックをリダイレクトするよう構成されました。
 

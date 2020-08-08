@@ -6,14 +6,12 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 5a67e85a239036851d628ad1c261a21f6fbc4566
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: a8ef90ec13b67fdb3bc0e37e02d571721a0ea77a
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959434"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87970979"
 ---
 # <a name="planning-global-catalog-server-placement"></a>グローバル カタログ サーバーの配置の計画
 

@@ -1,20 +1,18 @@
 ---
 title: Windows 10 で VPN デバイストンネルを構成する
 description: Windows 10 で VPN デバイストンネルを作成する方法について説明します。
-ms.prod: windows-server
 ms.date: 11/05/2018
-ms.technology: networking-ras
 ms.topic: article
 ms.assetid: 158b7a62-2c52-448b-9467-c00d5018f65b
 ms.author: v-tea
 author: Teresa-MOTIV
 ms.localizationpriority: medium
-ms.openlocfilehash: 636c0c56c52f501a54679a569213bcd4e4646b72
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 04500e2a9d5623aa9ce9796088bda2e4a6a5eccd
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181988"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87996792"
 ---
 # <a name="configure-vpn-device-tunnels-in-windows-10"></a>Windows 10 で VPN デバイストンネルを構成する
 
@@ -89,7 +87,7 @@ VPN profileXML の例を次に示します。
 </VPNProfile>
 ```
 
-特定の展開シナリオのニーズに応じて、デバイストンネルを使用して構成できる別の VPN 機能は、信頼された[ネットワーク検出](https://docs.microsoft.com/answers/topics/windows-server-infrastructure.html)です。
+特定の展開シナリオのニーズに応じて、デバイストンネルを使用して構成できる別の VPN 機能は、信頼された[ネットワーク検出](/answers/topics/windows-server-infrastructure.html)です。
 
 ```
  <!-- inside/outside detection -->

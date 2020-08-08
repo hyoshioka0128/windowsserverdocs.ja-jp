@@ -6,14 +6,12 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/08/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: ce946fb0fe581a66f4a4e29cf8491f00294b5bcb
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 54b830df42a99712c28bb49be7e89ee84a43b088
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86953584"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87941201"
 ---
 # <a name="enabling-clients-to-locate-the-next-closest-domain-controller"></a>クライアントが次の最も近いドメイン コントローラーを検索できるようにする
 

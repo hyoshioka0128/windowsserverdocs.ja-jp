@@ -7,12 +7,12 @@ ms.assetid: dcb9edf1-99d0-490c-a7f8-863b18a80cdf
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 943df21c046a54a3edfd466e42fdc18296d6bc1b
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 8247a0984fa296d9725e8a0ba9cde8a2bd5b7d31
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87953778"
+ms.locfileid: "87996657"
 ---
 # <a name="planning-a-multipoint-services-deployment"></a>MultiPoint Services の展開を計画する
 MultiPoint Services を使用すると、複数のステーションを 1 台のコンピューターに接続できます。 複数のユーザーが、同時に 1 台のコンピューターを共有できます。 各ステーションは、ステーションハブ、モニター、キーボード、およびマウスで構成されています。 Multipoint Services には、multipoint マネージャーアプリケーションが含まれています。これは、管理ユーザーが MultiPoint ステーションを監視および管理するのに役立ちます。また、日常の管理機能を提供する MultiPoint ダッシュボードアプリケーションも含まれています。
@@ -22,8 +22,8 @@ MultiPoint Services を使用すると、複数のステーションを 1 台の
 -   [MultiPoint Services の紹介](Introducing-MultiPoint-services.md)
 -   [一般的な利用シナリオ](Common-MultiPoint-services-Usage-Scenarios.md)
 -   [MultiPoint ステーション](MultiPoint-services-Stations.md)
--   [MultiPoint Services システムのハードウェアを選択する](Selecting-Hardware-for-Your-MultiPoint-services-System.md)
--   [ハードウェア要件とパフォーマンスの推奨事項](Hardware-Requirements-and-Performance-Recommendations.md)
+-   [MultiPoint Services システムのハードウェアを選択する](./select-hardware-mps.md)
+-   [ハードウェア要件とパフォーマンスの推奨事項](./hardware-and-performance-recommendations.md)
 -   [MultiPoint Services のサイトの計画](MultiPoint-services-Site-Planning.md)
 -   [ネットワークに関する考慮事項とユーザー アカウント](Network-Considerations-and-User-Accounts.md)
 -   [MultiPoint Services でファイルを保存する](Storing-Files-with-MultiPoint-services.md)
@@ -32,4 +32,4 @@ MultiPoint Services を使用すると、複数のステーションを 1 台の
 -   [アプリケーションの考慮事項](Application-Considerations.md)
 -   [展開前のチェックリスト](Predeployment-Checklist.md)
 
-[MultiPoint サービス](https://docs.microsoft.com/windows-server/remote/multipoint-services/introducing-multipoint-services)にアクセスすることもできます。
+[MultiPoint サービス](./introducing-multipoint-services.md)にアクセスすることもできます。

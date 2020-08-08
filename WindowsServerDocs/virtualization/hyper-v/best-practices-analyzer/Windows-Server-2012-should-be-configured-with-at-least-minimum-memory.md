@@ -7,12 +7,12 @@ ms.topic: article
 ms.assetid: f218a7c7-4361-45f1-835c-e19761b2565c
 author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 45190dbc840ff647e2d2cecd7ca71643c8346fab
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: fa116f74c6e9b28c596dfbf196c59b9f98d58785
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87948202"
+ms.locfileid: "87996808"
 ---
 # <a name="windows-server-2012-should-be-configured-with-at-least-the-minimum-amount-of-memory"></a>Windows Server 2012 にする必要があります最小メモリ量以上で構成
 
@@ -65,7 +65,4 @@ Set-VMMemory <MyVM> -StartupBytes 512MB
 ```
 
 ## <a name="see-also"></a>参照
-[設定-VMMemory](https://technet.microsoft.com/library/hh848572.aspx)
-
-
-
+[設定-VMMemory](/powershell/module/hyper-v/set-vmmemory?view=win10-ps)

@@ -6,14 +6,12 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/08/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 2ed2a6b601ee2cabd45fd5170764c812307b6ac1
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: 6ff1d69afc95aa87d81c8737313d425e84cbc531
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81624270"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87941330"
 ---
 # <a name="determining-the-number-of-domains-required"></a>必要なドメイン数を決定する
 
@@ -128,4 +126,4 @@ ms.locfileid: "81624270"
 
 組織を地域ドメインに分割した後は、表示するリージョンと、各リージョンに存在するユーザーの数を文書化します。 さらに、Active Directory レプリケーションに使用する各リージョンの低速リンクの速度に注意してください。 この情報は、追加のドメインまたはフォレストが必要かどうかを判断するために使用されます。
 
-特定したリージョンを文書化するのに役立つワークシートについては、「 [Windows Server 2003 Deployment Kit のジョブエイド](https://microsoft.com/download/details.aspx?id=9608)」から Job_Aids_Designing_and_Deploying_Directory_and_Security_Services をダウンロードして、「識別領域」 (DSSLOGI_4) を開きます。
+特定したリージョンを文書化するのに役立つワークシートについては、「 [Windows Server 2003 Deployment Kit のジョブエイド](https://microsoft.com/download/details.aspx?id=9608)」から Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip をダウンロードして、「識別領域」 (DSSLOGI_4.doc) を開きます。

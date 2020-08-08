@@ -2,19 +2,17 @@
 title: ETW を使用した LDAP 接続のトラブルシューティング
 description: ETW をオンにして、AD DS ドメインコントローラー間の LDAP 接続をトレースする方法
 author: Teresa-Motiv
-manager: dcscontentpm
-ms.prod: windows-server-dev
-ms.technology: active-directory-lightweight-directory-services
+manager: dcscontentpm-dev
 audience: Admin
 ms.author: v-tea
 ms.topic: article
 ms.date: 11/22/2019
-ms.openlocfilehash: 516304498206523a1ce618da6aa21640e38c9654
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 37f588be3b181aea66555389c120f147a74e6314
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86965654"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87941556"
 ---
 # <a name="using-etw-to-troubleshoot-ldap-connections"></a>ETW を使用した LDAP 接続のトラブルシューティング
 
@@ -30,7 +28,7 @@ ms.locfileid: "86965654"
 
    このサブキーでは、 *ProcessName*は、トレースするプロセスの完全な名前です (たとえば、"Svchost.exe")。
 
-1. (**省略可能**)このサブキーの下に、 **PID**という名前の新しいエントリを作成します。 このエントリを使用するには、プロセス ID を DWORD 値として割り当てます。  
+1. (**省略可能**)このサブキーの下に、 **PID**という名前の新しいエントリを作成します。 このエントリを使用するには、プロセス ID を DWORD 値として割り当てます。
 
    プロセス ID を指定した場合、ETW は、このプロセス ID を持つアプリケーションのインスタンスのみをトレースします。
 
@@ -44,8 +42,8 @@ ms.locfileid: "86965654"
 
    このコマンドのプレースホルダーは、次の値を表します。
 
-  - \<*SessionName*>トレースセッションにラベルを付けるために使用される任意の識別子を示します。  
-  > [!NOTE]  
+  - \<*SessionName*>トレースセッションにラベルを付けるために使用される任意の識別子を示します。
+  > [!NOTE]
   > このセッション名は、後でトレースセッションを停止するときに参照する必要があります。
   - \<*FileName*>イベントが書き込まれるログファイルを指定します。
   - \<*TraceFlags*>[トレースフラグテーブル](#values-for-trace-flags)に記載されている1つ以上の値である必要があります。
@@ -70,7 +68,7 @@ ms.locfileid: "86965654"
 
 フラグを使用するには、 **tracelog.exe-start**コマンドの引数の <*traceflags*> プレースホルダーのフラグ値を置き換えます。
 
-> [!NOTE]  
+> [!NOTE]
 > 適切なフラグ値の合計を使用して、複数のフラグを指定できます。 たとえば、**デバッグ \_ 検索**(0X00000001) と**デバッグ \_ キャッシュ**(0x00000010) フラグを指定する場合、適切な \<*TraceFlags*> 値は**0x00000011**です。
 
 |フラグ名 |フラグ値 |フラグの説明 |
@@ -138,5 +136,5 @@ ms.locfileid: "86965654"
     tracerpt.exe .\ldap.etl -o -report
     ```
 
-   > [!NOTE]  
+   > [!NOTE]
    > このコマンドでは、 **tracerpt.exe**は[トレースコンシューマー](https://go.microsoft.com/fwlink/p/?linkid=83876)ツールです。

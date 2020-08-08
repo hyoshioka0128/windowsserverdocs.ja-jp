@@ -6,18 +6,18 @@ author: haley-rowland
 ms.author: harowl
 ms.localizationpriority: medium
 ms.date: 03/24/2019
-ms.openlocfilehash: 81501cb5f4255b7a65ebc5f9f6cb9413938864f0
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 440c0e3235f2891f1e6866d3a6638833c70d1eb4
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87940123"
+ms.locfileid: "87996833"
 ---
 # <a name="monitor-servers-and-configure-alerts-with-azure-monitor-from-windows-admin-center"></a>Windows 管理センターからサーバーを監視し、Azure Monitor でアラートを構成する
 
-[Azure と Windows 管理センターとの統合の詳細については、こちらを参照してください。](../plan/azure-integration-options.md)
+[Azure と Windows 管理センターとの統合の詳細については、こちらを参照してください。](./index.md)
 
-[Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/overview)は、オンプレミスとクラウドの両方の Windows サーバーと vm を含むさまざまなリソースからテレメトリを収集、分析、および処理するソリューションです。 この記事では、Azure Vm やその他の Azure リソースからデータをプル Azure Monitor ますが、この記事では、Azure Monitor がオンプレミスのサーバーと Vm (特に Windows 管理センター) でどのように機能するかについて重点的に説明します。 Azure Monitor を使用して、ハイパー収束クラスターに関する電子メールアラートを取得する方法については、 [Azure Monitor を使用したヘルスサービスエラーに](https://docs.microsoft.com/windows-server/storage/storage-spaces/configure-azure-monitor)関する電子メールの送信に関するページを参照してください。
+[Azure Monitor](/azure/azure-monitor/overview)は、オンプレミスとクラウドの両方の Windows サーバーと vm を含むさまざまなリソースからテレメトリを収集、分析、および処理するソリューションです。 この記事では、Azure Vm やその他の Azure リソースからデータをプル Azure Monitor ますが、この記事では、Azure Monitor がオンプレミスのサーバーと Vm (特に Windows 管理センター) でどのように機能するかについて重点的に説明します。 Azure Monitor を使用して、ハイパー収束クラスターに関する電子メールアラートを取得する方法については、 [Azure Monitor を使用したヘルスサービスエラーに](../../../storage/storage-spaces/configure-azure-monitor.md)関する電子メールの送信に関するページを参照してください。
 
 ## <a name="how-does-azure-monitor-work"></a>Azure Monitor のしくみ
 ![](../media/azure-monitor-diagram.png)オンプレミスの Windows server から生成された img データは、Azure Monitor の Log Analytics ワークスペースで収集されます。 ワークスペース内では、さまざまな監視ソリューション (特定のシナリオに関する分析情報を示す一連のロジック) を有効にすることができます。 たとえば、Azure Update Management、Azure Security Center、Azure Monitor for VMs はすべて、ワークスペース内で有効にできる監視ソリューションです。
@@ -64,21 +64,21 @@ Azure Monitor の顧客ごとの 1 か月あたり 5 GB の無料データを使
 
 ### <a name="create-email-alerts"></a>**電子メールアラートの作成**
 
-サーバーを Azure Monitor にアタッチしたら、[設定 > の監視とアラート] ページ内のインテリジェントなハイパーリンクを使用して、Azure Portal に移動できます。 管理センターでは、自動的にパフォーマンスカウンターが収集されるようになります。そのため、定義済みの多くのクエリのいずれかをカスタマイズしたり、独自のクエリを作成したりして、[新しいアラートを](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-log)簡単に作成できます。
+サーバーを Azure Monitor にアタッチしたら、[設定 > の監視とアラート] ページ内のインテリジェントなハイパーリンクを使用して、Azure Portal に移動できます。 管理センターでは、自動的にパフォーマンスカウンターが収集されるようになります。そのため、定義済みの多くのクエリのいずれかをカスタマイズしたり、独自のクエリを作成したりして、[新しいアラートを](/azure/azure-monitor/platform/alerts-log)簡単に作成できます。
 
 ### <a name="get-a-consolidated-view-across-multiple-servers-"></a>* * 複数のサーバー間で統合ビューを取得する * *
 
-Azure Monitor 内の1つの Log Analytics ワークスペースに複数のサーバーをオンボードする場合、Azure Monitor 内の[Virtual Machines Insights ソリューション](https://docs.microsoft.com/azure/azure-monitor/insights/vminsights-overview)から、これらすべてのサーバーの統合ビューを取得できます。  (Azure Monitor の Virtual Machines Insights の [パフォーマンス] タブと [マップ] タブのみがオンプレミスのサーバーで機能します。 [正常性] タブは、Azure Vm でのみ機能します)。Azure portal でこれを表示するには、[Azure Monitor > Virtual Machines ([インサイト] の下) に移動し、[パフォーマンス] または [マップ] タブに移動します。
+Azure Monitor 内の1つの Log Analytics ワークスペースに複数のサーバーをオンボードする場合、Azure Monitor 内の[Virtual Machines Insights ソリューション](/azure/azure-monitor/insights/vminsights-overview)から、これらすべてのサーバーの統合ビューを取得できます。  (Azure Monitor の Virtual Machines Insights の [パフォーマンス] タブと [マップ] タブのみがオンプレミスのサーバーで機能します。 [正常性] タブは、Azure Vm でのみ機能します)。Azure portal でこれを表示するには、[Azure Monitor > Virtual Machines ([インサイト] の下) に移動し、[パフォーマンス] または [マップ] タブに移動します。
 
 ### <a name="visualize-apps-systems-and-services-connected-to-a-given-server"></a>**特定のサーバーに接続されているアプリ、システム、およびサービスを視覚化する**
 
-管理センターがサーバーを Azure Monitor 内の VM insights ソリューションに配置すると、 [Service Map](https://docs.microsoft.com/azure/azure-monitor/insights/service-map)と呼ばれる機能も利用できるようになります。 この機能によってアプリケーション コンポーネントが自動的に検出され、サービス間の通信がマップされるため、Azure portal から簡単に、サーバー間の接続を詳細に視覚化できます。 これを見つけるには、[Azure portal > Azure Monitor > Virtual Machines ([洞察] の下) に移動し、[マップ] タブに移動します。
+管理センターがサーバーを Azure Monitor 内の VM insights ソリューションに配置すると、 [Service Map](/azure/azure-monitor/insights/service-map)と呼ばれる機能も利用できるようになります。 この機能によってアプリケーション コンポーネントが自動的に検出され、サービス間の通信がマップされるため、Azure portal から簡単に、サーバー間の接続を詳細に視覚化できます。 これを見つけるには、[Azure portal > Azure Monitor > Virtual Machines ([洞察] の下) に移動し、[マップ] タブに移動します。
 
 > [!NOTE]
-> Azure Monitor の Virtual Machines Insights の視覚化は、現在6つのパブリックリージョンで提供されています。  最新情報については、[Azure Monitor for VMs のドキュメント](https://docs.microsoft.com/azure/azure-monitor/insights/vminsights-onboard#log-analytics)を参照してください。  前述の Virtual Machines Insights ソリューションで提供されるその他の利点を得るには、サポートされているリージョンのいずれかで Log Analytics ワークスペースをデプロイする必要があります。
+> Azure Monitor の Virtual Machines Insights の視覚化は、現在6つのパブリックリージョンで提供されています。  最新情報については、[Azure Monitor for VMs のドキュメント](/azure/azure-monitor/insights/vminsights-onboard#log-analytics)を参照してください。  前述の Virtual Machines Insights ソリューションで提供されるその他の利点を得るには、サポートされているリージョンのいずれかで Log Analytics ワークスペースをデプロイする必要があります。
 
 ## <a name="disabling-monitoring"></a>監視の無効化
 
 Log Analytics ワークスペースからサーバーを完全に切断するには、MMA エージェントをアンインストールします。 これは、このサーバーがデータをワークスペースに送信しなくなり、そのワークスペースにインストールされたすべてのソリューションが、そのサーバーからのデータの収集と処理を行わなくなることを意味します。 ただし、ワークスペース自体には影響しません。そのワークスペースに報告するすべてのリソースが引き続き機能します。 Windows Admin Center 内で MMA エージェントをアンインストールするには、サーバーに接続してから **[インストール済みアプリ]** に移動し、Microsoft Monitoring Agent を見つけて、 **[削除]** を選択します。
 
-ワークスペース内の特定のソリューションを無効にする場合は、[Azure portal から監視ソリューションを削除する](https://docs.microsoft.com/azure/azure-monitor/insights/solutions#remove-a-management-solution)必要があります。 監視ソリューションを削除すると、そのソリューションによって作成される分析情報が、そのワークスペースに報告を行う_どのサーバーでも_生成されなくなります。 たとえば、Azure Monitor for VMs ソリューションをアンインストールしても、マイワークスペースに接続されているどのコンピューターからも VM またはサーバーのパフォーマンスに関する洞察は得られなくなります。
+ワークスペース内の特定のソリューションを無効にする場合は、[Azure portal から監視ソリューションを削除する](/azure/azure-monitor/insights/solutions#remove-a-management-solution)必要があります。 監視ソリューションを削除すると、そのソリューションによって作成される分析情報が、そのワークスペースに報告を行う_どのサーバーでも_生成されなくなります。 たとえば、Azure Monitor for VMs ソリューションをアンインストールしても、マイワークスペースに接続されているどのコンピューターからも VM またはサーバーのパフォーマンスに関する洞察は得られなくなります。

@@ -2,18 +2,16 @@
 title: Deploy a Single DirectAccess Server with Advanced Settings
 description: このトピックは、「Windows Server 2016 の詳細設定を使用して単一の DirectAccess サーバーを展開する」の一部です。
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-da
 ms.topic: article
 ms.assetid: b211a9ca-1208-4e1f-a0fe-26a610936c30
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 2df1dfb99f31b0ac0ac8aeb62c8b01381a589e06
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 87a9ca03591116c891c5dec41477688ded96b193
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181858"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87970419"
 ---
 # <a name="deploy-a-single-directaccess-server-with-advanced-settings"></a>Deploy a Single DirectAccess Server with Advanced Settings
 
@@ -144,7 +142,7 @@ DirectAccess を展開する前に、次のトピックを使用して、前提�
 
 |コンテンツ タイプ|参考資料|
 |--------|-------|
-|**配置**|[Windows Server の DirectAccess 展開パス](../../../remote-access/directaccess/DirectAccess-Deployment-Paths-in-Windows-Server.md)<p>[はじめにウィザードを使用して単一の DirectAccess サーバーを展開する](../../../remote-access/directaccess/single-server-wizard/Deploy-a-Single-DirectAccess-Server-Using-the-Getting-Started-Wizard.md)|
+|**デプロイ**|[Windows Server の DirectAccess 展開パス](../../../remote-access/directaccess/DirectAccess-Deployment-Paths-in-Windows-Server.md)<p>[はじめにウィザードを使用して単一の DirectAccess サーバーを展開する](../../../remote-access/directaccess/single-server-wizard/Deploy-a-Single-DirectAccess-Server-Using-the-Getting-Started-Wizard.md)|
 |**ツールと設定**|[Remote Access PowerShell コマンドレット](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831379(v=ws.11))|
 |**コミュニティ リソース**|[DirectAccess Survival Guide (DirectAccess サバイバル ガイド)](https://docs.microsoft.com/answers/topics/windows-server-infrastructure.html)<p>[Wiki の DirectAccess 項目](https://go.microsoft.com/fwlink/?LinkId=236871)|
 |**関連テクノロジ**|[How IPv6 works (IPv6 の動作のしくみ)](/previous-versions/windows/it-pro/windows-server-2003/cc781672(v=ws.10))|

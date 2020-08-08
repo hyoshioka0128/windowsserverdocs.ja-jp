@@ -2,18 +2,16 @@
 title: Windows Server の DNS サーバーの新機能
 description: このトピックでは、Windows Server 2016 以降のバージョンの DNS サーバーの新機能の概要について説明します。
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-dns
 ms.topic: article
 ms.assetid: c9cecb94-3cd5-4da7-9a3e-084148b8226b
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: ee2baf5a42d8c0aaeced375bfd2d61193c4828ed
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 05daf36ebf875269906b0c287204e4ff131a678e
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473919"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87996944"
 ---
 # <a name="whats-new-in-dns-server-in-windows-server"></a>Windows Server の DNS サーバーの新機能
 
@@ -147,13 +145,9 @@ Windows Server 2016 では、次の新しい Windows PowerShell コマンドレ�
 
 詳細については、Windows Server 2016 Windows PowerShell コマンドリファレンスの次のトピックを参照してください。
 
-- [DnsServer モジュール](https://docs.microsoft.com/powershell/module/dnsserver/?view=win10-ps)
-- [DnsClient モジュール](https://docs.microsoft.com/powershell/module/dnsclient/?view=win10-ps)
+- [DnsServer モジュール](/powershell/module/dnsserver/?view=win10-ps)
+- [DnsClient モジュール](/powershell/module/dnsclient/?view=win10-ps)
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 -   [DNS クライアントの新機能](What-s-New-in-DNS-Client.md)
-
-
-
-

@@ -6,14 +6,12 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: b9f3bbfa01194dbb447e93c4eb6f9d3e66899d08
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 8a314f99fe94b964eb4d3609e407fd0c985b2e8d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86953534"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87941108"
 ---
 # <a name="finding-additional-resources-for-logical-structure-design"></a>論理構造の設計に関するその他のリソースの検索
 

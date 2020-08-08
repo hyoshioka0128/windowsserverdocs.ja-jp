@@ -1,20 +1,18 @@
 ---
 title: 仮想マシンでの記憶域スペースダイレクトの使用
 description: Microsoft Azure など、仮想マシンのゲストクラスターに記憶域スペースダイレクトを展開する方法。
-ms.prod: windows-server
 ms.author: eldenc
 manager: eldenc
-ms.technology: storage-spaces
 ms.topic: article
 author: eldenchristensen
 ms.date: 07/15/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: b930df382adfc9641175eb4ee3ce531d7eaf8bbc
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: d124e26f0605b8e1a4678abebb9039b597f1c18a
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769061"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971059"
 ---
 # <a name="using-storage-spaces-direct-in-guest-virtual-machine-clusters"></a>ゲスト仮想マシンクラスターでの記憶域スペースダイレクトの使用
 
@@ -75,7 +73,7 @@ Azure[テンプレート](https://github.com/robotechredmond/301-storage-spaces-
 
     16進数の7530に相当する10進数は、3万です。これは30秒です。 既定値は 1770 16 進数、つまり、6秒の 6000 Decimal であることに注意してください。
 
-## <a name="not-supported"></a>サポートされていません
+## <a name="not-supported"></a>サポートなし
 
 - ホストレベルの仮想ディスクのスナップショット/復元
 

@@ -6,14 +6,12 @@ ms.author: billmath
 manager: mtillman
 ms.date: 06/13/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: active-directory-federation-services
-ms.openlocfilehash: 934ef170f6cbd5a2bd4031d336907d6b925cff06
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: c615bd6426098e00854e873d3e1eb2cfbfaa0734
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519901"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87970939"
 ---
 # <a name="build-a-single-page-web-application-using-oauth-and-adaljs-with-ad-fs-2016-or-later"></a>OAuth を使用し、AD FS 2016 以降の ADAL.JS で単一ページ web アプリケーションを構築する
 
@@ -148,7 +146,7 @@ and add:
     );
 ```
 
-|パラメーター|Description|
+|パラメーター|説明|
 |--------|--------|
 |ValidAudience|これにより、トークン内で照合される "audience" の値が構成されます。|
 |ValidIssuer|これにより、トークン内でチェックされる "issuer" の値が構成されます。|

@@ -6,18 +6,18 @@ ms.topic: article
 ms.assetid: 5dc529f7-7bc3-48dd-b83d-92a09e4055c4
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: c52c26d44e50075f9c28dfdec7c2ab4fc420e163
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: a93302ee89bf8c4b9a78fc6651e77fb566d1e9c6
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87948955"
+ms.locfileid: "87997002"
 ---
 # <a name="step-1-configure-the-directaccess-infrastructure"></a>手順 1 は、DirectAccess インフラストラクチャを構成します。
 
 >適用先:Windows Server (半期チャネル)、Windows Server 2016
 
-このトピックでは、既存の VPN の展開で DirectAccess を有効にするために必要なインフラストラクチャを構成する方法について説明します。 展開の手順を開始する前に、計画で説明した手順を完了していることを確認します [手順 1: DirectAccess インフラストラクチャの計画](Step-1-Plan-DirectAccess-Infrastructure.md)します。
+このトピックでは、既存の VPN の展開で DirectAccess を有効にするために必要なインフラストラクチャを構成する方法について説明します。 展開の手順を開始する前に、計画で説明した手順を完了していることを確認します [手順 1: DirectAccess インフラストラクチャの計画](./step-1-plan-da-inf-davpn.md)します。
 
 |タスク|説明|
 |----|--------|
@@ -328,6 +328,3 @@ Add-ADGroupMember -Identity DirectAccess_clients_group_name -Members <computer_n
 13. [**OK**] をクリックし、[**登録**] をクリックして、[**完了**] をクリックします。
 
 14. 証明書スナップインの詳細ウィンドウで、新しい証明書が [サーバー認証の目的] とともに登録されていることを確認します。
-
-
-

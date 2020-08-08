@@ -6,18 +6,18 @@ author: haley-rowland
 ms.author: harowl
 ms.date: 07/17/2018
 ms.localizationpriority: low
-ms.openlocfilehash: 265589789f2966e7b6140543876f41058aa5d705
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 651eff1819a7ec867febd86005415e5044e6bbd0
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87940083"
+ms.locfileid: "87996827"
 ---
 # <a name="protect-your-hyper-v-virtual-machines-with-azure-site-recovery-and-windows-admin-center"></a>Azure Site Recovery と Windows 管理センターを使用して Hyper-v Virtual Machines を保護する
 
 >適用先:Windows Admin Center Preview、Windows Admin Center
 
-[Azure と Windows 管理センターとの統合の詳細については、こちらを参照してください。](../plan/azure-integration-options.md)
+[Azure と Windows 管理センターとの統合の詳細については、こちらを参照してください。](./index.md)
 
 Windows Admin Center を使用すると、仮想マシンを Hyper-V サーバーまたはクラスターにレプリケートするプロセスが合理化され、独自のデータセンターから Azure の機能を簡単に利用できます。 セットアップを自動化するには、Windows Admin Center ゲートウェイを Azure に接続できます。
 
@@ -25,7 +25,7 @@ Windows Admin Center を使用すると、仮想マシンを Hyper-V サーバ�
 
 ## <a name="what-is-azure-site-recovery-and-how-does-it-work-with-windows-admin-center"></a>Azure Site Recovery の概要と Windows Admin Center との連携のしくみ
 
-**Azure Site Recovery** は、ビジネスに不可欠なインフラストラクチャが障害発生時に保護されるように VM で実行されているワークロードをレプリケートする Azure サービスです。  [詳細について](https://docs.microsoft.com/azure/site-recovery/site-recovery-overview)は、Azure Site Recovery を参照してください。
+**Azure Site Recovery** は、ビジネスに不可欠なインフラストラクチャが障害発生時に保護されるように VM で実行されているワークロードをレプリケートする Azure サービスです。  [詳細について](/azure/site-recovery/site-recovery-overview)は、Azure Site Recovery を参照してください。
 
 Azure Site Recovery は、"**レプリケーション**" と "**フェールオーバー**" という 2 つのコンポーネントで構成されています。 レプリケーションの部分では、障害発生時にターゲット VM の VHD を Azure ストレージ アカウントにレプリケートすることで VM を保護します。 そのため、障害発生時にこれらの VM をフェールオーバーし、Azure で実行することができます。 また、プライマリ VM に影響を与えることなくテスト フェールオーバーを実行し、Azure で回復プロセスをテストすることができます。
 
@@ -36,7 +36,7 @@ Azure Site Recovery は、"**レプリケーション**" と "**フェールオ�
 
 - 保護する VM をホストしている対象サーバーは、Azure にレプリケートするためにインターネットにアクセスできる必要があります。
 - [Windows Admin Center ゲートウェイを Azure に接続します](azure-integration.md)。
-- [キャパシティプランニングツールを確認して、レプリケーションとフェールオーバーを成功させるための要件を評価](https://docs.microsoft.com/azure/site-recovery/hyper-v-site-walkthrough-capacity)します。
+- [キャパシティプランニングツールを確認して、レプリケーションとフェールオーバーを成功させるための要件を評価](/azure/site-recovery/hyper-v-site-walkthrough-capacity)します。
 
 ## <a name="step-1-set-up-vm-protection-on-your-target-host"></a>手順 1:ターゲット ホストで VM の保護を設定する
 
@@ -68,9 +68,9 @@ Azure Site Recovery は、"**レプリケーション**" と "**フェールオ�
 1. 上の手順 2 で構成したサーバーまたはクラスターに戻り、**[仮想マシン] > [インベントリ]** の順に移動します。
 2. 保護する VM を選択します。
 3. [**その他**  >  の**保護 VM**] を選択します。
-4. [VM を保護するための容量の要件](https://docs.microsoft.com/azure/site-recovery/site-recovery-capacity-planner)を確認します。
+4. [VM を保護するための容量の要件](/azure/site-recovery/site-recovery-capacity-planner)を確認します。
 
-    Premium storage アカウントを使用する場合は、 [Azure portal で作成](https://docs.microsoft.com/azure/storage/common/storage-premium-storage)します。 Windows Admin Center ウィンドウに表示される **[新規作成]** オプションでは標準ストレージ アカウントが作成されます。
+    Premium storage アカウントを使用する場合は、 [Azure portal で作成](/azure/storage/common/storage-premium-storage)します。 Windows Admin Center ウィンドウに表示される **[新規作成]** オプションでは標準ストレージ アカウントが作成されます。
 
 5. この VM のレプリケーションに使用する **[ストレージ アカウント]** の名前を入力し、**[VM の保護]** を選択します。 この手順で、選択された仮想マシンのレプリケーションが有効になります。
 
@@ -80,13 +80,13 @@ Azure Site Recovery は、"**レプリケーション**" と "**フェールオ�
 
  VM レプリケーションの開始時にこの手順を完了する必要はありませんが (VM はレプリケーションで保護されます)、Azure Site Recovery をセットアップするときにフェールオーバー設定を構成することをお勧めします。 Azure VMに対してフェールオーバーの準備を行うには、次の手順を完了します。
 
-1. [Azure ネットワークを設定](https://docs.microsoft.com/azure/site-recovery/hyper-v-site-walkthrough-prepare-azure)します。フェールオーバーされた VM はこの VNET に接続されます。 リンクされたページに記載されている他の手順は Windows Admin Center によって自動的に完了します。Azure ネットワークを設定することだけが必要です。
+1. [Azure ネットワークを設定](/azure/site-recovery/hyper-v-site-walkthrough-prepare-azure)します。フェールオーバーされた VM はこの VNET に接続されます。 リンクされたページに記載されている他の手順は Windows Admin Center によって自動的に完了します。Azure ネットワークを設定することだけが必要です。
 
-2. [テストフェールオーバーを実行](https://docs.microsoft.com/azure/site-recovery/hyper-v-site-walkthrough-test-failover)します。
+2. [テストフェールオーバーを実行](/azure/site-recovery/hyper-v-site-walkthrough-test-failover)します。
 
 ## <a name="step-4-create-recovery-plans"></a>手順 4: 回復計画を作成する
 
-**回復計画**は、VM のコレクションで構成されるアプリケーション全体をフェールオーバーおよび回復できる Azure Site Recovery の機能です。 アプリケーションを構成する VM を回復計画に追加することで、保護された VM を個別に回復することが可能ですが、回復計画を通じてアプリケーション全体をフェールオーバーすることができます。 また、回復計画のテスト フェールオーバー機能を使用してアプリケーションの回復をテストすることもできます。 回復計画により、VM をグループ化し、フェールオーバー時に実行される順序をシーケンス処理し、回復プロセスの一部として実行する追加の手順を自動化することができます。 VM を保護したら、Azure portal の Azure Site Recovery コンテナーに移動し、これらの VM の回復計画を作成します。 [復旧計画の詳細についてはこちらをご覧](https://docs.microsoft.com/azure/site-recovery/site-recovery-create-recovery-plans)ください。
+**回復計画**は、VM のコレクションで構成されるアプリケーション全体をフェールオーバーおよび回復できる Azure Site Recovery の機能です。 アプリケーションを構成する VM を回復計画に追加することで、保護された VM を個別に回復することが可能ですが、回復計画を通じてアプリケーション全体をフェールオーバーすることができます。 また、回復計画のテスト フェールオーバー機能を使用してアプリケーションの回復をテストすることもできます。 回復計画により、VM をグループ化し、フェールオーバー時に実行される順序をシーケンス処理し、回復プロセスの一部として実行する追加の手順を自動化することができます。 VM を保護したら、Azure portal の Azure Site Recovery コンテナーに移動し、これらの VM の回復計画を作成します。 [復旧計画の詳細についてはこちらをご覧](/azure/site-recovery/site-recovery-create-recovery-plans)ください。
 
 ## <a name="monitoring-replicated-vms-in-azure"></a>Azure でのレプリケートされた VM の監視 ##
 

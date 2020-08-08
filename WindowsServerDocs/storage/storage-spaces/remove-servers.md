@@ -1,21 +1,19 @@
 ---
 title: 記憶域スペース ダイレクトでのサーバーの削除
 ms.assetid: 9d8499a7-1307-473d-9f00-8a051164fad2
-ms.prod: windows-server
 ms.author: cosdar
 manager: eldenc
-ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 description: Windows Server で記憶域スペース ダイレクト クラスターからサーバーを削除する方法。
 ms.date: 2/5/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4fa3fe64cb5d7448a7e71eb344309ecb9990ebcd
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: cc6ca368be71b24b8a552051c6edc2b7220dd57b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86960024"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971069"
 ---
 # <a name="removing-servers-in-storage-spaces-direct"></a>記憶域スペース ダイレクトでのサーバーの削除
 
@@ -52,7 +50,7 @@ Remove-ClusterNode <Name> -CleanUpDisks
 
 Windows はそのサーバーに保存されたデータをすべてクラスター内の他のサーバーに移動する必要があるため、このコマンドレットの実行には時間がかかることがあります (場合によっては数時間)。 この処理が完了すると、ドライブは記憶域プールから完全に削除され、影響を受けるボリュームが正常な状態に戻ります。
 
-### <a name="requirements"></a>必要条件
+### <a name="requirements"></a>要件
 
 完全にスケール イン (サーバー*と*そのドライブを削除) するには、クラスターが次の 2 つの要件を満たしている必要があります。 満たしていない場合、**Remove-ClusterNode -CleanUpDisks** コマンドレットは、中断を最小限に抑えるため、データ移動を開始する前にすぐにエラーを返します。
 
@@ -70,7 +68,7 @@ Windows はそのサーバーに保存されたデータをすべてクラスタ
 
 次の表に、回復性の種類ごとに必要な障害ドメインの最小数を示します。
 
-|    回復性          |    最小限必要な障害ドメイン   |
+|    回復性          |    最低限必要な障害ドメイン   |
 |------------------------|-------------------------------------|
 |    双方向ミラー      |    2                                |
 |    3 方向ミラー    |    3                                |
@@ -79,6 +77,6 @@ Windows はそのサーバーに保存されたデータをすべてクラスタ
    >[!NOTE]
    > 障害発生時やメンテナンス時など、短期的にサーバーが減ってもかまいません。 しかし、ボリュームが完全に正常な状態に戻るには、上に示したサーバーの最小数が必要です。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
-- [記憶域スペースダイレクトの概要](storage-spaces-direct-overview.md)
+- [記憶域スペース ダイレクトの概要](storage-spaces-direct-overview.md)

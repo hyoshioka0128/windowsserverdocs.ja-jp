@@ -6,14 +6,12 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 6743a5fb902509d24f8f30d42b919e65fa40ccc0
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 8f96ecaff5fbe31c4d9d037861685a2e4c008e63
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86965694"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87941222"
 ---
 # <a name="disjoint-namespace"></a>名前空間の不整合
 

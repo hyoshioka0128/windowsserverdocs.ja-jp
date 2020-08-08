@@ -6,14 +6,12 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/08/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 574c5a4c0d009a34b1d327ac4aef3b9f5210b0bf
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 65f47f485b7aded16506cdce91502c0918aacba2
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959394"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87970959"
 ---
 # <a name="planning-regional-domain-controller-placement"></a>地域ドメイン コント ローラーの配置の計画
 

@@ -2,18 +2,16 @@
 title: プライマリ-セカンダリの展開での地理的な場所ベースのトラフィック管理に DNS ポリシーを使用する
 description: このトピックは、Windows Server 2016 の DNS ポリシーシナリオガイドに含まれています。
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-dns
 ms.topic: article
 ms.assetid: a9ee7a56-f062-474f-a61c-9387ff260929
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: e819cf2e3e0b4803e9efc9886a679e5128432087
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 45bff2c65f0497216cb8c7e7dc9dd670c5387ba2
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518268"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87996858"
 ---
 # <a name="use-dns-policy-for-geo-location-based-traffic-management-with-primary-secondary-deployments"></a>プライマリ-セカンダリの展開での地理的な場所ベースのトラフィック管理に DNS ポリシーを使用する
 
@@ -80,7 +78,7 @@ OPT RR の値は、要求が送信されるゾーンのスコープの名前で�
 
 ## <a name="how-to-configure-dns-policy-for-primary-secondary-geo-location-based-traffic-management"></a>プライマリ-セカンダリの地理的な場所ベースのトラフィック管理用の DNS のポリシーを構成する方法
 
-開始する前に、すべてのトピックの手順を完了したことを確認 [のプライマリ サーバーの地理的な場所ベースのトラフィック管理用の DNS ポリシーを使用して](../../dns/deploy/Scenario--Use-DNS-Policy-for-Geo-Location-Based-Traffic-Management-with-Primary-Servers.md), 、ゾーン、ゾーンのスコープ、DNS クライアントのサブネット、および DNS のポリシーで、プライマリ DNS サーバーが構成されているとします。
+開始する前に、すべてのトピックの手順を完了したことを確認 [のプライマリ サーバーの地理的な場所ベースのトラフィック管理用の DNS ポリシーを使用して](./primary-geo-location.md), 、ゾーン、ゾーンのスコープ、DNS クライアントのサブネット、および DNS のポリシーで、プライマリ DNS サーバーが構成されているとします。
 
 > [!NOTE]
 > DNS のプライマリ サーバーからセカンダリの DNS サーバーに DNS クライアントのサブネット、ゾーンのスコープ、および DNS のポリシーをコピーするは、このトピックの手順は、最初の DNS 設定と検証です。 今後、DNS クライアントのサブネット、ゾーンのスコープ、およびプライマリ サーバー上のポリシー設定を変更することができます。 このような状況では、セカンダリ サーバーをプライマリ サーバーと同期を保つために自動化スクリプトを作成できます。
@@ -113,7 +111,7 @@ Add-DnsServerSecondaryZone -Name "woodgrove.com" -ZoneFile "woodgrove.com.dns" -
 Add-DnsServerSecondaryZone -Name "woodgrove.com" -ZoneFile "woodgrove.com.dns" -MasterServers 10.0.0.1 -ComputerName SecondaryServer2
 ```
 
-詳細については、次を参照してください。 [追加 DnsServerSecondaryZone](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserversecondaryzone?view=win10-ps)します。
+詳細については、次を参照してください。 [追加 DnsServerSecondaryZone](/powershell/module/dnsserver/add-dnsserversecondaryzone?view=win10-ps)します。
 
 ### <a name="configure-the-zone-transfer-settings-on-the-primary-zone"></a>プライマリ ゾーンのゾーン転送設定を構成します。
 
@@ -131,7 +129,7 @@ Add-DnsServerSecondaryZone -Name "woodgrove.com" -ZoneFile "woodgrove.com.dns" -
 Set-DnsServerPrimaryZone -Name "woodgrove.com" -Notify Notify -SecondaryServers "10.0.0.2,10.0.0.3" -SecureSecondaries TransferToSecureServers -ComputerName PrimaryServer
 ```
 
-詳細については、次を参照してください。 [セット デモンストレーション](https://docs.microsoft.com/powershell/module/dnsserver/set-dnsserverprimaryzone?view=win10-ps)します。
+詳細については、次を参照してください。 [セット デモンストレーション](/powershell/module/dnsserver/set-dnsserverprimaryzone?view=win10-ps)します。
 
 ### <a name="copy-the-dns-client-subnets"></a>DNS クライアントのサブネットをコピーします。
 
@@ -144,7 +142,7 @@ Get-DnsServerClientSubnet -ComputerName PrimaryServer | Add-DnsServerClientSubne
 Get-DnsServerClientSubnet -ComputerName PrimaryServer | Add-DnsServerClientSubnet -ComputerName SecondaryServer2
 ```
 
-詳細については、次を参照してください。 [追加 DnsServerClientSubnet](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverclientsubnet?view=win10-ps)します。
+詳細については、次を参照してください。 [追加 DnsServerClientSubnet](/powershell/module/dnsserver/add-dnsserverclientsubnet?view=win10-ps)します。
 
 ### <a name="create-the-zone-scopes-on-the-secondary-server"></a>セカンダリ サーバーでゾーンのスコープを作成します。
 
@@ -160,7 +158,7 @@ Get-DnsServerZoneScope -ZoneName "woodgrove.com" -ComputerName PrimaryServer|Add
 > [!NOTE]
 > これらの例のコマンドで、 **-erroraction を無視する** すべてのゾーンに既定のゾーンのスコープが存在するために、パラメーターが含まれています。 既定のゾーンのスコープを作成または削除することはできません。 そのスコープを作成するためのパイプライン処理が発生しは失敗します。 また、2 つのセカンダリ ゾーンの既定以外のゾーンのスコープを作成できます。
 
-詳細については、「 [DnsServerZoneScope](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)」を参照してください。
+詳細については、「 [DnsServerZoneScope](/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)」を参照してください。
 
 ### <a name="configure-dns-policy"></a>DNS のポリシーを構成します。
 
@@ -174,7 +172,7 @@ $policy | Add-DnsServerQueryResolutionPolicy -ZoneName "woodgrove.com" -Computer
 $policy | Add-DnsServerQueryResolutionPolicy -ZoneName "woodgrove.com" -ComputerName SecondaryServer2
 ```
 
-詳細については、次を参照してください。 [追加 DnsServerQueryResolutionPolicy](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)します。
+詳細については、次を参照してください。 [追加 DnsServerQueryResolutionPolicy](/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)します。
 
 今すぐセカンダリ DNS サーバーは、地理的な場所に基づいて、トラフィックをリダイレクトする必要な DNS ポリシーで構成されます。
 

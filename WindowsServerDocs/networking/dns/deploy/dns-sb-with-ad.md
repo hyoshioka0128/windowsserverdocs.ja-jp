@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: f9533204-ad7e-4e49-81c1-559324a16aeb
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 1f6da8584f7a2b2221fb1a283b8ea4de842ddc58
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 4aa18e3f93cdb0a50cac3db697a10dd40c1f05e0
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87964138"
+ms.locfileid: "87996912"
 ---
 # <a name="use-dns-policy-for-split-brain-dns-in-active-directory"></a>Active Directory でスプリット ブレイン DNS に DNS ポリシーを使用する
 
@@ -75,8 +75,8 @@ $policies |  Add-DnsServerQueryResolutionPolicy -ZoneName "contoso.com" -Compute
 
 詳細については、次の Windows PowerShell のリファレンストピックを参照してください。
 
-- [DnsServerQueryResolutionPolicy](https://docs.microsoft.com/powershell/module/dnsserver/get-dnsserverqueryresolutionpolicy?view=win10-ps)
-- [DnsServerQueryResolutionPolicy](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)
+- [DnsServerQueryResolutionPolicy](/powershell/module/dnsserver/get-dnsserverqueryresolutionpolicy?view=win10-ps)
+- [DnsServerQueryResolutionPolicy](/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)
 
 ## <a name="how-to-configure-dns-policy-for-split-brain-dns-in-active-directory"></a>\-Active Directory で Split ブレイン dns の Dns ポリシーを構成する方法
 
@@ -90,7 +90,7 @@ Dns ポリシーを使用して DNS スプリットブレイン展開を構成�
 Add-DnsServerPrimaryZone -Name "contoso.com" -ReplicationScope "Domain" -PassThru
 ```
 
-詳細については、「[デモンストレーション](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverprimaryzone?view=win10-ps)」を参照してください。
+詳細については、「[デモンストレーション](/powershell/module/dnsserver/add-dnsserverprimaryzone?view=win10-ps)」を参照してください。
 
 ### <a name="create-the-scopes-of-the-zone"></a>ゾーンのスコープを作成します。
 
@@ -108,7 +108,7 @@ Add-DnsServerPrimaryZone -Name "contoso.com" -ReplicationScope "Domain" -PassThr
 Add-DnsServerZoneScope -ZoneName "contoso.com" -Name "external"
 ```
 
-詳細については、「 [DnsServerZoneScope](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)」を参照してください。
+詳細については、「 [DnsServerZoneScope](/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)」を参照してください。
 
 ### <a name="add-records-to-the-zone-scopes"></a>レコードをゾーンのスコープに追加します。
 
@@ -128,7 +128,7 @@ Add-DnsServerResourceRecord -ZoneName "contoso.com" -A -Name "www.career" -IPv4A
 > [!NOTE]
 > レコードが既定のゾーンのスコープに追加される場合、 **–ゾーン範囲ゾーン**パラメーターは含まれません。 この操作は、通常のゾーンにレコードを追加することと同じです。
 
-詳細については、次を参照してください。 [追加 DnsServerResourceRecord](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps)します。
+詳細については、次を参照してください。 [追加 DnsServerResourceRecord](/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps)します。
 
 ### <a name="create-the-dns-policies"></a>DNS のポリシーを作成します。
 
@@ -149,7 +149,7 @@ Add-DnsServerQueryResolutionPolicy -Name "SplitBrainZonePolicy" -Action ALLOW -S
 > [!NOTE]
 > 208.84.0.53 は、パブリックネットワークインターフェイスの IP アドレスです。
 
-詳細については、次を参照してください。 [追加 DnsServerQueryResolutionPolicy](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)します。
+詳細については、次を参照してください。 [追加 DnsServerQueryResolutionPolicy](/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)します。
 
 これで、Active Directory 統合された DNS ゾーンを持つスプリットブレインネームサーバーに必要な DNS ポリシーを使用して、DNS サーバーが構成されました。
 

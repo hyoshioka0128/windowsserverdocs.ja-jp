@@ -1,24 +1,22 @@
 ---
 title: HYPER-V テクノロジの概要
 description: Hyper-v とは何か、それを取得する方法、主な機能、および一般的な使用方法について説明します。
-ms.prod: windows-server
 manager: dongill
-ms.technology: compute-hyper-v
 ms.topic: article
 ms.assetid: ac069fed-7bf5-4cc3-aff5-25a2766040b8
 author: kbdazure
 ms.author: kathydav
 ms.date: 11/29/2016
-ms.openlocfilehash: d21bec24a22607213771bdad0b48df18fd88eb4d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 5fd4c0199cea04d6697b593ad70b4f31b55afad0
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80853245"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87960765"
 ---
 # <a name="hyper-v-technology-overview"></a>HYPER-V テクノロジの概要
 
->適用対象: Windows Server 2016、Microsoft Hyper-V Server 2016、Windows Server 2019、Microsoft Hyper-V Server 2019
+>適用先:Windows Server 2016、Microsoft Hyper-V Server 2016、Windows Server 2019、Microsoft Hyper-V Server 2019
 
 Hyper-v は、Microsoft のハードウェア仮想化製品です。 これにより、*仮想マシン*と呼ばれるソフトウェアバージョンのコンピューターを作成および実行できます。 各仮想マシンは、オペレーティングシステムとプログラムを実行する完全なコンピューターのように機能します。 コンピューティングリソースが必要な場合、virtual machines を使用すると、柔軟性が向上し、時間とコストを節約できます。また、物理ハードウェア上で1つのオペレーティングシステムを実行するよりも、ハードウェアをより効率的に使用することができます。
 
@@ -28,13 +26,13 @@ Hyper-v では、各仮想マシンが独自の分離された領域で実行さ
 
 Hyper-v は、次のことを支援します。
 
-- **プライベートクラウド環境を確立または拡張します。** 共有リソースの使用を拡大したり拡張したり、需要の変化に応じて使用率を調整したりして、より柔軟なオンデマンドの IT サービスを提供します。
+- **プライベート クラウド環境の確立または拡大。** 共有リソースの使用を拡大したり拡張したり、需要の変化に応じて使用率を調整したりして、より柔軟なオンデマンドの IT サービスを提供します。
 
 - **ハードウェアをより効果的に使用できます。** サーバーとワークロードをより少ない数の強力な物理コンピューターに統合することで、電力と物理領域を節約できます。
 
-- **ビジネス継続性を向上させます。** ワークロードのスケジュールされたダウンタイムと予定外のダウンタイムの両方の影響を最小限に抑えます。
+- **ビジネス継続性の向上。** ワークロードのスケジュールされたダウンタイムと予定外のダウンタイムの両方の影響を最小限に抑えます。
 
-- **仮想デスクトップインフラストラクチャ (VDI) を確立または拡張します。** VDI で集中管理されたデスクトップ戦略を使用すると、ビジネスの機敏性とデータのセキュリティを向上させることができます。また、法令順守を簡素化し、デスクトップオペレーティングシステムとアプリケーションを管理することもできます。 個人用仮想デスクトップまたは仮想デスクトッププールをユーザーが使用できるようにするには、Hyper-v とリモートデスクトップ仮想化ホスト (RD 仮想化ホスト) を同じサーバーに展開します。
+- **仮想デスクトップ インフラストラクチャ (VDI) の確立または拡大。** VDI で集中管理されたデスクトップ戦略を使用すると、ビジネスの機敏性とデータのセキュリティを向上させることができます。また、法令順守を簡素化し、デスクトップオペレーティングシステムとアプリケーションを管理することもできます。 個人用仮想デスクトップまたは仮想デスクトッププールをユーザーが使用できるようにするには、Hyper-v とリモートデスクトップ仮想化ホスト (RD 仮想化ホスト) を同じサーバーに展開します。
 
 - **開発とテストの効率を高めます。** 物理システムのみを使用している場合は、必要なハードウェアを購入したり保守したりしなくても、さまざまなコンピューティング環境を再現できます。
 
@@ -70,7 +68,7 @@ Hyper-v は、windows server および Windows では、x64 バージョンの W
 
 多くのオペレーティングシステムは、仮想マシン上で実行されます。 一般に、x86 アーキテクチャを使用するオペレーティングシステムは、Hyper-v 仮想マシン上で実行されます。 ただし、実行できるすべてのオペレーティングシステムが Microsoft によってテストおよびサポートされているわけではありません。 サポートされる内容の一覧については、以下を参照してください。
 
-- [Windows 上の Hyper-v でサポートされている Linux および FreeBSD の仮想マシン](Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)
+- [Windows にインストールされた Hyper-v の Linux および FreeBSD 仮想マシンがサポートされています。](Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)
 
 - [Windows Server 上の Hyper-v でサポートされている Windows ゲストオペレーティングシステム](Supported-Windows-guest-operating-systems-for-Hyper-V-on-Windows.md)
 
@@ -86,10 +84,10 @@ Hyper-v には、仮想マシンを作成して実行できるようにするた
 
 Hyper-v には、管理と接続のためのツールも用意されています。 これらは、Hyper-v の役割がインストールされているのと同じコンピューター、および Hyper-v の役割がインストールされていないコンピューターにインストールできます。 これらのツールは次のとおりです。
 
-- Hyper-V マネージャー
-- [Windows PowerShell 用 hyper-v モジュール](https://docs.microsoft.com/powershell/module/hyper-v/index)
-- [仮想マシン接続](https://docs.microsoft.com/windows-server/virtualization/hyper-v/learn-more/hyper-v-virtual-machine-connect)\(vmconnect と呼ばれる場合があり\)
-- [Windows PowerShell Direct](manage/Manage-Windows-virtual-machines-with-PowerShell-Direct.md)
+- Hyper-V マネージャーは
+- [Windows PowerShell 用 Hyper-V モジュール](https://docs.microsoft.com/powershell/module/hyper-v/index)
+- [仮想マシン接続](https://docs.microsoft.com/windows-server/virtualization/hyper-v/learn-more/hyper-v-virtual-machine-connect) \(VMConnect と呼ばれることもあります。\)
+- [Windows PowerShell ダイレクト](manage/Manage-Windows-virtual-machines-with-PowerShell-Direct.md)
 
 ## <a name="related-technologies"></a>関連テクノロジ
 

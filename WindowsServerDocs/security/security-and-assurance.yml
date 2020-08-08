@@ -8,12 +8,12 @@ metadata:
   author: coreyp-at-msft
   ms.author: coreyp
   ms.date: 5/19/2020
-  ms.openlocfilehash: 95bff2635f0386249d2dfebec3fb92792e4e1293
-  ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+  ms.openlocfilehash: a4deb178d79a9c996040147a5416b5c8371f2ea2
+  ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
   ms.translationtype: MT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 07/27/2020
-  ms.locfileid: "87182328"
+  ms.lasthandoff: 08/07/2020
+  ms.locfileid: "87996772"
 landingContent:
 - title: Windows Server のセキュリティの概要
   linkLists:
@@ -22,7 +22,7 @@ landingContent:
     - text: Windows Server のセキュリティについてのブログ記事
       url: https://blogs.technet.microsoft.com/windowsserver/2016/04/25/ten-reasons-youll-love-windows-server-2016-8-security/
     - text: Datacenter and Private Cloud Security Blog (データ センターおよびプライベート クラウドのセキュリティについてのブログ)
-      url: https://blogs.technet.microsoft.com/datacentersecurity/
+      url: /archive/blogs/datacentersecurity/
     - text: Addressing emerging threats and landscape shifts (新たな脅威とランドスケープの変化への対応)
       url: https://www.youtube.com/watch?v=B5JMYxYWx1k&feature=youtu.be
     - text: Protecting Your Datacenter and Cloud from Emerging Threats (新たな脅威からのデータ センターとクラウドの保護) についてのブログ投稿
@@ -54,13 +54,13 @@ landingContent:
   - linkListType: overview
     links:
     - text: Windows Defender アプリケーション制御 (WDAC) 展開ガイド
-      url: https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-contro
+      url: /windows/security/threat-protection/windows-defender-application-control/windows-defender-application-contro
     - text: トランスポート層セキュリティ レジストリ設定
-      url: https://docs.microsoft.com/windows-server/security/tls/tls-registry-settings
+      url: ./tls/tls-registry-settings.md
     - text: 制御フロー ガード
-      url: https://docs.microsoft.com/windows/desktop/SecBP/control-flow-guard
+      url: /windows/desktop/SecBP/control-flow-guard
     - text: Windows Defender
-      url: https://technet.microsoft.com/windows-server-docs/security/windows-defender/windows-defender-overview-windows-server
+      url: ./windows-defender/windows-defender-overview-windows-server.md
   - linkListType: video
     links:
     - text: Device Guard のデモ ビデオ
@@ -70,9 +70,9 @@ landingContent:
   - linkListType: overview
     links:
     - text: Securing Privileged Access (特権アクセスの保護)
-      url: https://technet.microsoft.com/windows-server-docs/security/securing-privileged-access/securing-privileged-access
+      url: ../identity/securing-privileged-access/securing-privileged-access.md
     - text: Microsoft Identity Manager による Just-In-Time 管理
-      url: https://technet.microsoft.com/library/mt150258.aspx
+      url: /microsoft-identity-manager/pam/privileged-identity-management-for-active-directory-domain-services
     - text: Just Enough Administration に関する記事
       url: https://aka.ms/JEA
   - linkListType: video
@@ -86,9 +86,9 @@ landingContent:
   - linkListType: overview
     links:
     - text: Credential Guard で派生ドメイン資格情報を保護
-      url: https://docs.microsoft.com/windows/security/identity-protection/credential-guard/credential-guard
+      url: /windows/security/identity-protection/credential-guard/credential-guard
     - text: Protect Remote Desktop credentials with Remote Credential Guard (Remote Credential Guard によるリモート デスクトップ資格情報の保護)
-      url: https://docs.microsoft.com/windows/security/identity-protection/remote-credential-guard
+      url: /windows/security/identity-protection/remote-credential-guard
   - linkListType: video
     links:
     - text: Credential Guard のデモ ビデオ
@@ -112,9 +112,9 @@ landingContent:
   - linkListType: overview
     links:
     - text: データセンターのファイアウォールの概要
-      url: https://technet.microsoft.com/library/dn920240.aspx
+      url: /previous-versions/windows/server/dn920240(v=ws.12)
     - text: Windows Server の DNS の新機能
-      url: https://technet.microsoft.com/windows-server-docs/networking/dns/what-s-new-in-dns-server
+      url: ../networking/dns/what-s-new-in-dns-server.md
 - title: コンプライアンスに関する規制へのセキュリティ機能のマッピング
   linkLists:
   - linkListType: download
@@ -136,4 +136,4 @@ landingContent:
     - text: Windows の以前のバージョンに関するドキュメント
       url: /previous-versions/windows/
     - text: 特定の情報を検索する
-      url: https://docs.microsoft.com/search/?search=Windows+Server&dataSource=previousVersions
+      url: /search/?dataSource=previousVersions&search=Windows+Server

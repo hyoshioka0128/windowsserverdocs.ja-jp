@@ -6,14 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 4d39ee3053133286c07a93d18b5c3bd5809e3b54
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 03e45cbeadf25391522728bf3d30006bec76e1e0
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182398"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87996687"
 ---
 # <a name="dynamic-access-control-scenario-overview"></a>ダイナミック アクセス制御:シナリオの概要
 
@@ -60,9 +58,9 @@ Windows Server 2012 では、ファイルサーバー全体にデータガバナ
 
 |コンテンツ タイプ|参考資料|
 |----------------|--------------|
-|**製品評価**|- [動的 Access Control レビュー担当者ガイド](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc732148(v=ws.10))<br>- [動的 Access Control 開発者向けガイダンス](https://docs.microsoft.com/previous-versions/windows/desktop/dacx/dynamic-access-control-developer-extensibility-roadmap)|
-|**計画**|- [集約型アクセスポリシーの展開の計画](https://docs.microsoft.com/windows-server/identity/solution-guides/scenario--central-access-policy)<br>- [ファイルアクセスの監査の計画](Plan-for-File-Access-Auditing.md)|
-|**配置**|- [Active Directory の展開](https://docs.microsoft.com/windows-server/identity/ad-ds/deploy/ad-ds-deployment)<br>- [ファイルサービスおよび記憶域サービスの展開](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831487(v=ws.11))|
-|**操作**|[ダイナミック アクセス制御 PowerShell リファレンスに関するページ](https://docs.microsoft.com/powershell/module/addsadministration/?view=win10-ps)|
+|**製品評価**|- [動的 Access Control レビュー担当者ガイド](/previous-versions/orphan-topics/ws.10/cc732148(v=ws.10))<br>- [動的 Access Control 開発者向けガイダンス](/previous-versions/windows/desktop/dacx/dynamic-access-control-developer-extensibility-roadmap)|
+|**計画**|- [集約型アクセスポリシーの展開の計画](./scenario--central-access-policy.md)<br>- [ファイルアクセスの監査の計画](Plan-for-File-Access-Auditing.md)|
+|**デプロイ**|- [Active Directory の展開](../ad-ds/deploy/ad-ds-deployment.md)<br>- [ファイルサービスおよび記憶域サービスの展開](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831487(v=ws.11))|
+|**操作**|[ダイナミック アクセス制御 PowerShell リファレンスに関するページ](/powershell/module/addsadministration/?view=win10-ps)|
 |**ツールと設定**|[Data Classification Toolkit に関するページ](https://www.microsoft.com/download/details.aspx?id=27123)|
-|**コミュニティ リソース**|[ディレクトリ サービス フォーラムに関するページ](https://docs.microsoft.com/answers/topics/windows-active-directory.html)|
+|**コミュニティ リソース**|[ディレクトリ サービス フォーラムに関するページ](/answers/topics/windows-active-directory.html)|

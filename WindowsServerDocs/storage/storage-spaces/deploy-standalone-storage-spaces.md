@@ -1,19 +1,17 @@
 ---
 title: スタンドアロン サーバーに記憶域スペースを展開する
 description: スタンドアロンの Windows Server 2012 ベースのサーバーに記憶域スペースを展開する方法について説明します。
-ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
-ms.technology: storage-spaces
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: b5f1ccab7e4c0ca2bbd478509a76a4a37559c345
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: ac661631eef9053e202c7e21ffff9982d26d1d38
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181868"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87960825"
 ---
 # <a name="deploy-storage-spaces-on-a-stand-alone-server"></a>スタンドアロン サーバーに記憶域スペースを展開する
 
@@ -46,7 +44,7 @@ ms.locfileid: "87181868"
 > [!IMPORTANT]
 > フェールオーバークラスターに記憶域スペースを展開する方法については、「 [Windows Server 2012 R2 での記憶域スペースクラスターの展開](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/mt270997(v%3dws.11)>)」を参照してください。 フェールオーバークラスターの展開には、サポートされるディスクバスの種類、サポートされる回復性の種類、必要最小限のディスク数など、さまざまな前提条件があります。
 
-|領域|要件|Notes|
+|区分|要件|メモ|
 |---|---|---|
 |ディスク バスの種類|-シリアル接続 SCSI (SAS)<br>-シリアル高度テクノロジアタッチメント (SATA)<br>-iSCSI およびファイバーチャネルコントローラー。 |USB ドライブを使用することもできます。 ただし、サーバー環境で USB ドライブを使用するのは最適ではありません。<br>記憶域スペースは、上位に作成された仮想ディスクが回復不能 (任意の数の列を含む) である限り、iSCSI およびファイバーチャネル (FC) コントローラーでサポートされます。<br>|
 |ディスク構成|-物理ディスクは 4 GB 以上である必要があります。<br>-ディスクは空白で、フォーマットされていない必要があります。 ボリュームは作成しないでください。||

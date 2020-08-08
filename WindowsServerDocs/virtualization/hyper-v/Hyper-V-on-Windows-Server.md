@@ -1,20 +1,18 @@
 ---
 title: Windows Server 上の Hyper-V
 description: Hyper-v の実行、計画、展開、および管理に関する主要な記事へのリンクを提供します。
-ms.prod: windows-server
 manager: dongill
-ms.technology: compute-hyper-v
 ms.topic: article
 ms.assetid: 0baef6b8-598c-4fe0-9f31-5869fc4e0f69
 author: kbdazure
 ms.author: kathydav
 ms.date: 10/07/2016
-ms.openlocfilehash: 6e40209af4ef987955f01336617e3673cd9ca786
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 61ed737c72e65fa040e09c546998542734457e89
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181928"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87960815"
 ---
 # <a name="hyper-v-on-windows-server"></a>Windows Server 上の Hyper-V
 

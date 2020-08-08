@@ -1,21 +1,19 @@
 ---
 title: 記憶域スペース ダイレクトの展開
-ms.prod: windows-server
 manager: eldenc
 ms.author: stevenek
-ms.technology: storage-spaces
 ms.topic: get-started-article
 ms.assetid: 20fee213-8ba5-4cd3-87a6-e77359e82bc0
 author: stevenek
 ms.date: 07/24/2020
 description: Windows Server の記憶域スペースダイレクトを使用して、ハイパー集約型インフラストラクチャまたは収束 (disaggregated とも呼ばれます) インフラストラクチャとしてソフトウェア定義記憶域を展開する手順について説明します。
 ms.localizationpriority: medium
-ms.openlocfilehash: ba9287cebe1cf35c151335e59476f63ae3e01a56
-ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
+ms.openlocfilehash: a15f9df55fd5650443f4d0220dee6b4ada9253d2
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87863939"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971109"
 ---
 # <a name="deploy-storage-spaces-direct"></a>記憶域スペース ダイレクトの展開
 

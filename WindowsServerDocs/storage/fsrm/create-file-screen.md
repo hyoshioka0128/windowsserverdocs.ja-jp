@@ -2,18 +2,16 @@
 title: ファイル スクリーンを作成する
 description: この記事では、ファイル スクリーンを作成する方法について説明します。
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: e7827f1e80b1cfe2288bee968cc3c4e3cd428e15
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 4efa2add790e4284865a54eaedf3cbb7d9c0589c
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474379"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971099"
 ---
 # <a name="create-a-file-screen"></a>ファイル スクリーンを作成する
 
@@ -54,7 +52,7 @@ ms.locfileid: "85474379"
 
 12. **[OK]** をクリックします。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 -   [ファイルスクリーン処理の管理](file-screening-management.md)
 -   [スクリーン処理のためにファイル グループを定義する](define-file-groups-for-screening.md)

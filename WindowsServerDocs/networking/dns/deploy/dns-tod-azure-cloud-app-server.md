@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: 4846b548-8fbc-4a7f-af13-09e834acdec0
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 04e4d33f6c5894a59547e84a6066d3af04f80a9b
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: d7df84e26ef86f553d57b2019d4d46581d7c17fa
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87964108"
+ms.locfileid: "87996894"
 ---
 # <a name="dns-responses-based-on-time-of-day-with-an-azure-cloud-app-server"></a>Azure クラウド アプリケーション サーバーを使用した 1 日の時間に基づく DNS 応答
 
@@ -22,7 +22,7 @@ ms.locfileid: "87964108"
 このシナリオは、別のタイムゾーンに配置されている Microsoft Azure でホストされている Web サーバーなど、1つのタイムゾーンのトラフィックを別のアプリケーションサーバーに転送する場合に便利です。 これにより、トラフィックを負荷分散アプリケーションのインスタンス間でのピーク時のトラフィックがプライマリ サーバーが、いつ過負荷の期間します。
 
 > [!NOTE]
-> Azure を使用せずにインテリジェントな DNS 応答に DNS ポリシーを使用する方法については、「[時間に基づくインテリジェント Dns 応答に Dns ポリシーを使用](Scenario--Use-DNS-Policy-for-Intelligent-DNS-Responses-Based-on-the-Time-of-Day.md)する」を参照してください。
+> Azure を使用せずにインテリジェントな DNS 応答に DNS ポリシーを使用する方法については、「[時間に基づくインテリジェント Dns 応答に Dns ポリシーを使用](./dns-tod-intelligent.md)する」を参照してください。
 
 ## <a name="example-of-intelligent-dns-responses-based-on-the-time-of-day-with-azure-cloud-app-server"></a>Azure Cloud App Server での時間に基づくインテリジェント DNS 応答の例
 
@@ -91,7 +91,7 @@ Azure レコードの TTL を10分にすると、Azure から VM が削除され
 Add-DnsServerZoneScope -ZoneName "contosogiftservices.com" -Name "AzureZoneScope"
 ```
 
-詳細については、次を参照してください [追加 DnsServerZoneScope。](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)
+詳細については、次を参照してください [追加 DnsServerZoneScope。](/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)
 
 ### <a name="add-records-to-the-zone-scopes"></a>レコードをゾーンのスコープに追加します。
 次の手順では、Web サーバーホストを表すレコードをゾーンのスコープに追加します。
@@ -110,7 +110,7 @@ Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -
 Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -IPv4Address "192.68.30.2"
 ```
 
-詳細については、次を参照してください。 [追加 DnsServerResourceRecord](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps)します。
+詳細については、次を参照してください。 [追加 DnsServerResourceRecord](/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps)します。
 
 ### <a name="create-the-dns-policies"></a>DNS のポリシーを作成します。
 ゾーンスコープが作成されたら、次のように、これらのスコープに対して受信クエリを分散する DNS ポリシーを作成できます。
@@ -126,7 +126,7 @@ DNS ポリシーを作成するには、次のコマンド例を使用します�
 Add-DnsServerQueryResolutionPolicy -Name "Contoso6To9Policy" -Action ALLOW -ZoneScope "contosogiftservices.com,7;AzureZoneScope,3" –TimeOfDay “EQ,18:00-21:00” -ZoneName "contosogiftservices.com" –ProcessingOrder 1
 ```
 
-詳細については、次を参照してください。 [追加 DnsServerQueryResolutionPolicy](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)します。
+詳細については、次を参照してください。 [追加 DnsServerQueryResolutionPolicy](/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)します。
 
 これで、DNS サーバーは、時間に基づいて Azure Web サーバーにトラフィックをリダイレクトするために必要な DNS ポリシーを使用して構成されます。
 

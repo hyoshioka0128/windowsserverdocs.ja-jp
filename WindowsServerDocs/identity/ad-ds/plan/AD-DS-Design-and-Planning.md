@@ -6,14 +6,12 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/07/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 929530b8ee7dbb7b0486f3eb80a642cc5fdab20e
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: b735852f8e2428c3d6375a3168f204e403a461f5
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86962464"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87941458"
 ---
 # <a name="ad-ds-design-and-planning"></a>Active Directory の設計と計画について
 

@@ -2,18 +2,16 @@
 title: 手順1高度な DirectAccess インフラストラクチャを計画する
 description: このトピックは、「Windows Server 2016 の詳細設定を使用して単一の DirectAccess サーバーを展開する」の一部です。
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-da
 ms.topic: article
 ms.assetid: aa3174f3-42af-4511-ac2d-d8968b66da87
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 759caf09531b2c09034c715fa6cc479fea6d6c07
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 8f60a960d76e7c24ff3dc9afaf931792713f06af
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518138"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87970409"
 ---
 # <a name="step-1-plan-the-advanced-directaccess-infrastructure"></a>手順1高度な DirectAccess インフラストラクチャを計画する
 
@@ -679,7 +677,7 @@ GPO 設定を手動で変更する場合は、次の点を考慮してくださ�
 
 3.  GPO が見つからないというエラー メッセージが表示されます。 **[構成設定の削除]** をクリックします。 完了後、サーバーは構成されていない状態で復元されます。
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 -   [手順 2: プランの DirectAccess 展開](da-adv-plan-s2-deployments.md)
 

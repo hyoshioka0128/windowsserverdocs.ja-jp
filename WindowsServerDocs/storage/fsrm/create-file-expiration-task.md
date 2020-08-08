@@ -2,18 +2,16 @@
 title: ファイルの有効期限タスクを作成する
 description: この記事では、まもなく期限切れになるファイルを処理するためのファイル管理タスクの作成プロセスを説明します。
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: ce458ab84e7f6ba40ab3578c9b4a3e5d58755dc5
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 0ff4b46064ca780d63c6f06898c114cb180c3665
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473769"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971129"
 ---
 # <a name="create-a-file-expiration-task"></a>ファイルの有効期限タスクを作成する
 
@@ -41,7 +39,7 @@ ms.locfileid: "85473769"
 
 4. **[操作]** タブで、次の情報を入力します。
 
-   - **[種類]**。 ドロップダウン ボックスから **[ファイルの有効期限]** を選択します。
+   - **[種類]** 。 ドロップダウン ボックスから **[ファイルの有効期限]** を選択します。
 
    - **[有効期限切れのディレクトリ]**。 有効期限が切れるファイルの移動先となるディレクトリを選択します。
 
@@ -96,7 +94,7 @@ ms.locfileid: "85473769"
 
 8. **[スケジュール]** タブで、**[スケジュールの作成]** をクリックし、**[スケジュール]** ダイアログ ボックスで  **[新規作成]** をクリックします。 既定のスケジュールとして毎日午前 9:00 という設定が表示されますが、 この既定のスケジュールは変更できます。 スケジュールの設定を終了したら、**[OK]** をクリックし、再度 **[OK]** をクリックします。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 -   [分類の管理](classification-management.md)
 -   [ファイル管理タスク](file-management-tasks.md)

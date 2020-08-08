@@ -2,17 +2,16 @@
 title: 記憶域スペースダイレクトの対称に関する考慮事項
 ms.author: cosdar
 manager: eldenc
-ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 10/08/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 2028d7b4ccb42d5da1426634541681f842c18972
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: 1f845702bb66226e604289f7f37ffa2fb1155843
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87768730"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971119"
 ---
 # <a name="drive-symmetry-considerations-for-storage-spaces-direct"></a>記憶域スペースダイレクトの対称に関する考慮事項
 
@@ -26,7 +25,7 @@ ms.locfileid: "87768730"
 
 ## <a name="constraints"></a>制約
 
-### <a name="type"></a>Type
+### <a name="type"></a>種類
 
 すべてのサーバーは、同じ[種類のドライブ](choosing-drives.md#drive-types)を持つ必要があります。
 

@@ -7,12 +7,12 @@ manager: dougkim
 ms.author: lizross
 author: eross-msft
 ms.date: 09/12/2018
-ms.openlocfilehash: b2cbb47262033d5149e47704e3f232b7662f69e6
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 30055b7954674b1cea99e7ef60d45cfa33543c3d
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87955668"
+ms.locfileid: "87996735"
 ---
 # <a name="hardware-only-ho-features-and-technologies"></a>ハードウェアのみ (HO) の機能とテクノロジ
 
@@ -79,4 +79,4 @@ LSO を使用すると、アプリケーションは大量のデータブロッ�
 
 ## <a name="receive-segment-coalescing-rsc"></a>Receive Segment Coalescing (RSC)
 
-受信セグメント結合は、"サイズの大きい受信オフロード" とも呼ばれ、ネットワーク割り込み間に到着した同じストリームの一部であるパケットを、それらをオペレーティングシステムに配信する前に1つのパケットに分割する NIC 機能です。 RSC は、Hyper-v 仮想スイッチにバインドされている Nic では使用できません。 詳細については、「 [Receive Segment 合体 (RSC)](https://docs.microsoft.com/windows-server/networking/technologies/hpn/rsc-in-the-vswitch)」を参照してください。
+受信セグメント結合は、"サイズの大きい受信オフロード" とも呼ばれ、ネットワーク割り込み間に到着した同じストリームの一部であるパケットを、それらをオペレーティングシステムに配信する前に1つのパケットに分割する NIC 機能です。 RSC は、Hyper-v 仮想スイッチにバインドされている Nic では使用できません。 詳細については、「 [Receive Segment 合体 (RSC)](./rsc-in-the-vswitch.md)」を参照してください。

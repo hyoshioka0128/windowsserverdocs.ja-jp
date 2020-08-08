@@ -6,14 +6,12 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/07/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 77e091c1c1990e5cd30ac485c1ea3b085531df53
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: d14a65a25041cc8d1932d291483c1833156c5956
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81624360"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87941350"
 ---
 # <a name="creating-a-forest-design"></a>フォレスト設計の作成
 
@@ -23,7 +21,7 @@ ms.locfileid: "81624360"
 
 すべての設計要件をフォレストモデルにマップし、組織のニーズを満たすフォレストモデルを選択したら、提案されたフォレストの設計を文書化します。 ドキュメントには、フォレストが設計されているグループの名前、フォレストの所有者の連絡先情報、含める各フォレストのフォレストの種類、および各フォレストが満たすように設計された要件を含めます。 このドキュメントは、設計チームが、適切なすべての担当者が設計プロセスに関与していることを確認し、配置プロジェクトの範囲を明確にするために役立ちます。
 
-提案されたフォレストの設計を文書化するのに役立つワークシートについては、 [Windows Server 2003 Deployment Kit のジョブエイド](https://microsoft.com/download/details.aspx?id=9608)から Job_Aids_Designing_and_Deploying_Directory_and_Security_Services をダウンロードし、「フォレストの設計」 (DSSLOGI_3) を開きます。
+提案されたフォレストの設計を文書化するのに役立つワークシートについては、 [Windows Server 2003 Deployment Kit のジョブエイド](https://microsoft.com/download/details.aspx?id=9608)から Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip をダウンロードし、「フォレストの設計」 (DSSLOGI_3.doc) を開きます。
 
 ## <a name="in-this-section"></a>このセクションの内容
 

@@ -6,12 +6,12 @@ author: jwwool
 ms.author: jeffrew
 ms.localizationpriority: medium
 ms.date: 06/07/2019
-ms.openlocfilehash: bb416a45e18ea34628994b589e452f25d2d7744e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 91e14b5ac023f6726ffc508f945567b83311d7a4
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87937671"
+ms.locfileid: "87997014"
 ---
 # <a name="windows-admin-center-known-issues"></a>Windows Admin Center の既知の問題
 
@@ -195,7 +195,7 @@ PowerShell で `$PSVersiontable` を入力して、WMF がインストールさ�
 
   - Windows 10 クライアントの管理を有効にするには、管理者特権の PowerShell プロンプトから ```Enable-PSRemoting``` コマンドを実行する必要があります。
 
-  - また、```Set-NetFirewallRule -Name WINRM-HTTP-In-TCP -RemoteAddress Any``` を使用して、ローカル サブネットの外部から接続を許可できるようにファイアウォールを更新する必要があります。 より制限の厳しいネットワーク シナリオでは、[このドキュメント](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enable-psremoting?view=powershell-5.1)を参照してください。
+  - また、```Set-NetFirewallRule -Name WINRM-HTTP-In-TCP -RemoteAddress Any``` を使用して、ローカル サブネットの外部から接続を許可できるようにファイアウォールを更新する必要があります。 より制限の厳しいネットワーク シナリオでは、[このドキュメント](/powershell/module/microsoft.powershell.core/enable-psremoting?view=powershell-5.1)を参照してください。
 
 ## <a name="cluster-deployment"></a>クラスターの展開
 
@@ -222,7 +222,7 @@ Enable-windowsoptionalfeature -online -featurename Microsoft-hyper-v
 ストレッチクラスターを作成するときは、ドメインに参加しているサーバーを使用することをお勧めします。 WinRM の制限により、ストレッチクラスターの展開にワークグループコンピューターを使用しようとすると、ネットワークセグメント化の問題が発生します。
 
 ### <a name="undo-and-start-over"></a>元に戻すとやり直す
-クラスターのデプロイに同じマシンを繰り返し使用する場合、以前のクラスターエンティティのクリーンアップは、同じマシンセットでクラスターのデプロイを成功させるために重要です。 クラスターをクリーンアップする方法については、[ハイパー集約型インフラストラクチャの展開](https://docs.microsoft.com/windows-server/manage/windows-admin-center/use/deploy-hyperconverged-infrastructure#undo-and-start-over)に関するページを参照してください。
+クラスターのデプロイに同じマシンを繰り返し使用する場合、以前のクラスターエンティティのクリーンアップは、同じマシンセットでクラスターのデプロイを成功させるために重要です。 クラスターをクリーンアップする方法については、[ハイパー集約型インフラストラクチャの展開](../use/deploy-hyperconverged-infrastructure.md#undo-and-start-over)に関するページを参照してください。
 
 ### <a name="credssp"></a>CredSSP
 Windows 管理センターのクラスター展開ウィザードでは、いくつかの場所で CredSSP が使用されます。 ウィザードの実行中にこのエラーメッセージが表示されます (これは、クラスターの検証手順で最も頻繁に発生します)。
@@ -291,7 +291,7 @@ Windows 管理センターバージョン2007のクラスター展開ウィザ�
 
 ### <a name="azure-file-sync-permissions"></a>Azure File Sync のアクセス許可
 
-Azure File Sync には、Windows 管理センターがバージョン1910より前に提供していない Azure のアクセス許可が必要です。 Windows 管理センターのバージョン1910より前のバージョンを使用して Windows 管理センターゲートウェイを Azure に登録した場合は、Azure Active Directory アプリケーションを更新して、最新バージョンの Windows 管理センターで Azure File Sync を使用するための正しいアクセス許可を取得する必要があります。 追加のアクセス許可により、この記事の説明に従って、ストレージアカウントへのアクセスの自動構成を実行 Azure File Sync ことができます。 [Azure File Sync にストレージアカウントへのアクセス権があることを確認](https://docs.microsoft.com/azure/storage/files/storage-sync-files-troubleshoot?tabs=portal1%2Cazure-portal#tabpanel_CeZOj-G++Q-5_azure-portal)してください。
+Azure File Sync には、Windows 管理センターがバージョン1910より前に提供していない Azure のアクセス許可が必要です。 Windows 管理センターのバージョン1910より前のバージョンを使用して Windows 管理センターゲートウェイを Azure に登録した場合は、Azure Active Directory アプリケーションを更新して、最新バージョンの Windows 管理センターで Azure File Sync を使用するための正しいアクセス許可を取得する必要があります。 追加のアクセス許可により、この記事の説明に従って、ストレージアカウントへのアクセスの自動構成を実行 Azure File Sync ことができます。 [Azure File Sync にストレージアカウントへのアクセス権があることを確認](/azure/storage/files/storage-sync-files-troubleshoot?tabs=portal1%2cazure-portal#tabpanel_CeZOj-G++Q-5_azure-portal)してください。
 
 Azure Active Directory アプリを更新するには、次の2つのいずれかを実行します。
 1. [**設定**] [  >  **azure**の  >  **登録解除**] の順に選択し、もう一度 Windows 管理センターを Azure に登録して、新しい Azure Active Directory アプリケーションを作成することを確認します。
@@ -301,5 +301,5 @@ Azure Active Directory アプリを更新するには、次の2つのいずれ�
 
 Azure Monitor、Azure Update Management、Azure Security Center を含む azure の管理サービスは、オンプレミスのサーバーと同じエージェントを使用します (Microsoft Monitoring Agent)。 Azure Update Management には、サポートされているリージョンのセットが制限されており、Log Analytics ワークスペースが Azure Automation アカウントにリンクされている必要があります。 この制限により、Windows 管理センターで複数のサービスをセットアップする場合は、まず Azure Update Management を設定してから、Azure Security Center または Azure Monitor する必要があります。 Microsoft Monitoring Agent を使用する Azure 管理サービスを構成した後、Windows 管理センターを使用して Azure Update Management を設定しようとすると、Windows 管理センターでは、Microsoft Monitoring Agent にリンクされている既存のリソースが Azure Update Management をサポートしている場合にのみ Azure Update Management を構成できます。 そうでない場合は、次の2つのオプションがあります。
 
-1. [コントロールパネル] > Microsoft Monitoring Agent を選択し[て、既存の Azure 管理ソリューション](https://docs.microsoft.com/azure/azure-monitor/platform/log-faq#q-how-do-i-stop-an-agent-from-communicating-with-log-analytics)(Azure Monitor や Azure Security Center など) からサーバーを切断します。 次に、Windows 管理センターで Azure Update Management を設定します。 その後、Windows 管理センターを使用して、問題なく他の Azure 管理ソリューションを設定することができます。
-2. [Azure Update Management に必要な azure リソースを手動で設定](https://docs.microsoft.com/azure/automation/automation-update-management)し、Microsoft Monitoring Agent (Windows 管理センターの外部) を[手動で更新](https://docs.microsoft.com/azure/azure-monitor/platform/agent-manage#adding-or-removing-a-workspace)して、使用する Update Management ソリューションに対応する新しいワークスペースを追加することができます。
+1. [コントロールパネル] > Microsoft Monitoring Agent を選択し[て、既存の Azure 管理ソリューション](/azure/azure-monitor/platform/log-faq#q-how-do-i-stop-an-agent-from-communicating-with-log-analytics)(Azure Monitor や Azure Security Center など) からサーバーを切断します。 次に、Windows 管理センターで Azure Update Management を設定します。 その後、Windows 管理センターを使用して、問題なく他の Azure 管理ソリューションを設定することができます。
+2. [Azure Update Management に必要な azure リソースを手動で設定](/azure/automation/automation-update-management)し、Microsoft Monitoring Agent (Windows 管理センターの外部) を[手動で更新](/azure/azure-monitor/platform/agent-manage#adding-or-removing-a-workspace)して、使用する Update Management ソリューションに対応する新しいワークスペースを追加することができます。

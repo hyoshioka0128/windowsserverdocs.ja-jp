@@ -7,12 +7,12 @@ ms.assetid: d47be540-e891-47bd-85da-6df4bbf93b2f
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 63acb44d5b5015d1fb1d560f52ffde8cd37f8cbf
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 096d09a78abb8902225432a358692d00f460e91c
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87951767"
+ms.locfileid: "87996818"
 ---
 # <a name="plan-user-accounts-for-your-multipoint-services-environment"></a>MultiPoint Services 環境のユーザー アカウントを計画する
 MultiPoint Services でユーザーアカウントを実装する最適な方法は、デプロイのサイズと複雑さによって異なります。
@@ -22,7 +22,7 @@ MultiPoint Services でユーザーアカウントを実装する最適な方法
 -   **ドメインアカウント**-MultiPoint Services と多くのユーザーを実行している多数のコンピューターが環境にある場合は、Active Directory Domain Services AD DS ドメインを設定し、ドメインユーザーアカウントを使用する方が便利です。これにより、 \( \) ユーザーはドメイン内の任意のステーションから自分のユーザープロファイルと設定にアクセスできるよう*domain user accounts*になります。 ドメインユーザーアカウントは、ドメイン管理者によってドメインコントローラー上に作成される必要があります。
 
 > [!NOTE]
-> 以下のセクションでは、MultiPoint Services のローカルユーザーアカウントに実装する可能性があるシナリオについて説明します。 ドメインユーザーアカウントを使用している場合は、「 [Multipoint Services ユーザーアカウント](Example-scenarios--MultiPoint-Services-user-accounts.md)」の「ドメインネットワーク環境の1つ以上の MultiPoint server」シナリオを参照してください。
+> 以下のセクションでは、MultiPoint Services のローカルユーザーアカウントに実装する可能性があるシナリオについて説明します。 ドメインユーザーアカウントを使用している場合は、「 [Multipoint Services ユーザーアカウント](./multipoint-users-scenario.md)」の「ドメインネットワーク環境の1つ以上の MultiPoint server」シナリオを参照してください。
 
 ## <a name="planning-local-user-accounts"></a>ローカルユーザーアカウントの計画
 以下のセクションでは、Windows MultiPoint Services 環境に個々のローカルユーザーアカウントまたは共有ローカルユーザーアカウントを実装するいくつかの方法の長所、短所、および要件について説明します。

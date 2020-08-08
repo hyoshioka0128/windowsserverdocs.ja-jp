@@ -6,14 +6,12 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: e04f82094128dac3e00d28014541da480e56999d
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: d4ddc2d88e4849ac35eaf21f092f5cc0ed85ec33
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959784"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87970999"
 ---
 # <a name="mapping-your-requirements-to-an-ad-ds-deployment-strategy"></a>AD DS の展開戦略に要件をマッピングする
 
@@ -41,6 +39,6 @@ Active Directory Domain Services (AD DS) の設計と展開の要件を確認し
 | [Windows Server 2008 フォレストルートドメインの展開](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc731174(v=ws.10)) | はい | いいえ | いいえ |
 | [Windows Server 2008 の地域ドメインの展開](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc755118(v=ws.10)) | はい | はい | はい |
 | [AD DS の高度な機能を有効にする](../../ad-ds/plan/Enabling-Advanced-Features-for-AD-DS.md) | はい |はい。ただし、ドメインまたはフォレストの機能レベルを Windows Server 2008 に設定する前に、環境内のすべてのドメインコントローラーが Windows Server 2008 を実行している必要があります。 | はい。ただし、ドメインまたはフォレストの機能レベルを Windows Server 2008 に設定する前に、環境内のすべてのドメインコントローラーが Windows Server 2008 を実行している必要があります。 |
-| [Active Directory ドメインを Windows Server 2008 および Windows Server 2008 R2 AD DS ドメインにアップグレードする](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc731188(v=ws.10)) | いいえ | ○ | はい |
+| [Active Directory ドメインを Windows Server 2008 および Windows Server 2008 R2 AD DS ドメインにアップグレードする](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc731188(v=ws.10)) | いいえ | はい | はい |
 | [ADMT ガイド: Active Directory ドメインの移行と再構築](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc974332(v=ws.10)) | はい。パイロットドメインを運用環境に移行する場合は、別の組織と結合して、2つの情報技術 (IT) インフラストラクチャを統合するか、Windows 2000 または Windows Server 2003 環境からアップグレードしたリソースおよびアカウントドメインを統合します。 | はい。別の組織と統合して、2つの IT インフラストラクチャを統合する場合、または、アップグレードしたリソースとアカウントドメインを Windows 2000 または Windows Server 2003 環境から統合する場合に使用します。 | はい。別の組織と統合して、2つの IT インフラストラクチャを統合する場合、または、アップグレードしたリソースとアカウントドメインを Windows 2000 または Windows Server 2003 環境から統合する場合に使用します。 |
 | [ADMT ガイド: Active Directory ドメインの移行と再構築](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc974332(v=ws.10)) | いいえ | はい。ドメインの数を減らす必要がある場合は、レプリケーションのトラフィックと必要なユーザーとグループの管理の量を減らし、グループポリシーの管理を簡略化します。 | はい。ドメインの数を減らす必要がある場合は、レプリケーションのトラフィックと必要なユーザーとグループの管理の量を減らし、グループポリシーの管理を簡略化します。 |

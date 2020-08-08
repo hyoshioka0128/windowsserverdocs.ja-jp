@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: 4b66f517-b17d-408c-828f-a3793086bc1f
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 6ba9221707ffdea76236cd8f94c80a1220a750d5
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 32e54b5129bf2215758adf35bd23c4d99ab2d8e9
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971829"
+ms.locfileid: "87996969"
 ---
 # <a name="wireless-access-deployment"></a>ワイヤレス アクセスの展開
 
@@ -489,7 +489,7 @@ Install-WindowsFeature NPAS -IncludeManagementTools
     >[!TIP]
     >認証方法で使用する証明書が見つからないことを示すエラーメッセージが表示された場合は、また、ネットワーク上の RAS および IAS サーバーに証明書を自動的に発行するように Active Directory 証明書サービスを構成していることを確認してから、次の手順に従って Active Directory Domain Services に**NPS を登録**します。次に、[開始 **]**、[Windows**システム]** グループポリシー、[**実行** **] の**順に選択し、enter キーを押します。 ユーザーとコンピューターの両方グループポリシーが正常に更新されたことを示す結果が返されたら、[ **Microsoft: PROTECTED EAP \( PEAP \) ** ] を再度選択し、[**構成**] をクリックします。
     >
-    >グループポリシー更新した後に、認証方法で使用する証明書が見つからないことを示すエラーメッセージが引き続き表示される場合は、「コアネットワーク必携ガイド: [802.1 x ワイヤードおよびワイヤレス展開用のサーバー証明書の展開](https://technet.microsoft.com/windows-server-docs/networking/core-network-guide/cncg/server-certs/deploy-server-certificates-for-802.1x-wired-and-wireless-deployments)」に記載されている最小サーバー証明書の要件を満たしていないため、証明書が表示されません。 このような場合は、NPS の構成を停止し、NPS に発行された証明書を失効させ \( \) てから、指示に従って、サーバー証明書の展開ガイドを使用して新しい証明書を構成する必要があります。
+    >グループポリシー更新した後に、認証方法で使用する証明書が見つからないことを示すエラーメッセージが引き続き表示される場合は、「コアネットワーク必携ガイド: [802.1 x ワイヤードおよびワイヤレス展開用のサーバー証明書の展開](../server-certs/deploy-server-certificates-for-802.1x-wired-and-wireless-deployments.md)」に記載されている最小サーバー証明書の要件を満たしていないため、証明書が表示されません。 このような場合は、NPS の構成を停止し、NPS に発行された証明書を失効させ \( \) てから、指示に従って、サーバー証明書の展開ガイドを使用して新しい証明書を構成する必要があります。
 
 7.  [**保護された EAP のプロパティの編集**] ウィザードページの [発行された**証明書**] で、正しい NPS 証明書が選択されていることを確認し、次の操作を行います。
 
@@ -554,7 +554,7 @@ Install-WindowsFeature NPAS -IncludeManagementTools
 3. 新しいワイヤレスコンピューターをドメインに参加 \( させます。たとえば、IEEE 802.1 x 認証を必要としないイーサネット接続を使用して、 \) **netsh wlan add profile**コマンドを使用して、ブートストラップワイヤレスプロファイルをコンピューターに追加します。
 
     >[!NOTE]
-    >詳細については、 \( \) [http: \/ \/ Technet.microsoft.com \/ Library \/ dd744890](https://technet.microsoft.com/library/dd744890)の「ワイヤレスローカルエリアネットワーク WLAN 用の Netsh コマンド」を参照してください。
+    >詳細については、 \( \) [http: \/ \/ Technet.microsoft.com \/ Library \/ dd744890](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd744890(v=ws.10))の「ワイヤレスローカルエリアネットワーク WLAN 用の Netsh コマンド」を参照してください。
 
 4. 新しいワイヤレスコンピューターをユーザーに配布します。手順に従って、Windows 10 を実行しているコンピューターを使用してドメインにログオンします。
 
@@ -586,7 +586,7 @@ Install-WindowsFeature NPAS -IncludeManagementTools
     >コンピューターをドメインに参加させるには、ユーザーがローカル管理者アカウントを使用してコンピューターにログオンしている必要があります。 または、コンピューターをドメインに参加させるプロセス中に、ユーザーがローカル管理者アカウントの資格情報を入力する必要があります。 さらに、ユーザーがコンピューターに参加するドメインのユーザーアカウントを持っている必要があります。 コンピューターをドメインに参加させる処理中に、ドメインアカウントの資格情報のユーザー名とパスワードを入力するように求められ \( \) ます。
 
 2. ブートストラップワイヤレスプロファイルを**構成するに**は、次の手順で説明するように、ドメインユーザーにブートストラップワイヤレスプロファイルを構成するための手順を指定します。
-3. さらに、Windows Server 2016 コアネットワークガイドに記載されているように、ユーザーにローカルコンピューター資格情報の \( ユーザー名とパスワード \) 、ドメイン資格情報の \( ドメインユーザーアカウント名とパスワードの \) 形式で*DomainName \\ UserName*を指定し、「コンピューターをドメインに参加させる」と「ドメインに[Core Network Guide](https://technet.microsoft.com/windows-server-docs/networking/core-network-guide/core-network-guide)ログオンする」の手順に従ってください。
+3. さらに、Windows Server 2016 コアネットワークガイドに記載されているように、ユーザーにローカルコンピューター資格情報の \( ユーザー名とパスワード \) 、ドメイン資格情報の \( ドメインユーザーアカウント名とパスワードの \) 形式で*DomainName \\ UserName*を指定し、「コンピューターをドメインに参加させる」と「ドメインに[Core Network Guide](../../core-network-guide.md)ログオンする」の手順に従ってください。
 
 #### <a name="to-configure-a-bootstrap-wireless-profile"></a>ブートストラップワイヤレスプロファイルを構成するには
 

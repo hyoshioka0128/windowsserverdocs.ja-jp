@@ -7,12 +7,12 @@ ms.author: rickman
 manager: stevelee
 ms.topic: article
 ms.date: 07/14/2020
-ms.openlocfilehash: afdb856fc84bcee634381f04054a97f545056882
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 8cba3ac4d2e4680f480ff76db12c10553c1857d3
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87938795"
+ms.locfileid: "87996958"
 ---
 # <a name="plan-for-gpu-acceleration-in-windows-server"></a>Windows Server での GPU アクセラレーションの計画
 
@@ -37,7 +37,7 @@ GPU 仮想化テクノロジは、仮想化された環境 (通常は仮想マ�
 - [個別のデバイスの割り当て (DDA)](#discrete-device-assignment-dda)
 - [RemoteFX vGPU](#remotefx-vgpu)
 
-Windows Server では、VM ワークロードに加えて、Windows コンテナー内のコンテナー化されたワークロードの GPU アクセラレーションもサポートしています。 詳細については、「 [Windows コンテナーの GPU 高速化](https://docs.microsoft.com/virtualization/windowscontainers/deploy-containers/gpu-acceleration)」を参照してください。
+Windows Server では、VM ワークロードに加えて、Windows コンテナー内のコンテナー化されたワークロードの GPU アクセラレーションもサポートしています。 詳細については、「 [Windows コンテナーの GPU 高速化](/virtualization/windowscontainers/deploy-containers/gpu-acceleration)」を参照してください。
 
 ## <a name="discrete-device-assignment-dda"></a>個別のデバイスの割り当て (DDA)
 
