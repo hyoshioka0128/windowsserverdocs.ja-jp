@@ -6,12 +6,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 09/25/2019
-ms.openlocfilehash: 5940b2a626a42d639870c98ee740c44b18c02ca3
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: d226f4fdc9b34b97b24b970b3198bd4164b3a309
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87944062"
+ms.locfileid: "87995279"
 ---
 # <a name="troubleshooting-guarded-hosts"></a>保護されたホストのトラブルシューティング
 
@@ -60,20 +60,20 @@ Unknown                   | ホストは、まだ HGS で証明を試行して�
 
 AttestationSubStatus       | 意味と対処法
 ---------------------------|-------------------------------
-BitLocker                  | ホストの OS ボリュームは、BitLocker によって暗号化されていません。 これを解決するには、OS ボリュームで[bitlocker を有効](https://technet.microsoft.com/itpro/windows/keep-secure/bitlocker-basic-deployment)にするか、 [HGS で bitlocker ポリシーを無効](guarded-fabric-manage-hgs.md#review-attestation-policies)にします。
+BitLocker                  | ホストの OS ボリュームは、BitLocker によって暗号化されていません。 これを解決するには、OS ボリュームで[bitlocker を有効](/windows/security/information-protection/bitlocker/bitlocker-basic-deployment)にするか、 [HGS で bitlocker ポリシーを無効](guarded-fabric-manage-hgs.md#review-attestation-policies)にします。
 CodeIntegrityPolicy        | ホストがコード整合性ポリシーを使用するように構成されていないか、または HGS サーバーによって信頼されているポリシーを使用していません。 コード整合性ポリシーが構成されていること、ホストが再起動されたこと、およびポリシーが HGS サーバーに登録されていることを確認してください。 詳細については、「[コード整合性ポリシーの作成と適用](guarded-fabric-tpm-trusted-attestation-capturing-hardware.md#create-and-apply-a-code-integrity-policy)」を参照してください。
 DumpsEnabled               | ホストは、HGS ポリシーで許可されていないクラッシュダンプまたはライブメモリダンプを許可するように構成されています。 これを解決するには、ホストのダンプを無効にします。
-DumpEncryption             | ホストは、クラッシュダンプまたはライブメモリダンプを許可するように構成されていますが、これらのダンプは暗号化されていません。 ホストのダンプを無効にするか、[ダンプの暗号化を構成](https://technet.microsoft.com/windows-server-docs/virtualization/hyper-v/manage/about-dump-encryption)してください。
-DumpEncryptionKey          | このホストはダンプを許可および暗号化するように構成されていますが、HGS に知られている証明書を使用して暗号化されていません。 これを解決するには、ホストの[暗号化キーのダンプを更新](https://technet.microsoft.com/windows-server-docs/virtualization/hyper-v/manage/about-dump-encryption)するか、または[HGS にキーを登録](guarded-fabric-manage-hgs.md#authorizing-new-guarded-hosts)します。
+DumpEncryption             | ホストは、クラッシュダンプまたはライブメモリダンプを許可するように構成されていますが、これらのダンプは暗号化されていません。 ホストのダンプを無効にするか、[ダンプの暗号化を構成](../../virtualization/hyper-v/manage/about-dump-encryption.md)してください。
+DumpEncryptionKey          | このホストはダンプを許可および暗号化するように構成されていますが、HGS に知られている証明書を使用して暗号化されていません。 これを解決するには、ホストの[暗号化キーのダンプを更新](../../virtualization/hyper-v/manage/about-dump-encryption.md)するか、または[HGS にキーを登録](guarded-fabric-manage-hgs.md#authorizing-new-guarded-hosts)します。
 FullBoot                   | ホストがスリープ状態または休止状態から再開されました。 クリーンな完全ブートを許可するために、ホストを再起動してください。
-HibernationEnabled         | このホストは、HGS ポリシーで許可されていない休止状態ファイルを暗号化せずに休止状態にするように構成されています。 休止状態を無効にし、ホストを再起動するか、 [dump encryption を構成](https://technet.microsoft.com/windows-server-docs/virtualization/hyper-v/manage/about-dump-encryption)します。
+HibernationEnabled         | このホストは、HGS ポリシーで許可されていない休止状態ファイルを暗号化せずに休止状態にするように構成されています。 休止状態を無効にし、ホストを再起動するか、 [dump encryption を構成](../../virtualization/hyper-v/manage/about-dump-encryption.md)します。
 HypervisorEnforcedCodeIntegrityPolicy | ホストは、ハイパーバイザーによって適用されるコード整合性ポリシーを使用するように構成されていません。 ハイパーバイザーによってコードの整合性が有効、構成、および適用されていることを確認します。 詳細については、「 [Device Guard 展開ガイド](https://technet.microsoft.com/itpro/windows/keep-secure/deploy-device-guard-deploy-code-integrity-policies)」を参照してください。
 Iommu                      | ホストの仮想化ベースのセキュリティ機能は、HGS ポリシーで必要とされる直接メモリアクセス攻撃からの保護のために、IOMMU デバイスを必要とするように構成されていません。 ホストに IOMMU があること、有効になっていること、および VBS を起動するときに、Device Guard が[DMA による保護を要求するように構成](https://technet.microsoft.com/itpro/windows/keep-secure/deploy-device-guard-enable-virtualization-based-security#enable-virtualization-based-security-vbs-and-device-guard)されていることを確認します。
-PagefileEncryption         | ページファイルの暗号化がホストで有効になっていません。 これを解決するには、を実行して `fsutil behavior set encryptpagingfile 1` ページファイルの暗号化を有効にします。 詳細については、「 [fsutil behavior](https://technet.microsoft.com/library/cc785435.aspx)」を参照してください。
-SecureBoot                 | セキュアブートは、このホストで有効になっていないか、Microsoft セキュアブートテンプレートを使用していません。 この問題を解決するには、Microsoft セキュアブートテンプレートを使用して[セキュアブートを有効](https://msdn.microsoft.com/windows/hardware/commercialize/manufacture/desktop/disabling-secure-boot#enable_secure_boot)にします。
+PagefileEncryption         | ページファイルの暗号化がホストで有効になっていません。 これを解決するには、を実行して `fsutil behavior set encryptpagingfile 1` ページファイルの暗号化を有効にします。 詳細については、「 [fsutil behavior](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc785435(v=ws.11))」を参照してください。
+SecureBoot                 | セキュアブートは、このホストで有効になっていないか、Microsoft セキュアブートテンプレートを使用していません。 この問題を解決するには、Microsoft セキュアブートテンプレートを使用して[セキュアブートを有効](/windows-hardware/manufacture/desktop/disabling-secure-boot#enable_secure_boot)にします。
 SecureBootSettings         | このホストの TPM ベースラインが、HGS によって信頼されているものと一致しません。 これは、UEFI 起動機関、DBX 変数、デバッグフラグ、またはカスタムセキュアブートポリシーが新しいハードウェアまたはソフトウェアのインストールによって変更された場合に発生する可能性があります。 このコンピューターの現在のハードウェア、ファームウェア、およびソフトウェアの構成を信頼する場合は、[新しい TPM ベースラインをキャプチャ](guarded-fabric-tpm-trusted-attestation-capturing-hardware.md#capture-the-tpm-baseline-for-each-unique-class-of-hardware)して[HGS に登録](guarded-fabric-manage-hgs.md#authorizing-new-guarded-hosts)できます。
 TcgLogVerification         | TCG ログ (TPM ベースライン) を取得または検証できません。 これは、ホストのファームウェア、TPM、またはその他のハードウェアコンポーネントに問題があることを示している可能性があります。 Windows を起動する前に、ホストが PXE ブートを試行するように構成されている場合は、古い Net Boot Program (NBP) でもこのエラーが発生することがあります。 PXE ブートが有効になっている場合は、すべての NBPs が最新の状態であることを確認します。
-VirtualSecureMode          | 仮想化ベースのセキュリティ機能がホストで実行されていません。 VBS が有効になっていること、およびシステムが構成された[プラットフォームのセキュリティ機能](https://technet.microsoft.com/itpro/windows/keep-secure/deploy-device-guard-enable-virtualization-based-security#validate-enabled-device-guard-hardware-based-security-features)を満たしていることを確認してください。 VBS の要件の詳細については、 [Device Guard のドキュメント](https://technet.microsoft.com/itpro/windows/keep-secure/device-guard-deployment-guide)を参照してください。
+VirtualSecureMode          | 仮想化ベースのセキュリティ機能がホストで実行されていません。 VBS が有効になっていること、およびシステムが構成された[プラットフォームのセキュリティ機能](https://technet.microsoft.com/itpro/windows/keep-secure/deploy-device-guard-enable-virtualization-based-security#validate-enabled-device-guard-hardware-based-security-features)を満たしていることを確認してください。 VBS の要件の詳細については、 [Device Guard のドキュメント](/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control-deployment-guide)を参照してください。
 
 ## <a name="modern-tls"></a>最新の TLS
 
@@ -90,4 +90,4 @@ reg add HKLM\SOFTWARE\Microsoft\.NETFramework\v4.0.30319 /v SystemDefaultTlsVers
 > [!WARNING]
 > [システムの既定の TLS バージョン] 設定は、コンピューター上のすべての .NET アプリに影響します。 実稼働コンピューターに展開する前に、分離された環境でレジストリキーをテストしてください。
 
-.NET 4.6 と TLS 1.0 の詳細については、「 [tls 1.0 の問題、第2版の解決](https://docs.microsoft.com/security/solving-tls1-problem)」を参照してください。
+.NET 4.6 と TLS 1.0 の詳細については、「 [tls 1.0 の問題、第2版の解決](/security/solving-tls1-problem)」を参照してください。

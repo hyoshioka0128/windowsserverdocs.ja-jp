@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: d268dc57-78f8-47ba-9a7a-a607e8b9225c
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 20b3f933565e8170e99f1eed2bfda24bd7705e1b
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: a7f6de6b4ee0e442aed5f718c7025a6eb2e70388
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87949115"
+ms.locfileid: "87995463"
 ---
 # <a name="export-an-nps-configuration-for-import-on-another-server"></a>別のサーバーにインポートするために NPS 構成をエクスポートする
 
@@ -60,7 +60,7 @@ Export-NpsConfiguration -Path <filename>
 Export-NpsConfiguration –Path c:\config.xml
 ```
 
-詳細については、「 [Export-NpsConfiguration](https://technet.microsoft.com/library/jj872749.aspx)」を参照してください。
+詳細については、「 [Export-NpsConfiguration](/powershell/module/nps/export-npsconfiguration?view=win10-ps)」を参照してください。
 
 NPS の構成をエクスポートした後、XML ファイルを移行先サーバーにコピーします。
 
@@ -78,7 +78,7 @@ Import-NpsConfiguration [-Path] <String> [ <CommonParameters>]
 Import-NpsConfiguration -Path "C:\Npsconfig.xml"
 ```
 
-詳細については、「 [Import-NpsConfiguration](https://technet.microsoft.com/library/jj872750.aspx)」を参照してください。
+詳細については、「 [Import-NpsConfiguration](/powershell/module/nps/import-npsconfiguration?view=win10-ps)」を参照してください。
 
 ## <a name="export-and-import-the-nps-configuration-by-using-netsh"></a>Netsh を使用して NPS 構成をエクスポートおよびインポートする
 

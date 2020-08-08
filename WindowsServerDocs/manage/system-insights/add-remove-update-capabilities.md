@@ -1,19 +1,17 @@
 ---
 title: 機能の追加、削除、更新
 description: System Insights を使用すると、既存のデータコレクションおよび管理機能を活用した新しい機能を作成できます。 また、これらの機能の追加、削除、および更新を管理するためのプラットフォームサポートも必要です。 このトピックでは、System Insights の機能を追加、削除、および更新するための高レベルの機能について説明します。
-ms.prod: windows-server
-ms.technology: system-insights
 ms.topic: article
 author: gawatu
 ms.author: gawatu
 manager: mallikarjun.chadalapaka
 ms.date: 7/31/2018
-ms.openlocfilehash: 217cb528896e3b09ce81821bb0201388fab28701
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 17d31b480e013cf0276041a88a86530448071ca5
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475279"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87958690"
 ---
 # <a name="adding-removing-and-updating-capabilities"></a>機能の追加、削除、更新
 
@@ -55,7 +53,7 @@ Remove-InsightsCapability -Name Sample capability
 >[!TIP]
 >機能に関連付けられているすべての情報を完全に削除する心配がある場合は、機能を削除するのではなく、無効にすることを検討してください。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 System Insights の詳細については、次のリソースを参照してください。
 
 - [システム インサイトの概要](overview.md)

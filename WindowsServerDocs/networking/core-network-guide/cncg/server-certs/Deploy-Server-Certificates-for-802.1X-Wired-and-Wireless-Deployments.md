@@ -4,16 +4,14 @@ description: このトピックでは、802.1 X ワイヤードおよびワイ�
 manager: brianlic
 ms.topic: article
 ms.assetid: 0a39ecae-39cc-4f26-bd6f-b71ed02fc4ad
-ms.prod: windows-server
-ms.technology: networking
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: c2de22bc7edd51c3469939920a2027ad4cbc2ee9
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: fd5c9ea9954053fd21f6ab46ff0b6d2f8da5245f
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181778"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87995567"
 ---
 # <a name="deploy-server-certificates-for-8021x-wired-and-wireless-deployments"></a>802.1 X 有線および無線展開のサーバー証明書を展開する
 
@@ -91,4 +89,4 @@ Windows Server 2016 の AD CS は、公開キーテクノロジを採用する�
 
 Windows Server 2016 の Web サーバー (IIS) の役割は、web サイト、サービス、およびアプリケーションを確実にホストするための、セキュリティで保護された、管理しやすい、モジュール型の拡張可能なプラットフォームを提供します。 IIS では、インターネット、イントラネットまたはエクストラネット上のユーザーと情報を共有できます。 IIS は、IIS、ASP.NET、FTP サービス、PHP、および Windows Communication Foundation (WCF) を一体化した統合 web プラットフォームです。
 
-詳細については、「 [Web サーバー (IIS) の概要](https://technet.microsoft.com/library/hh831725.aspx)」を参照してください。
+詳細については、「 [Web サーバー (IIS) の概要](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831725(v=ws.11))」を参照してください。

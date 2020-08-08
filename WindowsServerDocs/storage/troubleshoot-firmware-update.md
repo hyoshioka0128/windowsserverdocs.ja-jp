@@ -1,19 +1,17 @@
 ---
 ms.assetid: 13210461-1e92-48a1-91a2-c251957ba256
 title: ドライブのファームウェア更新のトラブルシューティング
-ms.prod: windows-server
 ms.author: toklima
 manager: masriniv
-ms.technology: storage
 ms.topic: article
 author: toklima
 ms.date: 04/18/2017
-ms.openlocfilehash: b62fdfe64ea579f61239dc582c639fb10ec1371c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b63df280585c4e1d5de88bc8a2ab08cce74c06d7
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80820885"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87946225"
 ---
 # <a name="troubleshooting-drive-firmware-updates"></a>ドライブのファームウェア更新のトラブルシューティング
 
@@ -23,8 +21,8 @@ Windows 10 バージョン 1703 以降と Windows Server (半期チャネル) �
 
 この機能について詳しくは、以下をご覧ください。
 
-- [Windows Server 2016 でのドライブのファームウェアの更新](update-firmware.md)
-- [記憶域スペースダイレクトにダウンタイムを発生させずにドライブのファームウェアを更新する](https://channel9.msdn.com/Blogs/windowsserver/Update-Drive-Firmware-Without-Downtime-in-Storage-Spaces-Direct)
+- [Windows Server 2016 でドライブのファームウェアを更新する](update-firmware.md)
+- [Update Drive Firmware Without Downtime in Storage Spaces Direct (記憶域スペース ダイレクトでダウンタイムなしにドライブのファームウェアを更新する)](https://channel9.msdn.com/Blogs/windowsserver/Update-Drive-Firmware-Without-Downtime-in-Storage-Spaces-Direct)
 
 ファームウェア更新では、さまざまな理由によって障害が発生します。 この記事では、高度なトラブルシューティングに役立つ情報を提供します。
 
@@ -41,7 +39,7 @@ Windows 10 バージョン 1703 以降と Windows Server (半期チャネル) �
 以下では、使用するドライバーがマイクロソフト製の場合とサード パーティ製の場合のそれぞれについて、トラブルシューティングの方法を説明します。
 
 ## <a name="identifying-inappropriate-hardware"></a>問題のあるハードウェアの特定
-デバイスが適切なコマンドのセットをサポートしているかどうかを確認する最も簡単な方法は、単純に PowerShell を起動し、ディスクを表す PhysicalDisk オブジェクトを Get-StorageFirmwareInfo コマンドレットに渡すことです。 以下に例を示します。
+デバイスが適切なコマンドのセットをサポートしているかどうかを確認する最も簡単な方法は、単純に PowerShell を起動し、ディスクを表す PhysicalDisk オブジェクトを Get-StorageFirmwareInfo コマンドレットに渡すことです。 たとえば次のようになります。
 
 ```powershell
 Get-PhysicalDisk -SerialNumber 15140F55976D | Get-StorageFirmwareInformation
@@ -81,7 +79,7 @@ SAS デバイスが、必要なコマンド セットをサポートしている
 ```powershell
 Get-PhysicalDisk -SerialNumber 44GS103UT5EW | Update-StorageFirmware -ImagePath C:\Firmware\J3E160@3.enc -SlotNumber 0
 ```
-この場合の出力例を以下に示します。
+出力の例を次に示します。
 
 ```
 Update-StorageFirmware : Failed
@@ -97,14 +95,14 @@ At line:1 char:47
 + CategoryInfo          : NotSpecified: (:) [Update-StorageFirmware], CimException
 + FullyQualifiedErrorId : StorageWMI 4,Microsoft.Management.Infrastructure.CimCmdlets.InvokeCimMethodCommand,Update-StorageFirmware
 ```
-    
+
 PowerShell がエラーをスローし、呼び出された関数 (つまり Kernel API) が誤っていたという情報を受信しています。 この情報から、API がサードパーティ製の SAS ミニポート ドライバによって実装されなかったか (この例ではこれが原因です)、API がダウンロード セグメントの不整合などの、他の理由によって失敗したことが考えられます。
 
 ```
 EventData
 DeviceGUID  {132EDB55-6BAC-A3A0-C2D5-203C7551D700}
 DeviceNumber    1
-Vendor  ATA 
+Vendor  ATA
 Model   TOSHIBA THNSNJ12
 FirmwareVersion 6101
 SerialNumber    44GS103UT5EW
@@ -144,7 +142,7 @@ ClassPnP 運用チャネルを超えると、StorAHCI と Storahci によって�
 
 以下では、ダウンロードしたイメージが無効であったために、SATA デバイスのファームウェア更新が失敗した例を示します (イベント ID: 258)。
 
-``` 
+```
 EventData
 MiniportName    storahci
 MiniportEventId 19

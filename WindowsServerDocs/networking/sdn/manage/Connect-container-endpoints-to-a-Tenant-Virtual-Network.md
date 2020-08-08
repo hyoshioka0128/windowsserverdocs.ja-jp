@@ -7,12 +7,12 @@ ms.assetid: f7af1eb6-d035-4f74-a25b-d4b7e4ea9329
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/24/2018
-ms.openlocfilehash: fd05441ecc64c05778234dc00fa315bb406dfb40
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: af8232de75005ae295079eb2207bce303629acaa
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970809"
+ms.locfileid: "87995198"
 ---
 # <a name="connect-container-endpoints-to-a-tenant-virtual-network"></a>コンテナーのエンドポイントをテナントの仮想ネットワークに接続する
 
@@ -20,7 +20,7 @@ ms.locfileid: "87970809"
 
 このトピックでは、SDN を使用して作成された既存のテナント仮想ネットワークにコンテナーエンドポイントを接続する方法について説明します。 Docker 用の Windows libnetwork プラグインで利用できる*l2bridge* (および必要に応じて*l2tunnel*) ネットワークドライバーを使用して、テナント VM にコンテナーネットワークを作成します。
 
-[コンテナーネットワークドライバー](https://docs.microsoft.com/virtualization/windowscontainers/container-networking/network-drivers-topologies)に関するトピックでは、Windows 上の Docker を通じて複数のネットワークドライバーを使用できることについて説明しました。 SDN の場合は、 *l2bridge*ドライバーと*l2tunnel*ドライバーを使用します。 どちらのドライバーでも、各コンテナーエンドポイントは、コンテナーホスト (テナント) 仮想マシンと同じ仮想サブネット内にあります。
+[コンテナーネットワークドライバー](/virtualization/windowscontainers/container-networking/network-drivers-topologies)に関するトピックでは、Windows 上の Docker を通じて複数のネットワークドライバーを使用できることについて説明しました。 SDN の場合は、 *l2bridge*ドライバーと*l2tunnel*ドライバーを使用します。 どちらのドライバーでも、各コンテナーエンドポイントは、コンテナーホスト (テナント) 仮想マシンと同じ仮想サブネット内にあります。
 
 ホストネットワークサービス (HNS) は、プライベートクラウドプラグインを介して、コンテナーエンドポイントの IP アドレスを動的に割り当てます。 コンテナーエンドポイントには一意の IP アドレスがありますが、レイヤー2のアドレス変換によって、コンテナーホスト (テナント) 仮想マシンと同じ MAC アドレスが共有されます。
 
@@ -50,7 +50,7 @@ ms.locfileid: "87970809"
    ```
 
 >[!Note]
->[入れ子になった仮想](https://msdn.microsoft.com/virtualization/hyperv_on_windows/user_guide/nesting)化と仮想化拡張機能の公開は、hyper-v コンテナーを使用する場合には必要ありません。
+>[入れ子になった仮想](/virtualization/hyper-v-on-windows/user-guide/nested-virtualization)化と仮想化拡張機能の公開は、hyper-v コンテナーを使用する場合には必要ありません。
 
 
 ## <a name="workflow"></a>ワークフロー
@@ -148,5 +148,4 @@ C:\> docker run -it --network=MyContainerOverlayNetwork <image> <cmd>
 >*L2bridge*または*l2tunnel* container network では、静的 IP の割り当ては、Microsoft SDN スタックではサポートされていません。
 
 ## <a name="more-information"></a>詳細情報
-SDN インフラストラクチャの展開の詳細については、「[ソフトウェア定義ネットワークインフラストラクチャを展開する](https://docs.microsoft.com/windows-server/networking/sdn/deploy/deploy-a-software-defined-network-infrastructure)」を参照してください。
-
+SDN インフラストラクチャの展開の詳細については、「[ソフトウェア定義ネットワークインフラストラクチャを展開する](../deploy/deploy-a-software-defined-network-infrastructure.md)」を参照してください。

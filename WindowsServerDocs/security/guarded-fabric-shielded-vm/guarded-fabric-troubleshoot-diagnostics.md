@@ -6,12 +6,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 01/14/2020
-ms.openlocfilehash: a0537c938b86141f83857f1763fbb18260a23e42
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 40381a08c22c8b559fbf2b7da8e8151e91c77718
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87944197"
+ms.locfileid: "87995368"
 ---
 # <a name="troubleshooting-using-the-guarded-fabric-diagnostic-tool"></a>保護されたファブリック診断ツールを使用したトラブルシューティング
 
@@ -19,7 +19,7 @@ ms.locfileid: "87944197"
 
 このトピックでは、保護されたファブリックのインフラストラクチャのデプロイ、構成、および実行中の操作の一般的なエラーを特定して修復するための、保護されたファブリック診断ツールの使用方法について説明します。 これには、ホストガーディアンサービス (HGS)、保護されたすべてのホスト、および DNS や Active Directory などのサポートサービスが含まれます。 診断ツールを使用すると、保護されていないファブリックの方針に従って、管理者が障害を解決し、正しく構成されていない資産を特定できるようになります。 このツールは、保護されたファブリックの運用を音で区別するためのものではなく、日常の操作中に発生した最も一般的な問題を迅速に検証するためにのみ機能します。
 
-この記事で使用されているコマンドレットの完全なドキュメントについては、 [HgsDiagnostics モジュールリファレンスを参照](https://docs.microsoft.com/powershell/module/hgsdiagnostics/?view=win10-ps)してください。
+この記事で使用されているコマンドレットの完全なドキュメントについては、 [HgsDiagnostics モジュールリファレンスを参照](/powershell/module/hgsdiagnostics/?view=win10-ps)してください。
 
 [!INCLUDE [Guarded fabric diagnostics tool](../../../includes/guarded-fabric-diagnostics-tool.md)]
 
@@ -105,10 +105,10 @@ Get-HgsTrace -RunDiagnostics -Target $server
 ```
 この例では、リモートユーザーの資格情報を収集するためのプロンプトが生成されます。その後、のリモートホストを使用して診断が実行され、 `hgs-01.secure.contoso.com` トレースコレクションが完了します。  結果のトレースは localhost にダウンロードされ、診断されます。  診断の結果は、[ローカル診断](#local-diagnosis)を実行する場合と同じように表示されます。  同様に、役割は、リモートシステムにインストールされている Windows PowerShell モジュールに基づいて推論できるため、指定する必要はありません。
 
-リモート診断では、リモートホストへのすべてのアクセスに Windows PowerShell リモート処理を利用します。  そのため、トレースターゲットで Windows PowerShell リモート処理が有効に[なっている](https://technet.microsoft.com/library/hh849694.aspx)ことと、ターゲットへの接続を開始するために localhost が適切に構成されていることが前提条件となります。
+リモート診断では、リモートホストへのすべてのアクセスに Windows PowerShell リモート処理を利用します。  そのため、トレースターゲットで Windows PowerShell リモート処理が有効に[なっている](/powershell/module/microsoft.powershell.core/enable-psremoting?view=powershell-7)ことと、ターゲットへの接続を開始するために localhost が適切に構成されていることが前提条件となります。
 
 > [!NOTE]
-> ほとんどの場合、localhost は同じ Active Directory フォレストの一部であり、有効な DNS ホスト名が使用されている必要があります。  環境でより複雑なフェデレーションモデルを使用している場合、または接続に直接 IP アドレスを使用する場合は、WinRM の[信頼さ](https://technet.microsoft.com/library/ff700227.aspx)れたホストの設定など、追加の構成を実行することが必要になる場合があります。
+> ほとんどの場合、localhost は同じ Active Directory フォレストの一部であり、有効な DNS ホスト名が使用されている必要があります。  環境でより複雑なフェデレーションモデルを使用している場合、または接続に直接 IP アドレスを使用する場合は、WinRM の[信頼さ](/previous-versions/technet-magazine/ff700227(v=msdn.10))れたホストの設定など、追加の構成を実行することが必要になる場合があります。
 
 コマンドレットを使用して、トレースターゲットが適切にインスタンス化され、接続を受け入れるように構成されていることを確認でき `Test-HgsTraceTarget` ます。
 ```PowerShell
@@ -122,7 +122,7 @@ $server | Test-HgsTraceTarget
 トレースターゲットにリモート接続するための十分な特権を持つユーザーからリモート診断を実行する場合、資格情報をに指定する必要はありません `New-HgsTraceTarget` 。  コマンドレットで `Get-HgsTrace` は、接続を開くときに、コマンドレットを呼び出したユーザーの資格情報が自動的に再利用されます。
 
 > [!WARNING]
-> 特に "2 番目のホップ" と呼ばれるものを実行する場合、資格情報の再利用にはいくつかの制限が適用されます。  このエラーは、リモートセッション内から別のコンピューターに資格情報を再利用しようとした場合に発生します。  このシナリオをサポートするには[CredSSP をセットアップ](https://technet.microsoft.com/library/hh849872.aspx)する必要がありますが、これは、保護されたファブリック管理とトラブルシューティングの範囲外です。
+> 特に "2 番目のホップ" と呼ばれるものを実行する場合、資格情報の再利用にはいくつかの制限が適用されます。  このエラーは、リモートセッション内から別のコンピューターに資格情報を再利用しようとした場合に発生します。  このシナリオをサポートするには[CredSSP をセットアップ](/powershell/module/microsoft.wsman.management/enable-wsmancredssp?view=powershell-7)する必要がありますが、これは、保護されたファブリック管理とトラブルシューティングの範囲外です。
 
 #### <a name="using-windows-powershell-just-enough-administration-jea-and-diagnostics"></a>Windows PowerShell を使用するだけで十分な管理 (JEA) と診断
 

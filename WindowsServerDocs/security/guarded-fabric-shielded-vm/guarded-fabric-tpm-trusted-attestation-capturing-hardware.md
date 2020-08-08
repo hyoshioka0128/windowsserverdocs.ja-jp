@@ -6,12 +6,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 04/01/2019
-ms.openlocfilehash: a0bc065f9654091ece18445488e4b46cfb197ad3
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: dedd7a3629b4381fd5f78f70a39f6906cab0573d
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87944152"
+ms.locfileid: "87995388"
 ---
 # <a name="authorize-guarded-hosts-using-tpm-based-attestation"></a>TPM ベースの構成証明を使用して保護されたホストを承認する
 
@@ -80,11 +80,11 @@ Windows Server バージョン1709以降では、サンプルコードの整合�
 
 まず、監査 (ログ) モードで CI ポリシーを作成して、何かが欠落していないかどうかを確認してから、ホストの運用ワークロードにポリシーを適用することをお勧めします。
 
-[新しい-cipolicy](https://docs.microsoft.com/powershell/module/configci/new-cipolicy?view=win10-ps)コマンドレットを使用して独自のコード整合性ポリシーを生成する場合は、使用するルールレベルを決定する必要があります。
+[新しい-cipolicy](/powershell/module/configci/new-cipolicy?view=win10-ps)コマンドレットを使用して独自のコード整合性ポリシーを生成する場合は、使用するルールレベルを決定する必要があります。
 プライマリレベルの**パブリッシャー**では、**ハッシュ**にフォールバックすることをお勧めします。これにより、CI ポリシーを変更することなく、ほとんどのデジタル署名されたソフトウェアを更新できます。
 同じ発行元によって作成された新しいソフトウェアは、CI ポリシーを変更せずにサーバーにインストールすることもできます。
 デジタル署名されていない実行可能ファイルはハッシュされます。これらのファイルを更新するには、新しい CI ポリシーを作成する必要があります。
-使用可能な CI ポリシーの規則レベルの詳細については、「[コードの整合性ポリシーの展開: ポリシー規則とファイル規則](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/select-types-of-rules-to-create#windows-defender-application-control-policy-rules)」および「コマンドレットのヘルプ」を参照してください。
+使用可能な CI ポリシーの規則レベルの詳細については、「[コードの整合性ポリシーの展開: ポリシー規則とファイル規則](/windows/security/threat-protection/windows-defender-application-control/select-types-of-rules-to-create#windows-defender-application-control-policy-rules)」および「コマンドレットのヘルプ」を参照してください。
 
 1.  参照ホストで、新しいコード整合性ポリシーを生成します。 次のコマンドは、フォールバックにフォールバックして、**パブリッシャー**レベルでポリシーを**作成します。** 次に、XML ファイルをバイナリファイル形式に変換し、HGS は CI ポリシーを適用して測定する必要があります。
 
@@ -101,7 +101,7 @@ Windows Server バージョン1709以降では、サンプルコードの整合�
 
 3.  参照ホストに CI ポリシーを適用します。
 
-    1.  次のコマンドを実行して、CI ポリシーを使用するようにコンピューターを構成します。 また、[グループポリシー](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/deploy-windows-defender-application-control-policies-using-group-policy)または[System Center Virtual Machine Manager](https://docs.microsoft.com/system-center/vmm/guarded-deploy-host?view=sc-vmm-2019#manage-and-deploy-code-integrity-policies-with-vmm)を使用して CI ポリシーを展開することもできます。
+    1.  次のコマンドを実行して、CI ポリシーを使用するようにコンピューターを構成します。 また、[グループポリシー](/windows/security/threat-protection/windows-defender-application-control/deploy-windows-defender-application-control-policies-using-group-policy)または[System Center Virtual Machine Manager](/system-center/vmm/guarded-deploy-host?view=sc-vmm-2019#manage-and-deploy-code-integrity-policies-with-vmm)を使用して CI ポリシーを展開することもできます。
 
         ```powershell
         Invoke-CimMethod -Namespace root/Microsoft/Windows/CI -ClassName PS_UpdateAndCompareCIPolicy -MethodName Update -Arguments @{ FilePath = "C:\temp\HW1CodeIntegrity.p7b" }

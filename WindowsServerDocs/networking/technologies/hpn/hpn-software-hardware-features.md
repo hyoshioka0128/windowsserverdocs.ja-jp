@@ -7,12 +7,12 @@ manager: dougkim
 ms.author: lizross
 author: eross-msft
 ms.date: 09/12/2018
-ms.openlocfilehash: 92ddf9c5d90a963115e4009afea996b8aecf052d
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 3c1b414acaf7487b0a435cfea2891903646c869f
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87966549"
+ms.locfileid: "87995267"
 ---
 # <a name="software-and-hardware-sh-integrated-features-and-technologies"></a>ソフトウェアとハードウェア (SH) の統合された機能とテクノロジ
 
@@ -37,7 +37,7 @@ ms.locfileid: "87966549"
 
 3.  ホストで RDMA 用に指定された vNICs で RDMA が有効になっていることを確認します。
 
-RDMA と SET の詳細については、「[リモートダイレクトメモリアクセス (rdma)」および「スイッチ埋め込みチーミング (set)](https://docs.microsoft.com/windows-server/virtualization/hyper-v-virtual-switch/rdma-and-switch-embedded-teaming)」を参照してください。
+RDMA と SET の詳細については、「[リモートダイレクトメモリアクセス (rdma)」および「スイッチ埋め込みチーミング (set)](../../../virtualization/hyper-v-virtual-switch/rdma-and-switch-embedded-teaming.md)」を参照してください。
 
 ## <a name="data-center-bridging-dcb"></a>Data Center Bridging (DCB)
 
@@ -45,14 +45,14 @@ DCB は、データセンターでの集約型ファブリックを実現する�
 
 DCB の場合、Windows Server は、IEEE 802.1 Qbb で標準化された優先度ベースのフロー制御 (PFC) を使用します。 PFC は、トラフィッククラス内でオーバーフローを防ぐことによって、(ほぼ) ロスレスネットワークファブリックを作成します。 また、Windows Server では、IEEE 802.1 Qaz で標準化された高度な転送の選択 (送信) も使用します。 これにより、最大8つのクラスのトラフィックに対して、帯域幅を予約された部分に分割できるようになります。 各 traffic クラスには独自の送信キューがあり、PFC を使用することにより、クラス内での送信を開始および停止できます。
 
-詳細については、「[データセンターブリッジング」 (DCB)](https://docs.microsoft.com/windows-server/networking/technologies/dcb/dcb-top)を参照してください。
+詳細については、「[データセンターブリッジング」 (DCB)](../dcb/dcb-top.md)を参照してください。
 
 ## <a name="hyper-v-network-virtualization"></a>Hyper-V ネットワーク仮想化
 
 |                            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 |----------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |       **v1 (HNVv1)**       |                     Windows Server 2012 で導入された Hyper-v ネットワーク仮想化 (HNV) を使用すると、共有の物理ネットワークインフラストラクチャ上にある顧客ネットワークを仮想化することができます。 HNV では、物理ネットワークファブリックに必要な変更を最小限に抑えて、サービスプロバイダーは、サービスプロバイダークラウド、プライベートクラウド、または Microsoft Azure パブリッククラウドの3つのクラウド全体で、テナントのワークロードをデプロイおよび移行する機敏性を提供します。                     |
-| **v2 NVGRE (HNVv2 NVGRE)** | Windows Server 2016 および System Center Virtual Machine Manager では、Microsoft は、RAS ゲートウェイ、ソフトウェアの負荷分散、ネットワークコントローラーなどを含むエンドツーエンドのネットワーク仮想化ソリューションを提供します。 詳細については、「 [Windows Server 2016 での Hyper-v ネットワーク仮想化の概要](https://technet.microsoft.com/windows-server-docs/networking/sdn/technologies/hyper-v-network-virtualization/hyperv-network-virtualization-overview-windows-server)」を参照してください。 |
+| **v2 NVGRE (HNVv2 NVGRE)** | Windows Server 2016 および System Center Virtual Machine Manager では、Microsoft は、RAS ゲートウェイ、ソフトウェアの負荷分散、ネットワークコントローラーなどを含むエンドツーエンドのネットワーク仮想化ソリューションを提供します。 詳細については、「 [Windows Server 2016 での Hyper-v ネットワーク仮想化の概要](../../sdn/technologies/hyper-v-network-virtualization/hyperv-network-virtualization-overview-windows-server.md)」を参照してください。 |
 | **v2 VxLAN (HNVv2 VxLAN)** |                                                                                                                                                                                        Windows Server 2016 では、は、ネットワークコントローラーを介して管理する SDN 拡張機能の一部です。                                                                                                                                                                                        |
 
 ---
@@ -74,13 +74,13 @@ PVLAN 分離の詳細については、「 [System Center: Virtual Machine Manag
 
 RDMA は、CPU 使用率を最小限に抑える高スループットで低待機時間の通信を実現するネットワークテクノロジです。 RDMA は、ネットワークアダプターがアプリケーションメモリとの間でデータを直接転送できるようにすることで、ゼロコピーのネットワークをサポートします。 RDMA 対応とは、NIC (物理または仮想) が rdma クライアントに RDMA を公開できることを意味します。 一方、RDMA 対応の NIC では、rdma インターフェイスがスタック上に公開されています。
 
-RDMA の詳細については、「[リモートダイレクトメモリアクセス (rdma) とスイッチ埋め込みチーミング (SET)](https://docs.microsoft.com/windows-server/virtualization/hyper-v-virtual-switch/rdma-and-switch-embedded-teaming)」を参照してください。
+RDMA の詳細については、「[リモートダイレクトメモリアクセス (rdma) とスイッチ埋め込みチーミング (SET)](../../../virtualization/hyper-v-virtual-switch/rdma-and-switch-embedded-teaming.md)」を参照してください。
 
 ## <a name="receive-side-scaling-rss"></a>Receive Side Scaling (RSS)
 
 RSS は、さまざまなストリームのセットを分離、処理のために異なるプロセッサに配信する NIC 機能です。 RSS は、ネットワーク処理を並列化し、ホストが非常に高いデータ速度に拡張できるようにします。
 
-詳細については、「 [Receive Side Scaling (RSS)](https://docs.microsoft.com/windows-hardware/drivers/network/introduction-to-receive-side-scaling)」を参照してください。
+詳細については、「 [Receive Side Scaling (RSS)](/windows-hardware/drivers/network/introduction-to-receive-side-scaling)」を参照してください。
 
 ## <a name="single-root-input-output-virtualization-sr-iov"></a>シングルルート入力-出力仮想化 (SR-IOV)
 
@@ -90,7 +90,7 @@ Sr-iov を使用するトラフィックは、Hyper-v スイッチをバイパ�
 
 将来、2つのテクノロジによって SR-IOV: 汎用フローテーブル (GFT) とハードウェア QoS オフロード (NIC での帯域幅管理) が可能になり、エコシステムの Nic によってサポートされるようになります。 これら2つのテクノロジを組み合わせることにより、すべての Vm に対して sr-iov が有効になり、ポリシー、仮想化、帯域幅管理ルールを適用できるようになるため、sr-iov の一般的なアプリケーションに飛躍を進めることができます。
 
-詳細については、「[シングルルート I/o 仮想化 (sr-iov) の概要](https://docs.microsoft.com/windows-hardware/drivers/network/overview-of-single-root-i-o-virtualization--sr-iov-)」を参照してください。
+詳細については、「[シングルルート I/o 仮想化 (sr-iov) の概要](/windows-hardware/drivers/network/overview-of-single-root-i-o-virtualization--sr-iov-)」を参照してください。
 
 ## <a name="tcp-chimney-offload"></a>TCP Chimney オフロード
 
@@ -101,11 +101,11 @@ Tcp Chimney オフロード (TCP エンジンオフロード (TOE) とも呼ば�
 
 ## <a name="virtual-local-area-network-vlan"></a>仮想ローカルエリアネットワーク (VLAN)
 
-VLAN は、イーサネットフレームヘッダーの拡張機能であり、LAN を複数の Vlan に分割し、それぞれが独自のアドレス空間を使用するようにします。 Windows Server 2016 では、Vlan は Hyper-v スイッチのポートに設定されるか、NIC チーミングチームのチームインターフェイスを設定することによって設定されます。 詳細については、「 [NIC チーミングと仮想ローカルエリアネットワーク (vlan)](https://docs.microsoft.com/windows-server/networking/technologies/nic-teaming/nict-and-vlans)」を参照してください。
+VLAN は、イーサネットフレームヘッダーの拡張機能であり、LAN を複数の Vlan に分割し、それぞれが独自のアドレス空間を使用するようにします。 Windows Server 2016 では、Vlan は Hyper-v スイッチのポートに設定されるか、NIC チーミングチームのチームインターフェイスを設定することによって設定されます。 詳細については、「 [NIC チーミングと仮想ローカルエリアネットワーク (vlan)](../nic-teaming/nic-teaming.md)」を参照してください。
 
 ## <a name="virtual-machine-queue-vmq"></a>仮想マシン キュー (VMQ)
 
-VMQs は、各 VM のキューを割り当てる NIC 機能です。 Hyper-v が有効になっている場合また、VMQ を有効にする必要があります。 Windows Server 2016 では、VMQs は、同じ機能を提供するために、Vports に割り当てられた単一のキューで NIC スイッチ vPorts を使用します。 詳細については、「[仮想 Receive Side Scaling (vRSS)](https://docs.microsoft.com/windows-server/networking/technologies/vrss/vrss-top) 」および「 [NIC チーミング](https://docs.microsoft.com/windows-server/networking/technologies/nic-teaming/nic-teaming)」を参照してください。
+VMQs は、各 VM のキューを割り当てる NIC 機能です。 Hyper-v が有効になっている場合また、VMQ を有効にする必要があります。 Windows Server 2016 では、VMQs は、同じ機能を提供するために、Vports に割り当てられた単一のキューで NIC スイッチ vPorts を使用します。 詳細については、「[仮想 Receive Side Scaling (vRSS)](../vrss/vrss-top.md) 」および「 [NIC チーミング](../nic-teaming/nic-teaming.md)」を参照してください。
 
 ## <a name="virtual-machine-multi-queue-vmmq"></a>バーチャルマシンのマルチキュー (VMMQ)
 

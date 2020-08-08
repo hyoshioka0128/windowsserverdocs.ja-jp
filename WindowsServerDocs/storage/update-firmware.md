@@ -1,19 +1,17 @@
 ---
 ms.assetid: e5945bae-4a33-487c-a019-92a69db8cf6c
 title: ドライブのファームウェアの更新
-ms.prod: windows-server
 ms.author: toklima
 manager: dmoss
-ms.technology: storage-spaces
 ms.topic: article
 author: toklima
 ms.date: 10/04/2016
-ms.openlocfilehash: 0e117b486fd628397bfe36aa897ff64cdd26f98b
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 15e0d6dedc6bb81c0b511479ee342dbd463654e2
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86965834"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87946215"
 ---
 # <a name="updating-drive-firmware"></a>ドライブのファームウェアの更新
 >適用対象: Windows Server 2019、Windows Server 2016、Windows 10
@@ -25,13 +23,13 @@ ms.locfileid: "86965834"
 
 ## <a name="drive-compatibility"></a>ドライブの互換性
 
-Windows Server を使用してドライブのファームウェアを更新するには、サポートされるドライブが必要です。 デバイスの共通の動作を確保するため、マイクロソフトではまず、SAS、SATA、NVMe デバイスに対応する新しい (Windows 10 と Windows Server 2016 用の) オプションのハードウェア ラボ キット (HLK) について要件を定義しました。 この要件では、新しい Windows ネイティブ PowerShell コマンドレットを使用してファームウェアを更新するために、SATA、SAS、NVMe デバイスがサポートする必要があるコマンドの概要を示します。 この要件をサポートするために、ベンダー製品が適切なコマンドをサポート、今後のリビジョンで実装できるかどうかを検証する新しい HLK テストがあります。 
+Windows Server を使用してドライブのファームウェアを更新するには、サポートされるドライブが必要です。 デバイスの共通の動作を確保するため、マイクロソフトではまず、SAS、SATA、NVMe デバイスに対応する新しい (Windows 10 と Windows Server 2016 用の) オプションのハードウェア ラボ キット (HLK) について要件を定義しました。 この要件では、新しい Windows ネイティブ PowerShell コマンドレットを使用してファームウェアを更新するために、SATA、SAS、NVMe デバイスがサポートする必要があるコマンドの概要を示します。 この要件をサポートするために、ベンダー製品が適切なコマンドをサポート、今後のリビジョンで実装できるかどうかを検証する新しい HLK テストがあります。
 
 お使いのハードウェアが、Windows によるドライブのファームウェア更新をサポートしているかどうかについては、ソリューション ベンダーに問い合わせてください。
 次に、多様な要件のリンクを示します。
 
 -   SATA: [Device.Storage.Hd.Sata](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127250(v=ws.11)#devicestoragehdsata) - **[実装している場合\] 「Firmware Download & Activate**」(ファームウェアのダウンロードとアクティブ化) セクション
-    
+
 -   SAS: [Device.Storage.Hd.Sas](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127250(v=ws.11)#devicestoragehdsas) - **[実装している場合\] 「Firmware Download & Activate**」(ファームウェアのダウンロードとアクティブ化) セクション
 
 -   NVMe: [Device.Storage.ControllerDrive.NVMe](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127250(v=ws.11)#devicestoragecontrollerdrivenvme) - セクション **5.7** と **5.8**。
@@ -65,7 +63,7 @@ SAS デバイスは常に “SupportsUpdate” を “True” とレポートす
 
 ドライブでは、まず新しいファームウェア イメージが内部ステージング領域に読み込まれます。 通常、この処理中も I/O は継続されます。 イメージはダウンロード後にアクティブ化されます。 この処理の間、内部のリセットが発生するので、ドライブは I/O コマンドに応答しなくなります。 つまり、アクティブ化中にこのドライブはデータを提供しません。 このドライブ上のデータにアクセスするアプリケーションは、ファームウェアのアクティブ化が完了するまで応答を待つことになります。 このコマンドレットの実行例を以下に示します。
 
-   ```powershell 
+   ```powershell
    $pd | Update-StorageFirmware -ImagePath C:\Firmware\J3E160@3.enc -SlotNumber 0
    $pd | Get-StorageFirmwareInformation
 
@@ -81,7 +79,7 @@ SAS デバイスは常に “SupportsUpdate” を “True” とレポートす
 
 このドライブは、次のように、5.8 秒以内でファームウェアの更新を完了しました。
 
-```powershell 
+```powershell
 Measure-Command {$pd | Update-StorageFirmware -ImagePath C:\\Firmware\\J3E16101.enc -SlotNumber 0}
 
  Days : 0

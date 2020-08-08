@@ -6,14 +6,12 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 06/18/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 1b156701090acc79a63afab26653f42044a23741
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 0ac2a3b67b0c3407db017c63d5e5187d36f08aa5
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966544"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87958850"
 ---
 # <a name="securing-domain-controllers-against-attack"></a>攻撃に対してドメイン コントローラーをセキュリティで保護する
 

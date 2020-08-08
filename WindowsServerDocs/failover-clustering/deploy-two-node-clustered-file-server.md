@@ -1,19 +1,17 @@
 ---
 title: 2ノードのクラスター化されたファイルサーバーの展開
 description: この記事では、2ノードのファイルサーバークラスターの作成について説明します。
-ms.prod: windows-server
 manager: eldenc
-ms.technology: failover-clustering
 ms.topic: article
 author: johnmarlin-msft
 ms.author: johnmar
 ms.date: 02/01/2019
-ms.openlocfilehash: 96f4d344aba989136c5010762d385c543c39dac2
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: b91aeadcce645797f42a029f7a8c82371b42d618
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87177958"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87968009"
 ---
 # <a name="deploying-a-two-node-clustered-file-server"></a>2ノードのクラスター化されたファイルサーバーの展開
 
@@ -126,7 +124,7 @@ Windows Server 2016 または Windows Server 2019 のフェールオーバーク
 
 手順 3: クラスター構成を検証する
 
-手順 4: クラスターを作成する
+手順 4:クラスターを作成する
 
 クラスターノードが既にインストールされており、ファイルサーバーのフェールオーバークラスターを構成する場合は、このガイドの「2ノードのファイルサーバークラスターを構成するための手順」を参照してください。
 
@@ -276,7 +274,7 @@ Windows Server 2016 または Windows Server 2019 のフェールオーバーク
    > [!NOTE]
    > 静的 IP アドレスを使用している場合は、使用するネットワークを選択し、クラスター名に使用する IP アドレスを入力する必要があります。  IP アドレスに DHCP を使用している場合は、IP アドレスが自動的に構成されます。
 
-6. **[次へ]** を選択します。
+6. **[次へ]** をクリックします。
 
 7. [**確認**] ページで、構成した内容を確認し、[**次へ**] を選択してクラスターを作成します。
 
@@ -323,7 +321,7 @@ Windows Server 2016 または Windows Server 2019 のフェールオーバーク
    > [!NOTE]
    > 静的 IP アドレスを使用している場合は、使用するネットワークを選択し、クラスター名に使用する IP アドレスを入力する必要があります。  IP アドレスに DHCP を使用している場合は、IP アドレスが自動的に構成されます。
 
-6. **[次へ]** を選択します。
+6. **[次へ]** をクリックします。
 
 7. **[記憶域の選択**] ウィンドウで、共有を保持する追加のドライブ (ミラーリング監視サーバーではない) を選択し、[**次へ**] をクリックします。
 

@@ -2,17 +2,16 @@
 title: 記憶域スペース ダイレクトのパフォーマンス履歴
 ms.author: cosdar
 manager: eldenc
-ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 09/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ce984d3a88f46b77773c524e5b75135930e1bb03
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: f3c0babfad0ebecdac40262a783ecf683d6dc1e8
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961794"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87968789"
 ---
 # <a name="performance-history-for-storage-spaces-direct"></a>記憶域スペース ダイレクトのパフォーマンス履歴
 
@@ -226,6 +225,6 @@ Stop-ClusterPerformanceHistory -DeleteHistory
 
 5. 前の手順のコマンドで何も返されない場合は、PowerShell でを実行して、ヘルスサービス (パフォーマンス履歴を収集する) を再起動することができ `Stop-ClusterResource Health ; Start-ClusterResource Health` ます。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
-- [記憶域スペースダイレクトの概要](storage-spaces-direct-overview.md)
+- [記憶域スペース ダイレクトの概要](storage-spaces-direct-overview.md)

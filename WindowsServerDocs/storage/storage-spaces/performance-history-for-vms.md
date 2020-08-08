@@ -2,17 +2,16 @@
 title: 仮想マシンのパフォーマンス履歴
 ms.author: cosdar
 manager: eldenc
-ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 09/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 6077e72ba36c0ef2d0d34da4768aaf9fa5137fbe
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: dcf866d1de675f914d469783b1194e55adf63cb8
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955224"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87968729"
 ---
 # <a name="performance-history-for-virtual-machines"></a>仮想マシンのパフォーマンス履歴
 
@@ -74,6 +73,6 @@ Get-VM <Name> | Get-ClusterPerf
    > [!NOTE]
    > Get VM コマンドレットは、クラスター全体ではなく、ローカルサーバーまたは指定されたサーバー上のバーチャルマシンのみを返します。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [記憶域スペース ダイレクトのパフォーマンス履歴](performance-history.md)

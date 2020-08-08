@@ -6,14 +6,12 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: bc573ac40c235eb421618bac5a89472cfe61d029
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 76bda25100766524fde490c0afc4b92b9d9fb7b7
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519529"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87968039"
 ---
 # <a name="install-a-replica-windows-server-2012-domain-controller-in-an-existing-domain-level-200"></a>Windows Server 2012 のレプリカ ドメイン コントローラーを既存のドメインにインストールする (レベル 200)
 
@@ -120,7 +118,7 @@ Install-AddsDomainController
 
 ```
 
-最後に、暗号化したパスワードをファイルに保存して後で使用することができます。こうするとクリア テキストのパスワードを表示せずに済みます。 次に例を示します。
+最後に、暗号化したパスワードをファイルに保存して後で使用することができます。こうするとクリア テキストのパスワードを表示せずに済みます。 例:
 
 ```
 $file = "c:\pw.txt"
@@ -219,7 +217,7 @@ Active Directory Paths ADDSDeployment コマンドレット引数は以下のと
 
 サーバー マネージャーの **[オプションの確認]** ページにあるオプションの **[スクリプトの表示]** ボタンを使用すると、現在の ADDSDeployment モジュール構成を単一の Windows PowerShell スクリプトとして含む Unicode テキスト ファイルを作成することもできます。 これにより、サーバー マネージャーのグラフィカル インターフェイスを Windows PowerShell 展開スタジオとして使用できます。 Active Directory ドメイン サービス構成ウィザードを使用してオプションを構成し、構成をエクスポートした後、ウィザードをキャンセルします。  これによって有効で正しい構文のサンプルが作成されるので、それをさらに変更したり、直接使用したりできます。
 
-次に例を示します。
+例:
 
 ```
 #
@@ -310,7 +308,7 @@ Windows PowerShell を使用してドメインコントローラーをリモー�
 invoke-command {install-addsdomaincontroller "domainname <domain> -credential (get-credential)} -computername <dc name>
 ```
 
-次に例を示します。
+例:
 
 ![レプリカをインストールする](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_PSUpgradeExample.gif)
 

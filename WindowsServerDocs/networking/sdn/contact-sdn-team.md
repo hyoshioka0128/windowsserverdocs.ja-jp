@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: f9945c55-c2d0-448f-86dd-8c734e1b2987
 ms.author: anpaul
 author: AnirbanPaul
-ms.openlocfilehash: fe5b9bc8c8b3b888b3c11a72c39756374cde566c
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: d9bba302c80a810e44c41079d7041b49741fd5b4
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970829"
+ms.locfileid: "87995248"
 ---
 # <a name="contact-the-datacenter-and-cloud-networking-team"></a>データセンターおよびクラウド ネットワーク チームへのお問い合わせ
 
@@ -31,10 +31,10 @@ GitHub リポジトリから SDN チームに問題を送信するに[は、こ�
 
 > GitHub は、ツイートに簡単に適合させることができるものよりも詳細な情報が含まれているトピックに関するお問い合わせに最適な場所です。 *SDN のデプロイに関するヘルプが必要ですか?お客様の組織固有のニーズにどのような機能がどのように適合しているかわからない場合は、潜在的なバグによって保持されているか。* GitHub の問題を送信することによって、お客様と連絡を取ることができるすばらしい理由です。
 
-## <a name="microsoft-docs"></a>[Microsoft Docs](https://docs.microsoft.com/)
-[コンテナーネットワークのドキュメント](https://docs.microsoft.com/virtualization/windowscontainers/manage-containers/container-networking)は[Microsoft Docs (docs.microsoft.com)](https://docs.microsoft.com/)にあります。これには、**コメント機能が組み込ま**れています。 サインインしたときにコメントに返信したり Microsoft Docs に返信したりするには、参照する Microsoft Docs ページの一番下までスクロールし、コメントを作成して送信します。
+## <a name="microsoft-docs"></a>[Microsoft Docs](/)
+[コンテナーネットワークのドキュメント](/virtualization/windowscontainers/manage-containers/container-networking)は[Microsoft Docs (docs.microsoft.com)](/)にあります。これには、**コメント機能が組み込ま**れています。 サインインしたときにコメントに返信したり Microsoft Docs に返信したりするには、参照する Microsoft Docs ページの一番下までスクロールし、コメントを作成して送信します。
 
-> [Microsoft Docs](https://docs.microsoft.com/)は、Microsoft の新しい統合ドキュメントサイトです。 私たちのチームの[SDN ドキュメント](https://technet.microsoft.com/windows-server-docs/networking/sdn/software-defined-networking)のほとんどは TechNet に残されていますが、[コンテナーネットワークのドキュメント](https://docs.microsoft.com/virtualization/windowscontainers)は Microsoft Docs にあります。
+> [Microsoft Docs](/)は、Microsoft の新しい統合ドキュメントサイトです。 私たちのチームの[SDN ドキュメント](./software-defined-networking.md)のほとんどは TechNet に残されていますが、[コンテナーネットワークのドキュメント](/virtualization/windowscontainers)は Microsoft Docs にあります。
 >
 > *一般に、質問をわきしたり、さらに多くのことを希望したりする Microsoft Docs に関するトピックが表示される場合は、そのページにコメントを残して、お客様のフィードバックを Microsoft チームと共有してください。*
 

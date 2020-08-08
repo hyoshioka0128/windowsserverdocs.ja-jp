@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: 4ca50ea8-6987-4081-acd5-5bf9ead62acd
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 9d820acc69e71c5236dbff799f58c35e02f0d161
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: f67609fff7f5de7cd1b53d73dcf86faaec9dec64
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970429"
+ms.locfileid: "87995462"
 ---
 # <a name="step-1-plan-directaccess-infrastructure"></a>手順 1. DirectAccess インフラストラクチャを計画する
 
@@ -44,7 +44,7 @@ ms.locfileid: "87970429"
 
     DirectAccess は、IPv6 と IPsec を組み合わせて、DirectAccess クライアント コンピューターと企業内部ネットワークとの間にセキュリティで保護された接続を確立します。 ただし、DirectAccess は、IPv6 インターネットへの接続または内部ネットワーク上でのネイティブ IPv6 サポートを必ずしも必要とはしません。 その代わりに、IPv6 移行テクノロジを自動的に構成、使用して、IPv4 インターネット上 (6to4、Teredo、IP-HTTPS) および IPv4 専用イントラネット上 (NAT64 または ISATAP) で IPv6 トラフィックをトンネリングします。 このような移行テクノロジの概要については、次のリソースを参照してください。
 
-    - [IPv6 移行テクノロジ](/previous-versions//bb726951(v=technet.10))
+    - [IPv6 移行テクノロジ](/previous-versions/bb726951(v=technet.10))
 
     - [IP-HTTPS Tunneling Protocol Specification (IP-HTTPS トンネリング プロトコルの仕様)](/openspecs/windows_protocols/ms-iphttps/f1bf1125-49c2-4246-9c75-5d4fc9706b56)
 

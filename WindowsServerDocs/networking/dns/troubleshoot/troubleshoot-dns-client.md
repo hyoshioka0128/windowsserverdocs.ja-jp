@@ -2,17 +2,16 @@
 title: DNS クライアントのトラブルシューティング
 description: この記事では、クライアント側からの DNS の問題をトラブルシューティングする方法について説明します。
 manager: dcscontentpm
-ms.technology: networking-dns
 ms.topic: article
 ms.author: delhan
 ms.date: 8/8/2019
 author: Deland-Han
-ms.openlocfilehash: 2a9b44807ae6bc9f4c446d4af2150caf09955899
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 8098f49c0a48004c54e4acc67522d61d4b30717c
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182338"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87958640"
 ---
 # <a name="troubleshooting-dns-clients"></a>DNS クライアントのトラブルシューティング
 
@@ -118,7 +117,7 @@ nslookup app1.corp.contoso.com
 nslookup <external name>
 ```
 
-次に例を示します。
+例:
 ```cmd
 nslookup bing.com
 ```

@@ -1,18 +1,16 @@
 ---
 title: RC4 秘密キーを使用する Kerberos 変更パスワードの防止
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: de207d55-aa3d-4c16-bd3b-496db43663a4
 manager: alanth
 author: justinha
-ms.technology: security-credential-protection-and-management
 ms.date: 11/09/2016
-ms.openlocfilehash: 4b335ca4432f17acd60d9246de81081cf0441552
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 4069d88c6c46415417cb3e0e03a539e5b7118f33
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858825"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87968739"
 ---
 # <a name="preventing-kerberos-change-password-that-uses-rc4-secret-keys"></a>Kerberos での RC4 秘密キーを使用するパスワードの変更を防ぐ
 
@@ -20,11 +18,11 @@ ms.locfileid: "80858825"
 
 IT 担当者向けのこのトピックでは、悪意のあるユーザーがユーザーのアカウントを制御する可能性がある、Kerberos プロトコルのいくつかの制限事項について説明します。 Kerberos ネットワーク認証サービス (V5) 標準 (RFC 4120) には、業界内でよく知られている制限があります。攻撃者がユーザーとして認証したり、攻撃者がユーザーの秘密キーを知っていれば、そのユーザーのパスワードを変更したりできます。
 
-ユーザーのパスワードで派生した Kerberos シークレットキー (既定では RC4 および Advanced Encryption Standard [AES]) の所有は、RFC 4757 に従って Kerberos パスワード変更交換中に検証されます。 ユーザーのプレーンテキストパスワードがキー配布センター (KDC) に提供されることはありません。既定では、Active Directory ドメインコントローラーは、アカウントのプレーンテキストパスワードのコピーを保持しません。 ドメインコントローラーが Kerberos 暗号化の種類をサポートしていない場合は、その秘密キーを使用してパスワードを変更することはできません。 
+ユーザーのパスワードで派生した Kerberos シークレットキー (既定では RC4 および Advanced Encryption Standard [AES]) の所有は、RFC 4757 に従って Kerberos パスワード変更交換中に検証されます。 ユーザーのプレーンテキストパスワードがキー配布センター (KDC) に提供されることはありません。既定では、Active Directory ドメインコントローラーは、アカウントのプレーンテキストパスワードのコピーを保持しません。 ドメインコントローラーが Kerberos 暗号化の種類をサポートしていない場合は、その秘密キーを使用してパスワードを変更することはできません。
 
 このトピックの冒頭にある「適用対象」の一覧に記載されている Windows オペレーティングシステムでは、次の3つの方法で、Kerberos を使用してパスワードを変更できないようにします。
 
-- アカウントを含めるようにユーザーアカウントを構成する対話型ログオンにはスマートカードが必要です。 これにより、ユーザーは、有効なスマートカードを使用したサインインのみに制限されるため、RC4 認証サービスの要求が拒否されます。 アカウントのアカウントオプションを設定するには、アカウントを右クリックし、[プロパティ] をクリックして、[アカウント] タブをクリックします。 
+- アカウントを含めるようにユーザーアカウントを構成する対話型ログオンにはスマートカードが必要です。 これにより、ユーザーは、有効なスマートカードを使用したサインインのみに制限されるため、RC4 認証サービスの要求が拒否されます。 アカウントのアカウントオプションを設定するには、アカウントを右クリックし、[プロパティ] をクリックして、[アカウント] タブをクリックします。
 
 - すべてのドメインコントローラーで、Kerberos の RC4 サポートを無効にします。 これには、Windows Server 2008 ドメインの機能レベルと、ドメインとの間のすべての Kerberos クライアント、アプリケーションサーバー、および信頼関係が AES をサポートする必要がある環境が必要です。 AES のサポートは、Windows Server 2008 および Windows Vista で導入されました。
 

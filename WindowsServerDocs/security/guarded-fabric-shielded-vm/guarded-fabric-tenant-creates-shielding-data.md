@@ -6,12 +6,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 09/25/2019
-ms.openlocfilehash: 296de5fbb7387e469d7e1ce39a477366dd274bbb
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: c9d1237caeb5838d1e95d00ec9afab9eeb436fd4
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87936753"
+ms.locfileid: "87995480"
 ---
 # <a name="shielded-vms-for-tenants---creating-shielding-data-to-define-a-shielded-vm"></a>テナント用のシールドされた Vm-シールドされた VM を定義するシールドデータの作成
 
@@ -39,7 +39,7 @@ ms.locfileid: "87936753"
 
 テナントはリモートデスクトップ接続またはその他のリモート管理ツールを使用してシールドされた Vm にしか接続できないため、テナントが適切なエンドポイントに接続していることを確認できることを確認することが重要です (つまり、接続を遮断する "man-in-the-middle" はありません)。
 
-目的のサーバーに接続していることを確認する方法の1つとして、接続の開始時に提示するリモートデスクトップサービス用の証明書をインストールして構成する方法があります。 サーバーに接続しているクライアントコンピューターは、証明書が信頼されているかどうかを確認し、存在しない場合は警告を表示します。 一般に、接続しているクライアントが証明書を信頼していることを確認するために、RDP 証明書はテナントの PKI から発行されます。 [リモートデスクトップサービスでの証明書の使用](https://technet.microsoft.com/library/dn781533.aspx)の詳細については、TechNet を参照してください。
+目的のサーバーに接続していることを確認する方法の1つとして、接続の開始時に提示するリモートデスクトップサービス用の証明書をインストールして構成する方法があります。 サーバーに接続しているクライアントコンピューターは、証明書が信頼されているかどうかを確認し、存在しない場合は警告を表示します。 一般に、接続しているクライアントが証明書を信頼していることを確認するために、RDP 証明書はテナントの PKI から発行されます。 [リモートデスクトップサービスでの証明書の使用](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn781533(v=ws.11))の詳細については、TechNet を参照してください。
 
  カスタム RDP 証明書を取得する必要があるかどうかを判断するために、次の点を考慮してください。
 
@@ -103,7 +103,7 @@ VMM の署名済みテンプレートディスクは一般化されているた�
 また、テーブルの末尾に向かうネットワーク関連の代替文字列は、VMM 静的 IP アドレスプールを利用している場合にのみ使用されることに注意してください。 これらの置換文字列が必要であるかどうかは、ホスティングサービスプロバイダーから通知されます。 VMM テンプレートでの静的 IP アドレスの詳細については、VMM のドキュメントの次の情報を参照してください。
 
 - [IP アドレス プールに関するガイドライン](https://technet.microsoft.com/system-center-docs/vmm/plan/plan-network#guidelines-for-ip-address-pools)
-- [VMM ファブリックでの静的 IP アドレス プールの設定](https://technet.microsoft.com/system-center-docs/vmm/manage/manage-network-static-address-pools)
+- [VMM ファブリックでの静的 IP アドレス プールの設定](/system-center/vmm/network-pool?view=sc-vmm-2019)
 
 最後に、シールドされた VM の展開プロセスでは、OS ドライブのみが暗号化されることに注意する必要があります。 1つまたは複数のデータドライブを含むシールドされた VM をデプロイする場合は、データドライブを自動的に暗号化するために、無人コマンドまたはグループポリシー設定をテナントドメインに追加することを強くお勧めします。
 
@@ -206,10 +206,10 @@ VMM の署名済みテンプレートディスクは一般化されているた�
 
 ## <a name="create-a-shielding-data-file-and-add-guardians-using-powershell"></a>PowerShell を使用してシールドデータファイルを作成し、ガーディアンを追加する
 
-シールドデータファイルウィザードの代わりに、 [ShieldingDataFile](https://docs.microsoft.com/powershell/module/shieldedvmdatafile/new-shieldingdatafile?view=win10-ps)を実行してシールドデータファイルを作成することもできます。
+シールドデータファイルウィザードの代わりに、 [ShieldingDataFile](/powershell/module/shieldedvmdatafile/new-shieldingdatafile?view=win10-ps)を実行してシールドデータファイルを作成することもできます。
 
 シールドされた Vm が保護されたファブリックで実行されることを承認するには、すべてのシールドデータファイルを正しい所有者およびガーディアン証明書で構成する必要があります。
-[HgsGuardian](https://docs.microsoft.com/powershell/module/hgsclient/get-hgsguardian?view=win10-ps)を実行すると、ローカルにガーディアンがインストールされているかどうかを確認できます。 所有者のガーディアンには秘密キーがありますが、データセンターのガーディアンでは通常は使用されません。
+[HgsGuardian](/powershell/module/hgsclient/get-hgsguardian?view=win10-ps)を実行すると、ローカルにガーディアンがインストールされているかどうかを確認できます。 所有者のガーディアンには秘密キーがありますが、データセンターのガーディアンでは通常は使用されません。
 
 所有者ガーディアンを作成する必要がある場合は、次のコマンドを実行します。
 
@@ -251,7 +251,7 @@ New-ShieldingDataFile -ShieldingDataFilePath "C:\temp\Marketing-LBI.pdk" -Policy
 パラメーターにボリューム ID 修飾子のコンマ区切りの一覧を指定することで、複数のテンプレートディスクを信頼でき `-VolumeIDQualifier` ます。
 最後に、VM に応答ファイルを添付する必要がある他のファイルがある場合は、パラメーターを使用 `-OtherFile` してファイルパスのコンマ区切りリストを指定します。
 
-シールドデータファイルを構成するためのその他の方法については、 [ShieldingDataFile](https://docs.microsoft.com/powershell/module/shieldedvmdatafile/New-ShieldingDataFile?view=win10-ps)と[New-VolumeIDQualifier](https://docs.microsoft.com/powershell/module/shieldedvmdatafile/New-VolumeIDQualifier?view=win10-ps)のコマンドレットのドキュメントを参照してください。
+シールドデータファイルを構成するためのその他の方法については、 [ShieldingDataFile](/powershell/module/shieldedvmdatafile/new-shieldingdatafile?view=win10-ps)と[New-VolumeIDQualifier](/powershell/module/shieldedvmdatafile/New-VolumeIDQualifier?view=win10-ps)のコマンドレットのドキュメントを参照してください。
 
 ## <a name="additional-references"></a>その他の参照情報
 

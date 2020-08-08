@@ -6,14 +6,12 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 273651b8be1352218feb76c50cfd39cf9580a8a3
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 0b83588268e6a6c8dd685082b3862520fcbd80d5
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519549"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87968259"
 ---
 # <a name="install-a-new-windows-server-2012-active-directory-forest-level-200"></a>Windows Server 2012 の新しい Active Directory フォレストをインストールする (レベル 200)
 
@@ -286,7 +284,7 @@ DNS 委任を作成する必要があるかどうかの詳細については、�
 
 [**オプションの確認**] ページでは、インストールを開始する前に、設定を確認し、それらが要件を満たしているかどうか確認することができます。 これがサーバー マネージャーの使用中においてインストールを中止する最後の機会ではありません。 構成を続行する前に設定を確認するためのオプションにすぎません。
 
-サーバー マネージャーの **[オプションの確認]** ページにあるオプションの **[スクリプトの表示]** ボタンを使用すると、現在の ADDSDeployment モジュール構成を単一の Windows PowerShell スクリプトとして含む Unicode テキスト ファイルを作成することもできます。 これにより、サーバー マネージャーのグラフィカル インターフェイスを Windows PowerShell 展開スタジオとして使用できます。 Active Directory ドメイン サービス構成ウィザードを使用してオプションを構成し、構成をエクスポートした後、ウィザードをキャンセルします。 これによって有効で正しい構文のサンプルが作成されるので、それをさらに変更したり、直接使用したりできます。 次に例を示します。
+サーバー マネージャーの **[オプションの確認]** ページにあるオプションの **[スクリプトの表示]** ボタンを使用すると、現在の ADDSDeployment モジュール構成を単一の Windows PowerShell スクリプトとして含む Unicode テキスト ファイルを作成することもできます。 これにより、サーバー マネージャーのグラフィカル インターフェイスを Windows PowerShell 展開スタジオとして使用できます。 Active Directory ドメイン サービス構成ウィザードを使用してオプションを構成し、構成をエクスポートした後、ウィザードをキャンセルします。 これによって有効で正しい構文のサンプルが作成されるので、それをさらに変更したり、直接使用したりできます。 例:
 
 ```powershell
 #
@@ -365,7 +363,7 @@ ServerManager 内のエイリアスとコマンドレットをエクスポート
 Get-Command -module ServerManager
 ```
 
-次に例を示します。
+例:
 
 ![新しいフォレストをインストールする](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_PSGetCommand.png)
 
@@ -381,7 +379,7 @@ AD DS の管理ツールもインストールしたい場合は (強くお勧め
 Install-WindowsFeature -name AD-Domain-Services -IncludeManagementTools
 ```
 
-次に例を示します。
+例:
 
 ![新しいフォレストをインストールする](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_PSInstallWinFeature.png)
 
@@ -415,7 +413,7 @@ Get-WindowsFeature | where displayname -like "*active dir*"
 Get-WindowsFeature | where {$_.displayname - like "*active dir*"}
 ```
 
-Windows PowerShell パイプラインを使用することで、判読しやすい結果が生成されます。 次に例を示します。
+Windows PowerShell パイプラインを使用することで、判読しやすい結果が生成されます。 例:
 
 ```powershell
 Install-WindowsFeature | Format-List
@@ -493,7 +491,7 @@ Install-ADDSForest
 -safemodeadministratorpassword (convertto-securestring "Password1" -asplaintext -force)
 ```
 
-最後に、暗号化したパスワードをファイルに保存して後で使用することができます。こうするとクリア テキストのパスワードを表示せずに済みます。 次に例を示します。
+最後に、暗号化したパスワードをファイルに保存して後で使用することができます。こうするとクリア テキストのパスワードを表示せずに済みます。 例:
 
 ```powershell
 $file = "c:\pw.txt"
@@ -540,7 +538,7 @@ ADDSDeployment コマンドレットには、DNS クライアント設定、フ�
 
 構成情報を確認するには、**Install-ADDSForest** コマンドレットと共にオプションの **Whatif** 引数を使用します。 これによって、コマンドレットの引数の明示的な値と暗黙的な値を確認できます。
 
-次に例を示します。
+例:
 
 ![新しいフォレストをインストールする](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_PSPaths.png)
 

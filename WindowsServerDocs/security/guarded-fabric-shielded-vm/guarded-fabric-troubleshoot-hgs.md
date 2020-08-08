@@ -6,12 +6,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 09/25/2019
-ms.openlocfilehash: 21c29c8432d9f578a50130719c61a255fdb5c649
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: fa6b0bb75752d29b4deaa510eca2293abab4a15c
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87944082"
+ms.locfileid: "87995327"
 ---
 # <a name="troubleshooting-the-host-guardian-service"></a>ホストガーディアンサービスのトラブルシューティング
 
@@ -165,7 +165,7 @@ HGS サーバーの構成証明モードは、 [HgsServer](https://technet.micro
 
 ## <a name="endorsement-key-certificate-error-messages"></a>保証キー証明書のエラーメッセージ
 
-[HgsAttestationTpmHost](https://docs.microsoft.com/powershell/module/hgsattestation/add-hgsattestationtpmhost)コマンドレットを使用してホストを登録すると、提供されているプラットフォーム識別子ファイルから、保証キー証明書 (EKcert) と公開保証キー (EKpub) の2つの TPM 識別子が抽出されます。
+[HgsAttestationTpmHost](/powershell/module/hgsattestation/add-hgsattestationtpmhost)コマンドレットを使用してホストを登録すると、提供されているプラットフォーム識別子ファイルから、保証キー証明書 (EKcert) と公開保証キー (EKpub) の2つの TPM 識別子が抽出されます。
 EKcert は TPM の製造元を識別し、TPM が本物であり、通常のサプライチェーンによって製造されていることを保証します。
 EKpub は、特定の TPM を一意に識別します。これは、HGS がシールドされた Vm を実行するためのホストアクセスを許可するために使用するメジャーの1つです。
 
@@ -175,7 +175,7 @@ EKpub は、特定の TPM を一意に識別します。これは、HGS がシ�
 
 特定の TPM 製造元には、EKcerts が Tpm に含まれていません。
 TPM でこれが発生していると思われる場合は、Tpm に EKcert がないことを OEM に確認し、フラグを使用して `-Force` ホストを HGS に手動で登録してください。
-TPM に EKcert が含まれていても、プラットフォーム識別子ファイルに見つからなかった場合は、ホストで[Get PlatformIdentifier](https://docs.microsoft.com/powershell/module/platformidentifier/get-platformidentifier)を実行するときに、管理者 (管理者特権) の PowerShell コンソールを使用していることを確認してください。
+TPM に EKcert が含まれていても、プラットフォーム識別子ファイルに見つからなかった場合は、ホストで[Get PlatformIdentifier](/powershell/module/platformidentifier/get-platformidentifier)を実行するときに、管理者 (管理者特権) の PowerShell コンソールを使用していることを確認してください。
 
 EKcert が信頼できないというエラーが表示された場合は、各 HGS サーバーに[信頼できる tpm ルート証明書パッケージがインストールさ](guarded-fabric-install-trusted-tpm-root-certificates.md)れていること、および tpm ベンダーのルート証明書がローカルコンピューターの**trustedtpm \_ rootca**ストアに存在していることを確認してください。 適用可能な中間証明書は、ローカルコンピューターの**Trustedtpm \_ IntermediateCA**ストアにもインストールする必要があります。
 ルート証明書と中間証明書をインストールすると、正常に実行できるようになり `Add-HgsAttestationTpmHost` ます。
