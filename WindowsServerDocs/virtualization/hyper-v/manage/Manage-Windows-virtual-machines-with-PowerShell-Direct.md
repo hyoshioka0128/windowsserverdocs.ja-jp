@@ -7,12 +7,12 @@ ms.assetid: b5715c02-a90f-4de9-a71e-0fc09093ba2d
 author: kbdazure
 ms.author: kathydav
 ms.date: 10/04/2016
-ms.openlocfilehash: 97f8c2a0bcfec3699593e5162ede8cff3e411b0d
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 654767901607207ff1dea74201e1b7ede3c38ae0
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87941977"
+ms.locfileid: "87997464"
 ---
 # <a name="manage-windows-virtual-machines-with-powershell-direct"></a>PowerShell Direct を使用して Windows 仮想マシンを管理する
 
@@ -26,13 +26,13 @@ PowerShell ダイレクトを実行するには、次の 2 つの方法があり
 
 - Invoke-command コマンドレットにスクリプトまたはコマンドを実行します。
 
-以前の仮想マシンを管理している場合は、仮想マシン接続 (VMConnect) を使用するか、[仮想マシン用の仮想ネットワークを構成します](https://technet.microsoft.com/library/cc816585.aspx)。
+以前の仮想マシンを管理している場合は、仮想マシン接続 (VMConnect) を使用するか、[仮想マシン用の仮想ネットワークを構成します](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc816585(v=ws.10))。
 
 ## <a name="create-and-exit-a-powershell-direct-session-using-pssession-cmdlets"></a>作成し、PSSession コマンドレットを使用して、直接の PowerShell セッションを終了します。
 
 1. Hyper-V ホストで、管理者として Windows PowerShell を開きます。
 
-2. 仮想マシンに接続するには、 [PSSession](https://technet.microsoft.com/library/hh849707.aspx)コマンドレットを使用します。 次のコマンドのいずれかを実行して、仮想マシン名または GUID を使用してセッションを作成します。
+2. 仮想マシンに接続するには、 [PSSession](/powershell/module/microsoft.powershell.core/enter-pssession?view=powershell-7)コマンドレットを使用します。 次のコマンドのいずれかを実行して、仮想マシン名または GUID を使用してセッションを作成します。
 
     ```
     Enter-PSSession -VMName <VMName>
@@ -45,14 +45,14 @@ PowerShell ダイレクトを実行するには、次の 2 つの方法があり
 3. 仮想マシンの資格情報を入力します。
 4. 必要がある任意のコマンドを実行します。 これらのコマンドは、使用してセッションを作成した仮想マシンで実行します。
 
-5.  完了したら、[出口](https://technet.microsoft.com/library/hh849743.aspx)を使用してセッションを終了します。
+5.  完了したら、[出口](/powershell/module/microsoft.powershell.core/exit-pssession?view=powershell-7)を使用してセッションを終了します。
 
     ```
     Exit-PSSession
     ```
 
 ## <a name="run-script-or-command-with-invoke-command-cmdlet"></a>Invoke-command コマンドレットにスクリプトまたはコマンドを実行します。
-[Invoke-Command](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Invoke-Command) コマンドレットを使用して、あらかじめ設定された一連のコマンドを仮想マシン上で実行できます。 仮想マシン名が PSTest であり、実行するスクリプト (foo.ps1) が C:/ ドライブ上のスクリプト フォルダー内にある場合に、Invoke-Command コマンドレットを使用する方法の例を以下に示します。
+[Invoke-Command](/powershell/module/Microsoft.PowerShell.Core/Invoke-Command) コマンドレットを使用して、あらかじめ設定された一連のコマンドを仮想マシン上で実行できます。 仮想マシン名が PSTest であり、実行するスクリプト (foo.ps1) が C:/ ドライブ上のスクリプト フォルダー内にある場合に、Invoke-Command コマンドレットを使用する方法の例を以下に示します。
 
 ```
 Invoke-Command -VMName PSTest  -FilePath C:\script\foo.ps1
@@ -77,12 +77,9 @@ Invoke-Command -VMName PSTest  -ScriptBlock { cmdlet }
 
 -   仮想マシンは Windows 10 または Windows Server 2016 以降を実行している必要があります。
 
-[GET VM](https://docs.microsoft.com/powershell/module/hyper-v/get-vm)コマンドレットを使用して、使用している資格情報が hyper-v の管理者ロールを持っていることを確認し、ホスト上でローカルに実行されている仮想マシンの一覧を取得して、起動します。
+[GET VM](/powershell/module/hyper-v/get-vm)コマンドレットを使用して、使用している資格情報が hyper-v の管理者ロールを持っていることを確認し、ホスト上でローカルに実行されている仮想マシンの一覧を取得して、起動します。
 
 ## <a name="see-also"></a>参照
-「 [-PSSession](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession) 
- 」と入力します。[終了-PSSession](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession) 
-[Invoke コマンド](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Invoke-Command)
-
-
-
+「 [-PSSession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession) 
+ 」と入力します。[終了-PSSession](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession) 
+[Invoke コマンド](/powershell/module/Microsoft.PowerShell.Core/Invoke-Command)

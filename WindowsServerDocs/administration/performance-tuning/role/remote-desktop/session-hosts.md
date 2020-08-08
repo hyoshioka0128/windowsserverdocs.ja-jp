@@ -5,12 +5,12 @@ ms.topic: article
 ms.author: hammadbu; vladmis; denisgun
 author: phstee
 ms.date: 10/22/2019
-ms.openlocfilehash: 9de802638a6f8225d4c8b942ac3cbea303f09a89
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 9a82f0db1f586e1f762292c61eabdd7f6556c8bc
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896056"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992107"
 ---
 # <a name="performance-tuning-remote-desktop-session-hosts"></a>リモートデスクトップセッションホストのパフォーマンスチューニング
 
@@ -91,13 +91,13 @@ RD セッションホストサーバーで使用するアプリを構成する�
 
 -   ユーザーのサインインまたはセッションの開始から開始するように登録されている不要なプロセスを無効にします。
 
-    これらのプロセスは、新しいユーザーセッションを作成するときに CPU 使用率のコストに大幅に寄与する可能性があります。通常は CPU を集中的に使用するプロセスであり、朝のシナリオでは非常にコストがかかる可能性があります。 MsConfig.exe または MsInfo32.exe を使用して、ユーザーのサインインで開始されたプロセスの一覧を取得します。 詳細については、「 [autoruns.exe For Windows](https://technet.microsoft.com/sysinternals/bb963902.aspx)」を参照してください。
+    これらのプロセスは、新しいユーザーセッションを作成するときに CPU 使用率のコストに大幅に寄与する可能性があります。通常は CPU を集中的に使用するプロセスであり、朝のシナリオでは非常にコストがかかる可能性があります。 MsConfig.exe または MsInfo32.exe を使用して、ユーザーのサインインで開始されたプロセスの一覧を取得します。 詳細については、「 [autoruns.exe For Windows](/sysinternals/downloads/autoruns)」を参照してください。
 
 メモリ使用量については、次の点を考慮する必要があります。
 
 -   アプリによって読み込まれた Dll が再配置されていないことを確認します。
 
-    -   再配置された Dll を確認するには、プロセス[エクスプローラー](https://technet.microsoft.com/sysinternals/bb896653.aspx)を使用して、次の図に示すように、[Dll の処理] ビューを選択します。
+    -   再配置された Dll を確認するには、プロセス[エクスプローラー](/sysinternals/downloads/process-explorer)を使用して、次の図に示すように、[Dll の処理] ビューを選択します。
 
     -   ここでは、x.dll 既定のベースアドレスが既に使用されていて、ASLR が有効になっていなかったため y.dll が再配置されたことがわかります。
 

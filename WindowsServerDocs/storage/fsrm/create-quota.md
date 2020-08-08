@@ -2,18 +2,16 @@
 title: クォータを作成する
 description: この記事では、テンプレートに基づいてクォータを作成する方法について説明します。
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: b3513510ef00eec7ea78a3193cf44c25ddb17c7e
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: ce4aa23aac2ccceed8b3600418609a7678e2227f
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475219"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961466"
 ---
 # <a name="create-a-quota"></a>クォータを作成する
 
@@ -49,7 +47,7 @@ ms.locfileid: "85475219"
 
 7.  **Create** をクリックしてください。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 -   [クォータの管理](quota-management.md)
 -   [自動適用クォータを作成する](create-auto-apply-quota.md)

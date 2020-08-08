@@ -7,12 +7,12 @@ ms.assetid: bc4a4971-f727-40cd-91f5-2ee6d24b54cb
 author: kbdazure
 ms.author: kathydav
 ms.date: 9/30/2016
-ms.openlocfilehash: 56d9f862d4bd31ac8fba08837e59c94b865f7b1a
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: d0cbbc79fe1dc942dfe79ca9dbe81769dd112730
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970029"
+ms.locfileid: "87997619"
 ---
 # <a name="system-requirements-for-hyper-v-on-windows-server"></a>Windows Server 上の Hyper-v のシステム要件
 
@@ -22,7 +22,7 @@ HYPER-V では、特定のハードウェア要件を持ち、一部の HYPER-V 
 
 HYPER-V を既に使用している場合は、既存のハードウェアを使用すること勧めします。 全般的なハードウェア要件は、Windows Server 2012 R2 から大幅に変更していません。  しかし、シールドを使用して仮想マシンや個別のデバイスの割り当てに新しいハードウェアは必要があります。 これらの機能は、以下に示すように、特定のハードウェアのサポートに依存します。 ハードウェアの主な違いがその第 2 レベルのアドレスは、それ以外の変換 (SLAT) は必要なくことをお勧めします。
 
-実行中の仮想マシンの数など、HYPER-V の最大のサポートされる構成の詳細については「 [Windows Server 2016 での HYPER-V のスケーラビリティの計画](plan/Plan-for-Hyper-V-scalability-in-Windows-Server-2016.md)します。 仮想マシンで実行できるオペレーティング システムの一覧は、「 [Windows サーバーにインストールされた Hyper-v のサポートされている Windows ゲスト オペレーティング システム](Supported-Windows-guest-operating-systems-for-Hyper-V-on-Windows.md)します。
+実行中の仮想マシンの数など、HYPER-V の最大のサポートされる構成の詳細については「 [Windows Server 2016 での HYPER-V のスケーラビリティの計画](./plan/plan-hyper-v-scalability-in-windows-server.md)します。 仮想マシンで実行できるオペレーティング システムの一覧は、「 [Windows サーバーにインストールされた Hyper-v のサポートされている Windows ゲスト オペレーティング システム](Supported-Windows-guest-operating-systems-for-Hyper-V-on-Windows.md)します。
 
 ## <a name="general-requirements"></a>一般的な要件
 
@@ -89,4 +89,3 @@ Systeminfo.exe
 
 - 第 2 世代
 - ゲストオペレーティングシステムとしての Windows Server 2012 以降
-

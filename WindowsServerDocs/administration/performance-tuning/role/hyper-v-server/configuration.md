@@ -5,12 +5,12 @@ ms.topic: article
 ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 02f2849b7259379ebf6beed927601b13966a7704
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 42e95662cd2177b37fef1b47f0a51989ab964168
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896142"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992157"
 ---
 # <a name="hyper-v-configuration"></a>Hyper-V の構成
 
@@ -22,7 +22,7 @@ Hyper-v を実行するサーバーのハードウェアに関する考慮事項
 
     Windows Server 2016 の hyper-v では、各アクティブな仮想マシンの論理プロセッサが1つまたは複数の仮想プロセッサとして提供されます。 Hyper-v では、拡張ページテーブル (EPT) や入れ子になったページテーブル (NPT) などの、第2レベルのアドレス変換 (SLAT) テクノロジをサポートするプロセッサが必要になりました。
 
--   **キャッシュ**
+-   **Cache**
 
     Hyper-v では、大きなプロセッサキャッシュを利用できます。特に、メモリ内のワーキングセットが大きく、仮想プロセッサと論理プロセッサの比率が高い負荷の場合に適しています。
 
@@ -56,7 +56,7 @@ Windows Server は、さまざまなシナリオで仮想化を使用します�
 
 Windows Server 2016 では、Server Core インストールオプションが機能します。 Server Core では、Hyper-v などのサーバーの役割の選択セットをホストするための最小限の環境が提供されます。 この機能により、ホスト OS のディスクフットプリントが小さくなり、攻撃とサービス面が小さくなります。 そのため、Hyper-v 仮想化サーバーでは Server Core インストールオプションを使用することを強くお勧めします。
 
-Server Core インストールでは、ユーザーがログオンしている場合にのみコンソールウィンドウが提供されますが、Hyper-v は[Windows Powershell](https://technet.microsoft.com/library/hh848559.aspx)などのリモート管理機能を公開しているため、管理者はリモートで管理できます。
+Server Core インストールでは、ユーザーがログオンしている場合にのみコンソールウィンドウが提供されますが、Hyper-v は[Windows Powershell](/powershell/module/hyper-v/?view=win10-ps)などのリモート管理機能を公開しているため、管理者はリモートで管理できます。
 
 ## <a name="dedicated-server-role"></a>専用サーバーロール
 
@@ -66,7 +66,7 @@ Server Core インストールでは、ユーザーがログオンしている�
 
 ## <a name="guest-operating-systems"></a>ゲストオペレーティングシステム
 
-Hyper-v では、さまざまなゲストオペレーティングシステムに対してとが調整されています。 ゲストごとにサポートされる仮想プロセッサの数は、ゲストオペレーティングシステムによって異なります。 サポートされているゲストオペレーティングシステムの一覧については、「 [hyper-v の概要](https://technet.microsoft.com/library/hh831531.aspx)」を参照してください。
+Hyper-v では、さまざまなゲストオペレーティングシステムに対してとが調整されています。 ゲストごとにサポートされる仮想プロセッサの数は、ゲストオペレーティングシステムによって異なります。 サポートされているゲストオペレーティングシステムの一覧については、「 [hyper-v の概要](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831531(v=ws.11))」を参照してください。
 
 ## <a name="cpu-statistics"></a>CPU の統計情報
 

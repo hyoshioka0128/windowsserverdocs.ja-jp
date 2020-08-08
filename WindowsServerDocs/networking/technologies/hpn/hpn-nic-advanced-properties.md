@@ -7,16 +7,16 @@ manager: dougkim
 ms.author: lizross
 author: eross-msft
 ms.date: 09/20/2018
-ms.openlocfilehash: aa26e3ef83ec6255da6a386ecfce34a7501ae3f5
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: ce9c4049ab701d647701029f41d2570b7fc8cd03
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87955639"
+ms.locfileid: "87997653"
 ---
 # <a name="nic-advanced-properties"></a>NIC 詳細プロパティ
 
-[Netadapter](https://docs.microsoft.com/powershell/module/netadapter/?view=win10-ps&viewFallbackFrom=winserverr2-ps)コマンドレットを使用して、Windows PowerShell を使用して nic とすべての機能を管理できます。  Nic およびすべての機能は、ネットワークコントロールパネル (ncpa.cpl) を使用して管理することもできます。
+[Netadapter](/powershell/module/netadapter/?view=win10-ps&viewFallbackFrom=winserverr2-ps)コマンドレットを使用して、Windows PowerShell を使用して nic とすべての機能を管理できます。  Nic およびすべての機能は、ネットワークコントロールパネル (ncpa.cpl) を使用して管理することもできます。
 
 1. **Windows PowerShell**では、 `Get‑NetAdapterAdvancedProperties` nic の2つの異なる作成/モデルに対してコマンドレットを実行します。
 

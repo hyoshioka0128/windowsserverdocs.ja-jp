@@ -8,12 +8,12 @@ author: stevenek
 ms.date: 07/24/2020
 description: Windows Server の記憶域スペースダイレクトを使用して、ハイパー集約型インフラストラクチャまたは収束 (disaggregated とも呼ばれます) インフラストラクチャとしてソフトウェア定義記憶域を展開する手順について説明します。
 ms.localizationpriority: medium
-ms.openlocfilehash: a15f9df55fd5650443f4d0220dee6b4ada9253d2
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: f0115e76ca297fa0af5fc57e197d75e428cb3e72
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971109"
+ms.locfileid: "87997570"
 ---
 # <a name="deploy-storage-spaces-direct"></a>記憶域スペース ダイレクトの展開
 
@@ -49,7 +49,7 @@ ms.locfileid: "87971109"
 
 最初の手順では、クラスター内のすべてのサーバーに Windows Server をインストールします。 記憶域スペースダイレクトには、Windows Server 2016 Datacenter Edition が必要です。 Server Core インストールオプションまたはデスクトップエクスペリエンス搭載サーバーを使用できます。
 
-セットアップウィザードを使用して Windows Server をインストールする場合 *、windows server (Server* Core を参照) と*Windows Server (デスクトップエクスペリエンス搭載サーバー)* のどちらかを選択できます。これは、windows server 2012 R2 で使用できる*フル*インストールオプションに相当します。 選択しない場合は、Server Core インストールオプションが表示されます。 詳細については、「 [Windows Server 2016 のインストールオプション](../../get-started/Windows-Server-2016.md)」を参照してください。
+セットアップウィザードを使用して Windows Server をインストールする場合 *、windows server (Server* Core を参照) と*Windows Server (デスクトップエクスペリエンス搭載サーバー)* のどちらかを選択できます。これは、windows server 2012 R2 で使用できる*フル*インストールオプションに相当します。 選択しない場合は、Server Core インストールオプションが表示されます。 詳細については、「 [Windows Server 2016 のインストールオプション](../../index.yml)」を参照してください。
 
 ### <a name="step-12-connect-to-the-servers"></a>手順 1.2: サーバーに接続する
 

@@ -5,19 +5,19 @@ ms.topic: article
 ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: ab68975c84e1b299914e09045eddbc302ca9697f
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: ba426a2a4db853dbd91180fcceed6807726efbf8
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896075"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992101"
 ---
 # <a name="hyper-v-processor-performance"></a>Hyper-v プロセッサのパフォーマンス
 
 
 ## <a name="virtual-machine-integration-services"></a>仮想マシン統合サービス
 
-バーチャルマシン Integration Services には、Hyper-v 固有 i/o デバイス用の対応ドライバーが含まれています。これにより、エミュレートされたデバイスと比較した場合の i/o の CPU オーバーヘッドが大幅に減少します。 サポートされているすべての仮想マシンに、Integration Services の仮想マシンの最新バージョンをインストールする必要があります。 このサービスにより、ゲストの CPU 使用率が、アイドル状態のゲストから頻繁に使用されるゲストに減り、i/o スループットが向上します。 これは、Hyper-v を実行しているサーバーのパフォーマンスをチューニングするための最初の手順です。 サポートされているゲストオペレーティングシステムの一覧については、「 [hyper-v の概要](https://technet.microsoft.com/library/hh831531.aspx)」を参照してください。
+バーチャルマシン Integration Services には、Hyper-v 固有 i/o デバイス用の対応ドライバーが含まれています。これにより、エミュレートされたデバイスと比較した場合の i/o の CPU オーバーヘッドが大幅に減少します。 サポートされているすべての仮想マシンに、Integration Services の仮想マシンの最新バージョンをインストールする必要があります。 このサービスにより、ゲストの CPU 使用率が、アイドル状態のゲストから頻繁に使用されるゲストに減り、i/o スループットが向上します。 これは、Hyper-v を実行しているサーバーのパフォーマンスをチューニングするための最初の手順です。 サポートされているゲストオペレーティングシステムの一覧については、「 [hyper-v の概要](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831531(v=ws.11))」を参照してください。
 
 ## <a name="virtual-processors"></a>仮想プロセッサの数
 
@@ -61,11 +61,11 @@ Windows Server 2016 では、Hyper-v は仮想 NUMA トポロジを仮想マシ�
 
 ワークロードの観点からは、仮想 NUMA と物理 NUMA の違いはありません。 仮想マシン内では、ワークロードがローカル メモリをデータに割り当てて、同じ NUMA ノード内でそのデータにアクセスすると、基になっている物理システムで高速のローカル メモリ アクセスが行われます。 リモート メモリ アクセスによるパフォーマンスの低下は回避されます。 VNUMA の恩恵を受けることができるのは、NUMA 対応のアプリケーションだけです。
 
-Microsoft SQL Server は、NUMA 対応アプリケーションの例です。 詳細については、「 [Non-uniform Memory Access につい](https://technet.microsoft.com/library/ms178144.aspx)て」を参照してください。
+Microsoft SQL Server は、NUMA 対応アプリケーションの例です。 詳細については、「 [Non-uniform Memory Access につい](/previous-versions/sql/sql-server-2008-r2/ms178144(v=sql.105))て」を参照してください。
 
 仮想 NUMA 機能と動的メモリ機能を同時に使用することはできません。 動的メモリを有効にしている仮想マシンの仮想 NUMA ノードは、実質、1 つだけです。仮想 NUMA の設定に関係なく、NUMA トポロジは仮想マシンに提示されません。
 
-仮想 NUMA の詳細については、「 [Hyper-v 仮想 numa の概要](https://technet.microsoft.com/library/dn282282.aspx)」を参照してください。
+仮想 NUMA の詳細については、「 [Hyper-v 仮想 numa の概要](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn282282(v=ws.11))」を参照してください。
 
 ## <a name="additional-references"></a>その他の参照情報
 

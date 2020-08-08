@@ -5,12 +5,12 @@ ms.topic: article
 ms.author: hammadbu; vladmis; denisgun
 author: phstee
 ms.date: 10/22/2019
-ms.openlocfilehash: 071321249db62c927ee5677a48c52a7f2cd9c20d
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 235dd0209030854f1fc883f52ab41550ab693dc5
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896040"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992082"
 ---
 # <a name="performance-tuning-remote-desktop-virtualization-hosts"></a>リモートデスクトップ仮想化ホストのパフォーマンスチューニング
 
@@ -104,7 +104,7 @@ Windows Server 2012 以降のフェールオーバークラスタリングでは
 | インターネット接続の共有                  | コンシューマー中心のサービス                                                                                                                                                                                  |
 | Media Center 拡張サービス               | コンシューマー中心のサービス                                                                                                                                                                                  |
 > [!NOTE]
-> この一覧は、意図された目的とシナリオに影響する変更があるため、完全な一覧ではありません。 詳細については、「ホットオフ」、「今すぐ入手」、「 [Windows 8 VDI の最適化スクリプト」、「PFE!](https://blogs.technet.com/b/jeff_stokes/archive/2013/04/09/hot-off-the-presses-get-it-now-the-windows-8-vdi-optimization-script-courtesy-of-pfe.aspx)」を参照してください。
+> この一覧は、意図された目的とシナリオに影響する変更があるため、完全な一覧ではありません。 詳細については、「ホットオフ」、「今すぐ入手」、「 [Windows 8 VDI の最適化スクリプト」、「PFE!](/archive/blogs/jeff_stokes/hot-off-the-presses-get-it-now-the-windows-8-vdi-optimization-script-courtesy-of-pfe)」を参照してください。
 
 
 > [!NOTE]

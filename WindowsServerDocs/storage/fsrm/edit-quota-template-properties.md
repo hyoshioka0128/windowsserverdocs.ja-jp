@@ -2,18 +2,16 @@
 title: クォータ テンプレートのプロパティを編集する
 description: この記事では、クォータ テンプレートのプロパティを編集して、元のクォータ テンプレートから作成されたクォータにも変更を適用する方法を説明します。
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: f4793616caf9ba4a8f9db09cd1902432323c081b
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 4e8a112f26f2b0ffdf8047063411dbb5539f4eb1
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474039"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961416"
 ---
 # <a name="edit-quota-template-properties"></a>クォータ テンプレートのプロパティを編集する
 
@@ -42,7 +40,7 @@ ms.locfileid: "85474039"
 
 6.  **[OK]** をクリックします。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 -   [クォータの管理](quota-management.md)
 -   [クォータテンプレートを作成する](create-quota-template.md)

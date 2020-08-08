@@ -6,14 +6,12 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: ad9ef670a2b5f0643be4bb94ad6b667a7f9b011d
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 64fac281e1038f80ed4119b2462beda3311ba877
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86964024"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87943191"
 ---
 # <a name="deploying-ad-ds-in-a-windows-2000-organization"></a>Windows Server 2000 組織への AD DS の展開
 

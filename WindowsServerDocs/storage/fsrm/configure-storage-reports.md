@@ -2,18 +2,16 @@
 title: 記憶域レポートを構成する
 description: この記事では、記憶域レポートの既定のパラメーターを構成する方法を説明します。
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 94d1b75bba4edac5ad8df80adb13d95a7b8dec39
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 8b9d6a53b5f34c0c053de860895f5c4e48b07c83
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474159"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961496"
 ---
 # <a name="configure-storage-reports"></a>記憶域レポートを構成する
 
@@ -40,7 +38,7 @@ ms.locfileid: "85474159"
 
 7.  **[OK]** をクリックします。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 -   [ファイル サーバー リソース マネージャーのオプションを設定する](setting-file-server-resource-manager-options.md)
 -   [記憶域レポートの管理](storage-reports-management.md)

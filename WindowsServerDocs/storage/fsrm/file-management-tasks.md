@@ -2,18 +2,16 @@
 title: ファイル管理タスク
 description: この記事では、ファイル管理タスクを自動化するプロセスについて説明します。
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 402af4bd7c00bedfc3d01d43071af4fcd374d428
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 4e10aeec47498d6af72e767f519b11ebb4e72932
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473999"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961386"
 ---
 # <a name="file-management-tasks"></a>ファイル管理タスク
 
@@ -41,7 +39,7 @@ ms.locfileid: "85473999"
 > [!Note]
 > 電子メール通知や特定のレポート機能を設定するには、まずファイル サーバー リソース マネージャーの全般的なオプションを設定する必要があります。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 -   [ファイル サーバー リソース マネージャーのオプションを設定する](setting-file-server-resource-manager-options.md)
 

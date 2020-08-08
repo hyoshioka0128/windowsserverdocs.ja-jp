@@ -1,19 +1,17 @@
 ---
 title: ホストキーを作成して HGS に追加する
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: a12c8494-388c-4523-8d70-df9400bbc2c0
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 3c234ab3d4925f4b03e252307aa905845fbb6d0d
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: 4572c6424f018d711a18d5ee763b00a253a73529
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769100"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961606"
 ---
 # <a name="create-a-host-key-and-add-it-to-hgs"></a>ホストキーを作成して HGS に追加する
 

@@ -7,12 +7,12 @@ ms.assetid: 06b35897-2192-48b7-8c2d-125c520b0786
 author: lizap
 ms.author: elizapo
 ms.date: 01/08/2019
-ms.openlocfilehash: a3c1f82d1c1f12c51a36a8285d28ccb9402f2817
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 53036a353fa08b7be06aae6b4b70353a8a99ea0e
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87963708"
+ms.locfileid: "87997628"
 ---
 # <a name="supported-windows-guest-operating-systems-for-hyper-v-on-windows-server"></a>Windows Server 上の Hyper-v でサポートされている Windows ゲストオペレーティングシステム
 
@@ -20,7 +20,7 @@ ms.locfileid: "87963708"
 
 Hyper-v では、ゲストオペレーティングシステムとして仮想マシンで実行するために、Windows Server、Windows、および Linux のディストリビューションの複数のバージョンをサポートしています。 この記事では、サポートされている Windows Server と Windows ゲスト オペレーティング システムについて説明します。 Linux および FreeBSD のディストリビューションでは、次を参照してください。 [Windows にインストールされた Hyper-v の仮想マシンをサポートされている Linux および FreeBSD](Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)します。
 
-一部のオペレーティング システムでは、組み込みの統合サービスがあります。 他のユーザーは、インストールか、仮想マシンのオペレーティング システムを設定した後に、別のステップとして integration services をアップグレードすることが必要です。 詳細については、以下のセクションを参照してくださいと  [Integration Services](https://docs.microsoft.com/virtualization/hyper-v-on-windows/reference/integration-services)します。
+一部のオペレーティング システムでは、組み込みの統合サービスがあります。 他のユーザーは、インストールか、仮想マシンのオペレーティング システムを設定した後に、別のステップとして integration services をアップグレードすることが必要です。 詳細については、以下のセクションを参照してくださいと  [Integration Services](/virtualization/hyper-v-on-windows/reference/integration-services)します。
 
 ## <a name="supported-windows-server-guest-operating-systems"></a>サポートされている Windows Server のゲスト オペレーティング システム
 
@@ -55,7 +55,7 @@ Windows Server 2016 および Windows Server 2019 で Hyper-v のゲストオペ
 
 |ホストのオペレーティング システム|トピック|
 |-------------------------|---------|
-|Windows 10|[クライアント HYPER-V で Windows 10 でサポートされるゲスト オペレーティング システム](https://docs.microsoft.com/virtualization/hyper-v-on-windows/about/supported-guest-os)|
+|Windows 10|[クライアント HYPER-V で Windows 10 でサポートされるゲスト オペレーティング システム](/virtualization/hyper-v-on-windows/about/supported-guest-os)|
 |Windows Server 2012 R2 および Windows 8.1|-   [Windows Server 2012 R2 および Windows 8.1 の Hyper-v でサポートされている Windows ゲストオペレーティングシステム](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn792027(v=ws.11))<br />-   [Hyper-v 上の Linux および FreeBSD Virtual Machines](Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)|
 |Windows Server 2012 および Windows 8|[Windows Server 2012 と Windows 8 の Hyper-V でサポートされている Windows ゲスト オペレーティング システム](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn792028(v=ws.11))|
 |Windows Server 2008 および Windows Server 2008 R2|[仮想マシンとゲスト オペレーティング システムについて](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc794868(v=ws.10))|
@@ -74,8 +74,4 @@ Windows Server 2016 および Windows Server 2019 で Hyper-v のゲストオペ
 
 -   [Hyper-V での Linux および FreeBSD の仮想マシン](Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)
 
--   [クライアント HYPER-V で Windows 10 でサポートされるゲスト オペレーティング システム](https://docs.microsoft.com/virtualization/hyper-v-on-windows/about/supported-guest-os)
-
-
-
-
+-   [クライアント HYPER-V で Windows 10 でサポートされるゲスト オペレーティング システム](/virtualization/hyper-v-on-windows/about/supported-guest-os)

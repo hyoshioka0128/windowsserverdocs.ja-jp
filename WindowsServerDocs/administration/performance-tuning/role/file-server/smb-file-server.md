@@ -5,12 +5,12 @@ ms.topic: article
 author: phstee
 ms.author: nedpyle; danlo; dkruse
 ms.date: 4/14/2017
-ms.openlocfilehash: 9e20b05f911726837cf436798a3743fbb80af193
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 4a1fd4036e20e4cbb5b137832297daca99e9f5cc
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896156"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992169"
 ---
 # <a name="performance-tuning-for-smb-file-servers"></a>SMB ファイルサーバーのパフォーマンスチューニング
 
@@ -52,7 +52,7 @@ SMB マルチチャネルの詳細については、「 [Smb マルチチャネ�
 
 SMB スケールアウトを使用すると、クラスター構成の SMB 3.0 でクラスターのすべてのノードの共有を表示できます。 このアクティブ/アクティブ構成を使用すると、複数のボリューム、共有、およびクラスターリソースを含む複雑な構成を使用せずに、ファイルサーバークラスターをさらに拡張することができます。 最大共有帯域幅は、すべてのファイルサーバークラスターノードの合計帯域幅です。 合計帯域幅は、1つのクラスターノードの帯域幅によって制限されなくなりましたが、その代わりに、バッキングストレージシステムの機能に依存しています。 ノードを追加することで合計の帯域幅を増大することができます。
 
-SMB スケールアウトの詳細については、「[アプリケーションデータの概要」](https://technet.microsoft.com/library/hh831349.aspx)および「スケール[アウトするため](https://blogs.technet.com/b/filecab/archive/2013/12/05/to-scale-out-or-not-to-scale-out-that-is-the-question.aspx)のブログの投稿」 (スケールアウトファイルサーバーを参照してください。
+SMB スケールアウトの詳細については、「[アプリケーションデータの概要」](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831349(v=ws.11))および「スケール[アウトするため](https://blogs.technet.com/b/filecab/archive/2013/12/05/to-scale-out-or-not-to-scale-out-that-is-the-question.aspx)のブログの投稿」 (スケールアウトファイルサーバーを参照してください。
 
 ### <a name="performance-counters-for-smb-30"></a>SMB 3.0 のパフォーマンスカウンター
 
@@ -62,7 +62,7 @@ SMB スケールアウトの詳細については、「[アプリケーション
 
     これらのカウンターは、SMB 2.0 以降のバージョンを使用しているクライアントによってアクセスされているサーバー上のファイル共有に関する情報を表示します。
 
-    Windows の通常のディスクカウンターを使い慣れている場合、特定のあくまが発生することがあります。 これは偶然ではありません。 SMB クライアント共有のパフォーマンスカウンターは、ディスクカウンターと正確に一致するように設計されています。 この方法により、現在使用しているアプリケーションディスクのパフォーマンスチューニングに関するガイダンスを簡単に再利用できます。 カウンターマッピングの詳細については、「[共有クライアントパフォーマンスカウンターのブログ](https://blogs.technet.com/b/josebda/archive/2012/11/19/windows-server-2012-file-server-tip-new-per-share-smb-client-performance-counters-provide-great-insight.aspx)」を参照してください。
+    Windows の通常のディスクカウンターを使い慣れている場合、特定のあくまが発生することがあります。 これは偶然ではありません。 SMB クライアント共有のパフォーマンスカウンターは、ディスクカウンターと正確に一致するように設計されています。 この方法により、現在使用しているアプリケーションディスクのパフォーマンスチューニングに関するガイダンスを簡単に再利用できます。 カウンターマッピングの詳細については、「[共有クライアントパフォーマンスカウンターのブログ](/archive/blogs/josebda/windows-server-2012-file-server-tip-new-per-share-smb-client-performance-counters-provide-great-insight)」を参照してください。
 
 -   **SMB サーバー共有**
 
@@ -146,7 +146,7 @@ SMB スケールアウトの詳細については、「[アプリケーション
 
 次の設定は、多くの場合に、ファイルサーバーのパフォーマンスに対してコンピューターを最適化することができます。 この設定は、すべてのコンピューターに最適で妥当というわけでありません。 個々の設定を適用する前に、その影響を評価する必要があります。
 
-| パラメーター                       | 値 | Default |
+| パラメーター                       | 値 | 既定 |
 |---------------------------------|-------|---------|
 | AdditionalCriticalWorkerThreads | 64    | 0       |
 | MaxThreadsPerQueue              | 64    | 20      |
@@ -154,4 +154,4 @@ SMB スケールアウトの詳細については、「[アプリケーション
 
 ### <a name="smb-client-performance-monitor-counters"></a>SMB クライアントパフォーマンスモニターカウンター
 
-SMB クライアントカウンターの詳細については、「 [Windows server 2012 ファイルサーバーのヒント: 新しい共有ごとの SMB クライアントパフォーマンスカウンター](https://blogs.technet.com/b/josebda/archive/2012/11/19/windows-server-2012-file-server-tip-new-per-share-smb-client-performance-counters-provide-great-insight.aspx)は、優れた洞察を提供します。
+SMB クライアントカウンターの詳細については、「 [Windows server 2012 ファイルサーバーのヒント: 新しい共有ごとの SMB クライアントパフォーマンスカウンター](/archive/blogs/josebda/windows-server-2012-file-server-tip-new-per-share-smb-client-performance-counters-provide-great-insight)は、優れた洞察を提供します。

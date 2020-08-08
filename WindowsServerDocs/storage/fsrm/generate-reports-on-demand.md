@@ -2,18 +2,16 @@
 title: オン デマンドでレポートを生成する
 description: この記事では、サーバー上のディスク使用量を分析するオンデマンド レポートを生成する方法を説明します。
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 1802ab4fdabafd0a0344922fd861087c166d4499
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: a44db85dee565bfa3c6032d52b4d752c61c09cc0
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474219"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961366"
 ---
 # <a name="generate-reports-on-demand"></a>オン デマンドでレポートを生成する
 
@@ -66,7 +64,7 @@ ms.locfileid: "85474219"
 
    どちらのオプションでもレポートは保存されます。また、電子メールによる配信を有効にしている場合は、選択した形式でレポートが管理者に送信されます。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 -   [記憶域レポートの管理](storage-reports-management.md)
 -   [ファイル サーバー リソース マネージャーのオプションを設定する](setting-file-server-resource-manager-options.md)

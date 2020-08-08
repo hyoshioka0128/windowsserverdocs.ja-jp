@@ -6,21 +6,19 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: a022ec618c7255021cd424120330671e007a658a
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 31c04f557900cee661c2283957f590caf370bbe5
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86962704"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87942736"
 ---
 # <a name="add-a-claim-description"></a>要求記述を追加する
 
 
 アカウントパートナー組織では、管理者は、グループまたはロールのユーザーのメンバーシップを表すクレームを作成するか、ユーザーに関するデータ (ユーザーの従業員識別番号など) を表すことができます。
 
-リソースパートナー組織では、管理者は対応する要求を作成して、リソースユーザーとして認識できるグループとユーザーを表します。 アカウントパートナー組織内の出力方向の要求は、リソースパートナー組織内の入力方向の要求にマップされるため、リソースパートナーは、アカウントパートナーが提供する資格情報を受け入れることができます。 
+リソースパートナー組織では、管理者は対応する要求を作成して、リソースユーザーとして認識できるグループとユーザーを表します。 アカウントパートナー組織内の出力方向の要求は、リソースパートナー組織内の入力方向の要求にマップされるため、リソースパートナーは、アカウントパートナーが提供する資格情報を受け入れることができます。
 
 要求を追加するには、次の手順を実行します。
 
@@ -28,7 +26,7 @@ ms.locfileid: "86962704"
 
 ## <a name="to-add-a-claim-description"></a>要求の説明を追加するには
 
-1. サーバー マネージャーで、 **[ツール]** をクリックし、次に **[AD FS の管理]** を選択します。 
+1. サーバー マネージャーで、 **[ツール]** をクリックし、次に **[AD FS の管理]** を選択します。
 
 2. [**サービス**] を展開し、右側の [**要求の説明の追加**] をクリックします。
    ![要求の説明の追加](media/Add-a-Claim-Description/claimdesc1.png)
@@ -54,5 +52,5 @@ ms.locfileid: "86962704"
 ![要求の説明の追加](media/Add-a-Claim-Description/claimdesc2.png)
 
 
-## <a name="see-also"></a>参照  
-[AD FS の運用](../ad-fs-operations.md) 
+## <a name="see-also"></a>参照
+[AD FS の運用](../ad-fs-operations.md)

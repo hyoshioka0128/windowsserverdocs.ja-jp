@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: 6de4232d-b0b3-4e43-8735-ebae35ae4f9f
 author: dcuomo
 ms.author: dacuo
-ms.openlocfilehash: 5a0f8d372c8e84e6e9140ef40f89c1fa7b116355
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 0059e04b79754a3fb183a51cbd75bc03e9a89ae5
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87940003"
+ms.locfileid: "87997549"
 ---
 # <a name="windows-server-supported-networking-scenarios"></a>Windows Server でサポートされるネットワーク シナリオ
 
@@ -170,7 +170,7 @@ NIC チーミングのシナリオを使用します。
 
 セットは、Hyper-v ホストと、ソフトウェアによるネットワーク制御 (SDN) スタックを Windows Server 2016 に含まれる環境で使用できる代替 NIC チーミング ソリューションです。 セットは、HYPER-V 仮想スイッチにいくつかの NIC チーミング機能を統合します。
 
-詳細については、次を参照してください [リモート ダイレクト メモリ アクセス (RDMA) とスイッチ埋め込みチーミング (SET)。](https://technet.microsoft.com/windows-server-docs/networking/technologies/hyper-v-virtual-switch/rdma-and-switch-embedded-teaming)
+詳細については、次を参照してください [リモート ダイレクト メモリ アクセス (RDMA) とスイッチ埋め込みチーミング (SET)。](../virtualization/hyper-v-virtual-switch/rdma-and-switch-embedded-teaming.md)
 
 
 
@@ -180,6 +180,3 @@ NIC チーミングのシナリオを使用します。
 -   VLAN ベースのテナントの仮想ネットワークです。
 
 -   アンダーレイまたはオーバーレイには、IPv6 はサポートされていません。
-
-
-

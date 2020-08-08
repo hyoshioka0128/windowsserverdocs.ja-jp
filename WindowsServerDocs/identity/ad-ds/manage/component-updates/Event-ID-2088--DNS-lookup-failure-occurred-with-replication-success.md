@@ -6,14 +6,12 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: a54b13121933d2780ada9e68a9a7656709947c22
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 9dbb7debbca8d1625ebe975a051ed8b607d1ddd0
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518860"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87943287"
 ---
 # <a name="event-id-2088-dns-lookup-failure-occurred-with-replication-success"></a>イベント ID 2088: DNS 参照エラーが発生しましたが、レプリケーションは成功しました
 

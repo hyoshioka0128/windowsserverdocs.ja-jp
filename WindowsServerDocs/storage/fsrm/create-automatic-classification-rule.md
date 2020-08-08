@@ -2,18 +2,16 @@
 title: 自動分類規則を作成する
 description: この記事では、プロパティの分類規則を作成する方法について説明します。
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 9fc2034905408975f82f9348f151d99df17f9d3a
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 3793e8cd7f72e9e8d365df855c8c3450d9107f9b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475399"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961476"
 ---
 # <a name="create-an-automatic-classification-rule"></a>自動分類規則を作成する
 
@@ -52,7 +50,7 @@ ms.locfileid: "85475399"
 
 7.  **[OK]** をクリックします。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 -   [分類プロパティを作成する](create-classification-property.md)
 -   [分類の管理](classification-management.md)

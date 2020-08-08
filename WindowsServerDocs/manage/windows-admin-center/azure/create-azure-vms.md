@@ -7,12 +7,12 @@ ms.author: nedpyle
 manager: jgerend
 ms.date: 01/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a93051f4b8aa95f5e48604a5ac7cc9f4c8242a2
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: c9401d19472e362ee411613ee97caa3428c35e4f
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87940053"
+ms.locfileid: "87997534"
 ---
 # <a name="deploy-azure-virtual-machines-from-within-windows-admin-center"></a>Windows 管理センター内から Azure 仮想マシンをデプロイする
 
@@ -20,7 +20,7 @@ ms.locfileid: "87940053"
 
 Windows 管理センターバージョン1910では、Azure 仮想マシンをデプロイできます。 これにより、VM の展開は、Windows 管理センターの管理されたワークロード ([記憶域の移行サービス](../../../storage/storage-migration-service/overview.md)や[記憶域レプリカ](../../../storage/storage-replica/storage-replica-overview.md)など) に統合されます。 ワークロードをデプロイする前に手動で Azure Portal で新しいサーバーと Vm を構築するのではなく、必要な手順と構成がない場合もあります。 Windows 管理センターでは、Azure VM のデプロイ、ストレージの構成、ドメインへの参加、ロールのインストール、および分散システムのセットアップを行うことができます。 Windows 管理センターの [接続] ページからワークロードを使用せずに、新しい Azure Vm をデプロイすることもできます。
 
-Windows 管理センターでは、さまざまな Azure サービスも管理します。 [Windows 管理センターで利用できる Azure 統合オプションの詳細については、こちらを参照して](../plan/azure-integration-options.md)ください。
+Windows 管理センターでは、さまざまな Azure サービスも管理します。 [Windows 管理センターで利用できる Azure 統合オプションの詳細については、こちらを参照して](./index.md)ください。
 
 新しい仮想マシンを作成するのではなく、仮想マシンを Azure にリフトアンドシフトする場合は、Azure Migrate の使用を検討してください。 詳細については、「 [Azure Migrate の概要](https://go.microsoft.com/fwlink/?linkid=2056064)」を参照してください。
 
@@ -38,8 +38,8 @@ Windows 管理センター内から新しい Azure VM を作成するには、�
 
 - [Azure サブスクリプション](https://azure.microsoft.com)。
 - [Azure に登録されている Windows 管理センターゲートウェイ](azure-integration.md)
-- 作成アクセス許可がある既存の[Azure リソースグループ](https://docs.microsoft.com/azure/azure-resource-manager/management/overview)。
-- 既存の[Azure Virtual Network](https://docs.microsoft.com/azure/virtual-network/virtual-networks-overview)とサブネット。
+- 作成アクセス許可がある既存の[Azure リソースグループ](/azure/azure-resource-manager/management/overview)。
+- 既存の[Azure Virtual Network](/azure/virtual-network/virtual-networks-overview)とサブネット。
 - 仮想ネットワークとサブネットに関連付けられた[Azure Express Route](https://azure.microsoft.com/services/expressroute/)または[azure VPN ソリューション](https://azure.microsoft.com/services/vpn-gateway/)。 azure vm からオンプレミスのクライアント、ドメインコントローラー、Windows 管理センターコンピューター、およびワークロードデプロイの一部としてこの VM と通信する必要があるすべてのサーバーへの接続を可能にします。 たとえば、Storage Migration Service を使用してストレージを Azure VM に移行するには、orchestrator コンピューターとソースコンピューターが、移行先の Azure VM に接続できる必要があります。
 
 ## <a name="usage"></a>使用方法

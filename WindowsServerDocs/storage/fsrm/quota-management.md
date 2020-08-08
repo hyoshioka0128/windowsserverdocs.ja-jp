@@ -2,18 +2,16 @@
 title: ノルマの管理
 description: この記事では、クォータの作成方法と管理方法について説明します。
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 1f2d584e7d3a0239e38dcadcf6415683d91a4bec
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: b1d2d37d73a3d7837fd5390b9f5860f7cb41ee85
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474200"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961376"
 ---
 # <a name="quota-management"></a>ノルマの管理
 
@@ -42,7 +40,7 @@ ms.locfileid: "85474200"
 > [!Note]
 > 電子メール通知やレポート機能を設定するには、まずファイル サーバー リソース マネージャーの全般的なオプションを設定する必要があります。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 -   [ファイル サーバー リソース マネージャーのオプションを設定する](setting-file-server-resource-manager-options.md)
 
