@@ -7,12 +7,12 @@ ms.assetid: fdc8063c-47ce-4448-b445-d7ff9894dc17
 author: kbdazure
 ms.author: kathydav
 ms.date: 10/04/2016
-ms.openlocfilehash: 7140c9e8b3205a2772e50652fd0e162790204b4c
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: b9de14f9c3f66f6d8c8b532e8f4a83192b3e824b
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87960121"
+ms.locfileid: "87996624"
 ---
 # <a name="create-a-virtual-switch-for-hyper-v-virtual-machines"></a>HYPER-V 仮想マシン用の仮想スイッチを作成します。
 
@@ -49,7 +49,7 @@ ms.locfileid: "87960121"
     |設定名|説明|
     |----------------|---------------|
     |管理オペレーティング システムにこのネットワーク アダプターの共有を許可する|仮想スイッチ、NIC、または NIC チームの使用を Hyper-v ホストが仮想マシンと共有できるようにする場合は、このオプションを選択します。 これを有効にすると、ホストは、サービスの品質 (QoS) 設定、セキュリティ設定、または Hyper-v 仮想スイッチのその他の機能など、仮想スイッチに構成した設定のいずれかを使用できます。|
-    |シングル ルート I/O 仮想化 (SR-IOV) を有効にする|このオプションは、仮想マシンのトラフィックが仮想マシンのスイッチをバイパスして物理 NIC に直接移動できるようにする場合にのみ選択します。 詳細については、「ポスターネットワーク」の「ポスターの[I/o 仮想化](https://technet.microsoft.com/library/dn641211.aspx#Sec4)」を参照してください。|
+    |シングル ルート I/O 仮想化 (SR-IOV) を有効にする|このオプションは、仮想マシンのトラフィックが仮想マシンのスイッチをバイパスして物理 NIC に直接移動できるようにする場合にのみ選択します。 詳細については、「ポスターネットワーク」の「ポスターの[I/o 仮想化](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn641211(v=ws.11)#Sec4)」を参照してください。|
 
 7.  管理 Hyper-v ホストオペレーティングシステムまたは同じ仮想スイッチを共有する他の仮想マシンからネットワークトラフィックを分離する場合は、[**管理オペレーティングシステムの仮想 LAN id を有効に**する] を選択します。 VLAN ID は任意の数に変更することも、既定のままにすることもできます。 これは、管理オペレーティングシステムがこの仮想スイッチ経由のすべてのネットワーク通信に使用する仮想 LAN 識別番号です。
 
@@ -73,7 +73,7 @@ ms.locfileid: "87960121"
     Get-NetAdapter
     ```
 
-4.  [新しい-VMSwitch](https://technet.microsoft.com/library/hh848455.aspx)コマンドレットを使用して仮想スイッチを作成します。 たとえば、ExternalSwitch という名前の外部仮想スイッチを作成し、イーサネットネットワークアダプターを使用して、[**管理オペレーティングシステムによるこのネットワークアダプターの共有を許可する**] がオンになっている場合は、次のコマンドを実行します。
+4.  [新しい-VMSwitch](/powershell/module/hyper-v/new-vmswitch?view=win10-ps)コマンドレットを使用して仮想スイッチを作成します。 たとえば、ExternalSwitch という名前の外部仮想スイッチを作成し、イーサネットネットワークアダプターを使用して、[**管理オペレーティングシステムによるこのネットワークアダプターの共有を許可する**] がオンになっている場合は、次のコマンドを実行します。
 
     ```
     New-VMSwitch -name ExternalSwitch  -NetAdapterName Ethernet -AllowManagementOS $true
@@ -96,6 +96,3 @@ Windows Server 2016 の強化されたまたは新しい仮想スイッチ機能
 
 ## <a name="next-step"></a>次のステップ
 [HYPER-V で仮想マシンを作成します。](Create-a-virtual-machine-in-Hyper-V.md)
-
-
-
