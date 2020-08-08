@@ -7,12 +7,12 @@ ms.assetid: 244a4b48-06e5-4796-8750-a50e4f88ac72
 ms.author: lizross
 author: eross-msft
 ms.date: 09/13/2018
-ms.openlocfilehash: ecea87a3716ef68c599594851037e774ad589998
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 4417748504a0458396cd02e965547c2573f2c44f
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87955809"
+ms.locfileid: "87990081"
 ---
 # <a name="network-load-balancing"></a>ネットワーク負荷分散
 
@@ -21,7 +21,7 @@ ms.locfileid: "87955809"
 このトピックでは、Windows Server 2016 のネットワーク負荷分散 NLB 機能の概要について説明し \( \) ます。 NLB を使用して、単一の仮想クラスターとして 2 つ以上のサーバーを管理することができます。 NLB は、可用性となど、FTP web サイトで使用されるインターネット サーバー アプリケーションのスケーラビリティを向上、ファイアウォール、プロキシ、仮想プライベート ネットワーク \(VPN\), 、およびその他のミッション\-重要なサーバーです。
 
 > [!NOTE]
-> Windows Server 2016 には、新しい Azure 性に優れたソフトウェア ロード バランサーが含まれています。 \(SLB\) ソフトウェア定義されているネットワークのコンポーネントとして \(SDN\) インフラストラクチャです。 使用する NLB ではなく SLB SDN を使用している場合を使用している Windows 以外のワークロード発信ネットワーク アドレス変換を必要な \(NAT\), 、またはレイヤー 3 が必要な \(L3\) または非 TCP ベースの負荷分散します。 SDN 以外の展開の Windows Server 2016 で NLB を使用する続行することができます。 SLB の詳細については、次を参照してください。 [ソフトウェア負荷分散 (SLB) SDN の](../sdn/technologies/network-function-virtualization/Software-Load-Balancing--SLB--for-SDN.md)です。
+> Windows Server 2016 には、新しい Azure 性に優れたソフトウェア ロード バランサーが含まれています。 \(SLB\) ソフトウェア定義されているネットワークのコンポーネントとして \(SDN\) インフラストラクチャです。 使用する NLB ではなく SLB SDN を使用している場合を使用している Windows 以外のワークロード発信ネットワーク アドレス変換を必要な \(NAT\), 、またはレイヤー 3 が必要な \(L3\) または非 TCP ベースの負荷分散します。 SDN 以外の展開の Windows Server 2016 で NLB を使用する続行することができます。 SLB の詳細については、次を参照してください。 [ソフトウェア負荷分散 (SLB) SDN の](../sdn/technologies/network-function-virtualization/software-load-balancing-for-sdn.md)です。
 
 ネットワーク負荷分散 \(NLB\) 機能、TCP を使用して複数のサーバーのトラフィックでは分散\/IP ネットワーク プロトコルです。 1 つの仮想クラスターにアプリケーションを実行している 2 つ以上のコンピューターを組み合わせることで NLB では、信頼性とパフォーマンスの web サーバーとその他のミッション\-重要なサーバーです。
 
@@ -59,7 +59,7 @@ NLB はステートレスなことを確認するのに役立ちますインタ�
 ### <a name="manageability"></a>管理の容易性
 管理容易性をサポートするために、NLB で次の操作を実行できます。
 
--   管理および NLB マネージャーを使用して複数の NLB クラスターと 1 台のコンピューターからクラスター ホストを構成または [Windows PowerShell のネットワーク負荷分散 (NLB) コマンドレット](https://technet.microsoft.com/library/hh801274.aspx)します。
+-   管理および NLB マネージャーを使用して複数の NLB クラスターと 1 台のコンピューターからクラスター ホストを構成または [Windows PowerShell のネットワーク負荷分散 (NLB) コマンドレット](/previous-versions/windows/powershell-scripting/hh801274(v=wps.630))します。
 
 -   ポート管理規則を使用して、1 つの IP ポートまたはポート グループに対して負荷分散の動作を指定できます。
 
@@ -141,7 +141,7 @@ Install-WindowsFeature NLB -IncludeManagementTools
 
 インストールが完了したら、コンピューターの再起動は必要ありません。
 
-詳細については、次を参照してください。 [Install-windowsfeature](https://docs.microsoft.com/powershell/module/servermanager/install-windowsfeature?view=win10-ps)します。
+詳細については、次を参照してください。 [Install-windowsfeature](/powershell/module/servermanager/install-windowsfeature?view=win10-ps)します。
 
 ### <a name="network-load-balancing-manager"></a>ネットワーク負荷分散マネージャー
 サーバー マネージャーでネットワーク負荷分散マネージャーを開くには、**[ツール]** をクリックし、**[ネットワーク負荷分散マネージャー]** をクリックします。
@@ -151,8 +151,8 @@ Install-WindowsFeature NLB -IncludeManagementTools
 
 |コンテンツ タイプ|参考資料|
 |----------------|--------------|
-|デプロイ|[ネットワーク負荷分散展開ガイド](https://technet.microsoft.com/library/cc754833(WS.10).aspx) & #124; [ネットワーク負荷分散ターミナル サービスの構成](https://technet.microsoft.com/library/cc771300(v=WS.10).aspx)|
-|操作|[ネットワーク負荷分散クラスターを管理する](https://technet.microsoft.com/library/cc753954(WS.10).aspx) & #124; [ネットワーク負荷分散パラメーターの設定](https://technet.microsoft.com/library/cc731619(WS.10).aspx) & #124; [ネットワーク負荷分散クラスター上のホストを制御します。](https://technet.microsoft.com/library/cc770870(WS.10).aspx)|
-|トラブルシューティング|[ネットワーク負荷分散クラスターのトラブルシューティング](https://technet.microsoft.com/library/cc732592(WS.10).aspx) & #124; [NLB クラスターのイベントとエラー](https://technet.microsoft.com/library/cc731678(WS.10).aspx)|
+|デプロイ|[ネットワーク負荷分散展開ガイド](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754833(v=ws.10)) & #124; [ネットワーク負荷分散ターミナル サービスの構成](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771300(v=ws.10))|
+|操作|[ネットワーク負荷分散クラスターを管理する](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753954(v=ws.10)) & #124; [ネットワーク負荷分散パラメーターの設定](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731619(v=ws.10)) & #124; [ネットワーク負荷分散クラスター上のホストを制御します。](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770870(v=ws.10))|
+|トラブルシューティング|[ネットワーク負荷分散クラスターのトラブルシューティング](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732592(v=ws.10)) & #124; [NLB クラスターのイベントとエラー](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731678(v=ws.10))|
 |ツールと設定|[ネットワーク負荷分散の Windows PowerShell コマンドレット](https://go.microsoft.com/fwlink/p/?LinkId=238123)|
 |コミュニティ リソース|[高可用性 \( クラスタリングの \) フォーラム](https://go.microsoft.com/fwlink/p/?LinkId=230641)

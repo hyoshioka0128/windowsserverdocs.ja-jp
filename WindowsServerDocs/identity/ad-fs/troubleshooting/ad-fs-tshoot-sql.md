@@ -6,14 +6,12 @@ ms.author: billmath
 manager: mtillman
 ms.date: 01/12/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 052a804a61701855fbdf6b6e373314d35b474cf9
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 2fb32d5b553b4d248c718fac766a83daa5dfedb2
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87517597"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87964819"
 ---
 # <a name="ad-fs-troubleshooting---sql-connectivity"></a>AD FS のトラブルシューティング-SQL 接続
 AD FS には、AD FS ファームデータに対してリモート SQL Server を使用する機能が用意されています。  ファーム内の AD FS サーバーがバックエンド SQL サーバーと通信できない場合は、問題が発生します。  次のドキュメントでは、バックエンドサーバーとの通信をテストする基本的な手順について説明します。

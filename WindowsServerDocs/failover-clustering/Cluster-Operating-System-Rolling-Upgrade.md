@@ -1,19 +1,17 @@
 ---
 title: Cluster Operating System Rolling Upgrade (クラスター オペレーティング システムのローリング アップグレード)
-ms.prod: windows-server
-ms.technology: storage-failover-clustering
 ms.topic: get-started-article
 ms.assetid: 6e102c1f-df26-4eaa-bc7a-d0d55d3b82d5
 author: jasongerend
 ms.author: jgerend
 manager: lizross
 ms.date: 03/27/2018
-ms.openlocfilehash: fd981d3bc30af6cd73033c73337ec5dad7423280
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: a1694bdb8af495073723a74f24b9d0e153d580b9
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473579"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991087"
 ---
 # <a name="cluster-operating-system-rolling-upgrade"></a>クラスターのオペレーティングシステムのローリングアップグレード
 
@@ -44,15 +42,15 @@ ms.locfileid: "85473579"
 次のシナリオは、Windows Server 2016 ではサポートされていません。
 -  仮想ハードディスク (.vhdx ファイル) を共有記憶域として使用するゲストクラスターのクラスター OS ローリングアップグレード
 
-クラスター OS のローリングアップグレードは、System Center Virtual Machine Manager (SCVMM) 2016 で完全にサポートされています。 SCVMM 2016 を使用している場合は、クラスターのアップグレードとこのドキュメントで説明されている手順の自動化に関するガイダンスについて、「 [VMM で hyper-v ホストクラスターの Windows Server 2016 へのローリングアップグレードを実行](https://docs.microsoft.com/system-center/vmm/hyper-v-rolling-upgrade?view=sc-vmm-1807)する」を参照してください。
+クラスター OS のローリングアップグレードは、System Center Virtual Machine Manager (SCVMM) 2016 で完全にサポートされています。 SCVMM 2016 を使用している場合は、クラスターのアップグレードとこのドキュメントで説明されている手順の自動化に関するガイダンスについて、「 [VMM で hyper-v ホストクラスターの Windows Server 2016 へのローリングアップグレードを実行](/system-center/vmm/hyper-v-rolling-upgrade?view=sc-vmm-1807)する」を参照してください。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 クラスター OS のローリングアップグレードプロセスを開始する前に、次の要件を完了してください。
 
 - Windows Server (半期チャネル)、Windows Server 2016、または Windows Server 2012 R2 を実行するフェールオーバークラスターから開始します。
 - Windows Server バージョン1709への記憶域スペースダイレクトクラスターのアップグレードはサポートされていません。
 - クラスターワークロードが Hyper-v Vm またはスケールアウトファイルサーバーの場合、ダウンタイムなしのアップグレードを予想できます。
-- 次のいずれかの方法を使用して、Hyper-v ノードに第2レベルのアドレス指定テーブル (SLAT) をサポートする Cpu があることを確認します。      -SLAT に[互換性があるかどうかを確認します。WP8 SDK ヒント 01](https://blogs.msdn.com/b/devfish/archive/2012/11/06/are-you-slat-compatible-wp8-sdk-tip-01.aspx)記事: cpu が SLATs をサポートしているかどうかを確認するための2つの方法について説明します。 [coreinfo v 3.31](https://technet.microsoft.com/sysinternals/cc835722)ツールをダウンロードして、cpu が SLAT をサポートするかどうかを判断します。
+- 次のいずれかの方法を使用して、Hyper-v ノードに第2レベルのアドレス指定テーブル (SLAT) をサポートする Cpu があることを確認します。      -SLAT に[互換性があるかどうかを確認します。WP8 SDK ヒント 01](/archive/blogs/devfish/are-you-slat-compatible-wp8-sdk-tip-01)記事: cpu が SLATs をサポートしているかどうかを確認するための2つの方法について説明します。 [coreinfo v 3.31](/sysinternals/downloads/coreinfo)ツールをダウンロードして、cpu が SLAT をサポートするかどうかを判断します。
 
 ## <a name="cluster-transition-states-during-cluster-os-rolling-upgrade"></a>クラスター OS のローリングアップグレード時のクラスターの移行状態
 
@@ -105,27 +103,27 @@ ClusterFunctionalLevelcmdlet を実行すると、クラスターは "Stage 4" �
     1. クラスター OS のローリングアップグレードでは、クラスターから一度に1つのノードを削除する必要があります。 クラスターノードの1つがオペレーティングシステムのアップグレードのためにクラスターから削除された場合に、HA Sla を維持するのに十分な容量がクラスターにあるかどうかを確認します。 つまり、クラスター OS のローリングアップグレードのプロセス中にクラスターから1つのノードが削除されたときに、ワークロードを別のノードにフェールオーバーする機能が必要ですか。 クラスター OS のローリングアップグレードのためにクラスターから1つのノードが削除されたときに、必要なワークロードを実行するための容量はクラスターにありますか。
     2. Hyper-v ワークロードの場合は、すべての Windows Server 2016 Hyper-v ホストで、CPU サポート第2レベルのアドレステーブル (SLAT) が使用されていることを確認します。 Windows Server 2016 では、SLAT 対応のマシンのみが Hyper-v の役割を使用できます。
     3. ワークロードのバックアップが完了していることを確認し、クラスターのバックアップを検討してください。 クラスターにノードを追加しているときにバックアップ操作を停止します。
-    4. コマンドレットを使用して、すべてのクラスターノードがオンラインであるかどうかを確認し [`Get-ClusterNode`](https://docs.microsoft.com/powershell/module/failoverclusters/Get-ClusterNode?view=win10-ps) ます (図7を参照)。
+    4. コマンドレットを使用して、すべてのクラスターノードがオンラインであるかどうかを確認し [`Get-ClusterNode`](/powershell/module/failoverclusters/Get-ClusterNode?view=win10-ps) ます (図7を参照)。
 
         ![スクリーンショットコマンドレットを実行した結果を示す ](media/Cluster-Operating-System-Rolling-Upgrade/Cluster_RollingUpgrade_GetClusterNode.png) **図 7: start-clusternode コマンドレットを使用してノードの状態を確認する**
 
-    5. クラスター対応更新 (CAU) を実行している場合は、**クラスター対応**更新の UI またはコマンドレットを使用して、cau が現在実行されているかどうかを確認し [`Get-CauRun`](https://docs.microsoft.com/powershell/module/clusterawareupdating/Get-CauRun?view=win10-ps) ます (図8を参照)。 コマンドレットを使用して CAU を停止 [`Disable-CauClusterRole`](https://docs.microsoft.com/powershell/module/clusterawareupdating/Disable-CauClusterRole?view=win10-ps) します (図9を参照)。クラスター OS のローリングアップグレードプロセス中に、cau によってノードが一時停止およびドレインされないようにします。
+    5. クラスター対応更新 (CAU) を実行している場合は、**クラスター対応**更新の UI またはコマンドレットを使用して、cau が現在実行されているかどうかを確認し [`Get-CauRun`](/powershell/module/clusterawareupdating/Get-CauRun?view=win10-ps) ます (図8を参照)。 コマンドレットを使用して CAU を停止 [`Disable-CauClusterRole`](/powershell/module/clusterawareupdating/Disable-CauClusterRole?view=win10-ps) します (図9を参照)。クラスター OS のローリングアップグレードプロセス中に、cau によってノードが一時停止およびドレインされないようにします。
 
-        ![スクリーンショットコマンドレットの出力を示す ](media/Cluster-Operating-System-Rolling-Upgrade/Cluster_RollingUpgrade_GetCAU.png) **図 8: クラスター [`Get-CauRun`](https://docs.microsoft.com/powershell/module/clusterawareupdating/Get-CauRun?view=win10-ps) 対応更新がクラスターで実行されているかどうかをコマンドレットを使用して判断する**
+        ![スクリーンショットコマンドレットの出力を示す ](media/Cluster-Operating-System-Rolling-Upgrade/Cluster_RollingUpgrade_GetCAU.png) **図 8: クラスター [`Get-CauRun`](/powershell/module/clusterawareupdating/Get-CauRun?view=win10-ps) 対応更新がクラスターで実行されているかどうかをコマンドレットを使用して判断する**
 
-        ![Add-cauclusterrole コマンドレットの出力を示すスクリーンショット ](media/Cluster-Operating-System-Rolling-Upgrade/Cluster_RollingUpgrade_DisableCAU.png) **図 9: [`Disable-CauClusterRole`](https://docs.microsoft.com/powershell/module/clusterawareupdating/Disable-CauClusterRole?view=win10-ps) コマンドレットを使用してクラスター対応更新の役割を無効にする**
+        ![Add-cauclusterrole コマンドレットの出力を示すスクリーンショット ](media/Cluster-Operating-System-Rolling-Upgrade/Cluster_RollingUpgrade_DisableCAU.png) **図 9: [`Disable-CauClusterRole`](/powershell/module/clusterawareupdating/Disable-CauClusterRole?view=win10-ps) コマンドレットを使用してクラスター対応更新の役割を無効にする**
 
 2. クラスター内の各ノードについて、次の手順を実行します。
-    1. クラスターマネージャー UI を使用してノードを選択し、[一時停止] を使用します。 **Pause | Drain**ノードをドレインするための [ドレイン] メニューオプション (図10を参照) またはコマンドレットを使用し [`Suspend-ClusterNode`](https://docs.microsoft.com/powershell/module/failoverclusters/Suspend-ClusterNode?view=win10-ps) ます (図11を参照)。
+    1. クラスターマネージャー UI を使用してノードを選択し、[一時停止] を使用します。 **Pause | Drain**ノードをドレインするための [ドレイン] メニューオプション (図10を参照) またはコマンドレットを使用し [`Suspend-ClusterNode`](/powershell/module/failoverclusters/Suspend-ClusterNode?view=win10-ps) ます (図11を参照)。
 
         ![スクリーンショットを使用して役割をドレインする方法を示す ](media/Cluster-Operating-System-Rolling-Upgrade/Cluster_RollingUpgrade_FCM_DrainRoles.png) **図 10: フェールオーバークラスターマネージャーを使用してノードからロールをドレイン**する
 
-        ![Start-clusternode コマンドレットの出力を示すスクリーンショット ](media/Cluster-Operating-System-Rolling-Upgrade/Cluster_RollingUpgrade_SuspendNode.png) **図 11: [`Suspend-ClusterNode`](https://docs.microsoft.com/powershell/module/failoverclusters/Suspend-ClusterNode?view=win10-ps) コマンドレットを使用してノードからロールをドレイン**する
+        ![Start-clusternode コマンドレットの出力を示すスクリーンショット ](media/Cluster-Operating-System-Rolling-Upgrade/Cluster_RollingUpgrade_SuspendNode.png) **図 11: [`Suspend-ClusterNode`](/powershell/module/failoverclusters/Suspend-ClusterNode?view=win10-ps) コマンドレットを使用してノードからロールをドレイン**する
 
-    2.  クラスターマネージャー UI を使用して、一時停止しているノードをクラスターから**削除**するか、コマンドレットを使用し [`Remove-ClusterNode`](https://docs.microsoft.com/powershell/module/failoverclusters/Remove-ClusterNode?view=win10-ps) ます。
+    2.  クラスターマネージャー UI を使用して、一時停止しているノードをクラスターから**削除**するか、コマンドレットを使用し [`Remove-ClusterNode`](/powershell/module/failoverclusters/Remove-ClusterNode?view=win10-ps) ます。
 
         ![スクリーンショットコマンドレットの出力を示す ](media/Cluster-Operating-System-Rolling-Upgrade/Cluster_RollingUpgrade_RemoveNode.png)
-         **図 12: [`Remove-ClusterNode`](https://docs.microsoft.com/powershell/module/failoverclusters/Remove-ClusterNode?view=win10-ps) コマンドレットを使用してクラスターからノードを削除**する
+         **図 12: [`Remove-ClusterNode`](/powershell/module/failoverclusters/Remove-ClusterNode?view=win10-ps) コマンドレットを使用してクラスターからノードを削除**する
 
     3.  システムドライブを再フォーマットし、[**カスタム: windows のみをインストールする (詳細)** ] (図13を参照) オプションを使用して、ノード上で windows Server 2016 の "オペレーティングシステムのクリーンインストール" を実行します (setup.exe を参照してください)。 クラスター OS のローリングアップグレードではインプレースアップグレードが推奨されないため、[**アップグレード: Windows をインストールし、ファイル、設定、およびアプリケーションを保持**する] オプションを選択しないでください。
 
@@ -161,10 +159,10 @@ ClusterFunctionalLevelcmdlet を実行すると、クラスターは "Stage 4" �
         ![[クラスターの選択] ダイアログを表示するスクリーンショット ](media/Cluster-Operating-System-Rolling-Upgrade/Cluster_RollingUpgrade_AddNode.png)
          **図 15: フェールオーバークラスターマネージャーを使用してクラスターにノードを追加**する
 
-    13. フェールオーバークラスターマネージャー UI またはコマンドレットを使用し [`Add-ClusterNode`](https://docs.microsoft.com/powershell/module/failoverclusters/Add-ClusterNode?view=win10-ps) て、クラスターにノードを追加します (図16を参照)。
+    13. フェールオーバークラスターマネージャー UI またはコマンドレットを使用し [`Add-ClusterNode`](/powershell/module/failoverclusters/Add-ClusterNode?view=win10-ps) て、クラスターにノードを追加します (図16を参照)。
 
         ![スクリーンショットコマンドレット ](media/Cluster-Operating-System-Rolling-Upgrade/Cluster_RollingUpgrade_AddNode3.png)
-         **を使用したクラスターへのノードの追加に関する図 16 [`Add-ClusterNode`](https://docs.microsoft.com/powershell/module/failoverclusters/Add-ClusterNode?view=win10-ps) **の出力を示しています。
+         **を使用したクラスターへのノードの追加に関する図 16 [`Add-ClusterNode`](/powershell/module/failoverclusters/Add-ClusterNode?view=win10-ps) **の出力を示しています。
 
         > [!NOTE]
         > 最初の Windows Server 2016 ノードがクラスターに参加すると、クラスターは "混合 OS" モードになり、クラスターコアリソースが Windows Server 2016 ノードに移動されます。 "混合 OS" モードクラスターは、新しいノードが互換性モードで実行され、古いノードと互換性がある完全な機能を備えたクラスターです。 "混合 OS" モードは、クラスターの一時的モードです。 これは永続的なものではなく、4週間以内にクラスターのすべてのノードを更新することが求められています。
@@ -172,57 +170,57 @@ ClusterFunctionalLevelcmdlet を実行すると、クラスターは "Stage 4" �
     14. Windows Server 2016 ノードがクラスターに正常に追加された後、クラスター内のワークロードを再調整するために、次のように、クラスターのワークロードの一部を新しく追加したノードに移動できます (オプション)。
 
         ![スクリーンショットコマンドレットの出力を示す ](media/Cluster-Operating-System-Rolling-Upgrade/Cluster_RollingUpgrade_MoveVMRole.png)
-         **図 17: [`Move-ClusterVirtualMachineRole`](https://docs.microsoft.com/powershell/module/failoverclusters/Move-ClusterVirtualMachineRole?view=win10-ps) コマンドレットを使用したクラスターワークロード (クラスター VM ロール) の移動**
+         **図 17: [`Move-ClusterVirtualMachineRole`](/powershell/module/failoverclusters/Move-ClusterVirtualMachineRole?view=win10-ps) コマンドレットを使用したクラスターワークロード (クラスター VM ロール) の移動**
 
-        1. 仮想マシンのフェールオーバークラスターマネージャーから**ライブマイグレーション**を使用するか、コマンドレットを使用し [`Move-ClusterVirtualMachineRole`](https://docs.microsoft.com/powershell/module/failoverclusters/Move-ClusterVirtualMachineRole?view=win10-ps) て (図17を参照)、仮想マシンのライブマイグレーションを実行します。
+        1. 仮想マシンのフェールオーバークラスターマネージャーから**ライブマイグレーション**を使用するか、コマンドレットを使用し [`Move-ClusterVirtualMachineRole`](/powershell/module/failoverclusters/Move-ClusterVirtualMachineRole?view=win10-ps) て (図17を参照)、仮想マシンのライブマイグレーションを実行します。
 
             ```PowerShell
             Move-ClusterVirtualMachineRole -Name VM1 -Node robhind-host3
             ```
 
-        2. **Move** [`Move-ClusterGroup`](https://docs.microsoft.com/powershell/module/failoverclusters/Move-ClusterGroup?view=win10-ps) 他のクラスターワークロードには、フェールオーバークラスターマネージャーまたはコマンドレットからの移動を使用します。
+        2. **Move** [`Move-ClusterGroup`](/powershell/module/failoverclusters/Move-ClusterGroup?view=win10-ps) 他のクラスターワークロードには、フェールオーバークラスターマネージャーまたはコマンドレットからの移動を使用します。
 
 3. すべてのノードが Windows Server 2016 にアップグレードされ、クラスターに戻された場合、またはその他の Windows Server 2012 R2 ノードが削除された場合は、次の手順を実行します。
 
     > [!IMPORTANT]
     > -   クラスターの機能レベルを更新した後は、Windows Server 2012 R2 の機能レベルに戻ることはできず、Windows Server 2012 R2 のノードをクラスターに追加することはできません。
-    > -   [`Update-ClusterFunctionalLevel`](https://docs.microsoft.com/powershell/module/failoverclusters/Update-ClusterFunctionalLevel?view=win10-ps)コマンドレットが実行されるまで、プロセスは完全に元に戻すことができ、Windows server 2012 R2 ノードをこのクラスターに追加し、Windows server 2016 ノードを削除することができます。
-    > -   [`Update-ClusterFunctionalLevel`](https://docs.microsoft.com/powershell/module/failoverclusters/Update-ClusterFunctionalLevel?view=win10-ps)コマンドレットを実行すると、新しい機能が使用できるようになります。
+    > -   [`Update-ClusterFunctionalLevel`](/powershell/module/failoverclusters/Update-ClusterFunctionalLevel?view=win10-ps)コマンドレットが実行されるまで、プロセスは完全に元に戻すことができ、Windows server 2012 R2 ノードをこのクラスターに追加し、Windows server 2016 ノードを削除することができます。
+    > -   [`Update-ClusterFunctionalLevel`](/powershell/module/failoverclusters/Update-ClusterFunctionalLevel?view=win10-ps)コマンドレットを実行すると、新しい機能が使用できるようになります。
 
-    1.  フェールオーバークラスターマネージャー UI またはコマンドレットを使用して [`Get-ClusterGroup`](https://docs.microsoft.com/powershell/module/failoverclusters/Get-ClusterGroup?view=win10-ps) 、クラスターですべてのクラスターの役割が想定どおりに実行されていることを確認します。 次の例では、使用可能な記憶域が使用されていません。代わりに CSV が使用されるため、使用可能な記憶域には**オフライン**状態が表示されます (図18を参照)。
+    1.  フェールオーバークラスターマネージャー UI またはコマンドレットを使用して [`Get-ClusterGroup`](/powershell/module/failoverclusters/Get-ClusterGroup?view=win10-ps) 、クラスターですべてのクラスターの役割が想定どおりに実行されていることを確認します。 次の例では、使用可能な記憶域が使用されていません。代わりに CSV が使用されるため、使用可能な記憶域には**オフライン**状態が表示されます (図18を参照)。
 
         ![スクリーンショットコマンドレットの出力を示す ](media/Cluster-Operating-System-Rolling-Upgrade/Cluster_RollingUpgrade_GetClusterGroup.png)
-         **図 18: すべてのクラスターグループ (クラスターの役割) が [`Get-ClusterGroup`](https://docs.microsoft.com/powershell/module/failoverclusters/Get-ClusterGroup?view=win10-ps) コマンドレットを使用して実行されていることを確認する**
+         **図 18: すべてのクラスターグループ (クラスターの役割) が [`Get-ClusterGroup`](/powershell/module/failoverclusters/Get-ClusterGroup?view=win10-ps) コマンドレットを使用して実行されていることを確認する**
 
-    2.  コマンドレットを使用して、すべてのクラスターノードがオンラインで実行されていることを確認し [`Get-ClusterNode`](https://docs.microsoft.com/powershell/module/failoverclusters/Get-ClusterNode?view=win10-ps) ます。
+    2.  コマンドレットを使用して、すべてのクラスターノードがオンラインで実行されていることを確認し [`Get-ClusterNode`](/powershell/module/failoverclusters/Get-ClusterNode?view=win10-ps) ます。
     3.  コマンドレットを実行し [`Update-ClusterFunctionalLevel`](https://technet.microsoft.com/library/mt589702.aspx) ます。エラーは返されません (図19を参照)。
 
         ![スクリーンショット ClusterFunctionalLevel コマンドレットの出力を示す ](media/Cluster-Operating-System-Rolling-Upgrade/Cluster_RollingUpgrade_SelectFunctionalLevel.png)
          **図 19: PowerShell を使用してクラスターの機能レベルを更新**する
 
-    4.  [`Update-ClusterFunctionalLevel`](https://docs.microsoft.com/powershell/module/failoverclusters/Update-ClusterFunctionalLevel?view=win10-ps)コマンドレットを実行すると、新しい機能を使用できるようになります。
+    4.  [`Update-ClusterFunctionalLevel`](/powershell/module/failoverclusters/Update-ClusterFunctionalLevel?view=win10-ps)コマンドレットを実行すると、新しい機能を使用できるようになります。
 
 4. Windows Server 2016-通常のクラスターの更新とバックアップの再開:
 
-    1. 以前に CAU を実行していた場合は、CAU UI を使用して再起動するか、コマンドレットを使用し [`Enable-CauClusterRole`](https://docs.microsoft.com/powershell/module/clusterawareupdating/Enable-CauClusterRole?view=win10-ps) ます (図20を参照)。
+    1. 以前に CAU を実行していた場合は、CAU UI を使用して再起動するか、コマンドレットを使用し [`Enable-CauClusterRole`](/powershell/module/clusterawareupdating/Enable-CauClusterRole?view=win10-ps) ます (図20を参照)。
 
-        ![スクリーンショット ](media/Cluster-Operating-System-Rolling-Upgrade/Cluster_RollingUpgrade_EnableCAUClusterRole.png) ** [`Enable-CauClusterRole`](https://docs.microsoft.com/powershell/module/clusterawareupdating/Enable-CauClusterRole?view=win10-ps) コマンドレットを使用して add-cauclusterrole 図 20: クラスター対応更新の役割を有効に**する方法の出力を示しています。
+        ![スクリーンショット ](media/Cluster-Operating-System-Rolling-Upgrade/Cluster_RollingUpgrade_EnableCAUClusterRole.png) ** [`Enable-CauClusterRole`](/powershell/module/clusterawareupdating/Enable-CauClusterRole?view=win10-ps) コマンドレットを使用して add-cauclusterrole 図 20: クラスター対応更新の役割を有効に**する方法の出力を示しています。
 
     2. バックアップ操作を再開します。
 
 5. Hyper-v Virtual Machines で Windows Server 2016 の機能を有効にして使用します。
 
-    1. クラスターが Windows Server 2016 の機能レベルにアップグレードされると、Hyper-v Vm のような多くのワークロードに新機能が追加されます。 新しい Hyper-v 機能の一覧を表示します。 「[仮想マシンの移行とアップグレード」を](https://msdn.microsoft.com/virtualization/hyperv_on_windows/user_guide/migrating_vms)参照してください。
+    1. クラスターが Windows Server 2016 の機能レベルにアップグレードされると、Hyper-v Vm のような多くのワークロードに新機能が追加されます。 新しい Hyper-v 機能の一覧を表示します。 「[仮想マシンの移行とアップグレード」を](../virtualization/hyper-v/deploy/upgrade-virtual-machine-version-in-hyper-v-on-windows-or-windows-server.md)参照してください。
 
-    2. クラスター内の各 Hyper-v ホストノードで、コマンドレットを使用して、 [`Get-VMHostSupportedVersion`](https://docs.microsoft.com/powershell/module/hyper-v/Get-VMHostSupportedVersion?view=win10-ps) ホストでサポートされている HYPER-V VM 構成のバージョンを表示します。
+    2. クラスター内の各 Hyper-v ホストノードで、コマンドレットを使用して、 [`Get-VMHostSupportedVersion`](/powershell/module/hyper-v/Get-VMHostSupportedVersion?view=win10-ps) ホストでサポートされている HYPER-V VM 構成のバージョンを表示します。
 
         ![スクリーンショットコマンドレットの出力を示す ](media/Cluster-Operating-System-Rolling-Upgrade/Clustering_GetVMHostSupportVersion.png) **図 21: ホストでサポートされている hyper-v VM 構成のバージョンを表示**する
 
-   3. クラスター内の各 Hyper-v ホストノードでは、ユーザーの簡単なメンテナンス期間をスケジュールし、仮想マシンをオフにして、コマンドレットを実行することで、Hyper-v VM 構成のバージョンをアップグレードでき [`Update-VMVersion`](https://docs.microsoft.com/powershell/module/hyper-v/Update-VMVersion?view=win10-ps) ます (図22を参照)。 これにより、仮想マシンのバージョンが更新され、新しい Hyper-v 機能が有効になるため、今後の Hyper-v 統合コンポーネント (IC) の更新は不要になります。 このコマンドレットは、VM をホストしている Hyper-v ノードから実行できます。または、パラメーターを使用して、 `-ComputerName` vm のバージョンをリモートで更新できます。 この例では、VM1 の構成バージョンを5.0 から7.0 にアップグレードし、運用チェックポイント (アプリケーション整合性バックアップ) やバイナリ VM 構成ファイルなど、この VM 構成バージョンに関連付けられている多くの新しい Hyper-v 機能を利用できるようにします。
+   3. クラスター内の各 Hyper-v ホストノードでは、ユーザーの簡単なメンテナンス期間をスケジュールし、仮想マシンをオフにして、コマンドレットを実行することで、Hyper-v VM 構成のバージョンをアップグレードでき [`Update-VMVersion`](/powershell/module/hyper-v/Update-VMVersion?view=win10-ps) ます (図22を参照)。 これにより、仮想マシンのバージョンが更新され、新しい Hyper-v 機能が有効になるため、今後の Hyper-v 統合コンポーネント (IC) の更新は不要になります。 このコマンドレットは、VM をホストしている Hyper-v ノードから実行できます。または、パラメーターを使用して、 `-ComputerName` vm のバージョンをリモートで更新できます。 この例では、VM1 の構成バージョンを5.0 から7.0 にアップグレードし、運用チェックポイント (アプリケーション整合性バックアップ) やバイナリ VM 構成ファイルなど、この VM 構成バージョンに関連付けられている多くの新しい Hyper-v 機能を利用できるようにします。
 
        ![スクリーンショットコマンドレットの動作を示す ](media/Cluster-Operating-System-Rolling-Upgrade/Cluster_RollingUpgrade_StopVM.png) **図 22: 更新プログラム Vmversion PowerShell コマンドレットを使用して VM バージョンをアップグレード**する
 
-6. 記憶域プールは、[更新プログラム StoragePool](https://docs.microsoft.com/powershell/module/storage/Update-StoragePool?view=win10-ps) PowerShell コマンドレットを使用してアップグレードできます。これはオンライン操作です。
+6. 記憶域プールは、[更新プログラム StoragePool](/powershell/module/storage/Update-StoragePool?view=win10-ps) PowerShell コマンドレットを使用してアップグレードできます。これはオンライン操作です。
 
 ここではプライベートクラウドのシナリオを対象としていますが、特にダウンタイムなしでアップグレードできる Hyper-v およびスケールアウトファイルサーバークラスターは、クラスター OS のローリングアップグレードプロセスを任意のクラスターの役割に使用できます。
 
@@ -244,8 +242,8 @@ ClusterFunctionalLevelcmdlet を実行すると、クラスターは "Stage 4" �
 **クラスター OS のローリングアップグレードプロセスを開始する前に、Windows Server 2012 R2 クラスターにすべてのソフトウェア更新プログラムがインストールされている必要がありますか。**
 はい。クラスター OS のローリングアップグレードプロセスを開始する前に、すべてのクラスターノードが最新のソフトウェア更新プログラムで更新されていることを確認してください。
 
-**[`Update-ClusterFunctionalLevel`](https://docs.microsoft.com/powershell/module/failoverclusters/Update-ClusterFunctionalLevel?view=win10-ps)ノードがオフになっているとき、または一時停止しているときにコマンドレットを実行できますか。**
-いいえ。 コマンドレットを機能させるには、すべてのクラスターノードがオンになっていて、アクティブなメンバーシップになっている必要があり [`Update-ClusterFunctionalLevel`](https://docs.microsoft.com/powershell/module/failoverclusters/Update-ClusterFunctionalLevel?view=win10-ps) ます。
+**[`Update-ClusterFunctionalLevel`](/powershell/module/failoverclusters/Update-ClusterFunctionalLevel?view=win10-ps)ノードがオフになっているとき、または一時停止しているときにコマンドレットを実行できますか。**
+いいえ。 コマンドレットを機能させるには、すべてのクラスターノードがオンになっていて、アクティブなメンバーシップになっている必要があり [`Update-ClusterFunctionalLevel`](/powershell/module/failoverclusters/Update-ClusterFunctionalLevel?view=win10-ps) ます。
 
 **クラスターの OS ローリングアップグレードはクラスターのワークロードに対して機能しますか。SQL Server に対して機能しますか。**
 はい。クラスター OS のローリングアップグレードは、クラスターのワークロードに対応しています。 ただし、Hyper-v とスケールアウトファイルサーバークラスターではダウンタイムがゼロになります。 その他のほとんどのワークロードでは、フェールオーバー時にダウンタイム (通常は数分) が発生し、クラスター OS のローリングアップグレードプロセス中に少なくとも1回フェールオーバーが必要になります。
@@ -256,8 +254,8 @@ ClusterFunctionalLevelcmdlet を実行すると、クラスターは "Stage 4" �
 **追加のワークロードとフェールオーバー容量を持つ大規模なクラスターの場合、複数のノードを同時にアップグレードすることはできますか。**
 はい。 OS をアップグレードするためにクラスターから1つのノードが削除されると、クラスターのフェールオーバー用のノードが1つ少なくなるため、フェールオーバーの容量が減少します。 ワークロードとフェールオーバーの容量が十分にある大規模なクラスターでは、複数のノードを同時にアップグレードできます。 クラスターノードを一時的にクラスターに追加することにより、クラスター OS のローリングアップグレードプロセス中に、ワークロードとフェールオーバーの容量を向上させることができます。
 
-**を正常に実行した後にクラスターで問題が検出された場合はどうすればよい [`Update-ClusterFunctionalLevel`](https://docs.microsoft.com/powershell/module/failoverclusters/Update-ClusterFunctionalLevel?view=win10-ps) ですか?**
-を実行する前に、システム状態のバックアップを使用してクラスターデータベースをバックアップした場合は [`Update-ClusterFunctionalLevel`](https://docs.microsoft.com/powershell/module/failoverclusters/Update-ClusterFunctionalLevel?view=win10-ps) 、Windows Server 2012 R2 クラスターノードで権限のある復元を実行し、元のクラスターデータベースと構成を復元できます。
+**を正常に実行した後にクラスターで問題が検出された場合はどうすればよい [`Update-ClusterFunctionalLevel`](/powershell/module/failoverclusters/Update-ClusterFunctionalLevel?view=win10-ps) ですか?**
+を実行する前に、システム状態のバックアップを使用してクラスターデータベースをバックアップした場合は [`Update-ClusterFunctionalLevel`](/powershell/module/failoverclusters/Update-ClusterFunctionalLevel?view=win10-ps) 、Windows Server 2012 R2 クラスターノードで権限のある復元を実行し、元のクラスターデータベースと構成を復元できます。
 
 **システムドライブを再フォーマットしてクリーン OS インストールを使用するのではなく、各ノードのインプレースアップグレードを使用できますか。**
 Windows Server のインプレースアップグレードを使用することはお勧めしませんが、既定のドライバーが使用される場合には機能します。 クラスターノードのインプレースアップグレード中に表示されるすべての警告メッセージを注意してお読みください。
@@ -268,7 +266,7 @@ Windows Server のインプレースアップグレードを使用すること�
 **System Center 2016 Virtual Machine Manager (SCVMM) を使用して、クラスター OS のローリングアップグレードプロセスを自動化できますか。**
 はい。 System Center 2016 の VMM を使用して、クラスター OS のローリングアップグレードプロセスを自動化できます。
 
-## <a name="additional-references"></a>その他のリファレンス
--   [リリース ノート:Windows Server 2016 に関する重要な問題](../get-started/Release-Notes--Important-Issues-in-Windows-Server-2016-Technical-Preview.md)
--   [Windows Server 2016 の新機能](../get-started/What-s-New-in-windows-server-2016.md)
+## <a name="additional-references"></a>その他の参照情報
+-   [リリース ノート:Windows Server 2016 に関する重要な問題](../get-started/windows-server-2016-ga-release-notes.md)
+-   [Windows Server 2016 の新機能](../get-started/whats-new-in-windows-server-2016.md)
 -   [Windows Server のフェールオーバー クラスタリングの新機能に関する記事](whats-new-in-failover-clustering.md)

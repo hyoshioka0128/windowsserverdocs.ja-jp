@@ -7,12 +7,12 @@ ms.assetid: 378213f5-2d59-4c9b-9607-1fc83f8072f1
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/08/2018
-ms.openlocfilehash: 24b716283eeab929f09db3c4e9cf3ec577211d32
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 41bf68a18a05f97de4cff14651bf98bfa28bc33c
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87955859"
+ms.locfileid: "87990136"
 ---
 # <a name="configure-encryption-for-a-virtual-subnet"></a>仮想サブネットの暗号化の構成
 
@@ -31,7 +31,7 @@ ms.locfileid: "87955859"
 >現在接続されているか接続されているかにかかわらず、同じサブネット上の別の VM と通信する場合、トラフィックは自動的に暗号化されます。
 
 >[!TIP]
->暗号化されたサブネット上でのみアプリケーションを通信するように制限する必要がある場合は、現在のサブネット内での通信のみを許可するように Access Control リスト (Acl) のみを使用できます。 詳細については、「 [Access Control リスト (acl) を使用してデータセンターのネットワークトラフィックフローを管理する」を](https://docs.microsoft.com/windows-server/networking/sdn/manage/use-acls-for-traffic-flow)参照してください。
+>暗号化されたサブネット上でのみアプリケーションを通信するように制限する必要がある場合は、現在のサブネット内での通信のみを許可するように Access Control リスト (Acl) のみを使用できます。 詳細については、「 [Access Control リスト (acl) を使用してデータセンターのネットワークトラフィックフローを管理する」を](../manage/use-acls-for-traffic-flow.md)参照してください。
 
 
 ## <a name="step-1-create-the-encryption-certificate"></a>手順 1. 暗号化証明書を作成する

@@ -6,14 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: a0fb1e286e4b6479a95114fd8d2ad90ffa57b7c8
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 41a540b43fde264718ca7aa81ba0e48184cf1265
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519751"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87956389"
 ---
 # <a name="customization-for-localization"></a>ローカライズのカスタマイズ
 
@@ -38,6 +36,6 @@ Set-AdfsGlobalWebContent -ErrorPageDescriptionText "Il s'agit de description de 
 
 Unicode の入力が必要な英語以外の言語に web コンテンツをカスタマイズする場合は、Windows PowerShell ISE を使用することをお勧めします。 詳細について[は、「Windows PowerShell ISE の概要](/previous-versions/mt707506(v=msdn.10))」を参照してください。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 [AD FS ユーザーサインインのカスタマイズ](AD-FS-user-sign-in-customization.md)

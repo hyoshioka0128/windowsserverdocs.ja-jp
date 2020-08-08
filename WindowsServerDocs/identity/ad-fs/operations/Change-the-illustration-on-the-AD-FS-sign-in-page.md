@@ -6,14 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 47a71fffc864f6ae5ecb46d562f92d2d9cece092
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 91ba9ca9068ccf2d619c8f98e1f678df7194e1a6
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519791"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87956519"
 ---
 # <a name="change-the-illustration-on-the-ad-fs-sign-in-page"></a>AD FS サインインページの図を変更する
 
@@ -30,6 +28,6 @@ ms.locfileid: "87519791"
 Set-AdfsWebTheme -TargetName default -Illustration @{path="c:\Contoso\illustration.png"}
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 [AD FS ユーザーサインインのカスタマイズ](AD-FS-user-sign-in-customization.md)

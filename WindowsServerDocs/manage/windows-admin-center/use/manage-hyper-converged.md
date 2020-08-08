@@ -1,19 +1,17 @@
 ---
 title: Windows 管理センターを使用したハイパー集約型インフラストラクチャの管理
 description: Windows 管理センター (Project ホノルル) を使用したハイパー集約型インフラストラクチャの管理
-ms.technology: manage
 ms.topic: article
 author: daniellee-msft
 ms.author: jol
 ms.date: 03/01/2019
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 8344fcb01a5d527dfce46118121fbf7623636549
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: a2fd0e688d33265119c8dcb915d485e953507c80
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519671"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990482"
 ---
 # <a name="manage-hyper-converged-infrastructure-with-windows-admin-center"></a>Windows 管理センターを使用したハイパー集約型インフラストラクチャの管理
 
@@ -21,7 +19,7 @@ ms.locfileid: "87519671"
 
 ## <a name="what-is-hyper-converged-infrastructure"></a>ハイパー集約型インフラストラクチャとは
 
-ハイパースレッディングインフラストラクチャでは、ソフトウェアで定義されたコンピューティング、記憶域、およびネットワークを1つのクラスターに統合して、パフォーマンス、コスト効率、および拡張性に優れた、拡張性の高い仮想化を実現します。 この機能は、Windows Server 2016 で[記憶域スペースダイレクト](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-direct-overview)、[ソフトウェアで定義さ](https://docs.microsoft.com/windows-server/networking/sdn/software-defined-networking)れたネットワーク、および[hyper-v](https://docs.microsoft.com/windows-server/virtualization/hyper-v/hyper-v-on-windows-server)を使用して導入されました。
+ハイパースレッディングインフラストラクチャでは、ソフトウェアで定義されたコンピューティング、記憶域、およびネットワークを1つのクラスターに統合して、パフォーマンス、コスト効率、および拡張性に優れた、拡張性の高い仮想化を実現します。 この機能は、Windows Server 2016 で[記憶域スペースダイレクト](../../../storage/storage-spaces/storage-spaces-direct-overview.md)、[ソフトウェアで定義さ](../../../networking/sdn/software-defined-networking.md)れたネットワーク、および[hyper-v](../../../virtualization/hyper-v/hyper-v-on-windows-server.md)を使用して導入されました。
 
 > [!Tip]
 > ハイパー集約型インフラストラクチャの取得を検討していますか? Microsoft では、これらの[Windows Server ソフトウェアで定義された](https://microsoft.com/wssd)ソリューションをパートナーから推奨しています。 これらは、互換性と信頼性を確保するために、参照アーキテクチャに対して設計、組み立て、検証を行い、迅速に稼働させることができます。
@@ -286,9 +284,9 @@ Windows 管理センターは Microsoft Azure クラウドとの強力で便利�
 - [Microsoft Tech Community で Windows 管理センターフォーラムに参加する](https://techcommunity.microsoft.com/t5/Windows-Server-Management/bd-p/WindowsServerManagement)
 - ツイート`@servermgmt`
 
-### <a name="additional-references"></a>その他のリファレンス
+### <a name="additional-references"></a>その他の参照情報
 
 - [Windows Admin Center](../overview.md)
-- [記憶域スペース ダイレクト](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-direct-overview)
-- [Hyper-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v/hyper-v-on-windows-server)
-- [ソフトウェアによるネットワーク](https://docs.microsoft.com/windows-server/networking/sdn/software-defined-networking)
+- [記憶域スペース ダイレクト](../../../storage/storage-spaces/storage-spaces-direct-overview.md)
+- [Hyper-V](../../../virtualization/hyper-v/hyper-v-on-windows-server.md)
+- [ソフトウェア定義ネットワーク](../../../networking/sdn/software-defined-networking.md)

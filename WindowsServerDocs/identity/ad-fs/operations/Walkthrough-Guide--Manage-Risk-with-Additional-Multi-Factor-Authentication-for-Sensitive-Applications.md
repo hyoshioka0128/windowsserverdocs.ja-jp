@@ -6,14 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: be9eaa7b742f554539fa5bbd08f46d47a347c1ad
-ms.sourcegitcommit: f305bc5f1c5a44dac62f4288450af19f351f9576
+ms.openlocfilehash: f651f60b5ba9e871a88a2df15d87b6819e851642
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87118571"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87956289"
 ---
 # <a name="walkthrough-guide-manage-risk-with-additional-multi-factor-authentication-for-sensitive-applications"></a>チュートリアル ガイド:追加の多要素認証による個人情報アプリケーションのリスク管理
 
@@ -168,7 +166,7 @@ Windows Azure の Multi-Factor Authentication Server の実行可能ファイル
 
 2.  Multi-Factor Authentication Server をライセンス認証するには、Multi-Factor Authentication Server をダウンロードした Multi-Factor Authentication 管理ポータルのページに戻り、**[アクティブ化資格情報の生成]** ボタンをクリックします。 Multi-Factor Authentication Server のユーザー インターフェイスで、生成された資格情報を入力し、**[ライセンス認証]** をクリックします。
 
-3.  次に、**Multi-Factor Authentication Server** のユーザー インターフェイスで、**マルチサーバー構成ウィザード**を実行するように求められます。  **[いいえ]** を選択します。
+3.  次に、**Multi-Factor Authentication Server** のユーザー インターフェイスで、**マルチサーバー構成ウィザード**を実行するように求められます。  このため、 **[いいえ]** を選択します。
 
     > [!IMPORTANT]
     > このチュートリアルを完了するために使用するフェデレーション サーバーがラボ環境に 1 台しかない場合は、**マルチサーバー構成ウィザード**の手順の完了はスキップできます。 ただし、フェデレーション サーバーがラボ環境に複数台ある場合は、Multi-Factor Authentication Server をインストールした後、フェデレーション サーバーで実行されている Multi-Factor Authentication Server 間のレプリケーションを有効にするために、各フェデレーション サーバーで**マルチサーバー構成ウィザード**の手順を完了する必要があります。
@@ -183,9 +181,9 @@ Windows Azure の Multi-Factor Authentication Server の実行可能ファイル
 
     > [!NOTE]
     > **Multi-Factor Authentication AD FS アダプター**のインストール ウィザードにより、Active Directory で **PhoneFactor Admins** というセキュリティ グループが作成され、このグループにフェデレーション サービスの AD FS サービス アカウントが追加されます。
-    > 
+    >
     > **PhoneFactor Admins** グループが実際に作成され、AD FS サービス アカウントがこのグループのメンバーであることをドメイン コントローラーで確認することをお勧めします。
-    > 
+    >
     > 必要に応じて、ドメイン コントローラーで AD FS サービス アカウントを **PhoneFactor Admins** グループに手動で追加します。
 
     AD FS アダプターのインストールに関するその他の詳細については、Multi-Factor Authentication Server の右上隅にある [ヘルプ] リンクをクリックしてください。

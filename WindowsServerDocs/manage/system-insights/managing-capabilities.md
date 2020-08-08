@@ -1,19 +1,17 @@
 ---
 title: 管理機能
 description: System Insights では、機能ごとに構成できるさまざまな設定が公開されており、これらの設定を調整して、展開の特定のニーズに対応することができます。 このトピックでは、Windows 管理センターまたは PowerShell を使用して、各機能のさまざまな設定を管理する方法について説明します。これらの設定を調整する方法については、PowerShell の基本的な例と Windows 管理センターのスクリーンショットを示します。
-ms.prod: windows-server
-ms.technology: system-insights
 ms.topic: article
 author: gawatu
 ms.author: gawatu
 manager: mallikarjun.chadalapaka
 ms.date: 6/05/2018
-ms.openlocfilehash: 66745440094ccf55b774727320d59074139a7f33
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: e82b27d2d746592b29b86a66ee34b21f8605a0d8
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471783"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87940163"
 ---
 # <a name="managing-capabilities"></a>管理機能
 
@@ -83,9 +81,9 @@ System Insights では、機能が予測を終了するたびにイベントが�
 | --------------- | --------------- |
 | [OK] | 151 |
 | 警告 | 148 |
-| 重要 | 150 |
+| 重大 | 150 |
 | エラー | 149 |
-| なし | 132 |
+| None | 132 |
 
 >[!TIP]
 >[Azure Monitor](https://azure.microsoft.com/services/monitor/)または[System Center Operations Manager](https://docs.microsoft.com/system-center/scom/welcome?view=sc-om-1807)を使用してこれらのイベントを集計し、マシングループ全体で予測結果を表示します。
@@ -152,7 +150,7 @@ Windows 管理センターを使用して、[**設定**] ページの [**操作*
 ![ユーザーが修復アクションを指定できる設定ページ](media/actions-page-contoso.png)
 
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 System Insights の詳細については、次のリソースを参照してください。
 
 - [システム インサイトの概要](overview.md)

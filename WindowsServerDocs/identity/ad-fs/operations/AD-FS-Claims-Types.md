@@ -5,14 +5,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: d73995b118ec41ffc892700858d20798f637d83b
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3c68d615bcb7fffd8bb0c91116f5e3b73e252a65
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80857485"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87940346"
 ---
 # <a name="client-access-policy-claim-types-in-ad-fs"></a>AD FS のクライアントアクセスポリシー要求の種類
 
@@ -20,9 +18,9 @@ ms.locfileid: "80857485"
 
 ## <a name="x-ms-forwarded-client-ip"></a>X-ミリ秒-クライアント-IP
 
-要求の種類: `https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip`
+要求の種類:`https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip`
 
-この AD FS 要求は、要求を行っているユーザー (Outlook クライアントなど) の IP アドレスを突き止めるに "最適な試行" を表します。 この要求には、要求を転送したすべてのプロキシのアドレスを含む、複数の IP アドレスを含めることができます。  この要求は、現在 Exchange Online によって設定されている HTTP ヘッダーから作成されます。これは、認証要求を AD FS に渡すときに、ヘッダーを入力します。 要求の値には、次のいずれかを指定できます。
+この AD FS 要求は、要求を行っているユーザー (Outlook クライアントなど) の IP アドレスを突き止めるに "最適な試行" を表します。 この要求には、要求を転送したすべてのプロキシのアドレスを含む、複数の IP アドレスを含めることができます。この要求は、現在 Exchange Online によって設定されている HTTP ヘッダーから作成されます。これは、認証要求を AD FS に渡すときに、ヘッダーを入力します。 要求の値には、次のいずれかを指定できます。
 
 
 - 単一の IP アドレス-Exchange Online に直接接続されているクライアントの IP アドレス
@@ -36,18 +34,18 @@ ms.locfileid: "80857485"
     >!付箋Exchange Online インフラストラクチャに関連する IP アドレスは、一覧に表示されません。
 
 
->!要する現在、Exchange Online は IPV4 アドレスのみをサポートしています。IPV6 アドレスはサポートされていません。 
+>!要する現在、Exchange Online は IPV4 アドレスのみをサポートしています。IPV6 アドレスはサポートされていません。
 
 
 ## <a name="x-ms-client-application"></a>X-MS-クライアント-アプリケーション
 
-要求の種類: `https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application`
+要求の種類:`https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application`
 
-この AD FS 要求は、エンドクライアントが使用するプロトコルを表します。このプロトコルは、使用されているアプリケーションに対して弱くなります。  この要求は、現在 Exchange Online によって設定されている HTTP ヘッダーから作成されます。これは、認証要求を AD FS に渡すときに、ヘッダーを入力します。 アプリケーションによっては、この要求の値は次のいずれかになります。
+この AD FS 要求は、エンドクライアントが使用するプロトコルを表します。このプロトコルは、使用されているアプリケーションに対して弱くなります。この要求は、現在 Exchange Online によって設定されている HTTP ヘッダーから作成されます。これは、認証要求を AD FS に渡すときに、ヘッダーを入力します。 アプリケーションによっては、この要求の値は次のいずれかになります。
 
 
 
-- Exchange Active Sync を使用するデバイスの場合、値は "Microsoft. Exchange. ActiveSync" になります。 
+- Exchange Active Sync を使用するデバイスの場合、値は "Microsoft. Exchange. ActiveSync" になります。
 - Microsoft Outlook クライアントを使用すると、次のいずれかの値が返される場合があります。
     - Microsoft. Exchange. 自動検出
     - OfflineAddressBook
@@ -63,9 +61,9 @@ ms.locfileid: "80857485"
 
 ## <a name="x-ms-client-user-agent"></a>X-MS-クライアント-ユーザーエージェント
 
-要求の種類: `https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-user-agent`
+要求の種類:`https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-user-agent`
 
-この AD FS 要求は、クライアントがサービスにアクセスするために使用しているデバイスの種類を表す文字列を提供します。 これは、特定のデバイス (特定の種類のスマートフォンなど) へのアクセスをユーザーが禁止する場合に使用できます。  この要求は、現在 Exchange Online によって設定されている HTTP ヘッダーから作成されます。これは、認証要求を AD FS に渡すときに、ヘッダーを入力します。 この要求の値の例には、以下の値が含まれます (ただし、これらに限定されません)。
+この AD FS 要求は、クライアントがサービスにアクセスするために使用しているデバイスの種類を表す文字列を提供します。 これは、特定のデバイス (特定の種類のスマートフォンなど) へのアクセスをユーザーが禁止する場合に使用できます。この要求は、現在 Exchange Online によって設定されている HTTP ヘッダーから作成されます。これは、認証要求を AD FS に渡すときに、ヘッダーを入力します。 この要求の値の例には、以下の値が含まれます (ただし、これらに限定されません)。
 >!付箋次に示すのは、x-ms クライアントアプリケーションが "Microsoft. Exchange. ActiveSync" であるクライアントに対して、ユーザーエージェントの値に含まれる可能性のある例です。
 
 - 渦/1.0
@@ -81,15 +79,15 @@ ms.locfileid: "80857485"
 
 ## <a name="x-ms-proxy"></a>X-MS-プロキシ
 
-要求の種類: `https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy`
+要求の種類:`https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy`
 
-この AD FS 要求は、要求がフェデレーションサーバープロキシを経由して渡されたことを示します。  この要求は、フェデレーションサーバープロキシによって作成されます。これにより、認証要求をバックエンドフェデレーションサービスに渡すときにヘッダーが設定されます。 AD FS は、それをクレームに変換します。 
+この AD FS 要求は、要求がフェデレーションサーバープロキシを経由して渡されたことを示します。この要求は、フェデレーションサーバープロキシによって作成されます。これにより、認証要求をバックエンドフェデレーションサービスに渡すときにヘッダーが設定されます。 AD FS は、それをクレームに変換します。
 
 要求の値は、要求を受けたフェデレーションサーバープロキシの DNS 名です。
 
 ## <a name="x-ms-endpoint-absolute-path-active-vs-passive"></a>X-MS-エンドポイント-絶対パス (アクティブとパッシブ)
 
-要求の種類: `https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path`
+要求の種類:`https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path`
 
 この要求の種類を使用して、"アクティブ" (リッチ) クライアントと "パッシブ" (web ブラウザーベース) クライアントからの要求を特定できます。 これにより、Outlook Web アクセス、SharePoint Online、Office 365 ポータルなどのブラウザーベースのアプリケーションからの外部要求が許可されますが、Microsoft Outlook などのリッチクライアントからの要求はブロックされます。
 

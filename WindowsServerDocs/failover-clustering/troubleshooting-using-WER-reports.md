@@ -1,23 +1,21 @@
 ---
 title: Windows エラー報告を使用したフェールオーバー クラスターのトラブルシューティング
 description: WER レポートを使用したフェールオーバークラスターのトラブルシューティング。レポートを収集して一般的な問題を診断する方法の詳細については、「」を確認してください。
-ms.prod: windows-server
-ms.technology: storage-failover-clustering
 ms.author: johnmar
 author: JohnMarlin-MSFT
 ms.date: 03/27/2018
-ms.openlocfilehash: f888b7f49c2bf97eb42070a6028b137aeb730406
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: 9b4569f4f4d28ad1380cf057cdf96e4b81fbdb2a
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87768539"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990740"
 ---
 # <a name="troubleshooting-a-failover-cluster-using-windows-error-reporting"></a>Windows エラー報告を使用したフェールオーバー クラスターのトラブルシューティング
 
 > 適用対象: Windows Server 2019、Windows Server 2016、Windows Server
 
-Windows エラー報告 (WER) は、高度な管理者または階層3のサポートが、Windows によって検出されたハードウェアとソフトウェアの問題に関する情報を収集し、Microsoft に報告し、利用可能なソリューションをユーザーに提供するために設計された、柔軟なイベントベースのフィードバックインフラストラクチャです。 この[リファレンス](https://docs.microsoft.com/powershell/module/windowserrorreporting/)では、すべての WindowsErrorReporting コマンドレットの説明と構文について説明します。
+Windows エラー報告 (WER) は、高度な管理者または階層3のサポートが、Windows によって検出されたハードウェアとソフトウェアの問題に関する情報を収集し、Microsoft に報告し、利用可能なソリューションをユーザーに提供するために設計された、柔軟なイベントベースのフィードバックインフラストラクチャです。 この[リファレンス](/powershell/module/windowserrorreporting/)では、すべての WindowsErrorReporting コマンドレットの説明と構文について説明します。
 
 以下に示すトラブルシューティングの情報は、エスカレートされた高度な問題のトラブルシューティングに役立ちます。また、トリアージのためにデータをマイクロソフトに送信することが必要になる場合もあります。
 
@@ -75,11 +73,11 @@ Microsoft-Windows-Kernel-LiveDump/Analytic
 
 ## <a name="gathering-logs"></a>ログの収集
 
-イベントチャネルを有効にした後、 **DumpLogQuery**を使用してログを収集できます。 パブリックリソースの種類のプロパティ**DumpLogQuery**は mutistring の値です。 各文字列は、[ここで説明する XPATH クエリ](https://msdn.microsoft.com/library/windows/desktop/dd996910(v=vs.85).aspx)です。
+イベントチャネルを有効にした後、 **DumpLogQuery**を使用してログを収集できます。 パブリックリソースの種類のプロパティ**DumpLogQuery**は mutistring の値です。 各文字列は、[ここで説明する XPATH クエリ](/windows/win32/wes/consuming-events)です。
 
 トラブルシューティングを行うときに、追加のイベントチャネルを収集する必要がある場合は、追加のクエリを追加したり、一覧を変更したりして、 **DumpLogQuery**プロパティを変更できます。
 
-これを行うには、[まず、次のよう](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent?view=powershell-5.1)に使用して、XPATH クエリをテストします。
+これを行うには、[まず、次のよう](/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent?view=powershell-5.1)に使用して、XPATH クエリをテストします。
 
 ```powershell
 get-WinEvent -FilterXML "<QueryList><Query><Select Path='Microsoft-Windows-GroupPolicy/Operational'>*[System[TimeCreated[timediff(@SystemTime) &gt;= 600000]]]</Select></Query></QueryList>"
@@ -158,7 +156,7 @@ Directory of c:\ProgramData\Microsoft\Windows\WER\ReportArchive
 
 ```
 
-Windows エラー報告には、問題レポートのエクスペリエンスをカスタマイズするための多くの設定が用意されています。 詳細については、Windows エラー報告の[ドキュメント](https://msdn.microsoft.com/library/windows/desktop/bb513638(v=vs.85).aspx)を参照してください。
+Windows エラー報告には、問題レポートのエクスペリエンスをカスタマイズするための多くの設定が用意されています。 詳細については、Windows エラー報告の[ドキュメント](/windows/win32/wer/wer-settings)を参照してください。
 
 
 ## <a name="troubleshooting-using-windows-error-reporting-reports"></a>Windows エラー報告レポートの使用に関するトラブルシューティング

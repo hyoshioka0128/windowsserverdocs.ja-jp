@@ -6,14 +6,12 @@ ms.author: billmath
 manager: mtillman
 ms.date: 01/18/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: a85d486dc30a36d575927ba243d46a403c3a5185
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: f30b66bd80b3c5002bdc2c66a1d89718cdb1ee39
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87520171"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87956209"
 ---
 # <a name="ad-fs-troubleshooting---fiddler---ws-federation"></a>AD FS のトラブルシューティング-Fiddler
 

@@ -6,12 +6,12 @@ ms.topic: get-started-article
 ms.assetid: 9724aa8d-e4ae-404c-bee6-cef1534cd3ca
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 2af2321a1f87eab1e29ecb6c483ee85c87b08ee7
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 0662a72f23a06e62d92fc040aa88e11f795083e3
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971839"
+ms.locfileid: "87990169"
 ---
 # <a name="configure-windows-server-update-services-wsus-content-servers"></a>Windows Server Update Services (WSUS) コンテンツ サーバーを構成する
 
@@ -21,4 +21,4 @@ BranchCache 機能をインストールし、BranchCache サービスを開始�
 
 更新ファイルをローカルコンピューターに保存するように WSUS サーバーを構成すると、更新プログラムのメタデータと更新ファイルの両方がによってダウンロードされ、WSUS サーバーに直接保存されます。 これにより、BranchCache クライアントコンピューターは、Microsoft Update Web サイトから直接ではなく、WSUS サーバーから Microsoft 製品の更新ファイルを受け取ることができます。
 
-WSUS 同期の詳細については、「[更新プログラムの同期](https://technet.microsoft.com/library/mt612311.aspx)のセットアップ」を参照してください。
+WSUS 同期の詳細については、「[更新プログラムの同期](../../../administration/windows-server-update-services/manage/setting-up-update-synchronizations.md)のセットアップ」を参照してください。

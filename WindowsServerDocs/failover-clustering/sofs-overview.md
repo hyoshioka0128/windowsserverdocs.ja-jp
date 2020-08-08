@@ -7,12 +7,12 @@ ms.author: jgerend
 manager: lizross
 ms.date: 04/26/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: dfd39210b6db8516fafbe8b437c7d38cd7839bad
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 9147d88b2d31def46e7a755abf17a2cdf767f8a2
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87972389"
+ms.locfileid: "87990687"
 ---
 # <a name="scale-out-file-server-for-application-data-overview"></a>アプリケーション データ用のスケールアウト ファイル サーバーの概要
 
@@ -231,12 +231,12 @@ ms.locfileid: "87972389"
 
 - インターネット インフォメーション サービス (IIS) Web サーバーは、Web サイトの構成とデータをスケールアウト ファイル共有に格納できます。 詳細については、[共有構成](https://www.iis.net/learn/manage/managing-your-configuration-settings/shared-configuration_264)に関するページを参照してください。
 - Hyper-V は、構成およびライブの仮想ディスクをスケールアウト ファイル共有に格納できます。 詳細については、「[Hyper-V over SMB の展開](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134187(v%3dws.11)>)」を参照してください。
-- SQL Server は、ライブ データベース ファイルをスケールアウト ファイル共有に格納できます。 詳細については、「[SQL Server をストレージ オプションとして SMB ファイル共有にインストールする](https://docs.microsoft.com/sql/database-engine/install-windows/install-sql-server-with-smb-fileshare-as-a-storage-option)」を参照してください。
+- SQL Server は、ライブ データベース ファイルをスケールアウト ファイル共有に格納できます。 詳細については、「[SQL Server をストレージ オプションとして SMB ファイル共有にインストールする](/sql/database-engine/install-windows/install-sql-server-with-smb-fileshare-as-a-storage-option)」を参照してください。
 - Virtual Machine Manager (VMM) は、ライブラリ共有 (仮想マシン テンプレートと関連ファイルを含む) をスケールアウト ファイル共有に格納できます。 ただし、ライブラリサーバー自体をスケールアウトファイルサーバーにすることはできません。スタンドアロンサーバーまたはスケールアウトファイルサーバークラスターの役割を使用しないフェールオーバークラスター上にある必要があります。
 
 スケールアウト ファイル共有をライブラリ共有として使用する場合は、スケールアウト ファイル サーバーと互換性があるテクノロジのみを使用できます。 たとえば、スケールアウトファイル共有でホストされているライブラリ共有をレプリケートするために DFS レプリケーションを使用することはできません。 また、スケールアウト ファイル サーバーに最新のソフトウェア更新プログラムがインストールされていることも重要です。
 
-スケールアウト ファイル共有をライブラリ共有として使用するには、最初に、ローカル共有を備えた、または共有なしのライブラリ サーバー (おそらく仮想マシン) を追加します。 次に、ライブラリ共有を追加するときに、スケールアウトファイルサーバーでホストされているファイル共有を選択します。 この共有は、VMM で管理する必要があります。また、ライブラリ サーバー専用として作成されていなければなりません。 さらに、スケールアウト ファイル サーバーには必ず最新の更新プログラムをインストールします。 VMM ライブラリサーバーおよびライブラリ共有の追加の詳細については、「 [vmm ライブラリへのプロファイルの追加](https://docs.microsoft.com/system-center/vmm/library-profiles?view=sc-vmm-1801)」を参照してください。 ファイル サービスおよび記憶域サービスの現在使用可能な修正プログラムの一覧については、[マイクロソフト サポート技術情報の記事 2899011](https://support.microsoft.com/help/2899011/list-of-currently-available-hotfixes-for-the-file-services-technologie) を参照してください。
+スケールアウト ファイル共有をライブラリ共有として使用するには、最初に、ローカル共有を備えた、または共有なしのライブラリ サーバー (おそらく仮想マシン) を追加します。 次に、ライブラリ共有を追加するときに、スケールアウトファイルサーバーでホストされているファイル共有を選択します。 この共有は、VMM で管理する必要があります。また、ライブラリ サーバー専用として作成されていなければなりません。 さらに、スケールアウト ファイル サーバーには必ず最新の更新プログラムをインストールします。 VMM ライブラリサーバーおよびライブラリ共有の追加の詳細については、「 [vmm ライブラリへのプロファイルの追加](/system-center/vmm/library-profiles?view=sc-vmm-1801)」を参照してください。 ファイル サービスおよび記憶域サービスの現在使用可能な修正プログラムの一覧については、[マイクロソフト サポート技術情報の記事 2899011](https://support.microsoft.com/help/2899011/list-of-currently-available-hotfixes-for-the-file-services-technologie) を参照してください。
 
 >[!NOTE]
 >インフォメーション ワーカーなど、一部のユーザーに対する負荷は、パフォーマンスにより大きな影響を与えます。 たとえば、ファイルを開く、閉じる、新しいファイルを作成する、既存のファイルの名前を変更するなどの操作を複数のユーザーが行うと、パフォーマンスに影響を及ぼします。 継続的な可用性によってファイル共有が有効になっている場合は、データの整合性が確保されますが、パフォーマンス全体にも影響します。 継続的な可用性では、スケールアウト ファイル サーバーのクラスター ノードでの障害発生時に整合性を確保するために、ディスクに対するデータの書き込みが必要です。 このため、ファイル サーバーに大きなファイルを複数コピーすると、継続的に使用可能なファイル共有のパフォーマンスが大幅に低下する場合があります。

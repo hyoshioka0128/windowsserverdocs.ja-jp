@@ -6,20 +6,18 @@ ms.author: billmath
 manager: mtillman
 ms.date: 10/18/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 8c478e31c3a86203f6c5f249185659caf9881723
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 1090c5c79ad0f4b4cf2fa27bf735604ad334b90e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86963474"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87956379"
 ---
 # <a name="walkthrough-workplace-join-with-an-ios-device"></a>チュートリアル:職場への iOS デバイスの参加
 
 
-> [!IMPORTANT] 
-> この方法は、完全なオンプレミスの顧客のみに関連しています。 ハイブリッドまたはクラウド専用のお客様は、この方法を使用して iOS デバイスを登録することはできません。 また、オンプレミスの顧客がクラウドに移行する場合、この方法は互換性がありません。 デバイスを登録解除し、クラウドに登録する必要があります。 
+> [!IMPORTANT]
+> この方法は、完全なオンプレミスの顧客のみに関連しています。 ハイブリッドまたはクラウド専用のお客様は、この方法を使用して iOS デバイスを登録することはできません。 また、オンプレミスの顧客がクラウドに移行する場合、この方法は互換性がありません。 デバイスを登録解除し、クラウドに登録する必要があります。
 
 このトピックでは、iOS デバイスでのワークプレース ジョインについて説明します。 このチュートリアルを実行する前に、「 [Windows Server 2012 R2 で AD FS 用のラボ環境](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)をセットアップする」セクションの手順を完了する必要があります。 デバイスを使用すると、 [「チュートリアル: Windows デバイスでの Workplace Join](Walkthrough--Workplace-Join-with-a-Windows-Device.md)」でアクセスしたのと同じ会社の web アプリケーションにアクセスできます。
 
@@ -28,7 +26,7 @@ ms.locfileid: "86963474"
 
 > [!IMPORTANT]
 > オンプレミスの DRS を構成するとき、ワークプレース ジョインを正常に完了するには、「 [Step 2: Configure the federation server (ADFS1) with Device Registration Service](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md#BKMK_4)」で Active Directory フェデレーション サービス (AD FS) の構成に使用した SSL (Secure Socket Layer) 証明書を iOS デバイスで信頼する必要があります。
-> 
+>
 > -   AD FS の SSL 証明書がテスト用の証明機関 (CA) から発行されたものである場合、その証明機関の証明書を iOS デバイスにインストールする必要があります。
 > -   証明機関の証明書が Web サイトに公開されている場合、iOS デバイスから Web サイトを参照して証明書をインストールできます。
 

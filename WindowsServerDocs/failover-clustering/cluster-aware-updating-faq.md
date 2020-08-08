@@ -2,18 +2,17 @@
 ms.assetid: 6416d125-bcaf-433d-971a-2f0283bca2c2
 title: クラスター対応更新についてよく寄せられる質問
 ms.topic: article
-ms.prod: windows-server
 manager: lizross
 ms.author: jgerend
 author: JasonGerend
 ms.date: 04/28/2017
 description: Windows Server でのクラスター対応更新に関してよく寄せられる質問への回答です。
-ms.openlocfilehash: aa2f99378713d93bafed710b96542559ac44ead7
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 0283f7f29ccc647508530d6cfdbf54b41086b90c
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473339"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990907"
 ---
 # <a name="cluster-aware-updating-frequently-asked-questions"></a>クラスター対応更新: よく寄せられる質問
 
@@ -101,7 +100,7 @@ CAU はクラスター化されたノードの負荷を分散しませんが、�
 
 **高度な更新実行オプション**管理者はさらに、各ノードで更新プロセスが再試行される最大回数など、多数の高度な更新実行オプションから指定することもできます。 これらのオプションは、CAU UI または CAU PowerShell コマンドレットのいずれかを使用して指定できます。 カスタム設定は、更新実行プロファイルに保存し、以降の更新実行に再利用することができます。
 
-**パブリックプラグ \- インアーキテクチャ**cau には、プラグインを登録、登録解除、および選択するための機能が含まれて \- います。 cau には2つの既定のプラグインが付属しています。 \- 1 つは \( 各クラスターノードで Windows Update エージェント WUA api を調整し \) 、もう1つはクラスターノードからアクセスできるファイル共有に手動でコピーされた修正プログラムを これらの2つのプラグインで満たすことのできない独自のニーズがある企業では、 \- \- パブリック API 仕様に従って新しい CAU プラグインを構築できます。 詳細については、「[クラスター \- 対応更新のプラグイン \- リファレンス](https://msdn.microsoft.com/library/hh418084(VS.85).aspx)」を参照してください。
+**パブリックプラグ \- インアーキテクチャ**cau には、プラグインを登録、登録解除、および選択するための機能が含まれて \- います。 cau には2つの既定のプラグインが付属しています。 \- 1 つは \( 各クラスターノードで Windows Update エージェント WUA api を調整し \) 、もう1つはクラスターノードからアクセスできるファイル共有に手動でコピーされた修正プログラムを これらの2つのプラグインで満たすことのできない独自のニーズがある企業では、 \- \- パブリック API 仕様に従って新しい CAU プラグインを構築できます。 詳細については、「[クラスター \- 対応更新のプラグイン \- リファレンス](/previous-versions/windows/desktop/mscs/cluster-aware-update-plug-in-interfaces-and-classes)」を参照してください。
 
 さまざまな更新シナリオをサポートするための CAU プラグインの構成とカスタマイズの詳細につい \- ては、「[プラグインのしくみ \- ](assetId:///847b571b-12b3-473c-953f-75a5a1f51333)」を参照してください。
 
@@ -154,11 +153,10 @@ CAU は、クラスターノードで実行されているサービスを必要�
 
 ## <a name="where-is-the-cau-plug-in-specification"></a>CAU プラグインの仕様はどこにあり \- ますか。
 
--   [クラスター \- 対応更新プラグイン \- の参照](https://msdn.microsoft.com/library/hh418084(VS.85).aspx)
+-   [クラスター \- 対応更新プラグイン \- の参照](/previous-versions/windows/desktop/mscs/cluster-aware-update-plug-in-interfaces-and-classes)
 
 -   [クラスター対応更新プラグイン \- のサンプル](https://code.msdn.microsoft.com/windowsdesktop/Cluster-Aware-Updating-6a8854c9)
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 -   [クラスター \- 対応更新の概要](cluster-aware-updating.md)
-

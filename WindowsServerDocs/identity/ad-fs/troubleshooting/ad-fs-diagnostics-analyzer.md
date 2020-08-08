@@ -7,14 +7,12 @@ manager: mtillman
 ms.reviewer: anandyadavMSFT
 ms.date: 03/29/2019
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 5d56a84680467359b68ae1ab115801d82a34c822
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e6d6063d3d01cda48a662160c9ad661169371677
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407236"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87956199"
 ---
 # <a name="ad-fs-help-diagnostics-analyzer"></a>AD FS ヘルプ診断アナライザー
 
@@ -26,13 +24,13 @@ Complete 操作では、次の3つの簡単な手順が実行されます。
 2. 診断を実行し、ファイルを AD FS ヘルプにアップロードします
 3. 診断分析を表示し、問題を解決する
 
-トラブルシューティングを開始するには、 [AD FS Help Diagnostics Analyzer (https://aka.ms/adfsdiagnosticsanalyzer)](https://aka.ms/adfsdiagnosticsanalyzer)にアクセスしてください。
+トラブルシューティングを開始するには、 [AD FS ヘルプ診断アナライザー https://aka.ms/adfsdiagnosticsanalyzer) ](https://aka.ms/adfsdiagnosticsanalyzer)にアクセスしてください。
 
 ![AD FS ヘルプの AD FS diagnostics analyzer ツール](media/ad-fs-diagonostics-analyzer/home.png)
 
 ## <a name="step-1-setup-the-adfstoolbox-module-on-ad-fs-server"></a>手順 1: AD FS サーバーで ADFSToolbox モジュールをセットアップする
 
-[診断アナライザー](https://aka.ms/adfsdiagnosticsanalyzer)を実行するには、ADFSToolbox PowerShell モジュールをインストールする必要があります。 AD FS サーバーがインターネットに接続できる場合は、PowerShell ギャラリーから ADFSToolbox モジュールを直接インストールできます。 インターネットに接続されていない場合は、手動でインストールすることができます。 
+[診断アナライザー](https://aka.ms/adfsdiagnosticsanalyzer)を実行するには、ADFSToolbox PowerShell モジュールをインストールする必要があります。 AD FS サーバーがインターネットに接続できる場合は、PowerShell ギャラリーから ADFSToolbox モジュールを直接インストールできます。 インターネットに接続されていない場合は、手動でインストールすることができます。
 
 [!WARNING]
 AD FS 2.1 以下を使用している場合は、ADFSToolbox のバージョン1.0.13 をインストールする必要があります。 ADFSToolbox では、最新バージョンで AD FS 2.1 以降がサポートされなくなりました。
@@ -50,7 +48,7 @@ AD FS サーバーがインターネットに接続されている場合は、�
 
 ### <a name="setup-manually"></a>手動によるセットアップ
 
-ADFSToolbox モジュールは、AD FS または WAP サーバーに手動でコピーする必要があります。 次の手順に従います。
+ADFSToolbox モジュールは、AD FS または WAP サーバーに手動でコピーする必要があります。 次の手順に従ってください。
 
 1. インターネットにアクセスできるコンピューターで、管理者特権の PowerShell ウィンドウを起動します。
 2. AD FS ツールボックスモジュールをインストールします。
@@ -58,7 +56,7 @@ ADFSToolbox モジュールは、AD FS または WAP サーバーに手動でコ
     ```powershell
     Install-Module -Name ADFSToolbox -Force
     ```
-3. ローカルコンピューター上の `%SYSTEMDRIVE%\Program Files\WindowsPowerShell\Modules\` にある ADFSToolbox フォルダーを、AD FS または WAP コンピューターの同じ場所にコピーします。
+3. ローカルコンピューターにある ADFSToolbox フォルダー `%SYSTEMDRIVE%\Program Files\WindowsPowerShell\Modules\` を、AD FS または WAP コンピューターの同じ場所にコピーします。
 
 4. AD FS マシンで管理者特権の PowerShell ウィンドウを起動し、次のコマンドレットを実行してモジュールをインポートします。
 
@@ -82,13 +80,13 @@ ADFSToolbox モジュールは、AD FS または WAP サーバーに手動でコ
     Export-AdfsDiagnosticsFile -ServerNames @("adfs1.contoso.com", "adfs2.contoso.com")
 ```
 
-結果として、コマンドを実行したディレクトリに作成された JSON ファイルが生成されます。 ファイルの名前は、AdfsDiagnosticsFile-\<timestamp\>です。 ファイル名の例は、AdfsDiagnosticsFile-07312019-184201 です。
+結果として、コマンドを実行したディレクトリに作成された JSON ファイルが生成されます。 ファイル名は AdfsDiagnosticsFile- \<timestamp\> です。 ファイル名の例としては、AdfsDiagnosticsFile-07312019-184201.jsがあります。
 
 ## <a name="step-3-upload-the-diagnostics-file"></a>手順 3: 診断ファイルをアップロードする
 
-[https://aka.ms/adfsdiagnosticsanalyzer](https://aka.ms/adfsdiagnosticsanalyzer)の手順 3. で、ファイルブラウザーを使用して、アップロードする結果ファイルを選択します。
+「」の手順3で [https://aka.ms/adfsdiagnosticsanalyzer](https://aka.ms/adfsdiagnosticsanalyzer) は、ファイルブラウザーを使用して、アップロードする結果ファイルを選択します。
 
-**[アップロード]** をクリックしてアップロードを完了します。
+[**アップロード**] をクリックしてアップロードを完了します。
 
 Microsoft アカウントでサインインすることにより、診断結果を後で表示するために保存し、Microsoft サポートに送信できます。 サポートケースを開いた時点で、Microsoft は診断アナライザーの結果を表示し、問題のトラブルシューティングを迅速に行うことができます。
 
@@ -104,7 +102,7 @@ Microsoft アカウントでサインインすることにより、診断結果�
 4. [未実行]: このセクションには、情報が不足しているために実行できなかったテストの一覧が含まれています。
 5. 該当なし: このセクションには、コマンドが実行されていた特定のサーバーに適用できなかったために実行されなかったテストの一覧が含まれています。
 
-![AD FS 診断アナライザーツール-テスト結果リスト](media/ad-fs-diagonostics-analyzer/step3a_v3.png) 各テスト結果が、テストとその解決策について説明する詳細と共に表示されます。
+![AD FS diagnostics analyzer ツール-テスト結果一覧に ](media/ad-fs-diagonostics-analyzer/step3a_v3.png) は、テストとその解決策について説明する詳細情報が表示されます。
 
 1. テスト名: 実行されたテストの名前
 2. 説明: テストの説明。

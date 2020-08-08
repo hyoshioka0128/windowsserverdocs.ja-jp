@@ -2,19 +2,17 @@
 title: クラスター対応更新の概要
 description: クラスター対応更新 (CAU) は、Windows Server を実行しているクラスターへのソフトウェア更新プログラムのインストールを自動化します。
 ms.topic: article
-ms.prod: windows-server
 manager: lizross
 author: JasonGerend
 ms.author: jgerend
-ms.technology: storage-failover-clustering
 ms.date: 08/06/2018
 ms.assetid: 3c2993b4-aa81-452b-a5c3-3724ad95d892
-ms.openlocfilehash: a889e19947d014bc2008417f64f6be5cc53112e6
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: defec4b34dfd0e2efa5724e499330c79b993bb60
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409893"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990806"
 ---
 # <a name="cluster-aware-updating-overview"></a>クラスター対応更新の概要
 
@@ -80,7 +78,7 @@ CAU を使用するには、Windows Server のフェールオーバークラス�
 
 フェールオーバー クラスタリング機能は、次のツールを使ってインストールできます。
 - 役割と機能の追加ウィザード (サーバー マネージャー)
-- [Install-add-windowsfeature](https://docs.microsoft.com/powershell/module/servermanager/Install-WindowsFeature?view=winserver2012r2-ps&viewFallbackFrom=win10-ps)  Windows PowerShell コマンドレット
+- [Install-add-windowsfeature](/powershell/module/servermanager/Install-WindowsFeature?view=winserver2012r2-ps&viewFallbackFrom=win10-ps)  Windows PowerShell コマンドレット
 - 展開イメージのサービスと管理 (DISM) のコマンド ライン ツール
 
 詳細については、「[フェールオーバークラスタリング機能のインストール](create-failover-cluster.md#install-the-failover-clustering-feature)」を参照してください。
@@ -101,9 +99,9 @@ CAU を使用するには、Windows Server のフェールオーバークラス�
 ### <a name="enabling-self-updating-mode"></a>自己更新モードを有効にする
 自己更新モードを有効にするには、クラスター対応更新のクラスター化された役割をフェールオーバークラスターに追加する必要があります。 そのためには、次の手順のいずれかを実行します。
 - サーバーマネージャーで [**ツール**] [クラスター対応更新] の順に選択し、[  >  **Cluster-Aware Updating**クラスター対応更新] ウィンドウで [**クラスターの自己更新オプションの構成**] を選択します。
-- PowerShell セッションで、 [add-cauclusterrole](https://docs.microsoft.com/powershell/module/clusterawareupdating/Add-CauClusterRole?view=win10-ps)コマンドレットを実行します。
+- PowerShell セッションで、 [add-cauclusterrole](/powershell/module/clusterawareupdating/Add-CauClusterRole?view=win10-ps)コマンドレットを実行します。
 
-CAU をアンインストールするには、サーバーマネージャー、 [uninstall](https://docs.microsoft.com/powershell/module/servermanager/Uninstall-WindowsFeature?view=win10-ps)コマンドレット、または DISM コマンドラインツールを使用して、フェールオーバークラスタリング機能またはフェールオーバークラスタリングツールをアンインストールし \- ます。
+CAU をアンインストールするには、サーバーマネージャー、 [uninstall](/powershell/module/servermanager/Uninstall-WindowsFeature?view=win10-ps)コマンドレット、または DISM コマンドラインツールを使用して、フェールオーバークラスタリング機能またはフェールオーバークラスタリングツールをアンインストールし \- ます。
 
 ### <a name="additional-requirements-and-best-practices"></a>その他の要件とベスト プラクティス
 
@@ -117,13 +115,13 @@ CAU の使用に関する詳細な要件とベストプラクティス、およ�
 
 1.  Server Manager を起動します。
 
-2.  次のいずれかの操作を行います。
+2.  以下のいずれかを実行します。
 
     -   [**ツール**] メニューの [**クラスター \- 対応更新**] をクリックします。
 
     -   サーバーマネージャーに1つ以上のクラスターノードまたはクラスターが追加された場合は、[**すべてのサーバー** ] ページで、 \- ノードの \( 名前またはクラスターの名前を右クリックし、 \) [クラスターの**更新**] をクリックします。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 クラスター対応更新の使用方法の詳細については、次のリンクを参照してください。
 
 -   [クラスター対応更新の要件とベストプラクティス \-](cluster-aware-updating.md)
@@ -134,8 +132,6 @@ CAU の使用に関する詳細な要件とベストプラクティス、およ�
 
 -   [CAU \- プラグインのしくみ](cluster-aware-updating-plug-ins.md)
 
--   [\-Windows PowerShell のクラスター対応更新コマンドレット](https://docs.microsoft.com/powershell/module/clusterawareupdating/?view=win10-ps&viewFallbackFrom=winserverr2-ps)
+-   [\-Windows PowerShell のクラスター対応更新コマンドレット](/powershell/module/clusterawareupdating/?view=win10-ps&viewFallbackFrom=winserverr2-ps)
 
 -   [クラスター \- 対応更新プラグイン \- の参照](/previous-versions/windows/desktop/mscs/cluster-aware-update-plug-in-interfaces-and-classes)
-
-

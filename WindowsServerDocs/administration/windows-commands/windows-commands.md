@@ -7,12 +7,12 @@ author: jasongerend
 ms.author: jgerend
 manager: dongill
 ms.date: 06/29/2020
-ms.openlocfilehash: f93d78571528ba721c92e28f2e482b163e355031
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 5b596523cc47d9798733ce4f57da43faa9ac075b
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896880"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991135"
 ---
 # <a name="windows-commands"></a>Windows のコマンド
 
@@ -229,7 +229,7 @@ PowerShell は、コマンドシェルの機能を拡張して、コマンドレ
   - [bootcfg raw](bootcfg-raw.md)
   - [bootcfg rmsw](bootcfg-rmsw.md)
   - [bootcfg timeout](bootcfg-timeout.md)
-- [break](break_1.md)
+- [break](./break.md)
 
 ### <a name="c"></a>C
 
@@ -330,7 +330,7 @@ PowerShell は、コマンドシェルの機能を拡張して、コマンドレ
 - [eventtriggers](eventtriggers.md)
 - [Evntcmd](evntcmd.md)
 - [exec](exec.md)
-- [exit](exit_2.md)
+- [exit](./exit.md)
 - [expand](expand.md)
 - [expand vdisk](expand-vdisk.md)
 - [expose](expose.md)
@@ -406,7 +406,7 @@ PowerShell は、コマンドシェルの機能を拡張して、コマンドレ
   - [ftp type](ftp-type.md)
   - [ftp user](ftp-user.md)
   - [ftp verbose](ftp-verbose_1.md)
-  - [ftp mdelete](ftp-.mdelete_1.md)
+  - [ftp mdelete](./ftp.mdelete_1.md)
   - [ftp mdir](ftp.mdir.md)
 - [ftype](ftype.md)
 - [fveupdate](fveupdate.md)

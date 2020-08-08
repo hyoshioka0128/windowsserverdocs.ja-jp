@@ -7,12 +7,12 @@ ms.assetid: 8510a709-001c-4eee-b6d6-c451e8a8a836
 author: kbdazure
 ms.author: kathydav
 ms.date: 10/11/2016
-ms.openlocfilehash: dea2da2d0a10839fd9fe69dbb7b3974290b85975
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: e44a60becc84e3b376797bd64ffe433ce44b8c55
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87963618"
+ms.locfileid: "87990356"
 ---
 # <a name="configure-virtual-local-area-networks-for-hyper-v"></a>Hyper-v の仮想ローカルエリアネットワークを構成する
 仮想ローカルエリアネットワーク \( vlan \) は、ネットワークトラフィックを分離するための1つの方法を提供します。 Vlan は、802.1 q をサポートするスイッチとルーターで構成されます。 複数の Vlan を構成し、それらの間で通信が行われるようにするには、ネットワークデバイスでそのような構成を行う必要があります。
@@ -50,8 +50,8 @@ Vlan を構成するには、次のものが必要です。
 
 - より多くの仮想ネットワークアダプターを適切な仮想スイッチに接続し、VLAN Id を割り当てます。 IP アドレスが正しく構成されていること、および VLAN 経由でルーティングするトラフィックにも正しい IP アドレスが使用されていることを確認してください。
 
-- [Set \- set-vmnetworkadaptervlan](https://technet.microsoft.com/library/hh848475.aspx)コマンドレットを使用して、仮想ネットワークアダプターをトランクモードで構成します。
+- [Set \- set-vmnetworkadaptervlan](/powershell/module/hyper-v/set-vmnetworkadaptervlan?view=win10-ps)コマンドレットを使用して、仮想ネットワークアダプターをトランクモードで構成します。
 
 ## <a name="see-also"></a>参照
 
-[Hyper-v \- 仮想スイッチ](https://technet.microsoft.com/windows-server-docs/networking/technologies/hyper-v-virtual-switch/hyper-v-virtual-switch)
+[Hyper-v \- 仮想スイッチ](../../hyper-v-virtual-switch/hyper-v-virtual-switch.md)

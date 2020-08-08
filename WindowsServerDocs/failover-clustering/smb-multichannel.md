@@ -1,18 +1,16 @@
 ---
 ms.assetid: a6343f1c-e9dd-4a02-91ad-39bd519d66cd
 title: 簡略化された SMB マルチチャネルと複数 NIC のクラスター ネットワーク
-ms.prod: windows-server
-ms.technology: storage-failover-clustering
 ms.topic: article
 author: RobHindman
 ms.author: robhind
 ms.date: 09/15/2016
-ms.openlocfilehash: f345cd877f1c611683c2ffdef56b9b58cc070e49
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 7fad43cb5f3de5c10ed815fa802b6168c15850d1
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473059"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990745"
 ---
 # <a name="simplified-smb-multichannel-and-multi-nic-cluster-networks"></a>簡略化された SMB マルチチャネルと複数 NIC のクラスター ネットワーク
 
@@ -27,7 +25,7 @@ ms.locfileid: "85473059"
 - 既定では、各クラスターアクセスポイント (CAP) のネットワーク名 (NN) に1つの IP アドレスリソースが構成されます。
 - 同じサブネットに複数の Nic が存在する場合、クラスター検証で警告メッセージが発行されなくなりました。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 -   サーバーごとに複数の Nic。同じスイッチ/サブネットを使用します。
 
 ## <a name="how-to-take-advantage-of-multi-nic-clusters-networks-and-simplified-smb-multichannel"></a>マルチ NIC クラスターネットワークと簡略化された SMB マルチチャネルを活用する方法
@@ -58,7 +56,7 @@ ms.locfileid: "85473059"
  **図 4: 自動 IPv6 リンクローカル (Fe80) アドレスリソースの構成**
 
 ## <a name="throughput-and-fault-tolerance"></a>スループットとフォールトトレランス
-Windows Server 2019 および Windows Server 2016 は自動的に NIC 機能を検出し、可能な限り最速の構成で各 NIC を使用しようとします。 チーミングされた Nic、RSS を使用した nic、および RDMA 機能を備えた nic のすべてを使用できます。 次の表は、これらのテクノロジを使用する場合のトレードオフの概要を示しています。 複数の RDMA 対応 Nic を使用する場合は、最大スループットが達成されます。 詳細については、「 [SMB Mutlichannel の基本](https://blogs.technet.microsoft.com/josebda/2012/06/28/the-basics-of-smb-multichannel-a-feature-of-windows-server-2012-and-smb-3-0/)」を参照してください。
+Windows Server 2019 および Windows Server 2016 は自動的に NIC 機能を検出し、可能な限り最速の構成で各 NIC を使用しようとします。 チーミングされた Nic、RSS を使用した nic、および RDMA 機能を備えた nic のすべてを使用できます。 次の表は、これらのテクノロジを使用する場合のトレードオフの概要を示しています。 複数の RDMA 対応 Nic を使用する場合は、最大スループットが達成されます。 詳細については、「 [SMB Mutlichannel の基本](/archive/blogs/josebda/the-basics-of-smb-multichannel-a-feature-of-windows-server-2012-and-smb-3-0)」を参照してください。
 
 ![さまざまな NIC 構成のスループットとフォールトトレランスの図 ](media/Simplified-SMB-Multichannel-and-Multi-NIC-Cluster-Networks/Clustering_MulitNIC_Fig5.png)
  **5: さまざまな Nic のスループットとフォールトトレランス**
@@ -79,5 +77,5 @@ Windows Server 2019 および Windows Server 2016 は自動的に NIC 機能を�
 **クラスター共通プロパティは、マルチ NIC ネットワークで PlumbAllCrossSubnetRoutes 尊重されていますか。**
 はい。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 - [Windows Server のフェールオーバー クラスタリングの新機能に関する記事](whats-new-in-failover-clustering.md)

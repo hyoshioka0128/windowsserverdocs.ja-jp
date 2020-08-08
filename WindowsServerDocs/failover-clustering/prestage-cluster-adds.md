@@ -1,22 +1,20 @@
 ---
-title: Active Directory Domain Services でクラスター コンピューター アカウントを事前設定する
+title: Active Directory Domain Services でクラスターコンピューターオブジェクトを事前設定する
 description: Active Directory Domain Services でクラスターコンピューターオブジェクトをプレステージする方法
-ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 manager: lizross
-ms.technology: storage-failover-clustering
 ms.date: 05/09/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: c0d8efc1bdb5a2c3a653afbe61b211f94658101d
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 1f9255b0f3ca85a2c128549fbe9dc2c01c870b1b
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181728"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990763"
 ---
-# <a name="prestage-cluster-computer-objects-in-active-directory-domain-services"></a>Active Directory Domain Services でクラスター コンピューター アカウントを事前設定する
+# <a name="prestage-cluster-computer-objects-in-active-directory-domain-services"></a>Active Directory Domain Services でクラスターコンピューターオブジェクトを事前設定する
 
 > 適用先:Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -138,5 +136,5 @@ AD DS で CNO をプレステージした場合、VCO を作成するには、�
 
 ## <a name="more-information"></a>詳細情報
 
-- [フェールオーバー クラスタリング](failover-clustering.md)
+- [フェールオーバー クラスタリング](./failover-clustering-overview.md)
 - [Active Directory でクラスターのアカウントを構成する](configure-ad-accounts.md)

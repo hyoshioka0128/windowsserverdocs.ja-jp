@@ -7,12 +7,12 @@ ms.assetid: 7da0f509-7b02-4a0f-90fb-d97c83a2bc4e
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/08/2018
-ms.openlocfilehash: 68014e0941205db61cc0b607e6784fb8d6d807ab
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 72062d002e5530031a99e3b742507277ed5ec490
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87955869"
+ms.locfileid: "87990074"
 ---
 # <a name="virtual-network-encryption"></a>Virtual Network 暗号化
 
@@ -28,9 +28,8 @@ ms.locfileid: "87955869"
 サブネットで暗号化を有効にすると、そのサブネット内のすべてのネットワークトラフィックが自動的に暗号化されます。また、アプリケーションレベルの暗号化も行われることになります。  暗号化済みとしてマークされていても、サブネット間を通過するトラフィックは暗号化されずに自動的に送信されます。 仮想ネットワークの境界を越えるすべてのトラフィックも、暗号化されずに送信されます。
 
 >[!TIP]
->暗号化されたサブネット上でのみアプリケーションを通信するように制限する必要がある場合は、現在のサブネット内での通信のみを許可するように Access Control リスト (Acl) のみを使用できます。 詳細については、「 [Access Control リスト (acl) を使用してデータセンターのネットワークトラフィックフローを管理する」を](https://docs.microsoft.com/windows-server/networking/sdn/manage/use-acls-for-traffic-flow)参照してください。
+>暗号化されたサブネット上でのみアプリケーションを通信するように制限する必要がある場合は、現在のサブネット内での通信のみを許可するように Access Control リスト (Acl) のみを使用できます。 詳細については、「 [Access Control リスト (acl) を使用してデータセンターのネットワークトラフィックフローを管理する」を](../manage/use-acls-for-traffic-flow.md)参照してください。
 
 ### <a name="next-steps"></a>次のステップ
 
-[仮想ネットワークの暗号化の構成](https://docs.microsoft.com/windows-server/networking/sdn/vnet-encryption/sdn-config-vnet-encryption)
-
+[仮想ネットワークの暗号化の構成](./sdn-config-vnet-encryption.md)

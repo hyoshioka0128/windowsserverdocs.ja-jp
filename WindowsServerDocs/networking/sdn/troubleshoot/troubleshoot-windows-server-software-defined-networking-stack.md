@@ -7,12 +7,12 @@ ms.assetid: 9be83ed2-9e62-49e8-88e7-f52d3449aac5
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/14/2018
-ms.openlocfilehash: 87972f9a0d83a4b7f192e2fe0f751ee66c599044
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 2bf186d2f8761ca51c77b4d02489b0d85c53e046
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87955919"
+ms.locfileid: "87990160"
 ---
 # <a name="troubleshoot-the-windows-server-software-defined-networking-stack"></a>Windows Server ソフトウェア定義ネットワーク スタックのトラブルシューティング
 
@@ -20,7 +20,7 @@ ms.locfileid: "87955919"
 
 このガイドでは、一般的なソフトウェアによるネットワーク制御 (SDN) エラーと障害のシナリオを検証し、使用可能な診断ツールを活用してトラブルシューティングのワークフローを概説します。
 
-マイクロソフトのソフトウェアがネットワーク定義の詳細については、次を参照してください。 [ソフトウェア定義されるネットワーク](../../sdn/Software-Defined-Networking--SDN-.md)します。
+マイクロソフトのソフトウェアがネットワーク定義の詳細については、次を参照してください。 [ソフトウェア定義されるネットワーク](../software-defined-networking.md)します。
 
 ## <a name="error-types"></a>エラーの種類
 次の一覧は、市場投入までの運用環境のデプロイメントから Windows Server 2012 R2 で HYPER-V ネットワーク仮想化 (HNVv1) が最も多く見られますの問題のクラスを表し、さまざまな方法で同じ種類の新しいソフトウェア ネットワーク (SDN) スタックでの Windows Server 2016 HNVv2 で表示される問題と一致します。
@@ -54,12 +54,12 @@ Import-Module hnvdiagnostics
 ```
 
 ### <a name="network-controller-diagnostics"></a>ネットワーク コント ローラーの診断
-Technet の「これらのコマンドレットについては、 [ネットワーク コント ローラー診断コマンドレット トピック](https://docs.microsoft.com/powershell/module/networkcontrollerdiagnostics/)します。 コントロール パスとネットワーク コント ローラーと HYPER-V ホストで実行されている NC ホスト エージェントの間にネットワーク コント ローラーのノード間でネットワーク ポリシーの整合性に問題を特定するのに役立ちます。
+Technet の「これらのコマンドレットについては、 [ネットワーク コント ローラー診断コマンドレット トピック](/powershell/module/networkcontrollerdiagnostics/)します。 コントロール パスとネットワーク コント ローラーと HYPER-V ホストで実行されている NC ホスト エージェントの間にネットワーク コント ローラーのノード間でネットワーク ポリシーの整合性に問題を特定するのに役立ちます。
 
  _デバッグ ServiceFabricNodeStatus_ と _Get NetworkControllerReplica_ ネットワーク コント ローラーのノードの仮想マシンのいずれかのコマンドレットを実行する必要があります。 その他のすべての NC 診断コマンドレットは、ネットワーク コント ローラーに接続し、ネットワーク コント ローラーの管理セキュリティ グループ (Kerberos) のいずれかが、またはネットワーク コント ローラーを管理するための X.509 証明書にアクセスするすべてのホストから実行できます。
 
 ### <a name="hyper-v-host-diagnostics"></a>HYPER-V ホストでの診断
-Technet の「これらのコマンドレットについては、 [Hyper-v ネットワーク仮想化 (HNV) 診断コマンドレット トピック](https://docs.microsoft.com/powershell/module/hnvdiagnostics/)します。 テナント仮想マシン (東または西) 間のデータ パスの問題を特定できると SLB VIP (北または南) からトラフィックを受信します。
+Technet の「これらのコマンドレットについては、 [Hyper-v ネットワーク仮想化 (HNV) 診断コマンドレット トピック](/powershell/module/hnvdiagnostics/)します。 テナント仮想マシン (東または西) 間のデータ パスの問題を特定できると SLB VIP (北または南) からトラフィックを受信します。
 
 _デバッグ VirtualMachineQueueOperation_, 、_Get CustomerRoute_, 、_Get PACAMapping_, 、_Get ProviderAddress_, 、_Get VMNetworkAdapterPortId_, 、_Get VMSwitchExternalPortId_, 、および _テスト EncapOverheadSettings_ すべての HYPER-V ホストから実行できるすべてのローカル テストします。 その他のコマンドレットでは、ネットワーク コント ローラーを介してデータ パスのテストを呼び出すし、したがって上 descried としてネットワーク コント ローラーへのアクセスを必要です。
 

@@ -1,18 +1,16 @@
 ---
 title: レポートのヘルスサービス
-ms.prod: windows-server
 manager: eldenc
 ms.author: cosdar
-ms.technology: storage-health-service
 ms.topic: article
 author: cosmosdarwin
 ms.date: 10/05/2017
-ms.openlocfilehash: a1aedd4dc48abb38c33679f219a6825c6a9141bb
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 1e6b11bc73ef34e5247ca43140d3e2122e77ab61
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473029"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990781"
 ---
 # <a name="health-service-reports"></a>レポートのヘルスサービス
 
@@ -46,7 +44,7 @@ Get-StorageNode -Name <Name> | Get-StorageHealthReport -Count <Count>
 
 ## <a name="usage-in-net-and-c"></a>.NET および C での使用#
 
-### <a name="connect"></a>接続する
+### <a name="connect"></a>接続
 
 ヘルスサービスを照会するには、クラスターで**CimSession**を確立する必要があります。 これを行うには、完全な .NET でしか使用できないものが必要になります。つまり、web アプリまたはモバイルアプリから直接この操作を行うことはできません。 これらのコードサンプルでは \# 、このデータアクセス層で最も単純な選択肢である C を使用します。
 
@@ -109,7 +107,7 @@ public void DiscoverObjects(CimSession Session)
 
 これらは、 **StorageSubSystem**、 **get-storagenode**ようなコマンドレットを使用して PowerShell で**取得した**ものと同じオブジェクトです。
 
-「[ストレージ管理 API クラス](https://msdn.microsoft.com/library/windows/desktop/hh830612(v=vs.85).aspx)」で説明されているすべての同じプロパティにアクセスできます。
+「[ストレージ管理 API クラス](/previous-versions/windows/desktop/stormgmt/storage-management-api-classes)」で説明されているすべての同じプロパティにアクセスできます。
 
 ```
 using System.Diagnostics;
@@ -129,7 +127,7 @@ Windows Server 2016 の各スコープで利用可能なメトリックの完全
 
 ### <a name="iobserveronnext"></a>IObserver. OnNext ()
 
-このサンプルコードでは、[オブザーバーデザインパターン](https://msdn.microsoft.com/library/ee850490(v=vs.110).aspx)を使用して、新しいメトリックの各サンプルが到着したときに**onnext ()** メソッドが呼び出されるオブザーバーを実装します。 **Oncompleted ()** メソッドは、streaming が終了した場合に呼び出されます。 たとえば、ストリーミングを再開に使用して、無期限に続行することができます。
+このサンプルコードでは、[オブザーバーデザインパターン](/dotnet/standard/events/observer-design-pattern)を使用して、新しいメトリックの各サンプルが到着したときに**onnext ()** メソッドが呼び出されるオブザーバーを実装します。 **Oncompleted ()** メソッドは、streaming が終了した場合に呼び出されます。 たとえば、ストリーミングを再開に使用して、無期限に続行することができます。
 
 ```
 class MetricsObserver<T> : IObserver<T>
@@ -211,21 +209,21 @@ public void BeginStreamingMetrics(CimSession Session, CimInstance HealthService,
 
 各メトリックには、このテーブルにつき3つのプロパティしかありません。
 
-| **プロパティ** | **例**       |
+| **Property** | **例**       |
 | -------------|-------------------|
 | 名前         | IOLatencyAverage  |
-| [値]        | 0.00021           |
+| 値        | 0.00021           |
 | ユニット        | 3                 |
 
 Units = {0, 1, 2, 3, 4}、0 = "Bytes"、1 = "BytesPerSecond"、2 = "CountPerSecond"、3 = "Seconds"、または 4 = "パーセント"。
 
-## <a name="coverage"></a>対象範囲
+## <a name="coverage"></a>カバレッジ
 
 Windows Server 2016 の各スコープで使用可能なメトリックを以下に示します。
 
 ### <a name="msft_storagesubsystem"></a>MSFT_StorageSubSystem
 
-| **名前**                        | **ユニット** |
+| **Name**                        | **ユニット** |
 |---------------------------------|-----------|
 | CPUUsage                        | 4         |
 | CapacityPhysicalPooledAvailable | 0         |
@@ -249,7 +247,7 @@ Windows Server 2016 の各スコープで使用可能なメトリックを以下
 
 ### <a name="msft_storagenode"></a>MSFT_StorageNode
 
-| **名前**            | **ユニット** |
+| **Name**            | **ユニット** |
 |---------------------|-----------|
 | CPUUsage            | 4         |
 | IOLatencyAverage    | 3         |
@@ -266,7 +264,7 @@ Windows Server 2016 の各スコープで使用可能なメトリックを以下
 
 ### <a name="msft_volume"></a>MSFT_Volume
 
-| **名前**            | **ユニット** |
+| **Name**            | **ユニット** |
 |---------------------|-----------|
 | CapacityAvailable   | 0         |
 | CapacityTotal       | 0         |
@@ -280,6 +278,6 @@ Windows Server 2016 の各スコープで使用可能なメトリックを以下
 | Ioby Puttotal   | 1         |
 | IOThroughputWrite   | 1         |
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [Windows Server 2016 のヘルス サービス](health-service-overview.md)

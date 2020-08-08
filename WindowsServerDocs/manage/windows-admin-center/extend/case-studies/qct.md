@@ -1,27 +1,25 @@
 ---
 title: Windows 管理センター SDK ケーススタディ-QCT
 description: Windows 管理センター SDK ケーススタディ-QCT
-ms.technology: extend
 ms.topic: article
 author: daniellee-msft
 ms.author: jol
 ms.date: 06/14/2019
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 2922bcdd08fac7bf2179a0ebbad37c7151d660b3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 13f23a46647ec6cc2d8c2813c426f6372ead39ca
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357250"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87964671"
 ---
 # <a name="qct-management-suite-extension"></a>QCT Management Suite 拡張機能
 
 ## <a name="a-simple-path-to-server-infrastructure-management"></a>サーバーインフラストラクチャ管理の単純なパス
 
-Windows 管理センター用 QCT Management Suite 拡張機能には、システム構成を監視し、 [qct AZURE STACK HCI 認定システム](https://go.qct.io/solutions/enterprise-private-cloud/qxstack-windows-server-cloud-ready-appliances/windows-server-software-defined-solution-wssd/)のサーバーの正常性を管理するための1つのウィンドウが表示されます。[QUANTAGRID D52BQ](https://www.qct.io/product/index/Server/rackmount-server/2U-Rackmount-Server/QuantaGrid-D52BQ-2U)、 [QuantaGrid D52T-1ulh](https://www.qct.io/product/index/Storage/Storage-Server/1U-Storage-Server/QuantaGrid-D52T-1ULH) And [QuantaPlex T21P-4u](https://www.qct.io/product/index/Storage/Storage-Server/4U-Storage-Server/QuantaPlex-T21P-4U)。
+Windows 管理センターの QCT Management Suite 拡張機能には、システム構成を監視し、 [qct AZURE STACK HCI 認定システム](https://go.qct.io/solutions/enterprise-private-cloud/qxstack-windows-server-cloud-ready-appliances/windows-server-software-defined-solution-wssd/)のサーバーの正常性を管理するための1つのウィンドウが用意されています。 [QuantaGrid D52BQ](https://www.qct.io/product/index/Server/rackmount-server/2U-Rackmount-Server/QuantaGrid-D52BQ-2U)、 [QuantaGrid D52T-1Ulh](https://www.qct.io/product/index/Storage/Storage-Server/1U-Storage-Server/QuantaGrid-D52T-1ULH) 、 [QuantaPlex T21P-4u](https://www.qct.io/product/index/Storage/Storage-Server/4U-Storage-Server/QuantaPlex-T21P-4U)です。
 
-QCT は、既存の監視と管理に関する顧客の問題点に基づいており、システムイベントログの概要、ドライバーの監視、ハードウェアコンポーネントの正常性を含む機能を提供します。管理エクスペリエンス。
+QCT は、既存の監視と管理に関するお客様の問題点に基づいて、システムイベントログの概要、ドライバーの監視、ハードウェアコンポーネントの正常性を含む機能を提供し、全体的な管理エクスペリエンスを向上させます。
 
 ![QCT 拡張機能](../../media/extend-case-study-qct/D52T_DarkMode_Disk-Detail-General.PNG)
 

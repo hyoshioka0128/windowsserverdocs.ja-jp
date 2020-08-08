@@ -7,39 +7,37 @@ manager: femila
 ms.date: 06/27/2017
 ms.topic: article
 ms.custom: it-pro
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: a80678f5d2773e3fcd7a95032853249dc36d5616
-ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
+ms.openlocfilehash: 0af0d71ad2b373f755653898ab0697b0308faa4b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77465526"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87940305"
 ---
-# <a name="active-directory-federation-services-promptlogin-parameter-support"></a>Active Directory フェデレーションサービス (AD FS) prompt = ログインパラメーターのサポート
+# <a name="active-directory-federation-services-promptlogin-parameter-support"></a>Active Directory フェデレーション サービスの prompt=login パラメーターのサポート
 
 次のドキュメントでは、AD FS で使用できる prompt = login パラメーターのネイティブサポートについて説明します。
 
 ## <a name="what-is-promptlogin"></a>Prompt = login とは
 
-アプリケーションが Azure AD からの新しい認証を要求する必要がある場合は、ユーザーが既に認証されている場合でもユーザーを再認証する Azure AD 必要があることを意味するために、`prompt=login` パラメーターを認証要求の一部として Azure AD に送信することができます。
+アプリケーションが Azure AD からの新しい認証を要求する必要がある場合は、ユーザーが既に認証されている場合でもユーザーを再認証する Azure AD 必要があることを意味するために、 `prompt=login` 認証要求の一部として Azure AD にパラメーターを送信できます。
 
 フェデレーションユーザーの要求である場合、Azure AD は、要求が新規認証用であることを、AD FS のように通知する必要があります。
 
-既定では、Azure AD は `prompt=login` を `wfresh=0` に変換し、この種類の認証要求をフェデレーション IdP に送信するときに `wauth=https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password` します。
+既定では、Azure AD は、 `prompt=login` `wfresh=0` `wauth=https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password` この種類の認証要求をフェデレーション IdP に送信するときにとに変換されます。
 
 これらのパラメーターの意味は次のとおりです。
 
-- `wfresh=0`: 新しい認証を行う
-- `wauth=https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password`: 新しい認証要求にユーザー名とパスワードを使用します
+- `wfresh=0`: 新しい認証を行います。
+- `wauth=https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password`: 新しい認証要求にユーザー名とパスワードを使用します。
 
-これにより、`wauth` パラメーターによって要求されたユーザー名とパスワード以外の認証の種類が必要になる企業イントラネットおよび multi-factor authentication シナリオで問題が発生する可能性があります。  
+これにより、パラメーターで要求された認証の種類 (ユーザー名とパスワード以外) が必要になる企業イントラネットおよび multi-factor authentication のシナリオで問題が発生する可能性があり `wauth` ます。
 
-Windows Server 2012 R2 では、2016年7月の更新プログラムのロールアップで AD FS、`prompt=login` パラメーターのネイティブサポートが導入されました。 これは、Azure AD が Azure AD および Office 365 認証要求の一部として AD FS サービスにこのパラメーターをそのように送信できるようになったことを意味します。
+Windows Server 2012 R2 では、2016年7月の更新プログラムのロールアップで AD FS、パラメーターのネイティブサポートが導入されました `prompt=login` 。 これは、Azure AD が Azure AD および Office 365 認証要求の一部として AD FS サービスにこのパラメーターをそのように送信できるようになったことを意味します。
 
 ## <a name="ad-fs-versions-that-support-promptlogin"></a>Prompt = login をサポートするバージョンの AD FS
 
-`prompt=login` パラメーターをサポートする AD FS バージョンの一覧を次に示します。
+パラメーターをサポートする AD FS バージョンの一覧を次に示し `prompt=login` ます。
 
 - Windows Server 2012 R2 の AD FS (2016 年7月の更新プログラムのロールアップ)
 - Windows Server 2016 の AD FS
@@ -49,30 +47,30 @@ Windows Server 2012 R2 では、2016年7月の更新プログラムのロール�
 Azure AD PowerShell モジュールを使用して、設定を構成します。
 
 > [!NOTE]
-> `prompt=login` 機能 (`PromptLoginBehavior` プロパティによって有効) は現在、 [Azure AD Powershell モジュールのバージョン 1.0](https://connect.microsoft.com/site1164/Downloads/DownloadDetails.aspx?DownloadID=59185)でのみ使用できます。このコマンドレットには、set-msoldomainfederationsettings などの "msol" を含む名前が付いています。  現在、Azure AD PowerShell モジュールの ' version 2.0 ' 経由では使用できません。このコマンドレットには、"AzureAD\*" のような名前が付いています。
+> `prompt=login`現在、この機能は、 `PromptLoginBehavior` [Azure AD Powershell モジュールのバージョン 1.0](https://connect.microsoft.com/site1164/Downloads/DownloadDetails.aspx?DownloadID=59185)でのみ使用できます。このコマンドレットには、Set-msoldomainfederationsettings などの "msol" を含む名前が付いています。  現時点では、Azure AD PowerShell モジュールの ' version 2.0 ' 経由では使用できません。このコマンドレットには、"AzureAD" のような名前が付いてい \* ます。
 
-1. まず、次の PowerShell コマンドを実行して、フェデレーションドメインの `PreferredAuthenticationProtocol`、`SupportsMfa`、および `PromptLoginBehavior` の現在の値を取得します。
+1. まず `PreferredAuthenticationProtocol` 、 `SupportsMfa` 次の `PromptLoginBehavior` PowerShell コマンドを実行して、フェデレーションドメインの、、およびの現在の値を取得します。
 
 ```powershell
     Get-MsolDomainFederationSettings -DomainName <your_domain_name> | Format-List *
 ```
 
 > [!NOTE]
-> 既定で `Get-MsolDomainFederationSettings` の出力は、コンソールに特定のプロパティを表示しません。 すべてのプロパティを表示するには、パイプを使用してその出力を `Format-List *` に`|`し、オブジェクトのすべてのプロパティの出力を強制的に適用する必要があります。
+> 既定でのの出力で `Get-MsolDomainFederationSettings` は、コンソールに特定のプロパティは表示されません。 すべてのプロパティを表示するには、パイプを使用して `|` 出力をに渡し ()、 `Format-List *` オブジェクトのすべてのプロパティの出力を強制的に適用する必要があります。
 
 ![Get-MsolDomainFederationSettings](media/AD-FS-Prompt-Login/GetMsol.png)
 
 > [!NOTE]
-> プロパティ `PromptLoginBehavior` の値が空 (`$null`) の場合、`TranslateToFreshPasswordAuth` の動作が使用されます。
+> プロパティの値 `PromptLoginBehavior` が空 () の場合 `$null` は、の動作 `TranslateToFreshPasswordAuth` が使用されます。
 
-2. 次のコマンドを実行して、`PromptLoginBehavior` の目的の値を構成します。
+2. 次のコマンドを実行して、の目的の値を構成し `PromptLoginBehavior` ます。
 
 ```powershell
     Set-MsolDomainFederationSettings –DomainName <your_domain_name> -PreferredAuthenticationProtocol <current_value_from_step1> -SupportsMfa <current_value_from_step1> -PromptLoginBehavior <TranslateToFreshPasswordAuth|NativeSupport|Disabled>
 ```
 
-`PromptLoginBehavior` パラメーターの有効な値とその意味は次のとおりです。
+パラメーターの使用可能な値 `PromptLoginBehavior` とその意味は次のとおりです。
 
-- **TranslateToFreshPasswordAuth**: `wauth=https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password` および `wfresh=0`に `prompt=login` を変換する既定の Azure AD 動作を意味します。
+- **TranslateToFreshPasswordAuth**: およびへの変換の既定の Azure AD 動作を意味し `prompt=login` `wauth=https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password` `wfresh=0` ます。
 - **NativeSupport**: `prompt=login` パラメーターが AD FS にそのように送信されることを意味します。 これは、2012年 7 2016 月の更新プログラムのロールアップ以降を使用して AD FS が Windows Server R2 に存在する場合に推奨される値です。
-- **Disabled**: `wfresh=0` のみが AD FS に送信されることを意味します。
+- **Disabled**: のみが AD FS に送信されることを意味 `wfresh=0` します。

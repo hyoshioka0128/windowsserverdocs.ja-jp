@@ -1,18 +1,16 @@
 ---
 title: What's New in Kerberos Authentication
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 7bd17803-6e42-4a3b-803f-e47c74725813
 manager: alanth
 author: justinha
-ms.technology: security-authentication
 ms.date: 11/09/2016
-ms.openlocfilehash: 35eff73e97c8fdbb6df2c1412779b033a9ca3fa5
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 514b19689c73c1c5c61184a1ff8c13636b57864e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858815"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87948665"
 ---
 # <a name="whats-new-in-kerberos-authentication"></a>What's New in Kerberos Authentication
 
@@ -20,15 +18,19 @@ ms.locfileid: "80858815"
 
 ## <a name="kdc-support-for-public-key-trust-based-client-authentication"></a>KDC による公開キーの信頼ベースのクライアント認証のサポート
 
-Windows Server 2016 以降では、Kdc は公開キーマッピングの方法をサポートしています。 公開キーがアカウントに対してプロビジョニングされている場合、KDC はそのキーを使用して明示的に Kerberos PKInit をサポートします。 証明書の検証は行われないため、自己署名証明書はサポートされており、認証メカニズムの保証はサポートされていません。
+Windows Server 2016 以降では、Kdc は公開キーマッピングの方法をサポートしています。
+公開キーがアカウントに対してプロビジョニングされている場合、KDC はそのキーを使用して明示的に Kerberos PKInit をサポートします。
+証明書の検証は行われないため、自己署名証明書はサポートされており、認証メカニズムの保証はサポートされていません。
 
 キーの信頼は、UseSubjectAltName の設定に関係なく、アカウントに対して構成する場合に推奨されます。
 
 ## <a name="kerberos-client-and-kdc-support-for-rfc-8070-pkinit-freshness-extension"></a>Kerberos クライアントと KDC での RFC 8070 の PKInit 鮮度拡張機能のサポート
 
-Windows 10、バージョン1607、および Windows Server 2016 以降では、Kerberos クライアントは、公開キーベースのサインオンに対して[RFC 8070 の PKInit 鮮度拡張機能](https://datatracker.ietf.org/doc/draft-ietf-kitten-pkinit-freshness/)を試行します。 
+Windows 10、バージョン1607、および Windows Server 2016 以降では、Kerberos クライアントは、公開キーベースのサインオンに対して[RFC 8070 の PKInit 鮮度拡張機能](https://datatracker.ietf.org/doc/draft-ietf-kitten-pkinit-freshness/)を試行します。
 
-Windows Server 2016 以降では、Kdc は PKInit 鮮度拡張機能をサポートできます。 既定では、Kdc は PKInit 鮮度拡張機能を提供しません。 有効にするには、ドメイン内のすべての Dc に対して、[PKInit 鮮度拡張機能の kdc] 管理用テンプレートポリシー設定の新しい KDC サポートを使用します。 構成した場合、ドメインが Windows Server 2016 ドメインの機能レベル (DFL) の場合、次のオプションがサポートされます。
+Windows Server 2016 以降では、Kdc は PKInit 鮮度拡張機能をサポートできます。
+既定では、Kdc は PKInit 鮮度拡張機能を提供しません。 有効にするには、ドメイン内のすべての Dc に対して、[PKInit 鮮度拡張機能の kdc] 管理用テンプレートポリシー設定の新しい KDC サポートを使用します。
+構成した場合、ドメインが Windows Server 2016 ドメインの機能レベル (DFL) の場合、次のオプションがサポートされます。
 
 - **無効**: KDC は、PKInit 鮮度拡張機能を提供しません。また、有効な認証要求を受け入れるかどうかを確認する必要はありません。 ユーザーは、新しい公開キー id SID を受け取ることはありません。
 - **サポートされて**います: PKInit 鮮度拡張機能は要求でサポートされています。 PKInit 鮮度拡張機能を使用して正常に認証された Kerberos クライアントは、新しい公開キー id SID を受け取ります。
@@ -40,15 +42,18 @@ Windows 10 バージョン1507および Windows Server 2016 以降では、ド�
 
 ## <a name="kerberos-clients-allow-ipv4-and-ipv6-address-hostnames-in-service-principal-names-spns"></a>Kerberos クライアントは、サービスプリンシパル名 (Spn) で IPv4 および IPv6 アドレスのホスト名を許可します。
 
-Windows 10 バージョン1507および Windows Server 2016 以降では、Spn の IPv4 および IPv6 ホスト名をサポートするように Kerberos クライアントを構成できます。 
+Windows 10 バージョン1507および Windows Server 2016 以降では、Spn の IPv4 および IPv6 ホスト名をサポートするように Kerberos クライアントを構成できます。
 
 レジストリ パス:
 
 HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\Kerberos\Parameters
 
-Spn で IP アドレスのホスト名のサポートを構成するには、TryIPSPN エントリを作成します。 既定では、このエントリはレジストリに存在しません。 エントリを作成した後、DWORD 値を1に変更します。 構成されていない場合、IP アドレスのホスト名は試行されません。
+Spn で IP アドレスのホスト名のサポートを構成するには、TryIPSPN エントリを作成します。
+既定では、このエントリはレジストリに存在しません。
+エントリを作成した後、DWORD 値を1に変更します。
+構成されていない場合、IP アドレスのホスト名は試行されません。
 
-SPN が Active Directory に登録されている場合、認証は Kerberos で成功します。 
+SPN が Active Directory に登録されている場合、認証は Kerberos で成功します。
 
 詳細については、 [IP アドレスの Kerberos の構成](configuring-kerberos-over-ip.md)に関するドキュメントを参照してください。
 
@@ -66,4 +71,4 @@ Windows Server 2016 以降では、ドメインコントローラーは、キー
 
 ## <a name="see-also"></a>参照
 
-- [Kerberos 認証の概要](kerberos-authentication-overview.md)
+- [Kerberos Authentication Overview](kerberos-authentication-overview.md)

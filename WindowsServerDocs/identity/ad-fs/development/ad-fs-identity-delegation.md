@@ -6,19 +6,17 @@ ms.author: billmath
 manager: mtillman
 ms.date: 02/22/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 2162937498a5c16ce33b67ba5e478d2a6bb1a687
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 9d0cc816ce27130867988f51a097456bb37faef0
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86964984"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87964949"
 ---
 # <a name="identity-delegation-scenario-with-ad-fs"></a>AD FS を使用した id 委任のシナリオ
 
 
-[.NET Framework 4.5 以降では、Windows Identity Foundation (WIF) は .NET Framework に完全に統合されています。 このトピックでアドレス指定された WIF のバージョンである WIF 3.5 は非推奨とされており、.NET Framework 3.5 SP1 または .NET Framework 4 に対して開発する場合にのみ使用してください。 .NET Framework 4.5 の WIF (WIF 4.5 とも呼ばれます) の詳細については、『 .NET Framework 4.5 Development Guide 』の Windows Identity Foundation のドキュメントを参照してください。 
+[.NET Framework 4.5 以降では、Windows Identity Foundation (WIF) は .NET Framework に完全に統合されています。 このトピックでアドレス指定された WIF のバージョンである WIF 3.5 は非推奨とされており、.NET Framework 3.5 SP1 または .NET Framework 4 に対して開発する場合にのみ使用してください。 .NET Framework 4.5 の WIF (WIF 4.5 とも呼ばれます) の詳細については、『 .NET Framework 4.5 Development Guide 』の Windows Identity Foundation のドキュメントを参照してください。
 
 このシナリオでは、アクセス制御チェックを実行するために id 委任チェーンが必要なバックエンドリソースにアクセスする必要があるアプリケーションについて説明します。 単純な id 委任チェーンは、通常、最初の呼び出し元の情報と、直前の呼び出し元の id で構成されます。
 
@@ -41,7 +39,7 @@ ms.locfileid: "86964984"
 - sts1: 要求プロバイダーの役割を持つ STS で、アプリケーション (web1) によって予期される要求を出力します。 また、Fabrikam.com とアプリケーションの信頼関係が確立されています。
 - sts2: Fabrikam.com の id プロバイダーのロールに含まれる STS で、Fabrikam の従業員が認証に使用するエンドポイントを提供します。 Fabrikam の従業員が Contoso.com のリソースにアクセスできるように、Contoso.com との信頼関係が確立されました。
 
->[!NOTE] 
+>[!NOTE]
 >このシナリオでよく使用される "ActAs token" という用語は、STS によって発行され、ユーザーの id が含まれているトークンを指します。 アクタープロパティには、STS の id が含まれています。
 
 上の図に示すように、このシナリオのフローは次のようになります。
@@ -111,7 +109,7 @@ ChannelFactory<IService2Channel> factory = (ChannelFactory<IService2Channel>)App
 IService2Channel channel;
 lock (factory)
 {
-// Setup the ActAs to point to the caller's token so that we perform a 
+// Setup the ActAs to point to the caller's token so that we perform a
 // delegated call to the backend service
 // on behalf of the original caller.
     channel = factory.CreateChannelActingAs<IService2Channel>(callerToken);
@@ -136,7 +134,7 @@ try
 ```
 ## <a name="web-service-specific-changes"></a>Web サービス固有の変更
 
-Web サービスは WCF を使用して構築され、WIF が有効になっているため、適切な発行者アドレスを持つ IssuedSecurityTokenParameters でバインドが構成されると、ActAs の検証が WIF によって自動的に処理されます。 
+Web サービスは WCF を使用して構築され、WIF が有効になっているため、適切な発行者アドレスを持つ IssuedSecurityTokenParameters でバインドが構成されると、ActAs の検証が WIF によって自動的に処理されます。
 
 Web サービスは、アプリケーションが必要とする特定のメソッドを公開します。 サービスには特定のコード変更は必要ありません。 次のコードサンプルは、IssuedSecurityTokenParameters を使用した Web サービスの構成を示しています。
 
@@ -183,4 +181,4 @@ using ( ServiceHost host = new ServiceHost( typeof( Service2 ), new Uri( "http:/
 ```
 
 ## <a name="next-steps"></a>次の手順
-[AD FS の開発](../../ad-fs/AD-FS-Development.md)  
+[AD FS の開発](../../ad-fs/AD-FS-Development.md)

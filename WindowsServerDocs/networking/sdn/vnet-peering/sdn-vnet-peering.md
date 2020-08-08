@@ -5,12 +5,12 @@ ms.topic: get-started-article
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/08/2018
-ms.openlocfilehash: 21008268f14435852c7de78ce826bc380f9017a1
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: d0d9f149a95c00fdac02cbdd383fb950e56b845a
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87955819"
+ms.locfileid: "87990043"
 ---
 # <a name="virtual-network-peering"></a>仮想ネットワーク ピアリング
 
@@ -57,7 +57,7 @@ ms.locfileid: "87955819"
 
 -   仮想ネットワーク内の仮想マシンは、ピアリングされた仮想ネットワーク内の内部ロードバランサーにアクセスできます。
 
-いずれかの仮想ネットワークにアクセス制御リスト (Acl) を適用して、必要に応じて他の仮想ネットワークまたはサブネットへのアクセスをブロックすることができます。 ピアリングされた仮想ネットワーク間で完全な接続を開く場合 (既定のオプション)、特定のサブネットまたは仮想マシンに Acl を適用して、特定のアクセスをブロックまたは拒否することができます。 Acl の詳細については、「 [Access Control リスト (acl) を使用してデータセンターのネットワークトラフィックフローを管理する](https://docs.microsoft.com/windows-server/networking/sdn/manage/use-acls-for-traffic-flow)」を参照してください。
+いずれかの仮想ネットワークにアクセス制御リスト (Acl) を適用して、必要に応じて他の仮想ネットワークまたはサブネットへのアクセスをブロックすることができます。 ピアリングされた仮想ネットワーク間で完全な接続を開く場合 (既定のオプション)、特定のサブネットまたは仮想マシンに Acl を適用して、特定のアクセスをブロックまたは拒否することができます。 Acl の詳細については、「 [Access Control リスト (acl) を使用してデータセンターのネットワークトラフィックフローを管理する](../manage/use-acls-for-traffic-flow.md)」を参照してください。
 
 ## <a name="service-chaining"></a>サービス チェイニング
 
@@ -65,7 +65,7 @@ ms.locfileid: "87955819"
 
 ハブとスポークのネットワークをデプロイして、ハブ仮想ネットワークがネットワーク仮想アプライアンスなどのインフラストラクチャコンポーネントをホストできるようにすることができます。 すべてのスポーク仮想ネットワークがハブ仮想ネットワークとピアリングします。 トラフィックは、ハブ仮想ネットワーク内のネットワーク仮想アプライアンスを通過することができます。
 
-仮想ネットワークピアリングを使用すると、ユーザー定義ルートの次ホップを、ピアリングされた仮想ネットワーク内の仮想マシンの IP アドレスにすることができます。 ユーザー定義ルートの詳細については、「 [Virtual Network でのネットワーク仮想アプライアンスの使用](https://docs.microsoft.com/windows-server/networking/sdn/manage/use-network-virtual-appliances-on-a-vn)」を参照してください。
+仮想ネットワークピアリングを使用すると、ユーザー定義ルートの次ホップを、ピアリングされた仮想ネットワーク内の仮想マシンの IP アドレスにすることができます。 ユーザー定義ルートの詳細については、「 [Virtual Network でのネットワーク仮想アプライアンスの使用](../manage/use-network-virtual-appliances-on-a-vn.md)」を参照してください。
 
 ## <a name="gateways-and-on-premises-connectivity"></a>ゲートウェイとオンプレミスの接続
 
@@ -87,4 +87,3 @@ ms.locfileid: "87955819"
 
 ## <a name="next-steps"></a>次のステップ
 [仮想ネットワークピアリングを構成](sdn-configure-vnet-peering.md)する: この手順では、Windows PowerShell を使用して hnv プロバイダーの論理ネットワークを検索し、それぞれが1つのサブネットを持つ2つの仮想ネットワークを作成します。 2つの仮想ネットワーク間のピアリングを構成することもできます。
-

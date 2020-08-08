@@ -6,12 +6,12 @@ author: jwwool
 ms.author: jeffrew
 ms.localizationpriority: medium
 ms.date: 06/07/2019
-ms.openlocfilehash: a7ef7eb2acf9a641babf5690119c61f452aaabbc
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 76b171b81ff01a7a16b700d720bf289fefddf0f7
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87937621"
+ms.locfileid: "87990208"
 ---
 # <a name="troubleshooting-windows-admin-center"></a>Windows Admin Center のトラブルシューティング
 
@@ -69,7 +69,7 @@ ms.locfileid: "87937621"
 
 * [Windows のバージョンを確認します。](#check-the-windows-version)
 * HTTPS の受信ポート規則を追加しましたか
-* [Azure VM へのWindows Admin Center のインストールの詳細を確認してください](https://docs.microsoft.com/windows-server/manage/windows-admin-center/configure/azure-integration#use-a-windows-admin-center-gateway-deployed-in-azure)
+* [Azure VM へのWindows Admin Center のインストールの詳細を確認してください](../azure/azure-integration.md)
 
 ### <a name="check-the-windows-version"></a>Windows のバージョンを確認します。
 
@@ -237,4 +237,3 @@ netsh http delete urlacl url=https://+:443/
 * **管理しようとしている**コンピューターの Windows [バージョン](#check-the-windows-version):
 * どのブラウザーを使用していますか?
     * Google Chrome を使用している場合、バージョンは何ですか。 ([ヘルプ] > [Google Chromeについて])
-

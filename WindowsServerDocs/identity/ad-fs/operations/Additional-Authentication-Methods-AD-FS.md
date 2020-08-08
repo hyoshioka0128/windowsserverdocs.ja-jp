@@ -6,21 +6,19 @@ ms.author: billmath
 manager: mtillman
 ms.date: 09/19/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: ff129f2b049d3e17e6b39d653cc3962eba75090b
-ms.sourcegitcommit: 2cc251eb5bc3069bf09bc08e06c3478fcbe1f321
+ms.openlocfilehash: fed038c81b298036401004751aab46dba520eab3
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84333903"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87940275"
 ---
 # <a name="configure-3rd-party-authentication-providers-as-primary-authentication-in-ad-fs-2019"></a>AD FS 2019 でサードパーティの認証プロバイダーをプライマリ認証として構成する
 
 
-組織では、パスワードベースの認証要求を送信することによって、ブルートフォース、侵害、またはユーザーアカウントのロックアウトを試みる攻撃が発生しています。  組織のセキュリティ侵害を防ぐために、AD FS には、エクストラネットの "スマート" ロックアウトや IP アドレスベースのブロックなどの機能が導入されました。  
+組織では、パスワードベースの認証要求を送信することによって、ブルートフォース、侵害、またはユーザーアカウントのロックアウトを試みる攻撃が発生しています。  組織のセキュリティ侵害を防ぐために、AD FS には、エクストラネットの "スマート" ロックアウトや IP アドレスベースのブロックなどの機能が導入されました。
 
-ただし、これらの軽減策はリアクティブです。  このような攻撃の重要度を軽減するために、AD FS では、パスワードを収集する前にパスワード以外の要素を要求することができます。  
+ただし、これらの軽減策はリアクティブです。  このような攻撃の重要度を軽減するために、AD FS では、パスワードを収集する前にパスワード以外の要素を要求することができます。
 
 たとえば、AD FS 2016 では、認証アプリからの OTP コードを最初の要素として使用できるように、プライマリ認証として Azure MFA が導入されました。
 AD FS 2019 を使用して構築すると、外部認証プロバイダーをプライマリ認証要素として構成できます。
@@ -54,7 +52,7 @@ AD FS 2019 では、プライマリ機能としての外部認証は、AD FS フ
 外部認証プロバイダーをプライマリとして構成する前に、次の前提条件が整っていることを確認してください。
 - AD FS ファーム動作レベル (FBL) が ' 4 ' に発生しました (この値は AD FS 2019 に変換されます)
     - これは、新しい AD FS 2019 ファームの既定の FBL 値です
-    - Windows Server 2012 R2 または2016に基づく AD FS ファームの場合は、PowerShell コマンドレット AdfsFarmBehaviorLevelRaise を使用して FBL を発生させることができます。  AD FS ファームのアップグレードの詳細については、SQL ファームまたは WID ファームのファームアップグレードに関する記事を参照してください。 
+    - Windows Server 2012 R2 または2016に基づく AD FS ファームの場合は、PowerShell コマンドレット AdfsFarmBehaviorLevelRaise を使用して FBL を発生させることができます。  AD FS ファームのアップグレードの詳細については、SQL ファームまたは WID ファームのファームアップグレードに関する記事を参照してください。
     - コマンドレット AdfsFarmInformation を使用して、FBL 値を確認できます。
 - AD FS 2019 ファームは、新しい2019の [改ページ調整されたユーザー向けページ] を使用するように構成されています。
     - これは、新しい AD FS 2019 ファームの既定の動作です。
@@ -68,7 +66,7 @@ AD FS 2019 では、プライマリ機能としての外部認証は、AD FS フ
 
 ```powershell
 PS C:\> Set-AdfsGlobalAuthenticationPolicy -AllowAdditionalAuthenticationAsPrimary $true
-``` 
+```
 
 
 追加の認証をプライマリとして有効または無効にした後、AD FS サービスを再起動する必要があります。
@@ -92,7 +90,7 @@ PS C:\> $providers = (Get-AdfsGlobalAuthenticationPolicy).AdditionalAuthenticati
 PS C:\>$providers = $providers + "FormsAuthentication"
 
 PS C:\>Set-AdfsGlobalAuthenticationPolicy -AdditionalAuthenticationProvider $providers
-``` 
+```
 
 ### <a name="using-the-ad-fs-management-console"></a>AD FS 管理コンソールの使用
 AD FS 管理コンソールの [**サービス**  ->  の**認証方法**] で、[**追加の認証方法**] の [**編集**] をクリックします。

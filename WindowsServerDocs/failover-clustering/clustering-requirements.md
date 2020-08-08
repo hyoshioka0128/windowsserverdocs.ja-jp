@@ -1,20 +1,18 @@
 ---
 title: フェールオーバークラスタリングのハードウェア要件と記憶域オプション
 description: フェールオーバークラスターを作成するためのハードウェア要件と記憶域オプション。
-ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 manager: lizross
-ms.technology: storage-failover-clustering
 ms.date: 04/26/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ed3337e0543953182ed73337ff7aa0a2f093376c
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 65d2d21138efbae3c5ada56bfa8628f06c4dcbe7
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87177929"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990799"
 ---
 # <a name="failover-clustering-hardware-requirements-and-storage-options"></a>フェールオーバークラスタリングのハードウェア要件と記憶域オプション
 
@@ -53,7 +51,7 @@ ms.locfileid: "87177929"
 クラスター化された仮想マシンが含まれるフェールオーバー クラスターを作成する場合、クラスター サーバーは Hyper-V の役割のハードウェア要件を満たしている必要があります。 Hyper-V には、次のものを含む 64 ビット プロセッサが必要です。
 
 - ハードウェア補助による仮想化。 これは、仮想化オプションが組み込まれたプロセッサ、特に、Intel バーチャライゼーション テクノロジ (Intel VT) または AMD Virtualization (AMD-V) テクノロジを備えたプロセッサで使用できます。
-- ハードウェアによるデータ実行防止 (DEP) が利用でき、有効にされていることが必要です。 具体的には、Intel XD ビット (execute disable bit) または AMD NX ビット (no execute bit) を有効にする必要があります。
+- ハードウェアによるデータ実行防止 (DEP) が使用可能で、有効になっている必要があります。 具体的には、Intel XD ビット (execute disable bit) または AMD NX ビット (no execute bit) を有効にする必要があります。
 
 Hyper-V の役割の詳細については、「 [Hyper-V の概要](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831531(v%3dws.11)>)」を参照してください。
 
@@ -65,7 +63,7 @@ Hyper-V の役割の詳細については、「 [Hyper-V の概要](</previous-v
 - **1 つのクラスターで 1 つの記憶装置を使用する**: 異なるクラスターのサーバーが同一の記憶装置にアクセスしないようにしてください。 ほとんどの場合、LUN マスキングまたはゾーニングにより、1 つのクラスター サーバー セットに使用される LUN を、その他のすべてのサーバーから分離する必要があります。
 - **マルチパス I/O ソフトウェアまたはチーム化されたネットワーク アダプターの使用を検討する**: 可用性の高い記憶域ファブリックでは、マルチパス I/O ソフトウェアまたはネットワーク アダプターのチーム化 (負荷分散とフェールオーバー (LBFO) とも呼ばれます) を使用して、複数のホスト バス アダプターを備えたフェールオーバー クラスターを展開できます。 これによって、冗長性と可用性を最大限に引き出すことができます。 Windows Server 2012 R2 または Windows Server 2012 の場合は、Microsoft マルチパス i/o (MPIO) に基づくマルチパスソリューションを使用する必要があります。 通常は、ハードウェアに対応した MPIO デバイス固有モジュール (DSM) がハードウェアの製造元から提供されますが、Windows Server にはオペレーティング システムの一部として 1 つ以上の DSM が組み込まれています。
 
-    LBFO の詳細については、Windows Server テクニカルライブラリの「 [NIC チーミングの概要](https://docs.microsoft.com/windows-server/networking/technologies/nic-teaming/nic-teaming)」を参照してください。
+    LBFO の詳細については、Windows Server テクニカルライブラリの「 [NIC チーミングの概要](../networking/technologies/nic-teaming/nic-teaming.md)」を参照してください。
 
     >[!IMPORTANT]
     >ホスト バス アダプターとマルチパス I/O ソフトウェアは、バージョンの違いが原因で正しく機能しない場合があります。 クラスターにマルチパス ソリューションを実装する場合は、ハードウェアの製造元に相談して、実行している Windows Server のバージョンに対応した正しいアダプター、ファームウェア、およびソフトウェアを選択してください。
@@ -74,6 +72,6 @@ Hyper-V の役割の詳細については、「 [Hyper-V の概要](</previous-v
 
 ## <a name="more-information"></a>詳細情報
 
-- [フェールオーバー クラスタリング](failover-clustering.md)
+- [フェールオーバー クラスタリング](./failover-clustering-overview.md)
 - [記憶域スペース](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831739(v%3dws.11)>)
 - [高可用性のためのゲスト クラスタリングの使用](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn440540(v%3dws.11)>)

@@ -1,20 +1,18 @@
 ---
 title: Windows Server 2016/2019 でのクロスドメインクラスター移行
 description: この記事では、Windows Server 2019 クラスターをあるドメインから別のドメインに移動する方法について説明します。
-ms.prod: windows-server
 manager: eldenc
-ms.technology: failover-clustering
 ms.topic: article
 author: johnmarlin-msft
 ms.author: johnmar
 ms.date: 01/18/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 6062dd987a136bc2be67c09efbe399bb8fae24f6
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 32f7e62fd08080f8b56c9c495f374d5c927454bb
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87178528"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990967"
 ---
 # <a name="failover-cluster-domain-migration"></a>フェールオーバークラスタードメインの移行
 
@@ -65,7 +63,7 @@ Windows Server 2016 以前では、クラスターサービスにドメイン間
 2. クラスターの[移行ウィザード](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754481(v=ws.10))を使用して、すべてのリソースを新しいクラスターに移行します。 リマインダーはデータをコピーしないため、別途行う必要があります。
 3. 以前のクラスターを使用停止または破棄します。
 
-どちらのオプションでも、新しいクラスターはすべての[クラスター対応アプリケーション](https://technet.microsoft.com/aa369082(v=vs.90))をインストールし、ドライバーをすべて最新の状態にして、すべてが正常に動作することを確認するためにテストすることが必要になる場合があります。  データも移動する必要がある場合は、この処理に時間がかかります。
+どちらのオプションでも、新しいクラスターはすべての[クラスター対応アプリケーション](/previous-versions/windows/desktop/mscs/cluster-aware-applications)をインストールし、ドライバーをすべて最新の状態にして、すべてが正常に動作することを確認するためにテストすることが必要になる場合があります。  データも移動する必要がある場合は、この処理に時間がかかります。
 
 ## <a name="windows-server-2019"></a>Windows Server 2019
 
@@ -140,4 +138,3 @@ Windows Server 2019 では、クロスクラスタードメイン移行機能が
 ```
 New-ClusternameAccount : Cluster name account cannot be created.  This cluster contains a file share witness with invalid permissions for a cluster of type AdministrativeAccesssPoint ActiveDirectoryAndDns. To proceed, delete the file share witness.  After this you can create the cluster name account and recreate the file share witness.  The new file share witness will be automatically created with valid permissions.
 ```
-

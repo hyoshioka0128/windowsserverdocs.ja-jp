@@ -1,19 +1,17 @@
 ---
 title: Windows 管理センターからサーバーを監視し、Azure Monitor でアラートを構成する
 description: Windows 管理センター (プロジェクトホノルル) は Azure Monitor と統合されます
-ms.technology: manage
 ms.topic: article
 author: haley-rowland
 ms.author: harowl
 ms.localizationpriority: medium
-ms.prod: windows-server
 ms.date: 03/24/2019
-ms.openlocfilehash: d6c18e3c4ef052b2e2d274f491762d8e31de4758
-ms.sourcegitcommit: c40c29683d25ed75b439451d7fa8eda9d8d9e441
+ms.openlocfilehash: 81501cb5f4255b7a65ebc5f9f6cb9413938864f0
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85833315"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87940123"
 ---
 # <a name="monitor-servers-and-configure-alerts-with-azure-monitor-from-windows-admin-center"></a>Windows 管理センターからサーバーを監視し、Azure Monitor でアラートを構成する
 
@@ -22,11 +20,11 @@ ms.locfileid: "85833315"
 [Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/overview)は、オンプレミスとクラウドの両方の Windows サーバーと vm を含むさまざまなリソースからテレメトリを収集、分析、および処理するソリューションです。 この記事では、Azure Vm やその他の Azure リソースからデータをプル Azure Monitor ますが、この記事では、Azure Monitor がオンプレミスのサーバーと Vm (特に Windows 管理センター) でどのように機能するかについて重点的に説明します。 Azure Monitor を使用して、ハイパー収束クラスターに関する電子メールアラートを取得する方法については、 [Azure Monitor を使用したヘルスサービスエラーに](https://docs.microsoft.com/windows-server/storage/storage-spaces/configure-azure-monitor)関する電子メールの送信に関するページを参照してください。
 
 ## <a name="how-does-azure-monitor-work"></a>Azure Monitor のしくみ
-![](../media/azure-monitor-diagram.png)オンプレミスの Windows server から生成された img データは、Azure Monitor の Log Analytics ワークスペースで収集されます。 ワークスペース内では、さまざまな監視ソリューション (特定のシナリオに関する分析情報を示す一連のロジック) を有効にすることができます。 たとえば、Azure Update Management、Azure Security Center、Azure Monitor for VMs はすべて、ワークスペース内で有効にできる監視ソリューションです。 
+![](../media/azure-monitor-diagram.png)オンプレミスの Windows server から生成された img データは、Azure Monitor の Log Analytics ワークスペースで収集されます。 ワークスペース内では、さまざまな監視ソリューション (特定のシナリオに関する分析情報を示す一連のロジック) を有効にすることができます。 たとえば、Azure Update Management、Azure Security Center、Azure Monitor for VMs はすべて、ワークスペース内で有効にできる監視ソリューションです。
 
-Log Analytics ワークスペースで監視ソリューションを有効にすると、そのワークスペースに報告を行うすべてのサーバーが、そのソリューションに関連するデータの収集を開始します。これにより、このソリューションはワークスペース内のすべてのサーバーに関する分析情報を生成できます。 
+Log Analytics ワークスペースで監視ソリューションを有効にすると、そのワークスペースに報告を行うすべてのサーバーが、そのソリューションに関連するデータの収集を開始します。これにより、このソリューションはワークスペース内のすべてのサーバーに関する分析情報を生成できます。
 
-オンプレミスのサーバーでテレメトリデータを収集し、Log Analytics ワークスペースにプッシュするには、Azure Monitor に Microsoft Monitoring Agent または MMA をインストールする必要があります。 特定の監視ソリューションではセカンダリ エージェントも必要です。 たとえば、Azure Monitor for VMs は、このソリューションで提供される追加機能のために ServiceMap エージェントにも依存しています。 
+オンプレミスのサーバーでテレメトリデータを収集し、Log Analytics ワークスペースにプッシュするには、Azure Monitor に Microsoft Monitoring Agent または MMA をインストールする必要があります。 特定の監視ソリューションではセカンダリ エージェントも必要です。 たとえば、Azure Monitor for VMs は、このソリューションで提供される追加機能のために ServiceMap エージェントにも依存しています。
 
 Azure Update Management などの一部のソリューションは Azure Automation にも依存しています。これにより、Azure 環境と非 Azure 環境でリソースを一元的に管理できます。 たとえば、Azure Update Management では Azure Automation を使用することで、Azure portal から一元的に、環境内のコンピューター間で更新プログラムのインストールをスケジュール設定し、調整します。
 
@@ -38,7 +36,7 @@ WAC 内から、次の2つの監視ソリューションを有効にすること
 - [Azure Update Management](azure-update-management.md) (更新プログラム ツール内)
 - Azure Monitor for VMs (サーバーの設定で)、a. k. a Virtual Machines insights
 
-これらのツールのいずれからでも Azure Monitor の使用を開始できます。 以前に Azure Monitor を使用したことがない場合、WAC は Log Analytics ワークスペース (および必要に応じて Azure Automation アカウント) を自動的にプロビジョニングし、ターゲットサーバーに Microsoft Monitoring Agent (MMA) をインストールして構成します。 その後に、対応するソリューションがワークスペースにインストールされます。 
+これらのツールのいずれからでも Azure Monitor の使用を開始できます。 以前に Azure Monitor を使用したことがない場合、WAC は Log Analytics ワークスペース (および必要に応じて Azure Automation アカウント) を自動的にプロビジョニングし、ターゲットサーバーに Microsoft Monitoring Agent (MMA) をインストールして構成します。 その後に、対応するソリューションがワークスペースにインストールされます。
 
 たとえば、Azure Update Management をセットアップするために最初に更新ツールにアクセスした場合、WAC は次のようになります。
 
@@ -81,6 +79,6 @@ Azure Monitor 内の1つの Log Analytics ワークスペースに複数のサ�
 
 ## <a name="disabling-monitoring"></a>監視の無効化
 
-Log Analytics ワークスペースからサーバーを完全に切断するには、MMA エージェントをアンインストールします。 これは、このサーバーがデータをワークスペースに送信しなくなり、そのワークスペースにインストールされたすべてのソリューションが、そのサーバーからのデータの収集と処理を行わなくなることを意味します。 ただし、ワークスペース自体には影響しません。そのワークスペースに報告するすべてのリソースが引き続き機能します。 Windows 管理センター内で MMA エージェントをアンインストールするには、サーバーに接続して [**インストールされているアプリ**] にアクセスし、Microsoft Monitoring Agent を見つけて、[**削除**] を選択します。
+Log Analytics ワークスペースからサーバーを完全に切断するには、MMA エージェントをアンインストールします。 これは、このサーバーがデータをワークスペースに送信しなくなり、そのワークスペースにインストールされたすべてのソリューションが、そのサーバーからのデータの収集と処理を行わなくなることを意味します。 ただし、ワークスペース自体には影響しません。そのワークスペースに報告するすべてのリソースが引き続き機能します。 Windows Admin Center 内で MMA エージェントをアンインストールするには、サーバーに接続してから **[インストール済みアプリ]** に移動し、Microsoft Monitoring Agent を見つけて、 **[削除]** を選択します。
 
 ワークスペース内の特定のソリューションを無効にする場合は、[Azure portal から監視ソリューションを削除する](https://docs.microsoft.com/azure/azure-monitor/insights/solutions#remove-a-management-solution)必要があります。 監視ソリューションを削除すると、そのソリューションによって作成される分析情報が、そのワークスペースに報告を行う_どのサーバーでも_生成されなくなります。 たとえば、Azure Monitor for VMs ソリューションをアンインストールしても、マイワークスペースに接続されているどのコンピューターからも VM またはサーバーのパフォーマンスに関する洞察は得られなくなります。

@@ -7,14 +7,12 @@ ms.reviewer: anandy
 manager: mtillman
 ms.date: 07/17/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: active-directory-federation-services
-ms.openlocfilehash: cecffe6ae789c4a7c8c9ff382e83d84ade8ef018
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 0cfb91269e0a55524346d7189d728848d9c6e670
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519851"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87940469"
 ---
 # <a name="build-a-native-client-application-using-oauth-public-clients-with-ad-fs-2016-or-later"></a>AD FS 2016 以降の OAuth パブリッククライアントを使用してネイティブクライアントアプリケーションを構築する
 
@@ -122,7 +120,7 @@ git clone https://github.com/Azure-Samples/active-directory-dotnet-native-deskto
 #### <a name="modify-todolistservice"></a>TodoListService の変更
 このプロジェクトには、Web.config と Startup.Auth.cs という2つのファイルが必要です。 パラメーターの正しい値を取得するには、Web.Config の変更が必要です。 Azure AD ではなく AD FS に対して認証するように WebAPI を設定するには、Startup.Auth.cs の変更が必要です。
 
-**Web.config**
+**web.config**
 
 * 必要ではないため、キー **ida: テナント**にコメントを付けます
 * フェデレーションサービスの FQDN (例:) を示す値を持つ**ida: Authority**のキーを追加します。https://fs.contoso.com/adfs/

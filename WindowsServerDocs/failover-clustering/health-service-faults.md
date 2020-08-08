@@ -1,18 +1,16 @@
 ---
 title: ヘルスサービスエラー
-ms.prod: windows-server
 manager: eldenc
 ms.author: cosdar
-ms.technology: storage-health-service
 ms.topic: article
 author: cosmosdarwin
 ms.date: 10/05/2017
-ms.openlocfilehash: de2e9939302c0b9937fb54b4082feeecf6de5295
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 5f35c52e6b4aaf382c80507ca562b52ce27da953
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473109"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990790"
 ---
 # <a name="health-service-faults"></a>ヘルスサービスエラー
 
@@ -72,7 +70,7 @@ Get-FileShare -Name <Name> | Debug-FileShare
 
 ## <a name="usage-in-net-and-c"></a>.NET および C での使用#
 
-### <a name="connect"></a>接続する
+### <a name="connect"></a>接続
 
 ヘルスサービスを照会するには、クラスターで**CimSession**を確立する必要があります。 これを行うには、完全な .NET でしか使用できないものが必要になります。つまり、web アプリまたはモバイルアプリから直接この操作を行うことはできません。 これらのコードサンプルでは \# 、このデータアクセス層で最も単純な選択肢である C を使用します。
 
@@ -135,7 +133,7 @@ public void DiscoverObjects(CimSession Session)
 
 これらは、 **StorageSubSystem**、 **get-storagenode**ようなコマンドレットを使用して PowerShell で**取得した**ものと同じオブジェクトです。
 
-「[ストレージ管理 API クラス](https://msdn.microsoft.com/library/windows/desktop/hh830612(v=vs.85).aspx)」で説明されているすべての同じプロパティにアクセスできます。
+「[ストレージ管理 API クラス](/previous-versions/windows/desktop/stormgmt/storage-management-api-classes)」で説明されているすべての同じプロパティにアクセスできます。
 
 ```
 using System.Diagnostics;
@@ -285,7 +283,7 @@ class FaultsObserver : IObserver
 
 次の表は、fault オブジェクトのいくつかの重要なプロパティを示しています。 完全なスキーマでは、 *storagewmi .mof*の**MSFT \_ StorageDiagnoseResult**クラスを調べます。
 
-| **プロパティ**              | **例**                                                     |
+| **Property**              | **例**                                                     |
 |---------------------------|-----------------------------------------------------------------|
 | FaultId                   | {12345-12345-12345-12345-12345}                                 |
 | FaultType                 | Microsoft. 正常性の種類. Volume. 容量                      |
@@ -311,7 +309,7 @@ class FaultsObserver : IObserver
 
 **ChangeType**は、エラーが作成、削除、または更新されているかどうか、および**FaultId**を示すことに注意してください。 イベントには、影響を受けたエラーのすべてのプロパティも含まれます。
 
-| **プロパティ**              | **例**                                                     |
+| **Property**              | **例**                                                     |
 |---------------------------|-----------------------------------------------------------------|
 | ChangeType                | 0                                                               |
 | FaultId                   | {12345-12345-12345-12345-12345}                                 |
@@ -324,7 +322,7 @@ class FaultsObserver : IObserver
 
 **ChangeType**ChangeType = {0, 1, 2} = {"作成"、"削除"、"更新"}。
 
-## <a name="coverage"></a>対象範囲
+## <a name="coverage"></a>カバレッジ
 
 Windows Server 2016 では、ヘルスサービスによって次のエラーカバレッジが提供されます。
 
@@ -378,7 +376,7 @@ Windows Server 2016 では、ヘルスサービスによって次のエラーカ
 * RecommendedAction: *"データの回復性を復元しています。"*
 
 #### <a name="faulttype-microsofthealthfaulttypevirtualdisksdetached"></a>FaultType: Microsoft. 状態. VirtualDisks. デタッチ済み
-* 重要度: 重大
+* 重大度: Critical
 * 理由: *"ボリュームにアクセスできません。一部のデータが失われる可能性があります。 "*
 * RecommendedAction: *"すべての記憶装置の物理的な接続またはネットワーク接続を確認します。バックアップからの復元が必要になる場合があります。 "*
 
@@ -397,31 +395,31 @@ Windows Server 2016 では、ヘルスサービスによって次のエラーカ
 * RecommendedAction: *"ボリュームを拡張するか、ワークロードを他のボリュームに移行します。"*
 
 #### <a name="faulttype-microsofthealthfaulttypevolumecapacity"></a>FaultType: Microsoft. 正常性の種類。容量
-* 重要度: 重大
+* 重大度: Critical
 * 理由: *"ボリュームの空き領域が不足しています。"*
 * RecommendedAction: *"ボリュームを拡張するか、ワークロードを他のボリュームに移行します。"*
 
 ### <a name="server-3"></a>**サーバー (3)**
 
 #### <a name="faulttype-microsofthealthfaulttypeserverdown"></a>FaultType: Microsoft. Health. Server. Down
-* 重要度: 重大
+* 重大度: Critical
 * 理由: *"サーバーに到達できません。"*
 * RecommendedAction: *"Start or replace server."*
 
 #### <a name="faulttype-microsofthealthfaulttypeserverisolated"></a>FaultType: Microsoft. Health. サーバー分離
-* 重要度: 重大
+* 重大度: Critical
 * 理由:*接続の問題により、サーバーがクラスターから分離されています。*
 * RecommendedAction: *"分離が維持されている場合は、ネットワークを確認するか、ワークロードを他のノードに移行します。"*
 
 #### <a name="faulttype-microsofthealthfaulttypeserverquarantined"></a>FaultType: Microsoft. Health. サーバー. 検疫済み
-* 重要度: 重大
+* 重大度: Critical
 * 理由: *"繰り返し発生するエラーが発生したため、サーバーはクラスターによって検疫されています。"*
 * RecommendedAction: *"サーバーを交換するか、ネットワークを修正します。"*
 
 ### <a name="cluster-1"></a>**クラスター (1)**
 
 #### <a name="faulttype-microsofthealthfaulttypeclusterquorumwitnesserror"></a>FaultType: ClusterQuorumWitness を入力します。
-* 重要度: 重大
+* 重大度: Critical
 * 理由: *"クラスターは、1台のサーバーで障害が発生しています。"*
 * RecommendedAction: *"監視リソースを確認し、必要に応じて再起動します。失敗したサーバーを開始または置換します。 "*
 
@@ -519,6 +517,6 @@ Windows Server 2016 では、ヘルスサービスによって次のエラーカ
 >[!NOTE]
 > ファン、電源、センサーなどのストレージ格納装置コンポーネントの正常性は、SCSI エンクロージャ サービス (SES) から取得されます。 この情報は、ベンダーから提供されていない場合はヘルス サービスで表示されません。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [Windows Server 2016 のヘルス サービス](health-service-overview.md)

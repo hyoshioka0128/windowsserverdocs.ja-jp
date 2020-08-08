@@ -1,20 +1,18 @@
 ---
 title: 資格情報の保護と管理
 description: Windows Server のセキュリティ
-ms.prod: windows-server
-ms.technology: security-credential-protection
 ms.topic: article
 ms.assetid: e457229c-0126-40fe-948c-101c943e1b57
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 649c070fe477a51ca764bd1ad83ed013feb1b60b
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 3dc1d0ae3658e4379d3a358211471ac7f675651c
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518018"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87948705"
 ---
 # <a name="credentials-protection-and-management"></a>資格情報の保護と管理
 
@@ -68,7 +66,7 @@ Protected Users グループのメンバーは、以下の認証方法によっ�
 
 保護されたアカウントの構成方法の詳細については、「[保護されるアカウントの構成方法](https://docs.microsoft.com/windows-server/identity/ad-ds/manage/how-to-configure-protected-accounts)」を参照してください。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 LSA と LSASS の詳細については、「 [Windows のログオンと認証の技術概要](https://technet.microsoft.com/library/dn169029(v=ws.10).aspx)」を参照してください。
 
 

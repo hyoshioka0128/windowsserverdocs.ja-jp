@@ -1,20 +1,18 @@
 ---
 title: Windows Server 2012 フェールオーバー クラスターでクォーラムを構成および管理する
 description: Windows Server フェールオーバークラスターでクラスタークォーラムを管理する方法に関する詳細情報。
-ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 manager: lizross
-ms.technology: storage-failover-clustering
 ms.date: 06/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 2847b9268207155efc181c97c58a91c1d51eac6d
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 02158cc005cc46bd42e88569b14c17c59ef377ee
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87177818"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990766"
 ---
 # <a name="configure-and-manage-quorum"></a>クォーラムを構成および管理する
 
@@ -60,7 +58,7 @@ Windows Server のクォーラムモデルは柔軟です。 クラスターの�
 | ---------    |---------        |---------                        |
 | ディスク監視     |  <ul><li> クラスター データベースのコピーを格納する専用の LUN です。</li><li> 共有 (レプリケートされない) 記憶域を持つクラスターに最適です。</li>       |  <ul><li>LUN の最小サイズは 512 MB です。</li><li> クラスター専用とし、クラスター化された役割には割り当てないようにする必要があります。</li><li> クラスター化された記憶域に含まれ、記憶域検証テストに合格する必要があります。</li><li> クラスターの共有ボリューム (CSV) ディスクにすることはできません。</li><li> 単一のボリュームを持つベーシック ディスクです。</li><li> ドライブ文字を持つ必要はありません。</li><li> NTFS または ReFS でフォーマットできます。</li><li> 必要に応じてハードウェア RAID 構成にしてフォールト トレランスを実現できます。</li><li> バックアップおよびウイルス対策スキャンから除外する必要があります。</li><li> ディスク監視は、ではサポートされていません記憶域スペースダイレクト</li>|
 | ファイル共有監視     | <ul><li>Windows Server を実行しているファイル サーバー上で構成される SMB ファイル共有です。</li><li> クラスター データベースのコピーを格納しません。</li><li> クラスター情報を witness.log ファイルにのみ保持します。</li><li> レプリケートされた記憶域を使用するマルチサイト クラスターに最適です。 </li>       |  <ul><li>最低 5 MB の空き容量が必要です。</li><li> 単一のクラスター専用とし、ユーザーまたはアプリケーション データを格納するために使用しないようにする必要があります。</li><li> クラスター名のコンピューター オブジェクトに対する書き込み権限を有効にする必要があります。</li></ul><br>ファイル共有監視をホストするファイル サーバーに関する追加の考慮事項は次のとおりです。<ul><li>単一のファイル サーバーに複数のクラスター用のファイル共有監視を構成できます。</li><li> ファイル サーバーは、クラスター ワークロードとは別個のサイトに配置する必要があります。 このようにすると、サイト間ネットワーク通信が失われたときにどのクラスター サイトにも継続して動作する機会が平等に与えられます。 ファイル サーバーが同じサイトに存在する場合、そのサイトがプリマリ サイトになり、ファイル共有にアクセスできる唯一のサイトになります。</li><li> ファイル サーバーは、ファイル共有監視を使用するクラスターでホストされていない仮想マシン上でも実行できます。</li><li> 高可用性を保証するために、ファイル サーバーを別個のフェールオーバー クラスター上で構成できます。 </li>      |
-| クラウド監視     |  <ul><li>Azure blob storage に格納されている監視ファイル</li><li> クラスター内のすべてのサーバーが信頼性の高いインターネット接続を備えている場合に推奨されます。</li>      |  「[クラウド監視のデプロイ」を](https://docs.microsoft.com/windows-server/failover-clustering/deploy-cloud-witness)参照してください。       |
+| クラウド監視     |  <ul><li>Azure blob storage に格納されている監視ファイル</li><li> クラスター内のすべてのサーバーが信頼性の高いインターネット接続を備えている場合に推奨されます。</li>      |  「[クラウド監視のデプロイ」を](./deploy-cloud-witness.md)参照してください。       |
 
 ### <a name="node-vote-assignment"></a>ノードの投票の割り当て
 
@@ -83,7 +81,7 @@ Windows Server 2012 では、高度なクォーラム構成オプションとし
 
 動的なクォーラム管理では、クラスターは正常に動作している最後のクラスター ノードで動作できます。 クォーラムの過半数の要件を動的に調整することによって、クラスターは連続的なノードのシャットダウンに最後の 1 つのノードまで耐えることができます。
 
-クラスターによって割り当てられたノードの動的な投票は、 [Start-clusternode](https://docs.microsoft.com/powershell/module/failoverclusters/get-clusternode?view=win10-ps) Windows PowerShell コマンドレットを使用して、クラスターノードの**dynamicweight**共通プロパティで検証できます。 0 の値は、ノードにクォーラム投票が割り当てられていないことを示しています。 1 の値は、ノードにクォーラム投票が割り当てられていることを示しています。
+クラスターによって割り当てられたノードの動的な投票は、 [Start-clusternode](/powershell/module/failoverclusters/get-clusternode?view=win10-ps) Windows PowerShell コマンドレットを使用して、クラスターノードの**dynamicweight**共通プロパティで検証できます。 0 の値は、ノードにクォーラム投票が割り当てられていないことを示しています。 1 の値は、ノードにクォーラム投票が割り当てられていることを示しています。
 
 すべてのクラスター ノードに対する投票の割り当ては、**クラスター クォーラムの検証**テストによって検証できます。
 
@@ -96,7 +94,7 @@ Windows Server 2012 では、高度なクォーラム構成オプションとし
 
 ## <a name="general-recommendations-for-quorum-configuration"></a>クォーラム構成に関する一般的な推奨事項
 
-クラスター ソフトウェアは、構成されているノードの数と共有記憶域の可用性に基づいて、新しいクラスターのクォーラムを自動的に構成します。 これは通常、そのクラスターに最適なクォーラム構成です。 しかし、クラスターが作成されたら、そのクラスターを運用環境に展開する前にクォーラム構成を確認することをお勧めします。 詳細なクラスタークォーラム構成を表示するには、構成の検証ウィザードまたは[テストクラスター](https://docs.microsoft.com/powershell/module/failoverclusters/test-cluster?view=win10-ps)の Windows PowerShell コマンドレットを使用して、**クォーラム構成の検証**テストを実行します。 フェールオーバークラスターマネージャーでは、基本クォーラム構成は選択したクラスターの概要情報に表示されます。または、 [Get clusterquorum](https://docs.microsoft.com/powershell/module/failoverclusters/get-clusterquorum?view=win10-ps) Windows PowerShell コマンドレットを実行したときにが返すクォーラムリソースに関する情報を確認することもできます。
+クラスター ソフトウェアは、構成されているノードの数と共有記憶域の可用性に基づいて、新しいクラスターのクォーラムを自動的に構成します。 これは通常、そのクラスターに最適なクォーラム構成です。 しかし、クラスターが作成されたら、そのクラスターを運用環境に展開する前にクォーラム構成を確認することをお勧めします。 詳細なクラスタークォーラム構成を表示するには、構成の検証ウィザードまたは[テストクラスター](/powershell/module/failoverclusters/test-cluster?view=win10-ps)の Windows PowerShell コマンドレットを使用して、**クォーラム構成の検証**テストを実行します。 フェールオーバークラスターマネージャーでは、基本クォーラム構成は選択したクラスターの概要情報に表示されます。または、 [Get clusterquorum](/powershell/module/failoverclusters/get-clusterquorum?view=win10-ps) Windows PowerShell コマンドレットを実行したときにが返すクォーラムリソースに関する情報を確認することもできます。
 
 **クォーラム構成の検証**テストを実行すると、クォーラム構成がクラスターに最適であることをいつでも検証できます。 テストの出力は、クォーラム構成の変更が推奨されるかどうか、および設定が最適かどうかを示します。 変更が推奨される場合は、クラスター クォーラム構成ウィザードを使用して推奨設定を適用できます。
 
@@ -165,7 +163,7 @@ Windows Server 2012 では、高度なクォーラム構成オプションとし
 
 ### <a name="windows-powershell-equivalent-commands"></a>Windows PowerShell の同等のコマンド
 
-次の例は、 [Set ClusterQuorum](https://docs.microsoft.com/powershell/module/failoverclusters/set-clusterquorum?view=win10-ps)コマンドレットとその他の Windows PowerShell コマンドレットを使用して、クラスタークォーラムを構成する方法を示しています。
+次の例は、 [Set ClusterQuorum](/powershell/module/failoverclusters/set-clusterquorum?view=win10-ps)コマンドレットとその他の Windows PowerShell コマンドレットを使用して、クラスタークォーラムを構成する方法を示しています。
 
 次の例では、クラスター *CONTOSO-FC1* のクォーラム構成を、クォーラム監視がない単純なノード マジョリティ構成に変更します。
 
@@ -313,6 +311,6 @@ Net Start ClusSvc /PQ
 
 ## <a name="more-information"></a>詳細情報
 
-* [フェールオーバー クラスタリング](failover-clustering.md)
-* [フェールオーバー クラスター Windows PowerShell コマンドレット](https://docs.microsoft.com/powershell/module/failoverclusters/?view=win10-ps)
+* [フェールオーバー クラスタリング](./failover-clustering-overview.md)
+* [フェールオーバー クラスター Windows PowerShell コマンドレット](/powershell/module/failoverclusters/?view=win10-ps)
 * [クラスターとプールのクォーラムについて](../storage/storage-spaces/understand-quorum.md)

@@ -6,14 +6,12 @@ ms.author: billmath
 manager: mtillman
 ms.date: 03/01/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: b66d688052398ba76b6721e8bab0d0878be4959a
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: d7941733ff2191e94c6c1e380d4349585a5c98d3
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87517707"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87956179"
 ---
 # <a name="ad-fs-troubleshooting---azure-ad"></a>AD FS のトラブルシューティング-Azure AD
 クラウドの成長に伴って、多くの企業がさまざまなアプリやサービスのために Azure AD を使用するように移行してきました。  Azure AD とのフェデレーションは、多くの組織にとって標準的な手法になりました。  このドキュメントでは、このフェデレーションで発生する問題のトラブルシューティングに関するいくつかの側面について説明します。  一般的なトラブルシューティングドキュメントに記載されているいくつかのトピックは、引き続き Azure とのフェデレーションに関連しているため、このドキュメントでは Azure AD と AD FS の対話に関する詳細のみに焦点を当てています。

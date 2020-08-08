@@ -3,18 +3,16 @@ ms.assetid: d44d4430-41e2-483a-9685-92610cdef32a
 title: クラスター対応更新プラグインのしくみ
 description: Windows Server でクラスター対応更新を使用してクラスターに更新プログラムをインストールするときに、プラグインを使用して更新プログラムを調整する方法について説明します。
 ms.topic: article
-ms.prod: windows-server
 manager: lizross
 ms.author: jgerend
 author: JasonGerend
 ms.date: 04/28/2017
-ms.technology: storage-failover-clustering
-ms.openlocfilehash: ac09163eb40045289a68287aa3eace20ff714d09
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 42ba496ce0d62a6a911f762f6ea7330001fb9031
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409582"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990891"
 ---
 # <a name="how-cluster-aware-updating-plug-ins-work"></a>クラスター対応更新プラグインのしくみ
 
@@ -48,10 +46,10 @@ Cau を使用して次の操作を実行する場合は、CAU UI で、 \- 使�
 
 |コマンドレット|説明|
 |----------|---------------|
-|[Add-CauClusterRole](https://docs.microsoft.com/powershell/module/clusterawareupdating/add-cauclusterrole)|指定されたクラスターに自己更新機能を提供する CAU のクラスター化された役割を追加し \- ます。|
-|[Invoke-CauRun](https://docs.microsoft.com/powershell/module/clusterawareupdating/invoke-caurun)|適用可能な更新プログラムについてクラスター ノードのスキャンを実行し、更新実行で、指定したクラスターにその更新プログラムをインストールします。|
-|[Invoke-CauScan](https://docs.microsoft.com/powershell/module/clusterawareupdating/invoke-causcan)|適用可能な更新プログラムについてクラスター ノードのスキャンを実行し、指定したクラスターの各ノードに適用される更新プログラムの初期セットの一覧を返します。|
-|[Set-CauClusterRole](https://docs.microsoft.com/powershell/module/clusterawareupdating/set-cauclusterrole)|指定したクラスターに CAU のクラスター化された役割の構成プロパティを設定します。|
+|[Add-CauClusterRole](/powershell/module/clusterawareupdating/add-cauclusterrole)|指定されたクラスターに自己更新機能を提供する CAU のクラスター化された役割を追加し \- ます。|
+|[Invoke-CauRun](/powershell/module/clusterawareupdating/invoke-caurun)|適用可能な更新プログラムについてクラスター ノードのスキャンを実行し、更新実行で、指定したクラスターにその更新プログラムをインストールします。|
+|[Invoke-CauScan](/powershell/module/clusterawareupdating/invoke-causcan)|適用可能な更新プログラムについてクラスター ノードのスキャンを実行し、指定したクラスターの各ノードに適用される更新プログラムの初期セットの一覧を返します。|
+|[Set-CauClusterRole](/powershell/module/clusterawareupdating/set-cauclusterrole)|指定したクラスターに CAU のクラスター化された役割の構成プロパティを設定します。|
 
 これらのコマンドレットを使用して CAU プラグインパラメーターを指定しない場合 \- 、既定値は \- **microsoft.windowsupdateplugin**にあります。
 
@@ -83,9 +81,9 @@ CAU プラグイン引数の構文は、次 \- の一般的な規則に従いま
 
 |コマンドレット|説明|
 |----------|---------------|
-|[Get-CauPlugin](https://docs.microsoft.com/powershell/module/clusterawareupdating/get-cauplugin)|ローカルコンピューターに登録されている1つまたは複数のソフトウェア更新プラグインに関する情報を取得 \- します。|
-|[Register-CauPlugin](https://docs.microsoft.com/powershell/module/clusterawareupdating/register-cauplugin)|ローカルコンピューター上の CAU ソフトウェア更新プラグインを登録 \- します。|
-|[Unregister-CauPlugin](https://docs.microsoft.com/powershell/module/clusterawareupdating/unregister-cauplugin)|\-CAU で使用できるプラグインの一覧から、ソフトウェア更新プラグインを削除し \- ます。 **注:**\-CAU microsoft.windowsupdateplugin および microsoft.hotfixplugin と共にインストールされたプラグインの \( **Microsoft.WindowsUpdatePlugin** **Microsoft.HotfixPlugin** \) 登録を解除することはできません。|
+|[Get-CauPlugin](/powershell/module/clusterawareupdating/get-cauplugin)|ローカルコンピューターに登録されている1つまたは複数のソフトウェア更新プラグインに関する情報を取得 \- します。|
+|[Register-CauPlugin](/powershell/module/clusterawareupdating/register-cauplugin)|ローカルコンピューター上の CAU ソフトウェア更新プラグインを登録 \- します。|
+|[Unregister-CauPlugin](/powershell/module/clusterawareupdating/unregister-cauplugin)|\-CAU で使用できるプラグインの一覧から、ソフトウェア更新プラグインを削除し \- ます。 **注:**\-CAU microsoft.windowsupdateplugin および microsoft.hotfixplugin と共にインストールされたプラグインの \( **Microsoft.WindowsUpdatePlugin** **Microsoft.HotfixPlugin** \) 登録を解除することはできません。|
 
 ## <a name="using-the-microsoftwindowsupdateplugin"></a><a name="BKMK_WUP"></a>Microsoft.windowsupdateplugin の使用
 
@@ -97,7 +95,7 @@ CAU の既定のプラグインである Microsoft.windowsupdateplugin では、
 > [!NOTE]
 > 既定で選択されている重要なソフトウェア更新プログラム (ドライバーの更新プログラムなど) 以外の更新プログラムを適用するに \( \) は、オプションのプラグインパラメーターを構成し \- ます。 詳細については、「[Windows Update Agent クエリ文字列を構成する](#BKMK_QUERY)」を参照してください。
 
-### <a name="requirements"></a>必要条件
+### <a name="requirements"></a>要件
 
 - フェールオーバークラスターとリモート更新コーディネーターコンピューターが \( 使用されている場合は、 \) cau の要件と、「 [cau の要件とベストプラクティス](cluster-aware-updating-requirements.md)」に記載されているリモート管理に必要な構成を満たしている必要があります。
 - 「[Microsoft 更新プログラムを適用する場合の推奨事項 (英語)](cluster-aware-updating-requirements.md#BKMK_BP_WUA)」を参照し、フェールオーバー クラスター ノードに合わせて Microsoft Update に必要な変更を加えます。
@@ -149,7 +147,7 @@ Microsoft.hotfixplugin プラグイン \- を**Microsoft.HotfixPlugin**使用す
 > [!NOTE]
 > 修正プログラムは、サポート技術情報の記事に記載されている Microsoft からダウンロードできますが、必要に応じてお客様に提供されることもあり \- ます。
 
-### <a name="requirements"></a>必要条件
+### <a name="requirements"></a>要件
 
 - フェールオーバークラスターとリモート更新コーディネーターコンピューターが \( 使用されている場合は、 \) cau の要件と、「 [cau の要件とベストプラクティス](cluster-aware-updating-requirements.md)」に記載されているリモート管理に必要な構成を満たしている必要があります。
 - 「[Microsoft.HotfixPlugin を使用する場合の推奨事項 (英語)](cluster-aware-updating-requirements.md#BKMK_BP_HF)」を参照してください。
@@ -402,11 +400,10 @@ SMB ファイル サーバーとファイル共有を構成して、**Microsoft.
 
 SMB ファイルサーバーの Windows ファイアウォールのルール** \( \- で \) 、ファイルサーバーのリモート管理 smb**を有効にする必要があります。 これは、Windows Server 2016、Windows Server 2012 R2、および Windows Server 2012 では既定で有効になっています。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 -   [クラスター対応更新の概要](cluster-aware-updating.md)
 
--   [クラスター対応更新の Windows PowerShell コマンドレット](https://docs.microsoft.com/powershell/module/clusterawareupdating)
+-   [クラスター対応更新の Windows PowerShell コマンドレット](/powershell/module/clusterawareupdating)
 
--   [クラスター対応更新プラグインのリファレンス](https://msdn.microsoft.com/library/hh418084.aspx)
-
+-   [クラスター対応更新プラグインのリファレンス](/previous-versions/windows/desktop/mscs/cluster-aware-update-plug-in-interfaces-and-classes)
