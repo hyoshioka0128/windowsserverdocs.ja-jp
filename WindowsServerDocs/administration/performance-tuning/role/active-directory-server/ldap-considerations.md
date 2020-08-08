@@ -5,12 +5,12 @@ ms.topic: article
 ms.author: timwi; chrisrob; herbertm; kenbrumf;  mleary; shawnrab
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: b1678eadda1232da19c80e648c8b7ecb9c06f64b
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 779175a4e1e42bae5f40aa4d4d8495ac7803c655
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896211"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992257"
 ---
 # <a name="ldap-considerations-in-adds-performance-tuning"></a>での LDAP に関する考慮事項によるパフォーマンスチューニングの追加
 
@@ -21,19 +21,19 @@ ms.locfileid: "87896211"
 
 LDAP クエリが効率的なクエリの作成に関する推奨事項に準拠していることを確認します。
 
-Active Directory に対して使用するクエリを適切に記述、構築、および分析する方法については、MSDN の幅広いドキュメントを参照してください。 詳細については、「[より効率的な Microsoft Active Directory 対応アプリケーションの作成](https://msdn.microsoft.com/library/ms808539.aspx)」を参照してください。
+Active Directory に対して使用するクエリを適切に記述、構築、および分析する方法については、MSDN の幅広いドキュメントを参照してください。 詳細については、「[より効率的な Microsoft Active Directory 対応アプリケーションの作成](/previous-versions/ms808539(v=msdn.10))」を参照してください。
 
 ## <a name="optimize-ldap-page-sizes"></a>LDAP ページサイズの最適化
 
 クライアント要求への応答として複数のオブジェクトを使用して結果を返す場合、ドメインコントローラーは一時的に結果セットをメモリに格納する必要があります。 ページサイズを大きくすると、メモリ使用量が増加し、不必要にキャッシュから除外される可能性があります。 この場合、既定の設定は最適です。 ページサイズの設定を増やすための推奨事項がいくつかあります。 特に不適切と特定されない限り、既定値を使用することをお勧めします。
 
-クエリに多くの結果が含まれている場合は、同時に実行される同様のクエリの制限が発生する可能性があります。  これは、LDAP サーバーが cookie プールと呼ばれるグローバルメモリ領域を消費する可能性があるためです。  「 [LDAP サーバーの cookie の処理方法](https://technet.microsoft.com/windows-server-docs/identity/ad-ds/manage/how-ldap-server-cookies-are-handled)」で説明されているように、プールのサイズを増やす必要がある場合があります。
+クエリに多くの結果が含まれている場合は、同時に実行される同様のクエリの制限が発生する可能性があります。  これは、LDAP サーバーが cookie プールと呼ばれるグローバルメモリ領域を消費する可能性があるためです。  「 [LDAP サーバーの cookie の処理方法](../../../../identity/ad-ds/manage/how-ldap-server-cookies-are-handled.md)」で説明されているように、プールのサイズを増やす必要がある場合があります。
 
 これらの設定を調整するには、「 [Windows Server 2008 以降のドメインコントローラーは LDAP 応答に5000値のみを返し](https://support.microsoft.com/kb/2009267)ます」を参照してください。
 
 ## <a name="determine-whether-to-add-indices"></a>インデックスを追加するかどうかを判断する
 
-属性のインデックス作成は、フィルターで属性名を持つオブジェクトを検索する場合に便利です。 インデックスを作成すると、フィルターを評価するときにアクセスする必要があるオブジェクトの数を減らすことができます。 ただし、これにより書き込み操作のパフォーマンスが低下します。これは、対応する属性が変更または追加されたときにインデックスを更新する必要があるためです。 また、ディレクトリデータベースのサイズも大きくなりますが、多くの場合、ストレージのコストを上回るメリットがあります。 ログ記録を使用して、高価で非効率なクエリを見つけることができます。 特定した後は、検索のパフォーマンスを向上させるために、対応するクエリで使用されるいくつかの属性のインデックスを作成することを検討してください。 Active Directory 検索の動作の詳細については、「 [Active Directory の検索のしくみ](https://technet.microsoft.com/library/cc755809.aspx)」を参照してください。
+属性のインデックス作成は、フィルターで属性名を持つオブジェクトを検索する場合に便利です。 インデックスを作成すると、フィルターを評価するときにアクセスする必要があるオブジェクトの数を減らすことができます。 ただし、これにより書き込み操作のパフォーマンスが低下します。これは、対応する属性が変更または追加されたときにインデックスを更新する必要があるためです。 また、ディレクトリデータベースのサイズも大きくなりますが、多くの場合、ストレージのコストを上回るメリットがあります。 ログ記録を使用して、高価で非効率なクエリを見つけることができます。 特定した後は、検索のパフォーマンスを向上させるために、対応するクエリで使用されるいくつかの属性のインデックスを作成することを検討してください。 Active Directory 検索の動作の詳細については、「 [Active Directory の検索のしくみ](/previous-versions/windows/it-pro/windows-server-2003/cc755809(v=ws.10))」を参照してください。
 
 ### <a name="scenarios-that-benefit-in-adding-indices"></a>インデックスを追加する場合の利点
 
@@ -54,11 +54,11 @@ Active Directory に対して使用するクエリを適切に記述、構築、
 
 これらのシナリオは、次の1つまたは複数の方法を使用して検出できます。
 
--   [統計コントロールを使用したクエリタイミングの決定](https://msdn.microsoft.com/library/ms808539.aspx)
+-   [統計コントロールを使用したクエリタイミングの決定](/previous-versions/ms808539(v=msdn.10))
 
--   [高コストで非効率的な検索の追跡](https://msdn.microsoft.com/library/ms808539.aspx)
+-   [高コストで非効率的な検索の追跡](/previous-versions/ms808539(v=msdn.10))
 
--   パフォーマンスモニターの Active Directory 診断データコレクターセット ([SPA の Son: Win2008 以降の AD データコレクターセット](https://blogs.technet.com/b/askds/archive/2010/06/08/son-of-spa-ad-data-collector-sets-in-win2008-and-beyond.aspx))
+-   パフォーマンスモニターの Active Directory 診断データコレクターセット ([SPA の Son: Win2008 以降の AD データコレクターセット](/archive/blogs/askds/son-of-spa-ad-data-collector-sets-in-win2008-and-beyond))
 
 -   [Microsoft Server Performance Advisor](../../../server-performance-advisor/microsoft-server-performance-advisor.md)Active Directory Advisor パック
 
@@ -68,11 +68,11 @@ Active Directory に対して使用するクエリを適切に記述、構築、
 
 -   クエリがオプションとして使い果たされた後に、インデックスを作成して問題に対する適切な解決策があることを確認してください。 ハードウェアのサイズを正しく設定することは非常に重要です。 インデックスは、ハードウェアの問題を難読化しようとするのではなく、属性にインデックスを設定する必要がある場合にのみ追加してください。
 
--   インデックスを作成すると、インデックスを作成する属性の合計サイズの最小値によって、データベースのサイズが大きくなります。 このため、データベースの増加量の見積もりは、属性内のデータの平均サイズを取得し、属性が設定されるオブジェクトの数を乗算することで評価できます。 一般に、これはデータベースサイズの1% 増加に関するものです。 詳細については、「[データストアのしくみ](https://technet.microsoft.com/library/cc772829.aspx)」を参照してください。
+-   インデックスを作成すると、インデックスを作成する属性の合計サイズの最小値によって、データベースのサイズが大きくなります。 このため、データベースの増加量の見積もりは、属性内のデータの平均サイズを取得し、属性が設定されるオブジェクトの数を乗算することで評価できます。 一般に、これはデータベースサイズの1% 増加に関するものです。 詳細については、「[データストアのしくみ](/previous-versions/windows/it-pro/windows-server-2003/cc772829(v=ws.10))」を参照してください。
 
 -   検索動作が組織単位レベルで行われる場合は、コンテナー化検索のインデックス作成を検討してください。
 
--   タプルインデックスは通常のインデックスよりも大きくなりますが、サイズを推定するのは非常に困難です。 通常のインデックスサイズの推定値は、増加に対するフロアとして使用します。最大値は20% です。 詳細については、「[データストアのしくみ](https://technet.microsoft.com/library/cc772829.aspx)」を参照してください。
+-   タプルインデックスは通常のインデックスよりも大きくなりますが、サイズを推定するのは非常に困難です。 通常のインデックスサイズの推定値は、増加に対するフロアとして使用します。最大値は20% です。 詳細については、「[データストアのしくみ](/previous-versions/windows/it-pro/windows-server-2003/cc772829(v=ws.10))」を参照してください。
 
 -   検索動作が組織単位レベルで行われる場合は、コンテナー化検索のインデックス作成を検討してください。
 
@@ -90,11 +90,11 @@ Active Directory に対して使用するクエリを適切に記述、構築、
 
 詳細については、次の情報を参照してください。
 
--   [より効率的な Microsoft Active Directory 対応アプリケーションの作成](https://msdn.microsoft.com/library/ms808539.aspx)
+-   [より効率的な Microsoft Active Directory 対応アプリケーションの作成](/previous-versions/ms808539(v=msdn.10))
 
--   [Active Directory Domain Services の検索](https://msdn.microsoft.com/library/aa746427.aspx)
+-   [Active Directory Domain Services の検索](/windows/win32/ad/searching-in-active-directory-domain-services)
 
--   [インデックス付き属性](https://msdn.microsoft.com/library/windows/desktop/ms677112.aspx)
+-   [インデックス付き属性](/windows/win32/ad/indexed-attributes)
 
 ## <a name="additional-references"></a>その他の参照情報
 

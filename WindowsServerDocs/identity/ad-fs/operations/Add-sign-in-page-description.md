@@ -6,14 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: d16165894b455c4e3ff33b77e84ccce9e30f3be0
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 033663720750ee2990cbc6eb4dd0c6d9abe1a002
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519831"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87962636"
 ---
 # <a name="add-sign-in-page-description"></a>サインイン \- ページの説明の追加
 
@@ -31,6 +29,6 @@ Set-AdfsGlobalWebContent -SignInPageDescriptionText "<p>Sign-in to Contoso requi
 
 サインインページをカスタマイズすると、 \- カスタマイズが優先されるため、サポートするすべての言語に合わせてカスタマイズする必要があります。 すべてのカスタマイズ コンテンツには、ロケール パラメーターが設定されます。 ローカライズされたコンテンツを構成する場合は、"en" など、 \- 国と地域に固有のロケールを構成する前に、最初に "en" などの国のロケールで構成する必要があり \- \- ます。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 [AD FS ユーザーサインインのカスタマイズ](AD-FS-user-sign-in-customization.md)

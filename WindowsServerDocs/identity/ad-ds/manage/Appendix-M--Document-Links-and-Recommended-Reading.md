@@ -6,14 +6,12 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 17503575ce81b9571545027a811c39cd5f82b0aa
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 7e32047c3c2b255b81e959539d3ed3b5bbd2f0d6
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518999"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87943629"
 ---
 # <a name="appendix-m-document-links-and-recommended-reading"></a>付録 M: ドキュメントのリンクと推奨資料
 
@@ -133,7 +131,7 @@ ms.locfileid: "87518999"
 | [システムのシャットダウン](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_41) | [https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_41](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_41) |
 | [ディレクトリ サービス データの同期化](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_42) | [https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_42](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_42) |
 | [ファイルとその他のオブジェクトの所有権の取得](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_43) | [https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_43](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349804(v=ws.10)#BKMK_43) |
-| [Access Control](/windows/win32/secauthz/access-control) | [https://msdn.microsoft.com/library/aa374860(v=VS.85).aspx](/windows/win32/secauthz/access-control) |
+| [アクセス制御](/windows/win32/secauthz/access-control) | [https://msdn.microsoft.com/library/aa374860(v=VS.85).aspx](/windows/win32/secauthz/access-control) |
 | [Microsoft サポートの記事251343](https://support.microsoft.com/kb/251343) | [https://support.microsoft.com/kb/251343](https://support.microsoft.com/kb/251343) |
 | [rootDSE の変更操作](/openspecs/windows_protocols/ms-adts/fc74972f-b267-4c1a-8716-0f5b48cf52b9) | [https://msdn.microsoft.com/library/cc223297.aspx](/openspecs/windows_protocols/ms-adts/fc74972f-b267-4c1a-8716-0f5b48cf52b9) |
 | [AD DS のバックアップと回復の手順ガイド](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771290(v=ws.10)) | [https://technet.microsoft.com/library/cc771290(v=ws.10).aspx](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771290(v=ws.10)) |

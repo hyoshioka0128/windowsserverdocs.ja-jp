@@ -5,12 +5,12 @@ ms.topic: conceptual
 ms.author: qizha;tristanb
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 9b45ad16981667eff626278daadbe8b39f5cc5c8
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 1fcc21df93d9963ee83159c1df2fcf918ddbbfba
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896717"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992369"
 ---
 # <a name="processor-power-management-ppm-tuning-for-the-windows-server-balanced-power-plan"></a>Windows Server のバランスの取れた電源プランのプロセッサ電源管理 (PPM) のチューニング
 
@@ -87,7 +87,7 @@ Windows Server 2008 以降、Microsoft は Intel および AMD と連携して�
 
 パラメーターの数と複雑さにより、これは困難な作業になる可能性がありますが、特定の環境におけるエネルギー消費とワークロードの有効性のトレードオフを検討している場合は、労力が必要になる可能性があります。
 
- チューニング可能な PPM パラメーターの完全なセットについては、「[プロセッサ電源管理のチューニング](https://msdn.microsoft.com/windows/hardware/gg566941.aspx)」を参照してください。 まず、次のような最も単純な電源パラメーターを使用できます。
+ チューニング可能な PPM パラメーターの完全なセットについては、「[プロセッサ電源管理のチューニング](/previous-versions/windows/hardware/design/dn613983(v=vs.85))」を参照してください。 まず、次のような最も単純な電源パラメーターを使用できます。
 
 -   **プロセッサパフォーマンスの向上しきい値とプロセッサパフォーマンスの向上時間**–大きい値を指定すると、パフォーマンスの向上によるアクティビティの増加が遅くなります。
 

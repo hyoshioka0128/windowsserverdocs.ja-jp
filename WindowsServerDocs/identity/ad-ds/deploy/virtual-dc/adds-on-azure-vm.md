@@ -5,15 +5,13 @@ author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
 ms.date: 04/11/2019
-ms.technology: identity-adds
 ms.topic: article
-ms.prod: windows-server
-ms.openlocfilehash: a429ae3fed8694b5d9f05722b9f9d580b6b27ae6
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 7272ddc3693816974df528e6c5e10671bbe4ffb7
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86962984"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87943777"
 ---
 # <a name="install-a-new-active-directory-forest-using-azure-cli"></a>Azure CLI を使用して新しい Active Directory フォレストをインストールする
 

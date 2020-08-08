@@ -2,19 +2,17 @@
 title: Windows Server 2016 での Hyper-v ネットワーク仮想化の新機能
 description: このトピックでは、Windows Server 2016 での Hyper-v ネットワーク仮想化の新機能について説明します。
 manager: grcusanz
-ms.prod: windows-server
-ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: 0254275a-0a77-40a9-b68a-1029284c03fe
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 03/19/2018
-ms.openlocfilehash: 6178ca0913ef27f656a566ffdb39a957ab743733
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: aa53b13526172e37a46fbb3108278ad7aa859b64
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471707"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87952487"
 ---
 # <a name="whats-new-in-hyper-v-network-virtualization-in-windows-server-2016"></a>Windows Server 2016 での Hyper-v ネットワーク仮想化の新機能
 
@@ -55,10 +53,10 @@ Windows Server 2016 には、仮想ネットワークトラフィックを完全
 ### <a name="compliant-ieee-ethernet-headers"></a><a name="L2"></a>準拠している IEEE イーサネットヘッダー
 HNV は、業界標準のプロトコルに依存するサードパーティの仮想および物理アプライアンスとの相互運用性を確保するために、正しい L2 イーサネットヘッダーを実装します。 Microsoft では、この相互運用性を確保するために、すべての送信パケットに準拠した値があることを保証します。 さらに、物理 L2 ネットワークでのジャンボフレーム (MTU > 1780) のサポートは、nVirtual Network NV に接続されているゲスト Virtual Machines が 1514 MTU を維持していることを確認するために、カプセル化プロトコル (NVGRE、VXLAN) によって導入されたパケットオーバーヘッドを考慮する必要があります。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 -   [Hyper-V ネットワーク仮想化の概要](hyperv-network-virtualization-overview-windows-server.md)
 
 -   [Hyper-V ネットワーク仮想化の技術的な詳細](hyperv-network-virtualization-technical-details-windows-server.md)
 
--   [ソフトウェアによるネットワーク](../../Software-Defined-Networking--SDN-.md)
+-   [ソフトウェア定義ネットワーク](../../Software-Defined-Networking--SDN-.md)

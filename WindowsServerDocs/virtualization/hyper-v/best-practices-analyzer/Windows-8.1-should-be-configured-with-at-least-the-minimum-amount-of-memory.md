@@ -7,12 +7,12 @@ ms.topic: article
 ms.assetid: 84d7edab-610e-4265-87d0-9869f64b0039
 author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 5b6700019b0d44aab396d6384a47f3b69768a56c
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 71e2514b06ca8280aa219249b4ecd835997197f2
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87948368"
+ms.locfileid: "87992572"
 ---
 # <a name="windows-81-should-be-configured-with-at-least-the-minimum-amount-of-memory"></a>Windows 8.1 は、少なくとも最小メモリ容量で構成する必要があります
 
@@ -65,7 +65,4 @@ Set-VMMemory <MyVM> -StartupBytes 512MB
 ```
 
 ## <a name="see-also"></a>参照
-[設定-VMMemory](https://technet.microsoft.com/library/hh848572.aspx)
-
-
-
+[設定-VMMemory](/powershell/module/hyper-v/set-vmmemory?view=win10-ps)

@@ -5,12 +5,12 @@ ms.topic: conceptual
 ms.author: qizha;tristanb
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 5e758e2335d8a5b536b0f0db9626dc88337de631
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 535c1e2ccff14f01f015b67fd0fc2c6be4a04729
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896740"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992405"
 ---
 # <a name="power-and-performance-tuning"></a>電源とパフォーマンスのチューニング
 
@@ -63,7 +63,7 @@ Windows Server 2016 は、幅広い顧客のワークロードにおけるパフ
 
 タイマー刻みの短縮率、電源管理がサポートされていないドライバー、および過剰な CPU 使用率は、 **powercfg/エネルギー**コマンドによって検出される動作の問題の一部です。 このツールを使用すると、電源管理の問題を簡単に識別して修正することができます。これにより、大規模なデータセンターでコストを大幅に節約できる可能性があります。
 
-PowerCfg.exe の詳細については、「 [PowerCfg を使用したシステムエネルギー効率の評価](https://msdn.microsoft.com/windows/hardware/gg463250.aspx)」を参照してください。
+PowerCfg.exe の詳細については、「 [PowerCfg を使用したシステムエネルギー効率の評価](/previous-versions/windows/hardware/download/dn550976(v=vs.85))」を参照してください。
 
 ## <a name="using-power-plans-in-windows-server"></a>Windows Server での電源プランの使用
 
@@ -78,7 +78,7 @@ Windows Server 2016 には、さまざまなビジネスニーズに対応する
 
 これらの電源プランは、現在 (AC) およびダイレクト電流 (DC) を搭載したシステムに対応していますが、サーバーは常に AC 電源を使用していることを前提としています。
 
-電源プランと電源ポリシーの構成の詳細については、「 [Windows での電源ポリシーの構成と展開](https://msdn.microsoft.com/windows/hardware/gg463243.aspx)」を参照してください。
+電源プランと電源ポリシーの構成の詳細については、「 [Windows での電源ポリシーの構成と展開](/previous-versions/windows/hardware/design/dn642106(v=vs.85))」を参照してください。
 
 > [!Note]
 > 一部のサーバー製造元には、BIOS 設定を通じて使用できる独自の電源管理オプションが用意されています。 オペレーティングシステムが電源管理を制御できない場合、Windows の電源プランを変更しても、システムの電源とパフォーマンスには影響しません。
@@ -87,7 +87,7 @@ Windows Server 2016 には、さまざまなビジネスニーズに対応する
 
 各電源プランは、多くの基本的な電源管理パラメーターの組み合わせを表します。 組み込みのプランは、さまざまなワークロードとシナリオに対応する3つの推奨設定のコレクションです。 ただし、これらのプランは顧客のニーズを満たしていないことを認識しています。
 
-以下のセクションでは、いくつかの特定のプロセッサ電源管理パラメーターを調整して、3つの組み込みプランでは対応できない目標を達成する方法について説明します。 より広範な電源パラメーターを理解する必要がある場合は、「 [Windows での電源ポリシーの構成と展開](https://msdn.microsoft.com/windows/hardware/gg463243.aspx)」を参照してください。
+以下のセクションでは、いくつかの特定のプロセッサ電源管理パラメーターを調整して、3つの組み込みプランでは対応できない目標を達成する方法について説明します。 より広範な電源パラメーターを理解する必要がある場合は、「 [Windows での電源ポリシーの構成と展開](/previous-versions/windows/hardware/design/dn642106(v=vs.85))」を参照してください。
 
 ## <a name="processor-performance-boost-mode"></a>プロセッサパフォーマンスブーストモード
 

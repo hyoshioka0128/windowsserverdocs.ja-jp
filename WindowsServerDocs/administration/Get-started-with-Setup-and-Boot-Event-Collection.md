@@ -8,12 +8,12 @@ ms.topic: get-started-article
 ms.assetid: fc239aec-e719-47ea-92fc-d82a7247b3f8
 author: jaimeo
 ms.author: jaimeo
-ms.openlocfilehash: e5e18ed5f5cc4cba319042f1a5da84acae8e5fd5
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: e5275937e12542e16c40273d69d9684d72a4ee82
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87879534"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992451"
 ---
 # <a name="get-started-with-setup-and-boot-event-collection"></a>セットアップおよび起動イベント コレクションの使用
 
@@ -130,9 +130,9 @@ Windows PowerShell のリモート処理を設定できない場合は、いつ�
 
 1.  対象のコンピューターで、Regedit.exe を起動し、次のレジストリ キーを見つけます。
 
-    **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\AutoLogger** このキーの下にさまざまなログ セッションがサブキーとして記載されています。 **Setup Platform**、**NT Kernel Logger**、および **Microsoft-Windows-Setup** はセットアップおよびブート イベント収集で使用するために可能な選択肢ですが、推奨されるオプションは **EventLog-System** です。 これらのキーの詳細については、「[自動ロガー セッションの構成と開始](https://msdn.microsoft.com/library/windows/desktop/aa363687(v=vs.85).aspx)」を参照してください。
+    **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\AutoLogger** このキーの下にさまざまなログ セッションがサブキーとして記載されています。 **Setup Platform**、**NT Kernel Logger**、および **Microsoft-Windows-Setup** はセットアップおよびブート イベント収集で使用するために可能な選択肢ですが、推奨されるオプションは **EventLog-System** です。 これらのキーの詳細については、「[自動ロガー セッションの構成と開始](/windows/win32/etw/configuring-and-starting-an-autologger-session)」を参照してください。
 
-2.  EventLog-System キーで、**LogFileMode** の値を **0x10000180** から **0x10080180** に変更します。 これらの設定の詳細については、「[ログ モードの定数](https://msdn.microsoft.com/library/windows/desktop/aa364080(v=vs.85).aspx)」を参照してください。
+2.  EventLog-System キーで、**LogFileMode** の値を **0x10000180** から **0x10080180** に変更します。 これらの設定の詳細については、「[ログ モードの定数](/windows/win32/etw/logging-mode-constants)」を参照してください。
 
 3.  必要に応じて、コレクター コンピューターへのバグ チェック データの転送も有効にすることができます。 これを行うには、レジストリ キー HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager を見つけ、**0x1** の値を指定してキー **Debug Print Filter** を作成します。
 
@@ -156,7 +156,7 @@ Windows PowerShell のリモート処理を設定できない場合は、いつ�
 ### <a name="validate-target-computer-configuration"></a>対象のコンピューターの設定の検証
 対象のコンピューターの設定を確認するには、管理者特権のコマンド プロンプトを開き、**bcdedit /enum** を実行します。 これが完了したら、**bcdedit /eventsettings** を実行します。 次の値を再確認することができます。
 
--   Key
+-   キー
 
 -   Debugtype = NET
 
@@ -276,7 +276,7 @@ Nano Server で提供される最小限のインターフェイスを使用す�
 
 ### <a name="to-configure-nano-server-as-a-target-computer"></a>Nano Server をターゲットコンピューターとして構成するには
 
-1. 基本的な Nano Server イメージを作成します。 詳細については、[Nano Server の概要](https://technet.microsoft.com/library/mt126167.aspx)に関するページを参照してください。
+1. 基本的な Nano Server イメージを作成します。 詳細については、[Nano Server の概要](../get-started/getting-started-with-nano-server.md)に関するページを参照してください。
 
 2. コレクターコンピューターを、このトピックの「コレクタコンピューターの構成」セクションで示すように設定します。
 
@@ -286,7 +286,7 @@ Nano Server で提供される最小限のインターフェイスを使用す�
 
     2. 昇格したアクセス許可を使用して Windows PowerShell コンソールを起動し、を実行 `Import-Module BootEventCollector` します。
 
-    3. Nano Server VHD レジストリを更新して自動ロガーを有効にします。 これを行うには、`Enable-SbecAutoLogger -Path C:\NanoServer\Workloads\IncludingWorkloads.vhd` を実行します。 これにより、最も一般的なセットアップおよびブート イベントの基本的な一覧が追加されます。「[イベント トレース セッションの制御](https://msdn.microsoft.com/library/windows/desktop/aa363694(v=vs.85).aspx)」でその他を調べることができます。
+    3. Nano Server VHD レジストリを更新して自動ロガーを有効にします。 これを行うには、`Enable-SbecAutoLogger -Path C:\NanoServer\Workloads\IncludingWorkloads.vhd` を実行します。 これにより、最も一般的なセットアップおよびブート イベントの基本的な一覧が追加されます。「[イベント トレース セッションの制御](/windows/win32/etw/controlling-event-tracing-sessions)」でその他を調べることができます。
 
 4. Events フラグを有効にし、コレクター コンピューターを設定するように Nano Server イメージの BCD 設定を更新して、診断イベントが適切なサーバーに送信されることを確認します。 コレクター コンピューターの IPv4 アドレス、TCP ポート、およびコレクターの Active.XML ファイルで構成した暗号化キー (このトピックの他の場所で説明されています) を書き留めます。 管理者特権のアクセス許可を持つ Windows PowerShell コンソールで、次のコマンドを使用します。`Enable-SbecBcd -Path C:\NanoServer\Workloads\IncludingWorkloads.vhd -CollectorIp 192.168.100.1 -CollectorPort 50000 -Key a.b.c.d`
 

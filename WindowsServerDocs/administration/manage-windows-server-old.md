@@ -6,19 +6,19 @@ author: lizap
 ms.author: elizapo
 ms.date: 03/16/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 2edfddb644a2c92a05be8d2d943c089bf6774d06
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 55b33c7ab74ac9295d42ef884540d551b1ad6ec4
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87879320"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992427"
 ---
 # <a name="manage-windows-server"></a>Windows Server の管理
 
 >適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 >[!TIP]
-> 以前のバージョンの Windows Server に関する情報をお探しの場合は、 docs.microsoft.com の他の [Windows Server ライブラリ](/previous-versions/windows/)を参照してください。 また、[このサイトで検索して](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions)、具体的な情報を確認することもできます。
+> 以前のバージョンの Windows Server に関する情報をお探しの場合は、 docs.microsoft.com の他の [Windows Server ライブラリ](/previous-versions/windows/)を参照してください。 また、[このサイトで検索して](/search/index?dataSource=previousVersions&search=Windows+Server)、具体的な情報を確認することもできます。
 
  <ul class="cardse panelContent cols cols3">
     <li>

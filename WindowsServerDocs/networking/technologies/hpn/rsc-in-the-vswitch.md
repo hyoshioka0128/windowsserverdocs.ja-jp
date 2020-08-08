@@ -2,18 +2,16 @@
 title: vSwitch の Receive Segment Coalescing (RSC)
 description: VSwitch 内の受信セグメント合体 (RSC) は、Windows Server 2019 および Windows 10 10 月2018更新プログラムの機能です。これにより、複数の TCP セグメントを少数のセグメントに結合することによって、仮想ワークロードのスループットを向上させることができます。 処理を減らす、大きなセグメント (結合) は、多数の小さなセグメントを処理するよりも効率的です。
 manager: dougkim
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.author: dacuo
 author: dcuomo
 ms.date: 09/07/2018
-ms.openlocfilehash: e7db6656bd9331e5cc6c2deaee143b3602ef1239
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 26f4a5fc028ebe134e6eff8ff22c348d52ba3f90
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181818"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87962046"
 ---
 # <a name="rsc-in-the-vswitch"></a>VSwitch 内の RSC
 >適用対象:Windows Server 2019
@@ -26,7 +24,7 @@ Windows Server 2012 以降には、受信セグメントの結合とも呼ばれ
 
 データパスが仮想スイッチを通過するワークロードでは、この機能を活用できます。
 
-次に例を示します。
+例:
 
 -   以下を含む仮想 Nic をホストします。
 

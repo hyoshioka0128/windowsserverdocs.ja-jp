@@ -8,14 +8,12 @@ manager: mtillman
 ms.reviewer: cahick
 ms.date: 08/20/2019
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 68232d0b8ab6f4b7330b746657fc63e30a3c2e74
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 711a3fc22977d7aa9751c8e200524f4cd295110b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518830"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87943309"
 ---
 # <a name="winlogon-automatic-restart-sign-on-arso"></a>Winlogon 自動再起動サインオン (ARSO)
 
@@ -169,6 +167,6 @@ WinLogon が自動的にロックしたときに WinLogon の状態のトレー�
 
 デバイスで Credential Guard が有効になっている場合、ユーザーの派生シークレットは、現在のブートセッションに固有のキーを使用して暗号化されます。 そのため、Credential Guard が有効になっているデバイスでは、現在、ARSO はサポートされていません。
 
-## <a name="additional-resources"></a>その他の技術情報
+## <a name="additional-resources"></a>その他のリソース
 
 自動ログオンは、いくつかのリリースの Windows に存在した機能です。 これは、windows [http:/technet. microsoft .com/sysinternals/bb963905](/sysinternals/downloads/autologon)の自動ログオンなどのツールを含む、windows のドキュメント化された機能です。 デバイスの 1 人のユーザーの資格情報を入力しなくても自動的にサインインできます。 資格情報が構成され、暗号化された LSA シークレットとしてレジストリに格納します。 特に、メンテナンス期間がこの期間中に一般がある場合はベッドの時間とウェイク アップのアカウントのロックダウンが発生する、多くの子の例では問題にできます。

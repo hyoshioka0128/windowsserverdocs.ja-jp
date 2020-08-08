@@ -2,18 +2,16 @@
 title: Hyper-V ネットワーク仮想化
 description: このトピックでは、Windows Server 2016 の Hyper-v ネットワーク仮想化に関するコンテンツへのリンクを示します。
 manager: grcusanz
-ms.prod: windows-server
-ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: 150976f0-ccd5-487a-a458-92261444a846
 ms.author: anpaul
 author: AnirbanPaul
-ms.openlocfilehash: 98cf303bf5316bf183ac641970e891ad0295eaf5
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 896a14d9a912ec5296151af8186e1f5e165512b5
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87517927"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87952562"
 ---
 # <a name="hyper-v-network-virtualization"></a>Hyper-V ネットワーク仮想化
 

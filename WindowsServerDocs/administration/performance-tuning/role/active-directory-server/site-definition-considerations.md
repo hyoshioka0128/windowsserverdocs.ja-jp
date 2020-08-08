@@ -5,12 +5,12 @@ ms.topic: article
 ms.author: timwi; chrisrob; herbertm; kenbrumf;  mleary; shawnrab
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 7502233cfd71fe2f3e7d25ff6ba246531233d1ff
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: bb0850923dca2f0749c1f2cb5e787d998e8f03ca
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896201"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992247"
 ---
 # <a name="proper-placement-of-domain-controllers-and-site-considerations"></a>ドメイン コントローラーとサイトの適切な配置に関する考慮事項
 
@@ -23,8 +23,8 @@ Rodc が使用されているシナリオでは、読み取り/書き込み Dc �
 -   書き込み可能なドメインコントローラーが必要になる場合があります。  読み書き可能なドメインコントローラーを中央の場所に配置して、待機時間を最小限に抑えます。
 
 詳細については、次を参照してください。
--   [Rodc とのアプリケーションの互換性](https://technet.microsoft.com/library/cc772597.aspx)
--   [Active Directory サービスインターフェイス (ADSI) と読み取り専用ドメインコントローラー (RODC) –パフォーマンスの問題の回避](https://blogs.technet.microsoft.com/fieldcoding/2012/06/24/active-directory-service-interface-adsi-and-the-read-only-domain-controller-rodc-avoiding-performance-issues/)
+-   [Rodc とのアプリケーションの互換性](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc772597(v=ws.10))
+-   [Active Directory サービスインターフェイス (ADSI) と読み取り専用ドメインコントローラー (RODC) –パフォーマンスの問題の回避](/archive/blogs/fieldcoding/active-directory-service-interface-adsi-and-the-read-only-domain-controller-rodc-avoiding-performance-issues)
 
 ## <a name="optimize-for-referrals"></a>参照用に最適化
 
@@ -54,9 +54,9 @@ Rodc が使用されているシナリオでは、読み取り/書き込み Dc �
 
 -   信頼する側のドメインのドメインコントローラーは、最初に同じサイトにある信頼される側のドメインのドメインコントローラーを検索し、次に汎用ロケーターにフェールバックします。
 
-    -   DCLocator のしくみの詳細については、[最も近いサイトでのドメインコントローラーの検索](https://technet.microsoft.com/library/cc978016.aspx)に関するページを参照してください。
+    -   DCLocator のしくみの詳細については、[最も近いサイトでのドメインコントローラーの検索](/previous-versions/windows/it-pro/windows-2000-server/cc978016(v=technet.10))に関するページを参照してください。
 
-    -   信頼される側のドメインと信頼する側のドメインの間でサイト名が収束し、同じ場所にドメインコントローラーが反映されます。 サブネットと IP アドレスのマッピングが両方のフォレストのサイトに正しくリンクされていることを確認します。 詳細については、「[フォレストの信頼を越えたドメインロケーター](https://blogs.technet.com/b/askds/archive/2008/09/24/domain-locator-across-a-forest-trust.aspx)」を参照してください。
+    -   信頼される側のドメインと信頼する側のドメインの間でサイト名が収束し、同じ場所にドメインコントローラーが反映されます。 サブネットと IP アドレスのマッピングが両方のフォレストのサイトに正しくリンクされていることを確認します。 詳細については、「[フォレストの信頼を越えたドメインロケーター](/archive/blogs/askds/domain-locator-across-a-forest-trust)」を参照してください。
 
     -   ドメインコントローラの場所について、DCLocator のニーズに従ってポートが開いていることを確認します。 ドメイン間にファイアウォールが存在する場合は、すべての信頼に対してファイアウォールが正しく構成されていることを確認します。 ファイアウォールが開いていない場合でも、信頼する側のドメインコントローラーは信頼される側のドメインにアクセスしようとします。 何らかの理由で通信が失敗した場合、信頼する側のドメインコントローラーは、最終的に信頼される側のドメインコントローラーに要求をタイムアウトさせます。 ただし、このタイムアウトには、要求ごとに数秒かかることがあります。また、受信要求の量が多い場合は、信頼する側のドメインコントローラーのネットワークポートを使用できません。 クライアントは、ハングしたスレッドとしてドメインコントローラーのタイムアウトを待機することがあります。これは、アプリケーションがフォアグラウンドスレッドで要求を実行する場合に、ハングしたスレッドとして変換される可能性があります。 詳細については、「[ドメインと信頼関係のためにファイアウォールを構成する方法](https://support.microsoft.com/kb/179442)」を参照してください。
 
