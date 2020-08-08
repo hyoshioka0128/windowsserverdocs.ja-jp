@@ -7,18 +7,18 @@ ms.assetid: c4e2f6c7-0364-4bf8-bb66-9af59c0bbd74
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/22/2018
-ms.openlocfilehash: e37fc548db0a1043b2b78d95f97e8b4ef01214c8
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 256c1e503dcaaf0e482ab3f69ca1c5a1b977a10b
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87962056"
+ms.locfileid: "87996528"
 ---
 # <a name="sdn-firewall-auditing"></a>SDN ファイアウォール監査
 
 >適用対象:Windows Server 2019
 
-ファイアウォール監査は、Windows Server 2019 の SDN ファイアウォールの新機能です。 SDN ファイアウォールを有効にすると、ログが有効になっている SDN ファイアウォール規則 (Acl) によって処理されるすべてのフローが記録されます。 ログファイルは、 [Azure Network Watcher フローログ](https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-overview)と一貫性のある構文である必要があります。 これらのログは、診断に使用したり、後で分析するためにアーカイブしたりすることができます。 
+ファイアウォール監査は、Windows Server 2019 の SDN ファイアウォールの新機能です。 SDN ファイアウォールを有効にすると、ログが有効になっている SDN ファイアウォール規則 (Acl) によって処理されるすべてのフローが記録されます。 ログファイルは、 [Azure Network Watcher フローログ](/azure/network-watcher/network-watcher-nsg-flow-logging-overview)と一貫性のある構文である必要があります。 これらのログは、診断に使用したり、後で分析するためにアーカイブしたりすることができます。 
 
 ここでは、Power BI などのツールを使用してこれらのファイルを処理する方法の例をいくつか紹介します。
 
@@ -169,4 +169,3 @@ Mode                LastWriteTime         Length Name
                    }
 }
 ```
-

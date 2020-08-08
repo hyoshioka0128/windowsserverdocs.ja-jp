@@ -6,12 +6,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 01/14/2020
-ms.openlocfilehash: e8077655717db3f6700b0e0a3d12792465b41299
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 8fb0bb3596635a7879b7fff784ced977043f1d5c
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87939773"
+ms.locfileid: "87996424"
 ---
 # <a name="deploying-the-host-guardian-service"></a>ホストガーディアンサービスの展開
 
@@ -37,13 +37,13 @@ ms.locfileid: "87939773"
 | 6-[ホストキー (キー) を作成](guarded-fabric-create-host-key.md)し、[ホスト情報 (TPM) を収集](guarded-fabric-tpm-trusted-attestation-capturing-hardware.md)する | ![手順 6. ホストキーを作成してホスト情報を収集する](../media/Guarded-Fabric-Shielded-VM/guarded-host-collect-info-from-hosts.png) |
 | 7- [HGS にホスト情報を構成する](guarded-fabric-add-host-information-to-hgs.md) | ![手順 7. HGS にホスト情報を追加する](../media/Guarded-Fabric-Shielded-VM/guarded-host-configure-hgs-with-host-info.png) |
 | 8-[ホストが証明できることを確認する](guarded-fabric-confirm-hosts-can-attest-successfully.md) | ![手順 8. ホストが証明できることを確認する](../media/Guarded-Fabric-Shielded-VM/guarded-host-confirm-hosts-attest.png) |
-| 9- [VMM を構成する (省略可能)](https://technet.microsoft.com/system-center-docs/vmm/scenario/guarded-overview) | ![手順 9. VMM を構成する (省略可能)](../media/Guarded-Fabric-Shielded-VM/guarded-host-configure-vmm.png) |
+| 9- [VMM を構成する (省略可能)](/system-center/vmm/deploy-guarded-host-fabric?view=sc-vmm-2019) | ![手順 9. VMM を構成する (省略可能)](../media/Guarded-Fabric-Shielded-VM/guarded-host-configure-vmm.png) |
 | 10-[テンプレートディスクを作成する](guarded-fabric-create-a-shielded-vm-template.md) | ![手順 10. テンプレートディスクを作成する](../media/Guarded-Fabric-Shielded-VM/guarded-host-create-template-disk.png) |
 | 11- [VMM 用の VM シールドヘルパーディスクを作成する (省略可能)](guarded-fabric-vm-shielding-helper-vhd.md) | ![手順 11. VMM 用の VM シールドヘルプディスクを作成する](../media/Guarded-Fabric-Shielded-VM/guarded-host-create-helper-disk.png) |
 | 12- [Windows Azure Pack の設定 (省略可能)](guarded-fabric-shielded-vm-windows-azure-pack.md) | ![手順 12. Windows Azure Pack を設定する (省略可能)](../media/Guarded-Fabric-Shielded-VM/guarded-host-windows-azure-pack.png) |
 | 13-[シールドデータファイルを作成する](guarded-fabric-tenant-creates-shielding-data.md) | ![手順 13. シールドデータファイルを作成する](../media/Guarded-Fabric-Shielded-VM/guarded-host-shielding-data-file.png) |
 | 14- [Windows Azure Pack を使用してシールドされた vm を作成する](guarded-fabric-shielded-vm-windows-azure-pack.md) | ![手順 14. Windows Azure Pack を使用してシールドされた Vm を作成する](../media/Guarded-Fabric-Shielded-VM/guarded-host-shielded-vms.png) |
-| 15- [VMM を使用してシールドされた vm を作成する](https://technet.microsoft.com/system-center-docs/vmm/scenario/guarded-vms) | ![手順 15. VMM を使用してシールドされた Vm を作成する](../media/Guarded-Fabric-Shielded-VM/guarded-host-shielded-vms.png) |
+| 15- [VMM を使用してシールドされた vm を作成する](/system-center/vmm/guarded-deploy-vm?view=sc-vmm-2019) | ![手順 15. VMM を使用してシールドされた Vm を作成する](../media/Guarded-Fabric-Shielded-VM/guarded-host-shielded-vms.png) |
 
 ## <a name="additional-references"></a>その他の参照情報
 

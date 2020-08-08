@@ -7,12 +7,12 @@ ms.assetid: 318659e5-e4a5-4e46-99d6-211dfc46f6b8
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 09/04/2018
-ms.openlocfilehash: 7d45987b863eaabd3ed57630ff1ee425e35fd939
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 1cfd326cd2ab5054829b1f4b9df6b072b3856eb7
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87966599"
+ms.locfileid: "87996491"
 ---
 # <a name="container-networking-overview"></a>コンテナー ネットワークの概要
 
@@ -33,6 +33,6 @@ Windows コンテナーを使用すると、Hyper-v ホストを展開して、V
 
 ## <a name="related-topics"></a>関連トピック
 
-- [Windows コンテナーネットワーク](https://docs.microsoft.com/virtualization/windowscontainers/container-networking/architecture): 非オーバーレイ/SDN デプロイ用のコンテナーネットワークを作成および管理する方法について説明します。
+- [Windows コンテナーネットワーク](/virtualization/windowscontainers/container-networking/architecture): 非オーバーレイ/SDN デプロイ用のコンテナーネットワークを作成および管理する方法について説明します。
 
 - [テナントの仮想ネットワークにコンテナーのエンドポイントを接続](../../manage/Connect-container-endpoints-to-a-Tenant-Virtual-Network.md)する: SDN を使用してオーバーレイ仮想ネットワークのコンテナーネットワークを作成および管理する方法について説明します。

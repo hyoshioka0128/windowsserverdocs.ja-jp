@@ -7,12 +7,12 @@ ms.assetid: bc625de9-ee31-40a4-9ad2-7448bfbfb6e6
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/23/2018
-ms.openlocfilehash: 3937f124ba91a597af83c00cd5497ea57c1b2fed
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: ce85e93f229c62d836a00e7665e2a76bd08b44dd
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87962136"
+ms.locfileid: "87996545"
 ---
 # <a name="kerberos-with-service-principal-name-spn"></a>Kerberos とサービス プリンシパル名 (SPN)
 
@@ -20,7 +20,7 @@ ms.locfileid: "87962136"
 
 ネットワークコントローラーは、管理クライアントと通信するための複数の認証方法をサポートしています。 Kerberos ベースの認証 (X509 証明書ベースの認証) を使用できます。 テスト配置に認証を使用しないオプションもあります。
 
-System Center Virtual Machine Manager は、Kerberos ベースの認証を使用します。 Kerberos ベースの認証を使用している場合は、Active Directory でネットワークコントローラーのサービスプリンシパル名 (SPN) を構成する必要があります。 SPN は、ネットワークコントローラーサービスインスタンスの一意の識別子です。この識別子は、サービスインスタンスをサービスログインアカウントに関連付けるために Kerberos 認証によって使用されます。 詳細については、「[サービスプリンシパル名](https://docs.microsoft.com/windows/desktop/ad/service-principal-names)」を参照してください。
+System Center Virtual Machine Manager は、Kerberos ベースの認証を使用します。 Kerberos ベースの認証を使用している場合は、Active Directory でネットワークコントローラーのサービスプリンシパル名 (SPN) を構成する必要があります。 SPN は、ネットワークコントローラーサービスインスタンスの一意の識別子です。この識別子は、サービスインスタンスをサービスログインアカウントに関連付けるために Kerberos 認証によって使用されます。 詳細については、「[サービスプリンシパル名](/windows/desktop/ad/service-principal-names)」を参照してください。
 
 ## <a name="configure-service-principal-names-spn"></a>サービスプリンシパル名 (SPN) の構成
 

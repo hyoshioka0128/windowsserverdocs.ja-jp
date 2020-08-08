@@ -6,12 +6,12 @@ ms.topic: get-started-article
 ms.assetid: ad848a5b-0811-4c67-afe5-6147489c0384
 ms.author: anpaul
 author: AnirbanPaul
-ms.openlocfilehash: 2980e073c34d6177846175563e4d374b439ced44
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: c7eb9b82938d6506493ff7cf0856a8c25d3af0ed
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87952602"
+ms.locfileid: "87996510"
 ---
 # <a name="internal-dns-service-idns-for-sdn"></a>SDN の Internal DNS Service (iDNS)
 
@@ -65,7 +65,7 @@ Idn プロキシは、すべてのホストで実行される Windows サービ�
 
 詳細については、次の各トピックを参照してください。
 
-- [スクリプトを使用してソフトウェア定義ネットワーク インフラストラクチャを展開する](https://docs.microsoft.com/windows-server/networking/sdn/deploy/deploy-a-software-defined-network-infrastructure-using-scripts)
+- [スクリプトを使用してソフトウェア定義ネットワーク インフラストラクチャを展開する](../deploy/deploy-a-software-defined-network-infrastructure-using-scripts.md)
 
 
 ## <a name="understanding-idns-deployment-steps"></a>Idn の展開手順について
@@ -108,7 +108,7 @@ Method: PUT
 ```
 
 >[!NOTE]
->これは SDNExpress.ps1 のセクション**Configuration ConfigureIDns**から抜粋したものです。 詳細については、「[Deploy a Software Defined Network infrastructure using scripts](https://technet.microsoft.com/windows-server-docs/networking/sdn/deploy/deploy-a-software-defined-network-infrastructure-using-scripts)」 (スクリプトを使用してソフトウェアによるネットワーク制御インフラストラクチャを展開する) を参照してください。
+>これは SDNExpress.ps1 のセクション**Configuration ConfigureIDns**から抜粋したものです。 詳細については、「[Deploy a Software Defined Network infrastructure using scripts](../deploy/deploy-a-software-defined-network-infrastructure-using-scripts.md)」 (スクリプトを使用してソフトウェアによるネットワーク制御インフラストラクチャを展開する) を参照してください。
 
 ### <a name="step-3-configure-the-idns-proxy-service"></a>手順 3: Idn プロキシサービスを構成する
 Idn プロキシサービスは各 Hyper-v ホスト上で実行され、テナントの仮想ネットワークと Idn サーバーが配置されている物理ネットワークとの間にブリッジを提供します。 次のレジストリキーは、すべての Hyper-v ホスト上に作成する必要があります。
@@ -149,7 +149,7 @@ Idn プロキシサービスは各 Hyper-v ホスト上で実行され、テナ�
 - ValueType = "String"
 
 >[!NOTE]
->これは SDNExpress.ps1 のセクション**Configuration ConfigureIDnsProxy**から抜粋したものです。 詳細については、「[Deploy a Software Defined Network infrastructure using scripts](https://technet.microsoft.com/windows-server-docs/networking/sdn/deploy/deploy-a-software-defined-network-infrastructure-using-scripts)」 (スクリプトを使用してソフトウェアによるネットワーク制御インフラストラクチャを展開する) を参照してください。
+>これは SDNExpress.ps1 のセクション**Configuration ConfigureIDnsProxy**から抜粋したものです。 詳細については、「[Deploy a Software Defined Network infrastructure using scripts](../deploy/deploy-a-software-defined-network-infrastructure-using-scripts.md)」 (スクリプトを使用してソフトウェアによるネットワーク制御インフラストラクチャを展開する) を参照してください。
 
 ### <a name="step-4-restart-the-network-controller-host-agent-service"></a>手順 4: ネットワークコントローラーのホストエージェントサービスを再起動する
 次の Windows PowerShell コマンドを使用して、ネットワークコントローラーのホストエージェントサービスを再起動できます。
@@ -158,7 +158,7 @@ Idn プロキシサービスは各 Hyper-v ホスト上で実行され、テナ�
 Restart-Service nchostagent -Force
 ```
 
-詳細については、「 [Restart-Service](https://technet.microsoft.com/library/hh849823.aspx)」を参照してください。
+詳細については、「 [Restart-Service](/powershell/module/microsoft.powershell.management/restart-service?view=powershell-7)」を参照してください。
 
 ### <a name="enable-firewall-rules-for-the-dns-proxy-service"></a>DNS プロキシサービスのファイアウォール規則を有効にする
 次の Windows PowerShell コマンドを使用して、プロキシが VM と Idn サーバーと通信するための例外を許可するファイアウォール規則を作成できます。
@@ -167,12 +167,12 @@ Restart-Service nchostagent -Force
 Enable-NetFirewallRule -DisplayGroup 'DNS Proxy Firewall'
 ```
 
-詳細については、「 [set-netfirewallrule](https://technet.microsoft.com/library/jj554869.aspx)」を参照してください。
+詳細については、「 [set-netfirewallrule](/powershell/module/netsecurity/enable-netfirewallrule?view=winserver2012r2-ps)」を参照してください。
 
 ### <a name="validate-the-idns-service"></a>Idn サービスを検証する
 Idn サービスを検証するには、サンプルのテナントワークロードをデプロイする必要があります。
 
-詳細については、「 [VM の作成とテナント Virtual Network または VLAN への接続](https://technet.microsoft.com/windows-server-docs/networking/sdn/manage/create-a-tenant-vm)」を参照してください。
+詳細については、「 [VM の作成とテナント Virtual Network または VLAN への接続](../manage/create-a-tenant-vm.md)」を参照してください。
 
 テナント VM で Idn サービスを使用する場合は、VM ネットワークインターフェイスの DNS サーバー構成を空白のままにして、インターフェイスで DHCP を使用できるようにする必要があります。
 
@@ -187,5 +187,4 @@ VM が DNS クエリを開始すると、プロキシは、Virtual Network か�
 また、DNS プロキシによって、テナント VM のクエリが分離されます。 Idn サーバーがクエリに対して権限を持っている場合、Idn サーバーは権限のある応答で応答します。 Idn サーバーがクエリに対して権限を持っていない場合、インターネット名を解決するために DNS 再帰が実行されます。
 
 >[!NOTE]
->この情報は SDNExpressTenant.ps1 の「 **Configuration AttachToVirtualNetwork** 」セクションに記載されています。 詳細については、「[Deploy a Software Defined Network infrastructure using scripts](https://technet.microsoft.com/windows-server-docs/networking/sdn/deploy/deploy-a-software-defined-network-infrastructure-using-scripts)」 (スクリプトを使用してソフトウェアによるネットワーク制御インフラストラクチャを展開する) を参照してください。
-
+>この情報は SDNExpressTenant.ps1 の「 **Configuration AttachToVirtualNetwork** 」セクションに記載されています。 詳細については、「[Deploy a Software Defined Network infrastructure using scripts](../deploy/deploy-a-software-defined-network-infrastructure-using-scripts.md)」 (スクリプトを使用してソフトウェアによるネットワーク制御インフラストラクチャを展開する) を参照してください。

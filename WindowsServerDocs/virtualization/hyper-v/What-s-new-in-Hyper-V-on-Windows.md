@@ -7,12 +7,12 @@ ms.assetid: 1a65a98e-54b6-4c41-9732-1e3d32fe3a5f
 author: kbdazure
 ms.author: kathydav
 ms.date: 09/21/2017
-ms.openlocfilehash: d70dacd2f6ea407350641b33111d40c6059a4110
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: aa61fd14418efe2cb5ee68c1b86e300db24c4fe4
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87954569"
+ms.locfileid: "87996619"
 ---
 # <a name="whats-new-in-hyper-v-on-windows-server"></a>Windows Server での Hyper-v の新機能
 
@@ -38,13 +38,13 @@ ms.locfileid: "87954569"
 
 - **ブランチ オフィスの機能強化**
 
-    新しい[フォールバック HGS](https://docs.microsoft.com/windows-server/security/guarded-fabric-shielded-vm/guarded-fabric-manage-branch-office#fallback-configuration) 機能と[オフライン モード](https://docs.microsoft.com/windows-server/security/guarded-fabric-shielded-vm/guarded-fabric-manage-branch-office#offline-mode) 機能を利用することにより、ホスト ガーディアン サービスへの接続が断続的なコンピューターで、シールドされた仮想マシンを実行できるようになりました。 フォールバック HGS を使用すると、プライマリ HGS サーバーにアクセスできない場合に試すことができるように、Hyper-V の URL のセカンダリ セットを構成できます。
+    新しい[フォールバック HGS](../../security/guarded-fabric-shielded-vm/guarded-fabric-manage-branch-office.md#fallback-configuration) 機能と[オフライン モード](../../security/guarded-fabric-shielded-vm/guarded-fabric-manage-branch-office.md#offline-mode) 機能を利用することにより、ホスト ガーディアン サービスへの接続が断続的なコンピューターで、シールドされた仮想マシンを実行できるようになりました。 フォールバック HGS を使用すると、プライマリ HGS サーバーにアクセスできない場合に試すことができるように、Hyper-V の URL のセカンダリ セットを構成できます。
 
     オフライン モードでは、VM が一度正常に開始されたことがあり、ホストのセキュリティ構成が変更されていない限り、HGS にアクセスできない場合でも、シールドされた VM を継続的に起動できます。
 
 - **トラブルシューティングの機能強化**
 
-    VMConnect 拡張セッション モードと PowerShell ダイレクトのサポートが有効になり、[シールドされた仮想マシンのトラブルシューティング](https://docs.microsoft.com/windows-server/security/guarded-fabric-shielded-vm/guarded-fabric-troubleshoot-shielded-vms)も容易になりました。 これらのツールは、VM へのネットワーク接続が失われたため構成を更新してアクセスを復元する必要がある場合に特に役立ちます。
+    VMConnect 拡張セッション モードと PowerShell ダイレクトのサポートが有効になり、[シールドされた仮想マシンのトラブルシューティング](../../security/guarded-fabric-shielded-vm/guarded-fabric-troubleshoot-shielded-vms.md)も容易になりました。 これらのツールは、VM へのネットワーク接続が失われたため構成を更新してアクセスを復元する必要がある場合に特に役立ちます。
 
     これらの機能は構成する必要がなく、Windows Server Version 1803 以降を実行している Hyper-V ホストにシールドされた VM が配置されると、自動的に利用可能になります。
 
@@ -74,7 +74,7 @@ Always On/Always Connected (ビデオ) 電源モデルを使用しているコ�
 Set-VMProcessor TestVM -EnableHostResourceProtection $true
 ```
 
-このコマンドレットの詳細については、「 [Set-VMProcessor](https://docs.microsoft.com/powershell/module/hyper-v/set-vmprocessor)」を参照してください。
+このコマンドレットの詳細については、「 [Set-VMProcessor](/powershell/module/hyper-v/set-vmprocessor)」を参照してください。
 
 ### <a name="hot-add-and-remove-for-network-adapters-and-memory-new"></a>ネットワークアダプターとメモリのホットアドと削除 \(\)
 
@@ -105,7 +105,7 @@ Windows ゲストの統合サービスの更新プログラムは、Windows Upda
 Set-VMFirmware TestVM -SecureBootTemplate MicrosoftUEFICertificateAuthority
 ```
 
-Hyper-v 上の Linux 仮想マシンの詳細については、「 [hyper-v 上の linux および FreeBSD Virtual Machines](Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)」を参照してください。 コマンドレットの詳細については、「 [set-vmfirmware](https://docs.microsoft.com/powershell/module/hyper-v/set-vmfirmware)」を参照してください。
+Hyper-v 上の Linux 仮想マシンの詳細については、「 [hyper-v 上の linux および FreeBSD Virtual Machines](Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)」を参照してください。 コマンドレットの詳細については、「 [set-vmfirmware](/powershell/module/hyper-v/set-vmfirmware)」を参照してください。
 
 ### <a name="more-memory-and-processors-for-generation-2-virtual-machines-and-hyper-v-hosts-updated"></a>第2世代仮想マシンと Hyper-v ホストの \( 更新されたメモリとプロセッサの増加\)
 
@@ -119,13 +119,13 @@ Hyper-v 上の Linux 仮想マシンの詳細については、「 [hyper-v 上�
 
 -   Intel VT-x のプロセッサ (入れ子になった仮想化は、現時点では Intel プロセッサでのみ使用できます)。
 
-詳細と手順については、「[入れ子になった仮想化を使用した仮想マシンでの hyper-v の実行](https://docs.microsoft.com/virtualization/hyper-v-on-windows/user-guide/nested-virtualization)」を参照してください。
+詳細と手順については、「[入れ子になった仮想化を使用した仮想マシンでの hyper-v の実行](/virtualization/hyper-v-on-windows/user-guide/nested-virtualization)」を参照してください。
 
 ### <a name="networking-features-new"></a>ネットワーク機能の \( 新機能\)
 
 新しいネットワーク機能は次のとおりです。
 
--   **リモートダイレクトメモリアクセス (RDMA) とスイッチ埋め込みチーミング (SET)**。 SET が使用されているかどうかに関係なく、Hyper-v 仮想スイッチにバインドされているネットワークアダプターで RDMA を設定できます。 SET には、NIC チーミングと同じ機能の一部を備えた仮想スイッチが用意されています。 詳細については、「[リモートダイレクトメモリアクセス (RDMA) とスイッチ埋め込みチーミング (SET)](https://docs.microsoft.com/windows-server/virtualization/hyper-v-virtual-switch/rdma-and-switch-embedded-teaming)」を参照してください。
+-   **リモートダイレクトメモリアクセス (RDMA) とスイッチ埋め込みチーミング (SET)**。 SET が使用されているかどうかに関係なく、Hyper-v 仮想スイッチにバインドされているネットワークアダプターで RDMA を設定できます。 SET には、NIC チーミングと同じ機能の一部を備えた仮想スイッチが用意されています。 詳細については、「[リモートダイレクトメモリアクセス (RDMA) とスイッチ埋め込みチーミング (SET)](../hyper-v-virtual-switch/rdma-and-switch-embedded-teaming.md)」を参照してください。
 
 -   **仮想マシンの複数のキュー (VMMQ)**。 は、仮想マシンごとに複数のハードウェアキューを割り当てることによって、VMQ スループットを向上させます。  既定のキューは、仮想マシンのキューのセットになり、キュー間にトラフィックが分散されます。
 
@@ -142,7 +142,7 @@ Hyper-v 上の Linux 仮想マシンの詳細については、「 [hyper-v 上�
 
 ### <a name="rolling-hyper-v-cluster-upgrade-new"></a>Hyper-v クラスターのローリングアップグレードの \( 新規作成\)
 
-Windows server 2019 または Windows Server 2016 を実行しているノードを、Windows Server 2012 R2 を実行しているノードで Hyper-v クラスターに追加できるようになりました。 これにより、ダウンタイムなしでクラスターをアップグレードできます。 クラスターは、クラスター内のすべてのノードをアップグレードし、Windows PowerShell コマンドレット[ClusterFunctionalLevel](https://docs.microsoft.com/powershell/module/failoverclusters/Update-ClusterFunctionalLevel)を使用してクラスターの機能レベルを更新するまで、windows Server 2012 R2 の機能レベルで実行されます。
+Windows server 2019 または Windows Server 2016 を実行しているノードを、Windows Server 2012 R2 を実行しているノードで Hyper-v クラスターに追加できるようになりました。 これにより、ダウンタイムなしでクラスターをアップグレードできます。 クラスターは、クラスター内のすべてのノードをアップグレードし、Windows PowerShell コマンドレット[ClusterFunctionalLevel](/powershell/module/failoverclusters/Update-ClusterFunctionalLevel)を使用してクラスターの機能レベルを更新するまで、windows Server 2012 R2 の機能レベルで実行されます。
 
 > [!IMPORTANT]
 > クラスターの機能レベルを更新しても、Windows Server 2012 R2 には返されません。
@@ -174,15 +174,15 @@ Windows server 2012 R2 の機能レベルが windows server 2012 R2、Windows Se
 ### <a name="shared-virtual-hard-disks-updated"></a>共有仮想ハードディスクが \( 更新されました\)
 ゲストクラスタリングに使用される共有仮想ハードディスク (.vhdx ファイル) のサイズをダウンタイムなしで変更できるようになりました。 共有仮想ハードディスクは、仮想マシンがオンラインの間に拡張または圧縮できます。 ゲストクラスターでは、Hyper-v レプリカを使用して障害回復を行うことで、共有仮想ハードディスクを保護することもできます。
 
-コレクションでレプリケーションを有効にします。 コレクションでのレプリケーションの有効化は **、WMI インターフェイスを介してのみ公開**されます。 詳細については、 [Msvm_CollectionReplicationService クラス](https://msdn.microsoft.com/library/mt167787%28v=vs.85%29.aspx)のドキュメントを参照してください。 **PowerShell コマンドレットまたは UI を使用して、コレクションのレプリケーションを管理することはできません。** コレクションに固有の機能にアクセスするには、Hyper-v クラスターの一部であるホスト上に Vm を配置する必要があります。 これには、Hyper-v レプリカでサポートされていないスタンドアロンホスト上の共有 VHD 共有 Vhd が含まれます。
+コレクションでレプリケーションを有効にします。 コレクションでのレプリケーションの有効化は **、WMI インターフェイスを介してのみ公開**されます。 詳細については、 [Msvm_CollectionReplicationService クラス](/previous-versions/windows/desktop/clushyperv/msvm-collectionreplicationservice)のドキュメントを参照してください。 **PowerShell コマンドレットまたは UI を使用して、コレクションのレプリケーションを管理することはできません。** コレクションに固有の機能にアクセスするには、Hyper-v クラスターの一部であるホスト上に Vm を配置する必要があります。 これには、Hyper-v レプリカでサポートされていないスタンドアロンホスト上の共有 VHD 共有 Vhd が含まれます。
 
-[「仮想ハードディスクの共有の概要](https://technet.microsoft.com/library/dn281956.aspx)」の共有 vhd のガイドラインに従って、共有 vhd がゲストクラスターの一部であることを確認します。
+[「仮想ハードディスクの共有の概要](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn281956(v=ws.11))」の共有 vhd のガイドラインに従って、共有 vhd がゲストクラスターの一部であることを確認します。
 
 共有 VHD が関連付けられていないコレクションでは、共有 VHD が参照ポイントの作成に含まれるかどうかに関係なく、コレクションの参照ポイントを作成することはできません。
 
 ### <a name="virtual-machine-backupnew"></a>仮想マシンのバックアップの \( 新規作成\)
 
-(ホストがクラスター化されているかどうかに関係なく) 1 つの仮想マシンをバックアップする場合は、VM グループを使用しないでください。  また、スナップショットコレクションを使用する必要もありません。 VM グループとスナップショットコレクションは、共有 vhdx を使用しているゲストクラスターのバックアップ専用に使用することを目的としています。 代わりに、 [HYPER-V WMI v2 プロバイダー](https://msdn.microsoft.com/library/windows/desktop/hh850319(v=vs.85).aspx)を使用してスナップショットを作成する必要があります。 同様に、[フェールオーバークラスター WMI プロバイダー](https://msdn.microsoft.com/library/windows/desktop/mt167750(v=vs.85).aspx)は使用しないでください。
+(ホストがクラスター化されているかどうかに関係なく) 1 つの仮想マシンをバックアップする場合は、VM グループを使用しないでください。  また、スナップショットコレクションを使用する必要もありません。 VM グループとスナップショットコレクションは、共有 vhdx を使用しているゲストクラスターのバックアップ専用に使用することを目的としています。 代わりに、 [HYPER-V WMI v2 プロバイダー](/windows/win32/hyperv_v2/windows-virtualization-portal)を使用してスナップショットを作成する必要があります。 同様に、[フェールオーバークラスター WMI プロバイダー](/previous-versions/windows/desktop/clushyperv/failover-clustering-hyper-v-wmi-provider-portal)は使用しないでください。
 
 ### <a name="shielded-virtual-machines-new"></a>シールドされた仮想マシンの \( 新規作成\)
 
@@ -193,7 +193,7 @@ Windows server 2012 R2 の機能レベルが windows server 2012 R2、Windows Se
 
 ### <a name="start-order-priority-for-clustered-virtual-machines-new"></a>クラスター化された仮想マシンの開始順序の優先順位の \( 新規作成\)
 
-この機能を使用すると、最初に起動または再起動するクラスター化された仮想マシンをより細かく制御できます。 これにより、これらのサービスを使用する仮想マシンの前にサービスを提供する仮想マシンを簡単に起動できます。 セットを定義し、仮想マシンをセットに配置して、依存関係を指定します。 Windows PowerShell コマンドレットを使用して、[新しい-ClusterGroupSet](https://docs.microsoft.com/powershell/module/failoverclusters/new-clustergroupset)、 [Get clustergroupset](https://docs.microsoft.com/powershell/module/failoverclusters/get-clustergroupset)、および[Add clustergroupsetdependency](https://docs.microsoft.com/powershell/module/failoverclusters/add-clustergroupsetdependency)などのセットを管理します。
+この機能を使用すると、最初に起動または再起動するクラスター化された仮想マシンをより細かく制御できます。 これにより、これらのサービスを使用する仮想マシンの前にサービスを提供する仮想マシンを簡単に起動できます。 セットを定義し、仮想マシンをセットに配置して、依存関係を指定します。 Windows PowerShell コマンドレットを使用して、[新しい-ClusterGroupSet](/powershell/module/failoverclusters/new-clustergroupset)、 [Get clustergroupset](/powershell/module/failoverclusters/get-clustergroupset)、および[Add clustergroupsetdependency](/powershell/module/failoverclusters/add-clustergroupsetdependency)などのセットを管理します。
 .
 ### <a name="storage-quality-of-service-qos-updated"></a>記憶域のサービスの品質 (QoS) が \( 更新されました\)
 
@@ -217,7 +217,7 @@ Windows server 2012 R2 の 2019 2016 Hyper-v を実行するサーバーに仮�
 > [!IMPORTANT]
 > -   バージョンを更新した後は、Windows Server 2012 R2 を実行しているサーバーに仮想マシンを移動することはできません。
 > -   構成を以前のバージョンにダウングレードすることはできません。
-> -   クラスターの機能レベルが Windows Server 2012 R2 の場合、Hyper-v クラスターで[更新プログラム VMVersion](https://docs.microsoft.com/powershell/module/hyper-v/update-vmversion)コマンドレットがブロックされます。
+> -   クラスターの機能レベルが Windows Server 2012 R2 の場合、Hyper-v クラスターで[更新プログラム VMVersion](/powershell/module/hyper-v/update-vmversion)コマンドレットがブロックされます。
 
 ### <a name="virtualization-based-security-for-generation-2-virtual-machines-new"></a>第2世代仮想マシンの仮想化ベースのセキュリティ \( 新)
 
@@ -237,7 +237,7 @@ Windows コンテナーを使用すると、多くの分離アプリケーショ
 
 -   コンテナーリソースを制限する機能
 
-クイックスタートガイドを含む詳細については、 [Windows コンテナーのドキュメント](https://docs.microsoft.com/virtualization/windowscontainers/index)を参照してください。
+クイックスタートガイドを含む詳細については、 [Windows コンテナーのドキュメント](/virtualization/windowscontainers/index)を参照してください。
 
 ### <a name="windows-powershell-direct-new"></a>Windows PowerShell Direct \( new\)
 

@@ -8,12 +8,12 @@ manager: dougkim
 ms.author: lizross
 author: eross-msft
 ms.date: 09/05/2018
-ms.openlocfilehash: 6b44cdfec4778cf7f36f541021f23a073cb17806
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 424344147ff926694709aa60fbf57380fbbf665b
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87964008"
+ms.locfileid: "87996405"
 ---
 # <a name="windows-powershell-commands-for-rss-and-vrss"></a>RSS および vRSS 用の Windows PowerShell コマンド
 
@@ -21,16 +21,16 @@ ms.locfileid: "87964008"
 
 このトピックでは、Receive Side Scaling \( RSS \) および virtual RSS vRSS 用の Windows PowerShell コマンドに関するテクニカルリファレンス情報をすばやく見つける方法について説明し \( \) ます。
 
-複数のプロセッサまたは複数のコアを持つ物理コンピューターで RSS を構成するには、次の RSS コマンドを使用します。 \( \) サポートされているオペレーティングシステムを実行している仮想マシン VM で、同じコマンドを使用して vRSS を構成できます。 詳細については、「 [Windows PowerShell のネットワークアダプターコマンドレット](https://docs.microsoft.com/powershell/module/netadapter/?view=win10-ps)」を参照してください。
+複数のプロセッサまたは複数のコアを持つ物理コンピューターで RSS を構成するには、次の RSS コマンドを使用します。 \( \) サポートされているオペレーティングシステムを実行している仮想マシン VM で、同じコマンドを使用して vRSS を構成できます。 詳細については、「 [Windows PowerShell のネットワークアダプターコマンドレット](/powershell/module/netadapter/?view=win10-ps)」を参照してください。
 
 ## <a name="configure-vmq"></a>VMQ の構成
 
 vRSS を使用するには、VMQ が有効で構成されている必要があります。 次の Windows PowerShell コマンドを使用して、VMQ 設定を管理できます。
 
-- [Get-netadaptervmq](https://docs.microsoft.com/powershell/module/netadapter/disable-netadaptervmq?view=win10-ps)
-- [Get-netadaptervmq](https://docs.microsoft.com/powershell/module/netadapter/enable-netadaptervmq?view=win10-ps)
-- [Get-netadaptervmq](https://docs.microsoft.com/powershell/module/netadapter/get-netadaptervmq?view=win10-ps)
-- [Get-netadaptervmq](https://docs.microsoft.com/powershell/module/netadapter/set-netadaptervmq?view=win10-ps)
+- [Get-netadaptervmq](/powershell/module/netadapter/disable-netadaptervmq?view=win10-ps)
+- [Get-netadaptervmq](/powershell/module/netadapter/enable-netadaptervmq?view=win10-ps)
+- [Get-netadaptervmq](/powershell/module/netadapter/get-netadaptervmq?view=win10-ps)
+- [Get-netadaptervmq](/powershell/module/netadapter/set-netadaptervmq?view=win10-ps)
 
 ## <a name="enable-and-configure-rss-on-a-native-host"></a>ネイティブホストで RSS を有効にして構成する
 
@@ -39,10 +39,10 @@ vRSS を使用するには、VMQ が有効で構成されている必要があ�
 >[!IMPORTANT]
 >VRSS を有効にして使用するには、VM またはホスト vNIC で RSS を有効にする必要があります。
 
-- [Set-netadapterrss](https://docs.microsoft.com/powershell/module/netadapter/disable-netadapterrss?view=win10-ps)
-- [Set-netadapterrss](https://docs.microsoft.com/powershell/module/netadapter/enable-netadapterrss?view=win10-ps)
-- [Set-netadapterrss](https://docs.microsoft.com/powershell/module/netadapter/get-netadapterrss?view=win10-ps)
-- [Set-netadapterrss](https://docs.microsoft.com/powershell/module/netadapter/Set-NetAdapterRss?view=win10-ps)
+- [Set-netadapterrss](/powershell/module/netadapter/disable-netadapterrss?view=win10-ps)
+- [Set-netadapterrss](/powershell/module/netadapter/enable-netadapterrss?view=win10-ps)
+- [Set-netadapterrss](/powershell/module/netadapter/get-netadapterrss?view=win10-ps)
+- [Set-netadapterrss](/powershell/module/netadapter/Set-NetAdapterRss?view=win10-ps)
 
 ## <a name="enable-vrss-on-the-hyper-v-virtual-switch-port"></a>Hyper-v 仮想スイッチポートでの vRSS の有効化 \-
 
@@ -118,7 +118,7 @@ Windows Server 2019 では、vRSS はネットワークトラフィックを動�
 ## <a name="related-topics"></a>関連トピック
 詳細については、次の参照トピックを参照してください。
 
-- [VMNetworkAdapter](https://technet.microsoft.com/itpro/powershell/windows/hyper-v/get-vmnetworkadapter)
-- [Set-VMNetworkAdapter](https://technet.microsoft.com/itpro/powershell/windows/hyper-v/set-vmnetworkadapter)
+- [VMNetworkAdapter](/powershell/module/hyper-v/get-vmnetworkadapter?view=win10-ps)
+- [Set-VMNetworkAdapter](/powershell/module/hyper-v/set-vmnetworkadapter?view=win10-ps)
 
 詳細については、「[仮想 Receive Side Scaling (vRSS)](vrss-top.md)」を参照してください。

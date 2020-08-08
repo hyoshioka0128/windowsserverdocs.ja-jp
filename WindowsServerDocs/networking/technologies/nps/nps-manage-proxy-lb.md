@@ -6,12 +6,12 @@ ms.assetid: 528280e6-b47e-489f-b310-b257d434aa0d
 manager: brianlic
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 8710723c397744f3ba937ac863cf5ab45dc8a4f1
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: ee552c0202bff26cdcc58411b64cb342a4c7409e
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87952159"
+ms.locfileid: "87996458"
 ---
 # <a name="nps-proxy-server-load-balancing"></a>NPS プロキシサーバーの負荷分散
 
@@ -53,12 +53,10 @@ NPS をプロキシサーバーとして動作し、RADIUS クライアントか
 
 1. RADIUS クライアントの \( VPN サーバー、ダイヤルアップサーバー、ターミナルサービスゲートウェイサーバー、802.1 x 認証スイッチ、および 802.1 x ワイヤレスアクセスポイントを展開 \) し、NPS プロキシサーバーに接続要求を送信するように構成します。
 
-2. NPS プロキシで、ネットワークアクセスサーバーを RADIUS クライアントとして構成します。 詳細については、「 [CONFIGURE RADIUS Clients](https://docs.microsoft.com/windows-server/networking/technologies/nps/nps-radius-clients-configure)」を参照してください。
+2. NPS プロキシで、ネットワークアクセスサーバーを RADIUS クライアントとして構成します。 詳細については、「 [CONFIGURE RADIUS Clients](./nps-radius-clients-configure.md)」を参照してください。
 
-3. NPS プロキシで、1つまたは複数のリモート RADIUS サーバーグループを作成します。 このプロセスでは、RADIUS サーバーをリモート RADIUS サーバーグループに追加します。 詳細については、「[リモート RADIUS サーバーグループの構成](https://docs.microsoft.com/windows-server/networking/technologies/nps/nps-crp-rrsg-configure)」を参照してください。
+3. NPS プロキシで、1つまたは複数のリモート RADIUS サーバーグループを作成します。 このプロセスでは、RADIUS サーバーをリモート RADIUS サーバーグループに追加します。 詳細については、「[リモート RADIUS サーバーグループの構成](./nps-crp-rrsg-configure.md)」を参照してください。
 
 4. NPS プロキシで、リモート RADIUS サーバーグループに追加する RADIUS サーバーごとに、[RADIUS サーバーの**負荷分散**] タブをクリックし、[**優先順位**]、[**重み**]、[**詳細設定**] を構成します。
 
-5. NPS プロキシで、リモート RADIUS サーバーグループに認証要求およびアカウンティング要求を転送するように接続要求ポリシーを構成します。 リモート RADIUS サーバーグループごとに1つの接続要求ポリシーを作成する必要があります。 詳細については、「[接続要求ポリシーの構成](https://docs.microsoft.com/windows-server/networking/technologies/nps/nps-crp-configure)」を参照してください。
-
-
+5. NPS プロキシで、リモート RADIUS サーバーグループに認証要求およびアカウンティング要求を転送するように接続要求ポリシーを構成します。 リモート RADIUS サーバーグループごとに1つの接続要求ポリシーを作成する必要があります。 詳細については、「[接続要求ポリシーの構成](./nps-crp-configure.md)」を参照してください。

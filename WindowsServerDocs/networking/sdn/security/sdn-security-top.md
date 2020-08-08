@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: 763d11a8-4225-4d96-b56f-1ec62e256bfd
 ms.author: anpaul
 author: AnirbanPaul
-ms.openlocfilehash: 7e46bb6dc7709c63e43a4548ff0ce8ee088b34ce
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 3546b48c40af7eea48fcb1f0c995d459a05201a0
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87949276"
+ms.locfileid: "87996493"
 ---
 # <a name="security-for-sdn"></a>SDN のセキュリティ
 
@@ -23,8 +23,8 @@ ms.locfileid: "87949276"
 >その他のソフトウェア定義ネットワークのドキュメントについては、次のライブラリのセクションを参照してください。
 >
 > - [SDN テクノロジ](../technologies/Software-Defined-Networking-Technologies.md)
-> - [プラン SDN](../plan/Plan-Software-Defined-Networking.md)
-> - [SDN の展開](../deploy/Deploy-Software-Defined-Networking.md)
+> - [プラン SDN](/windows-server/networking/sdn/plan/Deploy-a-Software-Defined-Network-Infrastructure)
+> - [SDN の展開](../deploy/deploy-a-software-defined-network-infrastructure.md)
 > - [SDN の管理](../manage/manage-sdn.md)
 > - [SDN のトラブルシューティング](../troubleshoot/Troubleshoot-Software-Defined-Networking.md)
 

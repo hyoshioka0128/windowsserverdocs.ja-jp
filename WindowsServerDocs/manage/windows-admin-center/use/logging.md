@@ -6,12 +6,12 @@ author: haley-rowland
 ms.author: harowl
 ms.date: 06/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 615ecb6c34da980b1223b4ffc5da20c8e84cb9ea
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: addd9d4cf4516725ac8c59d84204cfeb2501e4b3
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87964428"
+ms.locfileid: "87996569"
 ---
 # <a name="use-event-logging-in-windows-admin-center-to-gain-insight-into-management-activities-and-track-gateway-usage"></a>Windows 管理センターでイベントログを使用して管理アクティビティに関する洞察を取得し、ゲートウェイの使用状況を追跡する
 
@@ -34,11 +34,11 @@ Windows 管理センターでは、管理対象サーバーのイベントログ
 | UserOnGateway | Windows 管理センターゲートウェイにアクセスしてアクションを実行するために使用されるユーザー名                    |
 | UserOnTarget  | ターゲット管理サーバーへのアクセスに使用するユーザー名 (userOnGateway と異なる場合) (つまり、"管理" 資格情報を使用してサーバーを使用してアクセスしたユーザー) |
 | 委任    | ブール値: ターゲットの管理対象サーバーがゲートウェイを信頼し、資格情報がユーザーのクライアントコンピューターから委任されている場合             |
-| LAPS          | ブール値: ユーザーが[LAPS](https://technet.microsoft.com/mt227395.aspx)の資格情報を使用してサーバーにアクセスした場合                          |
+| LAPS          | ブール値: ユーザーが[LAPS](/previous-versions/mt227395(v=msdn.10))の資格情報を使用してサーバーにアクセスした場合                          |
 | ファイル          | アクションがファイルのアップロードであった場合、アップロードされたファイルの名前                                |
 
 ## <a name="learn-about-windows-admin-center-activity-with-event-logging"></a>イベントログを使用した Windows 管理センターのアクティビティについて説明します。
 
 Windows 管理センターでは、ゲートウェイのアクティビティをゲートウェイコンピューターのイベントチャネルに記録して、問題のトラブルシューティングを行ったり、使用状況のメトリックを表示したりできます。 これらのイベントは、 **Microsoft-ServerManagementExperience**イベントチャネルに記録されます。
 
-[Windows 管理センターのトラブルシューティングの詳細については、こちらを参照してください。](troubleshooting.md)
+[Windows 管理センターのトラブルシューティングの詳細については、こちらを参照してください。](../support/troubleshooting.md)

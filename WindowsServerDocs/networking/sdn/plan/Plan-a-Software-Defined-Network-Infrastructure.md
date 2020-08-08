@@ -7,12 +7,12 @@ ms.assetid: ea7e53c8-11ec-410b-b287-897c7aaafb13
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/10/2018
-ms.openlocfilehash: 60ba3ea51bf958f2cc5fa598e4f1323bd5631a80
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 1930ee8d74a1aa99b5c94df19e572d382144e604
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87962176"
+ms.locfileid: "87996557"
 ---
 # <a name="plan-a-software-defined-network-infrastructure"></a>ソフトウェア定義ネットワーク インフラストラクチャを計画する
 
@@ -243,7 +243,7 @@ Role|vCPU 要件|メモリ要件|ディスクの要件|
 |SLB/MUX ピアリングの RAS ゲートウェイ BGP ルーター<p>(または、ToR スイッチを BGP ルーターとして使用します)|2 vCPUs|2 GB|OS ドライブの場合は 75 GB|
 
 
-VMM を使用して展開する場合、VMM およびその他の非 SDN インフラストラクチャには、追加のインフラストラクチャバーチャルマシンリソースが必要です。 詳細については、「 [System Center Technical Preview の最小ハードウェア推奨事項](https://technet.microsoft.com/library/dn997303.aspx)」を参照してください。
+VMM を使用して展開する場合、VMM およびその他の非 SDN インフラストラクチャには、追加のインフラストラクチャバーチャルマシンリソースが必要です。 詳細については、「 [System Center Technical Preview の最小ハードウェア推奨事項](/system-center/)」を参照してください。
 
 ## <a name="extending-your-infrastructure"></a>インフラストラクチャの拡張
 インフラストラクチャのサイズとリソースの要件は、ホストする予定のテナントワークロード仮想マシンによって異なります。 前の表に、インフラストラクチャ仮想マシンの CPU、メモリ、およびディスク要件 (例: ネットワークコントローラー、SLB、ゲートウェイなど) を示します。 これらのインフラストラクチャ仮想マシンを追加して、必要に応じてスケールアウトすることができます。 ただし、Hyper-v ホスト上で実行されているすべてのテナント仮想マシンには、独自の CPU、メモリ、およびディスク要件を考慮する必要があります。
@@ -253,7 +253,4 @@ VMM を使用して展開する場合、VMM およびその他の非 SDN イン�
 
 ## <a name="see-also"></a>参照
 [ネットワークコントローラーを展開するためのインストールおよび準備の要件](Installation-and-Preparation-Requirements-for-Deploying-Network-Controller.md) 
-[ソフトウェアで定義されたネットワーク &#40;SDN&#41;](../Software-Defined-Networking--SDN-.md)
-
-
-
+[ソフトウェアで定義されたネットワーク &#40;SDN&#41;](../software-defined-networking.md)

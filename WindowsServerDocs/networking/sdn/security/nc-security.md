@@ -7,12 +7,12 @@ ms.assetid: bc625de9-ee31-40a4-9ad2-7448bfbfb6e6
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/30/2018
-ms.openlocfilehash: 42bed85fed8da210d3a7583caf0170064fd2aff5
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: c66030d1940bca12ab603767da2d17d1086004a6
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87962076"
+ms.locfileid: "87996535"
 ---
 # <a name="secure-the-network-controller"></a>ネットワーク コントローラーをセキュリティで保護する
 
@@ -46,7 +46,7 @@ ms.locfileid: "87962076"
 
 3. **なし**。 テスト環境でテスト目的には None を使用するため、運用環境では使用しないことをお勧めします。 このモードを選択した場合、ノードと管理クライアントの間で認証は実行されません。
 
-Northbound 通信の認証モードを構成するには、Windows PowerShell コマンド**[NetworkController](https://docs.microsoft.com/powershell/module/networkcontroller/install-networkcontroller)** と_clientauthentication_パラメーターを使用します。
+Northbound 通信の認証モードを構成するには、Windows PowerShell コマンド**[NetworkController](/powershell/module/networkcontroller/install-networkcontroller)** と_clientauthentication_パラメーターを使用します。
 
 
 ### <a name="authorization"></a>承認
@@ -55,9 +55,9 @@ Northbound 通信の認証モードを構成するには、Windows PowerShell �
 
 ネットワークコントローラーでサポートされている各認証モードには、次の承認方法を使用します。
 
-1.  **Kerberos**。 Kerberos 認証方法を使用する場合は、Active Directory でセキュリティグループを作成してから、承認されたユーザーとコンピューターをグループに追加することによって、ネットワークコントローラーとの通信を許可するユーザーとコンピューターを定義します。 **[NetworkController](https://docs.microsoft.com/powershell/module/networkcontroller/install-networkcontroller)** Windows PowerShell コマンドの_ClientSecurityGroup_パラメーターを使用して、認証にセキュリティグループを使用するようにネットワークコントローラーを構成できます。 ネットワークコントローラーをインストールした後、 **[NetworkController](https://docs.microsoft.com/powershell/module/networkcontroller/Set-NetworkController)** コマンドと _-ClientSecurityGroup_パラメーターを使用して、セキュリティグループを変更できます。 SCVMM を使用する場合は、デプロイ時にパラメーターとしてセキュリティグループを指定する必要があります。
+1.  **Kerberos**。 Kerberos 認証方法を使用する場合は、Active Directory でセキュリティグループを作成してから、承認されたユーザーとコンピューターをグループに追加することによって、ネットワークコントローラーとの通信を許可するユーザーとコンピューターを定義します。 **[NetworkController](/powershell/module/networkcontroller/install-networkcontroller)** Windows PowerShell コマンドの_ClientSecurityGroup_パラメーターを使用して、認証にセキュリティグループを使用するようにネットワークコントローラーを構成できます。 ネットワークコントローラーをインストールした後、 **[NetworkController](/powershell/module/networkcontroller/Set-NetworkController)** コマンドと _-ClientSecurityGroup_パラメーターを使用して、セキュリティグループを変更できます。 SCVMM を使用する場合は、デプロイ時にパラメーターとしてセキュリティグループを指定する必要があります。
 
-2.  **X509**。 X509 認証方法を使用している場合、ネットワークコントローラーは、証明書の拇印がネットワークコントローラーに認識されている管理クライアントからの要求のみを受け入れます。 これらの拇印は、 **[NetworkController](https://docs.microsoft.com/powershell/module/networkcontroller/install-networkcontroller)** Windows PowerShell コマンドの_clientcertificatethumbprint_パラメーターを使用して構成できます。 **[NetworkController](https://docs.microsoft.com/powershell/module/networkcontroller/Set-NetworkController)** コマンドを使用して、いつでも他のクライアントの拇印を追加できます。
+2.  **X509**。 X509 認証方法を使用している場合、ネットワークコントローラーは、証明書の拇印がネットワークコントローラーに認識されている管理クライアントからの要求のみを受け入れます。 これらの拇印は、 **[NetworkController](/powershell/module/networkcontroller/install-networkcontroller)** Windows PowerShell コマンドの_clientcertificatethumbprint_パラメーターを使用して構成できます。 **[NetworkController](/powershell/module/networkcontroller/Set-NetworkController)** コマンドを使用して、いつでも他のクライアントの拇印を追加できます。
 
 3.  **なし**。 このモードを選択した場合、ノードと管理クライアントの間で認証は実行されません。 テスト環境でテスト目的には None を使用するため、運用環境では使用しないことをお勧めします。
 
@@ -82,15 +82,15 @@ SSL 証明書は、ネットワークコントローラーのノードに手動�
 証明書が登録されたら、 **NetworkController** Windows PowerShell コマンドの **-servercertificate**パラメーターで証明書を使用するようにネットワークコントローラーを構成できます。 ネットワークコントローラーを既にインストールしている場合は、 **NetworkController**コマンドを使用して、いつでも構成を更新できます。
 
 >[!NOTE]
->SCVMM を使用している場合は、証明書をライブラリリソースとして追加する必要があります。 詳細については、「 [VMM ファブリックでの SDN ネットワークコントローラーのセットアップ](https://docs.microsoft.com/system-center/vmm/sdn-controller)」を参照してください。
+>SCVMM を使用している場合は、証明書をライブラリリソースとして追加する必要があります。 詳細については、「 [VMM ファブリックでの SDN ネットワークコントローラーのセットアップ](/system-center/vmm/sdn-controller)」を参照してください。
 
 ## <a name="network-controller-cluster-communication"></a>ネットワークコントローラーのクラスター通信
 
-ネットワークコントローラーは、ネットワークコントローラーノード間の通信の認証、承認、および暗号化をサポートしています。 通信は[Windows Communication Foundation](https://docs.microsoft.com/dotnet/framework/wcf/whats-wcf) \( WCF と TCP を経由し \) ます。
+ネットワークコントローラーは、ネットワークコントローラーノード間の通信の認証、承認、および暗号化をサポートしています。 通信は[Windows Communication Foundation](/dotnet/framework/wcf/whats-wcf) \( WCF と TCP を経由し \) ます。
 
 このモードは、 **NetworkControllerCluster** Windows PowerShell コマンドの**clusterauthentication**パラメーターを使用して構成できます。
 
-詳細については、「 [NetworkControllerCluster](https://docs.microsoft.com/powershell/module/networkcontroller/install-networkcontrollercluster)」を参照してください。
+詳細については、「 [NetworkControllerCluster](/powershell/module/networkcontroller/install-networkcontrollercluster)」を参照してください。
 
 ### <a name="authentication"></a>認証
 
@@ -113,9 +113,9 @@ SSL 証明書は、ネットワークコントローラーのノードに手動�
 
 ネットワークコントローラーでサポートされている各認証モードについて、次の承認方法が使用されます。
 
-1. **Kerberos**。 ネットワークコントローラーのノードは、他のネットワークコントローラーのコンピューターアカウントからの通信要求のみを受け入れます。 [NetworkControllerNodeObject](https://docs.microsoft.com/powershell/module/networkcontroller/new-networkcontrollernodeobject) Windows PowerShell コマンドの**Name**パラメーターを使用して、ネットワークコントローラーを展開するときにこれらのアカウントを構成できます。
+1. **Kerberos**。 ネットワークコントローラーのノードは、他のネットワークコントローラーのコンピューターアカウントからの通信要求のみを受け入れます。 [NetworkControllerNodeObject](/powershell/module/networkcontroller/new-networkcontrollernodeobject) Windows PowerShell コマンドの**Name**パラメーターを使用して、ネットワークコントローラーを展開するときにこれらのアカウントを構成できます。
 
-2. **X509**。 ネットワークコントローラーのノードは、他のネットワークコントローラーのコンピューターアカウントからの通信要求のみを受け入れます。 [NetworkControllerNodeObject](https://docs.microsoft.com/powershell/module/networkcontroller/new-networkcontrollernodeobject) Windows PowerShell コマンドの**Name**パラメーターを使用して、ネットワークコントローラーを展開するときにこれらのアカウントを構成できます。
+2. **X509**。 ネットワークコントローラーのノードは、他のネットワークコントローラーのコンピューターアカウントからの通信要求のみを受け入れます。 [NetworkControllerNodeObject](/powershell/module/networkcontroller/new-networkcontrollernodeobject) Windows PowerShell コマンドの**Name**パラメーターを使用して、ネットワークコントローラーを展開するときにこれらのアカウントを構成できます。
 
 3. **なし**。 このモードを選択した場合、ネットワークコントローラーノード間で承認は実行されません。 このモードはテスト目的でのみ提供されており、運用環境での使用は推奨されていません。
 
@@ -123,8 +123,8 @@ SSL 証明書は、ネットワークコントローラーのノードに手動�
 
 ネットワークコントローラーノード間の通信は、WCF トランスポートレベルの暗号化を使用して暗号化されます。 この形式の暗号化は、認証と承認の方法が Kerberos 証明書または X509 証明書のいずれかである場合に使用されます。 詳細については、次の各トピックを参照してください。
 
-- [方法: Windows 資格情報でサービスをセキュリティで保護する](https://docs.microsoft.com/dotnet/framework/wcf/how-to-secure-a-service-with-windows-credentials)
-- [方法: X.509 証明書を使用してサービスをセキュリティで保護](https://docs.microsoft.com/dotnet/framework/wcf/feature-details/how-to-secure-a-service-with-an-x-509-certificate)する。
+- [方法: Windows 資格情報でサービスをセキュリティで保護する](/dotnet/framework/wcf/how-to-secure-a-service-with-windows-credentials)
+- [方法: X.509 証明書を使用してサービスをセキュリティで保護](/dotnet/framework/wcf/feature-details/how-to-secure-a-service-with-an-x-509-certificate)する。
 
 ## <a name="southbound-communication"></a>Southbound 通信
 

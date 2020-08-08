@@ -7,12 +7,12 @@ ms.assetid: b491089c-5bcb-49d4-95b1-915b7ce69f88
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 02/14/2019
-ms.openlocfilehash: 591a81c91dc444cfe48f0fa40142489b72142409
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 69e01630cf34a588b6861c833015076bd4a31ef4
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87952572"
+ms.locfileid: "87996468"
 ---
 # <a name="sdn-technologies"></a>SDN テクノロジ
 
@@ -72,7 +72,7 @@ Windows Server 2016 では、スイッチ埋め込みチーミング (SET) の�
 セットには、1 つまたは 8 物理イーサネット ネットワーク アダプター間で 1 つまたは複数のソフトウェア ベースの仮想ネットワーク アダプターにグループ化することができます。 これらの仮想ネットワーク アダプターでは、高速なパフォーマンスとネットワーク アダプターに障害が発生した場合のフォールト トレランスを提供します。
 チームに配置する同じ物理的な HYPER-V ホスト上で、セットのメンバーのネットワーク アダプターをすべてにインストールする必要があります。
 
-さらに、Windows PowerShell コマンドを使用して、データセンターブリッジング (DCB) を有効にしたり、RDMA 仮想 NIC (vNIC) を使用して Hyper-v 仮想スイッチを作成したり、セットと RDMA vNICs を使用して Hyper-v 仮想スイッチを作成したりすることもできます。 詳細については、「[リモートダイレクトメモリアクセス (RDMA) とスイッチ埋め込みチーミング (SET)](https://docs.microsoft.com/windows-server/virtualization/hyper-v-virtual-switch/rdma-and-switch-embedded-teaming.md)」を参照してください。
+さらに、Windows PowerShell コマンドを使用して、データセンターブリッジング (DCB) を有効にしたり、RDMA 仮想 NIC (vNIC) を使用して Hyper-v 仮想スイッチを作成したり、セットと RDMA vNICs を使用して Hyper-v 仮想スイッチを作成したりすることもできます。 詳細については、「[リモートダイレクトメモリアクセス (RDMA) とスイッチ埋め込みチーミング (SET)](../../../virtualization/hyper-v-virtual-switch/rdma-and-switch-embedded-teaming.md)」を参照してください。
 
 ## <a name="border-gateway-protocol-bgp"></a>[Border Gateway Protocol (BGP)](../../../remote/remote-access/bgp/Border-Gateway-Protocol-BGP.md)
 
@@ -87,7 +87,7 @@ Windows Server コンテナーは、同じコンテナーホストで実行さ�
 
 ## <a name="system-center"></a>System Center
 
-[仮想マシン管理 (VMM)](https://docs.microsoft.com/system-center/vmm/)と[Operations Manager](https://docs.microsoft.com/system-center/scom/)で SDN インフラストラクチャを展開および管理します。 VMM では、仮想マシンとサービスを作成してプライベート クラウドにデプロイするために必要なリソースをプロビジョニングし、管理します。  Operations Manager では、問題を特定して早急に対応するために、お客様のエンタープライズ全体でサービス、デバイス、および操作を監視します。
+[仮想マシン管理 (VMM)](/system-center/vmm/)と[Operations Manager](/system-center/scom/)で SDN インフラストラクチャを展開および管理します。 VMM では、仮想マシンとサービスを作成してプライベート クラウドにデプロイするために必要なリソースをプロビジョニングし、管理します。  Operations Manager では、問題を特定して早急に対応するために、お客様のエンタープライズ全体でサービス、デバイス、および操作を監視します。
 
 
 ---

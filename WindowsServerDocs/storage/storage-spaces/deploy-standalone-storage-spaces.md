@@ -6,12 +6,12 @@ author: JasonGerend
 ms.author: jgerend
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ac661631eef9053e202c7e21ffff9982d26d1d38
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 7f98ec982601281d5b16a5ec369ca275de189c85
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87960825"
+ms.locfileid: "87996474"
 ---
 # <a name="deploy-storage-spaces-on-a-stand-alone-server"></a>スタンドアロン サーバーに記憶域スペースを展開する
 
@@ -21,7 +21,7 @@ ms.locfileid: "87960825"
 
 記憶域スペースを作成するには、まず 1 つまたは複数の記憶域プールを作成する必要があります。 記憶域プールは、物理ディスクのコレクションです。 記憶域プールでは、記憶域の集約、柔軟な容量拡張、および代理管理が可能です。
 
-1 つの記憶域プールから 1 つまたは複数の仮想ディスクを作成できます。 このような仮想ディスクは*記憶域スペース*とも呼ばれます。 Windows オペレーティング システムからは、記憶域スペースはフォーマットされたボリュームを作成できる通常のディスクと見なされます。 ファイル サービスおよび記憶域サービスのユーザー インターフェイスを使用して仮想ディスクを作成する場合、回復性の種類 (シンプル、ミラー、またはパリティ)、プロビジョニングの種類 (仮想または固定)、およびサイズを構成できます。 Windows PowerShell を使用すると、列数、インタリーブ値、プール内の使用する物理ディスクなど、追加のパラメーターを設定できます。 これらの追加パラメーターの詳細については、 [VirtualDisk](/powershell/module/storage/new-virtualdisk?view=win10-ps)および[Windows Server ストレージフォーラム](https://docs.microsoft.com/answers/topics/windows-server-storage.html)を参照してください。
+1 つの記憶域プールから 1 つまたは複数の仮想ディスクを作成できます。 このような仮想ディスクは*記憶域スペース*とも呼ばれます。 Windows オペレーティング システムからは、記憶域スペースはフォーマットされたボリュームを作成できる通常のディスクと見なされます。 ファイル サービスおよび記憶域サービスのユーザー インターフェイスを使用して仮想ディスクを作成する場合、回復性の種類 (シンプル、ミラー、またはパリティ)、プロビジョニングの種類 (仮想または固定)、およびサイズを構成できます。 Windows PowerShell を使用すると、列数、インタリーブ値、プール内の使用する物理ディスクなど、追加のパラメーターを設定できます。 これらの追加パラメーターの詳細については、 [VirtualDisk](/powershell/module/storage/new-virtualdisk?view=win10-ps)および[Windows Server ストレージフォーラム](/answers/topics/windows-server-storage.html)を参照してください。
 
 >[!NOTE]
 >記憶域スペースを使用して Windows オペレーティングシステムをホストすることはできません。
@@ -266,4 +266,4 @@ Get-VirtualDisk –FriendlyName VirtualDisk1 | Get-Disk | Initialize-Disk –Pas
 - [記憶域スペース](overview.md)
 - [Storage Cmdlets in Windows PowerShell (Windows PowerShell の記憶域コマンドレット)](/powershell/module/storage/index?view=win10-ps)
 - [クラスター化された記憶域スペースを展開する](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj822937(v%3dws.11))
-- [Windows Server ストレージフォーラム](https://docs.microsoft.com/answers/topics/windows-server-storage.html)
+- [Windows Server ストレージフォーラム](/answers/topics/windows-server-storage.html)

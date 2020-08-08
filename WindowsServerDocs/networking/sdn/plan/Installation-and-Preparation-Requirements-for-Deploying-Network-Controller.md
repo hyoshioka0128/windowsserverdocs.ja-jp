@@ -7,12 +7,12 @@ ms.assetid: 7f899e62-6e5b-4fca-9a59-130d4766ee2f
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/10/2018
-ms.openlocfilehash: 060194959f80c9d2a6d174910b0264c58214373b
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 051518873bd028e8b1253b9bf7cb17dcff344d0d
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87964088"
+ms.locfileid: "87996601"
 ---
 # <a name="requirements-for-deploying-network-controller"></a>ネットワークコントローラーを展開するための要件
 
@@ -102,7 +102,7 @@ ms.locfileid: "87964088"
 
 ### <a name="step-4-configure-service-principal-name-if-using-kerberos-based-authentication"></a>手順 4. Kerberos ベースの認証を使用する場合のサービスプリンシパル名の構成
 
-ネットワークコントローラーが管理クライアントとの通信に Kerberos ベースの認証を使用している場合は、Active Directory でネットワークコントローラーのサービスプリンシパル名 (SPN) を構成する必要があります。 SPN は、ネットワークコントローラーによって自動的に構成されます。 必要なのは、SPN を登録および変更するためのアクセス許可をネットワークコントローラーコンピューターに付与することだけです。 詳細については、「[サービスプリンシパル名 (SPN) の構成](https://docs.microsoft.com/windows-server/networking/sdn/security/kerberos-with-spn#configure-service-principal-names-spn)」を参照してください。
+ネットワークコントローラーが管理クライアントとの通信に Kerberos ベースの認証を使用している場合は、Active Directory でネットワークコントローラーのサービスプリンシパル名 (SPN) を構成する必要があります。 SPN は、ネットワークコントローラーによって自動的に構成されます。 必要なのは、SPN を登録および変更するためのアクセス許可をネットワークコントローラーコンピューターに付与することだけです。 詳細については、「[サービスプリンシパル名 (SPN) の構成](../security/kerberos-with-spn.md#configure-service-principal-names-spn)」を参照してください。
 
 ## <a name="deployment-options"></a>配置オプション
 
@@ -129,7 +129,7 @@ ms.locfileid: "87964088"
 
 
 ## <a name="next-steps"></a>次のステップ
-[ソフトウェアで定義されたネットワークインフラストラクチャを計画](https://technet.microsoft.com/windows-server-docs/networking/sdn/plan/plan-a-software-defined-network-infrastructure)します。
+[ソフトウェアで定義されたネットワークインフラストラクチャを計画](./plan-a-software-defined-network-infrastructure.md)します。
 
 ## <a name="related-topics"></a>関連トピック
 - [ネットワーク コントローラー](../technologies/network-controller/Network-Controller.md)

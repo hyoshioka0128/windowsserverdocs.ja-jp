@@ -7,14 +7,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: da54deaa2d1a583fd8ebb2328027e74da2cac5bc
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 10aa277a990dd91016c4dada6f8de3730b1a60fc
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87520121"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87969799"
 ---
 # <a name="best-practices-for-securing-active-directory-federation-services"></a>Active Directory フェデレーションサービス (AD FS) をセキュリティで保護するためのベストプラクティス
 
@@ -91,7 +89,7 @@ Azure AD と Office 365 のシナリオにのみ AD FS と WAP を展開する�
 Set-AdfsEndpoint -TargetAddressPath <address path> -Proxy $false
 ```
 
-次に例を示します。
+例:
 
 ```powershell
 Set-AdfsEndpoint -TargetAddressPath /adfs/services/trust/13/certificatemixed -Proxy $false
