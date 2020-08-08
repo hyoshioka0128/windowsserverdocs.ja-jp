@@ -6,14 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 9ad0ad65b05f9f01793bcc2f6732edfa8372a021
-ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
+ms.openlocfilehash: 018d6b465386aaa83aeca9c42756b85f1385a171
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87864211"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87962917"
 ---
 # <a name="deploying-a-federation-server-farm"></a>フェデレーション サーバー ファームの展開
 
