@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4e9276acbad0f9e9d403d3e172b4935f1de43475
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: e3beb043272de304edfcac294bc9b831a60b1003
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87880357"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992999"
 ---
 # <a name="certreq"></a>certreq
 
@@ -109,7 +109,7 @@ INF ファイルのこの領域は、新しい証明書要求テンプレート�
 | KeyContainer | 新しいキーマテリアルが生成される新しい要求に対しては、このパラメーターを設定しないことをお勧めします。 キーコンテナーは、システムによって自動的に生成され、維持されます。<p>既存のキーマテリアルを使用する必要がある要求の場合、この値は既存のキーのキーコンテナー名に設定できます。 コマンドを使用して、 `certutil –key` マシンコンテキストで使用可能なキーコンテナーの一覧を表示します。 現在の `certutil –key –user` ユーザーのコンテキストに対してコマンドを使用します。| ランダムな文字列値<p>**ヒント:** Inf 解析の問題の可能性を回避するには、空白または特殊文字を含む INF キー値を二重引用符で囲んでください。 | `KeyContainer = {C347BD28-7F69-4090-AA16-BC58CF4D749C}` |
 | Keylength | 公開キーと秘密キーの長さを定義します。 キーの長さは、証明書のセキュリティレベルに影響します。 キーの長さが多いほど、通常は高いセキュリティレベルになります。ただし、一部のアプリケーションでは、キーの長さに関する制限が適用される場合があります。 | 暗号化サービスプロバイダーでサポートされている任意の有効なキーの長さ。 | `KeyLength = 2048` |
 | KeySpec | キーを署名、Exchange (暗号化)、またはその両方に使用できるかどうかを決定します。 | `AT_NONE, AT_SIGNATURE, AT_KEYEXCHANGE` | `KeySpec = AT_KEYEXCHANGE` |
-| KeyUsage | 証明書キーを使用する必要があるかどうかを定義します。 | <ul><li>`CERT_DIGITAL_SIGNATURE_KEY_USAGE -- 80 (128)`</li><li>`CERT_NON_REPUDIATION_KEY_USAGE -- 40 (64)`</li><li>`CERT_KEY_ENCIPHERMENT_KEY_USAGE -- 20 (32)`</li><li>`CERT_DATA_ENCIPHERMENT_KEY_USAGE -- 10 (16)`</li><li>`CERT_KEY_AGREEMENT_KEY_USAGE -- 8`</li><li>`CERT_KEY_CERT_SIGN_KEY_USAGE -- 4`</li><li>`CERT_OFFLINE_CRL_SIGN_KEY_USAGE -- 2`</li><li>`CERT_CRL_SIGN_KEY_USAGE -- 2`</li><li>`CERT_ENCIPHER_ONLY_KEY_USAGE -- 1`</li><li>`CERT_DECIPHER_ONLY_KEY_USAGE -- 8000 (32768)`</li></ul> | `KeyUsage = CERT_DIGITAL_SIGNATURE_KEY_USAGE | CERT_KEY_ENCIPHERMENT_KEY_USAGE`<p>**ヒント:** 複数の値がパイプを使用しています (|) 記号の区切り記号。 複数の値を使用する場合は、INF 解析の問題を回避するために二重引用符を使用してください。 表示される値は、各ビット定義の16進数 (10 進数) 値です。 以前の構文も使用できます。シンボリック表現ではなく、複数のビットが設定された単一の16進値です。 たとえば、`KeyUsage = 0xa0` のようにします。 |
+| KeyUsage | 証明書キーを使用する必要があるかどうかを定義します。 | <ul><li>`CERT_DIGITAL_SIGNATURE_KEY_USAGE -- 80 (128)`</li><li>`CERT_NON_REPUDIATION_KEY_USAGE -- 40 (64)`</li><li>`CERT_KEY_ENCIPHERMENT_KEY_USAGE -- 20 (32)`</li><li>`CERT_DATA_ENCIPHERMENT_KEY_USAGE -- 10 (16)`</li><li>`CERT_KEY_AGREEMENT_KEY_USAGE -- 8`</li><li>`CERT_KEY_CERT_SIGN_KEY_USAGE -- 4`</li><li>`CERT_OFFLINE_CRL_SIGN_KEY_USAGE -- 2`</li><li>`CERT_CRL_SIGN_KEY_USAGE -- 2`</li><li>`CERT_ENCIPHER_ONLY_KEY_USAGE -- 1`</li><li>`CERT_DECIPHER_ONLY_KEY_USAGE -- 8000 (32768)`</li></ul> | `KeyUsage = CERT_DIGITAL_SIGNATURE_KEY_USAGE | CERT_KEY_ENCIPHERMENT_KEY_USAGE`<p>**ヒント:** 複数の値がパイプを使用しています (|) 記号の区切り記号。 複数の値を使用する場合は、INF 解析の問題を回避するために二重引用符を使用してください。 表示される値は、各ビット定義の16進数 (10 進数) 値です。 以前の構文も使用できます。シンボリック表現ではなく、複数のビットが設定された単一の16進値です。 たとえば、`KeyUsage = 0xa0` のように指定します。 |
 | Keyのプロパティ | 秘密キーを使用できる特定の目的を識別する値を取得します。 | <ul><li>`NCRYPT_ALLOW_DECRYPT_FLAG -- 1`</li><li>`NCRYPT_ALLOW_SIGNING_FLAG -- 2`</li><li>`NCRYPT_ALLOW_KEY_AGREEMENT_FLAG -- 4`</li><li>`NCRYPT_ALLOW_ALL_USAGES -- ffffff (16777215)`</li></ul> | `KeyUsageProperty = NCRYPT_ALLOW_DECRYPT_FLAG | NCRYPT_ALLOW_SIGNING_FLAG` |
 | MachineKeySet | このキーは、ユーザーではなく、コンピューターによって所有されている証明書を作成する必要がある場合に重要です。 生成されるキーマテリアルは、要求を作成したセキュリティプリンシパル (ユーザーまたはコンピューターアカウント) のセキュリティコンテキストで保持されます。 管理者がコンピューターの代わりに証明書要求を作成する場合、キーマテリアルは、管理者のセキュリティコンテキストではなく、コンピューターのセキュリティコンテキストで作成する必要があります。 そうしないと、管理者のセキュリティコンテキストにあるため、コンピューターは秘密キーにアクセスできませんでした。 | `true | false`. 既定値は false です。 | `MachineKeySet = true` |
 | NotBefore | 要求を発行できない日付または日付と時刻を指定します。 `NotBefore`およびと共に使用でき `ValidityPeriod` `ValidityPeriodUnits` ます。 | 日付または日付と時刻 | `NotBefore = 7/24/2012 10:31 AM`<p>**ヒント:** `NotBefore`および `NotAfter` は R `equestType=cert` 専用です。 日付の解析は、ロケールを区別するように試行されます。 月の名前を使用すると、すべてのロケールで明確になり、機能します。 |
@@ -129,7 +129,7 @@ INF ファイルのこの領域は、新しい証明書要求テンプレート�
 | UseExistingKeySet | このパラメーターは、既存のキーペアを証明書要求の作成に使用することを指定するために使用されます。 このキーが TRUE に設定されている場合は、RenewalCert キーまたは KeyContainer 名の値も指定する必要があります。 既存のキーのプロパティを変更することはできないため、エクスポート可能なキーは設定しないでください。 この場合、証明書の要求の作成時にキーマテリアルは生成されません。 | `true | false` | `UseExistingKeySet = true` |
 | KeyProtection | 秘密キーを使用する前に保護する方法を示す値を指定します。 | <ul><li>`XCN_NCRYPT_UI_NO_PROTCTION_FLAG -- 0`</li><li>`XCN_NCRYPT_UI_PROTECT_KEY_FLAG -- 1`</li><li>`XCN_NCRYPT_UI_FORCE_HIGH_PROTECTION_FLAG -- 2`</li></ul> | `KeyProtection = NCRYPT_UI_FORCE_HIGH_PROTECTION_FLAG` |
 | SuppressDefaults | 既定の拡張機能と属性が要求に含まれるかどうかを示すブール値を指定します。 既定値は、オブジェクト識別子 (Oid) によって表されます。 | `true | false` | `SuppressDefaults = true` |
-| FriendlyName | 新しい証明書のフレンドリ名。 | Text | `FriendlyName = Server1` |
+| FriendlyName | 新しい証明書のフレンドリ名。 | テキスト | `FriendlyName = Server1` |
 | ValidityPeriodUnits | ValidityPeriod で使用する単位の数を指定します。 注: これは、がの場合にのみ使用され `request type=cert` ます。 | 数値 | `ValidityPeriodUnits = 3` |
 | ValidityPeriod | ValidityPeriod は米国英語の複数形の期間である必要があります。 注: これは、要求の種類が cert の場合にのみ使用されます。 | `Years |  Months | Weeks | Days | Hours | Minutes | Seconds` | `ValidityPeriod = Years` |
 
@@ -339,7 +339,7 @@ certreq –enroll -machine –cert 61 2d 3c fe 00 00 00 00 00 05 renew
 
 - [Web サーバーの SSL 証明書を手動で作成する方法](https://techcommunity.microsoft.com/t5/core-infrastructure-and-security/how-to-create-a-web-server-ssl-certificate-manually/ba-p/1128529)
 
-- [System Center Operations Manager エージェントの証明書の登録](https://docs.microsoft.com/system-center/scom/plan-planning-agent-deployment?view=sc-om-2019)
+- [System Center Operations Manager エージェントの証明書の登録](/system-center/scom/plan-planning-agent-deployment?view=sc-om-2019)
 
 - [Active Directory 証明書サービスの概要](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831740(v=ws.11))
 

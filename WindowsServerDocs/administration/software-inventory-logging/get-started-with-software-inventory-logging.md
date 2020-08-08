@@ -7,12 +7,12 @@ author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 940c5d7795ff4dcf84bad0727d1f92d155b3ea1b
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: a8584b5e2cf1048e0bba5c217aa3e6031600839a
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895657"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87993049"
 ---
 # <a name="get-started-with-software-inventory-logging"></a>ソフトウェアインベントリログを使ってみる
 
@@ -39,9 +39,8 @@ Windows Server のソフトウェア インベントリ ログは、簡単な Po
 -   各サーバーのソフトウェアインベントリログ機能を有効にし、web サーバーのターゲット URI と認証用の証明書の拇印を選択することで、さまざまなソフトウェア資産管理シナリオのソフトウェアおよびサーバーのインベントリ情報を集計します。
 
 ## <a name="see-also"></a>参照
-[ソフトウェア インベントリ ログ アグリゲーター](https://technet.microsoft.com/library/mt572043.aspx)<br>
+[ソフトウェア インベントリ ログ アグリゲーター](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/mt572043(v=ws.11))<br>
 [ソフトウェア インベントリ ログの管理](manage-software-inventory-logging.md)<br>
-[Windows PowerShell でのソフトウェア インベントリ ログのコマンドレット](https://technet.microsoft.com/library/dn283390.aspx)<br>
+[Windows PowerShell でのソフトウェア インベントリ ログのコマンドレット](/powershell/module/softwareinventorylogging/?view=winserver2012R2-ps)<br>
 [Microsoft アセスメント & プランニングツールキット](https://www.microsoft.com/download/en/details.aspx?id=7826) 
 [ボリュームライセンス認証管理ツール](https://blogs.technet.com/b/volume-licensing/)
-

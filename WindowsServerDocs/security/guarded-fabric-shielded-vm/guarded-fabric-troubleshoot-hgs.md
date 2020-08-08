@@ -1,19 +1,17 @@
 ---
 title: ホストガーディアンサービスのトラブルシューティング
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 424b8090-0692-49a6-9dc4-3c0e77d74b80
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
 ms.date: 09/25/2019
-ms.openlocfilehash: 4cbbb41b965a44b6c81b58adc94990bb4d6af046
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 21c29c8432d9f578a50130719c61a255fdb5c649
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856405"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87944082"
 ---
 # <a name="troubleshooting-the-host-guardian-service"></a>ホストガーディアンサービスのトラブルシューティング
 
@@ -47,7 +45,7 @@ HGS で使用される gMSA を検索するには、HGS サーバーで管理者
 1. ローカル証明書マネージャー (certlm .msc) を開く
 2. [**個人用 > 証明**書] を展開し、更新する署名証明書または暗号化証明書を見つけます。
 3. 証明書を右クリックし、[**すべてのタスク] > [秘密キーの管理**] を選択します。
-4. 新しいユーザーに certiciate の秘密キーへのアクセスを許可するには、 **[追加]** をクリックします。
+4. 新しいユーザーに certiciate の秘密キーへのアクセスを許可するには、[**追加**] をクリックします。
 5. オブジェクトピッカーで、前に見つかった HGS の gMSA アカウント名を入力し、[ **OK]** をクリックします。
 6. GMSA に証明書への**読み取り**アクセス権があることを確認します。
 7. [ **OK]** をクリックして、アクセス許可ウィンドウを閉じます。
@@ -92,7 +90,7 @@ $cert.Acl = $cert.Acl | Add-AccessRule $gMSA Read Allow
 これらのヒントは、利便性のために提供されており、読み取り時には正しいとは限りません。また、HSM 製造元によっても保証されていません。
 詳細な質問がある場合は、特定のデバイスに関する正確な情報を HSM の製造元に問い合わせてください。
 
-HSM ブランド/シリーズ      | 推奨事項
+HSM ブランド/シリーズ      | 提案される解決策
 ----------------------|-------------
 Gemalto SafeNet       | 証明書要求ファイルのキー使用法プロパティが0xa0 に設定されていることを確認して、署名と暗号化に証明書を使用できるようにします。 さらに、ローカルの証明書マネージャーツールを使用して、gMSA アカウントに秘密キーへの*読み取り*アクセス権を付与する必要があります (上記の手順を参照)。
 nCipher nShield        | 各 HGS ノードが、署名キーと暗号化キーを含むセキュリティワールドにアクセスできることを確認します。 さらに、ローカル証明書マネージャーを使用して、秘密キーに gMSA*読み取り*アクセス権を付与する必要があります (上記の手順を参照)。
@@ -107,16 +105,16 @@ Utimaco CryptoServers | 証明書要求ファイルのキー使用法プロパ�
 CSR プロパティ | 必須の値
 -------------|---------------
 アルゴリズム    | RSA
-キーサイズ     | 2048ビット以上
-[キーの使用法]    | Signature/Sign/Digitalsignature ビット
+キー サイズ     | 2048ビット以上
+キー使用法    | Signature/Sign/Digitalsignature ビット
 
 **暗号化証明書**
 
 CSR プロパティ | 必須の値
 -------------|---------------
 アルゴリズム    | RSA
-キーサイズ     | 2048ビット以上
-[キーの使用法]    | 暗号化/暗号化/DataEncipherment
+キー サイズ     | 2048ビット以上
+キー使用法    | 暗号化/暗号化/DataEncipherment
 
 **証明書サービステンプレートの Active Directory**
 
@@ -124,7 +122,7 @@ Active Directory 証明書サービス (ADCS) 証明書テンプレートを使�
 
 ADCS Template プロパティ | 必須の値
 -----------------------|---------------
-プロバイダーカテゴリ      | キー ストレージ プロバイダー
+プロバイダーカテゴリ      | キー格納プロバイダー
 アルゴリズム名         | RSA
 最小キーサイズ       | 2048
 目的                | 署名と暗号化
@@ -139,7 +137,7 @@ ADCS Template プロパティ | 必須の値
 構成証明者の証明書を更新するには、管理者特権の PowerShell プロンプトで次のコマンドを実行します。
 
 ```powershell
-Start-ScheduledTask -TaskPath \Microsoft\Windows\HGSServer -TaskName 
+Start-ScheduledTask -TaskPath \Microsoft\Windows\HGSServer -TaskName
 AttestationSignerCertRenewalTask
 ```
 
@@ -154,14 +152,14 @@ AttestationSignerCertRenewalTask
 **TPM から AD モードに切り替えるときの既知の問題**
 
 TPM モードで HGS クラスターを初期化し、後で Active Directory モードに切り替える場合、既知の問題があります。これにより、HGS クラスター内の他のノードが新しい構成証明モードに切り替わるのを防ぐことができます。
-すべての HGS サーバーで正しい構成証明モードが適用されていることを確認するには、HGS クラスターの**各ノードで**`Set-HgsServer -TrustActiveDirectory` を実行します。
+すべての HGS サーバーで正しい構成証明モードが強制されていることを確認するには、 `Set-HgsServer -TrustActiveDirectory` hgs クラスターの**各ノードで**を実行します。
 この問題は、TPM モードから AD モードに切り替える場合には適用されません。また、クラスターが元々 AD モードでセットアップされ*て*いる場合は、この問題は発生しません。
 
 HGS サーバーの構成証明モードは、 [HgsServer](https://technet.microsoft.com/library/mt652162.aspx)を実行して確認できます。
 
 ## <a name="memory-dump-encryption-policies"></a>メモリダンプの暗号化ポリシー
 
-メモリダンプの暗号化ポリシーを構成しようとしているときに、既定の HGS ダンプポリシー (Hgs\_NoDumps、Hgs\_DumpEncryption および Hgs\_DumpEncryptionKey)、またはダンプポリシーコマンドレット (HgsAttestationDumpPolicy) が表示されない場合は、最新の累積更新プログラムがインストールされていない可能性があります。
+メモリダンプの暗号化ポリシーを構成しようとしているときに、既定の HGS ダンプポリシー (Hgs \_ nodumps、hgs \_ dumpencryption、および hgs \_ DumpEncryptionKey) またはダンプポリシーのコマンドレット (HgsAttestationDumpPolicy) が表示されない場合は、最新の累積的な更新プログラムがインストールされていない可能性があります。
 この問題を解決するには、 [HGS サーバー](guarded-fabric-manage-hgs.md#patching-hgs)を最新の累積 Windows 更新プログラムに更新し、[新しい構成証明ポリシーをアクティブ化](guarded-fabric-manage-hgs.md#updates-requiring-policy-activation)します。
 新しい構成証明ポリシーをアクティブ化する前に、Hyper-v ホストを同じ累積的な更新プログラムに更新してください。新しいダンプ暗号化機能がインストールされていないホストは、HGS ポリシーをアクティブ化すると、構成証明に失敗する可能性があります。
 
@@ -176,8 +174,8 @@ EKpub は、特定の TPM を一意に識別します。これは、HGS がシ�
 2. プラットフォーム識別子ファイルには保証キー証明書が含まれていますが、その証明書はシステムで信頼されて**いません**
 
 特定の TPM 製造元には、EKcerts が Tpm に含まれていません。
-TPM でこれが発生していると思われる場合は、Tpm に EKcert がないことを OEM に確認し、`-Force` フラグを使用してホストを HGS に手動で登録してください。
+TPM でこれが発生していると思われる場合は、Tpm に EKcert がないことを OEM に確認し、フラグを使用して `-Force` ホストを HGS に手動で登録してください。
 TPM に EKcert が含まれていても、プラットフォーム識別子ファイルに見つからなかった場合は、ホストで[Get PlatformIdentifier](https://docs.microsoft.com/powershell/module/platformidentifier/get-platformidentifier)を実行するときに、管理者 (管理者特権) の PowerShell コンソールを使用していることを確認してください。
 
-EKcert が信頼できないというエラーが表示された場合は、各 HGS サーバーに[信頼できる tpm ルート証明書パッケージがインストールさ](guarded-fabric-install-trusted-tpm-root-certificates.md)れていること、および tpm ベンダーのルート証明書がローカルコンピューターの**Trustedtpm\_rootca**ストアに存在していることを確認します。 適用可能な中間証明書は、ローカルコンピューター上の**Trustedtpm\_IntermediateCA**ストアにもインストールする必要があります。
-ルート証明書と中間証明書をインストールすると、`Add-HgsAttestationTpmHost` を正常に実行できるようになります。
+EKcert が信頼できないというエラーが表示された場合は、各 HGS サーバーに[信頼できる tpm ルート証明書パッケージがインストールさ](guarded-fabric-install-trusted-tpm-root-certificates.md)れていること、および tpm ベンダーのルート証明書がローカルコンピューターの**trustedtpm \_ rootca**ストアに存在していることを確認してください。 適用可能な中間証明書は、ローカルコンピューターの**Trustedtpm \_ IntermediateCA**ストアにもインストールする必要があります。
+ルート証明書と中間証明書をインストールすると、正常に実行できるようになり `Add-HgsAttestationTpmHost` ます。

@@ -1,18 +1,16 @@
 ---
 title: ヘルスサービスの設定
-ms.prod: windows-server
 manager: eldenc
 ms.author: cosdar
-ms.technology: storage-health-service
 ms.topic: article
 author: cosmosdarwin
 ms.date: 08/14/2017
-ms.openlocfilehash: d2284587ca68bbcf8648adeb2de361cb95e0f6d2
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 389dfa8890e67b3caf7d9ec6fb69b16ae6a8083b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473259"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953384"
 ---
 # <a name="health-service-settings"></a>ヘルスサービスの設定
 
@@ -99,7 +97,7 @@ Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name "System.Storage.V
 "System.LogLevel" = 4
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [Windows Server 2016 のヘルス サービス](health-service-overview.md)
 - [Windows Server 2016 での記憶域スペース ダイレクト](../storage/storage-spaces/storage-spaces-direct-overview.md)

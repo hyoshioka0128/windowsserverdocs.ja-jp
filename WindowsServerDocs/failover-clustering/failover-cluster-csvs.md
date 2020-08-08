@@ -1,20 +1,18 @@
 ---
 title: フェールオーバー クラスターでクラスターの共有ボリュームを使用する
 description: フェールオーバークラスターでクラスターの共有ボリュームを使用する方法。
-ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 manager: lizross
-ms.technology: storage-failover-clustering
 ms.date: 06/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 697fd832a6af66d9cbea2537c44183aaf1b8839d
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 1293abac44cc648442939784ed5bb2b8049e702f
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87177878"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992872"
 ---
 # <a name="use-cluster-shared-volumes-in-a-failover-cluster"></a>フェールオーバー クラスターでクラスターの共有ボリュームを使用する
 
@@ -47,7 +45,7 @@ CSV をサポートするネットワークを構成するときは、次の考�
 
 - **複数のネットワークと複数のネットワーク アダプター**。 ネットワーク障害の発生時にフォールト トレランスを有効にするには、複数のクラスター ネットワークによって CSV トラフィックを伝送するか、またはチーム化されたネットワーク アダプターを構成することをお勧めします。
 
-    クラスター ノードがクラスターによって使用されてはならないネットワークに接続されている場合は、それらのネットワークを無効にする必要があります。 たとえば、クラスターによる iSCSI ネットワークの使用を無効にして、CSV トラフィックがそれらのネットワークに伝送されるのを防ぐことをお勧めします。 ネットワークを無効にするには、フェールオーバークラスターマネージャーで [**ネットワーク**] を選択し、ネットワークを選択して、[**プロパティ**] アクションを選択し、[**このネットワークでのクラスターネットワーク通信を許可しない**] を選択します。 または、 [Get clusternetwork](https://docs.microsoft.com/powershell/module/failoverclusters/get-clusternetwork?view=win10-ps) Windows PowerShell コマンドレットを使用して、ネットワークの**ロール**プロパティを構成することもできます。
+    クラスター ノードがクラスターによって使用されてはならないネットワークに接続されている場合は、それらのネットワークを無効にする必要があります。 たとえば、クラスターによる iSCSI ネットワークの使用を無効にして、CSV トラフィックがそれらのネットワークに伝送されるのを防ぐことをお勧めします。 ネットワークを無効にするには、フェールオーバークラスターマネージャーで [**ネットワーク**] を選択し、ネットワークを選択して、[**プロパティ**] アクションを選択し、[**このネットワークでのクラスターネットワーク通信を許可しない**] を選択します。 または、 [Get clusternetwork](/powershell/module/failoverclusters/get-clusternetwork?view=win10-ps) Windows PowerShell コマンドレットを使用して、ネットワークの**ロール**プロパティを構成することもできます。
 - **ネットワーク アダプターのプロパティ**。 クラスター通信を伝送するすべてのアダプターのプロパティで、次の設定が有効になっていることを確認します。
 
   - **[Microsoft ネットワーク用クライアント]** と **[Microsoft ネットワーク用ファイルとプリンタ共有]**。 これらの設定は、ノード間の CSV トラフィックを伝送するために既定で使用されるサーバー メッセージ ブロック (SMB) 3.0 をサポートしています。 SMB をサポートするために、サーバー サービスとワークステーション サービスが実行されており、それらが各クラスター ノードで自動的に開始されるように構成されていることを確認します。
@@ -66,7 +64,7 @@ CSV をサポートするネットワークを構成するときは、次の考�
 
 #### <a name="about-io-synchronization-and-io-redirection-in-csv-communication"></a>CSV 通信での I/O 同期と I/O リダイレクトについて
 
-- **I/o 同期**: CSV を使用すると、複数のノードが同じ共有記憶域に同時に読み取り/書き込みアクセスできるようになります。 ノードが CSV ボリュームでディスク入力/出力 (I/O) を実行する場合、ノードは記憶域ネットワーク (SAN) などを通して直接記憶域と通信します。 ただし、どの時点でも、1つのノード (コーディネーターノードと呼ばれます) は、LUN に関連付けられている物理ディスクリソースを "所有" します。 CSV ボリュームのコーディネーター ノードは、フェールオーバー クラスター マネージャーの **[ディスク]** の下に **[所有者ノード]** として表示されます。 また、 [Get ClusterSharedVolume](https://docs.microsoft.com/powershell/module/failoverclusters/get-clustersharedvolume?view=win10-ps) Windows PowerShell コマンドレットの出力にも表示されます。
+- **I/o 同期**: CSV を使用すると、複数のノードが同じ共有記憶域に同時に読み取り/書き込みアクセスできるようになります。 ノードが CSV ボリュームでディスク入力/出力 (I/O) を実行する場合、ノードは記憶域ネットワーク (SAN) などを通して直接記憶域と通信します。 ただし、どの時点でも、1つのノード (コーディネーターノードと呼ばれます) は、LUN に関連付けられている物理ディスクリソースを "所有" します。 CSV ボリュームのコーディネーター ノードは、フェールオーバー クラスター マネージャーの **[ディスク]** の下に **[所有者ノード]** として表示されます。 また、 [Get ClusterSharedVolume](/powershell/module/failoverclusters/get-clustersharedvolume?view=win10-ps) Windows PowerShell コマンドレットの出力にも表示されます。
 
   >[!NOTE]
   >Windows Server 2012 R2 では、CSV の所有権は、各ノードが所有する CSV ボリュームの数に基づいて、フェールオーバークラスターノード全体に均等に分散されます。 また、CSV がフェールオーバーした、ノードがクラスターに戻された、新しいノードをクラスターに追加した、クラスター ノードを再起動した、フェールオーバー クラスターをシャットダウン後に起動したなどの状況が発生した場合、所有権は自動的に再分配されます。
@@ -258,5 +256,5 @@ CSV 用のバックアップ アプリケーションとバックアップ ス�
 
 ## <a name="more-information"></a>詳細情報
 
-- [フェールオーバー クラスタリング](failover-clustering.md)
+- [フェールオーバー クラスタリング](./failover-clustering-overview.md)
 - [クラスター化された記憶域スペースを展開する](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj822937(v%3dws.11)>)

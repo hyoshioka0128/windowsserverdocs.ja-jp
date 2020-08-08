@@ -7,12 +7,12 @@ ms.author: jgerend
 manager: lizross
 ms.date: 06/06/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: e96056eb26e200f360f92c4c6e2b94c2d77bf9ec
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 266559ba8da3add8920861f910f061d8b2994d53
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87950116"
+ms.locfileid: "87992889"
 ---
 # <a name="create-a-failover-cluster"></a>フェールオーバー クラスターを作成する
 
@@ -216,15 +216,15 @@ New-Cluster –Name MyCluster –Node Server1, Server2 –StaticAddress 192.168.
 New-Cluster -Name CN=MyCluster,OU=Cluster,DC=Contoso,DC=com -Node Server1, Server2
 ```
 
-クラスター化された役割を追加する方法の例については、「 [Add-ClusterFileServerRole](https://docs.microsoft.com/powershell/module/failoverclusters/add-clusterfileserverrole?view=win10-ps) 」や「 [Add-ClusterGenericApplicationRole](https://docs.microsoft.com/powershell/module/failoverclusters/add-clustergenericapplicationrole?view=win10-ps)」などのトピックを参照してください。
+クラスター化された役割を追加する方法の例については、「 [Add-ClusterFileServerRole](/powershell/module/failoverclusters/add-clusterfileserverrole?view=win10-ps) 」や「 [Add-ClusterGenericApplicationRole](/powershell/module/failoverclusters/add-clustergenericapplicationrole?view=win10-ps)」などのトピックを参照してください。
 
 ## <a name="more-information"></a>詳細情報
 
-  - [フェールオーバー クラスタリング](failover-clustering.md)
+  - [フェールオーバー クラスタリング](./failover-clustering-overview.md)
   - [Hyper-V クラスターを展開する](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj863389(v%3dws.11)>)
   - [アプリケーション データ用のスケールアウト ファイル サーバー](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831349(v%3dws.11)>)
   - [Active Directory からデタッチされたクラスターを展開する](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265970(v=ws.11))
   - [高可用性のためのゲスト クラスタリングの使用](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn440540(v%3dws.11)>)
   - [クラスター対応更新](cluster-aware-updating.md)
-  - [New-Cluster](https://docs.microsoft.com/powershell/module/failoverclusters/new-cluster?view=win10-ps)
-  - [Test-Cluster](https://docs.microsoft.com/powershell/module/failoverclusters/test-cluster?view=win10-ps)
+  - [New-Cluster](/powershell/module/failoverclusters/new-cluster?view=win10-ps)
+  - [Test-Cluster](/powershell/module/failoverclusters/test-cluster?view=win10-ps)

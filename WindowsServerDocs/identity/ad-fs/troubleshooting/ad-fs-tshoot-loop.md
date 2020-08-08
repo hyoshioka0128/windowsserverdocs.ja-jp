@@ -6,17 +6,15 @@ ms.author: billmath
 manager: mtillman
 ms.date: 02/21/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 2f8842dc53756cc4f65b6d6794a8c4952e111c00
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e3d654f44ba75d9b647c0c1d9db7345c7ea75435
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385337"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953092"
 ---
-# <a name="ad-fs-troubleshooting---loop-detection"></a>AD FS トラブルシューティング-ループ検出 
- 
+# <a name="ad-fs-troubleshooting---loop-detection"></a>AD FS トラブルシューティング-ループ検出
+
 AD FS のループは、証明書利用者が有効なセキュリティトークンを継続的に拒否し、AD FS にリダイレクトするときに発生します。
 
 ## <a name="loop-detection-cookie"></a>ループ検出クッキー
@@ -24,9 +22,9 @@ AD FS のループは、証明書利用者が有効なセキュリティトー�
 
 パッシブクライアントがトークンのフェデレーションサービスを20秒以内に5回アクセスする場合、AD FS は次のエラーをスローします。
 
-**MSIS7042: 同じクライアントブラウザーセッションが、最後の '{1}' 秒間に '{0}' 要求を行いました。詳細については、管理者に問い合わせてください。**
+**MSIS7042: 同じクライアントブラウザーセッションが {0} 最後の ' ' 秒間に ' ' 要求を行いました {1} 。詳細については、管理者に問い合わせてください。**
 
-無限ループに入るのは、多くの場合、AD FS によって発行されたトークンを正常に使用できない、正常に動作していない証明書利用者アプリケーションによって発生し、アプリケーションが新しいトークンに対して AD FS にパッシブクライアントを繰り返し送信しているためです。  AD FS は、20秒以内に5つの要求を超えない限り、パッシブクライアントに毎回新しいトークンを発行します。 
+無限ループに入るのは、多くの場合、AD FS によって発行されたトークンを正常に使用できない、正常に動作していない証明書利用者アプリケーションによって発生し、アプリケーションが新しいトークンに対して AD FS にパッシブクライアントを繰り返し送信しているためです。  AD FS は、20秒以内に5つの要求を超えない限り、パッシブクライアントに毎回新しいトークンを発行します。
 
 ## <a name="adjusting-the-loop-detection-cookie"></a>ループ検出クッキーの調整
 PowerShell を使用して、発行されるトークンの数と timespan 値を変更できます。
@@ -48,7 +46,7 @@ Set-AdfsProperties -EnableLoopDetection $false
 >ループの検出を完全に無効にすることはお勧めしません。これにより、ユーザーが無限ループ状態に入るのを防ぐことができます。
 
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 
 - [AD FS のトラブルシューティング](ad-fs-tshoot-overview.md)
 

@@ -7,12 +7,12 @@ author: msjimwu
 ms.author: coreyp
 manager: dongill
 ms.date: 3/15/2018
-ms.openlocfilehash: 3e5b732beb502bb0bf365136947ff380caf71545
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 253cf78e39809473fc865de90915b6a9f870d098
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87879914"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992767"
 ---
 # <a name="deploy-windows-server-hybrid-cloud-print"></a>Windows Server のハイブリッド クラウド印刷をデプロイする
 
@@ -34,19 +34,19 @@ ms.locfileid: "87879914"
 
 - Active Directory を実行している Windows Server 2016 以降のコンピューター。
 
-  Active Directory を設定する方法については、「ステップバイ[ステップ: Windows Server 2016 での Active Directory](https://blogs.technet.microsoft.com/canitpro/2017/02/22/step-by-step-setting-up-active-directory-in-windows-server-2016/)のセットアップ」を参照してください。
+  Active Directory を設定する方法については、「ステップバイ[ステップ: Windows Server 2016 での Active Directory](/archive/blogs/canitpro/step-by-step-setting-up-active-directory-in-windows-server-2016)のセットアップ」を参照してください。
 
 - プリントサーバーとして実行されている、ドメインに参加している専用の Windows Server 2016 以降のコンピューター。
 
 - コネクタサーバーとして実行されている、ドメインに参加している専用の Windows Server 2016 以降のコンピューター。
 
-  詳細については、「 [Azure AD アプリケーションプロキシコネクタ](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-connectors)について」を参照してください。
+  詳細については、「 [Azure AD アプリケーションプロキシコネクタ](/azure/active-directory/manage-apps/application-proxy-connectors)について」を参照してください。
 
 - プリンターを公開するための Windows 10 の Creator Creator 更新プログラムまたはそれ以降のコンピューター。
 
 - 公開されているドメイン名。
 
-  Azure によって作成されたドメイン*名 (onmicrosoft.com*) を使用することも、独自のドメイン名を購入することもできます。 「 [Azure Active Directory ポータルを使用したカスタムドメイン名の追加」を](https://docs.microsoft.com/azure/active-directory/fundamentals/add-custom-domain)参照してください。
+  Azure によって作成されたドメイン*名 (onmicrosoft.com*) を使用することも、独自のドメイン名を購入することもできます。 「 [Azure Active Directory ポータルを使用したカスタムドメイン名の追加」を](/azure/active-directory/fundamentals/add-custom-domain)参照してください。
 
 ## <a name="deployment-steps"></a>デプロイメントの手順
 
@@ -54,13 +54,13 @@ ms.locfileid: "87879914"
 
 ### <a name="step-1---install-azure-ad-connect"></a>手順 1-Azure AD Connect をインストールする
 
-1. Azure AD 接続は Azure AD をオンプレミスの AD に同期します。 Active Directory がインストールされている Windows Server コンピューターで、簡易設定を使用して Azure AD Connect ソフトウェアをダウンロードしてインストールします。 「[簡易設定を使用した Azure AD Connect の概要」を](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-install-express)参照してください。
+1. Azure AD 接続は Azure AD をオンプレミスの AD に同期します。 Active Directory がインストールされている Windows Server コンピューターで、簡易設定を使用して Azure AD Connect ソフトウェアをダウンロードしてインストールします。 「[簡易設定を使用した Azure AD Connect の概要」を](/azure/active-directory/hybrid/how-to-connect-install-express)参照してください。
 
 ### <a name="step-2---install-application-proxy"></a>手順 2-アプリケーションプロキシをインストールする
 
 1. アプリケーションプロキシを使用すると、組織のユーザーはクラウドからオンプレミスのアプリケーションにアクセスできます。 コネクタサーバーにアプリケーションプロキシをインストールします。
-    - インストール手順については、 [Azure Active Directory の「チュートリアル: アプリケーションプロキシを使用したリモートアクセスのためのオンプレミスアプリケーションの追加](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-add-on-premises-application)」を参照してください。
-    - 組織に複雑なネットワークトポロジがある場合は、専用のコネクタグループをお勧めします。 「[コネクタグループを使用して別のネットワークや場所にアプリケーションを発行する](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-connector-groups)」を参照してください。
+    - インストール手順については、 [Azure Active Directory の「チュートリアル: アプリケーションプロキシを使用したリモートアクセスのためのオンプレミスアプリケーションの追加](/azure/active-directory/manage-apps/application-proxy-add-on-premises-application)」を参照してください。
+    - 組織に複雑なネットワークトポロジがある場合は、専用のコネクタグループをお勧めします。 「[コネクタグループを使用して別のネットワークや場所にアプリケーションを発行する](/azure/active-directory/manage-apps/application-proxy-connector-groups)」を参照してください。
 
 ### <a name="step-3---register-and-configure-applications"></a>手順 3-アプリケーションを登録して構成する
 
@@ -174,7 +174,7 @@ HCP サービスとの認証された通信を有効にするには、3つのア
     - 次のサーバーの役割をインストールします。
         - プリントサーバーの役割
         - インターネット インフォメーション サービス (IIS)
-    - サーバーの役割のインストール方法の詳細について[は、「役割と機能の追加ウィザードを使用して役割、役割サービス、および機能をインストール](https://docs.microsoft.com/windows-server/administration/server-manager/install-or-uninstall-roles-role-services-or-features#BKMK_installarfw)する」を参照してください。
+    - サーバーの役割のインストール方法の詳細について[は、「役割と機能の追加ウィザードを使用して役割、役割サービス、および機能をインストール](../server-manager/install-or-uninstall-roles-role-services-or-features.md#install-roles-role-services-and-features-by-using-the-add-roles-and-features-wizard)する」を参照してください。
 
     ![プリントサーバーの役割](../media/hybrid-cloud-print/PrintServer-Roles.png)
 
@@ -297,13 +297,13 @@ HCP サービスとの認証された通信を有効にするには、3つのア
         `sqlite3.exe MopriaDeviceDb.db .read MopriaSQLiteDb.sql`
 
     - ファイルエクスプローラーで、Mo先読み Adevicedb. db ファイルのプロパティを開き、[セキュリティ] タブで Mo先読みデータベースへの発行が許可されているユーザーまたはグループを追加します。ユーザーまたはグループは、オンプレミスの Active Directory に存在し、Azure AD と同期されている必要があります。
-    - ソリューションがルーティング不可能なドメイン (例: *mydomain*) にデプロイされている場合は、Azure AD ドメイン (例: onmicrosoft.com、またはサードパーティベンダーから*購入した*ドメイン) を、オンプレミスの Active Directory に UPN サフィックスとして追加する必要があります。 これは、プリンターを発行するのとまったく同じユーザー (例 admin@: onmicrosoft.com) をデータベースファイルのセキュリティ設定に追加できるようにする*ためです。* 「[ディレクトリ同期のためにルーティング不可能なドメインを準備する」を](https://docs.microsoft.com/office365/enterprise/prepare-a-non-routable-domain-for-directory-synchronization)参照してください。
+    - ソリューションがルーティング不可能なドメイン (例: *mydomain*) にデプロイされている場合は、Azure AD ドメイン (例: onmicrosoft.com、またはサードパーティベンダーから*購入した*ドメイン) を、オンプレミスの Active Directory に UPN サフィックスとして追加する必要があります。 これは、プリンターを発行するのとまったく同じユーザー (例 admin@: onmicrosoft.com) をデータベースファイルのセキュリティ設定に追加できるようにする*ためです。* 「[ディレクトリ同期のためにルーティング不可能なドメインを準備する」を](/office365/enterprise/prepare-a-non-routable-domain-for-directory-synchronization)参照してください。
 
     ![プリントサーバーのレジストリキー](../media/hybrid-cloud-print/PrintServer-SQLiteDB.png)
 
 ### <a name="step-5-optional---configure-pre-authentication-with-azure-ad"></a>手順 5 \[ オプション \] -Azure AD で事前認証を構成する
 
-1. [アプリケーションプロキシを使用したアプリへのシングルサインオンに関するドキュメント「Kerberos の制約付き委任](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-configure-single-sign-on-with-kcd)」を確認します。
+1. [アプリケーションプロキシを使用したアプリへのシングルサインオンに関するドキュメント「Kerberos の制約付き委任](/azure/active-directory/manage-apps/application-proxy-configure-single-sign-on-with-kcd)」を確認します。
 
 2. オンプレミスの Active Directory を構成します。
     - Active Directory マシンでサーバーマネージャーを開き、[ **ツール**] [  >  **ユーザーとコンピューター] Active Directory**にアクセスします。
@@ -357,7 +357,7 @@ HCP サービスとの認証された通信を有効にするには、3つのア
 |プリンター検出サービスのリソース URI  |Mo先読み Adiscoveryresourceid      |
 
 > [!NOTE]
-> クラウド印刷ポリシーグループが使用できないが、MDM プロバイダーが OMA-URI 設定をサポートしている場合は、同じポリシーを設定できます。  詳細については、[こちらを参照](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-enterprisecloudprint#enterprisecloudprint-cloudprintoauthauthority)してください。
+> クラウド印刷ポリシーグループが使用できないが、MDM プロバイダーが OMA-URI 設定をサポートしている場合は、同じポリシーを設定できます。  詳細については、[こちらを参照](/windows/client-management/mdm/policy-csp-enterprisecloudprint#enterprisecloudprint-cloudprintoauthauthority)してください。
 
 - OMA-URI の値
   - CloudPrintOAuthAuthority =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrintOAuthAuthority
@@ -446,9 +446,9 @@ HCP の展開時に発生する一般的な問題を以下に示します。
 
 |エラー |推奨される手順 |
 |------|------|
-|CloudPrintDeploy PowerShell スクリプトが失敗しました | <ul><li>Windows Server に最新の更新プログラムがあることを確認します。</li><li>Windows Server Update Services (WSUS) を使用する場合は、 [wsus/SCCM を使用しているときに、オンデマンド機能と言語パックを使用できるようにする方法に関する説明](https://docs.microsoft.com/windows/deployment/update/fod-and-lang-packs)を参照してください。</li></ul> |
+|CloudPrintDeploy PowerShell スクリプトが失敗しました | <ul><li>Windows Server に最新の更新プログラムがあることを確認します。</li><li>Windows Server Update Services (WSUS) を使用する場合は、 [wsus/SCCM を使用しているときに、オンデマンド機能と言語パックを使用できるようにする方法に関する説明](/windows/deployment/update/fod-and-lang-packs)を参照してください。</li></ul> |
 |SQLite のインストールが失敗しました。メッセージ: パッケージ ' system.string ' の依存関係ループが検出されました | Install-Package system.string-providername-providername の依存関係<br>EF6-providername の依存関係をインストールします。<br>パッケージのインストール-providername-providername nuget-SkipDependencies<br><br>パッケージが正常にダウンロードされたら、すべてのバージョンが同じであることを確認します。 指定されていない場合は、上記のコマンドに-requiredversion パラメーターを追加し、それらを同じバージョンに設定します。 |
-|プリンタの発行に失敗しました | <ul><li>パススルー事前認証の場合、プリンターを公開するユーザーに、パブリッシングデータベースに対する適切なアクセス許可が付与されていることを確認します。</li><li>事前認証を Azure AD には、IIS で Windows 認証が有効になっていることを確認します。 手順5.3 を参照してください。 また、まずパススルー認証を試してください。 パススルー事前認証が機能する場合、問題はアプリケーションプロキシに関連している可能性があります。 「[アプリケーションプロキシの問題とエラーメッセージのトラブルシューティング」を](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-troubleshoot)参照してください。 パススルーに切り替えると、シングルサインオンの設定がリセットされることに注意してください。手順5を再実行して、事前認証 Azure AD をセットアップします。</li></ul> |
+|プリンタの発行に失敗しました | <ul><li>パススルー事前認証の場合、プリンターを公開するユーザーに、パブリッシングデータベースに対する適切なアクセス許可が付与されていることを確認します。</li><li>事前認証を Azure AD には、IIS で Windows 認証が有効になっていることを確認します。 手順5.3 を参照してください。 また、まずパススルー認証を試してください。 パススルー事前認証が機能する場合、問題はアプリケーションプロキシに関連している可能性があります。 「[アプリケーションプロキシの問題とエラーメッセージのトラブルシューティング」を](/azure/active-directory/manage-apps/application-proxy-troubleshoot)参照してください。 パススルーに切り替えると、シングルサインオンの設定がリセットされることに注意してください。手順5を再実行して、事前認証 Azure AD をセットアップします。</li></ul> |
 |印刷ジョブは、プリンターの状態に送信されたままになります。 | <ul><li>コネクタサーバーで TLS 1.2 が有効になっていることを確認します。 手順2.1 のリンク先の記事を参照してください。</li><li>コネクタサーバーで HTTP2 が無効になっていることを確認します。 手順2.1 のリンク先の記事を参照してください。</li></ul> |
 
 トラブルシューティングに役立つログの場所を以下に示します。

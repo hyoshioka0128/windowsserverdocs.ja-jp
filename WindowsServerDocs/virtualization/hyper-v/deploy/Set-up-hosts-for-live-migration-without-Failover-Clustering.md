@@ -7,12 +7,12 @@ ms.assetid: b5e3c405-cb76-4ff2-8042-c2284448c435
 author: kbdazure
 ms.author: kathydav
 ms.date: 9/30/2016
-ms.openlocfilehash: 7bcd4e625f340ba7358a8ce9bdd860581c390e96
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: e07910b6f822ca29769fb398434f83272867dbe7
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87948021"
+ms.locfileid: "87992710"
 ---
 # <a name="set-up-hosts-for-live-migration-without-failover-clustering"></a>フェールオーバー クラスタ リングのないライブ マイグレーションのためのホストの設定します。
 
@@ -112,7 +112,7 @@ ms.locfileid: "87948021"
 
 ### <a name="use-windows-powershell-to-set-up-the-source-and-destination-computers-for-live-migration"></a>Windows PowerShell を使用して、ライブ マイグレーションのため元とコピー先のコンピューターを設定するには
 
-3 つのコマンドレットを非クラスター化ホスト上のライブ マイグレーションを構成するには: [Enable-vmmigration](https://technet.microsoft.com/library/hh848544.aspx), 、[Set-vmmigrationnetwork](https://technet.microsoft.com/library/hh848467.aspx), 、および [Set-vmhost](https://technet.microsoft.com/library/hh848524.aspx)します。 この例では、3 つすべてを使用しは、次の処理します。
+3 つのコマンドレットを非クラスター化ホスト上のライブ マイグレーションを構成するには: [Enable-vmmigration](/powershell/module/hyper-v/enable-vmmigration?view=win10-ps), 、[Set-vmmigrationnetwork](/powershell/module/hyper-v/set-vmmigrationnetwork?view=win10-ps), 、および [Set-vmhost](/powershell/module/hyper-v/set-vmhost?view=win10-ps)します。 この例では、3 つすべてを使用しは、次の処理します。
   - ローカル ホストでのライブ マイグレーションを構成します。
   - により、特定のネットワークでのみマイグレーション トラフィックを受信
   - 認証プロトコルとして Kerberos を選択します。
@@ -139,7 +139,7 @@ PS C:\> Set-VMHost -VirtualMachineMigrationPerformanceOption SMB
 |----------|---------------|
     |TCP/IP|TCP/IP 接続経由で仮想マシンのメモリを移行先サーバーにコピーします。|
     |圧縮|TCP/IP 接続を介して移行先サーバーにコピーする前に、仮想マシンのメモリの内容を圧縮します。 **注:** これは、 **既定** 設定します。|
-    |SMB|SMB 3.0 接続を介して移行先サーバーに仮想マシンのメモリをコピーします。<p>SMB ダイレクトが使用元と移行先サーバー上のネットワーク アダプターがあるリモート ダイレクト メモリ アクセス (RDMA) 機能が有効な場合にします。<br />SMB マルチ チャネルは自動的に検出し、適切な SMB マルチ チャネル構成が識別されると、複数の接続を使用します。<p>詳細については、「[SMB ダイレクトを使用してファイル サーバーのパフォーマンスを向上させる](https://technet.microsoft.com/library/jj134210(WS.11).aspx)」を参照してください。|
+    |SMB|SMB 3.0 接続を介して移行先サーバーに仮想マシンのメモリをコピーします。<p>SMB ダイレクトが使用元と移行先サーバー上のネットワーク アダプターがあるリモート ダイレクト メモリ アクセス (RDMA) 機能が有効な場合にします。<br />SMB マルチ チャネルは自動的に検出し、適切な SMB マルチ チャネル構成が識別されると、複数の接続を使用します。<p>詳細については、「[SMB ダイレクトを使用してファイル サーバーのパフォーマンスを向上させる](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj134210(v=ws.11))」を参照してください。|
 
  ## <a name="next-steps"></a>次のステップ
 

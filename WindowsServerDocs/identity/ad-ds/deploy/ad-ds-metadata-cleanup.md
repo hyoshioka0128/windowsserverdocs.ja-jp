@@ -6,14 +6,12 @@ ms.author: joflore
 manager: mtillman
 ms.date: 11/14/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: a8061aa6488c97211506d321d0b38b1360be97eb
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 9601ead1621aef187aaf6dfed83e31184e61e0d4
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86960584"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953287"
 ---
 # <a name="clean-up-active-directory-domain-controller-server-metadata"></a>Active Directory ドメイン Controller サーバーメタデータのクリーンアップ
 

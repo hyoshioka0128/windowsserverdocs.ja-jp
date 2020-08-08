@@ -1,20 +1,18 @@
 ---
 title: ソフトウェアの制限のポリシーの技術概要
 description: Windows Server のセキュリティ
-ms.prod: windows-server
-ms.technology: security-software-restriction-policies
 ms.topic: article
 ms.assetid: dc7013b0-0efd-40fd-bd6d-75128adbd0b8
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 9a9a44cd4ab1f4c8ee1c4dadf5cc09de2208b46a
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: f98075cd8e662b3344f426bd8d69181994096a5f
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966164"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953051"
 ---
 # <a name="software-restriction-policies-technical-overview"></a>ソフトウェアの制限のポリシーの技術概要
 

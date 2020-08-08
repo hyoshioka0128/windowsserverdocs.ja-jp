@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 12e1d7f0ec5e9d67853f4fb77c12dcf837348b28
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 30ef29b0a8bbfed550cfa8c09a94c7b64c09b699
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895516"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87993033"
 ---
 # <a name="attach-vdisk"></a>vdisk のアタッチ
 
@@ -62,4 +62,4 @@ attach vdisk readonly
 
 - [merge vdisk](merge-vdisk.md)
 
-- [list](list_1.md)
+- [list](./list.md)

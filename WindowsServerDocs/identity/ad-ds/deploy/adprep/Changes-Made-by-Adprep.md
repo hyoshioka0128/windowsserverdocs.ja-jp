@@ -7,14 +7,12 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: e8a9af717dcf941dbae18f13f903b9b54f17311e
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: cd5f2c76c02c4f5fb51ea65679d1851df51bf42b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519370"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953256"
 ---
 # <a name="changes-made-by-adprepexe"></a>Changes Made by Adprep.exe
 

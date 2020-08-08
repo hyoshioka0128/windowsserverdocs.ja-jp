@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4dd10e984096390278c6bd14ae6b61d431dd7c2a
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: b66a02633cac60faf85824acb9191be61b551ee3
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87882823"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992903"
 ---
 # <a name="select-vdisk"></a>select vdisk
 
@@ -61,6 +61,4 @@ select vdisk file=c:\test\test.vhd
 
 -   [マージ vdisk](merge-vdisk.md)
 
--   [list_1](list_1.md)
-
-
+-   [list_1](./list.md)

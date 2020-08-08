@@ -7,18 +7,16 @@ ms.author: joflore
 manager: daveba
 ms.date: 12/02/2019
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: e2b2983d6de2c9d4274131354ed916f3216229f9
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0347dd6d3abb25d666914546331968db02574125
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80824995"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953351"
 ---
 # <a name="windows-server-active-directory-schema-updates"></a>Windows Server Active Directory スキーマの更新
 
->適用対象: Windows Server
+>適用先:Windows Server
 
 このトピックでは、Adprep.exe によって行われる変更を含む LDF ファイルの一覧を示します。
 
@@ -3524,7 +3522,7 @@ changetype: ntdsSchemaAdd
 objectClass: classSchema
 ldapDisplayName: msDS-ResourceProperty
 adminDisplayName: ms-DS-Resource-Property
-adminDescription: An instance of this class holds the definition of a property on resources. 
+adminDescription: An instance of this class holds the definition of a property on resources.
 governsId: 1.2.840.113556.1.5.273
 objectClassCategory: 1
 rdnAttId: 2.5.4.3
@@ -9728,12 +9726,12 @@ lDAPAdminLimits: MaxDatagramRecv=4096
 hideFromAB: TRUE
 
 # Used to decide if earlier changes are present,
-# so delete this last 
+# so delete this last
 
 dn: CN=Master-DSA,CN=schema,CN=configuration,dc=X
 changetype: delete
 
-# Object-Version on schema container 
+# Object-Version on schema container
 
 dn: CN=schema,CN=configuration,DC=X
 changetype: modify
@@ -13536,7 +13534,7 @@ lDAPAdminLimits: MaxDatagramRecv=4096
 hideFromAB: TRUE
 
 
-# Object-Version on schema container 
+# Object-Version on schema container
 
 dn: CN=schema,CN=configuration,DC=X
 changetype: modify
@@ -26355,7 +26353,7 @@ replace: mAPIID
 mAPIID: 35950
 -
 
-# Delete Owner's and owner-BL's mapiid before adding the same 
+# Delete Owner's and owner-BL's mapiid before adding the same
 # to Managed-By and Managed-Objects.
 
 dn: CN=Owner,CN=Schema,CN=Configuration,DC=X
@@ -28849,7 +28847,7 @@ dn: CN=Change-Infrastructure-Master,CN=Extended-Rights,CN=Configuration,DC=X
 changetype: ntdsSchemaAdd
 objectClass: controlAccessRight
 appliesTo: 2df90d89-009f-11d2-aa4c-00c04fd7d83a
-displayName: Change Infrastructure Master 
+displayName: Change Infrastructure Master
 rightsGUID: cc17b1fb-33d9-11d2-97d4-00c04fd8d5cd
 showInAdvancedViewOnly: TRUE
 
@@ -36479,7 +36477,7 @@ systemMayContain: 1.2.840.113556.1.4.1787
 dn: CN=User,CN=Schema,CN=Configuration,DC=X
 changetype: ntdsSchemaModify
 add: systemMayContain
-systemMayContain: 1.2.840.113556.1.4.1785 
+systemMayContain: 1.2.840.113556.1.4.1785
 -
 add: systemMayContain
 systemMayContain: 1.2.840.113556.1.4.1786
@@ -37026,7 +37024,7 @@ changetype: ntdsSchemaAdd
 objectClass: controlAccessRight
 ShowInAdvancedViewOnly: TRUE
 appliesTo: 19195a5b-6da0-11d0-afd3-00c04fd930c9
-displayName:Migrate SID History 
+displayName:Migrate SID History
 localizationDisplayId: 63
 rightsGUID: BA33815A-4F93-4c76-87F3-57574BFF8109
 validAccesses: 256
@@ -37865,7 +37863,7 @@ ShowInAdvancedViewOnly: TRUE
 appliesTo: 19195a5b-6da0-11d0-afd3-00c04fd930c9
 appliesTo: bf967a87-0de6-11d0-a285-00aa003049e2
 appliesTo: bf967a8f-0de6-11d0-a285-00aa003049e2
-displayName:Reanimate Tombstones 
+displayName:Reanimate Tombstones
 localizationDisplayId: 64
 rightsGUID: 45EC5156-DB7E-47bb-B53F-DBEB2D03C40F
 validAccesses: 256
@@ -47554,7 +47552,7 @@ changetype: ntdsSchemaAdd
 objectClass: attributeSchema
 ldapDisplayName: globalAddressList2
 adminDisplayName: Global-Address-List2
-adminDescription: This attribute is used on a Microsoft Exchange container to store the distinguished name of a newly created global address list (GAL). This attribute must have an entry before you can enable Messaging Application Programming Interface (MAPI) clients to use a GAL. 
+adminDescription: This attribute is used on a Microsoft Exchange container to store the distinguished name of a newly created global address list (GAL). This attribute must have an entry before you can enable Messaging Application Programming Interface (MAPI) clients to use a GAL.
 attributeId: 1.2.840.113556.1.4.2047
 attributeSyntax: 2.5.5.1
 omSyntax: 127
@@ -48029,14 +48027,14 @@ objectClass: attributeSchema
 ldapDisplayName: msDS-OptionalFeatureFlags
 adminDisplayName: ms-DS-Optional-Feature-Flags
 adminDescription: An integer value that contains flags that define behavior of an optional feature in Active Directory.
-attributeId: 1.2.840.113556.1.4.2063 
+attributeId: 1.2.840.113556.1.4.2063
 attributeSyntax: 2.5.5.9
 omSyntax: 2
 isSingleValued: TRUE
 schemaFlagsEx: 1
 systemOnly: TRUE
 searchFlags: 0
-schemaIdGuid:: wWAFirmXEUidt9wGFZiWWw== 
+schemaIdGuid:: wWAFirmXEUidt9wGFZiWWw==
 showInAdvancedViewOnly: TRUE
 systemFlags: 16
 
@@ -48574,7 +48572,7 @@ objectVersion: 47
 
 ```
 
-## <a name="next-steps"></a>次のステップ:
+## <a name="next-steps"></a>次のステップ
 
 [ドメイン全体のスキーマ更新操作](Domain-Wide-Updates.md)
 

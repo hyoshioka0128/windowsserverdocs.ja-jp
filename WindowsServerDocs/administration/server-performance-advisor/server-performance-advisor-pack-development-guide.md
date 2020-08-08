@@ -5,12 +5,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cdf812f862534ba8cd07d4558e424faf3c56c699
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 46daa58e6a13f0cf0f71131b05def481f42a594c
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947144"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87993099"
 ---
 # <a name="server-performance-advisor-pack-development-guide"></a>サーバー パフォーマンス アドバイザー パック開発ガイド
 
@@ -41,7 +41,7 @@ Advisor パックには、次の要素が含まれています。
 
 * **XML メタデータ** (ProvisionMetadata.xml)
 
-    * [パフォーマンス ログと警告 (PLA)](https://msdn.microsoft.com/library/windows/desktop/aa372635.aspx) データ コレクター セット
+    * [パフォーマンス ログと警告 (PLA)](/previous-versions/windows/desktop/pla/pla-portal) データ コレクター セット
 
     * レポートのレイアウト
 
@@ -59,13 +59,13 @@ Advisor パックには、次の要素が含まれています。
 
 このフローチャートでは、緑色の円は、advisor パックを表します。 その他のすべてのマークは、SPA フレームワーク プロセスで実行している段階を表します。 SPA では、advisor パックを使用して、データを収集、データベースにデータをインポート、実行環境の初期化、および SQL スクリプトを実行します。
 
-### <a name="collect-data"></a>データを収集します。
+### <a name="collect-data"></a>データを収集する
 
 Advisor パックは、SPA を使用して、特定のサーバーのキューに置かれた、データ収集モジュールは Advisor パックからのデータ コレクター セット XML クエリを実行し、ターゲット サーバーからデータを収集します。 生データは、ユーザー指定のファイル共有に保管されます。 SPA の実行ユーザーが指定されている時間が経過するまで、データの収集は停止されません。
 
 ### <a name="import-data-into-the-database"></a>データをデータベースにインポートする
 
-データの収集が完了した後、各種類のデータは、SQL Server データベースに対応するテーブルにインポートされます。 たとえば、レジストリ設定は \#registryKeys という名前のテーブルにインポートされます。
+データの収集が完了した後、各種類のデータは、SQL Server データベースに対応するテーブルにインポートされます。 たとえば、レジストリ設定は、registrykeys という名前のテーブルにインポートされ \# ます。
 
 ETW ファイルをインポートするには、.etl ファイルをデコードするための ETW スキーマファイルが必要です。 ETW のスキーマ ファイルは、XML ファイルです。 それは、Windows に含まれている、tracerpt.exe を使用して生成できます。 ETW のスキーマ ファイルはのみ advisor パックは、ETW データをインポートする必要がある場合は必須です。
 
@@ -85,7 +85,7 @@ Advisor パックの開発者によって命名される主なストアド プ�
 
 レポートを生成するには、管理者権限が必要です。 レポートの生成は、SPA によって完全に制御されます。 改ざんしにくくなります。
 
-### <a name="generate-a-report"></a>レポートを生成します
+### <a name="generate-a-report"></a>レポートの生成
 
 主なストアド プロシージャは、advisor パックを完了すると、前にすべての計算結果、通知などの統計は保持されません。 このフェーズでは、SPA フレームワークは、一時テーブルから、最終的な結果を特定の形式でテーブルに転送します。 このフェーズが完了した後は、SPA コンソールを使用してレポートを表示することができます。
 
@@ -163,7 +163,7 @@ Advisor パックを識別するために使用できるその他のいくつか
 
 * 表示名: **displayName**
 
-* 説明: **の説明**
+* 説明:**説明**
 
 * 執筆者: **作成者**
 
@@ -173,7 +173,7 @@ Advisor パックを識別するために使用できるその他のいくつか
 
 * イベント通知を紛失: **showEventLostWarning**
 
-### <a href="" id="bkmk-definedatacollector"></a>データコレクターセットの定義
+### <a name="defining-the-data-collector-set"></a><a href="" id="bkmk-definedatacollector"></a>データ コレクター セットを定義します。
 
 データ コレクター セットでは、SPA フレームワークがターゲット サーバーから収集するパフォーマンス データを定義します。 レジストリ設定、WMI、パフォーマンス カウンターをサポートしている、ETW、ターゲット サーバーからファイルをします。
 
@@ -209,9 +209,9 @@ Advisor パックを識別するために使用できるその他のいくつか
 
 * HKEY\_クラス\_ルート
 
-* HKEY\_現在の\_構成
+* HKEY \_ 現在の \_ 構成
 
-* HKEY\_現在の\_ユーザー
+* HKEY \_ 現在の \_ ユーザー
 
 * HKEY\_ローカル\_マシン
 
@@ -219,9 +219,9 @@ Advisor パックを識別するために使用できるその他のいくつか
 
 レジストリ設定を収集するには、値の名前を完全なパスを指定します HKEY\_ローカル\_マシン\\MyKey\\プロパティ。
 
-レジストリキーの下にあるすべての設定を収集するには、レジストリキーの完全なパスを指定します。 HKEY\_LOCAL\_MACHINE\\MyKey\\
+レジストリキーの下にあるすべての設定を収集するには、レジストリキーの完全なパスを指定します。 HKEY \_ LOCAL \_ MACHINE \\ MyKey\\
 
-レジストリキーとそのサブキーの下にあるすべての値 (PLA によってレジストリデータを収集する) を収集するには、最後のパス区切り記号として2つの円記号を使用します。 HKEY\_LOCAL\_MACHINE\\MyKey\\\\
+レジストリキーとそのサブキーの下にあるすべての値 (PLA 再帰的にレジストリデータを収集) を収集するには、最後のパス区切り記号に2つの円記号 (HKEY \_ LOCAL \_ MACHINE \\ MyKey) を使用します。\\\\
 
 をリモート コンピューターからのレジストリ情報を収集するには、レジストリ パスの先頭にあるコンピューター名を含める: HKEY\_ローカル\_マシン\\MyKey\\プロパティ
 
@@ -257,15 +257,15 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\User\PowerSchemes\db31
 <registryKey>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\User\PowerSchemes\\</registryKey>
 ```
 
-収集したすべてのデータは、SQL レポートスクリプトを実行する前に、 **\#registryKeys**という一時テーブルにインポートされます。 次の表は、たとえば 2 の結果を示しています。
+収集したすべてのデータは、SQL レポートスクリプトを実行する前に、 ** \# registrykeys**という一時テーブルにインポートされます。 次の表は、たとえば 2 の結果を示しています。
 
-キー名 | KeytypeId | Value
+キー名 | KeytypeId | 値
 ------ | ----- | -------
-HKEY_LOCAL_MACHINE。 ..\PowerSchemes | 1 で保護されたプロセスとして起動されました | db310065-829b-4671-9647-2261c00e86ef
-\db310065-829b-4671-9647-2261c00e86ef\Description | 2 で保護されたプロセスとして起動されました | |
-\db310065-829b-4671-9647-2261c00e86ef\FriendlyName | 2 で保護されたプロセスとして起動されました | 最適化の電源
-...\6738e2c4-e8a5-4a42-b16a-e040e769756e\ACSettingIndex | ホーム フォルダーが置かれているコンピューターにアクセスできない | 180
-...\6738e2c4-e8a5-4a42-b16a-e040e769756e\DCSettingIndex | ホーム フォルダーが置かれているコンピューターにアクセスできない | 30
+HKEY_LOCAL_MACHINE。 ..\PowerSchemes | 1 | db310065-829b-4671-9647-2261c00e86ef
+\db310065-829b-4671-9647-2261c00e86ef\Description | 2 | |
+\db310065-829b-4671-9647-2261c00e86ef\FriendlyName | 2 | 最適化の電源
+...\6738e2c4-e8a5-4a42-b16a-e040e769756e\ACSettingIndex | 4 | 180
+...\6738e2c4-e8a5-4a42-b16a-e040e769756e\DCSettingIndex | 4 | 30
 
 **#RegistryKeys**テーブルのスキーマは、次のようになります。
 
@@ -273,18 +273,18 @@ HKEY_LOCAL_MACHINE。 ..\PowerSchemes | 1 で保護されたプロセスとし�
 -------- | -------- | --------
 キー名 | NULL でない Nvarchar(300) | レジストリ キーの完全なパス名
 KeytypeId | NULL でない Smallint | 内部型 Id
-Value | Nvarchar (4000) NULL でないです。 | すべての値
+値 | Nvarchar (4000) NULL でないです。 | すべての値
 
 **Keytypeid**列には、次のいずれかの型を使用できます。
 
-ID | タスクバーの検索ボックスに
+id | 種類
 --- | ---
-1 で保護されたプロセスとして起動されました | String
-2 で保護されたプロセスとして起動されました | expandString
-3 で保護されたプロセスとして起動されました | バイナリ
-ホーム フォルダーが置かれているコンピューターにアクセスできない | DWord
+1 | String
+2 | expandString
+3 | Binary
+4 | DWord
 5 | DWordBigEndian
-6 | [リンク]
+6 | Link
 7 | MultipleString
 8 | Resourcelist
 9 | FullResourceDescriptor
@@ -293,7 +293,7 @@ ID | タスクバーの検索ボックスに
 
 ### <a name="collect-wmi"></a>WMI を収集します。
 
-任意の WMI クエリを追加することができます。 WMI クエリの作成方法の詳細については、次を参照してください。 [WQL (WMI 用の SQL)](https://msdn.microsoft.com/library/windows/desktop/aa394606.aspx)します。次の例では、ページのファイルの場所を照会します。
+任意の WMI クエリを追加することができます。 WMI クエリの作成方法の詳細については、次を参照してください。 [WQL (WMI 用の SQL)](/windows/win32/wmisdk/wql-sql-for-wmi)します。次の例では、ページのファイルの場所を照会します。
 
 ``` syntax
 <path>Root\Cimv2:select * FROM Win32_PageFileUsage</path>
@@ -301,54 +301,54 @@ ID | タスクバーの検索ボックスに
 
 上記の例では、クエリには、1 つのレコードが返されます。
 
-キャプション | 名前 | PeakUsage
+Caption | 名前 | PeakUsage
 ----- | ----- | -----
 C:\pagefile.sys | C:\pagefile.sys | 215
 
 WMI で収集したデータがデータベースにインポートすると、別の列を持つテーブルを返すため、SPA はデータの正規化を実行し、次の表を追加します。
 
-**\#の Wmi オブジェクトテーブル**
+**\#WMIObjects テーブル**
 
-SequenceID | 名前空間 | クラス名 | Relativepath | WmiqueryID
+SequenceID | 名前空間 | ClassName | Relativepath | WmiqueryID
 ----- | ----- | ----- | ----- | -----
-10 | Root \cimv2 | Win32_PageFileUsage | Win32_PageFileUsage.Name=<br>C:\\pagefile.sys | 1 で保護されたプロセスとして起動されました
+10 | Root \cimv2 | Win32_PageFileUsage | Win32_PageFileUsage.Name=<br>C:\\pagefile.sys | 1
 
-**\#の Wmi プロパティの一覧表**
+**\#WmiObjectsProperties テーブル**
 
-ID | クエリ
+id | query
 --- | ---
-1 で保護されたプロセスとして起動されました | Root\Cimv2: select * FROM Win32_PageFileUsage
+1 | Root\Cimv2: select * FROM Win32_PageFileUsage
 
-**\#の Wmi クエリテーブル**
+**\#WmiQueries テーブル**
 
-ID | クエリ
+id | query
 --- | ---
-1 で保護されたプロセスとして起動されました | Root\Cimv2: select * FROM Win32_PageFileUsage
+1 | Root\Cimv2: select * FROM Win32_PageFileUsage
 
-**\#の Wmi オブジェクトテーブルスキーマ**
+**\#WmiObjects テーブル スキーマ**
 
 列名 | SQL データ型 | 説明
 --- | --- | ---
 SequenceId | Int 型の NULL でないです。 | 行とそのプロパティを関連付ける
 名前空間 | NULL でない nvarchar (200) | WMI 名前空間
-クラス名 | NULL でない nvarchar (200) | WMI クラスの名前
+ClassName | NULL でない nvarchar (200) | WMI クラスの名前
 Relativepath | NULL でない nvarchar (500) | WMI の相対パス
 WmiqueryId | Int 型の NULL でないです。 | #WmiQueries のキーを関連付ける
 
-**\#の Wmi Objectproperties テーブルスキーマ**
+**\#WmiObjectProperties テーブル スキーマ**
 
 列名 | SQL データ型 | 説明
 --- | --- | ---
 SequenceId | Int 型の NULL でないです。 | 行とそのプロパティを関連付ける
 名前 | NULL でない nvarchar (1000) | プロパティ名
-Value | Nvarchar (4000) NULL | 現在のプロパティの値
+値 | Nvarchar (4000) NULL | 現在のプロパティの値
 
-**\#の Wmi クエリテーブルスキーマ**
+**\#WmiQueries テーブル スキーマ**
 
 列名 | SQL データ型 | 説明
 --- | --- | ---
-ID | Int 型の NULL でないです。 | > 一意のクエリ ID
-クエリ | Nvarchar (4000) NULL でないです。 | プロビジョニングのメタデータ内の元のクエリ文字列
+Id | Int 型の NULL でないです。 | >一意のクエリ ID
+query | Nvarchar (4000) NULL でないです。 | プロビジョニングのメタデータ内の元のクエリ文字列
 
 ### <a name="collect-performance-counters"></a>パフォーマンス カウンターを収集します。
 
@@ -362,70 +362,70 @@ ID | Int 型の NULL でないです。 | > 一意のクエリ ID
 
 **間隔** 属性は、すべてのパフォーマンス カウンターの場合は、必要なグローバル設定です。 パフォーマンス データを収集間隔 (時間の単位は秒) を定義します。
 
-前の例では、counter \\PhysicalDisk (\*)\\Avg. Disk sec/Transfer に対して1秒ごとにクエリが実行されます。
+前の例では、counter \\ PhysicalDisk ( \* ) \\ Avg. Disk sec/Transfer は1秒ごとにクエリが実行されます。
 
-2 つのインスタンスが存在する可能性があります: **\_合計** と **0 の c: d:** , 、出力は次のようとします。
+2つのインスタンス ( ** \_ 合計**と**0 C: D:**) を使用できます。出力は次のようになります。
 
-timestamp | [区分名] | CounterName | _Total のインスタンスの値 | インスタンスの値の 0 の c: d:
+timestamp | CategoryName | CounterName | _Total のインスタンスの値 | インスタンスの値の 0 の c: d:
 ---- | ---- | ---- | ---- | ----
-13:45: 52.630 | PhysicalDisk | 1 秒間のディスク転送の平均 | 0.00100008362473995 |0.00100008362473995
-13:45: 53.629 | PhysicalDisk | 1 秒間のディスク転送の平均 | 0.00280023414927187 | 0.00280023414927187
-13:45: 54.627 | PhysicalDisk | 1 秒間のディスク転送の平均 | 0.00385999853230048 | 0.00385999853230048
-13:45: 55.626 | PhysicalDisk | 1 秒間のディスク転送の平均 | 0.000933297607934224 | 0.000933297607934224
+13:45: 52.630 | 物理ディスク | Avg.Disk sec/Transfer | 0.00100008362473995 |0.00100008362473995
+13:45: 53.629 | 物理ディスク | Avg.Disk sec/Transfer | 0.00280023414927187 | 0.00280023414927187
+13:45: 54.627 | 物理ディスク | Avg.Disk sec/Transfer | 0.00385999853230048 | 0.00385999853230048
+13:45: 55.626 | 物理ディスク | Avg.Disk sec/Transfer | 0.000933297607934224 | 0.000933297607934224
 
-という名前のテーブルにデータをデータベースにインポートするデータを正規化する **\#PerformanceCounters**します。
+データをデータベースにインポートするために、データは** \# PerformanceCounters**という名前のテーブルに正規化されます。
 
-CategoryDisplayName | インスタンス名 | CounterdisplayName | Value
+CategoryDisplayName | InstanceName | CounterdisplayName | 値
 ---- | ---- | ---- | ----
-PhysicalDisk | _Total | 1 秒間のディスク転送の平均 | 0.00100008362473995
-PhysicalDisk | 0 の C: D: | 1 秒間のディスク転送の平均 | 0.00100008362473995
-PhysicalDisk | _Total | 1 秒間のディスク転送の平均 | 0.00280023414927187
-PhysicalDisk | 0 の C: D: | 1 秒間のディスク転送の平均 | 0.00280023414927187
-PhysicalDisk | _Total | 1 秒間のディスク転送の平均 | 0.00385999853230048
-PhysicalDisk | 0 の C: D: | 1 秒間のディスク転送の平均 | 0.00385999853230048
-PhysicalDisk | _Total | 1 秒間のディスク転送の平均 | 0.000933297607934224
-PhysicalDisk | 0 の C: D: | 1 秒間のディスク転送の平均 | 0.000933297607934224
+物理ディスク | _Total | Avg.Disk sec/Transfer | 0.00100008362473995
+物理ディスク | 0 の C: D: | Avg.Disk sec/Transfer | 0.00100008362473995
+物理ディスク | _Total | Avg.Disk sec/Transfer | 0.00280023414927187
+物理ディスク | 0 の C: D: | Avg.Disk sec/Transfer | 0.00280023414927187
+物理ディスク | _Total | Avg.Disk sec/Transfer | 0.00385999853230048
+物理ディスク | 0 の C: D: | Avg.Disk sec/Transfer | 0.00385999853230048
+物理ディスク | _Total | Avg.Disk sec/Transfer | 0.000933297607934224
+物理ディスク | 0 の C: D: | Avg.Disk sec/Transfer | 0.000933297607934224
 
-**メモ** **カテゴリ displayname**や**counterdisplayname**などのローカライズされた名前は、対象サーバーで使用されている表示言語によって異なります。 言語に依存しない advisor パックを作成する場合は、これらのフィールドを使用しないでください。
+**メモ****カテゴリ displayname**や**counterdisplayname**などのローカライズされた名前は、対象サーバーで使用されている表示言語によって異なります。 言語に依存しない advisor パックを作成する場合は、これらのフィールドを使用しないでください。
 
-**\#PerformanceCounters** テーブル スキーマ
+** \# PerformanceCounters**テーブルスキーマ
 
 列名 | SQL データ型 | 説明
 ---- | ---- | ---- | ----
 timestamp | datetime2 (3) NOT NULL | UNC で収集された日付時刻
-[区分名] | NULL でない nvarchar (200) | ［カテゴリ名］
+CategoryName | NULL でない nvarchar (200) | カテゴリ名
 CategoryDisplayName | NULL でない nvarchar (200) | ローカライズされたカテゴリ名
-インスタンス名 | NULL nvarchar (200) | ［インスタンス名］
+InstanceName | NULL nvarchar (200) | インスタンス名
 CounterName | NULL でない nvarchar (200) | カウンター名
 CounterdisplayName | NULL でない nvarchar (200) | ローカライズされたカウンター名
-Value | NULL でない浮動小数点数 | 収集された値
+値 | NULL でない浮動小数点数 | 収集された値
 
 ### <a name="collect-files"></a>[ファイルの収集]
 
-パスには、絶対または相対パスを指定できます。 ファイル名がワイルドカード文字を含めることができます (\*)、疑問符 (?)。 たとえば、一時フォルダー内のすべてのファイルを収集するには、c:\\temp\\\*を指定します。 ワイルドカード文字は、指定したフォルダー内のファイルに適用されます。
+パスには、絶対または相対パスを指定できます。 ファイル名がワイルドカード文字を含めることができます (\*)、疑問符 (?)。 たとえば、一時フォルダー内のすべてのファイルを収集するには、c: temp を指定し \\ \\ \* ます。 ワイルドカード文字は、指定したフォルダー内のファイルに適用されます。
 
-指定したフォルダーのサブフォルダーからもファイルを収集する場合は、最後のフォルダーの区切り記号に2つの円記号を使用します。たとえば、「c:\\temp\\\\\*」と入力します。
+指定したフォルダーのサブフォルダーからもファイルを収集する場合は、最後のフォルダーの区切り記号に2つの円記号 (c: temp など) を使用し \\ \\ \\ \* ます。
 
-**Applicationhost.config**ファイルに対してクエリを実行する例を次に示します。
+**applicationHost.config**ファイルにクエリを実行する例を次に示します。
 
 ``` syntax
 <path>%windir%\System32\inetsrv\config\applicationHost.config</path>
 ```
 
-という名前のテーブルに結果が見つかりません **\#ファイル**, など。
+結果は、 ** \# ファイル**という名前のテーブルにあります。たとえば、次のようになります。
 
 querypath | Fullpath | Parentpath | FileName | コンテンツ
 ----- | ----- | ----- | ----- | -----
 %windir%\..\applicationHost.config |C:\Windows<br>\...\applicationHost.config | C:\Windows<br>\...\config | 構成する | 0x3C3F78
 
-**\#Files テーブルスキーマ**
+**\#ファイル テーブルのスキーマ**
 
 列名 | SQL データ型 | 説明
 ---- | ---- | ----
 querypath | NULL でない Nvarchar(300) | 元のクエリ ステートメント
 Fullpath | NULL でない Nvarchar(300) | 絶対ファイル パスとファイル名
-Parentpath | NULL でない Nvarchar(300) | ファイルのパス
-FileName | NULL でない Nvarchar(300) | ［ファイル名］
+Parentpath | NULL でない Nvarchar(300) | [ファイル パス]
+FileName | NULL でない Nvarchar(300) | ファイル名
 コンテンツ | Varbinary (max) NULL | バイナリ ファイルの内容
 
 ### <a name="defining-rules"></a>ルールを定義します。
@@ -463,7 +463,7 @@ FileName | NULL でない Nvarchar(300) | ［ファイル名］
 </advisorPack>
 ```
 
-### <a name="threshold"></a>しきい値
+### <a name="threshold"></a>Threshold
 
 しきい値は、システム管理者が適切では、または状態が無効で、ルールを表示すると判断できるようにする構成可能な要素です。 次の例は、空き領域が 10 GB 未満の場合は、システム ドライブと、警告の空き領域を検出する規則を示しています。
 
@@ -516,25 +516,25 @@ Install OS on larger disk.</advice>
 
 先ほどの前の例と、ユーザーは、システム ドライブに十分な空きディスク領域があるかどうかを認識します。 ユーザーは、空き領域の実際のサイズにも利用可能性があります。 1 つの値グループを使用して、保存してそのような結果を表示します。 複数の単一の値をグループ化され SPA コンソールでの表に示すことができます。 テーブルでは、次のように名前と値を 2 つの列があります。
 
-名前 | Value
+名前 | 値
 ---- | ----
 システム ドライブ (GB) の空きディスク サイズ | 100
 インストールされているディスクの合計サイズ (GB) | 500 
 
 サーバーにインストールされているすべてのハードドライブとそのディスクサイズの一覧を表示するには、次に示すように、3つの列と複数の行を含むリスト値を呼び出すことができます。
 
-Disk | 空きディスク サイズ (GB) | 合計サイズ (GB)
+ディスク | 空きディスク サイズ (GB) | 合計サイズ (GB)
 ---- | ---- | ----
 0 | 100 | 500
-1 で保護されたプロセスとして起動されました | 20 | 320
+1 | 20 | 320
 
 Advisor パックでは、多数のテーブル (単一の値のグループと値のテーブルを一覧表示) が存在することもできます。 整理およびこれらのテーブルを分類するセクションを使用できます。
 
 要約すると、3 種類の UI 要素があります。
 
-* [セクション](#bkmk-ui-section)
+* [各項](#bkmk-ui-section)
 
-* [単一の値のグループ](#bkmk-ui-svg)
+* [1 つの値のグループ](#bkmk-ui-svg)
 
 * [値テーブルの一覧表示](#bkmk-ui-lvt)
 
@@ -562,9 +562,9 @@ UI 要素を示す例を次に示します。
 </advisorPack>
 ```
 
-### <a href="" id="bkmk-ui-section"></a>各項
+### <a name="sections"></a><a href="" id="bkmk-ui-section"></a>各項
 
-セクションでは、UI レイアウトの純粋にします。 論理計算では参加しません。 各 1 つのレポートには、一連親セクションがない最上位レベルのセクションにはが含まれています。 最上位レベルのセクションでは、レポート内のタブとして表示されます。 セクションには、サブセクションでは、最大 10 レベルまでのことができます。 拡張可能な領域では、最上位レベルのセクションでは、すべてのサブセクションが表示されます。 セクションには、複数のサブセクションで、1 つの値のグループ、および値のテーブルの一覧を含めることができます。 テーブルとしては、1 つの値のグループと値のテーブルの一覧が表示されます。
+セクションでは、UI レイアウトの純粋にします。 論理計算では参加しません。 各 1 つのレポートには、一連親セクションがない最上位レベルのセクションにはが含まれています。 最上位レベルのセクションでは、レポート内のタブとして表示されます。 セクションには、サブセクションでは、最大 10 レベルまでのことができます。 拡張可能な領域では、最上位レベルのセクションでは、[すべてのサブセクションが表示されます。 セクションには、複数のサブセクションで、1 つの値のグループ、および値のテーブルの一覧を含めることができます。 テーブルとしては、1 つの値のグループと値のテーブルの一覧が表示されます。
 
 最上位のセクションの例を次に示します。
 
@@ -590,7 +590,7 @@ UI 要素を示す例を次に示します。
 
 1 つの値のグループとリストの値のテーブルは、異なる種類の文字列、int、float などのデータを含めます。 SQL Server データベースには、これらの値が格納されている、ためデータ プロパティごとに SQL データ型を定義できます。 ただし、SQL データ型を定義することはかなり複雑です。 長さまたは有効桁数を変更しやすい可能性のあるを指定する必要があります。
 
-最初の子を使用する論理データの種類を定義する **&lt;reportDefinition/&gt;** , 、これは、SQL データ型と、論理型のマッピングを定義することができます。
+論理データ型を定義するには、 ** &lt; reportdefinition/ &gt; **の最初の子を使用します。この場合、SQL データ型と論理型のマッピングを定義できます。
 
 次の例では、2 つのデータ型を定義します。 1 つは、 **文字列** し、もう一方の **companyCode**します。
 
@@ -601,33 +601,33 @@ UI 要素を示す例を次に示します。
 
 データ型の名前には、任意の有効な文字列を指定できます。 許可される SQL データ型の一覧を次に示します。
 
-* bigint 型
+* bigint
 
-* バイナリ
+* binary
 
-* ビット
+* bit
 
-* char 型
+* char
 
-* 日付
+* date
 
-* datetime
+* DATETIME
 
 * datetime2
 
 * datetimeoffset
 
-* 10 進数
+* decimal
 
-* 浮動小数点数
+* float
 
-* 整数
+* INT
 
-* 収益
+* money
 
 * nchar
 
-* 数値
+* numeric
 
 * nvarchar
 
@@ -639,19 +639,19 @@ UI 要素を示す例を次に示します。
 
 * smallmoney
 
-* 時間
+* time
 
 * tinyint
 
-* 一意識別子
+* UNIQUEIDENTIFIER
 
 * varbinary
 
 * varchar
 
-これらの SQL データ型の詳細については、「[データ型 (transact-sql)](https://msdn.microsoft.com/library/ms187752.aspx)」を参照してください。
+これらの SQL データ型の詳細については、「[データ型 (transact-sql)](/sql/t-sql/data-types/data-types-transact-sql?view=sql-server-ver15)」を参照してください。
 
-### <a href="" id="bkmk-ui-svg"></a>単一の値のグループ
+### <a name="single-value-groups"></a><a href="" id="bkmk-ui-svg"></a>1 つの値のグループ
 
 1 つの値のグループには、次のように、テーブル内に存在する複数の単一の値がグループ化します。
 
@@ -669,19 +669,19 @@ UI 要素を示す例を次に示します。
 
 複数の単一の値のグループを定義できますが、別のグループにある場合でも、しない 2 つの単一の値名前が同じを指定できます。 SQL スクリプトのレポートは、単一の値の名前を使用して、値を適宜設定します。
 
-1 つの各値のデータ型を定義できます。 **型**の許可された入力は **&lt;datatype/&gt;** で定義されています。 最終的なレポートは、次のようになります。
+1 つの各値のデータ型を定義できます。 **型**の許可された入力は** &lt; datatype/ &gt; **で定義されています。 最終的なレポートは、次のようになります。
 
 **ファクト**
 
-名前 | Value
+名前 | 値
 --- | ---
-オペレーティング システム | &lt;_値は、レポートスクリプトによって設定され_&gt;
-OS のバージョン | &lt;_値は、レポートスクリプトによって設定され_&gt;
-OS の場所 | &lt;_値は、レポートスクリプトによって設定され_&gt;
+オペレーティング システム | &lt;_値はレポートスクリプトによって設定されます_&gt;
+OS バージョン | &lt;_値はレポートスクリプトによって設定されます_&gt;
+OS の場所 | &lt;_値はレポートスクリプトによって設定されます_&gt;
 
 **キャプション** の属性 **&lt;値/&gt;** は最初の列に表示されます。 [値] 列の値は将来的にによるスクリプト レポートによって設定 \[dbo\].\[SetSingleValue\]します。 **説明** の属性 **&lt;値/&gt;** ツールヒントに表示されます。 通常、ツールヒントは、データのソースのユーザー表示されます。 ツール ヒントの詳細については、次を参照してください。 [ツールヒント](#bkmk-tooltips)します。
 
-### <a href="" id="bkmk-ui-lvt"></a>値テーブルの一覧表示
+### <a name="list-value-tables"></a><a href="" id="bkmk-ui-lvt"></a>値テーブルの一覧表示
 
 リストの値を定義すると、テーブルを定義すると同じです。
 
@@ -697,13 +697,13 @@ OS の場所 | &lt;_値は、レポートスクリプトによって設定され
 
 一覧の値の名前をグローバル一意識別にする必要があります。 この名前は、一時テーブルの名前になります。 前の例では、という名前のテーブルで \#NetworkAdapterInformation は実行の環境の初期化ステージで説明されているすべての列を含むに作成されます。 1 つの値名と同様に、リスト値の名前としても使用 vwNetworkAdapterInformation など、カスタム ビュー名の一部です。
 
-&lt;列/&gt; の @type は &lt;datatype/&gt; によって定義されます
+@typeof &lt; column/ &gt; は datatype/で定義されます。 &lt;&gt;
 
 最終的なレポートのモックの UI には、次のようになります。
 
-**物理ネットワークアダプターの情報**
+**物理ネットワーク アダプター情報**
 
-ID | 名前 | タスクバーの検索ボックスに | (Mbps) の速度 | MAC アドレス
+id | 名前 | 種類 | (Mbps) の速度 | MAC アドレス
 --- | --- | --- | --- | ---
  | <br> | | |
  | | | |
@@ -750,7 +750,7 @@ SPA は、静的な統計情報と動的な統計情報をサポートするた�
 </listValue>
 ```
 
-もう1つの属性である**columntype**には、**キー**、**値**、または**情報**を指定できます。 データ型、 **キー** 列を二重にする必要がありますまたは double に変換できます。 **キー**  列をテーブルに同じキーを挿入することはできません。 **値** または **情報** 列には、この制限はありません。
+もう1つの属性である**columntype**には、**キー**、**値**、または**情報**を指定できます。 データ型、 **キー** 列を二重にする必要がありますまたは double に変換できます。 **キー** ] 列をテーブルに同じキーを挿入することはできません。 **値** または **情報** 列には、この制限はありません。
 
 統計の値が格納されている **値** 列です。
 
@@ -761,24 +761,24 @@ SPA は、静的な統計情報と動的な統計情報をサポートするた�
 CpuId | AverageCpuUsage
 :---: | :---:
 0 | 10
-1 で保護されたプロセスとして起動されました | 30
+1 | 30
 
 同時に 2 つの統計のキーは、SPA フレームワークによって生成されます。 1 つは CPU 0 を CPU 1 のもう 1 つは.
 
 複数の次の例に示す **値** 複数列 **キー** 列をサポートします。
 
-CounterName | インスタンス名 | 平均 | 合計
+CounterName | InstanceName | 平均 | SUM
 --- | :---: | :---: | :---:
-プロセッサ時間の割合 | _Total | 10 | 20
-プロセッサ時間の割合 | CPU0 | 20 | 30 
+% Processor time | _Total | 10 | 20
+% Processor time | CPU0 | 20 | 30 
 
 この例である 2 つ **キー** 列と 2 つ **値** 列です。 SPA は、平均の列の 2 つの統計情報キーと合計列の別の 2 つのキーを生成します。 統計のキーは次のとおりです。
 
-* CounterName (プロセッサ時間の割合)/InstanceName (\_合計)/平均
+* CounterName (プロセッサ時間の割合)/InstanceName ( \_ 合計)/平均
 
 * CounterName (プロセッサ時間の割合)/InstanceName (CPU0)/平均
 
-* CounterName (プロセッサ時間の割合)/InstanceName (\_合計)/合計
+* CounterName (プロセッサ時間の割合)/InstanceName ( \_ 合計)/合計
 
 * CounterName (プロセッサ時間の割合)/InstanceName (CPU0)/合計
 
@@ -786,7 +786,7 @@ CounterName とインスタンス名は、1 つのキーとして結合されま
 
 SPA は、多くの統計のキーを生成します。 一部の興味深いは、その UI からそれらを非表示にすることがあります。 SPA では、有用な統計情報のキーのみを表示するフィルターを作成することができます。
 
-前の例では、システム管理者は、InstanceName が合計または CPU1 の \_キーのみを対象としている可能性があります。 フィルターは、次のように定義できます。
+前の例では、システム管理者は、InstanceName が合計または CPU1 であるキーのみに関心があり \_ ます。 フィルターは、次のように定義できます。
 
 ``` syntax
 <listValue name="CpuPerformance">
@@ -802,7 +802,7 @@ SPA は、多くの統計のキーを生成します。 一部の興味深いは
 </listValue>
 ```
 
-**&lt;trendableKeyValues/&gt;** 任意のキー列の下で定義することができます。 数より多い場合は、1 つのキー列がこのようなフィルターが構成されて、およびロジックが適用されます。
+** &lt; trendableKeyValues/ &gt; **は、任意のキー列の下で定義できます。 数より多い場合は、1 つのキー列がこのようなフィルターが構成されて、およびロジックが適用されます。
 
 ### <a name="developing-report-scripts"></a>レポートのスクリプトの開発
 
@@ -848,17 +848,17 @@ create PROCEDURE [Microsoft.ServerPerformanceAdvisor.CoreOS.V2].[ReportScript] A
 
 収集されたすべてのデータは、次の対応するテーブルにインポートされます。 テーブル スキーマの詳細については、次を参照してください。 [データ コレクター セットを定義する](#bkmk-definedatacollector)です。
 
-* レジストリ
+* 使用)
 
-    * registryKeys の \#
+    * \#registryKeys
 
-* WMI に関するページ
+* WMI
 
-    * \#の Wmi オブジェクト
+    * \#WMIObjects
 
-    * \#の Wmi Objectproperties
+    * \#WmiObjectProperties
 
-    * \#の Wmi クエリ
+    * \#WmiQueries
 
 * パフォーマンス カウンター
 
@@ -870,7 +870,7 @@ create PROCEDURE [Microsoft.ServerPerformanceAdvisor.CoreOS.V2].[ReportScript] A
 
 * ETW
 
-    * \#イベント
+    * \#記録
 
     * \#EventProperties
 
@@ -878,9 +878,9 @@ create PROCEDURE [Microsoft.ServerPerformanceAdvisor.CoreOS.V2].[ReportScript] A
 
 \[Dbo\].\[SetNotification\] API のセット、ルールのステータスを表示できるように、 **成功** または **警告** UI のアイコン。
 
-* @ruleName nvarchar (50)
+* @ruleNamenvarchar (50)
 
-* @adviceName nvarchar (50)
+* @adviceNamenvarchar (50)
 
 アラートおよび推奨されるメッセージは、プロビジョニングのメタデータ XML ファイルに格納されます。 これにより、レポートのスクリプトの管理が容易にします。
 
@@ -912,9 +912,9 @@ END
 
 \[Dbo\].\[GetThreshold\] API がしきい値を取得します。
 
-* @key nvarchar (50)
+* @keynvarchar (50)
 
-* @value float の出力
+* @value浮動小数点出力
 
 > [!NOTE]
 > しきい値は、名前と値のペアと、それらはすべてのルールで参照することができます。 システム管理者は、SPA コンソールを使用して、しきい値を調整します。
@@ -949,9 +949,9 @@ if (@freediskSizeInGB < @freediskSize)
 
 \[Dbo\].\[SetSingleValue\] API が 1 つの値を設定します。
 
-* @key nvarchar (50)
+* @keynvarchar (50)
 
-* @value sql\_variant
+* @valuesql \_ variant
 
 この値は、1 つの値の同じキーの複数回を実行できます。 最後の値が保存されます。
 
@@ -973,9 +973,9 @@ exec dbo.SetSingleValue N Osversion ,  6.1.7601
 exec dbo.SetSingleValue N OsLocation ,  c:\ 
 ```
 
-まれに、\[dbo\]を使用して、以前に設定した結果を削除することが必要になる場合があります。\[removeSingleValue\] API。
+まれに、dbo を使用して以前に設定した結果を削除することが必要になる場合があり \[ \] ます。 \[removeSingleValue \] API。
 
-* @key nvarchar (50)
+* @keynvarchar (50)
 
 次のスクリプトを使用するには、以前に設定を削除する値。
 
@@ -987,7 +987,7 @@ exec dbo.removeSingleValue N Osversion
 
 \[Dbo\].\[GetDuration\] API は、データ収集の秒単位の期間を指定されたユーザーを取得します。
 
-* @duration int の出力
+* @durationint 出力
 
 レポートスクリプトの例を次に示します。
 
@@ -998,7 +998,7 @@ exec dbo.GetDuration @duration output
 
 \[Dbo\].\[GetInternal\] API は、パフォーマンス カウンターの間隔を取得します。 現在のレポートにはパフォーマンス カウンター情報がない場合は、NULL を返すことでした。
 
-* @interval int の出力
+* @intervalint 出力
 
 レポートスクリプトの例を次に示します。
 
@@ -1051,15 +1051,15 @@ exec dbo.WriteSystemLog N'Any information you want to show to the system adminis
 
 最初のパラメーターは、ログに表示するメッセージが表示されます。 2 番目のパラメーターは、ログ レベルです。 2 番目のパラメーターの有効な入力可能性があります **情報**, 、**警告**, 、または **エラー**します。
 
-### <a name="debug"></a>Debug
+### <a name="debug"></a>デバッグ
 
 SPA コンソールを実行できる 2 つのモードでデバッグやリリースします。 リリース モードは、既定では、およびレポートが生成された後、収集された生データはすべてがクリーンアップされます。 デバッグ モードですべての生データ、ファイル共有と、データベースが、将来のレポートのスクリプトをデバッグできます。
 
-**レポートスクリプトをデバッグするには**
+**レポートのスクリプトをデバッグするには**
 
 1.  Microsoft SQL Server Management Studio (SSMS) をインストールします。
 
-2.  SSMS の起動後に、localhost に接続\\SQLExpress です。 ではなく、localhost を使用する必要があることに注意してください。 の順に移動します。 それ以外の場合、SQL Server で、デバッガーを起動できない可能性がありますできません。
+2.  SSMS の起動後に、localhost に接続\\SQLExpress です。 ではなく、localhost を使用する必要があることに注意してください。 . それ以外の場合、SQL Server で、デバッガーを起動できない可能性がありますできません。
 
 3.  デバッグ モードを有効にするのには、次のスクリプトを実行します。
 
@@ -1080,9 +1080,9 @@ SPA コンソールを実行できる 2 つのモードでデバッグやリリ�
 
     たとえば、出力があります。
 
-    ID | セッション Id | AdvisoryPackageId | ReportStatusId | LastUpdatetime | ThresholdversionId
+    Id | SessionId | AdvisoryPackageId | ReportStatusId | LastUpdatetime | ThresholdversionId
     :---: | :---: | :---: | :---: | :---: | :---:
-    12 | 17 | 1 で保護されたプロセスとして起動されました | 2 で保護されたプロセスとして起動されました | 2011-05-11 05:35: 24.387 | 1 で保護されたプロセスとして起動されました
+    12 | 17 | 1 | 2 | 2011-05-11 05:35: 24.387 | 1
 
 6.  次のスクリプトは、Id 12 のレポートのスクリプトを実行する回数だけ実行できます。
 
@@ -1112,7 +1112,7 @@ SPA コンソールを実行できる 2 つのモードでデバッグやリリ�
 
 |                                                                 Pascal 形式の文字種                                                                 |                       camel 規約に従った大文字小文字の使い分け                        |             大文字             |
 |-----------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------|-----------------------------------|
-| <ul><li>Provisionmetadata.xml の名前</li><li>ストアド プロシージャ</li><li>関数</li><li>ビュー名</li><li>一時テーブル名</li></ul> | <ul><li>パラメーター名</li><li>ローカル変数</li></ul> | すべての SQL 予約キーワードに使用する |
+| <ul><li>ProvisionMetadata.xml 内の名前</li><li>ストアド プロシージャ</li><li>関数</li><li>ビュー名</li><li>一時テーブル名</li></ul> | <ul><li>パラメーター名</li><li>ローカル変数</li></ul> | すべての SQL 予約キーワードに使用する |
 
 ### <a name="other-recommendations"></a>他の推奨事項
 
@@ -1132,7 +1132,7 @@ SPA コンソールを実行できる 2 つのモードでデバッグやリリ�
 
 * 常に advisor パックの表示名にメジャー バージョン番号が含まれます。
 
-## <a href="" id="bkmk-advancedtopics"></a>高度なトピック
+## <a name="advanced-topics"></a><a href="" id="bkmk-advancedtopics"></a>高度なトピック
 
 ### <a name="run-multiple-advisor-packs-simultaneously"></a>複数の advisor パックを同時に実行します。
 
@@ -1150,7 +1150,7 @@ SPA は、同時に複数の advisor パックを実行しているサポート�
 
    1. 新しい間隔として最短の間隔を取得します。
 
-   2. パフォーマンス カウンターのスーパー セットを考慮します。 たとえば、 **process (\*)\\% Processor time** and **process (\*)\\\*、\\process (\*)\\** \\* はさらに多くのデータを返します。そのため、**プロセス (\*)\\% processor time** and **process (\*)** \\\\* はマージされたデータコレクターセットから削除されます。
+   2. パフォーマンス カウンターのスーパー セットを考慮します。 たとえば、process () ** \* \\ % processor time**と**process () の場合、 \* \\ \* \\ process ( \* ) \\ \\ *** はさらに多くのデータを返します。そのため、**プロセス ( \* ) \\ % processor time**と**process ( \* ) \\ \\ *** は、マージされたデータコレクターセットから削除されます。
 
 ### <a name="collect-dynamic-data"></a>動的なデータを収集します。
 
@@ -1173,7 +1173,7 @@ ROOT\*IPHTTPS\0000
 
 ```
 
-**FriendlyName**値を調べるには、レジストリエディターを開き、 **HKEY\_LOCAL\_MACHINE\\SYSTEM\\CurrentControlSet\\Enum\\** を前のサンプルの各行と組み合わせて、レジストリ設定に移動します。 (例: **HKEY\_LOCAL\_MACHINE\\SYSTEM\\CurrentControlSet\\Enum\\ ROOT\\\*IPHTTPS\\0000**。
+**FriendlyName**値を検索するには、レジストリエディターを開き、 **HKEY \_ LOCAL \_ MACHINE \\ SYSTEM \\ CurrentControlSet \\ Enum \\ **を前のサンプルの各行と組み合わせてレジストリ設定に移動します。 (例: **HKEY \_ LOCAL \_ MACHINE \\ SYSTEM \\ CurrentControlSet \\ Enum \\ ROOT \\ \* IPHTTPS \\ 0000**)。
 
 SPA プロビジョニング メタデータには、前の手順を変換するには、次のコード サンプルでは、スクリプトを追加します。
 
@@ -1193,15 +1193,15 @@ SPA プロビジョニング メタデータには、前の手順を変換する
 
 次の表では、SPA 内のデータ コレクターには、動的なデータと他のデータ コレクターによって参照されるかどうかがサポートされている場合を定義します。
 
-［データの種類］ | 動的データをサポートします。 | 参照することができます。
+データ型 | 動的データをサポートします。 | 参照することができます。
 --- | :---: | :---:
-レジストリ キー●れじすとり きー○ | [はい] | [はい]
-WMI に関するページ | [はい] | [はい]
-ファイル | [はい] | 必須ではない
-パフォーマンス カウンター | 必須ではない | 必須ではない
-ETW | 必須ではない | 必須ではない
+レジストリ キー●れじすとり きー○ | はい | はい
+WMI | はい | はい
+ファイル | はい | いいえ
+パフォーマンス カウンター | いいえ | いいえ
+ETW | いいえ | いいえ
 
-WMI のデータ コレクターは、各 WMI オブジェクトは、多くの接続されている属性を持ちます。 すべての種類の WMI オブジェクトには、\_\_名前空間、\_\_クラス、\_\_RELpath の3つの属性があります。
+WMI のデータ コレクターは、各 WMI オブジェクトは、多くの接続されている属性を持ちます。 すべての種類の WMI オブジェクトには \_ \_ 、名前空間、 \_ \_ クラス、および \_ \_ RELpath の3つの属性があります。
 
 その他のデータ コレクターによって参照されているデータ コレクターを定義するには、割り当て、 **名前** 、ProvisionMetadata.xml 内の一意のキーを持つ属性です。 このキーは、動的なデータを生成する業務用のデータ コレクターによって使用されます。
 
@@ -1217,9 +1217,9 @@ WMI の例:
 <path name="wmi">Root\Cimv2:select PNPDeviceID FROM Win32_NetworkAdapter</path>
 ```
 
-次の構文の使用に依存するデータ コレクターを定義する: $( *{name}* . *{属性}* )。
+次の構文の使用に依存するデータ コレクターを定義する: $(*{name}*.*{属性}*)。
 
-*{name}* *{属性}* プレース ホルダーであります。
+*{name}**{属性}* プレース ホルダーであります。
 
 SPA は、ターゲット サーバーからデータを収集するとき、次のように、パターン $ (\*.\*) を参照データ コレクターから収集した実際のデータ (レジストリ キー/WMI) に動的に置き換えます。
 
@@ -1234,7 +1234,7 @@ SPA は、ターゲット サーバーからデータを収集するとき、次
 
 ### <a name="versioning-limitations"></a>バージョン管理の制限事項
 
-SPA は、リセットとマイナー バージョン更新プログラムをサポートします。 これらのプロセスでは、同じアルゴリズムを使用します。 プロセスは、すべてのデータベース オブジェクトとしきい値の設定の更新を既存のデータを確保するためです。 これは、新しいバージョンにアップグレードすることができます。 または下位バージョンにダウン グレードします。 advisor パックを選択し、SPA の **[Advisor パックの構成]** ダイアログボックスで **[リセット]** をクリックして、または更新プログラムをリセットまたは適用します。
+SPA は、リセットとマイナー バージョン更新プログラムをサポートします。 これらのプロセスでは、同じアルゴリズムを使用します。 プロセスは、すべてのデータベース オブジェクトとしきい値の設定の更新を既存のデータを確保するためです。 これは、新しいバージョンにアップグレードすることができます。 または下位バージョンにダウン グレードします。 advisor パックを選択し、SPA の [ **Advisor パックの構成**] ダイアログボックスで [**リセット**] をクリックして、または更新プログラムをリセットまたは適用します。
 
 この機能は、主に小規模な更新です。 UI の表示要素を大幅に変更できません。 大幅に変更する場合は、別の advisor パックを作成する必要です。 Advisor パック名では、メジャー バージョンを含める必要があります。
 
@@ -1256,7 +1256,7 @@ SPA は、リセットとマイナー バージョン更新プログラムをサ
 
 * リスト値の列を追加または削除する
 
-### <a href="" id="bkmk-tooltips"></a>ツールヒント
+### <a name="tooltips"></a><a href="" id="bkmk-tooltips"></a>ツールヒント
 
 ほぼすべて **説明** 属性は、SPA コンソールで、ツールヒントとして表示されます。
 
@@ -1273,13 +1273,13 @@ SPA は、リセットとマイナー バージョン更新プログラムをサ
 
 ツール ヒントが、ユーザーにデータ ソースを表示することをお勧めします。 データ ソースを表示するための形式を次に示します。
 
-[データ ソース] | 表記 | 例
+データ ソース | Format | 例
 --- | --- | ---
-WMI に関するページ | WMI: &lt;wmiclass&gt;/&lt;フィールド&gt; | [WMI] Win32_OperatingSystem/キャプション
-パフォーマンス カウンター | Perfcounter: &lt;の区分名&gt;/&lt;InstanceName&gt; | Perfcounter: Process/% Processor time
-レジストリ | レジストリ: &lt;registerKey&gt; | レジストリ: HKLM\SOFTWARE\Microsoft<br>\\ASP.NET\\Rootver
-［構成ファイル］ | ConfigFile: &lt;Filepath&gt;\[;Xpath: &lt;Xpath&gt;\]<br>**注:**<br>Xpath は省略可能で、ファイルが xml ファイルである場合にのみ有効です。 | ConfigFile: windir%\\System32\\inetsrv\config\\Applicationhost.config<br>Xpath: configuration&frasl;System.webserver<br>&frasl;httpProtocol&frasl;@allowKeepAlive
-ETW | ETW: &lt;Provider/&gt;(キーワード) | ETW: Windows カーネル トレース (プロセス、net)
+WMI | WMI: &lt; wmiclass &gt; / &lt; フィールド&gt; | [WMI] Win32_OperatingSystem/キャプション
+パフォーマンス カウンター | Perfcounter: &lt; 区分名 &gt; / &lt; InstanceName&gt; | Perfcounter: Process/% Processor time
+使用) | レジストリ: &lt; registerkey&gt; | レジストリ: HKLM\SOFTWARE\Microsoft<br>\\ASP.NET \\ rootver
+構成ファイル | ConfigFile: &lt; Filepath &gt; \[ ;Xpath: &lt; xpath&gt;\]<br>**注:**<br>Xpath は省略可能で、ファイルが xml ファイルである場合にのみ有効です。 | ConfigFile: windir% \\ System32 \\ inetsrv\config \\applicationHost.config<br>Xpath &frasl; : configuration system.webserver<br>&frasl;httpProtocol&frasl;@allowKeepAlive
+ETW | ETW: &lt; Provider/ &gt; (Keywords) | ETW: Windows カーネル トレース (プロセス、net)
 
 ### <a name="table-collation"></a>テーブルの照合順序
 
@@ -1300,7 +1300,7 @@ DECLARE @filesIO TABLE (
 
 ### <a name="collect-etw"></a>ETW を収集します。
 
-Provisionmetadata.xml ファイルに ETW を定義する方法を次に示します。
+ここでは、ProvisionMetadata.xml ファイルに ETW を定義する方法について説明します。
 
 ``` syntax
 <dataSourceDefinition>
@@ -1312,40 +1312,40 @@ Provisionmetadata.xml ファイルに ETW を定義する方法を次に示し�
 
 ETW を収集するために使用する次のプロバイダーの属性を紹介します。
 
-備わっている | タスクバーの検索ボックスに | 説明
+属性 | Type | 説明
 --- | --- | ---
 guid | GUID | プロバイダーの GUID
-セッション | string | ETW セッション名 (省略可能のカーネル イベント用にのみ必要)
-keywordsany | 16 進数 | 任意のキーワード (省略可能、0 x プレフィックスなし)
-keywordsAll | 16 進数 | すべてのキーワード (省略可能)
-プロパティ | 16 進数 | (省略可能) のプロパティ
-level | 16 進数 | (省略可能) レベル
-bufferSize | 整数 | バッファーのサイズ (省略可能)
-flushtime | 整数 | (省略可能) 時間をフラッシュします。
-maxBuffer | 整数 | 最大バッファー (省略可能)
-minBuffer | 整数 | 最小バッファー (省略可能)
+session | string | ETW セッション名 (省略可能のカーネル イベント用にのみ必要)
+keywordsany | Hex | 任意のキーワード (省略可能、0 x プレフィックスなし)
+keywordsAll | Hex | すべてのキーワード (省略可能)
+properties | Hex | (省略可能) のプロパティ
+level | Hex | (省略可能) レベル
+bufferSize | int | バッファーのサイズ (省略可能)
+flushtime | int | (省略可能) 時間をフラッシュします。
+maxBuffer | int | 最大バッファー (省略可能)
+minBuffer | int | 最小バッファー (省略可能)
 
 2 つの出力テーブルがある次のようにします。
 
-**\#Events テーブルスキーマ**
+**\#イベントのテーブル スキーマ**
 
 列名 | SQL データ型 | 説明
 --- | --- | ---
 SequenceID | Int 型の NULL でないです。 | 相関関係のシーケンス ID
 EventtypeId | Int 型の NULL でないです。 | イベントの種類 ID ([dbo] を参照してください。 [Eventtypes])
-プロセス Id | BigInt NOT NULL | ［プロセス ID］
-スレッド Id | BigInt NOT NULL | ［スレッド ID］
+ProcessId | BigInt NOT NULL | プロセス ID
+スレッド Id | BigInt NOT NULL | スレッド ID
 timestamp | datetime2 NOT NULL | timestamp
 カーネル時間 | BigInt NOT NULL | カーネル時間
 Usertime | BigInt NOT NULL | ユーザー時間
 
-**\#EventProperties テーブルスキーマ**
+**\#EventProperties テーブル スキーマ**
 
 列名 | SQL データ型 | 説明
 --- | --- | ---
 SequenceID | Int 型の NULL でないです。 | 相関関係のシーケンス ID
 名前 | Nvarchar (100) | プロパティ名
-Value | Nvarchar (4000) | Value
+値 | Nvarchar (4000) | 値
 
 ### <a name="etw-schema"></a>ETW スキーマ
 
@@ -1380,17 +1380,17 @@ SPA には、2 つの主要な部分、フレームワーク、および advisor
 
 SPA プロジェクトは、ターゲット サーバー、advisor パックおよび advisor パックの対象サーバーで生成されたパフォーマンス分析レポートに関するすべての情報を含むデータベースです。 比較して、同じ SPA プロジェクト内の履歴と傾向のグラフを表示できます。 ユーザーは、1 つ以上のプロジェクトを作成できます。 SPA プロジェクトは、別の独立しており、プロジェクト間で共有するデータはありません。
 
-**対象サーバー**
+**ターゲット サーバー**
 
 ターゲット サーバーは、物理コンピューターまたは IIS などの特定のサーバーの役割と Windows Server を実行する仮想マシンです。
 
-**データ分析セッション**
+**データの分析セッション**
 
 データの分析セッションは、特定のターゲット サーバーのパフォーマンス分析です。 データの分析セッションでは、複数の advisor パックを含めることができます。 これらの advisor パックからデータ コレクター セットは、1 つのデータ コレクター セットにマージされます。 1 つのデータの分析セッションのすべてのパフォーマンス ログは、同じ期間中に収集されます。 同じデータの分析セッションで実行されている advisor パックによって生成されるレポートの分析と、全体的なパフォーマンスの状況を理解し、パフォーマンスの問題の根本原因を特定のユーザーが役立つ場合があります。
 
 **Windows イベント トレーシング**
 
-[イベントのトレース](https://msdn.microsoft.com/library/windows/desktop/bb968803.aspx) for Windows (ETW) は、Windows オペレーティング システムで提供されている高パフォーマンス、低オーバーヘッドでスケーラブルなトレース システムです。 プロファイリングとデバッグのさまざまなシナリオをトラブルシューティングするために使用できる機能を提供します。 SPA は、データ ソースとして、パフォーマンス レポートが生成される ETW イベントを使用します。 ETW に関する一般的な情報を参照してください。 [デバッグの向上およびパフォーマンス調整 ETW を](https://msdn.microsoft.com/magazine/cc163437.aspx)します。
+[イベントのトレース](/windows/win32/etw/event-tracing-portal) for Windows (ETW) は、Windows オペレーティング システムで提供されている高パフォーマンス、低オーバーヘッドでスケーラブルなトレース システムです。 プロファイリングとデバッグのさまざまなシナリオをトラブルシューティングするために使用できる機能を提供します。 SPA は、データ ソースとして、パフォーマンス レポートが生成される ETW イベントを使用します。 ETW に関する一般的な情報を参照してください。 [デバッグの向上およびパフォーマンス調整 ETW を](/archive/msdn-magazine/2007/april/event-tracing-improve-debugging-and-performance-tuning-with-etw)します。
 
 **WMI query**
 
@@ -1398,17 +1398,17 @@ Windows Management Instrumentation (WMI) は、インフラストラクチャの
 
 **パフォーマンス カウンター**
 
-パフォーマンス カウンターを使用して、でなく、オペレーティング システムまたはアプリケーション、サービス、またはドライバーの実行に関する情報を提供します。 パフォーマンス カウンター データは、システムのボトルネックの特定やシステムとアプリケーションのパフォーマンスの微調整に役立ちます。 オペレーティング システム、ネットワーク、およびデバイスは、システムのパフォーマンスがどの程度のグラフィック表示をユーザーに提供するアプリケーションを使用できるカウンターのデータを提供します。 SPA はパフォーマンス カウンターの情報とデータ ポイントをパフォーマンス レポートを生成するのにソースとして使用します。
+パフォーマンス カウンターは、オペレーティング システム、アプリケーション、サービス、またはドライバーの実行状態についての情報を提供するために使用されます。 パフォーマンス カウンター データは、システムのボトルネックの特定やシステムとアプリケーションのパフォーマンスの微調整に役立ちます。 オペレーティング システム、ネットワーク、およびデバイスは、システムのパフォーマンスがどの程度のグラフィック表示をユーザーに提供するアプリケーションを使用できるカウンターのデータを提供します。 SPA はパフォーマンス カウンターの情報とデータ ポイントをパフォーマンス レポートを生成するのにソースとして使用します。
 
 **パフォーマンス ログと警告**
 
 パフォーマンス ログと警告 (PLA) は、Windows オペレーティング システムの組み込みのサービスです。 パフォーマンス ログやトレースを収集するものではし、特定のトリガーが満たされたときにパフォーマンスの警告も発生します。 パフォーマンス カウンター、Windows (ETW)、WMI クエリ、レジストリ キー、および構成ファイルのトレース イベントを収集する PLA を使用できます。 PLA には、リモート プロシージャ コール (RPC) によるリモート データ収集もサポートしています。 ユーザーは、データを収集する、データ収集の頻度、データ コレクション期間、フィルター、結果ファイルの保存場所に関する情報を含んだデータ コレクター セットを定義します。 SPA は、ターゲット サーバーからすべてのパフォーマンス データを収集するのに PLA を使用します。
 
-**1つのレポート**
+**1 つのレポート**
 
 1 つのレポートは、単一のターゲット サーバー上の 1 つの Advisor パックの 1 つのデータ分析セッションに基づいて生成される SPA レポートです。 通知とさまざまなデータ セクションに含めることができます。
 
-**サイドバイサイドのレポート**
+**サイド バイ サイドのレポート**
 
 サイド バイ サイドのレポートは、同じ advisor パックの 2 つの単一のレポートを比較する SPA レポートです。 別のターゲット サーバーから、または同じターゲット サーバー上の別のパフォーマンス分析の実行から、2 つのレポートを生成できます。 サイド バイ サイドのレポートでは、ユーザーが異常な動作や、レポートのいずれかの設定を識別するための 2 つのレポートを比較する機能を作成します。 サイド バイ サイドのレポートには、通知とさまざまなデータ セクションが含まれています。 各セクションでは、両方のレポートからのデータは、一覧にサイド バイ サイドです。
 
@@ -1418,7 +1418,7 @@ Windows Management Instrumentation (WMI) は、インフラストラクチャの
 
 ユーザーが 1 つまたは複数のデータ系列では 1 つのレポート内の数値をなどは一度に選択できる **合計 CPU 使用率の平均**します。 具体的には、数値は、特定の時間インスタンスで1つの AP によって生成される単一サーバーのスカラー値です。 SPA は 24 日 (7 日間レポートは、各曜日に 1 つずつ 7) の 1 時間ごとに 1 つのグループにこれらの値をグループ化します。 SPA は、平均、最小値、最大値、および各グループの標準偏差を計算します。
 
-**履歴グラフ**
+**履歴のグラフ**
 
 履歴のグラフは、特定のサーバーおよび advisor パックのペアの 1 つのレポート内の特定の数値で時間の経過と共に変更を表示するために使用される SPA レポートです。 ユーザーは、複数のデータ系列を選択し、別のデータ系列間の相関関係を理解する履歴のグラフにまとめて表示することができます。
 
@@ -1428,7 +1428,7 @@ Windows Management Instrumentation (WMI) は、インフラストラクチャの
 
 **ルール**
 
-ルールは、ロジック、しきい値、および説明の組み合わせです。 これらは、潜在的なパフォーマンスの問題を表します。 各 advisor パックには、複数のルールが含まれています。 各ルールは、レポートの生成プロセスによりトリガされます。 ルールには、1 つのレポート内のデータにロジックとしきい値が適用されます。 条件が満たされる場合は、警告通知が発生します。 通知に設定されていない場合、 **OK** 状態です。 該当なし に、通知を設定するルールが適用されない場合 (**NA**) の状態。
+ルールは、ロジック、しきい値、および説明の組み合わせです。 これらは、潜在的なパフォーマンスの問題を表します。 各 advisor パックには、複数のルールが含まれています。 各ルールは、レポートの生成プロセスによりトリガされます。 ルールには、1 つのレポート内のデータにロジックとしきい値が適用されます。 条件が満たされる場合は、警告通知が発生します。 通知に設定されていない場合、 **OK** 状態です。 該当なし] に、通知を設定するルールが適用されない場合 (**NA**) の状態。
 
 **通知**
 

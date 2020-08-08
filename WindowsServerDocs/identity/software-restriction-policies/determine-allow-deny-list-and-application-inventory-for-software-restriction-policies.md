@@ -1,24 +1,22 @@
 ---
 title: ソフトウェアの制限のポリシーの許可/拒否リストおよびアプリケーション インベントリの決定
 description: Windows Server のセキュリティ
-ms.prod: windows-server
-ms.technology: security-software-restriction-policies
 ms.topic: article
 ms.assetid: 0abb73b6-b5d8-4505-8ab1-2f29e4bf0411
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: c0fdb5c1d7c4b03610a173c6cd0575d39646a7d0
-ms.sourcegitcommit: af1cf89632d62a94943d3ad9f6b5234b88499278
+ms.openlocfilehash: 831508de2aae56aab53cbd1ff7820ea1af0da565
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81524907"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953039"
 ---
 # <a name="determine-allow-deny-list-and-application-inventory-for-software-restriction-policies"></a>ソフトウェアの制限のポリシーの許可/拒否リストおよびアプリケーション インベントリの決定
 
->適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
 IT プロフェッショナル向けのこのトピックでは、Windows Server 2008 および Windows Vista 以降のソフトウェア制限ポリシー (SRP) によって管理されるアプリケーションの許可リストと拒否リストを作成する方法について説明します。
 
@@ -68,5 +66,5 @@ SRP を使用して特定のタスクを実行する方法については、以�
 
     ログファイルに書き込まれる出力の例を次に示します。
 
-explorer.exe **(PID = 4728) identifiedC:\ Windows\system32\onenote.exe As 無制限の実行パスの規則、Guid = {320bd852-aa7c-4674-82c5-9a80321670a3}**   SRP によってチェックされブロックに設定されるすべてのアプリケーションと関連するコードは、ログファイルに記録されます。その後、許可リストについて考慮する必要がある実行可能ファイルを決定するために使用できます。
+**explorer.exe (PID = 4728) identifiedC:\Windows\system32\onenote.exe 無制限の方法でのパスルール、Guid = {320bd852-aa7c-4674-82c5-9a80321670a3}**   SRP によってチェックされブロックに設定されるすべてのアプリケーションと関連するコードは、ログファイルに記録されます。その後、許可リストについて考慮する必要がある実行可能ファイルを決定するために使用できます。
 

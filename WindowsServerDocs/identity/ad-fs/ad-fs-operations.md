@@ -6,20 +6,18 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 3442ada27e8e01b72561850f724d7e28d740f43b
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 3fb672d9557e7f10245e8c29ea1585cf9f4aadf9
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86964964"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953189"
 ---
 # <a name="ad-fs-operations"></a>AD FS の運用
 
 
 
-このドキュメントには、AD FS のすべてのドキュメント操作の一覧が含まれています。 
+このドキュメントには、AD FS のすべてのドキュメント操作の一覧が含まれています。
 
 ## <a name="service-configuration"></a>サービス構成
 - [AD FS と WAP 2016 で SSL 証明書を更新する](./operations/manage-ssl-certificates-ad-fs-wap.md)
@@ -29,7 +27,7 @@ ms.locfileid: "86964964"
 - [AD FS 2019 で HTTP セキュリティ応答ヘッダーをカスタマイズする](../ad-fs/operations/customize-http-security-headers-ad-fs.md)
 - [管理者以外のユーザーへの AD FS Powershell コマンドレットのアクセスの委任](../ad-fs/operations/delegate-ad-fs-pshell-access.md)
 - [SQL とアドレスの待機時間の微調整](../ad-fs/operations/adfs-sql-latency.md)
-- [AlwaysOn 可用性グループ](../ad-fs/operations/ad-fs-always-on.md) 
+- [AlwaysOn 可用性グループ](../ad-fs/operations/ad-fs-always-on.md)
 
 
 ## <a name="authentication-configuration"></a>認証の構成
@@ -55,7 +53,7 @@ ms.locfileid: "86964964"
 
 
 ### <a name="device"></a>Device
-- [AD FS のデバイス認証コントロール](../ad-fs/operations/device-authentication-controls-in-AD-FS.md) 
+- [AD FS のデバイス認証コントロール](../ad-fs/operations/device-authentication-controls-in-AD-FS.md)
 
 
 ## <a name="authorization-configuration"></a>承認の構成
@@ -64,8 +62,8 @@ ms.locfileid: "86964964"
 
 ## <a name="rpt--cpt-configuration"></a>RPT & CPT 構成
 - [LDAP ディレクトリに保存されたユーザーを認証するように AD FS を構成する](../ad-fs/operations/Configure-AD-FS-to-authenticate-users-stored-in-LDAP-directories.md)
-- [要求規則を構成する](../ad-fs/operations/Configure-Claim-Rules.md) 
-- [要求プロバイダー信頼を作成する](../ad-fs/operations/Create-a-Claims-Provider-Trust.md) 
+- [要求規則を構成する](../ad-fs/operations/Configure-Claim-Rules.md)
+- [要求プロバイダー信頼を作成する](../ad-fs/operations/Create-a-Claims-Provider-Trust.md)
 - [要求対応ではない証明書利用者信頼を作成する](../ad-fs/operations/Create-a-Non-Claims-Aware-Relying-Party-Trust.md)
 - [証明書利用者の信頼を作成する](../ad-fs/operations/Create-a-Relying-Party-Trust.md)
 - [集計されたフェデレーションプロバイダーを使用するように AD FS を構成する (例: Common)](../ad-fs/operations/Improved-interoperability-with-SAML-2.0.md)
@@ -87,4 +85,4 @@ ms.locfileid: "86964964"
 - [チュートリアル: Workplace Join で Windows デバイスをワークプレースに参加させる](../ad-fs/operations/Walkthrough--Workplace-Join-with-a-Windows-Device.md)
 - [チュートリアル: Workplace Join で iOS デバイスをワークプレースに参加させる](../ad-fs/operations/Walkthrough--Workplace-Join-with-an-iOS-Device.md)
 
-  
+

@@ -7,12 +7,12 @@ ms.topic: article
 ms.assetid: d77d648c-6e26-43fa-be0a-6eb4b28f9cb4
 author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 57fea56317f61d2fee270fb62c2540afb2adf971
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: e88f2e96c4862cb89caf328546488566ebd96c18
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87963629"
+ms.locfileid: "87992626"
 ---
 # <a name="windows-7-should-be-configured-with-the-recommended-amount-of-memory"></a>Windows 7 は、推奨されるメモリ量で構成する必要があります。
 
@@ -68,7 +68,4 @@ Set-VMMemory <MyVM> -StartupBytes 1GB
 ```
 
 ## <a name="see-also"></a>参照
-[設定-VMMemory](https://technet.microsoft.com/library/hh848572.aspx)
-
-
-
+[設定-VMMemory](/powershell/module/hyper-v/set-vmmemory?view=win10-ps)

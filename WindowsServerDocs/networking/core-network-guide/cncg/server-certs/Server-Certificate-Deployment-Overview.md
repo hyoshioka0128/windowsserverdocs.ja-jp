@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: ca5c3e04-ae25-4590-97f3-0376a9c2a9a2
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 318bab675cc633034731e369b5da2bbb40d810b0
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: f8d1536bf3043df4071c01ebb46cd84665b23b8b
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87949416"
+ms.locfileid: "87992838"
 ---
 # <a name="server-certificate-deployment-overview"></a>サーバー証明書の展開の概要
 
@@ -34,7 +34,7 @@ SDN 証明書ベースの認証を展開すると、サーバーがセキュリ�
 ![サーバー証明書の展開の必要なインフラストラクチャ](../../../media/Nps-Certs/Nps-Certs.jpg)
 
 > [!NOTE]
-> 上の図では、複数のサーバーの表示: DC1、CA1、WEB1、および多くの SDN サーバーです。 CA1 および WEB1 を展開および構成との DC1 に、このガイドでは、ネットワークに既にインストールするいると仮定の構成手順を説明します。 Active Directory ドメインをすでにインストールしない場合、これを行うを使用して、 [コア ネットワーク ガイド](https://technet.microsoft.com/library/mt604042.aspx) Windows Server 2016 用です。
+> 上の図では、複数のサーバーの表示: DC1、CA1、WEB1、および多くの SDN サーバーです。 CA1 および WEB1 を展開および構成との DC1 に、このガイドでは、ネットワークに既にインストールするいると仮定の構成手順を説明します。 Active Directory ドメインをすでにインストールしない場合、これを行うを使用して、 [コア ネットワーク ガイド](../../core-network-guide.md) Windows Server 2016 用です。
 
 上の図に示すように各項目の詳細については、次を参照してください。
 
@@ -116,6 +116,3 @@ NPS は、Windows Server 2016 コアネットワークガイドのタスクを�
     > すべてのドメイン メンバー コンピューターは、自動登録の構成を使用せず、エンタープライズ ルート CA の証明書を自動的に受け取ります。 この証明書は、サーバー証明書を構成し、自動登録を使用して、配布よりも異なります。 この CA によって発行される証明書は信頼できるように、すべてのドメイン メンバー コンピューターの信頼されたルート証明機関の証明書ストアに CA の証明書が自動的にインストールします。
 
 10. すべてのサーバーが有効なサーバー証明書を登録したことを確認します。
-
-
-

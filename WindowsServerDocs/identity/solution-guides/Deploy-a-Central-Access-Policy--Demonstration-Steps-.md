@@ -6,14 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: f83e828dd8ce90da4265eb03f94b498933d9c2a6
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 406674f26039f80cbca5ed3ba96e041bc8624729
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518610"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87952793"
 ---
 # <a name="deploy-a-central-access-policy-demonstration-steps"></a>集約型アクセス ポリシーの展開 (デモンストレーション手順)
 
@@ -318,7 +316,7 @@ New-ADCentralAccessPolicy "Finance Policy" Add-ADCentralAccessPolicyMember
 
 2.  [**セキュリティ**] タブをクリックし、[**詳細設定**] をクリックしてから、[**有効なアクセス**] タブをクリックします。
 
-3.  ユーザーのアクセス許可を確認するには、[**ユーザーの選択**] をクリックし、ユーザーの名前を入力して、[有効な**アクセスの表示**] をクリックします。有効なアクセス権が表示されます。 次に例を示します。
+3.  ユーザーのアクセス許可を確認するには、[**ユーザーの選択**] をクリックし、ユーザーの名前を入力して、[有効な**アクセスの表示**] をクリックします。有効なアクセス権が表示されます。 例:
 
     -   Myriam Delesalle (MDelesalle) は金融部門に属しており、フォルダーに対する読み取りアクセス権を必要としています。
 

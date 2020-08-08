@@ -2,13 +2,12 @@
 author: eross-msft
 ms.author: lizross
 ms.date: 10/02/2018
-ms.prod: windows-server
 ms:topic: include
-ms.openlocfilehash: 2e625ec8b0ad4c8959a97ccba9cc95e7781d1370
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: ee706eb9676218f7e3930e3d0a85c2158fcff623
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80316468"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87952844"
 ---
-スイッチ非依存モードでは、nic チームのメンバーが接続されているスイッチまたはスイッチが nic チームの存在を認識せず、nic チームのメンバーにネットワークトラフィックを分散する方法が決定されません。代わりに、NIC チームが受信ネットワークを分散します。NIC チームメンバー間のトラフィック。 
+スイッチに依存しないモードでは、nic チームのメンバーが接続されているスイッチまたはスイッチが nic チームの存在を認識せず、NIC チームメンバーにネットワークトラフィックを分散する方法が決定されません。代わりに、nic チームは、NIC チームメンバー間で受信ネットワークトラフィックを分散します。

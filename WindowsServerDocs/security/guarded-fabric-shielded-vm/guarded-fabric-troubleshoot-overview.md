@@ -1,18 +1,16 @@
 ---
 title: 保護されたファブリックのトラブルシューティング
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 55e954ec-6a5f-4b42-b6a7-1006f3e24556
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
-ms.openlocfilehash: 90803df1ea8ce98ba94b4d1d27ed5678acc33d4d
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 7601614850962e9b1f51ca2d805a6aa1a1e45bcb
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474975"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87944052"
 ---
 # <a name="troubleshooting-a-guarded-fabric"></a>保護されたファブリックのトラブルシューティング
 
@@ -23,7 +21,7 @@ ms.locfileid: "85474975"
 - [保護されたホストのトラブルシューティング](guarded-fabric-troubleshoot-hosts.md)
 - [シールドされた Vm のトラブルシューティング](guarded-fabric-troubleshoot-shielded-vms.md)
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [保護されたホストとシールドされた VM のためのホスト ガーディアン サービスの展開](guarded-fabric-deploying-hgs-overview.md)
 - [保護されたファブリックの管理](guarded-fabric-manage-overview.md)

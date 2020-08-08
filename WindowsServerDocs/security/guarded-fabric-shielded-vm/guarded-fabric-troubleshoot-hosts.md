@@ -1,19 +1,17 @@
 ---
 title: 保護されたホストのトラブルシューティング
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 80ea38f4-4de6-4f85-8188-33a63bb1cf81
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
 ms.date: 09/25/2019
-ms.openlocfilehash: 4c3a2361d7a8d3340d12402abe1ef6c1b3db256f
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: 5940b2a626a42d639870c98ee740c44b18c02ca3
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769640"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87944062"
 ---
 # <a name="troubleshooting-guarded-hosts"></a>保護されたホストのトラブルシューティング
 

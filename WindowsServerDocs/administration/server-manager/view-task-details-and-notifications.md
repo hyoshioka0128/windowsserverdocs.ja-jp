@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b347f5cf3a3d752c500e602b84889afa9c580ab0
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 479105e7f1e605142ec54103825b1ba4934fb127
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895700"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87993106"
 ---
 # <a name="view-task-details-and-notifications"></a>タスクの詳細と通知の表示
 
@@ -37,7 +37,7 @@ ms.locfileid: "87895700"
 
 通知は、インストールまたは役割、役割サービス、および機能をアンインストールする場合に特に役立ちます。 たとえば、リモートサーバーで機能のインストールを開始する場合は、インストールの進行中に役割と機能の追加ウィザードを閉じることができますが、アクティブなタスクは [**通知**] の一覧に残ります。 [**通知**] 項目にインストールの進行状況バーが表示され、必要に応じて [役割と機能の追加**ウィザード**] をクリックして、役割と機能の追加ウィザードを再度開くことができます。 インストールが失敗した場合や機能の展開を完了するために追加の構成手順が必要な場合は、この一覧の項目で通知されます。
 
-通知は、サーバーマネージャーのタスクまたはプロセスに関する問題のトラブルシューティングでも重要な役割を果たします。 [**通知**] 領域および [**タスクの詳細**] ダイアログボックスでメッセージを使用して、失敗したタスクまたはプロセスのトラブルシューティングを行う方法の詳細については、[サーバーマネージャーフォーラム](https://docs.microsoft.com/answers/topics/windows-server-manager.html)を参照してください。
+通知は、サーバーマネージャーのタスクまたはプロセスに関する問題のトラブルシューティングでも重要な役割を果たします。 [**通知**] 領域および [**タスクの詳細**] ダイアログボックスでメッセージを使用して、失敗したタスクまたはプロセスのトラブルシューティングを行う方法の詳細については、[サーバーマネージャーフォーラム](/answers/topics/windows-server-manager.html)を参照してください。
 
 通知**の一覧に表示されなく**なった通知を削除するには、通知の上にマウスカーソルを置き、[**タスクの削除**] (**X**) をクリックします。
 
@@ -48,4 +48,4 @@ ms.locfileid: "87895700"
 
 ## <a name="see-also"></a>参照
 [サーバーマネージャータイルのデータのフィルター処理、並べ替え、クエリ](filter-sort-and-query-data-in-server-manager-tiles.md) 
-[サーバーマネージャーフォーラム](https://docs.microsoft.com/answers/topics/windows-server-manager.html)。
+[サーバーマネージャーフォーラム](/answers/topics/windows-server-manager.html)。

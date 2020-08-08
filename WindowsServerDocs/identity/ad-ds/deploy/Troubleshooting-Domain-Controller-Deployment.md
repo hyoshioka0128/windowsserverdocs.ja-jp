@@ -6,14 +6,12 @@ ms.author: joflore
 manager: mtillman
 ms.date: 03/20/2019
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: e3f215abaccbd1f95ee46eca93a573aa1db9e065
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 3615d7a0a536a0bb54efee2e8982f9b4e3686c8d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519410"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953331"
 ---
 # <a name="troubleshooting-domain-controller-deployment"></a>ドメイン コントローラーの展開のトラブルシューティング
 
@@ -29,7 +27,7 @@ ms.locfileid: "87519410"
 
 ドメイン コントローラーの昇格と降格に関する問題のトラブルシューティングでは、組み込みのログが最も重要な情報源となります。 できるだけ詳しい情報を得るため、すべての組み込みのログが既定で有効化され構成されています。
 
-| 段階 | ログ |
+| フェーズ | ログ |
 |--|--|
 | サーバー マネージャーまたは ADDSDeployment Windows PowerShell の操作 | - %systemroot%\debug\dcpromoui.log<p>-%systemroot%\debug\dcpromoui * .log |
 | ドメイン コントローラーのインストールと昇格 | -%systemroot%\debug\dcpromo.log<p>-%systemroot%\debug\dcpromo * .log<p>イベント ビューアー \windows ログ \ システム<p>イベント ビューアー \windows ログ \ アプリケーション<p>イベント ビューアー \ アプリケーションとサービス ログ \ ディレクトリ サービス<p>イベント ビューアー \ アプリケーションとサービス ログ \ ファイル レプリケーション サービス<p>イベント ビューアー \ アプリケーションとサービス ログ \dfs レプリケーション |
@@ -95,13 +93,13 @@ ms.locfileid: "87519410"
 
 1. サーバー マネージャーを使用している場合は、自動再起動の 10 秒前に昇格の結果を確認します。
 
-2. ADDSDeployment Windows PowerShell を使用している場合は、自動再起動の 10 秒前に昇格の結果を確認します。 または、完了時に自動再起動しないように設定します。 **Format-List** パイプラインを追加すると、出力が読みやすくなります。 次に例を示します。
+2. ADDSDeployment Windows PowerShell を使用している場合は、自動再起動の 10 秒前に昇格の結果を確認します。 または、完了時に自動再起動しないように設定します。 **Format-List** パイプラインを追加すると、出力が読みやすくなります。 例:
 
    ```
    Install-addsdomaincontroller <options> -norebootoncompletion:$true | format-list
    ```
 
-   前提条件の確認および検証中にエラーが発生すると再起動は行われませんので、どのような場合でもエラーが表示されます。 次に例を示します。
+   前提条件の確認および検証中にエラーが発生すると再起動は行われませんので、どのような場合でもエラーが表示されます。 例:
 
    ![トラブルシューティング](media/Troubleshooting-Domain-Controller-Deployment/ADDS_PSPrereqError.png)
 
@@ -112,7 +110,7 @@ ms.locfileid: "87519410"
 
 ### <a name="promotion-and-demotion-success-codes"></a>昇格と降格の成功コード
 
-| エラー コード | 説明 | Note |
+| エラー コード | 説明 | メモ |
 |--|--|--|
 | 1 | 終了、成功 | 自動再起動フラグが削除されたことを示しているだけですので、再起動を実行する必要があります |
 | 2 | 終了、成功、再起動が必要 |  |
@@ -280,7 +278,7 @@ Windows Server 2012 開発プロセス中に発生する一般的な問題を次
 | 問題 | 作成済みのコンピューター アカウントに RODC を昇格すると失敗する |
 |--|--|
 | 現象 | ADDSDeployment Windows PowerShell を使用して、段階的なコンピューター アカウントで新しい RODC を昇格すると、以下のエラーが表示されます。<p>指定された名前付きパラメーターを使用してコードパラメーターセットを解決することはできません。    <br />InvalidArgument: ParameterBindingException<br />    + FullyQualifiedErrorId: AmbiguousParameterSet の場合は、System.directoryservices をインストールします。 |
-| 解決策と説明 | 作成済みの RODC アカウント上で既に定義済みのパラメーターを指定しないでください。 次の設定があります。<p>Code--readonlyreplica<br />-installdns<br />-donotconfigureglobalcatalog<br />-sitename<br />-installdns |
+| 解決策と説明 | 作成済みの RODC アカウント上で既に定義済みのパラメーターを指定しないでください。 次のようなものが含まれます。<p>Code--readonlyreplica<br />-installdns<br />-donotconfigureglobalcatalog<br />-sitename<br />-installdns |
 
 | 問題 | [必要に応じて対象サーバーを自動的に再起動する] を選択または選択解除しても何も変わらない |
 |--|--|

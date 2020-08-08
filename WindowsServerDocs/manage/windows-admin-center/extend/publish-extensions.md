@@ -6,12 +6,12 @@ author: daniellee-msft
 ms.author: jol
 ms.date: 09/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: c817a28494104a1bfed1d7e19eaebaa04fd5138e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 910ed2733d01fe502a93d43f46530d781ba8c7e5
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971969"
+ms.locfileid: "87992695"
 ---
 # <a name="publishing-extensions"></a>拡張機能の公開
 
@@ -32,7 +32,7 @@ Windows 管理センターでサポートされる構成可能なパッケージ
 
 ### <a name="publishing-to-a-different-nuget-feed"></a>別の NuGet フィードへの発行
 
-独自の NuGet フィードを作成して、[プライベートソースを設定したり、nuget ホスティングサービスを使用したりするためのさまざまなオプション](https://docs.microsoft.com/nuget/hosting-packages/overview)の1つを使用して、拡張機能を公開することもできます。 NuGet フィードは、NuGet v2 API をサポートしている必要があります。 現在、Windows 管理センターではフィード認証がサポートされていないため、すべてのユーザーに読み取りアクセスを許可するようにフィードを構成する必要があります。
+独自の NuGet フィードを作成して、[プライベートソースを設定したり、nuget ホスティングサービスを使用したりするためのさまざまなオプション](/nuget/hosting-packages/overview)の1つを使用して、拡張機能を公開することもできます。 NuGet フィードは、NuGet v2 API をサポートしている必要があります。 現在、Windows 管理センターではフィード認証がサポートされていないため、すべてのユーザーに読み取りアクセスを許可するようにフィードを構成する必要があります。
 
 ### <a name="publishing-to-a-file-share"></a>ファイル共有への発行
 
@@ -72,7 +72,7 @@ UI 拡張機能に必要なすべてのコンテンツを収集するプロセ�
 
 NuGet パッケージを作成するには、最初に nuspec ファイルを作成する必要があります。 Nuspec ファイルは、NuGet パッケージのメタデータを含む XML マニフェストです。 このマニフェストは、パッケージを作成するためと、コンシューマーに情報を提供するための、両方に使われます。  このファイルを "NuGet パッケージ" フォルダーのルートに配置します。
 
-Nuspec ファイルの例と、必須または推奨されるプロパティの一覧を次に示します。 完全なスキーマについては、 [nuspec のリファレンス](https://docs.microsoft.com/nuget/reference/nuspec)を参照してください。 任意のファイル名を使用して、nuspec ファイルをプロジェクトのルートフォルダーに保存します。
+Nuspec ファイルの例と、必須または推奨されるプロパティの一覧を次に示します。 完全なスキーマについては、 [nuspec のリファレンス](/nuget/reference/nuspec)を参照してください。 任意のファイル名を使用して、nuspec ファイルをプロジェクトのルートフォルダーに保存します。
 
 > [!IMPORTANT]
 > ```<id>```Nuspec ファイルの値は、プロジェクトのファイル内の値と一致する必要があります。そうしないと、発行された ```"name"``` ```manifest.json``` 拡張機能が Windows 管理センターで正常に読み込まれません。
@@ -106,7 +106,7 @@ Nuspec ファイルの例と、必須または推奨されるプロパティの�
 | プロパティ名 | 必須/推奨 | 説明 |
 | ---- | ---- | ---- |
 | packageType | 必須 | Windows 管理センターの拡張機能に定義されている NuGet パッケージの種類である "Windowsadmincenter Extension" を使用します。 |
-| id | 必須 | フィード内の一意のパッケージ識別子。 この値は、プロジェクトのファイルの manifest.jsの "name" 値と一致する必要があります。  ガイダンスについては、[一意のパッケージ識別子の選択](https://docs.microsoft.com/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number)に関するページをご覧ください。 |
+| id | 必須 | フィード内の一意のパッケージ識別子。 この値は、プロジェクトのファイルの manifest.jsの "name" 値と一致する必要があります。  ガイダンスについては、[一意のパッケージ識別子の選択](/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number)に関するページをご覧ください。 |
 | title | Windows 管理センターフィードへの発行に必要 | Windows 管理センターの拡張機能マネージャーに表示されるパッケージのフレンドリ名。 |
 | version | 必須 | 拡張機能のバージョン。 [セマンティックバージョン管理 (SemVer 規約)](http://semver.org/spec/v1.0.0.html)を使用することをお勧めしますが、必須ではありません。 |
 | 作成者 | 必須 | 会社の代理として発行する場合は、会社名を使用します。 |
@@ -120,7 +120,7 @@ Nuspec ファイルの例と、必須または推奨されるプロパティの�
 
 前の手順で作成した nuspec ファイルを使用して、NuGet パッケージを作成します。 nupkg ファイルをアップロードして、NuGet フィードに発行することができます。
 
-1. [NuGet クライアントツールの web サイト](https://docs.microsoft.com/nuget/install-nuget-client-tools)から nuget.exe CLI ツールをダウンロードします。
+1. [NuGet クライアントツールの web サイト](/nuget/install-nuget-client-tools)から nuget.exe CLI ツールをダウンロードします。
 2. "nuget.exe pack [. nuspec file name]" を実行して、nupkg ファイルを作成します。
 
 ### <a name="4-signing-your-extension-nuget-package"></a>4. 拡張機能の NuGet パッケージに署名する

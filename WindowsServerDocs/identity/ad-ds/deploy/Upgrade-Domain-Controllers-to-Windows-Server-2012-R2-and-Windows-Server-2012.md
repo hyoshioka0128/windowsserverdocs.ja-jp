@@ -6,14 +6,12 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/09/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: f211acd5e93f3f4654983e2c61d6b1a460415655
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: f4c4cfa0fe56acc19f1a78a5b1140d90b585cce5
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519380"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953311"
 ---
 # <a name="upgrade-domain-controllers-to-windows-server-2012-r2-and-windows-server-2012"></a>ドメイン コントローラーを Windows Server 2012 R2 または Windows Server 2012 にアップグレードする
 
@@ -154,18 +152,18 @@ AD DS に関連する変更がいくつかあります。
 
 Windows Server 2008 以降のドメインコントローラーでは、Windows Server 2003 または Windows 2000 を実行するドメインコントローラーと比較して、次のセキュリティで保護された既定の設定も使用できます。
 
-| 暗号化の種類またはポリシー | Windows Server 2008 の既定値 | Windows Server 2012 および Windows Server 2008 R2 の既定値 | コメント |
+| 暗号化の種類またはポリシー | Windows Server 2008 の既定値 | Windows Server 2012 および Windows Server 2008 R2 の既定値 | 解説 |
 |--|--|--|--|
 | AllowNT4Crypto | 無効 | 無効 | サード パーティ製のサーバー メッセージ ブロック (SMB) クライアントは、ドメイン コントローラー上の既定のセキュリティ設定と互換性がない場合があります。 どのような場合でも、これらの設定を緩和して相互運用を可能にすることもできますが、その際はセキュリティが低下します。 詳細については、Microsoft サポート技術情報の[記事 942564](https://go.microsoft.com/fwlink/?LinkId=164558) () を参照してください https://go.microsoft.com/fwlink/?LinkId=164558) 。 |
 | DES | Enabled | 無効 | Microsoft サポート技術情報の[記事 977321](https://go.microsoft.com/fwlink/?LinkId=177717) (https://go.microsoft.com/fwlink/?LinkId=177717) |
-| 統合認証のための CBT/拡張保護 | N/A | Enabled | Microsoft[セキュリティアドバイザリ (937811)](https://go.microsoft.com/fwlink/?LinkId=164559) ( https://go.microsoft.com/fwlink/?LinkId=164559) および Microsoft サポート技術情報の[記事 976918](https://go.microsoft.com/fwlink/?LinkId=178251) () を参照してください https://go.microsoft.com/fwlink/?LinkId=178251) 。<p>必要に応じて、Microsoft サポート技術情報の[記事 977073](https://go.microsoft.com/fwlink/?LinkId=186394)の修正プログラムを確認してインストールし https://go.microsoft.com/fwlink/?LinkId=186394) ます。 |
+| 統合認証のための CBT/拡張保護 | 該当なし | Enabled | Microsoft[セキュリティアドバイザリ (937811)](https://go.microsoft.com/fwlink/?LinkId=164559) ( https://go.microsoft.com/fwlink/?LinkId=164559) および Microsoft サポート技術情報の[記事 976918](https://go.microsoft.com/fwlink/?LinkId=178251) () を参照してください https://go.microsoft.com/fwlink/?LinkId=178251) 。<p>必要に応じて、Microsoft サポート技術情報の[記事 977073](https://go.microsoft.com/fwlink/?LinkId=186394)の修正プログラムを確認してインストールし https://go.microsoft.com/fwlink/?LinkId=186394) ます。 |
 | LMv2 | Enabled | 無効 | Microsoft サポート技術情報の[記事 976918](https://go.microsoft.com/fwlink/?LinkId=178251) (https://go.microsoft.com/fwlink/?LinkId=178251) |
 
-## <a name="operating-system-requirements"></a><a name="BKMK_SysReqs"></a>オペレーティング システムの要件
+## <a name="operating-system-requirements"></a><a name="BKMK_SysReqs"></a>オペレーティングシステムの要件
 
 次の表に、Windows Server 2012 の最小システム要件を示します。 システム要件とプレインストール情報の詳細については、「 [Windows Server 2012 のインストール](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj134246(v=ws.11))」を参照してください。 新しい Active Directory フォレストをインストールするための追加システム要件はありませんが、ドメイン コントローラー、LDAP クライアント要求、および Active Directory 対応アプリケーションのパフォーマンスを向上させるには、Active Directory データベースの内容をキャッシュするための十分なメモリを追加する必要があります。 既存のドメイン コントローラーをアップグレードするか、新しいドメイン コントローラーを既存のフォレストに追加する場合は、次のセクションを参照して、サーバーがディスク領域の要件を満たしていることを確認してください。
 
-| 要件 | [値] |
+| 要件 | 値 |
 |--|--|
 | プロセッサ | 1.4 Ghz 64 ビット プロセッサ |
 | RAM | 512 MB |
@@ -249,7 +247,7 @@ AD DS は、次の Windows オペレーティング システムではサポー�
 
 次のサーバー役割または役割サービスを実行するサーバーに、AD DS をインストールすることはできません。
 
-- Hyper-V Server
+- Hyper-V サーバー
 - リモート デスクトップ接続ブローカー
 
 ## <a name="operations-master-roles"></a><a name="BKMK_OpsMasters"></a>操作マスターの役割

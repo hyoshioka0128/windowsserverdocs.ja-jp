@@ -6,14 +6,12 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 9b9f2700ff4c7ef265603301ccebc95f37b8861c
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: dbccc8f7adac03815c6ced2ceee22210d44dbce9
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87520151"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87963260"
 ---
 # <a name="appendix-b-privileged-accounts-and-groups-in-active-directory"></a>付録 B: Active Directory の特権アカウントとグループ
 

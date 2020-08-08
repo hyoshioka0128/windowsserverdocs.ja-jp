@@ -1,24 +1,22 @@
 ---
 title: ソフトウェアの制限のポリシーのトラブルシューティング
 description: Windows Server のセキュリティ
-ms.prod: windows-server
-ms.technology: security-software-restriction-policies
 ms.topic: article
 ms.assetid: 4fd53736-03e7-4bf9-ba90-d1212d93e19a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: c6b3a475f21925b506d073bd3618d78e2ee0c1d7
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 6e4d31dd6e434c5a5b18491ea7f73b92c993e05a
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80819725"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953009"
 ---
 # <a name="troubleshoot-software-restriction-policies"></a>ソフトウェアの制限のポリシーのトラブルシューティング
 
->適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
 このトピックでは、Windows Server 2008 および Windows Vista 以降でソフトウェアの制限のポリシー (SRP) をトラブルシューティングするときの一般的な問題とその解決策について説明します。
 
@@ -45,7 +43,7 @@ Windows Server 2008 R2 および Windows 7 以降では、アプリケーショ�
 
 2.  ネットワークからログオフし、もう一度ネットワークにログオンして、ポリシーを更新してください。 グループポリシーによってポリシーが適用されている場合は、再度ログインすると、これらのポリシーが更新されます。
 
-3.  ポリシー設定を更新するには、コマンドラインユーティリティの gpupdate を使用するか、ログオフしてからコンピューターに再度ログオンします。 最良の結果を得るには、gpupdate を実行し、からログオフしてから、コンピューターにログオンし直します。 一般に、セキュリティ設定は、ワークステーションまたはサーバーでは90分ごと、ドメインコントローラーでは5分ごとに更新されます。 また、これらの設定は、変更が加えられたかどうかにかかわりなく、16 時間ごとに更新されます。 これらは構成可能な設定であるため、各ドメインで更新間隔が異なる場合があります。
+3.  ポリシー設定を更新するには、コマンドラインユーティリティの gpupdate を使用するか、ログオフしてからコンピューターに再度ログオンします。 最良の結果を得るには、gpupdate を実行し、からログオフしてから、コンピューターにログオンし直します。 一般に、セキュリティ設定は、ワークステーションまたはサーバーでは90分ごと、ドメインコントローラーでは5分ごとに更新されます。 変更の有無にかかわらず、設定は 16 時間ごとにも更新されます。 これらは構成可能な設定であるため、各ドメインで更新間隔が異なる場合があります。
 
 4.  適用するポリシーを確認します。 上書き設定の**ない**ドメインレベルポリシーを確認してください。
 
@@ -76,7 +74,7 @@ Windows Server 2008 R2 および Windows 7 以降では、アプリケーショ�
 
 4.  インターネットゾーンの規則
 
-5.  既定の規則
+5.  既定のルール
 
 **解決策:** アプリケーションを制限する規則を評価し、必要に応じて、既定の規則以外のすべてを削除します。
 

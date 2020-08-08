@@ -2,18 +2,16 @@
 title: SDN の Internal DNS Service (iDNS)
 description: このトピックでは、Windows Server 2016 のソフトウェア定義ネットワークと統合されている内部 DNS (Idn) を使用して、ホストされているテナントワークロードに DNS サービスを提供する方法について説明します。
 manager: grcusanz
-ms.prod: windows-server
-ms.technology: networking-sdn
 ms.topic: get-started-article
 ms.assetid: ad848a5b-0811-4c67-afe5-6147489c0384
 ms.author: anpaul
 author: AnirbanPaul
-ms.openlocfilehash: 47765dc6a08821b0b7032261467bef78239f8369
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 2980e073c34d6177846175563e4d374b439ced44
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87520251"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87952602"
 ---
 # <a name="internal-dns-service-idns-for-sdn"></a>SDN の Internal DNS Service (iDNS)
 

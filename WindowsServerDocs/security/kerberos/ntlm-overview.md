@@ -1,20 +1,18 @@
 ---
 title: NTLM Overview
 description: Windows Server のセキュリティ
-ms.prod: windows-server
-ms.technology: security-kerberos
 ms.topic: article
 ms.assetid: 773909fd-c0bc-498a-95fc-bb452ec04d90
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 972b5b8eb5e25382c2c9b7841cf0d0fe4db6e647
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 4a86b2571ab586bf2289ba263346a791ea28b02e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181878"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87943882"
 ---
 # <a name="ntlm-overview"></a>NTLM Overview
 
@@ -50,7 +48,7 @@ NTLM をサーバー マネージャーから構成することはできませ�
 |--------|-------|
 |**製品評価**|[NTLM 認証の制限の概要](https://technet.microsoft.com/library/dd560653.aspx)<p>[NTLM 認証の変更点](https://technet.microsoft.com/library/dd566199.aspx)|
 |**計画**|[IT Infrastructure Threat Modeling Guide (IT インフラストラクチャの脅威モデリング ガイド)](https://technet.microsoft.com/library/dd941826.aspx)<p>[Threats and Countermeasures:Security Settings in Windows Server 2003 and Windows XP (脅威と対策: Windows Server 2003 と Windows XP でのセキュリティ設定)](https://technet.microsoft.com/library/dd162275.aspx)<p>[Threats and Countermeasures Guide:Security Settings in Windows Server 2008 and Windows Vista (脅威と対策ガイド: Windows Server 2008 と Windows Vista でのセキュリティ設定)](https://technet.microsoft.com/library/dd349791.aspx)<p>[Threats and Countermeasures Guide: Security Settings in Windows Server 2008 R2 and Windows 7 (脅威とその対策ガイド: Windows Server 2008 R2 および Windows 7 でのセキュリティ設定)](https://technet.microsoft.com/library/hh125921.aspx)|
-|**配置**|[認証の拡張保護 (Extended Protection for Authentication)](https://support.microsoft.com/kb/968389)<p>[Auditing and restricting NTLM usage guide (NTLM の使用の監査と制限を行うためのガイド)](https://technet.microsoft.com/library/jj865674(v=ws.10).aspx)<p>[ディレクトリ サービス チームへの質問:NTLM Blocking and You:Application Analysis and Auditing Methodologies in Windows 7 (NTLM のブロック: Windows 7 でのアプリケーションの分セ手法と監査手法)](https://blogs.technet.com/askds/archive/2009/10/08/ntlm-blocking-and-you-application-analysis-and-auditing-methodologies-in-windows-7.aspx)<p>[Windows 認証ブログ](https://blogs.technet.com/authentication/)<p>[Configuring for NTLM pass-through authentication (NTLM パススルー認証用の MaxConcurrentAPI の構成)](https://support.microsoft.com/help/2688798/how-to-do-performance-tuning-for-ntlm-authentication-by-using-the-maxc)|
+|**デプロイ**|[認証の拡張保護 (Extended Protection for Authentication)](https://support.microsoft.com/kb/968389)<p>[Auditing and restricting NTLM usage guide (NTLM の使用の監査と制限を行うためのガイド)](https://technet.microsoft.com/library/jj865674(v=ws.10).aspx)<p>[ディレクトリ サービス チームへの質問:NTLM Blocking and You:Application Analysis and Auditing Methodologies in Windows 7 (NTLM のブロック: Windows 7 でのアプリケーションの分セ手法と監査手法)](https://blogs.technet.com/askds/archive/2009/10/08/ntlm-blocking-and-you-application-analysis-and-auditing-methodologies-in-windows-7.aspx)<p>[Windows 認証ブログ](https://blogs.technet.com/authentication/)<p>[Configuring for NTLM pass-through authentication (NTLM パススルー認証用の MaxConcurrentAPI の構成)](https://support.microsoft.com/help/2688798/how-to-do-performance-tuning-for-ntlm-authentication-by-using-the-maxc)|
 |**開発**|[Microsoft NTLM \( Windows\)](https://msdn.microsoft.com/library/aa378749(VS.85).aspx)<p>[\[MS \- nlmp \] : NT LAN Manager \( NTLM \) 認証プロトコル仕様](https://msdn.microsoft.com/library/cc236621(PROT.10).aspx)<p>[\[MS \- NNTP \] : NT LAN Manager \( NTLM \) 認証: ネットワークニュース転送プロトコルの \( NNTP \) 拡張機能](https://msdn.microsoft.com/library/cc236774(PROT.10).aspx)<p>[\[MS \- ntht \] : NTLM Over HTTP プロトコル仕様](https://msdn.microsoft.com/library/cc237488(PROT.10).aspx)|
 |**トラブルシューティング**|まだ使用できません|
 |**コミュニティ リソース**|[Is this horse dead yet:NTLM Bottlenecks and the RPC runtime (まだ役に立つのか: NTML のボトルネックと RPC ランタイム)](https://blogs.technet.com/b/askds/archive/2011/09/15/is-this-horse-dead-yet-ntlm-bottlenecks-and-the-rpc-runtime.aspx)|

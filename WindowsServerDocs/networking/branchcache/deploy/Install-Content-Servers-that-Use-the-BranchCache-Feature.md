@@ -1,31 +1,29 @@
 ---
-title: BranchCache 機能を使用するコンテンツ サーバーをインストールする
+title: BranchCache 機能を使用するコンテンツ サーバーをインストールします。
 description: このトピックは、BranchCache 展開ガイドの Windows Server 2016、ブランチ オフィスに WAN 帯域幅使用量を最適化するために分散され、ホスト型キャッシュ モードで BranchCache を展開する方法を示しますの一部
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-bc
 ms.topic: get-started-article
 ms.assetid: 0f00ae6e-ae1b-41e3-8c50-65226b5b9c9e
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: dd02dff51d2d1a1a389765f6af7857083529834c
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 53763db23bc82e90d81bc493e8d02670a5e6e451
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80319254"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87952656"
 ---
-# <a name="install-content-servers-that-use-the-branchcache-feature"></a>BranchCache 機能を使用するコンテンツ サーバーをインストールする
+# <a name="install-content-servers-that-use-the-branchcache-feature"></a>BranchCache 機能を使用するコンテンツ サーバーをインストールします。
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016
+>適用先:Windows Server (半期チャネル)、Windows Server 2016
 
-セキュリティで保護されたハイパーテキスト転送プロトコル (HTTPS) Web サーバー、ハイパーテキスト転送プロトコル (HTTP) Web サーバー、およびバックグラウンドインテリジェント転送サービス (BITS) ベースのアプリケーションサーバー (Windows Server Update Services など) を展開する場合 (WSUS) と Microsoft エンドポイント Configuration Manager ブランチ配布サイトシステムサーバーでは、BranchCache 機能をインストールし、BranchCache サービスを開始し、(WSUS サーバーの場合のみ) 追加の構成手順を実行する必要があります。  
-  
-コンテンツ サーバーを展開するには、以下のトピックを参照してください。  
-  
--   [BranchCache 機能をインストールする](Install-the-BranchCache-Feature.md)  
-  
--   [Windows Server Update Services &#40;WSUS&#41;コンテンツサーバーを構成する](configure-wsus-content-servers.md)  
-  
+セキュリティで保護されたハイパーテキスト転送プロトコル (HTTPS) Web サーバー、ハイパーテキスト転送プロトコル (HTTP) Web サーバー、およびバックグラウンドインテリジェント転送サービス (BITS) ベースのアプリケーションサーバー (Windows Server Update Services (WSUS)、Microsoft エンドポイント Configuration Manager ブランチ配布サイトシステムサーバーなど) を展開するには、BranchCache 機能をインストールし、BranchCache サービスを開始する必要があります。
+
+コンテンツ サーバーを展開するには、以下のトピックを参照してください。
+
+-   [BranchCache 機能をインストールする](Install-the-BranchCache-Feature.md)
+
+-   [WSUS&#41; コンテンツサーバー &#40;の Windows Server Update Services を構成する](configure-wsus-content-servers.md)
+
 
 

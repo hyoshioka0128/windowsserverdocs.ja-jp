@@ -1,19 +1,17 @@
 ---
 title: ソリューション拡張機能の接続プロバイダーを作成する
 description: ソリューション拡張機能の開発 Windows 管理センター SDK (Project ホノルル)-接続プロバイダーを作成する
-ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 06/06/2019
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 9c04db3196d1e806e50af9164b3c8bcdfb19b079
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ec11b8a6b9129348ec2405548c21fa9d6ec5deff
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406880"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87952687"
 ---
 # <a name="create-a-connection-provider-for-a-solution-extension"></a>ソリューション拡張機能の接続プロバイダーを作成する
 
@@ -23,7 +21,7 @@ ms.locfileid: "71406880"
 
 既定では、Windows 管理センターには次の接続プロバイダーが付属しています。
 
-* Server
+* サーバー
 * Windows クライアント
 * フェールオーバー クラスター
 * HCI クラスター
@@ -34,15 +32,15 @@ ms.locfileid: "71406880"
 * 接続状態プロバイダーの定義
 * アプリケーション層に接続プロバイダーを実装する
 
-## <a name="add-connection-provider-details-to-manifestjson"></a>接続プロバイダーの詳細を manifest. json に追加する
+## <a name="add-connection-provider-details-to-manifestjson"></a>接続プロバイダーの詳細を manifest.jsに追加する
 
-ここでは、プロジェクトの```manifest.json```ファイルで接続プロバイダーを定義するために必要な知識について説明します。
+ここでは、プロジェクトのファイルで接続プロバイダーを定義するために必要な知識について説明し ```manifest.json``` ます。
 
-### <a name="create-entry-in-manifestjson"></a>Manifest にエントリを作成する
+### <a name="create-entry-in-manifestjson"></a>manifest.jsでエントリを作成する
 
-この```manifest.json```ファイルは、\ src フォルダーにあり、特にプロジェクト内のエントリポイントの定義を含みます。 エントリポイントの種類には、ツール、ソリューション、および接続プロバイダーが含まれます。 接続プロバイダーを定義します。
+この ```manifest.json``` ファイルは、\ src フォルダーにあり、特にプロジェクト内のエントリポイントの定義を含みます。 エントリポイントの種類には、ツール、ソリューション、および接続プロバイダーが含まれます。 接続プロバイダーを定義します。
 
-Manifest の接続プロバイダーエントリのサンプルを次に示します。
+manifest.jsの接続プロバイダーエントリの例を次に示します。
 
 ``` json
     {
@@ -75,11 +73,11 @@ Manifest の接続プロバイダーエントリのサンプルを次に示し�
 
 | プロパティ | 説明 |
 | -------- | ----------- |
-| entryPointType | このプロパティは必須です。 有効な値には、"tool"、"solution"、および "connectionProvider" の3つがあります。 | 
-| NAME | ソリューションのスコープ内で接続プロバイダーを識別します。 この値は、完全な Windows 管理センターインスタンス内で一意である必要があります (ソリューションだけではありません)。 |
+| entryPointType | このプロパティは必須です。 有効な値には、"tool"、"solution"、および "connectionProvider" の3つがあります。 |
+| name | ソリューションのスコープ内で接続プロバイダーを識別します。 この値は、完全な Windows 管理センターインスタンス内で一意である必要があります (ソリューションだけではありません)。 |
 | path | "接続の追加" UI がソリューションによって構成される場合の URL パスを表します。 この値は、app.config ファイルで構成されているルートにマップする必要があります。 接続 rootNavigationBehavior を使用するようにソリューションのエントリポイントが構成されている場合、このルートは、シェルが接続の追加 UI を表示するために使用するモジュールを読み込みます。 詳細については、rootNavigationBehavior に関するセクションを参照してください。 |
 | displayName | ここに入力した値は、ユーザーがソリューションの [接続] ページを読み込んだときに、黒い Windows 管理センターバーの下に、シェルの右側に表示されます。 |
-| アイコン●あいこん○ | ソリューションを表すために [ソリューション] ドロップダウンメニューで使用されるアイコンを表します。 |
+| アイコン | ソリューションを表すために [ソリューション] ドロップダウンメニューで使用されるアイコンを表します。 |
 | description | エントリポイントの簡単な説明を入力します。 |
 | connectionType | プロバイダーが読み込む接続の種類を表します。 ここに入力した値は、ソリューションのエントリポイントでも使用され、ソリューションでそれらの接続を読み込むことができることを指定します。 ここに入力した値はツールのエントリポイントでも使用され、ツールがこの型と互換性があることを示します。 ここに入力した値は、アプリケーション層の実装手順で、[追加] ウィンドウで RPC 呼び出しに送信される接続オブジェクトでも使用されます。 |
 | connectionTypeName | Connections テーブルで、接続プロバイダーを使用する接続を表すために使用されます。 これは、型の複数形の名前であることが想定されています。 |
@@ -90,14 +88,14 @@ Manifest の接続プロバイダーエントリのサンプルを次に示し�
 
 ## <a name="define-connection-status-provider"></a>接続状態プロバイダーの定義
 
-接続状態プロバイダーは、ターゲットがオンラインで使用可能であることを検証するメカニズムであり、接続しているユーザーがターゲットにアクセスするためのアクセス許可を持っていることも確認します。 現在、次の2種類の接続状態プロバイダーがあります。PowerShell と RelativeGatewayUrl。
+接続状態プロバイダーは、ターゲットがオンラインで使用可能であることを検証するメカニズムであり、接続しているユーザーがターゲットにアクセスするためのアクセス許可を持っていることも確認します。 現在、PowerShell と RelativeGatewayUrl の2種類の接続状態プロバイダーがあります。
 
 *   <strong>Powershell 接続状態プロバイダー</strong> -ターゲットがオンラインであり、powershell スクリプトでアクセスできるかどうかを判断します。 結果は、以下に定義されている1つのプロパティ "status" を持つオブジェクトで返される必要があります。
 *   <strong>RelativeGatewayUrl 接続状態プロバイダー</strong> -ターゲットがオンラインであり、rest 呼び出しでアクセスできるかどうかを判断します。 結果は、以下に定義されている1つのプロパティ "status" を持つオブジェクトで返される必要があります。
 
 ### <a name="define-status"></a>状態の定義
 
-接続状態プロバイダーは、次の形式に準拠する1つ```status```のプロパティを持つオブジェクトを返す必要があります。
+接続状態プロバイダーは、 ```status``` 次の形式に準拠する1つのプロパティを持つオブジェクトを返す必要があります。
 
 ``` json
 {
@@ -122,8 +120,8 @@ Manifest の接続プロバイダーエントリのサンプルを次に示し�
   | 0 | オンライン |
   | 1 | 警告 |
   | 2 | 権限がありません |
-  | 3 | Error |
-  | 4 | 死亡 |
+  | 3 | エラー |
+  | 4 | 致命的 |
   | 5 | Unknown |
 
 * <strong>詳細</strong>-ステータスの戻り値の型を説明する追加の詳細。
@@ -132,7 +130,7 @@ Manifest の接続プロバイダーエントリのサンプルを次に示し�
 
 接続状態プロバイダーの PowerShell スクリプトは、ターゲットがオンラインであり、PowerShell スクリプトでアクセスできるかどうかを判断します。 結果は、1つのプロパティ "status" を持つオブジェクトで返される必要があります。 スクリプトの例を次に示します。
 
-PowerShell スクリプトの例:
+Powershell スクリプトの例:
 
 ```PowerShell
 ## Get-My-Status ##
@@ -162,7 +160,7 @@ Get-Status
 
 ### <a name="define-relativegatewayurl-connection-status-provider-method"></a>RelativeGatewayUrl 接続状態プロバイダーメソッドの定義
 
-接続状態プロバイダー ```RelativeGatewayUrl```メソッドは、rest API を呼び出して、ターゲットがオンラインでアクセス可能かどうかを判断します。 結果は、1つのプロパティ "status" を持つオブジェクトで返される必要があります。 RelativeGatewayUrl の manifest の接続プロバイダーエントリの例を次に示します。
+接続状態プロバイダーメソッドは、 ```RelativeGatewayUrl``` REST API を呼び出して、ターゲットがオンラインでアクセス可能かどうかを判断します。 結果は、1つのプロパティ "status" を持つオブジェクトで返される必要があります。 RelativeGatewayUrl の manifest.jsの接続プロバイダーエントリの例を次に示します。
 
 ``` json
     {
@@ -208,9 +206,9 @@ Status return オブジェクトの label および details の値は、プロ�
 
 次に、OnInit を実装する TypeScript クラスを作成して、アプリケーション層に接続プロバイダーを実装します。 クラスには、次の関数があります。
 
-| 関数 | 説明 |
+| 機能 | 説明 |
 | -------- | ----------- |
-| コンストラクター (プライベート appContextService:AppContextService、プライベートルート:ActivatedRoute) |  |
+| コンストラクター (プライベート appContextService: AppContextService、プライベートルート: ActivatedRoute) |  |
 | パブリック ngOnInit () |  |
 | パブリック onSubmit () | 接続の追加試行時にシェルを更新するロジックが含まれています |
 | パブリック onCancel () | 接続の追加試行が取り消されたときにシェルを更新するロジックが含まれています |
@@ -311,7 +309,7 @@ this.appContextService.rpc.updateData(EnvironmentModule.nameOfShell, '##', <RpcU
 
 ## <a name="connection-provider-example"></a>接続プロバイダーの例
 
-接続プロバイダーを実装するための完全な TypeScript クラスを次に示します。 "ConnectionType" 文字列は、manifest の接続プロバイダーで定義されている "connectionType" に一致します。
+接続プロバイダーを実装するための完全な TypeScript クラスを次に示します。 "ConnectionType" 文字列は、の manifest.jsの接続プロバイダーで定義されている "connectionType" と一致します。
 
 ``` ts
 import { Component, OnInit } from '@angular/core';
@@ -331,7 +329,7 @@ export class AddExampleComponent implements OnInit {
   public newConnectionName: string;
   public strings = MsftSme.resourcesStrings<Strings>().SolutionExample;
   private connectionType = 'msft.sme.connection-type.example'; // This needs to match the connectionTypes value used in the manifest.json.
-  
+
   constructor(private appContextService: AppContextService, private route: ActivatedRoute) {
     // TODO:
   }

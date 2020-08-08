@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9f66bfb724a40a21bfaf323a54749f1d99c25e86
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: afaf0c75350cfb4121d0ebc664469f4494afe8c7
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87880344"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992949"
 ---
 # <a name="certutil"></a>certutil
 
@@ -765,7 +765,7 @@ certutil [options] -store [certificatestorename [certID [outputfile]]]
 
 この場合、
 
-- **証明**は、証明書ストアの名前です。 次に例を示します。
+- **証明**は、証明書ストアの名前です。 例:
 
   - `My, CA (default), Root,`
 
@@ -799,7 +799,7 @@ certutil [options] -store [certificatestorename [certID [outputfile]]]
 
 - この `-grouppolicy` オプションは、コンピューターグループポリシーストアにアクセスします。
 
-次に例を示します。
+例:
 
 - `-enterprise NTAuth`
 
@@ -936,7 +936,7 @@ certutil [options] -viewstore [certificatestorename [certID [outputfile]]]
 
 - この `-grouppolicy` オプションは、コンピューターグループポリシーストアにアクセスします。
 
-次に例を示します。
+例:
 
 - `-enterprise NTAuth`
 
@@ -976,7 +976,7 @@ certutil [options] -viewdelstore [certificatestorename [certID [outputfile]]]
 
 - この `-grouppolicy` オプションは、コンピューターグループポリシーストアにアクセスします。
 
-次に例を示します。
+例:
 
 - `-enterprise NTAuth`
 
@@ -1101,7 +1101,7 @@ certutil [options] -setcasites delete
 - オプションを使用すると、 `-f` 指定した**sitename**の検証エラーを上書きしたり、すべての CA sitenames 削除したりできます。
 
 > [!NOTE]
-> Active Directory Domain Services (AD DS) サイト認識用に Ca を構成する方法の詳細については、「 [AD CS および PKI クライアントのサイト認識の AD DS](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831740(v=ws.11))」を参照してください。
+> Active Directory Domain Services (AD DS) サイト認識用に Ca を構成する方法の詳細については、「 [AD CS および PKI クライアントのサイト認識の AD DS](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831740(v=ws.11))」を参照してください。
 
 ### <a name="-enrollmentserverurl"></a>-enrollmentserverURL
 
@@ -1474,7 +1474,7 @@ certutil [options] -sign infilelist | serialnumber | CRL outfilelist [#hashalgor
 
 - **objectIDlist**は、削除するファイルのコンマ区切りの拡張子 ObjectId リストです。
 
-- ** \@ extensionfile**は、更新または削除する拡張機能を含む INF ファイルです。 次に例を示します。
+- ** \@ extensionfile**は、更新または削除する拡張機能を含む INF ファイルです。 例:
 
   ```
   [Extensions]

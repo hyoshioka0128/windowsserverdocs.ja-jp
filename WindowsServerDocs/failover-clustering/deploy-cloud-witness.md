@@ -7,12 +7,12 @@ ms.topic: article
 author: JasonGerend
 ms.date: 01/18/2019
 description: クラウド内の Windows Server フェールオーバークラスターのミラーリング監視サーバーをホストするために Microsoft Azure を使用する方法 (クラウド監視を展開する方法)
-ms.openlocfilehash: 937fb6c2d4aaabfd6399a6bebdce50e351b78fc6
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: fa0fee044b0a5e702cb56816bf9a878f209d6117
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87950196"
+ms.locfileid: "87993018"
 ---
 # <a name="deploy-a-cloud-witness-for-a-failover-cluster"></a>フェールオーバー クラスターのクラウド監視を展開する
 
@@ -111,7 +111,7 @@ Azure Portal でストレージアカウントに移動し、[すべての**設�
 ![クラウド監視エンドポイントリンクのスナップショット ](media/Deploy-a-Cloud-Witness-for-a-Failover-Cluster/CloudWitness_5.png)
  **図 5: クラウド監視エンドポイントの URL リンク**
 
-Azure Storage アカウントの作成と管理の詳細については、「 [Azure Storage アカウントについ](https://azure.microsoft.com/documentation/articles/storage-create-storage-account/)て」を参照してください。
+Azure Storage アカウントの作成と管理の詳細については、「 [Azure Storage アカウントについ](/azure/storage/common/storage-account-create)て」を参照してください。
 
 ## <a name="configure-cloud-witness-as-a-quorum-witness-for-your-cluster"></a>クラスターのクォーラム監視としてクラウド監視を構成する
 クラウド監視の構成は、フェールオーバークラスターマネージャーに組み込まれている既存のクォーラム構成ウィザード内で適切に統合されます。
@@ -146,7 +146,7 @@ Azure Storage アカウントの作成と管理の詳細については、「 [A
 ### <a name="configuring-cloud-witness-using-powershell"></a>PowerShell を使用したクラウド監視の構成
 既存の Set ClusterQuorum PowerShell コマンドには、クラウド監視に対応する新しいパラメーターが追加されています。
 
-クラウド監視を構成するには、次の PowerShell コマンドを使用し [`Set-ClusterQuorum`](https://technet.microsoft.com/library/ee461013.aspx) ます。
+クラウド監視を構成するには、次の PowerShell コマンドを使用し [`Set-ClusterQuorum`](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee461013(v=technet.10)) ます。
 
 ```PowerShell
 Set-ClusterQuorum -CloudWitness -AccountName <StorageAccountName> -AccessKey <StorageAccountAccessKey>

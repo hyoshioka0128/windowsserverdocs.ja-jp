@@ -7,12 +7,12 @@ ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
 ms.topic: article
-ms.openlocfilehash: dd6270f1aadea058a1b0fb6ffb3f7dad59a54811
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 1a7ea3b902793f281156930a8e666c1d32d05cbe
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895711"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87993119"
 ---
 # <a name="server-performance-advisor-users-guide"></a>サーバー パフォーマンス アドバイザー ユーザー ガイド
 
@@ -155,7 +155,7 @@ SPA コンソールは、次のオペレーティング システムで実行で
 ## <a name="getting-started-with-spa"></a>SPA の概要
 
 
-### <a name="requirements"></a>必要条件
+### <a name="requirements"></a>要件
 
 SPA コンソールは、Windows 8.1、Windows 8、Windows 7、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、および Windows Server 2008 にインストールできます。 以前のバージョンの Windows Server オペレーティング システムで SPA を実行することはできません。 X86 または x64、SPA が実行されますが、IA64 または ARM アーキテクチャをサポートしていません。
 
@@ -591,7 +591,7 @@ Windows PowerShell コマンドレットを実行する前に、コンソール 
 | Get SpaServer | **-Sqlinstancename**SQL Server インスタンスの名前。<br>**-Sqldatabasename**SPA プロジェクトデータベースの名前。 | データベース サーバーの一覧を取得します。 これらのプロパティを含むオブジェクトの一覧を返します。 名前、状態、ファイル共有、および示されています。 |
 | Get SpaAdvisorPacks | **-Sqlinstancename**SQL Server インスタンスの名前<br>**-Sqldatabasename**SPA プロジェクトデータベースの名前 | データベース内には、advisor パックのリストを取得します。 これらのプロパティを含むオブジェクトの一覧を返します。 名前、表示名、作成者、およびバージョン。 |
 
-Windows PowerShell では、自動化のシナリオを有効にする暗号化されたファイルを資格情報を通過する機能を提供します。 暗号化されたファイルを使用して資格情報をコマンドレットに渡す方法の詳細については、「[資格情報を受け入れる Windows PowerShell スクリプトを作成](https://technet.microsoft.com/magazine/ff714574.aspx)する」を参照してください。
+Windows PowerShell では、自動化のシナリオを有効にする暗号化されたファイルを資格情報を通過する機能を提供します。 暗号化されたファイルを使用して資格情報をコマンドレットに渡す方法の詳細については、「[資格情報を受け入れる Windows PowerShell スクリプトを作成](/previous-versions/technet-magazine/ff714574(v=msdn.10))する」を参照してください。
 
 ### <a name="automating-spa-report-collection-by-using-windows-powershell"></a>Windows PowerShell を使用して SPA レポートのコレクションを自動化します。
 
@@ -774,7 +774,7 @@ SPA で使用される用語の一部を次に示します。
 
 * **データの分析セッション** 特定のターゲット サーバーのパフォーマンス分析します。 データの分析セッションでは、複数の advisor パックを含めることができます。 これらの advisor パックからデータ コレクター セットは、1 つのデータ コレクター セットにマージされます。 1 つのデータの分析セッションのすべてのパフォーマンス ログは、同じ期間中に収集されます。 同じデータの分析セッションで実行されている advisor パックによって生成されるレポートの分析と、全体的なパフォーマンスの状況を理解し、パフォーマンスの問題の根本原因を特定のユーザーが役立つ場合があります。
 
-* **Windows イベント トレーシング** Windows で提供されている高パフォーマンス、低オーバーヘッドでスケーラブルなトレース システムです。 プロファイリングとデバッグのさまざまなシナリオをトラブルシューティングするために使用できる機能を提供します。 SPA は、データ ソースとして、パフォーマンス レポートが生成される ETW イベントを使用します。 ETW の詳細については、次を参照してください。 [デバッグの向上およびパフォーマンス調整 ETW を](https://msdn.microsoft.com/magazine/cc163437.aspx)します。
+* **Windows イベント トレーシング** Windows で提供されている高パフォーマンス、低オーバーヘッドでスケーラブルなトレース システムです。 プロファイリングとデバッグのさまざまなシナリオをトラブルシューティングするために使用できる機能を提供します。 SPA は、データ ソースとして、パフォーマンス レポートが生成される ETW イベントを使用します。 ETW の詳細については、次を参照してください。 [デバッグの向上およびパフォーマンス調整 ETW を](/archive/msdn-magazine/2007/april/event-tracing-improve-debugging-and-performance-tuning-with-etw)します。
 
 * **Windows Management Instrumentation (WMI)** 、インフラストラクチャの管理データと Windows での操作です。 WMI スクリプトまたはリモート コンピューター上の管理作業を自動化するアプリケーションを記述することができます。 WMI では、管理データ、オペレーティング システムの他の部分との製品にも利用できます。 SPA は WMI クラス情報とデータ ポイントをパフォーマンス レポートの生成のソースとして使用します。
 

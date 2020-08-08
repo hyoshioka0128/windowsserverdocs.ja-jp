@@ -1,19 +1,17 @@
 ---
 title: Windows Server でのヘルスサービス
-ms.prod: windows-server
 manager: eldenc
 ms.author: cosdar
-ms.technology: storage-health-service
 ms.topic: article
 ms.assetid: 5bc71e71-920e-454f-8195-afebd2a23725
 author: cosmosdarwin
 ms.date: 02/09/2018
-ms.openlocfilehash: 1b607869245ff46bd01824ebe4392e283be50b0d
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 69bf8d66fdd3e7fac4066791d0521173484a894f
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473079"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953418"
 ---
 # <a name="health-service-in-windows-server"></a>Windows Server でのヘルスサービス
 
@@ -33,7 +31,7 @@ ms.locfileid: "85473079"
 
 「[ヘルスサービスのエラー](health-service-faults.md)」を参照してください。
 
-## <a name="actions"></a>Actions
+## <a name="actions"></a>アクション
 
 「[ヘルスサービスアクション](health-service-actions.md)」を参照してください。
 
@@ -90,7 +88,7 @@ ms.locfileid: "85473079"
 
 ヘルスサービスには、記憶域スペースダイレクトによって使用されるコンポーネントを、管理者またはソリューションベンダーから提供されるサポートされているコンポーネントドキュメントに限定するための実施メカニズムが用意されています。 このメカニズムにより、サポートされていないハードウェアが誤って使用されるのを防ぐことができるため、保証やサポート契約の順守に役立ちます。 現在、この機能は、Ssd、Hdd、NVMe ドライブを含む物理ディスクデバイスに限定されています。 サポートされているコンポーネントドキュメントでは、モデル、製造元 (オプション)、およびファームウェアのバージョン (オプション) を制限できます。
 
-### <a name="usage"></a>使用法
+### <a name="usage"></a>使用方法
 
 サポートされているコンポーネントドキュメントでは、XML による構文を使用します。 無料の[Visual Studio Code](https://code.visualstudio.com/)やメモ帳などの任意のテキストエディターを使用して、保存して再利用できる XML ドキュメントを作成することをお勧めします。
 
@@ -166,11 +164,11 @@ Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name "System.Storage.S
 Get-PhysicalDisk | Select Model, Manufacturer, FirmwareVersion
 ```
 
-## <a name="settings"></a>設定
+## <a name="settings"></a>Settings
 
 [ヘルスサービス設定](health-service-settings.md)を参照してください。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [レポートのヘルスサービス](health-service-reports.md)
 - [ヘルスサービスエラー](health-service-faults.md)
