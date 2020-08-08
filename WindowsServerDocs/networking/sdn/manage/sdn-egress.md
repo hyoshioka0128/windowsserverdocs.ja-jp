@@ -2,22 +2,20 @@
 title: 仮想ネットワークの使用状況測定の送信
 description: クラウドネットワーク収益化の基本的な側面は、ネットワーク帯域幅の送信です。 たとえば、Microsoft Azure ビジネスモデルでの送信データ転送。 送信データは、特定の請求サイクルで、インターネット経由で Azure データセンターから移動されるデータの合計量に基づいて課金されます。
 manager: grcusanz
-ms.prod: windows-server
-ms.technology: networking-hv-switch
 ms.topic: get-started-article
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 10/02/2018
-ms.openlocfilehash: a5d530d5cd1b42206bd6881ee902496713573793
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: be28e5b3b9939907398b0c245fc49fcfd6f5e49a
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80854435"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954018"
 ---
 # <a name="egress-metering-in-a-virtual-network"></a>仮想ネットワークの使用状況測定の送信
 
->適用対象: Windows Server 2019
+>適用対象:Windows Server 2019
 
 
 クラウドネットワーク収益化の基本的な側面は、ネットワーク帯域幅の使用量によって課金できるようになっています。 送信データは、特定の請求サイクルにおいて、インターネット経由でデータセンターから移動されるデータの総量に基づいて課金されます。

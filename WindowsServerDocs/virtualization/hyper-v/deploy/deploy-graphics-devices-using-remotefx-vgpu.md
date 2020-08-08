@@ -1,26 +1,25 @@
 ---
 title: RemoteFX vGPU を使ったグラフィックス デバイスの展開
 description: Windows Server で RemoteFX vGPU をデプロイして構成する方法について説明します。
-ms.prod: windows-server
 ms.reviewer: rickman
 author: rick-man
 ms.author: rickman
 manager: stevelee
 ms.topic: article
 ms.date: 07/14/2020
-ms.openlocfilehash: ab16dcdc8ce29f2440207ea5bbc7c421f171ed4a
-ms.sourcegitcommit: f81aa22739d818382d314561dece59a9341dfb6f
+ms.openlocfilehash: 9a060f1650d20a029d64739e1fc7f9be44d8355c
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2020
-ms.locfileid: "86390089"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953438"
 ---
 # <a name="deploy-graphics-devices-using-remotefx-vgpu"></a>RemoteFX vGPU を使ったグラフィックス デバイスの展開
 
 > 適用対象: Windows Server 2016、Microsoft Hyper-V Server 2016
 
 > [!NOTE]
-> セキュリティ上の問題のため、2020年7月14日以降のセキュリティ更新プログラムでは、RemoteFX vGPU は既定で無効になっています。 詳細については、 [KB 4570006](https://support.microsoft.com/help/4570006)を参照してください。
+> セキュリティ上の問題のため、2020 年 7 月 14 日以降のセキュリティ更新プログラムでは、すべてのバージョンの Windows において RemoteFX vGPU は既定で無効になっています。 詳しくは、[KB 4570006](https://support.microsoft.com/help/4570006) をご覧ください。
 
 RemoteFX の vGPU 機能を使用すると、複数の仮想マシンが物理 GPU を共有できるようになります。 レンダリングとコンピューティングリソースは仮想マシン間で動的に共有されるため、専用 GPU リソースが必要ではない高バーストワークロードに適した RemoteFX vGPU になります。 たとえば、VDI サービスでは、RemoteFX vGPU を使用してアプリのレンダリングコストを GPU にオフロードできます。これにより、CPU の負荷が減少し、サービスのスケーラビリティが向上します。
 
@@ -38,7 +37,7 @@ RemoteFX の vGPU 機能を使用すると、複数の仮想マシンが物理 G
 
 ゲスト VM に関するその他の考慮事項:
 
-- OpenGL および OpenCL 機能は、Windows 10 または Windows Server 2016 を実行しているゲストでのみ使用できます。  
+- OpenGL および OpenCL 機能は、Windows 10 または Windows Server 2016 を実行しているゲストでのみ使用できます。
 - DirectX 11.0 は、Windows 8 以降を実行しているゲストでのみ使用できます。
 
 ## <a name="enable-remotefx-vgpu"></a>RemoteFX vGPU を有効にする

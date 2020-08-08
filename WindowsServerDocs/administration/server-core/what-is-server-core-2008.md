@@ -5,18 +5,18 @@ ms.author: helohr
 ms.date: 11/01/2017
 ms.topic: article
 author: heidilohr
-ms.openlocfilehash: 5cadad3dd8fafe28ba127610afd3dfa219f92b73
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: fb3e0b60787cb12c3401a14a54aebf4809c61b45
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895843"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87993228"
 ---
 # <a name="what-is-server-core-2008"></a>Server Core 2008 とは
 >適用対象: Windows Server 2008
 
 >[!NOTE]
->この情報は、Windows Server 2008 に適用されます。 Windows Server の Server Core の詳細について[は、「Windows server の Server Core インストールとは](https://docs.microsoft.com/windows-server/administration/server-core/what-is-server-core)」を参照してください。
+>この情報は、Windows Server 2008 に適用されます。 Windows Server の Server Core の詳細について[は、「Windows server の Server Core インストールとは](./what-is-server-core.md)」を参照してください。
 
 Server Core オプションは、Windows Server 2008 の Standard、Enterprise、または Datacenter edition を展開するときに使用できる、新しい最小インストールオプションです。 Server Core では、この章で後ほど説明するように、特定のサーバーの役割のインストールのみをサポートする Windows Server 2008 の最小限のインストールが提供されます。 これと比較して、Windows Server 2008 のフルインストールオプションでは、利用可能なすべてのサーバー役割と、Microsoft Exchange Server や SAP などの他の Microsoft またはサードパーティ製サーバーアプリケーションのインストールをサポートしています。
 
