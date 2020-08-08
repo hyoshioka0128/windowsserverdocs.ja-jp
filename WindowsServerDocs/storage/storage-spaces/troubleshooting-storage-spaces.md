@@ -1,19 +1,17 @@
 ---
 title: 記憶域スペースダイレクトのトラブルシューティング
 description: 記憶域スペースダイレクトのデプロイのトラブルシューティング方法について説明します。
-ms.prod: windows-server
 ms.author: ''
-ms.technology: storage-spaces
 ms.topic: article
 author: kaushika-msft
 ms.date: 10/24/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ca3a1ec8462f96c1f6a018d1148b7824cdf8cc20
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: 719a44a6c442f64b83a804c9ca20eb6ceaa791e9
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769470"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954609"
 ---
 # <a name="troubleshoot-storage-spaces-direct"></a>記憶域スペースダイレクトのトラブルシューティング
 
@@ -332,7 +330,7 @@ IO パフォーマンスの低下が見られる場合は、記憶域スペー�
     2. "Ipmo ストレージ" の実行
     3. "$d" を実行します。 使用法は自動選択であり、Journal ではなく、次のような出力が表示されることに注意してください。
 
-   |FriendlyName|  SerialNumber| MediaType| CanPool| OperationalStatus| HealthStatus| 使用法| サイズ|
+   |FriendlyName|  SerialNumber| MediaType| CanPool| OperationalStatus| HealthStatus| 使用方法| サイズ|
    |-----------|------------|---------| -------| -----------------| ------------| -----| ----|
    |NVMe INTEL SSDPE7KX02| PHLF733000372P0LGN| SSD| False|   [OK]|                Healthy|      1.82 TB を自動選択|
    |NVMe INTEL SSDPE7KX02 |PHLF7504008J2P0LGN| SSD|  False|    [OK]|                Healthy| 自動選択| 1.82 TB|

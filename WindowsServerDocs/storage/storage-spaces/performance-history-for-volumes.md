@@ -2,17 +2,16 @@
 title: ボリュームのパフォーマンス履歴
 ms.author: cosdar
 manager: eldenc
-ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 02/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b12c4e2c23601d6948d4bd2c432cb2c63c605ae
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 367866739f18e426ad7c61dba3dac60b12692bbe
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955164"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954649"
 ---
 # <a name="performance-history-for-volumes"></a>ボリュームのパフォーマンス履歴
 
@@ -94,6 +93,6 @@ ms.locfileid: "86955164"
 Get-Volume -FriendlyName <FriendlyName> | Get-ClusterPerf
 ```
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [記憶域スペース ダイレクトのパフォーマンス履歴](performance-history.md)

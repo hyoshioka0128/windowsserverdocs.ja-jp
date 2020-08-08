@@ -1,37 +1,35 @@
 ---
 title: 収束ネットワークインターフェイスカード (NIC) の構成ガイダンス
 description: 収束ネットワークインターフェイスカード (NIC) を使用すると、ホストパーティションの仮想 NIC (vNIC) を介して RDMA を公開できます。これにより、ホストパーティションサービスは、Hyper-v ゲストが TCP/IP トラフィックに使用しているのと同じ Nic でリモートダイレクトメモリアクセス (RDMA) にアクセスできるようになります。
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: d7642338-9b33-4dce-8100-8b2c38d7127a
 manager: dougkim
 ms.author: lizross
 author: eross-msft
 ms.date: 09/13/2018
-ms.openlocfilehash: 8824a6c6189a447f97f285052af8e5c13a66e766
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 2b077b911d3721907e70b198c62970aafe25e58d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80312816"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87944756"
 ---
-# <a name="converged-network-interface-card-nic-configuration-guidance"></a>収束ネットワークインターフェイスカード \(NIC\) 構成ガイダンス
+# <a name="converged-network-interface-card-nic-configuration-guidance"></a>収束ネットワークインターフェイスカードの \( NIC \) 構成ガイダンス
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016
+>適用先:Windows Server (半期チャネル)、Windows Server 2016
 
-収束ネットワークインターフェイスカード \(NIC\) を使用すると、Hyper-v ゲストが TCP/IP トラフィックに使用しているのと同じ Nic でホストパーティションサービスがリモートダイレクトメモリアクセス\) RDMA \(にアクセスできるように、ホスト\-パーティション仮想 NIC \(vNIC\) を介して RDMA を公開できます。
+収束ネットワークインターフェイスカードの NIC を使用すると、ホストパーティションの \( \) 仮想 NIC vNIC を介して rdma を公開することができ \- \( \) ます。これにより、ホストパーティションサービスは、 \( \) hyper-v ゲストが tcp/ip トラフィックに使用しているのと同じ nic でリモートダイレクトメモリアクセス RDMA にアクセスできるようになります。
 
-Hyper-v 仮想スイッチにバインドされている Nic で帯域幅が使用可能であっても、RDMA を使用する必要がある管理 \(ホストパーティション\) サービスは、収束 NIC 機能より前に専用の RDMA\-対応 Nic を使用する必要がありました。
+\( \) \- Hyper-v 仮想スイッチにバインドされている nic で帯域幅が使用できる場合でも、rdma を使用する必要がある管理ホストパーティションサービスは、収束 nic 機能の前に、専用の rdma 対応 nic を使用する必要がありました。
 
-収束 NIC を使用すると、RDMA トラフィックとゲストトラフィック\) の管理ユーザー \(2 つのワークロードが同じ物理 Nic を共有できるため、サーバーにインストールする Nic の数を減らすことができます。
+収束 NIC を使用すると、 \( RDMA トラフィックとゲストトラフィックの2つのワークロード管理ユーザーは \) 同じ物理 nic を共有できます。これにより、サーバーにインストールできる nic の数を減らすことができます。
 
-Windows Server 2016 の Hyper-v ホストと Hyper-v 仮想スイッチを使用して収束 NIC を展開すると、Hyper-v ホストの vNICs は、イーサネット\-ベースの RDMA テクノロジを使用して rdma を使用してプロセスをホストする RDMA サービスを公開します。
+Windows Server 2016 の Hyper-v ホストと Hyper-v 仮想スイッチを使用して収束 NIC を展開すると、Hyper-v ホストの vNICs は、イーサネットベースの RDMA テクノロジを使用して rdma を使用してプロセスをホストする RDMA サービスを公開し \- ます。
 
 >[!NOTE]
 >収束 NIC テクノロジを使用するには、サーバーの認定されたネットワークアダプターで RDMA がサポートされている必要があります。
 
-このガイドでは、サーバーに単一のネットワークアダプターがインストールされている展開用の2つの手順について説明します。これは、収束 NIC の基本的な展開です。また、サーバーに2つ以上のネットワークアダプターがインストールされている場合には、RDMA\-対応のネットワークアダプターの\) チーム \(設定します。
+このガイドでは、サーバーに単一のネットワークアダプターがインストールされている展開用の2つの手順について説明します。これは、収束 NIC の基本的な展開です。また、サーバーに2つ以上のネットワークアダプターがインストールされている場合もあります。これは、 \( \) RDMA 対応のネットワークアダプターのスイッチ埋め込みチーミングセットチームでの収束 NIC の展開です \- 。
 
 
 ## <a name="prerequisites"></a>前提条件
@@ -39,7 +37,7 @@ Windows Server 2016 の Hyper-v ホストと Hyper-v 仮想スイッチを使用
 収束 NIC の基本およびデータセンターの展開の前提条件を次に示します。
 
 >[!NOTE]
->提供される例については、Mellanox/3 Pro 40 Gbps イーサネットアダプターを使用しますが、この機能をサポートする Windows Server 認定 RDMA\-対応ネットワークアダプターを使用することもできます。 互換性のあるネットワークアダプターの詳細については、Windows Server Catalog のトピック「 [LAN カード](https://www.windowsservercatalog.com/results.aspx?&bCatID=1468&cpID=0&avc=85&ava=0&avt=0&avq=46&OR=1)」を参照してください。
+>提供される例については、Mellanox/3 Pro 40 Gbps イーサネットアダプターを使用しますが、 \- この機能をサポートする Windows Server 認定 RDMA 対応ネットワークアダプターを使用することもできます。 互換性のあるネットワークアダプターの詳細については、Windows Server Catalog のトピック「 [LAN カード](https://www.windowsservercatalog.com/results.aspx?&bCatID=1468&cpID=0&avc=85&ava=0&avt=0&avq=46&OR=1)」を参照してください。
 
 ### <a name="basic-converged-nic-prerequisites"></a>基本的な収束 NIC の前提条件
 
@@ -56,7 +54,7 @@ Windows Server 2016 の Hyper-v ホストと Hyper-v 仮想スイッチを使用
 - Windows Server 2016 Datacenter edition または Windows Server 2016 Standard edition を実行する2台のサーバー。
 - 各サーバーにインストールされている、RDMA 対応の2つのネットワークアダプター。
 - 各サーバーにインストールされている hyper-v サーバーロール。
-- Hyper-v および Windows Server 2016 のソフトウェア定義ネットワーク (SDN) スタックを含む環境で使用される代替の NIC チーミングソリューション \(SET\)については、スイッチ埋め込みチーミングに関する知識が必要です。 セットは、HYPER-V 仮想スイッチにいくつかの NIC チーミング機能を統合します。 詳細については、「[リモートダイレクトメモリアクセス (RDMA) とスイッチ埋め込みチーミング (SET)](../../../virtualization/hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md)」を参照してください。
+- \( \) Hyper-v と、Windows Server 2016 のソフトウェア定義ネットワーク (SDN) スタックを含む環境で使用される代替の NIC チーミングソリューションである、スイッチ埋め込みチーミングセットについて理解している必要があります。 セットは、HYPER-V 仮想スイッチにいくつかの NIC チーミング機能を統合します。 詳細については、「[リモートダイレクトメモリアクセス (RDMA) とスイッチ埋め込みチーミング (SET)](../../../virtualization/hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md)」を参照してください。
 
 ## <a name="related-topics"></a>関連トピック
 - [単一のネットワークアダプターを使用した収束 NIC 構成](cnic-single.md)

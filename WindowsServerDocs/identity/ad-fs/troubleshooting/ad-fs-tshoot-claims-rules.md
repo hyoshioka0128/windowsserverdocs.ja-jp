@@ -6,20 +6,18 @@ ms.author: billmath
 manager: mtillman
 ms.date: 03/01/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 94e841282963e2b2b6ada552b54c7732d965b6b6
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 349b673b7c062fd8f14d9a9fd857e1d7c859d3de
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955974"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954198"
 ---
 # <a name="ad-fs-troubleshooting---claims-rules-syntax"></a>AD FS のトラブルシューティング-要求規則の構文
 クレームは、1つのサブジェクトがそれ自体または別のサブジェクトに対して行うステートメントです。  要求は証明書利用者によって発行され、1つまたは複数の値が与えられ、AD FS サーバーによって発行されたセキュリティトークンにパッケージ化されます。  この記事では、要求の構文と作成について説明します。  要求の発行の詳細については[、「AD FS のトラブルシューティング-要求の発行](ad-fs-tshoot-claims-issuance.md)」を参照してください。
 
->[!NOTE]  
->[ADFS ヘルプ](https://adfshelp.microsoft.com)サイトの[ClaimsXRay](https://adfshelp.microsoft.com/ClaimsXray/TokenRequest)を使用して、要求の問題のトラブルシューティングを行うことができます。   
+>[!NOTE]
+>[ADFS ヘルプ](https://adfshelp.microsoft.com)サイトの[ClaimsXRay](https://adfshelp.microsoft.com/ClaimsXray/TokenRequest)を使用して、要求の問題のトラブルシューティングを行うことができます。
 
 ## <a name="how-claim-rules-are-processed"></a>要求規則の処理方法
 要求規則は、要求[エンジン](../../ad-fs/technical-reference/The-Role-of-the-Claims-Engine.md)を使用して要求[パイプライン](../../ad-fs/technical-reference/The-Role-of-the-Claims-Pipeline.md)を通じて処理されます。 要求エンジンは、ユーザーによって提示される入力方向の要求のセットを調査し、各規則のロジックに応じて要求の出力セットを生成する、フェデレーション サービスの論理コンポーネントです。
@@ -36,7 +34,7 @@ ms.locfileid: "86955974"
 
 例:
 
-```c:[type == "Name", value == "domain user"] => issue(type = "Role", value = "employee");``` 
+```c:[type == "Name", value == "domain user"] => issue(type = "Role", value = "employee");```
 
 次の要求には、次のものがあります。
 - 条件- `c:[type == "Name", value == "domain user"] ` -windows アカウント名がドメインユーザーであるかどうかの入力要求を評価します。

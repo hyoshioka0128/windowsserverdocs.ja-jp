@@ -1,20 +1,18 @@
 ---
 title: ソフトウェアとハードウェア (SH) の統合された機能とテクノロジ
 description: これらの機能には、ソフトウェアとハードウェアの両方のコンポーネントがあります。 このソフトウェアは、この機能が動作するために必要なハードウェア機能に深くされています。 これらの例には、VMMQ、VMQ、送信側 IPv4 チェックサムオフロード、RSS などがあります。
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: 0cafb1cc-5798-42f5-89b6-3ffe7ac024ba
 manager: dougkim
 ms.author: lizross
 author: eross-msft
 ms.date: 09/12/2018
-ms.openlocfilehash: 93913acbe598c4fd1b8ee5556dbf70013f3d714a
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 92ddf9c5d90a963115e4009afea996b8aecf052d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80316943"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87966549"
 ---
 # <a name="software-and-hardware-sh-integrated-features-and-technologies"></a>ソフトウェアとハードウェア (SH) の統合された機能とテクノロジ
 
@@ -23,7 +21,7 @@ ms.locfileid: "80316943"
 >[!TIP]
 >インストールされている NIC でサポートされている場合は、SH およびホー機能を使用できます。 以下の機能の説明では、NIC が機能をサポートしているかどうかを確認する方法について説明します。
 
-## <a name="converged-nic"></a>収束済み NIC 
+## <a name="converged-nic"></a>収束済み NIC
 
 収束 NIC は、Hyper-v ホストの仮想 Nic が RDMA サービスをホストプロセスに公開できるようにするテクノロジです。 Windows Server 2016 では、RDMA 用に個別の Nic が必要なくなりました。 収束 NIC 機能を使用すると、ホストパーティション (vNICs) 内の仮想 Nic は、rdma をホストパーティションに公開し、RDMA トラフィックと VM 間の Nic の帯域幅とその他の TCP/UDP トラフィックを公平かつ管理しやすい方法で共有できます。
 
@@ -35,13 +33,13 @@ ms.locfileid: "80316943"
 
 1.  DCB のホストを設定するようにしてください。
 
-2.  NIC で RDMA が有効になっていること、またはセットチームの場合は、Nic が Hyper-v スイッチにバインドされていることを確認します。 
+2.  NIC で RDMA が有効になっていること、またはセットチームの場合は、Nic が Hyper-v スイッチにバインドされていることを確認します。
 
-3.  ホストで RDMA 用に指定された vNICs で RDMA が有効になっていることを確認します。 
+3.  ホストで RDMA 用に指定された vNICs で RDMA が有効になっていることを確認します。
 
 RDMA と SET の詳細については、「[リモートダイレクトメモリアクセス (rdma)」および「スイッチ埋め込みチーミング (set)](https://docs.microsoft.com/windows-server/virtualization/hyper-v-virtual-switch/rdma-and-switch-embedded-teaming)」を参照してください。
 
-## <a name="data-center-bridging-dcb"></a>データ センター ブリッジング (DCB) 
+## <a name="data-center-bridging-dcb"></a>Data Center Bridging (DCB)
 
 DCB は、データセンターでの集約型ファブリックを実現する米国国立の電気およびエレクトロニクスエンジニア (IEEE) 標準のスイートです。 DCB は、隣接するスイッチと連携して、ホストでハードウェアキューベースの帯域幅管理を提供します。 ストレージ、データネットワーク、クラスターのプロセス間通信 (IPC)、および管理のすべてのトラフィックは、同じイーサネットネットワークインフラストラクチャを共有します。 Windows Server 2016 では、DCB は、個々の NIC と、Hyper-v スイッチにバインドされている Nic に適用できます。
 
@@ -59,32 +57,32 @@ DCB の場合、Windows Server は、IEEE 802.1 Qbb で標準化された優先�
 
 ---
 
-## <a name="ipsec-task-offload-ipsecto"></a>IPsec タスク オフロード (IPsecTO) 
+## <a name="ipsec-task-offload-ipsecto"></a>IPsec タスク オフロード (IPsecTO)
 
 IPsec タスクオフロードは、オペレーティングシステムが NIC のプロセッサを IPsec 暗号化の処理に使用できるようにするための NIC 機能です。
 
->[!IMPORTANT] 
+>[!IMPORTANT]
 >IPsec タスクオフロードは、ほとんどのネットワークアダプターではサポートされていない従来のテクノロジであり、存在する場合は既定で無効になっています。
 
-## <a name="private-virtual-local-area-network-pvlan"></a>プライベート仮想ローカルエリアネットワーク (PVLAN)。 
+## <a name="private-virtual-local-area-network-pvlan"></a>プライベート仮想ローカルエリアネットワーク (PVLAN)。
 
 PVLANs では、同じ仮想化サーバー上の仮想マシン間でのみ通信を行うことができます。 プライベート仮想ネットワークは、物理ネットワークアダプターにバインドされていません。 プライベート仮想ネットワークは、仮想化サーバー上のすべての外部ネットワークトラフィックと、管理オペレーティングシステムと外部ネットワーク間のネットワークトラフィックから分離されます。 この種類のネットワークは、隔離されたテスト ドメインなど、隔離されたネットワーク環境を構築する必要がある場合に役立ちます。 Hyper-v および SDN スタックは、PVLAN 分離ポートモードのみをサポートしています。
 
 PVLAN 分離の詳細については、「 [System Center: Virtual Machine Manager Engineering のブログ](https://blogs.technet.microsoft.com/scvmm/2013/06/04/logical-networks-part-iv-pvlan-isolation/)」を参照してください。
 
-## <a name="remote-direct-memory-access-rdma"></a>リモート ダイレクト メモリ アクセス (RDMA) 
+## <a name="remote-direct-memory-access-rdma"></a>リモート ダイレクト メモリ アクセス (RDMA)
 
 RDMA は、CPU 使用率を最小限に抑える高スループットで低待機時間の通信を実現するネットワークテクノロジです。 RDMA は、ネットワークアダプターがアプリケーションメモリとの間でデータを直接転送できるようにすることで、ゼロコピーのネットワークをサポートします。 RDMA 対応とは、NIC (物理または仮想) が rdma クライアントに RDMA を公開できることを意味します。 一方、RDMA 対応の NIC では、rdma インターフェイスがスタック上に公開されています。
 
 RDMA の詳細については、「[リモートダイレクトメモリアクセス (rdma) とスイッチ埋め込みチーミング (SET)](https://docs.microsoft.com/windows-server/virtualization/hyper-v-virtual-switch/rdma-and-switch-embedded-teaming)」を参照してください。
 
-## <a name="receive-side-scaling-rss"></a>Receive Side Scaling (RSS) 
+## <a name="receive-side-scaling-rss"></a>Receive Side Scaling (RSS)
 
-RSS は、さまざまなストリームのセットを分離、処理のために異なるプロセッサに配信する NIC 機能です。 RSS は、ネットワーク処理を並列化し、ホストが非常に高いデータ速度に拡張できるようにします。 
+RSS は、さまざまなストリームのセットを分離、処理のために異なるプロセッサに配信する NIC 機能です。 RSS は、ネットワーク処理を並列化し、ホストが非常に高いデータ速度に拡張できるようにします。
 
 詳細については、「 [Receive Side Scaling (RSS)](https://docs.microsoft.com/windows-hardware/drivers/network/introduction-to-receive-side-scaling)」を参照してください。
 
-## <a name="single-root-input-output-virtualization-sr-iov"></a>シングルルート入力-出力仮想化 (SR-IOV) 
+## <a name="single-root-input-output-virtualization-sr-iov"></a>シングルルート入力-出力仮想化 (SR-IOV)
 
 Sr-iov を使用すると、VM トラフィックを Hyper-v ホストを経由せずに NIC から VM に直接移動できます。 SR-IOV は VM のパフォーマンスを大幅に向上させるものですが、ホストがそのパイプを管理する機能がありません。 SR-IOV は、ワークロードが正常に動作し、信頼されており、ホスト内の唯一の VM である場合にのみ使用してください。
 
@@ -101,15 +99,15 @@ Tcp Chimney オフロード (TCP エンジンオフロード (TOE) とも呼ば�
 >[!IMPORTANT]
 >TCP Chimney オフロードは、非推奨のテクノロジです。 TCP Chimney オフロードを使用しないことをお勧めします。これは、Microsoft が将来のサポートを停止する可能性があるためです。
 
-## <a name="virtual-local-area-network-vlan"></a>仮想ローカルエリアネットワーク (VLAN) 
+## <a name="virtual-local-area-network-vlan"></a>仮想ローカルエリアネットワーク (VLAN)
 
 VLAN は、イーサネットフレームヘッダーの拡張機能であり、LAN を複数の Vlan に分割し、それぞれが独自のアドレス空間を使用するようにします。 Windows Server 2016 では、Vlan は Hyper-v スイッチのポートに設定されるか、NIC チーミングチームのチームインターフェイスを設定することによって設定されます。 詳細については、「 [NIC チーミングと仮想ローカルエリアネットワーク (vlan)](https://docs.microsoft.com/windows-server/networking/technologies/nic-teaming/nict-and-vlans)」を参照してください。
 
-## <a name="virtual-machine-queue-vmq"></a>仮想マシン キュー (VMQ) 
+## <a name="virtual-machine-queue-vmq"></a>仮想マシン キュー (VMQ)
 
 VMQs は、各 VM のキューを割り当てる NIC 機能です。 Hyper-v が有効になっている場合また、VMQ を有効にする必要があります。 Windows Server 2016 では、VMQs は、同じ機能を提供するために、Vports に割り当てられた単一のキューで NIC スイッチ vPorts を使用します。 詳細については、「[仮想 Receive Side Scaling (vRSS)](https://docs.microsoft.com/windows-server/networking/technologies/vrss/vrss-top) 」および「 [NIC チーミング](https://docs.microsoft.com/windows-server/networking/technologies/nic-teaming/nic-teaming)」を参照してください。
 
-## <a name="virtual-machine-multi-queue-vmmq"></a>バーチャルマシンのマルチキュー (VMMQ) 
+## <a name="virtual-machine-multi-queue-vmmq"></a>バーチャルマシンのマルチキュー (VMMQ)
 
 VMMQ は、VM のトラフィックを複数のキューに分散し、それぞれが異なる物理プロセッサによって処理されるようにするための NIC 機能です。 このトラフィックは、vRSS の場合と同じように、VM 内の複数の LPs に渡されます。これにより、VM に対するネットワーク帯域幅が大幅に配信されます。
 

@@ -6,14 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: dc6608713ddd60d20b0b717d4133d93d23fc7b25
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b9f764b64a50b0c69116cf19e253097da464cdbb
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80816255"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954298"
 ---
 # <a name="manage-risk-with-additional-multi-factor-authentication-for-sensitive-applications"></a>追加の多要素認証による個人情報アプリケーションのリスク管理
 
@@ -38,7 +36,7 @@ ms.locfileid: "80816255"
 
     このシナリオの構成と確認の詳細な手順については、「[チュートリアルガイド: 追加の Multi-Factor Authentication による機密アプリケーションのリスク管理](../../ad-fs/operations/Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)」を参照してください。
 
-## <a name="key-concepts---authentication-mechanisms-in-ad-fs"></a><a name="BKMK_1"></a>主要な概念-AD FS の認証メカニズム
+## <a name="key-concepts---authentication-mechanisms-in-ad-fs"></a><a name="BKMK_1"></a>主要な概念 – AD FS での認証メカニズム
 
 ### <a name="benefits-of-authentication-mechanisms-in-ad---fs"></a>AD FS での認証メカニズムの利点
 Windows Server 2012 R2 の Active Directory フェデレーションサービス (AD FS) (AD FS) を使用すると、IT 管理者は、会社のリソースにアクセスするユーザーを認証するための、より豊富で柔軟なツールセットを提供できます。 これにより、管理者はプライマリと追加の認証方法を柔軟に制御できるようになり、認証ポリシー (ユーザーインターフェイスと Windows PowerShell の両方) を構成するための豊富な管理エクスペリエンスが提供され、AD FS によって保護されたアプリケーションやサービスにアクセスするエンドユーザーのエクスペリエンスが向上します。 Windows Server 2012 R2 で AD FS を使用してアプリケーションとサービスをセキュリティで保護する利点の一部を次に示します。
@@ -58,12 +56,12 @@ Windows Server 2012 R2 の Active Directory フェデレーションサービス
 
 -   使いやすさ: GUI ベースの AD FS 管理 MMC スナップインや Windows PowerShell コマンドレットなどのシンプルで直感的な管理ツールにより、IT 管理者は、比較的簡単に認証ポリシーを構成できます。 Windows PowerShell でスクリプトを作成して、使用中のソリューションの代わりに使用したり、日常的な管理タスクを自動化したりできます。
 
--   企業資産のより詳細な制御: 管理者は AD FS を使用して、特定のリソースに適用される認証ポリシーを構成できるため、企業リソースの保護方法をより詳細に制御できます。 アプリケーションでは、IT 管理者によって指定された認証ポリシーを上書きすることはできません。 個人情報アプリケーションおよびサービスでは、リソースがアクセスされるたびに、MFA の要件、デバイス認証、さらに必要に応じて新しい認証を有効にすることができます。
+-   企業資産のより詳細な制御: 管理者は AD FS を使用して、特定のリソースに適用される認証ポリシーを構成できるため、企業リソースの保護方法をより詳細に制御できます。 アプリケーションでは、IT 管理者によって指定された認証ポリシーをオーバーライドすることはできません。 個人情報アプリケーションおよびサービスでは、リソースがアクセスされるたびに、MFA の要件、デバイス認証、さらに必要に応じて新しい認証を有効にすることができます。
 
 -   カスタム MFA プロバイダーのサポート: サードパーティの MFA 方法を利用している組織の場合、AD FS は、これらの認証方法をシームレスに組み込んで使用する機能を提供します。
 
 ### <a name="authentication-scope"></a>認証スコープ
-Windows Server 2012 R2 の AD FS では、AD FS によって保護されているすべてのアプリケーションとサービスに適用されるグローバルスコープで認証ポリシーを指定できます。  また、AD FS によって保護されている特定のアプリケーションとサービス (証明書利用者信頼) に対して認証ポリシーを設定することもできます。 特定のアプリケーションの認証ポリシー (証明書利用者信頼ごと) を指定しても、グローバル認証ポリシーは上書きされません。 認証ポリシーがグローバルであっても、証明書利用者信ごとであっても、MFA が必要である場合、ユーザーがこの証明書利用者信頼に対して認証しようとすると、MFA がトリガーされます。  グローバル認証ポリシーは、特定の認証ポリシーが構成されていない証明書利用者信頼 (アプリケーションやサービス) に適用される代替の認証ポリシーです。
+Windows Server 2012 R2 の AD FS では、AD FS によって保護されているすべてのアプリケーションとサービスに適用されるグローバルスコープで認証ポリシーを指定できます。  また、AD FS によって保護されている特定のアプリケーションとサービス (証明書利用者信頼) に対して認証ポリシーを設定することもできます。 特定のアプリケーションの認証ポリシー (証明書利用者信頼ごと) を指定しても、グローバル認証ポリシーはオーバーライドされません。 認証ポリシーがグローバルであっても、証明書利用者信ごとであっても、MFA が必要である場合、ユーザーがこの証明書利用者信頼に対して認証しようとすると、MFA がトリガーされます。  グローバル認証ポリシーは、特定の認証ポリシーが構成されていない証明書利用者信頼 (アプリケーションやサービス) に適用される代替の認証ポリシーです。
 
 グローバル認証ポリシーは、AD FS によって保護されているすべての証明書利用者に適用されます。 グローバル認証ポリシーの一部として次の設定を構成できます。
 
@@ -71,7 +69,7 @@ Windows Server 2012 R2 の AD FS では、AD FS によって保護されてい�
 
 -   MFA に使用する設定と方法。
 
--   デバイス認証を有効にするかどうか。 詳細については、「 [任意のデバイスからの職場への参加による業務用アプリケーション間の SSO とシームレスな 2 要素認証](../../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)」を参照してください。
+-   デバイス認証を有効にするかどうか。 詳細については、「 [Join to Workplace from Any Device for SSO and Seamless Second Factor Authentication Across Company Applications](../../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)」を参照してください。
 
 証明書利用者信頼ごとの認証ポリシーは、該当する証明書利用者信頼 (アプリケーションやサービス) にアクセスしようとするときにのみ適用されます。 証明書利用者信頼ごとの認証ポリシーの一部として次の設定を構成できます。
 
@@ -111,7 +109,7 @@ Windows Server 2012 R2 の AD FS で MFA を構成するには、次の2つの�
 
 -   登録済み (職場参加済み) または未登録 (職場未参加) のデバイスに対して MFA を必須とする。
 
-    Windows Server 2012 R2 は、最新のデバイスへのユーザー中心のアプローチを採用しています。デバイスオブジェクトは、user@device と会社の間の関係を表します。 デバイスオブジェクトは、Windows Server 2012 R2 の AD の新しいクラスであり、アプリケーションやサービスへのアクセスを提供するときに、複合 id を提供するために使用できます。 AD FS の新しいコンポーネントであるデバイス登録サービス (DRS) は、Active Directory 内のデバイス ID をプロビジョニングし、一般ユーザー向けデバイスのデバイス ID を表すために使用される証明書を設定します。 このデバイス ID を使用してデバイスを職場に参加させることができます。つまり、個人のデバイスを職場の Active Directory に接続できます。 個人用のデバイスを職場に参加させると、それらのデバイスは既知のデバイスになり、保護済みのリソースやアプリケーションでは、シームレスな 2 要素認証を使用できるようになります。 つまり、デバイスが職場に参加した後、ユーザーの id はこのデバイスに関連付けられ、保護されたリソースにアクセスする前に、シームレスな複合 id の検証に使用できます。
+    Windows Server 2012 R2 は、デバイスオブジェクトがと企業間の関係を表す、最新のデバイスへのユーザー中心のアプローチを採用し user@device ています。 デバイスオブジェクトは、Windows Server 2012 R2 の AD の新しいクラスであり、アプリケーションやサービスへのアクセスを提供するときに、複合 id を提供するために使用できます。 AD FS の新しいコンポーネントであるデバイス登録サービス (DRS) は、Active Directory 内のデバイス ID をプロビジョニングし、一般ユーザー向けデバイスのデバイス ID を表すために使用される証明書を設定します。 このデバイス ID を使用してデバイスを職場に参加させることができます。つまり、個人のデバイスを職場の Active Directory に接続できます。 個人用のデバイスを職場に参加させると、それらのデバイスは既知のデバイスになり、保護済みのリソースやアプリケーションでは、シームレスな 2 要素認証を使用できるようになります。 つまり、デバイスが職場に参加した後、ユーザーの id はこのデバイスに関連付けられ、保護されたリソースにアクセスする前に、シームレスな複合 id の検証に使用できます。
 
     Workplace join と leave の詳細については、「[任意のデバイスからの職場への参加](../../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)」を参照してください。
 
@@ -147,8 +145,8 @@ AD FS で MFA を有効にするその他のシナリオを次に示します。
     ```
 
 ## <a name="see-also"></a>参照
-[チュートリアルガイド: 追加の Multi-Factor Authentication による機密アプリケーションのリスク管理](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
-[Windows Server 2012 R2 で AD FS 用のラボ環境をセットアップ](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)する
+[チュートリアルガイド: 追加の Multi-Factor Authentication による機密アプリケーション](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md) 
+ のリスク管理[Windows Server 2012 R2 で AD FS 用のラボ環境をセットアップする](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)
 
 
 

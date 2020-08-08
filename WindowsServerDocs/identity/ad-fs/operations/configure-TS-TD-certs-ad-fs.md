@@ -6,14 +6,12 @@ ms.author: billmath
 manager: samueld
 ms.date: 10/23/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 423587d7beb434af13aac68da82ee791f5c6b071
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: a96b256fbd2f1a5ce3db71bd11de8715eccf60e9
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961714"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87966909"
 ---
 # <a name="obtain-and-configure-ts-and-td-certificates-for-ad-fs"></a>AD FS の TS および TD 証明書を取得して構成する
 
@@ -27,15 +25,15 @@ ms.locfileid: "86961714"
 既定では、AD FS は、初期構成時にも、証明書の有効期限が近づいたときにも、トークン署名証明書とトークン暗号化解除証明書を自動的に生成するように構成されます。
 
 次の Windows PowerShell コマンドを実行できます `Get-AdfsProperties` 。
-  
+
   ![Set-adfsproperties](media/configure-TS-TD-certs-ad-fs/ts1.png)
-  
+
 AutoCertificateRollover プロパティは、AD FS がトークン署名証明書とトークン暗号化解除証明書を自動的に更新するように構成されているかどうかを示します。
 
 AutoCertificateRollover が TRUE に設定されている場合、AD FS 証明書は AD FS で自動的に更新および構成されます。 新しい証明書が構成されたら、障害を回避するために、(証明書利用者信頼または要求プロバイダー信頼によって AD FS ファームで表される) 各フェデレーションパートナーがこの新しい証明書で更新されていることを確認する必要があります。
-    
+
 AD FS がトークン署名証明書とトークン暗号化解除証明書を自動的に更新するように構成されていない場合 (AutoCertificateRollover が False に設定されている場合)、AD FS は新しいトークン署名証明書またはトークン暗号化解除証明書の使用を自動的に生成または開始しません。 これらのタスクは手動で実行する必要があります。
-    
+
 トークン署名証明書とトークン暗号化解除証明書を自動的に更新するように AD FS が構成されている場合 (AutoCertificateRollover が TRUE に設定されている場合)、いつ更新するかを決定できます。
 
 CertificateGenerationThreshold では、新しい証明書が生成されるまでに証明書が何日前に作成されるかを示します。
@@ -43,7 +41,7 @@ CertificateGenerationThreshold では、新しい証明書が生成されるま�
 CertificatePromotionThreshold は、新しい証明書が生成されてからプライマリ証明書に昇格されるまでの日数を決定します (つまり、AD FS は、それを使用して、id プロバイダーからのトークンに署名し、トークンを復号化します)。
 
 ![Set-adfsproperties](media/configure-TS-TD-certs-ad-fs/ts2.png)
-  
+
 トークン署名証明書とトークン暗号化解除証明書を自動的に更新するように AD FS が構成されている場合 (AutoCertificateRollover が TRUE に設定されている場合)、いつ更新するかを決定できます。
 
  - **CertificateGenerationThreshold**では、新しい証明書が生成されるまでに証明書が何日前に作成されるかを示します。

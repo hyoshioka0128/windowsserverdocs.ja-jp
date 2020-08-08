@@ -1,19 +1,17 @@
 ---
 title: 保護されたホストの展開
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 2379ca26-b32d-4055-8b4b-99d1f2df37e1
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 59b6aaa22fa89620df2ce6757b2d9f5ffe91c652
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: d69ce87349e7714a1aaf1bb0cc03fb9a145da12e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475349"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87966139"
 ---
 # <a name="deploy-guarded-hosts"></a>保護されたホストの展開
 
@@ -38,6 +36,6 @@ ms.locfileid: "85475349"
 3. [保護されたホストが証明できることを確認する](guarded-fabric-confirm-hosts-can-attest-successfully.md)
 
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 - [保護されたファブリックとシールドされた Vm の展開タスク](guarded-fabric-deploying-hgs-overview.md#deployment-tasks-for-guarded-fabrics-and-shielded-vms)

@@ -1,20 +1,18 @@
 ---
 ms.assetid: 87174225-a60f-4718-b4cc-9b172f205b72
 title: ストレージ トピックの変更履歴
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.date: 1/16/2019
 description: IT 担当者向け Windows Server 向けのオンプレミスストレージドキュメントの新しいトピックと更新されたトピック。
-ms.openlocfilehash: 3d43166d8f5e931d2677ff394c1c4ad69b0f302f
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: c4ba7edcbd2a0cf4949c986dec2e2aef385326c8
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966264"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954629"
 ---
 # <a name="change-history-for-storage-topics-in-windows-server"></a>Windows Server のストレージ トピックの変更履歴
 
@@ -56,7 +54,7 @@ ms.locfileid: "86966264"
 
 |新しいトピックまたは変更されたトピック                                        |説明|
 |---                                                         |---           |
-|[ボリュームの削除](storage-spaces/delete-volumes.md)| 新規作成        |
+|[ボリュームの削除](storage-spaces/delete-volumes.md)| 新規        |
 |[ボリュームの作成](storage-spaces/create-volumes.md)| Windows 管理センターでボリュームを作成するための手順とビデオを追加しました。|
 |[ボリュームの拡張](storage-spaces/resize-volumes.md)| Windows 管理センターでボリュームのサイズを変更するための手順とビデオを追加しました。|
 
@@ -64,9 +62,9 @@ ms.locfileid: "86966264"
 
 |新しいトピックまたは変更されたトピック                                        |説明|
 |---                                                         |---           |
-| [Azure Monitor で監視する](storage-spaces/configure-azure-monitor.md) | 新規作成 |
-| [永続メモリの理解と配置](storage-spaces/deploy-pmem.md) | 新規作成 |
-| [記憶域スペース ダイレクト クラスターを Windows Server 2019 にアップグレードする](storage-spaces/upgrade-storage-spaces-direct-to-windows-server-2019.md)| 新規作成        |
+| [Azure Monitor で監視する](storage-spaces/configure-azure-monitor.md) | 新規 |
+| [永続メモリの理解と配置](storage-spaces/deploy-pmem.md) | 新規 |
+| [記憶域スペース ダイレクト クラスターを Windows Server 2019 にアップグレードする](storage-spaces/upgrade-storage-spaces-direct-to-windows-server-2019.md)| 新規        |
 | [DFS レプリケーション](dfs-replication/dfsr-overview.md)        | [以前のバージョン](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc770278(v%3dws.11))のライブラリから移行済み|
 
 ## <a name="february-2019"></a>2019 年 2 月
@@ -183,14 +181,14 @@ ms.locfileid: "86966264"
 |[新しいディスクを初期化する](disk-management/initialize-new-disks.md)|書き直しを使用すると、お客様の質問に簡単に対応できます。|
 |[記憶域スペース ダイレクトのボリュームの計画](storage-spaces/plan-volumes.md)|4ノード以上のクラスターで使用可能な回復性の種類を要約した表が追加されました。|
 |[ReFS の概要](refs/refs-overview.md)|ミラーアクセラレータパリティの推奨されるワークロードを明確にし、ReFS および NTFS でサポートされるファイルとボリュームのサイズを修正しました。|
-|[ミラーリングによって高速化されたパリティ](refs/mirror-accelerated-parity.md)|書き込み負荷の高いファイルを別のディレクトリに配置することを推奨しています。|
+|[ミラー加速パリティ](refs/mirror-accelerated-parity.md)|書き込み負荷の高いファイルを別のディレクトリに配置することを推奨しています。|
 |[記憶域レプリカに関する既知の問題](storage-replica/storage-replica-known-issues.md)|新しい情報を追加しました。|
 
 ## <a name="november-2017"></a>2017 年 11 月
 
 |新しいトピックまたは変更されたトピック|説明|
 |---|---|
-|[Storage の新機能](whats-new-in-storage.md)|Windows Server バージョン1709の新機能に関する情報が追加されました。|
+|[記憶域の新機能](whats-new-in-storage.md)|Windows Server バージョン1709の新機能に関する情報が追加されました。|
 |[サーバーまたはドライブの追加](storage-spaces/add-nodes.md)|ドライブを追加した後に、ドライブの使用量を自動的に最適化記憶域スペースダイレクト方法に関する情報を追加しました。|
 
 ## <a name="october-2017"></a>2017 年 10 月
@@ -272,5 +270,5 @@ ms.locfileid: "86966264"
 |[記憶域スペース ダイレクトの管理](./storage-spaces/storage-spaces-direct-overview.md)|新しいトピックです。|
 |[記憶域レプリカに関してよく寄せられる質問](storage-replica/storage-replica-frequently-asked-questions.md)|ポートの要件を更新し、レプリケート ボリュームの拡大のしくみについて説明しました。|
 |[記憶域レプリカに関する既知の問題](storage-replica/storage-replica-known-issues.md)|2016 年 12 月 9 日の累積更新プログラムに関する情報を追加し、レプリケート ボリュームの拡大時のエラーを解決する情報を追加しました。|
-|[記憶域スペースダイレクトの概要](storage-spaces/storage-spaces-direct-overview.md)|トピックのラーニング マップを提供するため、ビジュアル指向の理解/計画/展開/管理のセクションを追加しました。|
+|[記憶域スペース ダイレクトの概要](storage-spaces/storage-spaces-direct-overview.md)|トピックのラーニング マップを提供するため、ビジュアル指向の理解/計画/展開/管理のセクションを追加しました。|
 |[記憶域スペース ダイレクトの展開](storage-spaces/deploy-storage-spaces-direct.md)|一部の古いコンテンツを削除し、新しいリンクを追加しました。|

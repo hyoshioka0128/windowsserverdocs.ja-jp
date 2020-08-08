@@ -1,20 +1,18 @@
 ---
 title: DHCP クライアントでの問題のトラブルシューティング
 description: この artilce では、DHCP クライアントの問題をトラブルシューティングし、データを収集する方法について説明します。
-ms.prod: windows-server
 ms.service: na
 manager: dcscontentpm
-ms.technology: server-general
 ms.date: 5/26/2020
 ms.topic: article
 author: Deland-Han
 ms.author: delhan
-ms.openlocfilehash: a6064b9e497fcd54671292ade77a08c06ba42920
-ms.sourcegitcommit: ef089864980a1d4793a35cbf4cbdd02ce1962054
+ms.openlocfilehash: 650b3f83ebd0467df2a747d865db2d0a346bcddc
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84150300"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954579"
 ---
 # <a name="troubleshoot-problems-on-the-dhcp-client"></a>DHCP クライアントでの問題のトラブルシューティング
 
@@ -38,7 +36,7 @@ ms.locfileid: "84150300"
 
 ## <a name="event-logs"></a>イベント ログ
 
-Microsoft-Windows-DHCP Client events/Operational および Microsoft-Windows-DHCP Client Events/Admin イベントログを確認します。 DHCP クライアントサービスに関連するすべてのイベントが、これらのイベントログに送信されます。  
+Microsoft-Windows-DHCP Client events/Operational および Microsoft-Windows-DHCP Client Events/Admin イベントログを確認します。 DHCP クライアントサービスに関連するすべてのイベントが、これらのイベントログに送信されます。
 Microsoft-Windows-DHCP クライアントイベントは、[**アプリケーションとサービスログ**] の [イベントビューアーにあります。
 
 "Get NetAdapter-IncludeHidden" PowerShell コマンドは、ログに記録されているイベントを解釈するために必要な情報を提供します。 たとえば、インターフェイス ID や MAC アドレスなどです。
@@ -52,7 +50,7 @@ Microsoft-Windows-DHCP クライアントイベントは、[**アプリケーシ
 問題が発生しているクライアントで、次のコマンドを実行します。
 
 ```console
-ipconfig /release  
+ipconfig /release
 ipconfig /renew
 ```
 

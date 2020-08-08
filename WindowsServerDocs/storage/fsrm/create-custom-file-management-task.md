@@ -2,18 +2,16 @@
 title: カスタム ファイル管理タスクを作成する
 description: この記事では、カスタム ファイル管理タスクとカスタム タスクを作成する方法について説明します。
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: bf1329c47fd5746bf0777415331ebcd7b882c5f1
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 7fcfd9958787817a6945b220115c507f48924cbf
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475579"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954679"
 ---
 # <a name="create-a-custom-file-management-task"></a>カスタム ファイル管理タスクを作成する
 
@@ -32,14 +30,14 @@ ms.locfileid: "85475579"
 
 3.  **[操作]** タブで、次の情報を入力します。
 
-    -   **[種類]**。 ドロップダウン メニューから **[カスタム]** を選択します。
+    -   **[種類]** 。 ドロップダウン メニューから **[カスタム]** を選択します。
     -   **実行可能ファイル**。 ファイル管理タスクがファイルを処理するときに実行するコマンドを入力するか参照します。 この実行可能ファイルは、管理者とシステムだけが書き込み可能であるように設定されている必要があります。 それ以外のユーザーが実行可能ファイルに対して書き込みアクセス権を持つ場合、ファイルは正常に実行されません。
     -   **[コマンドの設定]**。 ファイル管理ジョブがファイルを処理するときに実行可能ファイルに渡される引数を設定するには、**[引数]** テキスト ボックスを編集します。 テキストに追加の変数を挿入するには、テキスト ボックス内の変数を挿入する位置にカーソルを移動し、挿入する変数を選択して **[変数の挿入]** をクリックします。 角かっこに囲まれたテキストには、実行可能ファイルに渡される変数情報が挿入されます。 たとえば、 \[ ソースファイルのパス変数は、 \] 実行可能ファイルによって処理されるファイルの名前を挿入します。 **[作業ディレクトリ]** ボタンをクリックして、カスタム実行可能ファイルの場所を指定することもできます。
     -   **[コマンドのセキュリティ]**。 この実行可能ファイルに適用するセキュリティ設定を構成します。 既定では、使用可能なアカウントの中で最も制約の多いアカウントであるローカル サービスとして、コマンドが実行されます。
 
 4.  **[OK]** をクリックします。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 -   [分類の管理](classification-management.md)
 -   [ファイル管理タスク](file-management-tasks.md)

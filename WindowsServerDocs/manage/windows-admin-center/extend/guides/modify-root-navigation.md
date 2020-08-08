@@ -1,19 +1,17 @@
 ---
 title: ルート ナビゲーション動作の変更
 description: ソリューション拡張機能の開発 Windows 管理センター SDK (Project ホノルル)-ルートナビゲーション動作の変更
-ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 08/07/2018
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 78c94f3ea13f54ac31f9de9dd60873b93eba2c17
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: bc7ef3c25c41abd6c7b91e37cecca017664ee223
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385276"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87944943"
 ---
 # <a name="modify-root-navigation-behavior-for-a-solution-extension"></a>ソリューション拡張機能のルートナビゲーション動作を変更する
 
@@ -23,11 +21,11 @@ ms.locfileid: "71385276"
 
 ## <a name="modifying-root-navigation-behavior"></a>ルートナビゲーション動作の変更
 
-{Extension root} \ src でマニフェストファイルを開き、プロパティ "rootNavigationBehavior" を見つけます。 このプロパティには、"connections" または "path" という2つの有効な値があります。 "接続" の動作については、ドキュメントの後半で詳しく説明します。
+{Extension root} \ src のファイルで manifest.jsを開き、プロパティ "rootNavigationBehavior" を見つけます。 このプロパティには、"connections" または "path" という2つの有効な値があります。 "接続" の動作については、ドキュメントの後半で詳しく説明します。
 
 ### <a name="setting-path-as-a-rootnavigationbehavior"></a>RootNavigationBehavior としてのパスの設定
 
-@No__t-0 の値を ```path``` に設定し、```requirements``` プロパティを削除して、```path``` プロパティを空の文字列のままにします。 ソリューション拡張機能をビルドするために必要な最小限の構成が完了しました。 ファイルを保存し、> gulp gulp をツールと同じように保存して、拡張機能をローカルの Windows 管理センターの拡張機能にサイドロードします。
+の値をに設定し、 ```rootNavigationBehavior``` ```path``` プロパティを削除して、プロパティを ```requirements``` 空の文字列のままにし ```path``` ます。 ソリューション拡張機能をビルドするために必要な最小限の構成が完了しました。 ファイルを保存し、> gulp gulp をツールと同じように保存して、拡張機能をローカルの Windows 管理センターの拡張機能にサイドロードします。
 
 有効なマニフェスト entryPoints 配列は次のようになります。
 ```
@@ -49,7 +47,7 @@ ms.locfileid: "71385276"
 
 ### <a name="setting-connections-as-a-rootnavigationbehavior"></a>RootNavigationBehavior としての接続の設定
 
-@No__t-0 プロパティを ```connections``` に設定すると、接続先のノード (常に何らかの種類のサーバー) が接続されていることを Windows 管理センターシェルに伝え、接続の状態を確認します。 これにより、接続を確認する手順が2つあります。 1) Windows 管理センターは、(リモート PowerShell セッションを確立するために) 資格情報を使用してノードにログインしようとします。 2) 指定した PowerShell スクリプトを実行して、ノードが接続可能な状態であるかどうかを識別します。
+プロパティをに設定すると、接続する必要がある接続された ```rootNavigationBehavior``` ```connections``` ノード (常に何らかの種類のサーバー) が存在することを Windows 管理センターシェルに通知し、接続の状態を確認します。 これにより、接続を確認する手順が2つあります。 1) Windows 管理センターは、(リモート PowerShell セッションを確立するために) 資格情報を使用してノードにログインしようとします。 2) 指定した PowerShell スクリプトを実行して、ノードが接続可能な状態であるかどうかを識別します。
 
 接続を含む有効なソリューション定義は次のようになります。
 

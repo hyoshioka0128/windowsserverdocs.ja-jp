@@ -1,19 +1,17 @@
 ---
 title: 保護されたホスト (AD) のファブリック DNS を構成する
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 074b6d09-f16e-49bf-b88a-377139d35067
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 208fe5c3919d61e0d00be9ccf2f5ae86eaa5ea8d
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: 1875477934dad739a7231fd08f72cef7193e0eee
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769660"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87966149"
 ---
 # <a name="configure-the-fabric-dns-for-guarded-hosts-ad"></a>保護されたホスト (AD) のファブリック DNS を構成する
 

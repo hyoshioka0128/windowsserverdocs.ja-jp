@@ -1,19 +1,17 @@
 ---
 title: 記憶域スペースダイレクトに関してよく寄せられる質問
 description: 記憶域スペースダイレクトの詳細
-ms.prod: windows-server
 ms.author: kaushik
-ms.technology: storage-spaces
 ms.topic: article
 author: kaushika-msft
 ms.date: 10/24/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c033a5a810d1cdedeb4c733ba4bf0ac99e669f0
-ms.sourcegitcommit: 3483f886f331b9d954a0e5dba8e910dbe5ee5765
+ms.openlocfilehash: 9371403fedce0383be117728da48eec70745c3a7
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82977250"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954619"
 ---
 # <a name="storage-spaces-direct---frequently-asked-questions-faq"></a>記憶域スペースダイレクトに関してよく寄せられる質問 (FAQ)
 

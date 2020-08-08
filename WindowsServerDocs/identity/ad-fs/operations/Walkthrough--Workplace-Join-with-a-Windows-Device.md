@@ -6,14 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 68249c4afcd3fc23f040020a221e53df6d2f6865
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 4f2e3dbf5754b4b33aec972e40a91cbe67c82220
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80816015"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87966979"
 ---
 # <a name="walkthrough-workplace-join-with-a-windows-device"></a>チュートリアル:職場への Windows デバイスの参加
 
@@ -26,15 +24,15 @@ ms.locfileid: "80816015"
 
 1. Microsoft アカウントを使用して Client1 にログオンします。
 
-2. Internet Explorer を開き、汎用要求アプリ **https://webserv1.contoso.com/claimapp** に移動します。
+2. Internet Explorer を開き、汎用要求アプリを参照し **https://webserv1.contoso.com/claimapp** ます。
 
-3. 会社のドメインアカウント ( <strong>roberth@contoso.com</strong>、パスワード: <strong>P@ssword</strong>) を使用して、web ページにログオンします。
+3. 会社のドメインアカウント <strong>roberth@contoso.com</strong> (パスワード:) を使用して、web ページにログオンし <strong>P@ssword</strong> ます。
 
 4. Web ページに、セキュリティ トークンに含まれるすべての信頼性情報が一覧表示されます。 セキュリティ トークンにはユーザーの信頼性情報のみが存在します。
 
 5. Internet Explorer を閉じます。
 
-6. Internet Explorer を開き、同じ要求アプリに移動して、 **https://webserv1.contoso.com/claimapp** します。
+6. Internet Explorer を開き、同じ要求アプリ () に移動し **https://webserv1.contoso.com/claimapp** ます。
 
 7. 資格情報の入力を再度、求められます。 ワークプレース ジョインを使用してデバイスから職場に接続していないため、シングル サインオンは機能していません。
 
@@ -42,20 +40,20 @@ ms.locfileid: "80816015"
 
 > [!IMPORTANT]
 > ワークプレース ジョインが正しく動作するには、クライアント コンピューター (Client1) で SSL 証明書を信頼する必要があります。この証明書は、「 [Step 2: Configure the Federation Server with Device Registration Service (ADFS1)](../deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md#BKMK_4)」で Active Directory フェデレーション サービス (AD FS) を構成する際に使用されたものです。 また、証明書の失効情報の検証が可能になっている必要もあります。 ワークプレース ジョインで問題が発生した場合は、Client1 のイベント ログを確認できます。
-> 
-> イベント ログを表示するには、イベント ビューアーを開き、 **[アプリケーションとサービス ログ]** 、 **[Microsoft]** 、 **[Windows]** の順に展開し、 **[ワークプレース ジョイン]** をクリックします。
+>
+> イベント ログを表示するには、イベント ビューアーを開き、**[アプリケーションとサービス ログ]**、**[Microsoft]**、**[Windows]** の順に展開し、**[ワークプレース ジョイン]** をクリックします。
 
 #### <a name="to-join-your-device-with-workplace-join"></a>ワークプレース ジョインを使用してデバイスを参加させるには
 
 1. Microsoft アカウントを使用して Client1 にログオンします。
 
-2. **スタート**画面で、**チャーム** バーを開き、 **[設定]** チャームをクリックします。 **[PC 設定の変更]** を選択します。
+2. **スタート**画面で、**チャーム** バーを開き、**[設定]** チャームをクリックします。 **[PC 設定の変更]** を選択します。
 
-3. **[PC 設定]** ページで **[ネットワーク]** を選択し、 **[社内]** をクリックします。
+3. **[PC 設定]** ページで **[ネットワーク]** を選択し、**[社内]** をクリックします。
 
-4. **[ユーザー id を入力して職場へのアクセスを取得するか、デバイス管理を有効にする]** ボックスに「 <strong>roberth@contoso.com</strong>」と入力し、 **[参加]** をクリックします。
+4. [**ユーザー名を入力して職場へのアクセスを取得するか、デバイス管理を有効にする**] ボックスに「」と入力し、 <strong>roberth@contoso.com</strong> [**参加**] をクリックします。
 
-5. 資格情報の入力を求められたら、「 <strong>roberth@contoso.com</strong>」と入力し、[パスワード: <strong>P@ssword</strong>] を入力します。 **[OK]** をクリックすると、
+5. 資格情報の入力を求められたら、「」と入力し、パスワードを入力し <strong>roberth@contoso.com</strong> <strong>P@ssword</strong> ます。 **[OK]** をクリックします。
 
 6. 次のメッセージが表示されます:"このデバイスは社内のネットワークに参加しています"
 
@@ -66,22 +64,22 @@ ms.locfileid: "80816015"
 
 1. Microsoft アカウントを使用して **Client1** にログオンします。
 
-2. Internet Explorer を開き、汎用要求アプリ **https://webserv1.contoso.com/claimapp** に移動します。
+2. Internet Explorer を開き、汎用要求アプリを参照し **https://webserv1.contoso.com/claimapp** ます。
 
-3. 会社のドメインアカウント ( <strong>roberth@contoso.com</strong>、パスワード: <strong>P@ssword</strong>) を使用して、web ページにログオンします。
+3. 会社のドメインアカウント <strong>roberth@contoso.com</strong> (パスワード:) を使用して、web ページにログオンし <strong>P@ssword</strong> ます。
 
 4. Web ページに、セキュリティ トークンに含まれる信頼性情報が一覧表示されます。 トークンにはユーザーとデバイスの両方の信頼性情報が含まれています。
 
 5. Internet Explorer を閉じます。
 
-6. Internet Explorer を開き、同じ要求アプリに移動して、 **https://webserv1.contoso.com/claimapp** します。
+6. Internet Explorer を開き、同じ要求アプリ () に移動し **https://webserv1.contoso.com/claimapp** ます。
 
 7. 今回は資格情報の入力を**求められません**。 ワークプレース ジョインを使用したデバイスから接続しているため、シングル サインオンが機能しています。
 
 ## <a name="see-also"></a>参照
-[任意のデバイスからの職場への参加による会社のアプリケーション間の SSO とシームレスな2要素認証](Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)
-[Windows Server 2012 R2 で AD FS 用のラボ環境をセットアップ](../deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)する
-[チュートリアル: iOS デバイスでの Workplace Join](Walkthrough--Workplace-Join-with-an-iOS-Device.md)
+[任意のデバイスからの職場への参加による企業アプリケーション間の SSO とシームレスな2要素認証](Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md) 
+[Windows Server 2012 R2 で AD FS 用のラボ環境をセットアップする](../deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md) 
+[チュートリアル: IOS デバイスでの Workplace Join](Walkthrough--Workplace-Join-with-an-iOS-Device.md)
 
 
 

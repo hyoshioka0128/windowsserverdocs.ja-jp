@@ -6,16 +6,14 @@ ms.author: billmath
 manager: mtillman
 ms.date: 01/03/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: a9be4a72cd60cfdd5807c67132dba837093be4db
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: b0134478ce0a4e91d6e33d5a0845a2be5df53d3f
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959024"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954178"
 ---
-# <a name="ad-fs-troubleshooting---dns"></a>AD FS のトラブルシューティング-DNS 
+# <a name="ad-fs-troubleshooting---dns"></a>AD FS のトラブルシューティング-DNS
 AD FS が動作していないか、応答していないかを確認する最初の項目の1つは、DNS 名の解決です。  これらは、AD FS サーバーまたは WAP サーバーがネットワーク上で検出されているかどうかを判断するための基本的なテストです。  内部ユーザーの場合、これらのテストは AD FS サーバー (STS) に解決される必要があります。    外部ユーザーの場合、これらのテストは WAP サーバーに解決される必要があります。
 
 このドキュメントの残りの部分では、コマンドラインツールを使用して、名前解決のクイックチェックを実行する方法について説明します。

@@ -1,23 +1,21 @@
 ---
 title: Linux のシールドされた VM テンプレートディスクを作成する
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: d0e1d4fb-97fc-4389-9421-c869ba532944
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 1a6325a5d8e931f1e62c83ba4013d94760e39f86
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0535a15d0b21b62bb9f8b91729f773d1f4db0db0
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856795"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87966069"
 ---
 # <a name="create-a-linux-shielded-vm-template-disk"></a>Linux のシールドされた VM テンプレートディスクを作成する
 
-> 適用対象: Windows Server 2019、Windows Server (半期チャネル)、 
+> 適用対象: Windows Server 2019、Windows Server (半期チャネル)、
 
 このトピックでは、1つまたは複数のテナント Vm のインスタンス化に使用できる Linux のシールドされた Vm のテンプレートディスクを準備する方法について説明します。
 
@@ -28,7 +26,7 @@ Linux のシールドされた VM を準備してテストするには、次の�
 - Windows Server バージョン1709以降を実行している仮想化機能を備えたサーバー
 - 実行中の VM のコンソールに接続するために Hyper-v マネージャーを実行できる2台目のコンピューター (Windows 10 または Windows Server 2016)
 - サポートされている Linux シールドされた VM Os の1つの ISO イメージ:
-    - 4\.4 カーネルを使用した Ubuntu 16.04 LTS
+    - 4.4 カーネルを使用した Ubuntu 16.04 LTS
     - Red Hat Enterprise Linux 7.3
     - SUSE Linux Enterprise Server 12 Service Pack 2
 - Lsvmtools パッケージと OS の更新プログラムをダウンロードするためのインターネットアクセス
@@ -72,17 +70,17 @@ Linux のシールドされた VM を準備してテストするには、次の�
 5.  Hyper-v マネージャーを使用して、仮想化サーバーで[外部スイッチを構成](https://docs.microsoft.com/windows-server/virtualization/hyper-v/get-started/create-a-virtual-switch-for-hyper-v-virtual-machines)し、Linux VM がインターネットにアクセスして更新プログラムを取得できるようにします。
 
 6.  次に、Linux OS をインストールするための新しい仮想マシンを作成します。
-    [操作] ウィンドウで、[ > **新規**] をクリックして **[仮想マシン]** をクリックし、ウィザードを起動します。
-    "テンプレート化 Linux" などの VM のフレンドリ名を入力し、 **[次へ]** をクリックします。
+    [操作] ウィンドウで、[**新しい**  >  **バーチャルマシン**] をクリックしてウィザードを起動します。
+    "テンプレート化 Linux" などの VM のフレンドリ名を入力し、[**次へ**] をクリックします。
 
-7.  ウィザードの2ページ目で、 **[第2世代]** を選択して、VM が UEFI ベースのファームウェアプロファイルでプロビジョニングされていることを確認します。
+7.  ウィザードの2ページ目で、[**第2世代**] を選択して、VM が UEFI ベースのファームウェアプロファイルでプロビジョニングされていることを確認します。
 
 8.  設定に従って、ウィザードの残りの部分を完了します。
     この VM には差分ディスクを使用しないでください。シールドされた VM テンプレートディスクは差分ディスクを使用できません。
     最後に、OS をインストールできるように、前の手順でダウンロードした ISO イメージをこの VM の仮想 DVD ドライブに接続します。
 
-9.  Hyper-v マネージャーで、新しく作成した VM を選択し、操作 ウィンドウの **接続** をクリックして、vm の仮想コンソールに接続します。
-    表示されるウィンドウで、 **[開始]** をクリックして仮想マシンを有効にします。
+9.  Hyper-v マネージャーで、新しく作成した VM を選択し、[操作] ウィンドウの [**接続**] をクリックして、vm の仮想コンソールに接続します。
+    表示されるウィンドウで、[**開始**] をクリックして仮想マシンを有効にします。
 
 10. 選択した Linux ディストリビューションのセットアッププロセスを続行します。
     各 Linux ディストリビューションは異なるセットアップウィザードを使用しますが、Linux のシールドされた VM テンプレートディスクになる Vm では、次の要件を満たす必要があります。
@@ -139,7 +137,7 @@ Linux のシールドされた VM を準備してテストするには、次の�
     ```
 
 14. Linux OS のカスタマイズが完了したら、システムで lsvmprep インストールプログラムを見つけて実行します。
-    
+
     ```bash
     # The path below may change based on the version of lsvmprep installed
     # Run "find /opt -name lsvmprep" to locate the lsvmprep executable
@@ -150,8 +148,8 @@ Linux のシールドされた VM を準備してテストするには、次の�
 
 16. VM のチェックポイントを作成した場合 (Hyper-v によって作成された自動チェックポイントと Windows 10 の更新プログラムが含まれている場合など)、続行する前に削除してください。
     チェックポイントは、テンプレートディスクウィザードでサポートされていない差分ディスク (. .avhdx) を作成します。
-    
-    チェックポイントを削除するには、 **Hyper-v マネージャー**を開き、VM を選択して、チェックポイントペインで最上位のチェックポイントを右クリックし、 **[チェックポイントのサブツリーを削除]** をクリックします。
+
+    チェックポイントを削除するには、 **Hyper-v マネージャー**を開き、VM を選択して、チェックポイントペインで最上位のチェックポイントを右クリックし、[**チェックポイントのサブツリーを削除**] をクリックします。
 
     ![Hyper-v マネージャーでテンプレート VM のすべてのチェックポイントを削除する](../media/Guarded-Fabric-Shielded-VM/delete-checkpoints-lsvm-template.png)
 
@@ -164,14 +162,14 @@ Linux のシールドされた VM を準備してテストするには、次の�
 ### <a name="obtain-a-certificate-to-sign-the-disk"></a>ディスクに署名するための証明書を取得する
 
 ディスクの測定値にデジタル署名するには、テンプレートディスクウィザードを実行するコンピューターで証明書を取得する必要があります。
-証明書は次の要件を満たしている必要があります。
+証明書は次の要件を満たす必要があります。
 
-Certificate プロパティ | 必須の値
+Certificate プロパティ | 必須値
 ---------------------|---------------
 キーアルゴリズム | RSA
 最小キー サイズ | 2048 ビット
 署名アルゴリズム | SHA256 (推奨)
-[キーの使用法] | デジタル署名
+キー使用法 | デジタル署名
 
 この証明書の詳細は、テナントがシールドデータファイルを作成し、信頼するディスクを承認しているときに、テナントに表示されます。
 そのため、この証明書は、自分とテナントが相互に信頼している証明機関から取得することが重要です。
@@ -187,7 +185,7 @@ New-SelfSignedCertificate -Subject "CN=Linux Shielded VM Template Disk Signing C
 ### <a name="process-the-disk-with-the-template-disk-wizard-cmdlet"></a>テンプレートディスクウィザードのコマンドレットを使用してディスクを処理する
 
 Windows Server バージョン1709を実行しているコンピューターにテンプレートディスクと証明書をコピーし、次のコマンドを実行して署名プロセスを開始します。
-`-Path` パラメーターに指定した VHDX は、更新されたテンプレートディスクで上書きされます。そのため、コマンドを実行する前にコピーを作成してください。
+パラメーターに指定した VHDX は、更新された `-Path` テンプレートディスクで上書きされます。そのため、コマンドを実行する前にコピーを作成してください。
 
 > [!IMPORTANT]
 > Windows Server 2016 または Windows 10 で利用可能なリモートサーバー管理ツールは、Linux のシールドされた VM テンプレートディスクの準備には使用できません。

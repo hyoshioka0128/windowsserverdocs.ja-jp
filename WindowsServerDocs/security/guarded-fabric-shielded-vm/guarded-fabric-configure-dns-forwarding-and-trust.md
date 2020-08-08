@@ -1,18 +1,16 @@
 ---
 title: DNS 転送とドメイン信頼を構成する
-ms.prod: windows-server
 ms.topic: article
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: e8ecabe9f98bda1442fb127198be665b693c853e
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: 102d1267fe2b15e50ab2d078647ff86f7c937a6d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769277"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87966169"
 ---
 # <a name="configure-dns-forwarding-in-the-hgs-domain-and-a-one-way-trust-with-the-fabric-domain"></a>HGS ドメインで DNS 転送を構成し、ファブリックドメインとの一方向の信頼を構成する
 

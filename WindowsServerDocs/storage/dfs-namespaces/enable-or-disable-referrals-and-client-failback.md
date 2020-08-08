@@ -2,18 +2,16 @@
 title: 紹介とクライアント フェールバックを有効または無効にする
 description: この記事では、紹介とクライアント フェールバックを有効または無効にする方法について説明します。
 ms.date: 6/5/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 3896b411ee8b02a0efde6b46484e043b27ffea77
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 0336588dcf0c170698c89b32a29952916bd26100
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966514"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954759"
 ---
 # <a name="enable-or-disable-referrals-and-client-failback"></a>紹介とクライアント フェールバックを有効または無効にする
 
@@ -68,7 +66,7 @@ ms.locfileid: "86966514"
 
 3.  [**紹介**] タブで、[**クライアントを優先するターゲットにフェールバックする**] チェック ボックスをオンにします。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 -   [DFS 名前空間を調整する](tuning-dfs-namespaces.md)
 -   [DFS 名前空間クライアントの要件を確認する](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771913(v=ws.11))

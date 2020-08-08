@@ -6,14 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 12/05/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: ea421bb274ec7f6a6b1ba5be03391dd92fb10b33
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 584088900bea8acb83da076311d29ed5f45ea71e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955055"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954238"
 ---
 # <a name="join-to-workplace-from-any-device-for-sso-and-seamless-second-factor-authentication-across-company-applications"></a>任意のデバイスからの職場への参加による業務用アプリケーション間の SSO とシームレスな 2 要素認証
 
@@ -42,7 +40,7 @@ ms.locfileid: "86955055"
 
 -   信頼されたデバイスから社内リソースにアクセスするユーザーに、よりシームレスなサインイン エクスペリエンスを提供します。
 
-### <a name="single-sign-on"></a>シングル サインオン
+### <a name="single-sign-on"></a>[Single Sign-On]
 このシナリオで使用されるシングル サインオン (SSO) は、既知のデバイスから社内リソースにアクセスするためにエンド ユーザーが入力する必要があるパスワード プロンプトの表示回数を減らす機能です。 この機能により、SSO の有効期間内であれば、ユーザーはパスワードを 1 回入力するだけで、既知のデバイスから会社のアプリケーションやリソースにアクセスできます。 デバイスでワークプレース ジョインを使用する場合、このデバイスを使用するよう登録されたユーザーの SSO は既定で 7 日間、有効になります。 このユーザーには、同一セッションまたは新しいセッションでシームレスなサインイン エクスペリエンスが提供されます。
 
 ## <a name="solution-overview"></a>ソリューションの概要

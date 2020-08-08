@@ -1,19 +1,17 @@
 ---
 title: Windows 管理センターでの文字列とローカライズ
 description: Windows 管理センター SDK (Project ホノルル) で、ローカライズ可能な文字列を取得する方法について説明します。
-ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 06/18/2018
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 61289ae175ca8b906386cff9e36f5023ea28d051
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 565e4da69466549538c380457269304c7f1cdd5a
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385239"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87944922"
 ---
 # <a name="strings-and-localization-in-windows-admin-center"></a>Windows 管理センターでの文字列とローカライズ #
 
@@ -38,43 +36,43 @@ Windows 管理センターの拡張機能 SDK についてさらに詳しく説�
 MsftSme.resourcesStrings<Strings>().HelloWorld.cim.title;
 ```
 
-## <a name="add-other-languages-for-localization"></a>ローカリゼーション用の他の言語を追加する ## 
+## <a name="add-other-languages-for-localization"></a>ローカリゼーション用の他の言語を追加する ##
 
-他の言語にローカライズする場合は、各言語に対して文字列. resjson ファイルを作成する必要があります。 これらのファイルは、に```\loc\output\{!ExtensionName}\{!LanguageFolder}\strings.resjson```配置する必要があります。 対応するフォルダーで使用できる言語は次のとおりです。
+他の言語にローカライズする場合は、各言語に対して文字列. resjson ファイルを作成する必要があります。 これらのファイルは、に配置する必要があり ```\loc\output\{!ExtensionName}\{!LanguageFolder}\strings.resjson``` ます。 対応するフォルダーで使用できる言語は次のとおりです。
 
-| [言語]      | フォルダー      |
+| Language      | フォルダー      |
 | ------------- |-------------|
 | Čeština | cs-CZ |
 | Deutsch | de-DE |
-| 英語 | en-US |
+| 英語 | ja-JP |
 | Español | es-ES |
-| Français | fr-FR | 
-| Magyar | hu-HU | 
+| Français | fr-FR |
+| Magyar | hu-HU |
 | Italiano | it-IT |
-| 日本語 | ja-JP | 
-| 한국어 | ko-KR | 
+| Japanese | ja-JP |
+| 한국어 | ko-KR |
 | Nederlands | nl-NL |
 | Polski | pl-PL |
 | Português (Brasil) | pt-BR |
 | Português (Portugal) | pt-PT |
-| ロシア語 | ru-RU |
+| Русский | ru-RU |
 | Svenska | sv-SE |
 | Türkçe    | tr-TR |
 | 中文 (简体) | zh-CN |
 | 中文 (繁體) | zh-TW |
 > [!NOTE]
-> ファイル構造のニーズが loc/output 内で異なる場合は、gulpfile にある gulp タスクの localeOffset を調整する必要があります。これは、にあります。 このオフセットは、文字列の検索を開始する loc フォルダーの深さです。 resjson ファイル。
+> ファイル構造のニーズが loc/output の中で異なる場合は、gulpfile.js にある gulp タスクの localeOffset を調整する必要があります。これは、このような場合に発生します。 このオフセットは、文字列の検索を開始する loc フォルダーの深さです。 resjson ファイル。
 
-各文字列. resjson ファイルは、このガイドの冒頭で説明したのと同じ方法で書式設定されます。 
+各文字列. resjson ファイルは、このガイドの冒頭で説明したのと同じ方法で書式設定されます。
 
-たとえば、スペイン語のローカライズを含めるには、次のエントリ```\loc\output\HelloWorld\es-ES\strings.resjson```をに追加します。 
+たとえば、スペイン語のローカライズを含めるには、次のエントリをに追加し ```\loc\output\HelloWorld\es-ES\strings.resjson``` ます。
 ```json
 "HelloWorld_cim_title": "CIM Componente",
 ```
 ローカライズされた文字列を追加した場合は、gulp の生成を再度実行して、表示されるようにする必要があります。 次のコマンドを実行します。
 ``` cmd
-gulp generate 
+gulp generate
 ```
 
-文字列が生成されたことを確認する```\src\app\assets\strings\{!LanguageFolder}\strings.resjson```には、に移動します。 新しく追加されたエントリがこのファイルに表示されます。
-Windows 管理センターで言語オプションを切り替えると、ローカライズされた文字列が拡張機能に表示されるようになります。 
+文字列が生成されたことを確認するには、に移動 ```\src\app\assets\strings\{!LanguageFolder}\strings.resjson``` します。 新しく追加されたエントリがこのファイルに表示されます。
+Windows 管理センターで言語オプションを切り替えると、ローカライズされた文字列が拡張機能に表示されるようになります。

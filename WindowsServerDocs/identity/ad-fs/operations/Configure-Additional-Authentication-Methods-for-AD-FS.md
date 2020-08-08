@@ -6,14 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 07/26/2019
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 5a7279416746269a3886fe929d066a6397be838a
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 66ef77b46065b87e6df08c63b0fb40ca4453c45b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86962524"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954258"
 ---
 # <a name="configure-additional-authentication-methods-for-ad-fs"></a>AD FS の追加の認証方法の構成
 
@@ -30,7 +28,7 @@ Windows Server 2012 R2 の AD FS で、Microsoft とサードパーティの認�
 以下の一覧は、Windows Server 2012 R2 の AD FS で現在利用できる、Microsoft とサード パーティ プロバイダーの MFA サービスをアルファベット順に示したものです。
 
 |プロバイダー|サービス|詳細情報へのリンク|
-|-|-|-| 
+|-|-|-|
 |aPersona|Microsoft ADFS SSO の aPersona Adaptive Multi-Factor Authentication|[aPersona ASM ADFS アダプター](https://www.apersona.com/adfs)|
 |Cyphercor Inc.|AD FS の LoginTC Multi-Factor Authentication|[LoginTC AD FS コネクタ](https://www.logintc.com/docs/connectors/adfs.html)|
 |Duo Security|AD FS 用の Duo MFA アダプター|[AD FS のための Duo 認証](https://duo.com/docs/adfs)|

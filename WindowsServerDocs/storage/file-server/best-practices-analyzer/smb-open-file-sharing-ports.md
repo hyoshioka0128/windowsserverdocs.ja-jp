@@ -1,17 +1,15 @@
 ---
 title: SMB ファイルとプリンターの共有ポートを開く
 ms.date: 07/02/2012
-ms.prod: windows-server
-ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: d9d24f1ce66ca691bfa31479a00b9ecf719abe1e
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: dc2e1d7f5408ad123297b8df2dc06f59053fe870
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961304"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954769"
 ---
 # <a name="smb-file-and-printer-sharing-ports-should-be-open"></a>SMB: ファイルとプリンターの共有ポートが開いていること
 
@@ -38,7 +36,7 @@ ms.locfileid: "86961304"
 <td><p>ファイル サービス</p></td>
 </tr>
 <tr class="odd">
-<td><p><strong>Severity</strong></p></td>
+<td><p><strong>重大度</strong></p></td>
 <td><p>エラー</p></td>
 </tr>
 <tr class="even">
@@ -72,6 +70,6 @@ ms.locfileid: "86961304"
 
 4.  各規則を右クリックして、 **[規則の有効化]** をクリックします。
 
-## <a name="additional-references"></a>その他のリファレンス
+## <a name="additional-references"></a>その他の参照情報
 
 [共有フォルダーと Windows ファイアウォールについて](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731402(v=ws.11))(https://technet.microsoft.com/library/cc731402.aspx)

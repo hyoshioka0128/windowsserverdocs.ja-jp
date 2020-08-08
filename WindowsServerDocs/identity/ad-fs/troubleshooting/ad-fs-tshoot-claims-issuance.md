@@ -6,23 +6,21 @@ ms.author: billmath
 manager: mtillman
 ms.date: 01/03/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: ea0e6112f00f9cace6a0c580661a5319b5adaea5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9eb5ce1ee92e828cc1fd6ceb40ddddec453afe87
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366241"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954188"
 ---
 # <a name="ad-fs-troubleshooting---claims-issuance"></a>AD FS のトラブルシューティング-要求の発行
 クレームは、1つのサブジェクトがそれ自体または別のサブジェクトに対して行うステートメントです。  要求は証明書利用者によって発行され、1つまたは複数の値が与えられ、AD FS サーバーによって発行されたセキュリティトークンにパッケージ化されます。  このプロセスにはいくつかの可動要素があるため、要求の発行はこれらの主要部分に分割できます。
 
->[!NOTE]  
->[ADFS ヘルプ](https://adfshelp.microsoft.com)サイトの[ClaimsXRay](https://adfshelp.microsoft.com/ClaimsXray/TokenRequest)を使用して、要求の問題のトラブルシューティングを行うことができます。   
+>[!NOTE]
+>[ADFS ヘルプ](https://adfshelp.microsoft.com)サイトの[ClaimsXRay](https://adfshelp.microsoft.com/ClaimsXray/TokenRequest)を使用して、要求の問題のトラブルシューティングを行うことができます。
 
-## <a name="token-request"></a>トークン要求
-証明書利用者にアクセスすると、トークン要求を使用して AD FS にリダイレクトされます。  要求で問題が発生する可能性があります。  特に重要なものは次のとおりです。
+## <a name="token-request"></a>トークンが要求
+証明書利用者にアクセスすると、トークン要求を使用して AD FS にリダイレクトされます。  要求で問題が発生する可能性があります。  特に重要なものは、
 
 ### <a name="the-request-formatting-with-3rd-parties-particularly-saml"></a>サードパーティによる要求の書式設定 (特に SAML)
 
