@@ -6,16 +6,16 @@ ms.topic: article
 ms.assetid: 161446ff-a072-4cc4-b339-00a04857ff3a
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 771b87776e6530f330e68f1f06b39fef191cb7c7
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: e999406a64e77e769ba9a6ffdc27cce109f2ef5a
+ms.sourcegitcommit: be6583ea86b47fa5ac3363b44ab0de75b571c90e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87996886"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88039655"
 ---
 # <a name="use-dns-policy-for-intelligent-dns-responses-based-on-the-time-of-day"></a>1 日の時間に基づくインテリジェントなDNS 応答に DNS ポリシーを使用する
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+> 適用先:Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックを使用すると、1 日の時間に基づき、DNS のポリシーを使用して、アプリケーションの別の地理的に分散インスタンス間でアプリケーションのトラフィックを分散するのに方法について説明します。
 
@@ -59,13 +59,13 @@ DNS では、複数の DNS ポリシーが構成されていると順序付け�
 - [レコードをゾーンのスコープに追加します。](#bkmk_records)
 - [DNS のポリシーを作成します。](#bkmk_policies)
 
->[!NOTE]
->構成する場合、ゾーンに対して権限のある DNS サーバーでは、これらの手順を実行する必要があります。 メンバーシップ **DnsAdmins**, 、または同等の権限が必要で、次の手順を実行します。
+> [!NOTE]
+> 構成する場合、ゾーンに対して権限のある DNS サーバーでは、これらの手順を実行する必要があります。 メンバーシップ **DnsAdmins**, 、または同等の権限が必要で、次の手順を実行します。
 
 次のセクションでは、詳細な構成手順を説明します。
 
->[!IMPORTANT]
->以下のセクションには、多くのパラメーターの値の例を含む Windows PowerShell コマンドの例が含まれています。 これらのコマンドで値の例は、これらのコマンドを実行する前に、展開に対応する値を置き換えることを確認します。
+> [!IMPORTANT]
+> 以下のセクションには、多くのパラメーターの値の例を含む Windows PowerShell コマンドの例が含まれています。 これらのコマンドで値の例は、これらのコマンドを実行する前に、展開に対応する値を置き換えることを確認します。
 
 #### <a name="create-the-dns-client-subnets"></a><a name="bkmk_subnets"></a>DNS クライアントのサブネットを作成します。
 最初の手順では、サブネットまたは IP アドレス空間のトラフィックをリダイレクトする領域を識別します。 たとえば、米国およびヨーロッパのトラフィックをリダイレクトする場合は、サブネットまたは IP アドレス空間がこれらの領域を識別する必要があります。
@@ -74,12 +74,12 @@ DNS では、複数の DNS ポリシーが構成されていると順序付け�
 
 次の Windows PowerShell コマンドを使用すると、DNS クライアントのサブネットを作成します。
 
-```
-Add-DnsServerClientSubnet -Name "AmericaSubnet" -IPv4Subnet "192.0.0.0/24, 182.0.0.0/24"
+```PowerShell
+Add-DnsServerClientSubnet -Name "AmericaSubnet" -IPv4Subnet "192.0.0.0/24", "182.0.0.0/24"
 
-Add-DnsServerClientSubnet -Name "EuropeSubnet" -IPv4Subnet "141.1.0.0/24, 151.1.0.0/24"
-
+Add-DnsServerClientSubnet -Name "EuropeSubnet" -IPv4Subnet "141.1.0.0/24", "151.1.0.0/24"
 ```
+
 詳細については、次を参照してください。 [追加 DnsServerClientSubnet](/powershell/module/dnsserver/add-dnsserverclientsubnet?view=win10-ps)します。
 
 #### <a name="create-the-zone-scopes"></a><a name="bkmk_zscopes"></a>ゾーンのスコープを作成します。
@@ -89,17 +89,17 @@ Add-DnsServerClientSubnet -Name "EuropeSubnet" -IPv4Subnet "141.1.0.0/24, 151.1.
 
 ゾーンのスコープは、ゾーンの一意のインスタンスです。 DNS ゾーンは複数のゾーンスコープを持つことができ、各ゾーンスコープには独自の DNS レコードセットが含まれます。 同じレコードが複数のスコープに存在し、異なる IP アドレスまたは同じ IP アドレスを持つことができます。
 
->[!NOTE]
->既定では、ゾーンのスコープは、DNS ゾーンに存在します。 このゾーンのスコープでは、ゾーンと同じ名前と、従来の DNS の機能がこのスコープで動作します。
+> [!NOTE]
+> 既定では、ゾーンのスコープは、DNS ゾーンに存在します。 このゾーンのスコープでは、ゾーンと同じ名前と、従来の DNS の機能がこのスコープで動作します。
 
 次の Windows PowerShell コマンドを使用すると、ゾーンのスコープを作成します。
 
-```
+```PowerShell
 Add-DnsServerZoneScope -ZoneName "contosogiftservices.com" -Name "SeattleZoneScope"
 
 Add-DnsServerZoneScope -ZoneName "contosogiftservices.com" -Name "DublinZoneScope"
-
 ```
+
 詳細については、「 [DnsServerZoneScope](/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)」を参照してください。
 
 #### <a name="add-records-to-the-zone-scopes"></a><a name="bkmk_records"></a>レコードをゾーンのスコープに追加します。
@@ -109,12 +109,12 @@ Add-DnsServerZoneScope -ZoneName "contosogiftservices.com" -Name "DublinZoneScop
 
 次の Windows PowerShell コマンドを使用して、レコードをゾーンのスコープに追加することができます。
 
-```
+```PowerShell
 Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -IPv4Address "192.0.0.1" -ZoneScope "SeattleZoneScope
 
 Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -IPv4Address "141.1.0.3" -ZoneScope "DublinZoneScope"
-
 ```
+
 既定のスコープでレコードを追加すると、ゾーン範囲ゾーン パラメーターは含まれません。 これは、標準の DNS ゾーンにレコードを追加すると同じです。
 
 詳細については、次を参照してください。 [追加 DnsServerResourceRecord](/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps)します。
@@ -133,10 +133,10 @@ Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -
 
 次の Windows PowerShell コマンドを使用すると、DNS クライアントのサブネットへのリンクとゾーン スコープに、DNS のポリシーを作成します。
 
->[!NOTE]
->この例では、DNS サーバーは GMT のタイム ゾーンでピーク時の期間は同等の GMT 時刻で表現できる必要があります。
+> [!NOTE]
+> この例では、DNS サーバーは GMT のタイム ゾーンでピーク時の期間は同等の GMT 時刻で表現できる必要があります。
 
-```
+```PowerShell
 Add-DnsServerQueryResolutionPolicy -Name "America6To9Policy" -Action ALLOW -ClientSubnet "eq,AmericaSubnet" -ZoneScope "SeattleZoneScope,4;DublinZoneScope,1" -TimeOfDay "EQ,01:00-04:00" -ZoneName "contosogiftservices.com" -ProcessingOrder 1
 
 Add-DnsServerQueryResolutionPolicy -Name "Europe6To9Policy" -Action ALLOW -ClientSubnet "eq,EuropeSubnet" -ZoneScope "SeattleZoneScope,1;DublinZoneScope,4" -TimeOfDay "EQ,17:00-20:00" -ZoneName "contosogiftservices.com" -ProcessingOrder 2
@@ -146,8 +146,8 @@ Add-DnsServerQueryResolutionPolicy -Name "AmericaPolicy" -Action ALLOW -ClientSu
 Add-DnsServerQueryResolutionPolicy -Name "EuropePolicy" -Action ALLOW -ClientSubnet "eq,EuropeSubnet" -ZoneScope "DublinZoneScope,1" -ZoneName "contosogiftservices.com" -ProcessingOrder 4
 
 Add-DnsServerQueryResolutionPolicy -Name "RestOfWorldPolicy" -Action ALLOW --ZoneScope "DublinZoneScope,1;SeattleZoneScope,1" -ZoneName "contosogiftservices.com" -ProcessingOrder 5
-
 ```
+
 詳細については、次を参照してください。 [追加 DnsServerQueryResolutionPolicy](/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)します。
 
 DNS サーバーが、必要な DNS のポリシーに地理的な場所と時間に基づいてトラフィックをリダイレクトするよう構成されました。
