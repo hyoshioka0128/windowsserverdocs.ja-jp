@@ -1,19 +1,17 @@
 ---
 title: PowerShell を使用して Windows Admin Center の設定を管理する
 description: PowerShell を使用して Windows Admin Center の設定と構成を管理する方法について説明します。
-ms.technology: manage
 ms.topic: article
 author: jwwool
 ms.author: jeffrew
 ms.date: 11/21/2019
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 31eb0e3c960d50ae4cbb8a3bab1b3d6db62e2807
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 55cdeec4855fcb2bb7b99ab578531589543a9329
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475689"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87970889"
 ---
 # <a name="use-powershell-to-manage-windows-admin-center-settings"></a>PowerShell を使用して Windows Admin Center の設定を管理する
 

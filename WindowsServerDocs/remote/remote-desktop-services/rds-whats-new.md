@@ -1,29 +1,27 @@
 ---
 title: リモート デスクトップ サービスの新機能
 description: Windows Server 2016 の RDS の新機能について説明します。
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: chrimo
 ms.date: 10/11/2016
 ms.topic: article
 ms.assetid: 04d52dff-e61b-4633-9908-be8600abc2ba
 author: ChristianMontoya
 manager: scottman
-ms.openlocfilehash: 43c280996334ea3b371c54f86b1cd4f86072124b
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 2048b78e17b4888492e252fb4b5454f9428a5e34
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86963314"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961596"
 ---
 # <a name="whats-new-in-remote-desktop-services"></a>リモート デスクトップ サービスの新機能
 
 リモート デスクトップ サービス (RDS) Windows Server 2016 上に構築されたは、さまざまな顧客シナリオを有効にする仮想化プラットフォームです。 RDS ソリューション全体の機能強化には、リモート デスクトップ チームとマイクロソフトの他のテクノロジ パートナーの両方によって実行される作業が組み込まれています。 次のシナリオとテクノロジは、新しい Windows Server 2016 改良されています。
 
-また、Ignite 2016 の次の Microsoft のセッションをぜひご覧ください。「[Harness RDS improvements in Windows Server 2016 (Windows Server 2016 で RDS の機能強化を活用する)](https://channel9.msdn.com/Events/Ignite/2016/BRK3098)」。 このビデオでは、製品チームが、vGPU のサポートなど、リモート デスクトップ サービスの新機能と機能強化をすべて紹介します。 
+また、Ignite 2016 の次の Microsoft のセッションをぜひご覧ください。「[Harness RDS improvements in Windows Server 2016 (Windows Server 2016 で RDS の機能強化を活用する)](https://channel9.msdn.com/Events/Ignite/2016/BRK3098)」。 このビデオでは、製品チームが、vGPU のサポートなど、リモート デスクトップ サービスの新機能と機能強化をすべて紹介します。
 
 ## <a name="app-compatibility---windows-server-2016-and-windows-10"></a>アプリの互換性: Windows Server 2016 および Windows 10
-Windows 10 と同じ基盤上に構築された Windows Server 2016 は、デスクトップの外観が同じだけでなく、同じアプリケーションを多数実行できます。 Windows Server 2016 とグラフィックス機能 (後述) を組み合わせると、すべてのユーザーの生産性を向上できる環境を用意できます。 
+Windows 10 と同じ基盤上に構築された Windows Server 2016 は、デスクトップの外観が同じだけでなく、同じアプリケーションを多数実行できます。 Windows Server 2016 とグラフィックス機能 (後述) を組み合わせると、すべてのユーザーの生産性を向上できる環境を用意できます。
 
 ## <a name="azure-sql-database---the-new-database-for-your-highly-available-environment"></a>Azure SQL Database - 高可用性環境のための新しいデータベース
 RD 接続ブローカーは、すべての展開情報 (接続状態やユーザー/ホストのマッピングなど) を Azure SQL データベースなどの共有 SQL データベースに格納できます。 SQL Server Always On 可用性グループ展開マニュアルを使用せず、Azure SQL データベースへの接続文字列を取得して、高可用性環境の使用を開始します。
@@ -41,7 +39,7 @@ Hyper-V の個別のデバイス割り当てにより、ホスト マシン上�
 追加情報:[リモート デスクトップ接続ブローカーのパフォーマンスの向上](https://techcommunity.microsoft.com/t5/microsoft-security-and/improved-remote-desktop-connection-broker-performance-with/ba-p/249559)
 
 ## <a name="rdp-10---new-capabilities-built-into-the-protocol"></a>RDP 10 - プロトコルに組み込まれた新機能
-RDP 10 は、H.264/AVC 444 コーデックを使用して、ビデオとテキストの両方にわたって適切に最適化するようになりました。 今回のリリースでは、ペンのリモート処理もサポートされています。 これらの機能を使用すると、リモート セッションの操作感がローカル セッションのようになります。  
+RDP 10 は、H.264/AVC 444 コーデックを使用して、ビデオとテキストの両方にわたって適切に最適化するようになりました。 今回のリリースでは、ペンのリモート処理もサポートされています。 これらの機能を使用すると、リモート セッションの操作感がローカル セッションのようになります。
 
 追加情報:[Windows 10 および Windows Server 2016 での RDP 10 AVC/H.264 の機能強化](https://techcommunity.microsoft.com/t5/microsoft-security-and/remote-desktop-protocol-rdp-10-avc-h-264-improvements-in-windows/ba-p/249588)
 

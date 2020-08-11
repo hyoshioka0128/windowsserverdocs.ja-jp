@@ -1,20 +1,18 @@
 ---
 title: リモート デスクトップ サービスの展開を Windows Server 2016 に移行する
 description: この記事では、新しい Windows Server 2016 サーバーに、リモート デスクトップ サービスの展開を移行する方法について説明します。
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: chrimo
 ms.date: 11/01/2016
 ms.topic: article
 ms.assetid: 9b1fa833-4325-48a8-bf34-46265f40c001
 author: christianmontoya
 manager: scottman
-ms.openlocfilehash: 2e4628e9ec7b5d75b88bb07282e2183a2f16fff2
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 62c2cc99277b3cf74f6bde5be59b69569c27a31b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959154"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961816"
 ---
 # <a name="migrate-your-remote-desktop-services-deployment-to-windows-server-2016"></a>リモート デスクトップ サービスの展開を Windows Server 2016 に移行する
 
@@ -53,8 +51,9 @@ Windows Server 2012 R2 でリモート デスクトップ サービスを実行�
 
 3. Windows Server 2016 RD 接続ブローカー サーバーを高可用性展開に追加します。
 
-> [!NOTE] 
-> Windows Server 2016 と Windows Server 2012 R2 が混在する高可用性の構成は、RD 接続ブローカー サーバーではサポートされません。 Windows Server 2016 を実行している RD 接続ブローカーは、Windows Server 2012 R2 を実行している RD セッション ホスト サーバーを使用したセッション コレクションにサービスを提供できます。また、Windows Server 2012 R2 を実行している RD 仮想化ホスト サーバーを使用した仮想デスクトップ コレクションにサービスを提供できます。
+> [!NOTE]
+> Windows Server 2016 と Windows Server 2012 R2 が混在する高可用性の構成は、RD 接続ブローカー サーバーではサポートされません。
+> Windows Server 2016 を実行している RD 接続ブローカーは、Windows Server 2012 R2 を実行している RD セッション ホスト サーバーを使用したセッション コレクションにサービスを提供できます。また、Windows Server 2012 R2 を実行している RD 仮想化ホスト サーバーを使用した仮想デスクトップ コレクションにサービスを提供できます。
 
 ## <a name="migrate-session-collections"></a>セッション コレクションを移行する
 

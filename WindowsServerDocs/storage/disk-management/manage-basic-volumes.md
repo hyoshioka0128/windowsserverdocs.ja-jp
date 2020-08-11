@@ -2,18 +2,16 @@
 title: ベーシック ボリュームを管理する
 description: この記事では、ベーシック ボリュームを管理する方法について説明します。
 ms.date: 10/12/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 2eee5820891c108475c58c9ad024cd7c00391e43
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: e97672e7ceceaa5eea83752169ccfd46bd910ed4
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71385918"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961576"
 ---
 # <a name="manage-basic-volumes"></a>ベーシック ボリュームを管理する
 

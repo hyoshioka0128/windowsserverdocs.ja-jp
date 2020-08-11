@@ -1,19 +1,17 @@
 ---
 title: Windows Server 2019 の新機能
 description: デスクトップ エクスペリエンス、ストレージ移行サービス、システム インサイト、Azure ネットワーク アダプター、記憶域スペース ダイレクトの機能強化、およびその他の変更を含む、Windows Server 2019 での新機能の概要。
-ms.prod: windows-server
-ms.technology: server-general
 ms.topic: article
 author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: high
 ms.date: 06/04/2019
-ms.openlocfilehash: fd094347679d147a04faefdf3741a06addda2026
-ms.sourcegitcommit: 78b59522234825c43b00c271a04c35f3fd9d65e3
+ms.openlocfilehash: 6337a3812cb6e1ca838c463bc811f8959d1f0714
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86946580"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87972369"
 ---
 # <a name="whats-new-in-windows-server-2019"></a>Windows Server 2019 の新機能
 
@@ -45,9 +43,9 @@ Windows Server 2019 は長期サービス チャネル (LTSC) リリースであ
 
 ### <a name="server-core-app-compatibility-feature-on-demand"></a>サーバー コア アプリ互換性オンデマンド機能
 
-[Server Core アプリ互換性オンデマンド機能 (FOD)](./install-fod-19.md) では、Windows Server Core インストール オプションのアプリ互換性が大幅に向上しています。このオプションでは、Windows Server デスクトップ エクスペリエンスのバイナリとコンポーネントのサブセットが含められ、Windows Server デスクトップ エクスペリエンス グラフィカル環境自体は追加されません。  これは、Server Core をできる限り軽量に維持しつつ機能と互換性を高めるためです。  
+[Server Core アプリ互換性オンデマンド機能 (FOD)](./install-fod-19.md) では、Windows Server Core インストール オプションのアプリ互換性が大幅に向上しています。このオプションでは、Windows Server デスクトップ エクスペリエンスのバイナリとコンポーネントのサブセットが含められ、Windows Server デスクトップ エクスペリエンス グラフィカル環境自体は追加されません。  これは、Server Core をできる限り軽量に維持しつつ機能と互換性を高めるためです。
 
-このオプションのオンデマンド機能は、独立した ISO で提供され、DISM を使用して Windows Server Core インストールとイメージのみに追加できます。 
+このオプションのオンデマンド機能は、独立した ISO で提供され、DISM を使用して Windows Server Core インストールとイメージのみに追加できます。
 
 ## <a name="security"></a>セキュリティ
 
@@ -75,7 +73,7 @@ ATP のディープ プラットフォーム センサーおよび対応アク�
 
 ### <a name="security-with-software-defined-networking-sdn"></a>ソフトウェア定義ネットワーク (SDN) によるセキュリティ
 
-[SDN のセキュリティ](../networking/sdn/security/sdn-security-top.md)では、オンプレミスまたはクラウドのサービス プロバイダーとして、ワークロードの実行に対するお客様の信頼度を向上するための多数の機能が提供されています。 
+[SDN のセキュリティ](../networking/sdn/security/sdn-security-top.md)では、オンプレミスまたはクラウドのサービス プロバイダーとして、ワークロードの実行に対するお客様の信頼度を向上するための多数の機能が提供されています。
 
 これらのセキュリティ強化機能は、Windows Server 2016 で導入された包括的な SDN プラットフォームに統合されています。
 
@@ -91,7 +89,7 @@ SDN の新機能の完全な一覧については、「[Windows Server 2019 の 
 
 - **トラブルシューティングの機能強化**
 
-    VMConnect 拡張セッション モードと PowerShell ダイレクトのサポートが有効になり、[シールドされた仮想マシンのトラブルシューティング](../security/guarded-fabric-shielded-vm/guarded-fabric-troubleshoot-shielded-vms.md)も容易になりました。 これらのツールは、VM へのネットワーク接続が失われたため構成を更新してアクセスを復元する必要がある場合に特に役立ちます。 
+    VMConnect 拡張セッション モードと PowerShell ダイレクトのサポートが有効になり、[シールドされた仮想マシンのトラブルシューティング](../security/guarded-fabric-shielded-vm/guarded-fabric-troubleshoot-shielded-vms.md)も容易になりました。 これらのツールは、VM へのネットワーク接続が失われたため構成を更新してアクセスを復元する必要がある場合に特に役立ちます。
 
     これらの機能は構成する必要がなく、Windows Server Version 1803 以降を実行している Hyper-V ホストにシールドされた VM が配置されると、自動的に利用可能になります。
 
@@ -168,7 +166,7 @@ Windows Server 2019 では、Windows で Kubernetes をサポートするため�
 - Kubernetes に展開されたワークロードでは、ネットワーク セキュリティを使用して、埋め込みツールにより Linux と Windows の両方のサービスを保護できます。
 
 ### <a name="container-improvements"></a>コンテナーの機能強化
-    
+
 - **統合された ID 機能強化**
 
     Windows Server の以前のバージョンにあったいくつかの制限に対処し、コンテナー内の統合 Windows 認証の容易さと信頼性が向上しました。
@@ -187,7 +185,8 @@ Windows Server 2019 では、Windows で Kubernetes をサポートするため�
 
 ### <a name="encrypted-networks"></a>暗号化されたネットワーク
 
-[暗号化されたネットワーク](../networking/sdn/sdn-whats-new.md) - 仮想ネットワークの暗号化を使用すると、"**暗号化有効**" とマークされているサブネット内で相互に通信する仮想マシン間で、仮想ネットワーク トラフィックの暗号化が有効になります。 また、この機能は、仮想サブネットのデータグラム トランスポート層セキュリティ (DTLS) を利用して、パケットを暗号化します。 DTLS は、物理ネットワークへのアクセスを持つユーザーによる盗聴、改ざん、偽造に対する保護を提供します。
+[暗号化されたネットワーク](../networking/sdn/sdn-whats-new.md) - 仮想ネットワークの暗号化を使用すると、"**暗号化有効**" とマークされているサブネット内で相互に通信する仮想マシン間で、仮想ネットワーク トラフィックの暗号化が有効になります。
+また、この機能は、仮想サブネットのデータグラム トランスポート層セキュリティ (DTLS) を利用して、パケットを暗号化します。 DTLS は、物理ネットワークへのアクセスを持つユーザーによる盗聴、改ざん、偽造に対する保護を提供します。
 
 ### <a name="network-performance-improvements-for-virtual-workloads"></a>仮想ワークロードに関するネットワーク パフォーマンスの向上
 
@@ -199,7 +198,7 @@ Windows Server 2019 では、Windows で Kubernetes をサポートするため�
 
 ### <a name="low-extra-delay-background-transport"></a>Low Extra Delay Background Transport
 
-Low Extra Delay Background Transport (LEDBAT) は、待機時間が最適化された、ネットワーク輻輳制御プロバイダーです。自動的に帯域幅をユーザーおよびアプリケーションに譲り、ネットワークが使用されていなければ使用可能な帯域幅全体を消費するように設計されています。   
+Low Extra Delay Background Transport (LEDBAT) は、待機時間が最適化された、ネットワーク輻輳制御プロバイダーです。自動的に帯域幅をユーザーおよびアプリケーションに譲り、ネットワークが使用されていなければ使用可能な帯域幅全体を消費するように設計されています。
 このテクノロジは、お客様が直接使用するサービスや関連する帯域幅に影響を与えることなく、重要で大規模な更新プログラムを IT 環境全体に展開する場合に使用することを目的としています。
 
 ### <a name="windows-time-service"></a>Windows タイム サービス
@@ -214,7 +213,7 @@ Windows Server 2019 の[ハイ パフォーマンス SDN ゲートウェイ](../
 
 ### <a name="new-deployment-ui-and-windows-admin-center-extension-for-sdn"></a>SDN の新しい展開 UI と Windows Admin Center 拡張機能
 
-Windows Server 2019 では、新しい展開 UI と Windows Admin Center 拡張機能により、だれもが SDN の機能を活用して、簡単に展開および管理できるようになりました。 
+Windows Server 2019 では、新しい展開 UI と Windows Admin Center 拡張機能により、だれもが SDN の機能を活用して、簡単に展開および管理できるようになりました。
 
 ### <a name="persistent-memory-support-for-hyper-v-vms"></a>Hyper-V VM の永続メモリ サポート
 

@@ -1,26 +1,24 @@
 ---
 title: Windows Server (バージョン 1709 以降) で削除された機能と置換が計画されている機能
 description: リリースで削除済みまたは削除予定の機能です。
-ms.prod: windows-server
-ms.technology: server-general
 ms.topic: article
 ms.date: 08/22/2019
 author: jasongerend
 ms.author: jgerend
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: 98632ee7147c3041b0f13d0a0e90bf8115268d36
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: ad9c64083ec07bd8fc5d1db56978f2b469da9953
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959474"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87959440"
 ---
 # <a name="features-removed-or-planned-for-replacement-starting-with-windows-server-version-1709"></a>Windows Server バージョン 1709 以降で削除された機能と置換が計画されている機能
 
 >適用先:Windows Server バージョン 1709
 
-次の一覧に、Windows Server バージョン 1709 の機能のうち、このリリースで製品から削除された機能および今後のリリースで置換が検討されるようになった機能を示します。 商用環境でオペレーティング システムを更新する IT 担当者を対象としています。 **この一覧は、今後のリリースで変更される可能性があります。また、影響を受ける機能でこの一覧に含まれていないものもあります。** 
+次の一覧に、Windows Server バージョン 1709 の機能のうち、このリリースで製品から削除された機能および今後のリリースで置換が検討されるようになった機能を示します。 商用環境でオペレーティング システムを更新する IT 担当者を対象としています。 **この一覧は、今後のリリースで変更される可能性があります。また、影響を受ける機能でこの一覧に含まれていないものもあります。**
 
 > [!TIP]
 > - [Windows Insider プログラム](https://insider.windows.com)に参加することで Windows Server ビルドにいち早くアクセスできます。これは、機能の変更をテストするための最適な方法です。
@@ -60,7 +58,7 @@ IIS 6 メタベース互換 (IIS 6 ベースのメタベース スクリプト�
 ### <a name="internet-storage-name-service-isns"></a>インターネット記憶域ネーム サービス (iSNS)
 iSNS は置き換えが検討されています。 サーバー メッセージ ブロック (SMB) 機能は、基本的に同じ機能と追加機能を提供しています。 この機能の背景情報については、「[サーバー メッセージ ブロックの概要](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831795(v=ws.11))」を参照してください。
 
-### <a name="rsaaes-encryption-for-iis"></a>IIS 用の RSA/AES 暗号化 
+### <a name="rsaaes-encryption-for-iis"></a>IIS 用の RSA/AES 暗号化
 この暗号化方法は置き換えが検討されています。より優れた Cryptography API:Next Generation (CNG) による方法が既に利用できるためです。 CNG 暗号化について詳しくは、[CNG の概要に関するトピック](/windows/win32/seccng/about-cng)をご覧ください。
 
 ### <a name="windows-powershell-20"></a>Windows PowerShell 2.0

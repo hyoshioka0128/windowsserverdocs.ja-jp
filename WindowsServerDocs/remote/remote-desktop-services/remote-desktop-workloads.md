@@ -1,19 +1,17 @@
 ---
 title: リモート デスクトップのワークロード
 description: リモート デスクトップによって管理される仮想マシンのさまざまな種類のワークロードの概要を簡単に説明します。
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: helohr
 ms.date: 12/02/2019
 ms.topic: article
 author: Heidilohr
 manager: lizross
-ms.openlocfilehash: 53c120be0ca91f0a9331a0585be8b4335f863a56
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 360155def9a1313fcd1cb61af27c372297b76f7f
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80857245"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971519"
 ---
 # <a name="remote-desktop-workloads"></a>リモート デスクトップのワークロード
 

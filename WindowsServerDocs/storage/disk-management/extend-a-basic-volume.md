@@ -2,18 +2,16 @@
 title: ベーシック ボリュームを拡張する
 description: Windows の既存のボリュームに領域を追加して、ドライブ上の空き領域に拡張することができます。ただし、空き領域にボリュームがなく (未割り当て)、間に他のボリュームがなく、拡張するボリュームのすぐ後にある場合に限ります。 この記事では、その方法について説明します。
 ms.date: 12/19/2019
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 19b48bd74dad4e20780b41852afbee15f5ec1ade
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: d0cd4c0c2bd6909c82ee39c97b58909e85aeef9f
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966104"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961616"
 ---
 # <a name="extend-a-basic-volume"></a>ベーシック ボリュームを拡張する
 

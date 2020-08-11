@@ -1,20 +1,18 @@
 ---
 title: iOS クライアントの新機能
 description: iOS 用のリモート デスクトップ クライアントに対する最近の変更について説明します
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
 ms.date: 05/06/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 0943379b8f251d1548a0aa920a95931dc39a0624
-ms.sourcegitcommit: 67116322915066b85decb4261d47cedec2cfe12f
+ms.openlocfilehash: 16e142a299b43ac6167fa4bf34d5782899f28846
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82903449"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87970159"
 ---
 # <a name="whats-new-in-the-ios-client"></a>iOS クライアントの新機能
 

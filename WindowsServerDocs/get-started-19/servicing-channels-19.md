@@ -1,19 +1,17 @@
 ---
 title: サービス チャネル
 description: Windows Server サービス チャネルの説明 - LTSC と SAC
-ms.prod: windows-server
-ms.technology: server-general
 ms.topic: article
 author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: high
 ms.date: 05/21/2019
-ms.openlocfilehash: 71f35b7c0dd3e2dc96c0b58ac4438a3c12472832
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 47fd1d50e9f90fb6617e2ded4bff3efeab5cd117
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87410003"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87969969"
 ---
 # <a name="windows-server-servicing-channels-ltsc-and-sac"></a>Windows Server サービス チャネル: LTSC と SAC
 

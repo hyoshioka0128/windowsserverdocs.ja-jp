@@ -2,24 +2,22 @@
 title: 仮想ハード ディスク (VHD) の管理
 description: この記事では、仮想ハード ディスクを管理する方法について説明します。
 ms.date: 10/12/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 6ffa7e9dc769b8d8c892d0af1ceae5246df62d3e
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: c00fcec3e27f3c91b429419fe25b5dc84125a720
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71385812"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957670"
 ---
 # <a name="manage-virtual-hard-disks-vhd"></a>仮想ハード ディスク (VHD) の管理
 
 > **適用対象:** Windows 10、Windows 8.1、Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-このトピックでは、ディスクの管理を使用して、仮想ハード ディスクを作成、アタッチ、デタッチする方法について説明します。 仮想ハード ディスク (VHD) は仮想化されたハード ディスク ファイルで、一度マウントされると、物理ハード ドライブとほぼ同様に表示され、動作します。 仮想ハード ディスクは、Hyper-V 仮想マシンで最もよく使用されます。 
+このトピックでは、ディスクの管理を使用して、仮想ハード ディスクを作成、アタッチ、デタッチする方法について説明します。 仮想ハード ディスク (VHD) は仮想化されたハード ディスク ファイルで、一度マウントされると、物理ハード ドライブとほぼ同様に表示され、動作します。 仮想ハード ディスクは、Hyper-V 仮想マシンで最もよく使用されます。
 
 ## <a name="viewing-vhds-in-disk-management"></a>ディスクの管理で VHD を表示する
 
@@ -40,7 +38,7 @@ ms.locfileid: "71385812"
 
 ## <a name="attaching-and-detaching-a-vhd"></a>VHD をアタッチおよびデタッチする
 
-VHD (先ほど作成した VHD または別の既存の VHD) を使用できるようにするには、以下の手順を実行します。 
+VHD (先ほど作成した VHD または別の既存の VHD) を使用できるようにするには、以下の手順を実行します。
 
 1. **[アクション]** メニューで、 **[VHD の接続]** を選択します。
 

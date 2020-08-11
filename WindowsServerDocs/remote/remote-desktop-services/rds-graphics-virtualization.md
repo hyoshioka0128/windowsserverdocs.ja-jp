@@ -1,20 +1,18 @@
 ---
 title: リモート デスクトップ サービス - GPU アクセラレーション
 description: お使いの RDS 展開に適したグラフィックス仮想化オプションの選択に役立つ計画情報。
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 08/21/2019
 ms.topic: article
 ms.assetid: d6ff5b22-7695-4fee-b1bd-6c9dce5bd0e8
 author: lizap
 manager: scottman
-ms.openlocfilehash: 5403be897df48972edd4c5b37744a83d8ad25972
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: f3a79c5e9d78750770cb79ce8f1854e72fdd096c
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80861385"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971619"
 ---
 # <a name="remote-desktop-services---gpu-acceleration"></a>リモート デスクトップ サービス - GPU アクセラレーション
 

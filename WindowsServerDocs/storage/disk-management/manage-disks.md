@@ -2,18 +2,16 @@
 title: ディスクを管理する
 description: この記事では、ディスクを管理する方法について説明します。
 ms.date: 06/07/2019
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 0aac0b78e79949de94ebd20912b8c2b2db167339
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 27ce56c66ce22d64001facce899072dc64a1da16
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71385873"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961516"
 ---
 # <a name="manage-disks"></a>ディスクを管理する
 

@@ -1,19 +1,17 @@
 ---
 title: Windows Server でのディスク クリーンアップの使用
 description: コマンドライン オプションを使用して、特定のファイルを自動的にクリーンアップするようにディスク クリーンアップ ツール (Cleanmgr.exe) を構成する方法について説明します。
-ms.prod: windows-server
 ms.reviewer: cosmosdarwin
 author: iangpgh
 ms.author: jgerend
 manager: daveba
-ms.technology: storage-spaces
 ms.date: 06/20/2019
-ms.openlocfilehash: bb93ec15fd138ee65797c9d27413552c3a1759a6
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: cd7aa3dbb648e5083894f4344ea96ca1c1684aab
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "75949669"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971169"
 ---
 # <a name="using-disk-cleanup-on-windows-server"></a>Windows Server でのディスク クリーンアップの使用
 
@@ -63,7 +61,7 @@ cleanmgr.exe を使用するには、前述のようにデスクトップ エク
 
 | オペレーティング システム  | アーキテクチャ  | ファイルの場所  |
 | ----------------- | -------------- | --------------- |
-| Windows Server 2008 R2 | 64 ビット | C:\Windows\winsxs\amd64_microsoft-windows-cleanmgr_31bf3856ad364e35_6.1.7600.16385_none_c9392808773cd7da\cleanmgr.exe 
+| Windows Server 2008 R2 | 64 ビット | C:\Windows\winsxs\amd64_microsoft-windows-cleanmgr_31bf3856ad364e35_6.1.7600.16385_none_c9392808773cd7da\cleanmgr.exe
 | Windows Server 2008 R2 | 64 ビット | C:\Windows\winsxs\amd64_microsoft-windows-cleanmgr.resources_31bf3856ad364e35_6.1.7600.16385_en-us_b9cb6194b257cc63\cleanmgr.exe.mui |
 
 cleanmgr.exe を見つけて、ファイルを **%systemroot%\System32** に移動します。

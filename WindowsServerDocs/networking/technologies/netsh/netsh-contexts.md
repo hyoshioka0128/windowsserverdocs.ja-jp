@@ -1,19 +1,17 @@
 ---
 title: Netsh コマンドの構文、コンテキスト、形式
 description: このトピックでは、netsh コンテキストとサブコンテキストを入力する方法、netsh 構文とコマンドの書式について、Windows Server 2016 または Windows 10 を実行しているローカル コンピューターとリモート コンピューターで netsh コマンドを実行する方法について説明します。
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: 8cb9b59f-0255-4261-b49a-562c5ea50ee0
 manager: brianlic
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 061d7252d5a7bbe09d3dca245d9b77ed20a4dedf
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: f72d3dfc3cd6f54b123cb00baf9ba75e4faeb906
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80854765"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87969469"
 ---
 # <a name="netsh-command-syntax-contexts-and-formatting"></a>Netsh コマンドの構文、コンテキスト、形式
 
@@ -27,7 +25,7 @@ netsh は、現在実行中のコンピューターのネットワーク構成�
 
 ## <a name="netsh-contexts"></a>netsh コンテキスト
 
-netsh は、ダイナミック\-リンク ライブラリ \(DLL\) ファイルを使用して、他のオペレーティング システムのコンポーネントと対話します。 
+netsh は、ダイナミック\-リンク ライブラリ \(DLL\) ファイルを使用して、他のオペレーティング システムのコンポーネントと対話します。
 
 各 netsh ヘルパー DLL には、ネットワーク サーバーの役割または機能に固有のコマンドのグループである "*コンテキスト*" と呼ばれるさまざまな機能のセットが用意されています。 これらのコンテキストにより、1 つ以上のサービス、ユーティリティ、またはプロトコルの構成と監視のサポートが提供されるため、netsh の機能が拡張されます。 たとえば、Dhcpmon.dll では netsh に DHCP サーバーを構成して管理するために必要なコンテキストとコマンドのセットが提供されます。
 
@@ -40,9 +38,9 @@ Windows Server 2016 Datacenter を実行しているコンピューターでの�
 >    ```
 >   PS C:\Windows\system32> netsh
 >   netsh>/?
->    
+>
 >    The following commands are available:
->    
+>
 >    Commands in this context:
 >    ..            - Goes up one context level.
 >    ?             - Displays a list of commands.
@@ -83,10 +81,10 @@ Windows Server 2016 Datacenter を実行しているコンピューターでの�
 >    wfp           - Changes to the `netsh wfp' context.
 >    winhttp       - Changes to the `netsh winhttp' context.
 >    winsock       - Changes to the `netsh winsock' context.
->    
+>
 >    The following sub-contexts are available:
 >     advfirewall branchcache bridge dhcpclient dnsclient firewall http interface ipsec ipsecdosprotection lan namespace netio ras rpc trace wfp winhttp winsock
->    
+>
 >    To view help for a command, type the command, followed by a space, and then type ?.
 >    ```
 
@@ -149,7 +147,7 @@ netsh は、実行中のコンピューターのネットワーク構成をロ�
 
 **`Context`**
 
-任意。 入力する **netsh** コンテキストを指定します。 
+任意。 入力する **netsh** コンテキストを指定します。
 
 **`-r`**
 

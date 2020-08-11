@@ -1,7 +1,6 @@
 ---
 title: KMS クライアント セットアップ キー
 description: KMS サーバーから Windows 製品をアクティブ化するために必要なキー
-ms.prod: windows-server
 ms.mktglfcycl: manage
 ms.sitesec: library
 author: jasongerend
@@ -9,12 +8,12 @@ ms.author: jgerend
 ms.localizationpriority: medium
 ms.date: 11/12/2019
 ms.topic: get-started-article
-ms.openlocfilehash: 1eeaa76af345d3f05effe2afe35c40d594adfc3a
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 399a79588c91be0ab5cf553fc29636e5ab768c16
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959624"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87959700"
 ---
 # <a name="kms-client-setup-keys"></a>KMS クライアント セットアップ キー
 
@@ -23,7 +22,7 @@ ms.locfileid: "86959624"
 Windows Server、Windows 10、Windows 8.1、Windows Server 2012 R2、Windows 8、Windows Server 2012、Windows 7、Windows Server 2008 R2、Windows Vista、and Windows Server 2008 のボリューム ライセンス版が実行されているコンピューターは、既定で、追加の構成が必要ない KMS クライアントとなります。
 
 > [!NOTE]
-> 以下の表で使用されている "LTSC" は "長期サービス チャネル" を、"LTSB" は "長期サービス ブランチ" を意味しています。 
+> 以下の表で使用されている "LTSC" は "長期サービス チャネル" を、"LTSB" は "長期サービス ブランチ" を意味しています。
 
 **ここに記載されているキー (GVLK) を使用するには、お使いのデプロイ内で KMS ホストを先に実行しておく必要があります。** まだ KMS ホストを構成していない場合は、「[KMS ライセンス認証の展開](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn502531(v=ws.11))」でホストの設定手順を参照してください。
 
@@ -57,7 +56,7 @@ Windows Server、Windows 10、Windows 8.1、Windows Server 2012 R2、Windows 8�
 ### <a name="windows-server-2019"></a>Windows Server 2019
 | オペレーティング システムのエディション       | KMS クライアント セットアップ キー          |
 |--------------------------------|-------------------------------|
-| Windows Server 2019 Datacenter | WMDGN-G9PQG-XVVXX-R3X43-63DFG | 
+| Windows Server 2019 Datacenter | WMDGN-G9PQG-XVVXX-R3X43-63DFG |
 | Windows Server 2019 Standard   | N69G4-B89J2-4G8F4-WWYCC-J464C |
 | Windows Server 2019 Essentials | WVDHN-86M7X-466P6-VHXV7-YY726 |
 
@@ -104,7 +103,7 @@ Windows Server、Windows 10、Windows 8.1、Windows Server 2012 R2、Windows 8�
 | Windows 10 Enterprise LTSB 2016   | DCPHK-NFMTC-H88MJ-PFHPY-QJ4BJ |
 | Windows 10 Enterprise N LTSB 2016 | QFFDN-GRT3P-VKWWX-X7T3R-8B639 |
 
-### <a name="windows-10-ltsb-2015"></a>Windows 10 LTSB 2015 
+### <a name="windows-10-ltsb-2015"></a>Windows 10 LTSB 2015
 
 | オペレーティング システムのエディション          | KMS クライアント セットアップ キー          |
 |-----------------------------------|-------------------------------|
@@ -117,14 +116,14 @@ Windows Server、Windows 10、Windows 8.1、Windows Server 2012 R2、Windows 8�
 
 | オペレーティング システムのエディション  | KMS クライアント セットアップ キー          |
 |---------------------------|-------------------------------|
-| Windows Server Datacenter | 2HXDN-KRXHB-GPYC7-YCKFJ-7FVDG | 
+| Windows Server Datacenter | 2HXDN-KRXHB-GPYC7-YCKFJ-7FVDG |
 | Windows Server Standard   | PTXN8-JFHJM-4WC78-MPCBR-9W4KR |
 
 ### <a name="windows-server-version-1709"></a>Windows Server バージョン 1709
 
 | オペレーティング システムのエディション  | KMS クライアント セットアップ キー          |
 |---------------------------|-------------------------------|
-| Windows Server Datacenter | 6Y6KB-N82V8-D8CQV-23MJW-BWTG6 | 
+| Windows Server Datacenter | 6Y6KB-N82V8-D8CQV-23MJW-BWTG6 |
 | Windows Server Standard   | DPCNP-XQFKJ-BJF7R-FRC8D-GF6G4 |
 
 ### <a name="windows-server-2012-r2"></a>Windows Server 2012 R2
@@ -195,7 +194,7 @@ Windows Server、Windows 10、Windows 8.1、Windows Server 2012 R2、Windows 8�
 | Windows 8 Enterprise N   | JMNMF-RHW7P-DMY6X-RF3DR-X2BQT |
 
 
-### <a name="windows-7"></a>Windows 7 
+### <a name="windows-7"></a>Windows 7
 
 | オペレーティング システムのエディション | KMS クライアント セットアップ キー          |
 |--------------------------|-------------------------------|

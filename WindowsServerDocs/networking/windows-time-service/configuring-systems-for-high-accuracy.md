@@ -6,14 +6,12 @@ author: dcuomo
 ms.author: dacuo
 ms.date: 05/08/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: networking
-ms.openlocfilehash: 71f15f9da1f477ec8632fd2eb900e650f83ef3de
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: b6d37a656994fa12e0a84c1330f4f40d79249af9
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409602"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87970739"
 ---
 # <a name="configuring-systems-for-high-accuracy"></a>高精度を確保するためのシステム構成
 >適用先:Windows Server 2016、および Windows 10 バージョン 1607 以降

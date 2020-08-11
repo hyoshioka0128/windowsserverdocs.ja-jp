@@ -1,19 +1,17 @@
 ---
 title: Azure Site Recovery を使用して RDS のディザスター リカバリーを有効にする
 description: Azure Site Recovery を使用して RDS のディザスター リカバリーを有効にする方法について説明します。
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 05/05/2017
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: 0c7af18be4aa767009f1dd0b82f145ffe6874768
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: bd8731b05c995e261a720ca1557e58176fba5a0f
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80861405"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961676"
 ---
 # <a name="enable-disaster-recovery-of-rds-using-azure-site-recovery"></a>Azure Site Recovery を使用して RDS のディザスター リカバリーを有効にする
 

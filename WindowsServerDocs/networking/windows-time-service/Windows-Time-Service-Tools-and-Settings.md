@@ -5,14 +5,12 @@ author: Teresa-Motiv
 ms.author: v-tea
 ms.date: 02/24/2020
 ms.topic: article
-ms.prod: windows-server
-ms.technology: networking
-ms.openlocfilehash: b73b6bf2150b8c97b858f41d7a4864a5d6fd5546
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: cb549f951865a065c70a6bfbfa9d49faf71ffd97
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182118"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87989789"
 ---
 # <a name="windows-time-service-tools-and-settings"></a>Windows タイム サービスのツールと設定
 
@@ -255,7 +253,7 @@ Windows タイム サービスでは、次のレジストリ サブキーの下�
 > レジストリ内の一部のパラメーターはクロック ティック単位で測定されますが、秒単位で測定されるものもあります。 時刻をクロック ティックから秒に変換するには、次の変換係数を使用します。
 > - 1 分 = 60 秒
 > - 1 秒 = 1000 ミリ秒
-> - 1 ミリ秒 = 10,000 クロック ティック (Windows システムの場合。「[DateTime.Ticks プロパティ](https://docs.microsoft.com/dotnet/api/system.datetime.ticks)」を参照)。
+> - 1 ミリ秒 = 10,000 クロック ティック (Windows システムの場合。「[DateTime.Ticks プロパティ](/dotnet/api/system.datetime.ticks)」を参照)。
 >
 > たとえば、5分は 5 &times; 60 &times; 1000 &times; 10000 = 3,000,000,000 クロック ティックになります。
 

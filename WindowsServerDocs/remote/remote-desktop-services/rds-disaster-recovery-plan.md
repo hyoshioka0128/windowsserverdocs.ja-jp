@@ -1,19 +1,17 @@
 ---
 title: ディザスター リカバリー計画を作成する
 description: RDS 展開のディザスター リカバリー計画を作成する方法について説明します。
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 05/05/2017
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: 18342bb7fd3ad26427ae1e1a051e20444fdff7c2
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: e7bf323d1a0506e9f9718d2afb8da392f0118929
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80859025"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961736"
 ---
 # <a name="create-your-disaster-recovery-plan-for-rds"></a>RDS のディザスター リカバリー計画を作成する
 
@@ -38,7 +36,7 @@ RDS のセッション ベースの展開では、VM が正しい順序で切り
 2. フェールオーバー グループ 2 - 接続ブローカー VM
 3. フェールオーバー グループ 3 - Web アクセス VM
 
-計画は次のようになります。 
+計画は次のようになります。
 
 ![セッション ベースの RDS 展開のディザスター リカバリー計画](media/rds-asr-session-drplan.png)
 
@@ -62,20 +60,20 @@ RDS のセッション ベースの展開では、VM が正しい順序で切り
    Broker - broker.contoso.com
    Virtualization host - VH1.contoso.com
 
-   ipmo RemoteDesktop; 
-   add-rdserver –ConnectionBroker broker.contoso.com –Role RDS-VIRTUALIZATION –Server VH1.contoso.com 
+   ipmo RemoteDesktop;
+   add-rdserver –ConnectionBroker broker.contoso.com –Role RDS-VIRTUALIZATION –Server VH1.contoso.com
    ```
 4. フェールオーバー グループ 2 - テンプレート VM
 5. グループ 2 のスクリプト 1 - テンプレート VM の無効化
-   
+
    テンプレート VM は、セカンダリ サイトに復旧されると起動しますが、これはシステムで準備された VM であり、完全には起動できません。 また、この VM は、RDS がプールされた VM 構成を作成するために、シャットダウンされている必要があります。 そのため、これを無効にする必要があります。 単一の VMM サーバーを使用している場合、テンプレート VM 名は、プライマリとセカンダリで同じになります。 そのため、次のスクリプトの *Context* 変数で指定された VM ID を使用します。 複数のテンプレートを使用している場合は、そのすべてを無効にします。
 
    ```powershell
-   ipmo virtualmachinemanager; 
+   ipmo virtualmachinemanager;
    Foreach($vm in $VMsAsTemplate)
    {
       Get-SCVirtualMachine -ID $vm | Stop-SCVirtualMachine –Force
-   } 
+   }
    ```
 6. グループ 2 のスクリプト 2 - 既存のプールされた VM の削除
 
@@ -83,7 +81,7 @@ RDS のセッション ベースの展開では、VM が正しい順序で切り
 
    ```powershell
    ipmo RemoteDesktop
-   $desktops = Get-RDVirtualDesktop -CollectionName Win8Desktops; 
+   $desktops = Get-RDVirtualDesktop -CollectionName Win8Desktops;
    Foreach($vm in $desktops){
       Remove-RDVirtualDesktopFromCollection -CollectionName Win8Desktops -VirtualDesktopName $vm.VirtualDesktopName –Force
    }
@@ -98,8 +96,8 @@ RDS のセッション ベースの展開では、VM が正しい順序で切り
    プールされた VM 名は、プレフィックスとサフィックスを使用して、一意になるようにします。 VM 名が既に存在する場合、スクリプトは失敗します。 また、プライマリ側の VM に 1 から 5 の番号が付けられている場合、復旧サイトでは 6 から継続されます。
 
    ```powershell
-   ipmo RemoteDesktop; 
-   Add-RDVirtualDesktopToCollection -CollectionName Win8Desktops -VirtualDesktopAllocation @{"RDVH1.contoso.com" = 1} 
+   ipmo RemoteDesktop;
+   Add-RDVirtualDesktopToCollection -CollectionName Win8Desktops -VirtualDesktopAllocation @{"RDVH1.contoso.com" = 1}
    ```
 9. フェールオーバー グループ 3 - Web アクセスおよびゲートウェイ サーバー VM
 
@@ -120,27 +118,27 @@ RDS のセッション ベースの展開では、VM が正しい順序で切り
    ipconfig /registerdns
    ```
 3. グループ 1 のスクリプト - 仮想化ホストの追加
-      
+
    次のスクリプトを、クラウド内の各仮想化ホストに対して実行するように変更します。 通常は、接続ブローカーに仮想化ホストを追加した後に、ホストを再起動する必要があります。 ホストに保留中の再起動がないことを確認してから、スクリプトを実行してください。そうしないと失敗します。
 
    ```powershell
    Broker - broker.contoso.com
    Virtualization host - VH1.contoso.com
 
-   ipmo RemoteDesktop; 
-   add-rdserver –ConnectionBroker broker.contoso.com –Role RDS-VIRTUALIZATION –Server VH1.contoso.com 
+   ipmo RemoteDesktop;
+   add-rdserver –ConnectionBroker broker.contoso.com –Role RDS-VIRTUALIZATION –Server VH1.contoso.com
    ```
 4. フェールオーバー グループ 2 - テンプレート VM
 5. グループ 2 のスクリプト 1 - テンプレート VM の無効化
-   
+
    テンプレート VM は、セカンダリ サイトに復旧されると起動しますが、これはシステムで準備された VM であり、完全には起動できません。 また、この VM は、RDS がプールされた VM 構成を作成するために、シャットダウンされている必要があります。 そのため、これを無効にする必要があります。 単一の VMM サーバーを使用している場合、テンプレート VM 名は、プライマリとセカンダリで同じになります。 そのため、次のスクリプトの *Context* 変数で指定された VM ID を使用します。 複数のテンプレートを使用している場合は、そのすべてを無効にします。
 
    ```powershell
-   ipmo virtualmachinemanager; 
+   ipmo virtualmachinemanager;
    Foreach($vm in $VMsAsTemplate)
    {
       Get-SCVirtualMachine -ID $vm | Stop-SCVirtualMachine –Force
-   } 
+   }
    ```
 6. フェールオーバー グループ 3 - 個人用 VM
 7. グループ 3 のスクリプト 1 - 既存の個人用 VM の削除と追加
@@ -149,17 +147,17 @@ RDS のセッション ベースの展開では、VM が正しい順序で切り
 
    ```powershell
    ipmo RemoteDesktop
-   $desktops = Get-RDVirtualDesktop -CollectionName CEODesktops; 
-   Export-RDPersonalVirtualDesktopAssignment -CollectionName CEODesktops -Path ./Desktopallocations.txt -ConnectionBroker broker.contoso.com 
+   $desktops = Get-RDVirtualDesktop -CollectionName CEODesktops;
+   Export-RDPersonalVirtualDesktopAssignment -CollectionName CEODesktops -Path ./Desktopallocations.txt -ConnectionBroker broker.contoso.com
 
    Foreach($vm in $desktops){
      Remove-RDVirtualDesktopFromCollection -CollectionName CEODesktops -VirtualDesktopName $vm.VirtualDesktopName –Force
    }
-   
-   Import-RDPersonalVirtualDesktopAssignment -CollectionName CEODesktops -Path ./Desktopallocations.txt -ConnectionBroker broker.contoso.com 
+
+   Import-RDPersonalVirtualDesktopAssignment -CollectionName CEODesktops -Path ./Desktopallocations.txt -ConnectionBroker broker.contoso.com
    ```
 8. フェールオーバー グループ 3 - Web アクセスおよびゲートウェイ サーバー VM
 
-計画は次のようになります。 
+計画は次のようになります。
 
 ![個人用デスクトップを含む RDS 展開のディザスター リカバリー計画](media/rds-asr-personal-desktops-drplan.png)

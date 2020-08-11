@@ -1,18 +1,16 @@
 ---
 title: 拡張機能のインストールと管理
 description: Windows Admin Center (Project Honolulu) での拡張機能のインストールと管理
-ms.technology: manage
 ms.topic: article
 author: daniellee-msft
 ms.author: jol
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 4ba2e760d57f1c3f59e40b78b449a8831b8093d2
-ms.sourcegitcommit: fe89b8001ad664b3618708b013490de93501db05
+ms.openlocfilehash: c2feaaff614d00afeaf5d132c446eebe5fdf0989
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84942311"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87966779"
 ---
 # <a name="install-and-manage-extensions"></a>拡張機能のインストールと管理
 
@@ -24,7 +22,7 @@ Windows Admin Center は拡張可能なプラットフォームとして構築�
 
 Windows Admin Center には、指定された NuGet フィードから使用できる拡張機能が表示されます。 既定で、Windows Admin Center では、Microsoft や他の開発者から発行された拡張機能をホストする Microsoft の公式 NuGet フィードが示されます。
 
-1. 右上の **[設定]** ボタンをクリックし、左ペインの **[拡張機能]** をクリックします。 
+1. 右上の **[設定]** ボタンをクリックし、左ペインの **[拡張機能]** をクリックします。
 2. **[使用可能な拡張機能]** タブには、インストールできる拡張機能がフィードに一覧表示されます。
 3. 拡張機能をクリックすると、 **[詳細]** ペインに拡張機能の説明、バージョン、発行元、およびその他の情報が表示されます。
 4. **[インストール]** をクリックして拡張機能をインストールします。 この変更を行うために、ゲートウェイを特権モードで実行する必要がある場合は、UAC の昇格プロンプトが表示されます。 インストールが完了すると、ブラウザーが自動的に更新され、Windows Admin Center に新しい拡張機能がインストールされ、再度読み込まれます。 インストール対象の拡張機能が以前にインストールされた拡張機能の更新プログラムである場合、 **[Update to latest]\(最新版への更新\)** ボタンをクリックして更新プログラムをインストールできます。 また、 **[インストール済みの拡張機能]** タブにアクセスしてインストールされている拡張機能を表示し、 **[状態]** 列で更新プログラムがあるかどうかを確認することもできます。
@@ -44,7 +42,7 @@ Windows Admin Center は複数のフィードをサポートしており、一�
 
 以前にインストールした拡張機能をアンインストールできます。また、Windows Admin Center のインストールの一部として事前にインストールされていたツールをアンインストールすることもできます。
 
-1. 右上の **[設定]** ボタンをクリックし、左ペインの **[拡張機能]** をクリックします。 
+1. 右上の **[設定]** ボタンをクリックし、左ペインの **[拡張機能]** をクリックします。
 2. インストールされているすべての拡張機能を表示するには **[インストール済みの拡張機能]** タブをクリックします。
 3. アンインストールする拡張機能を選択し、 **[アンインストール]** をクリックします。
 
@@ -56,7 +54,7 @@ Windows Admin Center は複数のフィードをサポートしており、一�
 
 ### <a name="manually-downloading-extension-packages"></a>拡張機能パッケージを手動でダウンロードする
 
-1. インターネットに接続できる別のコンピューターで Web ブラウザーを開き、[https://dev.azure.com/WindowsAdminCenter/Windows%20Admin%20Center%20Feed/_packaging?_a=feed&feed=WAC](https://dev.azure.com/WindowsAdminCenter/Windows%20Admin%20Center%20Feed/_packaging?_a=feed&feed=WAC) の URL に移動します。 
+1. インターネットに接続できる別のコンピューターで Web ブラウザーを開き、[https://dev.azure.com/WindowsAdminCenter/Windows%20Admin%20Center%20Feed/_packaging?_a=feed&feed=WAC](https://dev.azure.com/WindowsAdminCenter/Windows%20Admin%20Center%20Feed/_packaging?_a=feed&feed=WAC) の URL に移動します。
 
    * 拡張機能パッケージを表示するには、Microsoft アカウントを作成してログインすることが必要な場合もあります。
 

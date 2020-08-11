@@ -1,26 +1,24 @@
 ---
 title: Server Core のインストール
 description: コア インストールを取得して、Windows Server 2019、Windows Server 2016 または Windows Server (半期チャネル) にインストールする方法。
-ms.prod: windows-server
 ms.date: 05/21/2019
-ms.technology: server-general
 ms.topic: article
 ms.assetid: 2d22818c-fbb7-487a-bb82-81ef0a3f7ede
 author: jasongerend
 ms.author: jgerend
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: 13d36c233094511216483f0fb37dc6a004212a50
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 93b4cb477ce31543e67dd9f973637e830e0fd478
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826975"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87959790"
 ---
 # <a name="install-server-core"></a>Server Core のインストール
 
 > 適用先:Windows Server 2019、Windows Server 2016、Windows Server (半期チャネル)
-  
+
 初めて Windows Server をインストールする場合は、次のインストール オプションがあります。
 
 >[!NOTE]
@@ -33,10 +31,10 @@ ms.locfileid: "80826975"
 
 初めて Windows Server (半期チャネル) をインストールする場合は、次のインストール オプションがあります。
 
--    Windows Server Standard 
+-    Windows Server Standard
 -    Windows Server Datacenter
 
-Server Core オプションでは、必要なディスク領域が減少し、攻撃を受ける可能性が低下しています。したがって、デスクトップ エクスペリエンス搭載サーバー オプションに含まれている追加的なユーザー インターフェイス要素やグラフィカル管理ツールを特に必要としなければ、Server Core インストールを選択することをお勧めします。 追加的なユーザー インターフェイス要素が必要な場合は、「[デスクトップ エクスペリエンスを使用したサーバーのインストール](Getting-Started-with-Server-with-Desktop-Experience.md)」をご覧ください。 
+Server Core オプションでは、必要なディスク領域が減少し、攻撃を受ける可能性が低下しています。したがって、デスクトップ エクスペリエンス搭載サーバー オプションに含まれている追加的なユーザー インターフェイス要素やグラフィカル管理ツールを特に必要としなければ、Server Core インストールを選択することをお勧めします。 追加的なユーザー インターフェイス要素が必要な場合は、「[デスクトップ エクスペリエンスを使用したサーバーのインストール](Getting-Started-with-Server-with-Desktop-Experience.md)」をご覧ください。
 
 Server Core オプションでは、標準のユーザー インターフェイス (デスクトップ エクスペリエンス) はインストールされません。コマンド ラインや Windows PowerShell を使用するか、またはリモート操作でサーバーを管理します。
 

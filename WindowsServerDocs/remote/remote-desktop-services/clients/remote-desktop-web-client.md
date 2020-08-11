@@ -1,19 +1,17 @@
 ---
 title: Web クライアントの概要
 description: リモート デスクトップ Web クライアントにサインインする方法について説明します。
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: helohr
 ms.date: 08/27/2019
 ms.topic: article
 author: Heidilohr
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c37c28fded08ba68e46a10a534ee0269c714938
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 6d408c70d75de0e2a14260f951209348e2aea63e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "74189468"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961876"
 ---
 # <a name="get-started-with-the-web-client"></a>Web クライアントの概要
 
@@ -61,7 +59,7 @@ Web クライアントでは現在、テキストのコピーと貼り付けの�
 
 ## <a name="use-an-input-method-editor-ime-in-the-remote-session"></a>リモート セッションで入力方式エディター (IME) を使用する
 
-リモート セッションで入力方式エディターを使用して複雑な文字を入力するには、ナビゲーション バーの歯車アイコンを選択して **[設定]** サイド パネルを開き、 **[入力方式エディターを有効にする]** を **[オン]** に切り替えます。 入力方式エディターがインストールされ、リモート セッションで有効になっている必要があります。 
+リモート セッションで入力方式エディターを使用して複雑な文字を入力するには、ナビゲーション バーの歯車アイコンを選択して **[設定]** サイド パネルを開き、 **[入力方式エディターを有効にする]** を **[オン]** に切り替えます。 入力方式エディターがインストールされ、リモート セッションで有効になっている必要があります。
 
 ## <a name="get-help-with-the-web-client"></a>Web クライアントに関するヘルプの表示
 

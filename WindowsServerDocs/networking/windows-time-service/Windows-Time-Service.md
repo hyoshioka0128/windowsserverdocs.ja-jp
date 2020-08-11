@@ -6,14 +6,12 @@ ms.author: dacuo
 manager: dougkim
 ms.date: 05/08/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: networking
-ms.openlocfilehash: 8428a86e6c0a437149e84689099d845a72035253
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: e06ba9228b20a6b5daa807b6ac5a1c7db173f7d4
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87517797"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87970749"
 ---
 # <a name="windows-time-service"></a>Windows タイム サービス
 

@@ -1,19 +1,17 @@
 ---
 title: 仮想マシンのサイズ設定
 description: 各ワークロードの種類の推奨サイズ。
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: helohr
 ms.date: 12/02/2019
 ms.topic: article
 author: Heidilohr
 manager: lizross
-ms.openlocfilehash: 644799ba9c6ebde4943b678199c678da376e05ae
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 6ddc3b14fbf068405e0145f7342ea27a8f51a5af
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86963144"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87970099"
 ---
 # <a name="virtual-machine-sizing-guidelines"></a>仮想マシンのサイズ設定のガイドライン
 

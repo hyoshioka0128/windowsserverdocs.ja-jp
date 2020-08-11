@@ -3,17 +3,16 @@ title: Windows ボリューム ライセンス認証のトラブルシューテ�
 description: ボリューム ライセンス認証のベスト プラクティスに関する情報と、ライセンス認証の問題のトラブルシューティングに関する情報を提供するリソースの一覧を示します
 ms.topic: troubleshooting
 ms.date: 09/24/2019
-ms.technology: server-general
 author: Teresa-Motiv
 ms.author: v-tea
 manager: dcscontentpm
 ms.localizationpriority: medium
-ms.openlocfilehash: cdd597e77d35b154385cf9de35f3d51a3d9c4e8b
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: ce6c2e830e7c30e24112854b54e12909c43fa6f7
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961343"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87972329"
 ---
 # <a name="troubleshooting-windows-volume-activation"></a>Windows ボリューム ライセンス認証のトラブルシューティング
 

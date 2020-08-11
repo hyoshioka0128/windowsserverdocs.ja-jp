@@ -7,14 +7,12 @@ ms.author: billmath
 manager: mtillman
 ms.date: 03/06/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: d44213c8ea477cee7400eb24f9e855d7ad0c2971
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: ec9438efceedf70401de6297ab131f08655d4ff4
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519701"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87966799"
 ---
 # <a name="ad-fs-requirements"></a>AD FS の要件
 

@@ -2,18 +2,16 @@
 title: ディスクを別のコンピューターに移動する
 description: この記事ではディスクを別のコンピューターに移動する方法について説明します。
 ms.date: 10/12/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 6db73f963766e480f8ec478657354a51bcb1f456
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 1527dbd567eb72e407023ecdcfade04856a3127a
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71385823"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971189"
 ---
 # <a name="move-disks-to-another-computer"></a>ディスクを別のコンピューターに移動する
 
@@ -58,14 +56,14 @@ ms.locfileid: "71385823"
 
 ## <a name="detect-new-disks"></a>新しいディスクを検出する
 
-1. 新しいコンピューターで、ディスクの管理を開きます。 
+1. 新しいコンピューターで、ディスクの管理を開きます。
 2. **[操作]** をクリックし、 **[ディスクの再スキャン]** をクリックします。
-3. **[外部]** とマークされている任意のディスクを右クリックします。 
+3. **[外部]** とマークされている任意のディスクを右クリックします。
 4. **[形式の異なるディスクのインポート]** をクリックし、画面の指示に従います。
 
 ## <a name="additional-considerations"></a>その他の考慮事項
 
--   別のコンピューターに移動する場合、ベーシック ボリュームにはそのコンピューターで次に利用可能なドライブ文字が設定されます。 
+-   別のコンピューターに移動する場合、ベーシック ボリュームにはそのコンピューターで次に利用可能なドライブ文字が設定されます。
 -   ダイナミック ボリュームでは、前のコンピューターで設定されていたドライブ文字が保持されます。 以前のコンピューターでダイナミック ボリュームにドライブ文字がなかった場合、別のコンピューターに移動したときに、ドライブ文字は設定されません。 ドライブ文字がボリュームの移動先のコンピューターで既に使用されている場合、ボリュームには、次に利用可能なドライブ文字が設定されます。
 
 -   管理者が **mountvol /n** または **diskpart automount** コマンドを使用して新しいボリュームがシステムに追加されないように設定していた場合、別のコンピューターから移動したボリュームがマウントされたり、このボリュームにドライブ文字が設定されたりすることはありません。 このボリュームを使用するには、ディスクの管理または **DiskPart** と **mountvol** コマンドを使用して、手動でボリュームをマウントし、ドライブ文字を割り当てる必要があります。

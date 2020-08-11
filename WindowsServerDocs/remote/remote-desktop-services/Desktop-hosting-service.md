@@ -1,19 +1,17 @@
 ---
 title: デスクトップ ホスティング サービス
 description: デスクトップ ホスティング サービスのコンポーネントについて説明します。
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: helohr
 ms.date: 07/06/2018
 ms.topic: article
 author: heidilohr
 manager: lizross
-ms.openlocfilehash: 57e9e25881d948ec705dc51d8e61377e0beb78a8
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: e1973bca8218f1ece287b03fee24486e95fe5492
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86960394"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971639"
 ---
 # <a name="desktop-hosting-service"></a>デスクトップ ホスティング サービス
 

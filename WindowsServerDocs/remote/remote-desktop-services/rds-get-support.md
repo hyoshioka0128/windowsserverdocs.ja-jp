@@ -1,20 +1,18 @@
 ---
 title: その他のリモート デスクトップ リソース
 description: RDS に関する詳細情報とヘルプを取得できる場所へのリンクを示します。
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: evas
 ms.date: 11/21/2018
 ms.topic: article
 ms.assetid: 938adb3d-71ab-488b-b2f2-57b29df210d7
 author: evaseydl
 manager: scottman
-ms.openlocfilehash: cf497bae1cd228096d02444498b9e6d769fe2cad
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: c6e1b191d66827366118c138fdbd2b4cedce361d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80861375"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971599"
 ---
 # <a name="additional-remote-desktop-resources"></a>その他のリモート デスクトップ リソース
 

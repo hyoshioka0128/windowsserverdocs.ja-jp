@@ -1,21 +1,19 @@
 ---
 title: Nano Server を展開します。
 description: カスタム イメージ、パッケージ、ドライバー、ドメイン、役割、機能を作成および展開する方法について説明します。
-ms.prod: windows-server
 manager: DonGill
-ms.technology: server-nano
 ms.date: 09/06/2017
 ms.topic: conceptual
 ms.assetid: 9f109c91-7c2e-4065-856c-ce9e2e9ce558
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: f9de652a25dde8f21c934d7093af977198ae0646
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: deb17bb54f2576cdb811a11d78d4cb324a120140
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409873"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87959900"
 ---
 # <a name="deploy-nano-server"></a>Nano Server を展開します。
 

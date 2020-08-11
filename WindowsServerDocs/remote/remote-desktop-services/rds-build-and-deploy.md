@@ -1,24 +1,22 @@
 ---
 title: RDS での構築し、デプロイ
 description: リモート デスクトップ展開の構築手順
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 04/18/2017
 ms.topic: article
 ms.assetid: 176ae424-96e9-4c78-88f5-da418e76c3d7
 author: lizap
 manager: dongill
-ms.openlocfilehash: c0a2676cc5e7043cd1f96d6c1d393d7b0e443fe8
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: be58880108f84aa6141157dbe730e18fcff4c6c2
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961214"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961806"
 ---
 # <a name="build-and-deploy-your-remote-desktop-services-deployment"></a>構築し、デプロイのリモート デスクトップ サービス展開
 
-リモート デスクトップ サービスの展開は、アプリとリソースをユーザーと共有するために使用するインフラストラクチャです。 提供するエクスペリエンスに応じて、必要な規模と複雑さにすることができます。 リモート デスクトップの展開が容易に拡張します。 大きくと、リモート デスクトップ Web アクセスを減らす、ゲートウェイ、接続ブローカー サーバーとセッション ホスト サーバーでは、です。 リモート デスクトップ接続ブローカーを使用して、作業負荷を分散できます。 Active Directory ベースの認証は、高度なセキュリティ環境を提供します。 
+リモート デスクトップ サービスの展開は、アプリとリソースをユーザーと共有するために使用するインフラストラクチャです。 提供するエクスペリエンスに応じて、必要な規模と複雑さにすることができます。 リモート デスクトップの展開が容易に拡張します。 大きくと、リモート デスクトップ Web アクセスを減らす、ゲートウェイ、接続ブローカー サーバーとセッション ホスト サーバーでは、です。 リモート デスクトップ接続ブローカーを使用して、作業負荷を分散できます。 Active Directory ベースの認証は、高度なセキュリティ環境を提供します。
 
 [リモート デスクトップ クライアント](clients/remote-desktop-clients.md)は、任意の Windows、Apple、Android のコンピューター、タブレット、またはスマートフォンからアクセスできます。
 
@@ -34,7 +32,7 @@ ms.locfileid: "86961214"
 - [リモート デスクトップ サービス インフラストラクチャを展開する](rds-deploy-infrastructure.md)
 - [共有するアプリとリソースを保持するセッション コレクションを作成する](rds-create-collection.md)
 - [RDS 展開のライセンス](rds-client-access-license.md)
-- ユーザーがアプリとリソースにアクセスできるように、[リモート デスクトップ クライアント](clients/remote-desktop-clients.md)をインストールしてもらいます。 
+- ユーザーがアプリとリソースにアクセスできるように、[リモート デスクトップ クライアント](clients/remote-desktop-clients.md)をインストールしてもらいます。
 - 接続ブローカーとセッション ホストをさらに追加することで、高可用性を実現します。
    - [RD セッション ホスト ファームを使用して既存の RDS コレクションをスケールアウトする](rds-scale-rdsh-farm.md)
    - [RD 接続ブローカー インフラストラクチャに高可用性を追加する](rds-connection-broker-cluster.md)

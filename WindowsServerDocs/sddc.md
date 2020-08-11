@@ -1,20 +1,18 @@
 ---
 title: Windows Server ソフトウェア定義データ センター
 Description: Windows Server SDDC の概要
-ms.prod: windows-server
-ms.technology: SDDC
 ms.topic: get-started article
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 06/04/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: ceab6f99617bcb2e5581f6ea975ea8a71a2ea4b3
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 632e08a6e560b9b9e4ab7010794eaf36d1873cac
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409963"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990616"
 ---
 # <a name="windows-server-software-defined-datacenter"></a>Windows Server のソフトウェアによるデータセンター
 
@@ -26,7 +24,7 @@ ms.locfileid: "87409963"
 
 ソフトウェア定義データ センター (SDDC) は、一般的に、すべてのインフラストラクチャが仮想化されているデータ センターを指す共通の業界用語です。 仮想化が鍵であり、データ センター内のハードウェアとソフトウェアを従来の 1 対 1 の比率を超えて展開できることを意味します。 ハードウェアをエミュレートするソフトウェア ハイパーバイザーによって、オペレーティング システムとアプリケーションは、物理ハードウェアから抽象化され、プロセッサ、メモリ、I/O、ネットワークの柔軟なリソース プールを形成するように多重化されます。
 
-Microsoft による SDDC の実装は、この記事で説明する Windows Server テクノロジで構成されます。 ネットワークと記憶域を構築する仮想化プラットフォームを提供する Hyper-V ハイパーバイザーから始まります。 仮想化インフラストラクチャに固有の課題用に開発されたセキュリティ テクノロジは、内部および外部の脅威を軽減します。 Windows Server に組み込まれている PowerShell と、[System Center](https://docs.microsoft.com/system-center/) や [Operations Management Suite](https://docs.microsoft.com/azure/operations-management-suite/operations-management-suite-overview) の追加により、プロビジョニング、展開、構成、管理をプログラミングして自動化することができます。
+Microsoft による SDDC の実装は、この記事で説明する Windows Server テクノロジで構成されます。 ネットワークと記憶域を構築する仮想化プラットフォームを提供する Hyper-V ハイパーバイザーから始まります。 仮想化インフラストラクチャに固有の課題用に開発されたセキュリティ テクノロジは、内部および外部の脅威を軽減します。 Windows Server に組み込まれている PowerShell と、[System Center](/system-center/) や [Operations Management Suite](/azure/operations-management-suite/operations-management-suite-overview) の追加により、プロビジョニング、展開、構成、管理をプログラミングして自動化することができます。
 
 Windows Server と System Center に組み込まれているテクノロジは、Windows Server SDDC エクスペリエンスの主な構成要素です。 ただし、仮想化プラットフォームではありますが、その基盤として適切なハードウェアが必要です。 **Windows Server Software-Defined (WSSD) ソリューション**および **Azure Stack HCI ソリューション** プログラムに参加している Microsoft パートナーが、適切なハードウェアを入手し、0 日で稼働できるように企業を支援します。
 
@@ -58,7 +56,7 @@ Windows Server 仮想化テクノロジには、Hyper-V、Hyper-V 仮想スイ�
 
 ![スペース専用の画像](media/sddc/spacer1.png)![Windows Server、ハイパーコンバージド インフラストラクチャの図](media/sddc/hyper-converged.png)
 
-![学ぶアイコン](media/sddc/learn.png)**[Windows Server、ハイパーコンバージドの詳細](https://docs.microsoft.com/windows-server/get-started/what-s-new-in-windows-server-2016#computevirtualizationvirtualizationmd)**
+![学ぶアイコン](media/sddc/learn.png)**[Windows Server、ハイパーコンバージドの詳細](./get-started/whats-new-in-windows-server-2016.md#compute)**
 
 ### <a name="hyper-v-hypervisor"></a>Hyper-V Hypervisor
 
@@ -79,7 +77,7 @@ Hyper-V は、Windows 用のハイパーバイザー ベースの仮想化テク
 - 共有 VHDX は、ブロック記憶域または SMB ファイル ベースの記憶域のクラスター共有ボリューム (CSV) に保存できます。
 - 保護:共有 VHDX は、Hyper-V レプリカとホスト レベルのバックアップをサポートします。
 
-![学ぶアイコン](media/sddc/learn.png)**[共有 VHDX によるゲスト クラスタリングの詳細](https://technet.microsoft.com/library/dn281956(v=ws.11).aspx)**
+![学ぶアイコン](media/sddc/learn.png)**[共有 VHDX によるゲスト クラスタリングの詳細](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn281956(v=ws.11))**
 
 ### <a name="hyper-v-replica"></a>Hyper-V レプリカ
 
@@ -93,7 +91,7 @@ Hyper-V は、Windows 用のハイパーバイザー ベースの仮想化テク
 - ライブ マイグレーションを自動的に処理します。
 - シンプルな構成と管理。Hyper-V マネージャー、PowerShell、または Azure Site Recovery を使用します。
 
-![学ぶアイコン](media/sddc/learn.png)**[Hyper-V レプリカの詳細](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/set-up-hyper-v-replica)**
+![学ぶアイコン](media/sddc/learn.png)**[Hyper-V レプリカの詳細](./virtualization/hyper-v/manage/set-up-hyper-v-replica.md)**
 
 ![Connect everything バナー](media/sddc/networking.png)
 
@@ -107,7 +105,7 @@ Hyper-V は、Windows 用のハイパーバイザー ベースの仮想化テク
 
 管理者は、ネットワーク コントローラーを直接操作できる管理ツールを使用しています。 ネットワーク コントローラーは、仮想インフラストラクチャと物理インフラストラクチャの両方を含む、ネットワーク インフラストラクチャに関する情報を管理ツールに提供します。
 
-![学ぶアイコン](media/sddc/learn.png)**[ネットワーク コントローラーの詳細](https://docs.microsoft.com/windows-server/networking/sdn/technologies/network-controller/network-controller)**
+![学ぶアイコン](media/sddc/learn.png)**[ネットワーク コントローラーの詳細](./networking/sdn/technologies/network-controller/network-controller.md)**
 
 ### <a name="datacenter-firewall"></a>データ センターのファイアウォール
 
@@ -119,17 +117,17 @@ Hyper-V は、Windows 用のハイパーバイザー ベースの仮想化テク
 
 サービス プロバイダーの管理者やテナント管理者は、ネットワーク コントローラーを介してデータ センターのファイアウォール ポリシーを管理できます。
 
-![学ぶアイコン](media/sddc/learn.png)**[データ センターのファイアウォールの詳細](https://docs.microsoft.com/windows-server/networking/sdn/technologies/network-function-virtualization/datacenter-firewall-overview)**
+![学ぶアイコン](media/sddc/learn.png)**[データ センターのファイアウォールの詳細](./networking/sdn/technologies/network-function-virtualization/datacenter-firewall-overview.md)**
 
 ### <a name="switch-embedded-teaming"></a>スイッチ埋め込みチーミング
 
 ![スペース専用の行の画像](media/sddc/networking-line.png)
 
-SET は、Hyper-V と[ソフトウェアによるネットワーク制御 (SDN)](https://docs.microsoft.com/windows-server/networking/sdn/software-defined-networking) スタックが含まれる環境で使用できる代替 NIC チーミング ソリューションです。
+SET は、Hyper-V と[ソフトウェアによるネットワーク制御 (SDN)](./networking/sdn/software-defined-networking.md) スタックが含まれる環境で使用できる代替 NIC チーミング ソリューションです。
 
 ![スペース専用の画像](media/sddc/spacer1.png)![スイッチが埋め込まれたチーミングの図](media/sddc/teaming.png)
 
-![学ぶアイコン](media/sddc/learn.png)**[スイッチ埋め込みチーミングの詳細](https://docs.microsoft.com/windows-server/networking/sdn/technologies/set-for-sdn)**
+![学ぶアイコン](media/sddc/learn.png)**[スイッチ埋め込みチーミングの詳細](./networking/sdn/technologies/set-for-sdn.md)**
 
 ### <a name="software-load-balancing"></a>ソフトウェア負荷分散
 
@@ -139,7 +137,7 @@ SLB により、複数のサーバーで同じワークロードをホストす�
 
 ![スペース専用の画像](media/sddc/spacer1.png)![ソフトウェア負荷分散の図](media/sddc/balancer.png)
 
-![学ぶアイコン](media/sddc/learn.png)**[ソフトウェア負荷分散の詳細](https://docs.microsoft.com/windows-server/networking/sdn/technologies/network-function-virtualization/software-load-balancing-for-sdn)**
+![学ぶアイコン](media/sddc/learn.png)**[ソフトウェア負荷分散の詳細](./networking/sdn/technologies/network-function-virtualization/software-load-balancing-for-sdn.md)**
 
 ![記憶域の図](media/sddc/storage.png)
 
@@ -164,7 +162,7 @@ Hyper-V とスケールアウト ファイル サーバーの役割を使用し�
 
 記憶域の QoS は、スケールアウト ファイル サーバーおよび Hyper-V によって、SMB3 プロトコルを使用して提供されるマイクロソフトのソフトウェア定義記憶域ソリューションに組み込まれています。 新しいポリシー マネージャーは、記憶域のパフォーマンスの一元的な監視機能を提供します。
 
-![学ぶアイコン](media/sddc/learn.png)**[記憶域の QoS の詳細](https://docs.microsoft.com/windows-server/storage/storage-qos/storage-qos-overview)**
+![学ぶアイコン](media/sddc/learn.png)**[記憶域の QoS の詳細](./storage/storage-qos/storage-qos-overview.md)**
 
 ### <a name="storage-replica"></a>記憶域レプリカ
 
@@ -185,7 +183,7 @@ Hyper-V とスケールアウト ファイル サーバーの役割を使用し�
 
 t & t1 :データはボリュームにフラッシュされ、ログは常にライトスルーされます
 
-![学ぶアイコン](media/sddc/learn.png)**[記憶域レプリカの詳細](https://docs.microsoft.com/windows-server/storage/storage-replica/storage-replica-overview)**
+![学ぶアイコン](media/sddc/learn.png)**[記憶域レプリカの詳細](./storage/storage-replica/storage-replica-overview.md)**
 
 ![セキュリティの図](media/sddc/security.png)
 
@@ -197,7 +195,7 @@ t & t1 :データはボリュームにフラッシュされ、ログは常にラ
 
 ![保護されたファブリックの図](media/sddc/spacer1.png)![保護されたファブリックの図](media/sddc/guarded-fabric.png)
 
-![学ぶアイコン](media/sddc/learn.png)**[保護されたファブリックの詳細](https://docs.microsoft.com/windows-server/virtualization/guarded-fabric-shielded-vm/guarded-fabric-and-shielded-vms)**
+![学ぶアイコン](media/sddc/learn.png)**[保護されたファブリックの詳細](./security/guarded-fabric-shielded-vm/guarded-fabric-and-shielded-vms.md)**
 
 ### <a name="shielded-vms"></a>シールドされた VM
 
@@ -211,7 +209,7 @@ t & t1 :データはボリュームにフラッシュされ、ログは常にラ
 - シールドされた VM は、指定された所有者だけが実行できるように、BitLocker またはその他の方法で暗号化されます。
 - 実行中の VM をシールドされた VM に変換できます。
 
-![学ぶアイコン](media/sddc/learn.png)**[シールドされた VM の詳細](https://docs.microsoft.com/windows-server/virtualization/guarded-fabric-shielded-vm/guarded-fabric-and-shielded-vms)**
+![学ぶアイコン](media/sddc/learn.png)**[シールドされた VM の詳細](./security/guarded-fabric-shielded-vm/guarded-fabric-and-shielded-vms.md)**
 
 ### <a name="host-guardian-service"></a>ホスト ガーディアン サービス
 
@@ -221,7 +219,7 @@ t & t1 :データはボリュームにフラッシュされ、ログは常にラ
 
 ![スペース専用の画像](media/sddc/spacer1.png)![ガーディアンの図](media/sddc/guardian.png)
 
-![学ぶアイコン](media/sddc/learn.png)**[ホスト ガーディアン サービスの詳細](https://docs.microsoft.com/windows-server/virtualization/guarded-fabric-shielded-vm/guarded-fabric-manage-hgs)**
+![学ぶアイコン](media/sddc/learn.png)**[ホスト ガーディアン サービスの詳細](./security/guarded-fabric-shielded-vm/guarded-fabric-manage-hgs.md)**
 
 ### <a name="device-health-attestation"></a>デバイス正常性構成証明
 
@@ -233,7 +231,7 @@ t & t1 :データはボリュームにフラッシュされ、ログは常にラ
 
 ハードウェア信頼モードでは、上記のように、TPM v2.0 ハードウェア ルート信頼とキー リリースのためのコード整合性ポリシーへの準拠によって、最も高いレベルの保証が提供されます。
 
-![学ぶアイコン](media/sddc/learn.png)**[デバイス正常性構成証明の詳細](https://docs.microsoft.com/windows-server/security/device-health-attestation)**
+![学ぶアイコン](media/sddc/learn.png)**[デバイス正常性構成証明の詳細](./security/device-health-attestation.md)**
 
 ![管理の図](media/sddc/management.png)
 
@@ -251,7 +249,7 @@ DSC は、破綻することなく構成を何度も展開できるように、"
 -  DSC は、オンプレミス、パブリックまたはプライベート クラウド環境で使用できます。
 -  ターゲット システムで PowerShell スクリプトを実行できる限り、Microsoft または Microsoft 以外のソリューションに DSC を統合できます。
 
-![学ぶアイコン](media/sddc/learn.png)**[PowerShell DSC の詳細](https://docs.microsoft.com/powershell/dsc/overview)**
+![学ぶアイコン](media/sddc/learn.png)**[PowerShell DSC の詳細](/powershell/dsc/overview)**
 
 ### <a name="system-center-vmm"></a>System Center VMM
 
@@ -266,7 +264,7 @@ Virtual Machine Manager は、System Center スイートの一部であり、従
 - ネットワーク:VMM は、仮想ネットワークとネットワーク ゲートウェイの作成と管理のサポートを含め、ネットワーク仮想化を提供します。
 - ストレージ:VMM は、ローカルおよびリモートの記憶域を検出、分類、プロビジョニングし、割り当てることができます。
 
-![学ぶアイコン](media/sddc/learn.png)**[System Center VMM の詳細](https://docs.microsoft.com/system-center/vmm/)**
+![学ぶアイコン](media/sddc/learn.png)**[System Center VMM の詳細](/system-center/vmm/)**
 
 ### <a name="windows-admin-center"></a>Windows Admin Center
 

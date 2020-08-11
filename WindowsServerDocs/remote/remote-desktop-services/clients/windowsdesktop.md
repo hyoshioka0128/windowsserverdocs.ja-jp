@@ -1,20 +1,18 @@
 ---
 title: Windows デスクトップ クライアントの概要
 description: Windows デスクトップ クライアントに関する基本的な情報。
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
 ms.date: 05/26/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: c229eefbc0cc00ed1af940cd986c89e979873d29
-ms.sourcegitcommit: 4fec7d82f0772d03a9e8cac20092a4309b0f796e
+ms.openlocfilehash: fa1c713b06e63c919bc2e42e8d4ba3c14eecf8f0
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84025503"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971609"
 ---
 # <a name="get-started-with-the-windows-desktop-client"></a>Windows デスクトップ クライアントの概要
 

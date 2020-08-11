@@ -1,8 +1,6 @@
 ---
 title: Windows Server 2016 リモート デスクトップ サービスへようこそ
 description: リモート デスクトップ サービスの概要を説明します
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: chrimo
 ms.date: 02/22/2017
 ms.topic: article
@@ -10,14 +8,14 @@ ms.assetid: 52b9e09f-39e0-41a9-9d3b-4d5f4eacf3e0
 author: christianmontoya
 manager: scottman
 ms.localizationpriority: medium
-ms.openlocfilehash: 70979eae2ad9f54ab895572f97d9b5968cff31d9
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 6d856c6f751b9c8aa6c0f6547dd56d6ee36afb35
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80854685"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961956"
 ---
-# <a name="welcome-to-remote-desktop-services"></a>リモート デスクトップ サービスへようこそ 
+# <a name="welcome-to-remote-desktop-services"></a>リモート デスクトップ サービスへようこそ
 
 リモート デスクトップ サービス (RDS) は、たとえば個別に仮想化されたアプリケーションを提供する、セキュリティで保護されたモバイル/リモート デスクトップ アクセスを提供する、エンドユーザーがクラウドからアプリケーションやデスクトップを実行できるようにするなど、個々のエンド カスタマーのニーズに合わせた仮想化ソリューションを構築するのに最適なプラットフォームです。
 
@@ -35,7 +33,7 @@ RDS では、Windows Server 2016 (オンプレミス展開の場)、Microsoft Az
 - **デスクトップ**:お客様がインストールおよび管理するさまざまなアプリケーションを使用して、ユーザーに完全なデスクトップ エクスペリエンスを提供します。 これらのコンピューターをプライマリ ワークステーションとして利用するユーザーや、シン クライアントのユーザーに最適です (MultiPoint Services の使用など)。
 - **RemoteApps**:ユーザーのデスクトップ上で実行するローカル アプリケーションのように見える、仮想マシン上でホストまたは実行する個々のアプリケーションを指定します。 アプリには独自のタスク バー エントリがあり、サイズの変更やモニター間での移動ができます。 主要なアプリケーションをセキュリティで保護されたリモート環境に展開し、ユーザーが自分のデスクトップから作業したり、カスタマイズしたりできるようにする場合に最適です。
 
-費用対効果が非常に重要であり、セッション ベースの仮想化環境に完全なデスクトップを展開する利点を幅広く活用したい場合は、[MultiPoint Services](../multipoint-services/multipoint-services.md) を使用することによって最も高い価値を提供できます。 
+費用対効果が非常に重要であり、セッション ベースの仮想化環境に完全なデスクトップを展開する利点を幅広く活用したい場合は、[MultiPoint Services](../multipoint-services/multipoint-services.md) を使用することによって最も高い価値を提供できます。
 
 これらのオプションと構成により、お客様はユーザーに必要なデスクトップとアプリケーションを、リモート、安全、かつ費用対効果の高い方法で柔軟に展開することができます。
 

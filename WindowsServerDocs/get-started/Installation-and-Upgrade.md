@@ -1,21 +1,19 @@
 ---
 title: Windows Server のインストールとアップグレード
 description: Windows Server の新しいバージョンをインストール、アップグレード、または移行する方法。
-ms.prod: windows-server
 ms.date: 05/14/2019
-ms.technology: server-general
 ms.topic: article
 ms.assetid: 98f876bd-63ff-4c3a-95d4-a8dd8d0d119c
 author: jasongerend
 ms.author: jgerend
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d282e2aa543070fcea0f4931419de0be5745c7d
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 4a51fbe19722f381407803e2d8ba1e876898ccce
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959634"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87959690"
 ---
 # <a name="windows-server-installation-and-upgrade"></a>Windows Server のインストールとアップグレード
 
@@ -46,10 +44,10 @@ Windows Server の移行ドキュメントは、Windows Server を実行する�
 
 ## <a name="upgrade"></a>アップグレード パッケージ、アップグレード
 同じハードウェアを使い、サーバーをフラット化せずに、セットアップされているすべてのサーバーの役割を保持する場合は、**アップグレード**が適切です。これには多くの方法があります。 通常のアップグレードでは、設定、サーバーの役割、データを保持したまま、古いオペレーティング システムから新しいバージョンへと移行します。 たとえば、サーバーが Windows Server 2012 R2 を実行している場合、Windows Server 2016 にアップグレードできます。 ただし、すべての古いオペレーティング システムが、すべての新しいオペレーティング システムに移行できるわけではありません。
- 
+
 >[!NOTE]
 >仮想マシンでは、アップグレードを正常に実行するために特定の OEM ハードウェア ドライバーが必要とされないため、アップグレードが最も有効です。
- 
+
 オペレーティング システムの評価版から製品版、古い製品版から新しい製品版、または場合によってはオペレーティング システムのボリューム ライセンス版から通常の製品版にアップグレードできます。
 
 アップグレードを開始する前に、このページの表で、現在使用しているバージョンやエディションからの移行がサポートされているバージョンやエディションをご確認ください。
@@ -58,14 +56,14 @@ Windows Server 2016 Technical Preview で使用できる複数のインストー
 
 >[!NOTE]
 >Windows Server のどのバージョンに移行またはアップグレードする場合も、[サポート ライフサイクル ポリシー](https://support.microsoft.com/lifecycle)および対象バージョンのサポート期間を確認し把握したうえで、それに応じて計画を立てる必要があります。 特定の Windows Server リリースのライフサイクルについては、[こちらでご検索ください](https://support.microsoft.com/lifecycle)。
- 
- 
+
+
 ## <a name="upgrading-to-windows-server-2016"></a>Windows Server 2016 へのアップグレード
 アップグレードに関する重要な注意事項と制限事項、Windows Server 2016 のエディション間のライセンス変換、評価版から製品版への変換などについて詳しくは、「[Windows Server 2016 のアップグレード オプションと変換オプション](https://go.microsoft.com/fwlink/?LinkId=828602)」をご覧ください。
- 
+
 >[!NOTE]
 >注: Server Core インストールからデスクトップ搭載サーバー インストールへの切り替え (およびその逆方向の切り替え) を行うアップグレードはサポートされていません。 アップグレードまたは変換する既存のオペレーティング システムが Server Core インストールである場合は、移行後も新しいオペレーティング システムの Server Core インストールとなります。
- 
+
 以下のクイック リファレンス表では、以前の Windows Server 製品版の各エディションから Windows Server 2016 製品版の各エディションへのサポートされているアップグレード オプションを示します。
 
 
@@ -81,7 +79,7 @@ Windows Server 2016 Technical Preview で使用できる複数のインストー
 |Windows Storage Server 2012 Workgroup|Windows Storage Server 2016 Workgroup|
 |Windows Storage Server 2012 R2 Standard|Windows Storage Server 2016 Standard|
 |Windows Storage Server 2012 R2 Workgroup|Windows Storage Server 2016 Workgroup|
- 
+
 ### <a name="license-conversion"></a>ライセンス変換
 Windows Server 2016 Standard (製品版) は、Windows Server 2016 Datacenter (製品版) に変換できます。
 
@@ -90,7 +88,7 @@ Windows Server 2016 Essentials (製品版) は、Windows Server 2016 Standard (�
 Windows Server 2016 Standard の評価版を Windows Server 2016 Standard (製品版)、Datacenter (製品版) のいずれかに変換できます。
 
 Windows Server 2016 Datacenter の評価版は、Windows Server 2016 Datacenter (製品版) に変換できます。
- 
+
 ## <a name="upgrading-to-windows-server-2012-r2"></a>Windows Server 2012 R2 へのアップグレード
 アップグレードに関する重要な注意事項と制限事項、Windows Server 2012 R2 のエディション間のライセンス変換、評価版から製品版への変換などについて詳しくは、「[Windows Server 2012 R2 のアップグレード オプション](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn303416(v=ws.11))」をご覧ください。
 
@@ -115,7 +113,7 @@ Windows Server 2012 Standard の評価版は、Windows Server 2012 Standard (製
 
 ## <a name="upgrading-to-windows-server-2012"></a>Windows Server 2012 へのアップグレード
 アップグレードに関する重要な注意事項と制限事項、評価版から製品版への変換などについて詳しくは、「[Windows Server 2012 の評価版と更新プログラムのオプション](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj574204(v=ws.11))」をご覧ください。
- 
+
 以下のクイック リファレンス表では、以前の Windows Server 製品版の各エディションから Windows Server 2012 製品版の各エディションへのサポートされているアップグレード オプションを示します。
 
 |使用している Windows オペレーティング システム|アップグレード先のエディション|
@@ -147,5 +145,5 @@ Windows Server 2012 Standard の評価版は、Windows Server 2012 Standard (製
   - インプレース アップグレードは、同じ言語でのみサポートされます。 1 つの言語から別の言語にアップグレードすることはできません。
 
   - Windows Server 2008 のコア インストールから Windows Server 2012 R2 Server GUI 付き (Windows Server では "フル デスクトップ搭載サーバー" と呼ばれます) に移行することはできません。 アップグレードされたコア インストールをフル デスクトップ搭載サーバーに切り替えることはできますが、Windows Server 2012 R2 でのみ行えます。 Windows Server 2016 以降では、Server Core からフル デスクトップ搭載サーバーへの切り替えがサポート*されない*ため、Windows Server 2016 にアップグレードする前に切り替えを行ってください。
-  
+
 詳細については、役割に固有のアップグレードの詳細情報が記載されている、「[Windows Server 2012 の評価版と更新プログラムのオプション](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj574204\(v=ws.11\))」を参照してください。

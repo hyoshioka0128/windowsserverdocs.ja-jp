@@ -6,14 +6,12 @@ ms.author: dacuo
 manager: dougkim
 ms.date: 10/17/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: networking
-ms.openlocfilehash: f6df2a07fa7af2b5912c368393bdab39ccc5ced3
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: a7c57c3b35deb6fe8975fcdfa0cf9ecb0127f70c
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80861635"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87970719"
 ---
 # <a name="support-boundary-for-high-accuracy-time"></a>高精度の時間のサポート範囲
 

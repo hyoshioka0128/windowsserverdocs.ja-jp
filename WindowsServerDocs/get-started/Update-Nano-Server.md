@@ -1,25 +1,23 @@
 ---
 title: Nano Server の更新
 description: ''
-ms.prod: windows-server
 manager: DonGill
-ms.technology: server-nano
 ms.date: 09/06/2017
 ms.topic: get-started-article
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b8a674d61379c0a645cc379ab9f9eafa3cc19b1
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 33bf8f3125ede8f3ac777e002e7d31dc174ba238
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86960694"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87959200"
 ---
 # <a name="updating-nano-server"></a>Nano Server の更新
 
 > [!IMPORTANT]
-> Windows Server バージョン 1709 以降では、Nano Server は[コンテナーの基本 OS イメージ](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image)としてのみ提供されます。 その意味については、[Nano Server に加えられる変更](nano-in-semi-annual-channel.md)に関する記事をご覧ください。 
+> Windows Server バージョン 1709 以降では、Nano Server は[コンテナーの基本 OS イメージ](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image)としてのみ提供されます。 その意味については、[Nano Server に加えられる変更](nano-in-semi-annual-channel.md)に関する記事をご覧ください。
 
 Nano Server を最新の状態に保つには、さまざまな方法が用意されています。 Windows Server の他のインストール オプションに比べて、Nano Server では、Windows 10 に近いよりアクティブなサービス モデルが採用されています。 このような定期的なリリースは、**Current Branch for Business (CBB)** リリースと呼ばれます。 このアプローチは、もっとすばやく改革を取り入れ、クラウド上での短期間の開発ライフサイクルに対応する必要のあるお客様をサポートするものです。 CBB の詳細については、[Windows Server ブログの記事](https://cloudblogs.microsoft.com/windowsserver/2016/07/12/windows-server-2016-new-current-branch-for-business-servicing-option/)をご覧ください。
 
@@ -112,7 +110,7 @@ Enter-PSSession $s
    ```powershell
    # Apply the servicing stack update first and then restart
    dism.exe /Online /Add-Package /PackagePath:C:\ServicingPackages_cabs\Windows10.0-KB3176936-x64.cab
-   
+
    # After the operation completes successfully and you are prompted to restart, it's safe to
    # press Ctrl+C to cancel the pipeline and return to the prompt
    Restart-Computer; exit
@@ -133,7 +131,7 @@ Enter-PSSession -ComputerName (Read-Host "Enter Nano Server IP address") -Creden
 
 - 利用可能な更新プログラムをスキャンする
    ```powershell
-   $ci = New-CimInstance -Namespace root/Microsoft/Windows/WindowsUpdate -ClassName MSFT_WUOperationsSession  
+   $ci = New-CimInstance -Namespace root/Microsoft/Windows/WindowsUpdate -ClassName MSFT_WUOperationsSession
    $result = $ci | Invoke-CimMethod -MethodName ScanForUpdates -Arguments @{SearchCriteria="IsInstalled=0";OnlineScan=$true}
    $result.Updates
    ```
@@ -151,7 +149,7 @@ Enter-PSSession -ComputerName (Read-Host "Enter Nano Server IP address") -Creden
    $result = $ci | Invoke-CimMethod -MethodName ScanForUpdates -Arguments @{SearchCriteria="IsInstalled=1";OnlineScan=$true}
    $result.Updates
    ```
-   
+
 ## <a name="additional-options"></a>追加オプション
 Nano Server のその他の更新方法には、上記の方法と一部が共通していたり、上記の方法を補完したりするものがあります。 このようなオプションとして、Windows Server Update Services (WSUS)、System Center Virtual Machine Manager (VMM)、タスク スケジューラ、または Microsoft 以外のソリューションを使う方法があります。
 - 次のレジストリ キーを設定して、[WSUS 用に Windows Update を構成](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd939844(v=ws.10))します。

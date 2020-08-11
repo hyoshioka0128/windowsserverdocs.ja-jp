@@ -1,30 +1,28 @@
 ---
 title: Windows Server 2016 の製品とエディション
 description: Windows Server Standard エディションと Windows Server Datacenter エディションの違いについて説明します。
-ms.prod: windows-server
 ms.date: 10/04/2019
-ms.technology: server-general
 ms.topic: article
 ms.assetid: c5ca3bfe-7ced-49f6-a932-80cab33f419e
 author: jasongerend
 ms.author: jgerend
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: ce4c35f0b65d0461e9dc2e23404d2637aecff415
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 50d0c603e5134c716c50e3aa8286cb33578ee06e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80827105"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87959910"
 ---
 # <a name="comparison-of-standard-and-datacenter-editions-of-windows-server-2016"></a>Windows Server 2016 の Standard エディションと Datacenter エディションの比較
 
 > 適用先:Windows Server 2016
-  
+
 ## <a name="locks-and-limits"></a>ロックと制限
 
 | ロックと制限 | Windows Server 2016 Standard | Windows Server 2016 Datacenter |
-| ------------------- |---------- | --------------------------- |  
+| ------------------- |---------- | --------------------------- |
 | 最大ユーザー数 | CAL に基づく   | CAL に基づく     |
 | 最大 SMB 接続数 | 16,777,216      | 16,777,216          |
 | 最大 RRAS 接続数| 無制限       | 無制限         |
@@ -41,8 +39,8 @@ ms.locfileid: "80827105"
 
 ## <a name="server-roles"></a>サーバーの役割
 
-| 使用できる Windows Server の役割     | 役割サービス | Windows Server 2016 Standard | Windows Server 2016 Datacenter |  
-| -------------------                | ----------    | ----------                   | ---------------------------    |  
+| 使用できる Windows Server の役割     | 役割サービス | Windows Server 2016 Standard | Windows Server 2016 Datacenter |
+| -------------------                | ----------    | ----------                   | ---------------------------    |
 | Active Directory 証明書サービス|              | はい                          | はい                            |
 | [Active Directory Domain Services]    |               | はい                          | はい                            |
 | Active Directory フェデレーション サービス|               | はい                          | はい                            |
@@ -80,8 +78,8 @@ ms.locfileid: "80827105"
 
 ## <a name="features"></a>機能
 
-|サーバー マネージャー (または PowerShell) を使用してインストールできる Windows Server の機能|Windows Server 2016 Standard|Windows Server 2016 Datacenter|  
-|-------------------|----------|---------------------------|  
+|サーバー マネージャー (または PowerShell) を使用してインストールできる Windows Server の機能|Windows Server 2016 Standard|Windows Server 2016 Datacenter|
+|-------------------|----------|---------------------------|
 |.NET Framework 3.5|はい|はい|
 |.NET Framework 4.6|はい|はい|
 |バックグラウンド インテリジェント転送サービス (BITS)|はい|はい|
@@ -144,8 +142,8 @@ ms.locfileid: "80827105"
 |WoW64 サポート|インストール済み|インストール済み|
 |XPS ビューアー|○ (デスクトップ エクスペリエンス搭載サーバーとしてインストールされている場合)|○ (デスクトップ エクスペリエンス搭載サーバーとしてインストールされている場合)|
 
-|通常使用できる機能|Windows Server 2016 Standard|Windows Server 2016 Datacenter|  
-|-------------------|----------|---------------------------|  
+|通常使用できる機能|Windows Server 2016 Standard|Windows Server 2016 Datacenter|
+|-------------------|----------|---------------------------|
 |ベスト プラクティス アナライザー|はい|はい|
 |直接アクセス|はい|はい|
 |動的メモリ (仮想化の場合)|はい|はい|

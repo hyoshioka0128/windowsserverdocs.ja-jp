@@ -1,19 +1,17 @@
 ---
 title: 仮想デスクトップ インフラストラクチャ (VDI) ロール用の Windows 10 バージョン 1803 の最適化
 description: VDI イメージとして使用される Windows 10 1803 デスクトップのオーバーヘッドを最小限に抑える推奨の設定および構成
-ms.prod: windows-server
 ms.reviewer: robsmi
-ms.technology: remote-desktop-services
 ms.author: jaimeo, robsmi
 ms.topic: article
 author: jaimeo
 manager: dougkim
-ms.openlocfilehash: c08e7621285ceb8d122629c26ce5e160ee849737
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: e7bd68264f60b61a5c1063a51217bedb0c6c80ec
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182168"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87989836"
 ---
 # <a name="optimizing-windows-10-version-1803-for-a-virtual-desktop-infrastructure-vdi-role"></a>仮想デスクトップ インフラストラクチャ (VDI) ロール用の Windows 10 バージョン 1803 の最適化
 
@@ -187,7 +185,7 @@ Get-WindowsOptionalFeature -Online
 Enable-WindowsOptionalFeature -Online -FeatureName "DirectPlay"
 ```
 
-詳細については、[Windows PowerShell フォーラム](https://docs.microsoft.com/answers/topics/windows-server-powershell.ht)をご確認ください。
+詳細については、[Windows PowerShell フォーラム](/answers/topics/windows-server-powershell.ht)をご確認ください。
 
 #### <a name="enable-or-disable-windows-features-by-using-dism"></a>DISM を使用して Windows 機能を有効または無効にする
 

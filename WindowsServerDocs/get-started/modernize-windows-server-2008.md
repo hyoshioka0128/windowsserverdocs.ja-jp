@@ -1,7 +1,6 @@
 ---
 title: Windows Server 2008 と Windows Server 2008 R2 のアップグレード
 description: Windows Server 2008 と Windows Server 2008 R2 は、サービス終了が近づいています。 オンプレミスのアップグレードまたは Azure への再ホストの方法について説明します。
-ms.prod: windows-server
 ms.mktglfcycl: manage
 ms.sitesec: library
 author: mikeblodge
@@ -9,12 +8,12 @@ ms.author: mikeblodge
 ms.date: 07/12/2018
 ms.topic: get-started-article
 ms.localizationpriority: high
-ms.openlocfilehash: 271c571229f18d596a67616a1b0dd93743928002
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 30ba7fcd97b9735319872b55f649fe4f84014faa
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961336"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87967999"
 ---
 # <a name="upgrade-windows-server-2008-and-windows-server-2008-r2"></a>Windows Server 2008 と Windows Server 2008 R2 のアップグレード
 
@@ -35,10 +34,10 @@ Windows Server 2003 を実行している場合は、[Windows Server 2008 にア
 オンプレミスの Windows Server 2008 および Windows Server 2008 R2 サーバーを Azure に移行し、そこで仮想マシンでサーバーを実行し続けることができます。 Azure で準拠した状態が維持され、セキュリティが強化され、業務にクラウド イノベーションが追加されます。 Azure への移行の利点は次のとおりです。
 
 - Azure でのセキュリティ更新プログラム。
-- さらに 3 年分の Windows Server 2008 R2 または 2008 の重要なセキュリティ更新プログラムが追加料金なしで利用できます。 
+- さらに 3 年分の Windows Server 2008 R2 または 2008 の重要なセキュリティ更新プログラムが追加料金なしで利用できます。
 - Azure での無償アップグレード。
 - 準備ができた時点で、その他のクラウド サービスを導入します。
-- SQL Server を Azure 管理インスタンスまたは VM に移行することで、さらに 3 年分の Windows Server 2008 R2 または 2008 の重要なセキュリティ更新プログラムが追加料金なしで利用できます。 
+- SQL Server を Azure 管理インスタンスまたは VM に移行することで、さらに 3 年分の Windows Server 2008 R2 または 2008 の重要なセキュリティ更新プログラムが追加料金なしで利用できます。
 - Azure に固有のクラウド削減のために既存の SQL Server および Windows Server のライセンスを利用できます。
 
 [![特化されたイメージを使用して Azure への移行を開始する](./media/WS08-image-banner-small.png)](uploading-specialized-WS08-image-to-azure.md)
