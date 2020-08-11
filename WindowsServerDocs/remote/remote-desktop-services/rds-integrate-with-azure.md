@@ -1,18 +1,16 @@
 ---
 title: RDS - Azure サービスとの統合
 description: RDS を Azure 展開に統合し、Azure を RDS 展開に統合する方法について説明します。
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 08/18/2017
 ms.topic: article
 author: lizap
-ms.openlocfilehash: 2c792a22608fe0e7ae826b27d6917202037559e4
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 410a08d5b222fe0888c77ca6eac061a302730619
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80855075"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87948885"
 ---
 # <a name="remote-desktop-services---integrating-with-azure-services"></a>リモート デスクトップ サービス - Azure サービスとの統合
 

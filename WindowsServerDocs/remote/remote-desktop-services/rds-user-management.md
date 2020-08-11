@@ -1,20 +1,18 @@
 ---
 title: RDS コレクションでのユーザーの管理
 description: リモート デスクトップ サービスでユーザーを管理する方法について説明します。
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.topic: article
 ms.assetid: 2727e1ab-69b8-46f3-9f6d-2540324fe596
 author: christianmontoya
 ms.author: chrimo
 ms.date: 03/27/2018
 manager: scottman
-ms.openlocfilehash: 430c38f98dd9aec3034e023d737952e3015622eb
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: a0ddb8ddc26df58e130315a3e1e0b70953c61dc4
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80858685"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954809"
 ---
 # <a name="manage-users-in-your-rds-collection"></a>RDS コレクションでのユーザーの管理
 
@@ -82,7 +80,7 @@ Active Directory でユーザーとグループを作成したので、次は展
    1. サーバー マネージャーで **[リモート デスクトップ サービス] > [概要]** の順にクリックし、特定のコレクションをクリックします。
    2. **[プロパティ]** で、 **[タスク] > [プロパティの編集]** の順にクリックします。
    3. **[ユーザー グループ]** をクリックします。
-   4. **[追加]** をクリックし、コレクションへのアクセス権を付与するユーザーまたはグループを入力します。 削除するユーザーまたはグループを選択し、 **[削除]** をクリックして、このウィンドウからユーザーおよびグループを削除することもできます。 
-   
-   >[!NOTE] 
+   4. **[追加]** をクリックし、コレクションへのアクセス権を付与するユーザーまたはグループを入力します。 削除するユーザーまたはグループを選択し、 **[削除]** をクリックして、このウィンドウからユーザーおよびグループを削除することもできます。
+
+   >[!NOTE]
    > [ユーザー グループ] ウィンドウを空にすることはできません。 コレクションにアクセスできるユーザーの範囲を絞り込むには、まず特定のユーザーまたはグループを追加してから、より広いグループを削除する必要があります。

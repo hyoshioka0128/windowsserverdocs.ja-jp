@@ -6,14 +6,12 @@ ms.author: dacuo
 manager: dougkim
 ms.date: 10/17/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: networking
-ms.openlocfilehash: d58bf445fb8eab25d90a9a837cc038cb3c8109d6
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 20b2e3335fa769b230f55f0c7958a9c5445b5b25
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87517657"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87939923"
 ---
 # <a name="windows-time-for-traceability"></a>Windows タイムの追跡可能性
 >適用先:Windows Server 2016 バージョン 1709 以降、および Windows 10 バージョン 1703 以上

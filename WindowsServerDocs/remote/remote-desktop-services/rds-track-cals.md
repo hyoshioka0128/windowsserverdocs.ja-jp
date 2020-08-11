@@ -1,20 +1,18 @@
 ---
 title: リモート デスクトップ サービス クライアント アクセス ライセンス (RDS CAL) を追跡する
 description: RDS 展開全体で CAL を追跡する方法について説明します。
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.topic: article
 ms.assetid: 80d82d30-3ad0-4a8c-9a9b-2773c47eee19
 author: lizap
 ms.author: elizapo
 ms.date: 05/11/2017
 manager: dongill
-ms.openlocfilehash: 7e5793427b4a294d90c7b9ebeb66bb27578be190
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 7804b0339a9c086a6e68dd83d63b0da5ff292665
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80857335"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954819"
 ---
 # <a name="track-your-remote-desktop-services-client-access-licenses-rds-cals"></a>リモート デスクトップ サービス クライアント アクセス ライセンス (RDS CAL) を追跡する
 
@@ -23,7 +21,7 @@ ms.locfileid: "80857335"
 リモート デスクトップ ライセンス マネージャー ツールを使用して、リモート デスクトップ ライセンス サーバーから発行された接続ユーザー数の RDS CAL を追跡するレポートを作成できます。
 
 > [!NOTE]
->  実際の環境で Azure AD Domain Services を使用している場合、リモート デスクトップ ライセンス マネージャー ツールは接続ユーザー数 CAL を取得するためには機能しなくなります。 代わりに、ログオン イベント、接続ブローカーを介したアクティブなリモート デスクトップ接続のポーリング、またはお客様に適した他のメカニズムを使用して、手動でライセンスを追跡する必要があります。 
+>  実際の環境で Azure AD Domain Services を使用している場合、リモート デスクトップ ライセンス マネージャー ツールは接続ユーザー数 CAL を取得するためには機能しなくなります。 代わりに、ログオン イベント、接続ブローカーを介したアクティブなリモート デスクトップ接続のポーリング、またはお客様に適した他のメカニズムを使用して、手動でライセンスを追跡する必要があります。
 
 次の手順に従って、接続ユーザー数 CAL レポートを生成します。
 

@@ -2,18 +2,16 @@
 title: マスター ブート レコード (MBR) ディスクから GUID パーティション テーブル (GPT) ディスクへの変換
 description: マスター ブート レコード (MBR) ディスクから GUID パーティション テーブル (GPT) ディスクに変換する方法について説明します。
 ms.date: 06/07/2019
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 3aedb8ed1edb8476642b86ec66d306187d4badf0
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 86934f2bf86ea8f91dfbe92f97952d76542a6bc4
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966064"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87935911"
 ---
 # <a name="convert-an-mbr-disk-into-a-gpt-disk"></a>MBR ディスクを GPT ディスクに変換する
 

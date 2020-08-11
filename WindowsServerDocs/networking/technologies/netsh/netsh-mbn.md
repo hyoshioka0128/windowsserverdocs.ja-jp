@@ -1,17 +1,15 @@
 ---
 title: モバイル ブロードバンド ネットワーク (MBN) 用の netsh コマンド
 description: netsh mbn を使用して、モバイル ブロードバンドの設定とパラメーターを照会および構成します。
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 author: apdutta
 ms.date: 02/20/2020
-ms.openlocfilehash: 478f87db4d520a133b3d70c0ed2dbb4e91db60d9
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 50c0bbf441e3109189117cbfd8df9ee597712bcd
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80853735"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953988"
 ---
 # <a name="netsh-mbn-commands"></a>netsh mbn コマンド
 
@@ -19,7 +17,7 @@ ms.locfileid: "80853735"
 **netsh mbn** を使用して、モバイル ブロードバンドの設定とパラメーターを照会および構成します。
 
 > [!TIP]
-> netsh mbn コマンドのヘルプを表示するには、次を使用します 
+> netsh mbn コマンドのヘルプを表示するには、次を使用します
 >
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;netsh mbn /?
 
@@ -227,7 +225,7 @@ disconnect interface="Cellular"
 
 ## <a name="dump"></a>dump
 
-構成スクリプトを表示します。 
+構成スクリプトを表示します。
 
 現在の構成を含むスクリプトを作成します。  ファイルに保存されている場合は、このスクリプトを使用して変更された構成設定を復元できます。
 
@@ -529,7 +527,7 @@ set tracing mode=yes
 - [tracing](#tracing)
 - [visibleproviders](#visibleproviders)
 
-### <a name="acstate"></a>acstate  
+### <a name="acstate"></a>acstate
 
 特定のインターフェイスについてモバイル ブロードバンド データの自動接続の状態を表示します。
 
@@ -667,7 +665,7 @@ show dmprofiles [[name=]<string>] [[interface=]<string>]
 | **interface** | インターフェイス名。 これは、"netsh mbn show interface" コマンドによって表示されるインターフェイス名の 1 つです。 | オプション |
 
 **注釈**
-    
+
 プロファイル データを表示するか、システムのプロファイルを一覧表示します。
 
 プロファイル名を指定すると、そのプロファイルの内容が表示されます。 それ以外の場合は、インターフェイスのプロファイルが一覧表示されます。
@@ -789,7 +787,7 @@ show netlteattachinfo [interface=]<string>
 show netlteattachinfo interface="Cellular"
 ```
 
-### <a name="pin"></a>pin      
+### <a name="pin"></a>pin
 
 特定のインターフェイスについて PIN の情報を表示します。
 
@@ -813,7 +811,7 @@ show pin interface="Cellular"
 ```
 
 
-### <a name="pinlist"></a>pinlist  
+### <a name="pinlist"></a>pinlist
 
 特定のインターフェイスについて PIN 一覧情報を表示します。
 
@@ -861,7 +859,7 @@ show preferredproviders interface="Cellular"
 ```
 
 
-### <a name="profiles"></a>profiles 
+### <a name="profiles"></a>profiles
 
 システムで構成されているプロファイルの一覧を表示します。
 
@@ -886,7 +884,7 @@ show profiles [[name=]<string>] [[interface=]<string>] [[purpose=]<string>]
 インターフェイス名を指定すると、指定したインターフェイス上の指定したプロファイルのみが一覧表示されます。 それ以外の場合は、最初に一致したプロファイルが表示されます。
 
 目的を指定した場合は、目的の GUID が一致するプロファイルのみが表示されます。  それ以外の場合、プロファイルは目的によってフィルター処理されません。  文字列には、中かっこで囲んだ GUID、または internet、supl、mms、ims、allhost のいずれかの文字列を指定できます。
-    
+
 **例**
 
 ```powershell
@@ -943,7 +941,7 @@ show provisionedcontexts interface="Cellular"
 ```
 
 
-### <a name="purpose"></a>purpose  
+### <a name="purpose"></a>purpose
 
 デバイスのプロファイルをフィルター処理するために使用できる目的グループの GUID を表示します。 このコマンドにパラメーターはありません。
 
@@ -954,7 +952,7 @@ show purpose
 ```
 
 
-### <a name="radio"></a>radio    
+### <a name="radio"></a>radio
 
 特定のインターフェイスについて無線の状態の情報を表示します。
 
@@ -1002,7 +1000,7 @@ show readyinfo interface="Cellular"
 ```
 
 
-### <a name="signal"></a>signal   
+### <a name="signal"></a>signal
 
 特定のインターフェイスについてシグナルの情報を表示します。
 
@@ -1098,14 +1096,14 @@ show smsconfig interface="Cellular"
 ```
 
 
-### <a name="tracing"></a>tracing  
+### <a name="tracing"></a>tracing
 
 モバイル ブロードバンド トレースが有効か無効かを示します。
 
 **構文**
 
 ```powershell
-show tracing 
+show tracing
 ```
 
 

@@ -1,20 +1,18 @@
 ---
 title: リモート デスクトップ - ネットワーク外部から PC へのアクセスを許可する
 description: PC のネットワーク外部から PC にリモートでアクセスするためのオプションについて説明する
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.topic: article
 author: haley-rowland
 manager: dongill
 ms.author: elizapo
 ms.date: 04/04/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 9cc1b7568006ef9e32132d772702212c5fd78ec4
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 109f60ec099606dfc031fc07a8f457287f8fb50d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80857425"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87946435"
 ---
 # <a name="remote-desktop---allow-access-to-your-pc-from-outside-your-pcs-network"></a>リモート デスクトップ - PC のネットワーク外部から PC へのアクセスを許可する
 
@@ -24,7 +22,7 @@ ms.locfileid: "80857425"
 
 ## <a name="enable-port-forwarding-on-your-router"></a>ルーターでポート フォワーディングを有効にする
 
-ポート フォワーディングは単に、ルーターの IP アドレス (パブリック IP) 上のポートを、アクセスする PC のポートおよび IP アドレスにマップするだけです。 
+ポート フォワーディングは単に、ルーターの IP アドレス (パブリック IP) 上のポートを、アクセスする PC のポートおよび IP アドレスにマップするだけです。
 
 ポート フォワーディングを有効にする具体的な手順は、使用しているルーターによって異なるため、オンラインでルーターの手順を検索する必要があります。 手順の概要については、[ルーターでのポート フォワーディングの設定方法](https://www.wikihow.com/Set-Up-Port-Forwarding-on-a-Router)に関するページを確認してください。
 
@@ -36,7 +34,7 @@ ms.locfileid: "80857425"
 
 - パブリック IP アドレス (ルーターの IP)。 これを検索する方法はたくさんあります。"my IP" を (Bing や Googleで) 検索することも、[Wi-Fi ネットワーク プロパティ](https://binged.it/2Gwob34) (Windows 10 用) を表示することもできます。
 - マップされるポート番号。 ほとんどの場合、これは 3389 です。リモート デスクトップ接続で使用される既定のポートです。
-- ルーターへの管理者アクセス。  
+- ルーターへの管理者アクセス。
 
    >[!WARNING]
    > PC をインターネットまで開いています。PC に強力なパスワードが設定されていることを確認します。

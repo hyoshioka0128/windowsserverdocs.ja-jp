@@ -1,7 +1,6 @@
 ---
 title: 特権アクセスの保護
 description: 特権アクセスをセキュリティで保護するための段階的アプローチ
-ms.prod: windows-server
 ms.topic: conceptual
 ms.assetid: f5dec0c2-06fe-4c91-9bdc-67cc6a3ede60
 ms.date: 02/25/2019
@@ -9,12 +8,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: mas
-ms.openlocfilehash: 4165561524dcb8572dbafc3904638fcb4513d06d
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 5db041be6aa9a61bc248296ade4296afeaa4fb3e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86964725"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953061"
 ---
 # <a name="securing-privileged-access"></a>特権アクセスの保護
 
@@ -69,7 +68,7 @@ Microsoft が推奨するロードマップは、次の 3 つのフェーズに�
 * [フェーズ 3: 継続](#phase-3-security-improvement-and-sustainment)
    * セキュリティの向上と維持。
 
-このロードマップは、これらの攻撃と解決方法の実装に関する経験に基づいて、最も効果的で最も迅速な実装をスケジュールするように、優先順位が設定されています。 
+このロードマップは、これらの攻撃と解決方法の実装に関する経験に基づいて、最も効果的で最も迅速な実装をスケジュールするように、優先順位が設定されています。
 
 Microsoft では、断固とした敵対者に対して特権アクセスをセキュリティで保護するために、このロードマップに従うことをお勧めします。 既存の機能や、組織固有の要件に対応するように、このロードマップを調整してもかまいません。
 

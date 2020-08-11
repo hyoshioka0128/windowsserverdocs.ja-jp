@@ -1,19 +1,17 @@
 ---
 title: Windows Server の新機能
 description: コンピューティング、ID、管理、自動化、ネットワーク、セキュリティ、記憶域の新機能は何ですか。
-ms.prod: windows-server
 ms.date: 08/22/2019
-ms.technology: server-general
 ms.topic: article
 author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: medium
-ms.openlocfilehash: 46b4502bb0408b3fb7afe51234c81695ec54e48b
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: e4cfde0f4a9861f0cf215c301c45559f20b78d2c
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473139"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87945654"
 ---
 # <a name="whats-new-in-windows-server"></a>Windows Server の新機能
 

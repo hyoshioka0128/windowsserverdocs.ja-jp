@@ -1,19 +1,17 @@
 ---
 title: 移動ユーザー プロファイルの展開
 TOCTitle: Deploying Roaming User Profiles
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.date: 06/07/2019
 ms.author: jgerend
-ms.openlocfilehash: a1508db6878a48c5fad2a0909123beb836e1d1f0
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 8019986ed29e9ffedaca8d714f63d5de06ae3c80
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182238"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87942253"
 ---
 # <a name="deploying-roaming-user-profiles"></a>移動ユーザー プロファイルの展開
 

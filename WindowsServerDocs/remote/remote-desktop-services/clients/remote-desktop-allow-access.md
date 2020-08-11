@@ -1,8 +1,6 @@
 ---
 title: リモート デスクトップ - PC へのアクセスを許可する
 description: PC にリモートからアクセスするためのオプションについて
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.topic: article
 ms.assetid: 0f1557ed-53f7-4333-b023-c8e0f4b58bf4
 author: lizap
@@ -10,21 +8,21 @@ manager: dongill
 ms.author: elizapo
 ms.date: 06/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 27f6a361ffd3bc5082cea57f6e09264520110d40
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: f581aeee099c906c970fdc320150fd1d6c102e17
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959134"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87946525"
 ---
 # <a name="remote-desktop---allow-access-to-your-pc"></a>リモート デスクトップ - PC へのアクセスを許可する
 
 >適用先:Windows 10、Windows 8.1、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2
 
-リモート デスクトップを使用して接続し、[Microsoft リモート デスクトップ クライアント](remote-desktop-clients.md) (Windows、iOS、macOS、Android 向けに提供) を使用してリモート デバイスから PC を制御することができます。 PC へのリモート接続を許可すると、別のデバイスを使用して PC に接続し、自分のデスクで作業しているかのように、すべてのアプリ、ファイル、ネットワーク リソースにアクセスすることができます。  
+リモート デスクトップを使用して接続し、[Microsoft リモート デスクトップ クライアント](remote-desktop-clients.md) (Windows、iOS、macOS、Android 向けに提供) を使用してリモート デバイスから PC を制御することができます。 PC へのリモート接続を許可すると、別のデバイスを使用して PC に接続し、自分のデスクで作業しているかのように、すべてのアプリ、ファイル、ネットワーク リソースにアクセスすることができます。
 
 > [!NOTE]
-> リモート デスクトップを使用して、Windows 10 Pro/Enterprise、Windows 8.1/8 Enterprise/Pro、Windows 7 Professional/Enterprise/Ultimate、および Windows Server の Windows Server 2008 よりも新しいバージョンに接続できます。 (Windows 10 Home のような) Home エディションを実行しているコンピューターには接続できません。 
+> リモート デスクトップを使用して、Windows 10 Pro/Enterprise、Windows 8.1/8 Enterprise/Pro、Windows 7 Professional/Enterprise/Ultimate、および Windows Server の Windows Server 2008 よりも新しいバージョンに接続できます。 (Windows 10 Home のような) Home エディションを実行しているコンピューターには接続できません。
 
 リモート PC に接続するには、そのコンピューターがオンになっていて、そこにネットワーク接続が備わっており、リモート デスクトップが有効になっている必要があります。また、リモート コンピューターへのネットワーク アクセスが可能 (これはインターネット経由でもかまいません) で、接続のためのアクセス許可を持っている必要があります。 接続のためのアクセス許可については、ユーザーの一覧に含まれている必要があります。 接続を開始する前に、接続先コンピューターの名前を調べ、そのコンピューターのファイアウォールを通したリモート デスクトップ接続が許可されていることを確認するのは良い考えです。
 
@@ -45,7 +43,7 @@ ms.locfileid: "86959134"
 
 ### <a name="windows-7-and-early-version-of-windows-10"></a>Windows 7 および初期のバージョンの Windows 10
 
-PC のリモート アクセスを構成するには、[Microsoft リモート デスクトップ アシスタント](https://www.microsoft.com/download/details.aspx?id=50042)をダウンロードして実行します。 このアシスタントは、リモート アクセスが有効になるようにシステム設定を更新し、コンピューターが接続のために起動状態になるようにして、ファイアウォールでリモート デスクトップ接続が許可されていることを確認します。 
+PC のリモート アクセスを構成するには、[Microsoft リモート デスクトップ アシスタント](https://www.microsoft.com/download/details.aspx?id=50042)をダウンロードして実行します。 このアシスタントは、リモート アクセスが有効になるようにシステム設定を更新し、コンピューターが接続のために起動状態になるようにして、ファイアウォールでリモート デスクトップ接続が許可されていることを確認します。
 
 ### <a name="all-versions-of-windows-legacy-method"></a>すべてのバージョンの Windows (従来の方法)
 
@@ -59,7 +57,7 @@ PC を物理的に使用しているときにアクセスするだけであれ�
 
 PC にアクセスできるすべてのアカウントが、強力なパスワードを使用して構成されているようにする必要があります。
 
-## <a name="why-allow-connections-only-with-network-level-authentication"></a>ネットワーク レベル認証でのみ接続を許可する理由 
+## <a name="why-allow-connections-only-with-network-level-authentication"></a>ネットワーク レベル認証でのみ接続を許可する理由
 
 PC にアクセスできるユーザーを制限する場合は、ネットワーク レベル認証 (NLA) でのみアクセスを許可することを選択します。 このオプションを有効にすると、ユーザーは PC に接続する前に、ネットワークに対して自分自身を認証する必要があります。 NLA を使用してリモート デスクトップを実行しているコンピューターからの接続のみを許可することは、悪意のあるユーザーやソフトウェアからコンピューターを保護することに役立つ、より安全な認証方法です。 NLA とリモート デスクトップの詳細については、[RDS 接続のための NLA の構成](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732713(v=ws.11))に関するページを参照してください。
 

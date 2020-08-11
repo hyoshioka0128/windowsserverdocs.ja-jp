@@ -1,27 +1,25 @@
 ---
 title: Azure ディザスター リカバリーを使用して RDS のディザスター リカバリーを設定する
 description: RDS 展開のディザスター リカバリーに Azure ディザスター リカバリーを使用する方法について説明する
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 06/12/2017
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: 68fa7026a3198b7800c4855f8472f4a0bec62009
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 6c0e9b97a436f51babf679d6ce0aa67c09bcfe26
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80858995"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87936907"
 ---
 # <a name="set-up-disaster-recovery-for-rds-using-azure-site-recovery"></a>Azure Site Recovery を使用して RDS のディザスター リカバリーを設定する
 
 >適用先:Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016
 
-Azure Site Recovery を使用して、リモート デスクトップ サービス展開のディザスター リカバリー ソリューションを作成することができます。 
+Azure Site Recovery を使用して、リモート デスクトップ サービス展開のディザスター リカバリー ソリューションを作成することができます。
 
-[Azure Site Recovery](/azure/site-recovery/site-recovery-overview) は仮想マシンのレプリケーション、フェールオーバー、および回復を組み合わせてディザスター リカバリー機能を提供する Azure ベースのサービスです。 Azure Site Recovery では、仮想マシンおよびアプリケーションを一貫してレプリケート、保護、プライベート/パブリック クラウドまたはホスト側のクラウドへシームレスにフェールオーバーするため、多数のレプリケーション テクノロジをサポートしています。 
+[Azure Site Recovery](/azure/site-recovery/site-recovery-overview) は仮想マシンのレプリケーション、フェールオーバー、および回復を組み合わせてディザスター リカバリー機能を提供する Azure ベースのサービスです。 Azure Site Recovery では、仮想マシンおよびアプリケーションを一貫してレプリケート、保護、プライベート/パブリック クラウドまたはホスト側のクラウドへシームレスにフェールオーバーするため、多数のレプリケーション テクノロジをサポートしています。
 
 ディザスター リカバリー ソリューションを作成し検証するには、次の情報を使用します。
 
@@ -42,7 +40,7 @@ Azure Site Recovery を使用して、リモート デスクトップ サービ�
 - [オンプレミスの RDS 展開](rds-deploy-infrastructure.md)を作成します。
 - [Azure Site Recovery Services コンテナー](/azure/site-recovery/site-recovery-vmm-to-azure#create-a-recovery-services-vault)を Microsoft Azure サブスクリプションに追加します。
 - 回復サイトとして Azure を使用する場合は、VM 上で [Azure 仮想マシン準備状況評価ツール](https://azure.microsoft.com/downloads/vm-readiness-assessment/)を実行して、Azure VM および Azure Site Recovery Services と互換性のあることを確認します。
- 
+
 ## <a name="implementation-checklist"></a>実装のチェックリスト
 
 RDS 展開に対して Azure Site Recovery Services を有効にするさまざまな手順を詳しく取り上げますが、ここでは高レベルの実装手順を示します。

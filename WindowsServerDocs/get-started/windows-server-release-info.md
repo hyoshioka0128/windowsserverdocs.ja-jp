@@ -1,19 +1,17 @@
 ---
 title: Windows Server のリリース情報
 description: Windows Server に関するリリース情報
-ms.prod: windows-server
-ms.technology: server-general
 ms.topic: article
 ms.date: 04/14/2020
 author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: high
-ms.openlocfilehash: 455b5609c1409d7c01e464c51025042d3b0090c8
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: ba1f89fed8b1673822c5b5910b6f627483bc07cb
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "81385308"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87950026"
 ---
 # <a name="windows-server-release-information"></a>Windows Server のリリース情報
 

@@ -1,19 +1,17 @@
 ---
 title: Windows Admin Center ケース スタディ
 description: Windows Admin Center ケース スタディ (Project Honolulu)
-ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 06/18/2018
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: b0707f8aa7a09fdd18c2107e375ad06d3909955e
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: a2a027840c092696b03813de35cb3085f494266a
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71356899"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87937561"
 ---
 # <a name="windows-admin-center-case-studies"></a>Windows Admin Center ケース スタディ
 
@@ -34,7 +32,7 @@ ms.locfileid: "71356899"
 
 [Ava6](http://www.avassys.com/) は、特に仮想化、ネットワーク、ストレージ、バックアップ、クラウド コンピューティングなど、IT インフラストラクチャの設計、評価、および統合を専門とする IT コンサルティング会社です。
 
-Ava6 は、Windows Server 2016 Core、Hyper-V、フェールオーバー クラスタリング、および S2D を使用しています。 
+Ava6 は、Windows Server 2016 Core、Hyper-V、フェールオーバー クラスタリング、および S2D を使用しています。
 
 ### <a name="the-challenge"></a>**課題**
 
@@ -82,7 +80,7 @@ Convergent Computing には、ホスト、セキュア、Web 操作の 3 つの�
 
 Convergent Computing では、Windows Admin Center を使用して 200 以上のワークロードを実行する 40 以上のホストを持つ 3 つの環境を管理しています。
 
-Windows Admin Center の以前は、Convergent Computing は、System Center やカスタム スクリプトなど、さまざまなツールやテクノロジを使用して管理タスクを実行していました。  サーバー ファームを管理するうえでオーバーヘッドと手間を最小化する目的の下に、Convergent Computing は、管理レイヤーが “薄く“ なると、より複雑化するということがわかりました。そのため、通常は簡潔化するためにオーバーヘッドが増大する結果になりました。  Windows Admin Center により、“管理システムの管理“ に費やされる時間が 1 か月あたり 20 時間以上削減され、時間と手間が 75% 削減されました。これにより、運用チームは、セキュリティ、コンプライアンス、容量計画、全体的なシステムの最適化など、より価値ある作業に集中できるようになりました。 
+Windows Admin Center の以前は、Convergent Computing は、System Center やカスタム スクリプトなど、さまざまなツールやテクノロジを使用して管理タスクを実行していました。  サーバー ファームを管理するうえでオーバーヘッドと手間を最小化する目的の下に、Convergent Computing は、管理レイヤーが “薄く“ なると、より複雑化するということがわかりました。そのため、通常は簡潔化するためにオーバーヘッドが増大する結果になりました。  Windows Admin Center により、“管理システムの管理“ に費やされる時間が 1 か月あたり 20 時間以上削減され、時間と手間が 75% 削減されました。これにより、運用チームは、セキュリティ、コンプライアンス、容量計画、全体的なシステムの最適化など、より価値ある作業に集中できるようになりました。
 
 ## <a name="fzi-research-center-for-information-technology"></a>FZI Research Center for Information Technology
 
@@ -141,7 +139,7 @@ Inside Technologies は Windows Admin Center を使用してお客様をリモ�
 ## <a name="secureguard--copa-data"></a><a id="secureguard-copa-data"></a>SecureGUARD / COPA-DATA
 
 [SecureGUARD GmbH](http://www.secureguard.at/) では、一連の製品およびカスタム エンジニアリング サービスによりセキュリティとクラウド インフラストラクチャにおける複雑な IT の問題を企業が解決する支援をしています。 SecureGUARD は、IT セキュリティ アプライアンス、Microsoft Windows Server ベースのアプライアンス、そして最近ではクラウド インフラストラクチャ向けのラック レベルのコンバージド アプライアンスを構築しています。 SecureGUARD は、アプリケーションの開発とデータセンターにおけるマイクロソフト認定ゴールド パートナーです。
- 
+
 [COPA-DATA](https://www.copadata.com) は、フィールド レベルからクラウド、およびモバイル デバイスに至るまでエンド ツー エンドの IoT 工業用ソリューションを可能にする “zenon” というソフトウェア ソリューションを開発しています。 COPA-DATA は、食品飲料、エネルギーとインフラストラクチャ、自動車、製薬の各部門の企業向けにシステムを世界中に展開しています。
 
 ### <a name="the-challenge"></a>**課題**

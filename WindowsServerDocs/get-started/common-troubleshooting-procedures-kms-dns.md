@@ -2,16 +2,15 @@
 title: DNS に関連するライセンス認証の問題のトラブルシューティングに関するガイドライン
 ms.topic: troubleshooting
 ms.date: 09/10/2019
-ms.technology: server-general
 author: Teresa-Motiv
 ms.author: v-tea
 ms.localizationpriority: medium
-ms.openlocfilehash: 40d2dbdb9ae747a9e23016558aeb7db4210562b3
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 1d44da55f62348dfc0f776a6106d4fb613227057
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409943"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953371"
 ---
 # <a name="guidelines-for-troubleshooting-dns-related-activation-issues"></a>DNS に関連するライセンス認証の問題のトラブルシューティングに関するガイドライン
 

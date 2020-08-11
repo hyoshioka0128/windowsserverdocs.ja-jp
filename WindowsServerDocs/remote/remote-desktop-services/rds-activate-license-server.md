@@ -1,26 +1,24 @@
 ---
 title: リモート デスクトップ サービス ライセンス サーバーをアクティブ化する
 description: RD ライセンス サーバーをインストールしてアクティブ化する
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.topic: article
 ms.assetid: eb24ddd2-0361-41fe-bd6b-c7c63427cb71
 author: lizap
 ms.author: elizapo
 ms.date: 09/20/2016
 manager: dongill
-ms.openlocfilehash: 3eaa999c03c97ad3188d4dcd8514b2705bf0a3b1
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 0caf683c95bcaaa8838028bb78c1209ccd5c916c
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80852975"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87948905"
 ---
 # <a name="activate-the-remote-desktop-services-license-server"></a>リモート デスクトップ サービス ライセンス サーバーをアクティブ化する
 
 >適用先:Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016
 
-ユーザーとデバイスが RD セッション ホストにアクセスするとき、リモート デスクトップ サービス ライセンス サーバーによってクライアント アクセス ラインセス (CAL) が発行されます。 リモート デスクトップ ライセンス マネージャーを使用して、ライセンス サーバーをアクティブ化することができます。 
+ユーザーとデバイスが RD セッション ホストにアクセスするとき、リモート デスクトップ サービス ライセンス サーバーによってクライアント アクセス ラインセス (CAL) が発行されます。 リモート デスクトップ ライセンス マネージャーを使用して、ライセンス サーバーをアクティブ化することができます。
 
 ## <a name="install-the-rd-licensing-role"></a>RD ライセンスの役割をインストールする
 
@@ -39,7 +37,7 @@ ms.locfileid: "80852975"
 3. ウェルカム ページで、 **［次へ］** をクリックします。
 4. [接続方法] として **[自動接続 (推奨)]** を選択し、 **[次へ]** をクリックします。
 5. 会社情報 (氏名、会社名、お住まいの地域) を入力し、 **[次へ]** をクリックします。
-6. 必要に応じて、その他の会社情報 (電子メールや会社の住所など) を入力し、 **[次へ]** をクリックします。 
+6. 必要に応じて、その他の会社情報 (電子メールや会社の住所など) を入力し、 **[次へ]** をクリックします。
 7. **[ライセンスのインストール ウィザードを開始する]** が選択されていないことを確認し (ライセンスのインストールは後の手順で実行します)、 **[次へ]** をクリックします。
 
-これで、ライセンス サーバーでライセンスの発行と管理を開始する準備ができました。 
+これで、ライセンス サーバーでライセンスの発行と管理を開始する準備ができました。

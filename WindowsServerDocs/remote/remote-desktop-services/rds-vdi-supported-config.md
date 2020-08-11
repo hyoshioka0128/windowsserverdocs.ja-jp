@@ -1,20 +1,18 @@
 ---
 title: リモート デスクトップ サービス VDI でサポートされる Windows 10 のセキュリティ構成
 description: Windows Server 2016 の RDS によって Windows 10 VDI でサポートされる構成に関する情報を提供します。
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 10/27/2016
 ms.topic: article
 ms.assetid: 8f164f5d-a498-4f91-a12f-3e01d554f810
 author: lizap
 manager: dongill
-ms.openlocfilehash: 4ecd290a910ddbb1aba85b26764fb86e30731172
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 7fd8de56d02dfe83add67b740405265a232747d9
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86963354"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87946345"
 ---
 # <a name="supported-windows-10-security-configurations-for-remote-desktop-services-vdi"></a>リモート デスクトップ サービス VDI でサポートされる Windows 10 のセキュリティ構成
 
@@ -40,10 +38,10 @@ Remote Credential Guard がサポートされるのは、ターゲット マシ�
 > [!NOTE]
 > 単一インスタンス環境内に接続ブローカーがあり、DNS 名がコンピューター名と一致している場合、サポートはされませんが、Remote Credential Guard を使用できる可能性があります。
 
-## <a name="shielded-vms-and-encryption-supported-vms"></a>シールド型 VM と暗号化がサポートされる VM: 
+## <a name="shielded-vms-and-encryption-supported-vms"></a>シールド型 VM と暗号化がサポートされる VM:
 
-- リモート デスクトップ サービス VDI ではシールド型 VM はサポートされません 
+- リモート デスクトップ サービス VDI ではシールド型 VM はサポートされません
 
 暗号化がサポートされる VM を活用するには:
-- 非管理対象コレクションと、リモート デスクトップ サービスのコレクション作成プロセスの外部にあるプロビジョニング テクノロジを使用して仮想マシンをプロビジョニングします。 
-- ユーザー プロファイル ディスクは、差分ディスクに依存しているためサポートされません 
+- 非管理対象コレクションと、リモート デスクトップ サービスのコレクション作成プロセスの外部にあるプロビジョニング テクノロジを使用して仮想マシンをプロビジョニングします。
+- ユーザー プロファイル ディスクは、差分ディスクに依存しているためサポートされません

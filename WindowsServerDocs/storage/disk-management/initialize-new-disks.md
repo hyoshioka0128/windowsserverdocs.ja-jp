@@ -2,18 +2,16 @@
 title: 新しいディスクの初期化
 description: ディスクの管理を使用して新しいディスクを初期化し、使用できるようにする方法。 問題のトラブルシューティングへのリンクも記載しています。
 ms.date: 12/20/2019
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 68e51cff5b70ed0b11488e44cebba057e7432d99
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: adfc298c460bfa55516898df1781217dfe55d129
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86965274"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87942297"
 ---
 # <a name="initialize-new-disks"></a>新しいディスクの初期化
 
@@ -29,7 +27,7 @@ ms.locfileid: "86965274"
 ディスクの管理を使用して新しいディスクを初期化する方法を次に示します。 PowerShell を使用する場合、[initialize-disk](/powershell/module/storage/initialize-disk) コマンドレットを代わりに使用します。
 
 1. 管理者のアクセス許可でディスクの管理を開きます。
- 
+
     これを行うには、タスクバーの検索ボックスに「**ディスクの管理**」と入力し、 **[ディスクの管理]** を長押しし (または右クリックし)、 **[管理者として実行]**  >  **[はい]** を選択します。 管理者として開くことができない場合は、「**コンピューターの管理**」と入力し、 **[記憶域]**  >  **[ディスクの管理]** を選択します。
 1. [ディスクの管理] で、初期化するディスクを右クリックし、次に **[ディスクの初期化]** をクリックします (図を参照)。 ディスクが *[オフライン]* として一覧表示されている場合、最初にそれを右クリックし、 **[オンライン]** を選択します。
 

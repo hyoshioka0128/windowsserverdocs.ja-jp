@@ -2,7 +2,6 @@
 title: ボリューム ライセンス認証情報を取得するための Slmgr.vbs オプション
 description: Slmgr.vbs スクリプトで使用できるオプションを一覧表示し、その使用方法について説明します
 ms.date: 09/24/2019
-ms.technology: server-general
 ms.topic: article
 author: Teresa-Motiv
 ms.author: v-tea
@@ -12,12 +11,12 @@ appliesto:
 - Windows Server 2012 R2
 - Windows 10
 - Windows 8.1
-ms.openlocfilehash: 0de9d7496266afba4b76e5b837dc68e4f9745518
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: c461c04a0ce95cb4b4228462896510a2bbbd8575
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86962734"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87941754"
 ---
 # <a name="slmgrvbs-options-for-obtaining-volume-activation-information"></a>ボリューム ライセンス認証情報を取得するための Slmgr.vbs オプション
 

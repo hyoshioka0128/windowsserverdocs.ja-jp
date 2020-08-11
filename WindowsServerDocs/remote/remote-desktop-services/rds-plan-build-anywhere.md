@@ -1,20 +1,18 @@
 ---
 title: リモート デスクトップ サービスの任意の場所のビルド
 description: RDS の展開をホストする場所の判断に役立つ計画情報。
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.topic: article
 ms.assetid: c803a383-0eea-4e11-bca5-d204ab758048
 author: lizap
 ms.author: elizapo
 ms.date: 09/07/2016
 manager: dongill
-ms.openlocfilehash: 9b56614e347b36fb86e6e4680f1b179accaef058
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 0956fec88fc0bc07fb964d0eb4c2ff0b976628bf
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80857375"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87946375"
 ---
 # <a name="remote-desktop-services---build-anywhere"></a>リモート デスクトップ サービスの任意の場所のビルド
 

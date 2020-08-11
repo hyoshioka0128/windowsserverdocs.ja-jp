@@ -1,7 +1,6 @@
 ---
 title: 特権アクセスのセキュリティ保護に関する参考資料
 description: Windows Server Active Directory ドメインの運用上のセキュリティ制御
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 22ee9a77-4872-4c54-82d9-98fc73a378c0
 ms.date: 02/14/2019
@@ -9,12 +8,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: mas
-ms.openlocfilehash: 08a315dc362d7de872f47ca702c4401eb327245a
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: a7eda2d06a91891529ebbe5c7e448c17fdb070f3
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966184"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953136"
 ---
 # <a name="active-directory-administrative-tier-model"></a>Active Directory 管理階層モデル
 

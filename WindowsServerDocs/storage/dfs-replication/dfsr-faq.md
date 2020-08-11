@@ -1,17 +1,15 @@
 ---
 title: DFS レプリケーション - よく寄せられる質問 (FAQ)
 ms.date: 06/18/2014
-ms.prod: windows-server
-ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 4c4d5310fa6cf47945483c9ee7a3f89afd313da9
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 0a19bdd00000e466f2a2af92116356a9ad2a6428
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966134"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87950787"
 ---
 # <a name="dfs-replication-frequently-asked-questions-faq"></a>DFS レプリケーション: よく寄せられる質問 (FAQ)
 
@@ -26,16 +24,16 @@ DFS 名前空間については、「[DFS 名前空間: よく寄せられる質
 
 DFS レプリケーションの新機能については、次のトピックをご覧ください。
 
-  - [DFS 名前空間と DFS レプリケーションの概要](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127250(v=ws.11)) (Windows Server 2012)  
-      
-  - 「[Windows Server 2008 から Windows Server 2008 R2 への機能の変更点](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd391932(v=ws.10))」の「[分散ファイル システムの新機能](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee307957(v=ws.10))」トピック  
-      
-  - 「[Windows Server 2003 SP1 から Windows Server 2008 への機能の変更点](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753208(v=ws.10))」の「[分散ファイル システム](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753479(v=ws.10))」トピック  
-      
+  - [DFS 名前空間と DFS レプリケーションの概要](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127250(v=ws.11)) (Windows Server 2012)
+
+  - 「[Windows Server 2008 から Windows Server 2008 R2 への機能の変更点](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd391932(v=ws.10))」の「[分散ファイル システムの新機能](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee307957(v=ws.10))」トピック
+
+  - 「[Windows Server 2003 SP1 から Windows Server 2008 への機能の変更点](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753208(v=ws.10))」の「[分散ファイル システム](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753479(v=ws.10))」トピック
+
 
 このトピックに対する最近の変更については、「 [変更履歴](#change-history) 」を参照してください。
 
-      
+
 
 ## <a name="interoperability"></a>相互運用性
 
@@ -53,10 +51,10 @@ DFS レプリケーションを使用した SYSVOL のレプリケートにつ�
 
 はい。 レプリケーションを FRS から DFS レプリケーションに移行するには、次のドキュメントを参照してください。
 
-  - SYSVOL フォルダー以外のフォルダーのレプリケーションを移行するには、「[DFS 操作ガイド: FRS から DFS レプリケーションへの移行](https://go.microsoft.com/fwlink/?linkid=192776)」および [FRS2DFSR – FRS から DFSR への移行ユーティリティ](https://go.microsoft.com/fwlink/?linkid=195437) (https://go.microsoft.com/fwlink/?LinkID=195437) を参照してください。  
-      
-  - SYSVOL フォルダーのレプリケーションを DFS レプリケーションに移行する方法については、「[SYSVOL レプリケーション移行ガイド: FRS から DFS レプリケーション](./migrate-sysvol-to-dfsr.md)」をご覧ください。  
-      
+  - SYSVOL フォルダー以外のフォルダーのレプリケーションを移行するには、「[DFS 操作ガイド: FRS から DFS レプリケーションへの移行](https://go.microsoft.com/fwlink/?linkid=192776)」および [FRS2DFSR – FRS から DFSR への移行ユーティリティ](https://go.microsoft.com/fwlink/?linkid=195437) (https://go.microsoft.com/fwlink/?LinkID=195437) を参照してください。
+
+  - SYSVOL フォルダーのレプリケーションを DFS レプリケーションに移行する方法については、「[SYSVOL レプリケーション移行ガイド: FRS から DFS レプリケーション](./migrate-sysvol-to-dfsr.md)」をご覧ください。
+
 
 ### <a name="can-i-use-dfs-replication-in-a-mixed-windowsunix-environment"></a>Windows と UNIX が混在する環境で DFS レプリケーションを使用できますか?
 
@@ -90,14 +88,14 @@ DFS レプリケーションは、Windows Server オペレーティングシス�
 
 ファイル スクリーンまたはクォータを実装するためのベスト プラクティスを次に示します。
 
-  - 非表示の DfsrPrivate フォルダーを、クォータまたはファイル スクリーンの対象にすることはできません。  
-      
-  - スクリーニングを有効にする前に、スクリーニングされるファイルがレプリケート フォルダーに存在していてはなりません。  
-      
-  - クォータを有効にする前に、どのフォルダーもクォータを超えていてはなりません。  
-      
-  - ハード クォータは慎重に使用する必要があります。 レプリケーション グループの個々のメンバーは、レプリケーションの前にはクォータの範囲内であっても、ファイルがレプリケートされるとそれを超える可能性があります。 たとえば、あるユーザーが 10 メガバイト (MB) のファイルをサーバー A にコピーし (ハード制限に達します)、別のユーザーがサーバー B に 5 MB のファイルをコピーした場合、次のレプリケーションが発生すると、どちらのサーバーもクォータを 5 MB だけ超えます。 これにより、DFS レプリケーションではファイルのレプリケーションの再試行が続けられ、バージョン ベクターにホールが発生して、パフォーマンスの問題が発生する可能性があります。  
-      
+  - 非表示の DfsrPrivate フォルダーを、クォータまたはファイル スクリーンの対象にすることはできません。
+
+  - スクリーニングを有効にする前に、スクリーニングされるファイルがレプリケート フォルダーに存在していてはなりません。
+
+  - クォータを有効にする前に、どのフォルダーもクォータを超えていてはなりません。
+
+  - ハード クォータは慎重に使用する必要があります。 レプリケーション グループの個々のメンバーは、レプリケーションの前にはクォータの範囲内であっても、ファイルがレプリケートされるとそれを超える可能性があります。 たとえば、あるユーザーが 10 メガバイト (MB) のファイルをサーバー A にコピーし (ハード制限に達します)、別のユーザーがサーバー B に 5 MB のファイルをコピーした場合、次のレプリケーションが発生すると、どちらのサーバーもクォータを 5 MB だけ超えます。 これにより、DFS レプリケーションではファイルのレプリケーションの再試行が続けられ、バージョン ベクターにホールが発生して、パフォーマンスの問題が発生する可能性があります。
+
 
 ### <a name="is-dfs-replication-cluster-aware"></a>DFS レプリケーションはクラスターに対応していますか?
 
@@ -105,7 +103,7 @@ DFS レプリケーションは、Windows Server オペレーティングシス�
 
 
 > [!NOTE]
-> DFS レプリケーションでは、クラスターの共有ボリューム上のファイルのレプリケーションはサポートされていません。 
+> DFS レプリケーションでは、クラスターの共有ボリューム上のファイルのレプリケーションはサポートされていません。
 <br>
 
 
@@ -145,10 +143,10 @@ Windows&reg; SharePoint&reg; Services では、ファイル チェックアウ�
 
 DFS レプリケーションで Microsoft Outlook の個人用フォルダー ファイル (.pst) と Microsoft Access のファイルを安全にレプリケートできるのは、それらがアーカイブ目的で保存されていて、Outlook や Access などのクライアントを使用してネットワーク経由でアクセスされない場合のみです (.pst ファイルまたは Access ファイルを開くには、最初にファイルをローカル ストレージ デバイスにコピーします)。 これには次のような理由があります。
 
-  - ネットワーク接続経由で .pst ファイルを開くと、.pst ファイルのデータが破損する可能性があります。 ネットワーク経由で .pst ファイルに安全にアクセスできない理由について詳しくは、Microsoft サポート技術情報の[記事 297019](https://go.microsoft.com/fwlink/?linkid=125363) (https://go.microsoft.com/fwlink/?LinkId=125363) を参照してください。  
-      
-  - .pst ファイルと Access ファイルは、Outlook や Office Access などのクライアントによってアクセスされている間、長時間開かれたままになる傾向があります。 これにより、ファイルが閉じられるまで、DFS レプリケーションではこれらのファイルをレプリケートできなくなります。  
-      
+  - ネットワーク接続経由で .pst ファイルを開くと、.pst ファイルのデータが破損する可能性があります。 ネットワーク経由で .pst ファイルに安全にアクセスできない理由について詳しくは、Microsoft サポート技術情報の[記事 297019](https://go.microsoft.com/fwlink/?linkid=125363) (https://go.microsoft.com/fwlink/?LinkId=125363) を参照してください。
+
+  - .pst ファイルと Access ファイルは、Outlook や Office Access などのクライアントによってアクセスされている間、長時間開かれたままになる傾向があります。 これにより、ファイルが閉じられるまで、DFS レプリケーションではこれらのファイルをレプリケートできなくなります。
+
 
 ### <a name="can-i-use-dfs-replication-in-a-workgroup"></a>ワークグループで DFS レプリケーションを使用できますか?
 
@@ -170,12 +168,12 @@ DFS レプリケーションで Microsoft Outlook の個人用フォルダー �
 
 はい。 ただし、最初に Windows Server 2003 Service Pack 2 または修正プログラムをインストールする必要があります。 詳しくは、Microsoft サポート技術情報の[記事 920335](https://go.microsoft.com/fwlink/?linkid=76776) (https://go.microsoft.com/fwlink/?LinkId=76776) を参照してください。 また、ボリューム全体をレプリケートすると、次の問題が発生する可能性があります。
 
-  - ボリュームに Windows のページング ファイルが含まれている場合、レプリケーションは失敗し、システム イベント ログに DFSR イベント 4312 が記録されます。  
-      
-  - DFS レプリケーションでは、レプリケート先サーバー上のレプリケート フォルダーにシステム属性と隠し属性が設定されます。 このようになるのは、Windows ではボリューム ルート フォルダーにシステム属性と隠し属性が既定で適用されるためです。 レプリケート先サーバー上のレプリケート フォルダーのローカル パスもボリューム ルートである場合は、フォルダー属性に対してそれ以上の変更は行われません。  
-      
-  - Windows システム フォルダーが含まれるボリュームをレプリケートする場合、DFS レプリケーションにより %WINDIR% フォルダーが認識されて、それはレプリケートされません。 ただし、Microsoft 以外のアプリケーションで使用されているフォルダーは DFS レプリケーションによってレプリケートされるため、アプリケーションと DFS レプリケーションの間に相互運用性の問題がある場合は、レプリケート先サーバーでアプリケーションがエラーになる可能性があります。  
-      
+  - ボリュームに Windows のページング ファイルが含まれている場合、レプリケーションは失敗し、システム イベント ログに DFSR イベント 4312 が記録されます。
+
+  - DFS レプリケーションでは、レプリケート先サーバー上のレプリケート フォルダーにシステム属性と隠し属性が設定されます。 このようになるのは、Windows ではボリューム ルート フォルダーにシステム属性と隠し属性が既定で適用されるためです。 レプリケート先サーバー上のレプリケート フォルダーのローカル パスもボリューム ルートである場合は、フォルダー属性に対してそれ以上の変更は行われません。
+
+  - Windows システム フォルダーが含まれるボリュームをレプリケートする場合、DFS レプリケーションにより %WINDIR% フォルダーが認識されて、それはレプリケートされません。 ただし、Microsoft 以外のアプリケーションで使用されているフォルダーは DFS レプリケーションによってレプリケートされるため、アプリケーションと DFS レプリケーションの間に相互運用性の問題がある場合は、レプリケート先サーバーでアプリケーションがエラーになる可能性があります。
+
 
 ### <a name="does-dfs-replication-support-rpc-over-http"></a>DFS レプリケーションでは RPC over HTTP はサポートされますか?
 
@@ -219,31 +217,31 @@ Windows と DFS レプリケーションでは、最大 32,000 文字のフォ�
 
 次の一覧では、Microsoft によってテストされていて、Windows Server 2012 R2、Windows Server 2016、Windows Server 2019 に適用される、一連のスケーラビリティ ガイドラインを示します
 
-  - サーバーでレプリケートされるすべてのファイルのサイズ: 100 テラバイト。  
-      
-  - ボリュームでレプリケートされるファイルの数: 7,000 万。  
-      
-  - ファイルの最大サイズ: 250 ギガバイト。  
-      
+  - サーバーでレプリケートされるすべてのファイルのサイズ: 100 テラバイト。
+
+  - ボリュームでレプリケートされるファイルの数: 7,000 万。
+
+  - ファイルの最大サイズ: 250 ギガバイト。
+
 
 
 > [!IMPORTANT]
-> 多数のファイルまたは大きいファイルが含まれるレプリケーション グループを作成するときは、データベースの複製をエクスポートし、事前シード手法を使って、初期レプリケーションの期間を最小限に抑えることをお勧めします。 詳しくは、「[Windows Server 2012 R2 での DFS レプリケーションの初期同期: 複製の攻撃](https://techcommunity.microsoft.com/t5/Storage-at-Microsoft/DFS-Replication-Initial-Sync-in-Windows-Server-2012-R2-Attack-of/ba-p/424877)」をご覧ください。 
+> 多数のファイルまたは大きいファイルが含まれるレプリケーション グループを作成するときは、データベースの複製をエクスポートし、事前シード手法を使って、初期レプリケーションの期間を最小限に抑えることをお勧めします。 詳しくは、「[Windows Server 2012 R2 での DFS レプリケーションの初期同期: 複製の攻撃](https://techcommunity.microsoft.com/t5/Storage-at-Microsoft/DFS-Replication-Initial-Sync-in-Windows-Server-2012-R2-Attack-of/ba-p/424877)」をご覧ください。
 <br>
 
 
 次の一覧では、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008 で Microsoft によってテストされた一連のスケーラビリティ ガイドラインを示します。
 
-  - サーバーでレプリケートされるすべてのファイルのサイズ: 10 テラバイト。  
-      
-  - ボリュームでレプリケートされるファイルの数: 1,100 万。  
-      
-  - ファイルの最大サイズ: 64 ギガバイト。  
-      
+  - サーバーでレプリケートされるすべてのファイルのサイズ: 10 テラバイト。
+
+  - ボリュームでレプリケートされるファイルの数: 1,100 万。
+
+  - ファイルの最大サイズ: 64 ギガバイト。
+
 
 
 > [!NOTE]
-> レプリケーション グループ、レプリケート フォルダー、接続、またはレプリケーション グループのメンバーの数に対する制限はなくなりました。 
+> レプリケーション グループ、レプリケート フォルダー、接続、またはレプリケーション グループのメンバーの数に対する制限はなくなりました。
 <br>
 
 
@@ -265,12 +263,12 @@ DFS レプリケーションでは、構成情報を格納するために、Acti
 
 はい。 正常性レポートを自動化するには、次の 3 つの方法があります。
 
-  - Windows Server 2012 R2 または DfsrAdmin.exe に含まれる DFSR Windows PowerShell モジュールをスケジュールされたタスクと共に使用して、正常性レポートを定期的に生成します。 詳しくは、[DFS レプリケーションの正常性レポートの自動化](https://go.microsoft.com/fwlink/?linkid=74010) (https://go.microsoft.com/fwlink/?LinkId=74010) に関するページをご覧ください。  
-      
-  - System Center Operations Manager 用の DFS レプリケーション管理パックを使用し、指定した条件に基づいてアラートを作成します。  
-      
-  - DFS レプリケーション WMI プロバイダーを使用して、アラートをスクリプト化します。  
-      
+  - Windows Server 2012 R2 または DfsrAdmin.exe に含まれる DFSR Windows PowerShell モジュールをスケジュールされたタスクと共に使用して、正常性レポートを定期的に生成します。 詳しくは、[DFS レプリケーションの正常性レポートの自動化](https://go.microsoft.com/fwlink/?linkid=74010) (https://go.microsoft.com/fwlink/?LinkId=74010) に関するページをご覧ください。
+
+  - System Center Operations Manager 用の DFS レプリケーション管理パックを使用し、指定した条件に基づいてアラートを作成します。
+
+  - DFS レプリケーション WMI プロバイダーを使用して、アラートをスクリプト化します。
+
 
 ### <a name="can-i-use-microsoft-system-center-operations-manager-to-monitor-dfs-replication"></a>Microsoft System Center Operations Manager を使用して DFS レプリケーションを監視できますか?
 
@@ -284,7 +282,7 @@ DFS 管理は、Windows Server 2012 R2、Windows Server 2012、Windows Server�
 
 
 > [!IMPORTANT]
-> フェールオーバー クラスターである読み取り専用のレプリケート フォルダーまたはメンバーが含まれるレプリケーション グループを表示または管理するには、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、<a href="https://go.microsoft.com/fwlink/p/?linkid=238560">Windows 8 用リモート サーバー管理ツール</a>、または <a href="https://technet.microsoft.com/library/ee449475">Windows 7 用リモート サーバー管理ツール</a>に含まれるバージョンの DFS 管理を使用する必要があります。 
+> フェールオーバー クラスターである読み取り専用のレプリケート フォルダーまたはメンバーが含まれるレプリケーション グループを表示または管理するには、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、<a href="https://go.microsoft.com/fwlink/p/?linkid=238560">Windows 8 用リモート サーバー管理ツール</a>、または <a href="https://technet.microsoft.com/library/ee449475">Windows 7 用リモート サーバー管理ツール</a>に含まれるバージョンの DFS 管理を使用する必要があります。
 <br>
 
 
@@ -300,16 +298,16 @@ DFS 管理は、Windows Server 2012 R2、Windows Server 2012、Windows Server�
 
 はい。 レプリケーションを監視するには、いくつかの方法があります。
 
-  - DFS レプリケーションには、プロアクティブな監視を提供する System Center Operations Manager 用の管理パックが用意されています。  
-      
-  - DFS の管理には、レプリケーション バックログ、レプリケーションの効率、および特定のレプリケーション グループ内のファイルとフォルダーの数に関する、インボックスの診断レポートが用意されています。  
-      
-  - Windows Server 2012 R2 の DFSR Windows PowerShell モジュールには、伝達テストを開始し、伝達レポートと正常性レポートを作成するためのコマンドレットが含まれています。 詳しくは、[Windows PowerShell の分散ファイル システム レプリケーション コマンドレット](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee449475(v=ws.10))に関するページをご覧ください。  
-      
-  - Dfsrdiag.exe は、バックログ カウントを生成したり、伝達テストをトリガーしたりできるコマンドライン ツールです。 どちらでもレプリケーションの状態が表示されます。 伝達では、すべてのノードにファイルがレプリケートされているかどうかが示されます。 バックログでは、2 台のコンピューターが同期されるまでにレプリケートする必要があるファイルの数が表示されます。バックログ カウントは、レプリケーション グループ メンバーで処理されていない更新の数です。 Windows Server 2012 R2、Windows Server 2012、または Windows Server 2008 R2 が実行されているコンピューターでは、Dfsrdiag.exe を使って、DFS レプリケーションで現在レプリケートされている更新を表示することもできます。  
-      
-  - スクリプトでは、WMI を使って、手動または MOM を介して、バックログ情報を収集できます。  
-      
+  - DFS レプリケーションには、プロアクティブな監視を提供する System Center Operations Manager 用の管理パックが用意されています。
+
+  - DFS の管理には、レプリケーション バックログ、レプリケーションの効率、および特定のレプリケーション グループ内のファイルとフォルダーの数に関する、インボックスの診断レポートが用意されています。
+
+  - Windows Server 2012 R2 の DFSR Windows PowerShell モジュールには、伝達テストを開始し、伝達レポートと正常性レポートを作成するためのコマンドレットが含まれています。 詳しくは、[Windows PowerShell の分散ファイル システム レプリケーション コマンドレット](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee449475(v=ws.10))に関するページをご覧ください。
+
+  - Dfsrdiag.exe は、バックログ カウントを生成したり、伝達テストをトリガーしたりできるコマンドライン ツールです。 どちらでもレプリケーションの状態が表示されます。 伝達では、すべてのノードにファイルがレプリケートされているかどうかが示されます。 バックログでは、2 台のコンピューターが同期されるまでにレプリケートする必要があるファイルの数が表示されます。バックログ カウントは、レプリケーション グループ メンバーで処理されていない更新の数です。 Windows Server 2012 R2、Windows Server 2012、または Windows Server 2008 R2 が実行されているコンピューターでは、Dfsrdiag.exe を使って、DFS レプリケーションで現在レプリケートされている更新を表示することもできます。
+
+  - スクリプトでは、WMI を使って、手動または MOM を介して、バックログ情報を収集できます。
+
 
 ## <a name="performance"></a>[パフォーマンス]
 
@@ -478,46 +476,46 @@ RDC は、ファイルが最小サイズのしきい値を超えた場合に使�
 
 次の属性値は、`SetFileAttributes dwFileAttributes` 関数を使用して設定され、DFS レプリケーションによってレプリケートされます。 これらの属性値を変更すると、属性のレプリケーションがトリガーされます。 内容も変更されない限り、ファイルの内容はレプリケートされません。 詳しくは、MSDN ライブラリの「[SetFileAttributes 関数](https://go.microsoft.com/fwlink/?linkid=182269)」 (https://go.microsoft.com/fwlink/?LinkId=182269) をご覧ください。
 
-  - FILE\_ATTRIBUTE\_HIDDEN  
-      
-  - FILE\_ATTRIBUTE\_READONLY  
-      
-  - FILE\_ATTRIBUTE\_SYSTEM  
-      
-  - FILE\_ATTRIBUTE\_NOT\_CONTENT\_INDEXED  
-      
-  - FILE\_ATTRIBUTE\_OFFLINE  
-      
+  - FILE\_ATTRIBUTE\_HIDDEN
+
+  - FILE\_ATTRIBUTE\_READONLY
+
+  - FILE\_ATTRIBUTE\_SYSTEM
+
+  - FILE\_ATTRIBUTE\_NOT\_CONTENT\_INDEXED
+
+  - FILE\_ATTRIBUTE\_OFFLINE
+
 
 次の属性値は、DFS レプリケーションによってレプリケートされますが、レプリケーションをトリガーすることはありません。
 
-  - FILE\_ATTRIBUTE\_ARCHIVE  
-      
-  - FILE\_ATTRIBUTE\_NORMAL  
-      
+  - FILE\_ATTRIBUTE\_ARCHIVE
+
+  - FILE\_ATTRIBUTE\_NORMAL
+
 
 次のファイル属性値でもレプリケーションがトリガーされますが、`SetFileAttributes` 関数を使用して設定することはできません (属性値を表示するには `GetFileAttributes` 関数を使用します)。
 
-  - FILE\_ATTRIBUTE\_REPARSE\_POINT  
-      
+  - FILE\_ATTRIBUTE\_REPARSE\_POINT
+
 
 > [!NOTE]
-> 再解析タグが IO_REPARSE_TAG_SYMLINK でない場合、DFS レプリケーションでは再解析ポイントの属性値はレプリケートされません。 再解析タグが IO_REPARSE_TAG_DEDUP、IO_REPARSE_TAG_SIS、または IO_REPARSE_TAG_HSM であるファイルは、通常のファイルとしてレプリケートされます。 ただし、再解析ポイントはローカル システムでのみ機能するため、再解析タグと再解析データ バッファーは、他のサーバーにはレプリケートされません。 
+> 再解析タグが IO_REPARSE_TAG_SYMLINK でない場合、DFS レプリケーションでは再解析ポイントの属性値はレプリケートされません。 再解析タグが IO_REPARSE_TAG_DEDUP、IO_REPARSE_TAG_SIS、または IO_REPARSE_TAG_HSM であるファイルは、通常のファイルとしてレプリケートされます。 ただし、再解析ポイントはローカル システムでのみ機能するため、再解析タグと再解析データ バッファーは、他のサーバーにはレプリケートされません。
 <br>
 
-  - FILE\_ATTRIBUTE\_COMPRESSED  
-      
-  - FILE\_ATTRIBUTE\_ENCRYPTED  
-      
+  - FILE\_ATTRIBUTE\_COMPRESSED
+
+  - FILE\_ATTRIBUTE\_ENCRYPTED
+
 
 > [!NOTE]
-> DFS レプリケーションでは、暗号化ファイル システム (EFS) を使用して暗号化されたファイルはレプリケートされません。 DFS レプリケーションでは、Microsoft 以外のソフトウェアを使用して暗号化されたファイルは、ファイルで FILE_ATTRIBUTE_ENCRYPTED 属性値が設定されていない場合にのみ、レプリケートされます。 
+> DFS レプリケーションでは、暗号化ファイル システム (EFS) を使用して暗号化されたファイルはレプリケートされません。 DFS レプリケーションでは、Microsoft 以外のソフトウェアを使用して暗号化されたファイルは、ファイルで FILE_ATTRIBUTE_ENCRYPTED 属性値が設定されていない場合にのみ、レプリケートされます。
 <br>
 
-  - FILE\_ATTRIBUTE\_SPARSE\_FILE  
-      
-  - FILE\_ATTRIBUTE\_DIRECTORY  
-      
+  - FILE\_ATTRIBUTE\_SPARSE\_FILE
+
+  - FILE\_ATTRIBUTE\_DIRECTORY
+
 
 DFS レプリケーションでは、FILE\_ATTRIBUTE\_TEMPORARY の値はレプリケートされません。
 
@@ -541,12 +539,12 @@ DFSR データベースの事前シードと複製については、「[Windows 
 
 はい。 DFS レプリケーションでは、次の 3 つの一般的な FRS の問題が解決されます。
 
-  - ジャーナルのラップ: DFS レプリケーションを使うと、ジャーナルのラップが即座に回復されます。 レプリケーションが再度有効にされる前に、既存の各ファイルまたはフォルダーは journalWrap としてマークされ、ファイル システムに対して検証されます。 回復の間に、このボリュームはどちらの方向のレプリケーションにも使用できません。  
-      
-  - 過剰なレプリケーション: 過剰なレプリケーションを防ぐため、DFS レプリケーションではクレジットのシステムが使用されます。  
-      
-  - フォルダーのモーフィング: フォルダー名のモーフィングを防ぐため、DFS レプリケーションでは、競合するデータが隠し属性の DfsrPrivate\\ConflictandDeleted フォルダー (レプリケート フォルダーのローカル パスの下にあります) に格納されます。 たとえば、FRS を使用してレプリケートされる複数のサーバーに同じ名前を持つ複数のフォルダーが同時に作成されると、FRS によって古いフォルダーの名前が変更されます。 DFS レプリケーションでは、代わりに、古いフォルダーは ConflictandDeleted フォルダーに移動されます。  
-      
+  - ジャーナルのラップ: DFS レプリケーションを使うと、ジャーナルのラップが即座に回復されます。 レプリケーションが再度有効にされる前に、既存の各ファイルまたはフォルダーは journalWrap としてマークされ、ファイル システムに対して検証されます。 回復の間に、このボリュームはどちらの方向のレプリケーションにも使用できません。
+
+  - 過剰なレプリケーション: 過剰なレプリケーションを防ぐため、DFS レプリケーションではクレジットのシステムが使用されます。
+
+  - フォルダーのモーフィング: フォルダー名のモーフィングを防ぐため、DFS レプリケーションでは、競合するデータが隠し属性の DfsrPrivate\\ConflictandDeleted フォルダー (レプリケート フォルダーのローカル パスの下にあります) に格納されます。 たとえば、FRS を使用してレプリケートされる複数のサーバーに同じ名前を持つ複数のフォルダーが同時に作成されると、FRS によって古いフォルダーの名前が変更されます。 DFS レプリケーションでは、代わりに、古いフォルダーは ConflictandDeleted フォルダーに移動されます。
+
 
 ### <a name="does-dfs-replication-replicate-files-in-chronological-order"></a>DFS レプリケーションではファイルは時系列の順序でレプリケートされますか?
 
@@ -558,14 +556,14 @@ DFSR データベースの事前シードと複製については、「[Windows 
 
 ### <a name="does-dfs-replication-replicate-ntfs-file-permissions-alternate-data-streams-hard-links-and-reparse-points"></a>DFS レプリケーションでは、NTFS ファイルのアクセス許可、代替データ ストリーム、ハード リンク、再解析ポイントはレプリケートされますか?
 
-  - DFS レプリケーションでは、NTFS ファイルのアクセス許可と代替データ ストリームはレプリケートされます。  
-      
-  - レプリケート フォルダー内のファイルとの間での NTFS ハード リンクの作成はサポートされていません。それを行うと、影響を受けるファイルでレプリケーションの問題が発生する可能性があります。 ハード リンク ファイルは DFS レプリケーションによって無視され、レプリケートされません。 また、接合ポイントもレプリケートされず、DFS レプリケーションでは検出された各接合ポイントに対してイベント 4406 がログに記録されます。  
-      
-  - DFS レプリケーションによってレプリケートされる再解析ポイントは、IO\_REPARSE\_TAG\_SYMLINK タグが使用されているものだけです。ただし、DFS レプリケーションでは、シンボリックリンクのターゲットもレプリケートされる保証はありません。 詳しくは、[ディレクトリ サービス チームへの質問ブログ](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc725893(v=ws.11))をご覧ください。  
-      
-  - 再解析タグ IO\_REPARSE\_TAG\_DEDUP、IO\_REPARSE\_TAG\_SIS、または IO\_REPARSE\_TAG\_HSM が設定されたファイルは、通常のファイルとしてレプリケートされます。 再解析ポイントはローカル システムでのみ機能するため、再解析タグと再解析データ バッファーは、他のサーバーにはレプリケートされません。 そのため、DFS レプリケーションでは、Windows Server 2012 のデータ重複除去または単一インスタンス記憶域 (SIS) を使用するボリューム上のフォルダーをレプリケートできますが、データ重複除去情報は、役割サービスが有効になっている各サーバーによって個別に保持されます。  
-      
+  - DFS レプリケーションでは、NTFS ファイルのアクセス許可と代替データ ストリームはレプリケートされます。
+
+  - レプリケート フォルダー内のファイルとの間での NTFS ハード リンクの作成はサポートされていません。それを行うと、影響を受けるファイルでレプリケーションの問題が発生する可能性があります。 ハード リンク ファイルは DFS レプリケーションによって無視され、レプリケートされません。 また、接合ポイントもレプリケートされず、DFS レプリケーションでは検出された各接合ポイントに対してイベント 4406 がログに記録されます。
+
+  - DFS レプリケーションによってレプリケートされる再解析ポイントは、IO\_REPARSE\_TAG\_SYMLINK タグが使用されているものだけです。ただし、DFS レプリケーションでは、シンボリックリンクのターゲットもレプリケートされる保証はありません。 詳しくは、[ディレクトリ サービス チームへの質問ブログ](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc725893(v=ws.11))をご覧ください。
+
+  - 再解析タグ IO\_REPARSE\_TAG\_DEDUP、IO\_REPARSE\_TAG\_SIS、または IO\_REPARSE\_TAG\_HSM が設定されたファイルは、通常のファイルとしてレプリケートされます。 再解析ポイントはローカル システムでのみ機能するため、再解析タグと再解析データ バッファーは、他のサーバーにはレプリケートされません。 そのため、DFS レプリケーションでは、Windows Server 2012 のデータ重複除去または単一インスタンス記憶域 (SIS) を使用するボリューム上のフォルダーをレプリケートできますが、データ重複除去情報は、役割サービスが有効になっている各サーバーによって個別に保持されます。
+
 
 ### <a name="does-dfs-replication-replicate-timestamp-changes-if-no-other-changes-are-made-to-the-file"></a>ファイルに対してタイムスタンプ以外の変更が行われていない場合、DFS レプリケーションではタイムスタンプの変更がレプリケートされますか?
 
@@ -577,7 +575,7 @@ DFSR データベースの事前シードと複製については、「[Windows 
 
 
 > [!NOTE]
-> 多数のファイルで ACL を変更すると、レプリケーションのパフォーマンスに影響する可能性があります。 ただし、RDC を使用すると、転送されるデータの量は、ファイル全体のサイズではなく、ACL のサイズに比例します。 それでも、ステージング フォルダーとの間でファイルの読み取りを行う必要があるため、ディスク トラフィックの量はファイルのサイズに比例します。 
+> 多数のファイルで ACL を変更すると、レプリケーションのパフォーマンスに影響する可能性があります。 ただし、RDC を使用すると、転送されるデータの量は、ファイル全体のサイズではなく、ACL のサイズに比例します。 それでも、ステージング フォルダーとの間でファイルの読み取りを行う必要があるため、ディスク トラフィックの量はファイルのサイズに比例します。
 <br>
 
 
@@ -595,12 +593,12 @@ DFS レプリケーションでは、競合があってもファイルはマー�
 
 詳細については、次の Microsoft Web サイトを参照してください。
 
-  - [RPC テクニカル リファレンス](https://go.microsoft.com/fwlink/?linkid=182278)  
-      
-  - [Remote Differential Compression について](https://go.microsoft.com/fwlink/?linkid=182279)  
-      
-  - [認証レベルの定数](https://go.microsoft.com/fwlink/?linkid=182280)  
-      
+  - [RPC テクニカル リファレンス](https://go.microsoft.com/fwlink/?linkid=182278)
+
+  - [Remote Differential Compression について](https://go.microsoft.com/fwlink/?linkid=182279)
+
+  - [認証レベルの定数](https://go.microsoft.com/fwlink/?linkid=182280)
+
 
 ### <a name="how-are-simultaneous-replications-handled"></a>同時レプリケーションはどのように処理されますか?
 
@@ -624,10 +622,10 @@ Windows Server 2008 または Windows Server 2003 R2 の DFS レプリケーシ�
 
 Windows Server 2008 または Windows Server 2003 R2 を使っている場合は、次の操作を実行することで一方向の接続をシミュレートできます。
 
-  - プライマリ サーバーとして指定されたサーバーでのみ変更を行うよう、管理者を訓練します。 その後、変更内容を転送先サーバーにレプリケートします。  
-      
-  - レプリケート先サーバーで共有アクセス許可を構成し、エンド ユーザーが書き込みアクセス許可を持たないようにします。 ブランチ サーバーでの変更が許可されていない場合、逆方向には何もレプリケートされなくなり、一方向の接続がシミュレートされて、WAN の使用率が低く抑えられます。  
-      
+  - プライマリ サーバーとして指定されたサーバーでのみ変更を行うよう、管理者を訓練します。 その後、変更内容を転送先サーバーにレプリケートします。
+
+  - レプリケート先サーバーで共有アクセス許可を構成し、エンド ユーザーが書き込みアクセス許可を持たないようにします。 ブランチ サーバーでの変更が許可されていない場合、逆方向には何もレプリケートされなくなり、一方向の接続がシミュレートされて、WAN の使用率が低く抑えられます。
+
 
 ### <a name="is-there-a-way-to-force-a-complete-replication-of-all-files-including-unchanged-files"></a>変更されていないファイルを含むすべてのファイルの完全なレプリケーションを強制する方法はありますか?
 
@@ -643,7 +641,7 @@ Windows Server 2008 または Windows Server 2003 R2 を使っている場合は
 
 
 > [!WARNING]
-> プライマリ メンバーの指定は、初期レプリケーション プロセスの間にのみ使用されます。 レプリケーションの完了後に <STRONG>Dfsradmin</STRONG> コマンドを使用してレプリケート フォルダーのプライマリ メンバーを指定した場合、DFS レプリケーションでは、サーバーが Active Directory Domain Services でプライマリ メンバーとして指定されません。 ただし、その後、サーバー上の DFS レプリケーション データベースで回復不可能な破損またはデータ損失が発生した場合、サーバーでは、レプリケーション グループの別のメンバーからデータを回復するのではなく、プライマリ メンバーとして初期レプリケーションの実行が試みられます。 基本的に、サーバーは非承認のプライマリ サーバーになり、競合が発生する可能性があります。 このため、初期レプリケーションが回復不可能なほど失敗したことが確実である場合にのみ、プライマリ メンバーを手動で指定してください。 
+> プライマリ メンバーの指定は、初期レプリケーション プロセスの間にのみ使用されます。 レプリケーションの完了後に <STRONG>Dfsradmin</STRONG> コマンドを使用してレプリケート フォルダーのプライマリ メンバーを指定した場合、DFS レプリケーションでは、サーバーが Active Directory Domain Services でプライマリ メンバーとして指定されません。 ただし、その後、サーバー上の DFS レプリケーション データベースで回復不可能な破損またはデータ損失が発生した場合、サーバーでは、レプリケーション グループの別のメンバーからデータを回復するのではなく、プライマリ メンバーとして初期レプリケーションの実行が試みられます。 基本的に、サーバーは非承認のプライマリ サーバーになり、競合が発生する可能性があります。 このため、初期レプリケーションが回復不可能なほど失敗したことが確実である場合にのみ、プライマリ メンバーを手動で指定してください。
 <br>
 
 
@@ -659,12 +657,12 @@ DFS レプリケーションによって競合が検出されると、最後に�
 
 競合が発生すると、DFS レプリケーションにより、情報イベントが DFS レプリケーション イベント ログに記録されます。 次の理由により、ユーザーがこのイベントに対応する必要はありません。
 
-  - ユーザーからは見えません (サーバー管理者だけが見ることができます)。  
-      
-  - DFS レプリケーションでは、ConflictandDeleted フォルダーはキャッシュとして扱われます。 クォータのしきい値に達すると、それらのファイルの一部はクリーンアップされます。 競合するファイルが保存される保証はありません。  
-      
-  - 競合は、競合の発生元とは異なるサーバー上に存在する可能性があります。  
-      
+  - ユーザーからは見えません (サーバー管理者だけが見ることができます)。
+
+  - DFS レプリケーションでは、ConflictandDeleted フォルダーはキャッシュとして扱われます。 クォータのしきい値に達すると、それらのファイルの一部はクリーンアップされます。 競合するファイルが保存される保証はありません。
+
+  - 競合は、競合の発生元とは異なるサーバー上に存在する可能性があります。
+
 
 ## <a name="staging"></a>ステージング
 

@@ -1,19 +1,17 @@
 ---
 title: リモート サーバー管理ツール
 description: リモート サーバー管理ツールに関するトップ レベル トピック
-ms.prod: windows-server
-ms.technology: manage-rsat
 ms.topic: get-started-article
 ms.assetid: d54a1f5e-af68-497e-99be-97775769a7a7
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dansimp
-ms.openlocfilehash: 75ebb12962e213887f1827992aff3fdf3c1df305
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 49a86a24b3637a701d6857af246eaa2852f1c73f
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86963134"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87948775"
 ---
 # <a name="remote-server-administration-tools"></a>リモート サーバー管理ツール
 
@@ -47,20 +45,20 @@ Windows 10 用のリモート サーバー管理ツールは、Windows 10 の x8
 > Windows 10 用のリモート サーバー管理ツールは、Windows 8.1、Windows 8、Windows Server 2008 R2、Windows Server 2008、Windows Server 2003、または Windows 2000 Server 用の管理ツール パックが実行されているコンピューターにはインストールしないでください。 Windows 10 用のリモート サーバー管理ツールをインストールする前に、以前のプレリリース バージョンや異なる言語またはロケール用のリリースも含めて、管理ツール パックまたはリモート サーバー管理ツールの古いバージョンをすべてコンピューターから削除してください。
 
 このリリースのサーバー マネージャーを使用して、Windows Server 2012 R2、Windows Server 2012、または Windows Server 2008 R2 が実行されているリモート サーバーにアクセスし、管理するには、サーバー マネージャーを使用して以前のバージョンの Windows Server オペレーティング システムを管理できるように、いくつかの更新プログラムをインストールする必要があります。 Windows 10 用のリモート サーバー管理ツールのサーバー マネージャーを使用して、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2 を管理できるように準備する方法については、「[サーバー マネージャーを使用して複数のリモート サーバーを管理する](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831456(v=ws.11))」を参照してください。
-        
+
 Windows PowerShell およびサーバー マネージャーのリモート管理は、リモート サーバー管理ツールの Windows 10 に含まれているツールを使用してそれらを管理するリモート サーバーで有効にする必要があります。 Windows Server 2016、Windows Server 2012 R2、および Windows Server 2012 が実行されているサーバーでは、リモート管理が既定で有効になります。 リモート管理が無効になっている場合に有効にする方法の詳細については、「 [サーバー マネージャーを使用して複数のリモート サーバーを管理する](https://go.microsoft.com/fwlink/p/?LinkId=241358)」を参照してください。
-        
-## <a name="install-uninstall-and-turn-offon-rsat-tools"></a>RSAT ツールをインストール、アンインストール、オン/オフする        
+
+## <a name="install-uninstall-and-turn-offon-rsat-tools"></a>RSAT ツールをインストール、アンインストール、オン/オフする
 
 ### <a name="use-features-on-demand-fod-to-install-specific-rsat-tools-on-windows-10-october-2018-update-or-later"></a>オンデマンド機能 (FoD) を使用して、Windows 10 October 2018 Update 以降に特定の RSAT ツールをインストールします。
 
 Windows 10 October 2018 Update 以降では、RSAT は Windows 10 の**オンデマンド機能**のセットとして含まれています。 RSAT パッケージをダウンロードするのではなく、 **[設定]** の **[オプション機能の管理]** に移動し、 **[機能の追加]** をクリックして、使用可能な RSAT ツールの一覧を表示します。 必要な特定の RSAT ツールを選択してインストールします。 インストールの進行状況を見るには、 **[戻る]** ボタンをクリックして、 **[オプション機能の管理]** ページで状態を表示します。
-        
+
 [**オンデマンド機能**で利用可能な RSAT ツールの一覧](/windows-hardware/manufacture/desktop/features-on-demand-non-language-fod#remote-server-administration-tools-rsat)を参照してください。 グラフィカルな**設定**アプリでインストールするだけでなく、[**DISM /Add-Capability**](/windows-hardware/manufacture/desktop/features-on-demand-v2--capabilities#using-dism-add-capability-to-add-or-remove-fods) を使用してコマンド ラインまたはオートメーションで特定の RSAT ツールをインストールすることもできます。
 
-オンデマンド機能の利点の 1 つは、インストールした機能は Windows 10 のバージョンをアップグレードしても保持されることです。        
-        
-#### <a name="to-uninstall-specific-rsat-tools-on-windows-10-october-2018-update-or-later-after-installing-with-fod"></a>Windows 10 October 2018 Update 以降で特定の RSAT ツールをアンインストールするには (FoD を使用してインストールした後)        
+オンデマンド機能の利点の 1 つは、インストールした機能は Windows 10 のバージョンをアップグレードしても保持されることです。
+
+#### <a name="to-uninstall-specific-rsat-tools-on-windows-10-october-2018-update-or-later-after-installing-with-fod"></a>Windows 10 October 2018 Update 以降で特定の RSAT ツールをアンインストールするには (FoD を使用してインストールした後)
 
 Windows 10 で、**設定**アプリを開き、 **[オプション機能の管理]** に移動し、削除する RSAT ツールを選択してアンインストールします。 場合によっては、依存関係を手動でアンインストールする必要があることに注意してください。 具体的には、RSAT ツール A が RSAT ツール B で必要な場合、RSAT ツール B がまだインストールされていると、RSAT ツール A のアンインストールを選択しても失敗します。 この場合は、最初に RSAT ツール B をアンインストールしてから、RSAT ツール A をアンインストールします。また、ツールがまだインストールされていても、RSAT ツールのアンインストールが正常に行われたように表示される場合があることに注意してください。 この場合は、PC を再起動すると、ツールの削除が完了します。
 
@@ -89,10 +87,10 @@ October 2018 Update (1809) より前のバージョンの Windows 10 を使用�
 
 4.  ライセンス条項を読んで内容に同意します。 **[同意する]** をクリックします。
 
-5.  インストールの完了には数分かかります。    
-        
+5.  インストールの完了には数分かかります。
+
 ##### <a name="to-uninstall-remote-server-administration-tools-for-windows-10-after-rsat-package-install"></a>Windows 10 用のリモート サーバー管理ツールをアンインストールするには (RSAT パッケージのインストール後)
-        
+
 1. デスクトップで、 **[スタート]** 、 **[すべてのアプリ]** 、 **[Windows システム]** 、 **[コントロール パネル]** の順にクリックします。
 
 2. **[プログラム]** の **[プログラムのアンインストール]** をクリックします。
@@ -104,7 +102,7 @@ October 2018 Update (1809) より前のバージョンの Windows 10 を使用�
 5. 更新プログラムをアンインストールするかどうかを確認するメッセージが表示されたら、 **[はい]** をクリックします。
    S
    ##### <a name="to-turn-off-specific-tools-after-rsat-package-install"></a>特定のツールを無効にするには (RSAT パッケージのインストール後)
-        
+
 6. デスクトップで、 **[スタート]** 、 **[すべてのアプリ]** 、 **[Windows システム]** 、 **[コントロール パネル]** の順にクリックします。
 
 7. **[プログラム]** をクリックし、 **[プログラムと機能]** の **[Windows の機能の有効化または無効化]** をクリックします。
@@ -115,7 +113,7 @@ October 2018 Update (1809) より前のバージョンの Windows 10 を使用�
 
    > [!NOTE]
    > サーバー マネージャーをオフにすると、コンピューターを再起動する必要があります、そのからアクセスできたツールを **ツール** からサーバー マネージャーのメニューを開く必要がある、 **管理ツール** フォルダーです。
-        
+
 10. 使用しないツールの無効化が完了したら、 **[OK]** をクリックします。
 
 ### <a name="run-remote-server-administration-tools"></a>リモート サーバー管理ツールの実行
@@ -147,14 +145,14 @@ Windows 10 用のリモート サーバー管理ツールでは、MMC のスナ�
 
 > [!NOTE]
 > 役割またはグループのページでは、サーバー マネージャーで、管理対象のサーバーを右クリックし、特定のサーバーで対象となる Windows PowerShell セッションを開始することもできます。 **Windows PowerShell**します。
-        
+
 
 ## <a name="known-issues"></a>既知の問題
 
 ### <a name="issue-rsat-fod-installation-fails-with-error-code-0x800f0954"></a>**問題**: RSAT FOD のインストールがエラー コード 0x800f0954 で失敗する
 
 > **影響**: WSUS/Configuration Manager 環境の Windows 10 1809 (October 2018 Update) 上の RSAT FOD
-> 
+>
 > **解決方法**: WSUS または Configuration Manager を通して更新プログラムを受け取る、ドメインに参加している PC に FOD をインストールするには、Windows Update またはローカル共有から直接 FOD をダウンロードできるように、グループ ポリシーの設定を変更する必要があります。 その設定を変更する方法の詳細と手順については、「[WSUS/SCCM を使用しているときにオンデマンド機能と言語パックを使用できるようにする方法](/windows/deployment/update/fod-and-lang-packs)」をご覧ください。
 
 ---
@@ -162,7 +160,7 @@ Windows 10 用のリモート サーバー管理ツールでは、MMC のスナ�
 ### <a name="issue-rsat-fod-installation-via-settings-app-does-not-show-statusprogress"></a>**問題**: 設定アプリを使用した RSAT FOD のインストールで状態と進行状況が表示されない
 
 > **影響**: Windows 10 1809 (October 2018 Update) 上の RSAT FOD
-> 
+>
 > **解決方法**: インストールの進行状況を見るには、 **[戻る]** ボタンをクリックして、 **[オプション機能の管理]** ページで状態を表示します。
 
 ---
@@ -170,7 +168,7 @@ Windows 10 用のリモート サーバー管理ツールでは、MMC のスナ�
 ### <a name="issue-rsat-fod-uninstallation-via-settings-app-may-fail"></a>**問題**: 設定アプリを使用した RSAT FOD のアンインストールが失敗することがある
 
 > **影響**: Windows 10 1809 (October 2018 Update) 上の RSAT FOD
-> 
+>
 > **解決方法**: 場合によっては、依存関係を手動でアンインストールする必要があるために、アンインストールが失敗します。 具体的には、RSAT ツール A が RSAT ツール B で必要な場合、RSAT ツール B がまだインストールされていると、RSAT ツール A のアンインストールを選択しても失敗します。 この場合は、最初に RSAT ツール B をアンインストールしてから、RSAT ツール A をアンインストールします。依存関係を含む RSAT FOD の一覧を参照してください。
 
 ---
@@ -178,7 +176,7 @@ Windows 10 用のリモート サーバー管理ツールでは、MMC のスナ�
 ### <a name="issue-rsat-fod-uninstallation-appears-to-succeed-but-the-tool-is-still-installed"></a>**問題**: RSAT のアンインストールは成功したように見えるが、ツールがまだインストールされている
 
 > **影響**: Windows 10 1809 (October 2018 Update) 上の RSAT FOD
-> 
+>
 > **解決方法**: PC を再起動すると、ツールの削除が完了します。
 
 ---
@@ -186,9 +184,9 @@ Windows 10 用のリモート サーバー管理ツールでは、MMC のスナ�
 ### <a name="issue-rsat-missing-after-windows-10-upgrade"></a>**問題**: Windows 10 のアップグレード後に RSAT が見つからない
 
 > **影響**: RSAT .MSU パッケージのインストール (RSAT FOD の前) が自動的に再インストールされない
-> 
+>
 > **解決方法**: RSAT .MSU が Windows Update パッケージとして提供されるため、OS をアップグレードしたときに RSAT のインストールを維持できません。 Windows 10 をアップグレード後、RSAT をもう一度インストールしてください。 この制限は、Windows 10 1809 以降に FOD に移行した理由の 1 つです。 インストールされている RSAT FOD は、今後の Windows 10 バージョンのアップグレードでも保持されます。
 
 ## <a name="see-also"></a>参照
 >- [Windows 10 用のリモート サーバー管理ツール](https://go.microsoft.com/fwlink/?LinkID=404281)
->- [Windows Vista、Windows 7、Windows 8、Windows Server 2008、Windows Server 2008 R2、Windows Server 2012、Windows Server 2012 R2 用のリモート サーバー管理ツール (RSAT)](https://go.microsoft.com/fwlink/p/?LinkID=221055)                                                                                                                                                                                                                                                                                                                                                                                    
+>- [Windows Vista、Windows 7、Windows 8、Windows Server 2008、Windows Server 2008 R2、Windows Server 2012、Windows Server 2012 R2 用のリモート サーバー管理ツール (RSAT)](https://go.microsoft.com/fwlink/p/?LinkID=221055)

@@ -6,16 +6,14 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 10/29/2018
 ms.topic: article
-ms.prod: windows-server
 ms.custom: it-pro
 ms.reviewer: maheshu
-ms.technology: identity-adds
-ms.openlocfilehash: b6a9a5c08e24f5c7bb7ac50ac1c72386ef8a6d0f
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 75ba30502c7de1b0a88886f42c3a8ef9a84a7e18
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86963054"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87938631"
 ---
 # <a name="forest-and-domain-functional-levels"></a>フォレストとドメインの機能レベル
 
@@ -133,7 +131,7 @@ Windows Server 2019 ドメイン コントローラーを追加する最小要�
 
 ### <a name="windows-server-2008-forest-functional-level-features"></a>Windows Server 2008 フォレストの機能レベルの機能
 
-* Windows Server 2003 フォレストの機能レベルで使用可能な機能がすべて提供されますが、追加機能は使用できません。 
+* Windows Server 2003 フォレストの機能レベルで使用可能な機能がすべて提供されますが、追加機能は使用できません。
 
 ### <a name="windows-server-2008-domain-functional-level-features"></a>Windows Server 2008 ドメインの機能レベルの機能
 
@@ -145,7 +143,7 @@ Windows Server 2019 ドメイン コントローラーを追加する最小要�
       > Windows Server 2012 R2 以降、ファイル レプリケーション サービス (FRS) は非推奨になります。 Windows Server 2012 R2 以降を実行するドメイン コントローラー上に作成される新しいドメインは、Windows Server 2008 ドメイン機能レベル以上に設定する必要があります。
 
   * Windows Server 2008 モードで実行されているドメイン ベースの DFS 名前空間。これには、アクセスベースの列挙とスケーラビリティの向上のサポートが含まれます。 Windows Server 2008 モードでのドメイン ベースの名前空間を使うと、フォレストで Windows Server 2003 フォレスト機能レベルを使用する必要もあります。 詳しくは、「[名前空間の種類を選択する](https://go.microsoft.com/fwlink/?LinkId=180400)」をご覧ください。
-  * Kerberos プロトコルに対する Advanced Encryption Standard (AES 128 および AES 256) のサポート。 AES を使用して TGT を発行するには、ドメイン機能レベルを Windows Server 2008 以上にし、ドメイン パスワードを変更する必要があります。 
+  * Kerberos プロトコルに対する Advanced Encryption Standard (AES 128 および AES 256) のサポート。 AES を使用して TGT を発行するには、ドメイン機能レベルを Windows Server 2008 以上にし、ドメイン パスワードを変更する必要があります。
     * 詳しくは、「[Kerberos の強化](/previous-versions/windows/it-pro/windows-vista/cc749438(v=ws.10))」をご覧ください。
 
       > [!NOTE]
@@ -182,7 +180,7 @@ Windows Server 2019 ドメイン コントローラーを追加する最小要�
       - サイト間トポロジ ジェネレーター (ISTG) では、強化されたアルゴリズムが使用されます。スケーラビリティの向上により、Windows 2000 フォレストの機能レベルで AD DS がサポートできるサイト数より多くのサイトを含むフォレストがサポート可能になります。 向上した ISTG 選択アルゴリズムは、Windows 2000 フォレストの機能レベルで ISTG を選択するための、より影響の少ないメカニズムです。
    * **dynamicObject** と呼ばれる動的な補助型クラスのインスタンスをドメイン ディレクトリ パーティションに作成する機能
    * **inetOrgPerson** オブジェクト インスタンスから **User** オブジェクト インスタンスへの変換、および逆方向の変換を行う機能
-   * ロールベースの承認をサポートするために新しいグループの種類のインスタンスを作成する機能。 
+   * ロールベースの承認をサポートするために新しいグループの種類のインスタンスを作成する機能。
       - これらの種類は、アプリケーション基本グループおよび LDAP クエリ グループと呼ばれます。
    * スキーマの属性およびクラスの非アクティブ化と再定義。 ldapDisplayName、schemaIdGuid、OID、mapiID の各属性を再利用できます。
    * Windows Server 2008 モードで実行されているドメイン ベースの DFS 名前空間。これには、アクセスベースの列挙とスケーラビリティの向上のサポートが含まれます。 詳しくは、「[名前空間の種類を選択する](https://go.microsoft.com/fwlink/?LinkId=180400)」をご覧ください。
@@ -226,5 +224,5 @@ Windows Server 2019 ドメイン コントローラーを追加する最小要�
 
 ## <a name="next-steps"></a>次の手順
 
-* [ドメインの機能レベルを上げる](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753104(v=ws.11))  
+* [ドメインの機能レベルを上げる](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753104(v=ws.11))
 * [フォレストの機能レベルを上げる](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc730985(v=ws.11))

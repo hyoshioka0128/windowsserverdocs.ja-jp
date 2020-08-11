@@ -1,23 +1,21 @@
 ---
 title: ハイパーテキスト転送プロトコル (HTTP) 用の Netsh コマンド
 description: netsh http を使用して、HTTP.sys の設定とパラメーターを照会および構成します。
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 manager: dougkim
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 81053e71040d2a0cd125af9fb7f3802dfd535781
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: a2bf580dff85463306767b6a129819b82f4fc85c
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80853755"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87946986"
 ---
 # <a name="netsh-http-commands"></a>Netsh http コマンド
 
 
-**netsh http** を使用して、HTTP.sys の設定とパラメーターを照会および構成します。  
+**netsh http** を使用して、HTTP.sys の設定とパラメーターを照会および構成します。
 
 >[!TIP]
 >Windows Server 2016 または Windows 10 を実行しているコンピューターで Windows PowerShell を使用している場合は、**netsh** と入力して Enter キーを押します。 netsh プロンプトで、「**http**」と入力し、Enter キーを押して netsh http プロンプトを取得します。
@@ -115,7 +113,7 @@ add sslcert ipport=1.1.1.1:443 certhash=0102030405060708090A0B0C0D0E0F1011121314
 
 サービスにグローバル タイムアウトを追加します。
 
-**構文** 
+**構文**
 
 ```powershell
 add timeout [ timeouttype= ] IdleConnectionTimeout | HeaderWaitTimeout [ value=] U-Short

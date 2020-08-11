@@ -1,19 +1,17 @@
 ---
 title: 常時オフライン モードを有効にしてファイルへのアクセス時間を短縮する
 description: オフライン ファイルの常時オフライン モードを使用して、キャッシュされたファイルおよびリダイレクトされたフォルダーへのアクセス時間を短縮する方法。
-ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
-ms.technology: storage
 ms.date: 09/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 389fdd26a7e1d9824f1eaf0136a544547f08eb05
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 2a4526a70379ad414cdf866419a3b893e42256d5
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71401953"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87942223"
 ---
 # <a name="enable-always-offline-mode-for-faster-access-to-files"></a>常時オフライン モードを有効にしてファイルへのアクセス時間を短縮する
 
@@ -26,7 +24,7 @@ ms.locfileid: "71401953"
 常時オフライン モードを有効にするには、お使いの環境が次の前提条件を満たしている必要があります。
 
 - Active Directory Domain Services (AD DS) ドメインが存在し、クライアント コンピューターがこのドメインに参加していること。 フォレストまたはドメインの機能レベルの要件やスキーマの要件はありません。
-- Windows 10、Windows 8.1、Windows 8、Windows Server 2016、Windows Server 2012 R2、または Windows Server 2012 を実行しているクライアント コンピューター。 (以前のバージョンの Windows を実行しているクライアント コンピューターは、非常に高速のネットワーク接続では引き続きオンライン モードに移行する可能性があります。)
+- Windows 10、Windows 8.1、Windows 8、Windows Server 2016、Wndows Server 2012 R2、または Windows Server 2012 を実行しているクライアント コンピューター。 (以前のバージョンの Windows を実行しているクライアント コンピューターは、非常に高速のネットワーク接続では引き続きオンライン モードに移行する可能性があります。)
 - グループ ポリシー管理がインストールされたコンピューター。
 
 ## <a name="enable-always-offline-mode"></a>常時オフライン モードを有効にする

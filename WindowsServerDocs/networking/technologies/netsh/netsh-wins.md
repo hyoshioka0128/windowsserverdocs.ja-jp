@@ -1,19 +1,17 @@
 ---
 title: ネットワーク シェル (Netsh) のサンプル バッチ ファイル
 description: このトピックでは、Windows Server 2016 で Netsh を使用して複数のタスクを実行するバッチ ファイルを作成する方法について説明します。
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: c94e37a4-3637-4613-9eb5-ed604e831eca
 manager: brianlic
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: f0cc6818b589c6ee2ac64115fe9e7fb71c3d20b1
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 35690e25fa18512d729bbd323b8983284a41781d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87517907"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953978"
 ---
 # <a name="network-shell-netsh-example-batch-file"></a>ネットワーク シェル (Netsh) のサンプル バッチ ファイル
 

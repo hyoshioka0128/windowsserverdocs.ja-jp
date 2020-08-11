@@ -1,21 +1,19 @@
 ---
 title: Windows Server 2016 の新機能
 description: コンピューティング、ID、管理、自動化、ネットワーク、セキュリティ、記憶域の新機能は何ですか。
-ms.prod: windows-server
 ms.date: 05/21/2019
-ms.technology: server-general
 ms.topic: article
 ms.assetid: 2827f332-44d4-4785-8b13-98429087dcc7
 author: jasongerend
 ms.author: jgerend
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: a0a6cefcfb69050721a8b82b5f0f770fa518a551
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: d0ba6860edd40202da3078ee0ad05eb91901e1f2
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961764"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87945715"
 ---
 # <a name="whats-new-in-windows-server-2016"></a>Windows Server 2016 の新機能
 
@@ -25,56 +23,56 @@ ms.locfileid: "86961764"
 
 ## <a name="compute"></a>[Compute](../virtualization/virtualization.yml)
 
-仮想領域には、Windows Server を設計、展開、および保守する IT プロフェッショナル向けの仮想化製品と機能が含まれます。  
+仮想領域には、Windows Server を設計、展開、および保守する IT プロフェッショナル向けの仮想化製品と機能が含まれます。
 
-### <a name="general"></a>全般  
-物理マシンと仮想マシンは、Win32 の時刻と Hyper-V の時刻同期サービスが向上したことによる時刻の精度の向上を享受できます。 Windows Server では、UTC に対して 1 ミリ秒の精度を必要とする今後の規制に準拠しているサービスをホストできるようになりました。  
+### <a name="general"></a>全般
+物理マシンと仮想マシンは、Win32 の時刻と Hyper-V の時刻同期サービスが向上したことによる時刻の精度の向上を享受できます。 Windows Server では、UTC に対して 1 ミリ秒の精度を必要とする今後の規制に準拠しているサービスをホストできるようになりました。
 
-### <a name="hyper-v"></a>Hyper-V  
--   [Windows Server 2016 の Hyper-V の新機能](../virtualization/hyper-v/What-s-new-in-Hyper-V-on-Windows.md)。 このトピックでは、Windows Server 2016 の Hyper-V の役割、Windows 10 で実行されているクライアント Hyper-V、および Microsoft Hyper-V Server 2016 で追加および変更された機能について説明します。  
+### <a name="hyper-v"></a>Hyper-V
+-   [Windows Server 2016 の Hyper-V の新機能](../virtualization/hyper-v/What-s-new-in-Hyper-V-on-Windows.md)。 このトピックでは、Windows Server 2016 の Hyper-V の役割、Windows 10 で実行されているクライアント Hyper-V、および Microsoft Hyper-V Server 2016 で追加および変更された機能について説明します。
 
--   [Windows コンテナー](/virtualization/windowscontainers/): Windows Server 2016 コンテナーのサポートによって、Windows 10 でパフォーマンスの向上、ネットワーク管理の簡素化、および Windows コンテナーのサポートが実現しています。 コンテナーの詳細については、「[Containers: Docker, Windows and Trends](https://azure.microsoft.com/blog/2015/08/17/containers-docker-windows-and-trends/)」(コンテナー: Docker、Windows、および傾向) を参照してください。  
+-   [Windows コンテナー](/virtualization/windowscontainers/): Windows Server 2016 コンテナーのサポートによって、Windows 10 でパフォーマンスの向上、ネットワーク管理の簡素化、および Windows コンテナーのサポートが実現しています。 コンテナーの詳細については、「[Containers: Docker, Windows and Trends](https://azure.microsoft.com/blog/2015/08/17/containers-docker-windows-and-trends/)」(コンテナー: Docker、Windows、および傾向) を参照してください。
 
-### <a name="nano-server"></a>Nano Server  
-[Nano Server](getting-started-with-nano-server.md) の新機能。 Nano Server には、物理ホストとゲスト仮想マシンの機能の分離の強化と、Windows Server のさまざまなエディションのサポートなど、Nano Server イメージを構築するための更新されたモジュールがあります。   
+### <a name="nano-server"></a>Nano Server
+[Nano Server](getting-started-with-nano-server.md) の新機能。 Nano Server には、物理ホストとゲスト仮想マシンの機能の分離の強化と、Windows Server のさまざまなエディションのサポートなど、Nano Server イメージを構築するための更新されたモジュールがあります。
 
-回復コンソールにも、受信と送信のファイアウォール ルールの分離、WinRM の構成を修復する機能などの機能強化があります。  
+回復コンソールにも、受信と送信のファイアウォール ルールの分離、WinRM の構成を修復する機能などの機能強化があります。
 
-### <a name="shielded-virtual-machines"></a>シールドされた仮想マシン  
-Windows Server 2016 には、不正に使用されているファブリックから 第 2 世代仮想マシンを保護することを目的として、Hyper-V ベースのシールドされた仮想マシンが用意されています。 Windows Server 2016 で導入された機能を次に示します。  
+### <a name="shielded-virtual-machines"></a>シールドされた仮想マシン
+Windows Server 2016 には、不正に使用されているファブリックから 第 2 世代仮想マシンを保護することを目的として、Hyper-V ベースのシールドされた仮想マシンが用意されています。 Windows Server 2016 で導入された機能を次に示します。
 
-- 通常の仮想マシンよりも強化された保護を提供する一方で「シールド」モードよりは弱い新しい「暗号化のサポート」モード。vTPM、ディスクの暗号化、ライブ マイグレーション トラフィックの暗号化、およびその他の機能 (仮想マシンのコンソール接続や Powershell ダイレクトなどの便利な直接ファブリック管理機能を含む) を引き続きサポートします。  
+- 通常の仮想マシンよりも強化された保護を提供する一方で「シールド」モードよりは弱い新しい「暗号化のサポート」モード。vTPM、ディスクの暗号化、ライブ マイグレーション トラフィックの暗号化、およびその他の機能 (仮想マシンのコンソール接続や Powershell ダイレクトなどの便利な直接ファブリック管理機能を含む) を引き続きサポートします。
 
 - 自動化されたディスクの暗号化を含め、既存のシールドされていない第 2 世代仮想マシンからシールドされた仮想マシンへの変換を完全にサポートします。
 
-- Hyper-V Virtual Machine Manager では、シールドされた仮想マシンの実行が許可された時点でファブリックを表示できるようになりました。このため、ファブリック管理者がシールドされた仮想マシンのキーの保護機能 (KP) を開き、仮想マシンの実行を許可されているファブリックを表示するための方法になります。  
+- Hyper-V Virtual Machine Manager では、シールドされた仮想マシンの実行が許可された時点でファブリックを表示できるようになりました。このため、ファブリック管理者がシールドされた仮想マシンのキーの保護機能 (KP) を開き、仮想マシンの実行を許可されているファブリックを表示するための方法になります。
 
-- 実行中のホスト ガーディアン サービスの構成証明モードを切り替えることができます。 安全性が低い一方で単純な Active Directory ベースの構成証明と、TPM ベースの構成証明をその場で切り替えることができるようになりました。  
+- 実行中のホスト ガーディアン サービスの構成証明モードを切り替えることができます。 安全性が低い一方で単純な Active Directory ベースの構成証明と、TPM ベースの構成証明をその場で切り替えることができるようになりました。
 
-- 保護された Hyper-V ホストとホスト ガーディアン サービスの両方の構成で誤りやエラーを検出できる Windows PowerShell ベースのエンド ツー エンドの診断ツール。  
+- 保護された Hyper-V ホストとホスト ガーディアン サービスの両方の構成で誤りやエラーを検出できる Windows PowerShell ベースのエンド ツー エンドの診断ツール。
 
 - シールドされた仮想マシン自体と同じレベルの保護機能を提供しながら、通常実行されるファブリック内のシールドされた仮想マシンを安全にトラブルシューティングし、修復をするための手段を提供する回復環境。
 
 - ホスト ガーディアン サービスによる既存の安全な Active Directory のサポート。独自の Active Directory インスタンスを作成するのではなく、既存の Active Directory フォレストを Active Directory として使用するようにホスト ガーディアン サービスに対して指示できます。
 
-シールドされた仮想マシンを使用するための詳細および手順については、[シールドされた VM と保護されたファブリックの検証ガイド: Windows Server 2016 (TPM)](https://aka.ms/shieldedvms) に関する記事を参照してください。  
+シールドされた仮想マシンを使用するための詳細および手順については、[シールドされた VM と保護されたファブリックの検証ガイド: Windows Server 2016 (TPM)](https://aka.ms/shieldedvms) に関する記事を参照してください。
 
-## <a name="identity-and-access"></a>[ID およびアクセス](../identity/Identity-and-Access.yml)  
-ID での新機能では、組織が Active Directory 環境をセキュリティで保護する機能が強化され、クラウドのみの展開およびハイブリッドの展開に移行するために役立ちます。ハイブリッドの展開では、一部のアプリケーションとサービスはクラウドでホストされ、残りはオンプレミスでホストされます。  
+## <a name="identity-and-access"></a>[ID およびアクセス](../identity/Identity-and-Access.yml)
+ID での新機能では、組織が Active Directory 環境をセキュリティで保護する機能が強化され、クラウドのみの展開およびハイブリッドの展開に移行するために役立ちます。ハイブリッドの展開では、一部のアプリケーションとサービスはクラウドでホストされ、残りはオンプレミスでホストされます。
 
-### <a name="active-directory-certificate-services"></a>Active Directory 証明書サービス  
-Windows Server 2016 の Active Directory 証明書サービス (AD CS) では、TPM キーの構成証明のサポートが強化されます。キーの構成証明にスマート カード KSP を使用でき、ドメインに参加していないデバイスで NDES の登録を使用して、TPM にあるキーを証明できる証明書を取得できるようになりました。  
+### <a name="active-directory-certificate-services"></a>Active Directory 証明書サービス
+Windows Server 2016 の Active Directory 証明書サービス (AD CS) では、TPM キーの構成証明のサポートが強化されます。キーの構成証明にスマート カード KSP を使用でき、ドメインに参加していないデバイスで NDES の登録を使用して、TPM にあるキーを証明できる証明書を取得できるようになりました。
 
-### <a name="active-directory-domain-services"></a>[Active Directory Domain Services]  
-Active Directory ドメイン サービスでは、Active Directory 環境をセキュリティで保護し、会社と個人の両方のデバイスの優れた ID 管理環境を実現するのに役立つ機能強化が図られています。 詳細については、[Windows Server 2016 の Active Directory Domain Services (AD DS) の新機能](../identity/whats-new-active-directory-domain-services.md)に関するページを参照してください。   
+### <a name="active-directory-domain-services"></a>[Active Directory Domain Services]
+Active Directory ドメイン サービスでは、Active Directory 環境をセキュリティで保護し、会社と個人の両方のデバイスの優れた ID 管理環境を実現するのに役立つ機能強化が図られています。 詳細については、[Windows Server 2016 の Active Directory Domain Services (AD DS) の新機能](../identity/whats-new-active-directory-domain-services.md)に関するページを参照してください。
 
-### <a name="active-directory-federation-services"></a>Active Directory フェデレーション サービス  
-Active Directory フェデレーション サービスの新機能。 Windows Server 2016 の Active Directory フェデレーション サービス (AD FS) には、ライトウェイト ディレクトリ アクセス プロトコル (LDAP) ディレクトリに格納されているユーザーを認証するよう AD FS を構成できる新機能が追加されています。 詳細については、[Windows Server 2016 の AD FS の新機能](../identity/ad-fs/overview/whats-new-active-directory-federation-services-windows-server.md)に関する記事を参照してください。  
+### <a name="active-directory-federation-services"></a>Active Directory フェデレーション サービス
+Active Directory フェデレーション サービスの新機能。 Windows Server 2016 の Active Directory フェデレーション サービス (AD FS) には、ライトウェイト ディレクトリ アクセス プロトコル (LDAP) ディレクトリに格納されているユーザーを認証するよう AD FS を構成できる新機能が追加されています。 詳細については、[Windows Server 2016 の AD FS の新機能](../identity/ad-fs/overview/whats-new-active-directory-federation-services-windows-server.md)に関する記事を参照してください。
 
-### <a name="web-application-proxy"></a>Web アプリケーション プロキシ  
-Web アプリケーション プロキシの最新バージョンでは、より多くのアプリケーションの発行と事前認証を可能にする新機能に力を入れており、ユーザー エクスペリエンスの向上が図られています。 新機能の一覧をご覧ください。新機能には、Exchange ActiveSync などのリッチ クライアント アプリの事前認証や、SharePoint アプリの発行を容易にするワイルドカード ドメインなどがあります。 詳細については、「[Web Application Proxy in Windows Server 2016 (Windows Server 2016 の Web アプリケーション プロキシ)](../remote/remote-access/web-application-proxy/web-application-proxy-windows-server.md)」を参照してください。  
+### <a name="web-application-proxy"></a>Web アプリケーション プロキシ
+Web アプリケーション プロキシの最新バージョンでは、より多くのアプリケーションの発行と事前認証を可能にする新機能に力を入れており、ユーザー エクスペリエンスの向上が図られています。 新機能の一覧をご覧ください。新機能には、Exchange ActiveSync などのリッチ クライアント アプリの事前認証や、SharePoint アプリの発行を容易にするワイルドカード ドメインなどがあります。 詳細については、「[Web Application Proxy in Windows Server 2016 (Windows Server 2016 の Web アプリケーション プロキシ)](../remote/remote-access/web-application-proxy/web-application-proxy-windows-server.md)」を参照してください。
 
-##  <a name="administration"></a>[管理](../administration/manage-windows-server.yml)  
+##  <a name="administration"></a>[管理](../administration/manage-windows-server.yml)
 管理と自動化の領域では、Windows PowerShell など Windows Server 2016 を実行および管理する IT プロフェッショナル向けのツールとリファレンス情報に力を入れています。
 
 Windows PowerShell 5.1 に追加された重要な新機能には、クラスを使った開発のサポートや新しいセキュリティ機能があります。それらの機能により、用途が広がり、使いやすさが向上し、Windows ベースの環境をより簡単かつ包括的に制御して管理できます。 詳細については、「[WMF 5.1 の新しいシナリオと機能](/powershell/wmf/5.1/scenarios-features)」を参照してください。
@@ -89,7 +87,7 @@ Windows Management Framework 5 には、Windows PowerShell Desired State Configu
 Windows Management Framework 5 の DSC 機能のテストに関する詳細については、[PowerShell DSC の機能の検証](https://devblogs.microsoft.com/powershell/validate-features-of-powershell-dsc/)に関する一連のブログ記事を参照してください。 ダウンロードするには、[Windows Management Framework 5.1](/powershell/scripting/wmf/setup/install-configure) に関するページを参照してください。
 
 ### <a name="packagemanagement-unified-package-management-for-software-discovery-installation-and-inventory"></a>PackageManagement 統合パッケージ管理によるソフトウェアの検出、インストール、およびインベントリ
-Windows Server 2016 および Windows 10 には、新しい PackageManagement 機能 (旧称 OneGet) が含まれています。この機能により、IT 技術者や DevOps は、インストーラーのテクノロジやソフトウェアの配置場所にかかわらず、ソフトウェアの検出、インストール、およびインベントリ (SDII) をローカルまたはリモートで自動化できます。 
+Windows Server 2016 および Windows 10 には、新しい PackageManagement 機能 (旧称 OneGet) が含まれています。この機能により、IT 技術者や DevOps は、インストーラーのテクノロジやソフトウェアの配置場所にかかわらず、ソフトウェアの検出、インストール、およびインベントリ (SDII) をローカルまたはリモートで自動化できます。
 
 詳細については、[https://github.com/OneGet/oneget/wiki](https://github.com/OneGet/oneget/wiki) を参照してください。
 
@@ -98,8 +96,8 @@ Windows Server 2016 および Windows 10 には、新しい PackageManagement �
 
 詳しくは、「[PowerShell とブルー チーム](https://devblogs.microsoft.com/powershell/powershell-the-blue-team/)」を参照してください。
 
-## <a name="networking"></a>[ネットワーク](../networking/index.yml)  
-この領域には、IT プロフェッショナルが Windows Server 2016 を設計、展開、保守するためのネットワーク製品と機能が含まれています。  
+## <a name="networking"></a>[ネットワーク](../networking/index.yml)
+この領域には、IT プロフェッショナルが Windows Server 2016 を設計、展開、保守するためのネットワーク製品と機能が含まれています。
 
 ### <a name="software-defined-networking"></a>ソフトウェアによるネットワーク制御
 新規または既存の仮想アプライアンスにトラフィックをミラーすることとルート指定することの両方ができるようになりました。 分散型のファイアウォールとネットワーク セキュリティ グループと合わせて、これにより、Azure と同様の方法でワークロードを動的にセグメント化し、セキュリティで保護できます。 次に、System Center Virtual Machine Manager を使用して、ソフトウェアによるネットワーク制御 (SDN) スタック全体を展開および管理できます。 さらに、Docker を使用して、Windows Server コンテナー ネットワーキングを管理し、仮想マシンとだけでなくコンテナーとも SDN ポリシーを関連付けできます。 詳細については、「[ソフトウェア定義ネットワーク インフラストラクチャを計画する](../networking/sdn/plan/plan-a-software-defined-network-infrastructure.md)」を参照してください。
@@ -109,23 +107,23 @@ Windows Server 2016 および Windows 10 には、新しい PackageManagement �
 
 パケット損失から回復する際の TCP 動作を改善するために、TCP Tail Loss Probe (TLP) と Recent Acknowledgement (RACK) が実装されました。 TLP は、再転送タイムアウト (RTO) を高速回復に変換する際に役立ちます。また、RACK は高速回復の所要時間を短縮し、損失パケットを再転送します。 
 
-## <a name="security-and-assurance"></a>[セキュリティおよび保証](../security/Security-and-Assurance.yml)  
-IT プロフェッショナルがデータ センターとクラウド環境に展開するためのセキュリティ ソリューションと機能が含まれます。 Windows Server 2016 でのセキュリティについては、「[セキュリティおよび保証](../security/Security-and-Assurance.yml)」を参照してください。  
+## <a name="security-and-assurance"></a>[セキュリティおよび保証](../security/Security-and-Assurance.yml)
+IT プロフェッショナルがデータ センターとクラウド環境に展開するためのセキュリティ ソリューションと機能が含まれます。 Windows Server 2016 でのセキュリティについては、「[セキュリティおよび保証](../security/Security-and-Assurance.yml)」を参照してください。
 
-### <a name="just-enough-administration"></a>Just Enough Administration  
+### <a name="just-enough-administration"></a>Just Enough Administration
 Windows Server 2016 の Just Enough Administration は、Windows PowerShell で管理可能なすべての対象について代理管理を実現するセキュリティ テクノロジです。 機能には、ネットワーク ID での実行、PowerShell ダイレクト経由での接続、JEA エンドポイントとの間での安全なファイル コピー、既定で JEA コンテキストで起動する PowerShell コンソールの構成のサポートが含まれます。 詳細については、[GitHub での JEA](https://aka.ms/JEA) に関する記事を参照してください。
 
 ### <a name="credential-guard"></a>Credential Guard
 Credential Guard は、特権を持つシステム ソフトウェアだけがシークレットにアクセスできるように、仮想化ベースのセキュリティを使用してシークレットを分離します。 「[Credential Guard によるドメインの派生資格情報の保護](/windows/security/identity-protection/credential-guard/credential-guard)」を参照してください。
 
 ###  <a name="remote-credential-guard"></a>Remote Credential Guard
-Credential Guard では RDP セッションがサポートされるため、ユーザーの資格情報はクライアント側に保持されたままで、サーバー側では公開されません。 また、リモート デスクトップにシングル サインオンも提供します。 「[Windows Defender Credential Guard によるドメインの派生資格情報の保護](/windows/access-protection/credential-guard/credential-guard)」を参照してください。   
+Credential Guard では RDP セッションがサポートされるため、ユーザーの資格情報はクライアント側に保持されたままで、サーバー側では公開されません。 また、リモート デスクトップにシングル サインオンも提供します。 「[Windows Defender Credential Guard によるドメインの派生資格情報の保護](/windows/access-protection/credential-guard/credential-guard)」を参照してください。
 
 ### <a name="device-guard-code-integrity"></a>Device Guard (コードの整合性)
 Device Guard は、サーバーで実行できるコードを指定するポリシーを作成することで、カーネル モードのコードの整合性 (KMCI) とユーザー モードのコードの整合性 (UMCI) を提供します。 「[Windows Defender Device Guard の概要: 仮想化ベースのセキュリティとコードの整合性ポリシー](/windows/device-security/device-guard/introduction-to-device-guard-virtualization-based-security-and-code-integrity-policies)」を参照してください。
 
 
-### <a name="windows-defender"></a>Windows Defender  
+### <a name="windows-defender"></a>Windows Defender
 [Windows Server 2016 用 Windows Defender の概要](../security/windows-defender/windows-defender-overview-windows-server.md)。 Windows Server 2016 では既定で Windows Server Antimalware がインストールされ、有効になりますが、Windows Server Antimalware のユーザー インターフェイスはインストールされません。 ただし、ユーザー インターフェイスがなくても、Windows Server Antimalware により、マルウェア対策の定義が更新され、コンピューターが保護されます。 Windows Server Antimalware のユーザー インターフェイスが必要な場合は、オペレーティング システムのインストール後に役割と機能の削除ウィザードを使ってインストールできます。
 
 ### <a name="control-flow-guard"></a>制御フロー ガード
@@ -181,10 +179,10 @@ Windows Server 2016 には、フェールオーバー クラスタリング機�
 ### <a name="internet-information-services-iis-100"></a>インターネット インフォメーション サービス (IIS) 10.0
 Windows Server 2016 の IIS 10.0 Web サーバーにより提供される新機能は以下のとおりです。
 
-- ネットワーク スタックでの HTTP/2 プロトコルのサポート。IIS 10.0 と統合されたため、IIS 10.0 Web サイトはサポートされる構成の HTTP/2 要求を自動的に処理できるようになりました。 これにより、接続の効率的な再利用、待機時間の短縮など、多くの機能強化が HTTP/1.1 に加えられ、Web ページの読み込み時間が短縮されます。 
+- ネットワーク スタックでの HTTP/2 プロトコルのサポート。IIS 10.0 と統合されたため、IIS 10.0 Web サイトはサポートされる構成の HTTP/2 要求を自動的に処理できるようになりました。 これにより、接続の効率的な再利用、待機時間の短縮など、多くの機能強化が HTTP/1.1 に加えられ、Web ページの読み込み時間が短縮されます。
 - Nano Server での IIS 10.0 の実行および管理機能。 「[Nano Server の IIS](iis-on-nano-server.md)」を参照してください。
 - ワイルドカード ホスト ヘッダーのサポート。管理者は、ドメイン向けに Web サーバーをセットアップし、Web サーバーが任意のサブドメインの要求を処理するように設定できます。
-- IIS を管理するための新しい PowerShell モジュール (IISAdministration)。 
+- IIS を管理するための新しい PowerShell モジュール (IISAdministration)。
 
 詳細については、「[IIS](https://iis.net/learn)」を参照してください。
 
@@ -199,5 +197,5 @@ Microsoft Windows 10 と Windows Server 2016 に 3 つの新機能が追加さ�
 
 
 
-## <a name="see-also"></a>参照  
--   [リリース ノート:Windows Server 2016 に関する重要な問題](Windows-Server-2016-GA-Release-Notes.md)  
+## <a name="see-also"></a>参照
+-   [リリース ノート:Windows Server 2016 に関する重要な問題](Windows-Server-2016-GA-Release-Notes.md)

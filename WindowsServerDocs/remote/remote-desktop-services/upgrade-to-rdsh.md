@@ -1,20 +1,18 @@
 ---
 title: リモート デスクトップ セッション ホストの Windows Server 2016 へのアップグレード
 description: この記事では、既存のリモート デスクトップ サービスの展開を Windows Server 2016 にアップグレードする方法について説明します。
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: spatnaik
 ms.date: 08/01/2016
 ms.topic: article
 ms.assetid: 5c9b98b8-4eca-4a39-b10b-2bac729f7f44
 author: spatnaik
 manager: scottman
-ms.openlocfilehash: e685c51a003a7121dab19c74d82796311ef0889a
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: b825c79ac698f2a61c81628180f1d7cc14b826e8
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80857125"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87948845"
 ---
 # <a name="upgrading-your-remote-desktop-session-host-to-windows-server-2016"></a>リモート デスクトップ セッション ホストの Windows Server 2016 へのアップグレード
 
@@ -31,7 +29,7 @@ Windows Server 2016 へのアップグレードがサポートされるのは、
 
 1. アップグレードするサーバー、つまりコレクション内の半分のサーバーを識別します。
 2. **[新しい接続の許可]** を false に設定して、これらのサーバーへの新しい接続を防止します。
-3. これらのサーバー上のすべてのセッションをログオフします。 
+3. これらのサーバー上のすべてのセッションをログオフします。
 4. これらのサーバーをコレクションから削除します。
 5. サーバーを Windows Server 2016 にアップグレードします。
 6. コレクション内の残りのサーバーで **[新しい接続の許可]** を "false" に設定します。

@@ -3,17 +3,16 @@ title: ADBA クライアントのトラブルシューティング
 description: Windows ライセンス認証の問題のトラブルシューティング プロセスについて説明します
 ms.topic: troubleshooting
 ms.date: 09/24/2019
-ms.technology: server-general
 author: Teresa-Motiv
 ms.author: v-tea
 manager: dcscontentpm
 ms.localizationpriority: medium
-ms.openlocfilehash: d56b2d002b0403971dc50fab639f77bddf1f8809
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: cb3e6e76b7f8086f23b5b107c5a45bfd50aacd19
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959884"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87941966"
 ---
 # <a name="example-troubleshooting-active-directory-based-activation-adba-clients-that-do-not-activate"></a>例:ライセンス認証が行われない Active Directory によるライセンス認証 (ADBA) クライアントのトラブルシューティング
 

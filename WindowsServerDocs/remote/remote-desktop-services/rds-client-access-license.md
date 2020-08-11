@@ -1,26 +1,24 @@
 ---
 title: クライアント アクセス ライセンス (CAL) を使用して RDS 展開をライセンスする
 description: リモート デスクトップ サービスでのクライアントのライセンスの概要。
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.topic: article
 ms.assetid: 5be6546b-df16-4475-bcba-aa75aabef3e3
 author: lizap
 ms.author: elizapo
 ms.date: 02/12/2020
 manager: dongill
-ms.openlocfilehash: a11820b9c75bbcb928da562f3f74e4130e9c8096
-ms.sourcegitcommit: 599162b515c50106fd910f5c180e1a30bbc389b9
+ms.openlocfilehash: d257893e19286ab2a4c8293a2cf2b2e6697898ce
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83775310"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87936991"
 ---
 # <a name="license-your-rds-deployment-with-client-access-licenses-cals"></a>クライアント アクセス ライセンス (CAL) を使用して RDS 展開をライセンスする
 
 >適用先:Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016
 
-リモート デスクトップ セッション ホストに接続する各ユーザーとデバイスに、クライアント アクセス ライセンス (CAL) が必要です。 RD ライセンスを使用して、RDS CAL のインストール、発行、および追跡を行います。  
+リモート デスクトップ セッション ホストに接続する各ユーザーとデバイスに、クライアント アクセス ライセンス (CAL) が必要です。 RD ライセンスを使用して、RDS CAL のインストール、発行、および追跡を行います。
 
 ユーザーまたはデバイスが RD セッション ホスト サーバーに接続するとき、RD セッション ホスト サーバーによって RDS CAL が必要かどうかが決定されます。 その後、RD セッション ホスト サーバーによって、リモート デスクトップ ライセンス サーバーに RDS CAL が要求されます。 適切な RDS CAL をライセンス サーバーから入手できた場合はクライアントに対して RDS CAL が発行され、クライアントは RD セッション ホスト サーバーに接続し、そのサーバーから使用しようとしているデスクトップまたはアプリに接続できます。
 

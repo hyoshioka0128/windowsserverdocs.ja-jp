@@ -1,19 +1,17 @@
 ---
 title: SMB セキュリティ拡張機能
 description: Windows Server 2012 R2、Windows Server 2012、および Windows Server 2016 の SMB 暗号化機能について説明します。
-ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
-ms.technology: storage
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 9052e9e6a1327b67fd75b07ab2ee6fc56b1190ac
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: e81b5ca5d28c33187b90fbabebc3d3f36073124c
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86962136"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954699"
 ---
 # <a name="smb-security-enhancements"></a>SMB セキュリティ拡張機能
 
@@ -43,17 +41,17 @@ SMB 暗号化は、ファイル サーバー全体に対して、または特定
 ### <a name="enable-smb-encryption-with-windows-powershell"></a>Windows PowerShell を使用して SMB 暗号化を有効にする
 
 1. 個々のファイル共有の SMB 暗号化を有効にするには、サーバーで次のスクリプトを入力します。
-    
+
     ```PowerShell
     Set-SmbShare –Name <sharename> -EncryptData $true
     ```
 2. ファイル サーバー全体で SMB 暗号化を有効にするには、サーバーで次のスクリプトを入力します。
-    
+
     ```PowerShell
     Set-SmbServerConfiguration –EncryptData $true
     ```
 3. SMB 暗号化を有効にして新しい SMB ファイル共有を作成するには、次のスクリプトを入力します。
-    
+
     ```PowerShell
     New-SmbShare –Name <sharename> -Path <pathname> –EncryptData $true
     ```

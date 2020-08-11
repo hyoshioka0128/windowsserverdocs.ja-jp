@@ -1,20 +1,18 @@
 ---
 title: Windows Server Update Services (WSUS) を使ってみる
 description: Windows Server Update Service (WSUS) のトピック - サーバー ロールとその実際の適用例の概要
-ms.prod: windows-server
-ms.technology: manage-wsus
 ms.topic: get-started article
 ms.assetid: 90e3464c-49d8-4861-96db-ee6f8a09ec5b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 5/22/2017
-ms.openlocfilehash: 07095fbbe16464645564f07434285c76b8cfd4a1
-ms.sourcegitcommit: fb808a6fc851a3e5c47e6a7654366145d2f19554
+ms.openlocfilehash: 45f88b9295bfc2d48d8e1a599b33bea05717ef0f
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84740635"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87881056"
 ---
 # <a name="windows-server-update-services-wsus"></a>Windows Server Update Services (WSUS)
 
@@ -38,9 +36,9 @@ WSUS がビジネスに価値を負荷する主なシナリオは次のとおり
 
 > [!NOTE]
 > Windows Server 2012 R2 への WSUS 3.2 をサポートする Windows Server のバージョンからのアップグレードでは、まず WSUS 3.2 をアンインストールする必要があります。
-> 
+>
 > Windows Server 2012 で WSUS 3.2 がインストールされている Windows Server の任意のバージョンからのアップグレードがブロック インストール プロセス中に WSUS 3.2 が検出されます。 その場合は、まず、サーバーをアップグレードする前に Windows Server Update Services をアンインストールするように求められます。
-> 
+>
 > ただし、このリリースの Windows Server および Windows Server 2012 R2、Windows Server と WSUS 3.2 のすべてのバージョンからアップグレードする場合が変更されたのため、インストールはブロックされません。 Windows Server 2012 R2 のアップグレードを実行する前に WSUS 3.2 をアンインストールできなかった場合により投稿 WSUS のインストールのタスクが失敗する Windows Server 2012 R2 でされます。 この場合、唯一の既知是正メジャーは、ハード ドライブをフォーマットして、Windows Server を再インストールは。
 
 Windows Server Update Services は組み込みのサーバーの役割で、次のような機能強化が行われています。

@@ -1,19 +1,17 @@
 ---
 title: SMB ダイレクトを使用してファイル サーバーのパフォーマンスを向上させる
 description: Windows Server 2012 R2、Windows Server 2012、および Windows Server 2016 の SMB ダイレクト機能について説明します。
-ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
-ms.technology: storage
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 406623a86c92fca842fa1056126bb88025cedecb
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 5f9f34e4491d8cd4455fcb5b09b30847f6f66887
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182078"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954719"
 ---
 # <a name="smb-direct"></a>SMB ダイレクト
 

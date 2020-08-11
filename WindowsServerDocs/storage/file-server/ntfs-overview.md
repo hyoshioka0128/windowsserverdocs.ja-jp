@@ -1,19 +1,17 @@
 ---
 title: NTFS の概要
 description: NTFS の概要について説明します。
-ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
-ms.technology: storage
 ms.date: 06/17/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: a390521cbd4d5dd676662d3dc41062792f1fa945
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: e781e8c4fda3cc3fe0af995fd26081b9b387f723
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86965144"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954729"
 ---
 # <a name="ntfs-overview"></a>NTFS の概要
 

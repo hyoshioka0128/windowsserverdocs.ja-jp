@@ -6,14 +6,12 @@ author: dcuomo
 ms.author: dacuo
 ms.date: 05/08/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: networking
-ms.openlocfilehash: e877cb6da43c7bffbfcb89bb4e51fe2d36e1b88e
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 01dc71fb483dfa426d7c7239145391260f2534e0
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182198"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87939883"
 ---
 # <a name="windows-time-service-technical-reference"></a>Windows タイム サービスのテクニカル リファレンス
 >適用先:Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows 10 以降

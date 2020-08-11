@@ -1,20 +1,18 @@
 ---
 title: リモート デスクトップ サービスのアーキテクチャ
 description: RDS のアーキテクチャ図
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 02/10/2017
 ms.topic: article
 ms.assetid: 7f73bb0a-ce98-48a4-9d9f-cf7438936ca1
 author: lizap
 manager: dongill
-ms.openlocfilehash: 2635302c79f5bfb8ca446f78d543e19656644102
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 756696dc4014801caf74a415117c205d59481ced
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966714"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87955099"
 ---
 # <a name="remote-desktop-services-architecture"></a>リモート デスクトップ サービスのアーキテクチャ
 

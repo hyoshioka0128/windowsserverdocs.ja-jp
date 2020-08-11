@@ -1,20 +1,18 @@
 ---
 title: リモート デスクトップ サービス - 高可用性
 description: 高可用性 RDS 展開の設定に関する計画情報。
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.topic: article
 ms.assetid: ec630ea0-ab80-4dfe-a25f-f4f601651f72
 author: lizap
 ms.author: elizapo
 ms.date: 09/07/2016
 manager: dongill
-ms.openlocfilehash: 36996d7f69c33198587dbe5297650c16ffeb1da2
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: c50c66bee8f9f387497ef2f5971dbee5e1b402c6
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959324"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87955009"
 ---
 # <a name="remote-desktop-services---high-availability"></a>リモート デスクトップ サービス - 高可用性
 

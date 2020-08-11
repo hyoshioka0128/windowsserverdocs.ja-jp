@@ -1,19 +1,17 @@
 ---
 title: Windows Server バージョン 1803 の新機能
 description: コンピューティング、ID、管理、自動化、ネットワーク、セキュリティ、記憶域の新機能は何ですか。
-ms.prod: windows-server
-ms.technology: server-general
 ms.topic: article
 author: greg-lindsay
 ms.author: greg-lindsay
 ms.localizationpriority: high
 ms.date: 05/07/2018
-ms.openlocfilehash: 32410c9b2645d96ee1190afdda6a2ce75f09feef
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 19a502733a51b22427075e90b6ef88280805b27a
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409562"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87950106"
 ---
 # <a name="whats-new-in-windows-server-version-1803"></a>Windows Server バージョン 1803 の新機能
 

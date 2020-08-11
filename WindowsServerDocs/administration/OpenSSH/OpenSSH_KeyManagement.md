@@ -5,13 +5,12 @@ ms.date: 09/27/2018
 ms.topic: conceptual
 contributor: maertendMSFT
 author: maertendmsft
-ms.product: windows-server
-ms.openlocfilehash: c400d1071b3905b06bd6b6104a810194186ba4cc
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 42298fb065e388b5d2d9ff098b6adc124b3ddee4
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87408871"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87879499"
 ---
 # <a name="openssh-key-management"></a>OpenSSH キーの管理
 

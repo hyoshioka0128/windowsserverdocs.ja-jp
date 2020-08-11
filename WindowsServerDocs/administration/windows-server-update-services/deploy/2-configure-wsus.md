@@ -1,20 +1,18 @@
 ---
 title: 手順 2 - WSUS を構成する
 description: Windows Server Update Service (WSUS) のトピック - 「WSUS を構成する」は、WSUS をデプロイする 4 つの手順のうちの手順 2 です
-ms.prod: windows-server
-ms.technology: manage-wsus
 ms.topic: article
 ms.assetid: d4adc568-1f23-49f3-9a54-12a7bec5f27c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: aa8a59a25d4a9880c70e593cd31a416ab51552f1
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 40b9a6236500b1f0cf50defbce32c14ee10f1990
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80828865"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896315"
 ---
 # <a name="step-2-configure-wsus"></a>手順 2:WSUS を構成する
 

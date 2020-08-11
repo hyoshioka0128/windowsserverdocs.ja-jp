@@ -1,19 +1,17 @@
 ---
 title: リダイレクトされた個々のフォルダーのオフライン ファイルを無効にする
 description: フォルダー リダイレクトを使用してネットワーク共有にリダイレクトされた個々のフォルダーでオフライン ファイル キャッシュを無効にする方法。
-ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
-ms.technology: storage
 ms.date: 09/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 0219c669a52d961cc98d6b0ee16bcbcfbbb78417
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 720215db2e358966b92691227c7946ce243a21fc
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961574"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87942233"
 ---
 # <a name="disable-offline-files-on-individual-redirected-folders"></a>リダイレクトされた個々のフォルダーのオフライン ファイルを無効にする
 

@@ -3,17 +3,16 @@ title: Tokens.dat ファイルの再構築
 description: Windows のライセンス認証に関する問題のトラブルシューティングを行うときに、Tokens.dat ファイルを再構築する方法
 ms.topic: troubleshooting
 ms.date: 09/18/2019
-ms.technology: server-general
 author: Teresa-Motiv
 ms.author: v-tea
 manager: dcscontentpm
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a5835cd601b2eb327c8605d70bf075e6c8e8414
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: bc44dae97422e4d9d9e55b32004f806bbb7860f7
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71962998"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87941784"
 ---
 # <a name="rebuild-the-tokensdat-file"></a>Tokens.dat ファイルの再構築
 
@@ -23,11 +22,10 @@ Windows のライセンス認証に関する問題のトラブルシューティ
 
 Tokens.dat ファイルを再構築するには、次の手順に従います。
 
-1. 管理者特権のコマンド プロンプト ウィンドウを開きます。  
-   **Windows 10 の場合**
+1. 管理者特権のコマンド プロンプト ウィンドウを開きます。**Windows 10 の場合**
 
    1. **スタート** メニューを開き、「**cmd**」と入力します。
-   1. 検索結果の **[コマンド プロンプト]** を右クリックし、 **[管理者として実行]** をクリックします。  
+   1. 検索結果の **[コマンド プロンプト]** を右クリックし、 **[管理者として実行]** をクリックします。
 
    **Windows 8.1 の場合**
    1. 画面の右端からスワイプし、 **[検索]** をタップします。 または、マウスを使用している場合は、画面の右下隅をポイントし、 **[検索]** を選択します。
@@ -39,7 +37,7 @@ Tokens.dat ファイルを再構築するには、次の手順に従います。
    1. **スタート** メニューを開き、「**cmd**」と入力します。
    1. 検索結果の **[cmd.exe]** を右クリックし、 **[管理者として実行]** を選択します。
 
-1. 使用しているオペレーティング システムに適したコマンドの一覧を入力します。  
+1. 使用しているオペレーティング システムに適したコマンドの一覧を入力します。
 
    Windows 10、Windows Server 2016、および以降のバージョンの Windows では、次のコマンドを順番に入力します。
    ```cmd
