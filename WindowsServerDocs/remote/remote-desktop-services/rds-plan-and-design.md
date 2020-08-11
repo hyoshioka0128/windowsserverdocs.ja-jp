@@ -1,20 +1,18 @@
 ---
-title: RDS - 実行と調整
+title: RDS - リモート デスクトップ サービス環境の計画と設計
 description: RD の展開を設計するのに役立つ計画に関する情報。
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: spatnaik
 ms.date: 12/06/2019
 ms.topic: article
 ms.assetid: 047b08be-7f91-4194-a641-5b6941b92515
 author: spatnaik
 manager: scottman
-ms.openlocfilehash: 88e081a5ac6a40efb1df50bfd904d9454f013733
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: a13ad2283d70a987bdafa65bc47c37bd1f3674e7
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80857385"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971569"
 ---
 # <a name="plan-and-design-your-remote-desktop-services-environment"></a>リモート デスクトップ サービス環境の計画と設計
 

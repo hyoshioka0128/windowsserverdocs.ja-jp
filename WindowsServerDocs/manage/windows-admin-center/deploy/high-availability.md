@@ -1,24 +1,22 @@
 ---
 title: Windows Admin Center の高可用性展開
 description: Windows Admin Center の高可用性展開 (Project Honolulu)
-ms.technology: manage
 ms.topic: article
 author: jwwool
 ms.author: jeffrew
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 6ae7bd9ed7aee5835ac1f53b9e10879ad8824f52
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 132f566e8467179c1a58e3555d26ab834dae7129
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71406941"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87970859"
 ---
 # <a name="deploy-windows-admin-center-with-high-availability"></a>Windows Admin Center の高可用性展開
 
 >適用先:Windows Admin Center、Windows Admin Center Preview
 
-Windows Admin Center をフェールオーバー クラスターに展開して、Windows Admin Center ゲートウェイ サービスの高可用性を実現することができます。 提供されるソリューションはアクティブ/パッシブ ソリューションであり、Windows Admin Center の 1 つのインスタンスのみがアクティブです。 クラスター内のいずれかのノードで障害が発生した場合、Windows Admin Center では別のノードに速やかにフェールオーバーされます。これにより、環境内のサーバーの管理をシームレスに進めることができます。 
+Windows Admin Center をフェールオーバー クラスターに展開して、Windows Admin Center ゲートウェイ サービスの高可用性を実現することができます。 提供されるソリューションはアクティブ/パッシブ ソリューションであり、Windows Admin Center の 1 つのインスタンスのみがアクティブです。 クラスター内のいずれかのノードで障害が発生した場合、Windows Admin Center では別のノードに速やかにフェールオーバーされます。これにより、環境内のサーバーの管理をシームレスに進めることができます。
 
 [その他の Windows Admin Center の展開オプションについてはこちら。](../plan/installation-options.md)
 
@@ -35,7 +33,7 @@ Windows Admin Center をフェールオーバー クラスターに展開して�
 2. RDP 経由でノードに接続し、次のパラメーターを使用して、そのノードから ```Install-WindowsAdminCenterHA.ps1``` スクリプトを実行します。
     - `-clusterStorage`: Windows Admin Center のデータを格納するクラスター共有ボリュームのローカル パス。
     - `-clientAccessPoint`: Windows Admin Center へのアクセスに使用する名前を選択します。 たとえば、パラメーター `-clientAccessPoint contosoWindowsAdminCenter` を指定してスクリプトを実行した場合、`https://contosoWindowsAdminCenter.<domain>.com` にアクセスして Windows Admin Center サービスにアクセスします。
-    - `-staticAddress`:任意。 クラスター汎用サービス用の 1 つまたは複数の静的アドレス。 
+    - `-staticAddress`:任意。 クラスター汎用サービス用の 1 つまたは複数の静的アドレス。
     - `-msiPath`:Windows Admin Center の .msi ファイルのパス。
     - `-certPath`:任意。 証明書の .pfx ファイルのパス。
     - `-certPassword`:任意。 `-certPath` で提供されている証明書の SecureString パスワード
@@ -86,7 +84,7 @@ $certPassword = Read-Host -AsSecureString
 ```powershell
 $certPassword = Read-Host -AsSecureString
 .\Install-WindowsAdminCenterHA.ps1 -msiPath ".\WindowsAdminCenter.msi" -certPath "cert.pfx" -certPassword $certPassword -Verbose
-``` 
+```
 
 ## <a name="uninstall"></a>アンインストール
 

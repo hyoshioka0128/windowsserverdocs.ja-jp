@@ -1,25 +1,23 @@
 ---
 title: リモート デスクトップ サービスで個人用セッション デスクトップを使用する
 description: RDS から、個人用に設定された割り当て済みデスクトップを共有する方法について説明します。
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.topic: article
 author: lizap
 ms.author: elizapo
 ms.date: 10/22/2019
 manager: dongill
-ms.openlocfilehash: c0c36793d08391ad98fa797004ed6dec9883e9f1
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: ccb8bd5a91af6e4b9a8d1a610bf22747433bf913
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80857405"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87946425"
 ---
 # <a name="use-personal-session-desktops-with-remote-desktop-services"></a>リモート デスクトップ サービスで個人用セッション デスクトップを使用する
 
 >適用先:Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016
 
-個人用セッション デスクトップを使用して、クラウド コンピューティング環境でサーバー ベースの個人用デスクトップを展開できます。  (クラウド コンピューティング環境では、ファブリック Hyper-V サーバーと、Microsoft Azure クラウドや Microsoft クラウド プラットフォームなどのゲスト仮想マシンとが区別されます)。個人用セッション デスクトップ機能は、各ユーザーが管理者特権を持つ自身の個人用セッション ホストに割り当てられている新しい種類のセッション コレクションを作成するように、リモート デスクトップ サービスのセッション ベースのデスクトップ展開シナリオを拡張します。 
+個人用セッション デスクトップを使用して、クラウド コンピューティング環境でサーバー ベースの個人用デスクトップを展開できます。  (クラウド コンピューティング環境では、ファブリック Hyper-V サーバーと、Microsoft Azure クラウドや Microsoft クラウド プラットフォームなどのゲスト仮想マシンとが区別されます)。個人用セッション デスクトップ機能は、各ユーザーが管理者特権を持つ自身の個人用セッション ホストに割り当てられている新しい種類のセッション コレクションを作成するように、リモート デスクトップ サービスのセッション ベースのデスクトップ展開シナリオを拡張します。
 
 作成および個人用セッション デスクトップ コレクションを管理するには、次の情報を使用します。
 
@@ -36,7 +34,7 @@ ms.locfileid: "80857405"
 
 -CollectionName \<string\>
 
--ConnectionBroker \<string\> 
+-ConnectionBroker \<string\>
 
 -User \<string\>
 
@@ -56,7 +54,7 @@ ms.locfileid: "80857405"
 -Path \<string>
 
 **–Path** は、インポートするファイルのパスとファイル名を指定します。
- 
+
 ## <a name="removing-a-user-assignment-from-a-personal-session-host"></a>個人用セッション ホストからのユーザー割り当ての削除
 個人用セッション デスクトップとユーザー間の関連付けを削除するには、**Remove-RDPersonalSessionDesktopAssignment** コマンドレットを使用します。 このコマンドレットは、次のパラメーターをサポートしています。
 
@@ -83,7 +81,7 @@ ms.locfileid: "80857405"
 
 -Name \<string\>
 
-このコマンドレットを実行すると、コレクション名、ユーザー名、またはセッション デスクトップ名によるクエリが可能です。 **–CollectionName** パラメーターだけを指定した場合、コマンドレットは、セッション ホストおよび関連付けられているユーザーの一覧を返します。 **–User** パラメーターも指定した場合、そのユーザーに関連付けられているセッション ホストが返されます。 **–Name** パラメーターを指定した場合、そのセッション ホストに関連付けられているユーザーが返されます。 
+このコマンドレットを実行すると、コレクション名、ユーザー名、またはセッション デスクトップ名によるクエリが可能です。 **–CollectionName** パラメーターだけを指定した場合、コマンドレットは、セッション ホストおよび関連付けられているユーザーの一覧を返します。 **–User** パラメーターも指定した場合、そのユーザーに関連付けられているセッション ホストが返されます。 **–Name** パラメーターを指定した場合、そのセッション ホストに関連付けられているユーザーが返されます。
 
 
 **Export-RDPersonalPersonalDesktopAssignment** コマンドレットは、ユーザーと個人用仮想デスクトップとの現在の関連付けをテキスト ファイルにエクスポートします。 このコマンドレットは、次のパラメーターをサポートしています。

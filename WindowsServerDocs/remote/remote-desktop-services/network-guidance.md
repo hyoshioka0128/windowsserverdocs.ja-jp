@@ -1,19 +1,17 @@
 ---
 title: ネットワークのガイドライン
 description: リモート デスクトップのデプロイのための帯域幅に関する推奨事項。
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: helohr
 ms.date: 12/12/2019
 ms.topic: article
 author: Heidilohr
 manager: lizross
-ms.openlocfilehash: ba084c58e725627e838c07b5b5b9849d131b2038
-ms.sourcegitcommit: 32f810c5429804c384d788c680afac427976e351
+ms.openlocfilehash: 3817178ef303573490cc98af8a35844715286e8e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83203546"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87948895"
 ---
 # <a name="network-guidelines"></a>ネットワークのガイドライン
 
@@ -54,6 +52,10 @@ ms.locfileid: "83203546"
 | 約 1920 × 1080 px                     | 5 Mbps                |
 | 約 3840 × 2160 px (4K)                | 15 Mbps               |
 
-## <a name="additional-resources"></a>その他の資料
+## <a name="windows-virtual-desktop-experience-estimator"></a>Windows Virtual Desktop エクスペリエンス見積もりツール
 
 お客様の Azure リージョンによっては、ネットワークの状態と同じくらいユーザー エクスペリエンスに影響を与えることがあります。 詳細については、「[Windows Virtual Desktop エクスペリエンス見積もりツール](https://azure.microsoft.com/services/virtual-desktop/assessment/)」を参照してください。
+
+## <a name="assistive-technologies"></a>支援技術
+
+リモート セッションでナレーターを使用するなど、補助的なテクノロジ ワークロードでは、最適なユーザーエクスペリエンスを実現するために、接続ラウンド トリップ時間 (RTT) が 20 ミリ秒以下の接続を必要とします。

@@ -1,19 +1,17 @@
 ---
 title: イベントを使用したユーザー プロファイルのトラブルシューティング
 description: イベントとトレース ログを使用してユーザー プロファイルのロードとアンロードに関する問題をトラブルシューティングする方法。
-ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
-ms.technology: storage
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e927a77627e786015a928d798aafee13a2cc34b
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: e6417fc6453499387fbf721ef31121e07eccdfdd
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71394381"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957630"
 ---
 # <a name="troubleshoot-user-profiles-with-events"></a>イベントを使用したユーザー プロファイルのトラブルシューティング
 
@@ -71,7 +69,7 @@ ETL トレースを使用する場合の最善の方法は、まずできるだ�
 
 1. ローカル Administrators グループのメンバーであるアカウントを使用して、問題が発生しているコンピューターにサインオンします。
 2. 管理者特権でのコマンド プロンプトで、次のコマンドを入力します。ここで、 *\<Path\>* は前に作成したローカル フォルダーへのパス (例: C:\\logs) です。
-        
+
     ```PowerShell
     logman create trace -n RUP -o <Path>\RUP.etl -ets
     logman update RUP -p {eb7428f5-ab1f-4322-a4cc-1f1a9b2c5e98} 0x7FFFFFFF 0x7 -ets
@@ -80,12 +78,12 @@ ETL トレースを使用する場合の最善の方法は、まずできるだ�
 4. 問題を再現します。 問題を再現する手順は、通常、問題が発生しているユーザーとしてサインオンするか、そのユーザーをサインオフするか、またはその両方を行うことです。
 5. 問題を再現した後、ローカル管理者としてもう一度サインオンします。
 6. 管理者特権のコマンド プロンプトで、次のコマンドを実行して、ログを ETL ファイルに保存します。
-  
+
     ```PowerShell
     logman stop -n RUP -ets
     ```
 7. 次のコマンドを入力して、現在のディレクトリ (ホーム フォルダーまたは %WINDIR%\\System32 フォルダー) 内のユーザーが判読できるファイルに ETL ファイルをエクスポートします。
-    
+
     ```PowerShell
     Tracerpt <path>\RUP.etl
     ```

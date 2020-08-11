@@ -1,25 +1,19 @@
 ---
-title: Windows Server 2016 の機能強化
+title: Windows Server 2016 の時間精度の向上
 description: Windows Server 2016 では、UTC と同期させるために時刻の修正とローカル クロックの調整に使用されるアルゴリズムが強化されました。
 author: dcuomo
 ms.author: dacuo
 manager: dougkim
 ms.date: 10/17/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: networking
-ms.openlocfilehash: 92fd335e90aa07a9eb9b76510633b21348732b01
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 7c0644d88e158050b83873f4398fe7ee87b120d5
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87260221"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87997398"
 ---
-# <a name="windows-server-2016-improvements"></a>Windows Server 2016 の機能強化
-
-この記事には、Windows Server 2016 に追加された機能強化に関する情報が記載されています。
-
-## <a name="windows-time-service-and-ntp"></a>Windows タイム サービスと NTP
+# <a name="time-accuracy-improvements-for-windows-server-2016"></a>Windows Server 2016 の時間精度の向上
 
 Windows Server 2016 では、UTC と同期させるために時刻の修正とローカル クロックの調整に使用されるアルゴリズムが強化されました。 NTP では、クライアントの要求および応答とサーバーの要求および応答のタイムスタンプに基づく 4 つの値を使用して、タイム オフセットが計算されます。 しかし、ネットワークにはノイズがあるため、ネットワークの輻輳やネットワーク待機時間に影響するその他の要因によって、NTP からのデータが急増する可能性があります。 Windows 2016 のアルゴリズムでは、さまざまな手法を使用してこのノイズが平均化されます。これにより、安定した正確なクロックが実現されます。 また、正確な時刻を得るために使用されるソースでは、強化された API が参照されているため、より良い分解能が得られます。 これらの機能強化により、ドメイン全体で UTC を基準に 1 ミリ秒の精度を実現することが可能です。
 
@@ -33,6 +27,7 @@ Windows 2016 では、Hyper-V TimeSync サービスが強化されました。 �
 さらに、ホストからゲストに報告される stratum レベルがより透過的になっています。 以前は、ホストからは、その精度に関係なく stratum 2 が固定で提示されていました。 Windows Server 2016 に追加された変更によって、ホストからはそのホストの stratum よりも 1 大きい stratum が報告されるようになるため、仮想ゲストでより正確な時刻を実現できます。 ホストの stratum は、w32time によって、そのソース タイムに基づく通常の方法で決定されます。 ドメインに参加している Windows 2016 のゲストは、ホストを既定値とするのではなく、最も正確な時刻を利用できます。 Windows 2012R2 以前のドメインに参加しているマシンに対して Hyper-V タイム プロバイダー設定を手動で無効にすることが推奨されていたのは、この理由によります。
 
 ## <a name="monitoring"></a>監視
+
 パフォーマンス モニター カウンターが追加されました。 これらを使用して、時刻の精度のベースライニング、監視、およびトラブルシューティングを行うことができます。 次のようなカウンターがあります。
 
 |カウンタ|説明|
@@ -48,34 +43,35 @@ Windows 2016 では、Hyper-V TimeSync サービスが強化されました。 �
 最後の 3 つのカウンターは、NTP サーバーに関するシナリオに対応しており、負荷を特定し、現在のパフォーマンスをベースライニングする場合に役立ちます。
 
 ## <a name="configuration-updates-per-environment"></a>環境ごとの構成の更新
+
 以下では、各ロールについての Windows 2016 と以前のバージョン間での既定の構成の変更について説明します。 Windows Server 2016 と Windows 10 Anniversary Update (ビルド 14393) の設定が個別になりました。そのため、これらは別々の列に示されています。
 
 |Role|設定|Windows Server 2016|Windows 10|Windows Server 2012 R2<br>Windows Server 2008 R2<br>Windows 10|
 |---|---|---|---|---|
 |**スタンドアロン/Nano Server**||||
-| |"*タイム サーバー*"|time.windows.com|N/A|time.windows.com|
-| |"*ポーリング頻度*"|64 - 1024 秒|N/A|週 1 回|
-| |"*クロック更新頻度*"|1 秒間に 1 回|N/A|1 時間に 1 回|
+| |"タイム サーバー"|time.windows.com|N/A|time.windows.com|
+| |ポーリング頻度|64 - 1024 秒|N/A|週 1 回|
+| |"クロック更新頻度"|1 秒間に 1 回|N/A|1 時間に 1 回|
 |**スタンドアロン クライアント**||||
-| |"*タイム サーバー*"|N/A|time.windows.com|time.windows.com|
-| |"*ポーリング頻度*"|N/A|1 日 1 回|週 1 回|
-| |"*クロック更新頻度*"|N/A|1 日 1 回|週 1 回|
+| |"タイム サーバー"|N/A|time.windows.com|time.windows.com|
+| |ポーリング頻度|N/A|1 日 1 回|週 1 回|
+| |"クロック更新頻度"|N/A|1 日 1 回|週 1 回|
 |**ドメイン コントローラー**||||
-| |"*タイム サーバー*"|PDC/GTIMESERV|N/A|PDC/GTIMESERV|
-| |"*ポーリング頻度*"|64 - 1024 秒|N/A|1024 - 32768 秒|
-| |"*クロック更新頻度*"|1 日 1 回|N/A|週 1 回|
+| |"タイム サーバー"|PDC/GTIMESERV|N/A|PDC/GTIMESERV|
+| |ポーリング頻度|64 - 1024 秒|N/A|1024 - 32768 秒|
+| |"クロック更新頻度"|1 日 1 回|N/A|週 1 回|
 |**ドメイン メンバー サーバー**||||
-| |"*タイム サーバー*"|DC|N/A|DC|
-| |"*ポーリング頻度*"|64 - 1024 秒|N/A|1024 - 32768 秒|
-| |"*クロック更新頻度*"|1 秒間に 1 回|N/A|5 分ごとに 1 回|
+| |"タイム サーバー"|DC|N/A|DC|
+| |ポーリング頻度|64 - 1024 秒|N/A|1024 - 32768 秒|
+| |"クロック更新頻度"|1 秒間に 1 回|N/A|5 分ごとに 1 回|
 |**ドメイン メンバー クライアント**||||
-| |"*タイム サーバー*"|N/A|DC|DC|
-| |"*ポーリング頻度*"|N/A|1204 - 32768 秒|1024 - 32768 秒|
-| |"*クロック更新頻度*"|N/A|5 分ごとに 1 回|5 分ごとに 1 回|
+| |"タイム サーバー"|N/A|DC|DC|
+| |ポーリング頻度|N/A|1204 - 32768 秒|1024 - 32768 秒|
+| |"クロック更新頻度"|N/A|5 分ごとに 1 回|5 分ごとに 1 回|
 |**Hyper-V ゲスト**||||
-| |"*タイム サーバー*"|ホストとタイム サーバーの stratum に基づき最適なオプションが選択される|ホストとタイム サーバーの stratum に基づき最適なオプションが選択される|ホストを既定値とする|
-| |"*ポーリング頻度*"|上のロールに基づく|上のロールに基づく|上のロールに基づく|
-| |"*クロック更新頻度*"|上のロールに基づく|上のロールに基づく|上のロールに基づく|
+| |"タイム サーバー"|ホストとタイム サーバーの stratum に基づき最適なオプションが選択される|ホストとタイム サーバーの stratum に基づき最適なオプションが選択される|ホストを既定値とする|
+| |ポーリング頻度|上のロールに基づく|上のロールに基づく|上のロールに基づく|
+| |"クロック更新頻度"|上のロールに基づく|上のロールに基づく|上のロールに基づく|
 
 >[!NOTE]
 >Hyper-V の Linux については、後述の「Linux で Hyper-V のホスト時刻を使用できるようにする」セクションをご覧ください。
@@ -93,7 +89,9 @@ AD ドメイン内の NTP クライアントからの更新の増加が波及効
 また、かなりの CPU 負荷 (40% 以上) で DC が実行されている場合、これによってほぼ確実 NTP 応答にノイズが混入し、ドメインの時刻の精度に影響が生じることにも注意してください。 ここでも、実際の結果を把握するために、ご自分の環境内でテストする必要があります。
 
 ## <a name="time-accuracy-measurements"></a>時刻の精度の測定
+
 ### <a name="methodology"></a>手法
+
 Windows Server 2016 の時刻の精度を測定するために、さまざまなツール、方法、および環境が使用されました。 お客様はこれらの手法を使用して、ご自分の環境を測定および調整し、精度の結果が要件を満たしているかどうかを判断できます。
 
 使用されたドメインのソース クロックは、GPS ハードウェアを搭載した 2 台の高精度 NTP サーバーで構成されます。 また、測定用に個別の参照用テスト マシンが使用されました。これにも別の製造元の高精度 GPS ハードウェアが搭載されています。 一部のテストでは、ご自分のドメインのクロック ソースに加えて、参照として使用する正確で信頼性の高いクロック ソースが必要になります。
@@ -101,53 +99,62 @@ Windows Server 2016 の時刻の精度を測定するために、さまざまな
 Microsoft では、物理マシンと仮想マシンの両方で精度を測定するために、4 つの異なる方法が使用されました。 複数の方法により、結果を検証するための独立した手段が提供されました。
 
 1. w32tm によって調整されたローカル クロックを、個別の GPS ハードウェアを搭載した参照用テスト マシンと比較して測定する。
+
 2. w32tm の "stripchart" を使用して、NTP サーバーからクライアントへの NTP ping を測定する
+
 3. W32tm の "stripchart" を使用して、クライアントから NTP サーバーへの NTP ping を測定する
+
 4. タイム スタンプ カウンター (TSC) を使用して、ホストからゲストへの Hyper-V の結果を測定する。 このカウンターは、両方のパーティションと、両方のパーティションのシステム時刻の間で共有されます。 仮想マシンのホスト時刻とクライアント時刻の差が計算されました。 次に、TSC クロックを使用して、ホスト時刻がゲストから補間されます。同時に複数の測定は実行されないためです。 また、TSV クロックを使用して、API から遅延と待機時間が取り除かれます。
 
-W32tm は組み込みですが、テスト中に使用されたその他のツールは、お客様のテストと使用のために、オープンソースとして GitHub の Microsoft リポジトリから入手できます。 リポジトリの WIKI には、ツールを使用して測定を行う方法について説明した詳しい情報が記載されています。
-
-> [https://github.com/Microsoft/Windows-Time-Calibration-Tools](https://github.com/Microsoft/Windows-Time-Calibration-Tools)
+W32tm は組み込みですが、テスト中に使用されたその他のツールは、お客様のテストと使用のために、オープンソースとして GitHub の Microsoft リポジトリから入手できます。 ツールを使用して測定する方法の詳細については、[Windows Time Calibration Tools の Wiki](https://github.com/Microsoft/Windows-Time-Calibration-Tools) を参照してください。
 
 以下に示すテスト結果は、Microsoft によってテスト環境の 1 つで行われた測定値のサブセットです。 これらによって、時刻の階層の先頭で維持される精度と、時刻の階層の末尾の子ドメイン クライアントで維持される精度が示されます。 これは、比較用の 2012 ベースのトポロジ内の同じマシンと比較されます。
 
 ### <a name="topology"></a>トポロジ
+
 比較のために、Windows Server 2012R2 ベースのトポロジと Windows Server 2016 ベースのトポロジの両方がテストされています。 どちらのトポロジも、GPS クロック ハードウェアを搭載した、Windows Server 2016 マシンを参照する 2 つの物理 Hyper-V ホスト マシンで構成されています。 各ホストでは、3 つのドメインに参加している Windows ゲストが実行されます。それらは、次のトポロジに従って配置されています。 それぞれの線は、時刻の階層と、使用されるプロトコル/トランスポートを表しています。
 
-![Windows タイム](../media/Windows-Time-Service/Windows-2016-Accurate-Time/topology1.png)
+![Windows 時刻トポロジの図](../media/Windows-Time-Service/Windows-2016-Accurate-Time/topology1.png)
 
-![Windows タイム](../media/Windows-Time-Service/Windows-2016-Accurate-Time/topology2.png)
+![Windows 時刻トポロジの図](../media/Windows-Time-Service/Windows-2016-Accurate-Time/topology2.png)
 
 ### <a name="graphical-results-overview"></a>グラフィカルな結果の概要
+
 次の 2 つのグラフは、上記のトポロジに基づくドメインに含まれる 2 台の特定のメンバーの時刻の精度を表しています。 各グラフには、Windows Server 2012R2 と 2016 の結果が重ねて表示され、機能強化が視覚的に示されています。 精度は、ゲスト マシン内からホストと比較して測定されました。 このグラフィカル データは、実行されたテストのセット全体のサブセットを表し、最良のケースと最悪のケースのシナリオが表示されています。
 
-![Windows タイム](../media/Windows-Time-Service/Windows-2016-Accurate-Time/topology3.png)
+![Windows 時刻トポロジの図](../media/Windows-Time-Service/Windows-2016-Accurate-Time/topology3.png)
 
 ### <a name="performance-of-the-root-domain-pdc"></a>ルート ドメイン PDC のパフォーマンス
+
 ルート PDC は、(VMIC を使用して) Hyper-V ホストと同期されます。これは、精度と安定性の両方が実証された GPS ハードウェアを使用する Windows Server 2016 です。 これは、緑色の網掛け領域で示された 1 ミリ秒の精度を実現するための、重要な要件です。
 
 ![Windows タイム](../media/Windows-Time-Service/Windows-2016-Accurate-Time/chart1.png)
 
 ### <a name="performance-of-the-child-domain-client"></a>子ドメイン クライアントのパフォーマンス
+
 子ドメイン クライアントは、ルート PDC と通信する子ドメイン PDC に接続されています。 その時刻もまた、1 ミリ秒の要件に含まれます。
 
 ![Windows タイム](../media/Windows-Time-Service/Windows-2016-Accurate-Time/chart2.png)
 
 ### <a name="long-distance-test"></a>遠距離テスト
+
 次のグラフでは、Windows Server 2016 での 1 つの仮想ネットワーク ホップと 6 つの物理ネットワーク ホップが比較されています。 2 つのグラフは、重なり合うデータを示すために、互いに透明に重ねて表示されています。 ネットワーク ホップの増加は長い待機時間を意味し、時刻の偏差も大きくなります。 このグラフは拡大されているため、緑色の領域で表される 1 ミリ秒の境界が大きくなっています。 ご覧のように、時刻は複数のホップで引き続き 1 ミリ秒以内に収まっています。 これは負の方向にシフトしており、ネットワークの非対称が示されています。 もちろん、ネットワークはすべて異なるため、測定値はさまざまな環境要因に依存しています。
 
 ![Windows タイム](../media/Windows-Time-Service/Windows-2016-Accurate-Time/chart3.png)
 
 ## <a name="best-practices-for-accurate-timekeeping"></a>正確な時刻管理のためのベスト プラクティス
+
 ### <a name="solid-source-clock"></a>確かなソース クロック
+
 マシンの時刻は、同期先のソース クロックと同じ精度になるに過ぎません。 1 ミリ秒の精度を実現するためには、ネットワーク上に、マスター ソース クロックとして参照する GPS ハードウェアまたはタイム アプライアンスが必要です。 既定の time.windows.com を使用する場合、安定したローカルのタイム ソースを実現できない場合があります。 また、ソース クロックからの距離が大きくなるにつれ、ネットワークが精度に影響を及ぼします。 最良の精度を得るには、各データ センターにマスター ソース クロックを用意する必要があります。
 
 ### <a name="hardware-gps-options"></a>ハードウェア GPS のオプション
+
 さまざまなハードウェア ソリューションによって、正確な時刻を実現することができます。 一般的に、現在のソリューションは GPS アンテナに基づいています。 また、無線や、専用回線を使用したダイヤルアップ モデムによるソリューションもあります。 これらは、アプライアンスとして、または PC へのプラグイン (例: PCIe または USB デバイスを介した Windows) としてネットワークに接続されます。 異なるオプションを使用すると、異なるレベルの精度が提供されます。また、ここでも結果は環境によって異なります。 精度に影響を与える変数としては、GPS の可用性、ネットワークの安定性と負荷、および PC ハードウェアなどがあります。 これらはすべて、前述のように安定した正確な時刻を得るための要件である、ソース クロックを選択する際の重要な要素となります。
 
 ### <a name="domain-and-synchronizing-time"></a>ドメインと時刻の同期
-ドメイン メンバーでは、ドメイン階層を使用して、時刻を同期するためのソースとして使用するマシンが決定されます。 各ドメイン メンバーでは、同期する別のマシンが検出され、そのクロック ソースとして保存されます。 各種類のドメイン メンバーでは、時刻の同期用のクロック ソースを検出するために、異なる規則のセットが適用されます。 フォレスト ルートの PDC は、すべてのドメインの既定のクロック ソースです。 さまざまなロールと、そのロールによってソースが検出される方法についての大まかな説明を、次に示します。
 
+ドメイン メンバーでは、ドメイン階層を使用して、時刻を同期するためのソースとして使用するマシンが決定されます。 各ドメイン メンバーでは、同期する別のマシンが検出され、そのクロック ソースとして保存されます。 各種類のドメイン メンバーでは、時刻の同期用のクロック ソースを検出するために、異なる規則のセットが適用されます。 フォレスト ルートの PDC は、すべてのドメインの既定のクロック ソースです。 さまざまなロールと、そのロールによってソースが検出される方法についての大まかな説明を、次に示します。
 
 - **PDC を含むドメイン コントローラー ロール** – このマシンは、ドメインの権限を持つタイム ソースです。 その時刻は、ドメイン内で利用できる最も正確なものです。また、これは、GTIMESERV ロールが有効になっている場合を除き、親ドメインの DC と同期する必要があります。
 - **その他のドメイン コントローラー** – このマシンは、ドメイン内のクライアントおよびメンバー サーバー用のタイム ソースとして機能します。 DC は、自身のドメインの PDC か、親ドメイン内の任意の DC と同期できます。
@@ -156,6 +163,7 @@ W32tm は組み込みですが、テスト中に使用されたその他のツ�
 利用できる候補に基づいて、最適なタイム ソースを見つけるためにスコアリング システムが使用されます。 このシステムでは、タイム ソースの信頼性と、その相対的な場所が考慮されます。 これは、時刻サービスが開始されたときに 1 回発生します。 時刻の同期方法をより細かく制御する必要がある場合は、特定の場所に適切なタイム サーバーを追加したり、冗長性を追加したりできます。 詳細については、「GTIMESERV を使用してローカルの信頼できるタイム サービスを指定する」セクションをご覧ください。
 
 #### <a name="mixed-os-environments-win2012r2-and-win2008r2"></a>OS が混在する環境 (Win2012R2 と Win2008R2)
+
 最良の精度を得るには純粋な Windows Server 2016 ドメイン環境が必要ですが、混在環境でもメリットがあります。 Windows 2012 ドメインに Windows Server 2016 Hyper-V をデプロイすると、前述の機能強化によってゲストにメリットがもたらされますが、それはゲストも Windows Server 2016 である場合に限られます。 Windows Server 2016 の PDC では、強化されたアルゴリズムによってより正確な時刻を実現できます。これはより安定したソースとなります。 PDC を置き換えることができない場合は、代わりに、GTIMESERV ロールが設定された Windows Server 2016 の DC を追加することができます。これは、ドメインに対する精度のアップグレードになります。 Windows Server 2016 の DC によって、より正確な時刻を下流のタイム クライアントに提供することができます。ただし、その精度はそのソース NTP の時刻と同等です。
 
 また、前述のように、Windows Server 2016 ではクロックのポーリングと更新の頻度が変更されています。 これらは、ダウンレベルの DC に手動で変更することも、グループ ポリシー経由で適用することもできます。 これらの構成はテストされていませんが、Win2008R2 と Win2012R2 では適切に動作し、いくつかのメリットを得られるはずです。
@@ -164,16 +172,17 @@ Windows Server 2016 より前のバージョンでは、正確な時刻管理に
 
 ゲスト ドメイン コントローラーに関連する一部のシナリオでは、Hyper-V TimeSync のサンプルによって、ドメインの時刻の同期が中断されることがあります。 この問題は、Server 2016 Hyper-V ホスト上で実行されている Server 2016 ゲストでは発生しません。
 
-Hyper-V TimeSync サービスから w32time へのサンプルの提供を無効にするには、次のゲスト レジストリ キーを設定します。
-
- HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\TimeProviders\VMICTimeProvider "Enabled"=dword:00000000
+Hyper-V TimeSync サービスから w32time へのサンプルの提供を無効にするには、次のゲスト レジストリ キーを設定します。`HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\TimeProviders\VMICTimeProvider
+ "Enabled"=dword:00000000`
 
 #### <a name="allowing-linux-to-use-hyper-v-host-time"></a>Linux で Hyper-V のホスト時刻を使用できるようにする
+
 Hyper-V で実行されている Linux ゲストの場合、クライアントは通常、NTP サーバーに対する時刻の同期に NTP デーモンを使用するように構成されます。 Linux ディストリビューションで TimeSync バージョン 4 プロトコルがサポートされていて、Linux ゲストで TimeSync 統合サービスが有効になっている場合は、ホスト時刻に対して同期されます。 このため、両方の方法が有効になっている場合、時刻管理に不一致が生じる可能性があります。
 
 ホスト時刻に対して排他的に同期するには、次のいずれかの方法で NTP の時刻同期を無効にすることをお勧めします。
 
 - ntp.conf ファイルで NTP サーバーを無効にする
+
 - または、NTP デーモンを無効にする
 
 この構成では、タイム サーバー パラメーターはこのホストになります。 そのポーリング頻度は 5 秒で、クロックの更新頻度も 5 秒です。
@@ -181,75 +190,92 @@ Hyper-V で実行されている Linux ゲストの場合、クライアント�
 NTP 経由で排他的に同期するには、ゲストの TimeSync 統合サービスを無効にすることをお勧めします。
 
 > [!NOTE]
-> 注: Linux ゲストでの正確な時刻のサポートには、最新のアップストリーム Linux カーネルでのみサポートされている機能が必要ですが、これはまだ、すべての Linux ディストリビューション全体で広く利用できるものではありません。 サポート ディストリビューションの詳細については、「[Windows 上の Hyper-V 向けにサポートされる Linux と FreeBSD 仮想マシン](https://technet.microsoft.com/windows-server-docs/virtualization/hyper-v/supported-linux-and-freebsd-virtual-machines-for-hyper-v-on-windows)」を参照してください。
+> 注: Linux ゲストでの正確な時刻のサポートには、最新のアップストリーム Linux カーネルでのみサポートされている機能が必要ですが、これはまだ、すべての Linux ディストリビューション全体で広く利用できるものではありません。 サポート ディストリビューションの詳細については、「[Windows 上の Hyper-V 向けにサポートされる Linux と FreeBSD 仮想マシン](../../virtualization/hyper-v/supported-linux-and-freebsd-virtual-machines-for-hyper-v-on-windows.md)」を参照してください。
 
 #### <a name="specify-a-local-reliable-time-service-using-gtimeserv"></a>GTIMESERV を使用してローカルの信頼できるタイム サービスを指定する
+
 GTIMESERV (適切なタイム サーバー) フラグを使用することで、正確なソース クロックとして 1 台以上のドメイン コントローラーを指定できます。 たとえば、GPS ハードウェアを搭載した特定のドメイン コントローラーには、GTIMESERV というフラグを設定できます。 これにより、ドメインで GPS ハードウェアに基づくクロックが参照されることが保証されます。
 
 > [!NOTE]
-> ドメイン フラグの詳細については、[MS-ADTS プロトコルのドキュメント](https://msdn.microsoft.com/library/mt226583.aspx)を参照してください。
+> ドメイン フラグの詳細については、[MS-ADTS プロトコルのドキュメント](/openspecs/windows_protocols/ms-winerrata/fe563333-6e4f-4198-9bf5-741a523cd0d7)を参照してください。
 
 TIMESERV は、現在マシンに権限があるかどうかを示す、もう 1 つの関連するドメイン サービス フラグです。これは、DC の接続が失われると変更される可能性があります。 この状態の DC が NTP を介して照会されると、"不明な Stratum" が返されます。 複数回試行した後、DC によってシステム イベントのタイム サービス イベント 36 がログに記録されます。
 
 DC を GTIMESERV として構成する場合は、次のコマンドを使用して手動で構成できます。 この場合、DC ではマスター クロックとして別のマシンが使用されます。 これにはアプライアンスまたは専用のコンピューターを使用できます。
 
- w32tm /config /manualpeerlist:"master_clock1,0x8 master_clock2,0x8" /syncfromflags:manual /reliable:yes /update
+```
+w32tm /config /manualpeerlist:"master_clock1,0x8 master_clock2,0x8" /syncfromflags:manual /reliable:yes /update
+```
 
 > [!NOTE]
-> 詳細については、「[Windows タイム サービスを構成する](https://technet.microsoft.com/library/cc731191.aspx)」を参照してください。
+> 詳細については、「[Windows タイム サービスを構成する](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731191(v=ws.10))」を参照してください。
 
 DC に GPS ハードウェアが搭載されている場合は、次の手順を使用して NTP クライアントを無効にし、NTP サーバーを有効にする必要があります。
 
 まず、次のレジストリ キーの変更を使用して、NTP クライアントを無効にし、NTP サーバーを有効にします。
 
- reg add HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\w32time\TimeProviders\NtpClient /v Enabled /t REG_DWORD /d 0 /f
+```
+reg add HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\w32time\TimeProviders\NtpClient /v Enabled /t REG_DWORD /d 0 /f
 
- reg add HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\w32time\TimeProviders\NtpServer /v Enabled /t REG_DWORD /d 1 /f
+reg add HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\w32time\TimeProviders\NtpServer /v Enabled /t REG_DWORD /d 1 /f
+```
 
 次に、Windows タイム サービスを再起動します
 
- net stop w32time && net start w32time
+```
+net stop w32time && net start w32time
+```
 
 最後に、次を使用して、このマシンに信頼性の高いタイム ソースがあることを示します。
 
- w32tm /config /reliable:yes /update
+```
+w32tm /config /reliable:yes /update
+```
 
 変更が正しく行われたことを確認するには、次のコマンドを実行します。これは、以下に示す結果に影響を与えます。
 
- w32tm /query /configuration
+```
+w32tm /query /configuration
 
-値|想定される設定|
+Value|Expected Setting|
 ----- | ----- |
-AnnounceFlags| 5 (ローカル)|
-NtpServer |(ローカル)|
-DllName |C:\WINDOWS\SYSTEM32\w32time.DLL (ローカル)|
-Enabled |1 (ローカル)|
-NtpClient| (ローカル)|
+AnnounceFlags| 5 (Local)|
+NtpServer |(Local)|
+DllName |C:\WINDOWS\SYSTEM32\w32time.DLL (Local)|
+Enabled |1 (Local)|
+NtpClient| (Local)|
 
- w32tm /query /status /verbose
+w32tm /query /status /verbose
 
-値| 想定される設定|
+Value| Expected Setting|
 ----- | ----- |
-Stratum| 1 (プライマリ参照 - 無線クロックによる同期)|
-ReferenceId| 0x4C4F434C (ソース名:"LOCAL")|
-ソース| ローカル CMOS クロック|
-フェーズ オフセット| 0.0000000s|
-サーバーの役割| 576 (信頼できるタイム サービス)|
+Stratum| 1 (primary reference - syncd by radio clock)|
+ReferenceId| 0x4C4F434C (source name: "LOCAL")|
+Source| Local CMOS Clock|
+Phase Offset| 0.0000000s|
+Server Role| 576 (Reliable Time Service)|
+```
 
 #### <a name="windows-server-2016-on-3rd-party-virtual-platforms"></a>サード パーティの仮想プラットフォーム上の Windows Server 2016
+
 Windows が仮想化されている場合、既定では、ハイパーバイザーによって時刻が提供されます。 ただし、Active Directory を正常に機能させるためには、ドメインに参加しているメンバーがドメイン コントローラーと同期している必要があります。 サード パーティの仮想プラットフォームのゲストとホストの間では、時刻の仮想化を無効にすることをお勧めします。
 
 #### <a name="discovering-the-hierarchy"></a>階層の検出
+
 ドメイン内のマスター クロック ソースへと続く時刻の階層のチェーンは動的であるため、ネゴシエートされた場合は、特定のマシンの状態を照会して、そのタイム ソースとマスター ソース クロックへのチェーンを把握する必要があります。 これは、時刻の同期に関する問題を診断するのに役立ちます。
 
 特定のクライアントのトラブルシューティングを行う場合は、まず、次の w32tm コマンドを使用して、そのタイム ソースを把握します。
 
- w32tm /query /status
+```
+w32tm /query /status
+```
 
 その結果の表示には、Source が含まれています。 この Source は、ドメイン内の時刻の同期先を示しています。 これが、このマシンの時刻の階層の最初のステップです。
 次に、上記の Source エントリを使用し、/StripChart パラメーターを使ってチェーン内の次のタイム ソースを探します。
 
- w32tm /stripchart /computer:MySourceEntry /packetinfo /samples:1
+```
+w32tm /stripchart /computer:MySourceEntry /packetinfo /samples:1
+```
 
 また、指定したドメイン内で検出できる各ドメイン コントローラーの一覧を表示し、各パートナーを特定するのに役立つ結果を表示する、次のコマンドも便利です。 このコマンドでは、手動で構成されたマシンも含まれます。
 
@@ -292,7 +318,7 @@ MaxAllowedPhaseOffset 設定は、[グローバル構成] 設定を使用して�
 ## <a name="azure-and-windows-iaas-considerations"></a>Azure と Windows IaaS に関する考慮事項
 
 ### <a name="azure-virtual-machine-active-directory-domain-services"></a>Azure 仮想マシン:[Active Directory Domain Services]
-Active Directory Domain Services を実行している Azure VM が既存のオンプレミスの Active Directory フォレストに含まれている場合は、TimeSync(VMIC) を無効にする必要があります。 これは、物理、仮想両方のフォレスト内のすべての DC で、1 つの時刻同期の階層を使用できるようにするためです。 ベスト プラクティスに関するホワイトペーパー「[Hyper-V でのドメイン コントローラーの実行](https://technet.microsoft.com/library/virtual_active_directory_domain_controller_virtualization_hyperv.aspx)」を参照してください
+Active Directory Domain Services を実行している Azure VM が既存のオンプレミスの Active Directory フォレストに含まれている場合は、TimeSync(VMIC) を無効にする必要があります。 これは、物理、仮想両方のフォレスト内のすべての DC で、1 つの時刻同期の階層を使用できるようにするためです。 ベスト プラクティスに関するホワイトペーパー「[Hyper-V でのドメイン コントローラーの実行](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd363553(v=ws.10))」を参照してください
 
 ### <a name="azure-virtual-machine-domain-joined-machine"></a>Azure 仮想マシン:ドメインに参加しているマシン
 既存の Active Directory フォレスト (仮想または物理) にドメイン参加しているマシンをホストしている場合のベスト プラクティスは、ゲストに対して TimeSync を無効にし、Type=NTP5 の時刻を構成することで、ドメイン コントローラーと同期するように W32Time を構成することです
@@ -302,7 +328,7 @@ Azure VM がドメインに参加しておらず、ドメイン コントロー�
 
 ## <a name="windows-application-requiring-accurate-time"></a>正確な時刻を必要とする Windows アプリケーション
 ### <a name="time-stamp-api"></a>タイム スタンプ API
-時間の経過ではなく、UTC を基準とした最高の精度を必要とするプログラムでは、[GetSystemTimePreciseAsFileTime API](https://msdn.microsoft.com/library/windows/desktop/Hh706895.aspx) を使用する必要があります。 これにより、お使いのアプリケーションでシステム時刻が取得され、それが Windows タイム サービスによって調整されることが保証されます。
+時間の経過ではなく、UTC を基準とした最高の精度を必要とするプログラムでは、[GetSystemTimePreciseAsFileTime API](/windows/win32/api/sysinfoapi/nf-sysinfoapi-getsystemtimepreciseasfiletime) を使用する必要があります。 これにより、お使いのアプリケーションでシステム時刻が取得され、それが Windows タイム サービスによって調整されることが保証されます。
 
 ### <a name="udp-performance"></a>UDP パフォーマンス
 トランザクションに UDP 通信を使用するアプリケーションがあり、待機時間を最小限に抑えることが重要な場合は、関連するいくつかのレジストリ エントリを使用して、ベース フィルター エンジンのポートから除外するポートの範囲を構成できます。 これにより、待機時間が短縮され、スループットが増加します。 ただし、レジストリの変更は、経験豊富な管理者だけが行うようにする必要があります。 また、この回避策によって、ポートがファイアウォールによるセキュリティ保護から除外されます。 詳細については、以下の記事のリファレンスをご覧ください。
@@ -353,20 +379,21 @@ NTP プロトコルのアルゴリズムは、ネットワークの対称性に�
 
 ネットワーク上の正確な時刻については、2 つの一般的な標準があります。 PTP ([精度タイム プロトコル - IEEE 1588](https://www.nist.gov/el/intelligent-systems-division-73500/introduction-ieee-1588)) では、ネットワーク インフラストラクチャの要件がより厳しくなりますが、多くの場合、サブマイクロ秒の精度が得られます。 NTP ([ネットワーク タイム プロトコル – RFC 1305](https://tools.ietf.org/html/rfc1305)) は、より広範なネットワークや環境で動作するため、管理が容易になります。
 
-Windows では、ドメインに参加していないマシンに対して、既定で Simple NTP (RFC2030) がサポートされています。 ドメインに参加しているマシンの場合は、[MS-SNTP](https://msdn.microsoft.com/library/cc246877.aspx) と呼ばれるセキュリティで保護された NTP が使用されます。このプロトコルではドメインにネゴシエートされたシークレットが活用され、RFC1305 および RFC5905 で説明されている認証済み NTP よりも大きな管理上の利点をもたらします。
+Windows では、ドメインに参加していないマシンに対して、既定で Simple NTP (RFC2030) がサポートされています。 ドメインに参加しているマシンの場合は、[MS-SNTP](/openspecs/windows_protocols/ms-sntp/8106cb73-ab3a-4542-8bc8-784dd32031cc) と呼ばれるセキュリティで保護された NTP が使用されます。このプロトコルではドメインにネゴシエートされたシークレットが活用され、RFC1305 および RFC5905 で説明されている認証済み NTP よりも大きな管理上の利点をもたらします。
 
 ドメインに参加しているプロトコルとドメインに参加していないプロトコルの両方で、UDP ポート 123 が必要です。 NTP のベスト プラクティスの詳細については、[ネットワーク タイム プロトコルの現在のベスト プラクティスに関する IETF ドラフト](https://tools.ietf.org/html/draft-ietf-ntp-bcp-00)を参照してください。
 
 ### <a name="reliable-hardware-clock-rtc"></a>信頼できるハードウェア クロック (RTC)
+
 Windows では、特定の境界を越えない限り時刻はステップされず、代わりにクロックが統制されます。 つまり、w32tm では、クロック更新頻度の設定を使用して、一定の間隔でクロックの周波数が調整されます。その既定値は、Windows Server 2016 では毎秒 1 回に設定されます。 クロックが遅れている場合は周波数が上げられ、進んでいる場合は周波数が下げられます。 ただし、クロック周波数を調整している間は、ハードウェア クロックによって制御が行われます。 ファームウェアまたはハードウェア クロックに問題があると、マシンの時刻の精度が下ります。
 
 これが、環境内でテストとベースライニングを行う必要があるもう 1 つの理由です。 "計算されたタイム オフセット" パフォーマンス カウンターが目標の精度で安定しない場合は、ファームウェアが最新の状態であることを確認することをお勧めします。 別のテストとして、重複するハードウェアによって同じ問題が再現されているかどうかを確認できます。
 
 ### <a name="troubleshooting-time-accuracy-and-ntp"></a>時刻の精度と NTP に関するトラブルシューティング
+
 上記の「階層の検出」セクションを使用すると、不正確な時刻の原因を把握することができます。 タイム オフセットを確認して、時刻が NTP ソースから最も大きくずれている階層内の点を探してください。 階層を理解したら、その特定のタイム ソースが正確な時刻を受け取らない理由を調査することができます。
 
 時刻がずれているシステムに焦点を当てると、以下のツールを使用して、問題の特定と解決策の発見に役立つ詳細情報を収集できます。 以下の UpstreamClockSource 参照は、"w32tm /config /status" を使用して検出されたクロックです。
-
 
 - システム イベント ログ
 - w32tm logs - w32tm /debug /enable /file:C:\Windows\Temp\w32time-test.log /size:10000000 /entries:0-300 を使用してログを有効にする
@@ -387,6 +414,7 @@ NTP ソースが応答しない| パフォーマンス カウンターで NTP �
 クライアント クロックがずれている| システム イベント ログのタイム サービス イベント 36 か、ログ ファイルのテキスト、またはその両方で、次のことが記載されています:"NTP クライアントのタイム ソースの数" カウンターが 1 から 0 になりました|アップストリーム ソースのトラブルシューティングを行い、パフォーマンス上の問題が発生しているかどうかを把握します。|
 
 ### <a name="baselining-time"></a>時刻のベースライニング
+
 ベースライニングは、まずネットワークのパフォーマンスと精度を把握し、将来問題が発生したときにそのベースラインと比較できるため、重要です。 ルート PDC または GTIMESRV でマークされているすべてのマシンをベースライニングすることをお勧めします。 また、すべてのフォレストで PDC をベースライニングすることをお勧めします。 最後に、興味深い特性 (距離や高負荷など) を持つ重要な DC またはマシンを選択し、それらをベースライニングしてください。
 
 また、2012 R2 に対して Windows Server 2016 をベースライニングすることも役に立ちます。ただし、Windows Server 2012R2 にはパフォーマンス カウンターがないため、比較に使用できるツールとしては w32tm /stripchart しかありません。 同じ特性を持つ 2 台のマシンを選択するか、マシンをアップグレードして更新後の結果を比較する必要があります。 Windows の時刻測定の補遺には、2016 と 2012 の間で詳細な測定を行う方法が詳しく記載されています。
@@ -394,23 +422,30 @@ NTP ソースが応答しない| パフォーマンス カウンターで NTP �
 すべての w32time パフォーマンス カウンターを使用して、少なくとも 1 週間分のデータを収集します。 これにより、時間の経過に伴うネットワークのさまざまな情報を把握するための十分な参照が得られます。また、十分な実行回数により、時刻の精度の安定性に自信を持つことができます。
 
 ### <a name="ntp-server-redundancy"></a>NTP サーバーの冗長性
+
 ドメインに参加していないマシンまたは PDC と共に使用される手動の NTP サーバー構成では、可用性に関する冗長性のための手段として複数のサーバーを使用することをお勧めします。 また、すべてのソースが正確で安定していると仮定すると、これによって精度も向上します。 ただし、トポロジが適切に設計されていない場合や、タイム ソースが安定していない場合は、結果の精度が悪くなる可能性があるため、注意が必要です。 w32time から手動で参照できる、サポートされるタイム サーバーの数の上限は、10 台です。
 
 ## <a name="leap-seconds"></a>うるう秒
+
 地球の自転周期は、気候上の事象や地質学的な事象によって、時間の経過と共に変化します。 通常は、数年ごとに約 1 秒変化します。 微小な時間による変化が大きくなりすぎると、1 秒の修正 (プラスまたはマイナス) が追加されます。これをうるう秒と呼びます。 これは、誤差が 0.9 秒を超えないように行われます。 この修正は、実際の修正の 6 か月前に発表されます。 Windows Server 2016 より前では、Microsoft タイム サービスによってうるう秒が把握されることはなく、その対応は外部のタイム サービスに依存していました。 Windows Server 2016 の時刻の精度の強化に伴い、Microsoft では、うるう秒の問題に対するより適切なソリューションに取り組んでいます。
 
 ## <a name="secure-time-seeding"></a>セキュリティで保護された時刻のシード処理
-Server 2016 の W32time には、セキュリティで保護された時刻のシード処理機能が含まれています。 この機能を使用すると、発信 SSL 接続から現在のおおよその時刻を判断できます。 この時刻の値は、ローカル システム クロックを監視し、明らかなエラーを修正するために使用されます。 この機能の詳細については、[こちらのブログ記事](https://blogs.msdn.microsoft.com/w32time/2016/09/28/secure-time-seeding-improving-time-keeping-in-windows/)を参照してください。 信頼できるタイム ソースと、(タイム オフセットの監視を含む) 十分に監視されたマシンを使用する展開では、セキュリティで保護された時刻のシード処理機能を使用せず、代わりに既存のインフラストラクチャに依存することを選択できます。
+
+Server 2016 の W32time には、セキュリティで保護された時刻のシード処理機能が含まれています。 この機能を使用すると、発信 SSL 接続から現在のおおよその時刻を判断できます。 この時刻の値は、ローカル システム クロックを監視し、明らかなエラーを修正するために使用されます。 この機能の詳細については、[こちらのブログ記事](/archive/blogs/w32time/secure-time-seeding-improving-time-keeping-in-windows)を参照してください。 信頼できるタイム ソースと、(タイム オフセットの監視を含む) 十分に監視されたマシンを使用する展開では、セキュリティで保護された時刻のシード処理機能を使用せず、代わりに既存のインフラストラクチャに依存することを選択できます。
 
 この機能を無効にするには、次の手順を実行します。
 
 1. 特定のコンピューター上で、UtilizeSSLTimeData レジストリ構成値を 0 に設定します。
 
+    ```
     reg add HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\w32time\Config /v UtilizeSslTimeData /t REG_DWORD /d 0 /f
+    ```
 
 2. 何らかの理由によりマシンをすぐに再起動できない場合は、構成の更新について W32time サービスに通知することができます。 これにより、SSL 接続から収集された時刻データに基づく時刻の監視と適用が停止されます。
 
+    ```
     W32tm.exe /config /update
+    ```
 
 3. マシンを再起動すると、設定は直ちに有効になります。また、SSL 接続からの時刻データの収集も停止されます。 この後半部分のオーバーヘッドは非常に小さいため、パフォーマンス上の問題にはならないはずです。
 

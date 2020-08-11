@@ -1,19 +1,17 @@
 ---
 title: RDS で個人用デスクトップ セッション コレクションを管理する
 description: RDS の展開に、RDSH および RemoteApp プログラムを追加する方法について説明します。
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 11/08/2016
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: 7088d164ecdd7211894b004ed580eecb33d1ba60
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: bd6c91b7f022e60e488c90776e0981523da7bccb
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80861065"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961656"
 ---
 # <a name="manage-your-personal-desktop-session-collections"></a>個人用デスクトップ セッション コレクションを管理する
 
@@ -24,7 +22,7 @@ ms.locfileid: "80861065"
 
 -CollectionName \<string\>
 
--ConnectionBroker \<string\> 
+-ConnectionBroker \<string\>
 
 -User \<string\>
 
@@ -44,7 +42,7 @@ ms.locfileid: "80861065"
 -Path \<string>
 
 **–Path** は、インポートするファイルのパスとファイル名を指定します。
- 
+
 ## <a name="removing-a-user-assignment-from-a-personal-session-host"></a>個人用セッション ホストからのユーザー割り当ての削除
 個人用セッション デスクトップとユーザー間の関連付けを削除するには、**Remove-RDPersonalSessionDesktopAssignment** コマンドレットを使用します。 このコマンドレットは、次のパラメーターをサポートしています。
 
@@ -71,7 +69,7 @@ ms.locfileid: "80861065"
 
 -Name \<string\>
 
-このコマンドレットを実行すると、コレクション名、ユーザー名、またはセッション デスクトップ名によるクエリが可能です。 **–CollectionName** パラメーターだけを指定した場合、コマンドレットは、セッション ホストおよび関連付けられているユーザーの一覧を返します。 **–User** パラメーターも指定した場合、そのユーザーに関連付けられているセッション ホストが返されます。 **–Name** パラメーターを指定した場合、そのセッション ホストに関連付けられているユーザーが返されます。 
+このコマンドレットを実行すると、コレクション名、ユーザー名、またはセッション デスクトップ名によるクエリが可能です。 **–CollectionName** パラメーターだけを指定した場合、コマンドレットは、セッション ホストおよび関連付けられているユーザーの一覧を返します。 **–User** パラメーターも指定した場合、そのユーザーに関連付けられているセッション ホストが返されます。 **–Name** パラメーターを指定した場合、そのセッション ホストに関連付けられているユーザーが返されます。
 
 
 **Export-RDPersonalPersonalDesktopAssignment** コマンドレットは、ユーザーと個人用仮想デスクトップとの現在の関連付けをテキスト ファイルにエクスポートします。 このコマンドレットは、次のパラメーターをサポートしています。
