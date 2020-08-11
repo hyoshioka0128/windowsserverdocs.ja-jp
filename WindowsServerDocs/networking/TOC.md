@@ -72,6 +72,7 @@
 ## [ドメイン ネーム システム (DNS)](dns/dns-top.md)
 ### [Windows Server の DNS クライアントの新機能](dns/What-s-New-in-DNS-Client.md)
 ### [Windows Server の DNS サーバーの新機能](dns/What-s-New-in-DNS-Server.md)
+### [エニーキャスト DNS](dns/deploy/anycast.md)
 ### [DNS ポリシー シナリオ ガイド](dns/deploy/DNS-Policy-Scenario-Guide.md)
 #### [DNS ポリシーの概要](dns/deploy/DNS-Policies-Overview.md)
 #### [プライマリ サーバーでの地理的な場所ベースのトラフィック管理に DNS ポリシーを使用する](dns/deploy/primary-geo-location.md)

@@ -1,17 +1,15 @@
 ---
 title: ボリューム シャドウ コピー サービス
 ms.date: 01/30/2019
-ms.prod: windows-server
-ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 9948fab77ab4869c27fd63e623315bd1b3e9ff47
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 44f0db935e50bf7976612edc4317b4212818f84d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966694"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87950746"
 ---
 # <a name="volume-shadow-copy-service"></a>ボリューム シャドウ コピー サービス
 
@@ -22,7 +20,6 @@ ms.locfileid: "86966694"
   - データは通常、そのデータを生成するアプリケーションがまだ実行されている間にバックアップする必要がある。 これは、一部のデータ ファイルが開いているか、一貫性のない状態になっている可能性があることを意味します。
 
   - データ セットが大きい場合、一度にすべてをバックアップするのが困難な場合がある。
-
 
 バックアップと復元の操作を適切に実行するには、バックアップ アプリケーション、バックアップする基幹業務アプリケーション、および記憶域管理のハードウェアとソフトウェアの間で、密接な連携が必要です。 Windows Server®2003 で導入されたボリューム シャドウ コピー サービス (VSS) を使用すると、これらのコンポーネント間の会話を容易にし、連携を高めることができます。 すべてのコンポーネントで VSS がサポートされている場合は、アプリケーションをオフラインにしなくても、それらを使用してアプリケーション データをバックアップできます。
 
@@ -62,7 +59,7 @@ VSS を使用する Windows の機能とアプリケーションには、次の�
 
 次の図は、VSS サービスがリクエスター、ライター、およびプロバイダーと連携してボリュームのシャドウ コピーを作成する方法を示しています。
 
-![](media/volume-shadow-copy-service/Ee923636.94dfb91e-8fc9-47c6-abc6-b96077196741(WS.10).jpg)
+![ボリューム シャドウ コピー サービスのアーキテクチャ図](media/volume-shadow-copy-service/Ee923636.94dfb91e-8fc9-47c6-abc6-b96077196741(WS.10).jpg)
 
 **図 1**   ボリューム シャドウ コピー サービスのアーキテクチャ図
 
@@ -70,7 +67,7 @@ VSS を使用する Windows の機能とアプリケーションには、次の�
 
 このセクションでは、シャドウ コピーの作成に必要な手順をリストすることにより、リクエスター、ライター、およびプロバイダーのさまざまなロールをコンテキストで示します。 次の図は、ボリューム シャドウ コピー サービスでリクエスター、ライター、およびプロバイダーの全体的な調整を制御する方法を示しています。
 
-![](media/volume-shadow-copy-service/Ee923636.1c481a14-d6bc-4796-a3ff-8c6e2174749b(WS.10).jpg)
+![ボリューム シャドウ コピー サービスの仕組みの図](media/volume-shadow-copy-service/Ee923636.1c481a14-d6bc-4796-a3ff-8c6e2174749b(WS.10).jpg)
 
 **図 2** シャドウ コピーの作成プロセス
 
@@ -309,7 +306,7 @@ LUN の再同期は、LUN スワップとは異なります。 LUN スワップ�
 
 3.  これで、データを使用する準備ができました。
 
-![](media/volume-shadow-copy-service/Ee923636.633752e0-92f6-49a7-9348-f451b1dc0ed7(WS.10).jpg)
+![2 台のサーバー間でシャドウ コピーを転送する方法の図](media/volume-shadow-copy-service/Ee923636.633752e0-92f6-49a7-9348-f451b1dc0ed7(WS.10).jpg)
 
 **図 3**   シャドウコピーの作成と 2 つのサーバー間での転送
 
@@ -577,7 +574,7 @@ VSS では、次のレジストリ キーを使用できます。
 </colgroup>
 <thead>
 <tr class="header">
-<th><img src="media/volume-shadow-copy-service/Dd560667.note(WS.10).gif" />注意</th>
+<th>注意</th>
 </tr>
 </thead>
 <tbody>
