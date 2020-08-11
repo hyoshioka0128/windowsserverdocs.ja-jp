@@ -1,18 +1,16 @@
 ---
 title: Windows Server 2016 から Windows Server 2019 へのアップグレード | Microsoft Docs
 description: Windows Server 2016 から Windows Server 2019 に移行するインプレース アップグレードを実行する方法について説明します。
-ms.prod: windows-server
-ms.technology: server-general
 ms.topic: upgrade
 author: RobHindman
 ms.author: robhind
 ms.date: 09/16/2019
-ms.openlocfilehash: 91b10602a0cd5a3250fe01991fca42d01727784c
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 2ed2ed1859ca69f2251543a78dec0b856ce3f7e2
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80861345"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87997218"
 ---
 # <a name="upgrade-windows-server-2016-to-windows-server-2019"></a>Windows Server 2016 から Windows Server 2019 へのアップグレード
 
@@ -88,4 +86,4 @@ Windows Server 関連のすべての情報を収集したら、オペレーテ�
 
 ## <a name="related-articles"></a>関連記事
 
-- Windows Server 2019 に関する情報と詳細については、「[Windows Server 2019 の概要](https://docs.microsoft.com/windows-server/get-started-19/get-started-19)」を参照してください。
+- Windows Server 2019 に関する情報と詳細については、「[Windows Server 2019 の概要](../get-started-19/get-started-19.md)」を参照してください。

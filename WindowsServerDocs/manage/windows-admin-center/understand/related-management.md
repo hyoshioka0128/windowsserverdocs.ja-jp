@@ -1,28 +1,26 @@
 ---
 title: Windows Admin Center 関連の管理ソリューション
 description: Windows Admin Center が他の Microsoft 監視および管理ソリューション/製品 (Project Honolulu) とどのように比肩し補完するか
-ms.technology: manage
 ms.topic: article
 author: haley-rowland
 ms.author: harowl
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: d681e5007cd3ae3c14de774df0bc85abc23b51d7
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 2f3a8de38cc643184468fccb4fcdd24f9ba75dd7
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "79323534"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87997516"
 ---
 # <a name="windows-admin-center-and-related-management-solutions-from-microsoft"></a>Windows Admin Center と Microsoft の関連する管理ソリューション
 
 >適用先:Windows Admin Center、Windows Admin Center Preview
 
-[Windows Admin Center](windows-admin-center.md) は、従来のインボックス サーバー管理ツールを進化させたもので、トラブルシューティングまたは構成のためにリモート デスクトップ (RDP) を使用してサーバーに接続した可能性のある状況に対するものです。 これは、その他の既存の Microsoft 管理ソリューションを置き換えるものではなく、むしろ、以下に説明するように、これらのソリューションを補完するものです。
+[Windows Admin Center](../overview.md) は、従来のインボックス サーバー管理ツールを進化させたもので、トラブルシューティングまたは構成のためにリモート デスクトップ (RDP) を使用してサーバーに接続した可能性のある状況に対するものです。 これは、その他の既存の Microsoft 管理ソリューションを置き換えるものではなく、むしろ、以下に説明するように、これらのソリューションを補完するものです。
 
 ## <a name="remote-server-administration-tools-rsat"></a>リモート サーバー管理ツール (RSAT)
 
-[リモート サーバー管理ツール (RSAT)](https://docs.microsoft.com/windows-server/remote/remote-server-administration-tools) は、Windows Server のオプションのロールや機能を管理する GUI および PowerShell ツールをまとめたものです。 RSAT には、Windows Admin Center にはない多くの機能があります。 今後、RSAT でよく使用されているツールのいくつかが、Windows Admin Center に追加されるかもしれません。 管理に GUI を必要とする 新しい Windows サーバーのロールまたは機能はすべて、Windows Admin Center にあります。
+[リモート サーバー管理ツール (RSAT)](../../../remote/remote-server-administration-tools.md) は、Windows Server のオプションのロールや機能を管理する GUI および PowerShell ツールをまとめたものです。 RSAT には、Windows Admin Center にはない多くの機能があります。 今後、RSAT でよく使用されているツールのいくつかが、Windows Admin Center に追加されるかもしれません。 管理に GUI を必要とする 新しい Windows サーバーのロールまたは機能はすべて、Windows Admin Center にあります。
 
 ## <a name="intune"></a>Intune
 

@@ -1,18 +1,16 @@
 ---
 title: Windows Server 2008 R2 から Windows Server 2012 R2 へのアップグレード | Microsoft Docs
 description: Windows Server 2008 R2 から Windows Server 2012 R2 に移行するためのインプレース アップグレードを実行する方法について説明します。
-ms.prod: windows-server
-ms.technology: server-general
 ms.topic: upgrade
 author: RobHindman
 ms.author: robhind
 ms.date: 09/16/2019
-ms.openlocfilehash: 7598826bee4abd869dff82c3891fdbe126db35fb
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: fad4caf75be75bae5361a99f1e6e6520767680cd
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182178"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87996093"
 ---
 # <a name="upgrade-windows-server-2008-r2-to-windows-server-2012-r2"></a>Windows Server 2008 R2 から Windows Server 2012 R2 へのアップグレード
 
@@ -66,7 +64,7 @@ Windows Server 関連のすべての情報を収集後、オペレーティン�
 
     ![インストールの種類を選択する画面](media/upgrade-2008r2-2012r2/choose-install-upgrade.png)
 
-9. セットアップから、「[Windows Server のインストールとアップグレード](https://docs.microsoft.com/windows-server/get-started/installation-and-upgrade)」の記事に記載されている情報を使用してアプリが Windows Server 2012 R2 と互換性があることを確認してから **[次へ]** を選択するよう促されます。
+9. セットアップから、「[Windows Server のインストールとアップグレード](../get-started/installation-and-upgrade.md)」の記事に記載されている情報を使用してアプリが Windows Server 2012 R2 と互換性があることを確認してから **[次へ]** を選択するよう促されます。
 
     ![アプリの互換性を確認するよう促す画面](media/upgrade-2008r2-2012r2/compatibility-report.png)
 

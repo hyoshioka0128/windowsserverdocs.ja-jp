@@ -1,18 +1,16 @@
 ---
 title: Windows Server 2012 R2 から Windows Server 2019 へのアップグレード | Microsoft Docs
 description: Windows Server 2012 R2 から Windows Server 2019 に移行するためのインプレース アップグレードを実行する方法について説明します。
-ms.prod: windows-server
-ms.technology: server-general
 ms.topic: upgrade
 author: RobHindman
 ms.author: robhind
 ms.date: 09/16/2019
-ms.openlocfilehash: 02d6dd21b798346245f209174902b6f4fdf24ff8
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: c23c04682fe796a5d76f487b5ed6d91e81ac3ad1
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80853345"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87995778"
 ---
 # <a name="upgrade-windows-server-2012-r2-to-windows-server-2019"></a>Windows Server 2012 R2 から Windows Server 2019 へのアップグレード
 
@@ -92,4 +90,4 @@ Windows Server 関連のすべての情報を収集後、オペレーティン�
 
 ## <a name="related-articles"></a>関連記事
 
-- Windows Server 2019 に関する情報と詳細については、「[Windows Server 2019 の概要](https://docs.microsoft.com/windows-server/get-started-19/get-started-19)」を参照してください。
+- Windows Server 2019 に関する情報と詳細については、「[Windows Server 2019 の概要](../get-started-19/get-started-19.md)」を参照してください。

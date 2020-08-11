@@ -1,25 +1,23 @@
 ---
 title: デスクトップ エクスペリエンス搭載サーバーのインストール
 description: デスクトップ エクスペリエンス搭載サーバー インストールを入手してインストールする方法について説明します。
-ms.prod: windows-server
 ms.date: 01/18/2017
-ms.technology: server-general
 ms.topic: article
 ms.assetid: 5b38b8a0-4dfc-4130-be00-fc58bba99595
 author: jaimeo
 ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: a1ac967743dcb9e38cb36e5c16f7e3dd6ec0c7d2
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 43a483df0f9ad8c6961f9309249a5c2eef88c085
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86953554"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990539"
 ---
 # <a name="install-server-with-desktop-experience"></a>デスクトップ エクスペリエンス搭載サーバーのインストール
 > 適用先:Windows Server 2016
-  
+
 
 Windows Server 2016 をセットアップ ウィザードを使用してインストールするときは、**Windows Server 2016** と **Windows Server (デスクトップ エクスペリエンス搭載サーバー)** のどちらかを選択できます。 Windows Server 2016 のデスクトップ エクスペリエンス搭載サーバー オプションは、Windows Server 2012 R2 で利用できるフル インストール オプションにデスクトップ エクスペリエンス機能のインストールを加えたものに相当します。 セットアップ ウィザードでこの選択をしない場合、**Windows Server 2016** がインストールされます。これが **Server Core** インストール オプションです。
 
@@ -42,7 +40,7 @@ Windows Server 2016 をセットアップ ウィザードを使用してイン�
 ### <a name="evaluation"></a>評価
 「[Windows Server 評価版ソフトウェア](https://www.microsoft.com/evalcenter/evaluate-windows-server-2016)」で 180 日間ライセンスが有効な Windows Server の評価版を入手できます。 **[Windows Server 2016 | 64-bit ISO option (Windows Server 2016 | 64 ビット ISO オプション)]** を選択してダウンロードするか、**Windows Server 2016 の仮想ラボ**のページにアクセスします。
 
-> [!IMPORTANT]  
+> [!IMPORTANT]
 > 14393.0.161119-1705.RS1_REFRESH より前の Windows Server 2016 のリリースでは、Windows Server 2016 を Server Core オプションではなくデスクトップ エクスペリエンス オプションを使用してインストールしている場合にのみ、このような評価版から製品版への変換を行うことができます。 バージョン 14393.0.161119-1705.RS1_REFRESH 以降のリリースでは、使ったインストール オプションに関係なく評価版を製品版に移行できます。
 
 
@@ -55,8 +53,8 @@ Windows Server 2016 をセットアップ ウィザードを使用してイン�
 
 適切な Windows Server 製品のフル インストールを既に持っている場合は、以下に示すように、Windows Server 2016 の適切なエディションのデスクトップ エクスペリエンス搭載サーバー インストールにアップグレードできます。
 
-> [!IMPORTANT]  
-> このリリースでは、アップグレードは、アップグレードを正常に実行するために特定の OEM ハードウェア ドライバーが必要ない仮想マシンにおいて、最も有効です。 それ以外の場合は、移行が推奨されます。  
+> [!IMPORTANT]
+> このリリースでは、アップグレードは、アップグレードを正常に実行するために特定の OEM ハードウェア ドライバーが必要ない仮想マシンにおいて、最も有効です。 それ以外の場合は、移行が推奨されます。
 
 - 32 ビット アーキテクチャから 64 ビット アーキテクチャへの一括アップグレードはサポートされません。 Windows Server 2016 のすべてのエディションが 64 ビット版のみで提供されます。
 - 1 つの言語から別の言語への一括アップグレードはサポートされません。
@@ -68,8 +66,8 @@ Windows Server 2016 をセットアップ ウィザードを使用してイン�
 
 右の列に複数のエディションが記載されている場合、同じ開始バージョンから**いずれかの**エディションにアップグレードできます。
 
-|使用しているエディション|アップグレード先のエディション|  
-|-------------------|----------|  
+|使用しているエディション|アップグレード先のエディション|
+|-------------------|----------|
 |Windows Server 2012 Standard|Windows Server 2016 Standard または Datacenter|
 |Windows Server 2012 Datacenter|Windows Server 2016 Datacenter|
 |Windows Server 2012 R2 Standard|Windows Server 2016 Standard または Datacenter|
@@ -87,8 +85,8 @@ Windows Server 2016 をセットアップ ウィザードを使用してイン�
 
 移行できるかどうかは、サーバーの役割によって異なります。 次の表には、特に Windows Server 2016 に移る際のサーバーの役割のアップグレードおよび移行オプションの説明が示されています。 個々の役割の移行ガイドについては、「[Windows Server の役割と機能を移行する](./migrate-roles-and-features.md)」を参照してください。 インストールとアップグレードの詳細については、「[Windows Server Installation, Upgrade, and Migration (Windows Server のインストール、アップグレード、移行)](./installation-and-upgrade.md)」を参照してください。
 
-|サーバーの役割|Windows Server 2012 R2 からアップグレードできるか?|Windows Server 2012 からアップグレードできるか?|移行はサポートされているか?|ダウンタイムなしで移行を完了できるか?|  
-|-------------------|----------|--------------|--------------|----------|  
+|サーバーの役割|Windows Server 2012 R2 からアップグレードできるか?|Windows Server 2012 からアップグレードできるか?|移行はサポートされているか?|ダウンタイムなしで移行を完了できるか?|
+|-------------------|----------|--------------|--------------|----------|
 |Active Directory 証明書サービス|    はい|    はい|    はい|    いいえ|
 |[Active Directory Domain Services]|    はい|    はい|    はい|    はい|
 |Active Directory フェデレーション サービス|    いいえ|    いいえ|    はい|    いいえ (新しいノードをファームに追加する必要がある)|
@@ -103,8 +101,8 @@ Windows Server 2016 をセットアップ ウィザードを使用してイン�
 |Windows Server Update Services|    はい|    はい|    はい|    いいえ|
 |作業フォルダー|    はい|    はい|    はい|    はい ([クラスター OS のローリング アップグレード](../failover-clustering/cluster-operating-system-rolling-upgrade.md)を使用した場合に WS 2012 R2 クラスターから)。|
 
-> [!IMPORTANT]  
+> [!IMPORTANT]
 > セットアップが完了し、必要なサーバーの役割と機能をすべてインストールしたら、Windows Update またはその他の更新方法を使用して Windows Server 2016 に適用可能な更新プログラムがあるかどうかをすぐに確認し、ある場合はインストールします。
 
 ---------------------------------------
-別のインストール オプションが必要な場合、またはインストールを完了して特定のワークロードを展開する準備が整っている場合は、[Windows Server 2016 のメイン ページ](Windows-Server-2016.md)に戻ってください。
+別のインストール オプションが必要な場合、またはインストールを完了して特定のワークロードを展開する準備が整っている場合は、[Windows Server 2016 のメイン ページ](../index.yml)に戻ってください。

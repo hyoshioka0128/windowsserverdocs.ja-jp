@@ -1,19 +1,17 @@
 ---
 ms.assetid: e34622ff-b2d0-4f81-8d00-dacd5d6c215e
-title: Windows タイム サービス
+title: Windows タイム サービス (W32Time)
 author: dcuomo
 ms.author: dacuo
 manager: dougkim
 ms.date: 05/08/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: networking
-ms.openlocfilehash: 5dbb0db20f7100ed7dbe99587f201f38abf632ad
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 2bd28bc9e774ebdd30c81397bfe3a3bb6320a679
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80815905"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87997390"
 ---
 # <a name="windows-time-service-w32time"></a>Windows タイム サービス (W32Time)
 
@@ -32,9 +30,9 @@ Windows タイム サービス (W32Time) のトピックで、次の内容を確
 
 
 ## <a name="related-topics"></a>関連トピック
-ドメイン階層とスコアリング システムの詳細については、[Windows タイム サービスの概要](https://blogs.msdn.microsoft.com/w32time/2007/07/07/what-is-windows-time-service/)に関する記事 をご覧ください。
+ドメイン階層とスコアリング システムの詳細については、[Windows タイム サービスの概要](/archive/blogs/w32time/what-is-windows-time-service)に関する記事 をご覧ください。
 
-Windows タイム プロバイダー プラグイン モデルについては、[TechNet に記載されています](https://msdn.microsoft.com/library/windows/desktop/ms725475%28v=vs.85%29.aspx)。
+Windows タイム プロバイダー プラグイン モデルについては、[TechNet に記載されています](/windows/win32/sysinfo/time-provider)。
 
 Windows 2016 の正確な時刻の記事で参照されている補遺は、[こちらから](https://windocs.blob.core.windows.net/windocs/WindowsTimeSyncAccuracy_Addendum.pdf)ダウンロードできます。
 

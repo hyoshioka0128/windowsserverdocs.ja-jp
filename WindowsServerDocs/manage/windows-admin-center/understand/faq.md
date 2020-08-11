@@ -1,19 +1,17 @@
 ---
 title: Windows Admin Center についてよく寄せられる質問
 description: Windows Admin Center (Project Honolulu) に関する回答を確認できます
-ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.localizationpriority: medium
 ms.date: 12/02/2019
-ms.prod: windows-server
-ms.openlocfilehash: 4125a3f427bd19ae7461aaaef058a558722d1987
-ms.sourcegitcommit: b35fbd2a67d7a3395b50b2a3acd0817ba4e36b26
+ms.openlocfilehash: 2b1b6c8665e289647fe793125e7cc4c5024b4135
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86891377"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87993537"
 ---
 # <a name="windows-admin-center-frequently-asked-questions"></a>Windows Admin Center についてよく寄せられる質問
 
@@ -104,12 +102,12 @@ Microsoft Edge (Windows 10 バージョン 1709 以降)、Google Chrome、およ
 
 はい、一部のケースでは Windows Admin Center で CredSSP が必要です。 これは、管理対象の特定のサーバー以外のマシンに、認証のために資格情報を渡すために必要になります。 たとえば、**サーバー B** 上の仮想マシンを管理しているが、仮想マシンの vhdx ファイルを**サーバー C** によってホストされているファイル共有上に保存したい場合、ファイル共有にアクセスできるように Windows Admin Center で CredSSP を使用して**サーバー C** を認証する必要があります。
 
-Windows Admin Center は、ユーザーの同意を確認した後、自動的に CredSSP の構成を処理します。 Windows Admin Center は、CredSSP を構成する前に、システムに最近の CredSSP の[更新プログラム](https://support.microsoft.com/help/4093492/credssp-updates-for-cve-2018-0886-march-13-2018)が含まれているかどうかを確認します。 
+Windows Admin Center は、ユーザーの同意を確認した後、自動的に CredSSP の構成を処理します。 Windows Admin Center は、CredSSP を構成する前に、システムに最近の CredSSP の[更新プログラム](https://support.microsoft.com/help/4093492/credssp-updates-for-cve-2018-0886-march-13-2018)が含まれているかどうかを確認します。
 
 CredSSP は現在、次の領域で使用されています。
 
 - 仮想マシン ツールで細分類された SMB 記憶域の使用 (上記の例)
-- [クラスター対応更新](https://docs.microsoft.com/windows-server/failover-clustering/cluster-aware-updating)を実行する、フェールオーバーまたはハイパーコンバージド クラスター管理のソリューションでの更新プログラム ツールの使用 
+- [クラスター対応更新](../../../failover-clustering/cluster-aware-updating.md)を実行する、フェールオーバーまたはハイパーコンバージド クラスター管理のソリューションでの更新プログラム ツールの使用
 
 ## <a name="are-there-any-cloud-dependencies"></a>クラウド依存関係はありますか。
 
@@ -164,4 +162,4 @@ Microsoft の[起動画面](https://aka.ms/WindowsAdminCenter)を出発点にす
 
 ## <a name="im-having-an-issue-with-windows-admin-center-where-can-i-get-help"></a>Windows Admin Center で問題が発生していますが、どこでサポート情報を入手できますか。
 
-[トラブルシューティング ガイド](../use/troubleshooting.md)および[既知の問題](../use/known-issues.md)の一覧を参照してください。
+[トラブルシューティング ガイド](../support/troubleshooting.md)および[既知の問題](../support/known-issues.md)の一覧を参照してください。

@@ -1,19 +1,17 @@
 ---
 title: 適切なインストールの種類
 description: このトピックでは、Windows Admin Center のさまざまなインストール オプションについて説明します。これには、複数の管理者が使用する Windows 10 PC または Windows サーバーへのインストールが含まれます。
-ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.localizationpriority: medium
-ms.prod: windows-server
 ms.date: 12/02/2019
-ms.openlocfilehash: bd7ec8a5a072cbda99b036718d24ec1908fb8b53
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 4114869b3f138eea2e6ed45a4317699706471c5b
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "81269249"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87997003"
 ---
 # <a name="what-type-of-installation-is-right-for-you"></a>適切なインストールの種類
 
@@ -44,7 +42,7 @@ Windows Admin Center を操作するには:
 - **その他のシナリオ:** 別のコンピューター上の Windows Admin Center ゲートウェイにクライアント ブラウザーからその URL を使用して (たとえば、`https://servername.contoso.com`) 接続します。
 
 > [!WARNING]
-> ドメイン コントローラーへの Windows Admin Center のインストールはサポートされていません。 [ドメイン コントローラーのセキュリティに関するベスト プラクティスについて詳しくお読みください](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/security-best-practices/securing-domain-controllers-against-attack)。
+> ドメイン コントローラーへの Windows Admin Center のインストールはサポートされていません。 [ドメイン コントローラーのセキュリティに関するベスト プラクティスについて詳しくお読みください](../../../identity/ad-ds/plan/security-best-practices/securing-domain-controllers-against-attack.md)。
 
 ## <a name="installation-supported-web-browsers"></a>インストール:サポートされている Web ブラウザー
 
@@ -67,9 +65,9 @@ Windows Admin Center を使って、次の Windows オペレーティング シ�
 
 > [!NOTE]
 > Windows Admin Center では、Windows Server 2012 および 2012 R2 に含まれていない PowerShell 機能が必要です。 これらを Windows Admin Center で管理する場合は、Windows Management Framework (WMF) バージョン 5.1 以上をそれらのサーバーにインストールする必要があります。
-> 
-> PowerShell で `$PSVersiontable` を入力して、WMF がインストールされていること、またバージョンが 5.1 以上であることを確認します。 
-> 
+>
+> PowerShell で `$PSVersiontable` を入力して、WMF がインストールされていること、またバージョンが 5.1 以上であることを確認します。
+>
 > WMF がインストールされていない場合は、[WMF 5.1 をダウンロード](https://www.microsoft.com/download/details.aspx?id=54616)することができます。
 
 ## <a name="high-availability"></a>高可用性

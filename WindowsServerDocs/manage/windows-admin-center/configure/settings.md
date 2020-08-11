@@ -1,19 +1,17 @@
 ---
 title: Settings
 description: Windows Admin Center (Project Honolulu) の設定について説明します。 ユーザー設定を使用すると、ユーザーは言語や地域などの設定を変更できます。 ゲートウェイの設定により、管理者はゲートウェイを構成できます。
-ms.technology: manage
 ms.topic: article
 author: haley-rowland
 ms.author: harowl
 ms.date: 04/12/2018
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: e0fd6618f275058d4e22fe9abb9e484d4752ac9a
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: ff06a19d85858b8332412a51c029c9aeeba2af50
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71407057"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87997438"
 ---
 # <a name="windows-admin-center-settings"></a>Windows Admin Center の設定
 
@@ -56,6 +54,6 @@ Windows Admin Center の設定は、ユーザー レベルとゲートウェイ 
 
 **[アクセス]** タブでは、管理者は Windows Admin Center ゲートウェイにアクセスできるユーザーと、ユーザーの認証に使用する ID プロバイダーを構成できます。 [ゲートウェイへのアクセス制御の詳細については、こちらを参照してください。](user-access-control.md)
 
-管理者は **[Azure]** タブからゲートウェイを Azure に登録して、Windows Admin Center で [Azure 統合機能](azure-integration.md)を有効にすることができます。
+管理者は **[Azure]** タブからゲートウェイを Azure に登録して、Windows Admin Center で [Azure 統合機能](../azure/azure-integration.md)を有効にすることができます。
 
 管理者は **[共有接続]** タブを使用して、Windows Admin Center ゲートウェイのすべてのユーザー間で共有する接続の一覧を構成できます。 [ゲートウェイのすべてのユーザーに対して接続をまとめて構成する方法の詳細については、こちらをご覧ください。](shared-connections.md)

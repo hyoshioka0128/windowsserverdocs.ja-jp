@@ -1,43 +1,41 @@
 ---
 title: Nano Server のインストール
 description: Nano Server のクリーン インストール、アップグレード、移行、および評価
-ms.prod: windows-server
 manager: dougkim
-ms.technology: server-nano
 ms.date: 09/06/2017
 ms.topic: get-started-article
 ms.assetid: 2c2fa45b-6f3b-4663-b421-2da6ecc463bf
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 4002126ee6d9919c0a7fbfb3c068587c9acbecef
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 56944f3672a2caccb208aef4b2db465f354ad528
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86953684"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990558"
 ---
 # <a name="install-nano-server"></a>Nano Server のインストール
 
 >適用先:Windows Server 2016
 
 > [!IMPORTANT]
-> Windows Server バージョン 1709 以降では、Nano Server は[コンテナーの基本 OS イメージ](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image)としてのみ提供されます。 その意味については、[Nano Server に加えられる変更](nano-in-semi-annual-channel.md)に関する記事をご覧ください。 
+> Windows Server バージョン 1709 以降では、Nano Server は[コンテナーの基本 OS イメージ](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image)としてのみ提供されます。 その意味については、[Nano Server に加えられる変更](nano-in-semi-annual-channel.md)に関する記事をご覧ください。
 
-Windows Server 2016 では、新しいインストール オプションであるNano Server が提供されています。 Nano Server は、プライベート クラウドとデータセンター向けに最適化されたリモート管理サーバー オペレーティング システムです。 Nano Server は Server Core モードの Windows Server に似ていますが、サイズが大幅に小さく、ローカル ログオン機能がありません。さらに、64 ビットのアプリケーション、ツール、およびエージェントのみがサポートされます。 Windows Server と比べて Nano Server の場合は、使用されるディスク領域がかなり小さくなり、セットアップが大幅に速くなり、必要とされる更新と再起動の回数がずっと少なくなります。 再起動も非常に高速化されています。 Nano Server インストール オプションは、Windows Server 2016 の Standard Edition および Datacenter Edition で提供されます。  
+Windows Server 2016 では、新しいインストール オプションであるNano Server が提供されています。 Nano Server は、プライベート クラウドとデータセンター向けに最適化されたリモート管理サーバー オペレーティング システムです。 Nano Server は Server Core モードの Windows Server に似ていますが、サイズが大幅に小さく、ローカル ログオン機能がありません。さらに、64 ビットのアプリケーション、ツール、およびエージェントのみがサポートされます。 Windows Server と比べて Nano Server の場合は、使用されるディスク領域がかなり小さくなり、セットアップが大幅に速くなり、必要とされる更新と再起動の回数がずっと少なくなります。 再起動も非常に高速化されています。 Nano Server インストール オプションは、Windows Server 2016 の Standard Edition および Datacenter Edition で提供されます。
 
-Nano Server は、次のようなさまざまなシナリオに適しています。  
-  
--   Hyper-V 仮想マシンのコンピューティング ホストとして (クラスター化されているかどうかに関係なく)  
-  
--   スケールアウト ファイル サーバーの記憶域ホストとして  
-  
--   DNS サーバーとして  
-  
--   インターネット インフォメーション サービス (IIS) を実行する Web サーバーとして  
-  
--   クラウド アプリケーション パターンを使って開発され、コンテナーまたは仮想マシン ゲスト オペレーティング システムで実行されるアプリケーションのホストとして  
-  
+Nano Server は、次のようなさまざまなシナリオに適しています。
+
+-   Hyper-V 仮想マシンのコンピューティング ホストとして (クラスター化されているかどうかに関係なく)
+
+-   スケールアウト ファイル サーバーの記憶域ホストとして
+
+-   DNS サーバーとして
+
+-   インターネット インフォメーション サービス (IIS) を実行する Web サーバーとして
+
+-   クラウド アプリケーション パターンを使って開発され、コンテナーまたは仮想マシン ゲスト オペレーティング システムで実行されるアプリケーションのホストとして
+
 ## <a name="important-differences-in-nano-server"></a>Nano Server における重要な相違点
 
 Nano Server は、コンテナーおよびマイクロサービスに基づくクラウド ネイティブ アプリケーションを実行するための軽量なオペレーティング システムとして、またはフットプリントが大幅に削減された機敏性とコスト効果の高いデータ センター ホストとして最適化されています。このため、Nano Server と、デスクトップ エクスペリエンスのインストールを使用した Server Core または Server との間には重要な違いがあります。
@@ -45,7 +43,7 @@ Nano Server は、コンテナーおよびマイクロサービスに基づく�
 - Nano Server はヘッドレス型であり、ローカル ログオン機能やグラフィカル ユーザー インターフェイスはありません。
 - 64 ビットのアプリケーション、ツール、およびエージェントのみがサポートされています。
 - Nano Server は、Active Directory ドメイン コントローラーとして使用することはできません。
-- グループ ポリシーはサポートされていません。 ただし、[必要な状態の構成 (DSC)](/previous-versions//dn387184(v=vs.85)) を使用することで、設定を大規模に適用できます。
+- グループ ポリシーはサポートされていません。 ただし、[必要な状態の構成 (DSC)](/previous-versions/dn387184(v=vs.85)) を使用することで、設定を大規模に適用できます。
 - プロキシ サーバーを使用してインターネットにアクセスするように、Nano Server を構成することはできません。
 - NIC チーミング (具体的には、LBFO (Load Balancing and Failover: 負荷分散とフェールオーバー)) はサポートされていません。 代わりに、スイッチ埋め込みチーミング (SET) がサポートされています。
 - Microsoft Endpoint Configuration Manager と System Center Data Protection Manager はサポートされていません。
@@ -68,10 +66,10 @@ Nano Server は、開発サイクルが短いクラウド歩調で事業を進�
 ### <a name="clean-installation"></a>クリーン インストール
 VHD を構成して Nano Server をインストールするため、クリーン インストールは、最も迅速かつ最も簡単な展開方法です。
 
-- DHCP を使用して IP アドレスを取得する Nano Server の基本的な展開をすばやく開始するには、「[Nano Server のクイック スタート](Nano-Server-Quick-Start.md)」を参照してください。 
+- DHCP を使用して IP アドレスを取得する Nano Server の基本的な展開をすばやく開始するには、「[Nano Server のクイック スタート](Nano-Server-Quick-Start.md)」を参照してください。
 - Nano Server の基礎を理解している方向けに、「[Nano Server の展開](Deploy-Nano-Server.md)」で始まる一連の詳細なトピックで、イメージのカスタマイズ、ドメインの操作、オンラインとオフラインの両方でパッケージをインストールしてサーバーの役割とその他の機能を設定する方法などについて説明しています。
 
-> [!IMPORTANT]  
+> [!IMPORTANT]
 > セットアップが完了し、必要なサーバーの役割と機能をすべてインストールしたら、Windows Server 2016 に適用可能な更新プログラムがあるかどうかをすぐに確認し、ある場合はインストールします。 Nano Server については、「[Nano Server の管理](Manage-Nano-Server.md)」の「Nano Server の更新を管理する」を参照してください。
 
 ### <a name="upgrade"></a>アップグレード パッケージ、アップグレード
@@ -79,11 +77,6 @@ Nano Server は Windows Server 2016 の新機能であるため、以前のバ�
 
 ### <a name="migration"></a>移行
 Nano Server は Windows Server 2016 の新機能であるため、以前のバージョンのオペレーティング システムから Nano Server への移行パスはありません。
-  
+
 -------------------------------------
-別のインストール オプションが必要な場合は、[Windows Server 2016 のメイン ページ](windows-server-2016.md)に戻ってください。 
-
-  
-
-
- 
+別のインストール オプションが必要な場合は、[Windows Server 2016 のメイン ページ](../index.yml)に戻ってください。

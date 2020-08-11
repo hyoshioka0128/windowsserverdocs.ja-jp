@@ -1,19 +1,17 @@
 ---
 title: Windows Admin Center でのユーザー アクセス オプション
 description: Windows Admin Center でのユーザー アクセス オプションと ID プロバイダー (Project Honolulu)
-ms.technology: manage
 ms.topic: article
 author: haley-rowland
 ms.author: harowl
 ms.date: 03/07/2019
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 084cdae0bf8ca0eb3aff1f4679d30978b860efef
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 3c96968f55a06c7ccffd9f7919001f21bff6a75c
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71356916"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87996986"
 ---
 # <a name="user-access-options-with-windows-admin-center"></a>Windows Admin Center でのユーザー アクセス オプション
 
@@ -33,7 +31,7 @@ Windows Admin Center では、ゲートウェイ サービスにアクセスす�
 **ゲートウェイ管理者**は、誰がゲートウェイにアクセスできるかと、ゲートウェイにアクセスするユーザーの認証方法を構成できます。
 
 >[!NOTE]
-> Windows Admin Center にアクセス グループが定義されていない場合、ロールにはゲートウェイ サーバーへの Windows アカウントのアクセス権が反映されます。 
+> Windows Admin Center にアクセス グループが定義されていない場合、ロールにはゲートウェイ サーバーへの Windows アカウントのアクセス権が反映されます。
 
 [Windows Admin Center でゲートウェイ ユーザーと管理者のアクセス権を構成します](../configure/user-access-control.md)。
 
@@ -51,7 +49,7 @@ Active Directory またはローカル マシンのグループを ID プロバ�
 
 ### <a name="conditional-access-and-multi-factor-authentication"></a>条件付きアクセスと多要素認証
 
-ゲートウェイに対して Azure AD 認証を要求することにより、Azure AD で提供されている条件付きアクセスや多要素認証などの追加のセキュリティ機能を利用できます。 [Azure Active Directory を使用した条件付きアクセスの構成の詳細については、こちらを参照してください。](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal-get-started)
+ゲートウェイに対して Azure AD 認証を要求することにより、Azure AD で提供されている条件付きアクセスや多要素認証などの追加のセキュリティ機能を利用できます。 [Azure Active Directory を使用した条件付きアクセスの構成の詳細については、こちらを参照してください。](/azure/active-directory/active-directory-conditional-access-azure-portal-get-started)
 
 ## <a name="role-based-access-control"></a>ロール基準のアクセス制御
 

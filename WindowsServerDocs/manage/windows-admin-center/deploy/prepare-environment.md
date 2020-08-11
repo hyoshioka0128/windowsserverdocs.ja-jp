@@ -1,19 +1,17 @@
 ---
 title: Windows Admin Center のための環境の準備
 description: Windows Admin Center (Project Honolulu) のための環境の準備
-ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 06/07/2019
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: a37c7e8765ba6f83fc1ebe20aaba3dfb8bc29a3d
-ms.sourcegitcommit: b35fbd2a67d7a3395b50b2a3acd0817ba4e36b26
+ms.openlocfilehash: 5506918ed8da3a71c5ca078ce84502a3d889a386
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86891347"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87997462"
 ---
 # <a name="prepare-your-environment-for-windows-admin-center"></a>Windows Admin Center のための環境の準備
 
@@ -35,7 +33,7 @@ Windows Admin Center には、既定で Windows Server 2012 および 2012 R2 �
 
 PowerShell で `$PSVersiontable` を入力して、WMF がインストールされていること、またバージョンが 5.1 以上であることを確認します。
 
-インストールされていない場合は、[WMF 5.1 をダウンロードしてインストール](https://docs.microsoft.com/powershell/scripting/wmf/setup/install-configure)できます。
+インストールされていない場合は、[WMF 5.1 をダウンロードしてインストール](/powershell/scripting/wmf/setup/install-configure)できます。
 
 ## <a name="prepare-microsoft-hyper-v-server-2016"></a>Microsoft Hyper-V Server 2016 の準備
 
@@ -93,7 +91,7 @@ Windows Admin Center では、既定で Microsoft Hyper-V Server 2012 R2 に含�
 
 PowerShell で `$PSVersiontable` を入力して、WMF がインストールされていること、またバージョンが 5.1 以上であることを確認します。
 
-インストールされていない場合は、[WMF 5.1 をダウンロード](https://docs.microsoft.com/powershell/scripting/wmf/setup/install-configure)することができます。
+インストールされていない場合は、[WMF 5.1 をダウンロード](/powershell/scripting/wmf/setup/install-configure)することができます。
 
 ### <a name="step-2-enable-remote-management"></a>手順 2:リモート管理の有効化
 
@@ -129,4 +127,4 @@ PowerShell 機能の Hyper-V モジュールを有効にするには:
 Windows Admin Center では、リモート サーバーに証明書をインポートする場合など、いくつかのファイル コピー タスクで SMB ファイル共有プロトコルが使用されます。 これらのファイル コピー操作を成功させるには、リモート サーバーのファイアウォールで、ポート 445 での受信接続を許可する必要があります。  Windows Admin Center のファイアウォール ツールを使用して、[ファイル サーバーのリモート管理 (SMB 受信)] の受信ルールがこのポートでのアクセスを許可するように設定されていることを確認できます。
 
 > [!Tip]
-> Windows Admin Center をインストールする準備はできましたか。 [今すぐダウンロード](https://docs.microsoft.com/windows-server/manage/windows-admin-center/understand/windows-admin-center#download-now)
+> Windows Admin Center をインストールする準備はできましたか。 [今すぐダウンロード](../overview.md#download-now)

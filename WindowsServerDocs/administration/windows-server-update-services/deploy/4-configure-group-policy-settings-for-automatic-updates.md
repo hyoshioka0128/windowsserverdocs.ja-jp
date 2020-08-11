@@ -1,20 +1,18 @@
 ---
 title: 手順 4 - 自動更新のグループ ポリシー設定を構成する
 description: Windows Server Update Service (WSUS) のトピック - 「自動更新のグループ ポリシー設定を構成する」は、WSUS をデプロイする 4 つの手順のうちの手順 4 です。
-ms.prod: windows-server
-ms.technology: manage-wsus
 ms.topic: article
 ms.assetid: 62177d05-d832-4ea8-bca4-47a8cd34a19c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d678c139ae2327eeecdff2731f1edb57d358a28a
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: ca59369cda4c38af111b9ccd3141219b1516cbd7
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80828845"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991099"
 ---
 # <a name="step-4-configure-group-policy-settings-for-automatic-updates"></a>手順 4:自動更新のグループ ポリシー設定を構成する
 
@@ -639,7 +637,7 @@ GPMC では、コンピューターの自動更新のユーザー設定は、次
 
     -   **グループ ポリシーの [コンピューターの構成] > [メンテナンス スケジューラ] 拡張を開きます**。 GPOE で、*PolicyName* >  **[コンピューターの構成]**  >  **[ポリシー]**  >  **[管理用テンプレート]**  >  **[Windows コンポーネント]**  >  **[メンテナンス スケジューラ]** に移動します。
 
-グループ ポリシーの詳細については、「[グループ ポリシーの概要](https://technet.microsoft.com/library/hh831791.aspx(v=ws.12))」を参照してください。
+グループ ポリシーの詳細については、「[グループ ポリシーの概要](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831791(v=ws.11))」を参照してください。
 
 > [!TIP]
 > 必要なグループ ポリシーの拡張を開いたら、次の手順を使用して、設定の有効化、無効化、または移動を行うことができます。

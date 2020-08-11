@@ -1,19 +1,17 @@
 ---
 title: ユーザー アクセス制御とアクセス許可の構成
 description: Active Directory または Azure AD (Project Honolulu) を使用してユーザー アクセス制御とアクセス許可を構成する方法について説明します。
-ms.technology: manage
 ms.topic: article
 author: haley-rowland
 ms.author: harowl
 ms.date: 06/07/2019
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 0de38560301d4d793214846036850a05a5d5a326
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 99fafcb5a42133baeb119a9857a2e05b7e3dbd89
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182208"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87997420"
 ---
 # <a name="configure-user-access-control-and-permissions"></a>ユーザー アクセス制御とアクセス許可を構成する
 
@@ -82,7 +80,7 @@ Azure AD 認証を有効にした後は、ゲートウェイ サービスが再�
 
 ### <a name="configuring-azure-active-directory-authentication-for-windows-admin-center"></a>Windows Admin Center の Azure Active Directory 認証の構成
 
-[Azure AD 認証を設定するには、まず Azure にゲートウェイを登録する必要があります](azure-integration.md) (この操作は、Windows Admin Center ゲートウェイに対して 1 回だけ行う必要があります)。 この手順では、ゲートウェイ ユーザーとゲートウェイ管理者のアクセスを管理できる Azure AD アプリケーションを作成します。
+[Azure AD 認証を設定するには、まず Azure にゲートウェイを登録する必要があります](../azure/azure-integration.md) (この操作は、Windows Admin Center ゲートウェイに対して 1 回だけ行う必要があります)。 この手順では、ゲートウェイ ユーザーとゲートウェイ管理者のアクセスを管理できる Azure AD アプリケーションを作成します。
 
 特定の Azure AD ユーザーまたはグループ ゲートウェイ ユーザーまたはゲートウェイ管理者に Windows Admin Center サービスへのアクセスを許可する場合は、次の操作を行う必要があります。
 
@@ -103,7 +101,7 @@ Azure AD 認証を有効にした後は、ゲートウェイ サービスが再�
 
 Windows Admin Center ゲートウェイへのアクセスを制御するために Azure AD を追加のセキュリティ層として使用する利点の 1 つは、条件付きアクセスや多要素認証などの Azure AD の強力なセキュリティ機能を利用できることです。
 
-[Azure Active Directory を使用した条件付きアクセスの構成の詳細については、こちらを参照してください。](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal-get-started)
+[Azure Active Directory を使用した条件付きアクセスの構成の詳細については、こちらを参照してください。](/azure/active-directory/active-directory-conditional-access-azure-portal-get-started)
 
 ## <a name="configure-single-sign-on"></a>シングル サインオンを構成する
 
@@ -111,7 +109,7 @@ Windows Admin Center ゲートウェイへのアクセスを制御するため�
 
 Windows 10 に Windows Admin Center をインストールすると、シングル サインオンを使用できるようになります。 ただし、Windows Server 上で Windows Admin Center を使用する場合は、シングル サインオンを使用する前に、環境内に何らかの形式の Kerberos 委任を設定する必要があります。 委任によってゲートウェイ マシンが信頼済みとして構成され、ターゲット ノードに委任されます。
 
-環境内で[リソースベースの制約付き委任](https://docs.microsoft.com/windows-server/security/kerberos/kerberos-constrained-delegation-overview)を構成するには、次の PowerShell の例を使用します。 この例は、contoso.com ドメインの Windows Admin Center ゲートウェイ [wac.contoso.com] からの委任を受け入れるように Windows サーバー [node01.contoso.com] を構成する方法を示しています。
+環境内で[リソースベースの制約付き委任](../../../security/kerberos/kerberos-constrained-delegation-overview.md)を構成するには、次の PowerShell の例を使用します。 この例は、contoso.com ドメインの Windows Admin Center ゲートウェイ [wac.contoso.com] からの委任を受け入れるように Windows サーバー [node01.contoso.com] を構成する方法を示しています。
 
 ```powershell
 Set-ADComputer -Identity (Get-ADComputer node01) -PrincipalsAllowedToDelegateToAccount (Get-ADComputer wac)

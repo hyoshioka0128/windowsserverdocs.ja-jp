@@ -1,20 +1,18 @@
 ---
 title: 仮想デスクトップ インフラストラクチャ (VDI) ロール用の Windows 10 バージョン 1909 の最適化
 description: VDI イメージとして使用される Windows 10 バージョン 1909 デスクトップのオーバーヘッドを最小限に抑える推奨の設定および構成。
-ms.prod: windows-server
 ms.reviewer: robsmi
-ms.technology: remote-desktop-services
 ms.author: helohr
 ms.topic: article
 author: heidilohr
 manager: lizross
 ms.date: 02/19/2020
-ms.openlocfilehash: 7568db50f09273b398955c314491b903f627d1a9
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 7b9500c11ca5dba7ed2f51d1d6b32b7cf689f070
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182098"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87997128"
 ---
 # <a name="optimizing-windows-10-version-1909-for-a-virtual-desktop-infrastructure-vdi-role"></a>仮想デスクトップ インフラストラクチャ (VDI) ロール用の Windows 10 バージョン 1909 の最適化
 
@@ -195,7 +193,7 @@ Remove-AppxProvisionedPackage -Online -PackageName
 
 ### <a name="manage-windows-optional-features-using-powershell"></a>PowerShell を使用して Windows のオプション機能を管理する
 
-PowerShell を使用して Windows のオプション機能を管理できます。 詳細については、[Windows Server の PowerShell のフォーラム](https://docs.microsoft.com/answers/topics/windows-server-powershell.html)をご覧ください。 現在インストールされている Windows の機能を列挙するには、次の PowerShell コマンドを実行します。
+PowerShell を使用して Windows のオプション機能を管理できます。 詳細については、[Windows Server の PowerShell のフォーラム](/answers/topics/windows-server-powershell.html)をご覧ください。 現在インストールされている Windows の機能を列挙するには、次の PowerShell コマンドを実行します。
 
 ```powershell
 Get-WindowsOptionalFeature -Online
@@ -715,7 +713,7 @@ Microsoft は、VDI 環境での Windows Defender に関する説明書を最近
 >[!NOTE]
 > このセクションの一部の設定はレジストリのみに基づいており、実稼働環境での使用のためにイメージを展開する前に基本イメージに組み込む必要があります。
 
-次の設定は、Windows Product Group により Microsoft.com で公開された「[Windows Server 2016 のパフォーマンス チューニング ガイドライン](/windows-server/administration/performance-tuning/)」に記載されています。
+次の設定は、Windows Product Group により Microsoft.com で公開された「[Windows Server 2016 のパフォーマンス チューニング ガイドライン](../../administration/performance-tuning/index.md)」に記載されています。
 
 #### <a name="disablebandwidththrottling"></a>DisableBandwidthThrottling
 

@@ -1,20 +1,18 @@
 ---
 title: WSUS 展開を計画します。
 description: Windows Server Update Service (WSUS) のトピック - 展開計画のプロセスの概要と関連トピックへのリンク
-ms.prod: windows-server
-ms.technology: manage-wsus
 ms.topic: article
 ms.assetid: 35865398-b011-447a-b781-1c52bc0c9e3a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/24/2018
-ms.openlocfilehash: de4fe62b179286f058a9c4508e9f907eeb9ae806
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 8e6aaaef666577db134d5d5bb42feffb38cb5a36
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87178578"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990936"
 ---
 # <a name="plan-your-wsus-deployment"></a>WSUS 展開を計画する
 
@@ -101,14 +99,14 @@ WSUS を使用して更新できるように (サーバーを含む) クライ�
 2. Windows クライアントの各エディションでは、Web からオンデマンドで .NET 3.5 をインストールすることはできません。 .NET 3.5 には、サーバーの役割と同じ考慮事項が適用されます。
 
    > [!NOTE]
-   > 必要に応じてインストール ソースで、機能の構成では、WSUS は関与しません。 機能を構成する方法については、「 [Windows Server でのオンデマンド機能の構成](https://technet.microsoft.com/library/jj127275.aspx)」を参照してください。
+   > 必要に応じてインストール ソースで、機能の構成では、WSUS は関与しません。 機能を構成する方法については、「 [Windows Server でのオンデマンド機能の構成](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127275(v=ws.11))」を参照してください。
 
 3. Windows 10 バージョン 1709 またはバージョン 1803 を実行しているエンタープライズ デバイスでは、WSUS からオンデマンド機能を直接インストールすることはできません。 オンデマンド機能をインストールするには、[機能ファイル (サイド バイ サイド ストア) を作成](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127275%28v=ws.11%29#create-a-feature-file-or-side-by-side-store)するか、次のいずれかのソースからオンデマンド機能パッケージを取得します。
    - [ボリューム ライセンス サービス センター](https://www.microsoft.com/licensing/servicecenter) (VLSC) - VL のアクセス権が必要です
    - OEM ポータル - OEM のアクセス権が必要です
    - MSDN ダウンロード - 有効な MSDN サブスクリプションが必要です
 
-     個別に取得したオンデマンド機能パッケージは [DISM コマンド ライン オプション](https://docs.microsoft.com/windows-hardware/manufacture/desktop/dism-operating-system-package-servicing-command-line-options)を使用してインストールできます。
+     個別に取得したオンデマンド機能パッケージは [DISM コマンド ライン オプション](/windows-hardware/manufacture/desktop/dism-operating-system-package-servicing-command-line-options)を使用してインストールできます。
 
 ### <a name="wsus-database-requirements"></a>WSUS データベースの要件
 WSUS では、次のいずれかのデータベースが必要です。
@@ -244,9 +242,9 @@ WSUS では、データベースに対して Windows 認証のみをサポート
 
 Windows Internal Database にはユーザー インターフェイスもデータベース管理ツールも用意されていません。 WSUS にこのデータベースを選択する場合、外部ツールを使用してデータベースを管理する必要があります。 詳細については、次のドキュメントを参照してください。
 
--   [WSUS データのバックアップと復元およびサーバーのバックアップに関するページ](https://technet.microsoft.com/library/dd939904(WS.10).aspx)
+-   [WSUS データのバックアップと復元およびサーバーのバックアップに関するページ](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd939904(v=ws.10))
 
--   [WSUS データベースの再インデックス化に関するページ](https://technet.microsoft.com/library/dd939795(WS.10).aspx)
+-   [WSUS データベースの再インデックス化に関するページ](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd939795(v=ws.10))
 
 #### <a name="wsus-with-sql-server"></a>SQL Server を使用した WSUS
 次の場合は WSUS で SQL Server を使用することをお勧めします。
@@ -324,7 +322,7 @@ WSUS 構成ウィザードの **[言語の選択]** ページを使用すると�
 WSUS では、クライアント コンピューターのグループを更新プログラム展開の対象とすることができるため、特定のコンピューターは常に最も適切な時間に適切な更新プログラムを取得できます。 たとえば、ある部署 (経理チーム) 内のすべてのコンピューターが特定の構成になっている場合、そのチームのグループを設定し、コンピューターで必要な更新プログラムと更新プログラムをインストールするタイミングを決定し、WSUS レポートを使用してチームの更新プログラムを評価できます。
 
 > [!NOTE]
-> WSUS サーバーがレプリカ モードで実行されている場合、そのサーバーにコンピューター グループを作成できません。 レプリカ サーバーのクライアント コンピューターに必要なすべてのコンピューター グループは、WSUS サーバー階層のルートである WSUS サーバーに作成する必要があります。 レプリカ モードの詳細については、WSUS レプリカ サーバーの管理を参照してください。 [WSUS レプリカ サーバーの管理](https://technet.microsoft.com/library/dd939893(WS.10).aspx) WSUS 3.0 SP2 Operations guide の「します。
+> WSUS サーバーがレプリカ モードで実行されている場合、そのサーバーにコンピューター グループを作成できません。 レプリカ サーバーのクライアント コンピューターに必要なすべてのコンピューター グループは、WSUS サーバー階層のルートである WSUS サーバーに作成する必要があります。 レプリカ モードの詳細については、WSUS レプリカ サーバーの管理を参照してください。 [WSUS レプリカ サーバーの管理](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd939893(v=ws.10)) WSUS 3.0 SP2 Operations guide の「します。
 
 コンピューターは常に **All computers** グループに割り当てられ、別のグループに割り当てるまでは **Unassigned computers** グループに割り当てられたままになります。 コンピューターは複数のグループに所属することができます。
 
@@ -436,14 +434,14 @@ WSUS は特定のバージョンの更新されたコンポーネントに適用
 ### <a name="large-update-deployment"></a>サイズの大きな更新プログラムの展開
 サイズの大きな更新プログラム (Service Pack など) を展開する場合は、次の方法を使用して、ネットワークが飽和状態になるのを防ぐことができます。
 
-1.  バックグラウンド インテリジェント転送サービス (BITS) の調整を使用します。 BITS の帯域幅の制限は時刻で管理できますが、BITS を使用しているすべてのアプリケーションに適用されます。 BITS の調整を管理する方法については、[グループ ポリシー](https://msdn.microsoft.com/library/windows/desktop/aa362844(v=vs.85).aspx)に関するページを参照してください。
+1.  バックグラウンド インテリジェント転送サービス (BITS) の調整を使用します。 BITS の帯域幅の制限は時刻で管理できますが、BITS を使用しているすべてのアプリケーションに適用されます。 BITS の調整を管理する方法については、[グループ ポリシー](/windows/win32/bits/group-policies)に関するページを参照してください。
 
 2.  インターネット インフォメーション サービス (IIS) の調整を使用して、調整を 1 つ以上の Web サービスに制限します。
 
 3.  コンピューター グループを使用して、ロールアウトを制御します。 クライアント コンピューターは、WSUS サーバーに情報を送信するときに、特定のコンピューター グループのメンバーとしてそれ自体を識別します。 WSUS サーバーはこの情報を使用して、このコンピューターに展開する必要のある更新プログラムを判断します。 複数のコンピューター グループを設定して、それらのグループのサブセットに対してサイズの大きな Service Pack のダウンロードを順番に承認します。
 
 ### <a name="background-intelligent-transfer-service"></a>バックグラウンド インテリジェント転送サービス
-WSUS はすべてのファイル転送タスクにバックグラウンド インテリジェント転送サービス (BITS) プロトコルを使用します。 これには、クライアント コンピューターへのダウンロードと、サーバーの同期が含まれます。 BITS では、プログラムが予備の帯域幅を使用してファイルをダウンロードできます。 BITS は、ネットワークの切断やコンピューターの再起動が発生しても、ファイルの転送を維持します。 詳細については、次のドキュメントを参照してください。[バックグラウンド インテリジェント転送サービス](https://msdn.microsoft.com/library/bb968799.aspx)。
+WSUS はすべてのファイル転送タスクにバックグラウンド インテリジェント転送サービス (BITS) プロトコルを使用します。 これには、クライアント コンピューターへのダウンロードと、サーバーの同期が含まれます。 BITS では、プログラムが予備の帯域幅を使用してファイルをダウンロードできます。 BITS は、ネットワークの切断やコンピューターの再起動が発生しても、ファイルの転送を維持します。 詳細については、次のドキュメントを参照してください。[バックグラウンド インテリジェント転送サービス](/windows/win32/bits/background-intelligent-transfer-service-portal)。
 
 ## <a name="17-plan-automatic-updates-settings"></a>1.7. 自動更新の設定を計画する
 WSUS サーバーで更新プログラムを承認する期限を指定できます。 この期限により、クライアント コンピューターでは特定の期間に更新プログラムがインストールされますが、期限を過ぎているかどうか、インストール対象のコンピューターのキューに他の更新プログラムがあるかどうか、および更新プログラム (またはキューに含まれている他の更新プログラム) が再起動を必要とするかどうかによって、さまざまな状況があります。
@@ -463,4 +461,3 @@ WSUS サーバーで更新プログラムを承認する期限を指定できま
 コンピューターの再起動が必要な場合で、ユーザーがログオンしている場合は、同様のカウントダウン ダイアログ ボックスが表示され、もうすぐ再起動が行われることについての警告がユーザーに表示されます。 コンピューターの再起動は、グループ ポリシーを使用して操作できます。
 
 新しい更新プログラムがダウンロードされた後、自動更新が承認済みの更新プログラムの一覧について WSUS サーバーをポーリングし、ダウンロード済みのパッケージが依然として有効で承認済みであることを確認します。 つまり、自動更新による更新プログラムのダウンロード中に WSUS 管理者が承認済みの更新プログラムの一覧から更新プログラムを削除した場合、実際には、承認されている更新プログラムのみがインストールされます。
-

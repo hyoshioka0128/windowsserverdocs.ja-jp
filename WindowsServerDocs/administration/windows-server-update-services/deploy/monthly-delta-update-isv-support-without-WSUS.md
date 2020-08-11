@@ -1,27 +1,25 @@
 ---
 title: WSUS を使用しない毎月の差分更新 ISV のサポート
 description: Windows Server Update Service (WSUS) のトピック - 独立系ソフトウェア ベンダー (ISV) が WSUS Express 更新プログラム配信ではなく毎月の差分更新プログラムを一時的に使用してパッケージ サイズを小さくする方法
-ms.prod: windows-server
-ms.technology: manage-wsus
 ms.topic: get-started article
 author: sakitong
 ms.author: coreyp
 manager: dougkim
 ms.date: 10/16/2017
-ms.openlocfilehash: 3ccddd3bfd55ae340dc5273905bb475e7d2cb98a
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 103e52d140ee70ff2ee6ac7817371c9b80d037ca
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80828745"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990996"
 ---
 # <a name="monthly-delta-update-isv-support-without-wsus"></a>WSUS を使用しない毎月の差分更新 ISV のサポート
 
 >適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows 10
 
-Windows 10 更新プログラムでは、すべてのパッケージにそれまでのすべての修正が含まれています。これは一貫性を保ち、更新を簡素化するためですが、それによってダウンロードのサイズが大きくなることがあります。  
+Windows 10 更新プログラムでは、すべてのパッケージにそれまでのすべての修正が含まれています。これは一貫性を保ち、更新を簡素化するためですが、それによってダウンロードのサイズが大きくなることがあります。
 
-Windows では、バージョン 7 以降、[エクスプレス](https://technet.microsoft.com/library/cc708456(v=ws.10).aspx#Anchor_2)と呼ばれる機能を使用して Windows Update ダウンロードのサイズを縮小できるようになりました。コンシューマー デバイスでは既定でサポートされていますが、Windows 10 エンタープライズ デバイスでエクスプレスを利用するには Windows Server Update Services (WSUS) が必要です。 WSUS を利用できる場合は、「[更新プログラムのエクスプレス配信 ISV のサポート](express-update-delivery-ISV-support.md)」を参照してください。 これを使用して更新プログラムのエクスプレス配信を有効にすることをお勧めします。 
+Windows では、バージョン 7 以降、[エクスプレス](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc708456(v=ws.10)#Anchor_2)と呼ばれる機能を使用して Windows Update ダウンロードのサイズを縮小できるようになりました。コンシューマー デバイスでは既定でサポートされていますが、Windows 10 エンタープライズ デバイスでエクスプレスを利用するには Windows Server Update Services (WSUS) が必要です。 WSUS を利用できる場合は、「[更新プログラムのエクスプレス配信 ISV のサポート](express-update-delivery-ISV-support.md)」を参照してください。 これを使用して更新プログラムのエクスプレス配信を有効にすることをお勧めします。
 
 現在 WSUS がインストールされていなくても、当面必要な更新パッケージのサイズが比較的小さい場合は、毎月の差分更新を使用できます。 差分更新では、パッケージ サイズが大幅に縮小されますが、WSUS Expres 更新プログラム配信ほどではありません。 パッケージ サイズを最大限に縮小するには、可能な限り WSUS Expres 更新プログラムをデプロイすることをお勧めします。 次に示すのは、Windows 10 バージョン 1607 の差分、累積、エクスプレスのダウンロード サイズを比較したグラフです。
 
@@ -47,7 +45,7 @@ Windows では、バージョン 7 以降、[エクスプレス](https://technet
 差分と累積は同じサポート技術情報番号と同じ分類を持ち、同時にリリースされます。 更新プログラムは、カタログ内の更新プログラムのタイトルまたは msu の名前で区別できます。
 
 - 2017-02 x64 ベース システム用 Windows 10 Version 1607 の " *\***差分更新プログラム**\**  " (KB1234567)
-- 2017-02 x86 ベース システム用 Windows 10 Version 1607 の " *\***累積更新プログラム**\**  " (KB1234567)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+- 2017-02 x86 ベース システム用 Windows 10 Version 1607 の " *\***累積更新プログラム**\**  " (KB1234567)
 
 ### <a name="when-to-use-monthly-delta-update"></a>毎月の差分更新を使用するケース
 
@@ -67,15 +65,15 @@ Windows では、バージョン 7 以降、[エクスプレス](https://technet
 2. 保留中状態のパッケージを一覧表示します。
 
     `x:\windows\system32\dism.exe /image:<drive letter for windows directory> /Get-Packages >> <path to text file>`
- 
+
     > **例**: ` x:\windows\system32\dism.exe /image:c:\ /Get-Packages >> c:\temp\packages.txt`
- 
+
 3. **get-packages** にパイプで指定したテキスト ファイルを開きます。 インストール保留中の修正プログラムが表示されている場合は、パッケージ名ごとに **remove-package** を実行します。
- 
+
    `dism.exe /image:<drive letter for windows directory> /remove-package /packagename:<package name>`
- 
+
     > **例**: `x:\windows\system32\dism.exe /image:c:\ /remove-package /packagename:Package_for_KB4014329~31bf3856ad364e35~amd64~~10.0.1.0`
- 
+
     >[!NOTE]
     >アンインストール保留中の修正プログラムは削除しないでください。
 

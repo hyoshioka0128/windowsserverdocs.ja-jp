@@ -1,19 +1,17 @@
 ---
 title: Windows Admin Center のインストール
 description: 複数のユーザーが Web ブラウザーを使用して Windows Admin Center にアクセスできるように、Windows PC 上またはサーバー上に Windows Admin Center をインストールする方法を説明します。
-ms.technology: manage
 ms.topic: article
 author: jwwool
 ms.author: jeffrew
 ms.date: 07/17/2019
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: cab128a3da9fa58c598cebcdf188058631c33977
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: df5e7e2c23b9120a890b34448868ec4d5b1c99b3
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "75950007"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87997412"
 ---
 # <a name="install-windows-admin-center"></a>Windows Admin Center のインストール
 
@@ -27,7 +25,7 @@ ms.locfileid: "75950007"
 
 ## <a name="determine-your-installation-type"></a>インストールの種類を決定する
 
-[サポートされているオペレーティング システム](https://docs.microsoft.com/windows-server/manage/windows-admin-center/plan/installation-options#installation-supported-operating-systems)を含む[インストール オプション](../plan/installation-options.md)について確認します。 Azure にある VM 上に Windows Admin Center をインストールするには、「[Windows Admin Center を Azure にデプロイする](../azure/deploy-wac-in-azure.md)」を参照してください。
+[サポートされているオペレーティング システム](../plan/installation-options.md#installation-supported-operating-systems)を含む[インストール オプション](../plan/installation-options.md)について確認します。 Azure にある VM 上に Windows Admin Center をインストールするには、「[Windows Admin Center を Azure にデプロイする](../azure/deploy-wac-in-azure.md)」を参照してください。
 
 ## <a name="install-on-windows-10"></a>Windows 10 へのインストール
 
@@ -61,7 +59,7 @@ Windows Server の Server Core インストールがある場合は、(管理者
 
 次のコマンドを実行して Windows Admin Center をインストールし、自己署名証明書を自動生成します。
 
-```   
+```
 msiexec /i <WindowsAdminCenterInstallerName>.msi /qn /L*v log.txt SME_PORT=<port> SSL_CERTIFICATE_OPTION=generate
 ```
 

@@ -1,20 +1,18 @@
 ---
 title: Windows Server 2016 を使ってみる
 description: Server 2016 の基礎 - システム要件、リリース ノート、アップグレード オプション
-ms.prod: windows-server
 manager: dongill
-ms.technology: get-started
 ms.date: 03/16/2018
 ms.topic: article
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 6387b5daf2346a0ad88509dbefd68ba8b8bbb69a
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: a0c16a148867e34a1b83de491aefb81fa79fa365
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519569"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990546"
 ---
 # <a name="get-started-with-windows-server-2016"></a>Windows Server 2016 を使ってみる
 
@@ -23,7 +21,7 @@ ms.locfileid: "87519569"
 > [!TIP]
 > 以前のバージョンの Windows Server に関する情報をお探しの場合は、 docs.microsoft.com の他の [Windows Server ライブラリ](/previous-versions/windows/)を参照してください。 また、[このサイトで検索して](/search/index?dataSource=previousVersions&search=Windows Server)、具体的な情報を確認することもできます。
 
-![チェックマーク付きのボックスを表示するアイコン](../media/landing-icons/getstarted.png) このコレクション記事に記載されている詳細情報は、Windows Server 2016 にすぐに移行できるかどうかを判断する際に役立ちます。 Windows Server 2016 への移行に関するシステム要件、アップグレード オプション、およびその他の情報を確認したら、[Windows Server 2016](Windows-Server-2016.md) のメイン ページに戻り、ニーズに最も適したエディションとインストール オプションをインストールするための手順に進みます。
+![チェックマーク付きのボックスを表示するアイコン](../media/landing-icons/getstarted.png) このコレクション記事に記載されている詳細情報は、Windows Server 2016 にすぐに移行できるかどうかを判断する際に役立ちます。 Windows Server 2016 への移行に関するシステム要件、アップグレード オプション、およびその他の情報を確認したら、[Windows Server 2016](../index.yml) のメイン ページに戻り、ニーズに最も適したエディションとインストール オプションをインストールするための手順に進みます。
 
 > [!Note]
 > Windows Server 2016 をダウンロードするを参照してください。 [Windows Server の評価](https://www.microsoft.com/evalcenter/evaluate-windows-server-2016)します。

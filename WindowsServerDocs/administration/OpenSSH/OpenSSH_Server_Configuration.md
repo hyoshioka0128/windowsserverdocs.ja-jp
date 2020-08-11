@@ -4,14 +4,13 @@ description: Windows 10 1809 および Server 2019 用 OpenSSH Server に関す�
 ms.date: 09/27/2018
 ms.topic: conceptual
 contributor: maertendMSFT
-ms.product: windows-server
 author: maertendmsft
-ms.openlocfilehash: abd156936bbd26479b0fe6bb7ffb98c1dd122f8e
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 4e2052ef9bf67eea241b6668a734f2f3e166bb61
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85469757"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992389"
 ---
 # <a name="openssh-server-configuration-for-windows-10-1809-and-server-2019"></a>Windows 10 1809 および Server 2019 用 OpenSSH Server 構成
 
@@ -64,7 +63,7 @@ Windows では、ドメイン プリンシパルを指定するために複数�
 また、この方法では、@ の代わりに "?" を使用して、username@host 形式との競合を回避しています。
 
 ワーク グループ users/groups とインターネットに接続されたアカウントは、常にローカルのアカウント名に解決されます (標準の Unix 名と同様に、ドメイン部分がありません)。
-ドメイン ユーザーとグループは、[NameSamCompatible](https://docs.microsoft.com/windows/desktop/api/secext/ne-secext-extended_name_format) 形式 (domain_short_name\user_name) に厳密に解決されます。
+ドメイン ユーザーとグループは、[NameSamCompatible](/windows/desktop/api/secext/ne-secext-extended_name_format) 形式 (domain_short_name\user_name) に厳密に解決されます。
 すべてのユーザー/グループ ベースの構成規則は、この形式に従う必要があります。
 
 ドメイン ユーザーとグループの例
@@ -149,4 +148,3 @@ Windows Server 2019 および Windows 10 1809 に付属する OpenSSH バージ�
 * X11Forwarding
 * X11UseLocalhost
 * XAuthLocation
-

@@ -1,19 +1,17 @@
 ---
 title: リリース ノート - Windows Server 2016 に関する重要な問題
 description: クラッシュ、ハング、インストールの失敗、データの損失を回避するための回避策を必要とする重大な問題についてまとめます。クラッシュ、ハング、インストールの失敗、データの損失を回避するための回避策を必要とする重大な問題についてまとめます。
-ms.prod: windows-server
 ms.date: 11/13/2018
-ms.technology: server-general
 ms.topic: article
 ms.assetid: 134aab85-664f-4d44-87ef-9e5fd389071f
 author: jaimeo
 ms.author: jaimeo
-ms.openlocfilehash: 8ceff837c2b85466f5583eed03f39e73f32fd4a4
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: b7e86b0841023548b1df1937bdf0820d59e12292
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826385"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990502"
 ---
 # <a name="release-notes-important-issues-in-windows-server-2016"></a>リリース ノート:Windows Server 2016 に関する重要な問題
 
@@ -62,7 +60,7 @@ Anniversary Update より前のバージョンの Windows 10 を実行してい�
 
 ## <a name="shielded-virtual-machines"></a>シールドされた仮想マシン
 
-[comment]: # (ID:369; 提出者: nirb; 状態: サインオフ)  
+[comment]: # (ID:369; 提出者: nirb; 状態: サインオフ)
 - シールドされた仮想マシンを運用環境で展開する前に、利用可能なすべての更新プログラムがインストールされていることを確認します。
 
 - 仮想化ベースでのコード整合性の保護や (仮想化ベースでのコード整合性の保護を使用する) シールドされた仮想マシンを利用する場合、これらのテクノロジは一部のデバイスやアプリケーションとの互換性がない可能性があることに注意してください。 運用システム上で機能を有効にする前に、ラボでこのような構成をテストする必要があります。 これを行わない場合は、予期しないデータの損失や Stop エラーが発生する可能性があります。
@@ -74,22 +72,22 @@ Anniversary Update より前のバージョンの Windows 10 を実行してい�
 
 **スタート** メニューのフォルダー内にショートカット項目を追加するアプリケーションをインストールした場合、そのショートカットを動作させるには、一度ログアウトしてから、もう一度ログインする必要があります。
 
-メインの [Windows Server 2016](Windows-Server-2016.md) ハブに戻ります。
+メインの [Windows Server 2016](../index.yml) ハブに戻ります。
 
 ## <a name="storport-performance"></a>Storport のパフォーマンス
 
-Windows Server 2016 を新たにインストールして実行した場合、Windows Server 2012 R2 と比較して、一部のシステムではストレージのパフォーマンスが低下することがあります。  Windows Server 2016 の開発では、プラットフォームのセキュリティと信頼性を強化するために、複数の変更が行われました。 それらの中には、Windows Defender を既定で有効にするなど、I/O パスの延伸につながる変更が含まれているため、特定のワークロードとパターンで I/O パフォーマンスが低下する可能性があります。 Windows Defender はシステム保護のための重要な層であるため、Microsoft では無効にすることをお勧めしていません。  
+Windows Server 2016 を新たにインストールして実行した場合、Windows Server 2012 R2 と比較して、一部のシステムではストレージのパフォーマンスが低下することがあります。  Windows Server 2016 の開発では、プラットフォームのセキュリティと信頼性を強化するために、複数の変更が行われました。 それらの中には、Windows Defender を既定で有効にするなど、I/O パスの延伸につながる変更が含まれているため、特定のワークロードとパターンで I/O パフォーマンスが低下する可能性があります。 Windows Defender はシステム保護のための重要な層であるため、Microsoft では無効にすることをお勧めしていません。 
 
 ## <a name="copyright"></a>著作権
 
-このドキュメントは、現状のままで提供されています。 このドキュメントに記載されている情報および見解 (URL 等のインターネット Web サイトに関する情報を含む) は、将来予告なしに変更されることがあります。  
+このドキュメントは、現状のままで提供されています。 このドキュメントに記載されている情報および見解 (URL 等のインターネット Web サイトに関する情報を含む) は、将来予告なしに変更されることがあります。
 
-このドキュメントは、マイクロソフト製品に含まれる知的財産に対していかなる法的権利も付与しません。 お客様は、内部的な参照目的に限り、このドキュメントを複製して使用することができます。  
+このドキュメントは、マイクロソフト製品に含まれる知的財産に対していかなる法的権利も付与しません。 お客様は、内部的な参照目的に限り、このドキュメントを複製して使用することができます。
 
-&copy; 2016 Microsoft Corporation. All rights reserved.  
+&copy; 2016 Microsoft Corporation. All rights reserved.
 
-Microsoft、Active Directory、Hyper-V、Windows、および Windows Server は、米国 Microsoft Corporation の米国およびその他の国における登録商標または商標です。  
+Microsoft、Active Directory、Hyper-V、Windows、および Windows Server は、米国 Microsoft Corporation の米国およびその他の国における登録商標または商標です。
 
-この製品には、グラフィックス フィルター ソフトウェアが含まれています。本ソフトウェアの一部は Independent JPEG Group で作成されたコードの一部を利用しています。  
+この製品には、グラフィックス フィルター ソフトウェアが含まれています。本ソフトウェアの一部は Independent JPEG Group で作成されたコードの一部を利用しています。
 
 1.0

@@ -1,20 +1,18 @@
 ---
 title: 手順 1 - WSUS サーバー ロールをインストールする
 description: Windows Server Update Service (WSUS) のトピック - サーバー マネージャーを使用してサーバー ロールをインストールする方法について説明します
-ms.prod: windows-server
-ms.technology: manage-wsus
 ms.topic: article
 ms.assetid: fabc8619-350e-403b-96f8-116424931300
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a923b2da4583c32010e7e3104315957f3f05acaf
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 980aa106b9ed4cb1ebc5b091fa308906dcdb2d6a
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87178568"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991027"
 ---
 # <a name="step-1-install-the-wsus-server-role"></a>手順 1:WSUS サーバー ロールをインストールする
 
@@ -23,7 +21,7 @@ ms.locfileid: "87178568"
 WSUS サーバーの展開では、次に、WSUS サーバーの役割をインストールします。 次の手順では、サーバー マネージャーを使用して WSUS サーバーの役割をインストールする方法について説明します。
 
 > [!IMPORTANT]
-> このインストール手順では、Windows Internal Database (WID) を使用して WSUS をインストールする方法のみを説明します。 Microsoft SQL Server を使用して WSUS をインストールする手順については、[WSUS のフォーラム](https://docs.microsoft.com/answers/topics/windows-server-update-services.html)をご覧ください。
+> このインストール手順では、Windows Internal Database (WID) を使用して WSUS をインストールする方法のみを説明します。 Microsoft SQL Server を使用して WSUS をインストールする手順については、[WSUS のフォーラム](/answers/topics/windows-server-update-services.html)をご覧ください。
 
 ### <a name="to-install-the-wsus-server-role"></a>WSUS サーバーの役割をインストールするには
 
@@ -63,4 +61,3 @@ WSUS サーバーの展開では、次に、WSUS サーバーの役割をイン�
 
 > [!IMPORTANT]
 > この時点でインストール処理は完了ですが、WSUS を機能させるには、「[手順 2: WSUS を構成する](2-configure-wsus.md)」に進む必要があります。
-

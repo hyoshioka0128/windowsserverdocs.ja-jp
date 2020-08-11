@@ -1,20 +1,18 @@
 ---
 ms.assetid: c9844427-27cf-4d76-b5bb-e06368b092f7
 title: フェールオーバー クラスタリング
-ms.prod: windows-server
 ms.topic: landing-page
 manager: lizross
 author: JasonGerend
 ms.author: jgerend
-ms.technology: storage-failover-clustering
 ms.date: 06/06/2019
 ms.localizationpriority: high
-ms.openlocfilehash: 657cf161086047ca87ca7dbd2adcd2b8e6bde892
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 41f5eef75e20a4da740141620493d2daa254b0a1
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87177888"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992854"
 ---
 # <a name="failover-clustering-in-windows-server"></a>Windows Server のフェールオーバー クラスタリング
 
@@ -44,7 +42,7 @@ ms.locfileid: "87177888"
 
 |**管理**  |  **ツールと設定**  |  **コミュニティ リソース**       |
 | ------------- |  -------------- | --------------------- |
-| [クラスター対応更新](cluster-aware-updating.md)    |   [フェールオーバー クラスタリング用 PowerShell コマンドレット](https://docs.microsoft.com/powershell/module/failoverclusters/?view=win10-ps)      |  [高可用性 (クラスタリング) フォーラム](https://go.microsoft.com/fwlink/p/?LinkId=230641)       |
-|  [ヘルスサービス](health-service-overview.md)   |   [クラスター対応更新の PowerShell コマンドレット](https://docs.microsoft.com/powershell/module/clusterawareupdating/?view=win10-ps)      | [フェールオーバー クラスタリングおよびネットワークの負荷分散チームによるブログ](https://blogs.msdn.com/b/clustering/)        |
+| [クラスター対応更新](cluster-aware-updating.md)    |   [フェールオーバー クラスタリング用 PowerShell コマンドレット](/powershell/module/failoverclusters/?view=win10-ps)      |  [高可用性 (クラスタリング) フォーラム](https://go.microsoft.com/fwlink/p/?LinkId=230641)       |
+|  [ヘルスサービス](health-service-overview.md)   |   [クラスター対応更新の PowerShell コマンドレット](/powershell/module/clusterawareupdating/?view=win10-ps)      | [フェールオーバー クラスタリングおよびネットワークの負荷分散チームによるブログ](https://blogs.msdn.com/b/clustering/)        |
 |  [クラスター ドメインの移行](cluster-domain-migration.md)   |         |         |
 |  [Windows エラー報告を使用したトラブルシューティング](troubleshooting-using-wer-reports.md)   |         |         |

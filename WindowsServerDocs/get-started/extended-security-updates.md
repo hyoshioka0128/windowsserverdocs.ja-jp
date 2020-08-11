@@ -1,20 +1,18 @@
 ---
 title: Windows Server 2008 および 2008 R2 の拡張セキュリティ更新プログラム
 description: サポート ライフサイクルが終了した後、Windows Server 2008 および 2008 R2 の拡張セキュリティ更新プログラム (ESU) を使用する方法について説明します。
-ms.prod: windows-server
-ms.technology: server-general
 ms.mktglfcycl: manage
 author: iainfoulds
 ms.author: iainfou
 ms.topic: get-started-article
 ms.localizationpriority: high
 ms.date: 02/21/2020
-ms.openlocfilehash: 19a65f2a254fe14f7cddfbda2a84e9d00f47da56
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: c74c8a278612d2ca47346ad95105f1258761494a
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181848"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990474"
 ---
 # <a name="how-to-use-windows-server-2008-and-2008-r2-extended-security-updates-esu"></a>Windows Server 2008 および 2008 R2 の拡張セキュリティ更新プログラム (ESU) を使用する方法
 
@@ -101,7 +99,7 @@ Azure 以外の VM で拡張セキュリティ更新プログラムを使用す�
 
     チームにより要求が承認されない場合は、次のエラーが表示されます。
 
-    [名前空間 'Microsoft.WindowsESU' でリソースの種類が見つかりませんでした。](https://docs.microsoft.com/windows-server/get-started/extended-security-updates)
+    [名前空間 'Microsoft.WindowsESU' でリソースの種類が見つかりませんでした。]()
 
 6. **[Azure の詳細]** で、Azure サブスクリプション、リソース グループ、およびキーの場所を選択します。
 

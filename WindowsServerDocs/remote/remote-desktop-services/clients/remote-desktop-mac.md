@@ -1,8 +1,6 @@
 ---
 title: macOS クライアントの概要
 description: Mac 用のリモート デスクトップ クライアントをセットアップする方法について説明する
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.topic: article
 ms.assetid: 7afc65f8-3158-49c9-9d48-4dab1c69afba
 author: lizap
@@ -10,12 +8,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 07/16/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 57072fe5a92bcc59a1ccd46b1c0db7a6828a165d
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 2a0c93ddc6bf891a3f8157d36b67f60241d4d41b
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181958"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991594"
 ---
 # <a name="get-started-with-the-macos-client"></a>macOS クライアントの概要
 
@@ -164,4 +162,4 @@ Windows Server 2012 R2 には、新しい認証方法、リモート デスク�
 この機能の詳細については、[https://aka.ms/paa-sample](https://aka.ms/paa-sample) を確認してください。
 
 > [!TIP]
-> 意見やご質問はへようこそ は常にします。 ただし、投稿しないでくださいコメント機能を使用して、この記事の最後に、トラブルシューティングのヘルプを要求します。 代わりに移動、 [リモート デスクトップ クライアントのフォーラム](https://docs.microsoft.com/answers/topics/windows-remote-desktop-client.html) し、新しいスレッドを開始します。 機能の候補があるか。 内の指定、 [クライアント ユーザーの声フォーラム](https://remotedesktop.uservoice.com/forums/272085-remote-desktop-for-android)します。
+> 意見やご質問はへようこそ は常にします。 ただし、投稿しないでくださいコメント機能を使用して、この記事の最後に、トラブルシューティングのヘルプを要求します。 代わりに移動、 [リモート デスクトップ クライアントのフォーラム](/answers/topics/windows-remote-desktop-client.html) し、新しいスレッドを開始します。 機能の候補があるか。 内の指定、 [クライアント ユーザーの声フォーラム](https://remotedesktop.uservoice.com/forums/272085-remote-desktop-for-android)します。
