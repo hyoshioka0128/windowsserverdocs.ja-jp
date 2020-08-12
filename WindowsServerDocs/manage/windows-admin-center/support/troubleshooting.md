@@ -81,7 +81,7 @@ ms.locfileid: "87990208"
 
 ### <a name="make-sure-the-windows-remote-management-winrm-service-is-running-on-both-the-gateway-machine-and-managed-node"></a>ゲートウェイコンピューターと管理ノードの両方で Windows リモート管理 (WinRM) サービスが実行されていることを確認します。
 
-* WindowsKey + R を使用して [実行] ダイアログを開く
+* Windows キー + R を使用して [実行] ダイアログを開く
 * 「 ```services.msc``` 」と入力し、enter キーを押します。
 * 開いたウィンドウで Windows リモート管理 (WinRM) を探し、それが実行中であり、自動的に開始するように設定されていることを確認します。
 
